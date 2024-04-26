@@ -136,7 +136,7 @@ Kirigami.ScrollablePage {
             Kirigami.Icon {
                 Layout.rowSpan: 4
                 id: icon
-                source: PublicTransport.lineIcon(vehicleModel.stopover.route.line)
+                source: vehicleModel.stopover.route.line.iconName
                 width: height
                 height: Kirigami.Units.iconSizes.large
                 isMask: !vehicleModel.stopover.route.line.hasLogo && !vehicleModel.stopover.route.line.hasModeLogo

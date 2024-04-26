@@ -80,13 +80,6 @@ public:
     static bool isBusMode(KPublicTransport::Line::Mode mode);
     static bool isBoatMode(KPublicTransport::Line::Mode mode);
 
-    /** Provide an icon source for usage in Kirigami.Icon that represents the line mode.
-     *  This can be an official line logo, and official product logo or a generic mode icon,
-     *  depending on what's available.
-     *  @note line/product logos are full-color, the generic ones are monochrome colorable Breeze icons.
-     */
-    Q_INVOKABLE QString lineIcon(const QVariant &line) const;
-
     /** Provide an icon source for usage in Kirigami.Icon that represents @p journeySection. */
     Q_INVOKABLE QString journeySectionIcon(const KPublicTransport::JourneySection &journeySection) const;
 

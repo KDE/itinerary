@@ -15,7 +15,7 @@ TimelineDelegate {
     id: root
     property bool expanded: false
     property var journeySection: root.controller.journey
-    headerIconSource: departure.route.line.mode == Line.Unknown ?  LineMode.iconName(Line.Bus) : LineMode.iconName(departure.route.line.mode)
+    headerIconSource: departure.route.line.mode == Line.Unknown ?  LineMode.iconName(Line.Bus) : departure.route.line.iconName
     Item {
         JourneySectionModel {
             id: sectionModel

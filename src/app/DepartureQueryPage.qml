@@ -166,7 +166,7 @@ Kirigami.ScrollablePage {
                         Kirigami.Icon {
                             id: modeIcon
                             anchors.centerIn: parent
-                            source: PublicTransport.lineIcon(departure.route.line);
+                            source: departure.route.line.iconName
                             color: departure.route.line.hasTextColor ? departure.route.line.textColor : Kirigami.Theme.textColor
                             width: (departure.route.line.hasLogo || departure.route.line.hasModeLogo) ? implicitWidth : height
                             height: parent.height

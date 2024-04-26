@@ -118,21 +118,6 @@ QVariant PublicTransport::busStationFromLocation(const KPublicTransport::Locatio
     return PublicTransport::placeFromLocation<KItinerary::BusStation>(loc);
 }
 
-QString PublicTransport::lineIcon(const QVariant &line) const
-{
-    using namespace KPublicTransport;
-    const auto l = line.value<Line>();
-    const auto logo = l.logo();
-    if (!logo.isEmpty()) {
-        return logo;
-    }
-    const auto modeLogo = l.modeLogo();
-    if (!modeLogo.isEmpty()) {
-        return modeLogo;
-    }
-    return Line::modeIconName(l.mode());
-}
-
 QString PublicTransport::journeySectionIcon(const KPublicTransport::JourneySection &journeySection) const
 {
     using namespace KPublicTransport;
@@ -140,7 +125,7 @@ QString PublicTransport::journeySectionIcon(const KPublicTransport::JourneySecti
         case JourneySection::Invalid:
             break;
         case JourneySection::PublicTransport:
-            return lineIcon(journeySection.route().line());
+            return journeySection.route().line().iconName();
         case JourneySection::Walking:
             return QStringLiteral("qrc:///images/walk.svg");
         case JourneySection::Waiting:

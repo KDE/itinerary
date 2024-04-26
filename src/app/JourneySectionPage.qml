@@ -49,7 +49,7 @@ Kirigami.Page {
                 Layout.alignment: Qt.AlignTop
                 Layout.rightMargin: Kirigami.Units.largeSpacing
                 id: icon
-                source: PublicTransport.lineIcon(journeySection.route.line)
+                source: journeySection.route.line.iconName
                 Layout.preferredWidth: height
                 Layout.preferredHeight: Kirigami.Units.iconSizes.large
                 isMask: !journeySection.route.line.hasLogo && !journeySection.route.line.hasModeLogo
