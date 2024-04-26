@@ -38,35 +38,35 @@ Kirigami.ScrollablePage {
         Kirigami.Action {
             id: longDistanceModeAction
             text: i18nc("journey query search constraint, title", "Long distance trains")
-            icon.source: PublicTransport.lineModeIcon(Line.LongDistanceTrain)
+            icon.source: LineMode.iconName(Line.LongDistanceTrain)
             checkable: true
             checked: true
         },
         Kirigami.Action {
             id: localTrainModeAction
             text: i18nc("journey query search constraint, title", "Local trains")
-            icon.source: PublicTransport.lineModeIcon(Line.LocalTrain)
+            icon.source: LineMode.iconName(Line.LocalTrain)
             checkable: true
             checked: true
         },
         Kirigami.Action {
             id: rapidTransitModeAction
             text: i18nc("journey query search constraint, title", "Rapid transit")
-            icon.source: PublicTransport.lineModeIcon(Line.Tramway)
+            icon.source: LineMode.iconName(Line.Tramway)
             checkable: true
             checked: true
         },
         Kirigami.Action {
             id: busModeAction
             text: i18nc("journey query search constraint, title", "Bus")
-            icon.source: PublicTransport.lineModeIcon(Line.Bus)
+            icon.source: LineMode.iconName(Line.Bus)
             checkable: true
             checked: true
         },
         Kirigami.Action {
             id: ferryModeAction
             text: i18nc("journey query search constraint, title", "Ferry")
-            icon.source: PublicTransport.lineModeIcon(Line.Ferry)
+            icon.source: LineMode.iconName(Line.Ferry)
             checkable: true
             checked: true
         }

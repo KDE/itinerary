@@ -222,7 +222,7 @@ FormCard.FormCardPage {
             description: i18nc("journey query search constraint, description", "High speed or intercity trains")
             checked: true
             leading: Kirigami.Icon {
-                source: PublicTransport.lineModeIcon(Line.LongDistanceTrain)
+                source: LineMode.iconName(Line.LongDistanceTrain)
                 isMask: true
             }
         }
@@ -232,7 +232,7 @@ FormCard.FormCardPage {
             description: i18nc("journey query search constraint, description", "Regional or local trains")
             checked: true
             leading: Kirigami.Icon {
-                source: PublicTransport.lineModeIcon(Line.LocalTrain)
+                source: LineMode.iconName(Line.LocalTrain)
                 isMask: true
             }
         }
@@ -242,7 +242,7 @@ FormCard.FormCardPage {
             description: i18nc("journey query search constraint, description", "Rapid transit, metro, trams")
             checked: true
             leading: Kirigami.Icon {
-                source: PublicTransport.lineModeIcon(Line.Tramway)
+                source: LineMode.iconName(Line.Tramway)
                 isMask: true
             }
         }
@@ -252,7 +252,7 @@ FormCard.FormCardPage {
             description: i18nc("journey query search constraint, description", "Local or regional bus services")
             checked: true
             leading: Kirigami.Icon {
-                source: PublicTransport.lineModeIcon(Line.Bus)
+                source: LineMode.iconName(Line.Bus)
                 isMask: true
             }
         }
@@ -262,7 +262,7 @@ FormCard.FormCardPage {
             description: i18nc("journey query search constraint, description", "Boats or ferries")
             checked: true
             leading: Kirigami.Icon {
-                source: PublicTransport.lineModeIcon(Line.Ferry)
+                source: LineMode.iconName(Line.Ferry)
                 isMask: true
             }
         }

@@ -130,46 +130,7 @@ QString PublicTransport::lineIcon(const QVariant &line) const
     if (!modeLogo.isEmpty()) {
         return modeLogo;
     }
-    return lineModeIcon(l.mode());
-}
-
-QString PublicTransport::lineModeIcon(int lineMode) const
-{
-    using namespace KPublicTransport;
-    switch (lineMode) {
-        case Line::Air:
-            return QStringLiteral("qrc:///images/flight.svg");
-        case Line::Boat:
-        case Line::Ferry:
-            return QStringLiteral("qrc:///images/ferry.svg");
-        case Line::Bus:
-            return QStringLiteral("qrc:///images/bus.svg");
-        case Line::BusRapidTransit:
-        case Line::Coach:
-            return QStringLiteral("qrc:///images/coach.svg");
-        case Line::Funicular:
-            return QStringLiteral("qrc:///images/Funicular.svg");
-        case Line::LocalTrain:
-        case Line::Train:
-            return QStringLiteral("qrc:///images/train.svg");
-        case Line::LongDistanceTrain:
-            return QStringLiteral("qrc:///images/longdistancetrain.svg");
-        case Line::Metro:
-            return QStringLiteral("qrc:///images/subway.svg");
-        case Line::RailShuttle:
-        case Line::RapidTransit:
-            return QStringLiteral("qrc:///images/rapidtransit.svg");
-        case Line::Shuttle:
-            return QStringLiteral("qrc:///images/shuttle.svg");
-        case Line::Taxi:
-            return QStringLiteral("qrc:///images/taxi.svg");
-        case Line::Tramway:
-            return QStringLiteral("qrc:///images/tramway.svg");
-        case Line::RideShare:
-            return QStringLiteral("qrc:///images/car.svg");
-    }
-
-    return QStringLiteral("question");
+    return Line::modeIconName(l.mode());
 }
 
 QString PublicTransport::rentalVehicleIcon(const KPublicTransport::RentalVehicle &vehicle) const

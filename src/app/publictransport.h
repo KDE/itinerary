@@ -87,11 +87,6 @@ public:
      */
     Q_INVOKABLE QString lineIcon(const QVariant &line) const;
 
-    /** Convert a KPublicTransport::Line::Mode enum value to an icon source or name
-     *  for usage in Kirigami.Icon.
-     */
-    Q_INVOKABLE QString lineModeIcon(int lineMode) const;
-
     /** Provides an icon for a rental vehicle type. */
     Q_INVOKABLE QString rentalVehicleIcon(const KPublicTransport::RentalVehicle &vehicle) const;
 
