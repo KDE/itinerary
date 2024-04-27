@@ -42,7 +42,11 @@ NetworkStatusBackend::NetworkStatusBackend(QObject *parent)
     static JNINativeMethod methods = {"networkStatusChanged", "()V", reinterpret_cast<void *>(networkStatusChangedCallback)};
     env->RegisterNatives(cls, &methods, sizeof(methods) / sizeof(JNINativeMethod));
 
+#if QT_VERSION <QT_VERSION_CHECK(6, 7, 0)
     m_obj = QJniObject("org/kde/solidextras/NetworkStatus", "(Landroid/content/Context;)V", QNativeInterface::QAndroidApplication::context());
+#else
+    m_obj = QJniObject("org/kde/solidextras/NetworkStatus", QNativeInterface::QAndroidApplication::context());
+#endif
 }
 
 NetworkStatusBackend* NetworkStatusBackend::instance()
@@ -53,12 +57,20 @@ NetworkStatusBackend* NetworkStatusBackend::instance()
 
 bool NetworkStatusBackend::connectivity() const
 {
+#if QT_VERSION <QT_VERSION_CHECK(6, 7, 0)
     return m_obj.callMethod<jboolean>("connectivity", "(Landroid/content/Context;)Z", QNativeInterface::QAndroidApplication::context());
+#else
+    return m_obj.callMethod<jboolean>("connectivity", QNativeInterface::QAndroidApplication::context());
+#endif
 }
 
 bool NetworkStatusBackend::metered() const
 {
+#if QT_VERSION <QT_VERSION_CHECK(6, 7, 0)
     return m_obj.callMethod<jboolean>("metered", "(Landroid/content/Context;)Z", QNativeInterface::QAndroidApplication::context());
+#else
+    return m_obj.callMethod<jboolean>("metered", QNativeInterface::QAndroidApplication::context());
+#endif
 }
 
 
