@@ -80,9 +80,6 @@ public:
     static bool isBusMode(KPublicTransport::Line::Mode mode);
     static bool isBoatMode(KPublicTransport::Line::Mode mode);
 
-    /** Provide an icon source for usage in Kirigami.Icon that represents @p journeySection. */
-    Q_INVOKABLE QString journeySectionIcon(const KPublicTransport::JourneySection &journeySection) const;
-
     /** Provide a label that represents @p journeySection. */
     Q_INVOKABLE QString journeySectionLabel(const KPublicTransport::JourneySection &journeySection) const;
 

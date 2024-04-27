@@ -144,7 +144,7 @@ FormCard.AbstractFormDelegate {
                 TransportIcon {
                     id: modeIcon
                     anchors.centerIn: parent
-                    source: PublicTransport.journeySectionIcon(modelData)
+                    source: modelData.iconName
                     color: modelData.route.line.hasTextColor ? modelData.route.line.textColor : Kirigami.Theme.textColor
                     width: !isMask ? implicitWidth : height
                     height: parent.height

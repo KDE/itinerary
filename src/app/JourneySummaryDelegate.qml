@@ -44,7 +44,7 @@ FormCard.AbstractFormDelegate {
             Repeater {
                 model: root.journey.sections
                 delegate: TransportIcon {
-                    source: PublicTransport.journeySectionIcon(modelData)
+                    source: modelData.iconName
                     color: PublicTransport.warnAboutSection(modelData) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
                     isMask: modelData.mode != JourneySection.PublicTransport || (!modelData.route.line.hasLogo && !modelData.route.line.hasModeLogo)
                     size: Kirigami.Units.iconSizes.small

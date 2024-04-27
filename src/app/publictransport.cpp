@@ -118,29 +118,6 @@ QVariant PublicTransport::busStationFromLocation(const KPublicTransport::Locatio
     return PublicTransport::placeFromLocation<KItinerary::BusStation>(loc);
 }
 
-QString PublicTransport::journeySectionIcon(const KPublicTransport::JourneySection &journeySection) const
-{
-    using namespace KPublicTransport;
-    switch (journeySection.mode()) {
-        case JourneySection::Invalid:
-            break;
-        case JourneySection::PublicTransport:
-            return journeySection.route().line().iconName();
-        case JourneySection::Walking:
-            return QStringLiteral("qrc:///images/walk.svg");
-        case JourneySection::Waiting:
-            return QStringLiteral("qrc:///images/wait.svg");
-        case JourneySection::Transfer:
-            return QStringLiteral("qrc:///images/transfer.svg");
-        case JourneySection::RentedVehicle:
-            return journeySection.rentalVehicle().vehicleTypeIconName();
-        case JourneySection::IndividualTransport:
-            return journeySection.individualTransport().modeIconName();
-    }
-
-    return QStringLiteral("question");
-}
-
 QString PublicTransport::journeySectionLabel(const KPublicTransport::JourneySection &journeySection) const
 {
     using namespace KPublicTransport;
