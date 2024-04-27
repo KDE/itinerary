@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-24 00:39+0000\n"
-"PO-Revision-Date: 2024-04-17 14:05+0200\n"
+"POT-Creation-Date: 2024-04-27 00:38+0000\n"
+"PO-Revision-Date: 2024-04-26 14:47+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -456,8 +456,7 @@ msgstr "Terminale de arrivata non debe esser vacue."
 msgid "Boat Ticket"
 msgstr "Billet de barca"
 
-#: app/BoatPage.qml:59 app/BusPage.qml:68 app/FlightPage.qml:118
-#: app/TrainPage.qml:86
+#: app/BoatPage.qml:59 app/BusPage.qml:68 app/TrainPage.qml:86
 #, kde-format
 msgid "Departure time"
 msgstr "Tempore de partita"
@@ -468,8 +467,7 @@ msgctxt "Boat terminal"
 msgid "Terminal"
 msgstr "Terminal"
 
-#: app/BoatPage.qml:89 app/BusPage.qml:133 app/FlightPage.qml:169
-#: app/TrainPage.qml:169
+#: app/BoatPage.qml:89 app/BusPage.qml:133 app/TrainPage.qml:169
 #, kde-format
 msgid "Arrival time"
 msgstr "Tempore de arrivata"
@@ -608,7 +606,7 @@ msgctxt "Bus departure"
 msgid "Departure"
 msgstr "Partita"
 
-#: app/BusPage.qml:88 app/FlightPage.qml:123 app/TrainPage.qml:115
+#: app/BusPage.qml:88 app/TrainPage.qml:115
 #, kde-format
 msgid "Departure date"
 msgstr "Data de partita"
@@ -662,8 +660,7 @@ msgid "Import selected events"
 msgstr "Importa eventos seligite"
 
 #: app/CalendarSelectionSheet.qml:14
-#, fuzzy, kde-format
-#| msgid "Select Calendar"
+#, kde-format
 msgctxt "@title"
 msgid "Select Calendar"
 msgstr "Selige calendario"
@@ -1022,8 +1019,7 @@ msgid "Import from GPX"
 msgstr "Importa ex GPX"
 
 #: app/FavoriteLocationPage.qml:91
-#, fuzzy, kde-format
-#| msgid "Rename favorite location"
+#, kde-format
 msgctxt "@title"
 msgid "Rename favorite location"
 msgstr "Renomina location favorite"
@@ -1168,6 +1164,20 @@ msgctxt "Flight departure"
 msgid "Departure"
 msgstr "Partita"
 
+#: app/FlightPage.qml:118
+#, fuzzy, kde-format
+#| msgid "Departure time"
+msgctxt "flight departure"
+msgid "Departure time"
+msgstr "Tempore de partita"
+
+#: app/FlightPage.qml:123
+#, fuzzy, kde-format
+#| msgid "Departure date"
+msgctxt "flight departure"
+msgid "Departure date"
+msgstr "Data de partita"
+
 #: app/FlightPage.qml:140 app/FlightPage.qml:186
 #, kde-format
 msgid "Terminal"
@@ -1183,6 +1193,13 @@ msgstr "Porta"
 msgctxt "Flight arrival"
 msgid "Arrival"
 msgstr "Arrivata"
+
+#: app/FlightPage.qml:169
+#, fuzzy, kde-format
+#| msgid "Arrival time"
+msgctxt "flight arrival"
+msgid "Arrival time"
+msgstr "Tempore de arrivata"
 
 #: app/FormPlaceDelegate.qml:55
 #, kde-format
@@ -1699,15 +1716,13 @@ msgid "Check-out time"
 msgstr "Tempore de Check-Out"
 
 #: app/IndoorMapAmenitySheet.qml:18
-#, fuzzy, kde-format
-#| msgid "Find Amenity"
+#, kde-format
 msgctxt "@title"
 msgid "Find Amenity"
 msgstr "Trova Amenitate"
 
 #: app/IndoorMapGateSheet.qml:18
-#, fuzzy, kde-format
-#| msgid "Find Gate"
+#, kde-format
 msgctxt "@title"
 msgid "Find Gate"
 msgstr "Trova Gate"
@@ -1813,8 +1828,7 @@ msgid "Floor up"
 msgstr "Etage in alto"
 
 #: app/IndoorMapPlatformSheet.qml:20
-#, fuzzy, kde-format
-#| msgid "Find Platform"
+#, kde-format
 msgctxt "@title"
 msgid "Find Platform"
 msgstr "Trova Platteforma"
@@ -2423,8 +2437,7 @@ msgid "Map download finished."
 msgstr "Discargamento de mappa terminate."
 
 #: app/MatrixRoomSelectionSheet.qml:19
-#, fuzzy, kde-format
-#| msgid "Share Location"
+#, kde-format
 msgctxt "@title"
 msgid "Share Location"
 msgstr "Comparti Location "
@@ -2763,42 +2776,42 @@ msgstr "Adhesion de Programma"
 msgid "Show Pass"
 msgstr "Monstra Pass"
 
-#: app/publictransport.cpp:241 app/publictransport.cpp:268
+#: app/publictransport.cpp:153 app/publictransport.cpp:180
 #, kde-format
 msgid "Walk"
 msgstr "Promenada"
 
-#: app/publictransport.cpp:243
+#: app/publictransport.cpp:155
 #, kde-format
 msgid "Wait"
 msgstr "Pausa"
 
-#: app/publictransport.cpp:252
+#: app/publictransport.cpp:164
 #, kde-format
 msgid "Rented bicycle"
 msgstr "Bicycletta locate"
 
-#: app/publictransport.cpp:254
+#: app/publictransport.cpp:166
 #, kde-format
 msgid "Rented moped"
 msgstr "Cyclo a motor locate"
 
-#: app/publictransport.cpp:256
+#: app/publictransport.cpp:168
 #, kde-format
 msgid "Rented kick scooter"
 msgstr "Monopatin locate"
 
-#: app/publictransport.cpp:258
+#: app/publictransport.cpp:170
 #, kde-format
 msgid "Rented car"
 msgstr "Auto de location"
 
-#: app/publictransport.cpp:264
+#: app/publictransport.cpp:176
 #, kde-format
 msgid "Bicycle"
 msgstr "Bicycletta"
 
-#: app/publictransport.cpp:266 app/StatisticsPage.qml:148
+#: app/publictransport.cpp:178 app/StatisticsPage.qml:148
 #, kde-format
 msgid "Car"
 msgstr "Automobile"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-24 00:39+0000\n"
+"POT-Creation-Date: 2024-04-27 00:38+0000\n"
 "PO-Revision-Date: 2024-04-17 14:14+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -456,8 +456,7 @@ msgstr "Il terminal di arrivo non può essere vuoto."
 msgid "Boat Ticket"
 msgstr "Biglietto per la nave"
 
-#: app/BoatPage.qml:59 app/BusPage.qml:68 app/FlightPage.qml:118
-#: app/TrainPage.qml:86
+#: app/BoatPage.qml:59 app/BusPage.qml:68 app/TrainPage.qml:86
 #, kde-format
 msgid "Departure time"
 msgstr "Orario di partenza"
@@ -468,8 +467,7 @@ msgctxt "Boat terminal"
 msgid "Terminal"
 msgstr "Terminale"
 
-#: app/BoatPage.qml:89 app/BusPage.qml:133 app/FlightPage.qml:169
-#: app/TrainPage.qml:169
+#: app/BoatPage.qml:89 app/BusPage.qml:133 app/TrainPage.qml:169
 #, kde-format
 msgid "Arrival time"
 msgstr "Ora di arrivo"
@@ -608,7 +606,7 @@ msgctxt "Bus departure"
 msgid "Departure"
 msgstr "Partenza"
 
-#: app/BusPage.qml:88 app/FlightPage.qml:123 app/TrainPage.qml:115
+#: app/BusPage.qml:88 app/TrainPage.qml:115
 #, kde-format
 msgid "Departure date"
 msgstr "Data di partenza"
@@ -1168,6 +1166,20 @@ msgctxt "Flight departure"
 msgid "Departure"
 msgstr "Partenza"
 
+#: app/FlightPage.qml:118
+#, fuzzy, kde-format
+#| msgid "Departure time"
+msgctxt "flight departure"
+msgid "Departure time"
+msgstr "Orario di partenza"
+
+#: app/FlightPage.qml:123
+#, fuzzy, kde-format
+#| msgid "Departure date"
+msgctxt "flight departure"
+msgid "Departure date"
+msgstr "Data di partenza"
+
 #: app/FlightPage.qml:140 app/FlightPage.qml:186
 #, kde-format
 msgid "Terminal"
@@ -1183,6 +1195,13 @@ msgstr "Cancello"
 msgctxt "Flight arrival"
 msgid "Arrival"
 msgstr "Arrivo"
+
+#: app/FlightPage.qml:169
+#, fuzzy, kde-format
+#| msgid "Arrival time"
+msgctxt "flight arrival"
+msgid "Arrival time"
+msgstr "Ora di arrivo"
 
 #: app/FormPlaceDelegate.qml:55
 #, kde-format
@@ -2765,42 +2784,42 @@ msgstr "Adesione al programma"
 msgid "Show Pass"
 msgstr "Mostra titolo"
 
-#: app/publictransport.cpp:241 app/publictransport.cpp:268
+#: app/publictransport.cpp:153 app/publictransport.cpp:180
 #, kde-format
 msgid "Walk"
 msgstr "Cammino"
 
-#: app/publictransport.cpp:243
+#: app/publictransport.cpp:155
 #, kde-format
 msgid "Wait"
 msgstr "Attesa"
 
-#: app/publictransport.cpp:252
+#: app/publictransport.cpp:164
 #, kde-format
 msgid "Rented bicycle"
 msgstr "Bicicletta noleggiata"
 
-#: app/publictransport.cpp:254
+#: app/publictransport.cpp:166
 #, kde-format
 msgid "Rented moped"
 msgstr "Motorino noleggiato"
 
-#: app/publictransport.cpp:256
+#: app/publictransport.cpp:168
 #, kde-format
 msgid "Rented kick scooter"
 msgstr "Monopattino noleggiato"
 
-#: app/publictransport.cpp:258
+#: app/publictransport.cpp:170
 #, kde-format
 msgid "Rented car"
 msgstr "Auto noleggiata"
 
-#: app/publictransport.cpp:264
+#: app/publictransport.cpp:176
 #, kde-format
 msgid "Bicycle"
 msgstr "Bicicletta"
 
-#: app/publictransport.cpp:266 app/StatisticsPage.qml:148
+#: app/publictransport.cpp:178 app/StatisticsPage.qml:148
 #, kde-format
 msgid "Car"
 msgstr "Auto"

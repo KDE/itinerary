@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-24 00:39+0000\n"
+"POT-Creation-Date: 2024-04-27 00:38+0000\n"
 "PO-Revision-Date: 2024-04-05 23:38+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -449,8 +449,7 @@ msgstr "目的地港口旅運中心不能是空的。"
 msgid "Boat Ticket"
 msgstr "船票"
 
-#: app/BoatPage.qml:59 app/BusPage.qml:68 app/FlightPage.qml:118
-#: app/TrainPage.qml:86
+#: app/BoatPage.qml:59 app/BusPage.qml:68 app/TrainPage.qml:86
 #, kde-format
 msgid "Departure time"
 msgstr "出發時間"
@@ -461,8 +460,7 @@ msgctxt "Boat terminal"
 msgid "Terminal"
 msgstr "旅運中心"
 
-#: app/BoatPage.qml:89 app/BusPage.qml:133 app/FlightPage.qml:169
-#: app/TrainPage.qml:169
+#: app/BoatPage.qml:89 app/BusPage.qml:133 app/TrainPage.qml:169
 #, kde-format
 msgid "Arrival time"
 msgstr "抵達時間"
@@ -600,7 +598,7 @@ msgctxt "Bus departure"
 msgid "Departure"
 msgstr "出發"
 
-#: app/BusPage.qml:88 app/FlightPage.qml:123 app/TrainPage.qml:115
+#: app/BusPage.qml:88 app/TrainPage.qml:115
 #, kde-format
 msgid "Departure date"
 msgstr "出發日期"
@@ -1160,6 +1158,20 @@ msgctxt "Flight departure"
 msgid "Departure"
 msgstr "出發"
 
+#: app/FlightPage.qml:118
+#, fuzzy, kde-format
+#| msgid "Departure time"
+msgctxt "flight departure"
+msgid "Departure time"
+msgstr "出發時間"
+
+#: app/FlightPage.qml:123
+#, fuzzy, kde-format
+#| msgid "Departure date"
+msgctxt "flight departure"
+msgid "Departure date"
+msgstr "出發日期"
+
 #: app/FlightPage.qml:140 app/FlightPage.qml:186
 #, kde-format
 msgid "Terminal"
@@ -1175,6 +1187,13 @@ msgstr "登機口"
 msgctxt "Flight arrival"
 msgid "Arrival"
 msgstr "抵達"
+
+#: app/FlightPage.qml:169
+#, fuzzy, kde-format
+#| msgid "Arrival time"
+msgctxt "flight arrival"
+msgid "Arrival time"
+msgstr "抵達時間"
 
 #: app/FormPlaceDelegate.qml:55
 #, kde-format
@@ -2755,42 +2774,42 @@ msgstr ""
 msgid "Show Pass"
 msgstr "顯示地圖"
 
-#: app/publictransport.cpp:241 app/publictransport.cpp:268
+#: app/publictransport.cpp:153 app/publictransport.cpp:180
 #, kde-format
 msgid "Walk"
 msgstr "步行"
 
-#: app/publictransport.cpp:243
+#: app/publictransport.cpp:155
 #, kde-format
 msgid "Wait"
 msgstr "等待"
 
-#: app/publictransport.cpp:252
+#: app/publictransport.cpp:164
 #, kde-format
 msgid "Rented bicycle"
 msgstr "租用的腳踏車"
 
-#: app/publictransport.cpp:254
+#: app/publictransport.cpp:166
 #, kde-format
 msgid "Rented moped"
 msgstr ""
 
-#: app/publictransport.cpp:256
+#: app/publictransport.cpp:168
 #, kde-format
 msgid "Rented kick scooter"
 msgstr ""
 
-#: app/publictransport.cpp:258
+#: app/publictransport.cpp:170
 #, kde-format
 msgid "Rented car"
 msgstr "租用的汽車"
 
-#: app/publictransport.cpp:264
+#: app/publictransport.cpp:176
 #, kde-format
 msgid "Bicycle"
 msgstr "腳踏車"
 
-#: app/publictransport.cpp:266 app/StatisticsPage.qml:148
+#: app/publictransport.cpp:178 app/StatisticsPage.qml:148
 #, kde-format
 msgid "Car"
 msgstr "汽車"

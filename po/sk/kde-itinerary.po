@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-24 00:39+0000\n"
+"POT-Creation-Date: 2024-04-27 00:38+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -479,8 +479,7 @@ msgstr ""
 msgid "Boat Ticket"
 msgstr "Lístok na autobus"
 
-#: app/BoatPage.qml:59 app/BusPage.qml:68 app/FlightPage.qml:118
-#: app/TrainPage.qml:86
+#: app/BoatPage.qml:59 app/BusPage.qml:68 app/TrainPage.qml:86
 #, fuzzy, kde-format
 #| msgid "Departure time:"
 msgid "Departure time"
@@ -493,8 +492,7 @@ msgctxt "Boat terminal"
 msgid "Terminal"
 msgstr "Terminál:"
 
-#: app/BoatPage.qml:89 app/BusPage.qml:133 app/FlightPage.qml:169
-#: app/TrainPage.qml:169
+#: app/BoatPage.qml:89 app/BusPage.qml:133 app/TrainPage.qml:169
 #, fuzzy, kde-format
 msgid "Arrival time"
 msgstr "Čas príchodu: %1"
@@ -649,7 +647,7 @@ msgctxt "Bus departure"
 msgid "Departure"
 msgstr "Odchod"
 
-#: app/BusPage.qml:88 app/FlightPage.qml:123 app/TrainPage.qml:115
+#: app/BusPage.qml:88 app/TrainPage.qml:115
 #, fuzzy, kde-format
 #| msgid "Departure gate:"
 msgid "Departure date"
@@ -1249,6 +1247,20 @@ msgctxt "Flight departure"
 msgid "Departure"
 msgstr "Odchod"
 
+#: app/FlightPage.qml:118
+#, fuzzy, kde-format
+#| msgid "Departure time:"
+msgctxt "flight departure"
+msgid "Departure time"
+msgstr "Čas odchodu:"
+
+#: app/FlightPage.qml:123
+#, fuzzy, kde-format
+#| msgid "Departure gate:"
+msgctxt "flight departure"
+msgid "Departure date"
+msgstr "Odletová brána:"
+
 #: app/FlightPage.qml:140 app/FlightPage.qml:186
 #, fuzzy, kde-format
 #| msgid "Terminal:"
@@ -1267,6 +1279,12 @@ msgstr "Brána"
 msgctxt "Flight arrival"
 msgid "Arrival"
 msgstr "Príchod"
+
+#: app/FlightPage.qml:169
+#, fuzzy, kde-format
+msgctxt "flight arrival"
+msgid "Arrival time"
+msgstr "Čas príchodu: %1"
 
 #: app/FormPlaceDelegate.qml:55
 #, kde-format
@@ -2919,43 +2937,43 @@ msgstr ""
 msgid "Show Pass"
 msgstr "Zobraziť názvy"
 
-#: app/publictransport.cpp:241 app/publictransport.cpp:268
+#: app/publictransport.cpp:153 app/publictransport.cpp:180
 #, kde-format
 msgid "Walk"
 msgstr ""
 
-#: app/publictransport.cpp:243
+#: app/publictransport.cpp:155
 #, fuzzy, kde-format
 msgid "Wait"
 msgstr "Čakanie"
 
-#: app/publictransport.cpp:252
+#: app/publictransport.cpp:164
 #, kde-format
 msgid "Rented bicycle"
 msgstr ""
 
-#: app/publictransport.cpp:254
+#: app/publictransport.cpp:166
 #, kde-format
 msgid "Rented moped"
 msgstr ""
 
-#: app/publictransport.cpp:256
+#: app/publictransport.cpp:168
 #, kde-format
 msgid "Rented kick scooter"
 msgstr ""
 
-#: app/publictransport.cpp:258
+#: app/publictransport.cpp:170
 #, fuzzy, kde-format
 #| msgid "Rental Car"
 msgid "Rented car"
 msgstr "Prenajaté auto"
 
-#: app/publictransport.cpp:264
+#: app/publictransport.cpp:176
 #, kde-format
 msgid "Bicycle"
 msgstr ""
 
-#: app/publictransport.cpp:266 app/StatisticsPage.qml:148
+#: app/publictransport.cpp:178 app/StatisticsPage.qml:148
 #, kde-format
 msgid "Car"
 msgstr "Auto"

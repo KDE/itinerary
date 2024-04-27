@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-24 00:39+0000\n"
+"POT-Creation-Date: 2024-04-27 00:38+0000\n"
 "PO-Revision-Date: 2024-02-17 12:41+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -451,8 +451,7 @@ msgstr "도착 터미널이 비어 있으면 안 됩니다."
 msgid "Boat Ticket"
 msgstr "선박 승차권"
 
-#: app/BoatPage.qml:59 app/BusPage.qml:68 app/FlightPage.qml:118
-#: app/TrainPage.qml:86
+#: app/BoatPage.qml:59 app/BusPage.qml:68 app/TrainPage.qml:86
 #, kde-format
 msgid "Departure time"
 msgstr "출발 시간"
@@ -463,8 +462,7 @@ msgctxt "Boat terminal"
 msgid "Terminal"
 msgstr "터미널"
 
-#: app/BoatPage.qml:89 app/BusPage.qml:133 app/FlightPage.qml:169
-#: app/TrainPage.qml:169
+#: app/BoatPage.qml:89 app/BusPage.qml:133 app/TrainPage.qml:169
 #, kde-format
 msgid "Arrival time"
 msgstr "도착 시간"
@@ -602,7 +600,7 @@ msgctxt "Bus departure"
 msgid "Departure"
 msgstr "출발"
 
-#: app/BusPage.qml:88 app/FlightPage.qml:123 app/TrainPage.qml:115
+#: app/BusPage.qml:88 app/TrainPage.qml:115
 #, kde-format
 msgid "Departure date"
 msgstr "출발 날짜"
@@ -1162,6 +1160,20 @@ msgctxt "Flight departure"
 msgid "Departure"
 msgstr "출발"
 
+#: app/FlightPage.qml:118
+#, fuzzy, kde-format
+#| msgid "Departure time"
+msgctxt "flight departure"
+msgid "Departure time"
+msgstr "출발 시간"
+
+#: app/FlightPage.qml:123
+#, fuzzy, kde-format
+#| msgid "Departure date"
+msgctxt "flight departure"
+msgid "Departure date"
+msgstr "출발 날짜"
+
 #: app/FlightPage.qml:140 app/FlightPage.qml:186
 #, kde-format
 msgid "Terminal"
@@ -1177,6 +1189,13 @@ msgstr "탑승구"
 msgctxt "Flight arrival"
 msgid "Arrival"
 msgstr "도착"
+
+#: app/FlightPage.qml:169
+#, fuzzy, kde-format
+#| msgid "Arrival time"
+msgctxt "flight arrival"
+msgid "Arrival time"
+msgstr "도착 시간"
 
 #: app/FormPlaceDelegate.qml:55
 #, kde-format
@@ -2758,42 +2777,42 @@ msgstr "프로그램 멤버십"
 msgid "Show Pass"
 msgstr "이름 표시"
 
-#: app/publictransport.cpp:241 app/publictransport.cpp:268
+#: app/publictransport.cpp:153 app/publictransport.cpp:180
 #, kde-format
 msgid "Walk"
 msgstr "걷기"
 
-#: app/publictransport.cpp:243
+#: app/publictransport.cpp:155
 #, kde-format
 msgid "Wait"
 msgstr "대기"
 
-#: app/publictransport.cpp:252
+#: app/publictransport.cpp:164
 #, kde-format
 msgid "Rented bicycle"
 msgstr "대여한 자전거"
 
-#: app/publictransport.cpp:254
+#: app/publictransport.cpp:166
 #, kde-format
 msgid "Rented moped"
 msgstr "대여한 모페드"
 
-#: app/publictransport.cpp:256
+#: app/publictransport.cpp:168
 #, kde-format
 msgid "Rented kick scooter"
 msgstr "대여한 킥 스쿠터"
 
-#: app/publictransport.cpp:258
+#: app/publictransport.cpp:170
 #, kde-format
 msgid "Rented car"
 msgstr "렌터카"
 
-#: app/publictransport.cpp:264
+#: app/publictransport.cpp:176
 #, kde-format
 msgid "Bicycle"
 msgstr "자전거"
 
-#: app/publictransport.cpp:266 app/StatisticsPage.qml:148
+#: app/publictransport.cpp:178 app/StatisticsPage.qml:148
 #, kde-format
 msgid "Car"
 msgstr "자동차"
