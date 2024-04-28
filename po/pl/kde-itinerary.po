@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-15 00:38+0000\n"
-"PO-Revision-Date: 2024-04-13 19:16+0200\n"
+"PO-Revision-Date: 2024-04-27 10:09+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -2729,10 +2729,9 @@ msgid "Valid until time has to be after the valid from time."
 msgstr "Prawidłowy czas do musi być przed prawidłowym czasem od."
 
 #: app/ProgramMembershipEditor.qml:127
-#, fuzzy, kde-format
-#| msgid "Scan Barcode"
+#, kde-format
 msgid "Barcode"
-msgstr "Zeskanuj kod paskowy"
+msgstr "Kod paskowy"
 
 #: app/ProgramMembershipPage.qml:17
 #, kde-format
@@ -3353,23 +3352,20 @@ msgid "Class"
 msgstr "Klasa"
 
 #: app/TicketTokenEditorCard.qml:58
-#, fuzzy, kde-format
-#| msgid "Ticket name"
+#, kde-format
 msgctxt "@title:group"
 msgid "Ticket Barcode"
-msgstr "Nazwa biletu"
+msgstr "Kod paskowy biletu"
 
 #: app/TicketTokenEditorCard.qml:68
-#, fuzzy, kde-format
-#| msgid "Delete Ticket"
+#, kde-format
 msgid "Select ticket"
-msgstr "Usuń bilet"
+msgstr "Wybierz bilet"
 
 #: app/TicketTokenEditorCard.qml:91
-#, fuzzy, kde-format
-#| msgid "Scan Barcode"
+#, kde-format
 msgid "Scan barcode…"
-msgstr "Zeskanuj kod paskowy"
+msgstr "Zeskanuj kod paskowy…"
 
 #: app/tickettokenmodel.cpp:74
 #, kde-format
