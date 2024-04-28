@@ -12,6 +12,7 @@ import Qt.labs.qmlmodels as Models
 import QtQuick.Dialogs
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.components as Components
+import org.kde.kpublictransport
 import org.kde.itinerary
 
 Kirigami.ScrollablePage {
@@ -94,7 +95,7 @@ Kirigami.ScrollablePage {
         },
         Kirigami.Action {
             text: i18n("Add ferry trip...")
-            icon.name: "qrc:///images/ferry.svg"
+            icon.name: LineMode.iconName(Line.Ferry)
             onTriggered: {
                 const dt = dateTimeAtIndex(currentIndex());
                 let res =  Factory.makeBoatReservation();

@@ -7,11 +7,12 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
+import org.kde.kpublictransport
 import org.kde.itinerary
 
 TimelineDelegate {
     id: root
-    headerIconSource: "qrc:///images/ferry.svg"
+    headerIconSource: root.departure.route.line.mode == Line.Unknown ?  LineMode.iconName(Line.Ferry) : root.departure.route.line.iconName
     headerItem: RowLayout {
         QQC2.Label {
             text: i18n("%1 to %2", reservationFor.departureBoatTerminal.name, reservationFor.arrivalBoatTerminal.name);

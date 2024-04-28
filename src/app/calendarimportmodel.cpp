@@ -13,6 +13,9 @@
 #include <KItinerary/Reservation>
 #include <KItinerary/Visit>
 
+#include <KPublicTransport/Line>
+#include <KPublicTransport/RentalVehicle>
+
 #include <QDebug>
 #include <QJsonArray>
 
@@ -89,16 +92,16 @@ QVariant CalendarImportModel::data(const QModelIndex &index, int role) const
             if (!ev.data.isEmpty()) {
                 const auto res = ev.data.at(0);
                 if (JsonLd::isA<FlightReservation>(res)) {
-                    return QStringLiteral("qrc:///images/flight.svg");
+                    return KPublicTransport::Line::modeIconName(KPublicTransport::Line::Air);
                 }
                 if (JsonLd::isA<TrainReservation>(res)) {
-                    return QStringLiteral("qrc:///images/train.svg");
+                    return KPublicTransport::Line::modeIconName(KPublicTransport::Line::Train);
                 }
                 if (JsonLd::isA<BusReservation>(res)) {
-                    return QStringLiteral("qrc:///images/bus.svg");
+                    return KPublicTransport::Line::modeIconName(KPublicTransport::Line::Bus);
                 }
                 if (JsonLd::isA<BoatReservation>(res)) {
-                    return QStringLiteral("qrc:///images/ferry.svg");
+                    return KPublicTransport::Line::modeIconName(KPublicTransport::Line::Ferry);
                 }
                 if (JsonLd::isA<LodgingReservation>(res)) {
                     return QStringLiteral("go-home-symbolic");
@@ -107,7 +110,7 @@ QVariant CalendarImportModel::data(const QModelIndex &index, int role) const
                     return QStringLiteral("qrc:///images/foodestablishment.svg");
                 }
                 if (JsonLd::isA<RentalCarReservation>(res)) {
-                    return QStringLiteral("qrc:///images/car.svg");
+                    return KPublicTransport::RentalVehicle::vehicleTypeIconName(KPublicTransport::RentalVehicle::Car);
                 }
             }
             return QStringLiteral("meeting-attending");

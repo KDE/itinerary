@@ -19,6 +19,7 @@
 #include <QSignalSpy>
 #include <QStandardPaths>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KItinerary;
 
 class CalendarImportModelTest : public QObject
@@ -56,7 +57,7 @@ private Q_SLOTS:
 
         idx = model.index(1, 0);
         QCOMPARE(idx.data(CalendarImportModel::TitleRole).toString(), QLatin1StringView("Train 241 from Visp to Randa"));
-        QCOMPARE(idx.data(CalendarImportModel::IconNameRole).toString(), QLatin1StringView("qrc:///images/train.svg"));
+        QVERIFY(idx.data(CalendarImportModel::IconNameRole).toString().contains(QRegularExpression(u"^qrc:///.*train.*\\.svg$"_s)));
         QCOMPARE(idx.data(CalendarImportModel::SelectedRole).toBool(), true);
         auto res = idx.data(CalendarImportModel::ReservationsRole)
                        .value<QList<QVariant>>();
@@ -82,7 +83,7 @@ private Q_SLOTS:
 
         idx = model.index(4, 0);
         QCOMPARE(idx.data(CalendarImportModel::TitleRole).toString(), QLatin1StringView("Randa -> Visp"));
-        QCOMPARE(idx.data(CalendarImportModel::IconNameRole).toString(), QLatin1StringView("qrc:///images/train.svg"));
+        QVERIFY(idx.data(CalendarImportModel::IconNameRole).toString().contains(QRegularExpression(u"^qrc:///.*train.*\\.svg$"_s)));
         QCOMPARE(idx.data(CalendarImportModel::SelectedRole).toBool(), true);
         res = idx.data(CalendarImportModel::ReservationsRole)
                   .value<QList<QVariant>>();
