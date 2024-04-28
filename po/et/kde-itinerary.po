@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-27 00:38+0000\n"
+"POT-Creation-Date: 2024-04-28 00:38+0000\n"
 "PO-Revision-Date: 2020-05-04 10:51+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -910,12 +910,12 @@ msgstr "Reserveeringule ei ole lisatud ühtegi dokumenti."
 msgid "Add Document..."
 msgstr "Lisa dokument ..."
 
-#: app/downloadjob.cpp:102
+#: app/downloadjob.cpp:146
 #, kde-format
 msgid "Network error: %1"
 msgstr ""
 
-#: app/downloadjob.cpp:133
+#: app/downloadjob.cpp:177
 #, fuzzy, kde-format
 #| msgid "Download"
 msgid "Download failed: %1"
@@ -2983,45 +2983,45 @@ msgstr ""
 msgid "Show Pass"
 msgstr "Näita pardakaarti"
 
-#: app/publictransport.cpp:153 app/publictransport.cpp:180
+#: app/publictransport.cpp:130 app/publictransport.cpp:157
 #, fuzzy, kde-format
 #| msgid "Walk (%1)"
 msgid "Walk"
 msgstr "Jaluta (%1)"
 
-#: app/publictransport.cpp:155
+#: app/publictransport.cpp:132
 #, fuzzy, kde-format
 #| msgid "Wait (%1)"
 msgid "Wait"
 msgstr "Oota (%1)"
 
-#: app/publictransport.cpp:164
+#: app/publictransport.cpp:141
 #, kde-format
 msgid "Rented bicycle"
 msgstr ""
 
-#: app/publictransport.cpp:166
+#: app/publictransport.cpp:143
 #, kde-format
 msgid "Rented moped"
 msgstr ""
 
-#: app/publictransport.cpp:168
+#: app/publictransport.cpp:145
 #, kde-format
 msgid "Rented kick scooter"
 msgstr ""
 
-#: app/publictransport.cpp:170
+#: app/publictransport.cpp:147
 #, fuzzy, kde-format
 #| msgid "Rental Car"
 msgid "Rented car"
 msgstr "Üüriauto"
 
-#: app/publictransport.cpp:176
+#: app/publictransport.cpp:153
 #, kde-format
 msgid "Bicycle"
 msgstr ""
 
-#: app/publictransport.cpp:178 app/StatisticsPage.qml:148
+#: app/publictransport.cpp:155 app/StatisticsPage.qml:148
 #, kde-format
 msgid "Car"
 msgstr "Auto"

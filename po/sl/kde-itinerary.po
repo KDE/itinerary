@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-27 00:38+0000\n"
-"PO-Revision-Date: 2024-04-24 07:23+0200\n"
+"POT-Creation-Date: 2024-04-28 00:38+0000\n"
+"PO-Revision-Date: 2024-04-27 06:48+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -841,12 +841,12 @@ msgstr "Ta rezervacija nima priloženih nobenih dokumentov."
 msgid "Add Document..."
 msgstr "Dodaj dokument..."
 
-#: app/downloadjob.cpp:102
+#: app/downloadjob.cpp:146
 #, kde-format
 msgid "Network error: %1"
 msgstr "Napaka omrežja: %1"
 
-#: app/downloadjob.cpp:133
+#: app/downloadjob.cpp:177
 #, kde-format
 msgid "Download failed: %1"
 msgstr "Prenos ni uspel: %1"
@@ -1170,15 +1170,13 @@ msgid "Departure"
 msgstr "Odhod"
 
 #: app/FlightPage.qml:118
-#, fuzzy, kde-format
-#| msgid "Departure time"
+#, kde-format
 msgctxt "flight departure"
 msgid "Departure time"
 msgstr "Čas odhoda"
 
 #: app/FlightPage.qml:123
-#, fuzzy, kde-format
-#| msgid "Departure date"
+#, kde-format
 msgctxt "flight departure"
 msgid "Departure date"
 msgstr "Datum odhoda"
@@ -1200,8 +1198,7 @@ msgid "Arrival"
 msgstr "Prihod"
 
 #: app/FlightPage.qml:169
-#, fuzzy, kde-format
-#| msgid "Arrival time"
+#, kde-format
 msgctxt "flight arrival"
 msgid "Arrival time"
 msgstr "Čas prihoda"
@@ -2784,42 +2781,42 @@ msgstr "Članstvo v programu"
 msgid "Show Pass"
 msgstr "Prikaži prepustnico"
 
-#: app/publictransport.cpp:153 app/publictransport.cpp:180
+#: app/publictransport.cpp:130 app/publictransport.cpp:157
 #, kde-format
 msgid "Walk"
 msgstr "Hoja"
 
-#: app/publictransport.cpp:155
+#: app/publictransport.cpp:132
 #, kde-format
 msgid "Wait"
 msgstr "Čakanje"
 
-#: app/publictransport.cpp:164
+#: app/publictransport.cpp:141
 #, kde-format
 msgid "Rented bicycle"
 msgstr "Najet bicikelj"
 
-#: app/publictransport.cpp:166
+#: app/publictransport.cpp:143
 #, kde-format
 msgid "Rented moped"
 msgstr "Najet moped"
 
-#: app/publictransport.cpp:168
+#: app/publictransport.cpp:145
 #, kde-format
 msgid "Rented kick scooter"
 msgstr "Najet skuter"
 
-#: app/publictransport.cpp:170
+#: app/publictransport.cpp:147
 #, kde-format
 msgid "Rented car"
 msgstr "Najet avto"
 
-#: app/publictransport.cpp:176
+#: app/publictransport.cpp:153
 #, kde-format
 msgid "Bicycle"
 msgstr "Bicikelj"
 
-#: app/publictransport.cpp:178 app/StatisticsPage.qml:148
+#: app/publictransport.cpp:155 app/StatisticsPage.qml:148
 #, kde-format
 msgid "Car"
 msgstr "Avto"

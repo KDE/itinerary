@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-27 00:38+0000\n"
+"POT-Creation-Date: 2024-04-28 00:38+0000\n"
 "PO-Revision-Date: 2019-03-18 03:34+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: lt\n"
@@ -838,12 +838,12 @@ msgstr ""
 msgid "Add Document..."
 msgstr ""
 
-#: app/downloadjob.cpp:102
+#: app/downloadjob.cpp:146
 #, kde-format
 msgid "Network error: %1"
 msgstr ""
 
-#: app/downloadjob.cpp:133
+#: app/downloadjob.cpp:177
 #, kde-format
 msgid "Download failed: %1"
 msgstr ""
@@ -2773,42 +2773,42 @@ msgstr ""
 msgid "Show Pass"
 msgstr ""
 
-#: app/publictransport.cpp:153 app/publictransport.cpp:180
+#: app/publictransport.cpp:130 app/publictransport.cpp:157
 #, kde-format
 msgid "Walk"
 msgstr ""
 
-#: app/publictransport.cpp:155
+#: app/publictransport.cpp:132
 #, kde-format
 msgid "Wait"
 msgstr ""
 
-#: app/publictransport.cpp:164
+#: app/publictransport.cpp:141
 #, kde-format
 msgid "Rented bicycle"
 msgstr ""
 
-#: app/publictransport.cpp:166
+#: app/publictransport.cpp:143
 #, kde-format
 msgid "Rented moped"
 msgstr ""
 
-#: app/publictransport.cpp:168
+#: app/publictransport.cpp:145
 #, kde-format
 msgid "Rented kick scooter"
 msgstr ""
 
-#: app/publictransport.cpp:170
+#: app/publictransport.cpp:147
 #, kde-format
 msgid "Rented car"
 msgstr ""
 
-#: app/publictransport.cpp:176
+#: app/publictransport.cpp:153
 #, kde-format
 msgid "Bicycle"
 msgstr ""
 
-#: app/publictransport.cpp:178 app/StatisticsPage.qml:148
+#: app/publictransport.cpp:155 app/StatisticsPage.qml:148
 #, kde-format
 msgid "Car"
 msgstr ""

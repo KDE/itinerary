@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-27 00:38+0000\n"
-"PO-Revision-Date: 2024-04-13 19:16+0200\n"
+"POT-Creation-Date: 2024-04-28 00:38+0000\n"
+"PO-Revision-Date: 2024-04-27 10:09+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -841,12 +841,12 @@ msgstr "Nie dołączono żadnych dokumentów do tej rezerwacji."
 msgid "Add Document..."
 msgstr "Dodaj dokument..."
 
-#: app/downloadjob.cpp:102
+#: app/downloadjob.cpp:146
 #, kde-format
 msgid "Network error: %1"
 msgstr "Błąd sieci: %1"
 
-#: app/downloadjob.cpp:133
+#: app/downloadjob.cpp:177
 #, kde-format
 msgid "Download failed: %1"
 msgstr "Nie udało się pobrać: %1"
@@ -2775,10 +2775,9 @@ msgid "Valid until time has to be after the valid from time."
 msgstr "Prawidłowy czas do musi być przed prawidłowym czasem od."
 
 #: app/ProgramMembershipEditor.qml:134
-#, fuzzy, kde-format
-#| msgid "Scan Barcode"
+#, kde-format
 msgid "Barcode"
-msgstr "Zeskanuj kod paskowy"
+msgstr "Kod paskowy"
 
 #: app/ProgramMembershipPage.qml:17
 #, kde-format
@@ -2790,42 +2789,42 @@ msgstr "Członkostwo w programie"
 msgid "Show Pass"
 msgstr "Pokaż wejściówkę"
 
-#: app/publictransport.cpp:153 app/publictransport.cpp:180
+#: app/publictransport.cpp:130 app/publictransport.cpp:157
 #, kde-format
 msgid "Walk"
 msgstr "Pieszo"
 
-#: app/publictransport.cpp:155
+#: app/publictransport.cpp:132
 #, kde-format
 msgid "Wait"
 msgstr "Oczekiwanie"
 
-#: app/publictransport.cpp:164
+#: app/publictransport.cpp:141
 #, kde-format
 msgid "Rented bicycle"
 msgstr "Rower z wypożyczalni"
 
-#: app/publictransport.cpp:166
+#: app/publictransport.cpp:143
 #, kde-format
 msgid "Rented moped"
 msgstr "Skuter z wypożyczalni"
 
-#: app/publictransport.cpp:168
+#: app/publictransport.cpp:145
 #, kde-format
 msgid "Rented kick scooter"
 msgstr "Hulajnoga z wypożyczalni"
 
-#: app/publictransport.cpp:170
+#: app/publictransport.cpp:147
 #, kde-format
 msgid "Rented car"
 msgstr "Samochód z wypożyczalni"
 
-#: app/publictransport.cpp:176
+#: app/publictransport.cpp:153
 #, kde-format
 msgid "Bicycle"
 msgstr "Rower"
 
-#: app/publictransport.cpp:178 app/StatisticsPage.qml:148
+#: app/publictransport.cpp:155 app/StatisticsPage.qml:148
 #, kde-format
 msgid "Car"
 msgstr "Samochód"
@@ -3399,23 +3398,20 @@ msgid "Class"
 msgstr "Klasa"
 
 #: app/TicketTokenEditorCard.qml:58
-#, fuzzy, kde-format
-#| msgid "Ticket name"
+#, kde-format
 msgctxt "@title:group"
 msgid "Ticket Barcode"
-msgstr "Nazwa biletu"
+msgstr "Kod paskowy biletu"
 
 #: app/TicketTokenEditorCard.qml:68
-#, fuzzy, kde-format
-#| msgid "Delete Ticket"
+#, kde-format
 msgid "Select ticket"
-msgstr "Usuń bilet"
+msgstr "Wybierz bilet"
 
 #: app/TicketTokenEditorCard.qml:91
-#, fuzzy, kde-format
-#| msgid "Scan Barcode"
+#, kde-format
 msgid "Scan barcode…"
-msgstr "Zeskanuj kod paskowy"
+msgstr "Zeskanuj kod paskowy…"
 
 #: app/tickettokenmodel.cpp:74
 #, kde-format

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-27 00:38+0000\n"
+"POT-Creation-Date: 2024-04-28 00:38+0000\n"
 "PO-Revision-Date: 2024-04-05 23:38+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -829,12 +829,12 @@ msgstr "這個預約沒有附加任何文件。"
 msgid "Add Document..."
 msgstr "新增文件..."
 
-#: app/downloadjob.cpp:102
+#: app/downloadjob.cpp:146
 #, kde-format
 msgid "Network error: %1"
 msgstr "網路錯誤：%1"
 
-#: app/downloadjob.cpp:133
+#: app/downloadjob.cpp:177
 #, kde-format
 msgid "Download failed: %1"
 msgstr "下載失敗：%1"
@@ -2774,42 +2774,42 @@ msgstr ""
 msgid "Show Pass"
 msgstr "顯示地圖"
 
-#: app/publictransport.cpp:153 app/publictransport.cpp:180
+#: app/publictransport.cpp:130 app/publictransport.cpp:157
 #, kde-format
 msgid "Walk"
 msgstr "步行"
 
-#: app/publictransport.cpp:155
+#: app/publictransport.cpp:132
 #, kde-format
 msgid "Wait"
 msgstr "等待"
 
-#: app/publictransport.cpp:164
+#: app/publictransport.cpp:141
 #, kde-format
 msgid "Rented bicycle"
 msgstr "租用的腳踏車"
 
-#: app/publictransport.cpp:166
+#: app/publictransport.cpp:143
 #, kde-format
 msgid "Rented moped"
 msgstr ""
 
-#: app/publictransport.cpp:168
+#: app/publictransport.cpp:145
 #, kde-format
 msgid "Rented kick scooter"
 msgstr ""
 
-#: app/publictransport.cpp:170
+#: app/publictransport.cpp:147
 #, kde-format
 msgid "Rented car"
 msgstr "租用的汽車"
 
-#: app/publictransport.cpp:176
+#: app/publictransport.cpp:153
 #, kde-format
 msgid "Bicycle"
 msgstr "腳踏車"
 
-#: app/publictransport.cpp:178 app/StatisticsPage.qml:148
+#: app/publictransport.cpp:155 app/StatisticsPage.qml:148
 #, kde-format
 msgid "Car"
 msgstr "汽車"

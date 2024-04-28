@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-27 00:38+0000\n"
+"POT-Creation-Date: 2024-04-28 00:38+0000\n"
 "PO-Revision-Date: 2024-04-24 11:23+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -838,12 +838,12 @@ msgstr "Ni hi ha documents adjunts en esta reserva."
 msgid "Add Document..."
 msgstr "Afig un document..."
 
-#: app/downloadjob.cpp:102
+#: app/downloadjob.cpp:146
 #, kde-format
 msgid "Network error: %1"
 msgstr "S'ha produït un error de la xarxa: %1"
 
-#: app/downloadjob.cpp:133
+#: app/downloadjob.cpp:177
 #, kde-format
 msgid "Download failed: %1"
 msgstr "Ha fallat la baixada: %1"
@@ -2783,42 +2783,42 @@ msgstr "Programa d'afiliació"
 msgid "Show Pass"
 msgstr "Mostra el passe"
 
-#: app/publictransport.cpp:153 app/publictransport.cpp:180
+#: app/publictransport.cpp:130 app/publictransport.cpp:157
 #, kde-format
 msgid "Walk"
 msgstr "Caminar"
 
-#: app/publictransport.cpp:155
+#: app/publictransport.cpp:132
 #, kde-format
 msgid "Wait"
 msgstr "Esperar"
 
-#: app/publictransport.cpp:164
+#: app/publictransport.cpp:141
 #, kde-format
 msgid "Rented bicycle"
 msgstr "Bicicleta llogada"
 
-#: app/publictransport.cpp:166
+#: app/publictransport.cpp:143
 #, kde-format
 msgid "Rented moped"
 msgstr "Ciclomotor llogat"
 
-#: app/publictransport.cpp:168
+#: app/publictransport.cpp:145
 #, kde-format
 msgid "Rented kick scooter"
 msgstr "Patinet elèctric llogat"
 
-#: app/publictransport.cpp:170
+#: app/publictransport.cpp:147
 #, kde-format
 msgid "Rented car"
 msgstr "Cotxe llogat"
 
-#: app/publictransport.cpp:176
+#: app/publictransport.cpp:153
 #, kde-format
 msgid "Bicycle"
 msgstr "Bicicleta"
 
-#: app/publictransport.cpp:178 app/StatisticsPage.qml:148
+#: app/publictransport.cpp:155 app/StatisticsPage.qml:148
 #, kde-format
 msgid "Car"
 msgstr "Cotxe"
