@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-28 00:38+0000\n"
+"POT-Creation-Date: 2024-04-29 00:39+0000\n"
 "PO-Revision-Date: 2023-08-25 18:06+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -127,7 +127,7 @@ msgstr "Exportera..."
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
 #: app/HealthCertificatePage.qml:52 app/HealthCertificatePage.qml:66
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:168
-#: app/TicketPage.qml:47 app/TicketPage.qml:171 app/TimelinePage.qml:206
+#: app/TicketPage.qml:47 app/TicketPage.qml:171 app/TimelinePage.qml:207
 #, kde-format
 msgid "Delete"
 msgstr "Ta bort"
@@ -142,17 +142,17 @@ msgstr "Ta bort händelse"
 msgid "Do you really want to delete this event?"
 msgstr "Vill du verkligen ta bort evenemanget?"
 
-#: app/ActionsCard.qml:137 app/TimelinePage.qml:220
+#: app/ActionsCard.qml:137 app/TimelinePage.qml:221
 #, kde-format
 msgid "Export"
 msgstr "Exportera"
 
-#: app/ActionsCard.qml:140 app/TimelinePage.qml:223
+#: app/ActionsCard.qml:140 app/TimelinePage.qml:224
 #, kde-format
 msgid "As Itinerary file..."
 msgstr "Som resplanefil..."
 
-#: app/ActionsCard.qml:151 app/TimelinePage.qml:247
+#: app/ActionsCard.qml:151 app/TimelinePage.qml:248
 #, kde-format
 msgid "Send to %1"
 msgstr "Skicka till %1"
@@ -163,7 +163,7 @@ msgstr "Skicka till %1"
 msgid "Export Reservation"
 msgstr "Importera bokning"
 
-#: app/ActionsCard.qml:167 app/TimelinePage.qml:263
+#: app/ActionsCard.qml:167 app/TimelinePage.qml:264
 #, kde-format
 msgid "Itinerary file (*.itinerary)"
 msgstr "Resplanefil (*.itinerary)"
@@ -372,23 +372,23 @@ msgstr "Ingen kamera tillgänglig."
 msgid "Light"
 msgstr "Ljus"
 
-#: app/BoatDelegate.qml:17 app/BusDelegate.qml:33 app/TrainDelegate.qml:34
+#: app/BoatDelegate.qml:18 app/BusDelegate.qml:33 app/TrainDelegate.qml:34
 #: app/TrainPage.qml:58 app/TransferDelegate.qml:61
 #, kde-format
 msgid "%1 to %2"
 msgstr "%1 till %2"
 
-#: app/BoatDelegate.qml:32
+#: app/BoatDelegate.qml:33
 #, kde-format
 msgid "From: %1"
 msgstr "Från: %1"
 
-#: app/BoatDelegate.qml:46
+#: app/BoatDelegate.qml:47
 #, kde-format
 msgid "To: %1"
 msgstr "Till: %1"
 
-#: app/BoatDelegate.qml:57
+#: app/BoatDelegate.qml:58
 #, kde-format
 msgid "Arrival time: %1"
 msgstr "Ankomsttid: %1"
@@ -994,7 +994,7 @@ msgid "Export Favorite Locations"
 msgstr "Exportera favoritplatser"
 
 #: app/FavoriteLocationPage.qml:38 app/FavoriteLocationPage.qml:46
-#: app/TimelinePage.qml:281
+#: app/TimelinePage.qml:282
 #, kde-format
 msgid "GPX Files (*.gpx)"
 msgstr "GPX-filer (*.gpx)"
@@ -3450,78 +3450,78 @@ msgstr "Deltagare %1"
 msgid "Traveler %1"
 msgstr "Resande %1"
 
-#: app/TimelinePage.qml:19
+#: app/TimelinePage.qml:20
 #, kde-format
 msgid "My Itinerary"
 msgstr "Min resplan"
 
-#: app/TimelinePage.qml:89
+#: app/TimelinePage.qml:90
 #, kde-format
 msgid "Add train trip..."
 msgstr "Lägg till tågresa..."
 
-#: app/TimelinePage.qml:96
+#: app/TimelinePage.qml:97
 #, kde-format
 msgid "Add ferry trip..."
 msgstr "Lägg till färjeresa..."
 
-#: app/TimelinePage.qml:108
+#: app/TimelinePage.qml:109
 #, kde-format
 msgid "Add accommodation..."
 msgstr "Lägg till boende..."
 
-#: app/TimelinePage.qml:119
+#: app/TimelinePage.qml:120
 #, kde-format
 msgid "Add event..."
 msgstr "Lägg till händelse..."
 
-#: app/TimelinePage.qml:131
+#: app/TimelinePage.qml:132
 #, kde-format
 msgid "Add restaurant..."
 msgstr "Lägg till restaurant..."
 
-#: app/TimelinePage.qml:153
+#: app/TimelinePage.qml:154
 #, fuzzy, kde-format
 #| msgid "Go To Now"
 msgctxt "@action:button"
 msgid "Go To Now"
 msgstr "Gå till aktuell tid"
 
-#: app/TimelinePage.qml:159
+#: app/TimelinePage.qml:160
 #, fuzzy, kde-format
 #| msgid "Add train trip..."
 msgctxt "@action:button"
 msgid "Add trip"
 msgstr "Lägg till tågresa..."
 
-#: app/TimelinePage.qml:169
+#: app/TimelinePage.qml:170
 #, fuzzy, kde-format
 #| msgid "Add ferry trip..."
 msgctxt "@title:group"
 msgid "Add New Trip"
 msgstr "Lägg till färjeresa..."
 
-#: app/TimelinePage.qml:199
+#: app/TimelinePage.qml:200
 #, kde-format
 msgid "Delete Trip"
 msgstr "Ta bort resa"
 
-#: app/TimelinePage.qml:200
+#: app/TimelinePage.qml:201
 #, kde-format
 msgid "Do you really want to delete this trip?"
 msgstr "Vill du verkligen ta bort resan?"
 
-#: app/TimelinePage.qml:232
+#: app/TimelinePage.qml:233
 #, kde-format
 msgid "As GPX file..."
 msgstr "Som GPX-fil..."
 
-#: app/TimelinePage.qml:262 app/TimelinePage.qml:279
+#: app/TimelinePage.qml:263 app/TimelinePage.qml:280
 #, kde-format
 msgid "Export Trip"
 msgstr "Exportera resa"
 
-#: app/TimelinePage.qml:461
+#: app/TimelinePage.qml:462
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Ingenting i resplanen idag."

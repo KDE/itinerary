@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-28 00:38+0000\n"
+"POT-Creation-Date: 2024-04-29 00:39+0000\n"
 "PO-Revision-Date: 2020-05-04 10:51+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -131,7 +131,7 @@ msgstr "Ekspordi ..."
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
 #: app/HealthCertificatePage.qml:52 app/HealthCertificatePage.qml:66
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:168
-#: app/TicketPage.qml:47 app/TicketPage.qml:171 app/TimelinePage.qml:206
+#: app/TicketPage.qml:47 app/TicketPage.qml:171 app/TimelinePage.qml:207
 #, kde-format
 msgid "Delete"
 msgstr "Kustuta"
@@ -147,19 +147,19 @@ msgstr "Kustuta dokument"
 msgid "Do you really want to delete this event?"
 msgstr "Kas tõesti kustutada see sündmus?"
 
-#: app/ActionsCard.qml:137 app/TimelinePage.qml:220
+#: app/ActionsCard.qml:137 app/TimelinePage.qml:221
 #, fuzzy, kde-format
 #| msgid "Export..."
 msgid "Export"
 msgstr "Ekspordi ..."
 
-#: app/ActionsCard.qml:140 app/TimelinePage.qml:223
+#: app/ActionsCard.qml:140 app/TimelinePage.qml:224
 #, fuzzy, kde-format
 #| msgid "My Itinerary"
 msgid "As Itinerary file..."
 msgstr "Minu itineraar"
 
-#: app/ActionsCard.qml:151 app/TimelinePage.qml:247
+#: app/ActionsCard.qml:151 app/TimelinePage.qml:248
 #, fuzzy, kde-format
 #| msgid "End time: %1"
 msgid "Send to %1"
@@ -171,7 +171,7 @@ msgstr "Lõpuaeg: %1"
 msgid "Export Reservation"
 msgstr "Reserveeringu import"
 
-#: app/ActionsCard.qml:167 app/TimelinePage.qml:263
+#: app/ActionsCard.qml:167 app/TimelinePage.qml:264
 #, fuzzy, kde-format
 #| msgid "KDE Itinerary files (*.itinerary)"
 msgid "Itinerary file (*.itinerary)"
@@ -397,23 +397,23 @@ msgstr "Sõiduki struktuuriteavet ei ole saada."
 msgid "Light"
 msgstr "Lend"
 
-#: app/BoatDelegate.qml:17 app/BusDelegate.qml:33 app/TrainDelegate.qml:34
+#: app/BoatDelegate.qml:18 app/BusDelegate.qml:33 app/TrainDelegate.qml:34
 #: app/TrainPage.qml:58 app/TransferDelegate.qml:61
 #, kde-format
 msgid "%1 to %2"
 msgstr "Asukohast %1 asukohta %2"
 
-#: app/BoatDelegate.qml:32
+#: app/BoatDelegate.qml:33
 #, kde-format
 msgid "From: %1"
 msgstr "Asukohast: %1"
 
-#: app/BoatDelegate.qml:46
+#: app/BoatDelegate.qml:47
 #, kde-format
 msgid "To: %1"
 msgstr "Asukohta: %1"
 
-#: app/BoatDelegate.qml:57
+#: app/BoatDelegate.qml:58
 #, kde-format
 msgid "Arrival time: %1"
 msgstr "Saabumisaeg: %1"
@@ -1072,7 +1072,7 @@ msgid "Export Favorite Locations"
 msgstr "Lemmikasukohad"
 
 #: app/FavoriteLocationPage.qml:38 app/FavoriteLocationPage.qml:46
-#: app/TimelinePage.qml:281
+#: app/TimelinePage.qml:282
 #, fuzzy, kde-format
 #| msgid "PDF files (*.pdf)"
 msgid "GPX Files (*.gpx)"
@@ -3635,84 +3635,84 @@ msgstr "Osaleja %1"
 msgid "Traveler %1"
 msgstr "Reisija %1"
 
-#: app/TimelinePage.qml:19
+#: app/TimelinePage.qml:20
 #, kde-format
 msgid "My Itinerary"
 msgstr "Minu itineraar"
 
-#: app/TimelinePage.qml:89
+#: app/TimelinePage.qml:90
 #, fuzzy, kde-format
 #| msgid "Add transfer after"
 msgid "Add train trip..."
 msgstr "Lisa järgnev transfeer"
 
-#: app/TimelinePage.qml:96
+#: app/TimelinePage.qml:97
 #, fuzzy, kde-format
 #| msgid "Add transfer after"
 msgid "Add ferry trip..."
 msgstr "Lisa järgnev transfeer"
 
-#: app/TimelinePage.qml:108
+#: app/TimelinePage.qml:109
 #, kde-format
 msgid "Add accommodation..."
 msgstr ""
 
-#: app/TimelinePage.qml:119
+#: app/TimelinePage.qml:120
 #, fuzzy, kde-format
 #| msgid "Add Document..."
 msgid "Add event..."
 msgstr "Lisa dokument ..."
 
-#: app/TimelinePage.qml:131
+#: app/TimelinePage.qml:132
 #, fuzzy, kde-format
 #| msgid "Add transfer after"
 msgid "Add restaurant..."
 msgstr "Lisa järgnev transfeer"
 
-#: app/TimelinePage.qml:153
+#: app/TimelinePage.qml:154
 #, kde-format
 msgctxt "@action:button"
 msgid "Go To Now"
 msgstr ""
 
-#: app/TimelinePage.qml:159
+#: app/TimelinePage.qml:160
 #, fuzzy, kde-format
 #| msgid "Add transfer after"
 msgctxt "@action:button"
 msgid "Add trip"
 msgstr "Lisa järgnev transfeer"
 
-#: app/TimelinePage.qml:169
+#: app/TimelinePage.qml:170
 #, fuzzy, kde-format
 #| msgid "Add transfer after"
 msgctxt "@title:group"
 msgid "Add New Trip"
 msgstr "Lisa järgnev transfeer"
 
-#: app/TimelinePage.qml:199
+#: app/TimelinePage.qml:200
 #, fuzzy, kde-format
 #| msgid "Event Ticket"
 msgid "Delete Trip"
 msgstr "Sündmuse pilet"
 
-#: app/TimelinePage.qml:200
+#: app/TimelinePage.qml:201
 #, fuzzy, kde-format
 #| msgid "Do you really want to delete this event?"
 msgid "Do you really want to delete this trip?"
 msgstr "Kas tõesti kustutada see sündmus?"
 
-#: app/TimelinePage.qml:232
+#: app/TimelinePage.qml:233
 #, kde-format
 msgid "As GPX file..."
 msgstr ""
 
-#: app/TimelinePage.qml:262 app/TimelinePage.qml:279
+#: app/TimelinePage.qml:263 app/TimelinePage.qml:280
 #, fuzzy, kde-format
 #| msgid "Export..."
 msgid "Export Trip"
 msgstr "Ekspordi ..."
 
-#: app/TimelinePage.qml:461
+#: app/TimelinePage.qml:462
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Tänaseks ei ole itineraaris midagi."

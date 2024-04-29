@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-28 00:38+0000\n"
+"POT-Creation-Date: 2024-04-29 00:39+0000\n"
 "PO-Revision-Date: 2024-04-24 06:58+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -127,7 +127,7 @@ msgstr "გატანა..."
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
 #: app/HealthCertificatePage.qml:52 app/HealthCertificatePage.qml:66
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:168
-#: app/TicketPage.qml:47 app/TicketPage.qml:171 app/TimelinePage.qml:206
+#: app/TicketPage.qml:47 app/TicketPage.qml:171 app/TimelinePage.qml:207
 #, kde-format
 msgid "Delete"
 msgstr "წაშლა"
@@ -142,17 +142,17 @@ msgstr "მოვლენის წაშლა"
 msgid "Do you really want to delete this event?"
 msgstr "მართლა გნებავთ ამ მოვლენის წაშლა?"
 
-#: app/ActionsCard.qml:137 app/TimelinePage.qml:220
+#: app/ActionsCard.qml:137 app/TimelinePage.qml:221
 #, kde-format
 msgid "Export"
 msgstr "გატანა"
 
-#: app/ActionsCard.qml:140 app/TimelinePage.qml:223
+#: app/ActionsCard.qml:140 app/TimelinePage.qml:224
 #, kde-format
 msgid "As Itinerary file..."
 msgstr "როგორც Itinerary-ის ფაილი..."
 
-#: app/ActionsCard.qml:151 app/TimelinePage.qml:247
+#: app/ActionsCard.qml:151 app/TimelinePage.qml:248
 #, kde-format
 msgid "Send to %1"
 msgstr "%1-სთან გაგზავნა"
@@ -162,7 +162,7 @@ msgstr "%1-სთან გაგზავნა"
 msgid "Export Reservation"
 msgstr "ჯავშნის გატანა"
 
-#: app/ActionsCard.qml:167 app/TimelinePage.qml:263
+#: app/ActionsCard.qml:167 app/TimelinePage.qml:264
 #, kde-format
 msgid "Itinerary file (*.itinerary)"
 msgstr "Itinerary-ის ფაილი (*.itinerary)"
@@ -368,23 +368,23 @@ msgstr "კამერა მიუწვდომელია."
 msgid "Light"
 msgstr "ღია"
 
-#: app/BoatDelegate.qml:17 app/BusDelegate.qml:33 app/TrainDelegate.qml:34
+#: app/BoatDelegate.qml:18 app/BusDelegate.qml:33 app/TrainDelegate.qml:34
 #: app/TrainPage.qml:58 app/TransferDelegate.qml:61
 #, kde-format
 msgid "%1 to %2"
 msgstr "%1 %2-მდე"
 
-#: app/BoatDelegate.qml:32
+#: app/BoatDelegate.qml:33
 #, kde-format
 msgid "From: %1"
 msgstr "გამომგზავნი: %1"
 
-#: app/BoatDelegate.qml:46
+#: app/BoatDelegate.qml:47
 #, kde-format
 msgid "To: %1"
 msgstr "სადამდე: %1"
 
-#: app/BoatDelegate.qml:57
+#: app/BoatDelegate.qml:58
 #, kde-format
 msgid "Arrival time: %1"
 msgstr "ჩამოსვლის დრო: %1"
@@ -981,7 +981,7 @@ msgid "Export Favorite Locations"
 msgstr "ადგილის სანიშნების გატანა"
 
 #: app/FavoriteLocationPage.qml:38 app/FavoriteLocationPage.qml:46
-#: app/TimelinePage.qml:281
+#: app/TimelinePage.qml:282
 #, kde-format
 msgid "GPX Files (*.gpx)"
 msgstr "GPX ფაილები (*.gpx)"
@@ -3408,75 +3408,75 @@ msgstr "დამსწრე %1"
 msgid "Traveler %1"
 msgstr "მოგზაური %1"
 
-#: app/TimelinePage.qml:19
+#: app/TimelinePage.qml:20
 #, kde-format
 msgid "My Itinerary"
 msgstr "ჩემი მარშრუტი"
 
-#: app/TimelinePage.qml:89
+#: app/TimelinePage.qml:90
 #, kde-format
 msgid "Add train trip..."
 msgstr "მატარებლით მოგზაურობის დამატება..."
 
-#: app/TimelinePage.qml:96
+#: app/TimelinePage.qml:97
 #, kde-format
 msgid "Add ferry trip..."
 msgstr "ბორნით მოგზაურობის დამატება..."
 
-#: app/TimelinePage.qml:108
+#: app/TimelinePage.qml:109
 #, kde-format
 msgid "Add accommodation..."
 msgstr "აკომოდაციის დამატება..."
 
-#: app/TimelinePage.qml:119
+#: app/TimelinePage.qml:120
 #, kde-format
 msgid "Add event..."
 msgstr "მოვლენის დამატება..."
 
-#: app/TimelinePage.qml:131
+#: app/TimelinePage.qml:132
 #, kde-format
 msgid "Add restaurant..."
 msgstr "რესტორნის დამატება..."
 
-#: app/TimelinePage.qml:153
+#: app/TimelinePage.qml:154
 #, kde-format
 msgctxt "@action:button"
 msgid "Go To Now"
 msgstr "ახლავე გადასვლა"
 
-#: app/TimelinePage.qml:159
+#: app/TimelinePage.qml:160
 #, kde-format
 msgctxt "@action:button"
 msgid "Add trip"
 msgstr "მოგზაურობის დამატება"
 
-#: app/TimelinePage.qml:169
+#: app/TimelinePage.qml:170
 #, kde-format
 msgctxt "@title:group"
 msgid "Add New Trip"
 msgstr "ახალი მოგზაურობის დამატება"
 
-#: app/TimelinePage.qml:199
+#: app/TimelinePage.qml:200
 #, kde-format
 msgid "Delete Trip"
 msgstr "მოგზაურობის წაშლა"
 
-#: app/TimelinePage.qml:200
+#: app/TimelinePage.qml:201
 #, kde-format
 msgid "Do you really want to delete this trip?"
 msgstr "მართლა გნებავთ ამ მოგზაურობის წაშლა?"
 
-#: app/TimelinePage.qml:232
+#: app/TimelinePage.qml:233
 #, kde-format
 msgid "As GPX file..."
 msgstr "GPX ფაილის სახით..."
 
-#: app/TimelinePage.qml:262 app/TimelinePage.qml:279
+#: app/TimelinePage.qml:263 app/TimelinePage.qml:280
 #, kde-format
 msgid "Export Trip"
 msgstr "მოგზაურობის გატანა"
 
-#: app/TimelinePage.qml:461
+#: app/TimelinePage.qml:462
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "მოგზაურობისთვის დღეს არაფერი გაქვთ გასაკეთებელი."
