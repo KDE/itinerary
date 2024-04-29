@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-15 00:38+0000\n"
-"PO-Revision-Date: 2024-04-07 17:09+0100\n"
+"PO-Revision-Date: 2024-04-28 06:29+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -411,12 +411,12 @@ msgstr "Foriro"
 #, kde-format
 msgctxt "Boat departure"
 msgid "Departure Time"
-msgstr "Foriro Tempo"
+msgstr "Forira Horo"
 
 #: app/BoatEditor.qml:68
 #, kde-format
 msgid "Departure time has to be set."
-msgstr "La foriro tempo devas esti fiksita."
+msgstr "La forirhoro devas esti fiksita."
 
 #: app/BoatEditor.qml:73 app/BoatEditor.qml:114
 #, kde-format
@@ -439,7 +439,7 @@ msgstr "Alveno"
 #, kde-format
 msgctxt "Boat arrival"
 msgid "Arrival Time"
-msgstr "Alvena Tempo"
+msgstr "Alvena Horo"
 
 #: app/BoatEditor.qml:107
 #, kde-format
@@ -460,7 +460,7 @@ msgstr "Ŝipa Bileto"
 #: app/TrainPage.qml:86
 #, kde-format
 msgid "Departure time"
-msgstr "Forirtempo"
+msgstr "Forira horo"
 
 #: app/BoatPage.qml:66 app/BoatPage.qml:96
 #, kde-format
@@ -611,7 +611,7 @@ msgstr "Foriro"
 #: app/BusPage.qml:88 app/FlightPage.qml:123 app/TrainPage.qml:115
 #, kde-format
 msgid "Departure date"
-msgstr "Dato de foriro"
+msgstr "Ekflugdato"
 
 #: app/BusPage.qml:96 app/BusPage.qml:157
 #, kde-format
@@ -1084,7 +1084,7 @@ msgstr "Terminalo"
 #, kde-format
 msgctxt "flight departure time"
 msgid "Time"
-msgstr "Forirtempo"
+msgstr "Tempo"
 
 #: app/FlightEditor.qml:98
 #, kde-format
@@ -2720,10 +2720,9 @@ msgid "Valid until time has to be after the valid from time."
 msgstr "Valida ĝis tempo devas esti post la valida de tempo."
 
 #: app/ProgramMembershipEditor.qml:127
-#, fuzzy, kde-format
-#| msgid "Scan Barcode"
+#, kde-format
 msgid "Barcode"
-msgstr "Skani Strekkodon"
+msgstr "Strekkodo"
 
 #: app/ProgramMembershipPage.qml:17
 #, kde-format
@@ -3341,23 +3340,20 @@ msgid "Class"
 msgstr "Klaso"
 
 #: app/TicketTokenEditorCard.qml:58
-#, fuzzy, kde-format
-#| msgid "Ticket name"
+#, kde-format
 msgctxt "@title:group"
 msgid "Ticket Barcode"
-msgstr "Nomo de bileto"
+msgstr "Bileta Strekkodo"
 
 #: app/TicketTokenEditorCard.qml:68
-#, fuzzy, kde-format
-#| msgid "Delete Ticket"
+#, kde-format
 msgid "Select ticket"
-msgstr "Forigi Bileton"
+msgstr "Elekti bileton"
 
 #: app/TicketTokenEditorCard.qml:91
-#, fuzzy, kde-format
-#| msgid "Scan Barcode"
+#, kde-format
 msgid "Scan barcode…"
-msgstr "Skani Strekkodon"
+msgstr "Skani strekkodon…"
 
 #: app/tickettokenmodel.cpp:74
 #, kde-format
