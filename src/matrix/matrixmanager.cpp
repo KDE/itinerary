@@ -5,7 +5,6 @@
 
 #include <Quotient/accountregistry.h>
 #include <Quotient/room.h>
-#include <Quotient/qt_connection_util.h>
 #include "Quotient/settings.h"
 
 #include <KLocalizedString>
@@ -22,10 +21,10 @@ MatrixManager::MatrixManager(QObject *parent)
         Q_EMIT userIdChanged();
         Q_EMIT connectionChanged();
         setInfoString(i18n("Syncing…"));
-        connectSingleShot(Accounts.accounts()[0], &Connection::syncDone, this, [this](){
+        connect(Accounts.accounts()[0], &Connection::syncDone, this, [this](){
             setInfoString({});
             Accounts.accounts()[0]->stopSync();
-        });
+        }, Qt::SingleShotConnection);
     });
     connect(&Accounts, &AccountRegistry::rowsRemoved, this, [this](){
         Q_EMIT connectedChanged();
@@ -38,13 +37,13 @@ void MatrixManager::login(const QString &matrixId, const QString &password)
 {
     auto connection = new Connection(this);
     connection->resolveServer(matrixId);
-    connectSingleShot(connection, &Connection::loginFlowsChanged, this, [this, connection, matrixId, password](){
+    connect(connection, &Connection::loginFlowsChanged, this, [this, connection, matrixId, password](){
         if (!connection->supportsPasswordAuth()) {
             setInfoString(i18n("This server does not support logging in using a password"));
         }
         auto username = matrixId.mid(1, matrixId.indexOf(QLatin1Char(':')) - 1);
         connection->loginWithPassword(username, password, qAppName(), {});
-    });
+    }, Qt::SingleShotConnection);
 
     connect(connection, &Connection::connected, this, [this, connection] {
         AccountSettings account(connection->userId());
@@ -56,10 +55,10 @@ void MatrixManager::login(const QString &matrixId, const QString &password)
         Q_EMIT connectedChanged();
 
         setInfoString(i18n("Syncing…"));
-        connectSingleShot(connection, &Connection::syncDone, this, [connection, this](){
+        connect(connection, &Connection::syncDone, this, [connection, this](){
             connection->stopSync();
             setInfoString({});
-        });
+        }, Qt::SingleShotConnection);
     });
 
     connect(connection, &Connection::loginError, this, [this](const QString &message) {
@@ -108,9 +107,9 @@ void MatrixManager::sync()
     auto connection = Accounts.accounts()[0];
     connection->sync();
     setInfoString(i18n("Syncing…"));
-    connectSingleShot(connection, &Connection::syncDone, this, [this](){
+    connect(connection, &Connection::syncDone, this, [this](){
         setInfoString({});
-    });
+    }, Qt::SingleShotConnection);
 }
 
 void MatrixManager::postEvent(const QString &roomId, const QString &type, const QJsonObject &content)
