@@ -95,7 +95,7 @@ ecm_find_qmlmodule(org.kde.kopeninghours 24.02 REQUIRED)
 # runtime dependencies are build-time dependencies on Android
 if (ANDROID)
     find_package(Qt6 REQUIRED COMPONENTS Svg)
-    find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS Archive Kirigami2 Prison)
+    find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS Archive Kirigami Prison)
     if (NOT DEFINED BREEZEICONS_DIR AND EXISTS ${CMAKE_SOURCE_DIR}/../breeze-icons)
         set(BREEZEICONS_DIR ${CMAKE_SOURCE_DIR}/../breeze-icons)
     endif()

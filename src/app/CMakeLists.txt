@@ -252,7 +252,7 @@ if (ANDROID)
     # so androiddeployqt picks them up
     target_link_libraries(itinerary-app PRIVATE
         KF6::Archive
-        KF6::Kirigami2
+        KF6::Kirigami
         Qt::Svg
         Qt::CorePrivate
         KF6::Prison
