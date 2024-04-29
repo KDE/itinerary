@@ -348,7 +348,7 @@ int main(int argc, char **argv)
     KCrash::initialize();
 #endif
 
-#ifndef Q_OS_ANDROID
+#if !defined(Q_OS_ANDROID) && !defined(Q_OS_HAIKU)
     KDBusService service(KDBusService::Unique);
 #endif
 
@@ -438,7 +438,7 @@ int main(int argc, char **argv)
     appController.setLiveDataManager(&liveDataMgr);
     appController.setTripGroupManager(&tripGroupMgr);
     appController.setPassManager(&passMgr);
-#ifndef Q_OS_ANDROID
+#if !defined(Q_OS_ANDROID) && !defined(Q_OS_HAIKU)
     QObject::connect(&service, &KDBusService::activateRequested, [&](const QStringList &args, const QString &workingDir) {
         qCDebug(Log) << "remote activation" << args << workingDir;
         if (!args.isEmpty()) {
