@@ -239,10 +239,11 @@ void ApplicationController::importFromIntent(const KAndroidExtras::Intent &inten
             msg.contentType()->setMimeType(type.toUtf8());
             msg.setBody(text.toUtf8());
         } else {
+            msg.contentType()->setMimeType("multipart/mixed");
             auto body = new KMime::Content;
             body->contentType()->setMimeType(type.toUtf8());
             body->setBody(text.toUtf8());
-            msg.addContent(body);
+            msg.appendContent(body);
             for (const auto &a : attachments) {
                 QUrl attUrl(a);
                 auto att = new KMime::Content;
@@ -256,7 +257,7 @@ void ApplicationController::importFromIntent(const KAndroidExtras::Intent &inten
                     continue;
                 }
                 att->setBody(f.readAll());
-                msg.addContent(att);
+                msg.appendContent(att);
             }
         }
 
