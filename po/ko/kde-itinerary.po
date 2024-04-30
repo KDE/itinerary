@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-29 00:39+0000\n"
+"POT-Creation-Date: 2024-04-30 00:39+0000\n"
 "PO-Revision-Date: 2024-02-17 12:41+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -272,69 +272,69 @@ msgstr "기존 예약을 새로 선택한 여정으로 대체하시겠습니까?
 msgid "Replace"
 msgstr "바꾸기"
 
-#: app/applicationcontroller.cpp:341 app/applicationcontroller.cpp:746
-#: app/applicationcontroller.cpp:761
+#: app/applicationcontroller.cpp:342 app/applicationcontroller.cpp:747
+#: app/applicationcontroller.cpp:762
 #, kde-format
 msgid "Import failed: %1"
 msgstr "가져오기 실패: %1"
 
-#: app/applicationcontroller.cpp:346
+#: app/applicationcontroller.cpp:347
 #, kde-format
 msgid "Import failed: File too large."
 msgstr "가져오기 실패: 파일이 너무 큽니다."
 
-#: app/applicationcontroller.cpp:428 app/applicationcontroller.cpp:823
-#: app/applicationcontroller.cpp:833
+#: app/applicationcontroller.cpp:429 app/applicationcontroller.cpp:824
+#: app/applicationcontroller.cpp:834
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] "예약 %1건을 가져왔습니다."
 
-#: app/applicationcontroller.cpp:435
+#: app/applicationcontroller.cpp:436
 #, kde-format
 msgid "Health certificate imported."
 msgstr "건강 증명서를 가져왔습니다."
 
-#: app/applicationcontroller.cpp:450
+#: app/applicationcontroller.cpp:451
 #, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
 msgstr[0] "패스 %1개를 가져왔습니다."
 
-#: app/applicationcontroller.cpp:453
+#: app/applicationcontroller.cpp:454
 #, kde-format
 msgid "Pass imported."
 msgstr "패스를 가져왔습니다."
 
-#: app/applicationcontroller.cpp:490
+#: app/applicationcontroller.cpp:491
 #, kde-format
 msgid "Nothing imported."
 msgstr "가져온 것이 없습니다."
 
-#: app/applicationcontroller.cpp:552 app/applicationcontroller.cpp:592
-#: app/applicationcontroller.cpp:610 app/applicationcontroller.cpp:654
-#: app/applicationcontroller.cpp:693 app/applicationcontroller.cpp:711
+#: app/applicationcontroller.cpp:553 app/applicationcontroller.cpp:593
+#: app/applicationcontroller.cpp:611 app/applicationcontroller.cpp:655
+#: app/applicationcontroller.cpp:694 app/applicationcontroller.cpp:712
 #, kde-format
 msgid "Export failed: %1"
 msgstr "내보내기 실패: %1"
 
-#: app/applicationcontroller.cpp:566 app/applicationcontroller.cpp:575
-#: app/applicationcontroller.cpp:667 app/applicationcontroller.cpp:676
+#: app/applicationcontroller.cpp:567 app/applicationcontroller.cpp:576
+#: app/applicationcontroller.cpp:668 app/applicationcontroller.cpp:677
 #, kde-format
 msgid "Export completed."
 msgstr "내보내기가 완료되었습니다."
 
-#: app/applicationcontroller.cpp:602
+#: app/applicationcontroller.cpp:603
 #, kde-format
 msgid "Trip sent."
 msgstr "여행을 전송했습니다."
 
-#: app/applicationcontroller.cpp:703
+#: app/applicationcontroller.cpp:704
 #, kde-format
 msgid "Reservation sent."
 msgstr "예약을 전송했습니다."
 
-#: app/applicationcontroller.cpp:786
+#: app/applicationcontroller.cpp:787
 #, kde-format
 msgid "Import completed."
 msgstr "가져오기가 완료되었습니다."
@@ -3943,18 +3943,18 @@ msgstr ""
 msgid "Got it!"
 msgstr "알겠습니다!"
 
-#: matrix/matrixmanager.cpp:24 matrix/matrixmanager.cpp:58
-#: matrix/matrixmanager.cpp:110
+#: matrix/matrixmanager.cpp:23 matrix/matrixmanager.cpp:57
+#: matrix/matrixmanager.cpp:109
 #, kde-format
 msgid "Syncing…"
 msgstr "동기화 중…"
 
-#: matrix/matrixmanager.cpp:43
+#: matrix/matrixmanager.cpp:42
 #, kde-format
 msgid "This server does not support logging in using a password"
 msgstr "서버에서 암호로 로그인을 지원하지 않음"
 
-#: matrix/matrixmanager.cpp:69
+#: matrix/matrixmanager.cpp:68
 #, kde-format
 msgid "Logging in"
 msgstr "로그인 중"

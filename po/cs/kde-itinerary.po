@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-29 00:39+0000\n"
+"POT-Creation-Date: 2024-04-30 00:39+0000\n"
 "PO-Revision-Date: 2023-08-09 12:54+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -270,19 +270,19 @@ msgstr "Opravdu chcete nahradit existující rezervaci nově vybraným výletem?
 msgid "Replace"
 msgstr "Nahradit"
 
-#: app/applicationcontroller.cpp:341 app/applicationcontroller.cpp:746
-#: app/applicationcontroller.cpp:761
+#: app/applicationcontroller.cpp:342 app/applicationcontroller.cpp:747
+#: app/applicationcontroller.cpp:762
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Import selhal: %1"
 
-#: app/applicationcontroller.cpp:346
+#: app/applicationcontroller.cpp:347
 #, kde-format
 msgid "Import failed: File too large."
 msgstr "Import selhal: Soubor je příliš velký."
 
-#: app/applicationcontroller.cpp:428 app/applicationcontroller.cpp:823
-#: app/applicationcontroller.cpp:833
+#: app/applicationcontroller.cpp:429 app/applicationcontroller.cpp:824
+#: app/applicationcontroller.cpp:834
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
@@ -290,12 +290,12 @@ msgstr[0] "Importována jedna rezervace."
 msgstr[1] "Importovány %1 rezervace."
 msgstr[2] "Importováno %1 rezervací."
 
-#: app/applicationcontroller.cpp:435
+#: app/applicationcontroller.cpp:436
 #, kde-format
 msgid "Health certificate imported."
 msgstr "Importován zdravotní certifikát."
 
-#: app/applicationcontroller.cpp:450
+#: app/applicationcontroller.cpp:451
 #, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
@@ -303,40 +303,40 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: app/applicationcontroller.cpp:453
+#: app/applicationcontroller.cpp:454
 #, kde-format
 msgid "Pass imported."
 msgstr "Letenka importována."
 
-#: app/applicationcontroller.cpp:490
+#: app/applicationcontroller.cpp:491
 #, kde-format
 msgid "Nothing imported."
 msgstr "Nic nebylo importováno."
 
-#: app/applicationcontroller.cpp:552 app/applicationcontroller.cpp:592
-#: app/applicationcontroller.cpp:610 app/applicationcontroller.cpp:654
-#: app/applicationcontroller.cpp:693 app/applicationcontroller.cpp:711
+#: app/applicationcontroller.cpp:553 app/applicationcontroller.cpp:593
+#: app/applicationcontroller.cpp:611 app/applicationcontroller.cpp:655
+#: app/applicationcontroller.cpp:694 app/applicationcontroller.cpp:712
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Exportování selhalo: %1"
 
-#: app/applicationcontroller.cpp:566 app/applicationcontroller.cpp:575
-#: app/applicationcontroller.cpp:667 app/applicationcontroller.cpp:676
+#: app/applicationcontroller.cpp:567 app/applicationcontroller.cpp:576
+#: app/applicationcontroller.cpp:668 app/applicationcontroller.cpp:677
 #, kde-format
 msgid "Export completed."
 msgstr "Exportování bylo dokončeno."
 
-#: app/applicationcontroller.cpp:602
+#: app/applicationcontroller.cpp:603
 #, kde-format
 msgid "Trip sent."
 msgstr ""
 
-#: app/applicationcontroller.cpp:703
+#: app/applicationcontroller.cpp:704
 #, kde-format
 msgid "Reservation sent."
 msgstr ""
 
-#: app/applicationcontroller.cpp:786
+#: app/applicationcontroller.cpp:787
 #, kde-format
 msgid "Import completed."
 msgstr "Import byl dokončen."
@@ -3929,18 +3929,18 @@ msgstr ""
 msgid "Got it!"
 msgstr "Jasně."
 
-#: matrix/matrixmanager.cpp:24 matrix/matrixmanager.cpp:58
-#: matrix/matrixmanager.cpp:110
+#: matrix/matrixmanager.cpp:23 matrix/matrixmanager.cpp:57
+#: matrix/matrixmanager.cpp:109
 #, kde-format
 msgid "Syncing…"
 msgstr "Probíhá synchronizace..."
 
-#: matrix/matrixmanager.cpp:43
+#: matrix/matrixmanager.cpp:42
 #, kde-format
 msgid "This server does not support logging in using a password"
 msgstr "Tento server nepodporuje přihlášení pomocí hesla"
 
-#: matrix/matrixmanager.cpp:69
+#: matrix/matrixmanager.cpp:68
 #, kde-format
 msgid "Logging in"
 msgstr "Přihlašování"

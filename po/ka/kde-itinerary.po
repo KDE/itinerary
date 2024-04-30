@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-29 00:39+0000\n"
-"PO-Revision-Date: 2024-04-24 06:58+0200\n"
+"POT-Creation-Date: 2024-04-30 00:39+0000\n"
+"PO-Revision-Date: 2024-04-29 10:13+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -273,71 +273,71 @@ msgstr "მართლა გნებავთ თქვენი არსე
 msgid "Replace"
 msgstr "ჩანაცვლება"
 
-#: app/applicationcontroller.cpp:341 app/applicationcontroller.cpp:746
-#: app/applicationcontroller.cpp:761
+#: app/applicationcontroller.cpp:342 app/applicationcontroller.cpp:747
+#: app/applicationcontroller.cpp:762
 #, kde-format
 msgid "Import failed: %1"
 msgstr "შემოტანის შეცდომა: %1"
 
-#: app/applicationcontroller.cpp:346
+#: app/applicationcontroller.cpp:347
 #, kde-format
 msgid "Import failed: File too large."
 msgstr "შემოტანის შეცდომა: ფაილი ძალიან დიდია."
 
-#: app/applicationcontroller.cpp:428 app/applicationcontroller.cpp:823
-#: app/applicationcontroller.cpp:833
+#: app/applicationcontroller.cpp:429 app/applicationcontroller.cpp:824
+#: app/applicationcontroller.cpp:834
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] "შემოტანილია 1 ჯავშანი."
 msgstr[1] "შემოტანილია %1 ჯავშანი."
 
-#: app/applicationcontroller.cpp:435
+#: app/applicationcontroller.cpp:436
 #, kde-format
 msgid "Health certificate imported."
 msgstr "ჯანმრთელობის სერტიფიკატი შემოტანილია."
 
-#: app/applicationcontroller.cpp:450
+#: app/applicationcontroller.cpp:451
 #, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
 msgstr[0] "ერთი ბილეთი შემოტანილია."
 msgstr[1] "%1 ბილეთი შემოტანილია."
 
-#: app/applicationcontroller.cpp:453
+#: app/applicationcontroller.cpp:454
 #, kde-format
 msgid "Pass imported."
 msgstr "ბილიკი შემოტანილია."
 
-#: app/applicationcontroller.cpp:490
+#: app/applicationcontroller.cpp:491
 #, kde-format
 msgid "Nothing imported."
 msgstr "არაფერი შემოტანილა."
 
-#: app/applicationcontroller.cpp:552 app/applicationcontroller.cpp:592
-#: app/applicationcontroller.cpp:610 app/applicationcontroller.cpp:654
-#: app/applicationcontroller.cpp:693 app/applicationcontroller.cpp:711
+#: app/applicationcontroller.cpp:553 app/applicationcontroller.cpp:593
+#: app/applicationcontroller.cpp:611 app/applicationcontroller.cpp:655
+#: app/applicationcontroller.cpp:694 app/applicationcontroller.cpp:712
 #, kde-format
 msgid "Export failed: %1"
 msgstr "გატანის შეცდომა: %1"
 
-#: app/applicationcontroller.cpp:566 app/applicationcontroller.cpp:575
-#: app/applicationcontroller.cpp:667 app/applicationcontroller.cpp:676
+#: app/applicationcontroller.cpp:567 app/applicationcontroller.cpp:576
+#: app/applicationcontroller.cpp:668 app/applicationcontroller.cpp:677
 #, kde-format
 msgid "Export completed."
 msgstr "გატანა დასრულდა."
 
-#: app/applicationcontroller.cpp:602
+#: app/applicationcontroller.cpp:603
 #, kde-format
 msgid "Trip sent."
 msgstr "მოგზაურობა გაგზავნილია."
 
-#: app/applicationcontroller.cpp:703
+#: app/applicationcontroller.cpp:704
 #, kde-format
 msgid "Reservation sent."
 msgstr "ჯავშანი გაგზავნილია."
 
-#: app/applicationcontroller.cpp:786
+#: app/applicationcontroller.cpp:787
 #, kde-format
 msgid "Import completed."
 msgstr "შემოტანა დასრულდა."
@@ -1163,15 +1163,13 @@ msgid "Departure"
 msgstr "გაფრენა"
 
 #: app/FlightPage.qml:118
-#, fuzzy, kde-format
-#| msgid "Departure time"
+#, kde-format
 msgctxt "flight departure"
 msgid "Departure time"
 msgstr "გასვლის დრო"
 
 #: app/FlightPage.qml:123
-#, fuzzy, kde-format
-#| msgid "Departure date"
+#, kde-format
 msgctxt "flight departure"
 msgid "Departure date"
 msgstr "გაფრენის თარიღი"
@@ -1193,11 +1191,10 @@ msgid "Arrival"
 msgstr "ჩამოფრენა"
 
 #: app/FlightPage.qml:169
-#, fuzzy, kde-format
-#| msgid "Arrival time"
+#, kde-format
 msgctxt "flight arrival"
 msgid "Arrival time"
-msgstr "ჩამოსვლის დრო"
+msgstr "ჩამოფრენის დრო"
 
 #: app/FormPlaceDelegate.qml:55
 #, kde-format
@@ -3935,18 +3932,18 @@ msgstr ""
 msgid "Got it!"
 msgstr "Გავიგე!"
 
-#: matrix/matrixmanager.cpp:24 matrix/matrixmanager.cpp:58
-#: matrix/matrixmanager.cpp:110
+#: matrix/matrixmanager.cpp:23 matrix/matrixmanager.cpp:57
+#: matrix/matrixmanager.cpp:109
 #, kde-format
 msgid "Syncing…"
 msgstr "სინქრონიზაცია…"
 
-#: matrix/matrixmanager.cpp:43
+#: matrix/matrixmanager.cpp:42
 #, kde-format
 msgid "This server does not support logging in using a password"
 msgstr "ამ სერვერს პაროლით შესვლის მხარდაჭერა არ გააჩნია"
 
-#: matrix/matrixmanager.cpp:69
+#: matrix/matrixmanager.cpp:68
 #, kde-format
 msgid "Logging in"
 msgstr "შესვლა"
