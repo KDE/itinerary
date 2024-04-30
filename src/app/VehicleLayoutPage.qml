@@ -330,15 +330,7 @@ Kirigami.ScrollablePage {
                         Layout.alignment: Qt.AlignCenter
                         Layout.preferredWidth: Kirigami.Units.iconSizes.small
                         Layout.preferredHeight: visible ? Kirigami.Units.iconSizes.small : 0
-                        source: {
-                            switch (section.type) {
-                                case KPublicTransport.VehicleSection.PassengerCar: return "qrc:///images/seat.svg"
-                                case KPublicTransport.VehicleSection.SleepingCar: return "qrc:///images/sleepingcar.svg"
-                                case KPublicTransport.VehicleSection.CouchetteCar: return "qrc:///images/couchettecar.svg"
-                                case KPublicTransport.VehicleSection.RestaurantCar: return "qrc:///images/foodestablishment.svg"
-                                case KPublicTransport.VehicleSection.CarTransportCar: return "qrc:///images/car.svg"
-                            }
-                        }
+                        source: section.type !== KPublicTransport.vehicleSection.ControlCar ? section.iconName : ""
                         color: model.vehicleSection.disruptionEffect === KPublicTransport.Disruption.NoService ?
                             Kirigami.Theme.disabledTextColor :  Kirigami.Theme.textColor
                         isMask: true
