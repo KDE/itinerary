@@ -39,9 +39,15 @@
             "builddir": true,
             "sources": [
                 {
-                    "type": "git",
-                    "url": "git://anongit.freedesktop.org/poppler/poppler.git",
-                    "branch": "master"
+                    "type": "archive",
+                    "url": "https://poppler.freedesktop.org/poppler-24.04.0.tar.xz",
+                    "sha256": "1e804ec565acf7126eb2e9bb3b56422ab2039f7e05863a5dfabdd1ffd1bb77a7",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 3686,
+                        "stable-only": true,
+                        "url-template": "https://poppler.freedesktop.org/poppler-$version.tar.xz"
+                    }
                 }
             ],
             "modules": [
@@ -359,10 +365,15 @@
             "buildsystem": "cmake-ninja",
             "sources": [
                 {
-                    "type": "git",
-                    "url": "https://github.com/quotient-im/libQuotient.git",
-                    "branch": "dev",
-                    "disable-submodules": true
+                    "type": "archive",
+                    "url": "https://github.com/quotient-im/libQuotient/archive/0.8.2.tar.gz",
+                    "sha256": "12ff2fa8b80a934b9dd88fa3416a4b88e94bc0e18a8df0dcebfc90614dd2f5c9",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 89357,
+                        "stable-only": true,
+                        "url-template": "https://github.com/quotient-im/libQuotient/archive/$version.tar.gz"
+                    }
                 }
             ],
             "config-opts": [
