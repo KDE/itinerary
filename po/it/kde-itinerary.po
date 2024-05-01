@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-30 02:26+0000\n"
-"PO-Revision-Date: 2024-04-17 14:14+0200\n"
+"PO-Revision-Date: 2024-04-28 11:16+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -389,7 +389,7 @@ msgstr "A: %1"
 #: app/BoatDelegate.qml:57
 #, kde-format
 msgid "Arrival time: %1"
-msgstr "Ora di arrivo: %1"
+msgstr "Orario di arrivo: %1"
 
 #: app/BoatEditor.qml:17
 #, kde-format
@@ -411,7 +411,7 @@ msgstr "Partenza"
 #, kde-format
 msgctxt "Boat departure"
 msgid "Departure Time"
-msgstr "Ora di partenza"
+msgstr "Orario di partenza"
 
 #: app/BoatEditor.qml:68
 #, kde-format
@@ -439,7 +439,7 @@ msgstr "Arrivo"
 #, kde-format
 msgctxt "Boat arrival"
 msgid "Arrival Time"
-msgstr "Ora di arrivo"
+msgstr "Orario di arrivo"
 
 #: app/BoatEditor.qml:107
 #, kde-format
@@ -472,7 +472,7 @@ msgstr "Terminale"
 #: app/TrainPage.qml:169
 #, kde-format
 msgid "Arrival time"
-msgstr "Ora di arrivo"
+msgstr "Orario di arrivo"
 
 #: app/BookingCard.qml:23
 #, kde-format
@@ -861,12 +861,12 @@ msgstr "Fine: %1"
 #: app/EventDelegate.qml:57
 #, kde-format
 msgid "Start time: %1"
-msgstr "Ora d'inizio: %1"
+msgstr "Orario d'inizio: %1"
 
 #: app/EventDelegate.qml:61
 #, kde-format
 msgid "End time: %1"
-msgstr "Ora di fine: %1"
+msgstr "Orario di fine: %1"
 
 #: app/EventEditor.qml:19
 #, kde-format
@@ -905,7 +905,7 @@ msgstr "L'orario di ingresso deve essere precedente all'orario di inizio."
 #: app/EventEditor.qml:84 app/EventPage.qml:75 app/RestaurantEditor.qml:78
 #, kde-format
 msgid "Start Time"
-msgstr "Ora di inizio"
+msgstr "Orario di inizio"
 
 #: app/EventEditor.qml:88 app/RestaurantEditor.qml:82
 #, kde-format
@@ -915,7 +915,7 @@ msgstr "L'orario di inizio deve essere impostato."
 #: app/EventEditor.qml:93 app/EventPage.qml:83 app/RestaurantEditor.qml:89
 #, kde-format
 msgid "End Time"
-msgstr "Ora di fine"
+msgstr "Orario di fine"
 
 #: app/EventEditor.qml:104 app/RestaurantEditor.qml:100
 #, kde-format
@@ -1623,12 +1623,12 @@ msgstr "Check-out %1"
 #: app/HotelDelegate.qml:38
 #, kde-format
 msgid "Check-in time: %1"
-msgstr "Ora di check-in: %1"
+msgstr "Orario di check-in: %1"
 
 #: app/HotelDelegate.qml:44 app/HotelDelegate.qml:45
 #, kde-format
 msgid "Check-out time: %1"
-msgstr "Ora di check-out: %1"
+msgstr "Orario di check-out: %1"
 
 #: app/HotelEditor.qml:19
 #, kde-format
@@ -1915,7 +1915,7 @@ msgstr "Orario di partenza"
 #, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival time"
-msgstr "Ora di arrivo"
+msgstr "Orario di arrivo"
 
 #: app/JourneyRequestPage.qml:175
 #, kde-format
@@ -2938,12 +2938,12 @@ msgstr "Dettagli"
 #: app/RestaurantPage.qml:41
 #, kde-format
 msgid "Start time"
-msgstr "Ora di inizio"
+msgstr "Orario di inizio"
 
 #: app/RestaurantPage.qml:49
 #, kde-format
 msgid "End time"
-msgstr "Ora di fine"
+msgstr "Orario di fine"
 
 #: app/RestaurantPage.qml:57
 #, kde-format
@@ -3472,7 +3472,7 @@ msgstr "Partenza"
 #: app/TouristAttractionPage.qml:42
 #, kde-format
 msgid "Departure Time"
-msgstr "Ora di partenza"
+msgstr "Orario di partenza"
 
 #: app/TouristAttractionPage.qml:49
 #, kde-format
@@ -3482,7 +3482,7 @@ msgstr "Arrivo"
 #: app/TouristAttractionPage.qml:54
 #, kde-format
 msgid "Arrival Time"
-msgstr "Ora di arrivo"
+msgstr "Orario di arrivo"
 
 #: app/TrainDelegate.qml:117 app/TrainDelegate.qml:302
 #, kde-format
