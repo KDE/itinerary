@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-30 00:39+0000\n"
+"POT-Creation-Date: 2024-05-01 00:38+0000\n"
 "PO-Revision-Date: 2024-04-17 09:29+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -672,17 +672,17 @@ msgctxt "@title"
 msgid "Select Calendar"
 msgstr "Sélectionner un agenda"
 
-#: app/CarRentalDelegate.qml:20
+#: app/CarRentalDelegate.qml:21
 #, kde-format
 msgid "Rental Car Drop-off"
 msgstr "Retour de voiture de location"
 
-#: app/CarRentalDelegate.qml:21
+#: app/CarRentalDelegate.qml:22
 #, kde-format
 msgid "Rental Car Pick-up"
 msgstr "Prise en charge de voiture de location"
 
-#: app/CarRentalDelegate.qml:49
+#: app/CarRentalDelegate.qml:50
 #, kde-format
 msgid "Drop-off: %1"
 msgstr "Retour : %1"
@@ -3874,7 +3874,7 @@ msgstr "Quai : %1"
 msgid "Coach: %1 Seat: %2"
 msgstr "Voiture : %1 Siège : %2"
 
-#: app/VehicleLayoutPage.qml:432
+#: app/VehicleLayoutPage.qml:424
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "Aucune information de disposition du véhicule disponible."
