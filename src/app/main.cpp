@@ -46,6 +46,7 @@
 #include "transfermanager.h"
 #include "tripgroupinfoprovider.h"
 #include "tripgroupmanager.h"
+#include "tripgroupmodel.h"
 #include "tripgroupproxymodel.h"
 #include "unitconversion.h"
 #include "util.h"
@@ -193,6 +194,7 @@ void registerApplicationTypes()
     qmlRegisterType<MatrixBeaconStub>("org.kde.itinerary", 1, 0, "MatrixBeacon");
 #endif
     qmlRegisterType<OnlineTicketImporter>("org.kde.itinerary", 1, 0, "OnlineTicketImporter");
+    qmlRegisterType<TripGroupModel>("org.kde.itinerary", 1, 0, "TripGroupModel");
 
     qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "About", [](QQmlEngine *engine, QJSEngine *) -> QJSValue {
         return engine->toScriptValue(KAboutData::applicationData());

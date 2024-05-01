@@ -23,6 +23,8 @@ class TripGroup
     Q_PROPERTY(QDateTime beginDateTime READ beginDateTime)
     Q_PROPERTY(QDateTime endDateTime READ endDateTime)
     Q_PROPERTY(QString slugName READ slugName)
+    Q_PROPERTY(QList<QString> elements READ elements)
+
 public:
     TripGroup();
     TripGroup(TripGroupManager *mgr);

@@ -256,7 +256,7 @@ Kirigami.ApplicationWindow {
             else (pageStack.currentItem as Kirigami.Page)?.actions ?? [];
         }
     }
-    pageStack.initialPage: pagepool.loadPage(Qt.resolvedUrl("TimelinePage.qml"))
+    pageStack.initialPage: pagepool.loadPage(Qt.resolvedUrl("TripGroupsPage.qml"))
 
     DropArea {
         id: topDropArea

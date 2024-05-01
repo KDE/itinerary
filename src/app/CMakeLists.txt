@@ -47,6 +47,7 @@ target_sources(itinerary PRIVATE
     tripgroup.cpp
     tripgroupinfoprovider.cpp
     tripgroupmanager.cpp
+    tripgroupmodel.cpp
     tripgroupproxymodel.cpp
     transfer.cpp
     transfermanager.cpp
@@ -227,6 +228,9 @@ qt_add_qml_module(itinerary-app URI org.kde.itinerary NO_PLUGIN QML_FILES
     TransferPage.qml
     TransportIcon.qml
     TripGroupDelegate.qml
+    TripGroupPage.qml
+    TripGroupsPage.qml
+    TripGroupEditorDialog.qml
     VehicleLoadIndicator.qml
     VehicleLayoutPage.qml
     VerticalNavigationButton.qml
