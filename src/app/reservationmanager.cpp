@@ -123,46 +123,42 @@ QString ReservationManager::batchesBasePath()
     return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1StringView("/batches/");
 }
 
-QList<QString>
-ReservationManager::importReservations(const QList<QVariant> &resData) {
-  ExtractorPostprocessor postproc;
-  postproc.setContextDate(QDateTime(QDate::currentDate(), QTime(0, 0)));
-  postproc.process(resData);
+QList<QString> ReservationManager::importReservations(const QList<QVariant> &resData)
+{
+    ExtractorPostprocessor postproc;
+    postproc.setContextDate(QDateTime(QDate::currentDate(), QTime(0, 0)));
+    postproc.process(resData);
 
-  auto data = postproc.result();
-  QList<QString> ids;
-  ids.reserve(data.size());
-  for (auto &res : data) {
-    if (JsonLd::isA<Event>(res)) { // promote Event to EventReservation
-      EventReservation ev;
-      ev.setReservationFor(res);
-      ev.setPotentialAction(res.value<Event>().potentialAction());
-      res = ev;
+    auto data = postproc.result();
+    QList<QString> ids;
+    ids.reserve(data.size());
+    for (auto &res : data) {
+        if (JsonLd::isA<Event>(res)) { // promote Event to EventReservation
+            EventReservation ev;
+            ev.setReservationFor(res);
+            ev.setPotentialAction(res.value<Event>().potentialAction());
+            res = ev;
+        }
+
+        // filter out non-Reservation objects we can't handle yet
+        if (!m_validator.isValidElement(res)) {
+
+            // check if this is a minimal cancellation element
+            const auto cleanup = qScopeGuard([this] { m_validator.setAcceptOnlyCompleteElements(true); });
+            m_validator.setAcceptOnlyCompleteElements(false);
+            if (m_validator.isValidElement(res)) {
+                ids += applyPartialUpdate(res);
+                continue;
+            }
+
+            qCWarning(Log) << "Discarding imported element due to validation failure" << res;
+            continue;
+        }
+
+        ids.push_back(addReservation(res));
     }
-    // TODO show UI asking for time ranges for LodgingBusiness,
-    // FoodEstablishment, etc
 
-    // filter out non-Reservation objects we can't handle yet
-    if (!m_validator.isValidElement(res)) {
-
-      // check if this is a minimal cancellation element
-      const auto cleanup = qScopeGuard(
-          [this] { m_validator.setAcceptOnlyCompleteElements(true); });
-      m_validator.setAcceptOnlyCompleteElements(false);
-      if (m_validator.isValidElement(res)) {
-        ids += applyPartialUpdate(res);
-        continue;
-      }
-
-      qCWarning(Log) << "Discarding imported element due to validation failure"
-                     << res;
-      continue;
-    }
-
-    ids.push_back(addReservation(res));
-  }
-
-  return ids;
+    return ids;
 }
 
 QString ReservationManager::addReservation(const QVariant &res, const QString &resIdHint)
