@@ -145,25 +145,25 @@ QString PassManager::import(const QVariant &pass, const QString &id)
     return {};
 }
 
-QStringList PassManager::import(const QList<QVariant> &passes) {
-  ExtractorPostprocessor postproc;
-  postproc.process(passes);
-  const auto processed = postproc.result();
+QStringList PassManager::import(const QList<QVariant> &passes)
+{
+    ExtractorPostprocessor postproc;
+    postproc.process(passes);
+    const auto processed = postproc.result();
 
-  ExtractorValidator validator;
-  validator
-      .setAcceptedTypes<KItinerary::Ticket, KItinerary::ProgramMembership>();
+    ExtractorValidator validator;
+    validator.setAcceptedTypes<KItinerary::Ticket, KItinerary::ProgramMembership>();
 
-  QStringList result;
-  for (const auto &pass : processed) {
-    if (validator.isValidElement(pass)) {
-      auto id = import(pass);
-      if (!id.isEmpty()) {
-        result.push_back(id);
-      }
+    QStringList result;
+    for (const auto &pass : processed) {
+        if (validator.isValidElement(pass)) {
+            auto id = import(pass);
+            if (!id.isEmpty()) {
+                result.push_back(id);
+            }
+        }
     }
-  }
-  return result;
+    return result;
 }
 
 QString PassManager::findMatchingPass(const QVariant &pass) const
