@@ -4,20 +4,16 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "timelinemodel.h"
+#include "triptimelinemodel.h"
 #include "constants.h"
 #include "locationhelper.h"
 #include "locationinformation.h"
-#include "pkpassmanager.h"
 #include "reservationmanager.h"
 #include "timelineelement.h"
 #include "tripgroup.h"
-#include "tripgroupmanager.h"
 #include "transfermanager.h"
-#include "weatherinformation.h"
 
 #include "weatherforecast.h"
-#include "weatherforecastmanager.h"
 
 #include <KItinerary/BusTrip>
 #include <KItinerary/CountryDb>
@@ -52,7 +48,7 @@ static bool needsSplitting(const QVariant &res)
             return false;
         }
         // don't split single day events that end at midnight either
-        if (ev.startDate().secsTo(ev.endDate()) < 60 * 60 * 8 && ev.endDate().time().hour() == 0) {
+        if (ev.startDate().secsTo(ev.endDate()) < 60L * 60 * 8 && ev.endDate().time().hour() == 0) {
             return false;
         }
         return true;
@@ -67,74 +63,62 @@ static QTimeZone timeZone(const QDateTime &dt)
     return dt.timeSpec() == Qt::TimeZone ? dt.timeZone() : QTimeZone();
 }
 
-TimelineModel::TimelineModel(QObject *parent)
+TripTimelineModel::TripTimelineModel(QObject *parent)
     : AbstractTimelineModel(parent)
 {
-    connect(&m_dayUpdateTimer, &QTimer::timeout, this, &TimelineModel::dayChanged);
+    connect(&m_dayUpdateTimer, &QTimer::timeout, this, &TripTimelineModel::dayChanged);
     m_dayUpdateTimer.setTimerType(Qt::VeryCoarseTimer);
     m_dayUpdateTimer.setSingleShot(true);
     m_dayUpdateTimer.setInterval((QTime::currentTime().secsTo({23, 59, 59}) + 1) * 1000);
     m_dayUpdateTimer.start();
 
     // make sure we properly update the empty today marker
-    connect(this, &TimelineModel::todayRowChanged, this, [this]() {
+    connect(this, &TripTimelineModel::todayRowChanged, this, [this]() {
         const auto idx = index(todayRow(), 0);
-        if (m_todayEmpty == idx.data(TimelineModel::TodayEmptyRole).toBool()) {
+        if (m_todayEmpty == idx.data(TripTimelineModel::TodayEmptyRole).toBool()) {
             return;
         }
         m_todayEmpty = !m_todayEmpty;
         Q_EMIT dataChanged(idx, idx);
     });
 
-    connect(&m_currentBatchTimer, &QTimer::timeout, this, &TimelineModel::currentBatchChanged);
-    connect(&m_currentBatchTimer, &QTimer::timeout, this, &TimelineModel::updateTodayMarker);
-    connect(&m_currentBatchTimer, &QTimer::timeout, this, &TimelineModel::scheduleCurrentBatchTimer);
+    connect(&m_currentBatchTimer, &QTimer::timeout, this, &TripTimelineModel::currentBatchChanged);
+    connect(&m_currentBatchTimer, &QTimer::timeout, this, &TripTimelineModel::updateTodayMarker);
+    connect(&m_currentBatchTimer, &QTimer::timeout, this, &TripTimelineModel::scheduleCurrentBatchTimer);
     m_currentBatchTimer.setTimerType(Qt::VeryCoarseTimer);
     m_currentBatchTimer.setSingleShot(true);
 }
 
-TimelineModel::~TimelineModel() = default;
+TripTimelineModel::~TripTimelineModel() = default;
 
-void TimelineModel::setReservationManager(ReservationManager* mgr)
+void TripTimelineModel::setReservationManager(ReservationManager* mgr)
 {
     // for auto tests only
     if (Q_UNLIKELY(!mgr)) {
         beginResetModel();
-        disconnect(m_resMgr, &ReservationManager::batchAdded, this, &TimelineModel::batchAdded);
-        disconnect(m_resMgr, &ReservationManager::batchChanged, this, &TimelineModel::batchChanged);
-        disconnect(m_resMgr, &ReservationManager::batchContentChanged, this, &TimelineModel::batchChanged);
-        disconnect(m_resMgr, &ReservationManager::batchRenamed, this, &TimelineModel::batchRenamed);
-        disconnect(m_resMgr, &ReservationManager::batchRemoved, this, &TimelineModel::batchRemoved);
+        disconnect(m_resMgr, &ReservationManager::batchAdded, this, &TripTimelineModel::batchAdded);
+        disconnect(m_resMgr, &ReservationManager::batchChanged, this, &TripTimelineModel::batchChanged);
+        disconnect(m_resMgr, &ReservationManager::batchContentChanged, this, &TripTimelineModel::batchChanged);
+        disconnect(m_resMgr, &ReservationManager::batchRenamed, this, &TripTimelineModel::batchRenamed);
+        disconnect(m_resMgr, &ReservationManager::batchRemoved, this, &TripTimelineModel::batchRemoved);
         m_resMgr = mgr;
         m_elements.clear();
         endResetModel();
         return;
     }
 
-    beginResetModel();
-    m_resMgr = mgr;
-    for (const auto &resId : mgr->batches()) {
-        const auto res = m_resMgr->reservation(resId);
-        auto elem = TimelineElement(this, resId, res, TimelineElement::SelfContained);
-        if (!elem.isReservation()) { // a type we can't handle
-            continue;
-        }
-        if (needsSplitting(res)) {
-            m_elements.push_back(TimelineElement{this, resId, res, TimelineElement::RangeBegin});
-            m_elements.push_back(TimelineElement{this, resId, res, TimelineElement::RangeEnd});
-        } else {
-            m_elements.push_back(std::move(elem));
-        }
+    if (m_resMgr == mgr) {
+        return;
     }
-    m_elements.push_back(TimelineElement{this, TimelineElement::TodayMarker,  QDateTime(today(), QTime(0, 0))});
-    std::sort(m_elements.begin(), m_elements.end());
 
-    connect(mgr, &ReservationManager::batchAdded, this, &TimelineModel::batchAdded);
-    connect(mgr, &ReservationManager::batchChanged, this, &TimelineModel::batchChanged);
-    connect(mgr, &ReservationManager::batchContentChanged, this, &TimelineModel::batchChanged);
-    connect(mgr, &ReservationManager::batchRenamed, this, &TimelineModel::batchRenamed);
-    connect(mgr, &ReservationManager::batchRemoved, this, &TimelineModel::batchRemoved);
-    endResetModel();
+    m_resMgr = mgr;
+    updateElements();
+
+    connect(mgr, &ReservationManager::batchAdded, this, &TripTimelineModel::batchAdded);
+    connect(mgr, &ReservationManager::batchChanged, this, &TripTimelineModel::batchChanged);
+    connect(mgr, &ReservationManager::batchContentChanged, this, &TripTimelineModel::batchChanged);
+    connect(mgr, &ReservationManager::batchRenamed, this, &TripTimelineModel::batchRenamed);
+    connect(mgr, &ReservationManager::batchRemoved, this, &TripTimelineModel::batchRemoved);
 
     updateTodayMarker();
     updateInformationElements();
@@ -142,59 +126,73 @@ void TimelineModel::setReservationManager(ReservationManager* mgr)
 
     scheduleCurrentBatchTimer();
     Q_EMIT currentBatchChanged();
+
+    Q_EMIT reservationManagerChanged();
 }
 
-void TimelineModel::setWeatherForecastManager(WeatherForecastManager* mgr)
+void TripTimelineModel::updateElements()
 {
-    m_weatherMgr = mgr;
-    updateWeatherElements();
-    connect(m_weatherMgr, &WeatherForecastManager::forecastUpdated, this, &TimelineModel::updateWeatherElements);
-}
-
-TripGroupManager* TimelineModel::tripGroupManager() const
-{
-    return m_tripGroupManager;
-}
-
-void TimelineModel::setTripGroupManager(TripGroupManager *mgr)
-{
-    m_tripGroupManager = mgr;
-    connect(mgr, &TripGroupManager::tripGroupAdded, this, &TimelineModel::tripGroupAdded);
-    connect(mgr, &TripGroupManager::tripGroupChanged, this, &TimelineModel::tripGroupChanged);
-    connect(mgr, &TripGroupManager::tripGroupRemoved, this, &TimelineModel::tripGroupRemoved);
-    for (const auto &group : mgr->tripGroups()) {
-        tripGroupAdded(group);
+    beginResetModel();
+    for (const auto &resId : m_resMgr->batches()) {
+        if (!m_tripGroup.elements().contains(resId)) {
+            continue;
+        }
+        const auto res = m_resMgr->reservation(resId);
+        auto elem = TimelineElement(this, resId, res, TimelineElement::SelfContained);
+        if (!elem.isReservation()) { // a type we can't handle
+            continue;
+        }
+        if (needsSplitting(res)) {
+            m_elements.emplace_back(this, resId, res, TimelineElement::RangeBegin);
+            m_elements.emplace_back(this, resId, res, TimelineElement::RangeEnd);
+        } else {
+            m_elements.push_back(std::move(elem));
+        }
     }
+    m_elements.emplace_back(this, TimelineElement::TodayMarker,  QDateTime(today(), QTime(0, 0)));
+    std::sort(m_elements.begin(), m_elements.end());
+    endResetModel();
 }
 
-void TimelineModel::setHomeCountryIsoCode(const QString &isoCode)
+void TripTimelineModel::setHomeCountryIsoCode(const QString &isoCode)
 {
     m_homeCountry = isoCode;
     updateInformationElements();
 }
 
-void TimelineModel::setTransferManager(TransferManager *mgr)
+TransferManager *TripTimelineModel::transferManager() const
 {
+    return m_transferManager;
+}
+
+void TripTimelineModel::setTransferManager(TransferManager *mgr)
+{
+    if (m_transferManager == mgr) {
+        return;
+    }
+
     m_transferManager = mgr;
-    connect(mgr, &TransferManager::transferAdded, this, &TimelineModel::transferChanged);
-    connect(mgr, &TransferManager::transferChanged, this, &TimelineModel::transferChanged);
-    connect(mgr, &TransferManager::transferRemoved, this, &TimelineModel::transferRemoved);
+    connect(mgr, &TransferManager::transferAdded, this, &TripTimelineModel::transferChanged);
+    connect(mgr, &TransferManager::transferChanged, this, &TripTimelineModel::transferChanged);
+    connect(mgr, &TransferManager::transferRemoved, this, &TripTimelineModel::transferRemoved);
 
     // load existing transfers into the model
     for (const auto &batchId : m_resMgr->batches()) {
         updateTransfersForBatch(batchId);
     }
+
+    Q_EMIT transferManagerChanged();
 }
 
-int TimelineModel::rowCount(const QModelIndex& parent) const
+int TripTimelineModel::rowCount(const QModelIndex& parent) const
 {
     if (parent.isValid() || !m_resMgr) {
         return 0;
     }
-    return m_elements.size();
+    return (int)m_elements.size();
 }
 
-QVariant TimelineModel::data(const QModelIndex& index, int role) const
+QVariant TripTimelineModel::data(const QModelIndex& index, int role) const
 {
     if (!index.isValid() || !m_resMgr) {
         return {};
@@ -202,71 +200,58 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
 
     const auto &elem = m_elements.at(index.row());
     switch (role) {
-        case SectionHeaderRole:
-            // see TimelineSectionDelegateController
-            return elem.dt.date().toString(Qt::ISODate);
-        case BatchIdRole:
-            return elem.isReservation() ? elem.batchId() : QString();
-        case ElementTypeRole:
-            return elem.elementType;
-        case TodayEmptyRole:
-            if (elem.elementType == TimelineElement::TodayMarker) {
-                return isDateEmpty(m_elements.at(index.row()).dt.date());
-            }
-            return {};
-        case IsTodayRole:
-            return elem.dt.date() == today();
-        case ElementRangeRole:
-            return elem.rangeType;
-        case LocationInformationRole:
-            if (elem.elementType == TimelineElement::LocationInfo)
-                return elem.content();
-            break;
-        case WeatherForecastRole:
-            if (elem.elementType == TimelineElement::WeatherForecast)
-                return elem.content();
-            break;
-        case ReservationsRole:
-        {
-            if (!elem.isReservation()) {
-                return {};
-            }
-            const auto resIds = m_resMgr->reservationsForBatch(elem.batchId());
-            QList<QVariant> v;
-            v.reserve(resIds.size());
-            for (const auto &resId : resIds) {
-                v.push_back(m_resMgr->reservation(resId));
-            }
-            std::sort(v.begin(), v.end(), SortUtil::isBefore);
-            return QVariant::fromValue(v);
+    case SectionHeaderRole:
+        // see TimelineSectionDelegateController
+        return elem.dt.date().toString(Qt::ISODate);
+    case BatchIdRole:
+        return elem.isReservation() ? elem.batchId() : QString();
+    case ElementTypeRole:
+        return elem.elementType;
+    case TodayEmptyRole:
+        if (elem.elementType == TimelineElement::TodayMarker) {
+            return isDateEmpty(m_elements.at(index.row()).dt.date());
         }
-        case TripGroupIdRole:
-            if (elem.elementType == TimelineElement::TripGroup) {
-                return elem.content();
-            }
-            break;
-        case TripGroupRole:
-            if (elem.elementType == TimelineElement::TripGroup)
-                return QVariant::fromValue(m_tripGroupManager->tripGroup(elem.content().toString()));
-            break;
-        case TransferRole:
-            if (elem.elementType == TimelineElement::Transfer) {
-                return elem.content();
-            }
-            break;
-        case StartDateTimeRole:
-            return elem.dt;
-        case EndDateTimeRole:
-            return elem.endDateTime();
-        case IsTimeboxedRole:
-            return elem.isTimeBoxed();
-        case IsCanceledRole:
-            return elem.isCanceled();
+        return {};
+    case IsTodayRole:
+        return elem.dt.date() == today();
+    case LocationInformationRole:
+        if (elem.elementType == TimelineElement::LocationInfo) {
+            return elem.content();
+        }
+        return {};
+    case ReservationsRole:
+    {
+        if (!elem.isReservation()) {
+            return {};
+        }
+        const auto resIds = m_resMgr->reservationsForBatch(elem.batchId());
+        QList<QVariant> v;
+        v.reserve(resIds.size());
+        for (const auto &resId : resIds) {
+            v.push_back(m_resMgr->reservation(resId));
+        }
+        std::sort(v.begin(), v.end(), SortUtil::isBefore);
+        return QVariant::fromValue(v);
     }
-    return {};
+    case TransferRole:
+        if (elem.elementType == TimelineElement::Transfer) {
+            return elem.content();
+        }
+        return {};
+    case StartDateTimeRole:
+        return elem.dt;
+    case EndDateTimeRole:
+        return elem.endDateTime();
+    case IsTimeboxedRole:
+        return elem.isTimeBoxed();
+    case IsCanceledRole:
+        return elem.isCanceled();
+    default:
+        return {};
+    }
 }
 
-QHash<int, QByteArray> TimelineModel::roleNames() const
+QHash<int, QByteArray> TripTimelineModel::roleNames() const
 {
     auto names = QAbstractListModel::roleNames();
     names.insert(SectionHeaderRole, "sectionHeader");
@@ -274,23 +259,19 @@ QHash<int, QByteArray> TimelineModel::roleNames() const
     names.insert(ElementTypeRole, "type");
     names.insert(TodayEmptyRole, "isTodayEmpty");
     names.insert(IsTodayRole, "isToday");
-    names.insert(ElementRangeRole, "rangeType");
     names.insert(LocationInformationRole, "locationInformation");
-    names.insert(WeatherForecastRole, "weatherInformation");
     names.insert(ReservationsRole, "reservations");
-    names.insert(TripGroupIdRole, "tripGroupId");
-    names.insert(TripGroupRole, "tripGroup");
     names.insert(TransferRole, "transfer");
     return names;
 }
 
-int TimelineModel::todayRow() const
+int TripTimelineModel::todayRow() const
 {
     const auto it = std::find_if(m_elements.begin(), m_elements.end(), [](const auto &e) { return e.elementType == TimelineElement::TodayMarker; });
     return std::distance(m_elements.begin(), it);
 }
 
-void TimelineModel::batchAdded(const QString &resId)
+void TripTimelineModel::batchAdded(const QString &resId)
 {
     const auto res = m_resMgr->reservation(resId);
     if (needsSplitting(res)) {
@@ -308,7 +289,7 @@ void TimelineModel::batchAdded(const QString &resId)
     Q_EMIT currentBatchChanged();
 }
 
-void TimelineModel::insertElement(TimelineElement &&elem)
+void TripTimelineModel::insertElement(TimelineElement &&elem)
 {
     if (elem.elementType == TimelineElement::Undefined) {
         return;
@@ -322,7 +303,7 @@ void TimelineModel::insertElement(TimelineElement &&elem)
     endInsertRows();
 }
 
-std::vector<TimelineElement>::iterator TimelineModel::insertOrUpdate(std::vector<TimelineElement>::iterator it, TimelineElement &&elem)
+std::vector<TimelineElement>::iterator TripTimelineModel::insertOrUpdate(std::vector<TimelineElement>::iterator it, TimelineElement &&elem)
 {
     assert(elem.elementType != TimelineElement::Undefined);
 
@@ -343,7 +324,7 @@ std::vector<TimelineElement>::iterator TimelineModel::insertOrUpdate(std::vector
     return it;
 }
 
-void TimelineModel::batchChanged(const QString &resId)
+void TripTimelineModel::batchChanged(const QString &resId)
 {
     const auto res = m_resMgr->reservation(resId);
     if (needsSplitting(res)) {
@@ -359,7 +340,7 @@ void TimelineModel::batchChanged(const QString &resId)
     Q_EMIT currentBatchChanged();
 }
 
-void TimelineModel::batchRenamed(const QString& oldBatchId, const QString& newBatchId)
+void TripTimelineModel::batchRenamed(const QString& oldBatchId, const QString& newBatchId)
 {
     for (auto it = m_elements.begin(); it != m_elements.end(); ++it) {
         if (!(*it).isReservation() || (*it).batchId() != oldBatchId) {
@@ -376,7 +357,7 @@ void TimelineModel::batchRenamed(const QString& oldBatchId, const QString& newBa
     }
 }
 
-void TimelineModel::updateElement(const QString &resId, const QVariant &res, TimelineElement::RangeType rangeType)
+void TripTimelineModel::updateElement(const QString &resId, const QVariant &res, TimelineElement::RangeType rangeType)
 {
     const auto it = std::find_if(m_elements.begin(), m_elements.end(), [resId, rangeType](const auto &e) {
         return e.isReservation() && e.batchId() == resId && e.rangeType == rangeType;
@@ -398,7 +379,7 @@ void TimelineModel::updateElement(const QString &resId, const QVariant &res, Tim
     }
 }
 
-void TimelineModel::batchRemoved(const QString &resId)
+void TripTimelineModel::batchRemoved(const QString &resId)
 {
     const auto it = std::find_if(m_elements.begin(), m_elements.end(), [resId](const auto &e) {
         return e.isReservation() && e.batchId() == resId;
@@ -424,10 +405,9 @@ void TimelineModel::batchRemoved(const QString &resId)
     Q_EMIT currentBatchChanged();
 }
 
-void TimelineModel::dayChanged()
+void TripTimelineModel::dayChanged()
 {
     updateTodayMarker();
-    updateWeatherElements();
 
     m_dayUpdateTimer.setInterval((QTime::currentTime().secsTo({23, 59, 59}) + 1) * 1000);
     m_dayUpdateTimer.start();
@@ -436,7 +416,7 @@ void TimelineModel::dayChanged()
     Q_EMIT currentBatchChanged();
 }
 
-void TimelineModel::updateTodayMarker()
+void TripTimelineModel::updateTodayMarker()
 {
     auto dt = now();
     auto it = std::lower_bound(m_elements.begin(), m_elements.end(), dt);
@@ -471,7 +451,7 @@ void TimelineModel::updateTodayMarker()
     Q_EMIT todayRowChanged();
 }
 
-void TimelineModel::updateInformationElements()
+void TripTimelineModel::updateInformationElements()
 {
     // the location information is shown after location changes or before stationary elements
     // when transitioning into a location that:
@@ -553,151 +533,9 @@ void TimelineModel::updateInformationElements()
 
         qDebug() << "  done";
     }
-
-    updateWeatherElements();
 }
 
-void TimelineModel::updateWeatherElements()
-{
-    if (!m_weatherMgr || !m_weatherMgr->allowNetworkAccess() || m_elements.empty()) {
-        return;
-    }
-
-    qDebug() << "recomputing weather elements";
-    GeoCoordinates geo;
-    QString label;
-
-    auto date = now();
-    // round to next full hour
-    date.setTime(QTime(date.time().hour(), 0));
-    date = date.addSecs(60 * 60);
-    const auto maxForecastTime = m_weatherMgr->maximumForecastTime(date.date());
-
-    // look through the past, clean up weather elements there and figure out where we are
-    auto it = m_elements.begin();
-    for (; it != m_elements.end() && (*it).dt < now();) {
-        if ((*it).elementType == TimelineElement::WeatherForecast) {
-            const auto row = std::distance(m_elements.begin(), it);
-            beginRemoveRows({}, row, row);
-            it = m_elements.erase(it);
-            endRemoveRows();
-            continue;
-        }
-
-        if ((*it).isCanceled()) {
-            ++it;
-            continue;
-        }
-        const auto newGeo = LocationUtil::geo((*it).destination());
-        if ((*it).isLocationChange() || newGeo.isValid()) {
-            geo = newGeo;
-            label = WeatherInformation::labelForPlace((*it).destination());
-
-            // if we are in an ongoing location change, start afterwards
-            const auto endDt = (*it).endDateTime();
-            if ((*it).isLocationChange() && endDt.isValid() && date < endDt) {
-                date = endDt;
-            }
-        }
-
-        ++it;
-    }
-
-    while(it != m_elements.end() && date < maxForecastTime) {
-
-        if ((*it).dt < date || (*it).elementType == TimelineElement::TodayMarker) {
-            // clean up outdated weather elements (happens when merging previously split ranges)
-            if ((*it).elementType == TimelineElement::WeatherForecast) {
-                const auto row = std::distance(m_elements.begin(), it);
-                beginRemoveRows({}, row, row);
-                it = m_elements.erase(it);
-                endRemoveRows();
-                if (it == m_elements.end()) {
-                    break;
-                }
-                continue;
-            }
-
-            // track where we are
-            if ((*it).isCanceled()) {
-                ++it;
-                continue;
-            }
-            const auto newGeo = LocationUtil::geo((*it).destination());
-            if ((*it).isLocationChange() || newGeo.isValid()) {
-                geo = newGeo;
-                label = WeatherInformation::labelForPlace((*it).destination());
-            }
-
-            ++it;
-            continue;
-        }
-
-        // determine the length of the forecast range (at most until the end of the day)
-        auto endTime = date;
-        endTime.setTime(QTime(23, 59, 59));
-        auto nextStartTime = endTime;
-        GeoCoordinates newGeo = geo;
-        QString newLabel = label;
-        for (auto it2 = it; it2 != m_elements.end(); ++it2) {
-            if ((*it2).dt >= endTime) {
-                break;
-            }
-            if ((*it2).isLocationChange()) {
-                // exclude the actual travel time from forecast ranges
-                endTime = std::min(endTime, (*it2).dt);
-                nextStartTime = std::max(endTime, (*it2).endDateTime());
-                newGeo = LocationUtil::geo((*it2).destination());
-                newLabel = WeatherInformation::labelForPlace((*it2).destination());
-                break;
-            }
-        }
-
-        ::WeatherForecast fc;
-        if (geo.isValid()) {
-            m_weatherMgr->monitorLocation(geo.latitude(), geo.longitude());
-            fc = m_weatherMgr->forecast(geo.latitude(), geo.longitude(), date, endTime);
-        }
-
-        // updated or new data
-        if (fc.isValid()) {
-            it = insertOrUpdate(it, TimelineElement{this, TimelineElement::WeatherForecast, date, QVariant::fromValue(WeatherInformation{fc, label})});
-        }
-        // we have no forecast data, but a matching weather element: remove
-        else if ((*it).elementType == TimelineElement::WeatherForecast && (*it).dt == date) {
-            const auto row = std::distance(m_elements.begin(), it);
-            beginRemoveRows({}, row, row);
-            it = m_elements.erase(it);
-            endRemoveRows();
-        }
-
-        geo = newGeo;
-        label = newLabel;
-        date = nextStartTime.addSecs(1);
-        ++it;
-    }
-
-    // append weather elements beyond the end of the list if necessary
-    while (date < maxForecastTime && geo.isValid()) {
-        auto endTime = date;
-        endTime.setTime(QTime(23, 59, 59));
-
-        m_weatherMgr->monitorLocation(geo.latitude(), geo.longitude());
-        const auto fc = m_weatherMgr->forecast(geo.latitude(), geo.longitude(), date, endTime);
-        if (fc.isValid()) {
-            const auto row = std::distance(m_elements.begin(), it);
-            beginInsertRows({}, row, row);
-            it = m_elements.insert(it, TimelineElement{this, TimelineElement::WeatherForecast, date, QVariant::fromValue(WeatherInformation{fc, label})});
-            ++it;
-            endInsertRows();
-        }
-        date = endTime.addSecs(1);
-    }
-
-    qDebug() << "weather recomputation done";
-}
-
-void TimelineModel::updateTransfersForBatch(const QString& batchId)
+void TripTimelineModel::updateTransfersForBatch(const QString& batchId)
 {
     if (!m_transferManager) {
         return;
@@ -713,7 +551,7 @@ void TimelineModel::updateTransfersForBatch(const QString& batchId)
     }
 }
 
-QDateTime TimelineModel::now() const
+QDateTime TripTimelineModel::now() const
 {
     if (Q_UNLIKELY(m_unitTestTime.isValid())) {
         return m_unitTestTime;
@@ -721,7 +559,7 @@ QDateTime TimelineModel::now() const
     return QDateTime::currentDateTime();
 }
 
-QDate TimelineModel::today() const
+QDate TripTimelineModel::today() const
 {
     if (Q_UNLIKELY(m_unitTestTime.isValid())) {
         return m_unitTestTime.date();
@@ -729,7 +567,7 @@ QDate TimelineModel::today() const
     return QDate::currentDate();
 }
 
-void TimelineModel::setCurrentDateTime(const QDateTime &dt)
+void TripTimelineModel::setCurrentDateTime(const QDateTime &dt)
 {
     const auto dayDiffers = today() != dt.date();
     m_unitTestTime = dt;
@@ -740,42 +578,7 @@ void TimelineModel::setCurrentDateTime(const QDateTime &dt)
     scheduleCurrentBatchTimer();
 }
 
-void TimelineModel::tripGroupAdded(const QString& groupId)
-{
-    const auto g = m_tripGroupManager->tripGroup(groupId);
-
-    TimelineElement beginElem{this, TimelineElement::TripGroup, g.beginDateTime(), groupId};
-    beginElem.rangeType = TimelineElement::RangeBegin;
-    insertElement(std::move(beginElem));
-
-    TimelineElement endElem{this, TimelineElement::TripGroup, g.endDateTime(), groupId};
-    endElem.rangeType = TimelineElement::RangeEnd;
-    insertElement(std::move(endElem));
-}
-
-void TimelineModel::tripGroupChanged(const QString& groupId)
-{
-    // ### this can be done better probably
-    tripGroupRemoved(groupId);
-    tripGroupAdded(groupId);
-}
-
-void TimelineModel::tripGroupRemoved(const QString& groupId)
-{
-    for (auto it = m_elements.begin(); it != m_elements.end();) {
-        if ((*it).elementType != TimelineElement::TripGroup || (*it).content().toString() != groupId) {
-            ++it;
-            continue;
-        }
-
-        const auto row = std::distance(m_elements.begin(), it);
-        beginRemoveRows({}, row, row);
-        it = m_elements.erase(it);
-        endRemoveRows();
-    }
-}
-
-void TimelineModel::transferChanged(const Transfer& transfer)
+void TripTimelineModel::transferChanged(const Transfer& transfer)
 {
     if (transfer.state() == Transfer::UndefinedState) {
         return;
@@ -802,7 +605,7 @@ void TimelineModel::transferChanged(const Transfer& transfer)
     Q_EMIT todayRowChanged();
 }
 
-void TimelineModel::transferRemoved(const QString &resId, Transfer::Alignment alignment)
+void TripTimelineModel::transferRemoved(const QString &resId, Transfer::Alignment alignment)
 {
     auto it = std::find_if(m_elements.begin(), m_elements.end(), [resId, alignment](const auto &e) {
         return e.elementType == TimelineElement::Transfer && e.batchId() == resId
@@ -845,7 +648,7 @@ void TimelineModel::transferRemoved(const QString &resId, Transfer::Alignment al
     return {};
 }
 
-QString TimelineModel::currentBatchId() const
+QString TripTimelineModel::currentBatchId() const
 {
     if (m_elements.empty()) {
         return {};
@@ -892,7 +695,7 @@ QString TimelineModel::currentBatchId() const
     return endTime.secsTo(now()) < now().secsTo(nextStartTime) ? resId : nextResId;
 }
 
-void TimelineModel::scheduleCurrentBatchTimer()
+void TripTimelineModel::scheduleCurrentBatchTimer()
 {
     if (m_elements.empty()) {
         return;
@@ -949,7 +752,7 @@ void TimelineModel::scheduleCurrentBatchTimer()
     }
 }
 
-QVariant TimelineModel::locationAtTime(const QDateTime& dt) const
+QVariant TripTimelineModel::locationAtTime(const QDateTime& dt) const
 {
     auto it = std::lower_bound(m_elements.begin(), m_elements.end(), dt);
     if (it == m_elements.begin()) {
@@ -981,7 +784,7 @@ QVariant TimelineModel::locationAtTime(const QDateTime& dt) const
     return {};
 }
 
-bool TimelineModel::isDateEmpty(const QDate &date) const
+bool TripTimelineModel::isDateEmpty(const QDate &date) const
 {
     auto it = std::lower_bound(m_elements.begin(), m_elements.end(), date, [](const auto &lhs, auto rhs) {
         return lhs.dt.date() < rhs;
@@ -997,9 +800,42 @@ bool TimelineModel::isDateEmpty(const QDate &date) const
     return true;
 }
 
-ReservationManager *TimelineModel::reservationManager() const
+ReservationManager *TripTimelineModel::reservationManager() const
 {
     return m_resMgr;
 }
 
-#include "moc_timelinemodel.cpp"
+TripGroupManager* TripTimelineModel::tripGroupManager() const
+{
+    return m_tripGroupManager;
+}
+
+void TripTimelineModel::setTripGroupManager(TripGroupManager *tripGroupManager)
+{
+    if (m_tripGroupManager == tripGroupManager) {
+        return;
+    }
+    m_tripGroupManager = tripGroupManager;
+    Q_EMIT tripGroupManagerChanged();
+}
+
+TripGroup TripTimelineModel::tripGroup() const
+{
+    return m_tripGroup;
+}
+
+void TripTimelineModel::setTripGroup(const TripGroup &tripGroup)
+{
+    if (m_tripGroup.slugName() == tripGroup.slugName()
+            && m_tripGroup.elements() == tripGroup.elements()) {
+        return;
+    }
+    m_tripGroup = tripGroup;
+    Q_EMIT tripGroupChanged();
+
+    if (m_resMgr) {
+        updateElements();
+    }
+}
+
+#include "moc_triptimelinemodel.cpp"

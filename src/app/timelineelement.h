@@ -11,7 +11,7 @@
 #include <QString>
 #include <QVariant>
 
-class TimelineModel;
+class AbstractTimelineModel;
 class Transfer;
 
 namespace KItinerary {
@@ -52,9 +52,9 @@ public:
     Q_ENUM(RangeType)
 
     explicit TimelineElement();
-    explicit TimelineElement(TimelineModel *model, ElementType type, const QDateTime &dateTime, const QVariant &data = {});
-    explicit TimelineElement(TimelineModel *model, const QString &resId, const QVariant &res, RangeType rt);
-    explicit TimelineElement(TimelineModel *model, const ::Transfer &transfer);
+    explicit TimelineElement(AbstractTimelineModel *model, ElementType type, const QDateTime &dateTime, const QVariant &data = {});
+    explicit TimelineElement(AbstractTimelineModel *model, const QString &resId, const QVariant &res, RangeType rt);
+    explicit TimelineElement(AbstractTimelineModel *model, const ::Transfer &transfer);
 
     /** Timeline order. This considers only position in the timeline, not content. */
     bool operator<(const TimelineElement &other) const;
@@ -113,7 +113,7 @@ public:
 
 private:
     QVariant m_content;
-    TimelineModel *m_model = nullptr;
+    AbstractTimelineModel *m_model = nullptr;
 };
 
 Q_DECLARE_METATYPE(TimelineElement)

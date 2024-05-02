@@ -5,6 +5,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import QtQuick.Templates as T
+import Qt.labs.qmlmodels as Models
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.kirigamiaddons.components as Components
@@ -34,15 +35,121 @@ Kirigami.ScrollablePage {
     ]
 
     ListView {
-        model: tripGroup.elements
+        topMargin: Kirigami.Units.gridUnit
+        spacing: Kirigami.Units.gridUnit
 
-        delegate: Delegates.RoundedItemDelegate {
-            id: delegate
+        model: TripTimelineModel {
+            tripGroup: root.tripGroup
+            reservationManager: ReservationManager
+            transferManager: TransferManager
+            tripGroupManager: TripGroupManager
+        }
 
-            required property int index
-            required property string modelData
+        delegate: Models.DelegateChooser {
+            role: "type"
+            Models.DelegateChoice {
+                roleValue: TimelineElement.Flight
+                FlightDelegate {
+                    batchId: model.batchId
+                    rangeType: model.rangeType
+                }
+            }
+            Models.DelegateChoice {
+                roleValue: TimelineElement.Hotel
+                HotelDelegate {
+                    batchId: model.batchId
+                    rangeType: model.rangeType
+                }
+            }
+            Models.DelegateChoice {
+                roleValue: TimelineElement.TrainTrip
+                TrainDelegate {
+                    batchId: model.batchId
+                    rangeType: model.rangeType
+                }
+            }
+            Models.DelegateChoice {
+                roleValue: TimelineElement.BusTrip
+                BusDelegate {
+                    batchId: model.batchId
+                    rangeType: model.rangeType
+                }
+            }
+            Models.DelegateChoice {
+                roleValue: TimelineElement.Restaurant
+                RestaurantDelegate {
+                    batchId: model.batchId
+                    rangeType: model.rangeType
+                }
+            }
+            Models.DelegateChoice {
+                roleValue: TimelineElement.TouristAttraction
+                TouristAttractionDelegate {
+                    batchId: model.batchId
+                    rangeType: model.rangeType
+                }
+            }
+            Models.DelegateChoice {
+                roleValue: TimelineElement.Event
+                EventDelegate {
+                    batchId: model.batchId
+                    rangeType: model.rangeType
+                }
+            }
+            Models.DelegateChoice {
+                roleValue: TimelineElement.CarRental
+                CarRentalDelegate {
+                    batchId: model.batchId
+                    rangeType: model.rangeType
+                }
+            }
+            Models.DelegateChoice {
+                roleValue: TimelineElement.BoatTrip
+                BoatDelegate {
+                    batchId: model.batchId
+                    rangeType: model.rangeType
+                }
+            }
+            Models.DelegateChoice {
+                roleValue: TimelineElement.TodayMarker
+                RowLayout {
+                    width: ListView.view.width
+                    Item{ Layout.fillWidth: true }
+                    QQC2.Label {
+                        Layout.maximumWidth: Kirigami.Units.gridUnit * 30
+                        Layout.fillWidth: true
+                        height: visible ? implicitHeight : 0
+                        visible: model.isTodayEmpty
+                        text: i18n("Nothing on the itinerary for today.");
+                        color: Kirigami.Theme.textColor
+                    }
+                    Item{ Layout.fillWidth: true }
 
-            text: modelData
+                }
+            }
+            Models.DelegateChoice {
+                roleValue: TimelineElement.LocationInfo
+                LocationInfoDelegate {
+                    locationInfo: model.locationInformation
+                }
+            }
+            Models.DelegateChoice {
+                roleValue: TimelineElement.WeatherForecast
+                WeatherForecastDelegate {}
+            }
+            Models.DelegateChoice {
+                roleValue: TimelineElement.TripGroup
+                TripGroupDelegate {
+                    onRemoveTrip: (tripGroupId) => {
+                        deleteTripGroupWarningDialog.tripGroupId = tripGroupId;
+                        deleteTripGroupWarningDialog.open();
+                    }
+                }
+            }
+            Models.DelegateChoice {
+                roleValue: TimelineElement.Transfer
+                TransferDelegate {}
+            }
         }
     }
 }

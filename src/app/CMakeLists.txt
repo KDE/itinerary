@@ -6,6 +6,7 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/itinerary_version_detailed.h.cmake ${
 
 add_library(itinerary STATIC)
 target_sources(itinerary PRIVATE
+    abstracttimelinemodel.cpp
     applicationcontroller.cpp
     calendarhelper.cpp
     calendarimportmodel.cpp
@@ -49,6 +50,7 @@ target_sources(itinerary PRIVATE
     tripgroupmanager.cpp
     tripgroupmodel.cpp
     tripgroupproxymodel.cpp
+    triptimelinemodel.cpp
     transfer.cpp
     transfermanager.cpp
     util.cpp

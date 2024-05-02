@@ -48,6 +48,7 @@
 #include "tripgroupmanager.h"
 #include "tripgroupmodel.h"
 #include "tripgroupproxymodel.h"
+#include "triptimelinemodel.h"
 #include "unitconversion.h"
 #include "util.h"
 #include "weatherforecastmodel.h"
@@ -195,6 +196,7 @@ void registerApplicationTypes()
 #endif
     qmlRegisterType<OnlineTicketImporter>("org.kde.itinerary", 1, 0, "OnlineTicketImporter");
     qmlRegisterType<TripGroupModel>("org.kde.itinerary", 1, 0, "TripGroupModel");
+    qmlRegisterType<TripTimelineModel>("org.kde.itinerary", 1, 0, "TripTimelineModel");
 
     qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "About", [](QQmlEngine *engine, QJSEngine *) -> QJSValue {
         return engine->toScriptValue(KAboutData::applicationData());

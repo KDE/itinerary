@@ -39,7 +39,7 @@ static TimelineElement::ElementType elementType(const QVariant &res)
 
 TimelineElement::TimelineElement() = default;
 
-TimelineElement::TimelineElement(TimelineModel *model, TimelineElement::ElementType type, const QDateTime &dateTime, const QVariant &data)
+TimelineElement::TimelineElement(AbstractTimelineModel *model, TimelineElement::ElementType type, const QDateTime &dateTime, const QVariant &data)
     : dt(dateTime)
     , elementType(type)
     , m_content(data)
@@ -47,7 +47,7 @@ TimelineElement::TimelineElement(TimelineModel *model, TimelineElement::ElementT
 {
 }
 
-TimelineElement::TimelineElement(TimelineModel *model, const QString& resId, const QVariant& res, TimelineElement::RangeType rt)
+TimelineElement::TimelineElement(AbstractTimelineModel *model, const QString& resId, const QVariant& res, TimelineElement::RangeType rt)
     : dt(relevantDateTime(res, rt))
     , elementType(::elementType(res))
     , rangeType(rt)
@@ -56,7 +56,7 @@ TimelineElement::TimelineElement(TimelineModel *model, const QString& resId, con
 {
 }
 
-TimelineElement::TimelineElement(TimelineModel *model, const ::Transfer &transfer)
+TimelineElement::TimelineElement(AbstractTimelineModel *model, const ::Transfer &transfer)
     : dt(transfer.anchorTime())
     , elementType(Transfer)
     , rangeType(SelfContained)
@@ -171,7 +171,7 @@ bool TimelineElement::isLocationChange() const
 {
     if (isReservation()) {
         // ### can be done without reservation lookup for some of the reservation element types
-        const auto res = m_model->m_resMgr->reservation(batchId());
+        const auto res = m_model->reservationManager()->reservation(batchId());
         return LocationUtil::isLocationChange(res);
     }
 
@@ -204,7 +204,7 @@ bool TimelineElement::isTimeBoxed() const
         case Restaurant:
         case TouristAttraction:
         case Event:
-            return SortUtil::endDateTime(m_model->m_resMgr->reservation(batchId())).isValid();
+            return SortUtil::endDateTime(m_model->reservationManager()->reservation(batchId())).isValid();
     }
     return false;
 }
@@ -236,7 +236,7 @@ bool TimelineElement::isInformational() const
 bool TimelineElement::isCanceled() const
 {
     if (isReservation()) {
-        const auto res = m_model->m_resMgr->reservation(batchId());
+        const auto res = m_model->reservationManager()->reservation(batchId());
         return JsonLd::canConvert<Reservation>(res) && JsonLd::convert<Reservation>(res).reservationStatus() == Reservation::ReservationCancelled;
     }
 
@@ -276,7 +276,7 @@ static KPublicTransport::Location destinationOfJourney(const KPublicTransport::J
 QVariant TimelineElement::destination() const
 {
     if (isReservation()) {
-        const auto res = m_model->m_resMgr->reservation(batchId());
+        const auto res = m_model->reservationManager()->reservation(batchId());
         if (LocationUtil::isLocationChange(res)) {
             return LocationUtil::arrivalLocation(res);
         }
@@ -297,7 +297,7 @@ QVariant TimelineElement::destination() const
 QDateTime TimelineElement::endDateTime() const
 {
     if (isReservation()) {
-        const auto res = m_model->m_resMgr->reservation(batchId());
+        const auto res = m_model->reservationManager()->reservation(batchId());
         return SortUtil::endDateTime(res);
     }
 
