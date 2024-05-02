@@ -19,14 +19,10 @@
 
         <file alias="images/bike.svg">../src/app/images/bike.svg</file>
         <file alias="images/cablecar.svg">../src/app/images/cablecar.svg</file>
-        <file alias="images/elevator.svg">../src/app/images/elevator.svg</file>
-        <file alias="images/escalator.svg">../src/app/images/escalator.svg</file>
         <file alias="images/flight.svg">../src/app/images/flight.svg</file>
         <file alias="images/foodestablishment.svg">../src/app/images/foodestablishment.svg</file>
         <file alias="images/seat.svg">../src/app/images/seat.svg</file>
-        <file alias="images/stairs.svg">../src/app/images/stairs.svg</file>
         <file alias="images/train.svg">../src/app/images/train.svg</file>
         <file alias="images/transfer.svg">../src/app/images/transfer.svg</file>
-        <file alias="images/walk.svg">../src/app/images/walk.svg</file>
     </qresource>
 </RCC>

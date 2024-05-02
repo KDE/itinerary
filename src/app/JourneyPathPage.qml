@@ -28,18 +28,7 @@ Kirigami.ScrollablePage {
                     Layout.row: 0
                     Layout.column: 0
                     Layout.rowSpan: 2
-                    source: {
-                        switch (section.maneuver) {
-                            case PathSection.Stairs:
-                                return "qrc:/images/stairs.svg";
-                            case PathSection.Elevator:
-                                return "qrc:/images/elevator.svg";
-                            case PathSection.Escalator:
-                                return "qrc:/images/escalator.svg";
-                            default:
-                                return "qrc:/images/walk.svg";
-                        }
-                    }
+                    source: section.iconName
                     width: height
                     height: Kirigami.Units.iconSizes.medium
                     isMask: true
