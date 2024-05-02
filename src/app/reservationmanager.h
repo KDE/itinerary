@@ -64,6 +64,9 @@ public:
     /** Returns the batch happening after @p batchId, if any. */
     QString nextBatch(const QString &batchId) const;
 
+    /** Validator configured to acceppt all supported reservation types. */
+    [[nodiscard]] static KItinerary::ExtractorValidator validator();
+
 Q_SIGNALS:
     void reservationAdded(const QString &id);
     void reservationChanged(const QString &id);

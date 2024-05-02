@@ -37,8 +37,19 @@ using namespace KItinerary;
 
 ReservationManager::ReservationManager(QObject* parent)
     : QObject(parent)
+    , m_validator(ReservationManager::validator())
 {
-    m_validator.setAcceptedTypes<
+    m_validator.setAcceptOnlyCompleteElements(true);
+
+    loadBatches();
+}
+
+ReservationManager::~ReservationManager() = default;
+
+KItinerary::ExtractorValidator ReservationManager::validator()
+{
+    KItinerary::ExtractorValidator v;
+    v.setAcceptedTypes<
         BoatReservation,
         BusReservation,
         EventReservation,
@@ -49,12 +60,8 @@ ReservationManager::ReservationManager(QObject* parent)
         TrainReservation,
         TouristAttractionVisit
     >();
-    m_validator.setAcceptOnlyCompleteElements(true);
-
-    loadBatches();
+    return v;
 }
-
-ReservationManager::~ReservationManager() = default;
 
 bool ReservationManager::isEmpty() const
 {
