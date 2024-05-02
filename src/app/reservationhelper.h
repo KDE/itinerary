@@ -15,20 +15,20 @@ class QVariant;
 /** Helper methods for dealing with KItinerary reservation elements. */
 namespace ReservationHelper
 {
-    std::pair<QString, QString> lineNameAndNumber(const QVariant &res);
+    [[nodiscard]] std::pair<QString, QString> lineNameAndNumber(const QVariant &res);
 
-    bool equals(const QVariant &lhs, const QVariant &rhs);
+    [[nodiscard]] bool equals(const QVariant &lhs, const QVariant &rhs);
 
     /** Returns the UIC company code for @p res, if any. */
-    QString uicCompanyCode(const QVariant &res);
+    [[nodiscard]] QString uicCompanyCode(const QVariant &res);
     /** Returns the VDV org id for @p res, if any. */
-    QString vdvOrganizationId(const QVariant &res);
+    [[nodiscard]] QString vdvOrganizationId(const QVariant &res);
 
     /** Returns whether @p res is an unbound reservation. */
-    bool isUnbound(const QVariant &res);
+    [[nodiscard]] bool isUnbound(const QVariant &res);
 
     /** Checks whether the given reservation is canclled. */
-    bool isCancelled(const QVariant &res);
+    [[nodiscard]] bool isCancelled(const QVariant &res);
 }
 
 #endif // RESERVATIONHELPER_H
