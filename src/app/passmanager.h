@@ -9,6 +9,8 @@
 #include <QAbstractListModel>
 #include <QDateTime>
 
+namespace KItinerary { class ExtractorValidator; }
+
 /** Holds time-less pass or program membership elements.
  *  Not to be confused with PkPassManager, which handles storage
  *  and updates of Apple Wallet pass files.
@@ -64,6 +66,9 @@ public:
 
     /** Ids of documents attached to @p pass. */
     Q_INVOKABLE static QVariantList documentIds(const QVariant &pass);
+
+    /** Validator accepting all supported pass types. */
+    [[nodiscard]] static KItinerary::ExtractorValidator validator();
 
 Q_SIGNALS:
     void passChanged(const QString &passId);

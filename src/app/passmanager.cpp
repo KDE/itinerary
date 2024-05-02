@@ -151,8 +151,7 @@ QStringList PassManager::import(const QList<QVariant> &passes)
     postproc.process(passes);
     const auto processed = postproc.result();
 
-    ExtractorValidator validator;
-    validator.setAcceptedTypes<KItinerary::Ticket, KItinerary::ProgramMembership>();
+    ExtractorValidator validator(PassManager::validator());
 
     QStringList result;
     for (const auto &pass : processed) {
@@ -164,6 +163,13 @@ QStringList PassManager::import(const QList<QVariant> &passes)
         }
     }
     return result;
+}
+
+KItinerary::ExtractorValidator PassManager::validator()
+{
+    KItinerary::ExtractorValidator v;
+    v.setAcceptedTypes<KItinerary::Ticket, KItinerary::ProgramMembership>();
+    return v;
 }
 
 QString PassManager::findMatchingPass(const QVariant &pass) const
