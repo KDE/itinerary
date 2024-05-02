@@ -51,9 +51,8 @@ Item{
                     anchors.fill: button
 
                     radius: height/2
-                    color: "transparent"
-                    border.color: Kirigami.Theme.disabledTextColor
-                    opacity: button.hovered ? 0.3 : 0
+                    color: Kirigami.Theme.textColor
+                    opacity: button.hovered ? 0.1 : 0
 
                     Behavior on opacity {
                         PropertyAnimation {
@@ -96,7 +95,7 @@ Item{
 
                             anchors.centerIn: parent
                             font.bold: true
-                            color: Kirigami.Theme.hoverColor
+                            color: Kirigami.Theme.textColor
 
                             opacity: button.checked ? 1 : 0
                             text: button.text
@@ -114,7 +113,7 @@ Item{
                             anchors.centerIn: parent
                             color: Kirigami.Theme.textColor
 
-                            opacity: button.checked ? 0 : 1
+                            opacity: button.checked ? 0 : 0.7
                             text: button.text
                             Behavior on opacity {
                                 PropertyAnimation {
@@ -148,7 +147,7 @@ Item{
         }
     }
 
-    Rectangle {
+    Kirigami.ShadowedRectangle {
         id: marker
 
         property int selectedIndex: container.defaultIndex
@@ -157,14 +156,14 @@ Item{
         z: switchLayout.z - 1
         height: switchLayout.implicitHeight
         radius: height/2
-        border.width: 1
-        border.color: Kirigami.ColorUtils.linearInterpolation(
-                            Kirigami.Theme.hoverColor,
-                            "transparent", 0.4)
-        color: Kirigami.ColorUtils.linearInterpolation(
-                    Kirigami.Theme.hoverColor,
-                    "transparent", 0.9)
 
+        color: Kirigami.Theme.hoverColor
+        opacity: 0.4
+        shadow {
+            size: 10
+            yOffset: 4
+            color: Qt.rgba(0, 0, 0, 0.3)
+        }
         Behavior on x {
             PropertyAnimation {
                 id: x_anim
