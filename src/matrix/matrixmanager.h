@@ -6,6 +6,7 @@
 
 #include <QObject>
 
+#include <Quotient/accountregistry.h>
 #include <Quotient/connection.h>
 
 class MatrixManager : public QObject
@@ -52,8 +53,10 @@ Q_SIGNALS:
 
 private:
     QString m_infoString;
+    Quotient::AccountRegistry m_acountRegistry;
 
     void setInfoString(const QString &infoString);
+
 };
 
 #endif //MATRIXMANAGER_H

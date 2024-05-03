@@ -15,18 +15,18 @@ using namespace Quotient;
 MatrixManager::MatrixManager(QObject *parent)
     : QObject(parent)
 {
-    Accounts.invokeLogin();
-    connect(&Accounts, &AccountRegistry::rowsInserted, this, [this](){
+    m_acountRegistry.invokeLogin();
+    connect(&m_acountRegistry, &AccountRegistry::rowsInserted, this, [this](){
         Q_EMIT connectedChanged();
         Q_EMIT userIdChanged();
         Q_EMIT connectionChanged();
         setInfoString(i18n("Syncing…"));
-        connect(Accounts.accounts()[0], &Connection::syncDone, this, [this](){
+        connect(m_acountRegistry.accounts()[0], &Connection::syncDone, this, [this](){
             setInfoString({});
-            Accounts.accounts()[0]->stopSync();
+            m_acountRegistry.accounts()[0]->stopSync();
         }, Qt::SingleShotConnection);
     });
-    connect(&Accounts, &AccountRegistry::rowsRemoved, this, [this](){
+    connect(&m_acountRegistry, &AccountRegistry::rowsRemoved, this, [this](){
         Q_EMIT connectedChanged();
         Q_EMIT userIdChanged();
         Q_EMIT connectionChanged();
@@ -75,7 +75,7 @@ QString MatrixManager::infoString() const
 
 bool MatrixManager::connected() const
 {
-    return Accounts.count() > 0;
+    return m_acountRegistry.count() > 0;
 }
 
 void MatrixManager::setInfoString(const QString &infoString)
@@ -86,25 +86,25 @@ void MatrixManager::setInfoString(const QString &infoString)
 
 QString MatrixManager::userId() const
 {
-    return Accounts.count() > 0 ? Accounts.accounts()[0]->userId() : QString();
+    return m_acountRegistry.count() > 0 ? m_acountRegistry.accounts()[0]->userId() : QString();
 }
 
 void MatrixManager::logout()
 {
-    Accounts.accounts()[0]->logout();
+    m_acountRegistry.accounts()[0]->logout();
 }
 
 Quotient::Connection *MatrixManager::connection() const
 {
-    if (Accounts.count() > 0) {
-        return Accounts.accounts()[0];
+    if (m_acountRegistry.count() > 0) {
+        return m_acountRegistry.accounts()[0];
     }
     return nullptr;
 }
 
 void MatrixManager::sync()
 {
-    auto connection = Accounts.accounts()[0];
+    auto connection = m_acountRegistry.accounts()[0];
     connection->sync();
     setInfoString(i18n("Syncing…"));
     connect(connection, &Connection::syncDone, this, [this](){
@@ -114,7 +114,7 @@ void MatrixManager::sync()
 
 void MatrixManager::postEvent(const QString &roomId, const QString &type, const QJsonObject &content)
 {
-    Accounts.accounts()[0]->room(roomId)->postJson(type, content);
+    m_acountRegistry.accounts()[0]->room(roomId)->postJson(type, content);
 }
 
 void MatrixManager::postLocation(const QString &roomId, float latitude, float longitude, const QString &description)
