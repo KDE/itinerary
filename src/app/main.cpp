@@ -193,14 +193,6 @@ void registerApplicationTypes()
     qmlRegisterType<MatrixBeaconStub>("org.kde.itinerary", 1, 0, "MatrixBeacon");
 #endif
     qmlRegisterType<OnlineTicketImporter>("org.kde.itinerary", 1, 0, "OnlineTicketImporter");
-
-    qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "About", [](QQmlEngine *engine, QJSEngine *) -> QJSValue {
-        return engine->toScriptValue(KAboutData::applicationData());
-    });
-
-    qmlRegisterSingletonType<Clipboard>("org.kde.itinerary", 1, 0, "Clipboard", [](QQmlEngine *, QJSEngine *) -> QObject * {
-        return new Clipboard;
-    });
 }
 
 // for registering QML singletons only
@@ -262,6 +254,14 @@ void registerApplicationSingletons()
     REGISTER_SINGLETON_GADGET_FACTORY(PublicTransport)
     REGISTER_SINGLETON_GADGET_FACTORY(UnitConversion)
     REGISTER_SINGLETON_GADGET_FACTORY(Util)
+
+    qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "About", [](QQmlEngine *engine, QJSEngine *) -> QJSValue {
+        return engine->toScriptValue(KAboutData::applicationData());
+    });
+
+    qmlRegisterSingletonType<Clipboard>("org.kde.itinerary", 1, 0, "Clipboard", [](QQmlEngine *, QJSEngine *) -> QObject * {
+        return new Clipboard;
+    });
 }
 
 #undef REGISTER_SINGLETON_INSTANCE
