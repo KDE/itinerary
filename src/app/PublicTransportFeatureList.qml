@@ -22,11 +22,7 @@ Repeater {
         KirigamiDelegates.TitleSubtitle {
             Layout.fillWidth: true
             enabled: modelData.availability !== KPublicTransport.Feature.Unavailable
-            title: {
-                if (modelData.name !== "")
-                    return modelData.name;
-                return featureIcon.featureTypeLabel;
-            }
+            title: modelData.displayName
             subtitle: {
                 if (modelData.description !== "")
                     return modelData.description;

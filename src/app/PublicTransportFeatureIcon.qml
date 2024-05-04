@@ -19,42 +19,6 @@ Kirigami.Icon {
     Layout.preferredHeight: Kirigami.Units.iconSizes.small
     Layout.preferredWidth: Kirigami.Units.iconSizes.small
 
-    readonly property string featureTypeLabel: {
-        switch (root.feature.type) {
-            case KPublicTransport.Feature.AirConditioning:
-                return i18nc("train coach feature", "Air conditioning");
-            case KPublicTransport.Feature.Restaurant:
-                return i18nc("train coach feature", "Bistro or restaurant");
-            case KPublicTransport.Feature.ToddlerArea:
-                return i18nc("train coach feature", "Toddler area");
-            case KPublicTransport.Feature.FamilyArea:
-                return i18nc("train coach feature", "Family area");
-            case KPublicTransport.Feature.WheelchairAccessible:
-                return i18nc("train coach feature", "Wheelchair accessible");
-            case KPublicTransport.Feature.SilentArea:
-                return i18nc("train coach feature", "Quiet area");
-            case KPublicTransport.Feature.BusinessArea:
-                return i18nc("train coach feature", "Business area");
-            case KPublicTransport.Feature.BikeStorage:
-                return i18nc("train coach feature", "Bike storage");
-            case KPublicTransport.Feature.Toilet:
-                return i18nc("train coach feature", "Toilet");
-            case KPublicTransport.Feature.WheelchairAccessibleToilet:
-                return i18nc("train coach feature", "Wheelchair accessible toilet");
-            case KPublicTransport.Feature.InformationPoint:
-                return i18nc("train coach feature", "Information point");
-            case KPublicTransport.Feature.WiFi:
-                return i18nc("train coach feature", "Wi-Fi");
-            case KPublicTransport.Feature.PowerSockets:
-                return i18nc("train coach feature", "Power sockets");
-                break;
-            case KPublicTransport.Feature.Other:
-            default:
-                break;
-        }
-        return "";
-    }
-
     source: {
         switch (root.feature.type) {
             case KPublicTransport.Feature.AirConditioning:
@@ -124,9 +88,7 @@ Kirigami.Icon {
     }
     QQC2.ToolTip.visible: hoverHandler.hovered && QQC2.ToolTip.text !== ""
     QQC2.ToolTip.text: {
-        let s = root.feature.name;
-        if (s === "")
-            s = root.featureTypeLabel;
+        let s = root.feature.displayName;
 
         if (root.feature.availability === KPublicTransport.Feature.Unavailable) {
             s = i18n("%1 (not available)", s)
