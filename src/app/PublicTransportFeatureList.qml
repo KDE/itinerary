@@ -9,11 +9,12 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kirigami.delegates as KirigamiDelegates
 import org.kde.kpublictransport as KPublicTransport
+import org.kde.kpublictransport.ui as KPublicTransport
 
 Repeater {
     delegate: RowLayout {
         Layout.leftMargin: Kirigami.Units.largeSpacing
-        PublicTransportFeatureIcon {
+        KPublicTransport.FeatureIcon {
             id: featureIcon
             feature: modelData
             Layout.preferredHeight: Kirigami.Units.iconSizes.smallMedium

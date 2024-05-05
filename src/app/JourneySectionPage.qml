@@ -14,6 +14,7 @@ import org.kde.kirigami.delegates as KirigamiDelegates
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kirigamiaddons.components as Components
 import org.kde.kpublictransport
+import org.kde.kpublictransport.ui as KPublicTransport
 import org.kde.itinerary
 
 
@@ -99,8 +100,10 @@ Kirigami.Page {
                 spacing: Kirigami.Units.smallSpacing
                 Repeater {
                     model: root.journeySection.departureVehicleLayout.combinedFeatures
-                    delegate: PublicTransportFeatureIcon {
+                    delegate: KPublicTransport.FeatureIcon {
                         feature: modelData
+                        Layout.preferredHeight: Kirigami.Units.iconSizes.small
+                        Layout.preferredWidth: Kirigami.Units.iconSizes.small
                     }
                 }
 

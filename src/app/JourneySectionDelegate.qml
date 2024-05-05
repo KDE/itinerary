@@ -9,6 +9,7 @@ import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kpublictransport
+import org.kde.kpublictransport.ui as KPublicTransport
 import org.kde.itinerary
 import org.kde.kirigamiaddons.formcard as FormCard
 
@@ -236,8 +237,10 @@ FormCard.AbstractFormDelegate {
                 spacing: Kirigami.Units.smallSpacing
                 Repeater {
                     model: modelData.features
-                    delegate: PublicTransportFeatureIcon {
+                    delegate: KPublicTransport.FeatureIcon {
                         feature: modelData
+                        Layout.preferredHeight: Kirigami.Units.iconSizes.small
+                        Layout.preferredWidth: Kirigami.Units.iconSizes.small
                     }
                 }
             }

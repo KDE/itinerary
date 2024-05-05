@@ -10,7 +10,7 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kirigami.delegates as KirigamiDelegates
 import org.kde.kpublictransport as KPublicTransport
-import org.kde.kpublictransport.ui
+import org.kde.kpublictransport.ui as KPublicTransport
 import org.kde.itinerary
 
 Kirigami.ScrollablePage {
@@ -192,8 +192,10 @@ Kirigami.ScrollablePage {
                 spacing: Kirigami.Units.smallSpacing
                 Repeater {
                     model: root.stopover.features
-                    delegate: PublicTransportFeatureIcon {
+                    delegate: KPublicTransport.FeatureIcon {
                         feature: modelData
+                        Layout.preferredHeight: Kirigami.Units.iconSizes.small
+                        Layout.preferredWidth: Kirigami.Units.iconSizes.small
                     }
                 }
 
@@ -298,7 +300,7 @@ Kirigami.ScrollablePage {
             id: vehicleRepeater
             width: parent.width
             model: vehicleModel
-            delegate: VehicleSectionItem {
+            delegate: KPublicTransport.VehicleSectionItem {
                 readonly property bool isSelected: {
                     if (root.selectedVehicleSection == "") {
                         return root.selectedClassTypes & section.classes;
@@ -357,8 +359,10 @@ Kirigami.ScrollablePage {
                         visible: model.vehicleSection.disruptionEffect !== KPublicTransport.Disruption.NoService
                         Repeater {
                             model: section.sectionFeatures
-                            delegate: PublicTransportFeatureIcon {
+                            delegate: KPublicTransport.FeatureIcon {
                                 feature: modelData
+                                Layout.preferredHeight: Kirigami.Units.iconSizes.small
+                                Layout.preferredWidth: Kirigami.Units.iconSizes.small
                             }
                         }
                     }

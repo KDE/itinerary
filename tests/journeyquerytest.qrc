@@ -17,12 +17,7 @@
         <file alias="qt/qml/org/kde/itinerary/VehicleLoadIndicator.qml">../src/app/VehicleLoadIndicator.qml</file>
         <file alias="qt/qml/org/kde/itinerary/VerticalNavigationButton.qml">../src/app/VerticalNavigationButton.qml</file>
 
-        <file alias="images/bike.svg">../src/app/images/bike.svg</file>
-        <file alias="images/cablecar.svg">../src/app/images/cablecar.svg</file>
-        <file alias="images/flight.svg">../src/app/images/flight.svg</file>
-        <file alias="images/foodestablishment.svg">../src/app/images/foodestablishment.svg</file>
         <file alias="images/seat.svg">../src/app/images/seat.svg</file>
-        <file alias="images/train.svg">../src/app/images/train.svg</file>
         <file alias="images/transfer.svg">../src/app/images/transfer.svg</file>
     </qresource>
 </RCC>

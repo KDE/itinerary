@@ -10,6 +10,7 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kpublictransport
+import org.kde.kpublictransport.ui as KPublicTransport
 import org.kde.itinerary
 
 Kirigami.ScrollablePage {
@@ -194,8 +195,10 @@ Kirigami.ScrollablePage {
                         spacing: Kirigami.Units.smallSpacing
                         Repeater {
                             model: top.departure.features
-                            delegate: PublicTransportFeatureIcon {
+                            delegate: KPublicTransport.FeatureIcon {
                                 feature: modelData
+                                Layout.preferredHeight: Kirigami.Units.iconSizes.small
+                                Layout.preferredWidth: Kirigami.Units.iconSizes.small
                             }
                         }
                     }
