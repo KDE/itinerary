@@ -347,6 +347,7 @@ Kirigami.Page {
             enabled: map.floorLevels.hasFloorLevelBelow(map.view.floorLevel)
             onTriggered: map.view.floorLevel = map.floorLevels.floorLevelBelow(map.view.floorLevel)
             visible: map.floorLevels.hasFloorLevels
+            tooltip: text
         }
 
         trailingAction: Kirigami.Action {
@@ -355,6 +356,7 @@ Kirigami.Page {
             enabled: map.floorLevels.hasFloorLevelAbove(map.view.floorLevel)
             onTriggered: map.view.floorLevel = map.floorLevels.floorLevelAbove(map.view.floorLevel)
             visible: map.floorLevels.hasFloorLevels
+            tooltip: text
         }
     }
 

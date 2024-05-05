@@ -154,12 +154,14 @@ Kirigami.ScrollablePage {
             text: i18nc("@action:button", "Go To Now")
             icon.name: "view-calendar-day"
             onTriggered: listView.positionViewAtIndex(TripGroupProxyModel.todayRow, ListView.Beginning);
+            tooltip: text
         }
 
         trailingAction: Kirigami.Action{
             text: i18nc("@action:button", "Add trip")
             icon.name: "list-add-symbolic"
             onTriggered: addMenu.open()
+            tooltip: text
         }
     }
 
