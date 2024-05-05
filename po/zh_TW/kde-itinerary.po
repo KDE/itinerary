@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-01 00:38+0000\n"
+"POT-Creation-Date: 2024-05-05 00:39+0000\n"
 "PO-Revision-Date: 2024-04-05 23:38+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -2615,25 +2615,25 @@ msgstr "線上票券"
 msgid "Search..."
 msgstr "搜尋…"
 
-#: app/passmanager.cpp:245
+#: app/passmanager.cpp:251
 #, kde-format
 msgctxt "no longer valid tickets"
 msgid "Expired"
 msgstr "已過期"
 
-#: app/passmanager.cpp:248
+#: app/passmanager.cpp:254
 #, kde-format
 msgctxt "not yet valid tickets"
 msgid "Future"
 msgstr "尚未生效"
 
-#: app/passmanager.cpp:250
+#: app/passmanager.cpp:256
 #, kde-format
 msgctxt "not yet expired tickets"
 msgid "Valid"
 msgstr "有效"
 
-#: app/passmanager.cpp:269
+#: app/passmanager.cpp:275
 #, kde-format
 msgid "%1 - %2"
 msgstr "%1 - %2"
@@ -2834,109 +2834,23 @@ msgstr "🇪🇺 歐盟"
 msgid "European Union"
 msgstr "歐盟"
 
-#: app/PublicTransportFeatureIcon.qml:25
-#, kde-format
-msgctxt "train coach feature"
-msgid "Air conditioning"
-msgstr "空調"
-
-#: app/PublicTransportFeatureIcon.qml:27
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Edit Restaurant"
-msgctxt "train coach feature"
-msgid "Bistro or restaurant"
-msgstr "編輯餐廳"
-
-#: app/PublicTransportFeatureIcon.qml:29
-#, kde-format
-msgctxt "train coach feature"
-msgid "Toddler area"
-msgstr "幼兒區域"
-
-#: app/PublicTransportFeatureIcon.qml:31
-#, fuzzy, kde-format
-#| msgid "Family name"
-msgctxt "train coach feature"
-msgid "Family area"
-msgstr "家族名（姓氏）"
-
-#: app/PublicTransportFeatureIcon.qml:33
-#, fuzzy, kde-format
-#| msgctxt "train coach feature"
-#| msgid "Wheelchar accessible"
-msgctxt "train coach feature"
-msgid "Wheelchair accessible"
-msgstr "輪椅無障礙"
-
-#: app/PublicTransportFeatureIcon.qml:35
-#, kde-format
-msgctxt "train coach feature"
-msgid "Quiet area"
-msgstr "寧靜區域"
-
-#: app/PublicTransportFeatureIcon.qml:37
-#, kde-format
-msgctxt "train coach feature"
-msgid "Business area"
-msgstr "商業區域"
-
-#: app/PublicTransportFeatureIcon.qml:39
-#, kde-format
-msgctxt "train coach feature"
-msgid "Bike storage"
-msgstr ""
-
-#: app/PublicTransportFeatureIcon.qml:41
-#, kde-format
-msgctxt "train coach feature"
-msgid "Toilet"
-msgstr "廁所"
-
-#: app/PublicTransportFeatureIcon.qml:43
-#, fuzzy, kde-format
-#| msgctxt "train coach feature"
-#| msgid "Wheelchar accessible toilet"
-msgctxt "train coach feature"
-msgid "Wheelchair accessible toilet"
-msgstr "輪椅無障礙廁所"
-
-#: app/PublicTransportFeatureIcon.qml:45
-#, fuzzy, kde-format
-#| msgid "More information"
-msgctxt "train coach feature"
-msgid "Information point"
-msgstr "更多資訊"
-
-#: app/PublicTransportFeatureIcon.qml:47
-#, kde-format
-msgctxt "train coach feature"
-msgid "Wi-Fi"
-msgstr "Wi-Fi"
-
-#: app/PublicTransportFeatureIcon.qml:49
-#, kde-format
-msgctxt "train coach feature"
-msgid "Power sockets"
-msgstr "電源插座"
-
-#: app/PublicTransportFeatureIcon.qml:132
+#: app/PublicTransportFeatureIcon.qml:94
 #, kde-format
 msgid "%1 (not available)"
 msgstr "%1（無法使用）"
 
-#: app/PublicTransportFeatureList.qml:34
+#: app/PublicTransportFeatureList.qml:30
 #, kde-format
 msgid "Availability unknown"
 msgstr "可用性未知"
 
-#: app/PublicTransportFeatureList.qml:36
+#: app/PublicTransportFeatureList.qml:32
 #, fuzzy, kde-format
 #| msgid "No camera available."
 msgid "Not available"
 msgstr "沒有可用的相機。"
 
-#: app/PublicTransportFeatureList.qml:38
+#: app/PublicTransportFeatureList.qml:34
 #, kde-format
 msgid "Currently not available"
 msgstr "目前無法使用"
@@ -3946,6 +3860,67 @@ msgstr "登入"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 從 %3 到 %4 於 %5"
+
+#~ msgctxt "train coach feature"
+#~ msgid "Air conditioning"
+#~ msgstr "空調"
+
+#, fuzzy
+#~| msgctxt "@title"
+#~| msgid "Edit Restaurant"
+#~ msgctxt "train coach feature"
+#~ msgid "Bistro or restaurant"
+#~ msgstr "編輯餐廳"
+
+#~ msgctxt "train coach feature"
+#~ msgid "Toddler area"
+#~ msgstr "幼兒區域"
+
+#, fuzzy
+#~| msgid "Family name"
+#~ msgctxt "train coach feature"
+#~ msgid "Family area"
+#~ msgstr "家族名（姓氏）"
+
+#, fuzzy
+#~| msgctxt "train coach feature"
+#~| msgid "Wheelchar accessible"
+#~ msgctxt "train coach feature"
+#~ msgid "Wheelchair accessible"
+#~ msgstr "輪椅無障礙"
+
+#~ msgctxt "train coach feature"
+#~ msgid "Quiet area"
+#~ msgstr "寧靜區域"
+
+#~ msgctxt "train coach feature"
+#~ msgid "Business area"
+#~ msgstr "商業區域"
+
+#~ msgctxt "train coach feature"
+#~ msgid "Toilet"
+#~ msgstr "廁所"
+
+#, fuzzy
+#~| msgctxt "train coach feature"
+#~| msgid "Wheelchar accessible toilet"
+#~ msgctxt "train coach feature"
+#~ msgid "Wheelchair accessible toilet"
+#~ msgstr "輪椅無障礙廁所"
+
+#, fuzzy
+#~| msgid "More information"
+#~ msgctxt "train coach feature"
+#~ msgid "Information point"
+#~ msgstr "更多資訊"
+
+#~ msgctxt "train coach feature"
+#~ msgid "Wi-Fi"
+#~ msgstr "Wi-Fi"
+
+#~ msgctxt "train coach feature"
+#~ msgid "Power sockets"
+#~ msgstr "電源插座"
 
 #~ msgctxt "vehicle load"
 #~ msgid "Low"

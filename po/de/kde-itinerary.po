@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-01 00:38+0000\n"
+"POT-Creation-Date: 2024-05-05 00:39+0000\n"
 "PO-Revision-Date: 2023-07-09 00:58+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -2684,25 +2684,25 @@ msgstr "Online-Fahrkarte"
 msgid "Search..."
 msgstr "Suchen ..."
 
-#: app/passmanager.cpp:245
+#: app/passmanager.cpp:251
 #, kde-format
 msgctxt "no longer valid tickets"
 msgid "Expired"
 msgstr "Abgelaufen"
 
-#: app/passmanager.cpp:248
+#: app/passmanager.cpp:254
 #, kde-format
 msgctxt "not yet valid tickets"
 msgid "Future"
 msgstr ""
 
-#: app/passmanager.cpp:250
+#: app/passmanager.cpp:256
 #, kde-format
 msgctxt "not yet expired tickets"
 msgid "Valid"
 msgstr "Gültig"
 
-#: app/passmanager.cpp:269
+#: app/passmanager.cpp:275
 #, fuzzy, kde-format
 #| msgctxt "name - number"
 #| msgid "%1 - %2"
@@ -2915,104 +2915,23 @@ msgstr "🇪🇺 Europäische Union"
 msgid "European Union"
 msgstr "🇪🇺 Europäische Union"
 
-#: app/PublicTransportFeatureIcon.qml:25
-#, kde-format
-msgctxt "train coach feature"
-msgid "Air conditioning"
-msgstr ""
-
-#: app/PublicTransportFeatureIcon.qml:27
-#, fuzzy, kde-format
-#| msgid "Edit Restaurant"
-msgctxt "train coach feature"
-msgid "Bistro or restaurant"
-msgstr "Restaurant bearbeiten"
-
-#: app/PublicTransportFeatureIcon.qml:29
-#, kde-format
-msgctxt "train coach feature"
-msgid "Toddler area"
-msgstr ""
-
-#: app/PublicTransportFeatureIcon.qml:31
-#, fuzzy, kde-format
-#| msgid "Family name"
-msgctxt "train coach feature"
-msgid "Family area"
-msgstr "Familienname"
-
-#: app/PublicTransportFeatureIcon.qml:33
-#, kde-format
-msgctxt "train coach feature"
-msgid "Wheelchair accessible"
-msgstr ""
-
-#: app/PublicTransportFeatureIcon.qml:35
-#, kde-format
-msgctxt "train coach feature"
-msgid "Quiet area"
-msgstr ""
-
-#: app/PublicTransportFeatureIcon.qml:37
-#, kde-format
-msgctxt "train coach feature"
-msgid "Business area"
-msgstr ""
-
-#: app/PublicTransportFeatureIcon.qml:39
-#, kde-format
-msgctxt "train coach feature"
-msgid "Bike storage"
-msgstr ""
-
-#: app/PublicTransportFeatureIcon.qml:41
-#, kde-format
-msgctxt "train coach feature"
-msgid "Toilet"
-msgstr ""
-
-#: app/PublicTransportFeatureIcon.qml:43
-#, kde-format
-msgctxt "train coach feature"
-msgid "Wheelchair accessible toilet"
-msgstr ""
-
-#: app/PublicTransportFeatureIcon.qml:45
-#, fuzzy, kde-format
-#| msgid "More information"
-msgctxt "train coach feature"
-msgid "Information point"
-msgstr "Weitere Informationen"
-
-#: app/PublicTransportFeatureIcon.qml:47
-#, kde-format
-msgctxt "train coach feature"
-msgid "Wi-Fi"
-msgstr ""
-
-#: app/PublicTransportFeatureIcon.qml:49
-#, kde-format
-msgctxt "train coach feature"
-msgid "Power sockets"
-msgstr ""
-
-#: app/PublicTransportFeatureIcon.qml:132
+#: app/PublicTransportFeatureIcon.qml:94
 #, kde-format
 msgid "%1 (not available)"
 msgstr ""
 
-#: app/PublicTransportFeatureList.qml:34
+#: app/PublicTransportFeatureList.qml:30
 #, kde-format
 msgid "Availability unknown"
 msgstr ""
 
-#: app/PublicTransportFeatureList.qml:36
+#: app/PublicTransportFeatureList.qml:32
 #, fuzzy, kde-format
 #| msgid "No camera available."
 msgid "Not available"
 msgstr "Keine Kamera verfügbar."
 
-#: app/PublicTransportFeatureList.qml:38
+#: app/PublicTransportFeatureList.qml:34
 #, kde-format
 msgid "Currently not available"
 msgstr ""
@@ -4071,6 +3990,24 @@ msgstr "Anmeldung läuft"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 von %3 nach %4 am %5"
+
+#, fuzzy
+#~| msgid "Edit Restaurant"
+#~ msgctxt "train coach feature"
+#~ msgid "Bistro or restaurant"
+#~ msgstr "Restaurant bearbeiten"
+
+#, fuzzy
+#~| msgid "Family name"
+#~ msgctxt "train coach feature"
+#~ msgid "Family area"
+#~ msgstr "Familienname"
+
+#, fuzzy
+#~| msgid "More information"
+#~ msgctxt "train coach feature"
+#~ msgid "Information point"
+#~ msgstr "Weitere Informationen"
 
 #~ msgctxt "vehicle load"
 #~ msgid "Low"

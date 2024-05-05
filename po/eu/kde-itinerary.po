@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-01 00:38+0000\n"
+"POT-Creation-Date: 2024-05-05 00:39+0000\n"
 "PO-Revision-Date: 2024-04-19 23:02+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -2630,25 +2630,25 @@ msgstr "Lerroko txartela"
 msgid "Search..."
 msgstr "Bilatu..."
 
-#: app/passmanager.cpp:245
+#: app/passmanager.cpp:251
 #, kde-format
 msgctxt "no longer valid tickets"
 msgid "Expired"
 msgstr "Iraungita"
 
-#: app/passmanager.cpp:248
+#: app/passmanager.cpp:254
 #, kde-format
 msgctxt "not yet valid tickets"
 msgid "Future"
 msgstr "Etorkizunekoa"
 
-#: app/passmanager.cpp:250
+#: app/passmanager.cpp:256
 #, kde-format
 msgctxt "not yet expired tickets"
 msgid "Valid"
 msgstr "Balioduna"
 
-#: app/passmanager.cpp:269
+#: app/passmanager.cpp:275
 #, kde-format
 msgid "%1 - %2"
 msgstr "%1 - %2"
@@ -2848,100 +2848,22 @@ msgstr "🇪🇺 Europar Batasuna"
 msgid "European Union"
 msgstr "Europar Batasuna"
 
-#: app/PublicTransportFeatureIcon.qml:25
-#, kde-format
-msgctxt "train coach feature"
-msgid "Air conditioning"
-msgstr "Aire girotua"
-
-#: app/PublicTransportFeatureIcon.qml:27
-#, kde-format
-msgctxt "train coach feature"
-msgid "Bistro or restaurant"
-msgstr "Bistro edo jatetxea"
-
-#: app/PublicTransportFeatureIcon.qml:29
-#, kde-format
-msgctxt "train coach feature"
-msgid "Toddler area"
-msgstr "Haur txikien gunea"
-
-#: app/PublicTransportFeatureIcon.qml:31
-#, kde-format
-msgctxt "train coach feature"
-msgid "Family area"
-msgstr "Familia eremua"
-
-#: app/PublicTransportFeatureIcon.qml:33
-#, kde-format
-msgctxt "train coach feature"
-msgid "Wheelchair accessible"
-msgstr "Gurpil-aulkirako irisgarria"
-
-#: app/PublicTransportFeatureIcon.qml:35
-#, kde-format
-msgctxt "train coach feature"
-msgid "Quiet area"
-msgstr "Eremu lasaia"
-
-#: app/PublicTransportFeatureIcon.qml:37
-#, kde-format
-msgctxt "train coach feature"
-msgid "Business area"
-msgstr "Negozio eremua"
-
-#: app/PublicTransportFeatureIcon.qml:39
-#, kde-format
-msgctxt "train coach feature"
-msgid "Bike storage"
-msgstr "Bizikleten biltegia"
-
-#: app/PublicTransportFeatureIcon.qml:41
-#, kde-format
-msgctxt "train coach feature"
-msgid "Toilet"
-msgstr "Komuna"
-
-#: app/PublicTransportFeatureIcon.qml:43
-#, kde-format
-msgctxt "train coach feature"
-msgid "Wheelchair accessible toilet"
-msgstr "Gurpil-aulkirako komun irisgarria"
-
-#: app/PublicTransportFeatureIcon.qml:45
-#, kde-format
-msgctxt "train coach feature"
-msgid "Information point"
-msgstr "Informazio-puntua"
-
-#: app/PublicTransportFeatureIcon.qml:47
-#, kde-format
-msgctxt "train coach feature"
-msgid "Wi-Fi"
-msgstr "Wi-Fi"
-
-#: app/PublicTransportFeatureIcon.qml:49
-#, kde-format
-msgctxt "train coach feature"
-msgid "Power sockets"
-msgstr "Elektrizitate harguneak"
-
-#: app/PublicTransportFeatureIcon.qml:132
+#: app/PublicTransportFeatureIcon.qml:94
 #, kde-format
 msgid "%1 (not available)"
 msgstr "%1 (ez dago eskuragarri)"
 
-#: app/PublicTransportFeatureList.qml:34
+#: app/PublicTransportFeatureList.qml:30
 #, kde-format
 msgid "Availability unknown"
 msgstr "Eskuragarritasun ezezaguna"
 
-#: app/PublicTransportFeatureList.qml:36
+#: app/PublicTransportFeatureList.qml:32
 #, kde-format
 msgid "Not available"
 msgstr "Ez dago eskuragarri"
 
-#: app/PublicTransportFeatureList.qml:38
+#: app/PublicTransportFeatureList.qml:34
 #, kde-format
 msgid "Currently not available"
 msgstr "Une honetan ez dago eskuragarri"
@@ -3971,6 +3893,58 @@ msgstr "Saioa hasten"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 %3(e)tik %4(e)ra %5(e)an"
+
+#~ msgctxt "train coach feature"
+#~ msgid "Air conditioning"
+#~ msgstr "Aire girotua"
+
+#~ msgctxt "train coach feature"
+#~ msgid "Bistro or restaurant"
+#~ msgstr "Bistro edo jatetxea"
+
+#~ msgctxt "train coach feature"
+#~ msgid "Toddler area"
+#~ msgstr "Haur txikien gunea"
+
+#~ msgctxt "train coach feature"
+#~ msgid "Family area"
+#~ msgstr "Familia eremua"
+
+#~ msgctxt "train coach feature"
+#~ msgid "Wheelchair accessible"
+#~ msgstr "Gurpil-aulkirako irisgarria"
+
+#~ msgctxt "train coach feature"
+#~ msgid "Quiet area"
+#~ msgstr "Eremu lasaia"
+
+#~ msgctxt "train coach feature"
+#~ msgid "Business area"
+#~ msgstr "Negozio eremua"
+
+#~ msgctxt "train coach feature"
+#~ msgid "Bike storage"
+#~ msgstr "Bizikleten biltegia"
+
+#~ msgctxt "train coach feature"
+#~ msgid "Toilet"
+#~ msgstr "Komuna"
+
+#~ msgctxt "train coach feature"
+#~ msgid "Wheelchair accessible toilet"
+#~ msgstr "Gurpil-aulkirako komun irisgarria"
+
+#~ msgctxt "train coach feature"
+#~ msgid "Information point"
+#~ msgstr "Informazio-puntua"
+
+#~ msgctxt "train coach feature"
+#~ msgid "Wi-Fi"
+#~ msgstr "Wi-Fi"
+
+#~ msgctxt "train coach feature"
+#~ msgid "Power sockets"
+#~ msgstr "Elektrizitate harguneak"
 
 #~ msgctxt "vehicle load"
 #~ msgid "Low"

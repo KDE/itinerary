@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-01 00:38+0000\n"
+"POT-Creation-Date: 2024-05-05 00:39+0000\n"
 "PO-Revision-Date: 2024-04-27 09:54+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -2617,25 +2617,25 @@ msgstr "Online-ticket"
 msgid "Search..."
 msgstr "Zoeken..."
 
-#: app/passmanager.cpp:245
+#: app/passmanager.cpp:251
 #, kde-format
 msgctxt "no longer valid tickets"
 msgid "Expired"
 msgstr "Verlopen"
 
-#: app/passmanager.cpp:248
+#: app/passmanager.cpp:254
 #, kde-format
 msgctxt "not yet valid tickets"
 msgid "Future"
 msgstr "Toekomstige"
 
-#: app/passmanager.cpp:250
+#: app/passmanager.cpp:256
 #, kde-format
 msgctxt "not yet expired tickets"
 msgid "Valid"
 msgstr "Geldig"
 
-#: app/passmanager.cpp:269
+#: app/passmanager.cpp:275
 #, kde-format
 msgid "%1 - %2"
 msgstr "%1 - %2"
@@ -2833,100 +2833,22 @@ msgstr "🇪🇺 Europese Unie"
 msgid "European Union"
 msgstr "Europese Unie"
 
-#: app/PublicTransportFeatureIcon.qml:25
-#, kde-format
-msgctxt "train coach feature"
-msgid "Air conditioning"
-msgstr "Airconditioning"
-
-#: app/PublicTransportFeatureIcon.qml:27
-#, kde-format
-msgctxt "train coach feature"
-msgid "Bistro or restaurant"
-msgstr "Bistro of restaurant"
-
-#: app/PublicTransportFeatureIcon.qml:29
-#, kde-format
-msgctxt "train coach feature"
-msgid "Toddler area"
-msgstr "Peutergebied"
-
-#: app/PublicTransportFeatureIcon.qml:31
-#, kde-format
-msgctxt "train coach feature"
-msgid "Family area"
-msgstr "Familiegebied"
-
-#: app/PublicTransportFeatureIcon.qml:33
-#, kde-format
-msgctxt "train coach feature"
-msgid "Wheelchair accessible"
-msgstr "Toegankelijk voor rolstoelen"
-
-#: app/PublicTransportFeatureIcon.qml:35
-#, kde-format
-msgctxt "train coach feature"
-msgid "Quiet area"
-msgstr "Rustig gebied"
-
-#: app/PublicTransportFeatureIcon.qml:37
-#, kde-format
-msgctxt "train coach feature"
-msgid "Business area"
-msgstr "Zakengebied"
-
-#: app/PublicTransportFeatureIcon.qml:39
-#, kde-format
-msgctxt "train coach feature"
-msgid "Bike storage"
-msgstr "Fietsenstalling"
-
-#: app/PublicTransportFeatureIcon.qml:41
-#, kde-format
-msgctxt "train coach feature"
-msgid "Toilet"
-msgstr "Toilet"
-
-#: app/PublicTransportFeatureIcon.qml:43
-#, kde-format
-msgctxt "train coach feature"
-msgid "Wheelchair accessible toilet"
-msgstr "Toilet toegankelijk voor rolstoelen"
-
-#: app/PublicTransportFeatureIcon.qml:45
-#, kde-format
-msgctxt "train coach feature"
-msgid "Information point"
-msgstr "Informatiepunt"
-
-#: app/PublicTransportFeatureIcon.qml:47
-#, kde-format
-msgctxt "train coach feature"
-msgid "Wi-Fi"
-msgstr "Wi-Fi"
-
-#: app/PublicTransportFeatureIcon.qml:49
-#, kde-format
-msgctxt "train coach feature"
-msgid "Power sockets"
-msgstr "Stopcontacten"
-
-#: app/PublicTransportFeatureIcon.qml:132
+#: app/PublicTransportFeatureIcon.qml:94
 #, kde-format
 msgid "%1 (not available)"
 msgstr "%1 (niet beschikbaar)"
 
-#: app/PublicTransportFeatureList.qml:34
+#: app/PublicTransportFeatureList.qml:30
 #, kde-format
 msgid "Availability unknown"
 msgstr "Beschikbaarheid onbekend"
 
-#: app/PublicTransportFeatureList.qml:36
+#: app/PublicTransportFeatureList.qml:32
 #, kde-format
 msgid "Not available"
 msgstr "Niet beschikbaar"
 
-#: app/PublicTransportFeatureList.qml:38
+#: app/PublicTransportFeatureList.qml:34
 #, kde-format
 msgid "Currently not available"
 msgstr "Nu niet beschikbaar"
@@ -3959,6 +3881,58 @@ msgstr "Bezig met aanmelden"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 van %3 naar %4 op %5"
+
+#~ msgctxt "train coach feature"
+#~ msgid "Air conditioning"
+#~ msgstr "Airconditioning"
+
+#~ msgctxt "train coach feature"
+#~ msgid "Bistro or restaurant"
+#~ msgstr "Bistro of restaurant"
+
+#~ msgctxt "train coach feature"
+#~ msgid "Toddler area"
+#~ msgstr "Peutergebied"
+
+#~ msgctxt "train coach feature"
+#~ msgid "Family area"
+#~ msgstr "Familiegebied"
+
+#~ msgctxt "train coach feature"
+#~ msgid "Wheelchair accessible"
+#~ msgstr "Toegankelijk voor rolstoelen"
+
+#~ msgctxt "train coach feature"
+#~ msgid "Quiet area"
+#~ msgstr "Rustig gebied"
+
+#~ msgctxt "train coach feature"
+#~ msgid "Business area"
+#~ msgstr "Zakengebied"
+
+#~ msgctxt "train coach feature"
+#~ msgid "Bike storage"
+#~ msgstr "Fietsenstalling"
+
+#~ msgctxt "train coach feature"
+#~ msgid "Toilet"
+#~ msgstr "Toilet"
+
+#~ msgctxt "train coach feature"
+#~ msgid "Wheelchair accessible toilet"
+#~ msgstr "Toilet toegankelijk voor rolstoelen"
+
+#~ msgctxt "train coach feature"
+#~ msgid "Information point"
+#~ msgstr "Informatiepunt"
+
+#~ msgctxt "train coach feature"
+#~ msgid "Wi-Fi"
+#~ msgstr "Wi-Fi"
+
+#~ msgctxt "train coach feature"
+#~ msgid "Power sockets"
+#~ msgstr "Stopcontacten"
 
 #~ msgctxt "vehicle load"
 #~ msgid "Low"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-01 00:38+0000\n"
+"POT-Creation-Date: 2024-05-05 00:39+0000\n"
 "PO-Revision-Date: 2024-04-27 08:46+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian\n"
@@ -2631,25 +2631,25 @@ msgstr "Інтернет-квиток"
 msgid "Search..."
 msgstr "Шукати…"
 
-#: app/passmanager.cpp:245
+#: app/passmanager.cpp:251
 #, kde-format
 msgctxt "no longer valid tickets"
 msgid "Expired"
 msgstr "Прострочені"
 
-#: app/passmanager.cpp:248
+#: app/passmanager.cpp:254
 #, kde-format
 msgctxt "not yet valid tickets"
 msgid "Future"
 msgstr "Майбутні"
 
-#: app/passmanager.cpp:250
+#: app/passmanager.cpp:256
 #, kde-format
 msgctxt "not yet expired tickets"
 msgid "Valid"
 msgstr "Чинні"
 
-#: app/passmanager.cpp:269
+#: app/passmanager.cpp:275
 #, kde-format
 msgid "%1 - %2"
 msgstr "%1 – %2"
@@ -2848,100 +2848,22 @@ msgstr "🇪🇺 Європейський Союз"
 msgid "European Union"
 msgstr "Європейський Союз"
 
-#: app/PublicTransportFeatureIcon.qml:25
-#, kde-format
-msgctxt "train coach feature"
-msgid "Air conditioning"
-msgstr "Кондиціювання"
-
-#: app/PublicTransportFeatureIcon.qml:27
-#, kde-format
-msgctxt "train coach feature"
-msgid "Bistro or restaurant"
-msgstr "Їдальня або ресторан"
-
-#: app/PublicTransportFeatureIcon.qml:29
-#, kde-format
-msgctxt "train coach feature"
-msgid "Toddler area"
-msgstr "Місце для немовляти"
-
-#: app/PublicTransportFeatureIcon.qml:31
-#, kde-format
-msgctxt "train coach feature"
-msgid "Family area"
-msgstr "Місце для родини"
-
-#: app/PublicTransportFeatureIcon.qml:33
-#, kde-format
-msgctxt "train coach feature"
-msgid "Wheelchair accessible"
-msgstr "Доступне для візків"
-
-#: app/PublicTransportFeatureIcon.qml:35
-#, kde-format
-msgctxt "train coach feature"
-msgid "Quiet area"
-msgstr "Тиха зона"
-
-#: app/PublicTransportFeatureIcon.qml:37
-#, kde-format
-msgctxt "train coach feature"
-msgid "Business area"
-msgstr "Ділова зона"
-
-#: app/PublicTransportFeatureIcon.qml:39
-#, kde-format
-msgctxt "train coach feature"
-msgid "Bike storage"
-msgstr "Місце для велосипедів"
-
-#: app/PublicTransportFeatureIcon.qml:41
-#, kde-format
-msgctxt "train coach feature"
-msgid "Toilet"
-msgstr "Туалет"
-
-#: app/PublicTransportFeatureIcon.qml:43
-#, kde-format
-msgctxt "train coach feature"
-msgid "Wheelchair accessible toilet"
-msgstr "Доступність туалету для візків"
-
-#: app/PublicTransportFeatureIcon.qml:45
-#, kde-format
-msgctxt "train coach feature"
-msgid "Information point"
-msgstr "Інформаційний вузол"
-
-#: app/PublicTransportFeatureIcon.qml:47
-#, kde-format
-msgctxt "train coach feature"
-msgid "Wi-Fi"
-msgstr "Wi-Fi"
-
-#: app/PublicTransportFeatureIcon.qml:49
-#, kde-format
-msgctxt "train coach feature"
-msgid "Power sockets"
-msgstr "Розетки"
-
-#: app/PublicTransportFeatureIcon.qml:132
+#: app/PublicTransportFeatureIcon.qml:94
 #, kde-format
 msgid "%1 (not available)"
 msgstr "%1 (немає доступу)"
 
-#: app/PublicTransportFeatureList.qml:34
+#: app/PublicTransportFeatureList.qml:30
 #, kde-format
 msgid "Availability unknown"
 msgstr "Невідома доступність"
 
-#: app/PublicTransportFeatureList.qml:36
+#: app/PublicTransportFeatureList.qml:32
 #, kde-format
 msgid "Not available"
 msgstr "Немає доступу"
 
-#: app/PublicTransportFeatureList.qml:38
+#: app/PublicTransportFeatureList.qml:34
 #, kde-format
 msgid "Currently not available"
 msgstr "Наразі немає доступу"
@@ -3982,6 +3904,58 @@ msgstr "Вхід до системи"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 з %3 до %4 %5"
+
+#~ msgctxt "train coach feature"
+#~ msgid "Air conditioning"
+#~ msgstr "Кондиціювання"
+
+#~ msgctxt "train coach feature"
+#~ msgid "Bistro or restaurant"
+#~ msgstr "Їдальня або ресторан"
+
+#~ msgctxt "train coach feature"
+#~ msgid "Toddler area"
+#~ msgstr "Місце для немовляти"
+
+#~ msgctxt "train coach feature"
+#~ msgid "Family area"
+#~ msgstr "Місце для родини"
+
+#~ msgctxt "train coach feature"
+#~ msgid "Wheelchair accessible"
+#~ msgstr "Доступне для візків"
+
+#~ msgctxt "train coach feature"
+#~ msgid "Quiet area"
+#~ msgstr "Тиха зона"
+
+#~ msgctxt "train coach feature"
+#~ msgid "Business area"
+#~ msgstr "Ділова зона"
+
+#~ msgctxt "train coach feature"
+#~ msgid "Bike storage"
+#~ msgstr "Місце для велосипедів"
+
+#~ msgctxt "train coach feature"
+#~ msgid "Toilet"
+#~ msgstr "Туалет"
+
+#~ msgctxt "train coach feature"
+#~ msgid "Wheelchair accessible toilet"
+#~ msgstr "Доступність туалету для візків"
+
+#~ msgctxt "train coach feature"
+#~ msgid "Information point"
+#~ msgstr "Інформаційний вузол"
+
+#~ msgctxt "train coach feature"
+#~ msgid "Wi-Fi"
+#~ msgstr "Wi-Fi"
+
+#~ msgctxt "train coach feature"
+#~ msgid "Power sockets"
+#~ msgstr "Розетки"
 
 #~ msgctxt "vehicle load"
 #~ msgid "Low"
