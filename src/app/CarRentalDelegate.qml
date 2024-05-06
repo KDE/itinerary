@@ -8,13 +8,12 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
-import org.kde.kpublictransport
 import org.kde.itinerary
 
 TimelineDelegate {
     id: root
 
-    headerIconSource: RentalVehicleType.vehicleTypeIconName(RentalVehicle.Car)
+    headerIconSource: ReservationHelper.defaultIconName(root.reservation)
     headerItem: RowLayout {
         QQC2.Label {
             text: root.rangeType == TimelineElement.RangeEnd ?

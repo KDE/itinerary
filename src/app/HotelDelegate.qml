@@ -13,7 +13,7 @@ import org.kde.itinerary
 TimelineDelegate {
     id: root
 
-    headerIconSource: "go-home-symbolic"
+    headerIconSource: ReservationHelper.defaultIconName(root.reservation)
     headerItem: QQC2.Label {
         id: headerLabel
         text: root.rangeType == TimelineElement.RangeEnd ?

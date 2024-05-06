@@ -42,7 +42,7 @@ Kirigami.ScrollablePage {
                 text: contentItem.title
                 width: ListView.view.width
                 contentItem: Kirigami.IconTitleSubtitle {
-                    icon.name: delegate.pkPassId !== "" ? "image://org.kde.pkpass/" + delegate.pkPassId + "/icon" : "meeting-attending"
+                    icon.name: delegate.pkPassId !== "" ? "image://org.kde.pkpass/" + delegate.pkPassId + "/icon" : ReservationHelper.defaultIconName(model.pass)
                     title: model.pass.programName
                     subtitle: {
                         if (!model.pass.member.name)
@@ -73,7 +73,7 @@ Kirigami.ScrollablePage {
                 contentItem: Kirigami.IconTitleSubtitle {
                     title: pkPass.description
                     subtitle: pkPass.organizationName
-                    icon.name: pkPass.hasIcon ? "image://org.kde.pkpass/" + pkPassId + "/icon" : "bookmarks"
+                    icon.name: pkPass.hasIcon ? "image://org.kde.pkpass/" + pkPassId + "/icon" : ReservationHelper.defaultIconName(model.pass)
                 }
                 onClicked: {
                     const pkpassComponent = Qt.createComponent("org.kde.itinerary", "GenericPkPassPage");
@@ -95,7 +95,7 @@ Kirigami.ScrollablePage {
                 text: contentItem.title
                 width: ListView.view.width
                 contentItem: Kirigami.IconTitleSubtitle {
-                    icon.name: delegate.pkPassId !== "" ? "image://org.kde.pkpass/" + delegate.pkPassId + "/icon" : "bookmarks"
+                    icon.name: delegate.pkPassId !== "" ? "image://org.kde.pkpass/" + delegate.pkPassId + "/icon" : ReservationHelper.defaultIconName(model.pass)
                     title: model.pass.name
                     subtitle: {
                         if (model.pass.underName.name === "")

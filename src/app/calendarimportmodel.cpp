@@ -4,6 +4,7 @@
 */
 
 #include "calendarimportmodel.h"
+#include "reservationhelper.h"
 
 #include <KItinerary/Event>
 #include <KItinerary/ExtractorEngine>
@@ -12,9 +13,6 @@
 #include <KItinerary/JsonLdDocument>
 #include <KItinerary/Reservation>
 #include <KItinerary/Visit>
-
-#include <KPublicTransport/Line>
-#include <KPublicTransport/RentalVehicle>
 
 #include <QDebug>
 #include <QJsonArray>
@@ -91,27 +89,7 @@ QVariant CalendarImportModel::data(const QModelIndex &index, int role) const
         case IconNameRole:
             if (!ev.data.isEmpty()) {
                 const auto res = ev.data.at(0);
-                if (JsonLd::isA<FlightReservation>(res)) {
-                    return KPublicTransport::Line::modeIconName(KPublicTransport::Line::Air);
-                }
-                if (JsonLd::isA<TrainReservation>(res)) {
-                    return KPublicTransport::Line::modeIconName(KPublicTransport::Line::Train);
-                }
-                if (JsonLd::isA<BusReservation>(res)) {
-                    return KPublicTransport::Line::modeIconName(KPublicTransport::Line::Bus);
-                }
-                if (JsonLd::isA<BoatReservation>(res)) {
-                    return KPublicTransport::Line::modeIconName(KPublicTransport::Line::Ferry);
-                }
-                if (JsonLd::isA<LodgingReservation>(res)) {
-                    return QStringLiteral("go-home-symbolic");
-                }
-                if (JsonLd::isA<FoodEstablishmentReservation>(res)) {
-                    return QStringLiteral("qrc:///images/foodestablishment.svg");
-                }
-                if (JsonLd::isA<RentalCarReservation>(res)) {
-                    return KPublicTransport::RentalVehicle::vehicleTypeIconName(KPublicTransport::RentalVehicle::Car);
-                }
+                return ReservationHelper::defaultIconName(res);
             }
             return QStringLiteral("meeting-attending");
         case ReservationsRole:

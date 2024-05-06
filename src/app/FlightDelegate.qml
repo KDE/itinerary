@@ -35,7 +35,7 @@ TimelineDelegate {
         return s.join(", ");
     }
 
-    headerIconSource: "qrc:///images/flight.svg"
+    headerIconSource: ReservationHelper.defaultIconName(root.reservation)
     headerItem: RowLayout {
         QQC2.Label {
             id: headerLabel

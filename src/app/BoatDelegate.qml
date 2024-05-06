@@ -12,7 +12,7 @@ import org.kde.itinerary
 
 TimelineDelegate {
     id: root
-    headerIconSource: root.departure.route.line.mode == Line.Unknown ?  LineMode.iconName(Line.Ferry) : root.departure.route.line.iconName
+    headerIconSource: root.departure.route.line.mode == Line.Unknown ? ReservationHelper.defaultIconName(root.reservation) : root.departure.route.line.iconName
     headerItem: RowLayout {
         QQC2.Label {
             text: i18n("%1 to %2", reservationFor.departureBoatTerminal.name, reservationFor.arrivalBoatTerminal.name);

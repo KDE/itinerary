@@ -13,7 +13,7 @@ import org.kde.itinerary
 TimelineDelegate {
     id: root
 
-    headerIconSource: "qrc:///images/foodestablishment.svg"
+    headerIconSource: ReservationHelper.defaultIconName(root.reservation)
     headerItem: RowLayout {
         QQC2.Label {
             id: headerLabel

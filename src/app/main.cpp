@@ -34,6 +34,7 @@
 #include "permissionmanager.h"
 #include "pkpassimageprovider.h"
 #include "publictransport.h"
+#include "reservationhelper.h"
 #include "reservationmanager.h"
 #include "settings.h"
 #include "statisticsmodel.h"
@@ -252,6 +253,7 @@ void registerApplicationSingletons()
     REGISTER_SINGLETON_GADGET_FACTORY(NotificationConfigController)
     REGISTER_SINGLETON_GADGET_FACTORY(PermissionManager)
     REGISTER_SINGLETON_GADGET_FACTORY(PublicTransport)
+    REGISTER_SINGLETON_GADGET_FACTORY(ReservationHelper)
     REGISTER_SINGLETON_GADGET_FACTORY(UnitConversion)
     REGISTER_SINGLETON_GADGET_FACTORY(Util)
 

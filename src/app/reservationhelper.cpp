@@ -5,17 +5,23 @@
 */
 
 #include "reservationhelper.h"
+#include "genericpkpass.h"
 
 #include <KItinerary/BoatTrip>
 #include <KItinerary/BusTrip>
+#include <KItinerary/Event>
 #include <KItinerary/Flight>
 #include <KItinerary/Person>
 #include <KItinerary/Reservation>
 #include <KItinerary/TrainTrip>
 #include <KItinerary/Ticket>
 
+#include <KPublicTransport/Line>
+#include <KPublicTransport/RentalVehicle>
+
 #include <QDateTime>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KItinerary;
 
 std::pair<QString, QString> ReservationHelper::lineNameAndNumber(const QVariant &res)
@@ -112,3 +118,42 @@ bool ReservationHelper::isCancelled(const QVariant &res)
 {
     return JsonLd::canConvert<Reservation>(res) && JsonLd::convert<Reservation>(res).reservationStatus() == Reservation::ReservationCancelled;
 }
+
+QString ReservationHelper::defaultIconName(const QVariant &res)
+{
+    if (JsonLd::isA<FlightReservation>(res)) {
+        return KPublicTransport::Line::modeIconName(KPublicTransport::Line::Air);
+    }
+    if (JsonLd::isA<TrainReservation>(res)) {
+        return KPublicTransport::Line::modeIconName(KPublicTransport::Line::Train);
+    }
+    if (JsonLd::isA<BusReservation>(res)) {
+        return KPublicTransport::Line::modeIconName(KPublicTransport::Line::Bus);
+    }
+    if (JsonLd::isA<BoatReservation>(res)) {
+        return KPublicTransport::Line::modeIconName(KPublicTransport::Line::Ferry);
+    }
+    if (JsonLd::isA<LodgingReservation>(res)) {
+        return u"go-home-symbolic"_s;
+    }
+    if (JsonLd::isA<EventReservation>(res) || JsonLd::isA<Event>(res)) {
+        return u"meeting-attending"_s;
+    }
+    if (JsonLd::isA<FoodEstablishmentReservation>(res)) {
+        return u"qrc:///images/foodestablishment.svg"_s;
+    }
+    if (JsonLd::isA<RentalCarReservation>(res)) {
+        return KPublicTransport::RentalVehicle::vehicleTypeIconName(KPublicTransport::RentalVehicle::Car);
+    }
+
+    if (JsonLd::isA<ProgramMembership>(res)) {
+        return u"meeting-attending"_s;
+    }
+    if (JsonLd::isA<Ticket>(res) || JsonLd::isA<GenericPkPass>(res)) {
+        return u"bookmarks"_s;
+    }
+
+    return {};
+}
+
+#include "moc_reservationhelper.cpp"
