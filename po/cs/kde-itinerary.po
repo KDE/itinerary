@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-05 00:39+0000\n"
+"POT-Creation-Date: 2024-05-06 00:38+0000\n"
 "PO-Revision-Date: 2023-08-09 12:54+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -218,35 +218,35 @@ msgctxt "to travel destination"
 msgid "To %1"
 msgstr "Do %1"
 
-#: app/AlternativeJourneyPage.qml:88 app/DepartureQueryPage.qml:40
+#: app/AlternativeJourneyPage.qml:88 app/DepartureQueryPage.qml:41
 #: app/JourneyRequestPage.qml:221 app/TransferPage.qml:108
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Long distance trains"
 msgstr "Dálkové vlaky"
 
-#: app/AlternativeJourneyPage.qml:96 app/DepartureQueryPage.qml:47
+#: app/AlternativeJourneyPage.qml:96 app/DepartureQueryPage.qml:48
 #: app/JourneyRequestPage.qml:231 app/TransferPage.qml:116
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Local trains"
 msgstr "Místní vlaky"
 
-#: app/AlternativeJourneyPage.qml:104 app/DepartureQueryPage.qml:54
+#: app/AlternativeJourneyPage.qml:104 app/DepartureQueryPage.qml:55
 #: app/JourneyRequestPage.qml:241 app/TransferPage.qml:124
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Rapid transit"
 msgstr "Rychlá doprava"
 
-#: app/AlternativeJourneyPage.qml:112 app/DepartureQueryPage.qml:61
+#: app/AlternativeJourneyPage.qml:112 app/DepartureQueryPage.qml:62
 #: app/JourneyRequestPage.qml:251 app/TransferPage.qml:132
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Bus"
 msgstr "Autobus"
 
-#: app/AlternativeJourneyPage.qml:120 app/DepartureQueryPage.qml:68
+#: app/AlternativeJourneyPage.qml:120 app/DepartureQueryPage.qml:69
 #: app/JourneyRequestPage.qml:261 app/TransferPage.qml:140
 #, kde-format
 msgctxt "journey query search constraint, title"
@@ -632,7 +632,7 @@ msgstr "Příjezd"
 msgid "Alternatives"
 msgstr "Alternativy"
 
-#: app/BusPage.qml:217 app/JourneySectionPage.qml:25 app/TrainPage.qml:315
+#: app/BusPage.qml:217 app/JourneySectionPage.qml:26 app/TrainPage.qml:315
 #, kde-format
 msgid "Journey Details"
 msgstr "Podrobnosti výletu"
@@ -753,49 +753,49 @@ msgstr "Webová stránka"
 msgid "Select country"
 msgstr ""
 
-#: app/DepartureQueryPage.qml:21
+#: app/DepartureQueryPage.qml:22
 #, kde-format
 msgid "Departures"
 msgstr "Odjezdy"
 
-#: app/DepartureQueryPage.qml:24 app/JourneyQueryPage.qml:32
+#: app/DepartureQueryPage.qml:25 app/JourneyQueryPage.qml:32
 #: app/TransferPage.qml:61
 #, kde-format
 msgid "Earlier"
 msgstr "Dříve"
 
-#: app/DepartureQueryPage.qml:30 app/JourneyQueryPage.qml:38
+#: app/DepartureQueryPage.qml:31 app/JourneyQueryPage.qml:38
 #: app/TransferPage.qml:67
 #, kde-format
 msgid "Later"
 msgstr "Později"
 
-#: app/DepartureQueryPage.qml:132 app/JourneySectionDelegate.qml:80
+#: app/DepartureQueryPage.qml:133 app/JourneySectionDelegate.qml:81
 #, kde-format
 msgctxt "a train/bus journey canceled by its operator"
 msgid "Canceled"
 msgstr "Zrušeno"
 
-#: app/DepartureQueryPage.qml:183
+#: app/DepartureQueryPage.qml:184
 #, kde-format
 msgctxt "destination"
 msgid "To:"
 msgstr "Komu:"
 
-#: app/DepartureQueryPage.qml:253
+#: app/DepartureQueryPage.qml:256
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "Načíst dřívější odjezdy"
 
-#: app/DepartureQueryPage.qml:262 app/JourneyQueryPage.qml:122
+#: app/DepartureQueryPage.qml:265 app/JourneyQueryPage.qml:122
 #: app/TransferPage.qml:325
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "Načíst pozdější spojení"
 
-#: app/DepartureQueryPage.qml:271 app/JourneyQueryPage.qml:129
+#: app/DepartureQueryPage.qml:274 app/JourneyQueryPage.qml:129
 #: app/TransferPage.qml:332
 #, kde-format
 msgid "Data providers:"
@@ -1992,89 +1992,89 @@ msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
 msgstr "Lodě nebo přívozy"
 
-#: app/JourneySectionDelegate.qml:178
+#: app/JourneySectionDelegate.qml:179
 #, kde-format
 msgid "%1 to %2 (%3)"
 msgstr "%1 do %2 (%3)"
 
-#: app/JourneySectionDelegate.qml:179 app/tickettokenmodel.cpp:116
+#: app/JourneySectionDelegate.qml:180 app/tickettokenmodel.cpp:116
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: app/JourneySectionDelegate.qml:183
+#: app/JourneySectionDelegate.qml:184
 #, kde-format
 msgid "Walk (%1)"
 msgstr "Chůze (%1)"
 
-#: app/JourneySectionDelegate.qml:184
+#: app/JourneySectionDelegate.qml:185
 #, kde-format
 msgid "Walk %1 (%2)"
 msgstr "Chůze %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:186
+#: app/JourneySectionDelegate.qml:187
 #, kde-format
 msgid "Transfer (%1)"
 msgstr "Přesun (%1)"
 
-#: app/JourneySectionDelegate.qml:188
+#: app/JourneySectionDelegate.qml:189
 #, kde-format
 msgid "Wait (%1)"
 msgstr "Počkat (%1)"
 
-#: app/JourneySectionDelegate.qml:190
+#: app/JourneySectionDelegate.qml:191
 #, kde-format
 msgid "%1 %2 (%3)"
 msgstr "%1 %2 (%3)"
 
-#: app/JourneySectionDelegate.qml:192
+#: app/JourneySectionDelegate.qml:193
 #, kde-format
 msgid "Drive %1 (%2)"
 msgstr ""
 
-#: app/JourneySectionDelegate.qml:295 app/JourneySectionPage.qml:136
-#: app/VehicleLayoutPage.qml:228
+#: app/JourneySectionDelegate.qml:298 app/JourneySectionPage.qml:139
+#: app/VehicleLayoutPage.qml:230
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr "Ukázat víc..."
 
-#: app/JourneySectionPage.qml:69
+#: app/JourneySectionPage.qml:70
 #, kde-format
 msgid "Direction: %1"
 msgstr "Směr: %1"
 
-#: app/JourneySectionPage.qml:77
+#: app/JourneySectionPage.qml:78
 #, kde-format
 msgid "Distance: %1"
 msgstr "Vzdálenost: %1"
 
-#: app/JourneySectionPage.qml:84
+#: app/JourneySectionPage.qml:85
 #, kde-format
 msgid "Average Speed: %1"
 msgstr ""
 
-#: app/JourneySectionPage.qml:91
+#: app/JourneySectionPage.qml:92
 #, kde-format
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionPage.qml:215
+#: app/JourneySectionPage.qml:218
 #, kde-format
 msgid "Platform:"
 msgstr "Nástupiště:"
 
-#: app/JourneySectionPage.qml:248
+#: app/JourneySectionPage.qml:251
 #, kde-format
 msgid "Vehicle Load:"
 msgstr ""
 
-#: app/JourneySectionPage.qml:264 app/JourneySectionStopDelegate.qml:159
+#: app/JourneySectionPage.qml:267 app/JourneySectionStopDelegate.qml:159
 #, kde-format
 msgid "Show location"
 msgstr "Zobrazit umístění"
 
-#: app/JourneySectionPage.qml:479
+#: app/JourneySectionPage.qml:482
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2839,22 +2839,17 @@ msgstr "🇪🇺 Evropská unie"
 msgid "European Union"
 msgstr "Evropská unie"
 
-#: app/PublicTransportFeatureIcon.qml:94
-#, kde-format
-msgid "%1 (not available)"
-msgstr ""
-
-#: app/PublicTransportFeatureList.qml:30
+#: app/PublicTransportFeatureList.qml:31
 #, kde-format
 msgid "Availability unknown"
 msgstr ""
 
-#: app/PublicTransportFeatureList.qml:32
+#: app/PublicTransportFeatureList.qml:33
 #, kde-format
 msgid "Not available"
 msgstr "Není k dispozici"
 
-#: app/PublicTransportFeatureList.qml:34
+#: app/PublicTransportFeatureList.qml:35
 #, kde-format
 msgid "Currently not available"
 msgstr ""
@@ -3750,7 +3745,7 @@ msgstr "Nástupiště: %1"
 msgid "Coach: %1 Seat: %2"
 msgstr ""
 
-#: app/VehicleLayoutPage.qml:424
+#: app/VehicleLayoutPage.qml:428
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr ""

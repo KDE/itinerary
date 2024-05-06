@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-05 00:39+0000\n"
+"POT-Creation-Date: 2024-05-06 00:38+0000\n"
 "PO-Revision-Date: 2024-04-27 13:56+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -222,35 +222,35 @@ msgctxt "to travel destination"
 msgid "To %1"
 msgstr "Şuraya: %1"
 
-#: app/AlternativeJourneyPage.qml:88 app/DepartureQueryPage.qml:40
+#: app/AlternativeJourneyPage.qml:88 app/DepartureQueryPage.qml:41
 #: app/JourneyRequestPage.qml:221 app/TransferPage.qml:108
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Long distance trains"
 msgstr "Uzun mesafe trenleri"
 
-#: app/AlternativeJourneyPage.qml:96 app/DepartureQueryPage.qml:47
+#: app/AlternativeJourneyPage.qml:96 app/DepartureQueryPage.qml:48
 #: app/JourneyRequestPage.qml:231 app/TransferPage.qml:116
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Local trains"
 msgstr "Yerel trenler"
 
-#: app/AlternativeJourneyPage.qml:104 app/DepartureQueryPage.qml:54
+#: app/AlternativeJourneyPage.qml:104 app/DepartureQueryPage.qml:55
 #: app/JourneyRequestPage.qml:241 app/TransferPage.qml:124
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Rapid transit"
 msgstr "Hızlı ulaşım"
 
-#: app/AlternativeJourneyPage.qml:112 app/DepartureQueryPage.qml:61
+#: app/AlternativeJourneyPage.qml:112 app/DepartureQueryPage.qml:62
 #: app/JourneyRequestPage.qml:251 app/TransferPage.qml:132
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Bus"
 msgstr "Otobüs"
 
-#: app/AlternativeJourneyPage.qml:120 app/DepartureQueryPage.qml:68
+#: app/AlternativeJourneyPage.qml:120 app/DepartureQueryPage.qml:69
 #: app/JourneyRequestPage.qml:261 app/TransferPage.qml:140
 #, kde-format
 msgctxt "journey query search constraint, title"
@@ -635,7 +635,7 @@ msgstr "Varış"
 msgid "Alternatives"
 msgstr "Alternatifler"
 
-#: app/BusPage.qml:217 app/JourneySectionPage.qml:25 app/TrainPage.qml:315
+#: app/BusPage.qml:217 app/JourneySectionPage.qml:26 app/TrainPage.qml:315
 #, kde-format
 msgid "Journey Details"
 msgstr "Yolculuk Ayrıntıları"
@@ -754,49 +754,49 @@ msgstr "Web Sayfası"
 msgid "Select country"
 msgstr "Ülke Seç"
 
-#: app/DepartureQueryPage.qml:21
+#: app/DepartureQueryPage.qml:22
 #, kde-format
 msgid "Departures"
 msgstr "Kalkışlar"
 
-#: app/DepartureQueryPage.qml:24 app/JourneyQueryPage.qml:32
+#: app/DepartureQueryPage.qml:25 app/JourneyQueryPage.qml:32
 #: app/TransferPage.qml:61
 #, kde-format
 msgid "Earlier"
 msgstr "Daha Önce"
 
-#: app/DepartureQueryPage.qml:30 app/JourneyQueryPage.qml:38
+#: app/DepartureQueryPage.qml:31 app/JourneyQueryPage.qml:38
 #: app/TransferPage.qml:67
 #, kde-format
 msgid "Later"
 msgstr "Sonra"
 
-#: app/DepartureQueryPage.qml:132 app/JourneySectionDelegate.qml:80
+#: app/DepartureQueryPage.qml:133 app/JourneySectionDelegate.qml:81
 #, kde-format
 msgctxt "a train/bus journey canceled by its operator"
 msgid "Canceled"
 msgstr "İptal Edildi"
 
-#: app/DepartureQueryPage.qml:183
+#: app/DepartureQueryPage.qml:184
 #, kde-format
 msgctxt "destination"
 msgid "To:"
 msgstr "Nereye:"
 
-#: app/DepartureQueryPage.qml:253
+#: app/DepartureQueryPage.qml:256
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "Erken kalkışları yükle"
 
-#: app/DepartureQueryPage.qml:262 app/JourneyQueryPage.qml:122
+#: app/DepartureQueryPage.qml:265 app/JourneyQueryPage.qml:122
 #: app/TransferPage.qml:325
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "Sonraki bağlantıları yükle"
 
-#: app/DepartureQueryPage.qml:271 app/JourneyQueryPage.qml:129
+#: app/DepartureQueryPage.qml:274 app/JourneyQueryPage.qml:129
 #: app/TransferPage.qml:332
 #, kde-format
 msgid "Data providers:"
@@ -1989,89 +1989,89 @@ msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
 msgstr "Botlar veya feribotlar"
 
-#: app/JourneySectionDelegate.qml:178
+#: app/JourneySectionDelegate.qml:179
 #, kde-format
 msgid "%1 to %2 (%3)"
 msgstr "%1 → %2 (%3)"
 
-#: app/JourneySectionDelegate.qml:179 app/tickettokenmodel.cpp:116
+#: app/JourneySectionDelegate.qml:180 app/tickettokenmodel.cpp:116
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: app/JourneySectionDelegate.qml:183
+#: app/JourneySectionDelegate.qml:184
 #, kde-format
 msgid "Walk (%1)"
 msgstr "Yürü (%1)"
 
-#: app/JourneySectionDelegate.qml:184
+#: app/JourneySectionDelegate.qml:185
 #, kde-format
 msgid "Walk %1 (%2)"
 msgstr "%1 Yürü (%2)"
 
-#: app/JourneySectionDelegate.qml:186
+#: app/JourneySectionDelegate.qml:187
 #, kde-format
 msgid "Transfer (%1)"
 msgstr "Aktar (%1)"
 
-#: app/JourneySectionDelegate.qml:188
+#: app/JourneySectionDelegate.qml:189
 #, kde-format
 msgid "Wait (%1)"
 msgstr "Bekle (%1)"
 
-#: app/JourneySectionDelegate.qml:190
+#: app/JourneySectionDelegate.qml:191
 #, kde-format
 msgid "%1 %2 (%3)"
 msgstr "%1 %2 (%3)"
 
-#: app/JourneySectionDelegate.qml:192
+#: app/JourneySectionDelegate.qml:193
 #, kde-format
 msgid "Drive %1 (%2)"
 msgstr "%1 Sür (%2)"
 
-#: app/JourneySectionDelegate.qml:295 app/JourneySectionPage.qml:136
-#: app/VehicleLayoutPage.qml:228
+#: app/JourneySectionDelegate.qml:298 app/JourneySectionPage.qml:139
+#: app/VehicleLayoutPage.qml:230
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr "Daha Fazla Göster…"
 
-#: app/JourneySectionPage.qml:69
+#: app/JourneySectionPage.qml:70
 #, kde-format
 msgid "Direction: %1"
 msgstr "Yön: %1"
 
-#: app/JourneySectionPage.qml:77
+#: app/JourneySectionPage.qml:78
 #, kde-format
 msgid "Distance: %1"
 msgstr "Uzaklık: %1"
 
-#: app/JourneySectionPage.qml:84
+#: app/JourneySectionPage.qml:85
 #, kde-format
 msgid "Average Speed: %1"
 msgstr "Ortalama hız: %1"
 
-#: app/JourneySectionPage.qml:91
+#: app/JourneySectionPage.qml:92
 #, kde-format
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionPage.qml:215
+#: app/JourneySectionPage.qml:218
 #, kde-format
 msgid "Platform:"
 msgstr "Platform:"
 
-#: app/JourneySectionPage.qml:248
+#: app/JourneySectionPage.qml:251
 #, kde-format
 msgid "Vehicle Load:"
 msgstr "Araç yükü:"
 
-#: app/JourneySectionPage.qml:264 app/JourneySectionStopDelegate.qml:159
+#: app/JourneySectionPage.qml:267 app/JourneySectionStopDelegate.qml:159
 #, kde-format
 msgid "Show location"
 msgstr "Konumu göster"
 
-#: app/JourneySectionPage.qml:479
+#: app/JourneySectionPage.qml:482
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2836,22 +2836,17 @@ msgstr "🇪🇺 Avrupa Birliği"
 msgid "European Union"
 msgstr "Avrupa Birliği"
 
-#: app/PublicTransportFeatureIcon.qml:94
-#, kde-format
-msgid "%1 (not available)"
-msgstr "%1 (kullanılamıyor)"
-
-#: app/PublicTransportFeatureList.qml:30
+#: app/PublicTransportFeatureList.qml:31
 #, kde-format
 msgid "Availability unknown"
 msgstr "Kullanılabilirlik bilinmiyor"
 
-#: app/PublicTransportFeatureList.qml:32
+#: app/PublicTransportFeatureList.qml:33
 #, kde-format
 msgid "Not available"
 msgstr "Kullanılamıyor"
 
-#: app/PublicTransportFeatureList.qml:34
+#: app/PublicTransportFeatureList.qml:35
 #, kde-format
 msgid "Currently not available"
 msgstr "Şu anda kullanılamıyor"
@@ -3748,7 +3743,7 @@ msgstr "Platform: %1"
 msgid "Coach: %1 Seat: %2"
 msgstr "Otobüs: %1 Koltuk: %2"
 
-#: app/VehicleLayoutPage.qml:424
+#: app/VehicleLayoutPage.qml:428
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "Araç yerleşim bilgisi yok."
@@ -3876,6 +3871,9 @@ msgstr "Oturum açılıyor"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%5 tarihinde %3 havaalanından %4 havaalanına %1%2"
+
+#~ msgid "%1 (not available)"
+#~ msgstr "%1 (kullanılamıyor)"
 
 #~ msgctxt "train coach feature"
 #~ msgid "Air conditioning"
