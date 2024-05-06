@@ -17,6 +17,7 @@ TimelineDelegate {
         QQC2.Label {
             text: i18n("%1 to %2", reservationFor.departureBoatTerminal.name, reservationFor.arrivalBoatTerminal.name);
             color: root.headerTextColor
+            elide: Text.ElideRight
             Layout.fillWidth: true
         }
         QQC2.Label {
