@@ -15,8 +15,9 @@
 
 #include <KOSMIndoorMap/Platform>
 
-#include <KPublicTransport/Location>
 #include <KPublicTransport/Line>
+#include <KPublicTransport/Load>
+#include <KPublicTransport/Location>
 #include <KPublicTransport/Manager>
 
 #include <QGeoCoordinate>
@@ -117,6 +118,9 @@ public:
      *  map item.
      */
     Q_INVOKABLE [[nodiscard]] static QList<QGeoCoordinate> pathToGeoCoordinates(const KPublicTransport::JourneySection &jny);
+
+    /** Returns the maximum occupancy found in the given load information set. */
+    Q_INVOKABLE [[nodiscard]] static KPublicTransport::Load::Category maximumOccupancy(const QList<KPublicTransport::LoadInfo> &loadInfo);
 
 private:
     // for use by the template code

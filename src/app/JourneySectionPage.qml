@@ -243,18 +243,20 @@ Kirigami.Page {
                 }
                 FormCard.AbstractFormDelegate {
                     Layout.fillWidth: true
-                    visible: sheetDrawer.stop.loadInformation != ""
+                    visible: PublicTransport.maximumOccupancy(sheetDrawer.stop.loadInformation) != Load.Unknown
                         contentItem: ColumnLayout {
                             spacing: Kirigami.Units.mediumSpacing
 
                             QQC2.Label {
-                                text: i18n("Vehicle Load:")
+                                text: i18n("Occupancy:")
                                 elide: Text.ElideRight
                                 Layout.fillWidth: true
                                 Accessible.ignored: true
                             }
-                            VehicleLoadIndicator {
-                                loadInformation: sheetDrawer.stop.loadInformation
+                            KPublicTransport.OccupancyIndicator {
+                                occupancy: PublicTransport.maximumOccupancy(sheetDrawer.stop.loadInformation)
+                                Layout.preferredHeight: Kirigami.Units.iconSizes.small
+                                Layout.preferredWidth: Kirigami.Units.iconSizes.small
                             }
                         }
 

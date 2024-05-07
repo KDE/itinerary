@@ -9,6 +9,7 @@ import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kpublictransport
+import org.kde.kpublictransport.ui as KPublicTransport
 import org.kde.itinerary
 
 Item {
@@ -107,12 +108,14 @@ Item {
             visible: departureTime.visible && stop.hasExpectedDepartureTime && stop.disruptionEffect !== Disruption.NoService
         }
 
-        VehicleLoadIndicator {
+        KPublicTransport.OccupancyIndicator {
             Layout.column: 3
             Layout.row: 1
             Layout.rowSpan: 1
             Layout.alignment: isSingleTime ? Qt.AlignVCenter : Qt.AlignTop
-            loadInformation: stop.loadInformation
+            Layout.preferredHeight: Kirigami.Units.iconSizes.small
+            Layout.preferredWidth: Kirigami.Units.iconSizes.small
+            occupancy: PublicTransport.maximumOccupancy(stop.loadInformation)
         }
 
         QQC2.Label {

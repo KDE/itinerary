@@ -196,8 +196,10 @@ FormCard.AbstractFormDelegate {
                 color: PublicTransport.warnAboutSection(modelData) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
                 elide: Text.ElideMiddle
             }
-            VehicleLoadIndicator {
-                loadInformation: modelData.loadInformation
+            KPublicTransport.OccupancyIndicator {
+                occupancy: PublicTransport.maximumOccupancy(modelData.loadInformation)
+                Layout.preferredHeight: Kirigami.Units.iconSizes.small
+                Layout.preferredWidth: Kirigami.Units.iconSizes.small
             }
         }
         // optional middle row: notes

@@ -11,6 +11,7 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kpublictransport
+import org.kde.kpublictransport.ui as KPublicTransport
 import org.kde.itinerary
 
 FormCard.AbstractFormDelegate {
@@ -18,19 +19,11 @@ FormCard.AbstractFormDelegate {
 
     required property var journey
 
-    function maxLoad(loadInformation) {
-        var load = Load.Unknown;
-        for (var i = 0; i < loadInformation.length; ++i) {
-            load = Math.max(load, loadInformation[i].load);
-        }
-        return load;
-    }
-
     readonly property int sectionWithMaxLoad: {
         var loadMax = Load.Unknown;
         var loadMaxIdx = -1;
         for (var i = 0; root.journey != undefined && i < root.journey.sections.length; ++i) {
-            var l = maxLoad(root.journey.sections[i].loadInformation);
+            var l = PublicTransport.maximumOccupancy(root.journey.sections[i].loadInformation);
             if (l > loadMax) {
                 loadMax = l;
                 loadMaxIdx = i;
@@ -57,8 +50,10 @@ FormCard.AbstractFormDelegate {
                 Accessible.ignored: !parent.visible
             }
 
-            VehicleLoadIndicator {
-                loadInformation: sectionWithMaxLoad < 0 ? undefined : root.journey.sections[sectionWithMaxLoad].loadInformation
+            KPublicTransport.OccupancyIndicator {
+                occupancy: sectionWithMaxLoad < 0 ? Load.Unknown : PublicTransport.maximumOccupancy(root.journey.sections[sectionWithMaxLoad].loadInformation)
+                Layout.preferredHeight: Kirigami.Units.iconSizes.small
+                Layout.preferredWidth: Kirigami.Units.iconSizes.small
             }
         }
 
