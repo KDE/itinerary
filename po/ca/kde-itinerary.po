@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-06 00:38+0000\n"
+"POT-Creation-Date: 2024-05-07 00:39+0000\n"
 "PO-Revision-Date: 2024-04-27 10:56+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -377,17 +377,17 @@ msgstr "Llum"
 msgid "%1 to %2"
 msgstr "%1 a %2"
 
-#: app/BoatDelegate.qml:33
+#: app/BoatDelegate.qml:34
 #, kde-format
 msgid "From: %1"
 msgstr "Des de: %1"
 
-#: app/BoatDelegate.qml:47
+#: app/BoatDelegate.qml:48
 #, kde-format
 msgid "To: %1"
 msgstr "A: %1"
 
-#: app/BoatDelegate.qml:58
+#: app/BoatDelegate.qml:59
 #, kde-format
 msgid "Arrival time: %1"
 msgstr "Hora d'arribada: %1"
@@ -667,17 +667,17 @@ msgctxt "@title"
 msgid "Select Calendar"
 msgstr "Selecció d'un calendari"
 
-#: app/CarRentalDelegate.qml:21
+#: app/CarRentalDelegate.qml:20
 #, kde-format
 msgid "Rental Car Drop-off"
 msgstr "Entrega de cotxes de lloguer"
 
-#: app/CarRentalDelegate.qml:22
+#: app/CarRentalDelegate.qml:21
 #, kde-format
 msgid "Rental Car Pick-up"
 msgstr "Recollida de cotxes de lloguer"
 
-#: app/CarRentalDelegate.qml:50
+#: app/CarRentalDelegate.qml:49
 #, kde-format
 msgid "Drop-off: %1"
 msgstr "Entrega: %1"
@@ -1338,7 +1338,7 @@ msgstr "Suprimeix el passi"
 msgid "Do you really want to delete this pass?"
 msgstr "Segur que voleu suprimir aquest passi?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:323 app/main.qml:21 app/main.qml:164
+#: app/gpxexport.cpp:33 app/main.cpp:325 app/main.qml:21 app/main.qml:164
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -2324,22 +2324,22 @@ msgstr "Tipus M"
 msgid "Type N"
 msgstr "Tipus N"
 
-#: app/main.cpp:331
+#: app/main.cpp:333
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Assistent digital de viatges"
 
-#: app/main.cpp:332
+#: app/main.cpp:334
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "Copyright © La comunitat KDE"
 
-#: app/main.cpp:339
+#: app/main.cpp:341
 #, kde-format
 msgid "Open Itinerary on the given page"
 msgstr "Obre l'itinerari a la pàgina indicada"
 
-#: app/main.cpp:344
+#: app/main.cpp:346
 #, kde-format
 msgid "Files or URLs to import."
 msgstr "Fitxers o URL a importar."
@@ -3755,34 +3755,10 @@ msgstr "Andana: %1"
 msgid "Coach: %1 Seat: %2"
 msgstr "Vagó: %1 Seient: %2"
 
-#: app/VehicleLayoutPage.qml:428
+#: app/VehicleLayoutPage.qml:429
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "No hi ha informació disponible de la disposició del vehicle."
-
-#: app/VehicleLoadIndicator.qml:32
-#, kde-format
-msgctxt "vehicle load"
-msgid "FULL"
-msgstr "Completa"
-
-#: app/VehicleLoadIndicator.qml:55
-#, kde-format
-msgctxt "vehicle load"
-msgid "Low occupancy"
-msgstr "Ocupació baixa"
-
-#: app/VehicleLoadIndicator.qml:56
-#, kde-format
-msgctxt "vehicle load"
-msgid "Medium occupancy"
-msgstr "Ocupació mitjana"
-
-#: app/VehicleLoadIndicator.qml:57
-#, kde-format
-msgctxt "vehicle load"
-msgid "High occupancy"
-msgstr "Ocupació alta"
 
 #: app/WeatherForecastDelegate.qml:61 app/WeatherForecastPage.qml:106
 #, kde-format
@@ -3886,6 +3862,22 @@ msgstr "S'està iniciant la sessió"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 des de %3 a %4 el %5"
+
+#~ msgctxt "vehicle load"
+#~ msgid "FULL"
+#~ msgstr "Completa"
+
+#~ msgctxt "vehicle load"
+#~ msgid "Low occupancy"
+#~ msgstr "Ocupació baixa"
+
+#~ msgctxt "vehicle load"
+#~ msgid "Medium occupancy"
+#~ msgstr "Ocupació mitjana"
+
+#~ msgctxt "vehicle load"
+#~ msgid "High occupancy"
+#~ msgstr "Ocupació alta"
 
 #~ msgid "%1 (not available)"
 #~ msgstr "%1 (no disponible)"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-06 00:38+0000\n"
+"POT-Creation-Date: 2024-05-07 00:39+0000\n"
 "PO-Revision-Date: 2024-02-09 23:07+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -387,17 +387,17 @@ msgstr "Свет"
 msgid "%1 to %2"
 msgstr "Из %1 в %2"
 
-#: app/BoatDelegate.qml:33
+#: app/BoatDelegate.qml:34
 #, kde-format
 msgid "From: %1"
 msgstr "Из: %1"
 
-#: app/BoatDelegate.qml:47
+#: app/BoatDelegate.qml:48
 #, kde-format
 msgid "To: %1"
 msgstr "В: %1"
 
-#: app/BoatDelegate.qml:58
+#: app/BoatDelegate.qml:59
 #, kde-format
 msgid "Arrival time: %1"
 msgstr "Время прибытия: %1"
@@ -687,17 +687,17 @@ msgctxt "@title"
 msgid "Select Calendar"
 msgstr "Выбор календаря"
 
-#: app/CarRentalDelegate.qml:21
+#: app/CarRentalDelegate.qml:20
 #, kde-format
 msgid "Rental Car Drop-off"
 msgstr "Оставление прокатного автомобиля"
 
-#: app/CarRentalDelegate.qml:22
+#: app/CarRentalDelegate.qml:21
 #, kde-format
 msgid "Rental Car Pick-up"
 msgstr "Взятие прокатного автомобиля"
 
-#: app/CarRentalDelegate.qml:50
+#: app/CarRentalDelegate.qml:49
 #, kde-format
 msgid "Drop-off: %1"
 msgstr "Оставление: %1"
@@ -1369,7 +1369,7 @@ msgstr "Удалить пропуск"
 msgid "Do you really want to delete this pass?"
 msgstr "Удалить этот пропуск?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:323 app/main.qml:21 app/main.qml:164
+#: app/gpxexport.cpp:33 app/main.cpp:325 app/main.qml:21 app/main.qml:164
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "Маршруты KDE"
@@ -2372,23 +2372,23 @@ msgstr "Тип M"
 msgid "Type N"
 msgstr "Тип N"
 
-#: app/main.cpp:331
+#: app/main.cpp:333
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Цифровой помощник в путешествиях"
 
-#: app/main.cpp:332
+#: app/main.cpp:334
 #, fuzzy, kde-format
 #| msgid "Copyright © 2018-%1 The KDE Community"
 msgid "Copyright © The KDE Community"
 msgstr "© Сообщество KDE, 2018-%1"
 
-#: app/main.cpp:339
+#: app/main.cpp:341
 #, kde-format
 msgid "Open Itinerary on the given page"
 msgstr "Открыть программу на указанной странице"
 
-#: app/main.cpp:344
+#: app/main.cpp:346
 #, kde-format
 msgid "Files or URLs to import."
 msgstr ""
@@ -3841,34 +3841,10 @@ msgstr "Платформа: %1"
 msgid "Coach: %1 Seat: %2"
 msgstr "Вагон: %1 Место: %2"
 
-#: app/VehicleLayoutPage.qml:428
+#: app/VehicleLayoutPage.qml:429
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "Сведения о схеме транспортного средства недоступны."
-
-#: app/VehicleLoadIndicator.qml:32
-#, kde-format
-msgctxt "vehicle load"
-msgid "FULL"
-msgstr "ПОЛНЫЙ"
-
-#: app/VehicleLoadIndicator.qml:55
-#, kde-format
-msgctxt "vehicle load"
-msgid "Low occupancy"
-msgstr ""
-
-#: app/VehicleLoadIndicator.qml:56
-#, kde-format
-msgctxt "vehicle load"
-msgid "Medium occupancy"
-msgstr ""
-
-#: app/VehicleLoadIndicator.qml:57
-#, kde-format
-msgctxt "vehicle load"
-msgid "High occupancy"
-msgstr ""
 
 #: app/WeatherForecastDelegate.qml:61 app/WeatherForecastPage.qml:106
 #, kde-format
@@ -3978,6 +3954,10 @@ msgstr "Вход в систему"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 из %3 в %4 %5"
+
+#~ msgctxt "vehicle load"
+#~ msgid "FULL"
+#~ msgstr "ПОЛНЫЙ"
 
 #, fuzzy
 #~| msgctxt "@title"

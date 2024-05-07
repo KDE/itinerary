@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-06 00:38+0000\n"
+"POT-Creation-Date: 2024-05-07 00:39+0000\n"
 "PO-Revision-Date: 2024-04-05 23:38+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -369,17 +369,17 @@ msgstr "手電筒"
 msgid "%1 to %2"
 msgstr "%1 到 %2"
 
-#: app/BoatDelegate.qml:33
+#: app/BoatDelegate.qml:34
 #, kde-format
 msgid "From: %1"
 msgstr "從：%1"
 
-#: app/BoatDelegate.qml:47
+#: app/BoatDelegate.qml:48
 #, kde-format
 msgid "To: %1"
 msgstr "到：%1"
 
-#: app/BoatDelegate.qml:58
+#: app/BoatDelegate.qml:59
 #, kde-format
 msgid "Arrival time: %1"
 msgstr "抵達時間：%1"
@@ -658,17 +658,17 @@ msgctxt "@title"
 msgid "Select Calendar"
 msgstr "選擇行事曆"
 
-#: app/CarRentalDelegate.qml:21
+#: app/CarRentalDelegate.qml:20
 #, kde-format
 msgid "Rental Car Drop-off"
 msgstr ""
 
-#: app/CarRentalDelegate.qml:22
+#: app/CarRentalDelegate.qml:21
 #, kde-format
 msgid "Rental Car Pick-up"
 msgstr ""
 
-#: app/CarRentalDelegate.qml:50
+#: app/CarRentalDelegate.qml:49
 #, kde-format
 msgid "Drop-off: %1"
 msgstr ""
@@ -1333,7 +1333,7 @@ msgstr "刪除票卡"
 msgid "Do you really want to delete this pass?"
 msgstr "您確定要刪除這張票卡嗎？"
 
-#: app/gpxexport.cpp:33 app/main.cpp:323 app/main.qml:21 app/main.qml:164
+#: app/gpxexport.cpp:33 app/main.cpp:325 app/main.qml:21 app/main.qml:164
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE 旅行計劃"
@@ -2316,22 +2316,22 @@ msgstr ""
 msgid "Type N"
 msgstr ""
 
-#: app/main.cpp:331
+#: app/main.cpp:333
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "數位旅行助理"
 
-#: app/main.cpp:332
+#: app/main.cpp:334
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "版權所有 © KDE 社群"
 
-#: app/main.cpp:339
+#: app/main.cpp:341
 #, kde-format
 msgid "Open Itinerary on the given page"
 msgstr "在指定頁面開啟旅行計劃"
 
-#: app/main.cpp:344
+#: app/main.cpp:346
 #, kde-format
 msgid "Files or URLs to import."
 msgstr "要匯入的檔案或網址。"
@@ -3736,34 +3736,10 @@ msgstr "月台：%1"
 msgid "Coach: %1 Seat: %2"
 msgstr "車廂：%1 座位：%2"
 
-#: app/VehicleLayoutPage.qml:428
+#: app/VehicleLayoutPage.qml:429
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "沒有可用的交通工具佈局資訊。"
-
-#: app/VehicleLoadIndicator.qml:32
-#, kde-format
-msgctxt "vehicle load"
-msgid "FULL"
-msgstr "全滿"
-
-#: app/VehicleLoadIndicator.qml:55
-#, kde-format
-msgctxt "vehicle load"
-msgid "Low occupancy"
-msgstr ""
-
-#: app/VehicleLoadIndicator.qml:56
-#, kde-format
-msgctxt "vehicle load"
-msgid "Medium occupancy"
-msgstr ""
-
-#: app/VehicleLoadIndicator.qml:57
-#, kde-format
-msgctxt "vehicle load"
-msgid "High occupancy"
-msgstr ""
 
 #: app/WeatherForecastDelegate.qml:61 app/WeatherForecastPage.qml:106
 #, kde-format
@@ -3855,6 +3831,10 @@ msgstr "登入"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 從 %3 到 %4 於 %5"
+
+#~ msgctxt "vehicle load"
+#~ msgid "FULL"
+#~ msgstr "全滿"
 
 #~ msgid "%1 (not available)"
 #~ msgstr "%1（無法使用）"

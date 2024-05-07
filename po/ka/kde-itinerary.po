@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-06 00:38+0000\n"
+"POT-Creation-Date: 2024-05-07 00:39+0000\n"
 "PO-Revision-Date: 2024-04-29 10:13+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -374,17 +374,17 @@ msgstr "ღია"
 msgid "%1 to %2"
 msgstr "%1 %2-მდე"
 
-#: app/BoatDelegate.qml:33
+#: app/BoatDelegate.qml:34
 #, kde-format
 msgid "From: %1"
 msgstr "გამომგზავნი: %1"
 
-#: app/BoatDelegate.qml:47
+#: app/BoatDelegate.qml:48
 #, kde-format
 msgid "To: %1"
 msgstr "სადამდე: %1"
 
-#: app/BoatDelegate.qml:58
+#: app/BoatDelegate.qml:59
 #, kde-format
 msgid "Arrival time: %1"
 msgstr "ჩამოსვლის დრო: %1"
@@ -663,17 +663,17 @@ msgctxt "@title"
 msgid "Select Calendar"
 msgstr "აირჩიეთ კალენდარი"
 
-#: app/CarRentalDelegate.qml:21
+#: app/CarRentalDelegate.qml:20
 #, kde-format
 msgid "Rental Car Drop-off"
 msgstr "ნაქირავები მანქანის დატოვება"
 
-#: app/CarRentalDelegate.qml:22
+#: app/CarRentalDelegate.qml:21
 #, kde-format
 msgid "Rental Car Pick-up"
 msgstr "ნაქირავები მანქანის აყვანა"
 
-#: app/CarRentalDelegate.qml:50
+#: app/CarRentalDelegate.qml:49
 #, kde-format
 msgid "Drop-off: %1"
 msgstr "ნაქირავები მანქანის დატოვება: %1"
@@ -1334,7 +1334,7 @@ msgstr "ბილეთის წაშლა"
 msgid "Do you really want to delete this pass?"
 msgstr "მართლა გნებავთ, ეს ბილეთი წაშალოთ?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:323 app/main.qml:21 app/main.qml:164
+#: app/gpxexport.cpp:33 app/main.cpp:325 app/main.qml:21 app/main.qml:164
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -2317,22 +2317,22 @@ msgstr "ტიპი M"
 msgid "Type N"
 msgstr "ტიპი N"
 
-#: app/main.cpp:331
+#: app/main.cpp:333
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "მოგზაურობის ციფრული დამხმარე"
 
-#: app/main.cpp:332
+#: app/main.cpp:334
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "© KDE-ის საზოგადოება, ყველა უფლება დაცულია"
 
-#: app/main.cpp:339
+#: app/main.cpp:341
 #, kde-format
 msgid "Open Itinerary on the given page"
 msgstr "Itinerary-ის მითითებულ გვერდზე გასვლა"
 
-#: app/main.cpp:344
+#: app/main.cpp:346
 #, kde-format
 msgid "Files or URLs to import."
 msgstr "შემოსატანი ფაილები ან ბმულები."
@@ -3742,34 +3742,10 @@ msgstr "პლატფორმა: %1"
 msgid "Coach: %1 Seat: %2"
 msgstr "გამძღოლი: %1 სავარძელი: %2"
 
-#: app/VehicleLayoutPage.qml:428
+#: app/VehicleLayoutPage.qml:429
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "მანქანის განლაგების ინფორმაცია ხელმიუწვდომელია."
-
-#: app/VehicleLoadIndicator.qml:32
-#, kde-format
-msgctxt "vehicle load"
-msgid "FULL"
-msgstr "სრული"
-
-#: app/VehicleLoadIndicator.qml:55
-#, kde-format
-msgctxt "vehicle load"
-msgid "Low occupancy"
-msgstr "დაბალი დაკავებულობა"
-
-#: app/VehicleLoadIndicator.qml:56
-#, kde-format
-msgctxt "vehicle load"
-msgid "Medium occupancy"
-msgstr "საშუალო დაკავებულობა"
-
-#: app/VehicleLoadIndicator.qml:57
-#, kde-format
-msgctxt "vehicle load"
-msgid "High occupancy"
-msgstr "მაღალი დაკავებულობა"
 
 #: app/WeatherForecastDelegate.qml:61 app/WeatherForecastPage.qml:106
 #, kde-format
@@ -3870,6 +3846,22 @@ msgstr "შესვლა"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 -ი %3-დან %4-მდე %5-ზე"
+
+#~ msgctxt "vehicle load"
+#~ msgid "FULL"
+#~ msgstr "სრული"
+
+#~ msgctxt "vehicle load"
+#~ msgid "Low occupancy"
+#~ msgstr "დაბალი დაკავებულობა"
+
+#~ msgctxt "vehicle load"
+#~ msgid "Medium occupancy"
+#~ msgstr "საშუალო დაკავებულობა"
+
+#~ msgctxt "vehicle load"
+#~ msgid "High occupancy"
+#~ msgstr "მაღალი დაკავებულობა"
 
 #~ msgid "%1 (not available)"
 #~ msgstr "%1 (ხელმისაწვდომი არაა)"
