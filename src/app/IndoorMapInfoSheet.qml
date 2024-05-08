@@ -81,11 +81,14 @@ Kirigami.Dialog {
 
         Component {
             id: infoOpeningHoursDelegate
-            IndoorMapInfoSheetOpeningHoursDelegate {
+            OSMElementInformationDialogOpeningHoursDelegate {
                 x: Kirigami.Units.largeSpacing
                 width: parent.ListView.view.width - 2 * x
-                mapData: elementDetailsSheet.mapData
-                model: row
+                regionCode: elementDetailsSheet.mapData.regionCode
+                timeZoneId: elementDetailsSheet.mapData.timeZone
+                latitude: elementDetailsSheet.mapData.center.y
+                longitude: elementDetailsSheet.mapData.center.x
+                openingHours: row.value
             }
         }
 
