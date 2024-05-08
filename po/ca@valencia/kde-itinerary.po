@@ -119,12 +119,12 @@ msgstr "Edita"
 #: app/ActionsCard.qml:62
 #, kde-format
 msgid "Add to calendar..."
-msgstr "Afig al calendari..."
+msgstr "Afig al calendari…"
 
 #: app/ActionsCard.qml:73 app/main.qml:224 app/TripGroupDelegate.qml:162
 #, kde-format
 msgid "Export..."
-msgstr "Exporta..."
+msgstr "Exporta…"
 
 #: app/ActionsCard.qml:78 app/ActionsCard.qml:124 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
@@ -153,7 +153,7 @@ msgstr "Exporta"
 #: app/ActionsCard.qml:140 app/TimelinePage.qml:223
 #, kde-format
 msgid "As Itinerary file..."
-msgstr "Com a fitxer d'Itinerary..."
+msgstr "Com a fitxer d'Itinerary…"
 
 #: app/ActionsCard.qml:151 app/TimelinePage.qml:247
 #, kde-format
@@ -837,7 +837,7 @@ msgstr "Ni hi ha documents adjunts en esta reserva."
 #: app/DocumentsCard.qml:117
 #, kde-format
 msgid "Add Document..."
-msgstr "Afig un document..."
+msgstr "Afig un document…"
 
 #: app/downloadjob.cpp:102
 #, kde-format
@@ -1265,7 +1265,7 @@ msgstr "%1°, %2°"
 #: app/FormPlaceEditorDelegate.qml:197
 #, kde-format
 msgid "Pick..."
-msgstr "Selecció..."
+msgstr "Selecció…"
 
 #: app/FormPlaceEditorDelegate.qml:215
 #, kde-format
@@ -2120,7 +2120,7 @@ msgstr "Seguix automàticament en el mapa"
 #: app/LiveStatusPage.qml:180 app/LiveStatusPage.qml:192
 #, kde-format
 msgid "Waiting for data..."
-msgstr "S'estan esperant les dades..."
+msgstr "S'estan esperant les dades…"
 
 #: app/LiveStatusPage.qml:204
 #, kde-format
@@ -2311,7 +2311,7 @@ msgstr "Fitxers o URL que s'han d'importar."
 #: app/main.qml:61
 #, kde-format
 msgid "Open File..."
-msgstr "Obri un fitxer..."
+msgstr "Obri un fitxer…"
 
 #: app/main.qml:69 app/TicketTokenEditorCard.qml:129
 #, kde-format
@@ -2321,22 +2321,22 @@ msgstr "Apega"
 #: app/main.qml:78
 #, kde-format
 msgid "Scan Barcode..."
-msgstr "Escaneja un codi de barres..."
+msgstr "Escaneja un codi de barres…"
 
 #: app/main.qml:86
 #, kde-format
 msgid "Add from Calendar..."
-msgstr "Afig a partir del calendari..."
+msgstr "Afig a partir del calendari…"
 
 #: app/main.qml:100
 #, kde-format
 msgid "Deutsche Bahn Online Ticket..."
-msgstr "Bitllet en línia de la Deutsche Bahn..."
+msgstr "Bitllet en línia de la Deutsche Bahn…"
 
 #: app/main.qml:109
 #, kde-format
 msgid "SNCF Online Ticket..."
-msgstr "Bitllet en línia de la SNCF..."
+msgstr "Bitllet en línia de la SNCF…"
 
 #: app/main.qml:122
 #, kde-format
@@ -2371,7 +2371,7 @@ msgstr "Exportació de dades d'Itinerary"
 #: app/main.qml:169 app/PassPage.qml:137
 #, kde-format
 msgid "Import..."
-msgstr "Importa..."
+msgstr "Importa…"
 
 #: app/main.qml:174
 #, kde-format
@@ -2391,7 +2391,7 @@ msgstr "Estadístiques"
 #: app/main.qml:217 app/WelcomePage.qml:41
 #, kde-format
 msgid "Settings..."
-msgstr "Configuració..."
+msgstr "Configuració…"
 
 #: app/main.qml:229 app/WelcomePage.qml:16
 #, kde-format
@@ -2583,7 +2583,7 @@ msgstr "Bitllet en línia"
 #: app/OnlineImportPage.qml:57
 #, kde-format
 msgid "Search..."
-msgstr "Busca..."
+msgstr "Busca…"
 
 #: app/passmanager.cpp:245
 #, kde-format
@@ -2616,7 +2616,7 @@ msgstr "Targetes i programes"
 #: app/PassPage.qml:20
 #, kde-format
 msgid "Add Program Membership..."
-msgstr "Afig un programa d'afiliació..."
+msgstr "Afig un programa d'afiliació…"
 
 #: app/PassPage.qml:52
 #, kde-format
@@ -3003,7 +3003,7 @@ msgstr ""
 #: app/SettingsPage.qml:81
 #, kde-format
 msgid "Public Transport Information Sources..."
-msgstr "Fonts d'informació de transport públic..."
+msgstr "Fonts d'informació de transport públic…"
 
 #: app/SettingsPage.qml:90 app/WeatherForecastDelegate.qml:83
 #: app/WeatherForecastPage.qml:19
@@ -3090,7 +3090,7 @@ msgstr "Notificacions"
 #: app/SettingsPage.qml:156
 #, kde-format
 msgid "Configure Notifications..."
-msgstr "Configura les notificacions..."
+msgstr "Configura les notificacions…"
 
 #: app/SettingsPage.qml:165
 #, kde-format
@@ -3100,7 +3100,7 @@ msgstr "Mostra les notificacions a la pantalla de bloqueig"
 #: app/SettingsPage.qml:175 app/SettingsPage.qml:203
 #, kde-format
 msgid "Request permissions..."
-msgstr "Sol·licita els permisos..."
+msgstr "Sol·licita els permisos…"
 
 #: app/SettingsPage.qml:176
 #, kde-format
@@ -3390,27 +3390,27 @@ msgstr "El meu itinerari"
 #: app/TimelinePage.qml:89
 #, kde-format
 msgid "Add train trip..."
-msgstr "Afig un viatge de tren..."
+msgstr "Afig un viatge de tren…"
 
 #: app/TimelinePage.qml:96
 #, kde-format
 msgid "Add ferry trip..."
-msgstr "Afig un viatge en transbordador..."
+msgstr "Afig un viatge en transbordador…"
 
 #: app/TimelinePage.qml:108
 #, kde-format
 msgid "Add accommodation..."
-msgstr "Afig un allotjament..."
+msgstr "Afig un allotjament…"
 
 #: app/TimelinePage.qml:119
 #, kde-format
 msgid "Add event..."
-msgstr "Afig un esdeveniment..."
+msgstr "Afig un esdeveniment…"
 
 #: app/TimelinePage.qml:131
 #, kde-format
 msgid "Add restaurant..."
-msgstr "Afig un restaurant..."
+msgstr "Afig un restaurant…"
 
 #: app/TimelinePage.qml:153
 #, kde-format
@@ -3443,7 +3443,7 @@ msgstr "Segur que voleu suprimir este viatge?"
 #: app/TimelinePage.qml:232
 #, kde-format
 msgid "As GPX file..."
-msgstr "Com a fitxer GPX..."
+msgstr "Com a fitxer GPX…"
 
 #: app/TimelinePage.qml:262 app/TimelinePage.qml:279
 #, kde-format
