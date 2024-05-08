@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-07 00:39+0000\n"
+"POT-Creation-Date: 2024-05-08 00:38+0000\n"
 "PO-Revision-Date: 2024-03-26 16:14+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -2037,7 +2037,7 @@ msgstr "%1 %2 (%3)"
 msgid "Drive %1 (%2)"
 msgstr "%1 vezetés (%2)"
 
-#: app/JourneySectionDelegate.qml:298 app/JourneySectionPage.qml:139
+#: app/JourneySectionDelegate.qml:300 app/JourneySectionPage.qml:139
 #: app/VehicleLayoutPage.qml:230
 #, kde-format
 msgctxt "@action:button"
@@ -2071,39 +2071,39 @@ msgstr ""
 
 #: app/JourneySectionPage.qml:251
 #, kde-format
-msgid "Vehicle Load:"
+msgid "Occupancy:"
 msgstr ""
 
-#: app/JourneySectionPage.qml:267 app/JourneySectionStopDelegate.qml:159
+#: app/JourneySectionPage.qml:269 app/JourneySectionStopDelegate.qml:162
 #, kde-format
 msgid "Show location"
 msgstr "Hely megjelenítése"
 
-#: app/JourneySectionPage.qml:482
+#: app/JourneySectionPage.qml:484
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
 msgstr "Térkép megjelenítése"
 
-#: app/JourneySectionStopDelegate.qml:141
+#: app/JourneySectionStopDelegate.qml:144
 #, kde-format
 msgctxt "Abreviation of train platform"
 msgid "Pl. %1"
 msgstr "%1. vágány"
 
-#: app/JourneySectionStopDelegate.qml:143
+#: app/JourneySectionStopDelegate.qml:146
 #, kde-format
 msgctxt "Ferry dock, if possible use an abreviation"
 msgid "Dock %1"
 msgstr "%1. dokk"
 
-#: app/JourneySectionStopDelegate.qml:145
+#: app/JourneySectionStopDelegate.qml:148
 #, kde-format
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
 msgstr "%1. peron"
 
-#: app/JourneySummaryDelegate.qml:55
+#: app/JourneySummaryDelegate.qml:48
 #, kde-format
 msgctxt "number of switches to another transport"
 msgid "One change"
@@ -2111,7 +2111,7 @@ msgid_plural "%1 changes"
 msgstr[0] "Egy átszállás"
 msgstr[1] "%1 átszállás"
 
-#: app/JourneySummaryDelegate.qml:66
+#: app/JourneySummaryDelegate.qml:61
 #, kde-format
 msgid "Click to extend"
 msgstr "Kattintson a kibontáshoz"

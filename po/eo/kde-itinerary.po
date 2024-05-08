@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-07 00:39+0000\n"
+"POT-Creation-Date: 2024-05-08 00:38+0000\n"
 "PO-Revision-Date: 2024-04-28 06:29+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -2027,7 +2027,7 @@ msgstr "%1 %2 (%3)"
 msgid "Drive %1 (%2)"
 msgstr "Veturi %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:298 app/JourneySectionPage.qml:139
+#: app/JourneySectionDelegate.qml:300 app/JourneySectionPage.qml:139
 #: app/VehicleLayoutPage.qml:230
 #, kde-format
 msgctxt "@action:button"
@@ -2060,40 +2060,42 @@ msgid "Platform:"
 msgstr "Platformo:"
 
 #: app/JourneySectionPage.qml:251
-#, kde-format
-msgid "Vehicle Load:"
-msgstr "Veturila Ŝarĝo:"
+#, fuzzy, kde-format
+#| msgctxt "vehicle load"
+#| msgid "Low occupancy"
+msgid "Occupancy:"
+msgstr "Malalta okupado"
 
-#: app/JourneySectionPage.qml:267 app/JourneySectionStopDelegate.qml:159
+#: app/JourneySectionPage.qml:269 app/JourneySectionStopDelegate.qml:162
 #, kde-format
 msgid "Show location"
 msgstr "Montri lokon"
 
-#: app/JourneySectionPage.qml:482
+#: app/JourneySectionPage.qml:484
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
 msgstr "Montri Mapon"
 
-#: app/JourneySectionStopDelegate.qml:141
+#: app/JourneySectionStopDelegate.qml:144
 #, kde-format
 msgctxt "Abreviation of train platform"
 msgid "Pl. %1"
 msgstr "Pl. %1"
 
-#: app/JourneySectionStopDelegate.qml:143
+#: app/JourneySectionStopDelegate.qml:146
 #, kde-format
 msgctxt "Ferry dock, if possible use an abreviation"
 msgid "Dock %1"
 msgstr "Doko %1"
 
-#: app/JourneySectionStopDelegate.qml:145
+#: app/JourneySectionStopDelegate.qml:148
 #, kde-format
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
 msgstr "Pl. %1"
 
-#: app/JourneySummaryDelegate.qml:55
+#: app/JourneySummaryDelegate.qml:48
 #, kde-format
 msgctxt "number of switches to another transport"
 msgid "One change"
@@ -2101,7 +2103,7 @@ msgid_plural "%1 changes"
 msgstr[0] "Unu ŝanĝo"
 msgstr[1] "%1 ŝanĝoj"
 
-#: app/JourneySummaryDelegate.qml:66
+#: app/JourneySummaryDelegate.qml:61
 #, kde-format
 msgid "Click to extend"
 msgstr "Klaki por etendi"
@@ -3844,13 +3846,12 @@ msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 de %3 al %4 je %5"
 
+#~ msgid "Vehicle Load:"
+#~ msgstr "Veturila Ŝarĝo:"
+
 #~ msgctxt "vehicle load"
 #~ msgid "FULL"
 #~ msgstr "PLENA"
-
-#~ msgctxt "vehicle load"
-#~ msgid "Low occupancy"
-#~ msgstr "Malalta okupado"
 
 #~ msgctxt "vehicle load"
 #~ msgid "Medium occupancy"

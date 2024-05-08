@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-07 00:39+0000\n"
+"POT-Creation-Date: 2024-05-08 00:38+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -1159,18 +1159,16 @@ msgid "Departure"
 msgstr ""
 
 #: app/FlightPage.qml:118
-#, fuzzy, kde-format
-#| msgid "Departure"
+#, kde-format
 msgctxt "flight departure"
 msgid "Departure time"
-msgstr "出发时间"
+msgstr ""
 
 #: app/FlightPage.qml:123
-#, fuzzy, kde-format
-#| msgid "Departure"
+#, kde-format
 msgctxt "flight departure"
 msgid "Departure date"
-msgstr "出发时间"
+msgstr ""
 
 #: app/FlightPage.qml:140 app/FlightPage.qml:186
 #, kde-format
@@ -1189,11 +1187,10 @@ msgid "Arrival"
 msgstr ""
 
 #: app/FlightPage.qml:169
-#, fuzzy, kde-format
-#| msgid "Arrival time: %1"
+#, kde-format
 msgctxt "flight arrival"
 msgid "Arrival time"
-msgstr "到达时间：%1"
+msgstr ""
 
 #: app/FormPlaceDelegate.qml:55
 #, kde-format
@@ -2019,7 +2016,7 @@ msgstr ""
 msgid "Drive %1 (%2)"
 msgstr ""
 
-#: app/JourneySectionDelegate.qml:298 app/JourneySectionPage.qml:139
+#: app/JourneySectionDelegate.qml:300 app/JourneySectionPage.qml:139
 #: app/VehicleLayoutPage.qml:230
 #, kde-format
 msgctxt "@action:button"
@@ -2053,46 +2050,46 @@ msgstr ""
 
 #: app/JourneySectionPage.qml:251
 #, kde-format
-msgid "Vehicle Load:"
+msgid "Occupancy:"
 msgstr ""
 
-#: app/JourneySectionPage.qml:267 app/JourneySectionStopDelegate.qml:159
+#: app/JourneySectionPage.qml:269 app/JourneySectionStopDelegate.qml:162
 #, kde-format
 msgid "Show location"
 msgstr ""
 
-#: app/JourneySectionPage.qml:482
+#: app/JourneySectionPage.qml:484
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
 msgstr ""
 
-#: app/JourneySectionStopDelegate.qml:141
+#: app/JourneySectionStopDelegate.qml:144
 #, kde-format
 msgctxt "Abreviation of train platform"
 msgid "Pl. %1"
 msgstr ""
 
-#: app/JourneySectionStopDelegate.qml:143
+#: app/JourneySectionStopDelegate.qml:146
 #, kde-format
 msgctxt "Ferry dock, if possible use an abreviation"
 msgid "Dock %1"
 msgstr ""
 
-#: app/JourneySectionStopDelegate.qml:145
+#: app/JourneySectionStopDelegate.qml:148
 #, kde-format
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
 msgstr ""
 
-#: app/JourneySummaryDelegate.qml:55
+#: app/JourneySummaryDelegate.qml:48
 #, kde-format
 msgctxt "number of switches to another transport"
 msgid "One change"
 msgid_plural "%1 changes"
 msgstr[0] "%1 次换乘"
 
-#: app/JourneySummaryDelegate.qml:66
+#: app/JourneySummaryDelegate.qml:61
 #, kde-format
 msgid "Click to extend"
 msgstr ""

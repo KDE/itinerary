@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-07 00:39+0000\n"
+"POT-Creation-Date: 2024-05-08 00:38+0000\n"
 "PO-Revision-Date: 2023-07-09 00:58+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -2077,7 +2077,7 @@ msgstr "%1 %2 (%3)"
 msgid "Drive %1 (%2)"
 msgstr "Fahrt %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:298 app/JourneySectionPage.qml:139
+#: app/JourneySectionDelegate.qml:300 app/JourneySectionPage.qml:139
 #: app/VehicleLayoutPage.qml:230
 #, kde-format
 msgctxt "@action:button"
@@ -2110,42 +2110,41 @@ msgid "Platform:"
 msgstr "Bahnsteig:"
 
 #: app/JourneySectionPage.qml:251
-#, fuzzy, kde-format
-#| msgid "Vehicle Layout"
-msgid "Vehicle Load:"
-msgstr "Wagenreihung"
+#, kde-format
+msgid "Occupancy:"
+msgstr ""
 
-#: app/JourneySectionPage.qml:267 app/JourneySectionStopDelegate.qml:159
+#: app/JourneySectionPage.qml:269 app/JourneySectionStopDelegate.qml:162
 #, kde-format
 msgid "Show location"
 msgstr "Position anzeigen"
 
-#: app/JourneySectionPage.qml:482
+#: app/JourneySectionPage.qml:484
 #, fuzzy, kde-format
 #| msgid "Show"
 msgctxt "@action:button"
 msgid "Show Map"
 msgstr "Anzeigen"
 
-#: app/JourneySectionStopDelegate.qml:141
+#: app/JourneySectionStopDelegate.qml:144
 #, kde-format
 msgctxt "Abreviation of train platform"
 msgid "Pl. %1"
 msgstr ""
 
-#: app/JourneySectionStopDelegate.qml:143
+#: app/JourneySectionStopDelegate.qml:146
 #, kde-format
 msgctxt "Ferry dock, if possible use an abreviation"
 msgid "Dock %1"
 msgstr ""
 
-#: app/JourneySectionStopDelegate.qml:145
+#: app/JourneySectionStopDelegate.qml:148
 #, kde-format
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
 msgstr ""
 
-#: app/JourneySummaryDelegate.qml:55
+#: app/JourneySummaryDelegate.qml:48
 #, kde-format
 msgctxt "number of switches to another transport"
 msgid "One change"
@@ -2153,7 +2152,7 @@ msgid_plural "%1 changes"
 msgstr[0] "Ein Umstieg"
 msgstr[1] "%1 Umstiege"
 
-#: app/JourneySummaryDelegate.qml:66
+#: app/JourneySummaryDelegate.qml:61
 #, kde-format
 msgid "Click to extend"
 msgstr ""
@@ -3961,6 +3960,11 @@ msgstr "Anmeldung läuft"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 von %3 nach %4 am %5"
+
+#, fuzzy
+#~| msgid "Vehicle Layout"
+#~ msgid "Vehicle Load:"
+#~ msgstr "Wagenreihung"
 
 #~ msgctxt "vehicle load"
 #~ msgid "FULL"

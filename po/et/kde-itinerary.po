@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-07 00:39+0000\n"
+"POT-Creation-Date: 2024-05-08 00:38+0000\n"
 "PO-Revision-Date: 2020-05-04 10:51+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -2195,7 +2195,7 @@ msgstr "Asukohast %1 asukohta %2 (%3)"
 msgid "Drive %1 (%2)"
 msgstr "%1 (%2)"
 
-#: app/JourneySectionDelegate.qml:298 app/JourneySectionPage.qml:139
+#: app/JourneySectionDelegate.qml:300 app/JourneySectionPage.qml:139
 #: app/VehicleLayoutPage.qml:230
 #, kde-format
 msgctxt "@action:button"
@@ -2229,42 +2229,41 @@ msgid "Platform:"
 msgstr "Platvorm:"
 
 #: app/JourneySectionPage.qml:251
-#, fuzzy, kde-format
-#| msgid "Vehicle Layout"
-msgid "Vehicle Load:"
-msgstr "Sõiduki struktuur"
+#, kde-format
+msgid "Occupancy:"
+msgstr ""
 
-#: app/JourneySectionPage.qml:267 app/JourneySectionStopDelegate.qml:159
+#: app/JourneySectionPage.qml:269 app/JourneySectionStopDelegate.qml:162
 #, fuzzy, kde-format
 #| msgid "Location:"
 msgid "Show location"
 msgstr "Asukoht:"
 
-#: app/JourneySectionPage.qml:482
+#: app/JourneySectionPage.qml:484
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
 msgstr ""
 
-#: app/JourneySectionStopDelegate.qml:141
+#: app/JourneySectionStopDelegate.qml:144
 #, kde-format
 msgctxt "Abreviation of train platform"
 msgid "Pl. %1"
 msgstr ""
 
-#: app/JourneySectionStopDelegate.qml:143
+#: app/JourneySectionStopDelegate.qml:146
 #, kde-format
 msgctxt "Ferry dock, if possible use an abreviation"
 msgid "Dock %1"
 msgstr ""
 
-#: app/JourneySectionStopDelegate.qml:145
+#: app/JourneySectionStopDelegate.qml:148
 #, kde-format
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
 msgstr ""
 
-#: app/JourneySummaryDelegate.qml:55
+#: app/JourneySummaryDelegate.qml:48
 #, fuzzy, kde-format
 #| msgid "One change"
 #| msgid_plural "%1 changes"
@@ -2274,7 +2273,7 @@ msgid_plural "%1 changes"
 msgstr[0] "Üks ümberistumine"
 msgstr[1] "%1 ümberistumist"
 
-#: app/JourneySummaryDelegate.qml:66
+#: app/JourneySummaryDelegate.qml:61
 #, kde-format
 msgid "Click to extend"
 msgstr ""
@@ -4109,6 +4108,11 @@ msgstr ""
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "Asukohast %1 asukohta %2 (%3)"
+
+#, fuzzy
+#~| msgid "Vehicle Layout"
+#~ msgid "Vehicle Load:"
+#~ msgstr "Sõiduki struktuur"
 
 #, fuzzy
 #~| msgid "Edit Restaurant"

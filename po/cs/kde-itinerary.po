@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-07 00:39+0000\n"
+"POT-Creation-Date: 2024-05-08 00:38+0000\n"
 "PO-Revision-Date: 2023-08-09 12:54+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -659,11 +659,10 @@ msgid "Import selected events"
 msgstr "Importovat vybrané události"
 
 #: app/CalendarSelectionSheet.qml:14
-#, fuzzy, kde-format
-#| msgid "Select Calendar"
+#, kde-format
 msgctxt "@title"
 msgid "Select Calendar"
-msgstr "Vybrat kalendář"
+msgstr ""
 
 #: app/CarRentalDelegate.qml:20
 #, kde-format
@@ -1020,11 +1019,10 @@ msgid "Import from GPX"
 msgstr "Importovat z GPX"
 
 #: app/FavoriteLocationPage.qml:91
-#, fuzzy, kde-format
-#| msgid "Rename favorite location"
+#, kde-format
 msgctxt "@title"
 msgid "Rename favorite location"
-msgstr "Přejmenovat oblíbené místo"
+msgstr ""
 
 #: app/FavoriteLocationPage.qml:101
 #, kde-format
@@ -1167,18 +1165,16 @@ msgid "Departure"
 msgstr "Přílet"
 
 #: app/FlightPage.qml:118
-#, fuzzy, kde-format
-#| msgid "Departure time"
+#, kde-format
 msgctxt "flight departure"
 msgid "Departure time"
-msgstr "Čas odletu"
+msgstr ""
 
 #: app/FlightPage.qml:123
-#, fuzzy, kde-format
-#| msgid "Departure date"
+#, kde-format
 msgctxt "flight departure"
 msgid "Departure date"
-msgstr "Datum odjezdu"
+msgstr ""
 
 #: app/FlightPage.qml:140 app/FlightPage.qml:186
 #, kde-format
@@ -1197,11 +1193,10 @@ msgid "Arrival"
 msgstr "Odlet"
 
 #: app/FlightPage.qml:169
-#, fuzzy, kde-format
-#| msgid "Arrival time"
+#, kde-format
 msgctxt "flight arrival"
 msgid "Arrival time"
-msgstr "Čas příletu"
+msgstr ""
 
 #: app/FormPlaceDelegate.qml:55
 #, kde-format
@@ -1721,11 +1716,10 @@ msgid "Find Amenity"
 msgstr ""
 
 #: app/IndoorMapGateSheet.qml:18
-#, fuzzy, kde-format
-#| msgid "Find Gate"
+#, kde-format
 msgctxt "@title"
 msgid "Find Gate"
-msgstr "Najít Gate"
+msgstr ""
 
 #: app/IndoorMapGateSheet.qml:33
 #, kde-format
@@ -1828,11 +1822,10 @@ msgid "Floor up"
 msgstr "O patro výš"
 
 #: app/IndoorMapPlatformSheet.qml:20
-#, fuzzy, kde-format
-#| msgid "Find Platform"
+#, kde-format
 msgctxt "@title"
 msgid "Find Platform"
-msgstr "Najít nástupiště"
+msgstr ""
 
 #: app/IndoorMapPlatformSheet.qml:40
 #, kde-format
@@ -2032,7 +2025,7 @@ msgstr "%1 %2 (%3)"
 msgid "Drive %1 (%2)"
 msgstr ""
 
-#: app/JourneySectionDelegate.qml:298 app/JourneySectionPage.qml:139
+#: app/JourneySectionDelegate.qml:300 app/JourneySectionPage.qml:139
 #: app/VehicleLayoutPage.qml:230
 #, kde-format
 msgctxt "@action:button"
@@ -2066,39 +2059,39 @@ msgstr "Nástupiště:"
 
 #: app/JourneySectionPage.qml:251
 #, kde-format
-msgid "Vehicle Load:"
+msgid "Occupancy:"
 msgstr ""
 
-#: app/JourneySectionPage.qml:267 app/JourneySectionStopDelegate.qml:159
+#: app/JourneySectionPage.qml:269 app/JourneySectionStopDelegate.qml:162
 #, kde-format
 msgid "Show location"
 msgstr "Zobrazit umístění"
 
-#: app/JourneySectionPage.qml:482
+#: app/JourneySectionPage.qml:484
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
 msgstr ""
 
-#: app/JourneySectionStopDelegate.qml:141
+#: app/JourneySectionStopDelegate.qml:144
 #, kde-format
 msgctxt "Abreviation of train platform"
 msgid "Pl. %1"
 msgstr ""
 
-#: app/JourneySectionStopDelegate.qml:143
+#: app/JourneySectionStopDelegate.qml:146
 #, kde-format
 msgctxt "Ferry dock, if possible use an abreviation"
 msgid "Dock %1"
 msgstr ""
 
-#: app/JourneySectionStopDelegate.qml:145
+#: app/JourneySectionStopDelegate.qml:148
 #, kde-format
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
 msgstr ""
 
-#: app/JourneySummaryDelegate.qml:55
+#: app/JourneySummaryDelegate.qml:48
 #, kde-format
 msgctxt "number of switches to another transport"
 msgid "One change"
@@ -2107,7 +2100,7 @@ msgstr[0] "Jeden přestup"
 msgstr[1] "%1 přestupy"
 msgstr[2] "%1 přestupů"
 
-#: app/JourneySummaryDelegate.qml:66
+#: app/JourneySummaryDelegate.qml:61
 #, kde-format
 msgid "Click to extend"
 msgstr ""
@@ -2439,11 +2432,10 @@ msgid "Map download finished."
 msgstr "Stažení mapy bylo dokončeno."
 
 #: app/MatrixRoomSelectionSheet.qml:19
-#, fuzzy, kde-format
-#| msgid "Share Location"
+#, kde-format
 msgctxt "@title"
 msgid "Share Location"
-msgstr "Sdílet polohu"
+msgstr ""
 
 #: app/MatrixRoomSelectionSheet.qml:55
 #, kde-format
@@ -3843,7 +3835,3 @@ msgstr "Přihlašování"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 z %3 do %4 na %5"
-
-#~ msgctxt "vehicle load"
-#~ msgid "FULL"
-#~ msgstr "PLNO"
