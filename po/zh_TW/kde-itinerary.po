@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-30 02:26+0000\n"
-"PO-Revision-Date: 2024-04-05 23:38+0900\n"
+"PO-Revision-Date: 2024-05-09 06:05+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -1133,7 +1133,7 @@ msgstr "航班"
 #: app/FlightPage.qml:60
 #, kde-format
 msgid "Sequence Number:"
-msgstr ""
+msgstr "序列號碼："
 
 #: app/FlightPage.qml:69
 #, kde-format
@@ -1692,7 +1692,7 @@ msgstr ""
 #: app/IndoorMapGateSheet.qml:18 app/IndoorMapPage.qml:82
 #, kde-format
 msgid "Find Gate"
-msgstr ""
+msgstr "尋找登機口"
 
 #: app/IndoorMapGateSheet.qml:32
 #, kde-format
@@ -1755,7 +1755,7 @@ msgstr "顯示電梯狀態"
 #: app/IndoorMapPage.qml:104
 #, kde-format
 msgid "Show Rental Vehicles"
-msgstr ""
+msgstr "顯示租車"
 
 #: app/IndoorMapPage.qml:112
 #, kde-format
@@ -2165,11 +2165,10 @@ msgid "Daylight Saving Time"
 msgstr "日光節約時間"
 
 #: app/LocationInfoDelegate.qml:45
-#, fuzzy, kde-format
-#| msgid "Start Time"
+#, kde-format
 msgctxt "opposite to daylight saving time"
 msgid "Standard Time"
-msgstr "開始時間"
+msgstr "標準時間"
 
 #: app/LocationInfoDelegate.qml:46
 #, kde-format
@@ -2712,10 +2711,9 @@ msgid "Valid until time has to be after the valid from time."
 msgstr "失效時間必須在生效時間之後。"
 
 #: app/ProgramMembershipEditor.qml:127
-#, fuzzy, kde-format
-#| msgid "Scan Barcode"
+#, kde-format
 msgid "Barcode"
-msgstr "掃描條碼"
+msgstr "條碼"
 
 #: app/ProgramMembershipPage.qml:17
 #, kde-format
@@ -2723,11 +2721,9 @@ msgid "Program Membership"
 msgstr ""
 
 #: app/ProgramMembershipPage.qml:143
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Show Map"
+#, kde-format
 msgid "Show Pass"
-msgstr "顯示地圖"
+msgstr "顯示證明"
 
 #: app/publictransport.cpp:241 app/publictransport.cpp:268
 #, kde-format
@@ -2886,10 +2882,9 @@ msgid "Availability unknown"
 msgstr "可用性未知"
 
 #: app/PublicTransportFeatureList.qml:36
-#, fuzzy, kde-format
-#| msgid "No camera available."
+#, kde-format
 msgid "Not available"
-msgstr "沒有可用的相機。"
+msgstr "無法使用"
 
 #: app/PublicTransportFeatureList.qml:38
 #, kde-format
@@ -3332,23 +3327,20 @@ msgid "Class"
 msgstr "艙等"
 
 #: app/TicketTokenEditorCard.qml:58
-#, fuzzy, kde-format
-#| msgid "Ticket name"
+#, kde-format
 msgctxt "@title:group"
 msgid "Ticket Barcode"
-msgstr "票券名稱"
+msgstr "票券條碼"
 
 #: app/TicketTokenEditorCard.qml:68
-#, fuzzy, kde-format
-#| msgid "Delete Ticket"
+#, kde-format
 msgid "Select ticket"
-msgstr "刪除票券"
+msgstr "選取票券"
 
 #: app/TicketTokenEditorCard.qml:91
-#, fuzzy, kde-format
-#| msgid "Scan Barcode"
+#, kde-format
 msgid "Scan barcode…"
-msgstr "掃描條碼"
+msgstr "掃描條碼…"
 
 #: app/tickettokenmodel.cpp:74
 #, kde-format
@@ -3729,38 +3721,34 @@ msgid "Unknown class"
 msgstr "未知的艙等"
 
 #: app/VehicleLayoutPage.qml:82
-#, fuzzy, kde-format
-#| msgctxt "carriage on a train"
-#| msgid "Coach"
+#, kde-format
 msgctxt "train coach"
 msgid "Coach %1"
-msgstr "車廂"
+msgstr "車廂 %1"
 
 #: app/VehicleLayoutPage.qml:92
 #, kde-format
 msgctxt "train coach type"
 msgid "Sleeping car"
-msgstr ""
+msgstr "臥鋪車"
 
 #: app/VehicleLayoutPage.qml:94
-#, fuzzy, kde-format
-#| msgid "Rented car"
+#, kde-format
 msgctxt "train coach type"
 msgid "Couchette car"
-msgstr "租用的汽車"
+msgstr "半臥鋪車廂"
 
 #: app/VehicleLayoutPage.qml:96
-#, fuzzy, kde-format
-#| msgid "Restaurant"
+#, kde-format
 msgctxt "train coach type"
 msgid "Restaurant car"
-msgstr "餐廳"
+msgstr "餐車"
 
 #: app/VehicleLayoutPage.qml:98
 #, kde-format
 msgctxt "train coach type"
 msgid "Car transport car"
-msgstr ""
+msgstr "汽車運輸車廂"
 
 #: app/VehicleLayoutPage.qml:158
 #, kde-format
@@ -3862,6 +3850,9 @@ msgid ""
 "might want to configure your home location to enable the transfer assistant "
 "to automatically suggests ways to your next departure station or airport."
 msgstr ""
+"《KDE 旅行計劃》預設停用所有需要線上存取的功能，例如即時的交通狀況資料或是天"
+"氣預報。您可能會想要審閱這些設定，看要啟用哪些。在設定的時候您也可以考慮設定"
+"家的位置來讓轉乘主力能自動建議到下一個出發車站或機場的路線。"
 
 #: app/WelcomePage.qml:48
 #, kde-format
@@ -3874,6 +3865,8 @@ msgid ""
 "For more information about KDE Itinerary check out the <a href=\"https://"
 "community.kde.org/KDE_PIM/KDE_Itinerary\">wiki page</a>."
 msgstr ""
+"更多關於《KDE 旅行計劃》的資訊請見<a href=\"https://community.kde.org/"
+"KDE_PIM/KDE_Itinerary\">維基頁面</a>。"
 
 #: app/WelcomePage.qml:61
 #, kde-format

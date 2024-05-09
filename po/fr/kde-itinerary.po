@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-30 02:26+0000\n"
-"PO-Revision-Date: 2024-05-02 15:50+0200\n"
+"PO-Revision-Date: 2024-05-06 16:10+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -2372,7 +2372,7 @@ msgstr "Fichiers PDF (*.pdf)"
 #: app/main.qml:128
 #, kde-format
 msgid "iCal events (*.ics)"
-msgstr "Évènements iCal  (*.ics)"
+msgstr "Évènements iCal (*.ics)"
 
 #: app/main.qml:128 app/main.qml:137
 #, kde-format
