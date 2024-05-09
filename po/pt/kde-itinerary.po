@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kitinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-08 00:38+0000\n"
+"POT-Creation-Date: 2024-05-09 00:39+0000\n"
 "PO-Revision-Date: 2023-07-14 22:15+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -1786,18 +1786,18 @@ msgctxt "flight arrival gate"
 msgid "%1 (arrival)"
 msgstr "%1 (chegada)"
 
-#: app/IndoorMapInfoSheet.qml:126 app/IndoorMapPage.qml:127
+#: app/IndoorMapInfoSheet.qml:129 app/IndoorMapPage.qml:127
 #, fuzzy, kde-format
 #| msgid "Edit Boat Trip"
 msgid "Edit with iD"
 msgstr "Editar a Viagem de Barco"
 
-#: app/IndoorMapInfoSheet.qml:132 app/IndoorMapPage.qml:133
+#: app/IndoorMapInfoSheet.qml:135 app/IndoorMapPage.qml:133
 #, kde-format
 msgid "Edit with JOSM"
 msgstr ""
 
-#: app/IndoorMapInfoSheet.qml:138 app/IndoorMapPage.qml:139
+#: app/IndoorMapInfoSheet.qml:141 app/IndoorMapPage.qml:139
 #, kde-format
 msgid "Edit with Vespucci"
 msgstr ""

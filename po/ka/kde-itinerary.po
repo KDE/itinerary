@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-08 00:38+0000\n"
-"PO-Revision-Date: 2024-04-29 10:13+0200\n"
+"POT-Creation-Date: 2024-05-09 00:39+0000\n"
+"PO-Revision-Date: 2024-05-08 05:37+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -1740,17 +1740,17 @@ msgctxt "flight arrival gate"
 msgid "%1 (arrival)"
 msgstr "%1 (დაჯდომა)"
 
-#: app/IndoorMapInfoSheet.qml:126 app/IndoorMapPage.qml:127
+#: app/IndoorMapInfoSheet.qml:129 app/IndoorMapPage.qml:127
 #, kde-format
 msgid "Edit with iD"
 msgstr "ჩასწორება ID-ით"
 
-#: app/IndoorMapInfoSheet.qml:132 app/IndoorMapPage.qml:133
+#: app/IndoorMapInfoSheet.qml:135 app/IndoorMapPage.qml:133
 #, kde-format
 msgid "Edit with JOSM"
 msgstr "JOSM-ით ჩასწორება"
 
-#: app/IndoorMapInfoSheet.qml:138 app/IndoorMapPage.qml:139
+#: app/IndoorMapInfoSheet.qml:141 app/IndoorMapPage.qml:139
 #, kde-format
 msgid "Edit with Vespucci"
 msgstr "Vespucci-ით ჩასწორება"
@@ -2059,11 +2059,9 @@ msgid "Platform:"
 msgstr "პლატფორმა:"
 
 #: app/JourneySectionPage.qml:251
-#, fuzzy, kde-format
-#| msgctxt "vehicle load"
-#| msgid "Low occupancy"
+#, kde-format
 msgid "Occupancy:"
-msgstr "დაბალი დაკავებულობა"
+msgstr "დაკავებულობა:"
 
 #: app/JourneySectionPage.qml:269 app/JourneySectionStopDelegate.qml:162
 #, kde-format

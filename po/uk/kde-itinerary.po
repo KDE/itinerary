@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-08 00:38+0000\n"
-"PO-Revision-Date: 2024-04-27 08:46+0300\n"
+"POT-Creation-Date: 2024-05-09 00:39+0000\n"
+"PO-Revision-Date: 2024-05-08 08:26+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian\n"
 "Language: uk\n"
@@ -1753,17 +1753,17 @@ msgctxt "flight arrival gate"
 msgid "%1 (arrival)"
 msgstr "%1 (прибуття)"
 
-#: app/IndoorMapInfoSheet.qml:126 app/IndoorMapPage.qml:127
+#: app/IndoorMapInfoSheet.qml:129 app/IndoorMapPage.qml:127
 #, kde-format
 msgid "Edit with iD"
 msgstr "Редагувати за допомогою iD"
 
-#: app/IndoorMapInfoSheet.qml:132 app/IndoorMapPage.qml:133
+#: app/IndoorMapInfoSheet.qml:135 app/IndoorMapPage.qml:133
 #, kde-format
 msgid "Edit with JOSM"
 msgstr "Редагувати за допомогою JOSM"
 
-#: app/IndoorMapInfoSheet.qml:138 app/IndoorMapPage.qml:139
+#: app/IndoorMapInfoSheet.qml:141 app/IndoorMapPage.qml:139
 #, kde-format
 msgid "Edit with Vespucci"
 msgstr "Редагувати за допомогою Vespucci"
@@ -2072,11 +2072,9 @@ msgid "Platform:"
 msgstr "Платформа:"
 
 #: app/JourneySectionPage.qml:251
-#, fuzzy, kde-format
-#| msgctxt "vehicle load"
-#| msgid "Low occupancy"
+#, kde-format
 msgid "Occupancy:"
-msgstr "Низька заповненість"
+msgstr "Заповненість:"
 
 #: app/JourneySectionPage.qml:269 app/JourneySectionStopDelegate.qml:162
 #, kde-format
