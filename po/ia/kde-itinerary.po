@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-09 00:39+0000\n"
-"PO-Revision-Date: 2024-04-29 14:50+0200\n"
+"PO-Revision-Date: 2024-05-09 10:36+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -2061,11 +2061,9 @@ msgid "Platform:"
 msgstr "Platteforma:"
 
 #: app/JourneySectionPage.qml:251
-#, fuzzy, kde-format
-#| msgctxt "vehicle load"
-#| msgid "Low occupancy"
+#, kde-format
 msgid "Occupancy:"
-msgstr "Occupation basse"
+msgstr "Occupation :"
 
 #: app/JourneySectionPage.qml:269 app/JourneySectionStopDelegate.qml:162
 #, kde-format

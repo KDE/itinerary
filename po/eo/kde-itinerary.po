@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-09 00:39+0000\n"
-"PO-Revision-Date: 2024-04-28 06:29+0100\n"
+"PO-Revision-Date: 2024-05-09 22:01+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -2060,11 +2060,9 @@ msgid "Platform:"
 msgstr "Platformo:"
 
 #: app/JourneySectionPage.qml:251
-#, fuzzy, kde-format
-#| msgctxt "vehicle load"
-#| msgid "Low occupancy"
+#, kde-format
 msgid "Occupancy:"
-msgstr "Malalta okupado"
+msgstr "Okupiteco:"
 
 #: app/JourneySectionPage.qml:269 app/JourneySectionStopDelegate.qml:162
 #, kde-format
@@ -3845,73 +3843,3 @@ msgstr "Ensalutante"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 de %3 al %4 je %5"
-
-#~ msgid "Vehicle Load:"
-#~ msgstr "Veturila Ŝarĝo:"
-
-#~ msgctxt "vehicle load"
-#~ msgid "FULL"
-#~ msgstr "PLENA"
-
-#~ msgctxt "vehicle load"
-#~ msgid "Medium occupancy"
-#~ msgstr "Meza okupado"
-
-#~ msgctxt "vehicle load"
-#~ msgid "High occupancy"
-#~ msgstr "Alta okupado"
-
-#~ msgid "%1 (not available)"
-#~ msgstr "%1 (ne disponebla)"
-
-#~ msgctxt "train coach feature"
-#~ msgid "Air conditioning"
-#~ msgstr "Klimatizilo"
-
-#~ msgctxt "train coach feature"
-#~ msgid "Bistro or restaurant"
-#~ msgstr "Bistro aŭ restoracio"
-
-#~ msgctxt "train coach feature"
-#~ msgid "Toddler area"
-#~ msgstr "Infaneta areo"
-
-#~ msgctxt "train coach feature"
-#~ msgid "Family area"
-#~ msgstr "Familia areo"
-
-#~ msgctxt "train coach feature"
-#~ msgid "Wheelchair accessible"
-#~ msgstr "Rulseĝe alirebla"
-
-#~ msgctxt "train coach feature"
-#~ msgid "Quiet area"
-#~ msgstr "Areo de trankvilo"
-
-#~ msgctxt "train coach feature"
-#~ msgid "Business area"
-#~ msgstr "Areo de komerco"
-
-#~ msgctxt "train coach feature"
-#~ msgid "Bike storage"
-#~ msgstr "Bicikla konservejo"
-
-#~ msgctxt "train coach feature"
-#~ msgid "Toilet"
-#~ msgstr "Necesejo"
-
-#~ msgctxt "train coach feature"
-#~ msgid "Wheelchair accessible toilet"
-#~ msgstr "Rulseĝe alirebla necesejo"
-
-#~ msgctxt "train coach feature"
-#~ msgid "Information point"
-#~ msgstr "Informejo"
-
-#~ msgctxt "train coach feature"
-#~ msgid "Wi-Fi"
-#~ msgstr "Vifio"
-
-#~ msgctxt "train coach feature"
-#~ msgid "Power sockets"
-#~ msgstr "Elektraj ingoj"
