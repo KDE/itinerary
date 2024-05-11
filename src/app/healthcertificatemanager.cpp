@@ -111,24 +111,7 @@ QVariant HealthCertificateManager::data(const QModelIndex &index, int role) cons
     const auto &v = m_certificates[index.row()];
     switch (role) {
         case Qt::DisplayRole:
-#if HAVE_KHEALTHCERTIFICATE
-            if (v.cert.userType() == qMetaTypeId<KVaccinationCertificate>()) {
-                const auto cert = v.cert.value<KVaccinationCertificate>();
-                if (cert.dose() > 0 && cert.totalDoses() > 0) {
-                    return i18n("Vaccination %1/%2 (%3)", cert.dose(), cert.totalDoses(), cert.name());
-                }
-                return i18n("Vaccination (%1)", cert.name());
-            }
-            if (v.cert.userType() == qMetaTypeId<KTestCertificate>()) {
-                const auto cert = v.cert.value<KTestCertificate>();
-                return i18n("Test %1 (%2)", QLocale().toString(cert.date().isValid() ? cert.date() : cert.certificateIssueDate().date(), QLocale::NarrowFormat), cert.name());
-            }
-            if (v.cert.userType() == qMetaTypeId<KRecoveryCertificate>()) {
-                const auto cert = v.cert.value<KRecoveryCertificate>();
-                return i18n("Recovery (%1)", cert.name());
-            }
-#endif
-            return {};
+            return displayName(v.cert);
         case CertificateRole:
             return v.cert;
         case RawDataRole:
@@ -146,6 +129,28 @@ QHash<int, QByteArray> HealthCertificateManager::roleNames() const
     rns.insert(RawDataRole, "rawData");
     rns.insert(StorageIdRole, "storageId");
     return rns;
+}
+
+QString HealthCertificateManager::displayName(const QVariant &certificate)
+{
+#if HAVE_KHEALTHCERTIFICATE
+    if (certificate.userType() == qMetaTypeId<KVaccinationCertificate>()) {
+        const auto cert = certificate.value<KVaccinationCertificate>();
+        if (cert.dose() > 0 && cert.totalDoses() > 0) {
+            return i18n("Vaccination %1/%2 (%3)", cert.dose(), cert.totalDoses(), cert.name());
+        }
+        return i18n("Vaccination (%1)", cert.name());
+    }
+    if (certificate.userType() == qMetaTypeId<KTestCertificate>()) {
+        const auto cert = certificate.value<KTestCertificate>();
+        return i18n("Test %1 (%2)", QLocale().toString(cert.date().isValid() ? cert.date() : cert.certificateIssueDate().date(), QLocale::NarrowFormat), cert.name());
+    }
+    if (certificate.userType() == qMetaTypeId<KRecoveryCertificate>()) {
+        const auto cert = certificate.value<KRecoveryCertificate>();
+        return i18n("Recovery (%1)", cert.name());
+    }
+#endif
+    return {};
 }
 
 void HealthCertificateManager::loadCertificates()

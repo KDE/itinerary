@@ -38,6 +38,9 @@ public:
     QVariant data(const QModelIndex &index, int role) const override;
     QHash<int, QByteArray> roleNames() const override;
 
+    /** Human-readable title for displaying for the given certificate. */
+    [[nodiscard]] static QString displayName(const QVariant &cert);
+
 Q_SIGNALS:
     void newCertificateLoaded(int index);
 
