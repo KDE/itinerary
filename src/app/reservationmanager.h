@@ -67,6 +67,9 @@ public:
     /** Validator configured to acceppt all supported reservation types. */
     [[nodiscard]] static KItinerary::ExtractorValidator validator();
 
+    /** Returns the reservation for which @p res is a partial update. */
+    [[nodiscard]] QVariant isPartialUpdate(const QVariant &res) const;
+
 Q_SIGNALS:
     void reservationAdded(const QString &id);
     void reservationChanged(const QString &id);
