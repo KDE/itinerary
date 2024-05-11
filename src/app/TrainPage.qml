@@ -49,14 +49,42 @@ DetailsPage {
     ColumnLayout {
         spacing: 0
 
-        CardPageTitle {
-            emojiIcon: "🚅"
-            text: {
-                if (reservationFor.trainName || reservationFor.trainNumber) {
-                    return reservationFor.trainName + " " + reservationFor.trainNumber
-                }
-                return i18n("%1 to %2", reservationFor.departureStation.name, reservationFor.arrivalStation.name);
-            }
+        TransportIcon {
+            id: transportIcon
+            Layout.alignment: Qt.AlignHCenter
+            // A bit of extra spacing since the logos often have no padding.
+            Layout.bottomMargin: departure.route.line.hasLogo || departure.route.line.hasModeLogo ? Kirigami.Units.largeSpacing : 0
+            size: Kirigami.Units.iconSizes.medium
+            source: departure.route.line.mode === KPublicTransport.Line.Unknown ? ReservationHelper.defaultIconName(root.reservation) : departure.route.line.iconName
+        }
+
+        Kirigami.Heading {
+            text: reservationFor.trainName + " " + reservationFor.trainNumber
+            wrapMode: Text.WordWrap
+            horizontalAlignment: Text.AlignHCenter
+            textFormat: Text.PlainText
+            visible: !departure.route.line.hasLogo && (reservationFor.trainName || reservationFor.trainNumber)
+
+            leftPadding: Kirigami.Units.smallSpacing
+            rightPadding: Kirigami.Units.smallSpacing
+            bottomPadding: Kirigami.Units.smallSpacing
+
+            Layout.fillWidth: true
+        }
+
+        Kirigami.Heading {
+            text: i18n("%1 to %2", reservationFor.departureStation.name, reservationFor.arrivalStation.name)
+
+            level: 2
+            wrapMode: Text.WordWrap
+            horizontalAlignment: Text.AlignHCenter
+            textFormat: Text.PlainText
+
+            leftPadding: Kirigami.Units.smallSpacing
+            rightPadding: Kirigami.Units.smallSpacing
+            bottomPadding: Kirigami.Units.smallSpacing
+
+            Layout.fillWidth: true
         }
 
         FormCard.FormCard {
