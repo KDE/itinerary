@@ -468,57 +468,56 @@ void ReservationManager::removeFromBatch(const QString &resId, const QString &ba
     }
 }
 
-QList<QString> ReservationManager::applyPartialUpdate(const QVariant &res) {
-  // validate input
-  if (!JsonLd::canConvert<Reservation>(res)) {
-    return {};
-  }
-  const auto baseRes = JsonLd::convert<Reservation>(res);
-  if (!baseRes.modifiedTime().isValid()) {
-    return {};
-  }
-
-  // look for matching reservations in a 6 month window following the
-  // modification time
-  const auto rangeBegin = baseRes.modifiedTime();
-  const auto rangeEnd = rangeBegin.addDays(6 * 30);
-
-  QList<QString> updatedIds;
-  const auto beginIt =
-      std::lower_bound(m_batches.begin(), m_batches.end(), rangeBegin,
-                       [this](const auto &lhs, const auto &rhs) {
-                         return SortUtil::startDateTime(reservation(lhs)) < rhs;
-                       });
-  for (auto it = beginIt; it != m_batches.end(); ++it) {
-    const auto otherRes = reservation(*it);
-    if (SortUtil::startDateTime(otherRes) > rangeEnd) {
-      break; // no hit
+QList<QString> ReservationManager::applyPartialUpdate(const QVariant &res)
+{
+    // validate input
+    if (!JsonLd::canConvert<Reservation>(res)) {
+        return {};
     }
-    if (MergeUtil::isSame(res, otherRes)) {
-      // this is actually an update of otherRes!
-      const auto newRes = MergeUtil::merge(otherRes, res);
-      updateReservation(*it, newRes);
-      updatedIds.push_back(*it);
-      continue;
+    const auto baseRes = JsonLd::convert<Reservation>(res);
+    if (!baseRes.modifiedTime().isValid()) {
+        return {};
     }
-    if (MergeUtil::isSameIncidence(res, otherRes)) {
-      // this is a multi-traveler element, check if we have it as one of the
-      // batch elements already
-      const auto &batch = m_batchToResMap.value(*it);
-      for (const auto &batchedId : batch) {
-        const auto batchedRes = reservation(batchedId);
-        if (MergeUtil::isSame(res, batchedRes)) {
-          // this is actually an update of a batched reservation
-          const auto newRes = MergeUtil::merge(otherRes, res);
-          updateReservation(batchedId, newRes);
-          updatedIds.push_back(batchedId);
-          break;
+
+    // look for matching reservations in a 6 month window following the
+    // modification time
+    const auto rangeBegin = baseRes.modifiedTime();
+    const auto rangeEnd = rangeBegin.addDays(6 * 30);
+
+    QList<QString> updatedIds;
+    const auto beginIt = std::lower_bound(m_batches.begin(), m_batches.end(), rangeBegin, [this](const auto &lhs, const auto &rhs) {
+        return SortUtil::startDateTime(reservation(lhs)) < rhs;
+    });
+    for (auto it = beginIt; it != m_batches.end(); ++it) {
+        const auto otherRes = reservation(*it);
+        if (SortUtil::startDateTime(otherRes) > rangeEnd) {
+            break; // no hit
         }
-      }
+        if (MergeUtil::isSame(res, otherRes)) {
+            // this is actually an update of otherRes!
+            const auto newRes = MergeUtil::merge(otherRes, res);
+            updateReservation(*it, newRes);
+            updatedIds.push_back(*it);
+            continue;
+        }
+        if (MergeUtil::isSameIncidence(res, otherRes)) {
+            // this is a multi-traveler element, check if we have it as one of the
+            // batch elements already
+            const auto &batch = m_batchToResMap.value(*it);
+            for (const auto &batchedId : batch) {
+                const auto batchedRes = reservation(batchedId);
+                if (MergeUtil::isSame(res, batchedRes)) {
+                    // this is actually an update of a batched reservation
+                    const auto newRes = MergeUtil::merge(otherRes, res);
+                    updateReservation(batchedId, newRes);
+                    updatedIds.push_back(batchedId);
+                    break;
+                }
+            }
+        }
     }
-  }
 
-  return updatedIds;
+    return updatedIds;
 }
 
 QString ReservationManager::previousBatch(const QString &batchId) const
