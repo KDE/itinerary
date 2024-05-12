@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-09 00:39+0000\n"
+"POT-Creation-Date: 2024-05-12 00:39+0000\n"
 "PO-Revision-Date: 2024-02-27 13:39+0200\n"
 "Last-Translator: Kimmo Kujansuu <mrkujansuu@gmail.com>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -1435,22 +1435,22 @@ msgstr "Koetulos on vanhentunut"
 msgid "Recovery certificate valid"
 msgstr "Kelvollinen palautusvarmenne"
 
-#: app/healthcertificatemanager.cpp:118
+#: app/healthcertificatemanager.cpp:140
 #, kde-format
 msgid "Vaccination %1/%2 (%3)"
 msgstr "Rokotus %1/%2 (%3)"
 
-#: app/healthcertificatemanager.cpp:120
+#: app/healthcertificatemanager.cpp:142
 #, kde-format
 msgid "Vaccination (%1)"
 msgstr "Rokotus (%1)"
 
-#: app/healthcertificatemanager.cpp:124
+#: app/healthcertificatemanager.cpp:146
 #, kde-format
 msgid "Test %1 (%2)"
 msgstr "Testi %1 (%2)"
 
-#: app/healthcertificatemanager.cpp:128
+#: app/healthcertificatemanager.cpp:150
 #, kde-format
 msgid "Recovery (%1)"
 msgstr "Toipuminen (%1)"

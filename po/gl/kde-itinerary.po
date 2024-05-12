@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-09 00:39+0000\n"
+"POT-Creation-Date: 2024-05-12 00:39+0000\n"
 "PO-Revision-Date: 2024-05-09 19:20+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -1430,22 +1430,22 @@ msgstr "A proba caducou"
 msgid "Recovery certificate valid"
 msgstr "O certificado de recuperación é válido"
 
-#: app/healthcertificatemanager.cpp:118
+#: app/healthcertificatemanager.cpp:140
 #, kde-format
 msgid "Vaccination %1/%2 (%3)"
 msgstr "Vacinación %1/%2 (%3)"
 
-#: app/healthcertificatemanager.cpp:120
+#: app/healthcertificatemanager.cpp:142
 #, kde-format
 msgid "Vaccination (%1)"
 msgstr "Vacinación (%1)"
 
-#: app/healthcertificatemanager.cpp:124
+#: app/healthcertificatemanager.cpp:146
 #, kde-format
 msgid "Test %1 (%2)"
 msgstr "Proba %1 (%2)"
 
-#: app/healthcertificatemanager.cpp:128
+#: app/healthcertificatemanager.cpp:150
 #, kde-format
 msgid "Recovery (%1)"
 msgstr "Recuperación (%1)"

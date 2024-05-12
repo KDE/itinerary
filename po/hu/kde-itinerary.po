@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-09 00:39+0000\n"
+"POT-Creation-Date: 2024-05-12 00:39+0000\n"
 "PO-Revision-Date: 2024-03-26 16:14+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -1437,22 +1437,22 @@ msgstr "Lejárt teszt"
 msgid "Recovery certificate valid"
 msgstr "Érvényes felépülési igazolás"
 
-#: app/healthcertificatemanager.cpp:118
+#: app/healthcertificatemanager.cpp:140
 #, kde-format
 msgid "Vaccination %1/%2 (%3)"
 msgstr "%1/%2. oltás (%3)"
 
-#: app/healthcertificatemanager.cpp:120
+#: app/healthcertificatemanager.cpp:142
 #, kde-format
 msgid "Vaccination (%1)"
 msgstr "Oltás (%1)"
 
-#: app/healthcertificatemanager.cpp:124
+#: app/healthcertificatemanager.cpp:146
 #, kde-format
 msgid "Test %1 (%2)"
 msgstr "%1. teszt ( %2)"
 
-#: app/healthcertificatemanager.cpp:128
+#: app/healthcertificatemanager.cpp:150
 #, kde-format
 msgid "Recovery (%1)"
 msgstr "Felépülés (%1)"

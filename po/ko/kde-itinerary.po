@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-09 00:39+0000\n"
+"POT-Creation-Date: 2024-05-12 00:39+0000\n"
 "PO-Revision-Date: 2024-02-17 12:41+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1432,22 +1432,22 @@ msgstr "검사가 만료됨"
 msgid "Recovery certificate valid"
 msgstr "완치 증명서가 유효함"
 
-#: app/healthcertificatemanager.cpp:118
+#: app/healthcertificatemanager.cpp:140
 #, kde-format
 msgid "Vaccination %1/%2 (%3)"
 msgstr "예방 접종 %1/%2(%3)"
 
-#: app/healthcertificatemanager.cpp:120
+#: app/healthcertificatemanager.cpp:142
 #, kde-format
 msgid "Vaccination (%1)"
 msgstr "예방 접종(%1)"
 
-#: app/healthcertificatemanager.cpp:124
+#: app/healthcertificatemanager.cpp:146
 #, kde-format
 msgid "Test %1 (%2)"
 msgstr "검사 %1(%2)"
 
-#: app/healthcertificatemanager.cpp:128
+#: app/healthcertificatemanager.cpp:150
 #, kde-format
 msgid "Recovery (%1)"
 msgstr "완치(%1)"
