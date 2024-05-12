@@ -26,6 +26,8 @@
 #include <QStandardPaths>
 #include <QTemporaryFile>
 
+using namespace Qt::Literals::StringLiterals;
+
 class AppControllerTest : public QObject
 {
     Q_OBJECT
@@ -178,6 +180,7 @@ private Q_SLOTS:
         QVERIFY(f.open(KItinerary::File::Read));
         QCOMPARE(f.reservations().size(), 2);
         QCOMPARE(f.passes().size(), 1);
+        QCOMPARE(f.hasCustomData(u"org.kde.itinerary/settings", u"settings.ini"_s), true);
 
         Test::clearAll(&pkPassMgr);
         Test::clearAll(&resMgr);
@@ -205,6 +208,58 @@ private Q_SLOTS:
         QCOMPARE(pkPassMgr.passes().size(), 1);
         QCOMPARE(passMgr.rowCount(), 1);
         QCOMPARE(infoSpy.size(), 6);
+    }
+
+    void testExportTripGroup()
+    {
+        PkPassManager pkPassMgr;
+        Test::clearAll(&pkPassMgr);
+
+        ReservationManager resMgr;
+        Test::clearAll(&resMgr);
+
+        DocumentManager docMgr;
+        Test::clearAll(&docMgr);
+
+        TripGroupManager tripGroupMgr;
+        tripGroupMgr.setReservationManager(&resMgr);
+
+        LiveDataManager liveDataMgr;
+
+        TransferManager transferMgr;
+        transferMgr.setReservationManager(&resMgr);
+        transferMgr.setTripGroupManager(&tripGroupMgr);
+        transferMgr.setLiveDataManager(&liveDataMgr);
+
+        FavoriteLocationModel favLoc;
+
+        PassManager passMgr;
+        Test::clearAll(&passMgr);
+
+        ApplicationController appController;
+        appController.setPkPassManager(&pkPassMgr);
+        appController.setReservationManager(&resMgr);
+        appController.setDocumentManager(&docMgr);
+        appController.setTransferManager(&transferMgr);
+        appController.setFavoriteLocationModel(&favLoc);
+        appController.setPassManager(&passMgr);
+        appController.setLiveDataManager(&liveDataMgr);
+        appController.setTripGroupManager(&tripGroupMgr);
+
+        appController.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
+        QCOMPARE(tripGroupMgr.tripGroups().size(), 1);
+        const auto tripId = tripGroupMgr.tripGroups().constFirst();
+
+        QTemporaryFile tmp;
+        QVERIFY(tmp.open());
+        tmp.close();
+        appController.exportTripToFile(tripId, QUrl::fromLocalFile(tmp.fileName()));
+
+        KItinerary::File f(tmp.fileName());
+        QVERIFY(f.open(KItinerary::File::Read));
+        QCOMPARE(f.reservations().size(), 11);
+        QCOMPARE(f.passes().size(), 0);
+        QCOMPARE(f.hasCustomData(u"org.kde.itinerary/settings", u"settings.ini"_s), false);
     }
 
     void testDocumentAttaching()
