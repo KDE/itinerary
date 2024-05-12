@@ -6,6 +6,7 @@
 
 #include "importexport.h"
 
+#include "bundle-constants.h"
 #include "documentmanager.h"
 #include "favoritelocationmodel.h"
 #include "healthcertificatemanager.h"
@@ -27,6 +28,8 @@
 #include <QJsonObject>
 #include <QSettings>
 #include <QTemporaryFile>
+
+using namespace Qt::Literals::StringLiterals;
 
 static int copySettings(const QSettings *from, QSettings *to)
 {
@@ -101,14 +104,13 @@ void Exporter::exportTransfers(const ReservationManager *resMgr, const TransferM
 
 void Exporter::exportTransfersForBatch(const QString &batchId, const TransferManager *transferMgr)
 {
-    const auto transferDomain = QStringLiteral("org.kde.itinerary/transfers");
     auto t = transferMgr->transfer(batchId, Transfer::Before);
     if (t.state() != Transfer::UndefinedState) {
-        m_file->addCustomData(transferDomain, t.identifier(), QJsonDocument(Transfer::toJson(t)).toJson());
+        m_file->addCustomData(BUNDLE_TRANSFER_DOMAIN, t.identifier(), QJsonDocument(Transfer::toJson(t)).toJson());
     }
     t = transferMgr->transfer(batchId, Transfer::After);
     if (t.state() != Transfer::UndefinedState) {
-        m_file->addCustomData(transferDomain, t.identifier(), QJsonDocument(Transfer::toJson(t)).toJson());
+        m_file->addCustomData(BUNDLE_TRANSFER_DOMAIN, t.identifier(), QJsonDocument(Transfer::toJson(t)).toJson());
     }
 }
 
@@ -116,7 +118,7 @@ void Exporter::exportFavoriteLocations(const FavoriteLocationModel* favLocModel)
 {
     // export favorite locations
     if (favLocModel->rowCount() > 0) {
-        m_file->addCustomData(QStringLiteral("org.kde.itinerary/favorite-locations"), QStringLiteral("locations"),
+        m_file->addCustomData(BUNDLE_FAVORITE_LOCATION_DOMAIN, u"locations"_s,
                         QJsonDocument(FavoriteLocation::toJson(favLocModel->favoriteLocations())).toJson());
     }
 }
@@ -126,7 +128,7 @@ void Exporter::exportPasses(const PassManager *passMgr)
     for (int i = 0; i < passMgr->rowCount(); ++i) {
         const auto idx = passMgr->index(i, 0);
         m_file->addCustomData(
-            QStringLiteral("org.kde.itinerary/programs"),
+            BUNDLE_PASS_DOMAIN,
             passMgr->data(idx, PassManager::PassIdRole).toString(),
             passMgr->data(idx, PassManager::PassDataRole).toByteArray()
         );
@@ -138,7 +140,7 @@ void Exporter::exportHealthCertificates(const HealthCertificateManager *healthCe
     for (int i = 0; i < healthCertMgr->rowCount(); ++i) {
         const auto idx = healthCertMgr->index(i, 0);
         m_file->addCustomData(
-            QStringLiteral("org.kde.itinerary/health-certificates"),
+            BUNDLE_HEALTH_CERTIFICATE_DOMAIN,
             healthCertMgr->data(idx, HealthCertificateManager::StorageIdRole).toString(),
             healthCertMgr->data(idx, HealthCertificateManager::RawDataRole).toByteArray());
     }
@@ -166,7 +168,7 @@ void Exporter::exportLiveDataForBatch(const QString &batchId)
     obj.insert(QStringLiteral("journey"), KPublicTransport::JourneySection::toJson(ld.journey));
     obj.insert(QStringLiteral("journeyTimestamp"), ld.journeyTimestamp.toString(Qt::ISODate));
 
-    m_file->addCustomData(QStringLiteral("org.kde.itinerary/live-data"), batchId, QJsonDocument(obj).toJson());
+    m_file->addCustomData(BUNDLE_LIVE_DATA_DOMAIN, batchId, QJsonDocument(obj).toJson());
 }
 
 void Exporter::exportSettings()
@@ -185,7 +187,7 @@ void Exporter::exportSettings()
 
     QFile f(backup.fileName());
     f.open(QFile::ReadOnly);
-    m_file->addCustomData(QStringLiteral("org.kde.itinerary/settings"), QStringLiteral("settings.ini"), f.readAll());
+    m_file->addCustomData(BUNDLE_SETTINGS_DOMAIN, QStringLiteral("settings.ini"), f.readAll());
 }
 
 
@@ -224,13 +226,12 @@ int Importer::importDocuments(DocumentManager* docMgr)
 int Importer::importTransfers(const ReservationManager *resMgr, TransferManager *transferMgr)
 {
     int count = 0;
-    const auto transferDomain = QStringLiteral("org.kde.itinerary/transfers");
     const auto resIds = m_file->reservations();
     for (const auto &batchId : resIds) {
-        auto t = Transfer::fromJson(QJsonDocument::fromJson(m_file->customData(transferDomain, Transfer::identifier(batchId, Transfer::Before))).object());
+        auto t = Transfer::fromJson(QJsonDocument::fromJson(m_file->customData(BUNDLE_TRANSFER_DOMAIN, Transfer::identifier(batchId, Transfer::Before))).object());
         transferMgr->importTransfer(t);
         count += t.state() != Transfer::UndefinedState ? 1 : 0;
-        t = Transfer::fromJson(QJsonDocument::fromJson(m_file->customData(transferDomain, Transfer::identifier(batchId, Transfer::After))).object());
+        t = Transfer::fromJson(QJsonDocument::fromJson(m_file->customData(BUNDLE_TRANSFER_DOMAIN, Transfer::identifier(batchId, Transfer::After))).object());
         transferMgr->importTransfer(t);
         count += t.state() != Transfer::UndefinedState ? 1 : 0;
     }
@@ -239,7 +240,7 @@ int Importer::importTransfers(const ReservationManager *resMgr, TransferManager 
 
 int Importer::importFavoriteLocations(FavoriteLocationModel *favLocModel)
 {
-    auto favLocs = FavoriteLocation::fromJson(QJsonDocument::fromJson(m_file->customData(QStringLiteral("org.kde.itinerary/favorite-locations"), QStringLiteral("locations"))).array());
+    auto favLocs = FavoriteLocation::fromJson(QJsonDocument::fromJson(m_file->customData(BUNDLE_FAVORITE_LOCATION_DOMAIN, u"locations"_s)).array());
     if (!favLocs.empty()) {
         favLocModel->setFavoriteLocations(std::move(favLocs));
     }
@@ -248,10 +249,9 @@ int Importer::importFavoriteLocations(FavoriteLocationModel *favLocModel)
 
 int Importer::importPasses(PassManager *passMgr)
 {
-    const auto domain = QStringLiteral("org.kde.itinerary/programs");
-    const auto ids = m_file->listCustomData(domain);
+    const auto ids = m_file->listCustomData(BUNDLE_PASS_DOMAIN);
     for (const auto &id : ids) {
-        const auto data = m_file->customData(domain, id);
+        const auto data = m_file->customData(BUNDLE_PASS_DOMAIN, id);
         const auto pass = KItinerary::JsonLdDocument::fromJsonSingular(QJsonDocument::fromJson(data).object());
         passMgr->import(pass, id);
     }
@@ -260,19 +260,18 @@ int Importer::importPasses(PassManager *passMgr)
 
 int Importer::importHealthCertificates(HealthCertificateManager *healthCertMgr)
 {
-    const auto domain = QStringLiteral("org.kde.itinerary/health-certificates");
-    const auto certIds = m_file->listCustomData(domain);
+    const auto certIds = m_file->listCustomData(BUNDLE_HEALTH_CERTIFICATE_DOMAIN);
     for (const auto &certId : certIds) {
-        healthCertMgr->importCertificate(m_file->customData(domain, certId));
+        healthCertMgr->importCertificate(m_file->customData(BUNDLE_HEALTH_CERTIFICATE_DOMAIN, certId));
     }
     return certIds.size();
 }
 
 int Importer::importLiveData(LiveDataManager *liveDataMgr)
 {
-    const auto ids = m_file->listCustomData(QStringLiteral("org.kde.itinerary/live-data"));
+    const auto ids = m_file->listCustomData(BUNDLE_LIVE_DATA_DOMAIN);
     for (const auto &id : ids) {
-        const auto obj = QJsonDocument::fromJson(m_file->customData(QStringLiteral("org.kde.itinerary/live-data"), id)).object();
+        const auto obj = QJsonDocument::fromJson(m_file->customData(BUNDLE_LIVE_DATA_DOMAIN, id)).object();
 
         LiveData ld;
         ld.departure = KPublicTransport::Stopover::fromJson(obj.value(QLatin1StringView("departure")).toObject());
@@ -290,7 +289,7 @@ int Importer::importLiveData(LiveDataManager *liveDataMgr)
 
 int Importer::importSettings()
 {
-    const auto iniData = m_file->customData(QStringLiteral("org.kde.itinerary/settings"), QStringLiteral("settings.ini"));
+    const auto iniData = m_file->customData(BUNDLE_SETTINGS_DOMAIN, QStringLiteral("settings.ini"));
     if (iniData.isEmpty()) {
         return 0;
     }
