@@ -4,6 +4,9 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+#ifndef CONSTANTS_H
+#define CONSTANTS_H
+
 #include <chrono>
 
 namespace Constants {
@@ -13,3 +16,5 @@ constexpr std::chrono::seconds CurrentBatchLeadingMargin = std::chrono::hours(48
 constexpr std::chrono::seconds CurrentBatchTrailingMargin = std::chrono::hours(4);
 
 }
+
+#endif
