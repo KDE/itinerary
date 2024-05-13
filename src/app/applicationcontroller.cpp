@@ -77,43 +77,7 @@
 #include "kandroidextras/uri.h"
 #endif
 
-
 using namespace KItinerary;
-
-#ifdef Q_OS_ANDROID
-
-static void importFromIntent(JNIEnv *env, jobject that, jobject data)
-{
-    Q_UNUSED(that)
-    Q_UNUSED(env)
-    ApplicationController::instance()->importFromIntent(KAndroidExtras::Jni::fromHandle<KAndroidExtras::Intent>(data));
-}
-
-static const JNINativeMethod methods[] = {
-    {"importFromIntent", "(Landroid/content/Intent;)V", (void*)importFromIntent},
-};
-
-Q_DECL_EXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void*)
-{
-    static bool initialized = false;
-    if (initialized)
-        return JNI_VERSION_1_6;
-    initialized = true;
-
-    JNIEnv *env = nullptr;
-    if (vm->GetEnv((void**)&env, JNI_VERSION_1_4) != JNI_OK) {
-        qCWarning(Log) << "Failed to get JNI environment.";
-        return -1;
-    }
-    jclass cls = env->FindClass(KAndroidExtras::Jni::typeName<ItineraryActivity>());
-    if (env->RegisterNatives(cls, methods, sizeof(methods) / sizeof(JNINativeMethod)) < 0) {
-        qCWarning(Log) << "Failed to register native functions.";
-        return -1;
-    }
-
-    return JNI_VERSION_1_4;
-}
-#endif
 
 ApplicationController* ApplicationController::s_instance = nullptr;
 
@@ -189,9 +153,9 @@ bool ApplicationController::probablyUrl(const QString &text)
     return (text.startsWith(QLatin1StringView("https://")) || text.startsWith(QLatin1StringView("http://"))) && text.size() < 256;
 }
 
-#ifdef Q_OS_ANDROID
 void ApplicationController::importFromIntent(const KAndroidExtras::Intent &intent)
 {
+#ifdef Q_OS_ANDROID
     using namespace KAndroidExtras;
     const auto action = intent.getAction();
 
@@ -268,8 +232,10 @@ void ApplicationController::importFromIntent(const KAndroidExtras::Intent &inten
     }
 
     qCInfo(Log) << "Unhandled intent action:" << action;
-}
+#else
+    Q_UNUSED(intent)
 #endif
+}
 
 void ApplicationController::importFromClipboard()
 {

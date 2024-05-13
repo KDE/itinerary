@@ -19,6 +19,7 @@
 #include "favoritelocationmodel.h"
 #include "genericpkpass.h"
 #include "healthcertificatemanager.h"
+#include "intenthandler.h"
 #include "journeysectionmodel.h"
 #include "kdeconnect.h"
 #include "livedatamanager.h"
@@ -354,6 +355,8 @@ int main(int argc, char **argv)
     KDBusService service(KDBusService::Unique);
 #endif
 
+    IntentHandler intentHandler;
+
     Settings settings;
     s_settings = &settings;
 
@@ -455,6 +458,7 @@ int main(int argc, char **argv)
         }
     });
 #endif
+    QObject::connect(&intentHandler, &IntentHandler::handleIntent, &appController, &ApplicationController::importFromIntent);
 
     OnlineTicketImporter::setNetworkAccessManagerFactory(namFactory);
 
@@ -481,7 +485,7 @@ int main(int argc, char **argv)
 
 #ifdef Q_OS_ANDROID
     using namespace KAndroidExtras;
-    appController.importFromIntent(Activity::getIntent());
+    intentHandler.handleIntent(Activity::getIntent());
 #endif
 
     if (parser.isSet(selfTestOpt)) {

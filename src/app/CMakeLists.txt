@@ -19,6 +19,7 @@ target_sources(itinerary PRIVATE
     gpxexport.cpp
     healthcertificatemanager.cpp
     importexport.cpp
+    intenthandler.cpp
     journeysectionmodel.cpp
     json.cpp
     jsonio.cpp
