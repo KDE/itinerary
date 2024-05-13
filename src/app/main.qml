@@ -70,9 +70,7 @@ Kirigami.ApplicationWindow {
             icon.name: "edit-paste"
             enabled: Clipboard.hasText || Clipboard.hasUrls || Clipboard.hasBinaryData
             shortcut: StandardKey.Paste
-            onTriggered: {
-                ApplicationController.importFromClipboard();
-            }
+            onTriggered: ImportController.importFromClipboard()
         },
         Kirigami.Action {
             text: i18n("Scan Barcode...")
@@ -126,7 +124,7 @@ Kirigami.ApplicationWindow {
         nameFilters:  Qt.platform.os === "android" ?
             [i18n("All Files (*.*)")] :
             [i18n("All Files (*.*)"), i18n("PkPass files (*.pkpass)"), i18n("PDF files (*.pdf)"), i18n("iCal events (*.ics)"), i18n("KDE Itinerary files (*.itinerary)")]
-        onAccepted: ApplicationController.importFromUrl(selectedFile)
+        onAccepted: ImportController.importFromUrl(selectedFile)
     }
 
     FileDialog {
@@ -143,17 +141,13 @@ Kirigami.ApplicationWindow {
         // needs to be created on demand, after we have calendar access permissions
         KCalendarCore.CalendarListModel {}
     }
-    Component {
-        id: calendarImportPage
-        CalendarImportPage {}
-    }
     footer: NavigationBar {
         id: navigationbar
     }
     CalendarSelectionSheet {
         id: calendarSelector
         // parent: root.Overlay.overlay
-        onCalendarSelected: pageStack.push(calendarImportPage, { calendar: calendar });
+        onCalendarSelected: ImportController.importFromCalendar(calendar)
     }
 
     OnboardStatus {
@@ -267,7 +261,7 @@ Kirigami.ApplicationWindow {
         }
         onDropped: {
             for (var i in drop.urls) {
-                ApplicationController.importFromUrl(drop.urls[i]);
+                ImportController.importFromUrl(drop.urls[i]);
             }
         }
         anchors.fill: parent
@@ -300,6 +294,15 @@ Kirigami.ApplicationWindow {
     }
 
     Connections {
+        target: ImportController
+        function onShowImportPage() {
+            pageStack.layers.push(Qt.createComponent("org.kde.itinerary", "ImportPage"), {
+                controller: ImportController
+            });
+        }
+    }
+
+    Connections {
         target: MapDownloadManager
         function onFinished() { showPassiveNotification(i18n("Map download finished."), "short"); }
     }
@@ -318,10 +321,13 @@ Kirigami.ApplicationWindow {
         id: scanBarcodeComponent
         BarcodeScannerPage {
             onBarcodeDetected: (result) => {
-                if (result.hasText && ApplicationController.importText(result.text)) {
-                    applicationWindow().pageStack.goBack();
+                const prevCount = ImportController.count;
+                if (result.hasText) {
+                    ImportController.importText(result.text);
+                } else if (result.hasBinaryData) {
+                    ImportController.importData(result.binaryData);
                 }
-                if (result.hasBinaryData && ApplicationController.importData(result.binaryData)) {
+                if (ImportController.count != prevCount) {
                     applicationWindow().pageStack.goBack();
                 }
             }

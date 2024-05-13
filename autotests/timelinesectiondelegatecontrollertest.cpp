@@ -6,6 +6,7 @@
 
 #include "testhelper.h"
 
+#include "importcontroller.h"
 #include "locationhelper.h"
 #include "timelinemodel.h"
 #include "timelinesectiondelegatecontroller.h"
@@ -44,7 +45,10 @@ private Q_SLOTS:
         Test::clearAll(&mgr);
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&mgr);
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
+        ImportController importer;
+        importer.setReservationManager(&mgr);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
+        ctrl->commitImport(&importer);
 
         TimelineModel model;
         model.setCurrentDateTime(QDateTime({2021, 3, 7}, {8, 0}));
@@ -87,7 +91,10 @@ private Q_SLOTS:
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&mgr);
         // test data puts our known location to DE-BY and then adds a hotel in DE-BE for the BY-only public holiday on 2022-06-16
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/bug455083.json")));
+        ImportController importer;
+        importer.setReservationManager(&mgr);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/bug455083.json")));
+        ctrl->commitImport(&importer);
 
         TimelineModel model;
         model.setCurrentDateTime(QDateTime({2022, 6, 14}, {8, 0}));

@@ -9,6 +9,7 @@
 #include "transfer.h"
 #include "transfermanager.h"
 #include "applicationcontroller.h"
+#include "importcontroller.h"
 #include "reservationmanager.h"
 #include "tripgroupmanager.h"
 #include "favoritelocationmodel.h"
@@ -66,9 +67,12 @@ private Q_SLOTS:
         QSignalSpy changeSpy(&mgr, &TransferManager::transferChanged);
         QSignalSpy removeSpy(&mgr, &TransferManager::transferRemoved);
 
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
+        ImportController importer;
+        importer.setReservationManager(&resMgr);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
 //         ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/akademy2017.json")));
 //         ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/akademy2018-program.json")));
+        ctrl->commitImport(&importer);
 
         QCOMPARE(addSpy.size() - removeSpy.size(), 4); // to/from home, and one inbetween
 

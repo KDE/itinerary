@@ -9,7 +9,6 @@
 #include "logging.h"
 
 #include "applicationcontroller.h"
-#include "calendarimportmodel.h"
 #include "countrysubdivisionmodel.h"
 #include "clipboard.h"
 #include "developmentmodecontroller.h"
@@ -19,6 +18,7 @@
 #include "favoritelocationmodel.h"
 #include "genericpkpass.h"
 #include "healthcertificatemanager.h"
+#include "importcontroller.h"
 #include "intenthandler.h"
 #include "journeysectionmodel.h"
 #include "kdeconnect.h"
@@ -177,7 +177,6 @@ void registerApplicationTypes()
     qmlRegisterUncreatableMetaObject(MatrixRoomsModel::staticMetaObject, "org.kde.itinerary", 1, 0, "MatrixRoomsModel", {});
 #endif
 
-    qmlRegisterType<CalendarImportModel>("org.kde.itinerary", 1, 0, "CalendarImportModel");
     qmlRegisterType<CountrySubdivisionModel>("org.kde.itinerary", 1, 0, "CountrySubdivisionModel");
     qmlRegisterType<DocumentsModel>("org.kde.itinerary", 1, 0, "DocumentsModel");
     qmlRegisterType<JourneySectionModel>("org.kde.itinerary", 1, 0, "JourneySectionModel");
@@ -213,6 +212,7 @@ static TripGroupProxyModel *s_tripGroupProxyModel = nullptr;
 static MapDownloadManager *s_mapDownloadManager = nullptr;
 static PassManager *s_passManager = nullptr;
 static MatrixController *s_matrixController = nullptr;
+static ImportController *s_importController = nullptr;
 
 #define REGISTER_SINGLETON_INSTANCE(Class, Instance) \
     qmlRegisterSingletonInstance<Class>("org.kde.itinerary", 1, 0, #Class, Instance);
@@ -244,6 +244,7 @@ void registerApplicationSingletons()
     REGISTER_SINGLETON_INSTANCE(MapDownloadManager, s_mapDownloadManager)
     REGISTER_SINGLETON_INSTANCE(PassManager, s_passManager)
     REGISTER_SINGLETON_INSTANCE(MatrixController, s_matrixController);
+    REGISTER_SINGLETON_INSTANCE(ImportController, s_importController);
 
     REGISTER_SINGLETON_GADGET_INSTANCE(TripGroupInfoProvider, s_tripGroupInfoProvider)
 
@@ -283,17 +284,17 @@ static QNetworkAccessManager *namFactory()
     return s_nam;
 }
 
-void handleCommandLineArguments(ApplicationController *appController, const QStringList &args, bool isTemporary, const QString &page)
+void handleCommandLineArguments(ApplicationController *appController, ImportController *importController, const QStringList &args, bool isTemporary, const QString &page)
 {
     for (const auto &file : args) {
         const auto localUrl = QUrl::fromLocalFile(file);
         if (QFile::exists(localUrl.toLocalFile())) {
-            appController->importFromUrl(localUrl);
+            importController->importFromUrl(localUrl);
             if (isTemporary) {
                 QFile::remove(localUrl.toLocalFile());
             }
         } else {
-            appController->importFromUrl(QUrl::fromUserInput(file));
+            importController->importFromUrl(QUrl::fromUserInput(file));
         }
     }
 
@@ -433,6 +434,12 @@ int main(int argc, char **argv)
     MatrixController matrixController;
     s_matrixController = &matrixController;
 
+    ImportController importController;
+    importController.setNetworkAccessManagerFactory(namFactory);
+    importController.setReservationManager(&resMgr);
+    QObject::connect(&intentHandler, &IntentHandler::handleIntent, &importController, &ImportController::importFromIntent);
+    s_importController = &importController;
+
     ApplicationController appController;
     appController.setNetworkAccessManagerFactory(namFactory);
     appController.setReservationManager(&resMgr);
@@ -449,7 +456,7 @@ int main(int argc, char **argv)
         if (!args.isEmpty()) {
             QDir::setCurrent(workingDir);
             parser.parse(args);
-            handleCommandLineArguments(&appController, parser.positionalArguments(), parser.isSet(isTemporaryOpt), parser.value(pageOpt));
+            handleCommandLineArguments(&appController, &importController, parser.positionalArguments(), parser.isSet(isTemporaryOpt), parser.value(pageOpt));
         }
         if (!QGuiApplication::allWindows().isEmpty()) {
             QWindow *window = QGuiApplication::allWindows().at(0);
@@ -459,6 +466,7 @@ int main(int argc, char **argv)
     });
 #endif
     QObject::connect(&intentHandler, &IntentHandler::handleIntent, &appController, &ApplicationController::importFromIntent);
+    QObject::connect(&importController, &ImportController::infoMessage, &appController, &ApplicationController::infoMessage);
 
     OnlineTicketImporter::setNetworkAccessManagerFactory(namFactory);
 
@@ -481,7 +489,7 @@ int main(int argc, char **argv)
         return 1;
     }
 
-    handleCommandLineArguments(&appController, parser.positionalArguments(), parser.isSet(isTemporaryOpt), parser.value(pageOpt));
+    handleCommandLineArguments(&appController, &importController, parser.positionalArguments(), parser.isSet(isTemporaryOpt), parser.value(pageOpt));
 
 #ifdef Q_OS_ANDROID
     using namespace KAndroidExtras;

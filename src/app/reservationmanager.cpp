@@ -170,6 +170,18 @@ QList<QString> ReservationManager::importReservations(const QList<QVariant> &res
 
 QString ReservationManager::addReservation(const QVariant &res, const QString &resIdHint)
 {
+    // deal with partial updates
+    if (!m_validator.isValidElement(res)) {
+        const auto cleanup = qScopeGuard([this] { m_validator.setAcceptOnlyCompleteElements(true); });
+        m_validator.setAcceptOnlyCompleteElements(false);
+        if (m_validator.isValidElement(res)) {
+            const auto ids = applyPartialUpdate(res);
+            return ids.empty() ? QString() : ids.front();
+        }
+        qCWarning(Log) << "Discarding added element due to validation failure" << res;
+        return {};
+    }
+
     // look for matching reservations, or matching batches
     // we need to do that within a +/-24h range, so we find unbound elements too
     // TODO in case this updates the time for an unbound element we need to re-sort, otherwise the prev/next logic fails!

@@ -7,6 +7,7 @@
 #include "testhelper.h"
 
 #include "applicationcontroller.h"
+#include "importcontroller.h"
 #include "locationinformation.h"
 #include "reservationmanager.h"
 #include "tripgroup.h"
@@ -41,7 +42,10 @@ private Q_SLOTS:
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&resMgr);
 
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
+        ImportController importer;
+        importer.setReservationManager(&resMgr);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
+        ctrl->commitImport(&importer);
         QCOMPARE(mgr.tripGroups().size(), 1);
 
         TripGroupInfoProvider provider;

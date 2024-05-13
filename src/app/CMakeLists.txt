@@ -8,7 +8,6 @@ add_library(itinerary STATIC)
 target_sources(itinerary PRIVATE
     applicationcontroller.cpp
     calendarhelper.cpp
-    calendarimportmodel.cpp
     clipboard.cpp
     documentmanager.cpp
     documentsmodel.cpp
@@ -18,6 +17,7 @@ target_sources(itinerary PRIVATE
     genericpkpass.cpp
     gpxexport.cpp
     healthcertificatemanager.cpp
+    importcontroller.cpp
     importexport.cpp
     intenthandler.cpp
     journeysectionmodel.cpp
@@ -132,7 +132,6 @@ qt_add_qml_module(itinerary-app URI org.kde.itinerary NO_PLUGIN QML_FILES
     BusEditor.qml
     BusPage.qml
     CardPageTitle.qml
-    CalendarImportPage.qml
     CalendarSelectionSheet.qml
     CarRentalDelegate.qml
     CarRentalPage.qml
@@ -169,6 +168,7 @@ qt_add_qml_module(itinerary-app URI org.kde.itinerary NO_PLUGIN QML_FILES
     HotelDelegate.qml
     HotelEditor.qml
     HotelPage.qml
+    ImportPage.qml
     IndoorMapAmenitySheet.qml
     IndoorMapElevatorSheet.qml
     IndoorMapGateSheet.qml
@@ -264,6 +264,7 @@ if (ANDROID)
         arrow-left
         arrow-right
         arrow-up
+        backup
         bookmarks
         call-start
         channel-insecure-symbolic
@@ -303,11 +304,12 @@ if (ANDROID)
         help-contents
         license
         list-add
+        mail-attachment-symbolic
         mail-message-new
-        media-playback-playing
         map-globe
         map-gnomonic
         map-symbolic
+        media-playback-playing
         meeting-attending
         message-rfc822
         notifications

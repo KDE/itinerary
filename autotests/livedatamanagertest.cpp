@@ -7,6 +7,7 @@
 #include "testhelper.h"
 #include "mocknetworkaccessmanager.h"
 
+#include "importcontroller.h"
 #include "livedata.h"
 #include "livedatamanager.h"
 #include "applicationcontroller.h"
@@ -83,7 +84,10 @@ private Q_SLOTS:
 
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&resMgr);
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
+        ImportController importer;
+        importer.setReservationManager(&resMgr);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
+        ctrl->commitImport(&importer);
         QCOMPARE(resMgr.batches().size(), 11);
 
         const auto flight = resMgr.batches()[0];
@@ -152,7 +156,10 @@ private Q_SLOTS:
         auto ctrl = Test::makeAppController();
         ctrl->setPkPassManager(&pkPassMgr);
         ctrl->setReservationManager(&resMgr);
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/updateable-boardingpass.pkpass")));
+        ImportController importer;
+        importer.setReservationManager(&resMgr);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/updateable-boardingpass.pkpass")));
+        ctrl->commitImport(&importer);
 
         QCOMPARE(resMgr.batches().size(), 1);
         const auto resId = resMgr.batches()[0];

@@ -8,6 +8,7 @@
 
 #include "documentsmodel.h"
 #include "documentmanager.h"
+#include "importcontroller.h"
 #include "timelinedelegatecontroller.h"
 
 #include <QAbstractItemModelTester>
@@ -40,7 +41,10 @@ private Q_SLOTS:
         ReservationManager resMgr;
         Test::clearAll(&resMgr);
         ctrl->setReservationManager(&resMgr);
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/iata-bcbp-demo.pdf")));
+        ImportController importer;
+        importer.setReservationManager(&resMgr);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/iata-bcbp-demo.pdf")));
+        ctrl->commitImport(&importer);
         QCOMPARE(resMgr.batches().size(), 1);
         QCOMPARE(mgr.documents().size(), 1);
 

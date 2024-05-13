@@ -7,6 +7,7 @@
 #include <config-itinerary.h>
 #include "applicationcontroller.h"
 #include "healthcertificatemanager.h"
+#include "importcontroller.h"
 #include "pkpassmanager.h"
 #include "reservationmanager.h"
 
@@ -55,8 +56,11 @@ private Q_SLOTS:
             QSignalSpy insertSpy(mgr, &QAbstractItemModel::rowsInserted);
             QCOMPARE(mgr->rowCount(), 0);
             const auto rawData = readFile(QLatin1StringView(SOURCE_DIR "/data/health-certificates/full-vaccination.txt"));
+
+            ImportController importer;
+            importer.importData(rawData);
 #if HAVE_KHEALTHCERTIFICATE
-            ctrl.importData(rawData);
+            ctrl.commitImport(&importer);
             QCOMPARE(mgr->rowCount(), 1);
             QCOMPARE(insertSpy.size(), 1);
             QVERIFY(!mgr->data(mgr->index(0, 0), Qt::DisplayRole).toString().isEmpty());
@@ -79,7 +83,9 @@ private Q_SLOTS:
             QCOMPARE(mgr->rowCount(), 1);
             const auto rawData = readFile(QLatin1StringView(SOURCE_DIR "/data/health-certificates/full-vaccination.txt"));
             // no duplicates
-            ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/health-certificates/full-vaccination.txt")));
+            ImportController importer;
+            importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/health-certificates/full-vaccination.txt")));
+            ctrl.commitImport(&importer);
             QCOMPARE(mgr->rowCount(), 1);
 
             QCOMPARE(infoSpy.size(), 1);
@@ -88,15 +94,17 @@ private Q_SLOTS:
 
         {
             ApplicationController ctrl;
-            QSignalSpy infoSpy(&ctrl, &ApplicationController::infoMessage);
+            ImportController importer;
+            QSignalSpy infoSpy(&importer, &ImportController::infoMessage);
             ctrl.setPkPassManager(&passMgr);
             ctrl.setReservationManager(&resMgr);
             auto mgr = ctrl.healthCertificateManager();
             QAbstractItemModelTester modelTester(mgr);
 #if HAVE_KHEALTHCERTIFICATE
             QCOMPARE(mgr->rowCount(), 1);
+            importer.importData("not a vaccination certificate");
             // garbage is rejected
-            ctrl.importData("not a vaccination certificate");
+            ctrl.commitImport(&importer);
             QCOMPARE(mgr->rowCount(), 1);
 
             QCOMPARE(infoSpy.size(), 1);
@@ -111,10 +119,14 @@ private Q_SLOTS:
             auto mgr = ctrl.healthCertificateManager();
             QAbstractItemModelTester modelTester(mgr);
             QSignalSpy insertSpy(mgr, &QAbstractItemModel::rowsInserted);
+
+
 #if HAVE_KHEALTHCERTIFICATE
             QCOMPARE(mgr->rowCount(), 1);
             const auto rawData = readFile(QLatin1StringView(SOURCE_DIR "/data/health-certificates/partial-vaccination.divoc"));
-            ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/health-certificates/partial-vaccination.divoc")));
+            ImportController importer;
+            importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/health-certificates/partial-vaccination.divoc")));
+            ctrl.commitImport(&importer);
             QCOMPARE(mgr->rowCount(), 2);
             QCOMPARE(insertSpy.size(), 1);
             QVERIFY(!mgr->data(mgr->index(0, 0), Qt::DisplayRole).toString().isEmpty());
@@ -136,7 +148,9 @@ private Q_SLOTS:
             QSignalSpy insertSpy(mgr, &QAbstractItemModel::rowsInserted);
 #if HAVE_KHEALTHCERTIFICATE
             QCOMPARE(mgr->rowCount(), 2);
-            ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/health-certificates/negative-pcr-test-fr.pdf")));
+            ImportController importer;
+            importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/health-certificates/negative-pcr-test-fr.pdf")));
+            ctrl.commitImport(&importer);
             QCOMPARE(mgr->rowCount(), 3);
             QCOMPARE(insertSpy.size(), 1);
 

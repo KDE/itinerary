@@ -7,6 +7,7 @@
 #include "testhelper.h"
 
 #include "applicationcontroller.h"
+#include "importcontroller.h"
 #include "reservationmanager.h"
 #include "pkpassmanager.h"
 
@@ -45,7 +46,10 @@ private Q_SLOTS:
         QVERIFY(mgr.batches().empty());
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&mgr);
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/4U8465-v1.json")));
+        ImportController importer;
+        importer.setReservationManager(&mgr);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/4U8465-v1.json")));
+        ctrl->commitImport(&importer);
 
         auto res = mgr.batches();
         QCOMPARE(res.size(), 1);
@@ -57,7 +61,8 @@ private Q_SLOTS:
         QVERIFY(updateSpy.isEmpty());
         QVERIFY(!mgr.reservation(resId).isNull());
 
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/4U8465-v2.json")));
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/4U8465-v2.json")));
+        ctrl->commitImport(&importer);
         QCOMPARE(addSpy.size(), 1);
         QCOMPARE(updateSpy.size(), 1);
         QCOMPARE(mgr.batches().size(), 1);
@@ -107,11 +112,15 @@ private Q_SLOTS:
         QVERIFY(mgr.batches().empty());
         const auto passId = QStringLiteral("pass.booking.kde.org/MTIzNA==");
 
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/boardingpass-v1.pkpass")));
+        ImportController importer;
+        importer.setReservationManager(&mgr);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/boardingpass-v1.pkpass")));
+        ctrl->commitImport(&importer);
         QCOMPARE(addSpy.size(), 1);
         QVERIFY(updateSpy.isEmpty());
 
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/boardingpass-v2.pkpass")));
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/boardingpass-v2.pkpass")));
+        ctrl->commitImport(&importer);
         QCOMPARE(addSpy.size(), 1);
         QCOMPARE(updateSpy.size(), 1);
     }
@@ -124,7 +133,10 @@ private Q_SLOTS:
         ctrl->setReservationManager(&mgr);
 
         QCOMPARE(mgr.batches().size(), 0);
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
+        ImportController importer;
+        importer.setReservationManager(&mgr);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
+        ctrl->commitImport(&importer);
         QCOMPARE(mgr.batches().size(), 2);
 
         const auto batchId = mgr.batches()[0];
@@ -164,7 +176,10 @@ private Q_SLOTS:
 
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&mgr);
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
+        ImportController importer;
+        importer.setReservationManager(&mgr);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
+        ctrl->commitImport(&importer);
         QCOMPARE(batchAddSpy.size(), 2);
         QCOMPARE(batchChangeSpy.size(), 2);
         QCOMPARE(batchRenameSpy.size(), 0);
@@ -323,7 +338,10 @@ private Q_SLOTS:
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&mgr);
         QCOMPARE(mgr.batches().size(), 0);
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
+        ImportController importer;
+        importer.setReservationManager(&mgr);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
+        ctrl->commitImport(&importer);
         QCOMPARE(mgr.batches().size(), 11);
 
         auto res = mgr.reservation(mgr.batches().at(0));
@@ -338,7 +356,8 @@ private Q_SLOTS:
         QSignalSpy batchRenameSpy(&mgr, &ReservationManager::batchRenamed);
         QSignalSpy batchRemovedSpy(&mgr, &ReservationManager::batchRemoved);
 
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017-flight-cancellation.json")));
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017-flight-cancellation.json")));
+        ctrl->commitImport(&importer);
         QCOMPARE(mgr.batches().size(), 11);
         QCOMPARE(batchAddSpy.size(), 0);
         QCOMPARE(batchChangeSpy.size(), 0);

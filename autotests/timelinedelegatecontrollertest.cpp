@@ -8,6 +8,7 @@
 
 #include "timelinedelegatecontroller.h"
 #include "applicationcontroller.h"
+#include "importcontroller.h"
 #include "livedatamanager.h"
 #include "reservationmanager.h"
 #include "transfermanager.h"
@@ -182,7 +183,10 @@ private Q_SLOTS:
         ldm.setPkPassManager(&pkPassMgr);
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&mgr);
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
+        ImportController importer;
+        importer.setReservationManager(&mgr);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
+        ctrl->commitImport(&importer);
 
         TimelineDelegateController controller;
         controller.setReservationManager(&mgr);
@@ -226,7 +230,10 @@ private Q_SLOTS:
         ldm.setReservationManager(&mgr);
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&mgr);
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
+        ImportController importer;
+        importer.setReservationManager(&mgr);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
+        ctrl->commitImport(&importer);
 
         TimelineDelegateController controller;
         controller.setReservationManager(&mgr);
@@ -268,7 +275,10 @@ private Q_SLOTS:
         Test::clearAll(&mgr);
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&mgr);
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/timeline/flight-cancelation.json")));
+        ImportController importer;
+        importer.setReservationManager(&mgr);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/timeline/flight-cancelation.json")));
+        ctrl->commitImport(&importer);
 
         TimelineDelegateController controller;
         controller.setReservationManager(&mgr);
@@ -289,7 +299,10 @@ private Q_SLOTS:
         TransferManager trfMgr;
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&mgr);
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
+        ImportController importer;
+        importer.setReservationManager(&mgr);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
+        ctrl->commitImport(&importer);
 
         TimelineDelegateController controller;
         controller.setReservationManager(&mgr);
@@ -419,7 +432,8 @@ private Q_SLOTS:
 
         // single static element, see 44ed4fbe96d45a60b33e2bf784196489197d7dcc
         Test::clearAll(&mgr);
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/haus-randa-v1.json")));
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/haus-randa-v1.json")));
+        ctrl->commitImport(&importer);
         QCOMPARE(mgr.batches().size(), 1);
         controller.setBatchId(mgr.batches().at(0));
         args = controller.mapArguments().toVariant().toMap();

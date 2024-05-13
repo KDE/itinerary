@@ -14,6 +14,7 @@
 class DocumentManager;
 class FavoriteLocationModel;
 class HealthCertificateManager;
+class ImportController;
 class LiveDataManager;
 class PassManager;
 class PkPassManager;
@@ -25,8 +26,6 @@ namespace KItinerary {
 class ExtractorDocumentNode;
 class File;
 }
-
-namespace KMime { class Message; }
 
 namespace KAndroidExtras {
 class Intent;
@@ -63,10 +62,7 @@ public:
 
     // data import
     void importFromIntent(const KAndroidExtras::Intent &intent);
-    Q_INVOKABLE void importFromClipboard();
-    Q_INVOKABLE void importFromUrl(const QUrl &url);
-    Q_INVOKABLE bool importData(const QByteArray &data, const QString &fileName = {});
-    Q_INVOKABLE bool importText(const QString &text);
+    Q_INVOKABLE void commitImport(ImportController *importController);
 
     static ApplicationController* instance();
 
@@ -107,19 +103,10 @@ Q_SIGNALS:
     void editNewEventReservation(const QVariant &res);
 
 private:
-    static bool probablyUrl(const QString &text);
-    void importLocalFile(const QUrl &url);
-    bool importBundle(const QUrl &url);
-    bool importBundle(const QByteArray &data);
     bool importBundle(KItinerary::File *file);
-    bool importHealthCertificateRecursive(const KItinerary::ExtractorDocumentNode &node);
     void importPass(const QString &passId);
-    void importMimeMessage(KMime::Message *msg);
-    void importNode(const KItinerary::ExtractorDocumentNode &node);
-    bool importGenericPkPass(const KItinerary::ExtractorDocumentNode &node);
 
     QString addDocumentFromFile(const QUrl &url);
-    QString addAttachableDocument(const QString &fileName, const QByteArray &data);
 
     bool exportTripToFile(const QString &tripGroupId, const QString &fileName);
     bool exportBatchToFile(const QString &batchId, const QString &fileName);

@@ -1,0 +1,13 @@
+[
+    {
+        "@context": "http://schema.org",
+        "@type": "FlightReservation",
+        "modifiedTime": "2017-04-18T00:00:00Z",
+        "reservationNumber": "XXX007",
+        "reservationStatus": "http://schema.org/ReservationCancelled",
+        "underName": {
+            "@type": "Person",
+            "name": "KRAUSE/VOLKER"
+        }
+    }
+]

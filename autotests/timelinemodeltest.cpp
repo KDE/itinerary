@@ -9,6 +9,7 @@
 
 #include "applicationcontroller.h"
 #include "favoritelocationmodel.h"
+#include "importcontroller.h"
 #include "livedatamanager.h"
 #include "locationinformation.h"
 #include "pkpassmanager.h"
@@ -112,7 +113,10 @@ private Q_SLOTS:
 
         QCOMPARE(model.rowCount(), 1);
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/boardingpass-v1.pkpass")));
+        ImportController importer;
+        importer.setReservationManager(&resMgr);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/boardingpass-v1.pkpass")));
+        ctrl->commitImport(&importer);
         QCOMPARE(insertSpy.size(), 2);
         QCOMPARE(insertSpy.at(0).at(1).toInt(), 0);
         QCOMPARE(insertSpy.at(0).at(2).toInt(), 0);
@@ -125,7 +129,8 @@ private Q_SLOTS:
         insertSpy.clear();
         updateSpy.clear();
         rmSpy.clear();
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/boardingpass-v2.pkpass")));
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/boardingpass-v2.pkpass")));
+        ctrl->commitImport(&importer);
         QCOMPARE(insertSpy.size(), 1);
         QCOMPARE(updateSpy.size(), 1);
         QCOMPARE(updateSpy.at(0).at(0).toModelIndex().row(), 0);
@@ -163,7 +168,10 @@ private Q_SLOTS:
 
         QCOMPARE(model.rowCount(), 1);
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/haus-randa-v1.json")));
+        ImportController importer;
+        importer.setReservationManager(&resMgr);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/haus-randa-v1.json")));
+        ctrl->commitImport(&importer);
         QCOMPARE(insertSpy.size(), 4);
         QCOMPARE(insertSpy.at(0).at(1).toInt(), 0);
         QCOMPARE(insertSpy.at(0).at(2).toInt(), 0);
@@ -181,7 +189,8 @@ private Q_SLOTS:
         insertSpy.clear();
         updateSpy.clear();
         rmSpy.clear();
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/haus-randa-v2.json")));
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/haus-randa-v2.json")));
+        ctrl->commitImport(&importer);
         QCOMPARE(insertSpy.size(), 3);
         QCOMPARE(updateSpy.size(), 1);
         QCOMPARE(rmSpy.size(), 3);
@@ -219,7 +228,10 @@ private Q_SLOTS:
         QCOMPARE(model.rowCount(), 1);
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
 
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/flight-txl-lhr-sfo.json")));
+        ImportController importer;
+        importer.setReservationManager(&resMgr);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/flight-txl-lhr-sfo.json")));
+        ctrl->commitImport(&importer);
         QCOMPARE(model.rowCount(), 6); //  2x country info, 2x flights, today marker, 1x DST info
 
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
@@ -430,7 +442,10 @@ private Q_SLOTS:
         model.setReservationManager(&resMgr);
         model.setWeatherForecastManager(&weatherMgr);
 
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/weather-no-location-change.json")));
+        ImportController importer;
+        importer.setReservationManager(&resMgr);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/weather-no-location-change.json")));
+        ctrl->commitImport(&importer);
         ModelVerificationPoint vp0(QLatin1StringView(SOURCE_DIR "/data/weather-no-location-change.model"));
         vp0.setRoleFilter({TimelineModel::BatchIdRole});
         QVERIFY(vp0.verify(&model));
@@ -458,7 +473,10 @@ private Q_SLOTS:
         QVERIFY(rmSpy.isValid());
 
         // full import at runtime
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
+        ImportController importer;
+        importer.setReservationManager(&resMgr);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
+        ctrl->commitImport(&importer);
         QCOMPARE(model.rowCount(), 4); // 2x Flight, 1x DST info, 1x TodayMarker
         QCOMPARE(updateSpy.count(), 2);
         QCOMPARE(updateSpy.count(), 2);
@@ -545,7 +563,10 @@ private Q_SLOTS:
         QVERIFY(vp1.verify(&model));
 
         // load something to define the current location, so we get weather
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/flight-txl-lhr-sfo.json")));
+        ImportController importer;
+        importer.setReservationManager(&resMgr);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/flight-txl-lhr-sfo.json")));
+        ctrl->commitImport(&importer);
         ModelVerificationPoint vp2(QLatin1StringView(SOURCE_DIR "/data/timeline/daychange-r2.model"));
         vp2.setRoleFilter({TimelineModel::BatchIdRole});
         QVERIFY(vp2.verify(&model));
@@ -576,7 +597,10 @@ private Q_SLOTS:
         Test::clearAll(&resMgr);
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&resMgr);
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/timeline/") + baseName + QLatin1StringView(".json")));
+        ImportController importer;
+        importer.setReservationManager(&resMgr);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/timeline/") + baseName + QLatin1StringView(".json")));
+        ctrl->commitImport(&importer);
         TripGroupManager groupMgr;
         groupMgr.setReservationManager(&resMgr);
         WeatherForecastManager weatherMgr;
@@ -620,7 +644,8 @@ private Q_SLOTS:
 
         // retry with loading during runtime
         Test::clearAll(&resMgr);
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/timeline/") + baseName + QLatin1StringView(".json")));
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/timeline/") + baseName + QLatin1StringView(".json")));
+        ctrl->commitImport(&importer);
         QVERIFY(vp.verify(&model));
     }
 
@@ -638,7 +663,10 @@ private Q_SLOTS:
 
         QSignalSpy currentResChangedSpy(&model, &TimelineModel::currentBatchChanged);
 
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
+        ImportController importer;
+        importer.setReservationManager(&resMgr);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
+        ctrl->commitImport(&importer);
         QCOMPARE(model.rowCount(), 14);
         QVERIFY(!currentResChangedSpy.empty());
 

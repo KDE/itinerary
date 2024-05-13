@@ -5,6 +5,7 @@
 */
 
 #include "applicationcontroller.h"
+#include "bundle-constants.h"
 #include "documentmanager.h"
 #include "downloadjob.h"
 #include "favoritelocationmodel.h"
@@ -12,6 +13,7 @@
 #include "genericpkpass.h"
 #include "gpxexport.h"
 #include "healthcertificatemanager.h"
+#include "importcontroller.h"
 #include "importexport.h"
 #include "kdeconnect.h"
 #include "livedatamanager.h"
@@ -26,6 +28,7 @@
 
 #include <KItinerary/CreativeWork>
 #include <KItinerary/DocumentUtil>
+#include <KItinerary/Event>
 #include <KItinerary/ExtractorCapabilities>
 #include <KItinerary/ExtractorEngine>
 #include <KItinerary/ExtractorDocumentNode>
@@ -62,9 +65,6 @@
 #include <QUrl>
 #include <QUrlQuery>
 
-#include <KMime/Message>
-#include <KMime/Types>
-
 #ifdef Q_OS_ANDROID
 #include "android/itineraryactivity.h"
 
@@ -77,6 +77,7 @@
 #include "kandroidextras/uri.h"
 #endif
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KItinerary;
 
 ApplicationController* ApplicationController::s_instance = nullptr;
@@ -148,21 +149,11 @@ void ApplicationController::setPassManager(PassManager *passMgr)
     m_passMgr = passMgr;
 }
 
-bool ApplicationController::probablyUrl(const QString &text)
-{
-    return (text.startsWith(QLatin1StringView("https://")) || text.startsWith(QLatin1StringView("http://"))) && text.size() < 256;
-}
-
 void ApplicationController::importFromIntent(const KAndroidExtras::Intent &intent)
 {
 #ifdef Q_OS_ANDROID
     using namespace KAndroidExtras;
     const auto action = intent.getAction();
-
-    // main entry point, nothing to do
-    if (action == Intent::ACTION_MAIN) {
-        return;
-    }
 
     // opening a URL, can be something to import or a shortcut path
     if (action == Intent::ACTION_VIEW) {
@@ -170,340 +161,114 @@ void ApplicationController::importFromIntent(const KAndroidExtras::Intent &inten
         if (url.scheme() == QLatin1StringView("page")) {
             qCDebug(Log) << url;
             requestOpenPage(url.path().mid(1));
-        } else {
-            importFromUrl(intent.getData());
         }
-        return;
     }
-
-    // shared content, e.g. URL from the browser or email applications like FairMail
-    if (action == Intent::ACTION_SEND || action == Intent::ACTION_SEND_MULTIPLE) {
-        const QString type = intent.getType();
-        const auto subject = intent.getStringExtra(Intent::EXTRA_SUBJECT);
-        const auto from = intent.getStringArrayExtra(Intent::EXTRA_EMAIL);
-        const auto text = intent.getStringExtra(Intent::EXTRA_TEXT);
-        qCInfo(Log) << action << type << subject << from << text;
-        const QStringList attachments = ItineraryActivity().attachmentsForIntent(intent);
-        qCInfo(Log) << attachments;
-
-        if (probablyUrl(text)) {
-            importFromUrl(QUrl(text));
-            return;
-        }
-
-        KMime::Message msg;
-        msg.subject()->fromUnicodeString(subject, "utf-8");
-        for (const auto &f : from) {
-            KMime::Types::Mailbox mb;
-            mb.fromUnicodeString(f);
-            msg.from()->addAddress(mb);
-        }
-
-        if (attachments.empty()) {
-            msg.contentType()->setMimeType(type.toUtf8());
-            msg.setBody(text.toUtf8());
-        } else {
-            msg.contentType()->setMimeType("multipart/mixed");
-            auto body = new KMime::Content;
-            body->contentType()->setMimeType(type.toUtf8());
-            body->setBody(text.toUtf8());
-            msg.appendContent(body);
-            for (const auto &a : attachments) {
-                QUrl attUrl(a);
-                auto att = new KMime::Content;
-                att->contentType()->setMimeType(ContentResolver::mimeType(attUrl).toUtf8());
-                att->contentTransferEncoding()->setEncoding(KMime::Headers::CEbase64);
-                att->contentTransferEncoding()->setDecoded(true);
-                att->contentType()->setName(attUrl.fileName(), "utf-8");
-                QFile f(a);
-                if (!f.open(QFile::ReadOnly)) {
-                    qCWarning(Log) << "Failed to open attachement:" << a << f.errorString();
-                    continue;
-                }
-                att->setBody(f.readAll());
-                msg.appendContent(att);
-            }
-        }
-
-        msg.assemble();
-        qDebug().noquote() << msg.encodedContent();
-        importMimeMessage(&msg);
-        return;
-    }
-
-    qCInfo(Log) << "Unhandled intent action:" << action;
 #else
     Q_UNUSED(intent)
 #endif
 }
 
-void ApplicationController::importFromClipboard()
-{
-    const auto md = QGuiApplication::clipboard()->mimeData();
-    if (md->hasUrls()) {
-        const auto urls = md->urls();
-        for (const auto &url : urls) {
-            importFromUrl(url);
-        }
-    }
-
-    else if (md->hasText()) {
-        const auto content = md->data(QLatin1StringView("text/plain"));
-
-        const QString contentString = QString::fromUtf8(content);
-        // URL copied as plain text
-        if (probablyUrl(contentString)) {
-            const QUrl url(contentString);
-            if (url.isValid()) {
-                importFromUrl(url);
-                return;
-            }
-        }
-        importData(content);
-    }
-
-    else if (md->hasFormat(QLatin1StringView("application/octet-stream"))) {
-        importData(md->data(QLatin1StringView("application/octet-stream")));
-    }
-}
-
-void ApplicationController::importFromUrl(const QUrl &url)
-{
-    if (!url.isValid()) {
-        return;
-    }
-
-    qCDebug(Log) << url;
-    if (FileHelper::isLocalFile(url)) {
-        importLocalFile(url);
-        return;
-    }
-
-    if (url.scheme().startsWith(QLatin1StringView("http"))) {
-        auto job = new DownloadJob(url, m_namFactory(), this);
-        connect(job, &DownloadJob::finished, this, [this, job]() {
-            job->deleteLater();
-            if (job->hasError()) {
-                Q_EMIT infoMessage(job->errorMessage());
-                return;
-            }
-            importData(job->data());
-        });
-        return;
-    }
-
-    qCDebug(Log) << "Unhandled URL type:" << url;
-}
-
-void ApplicationController::importLocalFile(const QUrl &url)
-{
-    qCDebug(Log) << url;
-    if (url.isEmpty()) {
-        return;
-    }
-
-    QFile f(FileHelper::toLocalFile(url));
-    if (!f.open(QFile::ReadOnly)) {
-        qCWarning(Log) << "Failed to open" << f.fileName() << f.errorString();
-        Q_EMIT infoMessage(i18n("Import failed: %1", f.errorString()));
-        return;
-    }
-    if (f.size() > 10000000 && !FileHelper::fileName(url).endsWith(QLatin1StringView(".itinerary"))) {
-        qCWarning(Log) << "File too large, ignoring" << f.fileName() << f.size();
-        Q_EMIT infoMessage(i18n("Import failed: File too large."));
-        return;
-    }
-
-    // deal with things we can import more efficiently from a file directly
-    const auto head = f.peek(4);
-    if (FileHelper::hasZipHeader(head)) {
-        if (url.fileName().endsWith(QLatin1StringView(".itinerary"), Qt::CaseInsensitive) && importBundle(url)) {
-            return;
-        }
-    }
-
-    QString fileName;
-#ifdef Q_OS_ANDROID
-    if (url.scheme() == QLatin1StringView("content")) {
-        fileName = KAndroidExtras::ContentResolver::fileName(url);
-    }
-#endif
-    if (fileName.isEmpty()) {
-        fileName = f.fileName();
-    }
-
-    importData(f.readAll(), fileName);
-}
-
-QString ApplicationController::addAttachableDocument(const QString &fileName, const QByteArray &data)
-{
-    // check if there is a document we want to attach here
-    QMimeDatabase db;
-    const auto mt = db.mimeTypeForFileNameAndData(fileName, data);
-    if (mt.name() == QLatin1StringView("application/pdf") || mt.name() == QLatin1StringView("message/rfc822") || mt.name() == QLatin1StringView("application/mbox")) {
-        DigitalDocument docInfo;
-        docInfo.setName(fileName);
-        docInfo.setEncodingFormat(mt.name());
-        const auto docId = DocumentUtil::idForContent(data);
-        m_docMgr->addDocument(docId, docInfo, data);
-        return docId;
-    }
-
-    return {};
-}
-
-bool ApplicationController::importData(const QByteArray &data, const QString &fileName)
+void ApplicationController::commitImport(ImportController *importController)
 {
     qCDebug(Log);
-    if (data.size() < 4) {
-        return false;
-    }
 
-    if (FileHelper::hasZipHeader(data)) {
-        if (importBundle(data)) {
-            return true;
+    int reservationCount = 0;
+    int passCount = 0;
+    int healthCertCount = 0;
+
+    for (const auto &elem : importController->elements()) {
+        if (!elem.selected) {
+            continue;
         }
-    }
 
-    bool success = false, healthCertImported = false;
-    using namespace KItinerary;
-    ExtractorEngine engine;
-    // user opened the file, so we can be reasonably sure they assume it contains
-    // relevant content, so try expensive extraction methods too
-    engine.setHints(ExtractorEngine::ExtractFullPageRasterImages);
-    engine.setHints(engine.hints() | ExtractorEngine::ExtractGenericIcalEvents);
-    engine.setContextDate(QDateTime(QDate::currentDate(), QTime(0, 0)));
-    engine.setData(data, fileName);
-    const auto extractorResult = JsonLdDocument::fromJson(engine.extract());
-    const auto resIds = m_resMgr->importReservations(extractorResult);
-    if (!resIds.isEmpty()) {
-        // check if there is a document we want to attach here
-        const auto docId = addAttachableDocument(fileName, data);
-        if (!docId.isEmpty()) {
-            for (const auto &resId : resIds) {
-                auto res = m_resMgr->reservation(resId);
-                if (DocumentUtil::addDocumentId(res, docId)) {
-                    m_resMgr->updateReservation(resId, res);
+        QVariantList docIds;
+        switch (elem.type) {
+            case ImportElement::Reservation:
+                m_resMgr->addReservation(elem.updateData.isNull() ? elem.data : elem.updateData, elem.id);
+                docIds = DocumentUtil::documentIds(elem.data);
+                for (const auto &r : elem.batch) {
+                    m_resMgr->addReservation(r);
+                    docIds += DocumentUtil::documentIds(r);
+                }
+
+                if (elem.bundleIdx >= 0 && !elem.id.isEmpty()) {
+                    const auto bundle = importController->bundles()[elem.bundleIdx].data.get();
+
+                    auto t = Transfer::fromJson(QJsonDocument::fromJson(bundle->customData(BUNDLE_TRANSFER_DOMAIN, Transfer::identifier(elem.id, Transfer::Before))).object());
+                    m_transferMgr->importTransfer(t);
+                    t = Transfer::fromJson(QJsonDocument::fromJson(bundle->customData(BUNDLE_TRANSFER_DOMAIN, Transfer::identifier(elem.id, Transfer::After))).object());
+                    m_transferMgr->importTransfer(t);
+
+                    const auto obj = QJsonDocument::fromJson(bundle->customData(BUNDLE_LIVE_DATA_DOMAIN, elem.id)).object();
+                    if (!obj.isEmpty()) {
+                        auto ld = LiveData::fromJson(obj);
+                        ld.store(elem.id);
+                        m_liveDataMgr->importData(elem.id, std::move(ld));
+                    }
+                }
+
+                ++reservationCount;
+                break;
+            case ImportElement::Pass:
+                docIds = DocumentUtil::documentIds(elem.data);
+                m_passMgr->import(elem.data, elem.id);
+                ++passCount;
+                break;
+            case ImportElement::HealthCertificate:
+                m_healthCertMgr->importCertificate(HealthCertificateManager::certificateRawData(elem.data));
+                ++healthCertCount;
+                break;
+            case ImportElement::Template:
+                if (JsonLd::isA<LodgingBusiness>(elem.data)) { // TODO can't we do the reservation promotion in ImportController and share the model representation with reservations?
+                    LodgingReservation res;
+                    res.setReservationFor(elem.data);
+                    res.setPotentialAction(elem.data.value<LodgingBusiness>().potentialAction());
+                    Q_EMIT editNewHotelReservation(res);
+                } else if (JsonLd::isA<FoodEstablishment>(elem.data) || JsonLd::isA<LocalBusiness>(elem.data)) {
+                    // LocalBusiness is frequently used for restaurants in website annotations
+                    FoodEstablishmentReservation res;
+                    res.setReservationFor(elem.data);
+                    res.setPotentialAction(JsonLd::convert<Organization>(elem.data).potentialAction());
+                    Q_EMIT editNewRestaurantReservation(res);
+                } else if (JsonLd::isA<EventReservation>(elem.data)) {
+                    Q_EMIT editNewEventReservation(elem.data);
+                }
+                break;
+            case ImportElement::Backup:
+                importBundle(importController->bundles()[elem.bundleIdx].data.get());
+                break;
+        }
+
+        for (const auto &docId : docIds) {
+            if (const QUrl pkPassId(docId.toString()); pkPassId.scheme() == "pkpass"_L1) {
+                const auto it = importController->pkPasses().find(docId.toString());
+                if (it != importController->pkPasses().end()) {
+                    QScopedValueRollback importLocker(m_importLock, true);
+                    m_pkPassMgr->importPassFromData((*it).second.data);
+                    importController->pkPasses().erase(it);
+                }
+            } else {
+                const auto it = importController->documents().find(docId.toString());
+                if (it != importController->documents().end()) {
+                    m_docMgr->addDocument((*it).first, (*it).second.metaData, (*it).second.data);
+                    importController->documents().erase(it);
                 }
             }
         }
-
-        // collect pkpass files from the document tree
-        QScopedValueRollback importLocker(m_importLock, true);
-        importNode(engine.rootDocumentNode());
-
-        Q_EMIT infoMessage(i18np("One reservation imported.", "%1 reservations imported.", resIds.size()));
-        success = true;
     }
 
-    // look for health certificate barcodes instead
-    // if we don't find anything, try to import as health certificate directly
-    if (importHealthCertificateRecursive(engine.rootDocumentNode()) || healthCertificateManager()->importCertificate(data)) {
-        Q_EMIT infoMessage(i18n("Health certificate imported."));
-        healthCertImported = true;
+    importController->clearSelected();
+
+    if (reservationCount) {
+        Q_EMIT infoMessage(i18np("One reservation imported.", "%1 reservations imported.", reservationCount));
     }
+    if (passCount) {
+        Q_EMIT infoMessage(i18np("One pass imported.", "%1 passes imported.", passCount));
 
-    // look for time-less passes/program memberships/etc
-    if (const auto passIds = m_passMgr->import(extractorResult); !passIds.isEmpty()) {
-        const auto docId = addAttachableDocument(fileName, data);
-        if (!docId.isEmpty()) {
-            for (const auto &passId : passIds) {
-                auto pass = m_passMgr->pass(passId);
-                if (DocumentUtil::addDocumentId(pass, docId)) {
-                    m_passMgr->update(passId, pass);
-                }
-            }
-        }
-        Q_EMIT infoMessage(i18np("One pass imported.", "%1 passes imported.", passIds.size()));
-        success = true;
-    } else if (resIds.isEmpty() && !healthCertImported && importGenericPkPass(engine.rootDocumentNode())) {
-        Q_EMIT infoMessage(i18n("Pass imported."));
-        success = true;
     }
-
-    // check for things we can add reservations for manually
-    if (!success && !extractorResult.isEmpty()) {
-        ExtractorPostprocessor postProc;
-        postProc.process(extractorResult);
-        const auto postProcssedResult = postProc.result();
-        ExtractorValidator validator;
-        validator.setAcceptedTypes<LodgingBusiness, FoodEstablishment, LocalBusiness>();
-        validator.setAcceptOnlyCompleteElements(true);
-        for (const auto &resFor : postProcssedResult) {
-            if (!validator.isValidElement(resFor)) {
-                continue;
-            }
-            if (JsonLd::isA<LodgingBusiness>(resFor)) {
-                LodgingReservation res;
-                res.setReservationFor(resFor);
-                res.setPotentialAction(resFor.value<LodgingBusiness>().potentialAction());
-                Q_EMIT editNewHotelReservation(res);
-                success = true;
-                break;
-            } else if (JsonLd::isA<FoodEstablishment>(resFor) || JsonLd::isA<LocalBusiness>(resFor)) {
-                // LocalBusiness is frequently used for restaurants in website annotations
-                FoodEstablishmentReservation res;
-                res.setReservationFor(resFor);
-                res.setPotentialAction(JsonLd::convert<Organization>(resFor).potentialAction());
-                Q_EMIT editNewRestaurantReservation(res);
-                success = true;
-                break;
-            }
-        }
+    if (healthCertCount) {
+        Q_EMIT infoMessage(i18np("One health certificate imported.", "%1 health certificates imported.", healthCertCount));
     }
-
-    // nothing found
-    if (!success && !healthCertImported) {
-        Q_EMIT infoMessage(i18n("Nothing imported."));
-    }
-    return success || healthCertImported;
-}
-
-bool ApplicationController::importText(const QString& text)
-{
-    return importData(text.toUtf8());
-}
-
-void ApplicationController::importNode(const KItinerary::ExtractorDocumentNode &node)
-{
-    if (node.mimeType() == QLatin1StringView("application/vnd.apple.pkpass")) {
-        const auto pass = node.content<KPkPass::Pass*>();
-        // ### could we pass along pass directly here to avoid the extra parsing roundtrip?
-        m_pkPassMgr->importPassFromData(pass->rawData());
-    }
-
-    for (const auto &child : node.childNodes()) {
-        importNode(child);
-    }
-}
-
-bool ApplicationController::importGenericPkPass(const KItinerary::ExtractorDocumentNode &node)
-{
-    if (node.mimeType() == QLatin1StringView("application/vnd.apple.pkpass")) {
-        const auto pass = node.content<KPkPass::Pass*>();
-        if (!pass || pass->type() == KPkPass::Pass::Coupon || pass->type() == KPkPass::Pass::StoreCard) {
-            // no support for displaying those yet
-            return false;
-        }
-
-        GenericPkPass wrapper;
-        wrapper.setName(pass->description());
-        wrapper.setPkpassPassTypeIdentifier(pass->passTypeIdentifier());
-        wrapper.setPkpassSerialNumber(pass->serialNumber());
-        wrapper.setValidUntil(pass->expirationDate());
-
-        QScopedValueRollback importLocker(m_importLock, true);
-        m_pkPassMgr->importPassFromData(pass->rawData());
-        m_passMgr->import(wrapper);
-
-        return true;
-    }
-
-    bool res = false;
-    for (const auto &child : node.childNodes()) {
-        res |= importGenericPkPass(child);
-    }
-    return res;
 }
 
 void ApplicationController::exportToFile(const QUrl &url)
@@ -705,33 +470,6 @@ bool ApplicationController::exportBatchToFile(const QString &batchId, const QStr
     return true;
 }
 
-bool ApplicationController::importBundle(const QUrl &url)
-{
-    KItinerary::File f(FileHelper::toLocalFile(url));
-    if (!f.open(File::Read)) {
-        qCWarning(Log) << "Failed to open bundle file:" << url << f.errorString();
-        Q_EMIT infoMessage(i18n("Import failed: %1", f.errorString()));
-        return false;
-    }
-
-    return importBundle(&f);
-}
-
-bool ApplicationController::importBundle(const QByteArray &data)
-{
-    QBuffer buffer;
-    buffer.setData(data);
-    buffer.open(QBuffer::ReadOnly);
-    KItinerary::File f(&buffer);
-    if (!f.open(File::Read)) {
-        qCWarning(Log) << "Failed to open bundle data:" << f.errorString();
-        Q_EMIT infoMessage(i18n("Import failed: %1", f.errorString()));
-        return false;
-    }
-
-    return importBundle(&f);
-}
-
 bool ApplicationController::importBundle(KItinerary::File *file)
 {
     Importer importer(file);
@@ -755,27 +493,6 @@ bool ApplicationController::importBundle(KItinerary::File *file)
     return count > 0;
 }
 
-bool ApplicationController::importHealthCertificateRecursive(const ExtractorDocumentNode &node)
-{
-    if (node.childNodes().size() == 1 && (node.mimeType() == QLatin1StringView("internal/qimage") || node.mimeType() == QLatin1StringView("application/vnd.apple.pkpass"))) {
-        const auto &child = node.childNodes()[0];
-        if (child.isA<QString>()) {
-            return healthCertificateManager()->importCertificate(child.content<QString>().toUtf8());
-        }
-        if (child.isA<QByteArray>()) {
-            return healthCertificateManager()->importCertificate(child.content<QByteArray>());
-        }
-    }
-
-    bool result = false;
-    for (const auto &child : node.childNodes()) {
-        if (importHealthCertificateRecursive(child)) { // no shortcut evaluation, more than one QR code per PDF is possible
-            result = true;
-        }
-    }
-    return result;
-}
-
 void ApplicationController::importPass(const QString &passId)
 {
     if (m_importLock) {
@@ -785,16 +502,6 @@ void ApplicationController::importPass(const QString &passId)
     const auto pass = m_pkPassMgr->pass(passId);
     KItinerary::ExtractorEngine engine;
     engine.setContent(QVariant::fromValue<KPkPass::Pass*>(pass), u"application/vnd.apple.pkpass");
-    const auto resIds = m_resMgr->importReservations(JsonLdDocument::fromJson(engine.extract()));
-    if (!resIds.isEmpty()) {
-        Q_EMIT infoMessage(i18np("One reservation imported.", "%1 reservations imported.", resIds.size()));
-    }
-}
-
-void ApplicationController::importMimeMessage(KMime::Message *msg)
-{
-    ExtractorEngine engine;
-    engine.setContent(QVariant::fromValue<KMime::Content*>(msg), u"message/rfc822");
     const auto resIds = m_resMgr->importReservations(JsonLdDocument::fromJson(engine.extract()));
     if (!resIds.isEmpty()) {
         Q_EMIT infoMessage(i18np("One reservation imported.", "%1 reservations imported.", resIds.size()));
