@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-12 00:39+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2024-03-26 16:14+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -372,7 +372,7 @@ msgid "Light"
 msgstr "Lámpa"
 
 #: app/BoatDelegate.qml:18 app/BusDelegate.qml:33 app/TrainDelegate.qml:34
-#: app/TrainPage.qml:58 app/TransferDelegate.qml:61
+#: app/TrainPage.qml:76 app/TransferDelegate.qml:61
 #, kde-format
 msgid "%1 to %2"
 msgstr "%1 - %2"
@@ -457,7 +457,7 @@ msgstr "Az érkezési kikötő nem lehet üres."
 msgid "Boat Ticket"
 msgstr "Hajójegy"
 
-#: app/BoatPage.qml:59 app/BusPage.qml:68 app/TrainPage.qml:86
+#: app/BoatPage.qml:59 app/BusPage.qml:68 app/TrainPage.qml:114
 #, kde-format
 msgid "Departure time"
 msgstr "Indulási idő"
@@ -468,7 +468,7 @@ msgctxt "Boat terminal"
 msgid "Terminal"
 msgstr "Kikötő"
 
-#: app/BoatPage.qml:89 app/BusPage.qml:133 app/TrainPage.qml:169
+#: app/BoatPage.qml:89 app/BusPage.qml:133 app/TrainPage.qml:197
 #, kde-format
 msgid "Arrival time"
 msgstr "Érkezési idő"
@@ -591,7 +591,7 @@ msgstr "Kiszállás korábban"
 #: app/BusEditor.qml:134 app/BusEditor.qml:140 app/BusPage.qml:182
 #: app/EventPage.qml:101 app/FlightEditor.qml:163 app/FlightEditor.qml:170
 #: app/FlightPage.qml:95 app/TrainEditor.qml:146 app/TrainEditor.qml:158
-#: app/TrainPage.qml:243
+#: app/TrainPage.qml:271
 #, kde-format
 msgid "Seat"
 msgstr "Ülés"
@@ -607,7 +607,7 @@ msgctxt "Bus departure"
 msgid "Departure"
 msgstr "Indulás"
 
-#: app/BusPage.qml:88 app/TrainPage.qml:115
+#: app/BusPage.qml:88 app/TrainPage.qml:143
 #, kde-format
 msgid "Departure date"
 msgstr "Indulás dátuma"
@@ -630,12 +630,12 @@ msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "Érkezés"
 
-#: app/BusPage.qml:212 app/TrainPage.qml:310
+#: app/BusPage.qml:212 app/TrainPage.qml:338
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternatívák"
 
-#: app/BusPage.qml:217 app/JourneySectionPage.qml:26 app/TrainPage.qml:315
+#: app/BusPage.qml:217 app/JourneySectionPage.qml:26 app/TrainPage.qml:343
 #, kde-format
 msgid "Journey Details"
 msgstr "Utazás részletei"
@@ -3458,8 +3458,8 @@ msgctxt "train departure"
 msgid "Departure"
 msgstr "Indulás"
 
-#: app/TrainEditor.qml:98 app/TrainEditor.qml:124 app/TrainPage.qml:123
-#: app/TrainPage.qml:203
+#: app/TrainEditor.qml:98 app/TrainEditor.qml:124 app/TrainPage.qml:151
+#: app/TrainPage.qml:231
 #, kde-format
 msgctxt "train station"
 msgid "Station"
@@ -3494,45 +3494,45 @@ msgstr "Osztály"
 msgid "Train Ticket"
 msgstr "Vonatjegy"
 
-#: app/TrainPage.qml:80
+#: app/TrainPage.qml:108
 #, kde-format
 msgctxt "Train departure"
 msgid "Departure"
 msgstr "Indulás"
 
-#: app/TrainPage.qml:151 app/TrainPage.qml:230
+#: app/TrainPage.qml:179 app/TrainPage.qml:258
 #, kde-format
 msgid "Additional notes"
 msgstr ""
 
-#: app/TrainPage.qml:163
+#: app/TrainPage.qml:191
 #, kde-format
 msgctxt "Train arrival"
 msgid "Arrival"
 msgstr "Érkezés"
 
-#: app/TrainPage.qml:251
+#: app/TrainPage.qml:279
 #, kde-format
 msgctxt "coach of a train"
 msgid "Coach:"
 msgstr "Kocsi:"
 
-#: app/TrainPage.qml:260
+#: app/TrainPage.qml:288
 #, kde-format
 msgid "Seat:"
 msgstr "Ülés:"
 
-#: app/TrainPage.qml:269
+#: app/TrainPage.qml:297
 #, kde-format
 msgid "Class:"
 msgstr "Osztály:"
 
-#: app/TrainPage.qml:278
+#: app/TrainPage.qml:306
 #, kde-format
 msgid "Departure Vehicle Layout"
 msgstr ""
 
-#: app/TrainPage.qml:285
+#: app/TrainPage.qml:313
 #, kde-format
 msgid "Arrival Vehicle Layout"
 msgstr ""
