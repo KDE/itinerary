@@ -49,7 +49,7 @@ bool HealthCertificateManager::importCertificate(const QByteArray &rawData)
 {
     // check whether we know this certificate already
     for (const auto &c : m_certificates) {
-        if (certificateRawData(c) == rawData) {
+        if (certificateRawData(c.cert) == rawData) {
             return true;
         }
     }
@@ -115,7 +115,7 @@ QVariant HealthCertificateManager::data(const QModelIndex &index, int role) cons
         case CertificateRole:
             return v.cert;
         case RawDataRole:
-            return certificateRawData(v);
+            return certificateRawData(v.cert);
         case StorageIdRole:
             return v.name;
     }
@@ -179,17 +179,17 @@ void HealthCertificateManager::loadCertificates()
     endResetModel();
 }
 
-QByteArray HealthCertificateManager::certificateRawData([[maybe_unused]] const CertData &certData) const
+QByteArray HealthCertificateManager::certificateRawData([[maybe_unused]] const QVariant &cert)
 {
 #if HAVE_KHEALTHCERTIFICATE
-    if (certData.cert.userType() == qMetaTypeId<KVaccinationCertificate>()) {
-        return certData.cert.value<KVaccinationCertificate>().rawData();
+    if (cert.userType() == qMetaTypeId<KVaccinationCertificate>()) {
+        return cert.value<KVaccinationCertificate>().rawData();
     }
-    if (certData.cert.userType() == qMetaTypeId<KTestCertificate>()) {
-        return certData.cert.value<KTestCertificate>().rawData();
+    if (cert.userType() == qMetaTypeId<KTestCertificate>()) {
+        return cert.value<KTestCertificate>().rawData();
     }
-    if (certData.cert.userType() == qMetaTypeId<KRecoveryCertificate>()) {
-        return certData.cert.value<KRecoveryCertificate>().rawData();
+    if (cert.userType() == qMetaTypeId<KRecoveryCertificate>()) {
+        return cert.value<KRecoveryCertificate>().rawData();
     }
 #endif
     return {};

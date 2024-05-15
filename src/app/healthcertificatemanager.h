@@ -41,6 +41,9 @@ public:
     /** Human-readable title for displaying for the given certificate. */
     [[nodiscard]] static QString displayName(const QVariant &cert);
 
+    /** Raw data representation of @p cert, independent of its type. */
+    [[nodiscard]] static QByteArray certificateRawData(const QVariant &cert);
+
 Q_SIGNALS:
     void newCertificateLoaded(int index);
 
@@ -52,7 +55,6 @@ private:
     static bool certLessThan(const CertData &lhs, const CertData &rhs);
 
     void loadCertificates();
-    QByteArray certificateRawData(const CertData &certData) const;
 
     std::vector<CertData> m_certificates;
 };
