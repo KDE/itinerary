@@ -4,9 +4,9 @@
 */
 
 #include "calendarlistmodel.h"
-#include "calendarpluginloader.h"
 
 #include <KCalendarCore/CalendarPlugin>
+#include <KCalendarCore/CalendarPluginLoader>
 
 using namespace KCalendarCore;
 using namespace KCalendarCoreExtras;

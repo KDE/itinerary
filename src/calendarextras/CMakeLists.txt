@@ -10,7 +10,6 @@ generate_export_header(KCalendarCoreExtras BASE_NAME KCalendarCoreExtras)
 
 target_sources(KCalendarCoreExtras PRIVATE
     calendarlistmodel.cpp
-    calendarpluginloader.cpp
     integration.cpp
 )
 
