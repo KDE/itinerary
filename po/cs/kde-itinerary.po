@@ -2720,10 +2720,9 @@ msgid "Valid until time has to be after the valid from time."
 msgstr ""
 
 #: app/ProgramMembershipEditor.qml:127
-#, fuzzy, kde-format
-#| msgid "Scan Barcode"
+#, kde-format
 msgid "Barcode"
-msgstr "Skenovat čarový kód"
+msgstr "Čárový kód"
 
 #: app/ProgramMembershipPage.qml:17
 #, kde-format
@@ -3338,23 +3337,20 @@ msgid "Class"
 msgstr "Třída"
 
 #: app/TicketTokenEditorCard.qml:58
-#, fuzzy, kde-format
-#| msgid "Scan Barcode"
+#, kde-format
 msgctxt "@title:group"
 msgid "Ticket Barcode"
-msgstr "Skenovat čarový kód"
+msgstr ""
 
 #: app/TicketTokenEditorCard.qml:68
-#, fuzzy, kde-format
-#| msgid "Delete Ticket"
+#, kde-format
 msgid "Select ticket"
-msgstr "Smazat lístek"
+msgstr ""
 
 #: app/TicketTokenEditorCard.qml:91
-#, fuzzy, kde-format
-#| msgid "Scan Barcode"
+#, kde-format
 msgid "Scan barcode…"
-msgstr "Skenovat čarový kód"
+msgstr ""
 
 #: app/tickettokenmodel.cpp:74
 #, kde-format
