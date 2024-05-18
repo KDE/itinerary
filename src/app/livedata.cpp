@@ -15,30 +15,32 @@
 #include <QJsonObject>
 #include <QStandardPaths>
 
-static QString basePath(LiveData::Type type)
+using namespace Qt::Literals::StringLiterals;
+
+[[nodiscard]] static QString basePath(LiveData::Type type)
 {
     QString typeStr;
     switch (type) {
         case LiveData::Departure:
-            typeStr = QStringLiteral("departure");
+            typeStr = u"departure"_s;
             break;
         case LiveData::Arrival:
-            typeStr = QStringLiteral("arrival");
+            typeStr = u"arrival"_s;
             break;
         case LiveData::Journey:
-            typeStr = QStringLiteral("journey");
+            typeStr = u"journey"_s;
             break;
         default:
             assert(false);
     }
-    return QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + QLatin1StringView("/publictransport/") + typeStr + QLatin1Char('/');
+    return QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + "/publictransport/"_L1 + typeStr + '/'_L1;
 }
 
 static QJsonObject loadOne(const QString &resId, LiveData::Type type, QDateTime &timestamp)
 {
     const auto path = basePath(type);
 
-    QFile f(path + resId + QLatin1StringView(".json"));
+    QFile f(path + resId + ".json"_L1);
     if (!f.open(QFile::ReadOnly)) {
         timestamp = {};
         return {};
@@ -92,7 +94,7 @@ static void storeOne(const QString &resId, LiveData::Type type, const QJsonObjec
     const auto path = basePath(type);
     QDir().mkpath(path);
 
-    const QString fileName = path + resId + QLatin1StringView(".json");
+    const QString fileName = path + resId + ".json"_L1;
 
     if (obj.isEmpty()) {
         QFile::remove(fileName);
@@ -154,6 +156,30 @@ std::vector<QString> LiveData::listAll()
         listOne(type, ids);
     }
     return ids;
+}
+
+QJsonObject LiveData::toJson(const LiveData &ld)
+{
+    QJsonObject obj;
+    obj.insert("departure"_L1, KPublicTransport::Stopover::toJson(ld.departure));
+    obj.insert("departureTimestamp"_L1, ld.departureTimestamp.toString(Qt::ISODate));
+    obj.insert("arrival"_L1, KPublicTransport::Stopover::toJson(ld.arrival));
+    obj.insert("arrivalTimestamp"_L1, ld.arrivalTimestamp.toString(Qt::ISODate));
+    obj.insert("journey"_L1, KPublicTransport::JourneySection::toJson(ld.journey));
+    obj.insert("journeyTimestamp"_L1, ld.journeyTimestamp.toString(Qt::ISODate));
+    return obj;
+}
+
+LiveData LiveData::fromJson(const QJsonObject &obj)
+{
+    LiveData ld;
+    ld.departure = KPublicTransport::Stopover::fromJson(obj.value("departure"_L1).toObject());
+    ld.departureTimestamp = QDateTime::fromString(obj.value("departureTimestamp"_L1).toString(), Qt::ISODate);
+    ld.arrival = KPublicTransport::Stopover::fromJson(obj.value("arrival"_L1).toObject());
+    ld.arrivalTimestamp = QDateTime::fromString(obj.value("arrivalTimestamp"_L1).toString(), Qt::ISODate);
+    ld.journey = KPublicTransport::JourneySection::fromJson(obj.value("journey"_L1).toObject());
+    ld.journeyTimestamp = QDateTime::fromString(obj.value("journeyTimestamp"_L1).toString(), Qt::ISODate);
+    return ld;
 }
 
 void LiveData::clearStorage()

@@ -160,15 +160,7 @@ void Exporter::exportLiveDataForBatch(const QString &batchId)
         return;
     }
 
-    QJsonObject obj;
-    obj.insert(QStringLiteral("departure"), KPublicTransport::Stopover::toJson(ld.departure));
-    obj.insert(QStringLiteral("departureTimestamp"), ld.departureTimestamp.toString(Qt::ISODate));
-    obj.insert(QStringLiteral("arrival"), KPublicTransport::Stopover::toJson(ld.arrival));
-    obj.insert(QStringLiteral("arrivalTimestamp"), ld.arrivalTimestamp.toString(Qt::ISODate));
-    obj.insert(QStringLiteral("journey"), KPublicTransport::JourneySection::toJson(ld.journey));
-    obj.insert(QStringLiteral("journeyTimestamp"), ld.journeyTimestamp.toString(Qt::ISODate));
-
-    m_file->addCustomData(BUNDLE_LIVE_DATA_DOMAIN, batchId, QJsonDocument(obj).toJson());
+    m_file->addCustomData(BUNDLE_LIVE_DATA_DOMAIN, batchId, QJsonDocument(LiveData::toJson(ld)).toJson());
 }
 
 void Exporter::exportSettings()
@@ -272,15 +264,7 @@ int Importer::importLiveData(LiveDataManager *liveDataMgr)
     const auto ids = m_file->listCustomData(BUNDLE_LIVE_DATA_DOMAIN);
     for (const auto &id : ids) {
         const auto obj = QJsonDocument::fromJson(m_file->customData(BUNDLE_LIVE_DATA_DOMAIN, id)).object();
-
-        LiveData ld;
-        ld.departure = KPublicTransport::Stopover::fromJson(obj.value(QLatin1StringView("departure")).toObject());
-        ld.departureTimestamp = QDateTime::fromString(obj.value(QLatin1StringView("departureTimestamp")).toString(), Qt::ISODate);
-        ld.arrival = KPublicTransport::Stopover::fromJson(obj.value(QLatin1StringView("arrival")).toObject());
-        ld.arrivalTimestamp = QDateTime::fromString(obj.value(QLatin1StringView("arrivalTimestamp")).toString(), Qt::ISODate);
-        ld.journey = KPublicTransport::JourneySection::fromJson(obj.value(QLatin1StringView("journey")).toObject());
-        ld.journeyTimestamp = QDateTime::fromString(obj.value(QLatin1StringView("journeyTimestamp")).toString(), Qt::ISODate);
-
+        auto ld = LiveData::fromJson(obj);
         ld.store(id);
         liveDataMgr->importData(id, std::move(ld));
     }

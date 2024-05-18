@@ -25,11 +25,11 @@ public:
         AllTypes = Departure | Arrival | Journey
     };
 
-    KPublicTransport::Stopover stopover(Type type) const;
+    [[nodiscard]] KPublicTransport::Stopover stopover(Type type) const;
     void setStopover(Type type, const KPublicTransport::Stopover &stop);
     void setTimestamp(Type type, const QDateTime &dt);
 
-    bool isEmpty() const;
+    [[nodiscard]] bool isEmpty() const;
 
     KPublicTransport::Stopover departure;
     QDateTime departureTimestamp;
@@ -39,7 +39,7 @@ public:
     QDateTime journeyTimestamp;
 
     /** Load live data for reservation batch with id @resId. */
-    static LiveData load(const QString &resId);
+    [[nodiscard]] static LiveData load(const QString &resId);
     /** Store this data for reservation batch @p resId. */
     void store(const QString &resId, int types = AllTypes) const;
     /** Removes all stored data for a given id. */
@@ -48,7 +48,12 @@ public:
     /** List all reservations for which there are stored live data information.
      *  Used for exporting.
      */
-    static std::vector<QString> listAll();
+    [[nodiscard]] static std::vector<QString> listAll();
+
+    /** Single JSON object representing @p ld, for use in exporting. */
+    [[nodiscard]] static QJsonObject toJson(const LiveData &ld);
+    /** Deserialize from JSON. */
+    [[nodiscard]] static LiveData fromJson(const QJsonObject &obj);
 
     /** Clears all stored live data.
      *  @internal For unit tests only.
