@@ -32,7 +32,7 @@ General introduction: https://community.kde.org/Get_Involved
 
 Building:
 - Android: https://develop.kde.org/docs/packaging/android/building_applications/
-- Othe platforms: https://community.kde.org/Get_Involved/development
+- Other platforms: https://community.kde.org/Get_Involved/development
 
 Important external components:
 - Travel document extractor engine: https://invent.kde.org/pim/kitinerary
