@@ -45,9 +45,8 @@ Kirigami.Dialog {
 
         clip:true
 
-        delegate: IndoorMapAmenityDelegate {
+        delegate: AmenityListDelegate {
             id: item
-            mapData: amenitySheet.map.mapData
             required property QtObject model
             onClicked: {
                 amenitySheet.map.view.floorLevel = item.model.level
