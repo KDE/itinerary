@@ -812,7 +812,17 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="24.05.0" date="2024-05-23"/>
+    <release version="24.05.0" date="2024-05-23">
+      <description>
+        <ul>
+          <li>New or improved travel document extractors for CFR, Eurostar, Indico, IRCTC, Lufthansa, Motel One, SNCB, SNCF, Ticketportal, Trenitalia and VDV eTickets. Added support for public transport data from Serbijavoz and Transitous.</li>
+          <li>Show more detailed train coach or vehicle feature information.</li>
+          <li>Show per-coach occupancy information when available.</li>
+          <li>Allow to manually add ticket barcodes to existing reservations.</li>
+          <li>Show DST transition information in the timeline.</li>
+        </ul>
+      </description>
+    </release>
     <release version="24.02.2" date="2024-04-11">
       <description>
         <ul>
