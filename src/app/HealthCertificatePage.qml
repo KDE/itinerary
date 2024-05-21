@@ -42,12 +42,6 @@ Kirigami.Page {
 
     actions: [
         Kirigami.Action {
-            id: importFromClipboardAction
-            icon.name: "edit-paste"
-            text: i18n("Import from Clipboard")
-            onTriggered: ApplicationController.importFromClipboard()
-        },
-        Kirigami.Action {
             icon.name: "edit-delete"
             text: i18n("Delete")
             onTriggered: deleteWarningDialog.open()
@@ -134,10 +128,6 @@ Kirigami.Page {
             Layout.fillWidth: true
             Layout.alignment: Qt.AlignHCenter
             Layout.maximumWidth: Kirigami.Units.gridUnit * 25
-        }
-        QQC2.Button {
-            action: importFromClipboardAction
-            Layout.alignment: Qt.AlignHCenter
         }
     }
 
