@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-19 00:38+0000\n"
+"POT-Creation-Date: 2024-05-22 00:39+0000\n"
 "PO-Revision-Date: 2024-05-09 18:45+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -126,7 +126,7 @@ msgstr "Dışa Aktar…"
 
 #: app/ActionsCard.qml:78 app/ActionsCard.qml:124 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
-#: app/HealthCertificatePage.qml:52 app/HealthCertificatePage.qml:66
+#: app/HealthCertificatePage.qml:46 app/HealthCertificatePage.qml:60
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:168
 #: app/TicketPage.qml:47 app/TicketPage.qml:171 app/TimelinePage.qml:207
 #, kde-format
@@ -1457,22 +1457,17 @@ msgstr "İyileşme (%1)"
 msgid "Health Certificates"
 msgstr "Sağlık Sertifikaları"
 
-#: app/HealthCertificatePage.qml:47
-#, kde-format
-msgid "Import from Clipboard"
-msgstr "Panodan İçe Aktar"
-
-#: app/HealthCertificatePage.qml:61
+#: app/HealthCertificatePage.qml:55
 #, kde-format
 msgid "Delete Certificate"
 msgstr "Sertifikayı Sil"
 
-#: app/HealthCertificatePage.qml:62
+#: app/HealthCertificatePage.qml:56
 #, kde-format
 msgid "Do you really want to delete this certificate?"
 msgstr "Bu sertifikayı silmeyi gerçekten istiyor musunuz?"
 
-#: app/HealthCertificatePage.qml:132
+#: app/HealthCertificatePage.qml:126
 #, kde-format
 msgid ""
 "<p>You can import the following health certificates by scanning them with a "
@@ -3847,6 +3842,9 @@ msgstr "Oturum açılıyor"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%5 tarihinde %3 havaalanından %4 havaalanına %1%2"
+
+#~ msgid "Import from Clipboard"
+#~ msgstr "Panodan İçe Aktar"
 
 #~ msgid "Vehicle Load:"
 #~ msgstr "Araç yükü:"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-19 00:38+0000\n"
+"POT-Creation-Date: 2024-05-22 00:39+0000\n"
 "PO-Revision-Date: 2024-02-09 23:07+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -130,7 +130,7 @@ msgstr "Экспорт…"
 
 #: app/ActionsCard.qml:78 app/ActionsCard.qml:124 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
-#: app/HealthCertificatePage.qml:52 app/HealthCertificatePage.qml:66
+#: app/HealthCertificatePage.qml:46 app/HealthCertificatePage.qml:60
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:168
 #: app/TicketPage.qml:47 app/TicketPage.qml:171 app/TimelinePage.qml:207
 #, kde-format
@@ -1489,22 +1489,17 @@ msgstr "Перенесённое заболевание (%1)"
 msgid "Health Certificates"
 msgstr "Сертификаты здоровья"
 
-#: app/HealthCertificatePage.qml:47
-#, kde-format
-msgid "Import from Clipboard"
-msgstr "Импорт из буфера обмена"
-
-#: app/HealthCertificatePage.qml:61
+#: app/HealthCertificatePage.qml:55
 #, kde-format
 msgid "Delete Certificate"
 msgstr "Удалить сертификат"
 
-#: app/HealthCertificatePage.qml:62
+#: app/HealthCertificatePage.qml:56
 #, kde-format
 msgid "Do you really want to delete this certificate?"
 msgstr "Удалить этот сертификат?"
 
-#: app/HealthCertificatePage.qml:132
+#: app/HealthCertificatePage.qml:126
 #, kde-format
 msgid ""
 "<p>You can import the following health certificates by scanning them with a "
@@ -3953,6 +3948,9 @@ msgstr "Вход в систему"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 из %3 в %4 %5"
+
+#~ msgid "Import from Clipboard"
+#~ msgstr "Импорт из буфера обмена"
 
 #, fuzzy
 #~| msgid "Vehicle Layout"

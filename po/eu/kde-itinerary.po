@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-19 00:38+0000\n"
+"POT-Creation-Date: 2024-05-22 00:39+0000\n"
 "PO-Revision-Date: 2024-04-19 23:02+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -130,7 +130,7 @@ msgstr "Esportatu..."
 
 #: app/ActionsCard.qml:78 app/ActionsCard.qml:124 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
-#: app/HealthCertificatePage.qml:52 app/HealthCertificatePage.qml:66
+#: app/HealthCertificatePage.qml:46 app/HealthCertificatePage.qml:60
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:168
 #: app/TicketPage.qml:47 app/TicketPage.qml:171 app/TimelinePage.qml:207
 #, kde-format
@@ -1466,22 +1466,17 @@ msgstr "Osatzea (%1)"
 msgid "Health Certificates"
 msgstr "Osasun ziurtagiriak"
 
-#: app/HealthCertificatePage.qml:47
-#, kde-format
-msgid "Import from Clipboard"
-msgstr "Inportatu arbeletik"
-
-#: app/HealthCertificatePage.qml:61
+#: app/HealthCertificatePage.qml:55
 #, kde-format
 msgid "Delete Certificate"
 msgstr "Ezabatu ziurtagiria"
 
-#: app/HealthCertificatePage.qml:62
+#: app/HealthCertificatePage.qml:56
 #, kde-format
 msgid "Do you really want to delete this certificate?"
 msgstr "Benetan ezabatu nahi duzu ziurtagiri hori?"
 
-#: app/HealthCertificatePage.qml:132
+#: app/HealthCertificatePage.qml:126
 #, kde-format
 msgid ""
 "<p>You can import the following health certificates by scanning them with a "
@@ -3866,6 +3861,9 @@ msgstr "Saioa hasten"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 %3(e)tik %4(e)ra %5(e)an"
+
+#~ msgid "Import from Clipboard"
+#~ msgstr "Inportatu arbeletik"
 
 #~ msgid "Vehicle Load:"
 #~ msgstr "Ibilgailuaren karga:"
