@@ -32,6 +32,8 @@
 #include <QSignalSpy>
 #include <QStandardPaths>
 
+using namespace Qt::Literals::StringLiterals;
+
 void initLocale()
 {
     qputenv("LC_ALL", "en_US.utf-8");
@@ -274,10 +276,14 @@ private Q_SLOTS:
         geo.setLatitude(52.0f);
         geo.setLongitude(13.0f);
         Airport a;
+        a.setName(u"Berlin"_s);
         a.setGeo(geo);
         Flight f;
         f.setArrivalAirport(a);
         f.setDepartureTime(QDateTime(QDate(2018, 1, 1), QTime(0, 0)));
+        a.setName(u"Zurich"_s);
+        a.setGeo({});
+        f.setDepartureAirport(a);
         FlightReservation res;
         res.setReservationFor(f);
         resMgr.addReservation(res);

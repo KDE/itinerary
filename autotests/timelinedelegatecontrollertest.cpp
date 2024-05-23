@@ -28,6 +28,7 @@
 #include <QStandardPaths>
 #include <QTimeZone>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KItinerary;
 
 class TimelineDelegateControllerTest : public QObject
@@ -87,6 +88,11 @@ private Q_SLOTS:
         TrainTrip trip;
         trip.setTrainNumber(QStringLiteral("TGV 1235"));
         trip.setDepartureTime(QDateTime::currentDateTime().addDays(-1));
+        TrainStation station;
+        station.setName(u"Brussels"_s);
+        trip.setDepartureStation(station);
+        station.setName(u"Paris"_s);
+        trip.setArrivalStation(station);
         TrainReservation res;
         res.setReservationNumber(QStringLiteral("XXX007"));
         res.setReservationFor(trip);
@@ -128,6 +134,11 @@ private Q_SLOTS:
             TrainTrip trip;
             trip.setTrainNumber(QStringLiteral("TGV 1235"));
             trip.setDepartureTime(QDateTime::currentDateTime().addDays(2));
+            TrainStation station;
+            station.setName(u"Brussels"_s);
+            trip.setDepartureStation(station);
+            station.setName(u"Paris"_s);
+            trip.setArrivalStation(station);
             TrainReservation res;
             res.setReservationNumber(QStringLiteral("XXX007"));
             res.setReservationFor(trip);
@@ -140,12 +151,15 @@ private Q_SLOTS:
         controller.setBatchId(batchId);
         QCOMPARE(controller.previousLocation(), QVariant());
 
+        TrainStation depStation;
+        depStation.setName(u"Somewhere Else"_s);
         TrainStation arrStation;
         arrStation.setName(QStringLiteral("My Station"));
         TrainTrip prevTrip;
         prevTrip.setTrainNumber(QStringLiteral("ICE 1234"));
         prevTrip.setDepartureTime(QDateTime::currentDateTime().addDays(1));
         prevTrip.setArrivalTime(QDateTime::currentDateTime().addDays(1));
+        prevTrip.setDepartureStation(depStation);
         prevTrip.setArrivalStation(arrStation);
         TrainReservation prevRes;
         prevRes.setReservationNumber(QStringLiteral("XXX007"));
