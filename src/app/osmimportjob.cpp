@@ -7,6 +7,7 @@
 
 #include "applicationcontroller.h"
 
+#include <KItinerary/Event>
 #include <KItinerary/Place>
 #include <KItinerary/Reservation>
 
@@ -115,6 +116,22 @@ QVariant OsmImportJob::convertElement(OSM::Element e)
         r.setAddress(addressFromOsm(e));
         convertContactData(r, e);
         return r;
+    }
+
+    const auto leisure = e.tagValue("leisure");
+    if (amenity == "cinema" || amenity == "conference_centre" || amenity == "events_venue" || amenity == "exhibition_centre" || amenity == "theatre"
+        || leisure == "escape_game" || leisure == "minature_golf" || leisure == "stadium" || leisure == "water_park"
+        || tourism == "gallery" || tourism == "museum" || tourism == "theme_park" || tourism == "zoo")
+    {
+        KItinerary::Place loc;
+        loc.setName(QString::fromUtf8(e.tagValue(OSM::Languages::fromQLocale(QLocale()), "name", "loc_name", "int_name", "brand")));
+        loc.setGeo(KItinerary::GeoCoordinates(e.center().latF(), e.center().lonF())); // TODO for ways we could check for the entrance node even
+        loc.setAddress(addressFromOsm(e));
+        loc.setTelephone(QString::fromUtf8(e.tagValue("contact:phone", "phone", "telephone", "operator:phone")));
+        KItinerary::Event ev;
+        ev.setLocation(loc);
+        ev.setUrl(QUrl(QString::fromUtf8(e.tagValue("website", "contact:website", "url", "operator:website"))));
+        return ev;
     }
 
     return {};
