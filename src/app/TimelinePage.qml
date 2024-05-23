@@ -518,6 +518,9 @@ Kirigami.ScrollablePage {
         function onEditNewRestaurantReservation(res) {
             applicationWindow().pageStack.push(restaurantEditorPage, {reservation: res});
         }
+        function onEditNewEventReservation(res) {
+            applicationWindow().pageStack.push(eventEditorPage, {reservation: res});
+        }
     }
 
     // work around initial positioning not working correctly below, as at that point

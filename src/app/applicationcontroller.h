@@ -104,6 +104,7 @@ Q_SIGNALS:
     /** Edit and add a new reservation. */
     void editNewHotelReservation(const QVariant &res);
     void editNewRestaurantReservation(const QVariant &res);
+    void editNewEventReservation(const QVariant &res);
 
 private:
     static bool probablyUrl(const QString &text);
