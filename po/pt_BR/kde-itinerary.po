@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-22 00:39+0000\n"
+"POT-Creation-Date: 2024-05-25 00:39+0000\n"
 "PO-Revision-Date: 2023-07-29 15:30-0300\n"
 "Last-Translator: Geraldo Simiao <geraldosimiao@fedoraproject.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -131,7 +131,7 @@ msgstr "Exportar..."
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
 #: app/HealthCertificatePage.qml:46 app/HealthCertificatePage.qml:60
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:168
-#: app/TicketPage.qml:47 app/TicketPage.qml:171 app/TimelinePage.qml:207
+#: app/TicketPage.qml:47 app/TicketPage.qml:171 app/TimelinePage.qml:209
 #, kde-format
 msgid "Delete"
 msgstr "Excluir"
@@ -146,19 +146,19 @@ msgstr "Excluir evento"
 msgid "Do you really want to delete this event?"
 msgstr "Deseja realmente excluir este evento?"
 
-#: app/ActionsCard.qml:137 app/TimelinePage.qml:221
+#: app/ActionsCard.qml:137 app/TimelinePage.qml:223
 #, fuzzy, kde-format
 #| msgid "Export..."
 msgid "Export"
 msgstr "Exportar..."
 
-#: app/ActionsCard.qml:140 app/TimelinePage.qml:224
+#: app/ActionsCard.qml:140 app/TimelinePage.qml:226
 #, fuzzy, kde-format
 #| msgid "My Itinerary"
 msgid "As Itinerary file..."
 msgstr "Meu itinerário"
 
-#: app/ActionsCard.qml:151 app/TimelinePage.qml:248
+#: app/ActionsCard.qml:151 app/TimelinePage.qml:250
 #, fuzzy, kde-format
 #| msgid "End time: %1"
 msgid "Send to %1"
@@ -170,7 +170,7 @@ msgstr "Hora final: %1"
 msgid "Export Reservation"
 msgstr "Importar reserva"
 
-#: app/ActionsCard.qml:167 app/TimelinePage.qml:264
+#: app/ActionsCard.qml:167 app/TimelinePage.qml:266
 #, fuzzy, kde-format
 #| msgid "KDE Itinerary files (*.itinerary)"
 msgid "Itinerary file (*.itinerary)"
@@ -1047,7 +1047,7 @@ msgid "Export Favorite Locations"
 msgstr "Exportar localizações favoritas"
 
 #: app/FavoriteLocationPage.qml:38 app/FavoriteLocationPage.qml:46
-#: app/TimelinePage.qml:282
+#: app/TimelinePage.qml:284
 #, kde-format
 msgid "GPX Files (*.gpx)"
 msgstr "Arquivos GPX (*.gpx)"
@@ -1912,7 +1912,7 @@ msgctxt "@action:intoolbar Go down one floor"
 msgid "Floor down"
 msgstr "Piso %1"
 
-#: app/IndoorMapPage.qml:354
+#: app/IndoorMapPage.qml:355
 #, fuzzy, kde-format
 #| msgid "Floor %1"
 msgctxt "@action:intoolbar Go up one floor"
@@ -3536,41 +3536,41 @@ msgctxt "@action:button"
 msgid "Go To Now"
 msgstr ""
 
-#: app/TimelinePage.qml:160
+#: app/TimelinePage.qml:161
 #, fuzzy, kde-format
 #| msgid "Add train trip..."
 msgctxt "@action:button"
 msgid "Add trip"
 msgstr "Adicionar viagem de trem..."
 
-#: app/TimelinePage.qml:170
+#: app/TimelinePage.qml:172
 #, fuzzy, kde-format
 #| msgid "Add train trip..."
 msgctxt "@title:group"
 msgid "Add New Trip"
 msgstr "Adicionar viagem de trem..."
 
-#: app/TimelinePage.qml:200
+#: app/TimelinePage.qml:202
 #, kde-format
 msgid "Delete Trip"
 msgstr "Excluir viagem"
 
-#: app/TimelinePage.qml:201
+#: app/TimelinePage.qml:203
 #, kde-format
 msgid "Do you really want to delete this trip?"
 msgstr "Deseja realmente excluir esta viagem?"
 
-#: app/TimelinePage.qml:233
+#: app/TimelinePage.qml:235
 #, kde-format
 msgid "As GPX file..."
 msgstr ""
 
-#: app/TimelinePage.qml:263 app/TimelinePage.qml:280
+#: app/TimelinePage.qml:265 app/TimelinePage.qml:282
 #, kde-format
 msgid "Export Trip"
 msgstr "Exportar viagem..."
 
-#: app/TimelinePage.qml:462
+#: app/TimelinePage.qml:464
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Nada no itinerário para hoje."

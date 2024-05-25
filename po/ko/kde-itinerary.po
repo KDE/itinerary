@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-22 00:39+0000\n"
+"POT-Creation-Date: 2024-05-25 00:39+0000\n"
 "PO-Revision-Date: 2024-02-17 12:41+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -126,7 +126,7 @@ msgstr "내보내기..."
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
 #: app/HealthCertificatePage.qml:46 app/HealthCertificatePage.qml:60
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:168
-#: app/TicketPage.qml:47 app/TicketPage.qml:171 app/TimelinePage.qml:207
+#: app/TicketPage.qml:47 app/TicketPage.qml:171 app/TimelinePage.qml:209
 #, kde-format
 msgid "Delete"
 msgstr "삭제"
@@ -141,17 +141,17 @@ msgstr "이벤트 삭제"
 msgid "Do you really want to delete this event?"
 msgstr "이 이벤트를 삭제하시겠습니까?"
 
-#: app/ActionsCard.qml:137 app/TimelinePage.qml:221
+#: app/ActionsCard.qml:137 app/TimelinePage.qml:223
 #, kde-format
 msgid "Export"
 msgstr "내보내기"
 
-#: app/ActionsCard.qml:140 app/TimelinePage.qml:224
+#: app/ActionsCard.qml:140 app/TimelinePage.qml:226
 #, kde-format
 msgid "As Itinerary file..."
 msgstr "Itinerary 파일로..."
 
-#: app/ActionsCard.qml:151 app/TimelinePage.qml:248
+#: app/ActionsCard.qml:151 app/TimelinePage.qml:250
 #, kde-format
 msgid "Send to %1"
 msgstr "%1(으)로 보내기|/|%1$[으 %1]로 보내기"
@@ -161,7 +161,7 @@ msgstr "%1(으)로 보내기|/|%1$[으 %1]로 보내기"
 msgid "Export Reservation"
 msgstr "예약 내보내기"
 
-#: app/ActionsCard.qml:167 app/TimelinePage.qml:264
+#: app/ActionsCard.qml:167 app/TimelinePage.qml:266
 #, kde-format
 msgid "Itinerary file (*.itinerary)"
 msgstr "Itinerary 파일 (*.itinerary)"
@@ -978,7 +978,7 @@ msgid "Export Favorite Locations"
 msgstr "즐겨찾는 위치 내보내기"
 
 #: app/FavoriteLocationPage.qml:38 app/FavoriteLocationPage.qml:46
-#: app/TimelinePage.qml:282
+#: app/TimelinePage.qml:284
 #, kde-format
 msgid "GPX Files (*.gpx)"
 msgstr "GPX 파일 (*.gpx)"
@@ -1813,7 +1813,7 @@ msgctxt "@action:intoolbar Go down one floor"
 msgid "Floor down"
 msgstr "한 층 아래"
 
-#: app/IndoorMapPage.qml:354
+#: app/IndoorMapPage.qml:355
 #, kde-format
 msgctxt "@action:intoolbar Go up one floor"
 msgid "Floor up"
@@ -3357,41 +3357,41 @@ msgctxt "@action:button"
 msgid "Go To Now"
 msgstr "현재로 이동"
 
-#: app/TimelinePage.qml:160
+#: app/TimelinePage.qml:161
 #, fuzzy, kde-format
 #| msgid "Add train trip..."
 msgctxt "@action:button"
 msgid "Add trip"
 msgstr "철도 여정 추가..."
 
-#: app/TimelinePage.qml:170
+#: app/TimelinePage.qml:172
 #, fuzzy, kde-format
 #| msgid "Add ferry trip..."
 msgctxt "@title:group"
 msgid "Add New Trip"
 msgstr "페리 여정 추가..."
 
-#: app/TimelinePage.qml:200
+#: app/TimelinePage.qml:202
 #, kde-format
 msgid "Delete Trip"
 msgstr "여정 삭제"
 
-#: app/TimelinePage.qml:201
+#: app/TimelinePage.qml:203
 #, kde-format
 msgid "Do you really want to delete this trip?"
 msgstr "이 여행을 삭제하시겠습니까?"
 
-#: app/TimelinePage.qml:233
+#: app/TimelinePage.qml:235
 #, kde-format
 msgid "As GPX file..."
 msgstr "GPX 파일로..."
 
-#: app/TimelinePage.qml:263 app/TimelinePage.qml:280
+#: app/TimelinePage.qml:265 app/TimelinePage.qml:282
 #, kde-format
 msgid "Export Trip"
 msgstr "여행 내보내기"
 
-#: app/TimelinePage.qml:462
+#: app/TimelinePage.qml:464
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "오늘의 여정이 없습니다."

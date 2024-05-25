@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-22 00:39+0000\n"
+"POT-Creation-Date: 2024-05-25 00:39+0000\n"
 "PO-Revision-Date: 2024-05-08 16:07+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -130,7 +130,7 @@ msgstr "Exporta…"
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
 #: app/HealthCertificatePage.qml:46 app/HealthCertificatePage.qml:60
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:168
-#: app/TicketPage.qml:47 app/TicketPage.qml:171 app/TimelinePage.qml:207
+#: app/TicketPage.qml:47 app/TicketPage.qml:171 app/TimelinePage.qml:209
 #, kde-format
 msgid "Delete"
 msgstr "Suprimix"
@@ -145,17 +145,17 @@ msgstr "Suprimix l'esdeveniment"
 msgid "Do you really want to delete this event?"
 msgstr "Segur que voleu suprimir este esdeveniment?"
 
-#: app/ActionsCard.qml:137 app/TimelinePage.qml:221
+#: app/ActionsCard.qml:137 app/TimelinePage.qml:223
 #, kde-format
 msgid "Export"
 msgstr "Exporta"
 
-#: app/ActionsCard.qml:140 app/TimelinePage.qml:224
+#: app/ActionsCard.qml:140 app/TimelinePage.qml:226
 #, kde-format
 msgid "As Itinerary file..."
 msgstr "Com a fitxer d'Itinerary…"
 
-#: app/ActionsCard.qml:151 app/TimelinePage.qml:248
+#: app/ActionsCard.qml:151 app/TimelinePage.qml:250
 #, kde-format
 msgid "Send to %1"
 msgstr "Envia a %1"
@@ -165,7 +165,7 @@ msgstr "Envia a %1"
 msgid "Export Reservation"
 msgstr "Exporta la reserva"
 
-#: app/ActionsCard.qml:167 app/TimelinePage.qml:264
+#: app/ActionsCard.qml:167 app/TimelinePage.qml:266
 #, kde-format
 msgid "Itinerary file (*.itinerary)"
 msgstr "Fitxers d'Itinerary (*.itinerary)"
@@ -985,7 +985,7 @@ msgid "Export Favorite Locations"
 msgstr "Exporta les ubicacions preferides"
 
 #: app/FavoriteLocationPage.qml:38 app/FavoriteLocationPage.qml:46
-#: app/TimelinePage.qml:282
+#: app/TimelinePage.qml:284
 #, kde-format
 msgid "GPX Files (*.gpx)"
 msgstr "Fitxers GPX (*.gpx)"
@@ -1815,7 +1815,7 @@ msgctxt "@action:intoolbar Go down one floor"
 msgid "Floor down"
 msgstr "Planta avall"
 
-#: app/IndoorMapPage.qml:354
+#: app/IndoorMapPage.qml:355
 #, kde-format
 msgctxt "@action:intoolbar Go up one floor"
 msgid "Floor up"
@@ -3367,39 +3367,39 @@ msgctxt "@action:button"
 msgid "Go To Now"
 msgstr "Ves fins a ara"
 
-#: app/TimelinePage.qml:160
+#: app/TimelinePage.qml:161
 #, kde-format
 msgctxt "@action:button"
 msgid "Add trip"
 msgstr "Afig un viatge"
 
-#: app/TimelinePage.qml:170
+#: app/TimelinePage.qml:172
 #, kde-format
 msgctxt "@title:group"
 msgid "Add New Trip"
 msgstr "Afig un viatge nou"
 
-#: app/TimelinePage.qml:200
+#: app/TimelinePage.qml:202
 #, kde-format
 msgid "Delete Trip"
 msgstr "Suprimix el viatge"
 
-#: app/TimelinePage.qml:201
+#: app/TimelinePage.qml:203
 #, kde-format
 msgid "Do you really want to delete this trip?"
 msgstr "Segur que voleu suprimir este viatge?"
 
-#: app/TimelinePage.qml:233
+#: app/TimelinePage.qml:235
 #, kde-format
 msgid "As GPX file..."
 msgstr "Com a fitxer GPX…"
 
-#: app/TimelinePage.qml:263 app/TimelinePage.qml:280
+#: app/TimelinePage.qml:265 app/TimelinePage.qml:282
 #, kde-format
 msgid "Export Trip"
 msgstr "Exporta un viatge"
 
-#: app/TimelinePage.qml:462
+#: app/TimelinePage.qml:464
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Res per a l'itinerari d'hui."
