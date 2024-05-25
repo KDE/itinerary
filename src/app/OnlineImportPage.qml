@@ -24,11 +24,8 @@ FormCard.FormCardPage {
 
     data: OnlineTicketImporter {
         id: importer
-        reservationManager: ReservationManager
-        onSearchSucceeded: {
-            ApplicationController.infoMessage(i18n("Ticket imported"));
-            applicationWindow().pageStack.goBack();
-        }
+        importController: ImportController
+        onSearchSucceeded: applicationWindow().pageStack.goBack();
         onSearchFailed: {
             searchButton.description = importer.errorMessage === "" ? i18n("No ticket found") : importer.errorMessage;
         }

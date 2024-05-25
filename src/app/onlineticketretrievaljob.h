@@ -6,6 +6,7 @@
 #ifndef ONLINETICKETRETRIEVALJOB_H
 #define ONLINETICKETRETRIEVALJOB_H
 
+#include <QJsonArray>
 #include <QObject>
 
 class QIODevice;
@@ -25,7 +26,7 @@ public:
     ~OnlineTicketRetrievalJob();
 
     /** Retrieved ticket(s), e.g. as KItinerary::TrainReservation instances. */
-    [[nodiscard]] QList<QVariant> result() const;
+    [[nodiscard]] QJsonArray result() const;
     [[nodiscard]] QString errorMessage() const;
 
 Q_SIGNALS:
@@ -41,7 +42,7 @@ private:
 
     void handleReply(QNetworkReply *reply);
 
-    QList<QVariant> m_result;
+    QJsonArray m_result;
     QString m_errorMsg;
     QNetworkAccessManager *m_nam;
 };

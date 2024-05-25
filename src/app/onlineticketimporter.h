@@ -6,12 +6,11 @@
 #ifndef ONLINETICKETIMPORTER_H
 #define ONLINETICKETIMPORTER_H
 
-#include "reservationmanager.h"
+#include "importcontroller.h"
 
 #include <QObject>
 
 class OnlineTicketRetrievalJob;
-class ReservationManager;
 
 class QNetworkAccessManager;
 
@@ -21,7 +20,7 @@ class OnlineTicketImporter : public QObject
     Q_OBJECT
     Q_PROPERTY(bool searching READ searching NOTIFY searchingChanged)
     Q_PROPERTY(QString errorMessage READ errorMessage NOTIFY searchingChanged)
-    Q_PROPERTY(ReservationManager* reservationManager MEMBER m_resMgr NOTIFY reservationManagerChanged)
+    Q_PROPERTY(ImportController* importController MEMBER m_importController NOTIFY importControllerChanged)
 
 public:
     explicit OnlineTicketImporter(QObject *parent = nullptr);
@@ -38,14 +37,14 @@ Q_SIGNALS:
     void searchingChanged();
     void searchSucceeded();
     void searchFailed();
-    void reservationManagerChanged();
+    void importControllerChanged();
 
 private:
     void handleRetrievalFinished();
 
     static std::function<QNetworkAccessManager*()> s_namFactory;
 
-    ReservationManager *m_resMgr = nullptr;
+    ImportController *m_importController = nullptr;
     OnlineTicketRetrievalJob *m_currentJob = nullptr;
     QString m_errorMessage;
 };

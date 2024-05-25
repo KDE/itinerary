@@ -8,7 +8,6 @@
 #include <KItinerary/ExtractorEngine>
 #include <KItinerary/ExtractorResult>
 #include <KItinerary/HttpResponse>
-#include <KItinerary/JsonLdDocument>
 
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
@@ -50,7 +49,7 @@ OnlineTicketRetrievalJob::OnlineTicketRetrievalJob(const QString &sourceId, cons
 
 OnlineTicketRetrievalJob::~OnlineTicketRetrievalJob() = default;
 
-QList<QVariant> OnlineTicketRetrievalJob::result() const { return m_result; }
+QJsonArray OnlineTicketRetrievalJob::result() const { return m_result; }
 
 QString OnlineTicketRetrievalJob::errorMessage() const
 {
@@ -114,7 +113,7 @@ void OnlineTicketRetrievalJob::handleReply(QNetworkReply *reply)
         using namespace KItinerary;
         ExtractorEngine engine;
         engine.setContent(HttpResponse::fromNetworkReply(reply), u"internal/http-response");
-        m_result = JsonLdDocument::fromJson(engine.extract());
+        m_result = engine.extract();
     }
     Q_EMIT finished();
 }

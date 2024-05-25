@@ -117,7 +117,7 @@ bool DownloadJob::handleOnlineTicketRetrievalUrl(const QUrl &url, QNetworkAccess
             if (job->result().isEmpty()) {
                 m_errorMessage = job->errorMessage();
             } else {
-                m_data = QJsonDocument(KItinerary::JsonLdDocument::toJson(job->result())).toJson(QJsonDocument::Compact);
+                m_data = QJsonDocument(job->result()).toJson(QJsonDocument::Compact);
             }
             Q_EMIT finished();
         });

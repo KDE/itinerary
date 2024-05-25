@@ -7,6 +7,7 @@
 #include "onlineticketretrievaljob.h"
 #include "logging.h"
 
+#include <QJsonDocument>
 #include <QNetworkAccessManager>
 #include <QStandardPaths>
 
@@ -58,8 +59,8 @@ void OnlineTicketImporter::handleRetrievalFinished()
     if (result.isEmpty() || !m_errorMessage.isEmpty()) {
         Q_EMIT searchFailed();
     } else {
-        assert(m_resMgr);
-        m_resMgr->importReservations(result);
+        assert(m_importController);
+        m_importController->importData(QJsonDocument(result).toJson(QJsonDocument::Compact));
         Q_EMIT searchSucceeded();
     }
 }
