@@ -92,6 +92,7 @@ class ImportController : public QAbstractListModel
     Q_OBJECT
     Q_PROPERTY(bool hasSelection READ hasSelection NOTIFY selectionChanged)
     Q_PROPERTY(int count READ rowCount NOTIFY rowCountChanged)
+    Q_PROPERTY(bool enableAutoCommit MEMBER m_autoCommitEnabled WRITE setAutoCommitEnablted NOTIFY enableAutoCommitChanged)
 public:
     explicit ImportController(QObject *parent = nullptr);
     ~ImportController();
@@ -127,6 +128,8 @@ public:
     /** Discard all selected elements, assuming it has been imported. */
     void clearSelected();
 
+    /** Returns whether the current staged content is allowing auto-committing. */
+    Q_INVOKABLE bool canAutoCommit() const;
 
     // model interface
     [[nodiscard]] int rowCount(const QModelIndex &parent = {}) const override;
@@ -136,6 +139,7 @@ public:
 
     // properties
     bool hasSelection() const;
+    void setAutoCommitEnablted(bool enabled);
 
     // for actually importing
     const std::vector<ImportElement>& elements() const;
@@ -152,6 +156,7 @@ Q_SIGNALS:
 
     void selectionChanged();
     void rowCountChanged();
+    void enableAutoCommitChanged();
 
 private:
     void importLocalFile(const QUrl &url);
@@ -171,6 +176,8 @@ private:
     std::unordered_map<QString, ImportDocument> m_stagedDocuments;
     std::unordered_map<QString, ImportPkPass> m_stagedPkPasses;
     std::vector<ImportBundle> m_stagedBundles;
+
+    bool m_autoCommitEnabled = false;
 
     friend class ImportControllerTest;
     QDate m_todayOverride;

@@ -287,6 +287,7 @@ static QNetworkAccessManager *namFactory()
 void handleCommandLineArguments(ApplicationController *appController, ImportController *importController, const QStringList &args, bool isTemporary, const QString &page)
 {
     for (const auto &file : args) {
+        importController->setAutoCommitEnablted(!s_settings->developmentMode());
         const auto localUrl = QUrl::fromLocalFile(file);
         if (QFile::exists(localUrl.toLocalFile())) {
             importController->importFromUrl(localUrl);

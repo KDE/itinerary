@@ -60,6 +60,7 @@ void OnlineTicketImporter::handleRetrievalFinished()
         Q_EMIT searchFailed();
     } else {
         assert(m_importController);
+        m_importController->setAutoCommitEnablted(true);
         m_importController->importData(QJsonDocument(result).toJson(QJsonDocument::Compact));
         Q_EMIT searchSucceeded();
     }

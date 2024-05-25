@@ -98,6 +98,7 @@ Kirigami.ApplicationWindow {
             text: i18n("Deutsche Bahn Online Ticket...")
             icon.name: "download"
             onTriggered: {
+                ImportController.enableAutoCommit = !Settings.developmentMode;
                 pageStack.layers.push(Qt.createComponent("org.kde.itinerary", "OnlineImportPage"), {
                     source: "db",
                 });
@@ -107,6 +108,7 @@ Kirigami.ApplicationWindow {
             text: i18n("SNCF Online Ticket...")
             icon.name: "download"
             onTriggered: {
+                ImportController.enableAutoCommit = !Settings.developmentMode;
                 pageStack.layers.push(Qt.createComponent("org.kde.itinerary", "OnlineImportPage"), {
                     source: "sncf"
                 });
@@ -124,7 +126,10 @@ Kirigami.ApplicationWindow {
         nameFilters:  Qt.platform.os === "android" ?
             [i18n("All Files (*.*)")] :
             [i18n("All Files (*.*)"), i18n("PkPass files (*.pkpass)"), i18n("PDF files (*.pdf)"), i18n("iCal events (*.ics)"), i18n("KDE Itinerary files (*.itinerary)")]
-        onAccepted: ImportController.importFromUrl(selectedFile)
+        onAccepted: {
+            ImportController.enableAutoCommit = !Settings.developmentMode;
+            ImportController.importFromUrl(selectedFile);
+        }
     }
 
     FileDialog {
@@ -147,7 +152,10 @@ Kirigami.ApplicationWindow {
     CalendarSelectionSheet {
         id: calendarSelector
         // parent: root.Overlay.overlay
-        onCalendarSelected: ImportController.importFromCalendar(calendar)
+        onCalendarSelected: {
+            ImportController.enableAutoCommit = false;
+            ImportController.importFromCalendar(calendar);
+        }
     }
 
     OnboardStatus {
@@ -261,6 +269,7 @@ Kirigami.ApplicationWindow {
         }
         onDropped: {
             for (var i in drop.urls) {
+                ImportController.enableAutoCommit = !Settings.developmentMode;
                 ImportController.importFromUrl(drop.urls[i]);
             }
         }
@@ -296,9 +305,13 @@ Kirigami.ApplicationWindow {
     Connections {
         target: ImportController
         function onShowImportPage() {
-            pageStack.layers.push(Qt.createComponent("org.kde.itinerary", "ImportPage"), {
-                controller: ImportController
-            });
+            if (ImportController.canAutoCommit()) {
+                ApplicationController.commitImport(ImportController);
+            } else {
+                pageStack.layers.push(Qt.createComponent("org.kde.itinerary", "ImportPage"), {
+                    controller: ImportController
+                });
+            }
         }
     }
 
@@ -322,6 +335,7 @@ Kirigami.ApplicationWindow {
         BarcodeScannerPage {
             onBarcodeDetected: (result) => {
                 const prevCount = ImportController.count;
+                ImportController.enableAutoCommit = !Settings.developmentMode;
                 if (result.hasText) {
                     ImportController.importText(result.text);
                 } else if (result.hasBinaryData) {

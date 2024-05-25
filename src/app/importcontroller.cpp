@@ -379,6 +379,7 @@ void ImportController::importFromIntent(const KAndroidExtras::Intent &intent)
 
         msg.assemble();
         qDebug().noquote() << msg.encodedContent();
+        setAutoCommitEnablted(false);
         importData(msg.encodedContent());
         return;
     }
@@ -728,6 +729,16 @@ bool ImportController::hasSelection() const
     return std::any_of(m_stagedElements.begin(), m_stagedElements.end(), [](const auto &elem) { return elem.selected; });
 }
 
+void ImportController::setAutoCommitEnablted(bool enable)
+{
+    if (m_autoCommitEnabled == enable) {
+        return;
+    }
+
+    m_autoCommitEnabled = enable;
+    Q_EMIT enableAutoCommitChanged();
+}
+
 void ImportController::clear()
 {
     beginResetModel();
@@ -735,6 +746,7 @@ void ImportController::clear()
     m_stagedDocuments.clear();
     m_stagedPkPasses.clear();
     m_stagedBundles.clear();
+    m_autoCommitEnabled = false;
     endResetModel();
 }
 
@@ -750,6 +762,21 @@ void ImportController::clearSelected()
         m_stagedElements.erase(m_stagedElements.begin() + i);
         endRemoveRows();
     }
+}
+
+bool ImportController::canAutoCommit() const
+{
+    // always auto-commit single templates, as that will result in the better UI
+    if (m_stagedElements.size() == 1 && m_stagedElements[0].type == ImportElement::Template) {
+        return true;
+    }
+
+    if (!m_autoCommitEnabled) {
+        return false;
+    }
+
+    // everything is selected
+    return std::all_of(m_stagedElements.begin(), m_stagedElements.end(), [](const auto &elem) { return elem.selected; });
 }
 
 [[nodiscard]] static QDateTime elementSortTime(const ImportElement &elem)
