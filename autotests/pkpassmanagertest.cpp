@@ -22,9 +22,6 @@ void initLocale()
 
 Q_CONSTRUCTOR_FUNCTION(initLocale)
 
-static MockNetworkAccessManager s_nam;
-static QNetworkAccessManager* namFactory() { return &s_nam; }
-
 class PkPassManagerTest : public QObject
 {
     Q_OBJECT
@@ -84,7 +81,7 @@ private Q_SLOTS:
     void testCaptivePortalFailure()
     {
         PkPassManager mgr;
-        mgr.setNetworkAccessManagerFactory(namFactory);
+        mgr.setNetworkAccessManagerFactory([this]() { return &m_nam; });
         Test::clearAll(&mgr);
         QSignalSpy addSpy(&mgr, &PkPassManager::passAdded);
         QSignalSpy updateSpy(&mgr, &PkPassManager::passUpdated);
@@ -96,7 +93,7 @@ private Q_SLOTS:
         const auto passId = mgr.passes()[0];
         QVERIFY(mgr.canUpdate(mgr.pass(passId)));
 
-        s_nam.replies.push({QNetworkReply::NoError, 200, QByteArray("hello from the captive portal!"), QString()});
+        m_nam.replies.push({QNetworkReply::NoError, 200, QByteArray("hello from the captive portal!"), QString()});
 
         mgr.updatePass(passId);
         QTest::qWait(0);
@@ -104,6 +101,9 @@ private Q_SLOTS:
         QCOMPARE(addSpy.size(), 0);
         QCOMPARE(updateSpy.size(), 0);
     }
+
+private:
+    MockNetworkAccessManager m_nam;
 };
 
 QTEST_GUILESS_MAIN(PkPassManagerTest)
