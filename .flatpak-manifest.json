@@ -485,7 +485,8 @@
             "config-opts": [
                 "-DBUILD_TESTING=OFF",
                 "-DCMAKE_DISABLE_FIND_PACKAGE_KF6KIO=ON",
-                "-DCMAKE_DISABLE_FIND_PACKAGE_KF6FileMetaData=ON"
+                "-DCMAKE_DISABLE_FIND_PACKAGE_KF6FileMetaData=ON",
+                "-DFLATPAK_BUILD=ON"
             ],
             "cleanup": [
                 "/etc/xdg/*categories",

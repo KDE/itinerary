@@ -121,6 +121,11 @@ if (BUILD_TESTING)
     add_subdirectory(tests)
 endif()
 
+# install Fontconfig workaround for emoji fonts in Flatpaks
+if (FLATPAK_BUILD)
+    install(flatpak/99-noto-color-emoji.conf DESTINATION ${CMAKE_INSTALL_SYSCONFDIR}/fonts/local.conf)
+endif()
+
 ecm_qt_install_logging_categories(
     EXPORT ITINERARY
     FILE org_kde_itinerary.categories
