@@ -28,9 +28,6 @@
 
 using namespace KItinerary;
 
-static MockNetworkAccessManager s_nam;
-static QNetworkAccessManager* namFactory() { return &s_nam; }
-
 class LiveDataManagerTest : public QObject
 {
     Q_OBJECT
@@ -140,7 +137,7 @@ private Q_SLOTS:
     {
         PkPassManager pkPassMgr;
         QSignalSpy passUpdateSpy(&pkPassMgr, &PkPassManager::passUpdated);
-        pkPassMgr.setNetworkAccessManagerFactory(namFactory);
+        pkPassMgr.setNetworkAccessManagerFactory([this]() { return &m_nam; });
         Test::clearAll(&pkPassMgr);
         ReservationManager resMgr;
         Test::clearAll(&resMgr);
@@ -168,7 +165,7 @@ private Q_SLOTS:
         QVERIFY(pass);
         QVERIFY(PkPassManager::canUpdate(pass));
 
-        QCOMPARE(s_nam.requests.size(), 1);
+        QCOMPARE(m_nam.requests.size(), 1);
         QTest::qWait(0); // download failed
         QCOMPARE(passUpdateSpy.size(), 0);
         QVERIFY(ldm.nextPollTimeForReservation(resId) > 0);
@@ -183,6 +180,9 @@ private Q_SLOTS:
         QCOMPARE(ldm.pollCooldown(resId), 0);
         QCOMPARE(ldm.nextPollTime(), 0);
     }
+
+private:
+    MockNetworkAccessManager m_nam;
 };
 
 QTEST_GUILESS_MAIN(LiveDataManagerTest)
