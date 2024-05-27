@@ -10,6 +10,8 @@
 
 #include <KCalendarCore/Calendar>
 
+#include <KPkPass/Pass>
+
 #include <QAbstractListModel>
 #include <QString>
 #include <QVariant>
@@ -71,6 +73,7 @@ class ImportPkPass
 {
 public:
     QByteArray data;
+    std::unique_ptr<KPkPass::Pass> pass = {};
 };
 
 /** A staged KItinerary bundle file. */

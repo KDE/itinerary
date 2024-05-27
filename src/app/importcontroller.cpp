@@ -52,8 +52,6 @@
 #include <KHealthCertificate/KVaccinationCertificate>
 #endif
 
-#include <KPkPass/Pass>
-
 #include <KMime/Message>
 
 #include <KLocalizedString>
@@ -650,7 +648,16 @@ QVariant ImportController::data(const QModelIndex &index, int role) const
         }
         case IconNameRole:
         {
-            // TODO pkpass icon when present
+            // use pkpass icon if we have one
+            const auto docIds = DocumentUtil::documentIds(m_stagedElements[index.row()].data) + DocumentUtil::documentIds(m_stagedElements[index.row()].updateData);
+            for (const auto &docId : docIds) {
+                if (const auto it = m_stagedPkPasses.find(docId.toString()); it != m_stagedPkPasses.end() && !(*it).second.data.isEmpty()) {
+                    QUrl passId((*it).first);
+                    return QString("image://org.kde.pkpass/"_L1 + passId.host() + '/'_L1 +  QString::fromUtf8(QStringView(passId.path()).mid(1).toUtf8().toBase64(QByteArray::Base64UrlEncoding)) + "/icon"_L1);
+                }
+            }
+
+            // ... and generic icons otherwise
             switch (elem.type) {
                 case ImportElement::Reservation:
                 case ImportElement::Pass:

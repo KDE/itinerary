@@ -64,6 +64,7 @@
 #include <KCalendarCore/CalendarPluginLoader>
 
 #include <KItinerary/CountryDb>
+#include <KItinerary/DocumentUtil>
 #include <KItinerary/JsonLdDocument>
 #include <KItinerary/PriceUtil>
 #include <KItinerary/Ticket>
@@ -105,6 +106,8 @@
 #include <QNetworkAccessManager>
 #include <QStandardPaths>
 #include <QWindow>
+
+using namespace Qt::Literals::StringLiterals;
 
 #if !HAVE_MATRIX
 class MatrixBeaconStub : public QObject
@@ -479,7 +482,21 @@ int main(int argc, char **argv)
     registerApplicationSingletons();
 
     QQmlApplicationEngine engine;
-    engine.addImageProvider(QStringLiteral("org.kde.pkpass"), new PkPassImageProvider(&pkPassMgr));
+
+    auto pkPassImageProvider = new PkPassImageProvider;
+    pkPassImageProvider->registerPassProvider([&pkPassMgr](const QString &passTypeId, const QString &serialNum) -> KPkPass::Pass* {
+        return pkPassMgr.pass(passTypeId + '/'_L1 + QString::fromUtf8(serialNum.toUtf8().toBase64(QByteArray::Base64UrlEncoding)));
+    });
+    pkPassImageProvider->registerPassProvider([&importController](const QString &passTypeId, const QString &serialNum) -> KPkPass::Pass* {
+        if (const auto it = importController.pkPasses().find(KItinerary::DocumentUtil::idForPkPass(passTypeId, serialNum)); it != importController.pkPasses().end()) {
+            if (!(*it).second.pass) {
+                (*it).second.pass.reset(KPkPass::Pass::fromData((*it).second.data));
+            }
+            return (*it).second.pass.get();
+        }
+        return nullptr;
+    });    engine.addImageProvider(QStringLiteral("org.kde.pkpass"), pkPassImageProvider);
+
     auto l10nContext = new KLocalizedContext(&engine);
     l10nContext->setTranslationDomain(QStringLiteral(TRANSLATION_DOMAIN));
     engine.rootContext()->setContextObject(l10nContext);

@@ -21,6 +21,8 @@
 #include <QGuiApplication>
 #include <QUrl>
 
+using namespace Qt::Literals::StringLiterals;
+
 int main(int argc, char **argv)
 {
     QCoreApplication::setApplicationName(QStringLiteral("pkpassviewer"));
@@ -50,7 +52,13 @@ int main(int argc, char **argv)
 
     QQmlApplicationEngine engine;
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
-    engine.addImageProvider(QStringLiteral("org.kde.pkpass"), new PkPassImageProvider(&passMgr));
+
+    auto pkPassImageProvider = new PkPassImageProvider;
+    pkPassImageProvider->registerPassProvider([&passMgr](const QString &passTypeId, const QString &serialNum) -> KPkPass::Pass* {
+        return passMgr.pass(passTypeId + '/'_L1 + QString::fromUtf8(serialNum.toUtf8().toBase64(QByteArray::Base64UrlEncoding)));
+    });
+    engine.addImageProvider(QStringLiteral("org.kde.pkpass"), pkPassImageProvider);
+
     engine.rootContext()->setContextProperty(QStringLiteral("_passId"), passId);
     engine.rootContext()->setContextProperty(QStringLiteral("_pass"), passMgr.pass(passId));
     engine.load(QStringLiteral("qrc:/qt/qml/org/kde/itinerary/pkpassviewer.qml"));
