@@ -15,6 +15,7 @@
 #include <KItinerary/Reservation>
 #include <KItinerary/TrainTrip>
 #include <KItinerary/Ticket>
+#include <KItinerary/Visit>
 
 #include <KPublicTransport/Line>
 #include <KPublicTransport/RentalVehicle>
@@ -136,7 +137,7 @@ QString ReservationHelper::defaultIconName(const QVariant &res)
     if (JsonLd::isA<LodgingReservation>(res)) {
         return u"go-home-symbolic"_s;
     }
-    if (JsonLd::isA<EventReservation>(res) || JsonLd::isA<Event>(res)) {
+    if (JsonLd::isA<EventReservation>(res) || JsonLd::isA<Event>(res) || JsonLd::isA<TouristAttractionVisit>(res)) {
         return u"meeting-attending"_s;
     }
     if (JsonLd::isA<FoodEstablishmentReservation>(res)) {
