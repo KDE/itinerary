@@ -26,3 +26,7 @@ share/qt6keychain/translations.*\.qm
 
 # overly large translations not selectable on Android
 share/locale/(sr@ijekavian|sr@ijekavianlatin)/.*
+
+# newer Kirigami Addon versions depend on Qt.labs.platform for ColorDialog, which as a QtWidgets dependency
+# remove that the hard way, we don't need a color dialog
+qml/Qt/labs/platform/.*
