@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-25 00:39+0000\n"
+"POT-Creation-Date: 2024-05-29 00:39+0000\n"
 "PO-Revision-Date: 2024-05-08 16:07+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -30,7 +30,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "antonibella5@yahoo.com"
 
-#: app/AboutPage.qml:18 app/main.qml:236
+#: app/AboutPage.qml:18 app/main.qml:238
 #, kde-format
 msgid "About"
 msgstr "Quant al"
@@ -121,7 +121,7 @@ msgstr "Edita"
 msgid "Add to calendar..."
 msgstr "Afegeix al calendari..."
 
-#: app/ActionsCard.qml:73 app/main.qml:224 app/TripGroupDelegate.qml:162
+#: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:162
 #, kde-format
 msgid "Export..."
 msgstr "Exporta..."
@@ -276,71 +276,52 @@ msgstr "Voleu substituir la reserva existent amb el nou viatge seleccionat?"
 msgid "Replace"
 msgstr "Substitueix"
 
-#: app/applicationcontroller.cpp:342 app/applicationcontroller.cpp:747
-#: app/applicationcontroller.cpp:762
-#, kde-format
-msgid "Import failed: %1"
-msgstr "Ha fallat la importació: %1"
-
-#: app/applicationcontroller.cpp:347
-#, kde-format
-msgid "Import failed: File too large."
-msgstr "Ha fallat la importació: Fitxer massa gran."
-
-#: app/applicationcontroller.cpp:429 app/applicationcontroller.cpp:824
-#: app/applicationcontroller.cpp:834
+#: app/applicationcontroller.cpp:263 app/applicationcontroller.cpp:507
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] "S'ha importat una reserva."
 msgstr[1] "S'han importat %1 reserves."
 
-#: app/applicationcontroller.cpp:436
-#, kde-format
-msgid "Health certificate imported."
-msgstr "S'ha importat el certificat de salut."
-
-#: app/applicationcontroller.cpp:451
+#: app/applicationcontroller.cpp:266
 #, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
 msgstr[0] "S'ha importat un passi."
 msgstr[1] "S'han importat %1 passis."
 
-#: app/applicationcontroller.cpp:454
-#, kde-format
-msgid "Pass imported."
-msgstr "S'ha importat el passi."
+#: app/applicationcontroller.cpp:270
+#, fuzzy, kde-format
+#| msgid "Health certificate imported."
+msgid "One health certificate imported."
+msgid_plural "%1 health certificates imported."
+msgstr[0] "S'ha importat el certificat de salut."
+msgstr[1] "S'ha importat el certificat de salut."
 
-#: app/applicationcontroller.cpp:491
-#, kde-format
-msgid "Nothing imported."
-msgstr "No s'ha importat res."
-
-#: app/applicationcontroller.cpp:553 app/applicationcontroller.cpp:593
-#: app/applicationcontroller.cpp:611 app/applicationcontroller.cpp:655
-#: app/applicationcontroller.cpp:694 app/applicationcontroller.cpp:712
+#: app/applicationcontroller.cpp:284 app/applicationcontroller.cpp:324
+#: app/applicationcontroller.cpp:342 app/applicationcontroller.cpp:386
+#: app/applicationcontroller.cpp:425 app/applicationcontroller.cpp:443
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Ha fallat l'exportació: %1"
 
-#: app/applicationcontroller.cpp:567 app/applicationcontroller.cpp:576
-#: app/applicationcontroller.cpp:668 app/applicationcontroller.cpp:677
+#: app/applicationcontroller.cpp:298 app/applicationcontroller.cpp:307
+#: app/applicationcontroller.cpp:399 app/applicationcontroller.cpp:408
 #, kde-format
 msgid "Export completed."
 msgstr "S'ha completat l'exportació."
 
-#: app/applicationcontroller.cpp:603
+#: app/applicationcontroller.cpp:334
 #, kde-format
 msgid "Trip sent."
 msgstr "S'ha enviat el viatge."
 
-#: app/applicationcontroller.cpp:704
+#: app/applicationcontroller.cpp:435
 #, kde-format
 msgid "Reservation sent."
 msgstr "La reserva s'ha enviat."
 
-#: app/applicationcontroller.cpp:787
+#: app/applicationcontroller.cpp:491
 #, kde-format
 msgid "Import completed."
 msgstr "S'ha completat la importació."
@@ -644,22 +625,6 @@ msgstr "Detalls del viatge"
 #, kde-format
 msgid "Transfer to %1"
 msgstr "Transbordament a %1"
-
-#: app/CalendarImportPage.qml:19
-#, kde-format
-msgid "Calendar Import"
-msgstr "Importa un calendari"
-
-#: app/CalendarImportPage.qml:57
-#, kde-format
-msgid "No importable events found in this calendar."
-msgstr ""
-"No s'ha trobat cap esdeveniment que es pugui importar en aquest calendari."
-
-#: app/CalendarImportPage.qml:71
-#, kde-format
-msgid "Import selected events"
-msgstr "Importa els esdeveniments seleccionats"
 
 #: app/CalendarSelectionSheet.qml:14
 #, kde-format
@@ -1338,7 +1303,7 @@ msgstr "Suprimeix el passi"
 msgid "Do you really want to delete this pass?"
 msgstr "Segur que voleu suprimir aquest passi?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:325 app/main.qml:21 app/main.qml:164
+#: app/gpxexport.cpp:33 app/main.cpp:331 app/main.qml:21 app/main.qml:166
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -1358,7 +1323,7 @@ msgstr "Tren %1 des de %2 fins a %3"
 msgid "Bus %1 from %2 to %3"
 msgstr "Autobús %1 des de %2 a %3"
 
-#: app/gpxexport.cpp:58
+#: app/gpxexport.cpp:58 app/importcontroller.cpp:593
 #, kde-format
 msgid "Ferry from %1 to %2"
 msgstr "Ferri des de %1 a %2"
@@ -1453,7 +1418,7 @@ msgstr "Prova %1 (%2)"
 msgid "Recovery (%1)"
 msgstr "Recuperació (%1)"
 
-#: app/HealthCertificatePage.qml:16 app/main.qml:198
+#: app/HealthCertificatePage.qml:16 app/main.qml:200
 #, kde-format
 msgid "Health Certificates"
 msgstr "Certificats de salut"
@@ -1708,6 +1673,70 @@ msgstr "Hora de la facturació"
 #, kde-format
 msgid "Check-out time"
 msgstr "Hora de la sortida"
+
+#: app/importcontroller.cpp:144 app/importcontroller.cpp:461
+#, kde-format
+msgid "Import failed: %1"
+msgstr "Ha fallat la importació: %1"
+
+#: app/importcontroller.cpp:149
+#, kde-format
+msgid "Import failed: File too large."
+msgstr "Ha fallat la importació: Fitxer massa gran."
+
+#: app/importcontroller.cpp:208 app/importcontroller.cpp:305
+#, fuzzy, kde-format
+#| msgid "Nothing imported."
+msgid "Found nothing to import."
+msgstr "No s'ha importat res."
+
+#: app/importcontroller.cpp:433
+#, kde-format
+msgid "No importable events found in this calendar."
+msgstr ""
+"No s'ha trobat cap esdeveniment que es pugui importar en aquest calendari."
+
+#: app/importcontroller.cpp:584
+#, fuzzy, kde-format
+#| msgid "Flight %1 from %2 to %3"
+msgid "Flight from %1 to %2"
+msgstr "Vol %1 des de %2 fins a %3"
+
+#: app/importcontroller.cpp:587
+#, fuzzy, kde-format
+#| msgid "Train %1 from %2 to %3"
+msgid "Train from %1 to %2"
+msgstr "Tren %1 des de %2 fins a %3"
+
+#: app/importcontroller.cpp:590
+#, fuzzy, kde-format
+#| msgid "Bus %1 from %2 to %3"
+msgid "Bus from %1 to %2"
+msgstr "Autobús %1 des de %2 a %3"
+
+#: app/importcontroller.cpp:618
+#, kde-format
+msgid "Backup"
+msgstr ""
+
+#: app/ImportPage.qml:18
+#, fuzzy, kde-format
+#| msgid "Import..."
+msgctxt "@title"
+msgid "Import"
+msgstr "Importa..."
+
+#: app/ImportPage.qml:21
+#, fuzzy, kde-format
+#| msgid "Files or URLs to import."
+msgid "Selected items to import."
+msgstr "Fitxers o URL a importar."
+
+#: app/ImportPage.qml:67
+#, fuzzy, kde-format
+#| msgid "Import Reservation"
+msgid "Import selection"
+msgstr "Importa la reserva"
 
 #: app/IndoorMapAmenitySheet.qml:18
 #, kde-format
@@ -2115,7 +2144,7 @@ msgstr "Vol %1 a %2:"
 msgid "Itinerary change"
 msgstr "Canvi en l'itinerari"
 
-#: app/LiveStatusPage.qml:19 app/main.qml:209
+#: app/LiveStatusPage.qml:19 app/main.qml:211
 #, kde-format
 msgid "Live Status"
 msgstr "Estat en directe"
@@ -2319,22 +2348,22 @@ msgstr "Tipus M"
 msgid "Type N"
 msgstr "Tipus N"
 
-#: app/main.cpp:333
+#: app/main.cpp:339
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Assistent digital de viatges"
 
-#: app/main.cpp:334
+#: app/main.cpp:340
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "Copyright © La comunitat KDE"
 
-#: app/main.cpp:341
+#: app/main.cpp:347
 #, kde-format
 msgid "Open Itinerary on the given page"
 msgstr "Obre l'itinerari a la pàgina indicada"
 
-#: app/main.cpp:346
+#: app/main.cpp:352
 #, kde-format
 msgid "Files or URLs to import."
 msgstr "Fitxers o URL a importar."
@@ -2349,22 +2378,22 @@ msgstr "Obre un fitxer..."
 msgid "Paste"
 msgstr "Enganxa"
 
-#: app/main.qml:78
+#: app/main.qml:76
 #, kde-format
 msgid "Scan Barcode..."
 msgstr "Escaneja un codi de barres..."
 
-#: app/main.qml:86
+#: app/main.qml:84
 #, kde-format
 msgid "Add from Calendar..."
 msgstr "Afegeix a partir del calendari..."
 
-#: app/main.qml:100
+#: app/main.qml:98
 #, kde-format
 msgid "Deutsche Bahn Online Ticket..."
 msgstr "Bitllet en línia de la Deutsche Bahn..."
 
-#: app/main.qml:109
+#: app/main.qml:108
 #, kde-format
 msgid "SNCF Online Ticket..."
 msgstr "Bitllet en línia de la SNCF..."
@@ -2389,47 +2418,47 @@ msgstr "Fitxers PDF (*.pdf)"
 msgid "iCal events (*.ics)"
 msgstr "Esdeveniments iCal (*.ics)"
 
-#: app/main.qml:128 app/main.qml:137
+#: app/main.qml:128 app/main.qml:140
 #, kde-format
 msgid "KDE Itinerary files (*.itinerary)"
 msgstr "Fitxers del KDE Itinerary (*.itinerary)"
 
-#: app/main.qml:135
+#: app/main.qml:138
 #, kde-format
 msgid "Export Itinerary Data"
 msgstr "Exportació de dades de l'Itinerary"
 
-#: app/main.qml:169 app/PassPage.qml:137
+#: app/main.qml:171 app/PassPage.qml:137
 #, kde-format
 msgid "Import..."
 msgstr "Importa..."
 
-#: app/main.qml:174
+#: app/main.qml:176
 #, kde-format
 msgid "Check for Updates"
 msgstr "Comprova si hi ha actualitzacions"
 
-#: app/main.qml:183
+#: app/main.qml:185
 #, kde-format
 msgid "Download Maps"
 msgstr "Baixa els mapes"
 
-#: app/main.qml:191 app/StatisticsPage.qml:15
+#: app/main.qml:193 app/StatisticsPage.qml:15
 #, kde-format
 msgid "Statistics"
 msgstr "Estadístiques"
 
-#: app/main.qml:217 app/WelcomePage.qml:41
+#: app/main.qml:219 app/WelcomePage.qml:41
 #, kde-format
 msgid "Settings..."
 msgstr "Arranjament..."
 
-#: app/main.qml:229 app/WelcomePage.qml:16
+#: app/main.qml:231 app/WelcomePage.qml:16
 #, kde-format
 msgid "Help"
 msgstr "Ajuda"
 
-#: app/main.qml:304
+#: app/main.qml:320
 #, kde-format
 msgid "Map download finished."
 msgstr "Ha acabat la baixada dels mapes."
@@ -2597,22 +2626,17 @@ msgstr "Referència de la reserva"
 msgid "Import Online Ticket"
 msgstr "Importa un bitllet en línia"
 
-#: app/OnlineImportPage.qml:29
-#, kde-format
-msgid "Ticket imported"
-msgstr "El bitllet s'ha importat"
-
-#: app/OnlineImportPage.qml:33
+#: app/OnlineImportPage.qml:30
 #, kde-format
 msgid "No ticket found"
 msgstr "No s'ha trobat cap bitllet"
 
-#: app/OnlineImportPage.qml:38
+#: app/OnlineImportPage.qml:35
 #, kde-format
 msgid "Online Ticket"
 msgstr "Bitllet en línia"
 
-#: app/OnlineImportPage.qml:57
+#: app/OnlineImportPage.qml:54
 #, kde-format
 msgid "Search..."
 msgstr "Cerca..."
@@ -3857,6 +3881,18 @@ msgstr "S'està iniciant la sessió"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 des de %3 a %4 el %5"
+
+#~ msgid "Pass imported."
+#~ msgstr "S'ha importat el passi."
+
+#~ msgid "Calendar Import"
+#~ msgstr "Importa un calendari"
+
+#~ msgid "Import selected events"
+#~ msgstr "Importa els esdeveniments seleccionats"
+
+#~ msgid "Ticket imported"
+#~ msgstr "El bitllet s'ha importat"
 
 #~ msgid "Import from Clipboard"
 #~ msgstr "Importa des del porta-retalls"

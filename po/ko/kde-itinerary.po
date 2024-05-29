@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-25 00:39+0000\n"
+"POT-Creation-Date: 2024-05-29 00:39+0000\n"
 "PO-Revision-Date: 2024-02-17 12:41+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -27,7 +27,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde@peremen.name"
 
-#: app/AboutPage.qml:18 app/main.qml:236
+#: app/AboutPage.qml:18 app/main.qml:238
 #, kde-format
 msgid "About"
 msgstr "정보"
@@ -117,7 +117,7 @@ msgstr "편집"
 msgid "Add to calendar..."
 msgstr "캘린더에 추가..."
 
-#: app/ActionsCard.qml:73 app/main.qml:224 app/TripGroupDelegate.qml:162
+#: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:162
 #, kde-format
 msgid "Export..."
 msgstr "내보내기..."
@@ -272,69 +272,49 @@ msgstr "기존 예약을 새로 선택한 여정으로 대체하시겠습니까?
 msgid "Replace"
 msgstr "바꾸기"
 
-#: app/applicationcontroller.cpp:342 app/applicationcontroller.cpp:747
-#: app/applicationcontroller.cpp:762
-#, kde-format
-msgid "Import failed: %1"
-msgstr "가져오기 실패: %1"
-
-#: app/applicationcontroller.cpp:347
-#, kde-format
-msgid "Import failed: File too large."
-msgstr "가져오기 실패: 파일이 너무 큽니다."
-
-#: app/applicationcontroller.cpp:429 app/applicationcontroller.cpp:824
-#: app/applicationcontroller.cpp:834
+#: app/applicationcontroller.cpp:263 app/applicationcontroller.cpp:507
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] "예약 %1건을 가져왔습니다."
 
-#: app/applicationcontroller.cpp:436
-#, kde-format
-msgid "Health certificate imported."
-msgstr "건강 증명서를 가져왔습니다."
-
-#: app/applicationcontroller.cpp:451
+#: app/applicationcontroller.cpp:266
 #, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
 msgstr[0] "패스 %1개를 가져왔습니다."
 
-#: app/applicationcontroller.cpp:454
-#, kde-format
-msgid "Pass imported."
-msgstr "패스를 가져왔습니다."
+#: app/applicationcontroller.cpp:270
+#, fuzzy, kde-format
+#| msgid "Health certificate imported."
+msgid "One health certificate imported."
+msgid_plural "%1 health certificates imported."
+msgstr[0] "건강 증명서를 가져왔습니다."
 
-#: app/applicationcontroller.cpp:491
-#, kde-format
-msgid "Nothing imported."
-msgstr "가져온 것이 없습니다."
-
-#: app/applicationcontroller.cpp:553 app/applicationcontroller.cpp:593
-#: app/applicationcontroller.cpp:611 app/applicationcontroller.cpp:655
-#: app/applicationcontroller.cpp:694 app/applicationcontroller.cpp:712
+#: app/applicationcontroller.cpp:284 app/applicationcontroller.cpp:324
+#: app/applicationcontroller.cpp:342 app/applicationcontroller.cpp:386
+#: app/applicationcontroller.cpp:425 app/applicationcontroller.cpp:443
 #, kde-format
 msgid "Export failed: %1"
 msgstr "내보내기 실패: %1"
 
-#: app/applicationcontroller.cpp:567 app/applicationcontroller.cpp:576
-#: app/applicationcontroller.cpp:668 app/applicationcontroller.cpp:677
+#: app/applicationcontroller.cpp:298 app/applicationcontroller.cpp:307
+#: app/applicationcontroller.cpp:399 app/applicationcontroller.cpp:408
 #, kde-format
 msgid "Export completed."
 msgstr "내보내기가 완료되었습니다."
 
-#: app/applicationcontroller.cpp:603
+#: app/applicationcontroller.cpp:334
 #, kde-format
 msgid "Trip sent."
 msgstr "여행을 전송했습니다."
 
-#: app/applicationcontroller.cpp:704
+#: app/applicationcontroller.cpp:435
 #, kde-format
 msgid "Reservation sent."
 msgstr "예약을 전송했습니다."
 
-#: app/applicationcontroller.cpp:787
+#: app/applicationcontroller.cpp:491
 #, kde-format
 msgid "Import completed."
 msgstr "가져오기가 완료되었습니다."
@@ -637,21 +617,6 @@ msgstr "여정 정보"
 #, kde-format
 msgid "Transfer to %1"
 msgstr "%1(으)로 환승|/|%1$[으 %1]로 환승"
-
-#: app/CalendarImportPage.qml:19
-#, kde-format
-msgid "Calendar Import"
-msgstr "캘린더 가져오기"
-
-#: app/CalendarImportPage.qml:57
-#, kde-format
-msgid "No importable events found in this calendar."
-msgstr "이 캘린더에서 가져올 수 있는 이벤트가 없습니다."
-
-#: app/CalendarImportPage.qml:71
-#, kde-format
-msgid "Import selected events"
-msgstr "선택한 이벤트 가져오기"
 
 #: app/CalendarSelectionSheet.qml:14
 #, fuzzy, kde-format
@@ -1337,7 +1302,7 @@ msgstr "패스 삭제"
 msgid "Do you really want to delete this pass?"
 msgstr "이 패스를 삭제하시겠습니까?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:325 app/main.qml:21 app/main.qml:164
+#: app/gpxexport.cpp:33 app/main.cpp:331 app/main.qml:21 app/main.qml:166
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE 여행 정보"
@@ -1357,7 +1322,7 @@ msgstr "%2에서 %3(으)로 가는 %1 열차|/|%2에서 %3$[으 %3]로 가는 %1
 msgid "Bus %1 from %2 to %3"
 msgstr "%2에서 %3(으)로 가는 %1 버스|/|%2에서 %3$[으 %3]로 가는 %1 버스"
 
-#: app/gpxexport.cpp:58
+#: app/gpxexport.cpp:58 app/importcontroller.cpp:593
 #, kde-format
 msgid "Ferry from %1 to %2"
 msgstr "%1에서 %2(으)로 가는 선박|/|%1에서 %2$[으 %2]로 가는 선박"
@@ -1452,7 +1417,7 @@ msgstr "검사 %1(%2)"
 msgid "Recovery (%1)"
 msgstr "완치(%1)"
 
-#: app/HealthCertificatePage.qml:16 app/main.qml:198
+#: app/HealthCertificatePage.qml:16 app/main.qml:200
 #, kde-format
 msgid "Health Certificates"
 msgstr "건강 증명서"
@@ -1704,6 +1669,69 @@ msgstr "체크인 시간"
 #, kde-format
 msgid "Check-out time"
 msgstr "체크아웃 시간"
+
+#: app/importcontroller.cpp:144 app/importcontroller.cpp:461
+#, kde-format
+msgid "Import failed: %1"
+msgstr "가져오기 실패: %1"
+
+#: app/importcontroller.cpp:149
+#, kde-format
+msgid "Import failed: File too large."
+msgstr "가져오기 실패: 파일이 너무 큽니다."
+
+#: app/importcontroller.cpp:208 app/importcontroller.cpp:305
+#, fuzzy, kde-format
+#| msgid "Nothing imported."
+msgid "Found nothing to import."
+msgstr "가져온 것이 없습니다."
+
+#: app/importcontroller.cpp:433
+#, kde-format
+msgid "No importable events found in this calendar."
+msgstr "이 캘린더에서 가져올 수 있는 이벤트가 없습니다."
+
+#: app/importcontroller.cpp:584
+#, fuzzy, kde-format
+#| msgid "Flight %1 from %2 to %3"
+msgid "Flight from %1 to %2"
+msgstr "%2에서 %3(으)로 가는 %1 항공편|/|%2에서 %3$[으 %3]로 가는 %1 항공편"
+
+#: app/importcontroller.cpp:587
+#, fuzzy, kde-format
+#| msgid "Train %1 from %2 to %3"
+msgid "Train from %1 to %2"
+msgstr "%2에서 %3(으)로 가는 %1 열차|/|%2에서 %3$[으 %3]로 가는 %1 열차"
+
+#: app/importcontroller.cpp:590
+#, fuzzy, kde-format
+#| msgid "Bus %1 from %2 to %3"
+msgid "Bus from %1 to %2"
+msgstr "%2에서 %3(으)로 가는 %1 버스|/|%2에서 %3$[으 %3]로 가는 %1 버스"
+
+#: app/importcontroller.cpp:618
+#, kde-format
+msgid "Backup"
+msgstr ""
+
+#: app/ImportPage.qml:18
+#, fuzzy, kde-format
+#| msgid "Import"
+msgctxt "@title"
+msgid "Import"
+msgstr "가져오기"
+
+#: app/ImportPage.qml:21
+#, fuzzy, kde-format
+#| msgid "Files or URLs to import."
+msgid "Selected items to import."
+msgstr "가져올 파일이나 URL입니다."
+
+#: app/ImportPage.qml:67
+#, fuzzy, kde-format
+#| msgid "Import Reservation"
+msgid "Import selection"
+msgstr "예약 가져오기"
 
 #: app/IndoorMapAmenitySheet.qml:18
 #, fuzzy, kde-format
@@ -2112,7 +2140,7 @@ msgstr "%2(으)로 가는 %1 항공편|/|%2$[으 %2]로 가는 %1 항공편"
 msgid "Itinerary change"
 msgstr "여정 변경"
 
-#: app/LiveStatusPage.qml:19 app/main.qml:209
+#: app/LiveStatusPage.qml:19 app/main.qml:211
 #, kde-format
 msgid "Live Status"
 msgstr "실시간 상태"
@@ -2314,22 +2342,22 @@ msgstr "M형"
 msgid "Type N"
 msgstr "N형"
 
-#: app/main.cpp:333
+#: app/main.cpp:339
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "디지털 여행 도우미"
 
-#: app/main.cpp:334
+#: app/main.cpp:340
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "Copyright © The KDE Community"
 
-#: app/main.cpp:341
+#: app/main.cpp:347
 #, kde-format
 msgid "Open Itinerary on the given page"
 msgstr "지정한 페이지의 여행 정보 열기"
 
-#: app/main.cpp:346
+#: app/main.cpp:352
 #, kde-format
 msgid "Files or URLs to import."
 msgstr "가져올 파일이나 URL입니다."
@@ -2344,22 +2372,22 @@ msgstr "파일 열기..."
 msgid "Paste"
 msgstr "붙여넣기"
 
-#: app/main.qml:78
+#: app/main.qml:76
 #, kde-format
 msgid "Scan Barcode..."
 msgstr "바코드 스캔..."
 
-#: app/main.qml:86
+#: app/main.qml:84
 #, kde-format
 msgid "Add from Calendar..."
 msgstr "캘린더에서 추가..."
 
-#: app/main.qml:100
+#: app/main.qml:98
 #, kde-format
 msgid "Deutsche Bahn Online Ticket..."
 msgstr "도이체 반 온라인 승차권..."
 
-#: app/main.qml:109
+#: app/main.qml:108
 #, kde-format
 msgid "SNCF Online Ticket..."
 msgstr "SNCF 온라인 승차권..."
@@ -2384,47 +2412,47 @@ msgstr "PDF 파일 (*.pdf)"
 msgid "iCal events (*.ics)"
 msgstr "iCal 이벤트 (*.ics)"
 
-#: app/main.qml:128 app/main.qml:137
+#: app/main.qml:128 app/main.qml:140
 #, kde-format
 msgid "KDE Itinerary files (*.itinerary)"
 msgstr "KDE 여행 정보 파일 (*.itinerary)"
 
-#: app/main.qml:135
+#: app/main.qml:138
 #, kde-format
 msgid "Export Itinerary Data"
 msgstr "여행 정보 내보내기"
 
-#: app/main.qml:169 app/PassPage.qml:137
+#: app/main.qml:171 app/PassPage.qml:137
 #, kde-format
 msgid "Import..."
 msgstr "가져오기..."
 
-#: app/main.qml:174
+#: app/main.qml:176
 #, kde-format
 msgid "Check for Updates"
 msgstr "업데이트 확인"
 
-#: app/main.qml:183
+#: app/main.qml:185
 #, kde-format
 msgid "Download Maps"
 msgstr "지도 다운로드"
 
-#: app/main.qml:191 app/StatisticsPage.qml:15
+#: app/main.qml:193 app/StatisticsPage.qml:15
 #, kde-format
 msgid "Statistics"
 msgstr "통계"
 
-#: app/main.qml:217 app/WelcomePage.qml:41
+#: app/main.qml:219 app/WelcomePage.qml:41
 #, kde-format
 msgid "Settings..."
 msgstr "설정..."
 
-#: app/main.qml:229 app/WelcomePage.qml:16
+#: app/main.qml:231 app/WelcomePage.qml:16
 #, kde-format
 msgid "Help"
 msgstr "도움말"
 
-#: app/main.qml:304
+#: app/main.qml:320
 #, kde-format
 msgid "Map download finished."
 msgstr "지도를 다운로드했습니다."
@@ -2593,22 +2621,17 @@ msgstr "예약 번호"
 msgid "Import Online Ticket"
 msgstr "온라인 티켓 가져오기"
 
-#: app/OnlineImportPage.qml:29
-#, kde-format
-msgid "Ticket imported"
-msgstr "티켓 가져옴"
-
-#: app/OnlineImportPage.qml:33
+#: app/OnlineImportPage.qml:30
 #, kde-format
 msgid "No ticket found"
 msgstr "티켓을 찾을 수 없음"
 
-#: app/OnlineImportPage.qml:38
+#: app/OnlineImportPage.qml:35
 #, kde-format
 msgid "Online Ticket"
 msgstr "온라인 티켓"
 
-#: app/OnlineImportPage.qml:57
+#: app/OnlineImportPage.qml:54
 #, kde-format
 msgid "Search..."
 msgstr "검색..."
@@ -3849,6 +3872,18 @@ msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%5에 %3에서 %4(으)로 가는 %1%2|/|%5에 %3에서 %4$[으 %4]로 가는 %1%2"
 
+#~ msgid "Pass imported."
+#~ msgstr "패스를 가져왔습니다."
+
+#~ msgid "Calendar Import"
+#~ msgstr "캘린더 가져오기"
+
+#~ msgid "Import selected events"
+#~ msgstr "선택한 이벤트 가져오기"
+
+#~ msgid "Ticket imported"
+#~ msgstr "티켓 가져옴"
+
 #~ msgid "Import from Clipboard"
 #~ msgstr "클립보드에서 가져오기"
 
@@ -3924,9 +3959,6 @@ msgstr "%5에 %3에서 %4(으)로 가는 %1%2|/|%5에 %3에서 %4$[으 %4]로 �
 
 #~ msgid "Passes && Programs"
 #~ msgstr "패스와 프로그램"
-
-#~ msgid "Import"
-#~ msgstr "가져오기"
 
 #~ msgctxt "currency conversion rate"
 #~ msgid "1 %1 = %2 %3"

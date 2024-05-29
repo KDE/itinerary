@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-25 00:39+0000\n"
+"POT-Creation-Date: 2024-05-29 00:39+0000\n"
 "PO-Revision-Date: 2024-05-09 18:45+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -29,7 +29,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "emir_sari@icloud.com"
 
-#: app/AboutPage.qml:18 app/main.qml:236
+#: app/AboutPage.qml:18 app/main.qml:238
 #, kde-format
 msgid "About"
 msgstr "Hakkında"
@@ -119,7 +119,7 @@ msgstr "Düzenle"
 msgid "Add to calendar..."
 msgstr "Takvime ekle…"
 
-#: app/ActionsCard.qml:73 app/main.qml:224 app/TripGroupDelegate.qml:162
+#: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:162
 #, kde-format
 msgid "Export..."
 msgstr "Dışa Aktar…"
@@ -276,71 +276,52 @@ msgstr ""
 msgid "Replace"
 msgstr "Değiştir"
 
-#: app/applicationcontroller.cpp:342 app/applicationcontroller.cpp:747
-#: app/applicationcontroller.cpp:762
-#, kde-format
-msgid "Import failed: %1"
-msgstr "İçe aktarma başarısız: %1"
-
-#: app/applicationcontroller.cpp:347
-#, kde-format
-msgid "Import failed: File too large."
-msgstr "İçe aktarma başarısız: Dosya pek büyük."
-
-#: app/applicationcontroller.cpp:429 app/applicationcontroller.cpp:824
-#: app/applicationcontroller.cpp:834
+#: app/applicationcontroller.cpp:263 app/applicationcontroller.cpp:507
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] "Bir rezervasyon içe aktarıldı."
 msgstr[1] "%1 rezervasyon içe aktarıldı."
 
-#: app/applicationcontroller.cpp:436
-#, kde-format
-msgid "Health certificate imported."
-msgstr "Sağlık sertifikası içe aktarıldı."
-
-#: app/applicationcontroller.cpp:451
+#: app/applicationcontroller.cpp:266
 #, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
 msgstr[0] "Bir kart içe aktarıldı."
 msgstr[1] "%1 kart içe aktarıldı."
 
-#: app/applicationcontroller.cpp:454
-#, kde-format
-msgid "Pass imported."
-msgstr "Kart içe aktarıldı."
+#: app/applicationcontroller.cpp:270
+#, fuzzy, kde-format
+#| msgid "Health certificate imported."
+msgid "One health certificate imported."
+msgid_plural "%1 health certificates imported."
+msgstr[0] "Sağlık sertifikası içe aktarıldı."
+msgstr[1] "Sağlık sertifikası içe aktarıldı."
 
-#: app/applicationcontroller.cpp:491
-#, kde-format
-msgid "Nothing imported."
-msgstr "Bir şey içe aktarılmadı."
-
-#: app/applicationcontroller.cpp:553 app/applicationcontroller.cpp:593
-#: app/applicationcontroller.cpp:611 app/applicationcontroller.cpp:655
-#: app/applicationcontroller.cpp:694 app/applicationcontroller.cpp:712
+#: app/applicationcontroller.cpp:284 app/applicationcontroller.cpp:324
+#: app/applicationcontroller.cpp:342 app/applicationcontroller.cpp:386
+#: app/applicationcontroller.cpp:425 app/applicationcontroller.cpp:443
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Dışa aktarma başarısız: %1"
 
-#: app/applicationcontroller.cpp:567 app/applicationcontroller.cpp:576
-#: app/applicationcontroller.cpp:668 app/applicationcontroller.cpp:677
+#: app/applicationcontroller.cpp:298 app/applicationcontroller.cpp:307
+#: app/applicationcontroller.cpp:399 app/applicationcontroller.cpp:408
 #, kde-format
 msgid "Export completed."
 msgstr "Dışa aktarma tamamlandı."
 
-#: app/applicationcontroller.cpp:603
+#: app/applicationcontroller.cpp:334
 #, kde-format
 msgid "Trip sent."
 msgstr "Gezi gönderildi."
 
-#: app/applicationcontroller.cpp:704
+#: app/applicationcontroller.cpp:435
 #, kde-format
 msgid "Reservation sent."
 msgstr "Rezervasyon gönderildi."
 
-#: app/applicationcontroller.cpp:787
+#: app/applicationcontroller.cpp:491
 #, kde-format
 msgid "Import completed."
 msgstr "İçe aktarma tamamlandı."
@@ -644,21 +625,6 @@ msgstr "Yolculuk Ayrıntıları"
 #, kde-format
 msgid "Transfer to %1"
 msgstr "Aktarma: %1"
-
-#: app/CalendarImportPage.qml:19
-#, kde-format
-msgid "Calendar Import"
-msgstr "Takvim İçe Aktar"
-
-#: app/CalendarImportPage.qml:57
-#, kde-format
-msgid "No importable events found in this calendar."
-msgstr "Bu takvimde içe aktarılabilir etkinlikler bulunamadı."
-
-#: app/CalendarImportPage.qml:71
-#, kde-format
-msgid "Import selected events"
-msgstr "Seçili etkinlikleri içe aktar"
 
 #: app/CalendarSelectionSheet.qml:14
 #, kde-format
@@ -1337,7 +1303,7 @@ msgstr "Kartı Sil"
 msgid "Do you really want to delete this pass?"
 msgstr "Bu kartı silmeyi gerçekten istiyor musunuz?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:325 app/main.qml:21 app/main.qml:164
+#: app/gpxexport.cpp:33 app/main.cpp:331 app/main.qml:21 app/main.qml:166
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Yol Kılavuzu"
@@ -1357,7 +1323,7 @@ msgstr "%2 → %3 %1 treni"
 msgid "Bus %1 from %2 to %3"
 msgstr "%2 → %3 %1 otobüsü"
 
-#: app/gpxexport.cpp:58
+#: app/gpxexport.cpp:58 app/importcontroller.cpp:593
 #, kde-format
 msgid "Ferry from %1 to %2"
 msgstr "%1 → %2 feribotu"
@@ -1452,7 +1418,7 @@ msgstr "Test %1 (%2)"
 msgid "Recovery (%1)"
 msgstr "İyileşme (%1)"
 
-#: app/HealthCertificatePage.qml:16 app/main.qml:198
+#: app/HealthCertificatePage.qml:16 app/main.qml:200
 #, kde-format
 msgid "Health Certificates"
 msgstr "Sağlık Sertifikaları"
@@ -1707,6 +1673,69 @@ msgstr "Giriş zamanı"
 #, kde-format
 msgid "Check-out time"
 msgstr "Çıkış zamanı"
+
+#: app/importcontroller.cpp:144 app/importcontroller.cpp:461
+#, kde-format
+msgid "Import failed: %1"
+msgstr "İçe aktarma başarısız: %1"
+
+#: app/importcontroller.cpp:149
+#, kde-format
+msgid "Import failed: File too large."
+msgstr "İçe aktarma başarısız: Dosya pek büyük."
+
+#: app/importcontroller.cpp:208 app/importcontroller.cpp:305
+#, fuzzy, kde-format
+#| msgid "Nothing imported."
+msgid "Found nothing to import."
+msgstr "Bir şey içe aktarılmadı."
+
+#: app/importcontroller.cpp:433
+#, kde-format
+msgid "No importable events found in this calendar."
+msgstr "Bu takvimde içe aktarılabilir etkinlikler bulunamadı."
+
+#: app/importcontroller.cpp:584
+#, fuzzy, kde-format
+#| msgid "Flight %1 from %2 to %3"
+msgid "Flight from %1 to %2"
+msgstr "%2 → %3 %1 uçuşu"
+
+#: app/importcontroller.cpp:587
+#, fuzzy, kde-format
+#| msgid "Train %1 from %2 to %3"
+msgid "Train from %1 to %2"
+msgstr "%2 → %3 %1 treni"
+
+#: app/importcontroller.cpp:590
+#, fuzzy, kde-format
+#| msgid "Bus %1 from %2 to %3"
+msgid "Bus from %1 to %2"
+msgstr "%2 → %3 %1 otobüsü"
+
+#: app/importcontroller.cpp:618
+#, kde-format
+msgid "Backup"
+msgstr ""
+
+#: app/ImportPage.qml:18
+#, fuzzy, kde-format
+#| msgid "Import..."
+msgctxt "@title"
+msgid "Import"
+msgstr "İçe Aktar…"
+
+#: app/ImportPage.qml:21
+#, fuzzy, kde-format
+#| msgid "Files or URLs to import."
+msgid "Selected items to import."
+msgstr "İçe aktarılacak dosyalar veya URL’ler."
+
+#: app/ImportPage.qml:67
+#, fuzzy, kde-format
+#| msgid "Import Reservation"
+msgid "Import selection"
+msgstr "Rezervasyon İçe Aktar"
 
 #: app/IndoorMapAmenitySheet.qml:18
 #, kde-format
@@ -2113,7 +2142,7 @@ msgstr "%1 uçuşu, %2:"
 msgid "Itinerary change"
 msgstr "Yolcu belgesi değişikliği"
 
-#: app/LiveStatusPage.qml:19 app/main.qml:209
+#: app/LiveStatusPage.qml:19 app/main.qml:211
 #, kde-format
 msgid "Live Status"
 msgstr "Canlı Durum"
@@ -2315,22 +2344,22 @@ msgstr "Tür M"
 msgid "Type N"
 msgstr "Tür N"
 
-#: app/main.cpp:333
+#: app/main.cpp:339
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Sayısal Yolculuk Asistanı"
 
-#: app/main.cpp:334
+#: app/main.cpp:340
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "Telif hakkı © KDE Topluluğu"
 
-#: app/main.cpp:341
+#: app/main.cpp:347
 #, kde-format
 msgid "Open Itinerary on the given page"
 msgstr "Verilen sayfadaki yolcu belgesini aç"
 
-#: app/main.cpp:346
+#: app/main.cpp:352
 #, kde-format
 msgid "Files or URLs to import."
 msgstr "İçe aktarılacak dosyalar veya URL’ler."
@@ -2345,22 +2374,22 @@ msgstr "Dosya Aç…"
 msgid "Paste"
 msgstr "Yapıştır"
 
-#: app/main.qml:78
+#: app/main.qml:76
 #, kde-format
 msgid "Scan Barcode..."
 msgstr "Barkod Tara…"
 
-#: app/main.qml:86
+#: app/main.qml:84
 #, kde-format
 msgid "Add from Calendar..."
 msgstr "Takvimden Ekle…"
 
-#: app/main.qml:100
+#: app/main.qml:98
 #, kde-format
 msgid "Deutsche Bahn Online Ticket..."
 msgstr "Deutsche Bahn Çevrimiçi Bilet…"
 
-#: app/main.qml:109
+#: app/main.qml:108
 #, kde-format
 msgid "SNCF Online Ticket..."
 msgstr "SNCF Çevrimiçi Bilet…"
@@ -2385,47 +2414,47 @@ msgstr "PDF Dosyaları (*.pdf)"
 msgid "iCal events (*.ics)"
 msgstr "iCal Etkinlikleri (*.ics)"
 
-#: app/main.qml:128 app/main.qml:137
+#: app/main.qml:128 app/main.qml:140
 #, kde-format
 msgid "KDE Itinerary files (*.itinerary)"
 msgstr "KDE Yol Kılavuzu Dosyaları (*.itinerary)"
 
-#: app/main.qml:135
+#: app/main.qml:138
 #, kde-format
 msgid "Export Itinerary Data"
 msgstr "Yolcu Belgesi Verisini Dışa Aktar"
 
-#: app/main.qml:169 app/PassPage.qml:137
+#: app/main.qml:171 app/PassPage.qml:137
 #, kde-format
 msgid "Import..."
 msgstr "İçe Aktar…"
 
-#: app/main.qml:174
+#: app/main.qml:176
 #, kde-format
 msgid "Check for Updates"
 msgstr "Güncellemeleri Denetle"
 
-#: app/main.qml:183
+#: app/main.qml:185
 #, kde-format
 msgid "Download Maps"
 msgstr "Haritalar İndir"
 
-#: app/main.qml:191 app/StatisticsPage.qml:15
+#: app/main.qml:193 app/StatisticsPage.qml:15
 #, kde-format
 msgid "Statistics"
 msgstr "İstatistikler"
 
-#: app/main.qml:217 app/WelcomePage.qml:41
+#: app/main.qml:219 app/WelcomePage.qml:41
 #, kde-format
 msgid "Settings..."
 msgstr "Ayarlar…"
 
-#: app/main.qml:229 app/WelcomePage.qml:16
+#: app/main.qml:231 app/WelcomePage.qml:16
 #, kde-format
 msgid "Help"
 msgstr "Yardım"
 
-#: app/main.qml:304
+#: app/main.qml:320
 #, kde-format
 msgid "Map download finished."
 msgstr "Harita indirme bitti."
@@ -2593,22 +2622,17 @@ msgstr "Rezervasyon başvurusu"
 msgid "Import Online Ticket"
 msgstr "Çevrimiçi Bilet İçe Aktar"
 
-#: app/OnlineImportPage.qml:29
-#, kde-format
-msgid "Ticket imported"
-msgstr "Bilet içe aktarıldı"
-
-#: app/OnlineImportPage.qml:33
+#: app/OnlineImportPage.qml:30
 #, kde-format
 msgid "No ticket found"
 msgstr "Bilet bulunamadı"
 
-#: app/OnlineImportPage.qml:38
+#: app/OnlineImportPage.qml:35
 #, kde-format
 msgid "Online Ticket"
 msgstr "Çevrimiçi Bilet"
 
-#: app/OnlineImportPage.qml:57
+#: app/OnlineImportPage.qml:54
 #, kde-format
 msgid "Search..."
 msgstr "Ara…"
@@ -3842,6 +3866,18 @@ msgstr "Oturum açılıyor"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%5 tarihinde %3 havaalanından %4 havaalanına %1%2"
+
+#~ msgid "Pass imported."
+#~ msgstr "Kart içe aktarıldı."
+
+#~ msgid "Calendar Import"
+#~ msgstr "Takvim İçe Aktar"
+
+#~ msgid "Import selected events"
+#~ msgstr "Seçili etkinlikleri içe aktar"
+
+#~ msgid "Ticket imported"
+#~ msgstr "Bilet içe aktarıldı"
 
 #~ msgid "Import from Clipboard"
 #~ msgstr "Panodan İçe Aktar"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-25 00:39+0000\n"
+"POT-Creation-Date: 2024-05-29 00:39+0000\n"
 "PO-Revision-Date: 2024-05-08 08:26+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian\n"
@@ -30,7 +30,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "yurchor@ukr.net"
 
-#: app/AboutPage.qml:18 app/main.qml:236
+#: app/AboutPage.qml:18 app/main.qml:238
 #, kde-format
 msgid "About"
 msgstr "Про програму"
@@ -123,7 +123,7 @@ msgstr "Змінити"
 msgid "Add to calendar..."
 msgstr "Додати до календаря…"
 
-#: app/ActionsCard.qml:73 app/main.qml:224 app/TripGroupDelegate.qml:162
+#: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:162
 #, kde-format
 msgid "Export..."
 msgstr "Експортувати…"
@@ -278,19 +278,7 @@ msgstr "Ви справді хочете замінити ваше наявне 
 msgid "Replace"
 msgstr "Замінити"
 
-#: app/applicationcontroller.cpp:342 app/applicationcontroller.cpp:747
-#: app/applicationcontroller.cpp:762
-#, kde-format
-msgid "Import failed: %1"
-msgstr "Не вдалося імпортувати: %1"
-
-#: app/applicationcontroller.cpp:347
-#, kde-format
-msgid "Import failed: File too large."
-msgstr "Не вдалося імпортувати: надто великий файл."
-
-#: app/applicationcontroller.cpp:429 app/applicationcontroller.cpp:824
-#: app/applicationcontroller.cpp:834
+#: app/applicationcontroller.cpp:263 app/applicationcontroller.cpp:507
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
@@ -299,12 +287,7 @@ msgstr[1] "Імпортовано %1 резервування"
 msgstr[2] "Імпортовано %1 резервувань"
 msgstr[3] "Імпортовано одне резервування"
 
-#: app/applicationcontroller.cpp:436
-#, kde-format
-msgid "Health certificate imported."
-msgstr "Імпортовано сертифікат здоров'я."
-
-#: app/applicationcontroller.cpp:451
+#: app/applicationcontroller.cpp:266
 #, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
@@ -313,40 +296,40 @@ msgstr[1] "Імпортовано %1 безкоштовні квитки."
 msgstr[2] "Імпортовано %1 безкоштовних квитків."
 msgstr[3] "Імпортовано безкоштовний квиток."
 
-#: app/applicationcontroller.cpp:454
-#, kde-format
-msgid "Pass imported."
-msgstr "Безкоштовний квиток імпортовано."
+#: app/applicationcontroller.cpp:270
+#, fuzzy, kde-format
+#| msgid "Health certificate imported."
+msgid "One health certificate imported."
+msgid_plural "%1 health certificates imported."
+msgstr[0] "Імпортовано сертифікат здоров'я."
+msgstr[1] "Імпортовано сертифікат здоров'я."
+msgstr[2] "Імпортовано сертифікат здоров'я."
+msgstr[3] "Імпортовано сертифікат здоров'я."
 
-#: app/applicationcontroller.cpp:491
-#, kde-format
-msgid "Nothing imported."
-msgstr "Нічого не імпортовано."
-
-#: app/applicationcontroller.cpp:553 app/applicationcontroller.cpp:593
-#: app/applicationcontroller.cpp:611 app/applicationcontroller.cpp:655
-#: app/applicationcontroller.cpp:694 app/applicationcontroller.cpp:712
+#: app/applicationcontroller.cpp:284 app/applicationcontroller.cpp:324
+#: app/applicationcontroller.cpp:342 app/applicationcontroller.cpp:386
+#: app/applicationcontroller.cpp:425 app/applicationcontroller.cpp:443
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Не вдалося експортувати: %1"
 
-#: app/applicationcontroller.cpp:567 app/applicationcontroller.cpp:576
-#: app/applicationcontroller.cpp:668 app/applicationcontroller.cpp:677
+#: app/applicationcontroller.cpp:298 app/applicationcontroller.cpp:307
+#: app/applicationcontroller.cpp:399 app/applicationcontroller.cpp:408
 #, kde-format
 msgid "Export completed."
 msgstr "Експортування завершено."
 
-#: app/applicationcontroller.cpp:603
+#: app/applicationcontroller.cpp:334
 #, kde-format
 msgid "Trip sent."
 msgstr "Подорож надіслано."
 
-#: app/applicationcontroller.cpp:704
+#: app/applicationcontroller.cpp:435
 #, kde-format
 msgid "Reservation sent."
 msgstr "Резервування надіслано."
 
-#: app/applicationcontroller.cpp:787
+#: app/applicationcontroller.cpp:491
 #, kde-format
 msgid "Import completed."
 msgstr "Імпортування завершено."
@@ -652,21 +635,6 @@ msgstr "Подробиці щодо подорожі"
 #, kde-format
 msgid "Transfer to %1"
 msgstr "Пересадка на %1"
-
-#: app/CalendarImportPage.qml:19
-#, kde-format
-msgid "Calendar Import"
-msgstr "Імпорт календаря"
-
-#: app/CalendarImportPage.qml:57
-#, kde-format
-msgid "No importable events found in this calendar."
-msgstr "У цьому календарі не знайдено придатних до імпортування записів подій."
-
-#: app/CalendarImportPage.qml:71
-#, kde-format
-msgid "Import selected events"
-msgstr "Імпортувати вибрані події"
 
 #: app/CalendarSelectionSheet.qml:14
 #, kde-format
@@ -1345,7 +1313,7 @@ msgstr "Вилучити безкоштовний квиток"
 msgid "Do you really want to delete this pass?"
 msgstr "Ви справді бажаєте вилучити цей безкоштовний квиток?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:325 app/main.qml:21 app/main.qml:164
+#: app/gpxexport.cpp:33 app/main.cpp:331 app/main.qml:21 app/main.qml:166
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -1365,7 +1333,7 @@ msgstr "Потяг %1 з %2 до %3"
 msgid "Bus %1 from %2 to %3"
 msgstr "Автобус %1 з %2 до %3"
 
-#: app/gpxexport.cpp:58
+#: app/gpxexport.cpp:58 app/importcontroller.cpp:593
 #, kde-format
 msgid "Ferry from %1 to %2"
 msgstr "Пором з %1 до %2"
@@ -1460,7 +1428,7 @@ msgstr "Тест %1 (%2)"
 msgid "Recovery (%1)"
 msgstr "Відновлення (%1)"
 
-#: app/HealthCertificatePage.qml:16 app/main.qml:198
+#: app/HealthCertificatePage.qml:16 app/main.qml:200
 #, kde-format
 msgid "Health Certificates"
 msgstr "Сертифікати здоров'я"
@@ -1717,6 +1685,69 @@ msgstr "Час перевірки на вході"
 #, kde-format
 msgid "Check-out time"
 msgstr "Час перевірки на виході"
+
+#: app/importcontroller.cpp:144 app/importcontroller.cpp:461
+#, kde-format
+msgid "Import failed: %1"
+msgstr "Не вдалося імпортувати: %1"
+
+#: app/importcontroller.cpp:149
+#, kde-format
+msgid "Import failed: File too large."
+msgstr "Не вдалося імпортувати: надто великий файл."
+
+#: app/importcontroller.cpp:208 app/importcontroller.cpp:305
+#, fuzzy, kde-format
+#| msgid "Nothing imported."
+msgid "Found nothing to import."
+msgstr "Нічого не імпортовано."
+
+#: app/importcontroller.cpp:433
+#, kde-format
+msgid "No importable events found in this calendar."
+msgstr "У цьому календарі не знайдено придатних до імпортування записів подій."
+
+#: app/importcontroller.cpp:584
+#, fuzzy, kde-format
+#| msgid "Flight %1 from %2 to %3"
+msgid "Flight from %1 to %2"
+msgstr "Рейс %1 з %2 до %3"
+
+#: app/importcontroller.cpp:587
+#, fuzzy, kde-format
+#| msgid "Train %1 from %2 to %3"
+msgid "Train from %1 to %2"
+msgstr "Потяг %1 з %2 до %3"
+
+#: app/importcontroller.cpp:590
+#, fuzzy, kde-format
+#| msgid "Bus %1 from %2 to %3"
+msgid "Bus from %1 to %2"
+msgstr "Автобус %1 з %2 до %3"
+
+#: app/importcontroller.cpp:618
+#, kde-format
+msgid "Backup"
+msgstr ""
+
+#: app/ImportPage.qml:18
+#, fuzzy, kde-format
+#| msgid "Import"
+msgctxt "@title"
+msgid "Import"
+msgstr "Імпортувати"
+
+#: app/ImportPage.qml:21
+#, fuzzy, kde-format
+#| msgid "Files or URLs to import."
+msgid "Selected items to import."
+msgstr "Файли або адреси для імпортування."
+
+#: app/ImportPage.qml:67
+#, fuzzy, kde-format
+#| msgid "Import Reservation"
+msgid "Import selection"
+msgstr "Імпортувати резервування"
 
 #: app/IndoorMapAmenitySheet.qml:18
 #, kde-format
@@ -2125,7 +2156,7 @@ msgstr "Рейс %1 до %2:"
 msgid "Itinerary change"
 msgstr "Зміна маршруту"
 
-#: app/LiveStatusPage.qml:19 app/main.qml:209
+#: app/LiveStatusPage.qml:19 app/main.qml:211
 #, kde-format
 msgid "Live Status"
 msgstr "Інтерактивний стан"
@@ -2328,22 +2359,22 @@ msgstr "Тип M"
 msgid "Type N"
 msgstr "Тип N"
 
-#: app/main.cpp:333
+#: app/main.cpp:339
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Цифровий помічник у подорожах"
 
-#: app/main.cpp:334
+#: app/main.cpp:340
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "© Спільнота KDE"
 
-#: app/main.cpp:341
+#: app/main.cpp:347
 #, kde-format
 msgid "Open Itinerary on the given page"
 msgstr "Відкрити Itinerary на вказаній сторінці"
 
-#: app/main.cpp:346
+#: app/main.cpp:352
 #, kde-format
 msgid "Files or URLs to import."
 msgstr "Файли або адреси для імпортування."
@@ -2358,22 +2389,22 @@ msgstr "Відкрити файл…"
 msgid "Paste"
 msgstr "Вставити"
 
-#: app/main.qml:78
+#: app/main.qml:76
 #, kde-format
 msgid "Scan Barcode..."
 msgstr "Сканувати штрихкод…"
 
-#: app/main.qml:86
+#: app/main.qml:84
 #, kde-format
 msgid "Add from Calendar..."
 msgstr "Додати з календаря…"
 
-#: app/main.qml:100
+#: app/main.qml:98
 #, kde-format
 msgid "Deutsche Bahn Online Ticket..."
 msgstr "Інтернет-квиток Deutsche Bahn…"
 
-#: app/main.qml:109
+#: app/main.qml:108
 #, kde-format
 msgid "SNCF Online Ticket..."
 msgstr "Інтернет-квиток SNCF…"
@@ -2398,47 +2429,47 @@ msgstr "файли PDF (*.pdf)"
 msgid "iCal events (*.ics)"
 msgstr "події iCal (*.ics)"
 
-#: app/main.qml:128 app/main.qml:137
+#: app/main.qml:128 app/main.qml:140
 #, kde-format
 msgid "KDE Itinerary files (*.itinerary)"
 msgstr "файли путівних даних KDE (*.itinerary)"
 
-#: app/main.qml:135
+#: app/main.qml:138
 #, kde-format
 msgid "Export Itinerary Data"
 msgstr "Експортувати путівні дані"
 
-#: app/main.qml:169 app/PassPage.qml:137
+#: app/main.qml:171 app/PassPage.qml:137
 #, kde-format
 msgid "Import..."
 msgstr "Імпортувати…"
 
-#: app/main.qml:174
+#: app/main.qml:176
 #, kde-format
 msgid "Check for Updates"
 msgstr "Перевірити наявність оновлень"
 
-#: app/main.qml:183
+#: app/main.qml:185
 #, kde-format
 msgid "Download Maps"
 msgstr "Отримати карти"
 
-#: app/main.qml:191 app/StatisticsPage.qml:15
+#: app/main.qml:193 app/StatisticsPage.qml:15
 #, kde-format
 msgid "Statistics"
 msgstr "Статистика"
 
-#: app/main.qml:217 app/WelcomePage.qml:41
+#: app/main.qml:219 app/WelcomePage.qml:41
 #, kde-format
 msgid "Settings..."
 msgstr "Параметри…"
 
-#: app/main.qml:229 app/WelcomePage.qml:16
+#: app/main.qml:231 app/WelcomePage.qml:16
 #, kde-format
 msgid "Help"
 msgstr "Довідка"
 
-#: app/main.qml:304
+#: app/main.qml:320
 #, kde-format
 msgid "Map download finished."
 msgstr "Отримання карти завершено."
@@ -2606,22 +2637,17 @@ msgstr "Код бронювання"
 msgid "Import Online Ticket"
 msgstr "Імпортувати інтернет-квиток"
 
-#: app/OnlineImportPage.qml:29
-#, kde-format
-msgid "Ticket imported"
-msgstr "Квиток імпортовано"
-
-#: app/OnlineImportPage.qml:33
+#: app/OnlineImportPage.qml:30
 #, kde-format
 msgid "No ticket found"
 msgstr "Не знайдено жодного квитка"
 
-#: app/OnlineImportPage.qml:38
+#: app/OnlineImportPage.qml:35
 #, kde-format
 msgid "Online Ticket"
 msgstr "Інтернет-квиток"
 
-#: app/OnlineImportPage.qml:57
+#: app/OnlineImportPage.qml:54
 #, kde-format
 msgid "Search..."
 msgstr "Шукати…"
@@ -3871,6 +3897,18 @@ msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 з %3 до %4 %5"
 
+#~ msgid "Pass imported."
+#~ msgstr "Безкоштовний квиток імпортовано."
+
+#~ msgid "Calendar Import"
+#~ msgstr "Імпорт календаря"
+
+#~ msgid "Import selected events"
+#~ msgstr "Імпортувати вибрані події"
+
+#~ msgid "Ticket imported"
+#~ msgstr "Квиток імпортовано"
+
 #~ msgid "Import from Clipboard"
 #~ msgstr "Імпорт з буфера обміну"
 
@@ -3997,9 +4035,6 @@ msgstr "%1%2 з %3 до %4 %5"
 
 #~ msgid "Passes && Programs"
 #~ msgstr "Безкоштовні квитки і програми"
-
-#~ msgid "Import"
-#~ msgstr "Імпортувати"
 
 #~ msgctxt "currency conversion rate"
 #~ msgid "1 %1 = %2 %3"

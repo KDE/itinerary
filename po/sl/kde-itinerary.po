@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-25 00:39+0000\n"
+"POT-Creation-Date: 2024-05-29 00:39+0000\n"
 "PO-Revision-Date: 2024-05-08 07:20+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -28,7 +28,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "matjaz.jeran@amis.net"
 
-#: app/AboutPage.qml:18 app/main.qml:236
+#: app/AboutPage.qml:18 app/main.qml:238
 #, kde-format
 msgid "About"
 msgstr "O programu"
@@ -118,7 +118,7 @@ msgstr "Uredi"
 msgid "Add to calendar..."
 msgstr "Dodaj v koledar..."
 
-#: app/ActionsCard.qml:73 app/main.qml:224 app/TripGroupDelegate.qml:162
+#: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:162
 #, kde-format
 msgid "Export..."
 msgstr "Izvozi..."
@@ -274,19 +274,7 @@ msgstr ""
 msgid "Replace"
 msgstr "Zamenjaj"
 
-#: app/applicationcontroller.cpp:342 app/applicationcontroller.cpp:747
-#: app/applicationcontroller.cpp:762
-#, kde-format
-msgid "Import failed: %1"
-msgstr "Uvoz ni uspel: %1"
-
-#: app/applicationcontroller.cpp:347
-#, kde-format
-msgid "Import failed: File too large."
-msgstr "Uvoz ni uspel: Datoteka prevelika."
-
-#: app/applicationcontroller.cpp:429 app/applicationcontroller.cpp:824
-#: app/applicationcontroller.cpp:834
+#: app/applicationcontroller.cpp:263 app/applicationcontroller.cpp:507
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
@@ -295,12 +283,7 @@ msgstr[1] "%1 uvoženi rezervaciji."
 msgstr[2] "%1 uvožene rezervacije."
 msgstr[3] "%1 uvoženih rezervacij."
 
-#: app/applicationcontroller.cpp:436
-#, kde-format
-msgid "Health certificate imported."
-msgstr "Zdravstvena potrdila uvožena."
-
-#: app/applicationcontroller.cpp:451
+#: app/applicationcontroller.cpp:266
 #, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
@@ -309,40 +292,40 @@ msgstr[1] "%1 vozovnici uvoženi."
 msgstr[2] "%1 vozovnice uvožene."
 msgstr[3] "%1 vozovnic uvoženih."
 
-#: app/applicationcontroller.cpp:454
-#, kde-format
-msgid "Pass imported."
-msgstr "Vozovnica uvožena."
+#: app/applicationcontroller.cpp:270
+#, fuzzy, kde-format
+#| msgid "Health certificate imported."
+msgid "One health certificate imported."
+msgid_plural "%1 health certificates imported."
+msgstr[0] "Zdravstvena potrdila uvožena."
+msgstr[1] "Zdravstvena potrdila uvožena."
+msgstr[2] "Zdravstvena potrdila uvožena."
+msgstr[3] "Zdravstvena potrdila uvožena."
 
-#: app/applicationcontroller.cpp:491
-#, kde-format
-msgid "Nothing imported."
-msgstr "Ničesar uvoženega."
-
-#: app/applicationcontroller.cpp:553 app/applicationcontroller.cpp:593
-#: app/applicationcontroller.cpp:611 app/applicationcontroller.cpp:655
-#: app/applicationcontroller.cpp:694 app/applicationcontroller.cpp:712
+#: app/applicationcontroller.cpp:284 app/applicationcontroller.cpp:324
+#: app/applicationcontroller.cpp:342 app/applicationcontroller.cpp:386
+#: app/applicationcontroller.cpp:425 app/applicationcontroller.cpp:443
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Izvoz ni uspel: %1"
 
-#: app/applicationcontroller.cpp:567 app/applicationcontroller.cpp:576
-#: app/applicationcontroller.cpp:668 app/applicationcontroller.cpp:677
+#: app/applicationcontroller.cpp:298 app/applicationcontroller.cpp:307
+#: app/applicationcontroller.cpp:399 app/applicationcontroller.cpp:408
 #, kde-format
 msgid "Export completed."
 msgstr "Izvoz dokončan."
 
-#: app/applicationcontroller.cpp:603
+#: app/applicationcontroller.cpp:334
 #, kde-format
 msgid "Trip sent."
 msgstr "Izlet poslan."
 
-#: app/applicationcontroller.cpp:704
+#: app/applicationcontroller.cpp:435
 #, kde-format
 msgid "Reservation sent."
 msgstr "Rezervacija poslana."
 
-#: app/applicationcontroller.cpp:787
+#: app/applicationcontroller.cpp:491
 #, kde-format
 msgid "Import completed."
 msgstr "Uvoz dokončan."
@@ -648,21 +631,6 @@ msgstr "Podrobnosti potovanja"
 #, kde-format
 msgid "Transfer to %1"
 msgstr "Transfer do %1"
-
-#: app/CalendarImportPage.qml:19
-#, kde-format
-msgid "Calendar Import"
-msgstr "Uvoz koledarja"
-
-#: app/CalendarImportPage.qml:57
-#, kde-format
-msgid "No importable events found in this calendar."
-msgstr "Ni najdenih dogodkov za uvoz v tem koledarju."
-
-#: app/CalendarImportPage.qml:71
-#, kde-format
-msgid "Import selected events"
-msgstr "Uvoz izbranih dogodkov"
 
 #: app/CalendarSelectionSheet.qml:14
 #, kde-format
@@ -1341,7 +1309,7 @@ msgstr "Zbriši vozovnico"
 msgid "Do you really want to delete this pass?"
 msgstr "Ali res želite izbrisati to vozovnico?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:325 app/main.qml:21 app/main.qml:164
+#: app/gpxexport.cpp:33 app/main.cpp:331 app/main.qml:21 app/main.qml:166
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -1361,7 +1329,7 @@ msgstr "Vlak %1 iz %2 v %3"
 msgid "Bus %1 from %2 to %3"
 msgstr "Avtobus %1 iz %2 v %3"
 
-#: app/gpxexport.cpp:58
+#: app/gpxexport.cpp:58 app/importcontroller.cpp:593
 #, kde-format
 msgid "Ferry from %1 to %2"
 msgstr "Trajekt iz %1 do %2"
@@ -1456,7 +1424,7 @@ msgstr "Test %1 (%2)"
 msgid "Recovery (%1)"
 msgstr "Ozdravljenje (%1)"
 
-#: app/HealthCertificatePage.qml:16 app/main.qml:198
+#: app/HealthCertificatePage.qml:16 app/main.qml:200
 #, kde-format
 msgid "Health Certificates"
 msgstr "Zdravstvena potrdila"
@@ -1713,6 +1681,69 @@ msgstr "Čas prijave"
 #, kde-format
 msgid "Check-out time"
 msgstr "Čas odjave"
+
+#: app/importcontroller.cpp:144 app/importcontroller.cpp:461
+#, kde-format
+msgid "Import failed: %1"
+msgstr "Uvoz ni uspel: %1"
+
+#: app/importcontroller.cpp:149
+#, kde-format
+msgid "Import failed: File too large."
+msgstr "Uvoz ni uspel: Datoteka prevelika."
+
+#: app/importcontroller.cpp:208 app/importcontroller.cpp:305
+#, fuzzy, kde-format
+#| msgid "Nothing imported."
+msgid "Found nothing to import."
+msgstr "Ničesar uvoženega."
+
+#: app/importcontroller.cpp:433
+#, kde-format
+msgid "No importable events found in this calendar."
+msgstr "Ni najdenih dogodkov za uvoz v tem koledarju."
+
+#: app/importcontroller.cpp:584
+#, fuzzy, kde-format
+#| msgid "Flight %1 from %2 to %3"
+msgid "Flight from %1 to %2"
+msgstr "Let %1 iz %2 v %3"
+
+#: app/importcontroller.cpp:587
+#, fuzzy, kde-format
+#| msgid "Train %1 from %2 to %3"
+msgid "Train from %1 to %2"
+msgstr "Vlak %1 iz %2 v %3"
+
+#: app/importcontroller.cpp:590
+#, fuzzy, kde-format
+#| msgid "Bus %1 from %2 to %3"
+msgid "Bus from %1 to %2"
+msgstr "Avtobus %1 iz %2 v %3"
+
+#: app/importcontroller.cpp:618
+#, kde-format
+msgid "Backup"
+msgstr ""
+
+#: app/ImportPage.qml:18
+#, fuzzy, kde-format
+#| msgid "Import"
+msgctxt "@title"
+msgid "Import"
+msgstr "Uvozi"
+
+#: app/ImportPage.qml:21
+#, fuzzy, kde-format
+#| msgid "Files or URLs to import."
+msgid "Selected items to import."
+msgstr "Datoteke ali URL za uvoz."
+
+#: app/ImportPage.qml:67
+#, fuzzy, kde-format
+#| msgid "Import Reservation"
+msgid "Import selection"
+msgstr "Uvozi rezervacijo"
 
 #: app/IndoorMapAmenitySheet.qml:18
 #, kde-format
@@ -2121,7 +2152,7 @@ msgstr "Let iz %1 v %2:"
 msgid "Itinerary change"
 msgstr "Sprememba itinerarja"
 
-#: app/LiveStatusPage.qml:19 app/main.qml:209
+#: app/LiveStatusPage.qml:19 app/main.qml:211
 #, kde-format
 msgid "Live Status"
 msgstr "Stanje v živo"
@@ -2322,22 +2353,22 @@ msgstr "Tip M"
 msgid "Type N"
 msgstr "Tip N"
 
-#: app/main.cpp:333
+#: app/main.cpp:339
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Digitalni potovalni pomočnik"
 
-#: app/main.cpp:334
+#: app/main.cpp:340
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "Copyright © Skupnost KDE"
 
-#: app/main.cpp:341
+#: app/main.cpp:347
 #, kde-format
 msgid "Open Itinerary on the given page"
 msgstr "Odpri itinerar na dani strani"
 
-#: app/main.cpp:346
+#: app/main.cpp:352
 #, kde-format
 msgid "Files or URLs to import."
 msgstr "Datoteke ali URL za uvoz."
@@ -2352,22 +2383,22 @@ msgstr "Odpri datoteko..."
 msgid "Paste"
 msgstr "Prilepi"
 
-#: app/main.qml:78
+#: app/main.qml:76
 #, kde-format
 msgid "Scan Barcode..."
 msgstr "Branje črtne kode..."
 
-#: app/main.qml:86
+#: app/main.qml:84
 #, kde-format
 msgid "Add from Calendar..."
 msgstr "Dodaj iz koledarja..."
 
-#: app/main.qml:100
+#: app/main.qml:98
 #, kde-format
 msgid "Deutsche Bahn Online Ticket..."
 msgstr "Deutsche Bahn spletna vozovnica..."
 
-#: app/main.qml:109
+#: app/main.qml:108
 #, kde-format
 msgid "SNCF Online Ticket..."
 msgstr "SNCF spletna vozovnica..."
@@ -2392,47 +2423,47 @@ msgstr "Datoteke PDF (*.pdf)"
 msgid "iCal events (*.ics)"
 msgstr "iCal dogodki (*.ics)"
 
-#: app/main.qml:128 app/main.qml:137
+#: app/main.qml:128 app/main.qml:140
 #, kde-format
 msgid "KDE Itinerary files (*.itinerary)"
 msgstr "Datoteke itinerarja KDE (* .itinerary)"
 
-#: app/main.qml:135
+#: app/main.qml:138
 #, kde-format
 msgid "Export Itinerary Data"
 msgstr "Izvoz podatkov itinerarja"
 
-#: app/main.qml:169 app/PassPage.qml:137
+#: app/main.qml:171 app/PassPage.qml:137
 #, kde-format
 msgid "Import..."
 msgstr "Uvozi..."
 
-#: app/main.qml:174
+#: app/main.qml:176
 #, kde-format
 msgid "Check for Updates"
 msgstr "Preveri za posodobitvami"
 
-#: app/main.qml:183
+#: app/main.qml:185
 #, kde-format
 msgid "Download Maps"
 msgstr "Prenesi zemljevide"
 
-#: app/main.qml:191 app/StatisticsPage.qml:15
+#: app/main.qml:193 app/StatisticsPage.qml:15
 #, kde-format
 msgid "Statistics"
 msgstr "Statistika"
 
-#: app/main.qml:217 app/WelcomePage.qml:41
+#: app/main.qml:219 app/WelcomePage.qml:41
 #, kde-format
 msgid "Settings..."
 msgstr "Nastavitve..."
 
-#: app/main.qml:229 app/WelcomePage.qml:16
+#: app/main.qml:231 app/WelcomePage.qml:16
 #, kde-format
 msgid "Help"
 msgstr "Pomoč"
 
-#: app/main.qml:304
+#: app/main.qml:320
 #, kde-format
 msgid "Map download finished."
 msgstr "Prenos zemljevidov končan."
@@ -2600,22 +2631,17 @@ msgstr "Referenca rezervacije"
 msgid "Import Online Ticket"
 msgstr "Uvozi spletno vozovnico"
 
-#: app/OnlineImportPage.qml:29
-#, kde-format
-msgid "Ticket imported"
-msgstr "Vozovnica uvožena"
-
-#: app/OnlineImportPage.qml:33
+#: app/OnlineImportPage.qml:30
 #, kde-format
 msgid "No ticket found"
 msgstr "Ni najdene vozovnice"
 
-#: app/OnlineImportPage.qml:38
+#: app/OnlineImportPage.qml:35
 #, kde-format
 msgid "Online Ticket"
 msgstr "Spletna vozovnica"
 
-#: app/OnlineImportPage.qml:57
+#: app/OnlineImportPage.qml:54
 #, kde-format
 msgid "Search..."
 msgstr "Išči..."
@@ -3854,6 +3880,18 @@ msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 od %3 do %4 na %5"
 
+#~ msgid "Pass imported."
+#~ msgstr "Vozovnica uvožena."
+
+#~ msgid "Calendar Import"
+#~ msgstr "Uvoz koledarja"
+
+#~ msgid "Import selected events"
+#~ msgstr "Uvoz izbranih dogodkov"
+
+#~ msgid "Ticket imported"
+#~ msgstr "Vozovnica uvožena"
+
 #~ msgid "Import from Clipboard"
 #~ msgstr "Uvoz iz odložišča"
 
@@ -3980,9 +4018,6 @@ msgstr "%1%2 od %3 do %4 na %5"
 
 #~ msgid "Passes && Programs"
 #~ msgstr "Vozovnice && programi"
-
-#~ msgid "Import"
-#~ msgstr "Uvozi"
 
 #~ msgctxt "currency conversion rate"
 #~ msgid "1 %1 = %2 %3"
