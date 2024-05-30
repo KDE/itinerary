@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-29 00:39+0000\n"
-"PO-Revision-Date: 2024-05-08 10:38+0200\n"
+"PO-Revision-Date: 2024-05-29 10:36+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -291,12 +291,11 @@ msgstr[0] "Eén pas geïmporteerd."
 msgstr[1] "%1 passen geïmporteerd."
 
 #: app/applicationcontroller.cpp:270
-#, fuzzy, kde-format
-#| msgid "Health certificate imported."
+#, kde-format
 msgid "One health certificate imported."
 msgid_plural "%1 health certificates imported."
-msgstr[0] "Gezondheidscertificaten geïmporteerd."
-msgstr[1] "Gezondheidscertificaten geïmporteerd."
+msgstr[0] "Eén gezondheidscertificaten geïmporteerd."
+msgstr[1] "%1 gezondheidscertificaten geïmporteerd."
 
 #: app/applicationcontroller.cpp:284 app/applicationcontroller.cpp:324
 #: app/applicationcontroller.cpp:342 app/applicationcontroller.cpp:386
@@ -1685,10 +1684,9 @@ msgid "Import failed: File too large."
 msgstr "Importeren is mislukt: bestand is te groot."
 
 #: app/importcontroller.cpp:208 app/importcontroller.cpp:305
-#, fuzzy, kde-format
-#| msgid "Nothing imported."
+#, kde-format
 msgid "Found nothing to import."
-msgstr "Niets geïmporteerd."
+msgstr "Niets gevonden om te importeren."
 
 #: app/importcontroller.cpp:433
 #, kde-format
@@ -1696,46 +1694,40 @@ msgid "No importable events found in this calendar."
 msgstr "Geen te importeren gebeurtenissen gevonden in deze agenda."
 
 #: app/importcontroller.cpp:584
-#, fuzzy, kde-format
-#| msgid "Flight %1 from %2 to %3"
+#, kde-format
 msgid "Flight from %1 to %2"
-msgstr "Vlucht %1 van %2 naar %3"
+msgstr "Vlucht van %1 naar %2"
 
 #: app/importcontroller.cpp:587
-#, fuzzy, kde-format
-#| msgid "Train %1 from %2 to %3"
+#, kde-format
 msgid "Train from %1 to %2"
-msgstr "Trein %1 van %2 naar %3"
+msgstr "Trein van %1 naar %2"
 
 #: app/importcontroller.cpp:590
-#, fuzzy, kde-format
-#| msgid "Bus %1 from %2 to %3"
+#, kde-format
 msgid "Bus from %1 to %2"
-msgstr "Bus %1 van %2 naar %3"
+msgstr "Bus van %1 naar %2"
 
 #: app/importcontroller.cpp:618
 #, kde-format
 msgid "Backup"
-msgstr ""
+msgstr "Reservekopie"
 
 #: app/ImportPage.qml:18
-#, fuzzy, kde-format
-#| msgid "Import"
+#, kde-format
 msgctxt "@title"
 msgid "Import"
 msgstr "Importeren"
 
 #: app/ImportPage.qml:21
-#, fuzzy, kde-format
-#| msgid "Files or URLs to import."
+#, kde-format
 msgid "Selected items to import."
-msgstr "Te importeren bestanden of URL's."
+msgstr "Geselecteerde items om te importeren."
 
 #: app/ImportPage.qml:67
-#, fuzzy, kde-format
-#| msgid "Import Reservation"
+#, kde-format
 msgid "Import selection"
-msgstr "Reservering importeren"
+msgstr "Selectie importeren"
 
 #: app/IndoorMapAmenitySheet.qml:18
 #, kde-format

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-29 00:39+0000\n"
-"PO-Revision-Date: 2024-05-08 07:20+0200\n"
+"PO-Revision-Date: 2024-05-29 07:22+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.4.4\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -293,14 +293,13 @@ msgstr[2] "%1 vozovnice uvožene."
 msgstr[3] "%1 vozovnic uvoženih."
 
 #: app/applicationcontroller.cpp:270
-#, fuzzy, kde-format
-#| msgid "Health certificate imported."
+#, kde-format
 msgid "One health certificate imported."
 msgid_plural "%1 health certificates imported."
-msgstr[0] "Zdravstvena potrdila uvožena."
-msgstr[1] "Zdravstvena potrdila uvožena."
-msgstr[2] "Zdravstvena potrdila uvožena."
-msgstr[3] "Zdravstvena potrdila uvožena."
+msgstr[0] "%1 zdravstvenih potrdil uvoženo."
+msgstr[1] "%1 zdravstveno potrdilo uvoženo."
+msgstr[2] "%1 zdravstveni potrdili uvoženi."
+msgstr[3] "%1 zdravstvenih potrdil uvoženo."
 
 #: app/applicationcontroller.cpp:284 app/applicationcontroller.cpp:324
 #: app/applicationcontroller.cpp:342 app/applicationcontroller.cpp:386
@@ -1693,10 +1692,9 @@ msgid "Import failed: File too large."
 msgstr "Uvoz ni uspel: Datoteka prevelika."
 
 #: app/importcontroller.cpp:208 app/importcontroller.cpp:305
-#, fuzzy, kde-format
-#| msgid "Nothing imported."
+#, kde-format
 msgid "Found nothing to import."
-msgstr "Ničesar uvoženega."
+msgstr "Ničesar ni najdenega za uvoz."
 
 #: app/importcontroller.cpp:433
 #, kde-format
@@ -1704,46 +1702,40 @@ msgid "No importable events found in this calendar."
 msgstr "Ni najdenih dogodkov za uvoz v tem koledarju."
 
 #: app/importcontroller.cpp:584
-#, fuzzy, kde-format
-#| msgid "Flight %1 from %2 to %3"
+#, kde-format
 msgid "Flight from %1 to %2"
-msgstr "Let %1 iz %2 v %3"
+msgstr "Let %1 iz %2"
 
 #: app/importcontroller.cpp:587
-#, fuzzy, kde-format
-#| msgid "Train %1 from %2 to %3"
+#, kde-format
 msgid "Train from %1 to %2"
-msgstr "Vlak %1 iz %2 v %3"
+msgstr "Vlak %1 iz %2"
 
 #: app/importcontroller.cpp:590
-#, fuzzy, kde-format
-#| msgid "Bus %1 from %2 to %3"
+#, kde-format
 msgid "Bus from %1 to %2"
-msgstr "Avtobus %1 iz %2 v %3"
+msgstr "Avtobus %1 iz %2"
 
 #: app/importcontroller.cpp:618
 #, kde-format
 msgid "Backup"
-msgstr ""
+msgstr "Varovalna kopija"
 
 #: app/ImportPage.qml:18
-#, fuzzy, kde-format
-#| msgid "Import"
+#, kde-format
 msgctxt "@title"
 msgid "Import"
 msgstr "Uvozi"
 
 #: app/ImportPage.qml:21
-#, fuzzy, kde-format
-#| msgid "Files or URLs to import."
+#, kde-format
 msgid "Selected items to import."
-msgstr "Datoteke ali URL za uvoz."
+msgstr "Izbrane postavke za uvoz."
 
 #: app/ImportPage.qml:67
-#, fuzzy, kde-format
-#| msgid "Import Reservation"
+#, kde-format
 msgid "Import selection"
-msgstr "Uvozi rezervacijo"
+msgstr "Uvozi izbor"
 
 #: app/IndoorMapAmenitySheet.qml:18
 #, kde-format
