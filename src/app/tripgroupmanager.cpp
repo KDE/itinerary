@@ -274,6 +274,7 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
 
     bool resNumSearchDone = false;
     bool connectedSearchDone = false;
+    bool reachedStartAgain = false;
 
     // scan by location change
     for (auto it = beginIt + 1; it != m_reservations.end(); ++it) {
@@ -325,6 +326,7 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
             if (LocationUtil::isSameLocation(beginDeparture, curArrival, LocationUtil::CityLevel)) {
                 qDebug() << "  aborting connectivity search, arrived at the start again" << LocationUtil::name(curArrival);
                 connectedSearchDone = true;
+                reachedStartAgain = true;
             }
         }
 
@@ -346,8 +348,16 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
                         resNumSearchDone = true;
                     }
                 } else {
+                    if (reachedStartAgain) {
+                        qDebug() << "    continuing due to matching reservation number" << resNum;
+                    }
                     resNumIt = it;
                 }
+            } else if (reachedStartAgain) {
+                // when the next entry has no reservation number and we already found a loop with connectivity search
+                // consider that good enough and stop here
+                qDebug() << "   aborting reservation number search due to no reservation number on the next element";
+                resNumSearchDone = true;
             }
         }
     }
