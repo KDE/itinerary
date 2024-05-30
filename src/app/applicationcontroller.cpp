@@ -149,7 +149,7 @@ void ApplicationController::setPassManager(PassManager *passMgr)
     m_passMgr = passMgr;
 }
 
-void ApplicationController::importFromIntent(const KAndroidExtras::Intent &intent)
+void ApplicationController::handleIntent(const KAndroidExtras::Intent &intent)
 {
 #ifdef Q_OS_ANDROID
     using namespace KAndroidExtras;
@@ -158,7 +158,7 @@ void ApplicationController::importFromIntent(const KAndroidExtras::Intent &inten
     // opening a URL, can be something to import or a shortcut path
     if (action == Intent::ACTION_VIEW) {
         const QUrl url = intent.getData();
-        if (url.scheme() == QLatin1StringView("page")) {
+        if (url.scheme() == "page"_L1) {
             qCDebug(Log) << url;
             requestOpenPage(url.path().mid(1));
         }

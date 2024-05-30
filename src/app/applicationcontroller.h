@@ -60,8 +60,10 @@ public:
     void setTripGroupManager(TripGroupManager *tripGroupMgr);
     void setPassManager(PassManager *passMgr);
 
+    // page navigation intents
+    void handleIntent(const KAndroidExtras::Intent &intent);
+
     // data import
-    void importFromIntent(const KAndroidExtras::Intent &intent);
     Q_INVOKABLE void commitImport(ImportController *importController);
 
     static ApplicationController* instance();
