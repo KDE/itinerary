@@ -43,6 +43,8 @@ public:
     bool load(const QString &path);
     void store(const QString &path) const;
 
+    [[nodiscard]] static QJsonObject toJson(const TripGroup &group);
+
 private:
     TripGroupManager *m_mgr = nullptr;
     QString m_name;

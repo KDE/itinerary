@@ -46,6 +46,16 @@ QList<QString> TripGroup::elements() const { return m_elements; }
 
 void TripGroup::setElements(const QList<QString> &elems) { m_elements = elems; }
 
+QJsonObject TripGroup::toJson(const TripGroup &group)
+{
+    QJsonObject obj;
+    obj.insert("name"_L1, group.m_name);
+    QJsonArray elems;
+    std::copy(group.m_elements.begin(), group.m_elements.end(), std::back_inserter(elems));
+    obj.insert("elements"_L1, elems);
+    return obj;
+}
+
 bool TripGroup::load(const QString &path)
 {
     QFile f(path);
@@ -74,12 +84,7 @@ void TripGroup::store(const QString &path) const
         return;
     }
 
-    QJsonObject obj;
-    obj.insert("name"_L1, m_name);
-    QJsonArray elems;
-    std::copy(m_elements.begin(), m_elements.end(), std::back_inserter(elems));
-    obj.insert("elements"_L1, elems);
-    f.write(JsonIO::write(obj));
+    f.write(JsonIO::write(TripGroup::toJson(*this)));
 }
 
 QString TripGroup::slugName() const
