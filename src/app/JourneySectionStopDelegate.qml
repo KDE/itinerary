@@ -71,7 +71,7 @@ Item {
             Layout.alignment: isSingleTime ? Qt.AlignVCenter : Qt.AlignBottom
             text: (stop.arrivalDelay >= 0 ? "+" : "") + stop.arrivalDelay
             color: stop.arrivalDelay > 1 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
-            visible: stop.hasExpectedArrivalTime && !isSameTime && stop.disruptionEffect !== Disruption.NoService
+            visible: arrivalTime.visible && stop.hasExpectedArrivalTime && !isSameTime && stop.disruptionEffect !== Disruption.NoService
         }
 
         QQC2.Label {
