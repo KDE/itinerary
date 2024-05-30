@@ -7,11 +7,19 @@
 
 #include <KItinerary/BoatTrip>
 #include <KItinerary/Event>
+#include <KItinerary/Flight>
 #include <KItinerary/Person>
 #include <KItinerary/Place>
 #include <KItinerary/ProgramMembership>
 #include <KItinerary/Reservation>
 #include <KItinerary/Ticket>
+
+QVariant Factory::makeFlightReservation()
+{
+    KItinerary::FlightReservation r;
+    r.setReservationFor(KItinerary::Flight());
+    return r;
+}
 
 QVariant Factory::makeBoatReservation()
 {

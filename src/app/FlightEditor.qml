@@ -16,7 +16,10 @@ EditorPage {
     id: root
     title: i18n("Edit Flight")
 
-    isValidInput: departureTime.hasValue && (!arrivalTime.hasValue || departureTime.value < arrivalTime.value)
+    isValidInput: departureTime.hasValue
+        && (!arrivalTime.hasValue || departureTime.value < arrivalTime.value)
+        && (root.reservation.reservationFor.departureAirport.iataCode !== "" || departureAirport.text !== "")
+        && (root.reservation.reservationFor.arrivalAirport.iataCode !== "" || arrivalAirport.text !== "")
 
     function apply(reservation) {
         var flight = reservation.reservationFor;
@@ -37,6 +40,14 @@ EditorPage {
         flight.arrivalTerminal = arrivalTerminal.text;
         if (arrivalTime.isModified)
             flight = Util.setDateTimePreserveTimezone(flight, "arrivalTime", arrivalTime.value);
+
+        const flightNum = flightNumber.text.match(/^\s*([A-Z0-9]{2})\s*(\d{1,4})\s*$/);
+        if (flightNum) {
+            let airline = flight.airline;
+            airline.iataCode = flightNum[1];
+            flight.airline = airline;
+            flight.flightNumber = flightNum[2];
+        }
 
         var newRes = reservation;
         newRes.airplaneSeat = seat.text;
@@ -80,6 +91,8 @@ EditorPage {
                 id: departureAirportName
                 label: i18n("Airport")
                 text: reservation.reservationFor.departureAirport.name
+                status: Kirigami.MessageType.Error
+                statusMessage: reservation.reservationFor.departureAirport.iataCode === "" && departureAirportName.text === "" ? i18n("Departure airport has to be specified.") : ""
             }
             FormCard.FormDelegateSeparator {}
             FormCard.FormTextFieldDelegate {
@@ -132,6 +145,8 @@ EditorPage {
                 id: arrivalAirportName
                 label: i18n("Airport")
                 text: reservation.reservationFor.arrivalAirport.name
+                status: Kirigami.MessageType.Error
+                statusMessage: reservation.reservationFor.arrivalAirport.iataCode === "" && arrivalAirportName.text === "" ? i18n("Arrival airport has to be specified.") : ""
             }
             FormCard.FormDelegateSeparator {}
             FormCard.FormTextFieldDelegate {
@@ -156,6 +171,23 @@ EditorPage {
                         return i18nc("flight arrival", "Arrival time has to be after the departure time.")
                     return '';
                 }
+            }
+        }
+
+        FormCard.FormHeader {
+            title: i18n("Flight")
+            visible: flightCard.visible
+        }
+
+        FormCard.FormCard {
+            id: flightCard
+            visible: root.reservation.reservedTicket.ticketToken === ""
+            FormCard.FormTextFieldDelegate {
+                id: flightNumber
+                label: i18n("Flight number")
+                text: root.reservation.reservationFor.airline.iataCode + " " + root.reservation.reservationFor.flightNumber
+                status: Kirigami.MessageType.Warning
+                statusMessage: flightNumber.text.match(/^\s*[A-Z0-9]{2}\s*\d{1,4}\s*$/) ? "" : i18n("Invalid flight number.")
             }
         }
 

@@ -15,14 +15,15 @@ class Factory
 {
     Q_GADGET
 public:
-    Q_INVOKABLE static QVariant makeBoatReservation();
-    Q_INVOKABLE static QVariant makeEventReservation();
-    Q_INVOKABLE static QVariant makeFoodEstablishmentReservation();
-    Q_INVOKABLE static QVariant makeLodgingReservation();
-    Q_INVOKABLE static QVariant makePerson();
-    Q_INVOKABLE static QVariant makePlace();
-    Q_INVOKABLE static QVariant makeProgramMembership();
-    Q_INVOKABLE static QVariant makeTicket();
+    Q_INVOKABLE [[nodiscard]] static QVariant makeFlightReservation();
+    Q_INVOKABLE [[nodiscard]] static QVariant makeBoatReservation();
+    Q_INVOKABLE [[nodiscard]] static QVariant makeEventReservation();
+    Q_INVOKABLE [[nodiscard]] static QVariant makeFoodEstablishmentReservation();
+    Q_INVOKABLE [[nodiscard]] static QVariant makeLodgingReservation();
+    Q_INVOKABLE [[nodiscard]] static QVariant makePerson();
+    Q_INVOKABLE [[nodiscard]] static QVariant makePlace();
+    Q_INVOKABLE [[nodiscard]] static QVariant makeProgramMembership();
+    Q_INVOKABLE [[nodiscard]] static QVariant makeTicket();
 };
 
 #endif // FACTORY_H

@@ -94,6 +94,18 @@ Kirigami.ScrollablePage {
             }
         },
         Kirigami.Action {
+            text: i18n("Add flight...")
+            icon.name: LineMode.iconName(Line.Air)
+            onTriggered: {
+                const dt = dateTimeAtIndex(currentIndex());
+                let res =  Factory.makeFlightReservation();
+                let trip = res.reservationFor;
+                trip.departureTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), dt.getHours() == 0 ? 8 : dt.getHours() + 1, 0);
+                res.reservationFor = trip;
+                applicationWindow().pageStack.push(flightEditorPage, {reservation: res});
+            }
+        },
+        Kirigami.Action {
             text: i18n("Add ferry trip...")
             icon.name: LineMode.iconName(Line.Ferry)
             onTriggered: {
@@ -296,7 +308,7 @@ Kirigami.ScrollablePage {
 
     Component {
         id: flightDetailsPage
-        FlightPage {}
+        FlightPage { editor: flightEditorPage }
     }
     Component {
         id: trainDetailsPage
@@ -335,6 +347,10 @@ Kirigami.ScrollablePage {
         WeatherForecastPage {}
     }
 
+    Component {
+        id: flightEditorPage
+        FlightEditor {}
+    }
     Component {
         id: boatEditorPage
         BoatEditor {}
