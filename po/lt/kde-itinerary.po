@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-29 00:39+0000\n"
+"POT-Creation-Date: 2024-05-31 00:39+0000\n"
 "PO-Revision-Date: 2019-03-18 03:34+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: lt\n"
@@ -125,7 +125,7 @@ msgstr ""
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
 #: app/HealthCertificatePage.qml:46 app/HealthCertificatePage.qml:60
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:168
-#: app/TicketPage.qml:47 app/TicketPage.qml:171 app/TimelinePage.qml:209
+#: app/TicketPage.qml:47 app/TicketPage.qml:171 app/TimelinePage.qml:221
 #, kde-format
 msgid "Delete"
 msgstr ""
@@ -140,17 +140,17 @@ msgstr ""
 msgid "Do you really want to delete this event?"
 msgstr ""
 
-#: app/ActionsCard.qml:137 app/TimelinePage.qml:223
+#: app/ActionsCard.qml:137 app/TimelinePage.qml:235
 #, kde-format
 msgid "Export"
 msgstr ""
 
-#: app/ActionsCard.qml:140 app/TimelinePage.qml:226
+#: app/ActionsCard.qml:140 app/TimelinePage.qml:238
 #, kde-format
 msgid "As Itinerary file..."
 msgstr ""
 
-#: app/ActionsCard.qml:151 app/TimelinePage.qml:250
+#: app/ActionsCard.qml:151 app/TimelinePage.qml:262
 #, kde-format
 msgid "Send to %1"
 msgstr ""
@@ -160,7 +160,7 @@ msgstr ""
 msgid "Export Reservation"
 msgstr ""
 
-#: app/ActionsCard.qml:167 app/TimelinePage.qml:266
+#: app/ActionsCard.qml:167 app/TimelinePage.qml:278
 #, kde-format
 msgid "Itinerary file (*.itinerary)"
 msgstr ""
@@ -572,8 +572,8 @@ msgid "Alight earlier"
 msgstr ""
 
 #: app/BusEditor.qml:134 app/BusEditor.qml:140 app/BusPage.qml:182
-#: app/EventPage.qml:101 app/FlightEditor.qml:163 app/FlightEditor.qml:170
-#: app/FlightPage.qml:95 app/TrainEditor.qml:146 app/TrainEditor.qml:158
+#: app/EventPage.qml:101 app/FlightEditor.qml:195 app/FlightEditor.qml:202
+#: app/FlightPage.qml:94 app/TrainEditor.qml:146 app/TrainEditor.qml:158
 #: app/TrainPage.qml:271
 #, kde-format
 msgid "Seat"
@@ -952,7 +952,7 @@ msgid "Export Favorite Locations"
 msgstr ""
 
 #: app/FavoriteLocationPage.qml:38 app/FavoriteLocationPage.qml:46
-#: app/TimelinePage.qml:284
+#: app/TimelinePage.qml:296
 #, kde-format
 msgid "GPX Files (*.gpx)"
 msgstr ""
@@ -1031,137 +1031,157 @@ msgstr ""
 msgid "Edit Flight"
 msgstr ""
 
-#: app/FlightEditor.qml:75
+#: app/FlightEditor.qml:86
 #, kde-format
 msgctxt "flight departure"
 msgid "Departure - %1"
 msgstr ""
 
-#: app/FlightEditor.qml:81 app/FlightEditor.qml:133 app/FlightPage.qml:132
-#: app/FlightPage.qml:178
+#: app/FlightEditor.qml:92 app/FlightEditor.qml:146 app/FlightPage.qml:131
+#: app/FlightPage.qml:177
 #, kde-format
 msgid "Airport"
 msgstr ""
 
-#: app/FlightEditor.qml:88
+#: app/FlightEditor.qml:95
+#, kde-format
+msgid "Departure airport has to be specified."
+msgstr ""
+
+#: app/FlightEditor.qml:101
 #, kde-format
 msgctxt "flight departure terminal"
 msgid "Terminal"
 msgstr ""
 
-#: app/FlightEditor.qml:93
+#: app/FlightEditor.qml:106
 #, kde-format
 msgctxt "flight departure time"
 msgid "Time"
 msgstr ""
 
-#: app/FlightEditor.qml:98
+#: app/FlightEditor.qml:111
 #, kde-format
 msgctxt "flight departure"
 msgid "Departure time has to be set."
 msgstr ""
 
-#: app/FlightEditor.qml:104
+#: app/FlightEditor.qml:117
 #, kde-format
 msgctxt "flight departure gate"
 msgid "Gate"
 msgstr ""
 
-#: app/FlightEditor.qml:109 app/FlightPage.qml:78
+#: app/FlightEditor.qml:122 app/FlightPage.qml:77
 #, kde-format
 msgid "Boarding time"
 msgstr ""
 
-#: app/FlightEditor.qml:120
+#: app/FlightEditor.qml:133
 #, kde-format
 msgctxt "flight departure"
 msgid "Boarding time has to be before the departure time."
 msgstr ""
 
-#: app/FlightEditor.qml:127
+#: app/FlightEditor.qml:140
 #, kde-format
 msgctxt "flight arrival"
 msgid "Arrival - %1"
 msgstr ""
 
-#: app/FlightEditor.qml:140
+#: app/FlightEditor.qml:149
+#, kde-format
+msgid "Arrival airport has to be specified."
+msgstr ""
+
+#: app/FlightEditor.qml:155
 #, kde-format
 msgctxt "flight arrival terminal"
 msgid "Terminal"
 msgstr ""
 
-#: app/FlightEditor.qml:145
+#: app/FlightEditor.qml:160
 #, kde-format
 msgctxt "flight arrival time"
 msgid "Time"
 msgstr ""
 
-#: app/FlightEditor.qml:156
+#: app/FlightEditor.qml:171
 #, kde-format
 msgctxt "flight arrival"
 msgid "Arrival time has to be after the departure time."
 msgstr ""
 
-#: app/FlightPage.qml:15 app/StatisticsPage.qml:92
+#: app/FlightEditor.qml:178 app/FlightPage.qml:15 app/StatisticsPage.qml:92
 #, kde-format
 msgid "Flight"
 msgstr ""
 
-#: app/FlightPage.qml:60
+#: app/FlightEditor.qml:187
+#, kde-format
+msgid "Flight number"
+msgstr ""
+
+#: app/FlightEditor.qml:190
+#, kde-format
+msgid "Invalid flight number."
+msgstr ""
+
+#: app/FlightPage.qml:59
 #, kde-format
 msgid "Sequence Number:"
 msgstr ""
 
-#: app/FlightPage.qml:69
+#: app/FlightPage.qml:68
 #, kde-format
 msgid "Boarding"
 msgstr ""
 
-#: app/FlightPage.qml:87
+#: app/FlightPage.qml:86
 #, kde-format
 msgid "Boarding group"
 msgstr ""
 
-#: app/FlightPage.qml:104
+#: app/FlightPage.qml:103
 #, kde-format
 msgid "Airline"
 msgstr ""
 
-#: app/FlightPage.qml:112
+#: app/FlightPage.qml:111
 #, kde-format
 msgctxt "Flight departure"
 msgid "Departure"
 msgstr ""
 
-#: app/FlightPage.qml:118
+#: app/FlightPage.qml:117
 #, kde-format
 msgctxt "flight departure"
 msgid "Departure time"
 msgstr ""
 
-#: app/FlightPage.qml:123
+#: app/FlightPage.qml:122
 #, kde-format
 msgctxt "flight departure"
 msgid "Departure date"
 msgstr ""
 
-#: app/FlightPage.qml:140 app/FlightPage.qml:186
+#: app/FlightPage.qml:139 app/FlightPage.qml:185
 #, kde-format
 msgid "Terminal"
 msgstr ""
 
-#: app/FlightPage.qml:148
+#: app/FlightPage.qml:147
 #, kde-format
 msgid "Gate"
 msgstr ""
 
-#: app/FlightPage.qml:164
+#: app/FlightPage.qml:163
 #, kde-format
 msgctxt "Flight arrival"
 msgid "Arrival"
 msgstr ""
 
-#: app/FlightPage.qml:169
+#: app/FlightPage.qml:168
 #, kde-format
 msgctxt "flight arrival"
 msgid "Arrival time"
@@ -3330,63 +3350,68 @@ msgstr ""
 
 #: app/TimelinePage.qml:97
 #, kde-format
-msgid "Add ferry trip..."
+msgid "Add flight..."
 msgstr ""
 
 #: app/TimelinePage.qml:109
 #, kde-format
-msgid "Add accommodation..."
+msgid "Add ferry trip..."
 msgstr ""
 
-#: app/TimelinePage.qml:120
+#: app/TimelinePage.qml:121
 #, kde-format
-msgid "Add event..."
+msgid "Add accommodation..."
 msgstr ""
 
 #: app/TimelinePage.qml:132
 #, kde-format
+msgid "Add event..."
+msgstr ""
+
+#: app/TimelinePage.qml:144
+#, kde-format
 msgid "Add restaurant..."
 msgstr ""
 
-#: app/TimelinePage.qml:154
+#: app/TimelinePage.qml:166
 #, kde-format
 msgctxt "@action:button"
 msgid "Go To Now"
 msgstr ""
 
-#: app/TimelinePage.qml:161
+#: app/TimelinePage.qml:173
 #, kde-format
 msgctxt "@action:button"
 msgid "Add trip"
 msgstr ""
 
-#: app/TimelinePage.qml:172
+#: app/TimelinePage.qml:184
 #, kde-format
 msgctxt "@title:group"
 msgid "Add New Trip"
 msgstr ""
 
-#: app/TimelinePage.qml:202
+#: app/TimelinePage.qml:214
 #, kde-format
 msgid "Delete Trip"
 msgstr ""
 
-#: app/TimelinePage.qml:203
+#: app/TimelinePage.qml:215
 #, kde-format
 msgid "Do you really want to delete this trip?"
 msgstr ""
 
-#: app/TimelinePage.qml:235
+#: app/TimelinePage.qml:247
 #, kde-format
 msgid "As GPX file..."
 msgstr ""
 
-#: app/TimelinePage.qml:265 app/TimelinePage.qml:282
+#: app/TimelinePage.qml:277 app/TimelinePage.qml:294
 #, kde-format
 msgid "Export Trip"
 msgstr ""
 
-#: app/TimelinePage.qml:464
+#: app/TimelinePage.qml:480
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr ""
@@ -3646,13 +3671,13 @@ msgstr[3] ""
 msgid "Delete trip"
 msgstr ""
 
-#: app/tripgroupmanager.cpp:594
+#: app/tripgroupmanager.cpp:604
 #, kde-format
 msgctxt "%1 is destination, %2 is the standalone month name, %3 is the year"
 msgid "%1 (%2 %3)"
 msgstr ""
 
-#: app/tripgroupmanager.cpp:596
+#: app/tripgroupmanager.cpp:606
 #, kde-format
 msgctxt ""
 "%1 is destination, %2 and %3 are the standalone month names and %4 is the "
@@ -3660,7 +3685,7 @@ msgctxt ""
 msgid "%1 (%2/%3 %4)"
 msgstr ""
 
-#: app/tripgroupmanager.cpp:598
+#: app/tripgroupmanager.cpp:608
 #, kde-format
 msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"
