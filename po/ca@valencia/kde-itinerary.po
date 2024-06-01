@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-31 00:39+0000\n"
-"PO-Revision-Date: 2024-05-08 16:07+0200\n"
+"PO-Revision-Date: 2024-05-31 09:38+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -291,12 +291,11 @@ msgstr[0] "S'ha importat un passe."
 msgstr[1] "S'han importat %1 passes."
 
 #: app/applicationcontroller.cpp:270
-#, fuzzy, kde-format
-#| msgid "Health certificate imported."
+#, kde-format
 msgid "One health certificate imported."
 msgid_plural "%1 health certificates imported."
-msgstr[0] "S'ha importat el certificat de salut."
-msgstr[1] "S'ha importat el certificat de salut."
+msgstr[0] "S'ha importat un certificat de salut."
+msgstr[1] "S'han importat %1 certificats de salut."
 
 #: app/applicationcontroller.cpp:284 app/applicationcontroller.cpp:324
 #: app/applicationcontroller.cpp:342 app/applicationcontroller.cpp:386
@@ -1042,10 +1041,9 @@ msgid "Airport"
 msgstr "Aeroport"
 
 #: app/FlightEditor.qml:95
-#, fuzzy, kde-format
-#| msgid "Departure time has to be set."
+#, kde-format
 msgid "Departure airport has to be specified."
-msgstr "Cal establir l'hora d'eixida."
+msgstr "Cal especificar l'aeroport d'eixida."
 
 #: app/FlightEditor.qml:101
 #, kde-format
@@ -1089,11 +1087,9 @@ msgid "Arrival - %1"
 msgstr "Arribada - %1"
 
 #: app/FlightEditor.qml:149
-#, fuzzy, kde-format
-#| msgctxt "a train/bus journey canceled by its operator"
-#| msgid "Arrival has been canceled."
+#, kde-format
 msgid "Arrival airport has to be specified."
-msgstr "S'ha cancel·lat l'arribada."
+msgstr "Cal especificar l'aeroport d'arribada."
 
 #: app/FlightEditor.qml:155
 #, kde-format
@@ -1119,16 +1115,14 @@ msgid "Flight"
 msgstr "Vol"
 
 #: app/FlightEditor.qml:187
-#, fuzzy, kde-format
-#| msgid "Ticket number:"
+#, kde-format
 msgid "Flight number"
-msgstr "Número de tiquet:"
+msgstr "Número de vol"
 
 #: app/FlightEditor.qml:190
-#, fuzzy, kde-format
-#| msgid "Not a valid number."
+#, kde-format
 msgid "Invalid flight number."
-msgstr "No és un nombre vàlid."
+msgstr "Número de vol no vàlid."
 
 #: app/FlightPage.qml:59
 #, kde-format
@@ -1710,10 +1704,9 @@ msgid "Import failed: File too large."
 msgstr "Ha fallat la importació: Fitxer massa gran."
 
 #: app/importcontroller.cpp:208 app/importcontroller.cpp:305
-#, fuzzy, kde-format
-#| msgid "Nothing imported."
+#, kde-format
 msgid "Found nothing to import."
-msgstr "No s'ha importat res."
+msgstr "No s'ha trobat res a importar."
 
 #: app/importcontroller.cpp:433
 #, kde-format
@@ -1722,46 +1715,40 @@ msgstr ""
 "No s'ha trobat cap esdeveniment que es puga importar en este calendari."
 
 #: app/importcontroller.cpp:584
-#, fuzzy, kde-format
-#| msgid "Flight %1 from %2 to %3"
+#, kde-format
 msgid "Flight from %1 to %2"
-msgstr "Vol %1 des de %2 fins a %3"
+msgstr "Vol des de %1 fins a %2"
 
 #: app/importcontroller.cpp:587
-#, fuzzy, kde-format
-#| msgid "Train %1 from %2 to %3"
+#, kde-format
 msgid "Train from %1 to %2"
-msgstr "Tren %1 des de %2 fins a %3"
+msgstr "Tren des de %1 fins a %2"
 
 #: app/importcontroller.cpp:590
-#, fuzzy, kde-format
-#| msgid "Bus %1 from %2 to %3"
+#, kde-format
 msgid "Bus from %1 to %2"
-msgstr "Autobús %1 des de %2 a %3"
+msgstr "Autobús des de %1 a %2"
 
 #: app/importcontroller.cpp:618
 #, kde-format
 msgid "Backup"
-msgstr ""
+msgstr "Còpia de seguretat"
 
 #: app/ImportPage.qml:18
-#, fuzzy, kde-format
-#| msgid "Import..."
+#, kde-format
 msgctxt "@title"
 msgid "Import"
-msgstr "Importa…"
+msgstr "Importa"
 
 #: app/ImportPage.qml:21
-#, fuzzy, kde-format
-#| msgid "Files or URLs to import."
+#, kde-format
 msgid "Selected items to import."
-msgstr "Fitxers o URL que s'han d'importar."
+msgstr "Elements seleccionats a importar."
 
 #: app/ImportPage.qml:67
-#, fuzzy, kde-format
-#| msgid "Import Reservation"
+#, kde-format
 msgid "Import selection"
-msgstr "Importa la reserva"
+msgstr "Importa la selecció"
 
 #: app/IndoorMapAmenitySheet.qml:18
 #, kde-format
@@ -3391,10 +3378,9 @@ msgid "Add train trip..."
 msgstr "Afig un viatge de tren…"
 
 #: app/TimelinePage.qml:97
-#, fuzzy, kde-format
-#| msgid "Add event..."
+#, kde-format
 msgid "Add flight..."
-msgstr "Afig un esdeveniment…"
+msgstr "Afig un vol…"
 
 #: app/TimelinePage.qml:109
 #, kde-format
@@ -3912,18 +3898,3 @@ msgstr "S'està iniciant la sessió"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 des de %3 a %4 el %5"
-
-#~ msgid "Pass imported."
-#~ msgstr "S'ha importat el passe."
-
-#~ msgid "Calendar Import"
-#~ msgstr "Importa un calendari"
-
-#~ msgid "Import selected events"
-#~ msgstr "Importa els esdeveniments seleccionats"
-
-#~ msgid "Ticket imported"
-#~ msgstr "El bitllet s'ha importat"
-
-#~ msgid "Import from Clipboard"
-#~ msgstr "Importa des del porta-retalls"

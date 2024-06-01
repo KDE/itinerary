@@ -1114,10 +1114,9 @@ msgid "Flight"
 msgstr "Let"
 
 #: app/FlightEditor.qml:187
-#, fuzzy, kde-format
-#| msgid "Ticket number:"
+#, kde-format
 msgid "Flight number"
-msgstr "Číslo lístku:"
+msgstr ""
 
 #: app/FlightEditor.qml:190
 #, kde-format
@@ -3360,10 +3359,9 @@ msgid "Add train trip..."
 msgstr "Přidat cestu vlakem..."
 
 #: app/TimelinePage.qml:97
-#, fuzzy, kde-format
-#| msgid "Add train trip..."
+#, kde-format
 msgid "Add flight..."
-msgstr "Přidat cestu vlakem..."
+msgstr ""
 
 #: app/TimelinePage.qml:109
 #, kde-format

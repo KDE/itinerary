@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-31 00:39+0000\n"
-"PO-Revision-Date: 2024-05-29 09:23+0300\n"
+"PO-Revision-Date: 2024-05-31 09:43+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian\n"
 "Language: uk\n"
@@ -1051,10 +1051,9 @@ msgid "Airport"
 msgstr "Аеропорт"
 
 #: app/FlightEditor.qml:95
-#, fuzzy, kde-format
-#| msgid "Departure time has to be set."
+#, kde-format
 msgid "Departure airport has to be specified."
-msgstr "Має бути вказано час відправлення."
+msgstr "Має бути вказано аеропорт відправлення."
 
 #: app/FlightEditor.qml:101
 #, kde-format
@@ -1098,11 +1097,9 @@ msgid "Arrival - %1"
 msgstr "Прибуття – %1"
 
 #: app/FlightEditor.qml:149
-#, fuzzy, kde-format
-#| msgctxt "a train/bus journey canceled by its operator"
-#| msgid "Arrival has been canceled."
+#, kde-format
 msgid "Arrival airport has to be specified."
-msgstr "Прибуття було скасовано."
+msgstr "Має бути вказано аеропорт прибуття."
 
 #: app/FlightEditor.qml:155
 #, kde-format
@@ -1128,16 +1125,14 @@ msgid "Flight"
 msgstr "Політ"
 
 #: app/FlightEditor.qml:187
-#, fuzzy, kde-format
-#| msgid "Ticket number:"
+#, kde-format
 msgid "Flight number"
-msgstr "Номер квитка:"
+msgstr "Номер рейсу"
 
 #: app/FlightEditor.qml:190
-#, fuzzy, kde-format
-#| msgid "Not a valid number."
+#, kde-format
 msgid "Invalid flight number."
-msgstr "Не є коректним числом."
+msgstr "Некоректний номер рейсу."
 
 #: app/FlightPage.qml:59
 #, kde-format
@@ -3393,10 +3388,9 @@ msgid "Add train trip..."
 msgstr "Додати подорож потягом…"
 
 #: app/TimelinePage.qml:97
-#, fuzzy, kde-format
-#| msgid "Add event..."
+#, kde-format
 msgid "Add flight..."
-msgstr "Додати подію…"
+msgstr "Додати рейс…"
 
 #: app/TimelinePage.qml:109
 #, kde-format

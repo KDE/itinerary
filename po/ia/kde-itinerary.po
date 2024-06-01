@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-31 00:39+0000\n"
-"PO-Revision-Date: 2024-05-29 12:16+0200\n"
+"PO-Revision-Date: 2024-05-31 10:20+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -1040,10 +1040,9 @@ msgid "Airport"
 msgstr "Aeroporto"
 
 #: app/FlightEditor.qml:95
-#, fuzzy, kde-format
-#| msgid "Departure time has to be set."
+#, kde-format
 msgid "Departure airport has to be specified."
-msgstr "Tempore de partita debe esser fixate."
+msgstr "Auroporto de partita debe esser specificate."
 
 #: app/FlightEditor.qml:101
 #, kde-format
@@ -1087,11 +1086,9 @@ msgid "Arrival - %1"
 msgstr "Arrivata - %1"
 
 #: app/FlightEditor.qml:149
-#, fuzzy, kde-format
-#| msgctxt "a train/bus journey canceled by its operator"
-#| msgid "Arrival has been canceled."
+#, kde-format
 msgid "Arrival airport has to be specified."
-msgstr "Arrivata ha essite cancellata."
+msgstr "Aeroporto de Arrivata debe esser specificate."
 
 #: app/FlightEditor.qml:155
 #, kde-format
@@ -1117,16 +1114,14 @@ msgid "Flight"
 msgstr "Volo"
 
 #: app/FlightEditor.qml:187
-#, fuzzy, kde-format
-#| msgid "Ticket number:"
+#, kde-format
 msgid "Flight number"
-msgstr "Numero de Billet:"
+msgstr "Numero de volo"
 
 #: app/FlightEditor.qml:190
-#, fuzzy, kde-format
-#| msgid "Not a valid number."
+#, kde-format
 msgid "Invalid flight number."
-msgstr "Non un numeor valide."
+msgstr "Numero de volo invalide.."
 
 #: app/FlightPage.qml:59
 #, kde-format
@@ -1314,7 +1309,7 @@ msgstr "Precio"
 #: app/FormPriceEditDelegate.qml:91
 #, kde-format
 msgid "Not a valid number."
-msgstr "Non un numeor valide."
+msgstr "Non un numero valide."
 
 #: app/GenericPkPassPage.qml:18 app/ProgramMembershipPage.qml:38
 #, kde-format
@@ -3371,10 +3366,9 @@ msgid "Add train trip..."
 msgstr "Adde viage de traino"
 
 #: app/TimelinePage.qml:97
-#, fuzzy, kde-format
-#| msgid "Add event..."
+#, kde-format
 msgid "Add flight..."
-msgstr "Adde evento..."
+msgstr "Adde volo..."
 
 #: app/TimelinePage.qml:109
 #, kde-format

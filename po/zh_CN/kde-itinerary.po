@@ -1079,11 +1079,9 @@ msgid "Arrival - %1"
 msgstr ""
 
 #: app/FlightEditor.qml:149
-#, fuzzy, kde-format
-#| msgctxt "a train/bus journey canceled by its operator"
-#| msgid "Arrival has been canceled."
+#, kde-format
 msgid "Arrival airport has to be specified."
-msgstr "已取消靠站。"
+msgstr ""
 
 #: app/FlightEditor.qml:155
 #, kde-format
@@ -1109,10 +1107,9 @@ msgid "Flight"
 msgstr "航班信息"
 
 #: app/FlightEditor.qml:187
-#, fuzzy, kde-format
-#| msgid "Flight"
+#, kde-format
 msgid "Flight number"
-msgstr "航班信息"
+msgstr ""
 
 #: app/FlightEditor.qml:190
 #, kde-format
