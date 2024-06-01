@@ -503,6 +503,9 @@ void TimelineModel::updateInformationElements()
         newCountry.setTimeZone(previousCountry.timeZone(), (*it).dt);
         newCountry.setTimeZone(timeZone((*it).endDateTime()), (*it).dt);
         if (newCountry == previousCountry) {
+            if (newCountry.timeZone().isValid()) {
+                previousCountry = newCountry;
+            }
             ++it;
             continue;
         }

@@ -252,6 +252,27 @@
     },
     {
         "isToday": false,
+        "locationInformation": {
+            "@context": "http://schema.org",
+            "@type": "LocationInformation",
+            "currencyCode": "EUR",
+            "currencyDiffers": false,
+            "drivingSide": "Right",
+            "drivingSideDiffers": false,
+            "dstDiffers": false,
+            "isDst": true,
+            "isoCode": "FI",
+            "powerPlugCompatibility": "FullyCompatible",
+            "timeZoneDiffers": true,
+            "timeZoneName": "Eastern European Summer Time",
+            "timeZoneOffsetDelta": 3600
+        },
+        "rangeType": 0,
+        "sectionHeader": "1996-10-16",
+        "type": 4
+    },
+    {
+        "isToday": false,
         "rangeType": 0,
         "sectionHeader": "1996-10-16",
         "transfer": {
@@ -496,6 +517,27 @@
         ],
         "sectionHeader": "1996-10-17",
         "type": 6
+    },
+    {
+        "isToday": false,
+        "locationInformation": {
+            "@context": "http://schema.org",
+            "@type": "LocationInformation",
+            "currencyCode": "EUR",
+            "currencyDiffers": false,
+            "drivingSide": "Right",
+            "drivingSideDiffers": false,
+            "dstDiffers": false,
+            "isDst": true,
+            "isoCode": "DE",
+            "powerPlugCompatibility": "FullyCompatible",
+            "timeZoneDiffers": true,
+            "timeZoneName": "Central European Summer Time",
+            "timeZoneOffsetDelta": -3600
+        },
+        "rangeType": 0,
+        "sectionHeader": "1996-10-17",
+        "type": 4
     },
     {
         "isToday": false,
