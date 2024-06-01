@@ -511,7 +511,15 @@ void TimelineModel::updateInformationElements()
         }
         if (!(newCountry == homeCountry) || newCountry.hasRelevantTimeZoneChange(previousCountry)) {
             // for location changes, we want this after the corresponding element
-            const auto dt = (*it).isLocationChange() ? (*it).endDateTime() : (*it).dt;
+            auto dt = (*it).isLocationChange() ? (*it).endDateTime() : (*it).dt;
+            if ((*it).isReservation()) {
+                const auto res = m_resMgr->reservation((*it).batchId());
+                if (!SortUtil::hasEndTime(res) && SortUtil::hasStartTime(res)) {
+                    // pick a less aggressive insertion point for elements without an end time
+                    // (by default we'd get end of day as the end time, which can put this after subsequent elements)
+                    dt = SortUtil::startDateTime(res).addSecs(15 * 60);
+                }
+            }
             it = insertOrUpdate(it, TimelineElement{this, TimelineElement::LocationInfo, dt, QVariant::fromValue(newCountry)});
         }
 

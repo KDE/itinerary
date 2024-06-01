@@ -1,0 +1,196 @@
+[
+    {
+        "isToday": true,
+        "isTodayEmpty": true,
+        "rangeType": 0,
+        "sectionHeader": "1996-10-14",
+        "type": 1
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "reservations": [
+            {
+                "@context": "http://schema.org",
+                "@type": "FlightReservation",
+                "modifiedTime": "1996-06-01T08:30:00-08:00",
+                "reservationFor": {
+                    "@type": "Flight",
+                    "airline": {
+                        "@type": "Airline",
+                        "iataCode": "AB"
+                    },
+                    "arrivalAirport": {
+                        "@type": "Airport",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "PT"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 37.74620056152344,
+                            "longitude": -25.70319938659668
+                        },
+                        "iataCode": "PDL"
+                    },
+                    "arrivalTime": {
+                        "@type": "QDateTime",
+                        "@value": "2023-01-01T12:30:00-01:00",
+                        "timezone": "Atlantic/Azores"
+                    },
+                    "departureAirport": {
+                        "@type": "Airport",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "DE"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 52.36410140991211,
+                            "longitude": 13.508199691772461
+                        },
+                        "iataCode": "BER"
+                    },
+                    "departureDay": "2023-01-01",
+                    "departureTime": {
+                        "@type": "QDateTime",
+                        "@value": "2023-01-01T08:30:00+01:00",
+                        "timezone": "Europe/Berlin"
+                    },
+                    "flightNumber": "9876"
+                },
+                "reservationNumber": "ABC123",
+                "reservationStatus": "http://schema.org/ReservationConfirmed"
+            }
+        ],
+        "sectionHeader": "2023-01-01",
+        "type": 6
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "reservations": [
+            {
+                "@context": "http://schema.org",
+                "@type": "FlightReservation",
+                "modifiedTime": "1996-06-01T08:30:00-08:00",
+                "reservationFor": {
+                    "@type": "Flight",
+                    "airline": {
+                        "@type": "Airline",
+                        "iataCode": "AB"
+                    },
+                    "arrivalAirport": {
+                        "@type": "Airport",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "PT"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 38.76860046386719,
+                            "longitude": -9.128270149230957
+                        },
+                        "iataCode": "LIS",
+                        "name": "LISBON AIRPORT"
+                    },
+                    "departureAirport": {
+                        "@type": "Airport",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "PT"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 37.74620056152344,
+                            "longitude": -25.70319938659668
+                        },
+                        "iataCode": "PDL"
+                    },
+                    "departureDay": "2023-06-27",
+                    "departureTime": {
+                        "@type": "QDateTime",
+                        "@value": "2023-06-27T15:15:00+00:00",
+                        "timezone": "Atlantic/Azores"
+                    },
+                    "flightNumber": "123"
+                },
+                "reservationNumber": "XXX007",
+                "reservationStatus": "http://schema.org/ReservationConfirmed"
+            }
+        ],
+        "sectionHeader": "2023-06-27",
+        "type": 6
+    },
+    {
+        "isToday": false,
+        "locationInformation": {
+            "@context": "http://schema.org",
+            "@type": "LocationInformation",
+            "currencyCode": "EUR",
+            "currencyDiffers": false,
+            "drivingSide": "Right",
+            "drivingSideDiffers": false,
+            "dstDiffers": false,
+            "isDst": true,
+            "isoCode": "PT",
+            "powerPlugCompatibility": "FullyCompatible",
+            "timeZoneDiffers": true,
+            "timeZoneName": "Western European Summer Time",
+            "timeZoneOffsetDelta": 3600
+        },
+        "rangeType": 0,
+        "sectionHeader": "2023-06-27",
+        "type": 4
+    },
+    {
+        "isToday": false,
+        "rangeType": 1,
+        "reservations": [
+            {
+                "@context": "http://schema.org",
+                "@type": "LodgingReservation",
+                "checkinTime": "2023-06-27T15:00:00",
+                "checkoutTime": "2023-06-28T11:00:00",
+                "modifiedTime": "1996-06-01T08:30:00-08:00",
+                "reservationFor": {
+                    "@type": "LodgingBusiness",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressCountry": "PT",
+                        "addressLocality": "Lissabon"
+                    },
+                    "name": "A Hotel"
+                },
+                "reservationStatus": "http://schema.org/ReservationConfirmed"
+            }
+        ],
+        "sectionHeader": "2023-06-27",
+        "type": 14
+    },
+    {
+        "isToday": false,
+        "rangeType": 2,
+        "reservations": [
+            {
+                "@context": "http://schema.org",
+                "@type": "LodgingReservation",
+                "checkinTime": "2023-06-27T15:00:00",
+                "checkoutTime": "2023-06-28T11:00:00",
+                "modifiedTime": "1996-06-01T08:30:00-08:00",
+                "reservationFor": {
+                    "@type": "LodgingBusiness",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressCountry": "PT",
+                        "addressLocality": "Lissabon"
+                    },
+                    "name": "A Hotel"
+                },
+                "reservationStatus": "http://schema.org/ReservationConfirmed"
+            }
+        ],
+        "sectionHeader": "2023-06-28",
+        "type": 14
+    }
+]

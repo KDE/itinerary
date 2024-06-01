@@ -1,0 +1,81 @@
+[{
+    "@context": "http://schema.org",
+    "@type": "FlightReservation",
+    "modifiedTime": "1996-06-01T08:30:00-08:00",
+    "reservationFor": {
+        "@type": "Flight",
+        "airline": {
+            "@type": "Airline",
+            "iataCode": "AB"
+        },
+        "arrivalAirport": {
+            "@type": "Airport",
+            "iataCode": "PDL"
+        },
+        "arrivalTime": {
+            "@type": "QDateTime",
+            "@value": "2023-01-01T12:30:00+00:00",
+            "timezone": "Atlantic/Azores"
+        },
+        "departureAirport": {
+            "@type": "Airport",
+            "iataCode": "BER"
+        },
+        "departureTime": {
+            "@type": "QDateTime",
+            "@value": "2023-01-01T08:30:00+00:00",
+            "timezone": "Europe/Berlin"
+        },
+        "departureDay": "2023-01-01",
+        "flightNumber": "9876"
+    },
+    "reservationNumber": "ABC123",
+    "reservationStatus": "http://schema.org/ReservationConfirmed"
+},
+{
+    "@context": "http://schema.org",
+    "@type": "FlightReservation",
+    "modifiedTime": "1996-06-01T08:30:00-08:00",
+    "reservationFor": {
+        "@type": "Flight",
+        "airline": {
+            "@type": "Airline",
+            "iataCode": "AB"
+        },
+        "arrivalAirport": {
+            "@type": "Airport",
+            "iataCode": "LIS",
+            "name": "LISBON AIRPORT"
+        },
+        "departureAirport": {
+            "@type": "Airport",
+            "iataCode": "PDL"
+        },
+        "departureDay": "2023-06-27",
+        "departureTime": {
+            "@type": "QDateTime",
+            "@value": "2023-06-27T15:15:00+00:00",
+            "timezone": "Atlantic/Azores"
+        },
+        "flightNumber": "123"
+    },
+    "reservationNumber": "XXX007",
+    "reservationStatus": "http://schema.org/ReservationConfirmed"
+},
+{
+    "@context": "http://schema.org",
+    "@type": "LodgingReservation",
+    "modifiedTime": "1996-06-01T08:30:00-08:00",
+    "checkinTime": "2023-06-27T15:00:00",
+    "checkoutTime": "2023-06-28T11:00:00",
+    "reservationFor": {
+        "@type": "LodgingBusiness",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "PT",
+            "addressLocality": "Lissabon"
+        },
+        "name": "A Hotel"
+    },
+    "reservationStatus": "http://schema.org/ReservationConfirmed"
+}]
