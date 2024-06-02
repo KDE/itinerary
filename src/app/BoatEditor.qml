@@ -24,7 +24,7 @@ EditorPage {
         if (departureTimeEdit.isModified)
             trip = Util.setDateTimePreserveTimezone(trip, "departureTime", departureTimeEdit.value);
         if (arrivalTimeEdit.isModified)
-            trip = Util.setDateTimePreserveTimezone(trip, "arrivalTime", departureTimeEdit.value);
+            trip = Util.setDateTimePreserveTimezone(trip, "arrivalTime", arrivalTimeEdit.value);
 
         let dep = trip.departureBoatTerminal;
         dep.name = departureTerminalName.text;
