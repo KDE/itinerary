@@ -46,12 +46,13 @@ public:
     Q_INVOKABLE void updateReservation(const QString &resId, const QVariant &res);
     Q_INVOKABLE void removeReservation(const QString &id);
 
-    /** Imports reservation in @p resData.
+    /** Adds reservations after post-processing the input.
+     *  Same as calling addReservation() with prior post-processing
      *  @returns A list of reservation ids for the extracted elements. Those can be reservation
      *  ids that previously existed, in case the extracted elements could be merged.
      */
-    QList<QString> importReservations(const QList<QVariant> &resData);
-    Q_INVOKABLE void importReservation(const QVariant &resData);
+    QList<QString> addReservationsWithPostProcessing(const QList<QVariant> &resData);
+    Q_INVOKABLE void addReservationWithPostProcessing(const QVariant &resData);
 
     const std::vector<QString>& batches() const;
     bool hasBatch(const QString &batchId) const;

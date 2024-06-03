@@ -126,7 +126,7 @@ private Q_SLOTS:
         QCOMPARE(ctrl.documents().size(), 0);
         QCOMPARE(showImportPageSpy.size(), 0);
 
-        resMgr.importReservations(KItinerary::JsonLdDocument::fromJson(QJsonDocument::fromJson(Test::readFile(QLatin1StringView(SOURCE_DIR "/data/4U8465-v1.json"))).array()));
+        resMgr.addReservation(KItinerary::JsonLdDocument::fromJson(QJsonDocument::fromJson(Test::readFile(QLatin1StringView(SOURCE_DIR "/data/4U8465-v1.json"))).array()).at(0));
         QCOMPARE(resMgr.batches().size(), 1);
 
         ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/4U8465-cancel.json")));

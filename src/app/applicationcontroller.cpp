@@ -502,7 +502,7 @@ void ApplicationController::importPass(const QString &passId)
     const auto pass = m_pkPassMgr->pass(passId);
     KItinerary::ExtractorEngine engine;
     engine.setContent(QVariant::fromValue<KPkPass::Pass*>(pass), u"application/vnd.apple.pkpass");
-    const auto resIds = m_resMgr->importReservations(JsonLdDocument::fromJson(engine.extract()));
+    const auto resIds = m_resMgr->addReservationsWithPostProcessing(JsonLdDocument::fromJson(engine.extract()));
     if (!resIds.isEmpty()) {
         Q_EMIT infoMessage(i18np("One reservation imported.", "%1 reservations imported.", resIds.size()));
     }

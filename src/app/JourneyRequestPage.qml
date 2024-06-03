@@ -67,7 +67,7 @@ FormCard.FormCardPage {
                             continue;
                         }
                         const res = PublicTransport.reservationFromJourneySection(section);
-                        const resId = ReservationManager.addReservation(res);
+                        const resId = ReservationManager.addReservationWithPostProcessing(res);
                         LiveDataManager.setJourney(resId, section);
                     }
                     pageStack.clear()

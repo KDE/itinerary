@@ -130,7 +130,7 @@ QString ReservationManager::batchesBasePath()
     return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1StringView("/batches/");
 }
 
-QList<QString> ReservationManager::importReservations(const QList<QVariant> &resData)
+QList<QString> ReservationManager::addReservationsWithPostProcessing(const QList<QVariant> &resData)
 {
     ExtractorPostprocessor postproc;
     postproc.setContextDate(QDateTime(QDate::currentDate(), QTime(0, 0)));
@@ -145,21 +145,6 @@ QList<QString> ReservationManager::importReservations(const QList<QVariant> &res
             ev.setReservationFor(res);
             ev.setPotentialAction(res.value<Event>().potentialAction());
             res = ev;
-        }
-
-        // filter out non-Reservation objects we can't handle yet
-        if (!m_validator.isValidElement(res)) {
-
-            // check if this is a minimal cancellation element
-            const auto cleanup = qScopeGuard([this] { m_validator.setAcceptOnlyCompleteElements(true); });
-            m_validator.setAcceptOnlyCompleteElements(false);
-            if (m_validator.isValidElement(res)) {
-                ids += applyPartialUpdate(res);
-                continue;
-            }
-
-            qCWarning(Log) << "Discarding imported element due to validation failure" << res;
-            continue;
         }
 
         ids.push_back(addReservation(res));
@@ -245,9 +230,9 @@ QString ReservationManager::addReservation(const QVariant &res, const QString &r
     return resId;
 }
 
-void ReservationManager::importReservation(const QVariant &resData)
+void ReservationManager::addReservationWithPostProcessing(const QVariant &resData)
 {
-    importReservations({resData});
+    addReservationsWithPostProcessing({resData});
 }
 
 void ReservationManager::updateReservation(const QString &resId, const QVariant &res)

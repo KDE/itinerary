@@ -29,7 +29,7 @@ Kirigami.ScrollablePage {
             if (root.batchId) { // update to an existing element
                 ReservationManager.updateReservation(root.batchId, newRes);
             } else { // newly added element
-                ReservationManager.importReservation(newRes);
+                ReservationManager.addReservationWithPostProcessing(newRes);
             }
             pageStack.pop();
         }
