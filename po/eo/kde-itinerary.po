@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-31 00:39+0000\n"
-"PO-Revision-Date: 2024-05-31 13:26+0200\n"
+"PO-Revision-Date: 2024-06-02 22:18+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -121,7 +121,7 @@ msgstr "Aldoni al kalendaro..."
 #: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:162
 #, kde-format
 msgid "Export..."
-msgstr "Elsporti..."
+msgstr "Elporti..."
 
 #: app/ActionsCard.qml:78 app/ActionsCard.qml:124 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
@@ -145,7 +145,7 @@ msgstr "Ĉu vi vere volas forigi ĉi tiun eventon?"
 #: app/ActionsCard.qml:137 app/TimelinePage.qml:235
 #, kde-format
 msgid "Export"
-msgstr "Elsporto"
+msgstr "Elporto"
 
 #: app/ActionsCard.qml:140 app/TimelinePage.qml:238
 #, kde-format
@@ -160,7 +160,7 @@ msgstr "Sendi al %1"
 #: app/ActionsCard.qml:165
 #, kde-format
 msgid "Export Reservation"
-msgstr "Elsporti Rezervadon"
+msgstr "Elporti Rezervadon"
 
 #: app/ActionsCard.qml:167 app/TimelinePage.qml:278
 #, kde-format
@@ -301,13 +301,13 @@ msgstr[1] "Enportis %1 sanatestilojn."
 #: app/applicationcontroller.cpp:425 app/applicationcontroller.cpp:443
 #, kde-format
 msgid "Export failed: %1"
-msgstr "Elsporto malsukcesis: %1"
+msgstr "Elporto malsukcesis: %1"
 
 #: app/applicationcontroller.cpp:298 app/applicationcontroller.cpp:307
 #: app/applicationcontroller.cpp:399 app/applicationcontroller.cpp:408
 #, kde-format
 msgid "Export completed."
-msgstr "Elsporto finiĝis."
+msgstr "Elporto finiĝis."
 
 #: app/applicationcontroller.cpp:334
 #, kde-format
@@ -945,7 +945,7 @@ msgstr "Ŝatataj Lokoj"
 #: app/FavoriteLocationPage.qml:36
 #, kde-format
 msgid "Export Favorite Locations"
-msgstr "Elsporti Ŝatatajn Lokojn"
+msgstr "Elporti Ŝatatajn Lokojn"
 
 #: app/FavoriteLocationPage.qml:38 app/FavoriteLocationPage.qml:46
 #: app/TimelinePage.qml:296
@@ -976,7 +976,7 @@ msgstr "Forigi Ŝatatan Lokon"
 #: app/FavoriteLocationPage.qml:75
 #, kde-format
 msgid "Export to GPX"
-msgstr "Elsporti al GPX"
+msgstr "Elporti al GPX"
 
 #: app/FavoriteLocationPage.qml:80
 #, kde-format
@@ -2431,7 +2431,7 @@ msgstr "KDE-Itineraj dosieroj (*.itinerary)"
 #: app/main.qml:138
 #, kde-format
 msgid "Export Itinerary Data"
-msgstr "Elsporti Itinerajn Datumojn"
+msgstr "Elporti Itinerajn Datumojn"
 
 #: app/main.qml:171 app/PassPage.qml:137
 #, kde-format
@@ -3421,7 +3421,7 @@ msgstr "Kiel GPX-dosiero..."
 #: app/TimelinePage.qml:277 app/TimelinePage.qml:294
 #, kde-format
 msgid "Export Trip"
-msgstr "Elsporta Vojaĝo"
+msgstr "Elporta Vojaĝo"
 
 #: app/TimelinePage.qml:480
 #, kde-format
