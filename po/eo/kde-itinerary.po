@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-30 02:26+0000\n"
-"PO-Revision-Date: 2024-05-09 22:01+0100\n"
+"POT-Creation-Date: 2024-06-03 02:22+0000\n"
+"PO-Revision-Date: 2024-06-02 22:18+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -121,7 +121,7 @@ msgstr "Aldoni al kalendaro..."
 #: app/ActionsCard.qml:73 app/main.qml:224 app/TripGroupDelegate.qml:162
 #, kde-format
 msgid "Export..."
-msgstr "Eksporti..."
+msgstr "Elporti..."
 
 #: app/ActionsCard.qml:78 app/ActionsCard.qml:124 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
@@ -145,7 +145,7 @@ msgstr "Ĉu vi vere volas forigi ĉi tiun eventon?"
 #: app/ActionsCard.qml:137 app/TimelinePage.qml:220
 #, kde-format
 msgid "Export"
-msgstr "Eksporto"
+msgstr "Elporto"
 
 #: app/ActionsCard.qml:140 app/TimelinePage.qml:223
 #, kde-format
@@ -160,7 +160,7 @@ msgstr "Sendi al %1"
 #: app/ActionsCard.qml:165
 #, kde-format
 msgid "Export Reservation"
-msgstr "Eksporti Rezervadon"
+msgstr "Elporti Rezervadon"
 
 #: app/ActionsCard.qml:167 app/TimelinePage.qml:263
 #, kde-format
@@ -279,20 +279,20 @@ msgstr "Anstataŭigi"
 #: app/applicationcontroller.cpp:761
 #, kde-format
 msgid "Import failed: %1"
-msgstr "Importo malsukcesis: %1"
+msgstr "Enporto malsukcesis: %1"
 
 #: app/applicationcontroller.cpp:346
 #, kde-format
 msgid "Import failed: File too large."
-msgstr "Importo malsukcesis: dosiero tro granda."
+msgstr "Enporto malsukcesis: dosiero tro granda."
 
 #: app/applicationcontroller.cpp:428 app/applicationcontroller.cpp:823
 #: app/applicationcontroller.cpp:833
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
-msgstr[0] "Importis unu rezervon."
-msgstr[1] "Importis %1 rezervojn."
+msgstr[0] "Enportis unu rezervon."
+msgstr[1] "Enportis %1 rezervojn."
 
 #: app/applicationcontroller.cpp:435
 #, kde-format
@@ -303,8 +303,8 @@ msgstr "Sanatestilo importita."
 #, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
-msgstr[0] "Importis unu enirpermesilon."
-msgstr[1] "Importis %1 enirpermesilojn."
+msgstr[0] "Enportis unu enirpermesilon."
+msgstr[1] "Enportis %1 enirpermesilojn."
 
 #: app/applicationcontroller.cpp:453
 #, kde-format
@@ -321,13 +321,13 @@ msgstr "Nenio importita."
 #: app/applicationcontroller.cpp:693 app/applicationcontroller.cpp:711
 #, kde-format
 msgid "Export failed: %1"
-msgstr "Eksporto malsukcesis: %1"
+msgstr "Elporto malsukcesis: %1"
 
 #: app/applicationcontroller.cpp:566 app/applicationcontroller.cpp:575
 #: app/applicationcontroller.cpp:667 app/applicationcontroller.cpp:676
 #, kde-format
 msgid "Export completed."
-msgstr "Eksporto finiĝis."
+msgstr "Elporto finiĝis."
 
 #: app/applicationcontroller.cpp:602
 #, kde-format
@@ -342,7 +342,7 @@ msgstr "Rezervado sendiĝis."
 #: app/applicationcontroller.cpp:786
 #, kde-format
 msgid "Import completed."
-msgstr "Importo finiĝis."
+msgstr "Enporto finiĝis."
 
 #: app/BarcodeScanModeButton.qml:17
 #, kde-format
@@ -981,7 +981,7 @@ msgstr "Ŝatataj Lokoj"
 #: app/FavoriteLocationPage.qml:36
 #, kde-format
 msgid "Export Favorite Locations"
-msgstr "Eksporti Ŝatatajn Lokojn"
+msgstr "Elporti Ŝatatajn Lokojn"
 
 #: app/FavoriteLocationPage.qml:38 app/FavoriteLocationPage.qml:46
 #: app/TimelinePage.qml:281
@@ -992,7 +992,7 @@ msgstr "GPX-dosieroj (*.gpx)"
 #: app/FavoriteLocationPage.qml:44
 #, kde-format
 msgid "Import Favorite Locations"
-msgstr "Importi Ŝatatajn Lokojn"
+msgstr "Enporti Ŝatatajn Lokojn"
 
 #: app/FavoriteLocationPage.qml:52
 #, kde-format
@@ -1012,12 +1012,12 @@ msgstr "Forigi Ŝatatan Lokon"
 #: app/FavoriteLocationPage.qml:75
 #, kde-format
 msgid "Export to GPX"
-msgstr "Eksporti al GPX"
+msgstr "Elporti al GPX"
 
 #: app/FavoriteLocationPage.qml:80
 #, kde-format
 msgid "Import from GPX"
-msgstr "Importi el GPX"
+msgstr "Enporti el GPX"
 
 #: app/FavoriteLocationPage.qml:90
 #, kde-format
@@ -1331,7 +1331,7 @@ msgstr "Flugo %1 de %2 al %3"
 #: app/gpxexport.cpp:51
 #, kde-format
 msgid "Train %1 from %2 to %3"
-msgstr "Treno %1 de %2 al %3"
+msgstr "Trajno %1 de %2 al %3"
 
 #: app/gpxexport.cpp:55
 #, kde-format
@@ -1462,7 +1462,7 @@ msgid ""
 "li><li>SMART Health Cards (SHC) as used in parts of Canada and the US.</li></"
 "p>"
 msgstr ""
-"<p>Vi povas importi la jenajn sanajn atestojn skanante ilin per strekkoda "
+"<p>Vi povas enporti la jenajn sanajn atestojn skanante ilin per strekkoda "
 "skanilo:<ul><li>Eŭropaj \"Ciferecaj Verdaj Atestiloj\" por vakcinadoj, "
 "testoj aŭ resaniĝo.</li><li>Hindaj vakcinatestiloj .</li><li>SMART Health "
 "Cards (SHC) kiel uzata en partoj de Kanado kaj Usono.</li></p>"
@@ -2359,7 +2359,7 @@ msgstr "KDE-Itineraj dosieroj (*.itinerary)"
 #: app/main.qml:135
 #, kde-format
 msgid "Export Itinerary Data"
-msgstr "Eksporti Itinerajn Datumojn"
+msgstr "Elporti Itinerajn Datumojn"
 
 #: app/main.qml:169 app/PassPage.qml:137
 #, kde-format
@@ -3431,7 +3431,7 @@ msgstr "Kiel GPX-dosiero..."
 #: app/TimelinePage.qml:262 app/TimelinePage.qml:279
 #, kde-format
 msgid "Export Trip"
-msgstr "Eksporta Vojaĝo"
+msgstr "Elporta Vojaĝo"
 
 #: app/TimelinePage.qml:461
 #, kde-format
@@ -3690,13 +3690,13 @@ msgstr[1] "Valutoj: %2"
 msgid "Delete trip"
 msgstr "Forigi vojaĝon"
 
-#: app/tripgroupmanager.cpp:594
+#: app/tripgroupmanager.cpp:604
 #, kde-format
 msgctxt "%1 is destination, %2 is the standalone month name, %3 is the year"
 msgid "%1 (%2 %3)"
 msgstr "%1 (%2 %3)"
 
-#: app/tripgroupmanager.cpp:596
+#: app/tripgroupmanager.cpp:606
 #, kde-format
 msgctxt ""
 "%1 is destination, %2 and %3 are the standalone month names and %4 is the "
@@ -3704,7 +3704,7 @@ msgctxt ""
 msgid "%1 (%2/%3 %4)"
 msgstr "%1 (%2/%3 %4)"
 
-#: app/tripgroupmanager.cpp:598
+#: app/tripgroupmanager.cpp:608
 #, kde-format
 msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"
