@@ -106,7 +106,7 @@ Q_SIGNALS:
 
 private:
     bool importBundle(KItinerary::File *file);
-    void importPass(const QString &passId);
+    void pkPassUpdated(const QString &passId);
 
     QString addDocumentFromFile(const QUrl &url);
 

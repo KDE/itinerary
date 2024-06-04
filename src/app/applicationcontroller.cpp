@@ -116,7 +116,7 @@ void ApplicationController::setReservationManager(ReservationManager* resMgr)
 void ApplicationController::setPkPassManager(PkPassManager* pkPassMgr)
 {
     m_pkPassMgr = pkPassMgr;
-    connect(m_pkPassMgr, &PkPassManager::passUpdated, this, &ApplicationController::importPass);
+    connect(m_pkPassMgr, &PkPassManager::passUpdated, this, &ApplicationController::pkPassUpdated);
 }
 
 void ApplicationController::setDocumentManager(DocumentManager* docMgr)
@@ -493,8 +493,9 @@ bool ApplicationController::importBundle(KItinerary::File *file)
     return count > 0;
 }
 
-void ApplicationController::importPass(const QString &passId)
+void ApplicationController::pkPassUpdated(const QString &passId)
 {
+    // we only need to process this when it comes from the pkPass updating itself via its online API
     if (m_importLock) {
         return;
     }
@@ -502,10 +503,7 @@ void ApplicationController::importPass(const QString &passId)
     const auto pass = m_pkPassMgr->pass(passId);
     KItinerary::ExtractorEngine engine;
     engine.setContent(QVariant::fromValue<KPkPass::Pass*>(pass), u"application/vnd.apple.pkpass");
-    const auto resIds = m_resMgr->addReservationsWithPostProcessing(JsonLdDocument::fromJson(engine.extract()));
-    if (!resIds.isEmpty()) {
-        Q_EMIT infoMessage(i18np("One reservation imported.", "%1 reservations imported.", resIds.size()));
-    }
+    m_resMgr->addReservationsWithPostProcessing(JsonLdDocument::fromJson(engine.extract()));
 }
 
 QString ApplicationController::addDocumentFromFile(const QUrl &url)
