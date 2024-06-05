@@ -189,6 +189,7 @@ private Q_SLOTS:
         appController.setFavoriteLocationModel(&favLoc);
         appController.setPassManager(&passMgr);
         appController.setLiveDataManager(&liveDataMgr);
+        appController.setTripGroupManager(&tripGroupMgr);
 
         ImportController importer;
         importer.setReservationManager(&resMgr);
@@ -297,6 +298,7 @@ private Q_SLOTS:
         QCOMPARE(f.reservations().size(), 11);
         QCOMPARE(f.passes().size(), 0);
         QCOMPARE(f.hasCustomData(u"org.kde.itinerary/settings", u"settings.ini"_s), false);
+        QCOMPARE(f.listCustomData(u"org.kde.itinerary/trips").size(), 1);
     }
 
     void testDocumentAttaching()

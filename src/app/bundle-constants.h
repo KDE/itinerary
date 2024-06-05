@@ -13,5 +13,6 @@ constexpr inline const char16_t BUNDLE_LIVE_DATA_DOMAIN[] = u"org.kde.itinerary/
 constexpr inline const char16_t BUNDLE_PASS_DOMAIN[] = u"org.kde.itinerary/programs";
 constexpr inline const char16_t BUNDLE_SETTINGS_DOMAIN[] = u"org.kde.itinerary/settings";
 constexpr inline const char16_t BUNDLE_TRANSFER_DOMAIN[] = u"org.kde.itinerary/transfers";
+constexpr inline const char16_t BUNDLE_TRIPGROUP_DOMAIN[] = u"org.kde.itinerary/trips";
 
 #endif

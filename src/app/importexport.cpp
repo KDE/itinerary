@@ -18,6 +18,8 @@
 #include "reservationmanager.h"
 #include "transfer.h"
 #include "transfermanager.h"
+#include "tripgroup.h"
+#include "tripgroupmanager.h"
 
 #include <KItinerary/File>
 #include <KItinerary/JsonLdDocument>
@@ -112,6 +114,19 @@ void Exporter::exportTransfersForBatch(const QString &batchId, const TransferMan
     if (t.state() != Transfer::UndefinedState) {
         m_file->addCustomData(BUNDLE_TRANSFER_DOMAIN, t.identifier(), QJsonDocument(Transfer::toJson(t)).toJson());
     }
+}
+
+void Exporter::exportTripGroups(const TripGroupManager *tripGroupMgr)
+{
+    const auto tgIds = tripGroupMgr->tripGroups();
+    for (const auto &tgId : tgIds) {
+        exportTripGroup(tgId, tripGroupMgr->tripGroup(tgId));
+    }
+}
+
+void Exporter::exportTripGroup(const QString &tripGroupId, const TripGroup &tg)
+{
+    m_file->addCustomData(BUNDLE_TRIPGROUP_DOMAIN, tripGroupId, QJsonDocument(TripGroup::toJson(tg)).toJson());
 }
 
 void Exporter::exportFavoriteLocations(const FavoriteLocationModel* favLocModel)

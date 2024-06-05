@@ -15,6 +15,8 @@ class PassManager;
 class PkPassManager;
 class ReservationManager;
 class TransferManager;
+class TripGroup;
+class TripGroupManager;
 
 namespace KItinerary {
 class File;
@@ -36,6 +38,8 @@ public:
     void exportDocument(const DocumentManager *docMgr, const QString &docId);
     void exportTransfers(const ReservationManager *resMgr, const TransferManager *transferMgr);
     void exportTransfersForBatch(const QString &batchId, const TransferManager *transferMgr);
+    void exportTripGroups(const TripGroupManager *tripGroupMgr);
+    void exportTripGroup(const QString &tripGroupId, const TripGroup &tg);
     void exportFavoriteLocations(const FavoriteLocationModel *favLocModel);
     void exportPasses(const PassManager *passMgr);
     void exportHealthCertificates(const HealthCertificateManager *healthCertMgr);

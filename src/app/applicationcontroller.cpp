@@ -291,6 +291,7 @@ void ApplicationController::exportToFile(const QUrl &url)
     exporter.exportDocuments(m_docMgr);
     exporter.exportFavoriteLocations(m_favLocModel);
     exporter.exportTransfers(m_resMgr, m_transferMgr);
+    exporter.exportTripGroups(m_tripGroupMgr);
     exporter.exportPasses(m_passMgr);
     exporter.exportHealthCertificates(healthCertificateManager());
     exporter.exportLiveData();
@@ -358,7 +359,7 @@ bool ApplicationController::exportTripToFile(const QString &tripGroupId, const Q
         for (const auto &resId : resIds) {
             const auto res = m_resMgr->reservation(resId);
 
-            const auto pkPassId = m_pkPassMgr->passId(res);
+            const auto pkPassId = PkPassManager::passId(res);
             exporter.exportPkPass(m_pkPassMgr, pkPassId);
 
             const auto docIds = DocumentUtil::documentIds(res);
@@ -371,6 +372,7 @@ bool ApplicationController::exportTripToFile(const QString &tripGroupId, const Q
             }
         }
     }
+    exporter.exportTripGroup(tripGroupId, tg);
     return true;
 }
 
