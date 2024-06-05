@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-31 00:39+0000\n"
+"POT-Creation-Date: 2024-06-05 00:39+0000\n"
 "PO-Revision-Date: 2024-04-28 11:34+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -273,7 +273,7 @@ msgstr "Czy na pewno chcesz zastąpić obecną rezerwację nowo wybraną podró�
 msgid "Replace"
 msgstr "Zastąp"
 
-#: app/applicationcontroller.cpp:263 app/applicationcontroller.cpp:507
+#: app/applicationcontroller.cpp:263
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."

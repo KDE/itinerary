@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-31 00:39+0000\n"
+"POT-Creation-Date: 2024-06-05 00:39+0000\n"
 "PO-Revision-Date: 2024-05-09 06:05+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -270,7 +270,7 @@ msgstr "您確定要將您現有的預約替代為新選取的旅程嗎？"
 msgid "Replace"
 msgstr "取代"
 
-#: app/applicationcontroller.cpp:263 app/applicationcontroller.cpp:507
+#: app/applicationcontroller.cpp:263
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
