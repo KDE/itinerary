@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-05 00:39+0000\n"
+"POT-Creation-Date: 2024-06-06 00:39+0000\n"
 "PO-Revision-Date: 2023-11-07 21:26+0100\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: \n"
@@ -291,30 +291,30 @@ msgid_plural "%1 health certificates imported."
 msgstr[0] ""
 msgstr[1] ""
 
-#: app/applicationcontroller.cpp:284 app/applicationcontroller.cpp:324
-#: app/applicationcontroller.cpp:342 app/applicationcontroller.cpp:386
-#: app/applicationcontroller.cpp:425 app/applicationcontroller.cpp:443
+#: app/applicationcontroller.cpp:284 app/applicationcontroller.cpp:325
+#: app/applicationcontroller.cpp:343 app/applicationcontroller.cpp:388
+#: app/applicationcontroller.cpp:427 app/applicationcontroller.cpp:445
 #, kde-format
 msgid "Export failed: %1"
 msgstr ""
 
-#: app/applicationcontroller.cpp:298 app/applicationcontroller.cpp:307
-#: app/applicationcontroller.cpp:399 app/applicationcontroller.cpp:408
+#: app/applicationcontroller.cpp:299 app/applicationcontroller.cpp:308
+#: app/applicationcontroller.cpp:401 app/applicationcontroller.cpp:410
 #, kde-format
 msgid "Export completed."
 msgstr ""
 
-#: app/applicationcontroller.cpp:334
+#: app/applicationcontroller.cpp:335
 #, kde-format
 msgid "Trip sent."
 msgstr ""
 
-#: app/applicationcontroller.cpp:435
+#: app/applicationcontroller.cpp:437
 #, kde-format
 msgid "Reservation sent."
 msgstr ""
 
-#: app/applicationcontroller.cpp:491
+#: app/applicationcontroller.cpp:493
 #, kde-format
 msgid "Import completed."
 msgstr ""
