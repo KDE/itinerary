@@ -27,10 +27,10 @@ public:
     void setReservationManager(ReservationManager *resMgr);
     void setTransferManager(TransferManager *transferMgr);
 
-    QList<QString> tripGroups() const;
-    TripGroup tripGroup(const QString &id) const;
-    QString tripGroupIdForReservation(const QString &resId) const;
-    TripGroup tripGroupForReservation(const QString &resId) const;
+    [[nodiscard]] QList<QString> tripGroups() const;
+    [[nodiscard]] TripGroup tripGroup(const QString &id) const;
+    [[nodiscard]] QString tripGroupIdForReservation(const QString &resId) const;
+    [[nodiscard]] TripGroup tripGroupForReservation(const QString &resId) const;
 
     static void clear(); // for testing only!
 
@@ -45,7 +45,7 @@ Q_SIGNALS:
 private:
     friend class TripGroup;
 
-    static QString basePath();
+    [[nodiscard]] static QString basePath();
     void load();
     void removeTripGroup(const QString &groupId);
 
@@ -57,10 +57,10 @@ private:
     void scanAll();
     void scanOne(std::vector<QString>::const_iterator beginIt);
     void checkConsistency();
-    QString guessName(const TripGroup &g) const;
-    QString guessDestinationFromLodging(const TripGroup &g) const;
-    QString guessDestinationFromTransportTimeGap(const TripGroup &g) const;
-    bool isRoundTrip(const TripGroup &g) const;
+    [[nodiscard]] QString guessName(const TripGroup &g) const;
+    [[nodiscard]] QString guessDestinationFromLodging(const TripGroup &g) const;
+    [[nodiscard]] QString guessDestinationFromTransportTimeGap(const TripGroup &g) const;
+    [[nodiscard]] bool isRoundTrip(const TripGroup &g) const;
 
     ReservationManager *m_resMgr = nullptr;
     TransferManager *m_transferMgr = nullptr;

@@ -26,13 +26,12 @@
 
 #include <set>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KItinerary;
 
-enum {
-    MaximumTripDuration = 20, // in days
-    MaximumTripElements = 20,
-    MinimumTripElements = 2,
-};
+constexpr inline const auto MaximumTripDuration = 20; // in days
+constexpr inline const auto MaximumTripElements = 20;
+constexpr inline const auto MinimumTripElements = 2;
 
 TripGroupManager::TripGroupManager(QObject* parent) :
     QObject(parent)
@@ -92,7 +91,7 @@ TripGroup TripGroupManager::tripGroupForReservation(const QString &resId) const
 
 QString TripGroupManager::basePath()
 {
-    return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/tripgroups/");
+    return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/tripgroups/"_L1;
 }
 
 void TripGroupManager::load()
@@ -110,7 +109,7 @@ void TripGroupManager::load()
                 const auto groupIt = m_reservationToGroupMap.constFind(resId);
                 if (groupIt != m_reservationToGroupMap.constEnd()) {
                     qCWarning(Log) << "Overlapping trip groups found - removing" << g.name();
-                    const auto groupId = groupIt.value(); // copy before we modify what groupIt points to
+                    const auto groupId = groupIt.value(); // copy before we modify what groupIt points to - NOLINT performance-unnecessary-copy-initialization
                     removeTripGroup(groupId);
                     removeTripGroup(tgId);
                     break;
@@ -136,7 +135,7 @@ void TripGroupManager::removeTripGroup(const QString &groupId)
         }
     }
     m_tripGroups.erase(groupIt);
-    if (!QFile::remove(basePath() + groupId + QLatin1StringView(".json"))) {
+    if (!QFile::remove(basePath() + groupId + ".json"_L1)) {
         qCWarning(Log) << "Failed to delete trip group file!" << groupId;
     }
     Q_EMIT tripGroupRemoved(groupId);
@@ -193,7 +192,7 @@ void TripGroupManager::batchRemoved(const QString &resId)
     if (mapIt != m_reservationToGroupMap.constEnd()) {
         const auto groupIt = m_tripGroups.find(mapIt.value());
         Q_ASSERT(groupIt != m_tripGroups.end());
-        const auto groupId = groupIt.key(); // copy as the iterator might become invalid below
+        const auto groupId = groupIt.key(); // copy as the iterator might become invalid below - NOLINT performance-unnecessary-copy-initialization
 
         auto elems = groupIt.value().elements();
         elems.removeAll(resId);
@@ -203,7 +202,7 @@ void TripGroupManager::batchRemoved(const QString &resId)
         } else { // group changed
             qDebug() << "removing element from trip group" << resId << elems;
             groupIt.value().setElements(elems);
-            groupIt.value().store(basePath() + mapIt.value() + QLatin1StringView(".json"));
+            groupIt.value().store(basePath() + mapIt.value() + ".json"_L1);
             m_reservationToGroupMap.erase(mapIt);
             Q_EMIT tripGroupChanged(groupId);
         }
@@ -430,7 +429,7 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
         g.setName(guessName(g));
         qDebug() << "creating trip group" << g.name();
         m_tripGroups.insert(tgId, g);
-        g.store(basePath() + tgId + QLatin1StringView(".json"));
+        g.store(basePath() + tgId + ".json"_L1);
         Q_EMIT tripGroupAdded(tgId);
     } else {
         auto &g = groupIt.value();
@@ -443,7 +442,7 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
         }
         g.setName(guessName(g));
         qDebug() << "updating trip group" << g.name();
-        g.store(basePath() + groupIt.key() + QLatin1StringView(".json"));
+        g.store(basePath() + groupIt.key() + ".json"_L1);
         Q_EMIT tripGroupChanged(groupIt.key());
     }
 
@@ -522,7 +521,7 @@ QString TripGroupManager::guessDestinationFromLodging(const TripGroup &g) const
         // TODO consider the country if that differs from where we started from
     }
 
-    return dests.join(QLatin1StringView(" - "));
+    return dests.join(" - "_L1);
 }
 
 bool TripGroupManager::isRoundTrip(const TripGroup& g) const
@@ -601,11 +600,11 @@ QString TripGroupManager::guessName(const TripGroup& g) const
     Q_ASSERT(beginDt.daysTo(endDt) <= MaximumTripDuration);
     if (beginDt.date().year() == endDt.date().year()) {
         if (beginDt.date().month() == endDt.date().month()) {
-            return i18nc("%1 is destination, %2 is the standalone month name, %3 is the year", "%1 (%2 %3)", dest, QLocale().standaloneMonthName(beginDt.date().month(), QLocale::LongFormat), beginDt.date().toString(QStringLiteral("yyyy")));
+            return i18nc("%1 is destination, %2 is the standalone month name, %3 is the year", "%1 (%2 %3)", dest, QLocale().standaloneMonthName(beginDt.date().month(), QLocale::LongFormat), beginDt.date().toString(u"yyyy"_s));
         }
-        return i18nc("%1 is destination, %2 and %3 are the standalone month names and %4 is the year", "%1 (%2/%3 %4)", dest, QLocale().monthName(beginDt.date().month(), QLocale::LongFormat), QLocale().standaloneMonthName(endDt.date().month(), QLocale::LongFormat), beginDt.date().toString(QStringLiteral("yyyy")));
+        return i18nc("%1 is destination, %2 and %3 are the standalone month names and %4 is the year", "%1 (%2/%3 %4)", dest, QLocale().monthName(beginDt.date().month(), QLocale::LongFormat), QLocale().standaloneMonthName(endDt.date().month(), QLocale::LongFormat), beginDt.date().toString(u"yyyy"_s));
     }
-    return i18nc("%1 is destination, %2 and %3 are years", "%1 (%2/%3)", dest, beginDt.date().toString(QStringLiteral("yyyy")), endDt.date().toString(QStringLiteral("yyyy")));
+    return i18nc("%1 is destination, %2 and %3 are years", "%1 (%2/%3)", dest, beginDt.date().toString(u"yyyy"_s), endDt.date().toString(u"yyyy"_s));
 }
 
 #include "moc_tripgroupmanager.cpp"
