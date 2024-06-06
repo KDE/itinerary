@@ -64,6 +64,11 @@ void TripGroupManager::setReservationManager(ReservationManager *resMgr)
 void TripGroupManager::setTransferManager(TransferManager *transferMgr)
 {
     m_transferMgr = transferMgr;
+
+    const auto transferChangedWrapper = [this](const Transfer &t) { transferChanged(t.reservationId(), t.alignment()); };
+    connect(m_transferMgr, &TransferManager::transferAdded, this, transferChangedWrapper);
+    connect(m_transferMgr, &TransferManager::transferChanged, this, transferChangedWrapper);
+    connect(m_transferMgr, &TransferManager::transferRemoved, this, &TripGroupManager::transferChanged);
 }
 
 QList<QString> TripGroupManager::tripGroups() const {
@@ -212,6 +217,23 @@ void TripGroupManager::batchRemoved(const QString &resId)
     const auto resIt = std::find(m_reservations.begin(), m_reservations.end(), resId);
     if (resIt != m_reservations.end()) {
         m_reservations.erase(resIt);
+    }
+}
+
+void TripGroupManager::transferChanged(const QString &resId, Transfer::Alignment alignment)
+{
+    const auto tgId = m_reservationToGroupMap.value(resId);
+    if (tgId.isEmpty()) {
+        return;
+    }
+
+    const auto tg = tripGroup(tgId);
+    assert(!tg.elements().empty());
+
+    // if tranfers leading or trailing the trip group changed, the start/end time of the group change
+    if ((alignment == Transfer::Before && tg.elements().constFirst() == resId)
+     || (alignment == Transfer::After && tg.elements().constLast() == resId)) {
+        Q_EMIT tripGroupChanged(tgId);
     }
 }
 

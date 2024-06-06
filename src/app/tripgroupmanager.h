@@ -7,6 +7,8 @@
 #ifndef TRIPGROUPMANAGER_H
 #define TRIPGROUPMANAGER_H
 
+#include "transfer.h"
+
 #include <QObject>
 #include <QHash>
 
@@ -53,6 +55,8 @@ private:
     void batchContentChanged(const QString &resId);
     void batchRenamed(const QString &oldBatchId, const QString &newBatchId);
     void batchRemoved(const QString &resId);
+
+    void transferChanged(const QString &resId, Transfer::Alignment alignment);
 
     void scanAll();
     void scanOne(std::vector<QString>::const_iterator beginIt);
