@@ -344,12 +344,12 @@ int main(int argc, char **argv)
     QCommandLineParser parser;
     QCommandLineOption isTemporaryOpt(QStringLiteral("tempfile"), QStringLiteral("Input file is a temporary file and will be deleted after importing."));
     parser.addOption(isTemporaryOpt);
-    QCommandLineOption pageOpt(QStringLiteral("page"), i18n("Open Itinerary on the given page"), QStringLiteral("page"));
+    QCommandLineOption pageOpt(QStringLiteral("page"), i18nc("@info:shell", "Open Itinerary on the given page"), QStringLiteral("page"));
     parser.addOption(pageOpt);
     QCommandLineOption selfTestOpt(QStringLiteral("self-test"), QStringLiteral("internal, for automated testing"));
     parser.addOption(selfTestOpt);
     aboutData.setupCommandLine(&parser);
-    parser.addPositionalArgument(QStringLiteral("file"), i18n("Files or URLs to import."));
+    parser.addPositionalArgument(QStringLiteral("file"), i18nc("@info:shell", "Files or URLs to import."));
     parser.process(app);
     aboutData.processCommandLine(&parser);
 #if HAVE_KCRASH
