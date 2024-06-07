@@ -53,6 +53,8 @@ QJsonObject TripGroup::toJson(const TripGroup &group)
     QJsonArray elems;
     std::copy(group.m_elements.begin(), group.m_elements.end(), std::back_inserter(elems));
     obj.insert("elements"_L1, elems);
+    obj.insert("beginDateTime"_L1, group.beginDateTime().toString(Qt::ISODate));
+    obj.insert("endDateTime"_L1, group.endDateTime().toString(Qt::ISODate));
     return obj;
 }
 
@@ -72,6 +74,9 @@ bool TripGroup::load(const QString &path)
     for (const auto &v : elems) {
         m_elements.push_back(v.toString());
     }
+
+    m_beginDateTime = QDateTime::fromString(obj.value("beginDateTime"_L1).toString(), Qt::ISODate);
+    m_endDateTime = QDateTime::fromString(obj.value("endDateTime"_L1).toString(), Qt::ISODate);
 
     return elems.size() >= 2;
 }
@@ -121,6 +126,11 @@ QDateTime TripGroup::beginDateTime() const
     return dt;
 }
 
+void TripGroup::setBeginDateTime(const QDateTime &beginDt)
+{
+    m_beginDateTime = beginDt;
+}
+
 QDateTime TripGroup::endDateTime() const
 {
     if (m_elements.empty()) {
@@ -134,6 +144,11 @@ QDateTime TripGroup::endDateTime() const
         return std::max(dt, transfer.journey().scheduledArrivalTime());
     }
     return dt;
+}
+
+void TripGroup::setEndDateTime(const QDateTime &endDt)
+{
+    m_endDateTime = endDt;
 }
 
 #include "moc_tripgroup.cpp"

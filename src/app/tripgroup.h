@@ -7,13 +7,12 @@
 #ifndef TRIPGROUP_H
 #define TRIPGROUP_H
 
+#include <QDateTime>
 #include <QList>
 #include <QMetaType>
 #include <QString>
 
 class TripGroupManager;
-
-class QDateTime;
 
 /** Trip group object. */
 class TripGroup
@@ -35,7 +34,9 @@ public:
     void setElements(const QList<QString> &elems);
 
     [[nodiscard]] QDateTime beginDateTime() const;
+    void setBeginDateTime(const QDateTime &beginDt);
     [[nodiscard]] QDateTime endDateTime() const;
+    void setEndDateTime(const QDateTime &endDt);
 
     /** URL slug variant of the name, for use in file names. */
     [[nodiscard]] QString slugName() const;
@@ -49,6 +50,8 @@ private:
     TripGroupManager *m_mgr = nullptr;
     QString m_name;
     QList<QString> m_elements;
+    QDateTime m_beginDateTime;
+    QDateTime m_endDateTime;
 };
 
 Q_DECLARE_METATYPE(TripGroup)

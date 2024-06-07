@@ -66,6 +66,11 @@ private:
     [[nodiscard]] QString guessDestinationFromTransportTimeGap(const TripGroup &g) const;
     [[nodiscard]] bool isRoundTrip(const TripGroup &g) const;
 
+    /** Update begin/end times based on the current content.
+     *  @returns @c true if the begin/end time changed.
+     */
+    bool recomputeTripGroupTimes(TripGroup &tg) const;
+
     ReservationManager *m_resMgr = nullptr;
     TransferManager *m_transferMgr = nullptr;
     QHash<QString, TripGroup> m_tripGroups;

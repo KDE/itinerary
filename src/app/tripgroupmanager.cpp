@@ -57,8 +57,10 @@ void TripGroupManager::setReservationManager(ReservationManager *resMgr)
         return SortUtil::isBefore(m_resMgr->reservation(lhs), m_resMgr->reservation(rhs));
     });
 
-    checkConsistency();
-    scanAll();
+    if (m_resMgr && m_transferMgr) {
+        checkConsistency();
+        scanAll();
+    }
 }
 
 void TripGroupManager::setTransferManager(TransferManager *transferMgr)
@@ -69,14 +71,19 @@ void TripGroupManager::setTransferManager(TransferManager *transferMgr)
     connect(m_transferMgr, &TransferManager::transferAdded, this, transferChangedWrapper);
     connect(m_transferMgr, &TransferManager::transferChanged, this, transferChangedWrapper);
     connect(m_transferMgr, &TransferManager::transferRemoved, this, &TripGroupManager::transferChanged);
+
+    if (m_resMgr && m_transferMgr) {
+        checkConsistency();
+        scanAll();
+    }
 }
 
-QList<QString> TripGroupManager::tripGroups() const {
-  QList<QString> groups;
-  groups.reserve(m_tripGroups.size());
-  std::copy(m_tripGroups.keyBegin(), m_tripGroups.keyEnd(),
-            std::back_inserter(groups));
-  return groups;
+QList<QString> TripGroupManager::tripGroups() const
+{
+    QList<QString> groups;
+    groups.reserve(m_tripGroups.size());
+    std::copy(m_tripGroups.keyBegin(), m_tripGroups.keyEnd(), std::back_inserter(groups));
+    return groups;
 }
 
 TripGroup TripGroupManager::tripGroup(const QString &id) const
@@ -207,6 +214,7 @@ void TripGroupManager::batchRemoved(const QString &resId)
         } else { // group changed
             qDebug() << "removing element from trip group" << resId << elems;
             groupIt.value().setElements(elems);
+            recomputeTripGroupTimes(groupIt.value());
             groupIt.value().store(basePath() + mapIt.value() + ".json"_L1);
             m_reservationToGroupMap.erase(mapIt);
             Q_EMIT tripGroupChanged(groupId);
@@ -227,13 +235,16 @@ void TripGroupManager::transferChanged(const QString &resId, Transfer::Alignment
         return;
     }
 
-    const auto tg = tripGroup(tgId);
-    assert(!tg.elements().empty());
+    const auto tgIt = m_tripGroups.find(tgId);
+    assert(tgIt != m_reservationToGroupMap.end() && !tgIt.value().elements().empty());
 
     // if tranfers leading or trailing the trip group changed, the start/end time of the group change
-    if ((alignment == Transfer::Before && tg.elements().constFirst() == resId)
-     || (alignment == Transfer::After && tg.elements().constLast() == resId)) {
-        Q_EMIT tripGroupChanged(tgId);
+    if ((alignment == Transfer::Before && tgIt.value().elements().constFirst() == resId)
+     || (alignment == Transfer::After && tgIt.value().elements().constLast() == resId)) {
+        if (recomputeTripGroupTimes(tgIt.value())) {
+            tgIt.value().store(basePath() + tgIt.key() + ".json"_L1);
+            Q_EMIT tripGroupChanged(tgId);
+        }
     }
 }
 
@@ -449,6 +460,7 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
             m_reservationToGroupMap.insert(*it2, tgId);
         }
         g.setName(guessName(g));
+        recomputeTripGroupTimes(g);
         qDebug() << "creating trip group" << g.name();
         m_tripGroups.insert(tgId, g);
         g.store(basePath() + tgId + ".json"_L1);
@@ -463,6 +475,7 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
             m_reservationToGroupMap.insert(*it2, groupIt.key());
         }
         g.setName(guessName(g));
+        recomputeTripGroupTimes(g);
         qDebug() << "updating trip group" << g.name();
         g.store(basePath() + groupIt.key() + ".json"_L1);
         Q_EMIT tripGroupChanged(groupIt.key());
@@ -490,6 +503,16 @@ void TripGroupManager::checkConsistency()
         removeTripGroup(groupId);
     }
     tgIds.clear();
+
+    // look for missing or otherwise corrupt begin/end times
+    for (auto it = m_tripGroups.begin(); it != m_tripGroups.end(); ++it) {
+        if (it.value().beginDateTime().isValid() && it.value().endDateTime().isValid() && it.value().beginDateTime() <= it.value().endDateTime()) {
+            continue;
+        }
+        qCDebug(Log) << "Fixing begin/end times for group" << it.value().name();
+        recomputeTripGroupTimes(it.value());
+        it.value().store(basePath() + it.key() + ".json"_L1);
+    }
 
     // look for nested groups
     std::copy(m_tripGroups.keyBegin(), m_tripGroups.keyEnd(), std::back_inserter(tgIds));
@@ -622,11 +645,44 @@ QString TripGroupManager::guessName(const TripGroup& g) const
     Q_ASSERT(beginDt.daysTo(endDt) <= MaximumTripDuration);
     if (beginDt.date().year() == endDt.date().year()) {
         if (beginDt.date().month() == endDt.date().month()) {
-            return i18nc("%1 is destination, %2 is the standalone month name, %3 is the year", "%1 (%2 %3)", dest, QLocale().standaloneMonthName(beginDt.date().month(), QLocale::LongFormat), beginDt.date().toString(u"yyyy"_s));
+            return i18nc("%1 is destination, %2 is the standalone month name, %3 is the year", "%1 (%2 %3)", dest, QLocale().standaloneMonthName(beginDt.date().month(), QLocale::LongFormat), beginDt.date().toString(u"yyyy"));
         }
-        return i18nc("%1 is destination, %2 and %3 are the standalone month names and %4 is the year", "%1 (%2/%3 %4)", dest, QLocale().monthName(beginDt.date().month(), QLocale::LongFormat), QLocale().standaloneMonthName(endDt.date().month(), QLocale::LongFormat), beginDt.date().toString(u"yyyy"_s));
+        return i18nc("%1 is destination, %2 and %3 are the standalone month names and %4 is the year", "%1 (%2/%3 %4)", dest, QLocale().monthName(beginDt.date().month(), QLocale::LongFormat), QLocale().standaloneMonthName(endDt.date().month(), QLocale::LongFormat), beginDt.date().toString(u"yyyy"));
     }
-    return i18nc("%1 is destination, %2 and %3 are years", "%1 (%2/%3)", dest, beginDt.date().toString(u"yyyy"_s), endDt.date().toString(u"yyyy"_s));
+    return i18nc("%1 is destination, %2 and %3 are years", "%1 (%2/%3)", dest, beginDt.date().toString(u"yyyy"), endDt.date().toString(u"yyyy"));
+}
+
+bool TripGroupManager::recomputeTripGroupTimes(TripGroup &tg) const
+{
+    if (tg.elements().isEmpty() && (tg.beginDateTime().isValid() || tg.endDateTime().isValid())) {
+        tg.setBeginDateTime({});
+        tg.setEndDateTime({});
+        return true;
+    }
+    if (tg.elements().isEmpty()) {
+        return false;
+    }
+
+    auto res = m_resMgr->reservation(tg.elements().constFirst());
+    auto dt = KItinerary::SortUtil::startDateTime(res);
+
+    auto transfer = m_transferMgr->transfer(tg.elements().constFirst(), Transfer::Before);
+    if (transfer.state() == Transfer::Selected && transfer.journey().scheduledDepartureTime().isValid()) {
+        dt = std::min(dt, transfer.journey().scheduledDepartureTime());
+    }
+    auto change = dt != tg.beginDateTime();
+    tg.setBeginDateTime(dt);
+
+    res = m_resMgr->reservation(tg.elements().constLast());
+    dt = KItinerary::SortUtil::endDateTime(res);
+
+    transfer = m_transferMgr->transfer(tg.elements().constLast(), Transfer::After);
+    if (transfer.state() == Transfer::Selected && transfer.journey().scheduledArrivalTime().isValid()) {
+        dt = std::max(dt, transfer.journey().scheduledArrivalTime());
+    }
+    change |= dt != tg.endDateTime();
+    tg.setEndDateTime(dt);
+    return change;
 }
 
 #include "moc_tripgroupmanager.cpp"
