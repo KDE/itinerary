@@ -11,6 +11,7 @@
 #include "applicationcontroller.h"
 #include "importcontroller.h"
 #include "reservationmanager.h"
+#include "transfermanager.h"
 #include "tripgroupmanager.h"
 
 #include <QAbstractItemModelTester>
@@ -43,10 +44,12 @@ private Q_SLOTS:
     void testStats()
     {
         ReservationManager resMgr;
+        TransferManager transferMgr;
         Test::clearAll(&resMgr);
         TripGroupManager::clear();
         TripGroupManager tgMgr;
         tgMgr.setReservationManager(&resMgr);
+        tgMgr.setTransferManager(&transferMgr);
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&resMgr);
 

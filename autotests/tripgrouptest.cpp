@@ -9,6 +9,7 @@
 #include "applicationcontroller.h"
 #include "importcontroller.h"
 #include "reservationmanager.h"
+#include "transfermanager.h"
 #include "tripgroup.h"
 #include "tripgroupmanager.h"
 
@@ -44,6 +45,7 @@ private Q_SLOTS:
     void testGrouping()
     {
         ReservationManager resMgr;
+        TransferManager transferMgr;
         Test::clearAll(&resMgr);
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&resMgr);
@@ -56,6 +58,7 @@ private Q_SLOTS:
             QSignalSpy addSpy(&mgr, &TripGroupManager::tripGroupAdded);
             QVERIFY(addSpy.isValid());
             mgr.setReservationManager(&resMgr);
+            mgr.setTransferManager(&transferMgr);
             QCOMPARE(addSpy.size(), 1);
             auto g = mgr.tripGroup(addSpy.at(0).at(0).toString());
             QCOMPARE(g.elements().size(), resMgr.batches().size());
@@ -70,6 +73,7 @@ private Q_SLOTS:
             QSignalSpy addSpy(&mgr, &TripGroupManager::tripGroupAdded);
             QVERIFY(addSpy.isValid());
             mgr.setReservationManager(&resMgr);
+            mgr.setTransferManager(&transferMgr);
             QCOMPARE(addSpy.size(), 1);
             auto g = mgr.tripGroup(addSpy.at(0).at(0).toString());
             QCOMPARE(g.elements().size(), resMgr.batches().size());
@@ -84,6 +88,7 @@ private Q_SLOTS:
             QSignalSpy addSpy(&mgr, &TripGroupManager::tripGroupAdded);
             QVERIFY(addSpy.isValid());
             mgr.setReservationManager(&resMgr);
+            mgr.setTransferManager(&transferMgr);
             QCOMPARE(addSpy.size(), 1);
             auto g = mgr.tripGroup(addSpy.at(0).at(0).toString());
             QCOMPARE(g.elements().size(), resMgr.batches().size());
@@ -98,6 +103,7 @@ private Q_SLOTS:
             QSignalSpy addSpy(&mgr, &TripGroupManager::tripGroupAdded);
             QVERIFY(addSpy.isValid());
             mgr.setReservationManager (&resMgr);
+            mgr.setTransferManager(&transferMgr);
             QCOMPARE(addSpy.size(), 3);
             QCOMPARE(mgr.tripGroup(addSpy.at(0).at(0).toString()).elements().size(), 2);
             QCOMPARE(mgr.tripGroup(addSpy.at(1).at(0).toString()).elements().size(), 2);
@@ -111,6 +117,7 @@ private Q_SLOTS:
         {
             TripGroupManager mgr;
             mgr.setReservationManager (&resMgr);
+            mgr.setTransferManager(&transferMgr);
             QCOMPARE(mgr.tripGroups().size(), 1);
             QCOMPARE(mgr.tripGroup(mgr.tripGroups().at(0)).elements().size(), 4);
         }
@@ -119,10 +126,12 @@ private Q_SLOTS:
     void testDynamicGrouping()
     {
         ReservationManager resMgr;
+        TransferManager transferMgr;
         Test::clearAll(&resMgr);
         TripGroupManager::clear();
         TripGroupManager mgr;
         mgr.setReservationManager(&resMgr);
+        mgr.setTransferManager(&transferMgr);
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&resMgr);
 
@@ -140,9 +149,11 @@ private Q_SLOTS:
     void testChanges()
     {
         ReservationManager resMgr;
+        TransferManager transferMgr;
         Test::clearAll(&resMgr);
         TripGroupManager mgr;
         mgr.setReservationManager(&resMgr);
+        mgr.setTransferManager(&transferMgr);
 
         QSignalSpy addSpy(&mgr, &TripGroupManager::tripGroupAdded);
         QSignalSpy changeSpy(&mgr, &TripGroupManager::tripGroupChanged);
@@ -161,6 +172,7 @@ private Q_SLOTS:
 
         changeSpy.clear();
         Test::clearAll(&resMgr);
+        QCOMPARE(addSpy.size(), 1);
         QCOMPARE(rmSpy.size(), 1);
         QCOMPARE(changeSpy.size(), 0);
     }
@@ -187,6 +199,7 @@ private Q_SLOTS:
         QFETCH(QString, expectedName);
 
         ReservationManager resMgr;
+        TransferManager transferMgr;
         Test::clearAll(&resMgr);
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&resMgr);
@@ -197,6 +210,7 @@ private Q_SLOTS:
         TripGroupManager mgr;
         QSignalSpy addSpy(&mgr, &TripGroupManager::tripGroupAdded);
         mgr.setReservationManager(&resMgr);
+        mgr.setTransferManager(&transferMgr);
         QCOMPARE(addSpy.size(), 1);
         auto g = mgr.tripGroup(addSpy.at(0).at(0).toString());
         QCOMPARE(g.elements().size(), resMgr.batches().size());
@@ -206,6 +220,7 @@ private Q_SLOTS:
     void testLeadingAppendixRemoval()
     {
         ReservationManager resMgr;
+        TransferManager transferMgr;
         Test::clearAll(&resMgr);
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&resMgr);
@@ -216,6 +231,7 @@ private Q_SLOTS:
         TripGroupManager mgr;
         QSignalSpy addSpy(&mgr, &TripGroupManager::tripGroupAdded);
         mgr.setReservationManager(&resMgr);
+        mgr.setTransferManager(&transferMgr);
         QCOMPARE(addSpy.size(), 1);
         auto g = mgr.tripGroup(addSpy.at(0).at(0).toString());
         QCOMPARE(g.elements().size(), resMgr.batches().size() - 1);
@@ -226,6 +242,7 @@ private Q_SLOTS:
     void testDeletion()
     {
         ReservationManager resMgr;
+        TransferManager transferMgr;
         Test::clearAll(&resMgr);
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&resMgr);
@@ -236,6 +253,7 @@ private Q_SLOTS:
         TripGroupManager mgr;
         QSignalSpy addSpy(&mgr, &TripGroupManager::tripGroupAdded);
         mgr.setReservationManager(&resMgr);
+        mgr.setTransferManager(&transferMgr);
         QCOMPARE(addSpy.size(), 1);
         QVERIFY(resMgr.batches().size() > 8);
         const auto groupId = addSpy.at(0).at(0).toString();

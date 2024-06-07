@@ -10,6 +10,7 @@
 #include "importcontroller.h"
 #include "locationinformation.h"
 #include "reservationmanager.h"
+#include "transfermanager.h"
 #include "tripgroup.h"
 #include "tripgroupmanager.h"
 #include "tripgroupinfoprovider.h"
@@ -33,10 +34,12 @@ private Q_SLOTS:
     void testInfoProvider()
     {
         ReservationManager resMgr;
+        TransferManager transferMgr;
         Test::clearAll(&resMgr);
         TripGroupManager::clear();
         TripGroupManager mgr;
         mgr.setReservationManager(&resMgr);
+        mgr.setTransferManager(&transferMgr);
         WeatherForecastManager fcMgr;
         fcMgr.setTestModeEnabled(true);
         auto ctrl = Test::makeAppController();

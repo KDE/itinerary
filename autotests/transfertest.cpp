@@ -63,6 +63,7 @@ private Q_SLOTS:
         mgr.setReservationManager(&resMgr);
         mgr.setTripGroupManager(&tgMgr);
         mgr.setLiveDataManager(&liveDataMgr);
+        tgMgr.setTransferManager(&mgr);
         QSignalSpy addSpy(&mgr, &TransferManager::transferAdded);
         QSignalSpy changeSpy(&mgr, &TransferManager::transferChanged);
         QSignalSpy removeSpy(&mgr, &TransferManager::transferRemoved);

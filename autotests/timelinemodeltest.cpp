@@ -627,6 +627,7 @@ private Q_SLOTS:
         transferMgr.setTripGroupManager(&groupMgr);
         transferMgr.setFavoriteLocationModel(&favLocModel);
         transferMgr.setLiveDataManager(&liveMgr);
+        groupMgr.setTransferManager(&transferMgr);
 
         TimelineModel model;
         QAbstractItemModelTester tester(&model);

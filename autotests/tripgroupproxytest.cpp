@@ -10,6 +10,7 @@
 #include "applicationcontroller.h"
 #include "importcontroller.h"
 #include "reservationmanager.h"
+#include "transfermanager.h"
 #include "timelinemodel.h"
 #include "tripgroupmanager.h"
 #include "tripgroupproxymodel.h"
@@ -45,6 +46,7 @@ private Q_SLOTS:
     void testExpandCollapse()
     {
         ReservationManager resMgr;
+        TransferManager transferMgr;
         Test::clearAll(&resMgr);
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&resMgr);
@@ -58,6 +60,7 @@ private Q_SLOTS:
         TripGroupManager groupMgr;
         QSignalSpy addSpy(&groupMgr, &TripGroupManager::tripGroupAdded);
         groupMgr.setReservationManager(&resMgr);
+        groupMgr.setTransferManager(&transferMgr);
         QCOMPARE(groupMgr.tripGroups().size(), 3);
         QCOMPARE(addSpy.size(), 3);
 
@@ -104,6 +107,7 @@ private Q_SLOTS:
     void testCurrentGroup()
     {
         ReservationManager resMgr;
+        TransferManager transferMgr;
         Test::clearAll(&resMgr);
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&resMgr);
@@ -115,6 +119,7 @@ private Q_SLOTS:
         TripGroupManager groupMgr;
         QSignalSpy addSpy(&groupMgr, &TripGroupManager::tripGroupAdded);
         groupMgr.setReservationManager(&resMgr);
+        groupMgr.setTransferManager(&transferMgr);
         QCOMPARE(groupMgr.tripGroups().size(), 1);
         QCOMPARE(addSpy.size(), 1);
 

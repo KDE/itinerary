@@ -172,6 +172,7 @@ private Q_SLOTS:
         TransferManager transferMgr;
         transferMgr.setReservationManager(&resMgr);
         transferMgr.setTripGroupManager(&tripGroupMgr);
+        tripGroupMgr.setTransferManager(&transferMgr);
 
         FavoriteLocationModel favLoc;
 
@@ -265,6 +266,7 @@ private Q_SLOTS:
         transferMgr.setReservationManager(&resMgr);
         transferMgr.setTripGroupManager(&tripGroupMgr);
         transferMgr.setLiveDataManager(&liveDataMgr);
+        tripGroupMgr.setTransferManager(&transferMgr);
 
         FavoriteLocationModel favLoc;
 
