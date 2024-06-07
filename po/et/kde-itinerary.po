@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-06 00:39+0000\n"
+"POT-Creation-Date: 2024-06-07 00:39+0000\n"
 "PO-Revision-Date: 2020-05-04 10:51+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -2560,11 +2560,13 @@ msgstr ""
 
 #: app/main.cpp:347
 #, kde-format
+msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr ""
 
 #: app/main.cpp:352
 #, kde-format
+msgctxt "@info:shell"
 msgid "Files or URLs to import."
 msgstr ""
 
@@ -3944,14 +3946,14 @@ msgstr[1] ""
 msgid "Delete trip"
 msgstr "Sündmuse pilet"
 
-#: app/tripgroupmanager.cpp:604
+#: app/tripgroupmanager.cpp:625
 #, fuzzy, kde-format
 #| msgid "%1 (%2 %3)"
 msgctxt "%1 is destination, %2 is the standalone month name, %3 is the year"
 msgid "%1 (%2 %3)"
 msgstr "%1 (%2 %3)"
 
-#: app/tripgroupmanager.cpp:606
+#: app/tripgroupmanager.cpp:627
 #, fuzzy, kde-format
 #| msgid "%1 (%2/%3 %4)"
 msgctxt ""
@@ -3960,7 +3962,7 @@ msgctxt ""
 msgid "%1 (%2/%3 %4)"
 msgstr "%1 (%2/%3 %4)"
 
-#: app/tripgroupmanager.cpp:608
+#: app/tripgroupmanager.cpp:629
 #, fuzzy, kde-format
 #| msgid "%1 (%2/%3)"
 msgctxt "%1 is destination, %2 and %3 are years"

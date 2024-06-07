@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kitinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-06 00:39+0000\n"
+"POT-Creation-Date: 2024-06-07 00:39+0000\n"
 "PO-Revision-Date: 2023-07-14 22:15+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -2434,12 +2434,15 @@ msgid "Copyright © The KDE Community"
 msgstr "Copyright © 2018-%1 da Comunidade do KDE"
 
 #: app/main.cpp:347
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Open Itinerary on the given page"
+msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Abrir o itinerário na página indicada"
 
 #: app/main.cpp:352
 #, kde-format
+msgctxt "@info:shell"
 msgid "Files or URLs to import."
 msgstr ""
 
@@ -3792,13 +3795,13 @@ msgstr[1] "Moedas: %2"
 msgid "Delete trip"
 msgstr "Remover a viagem"
 
-#: app/tripgroupmanager.cpp:604
+#: app/tripgroupmanager.cpp:625
 #, kde-format
 msgctxt "%1 is destination, %2 is the standalone month name, %3 is the year"
 msgid "%1 (%2 %3)"
 msgstr "%1 (%2 %3)"
 
-#: app/tripgroupmanager.cpp:606
+#: app/tripgroupmanager.cpp:627
 #, kde-format
 msgctxt ""
 "%1 is destination, %2 and %3 are the standalone month names and %4 is the "
@@ -3806,7 +3809,7 @@ msgctxt ""
 msgid "%1 (%2/%3 %4)"
 msgstr "%1 (%2/%3 %4)"
 
-#: app/tripgroupmanager.cpp:608
+#: app/tripgroupmanager.cpp:629
 #, kde-format
 msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"
