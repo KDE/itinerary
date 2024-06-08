@@ -110,6 +110,13 @@ public:
     [[nodiscard]] QString identifier() const;
     [[nodiscard]] static QString identifier(const QString &resId, Transfer::Alignment alignment);
 
+    /** Check if transfers are considered identical
+     *  in the sense that no update is required.
+     *  This errs on the safe side and can report false even if there is actually no change,
+     *  as it cannot check for identical journeys.
+     */
+    [[nodiscard]] bool operator==(const Transfer &other) const;
+
     [[nodiscard]] static QJsonObject toJson(const Transfer &transfer);
     [[nodiscard]] static Transfer fromJson(const QJsonObject &obj);
 

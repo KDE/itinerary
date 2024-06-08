@@ -17,6 +17,7 @@ using namespace Qt::Literals::StringLiterals;
 class TransferPrivate : public QSharedData
 {
 public:
+    // ### any update here needs to also be reflected in the operator== implementation below
     Transfer::Alignment m_alignment = Transfer::Before;
     Transfer::State m_state = Transfer::UndefinedState;
     KPublicTransport::Location m_from;
@@ -212,6 +213,27 @@ QString Transfer::identifier() const
 QString Transfer::identifier(const QString &resId, Transfer::Alignment alignment)
 {
     return resId + (alignment == Transfer::Before ? "-BEFORE"_L1 : "-AFTER"_L1);
+}
+
+bool Transfer::operator==(const Transfer &other) const
+{
+    if (d->m_alignment == other.d->m_alignment
+     && d->m_state == other.d->m_state
+     && KPublicTransport::Location::isSame(d->m_from, other.d->m_from)
+     && KPublicTransport::Location::isSame(d->m_to, other.d->m_to)
+     && KPublicTransport::Journey::isSame(d->m_journey, other.d->m_journey)
+     && d->m_fromName == other.d->m_fromName
+     && d->m_toName == other.d->m_toName
+     && d->m_anchorTime == other.d->m_anchorTime
+     && d->m_anchorDelta == other.d->m_anchorDelta
+     && d->m_floatingLocationType == other.d->m_floatingLocationType)
+    {
+        if (d->m_state == Transfer::Selected) {
+            return false; // we lack a way to check if m_journey is exactly identical!
+        }
+        return true;
+    }
+    return false;
 }
 
 QJsonObject Transfer::toJson(const Transfer &transfer)
