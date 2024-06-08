@@ -648,6 +648,9 @@ void TransferManager::addOrUpdateTransfer(Transfer &t)
         writeToFile(t);
         Q_EMIT transferRemoved(t.reservationId(), t.alignment());
     } else { // update existing data
+        if (t == transfer(t.reservationId(), t.alignment())) {
+            return;
+        }
         m_transfers[t.alignment()].insert(t.reservationId(), t);
         writeToFile(t);
         Q_EMIT transferChanged(t);
