@@ -50,7 +50,7 @@ public:
         After
     };
     Q_ENUM(Alignment)
-    Alignment alignment() const;
+    [[nodiscard]] Alignment alignment() const;
     void setAlignment(Alignment alignment);
 
     /** No journey selected, journey selected, or explicitly discarded. */
@@ -62,7 +62,7 @@ public:
         Searching
     };
     Q_ENUM(State)
-    State state() const;
+    [[nodiscard]] State state() const;
     void setState(State state);
 
     /** Source of the floating side location. */
@@ -71,47 +71,47 @@ public:
         FavoriteLocation
     };
     Q_ENUM(FloatingLocationType)
-    FloatingLocationType floatingLocationType() const;
+    [[nodiscard]] FloatingLocationType floatingLocationType() const;
     void setFloatingLocationType(FloatingLocationType type);
 
-    KPublicTransport::Location from() const;
+    [[nodiscard]] KPublicTransport::Location from() const;
     void setFrom(const KPublicTransport::Location &from);
-    KPublicTransport::Location to() const;
+    [[nodiscard]] KPublicTransport::Location to() const;
     void setTo(const KPublicTransport::Location &to);
     /** From and to locations are sufficiently defined. */
-    bool hasLocations() const;
+    [[nodiscard]] bool hasLocations() const;
 
-    QString fromName() const;
+    [[nodiscard]] QString fromName() const;
     void setFromName(const QString &fromName);
-    QString toName() const;
+    [[nodiscard]] QString toName() const;
     void setToName(const QString &toName);
 
-    KPublicTransport::Journey journey() const;
+    [[nodiscard]] KPublicTransport::Journey journey() const;
     void setJourney(const KPublicTransport::Journey &journey);
 
-    QString reservationId() const;
+    [[nodiscard]] QString reservationId() const;
     void setReservationId(const QString &resId);
 
     /** The time-wise fixed side of this transfer, ie. the start for Alignment::After and end for Alignment::Before. */
-    QDateTime anchorTime() const;
+    [[nodiscard]] QDateTime anchorTime() const;
     void setAnchorTime(const QDateTime &dt);
 
     /** The time offset in seconds to the anchor time the transfer should start/end. */
-    int anchorTimeDelta() const;
+    [[nodiscard]] int anchorTimeDelta() const;
     void setAnchorTimeDelta(int delta);
 
     /** Anchor time +/- anchor delta, ie. the time we actually want to arrive/depart. */
-    QDateTime journeyTime() const;
+    [[nodiscard]] QDateTime journeyTime() const;
 
     /** Returns @c false when this transfer isn't reachable (e.g. due to anchor time changes or a wrong journey pick). */
-    bool isReachable() const;
+    [[nodiscard]] bool isReachable() const;
 
     /** Unique identifier usable naming the file to store this into. */
-    QString identifier() const;
-    static QString identifier(const QString &resId, Transfer::Alignment alignment);
+    [[nodiscard]] QString identifier() const;
+    [[nodiscard]] static QString identifier(const QString &resId, Transfer::Alignment alignment);
 
-    static QJsonObject toJson(const Transfer &transfer);
-    static Transfer fromJson(const QJsonObject &obj);
+    [[nodiscard]] static QJsonObject toJson(const Transfer &transfer);
+    [[nodiscard]] static Transfer fromJson(const QJsonObject &obj);
 
 private:
     QExplicitlySharedDataPointer<TransferPrivate> d;

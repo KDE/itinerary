@@ -12,6 +12,8 @@
 #include <QDebug>
 #include <QJsonObject>
 
+using namespace Qt::Literals::StringLiterals;
+
 class TransferPrivate : public QSharedData
 {
 public:
@@ -95,8 +97,9 @@ void Transfer::setTo(const KPublicTransport::Location &to)
 
 QString Transfer::fromName() const
 {
-    if (d->m_fromName.isEmpty())
+    if (d->m_fromName.isEmpty()) {
         return d->m_from.name();
+    }
     return d->m_fromName;
 }
 
@@ -108,8 +111,9 @@ void Transfer::setFromName(const QString &fromName)
 
 QString Transfer::toName() const
 {
-    if (d->m_toName.isEmpty())
+    if (d->m_toName.isEmpty()) {
         return d->m_to.name();
+    }
     return d->m_toName;
 }
 
@@ -135,9 +139,9 @@ void Transfer::setJourney(const KPublicTransport::Journey &journey)
     d->m_journey = journey;
     if (journey.scheduledArrivalTime().isValid()) {
         if (d->m_alignment == Transfer::Before) {
-            d->m_anchorDelta = std::max(0ll, journey.scheduledArrivalTime().secsTo(d->m_anchorTime));
+            d->m_anchorDelta = (int)std::max(0ll, journey.scheduledArrivalTime().secsTo(d->m_anchorTime));
         } else {
-            d->m_anchorDelta = std::max(0ll, d->m_anchorTime.secsTo(journey.scheduledDepartureTime()));
+            d->m_anchorDelta = (int)std::max(0ll, d->m_anchorTime.secsTo(journey.scheduledDepartureTime()));
         }
     }
 }
@@ -207,24 +211,24 @@ QString Transfer::identifier() const
 
 QString Transfer::identifier(const QString &resId, Transfer::Alignment alignment)
 {
-    return resId + (alignment == Transfer::Before ? QLatin1StringView("-BEFORE") : QLatin1StringView("-AFTER"));
+    return resId + (alignment == Transfer::Before ? "-BEFORE"_L1 : "-AFTER"_L1);
 }
 
 QJsonObject Transfer::toJson(const Transfer &transfer)
 {
     auto obj = Json::toJson(transfer);
-    obj.insert(QStringLiteral("from"), KPublicTransport::Location::toJson(transfer.from()));
-    obj.insert(QStringLiteral("to"), KPublicTransport::Location::toJson(transfer.to()));
-    obj.insert(QStringLiteral("journey"), KPublicTransport::Journey::toJson(transfer.journey()));
+    obj.insert("from"_L1, KPublicTransport::Location::toJson(transfer.from()));
+    obj.insert("to"_L1, KPublicTransport::Location::toJson(transfer.to()));
+    obj.insert("journey"_L1, KPublicTransport::Journey::toJson(transfer.journey()));
     return obj;
 }
 
 Transfer Transfer::fromJson(const QJsonObject &obj)
 {
     auto transfer = Json::fromJson<Transfer>(obj);
-    transfer.setFrom(KPublicTransport::Location::fromJson(obj.value(QLatin1StringView("from")).toObject()));
-    transfer.setTo(KPublicTransport::Location::fromJson(obj.value(QLatin1StringView("to")).toObject()));
-    transfer.setJourney(KPublicTransport::Journey::fromJson(obj.value(QLatin1StringView("journey")).toObject()));
+    transfer.setFrom(KPublicTransport::Location::fromJson(obj.value("from"_L1).toObject()));
+    transfer.setTo(KPublicTransport::Location::fromJson(obj.value("to"_L1).toObject()));
+    transfer.setJourney(KPublicTransport::Journey::fromJson(obj.value("journey"_L1).toObject()));
 
     if (transfer.state() == Searching) { // searching state cannot survive persisting
         transfer.setState(Pending);
