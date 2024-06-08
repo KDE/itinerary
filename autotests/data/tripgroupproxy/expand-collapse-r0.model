@@ -13,6 +13,7 @@
         "tripGroup": {
             "@context": "http://schema.org",
             "@type": "TripGroup",
+            "automaticName": true,
             "beginDateTime": {
                 "@type": "QDateTime",
                 "@value": "2000-01-01T13:00:00+01:00",
@@ -309,6 +310,7 @@
         "tripGroup": {
             "@context": "http://schema.org",
             "@type": "TripGroup",
+            "automaticName": true,
             "beginDateTime": {
                 "@type": "QDateTime",
                 "@value": "2000-01-01T13:00:00+01:00",
@@ -331,6 +333,7 @@
         "tripGroup": {
             "@context": "http://schema.org",
             "@type": "TripGroup",
+            "automaticName": true,
             "beginDateTime": {
                 "@type": "QDateTime",
                 "@value": "2017-03-04T11:00:00-05:00",
@@ -675,6 +678,7 @@
         "tripGroup": {
             "@context": "http://schema.org",
             "@type": "TripGroup",
+            "automaticName": true,
             "beginDateTime": {
                 "@type": "QDateTime",
                 "@value": "2017-03-04T11:00:00-05:00",
@@ -697,6 +701,7 @@
         "tripGroup": {
             "@context": "http://schema.org",
             "@type": "TripGroup",
+            "automaticName": true,
             "beginDateTime": {
                 "@type": "QDateTime",
                 "@value": "2017-09-10T06:45:00+02:00",
@@ -1400,6 +1405,7 @@
         "tripGroup": {
             "@context": "http://schema.org",
             "@type": "TripGroup",
+            "automaticName": true,
             "beginDateTime": {
                 "@type": "QDateTime",
                 "@value": "2017-09-10T06:45:00+02:00",

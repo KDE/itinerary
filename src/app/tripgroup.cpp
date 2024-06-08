@@ -33,6 +33,16 @@ void TripGroup::setName(const QString &name)
     m_name = name;
 }
 
+bool TripGroup::hasAutomaticName() const
+{
+    return m_automaticName;
+}
+
+void TripGroup::setNameIsAutomatic(bool automatic)
+{
+    m_automaticName = automatic;
+}
+
 QList<QString> TripGroup::elements() const { return m_elements; }
 
 void TripGroup::setElements(const QList<QString> &elems) { m_elements = elems; }
@@ -41,6 +51,9 @@ QJsonObject TripGroup::toJson(const TripGroup &group)
 {
     QJsonObject obj;
     obj.insert("name"_L1, group.m_name);
+    if (!group.m_automaticName) {
+        obj.insert("automaticName"_L1, group.m_automaticName);
+    }
     QJsonArray elems;
     std::copy(group.m_elements.begin(), group.m_elements.end(), std::back_inserter(elems));
     obj.insert("elements"_L1, elems);
@@ -53,6 +66,7 @@ TripGroup TripGroup::fromJson(const QJsonObject &obj)
 {
     TripGroup tg;
     tg.m_name = obj.value("name"_L1).toString();
+    tg.m_automaticName = obj.value("automaticName"_L1).toBool(true);
     const auto elems = obj.value("elements"_L1).toArray();
     tg.m_elements.clear();
     tg.m_elements.reserve(elems.size());

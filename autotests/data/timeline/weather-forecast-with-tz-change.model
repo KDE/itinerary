@@ -137,6 +137,7 @@
         "tripGroup": {
             "@context": "http://schema.org",
             "@type": "TripGroup",
+            "automaticName": true,
             "beginDateTime": {
                 "@type": "QDateTime",
                 "@value": "1996-10-16T17:50:00+02:00",
@@ -581,6 +582,7 @@
         "tripGroup": {
             "@context": "http://schema.org",
             "@type": "TripGroup",
+            "automaticName": true,
             "beginDateTime": {
                 "@type": "QDateTime",
                 "@value": "1996-10-16T17:50:00+02:00",

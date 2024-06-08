@@ -305,6 +305,10 @@ Kirigami.ScrollablePage {
             }
         }
     }
+    TripGroupEditorDialog {
+        id: tripGroupEditor
+        onAccepted: TripGroupManager.updateTripGroup(tripGroupEditor.tripGroupId, tripGroupEditor.tripGroup)
+    }
 
     Component {
         id: flightDetailsPage

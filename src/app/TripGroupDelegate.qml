@@ -153,13 +153,26 @@ FormCard.FormCard {
                         Layout.fillWidth: true
                     }
                     QQC2.ToolButton {
+                        icon.name: "document-edit"
+                        onClicked: {
+                            tripGroupEditor.tripGroupId = root.tripGroupId;
+                            tripGroupEditor.tripGroup = root.tripGroup;
+                            tripGroupEditor.open();
+                        }
+                        text: i18n("Edit…")
+                        display: QQC2.AbstractButton.IconOnly
+                        QQC2.ToolTip.text: text
+                        QQC2.ToolTip.visible: hovered
+                        QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+                    }
+                    QQC2.ToolButton {
                         icon.name: "export-symbolic"
                         onClicked: {
                             exportTripGroupDialog.tripGroupId = root.tripGroupId
                             exportTripGroupDialog.suggestedFileName = root.tripGroup.slugName
                             exportTripGroupDialog.open()
                         }
-                        text: i18n("Export...")
+                        text: i18n("Export…")
                         QQC2.ToolTip.text: text
                         QQC2.ToolTip.visible: hovered
                         QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay

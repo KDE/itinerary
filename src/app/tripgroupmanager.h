@@ -36,6 +36,9 @@ public:
 
     static void clear(); // for testing only!
 
+    /** Update @p group, e.g. after editing its name. */
+    Q_INVOKABLE void updateTripGroup(const QString &groupId, const TripGroup &group);
+
     /** Deletes all elements in the trip group with Identifier @p id. */
     Q_INVOKABLE void removeReservationsInGroup(const QString &groupId);
 

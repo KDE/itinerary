@@ -18,7 +18,8 @@ class TripGroupManager;
 class TripGroup
 {
     Q_GADGET
-    Q_PROPERTY(QString name READ name)
+    Q_PROPERTY(QString name READ name WRITE setName)
+    Q_PROPERTY(bool automaticName READ hasAutomaticName WRITE setNameIsAutomatic)
     Q_PROPERTY(QDateTime beginDateTime READ beginDateTime)
     Q_PROPERTY(QDateTime endDateTime READ endDateTime)
     Q_PROPERTY(QString slugName READ slugName)
@@ -28,6 +29,9 @@ public:
 
     [[nodiscard]] QString name() const;
     void setName(const QString &name);
+
+    [[nodiscard]] bool hasAutomaticName() const;
+    void setNameIsAutomatic(bool automatic);
 
     [[nodiscard]] QList<QString> elements() const;
     void setElements(const QList<QString> &elems);
@@ -51,6 +55,7 @@ private:
     QList<QString> m_elements;
     QDateTime m_beginDateTime;
     QDateTime m_endDateTime;
+    bool m_automaticName = true;
 };
 
 Q_DECLARE_METATYPE(TripGroup)

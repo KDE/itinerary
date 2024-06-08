@@ -11,25 +11,31 @@ import org.kde.itinerary
 FormCard.FormCardDialog {
     id: root
 
-    property int mode
+    property string tripGroupId
     property var tripGroup
 
-    enum Mode {
-        Edit,
-        Add
-    }
-
-    title: mode === TripGroupEditorDialog.Mode.Add ? i18nc("@title:window", "Add Trip") : i18nc("@title:window", "Edit Trip")
+    title: root.tripGroupId === "" ? i18nc("@title:window", "Add Trip") : i18nc("@title:window", "Edit Trip")
 
     FormCard.FormTextFieldDelegate {
+        id: nameEdit
         label: i18nc("@label:textbox", "Trip name:")
-        onAccepted: buttonBox.accepted();
-        text: tripGroup.name
+        onAccepted: root.accept();
+        text: tripGroup?.name ?? ""
     }
 
     standardButtons: QQC2.Dialog.Cancel | QQC2.Dialog.Save
 
     onAccepted: () => {
+        if (root.tripGroup.name !== nameEdit.text) {
+            root.tripGroup.name = nameEdit.text;
+            root.tripGroup.automaticName = true;
+        }
         root.close();
+    }
+
+    onTripGroupChanged: {
+        // needs to be done explicitly as editing the text breaks the binding
+        // and thus doesn't work when reusing the dialog a second time
+        nameEdit.text = root.tripGroup.name;
     }
 }

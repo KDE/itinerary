@@ -160,6 +160,19 @@ void TripGroupManager::clear()
     d.removeRecursively();
 }
 
+void TripGroupManager::updateTripGroup(const QString &groupId, const TripGroup &group)
+{
+    auto groupIt = m_tripGroups.find(groupId);
+    if (groupIt == m_tripGroups.end()) {
+        return;
+    }
+
+    groupIt.value() = group;
+    recomputeTripGroupTimes(groupIt.value());
+    groupIt.value().store(basePath() + groupId + ".json"_L1);
+    Q_EMIT tripGroupChanged(groupId);
+}
+
 void TripGroupManager::removeReservationsInGroup(const QString &groupId)
 {
     const auto groupIt = m_tripGroups.constFind(groupId);
@@ -474,7 +487,9 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
         for (auto it2 = beginIt; it2 != it; ++it2) {
             m_reservationToGroupMap.insert(*it2, groupIt.key());
         }
-        g.setName(guessName(g));
+        if (g.hasAutomaticName() || g.name().isEmpty()) {
+            g.setName(guessName(g));
+        }
         recomputeTripGroupTimes(g);
         qDebug() << "updating trip group" << g.name();
         g.store(basePath() + groupIt.key() + ".json"_L1);
