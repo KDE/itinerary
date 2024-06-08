@@ -23,8 +23,7 @@ class TripGroup
     Q_PROPERTY(QDateTime endDateTime READ endDateTime)
     Q_PROPERTY(QString slugName READ slugName)
 public:
-    TripGroup();
-    TripGroup(TripGroupManager *mgr);
+    explicit TripGroup();
     ~TripGroup();
 
     [[nodiscard]] QString name() const;
@@ -47,7 +46,6 @@ public:
     [[nodiscard]] static QJsonObject toJson(const TripGroup &group);
 
 private:
-    TripGroupManager *m_mgr = nullptr;
     QString m_name;
     QList<QString> m_elements;
     QDateTime m_beginDateTime;

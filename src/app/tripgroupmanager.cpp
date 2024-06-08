@@ -113,7 +113,7 @@ void TripGroupManager::load()
 
     for (QDirIterator it(base, QDir::NoDotAndDotDot | QDir::Files); it.hasNext();) {
         it.next();
-        TripGroup g(this);
+        TripGroup g;
         if (g.load(it.filePath())) {
             const auto tgId = it.fileInfo().baseName();
             m_tripGroups.insert(tgId, g);
@@ -449,7 +449,7 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
     std::set<QString> pendingGroupRemovals;
     if (groupIt == m_tripGroups.end()) {
         const auto tgId = QUuid::createUuid().toString(QUuid::WithoutBraces);
-        TripGroup g(this);
+        TripGroup g;
         g.setElements(elems);
         for (auto it2 = beginIt; it2 != it; ++it2) {
             // remove overlapping/nested groups, delay this until the end though, as that will invalidate our iterators

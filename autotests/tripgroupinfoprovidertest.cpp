@@ -54,7 +54,7 @@ private Q_SLOTS:
         TripGroupInfoProvider provider;
         provider.setReservationManager(&resMgr);
         provider.setWeatherForecastManager(&fcMgr);
-        QVERIFY(!provider.weatherForecast({}).isValid());
+        QVERIFY(!provider.weatherForecast(TripGroup{}).isValid());
         const auto fc = provider.weatherForecast(mgr.tripGroup(mgr.tripGroups().at(0)));
         QVERIFY(fc.isValid());
         QCOMPARE(fc.minimumTemperature(), 7.74224f);

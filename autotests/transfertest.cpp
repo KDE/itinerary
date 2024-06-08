@@ -121,7 +121,7 @@ private Q_SLOTS:
         jny.setSections({section});
         mgr.setJourneyForTransfer(transfer, jny);
         QCOMPARE(addSpy.size(), 0);
-        QCOMPARE(changeSpy.size(), 1);
+        QCOMPARE(changeSpy.size(), 2);
         QCOMPARE(removeSpy.size(), 0);
 
         transfer = mgr.transfer(batchId, Transfer::Before);

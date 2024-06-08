@@ -8,10 +8,7 @@
 
 #include "jsonio.h"
 #include "logging.h"
-#include "reservationmanager.h"
-#include "tripgroupmanager.h"
 #include "transfer.h"
-#include "transfermanager.h"
 
 #include <KItinerary/SortUtil>
 
@@ -24,12 +21,6 @@
 using namespace Qt::Literals::StringLiterals;
 
 TripGroup::TripGroup() = default;
-
-TripGroup::TripGroup(TripGroupManager *mgr)
-    : m_mgr(mgr)
-{
-}
-
 TripGroup::~TripGroup() = default;
 
 QString TripGroup::name() const
@@ -113,17 +104,7 @@ QString TripGroup::slugName() const
 
 QDateTime TripGroup::beginDateTime() const
 {
-    if (m_elements.empty()) {
-        return {};
-    }
-    const auto res = m_mgr->m_resMgr->reservation(m_elements.at(0));
-    auto dt = KItinerary::SortUtil::startDateTime(res);
-
-    const auto transfer = m_mgr->m_transferMgr ? m_mgr->m_transferMgr->transfer(m_elements.at(0), Transfer::Before) : Transfer();
-    if (transfer.state() == Transfer::Selected && transfer.journey().scheduledDepartureTime().isValid()) {
-        return std::min(dt, transfer.journey().scheduledDepartureTime());
-    }
-    return dt;
+    return m_beginDateTime;
 }
 
 void TripGroup::setBeginDateTime(const QDateTime &beginDt)
@@ -133,17 +114,7 @@ void TripGroup::setBeginDateTime(const QDateTime &beginDt)
 
 QDateTime TripGroup::endDateTime() const
 {
-    if (m_elements.empty()) {
-        return {};
-    }
-    const auto res = m_mgr->m_resMgr->reservation(m_elements.constLast());
-    auto dt = KItinerary::SortUtil::endDateTime(res);
-
-    const auto transfer = m_mgr->m_transferMgr ? m_mgr->m_transferMgr->transfer(m_elements.constLast(), Transfer::After) : Transfer();
-    if (transfer.state() == Transfer::Selected && transfer.journey().scheduledArrivalTime().isValid()) {
-        return std::max(dt, transfer.journey().scheduledArrivalTime());
-    }
-    return dt;
+    return m_endDateTime;
 }
 
 void TripGroup::setEndDateTime(const QDateTime &endDt)
