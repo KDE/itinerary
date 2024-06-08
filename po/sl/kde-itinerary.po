@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-07 00:39+0000\n"
-"PO-Revision-Date: 2024-05-31 10:15+0200\n"
+"POT-Creation-Date: 2024-06-08 00:39+0000\n"
+"PO-Revision-Date: 2024-06-07 06:43+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -2376,18 +2376,16 @@ msgid "Copyright © The KDE Community"
 msgstr "Copyright © Skupnost KDE"
 
 #: app/main.cpp:347
-#, fuzzy, kde-format
-#| msgid "Open Itinerary on the given page"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Odpri itinerar na dani strani"
 
 #: app/main.cpp:352
-#, fuzzy, kde-format
-#| msgid "Files or URLs to import."
+#, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
-msgstr "Datoteke ali URL za uvoz."
+msgstr "Datoteke ali URL-ji za uvoz."
 
 #: app/main.qml:61
 #, kde-format
@@ -3700,13 +3698,13 @@ msgstr[3] "Valut: %2"
 msgid "Delete trip"
 msgstr "Izbriši izlet"
 
-#: app/tripgroupmanager.cpp:625
+#: app/tripgroupmanager.cpp:648
 #, kde-format
 msgctxt "%1 is destination, %2 is the standalone month name, %3 is the year"
 msgid "%1 (%2 %3)"
 msgstr "%1 (%2 %3)"
 
-#: app/tripgroupmanager.cpp:627
+#: app/tripgroupmanager.cpp:650
 #, kde-format
 msgctxt ""
 "%1 is destination, %2 and %3 are the standalone month names and %4 is the "
@@ -3714,7 +3712,7 @@ msgctxt ""
 msgid "%1 (%2/%3 %4)"
 msgstr "%1 (%2/%3 %4)"
 
-#: app/tripgroupmanager.cpp:629
+#: app/tripgroupmanager.cpp:652
 #, kde-format
 msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"
