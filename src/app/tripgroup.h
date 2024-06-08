@@ -44,6 +44,7 @@ public:
     void store(const QString &path) const;
 
     [[nodiscard]] static QJsonObject toJson(const TripGroup &group);
+    [[nodiscard]] static TripGroup fromJson(const QJsonObject &obj);
 
 private:
     QString m_name;

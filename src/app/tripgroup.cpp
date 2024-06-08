@@ -49,6 +49,23 @@ QJsonObject TripGroup::toJson(const TripGroup &group)
     return obj;
 }
 
+TripGroup TripGroup::fromJson(const QJsonObject &obj)
+{
+    TripGroup tg;
+    tg.m_name = obj.value("name"_L1).toString();
+    const auto elems = obj.value("elements"_L1).toArray();
+    tg.m_elements.clear();
+    tg.m_elements.reserve(elems.size());
+    for (const auto &v : elems) {
+        tg.m_elements.push_back(v.toString());
+    }
+
+    tg.m_beginDateTime = QDateTime::fromString(obj.value("beginDateTime"_L1).toString(), Qt::ISODate);
+    tg.m_endDateTime = QDateTime::fromString(obj.value("endDateTime"_L1).toString(), Qt::ISODate);
+
+    return tg;
+}
+
 bool TripGroup::load(const QString &path)
 {
     QFile f(path);
@@ -57,19 +74,8 @@ bool TripGroup::load(const QString &path)
         return false;
     }
 
-    const auto obj = JsonIO::read(f.readAll()).toObject();
-    m_name = obj.value("name"_L1).toString();
-    const auto elems = obj.value("elements"_L1).toArray();
-    m_elements.clear();
-    m_elements.reserve(elems.size());
-    for (const auto &v : elems) {
-        m_elements.push_back(v.toString());
-    }
-
-    m_beginDateTime = QDateTime::fromString(obj.value("beginDateTime"_L1).toString(), Qt::ISODate);
-    m_endDateTime = QDateTime::fromString(obj.value("endDateTime"_L1).toString(), Qt::ISODate);
-
-    return elems.size() >= 2;
+    *this = TripGroup::fromJson(JsonIO::read(f.readAll()).toObject());
+    return m_elements.size() >= 2;
 }
 
 void TripGroup::store(const QString &path) const
