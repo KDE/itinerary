@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-08 00:39+0000\n"
+"POT-Creation-Date: 2024-06-09 00:39+0000\n"
 "PO-Revision-Date: 2020-05-04 10:51+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -122,7 +122,7 @@ msgstr "Muuda"
 msgid "Add to calendar..."
 msgstr "Lisa dokument ..."
 
-#: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:162
+#: app/ActionsCard.qml:73 app/main.qml:226
 #, kde-format
 msgid "Export..."
 msgstr "Ekspordi ..."
@@ -3670,7 +3670,7 @@ msgstr ""
 msgid "Export Trip"
 msgstr "Ekspordi ..."
 
-#: app/TimelinePage.qml:480
+#: app/TimelinePage.qml:484
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Tänaseks ei ole itineraaris midagi."
@@ -3940,20 +3940,53 @@ msgid_plural "Currencies: %2"
 msgstr[0] ""
 msgstr[1] ""
 
-#: app/TripGroupDelegate.qml:170
+#: app/TripGroupDelegate.qml:162
+#, fuzzy, kde-format
+#| msgid "Edit"
+msgid "Edit…"
+msgstr "Muuda"
+
+#: app/TripGroupDelegate.qml:175
+#, fuzzy, kde-format
+#| msgid "Export..."
+msgid "Export…"
+msgstr "Ekspordi ..."
+
+#: app/TripGroupDelegate.qml:183
 #, fuzzy, kde-format
 #| msgid "Event Ticket"
 msgid "Delete trip"
 msgstr "Sündmuse pilet"
 
-#: app/tripgroupmanager.cpp:648
+#: app/TripGroupEditorDialog.qml:17
+#, fuzzy, kde-format
+#| msgid "Add transfer after"
+msgctxt "@title:window"
+msgid "Add Trip"
+msgstr "Lisa järgnev transfeer"
+
+#: app/TripGroupEditorDialog.qml:17
+#, fuzzy, kde-format
+#| msgid "Export..."
+msgctxt "@title:window"
+msgid "Edit Trip"
+msgstr "Ekspordi ..."
+
+#: app/TripGroupEditorDialog.qml:21
+#, fuzzy, kde-format
+#| msgid "Under name:"
+msgctxt "@label:textbox"
+msgid "Trip name:"
+msgstr "Nimega:"
+
+#: app/tripgroupmanager.cpp:663
 #, fuzzy, kde-format
 #| msgid "%1 (%2 %3)"
 msgctxt "%1 is destination, %2 is the standalone month name, %3 is the year"
 msgid "%1 (%2 %3)"
 msgstr "%1 (%2 %3)"
 
-#: app/tripgroupmanager.cpp:650
+#: app/tripgroupmanager.cpp:665
 #, fuzzy, kde-format
 #| msgid "%1 (%2/%3 %4)"
 msgctxt ""
@@ -3962,7 +3995,7 @@ msgctxt ""
 msgid "%1 (%2/%3 %4)"
 msgstr "%1 (%2/%3 %4)"
 
-#: app/tripgroupmanager.cpp:652
+#: app/tripgroupmanager.cpp:667
 #, fuzzy, kde-format
 #| msgid "%1 (%2/%3)"
 msgctxt "%1 is destination, %2 and %3 are years"
@@ -4299,9 +4332,6 @@ msgstr "Asukohast %1 asukohta %2 (%3)"
 
 #~ msgid "Reference:"
 #~ msgstr "Viide: "
-
-#~ msgid "Under name:"
-#~ msgstr "Nimega:"
 
 #~ msgid "%1°C"
 #~ msgstr "%1°C"

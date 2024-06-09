@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-08 00:39+0000\n"
+"POT-Creation-Date: 2024-06-09 00:39+0000\n"
 "PO-Revision-Date: 2019-03-18 03:34+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: lt\n"
@@ -116,7 +116,7 @@ msgstr ""
 msgid "Add to calendar..."
 msgstr ""
 
-#: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:162
+#: app/ActionsCard.qml:73 app/main.qml:226
 #, kde-format
 msgid "Export..."
 msgstr ""
@@ -3413,7 +3413,7 @@ msgstr ""
 msgid "Export Trip"
 msgstr ""
 
-#: app/TimelinePage.qml:480
+#: app/TimelinePage.qml:484
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr ""
@@ -3668,18 +3668,46 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
-#: app/TripGroupDelegate.qml:170
+#: app/TripGroupDelegate.qml:162
+#, kde-format
+msgid "Edit…"
+msgstr ""
+
+#: app/TripGroupDelegate.qml:175
+#, kde-format
+msgid "Export…"
+msgstr ""
+
+#: app/TripGroupDelegate.qml:183
 #, kde-format
 msgid "Delete trip"
 msgstr ""
 
-#: app/tripgroupmanager.cpp:648
+#: app/TripGroupEditorDialog.qml:17
+#, kde-format
+msgctxt "@title:window"
+msgid "Add Trip"
+msgstr ""
+
+#: app/TripGroupEditorDialog.qml:17
+#, kde-format
+msgctxt "@title:window"
+msgid "Edit Trip"
+msgstr ""
+
+#: app/TripGroupEditorDialog.qml:21
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Trip name:"
+msgstr ""
+
+#: app/tripgroupmanager.cpp:663
 #, kde-format
 msgctxt "%1 is destination, %2 is the standalone month name, %3 is the year"
 msgid "%1 (%2 %3)"
 msgstr ""
 
-#: app/tripgroupmanager.cpp:650
+#: app/tripgroupmanager.cpp:665
 #, kde-format
 msgctxt ""
 "%1 is destination, %2 and %3 are the standalone month names and %4 is the "
@@ -3687,7 +3715,7 @@ msgctxt ""
 msgid "%1 (%2/%3 %4)"
 msgstr ""
 
-#: app/tripgroupmanager.cpp:652
+#: app/tripgroupmanager.cpp:667
 #, kde-format
 msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"
