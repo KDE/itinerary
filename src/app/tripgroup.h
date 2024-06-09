@@ -22,6 +22,7 @@ class TripGroup
     Q_PROPERTY(bool automaticName READ hasAutomaticName WRITE setNameIsAutomatic)
     Q_PROPERTY(QDateTime beginDateTime READ beginDateTime)
     Q_PROPERTY(QDateTime endDateTime READ endDateTime)
+    Q_PROPERTY(QString matrixRoomId READ matrixRoomId WRITE setMatrixRoomId)
     Q_PROPERTY(QString slugName READ slugName)
 public:
     explicit TripGroup();
@@ -41,6 +42,10 @@ public:
     [[nodiscard]] QDateTime endDateTime() const;
     void setEndDateTime(const QDateTime &endDt);
 
+    /** Matrix room used for syncing this trip group. */
+    [[nodiscard]] QString matrixRoomId() const;
+    void setMatrixRoomId(const QString &roomId);
+
     /** URL slug variant of the name, for use in file names. */
     [[nodiscard]] QString slugName() const;
 
@@ -55,6 +60,7 @@ private:
     QList<QString> m_elements;
     QDateTime m_beginDateTime;
     QDateTime m_endDateTime;
+    QString m_matrixRoomId;
     bool m_automaticName = true;
 };
 

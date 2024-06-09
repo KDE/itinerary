@@ -59,6 +59,7 @@ QJsonObject TripGroup::toJson(const TripGroup &group)
     obj.insert("elements"_L1, elems);
     obj.insert("beginDateTime"_L1, group.beginDateTime().toString(Qt::ISODate));
     obj.insert("endDateTime"_L1, group.endDateTime().toString(Qt::ISODate));
+    obj.insert("matrixRoomId"_L1, group.m_matrixRoomId);
     return obj;
 }
 
@@ -76,7 +77,7 @@ TripGroup TripGroup::fromJson(const QJsonObject &obj)
 
     tg.m_beginDateTime = QDateTime::fromString(obj.value("beginDateTime"_L1).toString(), Qt::ISODate);
     tg.m_endDateTime = QDateTime::fromString(obj.value("endDateTime"_L1).toString(), Qt::ISODate);
-
+    tg.m_matrixRoomId = obj.value("matrixRoomId"_L1).toString();
     return tg;
 }
 
@@ -140,6 +141,16 @@ QDateTime TripGroup::endDateTime() const
 void TripGroup::setEndDateTime(const QDateTime &endDt)
 {
     m_endDateTime = endDt;
+}
+
+QString TripGroup::matrixRoomId() const
+{
+    return m_matrixRoomId;
+}
+
+void TripGroup::setMatrixRoomId(const QString &roomId)
+{
+    m_matrixRoomId = roomId;
 }
 
 #include "moc_tripgroup.cpp"
