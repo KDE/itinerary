@@ -28,6 +28,7 @@
 #include "locationinformation.h"
 #include "mapdownloadmanager.h"
 #include "matrixcontroller.h"
+#include "matrixsyncmanager.h"
 #include "migrator.h"
 #include "navigationcontroller.h"
 #include "notificationconfigcontroller.h"
@@ -62,6 +63,10 @@
 #include "weatherforecastmodel.h"
 
 #include "weatherforecastmanager.h"
+
+#if HAVE_MATRIX
+#include <matrix/matrixmanager.h>
+#endif
 
 #include <KItinerary/CountryDb>
 #include <KItinerary/DocumentUtil>
@@ -341,6 +346,19 @@ int main(int argc, char **argv)
 
     MatrixController matrixController;
     MatrixControllerInstance::instance = &matrixController;
+
+    MatrixSyncManager matrixSyncManager;
+#if HAVE_MATRIX
+    matrixSyncManager.setMatrixManager(qobject_cast<MatrixManager*>(matrixController.manager()));
+    matrixSyncManager.setTripGroupManager(&tripGroupMgr);
+    matrixSyncManager.setDocumentManager(&docMgr);
+    matrixSyncManager.setLiveDataManager(&liveDataMgr);
+    matrixSyncManager.setTransferManager(&transferManager);
+    matrixSyncManager.setPkPassManager(&pkPassMgr);
+    matrixSyncManager.setAutoSyncTrips(settings.matrixAutoSyncTrips());
+    QObject::connect(&settings, &Settings::matrixAutoSyncTripsChanged, &matrixSyncManager, &MatrixSyncManager::setAutoSyncTrips);
+#endif
+    MatrixSyncManagerInstance::instance = &matrixSyncManager;
 
     registerKItineraryTypes();
     registerApplicationSingletons();

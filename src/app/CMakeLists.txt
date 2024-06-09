@@ -35,6 +35,7 @@ target_sources(itinerary PRIVATE
     matrixcontroller.cpp
     matrixsynccontent.cpp
     matrixsyncinboundstatequeue.cpp
+    matrixsyncmanager.cpp
     matrixsyncoutboundstatequeue.cpp
     matrixsyncstateevent.cpp
     navigationcontroller.cpp

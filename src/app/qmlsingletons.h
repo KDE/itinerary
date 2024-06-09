@@ -11,6 +11,7 @@
 #include "livedatamanager.h"
 #include "mapdownloadmanager.h"
 #include "matrixcontroller.h"
+#include "matrixsyncmanager.h"
 #include "passmanager.h"
 #include "pkpassmanager.h"
 #include "qmlregistrationhelper.h"
@@ -39,5 +40,6 @@ REGISTER_SINGLETON_INSTANCE(ImportController)
 REGISTER_SINGLETON_INSTANCE(TripGroupModel)
 REGISTER_SINGLETON_INSTANCE(TraewellingController)
 REGISTER_SINGLETON_INSTANCE(MatrixController)
+REGISTER_SINGLETON_INSTANCE(MatrixSyncManager)
 
 #endif
