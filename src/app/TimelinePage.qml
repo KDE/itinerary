@@ -309,6 +309,15 @@ Kirigami.ScrollablePage {
         id: tripGroupEditor
         onAccepted: TripGroupManager.updateTripGroup(tripGroupEditor.tripGroupId, tripGroupEditor.tripGroup)
     }
+    MatrixRoomSelectionSheet { // ### temporary, for testing until we automatically generate sync rooms
+        id: tripGroupMatrixRoomSelector
+        property var tripGroup
+        property string tripGroupId
+        onRoomSelected: (room) => {
+            tripGroupMatrixRoomSelector.tripGroup.matrixRoomId = room.id;
+            TripGroupManager.updateTripGroup(tripGroupMatrixRoomSelector.tripGroupId, tripGroupMatrixRoomSelector.tripGroup);
+        }
+    }
 
     Component {
         id: flightDetailsPage

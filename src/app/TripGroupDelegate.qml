@@ -165,6 +165,16 @@ FormCard.FormCard {
                         QQC2.ToolTip.visible: hovered
                         QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                     }
+                    QQC2.ToolButton { // ### for testing only, until we auto-generate rooms
+                        icon.name: "emblem-shared-symbolic"
+                        visible: Settings.developmentMode
+                        onClicked: {
+                            console.log(root.tripGroup.matrixRoomId);
+                            tripGroupMatrixRoomSelector.tripGroupId = root.tripGroupId;
+                            tripGroupMatrixRoomSelector.tripGroup = root.tripGroup;
+                            tripGroupMatrixRoomSelector.open();
+                        }
+                    }
                     QQC2.ToolButton {
                         icon.name: "export-symbolic"
                         onClicked: {
