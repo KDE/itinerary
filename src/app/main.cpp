@@ -27,6 +27,7 @@
 #include "locationinformation.h"
 #include "mapdownloadmanager.h"
 #include "matrixcontroller.h"
+#include "matrixsyncmanager.h"
 #include "migrator.h"
 #include "navigationcontroller.h"
 #include "notificationconfigcontroller.h"
@@ -61,6 +62,7 @@
 
 #if HAVE_MATRIX
 #include "matrix/matrixbeacon.h"
+#include "matrix/matrixmanager.h"
 #include "matrix/matrixroomsmodel.h"
 
 #include <Quotient/keyverificationsession.h>
@@ -449,6 +451,12 @@ int main(int argc, char **argv)
     QObject::connect(&appController, &ApplicationController::reloadSettings, &settings, &Settings::reloadSettings);
 
     OnlineTicketImporter::setNetworkAccessManagerFactory(namFactory);
+
+#if HAVE_MATRIX
+    MatrixSyncManager matrixSyncManager;
+    matrixSyncManager.setMatrixManager(qobject_cast<MatrixManager*>(matrixController.manager()));
+    matrixSyncManager.setTripGroupManager(&tripGroupMgr);
+#endif
 
     registerKItineraryTypes();
     registerQuotientTypes();
