@@ -23,7 +23,6 @@ MatrixManager::MatrixManager(QObject *parent)
         setInfoString(i18n("Syncing…"));
         connect(m_acountRegistry.accounts()[0], &Connection::syncDone, this, [this](){
             setInfoString({});
-            m_acountRegistry.accounts()[0]->stopSync();
         }, Qt::SingleShotConnection);
     });
     connect(&m_acountRegistry, &AccountRegistry::rowsRemoved, this, [this](){
@@ -56,7 +55,6 @@ void MatrixManager::login(const QString &matrixId, const QString &password)
 
         setInfoString(i18n("Syncing…"));
         connect(connection, &Connection::syncDone, this, [connection, this](){
-            connection->stopSync();
             setInfoString({});
         }, Qt::SingleShotConnection);
     });
