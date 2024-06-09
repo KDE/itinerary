@@ -812,6 +812,7 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
+    <release version="24.05.1" date="2024-06-13"/>
     <release version="24.05.0" date="2024-05-23">
       <description>
         <ul>
