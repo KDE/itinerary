@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-09 00:39+0000\n"
-"PO-Revision-Date: 2024-06-07 05:29+0200\n"
+"PO-Revision-Date: 2024-06-09 06:19+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -3681,16 +3681,14 @@ msgstr[0] "ვალუტა: %2"
 msgstr[1] "ვალუტა: %2"
 
 #: app/TripGroupDelegate.qml:162
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgid "Edit…"
-msgstr "ჩასწორება"
+msgstr "ჩასწორება…"
 
 #: app/TripGroupDelegate.qml:175
-#, fuzzy, kde-format
-#| msgid "Export"
+#, kde-format
 msgid "Export…"
-msgstr "გატანა"
+msgstr "გატანა…"
 
 #: app/TripGroupDelegate.qml:183
 #, kde-format
@@ -3698,26 +3696,22 @@ msgid "Delete trip"
 msgstr "მოგზაურობის წაშლა"
 
 #: app/TripGroupEditorDialog.qml:17
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add trip"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Trip"
 msgstr "მოგზაურობის დამატება"
 
 #: app/TripGroupEditorDialog.qml:17
-#, fuzzy, kde-format
-#| msgid "Edit Boat Trip"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Trip"
-msgstr "ნავით მოგზაურობის ჩასწორება"
+msgstr "მოგზაურობის ჩასწორება"
 
 #: app/TripGroupEditorDialog.qml:21
-#, fuzzy, kde-format
-#| msgid "Under name:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Trip name:"
-msgstr "სახელით:"
+msgstr "მოგზაურობის სახელი:"
 
 #: app/tripgroupmanager.cpp:663
 #, kde-format

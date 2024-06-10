@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-09 00:39+0000\n"
-"PO-Revision-Date: 2024-06-07 20:00+0200\n"
+"PO-Revision-Date: 2024-06-09 20:14+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -3692,16 +3692,14 @@ msgstr[0] "Divisa: %2"
 msgstr[1] "Divisas: %2"
 
 #: app/TripGroupDelegate.qml:162
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgid "Edit…"
-msgstr "Editar"
+msgstr "Editar..."
 
 #: app/TripGroupDelegate.qml:175
-#, fuzzy, kde-format
-#| msgid "Export"
+#, kde-format
 msgid "Export…"
-msgstr "Exportar"
+msgstr "Exportar..."
 
 #: app/TripGroupDelegate.qml:183
 #, kde-format
@@ -3709,26 +3707,22 @@ msgid "Delete trip"
 msgstr "Borrar viaje"
 
 #: app/TripGroupEditorDialog.qml:17
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add trip"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Trip"
 msgstr "Añadir viaje"
 
 #: app/TripGroupEditorDialog.qml:17
-#, fuzzy, kde-format
-#| msgid "Edit Boat Trip"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Trip"
-msgstr "Editar viaje en barco"
+msgstr "Editar viaje"
 
 #: app/TripGroupEditorDialog.qml:21
-#, fuzzy, kde-format
-#| msgid "Under name:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Trip name:"
-msgstr "Con el nombre:"
+msgstr "Nombre del viaje:"
 
 #: app/tripgroupmanager.cpp:663
 #, kde-format

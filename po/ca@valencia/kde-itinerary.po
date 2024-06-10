@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-09 00:39+0000\n"
-"PO-Revision-Date: 2024-06-07 10:46+0200\n"
+"PO-Revision-Date: 2024-06-09 11:02+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -3695,16 +3695,14 @@ msgstr[0] "Divisa: %2"
 msgstr[1] "Divises: %2"
 
 #: app/TripGroupDelegate.qml:162
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgid "Edit…"
-msgstr "Edita"
+msgstr "Edita…"
 
 #: app/TripGroupDelegate.qml:175
-#, fuzzy, kde-format
-#| msgid "Export"
+#, kde-format
 msgid "Export…"
-msgstr "Exporta"
+msgstr "Exporta…"
 
 #: app/TripGroupDelegate.qml:183
 #, kde-format
@@ -3712,26 +3710,22 @@ msgid "Delete trip"
 msgstr "Suprimix el viatge"
 
 #: app/TripGroupEditorDialog.qml:17
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add trip"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Trip"
 msgstr "Afig un viatge"
 
 #: app/TripGroupEditorDialog.qml:17
-#, fuzzy, kde-format
-#| msgid "Edit Boat Trip"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Trip"
-msgstr "Edició de viatge amb vaixell"
+msgstr "Edició de viatge"
 
 #: app/TripGroupEditorDialog.qml:21
-#, fuzzy, kde-format
-#| msgid "Ticket name"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Trip name:"
-msgstr "Nom del bitllet"
+msgstr "Nom del viatge:"
 
 #: app/tripgroupmanager.cpp:663
 #, kde-format

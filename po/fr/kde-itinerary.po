@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-09 00:39+0000\n"
-"PO-Revision-Date: 2024-06-01 10:08+0200\n"
+"PO-Revision-Date: 2024-06-08 08:16+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -2387,18 +2387,16 @@ msgid "Copyright © The KDE Community"
 msgstr "Copyright © La communauté de KDE"
 
 #: app/main.cpp:347
-#, fuzzy, kde-format
-#| msgid "Open Itinerary on the given page"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Ouvrir Itinerary sur la page fournie"
 
 #: app/main.cpp:352
-#, fuzzy, kde-format
-#| msgid "Files or URLs to import."
+#, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
-msgstr "Fichiers ou URLs à importer."
+msgstr "Fichiers ou URL à importer."
 
 #: app/main.qml:61
 #, kde-format

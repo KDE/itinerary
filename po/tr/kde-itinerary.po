@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-09 00:39+0000\n"
-"PO-Revision-Date: 2024-06-08 12:56+0300\n"
+"PO-Revision-Date: 2024-06-09 21:12+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -3682,16 +3682,14 @@ msgstr[0] "Para birimi: %2"
 msgstr[1] "Para birimleri: %2"
 
 #: app/TripGroupDelegate.qml:162
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgid "Edit…"
-msgstr "Düzenle"
+msgstr "Düzenle…"
 
 #: app/TripGroupDelegate.qml:175
-#, fuzzy, kde-format
-#| msgid "Export"
+#, kde-format
 msgid "Export…"
-msgstr "Dışa Aktar"
+msgstr "Dışa Aktar…"
 
 #: app/TripGroupDelegate.qml:183
 #, kde-format
@@ -3699,26 +3697,22 @@ msgid "Delete trip"
 msgstr "Geziyi sil"
 
 #: app/TripGroupEditorDialog.qml:17
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add trip"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Trip"
-msgstr "Gezi Ekle…"
+msgstr "Gezi Ekle"
 
 #: app/TripGroupEditorDialog.qml:17
-#, fuzzy, kde-format
-#| msgid "Edit Boat Trip"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Trip"
-msgstr "Bot Gezisini Düzenle"
+msgstr "Geziyi Düzenle"
 
 #: app/TripGroupEditorDialog.qml:21
-#, fuzzy, kde-format
-#| msgid "Ticket name"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Trip name:"
-msgstr "Bilet adı"
+msgstr "Gezi adı:"
 
 #: app/tripgroupmanager.cpp:663
 #, kde-format

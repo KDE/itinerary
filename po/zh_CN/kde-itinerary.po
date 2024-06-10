@@ -3654,16 +3654,14 @@ msgid_plural "Currencies: %2"
 msgstr[0] ""
 
 #: app/TripGroupDelegate.qml:162
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgid "Edit…"
-msgstr "编辑"
+msgstr ""
 
 #: app/TripGroupDelegate.qml:175
-#, fuzzy, kde-format
-#| msgid "Export..."
+#, kde-format
 msgid "Export…"
-msgstr "导出..."
+msgstr ""
 
 #: app/TripGroupDelegate.qml:183
 #, kde-format
@@ -3671,18 +3669,16 @@ msgid "Delete trip"
 msgstr ""
 
 #: app/TripGroupEditorDialog.qml:17
-#, fuzzy, kde-format
-#| msgid "Trips"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Trip"
-msgstr "行程数"
+msgstr ""
 
 #: app/TripGroupEditorDialog.qml:17
-#, fuzzy, kde-format
-#| msgid "Export Trip"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Trip"
-msgstr "导出行程"
+msgstr ""
 
 #: app/TripGroupEditorDialog.qml:21
 #, kde-format
