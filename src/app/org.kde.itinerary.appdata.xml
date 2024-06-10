@@ -118,6 +118,7 @@
     <p xml:lang="fi">Ominaisuuksia:</p>
     <p xml:lang="fr">Fonctionnalités :</p>
     <p xml:lang="gl">Funcionalidades:</p>
+    <p xml:lang="he">יכולות:</p>
     <p xml:lang="hu">Funkciók:</p>
     <p xml:lang="ia">Characteristicas:</p>
     <p xml:lang="id">Fitur:</p>
@@ -441,6 +442,7 @@
       <li xml:lang="eu">Tren bagoiaren antolaeraren ikuspegia (operatzaile batzuetan bakarrik).</li>
       <li xml:lang="fi">Junien vaunukarttanäkymä (joillekin operaattoreille).</li>
       <li xml:lang="fr">Affichage des compositions des trains (pour certains opérateurs uniquement)</li>
+      <li xml:lang="he">תצוגת פריסת אזור ברכבת (אצל חלק מהמפעילים בלבד).</li>
       <li xml:lang="hu">Vonatalaprajz nézet (csak egyes szolgáltatók esetén).</li>
       <li xml:lang="ia">Vista de disposition de carrossa (solment eper alcun operatores)</li>
       <li xml:lang="id">Tampilan tata letak gerbong kereta (hanya untuk beberapa operator).</li>
@@ -469,6 +471,7 @@
       <li xml:lang="eu">Tren geltokiko eta aireportuko solairukako mapak, «OpenStreetMap»ako datuetan oinarrituta.</li>
       <li xml:lang="fi">OpenStreetMapin tietoon perustuvat rautatie- ja lentoasemien kerroskartat.</li>
       <li xml:lang="fr">Les cartes de gares et d'aéroports s'appuyant sur les données de OpenStreetMap.</li>
+      <li xml:lang="he">מפות תחנות רכבת ונמלי תעופה לפי קומות על בסיס הנתונים מ־OpenStreetMap.</li>
       <li xml:lang="hu">Az OpenStreetMap adatain alapuló, emeletenkénti vasútállomási és repülőtéri térképek.</li>
       <li xml:lang="ia">Mappas per plano de  Station de traino e aeroporto basate sur datos de OpenStreetMap.</li>
       <li xml:lang="id">Peta stasiun kereta dan bandara per lantai berdasarkan data OpenStreetMap.</li>
@@ -526,6 +529,7 @@
       <li xml:lang="eu">Bidaia pertsonalen estatistikak ingurumen eragina gainbegiratzeko.</li>
       <li xml:lang="fi">Matkan henkilökohtaiset tilastot ympäristövaikutusten tarkkailemiseksi.</li>
       <li xml:lang="fr">Statistiques de voyages personnels pour calculer l'impact environnemental.</li>
+      <li xml:lang="he">סטטיסטיקת נסועה אישית למעקב אחר ההשפעה על איכות הסביבה.</li>
       <li xml:lang="hu">Személyes utazási statisztikák a környezeti hatások nyomon követésére.</li>
       <li xml:lang="ia">Statistica de viage personal a supervisionar impacto ambiental.</li>
       <li xml:lang="id">Statistik perjalanan pribadi untuk memantau dampak lingkungan.</li>
@@ -556,6 +560,7 @@
     <p xml:lang="eu">«KDE Itinerary» hobe dabil «KMail»en ibilbidea erauzteko pluginarekin eta «KDE Connect» edo «Nextcloud Hub» eta «DavDroid»ekin.</p>
     <p xml:lang="fi">KDE Itinerary toimii parhaiten yhdessä KMailin matkasuunnitelmatietoliitännäisen ja KDE Connectin tai Nextcloud Hubin ja DavDroidin kanssa.</p>
     <p xml:lang="fr">KDE Itinerary fonctionne au maximum de ses capacités avec le module d'extraction des itinéraires de KMail et KDEConnect mais aussi avec Nextcloud Hub et DavDroid.</p>
+    <p xml:lang="he">KDE Itinerary עובד הכיטוב לצד תוסף חילוץ תוכניות הנסיעהKMailו־KDE Connect או Nextcloud Hub ו־DavDroid.</p>
     <p xml:lang="hu">A KDE Itinerary a legjobban a KMail itinerkinyerő bővítménye és a KDE Connect vagy a Nextcloud Hub és DavDroid mellett működik.</p>
     <p xml:lang="ia">KDE Itinerary functiona meliormente  con plugin de extraction de itinerario de KMail e KDE Connect, o Hub de Nextcloud e DavDroid.</p>
     <p xml:lang="id">KDE Itinerary bekerja paling baik dengan plugin itinerary extraction KMail dan KDE Connect, atau Nextcloud Hub dan DavDroid.</p>
@@ -653,6 +658,7 @@
       <caption xml:lang="eu">Tren antolamenduaren ikuspegia, eserleku-erreserba duen bagoia nabarmenduta</caption>
       <caption xml:lang="fi">Varatun paikan korostava junan vaunukartta</caption>
       <caption xml:lang="fr">Affichage de la composition du train, détaillant la voiture où le siège est réservé.</caption>
+      <caption xml:lang="he">תצוגת פריסת רכבת מדגישה את האזור עם המושבים שהוזמנו</caption>
       <caption xml:lang="hu">Vonat alaprajza a helyfoglalással rendelkező kocsit kiemelve</caption>
       <caption xml:lang="ia">Dispoition de traino evidentiante le carrossa con un reservation de placia</caption>
       <caption xml:lang="id">Tampilan tata letak kereta yang menyoroti gerbong dengan reservasi kursi</caption>
