@@ -624,7 +624,7 @@ FavoriteLocation TransferManager::pickFavorite(const QVariant &anchoredLoc, cons
     }
     const auto it = std::find_if(favLocs.begin(), favLocs.end(), [&anchordCoord](const auto &fav) {
         const auto d = LocationUtil::distance(anchordCoord.latitude(), anchordCoord.longitude(), fav.latitude(), fav.longitude());
-        return d < 50'000;
+        return d < Constants::MaximumFavoriteLocationTransferDistance;
     });
     if (it != favLocs.end()) {
         return (*it);
