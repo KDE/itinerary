@@ -1,0 +1,162 @@
+[
+{
+    "@context": "http://schema.org",
+    "@type": "TrainReservation",
+    "reservationFor": {
+        "@type": "TrainTrip",
+        "arrivalStation": {
+            "@type": "TrainStation",
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 48.9935302734375,
+                "longitude": 8.401939392089844
+            },
+            "identifier": "ibnr:8000191",
+            "name": "Karlsruhe Hbf"
+        },
+        "arrivalTime": {
+            "@type": "QDateTime",
+            "@value": "2024-05-30T15:57:00+02:00",
+            "timezone": "Europe/Berlin"
+        },
+        "departureDay": "2024-05-30",
+        "departureStation": {
+            "@type": "TrainStation",
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 52.525848388671875,
+                "longitude": 13.368891716003418
+            },
+            "identifier": "ibnr:8098160",
+            "name": "Berlin Hbf"
+        },
+        "departureTime": {
+            "@type": "QDateTime",
+            "@value": "2024-05-30T09:26:00+02:00",
+            "timezone": "Europe/Berlin"
+        },
+        "trainNumber": "ICE 371"
+    },
+    "reservationStatus": "http://schema.org/ReservationConfirmed"
+},
+{
+    "@context": "http://schema.org",
+    "@type": "TrainReservation",
+    "reservationFor": {
+        "@type": "TrainTrip",
+        "arrivalStation": {
+            "@type": "TrainStation",
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 52.524925231933594,
+                "longitude": 13.36962890625
+            },
+            "identifier": "ibnr:8011160",
+            "name": "Berlin Hbf"
+        },
+        "arrivalTime": {
+            "@type": "QDateTime",
+            "@value": "2024-06-02T22:32:00+02:00",
+            "timezone": "Europe/Berlin"
+        },
+        "departureDay": "2024-06-02",
+        "departureStation": {
+            "@type": "TrainStation",
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 48.9935302734375,
+                "longitude": 8.401939392089844
+            },
+            "identifier": "ibnr:8000191",
+            "name": "Karlsruhe Hbf"
+        },
+        "departureTime": {
+            "@type": "QDateTime",
+            "@value": "2024-06-02T16:00:00+02:00",
+            "timezone": "Europe/Berlin"
+        },
+        "trainNumber": "ICE 276"
+    },
+    "reservationStatus": "http://schema.org/ReservationConfirmed"
+},
+{
+    "@context": "http://schema.org",
+    "@type": "TrainReservation",
+    "reservationFor": {
+        "@type": "TrainTrip",
+        "arrivalStation": {
+            "@type": "TrainStation",
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 48.9935302734375,
+                "longitude": 8.401939392089844
+            },
+            "identifier": "ibnr:8000191",
+            "name": "Karlsruhe Hbf"
+        },
+        "arrivalTime": {
+            "@type": "QDateTime",
+            "@value": "2025-05-30T15:57:00+02:00",
+            "timezone": "Europe/Berlin"
+        },
+        "departureDay": "2025-05-30",
+        "departureStation": {
+            "@type": "TrainStation",
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 52.525848388671875,
+                "longitude": 13.368891716003418
+            },
+            "identifier": "ibnr:8098160",
+            "name": "Berlin Hbf"
+        },
+        "departureTime": {
+            "@type": "QDateTime",
+            "@value": "2025-05-30T09:26:00+02:00",
+            "timezone": "Europe/Berlin"
+        },
+        "trainNumber": "ICE 371"
+    },
+    "reservationStatus": "http://schema.org/ReservationConfirmed"
+},
+{
+    "@context": "http://schema.org",
+    "@type": "TrainReservation",
+    "reservationFor": {
+        "@type": "TrainTrip",
+        "arrivalStation": {
+            "@type": "TrainStation",
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 52.524925231933594,
+                "longitude": 13.36962890625
+            },
+            "identifier": "ibnr:8011160",
+            "name": "Berlin Hbf"
+        },
+        "arrivalTime": {
+            "@type": "QDateTime",
+            "@value": "2025-06-02T22:32:00+02:00",
+            "timezone": "Europe/Berlin"
+        },
+        "departureDay": "2025-06-02",
+        "departureStation": {
+            "@type": "TrainStation",
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 48.9935302734375,
+                "longitude": 8.401939392089844
+            },
+            "identifier": "ibnr:8000191",
+            "name": "Karlsruhe Hbf"
+        },
+        "departureTime": {
+            "@type": "QDateTime",
+            "@value": "2025-06-02T16:00:00+02:00",
+            "timezone": "Europe/Berlin"
+        },
+        "trainNumber": "ICE 276"
+    },
+    "reservationStatus": "http://schema.org/ReservationConfirmed"
+}
+]

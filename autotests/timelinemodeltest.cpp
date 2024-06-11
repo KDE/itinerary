@@ -602,8 +602,6 @@ private Q_SLOTS:
         importer.setReservationManager(&resMgr);
         importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/timeline/") + baseName + QLatin1StringView(".json")));
         ctrl->commitImport(&importer);
-        TripGroupManager groupMgr;
-        groupMgr.setReservationManager(&resMgr);
         WeatherForecastManager weatherMgr;
         weatherMgr.setTestModeEnabled(true);
 
@@ -624,9 +622,11 @@ private Q_SLOTS:
         TransferManager transferMgr;
         transferMgr.overrideCurrentDateTime(QDateTime({1996, 10, 14}, {12, 34}));
         transferMgr.setReservationManager(&resMgr);
-        transferMgr.setTripGroupManager(&groupMgr);
         transferMgr.setFavoriteLocationModel(&favLocModel);
         transferMgr.setLiveDataManager(&liveMgr);
+
+        TripGroupManager groupMgr;
+        groupMgr.setReservationManager(&resMgr);
         groupMgr.setTransferManager(&transferMgr);
 
         TimelineModel model;

@@ -11,6 +11,7 @@
 
 namespace Constants {
 constexpr std::chrono::seconds MaximumLayoverTime = std::chrono::hours(4);
+constexpr std::chrono::seconds FavoriteLocationAutoTransferThreshold = std::chrono::days(1);
 
 constexpr auto MaximumFavoriteLocationTransferDistance = 50'000; // in meters
 

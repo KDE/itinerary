@@ -167,11 +167,11 @@ private Q_SLOTS:
         DocumentManager docMgr;
         Test::clearAll(&docMgr);
 
-        TripGroupManager tripGroupMgr;
-        tripGroupMgr.setReservationManager(&resMgr);
         TransferManager transferMgr;
         transferMgr.setReservationManager(&resMgr);
-        transferMgr.setTripGroupManager(&tripGroupMgr);
+
+        TripGroupManager tripGroupMgr;
+        tripGroupMgr.setReservationManager(&resMgr);
         tripGroupMgr.setTransferManager(&transferMgr);
 
         FavoriteLocationModel favLoc;
@@ -257,15 +257,14 @@ private Q_SLOTS:
         DocumentManager docMgr;
         Test::clearAll(&docMgr);
 
-        TripGroupManager tripGroupMgr;
-        tripGroupMgr.setReservationManager(&resMgr);
-
         LiveDataManager liveDataMgr;
 
         TransferManager transferMgr;
         transferMgr.setReservationManager(&resMgr);
-        transferMgr.setTripGroupManager(&tripGroupMgr);
         transferMgr.setLiveDataManager(&liveDataMgr);
+
+        TripGroupManager tripGroupMgr;
+        tripGroupMgr.setReservationManager(&resMgr);
         tripGroupMgr.setTransferManager(&transferMgr);
 
         FavoriteLocationModel favLoc;

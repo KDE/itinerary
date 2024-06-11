@@ -398,7 +398,6 @@ int main(int argc, char **argv)
 
     TransferManager transferManager;
     transferManager.setReservationManager(&resMgr);
-    transferManager.setTripGroupManager(&tripGroupMgr);
     transferManager.setFavoriteLocationModel(&favLocModel);
     transferManager.setLiveDataManager(&liveDataMgr);
     transferManager.setAutoAddTransfers(settings.autoAddTransfers());

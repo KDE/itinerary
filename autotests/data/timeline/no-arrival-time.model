@@ -9,6 +9,41 @@
     {
         "isToday": false,
         "rangeType": 0,
+        "sectionHeader": "2023-01-01",
+        "transfer": {
+            "@context": "http://schema.org",
+            "@type": "Transfer",
+            "alignment": "Before",
+            "anchorTime": {
+                "@type": "QDateTime",
+                "@value": "2023-01-01T08:30:00+01:00",
+                "timezone": "Europe/Berlin"
+            },
+            "anchorTimeDelta": 5400,
+            "floatingLocationType": "FavoriteLocation",
+            "from": {
+                "@type": "Location",
+                "latitude": 52.51860046386719,
+                "longitude": 13.376299858093262,
+                "type": "Place"
+            },
+            "fromName": "Home",
+            "state": "Pending",
+            "to": {
+                "@type": "Location",
+                "country": "DE",
+                "latitude": 52.36410140991211,
+                "longitude": 13.508199691772461,
+                "name": "BER",
+                "type": "Place"
+            },
+            "toName": "BER"
+        },
+        "type": 5
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
         "reservations": [
             {
                 "@context": "http://schema.org",

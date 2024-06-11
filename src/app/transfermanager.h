@@ -20,7 +20,6 @@ class FavoriteLocation;
 class FavoriteLocationModel;
 class LiveDataManager;
 class ReservationManager;
-class TripGroupManager;
 
 /** Manages Transfer objects, including creation, removal and persistence. */
 class TransferManager : public QObject
@@ -31,7 +30,6 @@ public:
     explicit TransferManager(QObject *parent = nullptr);
     ~TransferManager() override;
     void setReservationManager(ReservationManager *resMgr);
-    void setTripGroupManager(TripGroupManager *tgMgr);
     void setFavoriteLocationModel(FavoriteLocationModel *favLocModel);
     void setLiveDataManager(LiveDataManager *liveDataMgr);
 
@@ -91,10 +89,6 @@ private:
     void reservationRemoved(const QString &resId);
     void tripGroupChanged(const QString &tgId);
 
-    bool isFirstInTripGroup(const QString &resId) const;
-    bool isLastInTripGroup(const QString &resId) const;
-    bool isNotInTripGroup(const QString &resId) const;
-
     void determineAnchorDeltaDefault(Transfer &transfer, const QVariant &res) const;
 
     /** Return the transfer anchor time before/after the reservation @p res. */
@@ -117,7 +111,6 @@ private:
     QDateTime currentDateTime() const;
 
     ReservationManager *m_resMgr = nullptr;
-    TripGroupManager *m_tgMgr = nullptr;
     FavoriteLocationModel *m_favLocModel = nullptr;
     LiveDataManager *m_liveDataMgr = nullptr;
     mutable QHash<QString, Transfer> m_transfers[2];

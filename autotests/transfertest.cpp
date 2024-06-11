@@ -61,7 +61,6 @@ private Q_SLOTS:
         mgr.setFavoriteLocationModel(&favLocModel);
         mgr.overrideCurrentDateTime(QDateTime({2017, 1, 1}, {}));
         mgr.setReservationManager(&resMgr);
-        mgr.setTripGroupManager(&tgMgr);
         mgr.setLiveDataManager(&liveDataMgr);
         tgMgr.setTransferManager(&mgr);
         QSignalSpy addSpy(&mgr, &TransferManager::transferAdded);
@@ -121,7 +120,7 @@ private Q_SLOTS:
         jny.setSections({section});
         mgr.setJourneyForTransfer(transfer, jny);
         QCOMPARE(addSpy.size(), 0);
-        QCOMPARE(changeSpy.size(), 2);
+        QCOMPARE(changeSpy.size(), 1);
         QCOMPARE(removeSpy.size(), 0);
 
         transfer = mgr.transfer(batchId, Transfer::Before);
@@ -149,6 +148,105 @@ private Q_SLOTS:
         QCOMPARE(transfer.reservationId(), batchId);
         QVERIFY(transfer.hasLocations());
         QVERIFY(!mgr.canAddTransfer(batchId, Transfer::Before));
+    }
+
+    void testDoubleRoundTrip()
+    {
+        ReservationManager resMgr;
+        Test::clearAll(&resMgr);
+        auto ctrl = Test::makeAppController();
+        ctrl->setReservationManager(&resMgr);
+
+        TripGroupManager::clear();
+        TripGroupManager tgMgr;
+        tgMgr.setReservationManager(&resMgr);
+
+        FavoriteLocationModel favLocModel;
+        while (favLocModel.rowCount()) {
+            favLocModel.removeLocation(0);
+        }
+        FavoriteLocation favLoc;
+        favLoc.setLatitude(52.51860f);
+        favLoc.setLongitude(13.37630f);
+        favLoc.setName(QStringLiteral("name"));
+        favLocModel.setFavoriteLocations({favLoc});
+        QCOMPARE(favLocModel.rowCount(), 1);
+
+        LiveDataManager liveDataMgr;
+
+        TransferManager::clear();
+        TransferManager mgr;
+        mgr.setFavoriteLocationModel(&favLocModel);
+        mgr.overrideCurrentDateTime(QDateTime({2017, 1, 1}, {}));
+        mgr.setReservationManager(&resMgr);
+        mgr.setLiveDataManager(&liveDataMgr);
+        tgMgr.setTransferManager(&mgr);
+        QSignalSpy addSpy(&mgr, &TransferManager::transferAdded);
+        QSignalSpy changeSpy(&mgr, &TransferManager::transferChanged);
+        QSignalSpy removeSpy(&mgr, &TransferManager::transferRemoved);
+
+        ImportController importer;
+        importer.setReservationManager(&resMgr);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/double-round-trip.json")));
+        ctrl->commitImport(&importer);
+
+        QCOMPARE(addSpy.size() - removeSpy.size(), 4); // before/after each trip
+
+        auto batchId = resMgr.batches().at(0);
+        auto transfer = mgr.transfer(batchId, Transfer::Before);
+        QCOMPARE(transfer.state(), Transfer::Pending);
+        QCOMPARE(transfer.reservationId(), batchId);
+        QVERIFY(transfer.from().hasCoordinate());
+        QCOMPARE(transfer.from().latitude(), 52.51860f);
+        QCOMPARE(transfer.from().longitude(), 13.37630f);
+        QVERIFY(transfer.to().hasCoordinate());
+        QCOMPARE(transfer.to().name(), QLatin1StringView("Berlin Hbf"));
+        QCOMPARE(transfer.floatingLocationType(), Transfer::FavoriteLocation);
+
+        transfer = mgr.transfer(batchId, Transfer::After);
+        QCOMPARE(transfer.state(), Transfer::UndefinedState);
+
+        batchId = resMgr.batches().at(1);
+        transfer = mgr.transfer(batchId, Transfer::After);
+        QCOMPARE(transfer.state(), Transfer::Pending);
+        QCOMPARE(transfer.reservationId(), batchId);
+        QVERIFY(transfer.to().hasCoordinate());
+        QCOMPARE(transfer.to().latitude(), 52.51860f);
+        QCOMPARE(transfer.to().longitude(), 13.37630f);
+        QVERIFY(transfer.from().hasCoordinate());
+        QCOMPARE(transfer.from().name(), QLatin1StringView("Berlin Hbf"));
+        QCOMPARE(transfer.floatingLocationType(), Transfer::FavoriteLocation);
+
+        transfer = mgr.transfer(batchId, Transfer::Before);
+        QCOMPARE(transfer.state(), Transfer::UndefinedState);
+
+        batchId = resMgr.batches().at(2);
+        transfer = mgr.transfer(batchId, Transfer::Before);
+        QCOMPARE(transfer.state(), Transfer::Pending);
+        QCOMPARE(transfer.reservationId(), batchId);
+        QVERIFY(transfer.from().hasCoordinate());
+        QCOMPARE(transfer.from().latitude(), 52.51860f);
+        QCOMPARE(transfer.from().longitude(), 13.37630f);
+        QVERIFY(transfer.to().hasCoordinate());
+        QCOMPARE(transfer.to().name(), QLatin1StringView("Berlin Hbf"));
+        QCOMPARE(transfer.floatingLocationType(), Transfer::FavoriteLocation);
+
+        transfer = mgr.transfer(batchId, Transfer::After);
+        QCOMPARE(transfer.state(), Transfer::UndefinedState);
+
+        batchId = resMgr.batches().at(3);
+        transfer = mgr.transfer(batchId, Transfer::After);
+        QCOMPARE(transfer.state(), Transfer::Pending);
+        QCOMPARE(transfer.reservationId(), batchId);
+        QVERIFY(transfer.to().hasCoordinate());
+        QCOMPARE(transfer.to().latitude(), 52.51860f);
+        QCOMPARE(transfer.to().longitude(), 13.37630f);
+        QVERIFY(transfer.from().hasCoordinate());
+        QCOMPARE(transfer.from().name(), QLatin1StringView("Berlin Hbf"));
+        QCOMPARE(transfer.floatingLocationType(), Transfer::FavoriteLocation);
+
+        transfer = mgr.transfer(batchId, Transfer::Before);
+        QCOMPARE(transfer.state(), Transfer::UndefinedState);
     }
 };
 
