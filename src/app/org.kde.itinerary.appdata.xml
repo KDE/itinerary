@@ -821,7 +821,17 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="24.05.1" date="2024-06-13"/>
+    <release version="24.05.1" date="2024-06-13">
+      <description>
+        <ul>
+          <li>New or improved travel document extractors for Air Asia, Amadeus, Deutsche Bahn, Eurostar, Flixbus, Trenitalia.</li>
+          <li> the arrival time when editing a ferry reservation.</li>
+          <li>ations on Android.</li>
+          <li>tomatic trip grouping.</li>
+          <li>ojis not showing up in Flatpaks.</li>
+        </ul>
+      </description>
+    </release>
     <release version="24.05.0" date="2024-05-23">
       <description>
         <ul>
