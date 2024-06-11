@@ -90,6 +90,7 @@ void TransferManager::setLiveDataManager(LiveDataManager *liveDataMgr)
         // TODO if there's existing transfer, check if we miss this now
         // if so: warn and search for a new one if auto transfers are enabled
     });
+    connect(m_liveDataMgr, &LiveDataManager::journeyUpdated, this, qOverload<const QString&>(&TransferManager::checkReservation), Qt::QueuedConnection);
     rescan();
 }
 
@@ -222,19 +223,44 @@ void TransferManager::checkReservation(const QString &resId)
 
     const auto res = m_resMgr->reservation(resId);
 
-    const auto now = currentDateTime();
-    if (anchorTimeAfter(resId, res) < now) {
-        return;
-    }
     checkReservation(resId, res, Transfer::After);
-    if (anchorTimeBefore(resId, res) < now) {
-        return;
+    // also check before the following reservation
+    auto nextResId = resId;
+    while (true) {
+        nextResId = m_resMgr->nextBatch(nextResId);
+        if (nextResId.isEmpty()) {
+            break;
+        }
+        const auto nextRes = m_resMgr->reservation(nextResId);
+        if (!ReservationHelper::isCancelled(nextRes)) {
+            checkReservation(nextResId, nextRes, Transfer::Before);
+            break;
+        }
     }
+
     checkReservation(resId, res, Transfer::Before);
+    // also check after the previous reservation
+    auto prevResId = resId;
+    while (true) {
+        prevResId = m_resMgr->previousBatch(prevResId);
+        if (prevResId.isEmpty()) {
+            break;
+        }
+        const auto prevRes = m_resMgr->reservation(prevResId);
+        if (!ReservationHelper::isCancelled(prevRes)) {
+            checkReservation(prevResId, prevRes, Transfer::After);
+            break;
+        }
+    }
 }
 
 void TransferManager::checkReservation(const QString &resId, const QVariant &res, Transfer::Alignment alignment)
 {
+    const auto anchorTime = alignment == Transfer::Before ? anchorTimeBefore(resId, res) : anchorTimeAfter(resId, res);
+    if (!anchorTime.isValid() || anchorTime < currentDateTime()) {
+        return;
+    }
+
     auto t = transfer(resId, alignment);
     if (t.state() == Transfer::Discarded) { // user already discarded this
         return;
