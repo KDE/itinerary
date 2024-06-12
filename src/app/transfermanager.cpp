@@ -376,8 +376,8 @@ TransferManager::CheckTransferResult TransferManager::checkTransferBefore(const 
         return isLocationChange ? ShouldAutoAdd : CanAddManually;
     }
 
-    // transfer to favorite at destination of a roundtrip trip group
-    if (LocationUtil::isLocationChange(res) && LocationUtil::isLocationChange(prevRes) && (LocationUtil::isSameLocation(toLoc, prevLoc, LocationUtil::CityLevel) || layoverTime > Constants::FavoriteLocationAutoTransferThreshold)) {
+    // transfer to favorite at destination of a roundtrip trip group, or when the time gap is sufficiently large in general
+    if (LocationUtil::isLocationChange(res) && ((LocationUtil::isLocationChange(prevRes) && LocationUtil::isSameLocation(toLoc, prevLoc, LocationUtil::CityLevel)) || layoverTime > Constants::FavoriteLocationAutoTransferThreshold)) {
         transfer.setFloatingLocationType(Transfer::FavoriteLocation);
         const auto f = pickFavorite(toLoc, resId, Transfer::Before);
         transfer.setFrom(locationFromFavorite(f));
@@ -459,8 +459,8 @@ TransferManager::CheckTransferResult TransferManager::checkTransferAfter(const Q
         return isLocationChange ? ShouldAutoAdd : CanAddManually;
     }
 
-    // transfer to favorite at destination of a roundtrip trip group
-    if (LocationUtil::isLocationChange(res) && LocationUtil::isLocationChange(nextRes) && (LocationUtil::isSameLocation(fromLoc, nextLoc, LocationUtil::CityLevel) || layoverTime > Constants::FavoriteLocationAutoTransferThreshold)) {
+    // transfer to favorite at destination of a roundtrip trip group, or when the time gap is sufficiently large in general
+    if (LocationUtil::isLocationChange(res) && ((LocationUtil::isLocationChange(nextRes) && LocationUtil::isSameLocation(fromLoc, nextLoc, LocationUtil::CityLevel)) || layoverTime > Constants::FavoriteLocationAutoTransferThreshold)) {
         transfer.setFloatingLocationType(Transfer::FavoriteLocation);
         const auto f = pickFavorite(fromLoc, resId, Transfer::After);
         transfer.setTo(locationFromFavorite(f));
