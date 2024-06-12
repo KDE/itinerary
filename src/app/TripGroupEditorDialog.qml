@@ -28,7 +28,7 @@ FormCard.FormCardDialog {
     onAccepted: () => {
         if (root.tripGroup.name !== nameEdit.text) {
             root.tripGroup.name = nameEdit.text;
-            root.tripGroup.automaticName = true;
+            root.tripGroup.automaticName = false;
         }
         root.close();
     }
