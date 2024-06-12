@@ -2370,11 +2370,10 @@ msgid "Open Itinerary on the given page"
 msgstr ""
 
 #: app/main.cpp:352
-#, fuzzy, kde-format
-#| msgid "Files or URLs to import."
+#, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
-msgstr "Soubory nebo URL pro import."
+msgstr ""
 
 #: app/main.qml:61
 #, kde-format
@@ -3678,16 +3677,14 @@ msgstr[1] "Měny: %2"
 msgstr[2] "Měna: %2"
 
 #: app/TripGroupDelegate.qml:162
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgid "Edit…"
-msgstr "Upravit"
+msgstr "Upravit…"
 
 #: app/TripGroupDelegate.qml:175
-#, fuzzy, kde-format
-#| msgid "Export"
+#, kde-format
 msgid "Export…"
-msgstr "Exportovat"
+msgstr "Exportovat…"
 
 #: app/TripGroupDelegate.qml:183
 #, kde-format
@@ -3695,25 +3692,22 @@ msgid "Delete trip"
 msgstr "Smazat výlet"
 
 #: app/TripGroupEditorDialog.qml:17
-#, fuzzy, kde-format
-#| msgid "Trips"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Trip"
-msgstr "Výlety"
+msgstr ""
 
 #: app/TripGroupEditorDialog.qml:17
-#, fuzzy, kde-format
-#| msgid "Export Trip"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Trip"
-msgstr "Exportovat výlet"
+msgstr ""
 
 #: app/TripGroupEditorDialog.qml:21
-#, fuzzy, kde-format
-#| msgid "Under name"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Trip name:"
-msgstr "Na jméno"
+msgstr ""
 
 #: app/tripgroupmanager.cpp:663
 #, kde-format
