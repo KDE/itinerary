@@ -57,7 +57,7 @@ TimelineElement::TimelineElement(TimelineModel *model, const QString& resId, con
 }
 
 TimelineElement::TimelineElement(TimelineModel *model, const ::Transfer &transfer)
-    : dt(transfer.anchorTime())
+    : dt(transfer.alignment() == Transfer::Before ? transfer.anchorTime().addSecs(-transfer.anchorTimeDelta()) : transfer.anchorTime())
     , elementType(Transfer)
     , rangeType(SelfContained)
     , m_content(QVariant::fromValue(transfer))
