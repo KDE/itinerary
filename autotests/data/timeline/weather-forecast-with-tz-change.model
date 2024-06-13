@@ -276,42 +276,6 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "1996-10-16",
-        "transfer": {
-            "@context": "http://schema.org",
-            "@type": "Transfer",
-            "alignment": "After",
-            "anchorTime": {
-                "@type": "QDateTime",
-                "@value": "1996-10-16T20:45:00+03:00",
-                "timezone": "Europe/Helsinki"
-            },
-            "anchorTimeDelta": 1800,
-            "floatingLocationType": "Reservation",
-            "from": {
-                "@type": "Location",
-                "country": "FI",
-                "latitude": 60.315799713134766,
-                "longitude": 24.968599319458008,
-                "name": "Helsinki-Vantaa",
-                "type": "Place"
-            },
-            "fromName": "Helsinki-Vantaa",
-            "state": "Pending",
-            "to": {
-                "@type": "Location",
-                "country": "FI",
-                "locality": "Helsinki",
-                "streetAddress": "Some Street 42",
-                "type": "Place"
-            },
-            "toName": "Some Hotel in Finland"
-        },
-        "type": 5
-    },
-    {
-        "isToday": false,
-        "rangeType": 0,
-        "sectionHeader": "1996-10-16",
         "type": 3,
         "weatherInformation": {
             "@context": "http://schema.org",
@@ -419,42 +383,6 @@
             },
             "locationName": "Helsinki-Vantaa"
         }
-    },
-    {
-        "isToday": false,
-        "rangeType": 0,
-        "sectionHeader": "1996-10-17",
-        "transfer": {
-            "@context": "http://schema.org",
-            "@type": "Transfer",
-            "alignment": "Before",
-            "anchorTime": {
-                "@type": "QDateTime",
-                "@value": "1996-10-17T17:35:00+03:00",
-                "timezone": "Europe/Helsinki"
-            },
-            "anchorTimeDelta": 5400,
-            "floatingLocationType": "Reservation",
-            "from": {
-                "@type": "Location",
-                "country": "FI",
-                "locality": "Helsinki",
-                "streetAddress": "Some Street 42",
-                "type": "Place"
-            },
-            "fromName": "Some Hotel in Finland",
-            "state": "Pending",
-            "to": {
-                "@type": "Location",
-                "country": "FI",
-                "latitude": 60.315799713134766,
-                "longitude": 24.968599319458008,
-                "name": "Helsinki-Vantaa",
-                "type": "Place"
-            },
-            "toName": "Helsinki-Vantaa"
-        },
-        "type": 5
     },
     {
         "isToday": false,

@@ -80,6 +80,11 @@ public:
     void setTo(const KPublicTransport::Location &to);
     /** From and to locations are sufficiently defined. */
     [[nodiscard]] bool hasLocations() const;
+    /** From and to locations have geo coordinates.
+     *  This imples hasLocations() but is stricter than that.
+     *  Used for automatically adding transfers.
+     */
+    [[nodiscard]] bool hasCoordinates() const;
 
     [[nodiscard]] QString fromName() const;
     void setFromName(const QString &fromName);

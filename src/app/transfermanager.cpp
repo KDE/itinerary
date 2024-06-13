@@ -264,8 +264,12 @@ void TransferManager::checkReservation(const QString &resId, const QVariant &res
     const auto action = alignment == Transfer::Before ? checkTransferBefore(resId, res, t) : checkTransferAfter(resId, res, t);
     switch (action) {
         case ShouldAutoAdd:
-            addOrUpdateTransfer(t);
-            break;
+            // don't auto-add transfers that would require name-based searches, that's not reliable enough
+            if (t.hasCoordinates()) {
+                addOrUpdateTransfer(t);
+                break;
+            }
+            [[fallthrough]];
         case CanAddManually:
             break;
         case ShouldRemove:

@@ -129,6 +129,11 @@ bool Transfer::hasLocations() const
     return !d->m_from.isEmpty() && !d->m_to.isEmpty();
 }
 
+bool Transfer::hasCoordinates() const
+{
+    return d->m_from.hasCoordinate() && d->m_to.hasCoordinate();
+}
+
 KPublicTransport::Journey Transfer::journey() const
 {
     return d->m_journey;
