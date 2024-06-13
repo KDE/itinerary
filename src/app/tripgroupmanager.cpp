@@ -684,6 +684,8 @@ bool TripGroupManager::recomputeTripGroupTimes(TripGroup &tg) const
     auto transfer = m_transferMgr->transfer(tg.elements().constFirst(), Transfer::Before);
     if (transfer.state() == Transfer::Selected && transfer.journey().scheduledDepartureTime().isValid()) {
         dt = std::min(dt, transfer.journey().scheduledDepartureTime());
+    } else if (transfer.state() == Transfer::Pending && transfer.anchorTime().isValid()) {
+        dt = std::min(dt, transfer.anchorTime().addSecs(-transfer.anchorTimeDelta()));
     }
     auto change = dt != tg.beginDateTime();
     tg.setBeginDateTime(dt);
@@ -694,6 +696,8 @@ bool TripGroupManager::recomputeTripGroupTimes(TripGroup &tg) const
     transfer = m_transferMgr->transfer(tg.elements().constLast(), Transfer::After);
     if (transfer.state() == Transfer::Selected && transfer.journey().scheduledArrivalTime().isValid()) {
         dt = std::max(dt, transfer.journey().scheduledArrivalTime());
+    } else if (transfer.state() == Transfer::Pending && transfer.anchorTime().isValid()) {
+        dt = std::min(dt, transfer.anchorTime().addSecs(transfer.anchorTimeDelta()));
     }
     change |= dt != tg.endDateTime();
     tg.setEndDateTime(dt);

@@ -16,7 +16,7 @@
             "automaticName": true,
             "beginDateTime": {
                 "@type": "QDateTime",
-                "@value": "2000-01-01T13:00:00+01:00",
+                "@value": "2000-01-01T11:30:00+01:00",
                 "timezone": "Europe/Berlin"
             },
             "endDateTime": {
@@ -348,7 +348,7 @@
             "automaticName": true,
             "beginDateTime": {
                 "@type": "QDateTime",
-                "@value": "2000-01-01T13:00:00+01:00",
+                "@value": "2000-01-01T11:30:00+01:00",
                 "timezone": "Europe/Berlin"
             },
             "endDateTime": {
