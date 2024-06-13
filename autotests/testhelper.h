@@ -14,9 +14,36 @@
 #include "reservationmanager.h"
 
 #include <QFile>
+#include <QJsonDocument>
+#include <QProcess>
 
 namespace Test
 {
+
+template <typename T>
+inline bool compareJson(const QString &refFile, const T &output, const T &ref)
+{
+    if (output != ref) {
+        QFile failFile(refFile + QLatin1String(".fail"));
+        failFile.open(QFile::WriteOnly);
+        failFile.write(QJsonDocument(output).toJson());
+        failFile.close();
+
+        QProcess proc;
+        proc.setProcessChannelMode(QProcess::ForwardedChannels);
+        proc.start(QStringLiteral("diff"), {QStringLiteral("-u"), refFile, failFile.fileName()});
+        if (!proc.waitForFinished()) {
+            // e.g. Windows CI not having diff
+            qDebug() << "Actual:";
+            qDebug().noquote() << output;
+            qDebug() << "Expected:";
+            qDebug().noquote() << ref;
+        }
+        return false;
+    }
+    return true;
+}
+
 
 /** Read the entire file content. */
 inline QByteArray readFile(const QString &fn)

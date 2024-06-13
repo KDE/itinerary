@@ -15,10 +15,16 @@
 #include "favoritelocationmodel.h"
 #include "livedatamanager.h"
 
+#include <QDirIterator>
+#include <QJsonArray>
+#include <QJsonDocument>
+#include <QJsonObject>
 #include <QtTest/qtest.h>
 #include <QSignalSpy>
 #include <QStandardPaths>
 #include <QTimeZone>
+
+using namespace Qt::Literals::StringLiterals;
 
 class TransferTest : public QObject
 {
@@ -150,8 +156,28 @@ private Q_SLOTS:
         QVERIFY(!mgr.canAddTransfer(batchId, Transfer::Before));
     }
 
-    void testDoubleRoundTrip()
+    void testTransfer_data()
     {
+        QTest::addColumn<QString>("input");
+        QDirIterator it(QLatin1StringView(SOURCE_DIR "/data/transfer/"), {"*.json"_L1});
+        while (it.hasNext()) {
+            it.next();
+            const auto baseName = it.fileInfo().baseName();
+            QTest::newRow(baseName.toUtf8().constData()) << it.fileInfo().absoluteFilePath();
+        }
+    }
+
+    static QJsonObject transferToJson(const Transfer &t)
+    {
+        auto obj = Transfer::toJson(t);
+        obj.remove("reservationId"_L1); // random
+        return obj;
+    }
+
+    void testTransfer()
+    {
+        QFETCH(QString, input);
+
         ReservationManager resMgr;
         Test::clearAll(&resMgr);
         auto ctrl = Test::makeAppController();
@@ -181,72 +207,30 @@ private Q_SLOTS:
         mgr.setReservationManager(&resMgr);
         mgr.setLiveDataManager(&liveDataMgr);
         tgMgr.setTransferManager(&mgr);
-        QSignalSpy addSpy(&mgr, &TransferManager::transferAdded);
-        QSignalSpy changeSpy(&mgr, &TransferManager::transferChanged);
-        QSignalSpy removeSpy(&mgr, &TransferManager::transferRemoved);
 
         ImportController importer;
         importer.setReservationManager(&resMgr);
-        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/double-round-trip.json")));
+        importer.importFromUrl(QUrl::fromLocalFile(input));
         ctrl->commitImport(&importer);
 
-        QCOMPARE(addSpy.size() - removeSpy.size(), 4); // before/after each trip
+        const auto batchIds = resMgr.batches();
+        QJsonArray result;
+        for (const auto &batchId : batchIds) {
+            QJsonObject res;
+            if (auto t = mgr.transfer(batchId, Transfer::Before); t.state() == Transfer::Pending) {
+                res["before"_L1] = transferToJson(t);
+            }
+            if (auto t = mgr.transfer(batchId, Transfer::After); t.state() == Transfer::Pending) {
+                res["after"_L1] = transferToJson(t);
+            }
+            result.push_back(res);
+        }
 
-        auto batchId = resMgr.batches().at(0);
-        auto transfer = mgr.transfer(batchId, Transfer::Before);
-        QCOMPARE(transfer.state(), Transfer::Pending);
-        QCOMPARE(transfer.reservationId(), batchId);
-        QVERIFY(transfer.from().hasCoordinate());
-        QCOMPARE(transfer.from().latitude(), 52.51860f);
-        QCOMPARE(transfer.from().longitude(), 13.37630f);
-        QVERIFY(transfer.to().hasCoordinate());
-        QCOMPARE(transfer.to().name(), QLatin1StringView("Berlin Hbf"));
-        QCOMPARE(transfer.floatingLocationType(), Transfer::FavoriteLocation);
+        QFile refFile(input + ".ref"_L1);
+        QVERIFY(refFile.open(QFile::ReadOnly));
+        const auto ref = QJsonDocument::fromJson(refFile.readAll()).array();
 
-        transfer = mgr.transfer(batchId, Transfer::After);
-        QCOMPARE(transfer.state(), Transfer::UndefinedState);
-
-        batchId = resMgr.batches().at(1);
-        transfer = mgr.transfer(batchId, Transfer::After);
-        QCOMPARE(transfer.state(), Transfer::Pending);
-        QCOMPARE(transfer.reservationId(), batchId);
-        QVERIFY(transfer.to().hasCoordinate());
-        QCOMPARE(transfer.to().latitude(), 52.51860f);
-        QCOMPARE(transfer.to().longitude(), 13.37630f);
-        QVERIFY(transfer.from().hasCoordinate());
-        QCOMPARE(transfer.from().name(), QLatin1StringView("Berlin Hbf"));
-        QCOMPARE(transfer.floatingLocationType(), Transfer::FavoriteLocation);
-
-        transfer = mgr.transfer(batchId, Transfer::Before);
-        QCOMPARE(transfer.state(), Transfer::UndefinedState);
-
-        batchId = resMgr.batches().at(2);
-        transfer = mgr.transfer(batchId, Transfer::Before);
-        QCOMPARE(transfer.state(), Transfer::Pending);
-        QCOMPARE(transfer.reservationId(), batchId);
-        QVERIFY(transfer.from().hasCoordinate());
-        QCOMPARE(transfer.from().latitude(), 52.51860f);
-        QCOMPARE(transfer.from().longitude(), 13.37630f);
-        QVERIFY(transfer.to().hasCoordinate());
-        QCOMPARE(transfer.to().name(), QLatin1StringView("Berlin Hbf"));
-        QCOMPARE(transfer.floatingLocationType(), Transfer::FavoriteLocation);
-
-        transfer = mgr.transfer(batchId, Transfer::After);
-        QCOMPARE(transfer.state(), Transfer::UndefinedState);
-
-        batchId = resMgr.batches().at(3);
-        transfer = mgr.transfer(batchId, Transfer::After);
-        QCOMPARE(transfer.state(), Transfer::Pending);
-        QCOMPARE(transfer.reservationId(), batchId);
-        QVERIFY(transfer.to().hasCoordinate());
-        QCOMPARE(transfer.to().latitude(), 52.51860f);
-        QCOMPARE(transfer.to().longitude(), 13.37630f);
-        QVERIFY(transfer.from().hasCoordinate());
-        QCOMPARE(transfer.from().name(), QLatin1StringView("Berlin Hbf"));
-        QCOMPARE(transfer.floatingLocationType(), Transfer::FavoriteLocation);
-
-        transfer = mgr.transfer(batchId, Transfer::Before);
-        QCOMPARE(transfer.state(), Transfer::UndefinedState);
+        QVERIFY(Test::compareJson(refFile.fileName(), result, ref));
     }
 };
 

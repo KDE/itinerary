@@ -1,0 +1,92 @@
+[
+{
+    "@context": "http://schema.org",
+    "@type": "TrainReservation",
+    "reservationFor": {
+        "@type": "TrainTrip",
+        "arrivalStation": {
+            "@type": "TrainStation",
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 52.524925231933594,
+                "longitude": 13.36962890625
+            },
+            "identifier": "ibnr:8011160",
+            "name": "Berlin Hbf"
+        },
+        "arrivalTime": {
+            "@type": "QDateTime",
+            "@value": "2024-06-02T22:32:00+02:00",
+            "timezone": "Europe/Berlin"
+        },
+        "departureDay": "2024-06-02",
+        "departureStation": {
+            "@type": "TrainStation",
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 48.9935302734375,
+                "longitude": 8.401939392089844
+            },
+            "identifier": "ibnr:8000191",
+            "name": "Karlsruhe Hbf"
+        },
+        "departureTime": {
+            "@type": "QDateTime",
+            "@value": "2024-06-02T16:00:00+02:00",
+            "timezone": "Europe/Berlin"
+        },
+        "trainNumber": "ICE 276"
+    },
+    "reservationStatus": "http://schema.org/ReservationConfirmed"
+},
+{
+    "@context": "http://schema.org",
+    "@type": "FlightReservation",
+    "reservationFor": {
+        "@type": "Flight",
+        "airline": {
+            "@type": "Airline",
+            "iataCode": "LX"
+        },
+        "arrivalAirport": {
+            "@type": "Airport",
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 47.464698791503906,
+                "longitude": 8.549169540405273
+            },
+            "iataCode": "ZRH",
+            "name": "Zürich"
+        },
+        "arrivalTime": {
+            "@type": "QDateTime",
+            "@value": "2024-09-10T08:15:00+02:00",
+            "timezone": "Europe/Zurich"
+        },
+        "boardingTime": {
+            "@type": "QDateTime",
+            "@value": "2024-09-10T06:15:00+02:00",
+            "timezone": "Europe/Berlin"
+        },
+        "departureAirport": {
+            "@type": "Airport",
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 52.55970001220703,
+                "longitude": 13.287799835205078
+            },
+            "iataCode": "BER",
+            "name": "Berlin Tegel"
+        },
+        "departureDay": "2024-09-10",
+        "departureGate": "A10",
+        "departureTime": {
+            "@type": "QDateTime",
+            "@value": "2024-09-10T06:45:00+02:00",
+            "timezone": "Europe/Berlin"
+        },
+        "flightNumber": "963"
+    }
+}
+]
+

@@ -1,0 +1,130 @@
+[
+    {
+        "before": {
+            "alignment": "Before",
+            "anchorTime": {
+                "timezone": "Europe/Berlin",
+                "value": "2024-05-30T09:26:00+02:00"
+            },
+            "anchorTimeDelta": 1200,
+            "floatingLocationType": "FavoriteLocation",
+            "from": {
+                "latitude": 52.51860046386719,
+                "longitude": 13.376299858093262
+            },
+            "fromName": "name",
+            "journey": {
+                "sections": [
+                ]
+            },
+            "state": "Pending",
+            "to": {
+                "country": "DE",
+                "identifier": {
+                    "ibnr": "8098160"
+                },
+                "latitude": 52.525848388671875,
+                "longitude": 13.368891716003418,
+                "name": "Berlin Hbf",
+                "type": "Stop"
+            },
+            "toName": "Berlin Hbf"
+        }
+    },
+    {
+        "after": {
+            "alignment": "After",
+            "anchorTime": {
+                "timezone": "Europe/Berlin",
+                "value": "2024-06-02T22:32:00+02:00"
+            },
+            "anchorTimeDelta": 600,
+            "floatingLocationType": "FavoriteLocation",
+            "from": {
+                "country": "DE",
+                "identifier": {
+                    "ibnr": "8011160"
+                },
+                "latitude": 52.524925231933594,
+                "longitude": 13.36962890625,
+                "name": "Berlin Hbf",
+                "type": "Stop"
+            },
+            "fromName": "Berlin Hbf",
+            "journey": {
+                "sections": [
+                ]
+            },
+            "state": "Pending",
+            "to": {
+                "latitude": 52.51860046386719,
+                "longitude": 13.376299858093262
+            },
+            "toName": "name"
+        }
+    },
+    {
+        "before": {
+            "alignment": "Before",
+            "anchorTime": {
+                "timezone": "Europe/Berlin",
+                "value": "2025-05-30T09:26:00+02:00"
+            },
+            "anchorTimeDelta": 1200,
+            "floatingLocationType": "FavoriteLocation",
+            "from": {
+                "latitude": 52.51860046386719,
+                "longitude": 13.376299858093262
+            },
+            "fromName": "name",
+            "journey": {
+                "sections": [
+                ]
+            },
+            "state": "Pending",
+            "to": {
+                "country": "DE",
+                "identifier": {
+                    "ibnr": "8098160"
+                },
+                "latitude": 52.525848388671875,
+                "longitude": 13.368891716003418,
+                "name": "Berlin Hbf",
+                "type": "Stop"
+            },
+            "toName": "Berlin Hbf"
+        }
+    },
+    {
+        "after": {
+            "alignment": "After",
+            "anchorTime": {
+                "timezone": "Europe/Berlin",
+                "value": "2025-06-02T22:32:00+02:00"
+            },
+            "anchorTimeDelta": 600,
+            "floatingLocationType": "FavoriteLocation",
+            "from": {
+                "country": "DE",
+                "identifier": {
+                    "ibnr": "8011160"
+                },
+                "latitude": 52.524925231933594,
+                "longitude": 13.36962890625,
+                "name": "Berlin Hbf",
+                "type": "Stop"
+            },
+            "fromName": "Berlin Hbf",
+            "journey": {
+                "sections": [
+                ]
+            },
+            "state": "Pending",
+            "to": {
+                "latitude": 52.51860046386719,
+                "longitude": 13.376299858093262
+            },
+            "toName": "name"
+        }
+    }
+]
