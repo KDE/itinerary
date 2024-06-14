@@ -73,7 +73,7 @@ class ImportPkPass
 {
 public:
     QByteArray data;
-    std::unique_ptr<KPkPass::Pass> pass = {};
+    mutable std::unique_ptr<KPkPass::Pass> pass = {};
 };
 
 /** A staged KItinerary bundle file. */

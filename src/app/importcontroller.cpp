@@ -652,8 +652,13 @@ QVariant ImportController::data(const QModelIndex &index, int role) const
             const auto docIds = DocumentUtil::documentIds(m_stagedElements[index.row()].data) + DocumentUtil::documentIds(m_stagedElements[index.row()].updateData);
             for (const auto &docId : docIds) {
                 if (const auto it = m_stagedPkPasses.find(docId.toString()); it != m_stagedPkPasses.end() && !(*it).second.data.isEmpty()) {
-                    QUrl passId((*it).first);
-                    return QString("image://org.kde.pkpass/"_L1 + passId.host() + '/'_L1 +  QString::fromUtf8(QStringView(passId.path()).mid(1).toUtf8().toBase64(QByteArray::Base64UrlEncoding)) + "/icon"_L1);
+                    if (!(*it).second.pass) {
+                        (*it).second.pass.reset(KPkPass::Pass::fromData((*it).second.data));
+                    }
+                    if ((*it).second.pass->hasIcon()) {
+                        QUrl passId((*it).first);
+                        return QString("image://org.kde.pkpass/"_L1 + passId.host() + '/'_L1 +  QString::fromUtf8(QStringView(passId.path()).mid(1).toUtf8().toBase64(QByteArray::Base64UrlEncoding)) + "/icon"_L1);
+                    }
                 }
             }
 
