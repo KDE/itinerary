@@ -173,8 +173,8 @@ Kirigami.Page {
     IndoorMapInfoSheet {
         id: elementDetailsSheet
         model: infoModel
-        mapData: map.mapData
-        parent: root.overlay
+        regionCode: page.map.mapData.regionCode
+        timeZone: page.map.mapData.timeZone
     }
 
     PlatformModel {
