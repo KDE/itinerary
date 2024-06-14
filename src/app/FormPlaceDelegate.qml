@@ -41,7 +41,7 @@ FormCard.AbstractFormDelegate {
         parent: applicationWindow().overlay
         id: matrixRoomSheet
             onRoomSelected: {
-            console.log(room);
+            console.log(room.id, room.displayName);
             shareConfirmDialog.room = room;
             shareConfirmDialog.open();
          }
