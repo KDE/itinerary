@@ -254,12 +254,16 @@ Kirigami.Page {
         realtimeModel: locationModel.sourceModel
     }
 
-    IndoorMapAmenitySheet {
+    AmenitySearchDialog {
         id: amenitySheet
-        model: AmenityModel {
+        amenityModel: AmenityModel {
             mapData: map.mapData
         }
-        map: root.map
+        onAmenitySelected: (amenity) => {
+            map.view.floorLevel = amenity.level;
+            map.view.setZoomLevel(21, Qt.point(map.width / 2.0, map.height/ 2.0));
+            map.view.centerOnGeoCoordinate(amenity.element.center);
+        }
     }
 
     function queryLiveLocationData()

@@ -169,7 +169,6 @@ qt_add_qml_module(itinerary-app URI org.kde.itinerary NO_PLUGIN QML_FILES
     HotelEditor.qml
     HotelPage.qml
     ImportPage.qml
-    IndoorMapAmenitySheet.qml
     IndoorMapElevatorSheet.qml
     IndoorMapGateSheet.qml
     IndoorMapInfoSheet.qml
