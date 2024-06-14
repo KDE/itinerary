@@ -119,6 +119,15 @@ FormCard.FormCardPage {
             onToggled: Settings.performCurrencyConversion = checked
             description: i18n("Enabling this will perform online queries for exchange rates to currencies at travel destinations.")
         }
+
+        FormCard.FormDelegateSeparator {}
+
+        FormCard.FormCheckDelegate {
+            text: i18n("Wikimedia Online Content")
+            checked: Settings.wikimediaOnlineContentEnabled
+            onToggled: Settings.wikimediaOnlineContentEnabled = checked
+            description: i18n("Use additional online content from Wikimedia and Wikidata.")
+        }
     }
 
     // Transfer assistant

@@ -20,6 +20,7 @@ class Settings : public QObject
     Q_PROPERTY(bool preloadMapData READ preloadMapData WRITE setPreloadMapData NOTIFY preloadMapDataChanged)
 
     Q_PROPERTY(bool performCurrencyConversion READ performCurrencyConversion WRITE setPerformCurrencyConversion NOTIFY performCurrencyConversionChanged)
+    Q_PROPERTY(bool wikimediaOnlineContentEnabled MEMBER m_wikimediaOnlineContentEnabled WRITE setWikimediaOnlineContentEnabled NOTIFY wikimediaOnlineContentEnabledChanged)
 
     Q_PROPERTY(bool autoAddTransfers READ autoAddTransfers WRITE setAutoAddTransfers NOTIFY autoAddTransfersChanged)
     Q_PROPERTY(bool autoFillTransfers READ autoFillTransfers WRITE setAutoFillTransfers NOTIFY autoFillTransfersChanged)
@@ -55,6 +56,8 @@ public:
     [[nodiscard]] bool performCurrencyConversion() const;
     void setPerformCurrencyConversion(bool enable);
 
+    void setWikimediaOnlineContentEnabled(bool enable);
+
     [[nodiscard]] bool autoAddTransfers() const;
     void setAutoAddTransfers(bool autoAdd);
     [[nodiscard]] bool autoFillTransfers() const;
@@ -74,6 +77,7 @@ Q_SIGNALS:
     void queryLiveDataChanged(bool enabled);
     void preloadMapDataChanged(bool preload);
     void performCurrencyConversionChanged(bool enabled);
+    void wikimediaOnlineContentEnabledChanged(bool enabled);
     void autoAddTransfersChanged(bool autoAdd);
     void autoFillTransfersChanged(bool autoFill);
     void showNotificationOnLockScreenChanged(bool enabled);
@@ -86,6 +90,7 @@ private:
     bool m_queryLiveData = false;
     bool m_preloadMapData = false;
     bool m_currencyConversion = false;
+    bool m_wikimediaOnlineContentEnabled = false;
     bool m_autoAddTransfers = true;
     bool m_autoFillTransfers = false;
     bool m_showNotificationOnLockScreen = false;

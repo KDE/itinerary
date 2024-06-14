@@ -167,14 +167,15 @@ Kirigami.Page {
 
     OSMElementInformationModel {
         id: infoModel
+        allowOnlineContent: Settings.wikimediaOnlineContentEnabled
         debug: Settings.developmentMode
     }
 
     IndoorMapInfoSheet {
         id: elementDetailsSheet
         model: infoModel
-        regionCode: page.map.mapData.regionCode
-        timeZone: page.map.mapData.timeZone
+        regionCode: root.map.mapData.regionCode
+        timeZone: root.map.mapData.timeZone
     }
 
     PlatformModel {

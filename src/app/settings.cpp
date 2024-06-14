@@ -30,6 +30,7 @@ Settings::Settings(QObject *parent)
     m_preloadMapData = s.value("PreloadMapData"_L1, false).toBool();
 
     m_currencyConversion = s.value("PerformCurrencyConversion"_L1, false).toBool();
+    m_wikimediaOnlineContentEnabled = s.value("WikimediaOnlineContent"_L1, false).toBool();
 
     m_autoAddTransfers = s.value("AutoAddTransfers"_L1, true).toBool();
     m_autoFillTransfers = s.value("AutoFillTransfers"_L1, false).toBool() && m_queryLiveData && m_autoAddTransfers;
@@ -165,6 +166,19 @@ void Settings::setPerformCurrencyConversion(bool enable)
     s.setValue("PerformCurrencyConversion"_L1, enable);
 
     Q_EMIT performCurrencyConversionChanged(enable);
+}
+
+void Settings::setWikimediaOnlineContentEnabled(bool enable)
+{
+    if (m_wikimediaOnlineContentEnabled == enable) {
+        return;
+    }
+
+    m_wikimediaOnlineContentEnabled = enable;
+    QSettings s;
+    s.beginGroup("Settings"_L1);
+    s.setValue("WikimediaOnlineContent"_L1, m_wikimediaOnlineContentEnabled);
+    Q_EMIT wikimediaOnlineContentEnabledChanged(enable);
 }
 
 bool Settings::autoAddTransfers() const
