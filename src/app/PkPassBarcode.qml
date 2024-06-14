@@ -20,11 +20,13 @@ Rectangle {
     color: "white"
     radius: 6
     Layout.alignment: Qt.AlignCenter
+    visible: barcode.barcodeType !== Prison.Barcode.Null
 
     ColumnLayout {
         id: barcodeLayout
         anchors.centerIn: parent
         Prison.Barcode {
+            id: barcode
             Layout.alignment: Qt.AlignCenter
             Layout.margins: 4
             Layout.preferredWidth: 0.8 * root.maximumWidth
