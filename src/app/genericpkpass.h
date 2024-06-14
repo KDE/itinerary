@@ -18,6 +18,7 @@ class GenericPkPass
     KITINERARY_PROPERTY(QString, pkpassPassTypeIdentifier, setPkpassPassTypeIdentifier)
     KITINERARY_PROPERTY(QString, pkpassSerialNumber, setPkpassSerialNumber)
     KITINERARY_PROPERTY(QDateTime, validUntil, setValidUntil)
+    KITINERARY_PROPERTY(QVariantList, subjectOf, setSubjectOf)
 private:
     QExplicitlySharedDataPointer<GenericPkPassPrivate> d;
 };

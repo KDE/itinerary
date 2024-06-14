@@ -542,7 +542,9 @@ void ImportController::importNode(const KItinerary::ExtractorDocumentNode &node)
             wrapper.setPkpassPassTypeIdentifier(pass->passTypeIdentifier());
             wrapper.setPkpassSerialNumber(pass->serialNumber());
             wrapper.setValidUntil(pass->expirationDate());
-            addElement({ .type = ImportElement::Pass, .data = wrapper });
+            QVariant v(wrapper);
+            KItinerary::DocumentUtil::addDocumentId(v, KItinerary::DocumentUtil::idForPkPass(pass->passTypeIdentifier(), pass->serialNumber()));
+            addElement({ .type = ImportElement::Pass, .data = v });
             m_stagedPkPasses[pkPassId] = ImportPkPass{ .data = pass->rawData() };
         }
     }

@@ -16,6 +16,7 @@ public:
     QString pkpassPassTypeIdentifier;
     QString pkpassSerialNumber;
     QDateTime validUntil;
+    QVariantList subjectOf;
 };
 
 KITINERARY_MAKE_CLASS(GenericPkPass)
@@ -23,6 +24,7 @@ KITINERARY_MAKE_PROPERTY(GenericPkPass, QString, name, setName)
 KITINERARY_MAKE_PROPERTY(GenericPkPass, QString, pkpassPassTypeIdentifier, setPkpassPassTypeIdentifier)
 KITINERARY_MAKE_PROPERTY(GenericPkPass, QString, pkpassSerialNumber, setPkpassSerialNumber)
 KITINERARY_MAKE_PROPERTY(GenericPkPass, QDateTime, validUntil, setValidUntil)
+KITINERARY_MAKE_PROPERTY(GenericPkPass, QVariantList, subjectOf, setSubjectOf)
 KITINERARY_MAKE_OPERATOR(GenericPkPass)
 
 #include "moc_genericpkpass.cpp"

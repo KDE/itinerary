@@ -304,6 +304,30 @@ private Q_SLOTS:
         QCOMPARE(idx.data(ImportController::IconNameRole).value<QString>(), "meeting-attending"_L1);
         QCOMPARE(idx.data(ImportController::TitleRole).value<QString>(), "Haus Randa"_L1);
     }
+
+    void testGenericPass()
+    {
+        ReservationManager resMgr;
+        Test::clearAll(&resMgr);
+        ImportController ctrl;
+        QAbstractItemModelTester modelTest(&ctrl);
+        QSignalSpy showImportPageSpy(&ctrl, &ImportController::showImportPage);
+        QSignalSpy infoMsgSpy(&ctrl, &ImportController::infoMessage);
+        ctrl.setReservationManager(&resMgr);
+
+        ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/generic-pass.pkpass")));
+
+        QCOMPARE(ctrl.rowCount(), 1);
+        QCOMPARE(ctrl.hasSelection(), true);
+        QVERIFY(showImportPageSpy.wait());
+        QCOMPARE(infoMsgSpy.size(), 0);
+
+        auto idx = ctrl.index(0, 0);
+        QCOMPARE(idx.data(ImportController::TitleRole).toString(), "KDE"_L1);
+        QCOMPARE(idx.data(ImportController::IconNameRole).toString(), "bookmarks"_L1);
+        QCOMPARE(idx.data(ImportController::SelectedRole).toBool(), true);
+        QCOMPARE(idx.data(ImportController::AttachmentCountRole).toInt(), 1);
+    }
 };
 
 QTEST_GUILESS_MAIN(ImportControllerTest)
