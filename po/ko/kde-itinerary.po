@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-09 00:39+0000\n"
+"POT-Creation-Date: 2024-06-15 00:39+0000\n"
 "PO-Revision-Date: 2024-02-17 12:41+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1347,7 +1347,7 @@ msgstr "%2에서 %3(으)로 가는 %1 열차|/|%2에서 %3$[으 %3]로 가는 %1
 msgid "Bus %1 from %2 to %3"
 msgstr "%2에서 %3(으)로 가는 %1 버스|/|%2에서 %3$[으 %3]로 가는 %1 버스"
 
-#: app/gpxexport.cpp:58 app/importcontroller.cpp:593
+#: app/gpxexport.cpp:58 app/importcontroller.cpp:595
 #, kde-format
 msgid "Ferry from %1 to %2"
 msgstr "%1에서 %2(으)로 가는 선박|/|%1에서 %2$[으 %2]로 가는 선박"
@@ -1716,25 +1716,25 @@ msgstr "가져온 것이 없습니다."
 msgid "No importable events found in this calendar."
 msgstr "이 캘린더에서 가져올 수 있는 이벤트가 없습니다."
 
-#: app/importcontroller.cpp:584
+#: app/importcontroller.cpp:586
 #, fuzzy, kde-format
 #| msgid "Flight %1 from %2 to %3"
 msgid "Flight from %1 to %2"
 msgstr "%2에서 %3(으)로 가는 %1 항공편|/|%2에서 %3$[으 %3]로 가는 %1 항공편"
 
-#: app/importcontroller.cpp:587
+#: app/importcontroller.cpp:589
 #, fuzzy, kde-format
 #| msgid "Train %1 from %2 to %3"
 msgid "Train from %1 to %2"
 msgstr "%2에서 %3(으)로 가는 %1 열차|/|%2에서 %3$[으 %3]로 가는 %1 열차"
 
-#: app/importcontroller.cpp:590
+#: app/importcontroller.cpp:592
 #, fuzzy, kde-format
 #| msgid "Bus %1 from %2 to %3"
 msgid "Bus from %1 to %2"
 msgstr "%2에서 %3(으)로 가는 %1 버스|/|%2에서 %3$[으 %3]로 가는 %1 버스"
 
-#: app/importcontroller.cpp:618
+#: app/importcontroller.cpp:620
 #, kde-format
 msgid "Backup"
 msgstr ""
@@ -1757,13 +1757,6 @@ msgstr "가져올 파일이나 URL입니다."
 #| msgid "Import Reservation"
 msgid "Import selection"
 msgstr "예약 가져오기"
-
-#: app/IndoorMapAmenitySheet.qml:18
-#, fuzzy, kde-format
-#| msgid "Find Amenity"
-msgctxt "@title"
-msgid "Find Amenity"
-msgstr "어메니티 찾기"
 
 #: app/IndoorMapGateSheet.qml:18
 #, fuzzy, kde-format
@@ -1790,17 +1783,17 @@ msgctxt "flight arrival gate"
 msgid "%1 (arrival)"
 msgstr "%1(도착)"
 
-#: app/IndoorMapInfoSheet.qml:129 app/IndoorMapPage.qml:127
+#: app/IndoorMapInfoSheet.qml:21 app/IndoorMapPage.qml:127
 #, kde-format
 msgid "Edit with iD"
 msgstr "iD로 편집"
 
-#: app/IndoorMapInfoSheet.qml:135 app/IndoorMapPage.qml:133
+#: app/IndoorMapInfoSheet.qml:27 app/IndoorMapPage.qml:133
 #, kde-format
 msgid "Edit with JOSM"
 msgstr "JOSM으로 편집"
 
-#: app/IndoorMapInfoSheet.qml:141 app/IndoorMapPage.qml:139
+#: app/IndoorMapInfoSheet.qml:33 app/IndoorMapPage.qml:139
 #, kde-format
 msgid "Edit with Vespucci"
 msgstr "Vespucci로 편집"
@@ -1855,18 +1848,18 @@ msgstr "지도 열기"
 msgid "Open wheelmap.org"
 msgstr "wheelmap.org 열기"
 
-#: app/IndoorMapPage.qml:299
+#: app/IndoorMapPage.qml:304
 #, kde-format
 msgid "Switched to floor %1"
 msgstr "%1층으로 전환됨"
 
-#: app/IndoorMapPage.qml:346
+#: app/IndoorMapPage.qml:351
 #, kde-format
 msgctxt "@action:intoolbar Go down one floor"
 msgid "Floor down"
 msgstr "한 층 아래"
 
-#: app/IndoorMapPage.qml:355
+#: app/IndoorMapPage.qml:360
 #, kde-format
 msgctxt "@action:intoolbar Go up one floor"
 msgid "Floor up"
@@ -2211,43 +2204,43 @@ msgstr "위치"
 msgid "Journey"
 msgstr "여정"
 
-#: app/localizer.cpp:182
+#: app/localizer.cpp:175
 #, kde-format
 msgctxt "day-only date format"
 msgid "dd MMMM"
 msgstr "MMMM dd일"
 
-#: app/localizer.cpp:227
+#: app/localizer.cpp:220
 #, kde-format
 msgctxt "distance in meter"
 msgid "%1 m"
 msgstr "%1 m"
 
-#: app/localizer.cpp:230 app/localizer.cpp:232
+#: app/localizer.cpp:223 app/localizer.cpp:225
 #, kde-format
 msgctxt "distance in kilometer"
 msgid "%1 km"
 msgstr "%1 km"
 
-#: app/localizer.cpp:238
+#: app/localizer.cpp:231
 #, kde-format
 msgctxt "speed in kilometers per hour"
 msgid "%1 km/h"
 msgstr "%1 km/h"
 
-#: app/localizer.cpp:244
+#: app/localizer.cpp:237
 #, kde-format
 msgctxt "weight in gram"
 msgid "%1 g"
 msgstr "%1 g"
 
-#: app/localizer.cpp:247 app/localizer.cpp:249
+#: app/localizer.cpp:240 app/localizer.cpp:242
 #, kde-format
 msgctxt "weight in kilogram"
 msgid "%1 kg"
 msgstr "%1 kg"
 
-#: app/localizer.cpp:255
+#: app/localizer.cpp:248
 #, kde-format
 msgctxt "temperature"
 msgid "%1°C"
@@ -2489,41 +2482,40 @@ msgstr "지도를 다운로드했습니다."
 #: app/MatrixRoomSelectionSheet.qml:19
 #, fuzzy, kde-format
 #| msgid "Share Location"
-msgctxt "@title"
-msgid "Share Location"
+msgid "Share location…"
 msgstr "위치 공유"
 
-#: app/MatrixRoomSelectionSheet.qml:55
+#: app/MatrixRoomSelectionSheet.qml:36
 #, kde-format
 msgctxt "matrix room type"
 msgid "Invited"
 msgstr "초대 받음"
 
-#: app/MatrixRoomSelectionSheet.qml:56
+#: app/MatrixRoomSelectionSheet.qml:37
 #, kde-format
 msgctxt "matrix room type"
 msgid "Favorite Rooms"
 msgstr "즐겨찾는 대화방"
 
-#: app/MatrixRoomSelectionSheet.qml:57
+#: app/MatrixRoomSelectionSheet.qml:38
 #, kde-format
 msgctxt "matrix room type"
 msgid "Direct Messages"
 msgstr "개인 메시지"
 
-#: app/MatrixRoomSelectionSheet.qml:58
+#: app/MatrixRoomSelectionSheet.qml:39
 #, kde-format
 msgctxt "matrix room type"
 msgid "Rooms"
 msgstr "대화방"
 
-#: app/MatrixRoomSelectionSheet.qml:59
+#: app/MatrixRoomSelectionSheet.qml:40
 #, kde-format
 msgctxt "matrix room type"
 msgid "Low Priority"
 msgstr "낮은 우선 순위"
 
-#: app/MatrixRoomSelectionSheet.qml:60
+#: app/MatrixRoomSelectionSheet.qml:41
 #, kde-format
 msgctxt "matrix room type"
 msgid "Spaces"
@@ -3052,22 +3044,32 @@ msgid ""
 "at travel destinations."
 msgstr "이 옵션을 사용하면 온라인에서 여행지의 환율 정보를 가져옵니다."
 
-#: app/SettingsPage.qml:127
+#: app/SettingsPage.qml:126
+#, kde-format
+msgid "Wikimedia Online Content"
+msgstr ""
+
+#: app/SettingsPage.qml:129
+#, kde-format
+msgid "Use additional online content from Wikimedia and Wikidata."
+msgstr ""
+
+#: app/SettingsPage.qml:136
 #, kde-format
 msgid "Transfer Assistant"
 msgstr "환승 도우미"
 
-#: app/SettingsPage.qml:131
+#: app/SettingsPage.qml:140
 #, kde-format
 msgid "Automatically add transfers"
 msgstr "자동으로 환승 추가"
 
-#: app/SettingsPage.qml:139
+#: app/SettingsPage.qml:148
 #, kde-format
 msgid "Automatically fill transfers"
 msgstr "자동으로 환승 채우기"
 
-#: app/SettingsPage.qml:140
+#: app/SettingsPage.qml:149
 #, kde-format
 msgid ""
 "When enabled, this will query transport provider online services "
@@ -3076,135 +3078,135 @@ msgstr ""
 "이 옵션을 사용하면 교통 서비스 사업자 온라인 서비스에 조회하여 환승 정보를 조"
 "회합니다."
 
-#: app/SettingsPage.qml:151
+#: app/SettingsPage.qml:160
 #, kde-format
 msgid "Notifications"
 msgstr "알림"
 
-#: app/SettingsPage.qml:156
+#: app/SettingsPage.qml:165
 #, kde-format
 msgid "Configure Notifications..."
 msgstr "알림 설정..."
 
-#: app/SettingsPage.qml:165
+#: app/SettingsPage.qml:174
 #, kde-format
 msgid "Show notifications on lock screen"
 msgstr "잠금 화면에 알림 표시"
 
-#: app/SettingsPage.qml:175 app/SettingsPage.qml:203
+#: app/SettingsPage.qml:184 app/SettingsPage.qml:212
 #, kde-format
 msgid "Request permissions..."
 msgstr "권한 요청..."
 
-#: app/SettingsPage.qml:176
+#: app/SettingsPage.qml:185
 #, kde-format
 msgid "Additional permissions are required to show notifications."
 msgstr "알림을 표시하려면 추가 권한이 필요합니다."
 
-#: app/SettingsPage.qml:185
+#: app/SettingsPage.qml:194
 #, kde-format
 msgid "Notification permissions are available"
 msgstr "알림 권한을 사용할 수 있음"
 
-#: app/SettingsPage.qml:186 app/SettingsPage.qml:228
+#: app/SettingsPage.qml:195 app/SettingsPage.qml:237
 #, kde-format
 msgid "No further action required."
 msgstr "더 이상 필요한 동작이 없습니다."
 
-#: app/SettingsPage.qml:199
+#: app/SettingsPage.qml:208
 #, kde-format
 msgid "Onboard Status"
 msgstr "차내 정보"
 
-#: app/SettingsPage.qml:204
+#: app/SettingsPage.qml:213
 #, kde-format
 msgid "Additional permissions are required to access the Wi-Fi status."
 msgstr "Wi-Fi 상태에 접근하려면 추가 권한이 필요합니다."
 
-#: app/SettingsPage.qml:215
+#: app/SettingsPage.qml:224
 #, kde-format
 msgid "Wi-Fi access for onboard information is available."
 msgstr "Wi-Fi를 통한 차내 정보에 접근할 수 있습니다."
 
-#: app/SettingsPage.qml:217
+#: app/SettingsPage.qml:226
 #, kde-format
 msgid "Wi-Fi is not enabled"
 msgstr "Wi-Fi가 비활성화됨"
 
-#: app/SettingsPage.qml:219
+#: app/SettingsPage.qml:228
 #, kde-format
 msgid "Location service is not enabled"
 msgstr "위치 서비스가 비활성화됨"
 
-#: app/SettingsPage.qml:221
+#: app/SettingsPage.qml:230
 #, kde-format
 msgid "Wi-Fi access is not available on this system"
 msgstr "이 시스템에서 Wi-Fi에 접근할 수 없음"
 
-#: app/SettingsPage.qml:230
+#: app/SettingsPage.qml:239
 #, kde-format
 msgid "Enable Wi-Fi on your system to access onboard information."
 msgstr "차내 정보를 확인하려면 시스템의 Wi-Fi를 활성화해야 합니다."
 
-#: app/SettingsPage.qml:232
+#: app/SettingsPage.qml:241
 #, kde-format
 msgid ""
 "Enable the location service on your device to access onboard information."
 msgstr "차내 정보를 확인하려면 시스템의 위치 서비스를 활성화해야 합니다."
 
-#: app/SettingsPage.qml:234
+#: app/SettingsPage.qml:243
 #, kde-format
 msgid ""
 "Onboard information are unfortunately not supported on your device at this "
 "time."
 msgstr "현재 사용 중인 장치에서 차내 정보를 지원하지 않습니다."
 
-#: app/SettingsPage.qml:266
+#: app/SettingsPage.qml:275
 #, kde-format
 msgid "Matrix Integration"
 msgstr "Matrix 통합"
 
-#: app/SettingsPage.qml:273
+#: app/SettingsPage.qml:282
 #, kde-format
 msgid "Logged in as %1"
 msgstr "%1(으)로 로그인됨"
 
-#: app/SettingsPage.qml:277
+#: app/SettingsPage.qml:286
 #, kde-format
 msgid "Synchronize rooms"
 msgstr "방 동기화"
 
-#: app/SettingsPage.qml:284
+#: app/SettingsPage.qml:293
 #, kde-format
 msgid "Matrix ID"
 msgstr "Matrix ID"
 
-#: app/SettingsPage.qml:291
+#: app/SettingsPage.qml:300
 #, kde-format
 msgid "Password"
 msgstr "암호"
 
-#: app/SettingsPage.qml:298
+#: app/SettingsPage.qml:307
 #, kde-format
 msgid "Log out"
 msgstr "로그아웃"
 
-#: app/SettingsPage.qml:298
+#: app/SettingsPage.qml:307
 #, kde-format
 msgid "Log in"
 msgstr "로그인"
 
-#: app/SettingsPage.qml:305
+#: app/SettingsPage.qml:314
 #, kde-format
 msgid "Contributing"
 msgstr "기여"
 
-#: app/SettingsPage.qml:309
+#: app/SettingsPage.qml:318
 #, kde-format
 msgid "I contribute to OpenStreetMap"
 msgstr "저는 OpenStreetMap에 기여합니다"
 
-#: app/SettingsPage.qml:310
+#: app/SettingsPage.qml:319
 #, kde-format
 msgid "Enables OSM editing options."
 msgstr "OSM 편집 옵션을 활성화합니다."
@@ -3939,6 +3941,12 @@ msgstr "로그인 중"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%5에 %3에서 %4(으)로 가는 %1%2|/|%5에 %3에서 %4$[으 %4]로 가는 %1%2"
+
+#, fuzzy
+#~| msgid "Find Amenity"
+#~ msgctxt "@title"
+#~ msgid "Find Amenity"
+#~ msgstr "어메니티 찾기"
 
 #~ msgid "Pass imported."
 #~ msgstr "패스를 가져왔습니다."

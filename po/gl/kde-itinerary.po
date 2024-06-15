@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-09 00:39+0000\n"
+"POT-Creation-Date: 2024-06-15 00:39+0000\n"
 "PO-Revision-Date: 2024-06-09 09:56+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -1340,7 +1340,7 @@ msgstr "Tren %1 de %2 a %3"
 msgid "Bus %1 from %2 to %3"
 msgstr "Bus %1 de %2 a %3"
 
-#: app/gpxexport.cpp:58 app/importcontroller.cpp:593
+#: app/gpxexport.cpp:58 app/importcontroller.cpp:595
 #, kde-format
 msgid "Ferry from %1 to %2"
 msgstr "Transbordador de %1 a %2"
@@ -1712,22 +1712,22 @@ msgstr "Non se atopou nada que importar."
 msgid "No importable events found in this calendar."
 msgstr "Non se atoparon eventos importábeis no calendario."
 
-#: app/importcontroller.cpp:584
+#: app/importcontroller.cpp:586
 #, kde-format
 msgid "Flight from %1 to %2"
 msgstr "Voo de %1 a %2"
 
-#: app/importcontroller.cpp:587
+#: app/importcontroller.cpp:589
 #, kde-format
 msgid "Train from %1 to %2"
 msgstr "Tren de %1 a %2"
 
-#: app/importcontroller.cpp:590
+#: app/importcontroller.cpp:592
 #, kde-format
 msgid "Bus from %1 to %2"
 msgstr "Bus de %1 a %2"
 
-#: app/importcontroller.cpp:618
+#: app/importcontroller.cpp:620
 #, kde-format
 msgid "Backup"
 msgstr "Salvagarda"
@@ -1747,12 +1747,6 @@ msgstr "Elementos seleccionados para importar."
 #, kde-format
 msgid "Import selection"
 msgstr "Importar a selección"
-
-#: app/IndoorMapAmenitySheet.qml:18
-#, kde-format
-msgctxt "@title"
-msgid "Find Amenity"
-msgstr "Atopar un servizo"
 
 #: app/IndoorMapGateSheet.qml:18
 #, kde-format
@@ -1778,17 +1772,17 @@ msgctxt "flight arrival gate"
 msgid "%1 (arrival)"
 msgstr "%1 (chegada)"
 
-#: app/IndoorMapInfoSheet.qml:129 app/IndoorMapPage.qml:127
+#: app/IndoorMapInfoSheet.qml:21 app/IndoorMapPage.qml:127
 #, kde-format
 msgid "Edit with iD"
 msgstr "Editar con iD"
 
-#: app/IndoorMapInfoSheet.qml:135 app/IndoorMapPage.qml:133
+#: app/IndoorMapInfoSheet.qml:27 app/IndoorMapPage.qml:133
 #, kde-format
 msgid "Edit with JOSM"
 msgstr "Editar con JOSM"
 
-#: app/IndoorMapInfoSheet.qml:141 app/IndoorMapPage.qml:139
+#: app/IndoorMapInfoSheet.qml:33 app/IndoorMapPage.qml:139
 #, kde-format
 msgid "Edit with Vespucci"
 msgstr "Editar con Vespucci"
@@ -1843,18 +1837,18 @@ msgstr "Abrir o mapa"
 msgid "Open wheelmap.org"
 msgstr "Abrir wheelmap.org"
 
-#: app/IndoorMapPage.qml:299
+#: app/IndoorMapPage.qml:304
 #, kde-format
 msgid "Switched to floor %1"
 msgstr "Cambiouse á planta %1"
 
-#: app/IndoorMapPage.qml:346
+#: app/IndoorMapPage.qml:351
 #, kde-format
 msgctxt "@action:intoolbar Go down one floor"
 msgid "Floor down"
 msgstr "Unha planta abaixo"
 
-#: app/IndoorMapPage.qml:355
+#: app/IndoorMapPage.qml:360
 #, kde-format
 msgctxt "@action:intoolbar Go up one floor"
 msgid "Floor up"
@@ -2203,43 +2197,43 @@ msgstr "Posición"
 msgid "Journey"
 msgstr "Traxecto"
 
-#: app/localizer.cpp:182
+#: app/localizer.cpp:175
 #, kde-format
 msgctxt "day-only date format"
 msgid "dd MMMM"
 msgstr "dd 'de' MMMM"
 
-#: app/localizer.cpp:227
+#: app/localizer.cpp:220
 #, kde-format
 msgctxt "distance in meter"
 msgid "%1 m"
 msgstr "%1 m"
 
-#: app/localizer.cpp:230 app/localizer.cpp:232
+#: app/localizer.cpp:223 app/localizer.cpp:225
 #, kde-format
 msgctxt "distance in kilometer"
 msgid "%1 km"
 msgstr "%1 km"
 
-#: app/localizer.cpp:238
+#: app/localizer.cpp:231
 #, kde-format
 msgctxt "speed in kilometers per hour"
 msgid "%1 km/h"
 msgstr "%1 km/h"
 
-#: app/localizer.cpp:244
+#: app/localizer.cpp:237
 #, kde-format
 msgctxt "weight in gram"
 msgid "%1 g"
 msgstr "%1 g"
 
-#: app/localizer.cpp:247 app/localizer.cpp:249
+#: app/localizer.cpp:240 app/localizer.cpp:242
 #, kde-format
 msgctxt "weight in kilogram"
 msgid "%1 kg"
 msgstr "%1 kg"
 
-#: app/localizer.cpp:255
+#: app/localizer.cpp:248
 #, kde-format
 msgctxt "temperature"
 msgid "%1°C"
@@ -2476,42 +2470,43 @@ msgid "Map download finished."
 msgstr "Rematou a descarga do mapa."
 
 #: app/MatrixRoomSelectionSheet.qml:19
-#, kde-format
-msgctxt "@title"
-msgid "Share Location"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Share Location"
+msgid "Share location…"
 msgstr "Compartir a localización"
 
-#: app/MatrixRoomSelectionSheet.qml:55
+#: app/MatrixRoomSelectionSheet.qml:36
 #, kde-format
 msgctxt "matrix room type"
 msgid "Invited"
 msgstr "Invitouse"
 
-#: app/MatrixRoomSelectionSheet.qml:56
+#: app/MatrixRoomSelectionSheet.qml:37
 #, kde-format
 msgctxt "matrix room type"
 msgid "Favorite Rooms"
 msgstr "Salas favoritas"
 
-#: app/MatrixRoomSelectionSheet.qml:57
+#: app/MatrixRoomSelectionSheet.qml:38
 #, kde-format
 msgctxt "matrix room type"
 msgid "Direct Messages"
 msgstr "Mensaxes directas"
 
-#: app/MatrixRoomSelectionSheet.qml:58
+#: app/MatrixRoomSelectionSheet.qml:39
 #, kde-format
 msgctxt "matrix room type"
 msgid "Rooms"
 msgstr "Salas"
 
-#: app/MatrixRoomSelectionSheet.qml:59
+#: app/MatrixRoomSelectionSheet.qml:40
 #, kde-format
 msgctxt "matrix room type"
 msgid "Low Priority"
 msgstr "Baixa prioridade"
 
-#: app/MatrixRoomSelectionSheet.qml:60
+#: app/MatrixRoomSelectionSheet.qml:41
 #, kde-format
 msgctxt "matrix room type"
 msgid "Spaces"
@@ -3041,22 +3036,32 @@ msgstr ""
 "Active isto para realizar consultas por Internet das taxas de cambio de "
 "divisas nos destinos da viaxe."
 
-#: app/SettingsPage.qml:127
+#: app/SettingsPage.qml:126
+#, kde-format
+msgid "Wikimedia Online Content"
+msgstr ""
+
+#: app/SettingsPage.qml:129
+#, kde-format
+msgid "Use additional online content from Wikimedia and Wikidata."
+msgstr ""
+
+#: app/SettingsPage.qml:136
 #, kde-format
 msgid "Transfer Assistant"
 msgstr "Asistente de transbordos"
 
-#: app/SettingsPage.qml:131
+#: app/SettingsPage.qml:140
 #, kde-format
 msgid "Automatically add transfers"
 msgstr "Engadir os transbordos automaticamente"
 
-#: app/SettingsPage.qml:139
+#: app/SettingsPage.qml:148
 #, kde-format
 msgid "Automatically fill transfers"
 msgstr "Completar os transbordos automaticamente"
 
-#: app/SettingsPage.qml:140
+#: app/SettingsPage.qml:149
 #, kde-format
 msgid ""
 "When enabled, this will query transport provider online services "
@@ -3065,79 +3070,79 @@ msgstr ""
 "Activar para consultar automaticamente a información de transbordos nos "
 "servizos de Internet de fornecedores de transbordos."
 
-#: app/SettingsPage.qml:151
+#: app/SettingsPage.qml:160
 #, kde-format
 msgid "Notifications"
 msgstr "Notificacións"
 
-#: app/SettingsPage.qml:156
+#: app/SettingsPage.qml:165
 #, kde-format
 msgid "Configure Notifications..."
 msgstr "Configurar as notificacións…"
 
-#: app/SettingsPage.qml:165
+#: app/SettingsPage.qml:174
 #, kde-format
 msgid "Show notifications on lock screen"
 msgstr "Amosar as notificacións na pantalla de bloqueo"
 
-#: app/SettingsPage.qml:175 app/SettingsPage.qml:203
+#: app/SettingsPage.qml:184 app/SettingsPage.qml:212
 #, kde-format
 msgid "Request permissions..."
 msgstr "Solicitar os permisos…"
 
-#: app/SettingsPage.qml:176
+#: app/SettingsPage.qml:185
 #, kde-format
 msgid "Additional permissions are required to show notifications."
 msgstr "Requírense permisos adicionais para amosar as notificacións."
 
-#: app/SettingsPage.qml:185
+#: app/SettingsPage.qml:194
 #, kde-format
 msgid "Notification permissions are available"
 msgstr "Os permisos de notificación están dispoñíbeis"
 
-#: app/SettingsPage.qml:186 app/SettingsPage.qml:228
+#: app/SettingsPage.qml:195 app/SettingsPage.qml:237
 #, kde-format
 msgid "No further action required."
 msgstr "Non fai falla ningunha outra acción."
 
-#: app/SettingsPage.qml:199
+#: app/SettingsPage.qml:208
 #, kde-format
 msgid "Onboard Status"
 msgstr "Estado de embarque"
 
-#: app/SettingsPage.qml:204
+#: app/SettingsPage.qml:213
 #, kde-format
 msgid "Additional permissions are required to access the Wi-Fi status."
 msgstr ""
 "Precísanse permisos adicionais para acceder ao estado da rede sen fíos."
 
-#: app/SettingsPage.qml:215
+#: app/SettingsPage.qml:224
 #, kde-format
 msgid "Wi-Fi access for onboard information is available."
 msgstr "Hai dispoñíbel acceso de rede sen fíos para información de embarque."
 
-#: app/SettingsPage.qml:217
+#: app/SettingsPage.qml:226
 #, kde-format
 msgid "Wi-Fi is not enabled"
 msgstr "Non hai rede sen fíos activada"
 
-#: app/SettingsPage.qml:219
+#: app/SettingsPage.qml:228
 #, kde-format
 msgid "Location service is not enabled"
 msgstr "O servizo de localización non está activado"
 
-#: app/SettingsPage.qml:221
+#: app/SettingsPage.qml:230
 #, kde-format
 msgid "Wi-Fi access is not available on this system"
 msgstr "O sistema non dispón de acceso a unha rede sen fíos"
 
-#: app/SettingsPage.qml:230
+#: app/SettingsPage.qml:239
 #, kde-format
 msgid "Enable Wi-Fi on your system to access onboard information."
 msgstr ""
 "Active unha rede sen fíos no sistema para acceder a información de embarque."
 
-#: app/SettingsPage.qml:232
+#: app/SettingsPage.qml:241
 #, kde-format
 msgid ""
 "Enable the location service on your device to access onboard information."
@@ -3145,7 +3150,7 @@ msgstr ""
 "Active o servizo de localización no dispositivo para acceder a información "
 "de embarque."
 
-#: app/SettingsPage.qml:234
+#: app/SettingsPage.qml:243
 #, kde-format
 msgid ""
 "Onboard information are unfortunately not supported on your device at this "
@@ -3153,52 +3158,52 @@ msgid ""
 msgstr ""
 "Non se permite a información de embarque no seu dispositivo neste momento."
 
-#: app/SettingsPage.qml:266
+#: app/SettingsPage.qml:275
 #, kde-format
 msgid "Matrix Integration"
 msgstr "Integración con Matrix"
 
-#: app/SettingsPage.qml:273
+#: app/SettingsPage.qml:282
 #, kde-format
 msgid "Logged in as %1"
 msgstr "Accedeu como %1"
 
-#: app/SettingsPage.qml:277
+#: app/SettingsPage.qml:286
 #, kde-format
 msgid "Synchronize rooms"
 msgstr "Sincronizar as salas"
 
-#: app/SettingsPage.qml:284
+#: app/SettingsPage.qml:293
 #, kde-format
 msgid "Matrix ID"
 msgstr "Identificador de Matrix"
 
-#: app/SettingsPage.qml:291
+#: app/SettingsPage.qml:300
 #, kde-format
 msgid "Password"
 msgstr "Contrasinal"
 
-#: app/SettingsPage.qml:298
+#: app/SettingsPage.qml:307
 #, kde-format
 msgid "Log out"
 msgstr "Saír"
 
-#: app/SettingsPage.qml:298
+#: app/SettingsPage.qml:307
 #, kde-format
 msgid "Log in"
 msgstr "Acceder"
 
-#: app/SettingsPage.qml:305
+#: app/SettingsPage.qml:314
 #, kde-format
 msgid "Contributing"
 msgstr "Contribuír"
 
-#: app/SettingsPage.qml:309
+#: app/SettingsPage.qml:318
 #, kde-format
 msgid "I contribute to OpenStreetMap"
 msgstr "Contribúo a OpenStreetMap"
 
-#: app/SettingsPage.qml:310
+#: app/SettingsPage.qml:319
 #, kde-format
 msgid "Enables OSM editing options."
 msgstr "Activa as opcións de edición de OSM."
@@ -3922,6 +3927,10 @@ msgstr "Accedendo"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 de %3 a %4 o %5"
+
+#~ msgctxt "@title"
+#~ msgid "Find Amenity"
+#~ msgstr "Atopar un servizo"
 
 #~ msgid "Pass imported."
 #~ msgstr "Importouse o pase."

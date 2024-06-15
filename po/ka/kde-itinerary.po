@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-09 00:39+0000\n"
+"POT-Creation-Date: 2024-06-15 00:39+0000\n"
 "PO-Revision-Date: 2024-06-09 06:19+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -1339,7 +1339,7 @@ msgstr "მატარებელი %1 %2-დან %3-მდე"
 msgid "Bus %1 from %2 to %3"
 msgstr "ავტობუსი %1 %2-დან %3-მდე"
 
-#: app/gpxexport.cpp:58 app/importcontroller.cpp:593
+#: app/gpxexport.cpp:58 app/importcontroller.cpp:595
 #, kde-format
 msgid "Ferry from %1 to %2"
 msgstr "ბორანი %1-დან %2-მდე"
@@ -1710,22 +1710,22 @@ msgstr "შემოსატანი არაფერია."
 msgid "No importable events found in this calendar."
 msgstr "ამ კალენდარში შემოტანადი მოვლენები აღმოჩენილი არაა."
 
-#: app/importcontroller.cpp:584
+#: app/importcontroller.cpp:586
 #, kde-format
 msgid "Flight from %1 to %2"
 msgstr "ფრენა %1-დან %2-მდე"
 
-#: app/importcontroller.cpp:587
+#: app/importcontroller.cpp:589
 #, kde-format
 msgid "Train from %1 to %2"
 msgstr "მატარებელი %1-დან %2-მდე"
 
-#: app/importcontroller.cpp:590
+#: app/importcontroller.cpp:592
 #, kde-format
 msgid "Bus from %1 to %2"
 msgstr "ავტობუსი %1-დან %2-მდე"
 
-#: app/importcontroller.cpp:618
+#: app/importcontroller.cpp:620
 #, kde-format
 msgid "Backup"
 msgstr "მარქაფი"
@@ -1745,12 +1745,6 @@ msgstr "მონიშნული ელემენტები შემო�
 #, kde-format
 msgid "Import selection"
 msgstr "მონიშნულის შემოტანა"
-
-#: app/IndoorMapAmenitySheet.qml:18
-#, kde-format
-msgctxt "@title"
-msgid "Find Amenity"
-msgstr "იპოვეთ კომფორტი"
 
 #: app/IndoorMapGateSheet.qml:18
 #, kde-format
@@ -1776,17 +1770,17 @@ msgctxt "flight arrival gate"
 msgid "%1 (arrival)"
 msgstr "%1 (დაჯდომა)"
 
-#: app/IndoorMapInfoSheet.qml:129 app/IndoorMapPage.qml:127
+#: app/IndoorMapInfoSheet.qml:21 app/IndoorMapPage.qml:127
 #, kde-format
 msgid "Edit with iD"
 msgstr "ჩასწორება ID-ით"
 
-#: app/IndoorMapInfoSheet.qml:135 app/IndoorMapPage.qml:133
+#: app/IndoorMapInfoSheet.qml:27 app/IndoorMapPage.qml:133
 #, kde-format
 msgid "Edit with JOSM"
 msgstr "JOSM-ით ჩასწორება"
 
-#: app/IndoorMapInfoSheet.qml:141 app/IndoorMapPage.qml:139
+#: app/IndoorMapInfoSheet.qml:33 app/IndoorMapPage.qml:139
 #, kde-format
 msgid "Edit with Vespucci"
 msgstr "Vespucci-ით ჩასწორება"
@@ -1841,18 +1835,18 @@ msgstr "რუკის გახსნა"
 msgid "Open wheelmap.org"
 msgstr "Wheelmap.org-ის გახსნა"
 
-#: app/IndoorMapPage.qml:299
+#: app/IndoorMapPage.qml:304
 #, kde-format
 msgid "Switched to floor %1"
 msgstr "გადავერთე სართულზე %1"
 
-#: app/IndoorMapPage.qml:346
+#: app/IndoorMapPage.qml:351
 #, kde-format
 msgctxt "@action:intoolbar Go down one floor"
 msgid "Floor down"
 msgstr "სართულით დაბლა"
 
-#: app/IndoorMapPage.qml:355
+#: app/IndoorMapPage.qml:360
 #, kde-format
 msgctxt "@action:intoolbar Go up one floor"
 msgid "Floor up"
@@ -2198,43 +2192,43 @@ msgstr "მდებარეობა"
 msgid "Journey"
 msgstr "მგზავრობა"
 
-#: app/localizer.cpp:182
+#: app/localizer.cpp:175
 #, kde-format
 msgctxt "day-only date format"
 msgid "dd MMMM"
 msgstr "დდ თთთთ"
 
-#: app/localizer.cpp:227
+#: app/localizer.cpp:220
 #, kde-format
 msgctxt "distance in meter"
 msgid "%1 m"
 msgstr "%1 მ"
 
-#: app/localizer.cpp:230 app/localizer.cpp:232
+#: app/localizer.cpp:223 app/localizer.cpp:225
 #, kde-format
 msgctxt "distance in kilometer"
 msgid "%1 km"
 msgstr "%1 კმ"
 
-#: app/localizer.cpp:238
+#: app/localizer.cpp:231
 #, kde-format
 msgctxt "speed in kilometers per hour"
 msgid "%1 km/h"
 msgstr "%1 კმ/სთ"
 
-#: app/localizer.cpp:244
+#: app/localizer.cpp:237
 #, kde-format
 msgctxt "weight in gram"
 msgid "%1 g"
 msgstr "%1 გ"
 
-#: app/localizer.cpp:247 app/localizer.cpp:249
+#: app/localizer.cpp:240 app/localizer.cpp:242
 #, kde-format
 msgctxt "weight in kilogram"
 msgid "%1 kg"
 msgstr "%1 კგ"
 
-#: app/localizer.cpp:255
+#: app/localizer.cpp:248
 #, kde-format
 msgctxt "temperature"
 msgid "%1°C"
@@ -2471,42 +2465,43 @@ msgid "Map download finished."
 msgstr "რუკის გადმოწერა დასრულდა."
 
 #: app/MatrixRoomSelectionSheet.qml:19
-#, kde-format
-msgctxt "@title"
-msgid "Share Location"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Share Location"
+msgid "Share location…"
 msgstr "მდებარეობის გაზიარება"
 
-#: app/MatrixRoomSelectionSheet.qml:55
+#: app/MatrixRoomSelectionSheet.qml:36
 #, kde-format
 msgctxt "matrix room type"
 msgid "Invited"
 msgstr "მოწვეულია"
 
-#: app/MatrixRoomSelectionSheet.qml:56
+#: app/MatrixRoomSelectionSheet.qml:37
 #, kde-format
 msgctxt "matrix room type"
 msgid "Favorite Rooms"
 msgstr "რჩეული ოთახები"
 
-#: app/MatrixRoomSelectionSheet.qml:57
+#: app/MatrixRoomSelectionSheet.qml:38
 #, kde-format
 msgctxt "matrix room type"
 msgid "Direct Messages"
 msgstr "პირდაპირი შეტყობინებები"
 
-#: app/MatrixRoomSelectionSheet.qml:58
+#: app/MatrixRoomSelectionSheet.qml:39
 #, kde-format
 msgctxt "matrix room type"
 msgid "Rooms"
 msgstr "ოთახები"
 
-#: app/MatrixRoomSelectionSheet.qml:59
+#: app/MatrixRoomSelectionSheet.qml:40
 #, kde-format
 msgctxt "matrix room type"
 msgid "Low Priority"
 msgstr "დაბალი პრიორიტეტი"
 
-#: app/MatrixRoomSelectionSheet.qml:60
+#: app/MatrixRoomSelectionSheet.qml:41
 #, kde-format
 msgctxt "matrix room type"
 msgid "Spaces"
@@ -3035,22 +3030,32 @@ msgstr ""
 "ამის ჩართვა სამოგზაურო ადგილებში ვალუტის კურსებს ონლაინ გამოთხოვას "
 "გამოიწვევს."
 
-#: app/SettingsPage.qml:127
+#: app/SettingsPage.qml:126
+#, kde-format
+msgid "Wikimedia Online Content"
+msgstr ""
+
+#: app/SettingsPage.qml:129
+#, kde-format
+msgid "Use additional online content from Wikimedia and Wikidata."
+msgstr ""
+
+#: app/SettingsPage.qml:136
 #, kde-format
 msgid "Transfer Assistant"
 msgstr "გადაჯდომაში დამხმარე"
 
-#: app/SettingsPage.qml:131
+#: app/SettingsPage.qml:140
 #, kde-format
 msgid "Automatically add transfers"
 msgstr "გადაჯდომების ავტომატური დამატება"
 
-#: app/SettingsPage.qml:139
+#: app/SettingsPage.qml:148
 #, kde-format
 msgid "Automatically fill transfers"
 msgstr "გადაჯდომების ავტომატური შევსება"
 
-#: app/SettingsPage.qml:140
+#: app/SettingsPage.qml:149
 #, kde-format
 msgid ""
 "When enabled, this will query transport provider online services "
@@ -3058,77 +3063,77 @@ msgid ""
 msgstr ""
 "თუ ჩართულია, გადაჯდომის ინფორმაცია ავტომატურად იქნება გამოთხოვილი ონლაინ."
 
-#: app/SettingsPage.qml:151
+#: app/SettingsPage.qml:160
 #, kde-format
 msgid "Notifications"
 msgstr "გაფრთხილებები"
 
-#: app/SettingsPage.qml:156
+#: app/SettingsPage.qml:165
 #, kde-format
 msgid "Configure Notifications..."
 msgstr "შეტყობინებების მორგება…"
 
-#: app/SettingsPage.qml:165
+#: app/SettingsPage.qml:174
 #, kde-format
 msgid "Show notifications on lock screen"
 msgstr "გაფრთხილებების დაბლოკილ ეკრანზე ჩვენება"
 
-#: app/SettingsPage.qml:175 app/SettingsPage.qml:203
+#: app/SettingsPage.qml:184 app/SettingsPage.qml:212
 #, kde-format
 msgid "Request permissions..."
 msgstr "წვდომების მოთხოვნა..."
 
-#: app/SettingsPage.qml:176
+#: app/SettingsPage.qml:185
 #, kde-format
 msgid "Additional permissions are required to show notifications."
 msgstr "გაფრთხილებების საჩვენებლად დამატებითი წვდომებია საჭირო."
 
-#: app/SettingsPage.qml:185
+#: app/SettingsPage.qml:194
 #, kde-format
 msgid "Notification permissions are available"
 msgstr "გაფრთხილების წვდომები ხელმისაწვდომია"
 
-#: app/SettingsPage.qml:186 app/SettingsPage.qml:228
+#: app/SettingsPage.qml:195 app/SettingsPage.qml:237
 #, kde-format
 msgid "No further action required."
 msgstr "მეტი ქმედება საჭირო არაა."
 
-#: app/SettingsPage.qml:199
+#: app/SettingsPage.qml:208
 #, kde-format
 msgid "Onboard Status"
 msgstr "ბორტის სტატუსი"
 
-#: app/SettingsPage.qml:204
+#: app/SettingsPage.qml:213
 #, kde-format
 msgid "Additional permissions are required to access the Wi-Fi status."
 msgstr "Wi-Fi სტატუსზე წვდომისთვის დამატებითი ნებართვებია საჭირო."
 
-#: app/SettingsPage.qml:215
+#: app/SettingsPage.qml:224
 #, kde-format
 msgid "Wi-Fi access for onboard information is available."
 msgstr "ბორტის შესახებ ინფორმაციისთვის Wi-Fi ხელმისაწვდომია."
 
-#: app/SettingsPage.qml:217
+#: app/SettingsPage.qml:226
 #, kde-format
 msgid "Wi-Fi is not enabled"
 msgstr "Wi-Fi ჩართული არაა"
 
-#: app/SettingsPage.qml:219
+#: app/SettingsPage.qml:228
 #, kde-format
 msgid "Location service is not enabled"
 msgstr "მდებარეობის სერვისი ჩართული არაა"
 
-#: app/SettingsPage.qml:221
+#: app/SettingsPage.qml:230
 #, kde-format
 msgid "Wi-Fi access is not available on this system"
 msgstr "ამ სისტემაში Wi-Fi-ზე წვდომა ხელმისაწვდომი არაა"
 
-#: app/SettingsPage.qml:230
+#: app/SettingsPage.qml:239
 #, kde-format
 msgid "Enable Wi-Fi on your system to access onboard information."
 msgstr "ბორტის ინფორმაციის სანახავად ჩართეთ Wi-Fi."
 
-#: app/SettingsPage.qml:232
+#: app/SettingsPage.qml:241
 #, kde-format
 msgid ""
 "Enable the location service on your device to access onboard information."
@@ -3136,7 +3141,7 @@ msgstr ""
 "ბორტის ინფორმაციასთან წვდომისთვის თქვენს მოწყობილობაზე მდებარეობის სერვისი "
 "ჩართეთ."
 
-#: app/SettingsPage.qml:234
+#: app/SettingsPage.qml:243
 #, kde-format
 msgid ""
 "Onboard information are unfortunately not supported on your device at this "
@@ -3145,52 +3150,52 @@ msgstr ""
 "თქვენს მოწყობილობაზე ბორტის ინფორმაცია, სამწუხაროდ, ამჟამად ხელმისაწვდომი "
 "არაა."
 
-#: app/SettingsPage.qml:266
+#: app/SettingsPage.qml:275
 #, kde-format
 msgid "Matrix Integration"
 msgstr "Matrix-ის ინტეგრაცია"
 
-#: app/SettingsPage.qml:273
+#: app/SettingsPage.qml:282
 #, kde-format
 msgid "Logged in as %1"
 msgstr "შეხვედით, როგორც %1"
 
-#: app/SettingsPage.qml:277
+#: app/SettingsPage.qml:286
 #, kde-format
 msgid "Synchronize rooms"
 msgstr "ოთახების სინქრონიზაცია"
 
-#: app/SettingsPage.qml:284
+#: app/SettingsPage.qml:293
 #, kde-format
 msgid "Matrix ID"
 msgstr "Matrix ID"
 
-#: app/SettingsPage.qml:291
+#: app/SettingsPage.qml:300
 #, kde-format
 msgid "Password"
 msgstr "პაროლი"
 
-#: app/SettingsPage.qml:298
+#: app/SettingsPage.qml:307
 #, kde-format
 msgid "Log out"
 msgstr "გასვლა"
 
-#: app/SettingsPage.qml:298
+#: app/SettingsPage.qml:307
 #, kde-format
 msgid "Log in"
 msgstr "შესვლა"
 
-#: app/SettingsPage.qml:305
+#: app/SettingsPage.qml:314
 #, kde-format
 msgid "Contributing"
 msgstr "წვლილი შეიტანა"
 
-#: app/SettingsPage.qml:309
+#: app/SettingsPage.qml:318
 #, kde-format
 msgid "I contribute to OpenStreetMap"
 msgstr "მე შემაქვს წვლილი OpenStreetMap-ზე"
 
-#: app/SettingsPage.qml:310
+#: app/SettingsPage.qml:319
 #, kde-format
 msgid "Enables OSM editing options."
 msgstr "OSM-ის ჩასწორების პარამეტრების ჩართვა."
@@ -3912,6 +3917,10 @@ msgstr "შესვლა"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 -ი %3-დან %4-მდე %5-ზე"
+
+#~ msgctxt "@title"
+#~ msgid "Find Amenity"
+#~ msgstr "იპოვეთ კომფორტი"
 
 #~ msgid "Pass imported."
 #~ msgstr "ბილიკი შემოტანილია."
