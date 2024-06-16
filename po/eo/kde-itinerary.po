@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-15 00:39+0000\n"
-"PO-Revision-Date: 2024-06-09 06:15+0200\n"
+"PO-Revision-Date: 2024-06-1510:04+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -2465,11 +2465,9 @@ msgid "Map download finished."
 msgstr "Elŝuto de mapo finiĝis."
 
 #: app/MatrixRoomSelectionSheet.qml:19
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Share Location"
+#, kde-format
 msgid "Share location…"
-msgstr "Kunhavigi Lokon"
+msgstr "Kunhavigi lokon…"
 
 #: app/MatrixRoomSelectionSheet.qml:36
 #, kde-format
@@ -3032,12 +3030,12 @@ msgstr ""
 #: app/SettingsPage.qml:126
 #, kde-format
 msgid "Wikimedia Online Content"
-msgstr ""
+msgstr "Vikimedia Reta Enhavo"
 
 #: app/SettingsPage.qml:129
 #, kde-format
 msgid "Use additional online content from Wikimedia and Wikidata."
-msgstr ""
+msgstr "Uzi aldonan retenhavon de Wikimedia kaj Wikidata."
 
 #: app/SettingsPage.qml:136
 #, kde-format
@@ -3914,7 +3912,3 @@ msgstr "Ensalutante"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 de %3 al %4 je %5"
-
-#~ msgctxt "@title"
-#~ msgid "Find Amenity"
-#~ msgstr "Trovi Agrablaĵon"

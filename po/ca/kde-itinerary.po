@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-15 00:39+0000\n"
-"PO-Revision-Date: 2024-06-09 11:02+0200\n"
+"PO-Revision-Date: 2024-06-15 11:34+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -2472,11 +2472,9 @@ msgid "Map download finished."
 msgstr "Ha acabat la baixada dels mapes."
 
 #: app/MatrixRoomSelectionSheet.qml:19
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Share Location"
+#, kde-format
 msgid "Share location…"
-msgstr "Comparteix la ubicació"
+msgstr "Comparteix la ubicació…"
 
 #: app/MatrixRoomSelectionSheet.qml:36
 #, kde-format
@@ -3042,12 +3040,12 @@ msgstr ""
 #: app/SettingsPage.qml:126
 #, kde-format
 msgid "Wikimedia Online Content"
-msgstr ""
+msgstr "Contingut en línia de Wikimedia"
 
 #: app/SettingsPage.qml:129
 #, kde-format
 msgid "Use additional online content from Wikimedia and Wikidata."
-msgstr ""
+msgstr "Fa servir contingut en línia addicional de Wikimedia i Wikidata."
 
 #: app/SettingsPage.qml:136
 #, kde-format

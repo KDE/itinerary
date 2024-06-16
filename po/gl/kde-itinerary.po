@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-15 00:39+0000\n"
-"PO-Revision-Date: 2024-06-09 09:56+0200\n"
+"PO-Revision-Date: 2024-06-15 14:48+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -2470,11 +2470,9 @@ msgid "Map download finished."
 msgstr "Rematou a descarga do mapa."
 
 #: app/MatrixRoomSelectionSheet.qml:19
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Share Location"
+#, kde-format
 msgid "Share location…"
-msgstr "Compartir a localización"
+msgstr "Compartir a localización…"
 
 #: app/MatrixRoomSelectionSheet.qml:36
 #, kde-format
@@ -3039,12 +3037,12 @@ msgstr ""
 #: app/SettingsPage.qml:126
 #, kde-format
 msgid "Wikimedia Online Content"
-msgstr ""
+msgstr "Contido por Internet de Wikimedia"
 
 #: app/SettingsPage.qml:129
 #, kde-format
 msgid "Use additional online content from Wikimedia and Wikidata."
-msgstr ""
+msgstr "Usar contido adicional por Internet de Wikimedia e Wikidata."
 
 #: app/SettingsPage.qml:136
 #, kde-format
