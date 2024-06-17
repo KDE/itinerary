@@ -231,6 +231,32 @@ private Q_SLOTS:
         const auto ref = QJsonDocument::fromJson(refFile.readAll()).array();
 
         QVERIFY(Test::compareJson(refFile.fileName(), result, ref));
+
+        // batch changes should not change transfers
+        QSignalSpy addSpy(&mgr, &TransferManager::transferAdded);
+        QSignalSpy changeSpy(&mgr, &TransferManager::transferChanged);
+        QSignalSpy removeSpy(&mgr, &TransferManager::transferRemoved);
+
+        for (const auto &batchId : batchIds) {
+            Q_EMIT resMgr.batchChanged(batchId);
+            Q_EMIT resMgr.batchContentChanged(batchId);
+        }
+        result = {};
+        for (const auto &batchId : batchIds) {
+            QJsonObject res;
+            if (auto t = mgr.transfer(batchId, Transfer::Before); t.state() == Transfer::Pending) {
+                res["before"_L1] = transferToJson(t);
+            }
+            if (auto t = mgr.transfer(batchId, Transfer::After); t.state() == Transfer::Pending) {
+                res["after"_L1] = transferToJson(t);
+            }
+            result.push_back(res);
+        }
+
+        QVERIFY(Test::compareJson(refFile.fileName(), result, ref));
+        QCOMPARE(addSpy.size(), 0);
+        QCOMPARE(changeSpy.size(), 0);
+        QCOMPARE(removeSpy.size(), 0);
     }
 };
 

@@ -53,6 +53,7 @@ void TransferManager::setReservationManager(ReservationManager *resMgr)
     m_resMgr = resMgr;
     connect(m_resMgr, &ReservationManager::batchAdded, this, qOverload<const QString&>(&TransferManager::checkReservation));
     connect(m_resMgr, &ReservationManager::batchChanged, this, qOverload<const QString&>(&TransferManager::checkReservation));
+    connect(m_resMgr, &ReservationManager::batchContentChanged, this, qOverload<const QString&>(&TransferManager::checkReservation));
     connect(m_resMgr, &ReservationManager::batchRemoved, this, &TransferManager::reservationRemoved);
     rescan();
 }
