@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-15 00:39+0000\n"
-"PO-Revision-Date: 2024-05-31 17:31+0200\n"
+"PO-Revision-Date: 2024-06-15 13:44+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.05.0\n"
+"X-Generator: Lokalize 24.05.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -2360,15 +2360,13 @@ msgid "Copyright © The KDE Community"
 msgstr "Copyright © La comunità KDE"
 
 #: app/main.cpp:347
-#, fuzzy, kde-format
-#| msgid "Open Itinerary on the given page"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Apri Itinerary alla pagina specificata"
 
 #: app/main.cpp:352
-#, fuzzy, kde-format
-#| msgid "Files or URLs to import."
+#, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
 msgstr "File o URL da importare."
@@ -2469,11 +2467,9 @@ msgid "Map download finished."
 msgstr "Scaricamento delle mappe completato."
 
 #: app/MatrixRoomSelectionSheet.qml:19
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Share Location"
+#, kde-format
 msgid "Share location…"
-msgstr "Condividi la posizione"
+msgstr "Condividi la posizione…"
 
 #: app/MatrixRoomSelectionSheet.qml:36
 #, kde-format
@@ -3040,12 +3036,12 @@ msgstr ""
 #: app/SettingsPage.qml:126
 #, kde-format
 msgid "Wikimedia Online Content"
-msgstr ""
+msgstr "Contenuti in linea di Wikimedia"
 
 #: app/SettingsPage.qml:129
 #, kde-format
 msgid "Use additional online content from Wikimedia and Wikidata."
-msgstr ""
+msgstr "Utilizza contenuti in linea aggiuntivi da Wikimedia e Wikidata."
 
 #: app/SettingsPage.qml:136
 #, kde-format
@@ -3695,16 +3691,14 @@ msgstr[0] "Valuta: %2"
 msgstr[1] "Valute: %2"
 
 #: app/TripGroupDelegate.qml:162
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgid "Edit…"
-msgstr "Modifica"
+msgstr "Modifica…"
 
 #: app/TripGroupDelegate.qml:175
-#, fuzzy, kde-format
-#| msgid "Export"
+#, kde-format
 msgid "Export…"
-msgstr "Esporta"
+msgstr "Esporta…"
 
 #: app/TripGroupDelegate.qml:183
 #, kde-format
@@ -3712,26 +3706,22 @@ msgid "Delete trip"
 msgstr "Elimina viaggio"
 
 #: app/TripGroupEditorDialog.qml:17
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add trip"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Trip"
 msgstr "Aggiungi viaggio"
 
 #: app/TripGroupEditorDialog.qml:17
-#, fuzzy, kde-format
-#| msgid "Edit Boat Trip"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Trip"
-msgstr "Modifica viaggio in nave"
+msgstr "Modifica viaggio"
 
 #: app/TripGroupEditorDialog.qml:21
-#, fuzzy, kde-format
-#| msgid "Under name:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Trip name:"
-msgstr "Con il nome:"
+msgstr "Nome del viaggio:"
 
 #: app/tripgroupmanager.cpp:663
 #, kde-format

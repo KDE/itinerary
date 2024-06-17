@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-15 00:39+0000\n"
-"PO-Revision-Date: 2024-06-09 09:08+0300\n"
+"PO-Revision-Date: 2024-06-15 09:15+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian\n"
 "Language: uk\n"
@@ -2483,11 +2483,9 @@ msgid "Map download finished."
 msgstr "Отримання карти завершено."
 
 #: app/MatrixRoomSelectionSheet.qml:19
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Share Location"
+#, kde-format
 msgid "Share location…"
-msgstr "Оприлюднення місця"
+msgstr "Оприлюднення місце…"
 
 #: app/MatrixRoomSelectionSheet.qml:36
 #, kde-format
@@ -3055,12 +3053,12 @@ msgstr ""
 #: app/SettingsPage.qml:126
 #, kde-format
 msgid "Wikimedia Online Content"
-msgstr ""
+msgstr "Інтернет-дані Вікімедіа"
 
 #: app/SettingsPage.qml:129
 #, kde-format
 msgid "Use additional online content from Wikimedia and Wikidata."
-msgstr ""
+msgstr "Використовувати додаткові інтернет-дані з Вікімедіа та Вікіданих."
 
 #: app/SettingsPage.qml:136
 #, kde-format
