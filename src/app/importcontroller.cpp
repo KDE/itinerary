@@ -483,12 +483,14 @@ bool ImportController::importBundle(ImportBundle &&bundle)
         ++count;
     }
 
+#if HAVE_KHEALTHCERTIFICATE
     const auto certIds = bundle.data->listCustomData(BUNDLE_HEALTH_CERTIFICATE_DOMAIN);
     for (const auto &certId : certIds) {
         const auto cert = KHealthCertificateParser::parse(bundle.data->customData(BUNDLE_HEALTH_CERTIFICATE_DOMAIN, certId));
         addElement({ .type = ImportElement::HealthCertificate, .data = cert });
         ++count;
     }
+#endif
 
     const auto docIds = bundle.data->documents();
     for (const auto &docId : docIds) {
