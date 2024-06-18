@@ -38,6 +38,7 @@ void AndroidCalendarPlugin::loadCalendars() const
     const Jni::Array<JniCalendarData> cals = m_jni.getCalendars();
     for (const JniCalendarData &calData : cals) {
         auto *cal = new AndroidCalendar(QTimeZone(QString(calData.timezone).toUtf8()), calData.owner, calData.id);
+        cal->setId(QString::number(calData.id));
         cal->setName(calData.displayName);
 
         const int accessLevel = calData.accessLevel;
