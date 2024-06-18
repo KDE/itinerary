@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-15 00:39+0000\n"
+"POT-Creation-Date: 2024-06-18 00:39+0000\n"
 "PO-Revision-Date: 2024-06-15 11:34+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -1342,7 +1342,7 @@ msgstr "Tren %1 des de %2 fins a %3"
 msgid "Bus %1 from %2 to %3"
 msgstr "Autobús %1 des de %2 a %3"
 
-#: app/gpxexport.cpp:58 app/importcontroller.cpp:595
+#: app/gpxexport.cpp:58 app/importcontroller.cpp:597
 #, kde-format
 msgid "Ferry from %1 to %2"
 msgstr "Ferri des de %1 a %2"
@@ -1714,22 +1714,22 @@ msgid "No importable events found in this calendar."
 msgstr ""
 "No s'ha trobat cap esdeveniment que es pugui importar en aquest calendari."
 
-#: app/importcontroller.cpp:586
+#: app/importcontroller.cpp:588
 #, kde-format
 msgid "Flight from %1 to %2"
 msgstr "Vol des de %1 fins a %2"
 
-#: app/importcontroller.cpp:589
+#: app/importcontroller.cpp:591
 #, kde-format
 msgid "Train from %1 to %2"
 msgstr "Tren des de %1 fins a %2"
 
-#: app/importcontroller.cpp:592
+#: app/importcontroller.cpp:594
 #, kde-format
 msgid "Bus from %1 to %2"
 msgstr "Autobús des de %1 a %2"
 
-#: app/importcontroller.cpp:620
+#: app/importcontroller.cpp:622
 #, kde-format
 msgid "Backup"
 msgstr "Còpia de seguretat"

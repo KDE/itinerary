@@ -1,21 +1,21 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the itinerary package.
-# Vit Pelcak <vit@pelcak.org>, 2019, 2020, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2019, 2020, 2021, 2022, 2023, 2024 Vit Pelcak <vit@pelcak.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-15 00:39+0000\n"
-"PO-Revision-Date: 2023-08-09 12:54+0200\n"
-"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
+"POT-Creation-Date: 2024-06-18 00:39+0000\n"
+"PO-Revision-Date: 2024-06-17 15:24+0200\n"
+"Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 23.04.3\n"
+"X-Generator: Lokalize 24.05.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -190,12 +190,12 @@ msgstr "Stáhnout"
 #, kde-format
 msgctxt "participate in an event"
 msgid "Join"
-msgstr ""
+msgstr "Připojit"
 
 #: app/ActionsCard.qml:194
 #, kde-format
 msgid "Reserve"
-msgstr ""
+msgstr "Rezervovat"
 
 #: app/ActionsCard.qml:195
 #, kde-format
@@ -465,7 +465,7 @@ msgstr "Odkaz"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy to Clipboard"
-msgstr ""
+msgstr "Zkopírovat do schránky"
 
 #: app/BookingCard.qml:39
 #, kde-format
@@ -491,7 +491,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:group"
 msgid "Booking"
-msgstr ""
+msgstr "Rezervace"
 
 #: app/BusDelegate.qml:136 app/TrainDelegate.qml:162
 #, kde-format
@@ -530,7 +530,7 @@ msgstr "Změnit příchozí zastávku"
 #, kde-format
 msgctxt "@title"
 msgid "Bus"
-msgstr ""
+msgstr "Autobus"
 
 #: app/BusEditor.qml:89
 #, kde-format
@@ -627,7 +627,7 @@ msgstr "Převod na %1"
 #, kde-format
 msgctxt "@title"
 msgid "Select Calendar"
-msgstr ""
+msgstr "Vybrat kalendář"
 
 #: app/CarRentalDelegate.qml:20
 #, kde-format
@@ -694,7 +694,7 @@ msgstr "Značka"
 #, kde-format
 msgctxt "@title:group"
 msgid "Contact"
-msgstr ""
+msgstr "Kontakt"
 
 #: app/ContactCard.qml:27 app/ContactEditorCard.qml:33
 #, kde-format
@@ -715,7 +715,7 @@ msgstr "Webová stránka"
 #: app/CountryComboBox.qml:47
 #, kde-format
 msgid "Select country"
-msgstr ""
+msgstr "Vyberte zemi"
 
 #: app/DepartureQueryPage.qml:22
 #, kde-format
@@ -843,11 +843,12 @@ msgctxt "event as in concert/conference/show, not as in appointment"
 msgid "Event"
 msgstr "Událost"
 
+# Tohle vypadá na název vlastnosti. Jméno bycvh nechal pro lidi a zvířata.
 #: app/EventEditor.qml:58
 #, kde-format
 msgctxt "event name"
 msgid "Name"
-msgstr ""
+msgstr "Název"
 
 #: app/EventEditor.qml:61 app/HotelEditor.qml:59 app/RestaurantEditor.qml:56
 #, kde-format
@@ -919,7 +920,7 @@ msgstr "Číslo:"
 #, kde-format
 msgctxt "seat type"
 msgid "Type:"
-msgstr ""
+msgstr "Typ:"
 
 #: app/favoritelocationmodel.cpp:130 app/favoritelocationmodel.cpp:150
 #: app/SettingsPage.qml:34
@@ -987,7 +988,7 @@ msgstr "Importovat z GPX"
 #, kde-format
 msgctxt "@title"
 msgid "Rename favorite location"
-msgstr ""
+msgstr "Přejmenovat oblíbené místo"
 
 #: app/FavoriteLocationPage.qml:101
 #, kde-format
@@ -1153,13 +1154,13 @@ msgstr "Přílet"
 #, kde-format
 msgctxt "flight departure"
 msgid "Departure time"
-msgstr ""
+msgstr "Čas odjezdu"
 
 #: app/FlightPage.qml:122
 #, kde-format
 msgctxt "flight departure"
 msgid "Departure date"
-msgstr ""
+msgstr "Datum odjezdu"
 
 #: app/FlightPage.qml:139 app/FlightPage.qml:185
 #, kde-format
@@ -1181,7 +1182,7 @@ msgstr "Odlet"
 #, kde-format
 msgctxt "flight arrival"
 msgid "Arrival time"
-msgstr ""
+msgstr "Čas příjezdu"
 
 #: app/FormPlaceDelegate.qml:55
 #, kde-format
@@ -1293,13 +1294,13 @@ msgstr "(bylo: %1)"
 #, kde-format
 msgctxt "@label"
 msgid "Price"
-msgstr ""
+msgstr "Cena"
 
 #: app/FormPriceDelegate.qml:30
 #, kde-format
 msgctxt "prices in local and home currency"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: app/FormPriceEditDelegate.qml:33
 #, kde-format
@@ -1341,7 +1342,7 @@ msgstr "Vlak %1 z %2 do %3"
 msgid "Bus %1 from %2 to %3"
 msgstr "Autobus %1 z %2 do %3"
 
-#: app/gpxexport.cpp:58 app/importcontroller.cpp:595
+#: app/gpxexport.cpp:58 app/importcontroller.cpp:597
 #, kde-format
 msgid "Ferry from %1 to %2"
 msgstr "Přívoz z %1 do %2"
@@ -1638,7 +1639,7 @@ msgstr "Hotel"
 #, kde-format
 msgctxt "@title:group"
 msgid "Accommodation"
-msgstr ""
+msgstr "Ubytování"
 
 # Tohle vypadá na název vlastnosti. Jméno bycvh nechal pro lidi a zvířata.
 #: app/HotelEditor.qml:56
@@ -1710,22 +1711,22 @@ msgid "No importable events found in this calendar."
 msgstr ""
 "V tomto kalendáři nebyly nalezeny žádné události, které lze importovat."
 
-#: app/importcontroller.cpp:586
+#: app/importcontroller.cpp:588
 #, kde-format
 msgid "Flight from %1 to %2"
-msgstr ""
+msgstr "Let z %1 do %2"
 
-#: app/importcontroller.cpp:589
+#: app/importcontroller.cpp:591
 #, kde-format
 msgid "Train from %1 to %2"
-msgstr ""
+msgstr "Vlak z %1 do %2"
 
-#: app/importcontroller.cpp:592
+#: app/importcontroller.cpp:594
 #, kde-format
 msgid "Bus from %1 to %2"
-msgstr ""
+msgstr "Autobus z %1 do %2"
 
-#: app/importcontroller.cpp:620
+#: app/importcontroller.cpp:622
 #, kde-format
 msgid "Backup"
 msgstr "Záloha"
@@ -1734,7 +1735,7 @@ msgstr "Záloha"
 #, kde-format
 msgctxt "@title"
 msgid "Import"
-msgstr ""
+msgstr "Importovat"
 
 #: app/ImportPage.qml:21
 #, kde-format
@@ -1750,7 +1751,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Find Gate"
-msgstr ""
+msgstr "Najít Gate"
 
 #: app/IndoorMapGateSheet.qml:33
 #, kde-format
@@ -1856,7 +1857,7 @@ msgstr "O patro výš"
 #, kde-format
 msgctxt "@title"
 msgid "Find Platform"
-msgstr ""
+msgstr "Najít nástupiště"
 
 #: app/IndoorMapPlatformSheet.qml:40
 #, kde-format
@@ -1905,7 +1906,7 @@ msgstr "Autobus"
 #, kde-format
 msgctxt "time in hours"
 msgid "%1 h"
-msgstr ""
+msgstr "%1 h"
 
 #: app/JourneyQueryPage.qml:89 app/TransferPage.qml:248
 #, kde-format
@@ -1961,25 +1962,25 @@ msgstr ""
 #, kde-format
 msgctxt "train or bus departure"
 msgid "Departure"
-msgstr ""
+msgstr "Odjezd"
 
 #: app/JourneyRequestPage.qml:155
 #, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival"
-msgstr ""
+msgstr "Příjezd"
 
 #: app/JourneyRequestPage.qml:164
 #, kde-format
 msgctxt "train or bus departure"
 msgid "Departure time"
-msgstr ""
+msgstr "Čas odjezdu"
 
 #: app/JourneyRequestPage.qml:164
 #, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival time"
-msgstr ""
+msgstr "Čas příjezdu"
 
 #: app/JourneyRequestPage.qml:175
 #, kde-format
@@ -2076,7 +2077,7 @@ msgstr "Vzdálenost: %1"
 #: app/JourneySectionPage.qml:85
 #, kde-format
 msgid "Average Speed: %1"
-msgstr ""
+msgstr "Průměrná rychlost: %1"
 
 #: app/JourneySectionPage.qml:92
 #, kde-format
@@ -2091,7 +2092,7 @@ msgstr "Nástupiště:"
 #: app/JourneySectionPage.qml:251
 #, kde-format
 msgid "Occupancy:"
-msgstr ""
+msgstr "Obsazenost:"
 
 #: app/JourneySectionPage.qml:269 app/JourneySectionStopDelegate.qml:162
 #, kde-format
@@ -2102,7 +2103,7 @@ msgstr "Zobrazit umístění"
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
-msgstr ""
+msgstr "Zobrazit mapu"
 
 #: app/JourneySectionStopDelegate.qml:144
 #, kde-format
@@ -2243,7 +2244,7 @@ msgstr ""
 #, kde-format
 msgctxt "opposite to daylight saving time"
 msgid "Standard Time"
-msgstr ""
+msgstr "Standardní čas"
 
 #: app/LocationInfoDelegate.qml:46
 #, kde-format
@@ -2274,7 +2275,7 @@ msgstr "Změna časového pásma: %1 (%2)"
 #, kde-format
 msgctxt "currency conversion rate"
 msgid "Currency: %1 = %2"
-msgstr ""
+msgstr "Měna: %1 = %2"
 
 #: app/LocationInfoDelegate.qml:117
 #, kde-format
@@ -2355,7 +2356,7 @@ msgstr "Digitální asistent na cesty"
 #: app/main.cpp:340
 #, kde-format
 msgid "Copyright © The KDE Community"
-msgstr ""
+msgstr "Autorská práva © Komunita KDE"
 
 #: app/main.cpp:347
 #, kde-format
@@ -2367,7 +2368,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
-msgstr ""
+msgstr "Soubory nebo URL pro import."
 
 #: app/main.qml:61
 #, kde-format
@@ -2465,10 +2466,9 @@ msgid "Map download finished."
 msgstr "Stažení mapy bylo dokončeno."
 
 #: app/MatrixRoomSelectionSheet.qml:19
-#, fuzzy, kde-format
-#| msgid "Show location"
+#, kde-format
 msgid "Share location…"
-msgstr "Zobrazit umístění"
+msgstr "Sdílet polohu…"
 
 #: app/MatrixRoomSelectionSheet.qml:36
 #, kde-format
@@ -2510,7 +2510,7 @@ msgstr "Mezery"
 #, kde-format
 msgctxt "@title:tab This isn't the app name, but the English noun"
 msgid "Itinerary"
-msgstr ""
+msgstr "Itinerář"
 
 #: app/NavigationBar.qml:24
 #, kde-format
@@ -2528,7 +2528,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:tab"
 msgid "Current Ticket"
-msgstr ""
+msgstr "Současný lístek"
 
 #: app/notificationhelper.cpp:62
 #, kde-format
@@ -2901,7 +2901,7 @@ msgstr "Název"
 #, kde-format
 msgctxt "@title:group"
 msgid "Reservation"
-msgstr ""
+msgstr "Rezervace"
 
 #: app/RestaurantPage.qml:16
 #, kde-format
@@ -3182,7 +3182,7 @@ msgstr "Přihlásit"
 #: app/SettingsPage.qml:314
 #, kde-format
 msgid "Contributing"
-msgstr ""
+msgstr "Příspěvky"
 
 #: app/SettingsPage.qml:318
 #, kde-format
@@ -3342,7 +3342,7 @@ msgstr ""
 #: app/TicketTokenEditorCard.qml:91
 #, kde-format
 msgid "Scan barcode…"
-msgstr ""
+msgstr "Číst čarový kód…"
 
 #: app/tickettokenmodel.cpp:74
 #, kde-format
@@ -3399,13 +3399,13 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Add trip"
-msgstr ""
+msgstr "Přidat výlet"
 
 #: app/TimelinePage.qml:184
 #, kde-format
 msgctxt "@title:group"
 msgid "Add New Trip"
-msgstr ""
+msgstr "Přidat nový výlet"
 
 #: app/TimelinePage.qml:214
 #, kde-format
@@ -3456,7 +3456,7 @@ msgstr "Odjezd"
 #: app/TouristAttractionPage.qml:42
 #, kde-format
 msgid "Departure Time"
-msgstr ""
+msgstr "Čas odjezdu"
 
 #: app/TouristAttractionPage.qml:49
 #, kde-format
@@ -3699,13 +3699,13 @@ msgstr "Smazat výlet"
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Trip"
-msgstr ""
+msgstr "Přidat výlet"
 
 #: app/TripGroupEditorDialog.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Trip"
-msgstr ""
+msgstr "Upravit výlet"
 
 #: app/TripGroupEditorDialog.qml:21
 #, kde-format
@@ -3845,6 +3845,12 @@ msgid ""
 "Itinerary plugin.</li><li>By scanning boarding pass barcodes and pasting "
 "their content.</li></p>"
 msgstr ""
+"<p>Existuje spousta způsobů jak importovat data do Itineráře KDE:"
+"<ul><li>Použitím přímo PDF jízdenek nebo Apple Wallet.</li><li>Z kalendáře "
+"Android, pro položky vytvořené pomocí modulů pro itineráře KMailu nebo "
+"NextCloudu, a synchronizované pomocí DAVx⁵.</li><li>Přes KDE Connect z "
+"modulu Itineráře KMailu.</li><li>Skenováním a vložením čárového kódu palubní "
+"letenky.</li></p>"
 
 #: app/WelcomePage.qml:31
 #, kde-format

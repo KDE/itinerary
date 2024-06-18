@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-15 00:39+0000\n"
+"POT-Creation-Date: 2024-06-18 00:39+0000\n"
 "PO-Revision-Date: 2024-04-28 11:34+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -1349,7 +1349,7 @@ msgstr "Pociąg %1 z %2 do %3"
 msgid "Bus %1 from %2 to %3"
 msgstr "Autobus %1 z %2 do %3"
 
-#: app/gpxexport.cpp:58 app/importcontroller.cpp:595
+#: app/gpxexport.cpp:58 app/importcontroller.cpp:597
 #, kde-format
 msgid "Ferry from %1 to %2"
 msgstr "Prom z %1 do %2"
@@ -1724,25 +1724,25 @@ msgstr ""
 "W tym kalendarzu nie znaleziono żadnego wydarzenia możliwego do "
 "zaimportowania."
 
-#: app/importcontroller.cpp:586
+#: app/importcontroller.cpp:588
 #, fuzzy, kde-format
 #| msgid "Flight %1 from %2 to %3"
 msgid "Flight from %1 to %2"
 msgstr "Lot %1 z %2 do %3"
 
-#: app/importcontroller.cpp:589
+#: app/importcontroller.cpp:591
 #, fuzzy, kde-format
 #| msgid "Train %1 from %2 to %3"
 msgid "Train from %1 to %2"
 msgstr "Pociąg %1 z %2 do %3"
 
-#: app/importcontroller.cpp:592
+#: app/importcontroller.cpp:594
 #, fuzzy, kde-format
 #| msgid "Bus %1 from %2 to %3"
 msgid "Bus from %1 to %2"
 msgstr "Autobus %1 z %2 do %3"
 
-#: app/importcontroller.cpp:620
+#: app/importcontroller.cpp:622
 #, kde-format
 msgid "Backup"
 msgstr ""

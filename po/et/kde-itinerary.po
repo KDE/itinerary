@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-15 00:39+0000\n"
+"POT-Creation-Date: 2024-06-18 00:39+0000\n"
 "PO-Revision-Date: 2020-05-04 10:51+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -1467,7 +1467,7 @@ msgstr ""
 msgid "Bus %1 from %2 to %3"
 msgstr "Asukohast %1 asukohta %2 (%3)"
 
-#: app/gpxexport.cpp:58 app/importcontroller.cpp:595
+#: app/gpxexport.cpp:58 app/importcontroller.cpp:597
 #, fuzzy, kde-format
 #| msgctxt "flight departure, %1 is airport, %2 is time"
 #| msgid "Departure from %1: %2"
@@ -1858,26 +1858,26 @@ msgstr "Imporditi üks reserveering."
 msgid "No importable events found in this calendar."
 msgstr ""
 
-#: app/importcontroller.cpp:586
+#: app/importcontroller.cpp:588
 #, fuzzy, kde-format
 #| msgid "Following departure %1 from %2"
 msgid "Flight from %1 to %2"
 msgstr "Järgmine %1 väljumine kell %2"
 
-#: app/importcontroller.cpp:589
+#: app/importcontroller.cpp:591
 #, fuzzy, kde-format
 #| msgctxt "flight departure, %1 is airport, %2 is time"
 #| msgid "Departure from %1: %2"
 msgid "Train from %1 to %2"
 msgstr "Väljumine lennujaamast %1: %2"
 
-#: app/importcontroller.cpp:592
+#: app/importcontroller.cpp:594
 #, fuzzy, kde-format
 #| msgid "%1 to %2 (%3)"
 msgid "Bus from %1 to %2"
 msgstr "Asukohast %1 asukohta %2 (%3)"
 
-#: app/importcontroller.cpp:620
+#: app/importcontroller.cpp:622
 #, kde-format
 msgid "Backup"
 msgstr ""

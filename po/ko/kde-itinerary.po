@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-15 00:39+0000\n"
+"POT-Creation-Date: 2024-06-18 00:39+0000\n"
 "PO-Revision-Date: 2024-02-17 12:41+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1347,7 +1347,7 @@ msgstr "%2에서 %3(으)로 가는 %1 열차|/|%2에서 %3$[으 %3]로 가는 %1
 msgid "Bus %1 from %2 to %3"
 msgstr "%2에서 %3(으)로 가는 %1 버스|/|%2에서 %3$[으 %3]로 가는 %1 버스"
 
-#: app/gpxexport.cpp:58 app/importcontroller.cpp:595
+#: app/gpxexport.cpp:58 app/importcontroller.cpp:597
 #, kde-format
 msgid "Ferry from %1 to %2"
 msgstr "%1에서 %2(으)로 가는 선박|/|%1에서 %2$[으 %2]로 가는 선박"
@@ -1716,25 +1716,25 @@ msgstr "가져온 것이 없습니다."
 msgid "No importable events found in this calendar."
 msgstr "이 캘린더에서 가져올 수 있는 이벤트가 없습니다."
 
-#: app/importcontroller.cpp:586
+#: app/importcontroller.cpp:588
 #, fuzzy, kde-format
 #| msgid "Flight %1 from %2 to %3"
 msgid "Flight from %1 to %2"
 msgstr "%2에서 %3(으)로 가는 %1 항공편|/|%2에서 %3$[으 %3]로 가는 %1 항공편"
 
-#: app/importcontroller.cpp:589
+#: app/importcontroller.cpp:591
 #, fuzzy, kde-format
 #| msgid "Train %1 from %2 to %3"
 msgid "Train from %1 to %2"
 msgstr "%2에서 %3(으)로 가는 %1 열차|/|%2에서 %3$[으 %3]로 가는 %1 열차"
 
-#: app/importcontroller.cpp:592
+#: app/importcontroller.cpp:594
 #, fuzzy, kde-format
 #| msgid "Bus %1 from %2 to %3"
 msgid "Bus from %1 to %2"
 msgstr "%2에서 %3(으)로 가는 %1 버스|/|%2에서 %3$[으 %3]로 가는 %1 버스"
 
-#: app/importcontroller.cpp:620
+#: app/importcontroller.cpp:622
 #, kde-format
 msgid "Backup"
 msgstr ""
