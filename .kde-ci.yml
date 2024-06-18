@@ -19,9 +19,9 @@ Dependencies:
     'libraries/kpublictransport': "@same"
     'libraries/kosmindoormap': "@same"
     'libraries/kirigami-addons': '@latest-kf6'
-    'pim/kpkpass': '@latest-kf6'
-    'pim/kitinerary': '@latest-kf6'
-    'pim/khealthcertificate': '@latest-kf6'
+    'pim/kpkpass': '@same'
+    'pim/kitinerary': '@same'
+    'pim/khealthcertificate': '@same'
     'third-party/libquotient': '@latest'
 
 - 'on': ['Linux', 'FreeBSD']
