@@ -65,11 +65,16 @@ void PermissionManager::requestPermission(Permission::Permission permission, QJS
 
 #ifdef Q_OS_ANDROID
     // TODO make this properly async
-    if (QtAndroidPrivate::checkPermission(permissionName(permission)).result() != QtAndroidPrivate::PermissionResult::Authorized) {
-        if (QtAndroidPrivate::requestPermission(permissionName(permission)).result() != QtAndroidPrivate::PermissionResult::Authorized) {
+    if (QtAndroidPrivate::requestPermission(permissionName(permission)).result() != QtAndroidPrivate::PermissionResult::Authorized) {
+        return;
+    }
+    // special case for WriteCalendar which practically depends on ReadCalendar
+    if (permission == Permission::WriteCalendar && !PermissionManager::checkPermission(Permission::ReadCalendar)) {
+        if (QtAndroidPrivate::requestPermission(permissionName(Permission::ReadCalendar)).result() != QtAndroidPrivate::PermissionResult::Authorized) {
             return;
         }
     }
+
     callback.call();
 #endif
 }
