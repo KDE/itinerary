@@ -19,6 +19,8 @@
 
 #include <libical/ical.h>
 
+using namespace Qt::Literals::StringLiterals;
+
 namespace ical {
     using property_ptr = std::unique_ptr<icalproperty, decltype(&icalproperty_free)>;
 }
@@ -36,9 +38,14 @@ KCalendarCore::Event::Ptr AndroidIcalConverter::readEvent(const JniEventData& da
     ev->setSummary(data.title);
     ev->setLocation(data.location);
     ev->setDescription(data.description);
-    ev->setDtStart(QDateTime::fromMSecsSinceEpoch(data.dtStart).toTimeZone(QTimeZone(QString(data.startTimezone).toUtf8())));
-    ev->setDtEnd(QDateTime::fromMSecsSinceEpoch(data.dtEnd).toTimeZone(QTimeZone(QString(data.endTimezone).toUtf8())));
     ev->setAllDay(data.allDay);
+    ev->setDtStart(QDateTime::fromMSecsSinceEpoch(data.dtStart).toTimeZone(QTimeZone(QString(data.startTimezone).toUtf8())));
+    if (ev->allDay()) {
+        // date is inclusive in iCal but non-inclusive in KCalCore
+        ev->setDtEnd(QDateTime::fromMSecsSinceEpoch(data.dtEnd).toTimeZone(QTimeZone(QString(data.endTimezone).toUtf8())).addDays(-1));
+    } else {
+        ev->setDtEnd(QDateTime::fromMSecsSinceEpoch(data.dtEnd).toTimeZone(QTimeZone(QString(data.endTimezone).toUtf8())));
+    }
     ev->setUid(data.uid2445);
 
     const QString duration = data.duration;
@@ -130,10 +137,20 @@ JniEventData AndroidIcalConverter::writeEvent(const KCalendarCore::Event::Ptr &e
     data.title = event->summary();
     data.location = event->location();
     data.description = event->description();
-    data.dtStart = event->dtStart().toMSecsSinceEpoch();
-    data.startTimezone = QString::fromUtf8(event->dtStart().timeZone().id());
-    data.dtEnd = event->dtEnd().toMSecsSinceEpoch();
-    data.endTimezone = QString::fromUtf8(event->dtEnd().timeZone().id());
+    // see https://developer.android.com/reference/android/provider/CalendarContract.Events.html#writing-to-events
+    // for how to handle allDay events
+    if (event->allDay()) {
+        data.dtStart = event->dtStart().date().startOfDay(QTimeZone::utc()).toMSecsSinceEpoch();
+        data.startTimezone = u"UTC"_s;
+        // end date is non-inclusive, unlike what ical expects here
+        data.dtEnd = event->dtEnd().date().addDays(1).startOfDay(QTimeZone::utc()).toMSecsSinceEpoch();
+        data.endTimezone = u"UTC"_s;
+    } else {
+        data.dtStart = event->dtStart().toMSecsSinceEpoch();
+        data.startTimezone = QString::fromUtf8(event->dtStart().timeZone().id());
+        data.dtEnd = event->dtEnd().toMSecsSinceEpoch();
+        data.endTimezone = QString::fromUtf8(event->dtEnd().timeZone().id());
+    }
     data.allDay = event->allDay();
     data.uid2445 = event->uid();
 

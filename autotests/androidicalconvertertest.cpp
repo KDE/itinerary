@@ -9,6 +9,7 @@
 #include <QObject>
 #include <QTest>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KAndroidExtras;
 
 class AndroidIcalConverterTest : public QObject
@@ -19,20 +20,45 @@ private Q_SLOTS:
     {
         JniEventData data;
         data.title = QStringLiteral("summary");
-        data.allDay = true;
+        data.allDay = false;
         data.dtStart = 1653055380000;
         data.startTimezone = QStringLiteral("Europe/Brussels");
 
         auto event = AndroidIcalConverter::readEvent(data);
         QCOMPARE(event->summary(), QLatin1StringView("summary"));
-        QCOMPARE(event->allDay(), true);
+        QCOMPARE(event->allDay(), false);
         QCOMPARE(event->dtStart(), QDateTime({2022, 5, 20}, {16, 3}, QTimeZone("Europe/Brussels")));
 
         const auto out = AndroidIcalConverter::writeEvent(event);
         QCOMPARE(out.title, QLatin1StringView("summary"));
-        QCOMPARE(out.allDay, true);
+        QCOMPARE(out.allDay, false);
         QCOMPARE(out.dtStart, 1653055380000);
         QCOMPARE(out.startTimezone, QLatin1StringView("Europe/Brussels"));
+    }
+
+    void testAllDayEvent()
+    {
+        JniEventData data;
+        data.title = u"summary"_s;
+        data.allDay = true;
+        data.dtStart = 1718755200000;
+        data.startTimezone = u"UTC"_s;
+        data.dtEnd = 1718841600000;
+        data.endTimezone = u"UTC"_s;
+
+        auto event = AndroidIcalConverter::readEvent(data);
+        QCOMPARE(event->summary(), "summary"_L1);
+        QCOMPARE(event->allDay(), true);
+        QCOMPARE(event->dtStart().date(), QDate(2024, 6, 19));
+        QCOMPARE(event->dtEnd().date(), QDate(2024, 6, 19)); // non-inclusive
+
+        const auto out = AndroidIcalConverter::writeEvent(event);
+        QCOMPARE(out.title, "summary"_L1);
+        QCOMPARE(out.allDay, true);
+        QCOMPARE(out.dtStart, 1718755200000);
+        QCOMPARE(out.startTimezone, "UTC"_L1);
+        QCOMPARE(out.dtEnd, 1718841600000);
+        QCOMPARE(out.endTimezone, "UTC"_L1);
     }
 
     void testAlarm()
