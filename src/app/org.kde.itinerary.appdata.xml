@@ -831,10 +831,10 @@
       <description>
         <ul>
           <li>New or improved travel document extractors for Air Asia, Amadeus, Deutsche Bahn, Eurostar, Flixbus, Trenitalia.</li>
-          <li> the arrival time when editing a ferry reservation.</li>
-          <li>ations on Android.</li>
-          <li>tomatic trip grouping.</li>
-          <li>ojis not showing up in Flatpaks.</li>
+          <li>Fixed storing the arrival time when editing a ferry reservation.</li>
+          <li>Fixed notifications on Android.</li>
+          <li>Improved automatic trip grouping.</li>
+          <li>Fixed emojis not showing up in Flatpaks.</li>
         </ul>
       </description>
     </release>
