@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-03 02:22+0000\n"
+"POT-Creation-Date: 2024-06-19 02:31+0000\n"
 "PO-Revision-Date: 2024-04-15 06:56+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -274,19 +274,19 @@ msgstr ""
 msgid "Replace"
 msgstr "Zamenjaj"
 
-#: app/applicationcontroller.cpp:341 app/applicationcontroller.cpp:746
-#: app/applicationcontroller.cpp:761
+#: app/applicationcontroller.cpp:342 app/applicationcontroller.cpp:747
+#: app/applicationcontroller.cpp:762
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Uvoz ni uspel: %1"
 
-#: app/applicationcontroller.cpp:346
+#: app/applicationcontroller.cpp:347
 #, kde-format
 msgid "Import failed: File too large."
 msgstr "Uvoz ni uspel: Datoteka prevelika."
 
-#: app/applicationcontroller.cpp:428 app/applicationcontroller.cpp:823
-#: app/applicationcontroller.cpp:833
+#: app/applicationcontroller.cpp:429 app/applicationcontroller.cpp:824
+#: app/applicationcontroller.cpp:834
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
@@ -295,12 +295,12 @@ msgstr[1] "%1 uvoženi rezervaciji."
 msgstr[2] "%1 uvožene rezervacije."
 msgstr[3] "%1 uvoženih rezervacij."
 
-#: app/applicationcontroller.cpp:435
+#: app/applicationcontroller.cpp:436
 #, kde-format
 msgid "Health certificate imported."
 msgstr "Zdravstvena potrdila uvožena."
 
-#: app/applicationcontroller.cpp:450
+#: app/applicationcontroller.cpp:451
 #, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
@@ -309,40 +309,40 @@ msgstr[1] "%1 vozovnici uvoženi."
 msgstr[2] "%1 vozovnice uvožene."
 msgstr[3] "%1 vozovnic uvoženih."
 
-#: app/applicationcontroller.cpp:453
+#: app/applicationcontroller.cpp:454
 #, kde-format
 msgid "Pass imported."
 msgstr "Vozovnica uvožena."
 
-#: app/applicationcontroller.cpp:490
+#: app/applicationcontroller.cpp:491
 #, kde-format
 msgid "Nothing imported."
 msgstr "Ničesar uvoženega."
 
-#: app/applicationcontroller.cpp:552 app/applicationcontroller.cpp:592
-#: app/applicationcontroller.cpp:610 app/applicationcontroller.cpp:654
-#: app/applicationcontroller.cpp:693 app/applicationcontroller.cpp:711
+#: app/applicationcontroller.cpp:553 app/applicationcontroller.cpp:593
+#: app/applicationcontroller.cpp:611 app/applicationcontroller.cpp:655
+#: app/applicationcontroller.cpp:694 app/applicationcontroller.cpp:712
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Izvoz ni uspel: %1"
 
-#: app/applicationcontroller.cpp:566 app/applicationcontroller.cpp:575
-#: app/applicationcontroller.cpp:667 app/applicationcontroller.cpp:676
+#: app/applicationcontroller.cpp:567 app/applicationcontroller.cpp:576
+#: app/applicationcontroller.cpp:668 app/applicationcontroller.cpp:677
 #, kde-format
 msgid "Export completed."
 msgstr "Izvoz dokončan."
 
-#: app/applicationcontroller.cpp:602
+#: app/applicationcontroller.cpp:603
 #, kde-format
 msgid "Trip sent."
 msgstr "Izlet poslan."
 
-#: app/applicationcontroller.cpp:703
+#: app/applicationcontroller.cpp:704
 #, kde-format
 msgid "Reservation sent."
 msgstr "Rezervacija poslana."
 
-#: app/applicationcontroller.cpp:786
+#: app/applicationcontroller.cpp:787
 #, kde-format
 msgid "Import completed."
 msgstr "Uvoz dokončan."

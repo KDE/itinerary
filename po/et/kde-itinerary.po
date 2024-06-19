@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-03 02:22+0000\n"
+"POT-Creation-Date: 2024-06-19 02:31+0000\n"
 "PO-Revision-Date: 2020-05-04 10:51+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -289,33 +289,33 @@ msgstr "Kas tõesti asendada olemasolev reserveering uue valitud reisiga?"
 msgid "Replace"
 msgstr "Asenda"
 
-#: app/applicationcontroller.cpp:341 app/applicationcontroller.cpp:746
-#: app/applicationcontroller.cpp:761
+#: app/applicationcontroller.cpp:342 app/applicationcontroller.cpp:747
+#: app/applicationcontroller.cpp:762
 #, kde-format
 msgid "Import failed: %1"
 msgstr ""
 
-#: app/applicationcontroller.cpp:346
+#: app/applicationcontroller.cpp:347
 #, kde-format
 msgid "Import failed: File too large."
 msgstr ""
 
-#: app/applicationcontroller.cpp:428 app/applicationcontroller.cpp:823
-#: app/applicationcontroller.cpp:833
+#: app/applicationcontroller.cpp:429 app/applicationcontroller.cpp:824
+#: app/applicationcontroller.cpp:834
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] "Imporditi üks reserveering."
 msgstr[1] "Imporditi %1 reserveeringut."
 
-#: app/applicationcontroller.cpp:435
+#: app/applicationcontroller.cpp:436
 #, fuzzy, kde-format
 #| msgid "One reservation imported."
 #| msgid_plural "%1 reservations imported."
 msgid "Health certificate imported."
 msgstr "Imporditi üks reserveering."
 
-#: app/applicationcontroller.cpp:450
+#: app/applicationcontroller.cpp:451
 #, fuzzy, kde-format
 #| msgid "One reservation imported."
 #| msgid_plural "%1 reservations imported."
@@ -324,46 +324,46 @@ msgid_plural "%1 passes imported."
 msgstr[0] "Imporditi üks reserveering."
 msgstr[1] "Imporditi üks reserveering."
 
-#: app/applicationcontroller.cpp:453
+#: app/applicationcontroller.cpp:454
 #, fuzzy, kde-format
 #| msgid "One reservation imported."
 #| msgid_plural "%1 reservations imported."
 msgid "Pass imported."
 msgstr "Imporditi üks reserveering."
 
-#: app/applicationcontroller.cpp:490
+#: app/applicationcontroller.cpp:491
 #, fuzzy, kde-format
 #| msgid "One reservation imported."
 #| msgid_plural "%1 reservations imported."
 msgid "Nothing imported."
 msgstr "Imporditi üks reserveering."
 
-#: app/applicationcontroller.cpp:552 app/applicationcontroller.cpp:592
-#: app/applicationcontroller.cpp:610 app/applicationcontroller.cpp:654
-#: app/applicationcontroller.cpp:693 app/applicationcontroller.cpp:711
+#: app/applicationcontroller.cpp:553 app/applicationcontroller.cpp:593
+#: app/applicationcontroller.cpp:611 app/applicationcontroller.cpp:655
+#: app/applicationcontroller.cpp:694 app/applicationcontroller.cpp:712
 #, kde-format
 msgid "Export failed: %1"
 msgstr ""
 
-#: app/applicationcontroller.cpp:566 app/applicationcontroller.cpp:575
-#: app/applicationcontroller.cpp:667 app/applicationcontroller.cpp:676
+#: app/applicationcontroller.cpp:567 app/applicationcontroller.cpp:576
+#: app/applicationcontroller.cpp:668 app/applicationcontroller.cpp:677
 #, kde-format
 msgid "Export completed."
 msgstr ""
 
-#: app/applicationcontroller.cpp:602
+#: app/applicationcontroller.cpp:603
 #, fuzzy, kde-format
 #| msgid "Trips"
 msgid "Trip sent."
 msgstr "Reisid"
 
-#: app/applicationcontroller.cpp:703
+#: app/applicationcontroller.cpp:704
 #, fuzzy, kde-format
 #| msgid "Reservation"
 msgid "Reservation sent."
 msgstr "Reserveerimine"
 
-#: app/applicationcontroller.cpp:786
+#: app/applicationcontroller.cpp:787
 #, kde-format
 msgid "Import completed."
 msgstr ""

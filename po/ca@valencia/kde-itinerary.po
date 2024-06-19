@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-03 02:22+0000\n"
+"POT-Creation-Date: 2024-06-19 02:31+0000\n"
 "PO-Revision-Date: 2024-04-15 10:10+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -276,71 +276,71 @@ msgstr "Voleu substituir la reserva existent amb el nou viatge seleccionat?"
 msgid "Replace"
 msgstr "Substituïx"
 
-#: app/applicationcontroller.cpp:341 app/applicationcontroller.cpp:746
-#: app/applicationcontroller.cpp:761
+#: app/applicationcontroller.cpp:342 app/applicationcontroller.cpp:747
+#: app/applicationcontroller.cpp:762
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Ha fallat la importació: %1"
 
-#: app/applicationcontroller.cpp:346
+#: app/applicationcontroller.cpp:347
 #, kde-format
 msgid "Import failed: File too large."
 msgstr "Ha fallat la importació: Fitxer massa gran."
 
-#: app/applicationcontroller.cpp:428 app/applicationcontroller.cpp:823
-#: app/applicationcontroller.cpp:833
+#: app/applicationcontroller.cpp:429 app/applicationcontroller.cpp:824
+#: app/applicationcontroller.cpp:834
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] "S'ha importat una reserva."
 msgstr[1] "S'han importat %1 reserves."
 
-#: app/applicationcontroller.cpp:435
+#: app/applicationcontroller.cpp:436
 #, kde-format
 msgid "Health certificate imported."
 msgstr "S'ha importat el certificat de salut."
 
-#: app/applicationcontroller.cpp:450
+#: app/applicationcontroller.cpp:451
 #, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
 msgstr[0] "S'ha importat un passe."
 msgstr[1] "S'han importat %1 passes."
 
-#: app/applicationcontroller.cpp:453
+#: app/applicationcontroller.cpp:454
 #, kde-format
 msgid "Pass imported."
 msgstr "S'ha importat el passe."
 
-#: app/applicationcontroller.cpp:490
+#: app/applicationcontroller.cpp:491
 #, kde-format
 msgid "Nothing imported."
 msgstr "No s'ha importat res."
 
-#: app/applicationcontroller.cpp:552 app/applicationcontroller.cpp:592
-#: app/applicationcontroller.cpp:610 app/applicationcontroller.cpp:654
-#: app/applicationcontroller.cpp:693 app/applicationcontroller.cpp:711
+#: app/applicationcontroller.cpp:553 app/applicationcontroller.cpp:593
+#: app/applicationcontroller.cpp:611 app/applicationcontroller.cpp:655
+#: app/applicationcontroller.cpp:694 app/applicationcontroller.cpp:712
 #, kde-format
 msgid "Export failed: %1"
 msgstr "No s'ha pogut fer l'exportació: %1"
 
-#: app/applicationcontroller.cpp:566 app/applicationcontroller.cpp:575
-#: app/applicationcontroller.cpp:667 app/applicationcontroller.cpp:676
+#: app/applicationcontroller.cpp:567 app/applicationcontroller.cpp:576
+#: app/applicationcontroller.cpp:668 app/applicationcontroller.cpp:677
 #, kde-format
 msgid "Export completed."
 msgstr "S'ha completat l'exportació."
 
-#: app/applicationcontroller.cpp:602
+#: app/applicationcontroller.cpp:603
 #, kde-format
 msgid "Trip sent."
 msgstr "S'ha enviat el viatge."
 
-#: app/applicationcontroller.cpp:703
+#: app/applicationcontroller.cpp:704
 #, kde-format
 msgid "Reservation sent."
 msgstr "La reserva s'ha enviat."
 
-#: app/applicationcontroller.cpp:786
+#: app/applicationcontroller.cpp:787
 #, kde-format
 msgid "Import completed."
 msgstr "S'ha completat la importació."
