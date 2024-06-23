@@ -363,7 +363,6 @@ void ImportController::importFromIntent(const KAndroidExtras::Intent &intent)
                 auto att = new KMime::Content;
                 att->contentType()->setMimeType(ContentResolver::mimeType(attUrl).toUtf8());
                 att->contentTransferEncoding()->setEncoding(KMime::Headers::CEbase64);
-                att->contentTransferEncoding()->setDecoded(true);
                 att->contentType()->setName(attUrl.fileName(), "utf-8");
                 QFile f(a);
                 if (!f.open(QFile::ReadOnly)) {
