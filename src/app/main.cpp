@@ -85,6 +85,7 @@
 #if HAVE_KCRASH
 #include <KCrash>
 #endif
+#include <kcontacts_version.h>
 #include <KContacts/AddressFormat>
 
 #include <QQuickStyle>
@@ -120,6 +121,7 @@ class MatrixBeaconStub : public QObject
 
 void registerKContactsTypes()
 {
+#if KCONTACTS_VERSION < QT_VERSION_CHECK(6, 3, 0)
     // ### this should move into a real QML plugin for KContacts
     qmlRegisterUncreatableMetaObject(KContacts::staticMetaObject, "org.kde.contacts", 1, 0, "KContacts", {});
     qmlRegisterSingletonType("org.kde.contacts", 1, 0, "AddressFormatRepository", [](QQmlEngine *, QJSEngine *jsEngine) -> QJSValue {
@@ -130,6 +132,7 @@ void registerKContactsTypes()
     qRegisterMetaType<KContacts::AddressFormatRepository>();
     qRegisterMetaType<KContacts::AddressFormatPreference>();
     qRegisterMetaType<KContacts::AddressFormatScriptPreference>();
+#endif
 }
 
 void registerKCalendarCoreTypes()
