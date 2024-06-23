@@ -234,10 +234,10 @@ Kirigami.Page {
         floorLevelModel: map.floorLevels
     }
 
-    IndoorMapElevatorSheet {
+    FloorLevelSelector {
         id: elevatorSheet
         model: floorLevelChangeModel
-        parent: root.overlay
+        onFloorLevelSelected: (level) => { map.view.floorLevel = level; }
     }
 
     LocationQueryOverlayProxyModel {
