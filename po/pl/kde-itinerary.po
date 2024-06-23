@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-18 00:39+0000\n"
-"PO-Revision-Date: 2024-04-28 11:34+0200\n"
+"PO-Revision-Date: 2024-06-22 08:28+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -16,6 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -290,13 +291,12 @@ msgstr[1] "Zaimportowano %1 wejściówki."
 msgstr[2] "Zaimportowano %1 wejściówek."
 
 #: app/applicationcontroller.cpp:270
-#, fuzzy, kde-format
-#| msgid "Health certificate imported."
+#, kde-format
 msgid "One health certificate imported."
 msgid_plural "%1 health certificates imported."
-msgstr[0] "Zaimportowano certyfikat zdrowia."
-msgstr[1] "Zaimportowano certyfikat zdrowia."
-msgstr[2] "Zaimportowano certyfikat zdrowia."
+msgstr[0] "Zaimportowano jeden certyfikat zdrowia."
+msgstr[1] "Zaimportowano %1 certyfikaty zdrowia."
+msgstr[2] "Zaimportowano %1 certyfikatów zdrowia."
 
 #: app/applicationcontroller.cpp:284 app/applicationcontroller.cpp:325
 #: app/applicationcontroller.cpp:343 app/applicationcontroller.cpp:388
@@ -1043,10 +1043,9 @@ msgid "Airport"
 msgstr "Lotnisko"
 
 #: app/FlightEditor.qml:95
-#, fuzzy, kde-format
-#| msgid "Departure time has to be set."
+#, kde-format
 msgid "Departure airport has to be specified."
-msgstr "Czas wypłynięcia musi być ustawiony."
+msgstr "Należy wskazać port lotniczy odlotu."
 
 #: app/FlightEditor.qml:101
 #, kde-format
@@ -1090,11 +1089,9 @@ msgid "Arrival - %1"
 msgstr "Przybycie - %1"
 
 #: app/FlightEditor.qml:149
-#, fuzzy, kde-format
-#| msgctxt "a train/bus journey canceled by its operator"
-#| msgid "Arrival has been canceled."
+#, kde-format
 msgid "Arrival airport has to be specified."
-msgstr "Przybycie zostało odwołane."
+msgstr "Należy wskazać port lotniczy przylotu."
 
 #: app/FlightEditor.qml:155
 #, kde-format
@@ -1120,16 +1117,14 @@ msgid "Flight"
 msgstr "Lot"
 
 #: app/FlightEditor.qml:187
-#, fuzzy, kde-format
-#| msgid "Ticket number:"
+#, kde-format
 msgid "Flight number"
-msgstr "Numer biletu:"
+msgstr "Numer lotu"
 
 #: app/FlightEditor.qml:190
-#, fuzzy, kde-format
-#| msgid "Not a valid number."
+#, kde-format
 msgid "Invalid flight number."
-msgstr "Nieprawidłowy numer."
+msgstr "Nieprawidłowy numer lotu."
 
 #: app/FlightPage.qml:59
 #, kde-format
@@ -1712,10 +1707,9 @@ msgid "Import failed: File too large."
 msgstr "Nie udało się zaimportować: Plik jest zbyt duży."
 
 #: app/importcontroller.cpp:208 app/importcontroller.cpp:305
-#, fuzzy, kde-format
-#| msgid "Nothing imported."
+#, kde-format
 msgid "Found nothing to import."
-msgstr "Nie zaimportowano niczego."
+msgstr "Nie znaleziono niczego do zaimportowania."
 
 #: app/importcontroller.cpp:433
 #, kde-format
@@ -1725,46 +1719,40 @@ msgstr ""
 "zaimportowania."
 
 #: app/importcontroller.cpp:588
-#, fuzzy, kde-format
-#| msgid "Flight %1 from %2 to %3"
+#, kde-format
 msgid "Flight from %1 to %2"
-msgstr "Lot %1 z %2 do %3"
+msgstr "Lot z %1 do %2"
 
 #: app/importcontroller.cpp:591
-#, fuzzy, kde-format
-#| msgid "Train %1 from %2 to %3"
+#, kde-format
 msgid "Train from %1 to %2"
-msgstr "Pociąg %1 z %2 do %3"
+msgstr "Pociąg z %1 do %2"
 
 #: app/importcontroller.cpp:594
-#, fuzzy, kde-format
-#| msgid "Bus %1 from %2 to %3"
+#, kde-format
 msgid "Bus from %1 to %2"
-msgstr "Autobus %1 z %2 do %3"
+msgstr "Autobus z %1 do %2"
 
 #: app/importcontroller.cpp:622
 #, kde-format
 msgid "Backup"
-msgstr ""
+msgstr "Kopia zapasowa"
 
 #: app/ImportPage.qml:18
-#, fuzzy, kde-format
-#| msgid "Import..."
+#, kde-format
 msgctxt "@title"
 msgid "Import"
-msgstr "Zaimportuj..."
+msgstr "Zaimportuj"
 
 #: app/ImportPage.qml:21
-#, fuzzy, kde-format
-#| msgid "Files or URLs to import."
+#, kde-format
 msgid "Selected items to import."
-msgstr "Pliki lub adresy URL do zaimportowania."
+msgstr "Zaznaczone rzeczy do zaimportowania."
 
 #: app/ImportPage.qml:67
-#, fuzzy, kde-format
-#| msgid "Import Reservation"
+#, kde-format
 msgid "Import selection"
-msgstr "Zaimportuj rezerwację"
+msgstr "Zaimportuj zaznaczone"
 
 #: app/IndoorMapGateSheet.qml:18
 #, kde-format
@@ -2109,11 +2097,9 @@ msgid "Platform:"
 msgstr "Peron:"
 
 #: app/JourneySectionPage.qml:251
-#, fuzzy, kde-format
-#| msgctxt "vehicle load"
-#| msgid "Low occupancy"
+#, kde-format
 msgid "Occupancy:"
-msgstr "Niskie zapełnienie"
+msgstr "Zapełnienie:"
 
 #: app/JourneySectionPage.qml:269 app/JourneySectionStopDelegate.qml:162
 #, kde-format
@@ -2380,15 +2366,13 @@ msgid "Copyright © The KDE Community"
 msgstr "Copyright © Społeczność KDE"
 
 #: app/main.cpp:347
-#, fuzzy, kde-format
-#| msgid "Open Itinerary on the given page"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Otwórz plan podróży na danej stronie"
 
 #: app/main.cpp:352
-#, fuzzy, kde-format
-#| msgid "Files or URLs to import."
+#, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
 msgstr "Pliki lub adresy URL do zaimportowania."
@@ -2489,11 +2473,9 @@ msgid "Map download finished."
 msgstr "Ukończono pobieranie mapy."
 
 #: app/MatrixRoomSelectionSheet.qml:19
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Share Location"
+#, kde-format
 msgid "Share location…"
-msgstr "Udostępnij miejsce"
+msgstr "Udostępnij miejsce…"
 
 #: app/MatrixRoomSelectionSheet.qml:36
 #, kde-format
@@ -3058,12 +3040,12 @@ msgstr ""
 #: app/SettingsPage.qml:126
 #, kde-format
 msgid "Wikimedia Online Content"
-msgstr ""
+msgstr "Treści z Wikimedia"
 
 #: app/SettingsPage.qml:129
 #, kde-format
 msgid "Use additional online content from Wikimedia and Wikidata."
-msgstr ""
+msgstr "Użyj dodatkowych treści z Wikimedia oraz Wikidata."
 
 #: app/SettingsPage.qml:136
 #, kde-format
@@ -3397,10 +3379,9 @@ msgid "Add train trip..."
 msgstr "Dodaj podróż koleją..."
 
 #: app/TimelinePage.qml:97
-#, fuzzy, kde-format
-#| msgid "Add event..."
+#, kde-format
 msgid "Add flight..."
-msgstr "Dodaj wydarzenie..."
+msgstr "Dodaj lot..."
 
 #: app/TimelinePage.qml:109
 #, kde-format
@@ -3715,16 +3696,14 @@ msgstr[1] "Waluty: %2"
 msgstr[2] "Waluty: %2"
 
 #: app/TripGroupDelegate.qml:162
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgid "Edit…"
-msgstr "Edytuj"
+msgstr "Edytuj…"
 
 #: app/TripGroupDelegate.qml:175
-#, fuzzy, kde-format
-#| msgid "Export"
+#, kde-format
 msgid "Export…"
-msgstr "Wyeksportuj"
+msgstr "Wyeksportuj…"
 
 #: app/TripGroupDelegate.qml:183
 #, kde-format
@@ -3732,26 +3711,22 @@ msgid "Delete trip"
 msgstr "Usuń podróż"
 
 #: app/TripGroupEditorDialog.qml:17
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add trip"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Trip"
 msgstr "Dodaj podróż"
 
 #: app/TripGroupEditorDialog.qml:17
-#, fuzzy, kde-format
-#| msgid "Edit Boat Trip"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Trip"
-msgstr "Edytuj podróż łodzią"
+msgstr "Edytuj podróż"
 
 #: app/TripGroupEditorDialog.qml:21
-#, fuzzy, kde-format
-#| msgid "Under name:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Trip name:"
-msgstr "Na nazwisko:"
+msgstr "Nazwa podróży:"
 
 #: app/tripgroupmanager.cpp:663
 #, kde-format
