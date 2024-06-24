@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-18 00:39+0000\n"
+"POT-Creation-Date: 2024-06-24 00:38+0000\n"
 "PO-Revision-Date: 2024-06-15 13:44+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -1321,7 +1321,7 @@ msgstr "Elimina pass"
 msgid "Do you really want to delete this pass?"
 msgstr "Vuoi davvero eliminare questo pass?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:331 app/main.qml:21 app/main.qml:166
+#: app/gpxexport.cpp:33 app/main.cpp:334 app/main.qml:21 app/main.qml:166
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -1341,7 +1341,7 @@ msgstr "Treno %1 da %2 a %3"
 msgid "Bus %1 from %2 to %3"
 msgstr "Autobus %1 da %2 a %3"
 
-#: app/gpxexport.cpp:58 app/importcontroller.cpp:597
+#: app/gpxexport.cpp:58 app/importcontroller.cpp:596
 #, kde-format
 msgid "Ferry from %1 to %2"
 msgstr "Traghetto da %1 a %2"
@@ -1692,7 +1692,7 @@ msgstr "Orario del check-in"
 msgid "Check-out time"
 msgstr "Orario del check-out"
 
-#: app/importcontroller.cpp:144 app/importcontroller.cpp:461
+#: app/importcontroller.cpp:144 app/importcontroller.cpp:460
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Importazione non riuscita: %1"
@@ -1707,27 +1707,27 @@ msgstr "Importazione non riuscita. File troppo grande."
 msgid "Found nothing to import."
 msgstr "Non è stato trovato niente da importare."
 
-#: app/importcontroller.cpp:433
+#: app/importcontroller.cpp:432
 #, kde-format
 msgid "No importable events found in this calendar."
 msgstr "Nessun evento importabile trovato in questo calendario."
 
-#: app/importcontroller.cpp:588
+#: app/importcontroller.cpp:587
 #, kde-format
 msgid "Flight from %1 to %2"
 msgstr "Volo da %1 a %2"
 
-#: app/importcontroller.cpp:591
+#: app/importcontroller.cpp:590
 #, kde-format
 msgid "Train from %1 to %2"
 msgstr "Treno da %1 a %2"
 
-#: app/importcontroller.cpp:594
+#: app/importcontroller.cpp:593
 #, kde-format
 msgid "Bus from %1 to %2"
 msgstr "Autobus da %1 a %2"
 
-#: app/importcontroller.cpp:622
+#: app/importcontroller.cpp:621
 #, kde-format
 msgid "Backup"
 msgstr "Copia di sicurezza"
@@ -2349,23 +2349,23 @@ msgstr "Tipo M"
 msgid "Type N"
 msgstr "Tipo N"
 
-#: app/main.cpp:339
+#: app/main.cpp:342
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Assistente digitale per i viaggi"
 
-#: app/main.cpp:340
+#: app/main.cpp:343
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "Copyright © La comunità KDE"
 
-#: app/main.cpp:347
+#: app/main.cpp:350
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Apri Itinerary alla pagina specificata"
 
-#: app/main.cpp:352
+#: app/main.cpp:355
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."

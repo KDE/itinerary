@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-18 00:39+0000\n"
+"POT-Creation-Date: 2024-06-24 00:38+0000\n"
 "PO-Revision-Date: 2024-03-26 16:14+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -1333,7 +1333,7 @@ msgstr "Kártya törlése"
 msgid "Do you really want to delete this pass?"
 msgstr "Biztosan törölni szeretné ezt a kártyát?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:331 app/main.qml:21 app/main.qml:166
+#: app/gpxexport.cpp:33 app/main.cpp:334 app/main.qml:21 app/main.qml:166
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -1353,7 +1353,7 @@ msgstr "%1. vonat, %2 → %3"
 msgid "Bus %1 from %2 to %3"
 msgstr "%1. busz, %2 → %3"
 
-#: app/gpxexport.cpp:58 app/importcontroller.cpp:597
+#: app/gpxexport.cpp:58 app/importcontroller.cpp:596
 #, kde-format
 msgid "Ferry from %1 to %2"
 msgstr "%1 → %2 komp"
@@ -1704,7 +1704,7 @@ msgstr "Bejelentkezés ideje"
 msgid "Check-out time"
 msgstr "Kijelentkezés ideje"
 
-#: app/importcontroller.cpp:144 app/importcontroller.cpp:461
+#: app/importcontroller.cpp:144 app/importcontroller.cpp:460
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Sikertelen importálás: %1"
@@ -1720,30 +1720,30 @@ msgstr "Sikertelen importálás: a fájl túl nagy."
 msgid "Found nothing to import."
 msgstr "Semmi sem lett importálva."
 
-#: app/importcontroller.cpp:433
+#: app/importcontroller.cpp:432
 #, kde-format
 msgid "No importable events found in this calendar."
 msgstr "Nem találhatók importálható események ebben a naptárban."
 
-#: app/importcontroller.cpp:588
+#: app/importcontroller.cpp:587
 #, fuzzy, kde-format
 #| msgid "Flight %1 from %2 to %3"
 msgid "Flight from %1 to %2"
 msgstr "%1 járat, %2 → %3"
 
-#: app/importcontroller.cpp:591
+#: app/importcontroller.cpp:590
 #, fuzzy, kde-format
 #| msgid "Train %1 from %2 to %3"
 msgid "Train from %1 to %2"
 msgstr "%1. vonat, %2 → %3"
 
-#: app/importcontroller.cpp:594
+#: app/importcontroller.cpp:593
 #, fuzzy, kde-format
 #| msgid "Bus %1 from %2 to %3"
 msgid "Bus from %1 to %2"
 msgstr "%1. busz, %2 → %3"
 
-#: app/importcontroller.cpp:622
+#: app/importcontroller.cpp:621
 #, kde-format
 msgid "Backup"
 msgstr ""
@@ -2371,24 +2371,24 @@ msgstr "M-típusú"
 msgid "Type N"
 msgstr "N-típusú"
 
-#: app/main.cpp:339
+#: app/main.cpp:342
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Digitális utazási segéd"
 
-#: app/main.cpp:340
+#: app/main.cpp:343
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "Copyright © A KDE közösség"
 
-#: app/main.cpp:347
+#: app/main.cpp:350
 #, fuzzy, kde-format
 #| msgid "Open Itinerary on the given page"
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Itinerary megnyitása a megadott oldalon"
 
-#: app/main.cpp:352
+#: app/main.cpp:355
 #, fuzzy, kde-format
 #| msgid "Files or URLs to import."
 msgctxt "@info:shell"
