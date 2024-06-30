@@ -177,7 +177,7 @@ Kirigami.Page {
             Kirigami.PlaceholderMessage {
                 anchors.fill: parent
                 visible: !map.visible
-                text: i18n("Waiting for data...")
+                text: i18n("Waiting for data…")
             }
         }
 
@@ -189,7 +189,7 @@ Kirigami.Page {
             Kirigami.PlaceholderMessage {
                 anchors.fill: parent
                 visible: !onboardStatus.hasJourney
-                text: i18n("Waiting for data...")
+                text: i18n("Waiting for data…")
             }
         }
     }

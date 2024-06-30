@@ -19,7 +19,7 @@ class ReservationTest(ItineraryTestCase):
     def setUp(self):
         # open the timeline page and import test scenario
         self.driver.find_element(by=AppiumBy.NAME, value="Itinerary").click()
-        self.triggerImportAction("Open File...")
+        self.triggerImportAction("Open File…")
         self.openFile("../tests/randa2017.json")
         self.driver.find_element(by=AppiumBy.NAME, value="Trip: Randa (September 2017)").click()
 
@@ -33,7 +33,7 @@ class ReservationTest(ItineraryTestCase):
         self.driver.find_element(by=AppiumBy.NAME, value="LX 963 TXL → ZRH").click()
         self.assertFalse(self.driver.find_element(by=AppiumBy.NAME, value="Barcode Scan Mode").is_displayed())
         self.assertTrue(self.driver.find_element(by=AppiumBy.NAME, value="No documents attached to this reservation.").is_enabled())
-        self.driver.find_element(by=AppiumBy.NAME, value="Add Document...").click()
+        self.driver.find_element(by=AppiumBy.NAME, value="Add Document…").click()
         self.openFile("data/iata-bcbp-demo.pdf")
         self.assertTrue(self.driver.find_element(by=AppiumBy.NAME, value="iata-bcbp-demo.pdf").is_enabled())
         # TODO document context actions not accessible

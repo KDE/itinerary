@@ -18,7 +18,7 @@ import os
 class SettingsTest(ItineraryTestCase):
     def test_settings(self):
         self.openGlobalDrawer()
-        self.driver.find_element(by=AppiumBy.NAME, value="Settings...").click()
+        self.driver.find_element(by=AppiumBy.NAME, value="Settings…").click()
 
         # TODO home country combo box not accessible
 
@@ -31,12 +31,12 @@ class SettingsTest(ItineraryTestCase):
         trafficData.send_keys(Keys.SPACE) # TODO there is no toggle()?
         self.assertEqual(trafficData.get_attribute("checked"), "true")
 
-        self.driver.find_element(by=AppiumBy.NAME, value="Public Transport Information Sources...").click()
+        self.driver.find_element(by=AppiumBy.NAME, value="Public Transport Information Sources…").click()
         self.goBack()
         self.goBack()
 
         self.openGlobalDrawer()
-        self.driver.find_element(by=AppiumBy.NAME, value="Settings...").click()
+        self.driver.find_element(by=AppiumBy.NAME, value="Settings…").click()
         self.assertEqual(self.driver.find_element(by=AppiumBy.NAME, value="Query Traffic Data").get_attribute("checked"), "true")
         self.goBack()
 

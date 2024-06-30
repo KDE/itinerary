@@ -38,7 +38,7 @@ Kirigami.ScrollablePage {
             wrapMode: Text.WordWrap
         }
         QQC2.Button {
-            text: i18n("Settings...")
+            text: i18n("Settings…")
             onClicked: applicationWindow().pageStack.layers.push(Qt.createComponent("org.kde.itinerary", "SettingsPage"))
             icon.name: "settings-configure"
             Layout.alignment: Qt.AlignCenter

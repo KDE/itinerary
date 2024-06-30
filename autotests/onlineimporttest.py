@@ -13,8 +13,8 @@ import os
 # Online import form tests
 class ItineraryTest(ItineraryTestCase):
     def test_db(self):
-        self.triggerImportAction("Deutsche Bahn Online Ticket...")
-        searchBtn = self.driver.find_element(by=AppiumBy.NAME, value="Search...")
+        self.triggerImportAction("Deutsche Bahn Online Ticket…")
+        searchBtn = self.driver.find_element(by=AppiumBy.NAME, value="Search…")
         self.assertFalse(searchBtn.is_enabled())
         nameInput = self.driver.find_element(by=AppiumBy.NAME, value="Family name")
         nameInput.send_keys("Konqi")
@@ -31,8 +31,8 @@ class ItineraryTest(ItineraryTestCase):
         self.goBack()
 
     def test_sncf(self):
-        self.triggerImportAction("SNCF Online Ticket...")
-        searchBtn = self.driver.find_element(by=AppiumBy.NAME, value="Search...")
+        self.triggerImportAction("SNCF Online Ticket…")
+        searchBtn = self.driver.find_element(by=AppiumBy.NAME, value="Search…")
         self.assertFalse(searchBtn.is_enabled())
         nameInput = self.driver.find_element(by=AppiumBy.NAME, value="Family name")
         nameInput.send_keys("Konqi")

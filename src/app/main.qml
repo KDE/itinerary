@@ -58,7 +58,7 @@ Kirigami.ApplicationWindow {
 
     property list<Kirigami.Action> importActions: [
         Kirigami.Action {
-            text: i18n("Open File...")
+            text: i18n("Open File…")
             icon.name: "document-open"
             shortcut: StandardKey.Open
             onTriggered: {
@@ -73,7 +73,7 @@ Kirigami.ApplicationWindow {
             onTriggered: ImportController.importFromClipboard()
         },
         Kirigami.Action {
-            text: i18n("Scan Barcode...")
+            text: i18n("Scan Barcode…")
             icon.name: "view-barcode-qr"
             onTriggered: {
                 pageStack.layers.push(scanBarcodeComponent);
@@ -81,7 +81,7 @@ Kirigami.ApplicationWindow {
         },
         Kirigami.Action {
             icon.name: "view-calendar-day"
-            text: i18n("Add from Calendar...")
+            text: i18n("Add from Calendar…")
             onTriggered: {
                 PermissionManager.requestPermission(Permission.ReadCalendar, function() {
                     if (!calendarSelector.model) {
@@ -95,7 +95,7 @@ Kirigami.ApplicationWindow {
         // TODO this should not be hardcoded here, but dynamically filled based on what online ticket
         // sources we support
         Kirigami.Action {
-            text: i18n("Deutsche Bahn Online Ticket...")
+            text: i18n("Deutsche Bahn Online Ticket…")
             icon.name: "download"
             onTriggered: {
                 ImportController.enableAutoCommit = !Settings.developmentMode;
@@ -105,7 +105,7 @@ Kirigami.ApplicationWindow {
             }
         },
         Kirigami.Action {
-            text: i18n("SNCF Online Ticket...")
+            text: i18n("SNCF Online Ticket…")
             icon.name: "download"
             onTriggered: {
                 ImportController.enableAutoCommit = !Settings.developmentMode;
@@ -168,7 +168,7 @@ Kirigami.ApplicationWindow {
         isMenu: true
         actions: [
             Kirigami.Action {
-                text: i18n("Import...")
+                text: i18n("Import…")
                 icon.name: "document-import"
                 children: importActions
             },
@@ -216,14 +216,14 @@ Kirigami.ApplicationWindow {
             },
             Kirigami.Action {
                 id: settingsAction
-                text: i18n("Settings...")
+                text: i18n("Settings…")
                 icon.name: "settings-configure"
                 enabled: pageStack.layers.depth < 2
                 shortcut: StandardKey.Preferences
                 onTriggered: pageStack.layers.push(Qt.createComponent("org.kde.itinerary", "SettingsPage"))
             },
             Kirigami.Action {
-                text: i18n("Export...")
+                text: i18n("Export…")
                 icon.name: "export-symbolic"
                 onTriggered: exportDialog.open()
             },

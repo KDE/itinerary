@@ -194,7 +194,7 @@ ColumnLayout {
 
     FormCard.FormButtonDelegate {
         text: i18n("Coordinate")
-        description: !Number.isNaN(root.latitude) && !Number.isNaN(root.longitude) ? i18n("%1°, %2°", root.latitude.toFixed(2), root.longitude.toFixed(2)) : i18n("Pick...");
+        description: !Number.isNaN(root.latitude) && !Number.isNaN(root.longitude) ? i18n("%1°, %2°", root.latitude.toFixed(2), root.longitude.toFixed(2)) : i18n("Pick…");
         icon.name: "crosshairs"
         onClicked: applicationWindow().pageStack.push(locationPickerPage)
         // TODO we can autofill country/region using KCountry[Subdivision] here?

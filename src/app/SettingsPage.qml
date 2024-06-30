@@ -78,7 +78,7 @@ FormCard.FormCardPage {
 
         FormCard.FormButtonDelegate {
             Kirigami.FormData.isSection: true
-            text: i18n("Public Transport Information Sources...")
+            text: i18n("Public Transport Information Sources…")
             icon.name: "settings-configure"
             onClicked: applicationWindow().pageStack.layers.push(ptBackendPage)
         }
@@ -162,7 +162,7 @@ FormCard.FormCardPage {
     FormCard.FormCard {
         id: notificationCard
         FormCard.FormButtonDelegate {
-            text: i18n("Configure Notifications...")
+            text: i18n("Configure Notifications…")
             icon.name: "notifications"
             onClicked: NotificationConfigController.configureNotifications()
             enabled: NotificationConfigController.canConfigureNotification
@@ -181,7 +181,7 @@ FormCard.FormCardPage {
 
         property bool hasNotificationPermission: PermissionManager.checkPermission(Permission.PostNotification)
         FormCard.FormButtonDelegate {
-            text: i18n("Request permissions...")
+            text: i18n("Request permissions…")
             description: i18n("Additional permissions are required to show notifications.")
             icon.name: "documentinfo"
             icon.color: Kirigami.Theme.neutralTextColor
@@ -209,7 +209,7 @@ FormCard.FormCardPage {
     }
     FormCard.FormCard {
         FormCard.FormButtonDelegate {
-            text: i18n("Request permissions...")
+            text: i18n("Request permissions…")
             description: i18n("Additional permissions are required to access the Wi-Fi status.")
             icon.name: "documentinfo"
             icon.color: Kirigami.Theme.neutralTextColor

@@ -17,7 +17,7 @@ Kirigami.ScrollablePage {
 
     actions: [
         Kirigami.Action {
-            text: i18n("Add Program Membership...")
+            text: i18n("Add Program Membership…")
             icon.name: "list-add-symbolic"
             onTriggered: {
                 const editorComponent = Qt.createComponent("org.kde.itinerary", "ProgramMembershipEditor");
@@ -134,7 +134,7 @@ Kirigami.ScrollablePage {
             icon.name: "wallet-open"
             text: i18n("Import bonus or discount program cards or flat rate passes.")
             helpfulAction: Kirigami.Action {
-                text: i18n("Import...")
+                text: i18n("Import…")
                 icon.name: "document-open"
                 onTriggered: importFileDialog.open()
             }

@@ -87,14 +87,14 @@ Kirigami.ScrollablePage {
 
     property list<Kirigami.Action> addActions: [
         Kirigami.Action {
-            text: i18n("Add train trip...")
+            text: i18n("Add train trip…")
             icon.name: "list-add-symbolic"
             onTriggered: {
                 addTrainTrip()
             }
         },
         Kirigami.Action {
-            text: i18n("Add flight...")
+            text: i18n("Add flight…")
             icon.name: LineMode.iconName(Line.Air)
             onTriggered: {
                 const dt = dateTimeAtIndex(currentIndex());
@@ -106,7 +106,7 @@ Kirigami.ScrollablePage {
             }
         },
         Kirigami.Action {
-            text: i18n("Add ferry trip...")
+            text: i18n("Add ferry trip…")
             icon.name: LineMode.iconName(Line.Ferry)
             onTriggered: {
                 const dt = dateTimeAtIndex(currentIndex());
@@ -118,7 +118,7 @@ Kirigami.ScrollablePage {
             }
         },
         Kirigami.Action {
-            text: i18n("Add accommodation...")
+            text: i18n("Add accommodation…")
             icon.name: "go-home-symbolic"
             onTriggered: {
                 const dt = dateTimeAtIndex(currentIndex());
@@ -129,7 +129,7 @@ Kirigami.ScrollablePage {
             }
         },
         Kirigami.Action {
-            text: i18n("Add event...")
+            text: i18n("Add event…")
             icon.name: "meeting-attending"
             onTriggered: {
                 const dt = dateTimeAtIndex(currentIndex());
@@ -141,7 +141,7 @@ Kirigami.ScrollablePage {
             }
         },
         Kirigami.Action {
-            text: i18n("Add restaurant...")
+            text: i18n("Add restaurant…")
             icon.name: "qrc:///images/foodestablishment.svg"
             onTriggered: {
                 const dt = dateTimeAtIndex(currentIndex());
@@ -235,7 +235,7 @@ Kirigami.ScrollablePage {
         title: i18n("Export")
         property list<QQC2.Action> _actions: [
             Kirigami.Action {
-                text: i18n("As Itinerary file...")
+                text: i18n("As Itinerary file…")
                 icon.name: "export-symbolic"
                 onTriggered: {
                     tripGroupFileExportDialog.tripGroupId = exportTripGroupDialog.tripGroupId;
@@ -244,7 +244,7 @@ Kirigami.ScrollablePage {
                 }
             },
             Kirigami.Action {
-                text: i18n("As GPX file...")
+                text: i18n("As GPX file…")
                 icon.name: "map-globe"
                 onTriggered: {
                     tripGroupGpxExportDialog.tripGroupId = exportTripGroupDialog.tripGroupId;

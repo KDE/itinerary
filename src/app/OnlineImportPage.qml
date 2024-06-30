@@ -51,7 +51,7 @@ FormCard.FormCardPage {
 
         FormCard.FormButtonDelegate {
             id: searchButton
-            text: i18n("Search...")
+            text: i18n("Search…")
             icon.name: importer.searching ? "view-refresh" : "search"
             enabled: !importer.searching && vendorInputForm.item.arguments !== undefined
             onClicked: root.search()

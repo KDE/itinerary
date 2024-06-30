@@ -114,7 +114,7 @@ ColumnLayout {
         FormCard.FormDelegateSeparator {}
 
         FormCard.FormButtonDelegate {
-            text: i18n("Add Document...")
+            text: i18n("Add Document…")
             onClicked: addDialog.open()
         }
     }

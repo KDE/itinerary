@@ -18,11 +18,11 @@ class PassTest(ItineraryTestCase):
         self.driver.find_element(by=AppiumBy.NAME, value="Passes & Programs").click()
 
     def test_programMembership(self):
-        self.assertTrue(self.driver.find_element(by=AppiumBy.NAME, value="Import...").is_displayed())
-        self.assertTrue(self.driver.find_element(by=AppiumBy.NAME, value="Import...").is_enabled())
-        self.driver.find_element(by=AppiumBy.NAME, value="Import...").click()
+        self.assertTrue(self.driver.find_element(by=AppiumBy.NAME, value="Import…").is_displayed())
+        self.assertTrue(self.driver.find_element(by=AppiumBy.NAME, value="Import…").is_enabled())
+        self.driver.find_element(by=AppiumBy.NAME, value="Import…").click()
         self.openFile("data/bahncard.json")
-        self.assertFalse(self.driver.find_element(by=AppiumBy.NAME, value="Import...").is_displayed())
+        self.assertFalse(self.driver.find_element(by=AppiumBy.NAME, value="Import…").is_displayed())
         self.driver.find_element(by=AppiumBy.NAME, value="BahnCard 25 (2. Kl.) (BC25)").click()
         self.driver.find_element(by=AppiumBy.NAME, value="Edit").click()
 
@@ -50,7 +50,7 @@ class PassTest(ItineraryTestCase):
 
     def test_addProgramMembership(self):
         self.openContextDrawer()
-        self.driver.find_element(by=AppiumBy.NAME, value="Add Program Membership...").click()
+        self.driver.find_element(by=AppiumBy.NAME, value="Add Program Membership…").click()
         saveButton = self.driver.find_element(by=AppiumBy.NAME, value="Save")
         self.assertFalse(saveButton.is_enabled())
 

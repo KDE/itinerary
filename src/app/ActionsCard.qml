@@ -59,7 +59,7 @@ ColumnLayout {
         },
         Kirigami.Action {
             icon.name: "view-calendar-day"
-            text: i18n("Add to calendar...")
+            text: i18n("Add to calendar…")
             onTriggered: PermissionManager.requestPermission(Permission.WriteCalendar, function() {
                 if (!writableCalendars.sourceModel) {
                     writableCalendars.sourceModel = calendarModel.createObject(root);
@@ -70,7 +70,7 @@ ColumnLayout {
         },
         Kirigami.Action {
             icon.name: "export-symbolic"
-            text: i18n("Export...")
+            text: i18n("Export…")
             onTriggered: exportBatchDialog.open()
         },
         Kirigami.Action {
@@ -137,7 +137,7 @@ ColumnLayout {
         title: i18n("Export")
         property list<QQC2.Action> _actions: [
             Kirigami.Action {
-                text: i18n("As Itinerary file...")
+                text: i18n("As Itinerary file…")
                 icon.name: "export-symbolic"
                 onTriggered: batchFileExportDialog.open()
             }

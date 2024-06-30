@@ -70,7 +70,7 @@ class ItineraryTestCase(unittest.TestCase):
 
     def triggerImportAction(self, name):
         self.openGlobalDrawer()
-        self.driver.find_element(by=AppiumBy.NAME, value="Import...").click()
+        self.driver.find_element(by=AppiumBy.NAME, value="Import…").click()
         action = self.driver.find_element(by=AppiumBy.NAME, value=name)
         self.assertTrue(action.is_enabled())
         action.click()
