@@ -177,6 +177,11 @@ void LiveDataManager::checkForUpdates()
     pollForUpdates(true);
 }
 
+[[nodiscard]] static bool canSelectBackend(const KPublicTransport::Location &loc)
+{
+    return loc.hasCoordinate() || loc.country().size() == 2;
+}
+
 void LiveDataManager::checkReservation(const QVariant &res, const QString& resId)
 {
     using namespace KPublicTransport;
@@ -196,10 +201,12 @@ void LiveDataManager::checkReservation(const QVariant &res, const QString& resId
         req.setIncludePaths(true);
         req.setModes(JourneySection::PublicTransport);
         PublicTransport::selectBackends(req, m_ptMgr, res);
-        auto reply = m_ptMgr->queryJourney(req);
-        connect(reply, &Reply::finished, this, [this, resId, reply]() { journeyQueryFinished(reply, resId); });
-        m_lastPollAttempt.insert(resId, now());
-        return;
+        if (canSelectBackend(from) || canSelectBackend(to) || !req.backendIds().isEmpty()) {
+            auto reply = m_ptMgr->queryJourney(req);
+            connect(reply, &Reply::finished, this, [this, resId, reply]() { journeyQueryFinished(reply, resId); });
+            m_lastPollAttempt.insert(resId, now());
+            return;
+        }
     }
 
     if (!hasDeparted(resId, res)) {
@@ -207,9 +214,11 @@ void LiveDataManager::checkReservation(const QVariant &res, const QString& resId
         req.setMode(StopoverRequest::QueryDeparture);
         req.setDateTime(SortUtil::startDateTime(res));
         PublicTransport::selectBackends(req, m_ptMgr, res);
-        auto reply = m_ptMgr->queryStopover(req);
-        connect(reply, &Reply::finished, this, [this, resId, reply]() { stopoverQueryFinished(reply, LiveData::Departure, resId); });
-        m_lastPollAttempt.insert(resId, now());
+        if (canSelectBackend(req.stop()) || !req.backendIds().isEmpty()) {
+            auto reply = m_ptMgr->queryStopover(req);
+            connect(reply, &Reply::finished, this, [this, resId, reply]() { stopoverQueryFinished(reply, LiveData::Departure, resId); });
+            m_lastPollAttempt.insert(resId, now());
+        }
     }
 
     if (!arrived) {
@@ -217,9 +226,11 @@ void LiveDataManager::checkReservation(const QVariant &res, const QString& resId
         req.setMode(StopoverRequest::QueryArrival);
         req.setDateTime(SortUtil::endDateTime(res));
         PublicTransport::selectBackends(req, m_ptMgr, res);
-        auto reply = m_ptMgr->queryStopover(req);
-        connect(reply, &Reply::finished, this, [this, resId, reply]() { stopoverQueryFinished(reply, LiveData::Arrival, resId); });
-        m_lastPollAttempt.insert(resId, now());
+        if (canSelectBackend(req.stop()) || !req.backendIds().isEmpty()) {
+            auto reply = m_ptMgr->queryStopover(req);
+            connect(reply, &Reply::finished, this, [this, resId, reply]() { stopoverQueryFinished(reply, LiveData::Arrival, resId); });
+            m_lastPollAttempt.insert(resId, now());
+        }
     }
 }
 
