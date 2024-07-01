@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-24 00:38+0000\n"
+"POT-Creation-Date: 2024-07-01 00:39+0000\n"
 "PO-Revision-Date: 2024-02-09 23:07+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -119,14 +119,16 @@ msgid "Edit"
 msgstr "Изменить"
 
 #: app/ActionsCard.qml:62
-#, kde-format
-msgid "Add to calendar..."
+#, fuzzy, kde-format
+#| msgid "Add to calendar..."
+msgid "Add to calendar…"
 msgstr "Добавить в календарь..."
 
-#: app/ActionsCard.qml:73 app/main.qml:226
-#, kde-format
-msgid "Export..."
-msgstr "Экспорт…"
+#: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:175
+#, fuzzy, kde-format
+#| msgid "Export"
+msgid "Export…"
+msgstr "Экспорт"
 
 #: app/ActionsCard.qml:78 app/ActionsCard.qml:124 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
@@ -155,7 +157,7 @@ msgstr "Экспорт"
 #: app/ActionsCard.qml:140 app/TimelinePage.qml:238
 #, fuzzy, kde-format
 #| msgid "My Itinerary"
-msgid "As Itinerary file..."
+msgid "As Itinerary file…"
 msgstr "Мой маршрут"
 
 #: app/ActionsCard.qml:151 app/TimelinePage.qml:262
@@ -823,9 +825,10 @@ msgid "No documents attached to this reservation."
 msgstr "К этому бронированию не добавлены никакие документы."
 
 #: app/DocumentsCard.qml:117
-#, kde-format
-msgid "Add Document..."
-msgstr "Добавить документ..."
+#, fuzzy, kde-format
+#| msgid "Add Document"
+msgid "Add Document…"
+msgstr "Добавить документ"
 
 #: app/downloadjob.cpp:146
 #, kde-format
@@ -1304,8 +1307,8 @@ msgstr "%1°, %2°"
 
 #: app/FormPlaceEditorDelegate.qml:197
 #, kde-format
-msgid "Pick..."
-msgstr "Выбрать…"
+msgid "Pick…"
+msgstr ""
 
 #: app/FormPlaceEditorDelegate.qml:215
 #, kde-format
@@ -2198,12 +2201,12 @@ msgstr[3] "Одна смена"
 msgid "Click to extend"
 msgstr "Нажмите для расширения"
 
-#: app/livedatamanager.cpp:779
+#: app/livedatamanager.cpp:790
 #, kde-format
 msgid "Flight %1 to %2:"
 msgstr "Рейс из %1 в %2:"
 
-#: app/livedatamanager.cpp:785
+#: app/livedatamanager.cpp:796
 #, kde-format
 msgid "Itinerary change"
 msgstr "Изменение маршрута"
@@ -2240,8 +2243,9 @@ msgid "Automatically follow on the map"
 msgstr "Автоматически следовать по карте"
 
 #: app/LiveStatusPage.qml:180 app/LiveStatusPage.qml:192
-#, kde-format
-msgid "Waiting for data..."
+#, fuzzy, kde-format
+#| msgid "Waiting for data..."
+msgid "Waiting for data…"
 msgstr "Ожидание данных..."
 
 #: app/LiveStatusPage.qml:204
@@ -2439,8 +2443,9 @@ msgid "Files or URLs to import."
 msgstr ""
 
 #: app/main.qml:61
-#, kde-format
-msgid "Open File..."
+#, fuzzy, kde-format
+#| msgid "Open File..."
+msgid "Open File…"
 msgstr "Открыть файл..."
 
 #: app/main.qml:69 app/TicketTokenEditorCard.qml:129
@@ -2449,23 +2454,27 @@ msgid "Paste"
 msgstr "Вставить"
 
 #: app/main.qml:76
-#, kde-format
-msgid "Scan Barcode..."
-msgstr "Сканировать штрихкод..."
+#, fuzzy, kde-format
+#| msgid "Scan Barcode"
+msgid "Scan Barcode…"
+msgstr "Сканировать штрихкод"
 
 #: app/main.qml:84
-#, kde-format
-msgid "Add from Calendar..."
+#, fuzzy, kde-format
+#| msgid "Add from Calendar..."
+msgid "Add from Calendar…"
 msgstr "Добавить из календаря…"
 
 #: app/main.qml:98
-#, kde-format
-msgid "Deutsche Bahn Online Ticket..."
+#, fuzzy, kde-format
+#| msgid "Deutsche Bahn Online Ticket..."
+msgid "Deutsche Bahn Online Ticket…"
 msgstr "Онлайн-билет Deutsche Bahn…"
 
 #: app/main.qml:108
-#, kde-format
-msgid "SNCF Online Ticket..."
+#, fuzzy, kde-format
+#| msgid "SNCF Online Ticket..."
+msgid "SNCF Online Ticket…"
 msgstr "Онлайн-билет SNCF…"
 
 #: app/main.qml:122
@@ -2499,8 +2508,9 @@ msgid "Export Itinerary Data"
 msgstr "Экспорт данных маршрута"
 
 #: app/main.qml:171 app/PassPage.qml:137
-#, kde-format
-msgid "Import..."
+#, fuzzy, kde-format
+#| msgid "Import..."
+msgid "Import…"
 msgstr "Импорт…"
 
 #: app/main.qml:176
@@ -2519,9 +2529,10 @@ msgid "Statistics"
 msgstr "Статистика"
 
 #: app/main.qml:219 app/WelcomePage.qml:41
-#, kde-format
-msgid "Settings..."
-msgstr "Параметры…"
+#, fuzzy, kde-format
+#| msgid "Settings"
+msgid "Settings…"
+msgstr "Параметры"
 
 #: app/main.qml:231 app/WelcomePage.qml:16
 #, kde-format
@@ -2712,8 +2723,9 @@ msgid "Online Ticket"
 msgstr "Онлайн-билет"
 
 #: app/OnlineImportPage.qml:54
-#, kde-format
-msgid "Search..."
+#, fuzzy, kde-format
+#| msgid "Search..."
+msgid "Search…"
 msgstr "Поиск…"
 
 #: app/passmanager.cpp:251
@@ -2747,7 +2759,7 @@ msgstr "Пропуска и программы"
 #: app/PassPage.qml:20
 #, fuzzy, kde-format
 #| msgid "Program Membership"
-msgid "Add Program Membership..."
+msgid "Add Program Membership…"
 msgstr "Участие в программе"
 
 #: app/PassPage.qml:52
@@ -3063,9 +3075,10 @@ msgstr ""
 "некоторых компаний."
 
 #: app/SettingsPage.qml:81
-#, kde-format
-msgid "Public Transport Information Sources..."
-msgstr "Источники данных об общественном транспорте…"
+#, fuzzy, kde-format
+#| msgid "Public Transport Information Sources"
+msgid "Public Transport Information Sources…"
+msgstr "Источники данных об общественном транспорте"
 
 #: app/SettingsPage.qml:90 app/WeatherForecastDelegate.qml:83
 #: app/WeatherForecastPage.qml:19
@@ -3159,8 +3172,9 @@ msgid "Notifications"
 msgstr "Уведомления"
 
 #: app/SettingsPage.qml:165
-#, kde-format
-msgid "Configure Notifications..."
+#, fuzzy, kde-format
+#| msgid "Configure Notifications..."
+msgid "Configure Notifications…"
 msgstr "Настроить уведомления…"
 
 #: app/SettingsPage.qml:174
@@ -3169,8 +3183,9 @@ msgid "Show notifications on lock screen"
 msgstr "Показывать уведомления на экране блокировки"
 
 #: app/SettingsPage.qml:184 app/SettingsPage.qml:212
-#, kde-format
-msgid "Request permissions..."
+#, fuzzy, kde-format
+#| msgid "Request permissions..."
+msgid "Request permissions…"
 msgstr "Запрос прав доступа..."
 
 #: app/SettingsPage.qml:185
@@ -3460,37 +3475,39 @@ msgid "My Itinerary"
 msgstr "Мой маршрут"
 
 #: app/TimelinePage.qml:90
-#, kde-format
-msgid "Add train trip..."
+#, fuzzy, kde-format
+#| msgid "Add train trip..."
+msgid "Add train trip…"
 msgstr "Добавить поездку на поезде…"
 
 #: app/TimelinePage.qml:97
 #, fuzzy, kde-format
 #| msgid "Add Document..."
-msgid "Add flight..."
+msgid "Add flight…"
 msgstr "Добавить документ..."
 
 #: app/TimelinePage.qml:109
 #, fuzzy, kde-format
 #| msgid "Add train trip..."
-msgid "Add ferry trip..."
+msgid "Add ferry trip…"
 msgstr "Добавить поездку на поезде…"
 
 #: app/TimelinePage.qml:121
-#, kde-format
-msgid "Add accommodation..."
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Application"
+msgid "Add accommodation…"
+msgstr "Приложение"
 
 #: app/TimelinePage.qml:132
 #, fuzzy, kde-format
 #| msgid "Add Document..."
-msgid "Add event..."
+msgid "Add event…"
 msgstr "Добавить документ..."
 
 #: app/TimelinePage.qml:144
 #, fuzzy, kde-format
 #| msgid "Add train trip..."
-msgid "Add restaurant..."
+msgid "Add restaurant…"
 msgstr "Добавить поездку на поезде…"
 
 #: app/TimelinePage.qml:166
@@ -3526,7 +3543,7 @@ msgstr "Удалить эту поездку?"
 
 #: app/TimelinePage.qml:247
 #, kde-format
-msgid "As GPX file..."
+msgid "As GPX file…"
 msgstr ""
 
 #: app/TimelinePage.qml:277 app/TimelinePage.qml:294
@@ -3797,12 +3814,6 @@ msgstr[3] "Валюта: %2"
 msgid "Edit…"
 msgstr "Изменить"
 
-#: app/TripGroupDelegate.qml:175
-#, fuzzy, kde-format
-#| msgid "Export"
-msgid "Export…"
-msgstr "Экспорт"
-
 #: app/TripGroupDelegate.qml:183
 #, kde-format
 msgid "Delete trip"
@@ -4042,6 +4053,27 @@ msgstr "Вход в систему"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 из %3 в %4 %5"
+
+#~ msgid "Export..."
+#~ msgstr "Экспорт…"
+
+#~ msgid "Add Document..."
+#~ msgstr "Добавить документ..."
+
+#~ msgid "Pick..."
+#~ msgstr "Выбрать…"
+
+#~ msgid "Scan Barcode..."
+#~ msgstr "Сканировать штрихкод..."
+
+#~ msgid "Import..."
+#~ msgstr "Импорт…"
+
+#~ msgid "Settings..."
+#~ msgstr "Параметры…"
+
+#~ msgid "Public Transport Information Sources..."
+#~ msgstr "Источники данных об общественном транспорте…"
 
 #~ msgid "Pass imported."
 #~ msgstr "Пропуск импортирован."

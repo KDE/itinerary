@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-24 00:38+0000\n"
+"POT-Creation-Date: 2024-07-01 00:39+0000\n"
 "PO-Revision-Date: 2024-04-19 23:02+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -119,14 +119,16 @@ msgid "Edit"
 msgstr "Editatu"
 
 #: app/ActionsCard.qml:62
-#, kde-format
-msgid "Add to calendar..."
+#, fuzzy, kde-format
+#| msgid "Add to calendar..."
+msgid "Add to calendar…"
 msgstr "Gehitu egutegira..."
 
-#: app/ActionsCard.qml:73 app/main.qml:226
-#, kde-format
-msgid "Export..."
-msgstr "Esportatu..."
+#: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:175
+#, fuzzy, kde-format
+#| msgid "Export"
+msgid "Export…"
+msgstr "Esportatu"
 
 #: app/ActionsCard.qml:78 app/ActionsCard.qml:124 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
@@ -153,8 +155,9 @@ msgid "Export"
 msgstr "Esportatu"
 
 #: app/ActionsCard.qml:140 app/TimelinePage.qml:238
-#, kde-format
-msgid "As Itinerary file..."
+#, fuzzy, kde-format
+#| msgid "As Itinerary file..."
+msgid "As Itinerary file…"
 msgstr "«Itinerary» fitxategia gisa..."
 
 #: app/ActionsCard.qml:151 app/TimelinePage.qml:262
@@ -804,9 +807,10 @@ msgid "No documents attached to this reservation."
 msgstr "Ez dago erantsita dokumenturik erreserba honetan."
 
 #: app/DocumentsCard.qml:117
-#, kde-format
-msgid "Add Document..."
-msgstr "Gehitu dokumentua..."
+#, fuzzy, kde-format
+#| msgid "Add Document"
+msgid "Add Document…"
+msgstr "Gehitu dokumentua"
 
 #: app/downloadjob.cpp:146
 #, kde-format
@@ -1281,8 +1285,8 @@ msgstr "%1°, %2°"
 
 #: app/FormPlaceEditorDelegate.qml:197
 #, kde-format
-msgid "Pick..."
-msgstr "Aukeratu..."
+msgid "Pick…"
+msgstr ""
 
 #: app/FormPlaceEditorDelegate.qml:215
 #, kde-format
@@ -2164,12 +2168,12 @@ msgstr[1] "%1 aldaketa"
 msgid "Click to extend"
 msgstr "Egin klik zabaltzeko"
 
-#: app/livedatamanager.cpp:779
+#: app/livedatamanager.cpp:790
 #, kde-format
 msgid "Flight %1 to %2:"
 msgstr "%1 hegaldia %2(e)ra:"
 
-#: app/livedatamanager.cpp:785
+#: app/livedatamanager.cpp:796
 #, kde-format
 msgid "Itinerary change"
 msgstr "Ibilbide aldaketa"
@@ -2206,8 +2210,9 @@ msgid "Automatically follow on the map"
 msgstr "Mapan automatikoki jarraitzea"
 
 #: app/LiveStatusPage.qml:180 app/LiveStatusPage.qml:192
-#, kde-format
-msgid "Waiting for data..."
+#, fuzzy, kde-format
+#| msgid "Waiting for data..."
+msgid "Waiting for data…"
 msgstr "Datuen zain..."
 
 #: app/LiveStatusPage.qml:204
@@ -2400,8 +2405,9 @@ msgid "Files or URLs to import."
 msgstr "Inportatu beharreko fitxategiak edo URLak."
 
 #: app/main.qml:61
-#, kde-format
-msgid "Open File..."
+#, fuzzy, kde-format
+#| msgid "Open File..."
+msgid "Open File…"
 msgstr "Ireki fitxategia..."
 
 #: app/main.qml:69 app/TicketTokenEditorCard.qml:129
@@ -2410,23 +2416,27 @@ msgid "Paste"
 msgstr "Itsatsi"
 
 #: app/main.qml:76
-#, kde-format
-msgid "Scan Barcode..."
+#, fuzzy, kde-format
+#| msgid "Scan barcode…"
+msgid "Scan Barcode…"
 msgstr "Eskaneatu barra-kodea..."
 
 #: app/main.qml:84
-#, kde-format
-msgid "Add from Calendar..."
+#, fuzzy, kde-format
+#| msgid "Add from Calendar..."
+msgid "Add from Calendar…"
 msgstr "Gehitu egutegitik..."
 
 #: app/main.qml:98
-#, kde-format
-msgid "Deutsche Bahn Online Ticket..."
+#, fuzzy, kde-format
+#| msgid "Deutsche Bahn Online Ticket..."
+msgid "Deutsche Bahn Online Ticket…"
 msgstr "«Deutsche Bahn»en lerroko txartela..."
 
 #: app/main.qml:108
-#, kde-format
-msgid "SNCF Online Ticket..."
+#, fuzzy, kde-format
+#| msgid "SNCF Online Ticket..."
+msgid "SNCF Online Ticket…"
 msgstr "SNCFren lerroko txartela..."
 
 #: app/main.qml:122
@@ -2460,8 +2470,9 @@ msgid "Export Itinerary Data"
 msgstr "Esportatu ibilbidearen datuak"
 
 #: app/main.qml:171 app/PassPage.qml:137
-#, kde-format
-msgid "Import..."
+#, fuzzy, kde-format
+#| msgid "Import..."
+msgid "Import…"
 msgstr "Inportatu..."
 
 #: app/main.qml:176
@@ -2480,9 +2491,10 @@ msgid "Statistics"
 msgstr "Estatistikak"
 
 #: app/main.qml:219 app/WelcomePage.qml:41
-#, kde-format
-msgid "Settings..."
-msgstr "Ezarpenak..."
+#, fuzzy, kde-format
+#| msgid "Settings"
+msgid "Settings…"
+msgstr "Ezarpenak"
 
 #: app/main.qml:231 app/WelcomePage.qml:16
 #, kde-format
@@ -2668,8 +2680,9 @@ msgid "Online Ticket"
 msgstr "Lerroko txartela"
 
 #: app/OnlineImportPage.qml:54
-#, kde-format
-msgid "Search..."
+#, fuzzy, kde-format
+#| msgid "Search..."
+msgid "Search…"
 msgstr "Bilatu..."
 
 #: app/passmanager.cpp:251
@@ -2701,8 +2714,9 @@ msgid "Passes and Programs"
 msgstr "Sarrerak eta programak"
 
 #: app/PassPage.qml:20
-#, kde-format
-msgid "Add Program Membership..."
+#, fuzzy, kde-format
+#| msgid "Add Program Membership..."
+msgid "Add Program Membership…"
 msgstr "Gehitu programa partaidetza..."
 
 #: app/PassPage.qml:52
@@ -3005,9 +3019,10 @@ msgstr ""
 "hornitzaile jakin batzuen zuzeneko datuen beharra dagoenean."
 
 #: app/SettingsPage.qml:81
-#, kde-format
-msgid "Public Transport Information Sources..."
-msgstr "Garraio publikoko informazio iturriak..."
+#, fuzzy, kde-format
+#| msgid "Public Transport Information Sources"
+msgid "Public Transport Information Sources…"
+msgstr "Garraio publikoko informazio iturriak"
 
 #: app/SettingsPage.qml:90 app/WeatherForecastDelegate.qml:83
 #: app/WeatherForecastPage.qml:19
@@ -3099,8 +3114,9 @@ msgid "Notifications"
 msgstr "Jakinarazpenak"
 
 #: app/SettingsPage.qml:165
-#, kde-format
-msgid "Configure Notifications..."
+#, fuzzy, kde-format
+#| msgid "Configure Notifications..."
+msgid "Configure Notifications…"
 msgstr "Konfiguratu jakinarazpenak..."
 
 #: app/SettingsPage.qml:174
@@ -3109,8 +3125,9 @@ msgid "Show notifications on lock screen"
 msgstr "Erakutsi jakinarazpenak giltzatutako pantailan"
 
 #: app/SettingsPage.qml:184 app/SettingsPage.qml:212
-#, kde-format
-msgid "Request permissions..."
+#, fuzzy, kde-format
+#| msgid "Request permissions..."
+msgid "Request permissions…"
 msgstr "Eskatu baimenak..."
 
 #: app/SettingsPage.qml:185
@@ -3395,34 +3412,39 @@ msgid "My Itinerary"
 msgstr "Nire ibilbidea"
 
 #: app/TimelinePage.qml:90
-#, kde-format
-msgid "Add train trip..."
+#, fuzzy, kde-format
+#| msgid "Add train trip..."
+msgid "Add train trip…"
 msgstr "Gehitu tren txangoa..."
 
 #: app/TimelinePage.qml:97
 #, fuzzy, kde-format
 #| msgid "Add event..."
-msgid "Add flight..."
+msgid "Add flight…"
 msgstr "Gehitu ekitaldia..."
 
 #: app/TimelinePage.qml:109
-#, kde-format
-msgid "Add ferry trip..."
+#, fuzzy, kde-format
+#| msgid "Add ferry trip..."
+msgid "Add ferry trip…"
 msgstr "Gehitu ferry txangoa..."
 
 #: app/TimelinePage.qml:121
-#, kde-format
-msgid "Add accommodation..."
+#, fuzzy, kde-format
+#| msgid "Add accommodation..."
+msgid "Add accommodation…"
 msgstr "Gehitu ostatua..."
 
 #: app/TimelinePage.qml:132
-#, kde-format
-msgid "Add event..."
+#, fuzzy, kde-format
+#| msgid "Add event..."
+msgid "Add event…"
 msgstr "Gehitu ekitaldia..."
 
 #: app/TimelinePage.qml:144
-#, kde-format
-msgid "Add restaurant..."
+#, fuzzy, kde-format
+#| msgid "Add restaurant..."
+msgid "Add restaurant…"
 msgstr "Gehitu jatetxea..."
 
 #: app/TimelinePage.qml:166
@@ -3454,8 +3476,9 @@ msgid "Do you really want to delete this trip?"
 msgstr "Txango hori benetan ezabatu nahi duzu?"
 
 #: app/TimelinePage.qml:247
-#, kde-format
-msgid "As GPX file..."
+#, fuzzy, kde-format
+#| msgid "As GPX file..."
+msgid "As GPX file…"
 msgstr "GPX fitxategi gisa..."
 
 #: app/TimelinePage.qml:277 app/TimelinePage.qml:294
@@ -3721,12 +3744,6 @@ msgstr[1] "Dibisak: %2"
 msgid "Edit…"
 msgstr "Editatu"
 
-#: app/TripGroupDelegate.qml:175
-#, fuzzy, kde-format
-#| msgid "Export"
-msgid "Export…"
-msgstr "Esportatu"
-
 #: app/TripGroupDelegate.qml:183
 #, kde-format
 msgid "Delete trip"
@@ -3956,6 +3973,27 @@ msgstr "Saioa hasten"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 %3(e)tik %4(e)ra %5(e)an"
+
+#~ msgid "Export..."
+#~ msgstr "Esportatu..."
+
+#~ msgid "Add Document..."
+#~ msgstr "Gehitu dokumentua..."
+
+#~ msgid "Pick..."
+#~ msgstr "Aukeratu..."
+
+#~ msgid "Scan Barcode..."
+#~ msgstr "Eskaneatu barra-kodea..."
+
+#~ msgid "Import..."
+#~ msgstr "Inportatu..."
+
+#~ msgid "Settings..."
+#~ msgstr "Ezarpenak..."
+
+#~ msgid "Public Transport Information Sources..."
+#~ msgstr "Garraio publikoko informazio iturriak..."
 
 #, fuzzy
 #~| msgid "Find Amenity"

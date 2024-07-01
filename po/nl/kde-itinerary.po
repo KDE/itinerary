@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-24 00:38+0000\n"
+"POT-Creation-Date: 2024-07-01 00:39+0000\n"
 "PO-Revision-Date: 2024-06-15 10:18+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -115,14 +115,15 @@ msgid "Edit"
 msgstr "Bewerken"
 
 #: app/ActionsCard.qml:62
-#, kde-format
-msgid "Add to calendar..."
+#, fuzzy, kde-format
+#| msgid "Add to calendar..."
+msgid "Add to calendar…"
 msgstr "Aan agenda toevoegen..."
 
-#: app/ActionsCard.qml:73 app/main.qml:226
+#: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:175
 #, kde-format
-msgid "Export..."
-msgstr "Exporteren..."
+msgid "Export…"
+msgstr "Exporteren…"
 
 #: app/ActionsCard.qml:78 app/ActionsCard.qml:124 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
@@ -149,8 +150,9 @@ msgid "Export"
 msgstr "Exporteren"
 
 #: app/ActionsCard.qml:140 app/TimelinePage.qml:238
-#, kde-format
-msgid "As Itinerary file..."
+#, fuzzy, kde-format
+#| msgid "As Itinerary file..."
+msgid "As Itinerary file…"
 msgstr "Als reisroutebestand"
 
 #: app/ActionsCard.qml:151 app/TimelinePage.qml:262
@@ -798,9 +800,10 @@ msgid "No documents attached to this reservation."
 msgstr "Geen documenten bij deze reservering bijgesloten."
 
 #: app/DocumentsCard.qml:117
-#, kde-format
-msgid "Add Document..."
-msgstr "Document toevoegen..."
+#, fuzzy, kde-format
+#| msgid "Add Document"
+msgid "Add Document…"
+msgstr "Document toevoegen"
 
 #: app/downloadjob.cpp:146
 #, kde-format
@@ -1266,8 +1269,8 @@ msgstr "%1°, %2°"
 
 #: app/FormPlaceEditorDelegate.qml:197
 #, kde-format
-msgid "Pick..."
-msgstr "Kiezen..."
+msgid "Pick…"
+msgstr ""
 
 #: app/FormPlaceEditorDelegate.qml:215
 #, kde-format
@@ -2138,12 +2141,12 @@ msgstr[1] "%1 keer overstappen"
 msgid "Click to extend"
 msgstr "Klik om uit te breiden"
 
-#: app/livedatamanager.cpp:779
+#: app/livedatamanager.cpp:790
 #, kde-format
 msgid "Flight %1 to %2:"
 msgstr "Vlucht %1 naar %2:"
 
-#: app/livedatamanager.cpp:785
+#: app/livedatamanager.cpp:796
 #, kde-format
 msgid "Itinerary change"
 msgstr "Wijziging van reisroute"
@@ -2180,8 +2183,9 @@ msgid "Automatically follow on the map"
 msgstr "Automatisch volgen op de kaart"
 
 #: app/LiveStatusPage.qml:180 app/LiveStatusPage.qml:192
-#, kde-format
-msgid "Waiting for data..."
+#, fuzzy, kde-format
+#| msgid "Waiting for data..."
+msgid "Waiting for data…"
 msgstr "Wachten op gegevens..."
 
 #: app/LiveStatusPage.qml:204
@@ -2372,8 +2376,9 @@ msgid "Files or URLs to import."
 msgstr "Te importeren bestanden of URL's."
 
 #: app/main.qml:61
-#, kde-format
-msgid "Open File..."
+#, fuzzy, kde-format
+#| msgid "Open File..."
+msgid "Open File…"
 msgstr "Bestand openen..."
 
 #: app/main.qml:69 app/TicketTokenEditorCard.qml:129
@@ -2382,23 +2387,27 @@ msgid "Paste"
 msgstr "Plakken"
 
 #: app/main.qml:76
-#, kde-format
-msgid "Scan Barcode..."
-msgstr "Barcode scannen..."
+#, fuzzy, kde-format
+#| msgid "Scan barcode…"
+msgid "Scan Barcode…"
+msgstr "Barcode scannen…"
 
 #: app/main.qml:84
-#, kde-format
-msgid "Add from Calendar..."
+#, fuzzy, kde-format
+#| msgid "Add from Calendar..."
+msgid "Add from Calendar…"
 msgstr "Uit agenda toevoegen..."
 
 #: app/main.qml:98
-#, kde-format
-msgid "Deutsche Bahn Online Ticket..."
+#, fuzzy, kde-format
+#| msgid "Deutsche Bahn Online Ticket..."
+msgid "Deutsche Bahn Online Ticket…"
 msgstr "Online-ticket van Deutsche Bahn..."
 
 #: app/main.qml:108
-#, kde-format
-msgid "SNCF Online Ticket..."
+#, fuzzy, kde-format
+#| msgid "SNCF Online Ticket..."
+msgid "SNCF Online Ticket…"
 msgstr "Online-ticket van SNCF..."
 
 #: app/main.qml:122
@@ -2432,9 +2441,11 @@ msgid "Export Itinerary Data"
 msgstr "Itinerary-gegevens exporteren"
 
 #: app/main.qml:171 app/PassPage.qml:137
-#, kde-format
-msgid "Import..."
-msgstr "Importeren..."
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Import"
+msgid "Import…"
+msgstr "Importeren"
 
 #: app/main.qml:176
 #, kde-format
@@ -2452,9 +2463,10 @@ msgid "Statistics"
 msgstr "Statistieken"
 
 #: app/main.qml:219 app/WelcomePage.qml:41
-#, kde-format
-msgid "Settings..."
-msgstr "Instellingen..."
+#, fuzzy, kde-format
+#| msgid "Settings"
+msgid "Settings…"
+msgstr "Instellingen"
 
 #: app/main.qml:231 app/WelcomePage.qml:16
 #, kde-format
@@ -2639,8 +2651,9 @@ msgid "Online Ticket"
 msgstr "Online-ticket"
 
 #: app/OnlineImportPage.qml:54
-#, kde-format
-msgid "Search..."
+#, fuzzy, kde-format
+#| msgid "Search..."
+msgid "Search…"
 msgstr "Zoeken..."
 
 #: app/passmanager.cpp:251
@@ -2672,8 +2685,9 @@ msgid "Passes and Programs"
 msgstr "Passen en programma's"
 
 #: app/PassPage.qml:20
-#, kde-format
-msgid "Add Program Membership..."
+#, fuzzy, kde-format
+#| msgid "Add Program Membership..."
+msgid "Add Program Membership…"
 msgstr "Lidmaatschap van programma toevoegen..."
 
 #: app/PassPage.qml:52
@@ -2976,9 +2990,10 @@ msgstr ""
 "leveranciers."
 
 #: app/SettingsPage.qml:81
-#, kde-format
-msgid "Public Transport Information Sources..."
-msgstr "Bronnen met informatie over openbaar vervoer..."
+#, fuzzy, kde-format
+#| msgid "Public Transport Information Sources"
+msgid "Public Transport Information Sources…"
+msgstr "Bronnen met informatie over openbaar vervoer"
 
 #: app/SettingsPage.qml:90 app/WeatherForecastDelegate.qml:83
 #: app/WeatherForecastPage.qml:19
@@ -3071,8 +3086,9 @@ msgid "Notifications"
 msgstr "Meldingen"
 
 #: app/SettingsPage.qml:165
-#, kde-format
-msgid "Configure Notifications..."
+#, fuzzy, kde-format
+#| msgid "Configure Notifications..."
+msgid "Configure Notifications…"
 msgstr "Meldingen configureren..."
 
 #: app/SettingsPage.qml:174
@@ -3081,8 +3097,9 @@ msgid "Show notifications on lock screen"
 msgstr "Meldingen op vergrendeld scherm tonen"
 
 #: app/SettingsPage.qml:184 app/SettingsPage.qml:212
-#, kde-format
-msgid "Request permissions..."
+#, fuzzy, kde-format
+#| msgid "Request permissions..."
+msgid "Request permissions…"
 msgstr "Toegangsrechten verzoeken.."
 
 #: app/SettingsPage.qml:185
@@ -3369,33 +3386,39 @@ msgid "My Itinerary"
 msgstr "Mijn reisroute"
 
 #: app/TimelinePage.qml:90
-#, kde-format
-msgid "Add train trip..."
+#, fuzzy, kde-format
+#| msgid "Add train trip..."
+msgid "Add train trip…"
 msgstr "Treinreis toevoegen..."
 
 #: app/TimelinePage.qml:97
-#, kde-format
-msgid "Add flight..."
+#, fuzzy, kde-format
+#| msgid "Add flight..."
+msgid "Add flight…"
 msgstr "Vlucht toevoegen..."
 
 #: app/TimelinePage.qml:109
-#, kde-format
-msgid "Add ferry trip..."
+#, fuzzy, kde-format
+#| msgid "Add ferry trip..."
+msgid "Add ferry trip…"
 msgstr "Reis met veerboot toevoegen..."
 
 #: app/TimelinePage.qml:121
-#, kde-format
-msgid "Add accommodation..."
+#, fuzzy, kde-format
+#| msgid "Add accommodation..."
+msgid "Add accommodation…"
 msgstr "Accommodatie toevoegen..."
 
 #: app/TimelinePage.qml:132
-#, kde-format
-msgid "Add event..."
+#, fuzzy, kde-format
+#| msgid "Add event..."
+msgid "Add event…"
 msgstr "Gebeurtenis toevoegen..."
 
 #: app/TimelinePage.qml:144
-#, kde-format
-msgid "Add restaurant..."
+#, fuzzy, kde-format
+#| msgid "Add restaurant..."
+msgid "Add restaurant…"
 msgstr "Restaurant toevoegen..."
 
 #: app/TimelinePage.qml:166
@@ -3427,8 +3450,9 @@ msgid "Do you really want to delete this trip?"
 msgstr "Wilt u deze reis verwijderen?"
 
 #: app/TimelinePage.qml:247
-#, kde-format
-msgid "As GPX file..."
+#, fuzzy, kde-format
+#| msgid "As GPX file..."
+msgid "As GPX file…"
 msgstr "Als GPX-bestand..."
 
 #: app/TimelinePage.qml:277 app/TimelinePage.qml:294
@@ -3693,11 +3717,6 @@ msgstr[1] "Valuta's: %2"
 msgid "Edit…"
 msgstr "Bewerken…"
 
-#: app/TripGroupDelegate.qml:175
-#, kde-format
-msgid "Export…"
-msgstr "Exporteren…"
-
 #: app/TripGroupDelegate.qml:183
 #, kde-format
 msgid "Delete trip"
@@ -3921,6 +3940,27 @@ msgstr "Bezig met aanmelden"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 van %3 naar %4 op %5"
+
+#~ msgid "Export..."
+#~ msgstr "Exporteren..."
+
+#~ msgid "Add Document..."
+#~ msgstr "Document toevoegen..."
+
+#~ msgid "Pick..."
+#~ msgstr "Kiezen..."
+
+#~ msgid "Scan Barcode..."
+#~ msgstr "Barcode scannen..."
+
+#~ msgid "Import..."
+#~ msgstr "Importeren..."
+
+#~ msgid "Settings..."
+#~ msgstr "Instellingen..."
+
+#~ msgid "Public Transport Information Sources..."
+#~ msgstr "Bronnen met informatie over openbaar vervoer..."
 
 #~ msgctxt "@title"
 #~ msgid "Find Amenity"

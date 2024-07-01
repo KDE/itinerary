@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-24 00:38+0000\n"
+"POT-Creation-Date: 2024-07-01 00:39+0000\n"
 "PO-Revision-Date: 2024-02-27 13:39+0200\n"
 "Last-Translator: Kimmo Kujansuu <mrkujansuu@gmail.com>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -114,14 +114,16 @@ msgid "Edit"
 msgstr "Muokkaa"
 
 #: app/ActionsCard.qml:62
-#, kde-format
-msgid "Add to calendar..."
+#, fuzzy, kde-format
+#| msgid "Add to calendar..."
+msgid "Add to calendar…"
 msgstr "Lisää kalenteriin…"
 
-#: app/ActionsCard.qml:73 app/main.qml:226
-#, kde-format
-msgid "Export..."
-msgstr "Vie…"
+#: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:175
+#, fuzzy, kde-format
+#| msgid "Export"
+msgid "Export…"
+msgstr "Vie"
 
 #: app/ActionsCard.qml:78 app/ActionsCard.qml:124 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
@@ -148,8 +150,9 @@ msgid "Export"
 msgstr "Vie"
 
 #: app/ActionsCard.qml:140 app/TimelinePage.qml:238
-#, kde-format
-msgid "As Itinerary file..."
+#, fuzzy, kde-format
+#| msgid "As Itinerary file..."
+msgid "As Itinerary file…"
 msgstr "Itinerary-tiedostoksi…"
 
 #: app/ActionsCard.qml:151 app/TimelinePage.qml:262
@@ -797,9 +800,10 @@ msgid "No documents attached to this reservation."
 msgstr "Tähän varaukseen ei ole liitetty asiakirjoja."
 
 #: app/DocumentsCard.qml:117
-#, kde-format
-msgid "Add Document..."
-msgstr "Lisää asiakirja…"
+#, fuzzy, kde-format
+#| msgid "Add Document"
+msgid "Add Document…"
+msgstr "Lisää asiakirja"
 
 #: app/downloadjob.cpp:146
 #, kde-format
@@ -1274,8 +1278,8 @@ msgstr "%1°, %2°"
 
 #: app/FormPlaceEditorDelegate.qml:197
 #, kde-format
-msgid "Pick..."
-msgstr "Valitse…"
+msgid "Pick…"
+msgstr ""
 
 #: app/FormPlaceEditorDelegate.qml:215
 #, kde-format
@@ -2157,12 +2161,12 @@ msgstr[1] "%1 vaihtoa"
 msgid "Click to extend"
 msgstr "Laajenna napsauttamalla"
 
-#: app/livedatamanager.cpp:779
+#: app/livedatamanager.cpp:790
 #, kde-format
 msgid "Flight %1 to %2:"
 msgstr "Lento %1–%2:"
 
-#: app/livedatamanager.cpp:785
+#: app/livedatamanager.cpp:796
 #, kde-format
 msgid "Itinerary change"
 msgstr "Matkasuunnitelman muutos"
@@ -2199,8 +2203,9 @@ msgid "Automatically follow on the map"
 msgstr "Seuraa automaattisesti kartalla"
 
 #: app/LiveStatusPage.qml:180 app/LiveStatusPage.qml:192
-#, kde-format
-msgid "Waiting for data..."
+#, fuzzy, kde-format
+#| msgid "Waiting for data..."
+msgid "Waiting for data…"
 msgstr "Odotetaan tietoa…"
 
 #: app/LiveStatusPage.qml:204
@@ -2394,8 +2399,9 @@ msgid "Files or URLs to import."
 msgstr "Tuotavat tiedostot tai verkko-osoitteet."
 
 #: app/main.qml:61
-#, kde-format
-msgid "Open File..."
+#, fuzzy, kde-format
+#| msgid "Open File..."
+msgid "Open File…"
 msgstr "Avaa tiedosto…"
 
 #: app/main.qml:69 app/TicketTokenEditorCard.qml:129
@@ -2404,23 +2410,27 @@ msgid "Paste"
 msgstr "Liitä"
 
 #: app/main.qml:76
-#, kde-format
-msgid "Scan Barcode..."
-msgstr "Lue viivakoodi…"
+#, fuzzy, kde-format
+#| msgid "Scan Barcode"
+msgid "Scan Barcode…"
+msgstr "Lue viivakoodi"
 
 #: app/main.qml:84
-#, kde-format
-msgid "Add from Calendar..."
+#, fuzzy, kde-format
+#| msgid "Add from Calendar..."
+msgid "Add from Calendar…"
 msgstr "Lisää kalenterista…"
 
 #: app/main.qml:98
-#, kde-format
-msgid "Deutsche Bahn Online Ticket..."
+#, fuzzy, kde-format
+#| msgid "Deutsche Bahn Online Ticket..."
+msgid "Deutsche Bahn Online Ticket…"
 msgstr "Deutsche Bahnin verkkolippu…"
 
 #: app/main.qml:108
-#, kde-format
-msgid "SNCF Online Ticket..."
+#, fuzzy, kde-format
+#| msgid "SNCF Online Ticket..."
+msgid "SNCF Online Ticket…"
 msgstr "SNCF:n verkkolippu…"
 
 #: app/main.qml:122
@@ -2454,9 +2464,10 @@ msgid "Export Itinerary Data"
 msgstr "Vie matkasuunnitelmatiedot"
 
 #: app/main.qml:171 app/PassPage.qml:137
-#, kde-format
-msgid "Import..."
-msgstr "Tuo…"
+#, fuzzy, kde-format
+#| msgid "Import"
+msgid "Import…"
+msgstr "Tuo"
 
 #: app/main.qml:176
 #, kde-format
@@ -2474,9 +2485,10 @@ msgid "Statistics"
 msgstr "Tilastot"
 
 #: app/main.qml:219 app/WelcomePage.qml:41
-#, kde-format
-msgid "Settings..."
-msgstr "Asetukset…"
+#, fuzzy, kde-format
+#| msgid "Settings"
+msgid "Settings…"
+msgstr "Asetukset"
 
 #: app/main.qml:231 app/WelcomePage.qml:16
 #, kde-format
@@ -2662,8 +2674,9 @@ msgid "Online Ticket"
 msgstr "Verkkolippu"
 
 #: app/OnlineImportPage.qml:54
-#, kde-format
-msgid "Search..."
+#, fuzzy, kde-format
+#| msgid "Search..."
+msgid "Search…"
 msgstr "Etsi…"
 
 #: app/passmanager.cpp:251
@@ -2695,8 +2708,9 @@ msgid "Passes and Programs"
 msgstr "Liput ja ohjelmat"
 
 #: app/PassPage.qml:20
-#, kde-format
-msgid "Add Program Membership..."
+#, fuzzy, kde-format
+#| msgid "Add Program Membership..."
+msgid "Add Program Membership…"
 msgstr "Lisää ohjelman jäsenyys…"
 
 #: app/PassPage.qml:52
@@ -3001,9 +3015,10 @@ msgstr ""
 "haluaa joiltakin tarjoajilta ajantasaista tietoa."
 
 #: app/SettingsPage.qml:81
-#, kde-format
-msgid "Public Transport Information Sources..."
-msgstr "Julkisen liikenteen tietolähteet…"
+#, fuzzy, kde-format
+#| msgid "Public Transport Information Sources"
+msgid "Public Transport Information Sources…"
+msgstr "Julkisen liikenteen tietolähteet"
 
 #: app/SettingsPage.qml:90 app/WeatherForecastDelegate.qml:83
 #: app/WeatherForecastPage.qml:19
@@ -3094,8 +3109,9 @@ msgid "Notifications"
 msgstr "Ilmoitukset"
 
 #: app/SettingsPage.qml:165
-#, kde-format
-msgid "Configure Notifications..."
+#, fuzzy, kde-format
+#| msgid "Configure Notifications..."
+msgid "Configure Notifications…"
 msgstr "Ilmoitusasetukset…"
 
 #: app/SettingsPage.qml:174
@@ -3104,8 +3120,9 @@ msgid "Show notifications on lock screen"
 msgstr "Näytä ilmoitukset lukitusnäytöllä"
 
 #: app/SettingsPage.qml:184 app/SettingsPage.qml:212
-#, kde-format
-msgid "Request permissions..."
+#, fuzzy, kde-format
+#| msgid "Request permissions..."
+msgid "Request permissions…"
 msgstr "Pyydä käyttölupaa…"
 
 #: app/SettingsPage.qml:185
@@ -3395,34 +3412,39 @@ msgid "My Itinerary"
 msgstr "Matkasuunnitelmani"
 
 #: app/TimelinePage.qml:90
-#, kde-format
-msgid "Add train trip..."
+#, fuzzy, kde-format
+#| msgid "Add train trip..."
+msgid "Add train trip…"
 msgstr "Lisää junamatka…"
 
 #: app/TimelinePage.qml:97
 #, fuzzy, kde-format
 #| msgid "Add event..."
-msgid "Add flight..."
+msgid "Add flight…"
 msgstr "Lisää tapahtuma…"
 
 #: app/TimelinePage.qml:109
-#, kde-format
-msgid "Add ferry trip..."
+#, fuzzy, kde-format
+#| msgid "Add ferry trip..."
+msgid "Add ferry trip…"
 msgstr "Lisää lauttamatka…"
 
 #: app/TimelinePage.qml:121
-#, kde-format
-msgid "Add accommodation..."
+#, fuzzy, kde-format
+#| msgid "Add accommodation..."
+msgid "Add accommodation…"
 msgstr "Lisää majoitus…"
 
 #: app/TimelinePage.qml:132
-#, kde-format
-msgid "Add event..."
+#, fuzzy, kde-format
+#| msgid "Add event..."
+msgid "Add event…"
 msgstr "Lisää tapahtuma…"
 
 #: app/TimelinePage.qml:144
-#, kde-format
-msgid "Add restaurant..."
+#, fuzzy, kde-format
+#| msgid "Add restaurant..."
+msgid "Add restaurant…"
 msgstr "Lisää ravintola…"
 
 #: app/TimelinePage.qml:166
@@ -3454,8 +3476,9 @@ msgid "Do you really want to delete this trip?"
 msgstr "Haluatko varmasti poistaa tämän matkan?"
 
 #: app/TimelinePage.qml:247
-#, kde-format
-msgid "As GPX file..."
+#, fuzzy, kde-format
+#| msgid "As GPX file..."
+msgid "As GPX file…"
 msgstr "GPX-tiedostoksi…"
 
 #: app/TimelinePage.qml:277 app/TimelinePage.qml:294
@@ -3721,12 +3744,6 @@ msgstr[1] "Valuutat: %2"
 msgid "Edit…"
 msgstr "Muokkaa"
 
-#: app/TripGroupDelegate.qml:175
-#, fuzzy, kde-format
-#| msgid "Export"
-msgid "Export…"
-msgstr "Vie"
-
 #: app/TripGroupDelegate.qml:183
 #, kde-format
 msgid "Delete trip"
@@ -3957,6 +3974,27 @@ msgstr "Kirjaudutaan"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 portilta %3 portille %4 %5"
+
+#~ msgid "Export..."
+#~ msgstr "Vie…"
+
+#~ msgid "Add Document..."
+#~ msgstr "Lisää asiakirja…"
+
+#~ msgid "Pick..."
+#~ msgstr "Valitse…"
+
+#~ msgid "Scan Barcode..."
+#~ msgstr "Lue viivakoodi…"
+
+#~ msgid "Import..."
+#~ msgstr "Tuo…"
+
+#~ msgid "Settings..."
+#~ msgstr "Asetukset…"
+
+#~ msgid "Public Transport Information Sources..."
+#~ msgstr "Julkisen liikenteen tietolähteet…"
 
 # Ilmeisesti ”amenity” tässä mikä tahansa julkinen palvelu (pankki, posti, mahdollisuus käydä suihkussa, uimala…)
 #, fuzzy
