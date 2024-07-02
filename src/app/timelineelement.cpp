@@ -92,7 +92,7 @@ bool TimelineElement::operator<(const QDateTime &otherDt) const
 
 bool TimelineElement::operator==(const TimelineElement &other) const
 {
-    if (elementType != other.elementType || rangeType != other.rangeType || dt != other.dt || batchId() != other.batchId()) {
+    if (elementType != other.elementType || rangeType != other.rangeType || batchId() != other.batchId()) {
         return false;
     }
 
@@ -104,7 +104,7 @@ bool TimelineElement::operator==(const TimelineElement &other) const
             return lhsT.alignment() == rhsT.alignment();
         }
         default:
-            return true;
+            return dt == other.dt;
     }
 }
 

@@ -326,7 +326,7 @@ std::vector<TimelineElement>::iterator TimelineModel::insertOrUpdate(std::vector
 {
     assert(elem.elementType != TimelineElement::Undefined);
 
-    while (it != m_elements.end() && (*it) < elem) {
+    while (it != m_elements.end() && (*it) != elem && (*it) < elem) {
         ++it;
     }
 
