@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-01 00:39+0000\n"
-"PO-Revision-Date: 2024-06-15 08:02+0200\n"
+"PO-Revision-Date: 2024-07-01 06:53+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -114,10 +114,9 @@ msgid "Edit"
 msgstr "Uredi"
 
 #: app/ActionsCard.qml:62
-#, fuzzy, kde-format
-#| msgid "Add to calendar..."
+#, kde-format
 msgid "Add to calendar…"
-msgstr "Dodaj v koledar..."
+msgstr "Dodaj v koledar…"
 
 #: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:175
 #, kde-format
@@ -149,10 +148,9 @@ msgid "Export"
 msgstr "Izvozi"
 
 #: app/ActionsCard.qml:140 app/TimelinePage.qml:238
-#, fuzzy, kde-format
-#| msgid "As Itinerary file..."
+#, kde-format
 msgid "As Itinerary file…"
-msgstr "Kot datoteko itinerarja..."
+msgstr "Kot datoteko itinerarja…"
 
 #: app/ActionsCard.qml:151 app/TimelinePage.qml:262
 #, kde-format
@@ -806,10 +804,9 @@ msgid "No documents attached to this reservation."
 msgstr "Ta rezervacija nima priloženih nobenih dokumentov."
 
 #: app/DocumentsCard.qml:117
-#, fuzzy, kde-format
-#| msgid "Add Document"
+#, kde-format
 msgid "Add Document…"
-msgstr "Dodaj dokument"
+msgstr "Dodaj dokument…"
 
 #: app/downloadjob.cpp:146
 #, kde-format
@@ -1276,7 +1273,7 @@ msgstr "%1°, %2°"
 #: app/FormPlaceEditorDelegate.qml:197
 #, kde-format
 msgid "Pick…"
-msgstr ""
+msgstr "Poberi…"
 
 #: app/FormPlaceEditorDelegate.qml:215
 #, kde-format
@@ -2193,10 +2190,9 @@ msgid "Automatically follow on the map"
 msgstr "Samodejno sledi zemljevidu"
 
 #: app/LiveStatusPage.qml:180 app/LiveStatusPage.qml:192
-#, fuzzy, kde-format
-#| msgid "Waiting for data..."
+#, kde-format
 msgid "Waiting for data…"
-msgstr "Čakanje na podatke..."
+msgstr "Čakanje na podatke…"
 
 #: app/LiveStatusPage.qml:204
 #, kde-format
@@ -2386,10 +2382,9 @@ msgid "Files or URLs to import."
 msgstr "Datoteke ali URL-ji za uvoz."
 
 #: app/main.qml:61
-#, fuzzy, kde-format
-#| msgid "Open File..."
+#, kde-format
 msgid "Open File…"
-msgstr "Odpri datoteko..."
+msgstr "Odpri datoteko…"
 
 #: app/main.qml:69 app/TicketTokenEditorCard.qml:129
 #, kde-format
@@ -2397,28 +2392,24 @@ msgid "Paste"
 msgstr "Prilepi"
 
 #: app/main.qml:76
-#, fuzzy, kde-format
-#| msgid "Scan barcode…"
+#, kde-format
 msgid "Scan Barcode…"
 msgstr "Skeniraj črtno kodo…"
 
 #: app/main.qml:84
-#, fuzzy, kde-format
-#| msgid "Add from Calendar..."
+#, kde-format
 msgid "Add from Calendar…"
-msgstr "Dodaj iz koledarja..."
+msgstr "Dodaj iz koledarja…"
 
 #: app/main.qml:98
-#, fuzzy, kde-format
-#| msgid "Deutsche Bahn Online Ticket..."
+#, kde-format
 msgid "Deutsche Bahn Online Ticket…"
-msgstr "Deutsche Bahn spletna vozovnica..."
+msgstr "Deutsche Bahn spletna vozovnica…"
 
 #: app/main.qml:108
-#, fuzzy, kde-format
-#| msgid "SNCF Online Ticket..."
+#, kde-format
 msgid "SNCF Online Ticket…"
-msgstr "SNCF spletna vozovnica..."
+msgstr "SNCF spletna vozovnica…"
 
 #: app/main.qml:122
 #, kde-format
@@ -2451,11 +2442,9 @@ msgid "Export Itinerary Data"
 msgstr "Izvoz podatkov itinerarja"
 
 #: app/main.qml:171 app/PassPage.qml:137
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Import"
+#, kde-format
 msgid "Import…"
-msgstr "Uvozi"
+msgstr "Uvozi…"
 
 #: app/main.qml:176
 #, kde-format
@@ -2473,10 +2462,9 @@ msgid "Statistics"
 msgstr "Statistika"
 
 #: app/main.qml:219 app/WelcomePage.qml:41
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgid "Settings…"
-msgstr "Nastavitve"
+msgstr "Nastavitve…"
 
 #: app/main.qml:231 app/WelcomePage.qml:16
 #, kde-format
@@ -2661,10 +2649,9 @@ msgid "Online Ticket"
 msgstr "Spletna vozovnica"
 
 #: app/OnlineImportPage.qml:54
-#, fuzzy, kde-format
-#| msgid "Search..."
+#, kde-format
 msgid "Search…"
-msgstr "Išči..."
+msgstr "Išči…"
 
 #: app/passmanager.cpp:251
 #, kde-format
@@ -2695,10 +2682,9 @@ msgid "Passes and Programs"
 msgstr "Vozovnice in programi"
 
 #: app/PassPage.qml:20
-#, fuzzy, kde-format
-#| msgid "Add Program Membership..."
+#, kde-format
 msgid "Add Program Membership…"
-msgstr "Dodaj članstvo v programu..."
+msgstr "Dodaj članstvo v programu…"
 
 #: app/PassPage.qml:52
 #, kde-format
@@ -2998,10 +2984,9 @@ msgstr ""
 "mogoče izogniti pri zagotavljanju sprotnih podatkov nekaterih ponudnikov."
 
 #: app/SettingsPage.qml:81
-#, fuzzy, kde-format
-#| msgid "Public Transport Information Sources"
+#, kde-format
 msgid "Public Transport Information Sources…"
-msgstr "Vir informacij o javnem transportu"
+msgstr "Vir informacij o javnem transportu…"
 
 #: app/SettingsPage.qml:90 app/WeatherForecastDelegate.qml:83
 #: app/WeatherForecastPage.qml:19
@@ -3094,10 +3079,9 @@ msgid "Notifications"
 msgstr "Obvestila"
 
 #: app/SettingsPage.qml:165
-#, fuzzy, kde-format
-#| msgid "Configure Notifications..."
+#, kde-format
 msgid "Configure Notifications…"
-msgstr "Nastavi obvestila..."
+msgstr "Konfiguriraj obvestila…"
 
 #: app/SettingsPage.qml:174
 #, kde-format
@@ -3105,10 +3089,9 @@ msgid "Show notifications on lock screen"
 msgstr "Pokaži obvestila na zaklenjenem zaslonu"
 
 #: app/SettingsPage.qml:184 app/SettingsPage.qml:212
-#, fuzzy, kde-format
-#| msgid "Request permissions..."
+#, kde-format
 msgid "Request permissions…"
-msgstr "Zahtevaj dovoljenja..."
+msgstr "Zahtevaj dovoljenja…"
 
 #: app/SettingsPage.qml:185
 #, kde-format
@@ -3390,38 +3373,32 @@ msgid "My Itinerary"
 msgstr "Moj itinerar"
 
 #: app/TimelinePage.qml:90
-#, fuzzy, kde-format
-#| msgid "Add train trip..."
+#, kde-format
 msgid "Add train trip…"
 msgstr "Dodaj izlet z železnico…"
 
 #: app/TimelinePage.qml:97
-#, fuzzy, kde-format
-#| msgid "Add flight..."
+#, kde-format
 msgid "Add flight…"
-msgstr "Dodaj let..."
+msgstr "Dodaj let…"
 
 #: app/TimelinePage.qml:109
-#, fuzzy, kde-format
-#| msgid "Add ferry trip..."
+#, kde-format
 msgid "Add ferry trip…"
 msgstr "Dodaj izlet s trajektom…"
 
 #: app/TimelinePage.qml:121
-#, fuzzy, kde-format
-#| msgid "Add accommodation..."
+#, kde-format
 msgid "Add accommodation…"
-msgstr "Dodaj nastanitev..."
+msgstr "Dodaj nastanitev…"
 
 #: app/TimelinePage.qml:132
-#, fuzzy, kde-format
-#| msgid "Add event..."
+#, kde-format
 msgid "Add event…"
-msgstr "Dodaj dogodek..."
+msgstr "Dodaj dogodek…"
 
 #: app/TimelinePage.qml:144
-#, fuzzy, kde-format
-#| msgid "Add restaurant..."
+#, kde-format
 msgid "Add restaurant…"
 msgstr "Dodaj restavracijo…"
 
@@ -3454,10 +3431,9 @@ msgid "Do you really want to delete this trip?"
 msgstr "Ali res želite izbrisati to potovanje?"
 
 #: app/TimelinePage.qml:247
-#, fuzzy, kde-format
-#| msgid "As GPX file..."
+#, kde-format
 msgid "As GPX file…"
-msgstr "Kot datoteko GPX..."
+msgstr "Kot datoteko GPX…"
 
 #: app/TimelinePage.qml:277 app/TimelinePage.qml:294
 #, kde-format
