@@ -6,9 +6,9 @@
 #include <QAbstractListModel>
 #include <QtQml>
 
-#include "tripgroupmanager.h"
-#include "tripgroup.h"
+class TripGroupManager;
 
+/** List of all trip groups in chronological order. */
 class TripGroupModel : public QAbstractListModel
 {
     Q_OBJECT
@@ -22,6 +22,7 @@ public:
         EndRole,
         PositionRole,
         TripGroupRole,
+        TripGroupIdRole,
     };
 
     enum Position {
@@ -32,6 +33,7 @@ public:
     Q_ENUM(Position);
 
     explicit TripGroupModel(QObject *parent = nullptr);
+    ~TripGroupModel();
 
     [[nodiscard]]
     TripGroupManager *tripGroupManager() const;
@@ -44,12 +46,18 @@ public:
     QHash<int, QByteArray> roleNames() const override;
 
     [[nodiscard]]
-    int rowCount(const QModelIndex& parent) const override;
+    int rowCount(const QModelIndex& parent = {}) const override;
 
 Q_SIGNALS:
     void tripGroupManagerChanged();
 
 private:
+    void tripGroupAdded(const QString &tgId);
+    void tripGroupChanged(const QString &tgId);
+    void tripGroupRemoved(const QString &tgId);
+
+    [[nodiscard]] bool tripGroupLessThan(const QString &lhs, const QString &rhs) const;
+
     TripGroupManager *m_tripGroupManager = nullptr;
-    std::vector<TripGroup> m_tripGroups;
+    std::vector<QString> m_tripGroups;
 };
