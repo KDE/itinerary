@@ -49,6 +49,7 @@ target_sources(itinerary PRIVATE
     tripgroup.cpp
     tripgroupinfoprovider.cpp
     tripgroupmanager.cpp
+    tripgroupmodel.cpp
     tripgroupproxymodel.cpp
     transfer.cpp
     transfermanager.cpp
