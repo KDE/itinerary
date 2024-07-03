@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-01 00:39+0000\n"
-"PO-Revision-Date: 2024-06-16 00:55+0200\n"
+"PO-Revision-Date: 2024-07-03 00:36+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.0\n"
+"X-Generator: Lokalize 24.05.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -116,8 +116,7 @@ msgid "Edit"
 msgstr "Editar"
 
 #: app/ActionsCard.qml:62
-#, fuzzy, kde-format
-#| msgid "Add to calendar..."
+#, kde-format
 msgid "Add to calendar…"
 msgstr "Añadir al calendario..."
 
@@ -151,8 +150,7 @@ msgid "Export"
 msgstr "Exportar"
 
 #: app/ActionsCard.qml:140 app/TimelinePage.qml:238
-#, fuzzy, kde-format
-#| msgid "As Itinerary file..."
+#, kde-format
 msgid "As Itinerary file…"
 msgstr "Como archivo de Itinerary..."
 
@@ -801,10 +799,9 @@ msgid "No documents attached to this reservation."
 msgstr "No hay documentos adjuntos para esta reserva."
 
 #: app/DocumentsCard.qml:117
-#, fuzzy, kde-format
-#| msgid "Add Document"
+#, kde-format
 msgid "Add Document…"
-msgstr "Añadir documento"
+msgstr "Añadir documento..."
 
 #: app/downloadjob.cpp:146
 #, kde-format
@@ -1271,7 +1268,7 @@ msgstr "%1°, %2°"
 #: app/FormPlaceEditorDelegate.qml:197
 #, kde-format
 msgid "Pick…"
-msgstr ""
+msgstr "Recoger..."
 
 #: app/FormPlaceEditorDelegate.qml:215
 #, kde-format
@@ -2187,8 +2184,7 @@ msgid "Automatically follow on the map"
 msgstr "Seguir automáticamente en el mapa"
 
 #: app/LiveStatusPage.qml:180 app/LiveStatusPage.qml:192
-#, fuzzy, kde-format
-#| msgid "Waiting for data..."
+#, kde-format
 msgid "Waiting for data…"
 msgstr "Esperando datos..."
 
@@ -2380,8 +2376,7 @@ msgid "Files or URLs to import."
 msgstr "Archivos o URL para importar."
 
 #: app/main.qml:61
-#, fuzzy, kde-format
-#| msgid "Open File..."
+#, kde-format
 msgid "Open File…"
 msgstr "Abrir archivo..."
 
@@ -2391,26 +2386,22 @@ msgid "Paste"
 msgstr "Pegar"
 
 #: app/main.qml:76
-#, fuzzy, kde-format
-#| msgid "Scan barcode…"
+#, kde-format
 msgid "Scan Barcode…"
 msgstr "Escanear código de barras..."
 
 #: app/main.qml:84
-#, fuzzy, kde-format
-#| msgid "Add from Calendar..."
+#, kde-format
 msgid "Add from Calendar…"
 msgstr "Añadir desde calendario..."
 
 #: app/main.qml:98
-#, fuzzy, kde-format
-#| msgid "Deutsche Bahn Online Ticket..."
+#, kde-format
 msgid "Deutsche Bahn Online Ticket…"
 msgstr "Billete en línea de Deutsche Bahn..."
 
 #: app/main.qml:108
-#, fuzzy, kde-format
-#| msgid "SNCF Online Ticket..."
+#, kde-format
 msgid "SNCF Online Ticket…"
 msgstr "Billete en línea de SNCF..."
 
@@ -2445,11 +2436,9 @@ msgid "Export Itinerary Data"
 msgstr "Exportar datos del itinerario"
 
 #: app/main.qml:171 app/PassPage.qml:137
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Import"
+#, kde-format
 msgid "Import…"
-msgstr "Importar"
+msgstr "Importar..."
 
 #: app/main.qml:176
 #, kde-format
@@ -2467,10 +2456,9 @@ msgid "Statistics"
 msgstr "Estadísticas"
 
 #: app/main.qml:219 app/WelcomePage.qml:41
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgid "Settings…"
-msgstr "Preferencias"
+msgstr "Preferencias..."
 
 #: app/main.qml:231 app/WelcomePage.qml:16
 #, kde-format
@@ -2655,8 +2643,7 @@ msgid "Online Ticket"
 msgstr "Billete en línea"
 
 #: app/OnlineImportPage.qml:54
-#, fuzzy, kde-format
-#| msgid "Search..."
+#, kde-format
 msgid "Search…"
 msgstr "Buscar..."
 
@@ -2689,8 +2676,7 @@ msgid "Passes and Programs"
 msgstr "Pases y programas"
 
 #: app/PassPage.qml:20
-#, fuzzy, kde-format
-#| msgid "Add Program Membership..."
+#, kde-format
 msgid "Add Program Membership…"
 msgstr "Añadir pertenencia a programa..."
 
@@ -2996,10 +2982,9 @@ msgstr ""
 "depende de datos en directo de ciertos proveedores."
 
 #: app/SettingsPage.qml:81
-#, fuzzy, kde-format
-#| msgid "Public Transport Information Sources"
+#, kde-format
 msgid "Public Transport Information Sources…"
-msgstr "Fuentes de información de transporte público"
+msgstr "Fuentes de información de transporte público..."
 
 #: app/SettingsPage.qml:90 app/WeatherForecastDelegate.qml:83
 #: app/WeatherForecastPage.qml:19
@@ -3093,10 +3078,9 @@ msgid "Notifications"
 msgstr "Notificaciones"
 
 #: app/SettingsPage.qml:165
-#, fuzzy, kde-format
-#| msgid "Configure Notifications..."
+#, kde-format
 msgid "Configure Notifications…"
-msgstr "Configurar notificaciones..."
+msgstr "Configurar las notificaciones..."
 
 #: app/SettingsPage.qml:174
 #, kde-format
@@ -3104,8 +3088,7 @@ msgid "Show notifications on lock screen"
 msgstr "Mostrar notificaciones en la pantalla de bloqueo"
 
 #: app/SettingsPage.qml:184 app/SettingsPage.qml:212
-#, fuzzy, kde-format
-#| msgid "Request permissions..."
+#, kde-format
 msgid "Request permissions…"
 msgstr "Solicitar permisos..."
 
@@ -3392,38 +3375,32 @@ msgid "My Itinerary"
 msgstr "Mi itinerario"
 
 #: app/TimelinePage.qml:90
-#, fuzzy, kde-format
-#| msgid "Add train trip..."
+#, kde-format
 msgid "Add train trip…"
 msgstr "Añadir viaje en tren..."
 
 #: app/TimelinePage.qml:97
-#, fuzzy, kde-format
-#| msgid "Add flight..."
+#, kde-format
 msgid "Add flight…"
 msgstr "Añadir vuelo..."
 
 #: app/TimelinePage.qml:109
-#, fuzzy, kde-format
-#| msgid "Add ferry trip..."
+#, kde-format
 msgid "Add ferry trip…"
 msgstr "Añadir viaje en ferry..."
 
 #: app/TimelinePage.qml:121
-#, fuzzy, kde-format
-#| msgid "Add accommodation..."
+#, kde-format
 msgid "Add accommodation…"
 msgstr "Añadir alojamiento..."
 
 #: app/TimelinePage.qml:132
-#, fuzzy, kde-format
-#| msgid "Add event..."
+#, kde-format
 msgid "Add event…"
 msgstr "Añadir evento..."
 
 #: app/TimelinePage.qml:144
-#, fuzzy, kde-format
-#| msgid "Add restaurant..."
+#, kde-format
 msgid "Add restaurant…"
 msgstr "Añadir restaurante..."
 
@@ -3456,8 +3433,7 @@ msgid "Do you really want to delete this trip?"
 msgstr "¿Realmente desea borrar este viaje?"
 
 #: app/TimelinePage.qml:247
-#, fuzzy, kde-format
-#| msgid "As GPX file..."
+#, kde-format
 msgid "As GPX file…"
 msgstr "Como archivo GPX..."
 
