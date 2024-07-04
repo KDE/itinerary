@@ -4,6 +4,8 @@
 #pragma once
 
 #include <QAbstractListModel>
+#include <QDateTime>
+#include <QTimer>
 #include <QtQml>
 
 class TripGroupManager;
@@ -48,6 +50,11 @@ public:
     [[nodiscard]]
     int rowCount(const QModelIndex& parent = {}) const override;
 
+    // for unit testing
+    void setCurrentDateTime(const QDateTime &dt);
+    [[nodiscard]] QDateTime now() const;
+    [[nodiscard]] QDate today() const;
+
 Q_SIGNALS:
     void tripGroupManagerChanged();
 
@@ -57,7 +64,12 @@ private:
     void tripGroupRemoved(const QString &tgId);
 
     [[nodiscard]] bool tripGroupLessThan(const QString &lhs, const QString &rhs) const;
+    [[nodiscard]] bool tripGroupLessThan(const QString &lhs, const QDateTime &rhs) const;
+
+    void scheduleUpdate();
 
     TripGroupManager *m_tripGroupManager = nullptr;
     std::vector<QString> m_tripGroups;
+    QTimer m_updateTimer;
+    QDateTime m_unitTestTime;
 };
