@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-01 00:39+0000\n"
-"PO-Revision-Date: 2024-06-17 15:24+0200\n"
-"Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
+"PO-Revision-Date: 2024-07-03 16:18+0200\n"
+"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 24.05.0\n"
+"X-Generator: Lokalize 24.05.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -111,10 +111,9 @@ msgid "Edit"
 msgstr "Upravit"
 
 #: app/ActionsCard.qml:62
-#, fuzzy, kde-format
-#| msgid "Add to calendar..."
+#, kde-format
 msgid "Add to calendar…"
-msgstr "Přidat do kalendáře..."
+msgstr "Přidat do kalendáře…"
 
 #: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:175
 #, kde-format
@@ -146,10 +145,9 @@ msgid "Export"
 msgstr "Exportovat"
 
 #: app/ActionsCard.qml:140 app/TimelinePage.qml:238
-#, fuzzy, kde-format
-#| msgid "As Itinerary file..."
+#, kde-format
 msgid "As Itinerary file…"
-msgstr "Jako soubor Itinerary..."
+msgstr "Jako soubor Itinerary…"
 
 #: app/ActionsCard.qml:151 app/TimelinePage.qml:262
 #, kde-format
@@ -391,7 +389,7 @@ msgstr "Odjezd"
 #, kde-format
 msgctxt "Boat departure"
 msgid "Departure Time"
-msgstr ""
+msgstr "Čas odjezdu"
 
 #: app/BoatEditor.qml:68
 #, kde-format
@@ -419,7 +417,7 @@ msgstr "Příjezd"
 #, kde-format
 msgctxt "Boat arrival"
 msgid "Arrival Time"
-msgstr ""
+msgstr "Čas příjezdu"
 
 #: app/BoatEditor.qml:107
 #, kde-format
@@ -798,10 +796,9 @@ msgid "No documents attached to this reservation."
 msgstr ""
 
 #: app/DocumentsCard.qml:117
-#, fuzzy, kde-format
-#| msgid "Add Document"
+#, kde-format
 msgid "Add Document…"
-msgstr "Přidat dokument"
+msgstr "Přidat dokument…"
 
 #: app/downloadjob.cpp:146
 #, kde-format
@@ -1218,7 +1215,7 @@ msgstr "Zobrazit na mapě"
 #, kde-format
 msgctxt "@action:button Start route guidance to location"
 msgid "Navigate"
-msgstr ""
+msgstr "Přejít"
 
 #: app/FormPlaceDelegate.qml:153
 #, kde-format
@@ -1270,7 +1267,7 @@ msgstr "%1°, %2°"
 #: app/FormPlaceEditorDelegate.qml:197
 #, kde-format
 msgid "Pick…"
-msgstr ""
+msgstr "Výběr…"
 
 #: app/FormPlaceEditorDelegate.qml:215
 #, kde-format
@@ -2182,10 +2179,9 @@ msgid "Automatically follow on the map"
 msgstr "Automaticky následovat na mapě"
 
 #: app/LiveStatusPage.qml:180 app/LiveStatusPage.qml:192
-#, fuzzy, kde-format
-#| msgid "Waiting for data..."
+#, kde-format
 msgid "Waiting for data…"
-msgstr "Čeká se na data..."
+msgstr "Čeká se na data…"
 
 #: app/LiveStatusPage.qml:204
 #, kde-format
@@ -2375,10 +2371,9 @@ msgid "Files or URLs to import."
 msgstr "Soubory nebo URL pro import."
 
 #: app/main.qml:61
-#, fuzzy, kde-format
-#| msgid "Open File..."
+#, kde-format
 msgid "Open File…"
-msgstr "Otevřít soubor..."
+msgstr "Otevřít soubor…"
 
 #: app/main.qml:69 app/TicketTokenEditorCard.qml:129
 #, kde-format
@@ -2386,26 +2381,24 @@ msgid "Paste"
 msgstr "Vložit"
 
 #: app/main.qml:76
-#, fuzzy, kde-format
-#| msgid "Scan barcode…"
+#, kde-format
 msgid "Scan Barcode…"
 msgstr "Číst čarový kód…"
 
 #: app/main.qml:84
-#, fuzzy, kde-format
-#| msgid "Add to calendar..."
+#, kde-format
 msgid "Add from Calendar…"
-msgstr "Přidat do kalendáře..."
+msgstr "Přidat z kalendáře…"
 
 #: app/main.qml:98
 #, kde-format
 msgid "Deutsche Bahn Online Ticket…"
-msgstr ""
+msgstr "Online jízdenka Deutsche Bahn…"
 
 #: app/main.qml:108
 #, kde-format
 msgid "SNCF Online Ticket…"
-msgstr ""
+msgstr "Online jízdenka SNCF…"
 
 #: app/main.qml:122
 #, kde-format
@@ -2438,11 +2431,9 @@ msgid "Export Itinerary Data"
 msgstr "Exportovat data itineráře"
 
 #: app/main.qml:171 app/PassPage.qml:137
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Import"
+#, kde-format
 msgid "Import…"
-msgstr "Importovat"
+msgstr "Importovat…"
 
 #: app/main.qml:176
 #, kde-format
@@ -2460,10 +2451,9 @@ msgid "Statistics"
 msgstr "Statistika"
 
 #: app/main.qml:219 app/WelcomePage.qml:41
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgid "Settings…"
-msgstr "Nastavení"
+msgstr "Nastavení…"
 
 #: app/main.qml:231 app/WelcomePage.qml:16
 #, kde-format
@@ -2648,10 +2638,9 @@ msgid "Online Ticket"
 msgstr ""
 
 #: app/OnlineImportPage.qml:54
-#, fuzzy, kde-format
-#| msgid "Search..."
+#, kde-format
 msgid "Search…"
-msgstr "Hledat..."
+msgstr "Hledat…"
 
 #: app/passmanager.cpp:251
 #, kde-format
@@ -2682,10 +2671,9 @@ msgid "Passes and Programs"
 msgstr ""
 
 #: app/PassPage.qml:20
-#, fuzzy, kde-format
-#| msgid "Add Program Membership..."
+#, kde-format
 msgid "Add Program Membership…"
-msgstr "Přidat členství v programu..."
+msgstr "Přidat členství v programu…"
 
 #: app/PassPage.qml:52
 #, kde-format
@@ -2987,10 +2975,9 @@ msgstr ""
 "poskytovatelů, může to být nezbytné."
 
 #: app/SettingsPage.qml:81
-#, fuzzy, kde-format
-#| msgid "Public Transport Information Sources"
+#, kde-format
 msgid "Public Transport Information Sources…"
-msgstr "Zdroje informací o veřejné dopravě"
+msgstr "Zdroje informací o veřejné dopravě…"
 
 #: app/SettingsPage.qml:90 app/WeatherForecastDelegate.qml:83
 #: app/WeatherForecastPage.qml:19
@@ -3080,10 +3067,9 @@ msgid "Notifications"
 msgstr "Oznamování"
 
 #: app/SettingsPage.qml:165
-#, fuzzy, kde-format
-#| msgid "Configure Notifications..."
+#, kde-format
 msgid "Configure Notifications…"
-msgstr "Nastavit upozornění..."
+msgstr "Nastavit upozornění…"
 
 #: app/SettingsPage.qml:174
 #, kde-format
@@ -3091,10 +3077,9 @@ msgid "Show notifications on lock screen"
 msgstr "Zobrazit upozornění na uzamčené obrazovce"
 
 #: app/SettingsPage.qml:184 app/SettingsPage.qml:212
-#, fuzzy, kde-format
-#| msgid "Request permissions..."
+#, kde-format
 msgid "Request permissions…"
-msgstr "Vyžádat povolení..."
+msgstr "Vyžádat povolení…"
 
 #: app/SettingsPage.qml:185
 #, kde-format
@@ -3375,40 +3360,34 @@ msgid "My Itinerary"
 msgstr "Můj Itinerář"
 
 #: app/TimelinePage.qml:90
-#, fuzzy, kde-format
-#| msgid "Add train trip..."
+#, kde-format
 msgid "Add train trip…"
-msgstr "Přidat cestu vlakem..."
+msgstr "Přidat cestu vlakem…"
 
 #: app/TimelinePage.qml:97
 #, kde-format
 msgid "Add flight…"
-msgstr ""
+msgstr "Přidat let…"
 
 #: app/TimelinePage.qml:109
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add trip"
+#, kde-format
 msgid "Add ferry trip…"
-msgstr "Přidat výlet"
+msgstr "Přidat výlet přívozem…"
 
 #: app/TimelinePage.qml:121
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Accommodation"
+#, kde-format
 msgid "Add accommodation…"
-msgstr "Ubytování"
+msgstr "Přidat ubytování…"
 
 #: app/TimelinePage.qml:132
 #, kde-format
 msgid "Add event…"
-msgstr ""
+msgstr "Přidat událost…"
 
 #: app/TimelinePage.qml:144
-#, fuzzy, kde-format
-#| msgid "Restaurant"
+#, kde-format
 msgid "Add restaurant…"
-msgstr "restaurace"
+msgstr "Přidat restauraci…"
 
 #: app/TimelinePage.qml:166
 #, kde-format
@@ -3439,10 +3418,9 @@ msgid "Do you really want to delete this trip?"
 msgstr "Opravdu si přejete smazat tento výlet?"
 
 #: app/TimelinePage.qml:247
-#, fuzzy, kde-format
-#| msgid "As GPX file..."
+#, kde-format
 msgid "As GPX file…"
-msgstr "Jako soubor GPX..."
+msgstr "Jako soubor GPX…"
 
 #: app/TimelinePage.qml:277 app/TimelinePage.qml:294
 #, kde-format
@@ -3929,21 +3907,3 @@ msgstr "Přihlašování"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 z %3 do %4 na %5"
-
-#~ msgid "Export..."
-#~ msgstr "Exportovat..."
-
-#~ msgid "Add Document..."
-#~ msgstr "Přidat dokument..."
-
-#~ msgid "Scan Barcode..."
-#~ msgstr "Číst čarový kód..."
-
-#~ msgid "Import..."
-#~ msgstr "Importovat..."
-
-#~ msgid "Settings..."
-#~ msgstr "Nastavení..."
-
-#~ msgid "Public Transport Information Sources..."
-#~ msgstr "Zdroje informací o veřejné dopravě..."
