@@ -164,12 +164,12 @@ void TripGroupModel::tripGroupRemoved(const QString &tgId)
 
 bool TripGroupModel::tripGroupLessThan(const QString &lhs, const QString &rhs) const
 {
-    return m_tripGroupManager->tripGroup(lhs).beginDateTime() < m_tripGroupManager->tripGroup(rhs).beginDateTime();
+    return m_tripGroupManager->tripGroup(lhs).beginDateTime() > m_tripGroupManager->tripGroup(rhs).beginDateTime();
 }
 
 bool TripGroupModel::tripGroupLessThan(const QString &lhs, const QDateTime &rhs) const
 {
-    return m_tripGroupManager->tripGroup(lhs).beginDateTime() < rhs;
+    return m_tripGroupManager->tripGroup(lhs).beginDateTime() > rhs;
 }
 
 void TripGroupModel::setCurrentDateTime(const QDateTime &dt)

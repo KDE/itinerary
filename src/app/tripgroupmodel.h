@@ -10,7 +10,7 @@
 
 class TripGroupManager;
 
-/** List of all trip groups in chronological order. */
+/** List of all trip groups in reverse chronological order. */
 class TripGroupModel : public QAbstractListModel
 {
     Q_OBJECT

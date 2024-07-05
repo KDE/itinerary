@@ -77,8 +77,8 @@ private Q_SLOTS:
         ctrl->commitImport(&importer);
         QCOMPARE(model.rowCount(), 2);
         QCOMPARE(insertSpy.size(), 2);
-        QCOMPARE(insertSpy.back().at(1).toInt(), 1);
-        idx = model.index(1, 0);
+        QCOMPARE(insertSpy.back().at(1).toInt(), 0);
+        idx = model.index(0, 0);
         QCOMPARE(idx.data(Qt::DisplayRole).toString(), "Randa (September 2017)"_L1);
         QCOMPARE(idx.data(TripGroupModel::PositionRole).toInt(), TripGroupModel::Future);
         const auto tgId = idx.data(TripGroupModel::TripGroupIdRole).toString();
@@ -88,8 +88,8 @@ private Q_SLOTS:
         ctrl->commitImport(&importer);
         QCOMPARE(model.rowCount(), 3);
         QCOMPARE(insertSpy.size(), 3);
-        QCOMPARE(insertSpy.back().at(1).toInt(), 0);
-        idx = model.index(0, 0);
+        QCOMPARE(insertSpy.back().at(1).toInt(), 2);
+        idx = model.index(2, 0);
         QCOMPARE(idx.data(Qt::DisplayRole).toString(), "Peretola (January 2000)"_L1);
         QCOMPARE(idx.data(TripGroupModel::PositionRole).toInt(), TripGroupModel::Past);
 
@@ -100,8 +100,8 @@ private Q_SLOTS:
         tg.setNameIsAutomatic(false);
         tgMgr.updateTripGroup(tgId, tg);
         QCOMPARE(updateSpy.size(), 1);
-        QCOMPARE(updateSpy.back().at(0).toModelIndex().row(), 2);
-        idx = model.index(2, 0);
+        QCOMPARE(updateSpy.back().at(0).toModelIndex().row(), 0);
+        idx = model.index(0, 0);
         QCOMPARE(idx.data(Qt::DisplayRole).toString(), "KDE Randa Meeting 2017"_L1);
 
         updateSpy.clear();
@@ -109,7 +109,7 @@ private Q_SLOTS:
         tgMgr.removeReservationsInGroup(tgId);
         QCOMPARE(model.rowCount(), 2);
         QCOMPARE(removeSpy.size(), 1);
-        QCOMPARE(removeSpy.back().at(1).toInt(), 2);
+        QCOMPARE(removeSpy.back().at(1).toInt(), 0);
 
         QCOMPARE(insertSpy.size(), 0);
         QEXPECT_FAIL("", "missing regroup suspension during group removal", Continue);
