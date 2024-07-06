@@ -29,6 +29,12 @@ public:
     void setReservationManager(ReservationManager *resMgr);
     void setTransferManager(TransferManager *transferMgr);
 
+    /** Suspend automatic grouping, e.g. during mass operations.
+     *  @see TripGroupingBlocker
+     */
+    void suspend();
+    void resume();
+
     [[nodiscard]] std::vector<QString> tripGroups() const;
     [[nodiscard]] TripGroup tripGroup(const QString &id) const;
     [[nodiscard]] QString tripGroupIdForReservation(const QString &resId) const;
@@ -86,6 +92,26 @@ private:
         QString resNum;
     };
     std::vector<ReservationNumberSearch> m_resNumSearch;
+
+    bool m_suspended : 1 = false;
+    bool m_shouldScan : 1 = false;
+};
+
+/** RAII automatic trip grouping suspension. */
+class TripGroupingBlocker
+{
+public:
+    explicit inline TripGroupingBlocker(TripGroupManager *tgMgr)
+        : m_tgMgr(tgMgr)
+    {
+        tgMgr->suspend();
+    }
+    inline ~TripGroupingBlocker()
+    {
+        m_tgMgr->resume();
+    }
+private:
+    TripGroupManager *m_tgMgr;
 };
 
 #endif // TRIPGROUPMANAGER_H

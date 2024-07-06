@@ -78,6 +78,20 @@ void TripGroupManager::setTransferManager(TransferManager *transferMgr)
     }
 }
 
+void TripGroupManager::suspend()
+{
+    m_suspended = true;
+    m_shouldScan = false;
+}
+
+void TripGroupManager::resume()
+{
+    m_suspended = false;
+    if (m_shouldScan) {
+        scanAll();
+    }
+}
+
 std::vector<QString> TripGroupManager::tripGroups() const
 {
     std::vector<QString> groups;
@@ -263,6 +277,11 @@ void TripGroupManager::transferChanged(const QString &resId, Transfer::Alignment
 
 void TripGroupManager::scanAll()
 {
+    if (m_suspended) {
+        m_shouldScan = true;
+        return;
+    }
+
     qCDebug(Log);
     QString prevGroup;
     for (auto it = m_reservations.begin(); it != m_reservations.end(); ++it) {
