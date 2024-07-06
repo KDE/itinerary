@@ -112,7 +112,6 @@ private Q_SLOTS:
         QCOMPARE(removeSpy.back().at(1).toInt(), 0);
 
         QCOMPARE(insertSpy.size(), 0);
-        QEXPECT_FAIL("", "missing regroup suspension during group removal", Continue);
         QCOMPARE(updateSpy.size(), 0);
     }
 };

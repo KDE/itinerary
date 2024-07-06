@@ -194,10 +194,18 @@ void TripGroupManager::removeReservationsInGroup(const QString &groupId)
         return;
     }
 
+    // as we remove entries one by one we'd get and propagate update notifications for all of them
+    // so block those and emit one notifications manually once we are done
+    TripGroupingBlocker groupingBlocker(this);
+    QSignalBlocker signalBlocker(this);
+
     const auto elements = groupIt.value().elements();
     for (const auto &element : elements) {
         m_resMgr->removeBatch(element);
     }
+
+    signalBlocker.unblock();
+    Q_EMIT tripGroupRemoved(groupId);
 }
 
 void TripGroupManager::batchAdded(const QString &resId)
