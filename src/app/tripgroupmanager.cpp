@@ -78,9 +78,9 @@ void TripGroupManager::setTransferManager(TransferManager *transferMgr)
     }
 }
 
-QList<QString> TripGroupManager::tripGroups() const
+std::vector<QString> TripGroupManager::tripGroups() const
 {
-    QList<QString> groups;
+    std::vector<QString> groups;
     groups.reserve(m_tripGroups.size());
     std::copy(m_tripGroups.keyBegin(), m_tripGroups.keyEnd(), std::back_inserter(groups));
     return groups;

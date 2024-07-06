@@ -29,7 +29,7 @@ public:
     void setReservationManager(ReservationManager *resMgr);
     void setTransferManager(TransferManager *transferMgr);
 
-    [[nodiscard]] QList<QString> tripGroups() const;
+    [[nodiscard]] std::vector<QString> tripGroups() const;
     [[nodiscard]] TripGroup tripGroup(const QString &id) const;
     [[nodiscard]] QString tripGroupIdForReservation(const QString &resId) const;
     [[nodiscard]] TripGroup tripGroupForReservation(const QString &resId) const;

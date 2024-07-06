@@ -287,7 +287,7 @@ private Q_SLOTS:
         importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
         appController.commitImport(&importer);
         QCOMPARE(tripGroupMgr.tripGroups().size(), 1);
-        const auto tripId = tripGroupMgr.tripGroups().constFirst();
+        const auto tripId = tripGroupMgr.tripGroups().front();
 
         QTemporaryFile tmp;
         QVERIFY(tmp.open());

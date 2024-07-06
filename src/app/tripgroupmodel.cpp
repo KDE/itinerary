@@ -37,9 +37,7 @@ void TripGroupModel::setTripGroupManager(TripGroupManager *tripGroupManager)
 
     beginResetModel();
     m_tripGroupManager = tripGroupManager;
-    const auto tgIds = m_tripGroupManager->tripGroups();
-    m_tripGroups.reserve(tgIds.size());
-    std::copy(tgIds.begin(), tgIds.end(), std::back_inserter(m_tripGroups));
+    m_tripGroups = m_tripGroupManager->tripGroups();
     std::sort(m_tripGroups.begin(), m_tripGroups.end(), [this](const auto &lhs, const auto &rhs) {
         return tripGroupLessThan(lhs, rhs);
     });
