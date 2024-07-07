@@ -47,6 +47,7 @@ target_sources(itinerary PRIVATE
     timelinemodel.cpp
     timelinesectiondelegatecontroller.cpp
     tripgroup.cpp
+    tripgroupfilterproxymodel.cpp
     tripgroupinfoprovider.cpp
     tripgroupmanager.cpp
     tripgroupmodel.cpp
