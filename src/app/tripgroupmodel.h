@@ -41,14 +41,18 @@ public:
     TripGroupManager *tripGroupManager() const;
     void setTripGroupManager(TripGroupManager *tripGroupManager);
 
-    [[nodiscard]]
-    QVariant data(const QModelIndex &index, int role) const override;
+    // QAbstractListModel interface
+    [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
+    [[nodiscard]] QHash<int, QByteArray> roleNames() const override;
+    [[nodiscard]] int rowCount(const QModelIndex& parent = {}) const override;
 
-    [[nodiscard]]
-    QHash<int, QByteArray> roleNames() const override;
-
-    [[nodiscard]]
-    int rowCount(const QModelIndex& parent = {}) const override;
+    // adjacecy queries
+    /** Trips next to @p tripGroupId which are suitable candidates for merging. */
+    Q_INVOKABLE [[nodiscard]] QStringList adjacentTripGroups(const QString &tripGroupId) const;
+    /** Trips adjacent to the given time frame (ie. possible candidates for merging). */
+    Q_INVOKABLE [[nodiscard]] QStringList adjacentTripGroups(const QDateTime &from, const QDateTime &to) const;
+    /** Trips intersecting with the given time frame. */
+    Q_INVOKABLE [[nodiscard]] QStringList intersectingTripGroups(const QDateTime &from, const QDateTime &to) const;
 
     // for unit testing
     void setCurrentDateTime(const QDateTime &dt);

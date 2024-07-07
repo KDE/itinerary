@@ -106,6 +106,56 @@ int TripGroupModel::rowCount(const QModelIndex &parent) const
     return int(m_tripGroups.size());
 }
 
+QStringList TripGroupModel::adjacentTripGroups(const QString &tripGroupId) const
+{
+    const auto tg = m_tripGroupManager->tripGroup(tripGroupId);
+    auto tgIds = adjacentTripGroups(tg.beginDateTime(), tg.endDateTime());
+    tgIds.removeAll(tripGroupId);
+    return tgIds;
+}
+
+QStringList TripGroupModel::adjacentTripGroups(const QDateTime &from, const QDateTime &to) const
+{
+    auto it = std::lower_bound(m_tripGroups.begin(), m_tripGroups.end(), to, [this](const auto &lhs, const auto &rhs) {
+        return tripGroupLessThan(lhs, rhs);
+    });
+    if (it != m_tripGroups.begin()) {
+        --it;
+    }
+
+    QStringList res;
+    if (it == m_tripGroups.end() && !m_tripGroups.empty()) {
+        res.push_back(*std::prev(it));
+    }
+
+    for (;it != m_tripGroups.end(); ++it) {
+        res.push_back(*it);
+        if (from > m_tripGroupManager->tripGroup(*it).endDateTime()) {
+            break;
+        }
+    }
+
+    return res;
+}
+
+QStringList TripGroupModel::intersectingTripGroups(const QDateTime &from, const QDateTime &to) const
+{
+    auto it = std::lower_bound(m_tripGroups.begin(), m_tripGroups.end(), to, [this](const auto &lhs, const auto &rhs) {
+        return tripGroupLessThan(lhs, rhs);
+    });
+
+    QStringList res;
+    for (;it != m_tripGroups.end(); ++it) {
+        const auto tg = m_tripGroupManager->tripGroup(*it);
+        if (tg.beginDateTime() > to || tg.endDateTime() < from) {
+            break;
+        }
+        res.push_back(*it);
+    }
+
+    return res;
+}
+
 void TripGroupModel::tripGroupAdded(const QString &tgId)
 {
     const auto it = std::lower_bound(m_tripGroups.begin(), m_tripGroups.end(), tgId, [this](const auto &lhs, const auto &rhs) {

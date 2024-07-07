@@ -10,6 +10,7 @@
 #include "reservationmanager.h"
 #include "transfermanager.h"
 #include "tripgroup.h"
+#include "tripgroupfilterproxymodel.h"
 #include "tripgroupmanager.h"
 #include "tripgroupmodel.h"
 
@@ -113,6 +114,142 @@ private Q_SLOTS:
 
         QCOMPARE(insertSpy.size(), 0);
         QCOMPARE(updateSpy.size(), 0);
+    }
+
+    void testAdjacency()
+    {
+        TripGroupModel model;
+        model.setCurrentDateTime(QDateTime{{2017, 3 , 4}, {15, 0}, QTimeZone("America/New_York")});
+        QAbstractItemModelTester modelTest(&model);
+
+        ReservationManager resMgr;
+        TransferManager transferMgr;
+        Test::clearAll(&resMgr);
+        auto ctrl = Test::makeAppController();
+        ctrl->setReservationManager(&resMgr);
+
+        TripGroupManager tgMgr;
+        tgMgr.setReservationManager(&resMgr);
+        tgMgr.setTransferManager(&transferMgr);
+        model.setTripGroupManager(&tgMgr);
+
+        ImportController importer;
+        importer.setReservationManager(&resMgr);
+
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
+        ctrl->commitImport(&importer);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
+        ctrl->commitImport(&importer);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/timeline/multi-traveler-merge-with-countryinfo.json")));
+        ctrl->commitImport(&importer);
+
+        QCOMPARE(model.rowCount(), 3);
+
+        TripGroupFilterProxyModel proxyModel;
+        QAbstractItemModelTester proxyModelTester(&proxyModel);
+        proxyModel.setSourceModel(&model);
+
+        auto adjacent = model.adjacentTripGroups(model.index(0, 0).data(TripGroupModel::TripGroupIdRole).toString());
+        QCOMPARE(adjacent.size(), 1);
+        QCOMPARE(adjacent[0], model.index(1, 0).data(TripGroupModel::TripGroupIdRole).toString());
+        proxyModel.setFilteredGroupIds(adjacent);
+        QCOMPARE(proxyModel.rowCount(), 1);
+        QCOMPARE(proxyModel.index(0, 0).data(TripGroupModel::TripGroupIdRole).toString(), model.index(1, 0).data(TripGroupModel::TripGroupIdRole).toString());
+
+        adjacent = model.adjacentTripGroups(model.index(1, 0).data(TripGroupModel::TripGroupIdRole).toString());
+        QCOMPARE(adjacent.size(), 2);
+        proxyModel.setFilteredGroupIds(adjacent);
+        QCOMPARE(proxyModel.rowCount(), 2);
+        QCOMPARE(proxyModel.index(0, 0).data(TripGroupModel::TripGroupIdRole).toString(), model.index(0, 0).data(TripGroupModel::TripGroupIdRole).toString());
+        QCOMPARE(proxyModel.index(1, 0).data(TripGroupModel::TripGroupIdRole).toString(), model.index(2, 0).data(TripGroupModel::TripGroupIdRole).toString());
+
+        adjacent = model.adjacentTripGroups(model.index(2, 0).data(TripGroupModel::TripGroupIdRole).toString());
+        QCOMPARE(adjacent.size(), 1);
+        QCOMPARE(adjacent[0], model.index(1, 0).data(TripGroupModel::TripGroupIdRole).toString());
+        proxyModel.setFilteredGroupIds(adjacent);
+        QCOMPARE(proxyModel.rowCount(), 1);
+        QCOMPARE(proxyModel.index(0, 0).data(TripGroupModel::TripGroupIdRole).toString(), model.index(1, 0).data(TripGroupModel::TripGroupIdRole).toString());
+    }
+
+    void testIntersection()
+    {
+        TripGroupModel model;
+        model.setCurrentDateTime(QDateTime{{2017, 3 , 4}, {15, 0}, QTimeZone("America/New_York")});
+        QAbstractItemModelTester modelTest(&model);
+
+        ReservationManager resMgr;
+        TransferManager transferMgr;
+        Test::clearAll(&resMgr);
+        auto ctrl = Test::makeAppController();
+        ctrl->setReservationManager(&resMgr);
+
+        TripGroupManager tgMgr;
+        tgMgr.setReservationManager(&resMgr);
+        tgMgr.setTransferManager(&transferMgr);
+        model.setTripGroupManager(&tgMgr);
+
+        ImportController importer;
+        importer.setReservationManager(&resMgr);
+
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
+        ctrl->commitImport(&importer);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
+        ctrl->commitImport(&importer);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/timeline/multi-traveler-merge-with-countryinfo.json")));
+        ctrl->commitImport(&importer);
+
+        QCOMPARE(model.rowCount(), 3);
+
+        auto intersecting = model.intersectingTripGroups({{2024, 7, 7}, {13, 0}}, {{2024, 7, 7}, {14, 0}});
+        QCOMPARE(intersecting.size(), 0);
+        intersecting = model.intersectingTripGroups({{1924, 7, 7}, {13, 0}}, {{1924, 7, 7}, {14, 0}});
+        QCOMPARE(intersecting.size(), 0);
+        intersecting = model.intersectingTripGroups({{2017, 7, 7}, {13, 0}}, {{2017, 7, 7}, {14, 0}});
+        QCOMPARE(intersecting.size(), 0);
+
+        intersecting = model.intersectingTripGroups({{2017, 9, 15}, {13, 0}}, {{2017, 9, 15}, {14, 0}});
+        QCOMPARE(intersecting.size(), 1);
+        QCOMPARE(intersecting[0], model.index(0, 0).data(TripGroupModel::TripGroupIdRole).toString());
+        intersecting = model.intersectingTripGroups({{2017, 8, 15}, {13, 0}}, {{2017, 9, 15}, {14, 0}});
+        QCOMPARE(intersecting.size(), 1);
+        QCOMPARE(intersecting[0], model.index(0, 0).data(TripGroupModel::TripGroupIdRole).toString());
+        intersecting = model.intersectingTripGroups({{2017, 9, 15}, {13, 0}}, {{2017, 10, 15}, {14, 0}});
+        QCOMPARE(intersecting.size(), 1);
+        QCOMPARE(intersecting[0], model.index(0, 0).data(TripGroupModel::TripGroupIdRole).toString());
+        intersecting = model.intersectingTripGroups({{2017, 8, 15}, {13, 0}}, {{2017, 10, 15}, {14, 0}});
+        QCOMPARE(intersecting.size(), 1);
+        QCOMPARE(intersecting[0], model.index(0, 0).data(TripGroupModel::TripGroupIdRole).toString());
+
+        intersecting = model.intersectingTripGroups({{2017, 3, 4}, {13, 0}}, {{2017, 3, 4}, {14, 0}, QTimeZone("America/New_York")});
+        QCOMPARE(intersecting.size(), 1);
+        QCOMPARE(intersecting[0], model.index(1, 0).data(TripGroupModel::TripGroupIdRole).toString());
+        intersecting = model.intersectingTripGroups({{2017, 3, 4}, {13, 0}}, {{2017, 4, 4}, {14, 0}, QTimeZone("America/New_York")});
+        QCOMPARE(intersecting.size(), 1);
+        QCOMPARE(intersecting[0], model.index(1, 0).data(TripGroupModel::TripGroupIdRole).toString());
+        intersecting = model.intersectingTripGroups({{2017, 2, 4}, {13, 0}}, {{2017, 3, 4}, {14, 0}, QTimeZone("America/New_York")});
+        QCOMPARE(intersecting.size(), 1);
+        QCOMPARE(intersecting[0], model.index(1, 0).data(TripGroupModel::TripGroupIdRole).toString());
+        intersecting = model.intersectingTripGroups({{2017, 2, 4}, {13, 0}}, {{2017, 4, 4}, {14, 0}, QTimeZone("America/New_York")});
+        QCOMPARE(intersecting.size(), 1);
+        QCOMPARE(intersecting[0], model.index(1, 0).data(TripGroupModel::TripGroupIdRole).toString());
+
+        intersecting = model.intersectingTripGroups({{2000, 1, 1}, {13, 0}}, {{2000, 1, 1}, {14, 0}});
+        QCOMPARE(intersecting.size(), 1);
+        QCOMPARE(intersecting[0], model.index(2, 0).data(TripGroupModel::TripGroupIdRole).toString());
+        intersecting = model.intersectingTripGroups({{1999, 1, 1}, {13, 0}}, {{2000, 1, 1}, {14, 0}});
+        QCOMPARE(intersecting.size(), 1);
+        QCOMPARE(intersecting[0], model.index(2, 0).data(TripGroupModel::TripGroupIdRole).toString());
+        intersecting = model.intersectingTripGroups({{1999, 1, 1}, {13, 0}}, {{2000, 2, 1}, {14, 0}});
+        QCOMPARE(intersecting.size(), 1);
+        QCOMPARE(intersecting[0], model.index(2, 0).data(TripGroupModel::TripGroupIdRole).toString());
+        intersecting = model.intersectingTripGroups({{2000, 1, 1}, {13, 0}}, {{2000, 1, 2}, {14, 0}});
+        QCOMPARE(intersecting.size(), 1);
+        QCOMPARE(intersecting[0], model.index(2, 0).data(TripGroupModel::TripGroupIdRole).toString());
+
+        intersecting = model.intersectingTripGroups({{2017, 1, 1}, {13, 0}}, {{2018, 1, 1}, {14, 0}});
+        QCOMPARE(intersecting.size(), 2);
+        intersecting = model.intersectingTripGroups({{2017, 1, 1}, {13, 0}}, {{2017, 9, 15}, {14, 0}});
+        QCOMPARE(intersecting.size(), 2);
     }
 };
 QTEST_GUILESS_MAIN(TripGroupModelTest)
