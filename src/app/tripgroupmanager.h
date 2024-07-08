@@ -26,6 +26,7 @@ public:
     explicit TripGroupManager(QObject *parent = nullptr);
     ~TripGroupManager() override;
 
+    [[nodiscard]] ReservationManager* reservationManager() const;
     void setReservationManager(ReservationManager *resMgr);
     void setTransferManager(TransferManager *transferMgr);
 

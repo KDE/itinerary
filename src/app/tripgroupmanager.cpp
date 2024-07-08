@@ -41,6 +41,11 @@ TripGroupManager::TripGroupManager(QObject* parent) :
 
 TripGroupManager::~TripGroupManager() = default;
 
+ReservationManager* TripGroupManager::reservationManager() const
+{
+    return m_resMgr;
+}
+
 void TripGroupManager::setReservationManager(ReservationManager *resMgr)
 {
     m_resMgr = resMgr;
