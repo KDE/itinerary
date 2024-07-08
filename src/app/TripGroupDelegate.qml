@@ -20,7 +20,14 @@ FormCard.FormCard {
     required property string tripGroupId
     required property int rangeType
 
-    property var weatherForecast: TripGroupInfoProvider.weatherForecast(tripGroup)
+    property TripGroupController controller: TripGroupController {
+        id: _controller
+        tripGroupModel: TripGroupModel
+        tripGroupId: root.tripGroupId
+        weatherForecastManager: WeatherForecastManager
+        homeCountryIsoCode: Settings.homeCountryIsoCode
+        homeCurrency: Country.fromAlpha2(Settings.homeCountryIsoCode).currencyCode
+    }
 
     signal removeTrip(tripGroupId: var)
 
@@ -96,24 +103,24 @@ FormCard.FormCard {
 
                 RowLayout {
                     Layout.fillWidth: true
-                    visible: weatherForecast.valid
+                    visible: _controller.weatherForecast.valid
 
                     Kirigami.Icon {
-                        source: weatherForecast.symbolIconName
+                        source: _controller.weatherForecast.symbolIconName
                         width: Kirigami.Units.iconSizes.small
                         height: width
                     }
 
                     QQC2.Label {
-                        text: i18nc("temperature range", "%1 / %2",  Localizer.formatTemperature(weatherForecast.minimumTemperature),
-                                                                    Localizer.formatTemperature(weatherForecast.maximumTemperature))
+                        text: i18nc("temperature range", "%1 / %2",  Localizer.formatTemperature(_controller.weatherForecast.minimumTemperature),
+                                                                    Localizer.formatTemperature(_controller.weatherForecast.maximumTemperature))
                         Accessible.ignored: !parent.visible
                         Layout.fillWidth: true
                     }
                 }
 
                 Repeater {
-                    model: TripGroupInfoProvider.locationInformation(tripGroup, Settings.homeCountryIsoCode)
+                    model: _controller.locationInformation
 
                     QQC2.Label {
                         Layout.fillWidth: true
@@ -134,9 +141,8 @@ FormCard.FormCard {
                 }
 
                 QQC2.Label {
-                    readonly property var currencies: TripGroupInfoProvider.currencies(tripGroup, Country.fromAlpha2(Settings.homeCountryIsoCode).currencyCode)
-                    text: currencies.length > 0 ? i18np("Currency: %2", "Currencies: %2", currencies.length, currencies.join(", ")) : ""
-                    visible: currencies.length > 0
+                    text: _controller.currencies.length > 0 ? i18np("Currency: %2", "Currencies: %2", _controller.currencies.length, _controller.currencies.join(", ")) : ""
+                    visible: _controller.currencies.length > 0
                     Accessible.ignored: !visible
                     Layout.fillWidth: true
                 }

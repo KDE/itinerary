@@ -46,8 +46,10 @@
 #include "timelinesectiondelegatecontroller.h"
 #include "transferdelegatecontroller.h"
 #include "transfermanager.h"
-#include "tripgroupinfoprovider.h"
+#include "tripgroupcontroller.h"
+#include "tripgroupfilterproxymodel.h"
 #include "tripgroupmanager.h"
+#include "tripgroupmodel.h"
 #include "tripgroupproxymodel.h"
 #include "unitconversion.h"
 #include "util.h"
@@ -193,6 +195,8 @@ void registerApplicationTypes()
     qmlRegisterType<TimelineDelegateController>("org.kde.itinerary", 1, 0, "TimelineDelegateController");
     qmlRegisterType<TimelineSectionDelegateController>("org.kde.itinerary", 1, 0, "TimelineSectionDelegateController");
     qmlRegisterType<TransferDelegateController>("org.kde.itinerary", 1, 0, "TransferDelegateController");
+    qmlRegisterType<TripGroupController>("org.kde.itinerary", 1, 0, "TripGroupController");
+    qmlRegisterType<TripGroupFilterProxyModel>("org.kde.itinerary", 1, 0, "TripGroupFilterProxyModel");
     qmlRegisterType<WeatherForecastModel>("org.kde.itinerary", 1, 0, "WeatherForecastModel");
 #if HAVE_MATRIX
     qmlRegisterType<MatrixBeacon>("org.kde.itinerary", 1, 0, "MatrixBeacon");
@@ -213,20 +217,15 @@ static TripGroupManager *s_tripGroupManager = nullptr;
 static LiveDataManager *s_liveDataMnager = nullptr;
 static WeatherForecastManager *s_weatherForecastManager = nullptr;
 static TimelineModel *s_timelineModel = nullptr;
-static TripGroupInfoProvider s_tripGroupInfoProvider;
 static TripGroupProxyModel *s_tripGroupProxyModel = nullptr;
 static MapDownloadManager *s_mapDownloadManager = nullptr;
 static PassManager *s_passManager = nullptr;
 static MatrixController *s_matrixController = nullptr;
 static ImportController *s_importController = nullptr;
+static TripGroupModel *s_tripGroupModel = nullptr;
 
 #define REGISTER_SINGLETON_INSTANCE(Class, Instance) \
     qmlRegisterSingletonInstance<Class>("org.kde.itinerary", 1, 0, #Class, Instance);
-
-#define REGISTER_SINGLETON_GADGET_INSTANCE(Class, Instance) \
-    qmlRegisterSingletonType("org.kde.itinerary", 1, 0, #Class, [](QQmlEngine *engine, QJSEngine*) -> QJSValue { \
-        return engine->toScriptValue(Instance); \
-    });
 
 #define REGISTER_SINGLETON_GADGET_FACTORY(Class) \
     qmlRegisterSingletonType("org.kde.itinerary", 1, 0, #Class, [](QQmlEngine*, QJSEngine *engine) -> QJSValue { \
@@ -251,8 +250,7 @@ void registerApplicationSingletons()
     REGISTER_SINGLETON_INSTANCE(PassManager, s_passManager)
     REGISTER_SINGLETON_INSTANCE(MatrixController, s_matrixController);
     REGISTER_SINGLETON_INSTANCE(ImportController, s_importController);
-
-    REGISTER_SINGLETON_GADGET_INSTANCE(TripGroupInfoProvider, s_tripGroupInfoProvider)
+    REGISTER_SINGLETON_INSTANCE(TripGroupModel, s_tripGroupModel);
 
     REGISTER_SINGLETON_GADGET_FACTORY(DevelopmentModeController)
     REGISTER_SINGLETON_GADGET_FACTORY(Factory)
@@ -275,7 +273,6 @@ void registerApplicationSingletons()
 }
 
 #undef REGISTER_SINGLETON_INSTANCE
-#undef REGISTER_SINGLETON_GADGET_INSTANCE
 #undef REGISTER_SINGLETON_GADGET_FACTORY
 
 static QNetworkAccessManager *namFactory()
@@ -411,6 +408,10 @@ int main(int argc, char **argv)
 
     tripGroupMgr.setTransferManager(&transferManager);
 
+    TripGroupModel tripGroupModel;
+    tripGroupModel.setTripGroupManager(&tripGroupMgr);
+    s_tripGroupModel = &tripGroupModel;
+
     TimelineModel timelineModel;
     timelineModel.setHomeCountryIsoCode(settings.homeCountryIsoCode());
     timelineModel.setReservationManager(&resMgr);
@@ -423,9 +424,6 @@ int main(int argc, char **argv)
     TripGroupProxyModel tripGroupProxy;
     tripGroupProxy.setSourceModel(&timelineModel);
     s_tripGroupProxyModel = &tripGroupProxy;
-
-    s_tripGroupInfoProvider.setReservationManager(&resMgr);
-    s_tripGroupInfoProvider.setWeatherForecastManager(&weatherForecastMgr);
 
     MapDownloadManager mapDownloadMgr;
     mapDownloadMgr.setReservationManager(&resMgr);
