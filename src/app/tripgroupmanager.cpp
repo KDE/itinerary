@@ -509,7 +509,7 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
             }
             m_reservationToGroupMap.insert(*it2, tgId);
         }
-        g.setName(guessName(g));
+        g.setName(guessName(g.elements()));
         recomputeTripGroupTimes(g);
         qDebug() << "creating trip group" << g.name();
         m_tripGroups.insert(tgId, g);
@@ -525,7 +525,7 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
             m_reservationToGroupMap.insert(*it2, groupIt.key());
         }
         if (g.hasAutomaticName() || g.name().isEmpty()) {
-            g.setName(guessName(g));
+            g.setName(guessName(g.elements()));
         }
         recomputeTripGroupTimes(g);
         qDebug() << "updating trip group" << g.name();
@@ -595,11 +595,11 @@ static QString destinationName(const QVariant &loc)
     return LocationUtil::name(loc);
 }
 
-QString TripGroupManager::guessDestinationFromLodging(const TripGroup &g) const
+QString TripGroupManager::guessDestinationFromLodging(const QStringList &elements) const
 {
     // we assume that lodging indicates the actual destination, not a stopover location
     QStringList dests;
-    for (const auto &resId : g.elements()) {
+    for (const auto &resId : elements) {
         const auto res = m_resMgr->reservation(resId);
         if (!JsonLd::isA<LodgingReservation>(res)) {
             continue;
@@ -621,19 +621,19 @@ QString TripGroupManager::guessDestinationFromLodging(const TripGroup &g) const
     return dests.join(" - "_L1);
 }
 
-bool TripGroupManager::isRoundTrip(const TripGroup& g) const
+bool TripGroupManager::isRoundTrip(const QStringList &elements) const
 {
-    const auto depId = g.elements().at(0);
-    const auto arrId = g.elements().constLast();
+    const auto &depId = elements.at(0);
+    const auto &arrId = elements.constLast();
     const auto dep = LocationUtil::departureLocation(m_resMgr->reservation(depId));
     const auto arr = LocationUtil::arrivalLocation(m_resMgr->reservation(arrId));
     return LocationUtil::isSameLocation(dep, arr, LocationUtil::CityLevel);
 }
 
-QString TripGroupManager::guessDestinationFromTransportTimeGap(const TripGroup &g) const
+QString TripGroupManager::guessDestinationFromTransportTimeGap(const QStringList &elements) const
 {
     // we must only do this for return trips
-    if (!isRoundTrip(g)) {
+    if (!isRoundTrip(elements)) {
         return {};
     }
 
@@ -642,7 +642,7 @@ QString TripGroupManager::guessDestinationFromTransportTimeGap(const TripGroup &
     QString destName;
     qint64 maxLength = 0;
 
-    for (const auto &resId : g.elements()) {
+    for (const auto &resId : elements) {
         const auto res = m_resMgr->reservation(resId);
         if (!LocationUtil::isLocationChange(res)) {
             continue;
@@ -665,20 +665,24 @@ QString TripGroupManager::guessDestinationFromTransportTimeGap(const TripGroup &
     return destName;
 }
 
-QString TripGroupManager::guessName(const TripGroup& g) const
+QString TripGroupManager::guessName(const QStringList &elements) const
 {
+    if (elements.isEmpty()) {
+        return {};
+    }
+
     // part 1: the destination of the trip
-    QString dest = guessDestinationFromLodging(g);
+    QString dest = guessDestinationFromLodging(elements);
     if (dest.isEmpty()) {
-        dest = guessDestinationFromTransportTimeGap(g);
+        dest = guessDestinationFromTransportTimeGap(elements);
     }
     if (dest.isEmpty()) {
         // two fallback cases: round-trips and one-way trips
-        const auto beginLoc = LocationUtil::departureLocation(m_resMgr->reservation(g.elements().at(0)));
-        const auto endLoc = LocationUtil::arrivalLocation(m_resMgr->reservation(g.elements().constLast()));
+        const auto beginLoc = LocationUtil::departureLocation(m_resMgr->reservation(elements.at(0)));
+        const auto endLoc = LocationUtil::arrivalLocation(m_resMgr->reservation(elements.constLast()));
         if (LocationUtil::isSameLocation(beginLoc, endLoc, LocationUtil::CityLevel)) {
-            const auto middleIdx = (g.elements().size() - 1 + (g.elements().size() % 2)) / 2;
-            const auto middleRes = m_resMgr->reservation(g.elements().at(middleIdx));
+            const auto middleIdx = (elements.size() - 1 + (elements.size() % 2)) / 2;
+            const auto middleRes = m_resMgr->reservation(elements.at(middleIdx));
             if (LocationUtil::isLocationChange(middleRes)) {
                 dest = destinationName(LocationUtil::arrivalLocation(middleRes));
             } else {
@@ -692,8 +696,8 @@ QString TripGroupManager::guessName(const TripGroup& g) const
 
     // part 2: the time range of the trip
     // three cases: within 1 month, crossing a month boundary in one year, crossing a year boundary
-    const auto beginDt = SortUtil::startDateTime(m_resMgr->reservation(g.elements().at(0)));
-    const auto endDt = SortUtil::endDateTime(m_resMgr->reservation(g.elements().constLast()));
+    const auto beginDt = SortUtil::startDateTime(m_resMgr->reservation(elements.at(0)));
+    const auto endDt = SortUtil::endDateTime(m_resMgr->reservation(elements.constLast()));
     Q_ASSERT(beginDt.daysTo(endDt) <= MaximumTripDuration);
     if (beginDt.date().year() == endDt.date().year()) {
         if (beginDt.date().month() == endDt.date().month()) {

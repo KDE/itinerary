@@ -49,6 +49,9 @@ public:
     /** Deletes all elements in the trip group with Identifier @p id. */
     Q_INVOKABLE void removeReservationsInGroup(const QString &groupId);
 
+    /** Guesses a name for the given ordered set of reservations (potentially) forming a trip group. */
+    Q_INVOKABLE [[nodiscard]] QString guessName(const QStringList &elements) const;
+
 Q_SIGNALS:
     void tripGroupAdded(const QString &id);
     void tripGroupChanged(const QString &id);
@@ -72,10 +75,9 @@ private:
     void scanAll();
     void scanOne(std::vector<QString>::const_iterator beginIt);
     void checkConsistency();
-    [[nodiscard]] QString guessName(const TripGroup &g) const;
-    [[nodiscard]] QString guessDestinationFromLodging(const TripGroup &g) const;
-    [[nodiscard]] QString guessDestinationFromTransportTimeGap(const TripGroup &g) const;
-    [[nodiscard]] bool isRoundTrip(const TripGroup &g) const;
+    [[nodiscard]] QString guessDestinationFromLodging(const QStringList &elements) const;
+    [[nodiscard]] QString guessDestinationFromTransportTimeGap(const QStringList &elements) const;
+    [[nodiscard]] bool isRoundTrip(const QStringList &elements) const;
 
     /** Update begin/end times based on the current content.
      *  @returns @c true if the begin/end time changed.
