@@ -125,6 +125,11 @@ QString TripGroupManager::basePath()
     return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/tripgroups/"_L1;
 }
 
+QString TripGroupManager::fileForGroup(QStringView tgId)
+{
+    return basePath() + tgId + ".json"_L1;
+}
+
 void TripGroupManager::load()
 {
     const auto base = basePath();
@@ -166,7 +171,7 @@ void TripGroupManager::removeTripGroup(const QString &groupId)
         }
     }
     m_tripGroups.erase(groupIt);
-    if (!QFile::remove(basePath() + groupId + ".json"_L1)) {
+    if (!QFile::remove(fileForGroup(groupId))) {
         qCWarning(Log) << "Failed to delete trip group file!" << groupId;
     }
     Q_EMIT tripGroupRemoved(groupId);
@@ -188,7 +193,7 @@ void TripGroupManager::updateTripGroup(const QString &groupId, const TripGroup &
 
     groupIt.value() = group;
     recomputeTripGroupTimes(groupIt.value());
-    groupIt.value().store(basePath() + groupId + ".json"_L1);
+    groupIt.value().store(fileForGroup(groupId));
     Q_EMIT tripGroupChanged(groupId);
 }
 
@@ -255,7 +260,7 @@ void TripGroupManager::batchRemoved(const QString &resId)
             qDebug() << "removing element from trip group" << resId << elems;
             groupIt.value().setElements(elems);
             recomputeTripGroupTimes(groupIt.value());
-            groupIt.value().store(basePath() + mapIt.value() + ".json"_L1);
+            groupIt.value().store(fileForGroup(mapIt.value()));
             m_reservationToGroupMap.erase(mapIt);
             Q_EMIT tripGroupChanged(groupId);
         }
@@ -282,7 +287,7 @@ void TripGroupManager::transferChanged(const QString &resId, Transfer::Alignment
     if ((alignment == Transfer::Before && tgIt.value().elements().constFirst() == resId)
      || (alignment == Transfer::After && tgIt.value().elements().constLast() == resId)) {
         if (recomputeTripGroupTimes(tgIt.value())) {
-            tgIt.value().store(basePath() + tgIt.key() + ".json"_L1);
+            tgIt.value().store(fileForGroup(tgIt.key()));
             Q_EMIT tripGroupChanged(tgId);
         }
     }
@@ -508,7 +513,7 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
         recomputeTripGroupTimes(g);
         qDebug() << "creating trip group" << g.name();
         m_tripGroups.insert(tgId, g);
-        g.store(basePath() + tgId + ".json"_L1);
+        g.store(fileForGroup(tgId));
         Q_EMIT tripGroupAdded(tgId);
     } else {
         auto &g = groupIt.value();
@@ -524,7 +529,7 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
         }
         recomputeTripGroupTimes(g);
         qDebug() << "updating trip group" << g.name();
-        g.store(basePath() + groupIt.key() + ".json"_L1);
+        g.store(fileForGroup(groupIt.key()));
         Q_EMIT tripGroupChanged(groupIt.key());
     }
 
@@ -558,7 +563,7 @@ void TripGroupManager::checkConsistency()
         }
         qCDebug(Log) << "Fixing begin/end times for group" << it.value().name();
         recomputeTripGroupTimes(it.value());
-        it.value().store(basePath() + it.key() + ".json"_L1);
+        it.value().store(fileForGroup(it.key()));
     }
 
     // look for nested groups

@@ -58,6 +58,7 @@ private:
     friend class TripGroup;
 
     [[nodiscard]] static QString basePath();
+    [[nodiscard]] static QString fileForGroup(QStringView tgId);
     void load();
     void removeTripGroup(const QString &groupId);
 
