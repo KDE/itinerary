@@ -20,6 +20,8 @@
 #include <QSignalSpy>
 #include <QStandardPaths>
 
+using namespace Qt::Literals;
+
 void initLocale()
 {
     qputenv("LC_ALL", "en_US.utf-8");
@@ -79,21 +81,25 @@ private Q_SLOTS:
 
         ModelVerificationPoint vp0(QLatin1StringView(SOURCE_DIR "/data/tripgroupproxy/expand-collapse-r0.model"));
         vp0.setRoleFilter({TimelineModel::BatchIdRole, TimelineModel::TripGroupIdRole});
+        vp0.setJsonPropertyFilter({"elements"_L1});
         QVERIFY(vp0.verify(&proxy));
 
         proxy.collapse(addSpy.at(0).at(0).toString());
         ModelVerificationPoint vp1(QLatin1StringView(SOURCE_DIR "/data/tripgroupproxy/expand-collapse-r1.model"));
         vp1.setRoleFilter({TimelineModel::BatchIdRole, TimelineModel::TripGroupIdRole});
+        vp1.setJsonPropertyFilter({"elements"_L1});
         QVERIFY(vp1.verify(&proxy));
 
         proxy.collapse(addSpy.at(1).at(0).toString());
         ModelVerificationPoint vp2(QLatin1StringView(SOURCE_DIR "/data/tripgroupproxy/expand-collapse-r2.model"));
         vp2.setRoleFilter({TimelineModel::BatchIdRole, TimelineModel::TripGroupIdRole});
+        vp2.setJsonPropertyFilter({"elements"_L1});
         QVERIFY(vp2.verify(&proxy));
 
         proxy.collapse(addSpy.at(2).at(0).toString());
         ModelVerificationPoint vp3(QLatin1StringView(SOURCE_DIR "/data/tripgroupproxy/expand-collapse-r3.model"));
         vp3.setRoleFilter({TimelineModel::BatchIdRole, TimelineModel::TripGroupIdRole});
+        vp3.setJsonPropertyFilter({"elements"_L1});
         QVERIFY(vp3.verify(&proxy));
 
         proxy.expand(addSpy.at(2).at(0).toString());
@@ -136,12 +142,14 @@ private Q_SLOTS:
         // future event, should be expanded
         ModelVerificationPoint vp0(QLatin1StringView(SOURCE_DIR "/data/tripgroupproxy/current-r0.model"));
         vp0.setRoleFilter({TimelineModel::BatchIdRole, TimelineModel::TripGroupIdRole});
+        vp0.setJsonPropertyFilter({"elements"_L1});
         QVERIFY(vp0.verify(&proxy));
 
         // current event, must be expanded and not collapsible
         model.setCurrentDateTime(QDateTime({2017, 9, 14}, {12, 34}));
         ModelVerificationPoint vp1(QLatin1StringView(SOURCE_DIR "/data/tripgroupproxy/current-r1.model"));
         vp1.setRoleFilter({TimelineModel::BatchIdRole, TimelineModel::TripGroupIdRole});
+        vp1.setJsonPropertyFilter({"elements"_L1});
         QVERIFY(vp1.verify(&proxy));
         proxy.collapse(addSpy.at(0).at(0).toString());
         QVERIFY(vp1.verify(&proxy));
@@ -150,6 +158,7 @@ private Q_SLOTS:
         model.setCurrentDateTime(QDateTime({2018, 9, 9}, {12, 34}));
         ModelVerificationPoint vp2(QLatin1StringView(SOURCE_DIR "/data/tripgroupproxy/current-r2.model"));
         vp2.setRoleFilter({TimelineModel::BatchIdRole, TimelineModel::TripGroupIdRole});
+        vp2.setJsonPropertyFilter({"elements"_L1});
         QCOMPARE(proxy.rowCount(), 3);
         QVERIFY(vp2.verify(&proxy));
     }

@@ -24,6 +24,8 @@ class TripGroup
     Q_PROPERTY(QDateTime endDateTime READ endDateTime)
     Q_PROPERTY(QString matrixRoomId READ matrixRoomId WRITE setMatrixRoomId)
     Q_PROPERTY(QString slugName READ slugName)
+    Q_PROPERTY(QList<QString> elements READ elements)
+
 public:
     explicit TripGroup();
     ~TripGroup();

@@ -37,7 +37,7 @@ public:
     void resume();
 
     [[nodiscard]] std::vector<QString> tripGroups() const;
-    [[nodiscard]] TripGroup tripGroup(const QString &id) const;
+    Q_INVOKABLE [[nodiscard]] TripGroup tripGroup(const QString &id) const;
     [[nodiscard]] QString tripGroupIdForReservation(const QString &resId) const;
     [[nodiscard]] TripGroup tripGroupForReservation(const QString &resId) const;
 

@@ -448,6 +448,7 @@ private Q_SLOTS:
         ctrl->commitImport(&importer);
         ModelVerificationPoint vp0(QLatin1StringView(SOURCE_DIR "/data/weather-no-location-change.model"));
         vp0.setRoleFilter({TimelineModel::BatchIdRole});
+        vp0.setJsonPropertyFilter({"elements"_L1});
         QVERIFY(vp0.verify(&model));
     }
 
@@ -555,12 +556,14 @@ private Q_SLOTS:
 
         ModelVerificationPoint vp0(QLatin1StringView(SOURCE_DIR "/data/timeline/daychange-r0.model"));
         vp0.setRoleFilter({TimelineModel::BatchIdRole});
+        vp0.setJsonPropertyFilter({"elements"_L1});
         QVERIFY(vp0.verify(&model));
 
         // changing the day should move the today marker
         model.setCurrentDateTime(QDateTime({2196, 10, 15}, {0, 15}));
         ModelVerificationPoint vp1(QLatin1StringView(SOURCE_DIR "/data/timeline/daychange-r1.model"));
         vp1.setRoleFilter({TimelineModel::BatchIdRole});
+        vp1.setJsonPropertyFilter({"elements"_L1});
         QVERIFY(vp1.verify(&model));
 
         // load something to define the current location, so we get weather
@@ -570,12 +573,14 @@ private Q_SLOTS:
         ctrl->commitImport(&importer);
         ModelVerificationPoint vp2(QLatin1StringView(SOURCE_DIR "/data/timeline/daychange-r2.model"));
         vp2.setRoleFilter({TimelineModel::BatchIdRole});
+        vp2.setJsonPropertyFilter({"elements"_L1});
         QVERIFY(vp2.verify(&model));
 
         // changing the day should move the today marker and weather one day forward
         model.setCurrentDateTime(QDateTime({2196, 10, 16}, {19, 30}));
         ModelVerificationPoint vp3(QLatin1StringView(SOURCE_DIR "/data/timeline/daychange-r3.model"));
         vp3.setRoleFilter({TimelineModel::BatchIdRole});
+        vp3.setJsonPropertyFilter({"elements"_L1});
         QVERIFY(vp3.verify(&model));
     }
 
@@ -641,7 +646,7 @@ private Q_SLOTS:
         // check state is correct for data imported at the start
         ModelVerificationPoint vp(QLatin1StringView(SOURCE_DIR "/data/timeline/") + baseName + QLatin1StringView(".model"));
         vp.setRoleFilter({TimelineModel::BatchIdRole, TimelineModel::TripGroupIdRole});
-        vp.setJsonPropertyFilter({QStringLiteral("reservationId")});
+        vp.setJsonPropertyFilter({"reservationId"_L1, "elements"_L1});
         QVERIFY(vp.verify(&model));
 
         // retry with loading during runtime
