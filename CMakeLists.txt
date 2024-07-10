@@ -77,7 +77,7 @@ else()
 endif()
 
 ecm_set_disabled_deprecation_versions(QT 5.15.2
-     KF 5.102.0
+     KF 6.4.0
     )
 
 
