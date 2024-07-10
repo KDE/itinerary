@@ -309,6 +309,9 @@ Kirigami.ScrollablePage {
         id: tripGroupEditor
         onAccepted: TripGroupManager.updateTripGroup(tripGroupEditor.tripGroupId, tripGroupEditor.tripGroup)
     }
+    TripGroupMergeDialog {
+        id: tripGroupMergeDialog
+    }
 
     Component {
         id: flightDetailsPage
