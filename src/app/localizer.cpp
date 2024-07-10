@@ -34,19 +34,6 @@ using namespace KAndroidExtras;
 
 using namespace KItinerary;
 
-static QString readFromGadget(const QMetaObject *mo, const QVariant &gadget, const char *propName)
-{
-    const auto propIdx = mo->indexOfProperty(propName);
-    if (propIdx < 0) {
-        return {};
-    }
-    const auto prop = mo->property(propIdx);
-    if (!prop.isValid()) {
-        return {};
-    }
-    return prop.readOnGadget(gadget.constData()).toString();
-}
-
 static KContacts::Address variantToKContactsAddress(const QVariant &obj)
 {
     KContacts::Address address;
