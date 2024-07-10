@@ -76,7 +76,7 @@ else()
     find_package(SharedMimeInfo 1.0 REQUIRED)
 endif()
 
-ecm_set_disabled_deprecation_versions(QT 5.15.2
+ecm_set_disabled_deprecation_versions(QT 6.4.0
      KF 6.4.0
     )
 
