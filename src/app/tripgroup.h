@@ -19,7 +19,10 @@ class TripGroup
 {
     Q_GADGET
     Q_PROPERTY(QString name READ name WRITE setName)
+    /** @c true if the name is auto-assigned, @c false when it is user-specified. */
     Q_PROPERTY(bool automaticName READ hasAutomaticName WRITE setNameIsAutomatic)
+    /** @c true if the grouping has been done automatically, @c false if it's user edited. */
+    Q_PROPERTY(bool automaticallyGrouped READ isAutomaticallyGrouped WRITE setIsAutomaticallyGrouped)
     Q_PROPERTY(QDateTime beginDateTime READ beginDateTime)
     Q_PROPERTY(QDateTime endDateTime READ endDateTime)
     Q_PROPERTY(QString matrixRoomId READ matrixRoomId WRITE setMatrixRoomId)
@@ -35,6 +38,8 @@ public:
 
     [[nodiscard]] bool hasAutomaticName() const;
     void setNameIsAutomatic(bool automatic);
+    [[nodiscard]] bool isAutomaticallyGrouped() const;
+    void setIsAutomaticallyGrouped(bool automatic);
 
     [[nodiscard]] QList<QString> elements() const;
     void setElements(const QList<QString> &elems);
@@ -64,6 +69,7 @@ private:
     QDateTime m_endDateTime;
     QString m_matrixRoomId;
     bool m_automaticName = true;
+    bool m_automaticallyGrouped = true;
 };
 
 Q_DECLARE_METATYPE(TripGroup)

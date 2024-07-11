@@ -7,6 +7,7 @@
             "@context": "http://schema.org",
             "@type": "TripGroup",
             "automaticName": true,
+            "automaticallyGrouped": true,
             "beginDateTime": {
                 "@type": "QDateTime",
                 "@value": "2017-09-10T06:45:00+02:00",
