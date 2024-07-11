@@ -52,6 +52,11 @@ public:
     /** Guesses a name for the given ordered set of reservations (potentially) forming a trip group. */
     Q_INVOKABLE [[nodiscard]] QString guessName(const QStringList &elements) const;
 
+    /** Merge the two given trip groups into one.
+     *  @returns the trip group id of the result.
+     */
+    Q_INVOKABLE [[nodiscard]] QString merge(const QString &tgId1, const QString &tgId2, const QString &newName);
+
 Q_SIGNALS:
     void tripGroupAdded(const QString &id);
     void tripGroupChanged(const QString &id);

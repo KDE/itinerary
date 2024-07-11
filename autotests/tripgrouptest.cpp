@@ -262,6 +262,107 @@ private Q_SLOTS:
         QCOMPARE(resMgr.batches().size(), 0);
         QCOMPARE(mgr.tripGroups().size(), 0);
     }
+
+    void testMerge()
+    {
+        ReservationManager resMgr;
+        TransferManager transferMgr;
+        Test::clearAll(&resMgr);
+        auto ctrl = Test::makeAppController();
+        ctrl->setReservationManager(&resMgr);
+
+        TripGroupManager tgMgr;
+        tgMgr.setReservationManager(&resMgr);
+        tgMgr.setTransferManager(&transferMgr);
+
+        ImportController importer;
+        importer.setReservationManager(&resMgr);
+
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
+        ctrl->commitImport(&importer);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
+        ctrl->commitImport(&importer);
+        QCOMPARE(tgMgr.tripGroups().size(), 2);
+
+        auto tgId1 = tgMgr.tripGroups()[0];
+        auto tgId2 = tgMgr.tripGroups()[1];
+
+        auto mergeId = tgMgr.merge(tgId1, tgId2, u"New Group Name"_s);
+        QVERIFY(!mergeId.isEmpty());
+        QVERIFY(mergeId == tgId1 || mergeId == tgId2);
+        QCOMPARE(tgMgr.tripGroups().size(), 1);
+
+        {
+            const auto tg = tgMgr.tripGroup(mergeId);
+            QCOMPARE(tg.isAutomaticallyGrouped(), false);
+            QCOMPARE(tg.hasAutomaticName(), false);
+            QCOMPARE(tg.name(), "New Group Name"_L1);
+            QCOMPARE(tg.elements().size(), resMgr.batches().size());
+            for (const auto &resId :resMgr.batches()) {
+                QCOMPARE(tgMgr.tripGroupIdForReservation(resId), mergeId);
+            }
+        }
+
+        // manual grouping is persisted and not affected by rescanning
+        {
+            TripGroupManager tgMgr2;
+            tgMgr2.setReservationManager(&resMgr);
+            tgMgr2.setTransferManager(&transferMgr);
+            QCOMPARE(tgMgr2.tripGroups().size(), 1);
+        }
+
+        // no automatic regrouping, regardless of what changes
+        for (const auto &res : resMgr.batches()) {
+            Q_EMIT resMgr.batchContentChanged(res);
+        }
+        QCOMPARE(tgMgr.tripGroups().size(), 1);
+
+        while (resMgr.batches().size() > 1) {
+            resMgr.removeBatch(resMgr.batches().front());
+            QCOMPARE(tgMgr.tripGroups().size(), 1);
+            {
+                const auto tg = tgMgr.tripGroup(mergeId);
+                QCOMPARE(tg.isAutomaticallyGrouped(), false);
+                QCOMPARE(tg.hasAutomaticName(), false);
+                QCOMPARE(tg.name(), "New Group Name"_L1);
+                QCOMPARE(tg.elements().size(), resMgr.batches().size());
+            }
+        }
+
+        resMgr.removeBatch(resMgr.batches().front());
+        QCOMPARE(tgMgr.tripGroups().size(), 0);
+
+        // test adding elements inside a merged group
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
+        ctrl->commitImport(&importer);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
+        ctrl->commitImport(&importer);
+
+        tgId1 = tgMgr.tripGroups()[0];
+        tgId2 = tgMgr.tripGroups()[1];
+
+        mergeId = tgMgr.merge(tgId1, tgId2, u"New Group 2"_s);
+        QVERIFY(!mergeId.isEmpty());
+        QVERIFY(mergeId == tgId1 || mergeId == tgId2);
+        QCOMPARE(tgMgr.tripGroups().size(), 1);
+
+        QVariantList reservations;
+        auto resIds = tgMgr.tripGroup(mergeId).elements();
+        resIds.pop_back();
+        resIds.pop_front();
+        QCOMPARE(resIds.size(), 11);
+        for (const auto &resId : resIds) {
+            reservations.push_back(resMgr.reservation(resId));
+            resMgr.removeBatch(resId);
+        }
+        QCOMPARE(tgMgr.tripGroups().size(), 1);
+
+        for (const auto &res : reservations) {
+            resMgr.addReservation(res);
+        }
+        QCOMPARE(tgMgr.tripGroups().size(), 1);
+        QCOMPARE(tgMgr.tripGroup(mergeId).name(), "New Group 2"_L1);
+    }
 };
 QTEST_GUILESS_MAIN(TripGroupTest)
 

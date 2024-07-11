@@ -742,7 +742,6 @@ QString TripGroupManager::guessName(const QStringList &elements) const
     // three cases: within 1 month, crossing a month boundary in one year, crossing a year boundary
     const auto beginDt = SortUtil::startDateTime(m_resMgr->reservation(elements.at(0)));
     const auto endDt = SortUtil::endDateTime(m_resMgr->reservation(elements.constLast()));
-    Q_ASSERT(beginDt.daysTo(endDt) <= MaximumTripDuration);
     if (beginDt.date().year() == endDt.date().year()) {
         if (beginDt.date().month() == endDt.date().month()) {
             return i18nc("%1 is destination, %2 is the standalone month name, %3 is the year", "%1 (%2 %3)", dest, QLocale().standaloneMonthName(beginDt.date().month(), QLocale::LongFormat), beginDt.date().toString(u"yyyy"));
@@ -787,6 +786,52 @@ bool TripGroupManager::recomputeTripGroupTimes(TripGroup &tg) const
     change |= dt != tg.endDateTime();
     tg.setEndDateTime(dt);
     return change;
+}
+
+QString TripGroupManager::merge(const QString &tgId1, const QString &tgId2, const QString &newName)
+{
+    qCDebug(Log) << tgId1 << tgId2 << newName;
+
+    const auto tg1 = tripGroup(tgId1);
+    const auto tg2 = tripGroup(tgId2);
+
+    QStringList elements;
+    elements.reserve(tg1.elements().size() + tg2.elements().size());
+    elements.append(tg1.elements());
+    elements.append(tg2.elements());
+    std::sort(elements.begin(), elements.end(), [this](const auto &lhs, const auto &rhs) {
+        return SortUtil::isBefore(m_resMgr->reservation(lhs), m_resMgr->reservation(rhs));
+    });
+
+    for (const auto &id : elements) {
+        m_reservationToGroupMap[id] = tgId1;
+    }
+
+    TripGroup group;
+    group.setElements(elements);
+    group.setIsAutomaticallyGrouped(false);
+
+    group.setName(guessName(elements));
+    if (group.name() != newName) {
+        group.setName(newName);
+        group.setNameIsAutomatic(false);
+    }
+
+    group.setMatrixRoomId(tg1.matrixRoomId().isEmpty() ? tg2.matrixRoomId() : tg1.matrixRoomId());
+
+    recomputeTripGroupTimes(group);
+    m_tripGroups[tgId1] = group;
+    group.store(fileForGroup(tgId1));
+
+    m_tripGroups.remove(tgId2);
+    if (!QFile::remove(fileForGroup(tgId2))) {
+        qCWarning(Log) << "Failed to delete trip group file!" << tgId2;
+    }
+
+    Q_EMIT tripGroupRemoved(tgId2);
+    Q_EMIT tripGroupChanged(tgId1);
+
+    return tgId1;
 }
 
 #include "moc_tripgroupmanager.cpp"
