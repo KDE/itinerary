@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-07 00:39+0000\n"
+"POT-Creation-Date: 2024-07-11 00:39+0000\n"
 "PO-Revision-Date: 2024-07-02 21:25+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -118,7 +118,7 @@ msgstr "Redigera"
 msgid "Add to calendar…"
 msgstr "Lägg till i kalender…"
 
-#: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:175
+#: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:181
 #, kde-format
 msgid "Export…"
 msgstr "Exportera…"
@@ -816,7 +816,7 @@ msgctxt "@action:button"
 msgid "Save"
 msgstr "Spara"
 
-#: app/EventDelegate.qml:21 app/TripGroupDelegate.qml:61
+#: app/EventDelegate.qml:21 app/TripGroupDelegate.qml:68
 #, kde-format
 msgid "End: %1"
 msgstr "Slut: %1"
@@ -1320,7 +1320,7 @@ msgstr "Ta bort passerkort"
 msgid "Do you really want to delete this pass?"
 msgstr "Vill du verkligen ta bort passet?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:334 app/main.qml:21 app/main.qml:166
+#: app/gpxexport.cpp:33 app/main.cpp:331 app/main.qml:21 app/main.qml:166
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE-resplan"
@@ -2191,43 +2191,43 @@ msgstr "Position"
 msgid "Journey"
 msgstr "Resa"
 
-#: app/localizer.cpp:175
+#: app/localizer.cpp:162
 #, kde-format
 msgctxt "day-only date format"
 msgid "dd MMMM"
 msgstr "dd MMMM"
 
-#: app/localizer.cpp:220
+#: app/localizer.cpp:207
 #, kde-format
 msgctxt "distance in meter"
 msgid "%1 m"
 msgstr "%1 m"
 
-#: app/localizer.cpp:223 app/localizer.cpp:225
+#: app/localizer.cpp:210 app/localizer.cpp:212
 #, kde-format
 msgctxt "distance in kilometer"
 msgid "%1 km"
 msgstr "%1 km"
 
-#: app/localizer.cpp:231
+#: app/localizer.cpp:218
 #, kde-format
 msgctxt "speed in kilometers per hour"
 msgid "%1 km/h"
 msgstr "%1 km/t"
 
-#: app/localizer.cpp:237
+#: app/localizer.cpp:224
 #, kde-format
 msgctxt "weight in gram"
 msgid "%1 g"
 msgstr "%1 g"
 
-#: app/localizer.cpp:240 app/localizer.cpp:242
+#: app/localizer.cpp:227 app/localizer.cpp:229
 #, kde-format
 msgctxt "weight in kilogram"
 msgid "%1 kg"
 msgstr "%1 kg"
 
-#: app/localizer.cpp:248
+#: app/localizer.cpp:235
 #, kde-format
 msgctxt "temperature"
 msgid "%1°C"
@@ -2346,23 +2346,23 @@ msgstr "Typ M"
 msgid "Type N"
 msgstr "Typ N"
 
-#: app/main.cpp:342
+#: app/main.cpp:339
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Digitalt resehjälpprogram"
 
-#: app/main.cpp:343
+#: app/main.cpp:340
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "Copyright © KDE-gemenskapen"
 
-#: app/main.cpp:350
+#: app/main.cpp:347
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Öppna resplan på angiven sida"
 
-#: app/main.cpp:355
+#: app/main.cpp:352
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
@@ -3636,53 +3636,53 @@ msgstr "%1 börjar %2"
 msgid "Following departure %1 from %2"
 msgstr "Senare avgång %1 från %2"
 
-#: app/TripGroupDelegate.qml:61
+#: app/TripGroupDelegate.qml:68
 #, kde-format
 msgid "Trip: %1"
 msgstr "Resa: %1"
 
-#: app/TripGroupDelegate.qml:92
+#: app/TripGroupDelegate.qml:99
 #, kde-format
 msgid "Date: %2 (one day)"
 msgid_plural "Date: %2 (%1 days)"
 msgstr[0] "Datum: %2 (en dag)"
 msgstr[1] "Datum: %2 (%1 dagar)"
 
-#: app/TripGroupDelegate.qml:108 app/WeatherForecastDelegate.qml:48
+#: app/TripGroupDelegate.qml:115 app/WeatherForecastDelegate.qml:48
 #: app/WeatherForecastPage.qml:93
 #, kde-format
 msgctxt "temperature range"
 msgid "%1 / %2"
 msgstr "%1 / %2"
 
-#: app/TripGroupDelegate.qml:123
+#: app/TripGroupDelegate.qml:130
 #, kde-format
 msgid "%1: some incompatible power sockets (%2)"
 msgstr "%1: Vissa inkompatibla eluttag (%2)"
 
-#: app/TripGroupDelegate.qml:125
+#: app/TripGroupDelegate.qml:132
 #, kde-format
 msgid "%1: some incompatible power plugs (%2)"
 msgstr "%1: Vissa inkompatibla elkontakter (%2)"
 
-#: app/TripGroupDelegate.qml:128
+#: app/TripGroupDelegate.qml:135
 #, kde-format
 msgid "%1: no compatible power plugs (%2)"
 msgstr "%1: Vissa inkompatibla elkontakter (%2)"
 
-#: app/TripGroupDelegate.qml:138
+#: app/TripGroupDelegate.qml:144
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
 msgstr[0] "Valuta: %2"
 msgstr[1] "Valutor: %2"
 
-#: app/TripGroupDelegate.qml:162
+#: app/TripGroupDelegate.qml:168
 #, kde-format
 msgid "Edit…"
 msgstr "Redigera…"
 
-#: app/TripGroupDelegate.qml:183
+#: app/TripGroupDelegate.qml:189
 #, kde-format
 msgid "Delete trip"
 msgstr "Ta bort resa"
@@ -3705,13 +3705,13 @@ msgctxt "@label:textbox"
 msgid "Trip name:"
 msgstr "Resans namn:"
 
-#: app/tripgroupmanager.cpp:690
+#: app/tripgroupmanager.cpp:704
 #, kde-format
 msgctxt "%1 is destination, %2 is the standalone month name, %3 is the year"
 msgid "%1 (%2 %3)"
 msgstr "%1 (%2 %3)"
 
-#: app/tripgroupmanager.cpp:692
+#: app/tripgroupmanager.cpp:706
 #, kde-format
 msgctxt ""
 "%1 is destination, %2 and %3 are the standalone month names and %4 is the "
@@ -3719,7 +3719,7 @@ msgctxt ""
 msgid "%1 (%2/%3 %4)"
 msgstr "%1 (%2 - %3 %4)"
 
-#: app/tripgroupmanager.cpp:694
+#: app/tripgroupmanager.cpp:708
 #, kde-format
 msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"
