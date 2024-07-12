@@ -230,9 +230,23 @@ void TripGroupManager::batchAdded(const QString &resId)
 
 void TripGroupManager::batchContentChanged(const QString &resId)
 {
-    // ### we can probably make this more efficient
-    batchRemoved(resId);
-    batchAdded(resId);
+    const auto tgId = tripGroupIdForReservation(resId);
+    auto tg = tripGroup(tgId);
+    if (!tg.isAutomaticallyGrouped()) {
+        // don't touch the grouping, just deal with potential time changes
+        auto elements = tg.elements();
+        std::sort(elements.begin(), elements.end(), [this](const auto &lhs, const auto &rhs) {
+            return SortUtil::isBefore(m_resMgr->reservation(lhs), m_resMgr->reservation(rhs));
+        });
+        tg.setElements(elements);
+        recomputeTripGroupTimes(tg);
+        tg.store(fileForGroup(tgId));
+        Q_EMIT tripGroupChanged(tgId);
+    } else {
+        // ### we can probably make this more efficient
+        batchRemoved(resId);
+        batchAdded(resId);
+    }
 }
 
 void TripGroupManager::batchRenamed(const QString &oldBatchId, const QString &newBatchId)
@@ -268,7 +282,7 @@ void TripGroupManager::batchRemoved(const QString &resId)
 
         auto elems = groupIt.value().elements();
         elems.removeAll(resId);
-        if (elems.size() < MinimumTripElements) { // group deleted
+        if (elems.isEmpty() || (groupIt.value().isAutomaticallyGrouped() && elems.size() < MinimumTripElements)) { // group deleted
             qDebug() << "removing trip group due to getting too small";
             removeTripGroup(groupId);
         } else { // group changed
@@ -364,13 +378,18 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
         m_resNumSearch.push_back({beginRes.userType(), JsonLd::convert<Reservation>(beginRes).reservationNumber()});
     }
 
+    const auto prevTg = tripGroupForReservation(*beginIt);
+    const auto explicitEnd = !prevTg.isAutomaticallyGrouped() && !prevTg.elements().empty() ? prevTg.elements().constLast() : QString();
+
     qDebug() << "starting scan at" << LocationUtil::name(beginDeparture);
     auto res = beginRes;
     auto resNumIt = m_reservations.cend(); // result of the search using reservation ids
     auto connectedIt = m_reservations.cend(); // result of the search using trip connectivity
+    auto explicitIt = m_reservations.cend(); // result of the search using an existing explicitly managed group
 
     bool resNumSearchDone = false;
     bool connectedSearchDone = false;
+    bool explicitSearchDone = explicitEnd.isEmpty();
     bool reachedStartAgain = false;
 
     // scan by location change
@@ -385,20 +404,20 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
         res = curRes;
 
         // all search strategies think they are done
-        if (resNumSearchDone && connectedSearchDone) {
+        if (resNumSearchDone && connectedSearchDone && explicitSearchDone) {
             break;
         }
 
         // search depth reached
         // ### we probably don't want to count multi-traveler elements for this!
-        if (std::distance(beginIt, it) > MaximumTripElements) {
+        if (explicitSearchDone && std::distance(beginIt, it) > MaximumTripElements) {
             qDebug() << "  aborting search, maximum search depth reached";
             break;
         }
 
         // maximum trip duration exceeded?
         const auto endDt = SortUtil::endDateTime(res);
-        if (beginDt.daysTo(endDt) > MaximumTripDuration) {
+        if (explicitSearchDone && beginDt.daysTo(endDt) > MaximumTripDuration) {
             qDebug() << "  aborting search, maximum trip duration reached";
             break;
         }
@@ -457,6 +476,11 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
                 resNumSearchDone = true;
             }
         }
+
+        if (!explicitSearchDone && (*it) == explicitEnd) {
+            explicitIt = it;
+            explicitSearchDone = true;
+        }
     }
 
     // determine which search strategy found the larger result
@@ -469,6 +493,9 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
     } else {
         it = connectedIt == m_reservations.end() ? resNumIt : connectedIt;
     }
+    if (explicitIt != m_reservations.cend()) {
+        it = it == m_reservations.end() ? explicitIt : std::max(it, explicitIt);
+    }
 
     if (it == m_reservations.end()) {
         qDebug() << "nothing found";
@@ -476,20 +503,22 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
     }
 
     // remove leading loop appendices (trailing ones will be cut by the loop check above already)
-    const auto endRes = m_resMgr->reservation(*it);
-    const auto endArrival = LocationUtil::arrivalLocation(endRes);
-    for (auto it2 = beginIt; it2 != it; ++it2) {
-        const auto res = m_resMgr->reservation(*it2);
-        if (!LocationUtil::isLocationChange(res)) {
-            continue;
-        }
-        const auto curDeparture = LocationUtil::departureLocation(res);
-        if (LocationUtil::isSameLocation(endArrival, curDeparture, LocationUtil::CityLevel)) {
-            if (beginIt != it2) {
-                qDebug() << "  removing leading appendix, starting at" << LocationUtil::name(curDeparture);
+    if (prevTg.isAutomaticallyGrouped()) {
+        const auto endRes = m_resMgr->reservation(*it);
+        const auto endArrival = LocationUtil::arrivalLocation(endRes);
+        for (auto it2 = beginIt; it2 != it; ++it2) {
+            const auto res = m_resMgr->reservation(*it2);
+            if (!LocationUtil::isLocationChange(res)) {
+                continue;
             }
-            beginIt = it2;
-            break;
+            const auto curDeparture = LocationUtil::departureLocation(res);
+            if (LocationUtil::isSameLocation(endArrival, curDeparture, LocationUtil::CityLevel)) {
+                if (beginIt != it2) {
+                    qDebug() << "  removing leading appendix, starting at" << LocationUtil::name(curDeparture);
+                }
+                beginIt = it2;
+                break;
+            }
         }
     }
 
