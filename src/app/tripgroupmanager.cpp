@@ -237,9 +237,24 @@ void TripGroupManager::batchContentChanged(const QString &resId)
 
 void TripGroupManager::batchRenamed(const QString &oldBatchId, const QString &newBatchId)
 {
-    // ### this can be done more efficiently
-    batchRemoved(oldBatchId);
-    batchAdded(newBatchId);
+    const auto mapIt = m_reservationToGroupMap.constFind(oldBatchId);
+    if (mapIt == m_reservationToGroupMap.end()) {
+        return;
+    }
+
+    const auto tgId = mapIt.value(); // NOLINT performance-unnecessary-copy-initialization
+
+    auto tg = tripGroup(tgId);
+    auto elems = tg.elements();
+    const auto elemIt = std::find(elems.begin(), elems.end(), oldBatchId);
+    (*elemIt) = newBatchId;
+    tg.setElements(elems);
+
+    m_reservationToGroupMap.erase(mapIt);
+    m_reservationToGroupMap[newBatchId] = tgId;
+
+    tg.store(fileForGroup(tgId));
+    Q_EMIT tripGroupChanged(tgId);
 }
 
 void TripGroupManager::batchRemoved(const QString &resId)
