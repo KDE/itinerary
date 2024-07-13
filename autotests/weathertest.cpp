@@ -50,7 +50,7 @@ private Q_SLOTS:
             QVERIFY(forecasts[i].dateTime() < forecasts[i+1].dateTime());
         }
 
-        QDateTime dt(QDate(2118, 7, 26), QTime(6,0), Qt::UTC);
+        QDateTime dt(QDate(2118, 7, 26), QTime(6,0), QTimeZone::UTC);
         auto it = std::lower_bound(forecasts.begin(), forecasts.end(), dt, [](const WeatherForecast &lhs, const QDateTime &rhs) {
             return lhs.dateTime() < rhs;
         });
@@ -65,7 +65,7 @@ private Q_SLOTS:
     void testWeatherSymbol()
     {
         WeatherForecast fc;
-        fc.setDateTime({QDate(2018, 8, 1), QTime(2, 0), Qt::UTC}); // CEST is UTC +2
+        fc.setDateTime({QDate(2018, 8, 1), QTime(2, 0), QTimeZone::UTC}); // CEST is UTC +2
         fc.setTile({52.4, 13.5});
         fc.setRange(1);
         fc.setSymbolType(WeatherForecast::Clear);
@@ -75,11 +75,11 @@ private Q_SLOTS:
         fc.setRange(19);
         fc.setSymbolType(WeatherForecast::Clear | WeatherForecast::LightClouds);
         QCOMPARE(fc.symbolIconName(), QStringLiteral("weather-few-clouds"));
-        fc.setDateTime({QDate(2018, 8, 1), QTime(21, 0), Qt::UTC});
+        fc.setDateTime({QDate(2018, 8, 1), QTime(21, 0), QTimeZone::UTC});
         fc.setRange(1);
         QCOMPARE(fc.symbolIconName(), QStringLiteral("weather-few-clouds-night"));
 
-        fc.setDateTime({QDate(2018, 8, 1), QTime(22, 0), Qt::UTC});
+        fc.setDateTime({QDate(2018, 8, 1), QTime(22, 0), QTimeZone::UTC});
         fc.setRange(24);
         QCOMPARE(fc.symbolIconName(), QStringLiteral("weather-few-clouds"));
 

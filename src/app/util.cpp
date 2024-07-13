@@ -33,7 +33,7 @@ QDateTime Util::dateTimeStripTimezone(const QVariant& obj, const QString& proper
         return {};
     }
 
-    dt.setTimeSpec(Qt::LocalTime);
+    dt.setTimeZone(QTimeZone::LocalTime);
     return dt;
 }
 

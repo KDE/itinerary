@@ -22,7 +22,7 @@ Settings::Settings(QObject *parent)
     s.beginGroup("Settings"_L1);
     m_weatherEnabled = s.value("WeatherForecastEnabled"_L1, false).toBool();
 
-    const auto currentCountry = KCountry::fromQLocale(QLocale().country()).alpha2();
+    const auto currentCountry = KCountry::fromQLocale(QLocale().territory()).alpha2();
     m_homeCountry = s.value("HomeCountry"_L1, currentCountry).toString();
 
     m_queryLiveData = s.value("QueryLiveData"_L1, false).toBool();

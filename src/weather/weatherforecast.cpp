@@ -11,6 +11,7 @@
 
 #include <QDateTime>
 #include <QDebug>
+#include <QTimeZone>
 
 #include <limits>
 
@@ -133,8 +134,8 @@ bool WeatherForecastPrivate::useDayTimeIcon() const
         return KHolidays::SunRiseSet::isPolarDay(m_dt.date(), m_tile.latitude());
     }
 
-    auto sunrise = QDateTime(m_dt.date(), sunriseTime, Qt::UTC);
-    auto sunset = QDateTime(m_dt.date(), sunsetTime, Qt::UTC);
+    auto sunrise = QDateTime(m_dt.date(), sunriseTime, QTimeZone::UTC);
+    auto sunset = QDateTime(m_dt.date(), sunsetTime, QTimeZone::UTC);
 
     // sunset before sunrise means the sunset actually happens the next day
     if (m_dt >= sunrise && sunset < sunrise) {

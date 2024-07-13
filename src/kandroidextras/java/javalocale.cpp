@@ -16,7 +16,7 @@ using namespace KAndroidExtras;
 QJniObject Locale::fromLocale(const QLocale &locale)
 {
     auto lang = QJniObject::fromString(QLocale::languageToString(locale.language()));
-    auto country = QJniObject::fromString(QLocale::countryToString(locale.country()));
+    auto country = QJniObject::fromString(QLocale::territoryToString(locale.territory()));
     auto script = QJniObject::fromString(QLocale::scriptToString(locale.script()));
 
     return QJniObject(Jni::typeName<java::util::Locale>(), (const char*)Jni::signature<void(java::lang::String, java::lang::String, java::lang::String)>(),

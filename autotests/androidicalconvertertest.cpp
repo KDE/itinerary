@@ -97,7 +97,7 @@ private Q_SLOTS:
         QVERIFY(ev.hasGeo());
         QCOMPARE(ev.geoLatitude(), 52.525f);
         QCOMPARE(ev.geoLongitude(), 13.369f);
-        QCOMPARE(ev.created(), QDateTime({2021, 11, 16}, {19, 37}, Qt::UTC));
+        QCOMPARE(ev.created(), QDateTime({2021, 11, 16}, {19, 37}, QTimeZone::UTC));
 
         const auto out = AndroidIcalConverter::writeExtendedProperties(&ev);
         QCOMPARE(out.size(), 3);
@@ -112,14 +112,14 @@ private Q_SLOTS:
         // date/time variants
         QCOMPARE(AndroidIcalConverter::readRDates<QDateTime>(QString()), QList<QDateTime>());
         QCOMPARE(AndroidIcalConverter::readRDates<QDateTime>(QStringLiteral("20220520T200000Z")),
-                 QList<QDateTime>({QDateTime({2022, 5, 20}, {20, 0}, Qt::UTC)}));
+                 QList<QDateTime>({QDateTime({2022, 5, 20}, {20, 0}, QTimeZone::UTC)}));
         QCOMPARE(AndroidIcalConverter::readRDates<QDateTime>(QStringLiteral("Europe/Brussels;20211224T153000,20211231T153000,20220107T153000")),
                  QList<QDateTime>({QDateTime({2021, 12, 24}, {15, 30}, QTimeZone("Europe/Brussels")),
                                    QDateTime({2021, 12, 31}, {15, 30}, QTimeZone("Europe/Brussels")),
                                    QDateTime({2022, 1, 7}, {15, 30}, QTimeZone("Europe/Brussels"))}));
         QCOMPARE(AndroidIcalConverter::readRDates<QDateTime>(QStringLiteral("20201230T000000Z,20211229T190000Z")),
-                 QList<QDateTime>({QDateTime({2020, 12, 30}, {0, 0}, Qt::UTC),
-                                   QDateTime({2021, 12, 29}, {19, 0}, Qt::UTC)}));
+                 QList<QDateTime>({QDateTime({2020, 12, 30}, {0, 0}, QTimeZone::UTC),
+                                   QDateTime({2021, 12, 29}, {19, 0}, QTimeZone::UTC)}));
         QCOMPARE(AndroidIcalConverter::readRDates<QDateTime>(QStringLiteral("Europe/Helsinki;20210513T122346")),
                  QList<QDateTime>({QDateTime({2021, 05, 13}, {12, 23, 46}, QTimeZone("Europe/Helsinki"))}));
 
@@ -129,15 +129,15 @@ private Q_SLOTS:
     void testWriteRDate()
     {
         QCOMPARE(AndroidIcalConverter::writeRDates(QList<QDateTime>()), QString());
-        QCOMPARE(AndroidIcalConverter::writeRDates(QList<QDateTime>({QDateTime({2022, 5, 20}, {20, 0}, Qt::UTC)})),
+        QCOMPARE(AndroidIcalConverter::writeRDates(QList<QDateTime>({QDateTime({2022, 5, 20}, {20, 0}, QTimeZone::UTC)})),
                  QLatin1StringView("20220520T200000Z"));
         QCOMPARE(AndroidIcalConverter::writeRDates(QList<QDateTime>({QDateTime({2021, 05, 13}, {12, 23, 46}, QTimeZone("Europe/Helsinki"))})),
                  QLatin1StringView("Europe/Helsinki;20210513T122346"));
-        QCOMPARE(AndroidIcalConverter::writeRDates(QList<QDateTime>({QDateTime({2020, 12, 30}, {0, 0}, Qt::UTC),
-                                                                     QDateTime({2021, 12, 29}, {19, 0}, Qt::UTC)})),
+        QCOMPARE(AndroidIcalConverter::writeRDates(QList<QDateTime>({QDateTime({2020, 12, 30}, {0, 0}, QTimeZone::UTC),
+                                                                     QDateTime({2021, 12, 29}, {19, 0}, QTimeZone::UTC)})),
                  QLatin1StringView("20201230T000000Z,20211229T190000Z"));
         QCOMPARE(AndroidIcalConverter::writeRDates(QList<QDateTime>({QDateTime({2021, 12, 24}, {15, 30}, QTimeZone("Europe/Brussels")),
-                                                                     QDateTime({2021, 12, 31}, {15, 30}, Qt::UTC),
+                                                                     QDateTime({2021, 12, 31}, {15, 30}, QTimeZone::UTC),
                                                                      QDateTime({2022, 1, 7}, {15, 30}, QTimeZone("Europe/Brussels"))})),
                  QLatin1StringView("Europe/Brussels;20211224T153000,20211231T163000,20220107T153000"));
 

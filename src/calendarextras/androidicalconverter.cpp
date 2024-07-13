@@ -380,7 +380,7 @@ void AndroidIcalConverter::addExtendedProperty(KCalendarCore::Incidence *inciden
         {
             icaldatetimeperiodtype tp;
             tp.time = icalproperty_get_created(p.get());
-            incidence->setCreated(QDateTime({tp.time.year, tp.time.month, tp.time.day}, {tp.time.hour, tp.time.minute, tp.time.second}, Qt::UTC));
+            incidence->setCreated(QDateTime({tp.time.year, tp.time.month, tp.time.day}, {tp.time.hour, tp.time.minute, tp.time.second}, QTimeZone::UTC));
             break;
         }
         case ICAL_GEO_PROPERTY:
