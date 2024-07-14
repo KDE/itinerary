@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-11 00:39+0000\n"
+"POT-Creation-Date: 2024-07-14 00:38+0000\n"
 "PO-Revision-Date: 2024-02-17 12:41+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -3756,13 +3756,13 @@ msgctxt "@label:textbox"
 msgid "Trip name:"
 msgstr "예약자 이름:"
 
-#: app/tripgroupmanager.cpp:704
+#: app/tripgroupmanager.cpp:719
 #, kde-format
 msgctxt "%1 is destination, %2 is the standalone month name, %3 is the year"
 msgid "%1 (%2 %3)"
 msgstr "%1(%3년 %2)"
 
-#: app/tripgroupmanager.cpp:706
+#: app/tripgroupmanager.cpp:721
 #, kde-format
 msgctxt ""
 "%1 is destination, %2 and %3 are the standalone month names and %4 is the "
@@ -3770,7 +3770,7 @@ msgctxt ""
 msgid "%1 (%2/%3 %4)"
 msgstr "%1(%4년 %2/%3)"
 
-#: app/tripgroupmanager.cpp:708
+#: app/tripgroupmanager.cpp:723
 #, kde-format
 msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"
