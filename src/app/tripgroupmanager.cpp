@@ -11,6 +11,7 @@
 #include "reservationmanager.h"
 #include "transfermanager.h"
 
+#include <KItinerary/Event>
 #include <KItinerary/LocationUtil>
 #include <KItinerary/Organization>
 #include <KItinerary/Reservation>
@@ -737,13 +738,34 @@ QString TripGroupManager::guessName(const QStringList &elements) const
             dest = destinationName(endLoc);
         }
     }
+    // if none of the above worked, take anything we can find
+    for (const auto &resId : elements) {
+        if (!dest.isEmpty()) {
+            break;
+        }
+        const auto res = m_resMgr->reservation(resId);
+        dest = LocationUtil::name(LocationUtil::location(res));
+        if (dest.isEmpty()) {
+            dest = LocationUtil::name(LocationUtil::arrivalLocation(res));
+        }
+        if (dest.isEmpty() && JsonLd::isA<EventReservation>(res)) {
+            dest = res.value<EventReservation>().reservationFor().value<Event>().name();
+        }
+        if (dest.isEmpty() && JsonLd::isA<LodgingReservation>(res)) {
+            dest = res.value<EventReservation>().reservationFor().value<LodgingBusiness>().name();
+        }
+        if (dest.isEmpty()) {
+            dest = LocationUtil::name(LocationUtil::departureLocation(res));
+        }
+    }
+
 
     // part 2: the time range of the trip
     // three cases: within 1 month, crossing a month boundary in one year, crossing a year boundary
     const auto beginDt = SortUtil::startDateTime(m_resMgr->reservation(elements.at(0)));
     const auto endDt = SortUtil::endDateTime(m_resMgr->reservation(elements.constLast()));
-    if (beginDt.date().year() == endDt.date().year()) {
-        if (beginDt.date().month() == endDt.date().month()) {
+    if (beginDt.date().year() == endDt.date().year() || !endDt.isValid()) {
+        if (beginDt.date().month() == endDt.date().month() || !endDt.isValid()) {
             return i18nc("%1 is destination, %2 is the standalone month name, %3 is the year", "%1 (%2 %3)", dest, QLocale().standaloneMonthName(beginDt.date().month(), QLocale::LongFormat), beginDt.date().toString(u"yyyy"));
         }
         return i18nc("%1 is destination, %2 and %3 are the standalone month names and %4 is the year", "%1 (%2/%3 %4)", dest, QLocale().monthName(beginDt.date().month(), QLocale::LongFormat), QLocale().standaloneMonthName(endDt.date().month(), QLocale::LongFormat), beginDt.date().toString(u"yyyy"));

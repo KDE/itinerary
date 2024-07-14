@@ -215,6 +215,16 @@ private Q_SLOTS:
         auto g = mgr.tripGroup(addSpy.at(0).at(0).toString());
         QCOMPARE(g.elements().size(), resMgr.batches().size());
         QCOMPARE(g.name(), expectedName);
+
+        // ensure that also every item individually gets a name assigned
+        for (const auto &resId : resMgr.batches()) {
+            const auto name = mgr.guessName({resId});
+            qDebug() << name <<resMgr.reservation(resId);
+            QVERIFY(!name.isEmpty());
+            QVERIFY(!name.startsWith(' '_L1));
+            QVERIFY(!name.startsWith('('_L1));
+            QVERIFY(!name.contains("/)"_L1));
+        }
     }
 
     void testLeadingAppendixRemoval()
