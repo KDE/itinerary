@@ -294,7 +294,9 @@ FormCard.FormCardPage {
             visible: !MatrixController.manager.connected
             text: MatrixController.manager.userId
         }
-        FormCard.FormDelegateSeparator {}
+        FormCard.FormDelegateSeparator {
+            visible: matrixId.visible
+        }
         FormCard.FormTextFieldDelegate {
             id: matrixPassword
             label: i18n("Password")
