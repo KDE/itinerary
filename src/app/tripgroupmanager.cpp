@@ -379,7 +379,8 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
         m_resNumSearch.push_back({beginRes.userType(), JsonLd::convert<Reservation>(beginRes).reservationNumber()});
     }
 
-    const auto prevTg = tripGroupForReservation(*beginIt);
+    const auto prevTgId = tripGroupIdForReservation(*beginIt);
+    const auto prevTg = tripGroup(prevTgId);
     const auto explicitEnd = !prevTg.isAutomaticallyGrouped() && !prevTg.elements().empty() ? prevTg.elements().constLast() : QString();
 
     qDebug() << "starting scan at" << LocationUtil::name(beginDeparture);
@@ -395,6 +396,11 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
 
     // scan by location change
     for (auto it = beginIt + 1; it != m_reservations.end(); ++it) {
+        // if we reached the next manually grouped element here, stop immediately
+        if (const auto tgId = tripGroupIdForReservation(*it); !tgId.isEmpty() && tgId != prevTgId && !tripGroup(tgId).isAutomaticallyGrouped()) {
+            break;
+        }
+
         const auto prevRes = res;
         const auto curRes = m_resMgr->reservation(*it);
 
@@ -854,6 +860,63 @@ QString TripGroupManager::merge(const QString &tgId1, const QString &tgId2, cons
     Q_EMIT tripGroupChanged(tgId1);
 
     return tgId1;
+}
+
+QString TripGroupManager::createGroup(const QStringList &elements, const QString &name)
+{
+    qCDebug(Log) << elements << name;
+
+    // find groups that contain any of the selected elements
+    QStringList groupsToUpdate;
+    for (const auto &resId : elements) {
+        const auto it = m_reservationToGroupMap.constFind(resId);
+        if (it == m_reservationToGroupMap.cend()) {
+            continue;
+        }
+        if (!groupsToUpdate.contains(it.value())) {
+            groupsToUpdate.push_back(it.value());
+        }
+    }
+
+    // remove elements from other groups and mark those explicitly grouped
+    for (const auto &tgId :groupsToUpdate) {
+        auto &tg = m_tripGroups[tgId];
+        auto elems = tg.elements();
+        for (const auto &resId : elements) {
+            elems.removeAll(resId);
+        }
+        // TODO can elems becomes empty here?
+        tg.setElements(elems);
+        tg.setIsAutomaticallyGrouped(false);
+        if (tg.hasAutomaticName()) {
+            tg.setName(guessName(tg.elements()));
+        }
+        recomputeTripGroupTimes(tg);
+        tg.store(fileForGroup(tgId));
+        Q_EMIT tripGroupChanged(tgId);
+    }
+
+    // create new group
+    TripGroup tg;
+    tg.setElements(elements);
+    tg.setIsAutomaticallyGrouped(false);
+    tg.setName(guessName(elements));
+    if (tg.name() != name) {
+        tg.setName(name);
+        tg.setNameIsAutomatic(false);
+    }
+    recomputeTripGroupTimes(tg);
+
+    const auto tgId = QUuid::createUuid().toString(QUuid::WithoutBraces);
+    m_tripGroups.insert(tgId, tg);
+    for (const auto &resId : elements) {
+        m_reservationToGroupMap.insert(resId, tgId);
+    }
+
+    tg.store(fileForGroup(tgId));
+    Q_EMIT tripGroupAdded(tgId);
+
+    return tgId;
 }
 
 #include "moc_tripgroupmanager.cpp"

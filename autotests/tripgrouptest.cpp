@@ -373,6 +373,55 @@ private Q_SLOTS:
         QCOMPARE(tgMgr.tripGroups().size(), 1);
         QCOMPARE(tgMgr.tripGroup(mergeId).name(), "New Group 2"_L1);
     }
+
+    void testSplit()
+    {
+        ReservationManager resMgr;
+        TransferManager transferMgr;
+        Test::clearAll(&resMgr);
+        auto ctrl = Test::makeAppController();
+        ctrl->setReservationManager(&resMgr);
+
+        TripGroupManager tgMgr;
+        tgMgr.setReservationManager(&resMgr);
+        tgMgr.setTransferManager(&transferMgr);
+
+        ImportController importer;
+        importer.setReservationManager(&resMgr);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
+        ctrl->commitImport(&importer);
+        QCOMPARE(tgMgr.tripGroups().size(), 1);
+
+        QStringList elements({ resMgr.batches()[0], resMgr.batches()[1], resMgr.batches()[2] });
+        const auto tgId = tgMgr.createGroup(elements, u"New Group"_s);
+        QVERIFY(!tgId.isEmpty());
+        QCOMPARE(tgMgr.tripGroups().size(), 2);
+
+        auto tg = tgMgr.tripGroup(tgId);
+        QCOMPARE(tg.isAutomaticallyGrouped(), false);
+        QCOMPARE(tg.hasAutomaticName(), false);
+        QCOMPARE(tg.name(), "New Group"_L1);
+        QCOMPARE(tg.elements().size(), 3);
+
+        const auto tgId2 = tgMgr.tripGroups()[0] == tgId ? tgMgr.tripGroups()[1] : tgMgr.tripGroups()[0];
+        tg = tgMgr.tripGroup(tgId2);
+        QCOMPARE(tg.isAutomaticallyGrouped(), false);
+        QCOMPARE(tg.hasAutomaticName(), true);
+        QCOMPARE(tg.name(), "Randa (September 2017)"_L1);
+        QCOMPARE(tg.elements().size(), 8);
+
+        // manual grouping is persisted and not affected by rescanning
+        {
+            TripGroupManager tgMgr2;
+            tgMgr2.setReservationManager(&resMgr);
+            tgMgr2.setTransferManager(&transferMgr);
+            QCOMPARE(tgMgr2.tripGroups().size(), 2);
+            tg = tgMgr2.tripGroup(tgId);
+            QCOMPARE(tg.elements().size(), 3);
+            tg = tgMgr2.tripGroup(tgId2);
+            QCOMPARE(tg.elements().size(), 8);
+        }
+    }
 };
 QTEST_GUILESS_MAIN(TripGroupTest)
 

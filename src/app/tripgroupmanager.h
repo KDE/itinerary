@@ -57,6 +57,14 @@ public:
      */
     Q_INVOKABLE [[nodiscard]] QString merge(const QString &tgId1, const QString &tgId2, const QString &newName);
 
+    /** Create a new group named @p name containing @p elements.
+     *  If those elements are part of a previously existing group they are removed there.
+     *  Ie. this can both be used for creating groups for freshly imported reservations and for
+     *  splitting existing groups.
+     *  @returns the trip group id of the new group.
+     */
+    Q_INVOKABLE [[nodiscard]] QString createGroup(const QStringList &elements, const QString &name);
+
 Q_SIGNALS:
     void tripGroupAdded(const QString &id);
     void tripGroupChanged(const QString &id);
