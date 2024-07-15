@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-14 00:38+0000\n"
+"POT-Creation-Date: 2024-07-15 00:39+0000\n"
 "PO-Revision-Date: 2024-03-26 16:14+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -120,7 +120,7 @@ msgstr "Szerkesztés"
 msgid "Add to calendar…"
 msgstr "Hozzáadás a naptárhoz…"
 
-#: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:181
+#: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:196
 #, fuzzy, kde-format
 #| msgid "Export"
 msgid "Export…"
@@ -3469,7 +3469,7 @@ msgstr "GPX-fájlként…"
 msgid "Export Trip"
 msgstr "Kirándulás exportálása"
 
-#: app/TimelinePage.qml:484
+#: app/TimelinePage.qml:487
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr ""
@@ -3727,7 +3727,12 @@ msgstr[1] ""
 msgid "Edit…"
 msgstr "Szerkesztés"
 
-#: app/TripGroupDelegate.qml:189
+#: app/TripGroupDelegate.qml:175
+#, kde-format
+msgid "Merge trips…"
+msgstr ""
+
+#: app/TripGroupDelegate.qml:204
 #, kde-format
 msgid "Delete trip"
 msgstr "Kirándulás törlése"
@@ -3745,20 +3750,20 @@ msgctxt "@title:window"
 msgid "Edit Trip"
 msgstr "Hajókirándulás szerkesztése"
 
-#: app/TripGroupEditorDialog.qml:21
+#: app/TripGroupEditorDialog.qml:21 app/TripGroupMergeDialog.qml:55
 #, fuzzy, kde-format
 #| msgid "Ticket name"
 msgctxt "@label:textbox"
 msgid "Trip name:"
 msgstr "Jegy neve"
 
-#: app/tripgroupmanager.cpp:719
+#: app/tripgroupmanager.cpp:769
 #, kde-format
 msgctxt "%1 is destination, %2 is the standalone month name, %3 is the year"
 msgid "%1 (%2 %3)"
 msgstr "%1 (%3 %2)"
 
-#: app/tripgroupmanager.cpp:721
+#: app/tripgroupmanager.cpp:771
 #, kde-format
 msgctxt ""
 "%1 is destination, %2 and %3 are the standalone month names and %4 is the "
@@ -3766,10 +3771,27 @@ msgctxt ""
 msgid "%1 (%2/%3 %4)"
 msgstr ""
 
-#: app/tripgroupmanager.cpp:723
+#: app/tripgroupmanager.cpp:773
 #, kde-format
 msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"
+msgstr ""
+
+#: app/TripGroupMergeDialog.qml:17
+#, fuzzy, kde-format
+#| msgid "Delete Trip"
+msgctxt "@title:window"
+msgid "Merge Trips"
+msgstr "Kirándulás törlése"
+
+#: app/TripGroupMergeDialog.qml:40
+#, kde-format
+msgid "Merge with:"
+msgstr ""
+
+#: app/TripGroupMergeDialog.qml:77
+#, kde-format
+msgid "Merge"
 msgstr ""
 
 #: app/VehicleLayoutPage.qml:18

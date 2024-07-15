@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-14 00:38+0000\n"
+"POT-Creation-Date: 2024-07-15 00:39+0000\n"
 "PO-Revision-Date: 2020-05-04 10:51+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -122,7 +122,7 @@ msgstr "Muuda"
 msgid "Add to calendar…"
 msgstr "Lisa dokument ..."
 
-#: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:181
+#: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:196
 #, fuzzy, kde-format
 #| msgid "Export..."
 msgid "Export…"
@@ -3683,7 +3683,7 @@ msgstr ""
 msgid "Export Trip"
 msgstr "Ekspordi ..."
 
-#: app/TimelinePage.qml:484
+#: app/TimelinePage.qml:487
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Tänaseks ei ole itineraaris midagi."
@@ -3959,7 +3959,13 @@ msgstr[1] ""
 msgid "Edit…"
 msgstr "Muuda"
 
-#: app/TripGroupDelegate.qml:189
+#: app/TripGroupDelegate.qml:175
+#, fuzzy, kde-format
+#| msgid "Add transfer after"
+msgid "Merge trips…"
+msgstr "Lisa järgnev transfeer"
+
+#: app/TripGroupDelegate.qml:204
 #, fuzzy, kde-format
 #| msgid "Event Ticket"
 msgid "Delete trip"
@@ -3979,21 +3985,21 @@ msgctxt "@title:window"
 msgid "Edit Trip"
 msgstr "Ekspordi ..."
 
-#: app/TripGroupEditorDialog.qml:21
+#: app/TripGroupEditorDialog.qml:21 app/TripGroupMergeDialog.qml:55
 #, fuzzy, kde-format
 #| msgid "Under name:"
 msgctxt "@label:textbox"
 msgid "Trip name:"
 msgstr "Nimega:"
 
-#: app/tripgroupmanager.cpp:719
+#: app/tripgroupmanager.cpp:769
 #, fuzzy, kde-format
 #| msgid "%1 (%2 %3)"
 msgctxt "%1 is destination, %2 is the standalone month name, %3 is the year"
 msgid "%1 (%2 %3)"
 msgstr "%1 (%2 %3)"
 
-#: app/tripgroupmanager.cpp:721
+#: app/tripgroupmanager.cpp:771
 #, fuzzy, kde-format
 #| msgid "%1 (%2/%3 %4)"
 msgctxt ""
@@ -4002,12 +4008,29 @@ msgctxt ""
 msgid "%1 (%2/%3 %4)"
 msgstr "%1 (%2/%3 %4)"
 
-#: app/tripgroupmanager.cpp:723
+#: app/tripgroupmanager.cpp:773
 #, fuzzy, kde-format
 #| msgid "%1 (%2/%3)"
 msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"
 msgstr "%1 (%2/%3)"
+
+#: app/TripGroupMergeDialog.qml:17
+#, fuzzy, kde-format
+#| msgid "Event Ticket"
+msgctxt "@title:window"
+msgid "Merge Trips"
+msgstr "Sündmuse pilet"
+
+#: app/TripGroupMergeDialog.qml:40
+#, kde-format
+msgid "Merge with:"
+msgstr ""
+
+#: app/TripGroupMergeDialog.qml:77
+#, kde-format
+msgid "Merge"
+msgstr ""
 
 #: app/VehicleLayoutPage.qml:18
 #, kde-format
