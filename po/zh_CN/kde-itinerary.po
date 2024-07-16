@@ -3710,11 +3710,10 @@ msgid "%1 (%2/%3)"
 msgstr ""
 
 #: app/TripGroupMergeDialog.qml:17
-#, fuzzy, kde-format
-#| msgid "Trips"
+#, kde-format
 msgctxt "@title:window"
 msgid "Merge Trips"
-msgstr "行程数"
+msgstr ""
 
 #: app/TripGroupMergeDialog.qml:40
 #, kde-format

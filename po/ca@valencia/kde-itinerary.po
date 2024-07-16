@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-15 00:39+0000\n"
-"PO-Revision-Date: 2024-07-01 08:48+0200\n"
+"PO-Revision-Date: 2024-07-15 08:38+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.1\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -3703,10 +3703,9 @@ msgid "Edit…"
 msgstr "Edita…"
 
 #: app/TripGroupDelegate.qml:175
-#, fuzzy, kde-format
-#| msgid "Add ferry trip…"
+#, kde-format
 msgid "Merge trips…"
-msgstr "Afig un viatge en transbordador…"
+msgstr "Fusiona viatges…"
 
 #: app/TripGroupDelegate.qml:204
 #, kde-format
@@ -3752,21 +3751,20 @@ msgid "%1 (%2/%3)"
 msgstr "%1 (%2/%3)"
 
 #: app/TripGroupMergeDialog.qml:17
-#, fuzzy, kde-format
-#| msgid "Delete Trip"
+#, kde-format
 msgctxt "@title:window"
 msgid "Merge Trips"
-msgstr "Suprimix el viatge"
+msgstr "Fusió de viatges"
 
 #: app/TripGroupMergeDialog.qml:40
 #, kde-format
 msgid "Merge with:"
-msgstr ""
+msgstr "Fusiona amb:"
 
 #: app/TripGroupMergeDialog.qml:77
 #, kde-format
 msgid "Merge"
-msgstr ""
+msgstr "Fusiona"
 
 #: app/VehicleLayoutPage.qml:18
 #, kde-format

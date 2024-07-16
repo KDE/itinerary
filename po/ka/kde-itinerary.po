@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-15 00:39+0000\n"
-"PO-Revision-Date: 2024-07-01 05:49+0200\n"
+"PO-Revision-Date: 2024-07-15 05:28+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -3689,10 +3689,9 @@ msgid "Edit…"
 msgstr "ჩასწორება…"
 
 #: app/TripGroupDelegate.qml:175
-#, fuzzy, kde-format
-#| msgid "Add ferry trip…"
+#, kde-format
 msgid "Merge trips…"
-msgstr "ბორნით მოგზაურობის დამატება…"
+msgstr "მოგზაურობების შერწყმა…"
 
 #: app/TripGroupDelegate.qml:204
 #, kde-format
@@ -3738,21 +3737,20 @@ msgid "%1 (%2/%3)"
 msgstr "%1 (%2/%3)"
 
 #: app/TripGroupMergeDialog.qml:17
-#, fuzzy, kde-format
-#| msgid "Delete Trip"
+#, kde-format
 msgctxt "@title:window"
 msgid "Merge Trips"
-msgstr "მოგზაურობის წაშლა"
+msgstr "მოგზაურობების შერწყმა"
 
 #: app/TripGroupMergeDialog.qml:40
 #, kde-format
 msgid "Merge with:"
-msgstr ""
+msgstr "შერწყმა რასთან:"
 
 #: app/TripGroupMergeDialog.qml:77
 #, kde-format
 msgid "Merge"
-msgstr ""
+msgstr "შერწყმა"
 
 #: app/VehicleLayoutPage.qml:18
 #, kde-format

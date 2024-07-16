@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-15 00:39+0000\n"
-"PO-Revision-Date: 2024-07-02 21:25+0200\n"
+"PO-Revision-Date: 2024-07-15 16:28+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -3683,10 +3683,9 @@ msgid "Edit…"
 msgstr "Redigera…"
 
 #: app/TripGroupDelegate.qml:175
-#, fuzzy, kde-format
-#| msgid "Add ferry trip…"
+#, kde-format
 msgid "Merge trips…"
-msgstr "Lägg till färjeresa…"
+msgstr "Slå samman resor…"
 
 #: app/TripGroupDelegate.qml:204
 #, kde-format
@@ -3732,21 +3731,20 @@ msgid "%1 (%2/%3)"
 msgstr "%1 (%2 - %3)"
 
 #: app/TripGroupMergeDialog.qml:17
-#, fuzzy, kde-format
-#| msgid "Delete Trip"
+#, kde-format
 msgctxt "@title:window"
 msgid "Merge Trips"
-msgstr "Ta bort resa"
+msgstr "Slå samman resor"
 
 #: app/TripGroupMergeDialog.qml:40
 #, kde-format
 msgid "Merge with:"
-msgstr ""
+msgstr "Slå samman med:"
 
 #: app/TripGroupMergeDialog.qml:77
 #, kde-format
 msgid "Merge"
-msgstr ""
+msgstr "Slå samman"
 
 #: app/VehicleLayoutPage.qml:18
 #, kde-format
