@@ -840,7 +840,7 @@ QString TripGroupManager::merge(const QString &tgId1, const QString &tgId2, cons
     group.setIsAutomaticallyGrouped(false);
 
     group.setName(guessName(elements));
-    if (group.name() != newName) {
+    if (group.name() != newName && !newName.isEmpty()) {
         group.setName(newName);
         group.setNameIsAutomatic(false);
     }
@@ -901,7 +901,7 @@ QString TripGroupManager::createGroup(const QStringList &elements, const QString
     tg.setElements(elements);
     tg.setIsAutomaticallyGrouped(false);
     tg.setName(guessName(elements));
-    if (tg.name() != name) {
+    if (tg.name() != name && !name.isEmpty()) {
         tg.setName(name);
         tg.setNameIsAutomatic(false);
     }
