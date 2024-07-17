@@ -52,6 +52,7 @@ target_sources(itinerary PRIVATE
     tripgroupmanager.cpp
     tripgroupmodel.cpp
     tripgroupproxymodel.cpp
+    tripgroupsplitmodel.cpp
     transfer.cpp
     transfermanager.cpp
     util.cpp
@@ -228,6 +229,7 @@ qt_add_qml_module(itinerary-app URI org.kde.itinerary NO_PLUGIN QML_FILES
     TripGroupDelegate.qml
     TripGroupEditorDialog.qml
     TripGroupMergeDialog.qml
+    TripGroupSplitPage.qml
     VehicleLayoutPage.qml
     VerticalNavigationButton.qml
     WeatherForecastDelegate.qml
@@ -322,6 +324,7 @@ if (ANDROID)
         reverse
         search
         settings-configure
+        split
         temperature-cold
         temperature-normal
         temperature-warm

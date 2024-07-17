@@ -583,22 +583,7 @@ QVariant ImportController::data(const QModelIndex &index, int role) const
         {
             switch (elem.type) {
                 case ImportElement::Reservation:
-                    if (JsonLd::isA<FlightReservation>(elem.data)) {
-                        return i18n("Flight from %1 to %2", LocationUtil::name(LocationUtil::departureLocation(elem.data)), LocationUtil::name(LocationUtil::arrivalLocation(elem.data)));
-                    }
-                    if (JsonLd::isA<TrainReservation>(elem.data)) {
-                        return i18n("Train from %1 to %2", LocationUtil::name(LocationUtil::departureLocation(elem.data)), LocationUtil::name(LocationUtil::arrivalLocation(elem.data)));
-                    }
-                    if (JsonLd::isA<BusReservation>(elem.data)) {
-                        return i18n("Bus from %1 to %2", LocationUtil::name(LocationUtil::departureLocation(elem.data)), LocationUtil::name(LocationUtil::arrivalLocation(elem.data)));
-                    }
-                    if (JsonLd::isA<BoatReservation>(elem.data)) {
-                        return i18n("Ferry from %1 to %2", LocationUtil::name(LocationUtil::departureLocation(elem.data)), LocationUtil::name(LocationUtil::arrivalLocation(elem.data)));
-                    }
-                    if (JsonLd::isA<EventReservation>(elem.data)) {
-                        return elem.data.value<EventReservation>().reservationFor().value<Event>().name();
-                    }
-                    return LocationUtil::name(LocationUtil::location(elem.data));
+                    return ReservationHelper::label(elem.data);
                 case ImportElement::Pass:
                     if (JsonLd::isA<Ticket>(elem.data)) {
                         return elem.data.value<Ticket>().name();

@@ -312,6 +312,10 @@ Kirigami.ScrollablePage {
     TripGroupMergeDialog {
         id: tripGroupMergeDialog
     }
+    Component {
+        id: tripGroupSplitPage
+        TripGroupSplitPage {}
+    }
 
     Component {
         id: flightDetailsPage

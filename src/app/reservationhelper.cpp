@@ -11,6 +11,7 @@
 #include <KItinerary/BusTrip>
 #include <KItinerary/Event>
 #include <KItinerary/Flight>
+#include <KItinerary/LocationUtil>
 #include <KItinerary/Person>
 #include <KItinerary/Reservation>
 #include <KItinerary/TrainTrip>
@@ -19,6 +20,8 @@
 
 #include <KPublicTransport/Line>
 #include <KPublicTransport/RentalVehicle>
+
+#include <KLocalizedString>
 
 #include <QDateTime>
 
@@ -118,6 +121,26 @@ bool ReservationHelper::isUnbound(const QVariant& res)
 bool ReservationHelper::isCancelled(const QVariant &res)
 {
     return JsonLd::canConvert<Reservation>(res) && JsonLd::convert<Reservation>(res).reservationStatus() == Reservation::ReservationCancelled;
+}
+
+QString ReservationHelper::label(const QVariant &res)
+{
+    if (JsonLd::isA<FlightReservation>(res)) {
+        return i18n("Flight from %1 to %2", LocationUtil::name(LocationUtil::departureLocation(res)), LocationUtil::name(LocationUtil::arrivalLocation(res)));
+    }
+    if (JsonLd::isA<TrainReservation>(res)) {
+        return i18n("Train from %1 to %2", LocationUtil::name(LocationUtil::departureLocation(res)), LocationUtil::name(LocationUtil::arrivalLocation(res)));
+    }
+    if (JsonLd::isA<BusReservation>(res)) {
+        return i18n("Bus from %1 to %2", LocationUtil::name(LocationUtil::departureLocation(res)), LocationUtil::name(LocationUtil::arrivalLocation(res)));
+    }
+    if (JsonLd::isA<BoatReservation>(res)) {
+        return i18n("Ferry from %1 to %2", LocationUtil::name(LocationUtil::departureLocation(res)), LocationUtil::name(LocationUtil::arrivalLocation(res)));
+    }
+    if (JsonLd::isA<EventReservation>(res)) {
+        return res.value<EventReservation>().reservationFor().value<Event>().name();
+    }
+    return LocationUtil::name(LocationUtil::location(res));
 }
 
 QString ReservationHelper::defaultIconName(const QVariant &res)
