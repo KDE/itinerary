@@ -38,6 +38,7 @@ TripGroupController::TripGroupController(QObject *parent)
     connect(this, &TripGroupController::tripGroupChanged, this, &TripGroupController::weatherForecastChanged);
     connect(this, &TripGroupController::setupChanged, this, &TripGroupController::locationInfoChanged);
     connect(this, &TripGroupController::tripGroupChanged, this, &TripGroupController::locationInfoChanged);
+    connect(this, &TripGroupController::tripGroupChanged, this, &TripGroupController::tripGroupContentChanged);
 }
 
 TripGroupController::~TripGroupController() = default;
