@@ -803,12 +803,17 @@ void TimelineModel::transferChanged(const Transfer& transfer)
         return;
     }
 
+    TimelineElement elem(this, transfer);
     if (transfer.alignment() == Transfer::Before) {
         if (it != m_elements.begin()) {
             --it;
         }
+        // check for weather info elements between reservation and an already existing transfer
+        if (it != m_elements.begin() && (*it).elementType == TimelineElement::WeatherForecast && (*std::prev(it)) == elem) {
+            --it;
+        }
     }
-    insertOrUpdate(it, TimelineElement(this, transfer));
+    insertOrUpdate(it, std::move(elem));
 
     Q_EMIT todayRowChanged();
 }
