@@ -77,6 +77,9 @@ FormCard.FormCardPage {
             }
         }
 
+        FormCard.FormHeader {
+            title: i18n("Membership")
+        }
         FormCard.FormCard {
             FormCard.FormTextDelegate {
                 id: memberNameLabel
