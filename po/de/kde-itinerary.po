@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-15 00:39+0000\n"
+"POT-Creation-Date: 2024-07-19 00:39+0000\n"
 "PO-Revision-Date: 2024-06-10 22:02+0200\n"
 "Last-Translator: cahfofpai <cahfofpai@magenta.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -109,7 +109,7 @@ msgstr "Verbindung davor hinzufügen"
 msgid "Add transfer after"
 msgstr "Verbindung danach hinzufügen"
 
-#: app/ActionsCard.qml:56 app/ProgramMembershipPage.qml:156
+#: app/ActionsCard.qml:56 app/ProgramMembershipPage.qml:159
 #: app/TicketPage.qml:154
 #, kde-format
 msgid "Edit"
@@ -130,7 +130,7 @@ msgstr "Exportieren ..."
 #: app/ActionsCard.qml:78 app/ActionsCard.qml:124 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
 #: app/HealthCertificatePage.qml:46 app/HealthCertificatePage.qml:60
-#: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:168
+#: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:171
 #: app/TicketPage.qml:47 app/TicketPage.qml:171 app/TimelinePage.qml:221
 #, kde-format
 msgid "Delete"
@@ -176,7 +176,7 @@ msgstr "Reservierung importieren"
 msgid "Itinerary file (*.itinerary)"
 msgstr "KDE-Itinerary-Dateien (*.itinerary)"
 
-#: app/ActionsCard.qml:172 app/ProgramMembershipPage.qml:135
+#: app/ActionsCard.qml:172 app/ProgramMembershipPage.qml:138
 #: app/TicketPage.qml:130
 #, kde-format
 msgid "Actions"
@@ -481,7 +481,7 @@ msgid "Reference"
 msgstr "Referenz"
 
 #: app/BookingCard.qml:35 app/BookingCard.qml:67
-#: app/ProgramMembershipCard.qml:46 app/ProgramMembershipPage.qml:98
+#: app/ProgramMembershipCard.qml:46 app/ProgramMembershipPage.qml:101
 #, fuzzy, kde-format
 #| msgid "Import from Clipboard"
 msgctxt "@info:tooltip"
@@ -2817,13 +2817,13 @@ msgid "Name"
 msgstr "Name"
 
 #: app/ProgramMembershipCard.qml:40 app/ProgramMembershipEditor.qml:90
-#: app/ProgramMembershipEditorCard.qml:61 app/ProgramMembershipPage.qml:92
+#: app/ProgramMembershipEditorCard.qml:61 app/ProgramMembershipPage.qml:95
 #: app/TicketPage.qml:104
 #, kde-format
 msgid "Number"
 msgstr "Nummer"
 
-#: app/ProgramMembershipCard.qml:50 app/ProgramMembershipPage.qml:102
+#: app/ProgramMembershipCard.qml:50 app/ProgramMembershipPage.qml:105
 #, fuzzy, kde-format
 #| msgid "Extractor capabilities copied to clipboard"
 msgid "Program membership number copied to clipboard"
@@ -2858,24 +2858,24 @@ msgstr "Programm"
 msgid "Program name must not be empty."
 msgstr ""
 
-#: app/ProgramMembershipEditor.qml:78
+#: app/ProgramMembershipEditor.qml:78 app/ProgramMembershipPage.qml:81
 #, fuzzy, kde-format
 #| msgid "Member"
 msgid "Membership"
 msgstr "Mitglied"
 
-#: app/ProgramMembershipEditor.qml:84 app/ProgramMembershipPage.qml:83
+#: app/ProgramMembershipEditor.qml:84 app/ProgramMembershipPage.qml:86
 #, kde-format
 msgid "Member"
 msgstr "Mitglied"
 
-#: app/ProgramMembershipEditor.qml:97 app/ProgramMembershipPage.qml:114
+#: app/ProgramMembershipEditor.qml:97 app/ProgramMembershipPage.qml:117
 #: app/TicketPage.qml:92
 #, kde-format
 msgid "Valid from"
 msgstr "Gültig ab"
 
-#: app/ProgramMembershipEditor.qml:111 app/ProgramMembershipPage.qml:119
+#: app/ProgramMembershipEditor.qml:111 app/ProgramMembershipPage.qml:122
 #: app/TicketPage.qml:98
 #, kde-format
 msgid "Valid until"
@@ -2897,7 +2897,7 @@ msgstr "Barcode scannen"
 msgid "Program Membership"
 msgstr "Programmmitgliedschaft"
 
-#: app/ProgramMembershipPage.qml:143
+#: app/ProgramMembershipPage.qml:146
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Show Names"

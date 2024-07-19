@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-15 00:39+0000\n"
+"POT-Creation-Date: 2024-07-19 00:39+0000\n"
 "PO-Revision-Date: 2024-07-15 05:28+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -107,7 +107,7 @@ msgstr "დაამატეთ გადაჯდომა მანამდ�
 msgid "Add transfer after"
 msgstr "დაამატეთ გადაჯდომა შემდეგ"
 
-#: app/ActionsCard.qml:56 app/ProgramMembershipPage.qml:156
+#: app/ActionsCard.qml:56 app/ProgramMembershipPage.qml:159
 #: app/TicketPage.qml:154
 #, kde-format
 msgid "Edit"
@@ -126,7 +126,7 @@ msgstr "გატანა…"
 #: app/ActionsCard.qml:78 app/ActionsCard.qml:124 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
 #: app/HealthCertificatePage.qml:46 app/HealthCertificatePage.qml:60
-#: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:168
+#: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:171
 #: app/TicketPage.qml:47 app/TicketPage.qml:171 app/TimelinePage.qml:221
 #, kde-format
 msgid "Delete"
@@ -167,7 +167,7 @@ msgstr "ჯავშნის გატანა"
 msgid "Itinerary file (*.itinerary)"
 msgstr "Itinerary-ის ფაილი (*.itinerary)"
 
-#: app/ActionsCard.qml:172 app/ProgramMembershipPage.qml:135
+#: app/ActionsCard.qml:172 app/ProgramMembershipPage.qml:138
 #: app/TicketPage.qml:130
 #, kde-format
 msgid "Actions"
@@ -461,7 +461,7 @@ msgid "Reference"
 msgstr "მითითება"
 
 #: app/BookingCard.qml:35 app/BookingCard.qml:67
-#: app/ProgramMembershipCard.qml:46 app/ProgramMembershipPage.qml:98
+#: app/ProgramMembershipCard.qml:46 app/ProgramMembershipPage.qml:101
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy to Clipboard"
@@ -2721,13 +2721,13 @@ msgid "Name"
 msgstr "სახელი"
 
 #: app/ProgramMembershipCard.qml:40 app/ProgramMembershipEditor.qml:90
-#: app/ProgramMembershipEditorCard.qml:61 app/ProgramMembershipPage.qml:92
+#: app/ProgramMembershipEditorCard.qml:61 app/ProgramMembershipPage.qml:95
 #: app/TicketPage.qml:104
 #, kde-format
 msgid "Number"
 msgstr "რიცხვი"
 
-#: app/ProgramMembershipCard.qml:50 app/ProgramMembershipPage.qml:102
+#: app/ProgramMembershipCard.qml:50 app/ProgramMembershipPage.qml:105
 #, kde-format
 msgid "Program membership number copied to clipboard"
 msgstr "პროგრამის წევრობის ნომერი დაკოპირდა ბუფერში"
@@ -2757,23 +2757,23 @@ msgstr "პროგრამა"
 msgid "Program name must not be empty."
 msgstr "პროგრამის სახელი ცარიელი ვერ იქნება."
 
-#: app/ProgramMembershipEditor.qml:78
+#: app/ProgramMembershipEditor.qml:78 app/ProgramMembershipPage.qml:81
 #, kde-format
 msgid "Membership"
 msgstr "წევრობა"
 
-#: app/ProgramMembershipEditor.qml:84 app/ProgramMembershipPage.qml:83
+#: app/ProgramMembershipEditor.qml:84 app/ProgramMembershipPage.qml:86
 #, kde-format
 msgid "Member"
 msgstr "წევრი"
 
-#: app/ProgramMembershipEditor.qml:97 app/ProgramMembershipPage.qml:114
+#: app/ProgramMembershipEditor.qml:97 app/ProgramMembershipPage.qml:117
 #: app/TicketPage.qml:92
 #, kde-format
 msgid "Valid from"
 msgstr "Ძალაშია"
 
-#: app/ProgramMembershipEditor.qml:111 app/ProgramMembershipPage.qml:119
+#: app/ProgramMembershipEditor.qml:111 app/ProgramMembershipPage.qml:122
 #: app/TicketPage.qml:98
 #, kde-format
 msgid "Valid until"
@@ -2794,7 +2794,7 @@ msgstr "შტრიხკოდი"
 msgid "Program Membership"
 msgstr "პროგრამის წევრობა"
 
-#: app/ProgramMembershipPage.qml:143
+#: app/ProgramMembershipPage.qml:146
 #, kde-format
 msgid "Show Pass"
 msgstr "ბილეთის ჩვენება"
