@@ -49,6 +49,30 @@ FormCard.FormCard {
         applicationWindow().pageStack.push(detailsComponent);
     }
 
+    /** @c true if we have at least one seat reserverion in this batch. */
+    readonly property bool hasSeat: {
+        for (const resId of resIds) {
+            const res = ReservationManager.reservation(resId);
+            const seat = res?.reservedTicket?.ticketedSeat;
+            if (seat && seat.seatNumber !== "")
+                return true;
+        }
+        return false;
+    }
+
+    function seatString() {
+        let s = []
+        for (const resId of resIds) {
+            const res = ReservationManager.reservation(resId);
+            const seat = res?.reservedTicket?.ticketedSeat;
+            if (seat)
+                s.push(seat.seatNumber);
+        }
+        if (s.length === 0)
+            return "-";
+        return s.join(", ");
+    }
+
     property color headerTextColor: controller.isCanceled ? headerBackground.Kirigami.Theme.disabledTextColor : headerBackground.Kirigami.Theme.textColor
     FormCard.AbstractFormDelegate {
         onClicked: root.clicked()

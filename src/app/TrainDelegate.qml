@@ -140,6 +140,37 @@ TimelineDelegate {
         }
 
         RowLayout {
+            visible: root.hasSeat
+            width: parent.width
+            JourneySectionStopDelegateLineSegment {
+                Layout.fillHeight: true
+                lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
+                isDeparture: false
+                hasStop: false
+            }
+            TimelineDelegateSeatRow {
+                TimelineDelegateSeatRowLabel {
+                    text: i18nc("train coach", "Coach: <b>%1</b>", root.reservation?.reservedTicket?.ticketedSeat?.seatSection || "-")
+                }
+                Kirigami.Separator {
+                    Layout.fillHeight: true
+                }
+                TimelineDelegateSeatRowLabel {
+                    text: i18nc("train seat", "Seat: <b>%1</b>", root.seatString())
+                }
+                Kirigami.Separator {
+                    Layout.fillHeight: true
+                }
+                TimelineDelegateSeatRowLabel {
+                    text: {
+                        const s = root.reservation?.reservedTicket?.ticketedSeat?.seatingType;
+                        return i18nc("train class", "Class: <b>%1</b>", s !== "" ? s : "-");
+                    }
+                }
+            }
+        }
+
+        RowLayout {
             width: parent.width
             JourneySectionStopDelegateLineSegment {
                 Layout.fillHeight: true
@@ -241,9 +272,6 @@ TimelineDelegate {
                 }
             }
         }
-
-
-        // TODO reserved seat
 
         RowLayout {
             width: parent.width

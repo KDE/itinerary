@@ -114,6 +114,22 @@ TimelineDelegate {
         }
 
         RowLayout {
+            visible: root.hasSeat
+            width: parent.width
+            JourneySectionStopDelegateLineSegment {
+                Layout.fillHeight: true
+                lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
+                isDeparture: false
+                hasStop: false
+            }
+            TimelineDelegateSeatRow {
+                TimelineDelegateSeatRowLabel {
+                    text: i18nc("train seat", "Seat: <b>%1</b>", root.seatString())
+                }
+            }
+        }
+
+        RowLayout {
             width: parent.width
             JourneySectionStopDelegateLineSegment {
                 Layout.fillHeight: true

@@ -61,6 +61,27 @@ TimelineDelegate {
             text: i18n("End time: %1", Localizer.formatDateTime(reservationFor, "endDate"));
             visible: root.rangeType != TimelineElement.RangeEnd && reservationFor.endDate > 0
         }
+
+        TimelineDelegateSeatRow {
+            visible: root.hasSeat
+            width: topLayout.width
+
+            TimelineDelegateSeatRowLabel {
+                text: i18nc("event venut seat section", "Section: <b>%1</b>", reservation?.reservedTicket?.ticketedSeat?.seatSection || "-")
+            }
+            Kirigami.Separator {
+                Layout.fillHeight: true
+            }
+            TimelineDelegateSeatRowLabel {
+                text: i18nc("event venut seat row", "Row: <b>%1</b>", reservation?.reservedTicket?.ticketedSeat?.seatRow || "-")
+            }
+            Kirigami.Separator {
+                Layout.fillHeight: true
+            }
+            TimelineDelegateSeatRowLabel {
+                text: i18nc("event venut seat number", "Number: <b>%1</b>", reservation?.reservedTicket?.ticketedSeat?.seatNumber || "-")
+            }
+        }
     }
 
     onClicked: showDetailsPage(eventDetailsPage, root.batchId)

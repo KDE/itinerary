@@ -23,7 +23,7 @@ TimelineDelegate {
         return airport.iataCode ? airport.iataCode : airport.name;
     }
 
-    function seatString() {
+    function airplaneSeatString() {
         var s = new Array();
         for (var i = 0; i < root.resIds.length; ++i) {
             var res = ReservationManager.reservation(root.resIds[i]);
@@ -75,15 +75,25 @@ TimelineDelegate {
                                                      reservationFor.arrivalAirport.address,
                                                      Settings.homeCountryIsoCode)
         }
-        QQC2.Label {
-            text: i18n("Terminal: %1  Gate: %2  Seat: %3",
-                reservationFor.departureTerminal ? reservationFor.departureTerminal : "-",
-                reservationFor.departureGate ? reservationFor.departureGate : "-", seatString())
-            color: Kirigami.Theme.textColor
-        }
 
-        Kirigami.Separator {
+        TimelineDelegateSeatRow {
             width: topLayout.width
+
+            TimelineDelegateSeatRowLabel {
+                text: i18nc("flight departure terminal", "Terminal: <b>%1</b>", reservationFor.departureTerminal || "-")
+            }
+            Kirigami.Separator {
+                Layout.fillHeight: true
+            }
+            TimelineDelegateSeatRowLabel {
+                text: i18nc("flight departure gate", "Gate: <b>%1</b>", reservationFor.departureGate || "-")
+            }
+            Kirigami.Separator {
+                Layout.fillHeight: true
+            }
+            TimelineDelegateSeatRowLabel {
+                text: i18nc("flight seats", "Seat: <b>%1</b>", airplaneSeatString())
+            }
         }
 
         QQC2.Label {
