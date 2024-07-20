@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-19 00:39+0000\n"
+"POT-Creation-Date: 2024-07-20 00:39+0000\n"
 "PO-Revision-Date: 2024-07-15 12:53+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -119,7 +119,7 @@ msgstr "Düzenle"
 msgid "Add to calendar…"
 msgstr "Takvime Ekle…"
 
-#: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:196
+#: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:209
 #, kde-format
 msgid "Export…"
 msgstr "Dışa Aktar…"
@@ -496,7 +496,13 @@ msgctxt "@title:group"
 msgid "Booking"
 msgstr "Rezervasyon"
 
-#: app/BusDelegate.qml:136 app/TrainDelegate.qml:162
+#: app/BusDelegate.qml:127 app/TrainDelegate.qml:159
+#, kde-format
+msgctxt "train seat"
+msgid "Seat: <b>%1</b>"
+msgstr ""
+
+#: app/BusDelegate.qml:152 app/TrainDelegate.qml:193
 #, kde-format
 msgid "1 intermediate stop"
 msgid_plural "%1 intermediate stops"
@@ -833,6 +839,25 @@ msgstr "Başlangıç zamanı: %1"
 msgid "End time: %1"
 msgstr "Bitiş zamanı: %1"
 
+#: app/EventDelegate.qml:70
+#, fuzzy, kde-format
+#| msgid "Direction: %1"
+msgctxt "event venut seat section"
+msgid "Section: <b>%1</b>"
+msgstr "Yön: %1"
+
+#: app/EventDelegate.qml:76
+#, kde-format
+msgctxt "event venut seat row"
+msgid "Row: <b>%1</b>"
+msgstr ""
+
+#: app/EventDelegate.qml:82
+#, kde-format
+msgctxt "event venut seat number"
+msgid "Number: <b>%1</b>"
+msgstr ""
+
 #: app/EventEditor.qml:19
 #, kde-format
 msgctxt "event as in concert/conference/show, not as in appointment"
@@ -1012,12 +1037,25 @@ msgctxt "flight departure, %1 is airport, %2 is time"
 msgid "Departure from %1: %2"
 msgstr "%1 havaalanından kalkış: %2"
 
-#: app/FlightDelegate.qml:79
+#: app/FlightDelegate.qml:83
 #, kde-format
-msgid "Terminal: %1  Gate: %2  Seat: %3"
-msgstr "Terminal: %1  Kapı: %2  Koltuk: %3"
+msgctxt "flight departure terminal"
+msgid "Terminal: <b>%1</b>"
+msgstr ""
 
-#: app/FlightDelegate.qml:90
+#: app/FlightDelegate.qml:89
+#, kde-format
+msgctxt "flight departure gate"
+msgid "Gate: <b>%1</b>"
+msgstr ""
+
+#: app/FlightDelegate.qml:95
+#, kde-format
+msgctxt "flight seats"
+msgid "Seat: <b>%1</b>"
+msgstr ""
+
+#: app/FlightDelegate.qml:100
 #, kde-format
 msgctxt "flight arrival, %1 is airport, %2 is time"
 msgid "Arrival at %1: %2"
@@ -1322,7 +1360,7 @@ msgstr "Kartı Sil"
 msgid "Do you really want to delete this pass?"
 msgstr "Bu kartı silmeyi gerçekten istiyor musunuz?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:331 app/main.qml:21 app/main.qml:166
+#: app/gpxexport.cpp:33 app/main.cpp:333 app/main.qml:21 app/main.qml:166
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Yol Kılavuzu"
@@ -1342,7 +1380,7 @@ msgstr "%2 → %3 %1 treni"
 msgid "Bus %1 from %2 to %3"
 msgstr "%2 → %3 %1 otobüsü"
 
-#: app/gpxexport.cpp:58 app/importcontroller.cpp:596
+#: app/gpxexport.cpp:58 app/reservationhelper.cpp:138
 #, kde-format
 msgid "Ferry from %1 to %2"
 msgstr "%1 → %2 feribotu"
@@ -1713,22 +1751,7 @@ msgstr "İçe aktarılacak bir şey bulunamadı."
 msgid "No importable events found in this calendar."
 msgstr "Bu takvimde içe aktarılabilir etkinlikler bulunamadı."
 
-#: app/importcontroller.cpp:587
-#, kde-format
-msgid "Flight from %1 to %2"
-msgstr "%1 → %2 uçuşu"
-
-#: app/importcontroller.cpp:590
-#, kde-format
-msgid "Train from %1 to %2"
-msgstr "%1 → %2 treni"
-
-#: app/importcontroller.cpp:593
-#, kde-format
-msgid "Bus from %1 to %2"
-msgstr "%1 → %2 otobüsü"
-
-#: app/importcontroller.cpp:621
+#: app/importcontroller.cpp:606
 #, kde-format
 msgid "Backup"
 msgstr "Yedek"
@@ -2350,23 +2373,23 @@ msgstr "Tür M"
 msgid "Type N"
 msgstr "Tür N"
 
-#: app/main.cpp:339
+#: app/main.cpp:341
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Sayısal Yolculuk Asistanı"
 
-#: app/main.cpp:340
+#: app/main.cpp:342
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "Telif hakkı © KDE Topluluğu"
 
-#: app/main.cpp:347
+#: app/main.cpp:349
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Yol Kılavuzu’nu verilen sayfada aç"
 
-#: app/main.cpp:352
+#: app/main.cpp:354
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
@@ -2881,6 +2904,21 @@ msgstr "Şu anda kullanılamıyor"
 #, kde-format
 msgid "Documents and Tickets"
 msgstr "Belgeler ve Biletler"
+
+#: app/reservationhelper.cpp:129
+#, kde-format
+msgid "Flight from %1 to %2"
+msgstr "%1 → %2 uçuşu"
+
+#: app/reservationhelper.cpp:132
+#, kde-format
+msgid "Train from %1 to %2"
+msgstr "%1 → %2 treni"
+
+#: app/reservationhelper.cpp:135
+#, kde-format
+msgid "Bus from %1 to %2"
+msgstr "%1 → %2 otobüsü"
 
 #: app/RestaurantEditor.qml:18
 #, kde-format
@@ -3432,7 +3470,7 @@ msgstr "GPX Dosyası Olarak…"
 msgid "Export Trip"
 msgstr "Geziyi Dışa Aktar"
 
-#: app/TimelinePage.qml:487
+#: app/TimelinePage.qml:491
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Bugün için yolcu belgenizde bir şey yok."
@@ -3473,10 +3511,24 @@ msgstr "Varış"
 msgid "Arrival Time"
 msgstr "Varış Zamanı"
 
-#: app/TrainDelegate.qml:117 app/TrainDelegate.qml:302
+#: app/TrainDelegate.qml:117 app/TrainDelegate.qml:330
 #, kde-format
 msgid "Pl. %1"
 msgstr "Pl. %1"
+
+#: app/TrainDelegate.qml:153
+#, fuzzy, kde-format
+#| msgctxt "train coach"
+#| msgid "Coach %1"
+msgctxt "train coach"
+msgid "Coach: <b>%1</b>"
+msgstr "Vagon %1"
+
+#: app/TrainDelegate.qml:167
+#, kde-format
+msgctxt "train class"
+msgid "Class: <b>%1</b>"
+msgstr ""
 
 #: app/TrainEditor.qml:18
 #, kde-format
@@ -3694,7 +3746,13 @@ msgstr "Düzenle…"
 msgid "Merge trips…"
 msgstr "Gezileri Birleştir…"
 
-#: app/TripGroupDelegate.qml:204
+#: app/TripGroupDelegate.qml:190
+#, fuzzy, kde-format
+#| msgid "Add train trip…"
+msgid "Split trip…"
+msgstr "Tren Gezisi Ekle…"
+
+#: app/TripGroupDelegate.qml:217
 #, kde-format
 msgid "Delete trip"
 msgstr "Geziyi sil"
@@ -3712,18 +3770,19 @@ msgid "Edit Trip"
 msgstr "Geziyi Düzenle"
 
 #: app/TripGroupEditorDialog.qml:21 app/TripGroupMergeDialog.qml:55
+#: app/TripGroupSplitPage.qml:28
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Trip name:"
 msgstr "Gezi adı:"
 
-#: app/tripgroupmanager.cpp:769
+#: app/tripgroupmanager.cpp:775
 #, kde-format
 msgctxt "%1 is destination, %2 is the standalone month name, %3 is the year"
 msgid "%1 (%2 %3)"
 msgstr "%1 (%2 %3)"
 
-#: app/tripgroupmanager.cpp:771
+#: app/tripgroupmanager.cpp:777
 #, kde-format
 msgctxt ""
 "%1 is destination, %2 and %3 are the standalone month names and %4 is the "
@@ -3731,7 +3790,7 @@ msgctxt ""
 msgid "%1 (%2/%3 %4)"
 msgstr "%1 (%2/%3 %4)"
 
-#: app/tripgroupmanager.cpp:773
+#: app/tripgroupmanager.cpp:779
 #, kde-format
 msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"
@@ -3752,6 +3811,26 @@ msgstr "Şununla birleştir:"
 #, kde-format
 msgid "Merge"
 msgstr "Birleştir"
+
+#: app/TripGroupSplitPage.qml:14
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Edit Trip"
+msgid "Split Trip"
+msgstr "Geziyi Düzenle"
+
+#: app/TripGroupSplitPage.qml:22
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "Add New Trip"
+msgid "New Trip"
+msgstr "Yeni Gezi Ekle…"
+
+#: app/TripGroupSplitPage.qml:71
+#, fuzzy, kde-format
+#| msgid "Delete trip"
+msgid "Split trip"
+msgstr "Geziyi sil"
 
 #: app/VehicleLayoutPage.qml:18
 #, kde-format
@@ -3932,6 +4011,9 @@ msgstr "Oturum açılıyor"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%5 tarihinde %3 havaalanından %4 havaalanına %1%2"
+
+#~ msgid "Terminal: %1  Gate: %2  Seat: %3"
+#~ msgstr "Terminal: %1  Kapı: %2  Koltuk: %3"
 
 #~ msgid "Export..."
 #~ msgstr "Dışa Aktar…"

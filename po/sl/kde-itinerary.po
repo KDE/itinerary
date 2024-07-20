@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-19 00:39+0000\n"
+"POT-Creation-Date: 2024-07-20 00:39+0000\n"
 "PO-Revision-Date: 2024-07-15 07:06+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -118,7 +118,7 @@ msgstr "Uredi"
 msgid "Add to calendar…"
 msgstr "Dodaj v koledar…"
 
-#: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:196
+#: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:209
 #, kde-format
 msgid "Export…"
 msgstr "Izvozi…"
@@ -500,7 +500,13 @@ msgctxt "@title:group"
 msgid "Booking"
 msgstr "Rezervacija"
 
-#: app/BusDelegate.qml:136 app/TrainDelegate.qml:162
+#: app/BusDelegate.qml:127 app/TrainDelegate.qml:159
+#, kde-format
+msgctxt "train seat"
+msgid "Seat: <b>%1</b>"
+msgstr ""
+
+#: app/BusDelegate.qml:152 app/TrainDelegate.qml:193
 #, kde-format
 msgid "1 intermediate stop"
 msgid_plural "%1 intermediate stops"
@@ -839,6 +845,25 @@ msgstr "Začetni čas: %1"
 msgid "End time: %1"
 msgstr "Končni čas: %1"
 
+#: app/EventDelegate.qml:70
+#, fuzzy, kde-format
+#| msgid "Direction: %1"
+msgctxt "event venut seat section"
+msgid "Section: <b>%1</b>"
+msgstr "Smer: %1"
+
+#: app/EventDelegate.qml:76
+#, kde-format
+msgctxt "event venut seat row"
+msgid "Row: <b>%1</b>"
+msgstr ""
+
+#: app/EventDelegate.qml:82
+#, kde-format
+msgctxt "event venut seat number"
+msgid "Number: <b>%1</b>"
+msgstr ""
+
 #: app/EventEditor.qml:19
 #, kde-format
 msgctxt "event as in concert/conference/show, not as in appointment"
@@ -1018,12 +1043,25 @@ msgctxt "flight departure, %1 is airport, %2 is time"
 msgid "Departure from %1: %2"
 msgstr "Odhod iz %1: %2"
 
-#: app/FlightDelegate.qml:79
+#: app/FlightDelegate.qml:83
 #, kde-format
-msgid "Terminal: %1  Gate: %2  Seat: %3"
-msgstr "Terminal: %1  Izhod: %2  Sedež: %3"
+msgctxt "flight departure terminal"
+msgid "Terminal: <b>%1</b>"
+msgstr ""
 
-#: app/FlightDelegate.qml:90
+#: app/FlightDelegate.qml:89
+#, kde-format
+msgctxt "flight departure gate"
+msgid "Gate: <b>%1</b>"
+msgstr ""
+
+#: app/FlightDelegate.qml:95
+#, kde-format
+msgctxt "flight seats"
+msgid "Seat: <b>%1</b>"
+msgstr ""
+
+#: app/FlightDelegate.qml:100
 #, kde-format
 msgctxt "flight arrival, %1 is airport, %2 is time"
 msgid "Arrival at %1: %2"
@@ -1328,7 +1366,7 @@ msgstr "Zbriši vozovnico"
 msgid "Do you really want to delete this pass?"
 msgstr "Ali res želite izbrisati to vozovnico?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:331 app/main.qml:21 app/main.qml:166
+#: app/gpxexport.cpp:33 app/main.cpp:333 app/main.qml:21 app/main.qml:166
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -1348,7 +1386,7 @@ msgstr "Vlak %1 iz %2 v %3"
 msgid "Bus %1 from %2 to %3"
 msgstr "Avtobus %1 iz %2 v %3"
 
-#: app/gpxexport.cpp:58 app/importcontroller.cpp:596
+#: app/gpxexport.cpp:58 app/reservationhelper.cpp:138
 #, kde-format
 msgid "Ferry from %1 to %2"
 msgstr "Trajekt iz %1 do %2"
@@ -1721,22 +1759,7 @@ msgstr "Ničesar ni najdenega za uvoz."
 msgid "No importable events found in this calendar."
 msgstr "Ni najdenih dogodkov za uvoz v tem koledarju."
 
-#: app/importcontroller.cpp:587
-#, kde-format
-msgid "Flight from %1 to %2"
-msgstr "Let %1 iz %2"
-
-#: app/importcontroller.cpp:590
-#, kde-format
-msgid "Train from %1 to %2"
-msgstr "Vlak %1 iz %2"
-
-#: app/importcontroller.cpp:593
-#, kde-format
-msgid "Bus from %1 to %2"
-msgstr "Avtobus %1 iz %2"
-
-#: app/importcontroller.cpp:621
+#: app/importcontroller.cpp:606
 #, kde-format
 msgid "Backup"
 msgstr "Varovalna kopija"
@@ -2359,23 +2382,23 @@ msgstr "Tip M"
 msgid "Type N"
 msgstr "Tip N"
 
-#: app/main.cpp:339
+#: app/main.cpp:341
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Digitalni potovalni pomočnik"
 
-#: app/main.cpp:340
+#: app/main.cpp:342
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "Copyright © Skupnost KDE"
 
-#: app/main.cpp:347
+#: app/main.cpp:349
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Odpri itinerar na dani strani"
 
-#: app/main.cpp:352
+#: app/main.cpp:354
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
@@ -2888,6 +2911,21 @@ msgstr "Trenutno ni na voljo"
 #, kde-format
 msgid "Documents and Tickets"
 msgstr "Dokumenti in vstopnice"
+
+#: app/reservationhelper.cpp:129
+#, kde-format
+msgid "Flight from %1 to %2"
+msgstr "Let %1 iz %2"
+
+#: app/reservationhelper.cpp:132
+#, kde-format
+msgid "Train from %1 to %2"
+msgstr "Vlak %1 iz %2"
+
+#: app/reservationhelper.cpp:135
+#, kde-format
+msgid "Bus from %1 to %2"
+msgstr "Avtobus %1 iz %2"
 
 #: app/RestaurantEditor.qml:18
 #, kde-format
@@ -3440,7 +3478,7 @@ msgstr "Kot datoteko GPX…"
 msgid "Export Trip"
 msgstr "Izvozi načrt poti"
 
-#: app/TimelinePage.qml:487
+#: app/TimelinePage.qml:491
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Nič na itinerarju za danes."
@@ -3481,10 +3519,24 @@ msgstr "Prihod"
 msgid "Arrival Time"
 msgstr "Čas prihoda"
 
-#: app/TrainDelegate.qml:117 app/TrainDelegate.qml:302
+#: app/TrainDelegate.qml:117 app/TrainDelegate.qml:330
 #, kde-format
 msgid "Pl. %1"
 msgstr "Pl. %1"
+
+#: app/TrainDelegate.qml:153
+#, fuzzy, kde-format
+#| msgctxt "train coach"
+#| msgid "Coach %1"
+msgctxt "train coach"
+msgid "Coach: <b>%1</b>"
+msgstr "Vagon %1"
+
+#: app/TrainDelegate.qml:167
+#, kde-format
+msgctxt "train class"
+msgid "Class: <b>%1</b>"
+msgstr ""
 
 #: app/TrainEditor.qml:18
 #, kde-format
@@ -3706,7 +3758,13 @@ msgstr "Uredi…"
 msgid "Merge trips…"
 msgstr "Zlij potovanja…"
 
-#: app/TripGroupDelegate.qml:204
+#: app/TripGroupDelegate.qml:190
+#, fuzzy, kde-format
+#| msgid "Add train trip…"
+msgid "Split trip…"
+msgstr "Dodaj izlet z železnico…"
+
+#: app/TripGroupDelegate.qml:217
 #, kde-format
 msgid "Delete trip"
 msgstr "Izbriši izlet"
@@ -3724,18 +3782,19 @@ msgid "Edit Trip"
 msgstr "Uredi potovanje"
 
 #: app/TripGroupEditorDialog.qml:21 app/TripGroupMergeDialog.qml:55
+#: app/TripGroupSplitPage.qml:28
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Trip name:"
 msgstr "Ime potovanja:"
 
-#: app/tripgroupmanager.cpp:769
+#: app/tripgroupmanager.cpp:775
 #, kde-format
 msgctxt "%1 is destination, %2 is the standalone month name, %3 is the year"
 msgid "%1 (%2 %3)"
 msgstr "%1 (%2 %3)"
 
-#: app/tripgroupmanager.cpp:771
+#: app/tripgroupmanager.cpp:777
 #, kde-format
 msgctxt ""
 "%1 is destination, %2 and %3 are the standalone month names and %4 is the "
@@ -3743,7 +3802,7 @@ msgctxt ""
 msgid "%1 (%2/%3 %4)"
 msgstr "%1 (%2/%3 %4)"
 
-#: app/tripgroupmanager.cpp:773
+#: app/tripgroupmanager.cpp:779
 #, kde-format
 msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"
@@ -3764,6 +3823,26 @@ msgstr "Zlij z:"
 #, kde-format
 msgid "Merge"
 msgstr "Zlij"
+
+#: app/TripGroupSplitPage.qml:14
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Edit Trip"
+msgid "Split Trip"
+msgstr "Uredi potovanje"
+
+#: app/TripGroupSplitPage.qml:22
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "Add New Trip"
+msgid "New Trip"
+msgstr "Dodaj novo potovanje"
+
+#: app/TripGroupSplitPage.qml:71
+#, fuzzy, kde-format
+#| msgid "Delete trip"
+msgid "Split trip"
+msgstr "Izbriši izlet"
 
 #: app/VehicleLayoutPage.qml:18
 #, kde-format
@@ -3945,6 +4024,9 @@ msgstr "Prijavljanje"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 od %3 do %4 na %5"
+
+#~ msgid "Terminal: %1  Gate: %2  Seat: %3"
+#~ msgstr "Terminal: %1  Izhod: %2  Sedež: %3"
 
 #~ msgid "Export..."
 #~ msgstr "Izvozi..."

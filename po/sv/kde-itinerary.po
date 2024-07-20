@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-19 00:39+0000\n"
+"POT-Creation-Date: 2024-07-20 00:39+0000\n"
 "PO-Revision-Date: 2024-07-15 16:28+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -118,7 +118,7 @@ msgstr "Redigera"
 msgid "Add to calendar…"
 msgstr "Lägg till i kalender…"
 
-#: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:196
+#: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:209
 #, kde-format
 msgid "Export…"
 msgstr "Exportera…"
@@ -494,7 +494,13 @@ msgctxt "@title:group"
 msgid "Booking"
 msgstr "Bokning"
 
-#: app/BusDelegate.qml:136 app/TrainDelegate.qml:162
+#: app/BusDelegate.qml:127 app/TrainDelegate.qml:159
+#, kde-format
+msgctxt "train seat"
+msgid "Seat: <b>%1</b>"
+msgstr ""
+
+#: app/BusDelegate.qml:152 app/TrainDelegate.qml:193
 #, kde-format
 msgid "1 intermediate stop"
 msgid_plural "%1 intermediate stops"
@@ -831,6 +837,25 @@ msgstr "Starttid: %1"
 msgid "End time: %1"
 msgstr "Sluttid: %1"
 
+#: app/EventDelegate.qml:70
+#, fuzzy, kde-format
+#| msgid "Direction: %1"
+msgctxt "event venut seat section"
+msgid "Section: <b>%1</b>"
+msgstr "Riktning: %1"
+
+#: app/EventDelegate.qml:76
+#, kde-format
+msgctxt "event venut seat row"
+msgid "Row: <b>%1</b>"
+msgstr ""
+
+#: app/EventDelegate.qml:82
+#, kde-format
+msgctxt "event venut seat number"
+msgid "Number: <b>%1</b>"
+msgstr ""
+
 #: app/EventEditor.qml:19
 #, kde-format
 msgctxt "event as in concert/conference/show, not as in appointment"
@@ -1010,12 +1035,25 @@ msgctxt "flight departure, %1 is airport, %2 is time"
 msgid "Departure from %1: %2"
 msgstr "Avgång från %1: %2"
 
-#: app/FlightDelegate.qml:79
+#: app/FlightDelegate.qml:83
 #, kde-format
-msgid "Terminal: %1  Gate: %2  Seat: %3"
-msgstr "Terminal: %1 Gate: %2 Plats: %3"
+msgctxt "flight departure terminal"
+msgid "Terminal: <b>%1</b>"
+msgstr ""
 
-#: app/FlightDelegate.qml:90
+#: app/FlightDelegate.qml:89
+#, kde-format
+msgctxt "flight departure gate"
+msgid "Gate: <b>%1</b>"
+msgstr ""
+
+#: app/FlightDelegate.qml:95
+#, kde-format
+msgctxt "flight seats"
+msgid "Seat: <b>%1</b>"
+msgstr ""
+
+#: app/FlightDelegate.qml:100
 #, kde-format
 msgctxt "flight arrival, %1 is airport, %2 is time"
 msgid "Arrival at %1: %2"
@@ -1320,7 +1358,7 @@ msgstr "Ta bort passerkort"
 msgid "Do you really want to delete this pass?"
 msgstr "Vill du verkligen ta bort passet?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:331 app/main.qml:21 app/main.qml:166
+#: app/gpxexport.cpp:33 app/main.cpp:333 app/main.qml:21 app/main.qml:166
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE-resplan"
@@ -1340,7 +1378,7 @@ msgstr "Tåg %1 från %2 till %3"
 msgid "Bus %1 from %2 to %3"
 msgstr "Buss %1 från %2 till %3"
 
-#: app/gpxexport.cpp:58 app/importcontroller.cpp:596
+#: app/gpxexport.cpp:58 app/reservationhelper.cpp:138
 #, kde-format
 msgid "Ferry from %1 to %2"
 msgstr "Färja från %1 till %2"
@@ -1710,22 +1748,7 @@ msgstr "Hittade ingenting att importera."
 msgid "No importable events found in this calendar."
 msgstr "Inga importerbara händelser hittades i den här kalendern."
 
-#: app/importcontroller.cpp:587
-#, kde-format
-msgid "Flight from %1 to %2"
-msgstr "Flyg från %1 till %2"
-
-#: app/importcontroller.cpp:590
-#, kde-format
-msgid "Train from %1 to %2"
-msgstr "Tåg från %1 till %2"
-
-#: app/importcontroller.cpp:593
-#, kde-format
-msgid "Bus from %1 to %2"
-msgstr "Buss från %1 till %2"
-
-#: app/importcontroller.cpp:621
+#: app/importcontroller.cpp:606
 #, kde-format
 msgid "Backup"
 msgstr "Säkerhetskopiera"
@@ -2346,23 +2369,23 @@ msgstr "Typ M"
 msgid "Type N"
 msgstr "Typ N"
 
-#: app/main.cpp:339
+#: app/main.cpp:341
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Digitalt resehjälpprogram"
 
-#: app/main.cpp:340
+#: app/main.cpp:342
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "Copyright © KDE-gemenskapen"
 
-#: app/main.cpp:347
+#: app/main.cpp:349
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Öppna resplan på angiven sida"
 
-#: app/main.cpp:352
+#: app/main.cpp:354
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
@@ -2875,6 +2898,21 @@ msgstr "För närvarande inte tillgänglig"
 #, kde-format
 msgid "Documents and Tickets"
 msgstr "Dokument och biljetter"
+
+#: app/reservationhelper.cpp:129
+#, kde-format
+msgid "Flight from %1 to %2"
+msgstr "Flyg från %1 till %2"
+
+#: app/reservationhelper.cpp:132
+#, kde-format
+msgid "Train from %1 to %2"
+msgstr "Tåg från %1 till %2"
+
+#: app/reservationhelper.cpp:135
+#, kde-format
+msgid "Bus from %1 to %2"
+msgstr "Buss från %1 till %2"
 
 #: app/RestaurantEditor.qml:18
 #, kde-format
@@ -3425,7 +3463,7 @@ msgstr "Som GPX-fil…"
 msgid "Export Trip"
 msgstr "Exportera resa"
 
-#: app/TimelinePage.qml:487
+#: app/TimelinePage.qml:491
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Ingenting i resplanen idag."
@@ -3466,10 +3504,24 @@ msgstr "Ankomst"
 msgid "Arrival Time"
 msgstr "Ankomsttid"
 
-#: app/TrainDelegate.qml:117 app/TrainDelegate.qml:302
+#: app/TrainDelegate.qml:117 app/TrainDelegate.qml:330
 #, kde-format
 msgid "Pl. %1"
 msgstr "Pl. %1"
+
+#: app/TrainDelegate.qml:153
+#, fuzzy, kde-format
+#| msgctxt "train coach"
+#| msgid "Coach %1"
+msgctxt "train coach"
+msgid "Coach: <b>%1</b>"
+msgstr "Vagn %1"
+
+#: app/TrainDelegate.qml:167
+#, kde-format
+msgctxt "train class"
+msgid "Class: <b>%1</b>"
+msgstr ""
 
 #: app/TrainEditor.qml:18
 #, kde-format
@@ -3687,7 +3739,13 @@ msgstr "Redigera…"
 msgid "Merge trips…"
 msgstr "Slå samman resor…"
 
-#: app/TripGroupDelegate.qml:204
+#: app/TripGroupDelegate.qml:190
+#, fuzzy, kde-format
+#| msgid "Add train trip…"
+msgid "Split trip…"
+msgstr "Lägg till tågresa…"
+
+#: app/TripGroupDelegate.qml:217
 #, kde-format
 msgid "Delete trip"
 msgstr "Ta bort resa"
@@ -3705,18 +3763,19 @@ msgid "Edit Trip"
 msgstr "Redigera resa"
 
 #: app/TripGroupEditorDialog.qml:21 app/TripGroupMergeDialog.qml:55
+#: app/TripGroupSplitPage.qml:28
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Trip name:"
 msgstr "Resans namn:"
 
-#: app/tripgroupmanager.cpp:769
+#: app/tripgroupmanager.cpp:775
 #, kde-format
 msgctxt "%1 is destination, %2 is the standalone month name, %3 is the year"
 msgid "%1 (%2 %3)"
 msgstr "%1 (%2 %3)"
 
-#: app/tripgroupmanager.cpp:771
+#: app/tripgroupmanager.cpp:777
 #, kde-format
 msgctxt ""
 "%1 is destination, %2 and %3 are the standalone month names and %4 is the "
@@ -3724,7 +3783,7 @@ msgctxt ""
 msgid "%1 (%2/%3 %4)"
 msgstr "%1 (%2 - %3 %4)"
 
-#: app/tripgroupmanager.cpp:773
+#: app/tripgroupmanager.cpp:779
 #, kde-format
 msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"
@@ -3745,6 +3804,26 @@ msgstr "Slå samman med:"
 #, kde-format
 msgid "Merge"
 msgstr "Slå samman"
+
+#: app/TripGroupSplitPage.qml:14
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Edit Trip"
+msgid "Split Trip"
+msgstr "Redigera resa"
+
+#: app/TripGroupSplitPage.qml:22
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "Add New Trip"
+msgid "New Trip"
+msgstr "Lägg till ny resa"
+
+#: app/TripGroupSplitPage.qml:71
+#, fuzzy, kde-format
+#| msgid "Delete trip"
+msgid "Split trip"
+msgstr "Ta bort resa"
 
 #: app/VehicleLayoutPage.qml:18
 #, kde-format
@@ -3926,6 +4005,9 @@ msgstr "Loggar in"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 från %3 till %4 %5"
+
+#~ msgid "Terminal: %1  Gate: %2  Seat: %3"
+#~ msgstr "Terminal: %1 Gate: %2 Plats: %3"
 
 #~ msgid "Export..."
 #~ msgstr "Exportera..."
