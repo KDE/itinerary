@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-20 00:39+0000\n"
-"PO-Revision-Date: 2024-07-15 16:28+0200\n"
+"PO-Revision-Date: 2024-07-20 05:14+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -498,7 +498,7 @@ msgstr "Bokning"
 #, kde-format
 msgctxt "train seat"
 msgid "Seat: <b>%1</b>"
-msgstr ""
+msgstr "Plats: <b>%1</b>"
 
 #: app/BusDelegate.qml:152 app/TrainDelegate.qml:193
 #, kde-format
@@ -838,23 +838,22 @@ msgid "End time: %1"
 msgstr "Sluttid: %1"
 
 #: app/EventDelegate.qml:70
-#, fuzzy, kde-format
-#| msgid "Direction: %1"
+#, kde-format
 msgctxt "event venut seat section"
 msgid "Section: <b>%1</b>"
-msgstr "Riktning: %1"
+msgstr "Sektion: <b>%1</b>"
 
 #: app/EventDelegate.qml:76
 #, kde-format
 msgctxt "event venut seat row"
 msgid "Row: <b>%1</b>"
-msgstr ""
+msgstr "Rad: <b>%1</b>"
 
 #: app/EventDelegate.qml:82
 #, kde-format
 msgctxt "event venut seat number"
 msgid "Number: <b>%1</b>"
-msgstr ""
+msgstr "Nummer: <b>%1</b>"
 
 #: app/EventEditor.qml:19
 #, kde-format
@@ -1039,19 +1038,19 @@ msgstr "Avgång från %1: %2"
 #, kde-format
 msgctxt "flight departure terminal"
 msgid "Terminal: <b>%1</b>"
-msgstr ""
+msgstr "Terminal: <b>%1</b>"
 
 #: app/FlightDelegate.qml:89
 #, kde-format
 msgctxt "flight departure gate"
 msgid "Gate: <b>%1</b>"
-msgstr ""
+msgstr "Gate: <b>%1</b>"
 
 #: app/FlightDelegate.qml:95
 #, kde-format
 msgctxt "flight seats"
 msgid "Seat: <b>%1</b>"
-msgstr ""
+msgstr "Plats: <b>%1</b>"
 
 #: app/FlightDelegate.qml:100
 #, kde-format
@@ -3510,18 +3509,16 @@ msgid "Pl. %1"
 msgstr "Pl. %1"
 
 #: app/TrainDelegate.qml:153
-#, fuzzy, kde-format
-#| msgctxt "train coach"
-#| msgid "Coach %1"
+#, kde-format
 msgctxt "train coach"
 msgid "Coach: <b>%1</b>"
-msgstr "Vagn %1"
+msgstr "Vagn: <b>%1</b>"
 
 #: app/TrainDelegate.qml:167
 #, kde-format
 msgctxt "train class"
 msgid "Class: <b>%1</b>"
-msgstr ""
+msgstr "Klass: <b>%1</b>"
 
 #: app/TrainEditor.qml:18
 #, kde-format
@@ -3740,10 +3737,9 @@ msgid "Merge trips…"
 msgstr "Slå samman resor…"
 
 #: app/TripGroupDelegate.qml:190
-#, fuzzy, kde-format
-#| msgid "Add train trip…"
+#, kde-format
 msgid "Split trip…"
-msgstr "Lägg till tågresa…"
+msgstr "Dela resa…"
 
 #: app/TripGroupDelegate.qml:217
 #, kde-format
@@ -3806,24 +3802,19 @@ msgid "Merge"
 msgstr "Slå samman"
 
 #: app/TripGroupSplitPage.qml:14
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Edit Trip"
+#, kde-format
 msgid "Split Trip"
-msgstr "Redigera resa"
+msgstr "Dela resa"
 
 #: app/TripGroupSplitPage.qml:22
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Add New Trip"
+#, kde-format
 msgid "New Trip"
-msgstr "Lägg till ny resa"
+msgstr "Ny resa"
 
 #: app/TripGroupSplitPage.qml:71
-#, fuzzy, kde-format
-#| msgid "Delete trip"
+#, kde-format
 msgid "Split trip"
-msgstr "Ta bort resa"
+msgstr "Dela resa"
 
 #: app/VehicleLayoutPage.qml:18
 #, kde-format

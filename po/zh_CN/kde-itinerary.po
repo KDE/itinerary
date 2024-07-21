@@ -832,11 +832,10 @@ msgid "End time: %1"
 msgstr "结束时间：%1"
 
 #: app/EventDelegate.qml:70
-#, fuzzy, kde-format
-#| msgid "Direction: %1"
+#, kde-format
 msgctxt "event venut seat section"
 msgid "Section: <b>%1</b>"
-msgstr "方向：%1"
+msgstr ""
 
 #: app/EventDelegate.qml:76
 #, kde-format
@@ -3782,16 +3781,14 @@ msgid "Merge"
 msgstr ""
 
 #: app/TripGroupSplitPage.qml:14
-#, fuzzy, kde-format
-#| msgid "Export Trip"
+#, kde-format
 msgid "Split Trip"
-msgstr "导出行程"
+msgstr ""
 
 #: app/TripGroupSplitPage.qml:22
-#, fuzzy, kde-format
-#| msgid "Trips"
+#, kde-format
 msgid "New Trip"
-msgstr "行程数"
+msgstr ""
 
 #: app/TripGroupSplitPage.qml:71
 #, kde-format
@@ -3969,6 +3966,3 @@ msgstr ""
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr ""
-
-#~ msgid "Terminal: %1  Gate: %2  Seat: %3"
-#~ msgstr "航站楼：%1 登机口：%2 座位：%3"
