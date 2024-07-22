@@ -5,14 +5,16 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 
-Item {
+QQC2.Label {
+    horizontalAlignment: Qt.AlignHCenter
+    verticalAlignment: Qt.AlignVCenter
     Layout.fillWidth: true
     Layout.fillHeight: true
 
-    property alias text: label.text
-
-    QQC2.Label {
-        id: label
-        anchors.centerIn: parent
-    }
+    // as long as we have enough space, prefer equally sized labels
+    Layout.preferredWidth: parent.width
+    // when space gets limited, trade in equal sizeinf first to avoid eliding
+    Layout.minimumWidth: parent.compactMode ? 0 : implicitWidth
+    // elide as last resort, when there is not enough space for all labels
+    elide: Text.ElideRight
 }

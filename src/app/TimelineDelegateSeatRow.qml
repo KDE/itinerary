@@ -21,5 +21,13 @@ Rectangle {
     RowLayout{
         id: layout
         anchors.fill: parent
+
+        // not enough space for all labels even with giving up equal sizing, so we need to enable eliding
+        readonly property bool compactMode: {
+            let width = 0;
+            for (const child of layout.children)
+                width += child.implicitWidth + 2 * Kirigami.Units.smallSpacing;
+            return width > layout.width;
+        }
     }
 }
