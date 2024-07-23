@@ -121,6 +121,19 @@ private Q_SLOTS:
             QCOMPARE(mgr.tripGroups().size(), 1);
             QCOMPARE(mgr.tripGroup(mgr.tripGroups().at(0)).elements().size(), 4);
         }
+
+        Test::clearAll(&resMgr);
+        TripGroupManager::clear();
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/tripgroup/unidirectional-train-trip.json")));
+        ctrl->commitImport(&importer);
+        {
+            TripGroupManager mgr;
+            mgr.setReservationManager (&resMgr);
+            mgr.setTransferManager(&transferMgr);
+            QEXPECT_FAIL("", "doesn't work yet", Abort);
+            QCOMPARE(mgr.tripGroups().size(), 1);
+            QCOMPARE(mgr.tripGroup(mgr.tripGroups().at(0)).elements().size(), 2);
+        }
     }
 
     void testDynamicGrouping()

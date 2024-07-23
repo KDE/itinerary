@@ -1,0 +1,44 @@
+[
+    {
+        "@context": "http://schema.org",
+        "@type": "TrainReservation",
+        "reservationFor": {
+            "@type": "TrainTrip",
+            "arrivalPlatform": "",
+            "arrivalStation": {
+                "@type": "TrainStation",
+                "name": "Frankfurt(Main)Hbf"
+            },
+            "arrivalTime": "2019-09-05T07:36:00",
+            "departureDay": "2019-09-05",
+            "departurePlatform": "",
+            "departureStation": {
+                "@type": "TrainStation",
+                "name": "Somewhere Hbf"
+            },
+            "departureTime": "2019-09-05T06:24:00",
+            "trainNumber": "IC 2028"
+        }
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "TrainReservation",
+        "reservationFor": {
+            "@type": "TrainTrip",
+            "arrivalPlatform": "",
+            "arrivalStation": {
+                "@type": "TrainStation",
+                "name": "Milano Centrale"
+            },
+            "arrivalTime": "2019-09-05T15:50:00",
+            "departureDay": "2019-09-05",
+            "departurePlatform": "",
+            "departureStation": {
+                "@type": "TrainStation",
+                "name": "Frankfurt(Main)Hbf"
+            },
+            "departureTime": "2019-09-05T08:01:00",
+            "trainNumber": "ECE 451"
+        }
+    },
+]
