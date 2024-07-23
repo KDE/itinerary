@@ -232,6 +232,7 @@ qt_add_qml_module(itinerary-app URI org.kde.itinerary NO_PLUGIN QML_FILES
     TripGroupEditorDialog.qml
     TripGroupMergeDialog.qml
     TripGroupSplitPage.qml
+    TripGroupsPage.qml
     VehicleLayoutPage.qml
     VerticalNavigationButton.qml
     WeatherForecastDelegate.qml

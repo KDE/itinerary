@@ -24,6 +24,11 @@ Kirigami.ScrollablePage {
         onAccepted: DevelopmentModeController.importMapCSS(selectedFile)
     }
 
+    Component {
+        id: tripGroupsPage
+        TripGroupsPage {}
+    }
+
     ColumnLayout {
         QQC2.Button {
             text: "Disable Development Mode"
@@ -61,6 +66,15 @@ Kirigami.ScrollablePage {
             text: "Crash"
             Layout.fillWidth: true
             onClicked: DevelopmentModeController.crash();
+        }
+
+        QQC2.Button { // for testing until this is the main starting page
+            text: "Trip Group View"
+            Layout.fillWidth: true
+            onClicked: {
+                applicationWindow().pageStack.goBack();
+                applicationWindow().pageStack.push(pagepool.loadPage(Qt.resolvedUrl("TripGroupsPage.qml")))
+            }
         }
 
         QQC2.Label {
