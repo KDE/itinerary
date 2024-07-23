@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-20 00:39+0000\n"
-"PO-Revision-Date: 2024-06-15 13:44+0200\n"
+"PO-Revision-Date: 2024-07-20 20:09+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.05.1\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -114,10 +114,9 @@ msgid "Edit"
 msgstr "Modifica"
 
 #: app/ActionsCard.qml:62
-#, fuzzy, kde-format
-#| msgid "Add to calendar..."
+#, kde-format
 msgid "Add to calendar…"
-msgstr "Aggiungi al calendario..."
+msgstr "Aggiungi al calendario…"
 
 #: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:209
 #, kde-format
@@ -149,10 +148,9 @@ msgid "Export"
 msgstr "Esporta"
 
 #: app/ActionsCard.qml:140 app/TimelinePage.qml:238
-#, fuzzy, kde-format
-#| msgid "As Itinerary file..."
+#, kde-format
 msgid "As Itinerary file…"
-msgstr "Come file Itinerary..."
+msgstr "Come file di Itinerary…"
 
 #: app/ActionsCard.qml:151 app/TimelinePage.qml:262
 #, kde-format
@@ -501,7 +499,7 @@ msgstr "Prenotazione"
 #, kde-format
 msgctxt "train seat"
 msgid "Seat: <b>%1</b>"
-msgstr ""
+msgstr "Posto: <b>%1</b>"
 
 #: app/BusDelegate.qml:152 app/TrainDelegate.qml:193
 #, kde-format
@@ -805,10 +803,9 @@ msgid "No documents attached to this reservation."
 msgstr "Nessun documento allegato a questa prenotazione"
 
 #: app/DocumentsCard.qml:117
-#, fuzzy, kde-format
-#| msgid "Add Document"
+#, kde-format
 msgid "Add Document…"
-msgstr "Aggiungi documento"
+msgstr "Aggiungi documento…"
 
 #: app/downloadjob.cpp:146
 #, kde-format
@@ -842,23 +839,22 @@ msgid "End time: %1"
 msgstr "Orario di fine: %1"
 
 #: app/EventDelegate.qml:70
-#, fuzzy, kde-format
-#| msgid "Direction: %1"
+#, kde-format
 msgctxt "event venut seat section"
 msgid "Section: <b>%1</b>"
-msgstr "Direzione: %1"
+msgstr "Sezione: <b>%1</b>"
 
 #: app/EventDelegate.qml:76
 #, kde-format
 msgctxt "event venut seat row"
 msgid "Row: <b>%1</b>"
-msgstr ""
+msgstr "Riga: <b>%1</b>"
 
 #: app/EventDelegate.qml:82
 #, kde-format
 msgctxt "event venut seat number"
 msgid "Number: <b>%1</b>"
-msgstr ""
+msgstr "Numero: <b>%1</b>"
 
 #: app/EventEditor.qml:19
 #, kde-format
@@ -1043,19 +1039,19 @@ msgstr "Partenza da %1: %2"
 #, kde-format
 msgctxt "flight departure terminal"
 msgid "Terminal: <b>%1</b>"
-msgstr ""
+msgstr "Terminale: <b>%1</b>"
 
 #: app/FlightDelegate.qml:89
 #, kde-format
 msgctxt "flight departure gate"
 msgid "Gate: <b>%1</b>"
-msgstr ""
+msgstr "Gate: <b>%1</b>"
 
 #: app/FlightDelegate.qml:95
 #, kde-format
 msgctxt "flight seats"
 msgid "Seat: <b>%1</b>"
-msgstr ""
+msgstr "Posto: <b>%1</b>"
 
 #: app/FlightDelegate.qml:100
 #, kde-format
@@ -1210,7 +1206,7 @@ msgstr "Terminale"
 #: app/FlightPage.qml:147
 #, kde-format
 msgid "Gate"
-msgstr "Cancello"
+msgstr "Gate"
 
 #: app/FlightPage.qml:163
 #, kde-format
@@ -1307,7 +1303,7 @@ msgstr "%1°, %2°"
 #: app/FormPlaceEditorDelegate.qml:197
 #, kde-format
 msgid "Pick…"
-msgstr ""
+msgstr "Scegli…"
 
 #: app/FormPlaceEditorDelegate.qml:215
 #, kde-format
@@ -2206,10 +2202,9 @@ msgid "Automatically follow on the map"
 msgstr "Segui automaticamente sulla mappa"
 
 #: app/LiveStatusPage.qml:180 app/LiveStatusPage.qml:192
-#, fuzzy, kde-format
-#| msgid "Waiting for data..."
+#, kde-format
 msgid "Waiting for data…"
-msgstr "In attesa di dati..."
+msgstr "In attesa di dati…"
 
 #: app/LiveStatusPage.qml:204
 #, kde-format
@@ -2399,10 +2394,9 @@ msgid "Files or URLs to import."
 msgstr "File o URL da importare."
 
 #: app/main.qml:61
-#, fuzzy, kde-format
-#| msgid "Open File..."
+#, kde-format
 msgid "Open File…"
-msgstr "Apri file..."
+msgstr "Apri file…"
 
 #: app/main.qml:69 app/TicketTokenEditorCard.qml:129
 #, kde-format
@@ -2410,28 +2404,24 @@ msgid "Paste"
 msgstr "Incolla"
 
 #: app/main.qml:76
-#, fuzzy, kde-format
-#| msgid "Scan barcode…"
+#, kde-format
 msgid "Scan Barcode…"
 msgstr "Scansione del codice a barre..."
 
 #: app/main.qml:84
-#, fuzzy, kde-format
-#| msgid "Add from Calendar..."
+#, kde-format
 msgid "Add from Calendar…"
-msgstr "Aggiungi da calendario..."
+msgstr "Aggiungi da calendario…"
 
 #: app/main.qml:98
-#, fuzzy, kde-format
-#| msgid "Deutsche Bahn Online Ticket..."
+#, kde-format
 msgid "Deutsche Bahn Online Ticket…"
-msgstr "Biglietto in linea Deutsche Bahn"
+msgstr "Biglietto in linea Deutsche Bahn..."
 
 #: app/main.qml:108
-#, fuzzy, kde-format
-#| msgid "SNCF Online Ticket..."
+#, kde-format
 msgid "SNCF Online Ticket…"
-msgstr "Biglietto in linea SNCF..."
+msgstr "Biglietto in linea SNCF…"
 
 #: app/main.qml:122
 #, kde-format
@@ -2464,11 +2454,9 @@ msgid "Export Itinerary Data"
 msgstr "Esportazione dati itinerario"
 
 #: app/main.qml:171 app/PassPage.qml:137
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Import"
+#, kde-format
 msgid "Import…"
-msgstr "Importa"
+msgstr "Importa…"
 
 #: app/main.qml:176
 #, kde-format
@@ -2486,10 +2474,9 @@ msgid "Statistics"
 msgstr "Statistiche"
 
 #: app/main.qml:219 app/WelcomePage.qml:41
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgid "Settings…"
-msgstr "Impostazioni"
+msgstr "Impostazioni…"
 
 #: app/main.qml:231 app/WelcomePage.qml:16
 #, kde-format
@@ -2674,10 +2661,9 @@ msgid "Online Ticket"
 msgstr "Biglietto in linea"
 
 #: app/OnlineImportPage.qml:54
-#, fuzzy, kde-format
-#| msgid "Search..."
+#, kde-format
 msgid "Search…"
-msgstr "Cerca..."
+msgstr "Cerca…"
 
 #: app/passmanager.cpp:251
 #, kde-format
@@ -2708,10 +2694,9 @@ msgid "Passes and Programs"
 msgstr "Pass e programmi"
 
 #: app/PassPage.qml:20
-#, fuzzy, kde-format
-#| msgid "Add Program Membership..."
+#, kde-format
 msgid "Add Program Membership…"
-msgstr "Aggiungi adesione al programma..."
+msgstr "Aggiungi adesione al programma…"
 
 #: app/PassPage.qml:52
 #, kde-format
@@ -3029,10 +3014,9 @@ msgstr ""
 "fornitori."
 
 #: app/SettingsPage.qml:81
-#, fuzzy, kde-format
-#| msgid "Public Transport Information Sources"
+#, kde-format
 msgid "Public Transport Information Sources…"
-msgstr "Fonti di informazioni per il trasporto pubblico"
+msgstr "Fonti di informazioni per il trasporto pubblico…"
 
 #: app/SettingsPage.qml:90 app/WeatherForecastDelegate.qml:83
 #: app/WeatherForecastPage.qml:19
@@ -3126,10 +3110,9 @@ msgid "Notifications"
 msgstr "Notifiche"
 
 #: app/SettingsPage.qml:165
-#, fuzzy, kde-format
-#| msgid "Configure Notifications..."
+#, kde-format
 msgid "Configure Notifications…"
-msgstr "Configura notifiche..."
+msgstr "Configura le notifiche..."
 
 #: app/SettingsPage.qml:174
 #, kde-format
@@ -3137,10 +3120,9 @@ msgid "Show notifications on lock screen"
 msgstr "Mostra nelle notifiche sulla schermata di blocco"
 
 #: app/SettingsPage.qml:184 app/SettingsPage.qml:212
-#, fuzzy, kde-format
-#| msgid "Request permissions..."
+#, kde-format
 msgid "Request permissions…"
-msgstr "Richiedi i permessi..."
+msgstr "Richiedi i permessi…"
 
 #: app/SettingsPage.qml:185
 #, kde-format
@@ -3426,40 +3408,34 @@ msgid "My Itinerary"
 msgstr "Il mio itinerario"
 
 #: app/TimelinePage.qml:90
-#, fuzzy, kde-format
-#| msgid "Add train trip..."
+#, kde-format
 msgid "Add train trip…"
-msgstr "Aggiungi viaggio in treno..."
+msgstr "Aggiungi viaggio in treno…"
 
 #: app/TimelinePage.qml:97
-#, fuzzy, kde-format
-#| msgid "Add flight..."
+#, kde-format
 msgid "Add flight…"
-msgstr "Aggiungi volo..."
+msgstr "Aggiungi volo…"
 
 #: app/TimelinePage.qml:109
-#, fuzzy, kde-format
-#| msgid "Add ferry trip..."
+#, kde-format
 msgid "Add ferry trip…"
-msgstr "Aggiungi viaggio in traghetto..."
+msgstr "Aggiungi viaggio in traghetto…"
 
 #: app/TimelinePage.qml:121
-#, fuzzy, kde-format
-#| msgid "Add accommodation..."
+#, kde-format
 msgid "Add accommodation…"
-msgstr "Aggiungi alloggio..."
+msgstr "Aggiungi alloggio…"
 
 #: app/TimelinePage.qml:132
-#, fuzzy, kde-format
-#| msgid "Add event..."
+#, kde-format
 msgid "Add event…"
-msgstr "Aggiungi evento..."
+msgstr "Aggiungi evento…"
 
 #: app/TimelinePage.qml:144
-#, fuzzy, kde-format
-#| msgid "Add restaurant..."
+#, kde-format
 msgid "Add restaurant…"
-msgstr "Aggiungi ristorante..."
+msgstr "Aggiungi ristorante…"
 
 #: app/TimelinePage.qml:166
 #, kde-format
@@ -3490,10 +3466,9 @@ msgid "Do you really want to delete this trip?"
 msgstr "Vuoi davvero eliminare questo viaggio?"
 
 #: app/TimelinePage.qml:247
-#, fuzzy, kde-format
-#| msgid "As GPX file..."
+#, kde-format
 msgid "As GPX file…"
-msgstr "Come file GPX..."
+msgstr "Come file GPX…"
 
 #: app/TimelinePage.qml:277 app/TimelinePage.qml:294
 #, kde-format
@@ -3547,18 +3522,16 @@ msgid "Pl. %1"
 msgstr "Bin. %1"
 
 #: app/TrainDelegate.qml:153
-#, fuzzy, kde-format
-#| msgctxt "train coach"
-#| msgid "Coach %1"
+#, kde-format
 msgctxt "train coach"
 msgid "Coach: <b>%1</b>"
-msgstr "Carrozza %1"
+msgstr "Carrozza <b>%1</b>"
 
 #: app/TrainDelegate.qml:167
 #, kde-format
 msgctxt "train class"
 msgid "Class: <b>%1</b>"
-msgstr ""
+msgstr "Classe: <b>%1</b>"
 
 #: app/TrainEditor.qml:18
 #, kde-format
@@ -3772,16 +3745,14 @@ msgid "Edit…"
 msgstr "Modifica…"
 
 #: app/TripGroupDelegate.qml:175
-#, fuzzy, kde-format
-#| msgid "Add ferry trip..."
+#, kde-format
 msgid "Merge trips…"
-msgstr "Aggiungi viaggio in traghetto..."
+msgstr "Unisci viaggi…"
 
 #: app/TripGroupDelegate.qml:190
-#, fuzzy, kde-format
-#| msgid "Add train trip..."
+#, kde-format
 msgid "Split trip…"
-msgstr "Aggiungi viaggio in treno..."
+msgstr "Dividi il viaggio…"
 
 #: app/TripGroupDelegate.qml:217
 #, kde-format
@@ -3828,41 +3799,35 @@ msgid "%1 (%2/%3)"
 msgstr "%1 (%2/%3)"
 
 #: app/TripGroupMergeDialog.qml:17
-#, fuzzy, kde-format
-#| msgid "Delete Trip"
+#, kde-format
 msgctxt "@title:window"
 msgid "Merge Trips"
-msgstr "Elimina viaggio"
+msgstr "Unisci viaggi"
 
 #: app/TripGroupMergeDialog.qml:40
 #, kde-format
 msgid "Merge with:"
-msgstr ""
+msgstr "Unisci con:"
 
 #: app/TripGroupMergeDialog.qml:77
 #, kde-format
 msgid "Merge"
-msgstr ""
+msgstr "Unisci"
 
 #: app/TripGroupSplitPage.qml:14
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Edit Trip"
+#, kde-format
 msgid "Split Trip"
-msgstr "Modifica viaggio"
+msgstr "Dividi viaggio"
 
 #: app/TripGroupSplitPage.qml:22
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Add New Trip"
+#, kde-format
 msgid "New Trip"
-msgstr "Aggiungi nuovo viaggio"
+msgstr "Nuovo viaggio"
 
 #: app/TripGroupSplitPage.qml:71
-#, fuzzy, kde-format
-#| msgid "Delete trip"
+#, kde-format
 msgid "Split trip"
-msgstr "Elimina viaggio"
+msgstr "Dividi il viaggio"
 
 #: app/VehicleLayoutPage.qml:18
 #, kde-format
