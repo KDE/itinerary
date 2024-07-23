@@ -31,7 +31,7 @@ using namespace Qt::Literals::StringLiterals;
 using namespace KItinerary;
 
 constexpr inline const auto MaximumTripDuration = 20; // in days
-constexpr inline const auto MaximumTripElements = 20;
+constexpr inline const auto MaximumTripElements = 30;
 constexpr inline const auto MinimumTripElements = 2;
 
 TripGroupManager::TripGroupManager(QObject* parent) :
