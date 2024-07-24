@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-20 00:39+0000\n"
+"POT-Creation-Date: 2024-07-24 00:39+0000\n"
 "PO-Revision-Date: 2024-02-17 12:41+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -349,7 +349,7 @@ msgid "Light"
 msgstr "조명"
 
 #: app/BoatDelegate.qml:18 app/BusDelegate.qml:33 app/TrainDelegate.qml:34
-#: app/TrainPage.qml:76 app/TransferDelegate.qml:61
+#: app/TrainPage.qml:84 app/TransferDelegate.qml:61
 #, kde-format
 msgid "%1 to %2"
 msgstr "%1에서 %2(으)로|/|%1에서 %2$[으 %2]로"
@@ -434,7 +434,7 @@ msgstr "도착 터미널이 비어 있으면 안 됩니다."
 msgid "Boat Ticket"
 msgstr "선박 승차권"
 
-#: app/BoatPage.qml:59 app/BusPage.qml:68 app/TrainPage.qml:114
+#: app/BoatPage.qml:59 app/BusPage.qml:68 app/TrainPage.qml:122
 #, kde-format
 msgid "Departure time"
 msgstr "출발 시간"
@@ -445,7 +445,7 @@ msgctxt "Boat terminal"
 msgid "Terminal"
 msgstr "터미널"
 
-#: app/BoatPage.qml:89 app/BusPage.qml:133 app/TrainPage.qml:197
+#: app/BoatPage.qml:89 app/BusPage.qml:133 app/TrainPage.qml:205
 #, kde-format
 msgid "Arrival time"
 msgstr "도착 시간"
@@ -573,7 +573,7 @@ msgstr "일찍 탑승"
 #: app/BusEditor.qml:134 app/BusEditor.qml:140 app/BusPage.qml:182
 #: app/EventPage.qml:101 app/FlightEditor.qml:195 app/FlightEditor.qml:202
 #: app/FlightPage.qml:94 app/TrainEditor.qml:146 app/TrainEditor.qml:158
-#: app/TrainPage.qml:271
+#: app/TrainPage.qml:279
 #, kde-format
 msgid "Seat"
 msgstr "좌석"
@@ -589,7 +589,7 @@ msgctxt "Bus departure"
 msgid "Departure"
 msgstr "출발"
 
-#: app/BusPage.qml:88 app/TrainPage.qml:143
+#: app/BusPage.qml:88 app/TrainPage.qml:151
 #, kde-format
 msgid "Departure date"
 msgstr "출발 날짜"
@@ -612,12 +612,12 @@ msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "도착"
 
-#: app/BusPage.qml:212 app/TrainPage.qml:338
+#: app/BusPage.qml:212 app/TrainPage.qml:355
 #, kde-format
 msgid "Alternatives"
 msgstr "대안"
 
-#: app/BusPage.qml:217 app/JourneySectionPage.qml:26 app/TrainPage.qml:343
+#: app/BusPage.qml:217 app/JourneySectionPage.qml:26 app/TrainPage.qml:360
 #, kde-format
 msgid "Journey Details"
 msgstr "여정 정보"
@@ -1369,7 +1369,7 @@ msgstr "패스 삭제"
 msgid "Do you really want to delete this pass?"
 msgstr "이 패스를 삭제하시겠습니까?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:333 app/main.qml:21 app/main.qml:166
+#: app/gpxexport.cpp:33 app/main.cpp:336 app/main.qml:21 app/main.qml:166
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE 여행 정보"
@@ -2385,24 +2385,24 @@ msgstr "M형"
 msgid "Type N"
 msgstr "N형"
 
-#: app/main.cpp:341
+#: app/main.cpp:344
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "디지털 여행 도우미"
 
-#: app/main.cpp:342
+#: app/main.cpp:345
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "Copyright © The KDE Community"
 
-#: app/main.cpp:349
+#: app/main.cpp:352
 #, fuzzy, kde-format
 #| msgid "Open Itinerary on the given page"
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "지정한 페이지의 여행 정보 열기"
 
-#: app/main.cpp:354
+#: app/main.cpp:357
 #, fuzzy, kde-format
 #| msgid "Files or URLs to import."
 msgctxt "@info:shell"
@@ -3221,7 +3221,7 @@ msgstr "현재 사용 중인 장치에서 차내 정보를 지원하지 않습�
 msgid "Matrix Integration"
 msgstr "Matrix 통합"
 
-#: app/SettingsPage.qml:282
+#: app/SettingsPage.qml:282 app/SettingsPage.qml:324
 #, kde-format
 msgid "Logged in as %1"
 msgstr "%1(으)로 로그인됨"
@@ -3252,16 +3252,41 @@ msgid "Log in"
 msgstr "로그인"
 
 #: app/SettingsPage.qml:314
+#, fuzzy, kde-format
+#| msgid "Matrix Integration"
+msgid "Traewelling Integration"
+msgstr "Matrix 통합"
+
+#: app/SettingsPage.qml:319
+#, kde-format
+msgctxt "@info"
+msgid ""
+"Traewelling is a free check-in service that lets you tell your friends where "
+"you are and where you can log your public transit journeys. For more "
+"information, visit <a href=\"https://traewelling.de\">traewelling.de</a>"
+msgstr ""
+
+#: app/SettingsPage.qml:327
+#, kde-format
+msgid "Login"
+msgstr ""
+
+#: app/SettingsPage.qml:332
+#, kde-format
+msgid "Logout"
+msgstr ""
+
+#: app/SettingsPage.qml:339
 #, kde-format
 msgid "Contributing"
 msgstr "기여"
 
-#: app/SettingsPage.qml:318
+#: app/SettingsPage.qml:343
 #, kde-format
 msgid "I contribute to OpenStreetMap"
 msgstr "저는 OpenStreetMap에 기여합니다"
 
-#: app/SettingsPage.qml:319
+#: app/SettingsPage.qml:344
 #, kde-format
 msgid "Enables OSM editing options."
 msgstr "OSM 편집 옵션을 활성화합니다."
@@ -3477,7 +3502,7 @@ msgctxt "@action:button"
 msgid "Go To Now"
 msgstr "현재로 이동"
 
-#: app/TimelinePage.qml:173
+#: app/TimelinePage.qml:173 app/TripGroupsPage.qml:87
 #, fuzzy, kde-format
 #| msgid "Add train trip..."
 msgctxt "@action:button"
@@ -3593,8 +3618,8 @@ msgctxt "train departure"
 msgid "Departure"
 msgstr "출발"
 
-#: app/TrainEditor.qml:98 app/TrainEditor.qml:124 app/TrainPage.qml:151
-#: app/TrainPage.qml:231
+#: app/TrainEditor.qml:98 app/TrainEditor.qml:124 app/TrainPage.qml:159
+#: app/TrainPage.qml:239
 #, kde-format
 msgctxt "train station"
 msgid "Station"
@@ -3624,53 +3649,69 @@ msgctxt "seating class on a train"
 msgid "Class"
 msgstr "등급"
 
-#: app/TrainPage.qml:17
+#: app/TrainPage.qml:18
 #, kde-format
 msgid "Train Ticket"
 msgstr "열차 승차권"
 
-#: app/TrainPage.qml:108
+#: app/TrainPage.qml:116
 #, kde-format
 msgctxt "Train departure"
 msgid "Departure"
 msgstr "출발"
 
-#: app/TrainPage.qml:179 app/TrainPage.qml:258
+#: app/TrainPage.qml:187 app/TrainPage.qml:266
 #, kde-format
 msgid "Additional notes"
 msgstr "추가 메모"
 
-#: app/TrainPage.qml:191
+#: app/TrainPage.qml:199
 #, kde-format
 msgctxt "Train arrival"
 msgid "Arrival"
 msgstr "도착"
 
-#: app/TrainPage.qml:279
+#: app/TrainPage.qml:287
 #, kde-format
 msgctxt "coach of a train"
 msgid "Coach:"
 msgstr "차량:"
 
-#: app/TrainPage.qml:288
+#: app/TrainPage.qml:296
 #, kde-format
 msgid "Seat:"
 msgstr "좌석:"
 
-#: app/TrainPage.qml:297
+#: app/TrainPage.qml:305
 #, kde-format
 msgid "Class:"
 msgstr "등급:"
 
-#: app/TrainPage.qml:306
+#: app/TrainPage.qml:314
 #, kde-format
 msgid "Departure Vehicle Layout"
 msgstr "출발하는 차량 구성"
 
-#: app/TrainPage.qml:313
+#: app/TrainPage.qml:321
 #, kde-format
 msgid "Arrival Vehicle Layout"
 msgstr "도착하는 차량 구성"
+
+#: app/TrainPage.qml:347
+#, kde-format
+msgctxt "@action:button"
+msgid "Add to Traewelling"
+msgstr ""
+
+#: app/TrainPage.qml:380
+#, kde-format
+msgid "Added to Traewelling"
+msgstr ""
+
+#: app/TrainPage.qml:380
+#, kde-format
+msgid "Failed to add to Traewelling"
+msgstr ""
 
 #: app/TransferDelegate.qml:109
 #, kde-format
@@ -3857,6 +3898,35 @@ msgstr ""
 #, kde-format
 msgid "Merge"
 msgstr ""
+
+#: app/TripGroupsPage.qml:15
+#, fuzzy, kde-format
+#| msgid "Trips"
+msgctxt "@title:window"
+msgid "Trips"
+msgstr "여행"
+
+#: app/TripGroupsPage.qml:27
+#, fuzzy, kde-format
+#| msgid "Boat trips"
+msgctxt "List section header"
+msgid "Past trips"
+msgstr "선박 여정"
+
+#: app/TripGroupsPage.qml:29
+#, fuzzy, kde-format
+#| msgctxt "not yet valid tickets"
+#| msgid "Future"
+msgctxt "List section header"
+msgid "Future trips"
+msgstr "미래"
+
+#: app/TripGroupsPage.qml:31
+#, fuzzy, kde-format
+#| msgid "Current Ticket"
+msgctxt "List section header"
+msgid "Current trip"
+msgstr "현재 승차권"
 
 #: app/TripGroupSplitPage.qml:14
 #, fuzzy, kde-format
@@ -4141,9 +4211,6 @@ msgstr "%5에 %3에서 %4(으)로 가는 %1%2|/|%5에 %3에서 %4$[으 %4]로 �
 #~ msgctxt "vehicle load"
 #~ msgid "High"
 #~ msgstr "높음"
-
-#~ msgid "Current Ticket"
-#~ msgstr "현재 승차권"
 
 #~ msgid "document-open"
 #~ msgstr "document-open"

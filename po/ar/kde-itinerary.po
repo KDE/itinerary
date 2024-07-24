@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-20 00:39+0000\n"
+"POT-Creation-Date: 2024-07-24 00:39+0000\n"
 "PO-Revision-Date: 2023-05-11 10:49+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -363,7 +363,7 @@ msgid "Light"
 msgstr "خفيف"
 
 #: app/BoatDelegate.qml:18 app/BusDelegate.qml:33 app/TrainDelegate.qml:34
-#: app/TrainPage.qml:76 app/TransferDelegate.qml:61
+#: app/TrainPage.qml:84 app/TransferDelegate.qml:61
 #, fuzzy, kde-format
 msgid "%1 to %2"
 msgstr "إلى"
@@ -449,7 +449,7 @@ msgstr ""
 msgid "Boat Ticket"
 msgstr ""
 
-#: app/BoatPage.qml:59 app/BusPage.qml:68 app/TrainPage.qml:114
+#: app/BoatPage.qml:59 app/BusPage.qml:68 app/TrainPage.qml:122
 #, kde-format
 msgid "Departure time"
 msgstr ""
@@ -460,7 +460,7 @@ msgctxt "Boat terminal"
 msgid "Terminal"
 msgstr "الطرفية"
 
-#: app/BoatPage.qml:89 app/BusPage.qml:133 app/TrainPage.qml:197
+#: app/BoatPage.qml:89 app/BusPage.qml:133 app/TrainPage.qml:205
 #, kde-format
 msgid "Arrival time"
 msgstr ""
@@ -594,7 +594,7 @@ msgstr ""
 #: app/BusEditor.qml:134 app/BusEditor.qml:140 app/BusPage.qml:182
 #: app/EventPage.qml:101 app/FlightEditor.qml:195 app/FlightEditor.qml:202
 #: app/FlightPage.qml:94 app/TrainEditor.qml:146 app/TrainEditor.qml:158
-#: app/TrainPage.qml:271
+#: app/TrainPage.qml:279
 #, fuzzy, kde-format
 msgid "Seat"
 msgstr "المقعد: %1"
@@ -610,7 +610,7 @@ msgctxt "Bus departure"
 msgid "Departure"
 msgstr ""
 
-#: app/BusPage.qml:88 app/TrainPage.qml:143
+#: app/BusPage.qml:88 app/TrainPage.qml:151
 #, kde-format
 msgid "Departure date"
 msgstr ""
@@ -633,12 +633,12 @@ msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr ""
 
-#: app/BusPage.qml:212 app/TrainPage.qml:338
+#: app/BusPage.qml:212 app/TrainPage.qml:355
 #, kde-format
 msgid "Alternatives"
 msgstr ""
 
-#: app/BusPage.qml:217 app/JourneySectionPage.qml:26 app/TrainPage.qml:343
+#: app/BusPage.qml:217 app/JourneySectionPage.qml:26 app/TrainPage.qml:360
 #, kde-format
 msgid "Journey Details"
 msgstr ""
@@ -1382,7 +1382,7 @@ msgstr ""
 msgid "Do you really want to delete this pass?"
 msgstr ""
 
-#: app/gpxexport.cpp:33 app/main.cpp:333 app/main.qml:21 app/main.qml:166
+#: app/gpxexport.cpp:33 app/main.cpp:336 app/main.qml:21 app/main.qml:166
 #, kde-format
 msgid "KDE Itinerary"
 msgstr ""
@@ -2401,23 +2401,23 @@ msgstr ""
 msgid "Type N"
 msgstr ""
 
-#: app/main.cpp:341
+#: app/main.cpp:344
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr ""
 
-#: app/main.cpp:342
+#: app/main.cpp:345
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr ""
 
-#: app/main.cpp:349
+#: app/main.cpp:352
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr ""
 
-#: app/main.cpp:354
+#: app/main.cpp:357
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
@@ -3210,7 +3210,7 @@ msgstr ""
 msgid "Matrix Integration"
 msgstr ""
 
-#: app/SettingsPage.qml:282
+#: app/SettingsPage.qml:282 app/SettingsPage.qml:324
 #, kde-format
 msgid "Logged in as %1"
 msgstr ""
@@ -3242,15 +3242,39 @@ msgstr ""
 
 #: app/SettingsPage.qml:314
 #, kde-format
+msgid "Traewelling Integration"
+msgstr ""
+
+#: app/SettingsPage.qml:319
+#, kde-format
+msgctxt "@info"
+msgid ""
+"Traewelling is a free check-in service that lets you tell your friends where "
+"you are and where you can log your public transit journeys. For more "
+"information, visit <a href=\"https://traewelling.de\">traewelling.de</a>"
+msgstr ""
+
+#: app/SettingsPage.qml:327
+#, kde-format
+msgid "Login"
+msgstr ""
+
+#: app/SettingsPage.qml:332
+#, kde-format
+msgid "Logout"
+msgstr ""
+
+#: app/SettingsPage.qml:339
+#, kde-format
 msgid "Contributing"
 msgstr ""
 
-#: app/SettingsPage.qml:318
+#: app/SettingsPage.qml:343
 #, kde-format
 msgid "I contribute to OpenStreetMap"
 msgstr ""
 
-#: app/SettingsPage.qml:319
+#: app/SettingsPage.qml:344
 #, kde-format
 msgid "Enables OSM editing options."
 msgstr ""
@@ -3466,7 +3490,7 @@ msgctxt "@action:button"
 msgid "Go To Now"
 msgstr ""
 
-#: app/TimelinePage.qml:173
+#: app/TimelinePage.qml:173 app/TripGroupsPage.qml:87
 #, fuzzy, kde-format
 #| msgid "Restaurant"
 msgctxt "@action:button"
@@ -3579,8 +3603,8 @@ msgctxt "train departure"
 msgid "Departure"
 msgstr ""
 
-#: app/TrainEditor.qml:98 app/TrainEditor.qml:124 app/TrainPage.qml:151
-#: app/TrainPage.qml:231
+#: app/TrainEditor.qml:98 app/TrainEditor.qml:124 app/TrainPage.qml:159
+#: app/TrainPage.qml:239
 #, kde-format
 msgctxt "train station"
 msgid "Station"
@@ -3610,52 +3634,68 @@ msgctxt "seating class on a train"
 msgid "Class"
 msgstr "الصّنف"
 
-#: app/TrainPage.qml:17
+#: app/TrainPage.qml:18
 #, kde-format
 msgid "Train Ticket"
 msgstr ""
 
-#: app/TrainPage.qml:108
+#: app/TrainPage.qml:116
 #, kde-format
 msgctxt "Train departure"
 msgid "Departure"
 msgstr ""
 
-#: app/TrainPage.qml:179 app/TrainPage.qml:258
+#: app/TrainPage.qml:187 app/TrainPage.qml:266
 #, kde-format
 msgid "Additional notes"
 msgstr ""
 
-#: app/TrainPage.qml:191
+#: app/TrainPage.qml:199
 #, kde-format
 msgctxt "Train arrival"
 msgid "Arrival"
 msgstr ""
 
-#: app/TrainPage.qml:279
+#: app/TrainPage.qml:287
 #, fuzzy, kde-format
 msgctxt "coach of a train"
 msgid "Coach:"
 msgstr "العربة: %1"
 
-#: app/TrainPage.qml:288
+#: app/TrainPage.qml:296
 #, fuzzy, kde-format
 msgid "Seat:"
 msgstr "المقعد: %1"
 
-#: app/TrainPage.qml:297
+#: app/TrainPage.qml:305
 #, fuzzy, kde-format
 msgid "Class:"
 msgstr "الفئة: %1"
 
-#: app/TrainPage.qml:306
+#: app/TrainPage.qml:314
 #, kde-format
 msgid "Departure Vehicle Layout"
 msgstr ""
 
-#: app/TrainPage.qml:313
+#: app/TrainPage.qml:321
 #, kde-format
 msgid "Arrival Vehicle Layout"
+msgstr ""
+
+#: app/TrainPage.qml:347
+#, kde-format
+msgctxt "@action:button"
+msgid "Add to Traewelling"
+msgstr ""
+
+#: app/TrainPage.qml:380
+#, kde-format
+msgid "Added to Traewelling"
+msgstr ""
+
+#: app/TrainPage.qml:380
+#, kde-format
+msgid "Failed to add to Traewelling"
 msgstr ""
 
 #: app/TransferDelegate.qml:109
@@ -3852,6 +3892,33 @@ msgstr ""
 #, kde-format
 msgid "Merge"
 msgstr ""
+
+#: app/TripGroupsPage.qml:15
+#, fuzzy, kde-format
+#| msgid "Restaurant"
+msgctxt "@title:window"
+msgid "Trips"
+msgstr "المطعم"
+
+#: app/TripGroupsPage.qml:27
+#, kde-format
+msgctxt "List section header"
+msgid "Past trips"
+msgstr ""
+
+#: app/TripGroupsPage.qml:29
+#, fuzzy, kde-format
+#| msgid "Restaurant"
+msgctxt "List section header"
+msgid "Future trips"
+msgstr "المطعم"
+
+#: app/TripGroupsPage.qml:31
+#, fuzzy, kde-format
+#| msgid "Ticket"
+msgctxt "List section header"
+msgid "Current trip"
+msgstr "تذكرة"
 
 #: app/TripGroupSplitPage.qml:14
 #, fuzzy, kde-format
