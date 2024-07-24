@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-20 00:39+0000\n"
+"POT-Creation-Date: 2024-07-24 02:27+0000\n"
 "PO-Revision-Date: 2024-05-09 06:05+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -347,7 +347,7 @@ msgid "Light"
 msgstr "手電筒"
 
 #: app/BoatDelegate.qml:18 app/BusDelegate.qml:33 app/TrainDelegate.qml:34
-#: app/TrainPage.qml:76 app/TransferDelegate.qml:61
+#: app/TrainPage.qml:84 app/TransferDelegate.qml:61
 #, kde-format
 msgid "%1 to %2"
 msgstr "%1 到 %2"
@@ -432,7 +432,7 @@ msgstr "目的地港口旅運中心不能是空的。"
 msgid "Boat Ticket"
 msgstr "船票"
 
-#: app/BoatPage.qml:59 app/BusPage.qml:68 app/TrainPage.qml:114
+#: app/BoatPage.qml:59 app/BusPage.qml:68 app/TrainPage.qml:122
 #, kde-format
 msgid "Departure time"
 msgstr "出發時間"
@@ -443,7 +443,7 @@ msgctxt "Boat terminal"
 msgid "Terminal"
 msgstr "旅運中心"
 
-#: app/BoatPage.qml:89 app/BusPage.qml:133 app/TrainPage.qml:197
+#: app/BoatPage.qml:89 app/BusPage.qml:133 app/TrainPage.qml:205
 #, kde-format
 msgid "Arrival time"
 msgstr "抵達時間"
@@ -571,7 +571,7 @@ msgstr "更早下車"
 #: app/BusEditor.qml:134 app/BusEditor.qml:140 app/BusPage.qml:182
 #: app/EventPage.qml:101 app/FlightEditor.qml:195 app/FlightEditor.qml:202
 #: app/FlightPage.qml:94 app/TrainEditor.qml:146 app/TrainEditor.qml:158
-#: app/TrainPage.qml:271
+#: app/TrainPage.qml:279
 #, kde-format
 msgid "Seat"
 msgstr "座位"
@@ -587,7 +587,7 @@ msgctxt "Bus departure"
 msgid "Departure"
 msgstr "出發"
 
-#: app/BusPage.qml:88 app/TrainPage.qml:143
+#: app/BusPage.qml:88 app/TrainPage.qml:151
 #, kde-format
 msgid "Departure date"
 msgstr "出發日期"
@@ -610,12 +610,12 @@ msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "抵達"
 
-#: app/BusPage.qml:212 app/TrainPage.qml:338
+#: app/BusPage.qml:212 app/TrainPage.qml:355
 #, kde-format
 msgid "Alternatives"
 msgstr "替代選擇"
 
-#: app/BusPage.qml:217 app/JourneySectionPage.qml:26 app/TrainPage.qml:343
+#: app/BusPage.qml:217 app/JourneySectionPage.qml:26 app/TrainPage.qml:360
 #, kde-format
 msgid "Journey Details"
 msgstr "旅程詳細資料"
@@ -1358,7 +1358,7 @@ msgstr "刪除票卡"
 msgid "Do you really want to delete this pass?"
 msgstr "您確定要刪除這張票卡嗎？"
 
-#: app/gpxexport.cpp:33 app/main.cpp:333 app/main.qml:21 app/main.qml:166
+#: app/gpxexport.cpp:33 app/main.cpp:336 app/main.qml:21 app/main.qml:166
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE 旅行計劃"
@@ -2372,24 +2372,24 @@ msgstr ""
 msgid "Type N"
 msgstr ""
 
-#: app/main.cpp:341
+#: app/main.cpp:344
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "數位旅行助理"
 
-#: app/main.cpp:342
+#: app/main.cpp:345
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "版權所有 © KDE 社群"
 
-#: app/main.cpp:349
+#: app/main.cpp:352
 #, fuzzy, kde-format
 #| msgid "Open Itinerary on the given page"
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "在指定頁面開啟旅行計劃"
 
-#: app/main.cpp:354
+#: app/main.cpp:357
 #, fuzzy, kde-format
 #| msgid "Files or URLs to import."
 msgctxt "@info:shell"
@@ -3196,7 +3196,7 @@ msgstr ""
 msgid "Matrix Integration"
 msgstr "Matrix 整合"
 
-#: app/SettingsPage.qml:282
+#: app/SettingsPage.qml:282 app/SettingsPage.qml:324
 #, kde-format
 msgid "Logged in as %1"
 msgstr "已作為 %1 登入"
@@ -3227,16 +3227,41 @@ msgid "Log in"
 msgstr "登入"
 
 #: app/SettingsPage.qml:314
+#, fuzzy, kde-format
+#| msgid "Matrix Integration"
+msgid "Traewelling Integration"
+msgstr "Matrix 整合"
+
+#: app/SettingsPage.qml:319
+#, kde-format
+msgctxt "@info"
+msgid ""
+"Traewelling is a free check-in service that lets you tell your friends where "
+"you are and where you can log your public transit journeys. For more "
+"information, visit <a href=\"https://traewelling.de\">traewelling.de</a>"
+msgstr ""
+
+#: app/SettingsPage.qml:327
+#, kde-format
+msgid "Login"
+msgstr ""
+
+#: app/SettingsPage.qml:332
+#, kde-format
+msgid "Logout"
+msgstr ""
+
+#: app/SettingsPage.qml:339
 #, kde-format
 msgid "Contributing"
 msgstr "貢獻"
 
-#: app/SettingsPage.qml:318
+#: app/SettingsPage.qml:343
 #, kde-format
 msgid "I contribute to OpenStreetMap"
 msgstr "我是開放街圖 (OpenStreetMap) 的貢獻者"
 
-#: app/SettingsPage.qml:319
+#: app/SettingsPage.qml:344
 #, kde-format
 msgid "Enables OSM editing options."
 msgstr "啟用 OSM 編輯選項。"
@@ -3562,8 +3587,8 @@ msgctxt "train departure"
 msgid "Departure"
 msgstr "出發"
 
-#: app/TrainEditor.qml:98 app/TrainEditor.qml:124 app/TrainPage.qml:151
-#: app/TrainPage.qml:231
+#: app/TrainEditor.qml:98 app/TrainEditor.qml:124 app/TrainPage.qml:159
+#: app/TrainPage.qml:239
 #, kde-format
 msgctxt "train station"
 msgid "Station"
@@ -3593,53 +3618,69 @@ msgctxt "seating class on a train"
 msgid "Class"
 msgstr "艙等"
 
-#: app/TrainPage.qml:17
+#: app/TrainPage.qml:18
 #, kde-format
 msgid "Train Ticket"
 msgstr "公車票"
 
-#: app/TrainPage.qml:108
+#: app/TrainPage.qml:116
 #, kde-format
 msgctxt "Train departure"
 msgid "Departure"
 msgstr "出發"
 
-#: app/TrainPage.qml:179 app/TrainPage.qml:258
+#: app/TrainPage.qml:187 app/TrainPage.qml:266
 #, kde-format
 msgid "Additional notes"
 msgstr "額外備註"
 
-#: app/TrainPage.qml:191
+#: app/TrainPage.qml:199
 #, kde-format
 msgctxt "Train arrival"
 msgid "Arrival"
 msgstr "抵達"
 
-#: app/TrainPage.qml:279
+#: app/TrainPage.qml:287
 #, kde-format
 msgctxt "coach of a train"
 msgid "Coach:"
 msgstr "車廂："
 
-#: app/TrainPage.qml:288
+#: app/TrainPage.qml:296
 #, kde-format
 msgid "Seat:"
 msgstr "座位："
 
-#: app/TrainPage.qml:297
+#: app/TrainPage.qml:305
 #, kde-format
 msgid "Class:"
 msgstr "艙等："
 
-#: app/TrainPage.qml:306
+#: app/TrainPage.qml:314
 #, kde-format
 msgid "Departure Vehicle Layout"
 msgstr "出發交通工具內部佈局"
 
-#: app/TrainPage.qml:313
+#: app/TrainPage.qml:321
 #, kde-format
 msgid "Arrival Vehicle Layout"
 msgstr "抵達交通工具內部佈局"
+
+#: app/TrainPage.qml:347
+#, kde-format
+msgctxt "@action:button"
+msgid "Add to Traewelling"
+msgstr ""
+
+#: app/TrainPage.qml:380
+#, kde-format
+msgid "Added to Traewelling"
+msgstr ""
+
+#: app/TrainPage.qml:380
+#, kde-format
+msgid "Failed to add to Traewelling"
+msgstr ""
 
 #: app/TransferDelegate.qml:109
 #, kde-format
