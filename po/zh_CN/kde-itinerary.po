@@ -3821,8 +3821,7 @@ msgid "Merge"
 msgstr ""
 
 #: app/TripGroupsPage.qml:15
-#, fuzzy, kde-format
-#| msgid "Trips"
+#, kde-format
 msgctxt "@title:window"
 msgid "Trips"
 msgstr "行程数"

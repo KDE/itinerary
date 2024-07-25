@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-24 00:39+0000\n"
-"PO-Revision-Date: 2024-07-03 14:45+0200\n"
+"PO-Revision-Date: 2024-07-20 16:11+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -316,7 +316,7 @@ msgstr "Exportation terminée."
 #: app/applicationcontroller.cpp:335
 #, kde-format
 msgid "Trip sent."
-msgstr "Envoi du voyage effectué."
+msgstr "Envoi du trajet effectué."
 
 #: app/applicationcontroller.cpp:437
 #, kde-format
@@ -505,7 +505,7 @@ msgstr "Réservations"
 #, kde-format
 msgctxt "train seat"
 msgid "Seat: <b>%1</b>"
-msgstr ""
+msgstr "Siège : <b>%1</b>"
 
 #: app/BusDelegate.qml:152 app/TrainDelegate.qml:193
 #, kde-format
@@ -848,23 +848,22 @@ msgid "End time: %1"
 msgstr "Heure de fin : %1"
 
 #: app/EventDelegate.qml:70
-#, fuzzy, kde-format
-#| msgid "Direction: %1"
+#, kde-format
 msgctxt "event venut seat section"
 msgid "Section: <b>%1</b>"
-msgstr "Direction : %1"
+msgstr "Section : <b>%1</b>"
 
 #: app/EventDelegate.qml:76
 #, kde-format
 msgctxt "event venut seat row"
 msgid "Row: <b>%1</b>"
-msgstr ""
+msgstr "Rangée : <b>%1</b>"
 
 #: app/EventDelegate.qml:82
 #, kde-format
 msgctxt "event venut seat number"
 msgid "Number: <b>%1</b>"
-msgstr ""
+msgstr "Numéro: <b>%1</b>"
 
 #: app/EventEditor.qml:19
 #, kde-format
@@ -1051,19 +1050,19 @@ msgstr "Départ de %1 : %2"
 #, kde-format
 msgctxt "flight departure terminal"
 msgid "Terminal: <b>%1</b>"
-msgstr ""
+msgstr "Terminal : <b>%1</b>"
 
 #: app/FlightDelegate.qml:89
 #, kde-format
 msgctxt "flight departure gate"
 msgid "Gate: <b>%1</b>"
-msgstr ""
+msgstr "Porte : <b>%1</b>"
 
 #: app/FlightDelegate.qml:95
 #, kde-format
 msgctxt "flight seats"
 msgid "Seat: <b>%1</b>"
-msgstr ""
+msgstr "Siège : <b>%1</b>"
 
 #: app/FlightDelegate.qml:100
 #, kde-format
@@ -2561,7 +2560,7 @@ msgstr "Itinerary"
 #, kde-format
 msgctxt "@title:tab"
 msgid "Plan Trip"
-msgstr "Planifier un voyage"
+msgstr "Planifier un trajet"
 
 #: app/NavigationBar.qml:33
 #, kde-format
@@ -2614,7 +2613,7 @@ msgstr "Changement de quai sur %1"
 #, kde-format
 msgctxt "a train/bus journey canceled by its operator"
 msgid "Trip has been canceled."
-msgstr "Le voyage a été annulé."
+msgstr "Le trajet a été annulé."
 
 #: app/notificationhelper.cpp:99
 #, kde-format
@@ -3078,7 +3077,7 @@ msgid ""
 "trips when connected to Wifi network."
 msgstr ""
 "L'activation de cette option téléchargera toutes les cartes de toutes les "
-"gares et de tous les aéroports pour les voyages à venir, à condition d'être "
+"gares et de tous les aéroports pour les trajets à venir, à condition d'être "
 "connecté à un réseau Wifi."
 
 #: app/SettingsPage.qml:117
@@ -3301,7 +3300,7 @@ msgstr "Active les options d'édition pour OSM"
 #: app/statisticsmodel.cpp:91
 #, kde-format
 msgid "Trips"
-msgstr "Voyages"
+msgstr "Trajets"
 
 #: app/statisticsmodel.cpp:96 app/statisticsmodel.cpp:129
 #: app/statisticsmodel.cpp:144 app/statisticsmodel.cpp:159
@@ -3350,7 +3349,7 @@ msgstr "Trajets en voiture"
 #: app/statisticsmodel.cpp:184
 #, kde-format
 msgid "Boat trips"
-msgstr "Voyages en bateau"
+msgstr "Trajets en bateau"
 
 #: app/StatisticsPage.qml:34
 #, kde-format
@@ -3504,24 +3503,24 @@ msgstr "Aller à aujourd'hui"
 #, kde-format
 msgctxt "@action:button"
 msgid "Add trip"
-msgstr "Ajouter un voyage..."
+msgstr "Ajouter un trajet"
 
 #: app/TimelinePage.qml:184
 #, kde-format
 msgctxt "@title:group"
 msgid "Add New Trip"
-msgstr "Ajouter un nouveau voyage"
+msgstr "Ajouter un nouveau trajet"
 
 #: app/TimelinePage.qml:214
 #, kde-format
 msgid "Delete Trip"
-msgstr "Supprimer un voyage"
+msgstr "Supprimer un trajet"
 
 # unreviewed-context
 #: app/TimelinePage.qml:215
 #, kde-format
 msgid "Do you really want to delete this trip?"
-msgstr "Voulez-vous vraiment supprimer ce voyage ?"
+msgstr "Voulez-vous vraiment supprimer ce trajet ?"
 
 #: app/TimelinePage.qml:247
 #, kde-format
@@ -3531,7 +3530,7 @@ msgstr "Comme fichier « GPX »..."
 #: app/TimelinePage.qml:277 app/TimelinePage.qml:294
 #, kde-format
 msgid "Export Trip"
-msgstr "Exporter un voyage..."
+msgstr "Exporter un trajet"
 
 #: app/TimelinePage.qml:491
 #, kde-format
@@ -3580,18 +3579,16 @@ msgid "Pl. %1"
 msgstr "Pl. %1"
 
 #: app/TrainDelegate.qml:153
-#, fuzzy, kde-format
-#| msgctxt "train coach"
-#| msgid "Coach %1"
+#, kde-format
 msgctxt "train coach"
 msgid "Coach: <b>%1</b>"
-msgstr "Voiture %1"
+msgstr "Voiture : <b>%1</b>"
 
 #: app/TrainDelegate.qml:167
 #, kde-format
 msgctxt "train class"
 msgid "Class: <b>%1</b>"
-msgstr ""
+msgstr "Classe : <b>%1</b>"
 
 #: app/TrainEditor.qml:18
 #, kde-format
@@ -3821,40 +3818,38 @@ msgid "Edit…"
 msgstr "Modifier…"
 
 #: app/TripGroupDelegate.qml:175
-#, fuzzy, kde-format
-#| msgid "Add ferry trip…"
+#, kde-format
 msgid "Merge trips…"
-msgstr "Ajouter un trajet en bateau..."
+msgstr "Fusionner les trajets…"
 
 #: app/TripGroupDelegate.qml:190
-#, fuzzy, kde-format
-#| msgid "Add train trip…"
+#, kde-format
 msgid "Split trip…"
-msgstr "Ajouter un trajet en train..."
+msgstr "Décomposer le trajet..."
 
 #: app/TripGroupDelegate.qml:217
 #, kde-format
 msgid "Delete trip"
-msgstr "Supprimer un voyage"
+msgstr "Supprimer un trajet"
 
 #: app/TripGroupEditorDialog.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Trip"
-msgstr "Ajouter un voyage..."
+msgstr "Ajouter un trajet"
 
 #: app/TripGroupEditorDialog.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Trip"
-msgstr "Modifier un voyage"
+msgstr "Modifier un trajet"
 
 #: app/TripGroupEditorDialog.qml:21 app/TripGroupMergeDialog.qml:55
 #: app/TripGroupSplitPage.qml:28
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Trip name:"
-msgstr "Au nom du voyage :"
+msgstr "Nom du trajet :"
 
 # unreviewed-context
 #: app/tripgroupmanager.cpp:775
@@ -3879,21 +3874,20 @@ msgid "%1 (%2/%3)"
 msgstr "%1 (%2 / %3)"
 
 #: app/TripGroupMergeDialog.qml:17
-#, fuzzy, kde-format
-#| msgid "Delete Trip"
+#, kde-format
 msgctxt "@title:window"
 msgid "Merge Trips"
-msgstr "Supprimer un voyage"
+msgstr "Fusionner les trajets"
 
 #: app/TripGroupMergeDialog.qml:40
 #, kde-format
 msgid "Merge with:"
-msgstr ""
+msgstr "Fusionner avec :"
 
 #: app/TripGroupMergeDialog.qml:77
 #, kde-format
 msgid "Merge"
-msgstr ""
+msgstr "Fusionner"
 
 #: app/TripGroupsPage.qml:15
 #, fuzzy, kde-format
@@ -3925,24 +3919,19 @@ msgid "Current trip"
 msgstr "Ticket courant"
 
 #: app/TripGroupSplitPage.qml:14
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Edit Trip"
+#, kde-format
 msgid "Split Trip"
-msgstr "Modifier un voyage"
+msgstr "Décomposer un trajet"
 
 #: app/TripGroupSplitPage.qml:22
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Add New Trip"
+#, kde-format
 msgid "New Trip"
-msgstr "Ajouter un nouveau voyage"
+msgstr "Nouveau trajet"
 
 #: app/TripGroupSplitPage.qml:71
-#, fuzzy, kde-format
-#| msgid "Delete trip"
+#, kde-format
 msgid "Split trip"
-msgstr "Supprimer un voyage"
+msgstr "Décomposer un trajet"
 
 #: app/VehicleLayoutPage.qml:18
 #, kde-format

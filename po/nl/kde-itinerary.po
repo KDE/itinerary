@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-24 00:39+0000\n"
-"PO-Revision-Date: 2024-07-20 10:34+0200\n"
+"PO-Revision-Date: 2024-07-24 11:44+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -3226,10 +3226,9 @@ msgid "Log in"
 msgstr "Aanmelden"
 
 #: app/SettingsPage.qml:314
-#, fuzzy, kde-format
-#| msgid "Matrix Integration"
+#, kde-format
 msgid "Traewelling Integration"
-msgstr "Matrix-integratie"
+msgstr "Integratie met Traewelling"
 
 #: app/SettingsPage.qml:319
 #, kde-format
@@ -3239,16 +3238,19 @@ msgid ""
 "you are and where you can log your public transit journeys. For more "
 "information, visit <a href=\"https://traewelling.de\">traewelling.de</a>"
 msgstr ""
+"Traewelling is een vrije incheckservice die u aan uw vrienden laat vertellen "
+"waar u bent en waar u uw publieke transitreizen kunt loggen. Voor meer "
+"informatie, bezoek <a href=\"https://traewelling.de\">traewelling.de</a>"
 
 #: app/SettingsPage.qml:327
 #, kde-format
 msgid "Login"
-msgstr ""
+msgstr "Aanmelden"
 
 #: app/SettingsPage.qml:332
 #, kde-format
 msgid "Logout"
-msgstr ""
+msgstr "Afmelden"
 
 #: app/SettingsPage.qml:339
 #, kde-format
@@ -3660,17 +3662,17 @@ msgstr "Indeling van het aankomende voertuig"
 #, kde-format
 msgctxt "@action:button"
 msgid "Add to Traewelling"
-msgstr ""
+msgstr "Toevoegen aan Traewelling"
 
 #: app/TrainPage.qml:380
 #, kde-format
 msgid "Added to Traewelling"
-msgstr ""
+msgstr "Aan Traewelling toegevoegd"
 
 #: app/TrainPage.qml:380
 #, kde-format
 msgid "Failed to add to Traewelling"
-msgstr ""
+msgstr "Toevoegen aan Traewelling is mislukt"
 
 #: app/TransferDelegate.qml:109
 #, kde-format
@@ -3854,33 +3856,28 @@ msgid "Merge"
 msgstr "Samenvoegen"
 
 #: app/TripGroupsPage.qml:15
-#, fuzzy, kde-format
-#| msgid "Trips"
+#, kde-format
 msgctxt "@title:window"
 msgid "Trips"
 msgstr "Trips"
 
 #: app/TripGroupsPage.qml:27
-#, fuzzy, kde-format
-#| msgid "Boat trips"
+#, kde-format
 msgctxt "List section header"
 msgid "Past trips"
-msgstr "Bootreizen"
+msgstr "Eerdere reizen"
 
 #: app/TripGroupsPage.qml:29
-#, fuzzy, kde-format
-#| msgctxt "not yet valid tickets"
-#| msgid "Future"
+#, kde-format
 msgctxt "List section header"
 msgid "Future trips"
-msgstr "Toekomstige"
+msgstr "Toekomstige reizen"
 
 #: app/TripGroupsPage.qml:31
-#, fuzzy, kde-format
-#| msgid "Current Ticket"
+#, kde-format
 msgctxt "List section header"
 msgid "Current trip"
-msgstr "Huidige ticket"
+msgstr "Huidige reis"
 
 #: app/TripGroupSplitPage.qml:14
 #, kde-format
