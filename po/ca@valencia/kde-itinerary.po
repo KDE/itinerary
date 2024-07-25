@@ -3,22 +3,22 @@
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Antoni Bella Pérez <antonibella5@yahoo.com>, 2019, 2020, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2019, 2020, 2021, 2022, 2023, 2024 Antoni Bella Pérez <antonibella5@yahoo.com>
 # SPDX-FileCopyrightText: 2019, 2020, 2021, 2022, 2023, 2024 Josep M. Ferrer <txemaq@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-24 02:27+0000\n"
-"PO-Revision-Date: 2024-07-20 09:59+0200\n"
-"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
+"PO-Revision-Date: 2024-07-24 20:20+0200\n"
+"Last-Translator: Antoni Bella Pérez <antonibella5@yahoo.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -3235,10 +3235,9 @@ msgid "Log in"
 msgstr "Inici de sessió"
 
 #: app/SettingsPage.qml:314
-#, fuzzy, kde-format
-#| msgid "Matrix Integration"
+#, kde-format
 msgid "Traewelling Integration"
-msgstr "Integració de Matrix"
+msgstr "Integració de Traewelling"
 
 #: app/SettingsPage.qml:319
 #, kde-format
@@ -3248,16 +3247,19 @@ msgid ""
 "you are and where you can log your public transit journeys. For more "
 "information, visit <a href=\"https://traewelling.de\">traewelling.de</a>"
 msgstr ""
+"Traewelling és un servei de registre que permet dir als vostres amics a on "
+"esteu i a on podeu registrar els vostres viatges de transport públic. Per a "
+"més informació, visiteu <a href=\"https://traewelling.de\">traewelling.de</a>"
 
 #: app/SettingsPage.qml:327
 #, kde-format
 msgid "Login"
-msgstr ""
+msgstr "Entrada"
 
 #: app/SettingsPage.qml:332
 #, kde-format
 msgid "Logout"
-msgstr ""
+msgstr "Eixida"
 
 #: app/SettingsPage.qml:339
 #, kde-format
@@ -3669,17 +3671,17 @@ msgstr "Disposició del vehicle d'arribada"
 #, kde-format
 msgctxt "@action:button"
 msgid "Add to Traewelling"
-msgstr ""
+msgstr "Afig a Traewelling"
 
 #: app/TrainPage.qml:380
 #, kde-format
 msgid "Added to Traewelling"
-msgstr ""
+msgstr "Afegit a Traewelling"
 
 #: app/TrainPage.qml:380
 #, kde-format
 msgid "Failed to add to Traewelling"
-msgstr ""
+msgstr "No s'ha pogut afegir a Traewelling"
 
 #: app/TransferDelegate.qml:109
 #, kde-format

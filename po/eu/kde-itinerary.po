@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-24 02:27+0000\n"
-"PO-Revision-Date: 2024-07-20 10:12+0200\n"
+"PO-Revision-Date: 2024-07-24 09:42+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -245,7 +245,7 @@ msgstr "Tokiko trenak"
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Rapid transit"
-msgstr "Zirkulazio azkarra"
+msgstr "Igarotze azkarra"
 
 #: app/AlternativeJourneyPage.qml:112 app/DepartureQueryPage.qml:62
 #: app/JourneyRequestPage.qml:251 app/TransferPage.qml:132
@@ -2031,7 +2031,7 @@ msgstr "Eskualdeko edo tokiko trenak"
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Rapid transit, metro, trams"
-msgstr "Zirkulazio azkarra, metroa, tranbia"
+msgstr "Igarotze azkarra, metroa, tranbia"
 
 #: app/JourneyRequestPage.qml:252
 #, kde-format
@@ -3227,10 +3227,9 @@ msgid "Log in"
 msgstr "Hasi saioa"
 
 #: app/SettingsPage.qml:314
-#, fuzzy, kde-format
-#| msgid "Matrix Integration"
+#, kde-format
 msgid "Traewelling Integration"
-msgstr "«Matrix»ekin bateratzea"
+msgstr "«Träwelling»ekin bateratzea"
 
 #: app/SettingsPage.qml:319
 #, kde-format
@@ -3240,16 +3239,20 @@ msgid ""
 "you are and where you can log your public transit journeys. For more "
 "information, visit <a href=\"https://traewelling.de\">traewelling.de</a>"
 msgstr ""
+"Träwelling fakturaziorako doako zerbitzu bat da, zure lagunei non zauden "
+"esateko balio duena eta garraio publikoko zure bidaiak egunkarian gordetzeko "
+"balio duena. Informazio gehiago lortzeko, bisitatu <a href=\"https://"
+"traewelling.de\">traewelling.de</a>"
 
 #: app/SettingsPage.qml:327
 #, kde-format
 msgid "Login"
-msgstr ""
+msgstr "Saioa hasi"
 
 #: app/SettingsPage.qml:332
 #, kde-format
 msgid "Logout"
-msgstr ""
+msgstr "Saioa itxi"
 
 #: app/SettingsPage.qml:339
 #, kde-format
@@ -3661,17 +3664,17 @@ msgstr "Iritsiera ibilgailuaren antolamendua"
 #, kde-format
 msgctxt "@action:button"
 msgid "Add to Traewelling"
-msgstr ""
+msgstr "Gehitu «Träewelling»era"
 
 #: app/TrainPage.qml:380
 #, kde-format
 msgid "Added to Traewelling"
-msgstr ""
+msgstr "«Träewelling»era gehitu da"
 
 #: app/TrainPage.qml:380
 #, kde-format
 msgid "Failed to add to Traewelling"
-msgstr ""
+msgstr "«Träewelling»era gehitzea huts egin du"
 
 #: app/TransferDelegate.qml:109
 #, kde-format

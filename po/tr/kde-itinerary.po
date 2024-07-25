@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-24 02:27+0000\n"
-"PO-Revision-Date: 2024-07-21 01:02+0300\n"
+"PO-Revision-Date: 2024-07-24 14:44+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -3222,10 +3222,9 @@ msgid "Log in"
 msgstr "Oturum Aç"
 
 #: app/SettingsPage.qml:314
-#, fuzzy, kde-format
-#| msgid "Matrix Integration"
+#, kde-format
 msgid "Traewelling Integration"
-msgstr "Matrix Tümleştirmesi"
+msgstr "Traewelling Tümleştirmesi"
 
 #: app/SettingsPage.qml:319
 #, kde-format
@@ -3235,16 +3234,20 @@ msgid ""
 "you are and where you can log your public transit journeys. For more "
 "information, visit <a href=\"https://traewelling.de\">traewelling.de</a>"
 msgstr ""
+"Traewelling, arkadaşlarınıza nerede olduğunuzu ve yolculuk planınızı "
+"söylemenize olanak tanıyan ücretsiz bir giriş hizmetidir. Daha fazla bilgi "
+"için <a href=\"https://traewelling.de\">traewelling.de</a> adresini ziyaret "
+"edin."
 
 #: app/SettingsPage.qml:327
 #, kde-format
 msgid "Login"
-msgstr ""
+msgstr "Oturum Aç"
 
 #: app/SettingsPage.qml:332
 #, kde-format
 msgid "Logout"
-msgstr ""
+msgstr "Oturumu Kapat"
 
 #: app/SettingsPage.qml:339
 #, kde-format
@@ -3656,17 +3659,17 @@ msgstr "Varış Aracı Yerleşimi"
 #, kde-format
 msgctxt "@action:button"
 msgid "Add to Traewelling"
-msgstr ""
+msgstr "Traewelling’e Ekle"
 
 #: app/TrainPage.qml:380
 #, kde-format
 msgid "Added to Traewelling"
-msgstr ""
+msgstr "Traewelling’e eklendi"
 
 #: app/TrainPage.qml:380
 #, kde-format
 msgid "Failed to add to Traewelling"
-msgstr ""
+msgstr "Traewelling’e eklenemedi"
 
 #: app/TransferDelegate.qml:109
 #, kde-format

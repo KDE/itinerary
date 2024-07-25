@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-24 02:27+0000\n"
-"PO-Revision-Date: 2024-07-20 05:14+0200\n"
+"PO-Revision-Date: 2024-07-24 18:21+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -3215,10 +3215,9 @@ msgid "Log in"
 msgstr "Logga in"
 
 #: app/SettingsPage.qml:314
-#, fuzzy, kde-format
-#| msgid "Matrix Integration"
+#, kde-format
 msgid "Traewelling Integration"
-msgstr "Integrering med Matrix"
+msgstr "Integrering med Traewelling"
 
 #: app/SettingsPage.qml:319
 #, kde-format
@@ -3228,16 +3227,20 @@ msgid ""
 "you are and where you can log your public transit journeys. For more "
 "information, visit <a href=\"https://traewelling.de\">traewelling.de</a>"
 msgstr ""
+"Traewelling är en gratis incheckningstjänst som låter dig tala om för dina "
+"vänner var du befinner dig och där du kan registrera dina "
+"kollektivtrafikresor. För mer information besök <a href=\"https://"
+"traewelling.de\">traewelling.de</a>."
 
 #: app/SettingsPage.qml:327
 #, kde-format
 msgid "Login"
-msgstr ""
+msgstr "Logga in"
 
 #: app/SettingsPage.qml:332
 #, kde-format
 msgid "Logout"
-msgstr ""
+msgstr "Logga ut"
 
 #: app/SettingsPage.qml:339
 #, kde-format
@@ -3649,17 +3652,17 @@ msgstr "Ankommande fordonsklass"
 #, kde-format
 msgctxt "@action:button"
 msgid "Add to Traewelling"
-msgstr ""
+msgstr "Lägg till i Traewelling"
 
 #: app/TrainPage.qml:380
 #, kde-format
 msgid "Added to Traewelling"
-msgstr ""
+msgstr "Tillagd i Traewelling"
 
 #: app/TrainPage.qml:380
 #, kde-format
 msgid "Failed to add to Traewelling"
-msgstr ""
+msgstr "Misslyckades lägga till i Traewelling"
 
 #: app/TransferDelegate.qml:109
 #, kde-format
