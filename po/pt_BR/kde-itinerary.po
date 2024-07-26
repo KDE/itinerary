@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-24 00:39+0000\n"
+"POT-Creation-Date: 2024-07-26 00:39+0000\n"
 "PO-Revision-Date: 2023-07-29 15:30-0300\n"
 "Last-Translator: Geraldo Simiao <geraldosimiao@fedoraproject.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -3381,7 +3381,7 @@ msgstr ""
 msgid "Matrix Integration"
 msgstr ""
 
-#: app/SettingsPage.qml:282 app/SettingsPage.qml:324
+#: app/SettingsPage.qml:282 app/SettingsPage.qml:326
 #, kde-format
 msgid "Logged in as %1"
 msgstr ""
@@ -3396,28 +3396,28 @@ msgstr ""
 msgid "Matrix ID"
 msgstr ""
 
-#: app/SettingsPage.qml:300
+#: app/SettingsPage.qml:302
 #, fuzzy, kde-format
 #| msgid "Nothing imported."
 msgid "Password"
 msgstr "Nada a importar."
 
-#: app/SettingsPage.qml:307
+#: app/SettingsPage.qml:309
 #, kde-format
 msgid "Log out"
 msgstr ""
 
-#: app/SettingsPage.qml:307
+#: app/SettingsPage.qml:309
 #, kde-format
 msgid "Log in"
 msgstr ""
 
-#: app/SettingsPage.qml:314
+#: app/SettingsPage.qml:316
 #, kde-format
 msgid "Traewelling Integration"
 msgstr ""
 
-#: app/SettingsPage.qml:319
+#: app/SettingsPage.qml:321
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -3426,27 +3426,27 @@ msgid ""
 "information, visit <a href=\"https://traewelling.de\">traewelling.de</a>"
 msgstr ""
 
-#: app/SettingsPage.qml:327
+#: app/SettingsPage.qml:329
 #, kde-format
 msgid "Login"
 msgstr ""
 
-#: app/SettingsPage.qml:332
+#: app/SettingsPage.qml:334
 #, kde-format
 msgid "Logout"
 msgstr ""
 
-#: app/SettingsPage.qml:339
+#: app/SettingsPage.qml:341
 #, kde-format
 msgid "Contributing"
 msgstr ""
 
-#: app/SettingsPage.qml:343
+#: app/SettingsPage.qml:345
 #, kde-format
 msgid "I contribute to OpenStreetMap"
 msgstr ""
 
-#: app/SettingsPage.qml:344
+#: app/SettingsPage.qml:346
 #, kde-format
 msgid "Enables OSM editing options."
 msgstr ""

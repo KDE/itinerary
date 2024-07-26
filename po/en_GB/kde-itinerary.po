@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-24 00:39+0000\n"
+"POT-Creation-Date: 2024-07-26 00:39+0000\n"
 "PO-Revision-Date: 2024-07-05 13:41+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -3190,7 +3190,7 @@ msgstr ""
 msgid "Matrix Integration"
 msgstr "Matrix Integration"
 
-#: app/SettingsPage.qml:282 app/SettingsPage.qml:324
+#: app/SettingsPage.qml:282 app/SettingsPage.qml:326
 #, kde-format
 msgid "Logged in as %1"
 msgstr "Logged in as %1"
@@ -3205,28 +3205,28 @@ msgstr "Synchronise rooms"
 msgid "Matrix ID"
 msgstr "Matrix ID"
 
-#: app/SettingsPage.qml:300
+#: app/SettingsPage.qml:302
 #, kde-format
 msgid "Password"
 msgstr "Password"
 
-#: app/SettingsPage.qml:307
+#: app/SettingsPage.qml:309
 #, kde-format
 msgid "Log out"
 msgstr "Log out"
 
-#: app/SettingsPage.qml:307
+#: app/SettingsPage.qml:309
 #, kde-format
 msgid "Log in"
 msgstr "Log in"
 
-#: app/SettingsPage.qml:314
+#: app/SettingsPage.qml:316
 #, fuzzy, kde-format
 #| msgid "Matrix Integration"
 msgid "Traewelling Integration"
 msgstr "Matrix Integration"
 
-#: app/SettingsPage.qml:319
+#: app/SettingsPage.qml:321
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -3235,27 +3235,27 @@ msgid ""
 "information, visit <a href=\"https://traewelling.de\">traewelling.de</a>"
 msgstr ""
 
-#: app/SettingsPage.qml:327
+#: app/SettingsPage.qml:329
 #, kde-format
 msgid "Login"
 msgstr ""
 
-#: app/SettingsPage.qml:332
+#: app/SettingsPage.qml:334
 #, kde-format
 msgid "Logout"
 msgstr ""
 
-#: app/SettingsPage.qml:339
+#: app/SettingsPage.qml:341
 #, kde-format
 msgid "Contributing"
 msgstr "Contributing"
 
-#: app/SettingsPage.qml:343
+#: app/SettingsPage.qml:345
 #, kde-format
 msgid "I contribute to OpenStreetMap"
 msgstr "I contribute to OpenStreetMap"
 
-#: app/SettingsPage.qml:344
+#: app/SettingsPage.qml:346
 #, kde-format
 msgid "Enables OSM editing options."
 msgstr "Enables OSM editing options."

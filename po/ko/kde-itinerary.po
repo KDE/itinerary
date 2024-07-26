@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-24 00:39+0000\n"
+"POT-Creation-Date: 2024-07-26 00:39+0000\n"
 "PO-Revision-Date: 2024-02-17 12:41+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -3221,7 +3221,7 @@ msgstr "현재 사용 중인 장치에서 차내 정보를 지원하지 않습�
 msgid "Matrix Integration"
 msgstr "Matrix 통합"
 
-#: app/SettingsPage.qml:282 app/SettingsPage.qml:324
+#: app/SettingsPage.qml:282 app/SettingsPage.qml:326
 #, kde-format
 msgid "Logged in as %1"
 msgstr "%1(으)로 로그인됨"
@@ -3236,28 +3236,28 @@ msgstr "방 동기화"
 msgid "Matrix ID"
 msgstr "Matrix ID"
 
-#: app/SettingsPage.qml:300
+#: app/SettingsPage.qml:302
 #, kde-format
 msgid "Password"
 msgstr "암호"
 
-#: app/SettingsPage.qml:307
+#: app/SettingsPage.qml:309
 #, kde-format
 msgid "Log out"
 msgstr "로그아웃"
 
-#: app/SettingsPage.qml:307
+#: app/SettingsPage.qml:309
 #, kde-format
 msgid "Log in"
 msgstr "로그인"
 
-#: app/SettingsPage.qml:314
+#: app/SettingsPage.qml:316
 #, fuzzy, kde-format
 #| msgid "Matrix Integration"
 msgid "Traewelling Integration"
 msgstr "Matrix 통합"
 
-#: app/SettingsPage.qml:319
+#: app/SettingsPage.qml:321
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -3266,27 +3266,27 @@ msgid ""
 "information, visit <a href=\"https://traewelling.de\">traewelling.de</a>"
 msgstr ""
 
-#: app/SettingsPage.qml:327
+#: app/SettingsPage.qml:329
 #, kde-format
 msgid "Login"
 msgstr ""
 
-#: app/SettingsPage.qml:332
+#: app/SettingsPage.qml:334
 #, kde-format
 msgid "Logout"
 msgstr ""
 
-#: app/SettingsPage.qml:339
+#: app/SettingsPage.qml:341
 #, kde-format
 msgid "Contributing"
 msgstr "기여"
 
-#: app/SettingsPage.qml:343
+#: app/SettingsPage.qml:345
 #, kde-format
 msgid "I contribute to OpenStreetMap"
 msgstr "저는 OpenStreetMap에 기여합니다"
 
-#: app/SettingsPage.qml:344
+#: app/SettingsPage.qml:346
 #, kde-format
 msgid "Enables OSM editing options."
 msgstr "OSM 편집 옵션을 활성화합니다."

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-24 00:39+0000\n"
+"POT-Creation-Date: 2024-07-26 00:39+0000\n"
 "PO-Revision-Date: 2024-07-24 09:42+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -3196,7 +3196,7 @@ msgstr ""
 msgid "Matrix Integration"
 msgstr "«Matrix»ekin bateratzea"
 
-#: app/SettingsPage.qml:282 app/SettingsPage.qml:324
+#: app/SettingsPage.qml:282 app/SettingsPage.qml:326
 #, kde-format
 msgid "Logged in as %1"
 msgstr "%1 gisa saio-hasita"
@@ -3211,27 +3211,27 @@ msgstr "Gelak sinkronizatzea"
 msgid "Matrix ID"
 msgstr "Matrix ID"
 
-#: app/SettingsPage.qml:300
+#: app/SettingsPage.qml:302
 #, kde-format
 msgid "Password"
 msgstr "Pasahitza"
 
-#: app/SettingsPage.qml:307
+#: app/SettingsPage.qml:309
 #, kde-format
 msgid "Log out"
 msgstr "Itxi saioa"
 
-#: app/SettingsPage.qml:307
+#: app/SettingsPage.qml:309
 #, kde-format
 msgid "Log in"
 msgstr "Hasi saioa"
 
-#: app/SettingsPage.qml:314
+#: app/SettingsPage.qml:316
 #, kde-format
 msgid "Traewelling Integration"
 msgstr "«Träwelling»ekin bateratzea"
 
-#: app/SettingsPage.qml:319
+#: app/SettingsPage.qml:321
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -3244,27 +3244,27 @@ msgstr ""
 "balio duena. Informazio gehiago lortzeko, bisitatu <a href=\"https://"
 "traewelling.de\">traewelling.de</a>"
 
-#: app/SettingsPage.qml:327
+#: app/SettingsPage.qml:329
 #, kde-format
 msgid "Login"
 msgstr "Saioa hasi"
 
-#: app/SettingsPage.qml:332
+#: app/SettingsPage.qml:334
 #, kde-format
 msgid "Logout"
 msgstr "Saioa itxi"
 
-#: app/SettingsPage.qml:339
+#: app/SettingsPage.qml:341
 #, kde-format
 msgid "Contributing"
 msgstr "Laguntza ematea"
 
-#: app/SettingsPage.qml:343
+#: app/SettingsPage.qml:345
 #, kde-format
 msgid "I contribute to OpenStreetMap"
 msgstr "OpenStreetMap laguntzen dut"
 
-#: app/SettingsPage.qml:344
+#: app/SettingsPage.qml:346
 #, kde-format
 msgid "Enables OSM editing options."
 msgstr "OSM editatzeko aukerak gaitzen ditu."

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-24 00:39+0000\n"
-"PO-Revision-Date: 2024-07-22 10:55+0200\n"
+"POT-Creation-Date: 2024-07-26 00:39+0000\n"
+"PO-Revision-Date: 2024-07-25 12:53+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -3192,7 +3192,7 @@ msgstr ""
 msgid "Matrix Integration"
 msgstr "Integration de Matrix"
 
-#: app/SettingsPage.qml:282 app/SettingsPage.qml:324
+#: app/SettingsPage.qml:282 app/SettingsPage.qml:326
 #, kde-format
 msgid "Logged in as %1"
 msgstr "Accedite como %1"
@@ -3207,28 +3207,27 @@ msgstr "Synchronisa salas"
 msgid "Matrix ID"
 msgstr "ID de Matrix"
 
-#: app/SettingsPage.qml:300
+#: app/SettingsPage.qml:302
 #, kde-format
 msgid "Password"
 msgstr "Contrasigno"
 
-#: app/SettingsPage.qml:307
+#: app/SettingsPage.qml:309
 #, kde-format
 msgid "Log out"
 msgstr "Claude session"
 
-#: app/SettingsPage.qml:307
+#: app/SettingsPage.qml:309
 #, kde-format
 msgid "Log in"
 msgstr "Accede"
 
-#: app/SettingsPage.qml:314
-#, fuzzy, kde-format
-#| msgid "Matrix Integration"
+#: app/SettingsPage.qml:316
+#, kde-format
 msgid "Traewelling Integration"
-msgstr "Integration de Matrix"
+msgstr "Integration de Traewelling"
 
-#: app/SettingsPage.qml:319
+#: app/SettingsPage.qml:321
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -3236,28 +3235,32 @@ msgid ""
 "you are and where you can log your public transit journeys. For more "
 "information, visit <a href=\"https://traewelling.de\">traewelling.de</a>"
 msgstr ""
+"Traewelling es un servicio de check-in gratuite que te permitte dir a tu "
+"amicos ubi tu e ubi tu pote registrar to viages de transito public. Per plus "
+"information , tu visita <a href=\"https://traewelling.de\">traewelling.de</"
+"a> "
 
-#: app/SettingsPage.qml:327
+#: app/SettingsPage.qml:329
 #, kde-format
 msgid "Login"
-msgstr ""
+msgstr "Accesso de identification"
 
-#: app/SettingsPage.qml:332
+#: app/SettingsPage.qml:334
 #, kde-format
 msgid "Logout"
-msgstr ""
+msgstr "Clausura de session"
 
-#: app/SettingsPage.qml:339
+#: app/SettingsPage.qml:341
 #, kde-format
 msgid "Contributing"
 msgstr "Contribuer"
 
-#: app/SettingsPage.qml:343
+#: app/SettingsPage.qml:345
 #, kde-format
 msgid "I contribute to OpenStreetMap"
 msgstr "Io contribue a OpenStreetMap"
 
-#: app/SettingsPage.qml:344
+#: app/SettingsPage.qml:346
 #, kde-format
 msgid "Enables OSM editing options."
 msgstr "Habilita optiones de mofificar de OSM"
@@ -3657,17 +3660,17 @@ msgstr "Disposition de Vehiculo de arrivata"
 #, kde-format
 msgctxt "@action:button"
 msgid "Add to Traewelling"
-msgstr ""
+msgstr "Adde a Traewelling"
 
 #: app/TrainPage.qml:380
 #, kde-format
 msgid "Added to Traewelling"
-msgstr ""
+msgstr "Addite a Traewelling"
 
 #: app/TrainPage.qml:380
 #, kde-format
 msgid "Failed to add to Traewelling"
-msgstr ""
+msgstr "Falleva a adder a Traewelling"
 
 #: app/TransferDelegate.qml:109
 #, kde-format
@@ -3851,33 +3854,28 @@ msgid "Merge"
 msgstr "Fusiona"
 
 #: app/TripGroupsPage.qml:15
-#, fuzzy, kde-format
-#| msgid "Trips"
+#, kde-format
 msgctxt "@title:window"
 msgid "Trips"
 msgstr "Tours"
 
 #: app/TripGroupsPage.qml:27
-#, fuzzy, kde-format
-#| msgid "Boat trips"
+#, kde-format
 msgctxt "List section header"
 msgid "Past trips"
-msgstr "Viages de barca"
+msgstr "Viages passate"
 
 #: app/TripGroupsPage.qml:29
-#, fuzzy, kde-format
-#| msgctxt "not yet valid tickets"
-#| msgid "Future"
+#, kde-format
 msgctxt "List section header"
 msgid "Future trips"
-msgstr "Futuro"
+msgstr "Viages future"
 
 #: app/TripGroupsPage.qml:31
-#, fuzzy, kde-format
-#| msgid "Current Ticket"
+#, kde-format
 msgctxt "List section header"
 msgid "Current trip"
-msgstr "Billet currente"
+msgstr "Viage currente"
 
 #: app/TripGroupSplitPage.qml:14
 #, kde-format

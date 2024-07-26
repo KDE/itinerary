@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-24 00:39+0000\n"
-"PO-Revision-Date: 2024-07-20 05:10+0200\n"
+"POT-Creation-Date: 2024-07-26 00:39+0000\n"
+"PO-Revision-Date: 2024-07-24 05:24+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -3190,7 +3190,7 @@ msgstr ""
 msgid "Matrix Integration"
 msgstr "Matrix-ის ინტეგრაცია"
 
-#: app/SettingsPage.qml:282 app/SettingsPage.qml:324
+#: app/SettingsPage.qml:282 app/SettingsPage.qml:326
 #, kde-format
 msgid "Logged in as %1"
 msgstr "შეხვედით, როგორც %1"
@@ -3205,28 +3205,27 @@ msgstr "ოთახების სინქრონიზაცია"
 msgid "Matrix ID"
 msgstr "Matrix ID"
 
-#: app/SettingsPage.qml:300
+#: app/SettingsPage.qml:302
 #, kde-format
 msgid "Password"
 msgstr "პაროლი"
 
-#: app/SettingsPage.qml:307
+#: app/SettingsPage.qml:309
 #, kde-format
 msgid "Log out"
 msgstr "გასვლა"
 
-#: app/SettingsPage.qml:307
+#: app/SettingsPage.qml:309
 #, kde-format
 msgid "Log in"
 msgstr "შესვლა"
 
-#: app/SettingsPage.qml:314
-#, fuzzy, kde-format
-#| msgid "Matrix Integration"
+#: app/SettingsPage.qml:316
+#, kde-format
 msgid "Traewelling Integration"
-msgstr "Matrix-ის ინტეგრაცია"
+msgstr "Traewelling-სთან ინტეგრაცია"
 
-#: app/SettingsPage.qml:319
+#: app/SettingsPage.qml:321
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -3234,28 +3233,32 @@ msgid ""
 "you are and where you can log your public transit journeys. For more "
 "information, visit <a href=\"https://traewelling.de\">traewelling.de</a>"
 msgstr ""
+"Traewelling ინტერნეტ-რეგისტრაციის სერვერია, რომელიც საშუალებას გაძლევთ, "
+"უთხრათ თქვენს მეგობრებს, სად ბრძანდებით და საიდან შეგიძლიათ, საჯარო "
+"მოგზაურობები ჟურნალში ჩაიწეროთ.მეტი ინფორმაციისთვი ეწვიეთ ვებგვერდს <a href="
+"\"https://traewelling.de\">traewelling.de</a>"
 
-#: app/SettingsPage.qml:327
+#: app/SettingsPage.qml:329
 #, kde-format
 msgid "Login"
-msgstr ""
+msgstr "შესვლა"
 
-#: app/SettingsPage.qml:332
+#: app/SettingsPage.qml:334
 #, kde-format
 msgid "Logout"
-msgstr ""
+msgstr "გასვლა"
 
-#: app/SettingsPage.qml:339
+#: app/SettingsPage.qml:341
 #, kde-format
 msgid "Contributing"
 msgstr "წვლილი შეიტანა"
 
-#: app/SettingsPage.qml:343
+#: app/SettingsPage.qml:345
 #, kde-format
 msgid "I contribute to OpenStreetMap"
 msgstr "მე შემაქვს წვლილი OpenStreetMap-ზე"
 
-#: app/SettingsPage.qml:344
+#: app/SettingsPage.qml:346
 #, kde-format
 msgid "Enables OSM editing options."
 msgstr "OSM-ის ჩასწორების პარამეტრების ჩართვა."
@@ -3655,17 +3658,17 @@ msgstr "ჩამოსვლის მანქანის განლაგ�
 #, kde-format
 msgctxt "@action:button"
 msgid "Add to Traewelling"
-msgstr ""
+msgstr "დამატება Traewelling-ზე"
 
 #: app/TrainPage.qml:380
 #, kde-format
 msgid "Added to Traewelling"
-msgstr ""
+msgstr "დამატებულია Traewelling-ზე"
 
 #: app/TrainPage.qml:380
 #, kde-format
 msgid "Failed to add to Traewelling"
-msgstr ""
+msgstr "Traewelling-ზე დამატება ჩავარდა"
 
 #: app/TransferDelegate.qml:109
 #, kde-format
@@ -3849,33 +3852,28 @@ msgid "Merge"
 msgstr "შერწყმა"
 
 #: app/TripGroupsPage.qml:15
-#, fuzzy, kde-format
-#| msgid "Trips"
+#, kde-format
 msgctxt "@title:window"
 msgid "Trips"
 msgstr "მოგზაურობები"
 
 #: app/TripGroupsPage.qml:27
-#, fuzzy, kde-format
-#| msgid "Boat trips"
+#, kde-format
 msgctxt "List section header"
 msgid "Past trips"
-msgstr "ნავით მოგზაურობა"
+msgstr "წარსული მოგზაურობები"
 
 #: app/TripGroupsPage.qml:29
-#, fuzzy, kde-format
-#| msgctxt "not yet valid tickets"
-#| msgid "Future"
+#, kde-format
 msgctxt "List section header"
 msgid "Future trips"
-msgstr "მომავალი"
+msgstr "მომავალი მოგზაურობები"
 
 #: app/TripGroupsPage.qml:31
-#, fuzzy, kde-format
-#| msgid "Current Ticket"
+#, kde-format
 msgctxt "List section header"
 msgid "Current trip"
-msgstr "მიმდინარე ბილეთი"
+msgstr "მიმდინარე მოგზაურობა"
 
 #: app/TripGroupSplitPage.qml:14
 #, kde-format
