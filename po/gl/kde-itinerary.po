@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-24 02:27+0000\n"
-"PO-Revision-Date: 2024-07-22 19:19+0200\n"
+"PO-Revision-Date: 2024-07-25 16:58+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -3229,10 +3229,9 @@ msgid "Log in"
 msgstr "Acceder"
 
 #: app/SettingsPage.qml:314
-#, fuzzy, kde-format
-#| msgid "Matrix Integration"
+#, kde-format
 msgid "Traewelling Integration"
-msgstr "Integración con Matrix"
+msgstr "Integración con Traewelling"
 
 #: app/SettingsPage.qml:319
 #, kde-format
@@ -3242,16 +3241,20 @@ msgid ""
 "you are and where you can log your public transit journeys. For more "
 "information, visit <a href=\"https://traewelling.de\">traewelling.de</a>"
 msgstr ""
+"Traewelling é un servizo gratuíto de rexistro de localización que lle "
+"permite informar ás súas amizades de onde está, e no que pode rexistrar as "
+"súas viaxes en transporte público. Para máis información, consulte <a href="
+"\"https://traewelling.de\">traewelling.de</a>."
 
 #: app/SettingsPage.qml:327
 #, kde-format
 msgid "Login"
-msgstr ""
+msgstr "Acceder"
 
 #: app/SettingsPage.qml:332
 #, kde-format
 msgid "Logout"
-msgstr ""
+msgstr "Saír"
 
 #: app/SettingsPage.qml:339
 #, kde-format
@@ -3663,17 +3666,17 @@ msgstr "Disposición do vehículo de chegada"
 #, kde-format
 msgctxt "@action:button"
 msgid "Add to Traewelling"
-msgstr ""
+msgstr "Engadir a Traewelling"
 
 #: app/TrainPage.qml:380
 #, kde-format
 msgid "Added to Traewelling"
-msgstr ""
+msgstr "Engadiuse a Traewelling"
 
 #: app/TrainPage.qml:380
 #, kde-format
 msgid "Failed to add to Traewelling"
-msgstr ""
+msgstr "Non foi posíbel engadir a Traewelling"
 
 #: app/TransferDelegate.qml:109
 #, kde-format
