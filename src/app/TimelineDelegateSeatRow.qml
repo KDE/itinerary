@@ -22,11 +22,21 @@ Rectangle {
         id: layout
         anchors.fill: parent
 
-        // not enough space for all labels even with giving up equal sizing, so we need to enable eliding
-        readonly property bool compactMode: {
+        // not enough space for all labels even with giving up equal sizing, so hide low-priority content
+        readonly property bool hideLowPriorityContent: {
             let width = 0;
             for (const child of layout.children)
                 width += child.implicitWidth + 2 * Kirigami.Units.smallSpacing;
+            return width > layout.width;
+        }
+
+        // not enough space with optional content gone either, so enable eliding as a last resort
+        readonly property bool enableEliding: {
+            let width = 0;
+            for (const child of layout.children) {
+                if (!child.hasOwnProperty("lowPriority") || !child.lowPriority)
+                    width += child.implicitWidth + 2 * Kirigami.Units.smallSpacing;
+            }
             return width > layout.width;
         }
     }
