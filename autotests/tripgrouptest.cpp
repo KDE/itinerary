@@ -130,7 +130,6 @@ private Q_SLOTS:
             TripGroupManager mgr;
             mgr.setReservationManager (&resMgr);
             mgr.setTransferManager(&transferMgr);
-            QEXPECT_FAIL("", "doesn't work yet", Abort);
             QCOMPARE(mgr.tripGroups().size(), 1);
             QCOMPARE(mgr.tripGroup(mgr.tripGroups().at(0)).elements().size(), 2);
         }

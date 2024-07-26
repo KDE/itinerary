@@ -438,7 +438,6 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
         if (!connectedSearchDone) {
             if (!connectedTransition) {
                 qDebug() << "  aborting connectivity search, not an adjacent transition from" << LocationUtil::name(prevArrival) << "to" << LocationUtil::name(curDeparture);
-                connectedIt = m_reservations.end();
                 connectedSearchDone = true;
             } else {
                 connectedIt = it;
@@ -492,9 +491,6 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
 
     // determine which search strategy found the larger result
     auto it = m_reservations.cend();
-    if (!connectedSearchDone) {
-        connectedIt = m_reservations.end();
-    }
     if (connectedIt != m_reservations.end() && resNumIt != m_reservations.end()) {
         it = std::max(connectedIt, resNumIt);
     } else {
