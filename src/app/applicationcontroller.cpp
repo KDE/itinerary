@@ -176,6 +176,7 @@ void ApplicationController::commitImport(ImportController *importController)
     int passCount = 0;
     int healthCertCount = 0;
 
+    TripGroupingBlocker groupBlocker(m_tripGroupMgr);
     for (const auto &elem : importController->elements()) {
         if (!elem.selected) {
             continue;

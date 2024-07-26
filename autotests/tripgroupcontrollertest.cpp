@@ -46,6 +46,7 @@ private Q_SLOTS:
         fcMgr.setTestModeEnabled(true);
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&resMgr);
+        ctrl->setTripGroupManager(&mgr);
 
         TripGroupModel tgModel;
         tgModel.setTripGroupManager(&mgr);

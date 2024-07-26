@@ -121,11 +121,15 @@ public:
     explicit inline TripGroupingBlocker(TripGroupManager *tgMgr)
         : m_tgMgr(tgMgr)
     {
-        tgMgr->suspend();
+        if (tgMgr) {
+            tgMgr->suspend();
+        }
     }
     inline ~TripGroupingBlocker()
     {
-        m_tgMgr->resume();
+        if (m_tgMgr) {
+            m_tgMgr->resume();
+        }
     }
 private:
     TripGroupManager *m_tgMgr;

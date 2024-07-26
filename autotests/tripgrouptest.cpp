@@ -297,6 +297,7 @@ private Q_SLOTS:
         TripGroupManager tgMgr;
         tgMgr.setReservationManager(&resMgr);
         tgMgr.setTransferManager(&transferMgr);
+        ctrl->setTripGroupManager(&tgMgr);
 
         ImportController importer;
         importer.setReservationManager(&resMgr);
@@ -398,6 +399,7 @@ private Q_SLOTS:
         TripGroupManager tgMgr;
         tgMgr.setReservationManager(&resMgr);
         tgMgr.setTransferManager(&transferMgr);
+        ctrl->setTripGroupManager(&tgMgr);
 
         ImportController importer;
         importer.setReservationManager(&resMgr);
