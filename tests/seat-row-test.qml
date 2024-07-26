@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2024 Volker Krause <vkrause@kde.org>
+// SPDX-License-Identifier: LGPL-2.0-or-later
+
 import QtQuick
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
