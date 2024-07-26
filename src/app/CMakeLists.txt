@@ -250,6 +250,7 @@ target_link_libraries(itinerary-app PRIVATE
     KF6::UnitConversion
     Qt::QuickControls2
     KCalendarCoreExtras
+    Qt6Keychain::Qt6Keychain
 )
 if (ANDROID)
     target_link_libraries(itinerary PUBLIC KAndroidExtras PRIVATE Qt::CorePrivate)

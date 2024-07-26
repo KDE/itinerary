@@ -23,6 +23,7 @@ Dependencies:
     'pim/kitinerary': '@same'
     'pim/khealthcertificate': '@same'
     'third-party/libquotient': '@latest'
+    'third-party/qtkeychain': '@latest-kf6'
 
 - 'on': ['Linux', 'FreeBSD']
   'require':
