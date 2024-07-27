@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-26 00:39+0000\n"
+"POT-Creation-Date: 2024-07-27 00:41+0000\n"
 "PO-Revision-Date: 2024-02-09 23:07+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -282,7 +282,7 @@ msgstr "Заменить существующее бронирование на 
 msgid "Replace"
 msgstr "Заменить"
 
-#: app/applicationcontroller.cpp:263
+#: app/applicationcontroller.cpp:264
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
@@ -291,7 +291,7 @@ msgstr[1] "Импортировано %1 бронирования."
 msgstr[2] "Импортировано %1 бронирований."
 msgstr[3] "Импортировано одно бронирование."
 
-#: app/applicationcontroller.cpp:266
+#: app/applicationcontroller.cpp:267
 #, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
@@ -300,7 +300,7 @@ msgstr[1] "%1 пропуска импортировано."
 msgstr[2] "%1 пропусков импортировано."
 msgstr[3] "Пропуск импортирован."
 
-#: app/applicationcontroller.cpp:270
+#: app/applicationcontroller.cpp:271
 #, fuzzy, kde-format
 #| msgid "Health certificate imported."
 msgid "One health certificate imported."
@@ -310,32 +310,32 @@ msgstr[1] "Импортирована справка о здоровье."
 msgstr[2] "Импортирована справка о здоровье."
 msgstr[3] "Импортирована справка о здоровье."
 
-#: app/applicationcontroller.cpp:284 app/applicationcontroller.cpp:325
-#: app/applicationcontroller.cpp:343 app/applicationcontroller.cpp:388
-#: app/applicationcontroller.cpp:427 app/applicationcontroller.cpp:445
+#: app/applicationcontroller.cpp:285 app/applicationcontroller.cpp:326
+#: app/applicationcontroller.cpp:344 app/applicationcontroller.cpp:389
+#: app/applicationcontroller.cpp:428 app/applicationcontroller.cpp:446
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Ошибка экспорта: %1"
 
-#: app/applicationcontroller.cpp:299 app/applicationcontroller.cpp:308
-#: app/applicationcontroller.cpp:401 app/applicationcontroller.cpp:410
+#: app/applicationcontroller.cpp:300 app/applicationcontroller.cpp:309
+#: app/applicationcontroller.cpp:402 app/applicationcontroller.cpp:411
 #, kde-format
 msgid "Export completed."
 msgstr "Экспорт завершён."
 
-#: app/applicationcontroller.cpp:335
+#: app/applicationcontroller.cpp:336
 #, fuzzy, kde-format
 #| msgid "Trips"
 msgid "Trip sent."
 msgstr "Поездки"
 
-#: app/applicationcontroller.cpp:437
+#: app/applicationcontroller.cpp:438
 #, fuzzy, kde-format
 #| msgid "Reservation"
 msgid "Reservation sent."
 msgstr "Бронирование"
 
-#: app/applicationcontroller.cpp:493
+#: app/applicationcontroller.cpp:494
 #, kde-format
 msgid "Import completed."
 msgstr "Импорт завершён."
@@ -524,7 +524,7 @@ msgctxt "train seat"
 msgid "Seat: <b>%1</b>"
 msgstr ""
 
-#: app/BusDelegate.qml:152 app/TrainDelegate.qml:193
+#: app/BusDelegate.qml:152 app/TrainDelegate.qml:194
 #, kde-format
 msgid "1 intermediate stop"
 msgid_plural "%1 intermediate stops"
@@ -3656,7 +3656,7 @@ msgstr "Прибытие"
 msgid "Arrival Time"
 msgstr "Время прибытия"
 
-#: app/TrainDelegate.qml:117 app/TrainDelegate.qml:330
+#: app/TrainDelegate.qml:117 app/TrainDelegate.qml:331
 #, kde-format
 msgid "Pl. %1"
 msgstr ""
@@ -3946,13 +3946,13 @@ msgctxt "@label:textbox"
 msgid "Trip name:"
 msgstr "Имя для резервирования:"
 
-#: app/tripgroupmanager.cpp:775
+#: app/tripgroupmanager.cpp:771
 #, kde-format
 msgctxt "%1 is destination, %2 is the standalone month name, %3 is the year"
 msgid "%1 (%2 %3)"
 msgstr "%1 (%2 %3)"
 
-#: app/tripgroupmanager.cpp:777
+#: app/tripgroupmanager.cpp:773
 #, kde-format
 msgctxt ""
 "%1 is destination, %2 and %3 are the standalone month names and %4 is the "
@@ -3960,7 +3960,7 @@ msgctxt ""
 msgid "%1 (%2/%3 %4)"
 msgstr "%1 (%2/%3 %4)"
 
-#: app/tripgroupmanager.cpp:779
+#: app/tripgroupmanager.cpp:775
 #, kde-format
 msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"

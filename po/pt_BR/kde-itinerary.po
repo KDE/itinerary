@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-26 00:39+0000\n"
+"POT-Creation-Date: 2024-07-27 00:41+0000\n"
 "PO-Revision-Date: 2023-07-29 15:30-0300\n"
 "Last-Translator: Geraldo Simiao <geraldosimiao@fedoraproject.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -288,14 +288,14 @@ msgstr "Deseja substitui sua reserva existente pela nova viagem selecionada?"
 msgid "Replace"
 msgstr "Substituir"
 
-#: app/applicationcontroller.cpp:263
+#: app/applicationcontroller.cpp:264
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] "Uma reserva importada."
 msgstr[1] "%1 reservas importadas."
 
-#: app/applicationcontroller.cpp:266
+#: app/applicationcontroller.cpp:267
 #, fuzzy, kde-format
 #| msgid "Nothing imported."
 msgid "One pass imported."
@@ -303,7 +303,7 @@ msgid_plural "%1 passes imported."
 msgstr[0] "Nada a importar."
 msgstr[1] "Nada a importar."
 
-#: app/applicationcontroller.cpp:270
+#: app/applicationcontroller.cpp:271
 #, fuzzy, kde-format
 #| msgid "Health certificate imported."
 msgid "One health certificate imported."
@@ -311,32 +311,32 @@ msgid_plural "%1 health certificates imported."
 msgstr[0] "Certificado de saúde importado ."
 msgstr[1] "Certificado de saúde importado ."
 
-#: app/applicationcontroller.cpp:284 app/applicationcontroller.cpp:325
-#: app/applicationcontroller.cpp:343 app/applicationcontroller.cpp:388
-#: app/applicationcontroller.cpp:427 app/applicationcontroller.cpp:445
+#: app/applicationcontroller.cpp:285 app/applicationcontroller.cpp:326
+#: app/applicationcontroller.cpp:344 app/applicationcontroller.cpp:389
+#: app/applicationcontroller.cpp:428 app/applicationcontroller.cpp:446
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Falha na exportação: %1"
 
-#: app/applicationcontroller.cpp:299 app/applicationcontroller.cpp:308
-#: app/applicationcontroller.cpp:401 app/applicationcontroller.cpp:410
+#: app/applicationcontroller.cpp:300 app/applicationcontroller.cpp:309
+#: app/applicationcontroller.cpp:402 app/applicationcontroller.cpp:411
 #, kde-format
 msgid "Export completed."
 msgstr "Exportação concluída."
 
-#: app/applicationcontroller.cpp:335
+#: app/applicationcontroller.cpp:336
 #, fuzzy, kde-format
 #| msgid "Trips"
 msgid "Trip sent."
 msgstr "Viagens"
 
-#: app/applicationcontroller.cpp:437
+#: app/applicationcontroller.cpp:438
 #, fuzzy, kde-format
 #| msgid "Reservation"
 msgid "Reservation sent."
 msgstr "Reserva"
 
-#: app/applicationcontroller.cpp:493
+#: app/applicationcontroller.cpp:494
 #, kde-format
 msgid "Import completed."
 msgstr "Importação concluída."
@@ -538,7 +538,7 @@ msgctxt "train seat"
 msgid "Seat: <b>%1</b>"
 msgstr ""
 
-#: app/BusDelegate.qml:152 app/TrainDelegate.qml:193
+#: app/BusDelegate.qml:152 app/TrainDelegate.qml:194
 #, kde-format
 msgid "1 intermediate stop"
 msgid_plural "%1 intermediate stops"
@@ -3743,7 +3743,7 @@ msgstr "Chegada"
 msgid "Arrival Time"
 msgstr "Hora de chegada:"
 
-#: app/TrainDelegate.qml:117 app/TrainDelegate.qml:330
+#: app/TrainDelegate.qml:117 app/TrainDelegate.qml:331
 #, kde-format
 msgid "Pl. %1"
 msgstr ""
@@ -4040,14 +4040,14 @@ msgctxt "@label:textbox"
 msgid "Trip name:"
 msgstr "No nome de:"
 
-#: app/tripgroupmanager.cpp:775
+#: app/tripgroupmanager.cpp:771
 #, fuzzy, kde-format
 #| msgid "%1 (%2 %3)"
 msgctxt "%1 is destination, %2 is the standalone month name, %3 is the year"
 msgid "%1 (%2 %3)"
 msgstr "%1 (%2 %3)"
 
-#: app/tripgroupmanager.cpp:777
+#: app/tripgroupmanager.cpp:773
 #, fuzzy, kde-format
 #| msgid "%1 (%2/%3 %4)"
 msgctxt ""
@@ -4056,7 +4056,7 @@ msgctxt ""
 msgid "%1 (%2/%3 %4)"
 msgstr "%1 (%2/%3 %4)"
 
-#: app/tripgroupmanager.cpp:779
+#: app/tripgroupmanager.cpp:775
 #, fuzzy, kde-format
 #| msgid "%1 (%2/%3)"
 msgctxt "%1 is destination, %2 and %3 are years"
