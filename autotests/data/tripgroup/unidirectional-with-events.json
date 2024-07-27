@@ -1,0 +1,171 @@
+[
+{
+    "@context": "http://schema.org",
+    "@type": "TrainReservation",
+    "reservationFor": {
+        "@type": "TrainTrip",
+        "arrivalPlatform": "3",
+        "arrivalStation": {
+            "@type": "TrainStation",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "DE"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 49.90079116821289,
+                "longitude": 10.899493217468262
+            },
+            "identifier": "ibnr:8000025",
+            "name": "Bamberg"
+        },
+        "arrivalTime": {
+            "@type": "QDateTime",
+            "@value": "2024-09-04T16:15:00+02:00",
+            "timezone": "Europe/Berlin"
+        },
+        "departureDay": "2024-09-04",
+        "departurePlatform": "1",
+        "departureStation": {
+            "@type": "TrainStation",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "DE"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 52.525848388671875,
+                "longitude": 13.368891716003418
+            },
+            "identifier": "ibnr:8098160",
+            "name": "Berlin Hbf"
+        },
+        "departureTime": {
+            "@type": "QDateTime",
+            "@value": "2024-09-04T13:34:00+02:00",
+            "timezone": "Europe/Berlin"
+        },
+        "trainNumber": "ICE 707"
+    },
+    "reservationStatus": "http://schema.org/ReservationConfirmed"
+},
+{
+    "@context": "http://schema.org",
+    "@type": "TrainReservation",
+    "reservationFor": {
+        "@type": "TrainTrip",
+        "arrivalPlatform": "10 D-F",
+        "arrivalStation": {
+            "@type": "TrainStation",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "DE"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 49.802162170410156,
+                "longitude": 9.935930252075195
+            },
+            "identifier": "ibnr:8000260",
+            "name": "Würzburg Hbf"
+        },
+        "arrivalTime": {
+            "@type": "QDateTime",
+            "@value": "2024-09-04T17:21:00+02:00",
+            "timezone": "Europe/Berlin"
+        },
+        "departureDay": "2024-09-04",
+        "departurePlatform": "6",
+        "departureStation": {
+            "@type": "TrainStation",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "DE"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 49.90079116821289,
+                "longitude": 10.899493217468262
+            },
+            "identifier": "ibnr:8000025",
+            "name": "Bamberg"
+        },
+        "departureTime": {
+            "@type": "QDateTime",
+            "@value": "2024-09-04T16:27:00+02:00",
+            "timezone": "Europe/Berlin"
+        },
+        "trainNumber": "RE 20"
+    },
+    "reservationStatus": "http://schema.org/ReservationConfirmed"
+},
+{
+    "@context": "http://schema.org",
+    "@type": "EventReservation",
+    "priceCurrency": "EUR",
+    "reservationFor": {
+        "@type": "Event",
+        "location": {
+            "@type": "Place",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "DE",
+                "addressLocality": "Würzburg",
+                "postalCode": "97070",
+                "streetAddress": "Residenzplatz 2"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 49.79279708862305,
+                "longitude": 9.93875789642334
+            },
+            "name": "Residenz Würzburg"
+        },
+        "name": "Akademy Welcome Event",
+        "startDate": {
+            "@type": "QDateTime",
+            "@value": "2024-09-06T18:00:00+02:00",
+            "timezone": "Europe/Berlin"
+        }
+    },
+    "reservationStatus": "http://schema.org/ReservationConfirmed"
+},
+{
+    "@context": "http://schema.org",
+    "@type": "EventReservation",
+    "reservationFor": {
+        "@type": "Event",
+        "description": "Akademy is the annual world summit of KDE, one of the largest Free Software communities in the world. It is a free, non-commercial event organized by the KDE Community.",
+        "endDate": {
+            "@type": "QDateTime",
+            "@value": "2024-09-13T17:00:00+02:00",
+            "timezone": "Europe/Berlin"
+        },
+        "location": {
+            "@type": "Place",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "DE",
+                "addressLocality": "Würzburg",
+                "postalCode": "97074",
+                "streetAddress": "Informatikgebäude (M2), Am Hubland"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 49.78118896484375,
+                "longitude": 9.973090171813965
+            },
+            "name": "Julius-Maximilians-Unversity of Würzburg"
+        },
+        "name": "KDE Akademy 2024",
+        "startDate": {
+            "@type": "QDateTime",
+            "@value": "2024-09-07T09:00:00+02:00",
+            "timezone": "Europe/Berlin"
+        },
+        "url": "https://akademy.kde.org/2024"
+    },
+    "reservationStatus": "http://schema.org/ReservationConfirmed"
+}
+]
+
