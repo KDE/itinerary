@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-24 02:27+0000\n"
+"POT-Creation-Date: 2024-07-27 02:34+0000\n"
 "PO-Revision-Date: 2024-07-25 05:56+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -499,7 +499,7 @@ msgctxt "train seat"
 msgid "Seat: <b>%1</b>"
 msgstr "სავარძელი: <b>%1</b>"
 
-#: app/BusDelegate.qml:152 app/TrainDelegate.qml:193
+#: app/BusDelegate.qml:152 app/TrainDelegate.qml:194
 #, kde-format
 msgid "1 intermediate stop"
 msgid_plural "%1 intermediate stops"
@@ -3537,7 +3537,7 @@ msgstr "ჩამოსვლა"
 msgid "Arrival Time"
 msgstr "ჩამოსვლის დრო"
 
-#: app/TrainDelegate.qml:117 app/TrainDelegate.qml:330
+#: app/TrainDelegate.qml:117 app/TrainDelegate.qml:331
 #, kde-format
 msgid "Pl. %1"
 msgstr "პლ. %1"
