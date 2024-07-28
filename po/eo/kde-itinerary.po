@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-27 00:41+0000\n"
-"PO-Revision-Date: 2024-07-20 17:03+0200\n"
+"PO-Revision-Date: 2024-07-27 14:20+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -3218,10 +3218,9 @@ msgid "Log in"
 msgstr "Ensaluti"
 
 #: app/SettingsPage.qml:316
-#, fuzzy, kde-format
-#| msgid "Matrix Integration"
+#, kde-format
 msgid "Traewelling Integration"
-msgstr "Matrica Integriĝo"
+msgstr "Traewelling-Integriĝo"
 
 #: app/SettingsPage.qml:321
 #, kde-format
@@ -3231,16 +3230,20 @@ msgid ""
 "you are and where you can log your public transit journeys. For more "
 "information, visit <a href=\"https://traewelling.de\">traewelling.de</a>"
 msgstr ""
+"Traewelling estas senpaga servo de enregistriĝo, kiu ebligas al vi diri al "
+"viaj amikoj kie vi estas kaj kie vi povas registri viajn publiktransportajn "
+"vojaĝojn. Por pliaj informoj, vizitu visit <a href=\"https://traewelling.de"
+"\">traewelling.de</a>"
 
 #: app/SettingsPage.qml:329
 #, kde-format
 msgid "Login"
-msgstr ""
+msgstr "Ensaluti"
 
 #: app/SettingsPage.qml:334
 #, kde-format
 msgid "Logout"
-msgstr ""
+msgstr "Elsaluti"
 
 #: app/SettingsPage.qml:341
 #, kde-format
@@ -3652,17 +3655,17 @@ msgstr "Alvena Veturila Aranĝo"
 #, kde-format
 msgctxt "@action:button"
 msgid "Add to Traewelling"
-msgstr ""
+msgstr "Aldoni al Traewelling"
 
 #: app/TrainPage.qml:380
 #, kde-format
 msgid "Added to Traewelling"
-msgstr ""
+msgstr "Aldoniĝis al Traewelling"
 
 #: app/TrainPage.qml:380
 #, kde-format
 msgid "Failed to add to Traewelling"
-msgstr ""
+msgstr "Malsukcesis aldoni al Traewelling"
 
 #: app/TransferDelegate.qml:109
 #, kde-format
@@ -3846,34 +3849,28 @@ msgid "Merge"
 msgstr "Kunfandi"
 
 #: app/TripGroupsPage.qml:15
-#, fuzzy, kde-format
-#| msgid "Trips"
+#, kde-format
 msgctxt "@title:window"
 msgid "Trips"
 msgstr "Vojaĝoj"
 
 #: app/TripGroupsPage.qml:27
-#, fuzzy, kde-format
-#| msgid "Boat trips"
+#, kde-format
 msgctxt "List section header"
 msgid "Past trips"
-msgstr "Ŝipaj ekskursoj"
+msgstr "Pasintaj vojaĝoj"
 
 #: app/TripGroupsPage.qml:29
-#, fuzzy, kde-format
-#| msgctxt "not yet valid tickets"
-#| msgid "Future"
+#, kde-format
 msgctxt "List section header"
 msgid "Future trips"
-msgstr "Estonteco"
+msgstr "Estontaj vojaĝoj"
 
 #: app/TripGroupsPage.qml:31
-#, fuzzy, kde-format
-#| msgctxt "@title:tab"
-#| msgid "Current Ticket"
+#, kde-format
 msgctxt "List section header"
 msgid "Current trip"
-msgstr "Nuna Bileto"
+msgstr "Nuna vojaĝo"
 
 #: app/TripGroupSplitPage.qml:14
 #, kde-format
