@@ -103,6 +103,26 @@
     },
     {
         "isToday": false,
+        "rangeType": 1,
+        "sectionHeader": "2023-06-27",
+        "tripGroup": {
+            "@context": "http://schema.org",
+            "@type": "TripGroup",
+            "automaticName": true,
+            "automaticallyGrouped": true,
+            "beginDateTime": {
+                "@type": "QDateTime",
+                "@value": "2023-06-27T15:15:00+00:00",
+                "timezone": "Atlantic/Azores"
+            },
+            "endDateTime": "2023-06-28T00:00:00",
+            "name": "Lissabon (June 2023)",
+            "slugName": "lissabon-june-2023"
+        },
+        "type": 2
+    },
+    {
+        "isToday": false,
         "rangeType": 0,
         "reservations": [
             {
@@ -227,5 +247,25 @@
         ],
         "sectionHeader": "2023-06-28",
         "type": 14
+    },
+    {
+        "isToday": false,
+        "rangeType": 2,
+        "sectionHeader": "2023-06-28",
+        "tripGroup": {
+            "@context": "http://schema.org",
+            "@type": "TripGroup",
+            "automaticName": true,
+            "automaticallyGrouped": true,
+            "beginDateTime": {
+                "@type": "QDateTime",
+                "@value": "2023-06-27T15:15:00+00:00",
+                "timezone": "Atlantic/Azores"
+            },
+            "endDateTime": "2023-06-28T00:00:00",
+            "name": "Lissabon (June 2023)",
+            "slugName": "lissabon-june-2023"
+        },
+        "type": 2
     }
 ]

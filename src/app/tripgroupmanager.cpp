@@ -358,7 +358,7 @@ void TripGroupManager::scanAll()
 static bool isConnectedTransition(const QVariant &fromRes, const QVariant &toRes)
 {
     const auto from = LocationUtil::arrivalLocation(fromRes);
-    const auto to = LocationUtil::departureLocation(toRes);
+    const auto to = LocationUtil::isLocationChange(toRes) ? LocationUtil::departureLocation(toRes) :LocationUtil::location(toRes);
     if (LocationUtil::isSameLocation(from, to, LocationUtil::CityLevel)) {
         return true;
     }
@@ -403,12 +403,12 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
 
         const auto prevRes = res;
         const auto curRes = m_resMgr->reservation(*it);
+        const auto isLocationChange = LocationUtil::isLocationChange(curRes);
 
         // not a location change? -> continue searching
-        if (!LocationUtil::isLocationChange(curRes)) {
-            continue;
+        if (isLocationChange) {
+            res = curRes;
         }
-        res = curRes;
 
         // all search strategies think they are done
         if (resNumSearchDone && connectedSearchDone && explicitSearchDone) {
@@ -423,7 +423,7 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
         }
 
         // maximum trip duration exceeded?
-        const auto endDt = SortUtil::endDateTime(res);
+        const auto endDt = SortUtil::endDateTime(curRes);
         if (explicitSearchDone && beginDt.daysTo(endDt) > MaximumTripDuration) {
             qDebug() << "  aborting search, maximum trip duration reached";
             break;
@@ -431,39 +431,42 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
 
         // check for connected transitions (ie. previous arrival == current departure)
         const auto prevArrival = LocationUtil::arrivalLocation(prevRes);
-        const auto curDeparture = LocationUtil::departureLocation(res);
-        const auto connectedTransition = isConnectedTransition(prevRes, res);
-        qDebug() << "  current transition goes from" << LocationUtil::name(prevArrival) << "to" << LocationUtil::name(LocationUtil::arrivalLocation(res));
+        const auto curDeparture = isLocationChange ? LocationUtil::departureLocation(curRes) :LocationUtil::location(curRes);
+        const auto connectedTransition = isConnectedTransition(prevRes, curRes);
+        qDebug() << "  current transition goes from" << LocationUtil::name(prevArrival) << "to" << (isLocationChange ? LocationUtil::name(LocationUtil::arrivalLocation(curRes)) : LocationUtil::name(curDeparture)) << connectedTransition;
 
         if (!connectedSearchDone) {
-            if (!connectedTransition) {
+            if (!connectedTransition && isLocationChange) {
                 qDebug() << "  aborting connectivity search, not an adjacent transition from" << LocationUtil::name(prevArrival) << "to" << LocationUtil::name(curDeparture);
                 connectedSearchDone = true;
-            } else {
+            }
+            if (connectedTransition) {
                 connectedIt = it;
             }
 
             // same location as beginIt? -> we reached the end of the trip (break)
-            const auto curArrival = LocationUtil::arrivalLocation(res);
-            if (LocationUtil::isSameLocation(beginDeparture, curArrival, LocationUtil::CityLevel)) {
-                qDebug() << "  aborting connectivity search, arrived at the start again" << LocationUtil::name(curArrival);
-                connectedSearchDone = true;
-                reachedStartAgain = true;
+            if (isLocationChange) {
+                const auto curArrival = LocationUtil::arrivalLocation(curRes);
+                if (LocationUtil::isSameLocation(beginDeparture, curArrival, LocationUtil::CityLevel)) {
+                    qDebug() << "  aborting connectivity search, arrived at the start again" << LocationUtil::name(curArrival);
+                    connectedSearchDone = true;
+                    reachedStartAgain = true;
+                }
             }
         }
 
-        if (!resNumSearchDone &&  JsonLd::canConvert<Reservation>(res)) {
-            const auto resNum = JsonLd::convert<Reservation>(res).reservationNumber();
+        if (isLocationChange && !resNumSearchDone &&  JsonLd::canConvert<Reservation>(curRes)) {
+            const auto resNum = JsonLd::convert<Reservation>(curRes).reservationNumber();
             if (!resNum.isEmpty()) {
-                const auto r = std::find_if(m_resNumSearch.begin(), m_resNumSearch.end(), [res, resNum](const auto &elem) {
-                    return elem.type == res.userType() && elem.resNum == resNum;
+                const auto r = std::find_if(m_resNumSearch.begin(), m_resNumSearch.end(), [curRes, resNum](const auto &elem) {
+                    return elem.type == curRes.userType() && elem.resNum == resNum;
                 });
                 if (r == m_resNumSearch.end()) {
                     // mode of transport or reservation changed: we consider this still part of the trip if connectivity
                     // search thinks this is part of the same trip too, and we are not at home again yet
                     if (connectedTransition && !LocationUtil::isSameLocation(prevArrival, beginDeparture, LocationUtil::CityLevel)) {
-                        qDebug() << "  considering transition to" << LocationUtil::name(LocationUtil::arrivalLocation(res)) << "as part of trip despite unknown reservation number";
-                        m_resNumSearch.push_back({res.userType(), resNum});
+                        qDebug() << "  considering transition to" << LocationUtil::name(LocationUtil::arrivalLocation(curRes)) << "as part of trip despite unknown reservation number";
+                        m_resNumSearch.push_back({curRes.userType(), resNum});
                         resNumIt = it;
                     } else {
                         qDebug() << "  aborting reservation number search due to mismatch";

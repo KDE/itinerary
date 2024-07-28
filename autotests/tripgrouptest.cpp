@@ -143,8 +143,19 @@ private Q_SLOTS:
             mgr.setReservationManager (&resMgr);
             mgr.setTransferManager(&transferMgr);
             QCOMPARE(mgr.tripGroups().size(), 1);
-            QEXPECT_FAIL("", "doesn't work yet", Continue);
             QCOMPARE(mgr.tripGroup(mgr.tripGroups().at(0)).elements().size(), 4);
+        }
+
+        Test::clearAll(&resMgr);
+        TripGroupManager::clear();
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/timeline/no-arrival-time.json")));
+        ctrl->commitImport(&importer);
+        {
+            TripGroupManager mgr;
+            mgr.setReservationManager (&resMgr);
+            mgr.setTransferManager(&transferMgr);
+            QCOMPARE(mgr.tripGroups().size(), 1);
+            QCOMPARE(mgr.tripGroup(mgr.tripGroups().at(0)).elements().size(), 2);
         }
     }
 
