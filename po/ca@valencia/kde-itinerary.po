@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-27 02:34+0000\n"
+"POT-Creation-Date: 2024-07-28 02:34+0000\n"
 "PO-Revision-Date: 2024-07-24 20:20+0200\n"
 "Last-Translator: Antoni Bella Pérez <antonibella5@yahoo.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -3204,7 +3204,7 @@ msgstr ""
 msgid "Matrix Integration"
 msgstr "Integració de Matrix"
 
-#: app/SettingsPage.qml:282 app/SettingsPage.qml:324
+#: app/SettingsPage.qml:282 app/SettingsPage.qml:326
 #, kde-format
 msgid "Logged in as %1"
 msgstr "Connectat com a %1"
@@ -3219,27 +3219,27 @@ msgstr "Sincronitza les sales"
 msgid "Matrix ID"
 msgstr "ID de Matrix"
 
-#: app/SettingsPage.qml:300
+#: app/SettingsPage.qml:302
 #, kde-format
 msgid "Password"
 msgstr "Contrasenya"
 
-#: app/SettingsPage.qml:307
+#: app/SettingsPage.qml:309
 #, kde-format
 msgid "Log out"
 msgstr "Eixida"
 
-#: app/SettingsPage.qml:307
+#: app/SettingsPage.qml:309
 #, kde-format
 msgid "Log in"
 msgstr "Inici de sessió"
 
-#: app/SettingsPage.qml:314
+#: app/SettingsPage.qml:316
 #, kde-format
 msgid "Traewelling Integration"
 msgstr "Integració de Traewelling"
 
-#: app/SettingsPage.qml:319
+#: app/SettingsPage.qml:321
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -3251,27 +3251,27 @@ msgstr ""
 "esteu i a on podeu registrar els vostres viatges de transport públic. Per a "
 "més informació, visiteu <a href=\"https://traewelling.de\">traewelling.de</a>"
 
-#: app/SettingsPage.qml:327
+#: app/SettingsPage.qml:329
 #, kde-format
 msgid "Login"
 msgstr "Entrada"
 
-#: app/SettingsPage.qml:332
+#: app/SettingsPage.qml:334
 #, kde-format
 msgid "Logout"
 msgstr "Eixida"
 
-#: app/SettingsPage.qml:339
+#: app/SettingsPage.qml:341
 #, kde-format
 msgid "Contributing"
 msgstr "Col·laboració"
 
-#: app/SettingsPage.qml:343
+#: app/SettingsPage.qml:345
 #, kde-format
 msgid "I contribute to OpenStreetMap"
 msgstr "Jo contribuïsc a OpenStreetMap"
 
-#: app/SettingsPage.qml:344
+#: app/SettingsPage.qml:346
 #, kde-format
 msgid "Enables OSM editing options."
 msgstr "Activa les opcions d'edició d'OSM."

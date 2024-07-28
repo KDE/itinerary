@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-27 02:34+0000\n"
-"PO-Revision-Date: 2024-07-21 06:52+0200\n"
+"POT-Creation-Date: 2024-07-28 02:34+0000\n"
+"PO-Revision-Date: 2024-07-27 09:07+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -3200,7 +3200,7 @@ msgstr ""
 msgid "Matrix Integration"
 msgstr "Wplecenie Matriksa"
 
-#: app/SettingsPage.qml:282 app/SettingsPage.qml:324
+#: app/SettingsPage.qml:282 app/SettingsPage.qml:326
 #, kde-format
 msgid "Logged in as %1"
 msgstr "Zalogowano jako %1"
@@ -3215,28 +3215,27 @@ msgstr "Synchronizuj pokoje"
 msgid "Matrix ID"
 msgstr "ID Matriksa"
 
-#: app/SettingsPage.qml:300
+#: app/SettingsPage.qml:302
 #, kde-format
 msgid "Password"
 msgstr "Hasło"
 
-#: app/SettingsPage.qml:307
+#: app/SettingsPage.qml:309
 #, kde-format
 msgid "Log out"
 msgstr "Wyloguj"
 
-#: app/SettingsPage.qml:307
+#: app/SettingsPage.qml:309
 #, kde-format
 msgid "Log in"
 msgstr "Zaloguj"
 
-#: app/SettingsPage.qml:314
-#, fuzzy, kde-format
-#| msgid "Matrix Integration"
+#: app/SettingsPage.qml:316
+#, kde-format
 msgid "Traewelling Integration"
-msgstr "Wplecenie Matriksa"
+msgstr "Dodanie Traewelling"
 
-#: app/SettingsPage.qml:319
+#: app/SettingsPage.qml:321
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -3244,28 +3243,32 @@ msgid ""
 "you are and where you can log your public transit journeys. For more "
 "information, visit <a href=\"https://traewelling.de\">traewelling.de</a>"
 msgstr ""
+"Traewelling jest darmową usługą zgłaszania swojego pobytu, która umożliwia "
+"powiadamianie o tym twoich znajomych oraz umożliwia tobie zapisywanie swoich "
+"przesiadek w podróży. Po więcej szczegółów, odwiedź <a href=\"https://"
+"traewelling.de\">traewelling.de</a>"
 
-#: app/SettingsPage.qml:327
+#: app/SettingsPage.qml:329
 #, kde-format
 msgid "Login"
-msgstr ""
+msgstr "Zaloguj"
 
-#: app/SettingsPage.qml:332
+#: app/SettingsPage.qml:334
 #, kde-format
 msgid "Logout"
-msgstr ""
+msgstr "Wyloguj"
 
-#: app/SettingsPage.qml:339
+#: app/SettingsPage.qml:341
 #, kde-format
 msgid "Contributing"
 msgstr "Współtworzenie"
 
-#: app/SettingsPage.qml:343
+#: app/SettingsPage.qml:345
 #, kde-format
 msgid "I contribute to OpenStreetMap"
 msgstr "Współtworzę OpenStreetMap"
 
-#: app/SettingsPage.qml:344
+#: app/SettingsPage.qml:346
 #, kde-format
 msgid "Enables OSM editing options."
 msgstr "Włącz ustawienia edytowania OSM"
@@ -3665,17 +3668,17 @@ msgstr "Układ pojazdu przyjeżdżającego"
 #, kde-format
 msgctxt "@action:button"
 msgid "Add to Traewelling"
-msgstr ""
+msgstr "Dodaje Traewelling"
 
 #: app/TrainPage.qml:380
 #, kde-format
 msgid "Added to Traewelling"
-msgstr ""
+msgstr "Dodano do Traewelling"
 
 #: app/TrainPage.qml:380
 #, kde-format
 msgid "Failed to add to Traewelling"
-msgstr ""
+msgstr "Nie udało się dodać do Traewelling"
 
 #: app/TransferDelegate.qml:109
 #, kde-format
