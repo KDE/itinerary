@@ -90,6 +90,8 @@ private:
     void checkConsistency();
     [[nodiscard]] QString guessDestinationFromLodging(const QStringList &elements) const;
     [[nodiscard]] QString guessDestinationFromTransportTimeGap(const QStringList &elements) const;
+    [[nodiscard]] QVariant firstLocationChange(const QStringList &elements) const;
+    [[nodiscard]] QVariant lastLocationChange(const QStringList &elements) const;
     [[nodiscard]] bool isRoundTrip(const QStringList &elements) const;
 
     /** Update begin/end times based on the current content.
