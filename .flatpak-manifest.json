@@ -15,6 +15,7 @@
         "--socket=wayland",
         "--device=dri",
         "--share=network",
+        "--talk-name=org.freedesktop.secrets",
         "--talk-name=org.kde.kwalletd5",
         "--talk-name=org.kde.kwalletd6"
     ],
@@ -64,8 +65,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://github.com/uclouvain/openjpeg/archive/v2.5.0.tar.gz",
-                            "sha256": "0333806d6adecc6f7a91243b2b839ff4d2053823634d4f6ed7a59bc87409122a",
+                            "url": "https://github.com/uclouvain/openjpeg/archive/v2.5.2.tar.gz",
+                            "sha256": "90e3896fed910c376aaf79cdd98bdfdaf98c6472efd8e1debf0a854938cbda6a",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 2550,
@@ -355,6 +356,65 @@
             ]
         },
         {
+            "name": "qtkeychain",
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/frankosterfeld/qtkeychain/archive/0.14.2.tar.gz",
+                    "sha256": "cf2e972b783ba66334a79a30f6b3a1ea794a1dc574d6c3bebae5ffd2f0399571",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 4138,
+                        "stable-only": true,
+                        "url-template": "https://github.com/frankosterfeld/qtkeychain/archive/$version.tar.gz"
+                    }
+                }
+            ],
+            "config-opts": [
+                "-DCMAKE_INSTALL_LIBDIR=/app/lib",
+                "-DLIB_INSTALL_DIR=/app/lib",
+                "-DBUILD_TRANSLATIONS=NO",
+                "-DBUILD_WITH_QT6=ON"
+            ],
+            "cleanup": [
+                "/include",
+                "/lib/cmake",
+                "/mkspecs"
+            ],
+            "modules": [
+                {
+                    "name": "libsecret",
+                    "buildsystem": "meson",
+                    "config-opts": [
+                        "-Dmanpage=false",
+                        "-Dvapi=false",
+                        "-Dgtk_doc=false",
+                        "-Dintrospection=false",
+                        "-Dcrypto=disabled"
+                    ],
+                    "sources": [
+                        {
+                            "type": "archive",
+                            "url": "https://download.gnome.org/sources/libsecret/0.21/libsecret-0.21.4.tar.xz",
+                            "sha256": "163d08d783be6d4ab9a979ceb5a4fecbc1d9660d3c34168c581301cd53912b20",
+                            "x-checker-data": {
+                                "type": "anitya",
+                                "project-id": 13150,
+                                "stable-only": true,
+                                "url-template": "https://download.gnome.org/sources/libsecret/${version0}.${version1}/libsecret-$version.tar.xz"
+                            }
+                        }
+                    ],
+                    "cleanup": [
+                        "/bin/secret-tool",
+                        "/include",
+                        "/lib/pkgconfig"
+                    ]
+                }
+            ]
+        },
+        {
             "name": "libQuotient",
             "buildsystem": "cmake-ninja",
             "sources": [
@@ -382,81 +442,23 @@
                 {
                     "name": "olm",
                     "buildsystem": "cmake-ninja",
-                    "config-opts": [ "-DOLM_TESTS=OFF" ],
+                    "builddir": true,
+                    "config-opts": [
+                        "-DOLM_TESTS=OFF",
+                        "-DCMAKE_BUILD_TYPE=Release"
+                    ],
                     "sources": [
                         {
                             "type": "git",
                             "url": "https://gitlab.matrix.org/matrix-org/olm.git",
-                            "tag": "3.2.10",
-                            "x-checker-data": {
-                                "type": "git",
-                                "tag-pattern": "^([\\d.]+)$"
-                            },
-                            "commit": "9908862979147a71dc6abaecd521be526ae77be1"
+                            "commit": "92769cec711c604a1f682b95d6944578d2a1bb3d",
+                            "tag": "3.2.12"
                         }
                     ],
                     "cleanup": [
                         "/include",
                         "/lib/cmake",
                         "/lib/pkgconfig"
-                    ]
-                },
-                {
-                    "name": "qtkeychain",
-                    "buildsystem": "cmake-ninja",
-                    "sources": [
-                        {
-                            "type": "archive",
-                            "url": "https://github.com/frankosterfeld/qtkeychain/archive/0.14.2.tar.gz",
-                            "sha256": "cf2e972b783ba66334a79a30f6b3a1ea794a1dc574d6c3bebae5ffd2f0399571",
-                            "x-checker-data": {
-                                "type": "anitya",
-                                "project-id": 4138,
-                                "stable-only": true,
-                                "url-template": "https://github.com/frankosterfeld/qtkeychain/archive/$version.tar.gz"
-                            }
-                        }
-                    ],
-                    "config-opts": [
-                        "-DCMAKE_INSTALL_LIBDIR=/app/lib",
-                        "-DLIB_INSTALL_DIR=/app/lib",
-                        "-DBUILD_TRANSLATIONS=NO",
-                        "-DBUILD_WITH_QT6=ON"
-                    ],
-                    "cleanup": [
-                        "/include",
-                        "/lib/cmake",
-                        "/mkspecs"
-                    ],
-                    "modules": [
-                        {
-                            "name": "libsecret",
-                            "buildsystem": "meson",
-                            "config-opts": [
-                                "-Dmanpage=false",
-                                "-Dvapi=false",
-                                "-Dgtk_doc=false",
-                                "-Dintrospection=false",
-                                "-Dgcrypt=false"
-                            ],
-                            "sources": [
-                                {
-                                    "type": "archive",
-                                    "url": "https://download.gnome.org/sources/libsecret/0.20/libsecret-0.20.5.tar.xz",
-                                    "sha256": "3fb3ce340fcd7db54d87c893e69bfc2b1f6e4d4b279065ffe66dac9f0fd12b4d",
-                                    "x-checker-data": {
-                                        "type": "gnome",
-                                        "name": "libsecret",
-                                        "stable-only": true
-                                    }
-                                }
-                            ],
-                            "cleanup": [
-                                "/bin/secret-tool",
-                                "/include",
-                                "/lib/pkgconfig"
-                            ]
-                        }
                     ]
                 }
             ]
