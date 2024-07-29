@@ -199,6 +199,7 @@ void registerApplicationTypes()
     qmlRegisterType<TransferDelegateController>("org.kde.itinerary", 1, 0, "TransferDelegateController");
     qmlRegisterType<TripGroupController>("org.kde.itinerary", 1, 0, "TripGroupController");
     qmlRegisterType<TripGroupFilterProxyModel>("org.kde.itinerary", 1, 0, "TripGroupFilterProxyModel");
+    qmlRegisterType<TripGroupProxyModel>("org.kde.itinerary", 1, 0, "TripGroupProxyModel");
     qmlRegisterType<TripGroupSplitModel>("org.kde.itinerary", 1, 0, "TripGroupSplitModel");
     qmlRegisterType<WeatherForecastModel>("org.kde.itinerary", 1, 0, "WeatherForecastModel");
 #if HAVE_MATRIX
@@ -220,7 +221,6 @@ static TripGroupManager *s_tripGroupManager = nullptr;
 static LiveDataManager *s_liveDataMnager = nullptr;
 static WeatherForecastManager *s_weatherForecastManager = nullptr;
 static TimelineModel *s_timelineModel = nullptr;
-static TripGroupProxyModel *s_tripGroupProxyModel = nullptr;
 static MapDownloadManager *s_mapDownloadManager = nullptr;
 static PassManager *s_passManager = nullptr;
 static MatrixController *s_matrixController = nullptr;
@@ -249,7 +249,6 @@ void registerApplicationSingletons()
     REGISTER_SINGLETON_INSTANCE(LiveDataManager, s_liveDataMnager)
     REGISTER_SINGLETON_INSTANCE(WeatherForecastManager, s_weatherForecastManager)
     REGISTER_SINGLETON_INSTANCE(TimelineModel, s_timelineModel)
-    REGISTER_SINGLETON_INSTANCE(TripGroupProxyModel, s_tripGroupProxyModel)
     REGISTER_SINGLETON_INSTANCE(MapDownloadManager, s_mapDownloadManager)
     REGISTER_SINGLETON_INSTANCE(PassManager, s_passManager)
     REGISTER_SINGLETON_INSTANCE(MatrixController, s_matrixController);
@@ -425,10 +424,6 @@ int main(int argc, char **argv)
     timelineModel.setTripGroupManager(&tripGroupMgr);
     QObject::connect(&settings, &Settings::homeCountryIsoCodeChanged, &timelineModel, &TimelineModel::setHomeCountryIsoCode);
     s_timelineModel = &timelineModel;
-
-    TripGroupProxyModel tripGroupProxy;
-    tripGroupProxy.setSourceModel(&timelineModel);
-    s_tripGroupProxyModel = &tripGroupProxy;
 
     MapDownloadManager mapDownloadMgr;
     mapDownloadMgr.setReservationManager(&resMgr);

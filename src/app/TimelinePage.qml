@@ -165,7 +165,7 @@ Kirigami.ScrollablePage {
         leadingAction: Kirigami.Action {
             text: i18nc("@action:button", "Go To Now")
             icon.name: "view-calendar-day"
-            onTriggered: listView.positionViewAtIndex(TripGroupProxyModel.todayRow, ListView.Beginning);
+            onTriggered: listView.positionViewAtIndex(tripGroupProxyModel.todayRow, ListView.Beginning);
             tooltip: text
         }
 
@@ -508,6 +508,7 @@ Kirigami.ScrollablePage {
         Models.DelegateChoice {
             roleValue: TimelineElement.TripGroup
             TripGroupDelegate {
+                tripGroupProxyModel: listView.model
                 onRemoveTrip: (tripGroupId) => {
                     deleteTripGroupWarningDialog.tripGroupId = tripGroupId;
                     deleteTripGroupWarningDialog.open();
@@ -522,7 +523,10 @@ Kirigami.ScrollablePage {
 
     Kirigami.CardsListView {
         id: listView
-        model: TripGroupProxyModel
+        model: TripGroupProxyModel {
+            id: tripGroupProxyModel
+            sourceModel: TimelineModel
+        }
         delegate: chooser
         leftMargin: 0
         rightMargin: 0
@@ -559,7 +563,7 @@ Kirigami.ScrollablePage {
         id: positionTimer
         interval: 0
         repeat: false
-        onTriggered: listView.positionViewAtIndex(TripGroupProxyModel.todayRow, ListView.Beginning);
+        onTriggered: listView.positionViewAtIndex(tripGroupProxyModel.todayRow, ListView.Beginning);
     }
 
     Component.onCompleted: positionTimer.start()

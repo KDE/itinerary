@@ -19,6 +19,7 @@ FormCard.FormCard {
     required property var tripGroup
     required property string tripGroupId
     required property int rangeType
+    required property TripGroupProxyModel tripGroupProxyModel
 
     property TripGroupController controller: TripGroupController {
         id: _controller
@@ -33,9 +34,9 @@ FormCard.FormCard {
 
     function clicked() {
         if (root.rangeType === TimelineElement.SelfContained) {
-            TripGroupProxyModel.expand(root.tripGroupId);
+            root.tripGroupProxyModel.expand(root.tripGroupId);
         } else {
-            TripGroupProxyModel.collapse(root.tripGroupId);
+            root.tripGroupProxyModel.collapse(root.tripGroupId);
         }
     }
 
