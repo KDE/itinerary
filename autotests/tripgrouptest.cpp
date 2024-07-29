@@ -228,7 +228,7 @@ private Q_SLOTS:
         QTest::newRow("Imbalanced roundtrip") << QStringLiteral(SOURCE_DIR "/data/tripgroup/imbalanced-return-trip.json") << QStringLiteral("Milano Centrale (September 2019)");
         QTest::newRow("IATA BCBP no times") << QStringLiteral(SOURCE_DIR "/data/tripgroup/iata-bcbp-no-times.json") << QStringLiteral("Milan Malpensa (September 2019)");
         QTest::newRow("Unidirectional") << QStringLiteral(SOURCE_DIR "/data/tripgroup/unidirectional-train-trip.json") << u"Milano Centrale (September 2019)"_s;
-        QTest::newRow("Unidirectional with events") << QStringLiteral(SOURCE_DIR "/data/tripgroup/unidirectional-with-events.json") << u"Würzburg Hbf (September 2024)"_s;
+        QTest::newRow("Unidirectional with events") << QStringLiteral(SOURCE_DIR "/data/tripgroup/unidirectional-with-events.json") << u"KDE Akademy 2024 (September 2024)"_s;
     }
 
     void testGroupName()

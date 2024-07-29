@@ -645,6 +645,38 @@ static QString destinationName(const QVariant &loc)
     return LocationUtil::name(loc);
 }
 
+QString TripGroupManager::guessDestinationFromEvent(const QStringList &elements) const
+{
+    // compute overall trip length
+    const auto beginDt = SortUtil::startDateTime(m_resMgr->reservation(elements.front()));
+    const auto endDt = SortUtil::endDateTime(m_resMgr->reservation(elements.back()));
+    if (!beginDt.isValid() || !endDt.isValid()) {
+        return {};
+    }
+    const auto tripLength = beginDt.secsTo(endDt);
+
+    // find an event that covers 50+% of the trip time
+    for (const auto &elem : elements) {
+        const auto res = m_resMgr->reservation(elem);
+        if (!JsonLd::isA<EventReservation>(res)) {
+            continue;
+        }
+
+        const auto evBeginDt = SortUtil::startDateTime(res);
+        const auto evEndDt = SortUtil::endDateTime(res);
+        if (!evBeginDt.isValid() || !evEndDt.isValid()) {
+            continue;
+        }
+
+        const auto eventLength = evBeginDt.secsTo(evEndDt);
+        if (2 * eventLength > tripLength) {
+            return res.value<EventReservation>().reservationFor().value<Event>().name();
+        }
+    }
+
+    return {};
+}
+
 QString TripGroupManager::guessDestinationFromLodging(const QStringList &elements) const
 {
     // we assume that lodging indicates the actual destination, not a stopover location
@@ -744,7 +776,10 @@ QString TripGroupManager::guessName(const QStringList &elements) const
     }
 
     // part 1: the destination of the trip
-    QString dest = guessDestinationFromLodging(elements);
+    QString dest = guessDestinationFromEvent(elements);
+    if (dest.isEmpty()) {
+        dest = guessDestinationFromLodging(elements);
+    }
     if (dest.isEmpty()) {
         dest = guessDestinationFromTransportTimeGap(elements);
     }
