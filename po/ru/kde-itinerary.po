@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-29 00:40+0000\n"
+"POT-Creation-Date: 2024-07-30 00:41+0000\n"
 "PO-Revision-Date: 2024-02-09 23:07+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -124,7 +124,7 @@ msgstr "Изменить"
 msgid "Add to calendar…"
 msgstr "Добавить в календарь..."
 
-#: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:209
+#: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:210
 #, fuzzy, kde-format
 #| msgid "Export"
 msgid "Export…"
@@ -853,7 +853,7 @@ msgctxt "@action:button"
 msgid "Save"
 msgstr "Сохранить"
 
-#: app/EventDelegate.qml:21 app/TripGroupDelegate.qml:68
+#: app/EventDelegate.qml:21 app/TripGroupDelegate.qml:69
 #, kde-format
 msgid "End: %1"
 msgstr "Окончание: %1"
@@ -1402,7 +1402,7 @@ msgstr "Удалить пропуск"
 msgid "Do you really want to delete this pass?"
 msgstr "Удалить этот пропуск?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:336 app/main.qml:21 app/main.qml:166
+#: app/gpxexport.cpp:33 app/main.cpp:335 app/main.qml:21 app/main.qml:166
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "Маршруты KDE"
@@ -2438,25 +2438,25 @@ msgstr "Тип M"
 msgid "Type N"
 msgstr "Тип N"
 
-#: app/main.cpp:344
+#: app/main.cpp:343
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Цифровой помощник в путешествиях"
 
-#: app/main.cpp:345
+#: app/main.cpp:344
 #, fuzzy, kde-format
 #| msgid "Copyright © 2018-%1 The KDE Community"
 msgid "Copyright © The KDE Community"
 msgstr "© Сообщество KDE, 2018-%1"
 
-#: app/main.cpp:352
+#: app/main.cpp:351
 #, fuzzy, kde-format
 #| msgid "Open Itinerary on the given page"
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Открыть программу на указанной странице"
 
-#: app/main.cpp:357
+#: app/main.cpp:356
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
@@ -3856,12 +3856,12 @@ msgstr "%1 начинается в %2"
 msgid "Following departure %1 from %2"
 msgstr "После отправки %1 из %2"
 
-#: app/TripGroupDelegate.qml:68
+#: app/TripGroupDelegate.qml:69
 #, kde-format
 msgid "Trip: %1"
 msgstr "Поездка: %1"
 
-#: app/TripGroupDelegate.qml:99
+#: app/TripGroupDelegate.qml:100
 #, kde-format
 msgid "Date: %2 (one day)"
 msgid_plural "Date: %2 (%1 days)"
@@ -3870,29 +3870,29 @@ msgstr[1] "Дата: %2 (%1 дня)"
 msgstr[2] "Дата: %2 (%1 дней)"
 msgstr[3] "Дата: %2 (один день)"
 
-#: app/TripGroupDelegate.qml:115 app/WeatherForecastDelegate.qml:48
+#: app/TripGroupDelegate.qml:116 app/WeatherForecastDelegate.qml:48
 #: app/WeatherForecastPage.qml:93
 #, kde-format
 msgctxt "temperature range"
 msgid "%1 / %2"
 msgstr "%1 / %2"
 
-#: app/TripGroupDelegate.qml:130
+#: app/TripGroupDelegate.qml:131
 #, kde-format
 msgid "%1: some incompatible power sockets (%2)"
 msgstr "%1: несовместимые розетки (%2)"
 
-#: app/TripGroupDelegate.qml:132
+#: app/TripGroupDelegate.qml:133
 #, kde-format
 msgid "%1: some incompatible power plugs (%2)"
 msgstr "%1: несовместимые вилки (%2)"
 
-#: app/TripGroupDelegate.qml:135
+#: app/TripGroupDelegate.qml:136
 #, kde-format
 msgid "%1: no compatible power plugs (%2)"
 msgstr "%1: нет совместимых вилок (%2)"
 
-#: app/TripGroupDelegate.qml:144
+#: app/TripGroupDelegate.qml:145
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
@@ -3901,25 +3901,25 @@ msgstr[1] "Валюты: %2"
 msgstr[2] "Валюты: %2"
 msgstr[3] "Валюта: %2"
 
-#: app/TripGroupDelegate.qml:168
+#: app/TripGroupDelegate.qml:169
 #, fuzzy, kde-format
 #| msgid "Edit"
 msgid "Edit…"
 msgstr "Изменить"
 
-#: app/TripGroupDelegate.qml:175
+#: app/TripGroupDelegate.qml:176
 #, fuzzy, kde-format
 #| msgid "Add train trip..."
 msgid "Merge trips…"
 msgstr "Добавить поездку на поезде…"
 
-#: app/TripGroupDelegate.qml:190
+#: app/TripGroupDelegate.qml:191
 #, fuzzy, kde-format
 #| msgid "Add train trip..."
 msgid "Split trip…"
 msgstr "Добавить поездку на поезде…"
 
-#: app/TripGroupDelegate.qml:217
+#: app/TripGroupDelegate.qml:218
 #, kde-format
 msgid "Delete trip"
 msgstr "Удалить поездку"
@@ -3946,13 +3946,13 @@ msgctxt "@label:textbox"
 msgid "Trip name:"
 msgstr "Имя для резервирования:"
 
-#: app/tripgroupmanager.cpp:774
+#: app/tripgroupmanager.cpp:831
 #, kde-format
 msgctxt "%1 is destination, %2 is the standalone month name, %3 is the year"
 msgid "%1 (%2 %3)"
 msgstr "%1 (%2 %3)"
 
-#: app/tripgroupmanager.cpp:776
+#: app/tripgroupmanager.cpp:833
 #, kde-format
 msgctxt ""
 "%1 is destination, %2 and %3 are the standalone month names and %4 is the "
@@ -3960,7 +3960,7 @@ msgctxt ""
 msgid "%1 (%2/%3 %4)"
 msgstr "%1 (%2/%3 %4)"
 
-#: app/tripgroupmanager.cpp:778
+#: app/tripgroupmanager.cpp:835
 #, kde-format
 msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"

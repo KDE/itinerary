@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-29 00:40+0000\n"
+"POT-Creation-Date: 2024-07-30 00:41+0000\n"
 "PO-Revision-Date: 2019-01-23 21:00-0800\n"
 "Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -112,7 +112,7 @@ msgstr ""
 msgid "Add to calendar…"
 msgstr ""
 
-#: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:209
+#: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:210
 #, kde-format
 msgid "Export…"
 msgstr ""
@@ -811,7 +811,7 @@ msgctxt "@action:button"
 msgid "Save"
 msgstr ""
 
-#: app/EventDelegate.qml:21 app/TripGroupDelegate.qml:68
+#: app/EventDelegate.qml:21 app/TripGroupDelegate.qml:69
 #, kde-format
 msgid "End: %1"
 msgstr ""
@@ -1346,7 +1346,7 @@ msgstr ""
 msgid "Do you really want to delete this pass?"
 msgstr ""
 
-#: app/gpxexport.cpp:33 app/main.cpp:336 app/main.qml:21 app/main.qml:166
+#: app/gpxexport.cpp:33 app/main.cpp:335 app/main.qml:21 app/main.qml:166
 #, kde-format
 msgid "KDE Itinerary"
 msgstr ""
@@ -2351,23 +2351,23 @@ msgstr ""
 msgid "Type N"
 msgstr ""
 
-#: app/main.cpp:344
+#: app/main.cpp:343
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr ""
 
-#: app/main.cpp:345
+#: app/main.cpp:344
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr ""
 
-#: app/main.cpp:352
+#: app/main.cpp:351
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr ""
 
-#: app/main.cpp:357
+#: app/main.cpp:356
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
@@ -3694,61 +3694,61 @@ msgstr ""
 msgid "Following departure %1 from %2"
 msgstr ""
 
-#: app/TripGroupDelegate.qml:68
+#: app/TripGroupDelegate.qml:69
 #, kde-format
 msgid "Trip: %1"
 msgstr ""
 
-#: app/TripGroupDelegate.qml:99
+#: app/TripGroupDelegate.qml:100
 #, kde-format
 msgid "Date: %2 (one day)"
 msgid_plural "Date: %2 (%1 days)"
 msgstr[0] ""
 
-#: app/TripGroupDelegate.qml:115 app/WeatherForecastDelegate.qml:48
+#: app/TripGroupDelegate.qml:116 app/WeatherForecastDelegate.qml:48
 #: app/WeatherForecastPage.qml:93
 #, kde-format
 msgctxt "temperature range"
 msgid "%1 / %2"
 msgstr ""
 
-#: app/TripGroupDelegate.qml:130
+#: app/TripGroupDelegate.qml:131
 #, kde-format
 msgid "%1: some incompatible power sockets (%2)"
 msgstr ""
 
-#: app/TripGroupDelegate.qml:132
+#: app/TripGroupDelegate.qml:133
 #, kde-format
 msgid "%1: some incompatible power plugs (%2)"
 msgstr ""
 
-#: app/TripGroupDelegate.qml:135
+#: app/TripGroupDelegate.qml:136
 #, kde-format
 msgid "%1: no compatible power plugs (%2)"
 msgstr ""
 
-#: app/TripGroupDelegate.qml:144
+#: app/TripGroupDelegate.qml:145
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
 msgstr[0] ""
 
-#: app/TripGroupDelegate.qml:168
+#: app/TripGroupDelegate.qml:169
 #, kde-format
 msgid "Edit…"
 msgstr ""
 
-#: app/TripGroupDelegate.qml:175
+#: app/TripGroupDelegate.qml:176
 #, kde-format
 msgid "Merge trips…"
 msgstr ""
 
-#: app/TripGroupDelegate.qml:190
+#: app/TripGroupDelegate.qml:191
 #, kde-format
 msgid "Split trip…"
 msgstr ""
 
-#: app/TripGroupDelegate.qml:217
+#: app/TripGroupDelegate.qml:218
 #, kde-format
 msgid "Delete trip"
 msgstr ""
@@ -3772,13 +3772,13 @@ msgctxt "@label:textbox"
 msgid "Trip name:"
 msgstr ""
 
-#: app/tripgroupmanager.cpp:774
+#: app/tripgroupmanager.cpp:831
 #, kde-format
 msgctxt "%1 is destination, %2 is the standalone month name, %3 is the year"
 msgid "%1 (%2 %3)"
 msgstr ""
 
-#: app/tripgroupmanager.cpp:776
+#: app/tripgroupmanager.cpp:833
 #, kde-format
 msgctxt ""
 "%1 is destination, %2 and %3 are the standalone month names and %4 is the "
@@ -3786,7 +3786,7 @@ msgctxt ""
 msgid "%1 (%2/%3 %4)"
 msgstr ""
 
-#: app/tripgroupmanager.cpp:778
+#: app/tripgroupmanager.cpp:835
 #, kde-format
 msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"
