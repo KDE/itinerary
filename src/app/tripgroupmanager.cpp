@@ -344,11 +344,6 @@ void TripGroupManager::scanAll()
             prevGroup = groupIt.value();
         }
 
-        // not a location change? -> continue
-        if (!LocationUtil::isLocationChange(m_resMgr->reservation(*it))) {
-            continue;
-        }
-
         scanOne(it);
         prevGroup = m_reservationToGroupMap.value(*it);
     }
@@ -504,6 +499,7 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
 
     if (it == m_reservations.end()) {
         qDebug() << "nothing found";
+        createAutomaticGroup({*beginIt});
         return;
     }
 
@@ -520,6 +516,10 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
             if (LocationUtil::isSameLocation(endArrival, curDeparture, LocationUtil::CityLevel)) {
                 if (beginIt != it2) {
                     qDebug() << "  removing leading appendix, starting at" << LocationUtil::name(curDeparture);
+                    QStringList appendixElems;
+                    appendixElems.reserve(std::distance(beginIt, it2));
+                    std::copy(beginIt, it2, std::back_inserter(appendixElems));
+                    createAutomaticGroup(appendixElems);
                 }
                 beginIt = it2;
                 break;
@@ -529,6 +529,7 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
 
     if (beginIt == it) {
         qDebug() << "found empty trip";
+        createAutomaticGroup({*beginIt});
         return;
     }
 

@@ -154,8 +154,39 @@ private Q_SLOTS:
             TripGroupManager mgr;
             mgr.setReservationManager (&resMgr);
             mgr.setTransferManager(&transferMgr);
+            QCOMPARE(mgr.tripGroups().size(), 2);
+            auto tg1 = mgr.tripGroup(mgr.tripGroups().at(0));
+            auto tg2 = mgr.tripGroup(mgr.tripGroups().at(1));
+            if (tg2.name() == "PDL (January 2023)"_L1) {
+                std::swap(tg1, tg2);
+            }
+            qDebug() << tg1.name() << tg2.name();
+            QCOMPARE(tg1.elements().size(), 1);
+            QCOMPARE(tg2.elements().size(), 2);
+        }
+
+        Test::clearAll(&resMgr);
+        TripGroupManager::clear();
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/timeline/event-multi-day.json")));
+        ctrl->commitImport(&importer);
+        {
+            TripGroupManager mgr;
+            mgr.setReservationManager (&resMgr);
+            mgr.setTransferManager(&transferMgr);
             QCOMPARE(mgr.tripGroups().size(), 1);
-            QCOMPARE(mgr.tripGroup(mgr.tripGroups().at(0)).elements().size(), 2);
+            QCOMPARE(mgr.tripGroup(mgr.tripGroups().at(0)).elements().size(), 1);
+        }
+
+        Test::clearAll(&resMgr);
+        TripGroupManager::clear();
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/timeline/flight-cancelation.json")));
+        ctrl->commitImport(&importer);
+        {
+            TripGroupManager mgr;
+            mgr.setReservationManager (&resMgr);
+            mgr.setTransferManager(&transferMgr);
+            QCOMPARE(mgr.tripGroups().size(), 1);
+            QCOMPARE(mgr.tripGroup(mgr.tripGroups().at(0)).elements().size(), 1);
         }
     }
 
@@ -170,6 +201,7 @@ private Q_SLOTS:
         mgr.setTransferManager(&transferMgr);
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&resMgr);
+        ctrl->setTripGroupManager(&mgr);
 
         // after adding the third element this will find a loop between the two inner legs and remove the first leg as a leading appendix
         // the fourth leg however should be fixing that and result in a single 4 leg group
@@ -204,7 +236,7 @@ private Q_SLOTS:
         QCOMPARE(addSpy.size(), 1);
         auto g = mgr.tripGroup(addSpy.at(0).at(0).toString());
         QCOMPARE(g.elements().size(), resMgr.batches().size());
-        QCOMPARE(changeSpy.size(), 0);
+        QCOMPARE(changeSpy.size(), 1);
 
         changeSpy.clear();
         Test::clearAll(&resMgr);
@@ -229,6 +261,8 @@ private Q_SLOTS:
         QTest::newRow("IATA BCBP no times") << QStringLiteral(SOURCE_DIR "/data/tripgroup/iata-bcbp-no-times.json") << QStringLiteral("Milan Malpensa (September 2019)");
         QTest::newRow("Unidirectional") << QStringLiteral(SOURCE_DIR "/data/tripgroup/unidirectional-train-trip.json") << u"Milano Centrale (September 2019)"_s;
         QTest::newRow("Unidirectional with events") << QStringLiteral(SOURCE_DIR "/data/tripgroup/unidirectional-with-events.json") << u"KDE Akademy 2024 (September 2024)"_s;
+        QTest::newRow("multi-day-event") << QStringLiteral(SOURCE_DIR "/data/timeline/event-multi-day.json") << u"KDE Akademy 2023 (July 2023)"_s;
+        QTest::newRow("flight-cancelation") << QStringLiteral(SOURCE_DIR "/data/timeline/flight-cancelation.json") << u"John F. Kennedy International Airport (October 1996)"_s;
     }
 
     void testGroupName()
@@ -280,8 +314,11 @@ private Q_SLOTS:
         QSignalSpy addSpy(&mgr, &TripGroupManager::tripGroupAdded);
         mgr.setReservationManager(&resMgr);
         mgr.setTransferManager(&transferMgr);
-        QCOMPARE(addSpy.size(), 1);
+        QCOMPARE(addSpy.size(), 2);
         auto g = mgr.tripGroup(addSpy.at(0).at(0).toString());
+        QCOMPARE(g.elements().size(), 1);
+        QCOMPARE(g.name(), "Tegel (May 2000)"_L1);
+        g = mgr.tripGroup(addSpy.at(1).at(0).toString());
         QCOMPARE(g.elements().size(), resMgr.batches().size() - 1);
         QCOMPARE(g.name(), "Oslo Airport (June 2000)"_L1);
         QCOMPARE(g.slugName(), "oslo-airport-june-2000"_L1);
