@@ -32,7 +32,6 @@ using namespace KItinerary;
 
 constexpr inline const auto MaximumTripDuration = 20; // in days
 constexpr inline const auto MaximumTripElements = 30;
-constexpr inline const auto MinimumTripElements = 2;
 
 TripGroupManager::TripGroupManager(QObject* parent) :
     QObject(parent)
@@ -283,8 +282,8 @@ void TripGroupManager::batchRemoved(const QString &resId)
 
         auto elems = groupIt.value().elements();
         elems.removeAll(resId);
-        if (elems.isEmpty() || (groupIt.value().isAutomaticallyGrouped() && elems.size() < MinimumTripElements)) { // group deleted
-            qDebug() << "removing trip group due to getting too small";
+        if (elems.isEmpty()) { // group deleted
+            qDebug() << "removing empty trip group";
             removeTripGroup(groupId);
         } else { // group changed
             qDebug() << "removing element from trip group" << resId << elems;
@@ -528,8 +527,8 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
         }
     }
 
-    if (std::distance(beginIt, it) < MinimumTripElements - 1) {
-        qDebug() << "trip too short";
+    if (beginIt == it) {
+        qDebug() << "found empty trip";
         return;
     }
 

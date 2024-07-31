@@ -210,7 +210,7 @@ private Q_SLOTS:
         Test::clearAll(&resMgr);
         QCOMPARE(addSpy.size(), 1);
         QCOMPARE(rmSpy.size(), 1);
-        QCOMPARE(changeSpy.size(), 0);
+        QCOMPARE(changeSpy.size(), 1);
     }
 
     void testGroupName_data()
