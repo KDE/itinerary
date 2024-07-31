@@ -87,6 +87,7 @@ private:
 
     void scanAll();
     void scanOne(std::vector<QString>::const_iterator beginIt);
+    void createAutomaticGroup(const QStringList &elems);
     void checkConsistency();
     [[nodiscard]] QString guessDestinationFromEvent(const QStringList &elements) const;
     [[nodiscard]] QString guessDestinationFromLodging(const QStringList &elements) const;

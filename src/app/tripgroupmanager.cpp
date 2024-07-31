@@ -538,9 +538,14 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
     QList<QString> elems;
     elems.reserve(std::distance(beginIt, it));
     std::copy(beginIt, it, std::back_inserter(elems));
+    createAutomaticGroup(elems);
+}
 
-    // if we are looking at an existing group, did that expand?
-    const auto groupIt = m_tripGroups.find(m_reservationToGroupMap.value(*beginIt));
+void TripGroupManager::createAutomaticGroup(const QStringList &elems)
+{
+    Q_ASSERT(!elems.empty());
+
+    const auto groupIt = m_tripGroups.find(m_reservationToGroupMap.value(elems.front()));
     if (groupIt != m_tripGroups.end() && groupIt.value().elements() == elems) {
         qDebug() << "existing group unchanged" << groupIt.value().name();
         return;
@@ -551,13 +556,13 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
         const auto tgId = QUuid::createUuid().toString(QUuid::WithoutBraces);
         TripGroup g;
         g.setElements(elems);
-        for (auto it2 = beginIt; it2 != it; ++it2) {
+        for (const auto &elem : elems) {
             // remove overlapping/nested groups, delay this until the end though, as that will invalidate our iterators
-            const auto previousGroupId = m_reservationToGroupMap.value(*it2);
+            const auto previousGroupId = m_reservationToGroupMap.value(elem);
             if (!previousGroupId.isEmpty() && previousGroupId != tgId) {
                 pendingGroupRemovals.insert(previousGroupId);
             }
-            m_reservationToGroupMap.insert(*it2, tgId);
+            m_reservationToGroupMap.insert(elem, tgId);
         }
         g.setName(guessName(g.elements()));
         recomputeTripGroupTimes(g);
@@ -571,8 +576,8 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
             m_reservationToGroupMap.remove(elem);
         }
         g.setElements(elems);
-        for (auto it2 = beginIt; it2 != it; ++it2) {
-            m_reservationToGroupMap.insert(*it2, groupIt.key());
+        for (const auto &elem : elems) {
+            m_reservationToGroupMap.insert(elem, groupIt.key());
         }
         if (g.hasAutomaticName() || g.name().isEmpty()) {
             g.setName(guessName(g.elements()));
