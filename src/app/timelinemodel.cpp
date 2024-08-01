@@ -754,6 +754,9 @@ void TimelineModel::setCurrentDateTime(const QDateTime &dt)
 void TimelineModel::tripGroupAdded(const QString& groupId)
 {
     const auto g = m_tripGroupManager->tripGroup(groupId);
+    if (g.elements().size() < 2) {
+        return;
+    }
 
     TimelineElement beginElem{this, TimelineElement::TripGroup, g.beginDateTime(), groupId};
     beginElem.rangeType = TimelineElement::RangeBegin;
