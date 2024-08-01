@@ -52,6 +52,7 @@ private Q_SLOTS:
         tgMgr.setTransferManager(&transferMgr);
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&resMgr);
+        ctrl->setTransferManager(&transferMgr);
 
         StatisticsModel stats;
         QSignalSpy changeSpy(&stats, &StatisticsModel::changed);

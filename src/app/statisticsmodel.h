@@ -121,6 +121,7 @@ Q_SIGNALS:
 
 private:
     void recompute();
+    [[nodiscard]] bool isRelevantTripGroup(const QString &tgId) const;
 
     ReservationManager *m_resMgr = nullptr;
     TripGroupManager *m_tripGroupMgr = nullptr;

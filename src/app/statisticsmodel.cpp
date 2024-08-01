@@ -8,6 +8,7 @@
 #include "locationhelper.h"
 #include "localizer.h"
 #include "reservationmanager.h"
+#include "tripgroup.h"
 #include "tripgroupmanager.h"
 
 #include <KItinerary/LocationUtil>
@@ -310,7 +311,7 @@ void StatisticsModel::recompute()
         }
 
         const auto tgId = m_tripGroupMgr->tripGroupIdForReservation(batchId);
-        if (!tgId.isEmpty()) {
+        if (isRelevantTripGroup(tgId)) {
             isPrev ? prevTripGroups.insert(tgId) : tripGroups.insert(tgId);
         }
 
@@ -326,6 +327,16 @@ void StatisticsModel::recompute()
     m_prevTripGroupCount = prevTripGroups.size();
 
     Q_EMIT changed();
+}
+
+bool StatisticsModel::isRelevantTripGroup(const QString &tgId) const
+{
+    const auto tg = m_tripGroupMgr->tripGroup(tgId);
+    const auto elems = tg.elements();
+    return std::any_of(elems.begin(), elems.end(), [this](const QString &elem) {
+        const auto res = m_resMgr->reservation(elem);
+        return LocationUtil::isLocationChange(res);
+    });
 }
 
 StatisticsItem::Trend StatisticsModel::trend(int current, int prev) const
