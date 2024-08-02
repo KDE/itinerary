@@ -254,6 +254,58 @@ private Q_SLOTS:
         intersecting = model.intersectingTripGroups({{2017, 1, 1}, {13, 0}}, {{2017, 9, 15}, {14, 0}});
         QCOMPARE(intersecting.size(), 2);
     }
+
+    void testCurrentBatch()
+    {
+        ReservationManager resMgr;
+        Test::clearAll(&resMgr);
+        auto ctrl = Test::makeAppController();
+        ctrl->setReservationManager(&resMgr);
+
+        TransferManager transferMgr;
+
+        TripGroupManager mgr;
+        mgr.setReservationManager(&resMgr);
+        mgr.setTransferManager(&transferMgr);
+        ctrl->setTripGroupManager(&mgr);
+
+        TripGroupModel model;
+        model.setCurrentDateTime(QDateTime({2017, 8, 1}, {23, 0}, QTimeZone("Europe/Zurich")));
+        QAbstractItemModelTester tester(&model);
+        model.setTripGroupManager(&mgr);
+
+        QSignalSpy currentResChangedSpy(&model, &TripGroupModel::currentBatchChanged);
+
+        ImportController importer;
+        importer.setReservationManager(&resMgr);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
+        ctrl->commitImport(&importer);
+        QCOMPARE(model.rowCount(), 1);
+        QVERIFY(!currentResChangedSpy.empty());
+        const auto tg = mgr.tripGroup(mgr.tripGroups().at(0));
+        QCOMPARE(tg.elements().size(), 11);
+
+        model.setCurrentDateTime(QDateTime({2017, 8, 1}, {23, 0}, QTimeZone("Europe/Zurich")));
+        QVERIFY(model.currentBatchId().isEmpty());
+
+        model.setCurrentDateTime(QDateTime({2017, 9, 9}, {23, 0}, QTimeZone("Europe/Zurich")));
+        QVERIFY(!model.currentBatchId().isEmpty());
+        QCOMPARE(model.currentBatchId(), tg.elements().at(0));
+
+        model.setCurrentDateTime(QDateTime({2017, 9, 10}, {14, 0}, QTimeZone("Europe/Zurich")));
+        QVERIFY(!model.currentBatchId().isEmpty());
+        QCOMPARE(model.currentBatchId(), tg.elements().at(1));
+
+        model.setCurrentDateTime(QDateTime({2017, 9, 10}, {14, 5}, QTimeZone("Europe/Zurich")));
+        QVERIFY(!model.currentBatchId().isEmpty());
+        QCOMPARE(model.currentBatchId(), tg.elements().at(2));
+
+        model.setCurrentDateTime(QDateTime({2017, 9, 10}, {20, 0}, QTimeZone("Europe/Zurich")));
+        QVERIFY(model.currentBatchId().isEmpty());
+
+        model.setCurrentDateTime(QDateTime({2019, 1, 1}, {0, 0}, QTimeZone("Europe/Zurich")));
+        QVERIFY(model.currentBatchId().isEmpty());
+    }
 };
 QTEST_GUILESS_MAIN(TripGroupModelTest)
 

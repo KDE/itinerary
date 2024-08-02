@@ -655,50 +655,6 @@ private Q_SLOTS:
         ctrl->commitImport(&importer);
         QVERIFY(vp.verify(&model));
     }
-
-    void testCurrentReservation()
-    {
-        ReservationManager resMgr;
-        Test::clearAll(&resMgr);
-        auto ctrl = Test::makeAppController();
-        ctrl->setReservationManager(&resMgr);
-
-        TimelineModel model;
-        model.setCurrentDateTime(QDateTime({2017, 8, 1}, {23, 0}, QTimeZone("Europe/Zurich")));
-        QAbstractItemModelTester tester(&model);
-        model.setReservationManager(&resMgr);
-
-        QSignalSpy currentResChangedSpy(&model, &TimelineModel::currentBatchChanged);
-
-        ImportController importer;
-        importer.setReservationManager(&resMgr);
-        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
-        ctrl->commitImport(&importer);
-        QCOMPARE(model.rowCount(), 14);
-        QVERIFY(!currentResChangedSpy.empty());
-
-        model.setCurrentDateTime(QDateTime({2017, 8, 1}, {23, 0}, QTimeZone("Europe/Zurich")));
-        QVERIFY(model.currentBatchId().isEmpty());
-
-        model.setCurrentDateTime(QDateTime({2017, 9, 9}, {23, 0}, QTimeZone("Europe/Zurich")));
-        QVERIFY(!model.currentBatchId().isEmpty());
-        QCOMPARE(model.currentBatchId(), model.index(1, 0).data(TimelineModel::BatchIdRole).toString());
-
-        model.setCurrentDateTime(QDateTime({2017, 9, 10}, {14, 0}, QTimeZone("Europe/Zurich")));
-        QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TrainTrip);
-        QVERIFY(!model.currentBatchId().isEmpty());
-        QCOMPARE(model.currentBatchId(), model.index(2, 0).data(TimelineModel::BatchIdRole).toString());
-
-        model.setCurrentDateTime(QDateTime({2017, 9, 10}, {14, 5}, QTimeZone("Europe/Zurich")));
-        QVERIFY(!model.currentBatchId().isEmpty());
-        QCOMPARE(model.currentBatchId(), model.index(3, 0).data(TimelineModel::BatchIdRole).toString());
-
-        model.setCurrentDateTime(QDateTime({2017, 9, 10}, {20, 0}, QTimeZone("Europe/Zurich")));
-        QVERIFY(model.currentBatchId().isEmpty());
-
-        model.setCurrentDateTime(QDateTime({2019, 1, 1}, {0, 0}, QTimeZone("Europe/Zurich")));
-        QVERIFY(model.currentBatchId().isEmpty());
-    }
 };
 
 QTEST_GUILESS_MAIN(TimelineModelTest)

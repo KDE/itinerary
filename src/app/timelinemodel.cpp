@@ -85,12 +85,6 @@ TimelineModel::TimelineModel(QObject *parent)
         m_todayEmpty = !m_todayEmpty;
         Q_EMIT dataChanged(idx, idx);
     });
-
-    connect(&m_currentBatchTimer, &QTimer::timeout, this, &TimelineModel::currentBatchChanged);
-    connect(&m_currentBatchTimer, &QTimer::timeout, this, &TimelineModel::updateTodayMarker);
-    connect(&m_currentBatchTimer, &QTimer::timeout, this, &TimelineModel::scheduleCurrentBatchTimer);
-    m_currentBatchTimer.setTimerType(Qt::VeryCoarseTimer);
-    m_currentBatchTimer.setSingleShot(true);
 }
 
 TimelineModel::~TimelineModel() = default;
@@ -139,9 +133,6 @@ void TimelineModel::setReservationManager(ReservationManager* mgr)
     updateTodayMarker();
     updateInformationElements();
     Q_EMIT todayRowChanged();
-
-    scheduleCurrentBatchTimer();
-    Q_EMIT currentBatchChanged();
 }
 
 void TimelineModel::setWeatherForecastManager(WeatherForecastManager* mgr)
@@ -303,9 +294,6 @@ void TimelineModel::batchAdded(const QString &resId)
     updateInformationElements();
     updateTransfersForBatch(resId);
     Q_EMIT todayRowChanged();
-
-    scheduleCurrentBatchTimer();
-    Q_EMIT currentBatchChanged();
 }
 
 void TimelineModel::insertElement(TimelineElement &&elem)
@@ -354,9 +342,6 @@ void TimelineModel::batchChanged(const QString &resId)
     }
 
     updateInformationElements();
-
-    scheduleCurrentBatchTimer();
-    Q_EMIT currentBatchChanged();
 }
 
 void TimelineModel::batchRenamed(const QString& oldBatchId, const QString& newBatchId)
@@ -419,9 +404,6 @@ void TimelineModel::batchRemoved(const QString &resId)
     }
 
     updateInformationElements();
-
-    scheduleCurrentBatchTimer();
-    Q_EMIT currentBatchChanged();
 }
 
 void TimelineModel::dayChanged()
@@ -431,9 +413,6 @@ void TimelineModel::dayChanged()
 
     m_dayUpdateTimer.setInterval((QTime::currentTime().secsTo({23, 59, 59}) + 1) * 1000);
     m_dayUpdateTimer.start();
-
-    scheduleCurrentBatchTimer();
-    Q_EMIT currentBatchChanged();
 }
 
 void TimelineModel::updateTodayMarker()
@@ -747,8 +726,6 @@ void TimelineModel::setCurrentDateTime(const QDateTime &dt)
     if (dayDiffers && !m_elements.empty()) {
         dayChanged();
     }
-
-    scheduleCurrentBatchTimer();
 }
 
 void TimelineModel::tripGroupAdded(const QString& groupId)
@@ -837,135 +814,6 @@ void TimelineModel::transferRemoved(const QString &resId, Transfer::Alignment al
     endRemoveRows();
 
     Q_EMIT todayRowChanged();
-}
-
-[[nodiscard]] static bool isSelectableElement(const TimelineElement &elem)
-{
-    return elem.isReservation() && elem.rangeType == TimelineElement::SelfContained;
-}
-
-// same as SortUtil::endDateTime but with a lower bound estimate
-// when the end time isn't available
-[[nodiscard]] static QDateTime estimatedEndTime(const QVariant &res)
-{
-    if (SortUtil::hasEndTime(res)) {
-        return SortUtil::endDateTime(res);
-    }
-    if (JsonLd::isA<FlightReservation>(res)) {
-        const auto flight = res.value<FlightReservation>().reservationFor().value<Flight>();
-        const auto dist = LocationUtil::distance(flight.departureAirport().geo(), flight.arrivalAirport().geo());
-        if (std::isnan(dist) || !flight.departureTime().isValid()) {
-            return {};
-        }
-        auto dt = flight.departureTime();
-        return dt.addSecs((qint64)(dist * 250.0 / 3.6)); // see flightutil.cpp in kitinerary
-    }
-
-    return {};
-}
-
-QString TimelineModel::currentBatchId() const
-{
-    if (m_elements.empty()) {
-        return {};
-    }
-
-    // find the next reservation
-    auto it = std::lower_bound(m_elements.begin(), m_elements.end(), now());
-    for (; it != m_elements.end() && !isSelectableElement(*it); ++it) {}
-
-    QString nextResId;
-    QDateTime nextStartTime;
-    if (it != m_elements.end() && now().secsTo((*it).dt) < Constants::CurrentBatchLeadingMargin.count()) {
-        nextResId = (*it).batchId();
-        nextStartTime = (*it).dt;
-    }
-
-    // find the previous or current reservation
-    if (it != m_elements.begin()) {
-        --it;
-        for (; it != m_elements.begin() && (it == m_elements.end() || !isSelectableElement(*it)); --it) {}
-    }
-
-    auto resId = (*it).batchId();
-    const auto res = m_resMgr->reservation(resId);
-    auto endTime = estimatedEndTime(res);
-    if (endTime.secsTo(now()) > Constants::CurrentBatchTrailingMargin.count()) {
-        endTime = {};
-    }
-
-    // only one side found
-    if (!endTime.isValid()) {
-        return nextResId;
-    }
-    if (!nextStartTime.isValid()) {
-        return resId;
-    }
-
-    // (*it) is still active
-    if (endTime >= now()) {
-        return resId;
-    }
-
-    // take the one that is closer
-    return endTime.secsTo(now()) < now().secsTo(nextStartTime) ? resId : nextResId;
-}
-
-void TimelineModel::scheduleCurrentBatchTimer()
-{
-    if (m_elements.empty()) {
-        return;
-    }
-
-    // we need the smallest valid time > now() of any of the following:
-    // - end time of the current element + margin
-    // - start time - margin of the next res
-    // - end time of current + start time of next - endtime of current / 2
-    // - end time of the next element (in case we are in the leading margin already)
-
-    QDateTime triggerTime;
-    const auto updateTriggerTime = [&triggerTime, this](const QDateTime &dt) {
-        if (!dt.isValid() || dt <= now()) {
-            return;
-        }
-        if (!triggerTime.isValid()) {
-            triggerTime = dt;
-        } else {
-            triggerTime = std::min(triggerTime, dt);
-        }
-    };
-
-    // find the next reservation
-    auto it = std::lower_bound(m_elements.begin(), m_elements.end(), now());
-    for (; it != m_elements.end() && !isSelectableElement(*it); ++it) {}
-
-    QDateTime nextStartTime;
-    if (it != m_elements.end()) {
-        nextStartTime = (*it).dt;
-        updateTriggerTime(nextStartTime.addSecs(-Constants::CurrentBatchLeadingMargin.count()));
-        updateTriggerTime(SortUtil::endDateTime(m_resMgr->reservation((*it).batchId())));
-    }
-
-    // find the previous or current reservation
-    if (it != m_elements.begin()) {
-        --it;
-        for (; it != m_elements.begin() && (it == m_elements.end() || !isSelectableElement(*it)); --it) {}
-    }
-
-    const auto res = m_resMgr->reservation((*it).batchId());
-    auto endTime = SortUtil::endDateTime(res);
-    updateTriggerTime(endTime.addSecs(Constants::CurrentBatchTrailingMargin.count()));
-
-    if (nextStartTime.isValid() && endTime.isValid()) {
-        updateTriggerTime(endTime.addSecs(endTime.secsTo(nextStartTime) / 2));
-    }
-
-    // QTimer only has 31bit for its msec interval, so don't schedule beyond a day
-    // for longer distances we re-run this in the midnight timer above
-    if (triggerTime.isValid() && triggerTime.date() == today()) {
-        m_currentBatchTimer.setInterval(std::chrono::seconds(std::max<qint64>(60, now().secsTo(triggerTime))));
-        m_currentBatchTimer.start();
-    }
 }
 
 QVariant TimelineModel::locationAtTime(const QDateTime& dt) const

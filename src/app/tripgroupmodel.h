@@ -18,6 +18,8 @@ class TripGroupModel : public QAbstractListModel
 
     Q_PROPERTY(TripGroupManager *tripGroupManager READ tripGroupManager WRITE setTripGroupManager NOTIFY tripGroupManagerChanged)
 
+    Q_PROPERTY(QString currentBatchId READ currentBatchId NOTIFY currentBatchChanged)
+
 public:
     enum ExtraRoles {
         BeginRole = Qt::UserRole + 1,
@@ -54,6 +56,9 @@ public:
     /** Trips intersecting with the given time frame. */
     Q_INVOKABLE [[nodiscard]] QStringList intersectingTripGroups(const QDateTime &from, const QDateTime &to) const;
 
+    /** The most "current" batch to show with the "ticket check" action. */
+    [[nodiscard]] QString currentBatchId() const;
+
     // for unit testing
     void setCurrentDateTime(const QDateTime &dt);
     [[nodiscard]] QDateTime now() const;
@@ -61,6 +66,7 @@ public:
 
 Q_SIGNALS:
     void tripGroupManagerChanged();
+    void currentBatchChanged();
 
 private:
     void tripGroupAdded(const QString &tgId);
@@ -71,9 +77,11 @@ private:
     [[nodiscard]] bool tripGroupLessThan(const QString &lhs, const QDateTime &rhs) const;
 
     void scheduleUpdate();
+    void scheduleCurrentBatchTimer();
 
     TripGroupManager *m_tripGroupManager = nullptr;
     std::vector<QString> m_tripGroups;
     QTimer m_updateTimer;
+    QTimer m_currentBatchTimer;
     QDateTime m_unitTestTime;
 };

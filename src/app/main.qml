@@ -285,7 +285,7 @@ Kirigami.ApplicationWindow {
             }
             switch (page) {
             case "currentTicket":
-                pagepool.loadPage("TimelinePage.qml").showDetailsPageForReservation(TimelineModel.currentBatchId);
+                pagepool.loadPage("TimelinePage.qml").showDetailsPageForReservation(TripGroupModel.currentBatchId);
                 break;
             case "stats":
                 statsAction.trigger();
