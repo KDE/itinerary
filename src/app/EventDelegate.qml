@@ -67,19 +67,19 @@ TimelineDelegate {
             width: topLayout.width
 
             TimelineDelegateSeatRowLabel {
-                text: i18nc("event venut seat section", "Section: <b>%1</b>", reservation?.reservedTicket?.ticketedSeat?.seatSection || "-")
+                text: i18nc("event venue seat section", "Section: <b>%1</b>", reservation?.reservedTicket?.ticketedSeat?.seatSection || "-")
             }
             Kirigami.Separator {
                 Layout.fillHeight: true
             }
             TimelineDelegateSeatRowLabel {
-                text: i18nc("event venut seat row", "Row: <b>%1</b>", reservation?.reservedTicket?.ticketedSeat?.seatRow || "-")
+                text: i18nc("event venue seat row", "Row: <b>%1</b>", reservation?.reservedTicket?.ticketedSeat?.seatRow || "-")
             }
             Kirigami.Separator {
                 Layout.fillHeight: true
             }
             TimelineDelegateSeatRowLabel {
-                text: i18nc("event venut seat number", "Number: <b>%1</b>", reservation?.reservedTicket?.ticketedSeat?.seatNumber || "-")
+                text: i18nc("event venue seat number", "Number: <b>%1</b>", reservation?.reservedTicket?.ticketedSeat?.seatNumber || "-")
             }
         }
     }
