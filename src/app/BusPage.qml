@@ -179,7 +179,7 @@ DetailsPage {
 
         // seat reservation
         FormCard.FormHeader {
-            title: i18n("Seat")
+            title: i18nc("Bus seat", "Seat")
         }
 
         FormCard.FormCard {

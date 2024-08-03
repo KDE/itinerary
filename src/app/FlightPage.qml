@@ -91,7 +91,7 @@ DetailsPage {
 
             FormCard.FormTextDelegate {
                 id: seatLabel
-                text: i18n("Seat")
+                text: i18nc("Train seat", "Seat")
                 description: reservation.airplaneSeat
                 visible: reservation.airplaneSeat.length > 0
             }

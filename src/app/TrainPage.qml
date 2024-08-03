@@ -276,7 +276,7 @@ DetailsPage {
         // seat reservation
         FormCard.FormHeader {
             visible: seatCard.visible
-            title: i18n("Seat")
+            title: i18nc("Train seat", "Seat")
         }
 
         FormCard.FormCard {
@@ -293,7 +293,7 @@ DetailsPage {
             }
             FormCard.FormTextDelegate {
                 id: seatLabel
-                text: i18n("Seat:")
+                text: i18nc("Train seat", "Seat:")
                 description: root.reservation.reservedTicket ? root.reservation.reservedTicket.ticketedSeat.seatNumber : ''
                 visible: description
             }

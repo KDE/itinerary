@@ -192,14 +192,14 @@ EditorPage {
         }
 
         FormCard.FormHeader {
-            title: i18n("Seat")
+            title: i18nc("Flight seat", "Seat")
         }
 
         // TODO the below is per reservation, not per batch, so add a selector for that!
         FormCard.FormCard {
             FormCard.FormTextFieldDelegate {
                 id: seat
-                label: i18n("Seat")
+                label: i18nc("Flight seat", "Seat")
                 text: reservation.airplaneSeat
             }
         }

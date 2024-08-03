@@ -131,13 +131,13 @@ EditorPage {
 
         // TODO the below is per reservation, not per batch, so add a selector for that!
         FormCard.FormHeader {
-            title: i18n("Seat")
+            title: i18nc("Bus seat", "Seat")
         }
 
         FormCard.FormCard {
             FormCard.FormTextFieldDelegate {
                 id: seatNumber
-                label: i18n("Seat")
+                label: i18nc("Bus seat", "Seat")
                 text: reservation.reservedTicket ? reservation.reservedTicket.ticketedSeat.seatNumber : ""
             }
         }
