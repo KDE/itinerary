@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-28 02:34+0000\n"
-"PO-Revision-Date: 2024-07-05 13:41+0100\n"
+"PO-Revision-Date: 2024-08-03 13:41+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
 "Language: en_GB\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.0\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -498,7 +498,7 @@ msgstr "Booking"
 #, kde-format
 msgctxt "train seat"
 msgid "Seat: <b>%1</b>"
-msgstr ""
+msgstr "Seat: <b>%1</b>"
 
 #: app/BusDelegate.qml:152 app/TrainDelegate.qml:194
 #, kde-format
@@ -838,23 +838,22 @@ msgid "End time: %1"
 msgstr "End time: %1"
 
 #: app/EventDelegate.qml:70
-#, fuzzy, kde-format
-#| msgid "Direction: %1"
+#, kde-format
 msgctxt "event venut seat section"
 msgid "Section: <b>%1</b>"
-msgstr "Direction: %1"
+msgstr "Section: <b>%1</b>"
 
 #: app/EventDelegate.qml:76
 #, kde-format
 msgctxt "event venut seat row"
 msgid "Row: <b>%1</b>"
-msgstr ""
+msgstr "Row: <b>%1</b>"
 
 #: app/EventDelegate.qml:82
 #, kde-format
 msgctxt "event venut seat number"
 msgid "Number: <b>%1</b>"
-msgstr ""
+msgstr "Number: <b>%1</b>"
 
 #: app/EventEditor.qml:19
 #, kde-format
@@ -1039,19 +1038,19 @@ msgstr "Departure from %1: %2"
 #, kde-format
 msgctxt "flight departure terminal"
 msgid "Terminal: <b>%1</b>"
-msgstr ""
+msgstr "Terminal: <b>%1</b>"
 
 #: app/FlightDelegate.qml:89
 #, kde-format
 msgctxt "flight departure gate"
 msgid "Gate: <b>%1</b>"
-msgstr ""
+msgstr "Gate: <b>%1</b>"
 
 #: app/FlightDelegate.qml:95
 #, kde-format
 msgctxt "flight seats"
 msgid "Seat: <b>%1</b>"
-msgstr ""
+msgstr "Seat: <b>%1</b>"
 
 #: app/FlightDelegate.qml:100
 #, kde-format
@@ -3221,10 +3220,9 @@ msgid "Log in"
 msgstr "Log in"
 
 #: app/SettingsPage.qml:316
-#, fuzzy, kde-format
-#| msgid "Matrix Integration"
+#, kde-format
 msgid "Traewelling Integration"
-msgstr "Matrix Integration"
+msgstr "Traewelling Integration"
 
 #: app/SettingsPage.qml:321
 #, kde-format
@@ -3234,16 +3232,19 @@ msgid ""
 "you are and where you can log your public transit journeys. For more "
 "information, visit <a href=\"https://traewelling.de\">traewelling.de</a>"
 msgstr ""
+"Traewelling is a free check-in service that lets you tell your friends where "
+"you are and where you can log your public transit journeys. For more "
+"information, visit <a href=\"https://traewelling.de\">traewelling.de</a>"
 
 #: app/SettingsPage.qml:329
 #, kde-format
 msgid "Login"
-msgstr ""
+msgstr "Login"
 
 #: app/SettingsPage.qml:334
 #, kde-format
 msgid "Logout"
-msgstr ""
+msgstr "Logout"
 
 #: app/SettingsPage.qml:341
 #, kde-format
@@ -3540,18 +3541,16 @@ msgid "Pl. %1"
 msgstr "Pl. %1"
 
 #: app/TrainDelegate.qml:153
-#, fuzzy, kde-format
-#| msgctxt "train coach"
-#| msgid "Coach %1"
+#, kde-format
 msgctxt "train coach"
 msgid "Coach: <b>%1</b>"
-msgstr "Coach %1"
+msgstr "Coach: <b>%1</b>"
 
 #: app/TrainDelegate.qml:167
 #, kde-format
 msgctxt "train class"
 msgid "Class: <b>%1</b>"
-msgstr ""
+msgstr "Class: <b>%1</b>"
 
 #: app/TrainEditor.qml:18
 #, kde-format
@@ -3657,17 +3656,17 @@ msgstr "Arrival Vehicle Layout"
 #, kde-format
 msgctxt "@action:button"
 msgid "Add to Traewelling"
-msgstr ""
+msgstr "Add to Traewelling"
 
 #: app/TrainPage.qml:380
 #, kde-format
 msgid "Added to Traewelling"
-msgstr ""
+msgstr "Added to Traewelling"
 
 #: app/TrainPage.qml:380
 #, kde-format
 msgid "Failed to add to Traewelling"
-msgstr ""
+msgstr "Failed to add to Traewelling"
 
 #: app/TransferDelegate.qml:109
 #, kde-format
@@ -3781,16 +3780,14 @@ msgid "Edit…"
 msgstr "Edit…"
 
 #: app/TripGroupDelegate.qml:175
-#, fuzzy, kde-format
-#| msgid "Add ferry trip…"
+#, kde-format
 msgid "Merge trips…"
-msgstr "Add ferry trip…"
+msgstr "Merge trips…"
 
 #: app/TripGroupDelegate.qml:190
-#, fuzzy, kde-format
-#| msgid "Add train trip…"
+#, kde-format
 msgid "Split trip…"
-msgstr "Add train trip…"
+msgstr "Split trip…"
 
 #: app/TripGroupDelegate.qml:217
 #, kde-format
@@ -3837,41 +3834,35 @@ msgid "%1 (%2/%3)"
 msgstr "%1 (%2/%3)"
 
 #: app/TripGroupMergeDialog.qml:17
-#, fuzzy, kde-format
-#| msgid "Delete Trip"
+#, kde-format
 msgctxt "@title:window"
 msgid "Merge Trips"
-msgstr "Delete Trip"
+msgstr "Merge Trips"
 
 #: app/TripGroupMergeDialog.qml:40
 #, kde-format
 msgid "Merge with:"
-msgstr ""
+msgstr "Merge with:"
 
 #: app/TripGroupMergeDialog.qml:77
 #, kde-format
 msgid "Merge"
-msgstr ""
+msgstr "Merge"
 
 #: app/TripGroupSplitPage.qml:14
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Edit Trip"
+#, kde-format
 msgid "Split Trip"
-msgstr "Edit Trip"
+msgstr "Split Trip"
 
 #: app/TripGroupSplitPage.qml:22
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Add New Trip"
+#, kde-format
 msgid "New Trip"
-msgstr "Add New Trip"
+msgstr "New Trip"
 
 #: app/TripGroupSplitPage.qml:71
-#, fuzzy, kde-format
-#| msgid "Delete trip"
+#, kde-format
 msgid "Split trip"
-msgstr "Delete trip"
+msgstr "Split trip"
 
 #: app/VehicleLayoutPage.qml:18
 #, kde-format
