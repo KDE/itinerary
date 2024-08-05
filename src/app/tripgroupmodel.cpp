@@ -73,7 +73,6 @@ void TripGroupModel::setTripGroupManager(TripGroupManager *tripGroupManager)
     scheduleUpdate();
     scheduleCurrentBatchTimer();
 
-    Q_EMIT tripGroupManagerChanged();
     Q_EMIT currentBatchChanged();
 }
 

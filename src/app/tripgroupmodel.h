@@ -16,8 +16,6 @@ class TripGroupModel : public QAbstractListModel
     Q_OBJECT
     QML_ELEMENT
 
-    Q_PROPERTY(TripGroupManager *tripGroupManager READ tripGroupManager WRITE setTripGroupManager NOTIFY tripGroupManagerChanged)
-
     Q_PROPERTY(QString currentBatchId READ currentBatchId NOTIFY currentBatchChanged)
 
 public:
@@ -39,8 +37,7 @@ public:
     explicit TripGroupModel(QObject *parent = nullptr);
     ~TripGroupModel();
 
-    [[nodiscard]]
-    TripGroupManager *tripGroupManager() const;
+    [[nodiscard]] TripGroupManager *tripGroupManager() const;
     void setTripGroupManager(TripGroupManager *tripGroupManager);
 
     // QAbstractListModel interface
@@ -65,7 +62,6 @@ public:
     [[nodiscard]] QDate today() const;
 
 Q_SIGNALS:
-    void tripGroupManagerChanged();
     void currentBatchChanged();
 
 private:
