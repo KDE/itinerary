@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-03 00:40+0000\n"
+"POT-Creation-Date: 2024-08-06 00:39+0000\n"
 "PO-Revision-Date: 2024-07-24 08:51+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -3287,56 +3287,56 @@ msgstr "Я беру участь у проєкті OpenStreetMap"
 msgid "Enables OSM editing options."
 msgstr "Вмикає можливості редагування OSM."
 
-#: app/statisticsmodel.cpp:91
+#: app/statisticsmodel.cpp:92
 #, kde-format
 msgid "Trips"
 msgstr "Поїздки"
 
-#: app/statisticsmodel.cpp:96 app/statisticsmodel.cpp:129
-#: app/statisticsmodel.cpp:144 app/statisticsmodel.cpp:159
-#: app/statisticsmodel.cpp:174 app/statisticsmodel.cpp:189
+#: app/statisticsmodel.cpp:97 app/statisticsmodel.cpp:130
+#: app/statisticsmodel.cpp:145 app/statisticsmodel.cpp:160
+#: app/statisticsmodel.cpp:175 app/statisticsmodel.cpp:190
 #, kde-format
 msgid "Distance"
 msgstr "Відстань"
 
-#: app/statisticsmodel.cpp:101
+#: app/statisticsmodel.cpp:102
 #, kde-format
 msgid "Hotel nights"
 msgstr "Ночівля у готелях"
 
-#: app/statisticsmodel.cpp:106 app/statisticsmodel.cpp:134
-#: app/statisticsmodel.cpp:149 app/statisticsmodel.cpp:164
-#: app/statisticsmodel.cpp:179 app/statisticsmodel.cpp:194
+#: app/statisticsmodel.cpp:107 app/statisticsmodel.cpp:135
+#: app/statisticsmodel.cpp:150 app/statisticsmodel.cpp:165
+#: app/statisticsmodel.cpp:180 app/statisticsmodel.cpp:195
 #, kde-format
 msgid "CO₂"
 msgstr "CO₂"
 
-#: app/statisticsmodel.cpp:119
+#: app/statisticsmodel.cpp:120
 #, kde-format
 msgid "Visited countries"
 msgstr "Відвідані країни"
 
-#: app/statisticsmodel.cpp:124
+#: app/statisticsmodel.cpp:125
 #, kde-format
 msgid "Flights"
 msgstr "Політ"
 
-#: app/statisticsmodel.cpp:139
+#: app/statisticsmodel.cpp:140
 #, kde-format
 msgid "Train rides"
 msgstr "Поїздки на потязі"
 
-#: app/statisticsmodel.cpp:154
+#: app/statisticsmodel.cpp:155
 #, kde-format
 msgid "Bus rides"
 msgstr "Поїздки на автобусі"
 
-#: app/statisticsmodel.cpp:169
+#: app/statisticsmodel.cpp:170
 #, kde-format
 msgid "Car rides"
 msgstr "Поїздки на автомобілі"
 
-#: app/statisticsmodel.cpp:184
+#: app/statisticsmodel.cpp:185
 #, kde-format
 msgid "Boat trips"
 msgstr "Подорожі човном"
