@@ -43,6 +43,7 @@ Kirigami.ScrollablePage {
             required property string name
             required property date begin
             required property date end
+            required property string tripGroupId
             required property var tripGroup
 
             text: name
@@ -68,6 +69,7 @@ Kirigami.ScrollablePage {
             }
 
             onClicked: applicationWindow().pageStack.push(Qt.createComponent('org.kde.itinerary', 'TripGroupPage'), {
+                tripGroupId: delegate.tripGroupId,
                 tripGroup: delegate.tripGroup,
             });
         }

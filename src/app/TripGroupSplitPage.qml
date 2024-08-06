@@ -16,6 +16,9 @@ Kirigami.ScrollablePage {
     /** The trip group to split */
     property var tripGroup
 
+    /** Emitted when a group split has been executed. */
+    signal splitDone()
+
     header: ColumnLayout {
         Layout.fillWidth: true
         FormCard.FormHeader {
@@ -71,6 +74,7 @@ Kirigami.ScrollablePage {
                 text: i18n("Split trip")
                 onTriggered: {
                     TripGroupManager.createGroup(splitModel.selection, nameEdit.text);
+                    root.splitDone();
                     applicationWindow().pageStack.pop();
                 }
             }

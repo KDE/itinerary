@@ -173,34 +173,6 @@ FormCard.FormCard {
                         QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                     }
                     QQC2.ToolButton {
-                        text: i18n("Merge trips…")
-                        icon.name: "merge"
-                        display: QQC2.AbstractButton.IconOnly
-                        enabled: root.controller.canMerge
-                        visible: Settings.developmentMode
-                        onClicked: {
-                            tripGroupMergeDialog.tripGroupId = root.tripGroupId;
-                            tripGroupMergeDialog.tripGroup = root.tripGroup;
-                            tripGroupMergeDialog.open();
-                        }
-                        QQC2.ToolTip.text: text
-                        QQC2.ToolTip.visible: hovered
-                        QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
-                    }
-                    QQC2.ToolButton {
-                        text: i18n("Split trip…")
-                        icon.name: "split"
-                        display: QQC2.AbstractButton.IconOnly
-                        enabled: root.controller.canSplit
-                        visible: Settings.developmentMode
-                        onClicked: {
-                            applicationWindow().pageStack.push(tripGroupSplitPage, { tripGroup: root.tripGroup });
-                        }
-                        QQC2.ToolTip.text: text
-                        QQC2.ToolTip.visible: hovered
-                        QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
-                    }
-                    QQC2.ToolButton {
                         icon.name: "export-symbolic"
                         onClicked: {
                             exportTripGroupDialog.tripGroupId = root.tripGroupId
