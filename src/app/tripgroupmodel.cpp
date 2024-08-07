@@ -6,6 +6,7 @@
 
 #include "constants.h"
 #include "logging.h"
+#include "reservationhelper.h"
 #include "reservationmanager.h"
 #include "tripgroup.h"
 #include "tripgroupmanager.h"
@@ -446,6 +447,41 @@ void TripGroupModel::scheduleCurrentBatchTimer()
         m_currentBatchTimer.setInterval(std::chrono::seconds(std::max<qint64>(60, now().secsTo(triggerTime))));
         m_currentBatchTimer.start();
     }
+}
+
+QVariant TripGroupModel::locationAtTime(const QDateTime &dt) const
+{
+    auto it = std::lower_bound(m_tripGroups.begin(), m_tripGroups.end(), dt, [this](const auto &lhs, const auto &rhs) {
+        return tripGroupLessThan(lhs, rhs);
+    });
+
+    using namespace KItinerary;
+    for (; it != m_tripGroups.end(); ++it) {
+        const auto tg = m_tripGroupManager->tripGroup(*it);
+        const auto elems = tg.elements();
+        for (auto it2 = elems.rbegin(); it2 != elems.rend(); ++it2) {
+            const auto res = m_tripGroupManager->reservationManager()->reservation(*it2);
+            // happens after dt
+            if (SortUtil::startDateTime(res) > dt || ReservationHelper::isCancelled(res)) {
+                continue;
+            }
+
+            // this is a still ongoing non-location change
+            if (const auto endDt = SortUtil::endDateTime(res); !LocationUtil::isLocationChange(res) && endDt.isValid() && endDt > dt) {
+                auto loc = LocationUtil::location(res);
+                if (LocationUtil::geo(loc).isValid() || !LocationUtil::address(loc).addressCountry().isEmpty()) {
+                    return loc;
+                }
+            }
+
+            // TODO should this consider transfers?
+            if (LocationUtil::isLocationChange(res)) {
+                return LocationUtil::arrivalLocation(res);
+            }
+        }
+    }
+
+    return {};
 }
 
 QDateTime TripGroupModel::now() const

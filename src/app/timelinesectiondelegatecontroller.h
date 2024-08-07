@@ -12,7 +12,7 @@
 #include <QDate>
 #include <QObject>
 
-class TimelineModel;
+class TripGroupModel;
 
 /** Logic and data access for timeline section delegates.
  *  TODO this is still missing change notification for a few cases:
@@ -23,7 +23,7 @@ class TimelineSectionDelegateController : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(QString date READ dateString WRITE setDateString NOTIFY dateChanged)
-    Q_PROPERTY(TimelineModel *timelineModel READ timelineModel WRITE setTimelineModel NOTIFY timelineModelChanged)
+    Q_PROPERTY(TripGroupModel *tripGroupModel READ tripGroupModel WRITE setTripGroupModel NOTIFY tripGroupModelChanged)
 
     Q_PROPERTY(QString title READ title NOTIFY dateChanged)
     Q_PROPERTY(bool isToday READ isToday NOTIFY dateChanged)
@@ -35,25 +35,25 @@ public:
     ~TimelineSectionDelegateController();
 
     // limitation of what ListView can handle as a section value
-    QString dateString() const;
+    [[nodiscard]] QString dateString() const;
     void setDateString(const QString &dtStr);
 
-    TimelineModel *timelineModel() const;
-    void setTimelineModel(TimelineModel *model);
+    [[nodiscard]] TripGroupModel *tripGroupModel() const;
+    void setTripGroupModel(TripGroupModel *model);
 
-    QString title() const;
-    bool isToday() const;
-    QString subTitle() const;
-    bool isHoliday() const;
+    [[nodiscard]] QString title() const;
+    [[nodiscard]] bool isToday() const;
+    [[nodiscard]] QString subTitle() const;
+    [[nodiscard]] bool isHoliday() const;
 
 Q_SIGNALS:
     void dateChanged();
-    void timelineModelChanged();
+    void tripGroupModelChanged();
 
 private:
     void recheckHoliday();
 
-    TimelineModel *m_model = nullptr;
+    TripGroupModel *m_model = nullptr;
     QDate m_date;
     KHolidays::Holiday::List m_holidays;
 };

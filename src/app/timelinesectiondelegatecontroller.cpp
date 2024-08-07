@@ -7,7 +7,7 @@
 #include "timelinesectiondelegatecontroller.h"
 
 #include "locationhelper.h"
-#include "timelinemodel.h"
+#include "tripgroupmodel.h"
 
 #include <KHolidays/HolidayRegion>
 
@@ -21,7 +21,7 @@
 TimelineSectionDelegateController::TimelineSectionDelegateController(QObject *parent)
     : QObject(parent)
 {
-    connect(this, &TimelineSectionDelegateController::timelineModelChanged,
+    connect(this, &TimelineSectionDelegateController::tripGroupModelChanged,
             this, &TimelineSectionDelegateController::dateChanged);
 }
 
@@ -44,19 +44,19 @@ void TimelineSectionDelegateController::setDateString(const QString &dtStr)
     Q_EMIT dateChanged();
 }
 
-TimelineModel* TimelineSectionDelegateController::timelineModel() const
+TripGroupModel* TimelineSectionDelegateController::tripGroupModel() const
 {
     return m_model;
 }
 
-void TimelineSectionDelegateController::setTimelineModel(TimelineModel *model)
+void TimelineSectionDelegateController::setTripGroupModel(TripGroupModel *model)
 {
     if (m_model == model) {
         return;
     }
     m_model = model;
     recheckHoliday();
-    Q_EMIT timelineModelChanged();
+    Q_EMIT tripGroupModelChanged();
 }
 
 QString TimelineSectionDelegateController::title() const
@@ -101,7 +101,7 @@ static std::optional<KHolidays::HolidayRegion> cachedHolidayRegion(const QString
         return {};
     }
 
-    const auto holidayRegion = KHolidays::HolidayRegion(holidayRegionCode);
+    auto holidayRegion = KHolidays::HolidayRegion(holidayRegionCode);
     if (holidayRegion.isValid()) {
         s_cache.insert(regionCode, holidayRegion);
         return holidayRegion;

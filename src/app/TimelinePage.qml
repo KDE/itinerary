@@ -67,7 +67,7 @@ Kirigami.ScrollablePage {
         }
 
         // determine where we are at that time
-        const place = TimelineModel.locationAtTime(dt);
+        const place = TripGroupModel.locationAtTime(dt);
         var country = Settings.homeCountryIsoCode;
         var departureLocation;
         if (place) {

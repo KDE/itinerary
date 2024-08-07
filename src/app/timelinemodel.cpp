@@ -816,38 +816,6 @@ void TimelineModel::transferRemoved(const QString &resId, Transfer::Alignment al
     Q_EMIT todayRowChanged();
 }
 
-QVariant TimelineModel::locationAtTime(const QDateTime& dt) const
-{
-    auto it = std::lower_bound(m_elements.begin(), m_elements.end(), dt);
-    if (it == m_elements.begin()) {
-        return {};
-    }
-
-    for (--it ;; --it) {
-        // this is a still ongoing non-location change
-        if (it != m_elements.end() && !(*it).isLocationChange() && (*it).endDateTime().isValid() && (*it).endDateTime() > dt) {
-            if ((*it).isReservation()) {
-                auto loc = LocationUtil::location(m_resMgr->reservation((*it).batchId()));
-                if (LocationUtil::geo(loc).isValid() || !LocationUtil::address(loc).addressCountry().isEmpty()) {
-                    return loc;
-                }
-            }
-        }
-
-        if ((*it).isReservation() && (*it).isLocationChange()) {
-            // TODO make this work for transfers too
-            const auto res = m_resMgr->reservation((*it).batchId());
-            return LocationUtil::arrivalLocation(res);
-        }
-
-        if (it == m_elements.begin()) {
-            break;
-        }
-    }
-
-    return {};
-}
-
 bool TimelineModel::isDateEmpty(const QDate &date) const
 {
     auto it = std::lower_bound(m_elements.begin(), m_elements.end(), date, [](const auto &lhs, auto rhs) {

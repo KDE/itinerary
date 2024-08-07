@@ -42,7 +42,7 @@ Kirigami.ScrollablePage {
     function cityAtTime(dt) {
         let city = Factory.makePlace();
         let addr = city.address;
-        const loc = TimelineModel.locationAtTime(dt);
+        const loc = TripGroupModel.locationAtTime(dt);
         if (loc && !loc.address.isEmpty) {
             addr.addressLocality = loc.address.addressLocality;
             addr.addressRegion = loc.address.addressRegion;

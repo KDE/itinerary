@@ -7,6 +7,7 @@
 
 #include "applicationcontroller.h"
 #include "importcontroller.h"
+#include "locationhelper.h"
 #include "reservationmanager.h"
 #include "transfermanager.h"
 #include "tripgroup.h"
@@ -14,12 +15,15 @@
 #include "tripgroupmanager.h"
 #include "tripgroupmodel.h"
 
+#include <KItinerary/LocationUtil>
+
 #include <QAbstractItemModelTester>
 #include <QtTest/qtest.h>
 #include <QSignalSpy>
 #include <QStandardPaths>
 
 using namespace Qt::Literals;
+using namespace KItinerary;
 
 void initLocale()
 {
@@ -305,6 +309,54 @@ private Q_SLOTS:
 
         model.setCurrentDateTime(QDateTime({2019, 1, 1}, {0, 0}, QTimeZone("Europe/Zurich")));
         QVERIFY(model.currentBatchId().isEmpty());
+    }
+
+    void testLocationAtTime()
+    {
+        ReservationManager resMgr;
+        Test::clearAll(&resMgr);
+        auto ctrl = Test::makeAppController();
+        ctrl->setReservationManager(&resMgr);
+
+        TransferManager transferMgr;
+
+        TripGroupManager mgr;
+        mgr.setReservationManager(&resMgr);
+        mgr.setTransferManager(&transferMgr);
+        ctrl->setTripGroupManager(&mgr);
+
+        TripGroupModel model;
+        model.setCurrentDateTime(QDateTime({2017, 8, 1}, {23, 0}, QTimeZone("Europe/Zurich")));
+        QAbstractItemModelTester tester(&model);
+        model.setTripGroupManager(&mgr);
+
+        ImportController importer;
+        importer.setReservationManager(&resMgr);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
+        ctrl->commitImport(&importer);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
+        ctrl->commitImport(&importer);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/timeline/multi-traveler-merge-with-countryinfo.json")));
+        ctrl->commitImport(&importer);
+        // test data puts our known location to DE-BY and then adds a hotel in DE-BE for the BY-only public holiday on 2022-06-16
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/bug455083.json")));
+        ctrl->commitImport(&importer);
+
+        QCOMPARE(model.rowCount(), 5);
+
+        QCOMPARE(model.locationAtTime(QDateTime({1970, 1, 1}, {})), QVariant());
+
+        QCOMPARE(LocationUtil::name(model.locationAtTime(QDateTime({2017, 9, 10}, {8, 30}, QTimeZone("Europe/Zurich")))), u"Zürich");
+        QCOMPARE(LocationUtil::name(model.locationAtTime(QDateTime({2017, 9, 10}, {15, 30}, QTimeZone("Europe/Zurich")))), u"Randa");
+        QCOMPARE(LocationHelper::regionCode(model.locationAtTime(QDateTime({2017, 9, 11}, {0, 0}))), "CH-VS"_L1);
+        QCOMPARE(LocationHelper::regionCode(model.locationAtTime(QDateTime({2017, 9, 16}, {0, 0}))), "DE-BE"_L1);
+
+        QCOMPARE(LocationHelper::regionCode(model.locationAtTime(QDateTime({2022, 6, 12}, {0, 0}, QTimeZone("Europe/Berlin")))), "DE-BY"_L1);
+        QCOMPARE(LocationHelper::regionCode(model.locationAtTime(QDateTime({2022, 6, 13}, {0, 0}, QTimeZone("Europe/Berlin")))), "DE-BY"_L1);
+        QCOMPARE(LocationHelper::regionCode(model.locationAtTime(QDateTime({2022, 6, 14}, {0, 0}, QTimeZone("Europe/Berlin")))), "DE-BE"_L1);
+        QCOMPARE(LocationHelper::regionCode(model.locationAtTime(QDateTime({2022, 6, 16}, {0, 0}, QTimeZone("Europe/Berlin")))), "DE-BE"_L1);
+        QCOMPARE(LocationHelper::regionCode(model.locationAtTime(QDateTime({2022, 6, 17}, {0, 0}, QTimeZone("Europe/Berlin")))), "DE-BY"_L1);
+        QCOMPARE(LocationHelper::regionCode(model.locationAtTime(QDateTime({2022, 6, 18}, {0, 0}, QTimeZone("Europe/Berlin")))), "DE-BY"_L1);
     }
 };
 QTEST_GUILESS_MAIN(TripGroupModelTest)

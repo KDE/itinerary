@@ -13,7 +13,7 @@ QQC2.Pane {
     property alias day: _controller.date
     property QtObject controller: TimelineSectionDelegateController {
         id: _controller;
-        timelineModel: TimelineModel
+        tripGroupModel: TripGroupModel
     }
 
     width: ListView.view.width

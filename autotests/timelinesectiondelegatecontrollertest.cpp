@@ -6,12 +6,13 @@
 
 #include "testhelper.h"
 
-#include "importcontroller.h"
-#include "locationhelper.h"
-#include "timelinemodel.h"
-#include "timelinesectiondelegatecontroller.h"
 #include "applicationcontroller.h"
+#include "importcontroller.h"
 #include "reservationmanager.h"
+#include "timelinesectiondelegatecontroller.h"
+#include "transfermanager.h"
+#include "tripgroupmanager.h"
+#include "tripgroupmodel.h"
 
 #include <QUrl>
 #include <QtTest/qtest.h>
@@ -45,21 +46,26 @@ private Q_SLOTS:
         Test::clearAll(&mgr);
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&mgr);
+
+        TransferManager transferMgr;
+
+        TripGroupManager tgMgr;
+        tgMgr.setReservationManager(&mgr);
+        tgMgr.setTransferManager(&transferMgr);
+        ctrl->setTripGroupManager(&tgMgr);
+
         ImportController importer;
         importer.setReservationManager(&mgr);
         importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
         ctrl->commitImport(&importer);
 
-        TimelineModel model;
+        TripGroupModel model;
+        model.setTripGroupManager(&tgMgr);
         model.setCurrentDateTime(QDateTime({2021, 3, 7}, {8, 0}));
-        model.setReservationManager(&mgr);
-
-        QCOMPARE(model.locationAtTime(QDateTime({2017, 9, 10}, {0, 0})), QVariant());
-        QCOMPARE(LocationHelper::regionCode(model.locationAtTime(QDateTime({2017, 9, 11}, {0, 0}))), QLatin1StringView("CH-VS"));
-        QCOMPARE(LocationHelper::regionCode(model.locationAtTime(QDateTime({2017, 9, 16}, {0, 0}))), QLatin1StringView("DE-BE"));
+        QCOMPARE(model.rowCount(), 1);
 
         TimelineSectionDelegateController controller;
-        controller.setTimelineModel(&model);
+        controller.setTripGroupModel(&model);
 
         controller.setDateString(QStringLiteral("2021-03-07"));
         QCOMPARE(controller.isToday(), true);
@@ -82,30 +88,6 @@ private Q_SLOTS:
         QCOMPARE(controller.isToday(), false);
         QCOMPARE(controller.subTitle(), QLatin1StringView("Neujahr"));
         QCOMPARE(controller.isHoliday(), true);
-    }
-
-    void testBug455083()
-    {
-        ReservationManager mgr;
-        Test::clearAll(&mgr);
-        auto ctrl = Test::makeAppController();
-        ctrl->setReservationManager(&mgr);
-        // test data puts our known location to DE-BY and then adds a hotel in DE-BE for the BY-only public holiday on 2022-06-16
-        ImportController importer;
-        importer.setReservationManager(&mgr);
-        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/bug455083.json")));
-        ctrl->commitImport(&importer);
-
-        TimelineModel model;
-        model.setCurrentDateTime(QDateTime({2022, 6, 14}, {8, 0}));
-        model.setReservationManager(&mgr);
-
-        QCOMPARE(LocationHelper::regionCode(model.locationAtTime(QDateTime({2022, 6, 12}, {0, 0}, QTimeZone("Europe/Berlin")))), QLatin1StringView("DE-BY"));
-        QCOMPARE(LocationHelper::regionCode(model.locationAtTime(QDateTime({2022, 6, 13}, {0, 0}, QTimeZone("Europe/Berlin")))), QLatin1StringView("DE-BY"));
-        QCOMPARE(LocationHelper::regionCode(model.locationAtTime(QDateTime({2022, 6, 14}, {0, 0}, QTimeZone("Europe/Berlin")))), QLatin1StringView("DE-BE"));
-        QCOMPARE(LocationHelper::regionCode(model.locationAtTime(QDateTime({2022, 6, 16}, {0, 0}, QTimeZone("Europe/Berlin")))), QLatin1StringView("DE-BE"));
-        QCOMPARE(LocationHelper::regionCode(model.locationAtTime(QDateTime({2022, 6, 17}, {0, 0}, QTimeZone("Europe/Berlin")))), QLatin1StringView("DE-BY"));
-        QCOMPARE(LocationHelper::regionCode(model.locationAtTime(QDateTime({2022, 6, 18}, {0, 0}, QTimeZone("Europe/Berlin")))), QLatin1StringView("DE-BY"));
     }
 };
 

@@ -61,9 +61,6 @@ public:
 
     int todayRow() const;
 
-    /** The location we are in at the given date/time. */
-    Q_INVOKABLE QVariant locationAtTime(const QDateTime &dt) const;
-
     // for unit testing
     void setCurrentDateTime(const QDateTime &dt);
     QDateTime now() const;
