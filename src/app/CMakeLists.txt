@@ -337,6 +337,7 @@ if (ANDROID)
         view-barcode-qr
         view-calendar
         view-calendar-day
+        view-currency-list
         view-list-details
         view-refresh
         view-statistics

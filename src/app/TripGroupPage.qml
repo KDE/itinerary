@@ -149,6 +149,55 @@ Kirigami.ScrollablePage {
         topMargin: Kirigami.Units.gridUnit
         spacing: Kirigami.Units.gridUnit
 
+        header: ColumnLayout {
+            width: listView.width
+
+            FormCard.FormCard {
+                Layout.bottomMargin: listView.spacing
+
+                FormCard.FormTextDelegate {
+                    id: dateLabel
+                    readonly property int dayCount: Math.ceil((root.tripGroup.endDateTime.getTime() - root.tripGroup.beginDateTime.getTime()) / (1000 * 3600 * 24))
+                    text: dateLabel.dayCount <= 1 ? Localizer.formatDate(root.tripGroup, "beginDateTime")
+                        : i18n("%1 - %2",  Localizer.formatDate(root.tripGroup, "beginDateTime"),  Localizer.formatDate(root.tripGroup, "endDateTime"))
+                    description: dateLabel.dayCount >= 1 ? i18np("One day", "%1 days", dateLabel.dayCount) : ""
+                }
+
+                FormCard.FormTextDelegate {
+                    visible: root.controller.weatherForecast.valid
+                    icon.name:  root.controller.weatherForecast.symbolIconName
+                    text: i18nc("temperature range", "%1 / %2",  Localizer.formatTemperature(root.controller.weatherForecast.minimumTemperature),
+                                                                 Localizer.formatTemperature(root.controller.weatherForecast.maximumTemperature))
+                }
+
+                Repeater {
+                    model: root.controller.locationInformation
+
+                    FormCard.FormTextDelegate {
+                        icon.name: "documentinfo"
+                        icon.color: modelData.powerPlugCompatibility == LocationInformation.PartiallyCompatible ? Kirigami.Theme.neutralTextColor : Kirigami.Theme.negativeTextColor
+                        text: Country.fromAlpha2(modelData.isoCode).name
+                        description: {
+                            if (modelData.powerPlugCompatibility == LocationInformation.PartiallyCompatible) {
+                                if (modelData.powerPlugTypes.length === 0) {
+                                    return i18n("Some incompatible power sockets (%1)", modelData.powerSocketTypes);
+                                } else {
+                                    return i18n("Some incompatible power plugs (%1)", modelData.powerPlugTypes);
+                                }
+                            }
+                            return i18n("No compatible power plugs (%1)", modelData.powerSocketTypes);
+                        }
+                    }
+                }
+
+                FormCard.FormTextDelegate {
+                    icon.name: "view-currency-list"
+                    text: root.controller.currencies.length > 0 ? i18np("Currency: %2", "Currencies: %2", root.controller.currencies.length, root.controller.currencies.join(", ")) : ""
+                    visible: root.controller.currencies.length > 0
+                }
+            }
+        }
+
         /*model: TripTimelineModel {
             tripGroup: root.tripGroup
             reservationManager: ReservationManager
