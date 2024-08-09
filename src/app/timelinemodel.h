@@ -24,6 +24,12 @@ class TimelineModel : public QAbstractListModel
     Q_OBJECT
     Q_PROPERTY(int todayRow READ todayRow NOTIFY todayRowChanged)
 
+    Q_PROPERTY(ReservationManager* reservationManager MEMBER m_resMgr WRITE setReservationManager NOTIFY setupChanged)
+    Q_PROPERTY(TransferManager* transferManager MEMBER m_transferManager WRITE setTransferManager NOTIFY setupChanged)
+    Q_PROPERTY(TripGroupManager* tripGroupManager READ tripGroupManager WRITE setTripGroupManager NOTIFY setupChanged)
+    Q_PROPERTY(WeatherForecastManager* weatherForecastManager MEMBER m_weatherMgr WRITE setWeatherForecastManager NOTIFY setupChanged)
+    Q_PROPERTY(QString homeCountryIsoCode MEMBER m_homeCountry WRITE setHomeCountryIsoCode NOTIFY setupChanged)
+
 public:
     enum Role {
         SectionHeaderRole = Qt::UserRole + 1,
@@ -50,7 +56,7 @@ public:
 
     void setReservationManager(ReservationManager *mgr);
     void setWeatherForecastManager(WeatherForecastManager *mgr);
-    TripGroupManager* tripGroupManager() const;
+    [[nodiscard]] TripGroupManager* tripGroupManager() const;
     void setTripGroupManager(TripGroupManager *mgr);
     void setHomeCountryIsoCode(const QString &isoCode);
     void setTransferManager(TransferManager *mgr);
@@ -67,6 +73,7 @@ public:
     QDate today() const;
 
 Q_SIGNALS:
+    void setupChanged();
     void todayRowChanged();
 
 private:

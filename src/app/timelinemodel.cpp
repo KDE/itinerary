@@ -90,6 +90,10 @@ TimelineModel::~TimelineModel() = default;
 
 void TimelineModel::setReservationManager(ReservationManager* mgr)
 {
+    if (m_resMgr == mgr) {
+        return;
+    }
+
     // for auto tests only
     if (Q_UNLIKELY(!mgr)) {
         beginResetModel();
@@ -132,13 +136,19 @@ void TimelineModel::setReservationManager(ReservationManager* mgr)
     updateTodayMarker();
     updateInformationElements();
     Q_EMIT todayRowChanged();
+    Q_EMIT setupChanged();
 }
 
 void TimelineModel::setWeatherForecastManager(WeatherForecastManager* mgr)
 {
+    if (m_weatherMgr == mgr) {
+        return;
+    }
+
     m_weatherMgr = mgr;
     updateWeatherElements();
     connect(m_weatherMgr, &WeatherForecastManager::forecastUpdated, this, &TimelineModel::updateWeatherElements);
+    Q_EMIT setupChanged();
 }
 
 TripGroupManager* TimelineModel::tripGroupManager() const
@@ -148,6 +158,10 @@ TripGroupManager* TimelineModel::tripGroupManager() const
 
 void TimelineModel::setTripGroupManager(TripGroupManager *mgr)
 {
+    if (m_tripGroupManager == mgr) {
+        return;
+    }
+
     m_tripGroupManager = mgr;
     connect(mgr, &TripGroupManager::tripGroupAdded, this, &TimelineModel::tripGroupAdded);
     connect(mgr, &TripGroupManager::tripGroupChanged, this, &TimelineModel::tripGroupChanged);
@@ -155,16 +169,28 @@ void TimelineModel::setTripGroupManager(TripGroupManager *mgr)
     for (const auto &group : mgr->tripGroups()) {
         tripGroupAdded(group);
     }
+
+    Q_EMIT setupChanged();
 }
 
 void TimelineModel::setHomeCountryIsoCode(const QString &isoCode)
 {
+    if (m_homeCountry == isoCode) {
+        return;
+    }
+
     m_homeCountry = isoCode;
     updateInformationElements();
+
+    Q_EMIT setupChanged();
 }
 
 void TimelineModel::setTransferManager(TransferManager *mgr)
 {
+    if (m_transferManager == mgr) {
+        return;
+    }
+
     m_transferManager = mgr;
     connect(mgr, &TransferManager::transferAdded, this, &TimelineModel::transferChanged);
     connect(mgr, &TransferManager::transferChanged, this, &TimelineModel::transferChanged);
@@ -174,6 +200,8 @@ void TimelineModel::setTransferManager(TransferManager *mgr)
     for (const auto &batchId : m_resMgr->batches()) {
         updateTransfersForBatch(batchId);
     }
+
+    Q_EMIT setupChanged();
 }
 
 int TimelineModel::rowCount(const QModelIndex& parent) const
