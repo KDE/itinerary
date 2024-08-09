@@ -205,6 +205,13 @@ Kirigami.ScrollablePage {
             tripGroupManager: TripGroupManager
         }*/
 
+        section {
+            property: "sectionHeader"
+            delegate: TimelineSectionDelegate { day: section }
+            criteria: ViewSection.FullString
+            labelPositioning: ViewSection.CurrentLabelAtStart | ViewSection.InlineLabels
+        }
+
         delegate: Models.DelegateChooser {
             role: "type"
             Models.DelegateChoice {
