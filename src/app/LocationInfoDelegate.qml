@@ -15,7 +15,7 @@ import org.kde.itinerary
 
 FormCard.FormCard {
     id: root
-    width: parent.width
+    width: ListView.view.width
 
     property var locationInfo
 
