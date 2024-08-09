@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-06 00:39+0000\n"
+"POT-Creation-Date: 2024-08-09 00:40+0000\n"
 "PO-Revision-Date: 2024-07-24 08:51+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -585,10 +585,9 @@ msgid "Alight earlier"
 msgstr "Приземлиться раніше"
 
 #: app/BusEditor.qml:134 app/BusEditor.qml:140 app/BusPage.qml:182
-#: app/EventPage.qml:101 app/FlightEditor.qml:195 app/FlightEditor.qml:202
-#: app/FlightPage.qml:94 app/TrainEditor.qml:146 app/TrainEditor.qml:158
-#: app/TrainPage.qml:279
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Seat"
+msgctxt "Bus seat"
 msgid "Seat"
 msgstr "Місце"
 
@@ -850,20 +849,26 @@ msgid "End time: %1"
 msgstr "Час завершення: %1"
 
 #: app/EventDelegate.qml:70
-#, kde-format
-msgctxt "event venut seat section"
+#, fuzzy, kde-format
+#| msgctxt "event venut seat section"
+#| msgid "Section: <b>%1</b>"
+msgctxt "event venue seat section"
 msgid "Section: <b>%1</b>"
 msgstr "Секція: <b>%1</b>"
 
 #: app/EventDelegate.qml:76
-#, kde-format
-msgctxt "event venut seat row"
+#, fuzzy, kde-format
+#| msgctxt "event venut seat row"
+#| msgid "Row: <b>%1</b>"
+msgctxt "event venue seat row"
 msgid "Row: <b>%1</b>"
 msgstr "Ряд: <b>%1</b>"
 
 #: app/EventDelegate.qml:82
-#, kde-format
-msgctxt "event venut seat number"
+#, fuzzy, kde-format
+#| msgctxt "event venut seat number"
+#| msgid "Number: <b>%1</b>"
+msgctxt "event venue seat number"
 msgid "Number: <b>%1</b>"
 msgstr "Номер: <b>%1</b>"
 
@@ -931,6 +936,11 @@ msgstr "Місце"
 msgctxt "venue name"
 msgid "Name"
 msgstr "Назва"
+
+#: app/EventPage.qml:101
+#, kde-format
+msgid "Seat"
+msgstr "Місце"
 
 #: app/EventPage.qml:108
 #, kde-format
@@ -1171,6 +1181,13 @@ msgstr "Номер рейсу"
 msgid "Invalid flight number."
 msgstr "Некоректний номер рейсу."
 
+#: app/FlightEditor.qml:195 app/FlightEditor.qml:202
+#, fuzzy, kde-format
+#| msgid "Seat"
+msgctxt "Flight seat"
+msgid "Seat"
+msgstr "Місце"
+
 #: app/FlightPage.qml:59
 #, kde-format
 msgid "Sequence Number:"
@@ -1185,6 +1202,14 @@ msgstr "Стіл реєстрації"
 #, kde-format
 msgid "Boarding group"
 msgstr "Група реєстрації"
+
+#: app/FlightPage.qml:94 app/TrainEditor.qml:146 app/TrainEditor.qml:158
+#: app/TrainPage.qml:279
+#, fuzzy, kde-format
+#| msgid "Seat"
+msgctxt "Train seat"
+msgid "Seat"
+msgstr "Місце"
 
 #: app/FlightPage.qml:103
 #, kde-format
@@ -3659,7 +3684,9 @@ msgid "Coach:"
 msgstr "Вагон:"
 
 #: app/TrainPage.qml:296
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Seat:"
+msgctxt "Train seat"
 msgid "Seat:"
 msgstr "Місце:"
 
