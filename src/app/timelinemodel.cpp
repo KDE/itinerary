@@ -93,20 +93,7 @@ void TimelineModel::setReservationManager(ReservationManager* mgr)
     if (m_resMgr == mgr) {
         return;
     }
-
-    // for auto tests only
-    if (Q_UNLIKELY(!mgr)) {
-        beginResetModel();
-        disconnect(m_resMgr, &ReservationManager::batchAdded, this, &TimelineModel::batchAdded);
-        disconnect(m_resMgr, &ReservationManager::batchChanged, this, &TimelineModel::batchChanged);
-        disconnect(m_resMgr, &ReservationManager::batchContentChanged, this, &TimelineModel::batchChanged);
-        disconnect(m_resMgr, &ReservationManager::batchRenamed, this, &TimelineModel::batchRenamed);
-        disconnect(m_resMgr, &ReservationManager::batchRemoved, this, &TimelineModel::batchRemoved);
-        m_resMgr = mgr;
-        m_elements.clear();
-        endResetModel();
-        return;
-    }
+    assert(mgr);
 
     beginResetModel();
     m_resMgr = mgr;

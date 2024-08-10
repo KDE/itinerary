@@ -396,9 +396,13 @@ private Q_SLOTS:
         QCOMPARE(fc.dateTime(), QDateTime(currentDate.addDays(5), QTime(0, 0)));
 
         // result is the same when data hasn't been added incrementally
-        model.setReservationManager(nullptr);
-        model.setReservationManager(&resMgr);
-        QCOMPARE(model.rowCount(), 14);
+        {
+            TimelineModel model;
+            QAbstractItemModelTester tester(&model);
+            model.setReservationManager(&resMgr);
+            model.setWeatherForecastManager(&weatherMgr);
+            QCOMPARE(model.rowCount(), 14);
+        }
 
         fc = model.index(3, 0).data(TimelineModel::WeatherForecastRole).value<WeatherInformation>().forecast;
         QVERIFY(fc.isValid());
@@ -490,16 +494,20 @@ private Q_SLOTS:
         QCOMPARE(resMgr.reservationsForBatch(model.index(1, 0).data(TimelineModel::BatchIdRole).toString()).size(), 2);
 
         // already existing data
-        model.setReservationManager(nullptr);
-        model.setReservationManager(&resMgr);
-        QCOMPARE(model.rowCount(), 5); // 2x Flight, 1x tz change, 1x DST info, 1x TodayMarger
-        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
-        QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
-        QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
-        QCOMPARE(model.index(3, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
-        QCOMPARE(model.index(4, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
-        QCOMPARE(resMgr.reservationsForBatch(model.index(0, 0).data(TimelineModel::BatchIdRole).toString()).size(), 2);
-        QCOMPARE(resMgr.reservationsForBatch(model.index(1, 0).data(TimelineModel::BatchIdRole).toString()).size(), 2);
+        {
+            TimelineModel model;
+            model.setCurrentDateTime({{2024, 3, 29}, {10, 21}}); // after the DST transition in the US!
+            QAbstractItemModelTester tester(&model);
+            model.setReservationManager(&resMgr);
+            QCOMPARE(model.rowCount(), 5); // 2x Flight, 1x tz change, 1x DST info, 1x TodayMarger
+            QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
+            QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
+            QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
+            QCOMPARE(model.index(3, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
+            QCOMPARE(model.index(4, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
+            QCOMPARE(resMgr.reservationsForBatch(model.index(0, 0).data(TimelineModel::BatchIdRole).toString()).size(), 2);
+            QCOMPARE(resMgr.reservationsForBatch(model.index(1, 0).data(TimelineModel::BatchIdRole).toString()).size(), 2);
+        }
 
         // update splits element
         updateSpy.clear();
