@@ -378,15 +378,6 @@ Kirigami.ScrollablePage {
                 WeatherForecastDelegate {}
             }
             Models.DelegateChoice {
-                roleValue: TimelineElement.TripGroup
-                TripGroupDelegate {
-                    onRemoveTrip: (tripGroupId) => {
-                        deleteTripGroupWarningDialog.tripGroupId = tripGroupId;
-                        deleteTripGroupWarningDialog.open();
-                    }
-                }
-            }
-            Models.DelegateChoice {
                 roleValue: TimelineElement.Transfer
                 TransferDelegate {}
             }
