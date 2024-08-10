@@ -10,15 +10,15 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-09 00:40+0000\n"
-"PO-Revision-Date: 2024-07-24 20:21+0200\n"
-"Last-Translator: Antoni Bella Pérez <antonibella5@yahoo.com>\n"
+"PO-Revision-Date: 2024-08-09 12:28+0200\n"
+"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -575,8 +575,7 @@ msgid "Alight earlier"
 msgstr "Baixar-se abans"
 
 #: app/BusEditor.qml:134 app/BusEditor.qml:140 app/BusPage.qml:182
-#, fuzzy, kde-format
-#| msgid "Seat"
+#, kde-format
 msgctxt "Bus seat"
 msgid "Seat"
 msgstr "Seient"
@@ -839,25 +838,19 @@ msgid "End time: %1"
 msgstr "Hora de finalització: %1"
 
 #: app/EventDelegate.qml:70
-#, fuzzy, kde-format
-#| msgctxt "event venut seat section"
-#| msgid "Section: <b>%1</b>"
+#, kde-format
 msgctxt "event venue seat section"
 msgid "Section: <b>%1</b>"
 msgstr "Secció: <b>%1</b>"
 
 #: app/EventDelegate.qml:76
-#, fuzzy, kde-format
-#| msgctxt "event venut seat row"
-#| msgid "Row: <b>%1</b>"
+#, kde-format
 msgctxt "event venue seat row"
 msgid "Row: <b>%1</b>"
 msgstr "Fila: <b>%1</b>"
 
 #: app/EventDelegate.qml:82
-#, fuzzy, kde-format
-#| msgctxt "event venut seat number"
-#| msgid "Number: <b>%1</b>"
+#, kde-format
 msgctxt "event venue seat number"
 msgid "Number: <b>%1</b>"
 msgstr "Número: <b>%1</b>"
@@ -1172,8 +1165,7 @@ msgid "Invalid flight number."
 msgstr "Número de vol no vàlid."
 
 #: app/FlightEditor.qml:195 app/FlightEditor.qml:202
-#, fuzzy, kde-format
-#| msgid "Seat"
+#, kde-format
 msgctxt "Flight seat"
 msgid "Seat"
 msgstr "Seient"
@@ -1195,8 +1187,7 @@ msgstr "Grup d'embarcament"
 
 #: app/FlightPage.qml:94 app/TrainEditor.qml:146 app/TrainEditor.qml:158
 #: app/TrainPage.qml:279
-#, fuzzy, kde-format
-#| msgid "Seat"
+#, kde-format
 msgctxt "Train seat"
 msgid "Seat"
 msgstr "Seient"
@@ -3673,8 +3664,7 @@ msgid "Coach:"
 msgstr "Vagó:"
 
 #: app/TrainPage.qml:296
-#, fuzzy, kde-format
-#| msgid "Seat:"
+#, kde-format
 msgctxt "Train seat"
 msgid "Seat:"
 msgstr "Seient:"

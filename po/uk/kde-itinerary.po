@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-09 00:40+0000\n"
-"PO-Revision-Date: 2024-07-24 08:51+0300\n"
+"PO-Revision-Date: 2024-08-09 09:09+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -585,8 +585,7 @@ msgid "Alight earlier"
 msgstr "Приземлиться раніше"
 
 #: app/BusEditor.qml:134 app/BusEditor.qml:140 app/BusPage.qml:182
-#, fuzzy, kde-format
-#| msgid "Seat"
+#, kde-format
 msgctxt "Bus seat"
 msgid "Seat"
 msgstr "Місце"
@@ -849,25 +848,19 @@ msgid "End time: %1"
 msgstr "Час завершення: %1"
 
 #: app/EventDelegate.qml:70
-#, fuzzy, kde-format
-#| msgctxt "event venut seat section"
-#| msgid "Section: <b>%1</b>"
+#, kde-format
 msgctxt "event venue seat section"
 msgid "Section: <b>%1</b>"
 msgstr "Секція: <b>%1</b>"
 
 #: app/EventDelegate.qml:76
-#, fuzzy, kde-format
-#| msgctxt "event venut seat row"
-#| msgid "Row: <b>%1</b>"
+#, kde-format
 msgctxt "event venue seat row"
 msgid "Row: <b>%1</b>"
 msgstr "Ряд: <b>%1</b>"
 
 #: app/EventDelegate.qml:82
-#, fuzzy, kde-format
-#| msgctxt "event venut seat number"
-#| msgid "Number: <b>%1</b>"
+#, kde-format
 msgctxt "event venue seat number"
 msgid "Number: <b>%1</b>"
 msgstr "Номер: <b>%1</b>"
@@ -1182,8 +1175,7 @@ msgid "Invalid flight number."
 msgstr "Некоректний номер рейсу."
 
 #: app/FlightEditor.qml:195 app/FlightEditor.qml:202
-#, fuzzy, kde-format
-#| msgid "Seat"
+#, kde-format
 msgctxt "Flight seat"
 msgid "Seat"
 msgstr "Місце"
@@ -1205,8 +1197,7 @@ msgstr "Група реєстрації"
 
 #: app/FlightPage.qml:94 app/TrainEditor.qml:146 app/TrainEditor.qml:158
 #: app/TrainPage.qml:279
-#, fuzzy, kde-format
-#| msgid "Seat"
+#, kde-format
 msgctxt "Train seat"
 msgid "Seat"
 msgstr "Місце"
@@ -3684,8 +3675,7 @@ msgid "Coach:"
 msgstr "Вагон:"
 
 #: app/TrainPage.qml:296
-#, fuzzy, kde-format
-#| msgid "Seat:"
+#, kde-format
 msgctxt "Train seat"
 msgid "Seat:"
 msgstr "Місце:"
