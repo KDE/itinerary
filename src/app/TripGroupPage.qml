@@ -144,6 +144,68 @@ Kirigami.ScrollablePage {
         ]
     }
 
+    Component {
+        id: flightDetailsPage
+        FlightPage { editor: flightEditorPage }
+    }
+    Component {
+        id: trainDetailsPage
+        TrainPage {}
+    }
+    Component {
+        id: busDetailsPage
+        BusPage {}
+    }
+    Component {
+        id: hotelDetailsPage
+        HotelPage { editor: hotelEditorPage }
+    }
+    Component {
+        id: eventDetailsPage
+        EventPage { editor: eventEditorPage }
+    }
+    Component {
+        id: restaurantDetailsPage
+        RestaurantPage { editor: restaurantEditorPage }
+    }
+    Component {
+        id: carRentalDetailsPage
+        CarRentalPage {}
+    }
+    Component {
+        id: boatDetailsPage
+        BoatPage { editor: boatEditorPage }
+    }
+    Component {
+        id: touristAttractionDetailsPage
+        TouristAttractionPage {}
+    }
+    Component {
+        id: weatherForecastPage
+        WeatherForecastPage {}
+    }
+
+    Component {
+        id: flightEditorPage
+        FlightEditor {}
+    }
+    Component {
+        id: boatEditorPage
+        BoatEditor {}
+    }
+    Component {
+        id: hotelEditorPage
+        HotelEditor {}
+    }
+    Component {
+        id: eventEditorPage
+        EventEditor {}
+    }
+    Component {
+        id: restaurantEditorPage
+        RestaurantEditor {}
+    }
+
     ListView {
         id: listView
         topMargin: Kirigami.Units.gridUnit
