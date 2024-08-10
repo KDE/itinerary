@@ -413,6 +413,7 @@ Kirigami.ScrollablePage {
             FlightDelegate {
                 batchId: model.batchId
                 rangeType: model.rangeType
+                detailsPage: flightDetailsPage
             }
         }
         Models.DelegateChoice {
@@ -420,6 +421,7 @@ Kirigami.ScrollablePage {
             HotelDelegate {
                 batchId: model.batchId
                 rangeType: model.rangeType
+                detailsPage: hotelDetailsPage
             }
         }
         Models.DelegateChoice {
@@ -427,6 +429,7 @@ Kirigami.ScrollablePage {
             TrainDelegate {
                 batchId: model.batchId
                 rangeType: model.rangeType
+                detailsPage: trainDetailsPage
             }
         }
         Models.DelegateChoice {
@@ -434,6 +437,7 @@ Kirigami.ScrollablePage {
             BusDelegate {
                 batchId: model.batchId
                 rangeType: model.rangeType
+                detailsPage: busDetailsPage
             }
         }
         Models.DelegateChoice {
@@ -441,6 +445,7 @@ Kirigami.ScrollablePage {
             RestaurantDelegate {
                 batchId: model.batchId
                 rangeType: model.rangeType
+                detailsPage: restaurantDetailsPage
             }
         }
         Models.DelegateChoice {
@@ -448,6 +453,7 @@ Kirigami.ScrollablePage {
             TouristAttractionDelegate {
                 batchId: model.batchId
                 rangeType: model.rangeType
+                detailsPage: touristAttractionDetailsPage
             }
         }
         Models.DelegateChoice {
@@ -455,6 +461,7 @@ Kirigami.ScrollablePage {
             EventDelegate {
                 batchId: model.batchId
                 rangeType: model.rangeType
+                detailsPage: eventDetailsPage
             }
         }
         Models.DelegateChoice {
@@ -462,6 +469,7 @@ Kirigami.ScrollablePage {
             CarRentalDelegate {
                 batchId: model.batchId
                 rangeType: model.rangeType
+                detailsPage: carRentalDetailsPage
             }
         }
         Models.DelegateChoice {
@@ -469,6 +477,7 @@ Kirigami.ScrollablePage {
             BoatDelegate {
                 batchId: model.batchId
                 rangeType: model.rangeType
+                detailsPage: boatDetailsPage
             }
         }
         Models.DelegateChoice {

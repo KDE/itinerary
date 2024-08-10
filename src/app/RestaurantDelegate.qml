@@ -41,6 +41,5 @@ TimelineDelegate {
         }
     }
 
-    onClicked: showDetailsPage(restaurantDetailsPage, root.batchId)
     Accessible.name: headerLabel.text
 }

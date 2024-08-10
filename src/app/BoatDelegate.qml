@@ -60,7 +60,5 @@ TimelineDelegate {
             wrapMode: Text.WordWrap
         }
     }
-
-    onClicked: showDetailsPage(boatDetailsPage, root.batchId)
 }
 

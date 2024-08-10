@@ -356,6 +356,5 @@ TimelineDelegate {
         }
     }
 
-    onClicked: showDetailsPage(trainDetailsPage, root.batchId)
     Accessible.name: headerLabel.text
 }

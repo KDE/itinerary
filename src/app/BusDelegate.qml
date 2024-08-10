@@ -289,6 +289,5 @@ TimelineDelegate {
         }
     }
 
-    onClicked: showDetailsPage(busDetailsPage, root.batchId)
     Accessible.name: headerLabel.text
 }

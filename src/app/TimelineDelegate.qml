@@ -26,6 +26,9 @@ FormCard.FormCard {
     readonly property var reservationFor: reservation.reservationFor
     property var rangeType
 
+    /** Details page to show when clicking the delegate. */
+    property Component detailsPage: null
+
     property Item headerItem
     property alias headerIcon: _headerIcon
     property alias headerIconSource: _headerIcon.source
@@ -42,11 +45,14 @@ FormCard.FormCard {
     property alias arrival: _controller.arrival
     property alias departure: _controller.departure
 
-    function showDetails(detailsComponent) {
+    onClicked: {
+        if (!root.detailsPage || !root.batchId) {
+            return;
+        }
         while (applicationWindow().pageStack.depth > 1) {
             applicationWindow().pageStack.pop();
         }
-        applicationWindow().pageStack.push(detailsComponent);
+        applicationWindow().pageStack.push(root.detailsPage, { batchId: root.batchId });
     }
 
     /** @c true if we have at least one seat reserverion in this batch. */

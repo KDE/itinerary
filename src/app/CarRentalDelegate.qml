@@ -61,6 +61,4 @@ TimelineDelegate {
                                                      Settings.homeCountryIsoCode)
         }
     }
-
-    onClicked: showDetailsPage(carRentalDetailsPage, root.batchId)
 }

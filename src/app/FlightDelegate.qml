@@ -113,6 +113,5 @@ TimelineDelegate {
         }
     }
 
-    onClicked: showDetailsPage(flightDetailsPage, root.batchId)
     Accessible.name: headerLabel.text
 }

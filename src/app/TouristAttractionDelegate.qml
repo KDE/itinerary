@@ -37,6 +37,4 @@ TimelineDelegate {
             text: Localizer.formatAddressWithContext(touristAttraction.address, null, Settings.homeCountryIsoCode)
         }
     }
-
-    onClicked: showDetailsPage(touristAttractionDetailsPage, root.batchId)
 }
