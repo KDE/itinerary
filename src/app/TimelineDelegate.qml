@@ -49,7 +49,7 @@ FormCard.FormCard {
         if (!root.detailsPage || !root.batchId) {
             return;
         }
-        while (applicationWindow().pageStack.depth > 1) {
+        while (applicationWindow().pageStack.depth > 1 && !applicationWindow().pageStack.currentItem as TripGroupPage) {
             applicationWindow().pageStack.pop();
         }
         applicationWindow().pageStack.push(root.detailsPage, { batchId: root.batchId });
