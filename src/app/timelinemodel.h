@@ -61,16 +61,16 @@ public:
     void setHomeCountryIsoCode(const QString &isoCode);
     void setTransferManager(TransferManager *mgr);
 
-    QVariant data(const QModelIndex& index, int role) const override;
-    int rowCount(const QModelIndex& parent = QModelIndex()) const override;
-    QHash<int, QByteArray> roleNames() const override;
+    [[nodiscard]] QVariant data(const QModelIndex& index, int role) const override;
+    [[nodiscard]] int rowCount(const QModelIndex& parent = QModelIndex()) const override;
+    [[nodiscard]] QHash<int, QByteArray> roleNames() const override;
 
-    int todayRow() const;
+    [[nodiscard]] int todayRow() const;
 
     // for unit testing
     void setCurrentDateTime(const QDateTime &dt);
-    QDateTime now() const;
-    QDate today() const;
+    [[nodiscard]] QDateTime now() const;
+    [[nodiscard]] QDate today() const;
 
 Q_SIGNALS:
     void setupChanged();
@@ -98,7 +98,7 @@ private:
     void updateWeatherElements();
     void updateTransfersForBatch(const QString &batchId);
 
-    bool isDateEmpty(const QDate &date) const;
+    [[nodiscard]] bool isDateEmpty(const QDate &date) const;
 
     friend class TimelineElement;
     ReservationManager *m_resMgr = nullptr;

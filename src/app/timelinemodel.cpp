@@ -5,10 +5,8 @@
 */
 
 #include "timelinemodel.h"
-#include "constants.h"
 #include "locationhelper.h"
 #include "locationinformation.h"
-#include "pkpassmanager.h"
 #include "reservationmanager.h"
 #include "tripgroup.h"
 #include "tripgroupmanager.h"
@@ -104,13 +102,13 @@ void TimelineModel::setReservationManager(ReservationManager* mgr)
             continue;
         }
         if (needsSplitting(res)) {
-            m_elements.push_back(TimelineElement{this, resId, res, TimelineElement::RangeBegin});
-            m_elements.push_back(TimelineElement{this, resId, res, TimelineElement::RangeEnd});
+            m_elements.emplace_back(this, resId, res, TimelineElement::RangeBegin);
+            m_elements.emplace_back(this, resId, res, TimelineElement::RangeEnd);
         } else {
             m_elements.push_back(std::move(elem));
         }
     }
-    m_elements.push_back(TimelineElement{this, TimelineElement::TodayMarker,  QDateTime(today(), QTime(0, 0))});
+    m_elements.emplace_back(this, TimelineElement::TodayMarker,  QDateTime(today(), QTime(0, 0)));
     std::sort(m_elements.begin(), m_elements.end());
 
     connect(mgr, &ReservationManager::batchAdded, this, &TimelineModel::batchAdded);
@@ -196,7 +194,7 @@ int TimelineModel::rowCount(const QModelIndex& parent) const
     if (parent.isValid() || !m_resMgr) {
         return 0;
     }
-    return m_elements.size();
+    return (int)m_elements.size();
 }
 
 QVariant TimelineModel::data(const QModelIndex& index, int role) const
@@ -224,12 +222,14 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
         case ElementRangeRole:
             return elem.rangeType;
         case LocationInformationRole:
-            if (elem.elementType == TimelineElement::LocationInfo)
+            if (elem.elementType == TimelineElement::LocationInfo) {
                 return elem.content();
+            }
             break;
         case WeatherForecastRole:
-            if (elem.elementType == TimelineElement::WeatherForecast)
+            if (elem.elementType == TimelineElement::WeatherForecast) {
                 return elem.content();
+            }
             break;
         case ReservationsRole:
         {
@@ -251,8 +251,9 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
             }
             break;
         case TripGroupRole:
-            if (elem.elementType == TimelineElement::TripGroup)
+            if (elem.elementType == TimelineElement::TripGroup) {
                 return QVariant::fromValue(m_tripGroupManager->tripGroup(elem.content().toString()));
+            }
             break;
         case TransferRole:
             if (elem.elementType == TimelineElement::Transfer) {
@@ -292,7 +293,7 @@ QHash<int, QByteArray> TimelineModel::roleNames() const
 int TimelineModel::todayRow() const
 {
     const auto it = std::find_if(m_elements.begin(), m_elements.end(), [](const auto &e) { return e.elementType == TimelineElement::TodayMarker; });
-    return std::distance(m_elements.begin(), it);
+    return (int)std::distance(m_elements.begin(), it);
 }
 
 void TimelineModel::batchAdded(const QString &resId)
@@ -317,7 +318,7 @@ void TimelineModel::insertElement(TimelineElement &&elem)
     }
 
     auto it = std::lower_bound(m_elements.begin(), m_elements.end(), elem);
-    const auto row = std::distance(m_elements.begin(), it);
+    const auto row = (int)std::distance(m_elements.begin(), it);
 
     beginInsertRows({}, row, row);
     m_elements.insert(it, std::move(elem));
@@ -333,11 +334,11 @@ std::vector<TimelineElement>::iterator TimelineModel::insertOrUpdate(std::vector
     }
 
     if (it != m_elements.end() && (*it) == elem) {
-        const auto row = std::distance(m_elements.begin(), it);
+        const auto row = (int)std::distance(m_elements.begin(), it);
         (*it) = std::move(elem);
         Q_EMIT dataChanged(index(row, 0), index(row, 0));
     } else {
-        const auto row = std::distance(m_elements.begin(), it);
+        const auto row = (int)std::distance(m_elements.begin(), it);
         beginInsertRows({}, row, row);
         it = m_elements.insert(it, std::move(elem));
         endInsertRows();
@@ -366,7 +367,7 @@ void TimelineModel::batchRenamed(const QString& oldBatchId, const QString& newBa
         }
 
         (*it).setContent(newBatchId);
-        const auto idx = index(std::distance(m_elements.begin(), it), 0);
+        const auto idx = index((int)std::distance(m_elements.begin(), it), 0);
         Q_EMIT dataChanged(idx, idx);
 
         if ((*it).rangeType == TimelineElement::SelfContained || (*it).rangeType == TimelineElement::RangeEnd) {
@@ -383,7 +384,7 @@ void TimelineModel::updateElement(const QString &resId, const QVariant &res, Tim
     if (it == m_elements.end()) {
         return;
     }
-    const auto row = std::distance(m_elements.begin(), it);
+    const auto row = (int)std::distance(m_elements.begin(), it);
     const auto newDt = TimelineElement::relevantDateTime(res, rangeType);
 
     if ((*it).dt != newDt) {
@@ -406,7 +407,7 @@ void TimelineModel::batchRemoved(const QString &resId)
         return;
     }
     const auto isSplit = (*it).rangeType == TimelineElement::RangeBegin;
-    const auto row = std::distance(m_elements.begin(), it);
+    const auto row = (int)std::distance(m_elements.begin(), it);
 
     beginRemoveRows({}, row, row);
     m_elements.erase(it);
@@ -448,7 +449,7 @@ void TimelineModel::updateTodayMarker()
         }
     }
 
-    const auto newRow = std::distance(m_elements.begin(), it);
+    const auto newRow = (int)std::distance(m_elements.begin(), it);
     const auto oldRow = todayRow();
     if (oldRow >= newRow) {
         return;
@@ -479,7 +480,7 @@ void TimelineModel::updateInformationElements()
     auto previousCountry = homeCountry;
     for (auto it = m_elements.begin(); it != m_elements.end();) {
         if ((*it).elementType == TimelineElement::LocationInfo) { // this is one we didn't generate, otherwise it would be beyond that
-            const auto row = std::distance(m_elements.begin(), it);
+            const auto row = (int)std::distance(m_elements.begin(), it);
             beginRemoveRows({}, row, row);
             it = m_elements.erase(it);
             endRemoveRows();
@@ -581,7 +582,7 @@ void TimelineModel::updateWeatherElements()
     auto it = m_elements.begin();
     for (; it != m_elements.end() && (*it).dt < now();) {
         if ((*it).elementType == TimelineElement::WeatherForecast) {
-            const auto row = std::distance(m_elements.begin(), it);
+            const auto row = (int)std::distance(m_elements.begin(), it);
             beginRemoveRows({}, row, row);
             it = m_elements.erase(it);
             endRemoveRows();
@@ -612,7 +613,7 @@ void TimelineModel::updateWeatherElements()
         if ((*it).dt < date || (*it).elementType == TimelineElement::TodayMarker) {
             // clean up outdated weather elements (happens when merging previously split ranges)
             if ((*it).elementType == TimelineElement::WeatherForecast) {
-                const auto row = std::distance(m_elements.begin(), it);
+                const auto row = (int)std::distance(m_elements.begin(), it);
                 beginRemoveRows({}, row, row);
                 it = m_elements.erase(it);
                 endRemoveRows();
@@ -669,7 +670,7 @@ void TimelineModel::updateWeatherElements()
         }
         // we have no forecast data, but a matching weather element: remove
         else if ((*it).elementType == TimelineElement::WeatherForecast && (*it).dt == date) {
-            const auto row = std::distance(m_elements.begin(), it);
+            const auto row = (int)std::distance(m_elements.begin(), it);
             beginRemoveRows({}, row, row);
             it = m_elements.erase(it);
             endRemoveRows();
@@ -689,7 +690,7 @@ void TimelineModel::updateWeatherElements()
         m_weatherMgr->monitorLocation(geo.latitude(), geo.longitude());
         const auto fc = m_weatherMgr->forecast(geo.latitude(), geo.longitude(), date, endTime);
         if (fc.isValid()) {
-            const auto row = std::distance(m_elements.begin(), it);
+            const auto row = (int)std::distance(m_elements.begin(), it);
             beginInsertRows({}, row, row);
             it = m_elements.insert(it, TimelineElement{this, TimelineElement::WeatherForecast, date, QVariant::fromValue(WeatherInformation{fc, label})});
             ++it;
@@ -773,7 +774,7 @@ void TimelineModel::tripGroupRemoved(const QString& groupId)
             continue;
         }
 
-        const auto row = std::distance(m_elements.begin(), it);
+        const auto row = (int)std::distance(m_elements.begin(), it);
         beginRemoveRows({}, row, row);
         it = m_elements.erase(it);
         endRemoveRows();
@@ -822,7 +823,7 @@ void TimelineModel::transferRemoved(const QString &resId, Transfer::Alignment al
         return;
     }
 
-    const auto row = std::distance(m_elements.begin(), it);
+    const auto row = (int)std::distance(m_elements.begin(), it);
     beginRemoveRows({}, row, row);
     m_elements.erase(it);
     endRemoveRows();
