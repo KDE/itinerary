@@ -9,6 +9,7 @@
 
 #include "timelineelement.h"
 #include "transfer.h"
+#include "tripgroup.h"
 
 #include <QAbstractListModel>
 #include <QDateTime>
@@ -29,6 +30,9 @@ class TimelineModel : public QAbstractListModel
     Q_PROPERTY(TripGroupManager* tripGroupManager READ tripGroupManager WRITE setTripGroupManager NOTIFY setupChanged)
     Q_PROPERTY(WeatherForecastManager* weatherForecastManager MEMBER m_weatherMgr WRITE setWeatherForecastManager NOTIFY setupChanged)
     Q_PROPERTY(QString homeCountryIsoCode MEMBER m_homeCountry WRITE setHomeCountryIsoCode NOTIFY setupChanged)
+
+    /** Show only a single trip group. */
+    Q_PROPERTY(QString tripGroupId MEMBER m_tripGroupId WRITE setTripGroupId NOTIFY tripGroupIdChanged)
 
 public:
     enum Role {
@@ -60,6 +64,7 @@ public:
     void setTripGroupManager(TripGroupManager *mgr);
     void setHomeCountryIsoCode(const QString &isoCode);
     void setTransferManager(TransferManager *mgr);
+    void setTripGroupId(const QString &tgId);
 
     [[nodiscard]] QVariant data(const QModelIndex& index, int role) const override;
     [[nodiscard]] int rowCount(const QModelIndex& parent = QModelIndex()) const override;
@@ -75,9 +80,11 @@ public:
 Q_SIGNALS:
     void setupChanged();
     void todayRowChanged();
+    void tripGroupIdChanged();
 
 private:
     void populate();
+    void populateReservation(const QString &resId);
 
     void batchAdded(const QString &resId);
     void insertElement(TimelineElement &&elem);
@@ -108,6 +115,8 @@ private:
     TripGroupManager *m_tripGroupManager = nullptr;
     TransferManager *m_transferManager = nullptr;
     std::vector<TimelineElement> m_elements;
+    QString m_tripGroupId;
+    TripGroup m_tripGroup;
     QString m_homeCountry;
     QDateTime m_unitTestTime;
     QTimer m_dayUpdateTimer;

@@ -260,12 +260,14 @@ Kirigami.ScrollablePage {
             }
         }
 
-        /*model: TripTimelineModel {
-            tripGroup: root.tripGroup
+        model: TimelineModel {
+            homeCountryIsoCode: Settings.homeCountryIsoCode
             reservationManager: ReservationManager
+            weatherForecastManager: WeatherForecastManager
             transferManager: TransferManager
             tripGroupManager: TripGroupManager
-        }*/
+            tripGroupId: root.tripGroupId
+        }
 
         section {
             property: "sectionHeader"
