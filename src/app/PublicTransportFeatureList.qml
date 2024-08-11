@@ -33,6 +33,8 @@ Repeater {
                     return i18n("Not available")
                 if (modelData.disruptionEffect === KPublicTransport.Disruption.NoService)
                     return i18n("Currently not available")
+                if (modelData.quantity > 0)
+                    return i18np("One space", "%1 spaces", modelData.quantity);
                 return "";
             }
         }
