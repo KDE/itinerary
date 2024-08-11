@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-28 02:34+0000\n"
+"POT-Creation-Date: 2024-08-11 02:34+0000\n"
 "PO-Revision-Date: 2024-02-17 12:41+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -3578,7 +3578,7 @@ msgstr "도착"
 msgid "Arrival Time"
 msgstr "도착 시간"
 
-#: app/TrainDelegate.qml:117 app/TrainDelegate.qml:331
+#: app/TrainDelegate.qml:117 app/TrainDelegate.qml:333
 #, kde-format
 msgid "Pl. %1"
 msgstr "%1번"

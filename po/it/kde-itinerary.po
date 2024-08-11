@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-28 02:34+0000\n"
-"PO-Revision-Date: 2024-07-28 15:33+0200\n"
+"POT-Creation-Date: 2024-08-11 02:34+0000\n"
+"PO-Revision-Date: 2024-08-10 03:16+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -848,7 +848,7 @@ msgstr "Sezione: <b>%1</b>"
 #, kde-format
 msgctxt "event venut seat row"
 msgid "Row: <b>%1</b>"
-msgstr "Riga: <b>%1</b>"
+msgstr "Fila: <b>%1</b>"
 
 #: app/EventDelegate.qml:82
 #, kde-format
@@ -3544,7 +3544,7 @@ msgstr "Arrivo"
 msgid "Arrival Time"
 msgstr "Orario di arrivo"
 
-#: app/TrainDelegate.qml:117 app/TrainDelegate.qml:331
+#: app/TrainDelegate.qml:117 app/TrainDelegate.qml:333
 #, kde-format
 msgid "Pl. %1"
 msgstr "Bin. %1"
