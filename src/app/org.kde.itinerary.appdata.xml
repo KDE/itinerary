@@ -54,7 +54,7 @@
   <summary xml:lang="eu">Bidai-laguntzaile digitala</summary>
   <summary xml:lang="fi">Ohjelmallinen matka-avustaja</summary>
   <summary xml:lang="fr">Assistance de voyage numérique</summary>
-  <summary xml:lang="gl">Asistente de viaxes dixital</summary>
+  <summary xml:lang="gl">Asistente de viaxes dixital.</summary>
   <summary xml:lang="he">מסייע דיגיטלי לנסיעות</summary>
   <summary xml:lang="hu">Digitális utazássegéd</summary>
   <summary xml:lang="ia">Assistente digital de viage</summary>
@@ -88,6 +88,7 @@
     <p xml:lang="eu">«KDE Itinerary» bidai-laguntzaile digital bat da, zure pribatutasuna babesteko lehentasuna duena.</p>
     <p xml:lang="fi">KDE Itinerary on ohjelmallinen matka-avustaja, joka ensisijaisesti pyrkii varmistamaan tietoturvasi.</p>
     <p xml:lang="fr">KDE Itinerary est un assistant de voyage numérique donnant la priorité au respect de votre confidentialité.</p>
+    <p xml:lang="gl">KDE Itinerary é un asistente dixital de viaxe coa protección da súa privacidade como prioridade.</p>
     <p xml:lang="he">KDE Itinerary הוא מסייע דיגיטלי לנסיעות שמקדש את השמירה על הפרטיות שלך.</p>
     <p xml:lang="hu">A KDE Itinerary egy digitális utazássegéd, amelynek kiemelt célja a magánszférájának védelme.</p>
     <p xml:lang="ia">KDE Itinerary es un assistente digital de viage con le prioritate de proteger tu confidentialitate.</p>
@@ -153,6 +154,7 @@
       <li xml:lang="eu">Bidai ibilbide bateratu baten denbora-lerro ikuspegia, txango taldekatze automatikoarekin.</li>
       <li xml:lang="fi">Yhtenäisen matkasuunnitelman aikajananäkymä matkan automaattisella ryhmittelyllä.</li>
       <li xml:lang="fr">Vue chronologique de votre itinéraire de voyage unifié grâce au regroupement automatique des voyages.</li>
+      <li xml:lang="gl">Vista da cronoloxía dun itinerario de viaxe sen definir con agrupamento automático de viaxes.</li>
       <li xml:lang="he">תצוגת ציר זמן של תוכנית נסיעה אחודה עם קיבוץ נסיעות אוטומטי.</li>
       <li xml:lang="hu">Idővonal nézet az egyesített útvonaltervhez, automatikus kiránduláscsoportosítással.</li>
       <li xml:lang="ia">Vista de chronologia de unitinerario unificate viage con gruppamento de viages automatic.</li>
@@ -183,6 +185,7 @@
       <li xml:lang="eu">Tren, autobus eta hegaldi erreserbak onartzen ditu, baita hotel, jatetxe, ekitaldi eta ibilgailu alokairuenak ere.</li>
       <li xml:lang="fi">Tukee juna-, bussi- ja lentolippujen samoin kuin hotellien, ravintoloiden, tapahtumien ja vuokra-autojen varauksia.</li>
       <li xml:lang="fr">Prise en charge des réservations de trains, de bus, de vols, d'hôtels, de restaurants, d'évènements et de véhicules.</li>
+      <li xml:lang="gl">Permite billetes de tren, bus e voo, así como reservas de hotel, restaurante, eventos e alugamento de coche.</li>
       <li xml:lang="he">תמיכה בהזמנות של רכבות, אוטובוסים וטיסות לרבות הזמנות במלונות, מסעדות, אירועים והשכרות רכב.</li>
       <li xml:lang="hu">Vonat-, busz és repülőjegyek, valamint hotel-, étterem-, eseményfoglalások és autóbérlés támogatása.</li>
       <li xml:lang="ia">Supporta reservationes de traino, bus e volo tal como hotel, restaurante, eventos e reservationes de location de vehiculo.</li>
@@ -245,6 +248,7 @@
       <li xml:lang="eu">Bidaiari anizkoitzeko eta txartel anizkoitzeko erreserbetarako txartelak kudeatzeko euskarria du.</li>
       <li xml:lang="fi">Tukee useamman matkustajan tai matkalipun varausten lippujen hallintaa</li>
       <li xml:lang="fr">Prise en charge de la gestion des billets pour les réservations multi-voyageurs et multi-billets.</li>
+      <li xml:lang="gl">Permite xestión de billetes diversos de varias persoas.</li>
       <li xml:lang="he">תומך בניהול כרטיסים לריבוי נוסעים והזמנות עם ריבוי כרטיסים.</li>
       <li xml:lang="hu">Többutasos és többjegyes foglalások jegykezelésének támogatása.</li>
       <li xml:lang="ia">Supporta gestion de billet per reservationes de multi-traveler e multi-ticket.</li>
@@ -275,6 +279,7 @@
       <li xml:lang="eu">Hainbat sarrera-formatuetatik erreserba-datuak automatikoki erauztea, zure gailuan bertan.</li>
       <li xml:lang="fi">Automaattinen varaustiedon purku useista syötemuodoista paikallisesti omalla laitteellasi.</li>
       <li xml:lang="fr">Extraction automatique des données de réservation depuis de nombreux formats d'entrée, réalisée en local sur votre appareil.</li>
+      <li xml:lang="gl">Extracción automática de datos de billetes de varios formatos de entrada, executada localmente no seu dispositivo.</li>
       <li xml:lang="he">חילוץ נתוני הזמנות אוטומטית ממגוון סוגי קלט, מבוצע מקומית במכשיר שלך.</li>
       <li xml:lang="hu">Foglalási adatok automatikus kinyerése különböző bemeneti formátumokból, helyben, az Ön eszközén.</li>
       <li xml:lang="ia">Extraction de datos de reservation automatic ex varie formatos de entrata, executate localmente sur tu dispositivo.</li>
@@ -305,6 +310,7 @@
       <li xml:lang="eu">Trenen atzerapen eta nasa aldaketa informazioa denbora errealean.</li>
       <li xml:lang="fi">Tosiaikainen junien viivästys- ja laiturinmuutostieto.</li>
       <li xml:lang="fr">Informations de retard et de changement de quai en temps réel pour les trains.</li>
+      <li xml:lang="gl">Información de cambio de atraso e de plataforma de trens en tempo real.</li>
       <li xml:lang="he">פרטי עיכובים והחלפות רציפים לרכבות.</li>
       <li xml:lang="hu">Valós idejű késés- és vágányinformációk vonatokhoz.</li>
       <li xml:lang="ia">Information de retardo in tempo actual e cambiamento de platteforma per trainos. </li>
@@ -335,6 +341,7 @@
       <li xml:lang="eu">Helmugako eguraldiaren iragarpena bidaiatu bitartean.</li>
       <li xml:lang="fi">Kohteen sääennuste matkallesi.</li>
       <li xml:lang="fr">Prévisions météorologiques pour la destination tout au long de votre voyage.</li>
+      <li xml:lang="gl">Prognóstico meteorolóxico do destino durante a viaxe.</li>
       <li xml:lang="he">תשקיפים ליעדים שלך לאורך הטיול.</li>
       <li xml:lang="hu">Időjárás-előrejelzés a kirándulás útvonalára.</li>
       <li xml:lang="ia">Prevision Meteorologic per destination preter tu viage.</li>
@@ -365,6 +372,7 @@
       <li xml:lang="eu">Lerroko sarbide guzien kontrol osoa.</li>
       <li xml:lang="fi">Täysi hallinta kaikkeen verkkokäyttöön.</li>
       <li xml:lang="fr">Contrôle complet sur tous les accès en ligne.</li>
+      <li xml:lang="gl">Control absoluto de todo o acceso local.</li>
       <li xml:lang="he">שליטה מלאה בכל הגישה לאינטרנט.</li>
       <li xml:lang="hu">Teljes ellenőrzés minden online hozzáférés felett.</li>
       <li xml:lang="ia">Plen control sur omne accesso in linea.</li>
@@ -395,6 +403,7 @@
       <li xml:lang="eu">Loturarik gabeko txarteletan edo galdutako konexioetan ordezko tren-konexioak hautatzea.</li>
       <li xml:lang="fi">Vaihtoehtoisten junayhteyksien valinta, jos lippuja ei ole sidottu tai jatkoyhteys menetettiin.</li>
       <li xml:lang="fr">Sélection de correspondances ferroviaires alternatives pour les tickets non liés ou les correspondances manquées.</li>
+      <li xml:lang="gl">Selección de conexións alternativas de tren en billetes flexíbeis ou en caso de perda de conexións.</li>
       <li xml:lang="he">בחירת החלפת רכבות חלופית על כרטיסים בין עירוניים והחלפות שהוחמצו.</li>
       <li xml:lang="hu">Alternatív vonatjáratok kiválasztása a nem kötött menetjegyek vagy lekésett csatlakozások esetében.</li>
       <li xml:lang="ia">Selection de connexiones alternative de traino sur billetes libere o sur connexiones mancate.</li>
@@ -425,6 +434,7 @@
       <li xml:lang="eu">Zure ibilbideko elementuen artean, lurreko tokiko garraioa nabigatzea.</li>
       <li xml:lang="fi">Paikallinen maaliikennenavigointi matkasuunnitelmasi osien välillä.</li>
       <li xml:lang="fr">Navigation à l'aide des transports en commun régionaux entre deux éléments de votre itinéraire.</li>
+      <li xml:lang="gl">Navegación de transporte terrestre local entre puntos do itinerario.</li>
       <li xml:lang="he">ניווט בתחבורה קרקעית מקומית בין נקודות תוכנית המסע שלך.</li>
       <li xml:lang="hu">Helyi földi közlekedési navigáció az útvonal elemei között.</li>
       <li xml:lang="ia">Navigation de transportation de terra local inter elementos de tu itinerario.</li>
@@ -454,6 +464,7 @@
       <li xml:lang="eu">Tren bagoiaren antolaeraren ikuspegia (operatzaile batzuetan bakarrik).</li>
       <li xml:lang="fi">Junien vaunukarttanäkymä (joillekin operaattoreille).</li>
       <li xml:lang="fr">Affichage des compositions des trains (pour certains opérateurs uniquement)</li>
+      <li xml:lang="gl">Vista do plano do coche de tren (só para algúns operadores).</li>
       <li xml:lang="he">תצוגת פריסת אזור ברכבת (אצל חלק מהמפעילים בלבד).</li>
       <li xml:lang="hu">Vonatalaprajz nézet (csak egyes szolgáltatók esetén).</li>
       <li xml:lang="ia">Vista de disposition de carrossa (solment eper alcun operatores)</li>
@@ -483,6 +494,7 @@
       <li xml:lang="eu">Tren geltokiko eta aireportuko solairukako mapak, «OpenStreetMap»ako datuetan oinarrituta.</li>
       <li xml:lang="fi">OpenStreetMapin tietoon perustuvat rautatie- ja lentoasemien kerroskartat.</li>
       <li xml:lang="fr">Les cartes de gares et d'aéroports s'appuyant sur les données de OpenStreetMap.</li>
+      <li xml:lang="gl">Mapas das plantas de estacións de tren e de aeroportos baseados en datos de OpenStreetMap.</li>
       <li xml:lang="he">מפות תחנות רכבת ונמלי תעופה לפי קומות על בסיס הנתונים מ־OpenStreetMap.</li>
       <li xml:lang="hu">Az OpenStreetMap adatain alapuló, emeletenkénti vasútállomási és repülőtéri térképek.</li>
       <li xml:lang="ia">Mappas per plano de  Station de traino e aeroporto basate sur datos de OpenStreetMap.</li>
@@ -512,6 +524,7 @@
       <li xml:lang="eu">Alokairuko bizikleta erabilgarriak, nasa-oinarrikoak edo higikorrak, tren-geltokiko mapan azal daitezke.</li>
       <li xml:lang="fi">Saatavilla olevat vapaat potkulaudat tai vuokrapyörät voidaan näyttää rautatieaseman kartalla.</li>
       <li xml:lang="fr">Les vélos de location disponibles en libre service ou en station d'accueil peuvent être affichés sur la carte des gares. </li>
+      <li xml:lang="gl">As bicicletas de alugamento dispoñíbeis, en puntos de aparcamento ou fóra deles, poden amosarse nos mapas das estacións de tren.</li>
       <li xml:lang="he">אפשר להציג אופניים עגונים או משוחררים להשכרה על מפת תחנת הרכבת.</li>
       <li xml:lang="hu">Szabad dokkolós vagy szabadon szállítható kölcsönözhető kerékpárok megjelenítése a vasútállomások térképein.</li>
       <li xml:lang="ia">Bicyclettas disponiile de locar basate sur bassino o libere de flottar pote esser monstrate sur le mapa de station de traino.</li>
@@ -542,6 +555,7 @@
       <li xml:lang="eu">Bidaia pertsonalen estatistikak ingurumen eragina gainbegiratzeko.</li>
       <li xml:lang="fi">Matkan henkilökohtaiset tilastot ympäristövaikutusten tarkkailemiseksi.</li>
       <li xml:lang="fr">Statistiques de voyages personnels pour calculer l'impact environnemental.</li>
+      <li xml:lang="gl">Estatísticas de viaxe persoal para facer seguimento do impacto medioambiental.</li>
       <li xml:lang="he">סטטיסטיקת נסועה אישית למעקב אחר ההשפעה על איכות הסביבה.</li>
       <li xml:lang="hu">Személyes utazási statisztikák a környezeti hatások nyomon követésére.</li>
       <li xml:lang="ia">Statistica de viage personal a supervisionar impacto ambiental.</li>
@@ -573,6 +587,7 @@
     <p xml:lang="eu">«KDE Itinerary» hobe dabil «KMail»en ibilbidea erauzteko pluginarekin eta «KDE Connect» edo «Nextcloud Hub» eta «DavDroid»ekin.</p>
     <p xml:lang="fi">KDE Itinerary toimii parhaiten yhdessä KMailin matkasuunnitelmatietoliitännäisen ja KDE Connectin tai Nextcloud Hubin ja DavDroidin kanssa.</p>
     <p xml:lang="fr">KDE Itinerary fonctionne au maximum de ses capacités avec le module d'extraction des itinéraires de KMail et KDEConnect mais aussi avec Nextcloud Hub et DavDroid.</p>
+    <p xml:lang="gl">KDE Itinerary funciona mellor co complemento de extracción de itinerario de KMail e KDE Connect, ou Nextcloud Hub e DavDroid.</p>
     <p xml:lang="he">KDE Itinerary עובד הכיטוב לצד תוסף חילוץ תוכניות הנסיעהKMailו־KDE Connect או Nextcloud Hub ו־DavDroid.</p>
     <p xml:lang="hu">A KDE Itinerary a legjobban a KMail itinerkinyerő bővítménye és a KDE Connect vagy a Nextcloud Hub és DavDroid mellett működik.</p>
     <p xml:lang="ia">KDE Itinerary functiona meliormente  con plugin de extraction de itinerario de KMail e KDE Connect, o Hub de Nextcloud e DavDroid.</p>
@@ -606,6 +621,7 @@
       <caption xml:lang="eu">Denbora-lerro ikuspegia</caption>
       <caption xml:lang="fi">Aikajananäkymä</caption>
       <caption xml:lang="fr">Vue chronologique.</caption>
+      <caption xml:lang="gl">Vista cronolóxica.</caption>
       <caption xml:lang="he">תצוגת ציר זמן</caption>
       <caption xml:lang="hu">Idővonal nézet</caption>
       <caption xml:lang="ia">Vista de Chronologia.</caption>
@@ -639,6 +655,7 @@
       <caption xml:lang="eu">Ontziratze-txartel ikuspegia.</caption>
       <caption xml:lang="fi">Maihinnousukorttinäkymä</caption>
       <caption xml:lang="fr">Affichage de la carte d'embarquement.</caption>
+      <caption xml:lang="gl">Vista de pase de embarque.</caption>
       <caption xml:lang="he">תצוגת כרטיס עלייה לאמצעי התחבורה</caption>
       <caption xml:lang="hu">Beszállókártya nézet</caption>
       <caption xml:lang="ia">Vista de carta de imbarcar</caption>
@@ -671,6 +688,7 @@
       <caption xml:lang="eu">Tren antolamenduaren ikuspegia, eserleku-erreserba duen bagoia nabarmenduta</caption>
       <caption xml:lang="fi">Varatun paikan korostava junan vaunukartta</caption>
       <caption xml:lang="fr">Affichage de la composition du train, détaillant la voiture où le siège est réservé.</caption>
+      <caption xml:lang="gl">Vista de mapa de tren que realza o coche coa reserva de asento.</caption>
       <caption xml:lang="he">תצוגת פריסת רכבת מדגישה את האזור עם המושבים שהוזמנו</caption>
       <caption xml:lang="hu">Vonat alaprajza a helyfoglalással rendelkező kocsit kiemelve</caption>
       <caption xml:lang="ia">Dispoition de traino evidentiante le carrossa con un reservation de placia</caption>
@@ -703,6 +721,7 @@
       <caption xml:lang="eu">Tren-geltokiaren nasaren mapa, iristeko eta irteteko nasak nabarmenduz</caption>
       <caption xml:lang="fi">Lähtö- ja saapumislaitureita korostava rautatieasemakartta</caption>
       <caption xml:lang="fr">La carte des quais de gare, détaillant les quais d'arrivée et de départ.</caption>
+      <caption xml:lang="gl">Mapa da plataforma da estación de tren que realiza as plataformas de chegada e de saída.</caption>
       <caption xml:lang="he">מפת רציפי תחנת הרכבת, עם הדגשה על רציפי הגעה ויציאה</caption>
       <caption xml:lang="hu">Vasútállomás vágánytérképe, kiemelve az érkező és induló peronokat</caption>
       <caption xml:lang="ia">Mappa de platteforma de station de traino, evidentiante platteformas de arrivata e partita</caption>
@@ -735,6 +754,7 @@
       <caption xml:lang="eu">Tren-geltokiko mapa, alokairuko bizikleten eskuragarritasuna denbora errealean erakusten duena.</caption>
       <caption xml:lang="fi">Rautatieasemakartta näyttää tosiaikaiset vuokrapolkupyörätiedot</caption>
       <caption xml:lang="fr">La carte de la gare ferroviaire affichant la disponibilité en temps réel des vélos de location.</caption>
+      <caption xml:lang="gl">Mapa de estación de tren que amosa a dispoñibilidade de bicicletas de alugamento en tempo real.</caption>
       <caption xml:lang="he">מפת תחנות הרכבת מציגה זמינות של אופניים להשכרה בזמן אמת</caption>
       <caption xml:lang="hu">Vasútállomás térképe, valós időben megjelenítve a kölcsönözhető kerékpárok elérhetőségét</caption>
       <caption xml:lang="ia">Mappa de station de traino monstrante disponibilitate in tempore actual de bicyclettas a locar</caption>
@@ -767,6 +787,7 @@
       <caption xml:lang="eu">Hautatutako erakundearen informazio zehatza tren-geltokiko mapan</caption>
       <caption xml:lang="fi">Yksityiskohtainen tieto rautatieasemakartalta valitusta kohteesta</caption>
       <caption xml:lang="fr">Informations détaillées pour l'entité sélectionnée sur la carte de la gare.</caption>
+      <caption xml:lang="gl">Información detallada da entidade seleccionada no mapa da estación de tren.</caption>
       <caption xml:lang="he">מידע מפורט על הישות הנבחרת במפת תחנת הרכבות</caption>
       <caption xml:lang="hu">Részletes információk a vasútállomás térképén kiválasztott entitásról</caption>
       <caption xml:lang="ia">Information detaliate per le entitate de seliger sur le mappa de station de traino</caption>
@@ -800,6 +821,7 @@
       <caption xml:lang="eu">Bidai-estatistiken ikuspegia</caption>
       <caption xml:lang="fi">Matkan tilastonäkymä</caption>
       <caption xml:lang="fr">Affichage des statistiques de voyages.</caption>
+      <caption xml:lang="gl">Vista de estatísticas de viaxe.</caption>
       <caption xml:lang="he">תצוגת סטטיסטיקת נסיעה</caption>
       <caption xml:lang="hu">Utazási statisztika nézet</caption>
       <caption xml:lang="ia">Vista de statistica de viage</caption>
