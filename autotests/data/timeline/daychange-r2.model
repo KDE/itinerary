@@ -1,6 +1,30 @@
 [
     {
         "isToday": false,
+        "rangeType": 1,
+        "sectionHeader": "2017-01-04",
+        "tripGroup": {
+            "@context": "http://schema.org",
+            "@type": "TripGroup",
+            "automaticName": true,
+            "automaticallyGrouped": true,
+            "beginDateTime": {
+                "@type": "QDateTime",
+                "@value": "2017-01-04T07:20:00+01:00",
+                "timezone": "Europe/Berlin"
+            },
+            "endDateTime": {
+                "@type": "QDateTime",
+                "@value": "2017-01-04T14:45:00-08:00",
+                "timezone": "America/Los_Angeles"
+            },
+            "name": "San Francisco International (January 2017)",
+            "slugName": "san-francisco-international-january-2017"
+        },
+        "type": 2
+    },
+    {
+        "isToday": false,
         "rangeType": 0,
         "reservations": [
             {
@@ -170,6 +194,30 @@
         "rangeType": 0,
         "sectionHeader": "2017-01-04",
         "type": 4
+    },
+    {
+        "isToday": false,
+        "rangeType": 2,
+        "sectionHeader": "2017-01-04",
+        "tripGroup": {
+            "@context": "http://schema.org",
+            "@type": "TripGroup",
+            "automaticName": true,
+            "automaticallyGrouped": true,
+            "beginDateTime": {
+                "@type": "QDateTime",
+                "@value": "2017-01-04T07:20:00+01:00",
+                "timezone": "Europe/Berlin"
+            },
+            "endDateTime": {
+                "@type": "QDateTime",
+                "@value": "2017-01-04T14:45:00-08:00",
+                "timezone": "America/Los_Angeles"
+            },
+            "name": "San Francisco International (January 2017)",
+            "slugName": "san-francisco-international-january-2017"
+        },
+        "type": 2
     },
     {
         "isToday": true,

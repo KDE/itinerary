@@ -70,6 +70,7 @@ private Q_SLOTS:
         model.setHomeCountryIsoCode(QStringLiteral("DE"));
         model.setCurrentDateTime(QDateTime({1996, 10, 14}, {12, 34}));
         model.setReservationManager(&resMgr);
+        model.setTransferManager(&transferMgr);
         model.setTripGroupManager(&groupMgr);
 
         TripGroupProxyModel proxy;
@@ -133,6 +134,7 @@ private Q_SLOTS:
         model.setHomeCountryIsoCode(QStringLiteral("DE"));
         model.setCurrentDateTime(QDateTime({2017, 9, 9}, {12, 34}));
         model.setReservationManager(&resMgr);
+        model.setTransferManager(&transferMgr);
         model.setTripGroupManager(&groupMgr);
 
         TripGroupProxyModel proxy;

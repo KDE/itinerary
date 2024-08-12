@@ -1,6 +1,30 @@
 [
     {
         "isToday": false,
+        "rangeType": 1,
+        "sectionHeader": "2023-02-26",
+        "tripGroup": {
+            "@context": "http://schema.org",
+            "@type": "TripGroup",
+            "automaticName": true,
+            "automaticallyGrouped": true,
+            "beginDateTime": {
+                "@type": "QDateTime",
+                "@value": "2023-02-26T16:00:00+01:00",
+                "timezone": "Europe/Berlin"
+            },
+            "endDateTime": {
+                "@type": "QDateTime",
+                "@value": "2023-03-18T00:00:00+01:00",
+                "timezone": "Europe/Berlin"
+            },
+            "name": "Berlin Hbf (February/March 2023)",
+            "slugName": "berlin-hbf-february-march-2023"
+        },
+        "type": 2
+    },
+    {
+        "isToday": false,
         "rangeType": 0,
         "reservations": [
             {
@@ -184,6 +208,30 @@
         ],
         "sectionHeader": "2023-03-18",
         "type": 13
+    },
+    {
+        "isToday": false,
+        "rangeType": 2,
+        "sectionHeader": "2023-03-18",
+        "tripGroup": {
+            "@context": "http://schema.org",
+            "@type": "TripGroup",
+            "automaticName": true,
+            "automaticallyGrouped": true,
+            "beginDateTime": {
+                "@type": "QDateTime",
+                "@value": "2023-02-26T16:00:00+01:00",
+                "timezone": "Europe/Berlin"
+            },
+            "endDateTime": {
+                "@type": "QDateTime",
+                "@value": "2023-03-18T00:00:00+01:00",
+                "timezone": "Europe/Berlin"
+            },
+            "name": "Berlin Hbf (February/March 2023)",
+            "slugName": "berlin-hbf-february-march-2023"
+        },
+        "type": 2
     },
     {
         "isToday": false,

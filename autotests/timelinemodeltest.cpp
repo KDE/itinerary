@@ -98,11 +98,19 @@ private Q_SLOTS:
         auto ctrl = Test::makeAppController();
         ctrl->setPkPassManager(&mgr);
         ctrl->setReservationManager(&resMgr);
+        TransferManager::clear();
+        TransferManager transferMgr;
+
+        TripGroupManager groupMgr;
+        groupMgr.setReservationManager(&resMgr);
+        groupMgr.setTransferManager(&transferMgr);
 
         TimelineModel model;
         model.setCurrentDateTime({{2024, 3, 31}, {17, 18}});
         QAbstractItemModelTester tester(&model);
         model.setReservationManager(&resMgr);
+        model.setTransferManager(&transferMgr);
+        model.setTripGroupManager(&groupMgr);
 
         QSignalSpy insertSpy(&model, &TimelineModel::rowsInserted);
         QVERIFY(insertSpy.isValid());
@@ -152,12 +160,20 @@ private Q_SLOTS:
         Test::clearAll(&resMgr);
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&resMgr);
+        TransferManager::clear();
+        TransferManager transferMgr;
+
+        TripGroupManager groupMgr;
+        groupMgr.setReservationManager(&resMgr);
+        groupMgr.setTransferManager(&transferMgr);
 
         TimelineModel model;
         model.setCurrentDateTime({{2024, 3, 29}, {11, 38}});
         QAbstractItemModelTester tester(&model);
         model.setHomeCountryIsoCode(QStringLiteral("DE"));
         model.setReservationManager(&resMgr);
+        model.setTransferManager(&transferMgr);
+        model.setTripGroupManager(&groupMgr);
 
         QSignalSpy insertSpy(&model, &TimelineModel::rowsInserted);
         QVERIFY(insertSpy.isValid());
@@ -218,12 +234,19 @@ private Q_SLOTS:
         Test::clearAll(&resMgr);
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&resMgr);
+        TransferManager::clear();
+        TransferManager transferMgr;
+        TripGroupManager groupMgr;
+        groupMgr.setReservationManager(&resMgr);
+        groupMgr.setTransferManager(&transferMgr);
 
         TimelineModel model;
         model.setCurrentDateTime({{2024, 3, 29}, {10, 21}}); // after the DST transition in the US!
         QAbstractItemModelTester tester(&model);
         model.setHomeCountryIsoCode(QStringLiteral("DE"));
         model.setReservationManager(&resMgr);
+        model.setTransferManager(&transferMgr);
+        model.setTripGroupManager(&groupMgr);
 
         QCOMPARE(model.rowCount(), 1);
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
@@ -232,28 +255,28 @@ private Q_SLOTS:
         importer.setReservationManager(&resMgr);
         importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/flight-txl-lhr-sfo.json")));
         ctrl->commitImport(&importer);
-        QCOMPARE(model.rowCount(), 6); //  2x country info, 2x flights, today marker, 1x DST info
+        QCOMPARE(model.rowCount(), 8); //  1x begin group, 2x country info, 2x flights, 1x end group, 1x DST info, today marker
 
-        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
-        QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
-        auto countryInfo = model.index(1, 0).data(TimelineModel::LocationInformationRole).value<LocationInformation>();
+        QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
+        QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
+        auto countryInfo = model.index(2, 0).data(TimelineModel::LocationInformationRole).value<LocationInformation>();
         QCOMPARE(countryInfo.drivingSide(), KItinerary::KnowledgeDb::DrivingSide::Left);
         QCOMPARE(countryInfo.drivingSideDiffers(), true);
         QCOMPARE(countryInfo.powerPlugCompatibility(), LocationInformation::Incompatible);
 
-        QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
-        QCOMPARE(model.index(3, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
-        countryInfo = model.index(3, 0).data(TimelineModel::LocationInformationRole).value<LocationInformation>();
+        QCOMPARE(model.index(3, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
+        QCOMPARE(model.index(4, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
+        countryInfo = model.index(4, 0).data(TimelineModel::LocationInformationRole).value<LocationInformation>();
         QCOMPARE(countryInfo.drivingSide(), KItinerary::KnowledgeDb::DrivingSide::Right);
         QCOMPARE(countryInfo.drivingSideDiffers(), false);
         QCOMPARE(countryInfo.powerPlugCompatibility(), LocationInformation::Incompatible);
-        countryInfo = model.index(4, 0).data(TimelineModel::LocationInformationRole).value<LocationInformation>();
+        countryInfo = model.index(6, 0).data(TimelineModel::LocationInformationRole).value<LocationInformation>();
         QCOMPARE(countryInfo.isDst(), true);
         QCOMPARE(countryInfo.dstDiffers(), true);
-        QCOMPARE(model.index(5, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
+        QCOMPARE(model.index(7, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
 
         // remove the GB flight should also remove the GB country info
-        auto resId = model.index(0, 0).data(TimelineModel::BatchIdRole).toString();
+        auto resId = model.index(1, 0).data(TimelineModel::BatchIdRole).toString();
         resMgr.removeReservation(resId);
         QCOMPARE(model.rowCount(), 4);
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
@@ -274,12 +297,19 @@ private Q_SLOTS:
 
         ReservationManager resMgr;
         Test::clearAll(&resMgr);
+        TransferManager::clear();
+        TransferManager transferMgr;
+        TripGroupManager groupMgr;
+        groupMgr.setReservationManager(&resMgr);
+        groupMgr.setTransferManager(&transferMgr);
         WeatherForecastManager weatherMgr;
         weatherMgr.setTestModeEnabled(true);
 
         TimelineModel model;
         QAbstractItemModelTester tester(&model);
         model.setReservationManager(&resMgr);
+        model.setTransferManager(&transferMgr);
+        model.setTripGroupManager(&groupMgr);
         model.setWeatherForecastManager(&weatherMgr);
         QCOMPARE(model.rowCount(), 1); // no weather data, as we don't know where we are
 
@@ -362,6 +392,7 @@ private Q_SLOTS:
         QVERIFY(spy.isValid());
         Q_EMIT weatherMgr.forecastUpdated();
         QCOMPARE(spy.size(), 10);
+        QCOMPARE(model.rowCount(), 13); // 2x flight, 1x today, 10x weather
 
         fc = model.index(3, 0).data(TimelineModel::WeatherForecastRole).value<WeatherInformation>().forecast;
         QVERIFY(fc.isValid());
@@ -375,6 +406,7 @@ private Q_SLOTS:
         QCOMPARE(fc.dateTime(), QDateTime(currentDate.addDays(5), QTime(0, 0)));
 
         // add a location change far in the future, this must not change anything
+        // NOTE: this adds visible trip grouping
         geo.setLatitude(60.0f);
         geo.setLongitude(11.0f);
         a.setGeo(geo);
@@ -382,14 +414,14 @@ private Q_SLOTS:
         f.setDepartureTime(QDateTime(currentDate.addYears(1), QTime(6, 0)));
         res.setReservationFor(f);
         resMgr.addReservation(res);
-        QCOMPARE(model.rowCount(), 14);
+        QCOMPARE(model.rowCount(), 16);
 
         fc = model.index(3, 0).data(TimelineModel::WeatherForecastRole).value<WeatherInformation>().forecast;
         QVERIFY(fc.isValid());
         QCOMPARE(fc.minimumTemperature(), 13.0f);
         QCOMPARE(fc.maximumTemperature(), 52.0f);
         QCOMPARE(fc.dateTime(), QDateTime(currentDate.addDays(1), QTime(0, 0)));
-        fc = model.index(9, 0).data(TimelineModel::WeatherForecastRole).value<WeatherInformation>().forecast;
+        fc = model.index(11, 0).data(TimelineModel::WeatherForecastRole).value<WeatherInformation>().forecast;
         QVERIFY(fc.isValid());
         QCOMPARE(fc.minimumTemperature(), 8.0f);
         QCOMPARE(fc.maximumTemperature(), 46.0f);
@@ -400,27 +432,29 @@ private Q_SLOTS:
             TimelineModel model;
             QAbstractItemModelTester tester(&model);
             model.setReservationManager(&resMgr);
+            model.setTransferManager(&transferMgr);
+            model.setTripGroupManager(&groupMgr);
             model.setWeatherForecastManager(&weatherMgr);
-            QCOMPARE(model.rowCount(), 14);
+            QCOMPARE(model.rowCount(), 16);
+
+            fc = model.index(3, 0).data(TimelineModel::WeatherForecastRole).value<WeatherInformation>().forecast;
+            QVERIFY(fc.isValid());
+            QCOMPARE(fc.minimumTemperature(), 13.0f);
+            QCOMPARE(fc.maximumTemperature(), 52.0f);
+            QCOMPARE(fc.dateTime(), QDateTime(currentDate.addDays(1), QTime(0, 0)));
+            fc = model.index(11, 0).data(TimelineModel::WeatherForecastRole).value<WeatherInformation>().forecast;
+            QVERIFY(fc.isValid());
+            QCOMPARE(fc.minimumTemperature(), 8.0f);
+            QCOMPARE(fc.maximumTemperature(), 46.0f);
+            QCOMPARE(fc.dateTime(), QDateTime(currentDate.addDays(5), QTime(0, 0)));
         }
 
-        fc = model.index(3, 0).data(TimelineModel::WeatherForecastRole).value<WeatherInformation>().forecast;
-        QVERIFY(fc.isValid());
-        QCOMPARE(fc.minimumTemperature(), 13.0f);
-        QCOMPARE(fc.maximumTemperature(), 52.0f);
-        QCOMPARE(fc.dateTime(), QDateTime(currentDate.addDays(1), QTime(0, 0)));
-        fc = model.index(9, 0).data(TimelineModel::WeatherForecastRole).value<WeatherInformation>().forecast;
-        QVERIFY(fc.isValid());
-        QCOMPARE(fc.minimumTemperature(), 8.0f);
-        QCOMPARE(fc.maximumTemperature(), 46.0f);
-        QCOMPARE(fc.dateTime(), QDateTime(currentDate.addDays(5), QTime(0, 0)));
-
         // clean up
-        auto resId = model.index(13, 0).data(TimelineModel::BatchIdRole).toString();
+        auto resId = model.index(15, 0).data(TimelineModel::BatchIdRole).toString();
         resMgr.removeReservation(resId);
-        resId = model.index(4, 0).data(TimelineModel::BatchIdRole).toString();
+        resId = model.index(5, 0).data(TimelineModel::BatchIdRole).toString();
         resMgr.removeReservation(resId);
-        QCOMPARE(model.rowCount(), 11);
+        QCOMPARE(model.rowCount(), 13);
 
         // test case: two consecutive location changes, the first one to an unknown location
         // result: the weather element before the first location change ends with the start of that
@@ -436,6 +470,11 @@ private Q_SLOTS:
         Test::clearAll(&resMgr);
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&resMgr);
+        TransferManager::clear();
+        TransferManager transferMgr;
+        TripGroupManager groupMgr;
+        groupMgr.setReservationManager(&resMgr);
+        groupMgr.setTransferManager(&transferMgr);
         WeatherForecastManager weatherMgr;
         weatherMgr.setTestModeEnabled(true);
 
@@ -444,6 +483,8 @@ private Q_SLOTS:
         model.setHomeCountryIsoCode(QStringLiteral("DE"));
         model.setCurrentDateTime(QDateTime({2023, 3, 16}, {12, 34}));
         model.setReservationManager(&resMgr);
+        model.setTransferManager(&transferMgr);
+        model.setTripGroupManager(&groupMgr);
         model.setWeatherForecastManager(&weatherMgr);
 
         ImportController importer;
@@ -451,7 +492,7 @@ private Q_SLOTS:
         importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/weather-no-location-change.json")));
         ctrl->commitImport(&importer);
         ModelVerificationPoint vp0(QLatin1StringView(SOURCE_DIR "/data/weather-no-location-change.model"));
-        vp0.setRoleFilter({TimelineModel::BatchIdRole});
+        vp0.setRoleFilter({TimelineModel::BatchIdRole, TimelineModel::TripGroupIdRole});
         vp0.setJsonPropertyFilter({"elements"_L1});
         QVERIFY(vp0.verify(&model));
     }
@@ -464,10 +505,18 @@ private Q_SLOTS:
         Test::clearAll(&resMgr);
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&resMgr);
+        TransferManager::clear();
+        TransferManager transferMgr;
+        TripGroupManager groupMgr;
+        groupMgr.setReservationManager(&resMgr);
+        groupMgr.setTransferManager(&transferMgr);
+
         TimelineModel model;
         model.setCurrentDateTime({{2024, 3, 29}, {10, 21}}); // after the DST transition in the US!
         QAbstractItemModelTester tester(&model);
         model.setReservationManager(&resMgr);
+        model.setTransferManager(&transferMgr);
+        model.setTripGroupManager(&groupMgr);
         QCOMPARE(model.rowCount(), 1); // 1x TodayMarker
 
         QSignalSpy insertSpy(&model, &TimelineModel::rowsInserted);
@@ -482,16 +531,16 @@ private Q_SLOTS:
         importer.setReservationManager(&resMgr);
         importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
         ctrl->commitImport(&importer);
-        QCOMPARE(model.rowCount(), 5); // 2x Flight, 1x tz change info, 1x DST info, 1x TodayMarker
+        QCOMPARE(model.rowCount(), 7); // 1x group begin, 2x Flight, 1x tz change info, 1x group end, 1x DST info, 1x TodayMarker
         QCOMPARE(updateSpy.count(), 3);
         QCOMPARE(rmSpy.count(), 3);
-        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
         QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
-        QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
+        QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
         QCOMPARE(model.index(3, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
-        QCOMPARE(model.index(4, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
-        QCOMPARE(resMgr.reservationsForBatch(model.index(0, 0).data(TimelineModel::BatchIdRole).toString()).size(), 2);
+        QCOMPARE(model.index(5, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
+        QCOMPARE(model.index(6, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
         QCOMPARE(resMgr.reservationsForBatch(model.index(1, 0).data(TimelineModel::BatchIdRole).toString()).size(), 2);
+        QCOMPARE(resMgr.reservationsForBatch(model.index(2, 0).data(TimelineModel::BatchIdRole).toString()).size(), 2);
 
         // already existing data
         {
@@ -499,14 +548,16 @@ private Q_SLOTS:
             model.setCurrentDateTime({{2024, 3, 29}, {10, 21}}); // after the DST transition in the US!
             QAbstractItemModelTester tester(&model);
             model.setReservationManager(&resMgr);
-            QCOMPARE(model.rowCount(), 5); // 2x Flight, 1x tz change, 1x DST info, 1x TodayMarger
-            QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
+            model.setTransferManager(&transferMgr);
+            model.setTripGroupManager(&groupMgr);
+            QCOMPARE(model.rowCount(), 7); // 1x group begin, 2x Flight, 1x tz change info, 1x group end, 1x DST info, 1x TodayMarker
             QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
-            QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
+            QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
             QCOMPARE(model.index(3, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
-            QCOMPARE(model.index(4, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
-            QCOMPARE(resMgr.reservationsForBatch(model.index(0, 0).data(TimelineModel::BatchIdRole).toString()).size(), 2);
+            QCOMPARE(model.index(5, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
+            QCOMPARE(model.index(6, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
             QCOMPARE(resMgr.reservationsForBatch(model.index(1, 0).data(TimelineModel::BatchIdRole).toString()).size(), 2);
+            QCOMPARE(resMgr.reservationsForBatch(model.index(2, 0).data(TimelineModel::BatchIdRole).toString()).size(), 2);
         }
 
         // update splits element
@@ -520,10 +571,10 @@ private Q_SLOTS:
         flight.setDepartureTime(flight.departureTime().addDays(1));
         res.setReservationFor(flight);
         resMgr.updateReservation(resId, res);
-        QCOMPARE(model.rowCount(), 6);
+        QCOMPARE(model.rowCount(), 8);
         QCOMPARE(updateSpy.count(), 2);
-        QCOMPARE(insertSpy.count(), 2);
-        QCOMPARE(rmSpy.count(), 1);
+        QCOMPARE(insertSpy.count(), 6);
+        QCOMPARE(rmSpy.count(), 5);
 
         // update merges two elements
         updateSpy.clear();
@@ -534,7 +585,7 @@ private Q_SLOTS:
         resMgr.updateReservation(resId, res);
         QCOMPARE(model.rowCount(), 5);
         QCOMPARE(updateSpy.count(), 3);
-        QCOMPARE(rmSpy.count(), 3);
+        QCOMPARE(rmSpy.count(), 5);
         QCOMPARE(insertSpy.count(), 2);
 
         // removal of merged items
@@ -552,6 +603,11 @@ private Q_SLOTS:
         Test::clearAll(&resMgr);
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&resMgr);
+        TransferManager::clear();
+        TransferManager transferMgr;
+        TripGroupManager groupMgr;
+        groupMgr.setReservationManager(&resMgr);
+        groupMgr.setTransferManager(&transferMgr);
         WeatherForecastManager weatherMgr;
         weatherMgr.setTestModeEnabled(true);
 
@@ -560,6 +616,8 @@ private Q_SLOTS:
         model.setHomeCountryIsoCode(QStringLiteral("DE"));
         model.setCurrentDateTime(QDateTime({2196, 10, 14}, {12, 34}));
         model.setReservationManager(&resMgr);
+        model.setTransferManager(&transferMgr);
+        model.setTripGroupManager(&groupMgr);
         model.setWeatherForecastManager(&weatherMgr);
 
         ModelVerificationPoint vp0(QLatin1StringView(SOURCE_DIR "/data/timeline/daychange-r0.model"));
@@ -580,14 +638,14 @@ private Q_SLOTS:
         importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/flight-txl-lhr-sfo.json")));
         ctrl->commitImport(&importer);
         ModelVerificationPoint vp2(QLatin1StringView(SOURCE_DIR "/data/timeline/daychange-r2.model"));
-        vp2.setRoleFilter({TimelineModel::BatchIdRole});
+        vp2.setRoleFilter({TimelineModel::BatchIdRole, TimelineModel::TripGroupIdRole});
         vp2.setJsonPropertyFilter({"elements"_L1});
         QVERIFY(vp2.verify(&model));
 
         // changing the day should move the today marker and weather one day forward
         model.setCurrentDateTime(QDateTime({2196, 10, 16}, {19, 30}));
         ModelVerificationPoint vp3(QLatin1StringView(SOURCE_DIR "/data/timeline/daychange-r3.model"));
-        vp3.setRoleFilter({TimelineModel::BatchIdRole});
+        vp3.setRoleFilter({TimelineModel::BatchIdRole, TimelineModel::TripGroupIdRole});
         vp3.setJsonPropertyFilter({"elements"_L1});
         QVERIFY(vp3.verify(&model));
     }
