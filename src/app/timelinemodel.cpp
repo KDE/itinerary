@@ -519,7 +519,7 @@ void TimelineModel::updateInformationElements()
             auto endDt = now().addDays(DST_DAYS_AFTER);
             for (auto nextIt = it; std::next(nextIt) != m_elements.end();) {
                 ++nextIt;
-                if ((*nextIt).isInformational() || (*nextIt).isCanceled()) {
+                if ((*nextIt).isInformational() || (*nextIt).isCanceled() || ((*nextIt).elementType == TimelineElement::Transfer && (*nextIt).content().value<Transfer>().state() != Transfer::Selected)) {
                     continue;
                 }
                 endDt = std::min(endDt, (*nextIt).dt);
