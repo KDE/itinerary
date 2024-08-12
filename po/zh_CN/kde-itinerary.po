@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-11 00:40+0000\n"
+"POT-Creation-Date: 2024-08-12 00:39+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -118,7 +118,7 @@ msgid "Add to calendar…"
 msgstr ""
 
 #: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:182
-#: app/TripGroupPage.qml:349
+#: app/TripGroupPage.qml:356
 #, kde-format
 msgid "Export…"
 msgstr ""
@@ -169,7 +169,7 @@ msgid "Itinerary file (*.itinerary)"
 msgstr ""
 
 #: app/ActionsCard.qml:172 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:319
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:326
 #, kde-format
 msgid "Actions"
 msgstr ""
@@ -569,8 +569,7 @@ msgid "Alight earlier"
 msgstr ""
 
 #: app/BusEditor.qml:134 app/BusEditor.qml:140 app/BusPage.qml:182
-#, fuzzy, kde-format
-#| msgid "Seat"
+#, kde-format
 msgctxt "Bus seat"
 msgid "Seat"
 msgstr "座位信息"
@@ -833,11 +832,10 @@ msgid "End time: %1"
 msgstr "结束时间：%1"
 
 #: app/EventDelegate.qml:70
-#, fuzzy, kde-format
-#| msgid "Direction: %1"
+#, kde-format
 msgctxt "event venue seat section"
 msgid "Section: <b>%1</b>"
-msgstr "方向：%1"
+msgstr ""
 
 #: app/EventDelegate.qml:76
 #, kde-format
@@ -1161,8 +1159,7 @@ msgid "Invalid flight number."
 msgstr ""
 
 #: app/FlightEditor.qml:195 app/FlightEditor.qml:202
-#, fuzzy, kde-format
-#| msgid "Seat"
+#, kde-format
 msgctxt "Flight seat"
 msgid "Seat"
 msgstr "座位信息"
@@ -1184,8 +1181,7 @@ msgstr ""
 
 #: app/FlightPage.qml:94 app/TrainEditor.qml:146 app/TrainEditor.qml:158
 #: app/TrainPage.qml:279
-#, fuzzy, kde-format
-#| msgid "Seat"
+#, kde-format
 msgctxt "Train seat"
 msgid "Seat"
 msgstr "座位信息"
@@ -2903,6 +2899,15 @@ msgstr ""
 msgid "Currently not available"
 msgstr ""
 
+#: app/PublicTransportFeatureList.qml:37
+#, fuzzy, kde-format
+#| msgctxt "number of switches to another transport"
+#| msgid "One change"
+#| msgid_plural "%1 changes"
+msgid "One space"
+msgid_plural "%1 spaces"
+msgstr[0] "%1 次换乘"
+
 #: app/ReservationDocumentsCard.qml:19
 #, kde-format
 msgid "Documents and Tickets"
@@ -3490,7 +3495,7 @@ msgstr ""
 msgid "Export Trip"
 msgstr "导出行程"
 
-#: app/TimelinePage.qml:484 app/TripGroupPage.qml:283
+#: app/TimelinePage.qml:484 app/TripGroupPage.qml:290
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "今日无行程计划。"
@@ -3629,8 +3634,7 @@ msgid "Coach:"
 msgstr "车厢："
 
 #: app/TrainPage.qml:296
-#, fuzzy, kde-format
-#| msgid "Seat:"
+#, kde-format
 msgctxt "Train seat"
 msgid "Seat:"
 msgstr "座号："
@@ -3775,7 +3779,7 @@ msgstr[0] ""
 msgid "Edit…"
 msgstr ""
 
-#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:354
+#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:361
 #, kde-format
 msgid "Delete trip"
 msgstr ""
@@ -3836,10 +3840,9 @@ msgid "Merge"
 msgstr ""
 
 #: app/TripGroupPage.qml:130
-#, fuzzy, kde-format
-#| msgid "Do you really want to delete this trip?"
+#, kde-format
 msgid "Do you really want to delete the trip '%1'?"
-msgstr "您确定要删除此行程吗？"
+msgstr ""
 
 #: app/TripGroupPage.qml:163
 #, kde-format
@@ -3848,35 +3851,31 @@ msgid_plural "%1 days"
 msgstr[0] ""
 
 #: app/TripGroupPage.qml:183
-#, fuzzy, kde-format
-#| msgid "Some incompatible power sockets: %1"
+#, kde-format
 msgid "Some incompatible power sockets (%1)"
-msgstr "部分电源插座不兼容：%1"
+msgstr ""
 
 #: app/TripGroupPage.qml:185
-#, fuzzy, kde-format
-#| msgid "Some incompatible power plugs: %1"
+#, kde-format
 msgid "Some incompatible power plugs (%1)"
-msgstr "部分电源插头不兼容： %1"
+msgstr ""
 
 #: app/TripGroupPage.qml:188
-#, fuzzy, kde-format
-#| msgid "%1: no compatible power plugs (%2)"
+#, kde-format
 msgid "No compatible power plugs (%1)"
-msgstr "%1：没有兼容的电源插头 (%2)"
+msgstr ""
 
-#: app/TripGroupPage.qml:324
-#, fuzzy, kde-format
-#| msgid "Rename"
+#: app/TripGroupPage.qml:331
+#, kde-format
 msgid "Rename…"
-msgstr "重命名"
+msgstr ""
 
-#: app/TripGroupPage.qml:333
+#: app/TripGroupPage.qml:340
 #, kde-format
 msgid "Merge trips…"
 msgstr ""
 
-#: app/TripGroupPage.qml:343
+#: app/TripGroupPage.qml:350
 #, kde-format
 msgid "Split trip…"
 msgstr ""

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-11 00:40+0000\n"
+"POT-Creation-Date: 2024-08-12 00:39+0000\n"
 "PO-Revision-Date: 2024-06-10 22:02+0200\n"
 "Last-Translator: cahfofpai <cahfofpai@magenta.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -122,7 +122,7 @@ msgid "Add to calendar…"
 msgstr "Zum Kalender hinzufügen ..."
 
 #: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:182
-#: app/TripGroupPage.qml:349
+#: app/TripGroupPage.qml:356
 #, fuzzy, kde-format
 #| msgid "Export..."
 msgid "Export…"
@@ -179,7 +179,7 @@ msgid "Itinerary file (*.itinerary)"
 msgstr "KDE-Itinerary-Dateien (*.itinerary)"
 
 #: app/ActionsCard.qml:172 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:319
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:326
 #, kde-format
 msgid "Actions"
 msgstr "Aktionen"
@@ -3025,6 +3025,16 @@ msgstr "Keine Kamera verfügbar."
 msgid "Currently not available"
 msgstr ""
 
+#: app/PublicTransportFeatureList.qml:37
+#, fuzzy, kde-format
+#| msgctxt "number of switches to another transport"
+#| msgid "One change"
+#| msgid_plural "%1 changes"
+msgid "One space"
+msgid_plural "%1 spaces"
+msgstr[0] "Ein Umstieg"
+msgstr[1] "%1 Umstiege"
+
 #: app/ReservationDocumentsCard.qml:19
 #, kde-format
 msgid "Documents and Tickets"
@@ -3646,7 +3656,7 @@ msgstr ""
 msgid "Export Trip"
 msgstr "Reise exportieren"
 
-#: app/TimelinePage.qml:484 app/TripGroupPage.qml:283
+#: app/TimelinePage.qml:484 app/TripGroupPage.qml:290
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Für heute steht nichts im Reiseplan."
@@ -3939,7 +3949,7 @@ msgstr[1] "Währungen: %2"
 msgid "Edit…"
 msgstr "Bearbeiten"
 
-#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:354
+#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:361
 #, kde-format
 msgid "Delete trip"
 msgstr "Reise löschen"
@@ -4034,19 +4044,19 @@ msgstr "Einige inkompatiblen Stecker: %1"
 msgid "No compatible power plugs (%1)"
 msgstr "%1: Keine kompatiblen Steckdosen (%2)"
 
-#: app/TripGroupPage.qml:324
+#: app/TripGroupPage.qml:331
 #, fuzzy, kde-format
 #| msgid "Rename"
 msgid "Rename…"
 msgstr "Umbenennen"
 
-#: app/TripGroupPage.qml:333
+#: app/TripGroupPage.qml:340
 #, fuzzy, kde-format
 #| msgid "Add train trip..."
 msgid "Merge trips…"
 msgstr "Zugreise hinzufügen ..."
 
-#: app/TripGroupPage.qml:343
+#: app/TripGroupPage.qml:350
 #, fuzzy, kde-format
 #| msgid "Add train trip..."
 msgid "Split trip…"

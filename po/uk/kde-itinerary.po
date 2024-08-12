@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-11 00:40+0000\n"
-"PO-Revision-Date: 2024-08-09 09:09+0300\n"
+"POT-Creation-Date: 2024-08-12 00:39+0000\n"
+"PO-Revision-Date: 2024-08-11 09:20+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -124,7 +124,7 @@ msgid "Add to calendar…"
 msgstr "Додати до календаря…"
 
 #: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:182
-#: app/TripGroupPage.qml:349
+#: app/TripGroupPage.qml:356
 #, kde-format
 msgid "Export…"
 msgstr "Експортувати…"
@@ -175,7 +175,7 @@ msgid "Itinerary file (*.itinerary)"
 msgstr "файл Itinerary (*.itinerary)"
 
 #: app/ActionsCard.qml:172 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:319
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:326
 #, kde-format
 msgid "Actions"
 msgstr "Дії"
@@ -2931,6 +2931,18 @@ msgstr "Немає доступу"
 msgid "Currently not available"
 msgstr "Наразі немає доступу"
 
+#: app/PublicTransportFeatureList.qml:37
+#, fuzzy, kde-format
+#| msgctxt "number of switches to another transport"
+#| msgid "One change"
+#| msgid_plural "%1 changes"
+msgid "One space"
+msgid_plural "%1 spaces"
+msgstr[0] "%1 зміна"
+msgstr[1] "%1 зміни"
+msgstr[2] "%1 змін"
+msgstr[3] "%1 зміна"
+
 #: app/ReservationDocumentsCard.qml:19
 #, kde-format
 msgid "Documents and Tickets"
@@ -3539,7 +3551,7 @@ msgstr "Як файл GPX…"
 msgid "Export Trip"
 msgstr "Експорт подорожі"
 
-#: app/TimelinePage.qml:484 app/TripGroupPage.qml:283
+#: app/TimelinePage.qml:484 app/TripGroupPage.qml:290
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "У маршрутах на сьогодні даних немає."
@@ -3829,7 +3841,7 @@ msgstr[3] "Валюта: %2"
 msgid "Edit…"
 msgstr "Змінити…"
 
-#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:354
+#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:361
 #, kde-format
 msgid "Delete trip"
 msgstr "Вилучити подорож"
@@ -3890,50 +3902,45 @@ msgid "Merge"
 msgstr "Об'єднати"
 
 #: app/TripGroupPage.qml:130
-#, fuzzy, kde-format
-#| msgid "Do you really want to delete this trip?"
+#, kde-format
 msgid "Do you really want to delete the trip '%1'?"
-msgstr "Ви справді бажаєте вилучити цю подорож?"
+msgstr "Ви справді бажаєте вилучити подорож «%1»?"
 
 #: app/TripGroupPage.qml:163
 #, kde-format
 msgid "One day"
 msgid_plural "%1 days"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%1 день"
+msgstr[1] "%1 дні"
+msgstr[2] "%1 днів"
+msgstr[3] "Один день"
 
 #: app/TripGroupPage.qml:183
-#, fuzzy, kde-format
-#| msgid "Some incompatible power sockets: %1"
+#, kde-format
 msgid "Some incompatible power sockets (%1)"
-msgstr "Несумісні розетки: %1"
+msgstr "Несумісні розетки (%1)"
 
 #: app/TripGroupPage.qml:185
-#, fuzzy, kde-format
-#| msgid "Some incompatible power plugs: %1"
+#, kde-format
 msgid "Some incompatible power plugs (%1)"
-msgstr "Несумісні штекери: %1"
+msgstr "Несумісні штекери (%1)"
 
 #: app/TripGroupPage.qml:188
-#, fuzzy, kde-format
-#| msgid "%1: no compatible power plugs (%2)"
+#, kde-format
 msgid "No compatible power plugs (%1)"
-msgstr "%1: немає сумісних штекерів (%2)"
+msgstr "Немає сумісних штекерів (%1)"
 
-#: app/TripGroupPage.qml:324
-#, fuzzy, kde-format
-#| msgid "Rename"
+#: app/TripGroupPage.qml:331
+#, kde-format
 msgid "Rename…"
-msgstr "Перейменувати"
+msgstr "Перейменувати…"
 
-#: app/TripGroupPage.qml:333
+#: app/TripGroupPage.qml:340
 #, kde-format
 msgid "Merge trips…"
 msgstr "Об'єднати подорожі…"
 
-#: app/TripGroupPage.qml:343
+#: app/TripGroupPage.qml:350
 #, kde-format
 msgid "Split trip…"
 msgstr "Розділена подорож…"

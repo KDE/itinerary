@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-11 00:40+0000\n"
+"POT-Creation-Date: 2024-08-12 00:39+0000\n"
 "PO-Revision-Date: 2024-03-26 16:14+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -121,7 +121,7 @@ msgid "Add to calendar…"
 msgstr "Hozzáadás a naptárhoz…"
 
 #: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:182
-#: app/TripGroupPage.qml:349
+#: app/TripGroupPage.qml:356
 #, fuzzy, kde-format
 #| msgid "Export"
 msgid "Export…"
@@ -174,7 +174,7 @@ msgid "Itinerary file (*.itinerary)"
 msgstr "Itinerary fájl (*.itinerary)"
 
 #: app/ActionsCard.qml:172 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:319
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:326
 #, kde-format
 msgid "Actions"
 msgstr "Műveletek"
@@ -2961,6 +2961,16 @@ msgstr "Nem érhető el kamera."
 msgid "Currently not available"
 msgstr ""
 
+#: app/PublicTransportFeatureList.qml:37
+#, fuzzy, kde-format
+#| msgctxt "number of switches to another transport"
+#| msgid "One change"
+#| msgid_plural "%1 changes"
+msgid "One space"
+msgid_plural "%1 spaces"
+msgstr[0] "Egy átszállás"
+msgstr[1] "%1 átszállás"
+
 #: app/ReservationDocumentsCard.qml:19
 #, kde-format
 msgid "Documents and Tickets"
@@ -3557,7 +3567,7 @@ msgstr "GPX-fájlként…"
 msgid "Export Trip"
 msgstr "Kirándulás exportálása"
 
-#: app/TimelinePage.qml:484 app/TripGroupPage.qml:283
+#: app/TimelinePage.qml:484 app/TripGroupPage.qml:290
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr ""
@@ -3847,7 +3857,7 @@ msgstr[1] ""
 msgid "Edit…"
 msgstr "Szerkesztés"
 
-#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:354
+#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:361
 #, kde-format
 msgid "Delete trip"
 msgstr "Kirándulás törlése"
@@ -3941,18 +3951,18 @@ msgstr "Néhány nem kompatibilis hálózati csatlakozó: %1"
 msgid "No compatible power plugs (%1)"
 msgstr "Néhány nem kompatibilis hálózati csatlakozó: %1"
 
-#: app/TripGroupPage.qml:324
+#: app/TripGroupPage.qml:331
 #, fuzzy, kde-format
 #| msgid "Rename"
 msgid "Rename…"
 msgstr "Átnevezés"
 
-#: app/TripGroupPage.qml:333
+#: app/TripGroupPage.qml:340
 #, kde-format
 msgid "Merge trips…"
 msgstr ""
 
-#: app/TripGroupPage.qml:343
+#: app/TripGroupPage.qml:350
 #, fuzzy, kde-format
 #| msgid "Add transfer after"
 msgid "Split trip…"

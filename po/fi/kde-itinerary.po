@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-11 00:40+0000\n"
+"POT-Creation-Date: 2024-08-12 00:39+0000\n"
 "PO-Revision-Date: 2024-02-27 13:39+0200\n"
 "Last-Translator: Kimmo Kujansuu <mrkujansuu@gmail.com>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -120,7 +120,7 @@ msgid "Add to calendar…"
 msgstr "Lisää kalenteriin…"
 
 #: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:182
-#: app/TripGroupPage.qml:349
+#: app/TripGroupPage.qml:356
 #, fuzzy, kde-format
 #| msgid "Export"
 msgid "Export…"
@@ -173,7 +173,7 @@ msgid "Itinerary file (*.itinerary)"
 msgstr "Itinerary-tiedosto (*.itinerary)"
 
 #: app/ActionsCard.qml:172 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:319
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:326
 #, kde-format
 msgid "Actions"
 msgstr "Toiminnot"
@@ -2959,6 +2959,16 @@ msgstr "Ei kameraa käytettävissä."
 msgid "Currently not available"
 msgstr ""
 
+#: app/PublicTransportFeatureList.qml:37
+#, fuzzy, kde-format
+#| msgctxt "number of switches to another transport"
+#| msgid "One change"
+#| msgid_plural "%1 changes"
+msgid "One space"
+msgid_plural "%1 spaces"
+msgstr[0] "Yksi vaihto"
+msgstr[1] "%1 vaihtoa"
+
 #: app/ReservationDocumentsCard.qml:19
 #, kde-format
 msgid "Documents and Tickets"
@@ -3574,7 +3584,7 @@ msgstr "GPX-tiedostoksi…"
 msgid "Export Trip"
 msgstr "Vie matka"
 
-#: app/TimelinePage.qml:484 app/TripGroupPage.qml:283
+#: app/TimelinePage.qml:484 app/TripGroupPage.qml:290
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Matkasuunnitelmassa ei tänään ole mitään."
@@ -3864,7 +3874,7 @@ msgstr[1] "Valuutat: %2"
 msgid "Edit…"
 msgstr "Muokkaa"
 
-#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:354
+#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:361
 #, kde-format
 msgid "Delete trip"
 msgstr "Poista matka"
@@ -3960,19 +3970,19 @@ msgstr "Epäyhteensopivia virtaliittimiä: %1"
 msgid "No compatible power plugs (%1)"
 msgstr "%1: ei yhteensopivia virtaliittimiä (%2)"
 
-#: app/TripGroupPage.qml:324
+#: app/TripGroupPage.qml:331
 #, fuzzy, kde-format
 #| msgid "Rename"
 msgid "Rename…"
 msgstr "Muuta nimeä"
 
-#: app/TripGroupPage.qml:333
+#: app/TripGroupPage.qml:340
 #, fuzzy, kde-format
 #| msgid "Add ferry trip..."
 msgid "Merge trips…"
 msgstr "Lisää lauttamatka…"
 
-#: app/TripGroupPage.qml:343
+#: app/TripGroupPage.qml:350
 #, fuzzy, kde-format
 #| msgid "Add train trip..."
 msgid "Split trip…"

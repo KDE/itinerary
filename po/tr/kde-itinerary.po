@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-11 00:40+0000\n"
-"PO-Revision-Date: 2024-08-09 13:50+0300\n"
+"POT-Creation-Date: 2024-08-12 00:39+0000\n"
+"PO-Revision-Date: 2024-08-11 23:01+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -120,7 +120,7 @@ msgid "Add to calendar…"
 msgstr "Takvime Ekle…"
 
 #: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:182
-#: app/TripGroupPage.qml:349
+#: app/TripGroupPage.qml:356
 #, kde-format
 msgid "Export…"
 msgstr "Dışa Aktar…"
@@ -171,7 +171,7 @@ msgid "Itinerary file (*.itinerary)"
 msgstr "Yol Kılavuzu dosyası (*.itinerary)"
 
 #: app/ActionsCard.qml:172 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:319
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:326
 #, kde-format
 msgid "Actions"
 msgstr "Eylemler"
@@ -2296,17 +2296,17 @@ msgstr "%1 ülkesine giriş"
 #: app/LocationInfoDelegate.qml:69
 #, kde-format
 msgid "No compatible power sockets: %1"
-msgstr "Uyumlu güç yuvası yok: %1"
+msgstr "Uyumlu priz yok: %1"
 
 #: app/LocationInfoDelegate.qml:77
 #, kde-format
 msgid "Some incompatible power sockets: %1"
-msgstr "Bazı güç yuvaları uyumsuz: %1"
+msgstr "Bazı prizler uyumsuz: %1"
 
 #: app/LocationInfoDelegate.qml:84
 #, kde-format
 msgid "Some incompatible power plugs: %1"
-msgstr "Bazı prizler uyumsuz: %1"
+msgstr "Bazı fişler uyumsuz: %1"
 
 #: app/LocationInfoDelegate.qml:92
 #, kde-format
@@ -2917,6 +2917,16 @@ msgstr "Kullanılamıyor"
 msgid "Currently not available"
 msgstr "Şu anda kullanılamıyor"
 
+#: app/PublicTransportFeatureList.qml:37
+#, fuzzy, kde-format
+#| msgctxt "number of switches to another transport"
+#| msgid "One change"
+#| msgid_plural "%1 changes"
+msgid "One space"
+msgid_plural "%1 spaces"
+msgstr[0] "Bir aktarma"
+msgstr[1] "%1 aktarma"
+
 #: app/ReservationDocumentsCard.qml:19
 #, kde-format
 msgid "Documents and Tickets"
@@ -3516,7 +3526,7 @@ msgstr "GPX Dosyası Olarak…"
 msgid "Export Trip"
 msgstr "Geziyi Dışa Aktar"
 
-#: app/TimelinePage.qml:484 app/TripGroupPage.qml:283
+#: app/TimelinePage.qml:484 app/TripGroupPage.qml:290
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Bugün için yolcu belgenizde bir şey yok."
@@ -3778,17 +3788,17 @@ msgstr "%1 / %2"
 #: app/TripGroupDelegate.qml:131
 #, kde-format
 msgid "%1: some incompatible power sockets (%2)"
-msgstr "%1: Bazı uyumsuz güç yuvaları (%2)"
+msgstr "%1: Bazı prizler uyumsuz (%2)"
 
 #: app/TripGroupDelegate.qml:133
 #, kde-format
 msgid "%1: some incompatible power plugs (%2)"
-msgstr "%1: Bazı uyumsuz güç prizleri (%2)"
+msgstr "%1: Bazı fişler uyumsuz (%2)"
 
 #: app/TripGroupDelegate.qml:136
 #, kde-format
 msgid "%1: no compatible power plugs (%2)"
-msgstr "%1: Uyumlu güç prizi yok (%2)"
+msgstr "%1: Uyumlu fiş yok (%2)"
 
 #: app/TripGroupDelegate.qml:145 app/TripGroupPage.qml:195
 #, kde-format
@@ -3802,7 +3812,7 @@ msgstr[1] "Para birimleri: %2"
 msgid "Edit…"
 msgstr "Düzenle…"
 
-#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:354
+#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:361
 #, kde-format
 msgid "Delete trip"
 msgstr "Geziyi sil"
@@ -3863,48 +3873,43 @@ msgid "Merge"
 msgstr "Birleştir"
 
 #: app/TripGroupPage.qml:130
-#, fuzzy, kde-format
-#| msgid "Do you really want to delete this trip?"
+#, kde-format
 msgid "Do you really want to delete the trip '%1'?"
-msgstr "Bu geziyi silmeyi gerçekten istiyor musunuz?"
+msgstr "“%1” gezisini silmeyi gerçekten istiyor musunuz?"
 
 #: app/TripGroupPage.qml:163
 #, kde-format
 msgid "One day"
 msgid_plural "%1 days"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 gün"
+msgstr[1] "%1 gün"
 
 #: app/TripGroupPage.qml:183
-#, fuzzy, kde-format
-#| msgid "Some incompatible power sockets: %1"
+#, kde-format
 msgid "Some incompatible power sockets (%1)"
-msgstr "Bazı güç yuvaları uyumsuz: %1"
+msgstr "Bazı prizler uyumsuz (%1)"
 
 #: app/TripGroupPage.qml:185
-#, fuzzy, kde-format
-#| msgid "Some incompatible power plugs: %1"
+#, kde-format
 msgid "Some incompatible power plugs (%1)"
-msgstr "Bazı prizler uyumsuz: %1"
+msgstr "Bazı fişler uyumsuz (%1)"
 
 #: app/TripGroupPage.qml:188
-#, fuzzy, kde-format
-#| msgid "%1: no compatible power plugs (%2)"
+#, kde-format
 msgid "No compatible power plugs (%1)"
-msgstr "%1: Uyumlu güç prizi yok (%2)"
+msgstr "Uyumlu fiş yok (%1)"
 
-#: app/TripGroupPage.qml:324
-#, fuzzy, kde-format
-#| msgid "Rename"
+#: app/TripGroupPage.qml:331
+#, kde-format
 msgid "Rename…"
-msgstr "Yeniden Adlandır"
+msgstr "Yeniden Adlandır…"
 
-#: app/TripGroupPage.qml:333
+#: app/TripGroupPage.qml:340
 #, kde-format
 msgid "Merge trips…"
 msgstr "Gezileri Birleştir…"
 
-#: app/TripGroupPage.qml:343
+#: app/TripGroupPage.qml:350
 #, kde-format
 msgid "Split trip…"
 msgstr "Geziyi Böl…"

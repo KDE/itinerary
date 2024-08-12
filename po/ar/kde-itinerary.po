@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-11 00:40+0000\n"
+"POT-Creation-Date: 2024-08-12 00:39+0000\n"
 "PO-Revision-Date: 2023-05-11 10:49+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -117,7 +117,7 @@ msgid "Add to calendar…"
 msgstr "أضف إلى التّقويم..."
 
 #: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:182
-#: app/TripGroupPage.qml:349
+#: app/TripGroupPage.qml:356
 #, fuzzy, kde-format
 #| msgid "Export..."
 msgid "Export…"
@@ -170,7 +170,7 @@ msgid "Itinerary file (*.itinerary)"
 msgstr ""
 
 #: app/ActionsCard.qml:172 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:319
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:326
 #, kde-format
 msgid "Actions"
 msgstr "إجراءات"
@@ -2950,6 +2950,17 @@ msgstr ""
 msgid "Currently not available"
 msgstr ""
 
+#: app/PublicTransportFeatureList.qml:37
+#, kde-format
+msgid "One space"
+msgid_plural "%1 spaces"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
 #: app/ReservationDocumentsCard.qml:19
 #, kde-format
 msgid "Documents and Tickets"
@@ -3543,7 +3554,7 @@ msgstr ""
 msgid "Export Trip"
 msgstr ""
 
-#: app/TimelinePage.qml:484 app/TripGroupPage.qml:283
+#: app/TimelinePage.qml:484 app/TripGroupPage.qml:290
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr ""
@@ -3838,7 +3849,7 @@ msgstr[5] ""
 msgid "Edit…"
 msgstr "حرّر"
 
-#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:354
+#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:361
 #, kde-format
 msgid "Delete trip"
 msgstr ""
@@ -3932,18 +3943,18 @@ msgstr ""
 msgid "No compatible power plugs (%1)"
 msgstr ""
 
-#: app/TripGroupPage.qml:324
+#: app/TripGroupPage.qml:331
 #, fuzzy, kde-format
 msgid "Rename…"
 msgstr "غيّر الاسم"
 
-#: app/TripGroupPage.qml:333
+#: app/TripGroupPage.qml:340
 #, fuzzy, kde-format
 #| msgid "Restaurant"
 msgid "Merge trips…"
 msgstr "المطعم"
 
-#: app/TripGroupPage.qml:343
+#: app/TripGroupPage.qml:350
 #, fuzzy, kde-format
 #| msgid "Restaurant"
 msgid "Split trip…"

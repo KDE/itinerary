@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-11 00:40+0000\n"
+"POT-Creation-Date: 2024-08-12 00:39+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -120,7 +120,7 @@ msgid "Add to calendar…"
 msgstr "Pridať dokument..."
 
 #: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:182
-#: app/TripGroupPage.qml:349
+#: app/TripGroupPage.qml:356
 #, fuzzy, kde-format
 #| msgid "Export..."
 msgid "Export…"
@@ -177,7 +177,7 @@ msgid "Itinerary file (*.itinerary)"
 msgstr ""
 
 #: app/ActionsCard.qml:172 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:319
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:326
 #, fuzzy, kde-format
 #| msgid "Application"
 msgid "Actions"
@@ -3095,6 +3095,14 @@ msgstr ""
 msgid "Currently not available"
 msgstr ""
 
+#: app/PublicTransportFeatureList.qml:37
+#, kde-format
+msgid "One space"
+msgid_plural "%1 spaces"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
 #: app/ReservationDocumentsCard.qml:19
 #, fuzzy, kde-format
 #| msgid "Current Ticket"
@@ -3704,7 +3712,7 @@ msgstr ""
 msgid "Export Trip"
 msgstr "Exportovať..."
 
-#: app/TimelinePage.qml:484 app/TripGroupPage.qml:283
+#: app/TimelinePage.qml:484 app/TripGroupPage.qml:290
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr ""
@@ -4013,7 +4021,7 @@ msgstr[2] ""
 msgid "Edit…"
 msgstr "Upraviť"
 
-#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:354
+#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:361
 #, fuzzy, kde-format
 #| msgid "Delete Document"
 msgid "Delete trip"
@@ -4110,19 +4118,19 @@ msgstr ""
 msgid "No compatible power plugs (%1)"
 msgstr ""
 
-#: app/TripGroupPage.qml:324
+#: app/TripGroupPage.qml:331
 #, fuzzy, kde-format
 #| msgid "Rename"
 msgid "Rename…"
 msgstr "Premenovať"
 
-#: app/TripGroupPage.qml:333
+#: app/TripGroupPage.qml:340
 #, fuzzy, kde-format
 #| msgid "Add Document..."
 msgid "Merge trips…"
 msgstr "Pridať dokument..."
 
-#: app/TripGroupPage.qml:343
+#: app/TripGroupPage.qml:350
 #, fuzzy, kde-format
 #| msgid "Add Document..."
 msgid "Split trip…"
