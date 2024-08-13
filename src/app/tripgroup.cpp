@@ -12,7 +12,6 @@
 
 #include <KItinerary/SortUtil>
 
-#include <QDateTime>
 #include <QDebug>
 #include <QFile>
 #include <QJsonArray>

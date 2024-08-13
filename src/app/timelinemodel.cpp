@@ -10,7 +10,6 @@
 #include "locationinformation.h"
 #include "pkpassmanager.h"
 #include "reservationmanager.h"
-#include "timelineelement.h"
 #include "tripgroup.h"
 #include "tripgroupmanager.h"
 #include "transfermanager.h"

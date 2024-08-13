@@ -12,7 +12,6 @@
 #include <QTcpServer>
 #include <QHostAddress>
 #include <QRegularExpression>
-#include <QNetworkReply>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QEventLoop>

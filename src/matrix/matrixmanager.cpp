@@ -3,7 +3,6 @@
 
 #include "matrixmanager.h"
 
-#include <Quotient/accountregistry.h>
 #include <Quotient/room.h>
 #include "Quotient/settings.h"
 
