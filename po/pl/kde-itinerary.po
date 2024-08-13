@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-12 00:39+0000\n"
+"POT-Creation-Date: 2024-08-13 00:39+0000\n"
 "PO-Revision-Date: 2024-08-10 12:55+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -120,7 +120,7 @@ msgid "Add to calendar…"
 msgstr "Dodaj do kalendarza…"
 
 #: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:182
-#: app/TripGroupPage.qml:356
+#: app/TripGroupPage.qml:418
 #, kde-format
 msgid "Export…"
 msgstr "Wyeksportuj…"
@@ -171,7 +171,7 @@ msgid "Itinerary file (*.itinerary)"
 msgstr "Pliki Itinerary (*.itinerary)"
 
 #: app/ActionsCard.qml:172 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:326
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:388
 #, kde-format
 msgid "Actions"
 msgstr "Działania"
@@ -2707,7 +2707,7 @@ msgctxt "not yet expired tickets"
 msgid "Valid"
 msgstr "Ważny"
 
-#: app/passmanager.cpp:275 app/TripGroupPage.qml:162
+#: app/passmanager.cpp:275 app/TripGroupPage.qml:224
 #, kde-format
 msgid "%1 - %2"
 msgstr "%1 - %2"
@@ -3536,7 +3536,7 @@ msgstr "Jako plik GPX…"
 msgid "Export Trip"
 msgstr "Wyeksportuj podróż"
 
-#: app/TimelinePage.qml:484 app/TripGroupPage.qml:290
+#: app/TimelinePage.qml:484 app/TripGroupPage.qml:352
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Nic w planie podróży na dzisiaj."
@@ -3789,7 +3789,7 @@ msgstr[0] "Data: %2 (jeden dzień)"
 msgstr[1] "Data: %2 (%1 dni)"
 msgstr[2] "Data: %2 (%1 dni)"
 
-#: app/TripGroupDelegate.qml:116 app/TripGroupPage.qml:169
+#: app/TripGroupDelegate.qml:116 app/TripGroupPage.qml:231
 #: app/WeatherForecastDelegate.qml:48 app/WeatherForecastPage.qml:93
 #, kde-format
 msgctxt "temperature range"
@@ -3811,7 +3811,7 @@ msgstr "%1: Niektóre z wtyczek elektrycznych są niezgodne: (%2)"
 msgid "%1: no compatible power plugs (%2)"
 msgstr "%1: brak zgodnych wtyczek elektrycznych (%2)"
 
-#: app/TripGroupDelegate.qml:145 app/TripGroupPage.qml:195
+#: app/TripGroupDelegate.qml:145 app/TripGroupPage.qml:257
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
@@ -3824,7 +3824,7 @@ msgstr[2] "Waluty: %2"
 msgid "Edit…"
 msgstr "Edytuj…"
 
-#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:361
+#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:423
 #, kde-format
 msgid "Delete trip"
 msgstr "Usuń podróż"
@@ -3890,7 +3890,7 @@ msgstr "Scal"
 msgid "Do you really want to delete the trip '%1'?"
 msgstr "Czy na pewno usunąć tę podróż?"
 
-#: app/TripGroupPage.qml:163
+#: app/TripGroupPage.qml:225
 #, kde-format
 msgid "One day"
 msgid_plural "%1 days"
@@ -3898,36 +3898,36 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: app/TripGroupPage.qml:183
+#: app/TripGroupPage.qml:245
 #, fuzzy, kde-format
 #| msgid "Some incompatible power sockets: %1"
 msgid "Some incompatible power sockets (%1)"
 msgstr "Niektóre z gniazdek elektrycznych są niezgodne: %1"
 
-#: app/TripGroupPage.qml:185
+#: app/TripGroupPage.qml:247
 #, fuzzy, kde-format
 #| msgid "Some incompatible power plugs: %1"
 msgid "Some incompatible power plugs (%1)"
 msgstr "Niektóre z wtyczek elektrycznych są niezgodne: %1"
 
-#: app/TripGroupPage.qml:188
+#: app/TripGroupPage.qml:250
 #, fuzzy, kde-format
 #| msgid "%1: no compatible power plugs (%2)"
 msgid "No compatible power plugs (%1)"
 msgstr "%1: brak zgodnych wtyczek elektrycznych (%2)"
 
-#: app/TripGroupPage.qml:331
+#: app/TripGroupPage.qml:393
 #, fuzzy, kde-format
 #| msgid "Rename"
 msgid "Rename…"
 msgstr "Przemianuj"
 
-#: app/TripGroupPage.qml:340
+#: app/TripGroupPage.qml:402
 #, kde-format
 msgid "Merge trips…"
 msgstr "Scal podróże…"
 
-#: app/TripGroupPage.qml:350
+#: app/TripGroupPage.qml:412
 #, kde-format
 msgid "Split trip…"
 msgstr "Podziel podróż…"

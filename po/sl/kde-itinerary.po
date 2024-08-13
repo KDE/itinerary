@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-12 00:39+0000\n"
-"PO-Revision-Date: 2024-08-11 07:25+0200\n"
+"POT-Creation-Date: 2024-08-13 00:39+0000\n"
+"PO-Revision-Date: 2024-08-12 10:22+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -119,7 +119,7 @@ msgid "Add to calendar…"
 msgstr "Dodaj v koledar…"
 
 #: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:182
-#: app/TripGroupPage.qml:356
+#: app/TripGroupPage.qml:418
 #, kde-format
 msgid "Export…"
 msgstr "Izvozi…"
@@ -170,7 +170,7 @@ msgid "Itinerary file (*.itinerary)"
 msgstr "Datoteka itinerarja (* .itinerary)"
 
 #: app/ActionsCard.qml:172 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:326
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:388
 #, kde-format
 msgid "Actions"
 msgstr "Akcije"
@@ -2711,7 +2711,7 @@ msgctxt "not yet expired tickets"
 msgid "Valid"
 msgstr "Veljavno"
 
-#: app/passmanager.cpp:275 app/TripGroupPage.qml:162
+#: app/passmanager.cpp:275 app/TripGroupPage.qml:224
 #, kde-format
 msgid "%1 - %2"
 msgstr "%1 - %2"
@@ -2925,16 +2925,13 @@ msgid "Currently not available"
 msgstr "Trenutno ni na voljo"
 
 #: app/PublicTransportFeatureList.qml:37
-#, fuzzy, kde-format
-#| msgctxt "number of switches to another transport"
-#| msgid "One change"
-#| msgid_plural "%1 changes"
+#, kde-format
 msgid "One space"
 msgid_plural "%1 spaces"
-msgstr[0] "%1 sprememba"
-msgstr[1] "%1 spremembi"
-msgstr[2] "%1 spremembe"
-msgstr[3] "%1 sprememb"
+msgstr[0] "%1 presledkov"
+msgstr[1] "%1 presledek"
+msgstr[2] "%1 presledka"
+msgstr[3] "%1 presledki"
 
 #: app/ReservationDocumentsCard.qml:19
 #, kde-format
@@ -3536,7 +3533,7 @@ msgstr "Kot datoteko GPX…"
 msgid "Export Trip"
 msgstr "Izvozi načrt poti"
 
-#: app/TimelinePage.qml:484 app/TripGroupPage.qml:290
+#: app/TimelinePage.qml:484 app/TripGroupPage.qml:352
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Nič na itinerarju za danes."
@@ -3790,7 +3787,7 @@ msgstr[1] "Datum: %2 (%1 dneva)"
 msgstr[2] "Datum: %2 (%1 dnevi)"
 msgstr[3] "Datum: %2 (%1 dni)"
 
-#: app/TripGroupDelegate.qml:116 app/TripGroupPage.qml:169
+#: app/TripGroupDelegate.qml:116 app/TripGroupPage.qml:231
 #: app/WeatherForecastDelegate.qml:48 app/WeatherForecastPage.qml:93
 #, kde-format
 msgctxt "temperature range"
@@ -3812,7 +3809,7 @@ msgstr "%1: nekaj nezdružljivih vtikačev (%2)"
 msgid "%1: no compatible power plugs (%2)"
 msgstr "%1: nobenih združljivih vtikačev (%2)"
 
-#: app/TripGroupDelegate.qml:145 app/TripGroupPage.qml:195
+#: app/TripGroupDelegate.qml:145 app/TripGroupPage.qml:257
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
@@ -3826,7 +3823,7 @@ msgstr[3] "Valut: %2"
 msgid "Edit…"
 msgstr "Uredi…"
 
-#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:361
+#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:423
 #, kde-format
 msgid "Delete trip"
 msgstr "Izbriši potovanje"
@@ -3891,7 +3888,7 @@ msgstr "Zlij"
 msgid "Do you really want to delete the trip '%1'?"
 msgstr "Ali res želite izbrisati potovanje '%1'?"
 
-#: app/TripGroupPage.qml:163
+#: app/TripGroupPage.qml:225
 #, kde-format
 msgid "One day"
 msgid_plural "%1 days"
@@ -3900,32 +3897,32 @@ msgstr[1] "%1 dan"
 msgstr[2] "%1 dneva"
 msgstr[3] "%1 dni"
 
-#: app/TripGroupPage.qml:183
+#: app/TripGroupPage.qml:245
 #, kde-format
 msgid "Some incompatible power sockets (%1)"
 msgstr "Nekaj nezdružljivih električnih vtičnic: (%1)"
 
-#: app/TripGroupPage.qml:185
+#: app/TripGroupPage.qml:247
 #, kde-format
 msgid "Some incompatible power plugs (%1)"
 msgstr "Nekaj nezdružljivih električnih vtikačev: (%1)"
 
-#: app/TripGroupPage.qml:188
+#: app/TripGroupPage.qml:250
 #, kde-format
 msgid "No compatible power plugs (%1)"
 msgstr "Nobenih združljivih vtikačev (%1)"
 
-#: app/TripGroupPage.qml:331
+#: app/TripGroupPage.qml:393
 #, kde-format
 msgid "Rename…"
 msgstr "Preimenuj…"
 
-#: app/TripGroupPage.qml:340
+#: app/TripGroupPage.qml:402
 #, kde-format
 msgid "Merge trips…"
 msgstr "Zlij potovanja…"
 
-#: app/TripGroupPage.qml:350
+#: app/TripGroupPage.qml:412
 #, kde-format
 msgid "Split trip…"
 msgstr "Razcepi potovanje…"

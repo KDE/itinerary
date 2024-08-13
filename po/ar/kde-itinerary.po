@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-12 00:39+0000\n"
+"POT-Creation-Date: 2024-08-13 00:39+0000\n"
 "PO-Revision-Date: 2023-05-11 10:49+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -117,7 +117,7 @@ msgid "Add to calendar…"
 msgstr "أضف إلى التّقويم..."
 
 #: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:182
-#: app/TripGroupPage.qml:356
+#: app/TripGroupPage.qml:418
 #, fuzzy, kde-format
 #| msgid "Export..."
 msgid "Export…"
@@ -170,7 +170,7 @@ msgid "Itinerary file (*.itinerary)"
 msgstr ""
 
 #: app/ActionsCard.qml:172 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:326
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:388
 #, kde-format
 msgid "Actions"
 msgstr "إجراءات"
@@ -2737,7 +2737,7 @@ msgctxt "not yet expired tickets"
 msgid "Valid"
 msgstr ""
 
-#: app/passmanager.cpp:275 app/TripGroupPage.qml:162
+#: app/passmanager.cpp:275 app/TripGroupPage.qml:224
 #, kde-format
 msgid "%1 - %2"
 msgstr ""
@@ -3554,7 +3554,7 @@ msgstr ""
 msgid "Export Trip"
 msgstr ""
 
-#: app/TimelinePage.qml:484 app/TripGroupPage.qml:290
+#: app/TimelinePage.qml:484 app/TripGroupPage.qml:352
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr ""
@@ -3810,7 +3810,7 @@ msgstr[3] ""
 msgstr[4] ""
 msgstr[5] ""
 
-#: app/TripGroupDelegate.qml:116 app/TripGroupPage.qml:169
+#: app/TripGroupDelegate.qml:116 app/TripGroupPage.qml:231
 #: app/WeatherForecastDelegate.qml:48 app/WeatherForecastPage.qml:93
 #, kde-format
 msgctxt "temperature range"
@@ -3832,7 +3832,7 @@ msgstr ""
 msgid "%1: no compatible power plugs (%2)"
 msgstr ""
 
-#: app/TripGroupDelegate.qml:145 app/TripGroupPage.qml:195
+#: app/TripGroupDelegate.qml:145 app/TripGroupPage.qml:257
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
@@ -3849,7 +3849,7 @@ msgstr[5] ""
 msgid "Edit…"
 msgstr "حرّر"
 
-#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:361
+#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:423
 #, kde-format
 msgid "Delete trip"
 msgstr ""
@@ -3917,7 +3917,7 @@ msgstr ""
 msgid "Do you really want to delete the trip '%1'?"
 msgstr ""
 
-#: app/TripGroupPage.qml:163
+#: app/TripGroupPage.qml:225
 #, kde-format
 msgid "One day"
 msgid_plural "%1 days"
@@ -3928,33 +3928,33 @@ msgstr[3] ""
 msgstr[4] ""
 msgstr[5] ""
 
-#: app/TripGroupPage.qml:183
+#: app/TripGroupPage.qml:245
 #, kde-format
 msgid "Some incompatible power sockets (%1)"
 msgstr ""
 
-#: app/TripGroupPage.qml:185
+#: app/TripGroupPage.qml:247
 #, kde-format
 msgid "Some incompatible power plugs (%1)"
 msgstr ""
 
-#: app/TripGroupPage.qml:188
+#: app/TripGroupPage.qml:250
 #, kde-format
 msgid "No compatible power plugs (%1)"
 msgstr ""
 
-#: app/TripGroupPage.qml:331
+#: app/TripGroupPage.qml:393
 #, fuzzy, kde-format
 msgid "Rename…"
 msgstr "غيّر الاسم"
 
-#: app/TripGroupPage.qml:340
+#: app/TripGroupPage.qml:402
 #, fuzzy, kde-format
 #| msgid "Restaurant"
 msgid "Merge trips…"
 msgstr "المطعم"
 
-#: app/TripGroupPage.qml:350
+#: app/TripGroupPage.qml:412
 #, fuzzy, kde-format
 #| msgid "Restaurant"
 msgid "Split trip…"

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-12 00:39+0000\n"
-"PO-Revision-Date: 2024-08-11 14:19+0200\n"
+"POT-Creation-Date: 2024-08-13 00:39+0000\n"
+"PO-Revision-Date: 2024-08-12 10:15+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -120,7 +120,7 @@ msgid "Add to calendar…"
 msgstr "Aan agenda toevoegen…"
 
 #: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:182
-#: app/TripGroupPage.qml:356
+#: app/TripGroupPage.qml:418
 #, kde-format
 msgid "Export…"
 msgstr "Exporteren…"
@@ -171,7 +171,7 @@ msgid "Itinerary file (*.itinerary)"
 msgstr "Reisroutebestand (*.itinerary)"
 
 #: app/ActionsCard.qml:172 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:326
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:388
 #, kde-format
 msgid "Actions"
 msgstr "Acties"
@@ -2701,7 +2701,7 @@ msgctxt "not yet expired tickets"
 msgid "Valid"
 msgstr "Geldig"
 
-#: app/passmanager.cpp:275 app/TripGroupPage.qml:162
+#: app/passmanager.cpp:275 app/TripGroupPage.qml:224
 #, kde-format
 msgid "%1 - %2"
 msgstr "%1 - %2"
@@ -2915,14 +2915,11 @@ msgid "Currently not available"
 msgstr "Nu niet beschikbaar"
 
 #: app/PublicTransportFeatureList.qml:37
-#, fuzzy, kde-format
-#| msgctxt "number of switches to another transport"
-#| msgid "One change"
-#| msgid_plural "%1 changes"
+#, kde-format
 msgid "One space"
 msgid_plural "%1 spaces"
-msgstr[0] "Eén overstap"
-msgstr[1] "%1 keer overstappen"
+msgstr[0] "Eén plaats"
+msgstr[1] "%1 plaatsen"
 
 #: app/ReservationDocumentsCard.qml:19
 #, kde-format
@@ -3529,7 +3526,7 @@ msgstr "Als GPX-bestand…"
 msgid "Export Trip"
 msgstr "Reis exporteren"
 
-#: app/TimelinePage.qml:484 app/TripGroupPage.qml:290
+#: app/TimelinePage.qml:484 app/TripGroupPage.qml:352
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Niets op de reisroute voor vandaag."
@@ -3781,7 +3778,7 @@ msgid_plural "Date: %2 (%1 days)"
 msgstr[0] "Datum: %2 (één dag)"
 msgstr[1] "Datum: %2 (%1 dagen)"
 
-#: app/TripGroupDelegate.qml:116 app/TripGroupPage.qml:169
+#: app/TripGroupDelegate.qml:116 app/TripGroupPage.qml:231
 #: app/WeatherForecastDelegate.qml:48 app/WeatherForecastPage.qml:93
 #, kde-format
 msgctxt "temperature range"
@@ -3803,7 +3800,7 @@ msgstr "%1: enige niet-overeenkomstige stekkers: (%2)"
 msgid "%1: no compatible power plugs (%2)"
 msgstr "%1: niet-overeenkomstige stekkers: (%2)"
 
-#: app/TripGroupDelegate.qml:145 app/TripGroupPage.qml:195
+#: app/TripGroupDelegate.qml:145 app/TripGroupPage.qml:257
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
@@ -3815,7 +3812,7 @@ msgstr[1] "Valuta's: %2"
 msgid "Edit…"
 msgstr "Bewerken…"
 
-#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:361
+#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:423
 #, kde-format
 msgid "Delete trip"
 msgstr "Reis verwijderen"
@@ -3880,39 +3877,39 @@ msgstr "Samenvoegen"
 msgid "Do you really want to delete the trip '%1'?"
 msgstr "Wilt u de reis '%1' verwijderen?"
 
-#: app/TripGroupPage.qml:163
+#: app/TripGroupPage.qml:225
 #, kde-format
 msgid "One day"
 msgid_plural "%1 days"
 msgstr[0] "één dag "
 msgstr[1] "%1 dagen"
 
-#: app/TripGroupPage.qml:183
+#: app/TripGroupPage.qml:245
 #, kde-format
 msgid "Some incompatible power sockets (%1)"
 msgstr "Enige niet-overeenkomstige stopcontacten (%1)"
 
-#: app/TripGroupPage.qml:185
+#: app/TripGroupPage.qml:247
 #, kde-format
 msgid "Some incompatible power plugs (%1)"
 msgstr "Enige niet-overeenkomstige stekkers (%1)"
 
-#: app/TripGroupPage.qml:188
+#: app/TripGroupPage.qml:250
 #, kde-format
 msgid "No compatible power plugs (%1)"
 msgstr "Niet-overeenkomstige stekkers (%1)"
 
-#: app/TripGroupPage.qml:331
+#: app/TripGroupPage.qml:393
 #, kde-format
 msgid "Rename…"
 msgstr "Hernoemen…"
 
-#: app/TripGroupPage.qml:340
+#: app/TripGroupPage.qml:402
 #, kde-format
 msgid "Merge trips…"
 msgstr "Reizen samenvoegen…"
 
-#: app/TripGroupPage.qml:350
+#: app/TripGroupPage.qml:412
 #, kde-format
 msgid "Split trip…"
 msgstr "Reis splitsen…"

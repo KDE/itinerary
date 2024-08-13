@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-12 00:39+0000\n"
+"POT-Creation-Date: 2024-08-13 00:39+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -120,7 +120,7 @@ msgid "Add to calendar…"
 msgstr "Pridať dokument..."
 
 #: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:182
-#: app/TripGroupPage.qml:356
+#: app/TripGroupPage.qml:418
 #, fuzzy, kde-format
 #| msgid "Export..."
 msgid "Export…"
@@ -177,7 +177,7 @@ msgid "Itinerary file (*.itinerary)"
 msgstr ""
 
 #: app/ActionsCard.qml:172 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:326
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:388
 #, fuzzy, kde-format
 #| msgid "Application"
 msgid "Actions"
@@ -2875,7 +2875,7 @@ msgctxt "not yet expired tickets"
 msgid "Valid"
 msgstr "Platné od:"
 
-#: app/passmanager.cpp:275 app/TripGroupPage.qml:162
+#: app/passmanager.cpp:275 app/TripGroupPage.qml:224
 #, kde-format
 msgid "%1 - %2"
 msgstr ""
@@ -3712,7 +3712,7 @@ msgstr ""
 msgid "Export Trip"
 msgstr "Exportovať..."
 
-#: app/TimelinePage.qml:484 app/TripGroupPage.qml:290
+#: app/TimelinePage.qml:484 app/TripGroupPage.qml:352
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr ""
@@ -3984,7 +3984,7 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: app/TripGroupDelegate.qml:116 app/TripGroupPage.qml:169
+#: app/TripGroupDelegate.qml:116 app/TripGroupPage.qml:231
 #: app/WeatherForecastDelegate.qml:48 app/WeatherForecastPage.qml:93
 #, fuzzy, kde-format
 #| msgid "%1°C / %2°C"
@@ -4007,7 +4007,7 @@ msgstr ""
 msgid "%1: no compatible power plugs (%2)"
 msgstr ""
 
-#: app/TripGroupDelegate.qml:145 app/TripGroupPage.qml:195
+#: app/TripGroupDelegate.qml:145 app/TripGroupPage.qml:257
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
@@ -4021,7 +4021,7 @@ msgstr[2] ""
 msgid "Edit…"
 msgstr "Upraviť"
 
-#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:361
+#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:423
 #, fuzzy, kde-format
 #| msgid "Delete Document"
 msgid "Delete trip"
@@ -4095,7 +4095,7 @@ msgstr ""
 msgid "Do you really want to delete the trip '%1'?"
 msgstr "Naozaj chcete odstrániť túto udalosť?"
 
-#: app/TripGroupPage.qml:163
+#: app/TripGroupPage.qml:225
 #, kde-format
 msgid "One day"
 msgid_plural "%1 days"
@@ -4103,34 +4103,34 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: app/TripGroupPage.qml:183
+#: app/TripGroupPage.qml:245
 #, kde-format
 msgid "Some incompatible power sockets (%1)"
 msgstr ""
 
-#: app/TripGroupPage.qml:185
+#: app/TripGroupPage.qml:247
 #, kde-format
 msgid "Some incompatible power plugs (%1)"
 msgstr ""
 
-#: app/TripGroupPage.qml:188
+#: app/TripGroupPage.qml:250
 #, kde-format
 msgid "No compatible power plugs (%1)"
 msgstr ""
 
-#: app/TripGroupPage.qml:331
+#: app/TripGroupPage.qml:393
 #, fuzzy, kde-format
 #| msgid "Rename"
 msgid "Rename…"
 msgstr "Premenovať"
 
-#: app/TripGroupPage.qml:340
+#: app/TripGroupPage.qml:402
 #, fuzzy, kde-format
 #| msgid "Add Document..."
 msgid "Merge trips…"
 msgstr "Pridať dokument..."
 
-#: app/TripGroupPage.qml:350
+#: app/TripGroupPage.qml:412
 #, fuzzy, kde-format
 #| msgid "Add Document..."
 msgid "Split trip…"
