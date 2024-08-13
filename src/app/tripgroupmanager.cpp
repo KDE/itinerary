@@ -168,6 +168,8 @@ void TripGroupManager::removeTripGroup(const QString &groupId)
         // check if this still points to the removed group (might not be the case if an overlapping group was added meanwhile)
         if (it != m_reservationToGroupMap.end() && it.value() == groupId) {
             m_reservationToGroupMap.erase(it);
+        } else {
+            qCWarning(Log) << "missing reservation to trip group reference" << elem;
         }
     }
     m_tripGroups.erase(groupIt);
@@ -258,7 +260,7 @@ void TripGroupManager::batchRenamed(const QString &oldBatchId, const QString &ne
 
     const auto tgId = mapIt.value(); // NOLINT performance-unnecessary-copy-initialization
 
-    auto tg = tripGroup(tgId);
+    auto &tg = m_tripGroups[tgId];
     auto elems = tg.elements();
     const auto elemIt = std::find(elems.begin(), elems.end(), oldBatchId);
     (*elemIt) = newBatchId;
@@ -277,7 +279,10 @@ void TripGroupManager::batchRemoved(const QString &resId)
     const auto mapIt = m_reservationToGroupMap.constFind(resId);
     if (mapIt != m_reservationToGroupMap.constEnd()) {
         const auto groupIt = m_tripGroups.find(mapIt.value());
-        Q_ASSERT(groupIt != m_tripGroups.end());
+        if (groupIt == m_tripGroups.end()) {
+            qCWarning(Log) << "dangling trip group reference for reservation" << resId;
+            return;
+        }
         const auto groupId = groupIt.key(); // copy as the iterator might become invalid below - NOLINT performance-unnecessary-copy-initialization
 
         auto elems = groupIt.value().elements();
