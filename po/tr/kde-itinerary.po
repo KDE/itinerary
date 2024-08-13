@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-11 02:34+0000\n"
-"PO-Revision-Date: 2024-08-11 23:01+0300\n"
+"PO-Revision-Date: 2024-08-12 14:15+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -280,14 +280,14 @@ msgstr "Değiştir"
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
-msgstr[0] "Bir rezervasyon içe aktarıldı."
+msgstr[0] "1 rezervasyon içe aktarıldı."
 msgstr[1] "%1 rezervasyon içe aktarıldı."
 
 #: app/applicationcontroller.cpp:266
 #, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
-msgstr[0] "Bir kart içe aktarıldı."
+msgstr[0] "1 kart içe aktarıldı."
 msgstr[1] "%1 kart içe aktarıldı."
 
 #: app/applicationcontroller.cpp:270
@@ -2152,7 +2152,7 @@ msgstr "Pl. %1"
 msgctxt "number of switches to another transport"
 msgid "One change"
 msgid_plural "%1 changes"
-msgstr[0] "Bir aktarma"
+msgstr[0] "1 aktarma"
 msgstr[1] "%1 aktarma"
 
 #: app/JourneySummaryDelegate.qml:61
