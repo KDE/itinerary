@@ -53,7 +53,7 @@ Q_SIGNALS:
 
 private:
     QString m_infoString;
-    Quotient::AccountRegistry m_acountRegistry;
+    Quotient::AccountRegistry m_accountRegistry;
 
     void setInfoString(const QString &infoString);
 
