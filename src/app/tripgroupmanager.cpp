@@ -556,17 +556,24 @@ void TripGroupManager::createAutomaticGroup(const QStringList &elems)
         return;
     }
 
-    std::set<QString> pendingGroupRemovals;
     if (groupIt == m_tripGroups.end()) {
         const auto tgId = QUuid::createUuid().toString(QUuid::WithoutBraces);
         TripGroup g;
         g.setElements(elems);
+
+        std::set<QString> pendingGroupRemovals;
         for (const auto &elem : elems) {
             // remove overlapping/nested groups, delay this until the end though, as that will invalidate our iterators
             const auto previousGroupId = m_reservationToGroupMap.value(elem);
             if (!previousGroupId.isEmpty() && previousGroupId != tgId) {
                 pendingGroupRemovals.insert(previousGroupId);
             }
+        }
+        for (const auto &tgId : pendingGroupRemovals) {
+            removeTripGroup(tgId);
+        }
+
+        for (const auto &elem : elems) {
             m_reservationToGroupMap.insert(elem, tgId);
         }
         g.setName(guessName(g.elements()));
@@ -591,10 +598,6 @@ void TripGroupManager::createAutomaticGroup(const QStringList &elems)
         qDebug() << "updating trip group" << g.name();
         g.store(fileForGroup(groupIt.key()));
         Q_EMIT tripGroupChanged(groupIt.key());
-    }
-
-    for (const auto &tgId : pendingGroupRemovals) {
-        removeTripGroup(tgId);
     }
 }
 
