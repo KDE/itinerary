@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-13 00:39+0000\n"
+"POT-Creation-Date: 2024-08-14 00:39+0000\n"
 "PO-Revision-Date: 2024-02-09 23:07+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -3973,13 +3973,13 @@ msgctxt "@label:textbox"
 msgid "Trip name:"
 msgstr "Имя для резервирования:"
 
-#: app/tripgroupmanager.cpp:836
+#: app/tripgroupmanager.cpp:841
 #, kde-format
 msgctxt "%1 is destination, %2 is the standalone month name, %3 is the year"
 msgid "%1 (%2 %3)"
 msgstr "%1 (%2 %3)"
 
-#: app/tripgroupmanager.cpp:838
+#: app/tripgroupmanager.cpp:843
 #, kde-format
 msgctxt ""
 "%1 is destination, %2 and %3 are the standalone month names and %4 is the "
@@ -3987,7 +3987,7 @@ msgctxt ""
 msgid "%1 (%2/%3 %4)"
 msgstr "%1 (%2/%3 %4)"
 
-#: app/tripgroupmanager.cpp:840
+#: app/tripgroupmanager.cpp:845
 #, kde-format
 msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"
@@ -4280,18 +4280,18 @@ msgstr ""
 msgid "Got it!"
 msgstr "Ладно!"
 
-#: matrix/matrixmanager.cpp:23 matrix/matrixmanager.cpp:57
-#: matrix/matrixmanager.cpp:109
+#: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:56
+#: matrix/matrixmanager.cpp:108
 #, kde-format
 msgid "Syncing…"
 msgstr "Выполняется синхронизация…"
 
-#: matrix/matrixmanager.cpp:42
+#: matrix/matrixmanager.cpp:41
 #, kde-format
 msgid "This server does not support logging in using a password"
 msgstr "Сервер не поддерживает вход по паролю"
 
-#: matrix/matrixmanager.cpp:68
+#: matrix/matrixmanager.cpp:67
 #, kde-format
 msgid "Logging in"
 msgstr "Вход в систему"

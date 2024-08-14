@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-13 00:39+0000\n"
-"PO-Revision-Date: 2024-07-24 09:42+0200\n"
+"POT-Creation-Date: 2024-08-14 00:39+0000\n"
+"PO-Revision-Date: 2024-08-13 19:18+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -581,11 +581,10 @@ msgid "Alight earlier"
 msgstr "Lehenago jaitsi"
 
 #: app/BusEditor.qml:134 app/BusEditor.qml:140 app/BusPage.qml:182
-#, fuzzy, kde-format
-#| msgid "Seat"
+#, kde-format
 msgctxt "Bus seat"
 msgid "Seat"
-msgstr "Eserleku"
+msgstr "Eserlekua"
 
 #: app/BusPage.qml:18
 #, kde-format
@@ -845,25 +844,19 @@ msgid "End time: %1"
 msgstr "Amaierako ordua: %1"
 
 #: app/EventDelegate.qml:70
-#, fuzzy, kde-format
-#| msgctxt "event venut seat section"
-#| msgid "Section: <b>%1</b>"
+#, kde-format
 msgctxt "event venue seat section"
 msgid "Section: <b>%1</b>"
 msgstr "Gunea: <b>%1</b>"
 
 #: app/EventDelegate.qml:76
-#, fuzzy, kde-format
-#| msgctxt "event venut seat row"
-#| msgid "Row: <b>%1</b>"
+#, kde-format
 msgctxt "event venue seat row"
 msgid "Row: <b>%1</b>"
 msgstr "Errenkada: <b>%1</b>"
 
 #: app/EventDelegate.qml:82
-#, fuzzy, kde-format
-#| msgctxt "event venut seat number"
-#| msgid "Number: <b>%1</b>"
+#, kde-format
 msgctxt "event venue seat number"
 msgid "Number: <b>%1</b>"
 msgstr "Zenbakia: <b>%1</b>"
@@ -936,13 +929,13 @@ msgstr "Izena"
 #: app/EventPage.qml:101
 #, kde-format
 msgid "Seat"
-msgstr "Eserleku"
+msgstr "Eserlekua"
 
 #: app/EventPage.qml:108
 #, kde-format
 msgctxt "seat section, e.g. block in a stadium"
 msgid "Section:"
-msgstr "Harmaila:"
+msgstr "Gunea:"
 
 #: app/EventPage.qml:117
 #, kde-format
@@ -1178,11 +1171,10 @@ msgid "Invalid flight number."
 msgstr "Hegaldi-zenbaki baliogabea."
 
 #: app/FlightEditor.qml:195 app/FlightEditor.qml:202
-#, fuzzy, kde-format
-#| msgid "Seat"
+#, kde-format
 msgctxt "Flight seat"
 msgid "Seat"
-msgstr "Eserleku"
+msgstr "Eserlekua"
 
 #: app/FlightPage.qml:59
 #, kde-format
@@ -1201,11 +1193,10 @@ msgstr "Hegazkineratze taldea"
 
 #: app/FlightPage.qml:94 app/TrainEditor.qml:146 app/TrainEditor.qml:158
 #: app/TrainPage.qml:279
-#, fuzzy, kde-format
-#| msgid "Seat"
+#, kde-format
 msgctxt "Train seat"
 msgid "Seat"
-msgstr "Eserleku"
+msgstr "Eserlekua"
 
 #: app/FlightPage.qml:103
 #, kde-format
@@ -2930,14 +2921,11 @@ msgid "Currently not available"
 msgstr "Une honetan ez dago eskuragarri"
 
 #: app/PublicTransportFeatureList.qml:37
-#, fuzzy, kde-format
-#| msgctxt "number of switches to another transport"
-#| msgid "One change"
-#| msgid_plural "%1 changes"
+#, kde-format
 msgid "One space"
 msgid_plural "%1 spaces"
-msgstr[0] "Aldaketa bat"
-msgstr[1] "%1 aldaketa"
+msgstr[0] "Leku bat"
+msgstr[1] "%1 leku"
 
 #: app/ReservationDocumentsCard.qml:19
 #, kde-format
@@ -3679,8 +3667,7 @@ msgid "Coach:"
 msgstr "Bagoia:"
 
 #: app/TrainPage.qml:296
-#, fuzzy, kde-format
-#| msgid "Seat:"
+#, kde-format
 msgctxt "Train seat"
 msgid "Seat:"
 msgstr "Eserlekua:"
@@ -3851,13 +3838,13 @@ msgctxt "@label:textbox"
 msgid "Trip name:"
 msgstr "Txangoaren izena:"
 
-#: app/tripgroupmanager.cpp:836
+#: app/tripgroupmanager.cpp:841
 #, kde-format
 msgctxt "%1 is destination, %2 is the standalone month name, %3 is the year"
 msgid "%1 (%2 %3)"
 msgstr "%1 (%3(e)ko %2)"
 
-#: app/tripgroupmanager.cpp:838
+#: app/tripgroupmanager.cpp:843
 #, kde-format
 msgctxt ""
 "%1 is destination, %2 and %3 are the standalone month names and %4 is the "
@@ -3865,7 +3852,7 @@ msgctxt ""
 msgid "%1 (%2/%3 %4)"
 msgstr "%1 (%4(e)ko %2/%3)"
 
-#: app/tripgroupmanager.cpp:840
+#: app/tripgroupmanager.cpp:845
 #, kde-format
 msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"
@@ -3888,41 +3875,36 @@ msgid "Merge"
 msgstr "Bateratu"
 
 #: app/TripGroupPage.qml:130
-#, fuzzy, kde-format
-#| msgid "Do you really want to delete this trip?"
+#, kde-format
 msgid "Do you really want to delete the trip '%1'?"
-msgstr "Txango hori benetan ezabatu nahi duzu?"
+msgstr "'%1' txangoa benetan ezabatu nahi duzu?"
 
 #: app/TripGroupPage.qml:225
 #, kde-format
 msgid "One day"
 msgid_plural "%1 days"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Egun bat"
+msgstr[1] "%1 egun"
 
 #: app/TripGroupPage.qml:245
-#, fuzzy, kde-format
-#| msgid "Some incompatible power sockets: %1"
+#, kde-format
 msgid "Some incompatible power sockets (%1)"
-msgstr "Indar-hargune ez bateragarri batzuk: %1"
+msgstr "Indar-hargune bateraezin batzuk (%1)"
 
 #: app/TripGroupPage.qml:247
-#, fuzzy, kde-format
-#| msgid "Some incompatible power plugs: %1"
+#, kde-format
 msgid "Some incompatible power plugs (%1)"
-msgstr "Indar-hargune bateraezin batzuk: %1"
+msgstr "Indar-hargune bateraezin batzuk (%1)"
 
 #: app/TripGroupPage.qml:250
-#, fuzzy, kde-format
-#| msgid "%1: no compatible power plugs (%2)"
+#, kde-format
 msgid "No compatible power plugs (%1)"
-msgstr "%1: entxufe ez bateragarriak (%2)"
+msgstr "Indar-hargune bateraezinak (%1)"
 
 #: app/TripGroupPage.qml:393
-#, fuzzy, kde-format
-#| msgid "Rename"
+#, kde-format
 msgid "Rename…"
-msgstr "Aldatu izena"
+msgstr "Berrizendatu…"
 
 #: app/TripGroupPage.qml:402
 #, kde-format
@@ -4134,18 +4116,18 @@ msgstr ""
 msgid "Got it!"
 msgstr "Ulertuta!"
 
-#: matrix/matrixmanager.cpp:23 matrix/matrixmanager.cpp:57
-#: matrix/matrixmanager.cpp:109
+#: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:56
+#: matrix/matrixmanager.cpp:108
 #, kde-format
 msgid "Syncing…"
 msgstr "Sinkronizatzen..."
 
-#: matrix/matrixmanager.cpp:42
+#: matrix/matrixmanager.cpp:41
 #, kde-format
 msgid "This server does not support logging in using a password"
 msgstr "Zerbitzari horrek ez du pasahitz bat erabiliz saio-hastea onartzen"
 
-#: matrix/matrixmanager.cpp:68
+#: matrix/matrixmanager.cpp:67
 #, kde-format
 msgid "Logging in"
 msgstr "Saioa hasten"

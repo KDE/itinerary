@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-13 00:39+0000\n"
+"POT-Creation-Date: 2024-08-14 00:39+0000\n"
 "PO-Revision-Date: 2024-08-09 17:48+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -3843,13 +3843,13 @@ msgctxt "@label:textbox"
 msgid "Trip name:"
 msgstr "Nome da viaxe:"
 
-#: app/tripgroupmanager.cpp:836
+#: app/tripgroupmanager.cpp:841
 #, kde-format
 msgctxt "%1 is destination, %2 is the standalone month name, %3 is the year"
 msgid "%1 (%2 %3)"
 msgstr "%1 (%2 de %3)"
 
-#: app/tripgroupmanager.cpp:838
+#: app/tripgroupmanager.cpp:843
 #, kde-format
 msgctxt ""
 "%1 is destination, %2 and %3 are the standalone month names and %4 is the "
@@ -3857,7 +3857,7 @@ msgctxt ""
 msgid "%1 (%2/%3 %4)"
 msgstr "%1 (%2-%3 de %4)"
 
-#: app/tripgroupmanager.cpp:840
+#: app/tripgroupmanager.cpp:845
 #, kde-format
 msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"
@@ -4125,18 +4125,18 @@ msgstr ""
 msgid "Got it!"
 msgstr "Entendido!"
 
-#: matrix/matrixmanager.cpp:23 matrix/matrixmanager.cpp:57
-#: matrix/matrixmanager.cpp:109
+#: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:56
+#: matrix/matrixmanager.cpp:108
 #, kde-format
 msgid "Syncing…"
 msgstr "Sincronizando…"
 
-#: matrix/matrixmanager.cpp:42
+#: matrix/matrixmanager.cpp:41
 #, kde-format
 msgid "This server does not support logging in using a password"
 msgstr "O servidor non permite acceder con contrasinal."
 
-#: matrix/matrixmanager.cpp:68
+#: matrix/matrixmanager.cpp:67
 #, kde-format
 msgid "Logging in"
 msgstr "Accedendo"
