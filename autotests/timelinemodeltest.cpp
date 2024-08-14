@@ -111,6 +111,7 @@ private Q_SLOTS:
         model.setReservationManager(&resMgr);
         model.setTransferManager(&transferMgr);
         model.setTripGroupManager(&groupMgr);
+        Test::waitForReset(&model);
 
         QSignalSpy insertSpy(&model, &TimelineModel::rowsInserted);
         QVERIFY(insertSpy.isValid());
@@ -174,6 +175,7 @@ private Q_SLOTS:
         model.setReservationManager(&resMgr);
         model.setTransferManager(&transferMgr);
         model.setTripGroupManager(&groupMgr);
+        Test::waitForReset(&model);
 
         QSignalSpy insertSpy(&model, &TimelineModel::rowsInserted);
         QVERIFY(insertSpy.isValid());
@@ -247,6 +249,7 @@ private Q_SLOTS:
         model.setReservationManager(&resMgr);
         model.setTransferManager(&transferMgr);
         model.setTripGroupManager(&groupMgr);
+        Test::waitForReset(&model);
 
         QCOMPARE(model.rowCount(), 1);
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
@@ -311,6 +314,7 @@ private Q_SLOTS:
         model.setTransferManager(&transferMgr);
         model.setTripGroupManager(&groupMgr);
         model.setWeatherForecastManager(&weatherMgr);
+        Test::waitForReset(&model);
         QCOMPARE(model.rowCount(), 1); // no weather data, as we don't know where we are
 
         // Add an element that will result in a defined location
@@ -435,6 +439,7 @@ private Q_SLOTS:
             model.setTransferManager(&transferMgr);
             model.setTripGroupManager(&groupMgr);
             model.setWeatherForecastManager(&weatherMgr);
+            Test::waitForReset(&model);
             QCOMPARE(model.rowCount(), 16);
 
             fc = model.index(3, 0).data(TimelineModel::WeatherForecastRole).value<WeatherInformation>().forecast;
@@ -486,6 +491,7 @@ private Q_SLOTS:
         model.setTransferManager(&transferMgr);
         model.setTripGroupManager(&groupMgr);
         model.setWeatherForecastManager(&weatherMgr);
+        Test::waitForReset(&model);
 
         ImportController importer;
         importer.setReservationManager(&resMgr);
@@ -517,6 +523,7 @@ private Q_SLOTS:
         model.setReservationManager(&resMgr);
         model.setTransferManager(&transferMgr);
         model.setTripGroupManager(&groupMgr);
+        Test::waitForReset(&model);
         QCOMPARE(model.rowCount(), 1); // 1x TodayMarker
 
         QSignalSpy insertSpy(&model, &TimelineModel::rowsInserted);
@@ -550,6 +557,8 @@ private Q_SLOTS:
             model.setReservationManager(&resMgr);
             model.setTransferManager(&transferMgr);
             model.setTripGroupManager(&groupMgr);
+            Test::waitForReset(&model);
+
             QCOMPARE(model.rowCount(), 7); // 1x group begin, 2x Flight, 1x tz change info, 1x group end, 1x DST info, 1x TodayMarker
             QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
             QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
@@ -619,6 +628,7 @@ private Q_SLOTS:
         model.setTransferManager(&transferMgr);
         model.setTripGroupManager(&groupMgr);
         model.setWeatherForecastManager(&weatherMgr);
+        Test::waitForReset(&model);
 
         ModelVerificationPoint vp0(QLatin1StringView(SOURCE_DIR "/data/timeline/daychange-r0.model"));
         vp0.setRoleFilter({TimelineModel::BatchIdRole});
@@ -708,6 +718,7 @@ private Q_SLOTS:
         model.setTripGroupManager(&groupMgr);
         model.setWeatherForecastManager(&weatherMgr);
         model.setTransferManager(&transferMgr);
+        Test::waitForReset(&model);
 
         // check state is correct for data imported at the start
         ModelVerificationPoint vp(QLatin1StringView(SOURCE_DIR "/data/timeline/") + baseName + QLatin1StringView(".model"));

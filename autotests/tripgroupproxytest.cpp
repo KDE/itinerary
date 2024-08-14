@@ -72,6 +72,7 @@ private Q_SLOTS:
         model.setReservationManager(&resMgr);
         model.setTransferManager(&transferMgr);
         model.setTripGroupManager(&groupMgr);
+        Test::waitForReset(&model);
 
         TripGroupProxyModel proxy;
         QAbstractItemModelTester tester(&proxy);
@@ -140,6 +141,7 @@ private Q_SLOTS:
         TripGroupProxyModel proxy;
         QAbstractItemModelTester tester(&proxy);
         proxy.setSourceModel(&model);
+        Test::waitForReset(&model);
 
         // future event, should be expanded
         ModelVerificationPoint vp0(QLatin1StringView(SOURCE_DIR "/data/tripgroupproxy/current-r0.model"));

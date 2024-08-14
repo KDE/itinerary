@@ -93,35 +93,14 @@ void TimelineModel::setReservationManager(ReservationManager* mgr)
     }
     assert(mgr);
 
-    beginResetModel();
     m_resMgr = mgr;
-    for (const auto &resId : mgr->batches()) {
-        const auto res = m_resMgr->reservation(resId);
-        auto elem = TimelineElement(this, resId, res, TimelineElement::SelfContained);
-        if (!elem.isReservation()) { // a type we can't handle
-            continue;
-        }
-        if (needsSplitting(res)) {
-            m_elements.emplace_back(this, resId, res, TimelineElement::RangeBegin);
-            m_elements.emplace_back(this, resId, res, TimelineElement::RangeEnd);
-        } else {
-            m_elements.push_back(std::move(elem));
-        }
-    }
-    m_elements.emplace_back(this, TimelineElement::TodayMarker,  QDateTime(today(), QTime(0, 0)));
-    std::sort(m_elements.begin(), m_elements.end());
-
     connect(mgr, &ReservationManager::batchAdded, this, &TimelineModel::batchAdded);
     connect(mgr, &ReservationManager::batchChanged, this, &TimelineModel::batchChanged);
     connect(mgr, &ReservationManager::batchContentChanged, this, &TimelineModel::batchChanged);
     connect(mgr, &ReservationManager::batchRenamed, this, &TimelineModel::batchRenamed);
     connect(mgr, &ReservationManager::batchRemoved, this, &TimelineModel::batchRemoved);
-    endResetModel();
-
-    updateTodayMarker();
-    updateInformationElements();
-    Q_EMIT todayRowChanged();
     Q_EMIT setupChanged();
+    QMetaObject::invokeMethod(this, &TimelineModel::populate, Qt::QueuedConnection);
 }
 
 void TimelineModel::setWeatherForecastManager(WeatherForecastManager* mgr)
@@ -151,11 +130,8 @@ void TimelineModel::setTripGroupManager(TripGroupManager *mgr)
     connect(mgr, &TripGroupManager::tripGroupAdded, this, &TimelineModel::tripGroupAdded);
     connect(mgr, &TripGroupManager::tripGroupChanged, this, &TimelineModel::tripGroupChanged);
     connect(mgr, &TripGroupManager::tripGroupRemoved, this, &TimelineModel::tripGroupRemoved);
-    for (const auto &group : mgr->tripGroups()) {
-        tripGroupAdded(group);
-    }
-
     Q_EMIT setupChanged();
+    QMetaObject::invokeMethod(this, &TimelineModel::populate, Qt::QueuedConnection);
 }
 
 void TimelineModel::setHomeCountryIsoCode(const QString &isoCode)
@@ -180,13 +156,8 @@ void TimelineModel::setTransferManager(TransferManager *mgr)
     connect(mgr, &TransferManager::transferAdded, this, &TimelineModel::transferChanged);
     connect(mgr, &TransferManager::transferChanged, this, &TimelineModel::transferChanged);
     connect(mgr, &TransferManager::transferRemoved, this, &TimelineModel::transferRemoved);
-
-    // load existing transfers into the model
-    for (const auto &batchId : m_resMgr->batches()) {
-        updateTransfersForBatch(batchId);
-    }
-
     Q_EMIT setupChanged();
+    QMetaObject::invokeMethod(this, &TimelineModel::populate, Qt::QueuedConnection);
 }
 
 int TimelineModel::rowCount(const QModelIndex& parent) const
@@ -296,8 +267,51 @@ int TimelineModel::todayRow() const
     return (int)std::distance(m_elements.begin(), it);
 }
 
+void TimelineModel::populate()
+{
+    if (m_isPopulated || !m_resMgr || !m_transferManager || !m_tripGroupManager) {
+        return;
+    }
+    m_isPopulated = true;
+
+    beginResetModel();
+    for (const auto &resId : m_resMgr->batches()) {
+        const auto res = m_resMgr->reservation(resId);
+        auto elem = TimelineElement(this, resId, res, TimelineElement::SelfContained);
+        if (!elem.isReservation()) { // a type we can't handle
+            continue;
+        }
+        if (needsSplitting(res)) {
+            m_elements.emplace_back(this, resId, res, TimelineElement::RangeBegin);
+            m_elements.emplace_back(this, resId, res, TimelineElement::RangeEnd);
+        } else {
+            m_elements.push_back(std::move(elem));
+        }
+    }
+    m_elements.emplace_back(this, TimelineElement::TodayMarker,  QDateTime(today(), QTime(0, 0)));
+    std::sort(m_elements.begin(), m_elements.end());
+    endResetModel();
+
+    // load existing transfers into the model
+    for (const auto &batchId : m_resMgr->batches()) {
+        updateTransfersForBatch(batchId);
+    }
+
+    for (const auto &group : m_tripGroupManager->tripGroups()) {
+        tripGroupAdded(group);
+    }
+
+    updateTodayMarker();
+    updateInformationElements();
+    Q_EMIT todayRowChanged();
+}
+
 void TimelineModel::batchAdded(const QString &resId)
 {
+    if (!m_isPopulated) {
+        return;
+    }
+
     const auto res = m_resMgr->reservation(resId);
     if (needsSplitting(res)) {
         insertElement(TimelineElement{this, resId, res, TimelineElement::RangeBegin});
@@ -348,6 +362,10 @@ std::vector<TimelineElement>::iterator TimelineModel::insertOrUpdate(std::vector
 
 void TimelineModel::batchChanged(const QString &resId)
 {
+    if (!m_isPopulated) {
+        return;
+    }
+
     const auto res = m_resMgr->reservation(resId);
     if (needsSplitting(res)) {
         updateElement(resId, res, TimelineElement::RangeBegin);
@@ -361,6 +379,10 @@ void TimelineModel::batchChanged(const QString &resId)
 
 void TimelineModel::batchRenamed(const QString& oldBatchId, const QString& newBatchId)
 {
+    if (!m_isPopulated) {
+        return;
+    }
+
     for (auto it = m_elements.begin(); it != m_elements.end(); ++it) {
         if (!(*it).isReservation() || (*it).batchId() != oldBatchId) {
             continue;
@@ -400,6 +422,10 @@ void TimelineModel::updateElement(const QString &resId, const QVariant &res, Tim
 
 void TimelineModel::batchRemoved(const QString &resId)
 {
+    if (!m_isPopulated) {
+        return;
+    }
+
     const auto it = std::find_if(m_elements.begin(), m_elements.end(), [resId](const auto &e) {
         return e.isReservation() && e.batchId() == resId;
     });
@@ -432,6 +458,10 @@ void TimelineModel::dayChanged()
 
 void TimelineModel::updateTodayMarker()
 {
+    if (m_elements.empty()) {
+        return;
+    }
+
     auto dt = now();
     auto it = std::lower_bound(m_elements.begin(), m_elements.end(), dt);
 
@@ -745,6 +775,10 @@ void TimelineModel::setCurrentDateTime(const QDateTime &dt)
 
 void TimelineModel::tripGroupAdded(const QString& groupId)
 {
+    if (!m_isPopulated) {
+        return;
+    }
+
     const auto g = m_tripGroupManager->tripGroup(groupId);
     if (g.elements().size() < 2) {
         return;
@@ -761,6 +795,10 @@ void TimelineModel::tripGroupAdded(const QString& groupId)
 
 void TimelineModel::tripGroupChanged(const QString& groupId)
 {
+    if (!m_isPopulated) {
+        return;
+    }
+
     // ### this can be done better probably
     tripGroupRemoved(groupId);
     tripGroupAdded(groupId);
@@ -768,6 +806,10 @@ void TimelineModel::tripGroupChanged(const QString& groupId)
 
 void TimelineModel::tripGroupRemoved(const QString& groupId)
 {
+    if (!m_isPopulated) {
+        return;
+    }
+
     for (auto it = m_elements.begin(); it != m_elements.end();) {
         if ((*it).elementType != TimelineElement::TripGroup || (*it).content().toString() != groupId) {
             ++it;
@@ -783,7 +825,7 @@ void TimelineModel::tripGroupRemoved(const QString& groupId)
 
 void TimelineModel::transferChanged(const Transfer& transfer)
 {
-    if (transfer.state() == Transfer::UndefinedState) {
+    if (!m_isPopulated || transfer.state() == Transfer::UndefinedState) {
         return;
     }
     if (transfer.state() == Transfer::Discarded) {
@@ -815,6 +857,10 @@ void TimelineModel::transferChanged(const Transfer& transfer)
 
 void TimelineModel::transferRemoved(const QString &resId, Transfer::Alignment alignment)
 {
+    if (!m_isPopulated) {
+        return;
+    }
+
     auto it = std::find_if(m_elements.begin(), m_elements.end(), [resId, alignment](const auto &e) {
         return e.elementType == TimelineElement::Transfer && e.batchId() == resId
             && e.content().template value<Transfer>().alignment() == alignment;

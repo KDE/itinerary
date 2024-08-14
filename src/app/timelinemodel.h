@@ -77,6 +77,8 @@ Q_SIGNALS:
     void todayRowChanged();
 
 private:
+    void populate();
+
     void batchAdded(const QString &resId);
     void insertElement(TimelineElement &&elem);
     std::vector<TimelineElement>::iterator insertOrUpdate(std::vector<TimelineElement>::iterator it, TimelineElement &&elem);
@@ -110,6 +112,7 @@ private:
     QDateTime m_unitTestTime;
     QTimer m_dayUpdateTimer;
     bool m_todayEmpty = true;
+    bool m_isPopulated = false;
 };
 
 #endif // TIMELINEMODEL_H

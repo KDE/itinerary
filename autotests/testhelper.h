@@ -13,9 +13,11 @@
 #include "pkpassmanager.h"
 #include "reservationmanager.h"
 
+#include <QAbstractItemModel>
 #include <QFile>
 #include <QJsonDocument>
 #include <QProcess>
+#include <QSignalSpy>
 
 namespace Test
 {
@@ -99,6 +101,13 @@ inline std::unique_ptr<ApplicationController> makeAppController()
     clearAll(passMgr);
     ctrl->setPassManager(passMgr);
     return ctrl;
+}
+
+/** Wait for a model reset before proceeding. */
+inline void waitForReset(QAbstractItemModel *model)
+{
+    QSignalSpy resetSpy(model, &QAbstractItemModel::modelReset);
+    resetSpy.wait(10);
 }
 
 }
