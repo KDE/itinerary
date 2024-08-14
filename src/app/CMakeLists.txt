@@ -321,6 +321,7 @@ if (ANDROID)
         map-symbolic
         media-playback-playing
         meeting-attending
+        merge
         message-rfc822
         notifications
         phone-symbolic
