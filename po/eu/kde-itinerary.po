@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-11 02:34+0000\n"
-"PO-Revision-Date: 2024-07-24 09:42+0200\n"
+"PO-Revision-Date: 2024-08-13 19:15+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -584,7 +584,7 @@ msgstr "Lehenago jaitsi"
 #: app/TrainPage.qml:279
 #, kde-format
 msgid "Seat"
-msgstr "Eserleku"
+msgstr "Eserlekua"
 
 #: app/BusPage.qml:18
 #, kde-format
@@ -930,7 +930,7 @@ msgstr "Izena"
 #, kde-format
 msgctxt "seat section, e.g. block in a stadium"
 msgid "Section:"
-msgstr "Harmaila:"
+msgstr "Gunea:"
 
 #: app/EventPage.qml:117
 #, kde-format
