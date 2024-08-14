@@ -75,7 +75,11 @@ TimelineModel::TimelineModel(QObject *parent)
 
     // make sure we properly update the empty today marker
     connect(this, &TimelineModel::todayRowChanged, this, [this]() {
-        const auto idx = index(todayRow(), 0);
+        const auto row = todayRow();
+        if (row < 0) {
+            return;
+        }
+        const auto idx = index(row, 0);
         if (m_todayEmpty == idx.data(TimelineModel::TodayEmptyRole).toBool()) {
             return;
         }
@@ -264,7 +268,7 @@ QHash<int, QByteArray> TimelineModel::roleNames() const
 int TimelineModel::todayRow() const
 {
     const auto it = std::find_if(m_elements.begin(), m_elements.end(), [](const auto &e) { return e.elementType == TimelineElement::TodayMarker; });
-    return (int)std::distance(m_elements.begin(), it);
+    return it != m_elements.end() ? (int)std::distance(m_elements.begin(), it) : -1;
 }
 
 void TimelineModel::populate()
