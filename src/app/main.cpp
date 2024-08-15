@@ -179,7 +179,6 @@ void registerApplicationTypes()
     qmlRegisterUncreatableMetaObject(LocationInformation::staticMetaObject, "org.kde.itinerary", 1, 0, "LocationInformation", {});
     qmlRegisterUncreatableMetaObject(StatisticsItem::staticMetaObject, "org.kde.itinerary", 1, 0, "StatisticsItem", {});
     qmlRegisterUncreatableMetaObject(TimelineElement::staticMetaObject, "org.kde.itinerary", 1, 0, "TimelineElement", {});
-    qmlRegisterUncreatableType<TimelineModel>("org.kde.itinerary", 1, 0, "TimelineModel", {});
     qmlRegisterUncreatableMetaObject(Transfer::staticMetaObject, "org.kde.itinerary", 1, 0, "Transfer", {});
 
     qmlRegisterUncreatableMetaObject(Permission::staticMetaObject, "org.kde.itinerary", 1, 0, "Permission", {});
@@ -195,6 +194,7 @@ void registerApplicationTypes()
     qmlRegisterType<StatisticsTimeRangeModel>("org.kde.itinerary", 1, 0, "StatisticsTimeRangeModel");
     qmlRegisterType<TicketTokenModel>("org.kde.itinerary", 1, 0, "TicketTokenModel");
     qmlRegisterType<TimelineDelegateController>("org.kde.itinerary", 1, 0, "TimelineDelegateController");
+    qmlRegisterType<TimelineModel>("org.kde.itinerary", 1, 0, "TimelineModel");
     qmlRegisterType<TimelineSectionDelegateController>("org.kde.itinerary", 1, 0, "TimelineSectionDelegateController");
     qmlRegisterType<TransferDelegateController>("org.kde.itinerary", 1, 0, "TransferDelegateController");
     qmlRegisterType<TripGroupController>("org.kde.itinerary", 1, 0, "TripGroupController");
@@ -220,7 +220,6 @@ static TransferManager *s_tranferManager = nullptr;
 static TripGroupManager *s_tripGroupManager = nullptr;
 static LiveDataManager *s_liveDataMnager = nullptr;
 static WeatherForecastManager *s_weatherForecastManager = nullptr;
-static TimelineModel *s_timelineModel = nullptr;
 static MapDownloadManager *s_mapDownloadManager = nullptr;
 static PassManager *s_passManager = nullptr;
 static MatrixController *s_matrixController = nullptr;
@@ -248,7 +247,6 @@ void registerApplicationSingletons()
     REGISTER_SINGLETON_INSTANCE(TripGroupManager, s_tripGroupManager)
     REGISTER_SINGLETON_INSTANCE(LiveDataManager, s_liveDataMnager)
     REGISTER_SINGLETON_INSTANCE(WeatherForecastManager, s_weatherForecastManager)
-    REGISTER_SINGLETON_INSTANCE(TimelineModel, s_timelineModel)
     REGISTER_SINGLETON_INSTANCE(MapDownloadManager, s_mapDownloadManager)
     REGISTER_SINGLETON_INSTANCE(PassManager, s_passManager)
     REGISTER_SINGLETON_INSTANCE(MatrixController, s_matrixController);
@@ -415,15 +413,6 @@ int main(int argc, char **argv)
     TripGroupModel tripGroupModel;
     tripGroupModel.setTripGroupManager(&tripGroupMgr);
     s_tripGroupModel = &tripGroupModel;
-
-    TimelineModel timelineModel;
-    timelineModel.setHomeCountryIsoCode(settings.homeCountryIsoCode());
-    timelineModel.setReservationManager(&resMgr);
-    timelineModel.setWeatherForecastManager(&weatherForecastMgr);
-    timelineModel.setTransferManager(&transferManager);
-    timelineModel.setTripGroupManager(&tripGroupMgr);
-    QObject::connect(&settings, &Settings::homeCountryIsoCodeChanged, &timelineModel, &TimelineModel::setHomeCountryIsoCode);
-    s_timelineModel = &timelineModel;
 
     MapDownloadManager mapDownloadMgr;
     mapDownloadMgr.setReservationManager(&resMgr);

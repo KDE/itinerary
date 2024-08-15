@@ -527,7 +527,13 @@ Kirigami.ScrollablePage {
         id: listView
         model: TripGroupProxyModel {
             id: tripGroupProxyModel
-            sourceModel: TimelineModel
+            sourceModel: TimelineModel {
+                homeCountryIsoCode: Settings.homeCountryIsoCode
+                reservationManager: ReservationManager
+                weatherForecastManager: WeatherForecastManager
+                transferManager: TransferManager
+                tripGroupManager: TripGroupManager
+            }
         }
         delegate: chooser
         leftMargin: 0
