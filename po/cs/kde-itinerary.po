@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-14 00:39+0000\n"
-"PO-Revision-Date: 2024-07-26 14:47+0200\n"
+"POT-Creation-Date: 2024-08-15 00:40+0000\n"
+"PO-Revision-Date: 2024-08-14 15:39+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -575,8 +575,7 @@ msgid "Alight earlier"
 msgstr ""
 
 #: app/BusEditor.qml:134 app/BusEditor.qml:140 app/BusPage.qml:182
-#, fuzzy, kde-format
-#| msgid "Seat"
+#, kde-format
 msgctxt "Bus seat"
 msgid "Seat"
 msgstr "Sedadlo"
@@ -839,25 +838,19 @@ msgid "End time: %1"
 msgstr "Čas ukončení: %1"
 
 #: app/EventDelegate.qml:70
-#, fuzzy, kde-format
-#| msgctxt "event venut seat section"
-#| msgid "Section: <b>%1</b>"
+#, kde-format
 msgctxt "event venue seat section"
 msgid "Section: <b>%1</b>"
 msgstr "Oddíl: <b>%1</b>"
 
 #: app/EventDelegate.qml:76
-#, fuzzy, kde-format
-#| msgctxt "event venut seat row"
-#| msgid "Row: <b>%1</b>"
+#, kde-format
 msgctxt "event venue seat row"
 msgid "Row: <b>%1</b>"
 msgstr "Řada: <b>%1</b>"
 
 #: app/EventDelegate.qml:82
-#, fuzzy, kde-format
-#| msgctxt "event venut seat number"
-#| msgid "Number: <b>%1</b>"
+#, kde-format
 msgctxt "event venue seat number"
 msgid "Number: <b>%1</b>"
 msgstr "Číslo: <b>%1</b>"
@@ -1174,8 +1167,7 @@ msgid "Invalid flight number."
 msgstr ""
 
 #: app/FlightEditor.qml:195 app/FlightEditor.qml:202
-#, fuzzy, kde-format
-#| msgid "Seat"
+#, kde-format
 msgctxt "Flight seat"
 msgid "Seat"
 msgstr "Sedadlo"
@@ -1197,8 +1189,7 @@ msgstr "Nastupující skupina"
 
 #: app/FlightPage.qml:94 app/TrainEditor.qml:146 app/TrainEditor.qml:158
 #: app/TrainPage.qml:279
-#, fuzzy, kde-format
-#| msgid "Seat"
+#, kde-format
 msgctxt "Train seat"
 msgid "Seat"
 msgstr "Sedadlo"
@@ -2924,15 +2915,12 @@ msgid "Currently not available"
 msgstr ""
 
 #: app/PublicTransportFeatureList.qml:37
-#, fuzzy, kde-format
-#| msgctxt "number of switches to another transport"
-#| msgid "One change"
-#| msgid_plural "%1 changes"
+#, kde-format
 msgid "One space"
 msgid_plural "%1 spaces"
-msgstr[0] "Jeden přestup"
-msgstr[1] "%1 přestupy"
-msgstr[2] "%1 přestupů"
+msgstr[0] "Jedna mezera"
+msgstr[1] "%1 mezery"
+msgstr[2] "%1 mezer"
 
 #: app/ReservationDocumentsCard.qml:19
 #, kde-format
@@ -3139,7 +3127,7 @@ msgstr ""
 #: app/SettingsPage.qml:160
 #, kde-format
 msgid "Notifications"
-msgstr "Oznamování"
+msgstr "Upozornění"
 
 #: app/SettingsPage.qml:165
 #, kde-format
@@ -3666,8 +3654,7 @@ msgid "Coach:"
 msgstr ""
 
 #: app/TrainPage.qml:296
-#, fuzzy, kde-format
-#| msgid "Seat:"
+#, kde-format
 msgctxt "Train seat"
 msgid "Seat:"
 msgstr "Sedadlo:"
@@ -3839,13 +3826,13 @@ msgctxt "@label:textbox"
 msgid "Trip name:"
 msgstr ""
 
-#: app/tripgroupmanager.cpp:841
+#: app/tripgroupmanager.cpp:844
 #, kde-format
 msgctxt "%1 is destination, %2 is the standalone month name, %3 is the year"
 msgid "%1 (%2 %3)"
 msgstr "%1 (%2 %3)"
 
-#: app/tripgroupmanager.cpp:843
+#: app/tripgroupmanager.cpp:846
 #, kde-format
 msgctxt ""
 "%1 is destination, %2 and %3 are the standalone month names and %4 is the "
@@ -3853,7 +3840,7 @@ msgctxt ""
 msgid "%1 (%2/%3 %4)"
 msgstr "%1 (%2/%3 %4)"
 
-#: app/tripgroupmanager.cpp:845
+#: app/tripgroupmanager.cpp:848
 #, kde-format
 msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"
@@ -3876,42 +3863,37 @@ msgid "Merge"
 msgstr "Sloučit"
 
 #: app/TripGroupPage.qml:130
-#, fuzzy, kde-format
-#| msgid "Do you really want to delete this trip?"
+#, kde-format
 msgid "Do you really want to delete the trip '%1'?"
-msgstr "Opravdu si přejete smazat tento výlet?"
+msgstr "Opravdu si přejete smazat výlet '%1'?"
 
 #: app/TripGroupPage.qml:225
 #, kde-format
 msgid "One day"
 msgid_plural "%1 days"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Jeden den"
+msgstr[1] "%1 dny"
+msgstr[2] "%1 dnů"
 
 #: app/TripGroupPage.qml:245
-#, fuzzy, kde-format
-#| msgid "Some incompatible power sockets: %1"
+#, kde-format
 msgid "Some incompatible power sockets (%1)"
-msgstr "Některé nekompatibilní zásuvky: %1"
+msgstr "Některé nekompatibilní zásuvky (%1)"
 
 #: app/TripGroupPage.qml:247
-#, fuzzy, kde-format
-#| msgid "Some incompatible power plugs: %1"
+#, kde-format
 msgid "Some incompatible power plugs (%1)"
-msgstr "Některé nekompatibilní zásuvky: %1"
+msgstr "Některé nekompatibilní zástrčky (%1)"
 
 #: app/TripGroupPage.qml:250
-#, fuzzy, kde-format
-#| msgid "Some incompatible power plugs: %1"
+#, kde-format
 msgid "No compatible power plugs (%1)"
-msgstr "Některé nekompatibilní zásuvky: %1"
+msgstr "Žádné nekompatibilní zástrčky (%1)"
 
 #: app/TripGroupPage.qml:393
-#, fuzzy, kde-format
-#| msgid "Rename"
+#, kde-format
 msgid "Rename…"
-msgstr "Přejmenovat"
+msgstr "Přejmenovat…"
 
 #: app/TripGroupPage.qml:402
 #, kde-format

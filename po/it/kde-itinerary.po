@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-14 00:39+0000\n"
-"PO-Revision-Date: 2024-08-10 03:16+0200\n"
+"POT-Creation-Date: 2024-08-15 00:40+0000\n"
+"PO-Revision-Date: 2024-08-12 18:08+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -2917,14 +2917,11 @@ msgid "Currently not available"
 msgstr "Attualmente non disponibile"
 
 #: app/PublicTransportFeatureList.qml:37
-#, fuzzy, kde-format
-#| msgctxt "number of switches to another transport"
-#| msgid "One change"
-#| msgid_plural "%1 changes"
+#, kde-format
 msgid "One space"
 msgid_plural "%1 spaces"
-msgstr[0] "Un cambio"
-msgstr[1] "%1 cambi"
+msgstr[0] "Uno spazio"
+msgstr[1] "%1 spazi"
 
 #: app/ReservationDocumentsCard.qml:19
 #, kde-format
@@ -3842,13 +3839,13 @@ msgctxt "@label:textbox"
 msgid "Trip name:"
 msgstr "Nome del viaggio:"
 
-#: app/tripgroupmanager.cpp:841
+#: app/tripgroupmanager.cpp:844
 #, kde-format
 msgctxt "%1 is destination, %2 is the standalone month name, %3 is the year"
 msgid "%1 (%2 %3)"
 msgstr "%1 (%2 %3)"
 
-#: app/tripgroupmanager.cpp:843
+#: app/tripgroupmanager.cpp:846
 #, kde-format
 msgctxt ""
 "%1 is destination, %2 and %3 are the standalone month names and %4 is the "
@@ -3856,7 +3853,7 @@ msgctxt ""
 msgid "%1 (%2/%3 %4)"
 msgstr "%1 (%2/%3 %4)"
 
-#: app/tripgroupmanager.cpp:845
+#: app/tripgroupmanager.cpp:848
 #, kde-format
 msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"
@@ -3879,41 +3876,36 @@ msgid "Merge"
 msgstr "Unisci"
 
 #: app/TripGroupPage.qml:130
-#, fuzzy, kde-format
-#| msgid "Do you really want to delete this trip?"
+#, kde-format
 msgid "Do you really want to delete the trip '%1'?"
-msgstr "Vuoi davvero eliminare questo viaggio?"
+msgstr "Vuoi davvero eliminare il viaggio «%1»?"
 
 #: app/TripGroupPage.qml:225
 #, kde-format
 msgid "One day"
 msgid_plural "%1 days"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Un giorno"
+msgstr[1] "%1 giorni"
 
 #: app/TripGroupPage.qml:245
-#, fuzzy, kde-format
-#| msgid "Some incompatible power sockets: %1"
+#, kde-format
 msgid "Some incompatible power sockets (%1)"
-msgstr "Alcune prese di corrente incompatibili: %1"
+msgstr "Alcune prese di corrente incompatibili: (%1)"
 
 #: app/TripGroupPage.qml:247
-#, fuzzy, kde-format
-#| msgid "Some incompatible power plugs: %1"
+#, kde-format
 msgid "Some incompatible power plugs (%1)"
-msgstr "Alcune spine elettriche incompatibili: %1"
+msgstr "Alcune spine elettriche incompatibili (%1)"
 
 #: app/TripGroupPage.qml:250
-#, fuzzy, kde-format
-#| msgid "%1: no compatible power plugs (%2)"
+#, kde-format
 msgid "No compatible power plugs (%1)"
-msgstr "%1: non ci sono spine elettriche incompatibili (%2)"
+msgstr "Non ci sono spine elettriche incompatibili (%1)"
 
 #: app/TripGroupPage.qml:393
-#, fuzzy, kde-format
-#| msgid "Rename"
+#, kde-format
 msgid "Rename…"
-msgstr "Rinomina"
+msgstr "Rinomina…"
 
 #: app/TripGroupPage.qml:402
 #, kde-format
