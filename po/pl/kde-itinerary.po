@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-15 00:40+0000\n"
+"POT-Creation-Date: 2024-08-16 00:39+0000\n"
 "PO-Revision-Date: 2024-08-10 12:55+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -120,7 +120,7 @@ msgid "Add to calendar…"
 msgstr "Dodaj do kalendarza…"
 
 #: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:182
-#: app/TripGroupPage.qml:418
+#: app/TripGroupPage.qml:427
 #, kde-format
 msgid "Export…"
 msgstr "Wyeksportuj…"
@@ -171,7 +171,7 @@ msgid "Itinerary file (*.itinerary)"
 msgstr "Pliki Itinerary (*.itinerary)"
 
 #: app/ActionsCard.qml:172 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:388
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:397
 #, kde-format
 msgid "Actions"
 msgstr "Działania"
@@ -3536,7 +3536,7 @@ msgstr "Jako plik GPX…"
 msgid "Export Trip"
 msgstr "Wyeksportuj podróż"
 
-#: app/TimelinePage.qml:484 app/TripGroupPage.qml:352
+#: app/TimelinePage.qml:493 app/TripGroupPage.qml:361
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Nic w planie podróży na dzisiaj."
@@ -3824,7 +3824,7 @@ msgstr[2] "Waluty: %2"
 msgid "Edit…"
 msgstr "Edytuj…"
 
-#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:423
+#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:432
 #, kde-format
 msgid "Delete trip"
 msgstr "Usuń podróż"
@@ -3916,18 +3916,18 @@ msgstr "Niektóre z wtyczek elektrycznych są niezgodne: %1"
 msgid "No compatible power plugs (%1)"
 msgstr "%1: brak zgodnych wtyczek elektrycznych (%2)"
 
-#: app/TripGroupPage.qml:393
+#: app/TripGroupPage.qml:402
 #, fuzzy, kde-format
 #| msgid "Rename"
 msgid "Rename…"
 msgstr "Przemianuj"
 
-#: app/TripGroupPage.qml:402
+#: app/TripGroupPage.qml:411
 #, kde-format
 msgid "Merge trips…"
 msgstr "Scal podróże…"
 
-#: app/TripGroupPage.qml:412
+#: app/TripGroupPage.qml:421
 #, kde-format
 msgid "Split trip…"
 msgstr "Podziel podróż…"

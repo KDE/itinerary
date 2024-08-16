@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-15 00:40+0000\n"
+"POT-Creation-Date: 2024-08-16 00:39+0000\n"
 "PO-Revision-Date: 2024-08-13 19:18+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -124,7 +124,7 @@ msgid "Add to calendar…"
 msgstr "Gehitu egutegira..."
 
 #: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:182
-#: app/TripGroupPage.qml:418
+#: app/TripGroupPage.qml:427
 #, kde-format
 msgid "Export…"
 msgstr "Esportatu..."
@@ -175,7 +175,7 @@ msgid "Itinerary file (*.itinerary)"
 msgstr "«Itinerary» fitxategia (*.itinerary)"
 
 #: app/ActionsCard.qml:172 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:388
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:397
 #, kde-format
 msgid "Actions"
 msgstr "Ekintzak"
@@ -3528,7 +3528,7 @@ msgstr "GPX fitxategi gisa..."
 msgid "Export Trip"
 msgstr "Esportatu txangoa"
 
-#: app/TimelinePage.qml:484 app/TripGroupPage.qml:352
+#: app/TimelinePage.qml:493 app/TripGroupPage.qml:361
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Ibilbidean gaurko ez dago ezer."
@@ -3814,7 +3814,7 @@ msgstr[1] "Dibisak: %2"
 msgid "Edit…"
 msgstr "Editatu…"
 
-#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:423
+#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:432
 #, kde-format
 msgid "Delete trip"
 msgstr "Ezabatu txangoa"
@@ -3901,17 +3901,17 @@ msgstr "Indar-hargune bateraezin batzuk (%1)"
 msgid "No compatible power plugs (%1)"
 msgstr "Indar-hargune bateraezinak (%1)"
 
-#: app/TripGroupPage.qml:393
+#: app/TripGroupPage.qml:402
 #, kde-format
 msgid "Rename…"
 msgstr "Berrizendatu…"
 
-#: app/TripGroupPage.qml:402
+#: app/TripGroupPage.qml:411
 #, kde-format
 msgid "Merge trips…"
 msgstr "Txangoak bateratu..."
 
-#: app/TripGroupPage.qml:412
+#: app/TripGroupPage.qml:421
 #, kde-format
 msgid "Split trip…"
 msgstr "Txangoa zatitu..."

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-15 00:40+0000\n"
+"POT-Creation-Date: 2024-08-16 00:39+0000\n"
 "PO-Revision-Date: 2024-08-12 10:15+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -120,7 +120,7 @@ msgid "Add to calendar…"
 msgstr "Aan agenda toevoegen…"
 
 #: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:182
-#: app/TripGroupPage.qml:418
+#: app/TripGroupPage.qml:427
 #, kde-format
 msgid "Export…"
 msgstr "Exporteren…"
@@ -171,7 +171,7 @@ msgid "Itinerary file (*.itinerary)"
 msgstr "Reisroutebestand (*.itinerary)"
 
 #: app/ActionsCard.qml:172 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:388
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:397
 #, kde-format
 msgid "Actions"
 msgstr "Acties"
@@ -3526,7 +3526,7 @@ msgstr "Als GPX-bestand…"
 msgid "Export Trip"
 msgstr "Reis exporteren"
 
-#: app/TimelinePage.qml:484 app/TripGroupPage.qml:352
+#: app/TimelinePage.qml:493 app/TripGroupPage.qml:361
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Niets op de reisroute voor vandaag."
@@ -3812,7 +3812,7 @@ msgstr[1] "Valuta's: %2"
 msgid "Edit…"
 msgstr "Bewerken…"
 
-#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:423
+#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:432
 #, kde-format
 msgid "Delete trip"
 msgstr "Reis verwijderen"
@@ -3899,17 +3899,17 @@ msgstr "Enige niet-overeenkomstige stekkers (%1)"
 msgid "No compatible power plugs (%1)"
 msgstr "Niet-overeenkomstige stekkers (%1)"
 
-#: app/TripGroupPage.qml:393
+#: app/TripGroupPage.qml:402
 #, kde-format
 msgid "Rename…"
 msgstr "Hernoemen…"
 
-#: app/TripGroupPage.qml:402
+#: app/TripGroupPage.qml:411
 #, kde-format
 msgid "Merge trips…"
 msgstr "Reizen samenvoegen…"
 
-#: app/TripGroupPage.qml:412
+#: app/TripGroupPage.qml:421
 #, kde-format
 msgid "Split trip…"
 msgstr "Reis splitsen…"

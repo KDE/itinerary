@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-15 00:40+0000\n"
+"POT-Creation-Date: 2024-08-16 00:39+0000\n"
 "PO-Revision-Date: 2024-02-09 23:07+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -125,7 +125,7 @@ msgid "Add to calendar…"
 msgstr "Добавить в календарь..."
 
 #: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:182
-#: app/TripGroupPage.qml:418
+#: app/TripGroupPage.qml:427
 #, fuzzy, kde-format
 #| msgid "Export"
 msgid "Export…"
@@ -178,7 +178,7 @@ msgid "Itinerary file (*.itinerary)"
 msgstr "Файл программы «Маршруты KDE» (*.itinerary)"
 
 #: app/ActionsCard.qml:172 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:388
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:397
 #, kde-format
 msgid "Actions"
 msgstr "Действия"
@@ -3651,7 +3651,7 @@ msgstr ""
 msgid "Export Trip"
 msgstr "Экспорт поездки"
 
-#: app/TimelinePage.qml:484 app/TripGroupPage.qml:352
+#: app/TimelinePage.qml:493 app/TripGroupPage.qml:361
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Нет данных маршрута на сегодня."
@@ -3946,7 +3946,7 @@ msgstr[3] "Валюта: %2"
 msgid "Edit…"
 msgstr "Изменить"
 
-#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:423
+#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:432
 #, kde-format
 msgid "Delete trip"
 msgstr "Удалить поездку"
@@ -4043,19 +4043,19 @@ msgstr "Несовместимые вилки: %1"
 msgid "No compatible power plugs (%1)"
 msgstr "%1: нет совместимых вилок (%2)"
 
-#: app/TripGroupPage.qml:393
+#: app/TripGroupPage.qml:402
 #, fuzzy, kde-format
 #| msgid "Rename"
 msgid "Rename…"
 msgstr "Переименовать"
 
-#: app/TripGroupPage.qml:402
+#: app/TripGroupPage.qml:411
 #, fuzzy, kde-format
 #| msgid "Add train trip..."
 msgid "Merge trips…"
 msgstr "Добавить поездку на поезде…"
 
-#: app/TripGroupPage.qml:412
+#: app/TripGroupPage.qml:421
 #, fuzzy, kde-format
 #| msgid "Add train trip..."
 msgid "Split trip…"

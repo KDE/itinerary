@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-15 00:40+0000\n"
+"POT-Creation-Date: 2024-08-16 00:39+0000\n"
 "PO-Revision-Date: 2024-07-25 12:53+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -119,7 +119,7 @@ msgid "Add to calendar…"
 msgstr "Adde a Calendario..."
 
 #: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:182
-#: app/TripGroupPage.qml:418
+#: app/TripGroupPage.qml:427
 #, kde-format
 msgid "Export…"
 msgstr "Exporta…"
@@ -170,7 +170,7 @@ msgid "Itinerary file (*.itinerary)"
 msgstr "Files de  Itinerary  (*.itinerary)"
 
 #: app/ActionsCard.qml:172 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:388
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:397
 #, kde-format
 msgid "Actions"
 msgstr "Actiones"
@@ -3536,7 +3536,7 @@ msgstr "Como file GPX..."
 msgid "Export Trip"
 msgstr "Exporta viage..."
 
-#: app/TimelinePage.qml:484 app/TripGroupPage.qml:352
+#: app/TimelinePage.qml:493 app/TripGroupPage.qml:361
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Nihil sur le itinerario per hodie."
@@ -3823,7 +3823,7 @@ msgstr[1] "Numerarios: %2"
 msgid "Edit…"
 msgstr "Edita…"
 
-#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:423
+#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:432
 #, kde-format
 msgid "Delete trip"
 msgstr "Dele viage"
@@ -3914,18 +3914,18 @@ msgstr "Alcun claves de contacto electric incompatibile: %1"
 msgid "No compatible power plugs (%1)"
 msgstr "%1: Necun prisas electric compatibile (%2)"
 
-#: app/TripGroupPage.qml:393
+#: app/TripGroupPage.qml:402
 #, fuzzy, kde-format
 #| msgid "Rename"
 msgid "Rename…"
 msgstr "Renomina"
 
-#: app/TripGroupPage.qml:402
+#: app/TripGroupPage.qml:411
 #, kde-format
 msgid "Merge trips…"
 msgstr "Fusiona viages..."
 
-#: app/TripGroupPage.qml:412
+#: app/TripGroupPage.qml:421
 #, kde-format
 msgid "Split trip…"
 msgstr "Scinde viage..."

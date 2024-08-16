@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-15 00:40+0000\n"
+"POT-Creation-Date: 2024-08-16 00:39+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -118,7 +118,7 @@ msgid "Add to calendar…"
 msgstr ""
 
 #: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:182
-#: app/TripGroupPage.qml:418
+#: app/TripGroupPage.qml:427
 #, kde-format
 msgid "Export…"
 msgstr ""
@@ -169,7 +169,7 @@ msgid "Itinerary file (*.itinerary)"
 msgstr ""
 
 #: app/ActionsCard.qml:172 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:388
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:397
 #, kde-format
 msgid "Actions"
 msgstr ""
@@ -2900,13 +2900,10 @@ msgid "Currently not available"
 msgstr ""
 
 #: app/PublicTransportFeatureList.qml:37
-#, fuzzy, kde-format
-#| msgctxt "number of switches to another transport"
-#| msgid "One change"
-#| msgid_plural "%1 changes"
+#, kde-format
 msgid "One space"
 msgid_plural "%1 spaces"
-msgstr[0] "%1 次换乘"
+msgstr[0] ""
 
 #: app/ReservationDocumentsCard.qml:19
 #, kde-format
@@ -3495,7 +3492,7 @@ msgstr ""
 msgid "Export Trip"
 msgstr "导出行程"
 
-#: app/TimelinePage.qml:484 app/TripGroupPage.qml:352
+#: app/TimelinePage.qml:493 app/TripGroupPage.qml:361
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "今日无行程计划。"
@@ -3779,7 +3776,7 @@ msgstr[0] ""
 msgid "Edit…"
 msgstr ""
 
-#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:423
+#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:432
 #, kde-format
 msgid "Delete trip"
 msgstr ""
@@ -3865,17 +3862,17 @@ msgstr ""
 msgid "No compatible power plugs (%1)"
 msgstr ""
 
-#: app/TripGroupPage.qml:393
+#: app/TripGroupPage.qml:402
 #, kde-format
 msgid "Rename…"
 msgstr ""
 
-#: app/TripGroupPage.qml:402
+#: app/TripGroupPage.qml:411
 #, kde-format
 msgid "Merge trips…"
 msgstr ""
 
-#: app/TripGroupPage.qml:412
+#: app/TripGroupPage.qml:421
 #, kde-format
 msgid "Split trip…"
 msgstr ""

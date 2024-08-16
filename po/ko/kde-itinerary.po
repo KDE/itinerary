@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-15 00:40+0000\n"
+"POT-Creation-Date: 2024-08-16 00:39+0000\n"
 "PO-Revision-Date: 2024-02-17 12:41+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -119,7 +119,7 @@ msgid "Add to calendar…"
 msgstr "캘린더에 추가..."
 
 #: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:182
-#: app/TripGroupPage.qml:418
+#: app/TripGroupPage.qml:427
 #, fuzzy, kde-format
 #| msgid "Export"
 msgid "Export…"
@@ -172,7 +172,7 @@ msgid "Itinerary file (*.itinerary)"
 msgstr "Itinerary 파일 (*.itinerary)"
 
 #: app/ActionsCard.qml:172 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:388
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:397
 #, kde-format
 msgid "Actions"
 msgstr "동작"
@@ -3571,7 +3571,7 @@ msgstr "GPX 파일로..."
 msgid "Export Trip"
 msgstr "여행 내보내기"
 
-#: app/TimelinePage.qml:484 app/TripGroupPage.qml:352
+#: app/TimelinePage.qml:493 app/TripGroupPage.qml:361
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "오늘의 여정이 없습니다."
@@ -3859,7 +3859,7 @@ msgstr[0] "통화: %2"
 msgid "Edit…"
 msgstr "편집"
 
-#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:423
+#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:432
 #, kde-format
 msgid "Delete trip"
 msgstr "여정 삭제"
@@ -3953,19 +3953,19 @@ msgstr "일부 전원 플러그 호환되지 않음: %1"
 msgid "No compatible power plugs (%1)"
 msgstr "%1: 호환되는 전원 플러그 없음(%2)"
 
-#: app/TripGroupPage.qml:393
+#: app/TripGroupPage.qml:402
 #, fuzzy, kde-format
 #| msgid "Rename"
 msgid "Rename…"
 msgstr "이름 바꾸기"
 
-#: app/TripGroupPage.qml:402
+#: app/TripGroupPage.qml:411
 #, fuzzy, kde-format
 #| msgid "Add ferry trip..."
 msgid "Merge trips…"
 msgstr "페리 여정 추가..."
 
-#: app/TripGroupPage.qml:412
+#: app/TripGroupPage.qml:421
 #, fuzzy, kde-format
 #| msgid "Add train trip..."
 msgid "Split trip…"
