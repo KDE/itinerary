@@ -49,8 +49,10 @@ public:
     /** Deletes all elements in the trip group with Identifier @p id. */
     Q_INVOKABLE void removeReservationsInGroup(const QString &groupId);
 
-    /** Guesses a name for the given ordered set of reservations (potentially) forming a trip group. */
+    /** Guesses a name for the given ordered set of reservation ids (potentially) forming a trip group. */
     Q_INVOKABLE [[nodiscard]] QString guessName(const QStringList &elements) const;
+    /** Guesses a name for the given ordered set of reservations (potentially) forming a trip group. */
+    Q_INVOKABLE [[nodiscard]] static QString guessNameForReservations(const QVariantList &elements);
 
     /** Merge the two given trip groups into one.
      *  @returns the trip group id of the result.
@@ -89,12 +91,12 @@ private:
     void scanOne(std::vector<QString>::const_iterator beginIt);
     void createAutomaticGroup(const QStringList &elems);
     void checkConsistency();
-    [[nodiscard]] QString guessDestinationFromEvent(const QStringList &elements) const;
-    [[nodiscard]] QString guessDestinationFromLodging(const QStringList &elements) const;
-    [[nodiscard]] QString guessDestinationFromTransportTimeGap(const QStringList &elements) const;
-    [[nodiscard]] QVariant firstLocationChange(const QStringList &elements) const;
-    [[nodiscard]] QVariant lastLocationChange(const QStringList &elements) const;
-    [[nodiscard]] bool isRoundTrip(const QStringList &elements) const;
+    [[nodiscard]] static QString guessDestinationFromEvent(const QVariantList &elements);
+    [[nodiscard]] static QString guessDestinationFromLodging(const QVariantList &elements);
+    [[nodiscard]] static QString guessDestinationFromTransportTimeGap(const QVariantList &elements);
+    [[nodiscard]] static QVariant firstLocationChange(const QVariantList &elements);
+    [[nodiscard]] static QVariant lastLocationChange(const QVariantList &elements);
+    [[nodiscard]] static bool isRoundTrip(const QVariantList &elements);
 
     /** Update begin/end times based on the current content.
      *  @returns @c true if the begin/end time changed.
