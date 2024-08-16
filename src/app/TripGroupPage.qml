@@ -268,6 +268,7 @@ Kirigami.ScrollablePage {
             transferManager: TransferManager
             tripGroupManager: TripGroupManager
             tripGroupId: root.tripGroupId
+            initialLocation: TripGroupModel.locationAtTime(root.tripGroup.beginDateTime)
         }
 
         section {

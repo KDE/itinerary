@@ -33,6 +33,10 @@ class TimelineModel : public QAbstractListModel
 
     /** Show only a single trip group. */
     Q_PROPERTY(QString tripGroupId MEMBER m_tripGroupId WRITE setTripGroupId NOTIFY tripGroupIdChanged)
+    /** Initial location before the begin of the timeline, if known.
+     *  Used for weather and location information.
+     */
+    Q_PROPERTY(QVariant initialLocation MEMBER m_initialLocation NOTIFY initialLocationChanged)
 
 public:
     enum Role {
@@ -81,6 +85,7 @@ Q_SIGNALS:
     void setupChanged();
     void todayRowChanged();
     void tripGroupIdChanged();
+    void initialLocationChanged();
 
 private:
     void populate();
@@ -118,6 +123,7 @@ private:
     QString m_tripGroupId;
     TripGroup m_tripGroup;
     QString m_homeCountry;
+    QVariant m_initialLocation;
     QDateTime m_unitTestTime;
     QTimer m_dayUpdateTimer;
     bool m_todayEmpty = true;

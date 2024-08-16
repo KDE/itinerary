@@ -86,6 +86,8 @@ TimelineModel::TimelineModel(QObject *parent)
         m_todayEmpty = !m_todayEmpty;
         Q_EMIT dataChanged(idx, idx);
     });
+
+    connect(this, &TimelineModel::initialLocationChanged, this, &TimelineModel::updateWeatherElements);
 }
 
 TimelineModel::~TimelineModel() = default;
@@ -652,7 +654,7 @@ void TimelineModel::updateWeatherElements()
     }
 
     qDebug() << "recomputing weather elements";
-    GeoCoordinates geo;
+    GeoCoordinates geo = LocationUtil::geo(m_initialLocation);
     QString label;
 
     auto date = now();
