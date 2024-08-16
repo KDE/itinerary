@@ -10,6 +10,7 @@ import Qt.labs.qmlmodels as Models
 import org.kde.i18n.localeData
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
+import org.kde.kirigamiaddons.components as Components
 import org.kde.itinerary
 
 Kirigami.ScrollablePage {
@@ -427,6 +428,37 @@ Kirigami.ScrollablePage {
                     onClicked: deleteTripGroupWarningDialog.open()
                 }
             }
+            // spacer for the floating buttons
+            Item {
+                height: root.width < Kirigami.Units.gridUnit * 30 + floatingBbuttons.width * 2 ? floatingBbuttons.height : 0
+            }
         }
     }
+
+    Components.DoubleFloatingButton {
+        id: floatingBbuttons
+        parent: root.overlay
+        anchors {
+            right: parent.right
+            rightMargin: Kirigami.Settings.isMobile ? Kirigami.Units.largeSpacing : Kirigami.Units.largeSpacing + (root.contentItem.QQC2.ScrollBar && root.contentItem.QQC2.ScrollBar.vertical ? root.contentItem.QQC2.ScrollBar.vertical.width : 0)
+            bottom: parent.bottom
+            bottomMargin: Kirigami.Units.largeSpacing
+        }
+
+        leadingAction: Kirigami.Action {
+            text: i18nc("@action:button", "Go To Now")
+            icon.name: "view-calendar-day"
+            onTriggered: listView.positionViewAtIndex(listView.model.todayRow, ListView.Beginning);
+            tooltip: text
+            enabled: listView.model.todayRow >= 0
+        }
+
+        trailingAction: Kirigami.Action{
+            text: i18nc("@action:button", "Add trip")
+            icon.name: "list-add-symbolic"
+            onTriggered: addMenu.open()
+            tooltip: text
+        }
+    }
+
 }
