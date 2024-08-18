@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-16 00:39+0000\n"
-"PO-Revision-Date: 2024-08-10 12:55+0200\n"
+"PO-Revision-Date: 2024-08-17 09:45+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -2923,15 +2923,12 @@ msgid "Currently not available"
 msgstr "Obecnie niedostępny"
 
 #: app/PublicTransportFeatureList.qml:37
-#, fuzzy, kde-format
-#| msgctxt "number of switches to another transport"
-#| msgid "One change"
-#| msgid_plural "%1 changes"
+#, kde-format
 msgid "One space"
 msgid_plural "%1 spaces"
-msgstr[0] "Jedna przesiadka"
-msgstr[1] "%1 przesiadki"
-msgstr[2] "%1 przesiadek"
+msgstr[0] "Jedna przestrzeń"
+msgstr[1] "%1 przestrzenie"
+msgstr[2] "%1 przestrzeni"
 
 #: app/ReservationDocumentsCard.qml:19
 #, kde-format
@@ -3885,42 +3882,37 @@ msgid "Merge"
 msgstr "Scal"
 
 #: app/TripGroupPage.qml:130
-#, fuzzy, kde-format
-#| msgid "Do you really want to delete this trip?"
+#, kde-format
 msgid "Do you really want to delete the trip '%1'?"
-msgstr "Czy na pewno usunąć tę podróż?"
+msgstr "Czy na pewno usunąć tę podróż '%1'?"
 
 #: app/TripGroupPage.qml:225
 #, kde-format
 msgid "One day"
 msgid_plural "%1 days"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "jeden dzień "
+msgstr[1] "%1 dni"
+msgstr[2] "%1 dni"
 
 #: app/TripGroupPage.qml:245
-#, fuzzy, kde-format
-#| msgid "Some incompatible power sockets: %1"
+#, kde-format
 msgid "Some incompatible power sockets (%1)"
-msgstr "Niektóre z gniazdek elektrycznych są niezgodne: %1"
+msgstr "Niektóre z gniazdek elektrycznych są niezgodne (%1)"
 
 #: app/TripGroupPage.qml:247
-#, fuzzy, kde-format
-#| msgid "Some incompatible power plugs: %1"
+#, kde-format
 msgid "Some incompatible power plugs (%1)"
-msgstr "Niektóre z wtyczek elektrycznych są niezgodne: %1"
+msgstr "Niektóre z wtyczek elektrycznych są niezgodne (%1)"
 
 #: app/TripGroupPage.qml:250
-#, fuzzy, kde-format
-#| msgid "%1: no compatible power plugs (%2)"
+#, kde-format
 msgid "No compatible power plugs (%1)"
-msgstr "%1: brak zgodnych wtyczek elektrycznych (%2)"
+msgstr "Brak zgodnych wtyczek elektrycznych (%1)"
 
 #: app/TripGroupPage.qml:402
-#, fuzzy, kde-format
-#| msgid "Rename"
+#, kde-format
 msgid "Rename…"
-msgstr "Przemianuj"
+msgstr "Przemianuj…"
 
 #: app/TripGroupPage.qml:411
 #, kde-format
