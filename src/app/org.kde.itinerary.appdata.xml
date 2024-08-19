@@ -856,11 +856,22 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="24.08.0" date="2024-08-22"/>
+    <release version="24.08.0" date="2024-08-22">
+      <description>
+        <ul>
+          <li>New or improved travel document extractors for Booking.com, direct-book.com, Entur, Flixbus, MAV, Scandlines, SNCB and SNCF.</li>
+          <li>New display for seat reservation information in the timeline.</li>
+          <li>Support for the Träwelling check-in service.</li>
+          <li>Allow to create events or hotel reservations from OSM element URLs.</li>
+          <li>Allow to show additional Wikimedia online content in the indoor map.</li>
+          <li>Trips can now be renamed.</li>
+        </ul>
+      </description>
+    </release>
     <release version="24.05.2" date="2024-07-04">
       <description>
         <ul>
-          <li>New of improved travel document extractors for 12go, Eurowings, hotels.com, Iberia, Georgian Railway, RegioJet, Snälltåget, TCDD and tobilet.pl.</li>
+          <li>New or improved travel document extractors for 12go, Eurowings, hotels.com, Iberia, Georgian Railway, RegioJet, Snälltåget, TCDD and tobilet.pl.</li>
           <li>Fix reading/writing of all-day events to/from the Android system calendar.</li>
           <li>Fix permission issues when exporting to the Android calendar.</li>
           <li>Fix rendering of Apples Wallet passes without a barcode.</li>
