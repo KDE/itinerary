@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-16 00:39+0000\n"
+"POT-Creation-Date: 2024-08-19 00:39+0000\n"
 "PO-Revision-Date: 2024-02-09 23:07+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -1426,7 +1426,7 @@ msgstr "Удалить пропуск"
 msgid "Do you really want to delete this pass?"
 msgstr "Удалить этот пропуск?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:335 app/main.qml:21 app/main.qml:166
+#: app/gpxexport.cpp:33 app/main.cpp:333 app/main.qml:21 app/main.qml:166
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "Маршруты KDE"
@@ -2462,25 +2462,25 @@ msgstr "Тип M"
 msgid "Type N"
 msgstr "Тип N"
 
-#: app/main.cpp:343
+#: app/main.cpp:341
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Цифровой помощник в путешествиях"
 
-#: app/main.cpp:344
+#: app/main.cpp:342
 #, fuzzy, kde-format
 #| msgid "Copyright © 2018-%1 The KDE Community"
 msgid "Copyright © The KDE Community"
 msgstr "© Сообщество KDE, 2018-%1"
 
-#: app/main.cpp:351
+#: app/main.cpp:349
 #, fuzzy, kde-format
 #| msgid "Open Itinerary on the given page"
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Открыть программу на указанной странице"
 
-#: app/main.cpp:356
+#: app/main.cpp:354
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."

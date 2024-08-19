@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-16 00:39+0000\n"
+"POT-Creation-Date: 2024-08-19 00:39+0000\n"
 "PO-Revision-Date: 2024-08-13 19:18+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -1381,7 +1381,7 @@ msgstr "Ezabatu txartela"
 msgid "Do you really want to delete this pass?"
 msgstr "Benetan ezabatu nahi duzu txartel hori?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:335 app/main.qml:21 app/main.qml:166
+#: app/gpxexport.cpp:33 app/main.cpp:333 app/main.qml:21 app/main.qml:166
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -2393,23 +2393,23 @@ msgstr "M mota"
 msgid "Type N"
 msgstr "N mota"
 
-#: app/main.cpp:343
+#: app/main.cpp:341
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Bidai-laguntzaile digitala"
 
-#: app/main.cpp:344
+#: app/main.cpp:342
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "Copyright © KDE Komunitatea"
 
-#: app/main.cpp:351
+#: app/main.cpp:349
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Ireki ibilbidea adierazitako orrian"
 
-#: app/main.cpp:356
+#: app/main.cpp:354
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
