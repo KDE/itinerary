@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-19 00:39+0000\n"
-"PO-Revision-Date: 2024-07-27 14:20+0200\n"
+"PO-Revision-Date: 2024-08-19 21:47+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -576,8 +576,7 @@ msgid "Alight earlier"
 msgstr "Surteriĝi pli frue"
 
 #: app/BusEditor.qml:134 app/BusEditor.qml:140 app/BusPage.qml:182
-#, fuzzy, kde-format
-#| msgid "Seat"
+#, kde-format
 msgctxt "Bus seat"
 msgid "Seat"
 msgstr "Seĝo"
@@ -840,25 +839,19 @@ msgid "End time: %1"
 msgstr "Fintempo: %1"
 
 #: app/EventDelegate.qml:70
-#, fuzzy, kde-format
-#| msgctxt "event venut seat section"
-#| msgid "Section: <b>%1</b>"
+#, kde-format
 msgctxt "event venue seat section"
 msgid "Section: <b>%1</b>"
 msgstr "Sekcio: <b>%1</b>"
 
 #: app/EventDelegate.qml:76
-#, fuzzy, kde-format
-#| msgctxt "event venut seat row"
-#| msgid "Row: <b>%1</b>"
+#, kde-format
 msgctxt "event venue seat row"
 msgid "Row: <b>%1</b>"
 msgstr "Vico: <b>%1</b>"
 
 #: app/EventDelegate.qml:82
-#, fuzzy, kde-format
-#| msgctxt "event venut seat number"
-#| msgid "Number: <b>%1</b>"
+#, kde-format
 msgctxt "event venue seat number"
 msgid "Number: <b>%1</b>"
 msgstr "Numero: <b>%1</b>"
@@ -1173,8 +1166,7 @@ msgid "Invalid flight number."
 msgstr "Nevalida flugnumero."
 
 #: app/FlightEditor.qml:195 app/FlightEditor.qml:202
-#, fuzzy, kde-format
-#| msgid "Seat"
+#, kde-format
 msgctxt "Flight seat"
 msgid "Seat"
 msgstr "Seĝo"
@@ -1196,8 +1188,7 @@ msgstr "Enirgrupo"
 
 #: app/FlightPage.qml:94 app/TrainEditor.qml:146 app/TrainEditor.qml:158
 #: app/TrainPage.qml:279
-#, fuzzy, kde-format
-#| msgid "Seat"
+#, kde-format
 msgctxt "Train seat"
 msgid "Seat"
 msgstr "Seĝo"
@@ -2922,14 +2913,11 @@ msgid "Currently not available"
 msgstr "Aktuale ne disponebla"
 
 #: app/PublicTransportFeatureList.qml:37
-#, fuzzy, kde-format
-#| msgctxt "number of switches to another transport"
-#| msgid "One change"
-#| msgid_plural "%1 changes"
+#, kde-format
 msgid "One space"
 msgid_plural "%1 spaces"
-msgstr[0] "Unu ŝanĝo"
-msgstr[1] "%1 ŝanĝoj"
+msgstr[0] "Unu spaco"
+msgstr[1] "%1 spacoj"
 
 #: app/ReservationDocumentsCard.qml:19
 #, kde-format
@@ -3670,8 +3658,7 @@ msgid "Coach:"
 msgstr "Trejnisto:"
 
 #: app/TrainPage.qml:296
-#, fuzzy, kde-format
-#| msgid "Seat:"
+#, kde-format
 msgctxt "Train seat"
 msgid "Seat:"
 msgstr "Sidloko:"
@@ -3879,41 +3866,36 @@ msgid "Merge"
 msgstr "Kunfandi"
 
 #: app/TripGroupPage.qml:130
-#, fuzzy, kde-format
-#| msgid "Do you really want to delete this trip?"
+#, kde-format
 msgid "Do you really want to delete the trip '%1'?"
-msgstr "Ĉu vi vere volas forigi ĉi tiun vojaĝon?"
+msgstr "Ĉu vi vere volas forigi la vojaĝon '%1'?"
 
 #: app/TripGroupPage.qml:225
 #, kde-format
 msgid "One day"
 msgid_plural "%1 days"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Unu tago"
+msgstr[1] "%1 tagoj"
 
 #: app/TripGroupPage.qml:245
-#, fuzzy, kde-format
-#| msgid "Some incompatible power sockets: %1"
+#, kde-format
 msgid "Some incompatible power sockets (%1)"
-msgstr "Kelkaj nekongruaj elektraj ingoj: %1"
+msgstr "Kelkaj nekongruaj elektraj ingoj (%1)"
 
 #: app/TripGroupPage.qml:247
-#, fuzzy, kde-format
-#| msgid "Some incompatible power plugs: %1"
+#, kde-format
 msgid "Some incompatible power plugs (%1)"
-msgstr "Kelkaj nekongruaj elektraj ŝtopiloj: %1"
+msgstr "Kelkaj nekongruaj elektraj ŝtopiloj (%1)"
 
 #: app/TripGroupPage.qml:250
-#, fuzzy, kde-format
-#| msgid "%1: no compatible power plugs (%2)"
+#, kde-format
 msgid "No compatible power plugs (%1)"
-msgstr "%1: neniuj kongruaj elektraj ŝtopiloj (%2)"
+msgstr "Neniuj kongruaj elektraj ŝtopiloj (%1)"
 
 #: app/TripGroupPage.qml:402
-#, fuzzy, kde-format
-#| msgid "Rename"
+#, kde-format
 msgid "Rename…"
-msgstr "Alinomi"
+msgstr "Alinomi…"
 
 #: app/TripGroupPage.qml:411
 #, kde-format
