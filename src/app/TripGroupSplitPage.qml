@@ -9,9 +9,10 @@ import org.kde.kirigamiaddons.components
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.itinerary
 
-Kirigami.ScrollablePage {
+FormCard.FormCardPage {
     id: root
-    title: i18n("Split Trip")
+
+    title: i18nc("@title:window", "Split Trip")
 
     /** The trip group to split */
     property var tripGroup
@@ -19,64 +20,65 @@ Kirigami.ScrollablePage {
     /** Emitted when a group split has been executed. */
     signal splitDone()
 
-    header: ColumnLayout {
-        Layout.fillWidth: true
-        FormCard.FormHeader {
-            title: i18n("New Trip")
+    FormCard.FormCard {
+        Layout.topMargin: Kirigami.Units.largeSpacing * 2
+        FormCard.FormTextFieldDelegate {
+            id: nameEdit
+            property bool manuallyChanged
+            label: i18nc("@label:textbox", "New Trip name:")
+            onTextEdited: nameEdit.manuallyChanged = true
+            text: TripGroupManager.guessName(splitModel.selection)
         }
-        FormCard.FormCard {
-            FormCard.FormTextFieldDelegate {
-                id: nameEdit
-                property bool manuallyChanged
-                label: i18nc("@label:textbox", "Trip name:")
-                onTextEdited: nameEdit.manuallyChanged = true
-                text: TripGroupManager.guessName(splitModel.selection)
+    }
+
+    FormCard.FormHeader {
+        title: i18nc("@title:group", "Sections")
+    }
+
+    FormCard.FormCard {
+        Repeater {
+            model: TripGroupSplitModel {
+                id: splitModel
+                reservationManager: ReservationManager
+                elements: root.tripGroup.elements
+
+                onSelectionChanged: {
+                    if (!nameEdit.manuallyChanged) {
+                        nameEdit.text = TripGroupManager.guessName(splitModel.selection);
+                    }
+                }
+            }
+
+            FormCard.FormCheckDelegate {
+                checked: model.selected
+
+                trailing: Kirigami.Icon {
+                    source: model.iconName
+                    implicitWidth: Kirigami.Units.iconSizes.medium
+                    implicitHeight: Kirigami.Units.iconSizes.medium
+                }
+
+                text: model.title
+                description: model.subtitle
+                descriptionItem {
+                    elide: Text.ElideRight
+                    wrapMode: Text.NoWrap
+                }
+                onToggled: model.selected = checked
             }
         }
     }
 
-    ListView {
-        model: TripGroupSplitModel {
-            id: splitModel
-            reservationManager: ReservationManager
-            elements: root.tripGroup.elements
+    FormCard.FormCard {
+        Layout.topMargin: Kirigami.Units.largeSpacing * 2
 
-            onSelectionChanged: {
-                if (!nameEdit.manuallyChanged) {
-                    nameEdit.text = TripGroupManager.guessName(splitModel.selection);
-                }
-            }
-        }
-
-        delegate: QQC2.ItemDelegate {
-            highlighted: model.selected
-            width: ListView.view.width
-            contentItem: RowLayout {
-                Kirigami.IconTitleSubtitle {
-                    icon.source: model.iconName
-                    title: model.title
-                    subtitle: model.subtitle
-                    Layout.fillWidth: true
-                }
-            }
-            onClicked: model.selected = !model.selected
-        }
-
-        FloatingButton {
-            anchors {
-                right: parent.right
-                rightMargin: Kirigami.Units.largeSpacing + (root.contentItem.QQC2.ScrollBar && root.contentItem.QQC2.ScrollBar.vertical ? root.contentItem.QQC2.ScrollBar.vertical.width : 0)
-                bottom: parent.bottom
-                bottomMargin: Kirigami.Units.largeSpacing
-            }
-            action: Kirigami.Action {
-                icon.name: "split"
-                text: i18n("Split trip")
-                onTriggered: {
-                    TripGroupManager.createGroup(splitModel.selection, nameEdit.text);
-                    root.splitDone();
-                    applicationWindow().pageStack.pop();
-                }
+        FormCard.FormButtonDelegate {
+            icon.name: "split-symbolic"
+            text: i18nc("@action:button", "Split trip")
+            onClicked: {
+                TripGroupManager.createGroup(splitModel.selection, nameEdit.text);
+                root.splitDone();
+                applicationWindow().pageStack.pop();
             }
         }
     }
