@@ -65,7 +65,10 @@ public:
      *  splitting existing groups.
      *  @returns the trip group id of the new group.
      */
-    Q_INVOKABLE [[nodiscard]] QString createGroup(const QStringList &elements, const QString &name);
+    Q_INVOKABLE QString createGroup(const QStringList &elements, const QString &name);
+
+    /** Add the given elements to an existing trip group. */
+    void addToGroup(const QStringList &elements, const QString &tgId);
 
 Q_SIGNALS:
     void tripGroupAdded(const QString &id);

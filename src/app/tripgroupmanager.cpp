@@ -996,4 +996,60 @@ QString TripGroupManager::createGroup(const QStringList &elements, const QString
     return tgId;
 }
 
+void TripGroupManager::addToGroup(const QStringList &elements, const QString &tgId)
+{
+    // find groups that contain any of the selected elements already
+    QStringList groupsToUpdate;
+    for (const auto &resId : elements) {
+        const auto it = m_reservationToGroupMap.constFind(resId);
+        if (it == m_reservationToGroupMap.cend() || it.key() == tgId) {
+            continue;
+        }
+        if (!groupsToUpdate.contains(it.value())) {
+            groupsToUpdate.push_back(it.value());
+        }
+    }
+
+    // remove elements from other groups and mark those explicitly grouped
+    for (const auto &tgId : groupsToUpdate) {
+        auto &tg = m_tripGroups[tgId];
+        auto elems = tg.elements();
+        for (const auto &resId : elements) {
+            elems.removeAll(resId);
+        }
+        tg.setElements(elems);
+        if (elems.isEmpty()) {
+            removeTripGroup(tgId);
+            continue;
+        }
+        if (tg.hasAutomaticName()) {
+            tg.setName(guessName(tg.elements()));
+        }
+        recomputeTripGroupTimes(tg);
+        tg.store(fileForGroup(tgId));
+        Q_EMIT tripGroupChanged(tgId);
+    }
+
+    // add elements to tgId
+    auto &tg = m_tripGroups[tgId];
+
+    auto elems = tg.elements();
+    elems += elements;
+    elems.removeDuplicates();
+    std::sort(elems.begin(), elems.end(), [this](const auto &lhs, const auto &rhs) {
+        return SortUtil::isBefore(m_resMgr->reservation(lhs), m_resMgr->reservation(rhs));
+    });
+    tg.setElements(elems);
+
+    for (const auto &elem : elements) {
+        m_reservationToGroupMap[elem] = tgId;
+    }
+
+    tg.setIsAutomaticallyGrouped(false);
+    recomputeTripGroupTimes(tg);
+
+    tg.store(fileForGroup(tgId));
+    Q_EMIT tripGroupAdded(tgId);
+}
+
 #include "moc_tripgroupmanager.cpp"

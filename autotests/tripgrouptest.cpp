@@ -14,6 +14,7 @@
 #include "tripgroupmanager.h"
 
 #include <QtTest/qtest.h>
+#include <QAbstractItemModelTester>
 #include <QSignalSpy>
 #include <QStandardPaths>
 
@@ -552,6 +553,65 @@ private Q_SLOTS:
             tg = tgMgr2.tripGroup(tgId2);
             QCOMPARE(tg.elements().size(), 8);
         }
+    }
+
+    void testExplicitGroupCreation()
+    {
+        ReservationManager resMgr;
+        TransferManager transferMgr;
+        Test::clearAll(&resMgr);
+        auto ctrl = Test::makeAppController();
+        ctrl->setReservationManager(&resMgr);
+
+        TripGroupManager tgMgr;
+        tgMgr.setReservationManager(&resMgr);
+        tgMgr.setTransferManager(&transferMgr);
+        ctrl->setTripGroupManager(&tgMgr);
+
+        ImportController importer;
+        QAbstractItemModelTester modelTest(&importer);
+        importer.setReservationManager(&resMgr);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
+
+        // create new group from the first half
+        for (int i = importer.rowCount() / 2; i <importer.rowCount(); ++i) {
+            QVERIFY(importer.setData(importer.index(i, 0), false, ImportController::SelectedRole));
+        }
+        importer.setTripGroupName(u"Custom Group Name"_s);
+        QCOMPARE(importer.rowCount(), 11);
+        QCOMPARE(importer.hasSelectedReservation(), true);
+        QCOMPARE(importer.selectedReservations().size(), 5);
+
+        ctrl->commitImport(&importer);
+        QCOMPARE(resMgr.batches().size(), 5);
+        QCOMPARE(tgMgr.tripGroups().size(), 1);
+        const auto tgId = tgMgr.tripGroups().at(0);
+        QVERIFY(!tgId.isEmpty());
+        auto tg = tgMgr.tripGroup(tgId);
+        QCOMPARE(tg.elements().size(), 5);
+        QCOMPARE(tg.name(), "Custom Group Name"_L1);
+        QCOMPARE(tg.isAutomaticallyGrouped(), false);
+        QCOMPARE(tg.hasAutomaticName(), false);
+
+        // add the second half to that group
+        QCOMPARE(importer.rowCount(), 6);
+        QCOMPARE(importer.hasSelectedReservation(), false);
+        for (int i = 0; i < importer.rowCount(); ++i) {
+            QVERIFY(importer.setData(importer.index(i, 0), true, ImportController::SelectedRole));
+        }
+        QCOMPARE(importer.hasSelectedReservation(), true);
+        QCOMPARE(importer.selectedReservations().size(), 6);
+        QCOMPARE(importer.tripGroupName(), QString());
+        importer.setTripGroupId(tgId);
+
+        ctrl->commitImport(&importer);
+        QCOMPARE(resMgr.batches().size(), 11);
+        QCOMPARE(tgMgr.tripGroups().size(), 1);
+        tg = tgMgr.tripGroup(tgId);
+        QCOMPARE(tg.elements().size(), 11);
+        QCOMPARE(tg.name(), "Custom Group Name"_L1);
+        QCOMPARE(tg.isAutomaticallyGrouped(), false);
+        QCOMPARE(tg.hasAutomaticName(), false);
     }
 };
 QTEST_GUILESS_MAIN(TripGroupTest)

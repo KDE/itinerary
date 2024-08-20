@@ -26,7 +26,6 @@ FormCard.FormCardPage {
     FormCard.FormCard {
         visible: root.controller.hasSelectedReservation && Settings.developmentMode
         FormCard.AbstractFormDelegate {
-            id: timeSelector
             contentItem: ColumnLayout {
                 Components.RadioSelector{
                     id: newOrAddSelector
@@ -150,6 +149,10 @@ FormCard.FormCardPage {
                         break;
                     case 1:
                         root.controller.tripGroupId = tripGroupSelector.currentValue;
+                }
+                if (!Settings.developmentMode) {
+                    root.controller.tripGroupName = "";
+                    root.controller.tripGroupId = "";
                 }
                 ApplicationController.commitImport(root.controller);
                 if (root.controller.count === 0) {

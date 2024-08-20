@@ -177,6 +177,7 @@ void ApplicationController::commitImport(ImportController *importController)
     int healthCertCount = 0;
 
     TripGroupingBlocker groupBlocker(m_tripGroupMgr);
+    QStringList tripGroupElements;
     for (const auto &elem : importController->elements()) {
         if (!elem.selected) {
             continue;
@@ -185,7 +186,7 @@ void ApplicationController::commitImport(ImportController *importController)
         QVariantList docIds;
         switch (elem.type) {
             case ImportElement::Reservation:
-                m_resMgr->addReservation(elem.updateData.isNull() ? elem.data : elem.updateData, elem.id);
+                tripGroupElements.push_back(m_resMgr->addReservation(elem.updateData.isNull() ? elem.data : elem.updateData, elem.id));
                 docIds = DocumentUtil::documentIds(elem.data);
                 for (const auto &r : elem.batch) {
                     m_resMgr->addReservation(r);
@@ -257,6 +258,26 @@ void ApplicationController::commitImport(ImportController *importController)
             }
         }
     }
+
+    // add or update trip group
+    QString tripGroupId;
+    if (!tripGroupElements.isEmpty() && m_tripGroupMgr) { // TODO many unit tests don't provide m_tripGroupMgr, fix this eventually
+        if (!importController->tripGroupId().isEmpty()) {
+            tripGroupId = importController->tripGroupId();
+            m_tripGroupMgr->addToGroup(tripGroupElements, tripGroupId);
+        } else if (!importController->tripGroupName().isEmpty()) {
+            tripGroupId = m_tripGroupMgr->createGroup(tripGroupElements, importController->tripGroupName());
+        }
+
+        if (!tripGroupId.isEmpty() && !importController->tripGroup().matrixRoomId().isEmpty()) {
+            auto tg = m_tripGroupMgr->tripGroup(tripGroupId);
+            if (tg.matrixRoomId().isEmpty()) {
+                tg.setMatrixRoomId(importController->tripGroup().matrixRoomId());
+                m_tripGroupMgr->updateTripGroup(tripGroupId, tg);
+            }
+        }
+    }
+    // TODO open the created/modified trip group afterwards?
 
     importController->clearSelected();
 

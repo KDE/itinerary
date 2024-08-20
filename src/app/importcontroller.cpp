@@ -512,9 +512,9 @@ bool ImportController::importBundle(ImportBundle &&bundle)
     }
 
     if (tgIds.size() == 1) {
-        const auto tg = TripGroup::fromJson(QJsonDocument::fromJson(bundle.data->customData(BUNDLE_TRIPGROUP_DOMAIN, tgIds.front())).object());
-        if (!tg.hasAutomaticName()) {
-            m_tripGroupName = tg.name();
+        m_tripGroup = TripGroup::fromJson(QJsonDocument::fromJson(bundle.data->customData(BUNDLE_TRIPGROUP_DOMAIN, tgIds.front())).object());
+        if (!m_tripGroup.hasAutomaticName()) {
+            m_tripGroupName = m_tripGroup.name();
         }
     }
 
@@ -788,6 +788,31 @@ void ImportController::setAutoCommitEnabled(bool enable)
     Q_EMIT enableAutoCommitChanged();
 }
 
+QString ImportController::tripGroupName() const
+{
+    return m_tripGroupName;
+}
+
+void ImportController::setTripGroupName(const QString &tripGroupName)
+{
+    m_tripGroupName = tripGroupName;
+}
+
+QString ImportController::tripGroupId() const
+{
+    return m_tripGroupId;
+}
+
+void ImportController::setTripGroupId(const QString &tripGroupId)
+{
+    m_tripGroupId = tripGroupId;
+}
+
+TripGroup ImportController::tripGroup() const
+{
+    return m_tripGroup;
+}
+
 void ImportController::clear()
 {
     beginResetModel();
@@ -797,6 +822,7 @@ void ImportController::clear()
     m_stagedBundles.clear();
     m_tripGroupName.clear();
     m_tripGroupId.clear();
+    m_tripGroup = TripGroup();
     m_autoCommitEnabled = false;
     endResetModel();
 }
@@ -816,6 +842,7 @@ void ImportController::clearSelected()
 
     m_tripGroupName.clear();
     m_tripGroupId.clear();
+    m_tripGroup = TripGroup();
 }
 
 bool ImportController::canAutoCommit() const

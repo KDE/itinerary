@@ -6,6 +6,8 @@
 #ifndef IMPORTCONTROLLER_H
 #define IMPORTCONTROLLER_H
 
+#include "tripgroup.h"
+
 #include <KItinerary/CreativeWork>
 
 #include <KCalendarCore/Calendar>
@@ -106,8 +108,8 @@ class ImportController : public QAbstractListModel
     Q_PROPERTY(int count READ rowCount NOTIFY rowCountChanged)
     Q_PROPERTY(bool enableAutoCommit MEMBER m_autoCommitEnabled WRITE setAutoCommitEnabled NOTIFY enableAutoCommitChanged)
 
-    Q_PROPERTY(QString tripGroupName MEMBER m_tripGroupName NOTIFY tripGroupChanged)
-    Q_PROPERTY(QString tripGroupId MEMBER m_tripGroupId NOTIFY tripGroupChanged)
+    Q_PROPERTY(QString tripGroupName READ tripGroupName WRITE setTripGroupName NOTIFY tripGroupChanged)
+    Q_PROPERTY(QString tripGroupId READ tripGroupId WRITE setTripGroupId NOTIFY tripGroupChanged)
 
 public:
     explicit ImportController(QObject *parent = nullptr);
@@ -162,6 +164,12 @@ public:
 
     void setAutoCommitEnabled(bool enabled);
 
+    [[nodiscard]] QString tripGroupName() const;
+    void setTripGroupName(const QString &tripGroupName);
+    [[nodiscard]] QString tripGroupId() const;
+    void setTripGroupId(const QString &tripGroupId);
+    [[nodiscard]] TripGroup tripGroup() const;
+
     // for actually importing
     const std::vector<ImportElement>& elements() const;
     std::unordered_map<QString, ImportDocument>& documents();
@@ -201,6 +209,7 @@ private:
 
     QString m_tripGroupName;
     QString m_tripGroupId;
+    TripGroup m_tripGroup; // in case of importing an exsiting single group from a bundle
 
     bool m_autoCommitEnabled = false;
 
