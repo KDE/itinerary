@@ -16,8 +16,7 @@ FormCard.FormCardDialog {
 
     title: i18nc("@title:window", "Merge Trips")
 
-
-    function guessName() {
+    function guessName(): void {
         if (nameEdit.nameChanged)
             return;
 
@@ -47,6 +46,8 @@ FormCard.FormCardDialog {
         onCurrentValueChanged: root.guessName()
     }
 
+    FormCard.FormDelegateSeparator {}
+
     FormCard.FormTextFieldDelegate {
         id: nameEdit
 
@@ -73,8 +74,8 @@ FormCard.FormCardDialog {
     }
 
     Component.onCompleted: {
-        let btn = standardButton(QQC2.Dialog.Save);
-        btn.text = i18n("Merge");
-        btn.icon.name = "merge";
+        const btn = standardButton(QQC2.Dialog.Save);
+        btn.text = i18nc("@action:button", "Merge");
+        btn.icon.name = "merge-symbolic";
     }
 }
