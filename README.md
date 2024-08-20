@@ -4,6 +4,8 @@ A digital travel assistant that supports you while traveling without compromisin
 
 ![KDE Itinerary timeline view](https://cdn.kde.org/screenshots/itinerary/kde-itinerary-timeline.png)
 
+See [the website](https://apps.kde.org/itinerary) and [the wiki](https://community.kde.org/KDE_PIM/KDE_Itinerary) for more information.
+
 ## Getting KDE Itinerary
 
 ### Flatpak
