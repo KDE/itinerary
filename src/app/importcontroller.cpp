@@ -16,6 +16,7 @@
 #include "passmanager.h"
 #include "reservationhelper.h"
 #include "reservationmanager.h"
+#include "tripgroup.h"
 
 #ifdef Q_OS_ANDROID
 #include "android/itineraryactivity.h"
@@ -461,7 +462,8 @@ bool ImportController::importBundle(ImportBundle &&bundle)
         return false;
     }
 
-    if (isFullBackup(bundle.data.get())) {
+    const auto tgIds = bundle.data->listCustomData(BUNDLE_TRIPGROUP_DOMAIN);
+    if (tgIds.size() > 1 || isFullBackup(bundle.data.get())) {
         addElement({ .type = ImportElement::Backup, .data = {}, .bundleIdx = (int)m_stagedBundles.size() });
         m_stagedBundles.push_back(std::move(bundle));
         return true;
@@ -506,6 +508,13 @@ bool ImportController::importBundle(ImportBundle &&bundle)
         const auto pkPassId = KItinerary::DocumentUtil::idForPkPass(passTypeIdentifier, serialNum);
         if (auto it = m_stagedPkPasses.find(pkPassId); it != m_stagedPkPasses.end()) {
             (*it).second.data = bundle.data->passData(passId);
+        }
+    }
+
+    if (tgIds.size() == 1) {
+        const auto tg = TripGroup::fromJson(QJsonDocument::fromJson(bundle.data->customData(BUNDLE_TRIPGROUP_DOMAIN, tgIds.front())).object());
+        if (!tg.hasAutomaticName()) {
+            m_tripGroupName = tg.name();
         }
     }
 
@@ -729,6 +738,46 @@ bool ImportController::hasSelection() const
     return std::any_of(m_stagedElements.begin(), m_stagedElements.end(), [](const auto &elem) { return elem.selected; });
 }
 
+bool ImportController::hasSelectedReservation() const
+{
+    return std::any_of(m_stagedElements.begin(), m_stagedElements.end(), [](const auto &elem) {
+        return elem.selected && elem.type == ImportElement::Reservation;
+    });
+}
+
+QVariantList ImportController::selectedReservations() const
+{
+    QVariantList reservations;
+    for (const auto &elem : m_stagedElements) {
+        if (elem.selected && elem.type == ImportElement::Reservation) {
+            reservations.push_back(elem.data);
+        }
+    }
+    return reservations;
+}
+
+QDateTime ImportController::selectionBeginDateTime() const
+{
+    QDateTime begin;
+    for (const auto &elem : m_stagedElements) {
+        if (elem.selected && elem.type == ImportElement::Reservation) {
+            begin = begin.isValid() ? std::min(begin, KItinerary::SortUtil::startDateTime(elem.data)) : KItinerary::SortUtil::startDateTime(elem.data);
+        }
+    }
+    return begin;
+}
+
+QDateTime ImportController::selectionEndDateTime() const
+{
+    QDateTime end;
+    for (const auto &elem : m_stagedElements) {
+        if (elem.selected && elem.type == ImportElement::Reservation) {
+            end = end.isValid() ? std::max(end, KItinerary::SortUtil::endDateTime(elem.data)) : KItinerary::SortUtil::endDateTime(elem.data);
+        }
+    }
+    return end;
+}
+
 void ImportController::setAutoCommitEnabled(bool enable)
 {
     if (m_autoCommitEnabled == enable) {
@@ -746,6 +795,8 @@ void ImportController::clear()
     m_stagedDocuments.clear();
     m_stagedPkPasses.clear();
     m_stagedBundles.clear();
+    m_tripGroupName.clear();
+    m_tripGroupId.clear();
     m_autoCommitEnabled = false;
     endResetModel();
 }
@@ -762,6 +813,9 @@ void ImportController::clearSelected()
         m_stagedElements.erase(m_stagedElements.begin() + i);
         endRemoveRows();
     }
+
+    m_tripGroupName.clear();
+    m_tripGroupId.clear();
 }
 
 bool ImportController::canAutoCommit() const

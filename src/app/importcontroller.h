@@ -94,8 +94,21 @@ class ImportController : public QAbstractListModel
 {
     Q_OBJECT
     Q_PROPERTY(bool hasSelection READ hasSelection NOTIFY selectionChanged)
+    /** At least one trip-associatable element is selected. */
+    Q_PROPERTY(bool hasSelectedReservation READ hasSelectedReservation NOTIFY selectionChanged)
+    /** Selected reservation objects, for trip group name guessing. */
+    Q_PROPERTY(QVariantList selectedReservations READ selectedReservations NOTIFY selectionChanged)
+    /** Begin of the first trip-associatable element. Used for trip adjacency queries. */
+    Q_PROPERTY(QDateTime selectionBeginDateTime READ selectionBeginDateTime NOTIFY selectionChanged)
+    /** End of the last trip-associatable element. Used for trip adjacency queries. */
+    Q_PROPERTY(QDateTime selectionEndDateTime READ selectionEndDateTime NOTIFY selectionChanged)
+
     Q_PROPERTY(int count READ rowCount NOTIFY rowCountChanged)
     Q_PROPERTY(bool enableAutoCommit MEMBER m_autoCommitEnabled WRITE setAutoCommitEnabled NOTIFY enableAutoCommitChanged)
+
+    Q_PROPERTY(QString tripGroupName MEMBER m_tripGroupName NOTIFY tripGroupChanged)
+    Q_PROPERTY(QString tripGroupId MEMBER m_tripGroupId NOTIFY tripGroupChanged)
+
 public:
     explicit ImportController(QObject *parent = nullptr);
     ~ImportController();
@@ -141,7 +154,12 @@ public:
     [[nodiscard]] QHash<int, QByteArray> roleNames() const override;
 
     // properties
-    bool hasSelection() const;
+    [[nodiscard]] bool hasSelection() const;
+    [[nodiscard]] bool hasSelectedReservation() const;
+    [[nodiscard]] QVariantList selectedReservations() const;
+    [[nodiscard]] QDateTime selectionBeginDateTime() const;
+    [[nodiscard]] QDateTime selectionEndDateTime() const;
+
     void setAutoCommitEnabled(bool enabled);
 
     // for actually importing
@@ -160,6 +178,7 @@ Q_SIGNALS:
     void selectionChanged();
     void rowCountChanged();
     void enableAutoCommitChanged();
+    void tripGroupChanged();
 
 private:
     void importLocalFile(const QUrl &url);
@@ -179,6 +198,9 @@ private:
     std::unordered_map<QString, ImportDocument> m_stagedDocuments;
     std::unordered_map<QString, ImportPkPass> m_stagedPkPasses;
     std::vector<ImportBundle> m_stagedBundles;
+
+    QString m_tripGroupName;
+    QString m_tripGroupId;
 
     bool m_autoCommitEnabled = false;
 

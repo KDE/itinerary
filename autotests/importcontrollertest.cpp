@@ -152,6 +152,9 @@ private Q_SLOTS:
         QVERIFY(showImportPageSpy.wait());
         QCOMPARE(ctrl.documents().size(), 0);
         QCOMPARE(ctrl.bundles().size(), 1);
+        QVERIFY(ctrl.hasSelection());
+        QVERIFY(!ctrl.hasSelectedReservation());
+        QCOMPARE(ctrl.selectedReservations().size(), 0);
 
         ctrl.clear();
         QCOMPARE(ctrl.rowCount(), 0);
@@ -185,6 +188,10 @@ private Q_SLOTS:
 
         QCOMPARE(ctrl.rowCount(), 5);
         QCOMPARE(ctrl.hasSelection(), true);
+        QCOMPARE(ctrl.hasSelectedReservation(), true);
+        QCOMPARE(ctrl.selectedReservations().size(), 3);
+        QCOMPARE(ctrl.selectionBeginDateTime(), QDateTime({2017, 9, 10}, {14, 8}, QTimeZone("Europe/Zurich")));
+        QCOMPARE(ctrl.selectionEndDateTime(), QDateTime({2017, 9, 15}, {15, 46}, QTimeZone("Europe/Zurich")));
         QVERIFY(showImportPageSpy.wait());
 
         auto idx = ctrl.index(0, 0);
@@ -226,6 +233,7 @@ private Q_SLOTS:
         QVERIFY(ctrl.setData(idx, false, ImportController::SelectedRole));
 
         QCOMPARE(ctrl.hasSelection(), true);
+        QCOMPARE(ctrl.hasSelectedReservation(), true);
         idx = ctrl.index(2, 0);
         QCOMPARE(idx.data(ImportController::SelectedRole).toBool(), true);
         QCOMPARE(ctrl.hasSelection(), true);
