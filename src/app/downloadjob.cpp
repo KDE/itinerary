@@ -102,16 +102,29 @@ bool DownloadJob::handleOsmUrl(const QUrl &url, QNetworkAccessManager *nam)
 
 bool DownloadJob::handleOnlineTicketRetrievalUrl(const QUrl &url, QNetworkAccessManager *nam)
 {
+    QVariantMap args;
+    QString sourceId;
+
     // TODO this needs to be gone generically and ideally based on some declarative data
     if (url.host() == "dbnavigator.bahn.de"_L1 && url.path() == "/loadorder"_L1) {
         const auto query = QUrlQuery(url);
-        QVariantMap args({
+        sourceId = u"db"_s;
+        args = {
             { "name"_L1, query.queryItemValue("name"_L1).toUpper() },
             { "reference"_L1, query.queryItemValue("on"_L1) }
-        });
+        };
+    }
+    if (url.host() == "int.bahn.de"_L1 || url.host() == "www.bahn.de"_L1) {
+        const auto query = QUrlQuery(url);
+        if (query.hasQueryItem("vbid"_L1)) {
+            sourceId = u"db-share"_s;
+            args = {{ "uuid"_L1, query.queryItemValue("vbid"_L1) }};
+        }
+    }
 
-        qCDebug(Log) << "Doing online ticket retrieval for" << url << args;
-        auto job = new OnlineTicketRetrievalJob(u"db"_s, args, nam, this);
+    if (!sourceId.isEmpty()) {
+        qCDebug(Log) << "Doing online ticket retrieval for" << url << sourceId << args;
+        auto job = new OnlineTicketRetrievalJob(sourceId, args, nam, this);
         connect(job, &OnlineTicketRetrievalJob::finished, this, [this, job]() {
             job->deleteLater();
             if (job->result().isEmpty()) {
@@ -123,6 +136,7 @@ bool DownloadJob::handleOnlineTicketRetrievalUrl(const QUrl &url, QNetworkAccess
         });
         return true;
     }
+
     return false;
 }
 

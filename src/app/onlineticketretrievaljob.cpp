@@ -13,12 +13,12 @@
 #include <QNetworkReply>
 #include <QXmlStreamReader>
 
+using namespace Qt::Literals;
+
 OnlineTicketRetrievalJob::OnlineTicketRetrievalJob(const QString &sourceId, const QVariantMap &arguments, QNetworkAccessManager *nam, QObject *parent)
     : QObject(parent)
     , m_nam(nam)
 {
-    QNetworkReply *reply = nullptr;
-
     // TODO this should be done more modular eventually, similar to the extraction side
     // e.g. by using some form of request templates, or by service-specific scripts
     if (sourceId == QLatin1StringView("db")) {
@@ -30,6 +30,13 @@ OnlineTicketRetrievalJob::OnlineTicketRetrievalJob(const QString &sourceId, cons
         }
         return;
     }
+    if (sourceId == "db-share"_L1) {
+        QNetworkRequest req(QUrl("https://int.bahn.de/web/api/angebote/verbindung/"_L1 + arguments.value("uuid"_L1).toString()));
+        auto reply = nam->get(req);
+        reply->setParent(this);
+        connect(reply, &QNetworkReply::finished, this, [reply, this]() { handleReply(reply); });
+        return;
+    }
     if (sourceId == QLatin1StringView("sncf")) {
         // based on https://www.sncf-connect.com/app/trips/search and stripped to the bare minimum that works
         QNetworkRequest req(QUrl(QStringLiteral("https://www.sncf-connect.com/bff/api/v1/trips/trips-by-criteria")));
@@ -38,7 +45,7 @@ OnlineTicketRetrievalJob::OnlineTicketRetrievalJob(const QString &sourceId, cons
         req.setRawHeader("Accept", "application/json, text/plain, */*");
         req.setRawHeader("x-bff-key", "ah1MPO-izehIHD-QZZ9y88n-kku876");
         QByteArray postData("{\"reference\":\"" + arguments.value(QLatin1StringView("reference")).toString().toUtf8() + "\",\"name\":\"" + arguments.value(QLatin1StringView("name")).toString().toUtf8() + "\"}");
-        reply = nam->post(req, postData);
+        auto reply = nam->post(req, postData);
         reply->setParent(this);
         connect(reply, &QNetworkReply::finished, this, [reply, this]() { handleReply(reply); });
         return;
