@@ -7,36 +7,33 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
-import org.kde.kirigamiaddons.components
+import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.itinerary
 
-Kirigami.ScrollablePage {
+FormCard.FormCardPage {
     id: root
 
     property ImportController controller
 
     title: i18nc("@title", "Import")
 
-    header: QQC2.Label {
-        text: i18n("Selected items to import.")
+    FormCard.FormHeader {
+        title: i18nc("@title:group", "Selected Items to Import")
     }
 
-    ListView {
+    FormCard.FormCard {
         id: stagingList
-        model: root.controller
 
-        delegate: QQC2.ItemDelegate {
-            highlighted: model.selected
-            width: ListView.view.width
-            contentItem: RowLayout {
-                Kirigami.IconTitleSubtitle {
-                    icon.source: model.iconName
-                    title: model.title
-                    subtitle: model.subtitle
+        Repeater {
+            model: root.controller
 
-                    Layout.fillWidth: true
-                }
-                ColumnLayout {
+            delegate: FormCard.FormCheckDelegate {
+                checked: model.selected
+                text: model.title
+                icon.name: model.iconName
+                description: model.subtitle
+                trailing: ColumnLayout {
+                    spacing: Kirigami.Units.smallSpacing
                     Kirigami.Icon {
                         source: "meeting-attending"
                         Layout.preferredWidth: Kirigami.Units.iconSizes.small
@@ -49,28 +46,23 @@ Kirigami.ScrollablePage {
                         Layout.preferredHeight: Kirigami.Units.iconSizes.small
                         visible: model.attachmentCount > 0
                     }
-
                 }
+                onToggled: model.selected = checked
             }
-            onClicked: model.selected = !model.selected
         }
+    }
 
-        FloatingButton {
-            anchors {
-                right: parent.right
-                rightMargin: Kirigami.Units.largeSpacing + (root.contentItem.QQC2.ScrollBar && root.contentItem.QQC2.ScrollBar.vertical ? root.contentItem.QQC2.ScrollBar.vertical.width : 0)
-                bottom: parent.bottom
-                bottomMargin: Kirigami.Units.largeSpacing
-            }
-            action: Kirigami.Action {
-                icon.name: "document-open"
-                text: i18n("Import selection")
-                enabled: root.controller.hasSelection
-                onTriggered: {
-                    ApplicationController.commitImport(ImportController);
-                    if (stagingList.count === 0) {
-                        applicationWindow().pageStack.layers.pop();
-                    }
+    FormCard.FormCard {
+        Layout.topMargin: Kirigami.Units.largeSpacing * 2
+
+        FormCard.FormButtonDelegate {
+            icon.name: "document-open-symbolic"
+            text: i18nc("@action:button", "Import selection")
+            enabled: root.controller.hasSelection
+            onClicked: {
+                ApplicationController.commitImport(ImportController);
+                if (stagingList.count === 0) {
+                    QQC2.ApplicationWindow.window.pageStack.layers.pop();
                 }
             }
         }
