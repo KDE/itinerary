@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-19 00:39+0000\n"
+"POT-Creation-Date: 2024-08-21 00:48+0000\n"
 "PO-Revision-Date: 2020-05-04 10:51+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -123,7 +123,7 @@ msgid "Add to calendar…"
 msgstr "Lisa dokument ..."
 
 #: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:182
-#: app/TripGroupPage.qml:427
+#: app/TripGroupPage.qml:429
 #, fuzzy, kde-format
 #| msgid "Export..."
 msgid "Export…"
@@ -181,7 +181,7 @@ msgid "Itinerary file (*.itinerary)"
 msgstr "KDE itineraarifailid (*.itinerary)"
 
 #: app/ActionsCard.qml:172 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:397
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:399
 #, fuzzy, kde-format
 #| msgid "Application"
 msgid "Actions"
@@ -3778,7 +3778,7 @@ msgstr ""
 msgid "Export Trip"
 msgstr "Ekspordi ..."
 
-#: app/TimelinePage.qml:493 app/TripGroupPage.qml:361
+#: app/TimelinePage.qml:493 app/TripGroupPage.qml:363
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Tänaseks ei ole itineraaris midagi."
@@ -4085,7 +4085,7 @@ msgstr[1] ""
 msgid "Edit…"
 msgstr "Muuda"
 
-#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:432
+#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:434
 #, fuzzy, kde-format
 #| msgid "Event Ticket"
 msgid "Delete trip"
@@ -4184,19 +4184,19 @@ msgstr "Mõned mitteühilduvad pistikud: %1"
 msgid "No compatible power plugs (%1)"
 msgstr "%1: ühilduvad pistikupesad puuduvad (%2)"
 
-#: app/TripGroupPage.qml:402
+#: app/TripGroupPage.qml:404
 #, fuzzy, kde-format
 #| msgid "Rename"
 msgid "Rename…"
 msgstr "Muuda nime"
 
-#: app/TripGroupPage.qml:411
+#: app/TripGroupPage.qml:413
 #, fuzzy, kde-format
 #| msgid "Add transfer after"
 msgid "Merge trips…"
 msgstr "Lisa järgnev transfeer"
 
-#: app/TripGroupPage.qml:421
+#: app/TripGroupPage.qml:423
 #, fuzzy, kde-format
 #| msgid "Add transfer after"
 msgid "Split trip…"

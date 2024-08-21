@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-19 00:39+0000\n"
+"POT-Creation-Date: 2024-08-21 00:48+0000\n"
 "PO-Revision-Date: 2024-08-12 10:22+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -119,7 +119,7 @@ msgid "Add to calendar…"
 msgstr "Dodaj v koledar…"
 
 #: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:182
-#: app/TripGroupPage.qml:427
+#: app/TripGroupPage.qml:429
 #, kde-format
 msgid "Export…"
 msgstr "Izvozi…"
@@ -170,7 +170,7 @@ msgid "Itinerary file (*.itinerary)"
 msgstr "Datoteka itinerarja (* .itinerary)"
 
 #: app/ActionsCard.qml:172 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:397
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:399
 #, kde-format
 msgid "Actions"
 msgstr "Akcije"
@@ -3533,7 +3533,7 @@ msgstr "Kot datoteko GPX…"
 msgid "Export Trip"
 msgstr "Izvozi načrt poti"
 
-#: app/TimelinePage.qml:493 app/TripGroupPage.qml:361
+#: app/TimelinePage.qml:493 app/TripGroupPage.qml:363
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Nič na itinerarju za danes."
@@ -3823,7 +3823,7 @@ msgstr[3] "Valut: %2"
 msgid "Edit…"
 msgstr "Uredi…"
 
-#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:432
+#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:434
 #, kde-format
 msgid "Delete trip"
 msgstr "Izbriši potovanje"
@@ -3912,17 +3912,17 @@ msgstr "Nekaj nezdružljivih električnih vtikačev: (%1)"
 msgid "No compatible power plugs (%1)"
 msgstr "Nobenih združljivih vtikačev (%1)"
 
-#: app/TripGroupPage.qml:402
+#: app/TripGroupPage.qml:404
 #, kde-format
 msgid "Rename…"
 msgstr "Preimenuj…"
 
-#: app/TripGroupPage.qml:411
+#: app/TripGroupPage.qml:413
 #, kde-format
 msgid "Merge trips…"
 msgstr "Zlij potovanja…"
 
-#: app/TripGroupPage.qml:421
+#: app/TripGroupPage.qml:423
 #, kde-format
 msgid "Split trip…"
 msgstr "Razcepi potovanje…"

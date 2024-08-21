@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-19 00:39+0000\n"
+"POT-Creation-Date: 2024-08-21 00:48+0000\n"
 "PO-Revision-Date: 2024-05-09 06:05+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -117,7 +117,7 @@ msgid "Add to calendar…"
 msgstr "加入至行事曆..."
 
 #: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:182
-#: app/TripGroupPage.qml:427
+#: app/TripGroupPage.qml:429
 #, fuzzy, kde-format
 #| msgid "Export"
 msgid "Export…"
@@ -170,7 +170,7 @@ msgid "Itinerary file (*.itinerary)"
 msgstr "旅行計劃檔案 (*.itinerary)"
 
 #: app/ActionsCard.qml:172 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:397
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:399
 #, kde-format
 msgid "Actions"
 msgstr "動作"
@@ -3540,7 +3540,7 @@ msgstr "作為 GPX 檔案..."
 msgid "Export Trip"
 msgstr "匯出旅程"
 
-#: app/TimelinePage.qml:493 app/TripGroupPage.qml:361
+#: app/TimelinePage.qml:493 app/TripGroupPage.qml:363
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "今天沒有任何行程預定。"
@@ -3828,7 +3828,7 @@ msgstr[0] "貨幣：%2"
 msgid "Edit…"
 msgstr "編輯"
 
-#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:432
+#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:434
 #, kde-format
 msgid "Delete trip"
 msgstr "刪除旅程"
@@ -3923,19 +3923,19 @@ msgstr "有些插頭不相容：%1"
 msgid "No compatible power plugs (%1)"
 msgstr "%1：沒有相容的插頭 (%2)"
 
-#: app/TripGroupPage.qml:402
+#: app/TripGroupPage.qml:404
 #, fuzzy, kde-format
 #| msgid "Rename"
 msgid "Rename…"
 msgstr "重新命名"
 
-#: app/TripGroupPage.qml:411
+#: app/TripGroupPage.qml:413
 #, fuzzy, kde-format
 #| msgid "Add ferry trip..."
 msgid "Merge trips…"
 msgstr "新增渡輪旅程..."
 
-#: app/TripGroupPage.qml:421
+#: app/TripGroupPage.qml:423
 #, fuzzy, kde-format
 #| msgid "Add train trip..."
 msgid "Split trip…"

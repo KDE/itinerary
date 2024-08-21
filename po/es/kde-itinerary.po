@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-19 00:39+0000\n"
+"POT-Creation-Date: 2024-08-21 00:48+0000\n"
 "PO-Revision-Date: 2024-08-13 12:42+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -121,7 +121,7 @@ msgid "Add to calendar…"
 msgstr "Añadir al calendario..."
 
 #: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:182
-#: app/TripGroupPage.qml:427
+#: app/TripGroupPage.qml:429
 #, kde-format
 msgid "Export…"
 msgstr "Exportar..."
@@ -172,7 +172,7 @@ msgid "Itinerary file (*.itinerary)"
 msgstr "Archivo de Itinerary (*.itinerary)"
 
 #: app/ActionsCard.qml:172 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:397
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:399
 #, kde-format
 msgid "Actions"
 msgstr "Acciones"
@@ -3533,7 +3533,7 @@ msgstr "Como archivo GPX..."
 msgid "Export Trip"
 msgstr "Exportar viaje"
 
-#: app/TimelinePage.qml:493 app/TripGroupPage.qml:361
+#: app/TimelinePage.qml:493 app/TripGroupPage.qml:363
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Hoy no hay nada en el itinerario."
@@ -3819,7 +3819,7 @@ msgstr[1] "Divisas: %2"
 msgid "Edit…"
 msgstr "Editar..."
 
-#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:432
+#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:434
 #, kde-format
 msgid "Delete trip"
 msgstr "Borrar viaje"
@@ -3906,17 +3906,17 @@ msgstr "Algunas clavijas de corriente incompatibles (%1)"
 msgid "No compatible power plugs (%1)"
 msgstr "No hay clavijas de corriente compatibles (%1)"
 
-#: app/TripGroupPage.qml:402
+#: app/TripGroupPage.qml:404
 #, kde-format
 msgid "Rename…"
 msgstr "Cambiar nombre..."
 
-#: app/TripGroupPage.qml:411
+#: app/TripGroupPage.qml:413
 #, kde-format
 msgid "Merge trips…"
 msgstr "Fusionar viajes..."
 
-#: app/TripGroupPage.qml:421
+#: app/TripGroupPage.qml:423
 #, kde-format
 msgid "Split trip…"
 msgstr "Dividir viaje..."

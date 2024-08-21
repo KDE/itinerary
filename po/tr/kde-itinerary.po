@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-19 00:39+0000\n"
+"POT-Creation-Date: 2024-08-21 00:48+0000\n"
 "PO-Revision-Date: 2024-08-12 14:15+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -120,7 +120,7 @@ msgid "Add to calendar…"
 msgstr "Takvime Ekle…"
 
 #: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:182
-#: app/TripGroupPage.qml:427
+#: app/TripGroupPage.qml:429
 #, kde-format
 msgid "Export…"
 msgstr "Dışa Aktar…"
@@ -171,7 +171,7 @@ msgid "Itinerary file (*.itinerary)"
 msgstr "Yol Kılavuzu dosyası (*.itinerary)"
 
 #: app/ActionsCard.qml:172 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:397
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:399
 #, kde-format
 msgid "Actions"
 msgstr "Eylemler"
@@ -3523,7 +3523,7 @@ msgstr "GPX Dosyası Olarak…"
 msgid "Export Trip"
 msgstr "Geziyi Dışa Aktar"
 
-#: app/TimelinePage.qml:493 app/TripGroupPage.qml:361
+#: app/TimelinePage.qml:493 app/TripGroupPage.qml:363
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Bugün için yolcu belgenizde bir şey yok."
@@ -3809,7 +3809,7 @@ msgstr[1] "Para birimleri: %2"
 msgid "Edit…"
 msgstr "Düzenle…"
 
-#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:432
+#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:434
 #, kde-format
 msgid "Delete trip"
 msgstr "Geziyi sil"
@@ -3896,17 +3896,17 @@ msgstr "Bazı fişler uyumsuz (%1)"
 msgid "No compatible power plugs (%1)"
 msgstr "Uyumlu fiş yok (%1)"
 
-#: app/TripGroupPage.qml:402
+#: app/TripGroupPage.qml:404
 #, kde-format
 msgid "Rename…"
 msgstr "Yeniden Adlandır…"
 
-#: app/TripGroupPage.qml:411
+#: app/TripGroupPage.qml:413
 #, kde-format
 msgid "Merge trips…"
 msgstr "Gezileri Birleştir…"
 
-#: app/TripGroupPage.qml:421
+#: app/TripGroupPage.qml:423
 #, kde-format
 msgid "Split trip…"
 msgstr "Geziyi Böl…"
