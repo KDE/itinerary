@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-11 02:34+0000\n"
-"PO-Revision-Date: 2024-07-20 16:11+0200\n"
+"PO-Revision-Date: 2024-08-16 13:50+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -3103,7 +3103,7 @@ msgstr "Contenu en ligne de Wikimedia"
 #, kde-format
 msgid "Use additional online content from Wikimedia and Wikidata."
 msgstr ""
-"Utiliser un contenu additionnel en ligne à partir de Wikimedia et Wikidata."
+"Utiliser un contenu additionnel en ligne à partir de Wikimedia et WikiData."
 
 #: app/SettingsPage.qml:136
 #, kde-format
@@ -3258,10 +3258,9 @@ msgid "Log in"
 msgstr "Se connecter"
 
 #: app/SettingsPage.qml:316
-#, fuzzy, kde-format
-#| msgid "Matrix Integration"
+#, kde-format
 msgid "Traewelling Integration"
-msgstr "Intégration avec Matrix"
+msgstr "Intégration avec Traewelling"
 
 #: app/SettingsPage.qml:321
 #, kde-format
@@ -3271,16 +3270,20 @@ msgid ""
 "you are and where you can log your public transit journeys. For more "
 "information, visit <a href=\"https://traewelling.de\">traewelling.de</a>"
 msgstr ""
+"Traewelling est un service d'enregistrement gratuit vous permettant "
+"d'indiquer à vos amis où vous êtes et où vous pouvez enregistrer vos trajets "
+"en transport en commun. Pour plus d'informations, veuillez consulter le site "
+"<a href=\"https://traewelling.de\">traewelling.de</a>"
 
 #: app/SettingsPage.qml:329
 #, kde-format
 msgid "Login"
-msgstr ""
+msgstr "Se connecter"
 
 #: app/SettingsPage.qml:334
 #, kde-format
 msgid "Logout"
-msgstr ""
+msgstr "Se déconnecter"
 
 #: app/SettingsPage.qml:341
 #, kde-format
@@ -3694,17 +3697,17 @@ msgstr "Disposition du véhicule à l'arrivée"
 #, kde-format
 msgctxt "@action:button"
 msgid "Add to Traewelling"
-msgstr ""
+msgstr "Ajouter à Traewelling"
 
 #: app/TrainPage.qml:380
 #, kde-format
 msgid "Added to Traewelling"
-msgstr ""
+msgstr "Ajouté à Traewelling"
 
 #: app/TrainPage.qml:380
 #, kde-format
 msgid "Failed to add to Traewelling"
-msgstr ""
+msgstr "Ajout à Traewelling impossible"
 
 #: app/TransferDelegate.qml:109
 #, kde-format
