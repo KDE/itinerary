@@ -732,6 +732,51 @@ private Q_SLOTS:
         ctrl->commitImport(&importer);
         QVERIFY(vp.verify(&model));
     }
+
+    void testTripGroupFilter()
+    {
+        ReservationManager resMgr;
+        TransferManager transferMgr;
+        Test::clearAll(&resMgr);
+        auto ctrl = Test::makeAppController();
+        ctrl->setReservationManager(&resMgr);
+
+        TripGroupManager tgMgr;
+        tgMgr.setReservationManager(&resMgr);
+        tgMgr.setTransferManager(&transferMgr);
+        ctrl->setTripGroupManager(&tgMgr);
+
+        ImportController importer;
+        importer.setReservationManager(&resMgr);
+
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
+        ctrl->commitImport(&importer);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
+        ctrl->commitImport(&importer);
+        QCOMPARE(tgMgr.tripGroups().size(), 2);
+
+        TimelineModel model;
+        QAbstractItemModelTester tester(&model);
+        model.setReservationManager(&resMgr);
+        model.setTripGroupManager(&tgMgr);
+        model.setTransferManager(&transferMgr);
+        QCOMPARE(model.rowCount(), 0);
+
+        auto tgId1 = tgMgr.tripGroups()[0];
+        auto tgId2 = tgMgr.tripGroups()[1];
+        if (tgMgr.tripGroup(tgId1).name() == "Randa (September 2017)"_L1) {
+            std::swap(tgId1, tgId2);
+        }
+        model.setTripGroupId(tgId1);
+
+        Test::waitForReset(&model);
+        QCOMPARE(model.rowCount(), 3);
+
+        model.setTripGroupId(tgId2);
+        QCOMPARE(model.rowCount(), 0);
+        Test::waitForReset(&model);
+        QCOMPARE(model.rowCount(), 12);
+    }
 };
 
 QTEST_GUILESS_MAIN(TimelineModelTest)
