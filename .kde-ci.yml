@@ -8,6 +8,7 @@ Dependencies:
     'frameworks/kcoreaddons': '@latest-kf6'
     'frameworks/kconfig': '@latest-kf6'
     'frameworks/ki18n': '@latest-kf6'
+    'frameworks/kcolorscheme': '@latest-kf6'
     'frameworks/kcontacts': '@latest-kf6'
     'frameworks/kirigami': '@latest-kf6'
     'frameworks/kitemmodels': '@latest-kf6'
