@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-21 00:48+0000\n"
+"POT-Creation-Date: 2024-08-22 00:40+0000\n"
 "PO-Revision-Date: 2024-08-12 08:32+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -119,7 +119,7 @@ msgid "Add to calendar…"
 msgstr "Lägg till i kalender…"
 
 #: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:182
-#: app/TripGroupPage.qml:429
+#: app/TripGroupPage.qml:421
 #, kde-format
 msgid "Export…"
 msgstr "Exportera…"
@@ -129,7 +129,7 @@ msgstr "Exportera…"
 #: app/HealthCertificatePage.qml:46 app/HealthCertificatePage.qml:60
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:171
 #: app/TicketPage.qml:47 app/TicketPage.qml:171 app/TimelinePage.qml:221
-#: app/TripGroupPage.qml:136
+#: app/TripGroupPage.qml:137
 #, kde-format
 msgid "Delete"
 msgstr "Ta bort"
@@ -144,17 +144,17 @@ msgstr "Ta bort händelse"
 msgid "Do you really want to delete this event?"
 msgstr "Vill du verkligen ta bort evenemanget?"
 
-#: app/ActionsCard.qml:137 app/TimelinePage.qml:235 app/TripGroupPage.qml:56
+#: app/ActionsCard.qml:137 app/TimelinePage.qml:235 app/TripGroupPage.qml:57
 #, kde-format
 msgid "Export"
 msgstr "Exportera"
 
-#: app/ActionsCard.qml:140 app/TimelinePage.qml:238 app/TripGroupPage.qml:59
+#: app/ActionsCard.qml:140 app/TimelinePage.qml:238 app/TripGroupPage.qml:60
 #, kde-format
 msgid "As Itinerary file…"
 msgstr "Som resplanefil…"
 
-#: app/ActionsCard.qml:151 app/TimelinePage.qml:262 app/TripGroupPage.qml:81
+#: app/ActionsCard.qml:151 app/TimelinePage.qml:262 app/TripGroupPage.qml:82
 #, kde-format
 msgid "Send to %1"
 msgstr "Skicka till %1"
@@ -164,13 +164,13 @@ msgstr "Skicka till %1"
 msgid "Export Reservation"
 msgstr "Exportera bokning"
 
-#: app/ActionsCard.qml:167 app/TimelinePage.qml:278 app/TripGroupPage.qml:98
+#: app/ActionsCard.qml:167 app/TimelinePage.qml:278 app/TripGroupPage.qml:99
 #, kde-format
 msgid "Itinerary file (*.itinerary)"
 msgstr "Resplanefil (*.itinerary)"
 
 #: app/ActionsCard.qml:172 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:399
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:391
 #, kde-format
 msgid "Actions"
 msgstr "Åtgärder"
@@ -806,12 +806,12 @@ msgstr "Inga dokument bifogade till bokningen."
 msgid "Add Document…"
 msgstr "Lägg till dokument…"
 
-#: app/downloadjob.cpp:146
+#: app/downloadjob.cpp:160
 #, kde-format
 msgid "Network error: %1"
 msgstr "Nätverksfel: %1"
 
-#: app/downloadjob.cpp:177
+#: app/downloadjob.cpp:191
 #, kde-format
 msgid "Download failed: %1"
 msgstr "Nerladdning misslyckades: %1"
@@ -976,7 +976,7 @@ msgid "Export Favorite Locations"
 msgstr "Exportera favoritplatser"
 
 #: app/FavoriteLocationPage.qml:38 app/FavoriteLocationPage.qml:46
-#: app/TimelinePage.qml:296 app/TripGroupPage.qml:114
+#: app/TimelinePage.qml:296 app/TripGroupPage.qml:115
 #, kde-format
 msgid "GPX Files (*.gpx)"
 msgstr "GPX-filer (*.gpx)"
@@ -1777,12 +1777,16 @@ msgid "Import"
 msgstr "Importera"
 
 #: app/ImportPage.qml:21
-#, kde-format
-msgid "Selected items to import."
+#, fuzzy, kde-format
+#| msgid "Selected items to import."
+msgctxt "@title:group"
+msgid "Selected Items to Import"
 msgstr "Välj objekt att importera."
 
-#: app/ImportPage.qml:67
-#, kde-format
+#: app/ImportPage.qml:60
+#, fuzzy, kde-format
+#| msgid "Import selection"
+msgctxt "@action:button"
 msgid "Import selection"
 msgstr "Importera markering"
 
@@ -2698,7 +2702,7 @@ msgctxt "not yet expired tickets"
 msgid "Valid"
 msgstr "Giltiga"
 
-#: app/passmanager.cpp:275 app/TripGroupPage.qml:224
+#: app/passmanager.cpp:275 app/TripGroupPage.qml:225
 #, kde-format
 msgid "%1 - %2"
 msgstr "%1 - %2"
@@ -3477,13 +3481,13 @@ msgstr "Lägg till evenemang…"
 msgid "Add restaurant…"
 msgstr "Lägg till restaurant…"
 
-#: app/TimelinePage.qml:166
+#: app/TimelinePage.qml:166 app/TripGroupPage.qml:449
 #, kde-format
 msgctxt "@action:button"
 msgid "Go To Now"
 msgstr "Gå till aktuell tid"
 
-#: app/TimelinePage.qml:173 app/TripGroupsPage.qml:89
+#: app/TimelinePage.qml:173 app/TripGroupPage.qml:457 app/TripGroupsPage.qml:89
 #, kde-format
 msgctxt "@action:button"
 msgid "Add trip"
@@ -3495,7 +3499,7 @@ msgctxt "@title:group"
 msgid "Add New Trip"
 msgstr "Lägg till ny resa"
 
-#: app/TimelinePage.qml:214 app/TripGroupPage.qml:129
+#: app/TimelinePage.qml:214 app/TripGroupPage.qml:130
 #, kde-format
 msgid "Delete Trip"
 msgstr "Ta bort resa"
@@ -3505,18 +3509,18 @@ msgstr "Ta bort resa"
 msgid "Do you really want to delete this trip?"
 msgstr "Vill du verkligen ta bort resan?"
 
-#: app/TimelinePage.qml:247 app/TripGroupPage.qml:67
+#: app/TimelinePage.qml:247 app/TripGroupPage.qml:68
 #, kde-format
 msgid "As GPX file…"
 msgstr "Som GPX-fil…"
 
-#: app/TimelinePage.qml:277 app/TimelinePage.qml:294 app/TripGroupPage.qml:97
-#: app/TripGroupPage.qml:112
+#: app/TimelinePage.qml:277 app/TimelinePage.qml:294 app/TripGroupPage.qml:98
+#: app/TripGroupPage.qml:113
 #, kde-format
 msgid "Export Trip"
 msgstr "Exportera resa"
 
-#: app/TimelinePage.qml:493 app/TripGroupPage.qml:363
+#: app/TimelinePage.qml:493 app/TripGroupPage.qml:364
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Ingenting i resplanen idag."
@@ -3768,7 +3772,7 @@ msgid_plural "Date: %2 (%1 days)"
 msgstr[0] "Datum: %2 (en dag)"
 msgstr[1] "Datum: %2 (%1 dagar)"
 
-#: app/TripGroupDelegate.qml:116 app/TripGroupPage.qml:231
+#: app/TripGroupDelegate.qml:116 app/TripGroupPage.qml:232
 #: app/WeatherForecastDelegate.qml:48 app/WeatherForecastPage.qml:93
 #, kde-format
 msgctxt "temperature range"
@@ -3790,7 +3794,7 @@ msgstr "%1: Vissa inkompatibla elkontakter (%2)"
 msgid "%1: no compatible power plugs (%2)"
 msgstr "%1: Vissa inkompatibla elkontakter (%2)"
 
-#: app/TripGroupDelegate.qml:145 app/TripGroupPage.qml:257
+#: app/TripGroupDelegate.qml:145 app/TripGroupPage.qml:258
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
@@ -3802,7 +3806,7 @@ msgstr[1] "Valutor: %2"
 msgid "Edit…"
 msgstr "Redigera…"
 
-#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:434
+#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:426
 #, kde-format
 msgid "Delete trip"
 msgstr "Ta bort resa"
@@ -3819,8 +3823,7 @@ msgctxt "@title:window"
 msgid "Edit Trip"
 msgstr "Redigera resa"
 
-#: app/TripGroupEditorDialog.qml:21 app/TripGroupMergeDialog.qml:55
-#: app/TripGroupSplitPage.qml:31
+#: app/TripGroupEditorDialog.qml:21 app/TripGroupMergeDialog.qml:56
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Trip name:"
@@ -3852,54 +3855,56 @@ msgctxt "@title:window"
 msgid "Merge Trips"
 msgstr "Slå samman resor"
 
-#: app/TripGroupMergeDialog.qml:40
+#: app/TripGroupMergeDialog.qml:39
 #, kde-format
 msgid "Merge with:"
 msgstr "Slå samman med:"
 
-#: app/TripGroupMergeDialog.qml:77
-#, kde-format
+#: app/TripGroupMergeDialog.qml:78
+#, fuzzy, kde-format
+#| msgid "Merge"
+msgctxt "@action:button"
 msgid "Merge"
 msgstr "Slå samman"
 
-#: app/TripGroupPage.qml:130
+#: app/TripGroupPage.qml:131
 #, kde-format
 msgid "Do you really want to delete the trip '%1'?"
 msgstr "Vill du verkligen ta bort resan '%1'?"
 
-#: app/TripGroupPage.qml:225
+#: app/TripGroupPage.qml:226
 #, kde-format
 msgid "One day"
 msgid_plural "%1 days"
 msgstr[0] "En dag"
 msgstr[1] "%1 dagar"
 
-#: app/TripGroupPage.qml:245
+#: app/TripGroupPage.qml:246
 #, kde-format
 msgid "Some incompatible power sockets (%1)"
 msgstr "Vissa inkompatibla eluttag (%1)"
 
-#: app/TripGroupPage.qml:247
+#: app/TripGroupPage.qml:248
 #, kde-format
 msgid "Some incompatible power plugs (%1)"
 msgstr "Vissa inkompatibla elkontakter (%1)"
 
-#: app/TripGroupPage.qml:250
+#: app/TripGroupPage.qml:251
 #, kde-format
 msgid "No compatible power plugs (%1)"
 msgstr "Inga kompatibla elkontakter (%1)"
 
-#: app/TripGroupPage.qml:404
+#: app/TripGroupPage.qml:396
 #, kde-format
 msgid "Rename…"
 msgstr "Byt namn…"
 
-#: app/TripGroupPage.qml:413
+#: app/TripGroupPage.qml:405
 #, kde-format
 msgid "Merge trips…"
 msgstr "Slå samman resor…"
 
-#: app/TripGroupPage.qml:423
+#: app/TripGroupPage.qml:415
 #, kde-format
 msgid "Split trip…"
 msgstr "Dela resa…"
@@ -3928,18 +3933,33 @@ msgctxt "List section header"
 msgid "Current trip"
 msgstr "Pågående resa"
 
-#: app/TripGroupSplitPage.qml:14
-#, kde-format
+#: app/TripGroupSplitPage.qml:15
+#, fuzzy, kde-format
+#| msgid "Split Trip"
+msgctxt "@title:window"
 msgid "Split Trip"
 msgstr "Dela resa"
 
-#: app/TripGroupSplitPage.qml:25
-#, kde-format
-msgid "New Trip"
-msgstr "Ny resa"
+#: app/TripGroupSplitPage.qml:28
+#, fuzzy, kde-format
+#| msgctxt "@label:textbox"
+#| msgid "Trip name:"
+msgctxt "@label:textbox"
+msgid "New Trip name:"
+msgstr "Resans namn:"
 
-#: app/TripGroupSplitPage.qml:74
-#, kde-format
+#: app/TripGroupSplitPage.qml:35
+#, fuzzy, kde-format
+#| msgctxt "seat section, e.g. block in a stadium"
+#| msgid "Section:"
+msgctxt "@title:group"
+msgid "Sections"
+msgstr "Sektion:"
+
+#: app/TripGroupSplitPage.qml:77
+#, fuzzy, kde-format
+#| msgid "Split trip"
+msgctxt "@action:button"
 msgid "Split trip"
 msgstr "Dela resa"
 
@@ -4123,6 +4143,9 @@ msgstr "Loggar in"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 från %3 till %4 %5"
+
+#~ msgid "New Trip"
+#~ msgstr "Ny resa"
 
 #~ msgid "Terminal: %1  Gate: %2  Seat: %3"
 #~ msgstr "Terminal: %1 Gate: %2 Plats: %3"

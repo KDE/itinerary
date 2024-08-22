@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-21 00:48+0000\n"
+"POT-Creation-Date: 2024-08-22 00:40+0000\n"
 "PO-Revision-Date: 2024-02-09 23:07+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -125,7 +125,7 @@ msgid "Add to calendar…"
 msgstr "Добавить в календарь..."
 
 #: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:182
-#: app/TripGroupPage.qml:429
+#: app/TripGroupPage.qml:421
 #, fuzzy, kde-format
 #| msgid "Export"
 msgid "Export…"
@@ -136,7 +136,7 @@ msgstr "Экспорт"
 #: app/HealthCertificatePage.qml:46 app/HealthCertificatePage.qml:60
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:171
 #: app/TicketPage.qml:47 app/TicketPage.qml:171 app/TimelinePage.qml:221
-#: app/TripGroupPage.qml:136
+#: app/TripGroupPage.qml:137
 #, kde-format
 msgid "Delete"
 msgstr "Удалить"
@@ -151,18 +151,18 @@ msgstr "Удалить событие"
 msgid "Do you really want to delete this event?"
 msgstr "Удалить это событие?"
 
-#: app/ActionsCard.qml:137 app/TimelinePage.qml:235 app/TripGroupPage.qml:56
+#: app/ActionsCard.qml:137 app/TimelinePage.qml:235 app/TripGroupPage.qml:57
 #, kde-format
 msgid "Export"
 msgstr "Экспорт"
 
-#: app/ActionsCard.qml:140 app/TimelinePage.qml:238 app/TripGroupPage.qml:59
+#: app/ActionsCard.qml:140 app/TimelinePage.qml:238 app/TripGroupPage.qml:60
 #, fuzzy, kde-format
 #| msgid "My Itinerary"
 msgid "As Itinerary file…"
 msgstr "Мой маршрут"
 
-#: app/ActionsCard.qml:151 app/TimelinePage.qml:262 app/TripGroupPage.qml:81
+#: app/ActionsCard.qml:151 app/TimelinePage.qml:262 app/TripGroupPage.qml:82
 #, kde-format
 msgid "Send to %1"
 msgstr "Отправить %1"
@@ -172,13 +172,13 @@ msgstr "Отправить %1"
 msgid "Export Reservation"
 msgstr "Экспорт бронирования"
 
-#: app/ActionsCard.qml:167 app/TimelinePage.qml:278 app/TripGroupPage.qml:98
+#: app/ActionsCard.qml:167 app/TimelinePage.qml:278 app/TripGroupPage.qml:99
 #, kde-format
 msgid "Itinerary file (*.itinerary)"
 msgstr "Файл программы «Маршруты KDE» (*.itinerary)"
 
 #: app/ActionsCard.qml:172 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:399
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:391
 #, kde-format
 msgid "Actions"
 msgstr "Действия"
@@ -837,12 +837,12 @@ msgstr "К этому бронированию не добавлены ника�
 msgid "Add Document…"
 msgstr "Добавить документ"
 
-#: app/downloadjob.cpp:146
+#: app/downloadjob.cpp:160
 #, kde-format
 msgid "Network error: %1"
 msgstr "Ошибка сети: %1"
 
-#: app/downloadjob.cpp:177
+#: app/downloadjob.cpp:191
 #, kde-format
 msgid "Download failed: %1"
 msgstr "Ошибка загрузки: %1"
@@ -1015,7 +1015,7 @@ msgid "Export Favorite Locations"
 msgstr "Экспорт избранных расположений"
 
 #: app/FavoriteLocationPage.qml:38 app/FavoriteLocationPage.qml:46
-#: app/TimelinePage.qml:296 app/TripGroupPage.qml:114
+#: app/TimelinePage.qml:296 app/TripGroupPage.qml:115
 #, kde-format
 msgid "GPX Files (*.gpx)"
 msgstr "Файлы GPX (*.*)"
@@ -1837,12 +1837,14 @@ msgstr "Импорт…"
 
 #: app/ImportPage.qml:21
 #, kde-format
-msgid "Selected items to import."
+msgctxt "@title:group"
+msgid "Selected Items to Import"
 msgstr ""
 
-#: app/ImportPage.qml:67
+#: app/ImportPage.qml:60
 #, fuzzy, kde-format
 #| msgid "Import Reservation"
+msgctxt "@action:button"
 msgid "Import selection"
 msgstr "Импорт бронирования"
 
@@ -2790,7 +2792,7 @@ msgctxt "not yet expired tickets"
 msgid "Valid"
 msgstr "Действительные"
 
-#: app/passmanager.cpp:275 app/TripGroupPage.qml:224
+#: app/passmanager.cpp:275 app/TripGroupPage.qml:225
 #, kde-format
 msgid "%1 - %2"
 msgstr "%1 — %2"
@@ -3609,14 +3611,14 @@ msgstr "Добавить документ..."
 msgid "Add restaurant…"
 msgstr "Добавить поездку на поезде…"
 
-#: app/TimelinePage.qml:166
+#: app/TimelinePage.qml:166 app/TripGroupPage.qml:449
 #, fuzzy, kde-format
 #| msgid "Go To Now"
 msgctxt "@action:button"
 msgid "Go To Now"
 msgstr "Перейти к текущему времени"
 
-#: app/TimelinePage.qml:173 app/TripGroupsPage.qml:89
+#: app/TimelinePage.qml:173 app/TripGroupPage.qml:457 app/TripGroupsPage.qml:89
 #, fuzzy, kde-format
 #| msgid "Add train trip..."
 msgctxt "@action:button"
@@ -3630,7 +3632,7 @@ msgctxt "@title:group"
 msgid "Add New Trip"
 msgstr "Добавить поездку на поезде…"
 
-#: app/TimelinePage.qml:214 app/TripGroupPage.qml:129
+#: app/TimelinePage.qml:214 app/TripGroupPage.qml:130
 #, kde-format
 msgid "Delete Trip"
 msgstr "Удалить поездку"
@@ -3640,18 +3642,18 @@ msgstr "Удалить поездку"
 msgid "Do you really want to delete this trip?"
 msgstr "Удалить эту поездку?"
 
-#: app/TimelinePage.qml:247 app/TripGroupPage.qml:67
+#: app/TimelinePage.qml:247 app/TripGroupPage.qml:68
 #, kde-format
 msgid "As GPX file…"
 msgstr ""
 
-#: app/TimelinePage.qml:277 app/TimelinePage.qml:294 app/TripGroupPage.qml:97
-#: app/TripGroupPage.qml:112
+#: app/TimelinePage.qml:277 app/TimelinePage.qml:294 app/TripGroupPage.qml:98
+#: app/TripGroupPage.qml:113
 #, kde-format
 msgid "Export Trip"
 msgstr "Экспорт поездки"
 
-#: app/TimelinePage.qml:493 app/TripGroupPage.qml:363
+#: app/TimelinePage.qml:493 app/TripGroupPage.qml:364
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Нет данных маршрута на сегодня."
@@ -3909,7 +3911,7 @@ msgstr[1] "Дата: %2 (%1 дня)"
 msgstr[2] "Дата: %2 (%1 дней)"
 msgstr[3] "Дата: %2 (один день)"
 
-#: app/TripGroupDelegate.qml:116 app/TripGroupPage.qml:231
+#: app/TripGroupDelegate.qml:116 app/TripGroupPage.qml:232
 #: app/WeatherForecastDelegate.qml:48 app/WeatherForecastPage.qml:93
 #, kde-format
 msgctxt "temperature range"
@@ -3931,7 +3933,7 @@ msgstr "%1: несовместимые вилки (%2)"
 msgid "%1: no compatible power plugs (%2)"
 msgstr "%1: нет совместимых вилок (%2)"
 
-#: app/TripGroupDelegate.qml:145 app/TripGroupPage.qml:257
+#: app/TripGroupDelegate.qml:145 app/TripGroupPage.qml:258
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
@@ -3946,7 +3948,7 @@ msgstr[3] "Валюта: %2"
 msgid "Edit…"
 msgstr "Изменить"
 
-#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:434
+#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:426
 #, kde-format
 msgid "Delete trip"
 msgstr "Удалить поездку"
@@ -3965,8 +3967,7 @@ msgctxt "@title:window"
 msgid "Edit Trip"
 msgstr "Изменить путешествие на лодке"
 
-#: app/TripGroupEditorDialog.qml:21 app/TripGroupMergeDialog.qml:55
-#: app/TripGroupSplitPage.qml:31
+#: app/TripGroupEditorDialog.qml:21 app/TripGroupMergeDialog.qml:56
 #, fuzzy, kde-format
 #| msgid "Under name:"
 msgctxt "@label:textbox"
@@ -4000,23 +4001,25 @@ msgctxt "@title:window"
 msgid "Merge Trips"
 msgstr "Удалить поездку"
 
-#: app/TripGroupMergeDialog.qml:40
+#: app/TripGroupMergeDialog.qml:39
 #, kde-format
 msgid "Merge with:"
 msgstr ""
 
-#: app/TripGroupMergeDialog.qml:77
-#, kde-format
+#: app/TripGroupMergeDialog.qml:78
+#, fuzzy, kde-format
+#| msgid "Delete Trip"
+msgctxt "@action:button"
 msgid "Merge"
-msgstr ""
+msgstr "Удалить поездку"
 
-#: app/TripGroupPage.qml:130
+#: app/TripGroupPage.qml:131
 #, fuzzy, kde-format
 #| msgid "Do you really want to delete this trip?"
 msgid "Do you really want to delete the trip '%1'?"
 msgstr "Удалить эту поездку?"
 
-#: app/TripGroupPage.qml:225
+#: app/TripGroupPage.qml:226
 #, kde-format
 msgid "One day"
 msgid_plural "%1 days"
@@ -4025,37 +4028,37 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
-#: app/TripGroupPage.qml:245
+#: app/TripGroupPage.qml:246
 #, fuzzy, kde-format
 #| msgid "Some incompatible power sockets: %1"
 msgid "Some incompatible power sockets (%1)"
 msgstr "Несовместимые розетки: %1"
 
-#: app/TripGroupPage.qml:247
+#: app/TripGroupPage.qml:248
 #, fuzzy, kde-format
 #| msgid "Some incompatible power plugs: %1"
 msgid "Some incompatible power plugs (%1)"
 msgstr "Несовместимые вилки: %1"
 
-#: app/TripGroupPage.qml:250
+#: app/TripGroupPage.qml:251
 #, fuzzy, kde-format
 #| msgid "%1: no compatible power plugs (%2)"
 msgid "No compatible power plugs (%1)"
 msgstr "%1: нет совместимых вилок (%2)"
 
-#: app/TripGroupPage.qml:404
+#: app/TripGroupPage.qml:396
 #, fuzzy, kde-format
 #| msgid "Rename"
 msgid "Rename…"
 msgstr "Переименовать"
 
-#: app/TripGroupPage.qml:413
+#: app/TripGroupPage.qml:405
 #, fuzzy, kde-format
 #| msgid "Add train trip..."
 msgid "Merge trips…"
 msgstr "Добавить поездку на поезде…"
 
-#: app/TripGroupPage.qml:423
+#: app/TripGroupPage.qml:415
 #, fuzzy, kde-format
 #| msgid "Add train trip..."
 msgid "Split trip…"
@@ -4090,21 +4093,32 @@ msgctxt "List section header"
 msgid "Current trip"
 msgstr "Текущий билет"
 
-#: app/TripGroupSplitPage.qml:14
+#: app/TripGroupSplitPage.qml:15
 #, fuzzy, kde-format
 #| msgid "Edit Boat Trip"
+msgctxt "@title:window"
 msgid "Split Trip"
 msgstr "Изменить путешествие на лодке"
 
-#: app/TripGroupSplitPage.qml:25
+#: app/TripGroupSplitPage.qml:28
 #, fuzzy, kde-format
-#| msgid "Add train trip..."
-msgid "New Trip"
-msgstr "Добавить поездку на поезде…"
+#| msgid "Under name:"
+msgctxt "@label:textbox"
+msgid "New Trip name:"
+msgstr "Имя для резервирования:"
 
-#: app/TripGroupSplitPage.qml:74
+#: app/TripGroupSplitPage.qml:35
+#, fuzzy, kde-format
+#| msgctxt "seat section, e.g. block in a stadium"
+#| msgid "Section:"
+msgctxt "@title:group"
+msgid "Sections"
+msgstr "Секция:"
+
+#: app/TripGroupSplitPage.qml:77
 #, fuzzy, kde-format
 #| msgid "Delete trip"
+msgctxt "@action:button"
 msgid "Split trip"
 msgstr "Удалить поездку"
 
@@ -4301,6 +4315,11 @@ msgstr "Вход в систему"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 из %3 в %4 %5"
+
+#, fuzzy
+#~| msgid "Add train trip..."
+#~ msgid "New Trip"
+#~ msgstr "Добавить поездку на поезде…"
 
 #~ msgid "Terminal: %1  Gate: %2  Seat: %3"
 #~ msgstr "Терминал: %1  Выход: %2  Место: %3"
