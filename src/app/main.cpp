@@ -80,6 +80,8 @@
 #ifndef Q_OS_ANDROID
 #include <KDBusService>
 #include <KWindowSystem>
+#else
+#include <KColorSchemeManager>
 #endif
 
 #include <KLocalizedContext>
@@ -321,6 +323,7 @@ int main(int argc, char **argv)
 #ifdef Q_OS_ANDROID
     QGuiApplication app(argc, argv);
     QQuickStyle::setStyle(QStringLiteral("org.kde.breeze"));
+    KColorSchemeManager colorMgr; // enables automatic dark mode handling
 #else
     QIcon::setFallbackThemeName(QStringLiteral("breeze"));
     QApplication app(argc, argv); // for native file dialogs
