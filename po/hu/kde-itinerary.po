@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-22 00:40+0000\n"
+"POT-Creation-Date: 2024-08-23 00:40+0000\n"
 "PO-Revision-Date: 2024-03-26 16:14+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -121,7 +121,7 @@ msgid "Add to calendar…"
 msgstr "Hozzáadás a naptárhoz…"
 
 #: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:182
-#: app/TripGroupPage.qml:421
+#: app/TripGroupPage.qml:422
 #, fuzzy, kde-format
 #| msgid "Export"
 msgid "Export…"
@@ -174,7 +174,7 @@ msgid "Itinerary file (*.itinerary)"
 msgstr "Itinerary fájl (*.itinerary)"
 
 #: app/ActionsCard.qml:172 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:391
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:392
 #, kde-format
 msgid "Actions"
 msgstr "Műveletek"
@@ -1399,7 +1399,7 @@ msgstr "Kártya törlése"
 msgid "Do you really want to delete this pass?"
 msgstr "Biztosan törölni szeretné ezt a kártyát?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:333 app/main.qml:21 app/main.qml:166
+#: app/gpxexport.cpp:33 app/main.cpp:336 app/main.qml:21 app/main.qml:166
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -2422,24 +2422,24 @@ msgstr "M-típusú"
 msgid "Type N"
 msgstr "N-típusú"
 
-#: app/main.cpp:341
+#: app/main.cpp:344
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Digitális utazási segéd"
 
-#: app/main.cpp:342
+#: app/main.cpp:345
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "Copyright © A KDE közösség"
 
-#: app/main.cpp:349
+#: app/main.cpp:352
 #, fuzzy, kde-format
 #| msgid "Open Itinerary on the given page"
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Itinerary megnyitása a megadott oldalon"
 
-#: app/main.cpp:354
+#: app/main.cpp:357
 #, fuzzy, kde-format
 #| msgid "Files or URLs to import."
 msgctxt "@info:shell"
@@ -3529,13 +3529,13 @@ msgstr "Esemény hozzáadása…"
 msgid "Add restaurant…"
 msgstr "Étterem hozzáadása…"
 
-#: app/TimelinePage.qml:166 app/TripGroupPage.qml:449
+#: app/TimelinePage.qml:166 app/TripGroupPage.qml:450
 #, kde-format
 msgctxt "@action:button"
 msgid "Go To Now"
 msgstr ""
 
-#: app/TimelinePage.qml:173 app/TripGroupPage.qml:457 app/TripGroupsPage.qml:89
+#: app/TimelinePage.qml:173 app/TripGroupPage.qml:458 app/TripGroupsPage.qml:89
 #, kde-format
 msgctxt "@action:button"
 msgid "Add trip"
@@ -3569,7 +3569,7 @@ msgstr "GPX-fájlként…"
 msgid "Export Trip"
 msgstr "Kirándulás exportálása"
 
-#: app/TimelinePage.qml:493 app/TripGroupPage.qml:364
+#: app/TimelinePage.qml:493 app/TripGroupPage.qml:365
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr ""
@@ -3859,7 +3859,7 @@ msgstr[1] ""
 msgid "Edit…"
 msgstr "Szerkesztés"
 
-#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:426
+#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:427
 #, kde-format
 msgid "Delete trip"
 msgstr "Kirándulás törlése"
@@ -3954,18 +3954,18 @@ msgstr "Néhány nem kompatibilis hálózati csatlakozó: %1"
 msgid "No compatible power plugs (%1)"
 msgstr "Néhány nem kompatibilis hálózati csatlakozó: %1"
 
-#: app/TripGroupPage.qml:396
+#: app/TripGroupPage.qml:397
 #, fuzzy, kde-format
 #| msgid "Rename"
 msgid "Rename…"
 msgstr "Átnevezés"
 
-#: app/TripGroupPage.qml:405
+#: app/TripGroupPage.qml:406
 #, kde-format
 msgid "Merge trips…"
 msgstr ""
 
-#: app/TripGroupPage.qml:415
+#: app/TripGroupPage.qml:416
 #, fuzzy, kde-format
 #| msgid "Add transfer after"
 msgid "Split trip…"

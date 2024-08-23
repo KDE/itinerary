@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-22 00:40+0000\n"
+"POT-Creation-Date: 2024-08-23 00:40+0000\n"
 "PO-Revision-Date: 2024-02-27 13:39+0200\n"
 "Last-Translator: Kimmo Kujansuu <mrkujansuu@gmail.com>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -120,7 +120,7 @@ msgid "Add to calendar…"
 msgstr "Lisää kalenteriin…"
 
 #: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:182
-#: app/TripGroupPage.qml:421
+#: app/TripGroupPage.qml:422
 #, fuzzy, kde-format
 #| msgid "Export"
 msgid "Export…"
@@ -173,7 +173,7 @@ msgid "Itinerary file (*.itinerary)"
 msgstr "Itinerary-tiedosto (*.itinerary)"
 
 #: app/ActionsCard.qml:172 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:391
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:392
 #, kde-format
 msgid "Actions"
 msgstr "Toiminnot"
@@ -1396,7 +1396,7 @@ msgstr "Poista lippu"
 msgid "Do you really want to delete this pass?"
 msgstr "Haluatko varmasti poistaa tämän lipun?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:333 app/main.qml:21 app/main.qml:166
+#: app/gpxexport.cpp:33 app/main.cpp:336 app/main.qml:21 app/main.qml:166
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -2420,24 +2420,24 @@ msgstr "Tyyppi M"
 msgid "Type N"
 msgstr "Tyyppi N"
 
-#: app/main.cpp:341
+#: app/main.cpp:344
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Digitaalinen matka-avustaja"
 
-#: app/main.cpp:342
+#: app/main.cpp:345
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "Tekijänoikeudet © KDE-yhteisö"
 
-#: app/main.cpp:349
+#: app/main.cpp:352
 #, fuzzy, kde-format
 #| msgid "Open Itinerary on the given page"
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Avaa Itinerary annetulle sivulle"
 
-#: app/main.cpp:354
+#: app/main.cpp:357
 #, fuzzy, kde-format
 #| msgid "Files or URLs to import."
 msgctxt "@info:shell"
@@ -3546,13 +3546,13 @@ msgstr "Lisää tapahtuma…"
 msgid "Add restaurant…"
 msgstr "Lisää ravintola…"
 
-#: app/TimelinePage.qml:166 app/TripGroupPage.qml:449
+#: app/TimelinePage.qml:166 app/TripGroupPage.qml:450
 #, kde-format
 msgctxt "@action:button"
 msgid "Go To Now"
 msgstr "Siirry nyt"
 
-#: app/TimelinePage.qml:173 app/TripGroupPage.qml:457 app/TripGroupsPage.qml:89
+#: app/TimelinePage.qml:173 app/TripGroupPage.qml:458 app/TripGroupsPage.qml:89
 #, kde-format
 msgctxt "@action:button"
 msgid "Add trip"
@@ -3586,7 +3586,7 @@ msgstr "GPX-tiedostoksi…"
 msgid "Export Trip"
 msgstr "Vie matka"
 
-#: app/TimelinePage.qml:493 app/TripGroupPage.qml:364
+#: app/TimelinePage.qml:493 app/TripGroupPage.qml:365
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Matkasuunnitelmassa ei tänään ole mitään."
@@ -3876,7 +3876,7 @@ msgstr[1] "Valuutat: %2"
 msgid "Edit…"
 msgstr "Muokkaa"
 
-#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:426
+#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:427
 #, kde-format
 msgid "Delete trip"
 msgstr "Poista matka"
@@ -3973,19 +3973,19 @@ msgstr "Epäyhteensopivia virtaliittimiä: %1"
 msgid "No compatible power plugs (%1)"
 msgstr "%1: ei yhteensopivia virtaliittimiä (%2)"
 
-#: app/TripGroupPage.qml:396
+#: app/TripGroupPage.qml:397
 #, fuzzy, kde-format
 #| msgid "Rename"
 msgid "Rename…"
 msgstr "Muuta nimeä"
 
-#: app/TripGroupPage.qml:405
+#: app/TripGroupPage.qml:406
 #, fuzzy, kde-format
 #| msgid "Add ferry trip..."
 msgid "Merge trips…"
 msgstr "Lisää lauttamatka…"
 
-#: app/TripGroupPage.qml:415
+#: app/TripGroupPage.qml:416
 #, fuzzy, kde-format
 #| msgid "Add train trip..."
 msgid "Split trip…"

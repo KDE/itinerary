@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-22 00:40+0000\n"
-"PO-Revision-Date: 2024-08-12 10:22+0200\n"
+"POT-Creation-Date: 2024-08-23 00:40+0000\n"
+"PO-Revision-Date: 2024-08-22 09:40+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -119,7 +119,7 @@ msgid "Add to calendar…"
 msgstr "Dodaj v koledar…"
 
 #: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:182
-#: app/TripGroupPage.qml:421
+#: app/TripGroupPage.qml:422
 #, kde-format
 msgid "Export…"
 msgstr "Izvozi…"
@@ -170,7 +170,7 @@ msgid "Itinerary file (*.itinerary)"
 msgstr "Datoteka itinerarja (* .itinerary)"
 
 #: app/ActionsCard.qml:172 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:391
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:392
 #, kde-format
 msgid "Actions"
 msgstr "Akcije"
@@ -1383,7 +1383,7 @@ msgstr "Zbriši vozovnico"
 msgid "Do you really want to delete this pass?"
 msgstr "Ali res želite izbrisati to vozovnico?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:333 app/main.qml:21 app/main.qml:166
+#: app/gpxexport.cpp:33 app/main.cpp:336 app/main.qml:21 app/main.qml:166
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -1788,15 +1788,13 @@ msgid "Import"
 msgstr "Uvozi"
 
 #: app/ImportPage.qml:21
-#, fuzzy, kde-format
-#| msgid "Selected items to import."
+#, kde-format
 msgctxt "@title:group"
 msgid "Selected Items to Import"
-msgstr "Izbrane postavke za uvoz."
+msgstr "Izbrane postavke za uvoz"
 
 #: app/ImportPage.qml:60
-#, fuzzy, kde-format
-#| msgid "Import selection"
+#, kde-format
 msgctxt "@action:button"
 msgid "Import selection"
 msgstr "Uvozi izbor"
@@ -2403,23 +2401,23 @@ msgstr "Tip M"
 msgid "Type N"
 msgstr "Tip N"
 
-#: app/main.cpp:341
+#: app/main.cpp:344
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Digitalni potovalni pomočnik"
 
-#: app/main.cpp:342
+#: app/main.cpp:345
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "Copyright © Skupnost KDE"
 
-#: app/main.cpp:349
+#: app/main.cpp:352
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Odpri itinerar na dani strani"
 
-#: app/main.cpp:354
+#: app/main.cpp:357
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
@@ -3498,13 +3496,13 @@ msgstr "Dodaj dogodek…"
 msgid "Add restaurant…"
 msgstr "Dodaj restavracijo…"
 
-#: app/TimelinePage.qml:166 app/TripGroupPage.qml:449
+#: app/TimelinePage.qml:166 app/TripGroupPage.qml:450
 #, kde-format
 msgctxt "@action:button"
 msgid "Go To Now"
 msgstr "Pojdi na Zdaj"
 
-#: app/TimelinePage.qml:173 app/TripGroupPage.qml:457 app/TripGroupsPage.qml:89
+#: app/TimelinePage.qml:173 app/TripGroupPage.qml:458 app/TripGroupsPage.qml:89
 #, kde-format
 msgctxt "@action:button"
 msgid "Add trip"
@@ -3537,7 +3535,7 @@ msgstr "Kot datoteko GPX…"
 msgid "Export Trip"
 msgstr "Izvozi načrt poti"
 
-#: app/TimelinePage.qml:493 app/TripGroupPage.qml:364
+#: app/TimelinePage.qml:493 app/TripGroupPage.qml:365
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Nič na itinerarju za danes."
@@ -3827,7 +3825,7 @@ msgstr[3] "Valut: %2"
 msgid "Edit…"
 msgstr "Uredi…"
 
-#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:426
+#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:427
 #, kde-format
 msgid "Delete trip"
 msgstr "Izbriši potovanje"
@@ -3882,8 +3880,7 @@ msgid "Merge with:"
 msgstr "Zlij z:"
 
 #: app/TripGroupMergeDialog.qml:78
-#, fuzzy, kde-format
-#| msgid "Merge"
+#, kde-format
 msgctxt "@action:button"
 msgid "Merge"
 msgstr "Zlij"
@@ -3917,17 +3914,17 @@ msgstr "Nekaj nezdružljivih električnih vtikačev: (%1)"
 msgid "No compatible power plugs (%1)"
 msgstr "Nobenih združljivih vtikačev (%1)"
 
-#: app/TripGroupPage.qml:396
+#: app/TripGroupPage.qml:397
 #, kde-format
 msgid "Rename…"
 msgstr "Preimenuj…"
 
-#: app/TripGroupPage.qml:405
+#: app/TripGroupPage.qml:406
 #, kde-format
 msgid "Merge trips…"
 msgstr "Zlij potovanja…"
 
-#: app/TripGroupPage.qml:415
+#: app/TripGroupPage.qml:416
 #, kde-format
 msgid "Split trip…"
 msgstr "Razcepi potovanje…"
@@ -3957,31 +3954,25 @@ msgid "Current trip"
 msgstr "Trenutno potovanje"
 
 #: app/TripGroupSplitPage.qml:15
-#, fuzzy, kde-format
-#| msgid "Split Trip"
+#, kde-format
 msgctxt "@title:window"
 msgid "Split Trip"
 msgstr "Razcepi potovanje"
 
 #: app/TripGroupSplitPage.qml:28
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Trip name:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "New Trip name:"
-msgstr "Ime potovanja:"
+msgstr "Novo ime potovanja:"
 
 #: app/TripGroupSplitPage.qml:35
-#, fuzzy, kde-format
-#| msgctxt "seat section, e.g. block in a stadium"
-#| msgid "Section:"
+#, kde-format
 msgctxt "@title:group"
 msgid "Sections"
-msgstr "Razdelek:"
+msgstr "Razdelki"
 
 #: app/TripGroupSplitPage.qml:77
-#, fuzzy, kde-format
-#| msgid "Split trip"
+#, kde-format
 msgctxt "@action:button"
 msgid "Split trip"
 msgstr "Razcepi potovanje"

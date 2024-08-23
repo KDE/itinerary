@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-22 00:40+0000\n"
-"PO-Revision-Date: 2024-08-13 19:18+0200\n"
+"POT-Creation-Date: 2024-08-23 00:40+0000\n"
+"PO-Revision-Date: 2024-08-22 11:20+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -124,7 +124,7 @@ msgid "Add to calendar…"
 msgstr "Gehitu egutegira..."
 
 #: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:182
-#: app/TripGroupPage.qml:421
+#: app/TripGroupPage.qml:422
 #, kde-format
 msgid "Export…"
 msgstr "Esportatu..."
@@ -175,7 +175,7 @@ msgid "Itinerary file (*.itinerary)"
 msgstr "«Itinerary» fitxategia (*.itinerary)"
 
 #: app/ActionsCard.qml:172 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:391
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:392
 #, kde-format
 msgid "Actions"
 msgstr "Ekintzak"
@@ -1381,7 +1381,7 @@ msgstr "Ezabatu txartela"
 msgid "Do you really want to delete this pass?"
 msgstr "Benetan ezabatu nahi duzu txartel hori?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:333 app/main.qml:21 app/main.qml:166
+#: app/gpxexport.cpp:33 app/main.cpp:336 app/main.qml:21 app/main.qml:166
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -1784,15 +1784,13 @@ msgid "Import"
 msgstr "Inportatu"
 
 #: app/ImportPage.qml:21
-#, fuzzy, kde-format
-#| msgid "Selected items to import."
+#, kde-format
 msgctxt "@title:group"
 msgid "Selected Items to Import"
-msgstr "Hautatu inportatu beharreko elementuak."
+msgstr "Inportatu beharreko hautatutako elementuak"
 
 #: app/ImportPage.qml:60
-#, fuzzy, kde-format
-#| msgid "Import selection"
+#, kde-format
 msgctxt "@action:button"
 msgid "Import selection"
 msgstr "Inportatu hautapena"
@@ -2397,23 +2395,23 @@ msgstr "M mota"
 msgid "Type N"
 msgstr "N mota"
 
-#: app/main.cpp:341
+#: app/main.cpp:344
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Bidai-laguntzaile digitala"
 
-#: app/main.cpp:342
+#: app/main.cpp:345
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "Copyright © KDE Komunitatea"
 
-#: app/main.cpp:349
+#: app/main.cpp:352
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Ireki ibilbidea adierazitako orrian"
 
-#: app/main.cpp:354
+#: app/main.cpp:357
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
@@ -3493,13 +3491,13 @@ msgstr "Gehitu ekitaldia..."
 msgid "Add restaurant…"
 msgstr "Gehitu jatetxea..."
 
-#: app/TimelinePage.qml:166 app/TripGroupPage.qml:449
+#: app/TimelinePage.qml:166 app/TripGroupPage.qml:450
 #, kde-format
 msgctxt "@action:button"
 msgid "Go To Now"
 msgstr "Joan orainera"
 
-#: app/TimelinePage.qml:173 app/TripGroupPage.qml:457 app/TripGroupsPage.qml:89
+#: app/TimelinePage.qml:173 app/TripGroupPage.qml:458 app/TripGroupsPage.qml:89
 #, kde-format
 msgctxt "@action:button"
 msgid "Add trip"
@@ -3532,7 +3530,7 @@ msgstr "GPX fitxategi gisa..."
 msgid "Export Trip"
 msgstr "Esportatu txangoa"
 
-#: app/TimelinePage.qml:493 app/TripGroupPage.qml:364
+#: app/TimelinePage.qml:493 app/TripGroupPage.qml:365
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Ibilbidean gaurko ez dago ezer."
@@ -3818,7 +3816,7 @@ msgstr[1] "Dibisak: %2"
 msgid "Edit…"
 msgstr "Editatu…"
 
-#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:426
+#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:427
 #, kde-format
 msgid "Delete trip"
 msgstr "Ezabatu txangoa"
@@ -3873,8 +3871,7 @@ msgid "Merge with:"
 msgstr "Bateratu honekin:"
 
 #: app/TripGroupMergeDialog.qml:78
-#, fuzzy, kde-format
-#| msgid "Merge"
+#, kde-format
 msgctxt "@action:button"
 msgid "Merge"
 msgstr "Bateratu"
@@ -3906,17 +3903,17 @@ msgstr "Indar-hargune bateraezin batzuk (%1)"
 msgid "No compatible power plugs (%1)"
 msgstr "Indar-hargune bateraezinak (%1)"
 
-#: app/TripGroupPage.qml:396
+#: app/TripGroupPage.qml:397
 #, kde-format
 msgid "Rename…"
 msgstr "Berrizendatu…"
 
-#: app/TripGroupPage.qml:405
+#: app/TripGroupPage.qml:406
 #, kde-format
 msgid "Merge trips…"
 msgstr "Txangoak bateratu..."
 
-#: app/TripGroupPage.qml:415
+#: app/TripGroupPage.qml:416
 #, kde-format
 msgid "Split trip…"
 msgstr "Txangoa zatitu..."
@@ -3946,31 +3943,25 @@ msgid "Current trip"
 msgstr "Uneko txangoa"
 
 #: app/TripGroupSplitPage.qml:15
-#, fuzzy, kde-format
-#| msgid "Split Trip"
+#, kde-format
 msgctxt "@title:window"
 msgid "Split Trip"
 msgstr "Txangoa zatitu"
 
 #: app/TripGroupSplitPage.qml:28
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Trip name:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "New Trip name:"
-msgstr "Txangoaren izena:"
+msgstr "Txangoaren izen berria:"
 
 #: app/TripGroupSplitPage.qml:35
-#, fuzzy, kde-format
-#| msgctxt "seat section, e.g. block in a stadium"
-#| msgid "Section:"
+#, kde-format
 msgctxt "@title:group"
 msgid "Sections"
-msgstr "Gunea:"
+msgstr "Atalak"
 
 #: app/TripGroupSplitPage.qml:77
-#, fuzzy, kde-format
-#| msgid "Split trip"
+#, kde-format
 msgctxt "@action:button"
 msgid "Split trip"
 msgstr "Txangoa zatitu"
