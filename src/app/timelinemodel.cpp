@@ -368,10 +368,10 @@ void TimelineModel::batchAdded(const QString &resId)
     Q_EMIT todayRowChanged();
 }
 
-void TimelineModel::insertElement(TimelineElement &&elem)
+int TimelineModel::insertElement(TimelineElement &&elem)
 {
     if (elem.elementType == TimelineElement::Undefined) {
-        return;
+        return -1;
     }
 
     auto it = std::lower_bound(m_elements.begin(), m_elements.end(), elem);
@@ -380,6 +380,7 @@ void TimelineModel::insertElement(TimelineElement &&elem)
     beginInsertRows({}, row, row);
     m_elements.insert(it, std::move(elem));
     endInsertRows();
+    return row;
 }
 
 std::vector<TimelineElement>::iterator TimelineModel::insertOrUpdate(std::vector<TimelineElement>::iterator it, TimelineElement &&elem)
@@ -847,11 +848,18 @@ void TimelineModel::tripGroupAdded(const QString& groupId)
 
     TimelineElement beginElem{this, TimelineElement::TripGroup, g.beginDateTime(), groupId};
     beginElem.rangeType = TimelineElement::RangeBegin;
-    insertElement(std::move(beginElem));
+    const auto startRow = insertElement(std::move(beginElem));
 
     TimelineElement endElem{this, TimelineElement::TripGroup, g.endDateTime(), groupId};
     endElem.rangeType = TimelineElement::RangeEnd;
-    insertElement(std::move(endElem));
+    const auto endRow = insertElement(std::move(endElem));
+
+    // elements in that group now have a trip group id
+    if (endRow - startRow > 1) {
+        const auto beginIdx = index(startRow + 1, 0);
+        const auto endIdx = index(endRow - 1, 0);
+        Q_EMIT dataChanged(beginIdx, endIdx, {TimelineModel::TripGroupIdRole});
+    }
 }
 
 void TimelineModel::tripGroupChanged(const QString& groupId)

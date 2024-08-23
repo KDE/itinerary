@@ -92,7 +92,7 @@ private:
     void populateReservation(const QString &resId);
 
     void batchAdded(const QString &resId);
-    void insertElement(TimelineElement &&elem);
+    int insertElement(TimelineElement &&elem);
     std::vector<TimelineElement>::iterator insertOrUpdate(std::vector<TimelineElement>::iterator it, TimelineElement &&elem);
     void batchChanged(const QString &resId);
     void updateElement(const QString &resId, const QVariant &res, TimelineElement::RangeType rangeType);

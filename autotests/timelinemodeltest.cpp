@@ -539,7 +539,7 @@ private Q_SLOTS:
         importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
         ctrl->commitImport(&importer);
         QCOMPARE(model.rowCount(), 7); // 1x group begin, 2x Flight, 1x tz change info, 1x group end, 1x DST info, 1x TodayMarker
-        QCOMPARE(updateSpy.count(), 3);
+        QCOMPARE(updateSpy.count(), 4);
         QCOMPARE(rmSpy.count(), 3);
         QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
         QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
@@ -581,7 +581,7 @@ private Q_SLOTS:
         res.setReservationFor(flight);
         resMgr.updateReservation(resId, res);
         QCOMPARE(model.rowCount(), 8);
-        QCOMPARE(updateSpy.count(), 2);
+        QCOMPARE(updateSpy.count(), 4);
         QCOMPARE(insertSpy.count(), 6);
         QCOMPARE(rmSpy.count(), 5);
 
