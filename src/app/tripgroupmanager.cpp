@@ -550,7 +550,13 @@ void TripGroupManager::createAutomaticGroup(const QStringList &elems)
 {
     Q_ASSERT(!elems.empty());
 
-    const auto groupIt = m_tripGroups.find(m_reservationToGroupMap.value(elems.front()));
+    QHash<QString, TripGroup>::iterator groupIt;
+    for (const auto &elem : elems) {
+        groupIt = m_tripGroups.find(m_reservationToGroupMap.value(elem));
+        if (groupIt != m_tripGroups.end()) {
+            break;
+        }
+    }
     if (groupIt != m_tripGroups.end() && groupIt.value().elements() == elems) {
         qDebug() << "existing group unchanged" << groupIt.value().name();
         return;
