@@ -60,8 +60,8 @@ FormCard.FormCardPage {
             text: i18nc("@action:button", "Import selection")
             enabled: root.controller.hasSelection
             onClicked: {
-                ApplicationController.commitImport(ImportController);
-                if (stagingList.count === 0) {
+                ApplicationController.commitImport(root.controller);
+                if (root.controller.count === 0) {
                     QQC2.ApplicationWindow.window.pageStack.layers.pop();
                 }
             }
