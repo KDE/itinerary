@@ -95,7 +95,7 @@ class ImportController : public QAbstractListModel
     Q_OBJECT
     Q_PROPERTY(bool hasSelection READ hasSelection NOTIFY selectionChanged)
     Q_PROPERTY(int count READ rowCount NOTIFY rowCountChanged)
-    Q_PROPERTY(bool enableAutoCommit MEMBER m_autoCommitEnabled WRITE setAutoCommitEnablted NOTIFY enableAutoCommitChanged)
+    Q_PROPERTY(bool enableAutoCommit MEMBER m_autoCommitEnabled WRITE setAutoCommitEnabled NOTIFY enableAutoCommitChanged)
 public:
     explicit ImportController(QObject *parent = nullptr);
     ~ImportController();
@@ -142,7 +142,7 @@ public:
 
     // properties
     bool hasSelection() const;
-    void setAutoCommitEnablted(bool enabled);
+    void setAutoCommitEnabled(bool enabled);
 
     // for actually importing
     const std::vector<ImportElement>& elements() const;

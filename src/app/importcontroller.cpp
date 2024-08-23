@@ -376,7 +376,7 @@ void ImportController::importFromIntent(const KAndroidExtras::Intent &intent)
 
         msg.assemble();
         qDebug().noquote() << msg.encodedContent();
-        setAutoCommitEnablted(false);
+        setAutoCommitEnabled(false);
         importData(msg.encodedContent());
         return;
     }
@@ -729,7 +729,7 @@ bool ImportController::hasSelection() const
     return std::any_of(m_stagedElements.begin(), m_stagedElements.end(), [](const auto &elem) { return elem.selected; });
 }
 
-void ImportController::setAutoCommitEnablted(bool enable)
+void ImportController::setAutoCommitEnabled(bool enable)
 {
     if (m_autoCommitEnabled == enable) {
         return;
