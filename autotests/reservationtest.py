@@ -21,6 +21,7 @@ class ReservationTest(ItineraryTestCase):
         self.driver.find_element(by=AppiumBy.NAME, value="Itinerary").click()
         self.triggerImportAction("Open File…")
         self.openFile("../tests/randa2017.json")
+        self.driver.find_element(by=AppiumBy.NAME, value="Import selection").click()
         self.driver.find_element(by=AppiumBy.NAME, value="Trip: Randa (September 2017)").click()
 
     def tearDown(self):
