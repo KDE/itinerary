@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-23 00:40+0000\n"
-"PO-Revision-Date: 2024-08-14 15:39+0200\n"
+"POT-Creation-Date: 2024-08-24 00:40+0000\n"
+"PO-Revision-Date: 2024-08-23 15:34+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -1781,14 +1781,13 @@ msgstr "Importovat"
 #, kde-format
 msgctxt "@title:group"
 msgid "Selected Items to Import"
-msgstr ""
+msgstr "Vyberte položky pro importování"
 
 #: app/ImportPage.qml:60
-#, fuzzy, kde-format
-#| msgid "Import Reservation"
+#, kde-format
 msgctxt "@action:button"
 msgid "Import selection"
-msgstr "Importovat rezervaci"
+msgstr "Importovat výběr"
 
 #: app/IndoorMapGateSheet.qml:18
 #, kde-format
@@ -3828,13 +3827,13 @@ msgctxt "@label:textbox"
 msgid "Trip name:"
 msgstr ""
 
-#: app/tripgroupmanager.cpp:844
+#: app/tripgroupmanager.cpp:846
 #, kde-format
 msgctxt "%1 is destination, %2 is the standalone month name, %3 is the year"
 msgid "%1 (%2 %3)"
 msgstr "%1 (%2 %3)"
 
-#: app/tripgroupmanager.cpp:846
+#: app/tripgroupmanager.cpp:848
 #, kde-format
 msgctxt ""
 "%1 is destination, %2 and %3 are the standalone month names and %4 is the "
@@ -3842,7 +3841,7 @@ msgctxt ""
 msgid "%1 (%2/%3 %4)"
 msgstr "%1 (%2/%3 %4)"
 
-#: app/tripgroupmanager.cpp:848
+#: app/tripgroupmanager.cpp:850
 #, kde-format
 msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"
@@ -3860,8 +3859,7 @@ msgid "Merge with:"
 msgstr "Sloučit s:"
 
 #: app/TripGroupMergeDialog.qml:78
-#, fuzzy, kde-format
-#| msgid "Merge"
+#, kde-format
 msgctxt "@action:button"
 msgid "Merge"
 msgstr "Sloučit"
@@ -3934,30 +3932,25 @@ msgid "Current trip"
 msgstr "Současný výlet"
 
 #: app/TripGroupSplitPage.qml:15
-#, fuzzy, kde-format
-#| msgid "Split Trip"
+#, kde-format
 msgctxt "@title:window"
 msgid "Split Trip"
 msgstr "Rozdělit výlet"
 
 #: app/TripGroupSplitPage.qml:28
-#, fuzzy, kde-format
-#| msgid "New Trip"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "New Trip name:"
-msgstr "Nový výlet"
+msgstr "Nový název výletu:"
 
 #: app/TripGroupSplitPage.qml:35
-#, fuzzy, kde-format
-#| msgctxt "seat section, e.g. block in a stadium"
-#| msgid "Section:"
+#, kde-format
 msgctxt "@title:group"
 msgid "Sections"
-msgstr "Oddíl:"
+msgstr "Sekce"
 
 #: app/TripGroupSplitPage.qml:77
-#, fuzzy, kde-format
-#| msgid "Split trip"
+#, kde-format
 msgctxt "@action:button"
 msgid "Split trip"
 msgstr "Rozdělit výlet"

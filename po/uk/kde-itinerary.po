@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-23 00:40+0000\n"
-"PO-Revision-Date: 2024-08-12 09:20+0300\n"
+"POT-Creation-Date: 2024-08-24 00:40+0000\n"
+"PO-Revision-Date: 2024-08-23 09:17+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -1792,15 +1792,13 @@ msgid "Import"
 msgstr "Імпортувати"
 
 #: app/ImportPage.qml:21
-#, fuzzy, kde-format
-#| msgid "Selected items to import."
+#, kde-format
 msgctxt "@title:group"
 msgid "Selected Items to Import"
-msgstr "Позначені записи для імпортування."
+msgstr "Позначені записи для імпортування"
 
 #: app/ImportPage.qml:60
-#, fuzzy, kde-format
-#| msgid "Import selection"
+#, kde-format
 msgctxt "@action:button"
 msgid "Import selection"
 msgstr "Імпортувати позначене"
@@ -3865,13 +3863,13 @@ msgctxt "@label:textbox"
 msgid "Trip name:"
 msgstr "Назва подорожі:"
 
-#: app/tripgroupmanager.cpp:844
+#: app/tripgroupmanager.cpp:846
 #, kde-format
 msgctxt "%1 is destination, %2 is the standalone month name, %3 is the year"
 msgid "%1 (%2 %3)"
 msgstr "%1 (%2 %3)"
 
-#: app/tripgroupmanager.cpp:846
+#: app/tripgroupmanager.cpp:848
 #, kde-format
 msgctxt ""
 "%1 is destination, %2 and %3 are the standalone month names and %4 is the "
@@ -3879,7 +3877,7 @@ msgctxt ""
 msgid "%1 (%2/%3 %4)"
 msgstr "%1 (%2/%3 %4)"
 
-#: app/tripgroupmanager.cpp:848
+#: app/tripgroupmanager.cpp:850
 #, kde-format
 msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"
@@ -3897,8 +3895,7 @@ msgid "Merge with:"
 msgstr "Об’єднати з:"
 
 #: app/TripGroupMergeDialog.qml:78
-#, fuzzy, kde-format
-#| msgid "Merge"
+#, kde-format
 msgctxt "@action:button"
 msgid "Merge"
 msgstr "Об'єднати"
@@ -3972,34 +3969,28 @@ msgid "Current trip"
 msgstr "Поточна подорож"
 
 #: app/TripGroupSplitPage.qml:15
-#, fuzzy, kde-format
-#| msgid "Split Trip"
+#, kde-format
 msgctxt "@title:window"
 msgid "Split Trip"
 msgstr "Розділити подорож"
 
 #: app/TripGroupSplitPage.qml:28
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Trip name:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "New Trip name:"
-msgstr "Назва подорожі:"
+msgstr "Назва нової подорожі:"
 
 #: app/TripGroupSplitPage.qml:35
-#, fuzzy, kde-format
-#| msgctxt "seat section, e.g. block in a stadium"
-#| msgid "Section:"
+#, kde-format
 msgctxt "@title:group"
 msgid "Sections"
-msgstr "Секція:"
+msgstr "Секції"
 
 #: app/TripGroupSplitPage.qml:77
-#, fuzzy, kde-format
-#| msgid "Split trip"
+#, kde-format
 msgctxt "@action:button"
 msgid "Split trip"
-msgstr "Розділена подорож"
+msgstr "Розділити подорож"
 
 #: app/VehicleLayoutPage.qml:18
 #, kde-format
