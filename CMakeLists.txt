@@ -49,7 +49,7 @@ set(QT_MIN_VERSION 6.5)
 
 # build-time dependencies
 find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS Test Quick Positioning QuickControls2)
-find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS I18n CoreAddons Contacts Notifications CalendarCore ColorScheme Holidays UnitConversion)
+find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS I18n CoreAddons Contacts Notifications CalendarCore Holidays UnitConversion)
 find_package(KF6 ${KF_MIN_VERSION} OPTIONAL_COMPONENTS NetworkManagerQt)
 find_package(KF6KirigamiAddons 0.11.40 REQUIRED)
 find_package(KPim6PkPass CONFIG REQUIRED)
@@ -72,6 +72,7 @@ set_package_properties(QuotientQt6 PROPERTIES TYPE OPTIONAL PURPOSE "Needed for 
 set_package_properties(SeleniumWebDriverATSPI PROPERTIES PURPOSE "Needed for GUI tests" URL "https://invent.kde.org/sdk/selenium-webdriver-at-spi" TYPE OPTIONAL)
 
 if (ANDROID)
+    find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS ColorScheme)
     set_package_properties(LibIcal PROPERTIES TYPE REQUIRED)
 else()
     find_package(SharedMimeInfo 1.0 REQUIRED)
