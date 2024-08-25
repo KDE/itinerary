@@ -8,7 +8,6 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
-import internal.org.kde.kcalendarcore as KCalendarCore
 import org.kde.kitinerary
 import org.kde.itinerary
 

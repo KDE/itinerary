@@ -13,7 +13,7 @@ import QtLocation as QtLocation
 import org.kde.kirigami as Kirigami
 import org.kde.solidextras as Solid
 import org.kde.kpublictransport.onboard
-import internal.org.kde.kcalendarcore as KCalendarCore
+import org.kde.calendarcore as KCalendarCore
 import org.kde.itinerary
 
 Kirigami.ApplicationWindow {
@@ -147,7 +147,7 @@ Kirigami.ApplicationWindow {
     CalendarSelectionSheet {
         id: calendarSelector
         // parent: root.Overlay.overlay
-        onCalendarSelected: {
+        onCalendarSelected: (calendar) => {
             ImportController.enableAutoCommit = false;
             ImportController.importFromCalendar(calendar);
         }

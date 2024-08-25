@@ -7,6 +7,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import QtQuick.Dialogs
+import org.kde.calendarcore as KCalendarCore
 import internal.org.kde.kcalendarcore as KCalendarCore
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
@@ -101,7 +102,7 @@ ColumnLayout {
         parent: applicationWindow().overlay
 
         model: writableCalendars
-        onCalendarSelected: controller.addToCalendar(calendar);
+        onCalendarSelected: (calendar) => { controller.addToCalendar(calendar); }
     }
 
     Component {

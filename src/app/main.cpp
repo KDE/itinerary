@@ -64,8 +64,7 @@
 
 #include "weatherforecastmanager.h"
 
-#include "calendarlistmodel.h"
-#include <KCalendarCore/CalendarPluginLoader>
+#include <KCalendarCore/Calendar>
 
 #include <KItinerary/CountryDb>
 #include <KItinerary/DocumentUtil>
@@ -127,10 +126,6 @@ void registerKCalendarCoreTypes()
 {
     // ### this should move into a QML plugin of KCalendarCore
     qmlRegisterUncreatableMetaObject(KCalendarCore::staticMetaObject, "internal.org.kde.kcalendarcore", 1, 0, "KCalendarCore", {});
-    qmlRegisterType<KCalendarCoreExtras::CalendarListModel>("internal.org.kde.kcalendarcore", 1, 0, "CalendarListModel");
-    qmlRegisterSingletonType("internal.org.kde.kcalendarcore", 1, 0, "CalendarPluginLoader", [](QQmlEngine *, QJSEngine *jsEngine) -> QJSValue {
-        return jsEngine->toScriptValue(KCalendarCore::CalendarPluginLoader());
-    });
 }
 
 void registerKPkPassTypes()
