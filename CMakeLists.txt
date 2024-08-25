@@ -10,7 +10,11 @@ set (RELEASE_SERVICE_VERSION_MICRO "70")
 set (RELEASE_SERVICE_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_VERSION_MINOR}.${RELEASE_SERVICE_VERSION_MICRO}")
 project(itinerary VERSION ${RELEASE_SERVICE_VERSION})
 
-set(KF_MIN_VERSION 5.245)
+set(QT_MIN_VERSION 6.5)
+set(KF_MIN_VERSION 6.4)
+set(GEAR_MIN_VERSION 24.08)
+set(PIM_MIN_VERSION 6.2)
+
 find_package(ECM ${KF_MIN_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${CMAKE_SOURCE_DIR}/cmake)
 
@@ -45,18 +49,16 @@ if (EXISTS "${CMAKE_SOURCE_DIR}/.git")
     endif()
 endif()
 
-set(QT_MIN_VERSION 6.5)
-
 # build-time dependencies
 find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS Test Quick Positioning QuickControls2)
 find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS I18n CoreAddons Contacts Notifications CalendarCore Holidays UnitConversion)
 find_package(KF6 ${KF_MIN_VERSION} OPTIONAL_COMPONENTS NetworkManagerQt)
 find_package(KF6KirigamiAddons 0.11.40 REQUIRED)
-find_package(KPim6PkPass CONFIG REQUIRED)
-find_package(KPim6Itinerary 5.23.0 CONFIG REQUIRED)
-find_package(KPublicTransport 23.07.70 CONFIG REQUIRED)
-find_package(KOSMIndoorMap CONFIG REQUIRED)
-find_package(KHealthCertificate CONFIG)
+find_package(KPim6PkPass ${PIM_MIN_VERSION} CONFIG REQUIRED)
+find_package(KPim6Itinerary ${PIM_MIN_VERSION} CONFIG REQUIRED)
+find_package(KPublicTransport ${GEAR_MIN_VERSION} CONFIG REQUIRED)
+find_package(KOSMIndoorMap ${GEAR_MIN_VERSION} CONFIG REQUIRED)
+find_package(KHealthCertificate ${GEAR_MIN_VERSION} CONFIG)
 find_package(Qt6Keychain CONFIG REQUIRED)
 find_package(LibIcal 3.0)
 find_package(ZLIB REQUIRED)
@@ -71,42 +73,32 @@ set_package_properties(KHealthCertificate PROPERTIES TYPE OPTIONAL PURPOSE "Need
 set_package_properties(QuotientQt6 PROPERTIES TYPE OPTIONAL PURPOSE "Needed for Matrix location sharing.")
 set_package_properties(SeleniumWebDriverATSPI PROPERTIES PURPOSE "Needed for GUI tests" URL "https://invent.kde.org/sdk/selenium-webdriver-at-spi" TYPE OPTIONAL)
 
-if (ANDROID)
-    find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS ColorScheme)
-    set_package_properties(LibIcal PROPERTIES TYPE REQUIRED)
-else()
-    find_package(SharedMimeInfo 1.0 REQUIRED)
-endif()
-
-ecm_set_disabled_deprecation_versions(QT 6.4.0
-     KF 6.5.0
-    )
-
-
 include(ECMFindQmlModule)
 # TODO all of these should be required, but that doesn't work with Flatpak/Android yet...
 ecm_find_qmlmodule(QtLocation 6.0)
 ecm_find_qmlmodule(QtMultimedia 6.0)
 ecm_find_qmlmodule(QtPositioning 6.0)
-ecm_find_qmlmodule(org.kde.kitemmodels 5.245)
-ecm_find_qmlmodule(org.kde.prison 5.245)
-ecm_find_qmlmodule(org.kde.prison.scanner 5.245)
-ecm_find_qmlmodule(org.kde.kosmindoormap 24.02 REQUIRED)
-ecm_find_qmlmodule(org.kde.kopeninghours 24.02 REQUIRED)
+ecm_find_qmlmodule(org.kde.kitemmodels ${KF_MIN_VERSION})
+ecm_find_qmlmodule(org.kde.prison ${KF_MIN_VERSION})
+ecm_find_qmlmodule(org.kde.prison.scanner ${KF_MIN_VERSION})
+ecm_find_qmlmodule(org.kde.kosmindoormap ${GEAR_MIN_VERSION} REQUIRED)
+ecm_find_qmlmodule(org.kde.kopeninghours ${GEAR_MIN_VERSION} REQUIRED)
 
 # runtime dependencies are build-time dependencies on Android
 if (ANDROID)
     find_package(Qt6 REQUIRED COMPONENTS Svg)
-    find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS Archive Kirigami Prison)
+    find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS Archive ColorScheme Kirigami Prison)
     if (NOT DEFINED BREEZEICONS_DIR AND EXISTS ${CMAKE_SOURCE_DIR}/../breeze-icons)
         set(BREEZEICONS_DIR ${CMAKE_SOURCE_DIR}/../breeze-icons)
     endif()
     find_package(OpenSSL REQUIRED)
     find_package(Gradle REQUIRED)
+    set_package_properties(LibIcal PROPERTIES TYPE REQUIRED)
 else()
     find_package(Qt6 REQUIRED COMPONENTS Widgets DBus)
     find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS DBusAddons QQC2DesktopStyle WindowSystem)
     find_package(KF6 ${KF_MIN_VERSION} OPTIONAL_COMPONENTS Solid Crash FileMetaData KIO)
+    find_package(SharedMimeInfo 1.0 REQUIRED)
     set(HAVE_DBUS ON)
 endif()
 if (TARGET KF6::Crash)
@@ -120,6 +112,11 @@ if (TARGET QuotientQt6)
 else()
     set(HAVE_MATRIX FALSE)
 endif()
+
+ecm_set_disabled_deprecation_versions(
+    QT 6.4.0
+    KF 6.5.0
+)
 
 add_subdirectory(src)
 if (BUILD_TESTING)
