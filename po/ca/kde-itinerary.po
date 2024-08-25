@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-24 00:40+0000\n"
+"POT-Creation-Date: 2024-08-25 00:39+0000\n"
 "PO-Revision-Date: 2024-08-22 10:29+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -30,7 +30,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "antonibella5@yahoo.com"
 
-#: app/AboutPage.qml:18 app/main.qml:238
+#: app/AboutPage.qml:18 app/main.qml:233
 #, kde-format
 msgid "About"
 msgstr "Quant al"
@@ -121,7 +121,7 @@ msgstr "Edita"
 msgid "Add to calendar…"
 msgstr "Afegeix al calendari…"
 
-#: app/ActionsCard.qml:73 app/main.qml:226 app/TripGroupDelegate.qml:182
+#: app/ActionsCard.qml:73 app/main.qml:221 app/TripGroupDelegate.qml:182
 #: app/TripGroupPage.qml:422
 #, kde-format
 msgid "Export…"
@@ -778,7 +778,7 @@ msgstr "Proveïdors de dades:"
 msgid "Add Document"
 msgstr "Afegeix un document"
 
-#: app/DocumentsCard.qml:37 app/main.qml:127 app/main.qml:128
+#: app/DocumentsCard.qml:37 app/main.qml:125 app/main.qml:126
 #, kde-format
 msgid "All Files (*.*)"
 msgstr "Tots els fitxers (*.*)"
@@ -1377,7 +1377,7 @@ msgstr "Suprimeix el passi"
 msgid "Do you really want to delete this pass?"
 msgstr "Segur que voleu suprimir aquest passi?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:336 app/main.qml:21 app/main.qml:166
+#: app/gpxexport.cpp:33 app/main.cpp:335 app/main.qml:21 app/main.qml:161
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -1492,7 +1492,7 @@ msgstr "Prova %1 (%2)"
 msgid "Recovery (%1)"
 msgstr "Recuperació (%1)"
 
-#: app/HealthCertificatePage.qml:16 app/main.qml:200
+#: app/HealthCertificatePage.qml:16 app/main.qml:195
 #, kde-format
 msgid "Health Certificates"
 msgstr "Certificats de salut"
@@ -2192,7 +2192,7 @@ msgstr "Vol %1 a %2:"
 msgid "Itinerary change"
 msgstr "Canvi en l'itinerari"
 
-#: app/LiveStatusPage.qml:19 app/main.qml:211
+#: app/LiveStatusPage.qml:19 app/main.qml:206
 #, kde-format
 msgid "Live Status"
 msgstr "Estat en directe"
@@ -2396,23 +2396,23 @@ msgstr "Tipus M"
 msgid "Type N"
 msgstr "Tipus N"
 
-#: app/main.cpp:344
+#: app/main.cpp:343
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Assistent digital de viatges"
 
-#: app/main.cpp:345
+#: app/main.cpp:344
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "Copyright © La comunitat KDE"
 
-#: app/main.cpp:352
+#: app/main.cpp:351
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Obre l'itinerari a la pàgina indicada"
 
-#: app/main.cpp:357
+#: app/main.cpp:356
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
@@ -2443,72 +2443,72 @@ msgstr "Afegeix a partir del calendari…"
 msgid "Deutsche Bahn Online Ticket…"
 msgstr "Bitllet en línia de la Deutsche Bahn…"
 
-#: app/main.qml:108
+#: app/main.qml:107
 #, kde-format
 msgid "SNCF Online Ticket…"
 msgstr "Bitllet en línia de la SNCF…"
 
-#: app/main.qml:122
+#: app/main.qml:120
 #, kde-format
 msgid "Import Reservation"
 msgstr "Importa la reserva"
 
-#: app/main.qml:128
+#: app/main.qml:126
 #, kde-format
 msgid "PkPass files (*.pkpass)"
 msgstr "Fitxers PkPass (*.pkpass)"
 
-#: app/main.qml:128
+#: app/main.qml:126
 #, kde-format
 msgid "PDF files (*.pdf)"
 msgstr "Fitxers PDF (*.pdf)"
 
-#: app/main.qml:128
+#: app/main.qml:126
 #, kde-format
 msgid "iCal events (*.ics)"
 msgstr "Esdeveniments iCal (*.ics)"
 
-#: app/main.qml:128 app/main.qml:140
+#: app/main.qml:126 app/main.qml:135
 #, kde-format
 msgid "KDE Itinerary files (*.itinerary)"
 msgstr "Fitxers del KDE Itinerary (*.itinerary)"
 
-#: app/main.qml:138
+#: app/main.qml:133
 #, kde-format
 msgid "Export Itinerary Data"
 msgstr "Exportació de dades de l'Itinerary"
 
-#: app/main.qml:171 app/PassPage.qml:137
+#: app/main.qml:166 app/PassPage.qml:137
 #, kde-format
 msgid "Import…"
 msgstr "Importa…"
 
-#: app/main.qml:176
+#: app/main.qml:171
 #, kde-format
 msgid "Check for Updates"
 msgstr "Comprova si hi ha actualitzacions"
 
-#: app/main.qml:185
+#: app/main.qml:180
 #, kde-format
 msgid "Download Maps"
 msgstr "Baixa els mapes"
 
-#: app/main.qml:193 app/StatisticsPage.qml:15
+#: app/main.qml:188 app/StatisticsPage.qml:15
 #, kde-format
 msgid "Statistics"
 msgstr "Estadístiques"
 
-#: app/main.qml:219 app/WelcomePage.qml:41
+#: app/main.qml:214 app/WelcomePage.qml:41
 #, kde-format
 msgid "Settings…"
 msgstr "Configuració…"
 
-#: app/main.qml:231 app/WelcomePage.qml:16
+#: app/main.qml:226 app/WelcomePage.qml:16
 #, kde-format
 msgid "Help"
 msgstr "Ajuda"
 
-#: app/main.qml:320
+#: app/main.qml:314
 #, kde-format
 msgid "Map download finished."
 msgstr "Ha acabat la baixada dels mapes."
@@ -3845,13 +3845,13 @@ msgctxt "@label:textbox"
 msgid "Trip name:"
 msgstr "Nom del viatge:"
 
-#: app/tripgroupmanager.cpp:846
+#: app/tripgroupmanager.cpp:852
 #, kde-format
 msgctxt "%1 is destination, %2 is the standalone month name, %3 is the year"
 msgid "%1 (%2 %3)"
 msgstr "%1 (%2 %3)"
 
-#: app/tripgroupmanager.cpp:848
+#: app/tripgroupmanager.cpp:854
 #, kde-format
 msgctxt ""
 "%1 is destination, %2 and %3 are the standalone month names and %4 is the "
@@ -3859,7 +3859,7 @@ msgctxt ""
 msgid "%1 (%2/%3 %4)"
 msgstr "%1 (%2/%3 %4)"
 
-#: app/tripgroupmanager.cpp:850
+#: app/tripgroupmanager.cpp:856
 #, kde-format
 msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"
