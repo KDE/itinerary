@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-11 02:34+0000\n"
+"POT-Creation-Date: 2024-08-26 02:45+0000\n"
 "PO-Revision-Date: 2024-07-20 10:34+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -1359,7 +1359,7 @@ msgstr "Pas verwijderen"
 msgid "Do you really want to delete this pass?"
 msgstr "Wilt u deze pas verwijderen?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:336 app/main.qml:21 app/main.qml:166
+#: app/gpxexport.cpp:33 app/main.cpp:339 app/main.qml:21 app/main.qml:166
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -2371,23 +2371,23 @@ msgstr "Type M"
 msgid "Type N"
 msgstr "Type N"
 
-#: app/main.cpp:344
+#: app/main.cpp:347
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Digitale reisassistent"
 
-#: app/main.cpp:345
+#: app/main.cpp:348
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "Copyright © De KDE-gemeenschap"
 
-#: app/main.cpp:352
+#: app/main.cpp:355
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Itinerary (reisroute) openen op de gegeven pagina"
 
-#: app/main.cpp:357
+#: app/main.cpp:360
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
