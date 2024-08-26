@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-25 00:39+0000\n"
+"POT-Creation-Date: 2024-08-26 00:39+0000\n"
 "PO-Revision-Date: 2024-07-25 12:53+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -87,44 +87,44 @@ msgstr "Capabilitates de extractor:"
 msgid "Extractor capabilities copied to clipboard"
 msgstr "Capabilitates de extractor copiate a area de transferentia"
 
-#: app/ActionsCard.qml:32
+#: app/ActionsCard.qml:33
 #, kde-format
 msgid "Show Boarding Pass"
 msgstr "Monstra Carta de imbarcar"
 
-#: app/ActionsCard.qml:32 app/TicketPage.qml:138
+#: app/ActionsCard.qml:33 app/TicketPage.qml:138
 #, kde-format
 msgid "Show Ticket"
 msgstr "Monstra Billet"
 
-#: app/ActionsCard.qml:38
+#: app/ActionsCard.qml:39
 #, kde-format
 msgid "Add transfer before"
 msgstr "Adde transferimento ante"
 
-#: app/ActionsCard.qml:47
+#: app/ActionsCard.qml:48
 #, kde-format
 msgid "Add transfer after"
 msgstr "Adde transferimento post"
 
-#: app/ActionsCard.qml:56 app/ProgramMembershipPage.qml:159
+#: app/ActionsCard.qml:57 app/ProgramMembershipPage.qml:159
 #: app/TicketPage.qml:154
 #, kde-format
 msgid "Edit"
 msgstr "Edita"
 
-#: app/ActionsCard.qml:62
+#: app/ActionsCard.qml:63
 #, kde-format
 msgid "Add to calendar…"
 msgstr "Adde a Calendario..."
 
-#: app/ActionsCard.qml:73 app/main.qml:221 app/TripGroupDelegate.qml:182
+#: app/ActionsCard.qml:74 app/main.qml:221 app/TripGroupDelegate.qml:182
 #: app/TripGroupPage.qml:422
 #, kde-format
 msgid "Export…"
 msgstr "Exporta…"
 
-#: app/ActionsCard.qml:78 app/ActionsCard.qml:124 app/DocumentsCard.qml:87
+#: app/ActionsCard.qml:79 app/ActionsCard.qml:125 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
 #: app/HealthCertificatePage.qml:46 app/HealthCertificatePage.qml:60
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:171
@@ -134,80 +134,80 @@ msgstr "Exporta…"
 msgid "Delete"
 msgstr "Dele"
 
-#: app/ActionsCard.qml:117
+#: app/ActionsCard.qml:118
 #, kde-format
 msgid "Delete Event"
 msgstr "Dele evento"
 
-#: app/ActionsCard.qml:118
+#: app/ActionsCard.qml:119
 #, kde-format
 msgid "Do you really want to delete this event?"
 msgstr "Tu vermente voleeler iste evento?"
 
-#: app/ActionsCard.qml:137 app/TimelinePage.qml:235 app/TripGroupPage.qml:57
+#: app/ActionsCard.qml:138 app/TimelinePage.qml:235 app/TripGroupPage.qml:57
 #, kde-format
 msgid "Export"
 msgstr "Exporta"
 
-#: app/ActionsCard.qml:140 app/TimelinePage.qml:238 app/TripGroupPage.qml:60
+#: app/ActionsCard.qml:141 app/TimelinePage.qml:238 app/TripGroupPage.qml:60
 #, kde-format
 msgid "As Itinerary file…"
 msgstr "Como file de Itinerary..."
 
-#: app/ActionsCard.qml:151 app/TimelinePage.qml:262 app/TripGroupPage.qml:82
+#: app/ActionsCard.qml:152 app/TimelinePage.qml:262 app/TripGroupPage.qml:82
 #, kde-format
 msgid "Send to %1"
 msgstr "Invia a %1"
 
-#: app/ActionsCard.qml:165
+#: app/ActionsCard.qml:166
 #, kde-format
 msgid "Export Reservation"
 msgstr "Exporta reservation"
 
-#: app/ActionsCard.qml:167 app/TimelinePage.qml:278 app/TripGroupPage.qml:99
+#: app/ActionsCard.qml:168 app/TimelinePage.qml:278 app/TripGroupPage.qml:99
 #, kde-format
 msgid "Itinerary file (*.itinerary)"
 msgstr "Files de  Itinerary  (*.itinerary)"
 
-#: app/ActionsCard.qml:172 app/ProgramMembershipPage.qml:138
+#: app/ActionsCard.qml:173 app/ProgramMembershipPage.qml:138
 #: app/TicketPage.qml:130 app/TripGroupPage.qml:392
 #, kde-format
 msgid "Actions"
 msgstr "Actiones"
 
-#: app/ActionsCard.qml:190
+#: app/ActionsCard.qml:191
 #, kde-format
 msgctxt "cancel as in revoking a booking"
 msgid "Cancel Reservation"
 msgstr "Cancella reservation"
 
-#: app/ActionsCard.qml:191
+#: app/ActionsCard.qml:192
 #, kde-format
 msgid "Check-in"
 msgstr "Restitue"
 
-#: app/ActionsCard.qml:192
+#: app/ActionsCard.qml:193
 #, kde-format
 msgid "Download"
 msgstr "Discarga"
 
-#: app/ActionsCard.qml:193
+#: app/ActionsCard.qml:194
 #, kde-format
 msgctxt "participate in an event"
 msgid "Join"
 msgstr "Uni te"
 
-#: app/ActionsCard.qml:194
+#: app/ActionsCard.qml:195
 #, kde-format
 msgid "Reserve"
 msgstr "Reservation"
 
-#: app/ActionsCard.qml:195
+#: app/ActionsCard.qml:196
 #, kde-format
 msgid "Change Reservation"
 msgstr "Modifica reservation"
 
-#: app/ActionsCard.qml:196
+#: app/ActionsCard.qml:197
 #, kde-format
 msgid "View Reservation"
 msgstr "Vide reservation"
@@ -1385,7 +1385,7 @@ msgstr "Dele Pass"
 msgid "Do you really want to delete this pass?"
 msgstr "Tu vermente vole deler iste pass?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:335 app/main.qml:21 app/main.qml:161
+#: app/gpxexport.cpp:33 app/main.cpp:312 app/main.qml:21 app/main.qml:161
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -1756,45 +1756,77 @@ msgstr "Tempore de Check-in"
 msgid "Check-out time"
 msgstr "Tempore de Check-Out"
 
-#: app/importcontroller.cpp:144 app/importcontroller.cpp:460
+#: app/importcontroller.cpp:145 app/importcontroller.cpp:461
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Importation falleva: %1"
 
-#: app/importcontroller.cpp:149
+#: app/importcontroller.cpp:150
 #, kde-format
 msgid "Import failed: File too large."
 msgstr "Importation  falleva: file troppo grande"
 
-#: app/importcontroller.cpp:208 app/importcontroller.cpp:305
+#: app/importcontroller.cpp:209 app/importcontroller.cpp:306
 #, kde-format
 msgid "Found nothing to import."
 msgstr "Trovate nulle cosa a importar."
 
-#: app/importcontroller.cpp:432
+#: app/importcontroller.cpp:433
 #, kde-format
 msgid "No importable events found in this calendar."
 msgstr "Necun eventos importabile trovate in iste calendario."
 
-#: app/importcontroller.cpp:606
+#: app/importcontroller.cpp:615
 #, kde-format
 msgid "Backup"
 msgstr "Retrocopia"
 
-#: app/ImportPage.qml:18
+#: app/ImportPage.qml:19
 #, kde-format
 msgctxt "@title"
 msgid "Import"
 msgstr "Importa"
 
-#: app/ImportPage.qml:21
+#: app/ImportPage.qml:22
+#, fuzzy, kde-format
+#| msgid "Trips"
+msgid "Trip"
+msgstr "Tours"
+
+#: app/ImportPage.qml:42
+#, kde-format
+msgid "New Trip"
+msgstr "Nove Viage "
+
+#: app/ImportPage.qml:45
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Add Trip"
+msgid "Add to Trip"
+msgstr "Adde viage "
+
+#: app/ImportPage.qml:55 app/TripGroupEditorDialog.qml:21
+#: app/TripGroupMergeDialog.qml:56
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Trip name:"
+msgstr "Nomine de Viage:"
+
+#: app/ImportPage.qml:74
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Add trip"
+msgid "Add to:"
+msgstr "Adde viage "
+
+#: app/ImportPage.qml:101
 #, fuzzy, kde-format
 #| msgid "Selected items to import."
 msgctxt "@title:group"
-msgid "Selected Items to Import"
+msgid "Items to Import"
 msgstr "Elementos seligite a importar."
 
-#: app/ImportPage.qml:60
+#: app/ImportPage.qml:140
 #, fuzzy, kde-format
 #| msgid "Import selection"
 msgctxt "@action:button"
@@ -2401,23 +2433,23 @@ msgstr "Typo M"
 msgid "Type N"
 msgstr "Typo N"
 
-#: app/main.cpp:343
+#: app/main.cpp:320
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Assistente de Viages Digital"
 
-#: app/main.cpp:344
+#: app/main.cpp:321
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "Copyright © The KDE Community (Le communitate de KDE)"
 
-#: app/main.cpp:351
+#: app/main.cpp:328
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Aperi Itinerary sur le pagina date"
 
-#: app/main.cpp:356
+#: app/main.cpp:333
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
@@ -3844,12 +3876,6 @@ msgctxt "@title:window"
 msgid "Edit Trip"
 msgstr "Modifica Viage"
 
-#: app/TripGroupEditorDialog.qml:21 app/TripGroupMergeDialog.qml:56
-#, kde-format
-msgctxt "@label:textbox"
-msgid "Trip name:"
-msgstr "Nomine de Viage:"
-
 #: app/tripgroupmanager.cpp:852
 #, kde-format
 msgctxt "%1 is destination, %2 is the standalone month name, %3 is the year"
@@ -4169,9 +4195,6 @@ msgstr "Accedente "
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 ex %3 a %4 le %5"
-
-#~ msgid "New Trip"
-#~ msgstr "Nove Viage "
 
 #~ msgid "Terminal: %1  Gate: %2  Seat: %3"
 #~ msgstr "Terminal: %1  Gate (Porta) : %2  Placia: %3"
