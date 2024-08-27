@@ -38,4 +38,8 @@ FormCard.FormCardDialog {
         // and thus doesn't work when reusing the dialog a second time
         nameEdit.text = root.tripGroup.name;
     }
+
+    Component.onCompleted: {
+        root.standardButton(QQC2.Dialog.Save).enabled = Qt.binding(() => { return nameEdit.text !== ""; });
+    }
 }
