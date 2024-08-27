@@ -613,6 +613,57 @@ private Q_SLOTS:
         QCOMPARE(tg.isAutomaticallyGrouped(), false);
         QCOMPARE(tg.hasAutomaticName(), false);
     }
+
+    void testEmptyGroup()
+    {
+        ReservationManager resMgr;
+        TransferManager transferMgr;
+        Test::clearAll(&resMgr);
+
+        TripGroupManager::clear();
+        TripGroupManager tgMgr;
+        tgMgr.setReservationManager(&resMgr);
+        tgMgr.setTransferManager(&transferMgr);
+
+        QCOMPARE(tgMgr.tripGroups().size(), 0);
+
+        const auto tgId = tgMgr.createEmptyGroup(u"My New Trip"_s);
+        QVERIFY(!tgId.isEmpty());
+        QCOMPARE(tgMgr.tripGroups().size(), 1);
+        QCOMPARE(tgMgr.tripGroups().at(0), tgId);
+        const auto tg = tgMgr.tripGroup(tgId);
+        QCOMPARE(tg.hasAutomaticName(), false);
+        QCOMPARE(tg.name(), "My New Trip"_L1);
+        QCOMPARE(tg.beginDateTime().isValid(), false);
+        QCOMPARE(tg.endDateTime().isValid(), false);
+
+        {
+            // check the consistency check on load doesn't clean this up
+            TripGroupManager tgMgr;
+            QCOMPARE(tgMgr.tripGroups().size(), 1); // after loading, before consistency checks
+            tgMgr.setReservationManager(&resMgr);
+            tgMgr.setTransferManager(&transferMgr); // after consistency checks
+            QCOMPARE(tgMgr.tripGroups().size(), 1);
+            QCOMPARE(tgMgr.tripGroups().at(0), tgId);
+            const auto tg = tgMgr.tripGroup(tgId);
+            QCOMPARE(tg.hasAutomaticName(), false);
+            QCOMPARE(tg.name(), "My New Trip"_L1);
+            QCOMPARE(tg.beginDateTime().isValid(), false);
+            QCOMPARE(tg.endDateTime().isValid(), false);
+        }
+
+        tgMgr.removeReservationsInGroup(tgId);
+        QCOMPARE(tgMgr.tripGroups().size(), 0);
+
+        {
+            // check the consistency check on load doesn't clean this up
+            TripGroupManager tgMgr;
+            QCOMPARE(tgMgr.tripGroups().size(), 0);
+            tgMgr.setReservationManager(&resMgr);
+            tgMgr.setTransferManager(&transferMgr);
+            QCOMPARE(tgMgr.tripGroups().size(), 0);
+        }
+    }
 };
 QTEST_GUILESS_MAIN(TripGroupTest)
 

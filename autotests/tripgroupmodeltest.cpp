@@ -62,6 +62,7 @@ private Q_SLOTS:
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&resMgr);
 
+        TripGroupManager::clear();
         TripGroupManager tgMgr;
         tgMgr.setReservationManager(&resMgr);
         tgMgr.setTransferManager(&transferMgr);

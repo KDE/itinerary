@@ -103,7 +103,7 @@ bool TripGroup::load(const QString &path)
     }
 
     *this = TripGroup::fromJson(JsonIO::read(f.readAll()).toObject());
-    return m_elements.size() >= 2;
+    return !m_name.isEmpty();
 }
 
 void TripGroup::store(const QString &path) const

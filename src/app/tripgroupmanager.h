@@ -67,6 +67,13 @@ public:
      */
     Q_INVOKABLE QString createGroup(const QStringList &elements, const QString &name);
 
+    /** Create a new empty group named @p name.
+     *  This is only needed for the corresponding UI action, otherwise creation happens
+     *  implicitly.
+     *  @returns the trip group id for the new group.
+     */
+    Q_INVOKABLE QString createEmptyGroup(const QString &name);
+
     /** Add the given elements to an existing trip group. */
     void addToGroup(const QStringList &elements, const QString &tgId);
 

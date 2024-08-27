@@ -14,6 +14,9 @@ FormCard.FormCardDialog {
     property string tripGroupId
     property var tripGroup
 
+    /** Name of a newly created trip group. */
+    property alias tripGroupName: nameEdit.text
+
     title: root.tripGroupId === "" ? i18nc("@title:window", "Add Trip") : i18nc("@title:window", "Edit Trip")
 
     FormCard.FormTextFieldDelegate {
@@ -26,7 +29,7 @@ FormCard.FormCardDialog {
     standardButtons: QQC2.Dialog.Cancel | QQC2.Dialog.Save
 
     onAccepted: () => {
-        if (root.tripGroup.name !== nameEdit.text) {
+        if (root.tripGroup && root.tripGroup.name !== nameEdit.text) {
             root.tripGroup.name = nameEdit.text;
             root.tripGroup.automaticName = false;
         }

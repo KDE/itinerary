@@ -14,6 +14,18 @@ Kirigami.ScrollablePage {
 
     title: i18nc("@title:window", "Trips")
 
+    TripGroupEditorDialog {
+        id: createTripDialog
+        onAccepted: {
+            const tgId = TripGroupManager.createEmptyGroup(createTripDialog.tripGroupName)
+            const tg = TripGroupManager.tripGroup(tgId)
+            applicationWindow().pageStack.push(Qt.createComponent('org.kde.itinerary', 'TripGroupPage'), {
+                tripGroupId: tgId,
+                tripGroup: tg
+            });
+        }
+    }
+
     ListView {
         id: tripsView
 
@@ -88,13 +100,7 @@ Kirigami.ScrollablePage {
         action: Kirigami.Action{
             text: i18nc("@action:button", "Add trip")
             icon.name: "list-add-symbolic"
-            onTriggered: {
-                const editorComponent = Qt.createComponent('org.kde.itinerary', 'TripGroupEditorDialog');
-                const editor = editorComponent.createObject(applicationWindow(), {
-                    mode: TripGroupEditorDialog.Add,
-                });
-                editor.open();
-            }
+            onTriggered: createTripDialog.open();
         }
     }
 }

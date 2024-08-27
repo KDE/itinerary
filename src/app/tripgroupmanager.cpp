@@ -206,18 +206,23 @@ void TripGroupManager::removeReservationsInGroup(const QString &groupId)
         return;
     }
 
-    // as we remove entries one by one we'd get and propagate update notifications for all of them
-    // so block those and emit one notifications manually once we are done
-    TripGroupingBlocker groupingBlocker(this);
-    QSignalBlocker signalBlocker(this);
+    if (!groupIt.value().elements().isEmpty()) {
+        // as we remove entries one by one we'd get and propagate update notifications for all of them
+        // so block those and emit one notifications manually once we are done
+        TripGroupingBlocker groupingBlocker(this);
+        QSignalBlocker signalBlocker(this);
 
-    const auto elements = groupIt.value().elements();
-    for (const auto &element : elements) {
-        m_resMgr->removeBatch(element);
+        const auto elements = groupIt.value().elements();
+        for (const auto &element : elements) {
+            m_resMgr->removeBatch(element);
+        }
+
+        signalBlocker.unblock();
+        Q_EMIT tripGroupRemoved(groupId);
+    } else {
+        // we can get here for elements.isEmpty() as well, in which case all of the above has no effect
+        removeTripGroup(groupId);
     }
-
-    signalBlocker.unblock();
-    Q_EMIT tripGroupRemoved(groupId);
 }
 
 void TripGroupManager::batchAdded(const QString &resId)
@@ -989,6 +994,27 @@ QString TripGroupManager::createGroup(const QStringList &elements, const QString
     for (const auto &resId : elements) {
         m_reservationToGroupMap.insert(resId, tgId);
     }
+
+    tg.store(fileForGroup(tgId));
+    Q_EMIT tripGroupAdded(tgId);
+
+    return tgId;
+}
+
+QString TripGroupManager::createEmptyGroup(const QString &name)
+{
+    qCDebug(Log) << name;
+    if (name.isEmpty()) {
+        return {};
+    }
+
+    TripGroup tg;
+    tg.setIsAutomaticallyGrouped(false);
+    tg.setName(name);
+    tg.setNameIsAutomatic(false);
+
+    const auto tgId = QUuid::createUuid().toString(QUuid::WithoutBraces);
+    m_tripGroups.insert(tgId, tg);
 
     tg.store(fileForGroup(tgId));
     Q_EMIT tripGroupAdded(tgId);
