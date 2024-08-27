@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-26 00:39+0000\n"
-"PO-Revision-Date: 2024-08-22 05:18+0200\n"
+"PO-Revision-Date: 2024-08-26 05:52+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -1777,10 +1777,9 @@ msgid "Import"
 msgstr "შემოტანა"
 
 #: app/ImportPage.qml:22
-#, fuzzy, kde-format
-#| msgid "Trips"
+#, kde-format
 msgid "Trip"
-msgstr "მოგზაურობები"
+msgstr "მოგზაურობა"
 
 #: app/ImportPage.qml:42
 #, kde-format
@@ -1788,11 +1787,9 @@ msgid "New Trip"
 msgstr "ახალი მოგზაურობა"
 
 #: app/ImportPage.qml:45
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add Trip"
+#, kde-format
 msgid "Add to Trip"
-msgstr "მოგზაურობის დამატება"
+msgstr "დამატება მოგზაურობაზე"
 
 #: app/ImportPage.qml:55 app/TripGroupEditorDialog.qml:21
 #: app/TripGroupMergeDialog.qml:56
@@ -1802,19 +1799,15 @@ msgid "Trip name:"
 msgstr "მოგზაურობის სახელი:"
 
 #: app/ImportPage.qml:74
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add trip"
+#, kde-format
 msgid "Add to:"
-msgstr "მოგზაურობის დამატება"
+msgstr "დაემატება:"
 
 #: app/ImportPage.qml:101
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Selected Items to Import"
+#, kde-format
 msgctxt "@title:group"
 msgid "Items to Import"
-msgstr "მონიშნული ელემენტები შემოსატანად"
+msgstr "შემოსატანი ელემენტები"
 
 #: app/ImportPage.qml:140
 #, kde-format

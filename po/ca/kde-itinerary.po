@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-26 00:39+0000\n"
-"PO-Revision-Date: 2024-08-22 10:29+0200\n"
+"PO-Revision-Date: 2024-08-26 10:54+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 24.08.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1781,10 +1781,9 @@ msgid "Import"
 msgstr "Importa"
 
 #: app/ImportPage.qml:22
-#, fuzzy, kde-format
-#| msgid "Trips"
+#, kde-format
 msgid "Trip"
-msgstr "Viatges"
+msgstr "Viatge"
 
 #: app/ImportPage.qml:42
 #, kde-format
@@ -1792,11 +1791,9 @@ msgid "New Trip"
 msgstr "Viatge nou"
 
 #: app/ImportPage.qml:45
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add Trip"
+#, kde-format
 msgid "Add to Trip"
-msgstr "Afegeix un viatge"
+msgstr "Afegeix al viatge"
 
 #: app/ImportPage.qml:55 app/TripGroupEditorDialog.qml:21
 #: app/TripGroupMergeDialog.qml:56
@@ -1806,19 +1803,15 @@ msgid "Trip name:"
 msgstr "Nom del viatge:"
 
 #: app/ImportPage.qml:74
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add trip"
+#, kde-format
 msgid "Add to:"
-msgstr "Afegeix un viatge"
+msgstr "Afegeix a:"
 
 #: app/ImportPage.qml:101
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Selected Items to Import"
+#, kde-format
 msgctxt "@title:group"
 msgid "Items to Import"
-msgstr "Elements seleccionats a importar"
+msgstr "Elements a importar"
 
 #: app/ImportPage.qml:140
 #, kde-format

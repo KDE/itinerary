@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-26 00:39+0000\n"
-"PO-Revision-Date: 2024-08-22 13:53+0300\n"
+"PO-Revision-Date: 2024-08-27 03:20+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -1780,10 +1780,9 @@ msgid "Import"
 msgstr "İçe Aktar"
 
 #: app/ImportPage.qml:22
-#, fuzzy, kde-format
-#| msgid "Trips"
+#, kde-format
 msgid "Trip"
-msgstr "Geziler"
+msgstr "Gezi"
 
 #: app/ImportPage.qml:42
 #, kde-format
@@ -1791,11 +1790,9 @@ msgid "New Trip"
 msgstr "Yeni Gezi"
 
 #: app/ImportPage.qml:45
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add Trip"
+#, kde-format
 msgid "Add to Trip"
-msgstr "Gezi Ekle"
+msgstr "Geziye Ekle"
 
 #: app/ImportPage.qml:55 app/TripGroupEditorDialog.qml:21
 #: app/TripGroupMergeDialog.qml:56
@@ -1805,19 +1802,15 @@ msgid "Trip name:"
 msgstr "Gezi adı:"
 
 #: app/ImportPage.qml:74
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add trip"
+#, kde-format
 msgid "Add to:"
-msgstr "Gezi Ekle…"
+msgstr "Şuraya ekle:"
 
 #: app/ImportPage.qml:101
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Selected Items to Import"
+#, kde-format
 msgctxt "@title:group"
 msgid "Items to Import"
-msgstr "İçe Aktarılacak Seçili Ögeler"
+msgstr "İçe Aktarılacak Ögeler"
 
 #: app/ImportPage.qml:140
 #, kde-format

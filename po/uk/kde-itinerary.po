@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-26 00:39+0000\n"
-"PO-Revision-Date: 2024-08-23 09:17+0300\n"
+"PO-Revision-Date: 2024-08-26 22:49+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -1792,10 +1792,9 @@ msgid "Import"
 msgstr "Імпортувати"
 
 #: app/ImportPage.qml:22
-#, fuzzy, kde-format
-#| msgid "Trips"
+#, kde-format
 msgid "Trip"
-msgstr "Поїздки"
+msgstr "Подорож"
 
 #: app/ImportPage.qml:42
 #, kde-format
@@ -1803,11 +1802,9 @@ msgid "New Trip"
 msgstr "Нова подорож"
 
 #: app/ImportPage.qml:45
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add Trip"
+#, kde-format
 msgid "Add to Trip"
-msgstr "Додавання подорожі"
+msgstr "Додати до подорожі"
 
 #: app/ImportPage.qml:55 app/TripGroupEditorDialog.qml:21
 #: app/TripGroupMergeDialog.qml:56
@@ -1817,19 +1814,15 @@ msgid "Trip name:"
 msgstr "Назва подорожі:"
 
 #: app/ImportPage.qml:74
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add trip"
+#, kde-format
 msgid "Add to:"
-msgstr "Додати подорож"
+msgstr "Додати до:"
 
 #: app/ImportPage.qml:101
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Selected Items to Import"
+#, kde-format
 msgctxt "@title:group"
 msgid "Items to Import"
-msgstr "Позначені записи для імпортування"
+msgstr "Записи для імпортування"
 
 #: app/ImportPage.qml:140
 #, kde-format
