@@ -93,11 +93,11 @@ QVariant TripGroupModel::data(const QModelIndex &index, int role) const
         return tripGroup.endDateTime();
     case PositionRole:
         // NOTE: when adjusting this adjust scheduleUpdate accordingly!
-        if (today() > tripGroup.endDateTime().date()) {
+        if (tripGroup.endDateTime().isValid() && today() > tripGroup.endDateTime().date()) {
             return Position::Past;
         }
 
-        if (now() < tripGroup.beginDateTime().date().startOfDay()) {
+        if (!tripGroup.beginDateTime().isValid() || now() < tripGroup.beginDateTime().date().startOfDay()) {
             return Position::Future;
         }
         return Position::Current;
@@ -141,10 +141,14 @@ QStringList TripGroupModel::adjacentTripGroups(const QString &tripGroupId) const
 
 QStringList TripGroupModel::adjacentTripGroups(const QDateTime &from, const QDateTime &to) const
 {
+    if (!from.isValid() || !to.isValid()) {
+        return {};
+    }
+
     auto it = std::lower_bound(m_tripGroups.begin(), m_tripGroups.end(), to, [this](const auto &lhs, const auto &rhs) {
         return tripGroupLessThan(lhs, rhs);
     });
-    if (it != m_tripGroups.begin()) {
+    if (it != m_tripGroups.begin() && m_tripGroupManager->tripGroup(*std::prev(it)).beginDateTime().isValid()) {
         --it;
     }
 
@@ -172,6 +176,9 @@ QStringList TripGroupModel::intersectingTripGroups(const QDateTime &from, const 
     QStringList res;
     for (;it != m_tripGroups.end(); ++it) {
         const auto tg = m_tripGroupManager->tripGroup(*it);
+        if (!tg.beginDateTime().isValid()) {
+            continue;
+        }
         if (tg.beginDateTime() > to || tg.endDateTime() < from) {
             break;
         }
@@ -328,12 +335,23 @@ void TripGroupModel::tripGroupRemoved(const QString &tgId)
 
 bool TripGroupModel::tripGroupLessThan(const QString &lhs, const QString &rhs) const
 {
-    return m_tripGroupManager->tripGroup(lhs).beginDateTime() > m_tripGroupManager->tripGroup(rhs).beginDateTime();
+    const auto lhsDt = m_tripGroupManager->tripGroup(lhs).beginDateTime();
+    const auto rhsDt = m_tripGroupManager->tripGroup(rhs).beginDateTime();
+    // empty groups (newly created are assumed to be in the future)
+    if (lhsDt.isValid() ^ rhsDt.isValid()) {
+        return rhsDt.isValid();
+    }
+    return lhsDt > m_tripGroupManager->tripGroup(rhs).beginDateTime();
 }
 
 bool TripGroupModel::tripGroupLessThan(const QString &lhs, const QDateTime &rhs) const
 {
-    return m_tripGroupManager->tripGroup(lhs).beginDateTime() > rhs;
+    const auto lhsDt = m_tripGroupManager->tripGroup(lhs).beginDateTime();
+    // empty groups (newly created are assumed to be in the future)
+    if (lhsDt.isValid() ^ rhs.isValid()) {
+        return rhs.isValid();
+    }
+    return lhsDt > rhs;
 }
 
 void TripGroupModel::setCurrentDateTime(const QDateTime &dt)

@@ -134,6 +134,7 @@ private Q_SLOTS:
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&resMgr);
 
+        TripGroupManager::clear();
         TripGroupManager tgMgr;
         tgMgr.setReservationManager(&resMgr);
         tgMgr.setTransferManager(&transferMgr);
@@ -149,7 +150,6 @@ private Q_SLOTS:
         ctrl->commitImport(&importer);
         importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/timeline/multi-traveler-merge-with-countryinfo.json")));
         ctrl->commitImport(&importer);
-
         QCOMPARE(model.rowCount(), 3);
 
         TripGroupFilterProxyModel proxyModel;
@@ -176,6 +176,18 @@ private Q_SLOTS:
         proxyModel.setFilteredGroupIds(adjacent);
         QCOMPARE(proxyModel.rowCount(), 1);
         QCOMPARE(proxyModel.index(0, 0).data(TripGroupModel::TripGroupIdRole).toString(), model.index(1, 0).data(TripGroupModel::TripGroupIdRole).toString());
+
+        tgMgr.createEmptyGroup(u"New Trip"_s);
+        QCOMPARE(model.rowCount(), 4);
+        adjacent = model.adjacentTripGroups(model.index(0, 0).data(TripGroupModel::TripGroupIdRole).toString());
+        QCOMPARE(adjacent.size(), 0);
+        adjacent = model.adjacentTripGroups(model.index(1, 0).data(TripGroupModel::TripGroupIdRole).toString());
+        QCOMPARE(adjacent.size(), 1);
+        QCOMPARE(adjacent[0], model.index(2, 0).data(TripGroupModel::TripGroupIdRole).toString());
+        adjacent = model.adjacentTripGroups(model.index(2, 0).data(TripGroupModel::TripGroupIdRole).toString());
+        QCOMPARE(adjacent.size(), 2);
+        adjacent = model.adjacentTripGroups(model.index(3, 0).data(TripGroupModel::TripGroupIdRole).toString());
+        QCOMPARE(adjacent.size(), 1);
     }
 
     void testIntersection()
@@ -190,6 +202,7 @@ private Q_SLOTS:
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&resMgr);
 
+        TripGroupManager::clear();
         TripGroupManager tgMgr;
         tgMgr.setReservationManager(&resMgr);
         tgMgr.setTransferManager(&transferMgr);
@@ -205,7 +218,6 @@ private Q_SLOTS:
         ctrl->commitImport(&importer);
         importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/timeline/multi-traveler-merge-with-countryinfo.json")));
         ctrl->commitImport(&importer);
-
         QCOMPARE(model.rowCount(), 3);
 
         auto intersecting = model.intersectingTripGroups({{2024, 7, 7}, {13, 0}}, {{2024, 7, 7}, {14, 0}});
@@ -258,6 +270,14 @@ private Q_SLOTS:
         QCOMPARE(intersecting.size(), 2);
         intersecting = model.intersectingTripGroups({{2017, 1, 1}, {13, 0}}, {{2017, 9, 15}, {14, 0}});
         QCOMPARE(intersecting.size(), 2);
+
+        tgMgr.createEmptyGroup(u"New Trip"_s);
+        QCOMPARE(model.rowCount(), 4);
+
+        intersecting = model.intersectingTripGroups({{2024, 7, 7}, {13, 0}}, {{2024, 7, 7}, {14, 0}});
+        QCOMPARE(intersecting.size(), 0);
+        intersecting = model.intersectingTripGroups({{2017, 1, 1}, {13, 0}}, {{2024, 8, 26}, {14, 0}});
+        QCOMPARE(intersecting.size(), 2);
     }
 
     void testCurrentBatch()
@@ -269,6 +289,7 @@ private Q_SLOTS:
 
         TransferManager transferMgr;
 
+        TripGroupManager::clear();
         TripGroupManager mgr;
         mgr.setReservationManager(&resMgr);
         mgr.setTransferManager(&transferMgr);
@@ -309,6 +330,10 @@ private Q_SLOTS:
         QVERIFY(model.currentBatchId().isEmpty());
 
         model.setCurrentDateTime(QDateTime({2019, 1, 1}, {0, 0}, QTimeZone("Europe/Zurich")));
+        QVERIFY(model.currentBatchId().isEmpty());
+
+        mgr.createEmptyGroup(u"New Trip"_s);
+        QCOMPARE(model.rowCount(), 2);
         QVERIFY(model.currentBatchId().isEmpty());
     }
 
@@ -358,6 +383,42 @@ private Q_SLOTS:
         QCOMPARE(LocationHelper::regionCode(model.locationAtTime(QDateTime({2022, 6, 16}, {0, 0}, QTimeZone("Europe/Berlin")))), "DE-BE"_L1);
         QCOMPARE(LocationHelper::regionCode(model.locationAtTime(QDateTime({2022, 6, 17}, {0, 0}, QTimeZone("Europe/Berlin")))), "DE-BY"_L1);
         QCOMPARE(LocationHelper::regionCode(model.locationAtTime(QDateTime({2022, 6, 18}, {0, 0}, QTimeZone("Europe/Berlin")))), "DE-BY"_L1);
+    }
+
+    void testEmptyGroup()
+    {
+        TripGroupModel model;
+        QAbstractItemModelTester modelTest(&model);
+
+        ReservationManager resMgr;
+        TransferManager transferMgr;
+        Test::clearAll(&resMgr);
+        auto ctrl = Test::makeAppController();
+        ctrl->setReservationManager(&resMgr);
+
+        TripGroupManager::clear();
+        TripGroupManager tgMgr;
+        tgMgr.setReservationManager(&resMgr);
+        tgMgr.setTransferManager(&transferMgr);
+        ctrl->setTripGroupManager(&tgMgr);
+        model.setTripGroupManager(&tgMgr);
+
+        ImportController importer;
+        importer.setReservationManager(&resMgr);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
+        ctrl->commitImport(&importer);
+        QCOMPARE(model.rowCount(), 1);
+        auto idx = model.index(0, 0);
+        QCOMPARE(idx.data(TripGroupModel::PositionRole).toInt(), TripGroupModel::Past);
+
+        const auto tgId = tgMgr.createEmptyGroup(u"My New Trip"_s);
+        QCOMPARE(model.rowCount(), 2);
+        idx = model.index(0, 0);
+        QCOMPARE(idx.data(TripGroupModel::PositionRole).toInt(), TripGroupModel::Future);
+        QCOMPARE(idx.data(Qt::DisplayRole).toString(), "My New Trip"_L1);
+
+        tgMgr.removeReservationsInGroup(tgId);
+        QCOMPARE(model.rowCount(), 1);
     }
 };
 QTEST_GUILESS_MAIN(TripGroupModelTest)
