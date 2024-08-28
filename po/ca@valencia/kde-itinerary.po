@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-26 00:39+0000\n"
-"PO-Revision-Date: 2024-08-12 12:20+0200\n"
+"PO-Revision-Date: 2024-08-26 10:54+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 24.08.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1781,10 +1781,9 @@ msgid "Import"
 msgstr "Importa"
 
 #: app/ImportPage.qml:22
-#, fuzzy, kde-format
-#| msgid "Trips"
+#, kde-format
 msgid "Trip"
-msgstr "Viatges"
+msgstr "Viatge"
 
 #: app/ImportPage.qml:42
 #, kde-format
@@ -1792,11 +1791,9 @@ msgid "New Trip"
 msgstr "Viatge nou"
 
 #: app/ImportPage.qml:45
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add Trip"
+#, kde-format
 msgid "Add to Trip"
-msgstr "Afig un viatge"
+msgstr "Afig al viatge"
 
 #: app/ImportPage.qml:55 app/TripGroupEditorDialog.qml:21
 #: app/TripGroupMergeDialog.qml:56
@@ -1806,22 +1803,18 @@ msgid "Trip name:"
 msgstr "Nom del viatge:"
 
 #: app/ImportPage.qml:74
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add trip"
+#, kde-format
 msgid "Add to:"
-msgstr "Afig un viatge"
+msgstr "Afig a:"
 
 #: app/ImportPage.qml:101
-#, fuzzy, kde-format
-#| msgid "Selected items to import."
+#, kde-format
 msgctxt "@title:group"
 msgid "Items to Import"
-msgstr "Elements seleccionats a importar."
+msgstr "Elements a importar"
 
 #: app/ImportPage.qml:140
-#, fuzzy, kde-format
-#| msgid "Import selection"
+#, kde-format
 msgctxt "@action:button"
 msgid "Import selection"
 msgstr "Importa la selecció"
@@ -3906,8 +3899,7 @@ msgid "Merge with:"
 msgstr "Fusiona amb:"
 
 #: app/TripGroupMergeDialog.qml:78
-#, fuzzy, kde-format
-#| msgid "Merge"
+#, kde-format
 msgctxt "@action:button"
 msgid "Merge"
 msgstr "Fusiona"
@@ -3979,31 +3971,25 @@ msgid "Current trip"
 msgstr "Viatge actual"
 
 #: app/TripGroupSplitPage.qml:15
-#, fuzzy, kde-format
-#| msgid "Split Trip"
+#, kde-format
 msgctxt "@title:window"
 msgid "Split Trip"
 msgstr "Divisió de viatge"
 
 #: app/TripGroupSplitPage.qml:28
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Trip name:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "New Trip name:"
-msgstr "Nom del viatge:"
+msgstr "Nom nou del viatge:"
 
 #: app/TripGroupSplitPage.qml:35
-#, fuzzy, kde-format
-#| msgctxt "seat section, e.g. block in a stadium"
-#| msgid "Section:"
+#, kde-format
 msgctxt "@title:group"
 msgid "Sections"
-msgstr "Secció:"
+msgstr "Seccions"
 
 #: app/TripGroupSplitPage.qml:77
-#, fuzzy, kde-format
-#| msgid "Split trip"
+#, kde-format
 msgctxt "@action:button"
 msgid "Split trip"
 msgstr "Dividix el viatge"

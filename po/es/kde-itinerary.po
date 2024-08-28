@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-26 00:39+0000\n"
-"PO-Revision-Date: 2024-08-22 17:19+0200\n"
+"PO-Revision-Date: 2024-08-27 12:26+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -1783,10 +1783,9 @@ msgid "Import"
 msgstr "Importar"
 
 #: app/ImportPage.qml:22
-#, fuzzy, kde-format
-#| msgid "Trips"
+#, kde-format
 msgid "Trip"
-msgstr "Viajes"
+msgstr "Viaje"
 
 #: app/ImportPage.qml:42
 #, kde-format
@@ -1794,11 +1793,9 @@ msgid "New Trip"
 msgstr "Nuevo viaje"
 
 #: app/ImportPage.qml:45
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add Trip"
+#, kde-format
 msgid "Add to Trip"
-msgstr "Añadir viaje"
+msgstr "Añadir a viaje"
 
 #: app/ImportPage.qml:55 app/TripGroupEditorDialog.qml:21
 #: app/TripGroupMergeDialog.qml:56
@@ -1808,19 +1805,15 @@ msgid "Trip name:"
 msgstr "Nombre del viaje:"
 
 #: app/ImportPage.qml:74
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add trip"
+#, kde-format
 msgid "Add to:"
-msgstr "Añadir viaje"
+msgstr "Añadir a:"
 
 #: app/ImportPage.qml:101
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Selected Items to Import"
+#, kde-format
 msgctxt "@title:group"
 msgid "Items to Import"
-msgstr "Elementos seleccionados para importar"
+msgstr "Elementos para importar"
 
 #: app/ImportPage.qml:140
 #, kde-format
