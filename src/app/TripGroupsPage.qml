@@ -72,7 +72,11 @@ Kirigami.ScrollablePage {
                 }
 
                 QQC2.Label {
-                    text: delegate.begin.toLocaleDateString() + ' - ' + delegate.end.toLocaleDateString()
+                    text: {
+                        if (delegate.begin > 0)
+                            return i18nc("date range", "%1 - %2", delegate.begin.toLocaleDateString(), delegate.end.toLocaleDateString());
+                        return i18n("Upcoming");
+                    }
                     elide: Text.ElideRight
                     opacity: 0.8
 
