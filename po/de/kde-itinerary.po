@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-26 00:39+0000\n"
+"POT-Creation-Date: 2024-08-29 00:40+0000\n"
 "PO-Revision-Date: 2024-08-25 10:08+0200\n"
 "Last-Translator: Alois.spitzbart <spitz234@hotmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -284,21 +284,21 @@ msgstr ""
 msgid "Replace"
 msgstr "Ersetzen"
 
-#: app/applicationcontroller.cpp:264
+#: app/applicationcontroller.cpp:285
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] "Eine Reservierung importiert."
 msgstr[1] "%1 Reservierungen importiert."
 
-#: app/applicationcontroller.cpp:267
+#: app/applicationcontroller.cpp:288
 #, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
 msgstr[0] "Ein Pass importiert."
 msgstr[1] "%1 Pässe importiert."
 
-#: app/applicationcontroller.cpp:271
+#: app/applicationcontroller.cpp:292
 #, fuzzy, kde-format
 #| msgid "Health certificate imported."
 msgid "One health certificate imported."
@@ -306,30 +306,30 @@ msgid_plural "%1 health certificates imported."
 msgstr[0] "Gesundheitsnachweis wurde importiert."
 msgstr[1] "Gesundheitsnachweis wurde importiert."
 
-#: app/applicationcontroller.cpp:285 app/applicationcontroller.cpp:326
-#: app/applicationcontroller.cpp:344 app/applicationcontroller.cpp:389
-#: app/applicationcontroller.cpp:428 app/applicationcontroller.cpp:446
+#: app/applicationcontroller.cpp:306 app/applicationcontroller.cpp:347
+#: app/applicationcontroller.cpp:365 app/applicationcontroller.cpp:410
+#: app/applicationcontroller.cpp:449 app/applicationcontroller.cpp:467
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Export fehlgeschlagen: %1"
 
-#: app/applicationcontroller.cpp:300 app/applicationcontroller.cpp:309
-#: app/applicationcontroller.cpp:402 app/applicationcontroller.cpp:411
+#: app/applicationcontroller.cpp:321 app/applicationcontroller.cpp:330
+#: app/applicationcontroller.cpp:423 app/applicationcontroller.cpp:432
 #, kde-format
 msgid "Export completed."
 msgstr "Export abgeschlossen."
 
-#: app/applicationcontroller.cpp:336
+#: app/applicationcontroller.cpp:357
 #, kde-format
 msgid "Trip sent."
 msgstr "Reise gesendet."
 
-#: app/applicationcontroller.cpp:438
+#: app/applicationcontroller.cpp:459
 #, kde-format
 msgid "Reservation sent."
 msgstr "Reservierung gesendet."
 
-#: app/applicationcontroller.cpp:494
+#: app/applicationcontroller.cpp:515
 #, kde-format
 msgid "Import completed."
 msgstr "Import abgeschlossen."
@@ -1804,19 +1804,19 @@ msgstr "Importieren"
 msgid "Trip"
 msgstr "Reisen"
 
-#: app/ImportPage.qml:42
+#: app/ImportPage.qml:41
 #, fuzzy, kde-format
 #| msgid "Add train trip..."
 msgid "New Trip"
 msgstr "Zugreise hinzufügen ..."
 
-#: app/ImportPage.qml:45
+#: app/ImportPage.qml:44
 #, fuzzy, kde-format
 #| msgid "Add train trip..."
 msgid "Add to Trip"
 msgstr "Zugreise hinzufügen ..."
 
-#: app/ImportPage.qml:55 app/TripGroupEditorDialog.qml:21
+#: app/ImportPage.qml:54 app/TripGroupEditorDialog.qml:21
 #: app/TripGroupMergeDialog.qml:56
 #, fuzzy, kde-format
 #| msgid "Under name:"
@@ -1824,19 +1824,19 @@ msgctxt "@label:textbox"
 msgid "Trip name:"
 msgstr "Unter dem Namen:"
 
-#: app/ImportPage.qml:74
+#: app/ImportPage.qml:73
 #, fuzzy, kde-format
 #| msgid "Add train trip..."
 msgid "Add to:"
 msgstr "Zugreise hinzufügen ..."
 
-#: app/ImportPage.qml:101
+#: app/ImportPage.qml:100
 #, kde-format
 msgctxt "@title:group"
 msgid "Items to Import"
 msgstr ""
 
-#: app/ImportPage.qml:140
+#: app/ImportPage.qml:139
 #, fuzzy, kde-format
 #| msgid "Import Reservation"
 msgctxt "@action:button"

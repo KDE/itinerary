@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-26 00:39+0000\n"
+"POT-Creation-Date: 2024-08-29 00:40+0000\n"
 "PO-Revision-Date: 2024-08-26 16:29+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -272,48 +272,48 @@ msgstr "您確定要將您現有的預約替代為新選取的旅程嗎？"
 msgid "Replace"
 msgstr "取代"
 
-#: app/applicationcontroller.cpp:264
+#: app/applicationcontroller.cpp:285
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] "匯入了 %1 個預約。"
 
-#: app/applicationcontroller.cpp:267
+#: app/applicationcontroller.cpp:288
 #, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
 msgstr[0] "已匯入 %1 張票卡。"
 
-#: app/applicationcontroller.cpp:271
+#: app/applicationcontroller.cpp:292
 #, kde-format
 msgid "One health certificate imported."
 msgid_plural "%1 health certificates imported."
 msgstr[0] "已匯入 %1 個健康憑證。"
 
-#: app/applicationcontroller.cpp:285 app/applicationcontroller.cpp:326
-#: app/applicationcontroller.cpp:344 app/applicationcontroller.cpp:389
-#: app/applicationcontroller.cpp:428 app/applicationcontroller.cpp:446
+#: app/applicationcontroller.cpp:306 app/applicationcontroller.cpp:347
+#: app/applicationcontroller.cpp:365 app/applicationcontroller.cpp:410
+#: app/applicationcontroller.cpp:449 app/applicationcontroller.cpp:467
 #, kde-format
 msgid "Export failed: %1"
 msgstr "匯出失敗：%1"
 
-#: app/applicationcontroller.cpp:300 app/applicationcontroller.cpp:309
-#: app/applicationcontroller.cpp:402 app/applicationcontroller.cpp:411
+#: app/applicationcontroller.cpp:321 app/applicationcontroller.cpp:330
+#: app/applicationcontroller.cpp:423 app/applicationcontroller.cpp:432
 #, kde-format
 msgid "Export completed."
 msgstr "匯出完成。"
 
-#: app/applicationcontroller.cpp:336
+#: app/applicationcontroller.cpp:357
 #, kde-format
 msgid "Trip sent."
 msgstr "旅程已送出。"
 
-#: app/applicationcontroller.cpp:438
+#: app/applicationcontroller.cpp:459
 #, kde-format
 msgid "Reservation sent."
 msgstr "已送出預約。"
 
-#: app/applicationcontroller.cpp:494
+#: app/applicationcontroller.cpp:515
 #, kde-format
 msgid "Import completed."
 msgstr "匯入完成。"
@@ -1773,42 +1773,42 @@ msgstr "匯入"
 msgid "Trip"
 msgstr "旅程"
 
-#: app/ImportPage.qml:42
+#: app/ImportPage.qml:41
 #, fuzzy, kde-format
 #| msgctxt "@title:group"
 #| msgid "Add New Trip"
 msgid "New Trip"
 msgstr "新增旅程"
 
-#: app/ImportPage.qml:45
+#: app/ImportPage.qml:44
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Add Trip"
 msgid "Add to Trip"
 msgstr "新增旅程"
 
-#: app/ImportPage.qml:55 app/TripGroupEditorDialog.qml:21
+#: app/ImportPage.qml:54 app/TripGroupEditorDialog.qml:21
 #: app/TripGroupMergeDialog.qml:56
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Trip name:"
 msgstr "旅程名稱："
 
-#: app/ImportPage.qml:74
+#: app/ImportPage.qml:73
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Add trip"
 msgid "Add to:"
 msgstr "新增旅程"
 
-#: app/ImportPage.qml:101
+#: app/ImportPage.qml:100
 #, fuzzy, kde-format
 #| msgid "Files or URLs to import."
 msgctxt "@title:group"
 msgid "Items to Import"
 msgstr "要匯入的檔案或網址。"
 
-#: app/ImportPage.qml:140
+#: app/ImportPage.qml:139
 #, kde-format
 msgctxt "@action:button"
 msgid "Import selection"

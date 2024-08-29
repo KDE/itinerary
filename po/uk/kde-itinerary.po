@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-26 00:39+0000\n"
+"POT-Creation-Date: 2024-08-29 00:40+0000\n"
 "PO-Revision-Date: 2024-08-26 22:49+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -280,7 +280,7 @@ msgstr "Ви справді хочете замінити ваше наявне 
 msgid "Replace"
 msgstr "Замінити"
 
-#: app/applicationcontroller.cpp:264
+#: app/applicationcontroller.cpp:285
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
@@ -289,7 +289,7 @@ msgstr[1] "Імпортовано %1 резервування"
 msgstr[2] "Імпортовано %1 резервувань"
 msgstr[3] "Імпортовано одне резервування"
 
-#: app/applicationcontroller.cpp:267
+#: app/applicationcontroller.cpp:288
 #, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
@@ -298,7 +298,7 @@ msgstr[1] "Імпортовано %1 безкоштовні квитки."
 msgstr[2] "Імпортовано %1 безкоштовних квитків."
 msgstr[3] "Імпортовано безкоштовний квиток."
 
-#: app/applicationcontroller.cpp:271
+#: app/applicationcontroller.cpp:292
 #, kde-format
 msgid "One health certificate imported."
 msgid_plural "%1 health certificates imported."
@@ -307,30 +307,30 @@ msgstr[1] "Імпортовано %1 сертифікати здоров'я."
 msgstr[2] "Імпортовано %1 сертифікатів здоров'я."
 msgstr[3] "Імпортовано один сертифікат здоров'я."
 
-#: app/applicationcontroller.cpp:285 app/applicationcontroller.cpp:326
-#: app/applicationcontroller.cpp:344 app/applicationcontroller.cpp:389
-#: app/applicationcontroller.cpp:428 app/applicationcontroller.cpp:446
+#: app/applicationcontroller.cpp:306 app/applicationcontroller.cpp:347
+#: app/applicationcontroller.cpp:365 app/applicationcontroller.cpp:410
+#: app/applicationcontroller.cpp:449 app/applicationcontroller.cpp:467
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Не вдалося експортувати: %1"
 
-#: app/applicationcontroller.cpp:300 app/applicationcontroller.cpp:309
-#: app/applicationcontroller.cpp:402 app/applicationcontroller.cpp:411
+#: app/applicationcontroller.cpp:321 app/applicationcontroller.cpp:330
+#: app/applicationcontroller.cpp:423 app/applicationcontroller.cpp:432
 #, kde-format
 msgid "Export completed."
 msgstr "Експортування завершено."
 
-#: app/applicationcontroller.cpp:336
+#: app/applicationcontroller.cpp:357
 #, kde-format
 msgid "Trip sent."
 msgstr "Подорож надіслано."
 
-#: app/applicationcontroller.cpp:438
+#: app/applicationcontroller.cpp:459
 #, kde-format
 msgid "Reservation sent."
 msgstr "Резервування надіслано."
 
-#: app/applicationcontroller.cpp:494
+#: app/applicationcontroller.cpp:515
 #, kde-format
 msgid "Import completed."
 msgstr "Імпортування завершено."
@@ -1796,35 +1796,35 @@ msgstr "Імпортувати"
 msgid "Trip"
 msgstr "Подорож"
 
-#: app/ImportPage.qml:42
+#: app/ImportPage.qml:41
 #, kde-format
 msgid "New Trip"
 msgstr "Нова подорож"
 
-#: app/ImportPage.qml:45
+#: app/ImportPage.qml:44
 #, kde-format
 msgid "Add to Trip"
 msgstr "Додати до подорожі"
 
-#: app/ImportPage.qml:55 app/TripGroupEditorDialog.qml:21
+#: app/ImportPage.qml:54 app/TripGroupEditorDialog.qml:21
 #: app/TripGroupMergeDialog.qml:56
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Trip name:"
 msgstr "Назва подорожі:"
 
-#: app/ImportPage.qml:74
+#: app/ImportPage.qml:73
 #, kde-format
 msgid "Add to:"
 msgstr "Додати до:"
 
-#: app/ImportPage.qml:101
+#: app/ImportPage.qml:100
 #, kde-format
 msgctxt "@title:group"
 msgid "Items to Import"
 msgstr "Записи для імпортування"
 
-#: app/ImportPage.qml:140
+#: app/ImportPage.qml:139
 #, kde-format
 msgctxt "@action:button"
 msgid "Import selection"

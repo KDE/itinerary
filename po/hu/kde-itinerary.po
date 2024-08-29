@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-26 00:39+0000\n"
+"POT-Creation-Date: 2024-08-29 00:40+0000\n"
 "PO-Revision-Date: 2024-03-26 16:14+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -281,21 +281,21 @@ msgstr ""
 msgid "Replace"
 msgstr "Csere"
 
-#: app/applicationcontroller.cpp:264
+#: app/applicationcontroller.cpp:285
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] "1 foglalás importálva."
 msgstr[1] "%1 foglalás importálva."
 
-#: app/applicationcontroller.cpp:267
+#: app/applicationcontroller.cpp:288
 #, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
 msgstr[0] "1 kártya importálva."
 msgstr[1] "%1 kártya importálva."
 
-#: app/applicationcontroller.cpp:271
+#: app/applicationcontroller.cpp:292
 #, fuzzy, kde-format
 #| msgid "Health certificate imported."
 msgid "One health certificate imported."
@@ -303,30 +303,30 @@ msgid_plural "%1 health certificates imported."
 msgstr[0] "Egészségügyi igazolás importálva."
 msgstr[1] "Egészségügyi igazolás importálva."
 
-#: app/applicationcontroller.cpp:285 app/applicationcontroller.cpp:326
-#: app/applicationcontroller.cpp:344 app/applicationcontroller.cpp:389
-#: app/applicationcontroller.cpp:428 app/applicationcontroller.cpp:446
+#: app/applicationcontroller.cpp:306 app/applicationcontroller.cpp:347
+#: app/applicationcontroller.cpp:365 app/applicationcontroller.cpp:410
+#: app/applicationcontroller.cpp:449 app/applicationcontroller.cpp:467
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Exportálás sikertelen: %1"
 
-#: app/applicationcontroller.cpp:300 app/applicationcontroller.cpp:309
-#: app/applicationcontroller.cpp:402 app/applicationcontroller.cpp:411
+#: app/applicationcontroller.cpp:321 app/applicationcontroller.cpp:330
+#: app/applicationcontroller.cpp:423 app/applicationcontroller.cpp:432
 #, kde-format
 msgid "Export completed."
 msgstr "Az exportálás befejeződött."
 
-#: app/applicationcontroller.cpp:336
+#: app/applicationcontroller.cpp:357
 #, kde-format
 msgid "Trip sent."
 msgstr "Kirándulás elküldve."
 
-#: app/applicationcontroller.cpp:438
+#: app/applicationcontroller.cpp:459
 #, kde-format
 msgid "Reservation sent."
 msgstr "Foglalás elküldve."
 
-#: app/applicationcontroller.cpp:494
+#: app/applicationcontroller.cpp:515
 #, kde-format
 msgid "Import completed."
 msgstr "Az importálás befejeződött."
@@ -1809,19 +1809,19 @@ msgstr "Importálás…"
 msgid "Trip"
 msgstr "Kirándulás elküldve."
 
-#: app/ImportPage.qml:42
+#: app/ImportPage.qml:41
 #, fuzzy, kde-format
 #| msgid "Delete Trip"
 msgid "New Trip"
 msgstr "Kirándulás törlése"
 
-#: app/ImportPage.qml:45
+#: app/ImportPage.qml:44
 #, fuzzy, kde-format
 #| msgid "Edit Boat Trip"
 msgid "Add to Trip"
 msgstr "Hajókirándulás szerkesztése"
 
-#: app/ImportPage.qml:55 app/TripGroupEditorDialog.qml:21
+#: app/ImportPage.qml:54 app/TripGroupEditorDialog.qml:21
 #: app/TripGroupMergeDialog.qml:56
 #, fuzzy, kde-format
 #| msgid "Ticket name"
@@ -1829,19 +1829,19 @@ msgctxt "@label:textbox"
 msgid "Trip name:"
 msgstr "Jegy neve"
 
-#: app/ImportPage.qml:74
+#: app/ImportPage.qml:73
 #, kde-format
 msgid "Add to:"
 msgstr ""
 
-#: app/ImportPage.qml:101
+#: app/ImportPage.qml:100
 #, fuzzy, kde-format
 #| msgid "Files or URLs to import."
 msgctxt "@title:group"
 msgid "Items to Import"
 msgstr "Importálandó fájlok vagy URL-ek."
 
-#: app/ImportPage.qml:140
+#: app/ImportPage.qml:139
 #, fuzzy, kde-format
 #| msgid "Import Reservation"
 msgctxt "@action:button"
