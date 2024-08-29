@@ -53,17 +53,20 @@ Kirigami.ScrollablePage {
     }
 
     function addTrainTrip() {
-        // find date/time at the current screen center
-        const idx = currentIndex();
-
         const HOUR = 60 * 60 * 1000;
-        var roundInterval = HOUR;
-        var dt;
-        if (listView.model.data(idx, TimelineModel.IsTimeboxedRole) && !listView.model.data(idx, TimelineModel.IsCanceledRole)) {
-            dt = listView.model.data(idx, TimelineModel.EndDateTimeRole);
-            roundInterval = 5 * 60 * 1000;
-        } else {
-            dt = listView.model.data(idx, TimelineModel.StartDateTimeRole);
+        let roundInterval = HOUR;
+        let dt = new Date();
+
+        if (!root.isEmptyTripGroup) {
+            // find date/time at the current screen center
+            const idx = currentIndex();
+
+            if (listView.model.data(idx, TimelineModel.IsTimeboxedRole) && !listView.model.data(idx, TimelineModel.IsCanceledRole)) {
+                dt = listView.model.data(idx, TimelineModel.EndDateTimeRole);
+                roundInterval = 5 * 60 * 1000;
+            } else {
+                dt = listView.model.data(idx, TimelineModel.StartDateTimeRole);
+            }
         }
 
         // clamp to future times and round to the next plausible hour
@@ -108,7 +111,7 @@ Kirigami.ScrollablePage {
             text: i18n("Add flight…")
             icon.name: KPublicTransport.LineMode.iconName(KPublicTransport.Line.Air)
             onTriggered: {
-                const dt = dateTimeAtIndex(currentIndex());
+                const dt = root.isEmptyTripGroup ? new Date() : dateTimeAtIndex(currentIndex());
                 let res =  Factory.makeFlightReservation();
                 let trip = res.reservationFor;
                 trip.departureTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), dt.getHours() == 0 ? 8 : dt.getHours() + 1, 0);
@@ -120,7 +123,7 @@ Kirigami.ScrollablePage {
             text: i18n("Add ferry trip…")
             icon.name: KPublicTransport.LineMode.iconName(KPublicTransport.Line.Ferry)
             onTriggered: {
-                const dt = dateTimeAtIndex(currentIndex());
+                const dt = root.isEmptyTripGroup ? new Date() : dateTimeAtIndex(currentIndex());
                 let res =  Factory.makeBoatReservation();
                 let trip = res.reservationFor;
                 trip.departureTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), dt.getHours() == 0 ? 8 : dt.getHours() + 1, 0);
@@ -132,7 +135,7 @@ Kirigami.ScrollablePage {
             text: i18n("Add accommodation…")
             icon.name: "go-home-symbolic"
             onTriggered: {
-                const dt = dateTimeAtIndex(currentIndex());
+                const dt = root.isEmptyTripGroup ? new Date() : dateTimeAtIndex(currentIndex());
                 let res =  Factory.makeLodgingReservation();
                 res.checkinTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), 15, 0);
                 res.checkoutTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate() + 1, 11, 0);
@@ -143,7 +146,7 @@ Kirigami.ScrollablePage {
             text: i18n("Add event…")
             icon.name: "meeting-attending"
             onTriggered: {
-                const dt = dateTimeAtIndex(currentIndex());
+                const dt = root.isEmptyTripGroup ? new Date() : dateTimeAtIndex(currentIndex());
                 let res = Factory.makeEventReservation();
                 let ev = res.reservationFor;
                 ev.startDate = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), dt.getHours() == 0 ? 8 : dt.getHours() + 1, 0);
@@ -155,7 +158,7 @@ Kirigami.ScrollablePage {
             text: i18n("Add restaurant…")
             icon.name: "qrc:///images/foodestablishment.svg"
             onTriggered: {
-                const dt = dateTimeAtIndex(currentIndex());
+                const dt = root.isEmptyTripGroup ? new Date() : dateTimeAtIndex(currentIndex());
                 let res =  Factory.makeFoodEstablishmentReservation();
                 res.startTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), 20, 0);
                 res.endTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), 22, 0);
@@ -650,7 +653,7 @@ Kirigami.ScrollablePage {
             icon.name: "view-calendar-day"
             onTriggered: listView.positionViewAtIndex(listView.model.todayRow, ListView.Beginning);
             tooltip: text
-            enabled: listView.model.todayRow >= 0
+            enabled: listView.model?.todayRow >= 0 ?? false
         }
 
         trailingAction: Kirigami.Action{
