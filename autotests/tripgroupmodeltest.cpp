@@ -402,6 +402,8 @@ private Q_SLOTS:
         tgMgr.setTransferManager(&transferMgr);
         ctrl->setTripGroupManager(&tgMgr);
         model.setTripGroupManager(&tgMgr);
+        QCOMPARE(model.rowCount(), 0);
+        QCOMPARE(model.emptyTripGroups().size(), 0);
 
         ImportController importer;
         importer.setReservationManager(&resMgr);
@@ -413,12 +415,14 @@ private Q_SLOTS:
 
         const auto tgId = tgMgr.createEmptyGroup(u"My New Trip"_s);
         QCOMPARE(model.rowCount(), 2);
+        QCOMPARE(model.emptyTripGroups().size(), 1);
         idx = model.index(0, 0);
         QCOMPARE(idx.data(TripGroupModel::PositionRole).toInt(), TripGroupModel::Future);
         QCOMPARE(idx.data(Qt::DisplayRole).toString(), "My New Trip"_L1);
 
         tgMgr.removeReservationsInGroup(tgId);
         QCOMPARE(model.rowCount(), 1);
+        QCOMPARE(model.emptyTripGroups().size(), 0);
     }
 };
 QTEST_GUILESS_MAIN(TripGroupModelTest)

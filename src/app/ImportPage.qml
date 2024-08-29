@@ -29,7 +29,8 @@ FormCard.FormCardPage {
             contentItem: ColumnLayout {
                 Components.RadioSelector{
                     id: newOrAddSelector
-                    defaultIndex: TripGroupModel.intersectingTripGroups(root.controller.selectionBeginDateTime, root.controller.selectionEndDateTime).length == 1 ? 1 : 0
+                    defaultIndex: TripGroupModel.intersectingTripGroups(root.controller.selectionBeginDateTime, root.controller.selectionEndDateTime).length == 1
+                        || TripGroupModel.emptyTripGroups().length > 0 ? 1 : 0
 
                     Layout.fillWidth: true
                     Layout.alignment: Qt.AlignHCenter
@@ -76,7 +77,7 @@ FormCard.FormCardPage {
             visible: newOrAddSelector.selectedIndex === 1
             model: TripGroupFilterProxyModel {
                 sourceModel: TripGroupModel
-                filteredGroupIds: TripGroupModel.adjacentTripGroups(root.controller.selectionBeginDateTime, root.controller.selectionEndDateTime)
+                filteredGroupIds: TripGroupModel.adjacentTripGroups(root.controller.selectionBeginDateTime, root.controller.selectionEndDateTime).concat(TripGroupModel.emptyTripGroups())
             }
 
             Connections {

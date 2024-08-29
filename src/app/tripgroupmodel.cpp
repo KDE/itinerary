@@ -188,6 +188,18 @@ QStringList TripGroupModel::intersectingTripGroups(const QDateTime &from, const 
     return res;
 }
 
+QStringList TripGroupModel::emptyTripGroups() const
+{
+    const auto it = std::find_if(m_tripGroups.begin(), m_tripGroups.end(), [this](const auto &tgId) {
+        return m_tripGroupManager->tripGroup(tgId).beginDateTime().isValid();
+    });
+
+    QStringList tgIds;
+    tgIds.reserve(std::distance(m_tripGroups.begin(), it));
+    std::copy(m_tripGroups.begin(), it, std::back_inserter(tgIds));
+    return tgIds;
+}
+
 // same as SortUtil::endDateTime but with a lower bound estimate
 // when the end time isn't available
 [[nodiscard]] static QDateTime estimatedEndTime(const QVariant &res)

@@ -52,6 +52,8 @@ public:
     Q_INVOKABLE [[nodiscard]] QStringList adjacentTripGroups(const QDateTime &from, const QDateTime &to) const;
     /** Trips intersecting with the given time frame. */
     Q_INVOKABLE [[nodiscard]] QStringList intersectingTripGroups(const QDateTime &from, const QDateTime &to) const;
+    /** Empty (newly created) trips. */
+    Q_INVOKABLE [[nodiscard]] QStringList emptyTripGroups() const;
 
     /** The most "current" batch to show with the "ticket check" action. */
     [[nodiscard]] QString currentBatchId() const;
