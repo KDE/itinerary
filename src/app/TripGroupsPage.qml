@@ -17,13 +17,20 @@ Kirigami.ScrollablePage {
     TripGroupEditorDialog {
         id: createTripDialog
         onAccepted: {
-            const tgId = TripGroupManager.createEmptyGroup(createTripDialog.tripGroupName)
-            const tg = TripGroupManager.tripGroup(tgId)
-            applicationWindow().pageStack.push(Qt.createComponent('org.kde.itinerary', 'TripGroupPage'), {
-                tripGroupId: tgId,
-                tripGroup: tg
-            });
+            const tgId = TripGroupManager.createEmptyGroup(createTripDialog.tripGroupName);
+            root.openTripGroupPage(tgId);
         }
+    }
+
+    /** Open trip group page for @p tgId. */
+    function openTripGroupPage(tgId: string) {
+        const tg = TripGroupManager.tripGroup(tgId);
+        if (tg.name === "")
+            return;
+        applicationWindow().pageStack.push(Qt.createComponent('org.kde.itinerary', 'TripGroupPage'), {
+            tripGroupId: tgId,
+            tripGroup: tg,
+        });
     }
 
     ListView {
@@ -56,7 +63,6 @@ Kirigami.ScrollablePage {
             required property date begin
             required property date end
             required property string tripGroupId
-            required property var tripGroup
 
             text: name
 
@@ -84,10 +90,7 @@ Kirigami.ScrollablePage {
                 }
             }
 
-            onClicked: applicationWindow().pageStack.push(Qt.createComponent('org.kde.itinerary', 'TripGroupPage'), {
-                tripGroupId: delegate.tripGroupId,
-                tripGroup: delegate.tripGroup,
-            });
+            onClicked: root.openTripGroupPage(delegate.tripGroupId)
         }
     }
 
