@@ -67,7 +67,9 @@ private Q_SLOTS:
         tgMgr.setReservationManager(&resMgr);
         tgMgr.setTransferManager(&transferMgr);
         ctrl->setTripGroupManager(&tgMgr);
+
         model.setTripGroupManager(&tgMgr);
+        QCOMPARE(model.currentTripGroupId(), QString());
 
         ImportController importer;
         importer.setReservationManager(&resMgr);
@@ -79,6 +81,7 @@ private Q_SLOTS:
         auto idx = model.index(0, 0);
         QCOMPARE(idx.data(Qt::DisplayRole).toString(), "San Francisco Airport (March 2017)"_L1);
         QCOMPARE(idx.data(TripGroupModel::PositionRole).toInt(), TripGroupModel::Current);
+        QCOMPARE(model.currentTripGroupId(), tgMgr.tripGroups().at(0));
 
         importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
         ctrl->commitImport(&importer);

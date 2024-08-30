@@ -200,6 +200,12 @@ QStringList TripGroupModel::emptyTripGroups() const
     return tgIds;
 }
 
+QString TripGroupModel::currentTripGroupId() const
+{
+    const auto tgIds = intersectingTripGroups(now(), now());
+    return tgIds.size() == 1 ? tgIds.at(0) : QString();
+}
+
 // same as SortUtil::endDateTime but with a lower bound estimate
 // when the end time isn't available
 [[nodiscard]] static QDateTime estimatedEndTime(const QVariant &res)

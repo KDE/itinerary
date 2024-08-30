@@ -55,6 +55,8 @@ public:
     /** Empty (newly created) trips. */
     Q_INVOKABLE [[nodiscard]] QStringList emptyTripGroups() const;
 
+    /** The currently ongoing trip group. */
+    Q_INVOKABLE [[nodiscard]] QString currentTripGroupId() const;
     /** The most "current" batch to show with the "ticket check" action. */
     [[nodiscard]] QString currentBatchId() const;
 
