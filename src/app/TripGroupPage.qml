@@ -664,4 +664,7 @@ Kirigami.ScrollablePage {
         }
     }
 
+    onTripGroupIdChanged: {
+        ApplicationController.contextTripGroupId = root.tripGroupId
+    }
 }

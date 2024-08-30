@@ -110,4 +110,25 @@ Kirigami.ScrollablePage {
             onTriggered: createTripDialog.open();
         }
     }
+
+    // HACK we have no reliable way of detecting:
+    //  - explicitly going back from a TripGroupPage (Qt::BackButton mouse event bypasses Page.backRequested...)
+    //  - this page being shown in the sense that it's not just a transient state while popping/clearing the page stack
+    Timer {
+        id: pageShownTimer
+        interval: 300
+        onTriggered: {
+            if (applicationWindow().pageStack.currentItem === root && root.visible) {
+                ApplicationController.contextTripGroupId = "";
+            }
+        }
+    }
+    Connections {
+        target: applicationWindow().pageStack
+        function onCurrentItemChanged() {
+            if (applicationWindow().pageStack.currentItem === root && root.visible) {
+                pageShownTimer.start();
+            }
+        }
+    }
 }

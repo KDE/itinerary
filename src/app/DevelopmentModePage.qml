@@ -73,7 +73,9 @@ Kirigami.ScrollablePage {
             Layout.fillWidth: true
             onClicked: {
                 applicationWindow().pageStack.goBack();
-                applicationWindow().pageStack.push(pagepool.loadPage(Qt.resolvedUrl("TripGroupsPage.qml")))
+                const page = pagepool.loadPage(Qt.resolvedUrl("TripGroupsPage.qml"))
+                applicationWindow().pageStack.push(page);
+                page.openTripGroupPage(ApplicationController.contextTripGroupId);
             }
         }
 

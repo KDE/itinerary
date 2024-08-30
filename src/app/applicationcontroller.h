@@ -41,6 +41,12 @@ class ApplicationController : public QObject
     Q_PROPERTY(QString extractorCapabilities READ extractorCapabilities CONSTANT)
     Q_PROPERTY(QVariant aboutData READ aboutData CONSTANT)
     Q_PROPERTY(QString userAgent READ userAgent CONSTANT)
+
+    /** The current trip group context, ie. the currently looked at trip group.
+     *  Not to be confused with the current trip group, ie. the one happening now.
+     */
+    Q_PROPERTY(QString contextTripGroupId MEMBER m_contextTripGroupId NOTIFY contextTripGroupIdChanged)
+
     Q_PROPERTY(bool hasHealthCertificateSupport READ hasHealthCertificateSupport CONSTANT)
     Q_PROPERTY(HealthCertificateManager *healthCertificateManager READ healthCertificateManager CONSTANT)
 public:
@@ -104,6 +110,8 @@ Q_SIGNALS:
     void editNewRestaurantReservation(const QVariant &res);
     void editNewEventReservation(const QVariant &res);
 
+    void contextTripGroupIdChanged();
+
 private:
     bool importBundle(KItinerary::File *file);
     void pkPassUpdated(const QString &passId);
@@ -125,6 +133,8 @@ private:
     PassManager *m_passMgr = nullptr;
     mutable HealthCertificateManager *m_healthCertMgr = nullptr;
     std::function<QNetworkAccessManager*()> m_namFactory;
+
+    QString m_contextTripGroupId;
 
     std::unique_ptr<QTemporaryDir> m_tempDir;
     bool m_importLock = false;
