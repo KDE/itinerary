@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-29 00:40+0000\n"
+"POT-Creation-Date: 2024-08-30 00:40+0000\n"
 "PO-Revision-Date: 2020-05-04 10:51+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -123,7 +123,7 @@ msgid "Add to calendar…"
 msgstr "Lisa dokument ..."
 
 #: app/ActionsCard.qml:74 app/main.qml:221 app/TripGroupDelegate.qml:182
-#: app/TripGroupPage.qml:422
+#: app/TripGroupPage.qml:620
 #, fuzzy, kde-format
 #| msgid "Export..."
 msgid "Export…"
@@ -134,7 +134,7 @@ msgstr "Ekspordi ..."
 #: app/HealthCertificatePage.qml:46 app/HealthCertificatePage.qml:60
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:171
 #: app/TicketPage.qml:47 app/TicketPage.qml:171 app/TimelinePage.qml:221
-#: app/TripGroupPage.qml:137
+#: app/TripGroupPage.qml:301
 #, kde-format
 msgid "Delete"
 msgstr "Kustuta"
@@ -150,19 +150,19 @@ msgstr "Kustuta dokument"
 msgid "Do you really want to delete this event?"
 msgstr "Kas tõesti kustutada see sündmus?"
 
-#: app/ActionsCard.qml:138 app/TimelinePage.qml:235 app/TripGroupPage.qml:57
+#: app/ActionsCard.qml:138 app/TimelinePage.qml:235 app/TripGroupPage.qml:221
 #, fuzzy, kde-format
 #| msgid "Export..."
 msgid "Export"
 msgstr "Ekspordi ..."
 
-#: app/ActionsCard.qml:141 app/TimelinePage.qml:238 app/TripGroupPage.qml:60
+#: app/ActionsCard.qml:141 app/TimelinePage.qml:238 app/TripGroupPage.qml:224
 #, fuzzy, kde-format
 #| msgid "My Itinerary"
 msgid "As Itinerary file…"
 msgstr "Minu itineraar"
 
-#: app/ActionsCard.qml:152 app/TimelinePage.qml:262 app/TripGroupPage.qml:82
+#: app/ActionsCard.qml:152 app/TimelinePage.qml:262 app/TripGroupPage.qml:246
 #, fuzzy, kde-format
 #| msgid "End time: %1"
 msgid "Send to %1"
@@ -174,14 +174,14 @@ msgstr "Lõpuaeg: %1"
 msgid "Export Reservation"
 msgstr "Reserveeringu import"
 
-#: app/ActionsCard.qml:168 app/TimelinePage.qml:278 app/TripGroupPage.qml:99
+#: app/ActionsCard.qml:168 app/TimelinePage.qml:278 app/TripGroupPage.qml:263
 #, fuzzy, kde-format
 #| msgid "KDE Itinerary files (*.itinerary)"
 msgid "Itinerary file (*.itinerary)"
 msgstr "KDE itineraarifailid (*.itinerary)"
 
 #: app/ActionsCard.qml:173 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:392
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:588
 #, fuzzy, kde-format
 #| msgid "Application"
 msgid "Actions"
@@ -1068,7 +1068,7 @@ msgid "Export Favorite Locations"
 msgstr "Lemmikasukohad"
 
 #: app/FavoriteLocationPage.qml:38 app/FavoriteLocationPage.qml:46
-#: app/TimelinePage.qml:296 app/TripGroupPage.qml:115
+#: app/TimelinePage.qml:296 app/TripGroupPage.qml:279
 #, fuzzy, kde-format
 #| msgid "PDF files (*.pdf)"
 msgid "GPX Files (*.gpx)"
@@ -1939,19 +1939,19 @@ msgstr "Impordi ..."
 msgid "Trip"
 msgstr "Reisid"
 
-#: app/ImportPage.qml:41
+#: app/ImportPage.qml:42
 #, fuzzy, kde-format
 #| msgid "Add transfer after"
 msgid "New Trip"
 msgstr "Lisa järgnev transfeer"
 
-#: app/ImportPage.qml:44
+#: app/ImportPage.qml:45
 #, fuzzy, kde-format
 #| msgid "Add transfer after"
 msgid "Add to Trip"
 msgstr "Lisa järgnev transfeer"
 
-#: app/ImportPage.qml:54 app/TripGroupEditorDialog.qml:21
+#: app/ImportPage.qml:55 app/TripGroupEditorDialog.qml:24
 #: app/TripGroupMergeDialog.qml:56
 #, fuzzy, kde-format
 #| msgid "Under name:"
@@ -1959,19 +1959,19 @@ msgctxt "@label:textbox"
 msgid "Trip name:"
 msgstr "Nimega:"
 
-#: app/ImportPage.qml:73
+#: app/ImportPage.qml:74
 #, fuzzy, kde-format
 #| msgid "Add transfer after"
 msgid "Add to:"
 msgstr "Lisa järgnev transfeer"
 
-#: app/ImportPage.qml:100
+#: app/ImportPage.qml:101
 #, kde-format
 msgctxt "@title:group"
 msgid "Items to Import"
 msgstr ""
 
-#: app/ImportPage.qml:139
+#: app/ImportPage.qml:140
 #, fuzzy, kde-format
 #| msgid "Import Reservation"
 msgctxt "@action:button"
@@ -2950,7 +2950,7 @@ msgctxt "not yet expired tickets"
 msgid "Valid"
 msgstr ""
 
-#: app/passmanager.cpp:275 app/TripGroupPage.qml:225
+#: app/passmanager.cpp:275 app/TripGroupPage.qml:401
 #, kde-format
 msgid "%1 - %2"
 msgstr ""
@@ -3732,49 +3732,50 @@ msgstr "Reisija %1"
 msgid "My Itinerary"
 msgstr "Minu itineraar"
 
-#: app/TimelinePage.qml:90
+#: app/TimelinePage.qml:90 app/TripGroupPage.qml:104
 #, fuzzy, kde-format
 #| msgid "Add transfer after"
 msgid "Add train trip…"
 msgstr "Lisa järgnev transfeer"
 
-#: app/TimelinePage.qml:97
+#: app/TimelinePage.qml:97 app/TripGroupPage.qml:111
 #, fuzzy, kde-format
 #| msgid "Add Document..."
 msgid "Add flight…"
 msgstr "Lisa dokument ..."
 
-#: app/TimelinePage.qml:109
+#: app/TimelinePage.qml:109 app/TripGroupPage.qml:123
 #, fuzzy, kde-format
 #| msgid "Add transfer after"
 msgid "Add ferry trip…"
 msgstr "Lisa järgnev transfeer"
 
-#: app/TimelinePage.qml:121
+#: app/TimelinePage.qml:121 app/TripGroupPage.qml:135
 #, fuzzy, kde-format
 #| msgid "Application"
 msgid "Add accommodation…"
 msgstr "Rakendus"
 
-#: app/TimelinePage.qml:132
+#: app/TimelinePage.qml:132 app/TripGroupPage.qml:146
 #, fuzzy, kde-format
 #| msgid "Add Document..."
 msgid "Add event…"
 msgstr "Lisa dokument ..."
 
-#: app/TimelinePage.qml:144
+#: app/TimelinePage.qml:144 app/TripGroupPage.qml:158
 #, fuzzy, kde-format
 #| msgid "Add transfer after"
 msgid "Add restaurant…"
 msgstr "Lisa järgnev transfeer"
 
-#: app/TimelinePage.qml:166 app/TripGroupPage.qml:450
+#: app/TimelinePage.qml:166 app/TripGroupPage.qml:652
 #, kde-format
 msgctxt "@action:button"
 msgid "Go To Now"
 msgstr ""
 
-#: app/TimelinePage.qml:173 app/TripGroupPage.qml:458 app/TripGroupsPage.qml:89
+#: app/TimelinePage.qml:173 app/TripGroupPage.qml:660
+#: app/TripGroupsPage.qml:105
 #, fuzzy, kde-format
 #| msgid "Add transfer after"
 msgctxt "@action:button"
@@ -3788,7 +3789,7 @@ msgctxt "@title:group"
 msgid "Add New Trip"
 msgstr "Lisa järgnev transfeer"
 
-#: app/TimelinePage.qml:214 app/TripGroupPage.qml:130
+#: app/TimelinePage.qml:214 app/TripGroupPage.qml:294
 #, fuzzy, kde-format
 #| msgid "Event Ticket"
 msgid "Delete Trip"
@@ -3800,19 +3801,19 @@ msgstr "Sündmuse pilet"
 msgid "Do you really want to delete this trip?"
 msgstr "Kas tõesti kustutada see sündmus?"
 
-#: app/TimelinePage.qml:247 app/TripGroupPage.qml:68
+#: app/TimelinePage.qml:247 app/TripGroupPage.qml:232
 #, kde-format
 msgid "As GPX file…"
 msgstr ""
 
-#: app/TimelinePage.qml:277 app/TimelinePage.qml:294 app/TripGroupPage.qml:98
-#: app/TripGroupPage.qml:113
+#: app/TimelinePage.qml:277 app/TimelinePage.qml:294 app/TripGroupPage.qml:262
+#: app/TripGroupPage.qml:277
 #, fuzzy, kde-format
 #| msgid "Export..."
 msgid "Export Trip"
 msgstr "Ekspordi ..."
 
-#: app/TimelinePage.qml:493 app/TripGroupPage.qml:365
+#: app/TimelinePage.qml:493 app/TripGroupPage.qml:561
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Tänaseks ei ole itineraaris midagi."
@@ -4083,7 +4084,7 @@ msgid_plural "Date: %2 (%1 days)"
 msgstr[0] "Kuupäev: %2 (üks päev)"
 msgstr[1] "Kuupäev: %2 (%1 päeva)"
 
-#: app/TripGroupDelegate.qml:116 app/TripGroupPage.qml:232
+#: app/TripGroupDelegate.qml:116 app/TripGroupPage.qml:408
 #: app/WeatherForecastDelegate.qml:48 app/WeatherForecastPage.qml:93
 #, fuzzy, kde-format
 #| msgid "%1°C / %2°C"
@@ -4106,7 +4107,7 @@ msgstr "%1: mõned mitteühilduvad pistikud (%2)"
 msgid "%1: no compatible power plugs (%2)"
 msgstr "%1: ühilduvad pistikupesad puuduvad (%2)"
 
-#: app/TripGroupDelegate.qml:145 app/TripGroupPage.qml:258
+#: app/TripGroupDelegate.qml:145 app/TripGroupPage.qml:434
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
@@ -4119,34 +4120,34 @@ msgstr[1] ""
 msgid "Edit…"
 msgstr "Muuda"
 
-#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:427
+#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:627
 #, fuzzy, kde-format
 #| msgid "Event Ticket"
 msgid "Delete trip"
 msgstr "Sündmuse pilet"
 
-#: app/TripGroupEditorDialog.qml:17
+#: app/TripGroupEditorDialog.qml:20
 #, fuzzy, kde-format
 #| msgid "Add transfer after"
 msgctxt "@title:window"
 msgid "Add Trip"
 msgstr "Lisa järgnev transfeer"
 
-#: app/TripGroupEditorDialog.qml:17
+#: app/TripGroupEditorDialog.qml:20
 #, fuzzy, kde-format
 #| msgid "Export..."
 msgctxt "@title:window"
 msgid "Edit Trip"
 msgstr "Ekspordi ..."
 
-#: app/tripgroupmanager.cpp:852
+#: app/tripgroupmanager.cpp:857
 #, fuzzy, kde-format
 #| msgid "%1 (%2 %3)"
 msgctxt "%1 is destination, %2 is the standalone month name, %3 is the year"
 msgid "%1 (%2 %3)"
 msgstr "%1 (%2 %3)"
 
-#: app/tripgroupmanager.cpp:854
+#: app/tripgroupmanager.cpp:859
 #, fuzzy, kde-format
 #| msgid "%1 (%2/%3 %4)"
 msgctxt ""
@@ -4155,7 +4156,7 @@ msgctxt ""
 msgid "%1 (%2/%3 %4)"
 msgstr "%1 (%2/%3 %4)"
 
-#: app/tripgroupmanager.cpp:856
+#: app/tripgroupmanager.cpp:861
 #, fuzzy, kde-format
 #| msgid "%1 (%2/%3)"
 msgctxt "%1 is destination, %2 and %3 are years"
@@ -4181,50 +4182,69 @@ msgctxt "@action:button"
 msgid "Merge"
 msgstr "Sündmuse pilet"
 
-#: app/TripGroupPage.qml:131
+#: app/TripGroupPage.qml:174
+#, fuzzy, kde-format
+#| msgid "Add transfer after"
+msgctxt "@title:group"
+msgid "Add to Trip"
+msgstr "Lisa järgnev transfeer"
+
+#: app/TripGroupPage.qml:295
 #, fuzzy, kde-format
 #| msgid "Do you really want to delete this event?"
 msgid "Do you really want to delete the trip '%1'?"
 msgstr "Kas tõesti kustutada see sündmus?"
 
-#: app/TripGroupPage.qml:226
+#: app/TripGroupPage.qml:402
 #, kde-format
 msgid "One day"
 msgid_plural "%1 days"
 msgstr[0] ""
 msgstr[1] ""
 
-#: app/TripGroupPage.qml:246
+#: app/TripGroupPage.qml:422
 #, fuzzy, kde-format
 #| msgid "Some incompatible power sockets: %1"
 msgid "Some incompatible power sockets (%1)"
 msgstr "Mõned mitteühilduvad pistikupesad: %1"
 
-#: app/TripGroupPage.qml:248
+#: app/TripGroupPage.qml:424
 #, fuzzy, kde-format
 #| msgid "Some incompatible power plugs: %1"
 msgid "Some incompatible power plugs (%1)"
 msgstr "Mõned mitteühilduvad pistikud: %1"
 
-#: app/TripGroupPage.qml:251
+#: app/TripGroupPage.qml:427
 #, fuzzy, kde-format
 #| msgid "%1: no compatible power plugs (%2)"
 msgid "No compatible power plugs (%1)"
 msgstr "%1: ühilduvad pistikupesad puuduvad (%2)"
 
-#: app/TripGroupPage.qml:397
+#: app/TripGroupPage.qml:440
+#, fuzzy, kde-format
+#| msgid "Import..."
+msgid "Import"
+msgstr "Impordi ..."
+
+#: app/TripGroupPage.qml:454
+#, fuzzy, kde-format
+#| msgid "Add transfer after"
+msgid "Add"
+msgstr "Lisa järgnev transfeer"
+
+#: app/TripGroupPage.qml:593
 #, fuzzy, kde-format
 #| msgid "Rename"
 msgid "Rename…"
 msgstr "Muuda nime"
 
-#: app/TripGroupPage.qml:406
+#: app/TripGroupPage.qml:602
 #, fuzzy, kde-format
 #| msgid "Add transfer after"
 msgid "Merge trips…"
 msgstr "Lisa järgnev transfeer"
 
-#: app/TripGroupPage.qml:416
+#: app/TripGroupPage.qml:613
 #, fuzzy, kde-format
 #| msgid "Add transfer after"
 msgid "Split trip…"
@@ -4237,26 +4257,37 @@ msgctxt "@title:window"
 msgid "Trips"
 msgstr "Reisid"
 
-#: app/TripGroupsPage.qml:27
+#: app/TripGroupsPage.qml:39
 #, fuzzy, kde-format
 #| msgid "Event Ticket"
 msgctxt "List section header"
 msgid "Past trips"
 msgstr "Sündmuse pilet"
 
-#: app/TripGroupsPage.qml:29
+#: app/TripGroupsPage.qml:41
 #, fuzzy, kde-format
 #| msgid "Add transfer after"
 msgctxt "List section header"
 msgid "Future trips"
 msgstr "Lisa järgnev transfeer"
 
-#: app/TripGroupsPage.qml:31
+#: app/TripGroupsPage.qml:43
 #, fuzzy, kde-format
 #| msgid "Event Ticket"
 msgctxt "List section header"
 msgid "Current trip"
 msgstr "Sündmuse pilet"
+
+#: app/TripGroupsPage.qml:77
+#, kde-format
+msgctxt "date range"
+msgid "%1 - %2"
+msgstr ""
+
+#: app/TripGroupsPage.qml:78
+#, kde-format
+msgid "Upcoming"
+msgstr ""
 
 #: app/TripGroupSplitPage.qml:15
 #, fuzzy, kde-format
