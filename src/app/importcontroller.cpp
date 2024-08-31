@@ -775,7 +775,7 @@ QDateTime ImportController::selectionEndDateTime() const
             end = end.isValid() ? std::max(end, KItinerary::SortUtil::endDateTime(elem.data)) : KItinerary::SortUtil::endDateTime(elem.data);
         }
     }
-    return end;
+    return end.isValid() ? end :selectionBeginDateTime();
 }
 
 void ImportController::setAutoCommitEnabled(bool enable)
