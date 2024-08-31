@@ -209,7 +209,7 @@ private:
 
     QString m_tripGroupName;
     QString m_tripGroupId;
-    TripGroup m_tripGroup; // in case of importing an exsiting single group from a bundle
+    TripGroup m_tripGroup; // in case of importing an existing single group from a bundle
 
     bool m_autoCommitEnabled = false;
 

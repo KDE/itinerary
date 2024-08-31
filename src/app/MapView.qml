@@ -9,7 +9,7 @@ import QtPositioning
 import QtLocation as QtLocation
 
 
-/** QtLocation map view with standard intercation settings. */
+/** QtLocation map view with standard interaction settings. */
 QtLocation.Map {
     id: map
     plugin: applicationWindow().osmPlugin()

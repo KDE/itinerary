@@ -279,7 +279,7 @@ void TransferManager::checkReservation(const QString &resId, const QVariant &res
     }
 }
 
-/** Checks whether @p loc1 and @p loc2 are far enough apart to need a tranfer,
+/** Checks whether @p loc1 and @p loc2 are far enough apart to need a transfer,
  *  with sufficient certainty.
  */
 static bool isLikelyNotSameLocation(const QVariant &loc1, const QVariant &loc2)
@@ -299,7 +299,7 @@ static bool isLikelyNotSameLocation(const QVariant &loc1, const QVariant &loc2)
 }
 
 /** Check whether @p loc1 and @p loc2 have a realistic distance for a transfer,
- *  assuming we know their geo coodinates.
+ *  assuming we know their geo coordinates.
  *  This helps filtering out non-sense transfers if we end up with entries in the wrong order.
  */
 static bool isPlausibleDistance(const QVariant &loc1, const QVariant &loc2)
@@ -333,7 +333,7 @@ TransferManager::CheckTransferResult TransferManager::checkTransferBefore(const 
     // - res is a location change and we are not at the departure location yet
     // - res is an event and we are not at its location already
 
-    // find the first preceeding non-cancelled reservation
+    // find the first preceding non-cancelled reservation
     QString prevResId = resId;
     QVariant prevRes;
     while (true) {

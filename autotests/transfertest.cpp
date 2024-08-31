@@ -80,7 +80,7 @@ private Q_SLOTS:
 //         ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/akademy2018-program.json")));
         ctrl->commitImport(&importer);
 
-        QCOMPARE(addSpy.size() - removeSpy.size(), 3); // to/from home, and one inbetween
+        QCOMPARE(addSpy.size() - removeSpy.size(), 3); // to/from home, and one in between
 
         auto batchId = resMgr.batches().at(0);
         auto transfer = mgr.transfer(batchId, Transfer::Before);

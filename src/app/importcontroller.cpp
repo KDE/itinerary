@@ -367,7 +367,7 @@ void ImportController::importFromIntent(const KAndroidExtras::Intent &intent)
                 att->contentType()->setName(attUrl.fileName(), "utf-8");
                 QFile f(a);
                 if (!f.open(QFile::ReadOnly)) {
-                    qCWarning(Log) << "Failed to open attachement:" << a << f.errorString();
+                    qCWarning(Log) << "Failed to open attachment:" << a << f.errorString();
                     continue;
                 }
                 att->setBody(f.readAll());

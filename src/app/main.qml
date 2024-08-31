@@ -389,7 +389,7 @@ Kirigami.ApplicationWindow {
 
     // workaround for Back key handling on Android causing the application to close
     // on secondary layers if those have no focus (either explicitly or via interaction)
-    // ### if there isn't a proepr fix for this, should this happen in Kirigami instead?
+    // ### if there isn't a proper fix for this, should this happen in Kirigami instead?
     Connections {
         target: pageStack.layers
         function onCurrentItemChanged() {

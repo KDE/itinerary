@@ -36,7 +36,7 @@ int main(int argc, char **argv)
     parser.addOption(backendOpt);
     QCommandLineOption fromOpt(QStringLiteral("f"), QStringLiteral("Origin station name"), QStringLiteral("from"));
     parser.addOption(fromOpt);
-    QCommandLineOption toOpt(QStringLiteral("t"), QStringLiteral("Desitination station name"), QStringLiteral("to"));
+    QCommandLineOption toOpt(QStringLiteral("t"), QStringLiteral("Destination station name"), QStringLiteral("to"));
     parser.addOption(toOpt);
     parser.process(app);
 

@@ -80,7 +80,7 @@ private:
         CanAddManually, /// transfer is possible, but should only be added manually
         ShouldRemove /// invalid transfer, cannot be added or should be removed
     };
-    /**  Those two are used in both the automatical and manual code paths.
+    /**  Those two are used in both the automatic and manual code paths.
      *   @param transfer is filled with all required parameters, but not added yet
      */
     CheckTransferResult checkTransferBefore(const QString &resId, const QVariant &res, Transfer &transfer) const;

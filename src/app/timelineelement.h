@@ -92,7 +92,7 @@ public:
      */
     bool isInformational() const;
 
-    /** Destination location, ie. the location we are in when/fter
+    /** Destination location, ie. the location we are in when/after
      *  this element took effect.
      *  @return a KItinerary place-like vocabulary type.
      */

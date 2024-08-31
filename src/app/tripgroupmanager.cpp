@@ -322,7 +322,7 @@ void TripGroupManager::transferChanged(const QString &resId, Transfer::Alignment
     const auto tgIt = m_tripGroups.find(tgId);
     assert(tgIt != m_tripGroups.end() && !tgIt.value().elements().empty());
 
-    // if tranfers leading or trailing the trip group changed, the start/end time of the group change
+    // if transfers leading or trailing the trip group changed, the start/end time of the group change
     if ((alignment == Transfer::Before && tgIt.value().elements().constFirst() == resId)
      || (alignment == Transfer::After && tgIt.value().elements().constLast() == resId)) {
         if (recomputeTripGroupTimes(tgIt.value())) {

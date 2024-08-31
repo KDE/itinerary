@@ -113,7 +113,7 @@ namespace Internal {
  * - array return types also result in a wrapper class that can be implicitly converted to a sequential
  *   container or a @p QJniObject representing the JNI array.
  *
- * Thie macro can only be placed in classes having the @c JNI_OBJECT macro.
+ * This macro can only be placed in classes having the @c JNI_OBJECT macro.
  *
  * @param RetT The return type. Must either be a primitive type or a type declared with @c JNI_TYPE
  * @param Name The name of the method. Must match the JNI method to be called exactly.
@@ -144,7 +144,7 @@ inline auto Name( JNI_PARAMS(__VA_ARGS__) ) const { \
  * - array return types also result in a wrapper class that can be implicitly converted to a sequential
  *   container or a @p QJniObject representing the JNI array.
  *
- * Thie macro can only be placed in classes having the @c JNI_UNMANAGED_OBJECT or @c JNI_OBJECT macro.
+ * This macro can only be placed in classes having the @c JNI_UNMANAGED_OBJECT or @c JNI_OBJECT macro.
  *
  * @param RetT The return type. Must either be a primitive type or a type declared with @c JNI_TYPE
  * @param Name The name of the method. Must match the JNI method to be called exactly.
@@ -165,7 +165,7 @@ static inline auto Name( JNI_PARAMS(__VA_ARGS__) ) { \
  * - non-primitive types can be either passed as @c QJniObject instance or with a type that has an
  *   conversion registered with @c JNI_DECLARE_CONVERTER.
  *
- * Thie macro can only be placed in classes having @c JNI_OBJECT macro.
+ * This macro can only be placed in classes having @c JNI_OBJECT macro.
  *
  * @param Name The name of the method. Must match the JNI method to be called exactly.
  * @param Args A list or argument types (can be empty). Must either be primitive types or types declared

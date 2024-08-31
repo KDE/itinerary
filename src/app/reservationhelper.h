@@ -31,7 +31,7 @@ public:
     /** Returns whether @p res is an unbound reservation. */
     [[nodiscard]] static bool isUnbound(const QVariant &res);
 
-    /** Checks whether the given reservation is canclled. */
+    /** Checks whether the given reservation is cancelled. */
     [[nodiscard]] static bool isCancelled(const QVariant &res);
 
     /** Display label for a given reservation. */

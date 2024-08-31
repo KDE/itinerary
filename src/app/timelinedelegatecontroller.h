@@ -124,7 +124,7 @@ public:
     Q_INVOKABLE QJSValue arrivalMapArguments() const;
     /** Map page arguments for the departure side, if this is a location change element. */
     Q_INVOKABLE QJSValue departureMapArguments() const;
-    /** Map page arugments for an element that isn't a location change. */
+    /** Map page arguments for an element that isn't a location change. */
     Q_INVOKABLE QJSValue mapArguments() const;
 
     /** Add the current reservation to the calendar @p cal. */

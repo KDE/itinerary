@@ -76,7 +76,7 @@ public:
     static QVariant mergeArrival(const QVariant &res, const KPublicTransport::Stopover &arr);
     static QVariant mergeJourney(const QVariant &res, const KPublicTransport::JourneySection &journey);
 
-    /** Checkes whether @p mode is a train or bus mode respectively. */
+    /** Checks whether @p mode is a train or bus mode respectively. */
     static bool isTrainMode(KPublicTransport::Line::Mode mode);
     static bool isBusMode(KPublicTransport::Line::Mode mode);
     static bool isBoatMode(KPublicTransport::Line::Mode mode);

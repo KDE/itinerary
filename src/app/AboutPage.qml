@@ -214,7 +214,7 @@ FormCard.AboutPage {
             id: versionLabel
             text: i18n("Application version: %1", ApplicationController.version)
 
-            // developement mode activation
+            // development mode activation
             property int tapCount: 0
             onClicked: {
                 versionLabel.tapCount++;

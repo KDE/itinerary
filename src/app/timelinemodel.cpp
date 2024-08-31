@@ -547,7 +547,7 @@ void TimelineModel::updateInformationElements()
     // the location information is shown after location changes or before stationary elements
     // when transitioning into a location that:
     // - differs in one or more properties from the home country, and the difference
-    // was introduced by this transtion
+    // was introduced by this transition
     // - differs in timezone from the previous location, and that timezone has a different
     // offset at the time of transition
 

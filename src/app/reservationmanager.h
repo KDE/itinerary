@@ -65,7 +65,7 @@ public:
     /** Returns the batch happening after @p batchId, if any. */
     QString nextBatch(const QString &batchId) const;
 
-    /** Validator configured to acceppt all supported reservation types. */
+    /** Validator configured to accept all supported reservation types. */
     [[nodiscard]] static KItinerary::ExtractorValidator validator();
 
     /** Returns the reservation for which @p res is a partial update. */
