@@ -15,9 +15,11 @@ import org.kde.itinerary
 EditorPage {
     id: root
 
-    title: i18nc("@title", "Edit Restaurant")
+    title: root.isNew ? i18nc("@title", "New Restaurant")
+        : i18nc("@title", "Edit Restaurant")
 
     isValidInput: startTimeEdit.hasValue && restaurantName.text !== "" && (!endTimeEdit.hasValue || startTimeEdit.value < endTimeEdit.value)
+    tripGroupSelector: tripGroupSelector
 
     function apply(reservation) {
         var foodEstablishment = address.save(reservation.reservationFor)
@@ -45,6 +47,23 @@ EditorPage {
             text: i18n("Restaurant")
 
             Layout.fillWidth: true
+        }
+
+        FormCard.FormHeader {
+            title: i18n("Trip")
+            visible: root.isNew && Settings.developmentMode
+        }
+
+        TripGroupSelectorCard {
+            id: tripGroupSelector
+            visible: root.isNew && Settings.developmentMode
+            suggestedName: restaurantName.text
+            tripGroupCandidates: TripGroupModel.intersectingXorAdjacentTripGroups(startTimeEdit.value, endTimeEdit.hasValue ? endTimeEdit.value : startTimeEdit.value)
+        }
+
+        FormCard.FormHeader {
+            title: i18n("Restaurant")
+            visible: root.isNew && Settings.developmentMode
         }
 
         FormCard.FormCard {

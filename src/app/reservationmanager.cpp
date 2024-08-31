@@ -230,9 +230,10 @@ QString ReservationManager::addReservation(const QVariant &res, const QString &r
     return resId;
 }
 
-void ReservationManager::addReservationWithPostProcessing(const QVariant &resData)
+QString ReservationManager::addReservationWithPostProcessing(const QVariant &resData)
 {
-    addReservationsWithPostProcessing({resData});
+    const auto l = addReservationsWithPostProcessing({resData});
+    return !l.isEmpty() ? l.at(0) : QString();
 }
 
 void ReservationManager::updateReservation(const QString &resId, const QVariant &res)

@@ -16,9 +16,11 @@ import org.kde.itinerary
 EditorPage {
     id: root
 
-    title: i18nc("event as in concert/conference/show, not as in appointment", "Edit Event")
+    title: root.isNew ? i18nc("event as in concert/conference/show, not as in appointment", "New Event")
+        : i18nc("event as in concert/conference/show, not as in appointment", "Edit Event")
 
     isValidInput: eventName.text !== "" && startDateEdit.hasValue && (!endDateEdit.hasValue || startDateEdit.value < endDateEdit.value)
+    tripGroupSelector: tripGroupSelector
 
     function apply(reservation) {
         let event = reservation.reservationFor;
@@ -47,6 +49,18 @@ EditorPage {
 
     ColumnLayout {
         spacing: 0
+
+        FormCard.FormHeader {
+            title: i18n("Trip")
+            visible: root.isNew && Settings.developmentMode
+        }
+
+        TripGroupSelectorCard {
+            id: tripGroupSelector
+            visible: root.isNew && Settings.developmentMode
+            suggestedName: eventName.text
+            tripGroupCandidates: TripGroupModel.intersectingXorAdjacentTripGroups(startDateEdit.value, endDateEdit.hasValue ? endDateEdit.value : startDateEdit.value)
+        }
 
         FormCard.FormHeader {
             title: i18nc("event as in concert/conference/show, not as in appointment", "Event")

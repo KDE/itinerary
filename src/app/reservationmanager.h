@@ -52,7 +52,7 @@ public:
      *  ids that previously existed, in case the extracted elements could be merged.
      */
     QList<QString> addReservationsWithPostProcessing(const QList<QVariant> &resData);
-    Q_INVOKABLE void addReservationWithPostProcessing(const QVariant &resData);
+    Q_INVOKABLE QString addReservationWithPostProcessing(const QVariant &resData);
 
     const std::vector<QString>& batches() const;
     bool hasBatch(const QString &batchId) const;

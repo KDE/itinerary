@@ -192,6 +192,16 @@ QStringList TripGroupModel::intersectingTripGroups(const QDateTime &from, const 
     return res;
 }
 
+QStringList TripGroupModel::intersectingXorAdjacentTripGroups(const QDateTime &from, const QDateTime &to) const
+{
+    auto l = intersectingTripGroups(from, to);
+    if (!l.isEmpty()) {
+        return l;
+    }
+    l = adjacentTripGroups(from, to);
+    return l;
+}
+
 QStringList TripGroupModel::emptyTripGroups() const
 {
     const auto it = std::find_if(m_tripGroups.begin(), m_tripGroups.end(), [this](const auto &tgId) {

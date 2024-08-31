@@ -293,6 +293,13 @@ void ApplicationController::commitImport(ImportController *importController)
     }
 }
 
+void ApplicationController::addNewReservation(const QVariant &res, const QString &tgId)
+{
+    TripGroupingBlocker blocker(m_tripGroupMgr);
+    const auto resId = m_resMgr->addReservationWithPostProcessing(res);
+    m_tripGroupMgr->addToGroup({resId}, tgId);
+}
+
 void ApplicationController::exportToFile(const QUrl &url)
 {
     if (url.isEmpty()) {

@@ -20,16 +20,29 @@ Kirigami.ScrollablePage {
     property QtObject controller: null
     property var reservation: ReservationManager.reservation(root.batchId);
 
+    /** This is creating a new element, rather than editing an existing one. */
+    readonly property bool isNew: batchId ? false : true
+
     property T.Action saveAction: QQC2.Action {
         text: i18nc("@action:button", "Save")
         icon.name: "document-save"
-        enabled: root.isValidInput
+        enabled: root.isValidInput && (!root.isNew || !root.tripGroupSelector || root.tripGroupSelector.isValidInput || !Settings.developmentMode)
         onTriggered: {
             const newRes = root.apply(root.reservation);
-            if (root.batchId) { // update to an existing element
+            if (!root.isNew) { // update to an existing element
                 ReservationManager.updateReservation(root.batchId, newRes);
             } else { // newly added element
-                ReservationManager.addReservationWithPostProcessing(newRes);
+                if (!root.tripGroupSelector || !Settings.developmentMode) {
+                    ReservationManager.addReservationWithPostProcessing(newRes);
+                } else {
+                    let tgId = "";
+                    if (root.tripGroupSelector.mode === TripGroupSelectorCard.Mode.Create) {
+                        tgId = TripGroupManager.createEmptyGroup(root.tripGroupSelector.name);
+                    } else {
+                        tgId = root.tripGroupSelector.tripGroupId;
+                    }
+                    ApplicationController.addNewReservation(newRes, tgId);
+                }
             }
             pageStack.pop();
         }
@@ -37,6 +50,9 @@ Kirigami.ScrollablePage {
 
     /** Input validation for derived pages. */
     property bool isValidInput: true
+
+    /** Trip group selector card, for new reservations, if present. */
+    property TripGroupSelectorCard tripGroupSelector: null
 
     /** Returns the city/region/country we are assumed to be in at the given time. */
     function cityAtTime(dt) {

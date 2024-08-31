@@ -16,9 +16,10 @@ import org.kde.itinerary
 EditorPage {
     id: root
 
-    title: i18n("Edit Hotel Reservation")
+    title: root.isNew ? i18n("New Hotel Reservation") : i18n("Edit Hotel Reservation")
 
     isValidInput: checkinEdit.hasValue && checkoutEdit.hasValue && hotelName.text !== "" && checkinEdit.value < checkoutEdit.value
+    tripGroupSelector: tripGroupSelector
 
     function apply(reservation) {
         let hotel = address.save(reservation.reservationFor);
@@ -44,6 +45,18 @@ EditorPage {
         CardPageTitle {
             emojiIcon: "🏨"
             text: i18n("Hotel")
+        }
+
+        FormCard.FormHeader {
+            title: i18n("Trip")
+            visible: root.isNew && Settings.developmentMode
+        }
+
+        TripGroupSelectorCard {
+            id: tripGroupSelector
+            visible: root.isNew && Settings.developmentMode
+            suggestedName: hotelName.text
+            tripGroupCandidates: TripGroupModel.intersectingXorAdjacentTripGroups(checkinEdit.value, checkoutEdit.hasValue ? checkoutEdit.value : checkinEdit.value)
         }
 
         FormCard.FormHeader {

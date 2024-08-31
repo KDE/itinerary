@@ -14,10 +14,11 @@ import org.kde.itinerary
 
 EditorPage {
     id: root
-    title: i18n("Edit Boat Trip")
+    title: root.isNew ? i18n("New Boat Trip") : i18n("Edit Boat Trip")
 
     isValidInput: departureTerminalName.text !== "" && arrivalTerminalName.text !== "" && departureTimeEdit.hasValue
         && (!arrivalTimeEdit.hasValue || departureTimeEdit.value < arrivalTimeEdit.value)
+    tripGroupSelector: tripGroupSelector
 
     function apply(reservation) {
         let trip = reservation.reservationFor;
@@ -52,6 +53,18 @@ EditorPage {
         CardPageTitle {
             emojiIcon: "🛳️"
             text: i18n("Boat")
+        }
+
+        FormCard.FormHeader {
+            title: i18n("Trip")
+            visible: root.isNew && Settings.developmentMode
+        }
+
+        TripGroupSelectorCard {
+            id: tripGroupSelector
+            visible: root.isNew && Settings.developmentMode
+            suggestedName: arrivalTerminalName.text
+            tripGroupCandidates: TripGroupModel.intersectingXorAdjacentTripGroups(departureTimeEdit.value, arrivalTimeEdit.hasValue ? arrivalTimeEdit.value : departureTimeEdit.value)
         }
 
         FormCard.FormHeader {

@@ -52,6 +52,10 @@ public:
     Q_INVOKABLE [[nodiscard]] QStringList adjacentTripGroups(const QDateTime &from, const QDateTime &to) const;
     /** Trips intersecting with the given time frame. */
     Q_INVOKABLE [[nodiscard]] QStringList intersectingTripGroups(const QDateTime &from, const QDateTime &to) const;
+    /** Intersecting trips if present, otherwise adjacent trips.
+     *  Convenience method combining the two above results.
+     */
+    Q_INVOKABLE [[nodiscard]] QStringList intersectingXorAdjacentTripGroups(const QDateTime &from, const QDateTime &to) const;
     /** Empty (newly created) trips. */
     Q_INVOKABLE [[nodiscard]] QStringList emptyTripGroups() const;
 

@@ -14,12 +14,13 @@ import org.kde.itinerary
 
 EditorPage {
     id: root
-    title: i18n("Edit Flight")
+    title: root.isNew ? i18n("New Flight") : i18n("Edit Flight")
 
     isValidInput: departureTime.hasValue
         && (!arrivalTime.hasValue || departureTime.value < arrivalTime.value)
         && (root.reservation.reservationFor.departureAirport.iataCode !== "" || departureAirport.text !== "")
         && (root.reservation.reservationFor.arrivalAirport.iataCode !== "" || arrivalAirport.text !== "")
+    tripGroupSelector: tripGroupSelector
 
     function apply(reservation) {
         var flight = reservation.reservationFor;
@@ -64,6 +65,18 @@ EditorPage {
             text: reservation.reservationFor.airline.iataCode + " " + reservation.reservationFor.flightNumber
 
             Layout.fillWidth: true
+        }
+
+        FormCard.FormHeader {
+            title: i18n("Trip")
+            visible: root.isNew && Settings.developmentMode
+        }
+
+        TripGroupSelectorCard {
+            id: tripGroupSelector
+            visible: root.isNew && Settings.developmentMode
+            suggestedName: arrivalAirportName.text
+            tripGroupCandidates: TripGroupModel.intersectingXorAdjacentTripGroups(departureTime.value, arrivalTime.hasValue ? arrivalTime.value : departureTime.value)
         }
 
         FormCard.FormHeader {
