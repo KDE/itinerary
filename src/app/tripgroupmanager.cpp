@@ -1075,7 +1075,7 @@ void TripGroupManager::addToGroup(const QStringList &elements, const QString &tg
     recomputeTripGroupTimes(tg);
 
     tg.store(fileForGroup(tgId));
-    Q_EMIT tripGroupAdded(tgId);
+    Q_EMIT tripGroupChanged(tgId);
 }
 
 #include "moc_tripgroupmanager.cpp"
