@@ -27,6 +27,8 @@ using namespace KAndroidExtras;
 
 #include <csignal>
 
+using namespace Qt::Literals;
+
 void DevelopmentModeController::enablePublicTransportLogging()
 {
 #ifdef Q_OS_ANDROID
@@ -108,6 +110,15 @@ QString DevelopmentModeController::screenInfo()
         info += QLatin1StringView("device pixel ratio: ") + QString::number(screen->devicePixelRatio()) + QLatin1Char('\n');
         info += QLatin1Char('\n');
     }
+    return info;
+}
+
+QString DevelopmentModeController::localeInfo()
+{
+    QString info;
+    info += "locale name: "_L1 + QLocale().name() + '\n'_L1;
+    info += "bcp47: "_L1 + QLocale().bcp47Name() + '\n'_L1;
+    info += "ui languages: "_L1 + QLocale().uiLanguages().join(", "_L1) + '\n'_L1;
     return info;
 }
 

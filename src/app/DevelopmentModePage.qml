@@ -76,5 +76,19 @@ Kirigami.ScrollablePage {
                 }
             }
         }
+
+        QQC2.Label {
+            text: DevelopmentModeController.localeInfo();
+            Layout.fillWidth: true
+            wrapMode: Text.WordWrap
+            font.family: "monospace"
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    Clipboard.saveText(DevelopmentModeController.localeInfo());
+                    applicationWindow().showPassiveNotification("Locale information copied");
+                }
+            }
+        }
     }
 }

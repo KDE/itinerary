@@ -20,7 +20,8 @@ public:
     Q_INVOKABLE void purgeMapCSS();
     Q_INVOKABLE void clearOsmTileCache();
     Q_INVOKABLE void crash();
-    Q_INVOKABLE QString screenInfo();
+    Q_INVOKABLE [[nodiscard]] static QString screenInfo();
+    Q_INVOKABLE [[nodiscard]] static QString localeInfo();
 };
 
 Q_DECLARE_METATYPE(DevelopmentModeController)
