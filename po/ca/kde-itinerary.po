@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-30 00:40+0000\n"
-"PO-Revision-Date: 2024-08-26 10:54+0200\n"
+"PO-Revision-Date: 2024-08-30 10:59+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -3905,8 +3905,7 @@ msgid "Merge"
 msgstr "Fusiona"
 
 #: app/TripGroupPage.qml:174
-#, fuzzy, kde-format
-#| msgid "Add to Trip"
+#, kde-format
 msgctxt "@title:group"
 msgid "Add to Trip"
 msgstr "Afegeix al viatge"
@@ -3939,17 +3938,14 @@ msgid "No compatible power plugs (%1)"
 msgstr "No hi ha preses de corrent compatibles (%1)"
 
 #: app/TripGroupPage.qml:440
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Import"
+#, kde-format
 msgid "Import"
 msgstr "Importa"
 
 #: app/TripGroupPage.qml:454
-#, fuzzy, kde-format
-#| msgid "Add to:"
+#, kde-format
 msgid "Add"
-msgstr "Afegeix a:"
+msgstr "Afegeix"
 
 #: app/TripGroupPage.qml:593
 #, kde-format
@@ -3991,8 +3987,7 @@ msgid "Current trip"
 msgstr "Viatge actual"
 
 #: app/TripGroupsPage.qml:77
-#, fuzzy, kde-format
-#| msgid "%1 - %2"
+#, kde-format
 msgctxt "date range"
 msgid "%1 - %2"
 msgstr "%1 - %2"
@@ -4000,7 +3995,7 @@ msgstr "%1 - %2"
 #: app/TripGroupsPage.qml:78
 #, kde-format
 msgid "Upcoming"
-msgstr ""
+msgstr "Pròxims"
 
 #: app/TripGroupSplitPage.qml:15
 #, kde-format

@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-30 00:40+0000\n"
-"PO-Revision-Date: 2024-08-26 22:49+0300\n"
+"PO-Revision-Date: 2024-08-30 08:18+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -3923,8 +3923,7 @@ msgid "Merge"
 msgstr "Об'єднати"
 
 #: app/TripGroupPage.qml:174
-#, fuzzy, kde-format
-#| msgid "Add to Trip"
+#, kde-format
 msgctxt "@title:group"
 msgid "Add to Trip"
 msgstr "Додати до подорожі"
@@ -3959,17 +3958,14 @@ msgid "No compatible power plugs (%1)"
 msgstr "Немає сумісних штекерів (%1)"
 
 #: app/TripGroupPage.qml:440
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Import"
+#, kde-format
 msgid "Import"
 msgstr "Імпортувати"
 
 #: app/TripGroupPage.qml:454
-#, fuzzy, kde-format
-#| msgid "Add to:"
+#, kde-format
 msgid "Add"
-msgstr "Додати до:"
+msgstr "Додати"
 
 #: app/TripGroupPage.qml:593
 #, kde-format
@@ -4011,8 +4007,7 @@ msgid "Current trip"
 msgstr "Поточна подорож"
 
 #: app/TripGroupsPage.qml:77
-#, fuzzy, kde-format
-#| msgid "%1 - %2"
+#, kde-format
 msgctxt "date range"
 msgid "%1 - %2"
 msgstr "%1 – %2"
@@ -4020,7 +4015,7 @@ msgstr "%1 – %2"
 #: app/TripGroupsPage.qml:78
 #, kde-format
 msgid "Upcoming"
-msgstr ""
+msgstr "Далі"
 
 #: app/TripGroupSplitPage.qml:15
 #, kde-format

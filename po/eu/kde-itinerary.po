@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-30 00:40+0000\n"
-"PO-Revision-Date: 2024-08-22 11:20+0200\n"
+"PO-Revision-Date: 2024-08-30 18:08+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 24.08.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1784,10 +1784,9 @@ msgid "Import"
 msgstr "Inportatu"
 
 #: app/ImportPage.qml:22
-#, fuzzy, kde-format
-#| msgid "Trips"
+#, kde-format
 msgid "Trip"
-msgstr "Txangoak"
+msgstr "Txangoa"
 
 #: app/ImportPage.qml:42
 #, kde-format
@@ -1795,11 +1794,9 @@ msgid "New Trip"
 msgstr "Txango berria"
 
 #: app/ImportPage.qml:45
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add Trip"
+#, kde-format
 msgid "Add to Trip"
-msgstr "Gehitu txangoa"
+msgstr "Gehitu txangoan"
 
 #: app/ImportPage.qml:55 app/TripGroupEditorDialog.qml:24
 #: app/TripGroupMergeDialog.qml:56
@@ -1809,19 +1806,15 @@ msgid "Trip name:"
 msgstr "Txangoaren izena:"
 
 #: app/ImportPage.qml:74
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add trip"
+#, kde-format
 msgid "Add to:"
-msgstr "Gehitu txangoa"
+msgstr "Gehitu hemen:"
 
 #: app/ImportPage.qml:101
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Selected Items to Import"
+#, kde-format
 msgctxt "@title:group"
 msgid "Items to Import"
-msgstr "Inportatu beharreko hautatutako elementuak"
+msgstr "Inportatu beharreko elementuak"
 
 #: app/ImportPage.qml:140
 #, kde-format
@@ -3906,12 +3899,10 @@ msgid "Merge"
 msgstr "Bateratu"
 
 #: app/TripGroupPage.qml:174
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add Trip"
+#, kde-format
 msgctxt "@title:group"
 msgid "Add to Trip"
-msgstr "Gehitu txangoa"
+msgstr "Gehitu txangoan"
 
 #: app/TripGroupPage.qml:295
 #, kde-format
@@ -3941,18 +3932,14 @@ msgid "No compatible power plugs (%1)"
 msgstr "Indar-hargune bateraezinak (%1)"
 
 #: app/TripGroupPage.qml:440
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Import"
+#, kde-format
 msgid "Import"
 msgstr "Inportatu"
 
 #: app/TripGroupPage.qml:454
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add trip"
+#, kde-format
 msgid "Add"
-msgstr "Gehitu txangoa"
+msgstr "Gehitu"
 
 #: app/TripGroupPage.qml:593
 #, kde-format
@@ -3994,8 +3981,7 @@ msgid "Current trip"
 msgstr "Uneko txangoa"
 
 #: app/TripGroupsPage.qml:77
-#, fuzzy, kde-format
-#| msgid "%1 - %2"
+#, kde-format
 msgctxt "date range"
 msgid "%1 - %2"
 msgstr "%1 - %2"
@@ -4003,7 +3989,7 @@ msgstr "%1 - %2"
 #: app/TripGroupsPage.qml:78
 #, kde-format
 msgid "Upcoming"
-msgstr ""
+msgstr "Datorrena"
 
 #: app/TripGroupSplitPage.qml:15
 #, kde-format
