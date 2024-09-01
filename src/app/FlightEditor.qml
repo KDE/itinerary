@@ -59,27 +59,11 @@ EditorPage {
     ColumnLayout {
         spacing: 0
 
-        QQC2.Label {
-            text: "✈️"
-            horizontalAlignment: Text.AlignHCenter
-
-            font {
-                family: "emoji"
-                pointSize: 40
-            }
-
-            Layout.fillWidth: true
-            Layout.alignment: Qt.AlignHCenter
-        }
-
-        Kirigami.Heading {
+        CardPageTitle {
+            emojiIcon: "✈️"
             text: reservation.reservationFor.airline.iataCode + " " + reservation.reservationFor.flightNumber
-            wrapMode: Text.WordWrap
-            horizontalAlignment: Text.AlignHCenter
 
             Layout.fillWidth: true
-            Layout.maximumWidth: Kirigami.Units.gridUnit * 26
-            Layout.alignment: Qt.AlignHCenter
         }
 
         FormCard.FormHeader {
