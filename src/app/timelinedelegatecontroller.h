@@ -31,10 +31,10 @@ class DocumentManager;
 class TimelineDelegateController : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(QObject* reservationManager READ reservationManager WRITE setReservationManager NOTIFY setupChanged)
-    Q_PROPERTY(QObject* liveDataManager READ liveDataManager WRITE setLiveDataManager NOTIFY setupChanged)
-    Q_PROPERTY(QObject* transferManager READ transferManager WRITE setTransferManager NOTIFY setupChanged)
-    Q_PROPERTY(QObject* documentManager READ documentManager WRITE setDocumentManager NOTIFY setupChanged)
+    Q_PROPERTY(ReservationManager* reservationManager READ reservationManager WRITE setReservationManager NOTIFY setupChanged)
+    Q_PROPERTY(LiveDataManager* liveDataManager READ liveDataManager WRITE setLiveDataManager NOTIFY setupChanged)
+    Q_PROPERTY(TransferManager* transferManager READ transferManager WRITE setTransferManager NOTIFY setupChanged)
+    Q_PROPERTY(DocumentManager* documentManager READ documentManager WRITE setDocumentManager NOTIFY setupChanged)
     Q_PROPERTY(QString batchId READ batchId WRITE setBatchId NOTIFY batchIdChanged)
 
     Q_PROPERTY(bool isCurrent READ isCurrent NOTIFY currentChanged)
@@ -87,45 +87,45 @@ public:
     TimelineDelegateController(QObject *parent = nullptr);
     ~TimelineDelegateController() override;
 
-    QObject* reservationManager() const;
-    void setReservationManager(QObject *resMgr);
-    QObject* liveDataManager() const;
-    void setLiveDataManager(QObject *liveDataMgr);
-    QObject* transferManager() const;
-    void setTransferManager(QObject *transferMgr);
-    QObject* documentManager() const;
-    void setDocumentManager(QObject *documentMgr);
+    [[nodiscard]] ReservationManager* reservationManager() const;
+    void setReservationManager(ReservationManager *resMgr);
+    [[nodiscard]] LiveDataManager* liveDataManager() const;
+    void setLiveDataManager(LiveDataManager *liveDataMgr);
+    [[nodiscard]] TransferManager* transferManager() const;
+    void setTransferManager(TransferManager *transferMgr);
+    [[nodiscard]] DocumentManager* documentManager() const;
+    void setDocumentManager(DocumentManager *documentMgr);
 
-    QString batchId() const;
+    [[nodiscard]] QString batchId() const;
     void setBatchId(const QString &batchId);
 
-    bool isCurrent() const;
-    float progress() const;
+    [[nodiscard]] bool isCurrent() const;
+    [[nodiscard]] float progress() const;
 
-    QVariant previousLocation() const;
+    [[nodiscard]] QVariant previousLocation() const;
 
-    KPublicTransport::Stopover arrival() const;
-    KPublicTransport::Stopover departure() const;
-    KPublicTransport::JourneySection journey() const;
+    [[nodiscard]] KPublicTransport::Stopover arrival() const;
+    [[nodiscard]] KPublicTransport::Stopover departure() const;
+    [[nodiscard]] KPublicTransport::JourneySection journey() const;
 
-    QDateTime effectiveEndTime() const;
+    [[nodiscard]] QDateTime effectiveEndTime() const;
 
-    bool isLocationChange() const;
-    bool isPublicTransport() const;
+    [[nodiscard]] bool isLocationChange() const;
+    [[nodiscard]] bool isPublicTransport() const;
 
-    KPublicTransport::JourneyRequest journeyRequestFull() const;
-    KPublicTransport::JourneyRequest journeyRequestOne() const;
+    [[nodiscard]] KPublicTransport::JourneyRequest journeyRequestFull() const;
+    [[nodiscard]] KPublicTransport::JourneyRequest journeyRequestOne() const;
     Q_INVOKABLE void applyJourney(const QVariant &journey, bool includeFollowing);
 
-    bool connectionWarning() const;
-    bool isCanceled() const;
+    [[nodiscard]] bool connectionWarning() const;
+    [[nodiscard]] bool isCanceled() const;
 
     /** Map page arguments for the arrival side, if this is a location change element. */
-    Q_INVOKABLE QJSValue arrivalMapArguments() const;
+    Q_INVOKABLE [[nodiscard]] QJSValue arrivalMapArguments() const;
     /** Map page arguments for the departure side, if this is a location change element. */
-    Q_INVOKABLE QJSValue departureMapArguments() const;
+    Q_INVOKABLE [[nodiscard]] QJSValue departureMapArguments() const;
     /** Map page arguments for an element that isn't a location change. */
-    Q_INVOKABLE QJSValue mapArguments() const;
+    Q_INVOKABLE [[nodiscard]] QJSValue mapArguments() const;
 
     /** Add the current reservation to the calendar @p cal. */
     Q_INVOKABLE void addToCalendar(KCalendarCore::Calendar *cal);
@@ -134,11 +134,11 @@ public:
     Q_INVOKABLE void setVehicleLayout(const KPublicTransport::Stopover &stopover, bool arrival);
 
     /** Platform section information. */
-    QString departurePlatformSections() const;
-    QString arrivalPlatformSections() const;
+    [[nodiscard]] QString departurePlatformSections() const;
+    [[nodiscard]] QString arrivalPlatformSections() const;
 
     /** Ids of attached documents. */
-    QStringList documentIds() const;
+    [[nodiscard]] QStringList documentIds() const;
 
 Q_SIGNALS:
     void setupChanged();
@@ -157,10 +157,10 @@ private:
     void setCurrent(bool current, const QVariant &res = {});
     void checkForUpdate(const QString &batchId);
     /** Time at which we consider @p res "current". */
-    QDateTime relevantStartDateTime(const QVariant &res) const;
+    [[nodiscard]] static QDateTime relevantStartDateTime(const QVariant &res);
     /** Time at which the event starts/stops based on realtime data. */
-    QDateTime liveStartDateTime(const QVariant &res) const;
-    QDateTime liveEndDateTime(const QVariant &res) const;
+    [[nodiscard]] QDateTime liveStartDateTime(const QVariant &res) const;
+    [[nodiscard]] QDateTime liveEndDateTime(const QVariant &res) const;
 
     void batchChanged(const QString &batchId);
 

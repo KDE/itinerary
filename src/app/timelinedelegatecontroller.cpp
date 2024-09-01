@@ -44,6 +44,8 @@
 #include <QTimer>
 #include <QTimeZone>
 
+using namespace Qt::Literals;
+
 QTimer* TimelineDelegateController::s_currentTimer = nullptr;
 int TimelineDelegateController::s_progressRefCount = 0;
 QTimer* TimelineDelegateController::s_progressTimer = nullptr;
@@ -65,18 +67,18 @@ TimelineDelegateController::TimelineDelegateController(QObject *parent)
 
 TimelineDelegateController::~TimelineDelegateController() = default;
 
-QObject* TimelineDelegateController::reservationManager() const
+ReservationManager* TimelineDelegateController::reservationManager() const
 {
     return m_resMgr;
 }
 
-void TimelineDelegateController::setReservationManager(QObject *resMgr)
+void TimelineDelegateController::setReservationManager(ReservationManager *resMgr)
 {
     if (m_resMgr == resMgr) {
         return;
     }
 
-    m_resMgr = qobject_cast<ReservationManager*>(resMgr);
+    m_resMgr = resMgr;
     Q_EMIT setupChanged();
     Q_EMIT contentChanged();
     Q_EMIT departureChanged();
@@ -94,18 +96,18 @@ void TimelineDelegateController::setReservationManager(QObject *resMgr)
     checkForUpdate(m_batchId);
 }
 
-QObject* TimelineDelegateController::liveDataManager() const
+LiveDataManager* TimelineDelegateController::liveDataManager() const
 {
     return m_liveDataMgr;
 }
 
-void TimelineDelegateController::setLiveDataManager(QObject* liveDataMgr)
+void TimelineDelegateController::setLiveDataManager(LiveDataManager *liveDataMgr)
 {
     if (m_liveDataMgr == liveDataMgr) {
         return;
     }
 
-    m_liveDataMgr = qobject_cast<LiveDataManager*>(liveDataMgr);
+    m_liveDataMgr = liveDataMgr;
     Q_EMIT setupChanged();
     Q_EMIT departureChanged();
     Q_EMIT arrivalChanged();
@@ -137,33 +139,33 @@ void TimelineDelegateController::setLiveDataManager(QObject* liveDataMgr)
     checkForUpdate(m_batchId);
 }
 
-QObject* TimelineDelegateController::transferManager() const
+TransferManager* TimelineDelegateController::transferManager() const
 {
     return m_transferMgr;
 }
 
-void TimelineDelegateController::setTransferManager(QObject *transferMgr)
+void TimelineDelegateController::setTransferManager(TransferManager *transferMgr)
 {
     if (m_transferMgr == transferMgr) {
         return;
     }
 
-    m_transferMgr = qobject_cast<TransferManager*>(transferMgr);
+    m_transferMgr = transferMgr;
     Q_EMIT setupChanged();
 }
 
-QObject* TimelineDelegateController::documentManager() const
+DocumentManager* TimelineDelegateController::documentManager() const
 {
     return m_documentMgr;
 }
 
-void TimelineDelegateController::setDocumentManager(QObject *documentMgr)
+void TimelineDelegateController::setDocumentManager(DocumentManager *documentMgr)
 {
     if (m_documentMgr == documentMgr) {
         return;
     }
 
-    m_documentMgr = qobject_cast<DocumentManager*>(documentMgr);
+    m_documentMgr = documentMgr;
     Q_EMIT setupChanged();
     Q_EMIT contentChanged();
 }
@@ -175,8 +177,9 @@ QString TimelineDelegateController::batchId() const
 
 void TimelineDelegateController::setBatchId(const QString &batchId)
 {
-    if (m_batchId == batchId)
+    if (m_batchId == batchId) {
         return;
+    }
 
     m_batchId = batchId;
     Q_EMIT batchIdChanged();
@@ -301,7 +304,7 @@ void TimelineDelegateController::checkForUpdate(const QString& batchId)
     }
 }
 
-QDateTime TimelineDelegateController::relevantStartDateTime(const QVariant &res) const
+QDateTime TimelineDelegateController::relevantStartDateTime(const QVariant &res)
 {
     auto startTime = SortUtil::startDateTime(res);
     if (JsonLd::isA<FlightReservation>(res)) {
@@ -386,9 +389,8 @@ QVariant TimelineDelegateController::previousLocation() const
 
     if (LocationUtil::isLocationChange(res)) {
         return LocationUtil::arrivalLocation(res);
-    } else {
-        return LocationUtil::location(res);
     }
+    return LocationUtil::location(res);
 }
 
 QDateTime TimelineDelegateController::effectiveEndTime() const
@@ -616,11 +618,11 @@ bool TimelineDelegateController::isCanceled() const
 
 static void mapArgumentsForLocation(QJSValue &args, const QVariant &location, QJSEngine *engine)
 {
-    args.setProperty(QStringLiteral("placeName"), LocationUtil::name(location));
-    args.setProperty(QStringLiteral("region"), LocationHelper::regionCode(location));
+    args.setProperty(u"placeName"_s, LocationUtil::name(location));
+    args.setProperty(u"region"_s, LocationHelper::regionCode(location));
 
     const auto geo = LocationUtil::geo(location);
-    args.setProperty(QStringLiteral("coordinate"), engine->toScriptValue(QPointF(geo.longitude(), geo.latitude())));
+    args.setProperty(u"coordinate"_s, engine->toScriptValue(QPointF(geo.longitude(), geo.latitude())));
 }
 
 struct CoachData {
@@ -639,9 +641,9 @@ static CoachData coachDataForReservation(const QVariant &res)
 
     CoachData data;
     data.coachName = seat.seatSection();
-    if (seat.seatingType() == QLatin1StringView("1")) {
+    if (seat.seatingType() == "1"_L1) {
         data.coachClass = KPublicTransport::VehicleSection::FirstClass;
-    } else if (seat.seatingType() == QLatin1StringView("2")) {
+    } else if (seat.seatingType() == "2"_L1) {
         data.coachClass = KPublicTransport::VehicleSection::SecondClass;
     }
     return data;
@@ -649,16 +651,13 @@ static CoachData coachDataForReservation(const QVariant &res)
 
 static QString platformSectionsForCoachData(const KPublicTransport::Stopover &stop, const CoachData &coach)
 {
-    KPublicTransport::PlatformLayout layouter;
     if (!coach.coachName.isEmpty()) {
-        return layouter.sectionsForVehicleSection(stop, coach.coachName);
-    } else if (coach.coachClass != KPublicTransport::VehicleSection::UnknownClass) {
-        return layouter.sectionsForClass(stop, coach.coachClass);
-    } else {
-        return layouter.sectionsForVehicle(stop);
+        return KPublicTransport::PlatformLayout::sectionsForVehicleSection(stop, coach.coachName);
     }
-
-    return {};
+    if (coach.coachClass != KPublicTransport::VehicleSection::UnknownClass) {
+        return KPublicTransport::PlatformLayout::sectionsForClass(stop, coach.coachClass);
+    }
+    return KPublicTransport::PlatformLayout::sectionsForVehicle(stop);
 }
 
 static void mapArgumentsForPt(QJSValue &args, QLatin1StringView prefix, const KPublicTransport::Stopover &stop, const CoachData &coach)
@@ -666,16 +665,16 @@ static void mapArgumentsForPt(QJSValue &args, QLatin1StringView prefix, const KP
     const auto platformName = stop.hasExpectedPlatform() ? stop.expectedPlatform() : stop.scheduledPlatform();
     if (!platformName.isEmpty()) {
         const auto sections = platformSectionsForCoachData(stop, coach);
-        args.setProperty(prefix + QLatin1StringView("PlatformName"), sections.isEmpty() ? platformName : (platformName + QLatin1Char(' ') + sections));
+        args.setProperty(prefix + "PlatformName"_L1, sections.isEmpty() ? platformName : (platformName + ' '_L1 + sections));
     }
 
     if (stop.route().line().mode() != KPublicTransport::Line::Unknown) {
-        args.setProperty(prefix + QLatin1StringView("PlatformMode"), PublicTransport::lineModeToPlatformMode(stop.route().line().mode()));
+        args.setProperty(prefix + "PlatformMode"_L1, PublicTransport::lineModeToPlatformMode(stop.route().line().mode()));
     }
 
-    const auto ifopt = stop.stopPoint().identifier(QStringLiteral("ifopt"));
+    const auto ifopt = stop.stopPoint().identifier(u"ifopt"_s);
     if (!ifopt.isEmpty()) {
-        args.setProperty(prefix + QLatin1StringView("PlatformIfopt"), ifopt);
+        args.setProperty(prefix + "PlatformIfopt"_L1, ifopt);
     }
 }
 
@@ -683,12 +682,12 @@ static void mapArrivalArgumesForRes(QJSValue &args, const QVariant &res)
 {
     if (JsonLd::isA<TrainReservation>(res)) {
         const auto trip = res.value<TrainReservation>().reservationFor().value<TrainTrip>();
-        args.setProperty(QStringLiteral("arrivalPlatformName"), trip.arrivalPlatform());
-        args.setProperty(QStringLiteral("arrivalPlatformMode"), KOSMIndoorMap::Platform::Rail);
+        args.setProperty(u"arrivalPlatformName"_s, trip.arrivalPlatform());
+        args.setProperty(u"arrivalPlatformMode"_s, KOSMIndoorMap::Platform::Rail);
     } else if (JsonLd::isA<BusReservation>(res)) {
         const auto trip = res.value<BusReservation>().reservationFor().value<BusTrip>();
-        args.setProperty(QStringLiteral("arrivalPlatformName"), trip.arrivalPlatform());
-        args.setProperty(QStringLiteral("arrivalPlatformMode"), KOSMIndoorMap::Platform::Bus);
+        args.setProperty(u"arrivalPlatformName"_s, trip.arrivalPlatform());
+        args.setProperty(u"arrivalPlatformMode"_s, KOSMIndoorMap::Platform::Bus);
     }
     // TODO there is no arrival gate property (yet)
 }
@@ -697,15 +696,15 @@ static void mapDepartureArgumentsForRes(QJSValue &args, const QVariant &res)
 {
     if (JsonLd::isA<TrainReservation>(res)) {
         const auto trip = res.value<TrainReservation>().reservationFor().value<TrainTrip>();
-        args.setProperty(QStringLiteral("departurePlatformName"), trip.departurePlatform());
-        args.setProperty(QStringLiteral("departurePlatformMode"), KOSMIndoorMap::Platform::Rail);
+        args.setProperty(u"departurePlatformName"_s, trip.departurePlatform());
+        args.setProperty(u"departurePlatformMode"_s, KOSMIndoorMap::Platform::Rail);
     } else if (JsonLd::isA<BusReservation>(res)) {
         const auto trip = res.value<BusReservation>().reservationFor().value<BusTrip>();
-        args.setProperty(QStringLiteral("departurePlatformName"), trip.departurePlatform());
-        args.setProperty(QStringLiteral("departurePlatformMode"), KOSMIndoorMap::Platform::Bus);
+        args.setProperty(u"departurePlatformName"_s, trip.departurePlatform());
+        args.setProperty(u"departurePlatformMode"_s, KOSMIndoorMap::Platform::Bus);
     } else if (JsonLd::isA<FlightReservation>(res)) {
         const auto flight = res.value<FlightReservation>().reservationFor().value<Flight>();
-        args.setProperty(QStringLiteral("departureGateName"), flight.departureGate());
+        args.setProperty(u"departureGateName"_s, flight.departureGate());
     }
 }
 
@@ -727,24 +726,24 @@ QJSValue TimelineDelegateController::arrivalMapArguments() const
     // arrival location
     mapArrivalArgumesForRes(args, res);
     const auto arr = arrival();
-    mapArgumentsForPt(args, QLatin1StringView("arrival"), arr, coachDataForReservation(res));
+    mapArgumentsForPt(args, "arrival"_L1, arr, coachDataForReservation(res));
 
     // arrival time
     auto arrTime = arr.hasExpectedArrivalTime() ? arr.expectedArrivalTime() : arr.scheduledArrivalTime();
     if (!arrTime.isValid()) {
         arrTime = SortUtil::endDateTime(res);
     }
-    args.setProperty(QStringLiteral("beginTime"), engine->toScriptValue(arrTime));
+    args.setProperty(u"beginTime"_s, engine->toScriptValue(arrTime));
     if (arrTime.timeSpec() == Qt::TimeZone) {
-        args.setProperty(QStringLiteral("timeZone"), QString::fromUtf8(arrTime.timeZone().id()));
+        args.setProperty(u"timeZone"_s, QString::fromUtf8(arrTime.timeZone().id()));
     }
 
     // look for departure for a following transfer
     const auto transfer = m_transferMgr->transfer(m_batchId, Transfer::After);
     if (transfer.state() == Transfer::Selected) {
         const auto dep = PublicTransport::firstTransportSection(transfer.journey()).departure();
-        mapArgumentsForPt(args, QLatin1StringView("departure"), dep, {});
-        args.setProperty(QStringLiteral("endTime"), engine->toScriptValue(dep.hasExpectedDepartureTime() ? dep.expectedDepartureTime() : dep.scheduledDepartureTime()));
+        mapArgumentsForPt(args, "departure"_L1, dep, {});
+        args.setProperty(u"endTime"_s, engine->toScriptValue(dep.hasExpectedDepartureTime() ? dep.expectedDepartureTime() : dep.scheduledDepartureTime()));
         return args;
     }
 
@@ -756,13 +755,13 @@ QJSValue TimelineDelegateController::arrivalMapArguments() const
     }
     mapDepartureArgumentsForRes(args, nextRes);
     const auto dep = m_liveDataMgr->departure(nextResId);
-    mapArgumentsForPt(args, QLatin1StringView("departure"), dep, coachDataForReservation(nextRes));
+    mapArgumentsForPt(args, "departure"_L1, dep, coachDataForReservation(nextRes));
 
     auto depTime = dep.hasExpectedDepartureTime() ? dep.expectedDepartureTime() : dep.scheduledDepartureTime();
     if (!depTime.isValid()) {
         depTime = SortUtil::startDateTime(nextRes);
     }
-    args.setProperty(QStringLiteral("endTime"), engine->toScriptValue(depTime));
+    args.setProperty(u"endTime"_s, engine->toScriptValue(depTime));
 
     return args;
 }
@@ -785,24 +784,24 @@ QJSValue TimelineDelegateController::departureMapArguments() const
     // departure location
     mapDepartureArgumentsForRes(args, res);
     const auto dep = departure();
-    mapArgumentsForPt(args, QLatin1StringView("departure"), dep, coachDataForReservation(res));
+    mapArgumentsForPt(args, "departure"_L1, dep, coachDataForReservation(res));
 
     // departure time
     auto depTime = dep.hasExpectedDepartureTime() ? dep.expectedDepartureTime() : dep.scheduledDepartureTime();
     if (!depTime.isValid()) {
         depTime = SortUtil::startDateTime(res);
     }
-    args.setProperty(QStringLiteral("endTime"), engine->toScriptValue(depTime));
+    args.setProperty(u"endTime"_s, engine->toScriptValue(depTime));
     if (depTime.timeSpec() == Qt::TimeZone) {
-        args.setProperty(QStringLiteral("timeZone"), QString::fromUtf8(depTime.timeZone().id()));
+        args.setProperty(u"timeZone"_s, QString::fromUtf8(depTime.timeZone().id()));
     }
 
     // look for arrival for a preceding transfer
     const auto transfer = m_transferMgr->transfer(m_batchId, Transfer::Before);
     if (transfer.state() == Transfer::Selected) {
         const auto arr = PublicTransport::lastTransportSection(transfer.journey()).arrival();
-        mapArgumentsForPt(args, QLatin1StringView("arrival"), arr, {});
-        args.setProperty(QStringLiteral("beginTime"), engine->toScriptValue(arr.hasExpectedArrivalTime() ? arr.expectedArrivalTime() : arr.scheduledArrivalTime()));
+        mapArgumentsForPt(args, "arrival"_L1, arr, {});
+        args.setProperty(u"beginTime"_s, engine->toScriptValue(arr.hasExpectedArrivalTime() ? arr.expectedArrivalTime() : arr.scheduledArrivalTime()));
         return args;
     }
 
@@ -814,13 +813,13 @@ QJSValue TimelineDelegateController::departureMapArguments() const
     }
     mapArrivalArgumesForRes(args, prevRes);
     const auto arr = m_liveDataMgr->arrival(prevResId);
-    mapArgumentsForPt(args, QLatin1StringView("arrival"), arr, coachDataForReservation(prevRes));
+    mapArgumentsForPt(args, "arrival"_L1, arr, coachDataForReservation(prevRes));
 
     auto arrTime = arr.hasExpectedArrivalTime() ? arr.expectedArrivalTime() : arr.scheduledArrivalTime();
     if (!arrTime.isValid()) {
         arrTime = SortUtil::endDateTime(prevRes);
     }
-    args.setProperty(QStringLiteral("beginTime"), engine->toScriptValue(arrTime));
+    args.setProperty(u"beginTime"_s, engine->toScriptValue(arrTime));
 
     return args;
 }
@@ -859,11 +858,11 @@ QJSValue TimelineDelegateController::mapArguments() const
     auto transfer = m_transferMgr->transfer(m_batchId, Transfer::Before);
     if (transfer.state() == Transfer::Selected) {
         const auto arr = PublicTransport::lastTransportSection(transfer.journey()).arrival();
-        mapArgumentsForPt(args, QLatin1StringView("arrival"), arr, {});
+        mapArgumentsForPt(args, "arrival"_L1, arr, {});
         beginDt = std::max(arr.hasExpectedArrivalTime() ? arr.expectedArrivalTime() : arr.scheduledArrivalTime(), beginDt);
     }
 
-    args.setProperty(QStringLiteral("beginTime"), engine->toScriptValue(beginDt));
+    args.setProperty(u"beginTime"_s, engine->toScriptValue(beginDt));
 
     auto endDt = SortUtil::endDateTime(res);
     if (endDt.isValid()) {
@@ -874,7 +873,7 @@ QJSValue TimelineDelegateController::mapArguments() const
     transfer = m_transferMgr->transfer(m_batchId, Transfer::After);
     if (transfer.state() == Transfer::Selected) {
         const auto dep = PublicTransport::firstTransportSection(transfer.journey()).departure();
-        mapArgumentsForPt(args, QLatin1StringView("departure"), dep, {});
+        mapArgumentsForPt(args, "departure"_L1, dep, {});
         const auto depDt = dep.hasExpectedDepartureTime() ? dep.expectedDepartureTime() : dep.scheduledDepartureTime();
         endDt = endDt.isValid() ? std::min(endDt, depDt) : depDt;
     }
@@ -897,7 +896,7 @@ QJSValue TimelineDelegateController::mapArguments() const
     }
 
     if (endDt.isValid()) {
-        args.setProperty(QStringLiteral("endTime"), engine->toScriptValue(endDt));
+        args.setProperty(u"endTime"_s, engine->toScriptValue(endDt));
     }
 
     return args;
