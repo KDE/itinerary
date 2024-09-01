@@ -321,10 +321,6 @@ Kirigami.ApplicationWindow {
     }
 
     Component {
-        id: mainPageComponent
-        TimelinePage {}
-    }
-    Component {
         id: scanBarcodeComponent
         BarcodeScannerPage {
             onBarcodeDetected: (result) => {
