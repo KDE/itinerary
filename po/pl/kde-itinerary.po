@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-30 00:40+0000\n"
-"PO-Revision-Date: 2024-08-24 12:11+0200\n"
+"PO-Revision-Date: 2024-08-31 07:03+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -1785,10 +1785,9 @@ msgid "Import"
 msgstr "Zaimportuj"
 
 #: app/ImportPage.qml:22
-#, fuzzy, kde-format
-#| msgid "Trips"
+#, kde-format
 msgid "Trip"
-msgstr "Podróże"
+msgstr "Podróż"
 
 #: app/ImportPage.qml:42
 #, kde-format
@@ -1796,11 +1795,9 @@ msgid "New Trip"
 msgstr "Nowa podróż"
 
 #: app/ImportPage.qml:45
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add Trip"
+#, kde-format
 msgid "Add to Trip"
-msgstr "Dodaj podróż"
+msgstr "Dodaj do podróży"
 
 #: app/ImportPage.qml:55 app/TripGroupEditorDialog.qml:24
 #: app/TripGroupMergeDialog.qml:56
@@ -1810,19 +1807,15 @@ msgid "Trip name:"
 msgstr "Nazwa podróży:"
 
 #: app/ImportPage.qml:74
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add trip"
+#, kde-format
 msgid "Add to:"
-msgstr "Dodaj podróż"
+msgstr "Dodaj do:"
 
 #: app/ImportPage.qml:101
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Selected Items to Import"
+#, kde-format
 msgctxt "@title:group"
 msgid "Items to Import"
-msgstr "Zaznaczone rzeczy do zaimportowania"
+msgstr "Rzeczy do zaimportowania"
 
 #: app/ImportPage.qml:140
 #, kde-format
@@ -3913,9 +3906,7 @@ msgid "Merge"
 msgstr "Scal"
 
 #: app/TripGroupPage.qml:174
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add Trip"
+#, kde-format
 msgctxt "@title:group"
 msgid "Add to Trip"
 msgstr "Dodaj podróż"
@@ -3949,18 +3940,14 @@ msgid "No compatible power plugs (%1)"
 msgstr "Brak zgodnych wtyczek elektrycznych (%1)"
 
 #: app/TripGroupPage.qml:440
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Import"
+#, kde-format
 msgid "Import"
 msgstr "Zaimportuj"
 
 #: app/TripGroupPage.qml:454
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add trip"
+#, kde-format
 msgid "Add"
-msgstr "Dodaj podróż"
+msgstr "Dodaj"
 
 #: app/TripGroupPage.qml:593
 #, kde-format
@@ -4002,8 +3989,7 @@ msgid "Current trip"
 msgstr "Bieżąca podróż"
 
 #: app/TripGroupsPage.qml:77
-#, fuzzy, kde-format
-#| msgid "%1 - %2"
+#, kde-format
 msgctxt "date range"
 msgid "%1 - %2"
 msgstr "%1 - %2"
@@ -4011,7 +3997,7 @@ msgstr "%1 - %2"
 #: app/TripGroupsPage.qml:78
 #, kde-format
 msgid "Upcoming"
-msgstr ""
+msgstr "Nadchodzące"
 
 #: app/TripGroupSplitPage.qml:15
 #, kde-format
