@@ -62,13 +62,30 @@ FormCard.FormCardPage {
                 publicTransportManager: root.publicTransportManager
                 title: i18n("Select Journey")
                 onJourneyChanged: {
-                    for (const section of journey.sections) {
-                        if (section.mode != JourneySection.PublicTransport) {
-                            continue;
+                    if (Settings.developmentMode) {
+                        let tgId = "";
+                        if (tripGroupSelector.mode === TripGroupSelectorCard.Mode.Create) {
+                            tgId = TripGroupManager.createEmptyGroup(tripGroupSelector.name);
+                        } else {
+                            tgId = tripGroupSelector.tripGroupId;
                         }
-                        const res = PublicTransport.reservationFromJourneySection(section);
-                        const resId = ReservationManager.addReservationWithPostProcessing(res);
-                        LiveDataManager.setJourney(resId, section);
+                        for (const section of journey.sections) {
+                            if (section.mode != JourneySection.PublicTransport) {
+                                continue;
+                            }
+                            const res = PublicTransport.reservationFromJourneySection(section);
+                            const resId = ApplicationController.addNewReservation(res, tgId);
+                            LiveDataManager.setJourney(resId, section);
+                        }
+                    } else {
+                        for (const section of journey.sections) {
+                            if (section.mode != JourneySection.PublicTransport) {
+                                continue;
+                            }
+                            const res = PublicTransport.reservationFromJourneySection(section);
+                            const resId = ReservationManager.addReservationWithPostProcessing(res);
+                            LiveDataManager.setJourney(resId, section);
+                        }
                     }
                     pageStack.clear()
                     pageStack.push(pagepool.loadPage(Qt.resolvedUrl("TimelinePage.qml")))
@@ -173,7 +190,7 @@ FormCard.FormCardPage {
             id: searchButton
             icon.name: "search"
             text: i18n("Search Journey")
-            enabled: root.departureStop != undefined && root.arrivalStop != undefined && root.fullModeSwitchState() !== false
+            enabled: root.departureStop != undefined && root.arrivalStop != undefined && root.fullModeSwitchState() !== false && (tripGroupSelector.isValidInput || !Settings.developmentMode)
             onClicked: {
                 applicationWindow().pageStack.push(journeyQueryPage);
                 const req = applicationWindow().pageStack.currentItem.journeyRequest;
@@ -211,6 +228,23 @@ FormCard.FormCardPage {
                 applicationWindow().pageStack.currentItem.journeyRequest = req;
             }
         }
+    }
+
+    FormCard.FormHeader {
+        title: i18n("Trip")
+        visible: Settings.developmentMode
+    }
+
+    TripGroupSelectorCard {
+        id: tripGroupSelector
+        visible: Settings.developmentMode
+        suggestedName: root.arrivalStop?.name ?? ""
+        tripGroupCandidates: TripGroupModel.intersectingXorAdjacentTripGroups(dateTimeInput.value, dateTimeInput.value)
+    }
+
+    FormCard.FormHeader {
+        title: i18n("Mode of transportation")
+        visible: Settings.developmentMode
     }
 
     FormCard.FormCard {

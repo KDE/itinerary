@@ -72,7 +72,7 @@ public:
     // data import
     Q_INVOKABLE void commitImport(ImportController *importController);
     /** Add a newly created reservation and add it to a trip group. */
-    Q_INVOKABLE void addNewReservation(const QVariant &res, const QString &tgId);
+    Q_INVOKABLE [[nodiscard]] QString addNewReservation(const QVariant &res, const QString &tgId);
 
     static ApplicationController* instance();
 
