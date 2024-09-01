@@ -17,13 +17,26 @@ Kirigami.NavigationTabBar {
             icon.name: "format-list-unordered"
             text: i18nc("@title:tab This isn't the app name, but the English noun", "Itinerary")
             pagePool: pagepool
-            page: Qt.resolvedUrl("TimelinePage.qml")
+            page: Settings.developmentMode ?  Qt.resolvedUrl("TripGroupsPage.qml") :  Qt.resolvedUrl("TimelinePage.qml")
         },
         Kirigami.Action {
             icon.name: "search"
             text: i18nc("@title:tab", "Plan Trip")
             onTriggered: {
-                if (pageStack.currentItem.objectName !== "JourneyRequestPage") {
+                if (pageStack.currentItem as JourneyRequestPage) {
+                    return;
+                }
+                if (Settings.developmentMode) {
+                    if (pageStack.currentItem as TripGroupPage) {
+                        pageStack.currentItem.addTrainTrip();
+                    } else {
+                        pageStack.clear();
+                        pageStack.push(Qt.resolvedUrl("JourneyRequestPage.qml"), {
+                            publicTransportManager: LiveDataManager.publicTransportManager,
+                            initialCountry: Settings.homeCountryIsoCode
+                        });
+                    }
+                } else {
                     pagepool.loadPage(Qt.resolvedUrl("TimelinePage.qml")).addTrainTrip()
                 }
             }
@@ -38,7 +51,12 @@ Kirigami.NavigationTabBar {
             text: i18nc("@title:tab", "Current Ticket")
             icon.name: "view-barcode-qr"
             visible: TripGroupModel.currentBatchId !== ""
-            onTriggered: pagepool.loadPage(Qt.resolvedUrl("TimelinePage.qml")).showDetailsPageForReservation(TripGroupModel.currentBatchId)
+            onTriggered: {
+                if (Settings.developmentMode)
+                    pagepool.loadPage(Qt.resolvedUrl("TripGroupsPage.qml")).openCurrentReservation()
+                else
+                    pagepool.loadPage(Qt.resolvedUrl("TimelinePage.qml")).showDetailsPageForReservation(TripGroupModel.currentBatchId)
+            }
         }
     ]
 }

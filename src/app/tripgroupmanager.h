@@ -38,7 +38,7 @@ public:
 
     [[nodiscard]] std::vector<QString> tripGroups() const;
     Q_INVOKABLE [[nodiscard]] TripGroup tripGroup(const QString &id) const;
-    [[nodiscard]] QString tripGroupIdForReservation(const QString &resId) const;
+    Q_INVOKABLE [[nodiscard]] QString tripGroupIdForReservation(const QString &resId) const;
     [[nodiscard]] TripGroup tripGroupForReservation(const QString &resId) const;
 
     static void clear(); // for testing only!

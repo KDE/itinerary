@@ -371,6 +371,39 @@ Kirigami.ScrollablePage {
         RestaurantEditor {}
     }
 
+    function detailsComponent(batchId) {
+        const res = ReservationManager.reservation(batchId);
+        if (!res) {
+            return undefined;
+        }
+        switch (res.className) {
+            case "FlightReservation": return flightDetailsPage;
+            case "TrainReservation": return trainDetailsPage;
+            case "BusReservation": return busDetailsPage;
+            case "LodgingReservation": return hotelDetailsPage;
+            case "EventReservation": return eventDetailsPage;
+            case "FoodEstablishmentReservation": return restaurantDetailsPage;
+            case "RentalCarReservation": return carRentalDetailsPage;
+            case "TouristAttractionVisit": return touristAttractionDetailsPage;
+        }
+        console.log("unhandled reservation type:", res.className);
+        return undefined;
+    }
+
+    function showDetailsPageForReservation(batchId) {
+        const c = detailsComponent(batchId);
+        if (c) {
+            showDetailsPage(c, batchId);
+        }
+    }
+
+    function showDetailsPage(detailsComponent, batchId) {
+        while (applicationWindow().pageStack.depth > 2) {
+            applicationWindow().pageStack.pop();
+        }
+        applicationWindow().pageStack.push(detailsComponent, { batchId: batchId });
+    }
+
     TimelineModel {
         id: timelineModel
         homeCountryIsoCode: Settings.homeCountryIsoCode

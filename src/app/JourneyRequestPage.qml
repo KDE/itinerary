@@ -16,8 +16,6 @@ import "./components" as Components
 FormCard.FormCardPage {
     id: root
 
-    objectName: "JourneyRequestPage"
-
     property var publicTransportManager
 
     /**
@@ -77,6 +75,10 @@ FormCard.FormCardPage {
                             const resId = ApplicationController.addNewReservation(res, tgId);
                             LiveDataManager.setJourney(resId, section);
                         }
+                        ApplicationController.contextTripGroupId = tgId;
+                        pageStack.clear()
+                        pageStack.push(pagepool.loadPage(Qt.resolvedUrl("TripGroupsPage.qml")))
+
                     } else {
                         for (const section of journey.sections) {
                             if (section.mode != JourneySection.PublicTransport) {
@@ -86,9 +88,9 @@ FormCard.FormCardPage {
                             const resId = ReservationManager.addReservationWithPostProcessing(res);
                             LiveDataManager.setJourney(resId, section);
                         }
+                        pageStack.clear()
+                        pageStack.push(pagepool.loadPage(Qt.resolvedUrl("TimelinePage.qml")))
                     }
-                    pageStack.clear()
-                    pageStack.push(pagepool.loadPage(Qt.resolvedUrl("TimelinePage.qml")))
                 }
             }
         }

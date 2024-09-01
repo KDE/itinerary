@@ -68,17 +68,6 @@ Kirigami.ScrollablePage {
             onClicked: DevelopmentModeController.crash();
         }
 
-        QQC2.Button { // for testing until this is the main starting page
-            text: "Trip Group View"
-            Layout.fillWidth: true
-            onClicked: {
-                applicationWindow().pageStack.goBack();
-                const page = pagepool.loadPage(Qt.resolvedUrl("TripGroupsPage.qml"))
-                applicationWindow().pageStack.push(page);
-                page.openTripGroupPage(ApplicationController.contextTripGroupId);
-            }
-        }
-
         QQC2.Label {
             text: DevelopmentModeController.screenInfo();
             Layout.fillWidth: true

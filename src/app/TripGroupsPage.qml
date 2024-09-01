@@ -23,14 +23,27 @@ Kirigami.ScrollablePage {
     }
 
     /** Open trip group page for @p tgId. */
-    function openTripGroupPage(tgId: string) {
+    function openTripGroupPage(tgId: string): TripGroupPage {
         const tg = TripGroupManager.tripGroup(tgId);
         if (tg.name === "")
             return;
+
+        while (applicationWindow().pageStack.depth > 1) {
+            applicationWindow().pageStack.pop();
+        }
+
         applicationWindow().pageStack.push(Qt.createComponent('org.kde.itinerary', 'TripGroupPage'), {
             tripGroupId: tgId,
             tripGroup: tg,
         });
+        return applicationWindow().pageStack.currentItem;
+    }
+
+    /** Open reservation details page for the current reservation. */
+    function openCurrentReservation() {
+        const tgId = TripGroupManager.tripGroupIdForReservation(TripGroupModel.currentBatchId);
+        const page = openTripGroupPage(tgId);
+        page.showDetailsPageForReservation(TripGroupModel.currentBatchId);
     }
 
     ListView {
@@ -124,10 +137,24 @@ Kirigami.ScrollablePage {
         }
     }
     Connections {
+        id: pageStackCon
         target: applicationWindow().pageStack
-        function onCurrentItemChanged() {
-            if (applicationWindow().pageStack.currentItem === root && root.visible) {
+        function onPageRemoved(page : Item) {
+            if (page !== root && applicationWindow().pageStack.currentItem === root && root.visible) {
                 pageShownTimer.start();
+            }
+        }
+
+        // HACK pagePushed is emitted when the push isn't sufficiently complete yet, at a point we cannot do another push yet
+        property bool _pendingContextRestore: false
+        function onPagePushed(page : Item) {
+            if (page === root && ApplicationController.contextTripGroupId !== "")
+                pageStackCon._pendingContextRestore = true
+        }
+        function onCurrentIndexChanged() {
+            if (pageStackCon._pendingContextRestore && applicationWindow().pageStack.currentItem === root && root.visible) {
+                pageStackCon._pendingContextRestore = false;
+                root.openTripGroupPage(ApplicationController.contextTripGroupId);
             }
         }
     }
