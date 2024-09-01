@@ -41,6 +41,7 @@ FormCard.FormCard {
         liveDataManager: LiveDataManager
         transferManager: TransferManager
         documentManager: DocumentManager
+        tripGroupManager: TripGroupManager
     }
     property alias arrival: _controller.arrival
     property alias departure: _controller.departure

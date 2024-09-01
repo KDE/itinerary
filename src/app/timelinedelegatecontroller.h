@@ -25,6 +25,7 @@ class QTimer;
 class LiveDataManager;
 class ReservationManager;
 class TransferManager;
+class TripGroupManager;
 class DocumentManager;
 
 /** C++ side logic for timeline delegates. */
@@ -35,6 +36,7 @@ class TimelineDelegateController : public QObject
     Q_PROPERTY(LiveDataManager* liveDataManager READ liveDataManager WRITE setLiveDataManager NOTIFY setupChanged)
     Q_PROPERTY(TransferManager* transferManager READ transferManager WRITE setTransferManager NOTIFY setupChanged)
     Q_PROPERTY(DocumentManager* documentManager READ documentManager WRITE setDocumentManager NOTIFY setupChanged)
+    Q_PROPERTY(TripGroupManager* tripGroupManager MEMBER m_tripGroupMgr NOTIFY setupChanged)
     Q_PROPERTY(QString batchId READ batchId WRITE setBatchId NOTIFY batchIdChanged)
 
     Q_PROPERTY(bool isCurrent READ isCurrent NOTIFY currentChanged)
@@ -168,6 +170,7 @@ private:
     LiveDataManager *m_liveDataMgr = nullptr;
     TransferManager *m_transferMgr = nullptr;
     DocumentManager *m_documentMgr = nullptr;
+    TripGroupManager *m_tripGroupMgr = nullptr;
     QString m_batchId;
     bool m_isCurrent = false;
 

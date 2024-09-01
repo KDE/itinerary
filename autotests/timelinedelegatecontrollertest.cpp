@@ -12,6 +12,7 @@
 #include "livedatamanager.h"
 #include "reservationmanager.h"
 #include "transfermanager.h"
+#include "tripgroupmanager.h"
 
 #include <KItinerary/Reservation>
 #include <KItinerary/TrainTrip>
@@ -230,14 +231,22 @@ private Q_SLOTS:
         ldm.setReservationManager(&mgr);
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&mgr);
+        TransferManager trfMgr;
+        TripGroupManager tgMgr;
+        tgMgr.setReservationManager(&mgr);
+        tgMgr.setTransferManager(&trfMgr);
+        ctrl->setTripGroupManager(&tgMgr);
+
         ImportController importer;
         importer.setReservationManager(&mgr);
         importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
         ctrl->commitImport(&importer);
+        QCOMPARE(tgMgr.tripGroups().size(), 1);
 
         TimelineDelegateController controller;
         controller.setReservationManager(&mgr);
         controller.setLiveDataManager(&ldm);
+        controller.setProperty("tripGroupManager", QVariant::fromValue(&tgMgr));
         controller.setBatchId(mgr.batches().at(mgr.batches().size() - 3)); // begin of the return train trip
         QCOMPARE(controller.isPublicTransport(), true);
         const auto batchCount = mgr.batches().size();
@@ -254,6 +263,7 @@ private Q_SLOTS:
         QCOMPARE(updateSpy.size(), 0); // as we move beyond other elements, we get add/remove rather than updated here
         QCOMPARE(rmSpy.size(), 2);
         QCOMPARE(LiveData::listAll().size(), 3);
+        QCOMPARE(tgMgr.tripGroups().size(), 1);
 
         // apply alternative with 2 segments to test segment removal
         controller.setBatchId(mgr.batches().at(mgr.batches().size() - 3)); // begin of the new 3 segment train trip
@@ -267,6 +277,7 @@ private Q_SLOTS:
         QCOMPARE(updateSpy.size(), 0);
         QCOMPARE(rmSpy.size(), 3);
         QCOMPARE(LiveData::listAll().size(), 2);
+        QCOMPARE(tgMgr.tripGroups().size(), 1);
     }
 
     void testCancel()

@@ -18,6 +18,8 @@
 #include "publictransportmatcher.h"
 #include "transfer.h"
 #include "transfermanager.h"
+#include "tripgroup.h"
+#include "tripgroupmanager.h"
 
 #include <KItinerary/BusTrip>
 #include <KItinerary/CalendarHandler>
@@ -498,7 +500,7 @@ KPublicTransport::JourneyRequest TimelineDelegateController::journeyRequestFull(
 
 void TimelineDelegateController::applyJourney(const QVariant &journey, bool includeFollowing)
 {
-    if (!m_resMgr || m_batchId.isEmpty()) {
+    if (!m_resMgr || !m_tripGroupMgr || m_batchId.isEmpty()) {
         return;
     }
 
@@ -531,9 +533,14 @@ void TimelineDelegateController::applyJourney(const QVariant &journey, bool incl
     }
     qCDebug(Log) << "Affected batches:" << oldBatches;
 
+    // whatever we do here should not change trip grouping
+    const auto tgId = m_tripGroupMgr->tripGroupIdForReservation(m_batchId);
+    TripGroupingBlocker blocker(m_tripGroupMgr);
+
     // align sections with affected batches, by type, and insert/update accordingly
     auto it = oldBatches.begin();
     QString lastResId;
+    QStringList groupResIds;
     for (const auto &section : sections) {
         QVariant oldRes;
         if (it != oldBatches.end()) {
@@ -550,6 +557,7 @@ void TimelineDelegateController::applyJourney(const QVariant &journey, bool incl
                 m_resMgr->updateReservation(resId, res);
                 m_liveDataMgr->setJourney(resId, section);
             }
+            groupResIds.push_back(*it);
             ++it;
         } else {
             auto res = PublicTransport::reservationFromJourneySection(section);
@@ -564,7 +572,12 @@ void TimelineDelegateController::applyJourney(const QVariant &journey, bool incl
 
             const auto resId = m_resMgr->addReservation(res);
             m_liveDataMgr->setJourney(resId, section);
+            groupResIds.push_back(resId);
         }
+    }
+
+    if (!tgId.isEmpty() && !groupResIds.isEmpty() && !m_tripGroupMgr->tripGroup(tgId).name().isEmpty()) {
+        m_tripGroupMgr->addToGroup(groupResIds, tgId);
     }
 
     // remove left over reservations
