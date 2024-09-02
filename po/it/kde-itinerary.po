@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-30 00:40+0000\n"
-"PO-Revision-Date: 2024-08-26 13:51+0200\n"
+"POT-Creation-Date: 2024-09-02 00:39+0000\n"
+"PO-Revision-Date: 2024-08-30 14:43+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -1069,103 +1069,103 @@ msgstr "Arrivo a %1: %2"
 msgid "Edit Flight"
 msgstr "Modifica volo"
 
-#: app/FlightEditor.qml:86
+#: app/FlightEditor.qml:70
 #, kde-format
 msgctxt "flight departure"
 msgid "Departure - %1"
 msgstr "Partenza - %1"
 
-#: app/FlightEditor.qml:92 app/FlightEditor.qml:146 app/FlightPage.qml:131
+#: app/FlightEditor.qml:76 app/FlightEditor.qml:130 app/FlightPage.qml:131
 #: app/FlightPage.qml:177
 #, kde-format
 msgid "Airport"
 msgstr "Aeroporto"
 
-#: app/FlightEditor.qml:95
+#: app/FlightEditor.qml:79
 #, kde-format
 msgid "Departure airport has to be specified."
 msgstr "L'aeroporto di partenza deve essere specificato."
 
-#: app/FlightEditor.qml:101
+#: app/FlightEditor.qml:85
 #, kde-format
 msgctxt "flight departure terminal"
 msgid "Terminal"
 msgstr "Terminale"
 
-#: app/FlightEditor.qml:106
+#: app/FlightEditor.qml:90
 #, kde-format
 msgctxt "flight departure time"
 msgid "Time"
 msgstr "Orario"
 
-#: app/FlightEditor.qml:111
+#: app/FlightEditor.qml:95
 #, kde-format
 msgctxt "flight departure"
 msgid "Departure time has to be set."
 msgstr "L'orario di partenza deve essere impostato."
 
-#: app/FlightEditor.qml:117
+#: app/FlightEditor.qml:101
 #, kde-format
 msgctxt "flight departure gate"
 msgid "Gate"
 msgstr "Gate"
 
-#: app/FlightEditor.qml:122 app/FlightPage.qml:77
+#: app/FlightEditor.qml:106 app/FlightPage.qml:77
 #, kde-format
 msgid "Boarding time"
 msgstr "Orario d'imbarco"
 
-#: app/FlightEditor.qml:133
+#: app/FlightEditor.qml:117
 #, kde-format
 msgctxt "flight departure"
 msgid "Boarding time has to be before the departure time."
 msgstr "L'orario di imbarco deve precedere l'orario di partenza."
 
-#: app/FlightEditor.qml:140
+#: app/FlightEditor.qml:124
 #, kde-format
 msgctxt "flight arrival"
 msgid "Arrival - %1"
 msgstr "Arrivo - %1"
 
-#: app/FlightEditor.qml:149
+#: app/FlightEditor.qml:133
 #, kde-format
 msgid "Arrival airport has to be specified."
 msgstr "L'aeroporto di arrivo deve essere specificato."
 
-#: app/FlightEditor.qml:155
+#: app/FlightEditor.qml:139
 #, kde-format
 msgctxt "flight arrival terminal"
 msgid "Terminal"
 msgstr "Terminale"
 
-#: app/FlightEditor.qml:160
+#: app/FlightEditor.qml:144
 #, kde-format
 msgctxt "flight arrival time"
 msgid "Time"
 msgstr "Orario"
 
-#: app/FlightEditor.qml:171
+#: app/FlightEditor.qml:155
 #, kde-format
 msgctxt "flight arrival"
 msgid "Arrival time has to be after the departure time."
 msgstr "L'orario di arrivo deve essere successivo all'orario di partenza."
 
-#: app/FlightEditor.qml:178 app/FlightPage.qml:15 app/StatisticsPage.qml:92
+#: app/FlightEditor.qml:162 app/FlightPage.qml:15 app/StatisticsPage.qml:92
 #, kde-format
 msgid "Flight"
 msgstr "Volo"
 
-#: app/FlightEditor.qml:187
+#: app/FlightEditor.qml:171
 #, kde-format
 msgid "Flight number"
 msgstr "Numero del volo"
 
-#: app/FlightEditor.qml:190
+#: app/FlightEditor.qml:174
 #, kde-format
 msgid "Invalid flight number."
 msgstr "Numero del volo non valido."
 
-#: app/FlightEditor.qml:195 app/FlightEditor.qml:202
+#: app/FlightEditor.qml:179 app/FlightEditor.qml:186
 #, kde-format
 msgctxt "Flight seat"
 msgid "Seat"
@@ -3526,7 +3526,7 @@ msgid "Go To Now"
 msgstr "Vai a ora"
 
 #: app/TimelinePage.qml:173 app/TripGroupPage.qml:660
-#: app/TripGroupsPage.qml:105
+#: app/TripGroupsPage.qml:108
 #, kde-format
 msgctxt "@action:button"
 msgid "Add trip"
@@ -3900,8 +3900,7 @@ msgid "Merge"
 msgstr "Unisci"
 
 #: app/TripGroupPage.qml:174
-#, fuzzy, kde-format
-#| msgid "Add to Trip"
+#, kde-format
 msgctxt "@title:group"
 msgid "Add to Trip"
 msgstr "Aggiungi a viaggio"
@@ -3934,17 +3933,14 @@ msgid "No compatible power plugs (%1)"
 msgstr "Non ci sono spine elettriche incompatibili (%1)"
 
 #: app/TripGroupPage.qml:440
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Import"
+#, kde-format
 msgid "Import"
 msgstr "Importa"
 
 #: app/TripGroupPage.qml:454
-#, fuzzy, kde-format
-#| msgid "Add to:"
+#, kde-format
 msgid "Add"
-msgstr "Aggiungi a:"
+msgstr "Aggiungi"
 
 #: app/TripGroupPage.qml:593
 #, kde-format
@@ -3967,35 +3963,34 @@ msgctxt "@title:window"
 msgid "Trips"
 msgstr "Viaggi"
 
-#: app/TripGroupsPage.qml:39
+#: app/TripGroupsPage.qml:46
 #, kde-format
 msgctxt "List section header"
 msgid "Past trips"
 msgstr "Viaggi passati"
 
-#: app/TripGroupsPage.qml:41
+#: app/TripGroupsPage.qml:48
 #, kde-format
 msgctxt "List section header"
 msgid "Future trips"
 msgstr "Viaggi futuri"
 
-#: app/TripGroupsPage.qml:43
+#: app/TripGroupsPage.qml:50
 #, kde-format
 msgctxt "List section header"
 msgid "Current trip"
 msgstr "Viaggio attuale"
 
-#: app/TripGroupsPage.qml:77
-#, fuzzy, kde-format
-#| msgid "%1 - %2"
+#: app/TripGroupsPage.qml:83
+#, kde-format
 msgctxt "date range"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/TripGroupsPage.qml:78
+#: app/TripGroupsPage.qml:84
 #, kde-format
 msgid "Upcoming"
-msgstr ""
+msgstr "Prossimi"
 
 #: app/TripGroupSplitPage.qml:15
 #, kde-format

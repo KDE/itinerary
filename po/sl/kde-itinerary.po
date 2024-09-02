@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-30 00:40+0000\n"
+"POT-Creation-Date: 2024-09-02 00:39+0000\n"
 "PO-Revision-Date: 2024-08-30 06:42+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -1076,103 +1076,103 @@ msgstr "Prihod na %1: %2"
 msgid "Edit Flight"
 msgstr "Uredi let"
 
-#: app/FlightEditor.qml:86
+#: app/FlightEditor.qml:70
 #, kde-format
 msgctxt "flight departure"
 msgid "Departure - %1"
 msgstr "Odhod - %1"
 
-#: app/FlightEditor.qml:92 app/FlightEditor.qml:146 app/FlightPage.qml:131
+#: app/FlightEditor.qml:76 app/FlightEditor.qml:130 app/FlightPage.qml:131
 #: app/FlightPage.qml:177
 #, kde-format
 msgid "Airport"
 msgstr "Letališče"
 
-#: app/FlightEditor.qml:95
+#: app/FlightEditor.qml:79
 #, kde-format
 msgid "Departure airport has to be specified."
 msgstr "Odhodno letališče mora biti določeno."
 
-#: app/FlightEditor.qml:101
+#: app/FlightEditor.qml:85
 #, kde-format
 msgctxt "flight departure terminal"
 msgid "Terminal"
 msgstr "Terminal"
 
-#: app/FlightEditor.qml:106
+#: app/FlightEditor.qml:90
 #, kde-format
 msgctxt "flight departure time"
 msgid "Time"
 msgstr "Čas"
 
-#: app/FlightEditor.qml:111
+#: app/FlightEditor.qml:95
 #, kde-format
 msgctxt "flight departure"
 msgid "Departure time has to be set."
 msgstr "Čas odhoda mora biti nastavljen."
 
-#: app/FlightEditor.qml:117
+#: app/FlightEditor.qml:101
 #, kde-format
 msgctxt "flight departure gate"
 msgid "Gate"
 msgstr "Izhodna vrata"
 
-#: app/FlightEditor.qml:122 app/FlightPage.qml:77
+#: app/FlightEditor.qml:106 app/FlightPage.qml:77
 #, kde-format
 msgid "Boarding time"
 msgstr "Čas vkrcanja"
 
-#: app/FlightEditor.qml:133
+#: app/FlightEditor.qml:117
 #, kde-format
 msgctxt "flight departure"
 msgid "Boarding time has to be before the departure time."
 msgstr "Čas vkrcavanja mora biti zgodnejši od časa odhoda."
 
-#: app/FlightEditor.qml:140
+#: app/FlightEditor.qml:124
 #, kde-format
 msgctxt "flight arrival"
 msgid "Arrival - %1"
 msgstr "Prihod - %1"
 
-#: app/FlightEditor.qml:149
+#: app/FlightEditor.qml:133
 #, kde-format
 msgid "Arrival airport has to be specified."
 msgstr "Dohodno letališče mora biti določeno."
 
-#: app/FlightEditor.qml:155
+#: app/FlightEditor.qml:139
 #, kde-format
 msgctxt "flight arrival terminal"
 msgid "Terminal"
 msgstr "Terminal"
 
-#: app/FlightEditor.qml:160
+#: app/FlightEditor.qml:144
 #, kde-format
 msgctxt "flight arrival time"
 msgid "Time"
 msgstr "Čas"
 
-#: app/FlightEditor.qml:171
+#: app/FlightEditor.qml:155
 #, kde-format
 msgctxt "flight arrival"
 msgid "Arrival time has to be after the departure time."
 msgstr "Čas prihoda mora biti kasnejši od časa odhoda."
 
-#: app/FlightEditor.qml:178 app/FlightPage.qml:15 app/StatisticsPage.qml:92
+#: app/FlightEditor.qml:162 app/FlightPage.qml:15 app/StatisticsPage.qml:92
 #, kde-format
 msgid "Flight"
 msgstr "Let"
 
-#: app/FlightEditor.qml:187
+#: app/FlightEditor.qml:171
 #, kde-format
 msgid "Flight number"
 msgstr "Številka leta"
 
-#: app/FlightEditor.qml:190
+#: app/FlightEditor.qml:174
 #, kde-format
 msgid "Invalid flight number."
 msgstr "Neveljavna številka leta."
 
-#: app/FlightEditor.qml:195 app/FlightEditor.qml:202
+#: app/FlightEditor.qml:179 app/FlightEditor.qml:186
 #, kde-format
 msgctxt "Flight seat"
 msgid "Seat"
@@ -3530,7 +3530,7 @@ msgid "Go To Now"
 msgstr "Pojdi na Zdaj"
 
 #: app/TimelinePage.qml:173 app/TripGroupPage.qml:660
-#: app/TripGroupsPage.qml:105
+#: app/TripGroupsPage.qml:108
 #, kde-format
 msgctxt "@action:button"
 msgid "Add trip"
@@ -3973,31 +3973,31 @@ msgctxt "@title:window"
 msgid "Trips"
 msgstr "Potovanja"
 
-#: app/TripGroupsPage.qml:39
+#: app/TripGroupsPage.qml:46
 #, kde-format
 msgctxt "List section header"
 msgid "Past trips"
 msgstr "Pretekla potovanja"
 
-#: app/TripGroupsPage.qml:41
+#: app/TripGroupsPage.qml:48
 #, kde-format
 msgctxt "List section header"
 msgid "Future trips"
 msgstr "Bodoča potovanja"
 
-#: app/TripGroupsPage.qml:43
+#: app/TripGroupsPage.qml:50
 #, kde-format
 msgctxt "List section header"
 msgid "Current trip"
 msgstr "Trenutno potovanje"
 
-#: app/TripGroupsPage.qml:77
+#: app/TripGroupsPage.qml:83
 #, kde-format
 msgctxt "date range"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/TripGroupsPage.qml:78
+#: app/TripGroupsPage.qml:84
 #, kde-format
 msgid "Upcoming"
 msgstr "Prihajajoče"

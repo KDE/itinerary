@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-30 00:40+0000\n"
+"POT-Creation-Date: 2024-09-02 00:39+0000\n"
 "PO-Revision-Date: 2024-08-30 08:18+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -1080,103 +1080,103 @@ msgstr "Прибуття до %1: %2"
 msgid "Edit Flight"
 msgstr "Зміна параметрів польоту"
 
-#: app/FlightEditor.qml:86
+#: app/FlightEditor.qml:70
 #, kde-format
 msgctxt "flight departure"
 msgid "Departure - %1"
 msgstr "Відправлення – %1"
 
-#: app/FlightEditor.qml:92 app/FlightEditor.qml:146 app/FlightPage.qml:131
+#: app/FlightEditor.qml:76 app/FlightEditor.qml:130 app/FlightPage.qml:131
 #: app/FlightPage.qml:177
 #, kde-format
 msgid "Airport"
 msgstr "Аеропорт"
 
-#: app/FlightEditor.qml:95
+#: app/FlightEditor.qml:79
 #, kde-format
 msgid "Departure airport has to be specified."
 msgstr "Має бути вказано аеропорт відправлення."
 
-#: app/FlightEditor.qml:101
+#: app/FlightEditor.qml:85
 #, kde-format
 msgctxt "flight departure terminal"
 msgid "Terminal"
 msgstr "Термінал"
 
-#: app/FlightEditor.qml:106
+#: app/FlightEditor.qml:90
 #, kde-format
 msgctxt "flight departure time"
 msgid "Time"
 msgstr "Час"
 
-#: app/FlightEditor.qml:111
+#: app/FlightEditor.qml:95
 #, kde-format
 msgctxt "flight departure"
 msgid "Departure time has to be set."
 msgstr "Має бути вказано час відправлення."
 
-#: app/FlightEditor.qml:117
+#: app/FlightEditor.qml:101
 #, kde-format
 msgctxt "flight departure gate"
 msgid "Gate"
 msgstr "Вихід"
 
-#: app/FlightEditor.qml:122 app/FlightPage.qml:77
+#: app/FlightEditor.qml:106 app/FlightPage.qml:77
 #, kde-format
 msgid "Boarding time"
 msgstr "Час реєстрації"
 
-#: app/FlightEditor.qml:133
+#: app/FlightEditor.qml:117
 #, kde-format
 msgctxt "flight departure"
 msgid "Boarding time has to be before the departure time."
 msgstr "Час реєстрації має передувати часу відправлення."
 
-#: app/FlightEditor.qml:140
+#: app/FlightEditor.qml:124
 #, kde-format
 msgctxt "flight arrival"
 msgid "Arrival - %1"
 msgstr "Прибуття – %1"
 
-#: app/FlightEditor.qml:149
+#: app/FlightEditor.qml:133
 #, kde-format
 msgid "Arrival airport has to be specified."
 msgstr "Має бути вказано аеропорт прибуття."
 
-#: app/FlightEditor.qml:155
+#: app/FlightEditor.qml:139
 #, kde-format
 msgctxt "flight arrival terminal"
 msgid "Terminal"
 msgstr "Термінал"
 
-#: app/FlightEditor.qml:160
+#: app/FlightEditor.qml:144
 #, kde-format
 msgctxt "flight arrival time"
 msgid "Time"
 msgstr "Час"
 
-#: app/FlightEditor.qml:171
+#: app/FlightEditor.qml:155
 #, kde-format
 msgctxt "flight arrival"
 msgid "Arrival time has to be after the departure time."
 msgstr "Час відправлення має передувати часу прибуття."
 
-#: app/FlightEditor.qml:178 app/FlightPage.qml:15 app/StatisticsPage.qml:92
+#: app/FlightEditor.qml:162 app/FlightPage.qml:15 app/StatisticsPage.qml:92
 #, kde-format
 msgid "Flight"
 msgstr "Політ"
 
-#: app/FlightEditor.qml:187
+#: app/FlightEditor.qml:171
 #, kde-format
 msgid "Flight number"
 msgstr "Номер рейсу"
 
-#: app/FlightEditor.qml:190
+#: app/FlightEditor.qml:174
 #, kde-format
 msgid "Invalid flight number."
 msgstr "Некоректний номер рейсу."
 
-#: app/FlightEditor.qml:195 app/FlightEditor.qml:202
+#: app/FlightEditor.qml:179 app/FlightEditor.qml:186
 #, kde-format
 msgctxt "Flight seat"
 msgid "Seat"
@@ -3545,7 +3545,7 @@ msgid "Go To Now"
 msgstr "Перейти зараз"
 
 #: app/TimelinePage.qml:173 app/TripGroupPage.qml:660
-#: app/TripGroupsPage.qml:105
+#: app/TripGroupsPage.qml:108
 #, kde-format
 msgctxt "@action:button"
 msgid "Add trip"
@@ -3988,31 +3988,31 @@ msgctxt "@title:window"
 msgid "Trips"
 msgstr "Поїздки"
 
-#: app/TripGroupsPage.qml:39
+#: app/TripGroupsPage.qml:46
 #, kde-format
 msgctxt "List section header"
 msgid "Past trips"
 msgstr "Минулі подорожі"
 
-#: app/TripGroupsPage.qml:41
+#: app/TripGroupsPage.qml:48
 #, kde-format
 msgctxt "List section header"
 msgid "Future trips"
 msgstr "Майбутні подорожі"
 
-#: app/TripGroupsPage.qml:43
+#: app/TripGroupsPage.qml:50
 #, kde-format
 msgctxt "List section header"
 msgid "Current trip"
 msgstr "Поточна подорож"
 
-#: app/TripGroupsPage.qml:77
+#: app/TripGroupsPage.qml:83
 #, kde-format
 msgctxt "date range"
 msgid "%1 - %2"
 msgstr "%1 – %2"
 
-#: app/TripGroupsPage.qml:78
+#: app/TripGroupsPage.qml:84
 #, kde-format
 msgid "Upcoming"
 msgstr "Далі"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-30 00:40+0000\n"
+"POT-Creation-Date: 2024-09-02 00:39+0000\n"
 "PO-Revision-Date: 2024-03-26 16:14+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -1082,108 +1082,108 @@ msgstr "Érkezés: %1 - %2"
 msgid "Edit Flight"
 msgstr "Repülés szerkesztése"
 
-#: app/FlightEditor.qml:86
+#: app/FlightEditor.qml:70
 #, kde-format
 msgctxt "flight departure"
 msgid "Departure - %1"
 msgstr "Indulás - %1"
 
-#: app/FlightEditor.qml:92 app/FlightEditor.qml:146 app/FlightPage.qml:131
+#: app/FlightEditor.qml:76 app/FlightEditor.qml:130 app/FlightPage.qml:131
 #: app/FlightPage.qml:177
 #, kde-format
 msgid "Airport"
 msgstr "Repülőtér"
 
-#: app/FlightEditor.qml:95
+#: app/FlightEditor.qml:79
 #, fuzzy, kde-format
 #| msgid "Departure time has to be set."
 msgid "Departure airport has to be specified."
 msgstr "Az indulási időt be kell állítani."
 
-#: app/FlightEditor.qml:101
+#: app/FlightEditor.qml:85
 #, kde-format
 msgctxt "flight departure terminal"
 msgid "Terminal"
 msgstr "Terminál"
 
-#: app/FlightEditor.qml:106
+#: app/FlightEditor.qml:90
 #, kde-format
 msgctxt "flight departure time"
 msgid "Time"
 msgstr "Idő"
 
-#: app/FlightEditor.qml:111
+#: app/FlightEditor.qml:95
 #, kde-format
 msgctxt "flight departure"
 msgid "Departure time has to be set."
 msgstr "Az indulási időt be kell állítani."
 
-#: app/FlightEditor.qml:117
+#: app/FlightEditor.qml:101
 #, kde-format
 msgctxt "flight departure gate"
 msgid "Gate"
 msgstr "Kapu"
 
-#: app/FlightEditor.qml:122 app/FlightPage.qml:77
+#: app/FlightEditor.qml:106 app/FlightPage.qml:77
 #, kde-format
 msgid "Boarding time"
 msgstr "Beszállási idő"
 
-#: app/FlightEditor.qml:133
+#: app/FlightEditor.qml:117
 #, kde-format
 msgctxt "flight departure"
 msgid "Boarding time has to be before the departure time."
 msgstr "A beszállás idejének az indulás ideje előtt kell lennie."
 
-#: app/FlightEditor.qml:140
+#: app/FlightEditor.qml:124
 #, kde-format
 msgctxt "flight arrival"
 msgid "Arrival - %1"
 msgstr "Érkezés - %1"
 
-#: app/FlightEditor.qml:149
+#: app/FlightEditor.qml:133
 #, fuzzy, kde-format
 #| msgctxt "a train/bus journey canceled by its operator"
 #| msgid "Arrival has been canceled."
 msgid "Arrival airport has to be specified."
 msgstr "Az érkezést törölték."
 
-#: app/FlightEditor.qml:155
+#: app/FlightEditor.qml:139
 #, kde-format
 msgctxt "flight arrival terminal"
 msgid "Terminal"
 msgstr "Terminál"
 
-#: app/FlightEditor.qml:160
+#: app/FlightEditor.qml:144
 #, kde-format
 msgctxt "flight arrival time"
 msgid "Time"
 msgstr "Idő"
 
-#: app/FlightEditor.qml:171
+#: app/FlightEditor.qml:155
 #, kde-format
 msgctxt "flight arrival"
 msgid "Arrival time has to be after the departure time."
 msgstr "Az érkezési időnek az indulási idő után kell lennie."
 
-#: app/FlightEditor.qml:178 app/FlightPage.qml:15 app/StatisticsPage.qml:92
+#: app/FlightEditor.qml:162 app/FlightPage.qml:15 app/StatisticsPage.qml:92
 #, kde-format
 msgid "Flight"
 msgstr "Repülés"
 
-#: app/FlightEditor.qml:187
+#: app/FlightEditor.qml:171
 #, fuzzy, kde-format
 #| msgid "Ticket number:"
 msgid "Flight number"
 msgstr "Jegy száma:"
 
-#: app/FlightEditor.qml:190
+#: app/FlightEditor.qml:174
 #, fuzzy, kde-format
 #| msgid "Not a valid number."
 msgid "Invalid flight number."
 msgstr "Nem érvényes szám."
 
-#: app/FlightEditor.qml:195 app/FlightEditor.qml:202
+#: app/FlightEditor.qml:179 app/FlightEditor.qml:186
 #, fuzzy, kde-format
 #| msgid "Seat"
 msgctxt "Flight seat"
@@ -3567,7 +3567,7 @@ msgid "Go To Now"
 msgstr ""
 
 #: app/TimelinePage.qml:173 app/TripGroupPage.qml:660
-#: app/TripGroupsPage.qml:105
+#: app/TripGroupsPage.qml:108
 #, kde-format
 msgctxt "@action:button"
 msgid "Add trip"
@@ -4021,14 +4021,14 @@ msgctxt "@title:window"
 msgid "Trips"
 msgstr "Kirándulás elküldve."
 
-#: app/TripGroupsPage.qml:39
+#: app/TripGroupsPage.qml:46
 #, fuzzy, kde-format
 #| msgid "Delete trip"
 msgctxt "List section header"
 msgid "Past trips"
 msgstr "Kirándulás törlése"
 
-#: app/TripGroupsPage.qml:41
+#: app/TripGroupsPage.qml:48
 #, fuzzy, kde-format
 #| msgctxt "not yet valid tickets"
 #| msgid "Future"
@@ -4036,7 +4036,7 @@ msgctxt "List section header"
 msgid "Future trips"
 msgstr "Jövőbeli"
 
-#: app/TripGroupsPage.qml:43
+#: app/TripGroupsPage.qml:50
 #, fuzzy, kde-format
 #| msgctxt "@title:tab"
 #| msgid "Current Ticket"
@@ -4044,14 +4044,14 @@ msgctxt "List section header"
 msgid "Current trip"
 msgstr "Jelenlegi jegy"
 
-#: app/TripGroupsPage.qml:77
+#: app/TripGroupsPage.qml:83
 #, fuzzy, kde-format
 #| msgid "%1 - %2"
 msgctxt "date range"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/TripGroupsPage.qml:78
+#: app/TripGroupsPage.qml:84
 #, kde-format
 msgid "Upcoming"
 msgstr ""

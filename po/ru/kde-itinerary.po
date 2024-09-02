@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-30 00:40+0000\n"
+"POT-Creation-Date: 2024-09-02 00:39+0000\n"
 "PO-Revision-Date: 2024-02-09 23:07+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -1108,108 +1108,108 @@ msgstr "Прибытие в %1: %2"
 msgid "Edit Flight"
 msgstr "Изменить рейс"
 
-#: app/FlightEditor.qml:86
+#: app/FlightEditor.qml:70
 #, kde-format
 msgctxt "flight departure"
 msgid "Departure - %1"
 msgstr "Отправление — %1"
 
-#: app/FlightEditor.qml:92 app/FlightEditor.qml:146 app/FlightPage.qml:131
+#: app/FlightEditor.qml:76 app/FlightEditor.qml:130 app/FlightPage.qml:131
 #: app/FlightPage.qml:177
 #, kde-format
 msgid "Airport"
 msgstr "Аэропорт"
 
-#: app/FlightEditor.qml:95
+#: app/FlightEditor.qml:79
 #, fuzzy, kde-format
 #| msgid "Check-out time:"
 msgid "Departure airport has to be specified."
 msgstr "Время регистрации отъезда:"
 
-#: app/FlightEditor.qml:101
+#: app/FlightEditor.qml:85
 #, kde-format
 msgctxt "flight departure terminal"
 msgid "Terminal"
 msgstr "Терминал"
 
-#: app/FlightEditor.qml:106
+#: app/FlightEditor.qml:90
 #, kde-format
 msgctxt "flight departure time"
 msgid "Time"
 msgstr "Время"
 
-#: app/FlightEditor.qml:111
+#: app/FlightEditor.qml:95
 #, fuzzy, kde-format
 #| msgid "Check-out time:"
 msgctxt "flight departure"
 msgid "Departure time has to be set."
 msgstr "Время регистрации отъезда:"
 
-#: app/FlightEditor.qml:117
+#: app/FlightEditor.qml:101
 #, kde-format
 msgctxt "flight departure gate"
 msgid "Gate"
 msgstr "Выход"
 
-#: app/FlightEditor.qml:122 app/FlightPage.qml:77
+#: app/FlightEditor.qml:106 app/FlightPage.qml:77
 #, kde-format
 msgid "Boarding time"
 msgstr "Время посадки"
 
-#: app/FlightEditor.qml:133
+#: app/FlightEditor.qml:117
 #, kde-format
 msgctxt "flight departure"
 msgid "Boarding time has to be before the departure time."
 msgstr ""
 
-#: app/FlightEditor.qml:140
+#: app/FlightEditor.qml:124
 #, kde-format
 msgctxt "flight arrival"
 msgid "Arrival - %1"
 msgstr "Прибытие — %1"
 
-#: app/FlightEditor.qml:149
+#: app/FlightEditor.qml:133
 #, fuzzy, kde-format
 #| msgctxt "a train/bus journey canceled by its operator"
 #| msgid "Arrival has been canceled."
 msgid "Arrival airport has to be specified."
 msgstr "Прибытие было отменено."
 
-#: app/FlightEditor.qml:155
+#: app/FlightEditor.qml:139
 #, kde-format
 msgctxt "flight arrival terminal"
 msgid "Terminal"
 msgstr "Терминал"
 
-#: app/FlightEditor.qml:160
+#: app/FlightEditor.qml:144
 #, kde-format
 msgctxt "flight arrival time"
 msgid "Time"
 msgstr "Время"
 
-#: app/FlightEditor.qml:171
+#: app/FlightEditor.qml:155
 #, kde-format
 msgctxt "flight arrival"
 msgid "Arrival time has to be after the departure time."
 msgstr ""
 
-#: app/FlightEditor.qml:178 app/FlightPage.qml:15 app/StatisticsPage.qml:92
+#: app/FlightEditor.qml:162 app/FlightPage.qml:15 app/StatisticsPage.qml:92
 #, kde-format
 msgid "Flight"
 msgstr "Рейс"
 
-#: app/FlightEditor.qml:187
+#: app/FlightEditor.qml:171
 #, fuzzy, kde-format
 #| msgid "Ticket number:"
 msgid "Flight number"
 msgstr "Номер билета:"
 
-#: app/FlightEditor.qml:190
+#: app/FlightEditor.qml:174
 #, kde-format
 msgid "Invalid flight number."
 msgstr ""
 
-#: app/FlightEditor.qml:195 app/FlightEditor.qml:202
+#: app/FlightEditor.qml:179 app/FlightEditor.qml:186
 #, fuzzy, kde-format
 #| msgid "Seat"
 msgctxt "Flight seat"
@@ -3651,7 +3651,7 @@ msgid "Go To Now"
 msgstr "Перейти к текущему времени"
 
 #: app/TimelinePage.qml:173 app/TripGroupPage.qml:660
-#: app/TripGroupsPage.qml:105
+#: app/TripGroupsPage.qml:108
 #, fuzzy, kde-format
 #| msgid "Add train trip..."
 msgctxt "@action:button"
@@ -4116,14 +4116,14 @@ msgctxt "@title:window"
 msgid "Trips"
 msgstr "Поездки"
 
-#: app/TripGroupsPage.qml:39
+#: app/TripGroupsPage.qml:46
 #, fuzzy, kde-format
 #| msgid "Boat trips"
 msgctxt "List section header"
 msgid "Past trips"
 msgstr "Путешествия на лодке"
 
-#: app/TripGroupsPage.qml:41
+#: app/TripGroupsPage.qml:48
 #, fuzzy, kde-format
 #| msgctxt "not yet valid tickets"
 #| msgid "Future"
@@ -4131,21 +4131,21 @@ msgctxt "List section header"
 msgid "Future trips"
 msgstr "Будущие"
 
-#: app/TripGroupsPage.qml:43
+#: app/TripGroupsPage.qml:50
 #, fuzzy, kde-format
 #| msgid "Current Ticket"
 msgctxt "List section header"
 msgid "Current trip"
 msgstr "Текущий билет"
 
-#: app/TripGroupsPage.qml:77
+#: app/TripGroupsPage.qml:83
 #, fuzzy, kde-format
 #| msgid "%1 - %2"
 msgctxt "date range"
 msgid "%1 - %2"
 msgstr "%1 — %2"
 
-#: app/TripGroupsPage.qml:78
+#: app/TripGroupsPage.qml:84
 #, kde-format
 msgid "Upcoming"
 msgstr ""
