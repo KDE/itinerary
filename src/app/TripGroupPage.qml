@@ -35,6 +35,14 @@ Kirigami.ScrollablePage {
 
     Kirigami.Theme.colorSet: Kirigami.Theme.Window
 
+    Connections {
+        target: TripGroupManager
+        function onTripGroupChanged(tgId : string) {
+            if (tgId === root.tripGroupId)
+                root.tripGroup = TripGroupManager.tripGroup(root.tripGroupId);
+        }
+    }
+
     /** Model index somewhat at the center of the currently display timeline. */
     function currentIndex() {
         let row = -1;
