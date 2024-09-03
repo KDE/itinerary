@@ -34,7 +34,7 @@ Kirigami.ScrollablePage {
             text: "Disable Development Mode"
             Layout.fillWidth: true
             onClicked: {
-                Settings.developmentMode = false;
+                Settings.developmentMode = !Settings.developmentMode;
                 showPassiveNotification("Development mode disabled");
                 applicationWindow().pageStack.goBack();
             }

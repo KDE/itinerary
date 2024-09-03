@@ -74,3 +74,13 @@ class ItineraryTestCase(unittest.TestCase):
         action = self.driver.find_element(by=AppiumBy.NAME, value=name)
         self.assertTrue(action.is_enabled())
         action.click()
+
+    def enableDevMode(self):
+        self.openGlobalDrawer()
+        self.driver.find_element(by=AppiumBy.NAME, value="Development").click()
+        self.driver.find_element(by=AppiumBy.NAME, value="Disable Development Mode").click()
+
+    def disableDevMode(self):
+        self.openGlobalDrawer()
+        self.driver.find_element(by=AppiumBy.NAME, value="Development").click()
+        self.driver.find_element(by=AppiumBy.NAME, value="Disable Development Mode").click()

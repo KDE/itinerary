@@ -104,6 +104,7 @@ Kirigami.ScrollablePage {
             }
 
             onClicked: root.openTripGroupPage(delegate.tripGroupId)
+            Accessible.onPressAction: root.openTripGroupPage(delegate.tripGroupId)
         }
     }
 
