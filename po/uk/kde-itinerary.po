@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-02 00:39+0000\n"
+"POT-Creation-Date: 2024-09-03 00:39+0000\n"
 "PO-Revision-Date: 2024-08-30 08:18+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -1785,46 +1785,24 @@ msgstr "У цьому календарі не знайдено придатни�
 msgid "Backup"
 msgstr "Резервна копія"
 
-#: app/ImportPage.qml:19
+#: app/ImportPage.qml:18
 #, kde-format
 msgctxt "@title"
 msgid "Import"
 msgstr "Імпортувати"
 
-#: app/ImportPage.qml:22
+#: app/ImportPage.qml:21
 #, kde-format
 msgid "Trip"
 msgstr "Подорож"
 
-#: app/ImportPage.qml:42
-#, kde-format
-msgid "New Trip"
-msgstr "Нова подорож"
-
-#: app/ImportPage.qml:45
-#, kde-format
-msgid "Add to Trip"
-msgstr "Додати до подорожі"
-
-#: app/ImportPage.qml:55 app/TripGroupEditorDialog.qml:24
-#: app/TripGroupMergeDialog.qml:56
-#, kde-format
-msgctxt "@label:textbox"
-msgid "Trip name:"
-msgstr "Назва подорожі:"
-
-#: app/ImportPage.qml:74
-#, kde-format
-msgid "Add to:"
-msgstr "Додати до:"
-
-#: app/ImportPage.qml:101
+#: app/ImportPage.qml:35
 #, kde-format
 msgctxt "@title:group"
 msgid "Items to Import"
 msgstr "Записи для імпортування"
 
-#: app/ImportPage.qml:140
+#: app/ImportPage.qml:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Import selection"
@@ -3885,6 +3863,13 @@ msgctxt "@title:window"
 msgid "Edit Trip"
 msgstr "Редагування подорожі"
 
+#: app/TripGroupEditorDialog.qml:24 app/TripGroupMergeDialog.qml:56
+#: app/TripGroupSelectorCard.qml:82
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Trip name:"
+msgstr "Назва подорожі:"
+
 #: app/tripgroupmanager.cpp:857
 #, kde-format
 msgctxt "%1 is destination, %2 is the standalone month name, %3 is the year"
@@ -3981,6 +3966,27 @@ msgstr "Об'єднати подорожі…"
 #, kde-format
 msgid "Split trip…"
 msgstr "Розділена подорож…"
+
+#: app/TripGroupSelectorCard.qml:68
+#, kde-format
+msgid "New Trip"
+msgstr "Нова подорож"
+
+#: app/TripGroupSelectorCard.qml:71
+#, kde-format
+msgid "Add to Trip"
+msgstr "Додати до подорожі"
+
+#: app/TripGroupSelectorCard.qml:88
+#, fuzzy, kde-format
+#| msgid "Ticket name must not be empty."
+msgid "Trip name must not be empty."
+msgstr "Назва квитка має бути непорожньою."
+
+#: app/TripGroupSelectorCard.qml:93
+#, kde-format
+msgid "Add to:"
+msgstr "Додати до:"
 
 #: app/TripGroupsPage.qml:15
 #, kde-format

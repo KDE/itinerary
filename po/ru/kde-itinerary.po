@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-02 00:39+0000\n"
+"POT-Creation-Date: 2024-09-03 00:39+0000\n"
 "PO-Revision-Date: 2024-02-09 23:07+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -1828,52 +1828,26 @@ msgstr "В этом календаре не найдены мероприяти�
 msgid "Backup"
 msgstr ""
 
-#: app/ImportPage.qml:19
+#: app/ImportPage.qml:18
 #, fuzzy, kde-format
 #| msgid "Import..."
 msgctxt "@title"
 msgid "Import"
 msgstr "Импорт…"
 
-#: app/ImportPage.qml:22
+#: app/ImportPage.qml:21
 #, fuzzy, kde-format
 #| msgid "Trips"
 msgid "Trip"
 msgstr "Поездки"
 
-#: app/ImportPage.qml:42
-#, fuzzy, kde-format
-#| msgid "Add train trip..."
-msgid "New Trip"
-msgstr "Добавить поездку на поезде…"
-
-#: app/ImportPage.qml:45
-#, fuzzy, kde-format
-#| msgid "Add train trip..."
-msgid "Add to Trip"
-msgstr "Добавить поездку на поезде…"
-
-#: app/ImportPage.qml:55 app/TripGroupEditorDialog.qml:24
-#: app/TripGroupMergeDialog.qml:56
-#, fuzzy, kde-format
-#| msgid "Under name:"
-msgctxt "@label:textbox"
-msgid "Trip name:"
-msgstr "Имя для резервирования:"
-
-#: app/ImportPage.qml:74
-#, fuzzy, kde-format
-#| msgid "Add train trip..."
-msgid "Add to:"
-msgstr "Добавить поездку на поезде…"
-
-#: app/ImportPage.qml:101
+#: app/ImportPage.qml:35
 #, kde-format
 msgctxt "@title:group"
 msgid "Items to Import"
 msgstr ""
 
-#: app/ImportPage.qml:140
+#: app/ImportPage.qml:74
 #, fuzzy, kde-format
 #| msgid "Import Reservation"
 msgctxt "@action:button"
@@ -4000,6 +3974,14 @@ msgctxt "@title:window"
 msgid "Edit Trip"
 msgstr "Изменить путешествие на лодке"
 
+#: app/TripGroupEditorDialog.qml:24 app/TripGroupMergeDialog.qml:56
+#: app/TripGroupSelectorCard.qml:82
+#, fuzzy, kde-format
+#| msgid "Under name:"
+msgctxt "@label:textbox"
+msgid "Trip name:"
+msgstr "Имя для резервирования:"
+
 #: app/tripgroupmanager.cpp:857
 #, kde-format
 msgctxt "%1 is destination, %2 is the standalone month name, %3 is the year"
@@ -4107,6 +4089,30 @@ msgstr "Добавить поездку на поезде…"
 #, fuzzy, kde-format
 #| msgid "Add train trip..."
 msgid "Split trip…"
+msgstr "Добавить поездку на поезде…"
+
+#: app/TripGroupSelectorCard.qml:68
+#, fuzzy, kde-format
+#| msgid "Add train trip..."
+msgid "New Trip"
+msgstr "Добавить поездку на поезде…"
+
+#: app/TripGroupSelectorCard.qml:71
+#, fuzzy, kde-format
+#| msgid "Add train trip..."
+msgid "Add to Trip"
+msgstr "Добавить поездку на поезде…"
+
+#: app/TripGroupSelectorCard.qml:88
+#, fuzzy, kde-format
+#| msgid "Ticket name must not be empty."
+msgid "Trip name must not be empty."
+msgstr "Название билета не должно быть пустым."
+
+#: app/TripGroupSelectorCard.qml:93
+#, fuzzy, kde-format
+#| msgid "Add train trip..."
+msgid "Add to:"
 msgstr "Добавить поездку на поезде…"
 
 #: app/TripGroupsPage.qml:15

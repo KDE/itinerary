@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-02 00:39+0000\n"
+"POT-Creation-Date: 2024-09-03 00:39+0000\n"
 "PO-Revision-Date: 2024-08-30 06:39+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -1770,46 +1770,24 @@ msgstr "Inga importerbara händelser hittades i den här kalendern."
 msgid "Backup"
 msgstr "Säkerhetskopiera"
 
-#: app/ImportPage.qml:19
+#: app/ImportPage.qml:18
 #, kde-format
 msgctxt "@title"
 msgid "Import"
 msgstr "Importera"
 
-#: app/ImportPage.qml:22
+#: app/ImportPage.qml:21
 #, kde-format
 msgid "Trip"
 msgstr "Resa"
 
-#: app/ImportPage.qml:42
-#, kde-format
-msgid "New Trip"
-msgstr "Ny resa"
-
-#: app/ImportPage.qml:45
-#, kde-format
-msgid "Add to Trip"
-msgstr "Lägg till i resa"
-
-#: app/ImportPage.qml:55 app/TripGroupEditorDialog.qml:24
-#: app/TripGroupMergeDialog.qml:56
-#, kde-format
-msgctxt "@label:textbox"
-msgid "Trip name:"
-msgstr "Resans namn:"
-
-#: app/ImportPage.qml:74
-#, kde-format
-msgid "Add to:"
-msgstr "Lägg till i:"
-
-#: app/ImportPage.qml:101
+#: app/ImportPage.qml:35
 #, kde-format
 msgctxt "@title:group"
 msgid "Items to Import"
 msgstr "Objekt att importera"
 
-#: app/ImportPage.qml:140
+#: app/ImportPage.qml:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Import selection"
@@ -3849,6 +3827,13 @@ msgctxt "@title:window"
 msgid "Edit Trip"
 msgstr "Redigera resa"
 
+#: app/TripGroupEditorDialog.qml:24 app/TripGroupMergeDialog.qml:56
+#: app/TripGroupSelectorCard.qml:82
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Trip name:"
+msgstr "Resans namn:"
+
 #: app/tripgroupmanager.cpp:857
 #, kde-format
 msgctxt "%1 is destination, %2 is the standalone month name, %3 is the year"
@@ -3943,6 +3928,27 @@ msgstr "Slå samman resor…"
 #, kde-format
 msgid "Split trip…"
 msgstr "Dela resa…"
+
+#: app/TripGroupSelectorCard.qml:68
+#, kde-format
+msgid "New Trip"
+msgstr "Ny resa"
+
+#: app/TripGroupSelectorCard.qml:71
+#, kde-format
+msgid "Add to Trip"
+msgstr "Lägg till i resa"
+
+#: app/TripGroupSelectorCard.qml:88
+#, fuzzy, kde-format
+#| msgid "Ticket name must not be empty."
+msgid "Trip name must not be empty."
+msgstr "Biljettnamnet får inte vara tomt."
+
+#: app/TripGroupSelectorCard.qml:93
+#, kde-format
+msgid "Add to:"
+msgstr "Lägg till i:"
 
 #: app/TripGroupsPage.qml:15
 #, kde-format

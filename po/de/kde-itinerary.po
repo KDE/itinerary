@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-02 00:39+0000\n"
+"POT-Creation-Date: 2024-09-03 00:39+0000\n"
 "PO-Revision-Date: 2024-08-25 10:08+0200\n"
 "Last-Translator: Alois.spitzbart <spitz234@hotmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -1791,52 +1791,26 @@ msgstr ""
 msgid "Backup"
 msgstr ""
 
-#: app/ImportPage.qml:19
+#: app/ImportPage.qml:18
 #, fuzzy, kde-format
 #| msgid "Import"
 msgctxt "@title"
 msgid "Import"
 msgstr "Importieren"
 
-#: app/ImportPage.qml:22
+#: app/ImportPage.qml:21
 #, fuzzy, kde-format
 #| msgid "Trips"
 msgid "Trip"
 msgstr "Reisen"
 
-#: app/ImportPage.qml:42
-#, fuzzy, kde-format
-#| msgid "Add train trip..."
-msgid "New Trip"
-msgstr "Zugreise hinzufügen ..."
-
-#: app/ImportPage.qml:45
-#, fuzzy, kde-format
-#| msgid "Add train trip..."
-msgid "Add to Trip"
-msgstr "Zugreise hinzufügen ..."
-
-#: app/ImportPage.qml:55 app/TripGroupEditorDialog.qml:24
-#: app/TripGroupMergeDialog.qml:56
-#, fuzzy, kde-format
-#| msgid "Under name:"
-msgctxt "@label:textbox"
-msgid "Trip name:"
-msgstr "Unter dem Namen:"
-
-#: app/ImportPage.qml:74
-#, fuzzy, kde-format
-#| msgid "Add train trip..."
-msgid "Add to:"
-msgstr "Zugreise hinzufügen ..."
-
-#: app/ImportPage.qml:101
+#: app/ImportPage.qml:35
 #, kde-format
 msgctxt "@title:group"
 msgid "Items to Import"
 msgstr ""
 
-#: app/ImportPage.qml:140
+#: app/ImportPage.qml:74
 #, fuzzy, kde-format
 #| msgid "Import Reservation"
 msgctxt "@action:button"
@@ -3931,6 +3905,14 @@ msgctxt "@title:window"
 msgid "Edit Trip"
 msgstr "Bootsfahrt bearbeiten"
 
+#: app/TripGroupEditorDialog.qml:24 app/TripGroupMergeDialog.qml:56
+#: app/TripGroupSelectorCard.qml:82
+#, fuzzy, kde-format
+#| msgid "Under name:"
+msgctxt "@label:textbox"
+msgid "Trip name:"
+msgstr "Unter dem Namen:"
+
 #: app/tripgroupmanager.cpp:857
 #, kde-format
 msgctxt "%1 is destination, %2 is the standalone month name, %3 is the year"
@@ -4036,6 +4018,30 @@ msgstr "Zugreise hinzufügen ..."
 #, fuzzy, kde-format
 #| msgid "Add train trip..."
 msgid "Split trip…"
+msgstr "Zugreise hinzufügen ..."
+
+#: app/TripGroupSelectorCard.qml:68
+#, fuzzy, kde-format
+#| msgid "Add train trip..."
+msgid "New Trip"
+msgstr "Zugreise hinzufügen ..."
+
+#: app/TripGroupSelectorCard.qml:71
+#, fuzzy, kde-format
+#| msgid "Add train trip..."
+msgid "Add to Trip"
+msgstr "Zugreise hinzufügen ..."
+
+#: app/TripGroupSelectorCard.qml:88
+#, fuzzy, kde-format
+#| msgid "Ticket name must not be empty."
+msgid "Trip name must not be empty."
+msgstr "Der Kartenname darf nicht leer sein."
+
+#: app/TripGroupSelectorCard.qml:93
+#, fuzzy, kde-format
+#| msgid "Add train trip..."
+msgid "Add to:"
 msgstr "Zugreise hinzufügen ..."
 
 #: app/TripGroupsPage.qml:15

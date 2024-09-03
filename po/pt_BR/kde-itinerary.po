@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-02 00:39+0000\n"
+"POT-Creation-Date: 2024-09-03 00:39+0000\n"
 "PO-Revision-Date: 2023-07-29 15:30-0300\n"
 "Last-Translator: Geraldo Simiao <geraldosimiao@fedoraproject.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -1882,52 +1882,26 @@ msgstr "Nenhum evento importável encontrado neste calendário."
 msgid "Backup"
 msgstr ""
 
-#: app/ImportPage.qml:19
+#: app/ImportPage.qml:18
 #, fuzzy, kde-format
 #| msgid "Import..."
 msgctxt "@title"
 msgid "Import"
 msgstr "Importar..."
 
-#: app/ImportPage.qml:22
+#: app/ImportPage.qml:21
 #, fuzzy, kde-format
 #| msgid "Trips"
 msgid "Trip"
 msgstr "Viagens"
 
-#: app/ImportPage.qml:42
-#, fuzzy, kde-format
-#| msgid "Add train trip..."
-msgid "New Trip"
-msgstr "Adicionar viagem de trem..."
-
-#: app/ImportPage.qml:45
-#, fuzzy, kde-format
-#| msgid "Add train trip..."
-msgid "Add to Trip"
-msgstr "Adicionar viagem de trem..."
-
-#: app/ImportPage.qml:55 app/TripGroupEditorDialog.qml:24
-#: app/TripGroupMergeDialog.qml:56
-#, fuzzy, kde-format
-#| msgid "Under name:"
-msgctxt "@label:textbox"
-msgid "Trip name:"
-msgstr "No nome de:"
-
-#: app/ImportPage.qml:74
-#, fuzzy, kde-format
-#| msgid "Add train trip..."
-msgid "Add to:"
-msgstr "Adicionar viagem de trem..."
-
-#: app/ImportPage.qml:101
+#: app/ImportPage.qml:35
 #, kde-format
 msgctxt "@title:group"
 msgid "Items to Import"
 msgstr ""
 
-#: app/ImportPage.qml:140
+#: app/ImportPage.qml:74
 #, fuzzy, kde-format
 #| msgid "Import Reservation"
 msgctxt "@action:button"
@@ -4091,6 +4065,14 @@ msgctxt "@title:window"
 msgid "Edit Trip"
 msgstr "Viagens de barco"
 
+#: app/TripGroupEditorDialog.qml:24 app/TripGroupMergeDialog.qml:56
+#: app/TripGroupSelectorCard.qml:82
+#, fuzzy, kde-format
+#| msgid "Under name:"
+msgctxt "@label:textbox"
+msgid "Trip name:"
+msgstr "No nome de:"
+
 #: app/tripgroupmanager.cpp:857
 #, fuzzy, kde-format
 #| msgid "%1 (%2 %3)"
@@ -4199,6 +4181,31 @@ msgstr "Adicionar viagem de trem..."
 #, fuzzy, kde-format
 #| msgid "Add train trip..."
 msgid "Split trip…"
+msgstr "Adicionar viagem de trem..."
+
+#: app/TripGroupSelectorCard.qml:68
+#, fuzzy, kde-format
+#| msgid "Add train trip..."
+msgid "New Trip"
+msgstr "Adicionar viagem de trem..."
+
+#: app/TripGroupSelectorCard.qml:71
+#, fuzzy, kde-format
+#| msgid "Add train trip..."
+msgid "Add to Trip"
+msgstr "Adicionar viagem de trem..."
+
+#: app/TripGroupSelectorCard.qml:88
+#, fuzzy, kde-format
+#| msgctxt "flight departure terminal"
+#| msgid "Departure terminal:"
+msgid "Trip name must not be empty."
+msgstr "Terminal de partida:"
+
+#: app/TripGroupSelectorCard.qml:93
+#, fuzzy, kde-format
+#| msgid "Add train trip..."
+msgid "Add to:"
 msgstr "Adicionar viagem de trem..."
 
 #: app/TripGroupsPage.qml:15

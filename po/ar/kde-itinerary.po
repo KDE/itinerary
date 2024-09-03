@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-02 00:39+0000\n"
+"POT-Creation-Date: 2024-09-03 00:39+0000\n"
 "PO-Revision-Date: 2023-05-11 10:49+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -1796,52 +1796,26 @@ msgstr ""
 msgid "Backup"
 msgstr ""
 
-#: app/ImportPage.qml:19
+#: app/ImportPage.qml:18
 #, fuzzy, kde-format
 #| msgid "Import..."
 msgctxt "@title"
 msgid "Import"
 msgstr "استورد..."
 
-#: app/ImportPage.qml:22
+#: app/ImportPage.qml:21
 #, fuzzy, kde-format
 #| msgid "Restaurant"
 msgid "Trip"
 msgstr "المطعم"
 
-#: app/ImportPage.qml:42
-#, fuzzy, kde-format
-#| msgid "Restaurant"
-msgid "New Trip"
-msgstr "المطعم"
-
-#: app/ImportPage.qml:45
-#, fuzzy, kde-format
-#| msgid "Restaurant"
-msgid "Add to Trip"
-msgstr "المطعم"
-
-#: app/ImportPage.qml:55 app/TripGroupEditorDialog.qml:24
-#: app/TripGroupMergeDialog.qml:56
-#, fuzzy, kde-format
-#| msgid "Ticket"
-msgctxt "@label:textbox"
-msgid "Trip name:"
-msgstr "تذكرة"
-
-#: app/ImportPage.qml:74
-#, fuzzy, kde-format
-#| msgid "Restaurant"
-msgid "Add to:"
-msgstr "المطعم"
-
-#: app/ImportPage.qml:101
+#: app/ImportPage.qml:35
 #, kde-format
 msgctxt "@title:group"
 msgid "Items to Import"
 msgstr ""
 
-#: app/ImportPage.qml:140
+#: app/ImportPage.qml:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Import selection"
@@ -3903,6 +3877,14 @@ msgctxt "@title:window"
 msgid "Edit Trip"
 msgstr "تذكرة"
 
+#: app/TripGroupEditorDialog.qml:24 app/TripGroupMergeDialog.qml:56
+#: app/TripGroupSelectorCard.qml:82
+#, fuzzy, kde-format
+#| msgid "Ticket"
+msgctxt "@label:textbox"
+msgid "Trip name:"
+msgstr "تذكرة"
+
 #: app/tripgroupmanager.cpp:857
 #, kde-format
 msgctxt "%1 is destination, %2 is the standalone month name, %3 is the year"
@@ -4005,6 +3987,29 @@ msgstr "المطعم"
 #, fuzzy, kde-format
 #| msgid "Restaurant"
 msgid "Split trip…"
+msgstr "المطعم"
+
+#: app/TripGroupSelectorCard.qml:68
+#, fuzzy, kde-format
+#| msgid "Restaurant"
+msgid "New Trip"
+msgstr "المطعم"
+
+#: app/TripGroupSelectorCard.qml:71
+#, fuzzy, kde-format
+#| msgid "Restaurant"
+msgid "Add to Trip"
+msgstr "المطعم"
+
+#: app/TripGroupSelectorCard.qml:88
+#, kde-format
+msgid "Trip name must not be empty."
+msgstr ""
+
+#: app/TripGroupSelectorCard.qml:93
+#, fuzzy, kde-format
+#| msgid "Restaurant"
+msgid "Add to:"
 msgstr "المطعم"
 
 #: app/TripGroupsPage.qml:15

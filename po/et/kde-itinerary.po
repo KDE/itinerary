@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-02 00:39+0000\n"
+"POT-Creation-Date: 2024-09-03 00:39+0000\n"
 "PO-Revision-Date: 2020-05-04 10:51+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -1926,52 +1926,26 @@ msgstr ""
 msgid "Backup"
 msgstr ""
 
-#: app/ImportPage.qml:19
+#: app/ImportPage.qml:18
 #, fuzzy, kde-format
 #| msgid "Import..."
 msgctxt "@title"
 msgid "Import"
 msgstr "Impordi ..."
 
-#: app/ImportPage.qml:22
+#: app/ImportPage.qml:21
 #, fuzzy, kde-format
 #| msgid "Trips"
 msgid "Trip"
 msgstr "Reisid"
 
-#: app/ImportPage.qml:42
-#, fuzzy, kde-format
-#| msgid "Add transfer after"
-msgid "New Trip"
-msgstr "Lisa järgnev transfeer"
-
-#: app/ImportPage.qml:45
-#, fuzzy, kde-format
-#| msgid "Add transfer after"
-msgid "Add to Trip"
-msgstr "Lisa järgnev transfeer"
-
-#: app/ImportPage.qml:55 app/TripGroupEditorDialog.qml:24
-#: app/TripGroupMergeDialog.qml:56
-#, fuzzy, kde-format
-#| msgid "Under name:"
-msgctxt "@label:textbox"
-msgid "Trip name:"
-msgstr "Nimega:"
-
-#: app/ImportPage.qml:74
-#, fuzzy, kde-format
-#| msgid "Add transfer after"
-msgid "Add to:"
-msgstr "Lisa järgnev transfeer"
-
-#: app/ImportPage.qml:101
+#: app/ImportPage.qml:35
 #, kde-format
 msgctxt "@title:group"
 msgid "Items to Import"
 msgstr ""
 
-#: app/ImportPage.qml:140
+#: app/ImportPage.qml:74
 #, fuzzy, kde-format
 #| msgid "Import Reservation"
 msgctxt "@action:button"
@@ -4140,6 +4114,14 @@ msgctxt "@title:window"
 msgid "Edit Trip"
 msgstr "Ekspordi ..."
 
+#: app/TripGroupEditorDialog.qml:24 app/TripGroupMergeDialog.qml:56
+#: app/TripGroupSelectorCard.qml:82
+#, fuzzy, kde-format
+#| msgid "Under name:"
+msgctxt "@label:textbox"
+msgid "Trip name:"
+msgstr "Nimega:"
+
 #: app/tripgroupmanager.cpp:857
 #, fuzzy, kde-format
 #| msgid "%1 (%2 %3)"
@@ -4248,6 +4230,30 @@ msgstr "Lisa järgnev transfeer"
 #, fuzzy, kde-format
 #| msgid "Add transfer after"
 msgid "Split trip…"
+msgstr "Lisa järgnev transfeer"
+
+#: app/TripGroupSelectorCard.qml:68
+#, fuzzy, kde-format
+#| msgid "Add transfer after"
+msgid "New Trip"
+msgstr "Lisa järgnev transfeer"
+
+#: app/TripGroupSelectorCard.qml:71
+#, fuzzy, kde-format
+#| msgid "Add transfer after"
+msgid "Add to Trip"
+msgstr "Lisa järgnev transfeer"
+
+#: app/TripGroupSelectorCard.qml:88
+#, fuzzy, kde-format
+#| msgid "Departure terminal:"
+msgid "Trip name must not be empty."
+msgstr "Väljumisterminal:"
+
+#: app/TripGroupSelectorCard.qml:93
+#, fuzzy, kde-format
+#| msgid "Add transfer after"
+msgid "Add to:"
 msgstr "Lisa järgnev transfeer"
 
 #: app/TripGroupsPage.qml:15

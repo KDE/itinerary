@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-02 00:39+0000\n"
+"POT-Creation-Date: 2024-09-03 00:39+0000\n"
 "PO-Revision-Date: 2024-08-20 23:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1764,52 +1764,26 @@ msgstr "이 캘린더에서 가져올 수 있는 이벤트가 없습니다."
 msgid "Backup"
 msgstr "백업"
 
-#: app/ImportPage.qml:19
+#: app/ImportPage.qml:18
 #, kde-format
 msgctxt "@title"
 msgid "Import"
 msgstr "가져오기"
 
-#: app/ImportPage.qml:22
+#: app/ImportPage.qml:21
 #, fuzzy, kde-format
 #| msgid "Trips"
 msgid "Trip"
 msgstr "여행"
 
-#: app/ImportPage.qml:42
-#, kde-format
-msgid "New Trip"
-msgstr "새 여정"
-
-#: app/ImportPage.qml:45
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add Trip"
-msgid "Add to Trip"
-msgstr "여정 추가"
-
-#: app/ImportPage.qml:55 app/TripGroupEditorDialog.qml:24
-#: app/TripGroupMergeDialog.qml:56
-#, kde-format
-msgctxt "@label:textbox"
-msgid "Trip name:"
-msgstr "여정 이름:"
-
-#: app/ImportPage.qml:74
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add trip"
-msgid "Add to:"
-msgstr "여정 추가"
-
-#: app/ImportPage.qml:101
+#: app/ImportPage.qml:35
 #, fuzzy, kde-format
 #| msgid "Selected items to import."
 msgctxt "@title:group"
 msgid "Items to Import"
 msgstr "가져오도록 선택한 항목입니다."
 
-#: app/ImportPage.qml:140
+#: app/ImportPage.qml:74
 #, fuzzy, kde-format
 #| msgid "Import selection"
 msgctxt "@action:button"
@@ -3843,6 +3817,13 @@ msgctxt "@title:window"
 msgid "Edit Trip"
 msgstr "여정 편집"
 
+#: app/TripGroupEditorDialog.qml:24 app/TripGroupMergeDialog.qml:56
+#: app/TripGroupSelectorCard.qml:82
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Trip name:"
+msgstr "여정 이름:"
+
 #: app/tripgroupmanager.cpp:857
 #, kde-format
 msgctxt "%1 is destination, %2 is the standalone month name, %3 is the year"
@@ -3943,6 +3924,31 @@ msgstr "여정 합치기…"
 #, kde-format
 msgid "Split trip…"
 msgstr "여정 나누기…"
+
+#: app/TripGroupSelectorCard.qml:68
+#, kde-format
+msgid "New Trip"
+msgstr "새 여정"
+
+#: app/TripGroupSelectorCard.qml:71
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Add Trip"
+msgid "Add to Trip"
+msgstr "여정 추가"
+
+#: app/TripGroupSelectorCard.qml:88
+#, fuzzy, kde-format
+#| msgid "Ticket name must not be empty."
+msgid "Trip name must not be empty."
+msgstr "티켓 이름이 비어 있으면 안 됩니다."
+
+#: app/TripGroupSelectorCard.qml:93
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Add trip"
+msgid "Add to:"
+msgstr "여정 추가"
 
 #: app/TripGroupsPage.qml:15
 #, kde-format

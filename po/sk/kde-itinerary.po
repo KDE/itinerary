@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-02 00:39+0000\n"
+"POT-Creation-Date: 2024-09-03 00:39+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -1895,52 +1895,26 @@ msgstr ""
 msgid "Backup"
 msgstr ""
 
-#: app/ImportPage.qml:19
+#: app/ImportPage.qml:18
 #, fuzzy, kde-format
 #| msgid "Import..."
 msgctxt "@title"
 msgid "Import"
 msgstr "Importovať..."
 
-#: app/ImportPage.qml:22
+#: app/ImportPage.qml:21
 #, fuzzy, kde-format
 #| msgid "Trip: %1"
 msgid "Trip"
 msgstr "Výlet: %1"
 
-#: app/ImportPage.qml:42
-#, fuzzy, kde-format
-#| msgid "Add Document..."
-msgid "New Trip"
-msgstr "Pridať dokument..."
-
-#: app/ImportPage.qml:45
-#, fuzzy, kde-format
-#| msgid "Add Document..."
-msgid "Add to Trip"
-msgstr "Pridať dokument..."
-
-#: app/ImportPage.qml:55 app/TripGroupEditorDialog.qml:24
-#: app/TripGroupMergeDialog.qml:56
-#, fuzzy, kde-format
-#| msgid "Under name:"
-msgctxt "@label:textbox"
-msgid "Trip name:"
-msgstr "Pod menom:"
-
-#: app/ImportPage.qml:74
-#, fuzzy, kde-format
-#| msgid "Add Document..."
-msgid "Add to:"
-msgstr "Pridať dokument..."
-
-#: app/ImportPage.qml:101
+#: app/ImportPage.qml:35
 #, kde-format
 msgctxt "@title:group"
 msgid "Items to Import"
 msgstr ""
 
-#: app/ImportPage.qml:140
+#: app/ImportPage.qml:74
 #, fuzzy, kde-format
 #| msgid "Hotel Reservation"
 msgctxt "@action:button"
@@ -4076,6 +4050,14 @@ msgctxt "@title:window"
 msgid "Edit Trip"
 msgstr "Exportovať..."
 
+#: app/TripGroupEditorDialog.qml:24 app/TripGroupMergeDialog.qml:56
+#: app/TripGroupSelectorCard.qml:82
+#, fuzzy, kde-format
+#| msgid "Under name:"
+msgctxt "@label:textbox"
+msgid "Trip name:"
+msgstr "Pod menom:"
+
 #: app/tripgroupmanager.cpp:857
 #, fuzzy, kde-format
 #| msgid "%1 (%2 %3)"
@@ -4182,6 +4164,30 @@ msgstr "Pridať dokument..."
 #, fuzzy, kde-format
 #| msgid "Add Document..."
 msgid "Split trip…"
+msgstr "Pridať dokument..."
+
+#: app/TripGroupSelectorCard.qml:68
+#, fuzzy, kde-format
+#| msgid "Add Document..."
+msgid "New Trip"
+msgstr "Pridať dokument..."
+
+#: app/TripGroupSelectorCard.qml:71
+#, fuzzy, kde-format
+#| msgid "Add Document..."
+msgid "Add to Trip"
+msgstr "Pridať dokument..."
+
+#: app/TripGroupSelectorCard.qml:88
+#, fuzzy, kde-format
+#| msgid "Departure terminal:"
+msgid "Trip name must not be empty."
+msgstr "Odletový terminál:"
+
+#: app/TripGroupSelectorCard.qml:93
+#, fuzzy, kde-format
+#| msgid "Add Document..."
+msgid "Add to:"
 msgstr "Pridať dokument..."
 
 #: app/TripGroupsPage.qml:15

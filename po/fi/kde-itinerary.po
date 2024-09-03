@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-02 00:39+0000\n"
+"POT-Creation-Date: 2024-09-03 00:39+0000\n"
 "PO-Revision-Date: 2024-02-27 13:39+0200\n"
 "Last-Translator: Kimmo Kujansuu <mrkujansuu@gmail.com>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -1793,56 +1793,27 @@ msgstr "Kalenterista ei löytynyt tuotavissa olevia tapahtumia."
 msgid "Backup"
 msgstr ""
 
-#: app/ImportPage.qml:19
+#: app/ImportPage.qml:18
 #, fuzzy, kde-format
 #| msgid "Import"
 msgctxt "@title"
 msgid "Import"
 msgstr "Tuo"
 
-#: app/ImportPage.qml:22
+#: app/ImportPage.qml:21
 #, fuzzy, kde-format
 #| msgid "Trips"
 msgid "Trip"
 msgstr "Matkat"
 
-#: app/ImportPage.qml:42
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Add New Trip"
-msgid "New Trip"
-msgstr "Lisää uusi matka"
-
-#: app/ImportPage.qml:45
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add trip"
-msgid "Add to Trip"
-msgstr "Lisää matka"
-
-#: app/ImportPage.qml:55 app/TripGroupEditorDialog.qml:24
-#: app/TripGroupMergeDialog.qml:56
-#, fuzzy, kde-format
-#| msgid "Under name:"
-msgctxt "@label:textbox"
-msgid "Trip name:"
-msgstr "Nimellä:"
-
-#: app/ImportPage.qml:74
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add trip"
-msgid "Add to:"
-msgstr "Lisää matka"
-
-#: app/ImportPage.qml:101
+#: app/ImportPage.qml:35
 #, fuzzy, kde-format
 #| msgid "Files or URLs to import."
 msgctxt "@title:group"
 msgid "Items to Import"
 msgstr "Tuotavat tiedostot tai verkko-osoitteet."
 
-#: app/ImportPage.qml:140
+#: app/ImportPage.qml:74
 #, fuzzy, kde-format
 #| msgid "Import Reservation"
 msgctxt "@action:button"
@@ -3932,6 +3903,14 @@ msgctxt "@title:window"
 msgid "Edit Trip"
 msgstr "Muokkaa laivamatkaa"
 
+#: app/TripGroupEditorDialog.qml:24 app/TripGroupMergeDialog.qml:56
+#: app/TripGroupSelectorCard.qml:82
+#, fuzzy, kde-format
+#| msgid "Under name:"
+msgctxt "@label:textbox"
+msgid "Trip name:"
+msgstr "Nimellä:"
+
 #: app/tripgroupmanager.cpp:857
 #, kde-format
 msgctxt "%1 is destination, %2 is the standalone month name, %3 is the year"
@@ -4040,6 +4019,33 @@ msgstr "Lisää lauttamatka…"
 #| msgid "Add train trip..."
 msgid "Split trip…"
 msgstr "Lisää junamatka…"
+
+#: app/TripGroupSelectorCard.qml:68
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "Add New Trip"
+msgid "New Trip"
+msgstr "Lisää uusi matka"
+
+#: app/TripGroupSelectorCard.qml:71
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Add trip"
+msgid "Add to Trip"
+msgstr "Lisää matka"
+
+#: app/TripGroupSelectorCard.qml:88
+#, fuzzy, kde-format
+#| msgid "Ticket name must not be empty."
+msgid "Trip name must not be empty."
+msgstr "Lipun nimi ei voi olla tyhjä."
+
+#: app/TripGroupSelectorCard.qml:93
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Add trip"
+msgid "Add to:"
+msgstr "Lisää matka"
 
 #: app/TripGroupsPage.qml:15
 #, fuzzy, kde-format
