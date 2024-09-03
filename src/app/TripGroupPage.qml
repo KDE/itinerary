@@ -255,7 +255,8 @@ Kirigami.ScrollablePage {
                 icon.name: "kdeconnect-tray"
                 onTriggered: ApplicationController.exportTripToKDEConnect(root.tripGroupId, model.deviceId)
             }
-            onObjectAdded: (object) => {
+            onObjectAdded: (index, object) => {
+                console.log(object)
                 exportTripGroupDialog._actions.push(object);
             }
         }
