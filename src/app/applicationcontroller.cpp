@@ -656,4 +656,14 @@ HealthCertificateManager* ApplicationController::healthCertificateManager() cons
     return m_healthCertMgr;
 }
 
+void ApplicationController::setContextTripGroupId(const QString &contextTripGroupId)
+{
+    if (m_contextTripGroupId == contextTripGroupId) {
+        return;
+    }
+
+    m_contextTripGroupId = contextTripGroupId;
+    Q_EMIT contextTripGroupIdChanged();
+}
+
 #include "moc_applicationcontroller.cpp"

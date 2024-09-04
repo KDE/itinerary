@@ -425,6 +425,7 @@ int main(int argc, char **argv)
     appController.setLiveDataManager(&liveDataMgr);
     appController.setTripGroupManager(&tripGroupMgr);
     appController.setPassManager(&passMgr);
+    appController.setContextTripGroupId(tripGroupModel.currentTripGroupId());
 #if !defined(Q_OS_ANDROID) && !defined(Q_OS_HAIKU)
     QObject::connect(&service, &KDBusService::activateRequested, [&](const QStringList &args, const QString &workingDir) {
         qCDebug(Log) << "remote activation" << args << workingDir;

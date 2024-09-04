@@ -45,7 +45,7 @@ class ApplicationController : public QObject
     /** The current trip group context, ie. the currently looked at trip group.
      *  Not to be confused with the current trip group, ie. the one happening now.
      */
-    Q_PROPERTY(QString contextTripGroupId MEMBER m_contextTripGroupId NOTIFY contextTripGroupIdChanged)
+    Q_PROPERTY(QString contextTripGroupId MEMBER m_contextTripGroupId WRITE setContextTripGroupId NOTIFY contextTripGroupIdChanged)
 
     Q_PROPERTY(bool hasHealthCertificateSupport READ hasHealthCertificateSupport CONSTANT)
     Q_PROPERTY(HealthCertificateManager *healthCertificateManager READ healthCertificateManager CONSTANT)
@@ -100,6 +100,8 @@ public:
     // health certificate manager
     bool hasHealthCertificateSupport() const;
     HealthCertificateManager *healthCertificateManager() const;
+
+    void setContextTripGroupId(const QString &contextTripGroupId);
 
 Q_SIGNALS:
     /** Human readable information message to be shown as passive notification. */

@@ -318,7 +318,6 @@ Kirigami.ApplicationWindow {
     }
 
     Component.onCompleted: {
-        ApplicationController.contextTripGroupId = TripGroupModel.currentTripGroupId();
         if (ReservationManager.isEmpty()) {
             pageStack.push(Qt.createComponent("org.kde.itinerary", "WelcomePage"));
         }
