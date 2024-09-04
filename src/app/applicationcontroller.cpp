@@ -528,12 +528,14 @@ bool ApplicationController::importBundle(KItinerary::File *file)
     Importer importer(file);
     int count = 0;
     {
+        TripGroupingBlocker groupingBlocker(m_tripGroupMgr);
         QSignalBlocker blocker(this); // suppress infoMessage()
         count += importer.importReservations(m_resMgr);
         count += importer.importPasses(m_pkPassMgr);
         count += importer.importDocuments(m_docMgr);
         count += importer.importFavoriteLocations(m_favLocModel);
         count += importer.importTransfers(m_resMgr, m_transferMgr);
+        count += importer.importTripGroups(m_tripGroupMgr);
         count += importer.importPasses(m_passMgr);
         count += importer.importHealthCertificates(healthCertificateManager());
         count += importer.importLiveData(m_liveDataMgr);

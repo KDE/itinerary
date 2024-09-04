@@ -207,7 +207,7 @@ int Importer::importReservations(ReservationManager *resMgr)
 {
     const auto resIds = m_file->reservations();
     for (const auto &resId : resIds) {
-        resMgr->addReservation(m_file->reservation(resId), resId);
+        m_resIdMap.insert(resId, resMgr->addReservation(m_file->reservation(resId), resId));
     }
     return resIds.size();
 }
@@ -243,6 +243,28 @@ int Importer::importTransfers(const ReservationManager *resMgr, TransferManager 
         count += t.state() != Transfer::UndefinedState ? 1 : 0;
     }
     return count;
+}
+
+int Importer::importTripGroups(TripGroupManager *tgMgr)
+{
+    const auto tgIds = m_file->listCustomData(BUNDLE_TRIPGROUP_DOMAIN);
+    for (const auto &importId : tgIds) {
+        const auto importTg = TripGroup::fromJson(QJsonDocument::fromJson(m_file->customData(BUNDLE_TRIPGROUP_DOMAIN, importId)).object());
+        const auto tgId = tgMgr->createEmptyGroup(importTg.name());
+        auto tg = tgMgr->tripGroup(tgId);
+        tg.setIsAutomaticallyGrouped(importTg.isAutomaticallyGrouped());
+        tg.setNameIsAutomatic(importTg.hasAutomaticName());
+        tg.setMatrixRoomId(importTg.matrixRoomId());
+        tgMgr->updateTripGroup(tgId, tg);
+
+        QStringList elems;
+        elems.reserve(importTg.elements().size());
+        for (const auto &resId : importTg.elements()) {
+            elems.push_back(m_resIdMap.value(resId));
+        }
+        tgMgr->addToGroup(elems, tgId);
+    }
+    return tgIds.size();
 }
 
 int Importer::importFavoriteLocations(FavoriteLocationModel *favLocModel)

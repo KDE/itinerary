@@ -7,6 +7,7 @@
 #include "testhelper.h"
 
 #include "applicationcontroller.h"
+#include "favoritelocationmodel.h"
 #include "importcontroller.h"
 #include "reservationmanager.h"
 #include "transfermanager.h"
@@ -17,6 +18,7 @@
 #include <QAbstractItemModelTester>
 #include <QSignalSpy>
 #include <QStandardPaths>
+#include <QTemporaryFile>
 
 using namespace Qt::Literals::StringLiterals;
 
@@ -663,6 +665,78 @@ private Q_SLOTS:
             tgMgr.setTransferManager(&transferMgr);
             QCOMPARE(tgMgr.tripGroups().size(), 0);
         }
+    }
+
+    void testMultiGroupBackup()
+    {
+        ReservationManager resMgr;
+        TransferManager transferMgr;
+        Test::clearAll(&resMgr);
+        auto ctrl = Test::makeAppController();
+        ctrl->setReservationManager(&resMgr);
+        ctrl->setTransferManager(&transferMgr);
+
+        TripGroupManager tgMgr;
+        tgMgr.setReservationManager(&resMgr);
+        tgMgr.setTransferManager(&transferMgr);
+        ctrl->setTripGroupManager(&tgMgr);
+
+        FavoriteLocationModel favLoc;
+        ctrl->setFavoriteLocationModel(&favLoc);
+
+        ImportController importer;
+        importer.setReservationManager(&resMgr);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
+        ctrl->commitImport(&importer);
+        QCOMPARE(tgMgr.tripGroups().size(), 1);
+
+        QStringList elements({ resMgr.batches()[0], resMgr.batches()[1], resMgr.batches()[2] });
+        const auto tgId = tgMgr.createGroup(elements, u"New Group"_s);
+        QVERIFY(!tgId.isEmpty());
+        QCOMPARE(tgMgr.tripGroups().size(), 2);
+
+        auto tg = tgMgr.tripGroup(tgId);
+        QCOMPARE(tg.isAutomaticallyGrouped(), false);
+        QCOMPARE(tg.hasAutomaticName(), false);
+        QCOMPARE(tg.name(), "New Group"_L1);
+        QCOMPARE(tg.elements().size(), 3);
+
+        const auto tgId2 = tgMgr.tripGroups()[0] == tgId ? tgMgr.tripGroups()[1] : tgMgr.tripGroups()[0];
+        tg = tgMgr.tripGroup(tgId2);
+        tg.setIsAutomaticallyGrouped(false);
+        tg.setNameIsAutomatic(false);
+        tg.setName(u"Group 2"_s);
+        tg.setMatrixRoomId(u"#group2:kde.org"_s);
+        tgMgr.updateTripGroup(tgId2, tg);
+
+        QTemporaryFile tmp;
+        QVERIFY(tmp.open());
+        tmp.close();
+        ctrl->exportToFile(QUrl::fromLocalFile(tmp.fileName()));
+
+        Test::clearAll(&resMgr);
+        TripGroupManager::clear();
+        QCOMPARE(resMgr.batches().size(), 0);
+        QCOMPARE(tgMgr.tripGroups().size(), 0);
+
+        importer.importFromUrl(QUrl::fromLocalFile(tmp.fileName()));
+        ctrl->commitImport(&importer);
+        QCOMPARE(resMgr.batches().size(), 11);
+        QCOMPARE(tgMgr.tripGroups().size(), 2);
+
+        const auto newTg1 = tgMgr.tripGroup(tgMgr.tripGroups()[0]).beginDateTime() < tgMgr.tripGroup(tgMgr.tripGroups()[1]).beginDateTime() ? tgMgr.tripGroup(tgMgr.tripGroups()[0]) : tgMgr.tripGroup(tgMgr.tripGroups()[1]);
+        const auto newTg2 = tgMgr.tripGroup(tgMgr.tripGroups()[1]).beginDateTime() < tgMgr.tripGroup(tgMgr.tripGroups()[0]).beginDateTime() ? tgMgr.tripGroup(tgMgr.tripGroups()[0]) : tgMgr.tripGroup(tgMgr.tripGroups()[1]);
+
+        QCOMPARE(newTg1.elements().size(), 3);
+        QCOMPARE(newTg1.name(), "New Group"_L1);
+        QCOMPARE(newTg1.isAutomaticallyGrouped(), false);
+        QCOMPARE(newTg1.hasAutomaticName(), false);
+
+        QCOMPARE(newTg2.elements().size(), 8);
+        QCOMPARE(newTg2.name(), "Group 2"_L1);
+        QCOMPARE(newTg2.matrixRoomId(), "#group2:kde.org"_L1);
+        QCOMPARE(newTg2.isAutomaticallyGrouped(), false);
+        QCOMPARE(newTg2.hasAutomaticName(), false);
     }
 };
 QTEST_GUILESS_MAIN(TripGroupTest)

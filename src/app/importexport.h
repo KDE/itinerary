@@ -7,6 +7,8 @@
 #ifndef IMPORTEXPORT_H
 #define IMPORTEXPORT_H
 
+#include <QHash>
+
 class DocumentManager;
 class FavoriteLocationModel;
 class HealthCertificateManager;
@@ -61,6 +63,7 @@ public:
     int importPasses(PkPassManager *pkPassMgr);
     int importDocuments(DocumentManager *docMgr);
     int importTransfers(const ReservationManager *resMgr, TransferManager *transferMgr);
+    int importTripGroups(TripGroupManager *tgMgr);
     int importFavoriteLocations(FavoriteLocationModel *favLocModel);
     int importPasses(PassManager *passMgr);
     int importHealthCertificates(HealthCertificateManager *healthCertMgr);
@@ -69,6 +72,7 @@ public:
 
 private:
     const KItinerary::File *m_file;
+    QHash<QString, QString> m_resIdMap;
 };
 
 #endif // IMPORTEXPORT_H
