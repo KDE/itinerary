@@ -506,7 +506,7 @@ void TimelineModel::updateTodayMarker()
     auto dt = now();
     auto it = std::lower_bound(m_elements.begin(), m_elements.end(), dt);
 
-    if ((!m_tripGroup.beginDateTime().isValid() || m_tripGroup.beginDateTime() < dt) && (!m_tripGroup.endDateTime().isValid() || dt < m_tripGroup.endDateTime())) {
+    if ((!m_tripGroup.beginDateTime().isValid() || m_tripGroup.beginDateTime().date() <= dt.date()) && (!m_tripGroup.endDateTime().isValid() || dt.date() <= m_tripGroup.endDateTime().date())) {
         if (it != m_elements.begin()) {
             const auto prevIt = std::prev(it);
             // check if the previous element is the old today marker, if so nothing to do
