@@ -216,7 +216,10 @@ QStringList TripGroupModel::emptyTripGroups() const
 
 QString TripGroupModel::currentTripGroupId() const
 {
-    const auto tgIds = intersectingTripGroups(now(), now());
+    auto tgIds = intersectingTripGroups(now(), now());
+    if (tgIds.isEmpty()) {
+        tgIds = intersectingTripGroups(now().date().startOfDay(), now().date().endOfDay());
+    }
     return tgIds.size() == 1 ? tgIds.at(0) : QString();
 }
 
