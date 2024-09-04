@@ -72,7 +72,15 @@ using namespace Qt::Literals::StringLiterals;
 
 [[nodiscard]] static bool probablyUrl(QStringView text)
 {
-    return (text.startsWith("https://"_L1) || text.startsWith("http://"_L1)) && text.size() < 256;
+    if (text.size() > 2048) {
+        return false;
+    }
+    if (!text.startsWith("https://"_L1) && !text.startsWith("http://"_L1)) {
+        return false;
+    }
+    return std::none_of(text.begin(), text.end(), [](QChar c) {
+        return c.isSpace();
+    });
 }
 
 [[nodiscard]] static KItinerary::EventReservation promoteToReservation(const QVariant &ev)
