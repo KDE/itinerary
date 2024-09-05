@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-04 00:40+0000\n"
-"PO-Revision-Date: 2024-09-03 04:47+0200\n"
+"POT-Creation-Date: 2024-09-05 00:40+0000\n"
+"PO-Revision-Date: 2024-09-04 05:00+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -372,10 +372,9 @@ msgid "Arrival time: %1"
 msgstr "ჩამოსვლის დრო: %1"
 
 #: app/BoatEditor.qml:17
-#, fuzzy, kde-format
-#| msgid "New Trip"
+#, kde-format
 msgid "New Boat Trip"
-msgstr "ახალი მოგზაურობა"
+msgstr "ახალი ნავით მოგზაურობა"
 
 #: app/BoatEditor.qml:17
 #, kde-format
@@ -868,12 +867,10 @@ msgid "Number: <b>%1</b>"
 msgstr "ნომერი: <b>%1</b>"
 
 #: app/EventEditor.qml:19
-#, fuzzy, kde-format
-#| msgctxt "event as in concert/conference/show, not as in appointment"
-#| msgid "Event"
+#, kde-format
 msgctxt "event as in concert/conference/show, not as in appointment"
 msgid "New Event"
-msgstr "მოვლენა"
+msgstr "ახალი მოვლენა"
 
 #: app/EventEditor.qml:20
 #, kde-format
@@ -1084,10 +1081,9 @@ msgid "Arrival at %1: %2"
 msgstr "%1-ზე ჩაფრენა: %2"
 
 #: app/FlightEditor.qml:17
-#, fuzzy, kde-format
-#| msgid "Flight"
+#, kde-format
 msgid "New Flight"
-msgstr "ფრენები"
+msgstr "ახალი ფრენა"
 
 #: app/FlightEditor.qml:17
 #, kde-format
@@ -1709,10 +1705,9 @@ msgid "Check-out time: %1"
 msgstr "ჩეკაუტის დრო: %1"
 
 #: app/HotelEditor.qml:19
-#, fuzzy, kde-format
-#| msgid "Hotel Reservation"
+#, kde-format
 msgid "New Hotel Reservation"
-msgstr "სასტუმროს ჯავშანი"
+msgstr "ახალი სასტუმროს ჯავშანი"
 
 #: app/HotelEditor.qml:19
 #, kde-format
@@ -1778,27 +1773,27 @@ msgstr "ჩეკინის დრო"
 msgid "Check-out time"
 msgstr "გამოსვლის დრო"
 
-#: app/importcontroller.cpp:145 app/importcontroller.cpp:461
+#: app/importcontroller.cpp:153 app/importcontroller.cpp:469
 #, kde-format
 msgid "Import failed: %1"
 msgstr "შემოტანის შეცდომა: %1"
 
-#: app/importcontroller.cpp:150
+#: app/importcontroller.cpp:158
 #, kde-format
 msgid "Import failed: File too large."
 msgstr "შემოტანის შეცდომა: ფაილი ძალიან დიდია."
 
-#: app/importcontroller.cpp:209 app/importcontroller.cpp:306
+#: app/importcontroller.cpp:217 app/importcontroller.cpp:314
 #, kde-format
 msgid "Found nothing to import."
 msgstr "შემოსატანი არაფერია."
 
-#: app/importcontroller.cpp:433
+#: app/importcontroller.cpp:441
 #, kde-format
 msgid "No importable events found in this calendar."
 msgstr "ამ კალენდარში შემოტანადი მოვლენები აღმოჩენილი არაა."
 
-#: app/importcontroller.cpp:615
+#: app/importcontroller.cpp:623
 #, kde-format
 msgid "Backup"
 msgstr "მარქაფი"
@@ -2062,10 +2057,9 @@ msgid "Search Journey"
 msgstr "მოგზაურობის ძებნა"
 
 #: app/JourneyRequestPage.qml:248
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgid "Mode of transportation"
-msgstr "მეტი ინფორმაცია"
+msgstr "ტრანსპორტის რეჟიმი"
 
 #: app/JourneyRequestPage.qml:258
 #, kde-format
@@ -2983,11 +2977,10 @@ msgid "Bus from %1 to %2"
 msgstr "ავტობუსი %1-დან %2-მდე"
 
 #: app/RestaurantEditor.qml:18
-#, fuzzy, kde-format
-#| msgid "Restaurant"
+#, kde-format
 msgctxt "@title"
 msgid "New Restaurant"
-msgstr "რესტორანი"
+msgstr "ახალი რესტორანი"
 
 #: app/RestaurantEditor.qml:19
 #, kde-format

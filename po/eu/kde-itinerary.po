@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-04 00:40+0000\n"
-"PO-Revision-Date: 2024-09-03 21:06+0200\n"
+"POT-Creation-Date: 2024-09-05 00:40+0000\n"
+"PO-Revision-Date: 2024-09-04 23:29+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -379,10 +379,9 @@ msgid "Arrival time: %1"
 msgstr "Heltzeko ordua: %1"
 
 #: app/BoatEditor.qml:17
-#, fuzzy, kde-format
-#| msgid "New Trip"
+#, kde-format
 msgid "New Boat Trip"
-msgstr "Txango berria"
+msgstr "Txango berria itsasontzian"
 
 #: app/BoatEditor.qml:17
 #, kde-format
@@ -875,12 +874,10 @@ msgid "Number: <b>%1</b>"
 msgstr "Zenbakia: <b>%1</b>"
 
 #: app/EventEditor.qml:19
-#, fuzzy, kde-format
-#| msgctxt "event as in concert/conference/show, not as in appointment"
-#| msgid "Event"
+#, kde-format
 msgctxt "event as in concert/conference/show, not as in appointment"
 msgid "New Event"
-msgstr "Ekitaldia"
+msgstr "Ekitaldi berria"
 
 #: app/EventEditor.qml:20
 #, kde-format
@@ -1091,10 +1088,9 @@ msgid "Arrival at %1: %2"
 msgstr "Helduera %1(e)ra: %2"
 
 #: app/FlightEditor.qml:17
-#, fuzzy, kde-format
-#| msgid "Flight"
+#, kde-format
 msgid "New Flight"
-msgstr "Hegaldia"
+msgstr "Hegaldi berria"
 
 #: app/FlightEditor.qml:17
 #, kde-format
@@ -1716,10 +1712,9 @@ msgid "Check-out time: %1"
 msgstr "Ordaindu eta irtete ordua: %1"
 
 #: app/HotelEditor.qml:19
-#, fuzzy, kde-format
-#| msgid "Hotel Reservation"
+#, kde-format
 msgid "New Hotel Reservation"
-msgstr "Hotel erreserba"
+msgstr "Hotel erreserba berria"
 
 #: app/HotelEditor.qml:19
 #, kde-format
@@ -1785,27 +1780,27 @@ msgstr "Izen-emateko ordua"
 msgid "Check-out time"
 msgstr "Ordaindu eta irteteko ordua"
 
-#: app/importcontroller.cpp:145 app/importcontroller.cpp:461
+#: app/importcontroller.cpp:153 app/importcontroller.cpp:469
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Inportatzea huts egin du: %1"
 
-#: app/importcontroller.cpp:150
+#: app/importcontroller.cpp:158
 #, kde-format
 msgid "Import failed: File too large."
 msgstr "Inportatzea huts egin du: Fitxategi luzeegia."
 
-#: app/importcontroller.cpp:209 app/importcontroller.cpp:306
+#: app/importcontroller.cpp:217 app/importcontroller.cpp:314
 #, kde-format
 msgid "Found nothing to import."
 msgstr "Ez da inportatzekorik aurkitu."
 
-#: app/importcontroller.cpp:433
+#: app/importcontroller.cpp:441
 #, kde-format
 msgid "No importable events found in this calendar."
 msgstr "Egutegi honetan ez da aurkitu inporta daitekeen ekitaldirik."
 
-#: app/importcontroller.cpp:615
+#: app/importcontroller.cpp:623
 #, kde-format
 msgid "Backup"
 msgstr "Babeskopia"
@@ -2069,10 +2064,9 @@ msgid "Search Journey"
 msgstr "Bilatu bidaia"
 
 #: app/JourneyRequestPage.qml:248
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgid "Mode of transportation"
-msgstr "Informazio gehiago"
+msgstr "Garraiobidea"
 
 #: app/JourneyRequestPage.qml:258
 #, kde-format
@@ -2989,11 +2983,10 @@ msgid "Bus from %1 to %2"
 msgstr "Autobusa, %1(e)tik %2(e)ra"
 
 #: app/RestaurantEditor.qml:18
-#, fuzzy, kde-format
-#| msgid "Restaurant"
+#, kde-format
 msgctxt "@title"
 msgid "New Restaurant"
-msgstr "Jatetxea"
+msgstr "Jatetxe berria"
 
 #: app/RestaurantEditor.qml:19
 #, kde-format

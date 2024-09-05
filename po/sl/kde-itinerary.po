@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-04 00:40+0000\n"
-"PO-Revision-Date: 2024-09-03 07:28+0200\n"
+"POT-Creation-Date: 2024-09-05 00:40+0000\n"
+"PO-Revision-Date: 2024-09-04 07:08+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -379,10 +379,9 @@ msgid "Arrival time: %1"
 msgstr "Čas prihoda: %1"
 
 #: app/BoatEditor.qml:17
-#, fuzzy, kde-format
-#| msgid "New Trip"
+#, kde-format
 msgid "New Boat Trip"
-msgstr "Novo potovanje"
+msgstr "Novo ladijsko potovanje"
 
 #: app/BoatEditor.qml:17
 #, kde-format
@@ -877,12 +876,10 @@ msgid "Number: <b>%1</b>"
 msgstr "Številka: <b>%1</b>"
 
 #: app/EventEditor.qml:19
-#, fuzzy, kde-format
-#| msgctxt "event as in concert/conference/show, not as in appointment"
-#| msgid "Event"
+#, kde-format
 msgctxt "event as in concert/conference/show, not as in appointment"
 msgid "New Event"
-msgstr "Dogodek"
+msgstr "Novi dogodek"
 
 #: app/EventEditor.qml:20
 #, kde-format
@@ -1093,10 +1090,9 @@ msgid "Arrival at %1: %2"
 msgstr "Prihod na %1: %2"
 
 #: app/FlightEditor.qml:17
-#, fuzzy, kde-format
-#| msgid "Flight"
+#, kde-format
 msgid "New Flight"
-msgstr "Let"
+msgstr "Novi let"
 
 #: app/FlightEditor.qml:17
 #, kde-format
@@ -1720,15 +1716,14 @@ msgid "Check-out time: %1"
 msgstr "Čas odjave iz hotela: %1"
 
 #: app/HotelEditor.qml:19
-#, fuzzy, kde-format
-#| msgid "Hotel Reservation"
+#, kde-format
 msgid "New Hotel Reservation"
-msgstr "Rezervacija hotela"
+msgstr "Nova rezervacija hotela"
 
 #: app/HotelEditor.qml:19
 #, kde-format
 msgid "Edit Hotel Reservation"
-msgstr "Uredi hotelsko rezervacijo"
+msgstr "Uredi rezervacijo hotela"
 
 #: app/HotelEditor.qml:47
 #, kde-format
@@ -1789,27 +1784,27 @@ msgstr "Čas prijave"
 msgid "Check-out time"
 msgstr "Čas odjave"
 
-#: app/importcontroller.cpp:145 app/importcontroller.cpp:461
+#: app/importcontroller.cpp:153 app/importcontroller.cpp:469
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Uvoz ni uspel: %1"
 
-#: app/importcontroller.cpp:150
+#: app/importcontroller.cpp:158
 #, kde-format
 msgid "Import failed: File too large."
 msgstr "Uvoz ni uspel: Datoteka prevelika."
 
-#: app/importcontroller.cpp:209 app/importcontroller.cpp:306
+#: app/importcontroller.cpp:217 app/importcontroller.cpp:314
 #, kde-format
 msgid "Found nothing to import."
 msgstr "Ničesar ni najdenega za uvoz."
 
-#: app/importcontroller.cpp:433
+#: app/importcontroller.cpp:441
 #, kde-format
 msgid "No importable events found in this calendar."
 msgstr "Ni najdenih dogodkov za uvoz v tem koledarju."
 
-#: app/importcontroller.cpp:615
+#: app/importcontroller.cpp:623
 #, kde-format
 msgid "Backup"
 msgstr "Varovalna kopija"
@@ -2073,10 +2068,9 @@ msgid "Search Journey"
 msgstr "Išči potovanje"
 
 #: app/JourneyRequestPage.qml:248
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgid "Mode of transportation"
-msgstr "Več informacij"
+msgstr "Način transporta"
 
 #: app/JourneyRequestPage.qml:258
 #, kde-format
@@ -2995,11 +2989,10 @@ msgid "Bus from %1 to %2"
 msgstr "Avtobus %1 iz %2"
 
 #: app/RestaurantEditor.qml:18
-#, fuzzy, kde-format
-#| msgid "Restaurant"
+#, kde-format
 msgctxt "@title"
 msgid "New Restaurant"
-msgstr "Restavracija"
+msgstr "Nova restavracija"
 
 #: app/RestaurantEditor.qml:19
 #, kde-format

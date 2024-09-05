@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-04 00:40+0000\n"
-"PO-Revision-Date: 2024-09-03 17:42+0200\n"
+"POT-Creation-Date: 2024-09-05 00:40+0000\n"
+"PO-Revision-Date: 2024-09-04 13:24+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -375,10 +375,9 @@ msgid "Arrival time: %1"
 msgstr "Aankomsttijd: %1"
 
 #: app/BoatEditor.qml:17
-#, fuzzy, kde-format
-#| msgid "New Trip"
+#, kde-format
 msgid "New Boat Trip"
-msgstr "Nieuwe reis"
+msgstr "Nieuwe bootreis"
 
 #: app/BoatEditor.qml:17
 #, kde-format
@@ -871,12 +870,10 @@ msgid "Number: <b>%1</b>"
 msgstr "Nummer: <b>%1</b>"
 
 #: app/EventEditor.qml:19
-#, fuzzy, kde-format
-#| msgctxt "event as in concert/conference/show, not as in appointment"
-#| msgid "Event"
+#, kde-format
 msgctxt "event as in concert/conference/show, not as in appointment"
 msgid "New Event"
-msgstr "Gebeurtenis"
+msgstr "Nieuwe gebeurtenis"
 
 #: app/EventEditor.qml:20
 #, kde-format
@@ -1087,10 +1084,9 @@ msgid "Arrival at %1: %2"
 msgstr "Aankomst op %1: %2"
 
 #: app/FlightEditor.qml:17
-#, fuzzy, kde-format
-#| msgid "Flight"
+#, kde-format
 msgid "New Flight"
-msgstr "Vlucht"
+msgstr "Nieuwe vlucht"
 
 #: app/FlightEditor.qml:17
 #, kde-format
@@ -1712,10 +1708,9 @@ msgid "Check-out time: %1"
 msgstr "Uitchecktijd: %1"
 
 #: app/HotelEditor.qml:19
-#, fuzzy, kde-format
-#| msgid "Hotel Reservation"
+#, kde-format
 msgid "New Hotel Reservation"
-msgstr "Hotelreservering"
+msgstr "Nieuwe hotelreservering"
 
 #: app/HotelEditor.qml:19
 #, kde-format
@@ -1781,27 +1776,27 @@ msgstr "Inchecktijd"
 msgid "Check-out time"
 msgstr "Uitchecktijd"
 
-#: app/importcontroller.cpp:145 app/importcontroller.cpp:461
+#: app/importcontroller.cpp:153 app/importcontroller.cpp:469
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Importeren mislukt: %1"
 
-#: app/importcontroller.cpp:150
+#: app/importcontroller.cpp:158
 #, kde-format
 msgid "Import failed: File too large."
 msgstr "Importeren is mislukt: bestand is te groot."
 
-#: app/importcontroller.cpp:209 app/importcontroller.cpp:306
+#: app/importcontroller.cpp:217 app/importcontroller.cpp:314
 #, kde-format
 msgid "Found nothing to import."
 msgstr "Niets gevonden om te importeren."
 
-#: app/importcontroller.cpp:433
+#: app/importcontroller.cpp:441
 #, kde-format
 msgid "No importable events found in this calendar."
 msgstr "Geen te importeren gebeurtenissen gevonden in deze agenda."
 
-#: app/importcontroller.cpp:615
+#: app/importcontroller.cpp:623
 #, kde-format
 msgid "Backup"
 msgstr "Reservekopie"
@@ -2065,10 +2060,9 @@ msgid "Search Journey"
 msgstr "Reis zoeken"
 
 #: app/JourneyRequestPage.qml:248
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgid "Mode of transportation"
-msgstr "Meer informatie"
+msgstr "Manier van transport"
 
 #: app/JourneyRequestPage.qml:258
 #, kde-format
@@ -2983,11 +2977,10 @@ msgid "Bus from %1 to %2"
 msgstr "Bus van %1 naar %2"
 
 #: app/RestaurantEditor.qml:18
-#, fuzzy, kde-format
-#| msgid "Restaurant"
+#, kde-format
 msgctxt "@title"
 msgid "New Restaurant"
-msgstr "Restaurant"
+msgstr "Nieuw restaurant"
 
 #: app/RestaurantEditor.qml:19
 #, kde-format

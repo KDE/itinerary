@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-04 00:40+0000\n"
-"PO-Revision-Date: 2024-08-30 10:59+0200\n"
+"POT-Creation-Date: 2024-09-05 00:40+0000\n"
+"PO-Revision-Date: 2024-09-04 10:33+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -375,10 +375,9 @@ msgid "Arrival time: %1"
 msgstr "Hora d'arribada: %1"
 
 #: app/BoatEditor.qml:17
-#, fuzzy, kde-format
-#| msgid "New Trip"
+#, kde-format
 msgid "New Boat Trip"
-msgstr "Viatge nou"
+msgstr "Viatge nou amb vaixell"
 
 #: app/BoatEditor.qml:17
 #, kde-format
@@ -871,12 +870,10 @@ msgid "Number: <b>%1</b>"
 msgstr "Número: <b>%1</b>"
 
 #: app/EventEditor.qml:19
-#, fuzzy, kde-format
-#| msgctxt "event as in concert/conference/show, not as in appointment"
-#| msgid "Event"
+#, kde-format
 msgctxt "event as in concert/conference/show, not as in appointment"
 msgid "New Event"
-msgstr "Esdeveniment"
+msgstr "Esdeveniment nou"
 
 #: app/EventEditor.qml:20
 #, kde-format
@@ -1087,10 +1084,9 @@ msgid "Arrival at %1: %2"
 msgstr "Arribada a les %1: %2"
 
 #: app/FlightEditor.qml:17
-#, fuzzy, kde-format
-#| msgid "Flight"
+#, kde-format
 msgid "New Flight"
-msgstr "Vol"
+msgstr "Vol nou"
 
 #: app/FlightEditor.qml:17
 #, kde-format
@@ -1712,10 +1708,9 @@ msgid "Check-out time: %1"
 msgstr "Hora de l'eixida: %1"
 
 #: app/HotelEditor.qml:19
-#, fuzzy, kde-format
-#| msgid "Hotel Reservation"
+#, kde-format
 msgid "New Hotel Reservation"
-msgstr "Reserva d'hotel"
+msgstr "Reserva d'hotel nova"
 
 #: app/HotelEditor.qml:19
 #, kde-format
@@ -1781,28 +1776,28 @@ msgstr "Hora de la facturació"
 msgid "Check-out time"
 msgstr "Hora de l'eixida"
 
-#: app/importcontroller.cpp:145 app/importcontroller.cpp:461
+#: app/importcontroller.cpp:153 app/importcontroller.cpp:469
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Ha fallat la importació: %1"
 
-#: app/importcontroller.cpp:150
+#: app/importcontroller.cpp:158
 #, kde-format
 msgid "Import failed: File too large."
 msgstr "Ha fallat la importació: Fitxer massa gran."
 
-#: app/importcontroller.cpp:209 app/importcontroller.cpp:306
+#: app/importcontroller.cpp:217 app/importcontroller.cpp:314
 #, kde-format
 msgid "Found nothing to import."
 msgstr "No s'ha trobat res a importar."
 
-#: app/importcontroller.cpp:433
+#: app/importcontroller.cpp:441
 #, kde-format
 msgid "No importable events found in this calendar."
 msgstr ""
 "No s'ha trobat cap esdeveniment que es puga importar en este calendari."
 
-#: app/importcontroller.cpp:615
+#: app/importcontroller.cpp:623
 #, kde-format
 msgid "Backup"
 msgstr "Còpia de seguretat"
@@ -2066,10 +2061,9 @@ msgid "Search Journey"
 msgstr "Busca un viatge"
 
 #: app/JourneyRequestPage.qml:248
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgid "Mode of transportation"
-msgstr "Més informació"
+msgstr "Mode de transport"
 
 #: app/JourneyRequestPage.qml:258
 #, kde-format
@@ -2990,11 +2984,10 @@ msgid "Bus from %1 to %2"
 msgstr "Autobús des de %1 a %2"
 
 #: app/RestaurantEditor.qml:18
-#, fuzzy, kde-format
-#| msgid "Restaurant"
+#, kde-format
 msgctxt "@title"
 msgid "New Restaurant"
-msgstr "Restaurant"
+msgstr "Restaurant nou"
 
 #: app/RestaurantEditor.qml:19
 #, kde-format
@@ -4000,10 +3993,9 @@ msgid "Add to Trip"
 msgstr "Afig al viatge"
 
 #: app/TripGroupSelectorCard.qml:88
-#, fuzzy, kde-format
-#| msgid "Ticket name must not be empty."
+#, kde-format
 msgid "Trip name must not be empty."
-msgstr "El nom del bitllet no pot estar buit."
+msgstr "El nom del viatge no pot estar buit."
 
 #: app/TripGroupSelectorCard.qml:93
 #, kde-format
