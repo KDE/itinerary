@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-05 00:40+0000\n"
-"PO-Revision-Date: 2024-08-31 09:14+0200\n"
+"PO-Revision-Date: 2024-09-04 08:13+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -4029,10 +4029,9 @@ msgid "Add to Trip"
 msgstr "Ajouter au trajet"
 
 #: app/TripGroupSelectorCard.qml:88
-#, fuzzy, kde-format
-#| msgid "Ticket name must not be empty."
+#, kde-format
 msgid "Trip name must not be empty."
-msgstr "Il est impossible que le nom du ticket soit vide."
+msgstr "Le nom du trajet ne doit pas être vide."
 
 #: app/TripGroupSelectorCard.qml:93
 #, kde-format

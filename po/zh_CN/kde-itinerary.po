@@ -862,12 +862,10 @@ msgid "Number: <b>%1</b>"
 msgstr ""
 
 #: app/EventEditor.qml:19
-#, fuzzy, kde-format
-#| msgctxt "event as in concert/conference/show, not as in appointment"
-#| msgid "Event"
+#, kde-format
 msgctxt "event as in concert/conference/show, not as in appointment"
 msgid "New Event"
-msgstr "活动"
+msgstr ""
 
 #: app/EventEditor.qml:20
 #, kde-format
@@ -1078,10 +1076,9 @@ msgid "Arrival at %1: %2"
 msgstr "到达 %1 的时间：%2"
 
 #: app/FlightEditor.qml:17
-#, fuzzy, kde-format
-#| msgid "Flight"
+#, kde-format
 msgid "New Flight"
-msgstr "航班信息"
+msgstr ""
 
 #: app/FlightEditor.qml:17
 #, kde-format
@@ -1697,10 +1694,9 @@ msgid "Check-out time: %1"
 msgstr "退房时间：%1"
 
 #: app/HotelEditor.qml:19
-#, fuzzy, kde-format
-#| msgid "Hotel Reservation"
+#, kde-format
 msgid "New Hotel Reservation"
-msgstr "酒店预订"
+msgstr ""
 
 #: app/HotelEditor.qml:19
 #, kde-format
@@ -2050,10 +2046,9 @@ msgid "Search Journey"
 msgstr ""
 
 #: app/JourneyRequestPage.qml:248
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgid "Mode of transportation"
-msgstr "更多信息"
+msgstr ""
 
 #: app/JourneyRequestPage.qml:258
 #, kde-format
@@ -2966,12 +2961,10 @@ msgid "Bus from %1 to %2"
 msgstr ""
 
 #: app/RestaurantEditor.qml:18
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Edit Restaurant"
+#, kde-format
 msgctxt "@title"
 msgid "New Restaurant"
-msgstr "编辑餐厅信息"
+msgstr ""
 
 #: app/RestaurantEditor.qml:19
 #, kde-format

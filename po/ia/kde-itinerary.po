@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-05 00:40+0000\n"
-"PO-Revision-Date: 2024-09-03 10:53+0200\n"
+"PO-Revision-Date: 2024-09-05 09:52+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -374,10 +374,9 @@ msgid "Arrival time: %1"
 msgstr "Tempore de arrivata: %1"
 
 #: app/BoatEditor.qml:17
-#, fuzzy, kde-format
-#| msgid "New Trip"
+#, kde-format
 msgid "New Boat Trip"
-msgstr "Nove Viage "
+msgstr "Nove Viage de Barca"
 
 #: app/BoatEditor.qml:17
 #, kde-format
@@ -870,12 +869,10 @@ msgid "Number: <b>%1</b>"
 msgstr "Numero: <b>%1</b>"
 
 #: app/EventEditor.qml:19
-#, fuzzy, kde-format
-#| msgctxt "event as in concert/conference/show, not as in appointment"
-#| msgid "Event"
+#, kde-format
 msgctxt "event as in concert/conference/show, not as in appointment"
 msgid "New Event"
-msgstr "Evento"
+msgstr "Nove evento"
 
 #: app/EventEditor.qml:20
 #, kde-format
@@ -1086,10 +1083,9 @@ msgid "Arrival at %1: %2"
 msgstr "Arrivata a %1: %2"
 
 #: app/FlightEditor.qml:17
-#, fuzzy, kde-format
-#| msgid "Flight"
+#, kde-format
 msgid "New Flight"
-msgstr "Volo"
+msgstr "Volo Volo"
 
 #: app/FlightEditor.qml:17
 #, kde-format
@@ -1711,10 +1707,9 @@ msgid "Check-out time: %1"
 msgstr "Tempore de Check-Out: %1"
 
 #: app/HotelEditor.qml:19
-#, fuzzy, kde-format
-#| msgid "Hotel Reservation"
+#, kde-format
 msgid "New Hotel Reservation"
-msgstr "Reservation de Hotel: "
+msgstr "Nove Reservation de Hotel"
 
 #: app/HotelEditor.qml:19
 #, kde-format
@@ -2064,10 +2059,9 @@ msgid "Search Journey"
 msgstr "Cerca Viage"
 
 #: app/JourneyRequestPage.qml:248
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgid "Mode of transportation"
-msgstr "Altere information"
+msgstr "Modo de transporto"
 
 #: app/JourneyRequestPage.qml:258
 #, kde-format
@@ -2983,11 +2977,10 @@ msgid "Bus from %1 to %2"
 msgstr "Autobus ex %1 a %2"
 
 #: app/RestaurantEditor.qml:18
-#, fuzzy, kde-format
-#| msgid "Restaurant"
+#, kde-format
 msgctxt "@title"
 msgid "New Restaurant"
-msgstr "Restaurante"
+msgstr "Nove Restaurante"
 
 #: app/RestaurantEditor.qml:19
 #, kde-format
