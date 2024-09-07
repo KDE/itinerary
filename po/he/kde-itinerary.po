@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-05 00:40+0000\n"
-"PO-Revision-Date: 2024-09-05 15:00+0300\n"
+"PO-Revision-Date: 2024-09-06 08:28+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? "
-"2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
+"n % 10 == 0) ? 2 : 3));\n"
 "X-Generator: Lokalize 24.05.2\n"
 
 #, kde-format
@@ -378,10 +378,9 @@ msgid "Arrival time: %1"
 msgstr "זמן הגעה: %1"
 
 #: app/BoatEditor.qml:17
-#, fuzzy, kde-format
-#| msgid "New Trip"
+#, kde-format
 msgid "New Boat Trip"
-msgstr "טיול חדש"
+msgstr "טיול חדש בספינה"
 
 #: app/BoatEditor.qml:17
 #, kde-format
@@ -876,12 +875,10 @@ msgid "Number: <b>%1</b>"
 msgstr "מספר: <b>%1</b>"
 
 #: app/EventEditor.qml:19
-#, fuzzy, kde-format
-#| msgctxt "event as in concert/conference/show, not as in appointment"
-#| msgid "Event"
+#, kde-format
 msgctxt "event as in concert/conference/show, not as in appointment"
 msgid "New Event"
-msgstr "אירוע"
+msgstr "אירוע חדש"
 
 #: app/EventEditor.qml:20
 #, kde-format
@@ -1092,10 +1089,9 @@ msgid "Arrival at %1: %2"
 msgstr "הגעה אל %1: %2"
 
 #: app/FlightEditor.qml:17
-#, fuzzy, kde-format
-#| msgid "Flight"
+#, kde-format
 msgid "New Flight"
-msgstr "טיסה"
+msgstr "טיסה חדשה"
 
 #: app/FlightEditor.qml:17
 #, kde-format
@@ -1719,10 +1715,9 @@ msgid "Check-out time: %1"
 msgstr "שעת מסירה: %1"
 
 #: app/HotelEditor.qml:19
-#, fuzzy, kde-format
-#| msgid "Hotel Reservation"
+#, kde-format
 msgid "New Hotel Reservation"
-msgstr "הזמנה במלון"
+msgstr "הזמנה חדשה במלון"
 
 #: app/HotelEditor.qml:19
 #, kde-format
@@ -2072,10 +2067,9 @@ msgid "Search Journey"
 msgstr "חיפוש מסע"
 
 #: app/JourneyRequestPage.qml:248
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgid "Mode of transportation"
-msgstr "פרטים נוספים"
+msgstr "צורת תעבורה"
 
 #: app/JourneyRequestPage.qml:258
 #, kde-format
@@ -2968,10 +2962,10 @@ msgstr "לא זמין כרגע"
 #, kde-format
 msgid "One space"
 msgid_plural "%1 spaces"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "מקום אחד"
+msgstr[1] "שני מקומות"
+msgstr[2] "%1 מקומות"
+msgstr[3] "%1 מקומות"
 
 #: app/ReservationDocumentsCard.qml:19
 #, kde-format
@@ -2994,11 +2988,10 @@ msgid "Bus from %1 to %2"
 msgstr "אוטובוס מ%1 אל %2"
 
 #: app/RestaurantEditor.qml:18
-#, fuzzy, kde-format
-#| msgid "Restaurant"
+#, kde-format
 msgctxt "@title"
 msgid "New Restaurant"
-msgstr "מסעדה"
+msgstr "מסעדה חדשה"
 
 #: app/RestaurantEditor.qml:19
 #, kde-format
@@ -3999,10 +3992,9 @@ msgid "Add to Trip"
 msgstr "הוספה לטיול"
 
 #: app/TripGroupSelectorCard.qml:88
-#, fuzzy, kde-format
-#| msgid "Ticket name must not be empty."
+#, kde-format
 msgid "Trip name must not be empty."
-msgstr "שם הכרטיס לא יכול להיות ריק."
+msgstr "שם הטיול לא יכול להיות ריק."
 
 #: app/TripGroupSelectorCard.qml:93
 #, kde-format

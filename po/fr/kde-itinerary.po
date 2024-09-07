@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-05 00:40+0000\n"
-"PO-Revision-Date: 2024-09-04 08:13+0200\n"
+"PO-Revision-Date: 2024-09-05 09:05+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -380,10 +380,9 @@ msgid "Arrival time: %1"
 msgstr "Heure d'arrivée : %1"
 
 #: app/BoatEditor.qml:17
-#, fuzzy, kde-format
-#| msgid "New Trip"
+#, kde-format
 msgid "New Boat Trip"
-msgstr "Nouveau trajet"
+msgstr "Nouveau trajet en bateau"
 
 #: app/BoatEditor.qml:17
 #, kde-format
@@ -879,12 +878,10 @@ msgid "Number: <b>%1</b>"
 msgstr "Numéro : <b>%1</b>"
 
 #: app/EventEditor.qml:19
-#, fuzzy, kde-format
-#| msgctxt "event as in concert/conference/show, not as in appointment"
-#| msgid "Event"
+#, kde-format
 msgctxt "event as in concert/conference/show, not as in appointment"
 msgid "New Event"
-msgstr "Événement"
+msgstr "Nouvel évènement"
 
 #: app/EventEditor.qml:20
 #, kde-format
@@ -1097,10 +1094,9 @@ msgid "Arrival at %1: %2"
 msgstr "Arrivée à %1 : %2"
 
 #: app/FlightEditor.qml:17
-#, fuzzy, kde-format
-#| msgid "Flight"
+#, kde-format
 msgid "New Flight"
-msgstr "Vol"
+msgstr "Nouveau vol"
 
 #: app/FlightEditor.qml:17
 #, kde-format
@@ -1728,10 +1724,9 @@ msgid "Check-out time: %1"
 msgstr "Heure de libération de la chambre : %1"
 
 #: app/HotelEditor.qml:19
-#, fuzzy, kde-format
-#| msgid "Hotel Reservation"
+#, kde-format
 msgid "New Hotel Reservation"
-msgstr "Réservation d'hôtel"
+msgstr "Nouvelle réservation d'hôtel"
 
 #: app/HotelEditor.qml:19
 #, kde-format
@@ -2083,10 +2078,9 @@ msgid "Search Journey"
 msgstr "Rechercher un voyage"
 
 #: app/JourneyRequestPage.qml:248
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgid "Mode of transportation"
-msgstr "Plus d'informations"
+msgstr "Mode de transport"
 
 #: app/JourneyRequestPage.qml:258
 #, kde-format
@@ -3006,11 +3000,10 @@ msgid "Bus from %1 to %2"
 msgstr "Bus de %1vers %2"
 
 #: app/RestaurantEditor.qml:18
-#, fuzzy, kde-format
-#| msgid "Restaurant"
+#, kde-format
 msgctxt "@title"
 msgid "New Restaurant"
-msgstr "Restaurant"
+msgstr "Nouveau restaurant"
 
 #: app/RestaurantEditor.qml:19
 #, kde-format
