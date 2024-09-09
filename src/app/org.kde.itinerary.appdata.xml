@@ -856,7 +856,16 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="24.08.1" date="2024-09-12"/>
+    <release version="24.08.1" date="2024-09-12">
+      <description>
+        <ul>
+          <li>New or improved travel document extractors for BlablaBus, Deutsche Bahn, Eurostar, Italo, MAV, Reisnordland ferries, Reservix, Sunnycars, United Airlines and VDV e-tickets.</li>
+          <li>Fix access to public transport data in Zurich, Switzerland.</li>
+          <li>Fix country color box not opening correctly on phones.</li>
+          <li>Dark mode support on Android.</li>
+        </ul>
+      </description>
+    </release>
     <release version="24.08.0" date="2024-08-22">
       <description>
         <ul>
