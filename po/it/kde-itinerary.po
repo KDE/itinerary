@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-05 00:40+0000\n"
-"PO-Revision-Date: 2024-08-30 14:43+0200\n"
+"PO-Revision-Date: 2024-09-04 18:27+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -374,10 +374,9 @@ msgid "Arrival time: %1"
 msgstr "Orario di arrivo: %1"
 
 #: app/BoatEditor.qml:17
-#, fuzzy, kde-format
-#| msgid "New Trip"
+#, kde-format
 msgid "New Boat Trip"
-msgstr "Nuovo viaggio"
+msgstr "Modifica viaggio in nave"
 
 #: app/BoatEditor.qml:17
 #, kde-format
@@ -870,12 +869,10 @@ msgid "Number: <b>%1</b>"
 msgstr "Numero: <b>%1</b>"
 
 #: app/EventEditor.qml:19
-#, fuzzy, kde-format
-#| msgctxt "event as in concert/conference/show, not as in appointment"
-#| msgid "Event"
+#, kde-format
 msgctxt "event as in concert/conference/show, not as in appointment"
 msgid "New Event"
-msgstr "Evento"
+msgstr "Nuovo evento"
 
 #: app/EventEditor.qml:20
 #, kde-format
@@ -1086,10 +1083,9 @@ msgid "Arrival at %1: %2"
 msgstr "Arrivo a %1: %2"
 
 #: app/FlightEditor.qml:17
-#, fuzzy, kde-format
-#| msgid "Flight"
+#, kde-format
 msgid "New Flight"
-msgstr "Volo"
+msgstr "Nuovo volo"
 
 #: app/FlightEditor.qml:17
 #, kde-format
@@ -1711,10 +1707,9 @@ msgid "Check-out time: %1"
 msgstr "Orario di check-out: %1"
 
 #: app/HotelEditor.qml:19
-#, fuzzy, kde-format
-#| msgid "Hotel Reservation"
+#, kde-format
 msgid "New Hotel Reservation"
-msgstr "Prenotazione albergo"
+msgstr "Nuova prenotazione d'albergo"
 
 #: app/HotelEditor.qml:19
 #, kde-format
@@ -2064,10 +2059,9 @@ msgid "Search Journey"
 msgstr "Cerca viaggio"
 
 #: app/JourneyRequestPage.qml:248
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgid "Mode of transportation"
-msgstr "Altre informazioni"
+msgstr "Modalità di trasporto"
 
 #: app/JourneyRequestPage.qml:258
 #, kde-format
@@ -2985,11 +2979,10 @@ msgid "Bus from %1 to %2"
 msgstr "Autobus da %1 a %2"
 
 #: app/RestaurantEditor.qml:18
-#, fuzzy, kde-format
-#| msgid "Restaurant"
+#, kde-format
 msgctxt "@title"
 msgid "New Restaurant"
-msgstr "Ristorante"
+msgstr "Nuovo ristorante"
 
 #: app/RestaurantEditor.qml:19
 #, kde-format
@@ -3994,10 +3987,9 @@ msgid "Add to Trip"
 msgstr "Aggiungi a viaggio"
 
 #: app/TripGroupSelectorCard.qml:88
-#, fuzzy, kde-format
-#| msgid "Ticket name must not be empty."
+#, kde-format
 msgid "Trip name must not be empty."
-msgstr "Il nome del biglietto non può essere vuoto."
+msgstr "Il nome del viaggio non può essere vuoto."
 
 #: app/TripGroupSelectorCard.qml:93
 #, kde-format
