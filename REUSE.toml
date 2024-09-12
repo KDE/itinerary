@@ -1,0 +1,40 @@
+version = 1
+SPDX-PackageName = "KDE Itinerary"
+SPDX-PackageSupplier = "Volker Krause <vkrause@kde.org>"
+SPDX-PackageDownloadLocation = "https://invent.kde.org/pim/itinerary"
+
+[[annotations]]
+path = ["autotests/data/**.ics", "autotests/data/**.json", "autotests/data/**.model", "autotests/data/**.pkpass", "autotests/data/**.xml", "autotests/data/timeline/**", "autotests/data/tripgroup/**.json", "autotests/data/tripgroupproxy/**.model", "autotests/data/publictransport/**.json", "autotests/data/**.itinerary"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "none"
+SPDX-License-Identifier = "CC0-1.0"
+
+[[annotations]]
+path = "tests/**.json"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "none"
+SPDX-License-Identifier = "CC0-1.0"
+
+[[annotations]]
+path = ["src/app/android/res/drawable/splash_logo.png", "src/app/android/res/mipmap-**/ic_launcher.png", "src/app/android/ic_launcher-playstore.png"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "Mathis Brüchert <mbb-mail@gmx.de>"
+SPDX-License-Identifier = "LGPL-2.0-or-later"
+
+[[annotations]]
+path = "fastlane/metadata/org.kde.itinerary/en-US/images/featureGraphic.**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "Mathis Brüchert <mbb-mail@gmx.de>, Volker Krause <vkrause@kde.org>"
+SPDX-License-Identifier = "LGPL-2.0-or-later"
+
+[[annotations]]
+path = "src/app/android/res/drawable/vendor_logo.png"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "KDE Breeze Team"
+SPDX-License-Identifier = "LGPL-2.0-or-later"
+
+[[annotations]]
+path = "src/app/android/res/values-**/strings.xml"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "KDE Translation Teams"
+SPDX-License-Identifier = "LGPL-2.0-or-later"
