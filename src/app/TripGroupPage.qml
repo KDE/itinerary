@@ -709,4 +709,16 @@ Kirigami.ScrollablePage {
     onTripGroupIdChanged: {
         ApplicationController.contextTripGroupId = root.tripGroupId
     }
+
+    // work around initial positioning not working correctly below, as at that point
+    // listView.height has bogus values. No idea why, possibly delayed layouting in the ScrollablePage,
+    // or a side-effect of the binding loop on delegate heights
+    Timer {
+        id: positionTimer
+        interval: 0
+        repeat: false
+        onTriggered: listView.positionViewAtIndex(timelineModel.todayRow, ListView.Beginning);
+    }
+
+    Component.onCompleted: positionTimer.start()
 }
