@@ -26,7 +26,7 @@ template <typename T>
 inline bool compareJson(const QString &refFile, const T &output, const T &ref)
 {
     if (output != ref) {
-        QFile failFile(refFile + QLatin1String(".fail"));
+        QFile failFile(refFile + QLatin1StringView(".fail"));
         failFile.open(QFile::WriteOnly);
         failFile.write(QJsonDocument(output).toJson());
         failFile.close();

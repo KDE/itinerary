@@ -89,10 +89,10 @@ TraewellingController::TraewellingController(std::function<QNetworkAccessManager
         connect(reply, &QNetworkReply::finished, this, [this, reply, tokenUrl, refreshToken]() {
             if (reply->error() != QNetworkReply::NoError) {
                 QUrlQuery query;
-                query.addQueryItem(QLatin1String("grant_type"), QStringLiteral("refresh_token"));
-                query.addQueryItem(QLatin1String("refresh_token"), *refreshToken);
-                query.addQueryItem(QLatin1String("redirect_uri"), QString::fromLatin1(QUrl::toPercentEncoding(QStringLiteral("http://127.0.0.1:11450"))));
-                query.addQueryItem(QLatin1String("client_id"), QLatin1String("98"));
+                query.addQueryItem(QLatin1StringView("grant_type"), QStringLiteral("refresh_token"));
+                query.addQueryItem(QLatin1StringView("refresh_token"), *refreshToken);
+                query.addQueryItem(QLatin1StringView("redirect_uri"), QString::fromLatin1(QUrl::toPercentEncoding(QStringLiteral("http://127.0.0.1:11450"))));
+                query.addQueryItem(QLatin1StringView("client_id"), QLatin1StringView("98"));
                 QNetworkRequest refreshRequest(tokenUrl);
                 refreshRequest.setHeader(QNetworkRequest::UserAgentHeader, ApplicationController::userAgent());
                 refreshRequest.setHeader(QNetworkRequest::ContentTypeHeader,
@@ -150,7 +150,7 @@ void TraewellingController::post(const QString &endpoint, const QByteArray &data
 
 void TraewellingController::loadData()
 {
-    get(QLatin1String("/api/v1/auth/user"), {}, [this](const QJsonObject &json){
+    get(QLatin1StringView("/api/v1/auth/user"), {}, [this](const QJsonObject &json){
         setUsername(json[QStringLiteral("data")][QStringLiteral("username")].toString());
     });
 }
@@ -162,13 +162,13 @@ void TraewellingController::login()
     auto challenge = QString::fromLatin1(QCryptographicHash::hash(m_verifier, QCryptographicHash::Sha256).toBase64());
     auto challengeString = challenge.replace(QLatin1Char('+'), QLatin1Char('-')).replace(QLatin1Char('/'), QLatin1Char('_')).left(challenge.indexOf(QLatin1Char('=')));
     QUrlQuery query;
-    query.addQueryItem(QLatin1String("code_challenge"), challengeString);
-    query.addQueryItem(QStringLiteral("code_challenge_method"), QLatin1String("S256"));
-    query.addQueryItem(QStringLiteral("client_id"), QLatin1String("98"));
-    query.addQueryItem(QStringLiteral("redirect_uri"), QLatin1String("http://127.0.0.1:11450"));
-    query.addQueryItem(QStringLiteral("response_type"), QLatin1String("code"));
-    query.addQueryItem(QStringLiteral("scope"), QLatin1String("write-statuses read-settings read-settings-profile"));
-    query.addQueryItem(QLatin1String("state"), m_state);
+    query.addQueryItem(QLatin1StringView("code_challenge"), challengeString);
+    query.addQueryItem(QStringLiteral("code_challenge_method"), QLatin1StringView("S256"));
+    query.addQueryItem(QStringLiteral("client_id"), QLatin1StringView("98"));
+    query.addQueryItem(QStringLiteral("redirect_uri"), QLatin1StringView("http://127.0.0.1:11450"));
+    query.addQueryItem(QStringLiteral("response_type"), QLatin1StringView("code"));
+    query.addQueryItem(QStringLiteral("scope"), QLatin1StringView("write-statuses read-settings read-settings-profile"));
+    query.addQueryItem(QLatin1StringView("state"), m_state);
     auto authUrl = buildUrl(QStringLiteral("/oauth/authorize"), {});
     authUrl.setQuery(query);
 
@@ -190,11 +190,11 @@ void TraewellingController::login()
             }
             auto tokenUrl = buildUrl(QStringLiteral("/oauth/token"), {});
             QUrlQuery query;
-            query.addQueryItem(QLatin1String("grant_type"), QStringLiteral("authorization_code"));
-            query.addQueryItem(QLatin1String("code"), QString::fromLatin1(QUrl::toPercentEncoding(code)));
-            query.addQueryItem(QLatin1String("redirect_uri"), QString::fromLatin1(QUrl::toPercentEncoding(QStringLiteral("http://127.0.0.1:11450"))));
-            query.addQueryItem(QLatin1String("code_verifier"), QString::fromLatin1(m_verifier));
-            query.addQueryItem(QLatin1String("client_id"), QLatin1String("98"));
+            query.addQueryItem(QLatin1StringView("grant_type"), QStringLiteral("authorization_code"));
+            query.addQueryItem(QLatin1StringView("code"), QString::fromLatin1(QUrl::toPercentEncoding(code)));
+            query.addQueryItem(QLatin1StringView("redirect_uri"), QString::fromLatin1(QUrl::toPercentEncoding(QStringLiteral("http://127.0.0.1:11450"))));
+            query.addQueryItem(QLatin1StringView("code_verifier"), QString::fromLatin1(m_verifier));
+            query.addQueryItem(QLatin1StringView("client_id"), QLatin1StringView("98"));
             QNetworkRequest request(tokenUrl);
             request.setHeader(QNetworkRequest::UserAgentHeader, ApplicationController::userAgent());
             request.setHeader(QNetworkRequest::ContentTypeHeader,
@@ -202,8 +202,8 @@ void TraewellingController::login()
             auto reply = m_namFactory()->post(request, query.toString(QUrl::FullyEncoded).toUtf8());
             connect(reply, &QNetworkReply::finished, this, [this, reply](){
                 auto json = QJsonDocument::fromJson(reply->readAll()).object();
-                setAccessToken(json[QLatin1String("access_token")].toString());
-                const auto refreshToken = json[QLatin1String("refresh_token")].toString();
+                setAccessToken(json[QLatin1StringView("access_token")].toString());
+                const auto refreshToken = json[QLatin1StringView("refresh_token")].toString();
                 writeKeychain(QStringLiteral("traewelling-access"), m_accessToken);
                 writeKeychain(QStringLiteral("traewelling-refresh"), refreshToken);
                 QSettings settings;
