@@ -67,7 +67,7 @@ FormCard.FormCard {
         return false;
     }
 
-    function seatString() {
+    function seatString(): string {
         let s = []
         for (const resId of resIds) {
             const res = ReservationManager.reservation(resId);

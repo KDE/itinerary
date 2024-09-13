@@ -22,6 +22,35 @@ Kirigami.ScrollablePage {
     /** Reservation::reservationFor, unique for all travelers on a multi-traveler reservation set */
     readonly property var reservationFor: reservation.reservationFor
     property Component editor
+    readonly property var reservationIds: ReservationManager.reservationsForBatch(root.batchId)
+
+    function seatString(): string {
+        let s = [];
+        for (const reservationId of root.reservationIds) {
+            const reservation = ReservationManager.reservation(reservationId);
+            const seat = reservation?.reservedTicket?.ticketedSeat;
+            if (seat) {
+                s.push(seat.seatNumber);
+            }
+        }
+        if (s.length === 0) {
+            return "-";
+        }
+        return s.join(", ");
+    }
+
+
+
+    /** @c true if we have at least one seat reserverion in this batch. */
+    readonly property bool hasSeat: {
+        for (const resId of reservationIds) {
+            const res = ReservationManager.reservation(resId);
+            const seat = res?.reservedTicket?.ticketedSeat;
+            if (seat && seat.seatNumber !== "")
+                return true;
+        }
+        return false;
+    }
 
     property QtObject controller: TimelineDelegateController {
         id: _controller

@@ -97,44 +97,40 @@ DetailsPage {
 
         // seat reservation
         FormCard.FormHeader {
-            visible: seatSectionLabel.visible || seatRowLabel.visible || seatNumberLabel.visible
+            visible: root.hasSeat
             title: i18n("Seat")
         }
 
         FormCard.FormCard {
-            visible: seatSectionLabel.visible || seatRowLabel.visible || seatNumberLabel.visible || seatTypeLabel.visible
-            FormCard.FormTextDelegate {
-                id: seatSectionLabel
-                text: i18nc("seat section, e.g. block in a stadium", "Section:")
-                description: root.reservation.reservedTicket.ticketedSeat.seatSection
-                visible: description
-            }
-            FormCard.FormDelegateSeparator {
-                visible: root.reservation.reservedTicket.ticketedSeat.seatSection
-            }
-            FormCard.FormTextDelegate {
-                id: seatRowLabel
-                text: i18nc("seat row", "Row:")
-                description: root.reservation.reservedTicket.ticketedSeat.seatRow
-                visible: description
-            }
-            FormCard.FormDelegateSeparator {
-                visible: root.reservation.reservedTicket.ticketedSeat.seatRow
-            }
-            FormCard.FormTextDelegate {
-                id: seatNumberLabel
-                text: i18nc("seat number", "Number:")
-                description: root.reservation.reservedTicket.ticketedSeat.seatNumber
-                visible: description
-            }
-            FormCard.FormDelegateSeparator {
-                visible: root.reservation.reservedTicket.ticketedSeat.seatNumber
-            }
-            FormCard.FormTextDelegate {
-                id: seatTypeLabel
-                text: i18nc("seat type", "Type:")
-                description: root.reservation.reservedTicket.ticketedSeat.seatingType
-                visible: description
+            visible: root.hasSeat
+
+            FormCard.AbstractFormDelegate {
+                background: null
+                contentItem: RowLayout {
+                    spacing: 0
+
+                    TimelineDelegateSeatRowLabel {
+                        text: i18nc("event venue seat section", "Section: <b>%1</b>", root.reservation?.reservedTicket?.ticketedSeat?.seatSection || "-")
+                    }
+                    Kirigami.Separator {
+                        Layout.fillHeight: true
+                    }
+                    TimelineDelegateSeatRowLabel {
+                        text: i18nc("event venue seat row", "Row: <b>%1</b>", root.reservation?.reservedTicket?.ticketedSeat?.seatRow || "-")
+                    }
+                    Kirigami.Separator {
+                        Layout.fillHeight: true
+                    }
+                    TimelineDelegateSeatRowLabel {
+                        text: i18nc("event venue seat number", "Number: <b>%1</b>", root.reservation?.reservedTicket?.ticketedSeat?.seatNumber || "-")
+                    }
+                    Kirigami.Separator {
+                        Layout.fillHeight: true
+                    }
+                    TimelineDelegateSeatRowLabel {
+                        text: i18nc("event venue seat type", "Type: <b>%1</b>", root.reservation?.reservedTicket?.ticketedSeat?.seatingType || "-")
+                    }
+                }
             }
         }
 

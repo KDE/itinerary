@@ -101,7 +101,7 @@ DetailsPage {
             TicketTokenDelegate {
                 id: ticketToken
                 Layout.fillWidth: true
-                resIds: ReservationManager.reservationsForBatch(root.batchId)
+                resIds: root.reservationIds
                 onCurrentReservationIdChanged: {
                     if (!currentReservationId)
                         return;
@@ -192,6 +192,18 @@ DetailsPage {
                 font.italic: true
                 onLinkActivated: Qt.openUrlExternally(link)
             }
+
+            FormCard.FormDelegateSeparator {
+                visible: departure.notes.length > 0 && departureLayoutButton.visible
+            }
+
+            FormCard.FormButtonDelegate {
+                id: departureLayoutButton
+                text: i18n("Departure Vehicle Layout")
+                icon.name: "view-list-details"
+                visible: departure && (departure.route.line.mode == KPublicTransport.Line.LongDistanceTrain || departure.route.line.mode == KPublicTransport.Line.Train || departure.route.name !== "")
+                onClicked: applicationWindow().pageStack.push(vehicleLayoutPage, {stopover: root.controller.departure, arrival: false})
+            }
         }
 
         // arrival data
@@ -271,6 +283,18 @@ DetailsPage {
                 font.italic: true
                 onLinkActivated: Qt.openUrlExternally(link)
             }
+
+            FormCard.FormDelegateSeparator {
+                visible: arrival.notes.length > 0 && arrivalLayoutButton.visible
+            }
+
+            FormCard.FormButtonDelegate {
+                id: arrivalLayoutButton
+                text: i18n("Arrival Vehicle Layout")
+                icon.name: "view-list-details"
+                visible: arrival && (arrival.route.line.mode == KPublicTransport.Line.LongDistanceTrain || arrival.route.line.mode == KPublicTransport.Line.Train || arrival.route.name !== "")
+                onClicked: applicationWindow().pageStack.push(vehicleLayoutPage, {stopover: root.controller.arrival, arrival: true});
+            }
         }
 
         // seat reservation
@@ -281,47 +305,34 @@ DetailsPage {
 
         FormCard.FormCard {
             id: seatCard
-            visible: coachLabel.visible || seatLabel.visible || classLabel.visible || departureLayoutButton.enabled || arrivalLayoutButton.enabled
-            FormCard.FormTextDelegate {
-                id: coachLabel
-                text: i18nc("coach of a train", "Coach:")
-                description: root.reservation.reservedTicket ? root.reservation.reservedTicket.ticketedSeat.seatSection : ''
-                visible: description
-            }
-            FormCard.FormDelegateSeparator {
-                visible: root.reservation.reservedTicket ? root.reservation.reservedTicket.ticketedSeat.seatSection : false
-            }
-            FormCard.FormTextDelegate {
-                id: seatLabel
-                text: i18nc("Train seat", "Seat:")
-                description: root.reservation.reservedTicket ? root.reservation.reservedTicket.ticketedSeat.seatNumber : ''
-                visible: description
-            }
-            FormCard.FormDelegateSeparator {
-                visible: root.reservation.reservedTicket ? root.reservation.reservedTicket.ticketedSeat.seatNumber : false
-            }
-            FormCard.FormTextDelegate {
-                id: classLabel
-                text: i18n("Class:")
-                description: root.reservation.reservedTicket ? root.reservation.reservedTicket.ticketedSeat.seatingType : ''
-                visible: description
-            }
-            FormCard.FormDelegateSeparator {
-                visible: classLabel.visible
-            }
-            FormCard.FormButtonDelegate {
-                id: departureLayoutButton
-                text: i18n("Departure Vehicle Layout")
-                icon.name: "view-list-details"
-                enabled: departure && (departure.route.line.mode == KPublicTransport.Line.LongDistanceTrain || departure.route.line.mode == KPublicTransport.Line.Train || departure.route.name !== "")
-                onClicked: applicationWindow().pageStack.push(vehicleLayoutPage, {stopover: root.controller.departure, arrival: false})
-            }
-            FormCard.FormButtonDelegate {
-                id: arrivalLayoutButton
-                text: i18n("Arrival Vehicle Layout")
-                icon.name: "view-list-details"
-                enabled: arrival && (arrival.route.line.mode == KPublicTransport.Line.LongDistanceTrain || arrival.route.line.mode == KPublicTransport.Line.Train || arrival.route.name !== "")
-                onClicked: applicationWindow().pageStack.push(vehicleLayoutPage, {stopover: root.controller.arrival, arrival: true});
+
+            visible: root.hasSeat
+
+            FormCard.AbstractFormDelegate {
+                background: null
+                contentItem: RowLayout {
+                    spacing: 0
+                    TimelineDelegateSeatRowLabel {
+                        text: i18nc("train coach", "Coach: <b>%1</b>", root.reservation?.reservedTicket?.ticketedSeat?.seatSection || "-")
+                    }
+
+                    Kirigami.Separator {
+                        Layout.fillHeight: true
+                    }
+                    TimelineDelegateSeatRowLabel {
+                        text: i18nc("train seat", "Seat: <b>%1</b>", root.seatString())
+                    }
+                    Kirigami.Separator {
+                        Layout.fillHeight: true
+                    }
+                    TimelineDelegateSeatRowLabel {
+                        text: {
+                            const s = root.reservation?.reservedTicket?.ticketedSeat?.seatingType;
+                            return i18nc("train class", "Class: <b>%1</b>", s !== "" ? s : "-");
+                        }
+                        lowPriority: true
+                    }
+                }
             }
         }
 
