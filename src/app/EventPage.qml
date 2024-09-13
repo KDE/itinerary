@@ -101,36 +101,29 @@ DetailsPage {
             title: i18n("Seat")
         }
 
-        FormCard.FormCard {
+        SeatRowFormCard {
             visible: root.hasSeat
 
-            FormCard.AbstractFormDelegate {
-                background: null
-                contentItem: RowLayout {
-                    spacing: 0
-
-                    TimelineDelegateSeatRowLabel {
-                        text: i18nc("event venue seat section", "Section: <b>%1</b>", root.reservation?.reservedTicket?.ticketedSeat?.seatSection || "-")
-                    }
-                    Kirigami.Separator {
-                        Layout.fillHeight: true
-                    }
-                    TimelineDelegateSeatRowLabel {
-                        text: i18nc("event venue seat row", "Row: <b>%1</b>", root.reservation?.reservedTicket?.ticketedSeat?.seatRow || "-")
-                    }
-                    Kirigami.Separator {
-                        Layout.fillHeight: true
-                    }
-                    TimelineDelegateSeatRowLabel {
-                        text: i18nc("event venue seat number", "Number: <b>%1</b>", root.reservation?.reservedTicket?.ticketedSeat?.seatNumber || "-")
-                    }
-                    Kirigami.Separator {
-                        Layout.fillHeight: true
-                    }
-                    TimelineDelegateSeatRowLabel {
-                        text: i18nc("event venue seat type", "Type: <b>%1</b>", root.reservation?.reservedTicket?.ticketedSeat?.seatingType || "-")
-                    }
-                }
+            TimelineDelegateSeatRowLabel {
+                text: i18nc("event venue seat section", "Section: <b>%1</b>", root.reservation?.reservedTicket?.ticketedSeat?.seatSection || "-")
+            }
+            Kirigami.Separator {
+                Layout.fillHeight: true
+            }
+            TimelineDelegateSeatRowLabel {
+                text: i18nc("event venue seat row", "Row: <b>%1</b>", root.reservation?.reservedTicket?.ticketedSeat?.seatRow || "-")
+            }
+            Kirigami.Separator {
+                Layout.fillHeight: true
+            }
+            TimelineDelegateSeatRowLabel {
+                text: i18nc("event venue seat number", "Number: <b>%1</b>", root.reservation?.reservedTicket?.ticketedSeat?.seatNumber || "-")
+            }
+            Kirigami.Separator {
+                Layout.fillHeight: true
+            }
+            TimelineDelegateSeatRowLabel {
+                text: i18nc("event venue seat type", "Type: <b>%1</b>", root.reservation?.reservedTicket?.ticketedSeat?.seatingType || "-")
             }
         }
 

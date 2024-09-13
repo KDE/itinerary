@@ -303,36 +303,30 @@ DetailsPage {
             title: i18nc("Train seat", "Seat")
         }
 
-        FormCard.FormCard {
+        SeatRowFormCard {
             id: seatCard
 
             visible: root.hasSeat
 
-            FormCard.AbstractFormDelegate {
-                background: null
-                contentItem: RowLayout {
-                    spacing: 0
-                    TimelineDelegateSeatRowLabel {
-                        text: i18nc("train coach", "Coach: <b>%1</b>", root.reservation?.reservedTicket?.ticketedSeat?.seatSection || "-")
-                    }
+            TimelineDelegateSeatRowLabel {
+                text: i18nc("train coach", "Coach: <b>%1</b>", root.reservation?.reservedTicket?.ticketedSeat?.seatSection || "-")
+            }
 
-                    Kirigami.Separator {
-                        Layout.fillHeight: true
-                    }
-                    TimelineDelegateSeatRowLabel {
-                        text: i18nc("train seat", "Seat: <b>%1</b>", root.seatString())
-                    }
-                    Kirigami.Separator {
-                        Layout.fillHeight: true
-                    }
-                    TimelineDelegateSeatRowLabel {
-                        text: {
-                            const s = root.reservation?.reservedTicket?.ticketedSeat?.seatingType;
-                            return i18nc("train class", "Class: <b>%1</b>", s !== "" ? s : "-");
-                        }
-                        lowPriority: true
-                    }
+            Kirigami.Separator {
+                Layout.fillHeight: true
+            }
+            TimelineDelegateSeatRowLabel {
+                text: i18nc("train seat", "Seat: <b>%1</b>", root.seatString())
+            }
+            Kirigami.Separator {
+                Layout.fillHeight: true
+            }
+            TimelineDelegateSeatRowLabel {
+                text: {
+                    const s = root.reservation?.reservedTicket?.ticketedSeat?.seatingType;
+                    return i18nc("train class", "Class: <b>%1</b>", s !== "" ? s : "-");
                 }
+                lowPriority: true
             }
         }
 
