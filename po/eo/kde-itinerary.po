@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-05 00:40+0000\n"
-"PO-Revision-Date: 2024-08-22 22:54+0200\n"
+"PO-Revision-Date: 2024-09-14 11:22+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -374,11 +374,9 @@ msgid "Arrival time: %1"
 msgstr "Alventempo: %1"
 
 #: app/BoatEditor.qml:17
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Add New Trip"
+#, kde-format
 msgid "New Boat Trip"
-msgstr "Aldoni Novan Vojaĝon"
+msgstr "Nova Boat-Vojaĝo"
 
 #: app/BoatEditor.qml:17
 #, kde-format
@@ -393,10 +391,9 @@ msgstr "Boato"
 #: app/BoatEditor.qml:59 app/EventEditor.qml:54 app/FlightEditor.qml:71
 #: app/HotelEditor.qml:51 app/ImportPage.qml:21 app/JourneyRequestPage.qml:236
 #: app/RestaurantEditor.qml:53
-#, fuzzy, kde-format
-#| msgid "Trips"
+#, kde-format
 msgid "Trip"
-msgstr "Vojaĝoj"
+msgstr "Vojaĝo"
 
 #: app/BoatEditor.qml:71 app/BoatPage.qml:54
 #, kde-format
@@ -872,12 +869,10 @@ msgid "Number: <b>%1</b>"
 msgstr "Numero: <b>%1</b>"
 
 #: app/EventEditor.qml:19
-#, fuzzy, kde-format
-#| msgctxt "event as in concert/conference/show, not as in appointment"
-#| msgid "Event"
+#, kde-format
 msgctxt "event as in concert/conference/show, not as in appointment"
 msgid "New Event"
-msgstr "Evento"
+msgstr "Nova Evento"
 
 #: app/EventEditor.qml:20
 #, kde-format
@@ -1088,10 +1083,9 @@ msgid "Arrival at %1: %2"
 msgstr "Alveno ĉe %1: %2"
 
 #: app/FlightEditor.qml:17
-#, fuzzy, kde-format
-#| msgid "Flight"
+#, kde-format
 msgid "New Flight"
-msgstr "Flugo"
+msgstr "Nova Flugo"
 
 #: app/FlightEditor.qml:17
 #, kde-format
@@ -1712,10 +1706,9 @@ msgid "Check-out time: %1"
 msgstr "Tempo de eliro: %1"
 
 #: app/HotelEditor.qml:19
-#, fuzzy, kde-format
-#| msgid "Hotel Reservation"
+#, kde-format
 msgid "New Hotel Reservation"
-msgstr "Rezervado de Hotelo"
+msgstr "Nova Hotel-Rezervado"
 
 #: app/HotelEditor.qml:19
 #, kde-format
@@ -1813,12 +1806,10 @@ msgid "Import"
 msgstr "Enporti"
 
 #: app/ImportPage.qml:35
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Selected Items to Import"
+#, kde-format
 msgctxt "@title:group"
 msgid "Items to Import"
-msgstr "Elektitaj Eroj por Enporti"
+msgstr "Eroj por Enporti"
 
 #: app/ImportPage.qml:74
 #, kde-format
@@ -2067,10 +2058,9 @@ msgid "Search Journey"
 msgstr "Serĉi Vojaĝon"
 
 #: app/JourneyRequestPage.qml:248
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgid "Mode of transportation"
-msgstr "Pliaj informoj"
+msgstr "Reĝimo de transporto"
 
 #: app/JourneyRequestPage.qml:258
 #, kde-format
@@ -2985,11 +2975,10 @@ msgid "Bus from %1 to %2"
 msgstr "Buso de %1 al %2"
 
 #: app/RestaurantEditor.qml:18
-#, fuzzy, kde-format
-#| msgid "Restaurant"
+#, kde-format
 msgctxt "@title"
 msgid "New Restaurant"
-msgstr "Restoracio"
+msgstr "Nova Restoracio"
 
 #: app/RestaurantEditor.qml:19
 #, kde-format
@@ -3920,12 +3909,10 @@ msgid "Merge"
 msgstr "Kunfandi"
 
 #: app/TripGroupPage.qml:182
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add Trip"
+#, kde-format
 msgctxt "@title:group"
 msgid "Add to Trip"
-msgstr "Aldoni Vojaĝon"
+msgstr "Aldoni al Vojaĝo"
 
 #: app/TripGroupPage.qml:304
 #, kde-format
@@ -3955,18 +3942,14 @@ msgid "No compatible power plugs (%1)"
 msgstr "Neniuj kongruaj elektraj ŝtopiloj (%1)"
 
 #: app/TripGroupPage.qml:482
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Import"
+#, kde-format
 msgid "Import"
 msgstr "Enporti"
 
 #: app/TripGroupPage.qml:496
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add trip"
+#, kde-format
 msgid "Add"
-msgstr "Aldoni vojaĝon"
+msgstr "Aldoni"
 
 #: app/TripGroupPage.qml:635
 #, kde-format
@@ -3984,31 +3967,24 @@ msgid "Split trip…"
 msgstr "Disigi vojaĝon…"
 
 #: app/TripGroupSelectorCard.qml:68
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Add New Trip"
+#, kde-format
 msgid "New Trip"
-msgstr "Aldoni Novan Vojaĝon"
+msgstr "Nova Vojaĝo"
 
 #: app/TripGroupSelectorCard.qml:71
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add Trip"
+#, kde-format
 msgid "Add to Trip"
-msgstr "Aldoni Vojaĝon"
+msgstr "Aldoni al Vojaĝo"
 
 #: app/TripGroupSelectorCard.qml:88
-#, fuzzy, kde-format
-#| msgid "Ticket name must not be empty."
+#, kde-format
 msgid "Trip name must not be empty."
 msgstr "Biletonomo ne devas esti malplena."
 
 #: app/TripGroupSelectorCard.qml:93
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add trip"
+#, kde-format
 msgid "Add to:"
-msgstr "Aldoni vojaĝon"
+msgstr "Aldoni al:"
 
 #: app/TripGroupsPage.qml:15
 #, kde-format
@@ -4035,8 +4011,7 @@ msgid "Current trip"
 msgstr "Nuna vojaĝo"
 
 #: app/TripGroupsPage.qml:96
-#, fuzzy, kde-format
-#| msgid "%1 - %2"
+#, kde-format
 msgctxt "date range"
 msgid "%1 - %2"
 msgstr "%1 - %2"
