@@ -34,6 +34,7 @@
 #include <QUuid>
 
 using namespace KItinerary;
+using namespace Qt::Literals;
 
 ReservationManager::ReservationManager(QObject* parent)
     : QObject(parent)
@@ -266,7 +267,9 @@ void ReservationManager::removeReservation(const QString& id)
     removeFromBatch(id, batchId);
 
     const QString basePath = reservationsBasePath();
-    QFile::remove(basePath + QLatin1Char('/') + id + QLatin1StringView(".jsonld"));
+    if (!QFile::remove(basePath + '/'_L1 + id + ".jsonld"_L1)) {
+        qCWarning(Log) << "Failed to remove file:" << id;
+    }
     Q_EMIT reservationRemoved(id);
     m_reservations.remove(id);
 }
@@ -308,6 +311,8 @@ void ReservationManager::loadBatches()
         return;
     }
 
+    QStringList batchesToRemove; // broken stuff detected during loading
+
     for (QDirIterator it(base, QDir::NoDotAndDotDot | QDir::Files); it.hasNext();) {
         it.next();
         QFile batchFile(it.filePath());
@@ -322,6 +327,11 @@ void ReservationManager::loadBatches()
         const auto batchVal = JsonIO::read(batchFile.readAll());
         const auto top = batchVal.toObject();
         const auto resArray = top.value(QLatin1StringView("elements")).toArray();
+        if (resArray.isEmpty()) {
+            batchesToRemove.push_back(batchId);
+            continue;
+        }
+
         QStringList l;
         l.reserve(resArray.size());
         for (const auto &v : resArray) {
@@ -335,6 +345,10 @@ void ReservationManager::loadBatches()
     std::sort(m_batches.begin(), m_batches.end(), [this](const auto &lhs, const auto &rhs) {
         return SortUtil::isBefore(reservation(lhs), reservation(rhs));
     });
+
+    for (const auto &batchId : batchesToRemove) {
+        storeRemoveBatch(batchId);
+    }
 }
 
 void ReservationManager::storeBatch(const QString &batchId) const
@@ -359,7 +373,9 @@ void ReservationManager::storeBatch(const QString &batchId) const
 void ReservationManager::storeRemoveBatch(const QString &batchId) const
 {
     const QString path = batchesBasePath() + batchId + QLatin1StringView(".json");
-    QFile::remove(path);
+    if (!QFile::remove(path)) {
+        qCWarning(Log) << "Failed to remove file:" << path;
+    }
 }
 
 void ReservationManager::initialBatchCreate()
