@@ -329,7 +329,7 @@ void ImportController::importFromIntent(const KAndroidExtras::Intent &intent)
     // opening a URL, can be something to import or a shortcut path
     if (action == Intent::ACTION_VIEW) {
         const QUrl url = intent.getData();
-        if (url.scheme() != "page"_L1) {
+        if (url.scheme() != "page"_L1 || url.scheme() != "geo"_L1) {
             importFromUrl(intent.getData());
         }
         return;

@@ -273,7 +273,7 @@ Kirigami.ApplicationWindow {
     Connections {
         target: ApplicationController
         function onInfoMessage(msg) { showPassiveNotification(msg, "short"); }
-        function onOpenPageRequested(page) {
+        function onOpenPageRequested(page, properties) {
             while (pageStack.layers.depth > 1) {
                 pageStack.layers.pop();
             }
@@ -292,6 +292,11 @@ Kirigami.ApplicationWindow {
                 break;
             case "live":
                 liveAction.trigger();
+                break;
+            case "journeyRequest":
+                properties["publicTransportManager"] = LiveDataManager.publicTransportManager;
+                properties["initialCountry"] = Settings.homeCountryIsoCode
+                pageStack.push(pagepool.loadPage(Qt.resolvedUrl("JourneyRequestPage.qml")), properties);
                 break;
             default:
                 console.warn("Requested to open unknown page", page);

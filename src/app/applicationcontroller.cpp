@@ -103,9 +103,9 @@ ApplicationController* ApplicationController::instance()
     return s_instance;
 }
 
-void ApplicationController::requestOpenPage(const QString &page)
+void ApplicationController::requestOpenPage(const QString &page, const QVariantMap &properties)
 {
-    Q_EMIT openPageRequested(page);
+    Q_EMIT openPageRequested(page, properties);
 }
 
 void ApplicationController::setReservationManager(ReservationManager* resMgr)
@@ -161,11 +161,32 @@ void ApplicationController::handleIntent(const KAndroidExtras::Intent &intent)
         if (url.scheme() == "page"_L1) {
             qCDebug(Log) << url;
             requestOpenPage(url.path().mid(1));
+        } else if (url.scheme() == "geo"_L1) {
+            handleGeoUrl(url);
         }
     }
 #else
     Q_UNUSED(intent)
 #endif
+}
+
+void ApplicationController::handleGeoUrl(const QUrl &url)
+{
+    if (url.scheme() != "geo"_L1) {
+        qCWarning(Log) << "Not a geo url!" << url;
+    }
+    const auto pathElems = url.path().split(QLatin1Char(';'));
+    const auto coordElems = pathElems.isEmpty() ? QStringList() : pathElems.at(0).split(QLatin1Char(','));
+    const auto lat = coordElems.size() < 2 ? 0.0 : coordElems.at(0).toDouble();
+    const auto lon = coordElems.size() < 2 ? 0.0 : coordElems.at(1).toDouble();
+
+    const QUrlQuery geoQuery(url.query());
+    const auto query = geoQuery.queryItemValue(u"q"_s);
+
+    KPublicTransport::Location location;
+    location.setCoordinate(lat, lon);
+    location.setName(query.isEmpty() ? i18nc("geo coordinate", "%1, %2", lat, lon) : query);
+    requestOpenPage(u"journeyRequest"_s, {{u"arrivalStop"_s, location}});
 }
 
 void ApplicationController::commitImport(ImportController *importController)

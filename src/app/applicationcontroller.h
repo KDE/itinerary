@@ -8,6 +8,7 @@
 #define APPLICATIONCONTROLLER_H
 
 #include <QObject>
+#include <QVariantMap>
 
 #include <memory>
 
@@ -55,7 +56,7 @@ public:
 
     void setNetworkAccessManagerFactory(const std::function<QNetworkAccessManager*()> &namFactory);
 
-    void requestOpenPage(const QString &page);
+    void requestOpenPage(const QString &page, const QVariantMap &properties = {});
 
     void setReservationManager(ReservationManager *resMgr);
     void setPkPassManager(PkPassManager *pkPassMgr);
@@ -68,6 +69,7 @@ public:
 
     // page navigation intents
     void handleIntent(const KAndroidExtras::Intent &intent);
+    void handleGeoUrl(const QUrl &url);
 
     // data import
     Q_INVOKABLE void commitImport(ImportController *importController);
@@ -107,7 +109,7 @@ Q_SIGNALS:
     /** Human readable information message to be shown as passive notification. */
     void infoMessage(const QString &msg);
 
-    void openPageRequested(const QString &page);
+    void openPageRequested(const QString &page, const QVariantMap &properties);
 
     /** Edit and add a new reservation. */
     void editNewHotelReservation(const QVariant &res);

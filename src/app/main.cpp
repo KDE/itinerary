@@ -278,7 +278,13 @@ void handleCommandLineArguments(ApplicationController *appController, ImportCont
                 QFile::remove(localUrl.toLocalFile());
             }
         } else {
-            importController->importFromUrl(QUrl::fromUserInput(file));
+            const auto url = QUrl::fromUserInput(file);
+            if (url.scheme() == "geo"_L1) {
+                // User wants to go there
+                appController->handleGeoUrl(url);
+            } else {
+                importController->importFromUrl(QUrl::fromUserInput(file));
+            }
         }
     }
 
