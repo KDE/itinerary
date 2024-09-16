@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-05 00:40+0000\n"
+"POT-Creation-Date: 2024-09-16 00:40+0000\n"
 "PO-Revision-Date: 2023-07-29 15:30-0300\n"
 "Last-Translator: Geraldo Simiao <geraldosimiao@fedoraproject.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -493,7 +493,7 @@ msgctxt "Boat terminal"
 msgid "Terminal"
 msgstr "Terminal:"
 
-#: app/BoatPage.qml:89 app/BusPage.qml:133 app/TrainPage.qml:205
+#: app/BoatPage.qml:89 app/BusPage.qml:133 app/TrainPage.qml:217
 #, fuzzy, kde-format
 #| msgid "Arrival time:"
 msgid "Arrival time"
@@ -548,7 +548,7 @@ msgctxt "@title:group"
 msgid "Booking"
 msgstr "Reserva"
 
-#: app/BusDelegate.qml:127 app/TrainDelegate.qml:159
+#: app/BusDelegate.qml:127 app/TrainDelegate.qml:159 app/TrainPage.qml:319
 #, kde-format
 msgctxt "train seat"
 msgid "Seat: <b>%1</b>"
@@ -683,12 +683,12 @@ msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "Chegada"
 
-#: app/BusPage.qml:212 app/TrainPage.qml:355
+#: app/BusPage.qml:212 app/TrainPage.qml:360
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternativas"
 
-#: app/BusPage.qml:217 app/JourneySectionPage.qml:26 app/TrainPage.qml:360
+#: app/BusPage.qml:217 app/JourneySectionPage.qml:26 app/TrainPage.qml:365
 #, kde-format
 msgid "Journey Details"
 msgstr "Detalhes da viagem"
@@ -914,21 +914,21 @@ msgstr "Hora inicial: %1"
 msgid "End time: %1"
 msgstr "Hora final: %1"
 
-#: app/EventDelegate.qml:70
+#: app/EventDelegate.qml:70 app/EventPage.qml:108
 #, fuzzy, kde-format
 #| msgid "Direction: %1"
 msgctxt "event venue seat section"
 msgid "Section: <b>%1</b>"
 msgstr "Direção: %1"
 
-#: app/EventDelegate.qml:76
+#: app/EventDelegate.qml:76 app/EventPage.qml:114
 #, fuzzy, kde-format
 #| msgid "Coach:"
 msgctxt "event venue seat row"
 msgid "Row: <b>%1</b>"
 msgstr "Vagão:"
 
-#: app/EventDelegate.qml:82
+#: app/EventDelegate.qml:82 app/EventPage.qml:120
 #, fuzzy, kde-format
 #| msgid "Direction: %1"
 msgctxt "event venue seat number"
@@ -1018,30 +1018,12 @@ msgstr "Nome:"
 msgid "Seat"
 msgstr "Local"
 
-#: app/EventPage.qml:108
-#, kde-format
-msgctxt "seat section, e.g. block in a stadium"
-msgid "Section:"
-msgstr "Seção:"
-
-#: app/EventPage.qml:117
-#, kde-format
-msgctxt "seat row"
-msgid "Row:"
-msgstr ""
-
 #: app/EventPage.qml:126
-#, kde-format
-msgctxt "seat number"
-msgid "Number:"
-msgstr "Número:"
-
-#: app/EventPage.qml:135
 #, fuzzy, kde-format
-#| msgid "Type:"
-msgctxt "seat type"
-msgid "Type:"
-msgstr "Tipo:"
+#| msgid "Coach:"
+msgctxt "event venue seat type"
+msgid "Type: <b>%1</b>"
+msgstr "Vagão:"
 
 #: app/favoritelocationmodel.cpp:130 app/favoritelocationmodel.cpp:150
 #: app/SettingsPage.qml:34
@@ -1277,7 +1259,7 @@ msgstr "Número da passagem:"
 msgid "Invalid flight number."
 msgstr ""
 
-#: app/FlightEditor.qml:192 app/FlightEditor.qml:199
+#: app/FlightEditor.qml:192 app/FlightEditor.qml:199 app/FlightPage.qml:94
 #, fuzzy, kde-format
 #| msgid "Seat"
 msgctxt "Flight seat"
@@ -1298,14 +1280,6 @@ msgstr "Embarque"
 #, kde-format
 msgid "Boarding group"
 msgstr "Grupo de embarque"
-
-#: app/FlightPage.qml:94 app/TrainEditor.qml:146 app/TrainEditor.qml:158
-#: app/TrainPage.qml:279
-#, fuzzy, kde-format
-#| msgid "Seat"
-msgctxt "Train seat"
-msgid "Seat"
-msgstr "Local"
 
 #: app/FlightPage.qml:103
 #, kde-format
@@ -3832,14 +3806,14 @@ msgstr "Hora de chegada:"
 msgid "Pl. %1"
 msgstr ""
 
-#: app/TrainDelegate.qml:153
+#: app/TrainDelegate.qml:153 app/TrainPage.qml:312
 #, fuzzy, kde-format
 #| msgid "Coach:"
 msgctxt "train coach"
 msgid "Coach: <b>%1</b>"
 msgstr "Vagão:"
 
-#: app/TrainDelegate.qml:167
+#: app/TrainDelegate.qml:167 app/TrainPage.qml:327
 #, kde-format
 msgctxt "train class"
 msgid "Class: <b>%1</b>"
@@ -3870,7 +3844,7 @@ msgid "Departure"
 msgstr "Partida"
 
 #: app/TrainEditor.qml:98 app/TrainEditor.qml:124 app/TrainPage.qml:159
-#: app/TrainPage.qml:239
+#: app/TrainPage.qml:251
 #, fuzzy, kde-format
 #| msgid "Station:"
 msgctxt "train station"
@@ -3890,6 +3864,13 @@ msgstr "Plataforma:"
 msgctxt "train arrival"
 msgid "Arrival"
 msgstr "Chegada"
+
+#: app/TrainEditor.qml:146 app/TrainEditor.qml:158 app/TrainPage.qml:303
+#, fuzzy, kde-format
+#| msgid "Seat"
+msgctxt "Train seat"
+msgid "Seat"
+msgstr "Local"
 
 #: app/TrainEditor.qml:152
 #, fuzzy, kde-format
@@ -3917,58 +3898,40 @@ msgctxt "Train departure"
 msgid "Departure"
 msgstr "Partida"
 
-#: app/TrainPage.qml:187 app/TrainPage.qml:266
+#: app/TrainPage.qml:187 app/TrainPage.qml:278
 #, kde-format
 msgid "Additional notes"
 msgstr ""
 
-#: app/TrainPage.qml:199
+#: app/TrainPage.qml:202
+#, kde-format
+msgid "Departure Vehicle Layout"
+msgstr "Layout do veículo de partida"
+
+#: app/TrainPage.qml:211
 #, fuzzy, kde-format
 #| msgid "Arrival"
 msgctxt "Train arrival"
 msgid "Arrival"
 msgstr "Chegada"
 
-#: app/TrainPage.qml:287
-#, kde-format
-msgctxt "coach of a train"
-msgid "Coach:"
-msgstr "Vagão:"
-
-#: app/TrainPage.qml:296
-#, fuzzy, kde-format
-#| msgid "Seat:"
-msgctxt "Train seat"
-msgid "Seat:"
-msgstr "Local:"
-
-#: app/TrainPage.qml:305
-#, kde-format
-msgid "Class:"
-msgstr "Classe:"
-
-#: app/TrainPage.qml:314
-#, kde-format
-msgid "Departure Vehicle Layout"
-msgstr "Layout do veículo de partida"
-
-#: app/TrainPage.qml:321
+#: app/TrainPage.qml:293
 #, kde-format
 msgid "Arrival Vehicle Layout"
 msgstr "Layout do veículo de chegada"
 
-#: app/TrainPage.qml:347
+#: app/TrainPage.qml:352
 #, kde-format
 msgctxt "@action:button"
 msgid "Add to Traewelling"
 msgstr ""
 
-#: app/TrainPage.qml:380
+#: app/TrainPage.qml:385
 #, kde-format
 msgid "Added to Traewelling"
 msgstr ""
 
-#: app/TrainPage.qml:380
+#: app/TrainPage.qml:385
 #, kde-format
 msgid "Failed to add to Traewelling"
 msgstr ""
@@ -4499,6 +4462,33 @@ msgstr ""
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 de %3 para %4 em %5"
+
+#~ msgctxt "seat section, e.g. block in a stadium"
+#~ msgid "Section:"
+#~ msgstr "Seção:"
+
+#~ msgctxt "seat number"
+#~ msgid "Number:"
+#~ msgstr "Número:"
+
+#, fuzzy
+#~| msgid "Type:"
+#~ msgctxt "seat type"
+#~ msgid "Type:"
+#~ msgstr "Tipo:"
+
+#~ msgctxt "coach of a train"
+#~ msgid "Coach:"
+#~ msgstr "Vagão:"
+
+#, fuzzy
+#~| msgid "Seat:"
+#~ msgctxt "Train seat"
+#~ msgid "Seat:"
+#~ msgstr "Local:"
+
+#~ msgid "Class:"
+#~ msgstr "Classe:"
 
 #~ msgid "Terminal: %1  Gate: %2  Seat: %3"
 #~ msgstr "Terminal: %1  Portão: %2  Poltrona: %3"

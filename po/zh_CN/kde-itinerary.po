@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-05 00:40+0000\n"
+"POT-Creation-Date: 2024-09-16 00:40+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -455,7 +455,7 @@ msgctxt "Boat terminal"
 msgid "Terminal"
 msgstr ""
 
-#: app/BoatPage.qml:89 app/BusPage.qml:133 app/TrainPage.qml:205
+#: app/BoatPage.qml:89 app/BusPage.qml:133 app/TrainPage.qml:217
 #, kde-format
 msgid "Arrival time"
 msgstr ""
@@ -503,7 +503,7 @@ msgctxt "@title:group"
 msgid "Booking"
 msgstr "预约详情"
 
-#: app/BusDelegate.qml:127 app/TrainDelegate.qml:159
+#: app/BusDelegate.qml:127 app/TrainDelegate.qml:159 app/TrainPage.qml:319
 #, kde-format
 msgctxt "train seat"
 msgid "Seat: <b>%1</b>"
@@ -620,12 +620,12 @@ msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr ""
 
-#: app/BusPage.qml:212 app/TrainPage.qml:355
+#: app/BusPage.qml:212 app/TrainPage.qml:360
 #, kde-format
 msgid "Alternatives"
 msgstr "改签"
 
-#: app/BusPage.qml:217 app/JourneySectionPage.qml:26 app/TrainPage.qml:360
+#: app/BusPage.qml:217 app/JourneySectionPage.qml:26 app/TrainPage.qml:365
 #, kde-format
 msgid "Journey Details"
 msgstr "旅程详情"
@@ -843,19 +843,19 @@ msgstr "开始时间：%1"
 msgid "End time: %1"
 msgstr "结束时间：%1"
 
-#: app/EventDelegate.qml:70
+#: app/EventDelegate.qml:70 app/EventPage.qml:108
 #, kde-format
 msgctxt "event venue seat section"
 msgid "Section: <b>%1</b>"
 msgstr ""
 
-#: app/EventDelegate.qml:76
+#: app/EventDelegate.qml:76 app/EventPage.qml:114
 #, kde-format
 msgctxt "event venue seat row"
 msgid "Row: <b>%1</b>"
 msgstr ""
 
-#: app/EventDelegate.qml:82
+#: app/EventDelegate.qml:82 app/EventPage.qml:120
 #, kde-format
 msgctxt "event venue seat number"
 msgid "Number: <b>%1</b>"
@@ -937,29 +937,11 @@ msgstr ""
 msgid "Seat"
 msgstr "座位信息"
 
-#: app/EventPage.qml:108
-#, kde-format
-msgctxt "seat section, e.g. block in a stadium"
-msgid "Section:"
-msgstr ""
-
-#: app/EventPage.qml:117
-#, kde-format
-msgctxt "seat row"
-msgid "Row:"
-msgstr ""
-
 #: app/EventPage.qml:126
 #, kde-format
-msgctxt "seat number"
-msgid "Number:"
-msgstr "数字："
-
-#: app/EventPage.qml:135
-#, kde-format
-msgctxt "seat type"
-msgid "Type:"
-msgstr "类型："
+msgctxt "event venue seat type"
+msgid "Type: <b>%1</b>"
+msgstr ""
 
 #: app/favoritelocationmodel.cpp:130 app/favoritelocationmodel.cpp:150
 #: app/SettingsPage.qml:34
@@ -1181,7 +1163,7 @@ msgstr ""
 msgid "Invalid flight number."
 msgstr ""
 
-#: app/FlightEditor.qml:192 app/FlightEditor.qml:199
+#: app/FlightEditor.qml:192 app/FlightEditor.qml:199 app/FlightPage.qml:94
 #, kde-format
 msgctxt "Flight seat"
 msgid "Seat"
@@ -1201,13 +1183,6 @@ msgstr ""
 #, kde-format
 msgid "Boarding group"
 msgstr ""
-
-#: app/FlightPage.qml:94 app/TrainEditor.qml:146 app/TrainEditor.qml:158
-#: app/TrainPage.qml:279
-#, kde-format
-msgctxt "Train seat"
-msgid "Seat"
-msgstr "座位信息"
 
 #: app/FlightPage.qml:103
 #, kde-format
@@ -3580,13 +3555,13 @@ msgstr ""
 msgid "Pl. %1"
 msgstr ""
 
-#: app/TrainDelegate.qml:153
+#: app/TrainDelegate.qml:153 app/TrainPage.qml:312
 #, kde-format
 msgctxt "train coach"
 msgid "Coach: <b>%1</b>"
 msgstr ""
 
-#: app/TrainDelegate.qml:167
+#: app/TrainDelegate.qml:167 app/TrainPage.qml:327
 #, kde-format
 msgctxt "train class"
 msgid "Class: <b>%1</b>"
@@ -3614,7 +3589,7 @@ msgid "Departure"
 msgstr ""
 
 #: app/TrainEditor.qml:98 app/TrainEditor.qml:124 app/TrainPage.qml:159
-#: app/TrainPage.qml:239
+#: app/TrainPage.qml:251
 #, kde-format
 msgctxt "train station"
 msgid "Station"
@@ -3631,6 +3606,12 @@ msgstr ""
 msgctxt "train arrival"
 msgid "Arrival"
 msgstr ""
+
+#: app/TrainEditor.qml:146 app/TrainEditor.qml:158 app/TrainPage.qml:303
+#, kde-format
+msgctxt "Train seat"
+msgid "Seat"
+msgstr "座位信息"
 
 #: app/TrainEditor.qml:152
 #, kde-format
@@ -3655,56 +3636,39 @@ msgctxt "Train departure"
 msgid "Departure"
 msgstr ""
 
-#: app/TrainPage.qml:187 app/TrainPage.qml:266
+#: app/TrainPage.qml:187 app/TrainPage.qml:278
 #, kde-format
 msgid "Additional notes"
 msgstr ""
 
-#: app/TrainPage.qml:199
+#: app/TrainPage.qml:202
+#, kde-format
+msgid "Departure Vehicle Layout"
+msgstr "离站列车编组"
+
+#: app/TrainPage.qml:211
 #, kde-format
 msgctxt "Train arrival"
 msgid "Arrival"
 msgstr ""
 
-#: app/TrainPage.qml:287
-#, kde-format
-msgctxt "coach of a train"
-msgid "Coach:"
-msgstr "车厢："
-
-#: app/TrainPage.qml:296
-#, kde-format
-msgctxt "Train seat"
-msgid "Seat:"
-msgstr "座号："
-
-#: app/TrainPage.qml:305
-#, kde-format
-msgid "Class:"
-msgstr "座位等级："
-
-#: app/TrainPage.qml:314
-#, kde-format
-msgid "Departure Vehicle Layout"
-msgstr "离站列车编组"
-
-#: app/TrainPage.qml:321
+#: app/TrainPage.qml:293
 #, kde-format
 msgid "Arrival Vehicle Layout"
 msgstr "到站列车编组"
 
-#: app/TrainPage.qml:347
+#: app/TrainPage.qml:352
 #, kde-format
 msgctxt "@action:button"
 msgid "Add to Traewelling"
 msgstr ""
 
-#: app/TrainPage.qml:380
+#: app/TrainPage.qml:385
 #, kde-format
 msgid "Added to Traewelling"
 msgstr ""
 
-#: app/TrainPage.qml:380
+#: app/TrainPage.qml:385
 #, kde-format
 msgid "Failed to add to Traewelling"
 msgstr ""
@@ -4186,3 +4150,22 @@ msgstr ""
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr ""
+
+#~ msgctxt "seat number"
+#~ msgid "Number:"
+#~ msgstr "数字："
+
+#~ msgctxt "seat type"
+#~ msgid "Type:"
+#~ msgstr "类型："
+
+#~ msgctxt "coach of a train"
+#~ msgid "Coach:"
+#~ msgstr "车厢："
+
+#~ msgctxt "Train seat"
+#~ msgid "Seat:"
+#~ msgstr "座号："
+
+#~ msgid "Class:"
+#~ msgstr "座位等级："
