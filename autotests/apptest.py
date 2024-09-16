@@ -28,7 +28,7 @@ class ItineraryTest(ItineraryTestCase):
         self.assertTrue(searchField.is_displayed())
         searchField.clear()
         searchField.send_keys("Randa")
-        self.driver.find_element(by=AppiumBy.NAME, value="Randa").click()
+        self.driver.find_element(by=AppiumBy.NAME, value="Randa, Valais, Switzerland").click()
 
         self.assertFalse(self.driver.find_element(by=AppiumBy.NAME, value="Search Journey").is_enabled())
 

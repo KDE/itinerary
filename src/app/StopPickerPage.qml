@@ -97,7 +97,7 @@ Kirigami.ScrollablePage {
                     loc.name = text;
                     loc.country = countryCombo.currentValue;
                     locationQueryModel.request.location = loc;
-                    locationQueryModel.request.type = Location.Stop
+                    locationQueryModel.request.types = Location.Stop | Location.Address
                 }
             }
         }
@@ -124,12 +124,82 @@ Kirigami.ScrollablePage {
         Kirigami.SwipeListItem {
             id: delegate
             readonly property var sourceModel: ListView.view.model
-            text: model.location.name
-            contentItem: QQC2.Label {
-                text: model.location.name
-                elide: Text.ElideRight
-                Accessible.ignored: true
+            text: {
+                let country = Country.fromAlpha2(model.location.country)
+                let region = CountrySubdivision.fromCode(model.location.region)
+
+                if (model.location.locality && region && country) {
+                    return i18nc("location name, locality, region, country", "%1, %2, %3, %4",
+                                 model.location.name,
+                                 model.location.locality,
+                                 region.name,
+                                 country.name)
+                } else if (model.location.locality && country) {
+                    return i18nc("location name, locality, country", "%1, %2, %3",
+                                 model.location.name,
+                                 model.location.locality,
+                                 country.name)
+                } else if (region && country) {
+                    return i18nc("location name, region, country", "%1, %2, %3",
+                                 model.location.name,
+                                 region.name,
+                                 country.name)
+                } else {
+                    return model.location.name
+                }
             }
+
+            contentItem: Kirigami.IconTitleSubtitle {
+                Accessible.ignored: true
+
+                icon.name: {
+                    switch (model.location.type) {
+                        case Location.Place:
+                            return "mark-location-symbolic"
+                        case Location.Stop:
+                            return "qrc:/images/transport-stop.svg"
+                        default:
+                            return ""
+                    }
+                }
+
+                title: model.location.name
+
+                subtitle: {
+                    let country = Country.fromAlpha2(model.location.country)
+                    let region = CountrySubdivision.fromCode(model.location.region)
+
+                    if (model.location.locality && region && country) {
+                        return i18nc("locality, region, country", "%1, %2, %3",
+                                     model.location.locality,
+                                     region.name,
+                                     country.name)
+                    } else if (model.location.locality && country) {
+                        return i18nc("locality, country", "%1, %2",
+                                     model.location.locality,
+                                     country.name)
+                    } else if (region && country) {
+                        return i18nc("region, country", "%1, %2",
+                                     region.name,
+                                     country.name)
+                    } else if (country) {
+                        return country.name
+                    } else {
+                        return " "
+                    }
+                }
+            }
+            icon.name: {
+                switch (model.location.type) {
+                    case Location.Place:
+                        return "mark-location-symbolic"
+                    case Location.Stop:
+                        return "qrc:/images/transport-stop.svg"
+                    default:
+                        return ""
+                }
+            }
+
             actions: [
                 Kirigami.Action {
                     icon.name: "edit-delete"
@@ -152,10 +222,71 @@ Kirigami.ScrollablePage {
         id: queryResultDelegate
         QQC2.ItemDelegate {
             id: delegate
-            text: model.location.name
+            text: {
+                let country = Country.fromAlpha2(model.location.country)
+                let region = CountrySubdivision.fromCode(model.location.region)
+
+                if (model.location.locality && region && country) {
+                    return i18nc("location name, locality, region, country", "%1, %2, %3, %4",
+                                 model.location.name,
+                                 model.location.locality,
+                                 region.name,
+                                 country.name)
+                } else if (model.location.locality && country) {
+                    return i18nc("location name, locality, country", "%1, %2, %3",
+                                 model.location.name,
+                                 model.location.locality,
+                                 country.name)
+                } else if (region && country) {
+                    return i18nc("location name, region, country", "%1, %2, %3",
+                                 model.location.name,
+                                 region.name,
+                                 country.name)
+                } else {
+                    return model.location.name
+                }
+            }
+
             width: ListView.view.width
-            contentItem: Kirigami.TitleSubtitle {
+            contentItem: Kirigami.IconTitleSubtitle {
+                Accessible.ignored: true
+
+                icon.name: {
+                    switch (model.location.type) {
+                        case Location.Place:
+                            return "mark-location-symbolic"
+                        case Location.Stop:
+                            return "qrc:/images/transport-stop.svg"
+                        default:
+                            return ""
+                    }
+                }
+
                 title: model.location.name
+
+                subtitle: {
+                    let country = Country.fromAlpha2(model.location.country)
+                    let region = CountrySubdivision.fromCode(model.location.region)
+
+                    if (model.location.locality && region && country) {
+                        return i18nc("locality, region, country", "%1, %2, %3",
+                                     model.location.locality,
+                                     region.name,
+                                     country.name)
+                    } else if (model.location.locality && country) {
+                        return i18nc("locality, country", "%1, %2",
+                                     model.location.locality,
+                                     country.name)
+                    } else if (region && country) {
+                        return i18nc("region, country", "%1, %2",
+                                     region.name,
+                                     country.name)
+                    } else if (country) {
+                        return country.name
+                    } else {
+                        return " "
+                    }
+                }
             }
             onClicked: {
                 root.location = model.location
