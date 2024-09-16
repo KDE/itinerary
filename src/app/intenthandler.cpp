@@ -76,5 +76,10 @@ IntentHandler::~IntentHandler()
 
 void IntentHandler::onNewIntent(const KAndroidExtras::Intent &intent)
 {
-    Q_EMIT handleIntent(intent);
+#ifdef Q_OS_ANDROID
+    // For yet unknown reasons the normal signal emission by calling the
+    // function directly fails here / the thread that recerives the intent.
+    // QMetaObject::invokeMethod works.
+    QMetaObject::invokeMethod(this, &IntentHandler::handleIntent, intent);
+#endif
 }
