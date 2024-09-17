@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-16 00:40+0000\n"
-"PO-Revision-Date: 2024-09-04 11:51+0300\n"
+"POT-Creation-Date: 2024-09-17 00:39+0000\n"
+"PO-Revision-Date: 2024-09-16 19:59+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -280,7 +280,15 @@ msgstr "Ви справді хочете замінити ваше наявне 
 msgid "Replace"
 msgstr "Замінити"
 
-#: app/applicationcontroller.cpp:285
+#: app/applicationcontroller.cpp:188
+#, fuzzy, kde-format
+#| msgctxt "weekday, date"
+#| msgid "%1, %2"
+msgctxt "geo coordinate"
+msgid "%1, %2"
+msgstr "%1, %2"
+
+#: app/applicationcontroller.cpp:306
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
@@ -289,7 +297,7 @@ msgstr[1] "Імпортовано %1 резервування"
 msgstr[2] "Імпортовано %1 резервувань"
 msgstr[3] "Імпортовано одне резервування"
 
-#: app/applicationcontroller.cpp:288
+#: app/applicationcontroller.cpp:309
 #, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
@@ -298,7 +306,7 @@ msgstr[1] "Імпортовано %1 безкоштовні квитки."
 msgstr[2] "Імпортовано %1 безкоштовних квитків."
 msgstr[3] "Імпортовано безкоштовний квиток."
 
-#: app/applicationcontroller.cpp:292
+#: app/applicationcontroller.cpp:313
 #, kde-format
 msgid "One health certificate imported."
 msgid_plural "%1 health certificates imported."
@@ -307,30 +315,30 @@ msgstr[1] "Імпортовано %1 сертифікати здоров'я."
 msgstr[2] "Імпортовано %1 сертифікатів здоров'я."
 msgstr[3] "Імпортовано один сертифікат здоров'я."
 
-#: app/applicationcontroller.cpp:314 app/applicationcontroller.cpp:355
-#: app/applicationcontroller.cpp:373 app/applicationcontroller.cpp:418
-#: app/applicationcontroller.cpp:457 app/applicationcontroller.cpp:475
+#: app/applicationcontroller.cpp:335 app/applicationcontroller.cpp:376
+#: app/applicationcontroller.cpp:394 app/applicationcontroller.cpp:439
+#: app/applicationcontroller.cpp:478 app/applicationcontroller.cpp:496
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Не вдалося експортувати: %1"
 
-#: app/applicationcontroller.cpp:329 app/applicationcontroller.cpp:338
-#: app/applicationcontroller.cpp:431 app/applicationcontroller.cpp:440
+#: app/applicationcontroller.cpp:350 app/applicationcontroller.cpp:359
+#: app/applicationcontroller.cpp:452 app/applicationcontroller.cpp:461
 #, kde-format
 msgid "Export completed."
 msgstr "Експортування завершено."
 
-#: app/applicationcontroller.cpp:365
+#: app/applicationcontroller.cpp:386
 #, kde-format
 msgid "Trip sent."
 msgstr "Подорож надіслано."
 
-#: app/applicationcontroller.cpp:467
+#: app/applicationcontroller.cpp:488
 #, kde-format
 msgid "Reservation sent."
 msgstr "Резервування надіслано."
 
-#: app/applicationcontroller.cpp:523
+#: app/applicationcontroller.cpp:544
 #, kde-format
 msgid "Import completed."
 msgstr "Імпортування завершено."
@@ -956,12 +964,10 @@ msgid "Seat"
 msgstr "Місце"
 
 #: app/EventPage.qml:126
-#, fuzzy, kde-format
-#| msgctxt "flight departure gate"
-#| msgid "Gate: <b>%1</b>"
+#, kde-format
 msgctxt "event venue seat type"
 msgid "Type: <b>%1</b>"
-msgstr "Вихід: <b>%1</b>"
+msgstr "Тип: <b>%1</b>"
 
 #: app/favoritelocationmodel.cpp:130 app/favoritelocationmodel.cpp:150
 #: app/SettingsPage.qml:34
@@ -1387,7 +1393,7 @@ msgstr "Вилучити безкоштовний квиток"
 msgid "Do you really want to delete this pass?"
 msgstr "Ви справді бажаєте вилучити цей безкоштовний квиток?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:312 app/main.qml:21 app/main.qml:161
+#: app/gpxexport.cpp:33 app/main.cpp:318 app/main.qml:21 app/main.qml:161
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -2417,23 +2423,23 @@ msgstr "Тип M"
 msgid "Type N"
 msgstr "Тип N"
 
-#: app/main.cpp:320
+#: app/main.cpp:326
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Цифровий помічник у подорожах"
 
-#: app/main.cpp:321
+#: app/main.cpp:327
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "© Спільнота KDE"
 
-#: app/main.cpp:328
+#: app/main.cpp:334
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Відкрити Itinerary на вказаній сторінці"
 
-#: app/main.cpp:333
+#: app/main.cpp:339
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
@@ -2529,7 +2535,7 @@ msgstr "Параметри…"
 msgid "Help"
 msgstr "Довідка"
 
-#: app/main.qml:317
+#: app/main.qml:322
 #, kde-format
 msgid "Map download finished."
 msgstr "Отримання карти завершено."

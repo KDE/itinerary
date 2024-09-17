@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-16 00:40+0000\n"
+"POT-Creation-Date: 2024-09-17 00:39+0000\n"
 "PO-Revision-Date: 2024-09-07 11:25+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -276,7 +276,15 @@ msgstr "Czy na pewno chcesz zastąpić obecną rezerwację nowo wybraną podró�
 msgid "Replace"
 msgstr "Zastąp"
 
-#: app/applicationcontroller.cpp:285
+#: app/applicationcontroller.cpp:188
+#, fuzzy, kde-format
+#| msgctxt "weekday, date"
+#| msgid "%1, %2"
+msgctxt "geo coordinate"
+msgid "%1, %2"
+msgstr "%1, %2"
+
+#: app/applicationcontroller.cpp:306
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
@@ -284,7 +292,7 @@ msgstr[0] "Zaimportowano jedną rezerwację."
 msgstr[1] "Zaimportowano %1 rezerwacje."
 msgstr[2] "Zaimportowano %1 rezerwacji."
 
-#: app/applicationcontroller.cpp:288
+#: app/applicationcontroller.cpp:309
 #, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
@@ -292,7 +300,7 @@ msgstr[0] "Zaimportowano jedną wejściówkę."
 msgstr[1] "Zaimportowano %1 wejściówki."
 msgstr[2] "Zaimportowano %1 wejściówek."
 
-#: app/applicationcontroller.cpp:292
+#: app/applicationcontroller.cpp:313
 #, kde-format
 msgid "One health certificate imported."
 msgid_plural "%1 health certificates imported."
@@ -300,30 +308,30 @@ msgstr[0] "Zaimportowano jeden certyfikat zdrowia."
 msgstr[1] "Zaimportowano %1 certyfikaty zdrowia."
 msgstr[2] "Zaimportowano %1 certyfikatów zdrowia."
 
-#: app/applicationcontroller.cpp:314 app/applicationcontroller.cpp:355
-#: app/applicationcontroller.cpp:373 app/applicationcontroller.cpp:418
-#: app/applicationcontroller.cpp:457 app/applicationcontroller.cpp:475
+#: app/applicationcontroller.cpp:335 app/applicationcontroller.cpp:376
+#: app/applicationcontroller.cpp:394 app/applicationcontroller.cpp:439
+#: app/applicationcontroller.cpp:478 app/applicationcontroller.cpp:496
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Nie udało się wyeksportować: %1"
 
-#: app/applicationcontroller.cpp:329 app/applicationcontroller.cpp:338
-#: app/applicationcontroller.cpp:431 app/applicationcontroller.cpp:440
+#: app/applicationcontroller.cpp:350 app/applicationcontroller.cpp:359
+#: app/applicationcontroller.cpp:452 app/applicationcontroller.cpp:461
 #, kde-format
 msgid "Export completed."
 msgstr "Ukończono eksportowanie."
 
-#: app/applicationcontroller.cpp:365
+#: app/applicationcontroller.cpp:386
 #, kde-format
 msgid "Trip sent."
 msgstr "Wysłano podróż."
 
-#: app/applicationcontroller.cpp:467
+#: app/applicationcontroller.cpp:488
 #, kde-format
 msgid "Reservation sent."
 msgstr "Wysłano rezerwację."
 
-#: app/applicationcontroller.cpp:523
+#: app/applicationcontroller.cpp:544
 #, kde-format
 msgid "Import completed."
 msgstr "Ukończono importowanie."
@@ -1379,7 +1387,7 @@ msgstr "Usuń wejściówkę"
 msgid "Do you really want to delete this pass?"
 msgstr "Czy na pewno usunąć tę wejściówkę?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:312 app/main.qml:21 app/main.qml:161
+#: app/gpxexport.cpp:33 app/main.cpp:318 app/main.qml:21 app/main.qml:161
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -2407,23 +2415,23 @@ msgstr "Typ M"
 msgid "Type N"
 msgstr "Typ N"
 
-#: app/main.cpp:320
+#: app/main.cpp:326
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Cyfrowy pomocnik podróży"
 
-#: app/main.cpp:321
+#: app/main.cpp:327
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "Copyright © Społeczność KDE"
 
-#: app/main.cpp:328
+#: app/main.cpp:334
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Otwórz plan podróży na danej stronie"
 
-#: app/main.cpp:333
+#: app/main.cpp:339
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
@@ -2519,7 +2527,7 @@ msgstr "Ustawienia…"
 msgid "Help"
 msgstr "Pomoc"
 
-#: app/main.qml:317
+#: app/main.qml:322
 #, kde-format
 msgid "Map download finished."
 msgstr "Ukończono pobieranie mapy."

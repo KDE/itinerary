@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-16 00:40+0000\n"
+"POT-Creation-Date: 2024-09-17 00:39+0000\n"
 "PO-Revision-Date: 2023-07-29 15:30-0300\n"
 "Last-Translator: Geraldo Simiao <geraldosimiao@fedoraproject.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -290,14 +290,22 @@ msgstr "Deseja substitui sua reserva existente pela nova viagem selecionada?"
 msgid "Replace"
 msgstr "Substituir"
 
-#: app/applicationcontroller.cpp:285
+#: app/applicationcontroller.cpp:188
+#, fuzzy, kde-format
+#| msgctxt "weekday, date"
+#| msgid "%1, %2"
+msgctxt "geo coordinate"
+msgid "%1, %2"
+msgstr "%1, %2"
+
+#: app/applicationcontroller.cpp:306
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] "Uma reserva importada."
 msgstr[1] "%1 reservas importadas."
 
-#: app/applicationcontroller.cpp:288
+#: app/applicationcontroller.cpp:309
 #, fuzzy, kde-format
 #| msgid "Nothing imported."
 msgid "One pass imported."
@@ -305,7 +313,7 @@ msgid_plural "%1 passes imported."
 msgstr[0] "Nada a importar."
 msgstr[1] "Nada a importar."
 
-#: app/applicationcontroller.cpp:292
+#: app/applicationcontroller.cpp:313
 #, fuzzy, kde-format
 #| msgid "Health certificate imported."
 msgid "One health certificate imported."
@@ -313,32 +321,32 @@ msgid_plural "%1 health certificates imported."
 msgstr[0] "Certificado de saúde importado ."
 msgstr[1] "Certificado de saúde importado ."
 
-#: app/applicationcontroller.cpp:314 app/applicationcontroller.cpp:355
-#: app/applicationcontroller.cpp:373 app/applicationcontroller.cpp:418
-#: app/applicationcontroller.cpp:457 app/applicationcontroller.cpp:475
+#: app/applicationcontroller.cpp:335 app/applicationcontroller.cpp:376
+#: app/applicationcontroller.cpp:394 app/applicationcontroller.cpp:439
+#: app/applicationcontroller.cpp:478 app/applicationcontroller.cpp:496
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Falha na exportação: %1"
 
-#: app/applicationcontroller.cpp:329 app/applicationcontroller.cpp:338
-#: app/applicationcontroller.cpp:431 app/applicationcontroller.cpp:440
+#: app/applicationcontroller.cpp:350 app/applicationcontroller.cpp:359
+#: app/applicationcontroller.cpp:452 app/applicationcontroller.cpp:461
 #, kde-format
 msgid "Export completed."
 msgstr "Exportação concluída."
 
-#: app/applicationcontroller.cpp:365
+#: app/applicationcontroller.cpp:386
 #, fuzzy, kde-format
 #| msgid "Trips"
 msgid "Trip sent."
 msgstr "Viagens"
 
-#: app/applicationcontroller.cpp:467
+#: app/applicationcontroller.cpp:488
 #, fuzzy, kde-format
 #| msgid "Reservation"
 msgid "Reservation sent."
 msgstr "Reserva"
 
-#: app/applicationcontroller.cpp:523
+#: app/applicationcontroller.cpp:544
 #, kde-format
 msgid "Import completed."
 msgstr "Importação concluída."
@@ -1482,7 +1490,7 @@ msgstr "Excluir"
 msgid "Do you really want to delete this pass?"
 msgstr "Deseja realmente excluir esta viagem?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:312 app/main.qml:21 app/main.qml:161
+#: app/gpxexport.cpp:33 app/main.cpp:318 app/main.qml:21 app/main.qml:161
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -2548,24 +2556,24 @@ msgstr "Tipo M"
 msgid "Type N"
 msgstr "Tipo M"
 
-#: app/main.cpp:320
+#: app/main.cpp:326
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Assistente de viagens digital"
 
-#: app/main.cpp:321
+#: app/main.cpp:327
 #, fuzzy, kde-format
 #| msgid "Copyright © 2018-%1 The KDE Community"
 msgid "Copyright © The KDE Community"
 msgstr "Copyright © 2018-%1 A comunidade KDE"
 
-#: app/main.cpp:328
+#: app/main.cpp:334
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr ""
 
-#: app/main.cpp:333
+#: app/main.cpp:339
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
@@ -2667,7 +2675,7 @@ msgstr "Configurações"
 msgid "Help"
 msgstr "Ajuda"
 
-#: app/main.qml:317
+#: app/main.qml:322
 #, kde-format
 msgid "Map download finished."
 msgstr "Download do mapa concluído."
