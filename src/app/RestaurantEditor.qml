@@ -51,19 +51,19 @@ EditorPage {
 
         FormCard.FormHeader {
             title: i18n("Trip")
-            visible: root.isNew && Settings.developmentMode
+            visible: root.isNew
         }
 
         TripGroupSelectorCard {
             id: tripGroupSelector
-            visible: root.isNew && Settings.developmentMode
+            visible: root.isNew
             suggestedName: restaurantName.text
             tripGroupCandidates: TripGroupModel.intersectingXorAdjacentTripGroups(startTimeEdit.value, endTimeEdit.hasValue ? endTimeEdit.value : startTimeEdit.value)
         }
 
         FormCard.FormHeader {
             title: i18n("Restaurant")
-            visible: root.isNew && Settings.developmentMode
+            visible: root.isNew
         }
 
         FormCard.FormCard {

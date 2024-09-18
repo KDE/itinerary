@@ -19,12 +19,12 @@ FormCard.FormCardPage {
 
     FormCard.FormHeader {
         title: i18n("Trip")
-        visible: root.controller.hasSelectedReservation && Settings.developmentMode
+        visible: root.controller.hasSelectedReservation
     }
 
     TripGroupSelectorCard {
         id: tripGroupSelector
-        visible: root.controller.hasSelectedReservation && Settings.developmentMode
+        visible: root.controller.hasSelectedReservation
         tripGroupCandidates: TripGroupModel.intersectingTripGroups(root.controller.selectionBeginDateTime, root.controller.selectionEndDateTime)
         suggestedName: root.controller.tripGroupName === "" ?
             TripGroupManager.guessNameForReservations(root.controller.selectedReservations) :
@@ -72,19 +72,14 @@ FormCard.FormCardPage {
         FormCard.FormButtonDelegate {
             icon.name: "document-open-symbolic"
             text: i18nc("@action:button", "Import selection")
-            enabled: root.controller.hasSelection && (tripGroupSelector.isValidInput || !root.controller.hasSelectedReservation || !Settings.developmentMode)
+            enabled: root.controller.hasSelection && (tripGroupSelector.isValidInput || !root.controller.hasSelectedReservation)
             onClicked: {
-                if (Settings.developmentMode) {
-                    switch (tripGroupSelector.mode) {
-                        case TripGroupSelectorCard.Mode.Create:
-                            root.controller.tripGroupName = tripGroupSelector.name;
-                            break;
-                        case TripGroupSelectorCard.Mode.Add:
-                            root.controller.tripGroupId = tripGroupSelector.tripGroupId;
-                    }
-                } else {
-                    root.controller.tripGroupName = "";
-                    root.controller.tripGroupId = "";
+                switch (tripGroupSelector.mode) {
+                    case TripGroupSelectorCard.Mode.Create:
+                        root.controller.tripGroupName = tripGroupSelector.name;
+                        break;
+                    case TripGroupSelectorCard.Mode.Add:
+                        root.controller.tripGroupId = tripGroupSelector.tripGroupId;
                 }
                 ApplicationController.commitImport(root.controller);
                 if (root.controller.count === 0) {

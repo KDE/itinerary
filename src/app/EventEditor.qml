@@ -52,12 +52,12 @@ EditorPage {
 
         FormCard.FormHeader {
             title: i18n("Trip")
-            visible: root.isNew && Settings.developmentMode
+            visible: root.isNew
         }
 
         TripGroupSelectorCard {
             id: tripGroupSelector
-            visible: root.isNew && Settings.developmentMode
+            visible: root.isNew
             suggestedName: eventName.text
             tripGroupCandidates: TripGroupModel.intersectingXorAdjacentTripGroups(startDateEdit.value, endDateEdit.hasValue ? endDateEdit.value : startDateEdit.value)
         }

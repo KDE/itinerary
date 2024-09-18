@@ -253,7 +253,7 @@ Kirigami.ApplicationWindow {
             else (pageStack.currentItem as Kirigami.Page)?.actions ?? [];
         }
     }
-    pageStack.initialPage: pagepool.loadPage(Settings.developmentMode ? Qt.resolvedUrl("TripGroupsPage.qml") : Qt.resolvedUrl("TimelinePage.qml"))
+    pageStack.initialPage: pagepool.loadPage(Qt.resolvedUrl("TripGroupsPage.qml"))
 
     DropArea {
         id: topDropArea
@@ -279,10 +279,7 @@ Kirigami.ApplicationWindow {
             }
             switch (page) {
             case "currentTicket":
-                if (Settings.developmentMode)
-                    pagepool.loadPage(Qt.resolvedUrl("TripGroupsPage.qml")).openCurrentReservation()
-                else
-                    pagepool.loadPage(Qt.resolvedUrl("TimelinePage.qml")).showDetailsPageForReservation(TripGroupModel.currentBatchId)
+                pagepool.loadPage(Qt.resolvedUrl("TripGroupsPage.qml")).openCurrentReservation()
                 break;
             case "stats":
                 statsAction.trigger();

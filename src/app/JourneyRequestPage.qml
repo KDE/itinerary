@@ -60,37 +60,23 @@ FormCard.FormCardPage {
                 publicTransportManager: root.publicTransportManager
                 title: i18n("Select Journey")
                 onJourneyChanged: {
-                    if (Settings.developmentMode) {
-                        let tgId = "";
-                        if (tripGroupSelector.mode === TripGroupSelectorCard.Mode.Create) {
-                            tgId = TripGroupManager.createEmptyGroup(tripGroupSelector.name);
-                        } else {
-                            tgId = tripGroupSelector.tripGroupId;
-                        }
-                        for (const section of journey.sections) {
-                            if (section.mode != JourneySection.PublicTransport) {
-                                continue;
-                            }
-                            const res = PublicTransport.reservationFromJourneySection(section);
-                            const resId = ApplicationController.addNewReservation(res, tgId);
-                            LiveDataManager.setJourney(resId, section);
-                        }
-                        ApplicationController.contextTripGroupId = tgId;
-                        pageStack.clear()
-                        pageStack.push(pagepool.loadPage(Qt.resolvedUrl("TripGroupsPage.qml")))
-
+                    let tgId = "";
+                    if (tripGroupSelector.mode === TripGroupSelectorCard.Mode.Create) {
+                        tgId = TripGroupManager.createEmptyGroup(tripGroupSelector.name);
                     } else {
-                        for (const section of journey.sections) {
-                            if (section.mode != JourneySection.PublicTransport) {
-                                continue;
-                            }
-                            const res = PublicTransport.reservationFromJourneySection(section);
-                            const resId = ReservationManager.addReservationWithPostProcessing(res);
-                            LiveDataManager.setJourney(resId, section);
-                        }
-                        pageStack.clear()
-                        pageStack.push(pagepool.loadPage(Qt.resolvedUrl("TimelinePage.qml")))
+                        tgId = tripGroupSelector.tripGroupId;
                     }
+                    for (const section of journey.sections) {
+                        if (section.mode != JourneySection.PublicTransport) {
+                            continue;
+                        }
+                        const res = PublicTransport.reservationFromJourneySection(section);
+                        const resId = ApplicationController.addNewReservation(res, tgId);
+                        LiveDataManager.setJourney(resId, section);
+                    }
+                    ApplicationController.contextTripGroupId = tgId;
+                    pageStack.clear()
+                    pageStack.push(pagepool.loadPage(Qt.resolvedUrl("TripGroupsPage.qml")))
                 }
             }
         }
@@ -192,7 +178,7 @@ FormCard.FormCardPage {
             id: searchButton
             icon.name: "search"
             text: i18n("Search Journey")
-            enabled: root.departureStop != undefined && root.arrivalStop != undefined && root.fullModeSwitchState() !== false && (tripGroupSelector.isValidInput || !Settings.developmentMode)
+            enabled: root.departureStop != undefined && root.arrivalStop != undefined && root.fullModeSwitchState() !== false && tripGroupSelector.isValidInput
             onClicked: {
                 applicationWindow().pageStack.push(journeyQueryPage);
                 const req = applicationWindow().pageStack.currentItem.journeyRequest;
@@ -234,19 +220,16 @@ FormCard.FormCardPage {
 
     FormCard.FormHeader {
         title: i18n("Trip")
-        visible: Settings.developmentMode
     }
 
     TripGroupSelectorCard {
         id: tripGroupSelector
-        visible: Settings.developmentMode
         suggestedName: root.arrivalStop?.name ?? ""
         tripGroupCandidates: TripGroupModel.intersectingXorAdjacentTripGroups(dateTimeInput.value, dateTimeInput.value)
     }
 
     FormCard.FormHeader {
         title: i18n("Mode of transportation")
-        visible: Settings.developmentMode
     }
 
     FormCard.FormCard {

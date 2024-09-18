@@ -57,12 +57,12 @@ EditorPage {
 
         FormCard.FormHeader {
             title: i18n("Trip")
-            visible: root.isNew && Settings.developmentMode
+            visible: root.isNew
         }
 
         TripGroupSelectorCard {
             id: tripGroupSelector
-            visible: root.isNew && Settings.developmentMode
+            visible: root.isNew
             suggestedName: arrivalTerminalName.text
             tripGroupCandidates: TripGroupModel.intersectingXorAdjacentTripGroups(departureTimeEdit.value, arrivalTimeEdit.hasValue ? arrivalTimeEdit.value : departureTimeEdit.value)
         }

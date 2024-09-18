@@ -26,13 +26,13 @@ Kirigami.ScrollablePage {
     property T.Action saveAction: QQC2.Action {
         text: i18nc("@action:button", "Save")
         icon.name: "document-save"
-        enabled: root.isValidInput && (!root.isNew || !root.tripGroupSelector || root.tripGroupSelector.isValidInput || !Settings.developmentMode)
+        enabled: root.isValidInput && (!root.isNew || !root.tripGroupSelector || root.tripGroupSelector.isValidInput)
         onTriggered: {
             const newRes = root.apply(root.reservation);
             if (!root.isNew) { // update to an existing element
                 ReservationManager.updateReservation(root.batchId, newRes);
             } else { // newly added element
-                if (!root.tripGroupSelector || !Settings.developmentMode) {
+                if (!root.tripGroupSelector) {
                     ReservationManager.addReservationWithPostProcessing(newRes);
                 } else {
                     let tgId = "";

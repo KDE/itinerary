@@ -49,12 +49,12 @@ EditorPage {
 
         FormCard.FormHeader {
             title: i18n("Trip")
-            visible: root.isNew && Settings.developmentMode
+            visible: root.isNew
         }
 
         TripGroupSelectorCard {
             id: tripGroupSelector
-            visible: root.isNew && Settings.developmentMode
+            visible: root.isNew
             suggestedName: hotelName.text
             tripGroupCandidates: TripGroupModel.intersectingXorAdjacentTripGroups(checkinEdit.value, checkoutEdit.hasValue ? checkoutEdit.value : checkinEdit.value)
         }

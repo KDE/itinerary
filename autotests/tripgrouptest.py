@@ -18,11 +18,7 @@ import os
 
 class TripGroupTest(ItineraryTestCase):
     def setUp(self):
-        self.enableDevMode()
         self.driver.find_element(by=AppiumBy.NAME, value="Itinerary").click()
-
-    def tearDown(self):
-        self.disableDevMode()
 
     def testEmptyGroup(self):
         self.driver.find_element(by=AppiumBy.NAME, value="Add trip").click()
