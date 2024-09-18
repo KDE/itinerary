@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-17 00:39+0000\n"
-"PO-Revision-Date: 2024-09-16 19:59+0300\n"
+"POT-Creation-Date: 2024-09-18 00:40+0000\n"
+"PO-Revision-Date: 2024-09-17 15:18+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -281,9 +281,7 @@ msgid "Replace"
 msgstr "Замінити"
 
 #: app/applicationcontroller.cpp:188
-#, fuzzy, kde-format
-#| msgctxt "weekday, date"
-#| msgid "%1, %2"
+#, kde-format
 msgctxt "geo coordinate"
 msgid "%1, %2"
 msgstr "%1, %2"
@@ -338,7 +336,7 @@ msgstr "Подорож надіслано."
 msgid "Reservation sent."
 msgstr "Резервування надіслано."
 
-#: app/applicationcontroller.cpp:544
+#: app/applicationcontroller.cpp:546
 #, kde-format
 msgid "Import completed."
 msgstr "Імпортування завершено."

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-17 00:39+0000\n"
-"PO-Revision-Date: 2024-09-16 11:45+0200\n"
+"POT-Creation-Date: 2024-09-18 00:40+0000\n"
+"PO-Revision-Date: 2024-09-17 10:22+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -278,9 +278,7 @@ msgid "Replace"
 msgstr "Reimplacia"
 
 #: app/applicationcontroller.cpp:188
-#, fuzzy, kde-format
-#| msgctxt "weekday, date"
-#| msgid "%1, %2"
+#, kde-format
 msgctxt "geo coordinate"
 msgid "%1, %2"
 msgstr "%1, %2"
@@ -329,7 +327,7 @@ msgstr "Tour inviate."
 msgid "Reservation sent."
 msgstr "Reservation inviate"
 
-#: app/applicationcontroller.cpp:544
+#: app/applicationcontroller.cpp:546
 #, kde-format
 msgid "Import completed."
 msgstr "Importation completate."

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-17 00:39+0000\n"
+"POT-Creation-Date: 2024-09-18 00:40+0000\n"
 "PO-Revision-Date: 2024-09-07 12:17+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -328,7 +328,7 @@ msgstr "Trip sent."
 msgid "Reservation sent."
 msgstr "Reservation sent."
 
-#: app/applicationcontroller.cpp:544
+#: app/applicationcontroller.cpp:546
 #, kde-format
 msgid "Import completed."
 msgstr "Import completed."

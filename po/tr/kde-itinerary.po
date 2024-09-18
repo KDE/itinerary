@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-17 00:39+0000\n"
+"POT-Creation-Date: 2024-09-18 00:40+0000\n"
 "PO-Revision-Date: 2024-09-16 12:09+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -330,7 +330,7 @@ msgstr "Gezi gönderildi."
 msgid "Reservation sent."
 msgstr "Rezervasyon gönderildi."
 
-#: app/applicationcontroller.cpp:544
+#: app/applicationcontroller.cpp:546
 #, kde-format
 msgid "Import completed."
 msgstr "İçe aktarma tamamlandı."
