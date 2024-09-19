@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-18 00:40+0000\n"
+"POT-Creation-Date: 2024-09-19 00:40+0000\n"
 "PO-Revision-Date: 2024-09-17 11:10+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -227,35 +227,35 @@ msgid "To %1"
 msgstr "A %1"
 
 #: app/AlternativeJourneyPage.qml:88 app/DepartureQueryPage.qml:41
-#: app/JourneyRequestPage.qml:257 app/TransferPage.qml:108
+#: app/JourneyRequestPage.qml:240 app/TransferPage.qml:108
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Long distance trains"
 msgstr "Trens de llarga distància"
 
 #: app/AlternativeJourneyPage.qml:96 app/DepartureQueryPage.qml:48
-#: app/JourneyRequestPage.qml:267 app/TransferPage.qml:116
+#: app/JourneyRequestPage.qml:250 app/TransferPage.qml:116
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Local trains"
 msgstr "Trens locals"
 
 #: app/AlternativeJourneyPage.qml:104 app/DepartureQueryPage.qml:55
-#: app/JourneyRequestPage.qml:277 app/TransferPage.qml:124
+#: app/JourneyRequestPage.qml:260 app/TransferPage.qml:124
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Rapid transit"
 msgstr "Transport ràpid"
 
 #: app/AlternativeJourneyPage.qml:112 app/DepartureQueryPage.qml:62
-#: app/JourneyRequestPage.qml:287 app/TransferPage.qml:132
+#: app/JourneyRequestPage.qml:270 app/TransferPage.qml:132
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Bus"
 msgstr "Autobús"
 
 #: app/AlternativeJourneyPage.qml:120 app/DepartureQueryPage.qml:69
-#: app/JourneyRequestPage.qml:297 app/TransferPage.qml:140
+#: app/JourneyRequestPage.qml:280 app/TransferPage.qml:140
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ferry"
@@ -396,7 +396,7 @@ msgid "Boat"
 msgstr "Vaixell"
 
 #: app/BoatEditor.qml:59 app/EventEditor.qml:54 app/FlightEditor.qml:71
-#: app/HotelEditor.qml:51 app/ImportPage.qml:21 app/JourneyRequestPage.qml:236
+#: app/HotelEditor.qml:51 app/ImportPage.qml:21 app/JourneyRequestPage.qml:222
 #: app/RestaurantEditor.qml:53
 #, kde-format
 msgid "Trip"
@@ -1983,94 +1983,94 @@ msgstr "Encara s'estan recuperant els resultats…"
 msgid "Select Journey"
 msgstr "Selecciona el viatge"
 
-#: app/JourneyRequestPage.qml:41 app/JourneyRequestPage.qml:119
+#: app/JourneyRequestPage.qml:41 app/JourneyRequestPage.qml:105
 #, kde-format
 msgctxt "departure train station"
 msgid "Select Departure Stop"
 msgstr "Selecciona la parada de sortida"
 
-#: app/JourneyRequestPage.qml:51 app/JourneyRequestPage.qml:133
+#: app/JourneyRequestPage.qml:51 app/JourneyRequestPage.qml:119
 #, kde-format
 msgctxt "arrival train station"
 msgid "Select Arrival Stop"
 msgstr "Selecciona la parada d'arribada"
 
-#: app/JourneyRequestPage.qml:118
+#: app/JourneyRequestPage.qml:104
 #, kde-format
 msgctxt "departure train station"
 msgid "From:"
 msgstr "Des de:"
 
-#: app/JourneyRequestPage.qml:132
+#: app/JourneyRequestPage.qml:118
 #, kde-format
 msgctxt "arrival train station"
 msgid "To:"
 msgstr "A:"
 
-#: app/JourneyRequestPage.qml:150
+#: app/JourneyRequestPage.qml:136
 #, kde-format
 msgid "Swap departure and arrival"
 msgstr "Intercanvia la sortida i l'arribada"
 
-#: app/JourneyRequestPage.qml:171
+#: app/JourneyRequestPage.qml:157
 #, kde-format
 msgctxt "train or bus departure"
 msgid "Departure"
 msgstr "Sortida"
 
-#: app/JourneyRequestPage.qml:174
+#: app/JourneyRequestPage.qml:160
 #, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival"
 msgstr "Arribada"
 
-#: app/JourneyRequestPage.qml:183
+#: app/JourneyRequestPage.qml:169
 #, kde-format
 msgctxt "train or bus departure"
 msgid "Departure time"
 msgstr "Hora de sortida"
 
-#: app/JourneyRequestPage.qml:183
+#: app/JourneyRequestPage.qml:169
 #, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival time"
 msgstr "Hora d'arribada"
 
-#: app/JourneyRequestPage.qml:194
+#: app/JourneyRequestPage.qml:180
 #, kde-format
 msgid "Search Journey"
 msgstr "Cerca un viatge"
 
-#: app/JourneyRequestPage.qml:248
+#: app/JourneyRequestPage.qml:232
 #, kde-format
 msgid "Mode of transportation"
 msgstr "Mode de transport"
 
-#: app/JourneyRequestPage.qml:258
+#: app/JourneyRequestPage.qml:241
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "High speed or intercity trains"
 msgstr "Trens d'alta velocitat o interurbans"
 
-#: app/JourneyRequestPage.qml:268
+#: app/JourneyRequestPage.qml:251
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Regional or local trains"
 msgstr "Trens regionals o locals"
 
-#: app/JourneyRequestPage.qml:278
+#: app/JourneyRequestPage.qml:261
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Rapid transit, metro, trams"
 msgstr "Transport ràpid, metro, tramvia"
 
-#: app/JourneyRequestPage.qml:288
+#: app/JourneyRequestPage.qml:271
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Local or regional bus services"
 msgstr "Serveis d'autobús local o regional"
 
-#: app/JourneyRequestPage.qml:298
+#: app/JourneyRequestPage.qml:281
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
@@ -2522,7 +2522,7 @@ msgstr "Configuració…"
 msgid "Help"
 msgstr "Ajuda"
 
-#: app/main.qml:322
+#: app/main.qml:319
 #, kde-format
 msgid "Map download finished."
 msgstr "Ha acabat la baixada dels mapes."
@@ -2580,13 +2580,13 @@ msgctxt "@title:tab"
 msgid "Plan Trip"
 msgstr "Pla de viatge"
 
-#: app/NavigationBar.qml:46
+#: app/NavigationBar.qml:42
 #, kde-format
 msgctxt "@title:tab"
 msgid "Passes & Programs"
 msgstr "Passis i programes"
 
-#: app/NavigationBar.qml:51
+#: app/NavigationBar.qml:47
 #, kde-format
 msgctxt "@title:tab"
 msgid "Current Ticket"
