@@ -83,3 +83,5 @@ void IntentHandler::onNewIntent(const KAndroidExtras::Intent &intent)
     QMetaObject::invokeMethod(this, &IntentHandler::handleIntent, intent);
 #endif
 }
+
+#include "moc_intenthandler.cpp"

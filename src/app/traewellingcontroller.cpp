@@ -305,3 +305,5 @@ void TraewellingController::checkin(const QString &departureStationName, const Q
         });
     });
 }
+
+#include "moc_traewellingcontroller.cpp"
