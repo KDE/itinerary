@@ -367,18 +367,6 @@ Kirigami.ScrollablePage {
         id: boatEditorPage
         BoatEditor {}
     }
-    Component {
-        id: hotelEditorPage
-        HotelEditor {}
-    }
-    Component {
-        id: eventEditorPage
-        EventEditor {}
-    }
-    Component {
-        id: restaurantEditorPage
-        RestaurantEditor {}
-    }
 
     function detailsComponent(batchId) {
         const res = ReservationManager.reservation(batchId);

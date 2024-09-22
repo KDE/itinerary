@@ -551,19 +551,6 @@ Kirigami.ScrollablePage {
         }
     }
 
-    Connections {
-        target: ApplicationController
-        function onEditNewHotelReservation(res) {
-            applicationWindow().pageStack.push(hotelEditorPage, {reservation: res});
-        }
-        function onEditNewRestaurantReservation(res) {
-            applicationWindow().pageStack.push(restaurantEditorPage, {reservation: res});
-        }
-        function onEditNewEventReservation(res) {
-            applicationWindow().pageStack.push(eventEditorPage, {reservation: res});
-        }
-    }
-
     // work around initial positioning not working correctly below, as at that point
     // listView.height has bogus values. No idea why, possibly delayed layouting in the ScrollablePage,
     // or a side-effect of the binding loop on delegate heights

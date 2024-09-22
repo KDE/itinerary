@@ -270,6 +270,19 @@ Kirigami.ApplicationWindow {
         anchors.fill: parent
     }
 
+    Component {
+        id: hotelEditorPage
+        HotelEditor {}
+    }
+    Component {
+        id: eventEditorPage
+        EventEditor {}
+    }
+    Component {
+        id: restaurantEditorPage
+        RestaurantEditor {}
+    }
+
     Connections {
         target: ApplicationController
         function onInfoMessage(msg) { showPassiveNotification(msg, "short"); }
@@ -299,12 +312,23 @@ Kirigami.ApplicationWindow {
                 console.warn("Requested to open unknown page", page);
             }
         }
+        function onEditNewHotelReservation(res) {
+            applicationWindow().pageStack.push(hotelEditorPage, {reservation: res});
+        }
+        function onEditNewRestaurantReservation(res) {
+            applicationWindow().pageStack.push(restaurantEditorPage, {reservation: res});
+        }
+        function onEditNewEventReservation(res) {
+            applicationWindow().pageStack.push(eventEditorPage, {reservation: res});
+        }
     }
 
     Connections {
         target: ImportController
         function onShowImportPage() {
+            console.log("XXXX");
             if (ImportController.canAutoCommit()) {
+                console.log("Auto commit");
                 ApplicationController.commitImport(ImportController);
             } else {
                 pageStack.layers.push(Qt.createComponent("org.kde.itinerary", "ImportPage"), {
