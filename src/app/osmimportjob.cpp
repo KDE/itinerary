@@ -96,8 +96,11 @@ static void convertContactData(P &p, OSM::Element e)
 
 QVariant OsmImportJob::convertElement(OSM::Element e)
 {
+    const auto building = e.tagValue("building");
     const auto tourism = e.tagValue("tourism");
-    if (tourism == "apartment" || tourism == "chalet" || tourism == "guest_house" || tourism == "hostel" || tourism == "hotel") {
+    if (tourism == "apartment" || tourism == "chalet" || tourism == "guest_house" || tourism == "hostel" || tourism == "hotel"
+     || building == "hotel")
+    {
         KItinerary::LodgingBusiness h;
         h.setName(QString::fromUtf8(e.tagValue(OSM::Languages::fromQLocale(QLocale()), "name", "loc_name", "int_name", "brand")));
         h.setGeo(KItinerary::GeoCoordinates(e.center().latF(), e.center().lonF())); // TODO for ways we could check for the entrance node even
@@ -120,7 +123,6 @@ QVariant OsmImportJob::convertElement(OSM::Element e)
 
     const auto leisure = e.tagValue("leisure");
     const auto office = e.tagValue("office");
-    const auto building = e.tagValue("building");
     if (amenity == "cinema" || amenity == "conference_centre" || amenity == "events_venue" || amenity == "exhibition_centre" || amenity == "theatre"
         || leisure == "escape_game" || leisure == "minature_golf" || leisure == "stadium" || leisure == "water_park"
         || !office.isEmpty()
