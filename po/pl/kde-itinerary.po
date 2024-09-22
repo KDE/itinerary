@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-19 00:40+0000\n"
-"PO-Revision-Date: 2024-09-07 11:25+0200\n"
+"PO-Revision-Date: 2024-09-21 11:38+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -277,9 +277,7 @@ msgid "Replace"
 msgstr "Zastąp"
 
 #: app/applicationcontroller.cpp:188
-#, fuzzy, kde-format
-#| msgctxt "weekday, date"
-#| msgid "%1, %2"
+#, kde-format
 msgctxt "geo coordinate"
 msgid "%1, %2"
 msgstr "%1, %2"
@@ -956,12 +954,10 @@ msgid "Seat"
 msgstr "Miejsce"
 
 #: app/EventPage.qml:126
-#, fuzzy, kde-format
-#| msgctxt "flight departure gate"
-#| msgid "Gate: <b>%1</b>"
+#, kde-format
 msgctxt "event venue seat type"
 msgid "Type: <b>%1</b>"
-msgstr "Brama: <b>%1</b>"
+msgstr "Rodzaj: <b>%1</b>"
 
 #: app/favoritelocationmodel.cpp:130 app/favoritelocationmodel.cpp:150
 #: app/SettingsPage.qml:34
