@@ -80,6 +80,9 @@ public:
 Q_SIGNALS:
     void tripGroupAdded(const QString &id);
     void tripGroupChanged(const QString &id);
+    /** Emitted while group with @p id is still fully existent. */
+    void tripGroupAboutToBeRemoved(const QString &id);
+    /** Emitted after group with @p id has been fully removed. */
     void tripGroupRemoved(const QString &id);
 
 private:

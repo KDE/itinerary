@@ -163,6 +163,7 @@ void TripGroupManager::removeTripGroup(const QString &groupId)
         return;
     }
 
+    Q_EMIT tripGroupAboutToBeRemoved(groupId);
     for (const auto &elem : groupIt.value().elements()) {
         const auto it = m_reservationToGroupMap.find(elem);
         // check if this still points to the removed group (might not be the case if an overlapping group was added meanwhile)
@@ -207,6 +208,7 @@ void TripGroupManager::removeReservationsInGroup(const QString &groupId)
     }
 
     if (!groupIt.value().elements().isEmpty()) {
+        Q_EMIT tripGroupAboutToBeRemoved(groupId);
         // as we remove entries one by one we'd get and propagate update notifications for all of them
         // so block those and emit one notifications manually once we are done
         TripGroupingBlocker groupingBlocker(this);
@@ -933,6 +935,7 @@ QString TripGroupManager::merge(const QString &tgId1, const QString &tgId2, cons
     m_tripGroups[tgId1] = group;
     group.store(fileForGroup(tgId1));
 
+    Q_EMIT tripGroupAboutToBeRemoved(tgId2);
     m_tripGroups.remove(tgId2);
     if (!QFile::remove(fileForGroup(tgId2))) {
         qCWarning(Log) << "Failed to delete trip group file!" << tgId2;

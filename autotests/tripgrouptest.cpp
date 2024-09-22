@@ -340,6 +340,8 @@ private Q_SLOTS:
         ctrl->commitImport(&importer);
         TripGroupManager mgr;
         QSignalSpy addSpy(&mgr, &TripGroupManager::tripGroupAdded);
+        QSignalSpy aboutToRmSpy(&mgr, &TripGroupManager::tripGroupAboutToBeRemoved);
+        QSignalSpy rmSpy(&mgr, &TripGroupManager::tripGroupRemoved);
         mgr.setReservationManager(&resMgr);
         mgr.setTransferManager(&transferMgr);
         QCOMPARE(addSpy.size(), 1);
@@ -349,6 +351,11 @@ private Q_SLOTS:
         mgr.removeReservationsInGroup(groupId);
         QCOMPARE(resMgr.batches().size(), 0);
         QCOMPARE(mgr.tripGroups().size(), 0);
+
+        QCOMPARE(aboutToRmSpy.size(), 1);
+        QCOMPARE(aboutToRmSpy.at(0).at(0).toString(), groupId);
+        QCOMPARE(aboutToRmSpy.size(), 1);
+        QCOMPARE(aboutToRmSpy.at(0).at(0).toString(), groupId);
     }
 
     void testMerge()
