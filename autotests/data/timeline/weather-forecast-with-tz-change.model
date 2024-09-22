@@ -171,8 +171,10 @@
             "floatingLocationType": "FavoriteLocation",
             "from": {
                 "@type": "Location",
+                "country": "DE",
                 "latitude": 52.51860046386719,
                 "longitude": 13.376299858093262,
+                "region": "DE-BE",
                 "type": "Place"
             },
             "fromName": "Home",
@@ -183,6 +185,7 @@
                 "latitude": 52.55379867553711,
                 "longitude": 13.29319953918457,
                 "name": "Tegel",
+                "region": "DE-BE",
                 "type": "Place"
             },
             "toName": "Tegel"
@@ -490,14 +493,17 @@
                 "latitude": 52.55379867553711,
                 "longitude": 13.29319953918457,
                 "name": "Tegel",
+                "region": "DE-BE",
                 "type": "Place"
             },
             "fromName": "Tegel",
             "state": "Pending",
             "to": {
                 "@type": "Location",
+                "country": "DE",
                 "latitude": 52.51860046386719,
                 "longitude": 13.376299858093262,
+                "region": "DE-BE",
                 "type": "Place"
             },
             "toName": "Home"

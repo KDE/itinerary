@@ -47,8 +47,10 @@
             "floatingLocationType": "FavoriteLocation",
             "from": {
                 "@type": "Location",
+                "country": "DE",
                 "latitude": 52.51860046386719,
                 "longitude": 13.376299858093262,
+                "region": "DE-BE",
                 "type": "Place"
             },
             "fromName": "Home",
@@ -59,6 +61,7 @@
                 "latitude": 52.55970001220703,
                 "longitude": 13.287799835205078,
                 "name": "Tegel",
+                "region": "DE-BE",
                 "type": "Place"
             },
             "toName": "Tegel"

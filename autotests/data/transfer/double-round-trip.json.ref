@@ -9,8 +9,10 @@
             "anchorTimeDelta": 1200,
             "floatingLocationType": "FavoriteLocation",
             "from": {
+                "country": "DE",
                 "latitude": 52.51860046386719,
-                "longitude": 13.376299858093262
+                "longitude": 13.376299858093262,
+                "region": "DE-BE"
             },
             "fromName": "name",
             "journey": {
@@ -26,6 +28,7 @@
                 "latitude": 52.525848388671875,
                 "longitude": 13.368891716003418,
                 "name": "Berlin Hbf",
+                "region": "DE-BE",
                 "type": "Stop"
             },
             "toName": "Berlin Hbf"
@@ -48,6 +51,7 @@
                 "latitude": 52.524925231933594,
                 "longitude": 13.36962890625,
                 "name": "Berlin Hbf",
+                "region": "DE-BE",
                 "type": "Stop"
             },
             "fromName": "Berlin Hbf",
@@ -57,8 +61,10 @@
             },
             "state": "Pending",
             "to": {
+                "country": "DE",
                 "latitude": 52.51860046386719,
-                "longitude": 13.376299858093262
+                "longitude": 13.376299858093262,
+                "region": "DE-BE"
             },
             "toName": "name"
         }
@@ -73,8 +79,10 @@
             "anchorTimeDelta": 1200,
             "floatingLocationType": "FavoriteLocation",
             "from": {
+                "country": "DE",
                 "latitude": 52.51860046386719,
-                "longitude": 13.376299858093262
+                "longitude": 13.376299858093262,
+                "region": "DE-BE"
             },
             "fromName": "name",
             "journey": {
@@ -90,6 +98,7 @@
                 "latitude": 52.525848388671875,
                 "longitude": 13.368891716003418,
                 "name": "Berlin Hbf",
+                "region": "DE-BE",
                 "type": "Stop"
             },
             "toName": "Berlin Hbf"
@@ -112,6 +121,7 @@
                 "latitude": 52.524925231933594,
                 "longitude": 13.36962890625,
                 "name": "Berlin Hbf",
+                "region": "DE-BE",
                 "type": "Stop"
             },
             "fromName": "Berlin Hbf",
@@ -121,8 +131,10 @@
             },
             "state": "Pending",
             "to": {
+                "country": "DE",
                 "latitude": 52.51860046386719,
-                "longitude": 13.376299858093262
+                "longitude": 13.376299858093262,
+                "region": "DE-BE"
             },
             "toName": "name"
         }

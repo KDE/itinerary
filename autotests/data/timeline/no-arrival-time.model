@@ -23,8 +23,10 @@
             "floatingLocationType": "FavoriteLocation",
             "from": {
                 "@type": "Location",
+                "country": "DE",
                 "latitude": 52.51860046386719,
                 "longitude": 13.376299858093262,
+                "region": "DE-BE",
                 "type": "Place"
             },
             "fromName": "Home",
@@ -35,6 +37,7 @@
                 "latitude": 52.36410140991211,
                 "longitude": 13.508199691772461,
                 "name": "BER",
+                "region": "DE-BB",
                 "type": "Place"
             },
             "toName": "BER"
