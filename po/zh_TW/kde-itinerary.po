@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-19 00:40+0000\n"
+"POT-Creation-Date: 2024-09-23 00:39+0000\n"
 "PO-Revision-Date: 2024-08-26 16:29+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -116,7 +116,7 @@ msgid "Add to calendar…"
 msgstr "加入至行事曆…"
 
 #: app/ActionsCard.qml:74 app/main.qml:221 app/TripGroupDelegate.qml:182
-#: app/TripGroupPage.qml:662
+#: app/TripGroupPage.qml:650
 #, kde-format
 msgid "Export…"
 msgstr "匯出…"
@@ -167,7 +167,7 @@ msgid "Itinerary file (*.itinerary)"
 msgstr "旅行計劃檔案 (*.itinerary)"
 
 #: app/ActionsCard.qml:173 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:630
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:618
 #, kde-format
 msgid "Actions"
 msgstr "動作"
@@ -2517,7 +2517,7 @@ msgstr "設定…"
 msgid "Help"
 msgstr "說明"
 
-#: app/main.qml:319
+#: app/main.qml:343
 #, kde-format
 msgid "Map download finished."
 msgstr "地圖下載完成。"
@@ -2717,7 +2717,7 @@ msgctxt "not yet expired tickets"
 msgid "Valid"
 msgstr "有效"
 
-#: app/passmanager.cpp:275 app/TripGroupPage.qml:443
+#: app/passmanager.cpp:275 app/TripGroupPage.qml:431
 #, kde-format
 msgid "%1 - %2"
 msgstr "%1 - %2"
@@ -3385,12 +3385,58 @@ msgstr "最近使用"
 msgid "Most often used"
 msgstr "最常使用"
 
-#: app/StopPickerPage.qml:136
+#: app/StopPickerPage.qml:132 app/StopPickerPage.qml:230
+#, kde-format
+msgctxt "location name, locality, region, country"
+msgid "%1, %2, %3, %4"
+msgstr ""
+
+#: app/StopPickerPage.qml:138 app/StopPickerPage.qml:236
+#, fuzzy, kde-format
+#| msgctxt "weekday, date"
+#| msgid "%1, %2"
+msgctxt "location name, locality, country"
+msgid "%1, %2, %3"
+msgstr "%2 (%1)"
+
+#: app/StopPickerPage.qml:143 app/StopPickerPage.qml:241
+#, fuzzy, kde-format
+#| msgctxt "weekday, date"
+#| msgid "%1, %2"
+msgctxt "location name, region, country"
+msgid "%1, %2, %3"
+msgstr "%2 (%1)"
+
+#: app/StopPickerPage.qml:173 app/StopPickerPage.qml:272
+#, fuzzy, kde-format
+#| msgctxt "weekday, date"
+#| msgid "%1, %2"
+msgctxt "locality, region, country"
+msgid "%1, %2, %3"
+msgstr "%2 (%1)"
+
+#: app/StopPickerPage.qml:178 app/StopPickerPage.qml:277
+#, fuzzy, kde-format
+#| msgctxt "weekday, date"
+#| msgid "%1, %2"
+msgctxt "locality, country"
+msgid "%1, %2"
+msgstr "%2 (%1)"
+
+#: app/StopPickerPage.qml:182 app/StopPickerPage.qml:281
+#, fuzzy, kde-format
+#| msgctxt "weekday, date"
+#| msgid "%1, %2"
+msgctxt "region, country"
+msgid "%1, %2"
+msgstr "%2 (%1)"
+
+#: app/StopPickerPage.qml:206
 #, kde-format
 msgid "Remove history entry"
 msgstr "移除歷史紀錄條目"
 
-#: app/StopPickerPage.qml:189
+#: app/StopPickerPage.qml:320
 #, kde-format
 msgid "No locations found"
 msgstr "找不到位置"
@@ -3491,13 +3537,13 @@ msgstr "新增活動…"
 msgid "Add restaurant…"
 msgstr "新增餐廳…"
 
-#: app/TimelinePage.qml:166 app/TripGroupPage.qml:694
+#: app/TimelinePage.qml:166 app/TripGroupPage.qml:682
 #, kde-format
 msgctxt "@action:button"
 msgid "Go To Now"
 msgstr "跳到現在"
 
-#: app/TimelinePage.qml:173 app/TripGroupPage.qml:702
+#: app/TimelinePage.qml:173 app/TripGroupPage.qml:690
 #: app/TripGroupsPage.qml:122
 #, kde-format
 msgctxt "@action:button"
@@ -3531,7 +3577,7 @@ msgstr "作為 GPX 檔案…"
 msgid "Export Trip"
 msgstr "匯出旅程"
 
-#: app/TimelinePage.qml:493 app/TripGroupPage.qml:603
+#: app/TimelinePage.qml:493 app/TripGroupPage.qml:591
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "今天沒有任何行程預定。"
@@ -3771,7 +3817,7 @@ msgid "Date: %2 (one day)"
 msgid_plural "Date: %2 (%1 days)"
 msgstr[0] "日期：%2（%1 天）"
 
-#: app/TripGroupDelegate.qml:116 app/TripGroupPage.qml:450
+#: app/TripGroupDelegate.qml:116 app/TripGroupPage.qml:438
 #: app/WeatherForecastDelegate.qml:48 app/WeatherForecastPage.qml:93
 #, kde-format
 msgctxt "temperature range"
@@ -3793,7 +3839,7 @@ msgstr "%1：有些插頭不相容 (%2)"
 msgid "%1: no compatible power plugs (%2)"
 msgstr "%1：沒有相容的插頭 (%2)"
 
-#: app/TripGroupDelegate.qml:145 app/TripGroupPage.qml:476
+#: app/TripGroupDelegate.qml:145 app/TripGroupPage.qml:464
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
@@ -3804,7 +3850,7 @@ msgstr[0] "貨幣：%2"
 msgid "Edit…"
 msgstr "編輯…"
 
-#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:669
+#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:657
 #, kde-format
 msgid "Delete trip"
 msgstr "刪除旅程"
@@ -3878,52 +3924,52 @@ msgstr "新增旅程"
 msgid "Do you really want to delete the trip '%1'?"
 msgstr "您確定要刪除旅程「%1」嗎？"
 
-#: app/TripGroupPage.qml:444
+#: app/TripGroupPage.qml:432
 #, kde-format
 msgid "One day"
 msgid_plural "%1 days"
 msgstr[0] ""
 
-#: app/TripGroupPage.qml:464
+#: app/TripGroupPage.qml:452
 #, kde-format
 msgid "Some incompatible power sockets (%1)"
 msgstr "有些插座不相容 (%1)"
 
-#: app/TripGroupPage.qml:466
+#: app/TripGroupPage.qml:454
 #, kde-format
 msgid "Some incompatible power plugs (%1)"
 msgstr "有些插頭不相容 (%1)"
 
-#: app/TripGroupPage.qml:469
+#: app/TripGroupPage.qml:457
 #, kde-format
 msgid "No compatible power plugs (%1)"
 msgstr "沒有相容的插頭 (%1)"
 
-#: app/TripGroupPage.qml:482
+#: app/TripGroupPage.qml:470
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Import"
 msgid "Import"
 msgstr "匯入"
 
-#: app/TripGroupPage.qml:496
+#: app/TripGroupPage.qml:484
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Add trip"
 msgid "Add"
 msgstr "新增旅程"
 
-#: app/TripGroupPage.qml:635
+#: app/TripGroupPage.qml:623
 #, kde-format
 msgid "Rename…"
 msgstr "重新命名…"
 
-#: app/TripGroupPage.qml:644
+#: app/TripGroupPage.qml:632
 #, kde-format
 msgid "Merge trips…"
 msgstr "合併旅程…"
 
-#: app/TripGroupPage.qml:655
+#: app/TripGroupPage.qml:643
 #, kde-format
 msgid "Split trip…"
 msgstr "分割旅程…"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-19 00:40+0000\n"
+"POT-Creation-Date: 2024-09-23 00:39+0000\n"
 "PO-Revision-Date: 2024-03-26 16:14+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -121,7 +121,7 @@ msgid "Add to calendar…"
 msgstr "Hozzáadás a naptárhoz…"
 
 #: app/ActionsCard.qml:74 app/main.qml:221 app/TripGroupDelegate.qml:182
-#: app/TripGroupPage.qml:662
+#: app/TripGroupPage.qml:650
 #, fuzzy, kde-format
 #| msgid "Export"
 msgid "Export…"
@@ -174,7 +174,7 @@ msgid "Itinerary file (*.itinerary)"
 msgstr "Itinerary fájl (*.itinerary)"
 
 #: app/ActionsCard.qml:173 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:630
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:618
 #, kde-format
 msgid "Actions"
 msgstr "Műveletek"
@@ -2567,7 +2567,7 @@ msgstr "Beállítások"
 msgid "Help"
 msgstr "Súgó"
 
-#: app/main.qml:319
+#: app/main.qml:343
 #, kde-format
 msgid "Map download finished."
 msgstr "Térképletöltés befejezve."
@@ -2769,7 +2769,7 @@ msgctxt "not yet expired tickets"
 msgid "Valid"
 msgstr "Érvényes"
 
-#: app/passmanager.cpp:275 app/TripGroupPage.qml:443
+#: app/passmanager.cpp:275 app/TripGroupPage.qml:431
 #, kde-format
 msgid "%1 - %2"
 msgstr "%1 - %2"
@@ -3445,12 +3445,58 @@ msgstr "Legutóbb használt"
 msgid "Most often used"
 msgstr "Leggyakrabban használt"
 
-#: app/StopPickerPage.qml:136
+#: app/StopPickerPage.qml:132 app/StopPickerPage.qml:230
+#, kde-format
+msgctxt "location name, locality, region, country"
+msgid "%1, %2, %3, %4"
+msgstr ""
+
+#: app/StopPickerPage.qml:138 app/StopPickerPage.qml:236
+#, fuzzy, kde-format
+#| msgctxt "weekday, date"
+#| msgid "%1, %2"
+msgctxt "location name, locality, country"
+msgid "%1, %2, %3"
+msgstr "%2, %1"
+
+#: app/StopPickerPage.qml:143 app/StopPickerPage.qml:241
+#, fuzzy, kde-format
+#| msgctxt "weekday, date"
+#| msgid "%1, %2"
+msgctxt "location name, region, country"
+msgid "%1, %2, %3"
+msgstr "%2, %1"
+
+#: app/StopPickerPage.qml:173 app/StopPickerPage.qml:272
+#, fuzzy, kde-format
+#| msgctxt "weekday, date"
+#| msgid "%1, %2"
+msgctxt "locality, region, country"
+msgid "%1, %2, %3"
+msgstr "%2, %1"
+
+#: app/StopPickerPage.qml:178 app/StopPickerPage.qml:277
+#, fuzzy, kde-format
+#| msgctxt "weekday, date"
+#| msgid "%1, %2"
+msgctxt "locality, country"
+msgid "%1, %2"
+msgstr "%2, %1"
+
+#: app/StopPickerPage.qml:182 app/StopPickerPage.qml:281
+#, fuzzy, kde-format
+#| msgctxt "weekday, date"
+#| msgid "%1, %2"
+msgctxt "region, country"
+msgid "%1, %2"
+msgstr "%2, %1"
+
+#: app/StopPickerPage.qml:206
 #, kde-format
 msgid "Remove history entry"
 msgstr ""
 
-#: app/StopPickerPage.qml:189
+#: app/StopPickerPage.qml:320
 #, kde-format
 msgid "No locations found"
 msgstr ""
@@ -3560,13 +3606,13 @@ msgstr "Esemény hozzáadása…"
 msgid "Add restaurant…"
 msgstr "Étterem hozzáadása…"
 
-#: app/TimelinePage.qml:166 app/TripGroupPage.qml:694
+#: app/TimelinePage.qml:166 app/TripGroupPage.qml:682
 #, kde-format
 msgctxt "@action:button"
 msgid "Go To Now"
 msgstr ""
 
-#: app/TimelinePage.qml:173 app/TripGroupPage.qml:702
+#: app/TimelinePage.qml:173 app/TripGroupPage.qml:690
 #: app/TripGroupsPage.qml:122
 #, kde-format
 msgctxt "@action:button"
@@ -3601,7 +3647,7 @@ msgstr "GPX-fájlként…"
 msgid "Export Trip"
 msgstr "Kirándulás exportálása"
 
-#: app/TimelinePage.qml:493 app/TripGroupPage.qml:603
+#: app/TimelinePage.qml:493 app/TripGroupPage.qml:591
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr ""
@@ -3845,7 +3891,7 @@ msgid_plural "Date: %2 (%1 days)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: app/TripGroupDelegate.qml:116 app/TripGroupPage.qml:450
+#: app/TripGroupDelegate.qml:116 app/TripGroupPage.qml:438
 #: app/WeatherForecastDelegate.qml:48 app/WeatherForecastPage.qml:93
 #, kde-format
 msgctxt "temperature range"
@@ -3867,7 +3913,7 @@ msgstr ""
 msgid "%1: no compatible power plugs (%2)"
 msgstr ""
 
-#: app/TripGroupDelegate.qml:145 app/TripGroupPage.qml:476
+#: app/TripGroupDelegate.qml:145 app/TripGroupPage.qml:464
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
@@ -3880,7 +3926,7 @@ msgstr[1] ""
 msgid "Edit…"
 msgstr "Szerkesztés"
 
-#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:669
+#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:657
 #, kde-format
 msgid "Delete trip"
 msgstr "Kirándulás törlése"
@@ -3958,54 +4004,54 @@ msgstr "Hajókirándulás szerkesztése"
 msgid "Do you really want to delete the trip '%1'?"
 msgstr "Biztosan törölni szeretné ezt a kirándulást?"
 
-#: app/TripGroupPage.qml:444
+#: app/TripGroupPage.qml:432
 #, kde-format
 msgid "One day"
 msgid_plural "%1 days"
 msgstr[0] ""
 msgstr[1] ""
 
-#: app/TripGroupPage.qml:464
+#: app/TripGroupPage.qml:452
 #, fuzzy, kde-format
 #| msgid "Some incompatible power sockets: %1"
 msgid "Some incompatible power sockets (%1)"
 msgstr "Néhány nem kompatibilis konnektor: %1"
 
-#: app/TripGroupPage.qml:466
+#: app/TripGroupPage.qml:454
 #, fuzzy, kde-format
 #| msgid "Some incompatible power plugs: %1"
 msgid "Some incompatible power plugs (%1)"
 msgstr "Néhány nem kompatibilis hálózati csatlakozó: %1"
 
-#: app/TripGroupPage.qml:469
+#: app/TripGroupPage.qml:457
 #, fuzzy, kde-format
 #| msgid "Some incompatible power plugs: %1"
 msgid "No compatible power plugs (%1)"
 msgstr "Néhány nem kompatibilis hálózati csatlakozó: %1"
 
-#: app/TripGroupPage.qml:482
+#: app/TripGroupPage.qml:470
 #, fuzzy, kde-format
 #| msgid "Import..."
 msgid "Import"
 msgstr "Importálás…"
 
-#: app/TripGroupPage.qml:496
+#: app/TripGroupPage.qml:484
 #, kde-format
 msgid "Add"
 msgstr ""
 
-#: app/TripGroupPage.qml:635
+#: app/TripGroupPage.qml:623
 #, fuzzy, kde-format
 #| msgid "Rename"
 msgid "Rename…"
 msgstr "Átnevezés"
 
-#: app/TripGroupPage.qml:644
+#: app/TripGroupPage.qml:632
 #, kde-format
 msgid "Merge trips…"
 msgstr ""
 
-#: app/TripGroupPage.qml:655
+#: app/TripGroupPage.qml:643
 #, fuzzy, kde-format
 #| msgid "Add transfer after"
 msgid "Split trip…"

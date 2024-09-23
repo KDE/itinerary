@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-19 00:40+0000\n"
+"POT-Creation-Date: 2024-09-23 00:39+0000\n"
 "PO-Revision-Date: 2024-09-17 11:47+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -120,7 +120,7 @@ msgid "Add to calendar…"
 msgstr "Aan agenda toevoegen…"
 
 #: app/ActionsCard.qml:74 app/main.qml:221 app/TripGroupDelegate.qml:182
-#: app/TripGroupPage.qml:662
+#: app/TripGroupPage.qml:650
 #, kde-format
 msgid "Export…"
 msgstr "Exporteren…"
@@ -171,7 +171,7 @@ msgid "Itinerary file (*.itinerary)"
 msgstr "Reisroutebestand (*.itinerary)"
 
 #: app/ActionsCard.qml:173 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:630
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:618
 #, kde-format
 msgid "Actions"
 msgstr "Acties"
@@ -2517,7 +2517,7 @@ msgstr "Instellingen…"
 msgid "Help"
 msgstr "Help"
 
-#: app/main.qml:319
+#: app/main.qml:343
 #, kde-format
 msgid "Map download finished."
 msgstr "Download van kaart voltooid."
@@ -2717,7 +2717,7 @@ msgctxt "not yet expired tickets"
 msgid "Valid"
 msgstr "Geldig"
 
-#: app/passmanager.cpp:275 app/TripGroupPage.qml:443
+#: app/passmanager.cpp:275 app/TripGroupPage.qml:431
 #, kde-format
 msgid "%1 - %2"
 msgstr "%1 - %2"
@@ -3403,12 +3403,58 @@ msgstr "Meest recent gebruikt"
 msgid "Most often used"
 msgstr "Meest vaak gebruikt"
 
-#: app/StopPickerPage.qml:136
+#: app/StopPickerPage.qml:132 app/StopPickerPage.qml:230
+#, kde-format
+msgctxt "location name, locality, region, country"
+msgid "%1, %2, %3, %4"
+msgstr ""
+
+#: app/StopPickerPage.qml:138 app/StopPickerPage.qml:236
+#, fuzzy, kde-format
+#| msgctxt "geo coordinate"
+#| msgid "%1, %2"
+msgctxt "location name, locality, country"
+msgid "%1, %2, %3"
+msgstr "%1, %2"
+
+#: app/StopPickerPage.qml:143 app/StopPickerPage.qml:241
+#, fuzzy, kde-format
+#| msgctxt "geo coordinate"
+#| msgid "%1, %2"
+msgctxt "location name, region, country"
+msgid "%1, %2, %3"
+msgstr "%1, %2"
+
+#: app/StopPickerPage.qml:173 app/StopPickerPage.qml:272
+#, fuzzy, kde-format
+#| msgctxt "geo coordinate"
+#| msgid "%1, %2"
+msgctxt "locality, region, country"
+msgid "%1, %2, %3"
+msgstr "%1, %2"
+
+#: app/StopPickerPage.qml:178 app/StopPickerPage.qml:277
+#, fuzzy, kde-format
+#| msgctxt "geo coordinate"
+#| msgid "%1, %2"
+msgctxt "locality, country"
+msgid "%1, %2"
+msgstr "%1, %2"
+
+#: app/StopPickerPage.qml:182 app/StopPickerPage.qml:281
+#, fuzzy, kde-format
+#| msgctxt "geo coordinate"
+#| msgid "%1, %2"
+msgctxt "region, country"
+msgid "%1, %2"
+msgstr "%1, %2"
+
+#: app/StopPickerPage.qml:206
 #, kde-format
 msgid "Remove history entry"
 msgstr "Geschiedenisitem verwijderen"
 
-#: app/StopPickerPage.qml:189
+#: app/StopPickerPage.qml:320
 #, kde-format
 msgid "No locations found"
 msgstr "Geen locaties gevonden"
@@ -3509,13 +3555,13 @@ msgstr "Gebeurtenis toevoegen…"
 msgid "Add restaurant…"
 msgstr "Restaurant toevoegen…"
 
-#: app/TimelinePage.qml:166 app/TripGroupPage.qml:694
+#: app/TimelinePage.qml:166 app/TripGroupPage.qml:682
 #, kde-format
 msgctxt "@action:button"
 msgid "Go To Now"
 msgstr "Ga naar Nu"
 
-#: app/TimelinePage.qml:173 app/TripGroupPage.qml:702
+#: app/TimelinePage.qml:173 app/TripGroupPage.qml:690
 #: app/TripGroupsPage.qml:122
 #, kde-format
 msgctxt "@action:button"
@@ -3549,7 +3595,7 @@ msgstr "Als GPX-bestand…"
 msgid "Export Trip"
 msgstr "Reis exporteren"
 
-#: app/TimelinePage.qml:493 app/TripGroupPage.qml:603
+#: app/TimelinePage.qml:493 app/TripGroupPage.qml:591
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Niets op de reisroute voor vandaag."
@@ -3790,7 +3836,7 @@ msgid_plural "Date: %2 (%1 days)"
 msgstr[0] "Datum: %2 (één dag)"
 msgstr[1] "Datum: %2 (%1 dagen)"
 
-#: app/TripGroupDelegate.qml:116 app/TripGroupPage.qml:450
+#: app/TripGroupDelegate.qml:116 app/TripGroupPage.qml:438
 #: app/WeatherForecastDelegate.qml:48 app/WeatherForecastPage.qml:93
 #, kde-format
 msgctxt "temperature range"
@@ -3812,7 +3858,7 @@ msgstr "%1: enige niet-overeenkomstige stekkers: (%2)"
 msgid "%1: no compatible power plugs (%2)"
 msgstr "%1: niet-overeenkomstige stekkers: (%2)"
 
-#: app/TripGroupDelegate.qml:145 app/TripGroupPage.qml:476
+#: app/TripGroupDelegate.qml:145 app/TripGroupPage.qml:464
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
@@ -3824,7 +3870,7 @@ msgstr[1] "Valuta's: %2"
 msgid "Edit…"
 msgstr "Bewerken…"
 
-#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:669
+#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:657
 #, kde-format
 msgid "Delete trip"
 msgstr "Reis verwijderen"
@@ -3896,49 +3942,49 @@ msgstr "Aan reis toevoegen"
 msgid "Do you really want to delete the trip '%1'?"
 msgstr "Wilt u de reis '%1' verwijderen?"
 
-#: app/TripGroupPage.qml:444
+#: app/TripGroupPage.qml:432
 #, kde-format
 msgid "One day"
 msgid_plural "%1 days"
 msgstr[0] "één dag "
 msgstr[1] "%1 dagen"
 
-#: app/TripGroupPage.qml:464
+#: app/TripGroupPage.qml:452
 #, kde-format
 msgid "Some incompatible power sockets (%1)"
 msgstr "Enige niet-overeenkomstige stopcontacten (%1)"
 
-#: app/TripGroupPage.qml:466
+#: app/TripGroupPage.qml:454
 #, kde-format
 msgid "Some incompatible power plugs (%1)"
 msgstr "Enige niet-overeenkomstige stekkers (%1)"
 
-#: app/TripGroupPage.qml:469
+#: app/TripGroupPage.qml:457
 #, kde-format
 msgid "No compatible power plugs (%1)"
 msgstr "Niet-overeenkomstige stekkers (%1)"
 
-#: app/TripGroupPage.qml:482
+#: app/TripGroupPage.qml:470
 #, kde-format
 msgid "Import"
 msgstr "Importeren"
 
-#: app/TripGroupPage.qml:496
+#: app/TripGroupPage.qml:484
 #, kde-format
 msgid "Add"
 msgstr "Toevoegen"
 
-#: app/TripGroupPage.qml:635
+#: app/TripGroupPage.qml:623
 #, kde-format
 msgid "Rename…"
 msgstr "Hernoemen…"
 
-#: app/TripGroupPage.qml:644
+#: app/TripGroupPage.qml:632
 #, kde-format
 msgid "Merge trips…"
 msgstr "Reizen samenvoegen…"
 
-#: app/TripGroupPage.qml:655
+#: app/TripGroupPage.qml:643
 #, kde-format
 msgid "Split trip…"
 msgstr "Reis splitsen…"
