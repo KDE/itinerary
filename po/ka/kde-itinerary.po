@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-23 00:39+0000\n"
-"PO-Revision-Date: 2024-09-17 05:48+0200\n"
+"POT-Creation-Date: 2024-09-24 00:39+0000\n"
+"PO-Revision-Date: 2024-09-23 05:06+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -3403,44 +3403,34 @@ msgstr "ყველაზე ხშირად გამოყენებუ�
 #, kde-format
 msgctxt "location name, locality, region, country"
 msgid "%1, %2, %3, %4"
-msgstr ""
+msgstr "%1, %2, %3, %4"
 
 #: app/StopPickerPage.qml:138 app/StopPickerPage.qml:236
-#, fuzzy, kde-format
-#| msgctxt "geo coordinate"
-#| msgid "%1, %2"
+#, kde-format
 msgctxt "location name, locality, country"
 msgid "%1, %2, %3"
-msgstr "%1, %2"
+msgstr "%1, %2, %3"
 
 #: app/StopPickerPage.qml:143 app/StopPickerPage.qml:241
-#, fuzzy, kde-format
-#| msgctxt "geo coordinate"
-#| msgid "%1, %2"
+#, kde-format
 msgctxt "location name, region, country"
 msgid "%1, %2, %3"
-msgstr "%1, %2"
+msgstr "%1, %2, %3"
 
 #: app/StopPickerPage.qml:173 app/StopPickerPage.qml:272
-#, fuzzy, kde-format
-#| msgctxt "geo coordinate"
-#| msgid "%1, %2"
+#, kde-format
 msgctxt "locality, region, country"
 msgid "%1, %2, %3"
-msgstr "%1, %2"
+msgstr "%1, %2, %3"
 
 #: app/StopPickerPage.qml:178 app/StopPickerPage.qml:277
-#, fuzzy, kde-format
-#| msgctxt "geo coordinate"
-#| msgid "%1, %2"
+#, kde-format
 msgctxt "locality, country"
 msgid "%1, %2"
 msgstr "%1, %2"
 
 #: app/StopPickerPage.qml:182 app/StopPickerPage.qml:281
-#, fuzzy, kde-format
-#| msgctxt "geo coordinate"
-#| msgid "%1, %2"
+#, kde-format
 msgctxt "region, country"
 msgid "%1, %2"
 msgstr "%1, %2"
@@ -3890,13 +3880,13 @@ msgctxt "@label:textbox"
 msgid "Trip name:"
 msgstr "მოგზაურობის სახელი:"
 
-#: app/tripgroupmanager.cpp:857
+#: app/tripgroupmanager.cpp:859
 #, kde-format
 msgctxt "%1 is destination, %2 is the standalone month name, %3 is the year"
 msgid "%1 (%2 %3)"
 msgstr "%1 (%2 %3)"
 
-#: app/tripgroupmanager.cpp:859
+#: app/tripgroupmanager.cpp:861
 #, kde-format
 msgctxt ""
 "%1 is destination, %2 and %3 are the standalone month names and %4 is the "
@@ -3904,7 +3894,7 @@ msgctxt ""
 msgid "%1 (%2/%3 %4)"
 msgstr "%1 (%2/%3 %4)"
 
-#: app/tripgroupmanager.cpp:861
+#: app/tripgroupmanager.cpp:863
 #, kde-format
 msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"
