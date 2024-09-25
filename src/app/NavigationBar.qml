@@ -29,6 +29,7 @@ Kirigami.NavigationTabBar {
                 if (pageStack.currentItem as TripGroupPage) {
                     pageStack.currentItem.addTrainTrip();
                 } else {
+                    ApplicationController.contextTripGroupId = ""
                     pageStack.clear();
                     pageStack.push(Qt.resolvedUrl("JourneyRequestPage.qml"), {
                         publicTransportManager: LiveDataManager.publicTransportManager,

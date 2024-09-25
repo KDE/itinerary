@@ -8,9 +8,9 @@ import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
+import org.kde.kirigamiaddons.dateandtime as Addon
 import org.kde.kirigamiaddons.components
 
-import org.kde.kirigamiaddons.dateandtime as Addon
 import org.kde.kpublictransport
 import org.kde.itinerary
 import "./components" as Components
@@ -33,6 +33,8 @@ FormCard.FormCardPage {
 
     property var departureStop
     property var arrivalStop
+
+    property alias optionsPage: options
 
     title: i18n("Select Journey")
 
@@ -63,10 +65,10 @@ FormCard.FormCardPage {
                 title: i18n("Select Journey")
                 onJourneyChanged: {
                     let tgId = "";
-                    if (tripGroupSelector.mode === TripGroupSelectorCard.Mode.Create) {
-                        tgId = TripGroupManager.createEmptyGroup(tripGroupSelector.name);
+                    if (optionsPage.tripGroupSelector.mode === TripGroupSelectorCard.Mode.Create) {
+                        tgId = TripGroupManager.createEmptyGroup(optionsPage.tripGroupSelector.name);
                     } else {
-                        tgId = tripGroupSelector.tripGroupId;
+                        tgId = optionsPage.tripGroupSelector.tripGroupId;
                     }
                     for (const section of journey.sections) {
                         if (section.mode != JourneySection.PublicTransport) {
@@ -87,8 +89,8 @@ FormCard.FormCardPage {
     // either true/false if all mode switches are in that position, undefined otherwise
     function fullModeSwitchState()
     {
-        let state = longDistanceSwitch.checked;
-        for (const s of [localTrainSwitch, rapidTransitSwitch, busSwitch, ferrySwitch]) {
+        let state = optionsPage.longDistanceSwitch.checked;
+        for (const s of [optionsPage.localTrainSwitch, optionsPage.rapidTransitSwitch, optionsPage.busSwitch, optionsPage.ferrySwitch]) {
             if (s.checked != state) {
                 return undefined;
             }
@@ -171,70 +173,34 @@ FormCard.FormCardPage {
             Accessible.name: departureArrivalSelector.selectedIndex === 0 ? i18nc("train or bus departure", "Departure time") : i18nc("train or bus arrival", "Arrival time")
         }
 
-    //     FormCard.FormDelegateSeparator {
-    //         below: timeSelector
-    //         above: searchButton
-    //     }
-
-    //     FormCard.FormButtonDelegate {
-    //         id: searchButton
-    //         icon.name: "search"
-    //         text: i18n("Search Journey")
-    //         enabled: root.departureStop != undefined && root.arrivalStop != undefined && root.fullModeSwitchState() !== false && tripGroupSelector.isValidInput
-    //         onClicked: {
-    //             applicationWindow().pageStack.push(journeyQueryPage);
-    //             const req = applicationWindow().pageStack.currentItem.journeyRequest;
-    //             req.from = root.departureStop;
-    //             req.to = root.arrivalStop;
-
-    //             console.log(dateTimeInput.value);
-    //             req.dateTime = dateTimeInput.value;
-    //             req.maximumResults = 6;
-    //             req.downloadAssets = true;
-    //             req.includePaths = true;
-
-    //             let lineModes = [];
-    //             if (root.fullModeSwitchState() == undefined) {
-    //                 if (longDistanceSwitch.checked)
-    //                     lineModes.push(Line.LongDistanceTrain, Line.Train);
-    //                 if (localTrainSwitch.checked)
-    //                     lineModes.push(Line.LocalTrain);
-    //                 if (rapidTransitSwitch.checked)
-    //                     lineModes.push(Line.RapidTransit, Line.Metro, Line.Tramway, Line.RailShuttle);
-    //                 if (busSwitch.checked)
-    //                     lineModes.push(Line.Bus, Line.Coach);
-    //                 if (ferrySwitch.checked)
-    //                     lineModes.push(Line.Ferry, Line.Boat);
-    //             }
-    //             req.lineModes = lineModes;
-
-    //             if (departureArrivalSelector.selectedIndex === 0) {
-    //                 req.dateTimeMode = JourneyRequest.Departure
-    //             } else if (departureArrivalSelector.selectedIndex === 1) {
-    //                 req.dateTimeMode = JourneyRequest.Arrival
-    //             }
-
-    //             console.log(req);
-    //             applicationWindow().pageStack.currentItem.journeyRequest = req;
-    //         }
-    //     }
-    }
-
-    FloatingButton {
-        parent: root.overlay
-        id: searchButton
-
-        anchors {
-            right: parent.right
-            rightMargin: Kirigami.Units.largeSpacing + (root.contentItem.QQC2.ScrollBar && root.contentItem.QQC2.ScrollBar.vertical ? root.contentItem.QQC2.ScrollBar.vertical.width : 0)
-            bottom: parent.bottom
-            bottomMargin: Kirigami.Units.largeSpacing
+        FormCard.FormDelegateSeparator {
+            below: timeSelector
+            above: optionsButton
         }
-        action: Kirigami.Action {
+
+        Options {
+            visible: false
+            id: options
+        }
+
+        FormCard.FormButtonDelegate {
+            id: optionsButton
+            icon.name: "settings-configure"
+
+            text: i18n("Options")
+            onClicked: pageStack.push(options)
+        }
+        FormCard.FormDelegateSeparator {
+            below: optionsButton
+            above: searchButton
+
+        }
+        FormCard.FormButtonDelegate {
+            id: searchButton
             icon.name: "search"
             text: i18n("Search Journey")
-            enabled: root.departureStop != undefined && root.arrivalStop != undefined && root.fullModeSwitchState() !== false && tripGroupSelector.isValidInput
-            onTriggered: {
+            enabled: root.departureStop != undefined && root.arrivalStop != undefined && root.fullModeSwitchState() !== false && optionsPage.tripGroupSelector.isValidInput
+            onClicked: {
                 applicationWindow().pageStack.push(journeyQueryPage);
                 const req = applicationWindow().pageStack.currentItem.journeyRequest;
                 req.from = root.departureStop;
@@ -248,13 +214,13 @@ FormCard.FormCardPage {
 
                 let lineModes = [];
                 if (root.fullModeSwitchState() == undefined) {
-                    if (longDistanceSwitch.checked)
+                    if (optionsPage.longDistanceSwitch.checked)
                         lineModes.push(Line.LongDistanceTrain, Line.Train);
-                    if (localTrainSwitch.checked)
+                    if (optionsPage.localTrainSwitch.checked)
                         lineModes.push(Line.LocalTrain);
-                    if (rapidTransitSwitch.checked)
+                    if (optionsPage.rapidTransitSwitch.checked)
                         lineModes.push(Line.RapidTransit, Line.Metro, Line.Tramway, Line.RailShuttle);
-                    if (busSwitch.checked)
+                    if (optionsPage.busSwitch.checked)
                         lineModes.push(Line.Bus, Line.Coach);
                     if (ferrySwitch.checked)
                         lineModes.push(Line.Ferry, Line.Boat);
@@ -273,74 +239,102 @@ FormCard.FormCardPage {
         }
     }
 
-    FormCard.FormHeader {
-        title: i18n("Trip")
+
+    component Options : FormCard.FormCardPage {
+        title: i18n("Options")
+
+        property alias tripGroupSelector: tripGroupSelector
+        property alias longDistanceSwitch: longDistanceSwitch
+        property alias localTrainSwitch: localTrainSwitch
+        property alias rapidTransitSwitch: rapidTransitSwitch
+        property alias busSwitch: busSwitch
+        property alias ferrySwitch: ferrySwitch
+
+        FormCard.FormHeader {
+            title: i18n("Trip")
+        }
+
+        TripGroupSelectorCard {
+            id: tripGroupSelector
+            suggestedName: root.arrivalStop?.name ?? ""
+            tripGroupCandidates: TripGroupModel.intersectingXorAdjacentTripGroups(dateTimeInput.value, dateTimeInput.value)
+        }
+
+        FormCard.FormHeader {
+            title: i18n("Mode of transportation")
+        }
+
+        FormCard.FormCard {
+            Layout.topMargin: Kirigami.Units.largeSpacing
+
+            FormCard.FormSwitchDelegate {
+                id: longDistanceSwitch
+                text: i18nc("journey query search constraint, title", "Long distance trains")
+                description: i18nc("journey query search constraint, description", "High speed or intercity trains")
+                checked: true
+                leading: Kirigami.Icon {
+                    source: LineMode.iconName(Line.LongDistanceTrain)
+                    isMask: true
+                }
+            }
+            FormCard.FormSwitchDelegate {
+                id: localTrainSwitch
+                text: i18nc("journey query search constraint, title", "Local trains")
+                description: i18nc("journey query search constraint, description", "Regional or local trains")
+                checked: true
+                leading: Kirigami.Icon {
+                    source: LineMode.iconName(Line.LocalTrain)
+                    isMask: true
+                }
+            }
+            FormCard.FormSwitchDelegate {
+                id: rapidTransitSwitch
+                text: i18nc("journey query search constraint, title", "Rapid transit")
+                description: i18nc("journey query search constraint, description", "Rapid transit, metro, trams")
+                checked: true
+                leading: Kirigami.Icon {
+                    source: LineMode.iconName(Line.Tramway)
+                    isMask: true
+                }
+            }
+            FormCard.FormSwitchDelegate {
+                id: busSwitch
+                text: i18nc("journey query search constraint, title", "Bus")
+                description: i18nc("journey query search constraint, description", "Local or regional bus services")
+                checked: true
+                leading: Kirigami.Icon {
+                    source: LineMode.iconName(Line.Bus)
+                    isMask: true
+                }
+            }
+            FormCard.FormSwitchDelegate {
+                id: ferrySwitch
+                text: i18nc("journey query search constraint, title", "Ferry")
+                description: i18nc("journey query search constraint, description", "Boats or ferries")
+                checked: true
+                leading: Kirigami.Icon {
+                    source: LineMode.iconName(Line.Ferry)
+                    isMask: true
+                }
+            }
+        }
+        Item {
+            height: submitButton.height
+        }
+        FloatingButton {
+            id: submitButton
+            parent: optionsPage.overlay
+            icon.name: "answer-correct"
+            onClicked: pageStack.pop()
+            anchors {
+                right: parent.right
+                rightMargin: Kirigami.Settings.isMobile ? Kirigami.Units.largeSpacing : Kirigami.Units.largeSpacing + (root.contentItem.QQC2.ScrollBar && root.contentItem.QQC2.ScrollBar.vertical ? root.contentItem.QQC2.ScrollBar.vertical.width : 0)
+                bottom: parent.bottom
+                bottomMargin: Kirigami.Units.largeSpacing
+            }
+        }
     }
 
-    TripGroupSelectorCard {
-        id: tripGroupSelector
-        suggestedName: root.arrivalStop?.name ?? ""
-        tripGroupCandidates: TripGroupModel.intersectingXorAdjacentTripGroups(dateTimeInput.value, dateTimeInput.value)
-    }
-
-    FormCard.FormHeader {
-        title: i18n("Mode of transportation")
-    }
-
-    FormCard.FormCard {
-        Layout.topMargin: Kirigami.Units.largeSpacing
-
-        FormCard.FormSwitchDelegate {
-            id: longDistanceSwitch
-            text: i18nc("journey query search constraint, title", "Long distance trains")
-            description: i18nc("journey query search constraint, description", "High speed or intercity trains")
-            checked: true
-            leading: Kirigami.Icon {
-                source: LineMode.iconName(Line.LongDistanceTrain)
-                isMask: true
-            }
-        }
-        FormCard.FormSwitchDelegate {
-            id: localTrainSwitch
-            text: i18nc("journey query search constraint, title", "Local trains")
-            description: i18nc("journey query search constraint, description", "Regional or local trains")
-            checked: true
-            leading: Kirigami.Icon {
-                source: LineMode.iconName(Line.LocalTrain)
-                isMask: true
-            }
-        }
-        FormCard.FormSwitchDelegate {
-            id: rapidTransitSwitch
-            text: i18nc("journey query search constraint, title", "Rapid transit")
-            description: i18nc("journey query search constraint, description", "Rapid transit, metro, trams")
-            checked: true
-            leading: Kirigami.Icon {
-                source: LineMode.iconName(Line.Tramway)
-                isMask: true
-            }
-        }
-        FormCard.FormSwitchDelegate {
-            id: busSwitch
-            text: i18nc("journey query search constraint, title", "Bus")
-            description: i18nc("journey query search constraint, description", "Local or regional bus services")
-            checked: true
-            leading: Kirigami.Icon {
-                source: LineMode.iconName(Line.Bus)
-                isMask: true
-            }
-        }
-        FormCard.FormSwitchDelegate {
-            id: ferrySwitch
-            text: i18nc("journey query search constraint, title", "Ferry")
-            description: i18nc("journey query search constraint, description", "Boats or ferries")
-            checked: true
-            leading: Kirigami.Icon {
-                source: LineMode.iconName(Line.Ferry)
-                isMask: true
-            }
-        }
-    }
 
     Item {
         Layout.fillHeight: true

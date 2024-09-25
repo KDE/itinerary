@@ -7,7 +7,9 @@ import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 
 Item{
-    id: container
+    id: root
+
+    property int cornerRadius: Kirigami.Units.cornerRadius
 
     property list<Kirigami.Action> actions
     property bool consistentWidth: false
@@ -25,9 +27,9 @@ Item{
     RowLayout {
         id: switchLayout
         anchors {
-            top: container.top
-            left: container.left
-            right: container.right
+            top: root.top
+            left: root.left
+            right: root.right
         }
         Repeater{
             id: repeater
@@ -40,7 +42,7 @@ Item{
                 required property int index
 
                 Layout.fillWidth: true
-                Layout.preferredWidth: consistentWidth ? (container.width/repeater.count)-(switchLayout.spacing/repeater.count-1) : button.implicitWidth
+                Layout.preferredWidth: consistentWidth ? (root.width/repeater.count)-(switchLayout.spacing/repeater.count-1) : button.implicitWidth
                 Layout.minimumHeight: Math.round(Kirigami.Units.gridUnit * 1.5)
 
                 checkable: true
@@ -50,9 +52,10 @@ Item{
                 background: Rectangle{
                     anchors.fill: button
 
-                    radius: height/2
+                    radius: root.cornerRadius
                     color: Kirigami.Theme.textColor
-                    opacity: button.hovered ? 0.1 : 0
+                    opacity: Kirigami.Settings.hasTransientTouchInput ? 0 : ( button.hovered ? 0.1 : 0)
+
 
                     Behavior on opacity {
                         PropertyAnimation {
@@ -72,13 +75,13 @@ Item{
                         id: icon
 
                         Layout.alignment: Qt.AlignVCenter
-
-                        color: button.checked ? Kirigami.Theme.hoverColor : Kirigami.Theme.textColor
+                        opacity: button.checked ? 1 : 0.7
+                        color: Kirigami.Theme.textColor
                         visible: button.icon.name
                         source: button.icon.name
                         implicitHeight: label.height
                         implicitWidth: label.height
-                        Behavior on color {
+                        Behavior on opacity {
                             PropertyAnimation {
                                 duration: Kirigami.Units.longDuration
                                 easing.type: Easing.InOutCubic
@@ -150,19 +153,21 @@ Item{
     Kirigami.ShadowedRectangle {
         id: marker
 
-        property int selectedIndex: container.defaultIndex
+        property int selectedIndex: root.defaultIndex
 
         y: switchLayout.y
         z: switchLayout.z - 1
         height: switchLayout.implicitHeight
-        radius: height/2
-
-        color: Kirigami.Theme.hoverColor
-        opacity: 0.4
+        radius: root.cornerRadius
+        color: Kirigami.ColorUtils.linearInterpolation(Kirigami.Theme.hoverColor, Kirigami.Theme.backgroundColor, 0.8)
+        border {
+            width: 1
+            color: Kirigami.ColorUtils.linearInterpolation(Kirigami.Theme.hoverColor, Kirigami.Theme.backgroundColor, 0.5)
+        }
         shadow {
-            size: 10
-            yOffset: 4
-            color: Qt.rgba(0, 0, 0, 0.3)
+            size: 7
+            yOffset: 3
+            color: Qt.rgba(0, 0, 0, 0.15)
         }
         Behavior on x {
             PropertyAnimation {

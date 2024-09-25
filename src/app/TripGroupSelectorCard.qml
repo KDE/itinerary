@@ -54,9 +54,9 @@ FormCard.FormCard {
         contentItem: ColumnLayout {
             Components.RadioSelector{
                 id: newOrAddSelector
-                defaultIndex: root.tripGroupCandidates.length === 1
-                    || TripGroupModel.emptyTripGroups().length > 0
-                    || ApplicationController.contextTripGroupId !== "" ? 1 : 0
+                defaultIndex: (root.tripGroupCandidates.length === 1
+                    || TripGroupModel.emptyTripGroups().length > 0)
+                    && ApplicationController.contextTripGroupId !== "" ? 1 : 0
 
                 Layout.fillWidth: true
                 Layout.alignment: Qt.AlignHCenter
