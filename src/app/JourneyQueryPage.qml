@@ -94,6 +94,13 @@ Kirigami.ScrollablePage {
             }
         }
 
+        section {
+            property: "scheduledDepartureDate"
+            delegate: TimelineSectionDelegate {
+                day: section
+            }
+        }
+
         model: KSortFilterProxyModel {
             id: sortedJourneyModel
 
