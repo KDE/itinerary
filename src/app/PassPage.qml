@@ -6,29 +6,31 @@
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
+import QtQuick.Templates as T
 import Qt.labs.qmlmodels as Models
 import org.kde.kitemmodels
 import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.components
+
 import org.kde.itinerary
 
 Kirigami.ScrollablePage {
     id: root
     title: i18n("Passes and Programs")
 
-    actions: [
-        Kirigami.Action {
-            text: i18n("Add Program Membership…")
-            icon.name: "list-add-symbolic"
-            onTriggered: {
-                const editorComponent = Qt.createComponent("org.kde.itinerary", "ProgramMembershipEditor");
-                applicationWindow().pageStack.push(editorComponent, {
-                    programMembership: Factory.makeProgramMembership(),
-                    passId: "",
-                    pageStack: pageStack
-                });
-            }
+    property T.Action addAction: QQC2.Action {
+        text: i18n("Add Program Membership…")
+        icon.name: "list-add-symbolic"
+        onTriggered: {
+            const editorComponent = Qt.createComponent("org.kde.itinerary", "ProgramMembershipEditor");
+            applicationWindow().pageStack.push(editorComponent, {
+                programMembership: Factory.makeProgramMembership(),
+                passId: "",
+                pageStack: pageStack
+            });
         }
-    ]
+    }
+
 
     Models.DelegateChooser {
         id: chooser
@@ -141,4 +143,16 @@ Kirigami.ScrollablePage {
         }
     }
 
+    leftPadding: 0
+    rightPadding: 0
+
+    data: FloatingButton {
+        anchors {
+            right: parent.right
+            rightMargin: Kirigami.Units.largeSpacing + (root.contentItem.QQC2.ScrollBar && root.contentItem.QQC2.ScrollBar.vertical ? root.contentItem.QQC2.ScrollBar.vertical.width : 0)
+            bottom: parent.bottom
+            bottomMargin: Kirigami.Units.largeSpacing
+        }
+        action: root.addAction
+    }
 }
