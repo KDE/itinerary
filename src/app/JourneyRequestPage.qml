@@ -8,6 +8,8 @@ import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
+import org.kde.kirigamiaddons.components
+
 import org.kde.kirigamiaddons.dateandtime as Addon
 import org.kde.kpublictransport
 import org.kde.itinerary
@@ -169,17 +171,70 @@ FormCard.FormCardPage {
             Accessible.name: departureArrivalSelector.selectedIndex === 0 ? i18nc("train or bus departure", "Departure time") : i18nc("train or bus arrival", "Arrival time")
         }
 
-        FormCard.FormDelegateSeparator {
-            below: timeSelector
-            above: searchButton
-        }
+    //     FormCard.FormDelegateSeparator {
+    //         below: timeSelector
+    //         above: searchButton
+    //     }
 
-        FormCard.FormButtonDelegate {
-            id: searchButton
+    //     FormCard.FormButtonDelegate {
+    //         id: searchButton
+    //         icon.name: "search"
+    //         text: i18n("Search Journey")
+    //         enabled: root.departureStop != undefined && root.arrivalStop != undefined && root.fullModeSwitchState() !== false && tripGroupSelector.isValidInput
+    //         onClicked: {
+    //             applicationWindow().pageStack.push(journeyQueryPage);
+    //             const req = applicationWindow().pageStack.currentItem.journeyRequest;
+    //             req.from = root.departureStop;
+    //             req.to = root.arrivalStop;
+
+    //             console.log(dateTimeInput.value);
+    //             req.dateTime = dateTimeInput.value;
+    //             req.maximumResults = 6;
+    //             req.downloadAssets = true;
+    //             req.includePaths = true;
+
+    //             let lineModes = [];
+    //             if (root.fullModeSwitchState() == undefined) {
+    //                 if (longDistanceSwitch.checked)
+    //                     lineModes.push(Line.LongDistanceTrain, Line.Train);
+    //                 if (localTrainSwitch.checked)
+    //                     lineModes.push(Line.LocalTrain);
+    //                 if (rapidTransitSwitch.checked)
+    //                     lineModes.push(Line.RapidTransit, Line.Metro, Line.Tramway, Line.RailShuttle);
+    //                 if (busSwitch.checked)
+    //                     lineModes.push(Line.Bus, Line.Coach);
+    //                 if (ferrySwitch.checked)
+    //                     lineModes.push(Line.Ferry, Line.Boat);
+    //             }
+    //             req.lineModes = lineModes;
+
+    //             if (departureArrivalSelector.selectedIndex === 0) {
+    //                 req.dateTimeMode = JourneyRequest.Departure
+    //             } else if (departureArrivalSelector.selectedIndex === 1) {
+    //                 req.dateTimeMode = JourneyRequest.Arrival
+    //             }
+
+    //             console.log(req);
+    //             applicationWindow().pageStack.currentItem.journeyRequest = req;
+    //         }
+    //     }
+    }
+
+    FloatingButton {
+        parent: root.overlay
+        id: searchButton
+
+        anchors {
+            right: parent.right
+            rightMargin: Kirigami.Units.largeSpacing + (root.contentItem.QQC2.ScrollBar && root.contentItem.QQC2.ScrollBar.vertical ? root.contentItem.QQC2.ScrollBar.vertical.width : 0)
+            bottom: parent.bottom
+            bottomMargin: Kirigami.Units.largeSpacing
+        }
+        action: Kirigami.Action {
             icon.name: "search"
             text: i18n("Search Journey")
             enabled: root.departureStop != undefined && root.arrivalStop != undefined && root.fullModeSwitchState() !== false && tripGroupSelector.isValidInput
-            onClicked: {
+            onTriggered: {
                 applicationWindow().pageStack.push(journeyQueryPage);
                 const req = applicationWindow().pageStack.currentItem.journeyRequest;
                 req.from = root.departureStop;
