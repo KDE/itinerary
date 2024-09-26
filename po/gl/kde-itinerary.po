@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-24 00:39+0000\n"
-"PO-Revision-Date: 2024-09-18 19:09+0200\n"
+"PO-Revision-Date: 2024-09-25 22:07+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -58,7 +58,7 @@ msgid ""
 "KDE Itinerary is developed by the KDE community as free software and uses "
 "the components listed below."
 msgstr ""
-"KDE Itinerary está desenvolvido pola comunidade KDE como software libre e "
+"KDE Itinerary está desenvolvido pola comunidade KDE como programa libre e "
 "usar os compoñentes listados a continuación."
 
 #: app/AboutPage.qml:198
@@ -89,7 +89,7 @@ msgstr "As capacidades do extractor copiáronse no portapapeis"
 #: app/ActionsCard.qml:33
 #, kde-format
 msgid "Show Boarding Pass"
-msgstr "Amosar o pase de embarque"
+msgstr "Amosar a tarxeta de embarque"
 
 #: app/ActionsCard.qml:33 app/TicketPage.qml:138
 #, kde-format
@@ -486,7 +486,7 @@ msgstr "Referencia"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy to Clipboard"
-msgstr "Copiar no portapapeis"
+msgstr "Copiar no portapapeis."
 
 #: app/BookingCard.qml:39
 #, kde-format
@@ -1519,7 +1519,7 @@ msgid ""
 "p>"
 msgstr ""
 "<p>Para importar os seguintes certificados sanitarios escanéeos cunha "
-"aplicación de escaneo de código de barras:<ul><li>«Certificados verdes "
+"aplicación de escáner de código de barras:<ul><li>«Certificados verdes "
 "dixitais» europeos de vacinacións, probas ou recuperacións.</"
 "li><li>Certificados de vacinación indios.</li><li>Tarxetas sanitarias "
 "intelixentes (SHC) que se usan en partes de Canada e dos Estados Unidos de "
@@ -1591,7 +1591,7 @@ msgstr "Identificador:"
 #: app/HealthCertificateVaccination.qml:123
 #, kde-format
 msgid "Issued:"
-msgstr "Emisión:"
+msgstr "Expendición:"
 
 #: app/HealthCertificateRecovery.qml:86 app/HealthCertificateTest.qml:124
 #: app/HealthCertificateVaccination.qml:127
@@ -2169,8 +2169,9 @@ msgid "Pl. %1"
 msgstr "Pl. %1"
 
 # well-spelled: Dár
-#
+# skip-rule: trasno-dock
 # Abreviatura de «dársena».
+#
 #: app/JourneySectionStopDelegate.qml:146
 #, kde-format
 msgctxt "Ferry dock, if possible use an abreviation"
@@ -2757,7 +2758,7 @@ msgstr ""
 #: app/PkPassPage.qml:17
 #, kde-format
 msgid "Boarding Pass"
-msgstr "Pase de embarque"
+msgstr "Tarxeta de embarque"
 
 #: app/PkPassPage.qml:18
 #, kde-format
@@ -3044,7 +3045,7 @@ msgid ""
 "When enabled, this will query transport provider online services for changes "
 "such as delays or gate and platform changes."
 msgstr ""
-"Cando se activa consultará servizos de Internet de fornecedores de "
+"Se escolle esta opción consultará servizos de Internet de fornecedores de "
 "transporte sobre cambios como atrasos ou cambios de porta ou de plataforma."
 
 #: app/SettingsPage.qml:70
@@ -3149,8 +3150,8 @@ msgid ""
 "When enabled, this will query transport provider online services "
 "automatically for transfer information."
 msgstr ""
-"Activar para consultar automaticamente a información de transbordos nos "
-"servizos de Internet de fornecedores de transbordos."
+"Se escolle esta opción, consultarase automaticamente a información de "
+"transbordos nos servizos de Internet de fornecedores de transbordos."
 
 #: app/SettingsPage.qml:160
 #, kde-format
@@ -3206,7 +3207,7 @@ msgstr "Hai dispoñíbel acceso de rede sen fíos para información de embarque.
 #: app/SettingsPage.qml:226
 #, kde-format
 msgid "Wi-Fi is not enabled"
-msgstr "Non hai rede sen fíos activada"
+msgstr "A rede sen fíos está desactivada"
 
 #: app/SettingsPage.qml:228
 #, kde-format
@@ -3411,44 +3412,34 @@ msgstr "Uso máis habitual"
 #, kde-format
 msgctxt "location name, locality, region, country"
 msgid "%1, %2, %3, %4"
-msgstr ""
+msgstr "%1, %2, %3, %4"
 
 #: app/StopPickerPage.qml:138 app/StopPickerPage.qml:236
-#, fuzzy, kde-format
-#| msgctxt "geo coordinate"
-#| msgid "%1, %2"
+#, kde-format
 msgctxt "location name, locality, country"
 msgid "%1, %2, %3"
-msgstr "%1, %2"
+msgstr "%1, %2, %3"
 
 #: app/StopPickerPage.qml:143 app/StopPickerPage.qml:241
-#, fuzzy, kde-format
-#| msgctxt "geo coordinate"
-#| msgid "%1, %2"
+#, kde-format
 msgctxt "location name, region, country"
 msgid "%1, %2, %3"
-msgstr "%1, %2"
+msgstr "%1, %2, %3"
 
 #: app/StopPickerPage.qml:173 app/StopPickerPage.qml:272
-#, fuzzy, kde-format
-#| msgctxt "geo coordinate"
-#| msgid "%1, %2"
+#, kde-format
 msgctxt "locality, region, country"
 msgid "%1, %2, %3"
-msgstr "%1, %2"
+msgstr "%1, %2, %3"
 
 #: app/StopPickerPage.qml:178 app/StopPickerPage.qml:277
-#, fuzzy, kde-format
-#| msgctxt "geo coordinate"
-#| msgid "%1, %2"
+#, kde-format
 msgctxt "locality, country"
 msgid "%1, %2"
 msgstr "%1, %2"
 
 #: app/StopPickerPage.qml:182 app/StopPickerPage.qml:281
-#, fuzzy, kde-format
-#| msgctxt "geo coordinate"
-#| msgid "%1, %2"
+#, kde-format
 msgctxt "region, country"
 msgid "%1, %2"
 msgstr "%1, %2"
@@ -4189,8 +4180,8 @@ msgstr ""
 "calendario de Android, para entradas feitas cos complementos de KDE "
 "Itinerary para KMail ou Nextcloud, e sincronizados con DAVx⁵.</"
 "li><li>Mediante KDE Connect deste o complemento de KDE Itinerary para KMail."
-"</li><li>Escanear os códigos de barras dos pases de embarque e pegar o seu "
-"contido.</li></p>"
+"</li><li>Escanear os códigos de barras das tarxetas de embarque e pegar o "
+"seu contido.</li></p>"
 
 #: app/WelcomePage.qml:31
 #, kde-format
@@ -4224,8 +4215,8 @@ msgid ""
 "For more information about KDE Itinerary check out the <a href=\"https://"
 "community.kde.org/KDE_PIM/KDE_Itinerary\">wiki page</a>."
 msgstr ""
-"Atopará máis información sobre KDE Itinerary na <a href=\"https://community."
-"kde.org/KDE_PIM/KDE_Itinerary\">páxina do wiki</a>."
+"Hai máis información sobre KDE Itinerary na <a href=\"https://community.kde."
+"org/KDE_PIM/KDE_Itinerary\">páxina do wiki</a>."
 
 #: app/WelcomePage.qml:61
 #, kde-format
