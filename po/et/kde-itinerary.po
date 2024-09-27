@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-24 00:39+0000\n"
+"POT-Creation-Date: 2024-09-27 00:40+0000\n"
 "PO-Revision-Date: 2020-05-04 10:51+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -851,7 +851,7 @@ msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "%1 väljub varem"
 
-#: app/DepartureQueryPage.qml:265 app/JourneyQueryPage.qml:122
+#: app/DepartureQueryPage.qml:265 app/JourneyQueryPage.qml:129
 #: app/TransferPage.qml:325
 #, fuzzy, kde-format
 #| msgid "Alternative Connections"
@@ -859,7 +859,7 @@ msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "Alternatiivsed ühendused"
 
-#: app/DepartureQueryPage.qml:274 app/JourneyQueryPage.qml:129
+#: app/DepartureQueryPage.qml:274 app/JourneyQueryPage.qml:136
 #: app/TransferPage.qml:332
 #, fuzzy, kde-format
 #| msgid "Data providers: %1"
@@ -2134,14 +2134,14 @@ msgstr ""
 msgid "Select"
 msgstr "Vali"
 
-#: app/JourneyQueryPage.qml:113 app/TransferPage.qml:316
+#: app/JourneyQueryPage.qml:120 app/TransferPage.qml:316
 #, fuzzy, kde-format
 #| msgid "Alternative Connections"
 msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr "Alternatiivsed ühendused"
 
-#: app/JourneyQueryPage.qml:172
+#: app/JourneyQueryPage.qml:179
 #, kde-format
 msgid "Still fetching results…"
 msgstr ""
@@ -2693,7 +2693,7 @@ msgstr "KDE itineraarifailid (*.itinerary)"
 msgid "Export Itinerary Data"
 msgstr "Itineraariandmete eksport"
 
-#: app/main.qml:166 app/PassPage.qml:137
+#: app/main.qml:166 app/PassPage.qml:139
 #, fuzzy, kde-format
 #| msgid "Import..."
 msgid "Import…"
@@ -2942,30 +2942,30 @@ msgstr ""
 msgid "%1 - %2"
 msgstr ""
 
-#: app/PassPage.qml:16
+#: app/PassPage.qml:19
 #, kde-format
 msgid "Passes and Programs"
 msgstr ""
 
-#: app/PassPage.qml:20
+#: app/PassPage.qml:22
 #, fuzzy, kde-format
 #| msgid "Add transfer after"
 msgid "Add Program Membership…"
 msgstr "Lisa järgnev transfeer"
 
-#: app/PassPage.qml:52
+#: app/PassPage.qml:54
 #, kde-format
 msgctxt "name - number"
 msgid "%1 - %2"
 msgstr ""
 
-#: app/PassPage.qml:105
+#: app/PassPage.qml:107
 #, kde-format
 msgctxt "name - valid time range"
 msgid "%1 - %2"
 msgstr ""
 
-#: app/PassPage.qml:135
+#: app/PassPage.qml:137
 #, kde-format
 msgid "Import bonus or discount program cards or flat rate passes."
 msgstr ""

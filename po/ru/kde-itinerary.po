@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-24 00:39+0000\n"
+"POT-Creation-Date: 2024-09-27 00:40+0000\n"
 "PO-Revision-Date: 2024-02-09 23:07+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -810,14 +810,14 @@ msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "Загрузить более ранние отправления"
 
-#: app/DepartureQueryPage.qml:265 app/JourneyQueryPage.qml:122
+#: app/DepartureQueryPage.qml:265 app/JourneyQueryPage.qml:129
 #: app/TransferPage.qml:325
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "Загрузить поздние соединения"
 
-#: app/DepartureQueryPage.qml:274 app/JourneyQueryPage.qml:129
+#: app/DepartureQueryPage.qml:274 app/JourneyQueryPage.qml:136
 #: app/TransferPage.qml:332
 #, kde-format
 msgid "Data providers:"
@@ -2034,13 +2034,13 @@ msgstr ""
 msgid "Select"
 msgstr "Выбрать"
 
-#: app/JourneyQueryPage.qml:113 app/TransferPage.qml:316
+#: app/JourneyQueryPage.qml:120 app/TransferPage.qml:316
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr "Загрузить ранние соединения"
 
-#: app/JourneyQueryPage.qml:172
+#: app/JourneyQueryPage.qml:179
 #, kde-format
 msgid "Still fetching results…"
 msgstr ""
@@ -2576,7 +2576,7 @@ msgstr "Файлы программы «Маршруты KDE» (*.itinerary)"
 msgid "Export Itinerary Data"
 msgstr "Экспорт данных маршрута"
 
-#: app/main.qml:166 app/PassPage.qml:137
+#: app/main.qml:166 app/PassPage.qml:139
 #, fuzzy, kde-format
 #| msgid "Import..."
 msgid "Import…"
@@ -2820,30 +2820,30 @@ msgstr "Действительные"
 msgid "%1 - %2"
 msgstr "%1 — %2"
 
-#: app/PassPage.qml:16
+#: app/PassPage.qml:19
 #, kde-format
 msgid "Passes and Programs"
 msgstr "Пропуска и программы"
 
-#: app/PassPage.qml:20
+#: app/PassPage.qml:22
 #, fuzzy, kde-format
 #| msgid "Program Membership"
 msgid "Add Program Membership…"
 msgstr "Участие в программе"
 
-#: app/PassPage.qml:52
+#: app/PassPage.qml:54
 #, kde-format
 msgctxt "name - number"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/PassPage.qml:105
+#: app/PassPage.qml:107
 #, kde-format
 msgctxt "name - valid time range"
 msgid "%1 - %2"
 msgstr "%1 — %2"
 
-#: app/PassPage.qml:135
+#: app/PassPage.qml:137
 #, kde-format
 msgid "Import bonus or discount program cards or flat rate passes."
 msgstr ""

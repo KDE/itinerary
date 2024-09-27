@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-24 00:39+0000\n"
+"POT-Creation-Date: 2024-09-27 00:40+0000\n"
 "PO-Revision-Date: 2024-08-20 23:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -774,14 +774,14 @@ msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "이전 출발 불러오기"
 
-#: app/DepartureQueryPage.qml:265 app/JourneyQueryPage.qml:122
+#: app/DepartureQueryPage.qml:265 app/JourneyQueryPage.qml:129
 #: app/TransferPage.qml:325
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "이후 연결 표시"
 
-#: app/DepartureQueryPage.qml:274 app/JourneyQueryPage.qml:129
+#: app/DepartureQueryPage.qml:274 app/JourneyQueryPage.qml:136
 #: app/TransferPage.qml:332
 #, kde-format
 msgid "Data providers:"
@@ -1969,13 +1969,13 @@ msgstr "%1시간"
 msgid "Select"
 msgstr "선택"
 
-#: app/JourneyQueryPage.qml:113 app/TransferPage.qml:316
+#: app/JourneyQueryPage.qml:120 app/TransferPage.qml:316
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr "이전 연결 불러오기"
 
-#: app/JourneyQueryPage.qml:172
+#: app/JourneyQueryPage.qml:179
 #, kde-format
 msgid "Still fetching results…"
 msgstr "결과를 계속 가져오고 있습니다…"
@@ -2490,7 +2490,7 @@ msgstr "KDE 여행 정보 파일 (*.itinerary)"
 msgid "Export Itinerary Data"
 msgstr "여행 정보 내보내기"
 
-#: app/main.qml:166 app/PassPage.qml:137
+#: app/main.qml:166 app/PassPage.qml:139
 #, kde-format
 msgid "Import…"
 msgstr "가져오기…"
@@ -2725,29 +2725,29 @@ msgstr "유효함"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/PassPage.qml:16
+#: app/PassPage.qml:19
 #, kde-format
 msgid "Passes and Programs"
 msgstr "패스와 프로그램"
 
-#: app/PassPage.qml:20
+#: app/PassPage.qml:22
 #, kde-format
 msgid "Add Program Membership…"
 msgstr "프로그램 멤버십 추가…"
 
-#: app/PassPage.qml:52
+#: app/PassPage.qml:54
 #, kde-format
 msgctxt "name - number"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/PassPage.qml:105
+#: app/PassPage.qml:107
 #, kde-format
 msgctxt "name - valid time range"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/PassPage.qml:135
+#: app/PassPage.qml:137
 #, kde-format
 msgid "Import bonus or discount program cards or flat rate passes."
 msgstr "보너스나 할인 프로그램 카드나 정액 패스를 가져옵니다."
