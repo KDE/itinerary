@@ -53,6 +53,7 @@ EditorPage {
         var newRes = reservation;
         newRes.airplaneSeat = seat.text;
         newRes.reservationFor = flight;
+        newRes.boardingGroup = boardingGroup.text;
         bookingEdit.apply(newRes);
         return newRes;
     }
@@ -130,6 +131,12 @@ EditorPage {
                         return i18nc("flight departure", "Boarding time has to be before the departure time.")
                     return '';
                 }
+            }
+            FormCard.FormDelegateSeparator {}
+            FormCard.FormTextFieldDelegate {
+                id: boardingGroup
+                text: reservation.boardingGroup
+                label: i18nc("flight departure boarding group", "Boarding group")
             }
         }
 
