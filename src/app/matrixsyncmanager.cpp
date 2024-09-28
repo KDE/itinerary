@@ -22,7 +22,6 @@
 
 using namespace Qt::Literals;
 
-#if HAVE_MATRIX
 
 MatrixSyncManager::MatrixSyncManager(QObject *parent)
     : QObject(parent)
@@ -31,6 +30,7 @@ MatrixSyncManager::MatrixSyncManager(QObject *parent)
 
 MatrixSyncManager::~MatrixSyncManager() = default;
 
+#if HAVE_MATRIX
 void MatrixSyncManager::setTripGroupManager(TripGroupManager *tripGroupMgr)
 {
     m_tripGroupMgr = tripGroupMgr;
@@ -43,6 +43,43 @@ void MatrixSyncManager::setMatrixManager(MatrixManager *mxMgr)
     init();
 }
 
+void MatrixSyncManager::setAutoSyncTrips(bool autoSync)
+{
+    m_autoSyncTrips = autoSync;
+}
+#endif
+
+void MatrixSyncManager::syncTripGroup(const QString &tgId)
+{
+#if HAVE_MATRIX
+    qDebug() << tgId;
+    if (!m_matrixMgr->connected()) {
+        return; // TODO what do we do with changes while not connected?
+    }
+
+    const auto tg = m_tripGroupMgr->tripGroup(tgId);
+    if (tg.name().isEmpty()) {
+        return;
+    }
+
+    if (!tg.matrixRoomId().isEmpty()) {
+        // TODO
+    } else {
+        auto job = m_matrixMgr->connection()->createRoom(Quotient::Connection::UnpublishRoom, {}, u"Itinerary Trip Sync"_s, tg.name(), {},  {}, {}, false, {}, {}, QJsonObject{{"type"_L1, "org.kde.itinerary.tripSync"_L1}});
+        connect(job, &Quotient::CreateRoomJob::success, [this, tgId, job]() {
+            qDebug() << "ROOM CREATED" << job->roomId();
+            auto tg = m_tripGroupMgr->tripGroup(tgId);
+            tg.setMatrixRoomId(job->roomId());
+            m_tripGroupMgr->updateTripGroup(tgId, tg);
+            m_roomToTripGroupMap[job->roomId()] = tgId;
+
+            // TODO add all meanwhile added reservations
+        });
+    }
+#endif
+}
+
+#if HAVE_MATRIX
 void MatrixSyncManager::init()
 {
     if (!m_matrixMgr || !m_tripGroupMgr) {
@@ -186,30 +223,10 @@ void MatrixSyncManager::deleteRoom(Quotient::Room *room)
 
 void MatrixSyncManager::tripGroupAdded(const QString &tgId)
 {
-    qDebug() << tgId;
-    if (!m_matrixMgr->connected()) {
-        return; // TODO what do we do with changes while not connected?
-    }
-
-    const auto tg = m_tripGroupMgr->tripGroup(tgId);
-    if (tg.name().isEmpty()) {
+    if (!m_autoSyncTrips) {
         return;
     }
-
-    if (!tg.matrixRoomId().isEmpty()) {
-        // TODO
-    } else {
-        auto job = m_matrixMgr->connection()->createRoom(Quotient::Connection::UnpublishRoom, {}, u"Itinerary Trip Sync"_s, tg.name(), {},  {}, {}, false, {}, {}, QJsonObject{{"type"_L1, "org.kde.itinerary.tripSync"_L1}});
-        connect(job, &Quotient::CreateRoomJob::success, [this, tgId, job]() {
-            qDebug() << "ROOM CREATED" << job->roomId();
-            auto tg = m_tripGroupMgr->tripGroup(tgId);
-            tg.setMatrixRoomId(job->roomId());
-            m_tripGroupMgr->updateTripGroup(tgId, tg);
-            m_roomToTripGroupMap[job->roomId()] = tgId;
-
-            // TODO add all meanwhile added reservations
-        });
-    }
+    syncTripGroup(tgId);
 }
 
 void MatrixSyncManager::tripGroupChanged(const QString &tgId)
@@ -274,6 +291,6 @@ void MatrixSyncManager::tripGroupRemoved(const QString &tgId)
     m_matrixMgr->connection()->forgetRoom(tgId);
     m_roomToTripGroupMap.erase(it);
 }
+#endif
 
 #include "moc_matrixsyncmanager.cpp"
-#endif
