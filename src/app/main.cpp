@@ -196,6 +196,7 @@ static WeatherForecastManager *s_weatherForecastManager = nullptr;
 static MapDownloadManager *s_mapDownloadManager = nullptr;
 static PassManager *s_passManager = nullptr;
 static MatrixController *s_matrixController = nullptr;
+static MatrixSyncManager *s_matrixSyncManager = nullptr;
 static ImportController *s_importController = nullptr;
 static TripGroupModel *s_tripGroupModel = nullptr;
 static TraewellingController *s_traewellingController = nullptr;
@@ -223,6 +224,7 @@ void registerApplicationSingletons()
     REGISTER_SINGLETON_INSTANCE(MapDownloadManager, s_mapDownloadManager)
     REGISTER_SINGLETON_INSTANCE(PassManager, s_passManager)
     REGISTER_SINGLETON_INSTANCE(MatrixController, s_matrixController);
+    REGISTER_SINGLETON_INSTANCE(MatrixSyncManager, s_matrixSyncManager);
     REGISTER_SINGLETON_INSTANCE(ImportController, s_importController);
     REGISTER_SINGLETON_INSTANCE(TripGroupModel, s_tripGroupModel);
     REGISTER_SINGLETON_INSTANCE(TraewellingController, s_traewellingController);
@@ -446,11 +448,14 @@ int main(int argc, char **argv)
 
     OnlineTicketImporter::setNetworkAccessManagerFactory(namFactory);
 
-#if HAVE_MATRIX
     MatrixSyncManager matrixSyncManager;
+#if HAVE_MATRIX
     matrixSyncManager.setMatrixManager(qobject_cast<MatrixManager*>(matrixController.manager()));
     matrixSyncManager.setTripGroupManager(&tripGroupMgr);
+    matrixSyncManager.setAutoSyncTrips(settings.matrixAutoSyncTrips());
+    QObject::connect(&settings, &Settings::matrixAutoSyncTripsChanged, &matrixSyncManager, &MatrixSyncManager::setAutoSyncTrips);
 #endif
+    s_matrixSyncManager = &matrixSyncManager;
 
     registerKPkPassTypes();
     registerKItineraryTypes();
