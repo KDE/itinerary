@@ -20,13 +20,15 @@ lib/qml/org/kde/kirigamiaddons/(settings|sounds|treeview)/.*
 plugins/imageformats/.*_(qico|qgif)_.*\.so
 
 # translation catalogs of dependencies not needed here
-share/locale/.*/LC_MESSAGES/(karchive6|kcodecs6|kconfig6|knotifications6)_qt\.qm
-share/locale/.*/LC_MESSAGES/(kcontacts6|libkmime6)\.mo
+share/locale/.*/LC_MESSAGES/(karchive6|kcodecs6|kconfig6|knotifications6|libkmime6)_qt\.qm
+share/locale/.*/LC_MESSAGES/(kcontacts6|kcolorscheme6|kiconthemes6)\.mo
 share/qt6keychain/translations.*\.qm
-
-# overly large translations not selectable on Android
-share/locale/(sr@ijekavian|sr@ijekavianlatin)/.*
 
 # newer Kirigami Addon versions depend on Qt.labs.platform for ColorDialog, which as a QtWidgets dependency
 # remove that the hard way, we don't need a color dialog
 qml/Qt/labs/platform/.*
+
+# unused KConfigWidgets assets pulled in via KIconThemes
+share/locale/.*/kf6_entry.desktop
+share/locale/.*/LC_MESSAGES/kconfigwidgets6\.mo
+share/locale/.*/LC_MESSAGES/(kitemviews6|kwidgetaddons6)_qt\.qm
