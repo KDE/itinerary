@@ -32,6 +32,8 @@ class Settings : public QObject
     Q_PROPERTY(
         bool showNotificationOnLockScreen READ showNotificationOnLockScreen WRITE setShowNotificationOnLockScreen NOTIFY showNotificationOnLockScreenChanged)
 
+    Q_PROPERTY(bool matrixAutoSyncTrips READ matrixAutoSyncTrips WRITE setMatrixAutoSyncTrips NOTIFY matrixAutoSyncTripsChanged)
+
     Q_PROPERTY(bool osmContributorMode MEMBER m_osmContributorMode WRITE setOsmContributorMode NOTIFY osmContributorModeChanged)
     Q_PROPERTY(bool developmentMode READ developmentMode WRITE setDevelopmentMode NOTIFY developmentModeChanged)
 
@@ -77,6 +79,9 @@ public:
     [[nodiscard]] bool showNotificationOnLockScreen() const;
     void setShowNotificationOnLockScreen(bool enabled);
 
+    [[nodiscard]] bool matrixAutoSyncTrips() const;
+    void setMatrixAutoSyncTrips(bool autoSync);
+
     void setOsmContributorMode(bool enabled);
 
     [[nodiscard]] bool developmentMode() const;
@@ -101,6 +106,7 @@ Q_SIGNALS:
     void autoAddTransfersChanged(bool autoAdd);
     void autoFillTransfersChanged(bool autoFill);
     void showNotificationOnLockScreenChanged(bool enabled);
+    void matrixAutoSyncTripsChanged(bool enabled);
     void developmentModeChanged(bool enabled);
     void osmContributorModeChanged(bool enabled);
     void useFahrenheitChanged();
@@ -118,6 +124,7 @@ private:
     bool m_autoAddTransfers = true;
     bool m_autoFillTransfers = false;
     bool m_showNotificationOnLockScreen = false;
+    bool m_matrixAutoSyncTrips = false;
     bool m_osmContributorMode = false;
     bool m_developmentMode = false;
 };

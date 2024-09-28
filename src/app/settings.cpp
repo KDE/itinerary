@@ -44,6 +44,8 @@ void Settings::load()
 
     m_showNotificationOnLockScreen = s.value("ShowNotificationOnLockScreen"_L1, m_showNotificationOnLockScreen).toBool();
 
+    m_matrixAutoSyncTrips = s.value("MatrixAutoSyncTrips"_L1, false).toBool();
+
     m_osmContributorMode = s.value("OsmContributorMode"_L1, m_osmContributorMode).toBool();
     m_developmentMode = s.value("DevelopmentMode"_L1, m_developmentMode).toBool();
 
@@ -285,6 +287,25 @@ void Settings::setShowNotificationOnLockScreen(bool enabled)
     s.setValue("ShowNotificationOnLockScreen"_L1, m_showNotificationOnLockScreen);
 
     Q_EMIT showNotificationOnLockScreenChanged(m_showNotificationOnLockScreen);
+}
+
+bool Settings::matrixAutoSyncTrips() const
+{
+    return m_matrixAutoSyncTrips;
+}
+
+void Settings::setMatrixAutoSyncTrips(bool autoSync)
+{
+    if (m_matrixAutoSyncTrips == autoSync) {
+        return;
+    }
+
+    m_matrixAutoSyncTrips = autoSync;
+    QSettings s;
+    s.beginGroup("Settings"_L1);
+    s.setValue("MatrixAutoSyncTrips"_L1, m_matrixAutoSyncTrips);
+
+    Q_EMIT matrixAutoSyncTripsChanged(m_matrixAutoSyncTrips);
 }
 
 void Settings::setOsmContributorMode(bool enabled)
