@@ -317,6 +317,19 @@ FormCard.FormCardPage {
             onClicked: MatrixController.manager.connected ? MatrixController.manager.logout() : MatrixController.manager.login(matrixId.text, matrixPassword.text)
             enabled: MatrixController.manager.connected || (matrixId.text.length > 0 && matrixPassword.text.length > 0)
         }
+        FormCard.FormDelegateSeparator {
+            above: matrixAutoSyncTrips
+            visible: matrixAutoSyncTrips.visible
+        }
+        FormCard.FormCheckDelegate {
+            id: matrixAutoSyncTrips
+            text: i18n("Automatically synchronize trips")
+            description: i18n("Use Matrix to synchronize multiple KDE Itinerary instances.")
+            visible: Settings.developmentMode
+            enabled: MatrixController.manager.connected
+            checked: Settings.matrixAutoSyncTrips
+            onToggled: Settings.matrixAutoSyncTrips = matrixAutoSyncTrips.enabled
+        }
     }
 
     FormCard.FormHeader {
