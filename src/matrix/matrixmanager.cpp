@@ -34,6 +34,7 @@ MatrixManager::MatrixManager(QObject *parent)
 void MatrixManager::login(const QString &matrixId, const QString &password)
 {
     auto connection = new Connection(this);
+    connection->enableEncryption(true);
     connection->resolveServer(matrixId);
     connect(connection, &Connection::loginFlowsChanged, this, [this, connection, matrixId, password](){
         if (!connection->supportsPasswordAuth()) {
