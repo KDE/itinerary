@@ -18,6 +18,7 @@ namespace Quotient {
 class Connection;
 class Room;
 class RoomEvent;
+class StateEvent;
 }
 
 
@@ -45,7 +46,8 @@ private:
     void initRoom(Quotient::Room *room);
 
     void reloadRooms();
-    void updateRoom(Quotient::Room *room, Quotient::Room *prev);
+    void reloadRoom(Quotient::Room *room);
+    void joinedRoom(Quotient::Room *room, Quotient::Room *prev);
     void deleteRoom(Quotient::Room *room);
 
     void roomTopicChanged(Quotient::Room *room);
@@ -55,11 +57,18 @@ private:
     void tripGroupChanged(const QString &tgId);
     void tripGroupRemoved(const QString &tgId);
 
+    void createTripGroupFromRoom(Quotient::Room *room);
+    QString readBatchFromStateEvent(const Quotient::StateEvent *event);
+
+    void writeBatchToRoom(const QString &batchId, Quotient::Room *room);
+    void writeBatchDeletionToRoom(const QString &bathId, Quotient::Room *room);
+
     MatrixManager *m_matrixMgr = nullptr;
     TripGroupManager *m_tripGroupMgr = nullptr;
     // map Matrix room ids to trip groups
     QHash<QString, QString> m_roomToTripGroupMap;
     bool m_autoSyncTrips = false;
+    bool m_recursionLock = false;
 #endif
 };
 
