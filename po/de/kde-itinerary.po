@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-27 00:40+0000\n"
+"POT-Creation-Date: 2024-09-28 00:40+0000\n"
 "PO-Revision-Date: 2024-09-08 19:06+0200\n"
 "Last-Translator: Alois.spitzbart <spitz234@hotmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -400,7 +400,7 @@ msgstr "Bootsfahrt bearbeiten"
 msgid "Boat"
 msgstr "Boot"
 
-#: app/BoatEditor.qml:59 app/EventEditor.qml:54 app/FlightEditor.qml:71
+#: app/BoatEditor.qml:59 app/EventEditor.qml:54 app/FlightEditor.qml:72
 #: app/HotelEditor.qml:51 app/ImportPage.qml:21 app/JourneyRequestPage.qml:222
 #: app/RestaurantEditor.qml:53
 #, kde-format
@@ -1091,103 +1091,110 @@ msgstr "Flug"
 msgid "Edit Flight"
 msgstr "Flug bearbeiten"
 
-#: app/FlightEditor.qml:83
+#: app/FlightEditor.qml:84
 #, kde-format
 msgctxt "flight departure"
 msgid "Departure - %1"
 msgstr "Abflug - %1"
 
-#: app/FlightEditor.qml:89 app/FlightEditor.qml:143 app/FlightPage.qml:131
+#: app/FlightEditor.qml:90 app/FlightEditor.qml:150 app/FlightPage.qml:131
 #: app/FlightPage.qml:177
 #, kde-format
 msgid "Airport"
 msgstr "Flughafen"
 
-#: app/FlightEditor.qml:92
+#: app/FlightEditor.qml:93
 #, kde-format
 msgid "Departure airport has to be specified."
 msgstr "Abreiseflughafen muss angegeben werden."
 
-#: app/FlightEditor.qml:98
+#: app/FlightEditor.qml:99
 #, kde-format
 msgctxt "flight departure terminal"
 msgid "Terminal"
 msgstr "Terminal"
 
-#: app/FlightEditor.qml:103
+#: app/FlightEditor.qml:104
 #, kde-format
 msgctxt "flight departure time"
 msgid "Time"
 msgstr "Zeit"
 
-#: app/FlightEditor.qml:108
+#: app/FlightEditor.qml:109
 #, kde-format
 msgctxt "flight departure"
 msgid "Departure time has to be set."
 msgstr "Die Abflugszeit muss eingestellt werden."
 
-#: app/FlightEditor.qml:114
+#: app/FlightEditor.qml:115
 #, kde-format
 msgctxt "flight departure gate"
 msgid "Gate"
 msgstr "Gate"
 
-#: app/FlightEditor.qml:119 app/FlightPage.qml:77
+#: app/FlightEditor.qml:120 app/FlightPage.qml:77
 #, kde-format
 msgid "Boarding time"
 msgstr "Boarding-Zeit"
 
-#: app/FlightEditor.qml:130
+#: app/FlightEditor.qml:131
 #, kde-format
 msgctxt "flight departure"
 msgid "Boarding time has to be before the departure time."
 msgstr "Die Boarding-Zeit muss vor der Abflugszeit liegen."
 
-#: app/FlightEditor.qml:137
+#: app/FlightEditor.qml:139
+#, fuzzy, kde-format
+#| msgid "Boarding group"
+msgctxt "flight departure boarding group"
+msgid "Boarding group"
+msgstr "Boarding-Gruppe"
+
+#: app/FlightEditor.qml:144
 #, kde-format
 msgctxt "flight arrival"
 msgid "Arrival - %1"
 msgstr "Ankunft - %1"
 
-#: app/FlightEditor.qml:146
+#: app/FlightEditor.qml:153
 #, kde-format
 msgid "Arrival airport has to be specified."
 msgstr "Ankunftsflughafen muss angegeben werden."
 
-#: app/FlightEditor.qml:152
+#: app/FlightEditor.qml:159
 #, kde-format
 msgctxt "flight arrival terminal"
 msgid "Terminal"
 msgstr "Terminal"
 
-#: app/FlightEditor.qml:157
+#: app/FlightEditor.qml:164
 #, kde-format
 msgctxt "flight arrival time"
 msgid "Time"
 msgstr "Zeit"
 
-#: app/FlightEditor.qml:168
+#: app/FlightEditor.qml:175
 #, kde-format
 msgctxt "flight arrival"
 msgid "Arrival time has to be after the departure time."
 msgstr "Die Ankunftszeit muss nach der Abflugszeit liegen."
 
-#: app/FlightEditor.qml:175 app/FlightPage.qml:15 app/StatisticsPage.qml:92
+#: app/FlightEditor.qml:182 app/FlightPage.qml:15 app/StatisticsPage.qml:92
 #, kde-format
 msgid "Flight"
 msgstr "Flug"
 
-#: app/FlightEditor.qml:184
+#: app/FlightEditor.qml:191
 #, kde-format
 msgid "Flight number"
 msgstr "Flugnummer"
 
-#: app/FlightEditor.qml:187
+#: app/FlightEditor.qml:194
 #, kde-format
 msgid "Invalid flight number."
 msgstr "Ungültige Flugnummer."
 
-#: app/FlightEditor.qml:192 app/FlightEditor.qml:199 app/FlightPage.qml:94
+#: app/FlightEditor.qml:199 app/FlightEditor.qml:206 app/FlightPage.qml:94
 #, kde-format
 msgctxt "Flight seat"
 msgid "Seat"

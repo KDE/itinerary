@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-27 00:40+0000\n"
+"POT-Creation-Date: 2024-09-28 00:40+0000\n"
 "PO-Revision-Date: 2023-07-29 15:30-0300\n"
 "Last-Translator: Geraldo Simiao <geraldosimiao@fedoraproject.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -417,7 +417,7 @@ msgstr "Viagens de barco"
 msgid "Boat"
 msgstr "Barco"
 
-#: app/BoatEditor.qml:59 app/EventEditor.qml:54 app/FlightEditor.qml:71
+#: app/BoatEditor.qml:59 app/EventEditor.qml:54 app/FlightEditor.qml:72
 #: app/HotelEditor.qml:51 app/ImportPage.qml:21 app/JourneyRequestPage.qml:222
 #: app/RestaurantEditor.qml:53
 #, fuzzy, kde-format
@@ -1159,115 +1159,122 @@ msgstr "Voo"
 msgid "Edit Flight"
 msgstr "Editar voo"
 
-#: app/FlightEditor.qml:83
+#: app/FlightEditor.qml:84
 #, fuzzy, kde-format
 #| msgid "Departure: %1"
 msgctxt "flight departure"
 msgid "Departure - %1"
 msgstr "Partida: %1"
 
-#: app/FlightEditor.qml:89 app/FlightEditor.qml:143 app/FlightPage.qml:131
+#: app/FlightEditor.qml:90 app/FlightEditor.qml:150 app/FlightPage.qml:131
 #: app/FlightPage.qml:177
 #, kde-format
 msgid "Airport"
 msgstr "Aeroporto"
 
-#: app/FlightEditor.qml:92
+#: app/FlightEditor.qml:93
 #, fuzzy, kde-format
 #| msgid "Check-out time:"
 msgid "Departure airport has to be specified."
 msgstr "Horário do registro de saída:"
 
-#: app/FlightEditor.qml:98
+#: app/FlightEditor.qml:99
 #, fuzzy, kde-format
 #| msgid "Terminal:"
 msgctxt "flight departure terminal"
 msgid "Terminal"
 msgstr "Terminal:"
 
-#: app/FlightEditor.qml:103
+#: app/FlightEditor.qml:104
 #, fuzzy, kde-format
 #| msgid "Time:"
 msgctxt "flight departure time"
 msgid "Time"
 msgstr "Hora:"
 
-#: app/FlightEditor.qml:108
+#: app/FlightEditor.qml:109
 #, fuzzy, kde-format
 #| msgid "Check-out time:"
 msgctxt "flight departure"
 msgid "Departure time has to be set."
 msgstr "Horário do registro de saída:"
 
-#: app/FlightEditor.qml:114
+#: app/FlightEditor.qml:115
 #, fuzzy, kde-format
 #| msgid "Gate:"
 msgctxt "flight departure gate"
 msgid "Gate"
 msgstr "Portão:"
 
-#: app/FlightEditor.qml:119 app/FlightPage.qml:77
+#: app/FlightEditor.qml:120 app/FlightPage.qml:77
 #, kde-format
 msgid "Boarding time"
 msgstr "Horário do embarque"
 
-#: app/FlightEditor.qml:130
+#: app/FlightEditor.qml:131
 #, kde-format
 msgctxt "flight departure"
 msgid "Boarding time has to be before the departure time."
 msgstr ""
 
-#: app/FlightEditor.qml:137
+#: app/FlightEditor.qml:139
+#, fuzzy, kde-format
+#| msgid "Boarding group"
+msgctxt "flight departure boarding group"
+msgid "Boarding group"
+msgstr "Grupo de embarque"
+
+#: app/FlightEditor.qml:144
 #, fuzzy, kde-format
 #| msgid "Arrival: %1"
 msgctxt "flight arrival"
 msgid "Arrival - %1"
 msgstr "Chegada: %1"
 
-#: app/FlightEditor.qml:146
+#: app/FlightEditor.qml:153
 #, fuzzy, kde-format
 #| msgctxt "a train/bus journey canceled by its operator"
 #| msgid "Arrival has been canceled."
 msgid "Arrival airport has to be specified."
 msgstr "A chegada foi cancelada."
 
-#: app/FlightEditor.qml:152
+#: app/FlightEditor.qml:159
 #, fuzzy, kde-format
 #| msgid "Terminal:"
 msgctxt "flight arrival terminal"
 msgid "Terminal"
 msgstr "Terminal:"
 
-#: app/FlightEditor.qml:157
+#: app/FlightEditor.qml:164
 #, fuzzy, kde-format
 #| msgid "Time:"
 msgctxt "flight arrival time"
 msgid "Time"
 msgstr "Hora:"
 
-#: app/FlightEditor.qml:168
+#: app/FlightEditor.qml:175
 #, kde-format
 msgctxt "flight arrival"
 msgid "Arrival time has to be after the departure time."
 msgstr ""
 
-#: app/FlightEditor.qml:175 app/FlightPage.qml:15 app/StatisticsPage.qml:92
+#: app/FlightEditor.qml:182 app/FlightPage.qml:15 app/StatisticsPage.qml:92
 #, kde-format
 msgid "Flight"
 msgstr "Voo"
 
-#: app/FlightEditor.qml:184
+#: app/FlightEditor.qml:191
 #, fuzzy, kde-format
 #| msgid "Ticket number:"
 msgid "Flight number"
 msgstr "Número da passagem:"
 
-#: app/FlightEditor.qml:187
+#: app/FlightEditor.qml:194
 #, kde-format
 msgid "Invalid flight number."
 msgstr ""
 
-#: app/FlightEditor.qml:192 app/FlightEditor.qml:199 app/FlightPage.qml:94
+#: app/FlightEditor.qml:199 app/FlightEditor.qml:206 app/FlightPage.qml:94
 #, fuzzy, kde-format
 #| msgid "Seat"
 msgctxt "Flight seat"

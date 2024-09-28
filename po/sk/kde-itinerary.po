@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-27 00:40+0000\n"
+"POT-Creation-Date: 2024-09-28 00:40+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -416,7 +416,7 @@ msgstr "Exportovať..."
 msgid "Boat"
 msgstr ""
 
-#: app/BoatEditor.qml:59 app/EventEditor.qml:54 app/FlightEditor.qml:71
+#: app/BoatEditor.qml:59 app/EventEditor.qml:54 app/FlightEditor.qml:72
 #: app/HotelEditor.qml:51 app/ImportPage.qml:21 app/JourneyRequestPage.qml:222
 #: app/RestaurantEditor.qml:53
 #, fuzzy, kde-format
@@ -1164,114 +1164,120 @@ msgstr "Let"
 msgid "Edit Flight"
 msgstr "Upraviť let"
 
-#: app/FlightEditor.qml:83
+#: app/FlightEditor.qml:84
 #, fuzzy, kde-format
 #| msgid "Departure"
 msgctxt "flight departure"
 msgid "Departure - %1"
 msgstr "Odchod"
 
-#: app/FlightEditor.qml:89 app/FlightEditor.qml:143 app/FlightPage.qml:131
+#: app/FlightEditor.qml:90 app/FlightEditor.qml:150 app/FlightPage.qml:131
 #: app/FlightPage.qml:177
 #, fuzzy, kde-format
 #| msgid "Airport:"
 msgid "Airport"
 msgstr "Letisko:"
 
-#: app/FlightEditor.qml:92
+#: app/FlightEditor.qml:93
 #, fuzzy, kde-format
 #| msgid "Check-out %1"
 msgid "Departure airport has to be specified."
 msgstr "Výstupná kontrola %1"
 
-#: app/FlightEditor.qml:98
+#: app/FlightEditor.qml:99
 #, fuzzy, kde-format
 #| msgid "Terminal:"
 msgctxt "flight departure terminal"
 msgid "Terminal"
 msgstr "Terminál:"
 
-#: app/FlightEditor.qml:103
+#: app/FlightEditor.qml:104
 #, fuzzy, kde-format
 #| msgid "Time:"
 msgctxt "flight departure time"
 msgid "Time"
 msgstr "Čas:"
 
-#: app/FlightEditor.qml:108
+#: app/FlightEditor.qml:109
 #, fuzzy, kde-format
 #| msgid "Check-out %1"
 msgctxt "flight departure"
 msgid "Departure time has to be set."
 msgstr "Výstupná kontrola %1"
 
-#: app/FlightEditor.qml:114
+#: app/FlightEditor.qml:115
 #, fuzzy, kde-format
 #| msgid "Gate:"
 msgctxt "flight departure gate"
 msgid "Gate"
 msgstr "Brána"
 
-#: app/FlightEditor.qml:119 app/FlightPage.qml:77
+#: app/FlightEditor.qml:120 app/FlightPage.qml:77
 #, fuzzy, kde-format
 #| msgid "Boarding time:"
 msgid "Boarding time"
 msgstr "Čas nástupu:"
 
-#: app/FlightEditor.qml:130
+#: app/FlightEditor.qml:131
 #, kde-format
 msgctxt "flight departure"
 msgid "Boarding time has to be before the departure time."
 msgstr ""
 
-#: app/FlightEditor.qml:137
+#: app/FlightEditor.qml:139
+#, fuzzy, kde-format
+msgctxt "flight departure boarding group"
+msgid "Boarding group"
+msgstr "Skupina nástupu: %1"
+
+#: app/FlightEditor.qml:144
 #, fuzzy, kde-format
 #| msgid "Arrival time: %1"
 msgctxt "flight arrival"
 msgid "Arrival - %1"
 msgstr "Príchod"
 
-#: app/FlightEditor.qml:146
+#: app/FlightEditor.qml:153
 #, kde-format
 msgid "Arrival airport has to be specified."
 msgstr ""
 
-#: app/FlightEditor.qml:152
+#: app/FlightEditor.qml:159
 #, fuzzy, kde-format
 #| msgid "Terminal:"
 msgctxt "flight arrival terminal"
 msgid "Terminal"
 msgstr "Terminál:"
 
-#: app/FlightEditor.qml:157
+#: app/FlightEditor.qml:164
 #, fuzzy, kde-format
 #| msgid "Time:"
 msgctxt "flight arrival time"
 msgid "Time"
 msgstr "Čas:"
 
-#: app/FlightEditor.qml:168
+#: app/FlightEditor.qml:175
 #, kde-format
 msgctxt "flight arrival"
 msgid "Arrival time has to be after the departure time."
 msgstr ""
 
-#: app/FlightEditor.qml:175 app/FlightPage.qml:15 app/StatisticsPage.qml:92
+#: app/FlightEditor.qml:182 app/FlightPage.qml:15 app/StatisticsPage.qml:92
 #, kde-format
 msgid "Flight"
 msgstr "Let"
 
-#: app/FlightEditor.qml:184
+#: app/FlightEditor.qml:191
 #, fuzzy, kde-format
 msgid "Flight number"
 msgstr "Poradové číslo:"
 
-#: app/FlightEditor.qml:187
+#: app/FlightEditor.qml:194
 #, kde-format
 msgid "Invalid flight number."
 msgstr ""
 
-#: app/FlightEditor.qml:192 app/FlightEditor.qml:199 app/FlightPage.qml:94
+#: app/FlightEditor.qml:199 app/FlightEditor.qml:206 app/FlightPage.qml:94
 #, fuzzy, kde-format
 #| msgid "Seat"
 msgctxt "Flight seat"

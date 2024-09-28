@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-27 00:40+0000\n"
+"POT-Creation-Date: 2024-09-28 00:40+0000\n"
 "PO-Revision-Date: 2024-09-04 23:29+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -401,7 +401,7 @@ msgstr "Editatu itsasontzi txangoa"
 msgid "Boat"
 msgstr "Itsasontzia"
 
-#: app/BoatEditor.qml:59 app/EventEditor.qml:54 app/FlightEditor.qml:71
+#: app/BoatEditor.qml:59 app/EventEditor.qml:54 app/FlightEditor.qml:72
 #: app/HotelEditor.qml:51 app/ImportPage.qml:21 app/JourneyRequestPage.qml:222
 #: app/RestaurantEditor.qml:53
 #, kde-format
@@ -1089,103 +1089,110 @@ msgstr "Hegaldi berria"
 msgid "Edit Flight"
 msgstr "Editatu hegaldia"
 
-#: app/FlightEditor.qml:83
+#: app/FlightEditor.qml:84
 #, kde-format
 msgctxt "flight departure"
 msgid "Departure - %1"
 msgstr "irteera - %1"
 
-#: app/FlightEditor.qml:89 app/FlightEditor.qml:143 app/FlightPage.qml:131
+#: app/FlightEditor.qml:90 app/FlightEditor.qml:150 app/FlightPage.qml:131
 #: app/FlightPage.qml:177
 #, kde-format
 msgid "Airport"
 msgstr "Aireportua"
 
-#: app/FlightEditor.qml:92
+#: app/FlightEditor.qml:93
 #, kde-format
 msgid "Departure airport has to be specified."
 msgstr "Irteerako aireportua zehaztu behar da."
 
-#: app/FlightEditor.qml:98
+#: app/FlightEditor.qml:99
 #, kde-format
 msgctxt "flight departure terminal"
 msgid "Terminal"
 msgstr "Terminala"
 
-#: app/FlightEditor.qml:103
+#: app/FlightEditor.qml:104
 #, kde-format
 msgctxt "flight departure time"
 msgid "Time"
 msgstr "Ordua"
 
-#: app/FlightEditor.qml:108
+#: app/FlightEditor.qml:109
 #, kde-format
 msgctxt "flight departure"
 msgid "Departure time has to be set."
 msgstr "Irteera-ordua ezarri behar da."
 
-#: app/FlightEditor.qml:114
+#: app/FlightEditor.qml:115
 #, kde-format
 msgctxt "flight departure gate"
 msgid "Gate"
 msgstr "Atea"
 
-#: app/FlightEditor.qml:119 app/FlightPage.qml:77
+#: app/FlightEditor.qml:120 app/FlightPage.qml:77
 #, kde-format
 msgid "Boarding time"
 msgstr "Hegazkineratze ordua:"
 
-#: app/FlightEditor.qml:130
+#: app/FlightEditor.qml:131
 #, kde-format
 msgctxt "flight departure"
 msgid "Boarding time has to be before the departure time."
 msgstr "Hegazkineratzeko ordua irteerako orduaren aurrekoa izan behar da."
 
-#: app/FlightEditor.qml:137
+#: app/FlightEditor.qml:139
+#, fuzzy, kde-format
+#| msgid "Boarding group"
+msgctxt "flight departure boarding group"
+msgid "Boarding group"
+msgstr "Hegazkineratze taldea"
+
+#: app/FlightEditor.qml:144
 #, kde-format
 msgctxt "flight arrival"
 msgid "Arrival - %1"
 msgstr "Iritsiera - %1"
 
-#: app/FlightEditor.qml:146
+#: app/FlightEditor.qml:153
 #, kde-format
 msgid "Arrival airport has to be specified."
 msgstr "Helduerako aireportua zehaztu da."
 
-#: app/FlightEditor.qml:152
+#: app/FlightEditor.qml:159
 #, kde-format
 msgctxt "flight arrival terminal"
 msgid "Terminal"
 msgstr "Terminala"
 
-#: app/FlightEditor.qml:157
+#: app/FlightEditor.qml:164
 #, kde-format
 msgctxt "flight arrival time"
 msgid "Time"
 msgstr "Ordua"
 
-#: app/FlightEditor.qml:168
+#: app/FlightEditor.qml:175
 #, kde-format
 msgctxt "flight arrival"
 msgid "Arrival time has to be after the departure time."
 msgstr "Iritsiera-ordua irteera-orduaren ondoren izan behar da."
 
-#: app/FlightEditor.qml:175 app/FlightPage.qml:15 app/StatisticsPage.qml:92
+#: app/FlightEditor.qml:182 app/FlightPage.qml:15 app/StatisticsPage.qml:92
 #, kde-format
 msgid "Flight"
 msgstr "Hegaldia"
 
-#: app/FlightEditor.qml:184
+#: app/FlightEditor.qml:191
 #, kde-format
 msgid "Flight number"
 msgstr "Hegaldi-zenbakia"
 
-#: app/FlightEditor.qml:187
+#: app/FlightEditor.qml:194
 #, kde-format
 msgid "Invalid flight number."
 msgstr "Hegaldi-zenbaki baliogabea."
 
-#: app/FlightEditor.qml:192 app/FlightEditor.qml:199 app/FlightPage.qml:94
+#: app/FlightEditor.qml:199 app/FlightEditor.qml:206 app/FlightPage.qml:94
 #, kde-format
 msgctxt "Flight seat"
 msgid "Seat"
