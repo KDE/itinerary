@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-26 02:45+0000\n"
+"POT-Creation-Date: 2024-09-28 02:31+0000\n"
 "PO-Revision-Date: 2024-08-30 16:26+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -1727,28 +1727,28 @@ msgstr ""
 msgid "Check-out time"
 msgstr ""
 
-#: app/importcontroller.cpp:144 app/importcontroller.cpp:460
+#: app/importcontroller.cpp:152 app/importcontroller.cpp:468
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Import selhal: %1"
 
-#: app/importcontroller.cpp:149
+#: app/importcontroller.cpp:157
 #, kde-format
 msgid "Import failed: File too large."
 msgstr "Import selhal: Soubor je příliš velký."
 
-#: app/importcontroller.cpp:208 app/importcontroller.cpp:305
+#: app/importcontroller.cpp:216 app/importcontroller.cpp:313
 #, kde-format
 msgid "Found nothing to import."
 msgstr ""
 
-#: app/importcontroller.cpp:432
+#: app/importcontroller.cpp:440
 #, kde-format
 msgid "No importable events found in this calendar."
 msgstr ""
 "V tomto kalendáři nebyly nalezeny žádné události, které lze importovat."
 
-#: app/importcontroller.cpp:606
+#: app/importcontroller.cpp:614
 #, kde-format
 msgid "Backup"
 msgstr "Záloha"

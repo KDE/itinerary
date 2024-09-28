@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-26 02:45+0000\n"
+"POT-Creation-Date: 2024-09-28 02:31+0000\n"
 "PO-Revision-Date: 2024-08-13 19:15+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -1734,27 +1734,27 @@ msgstr "Izen-emateko ordua"
 msgid "Check-out time"
 msgstr "Ordaindu eta irteteko ordua"
 
-#: app/importcontroller.cpp:144 app/importcontroller.cpp:460
+#: app/importcontroller.cpp:152 app/importcontroller.cpp:468
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Inportatzea huts egin du: %1"
 
-#: app/importcontroller.cpp:149
+#: app/importcontroller.cpp:157
 #, kde-format
 msgid "Import failed: File too large."
 msgstr "Inportatzea huts egin du: Fitxategi luzeegia."
 
-#: app/importcontroller.cpp:208 app/importcontroller.cpp:305
+#: app/importcontroller.cpp:216 app/importcontroller.cpp:313
 #, kde-format
 msgid "Found nothing to import."
 msgstr "Ez da inportatzekorik aurkitu."
 
-#: app/importcontroller.cpp:432
+#: app/importcontroller.cpp:440
 #, kde-format
 msgid "No importable events found in this calendar."
 msgstr "Egutegi honetan ez da aurkitu inporta daitekeen ekitaldirik."
 
-#: app/importcontroller.cpp:606
+#: app/importcontroller.cpp:614
 #, kde-format
 msgid "Backup"
 msgstr "Babeskopia"
