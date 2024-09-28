@@ -20,7 +20,6 @@ class Room;
 class RoomEvent;
 }
 
-#if HAVE_MATRIX
 
 /** Matrix-based trip synchronization. */
 class MatrixSyncManager : public QObject
@@ -30,10 +29,17 @@ public:
     explicit MatrixSyncManager(QObject *parent = nullptr);
     ~MatrixSyncManager();
 
+#if HAVE_MATRIX
     void setMatrixManager(MatrixManager *mxMgr);
     void setTripGroupManager(TripGroupManager *tripGroupMgr);
+    void setAutoSyncTrips(bool autoSync);
+#endif
+
+    /** Trigger manual synchronization. */
+    Q_INVOKABLE void syncTripGroup(const QString &tgId);
 
 private:
+#if HAVE_MATRIX
     void init();
     void initConnection(Quotient::Connection *connection);
     void initRoom(Quotient::Room *room);
@@ -53,8 +59,9 @@ private:
     TripGroupManager *m_tripGroupMgr = nullptr;
     // map Matrix room ids to trip groups
     QHash<QString, QString> m_roomToTripGroupMap;
+    bool m_autoSyncTrips = false;
+#endif
 };
 
-#endif
 
 #endif
