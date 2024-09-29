@@ -253,6 +253,7 @@ private Q_SLOTS:
 
         QSignalSpy addSpy(&mgr, &ReservationManager::batchAdded);
         QSignalSpy updateSpy(&mgr, &ReservationManager::batchChanged);
+        QSignalSpy contentSpy(&mgr, &ReservationManager::batchContentChanged);
         QSignalSpy rmSpy(&mgr, &ReservationManager::batchRemoved);
 
         // apply alternative with 3 segments to test segment insertion
@@ -261,6 +262,7 @@ private Q_SLOTS:
         QCOMPARE(mgr.batches().size(), batchCount + 1);
         QCOMPARE(addSpy.size(), 3);
         QCOMPARE(updateSpy.size(), 0); // as we move beyond other elements, we get add/remove rather than updated here
+        QCOMPARE(contentSpy.size(), 0);
         QCOMPARE(rmSpy.size(), 2);
         QCOMPARE(LiveData::listAll().size(), 3);
         QCOMPARE(tgMgr.tripGroups().size(), 1);
@@ -269,13 +271,15 @@ private Q_SLOTS:
         controller.setBatchId(mgr.batches().at(mgr.batches().size() - 3)); // begin of the new 3 segment train trip
         addSpy.clear();
         updateSpy.clear();
+        contentSpy.clear();
         rmSpy.clear();
         const auto jny2 = KPublicTransport::Journey::fromJson(QJsonDocument::fromJson(readFile(QLatin1StringView(SOURCE_DIR "/data/publictransport/randa-zrh-2-sections.json"))).object());
         controller.applyJourney(QVariant::fromValue(jny2), true);
         QCOMPARE(mgr.batches().size(), batchCount);
-        QCOMPARE(addSpy.size(), 2);
+        QCOMPARE(addSpy.size(), 0);
         QCOMPARE(updateSpy.size(), 0);
-        QCOMPARE(rmSpy.size(), 3);
+        QCOMPARE(contentSpy.size(), 2);
+        QCOMPARE(rmSpy.size(), 1);
         QCOMPARE(LiveData::listAll().size(), 2);
         QCOMPARE(tgMgr.tripGroups().size(), 1);
     }
