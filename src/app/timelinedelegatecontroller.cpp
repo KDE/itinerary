@@ -1013,4 +1013,13 @@ QStringList TimelineDelegateController::documentIds() const
     return result;
 }
 
+QVariant TimelineDelegateController::reservation() const
+{
+    if (!m_resMgr || m_batchId.isEmpty()) {
+        return {};
+    }
+
+    return m_resMgr->reservation(m_batchId);
+}
+
 #include "moc_timelinedelegatecontroller.cpp"

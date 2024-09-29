@@ -21,7 +21,7 @@ FormCard.FormCard {
     /** A random reservation object, in case there's more than one.
      *  Use this only for accessing properties that will be the same for all travelers.
      */
-    readonly property var reservation: ReservationManager.reservation(root.batchId);
+    readonly property alias reservation: _controller.reservation
     /** Reservation::reservationFor, unique for all travelers on a multi-traveler reservation set */
     readonly property var reservationFor: reservation.reservationFor
     property var rangeType

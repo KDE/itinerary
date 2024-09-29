@@ -85,6 +85,9 @@ class TimelineDelegateController : public QObject
     /** Attached documents of this element. */
     Q_PROPERTY(QStringList documentIds READ documentIds NOTIFY contentChanged)
 
+    /** Reservation object for the current batch id. */
+    Q_PROPERTY(QVariant reservation READ reservation NOTIFY contentChanged)
+
 public:
     TimelineDelegateController(QObject *parent = nullptr);
     ~TimelineDelegateController() override;
@@ -163,6 +166,8 @@ private:
     /** Time at which the event starts/stops based on realtime data. */
     [[nodiscard]] QDateTime liveStartDateTime(const QVariant &res) const;
     [[nodiscard]] QDateTime liveEndDateTime(const QVariant &res) const;
+
+    [[nodiscard]] QVariant reservation() const;
 
     void batchChanged(const QString &batchId);
 
