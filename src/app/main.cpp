@@ -64,8 +64,6 @@
 
 #include "weatherforecastmanager.h"
 
-#include <KCalendarCore/Calendar>
-
 #include <KItinerary/CountryDb>
 #include <KItinerary/DocumentUtil>
 #include <KItinerary/JsonLdDocument>
@@ -121,12 +119,6 @@ class MatrixBeaconStub : public QObject
     QVariant m_connection;
 };
 #endif
-
-void registerKCalendarCoreTypes()
-{
-    // ### this should move into a QML plugin of KCalendarCore
-    qmlRegisterUncreatableMetaObject(KCalendarCore::staticMetaObject, "internal.org.kde.kcalendarcore", 1, 0, "KCalendarCore", {});
-}
 
 void registerKPkPassTypes()
 {
@@ -452,7 +444,6 @@ int main(int argc, char **argv)
 
     OnlineTicketImporter::setNetworkAccessManagerFactory(namFactory);
 
-    registerKCalendarCoreTypes();
     registerKPkPassTypes();
     registerKItineraryTypes();
     registerApplicationTypes();
