@@ -249,20 +249,14 @@ int Importer::importTripGroups(TripGroupManager *tgMgr)
 {
     const auto tgIds = m_file->listCustomData(BUNDLE_TRIPGROUP_DOMAIN);
     for (const auto &importId : tgIds) {
-        const auto importTg = TripGroup::fromJson(QJsonDocument::fromJson(m_file->customData(BUNDLE_TRIPGROUP_DOMAIN, importId)).object());
-        const auto tgId = tgMgr->createEmptyGroup(importTg.name());
-        auto tg = tgMgr->tripGroup(tgId);
-        tg.setIsAutomaticallyGrouped(importTg.isAutomaticallyGrouped());
-        tg.setNameIsAutomatic(importTg.hasAutomaticName());
-        tg.setMatrixRoomId(importTg.matrixRoomId());
-        tgMgr->updateTripGroup(tgId, tg);
-
+        auto importTg = TripGroup::fromJson(QJsonDocument::fromJson(m_file->customData(BUNDLE_TRIPGROUP_DOMAIN, importId)).object());
         QStringList elems;
         elems.reserve(importTg.elements().size());
         for (const auto &resId : importTg.elements()) {
             elems.push_back(m_resIdMap.value(resId));
         }
-        tgMgr->addToGroup(elems, tgId);
+        importTg.setElements(elems);
+        tgMgr->createGroup(importTg);
     }
     return tgIds.size();
 }

@@ -947,91 +947,13 @@ QString TripGroupManager::merge(const QString &tgId1, const QString &tgId2, cons
     return tgId1;
 }
 
-QString TripGroupManager::createGroup(const QStringList &elements, const QString &name)
-{
-    qCDebug(Log) << elements << name;
-
-    // find groups that contain any of the selected elements
-    QStringList groupsToUpdate;
-    for (const auto &resId : elements) {
-        const auto it = m_reservationToGroupMap.constFind(resId);
-        if (it == m_reservationToGroupMap.cend()) {
-            continue;
-        }
-        if (!groupsToUpdate.contains(it.value())) {
-            groupsToUpdate.push_back(it.value());
-        }
-    }
-
-    // remove elements from other groups and mark those explicitly grouped
-    for (const auto &tgId :groupsToUpdate) {
-        auto &tg = m_tripGroups[tgId];
-        auto elems = tg.elements();
-        for (const auto &resId : elements) {
-            elems.removeAll(resId);
-        }
-        // TODO can elems becomes empty here?
-        tg.setElements(elems);
-        tg.setIsAutomaticallyGrouped(false);
-        if (tg.hasAutomaticName()) {
-            tg.setName(guessName(tg.elements()));
-        }
-        recomputeTripGroupTimes(tg);
-        tg.store(fileForGroup(tgId));
-        Q_EMIT tripGroupChanged(tgId);
-    }
-
-    // create new group
-    TripGroup tg;
-    tg.setElements(elements);
-    tg.setIsAutomaticallyGrouped(false);
-    tg.setName(guessName(elements));
-    if (tg.name() != name && !name.isEmpty()) {
-        tg.setName(name);
-        tg.setNameIsAutomatic(false);
-    }
-    recomputeTripGroupTimes(tg);
-
-    const auto tgId = QUuid::createUuid().toString(QUuid::WithoutBraces);
-    m_tripGroups.insert(tgId, tg);
-    for (const auto &resId : elements) {
-        m_reservationToGroupMap.insert(resId, tgId);
-    }
-
-    tg.store(fileForGroup(tgId));
-    Q_EMIT tripGroupAdded(tgId);
-
-    return tgId;
-}
-
-QString TripGroupManager::createEmptyGroup(const QString &name)
-{
-    qCDebug(Log) << name;
-    if (name.isEmpty()) {
-        return {};
-    }
-
-    TripGroup tg;
-    tg.setIsAutomaticallyGrouped(false);
-    tg.setName(name);
-    tg.setNameIsAutomatic(false);
-
-    const auto tgId = QUuid::createUuid().toString(QUuid::WithoutBraces);
-    m_tripGroups.insert(tgId, tg);
-
-    tg.store(fileForGroup(tgId));
-    Q_EMIT tripGroupAdded(tgId);
-
-    return tgId;
-}
-
-void TripGroupManager::addToGroup(const QStringList &elements, const QString &tgId)
+void TripGroupManager::removeElementsFromGroups(const QStringList &elements, const QString &excludedTgId, bool markAsExplicit)
 {
     // find groups that contain any of the selected elements already
     QStringList groupsToUpdate;
     for (const auto &resId : elements) {
         const auto it = m_reservationToGroupMap.constFind(resId);
-        if (it == m_reservationToGroupMap.cend() || it.key() == tgId) {
+        if (it == m_reservationToGroupMap.cend() || it.key() == excludedTgId) {
             continue;
         }
         if (!groupsToUpdate.contains(it.value())) {
@@ -1054,10 +976,65 @@ void TripGroupManager::addToGroup(const QStringList &elements, const QString &tg
         if (tg.hasAutomaticName()) {
             tg.setName(guessName(tg.elements()));
         }
+        if (tg.isAutomaticallyGrouped() && markAsExplicit) {
+            tg.setIsAutomaticallyGrouped(false);
+        }
         recomputeTripGroupTimes(tg);
         tg.store(fileForGroup(tgId));
         Q_EMIT tripGroupChanged(tgId);
     }
+}
+
+QString TripGroupManager::createGroup(const QStringList &elements, const QString &name)
+{
+    qCDebug(Log) << elements << name;
+    removeElementsFromGroups(elements, {}, true);
+
+    TripGroup tg;
+    tg.setElements(elements);
+    tg.setIsAutomaticallyGrouped(false);
+    tg.setName(guessName(elements));
+    if (tg.name() != name && !name.isEmpty()) {
+        tg.setName(name);
+        tg.setNameIsAutomatic(false);
+    }
+
+    return createGroup(tg);
+}
+
+QString TripGroupManager::createEmptyGroup(const QString &name)
+{
+    qCDebug(Log) << name;
+    if (name.isEmpty()) {
+        return {};
+    }
+
+    TripGroup tg;
+    tg.setIsAutomaticallyGrouped(false);
+    tg.setName(name);
+    tg.setNameIsAutomatic(false);
+    return createGroup(tg);
+}
+
+QString TripGroupManager::createGroup(TripGroup &tg)
+{
+    recomputeTripGroupTimes(tg);
+
+    const auto tgId = QUuid::createUuid().toString(QUuid::WithoutBraces);
+    m_tripGroups.insert(tgId, tg);
+    for (const auto &resId : tg.elements()) {
+        m_reservationToGroupMap.insert(resId, tgId);
+    }
+
+    tg.store(fileForGroup(tgId));
+    Q_EMIT tripGroupAdded(tgId);
+
+    return tgId;
+}
+
+void TripGroupManager::addToGroup(const QStringList &elements, const QString &tgId)
+{
+    removeElementsFromGroups(elements, tgId, false);
 
     // add elements to tgId
     auto &tg = m_tripGroups[tgId];

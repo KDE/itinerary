@@ -74,6 +74,12 @@ public:
      */
     Q_INVOKABLE QString createEmptyGroup(const QString &name);
 
+    /** Create @p tg as a new group.
+     *  The more generic form of the two above methods.
+     *  @returns the trip group id for the new group.
+     */
+    QString createGroup(TripGroup &tg);
+
     /** Add the given elements to an existing trip group. */
     void addToGroup(const QStringList &elements, const QString &tgId);
 
@@ -92,6 +98,7 @@ private:
     [[nodiscard]] static QString fileForGroup(QStringView tgId);
     void load();
     void removeTripGroup(const QString &groupId);
+    void removeElementsFromGroups(const QStringList &elements, const QString &excludedTgId, bool markAsExplicit);
 
     void batchAdded(const QString &resId);
     void batchContentChanged(const QString &resId);
