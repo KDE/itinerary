@@ -328,8 +328,6 @@ if (ANDROID)
         merge
         message-rfc822
         notifications
-        phone-symbolic
-        player-volume-muted
         question
         raindrop
         reverse
