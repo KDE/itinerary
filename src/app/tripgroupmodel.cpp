@@ -109,6 +109,8 @@ QVariant TripGroupModel::data(const QModelIndex &index, int role) const
         return QVariant::fromValue(tripGroup);
     case TripGroupIdRole:
         return tgId;
+    case IsSingleDayRole:
+        return tripGroup.beginDateTime().isValid() && (!tripGroup.endDateTime().isValid() || tripGroup.beginDateTime().date() == tripGroup.endDateTime().date());
     default:
         return {};
     }
@@ -123,6 +125,7 @@ QHash<int, QByteArray> TripGroupModel::roleNames() const
         { PositionRole, "position" },
         { TripGroupRole, "tripGroup" },
         { TripGroupIdRole, "tripGroupId" },
+        { IsSingleDayRole, "isSingleDay" },
     };
 }
 

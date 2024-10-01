@@ -25,6 +25,7 @@ public:
         PositionRole,
         TripGroupRole,
         TripGroupIdRole,
+        IsSingleDayRole,
     };
 
     enum Position {

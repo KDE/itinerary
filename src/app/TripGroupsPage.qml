@@ -76,6 +76,7 @@ Kirigami.ScrollablePage {
             required property date begin
             required property date end
             required property string tripGroupId
+            required property bool isSingleDay
 
             text: name
 
@@ -92,6 +93,8 @@ Kirigami.ScrollablePage {
 
                 QQC2.Label {
                     text: {
+                        if (delegate.isSingleDay)
+                            return delegate.begin.toLocaleDateString();
                         if (delegate.begin > 0)
                             return i18nc("date range", "%1 - %2", delegate.begin.toLocaleDateString(), delegate.end.toLocaleDateString());
                         return i18n("Upcoming");
