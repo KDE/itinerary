@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-28 00:40+0000\n"
-"PO-Revision-Date: 2024-09-24 07:47+0200\n"
+"POT-Creation-Date: 2024-10-01 00:39+0000\n"
+"PO-Revision-Date: 2024-09-29 08:37+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -90,44 +90,44 @@ msgstr "Capacités de l'extracteur :"
 msgid "Extractor capabilities copied to clipboard"
 msgstr "Capacités de l'extracteur copiées vers le presse-papier"
 
-#: app/ActionsCard.qml:33
+#: app/ActionsCard.qml:32
 #, kde-format
 msgid "Show Boarding Pass"
 msgstr "Afficher la carte d'embarquement"
 
-#: app/ActionsCard.qml:33 app/TicketPage.qml:138
+#: app/ActionsCard.qml:32 app/TicketPage.qml:138
 #, kde-format
 msgid "Show Ticket"
 msgstr "Afficher le ticket"
 
-#: app/ActionsCard.qml:39
+#: app/ActionsCard.qml:38
 #, kde-format
 msgid "Add transfer before"
 msgstr "Ajouter une correspondance avant"
 
-#: app/ActionsCard.qml:48
+#: app/ActionsCard.qml:47
 #, kde-format
 msgid "Add transfer after"
 msgstr "Ajouter une correspondance après"
 
-#: app/ActionsCard.qml:57 app/ProgramMembershipPage.qml:159
+#: app/ActionsCard.qml:56 app/ProgramMembershipPage.qml:159
 #: app/TicketPage.qml:154
 #, kde-format
 msgid "Edit"
 msgstr "Édition"
 
-#: app/ActionsCard.qml:63
+#: app/ActionsCard.qml:62
 #, kde-format
 msgid "Add to calendar…"
 msgstr "Ajouter à l'agenda..."
 
-#: app/ActionsCard.qml:74 app/main.qml:221 app/TripGroupDelegate.qml:182
+#: app/ActionsCard.qml:73 app/main.qml:221 app/TripGroupDelegate.qml:182
 #: app/TripGroupPage.qml:650
 #, kde-format
 msgid "Export…"
 msgstr "Exporter..."
 
-#: app/ActionsCard.qml:79 app/ActionsCard.qml:125 app/DocumentsCard.qml:87
+#: app/ActionsCard.qml:78 app/ActionsCard.qml:124 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
 #: app/HealthCertificatePage.qml:46 app/HealthCertificatePage.qml:60
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:171
@@ -137,81 +137,81 @@ msgstr "Exporter..."
 msgid "Delete"
 msgstr "Supprimer"
 
-#: app/ActionsCard.qml:118
+#: app/ActionsCard.qml:117
 #, kde-format
 msgid "Delete Event"
 msgstr "Supprimer un évènement"
 
 # unreviewed-context
-#: app/ActionsCard.qml:119
+#: app/ActionsCard.qml:118
 #, kde-format
 msgid "Do you really want to delete this event?"
 msgstr "Voulez-vous vraiment supprimer cet évènement ?"
 
-#: app/ActionsCard.qml:138 app/TimelinePage.qml:235 app/TripGroupPage.qml:229
+#: app/ActionsCard.qml:137 app/TimelinePage.qml:235 app/TripGroupPage.qml:229
 #, kde-format
 msgid "Export"
 msgstr "Exporter..."
 
-#: app/ActionsCard.qml:141 app/TimelinePage.qml:238 app/TripGroupPage.qml:232
+#: app/ActionsCard.qml:140 app/TimelinePage.qml:238 app/TripGroupPage.qml:232
 #, kde-format
 msgid "As Itinerary file…"
 msgstr "Comme fichier « Itinerary »"
 
-#: app/ActionsCard.qml:152 app/TimelinePage.qml:262 app/TripGroupPage.qml:254
+#: app/ActionsCard.qml:151 app/TimelinePage.qml:262 app/TripGroupPage.qml:254
 #, kde-format
 msgid "Send to %1"
 msgstr "Envoyé vers %1"
 
-#: app/ActionsCard.qml:166
+#: app/ActionsCard.qml:165
 #, kde-format
 msgid "Export Reservation"
 msgstr "Exporter une réservation"
 
-#: app/ActionsCard.qml:168 app/TimelinePage.qml:278 app/TripGroupPage.qml:272
+#: app/ActionsCard.qml:167 app/TimelinePage.qml:278 app/TripGroupPage.qml:272
 #, kde-format
 msgid "Itinerary file (*.itinerary)"
 msgstr "Fichier « Itinerary » (*.itinerary)"
 
-#: app/ActionsCard.qml:173 app/ProgramMembershipPage.qml:138
+#: app/ActionsCard.qml:172 app/ProgramMembershipPage.qml:138
 #: app/TicketPage.qml:130 app/TripGroupPage.qml:618
 #, kde-format
 msgid "Actions"
 msgstr "Actions"
 
-#: app/ActionsCard.qml:191
+#: app/ActionsCard.qml:190
 #, kde-format
 msgctxt "cancel as in revoking a booking"
 msgid "Cancel Reservation"
 msgstr "Annuler la réservation"
 
-#: app/ActionsCard.qml:192
+#: app/ActionsCard.qml:191
 #, kde-format
 msgid "Check-in"
 msgstr "Article rendu (fin de prêt)"
 
-#: app/ActionsCard.qml:193
+#: app/ActionsCard.qml:192
 #, kde-format
 msgid "Download"
 msgstr "Télécharger"
 
-#: app/ActionsCard.qml:194
+#: app/ActionsCard.qml:193
 #, kde-format
 msgctxt "participate in an event"
 msgid "Join"
 msgstr "Rejoindre"
 
-#: app/ActionsCard.qml:195
+#: app/ActionsCard.qml:194
 #, kde-format
 msgid "Reserve"
 msgstr "Réserver"
 
-#: app/ActionsCard.qml:196
+#: app/ActionsCard.qml:195
 #, kde-format
 msgid "Change Reservation"
 msgstr "Modifier la réservation"
 
-#: app/ActionsCard.qml:197
+#: app/ActionsCard.qml:196
 #, kde-format
 msgid "View Reservation"
 msgstr "Afficher la réservation"
@@ -1144,8 +1144,7 @@ msgid "Boarding time has to be before the departure time."
 msgstr "L'heure d'embarquement doit être postérieure à l'heure de départ."
 
 #: app/FlightEditor.qml:139
-#, fuzzy, kde-format
-#| msgid "Boarding group"
+#, kde-format
 msgctxt "flight departure boarding group"
 msgid "Boarding group"
 msgstr "Groupe d'embarquement"
@@ -1401,7 +1400,7 @@ msgstr "Supprimer un mot de passe"
 msgid "Do you really want to delete this pass?"
 msgstr "Voulez-vous vraiment supprimer ce mot de passe ?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:318 app/main.qml:21 app/main.qml:161
+#: app/gpxexport.cpp:33 app/main.cpp:310 app/main.qml:21 app/main.qml:161
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -2433,23 +2432,23 @@ msgstr "Type M"
 msgid "Type N"
 msgstr "Type N"
 
-#: app/main.cpp:326
+#: app/main.cpp:318
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Assistant numérique de voyages"
 
-#: app/main.cpp:327
+#: app/main.cpp:319
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "Copyright © La communauté de KDE"
 
-#: app/main.cpp:334
+#: app/main.cpp:326
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Ouvrir Itinerary sur la page fournie"
 
-#: app/main.cpp:339
+#: app/main.cpp:331
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."

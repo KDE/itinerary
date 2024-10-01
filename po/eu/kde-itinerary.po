@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-28 00:40+0000\n"
-"PO-Revision-Date: 2024-09-04 23:29+0200\n"
+"POT-Creation-Date: 2024-10-01 00:39+0000\n"
+"PO-Revision-Date: 2024-09-30 17:01+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.08.0\n"
+"X-Generator: Lokalize 24.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -92,44 +92,44 @@ msgstr "Erauzlearen gaitasunak:"
 msgid "Extractor capabilities copied to clipboard"
 msgstr "Erauzlearen gaitasunak arbelera kopiatu dira"
 
-#: app/ActionsCard.qml:33
+#: app/ActionsCard.qml:32
 #, kde-format
 msgid "Show Boarding Pass"
 msgstr "Erakutsi ontziratze-sarrera"
 
-#: app/ActionsCard.qml:33 app/TicketPage.qml:138
+#: app/ActionsCard.qml:32 app/TicketPage.qml:138
 #, kde-format
 msgid "Show Ticket"
 msgstr "Erakutsi txartela"
 
-#: app/ActionsCard.qml:39
+#: app/ActionsCard.qml:38
 #, kde-format
 msgid "Add transfer before"
 msgstr "Gehitu ibilgailu-aldaketa aurretik"
 
-#: app/ActionsCard.qml:48
+#: app/ActionsCard.qml:47
 #, kde-format
 msgid "Add transfer after"
 msgstr "Gehitu ibilgailu-aldaketa ondoren"
 
-#: app/ActionsCard.qml:57 app/ProgramMembershipPage.qml:159
+#: app/ActionsCard.qml:56 app/ProgramMembershipPage.qml:159
 #: app/TicketPage.qml:154
 #, kde-format
 msgid "Edit"
 msgstr "Editatu"
 
-#: app/ActionsCard.qml:63
+#: app/ActionsCard.qml:62
 #, kde-format
 msgid "Add to calendar…"
 msgstr "Gehitu egutegira..."
 
-#: app/ActionsCard.qml:74 app/main.qml:221 app/TripGroupDelegate.qml:182
+#: app/ActionsCard.qml:73 app/main.qml:221 app/TripGroupDelegate.qml:182
 #: app/TripGroupPage.qml:650
 #, kde-format
 msgid "Export…"
 msgstr "Esportatu..."
 
-#: app/ActionsCard.qml:79 app/ActionsCard.qml:125 app/DocumentsCard.qml:87
+#: app/ActionsCard.qml:78 app/ActionsCard.qml:124 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
 #: app/HealthCertificatePage.qml:46 app/HealthCertificatePage.qml:60
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:171
@@ -139,80 +139,80 @@ msgstr "Esportatu..."
 msgid "Delete"
 msgstr "Ezabatu"
 
-#: app/ActionsCard.qml:118
+#: app/ActionsCard.qml:117
 #, kde-format
 msgid "Delete Event"
 msgstr "Ezabatu ekitaldia"
 
-#: app/ActionsCard.qml:119
+#: app/ActionsCard.qml:118
 #, kde-format
 msgid "Do you really want to delete this event?"
 msgstr "Benetan ezabatu nahi duzu ekitaldi hori?"
 
-#: app/ActionsCard.qml:138 app/TimelinePage.qml:235 app/TripGroupPage.qml:229
+#: app/ActionsCard.qml:137 app/TimelinePage.qml:235 app/TripGroupPage.qml:229
 #, kde-format
 msgid "Export"
 msgstr "Esportatu"
 
-#: app/ActionsCard.qml:141 app/TimelinePage.qml:238 app/TripGroupPage.qml:232
+#: app/ActionsCard.qml:140 app/TimelinePage.qml:238 app/TripGroupPage.qml:232
 #, kde-format
 msgid "As Itinerary file…"
 msgstr "«Itinerary» fitxategi gisa..."
 
-#: app/ActionsCard.qml:152 app/TimelinePage.qml:262 app/TripGroupPage.qml:254
+#: app/ActionsCard.qml:151 app/TimelinePage.qml:262 app/TripGroupPage.qml:254
 #, kde-format
 msgid "Send to %1"
 msgstr "Bidali %1(e)ra"
 
-#: app/ActionsCard.qml:166
+#: app/ActionsCard.qml:165
 #, kde-format
 msgid "Export Reservation"
 msgstr "Esportatu erreserba"
 
-#: app/ActionsCard.qml:168 app/TimelinePage.qml:278 app/TripGroupPage.qml:272
+#: app/ActionsCard.qml:167 app/TimelinePage.qml:278 app/TripGroupPage.qml:272
 #, kde-format
 msgid "Itinerary file (*.itinerary)"
 msgstr "«Itinerary» fitxategia (*.itinerary)"
 
-#: app/ActionsCard.qml:173 app/ProgramMembershipPage.qml:138
+#: app/ActionsCard.qml:172 app/ProgramMembershipPage.qml:138
 #: app/TicketPage.qml:130 app/TripGroupPage.qml:618
 #, kde-format
 msgid "Actions"
 msgstr "Ekintzak"
 
-#: app/ActionsCard.qml:191
+#: app/ActionsCard.qml:190
 #, kde-format
 msgctxt "cancel as in revoking a booking"
 msgid "Cancel Reservation"
 msgstr "Erreserba bertan behera utzi"
 
-#: app/ActionsCard.qml:192
+#: app/ActionsCard.qml:191
 #, kde-format
 msgid "Check-in"
 msgstr "Izen ematea"
 
-#: app/ActionsCard.qml:193
+#: app/ActionsCard.qml:192
 #, kde-format
 msgid "Download"
 msgstr "Zama-jaitsi"
 
-#: app/ActionsCard.qml:194
+#: app/ActionsCard.qml:193
 #, kde-format
 msgctxt "participate in an event"
 msgid "Join"
 msgstr "Elkartu"
 
-#: app/ActionsCard.qml:195
+#: app/ActionsCard.qml:194
 #, kde-format
 msgid "Reserve"
 msgstr "Erreserbatu"
 
-#: app/ActionsCard.qml:196
+#: app/ActionsCard.qml:195
 #, kde-format
 msgid "Change Reservation"
 msgstr "Aldatu erreserba"
 
-#: app/ActionsCard.qml:197
+#: app/ActionsCard.qml:196
 #, kde-format
 msgid "View Reservation"
 msgstr "Ikusi erreserba"
@@ -283,9 +283,7 @@ msgid "Replace"
 msgstr "Ordeztu"
 
 #: app/applicationcontroller.cpp:188
-#, fuzzy, kde-format
-#| msgctxt "weekday, date"
-#| msgid "%1, %2"
+#, kde-format
 msgctxt "geo coordinate"
 msgid "%1, %2"
 msgstr "%1, %2"
@@ -958,12 +956,10 @@ msgid "Seat"
 msgstr "Eserlekua"
 
 #: app/EventPage.qml:126
-#, fuzzy, kde-format
-#| msgctxt "flight departure gate"
-#| msgid "Gate: <b>%1</b>"
+#, kde-format
 msgctxt "event venue seat type"
 msgid "Type: <b>%1</b>"
-msgstr "Atea: <b>%1</b>"
+msgstr "Mota: <b>%1</b>"
 
 #: app/favoritelocationmodel.cpp:130 app/favoritelocationmodel.cpp:150
 #: app/SettingsPage.qml:34
@@ -1142,8 +1138,7 @@ msgid "Boarding time has to be before the departure time."
 msgstr "Hegazkineratzeko ordua irteerako orduaren aurrekoa izan behar da."
 
 #: app/FlightEditor.qml:139
-#, fuzzy, kde-format
-#| msgid "Boarding group"
+#, kde-format
 msgctxt "flight departure boarding group"
 msgid "Boarding group"
 msgstr "Hegazkineratze taldea"
@@ -1396,7 +1391,7 @@ msgstr "Ezabatu txartela"
 msgid "Do you really want to delete this pass?"
 msgstr "Benetan ezabatu nahi duzu txartel hori?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:318 app/main.qml:21 app/main.qml:161
+#: app/gpxexport.cpp:33 app/main.cpp:310 app/main.qml:21 app/main.qml:161
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -2420,23 +2415,23 @@ msgstr "M mota"
 msgid "Type N"
 msgstr "N mota"
 
-#: app/main.cpp:326
+#: app/main.cpp:318
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Bidai-laguntzaile digitala"
 
-#: app/main.cpp:327
+#: app/main.cpp:319
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "Copyright © KDE Komunitatea"
 
-#: app/main.cpp:334
+#: app/main.cpp:326
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Ireki ibilbidea adierazitako orrian"
 
-#: app/main.cpp:339
+#: app/main.cpp:331
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
@@ -3420,44 +3415,34 @@ msgstr "Maiz erabiliena"
 #, kde-format
 msgctxt "location name, locality, region, country"
 msgid "%1, %2, %3, %4"
-msgstr ""
+msgstr "%1, %2, %3, %4"
 
 #: app/StopPickerPage.qml:138 app/StopPickerPage.qml:236
-#, fuzzy, kde-format
-#| msgctxt "weekday, date"
-#| msgid "%1, %2"
+#, kde-format
 msgctxt "location name, locality, country"
 msgid "%1, %2, %3"
-msgstr "%1, %2"
+msgstr "%1, %2, %3"
 
 #: app/StopPickerPage.qml:143 app/StopPickerPage.qml:241
-#, fuzzy, kde-format
-#| msgctxt "weekday, date"
-#| msgid "%1, %2"
+#, kde-format
 msgctxt "location name, region, country"
 msgid "%1, %2, %3"
-msgstr "%1, %2"
+msgstr "%1, %2, %3"
 
 #: app/StopPickerPage.qml:173 app/StopPickerPage.qml:272
-#, fuzzy, kde-format
-#| msgctxt "weekday, date"
-#| msgid "%1, %2"
+#, kde-format
 msgctxt "locality, region, country"
 msgid "%1, %2, %3"
-msgstr "%1, %2"
+msgstr "%1, %2, %3"
 
 #: app/StopPickerPage.qml:178 app/StopPickerPage.qml:277
-#, fuzzy, kde-format
-#| msgctxt "weekday, date"
-#| msgid "%1, %2"
+#, kde-format
 msgctxt "locality, country"
 msgid "%1, %2"
 msgstr "%1, %2"
 
 #: app/StopPickerPage.qml:182 app/StopPickerPage.qml:281
-#, fuzzy, kde-format
-#| msgctxt "weekday, date"
-#| msgid "%1, %2"
+#, kde-format
 msgctxt "region, country"
 msgid "%1, %2"
 msgstr "%1, %2"
