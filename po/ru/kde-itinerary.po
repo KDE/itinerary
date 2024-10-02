@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-01 00:39+0000\n"
+"POT-Creation-Date: 2024-10-02 00:40+0000\n"
 "PO-Revision-Date: 2024-02-09 23:07+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -3702,7 +3702,7 @@ msgid "Go To Now"
 msgstr "Перейти к текущему времени"
 
 #: app/TimelinePage.qml:173 app/TripGroupPage.qml:690
-#: app/TripGroupsPage.qml:122
+#: app/TripGroupsPage.qml:125
 #, fuzzy, kde-format
 #| msgid "Add train trip..."
 msgctxt "@action:button"
@@ -4210,14 +4210,14 @@ msgctxt "List section header"
 msgid "Current trip"
 msgstr "Текущий билет"
 
-#: app/TripGroupsPage.qml:96
+#: app/TripGroupsPage.qml:99
 #, fuzzy, kde-format
 #| msgid "%1 - %2"
 msgctxt "date range"
 msgid "%1 - %2"
 msgstr "%1 — %2"
 
-#: app/TripGroupsPage.qml:97
+#: app/TripGroupsPage.qml:100
 #, kde-format
 msgid "Upcoming"
 msgstr ""

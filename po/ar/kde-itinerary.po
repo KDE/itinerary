@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-01 00:39+0000\n"
+"POT-Creation-Date: 2024-10-02 00:40+0000\n"
 "PO-Revision-Date: 2023-05-11 10:49+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -3587,7 +3587,7 @@ msgid "Go To Now"
 msgstr ""
 
 #: app/TimelinePage.qml:173 app/TripGroupPage.qml:690
-#: app/TripGroupsPage.qml:122
+#: app/TripGroupsPage.qml:125
 #, fuzzy, kde-format
 #| msgid "Restaurant"
 msgctxt "@action:button"
@@ -4087,13 +4087,13 @@ msgctxt "List section header"
 msgid "Current trip"
 msgstr "تذكرة"
 
-#: app/TripGroupsPage.qml:96
+#: app/TripGroupsPage.qml:99
 #, kde-format
 msgctxt "date range"
 msgid "%1 - %2"
 msgstr ""
 
-#: app/TripGroupsPage.qml:97
+#: app/TripGroupsPage.qml:100
 #, kde-format
 msgid "Upcoming"
 msgstr ""

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-01 00:39+0000\n"
+"POT-Creation-Date: 2024-10-02 00:40+0000\n"
 "PO-Revision-Date: 2024-09-28 12:45+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -3565,7 +3565,7 @@ msgid "Go To Now"
 msgstr "Ir a ahora"
 
 #: app/TimelinePage.qml:173 app/TripGroupPage.qml:690
-#: app/TripGroupsPage.qml:122
+#: app/TripGroupsPage.qml:125
 #, kde-format
 msgctxt "@action:button"
 msgid "Add trip"
@@ -4036,13 +4036,13 @@ msgctxt "List section header"
 msgid "Current trip"
 msgstr "Viaje actual"
 
-#: app/TripGroupsPage.qml:96
+#: app/TripGroupsPage.qml:99
 #, kde-format
 msgctxt "date range"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/TripGroupsPage.qml:97
+#: app/TripGroupsPage.qml:100
 #, kde-format
 msgid "Upcoming"
 msgstr "Próximo"
