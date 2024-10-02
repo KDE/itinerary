@@ -12,7 +12,5 @@
         <file alias="qt/qml/org/kde/itinerary/GenericPass.qml">../src/app/GenericPass.qml</file>
         <file alias="qt/qml/org/kde/itinerary/PkPassBarcode.qml">../src/app/PkPassBarcode.qml</file>
         <file alias="qt/qml/org/kde/itinerary/PkPassPage.qml">../src/app/PkPassPage.qml</file>
-        <file alias="images/flight.svg">../src/app/images/flight.svg</file>
-        <file alias="images/train.svg">../src/app/images/train.svg</file>
     </qresource>
 </RCC>

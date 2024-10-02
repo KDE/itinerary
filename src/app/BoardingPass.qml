@@ -9,6 +9,7 @@ import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.pkpass as KPkPass
+import org.kde.kpublictransport as KPublicTransport
 import org.kde.itinerary
 
 Item {
@@ -102,8 +103,10 @@ Item {
                     Layout.alignment: Qt.AlignBottom
                     source: {
                         switch (pass.transitType) {
-                            case KPkPass.BoardingPass.Air: return "qrc:///images/flight.svg"
-                            case KPkPass.BoardingPass.Train: return "qrc:///images/train.svg"
+                            case KPkPass.BoardingPass.Air: return KPublicTransport.LineMode.iconName(KPublicTransport.Line.Air)
+                            case KPkPass.BoardingPass.Boat: return KPublicTransport.LineMode.iconName(KPublicTransport.Line.Ferry)
+                            case KPkPass.BoardingPass.Bus: return KPublicTransport.LineMode.iconName(KPublicTransport.Line.Bus)
+                            case KPkPass.BoardingPass.Train: return KPublicTransport.LineMode.iconName(KPublicTransport.Line.Train)
                         }
                         return "go-next-symbolic";
                     }

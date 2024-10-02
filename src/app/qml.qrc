@@ -4,9 +4,7 @@
 -->
 <RCC>
     <qresource prefix="/">
-        <file>images/flight.svg</file>
         <file>images/foodestablishment.svg</file>
-        <file>images/train.svg</file>
         <file>images/transfer.svg</file>
         <file>images/transport-stop.svg</file>
     </qresource>
