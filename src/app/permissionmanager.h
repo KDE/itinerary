@@ -16,7 +16,6 @@ namespace Permission
         InvalidPermission, // captures QML errors resultin in "0" enum values
         ReadCalendar,
         WriteCalendar,
-        PostNotification,
         Camera,
     };
     Q_ENUM_NS(Permission)

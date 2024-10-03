@@ -23,8 +23,6 @@ static QString permissionName(Permission::Permission p)
             return ManifestPermission::READ_CALENDAR;
         case Permission::WriteCalendar:
             return ManifestPermission::WRITE_CALENDAR;
-        case Permission::PostNotification:  // only for SDK >= 33
-            return ManifestPermission::POST_NOTIFICATIONS;
         case Permission::Camera:
             return ManifestPermission::CAMERA;
     }
@@ -38,10 +36,6 @@ bool PermissionManager::checkPermission(Permission::Permission permission)
         return false;
     }
 #ifdef Q_OS_ANDROID
-    if (permission == Permission::PostNotification && QtAndroidPrivate::androidSdkVersion() < 33) {
-        return true;
-    }
-
     return QtAndroidPrivate::checkPermission(permissionName(permission)).result() == QtAndroidPrivate::PermissionResult::Authorized;
 #else // non-Android
     Q_UNUSED(permission);
