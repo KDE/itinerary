@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-02 00:40+0000\n"
+"POT-Creation-Date: 2024-10-04 00:40+0000\n"
 "PO-Revision-Date: 2024-09-19 21:59+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -957,7 +957,7 @@ msgid "Type: <b>%1</b>"
 msgstr "Tipo: <b>%1</b>"
 
 #: app/favoritelocationmodel.cpp:130 app/favoritelocationmodel.cpp:150
-#: app/SettingsPage.qml:34
+#: app/SettingsPage.qml:35
 #, kde-format
 msgid "Home"
 msgstr "Hejmo"
@@ -972,7 +972,7 @@ msgstr "Laboro"
 msgid "Location %1"
 msgstr "Loko %1"
 
-#: app/FavoriteLocationPage.qml:20 app/SettingsPage.qml:49
+#: app/FavoriteLocationPage.qml:20 app/SettingsPage.qml:50
 #, kde-format
 msgid "Favorite Locations"
 msgstr "Ŝatataj Lokoj"
@@ -3017,27 +3017,27 @@ msgstr "Fintempo"
 msgid "Party size"
 msgstr "Partia grandeco"
 
-#: app/SettingsPage.qml:18
+#: app/SettingsPage.qml:19
 #, kde-format
 msgid "Settings"
 msgstr "Agordoj"
 
-#: app/SettingsPage.qml:38
+#: app/SettingsPage.qml:39
 #, kde-format
 msgid "Home Country"
 msgstr "Hejmlando"
 
-#: app/SettingsPage.qml:57
+#: app/SettingsPage.qml:58
 #, kde-format
 msgid "Online Services"
 msgstr "Retaj Servoj"
 
-#: app/SettingsPage.qml:61
+#: app/SettingsPage.qml:62
 #, kde-format
 msgid "Query Traffic Data"
 msgstr "Pridemandi Trafikajn Datumojn"
 
-#: app/SettingsPage.qml:64
+#: app/SettingsPage.qml:65
 #, kde-format
 msgid ""
 "When enabled, this will query transport provider online services for changes "
@@ -3047,12 +3047,12 @@ msgstr ""
 "transportprovizanto pri ŝanĝoj kiel prokrastoj aŭ pordego kaj "
 "platformoŝanĝoj."
 
-#: app/SettingsPage.qml:70
+#: app/SettingsPage.qml:71
 #, kde-format
 msgid "Use insecure services"
 msgstr "Uzi nesekurajn servojn"
 
-#: app/SettingsPage.qml:73
+#: app/SettingsPage.qml:74
 #, kde-format
 msgid ""
 "Enabling this will also use online services that do not offer transport "
@@ -3063,23 +3063,23 @@ msgstr ""
 "Ĉi tio ne estas rekomendita, sed eble estos neevitebla kiam vi dependas de "
 "vivaj datumoj de certaj provizantoj."
 
-#: app/SettingsPage.qml:81
+#: app/SettingsPage.qml:82
 #, kde-format
 msgid "Public Transport Information Sources…"
 msgstr "Informfontoj pri Publika Transporto…"
 
-#: app/SettingsPage.qml:90 app/WeatherForecastDelegate.qml:83
+#: app/SettingsPage.qml:91 app/WeatherForecastDelegate.qml:83
 #: app/WeatherForecastPage.qml:19
 #, kde-format
 msgid "Weather Forecast"
 msgstr "Veterprognozo"
 
-#: app/SettingsPage.qml:93
+#: app/SettingsPage.qml:94
 #, kde-format
 msgid "Showing weather forecasts will query online services."
 msgstr "Montri veterprognozojn pridemandos retajn servojn."
 
-#: app/SettingsPage.qml:98 app/WeatherForecastPage.qml:36
+#: app/SettingsPage.qml:99 app/WeatherForecastPage.qml:36
 #, kde-format
 msgid ""
 "Using data from <a href=\"https://www.met.no/\">The Norwegian Meteorological "
@@ -3090,12 +3090,12 @@ msgstr ""
 "Instituto</a> sub <a href=\"https://creativecommons.org/licenses/by/4.0 "
 "\">Creative Commons 4.0 BY Internacia</a> permesilo."
 
-#: app/SettingsPage.qml:107
+#: app/SettingsPage.qml:108
 #, kde-format
 msgid "Preload Map Data"
 msgstr "Antaŭŝargi Mapo-Datumon"
 
-#: app/SettingsPage.qml:110
+#: app/SettingsPage.qml:111
 #, kde-format
 msgid ""
 "Enabling this will download maps for all stations and airports for upcoming "
@@ -3104,12 +3104,12 @@ msgstr ""
 "Ebligi tion elŝutos mapojn por ĉiuj stacioj kaj flughavenoj por venontaj "
 "vojaĝoj kiam ligite al Wifi-reto."
 
-#: app/SettingsPage.qml:117
+#: app/SettingsPage.qml:118
 #, kde-format
 msgid "Currency Conversion"
 msgstr "Valuto Konvertiĝo"
 
-#: app/SettingsPage.qml:120
+#: app/SettingsPage.qml:121
 #, kde-format
 msgid ""
 "Enabling this will perform online queries for exchange rates to currencies "
@@ -3118,32 +3118,32 @@ msgstr ""
 "Ebligi ĉi tion plenumos interretajn demandojn pri kurzoj al valutoj ĉe "
 "vojaĝcellokoj."
 
-#: app/SettingsPage.qml:126
+#: app/SettingsPage.qml:127
 #, kde-format
 msgid "Wikimedia Online Content"
 msgstr "Vikimedia Reta Enhavo"
 
-#: app/SettingsPage.qml:129
+#: app/SettingsPage.qml:130
 #, kde-format
 msgid "Use additional online content from Wikimedia and Wikidata."
 msgstr "Uzi aldonan retenhavon de Wikimedia kaj Wikidata."
 
-#: app/SettingsPage.qml:136
+#: app/SettingsPage.qml:137
 #, kde-format
 msgid "Transfer Assistant"
 msgstr "Transiga Asistanto"
 
-#: app/SettingsPage.qml:140
+#: app/SettingsPage.qml:141
 #, kde-format
 msgid "Automatically add transfers"
 msgstr "Aŭtomate aldoni translokigojn"
 
-#: app/SettingsPage.qml:148
+#: app/SettingsPage.qml:149
 #, kde-format
 msgid "Automatically fill transfers"
 msgstr "Aŭtomate plenigi translokigojn"
 
-#: app/SettingsPage.qml:149
+#: app/SettingsPage.qml:150
 #, kde-format
 msgid ""
 "When enabled, this will query transport provider online services "
@@ -3152,83 +3152,83 @@ msgstr ""
 "Kiam ĝi estas ebligita, ĉi tio demandos retajn servojn de "
 "transportprovizanto aŭtomate por translokigaj informoj."
 
-#: app/SettingsPage.qml:160
+#: app/SettingsPage.qml:161
 #, kde-format
 msgid "Notifications"
 msgstr "Sciigoj"
 
-#: app/SettingsPage.qml:165
+#: app/SettingsPage.qml:166
 #, kde-format
 msgid "Configure Notifications…"
 msgstr "Agordi sciigojn…"
 
-#: app/SettingsPage.qml:174
+#: app/SettingsPage.qml:175
 #, kde-format
 msgid "Show notifications on lock screen"
 msgstr "Montri sciigojn sur ŝlosita ekrano"
 
-#: app/SettingsPage.qml:184 app/SettingsPage.qml:212
+#: app/SettingsPage.qml:185 app/SettingsPage.qml:213
 #, kde-format
 msgid "Request permissions…"
 msgstr "Peti permesojn…"
 
-#: app/SettingsPage.qml:185
+#: app/SettingsPage.qml:186
 #, kde-format
 msgid "Additional permissions are required to show notifications."
 msgstr "Pliaj permesoj estas bezonataj por montri sciigojn."
 
-#: app/SettingsPage.qml:194
+#: app/SettingsPage.qml:195
 #, kde-format
 msgid "Notification permissions are available"
 msgstr "Sciigaj permesoj haveblas"
 
-#: app/SettingsPage.qml:195 app/SettingsPage.qml:237
+#: app/SettingsPage.qml:196 app/SettingsPage.qml:238
 #, kde-format
 msgid "No further action required."
 msgstr "Ne necesas plua ago."
 
-#: app/SettingsPage.qml:208
+#: app/SettingsPage.qml:209
 #, kde-format
 msgid "Onboard Status"
 msgstr "Enŝipa Statuso"
 
-#: app/SettingsPage.qml:213
+#: app/SettingsPage.qml:214
 #, kde-format
 msgid "Additional permissions are required to access the Wi-Fi status."
 msgstr "Pliaj permesoj estas bezonataj por aliri la WiFi-statuson."
 
-#: app/SettingsPage.qml:224
+#: app/SettingsPage.qml:225
 #, kde-format
 msgid "Wi-Fi access for onboard information is available."
 msgstr "Wi-Fi-aliro por enŝipaj informoj haveblas."
 
-#: app/SettingsPage.qml:226
+#: app/SettingsPage.qml:227
 #, kde-format
 msgid "Wi-Fi is not enabled"
 msgstr "Wi-Fi ne estas ebligita"
 
-#: app/SettingsPage.qml:228
+#: app/SettingsPage.qml:229
 #, kde-format
 msgid "Location service is not enabled"
 msgstr "Lokservo ne estas ebligita"
 
-#: app/SettingsPage.qml:230
+#: app/SettingsPage.qml:231
 #, kde-format
 msgid "Wi-Fi access is not available on this system"
 msgstr "Wifi-aliro ne disponeblas en ĉi tiu sistemo"
 
-#: app/SettingsPage.qml:239
+#: app/SettingsPage.qml:240
 #, kde-format
 msgid "Enable Wi-Fi on your system to access onboard information."
 msgstr "Ebligu Wi-Fi en via sistemo por aliri enŝipajn informojn."
 
-#: app/SettingsPage.qml:241
+#: app/SettingsPage.qml:242
 #, kde-format
 msgid ""
 "Enable the location service on your device to access onboard information."
 msgstr "Ebligu la lokan servon en via aparato por aliri enŝipajn informojn."
 
-#: app/SettingsPage.qml:243
+#: app/SettingsPage.qml:244
 #, kde-format
 msgid ""
 "Onboard information are unfortunately not supported on your device at this "
@@ -3236,47 +3236,47 @@ msgid ""
 msgstr ""
 "Enŝipigitaj informoj bedaŭrinde ne estas subtenataj en via aparato nuntempe."
 
-#: app/SettingsPage.qml:275
+#: app/SettingsPage.qml:276
 #, kde-format
 msgid "Matrix Integration"
 msgstr "Matrica Integriĝo"
 
-#: app/SettingsPage.qml:282 app/SettingsPage.qml:326
+#: app/SettingsPage.qml:283 app/SettingsPage.qml:327
 #, kde-format
 msgid "Logged in as %1"
 msgstr "Ensalutinta kiel %1"
 
-#: app/SettingsPage.qml:286
+#: app/SettingsPage.qml:287
 #, kde-format
 msgid "Synchronize rooms"
 msgstr "Sinkronigi ĉambrojn"
 
-#: app/SettingsPage.qml:293
+#: app/SettingsPage.qml:294
 #, kde-format
 msgid "Matrix ID"
 msgstr "Matrica ID"
 
-#: app/SettingsPage.qml:302
+#: app/SettingsPage.qml:303
 #, kde-format
 msgid "Password"
 msgstr "Pasvorto"
 
-#: app/SettingsPage.qml:309
+#: app/SettingsPage.qml:310
 #, kde-format
 msgid "Log out"
 msgstr "Elsaluti"
 
-#: app/SettingsPage.qml:309
+#: app/SettingsPage.qml:310
 #, kde-format
 msgid "Log in"
 msgstr "Ensaluti"
 
-#: app/SettingsPage.qml:316
+#: app/SettingsPage.qml:317
 #, kde-format
 msgid "Traewelling Integration"
 msgstr "Traewelling-Integriĝo"
 
-#: app/SettingsPage.qml:321
+#: app/SettingsPage.qml:322
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -3289,27 +3289,27 @@ msgstr ""
 "vojaĝojn. Por pliaj informoj, vizitu visit <a href=\"https://traewelling.de"
 "\">traewelling.de</a>"
 
-#: app/SettingsPage.qml:329
+#: app/SettingsPage.qml:330
 #, kde-format
 msgid "Login"
 msgstr "Ensaluti"
 
-#: app/SettingsPage.qml:334
+#: app/SettingsPage.qml:335
 #, kde-format
 msgid "Logout"
 msgstr "Elsaluti"
 
-#: app/SettingsPage.qml:341
+#: app/SettingsPage.qml:342
 #, kde-format
 msgid "Contributing"
 msgstr "Kontribuado"
 
-#: app/SettingsPage.qml:345
+#: app/SettingsPage.qml:346
 #, kde-format
 msgid "I contribute to OpenStreetMap"
 msgstr "Mi kontribuas al OpenStreetMap"
 
-#: app/SettingsPage.qml:346
+#: app/SettingsPage.qml:347
 #, kde-format
 msgid "Enables OSM editing options."
 msgstr "Ebligas OSM-redaktajn opciojn."

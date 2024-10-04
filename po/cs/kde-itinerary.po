@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-02 00:40+0000\n"
+"POT-Creation-Date: 2024-10-04 00:40+0000\n"
 "PO-Revision-Date: 2024-09-20 15:15+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -958,7 +958,7 @@ msgid "Type: <b>%1</b>"
 msgstr "Typ: <b>%1</b>"
 
 #: app/favoritelocationmodel.cpp:130 app/favoritelocationmodel.cpp:150
-#: app/SettingsPage.qml:34
+#: app/SettingsPage.qml:35
 #, kde-format
 msgid "Home"
 msgstr "Domů"
@@ -973,7 +973,7 @@ msgstr "Práce"
 msgid "Location %1"
 msgstr "Umístění %1"
 
-#: app/FavoriteLocationPage.qml:20 app/SettingsPage.qml:49
+#: app/FavoriteLocationPage.qml:20 app/SettingsPage.qml:50
 #, kde-format
 msgid "Favorite Locations"
 msgstr "Oblíbená místa"
@@ -3020,27 +3020,27 @@ msgstr "Čas ukončení"
 msgid "Party size"
 msgstr "Velikost skupiny"
 
-#: app/SettingsPage.qml:18
+#: app/SettingsPage.qml:19
 #, kde-format
 msgid "Settings"
 msgstr "Nastavení"
 
-#: app/SettingsPage.qml:38
+#: app/SettingsPage.qml:39
 #, kde-format
 msgid "Home Country"
 msgstr "Země (doma)"
 
-#: app/SettingsPage.qml:57
+#: app/SettingsPage.qml:58
 #, kde-format
 msgid "Online Services"
 msgstr "Služby online"
 
-#: app/SettingsPage.qml:61
+#: app/SettingsPage.qml:62
 #, kde-format
 msgid "Query Traffic Data"
 msgstr "Zjišťovat data o dopravě"
 
-#: app/SettingsPage.qml:64
+#: app/SettingsPage.qml:65
 #, kde-format
 msgid ""
 "When enabled, this will query transport provider online services for changes "
@@ -3049,12 +3049,12 @@ msgstr ""
 "Pokud povoleno, bude hledat informace o změnách v dopravě jako je zpoždění "
 "nebo změny nástupišť online."
 
-#: app/SettingsPage.qml:70
+#: app/SettingsPage.qml:71
 #, kde-format
 msgid "Use insecure services"
 msgstr "Použít nezabezpečené služby"
 
-#: app/SettingsPage.qml:73
+#: app/SettingsPage.qml:74
 #, kde-format
 msgid ""
 "Enabling this will also use online services that do not offer transport "
@@ -3065,23 +3065,23 @@ msgstr ""
 "přenosu. To není doporučeno, ale pokud budete potřebovat data konkrétním "
 "poskytovatelů, může to být nezbytné."
 
-#: app/SettingsPage.qml:81
+#: app/SettingsPage.qml:82
 #, kde-format
 msgid "Public Transport Information Sources…"
 msgstr "Zdroje informací o veřejné dopravě…"
 
-#: app/SettingsPage.qml:90 app/WeatherForecastDelegate.qml:83
+#: app/SettingsPage.qml:91 app/WeatherForecastDelegate.qml:83
 #: app/WeatherForecastPage.qml:19
 #, kde-format
 msgid "Weather Forecast"
 msgstr "Předpověď počasí"
 
-#: app/SettingsPage.qml:93
+#: app/SettingsPage.qml:94
 #, kde-format
 msgid "Showing weather forecasts will query online services."
 msgstr "Pro zobrazení předpovědi počasí budou dotazovány služby online."
 
-#: app/SettingsPage.qml:98 app/WeatherForecastPage.qml:36
+#: app/SettingsPage.qml:99 app/WeatherForecastPage.qml:36
 #, kde-format
 msgid ""
 "Using data from <a href=\"https://www.met.no/\">The Norwegian Meteorological "
@@ -3092,12 +3092,12 @@ msgstr ""
 "Institutu</a> pod licencí <a href=\"https://creativecommons.org/licenses/"
 "by/4.0\">Creative Commons 4.0 BY International</a>."
 
-#: app/SettingsPage.qml:107
+#: app/SettingsPage.qml:108
 #, kde-format
 msgid "Preload Map Data"
 msgstr "Přednačítat data map"
 
-#: app/SettingsPage.qml:110
+#: app/SettingsPage.qml:111
 #, kde-format
 msgid ""
 "Enabling this will download maps for all stations and airports for upcoming "
@@ -3106,44 +3106,44 @@ msgstr ""
 "Pokud zapnuto, data map všech stanic a letišť nadcházejících výletů budou "
 "automaticky stahována pokud budete na síti WiFi."
 
-#: app/SettingsPage.qml:117
+#: app/SettingsPage.qml:118
 #, kde-format
 msgid "Currency Conversion"
 msgstr "Převod měn"
 
-#: app/SettingsPage.qml:120
+#: app/SettingsPage.qml:121
 #, kde-format
 msgid ""
 "Enabling this will perform online queries for exchange rates to currencies "
 "at travel destinations."
 msgstr ""
 
-#: app/SettingsPage.qml:126
+#: app/SettingsPage.qml:127
 #, kde-format
 msgid "Wikimedia Online Content"
 msgstr ""
 
-#: app/SettingsPage.qml:129
+#: app/SettingsPage.qml:130
 #, kde-format
 msgid "Use additional online content from Wikimedia and Wikidata."
 msgstr ""
 
-#: app/SettingsPage.qml:136
+#: app/SettingsPage.qml:137
 #, kde-format
 msgid "Transfer Assistant"
 msgstr "Pomocník s přestupy"
 
-#: app/SettingsPage.qml:140
+#: app/SettingsPage.qml:141
 #, kde-format
 msgid "Automatically add transfers"
 msgstr "Automaticky přidávat přestupy"
 
-#: app/SettingsPage.qml:148
+#: app/SettingsPage.qml:149
 #, kde-format
 msgid "Automatically fill transfers"
 msgstr "Automaticky vyplňovat přestupy"
 
-#: app/SettingsPage.qml:149
+#: app/SettingsPage.qml:150
 #, kde-format
 msgid ""
 "When enabled, this will query transport provider online services "
@@ -3152,130 +3152,130 @@ msgstr ""
 "Pokud povoleno, bude se automaticky dotazovat služeb online pro zjištění "
 "informací o přestupech."
 
-#: app/SettingsPage.qml:160
+#: app/SettingsPage.qml:161
 #, kde-format
 msgid "Notifications"
 msgstr "Upozornění"
 
-#: app/SettingsPage.qml:165
+#: app/SettingsPage.qml:166
 #, kde-format
 msgid "Configure Notifications…"
 msgstr "Nastavit upozornění…"
 
-#: app/SettingsPage.qml:174
+#: app/SettingsPage.qml:175
 #, kde-format
 msgid "Show notifications on lock screen"
 msgstr "Zobrazit upozornění na uzamčené obrazovce"
 
-#: app/SettingsPage.qml:184 app/SettingsPage.qml:212
+#: app/SettingsPage.qml:185 app/SettingsPage.qml:213
 #, kde-format
 msgid "Request permissions…"
 msgstr "Vyžádat povolení…"
 
-#: app/SettingsPage.qml:185
+#: app/SettingsPage.qml:186
 #, kde-format
 msgid "Additional permissions are required to show notifications."
 msgstr ""
 
-#: app/SettingsPage.qml:194
+#: app/SettingsPage.qml:195
 #, kde-format
 msgid "Notification permissions are available"
 msgstr ""
 
-#: app/SettingsPage.qml:195 app/SettingsPage.qml:237
+#: app/SettingsPage.qml:196 app/SettingsPage.qml:238
 #, kde-format
 msgid "No further action required."
 msgstr ""
 
-#: app/SettingsPage.qml:208
+#: app/SettingsPage.qml:209
 #, kde-format
 msgid "Onboard Status"
 msgstr ""
 
-#: app/SettingsPage.qml:213
+#: app/SettingsPage.qml:214
 #, kde-format
 msgid "Additional permissions are required to access the Wi-Fi status."
 msgstr "Pro přístup ke stavu Wi-Fi je potřeba další povolení."
 
-#: app/SettingsPage.qml:224
+#: app/SettingsPage.qml:225
 #, kde-format
 msgid "Wi-Fi access for onboard information is available."
 msgstr ""
 
-#: app/SettingsPage.qml:226
+#: app/SettingsPage.qml:227
 #, kde-format
 msgid "Wi-Fi is not enabled"
 msgstr "Wi-Fi není povoleno"
 
-#: app/SettingsPage.qml:228
+#: app/SettingsPage.qml:229
 #, kde-format
 msgid "Location service is not enabled"
 msgstr ""
 
-#: app/SettingsPage.qml:230
+#: app/SettingsPage.qml:231
 #, kde-format
 msgid "Wi-Fi access is not available on this system"
 msgstr ""
 
-#: app/SettingsPage.qml:239
+#: app/SettingsPage.qml:240
 #, kde-format
 msgid "Enable Wi-Fi on your system to access onboard information."
 msgstr ""
 
-#: app/SettingsPage.qml:241
+#: app/SettingsPage.qml:242
 #, kde-format
 msgid ""
 "Enable the location service on your device to access onboard information."
 msgstr ""
 
-#: app/SettingsPage.qml:243
+#: app/SettingsPage.qml:244
 #, kde-format
 msgid ""
 "Onboard information are unfortunately not supported on your device at this "
 "time."
 msgstr ""
 
-#: app/SettingsPage.qml:275
+#: app/SettingsPage.qml:276
 #, kde-format
 msgid "Matrix Integration"
 msgstr "Integrace Matrix"
 
-#: app/SettingsPage.qml:282 app/SettingsPage.qml:326
+#: app/SettingsPage.qml:283 app/SettingsPage.qml:327
 #, kde-format
 msgid "Logged in as %1"
 msgstr "Přihlášen jako %1"
 
-#: app/SettingsPage.qml:286
+#: app/SettingsPage.qml:287
 #, kde-format
 msgid "Synchronize rooms"
 msgstr "Synchronizovat místnosti"
 
-#: app/SettingsPage.qml:293
+#: app/SettingsPage.qml:294
 #, kde-format
 msgid "Matrix ID"
 msgstr ""
 
-#: app/SettingsPage.qml:302
+#: app/SettingsPage.qml:303
 #, kde-format
 msgid "Password"
 msgstr "Heslo"
 
-#: app/SettingsPage.qml:309
+#: app/SettingsPage.qml:310
 #, kde-format
 msgid "Log out"
 msgstr "Odhlásit se"
 
-#: app/SettingsPage.qml:309
+#: app/SettingsPage.qml:310
 #, kde-format
 msgid "Log in"
 msgstr "Přihlásit"
 
-#: app/SettingsPage.qml:316
+#: app/SettingsPage.qml:317
 #, kde-format
 msgid "Traewelling Integration"
 msgstr "Integrace Traewelling"
 
-#: app/SettingsPage.qml:321
+#: app/SettingsPage.qml:322
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -3284,27 +3284,27 @@ msgid ""
 "information, visit <a href=\"https://traewelling.de\">traewelling.de</a>"
 msgstr ""
 
-#: app/SettingsPage.qml:329
+#: app/SettingsPage.qml:330
 #, kde-format
 msgid "Login"
 msgstr "Přihlášení"
 
-#: app/SettingsPage.qml:334
+#: app/SettingsPage.qml:335
 #, kde-format
 msgid "Logout"
 msgstr "Odhlásit se"
 
-#: app/SettingsPage.qml:341
+#: app/SettingsPage.qml:342
 #, kde-format
 msgid "Contributing"
 msgstr "Příspěvky"
 
-#: app/SettingsPage.qml:345
+#: app/SettingsPage.qml:346
 #, kde-format
 msgid "I contribute to OpenStreetMap"
 msgstr ""
 
-#: app/SettingsPage.qml:346
+#: app/SettingsPage.qml:347
 #, kde-format
 msgid "Enables OSM editing options."
 msgstr ""
