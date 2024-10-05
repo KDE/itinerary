@@ -322,7 +322,6 @@ if (ANDROID)
         map-globe
         map-gnomonic
         map-symbolic
-        mark-location-symbolic
         media-playback-playing
         meeting-attending
         merge

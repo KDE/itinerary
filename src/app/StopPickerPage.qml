@@ -152,16 +152,7 @@ Kirigami.ScrollablePage {
             contentItem: Kirigami.IconTitleSubtitle {
                 Accessible.ignored: true
 
-                icon.name: {
-                    switch (model.location.type) {
-                        case Location.Place:
-                            return "mark-location-symbolic"
-                        case Location.Stop:
-                            return "qrc:/images/transport-stop.svg"
-                        default:
-                            return ""
-                    }
-                }
+                icon.name: model.location.iconName
 
                 title: model.location.name
 
@@ -189,16 +180,7 @@ Kirigami.ScrollablePage {
                     }
                 }
             }
-            icon.name: {
-                switch (model.location.type) {
-                    case Location.Place:
-                        return "mark-location-symbolic"
-                    case Location.Stop:
-                        return "qrc:/images/transport-stop.svg"
-                    default:
-                        return ""
-                }
-            }
+            icon.name: model.location.iconName
 
             actions: [
                 Kirigami.Action {
@@ -251,16 +233,7 @@ Kirigami.ScrollablePage {
             contentItem: Kirigami.IconTitleSubtitle {
                 Accessible.ignored: true
 
-                icon.name: {
-                    switch (model.location.type) {
-                        case Location.Place:
-                            return "mark-location-symbolic"
-                        case Location.Stop:
-                            return "qrc:/images/transport-stop.svg"
-                        default:
-                            return ""
-                    }
-                }
+                icon.name: model.location.iconName
 
                 title: model.location.name
 
