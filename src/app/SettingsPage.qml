@@ -187,9 +187,10 @@ FormCard.FormCardPage {
             icon.name: "documentinfo"
             icon.color: Kirigami.Theme.neutralTextColor
             visible: !notificationCard.hasNotificationPermission
-            onClicked: KNotification.NotificationPermission.requestPermission(function() {
-                notificationCard.hasNotificationPermission = KNotification.NotificationPermission.checkPermission();
-            })
+            function permissionCallback(success) {
+                notificationCard.hasNotificationPermission = success;
+            }
+            onClicked: KNotification.NotificationPermission.requestPermission(permissionCallback)
         }
         FormCard.FormTextDelegate {
             text: i18n("Notification permissions are available")
