@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-04 00:40+0000\n"
+"POT-Creation-Date: 2024-10-06 00:40+0000\n"
 "PO-Revision-Date: 2024-09-29 05:14+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -3172,7 +3172,7 @@ msgstr "Configura le notifiche..."
 msgid "Show notifications on lock screen"
 msgstr "Mostra nelle notifiche sulla schermata di blocco"
 
-#: app/SettingsPage.qml:185 app/SettingsPage.qml:213
+#: app/SettingsPage.qml:185 app/SettingsPage.qml:214
 #, kde-format
 msgid "Request permissions…"
 msgstr "Richiedi i permessi…"
@@ -3182,53 +3182,53 @@ msgstr "Richiedi i permessi…"
 msgid "Additional permissions are required to show notifications."
 msgstr "Per mostrare le notifiche sono necessari permessi aggiuntivi."
 
-#: app/SettingsPage.qml:195
+#: app/SettingsPage.qml:196
 #, kde-format
 msgid "Notification permissions are available"
 msgstr "Sono disponibili i permessi di notifica"
 
-#: app/SettingsPage.qml:196 app/SettingsPage.qml:238
+#: app/SettingsPage.qml:197 app/SettingsPage.qml:239
 #, kde-format
 msgid "No further action required."
 msgstr "Non sono necessarie ulteriori azioni."
 
-#: app/SettingsPage.qml:209
+#: app/SettingsPage.qml:210
 #, kde-format
 msgid "Onboard Status"
 msgstr "Stato di imbarco"
 
-#: app/SettingsPage.qml:214
+#: app/SettingsPage.qml:215
 #, kde-format
 msgid "Additional permissions are required to access the Wi-Fi status."
 msgstr "Sono necessari permessi aggiuntivi per accedere allo stato del Wi-Fi."
 
-#: app/SettingsPage.qml:225
+#: app/SettingsPage.qml:226
 #, kde-format
 msgid "Wi-Fi access for onboard information is available."
 msgstr "È disponibile l'accesso Wi-Fi per le informazioni di imbarco."
 
-#: app/SettingsPage.qml:227
+#: app/SettingsPage.qml:228
 #, kde-format
 msgid "Wi-Fi is not enabled"
 msgstr "Il Wi-Fi non è abilitato"
 
-#: app/SettingsPage.qml:229
+#: app/SettingsPage.qml:230
 #, kde-format
 msgid "Location service is not enabled"
 msgstr "Il servizio di posizione non è abilitato"
 
-#: app/SettingsPage.qml:231
+#: app/SettingsPage.qml:232
 #, kde-format
 msgid "Wi-Fi access is not available on this system"
 msgstr "L'accesso Wi-Fi non è disponibile su questo sistema"
 
-#: app/SettingsPage.qml:240
+#: app/SettingsPage.qml:241
 #, kde-format
 msgid "Enable Wi-Fi on your system to access onboard information."
 msgstr ""
 "Abilita il Wi-Fi sul tuo sistema per accedere alle informazioni di imbarco."
 
-#: app/SettingsPage.qml:242
+#: app/SettingsPage.qml:243
 #, kde-format
 msgid ""
 "Enable the location service on your device to access onboard information."
@@ -3236,7 +3236,7 @@ msgstr ""
 "Abilita il servizio di localizzazione sul tuo dispositivo per accedere alle "
 "informazioni di bordo."
 
-#: app/SettingsPage.qml:244
+#: app/SettingsPage.qml:245
 #, kde-format
 msgid ""
 "Onboard information are unfortunately not supported on your device at this "
@@ -3245,47 +3245,47 @@ msgstr ""
 "Le informazioni di imbarco purtroppo non sono attualmente supportate sul tuo "
 "dispositivo."
 
-#: app/SettingsPage.qml:276
+#: app/SettingsPage.qml:277
 #, kde-format
 msgid "Matrix Integration"
 msgstr "Integrazione Matrix"
 
-#: app/SettingsPage.qml:283 app/SettingsPage.qml:327
+#: app/SettingsPage.qml:284 app/SettingsPage.qml:328
 #, kde-format
 msgid "Logged in as %1"
 msgstr "Accesso eseguito come %1"
 
-#: app/SettingsPage.qml:287
+#: app/SettingsPage.qml:288
 #, kde-format
 msgid "Synchronize rooms"
 msgstr "Sincronizza le stanze"
 
-#: app/SettingsPage.qml:294
+#: app/SettingsPage.qml:295
 #, kde-format
 msgid "Matrix ID"
 msgstr "ID Matrix"
 
-#: app/SettingsPage.qml:303
+#: app/SettingsPage.qml:304
 #, kde-format
 msgid "Password"
 msgstr "Password"
 
-#: app/SettingsPage.qml:310
+#: app/SettingsPage.qml:311
 #, kde-format
 msgid "Log out"
 msgstr "Esci"
 
-#: app/SettingsPage.qml:310
+#: app/SettingsPage.qml:311
 #, kde-format
 msgid "Log in"
 msgstr "Accedi"
 
-#: app/SettingsPage.qml:317
+#: app/SettingsPage.qml:318
 #, kde-format
 msgid "Traewelling Integration"
 msgstr "Integrazione Traewelling"
 
-#: app/SettingsPage.qml:322
+#: app/SettingsPage.qml:323
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -3298,27 +3298,27 @@ msgstr ""
 "pubblici. Per maggiori informazioni, visita <a href=\"https://traewelling.de"
 "\">traewelling.de</a>"
 
-#: app/SettingsPage.qml:330
+#: app/SettingsPage.qml:331
 #, kde-format
 msgid "Login"
 msgstr "Accedi"
 
-#: app/SettingsPage.qml:335
+#: app/SettingsPage.qml:336
 #, kde-format
 msgid "Logout"
 msgstr "Chiudi sessione"
 
-#: app/SettingsPage.qml:342
+#: app/SettingsPage.qml:343
 #, kde-format
 msgid "Contributing"
 msgstr "Contribuire"
 
-#: app/SettingsPage.qml:346
+#: app/SettingsPage.qml:347
 #, kde-format
 msgid "I contribute to OpenStreetMap"
 msgstr "Contribuisco a OpenStreetMap"
 
-#: app/SettingsPage.qml:347
+#: app/SettingsPage.qml:348
 #, kde-format
 msgid "Enables OSM editing options."
 msgstr "Abilita le opzioni di modifica OSM."
@@ -3412,48 +3412,48 @@ msgstr "Usati più di recente"
 msgid "Most often used"
 msgstr "Usati più spesso"
 
-#: app/StopPickerPage.qml:132 app/StopPickerPage.qml:230
+#: app/StopPickerPage.qml:132 app/StopPickerPage.qml:212
 #, kde-format
 msgctxt "location name, locality, region, country"
 msgid "%1, %2, %3, %4"
 msgstr "%1, %2, %3, %4"
 
-#: app/StopPickerPage.qml:138 app/StopPickerPage.qml:236
+#: app/StopPickerPage.qml:138 app/StopPickerPage.qml:218
 #, kde-format
 msgctxt "location name, locality, country"
 msgid "%1, %2, %3"
 msgstr "%1, %2, %3"
 
-#: app/StopPickerPage.qml:143 app/StopPickerPage.qml:241
+#: app/StopPickerPage.qml:143 app/StopPickerPage.qml:223
 #, kde-format
 msgctxt "location name, region, country"
 msgid "%1, %2, %3"
 msgstr "%1, %2, %3"
 
-#: app/StopPickerPage.qml:173 app/StopPickerPage.qml:272
+#: app/StopPickerPage.qml:164 app/StopPickerPage.qml:245
 #, kde-format
 msgctxt "locality, region, country"
 msgid "%1, %2, %3"
 msgstr "%1, %2, %3"
 
-#: app/StopPickerPage.qml:178 app/StopPickerPage.qml:277
+#: app/StopPickerPage.qml:169 app/StopPickerPage.qml:250
 #, kde-format
 msgctxt "locality, country"
 msgid "%1, %2"
 msgstr "%1, %2"
 
-#: app/StopPickerPage.qml:182 app/StopPickerPage.qml:281
+#: app/StopPickerPage.qml:173 app/StopPickerPage.qml:254
 #, kde-format
 msgctxt "region, country"
 msgid "%1, %2"
 msgstr "%1, %2"
 
-#: app/StopPickerPage.qml:206
+#: app/StopPickerPage.qml:188
 #, kde-format
 msgid "Remove history entry"
 msgstr "Rimuovi la voce della cronologia"
 
-#: app/StopPickerPage.qml:320
+#: app/StopPickerPage.qml:293
 #, kde-format
 msgid "No locations found"
 msgstr "Nessuna posizione trovata"
