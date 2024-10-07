@@ -11,6 +11,8 @@ import org.qtproject.qt.android.bindings.QtActivity;
 import androidx.core.content.FileProvider;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.database.Cursor;
 import android.net.Uri;
 import android.provider.CalendarContract;
@@ -25,12 +27,37 @@ public class Activity extends QtActivity
 {
     private static final String TAG = "org.kde.itinerary";
 
+    private Configuration m_prevConfig;
+
     public native void importFromIntent(Intent data);
+    public native void localeChanged();
+
+    @Override
+    protected void onResume () {
+        super.onResume();
+        m_prevConfig = new Configuration(getResources().getConfiguration());
+    }
 
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         importFromIntent(intent);
+    }
+
+    // ### temporary until this is upstream in Qt
+    @Override
+    public void onConfigurationChanged(Configuration newConfig)
+    {
+        Log.i(TAG, "configuration changed");
+        super.onConfigurationChanged(newConfig);
+
+        int diff = newConfig.diff(m_prevConfig);
+        if ((diff & ActivityInfo.CONFIG_LOCALE) != 0) {
+            Log.i(TAG, "locale changed");
+            localeChanged();
+        }
+
+        m_prevConfig = new Configuration(newConfig);
     }
 
     public Uri openDocument(String filePath)

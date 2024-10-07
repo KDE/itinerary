@@ -36,8 +36,18 @@ static void importFromIntent(JNIEnv *env, jobject that, jobject data)
     IntentHandlerPrivate::onNewIntent(KAndroidExtras::Jni::fromHandle<KAndroidExtras::Intent>(data));
 }
 
+// ### temporary until this is upstream in Qt
+static void localeChanged(JNIEnv *env, jobject that)
+{
+    Q_UNUSED(that)
+    Q_UNUSED(env)
+    QCoreApplication::postEvent(QCoreApplication::instance(), new QEvent(QEvent::LocaleChange));
+    QCoreApplication::postEvent(QCoreApplication::instance(), new QEvent(QEvent::LanguageChange));
+}
+
 static const JNINativeMethod methods[] = {
     {"importFromIntent", "(Landroid/content/Intent;)V", (void*)importFromIntent},
+    {"localeChanged", "()V", (void*)localeChanged},
 };
 
 Q_DECL_EXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void*)
