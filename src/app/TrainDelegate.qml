@@ -25,16 +25,20 @@ TimelineDelegate {
     }
 
     headerItem: RowLayout {
+        spacing: Kirigami.Units.smallSpacing
+
         QQC2.Label {
             id: headerLabel
             text: {
                 if (reservationFor.trainName || reservationFor.trainNumber) {
-                    return reservationFor.trainName + " " + reservationFor.trainNumber
+                    return reservationFor.trainName + " " + reservationFor.trainNumber;
                 }
                 return i18n("%1 to %2", reservationFor.departureStation.name, reservationFor.arrivalStation.name);
             }
             color: root.headerTextColor
             elide: Text.ElideRight
+            leftPadding: 0
+
             Accessible.ignored: true
         }
         QQC2.Label {
@@ -60,30 +64,38 @@ TimelineDelegate {
 
         RowLayout {
             width: parent.width
+            spacing: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
+
             ColumnLayout{
                 spacing: 0
                 JourneySectionStopDelegateLineSegment {
-                    Layout.fillHeight: true
                     lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
                     isDeparture: true
+
+                    Layout.fillHeight: true
                 }
                 JourneySectionStopDelegateLineSegment {
                     visible: departureCountryLayout.visible
-                    Layout.fillHeight: true
                     lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
                     hasStop: false
+
+                    Layout.fillHeight: true
                 }
             }
 
-            ColumnLayout{
-                Layout.bottomMargin:  Kirigami.Units.largeSpacing
+            ColumnLayout {
+                spacing: 0
 
-                spacing:0
+                Layout.bottomMargin:  Kirigami.Units.largeSpacing
                 Layout.fillHeight: true
                 Layout.fillWidth: true
+
                 RowLayout {
+                    spacing: Kirigami.Units.smallSpacing
+
                     Layout.fillHeight: true
                     Layout.fillWidth: true
+
                     RowLayout {
                         Layout.minimumWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
                         QQC2.Label {
@@ -142,6 +154,7 @@ TimelineDelegate {
         RowLayout {
             visible: root.hasSeat
             width: parent.width
+            spacing: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
             JourneySectionStopDelegateLineSegment {
                 Layout.fillHeight: true
                 lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
@@ -173,6 +186,7 @@ TimelineDelegate {
 
         RowLayout {
             width: parent.width
+            spacing: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
             JourneySectionStopDelegateLineSegment {
                 Layout.fillHeight: true
                 lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
@@ -219,6 +233,7 @@ TimelineDelegate {
 
                 clip: true
                 visible: false
+                spacing: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
                 onHiddenChanged:
                     if (!hidden) {
                         visible = true
@@ -278,6 +293,7 @@ TimelineDelegate {
 
         RowLayout {
             width: parent.width
+            spacing: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
             ColumnLayout {
                 spacing: 0
                 JourneySectionStopDelegateLineSegment {

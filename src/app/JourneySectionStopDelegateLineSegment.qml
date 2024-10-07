@@ -20,14 +20,14 @@ Item {
     property bool isDeparture: false
     property bool isArrival: false
     property color lineColor: Kirigami.Theme.textColor
-    property int lineWidth: Kirigami.Units.smallSpacing *4
+    property int lineWidth: Kirigami.Units.smallSpacing * 4
 
     property real leadingProgress: NaN
     property real trailingProgress: NaN
     property bool hasStop: true
     property bool showStop: lineSegment.hasStop
 
-    implicitWidth: lineSegment.lineWidth * 2
+    implicitWidth: Kirigami.Units.iconSizes.smallMedium
 
     readonly property real leadingLineLength: line.height / 2
     readonly property real trailingLineLength: line.height / 2
@@ -36,7 +36,7 @@ Item {
 
     Kirigami.ShadowedRectangle {
         id: line
-        x: lineSegment.lineWidth / 2
+        x: Math.round((lineSegment.implicitWidth - lineSegment.lineWidth) / 2)
         y: isDeparture? parent.height-height:0
         width: lineSegment.lineWidth
         color: lineSegment.lineColor

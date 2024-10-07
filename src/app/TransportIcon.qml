@@ -19,7 +19,7 @@ Item {
     property alias color: __icon.color
 
     // icon size (height for non-square ones)
-    property int size: Kirigami.Units.iconSizes.small
+    property int size: Kirigami.Units.iconSizes.smallMedium
 
     property bool __isIcon: !source.startsWith("file:")
 

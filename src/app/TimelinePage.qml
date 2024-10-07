@@ -523,8 +523,9 @@ Kirigami.ScrollablePage {
         }
     }
 
-    Kirigami.CardsListView {
+    ListView {
         id: listView
+
         model: TripGroupProxyModel {
             id: tripGroupProxyModel
             sourceModel: TimelineModel {
@@ -535,9 +536,9 @@ Kirigami.ScrollablePage {
                 tripGroupManager: TripGroupManager
             }
         }
+
         delegate: chooser
-        leftMargin: 0
-        rightMargin: 0
+        spacing: 0
 
         section {
             property: "sectionHeader"

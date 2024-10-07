@@ -415,10 +415,11 @@ Kirigami.ScrollablePage {
     ListView {
         id: listView
         topMargin: Kirigami.Units.gridUnit
-        spacing: Kirigami.Units.gridUnit
+        spacing: 0
 
         header: ColumnLayout {
             width: listView.width
+            spacing: 0
 
             FormCard.FormCard {
                 Layout.bottomMargin: listView.spacing
@@ -501,7 +502,6 @@ Kirigami.ScrollablePage {
             property: "sectionHeader"
             delegate: TimelineSectionDelegate { day: section }
             criteria: ViewSection.FullString
-            labelPositioning: ViewSection.CurrentLabelAtStart | ViewSection.InlineLabels
         }
 
         delegate: Models.DelegateChooser {
@@ -613,6 +613,7 @@ Kirigami.ScrollablePage {
 
         footer: ColumnLayout {
             width: listView.width
+            spacing: 0
 
             FormCard.FormHeader {
                 title: i18n("Actions")
