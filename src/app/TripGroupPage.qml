@@ -415,7 +415,7 @@ Kirigami.ScrollablePage {
     ListView {
         id: listView
         topMargin: Kirigami.Units.gridUnit
-        spacing: 0
+        spacing: Kirigami.Units.largeSpacing
 
         header: ColumnLayout {
             width: listView.width

@@ -20,6 +20,7 @@ FormCard.FormHeader {
 
     width: ListView.view.width
     title: controller.title
+    topPadding: Kirigami.Units.smallSpacing
 
     Accessible.description: controller.subTitle
 
