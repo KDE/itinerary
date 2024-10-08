@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-06 00:40+0000\n"
-"PO-Revision-Date: 2024-09-23 19:35+0300\n"
+"PO-Revision-Date: 2024-10-07 06:51+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -1139,8 +1139,7 @@ msgid "Boarding time has to be before the departure time."
 msgstr "מועד העלייה למטוס חייב להיות לפני מועד היציאה."
 
 #: app/FlightEditor.qml:139
-#, fuzzy, kde-format
-#| msgid "Boarding group"
+#, kde-format
 msgctxt "flight departure boarding group"
 msgid "Boarding group"
 msgstr "קבוצת עלייה למטוס"
