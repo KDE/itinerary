@@ -77,16 +77,16 @@ FormCard.AbstractFormDelegate {
             }
             QQC2.Label {
                 text: {
-                    if (root.modelData.disruption === Disruption.NoService)
+                    if (root.modelData.disruptionEffect === Disruption.NoService)
                         return i18nc("a train/bus journey canceled by its operator", "Canceled");
                     return (root.modelData.departureDelay >= 0 ? "+" : "") + root.modelData.departureDelay;
                 }
                 color: {
-                    if (root.modelData.departureDelay > 1 || root.modelData.disruption === Disruption.NoService)
+                    if (root.modelData.departureDelay > 1 || root.modelData.disruptionEffect === Disruption.NoService)
                         return Kirigami.Theme.negativeTextColor;
                     return Kirigami.Theme.positiveTextColor;
                 }
-                visible: root.modelData.hasExpectedDepartureTime || root.modelData.disruption === Disruption.NoService
+                visible: root.modelData.hasExpectedDepartureTime || root.modelData.disruptionEffect === Disruption.NoService
             }
         }
         RowLayout {
