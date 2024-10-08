@@ -856,7 +856,16 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="24.08.2" date="2024-10-10"/>
+    <release version="24.08.2" date="2024-10-10">
+      <description>
+        <ul>
+          <li>Fixed mixed up translations on Android with a multi-language configuration.</li>
+          <li>New or improved travel document extractors for Eurostar, Eventim, Koleo, NH Hotels, Trenitalia and SBB.</li>
+          <li>Extended public transport coverage via Transitous.</li>
+          <li>Fix importing from overly long URLs.</li>
+        </ul>
+      </description>
+    </release>
     <release version="24.08.1" date="2024-09-12">
       <description>
         <ul>
