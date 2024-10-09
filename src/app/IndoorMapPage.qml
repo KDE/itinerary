@@ -270,12 +270,13 @@ Kirigami.Page {
     function queryLiveLocationData()
     {
         if (rentalVehicleAction.checked || equipmentAction.checked) {
-            locationQuery.request.latitude = map.mapData.center.y;
-            locationQuery.request.longitude = map.mapData.center.x;
-            locationQuery.request.maximumDistance = map.mapData.radius;
-            locationQuery.request.types =
-                (rentalVehicleAction.checked ? (PT.Location.RentedVehicleStation | PT.Location.RentedVehicle) : 0)
-              | (equipmentAction.checked ? PT.Location.Equipment : 0);
+            locationQuery.request = {
+                latitude: map.mapData.center.y,
+                longitude: map.mapData.center.x,
+                maximumDistance: map.mapData.radius,
+                types: (rentalVehicleAction.checked ? (PT.Location.RentedVehicleStation | PT.Location.RentedVehicle) : 0)
+                     | (equipmentAction.checked ? PT.Location.Equipment : 0)
+            };
         } else {
             locationQuery.clear();
         }
