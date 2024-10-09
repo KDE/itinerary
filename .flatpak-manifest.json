@@ -14,6 +14,7 @@
         "--socket=fallback-x11",
         "--socket=wayland",
         "--device=dri",
+        "--device=all",
         "--share=network",
         "--talk-name=org.freedesktop.secrets",
         "--talk-name=org.kde.kwalletd5",
