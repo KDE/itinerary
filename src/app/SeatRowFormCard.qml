@@ -34,7 +34,7 @@ FormCard.FormCard {
                         width += child.implicitWidth + 2 * Kirigami.Units.smallSpacing;
                     }
                 }
-                return width > layout.width;
+                return width > innerLayout.width;
             }
 
             spacing: 0
