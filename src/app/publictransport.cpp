@@ -54,6 +54,7 @@ bool PublicTransport::isBusMode(KPublicTransport::Line::Mode mode)
         case Line::Bus:
         case Line::BusRapidTransit:
         case Line::Coach:
+        case Line::Shuttle:
             return true;
         default:
             return false;
@@ -490,16 +491,17 @@ KOSMIndoorMap::Platform::Mode PublicTransport::lineModeToPlatformMode(KPublicTra
 
     switch (lineMode) {
         case Line::Unknown:
+        case Line::AerialLift:
         case Line::Air:
         case Line::Boat:
         case Line::Ferry:
-        case Line::Shuttle:
         case Line::Taxi:
         case Line::RideShare:
             return KOSMIndoorMap::Platform::Unknown;
         case Line::Bus:
         case Line::BusRapidTransit:
         case Line::Coach:
+        case Line::Shuttle:
             return KOSMIndoorMap::Platform::Bus;
         case Line::Funicular:
         case Line::LocalTrain:
