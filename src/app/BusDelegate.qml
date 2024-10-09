@@ -24,6 +24,8 @@ TimelineDelegate {
     }
 
     headerItem: RowLayout {
+        spacing: Kirigami.Units.smallSpacing
+
         QQC2.Label {
             id: headerLabel
             text: {
@@ -32,6 +34,7 @@ TimelineDelegate {
                 }
                 return i18n("%1 to %2", reservationFor.departureBusStop.name, reservationFor.arrivalBusStop.name);
             }
+            elide: Text.ElideRight
             color: root.headerTextColor
             Accessible.ignored: true
         }
@@ -59,28 +62,38 @@ TimelineDelegate {
 
         RowLayout {
             width: parent.width
-            JourneySectionStopDelegateLineSegment {
+            spacing: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
 
-                Layout.fillHeight: true
+            JourneySectionStopDelegateLineSegment {
                 lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
                 isDeparture: true
+
+                Layout.fillHeight: true
             }
 
-            ColumnLayout{
-                Layout.bottomMargin:  Kirigami.Units.largeSpacing
-
+            ColumnLayout {
                 spacing:0
+
+                Layout.bottomMargin:  Kirigami.Units.largeSpacing
                 Layout.fillHeight: true
                 Layout.fillWidth: true
+
                 RowLayout {
+                    spacing: Kirigami.Units.smallSpacing
+
                     Layout.fillHeight: true
                     Layout.fillWidth: true
+
                     RowLayout {
+                        spacing: Kirigami.Units.smallSpacing
+
                         Layout.minimumWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
+
                         QQC2.Label {
                             id: depTime
                             text: Localizer.formatTime(reservationFor, "departureTime")
                         }
+
                         QQC2.Label {
                             text: (departure.departureDelay >= 0 ? "+" : "") + departure.departureDelay
                             color: (departure.departureDelay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
@@ -96,18 +109,24 @@ TimelineDelegate {
                     }
                 }
 
-                RowLayout{
-                    Item{
+                RowLayout {
+                    id: departureCountryLayout
+
+                    spacing: Kirigami.Units.smallSpacing
+                    visible: departureCountryLabel.text.length > 0
+
+                    Item {
                         Layout.minimumWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
                     }
-                    QQC2.Label {
-                        Layout.fillWidth: true
 
-                        visible: text.length > 0
+                    QQC2.Label {
+                        id: departureCountryLabel
+
                         text: Localizer.formatAddressWithContext(reservationFor.departureBusStop.address,
                                                                  reservationFor.arrivalBusStop.address,
                                                                  Settings.homeCountryIsoCode)
-                        width: topLayout.width
+
+                        Layout.fillWidth: true
                     }
                 }
             }
@@ -116,21 +135,26 @@ TimelineDelegate {
         RowLayout {
             visible: root.hasSeat
             width: parent.width
+            spacing: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
+
             JourneySectionStopDelegateLineSegment {
                 Layout.fillHeight: true
                 lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
                 isDeparture: false
                 hasStop: false
             }
+
             TimelineDelegateSeatRow {
                 TimelineDelegateSeatRowLabel {
-                    text: i18nc("train seat", "Seat: <b>%1</b>", root.seatString())
+                    text: i18nc("bus seat", "Seat: <b>%1</b>", root.seatString())
                 }
             }
         }
 
         RowLayout {
             width: parent.width
+            spacing: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
+
             JourneySectionStopDelegateLineSegment {
                 Layout.fillHeight: true
                 lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
@@ -173,17 +197,19 @@ TimelineDelegate {
             model: sectionModel
             delegate: RowLayout {
                 id: stopDelegate
+
                 property bool hidden: !expanded
 
+                width: parent.width
                 clip: true
                 visible: false
-                onHiddenChanged:
-                    if (!hidden) {
-                        visible = true
-                        showAnimation.running=true
-                    } else {
-                        hideAnimation.running = true
-                    }
+                spacing: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
+                onHiddenChanged: if (!hidden) {
+                    visible = true
+                    showAnimation.running=true
+                } else {
+                    hideAnimation.running = true
+                }
                 PropertyAnimation { id: showAnimation;
                                     target: stopDelegate;
                                     property: "height";
@@ -203,7 +229,6 @@ TimelineDelegate {
                                     easing.type: Easing.InOutCubic
 
                 }
-                width: parent.width
                 JourneySectionStopDelegateLineSegment {
 
                     Layout.fillHeight: true
@@ -236,6 +261,8 @@ TimelineDelegate {
 
         RowLayout {
             width: parent.width
+            spacing: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
+
             JourneySectionStopDelegateLineSegment {
 
                 Layout.fillHeight: true
@@ -243,19 +270,27 @@ TimelineDelegate {
                 isArrival: true
             }
             ColumnLayout{
-                Layout.topMargin:  Kirigami.Units.largeSpacing
-
                 spacing:0
+
+                Layout.topMargin: Kirigami.Units.largeSpacing
                 Layout.fillHeight: true
                 Layout.fillWidth: true
+
                 RowLayout {
+                    spacing: Kirigami.Units.smallSpacing
+
                     Layout.fillHeight: true
                     Layout.fillWidth: true
+
                     RowLayout {
+                        spacing: Kirigami.Units.smallSpacing
+
                         Layout.minimumWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
+
                         QQC2.Label {
                             text: Localizer.formatTime(reservationFor, "arrivalTime")
                         }
+
                         QQC2.Label {
                             text: (arrival.arrivalDelay >= 0 ? "+" : "") + arrival.arrivalDelay
                             color: (arrival.arrivalDelay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
@@ -272,17 +307,23 @@ TimelineDelegate {
                 }
 
                 RowLayout {
-                    Item{
+                    id: arrivalCountryLayout
+
+                    spacing: Kirigami.Units.smallSpacing
+                    visible: arrivalCountryLabel.text.length > 0
+
+                    Item {
                         Layout.minimumWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
                     }
-                    QQC2.Label {
-                        Layout.fillWidth: true
 
-                        visible: text.length > 0
+                    QQC2.Label {
+                        id: arrivalCountryLabel
+
                         width: topLayout.width
                         text: Localizer.formatAddressWithContext(reservationFor.arrivalBusStop.address,
                                                                  reservationFor.departureBusStop.address,
                                                                  Settings.homeCountryIsoCode)
+                        Layout.fillWidth: true
                     }
                 }
             }

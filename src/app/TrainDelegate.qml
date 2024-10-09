@@ -37,7 +37,6 @@ TimelineDelegate {
             }
             color: root.headerTextColor
             elide: Text.ElideRight
-            leftPadding: 0
 
             Accessible.ignored: true
         }
@@ -97,11 +96,15 @@ TimelineDelegate {
                     Layout.fillWidth: true
 
                     RowLayout {
+                        spacing: Kirigami.Units.smallSpacing
+
                         Layout.minimumWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
+
                         QQC2.Label {
                             id: depTime
                             text: Localizer.formatTime(reservationFor, "departureTime")
                         }
+
                         QQC2.Label {
                             text: (departure.departureDelay >= 0 ? "+" : "") + departure.departureDelay
                             color: (departure.departureDelay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
@@ -133,19 +136,25 @@ TimelineDelegate {
                         }
                     }
                 }
+
                 RowLayout{
                     id: departureCountryLayout
+
+                    spacing: Kirigami.Units.smallSpacing
                     visible: departureCountryLabel.text.length > 0
-                    Item{
+
+                    Item {
                         Layout.minimumWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
                     }
+
                     QQC2.Label {
                         id: departureCountryLabel
-                        Layout.fillWidth: true
+
                         text: Localizer.formatAddressWithContext(reservationFor.departureStation.address,
                                                                  reservationFor.arrivalStation.address,
                                                                  Settings.homeCountryIsoCode)
-                        width: topLayout.width
+
+                        Layout.fillWidth: true
                     }
                 }
             }
@@ -155,12 +164,14 @@ TimelineDelegate {
             visible: root.hasSeat
             width: parent.width
             spacing: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
+
             JourneySectionStopDelegateLineSegment {
                 Layout.fillHeight: true
                 lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
                 isDeparture: false
                 hasStop: false
             }
+
             TimelineDelegateSeatRow {
                 TimelineDelegateSeatRowLabel {
                     text: i18nc("train coach", "Coach: <b>%1</b>", root.reservation?.reservedTicket?.ticketedSeat?.seatSection || "-")
@@ -187,6 +198,7 @@ TimelineDelegate {
         RowLayout {
             width: parent.width
             spacing: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
+
             JourneySectionStopDelegateLineSegment {
                 Layout.fillHeight: true
                 lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
@@ -229,18 +241,19 @@ TimelineDelegate {
             model: sectionModel
             delegate: RowLayout {
                 id: stopDelegate
+
                 property bool hidden: !expanded
 
                 clip: true
                 visible: false
                 spacing: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
-                onHiddenChanged:
-                    if (!hidden) {
-                        visible = true
-                        showAnimation.running=true
-                    } else {
-                        hideAnimation.running = true
-                    }
+                width: parent.width
+                onHiddenChanged: if (!hidden) {
+                    visible = true
+                    showAnimation.running=true
+                } else {
+                    hideAnimation.running = true
+                }
                 PropertyAnimation { id: showAnimation;
                                     target: stopDelegate;
                                     property: "height";
@@ -260,7 +273,6 @@ TimelineDelegate {
                                     easing.type: Easing.InOutCubic
 
                 }
-                width: parent.width
                 JourneySectionStopDelegateLineSegment {
 
                     Layout.fillHeight: true
@@ -294,6 +306,7 @@ TimelineDelegate {
         RowLayout {
             width: parent.width
             spacing: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
+
             ColumnLayout {
                 spacing: 0
                 JourneySectionStopDelegateLineSegment {
@@ -309,16 +322,23 @@ TimelineDelegate {
                 }
             }
             ColumnLayout{
-                Layout.topMargin:  Kirigami.Units.largeSpacing
-
                 spacing:0
+
+                Layout.topMargin: Kirigami.Units.largeSpacing
                 Layout.fillHeight: true
                 Layout.fillWidth: true
+
                 RowLayout {
+                    spacing: Kirigami.Units.smallSpacing
+
                     Layout.fillHeight: true
                     Layout.fillWidth: true
+
                     RowLayout {
+                        spacing: Kirigami.Units.smallSpacing
+
                         Layout.minimumWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
+
                         QQC2.Label {
                             text: Localizer.formatTime(reservationFor, "arrivalTime")
                         }
@@ -355,17 +375,22 @@ TimelineDelegate {
                 }
                 RowLayout {
                     id: arrivalCountryLayout
+
+                    spacing: Kirigami.Units.smallSpacing
                     visible: arrivalCountryLabel.text.length > 0
-                    Item{
+
+                    Item {
                         Layout.minimumWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
                     }
+
                     QQC2.Label {
                         id: arrivalCountryLabel
-                        Layout.fillWidth: true
+
                         width: topLayout.width
                         text: Localizer.formatAddressWithContext(reservationFor.arrivalStation.address,
                                                                  reservationFor.departureStation.address,
                                                                  Settings.homeCountryIsoCode)
+                        Layout.fillWidth: true
                     }
                 }
             }
