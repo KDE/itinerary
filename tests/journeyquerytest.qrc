@@ -15,7 +15,5 @@
         <file alias="qt/qml/org/kde/itinerary/JourneySummaryDelegate.qml">../src/app/JourneySummaryDelegate.qml</file>
         <file alias="qt/qml/org/kde/itinerary/TransportIcon.qml">../src/app/TransportIcon.qml</file>
         <file alias="qt/qml/org/kde/itinerary/VerticalNavigationButton.qml">../src/app/VerticalNavigationButton.qml</file>
-
-        <file alias="images/transfer.svg">../src/app/images/transfer.svg</file>
     </qresource>
 </RCC>

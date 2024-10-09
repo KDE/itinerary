@@ -8,7 +8,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
-import org.kde.kpublictransport
+import org.kde.kpublictransport as KPublicTransport
 import org.kde.itinerary
 import org.kde.kirigamiaddons.formcard as FormCard
 
@@ -50,7 +50,7 @@ FormCard.FormCard {
             anchors.margins: Kirigami.Units.largeSpacing
 
             Kirigami.Icon {
-                source: "qrc:///images/transfer.svg"
+                source: KPublicTransport.JourneySectionMode.modeIconName(KPublicTransport.JourneySection.Transfer)
                 Layout.preferredWidth: Kirigami.Units.iconSizes.smallMedium
                 Layout.preferredHeight: Layout.preferredWidth
                 color: Kirigami.Theme.textColor

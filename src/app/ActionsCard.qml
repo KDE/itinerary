@@ -11,6 +11,7 @@ import org.kde.calendarcore as KCalendarCore
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kitemmodels
+import org.kde.kpublictransport as KPublicTransport
 import org.kde.kitinerary
 import org.kde.itinerary
 
@@ -34,7 +35,7 @@ ColumnLayout {
             onTriggered: applicationWindow().pageStack.push(pkpassComponent, {"passId": root.passId });
         },
         Kirigami.Action {
-            icon.name: "qrc:///images/transfer.svg"
+            icon.name: KPublicTransport.JourneySectionMode.modeIconName(KPublicTransport.JourneySection.Transfer)
             text: i18n("Add transfer before")
             enabled: TransferManager.canAddTransfer(root.batchId, Transfer.Before)
             onTriggered: {
@@ -43,7 +44,7 @@ ColumnLayout {
             }
         },
         Kirigami.Action {
-            icon.name: "qrc:///images/transfer.svg"
+            icon.name: KPublicTransport.JourneySectionMode.modeIconName(KPublicTransport.JourneySection.Transfer)
             text: i18n("Add transfer after")
             enabled: TransferManager.canAddTransfer(root.batchId, Transfer.After)
             onTriggered: {
