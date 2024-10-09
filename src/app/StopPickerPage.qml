@@ -53,6 +53,20 @@ Kirigami.ScrollablePage {
             onTriggered: historySortModel.sortRoleName = "useCount"
         }
     ]
+
+    function updateQuery()
+    {
+        if (queryTextField.text !== "" && countryCombo.currentValue !== "") {
+            locationQueryModel.request = {
+                location: {
+                    name: queryTextField.text,
+                    country: countryCombo.currentValue
+                },
+                types: Location.Stop | Location.Address
+            };
+        }
+    }
+
     header: ColumnLayout {
         spacing: Kirigami.Units.smallSpacing
         CountryComboBox {
@@ -78,12 +92,7 @@ Kirigami.ScrollablePage {
                 return [...new Set(countries)];
             }
             initialCountry: root.initialCountry
-            onCurrentValueChanged: {
-                var loc = locationQueryModel.request.location;
-                loc.country = countryCombo.currentValue;
-                locationQueryModel.request.location = loc;
-                locationQueryModel.request.type = Location.Stop
-            }
+            onCurrentValueChanged: root.updateQuery();
         }
         Kirigami.SearchField {
             id: queryTextField
@@ -91,15 +100,7 @@ Kirigami.ScrollablePage {
             Layout.rightMargin: Kirigami.Units.smallSpacing
             Layout.bottomMargin: Kirigami.Units.smallSpacing
             Layout.fillWidth: true
-            onAccepted: {
-                if (text !== "" && countryCombo.currentValue !== "") {
-                    var loc = locationQueryModel.request.location;
-                    loc.name = text;
-                    loc.country = countryCombo.currentValue;
-                    locationQueryModel.request.location = loc;
-                    locationQueryModel.request.types = Location.Stop | Location.Address
-                }
-            }
+            onAccepted: root.updateQuery();
         }
     }
 
