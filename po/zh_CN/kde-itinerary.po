@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-06 00:40+0000\n"
+"POT-Creation-Date: 2024-10-10 00:39+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -86,44 +86,44 @@ msgstr "数据提取器特性列表："
 msgid "Extractor capabilities copied to clipboard"
 msgstr ""
 
-#: app/ActionsCard.qml:32
+#: app/ActionsCard.qml:33
 #, kde-format
 msgid "Show Boarding Pass"
 msgstr "出示登机牌"
 
-#: app/ActionsCard.qml:32 app/TicketPage.qml:138
+#: app/ActionsCard.qml:33 app/TicketPage.qml:138
 #, kde-format
 msgid "Show Ticket"
 msgstr ""
 
-#: app/ActionsCard.qml:38
+#: app/ActionsCard.qml:39
 #, kde-format
 msgid "Add transfer before"
 msgstr "在此项前添加换乘"
 
-#: app/ActionsCard.qml:47
+#: app/ActionsCard.qml:48
 #, kde-format
 msgid "Add transfer after"
 msgstr "在此项后添加换乘"
 
-#: app/ActionsCard.qml:56 app/ProgramMembershipPage.qml:159
+#: app/ActionsCard.qml:57 app/ProgramMembershipPage.qml:159
 #: app/TicketPage.qml:154
 #, kde-format
 msgid "Edit"
 msgstr "编辑"
 
-#: app/ActionsCard.qml:62
+#: app/ActionsCard.qml:63
 #, kde-format
 msgid "Add to calendar…"
 msgstr ""
 
-#: app/ActionsCard.qml:73 app/main.qml:221 app/TripGroupDelegate.qml:182
+#: app/ActionsCard.qml:74 app/main.qml:221 app/TripGroupDelegate.qml:182
 #: app/TripGroupPage.qml:650
 #, kde-format
 msgid "Export…"
 msgstr ""
 
-#: app/ActionsCard.qml:78 app/ActionsCard.qml:124 app/DocumentsCard.qml:87
+#: app/ActionsCard.qml:79 app/ActionsCard.qml:125 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
 #: app/HealthCertificatePage.qml:46 app/HealthCertificatePage.qml:60
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:171
@@ -133,80 +133,80 @@ msgstr ""
 msgid "Delete"
 msgstr "删除"
 
-#: app/ActionsCard.qml:117
+#: app/ActionsCard.qml:118
 #, kde-format
 msgid "Delete Event"
 msgstr ""
 
-#: app/ActionsCard.qml:118
+#: app/ActionsCard.qml:119
 #, kde-format
 msgid "Do you really want to delete this event?"
 msgstr "您确定要删除此活动吗？"
 
-#: app/ActionsCard.qml:137 app/TimelinePage.qml:235 app/TripGroupPage.qml:229
+#: app/ActionsCard.qml:138 app/TimelinePage.qml:235 app/TripGroupPage.qml:229
 #, kde-format
 msgid "Export"
 msgstr ""
 
-#: app/ActionsCard.qml:140 app/TimelinePage.qml:238 app/TripGroupPage.qml:232
+#: app/ActionsCard.qml:141 app/TimelinePage.qml:238 app/TripGroupPage.qml:232
 #, kde-format
 msgid "As Itinerary file…"
 msgstr ""
 
-#: app/ActionsCard.qml:151 app/TimelinePage.qml:262 app/TripGroupPage.qml:254
+#: app/ActionsCard.qml:152 app/TimelinePage.qml:262 app/TripGroupPage.qml:254
 #, kde-format
 msgid "Send to %1"
 msgstr ""
 
-#: app/ActionsCard.qml:165
+#: app/ActionsCard.qml:166
 #, kde-format
 msgid "Export Reservation"
 msgstr ""
 
-#: app/ActionsCard.qml:167 app/TimelinePage.qml:278 app/TripGroupPage.qml:272
+#: app/ActionsCard.qml:168 app/TimelinePage.qml:278 app/TripGroupPage.qml:272
 #, kde-format
 msgid "Itinerary file (*.itinerary)"
 msgstr ""
 
-#: app/ActionsCard.qml:172 app/ProgramMembershipPage.qml:138
+#: app/ActionsCard.qml:173 app/ProgramMembershipPage.qml:138
 #: app/TicketPage.qml:130 app/TripGroupPage.qml:618
 #, kde-format
 msgid "Actions"
 msgstr ""
 
-#: app/ActionsCard.qml:190
+#: app/ActionsCard.qml:191
 #, kde-format
 msgctxt "cancel as in revoking a booking"
 msgid "Cancel Reservation"
 msgstr "取消预订"
 
-#: app/ActionsCard.qml:191
+#: app/ActionsCard.qml:192
 #, kde-format
 msgid "Check-in"
 msgstr "检入"
 
-#: app/ActionsCard.qml:192
+#: app/ActionsCard.qml:193
 #, kde-format
 msgid "Download"
 msgstr "下载"
 
-#: app/ActionsCard.qml:193
+#: app/ActionsCard.qml:194
 #, kde-format
 msgctxt "participate in an event"
 msgid "Join"
 msgstr ""
 
-#: app/ActionsCard.qml:194
+#: app/ActionsCard.qml:195
 #, kde-format
 msgid "Reserve"
 msgstr ""
 
-#: app/ActionsCard.qml:195
+#: app/ActionsCard.qml:196
 #, kde-format
 msgid "Change Reservation"
 msgstr "修改预约"
 
-#: app/ActionsCard.qml:196
+#: app/ActionsCard.qml:197
 #, kde-format
 msgid "View Reservation"
 msgstr "查看预约"
@@ -1884,18 +1884,18 @@ msgstr "打开地图"
 msgid "Open wheelmap.org"
 msgstr "打开 wheelmap.org"
 
-#: app/IndoorMapPage.qml:304
+#: app/IndoorMapPage.qml:305
 #, kde-format
 msgid "Switched to floor %1"
 msgstr "切换到 %1 楼"
 
-#: app/IndoorMapPage.qml:351
+#: app/IndoorMapPage.qml:352
 #, kde-format
 msgctxt "@action:intoolbar Go down one floor"
 msgid "Floor down"
 msgstr ""
 
-#: app/IndoorMapPage.qml:360
+#: app/IndoorMapPage.qml:361
 #, kde-format
 msgctxt "@action:intoolbar Go up one floor"
 msgid "Floor up"
@@ -2849,42 +2849,42 @@ msgstr ""
 msgid "Show Pass"
 msgstr ""
 
-#: app/publictransport.cpp:130 app/publictransport.cpp:157
+#: app/publictransport.cpp:131 app/publictransport.cpp:158
 #, kde-format
 msgid "Walk"
 msgstr ""
 
-#: app/publictransport.cpp:132
+#: app/publictransport.cpp:133
 #, kde-format
 msgid "Wait"
 msgstr ""
 
-#: app/publictransport.cpp:141
+#: app/publictransport.cpp:142
 #, kde-format
 msgid "Rented bicycle"
 msgstr ""
 
-#: app/publictransport.cpp:143
+#: app/publictransport.cpp:144
 #, kde-format
 msgid "Rented moped"
 msgstr ""
 
-#: app/publictransport.cpp:145
+#: app/publictransport.cpp:146
 #, kde-format
 msgid "Rented kick scooter"
 msgstr ""
 
-#: app/publictransport.cpp:147
+#: app/publictransport.cpp:148
 #, kde-format
 msgid "Rented car"
 msgstr ""
 
-#: app/publictransport.cpp:153
+#: app/publictransport.cpp:154
 #, kde-format
 msgid "Bicycle"
 msgstr ""
 
-#: app/publictransport.cpp:155 app/StatisticsPage.qml:148
+#: app/publictransport.cpp:156 app/StatisticsPage.qml:148
 #, kde-format
 msgid "Car"
 msgstr "汽车"
@@ -3378,13 +3378,13 @@ msgstr ""
 msgid "Most often used"
 msgstr ""
 
-#: app/StopPickerPage.qml:132 app/StopPickerPage.qml:212
+#: app/StopPickerPage.qml:133 app/StopPickerPage.qml:213
 #, kde-format
 msgctxt "location name, locality, region, country"
 msgid "%1, %2, %3, %4"
 msgstr ""
 
-#: app/StopPickerPage.qml:138 app/StopPickerPage.qml:218
+#: app/StopPickerPage.qml:139 app/StopPickerPage.qml:219
 #, fuzzy, kde-format
 #| msgctxt "weekday, date"
 #| msgid "%1, %2"
@@ -3392,7 +3392,7 @@ msgctxt "location name, locality, country"
 msgid "%1, %2, %3"
 msgstr "%2，%1"
 
-#: app/StopPickerPage.qml:143 app/StopPickerPage.qml:223
+#: app/StopPickerPage.qml:144 app/StopPickerPage.qml:224
 #, fuzzy, kde-format
 #| msgctxt "weekday, date"
 #| msgid "%1, %2"
@@ -3400,7 +3400,7 @@ msgctxt "location name, region, country"
 msgid "%1, %2, %3"
 msgstr "%2，%1"
 
-#: app/StopPickerPage.qml:164 app/StopPickerPage.qml:245
+#: app/StopPickerPage.qml:165 app/StopPickerPage.qml:246
 #, fuzzy, kde-format
 #| msgctxt "weekday, date"
 #| msgid "%1, %2"
@@ -3408,7 +3408,7 @@ msgctxt "locality, region, country"
 msgid "%1, %2, %3"
 msgstr "%2，%1"
 
-#: app/StopPickerPage.qml:169 app/StopPickerPage.qml:250
+#: app/StopPickerPage.qml:170 app/StopPickerPage.qml:251
 #, fuzzy, kde-format
 #| msgctxt "weekday, date"
 #| msgid "%1, %2"
@@ -3416,7 +3416,7 @@ msgctxt "locality, country"
 msgid "%1, %2"
 msgstr "%2，%1"
 
-#: app/StopPickerPage.qml:173 app/StopPickerPage.qml:254
+#: app/StopPickerPage.qml:174 app/StopPickerPage.qml:255
 #, fuzzy, kde-format
 #| msgctxt "weekday, date"
 #| msgid "%1, %2"
@@ -3424,12 +3424,12 @@ msgctxt "region, country"
 msgid "%1, %2"
 msgstr "%2，%1"
 
-#: app/StopPickerPage.qml:188
+#: app/StopPickerPage.qml:189
 #, kde-format
 msgid "Remove history entry"
 msgstr ""
 
-#: app/StopPickerPage.qml:293
+#: app/StopPickerPage.qml:294
 #, kde-format
 msgid "No locations found"
 msgstr ""

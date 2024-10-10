@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-06 00:40+0000\n"
+"POT-Creation-Date: 2024-10-10 00:39+0000\n"
 "PO-Revision-Date: 2024-09-28 07:12+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -87,44 +87,44 @@ msgstr "Extraktionsmöjligheter:"
 msgid "Extractor capabilities copied to clipboard"
 msgstr "Extraktionsmöjligheter kopierade till klippbordet"
 
-#: app/ActionsCard.qml:32
+#: app/ActionsCard.qml:33
 #, kde-format
 msgid "Show Boarding Pass"
 msgstr "Visa boardingkort"
 
-#: app/ActionsCard.qml:32 app/TicketPage.qml:138
+#: app/ActionsCard.qml:33 app/TicketPage.qml:138
 #, kde-format
 msgid "Show Ticket"
 msgstr "Visa biljett"
 
-#: app/ActionsCard.qml:38
+#: app/ActionsCard.qml:39
 #, kde-format
 msgid "Add transfer before"
 msgstr "Lägg till transfer före"
 
-#: app/ActionsCard.qml:47
+#: app/ActionsCard.qml:48
 #, kde-format
 msgid "Add transfer after"
 msgstr "Lägg till transfer efter"
 
-#: app/ActionsCard.qml:56 app/ProgramMembershipPage.qml:159
+#: app/ActionsCard.qml:57 app/ProgramMembershipPage.qml:159
 #: app/TicketPage.qml:154
 #, kde-format
 msgid "Edit"
 msgstr "Redigera"
 
-#: app/ActionsCard.qml:62
+#: app/ActionsCard.qml:63
 #, kde-format
 msgid "Add to calendar…"
 msgstr "Lägg till i kalender…"
 
-#: app/ActionsCard.qml:73 app/main.qml:221 app/TripGroupDelegate.qml:182
+#: app/ActionsCard.qml:74 app/main.qml:221 app/TripGroupDelegate.qml:182
 #: app/TripGroupPage.qml:650
 #, kde-format
 msgid "Export…"
 msgstr "Exportera…"
 
-#: app/ActionsCard.qml:78 app/ActionsCard.qml:124 app/DocumentsCard.qml:87
+#: app/ActionsCard.qml:79 app/ActionsCard.qml:125 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
 #: app/HealthCertificatePage.qml:46 app/HealthCertificatePage.qml:60
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:171
@@ -134,80 +134,80 @@ msgstr "Exportera…"
 msgid "Delete"
 msgstr "Ta bort"
 
-#: app/ActionsCard.qml:117
+#: app/ActionsCard.qml:118
 #, kde-format
 msgid "Delete Event"
 msgstr "Ta bort händelse"
 
-#: app/ActionsCard.qml:118
+#: app/ActionsCard.qml:119
 #, kde-format
 msgid "Do you really want to delete this event?"
 msgstr "Vill du verkligen ta bort evenemanget?"
 
-#: app/ActionsCard.qml:137 app/TimelinePage.qml:235 app/TripGroupPage.qml:229
+#: app/ActionsCard.qml:138 app/TimelinePage.qml:235 app/TripGroupPage.qml:229
 #, kde-format
 msgid "Export"
 msgstr "Exportera"
 
-#: app/ActionsCard.qml:140 app/TimelinePage.qml:238 app/TripGroupPage.qml:232
+#: app/ActionsCard.qml:141 app/TimelinePage.qml:238 app/TripGroupPage.qml:232
 #, kde-format
 msgid "As Itinerary file…"
 msgstr "Som resplanefil…"
 
-#: app/ActionsCard.qml:151 app/TimelinePage.qml:262 app/TripGroupPage.qml:254
+#: app/ActionsCard.qml:152 app/TimelinePage.qml:262 app/TripGroupPage.qml:254
 #, kde-format
 msgid "Send to %1"
 msgstr "Skicka till %1"
 
-#: app/ActionsCard.qml:165
+#: app/ActionsCard.qml:166
 #, kde-format
 msgid "Export Reservation"
 msgstr "Exportera bokning"
 
-#: app/ActionsCard.qml:167 app/TimelinePage.qml:278 app/TripGroupPage.qml:272
+#: app/ActionsCard.qml:168 app/TimelinePage.qml:278 app/TripGroupPage.qml:272
 #, kde-format
 msgid "Itinerary file (*.itinerary)"
 msgstr "Resplanefil (*.itinerary)"
 
-#: app/ActionsCard.qml:172 app/ProgramMembershipPage.qml:138
+#: app/ActionsCard.qml:173 app/ProgramMembershipPage.qml:138
 #: app/TicketPage.qml:130 app/TripGroupPage.qml:618
 #, kde-format
 msgid "Actions"
 msgstr "Åtgärder"
 
-#: app/ActionsCard.qml:190
+#: app/ActionsCard.qml:191
 #, kde-format
 msgctxt "cancel as in revoking a booking"
 msgid "Cancel Reservation"
 msgstr "Avboka reservation"
 
-#: app/ActionsCard.qml:191
+#: app/ActionsCard.qml:192
 #, kde-format
 msgid "Check-in"
 msgstr "Checka in"
 
-#: app/ActionsCard.qml:192
+#: app/ActionsCard.qml:193
 #, kde-format
 msgid "Download"
 msgstr "Ladda ner"
 
-#: app/ActionsCard.qml:193
+#: app/ActionsCard.qml:194
 #, kde-format
 msgctxt "participate in an event"
 msgid "Join"
 msgstr "Gå med"
 
-#: app/ActionsCard.qml:194
+#: app/ActionsCard.qml:195
 #, kde-format
 msgid "Reserve"
 msgstr "Boka"
 
-#: app/ActionsCard.qml:195
+#: app/ActionsCard.qml:196
 #, kde-format
 msgid "Change Reservation"
 msgstr "Ändra bokning"
 
-#: app/ActionsCard.qml:196
+#: app/ActionsCard.qml:197
 #, kde-format
 msgid "View Reservation"
 msgstr "Visa bokning"
@@ -1892,18 +1892,18 @@ msgstr "Visa karta"
 msgid "Open wheelmap.org"
 msgstr "Öppna wheelmap.org"
 
-#: app/IndoorMapPage.qml:304
+#: app/IndoorMapPage.qml:305
 #, kde-format
 msgid "Switched to floor %1"
 msgstr "Bytte till våning %1"
 
-#: app/IndoorMapPage.qml:351
+#: app/IndoorMapPage.qml:352
 #, kde-format
 msgctxt "@action:intoolbar Go down one floor"
 msgid "Floor down"
 msgstr "Våning ner"
 
-#: app/IndoorMapPage.qml:360
+#: app/IndoorMapPage.qml:361
 #, kde-format
 msgctxt "@action:intoolbar Go up one floor"
 msgid "Floor up"
@@ -2858,42 +2858,42 @@ msgstr "Programmedlemskap"
 msgid "Show Pass"
 msgstr "Visa pass"
 
-#: app/publictransport.cpp:130 app/publictransport.cpp:157
+#: app/publictransport.cpp:131 app/publictransport.cpp:158
 #, kde-format
 msgid "Walk"
 msgstr "Gå"
 
-#: app/publictransport.cpp:132
+#: app/publictransport.cpp:133
 #, kde-format
 msgid "Wait"
 msgstr "Vänta"
 
-#: app/publictransport.cpp:141
+#: app/publictransport.cpp:142
 #, kde-format
 msgid "Rented bicycle"
 msgstr "Hyrcykel"
 
-#: app/publictransport.cpp:143
+#: app/publictransport.cpp:144
 #, kde-format
 msgid "Rented moped"
 msgstr "Hyrmoped"
 
-#: app/publictransport.cpp:145
+#: app/publictransport.cpp:146
 #, kde-format
 msgid "Rented kick scooter"
 msgstr "Hyrd sparkcykel"
 
-#: app/publictransport.cpp:147
+#: app/publictransport.cpp:148
 #, kde-format
 msgid "Rented car"
 msgstr "Hyrbil"
 
-#: app/publictransport.cpp:153
+#: app/publictransport.cpp:154
 #, kde-format
 msgid "Bicycle"
 msgstr "Cykel"
 
-#: app/publictransport.cpp:155 app/StatisticsPage.qml:148
+#: app/publictransport.cpp:156 app/StatisticsPage.qml:148
 #, kde-format
 msgid "Car"
 msgstr "Bil"
@@ -3399,48 +3399,48 @@ msgstr "Senast använda"
 msgid "Most often used"
 msgstr "Oftast använda"
 
-#: app/StopPickerPage.qml:132 app/StopPickerPage.qml:212
+#: app/StopPickerPage.qml:133 app/StopPickerPage.qml:213
 #, kde-format
 msgctxt "location name, locality, region, country"
 msgid "%1, %2, %3, %4"
 msgstr "%1, %2, %3, %4"
 
-#: app/StopPickerPage.qml:138 app/StopPickerPage.qml:218
+#: app/StopPickerPage.qml:139 app/StopPickerPage.qml:219
 #, kde-format
 msgctxt "location name, locality, country"
 msgid "%1, %2, %3"
 msgstr "%1, %2, %3"
 
-#: app/StopPickerPage.qml:143 app/StopPickerPage.qml:223
+#: app/StopPickerPage.qml:144 app/StopPickerPage.qml:224
 #, kde-format
 msgctxt "location name, region, country"
 msgid "%1, %2, %3"
 msgstr "%1, %2, %3"
 
-#: app/StopPickerPage.qml:164 app/StopPickerPage.qml:245
+#: app/StopPickerPage.qml:165 app/StopPickerPage.qml:246
 #, kde-format
 msgctxt "locality, region, country"
 msgid "%1, %2, %3"
 msgstr "%1, %2, %3"
 
-#: app/StopPickerPage.qml:169 app/StopPickerPage.qml:250
+#: app/StopPickerPage.qml:170 app/StopPickerPage.qml:251
 #, kde-format
 msgctxt "locality, country"
 msgid "%1, %2"
 msgstr "%1, %2"
 
-#: app/StopPickerPage.qml:173 app/StopPickerPage.qml:254
+#: app/StopPickerPage.qml:174 app/StopPickerPage.qml:255
 #, kde-format
 msgctxt "region, country"
 msgid "%1, %2"
 msgstr "%1, %2"
 
-#: app/StopPickerPage.qml:188
+#: app/StopPickerPage.qml:189
 #, kde-format
 msgid "Remove history entry"
 msgstr "Ta bort historikpost"
 
-#: app/StopPickerPage.qml:293
+#: app/StopPickerPage.qml:294
 #, kde-format
 msgid "No locations found"
 msgstr "Inga platser hittades"

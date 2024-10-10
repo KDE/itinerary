@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-06 00:40+0000\n"
+"POT-Creation-Date: 2024-10-10 00:39+0000\n"
 "PO-Revision-Date: 2024-08-20 23:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -86,44 +86,44 @@ msgstr "추출기 기능:"
 msgid "Extractor capabilities copied to clipboard"
 msgstr "클립보드에 추출기 기능 복사됨"
 
-#: app/ActionsCard.qml:32
+#: app/ActionsCard.qml:33
 #, kde-format
 msgid "Show Boarding Pass"
 msgstr "탑승권 표시"
 
-#: app/ActionsCard.qml:32 app/TicketPage.qml:138
+#: app/ActionsCard.qml:33 app/TicketPage.qml:138
 #, kde-format
 msgid "Show Ticket"
 msgstr "티켓 표시"
 
-#: app/ActionsCard.qml:38
+#: app/ActionsCard.qml:39
 #, kde-format
 msgid "Add transfer before"
 msgstr "이전 환승 추가"
 
-#: app/ActionsCard.qml:47
+#: app/ActionsCard.qml:48
 #, kde-format
 msgid "Add transfer after"
 msgstr "이후 환승 추가"
 
-#: app/ActionsCard.qml:56 app/ProgramMembershipPage.qml:159
+#: app/ActionsCard.qml:57 app/ProgramMembershipPage.qml:159
 #: app/TicketPage.qml:154
 #, kde-format
 msgid "Edit"
 msgstr "편집"
 
-#: app/ActionsCard.qml:62
+#: app/ActionsCard.qml:63
 #, kde-format
 msgid "Add to calendar…"
 msgstr "캘린더에 추가…"
 
-#: app/ActionsCard.qml:73 app/main.qml:221 app/TripGroupDelegate.qml:182
+#: app/ActionsCard.qml:74 app/main.qml:221 app/TripGroupDelegate.qml:182
 #: app/TripGroupPage.qml:650
 #, kde-format
 msgid "Export…"
 msgstr "내보내기…"
 
-#: app/ActionsCard.qml:78 app/ActionsCard.qml:124 app/DocumentsCard.qml:87
+#: app/ActionsCard.qml:79 app/ActionsCard.qml:125 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
 #: app/HealthCertificatePage.qml:46 app/HealthCertificatePage.qml:60
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:171
@@ -133,80 +133,80 @@ msgstr "내보내기…"
 msgid "Delete"
 msgstr "삭제"
 
-#: app/ActionsCard.qml:117
+#: app/ActionsCard.qml:118
 #, kde-format
 msgid "Delete Event"
 msgstr "이벤트 삭제"
 
-#: app/ActionsCard.qml:118
+#: app/ActionsCard.qml:119
 #, kde-format
 msgid "Do you really want to delete this event?"
 msgstr "이 이벤트를 삭제하시겠습니까?"
 
-#: app/ActionsCard.qml:137 app/TimelinePage.qml:235 app/TripGroupPage.qml:229
+#: app/ActionsCard.qml:138 app/TimelinePage.qml:235 app/TripGroupPage.qml:229
 #, kde-format
 msgid "Export"
 msgstr "내보내기"
 
-#: app/ActionsCard.qml:140 app/TimelinePage.qml:238 app/TripGroupPage.qml:232
+#: app/ActionsCard.qml:141 app/TimelinePage.qml:238 app/TripGroupPage.qml:232
 #, kde-format
 msgid "As Itinerary file…"
 msgstr "Itinerary 파일로…"
 
-#: app/ActionsCard.qml:151 app/TimelinePage.qml:262 app/TripGroupPage.qml:254
+#: app/ActionsCard.qml:152 app/TimelinePage.qml:262 app/TripGroupPage.qml:254
 #, kde-format
 msgid "Send to %1"
 msgstr "%1(으)로 보내기|/|%1$[으 %1]로 보내기"
 
-#: app/ActionsCard.qml:165
+#: app/ActionsCard.qml:166
 #, kde-format
 msgid "Export Reservation"
 msgstr "예약 내보내기"
 
-#: app/ActionsCard.qml:167 app/TimelinePage.qml:278 app/TripGroupPage.qml:272
+#: app/ActionsCard.qml:168 app/TimelinePage.qml:278 app/TripGroupPage.qml:272
 #, kde-format
 msgid "Itinerary file (*.itinerary)"
 msgstr "Itinerary 파일 (*.itinerary)"
 
-#: app/ActionsCard.qml:172 app/ProgramMembershipPage.qml:138
+#: app/ActionsCard.qml:173 app/ProgramMembershipPage.qml:138
 #: app/TicketPage.qml:130 app/TripGroupPage.qml:618
 #, kde-format
 msgid "Actions"
 msgstr "동작"
 
-#: app/ActionsCard.qml:190
+#: app/ActionsCard.qml:191
 #, kde-format
 msgctxt "cancel as in revoking a booking"
 msgid "Cancel Reservation"
 msgstr "예약 취소"
 
-#: app/ActionsCard.qml:191
+#: app/ActionsCard.qml:192
 #, kde-format
 msgid "Check-in"
 msgstr "체크인"
 
-#: app/ActionsCard.qml:192
+#: app/ActionsCard.qml:193
 #, kde-format
 msgid "Download"
 msgstr "다운로드"
 
-#: app/ActionsCard.qml:193
+#: app/ActionsCard.qml:194
 #, kde-format
 msgctxt "participate in an event"
 msgid "Join"
 msgstr "참가"
 
-#: app/ActionsCard.qml:194
+#: app/ActionsCard.qml:195
 #, kde-format
 msgid "Reserve"
 msgstr "예약"
 
-#: app/ActionsCard.qml:195
+#: app/ActionsCard.qml:196
 #, kde-format
 msgid "Change Reservation"
 msgstr "예약 변경"
 
-#: app/ActionsCard.qml:196
+#: app/ActionsCard.qml:197
 #, kde-format
 msgid "View Reservation"
 msgstr "예약 보기"
@@ -1899,18 +1899,18 @@ msgstr "지도 열기"
 msgid "Open wheelmap.org"
 msgstr "wheelmap.org 열기"
 
-#: app/IndoorMapPage.qml:304
+#: app/IndoorMapPage.qml:305
 #, kde-format
 msgid "Switched to floor %1"
 msgstr "%1층으로 전환됨"
 
-#: app/IndoorMapPage.qml:351
+#: app/IndoorMapPage.qml:352
 #, kde-format
 msgctxt "@action:intoolbar Go down one floor"
 msgid "Floor down"
 msgstr "한 층 아래"
 
-#: app/IndoorMapPage.qml:360
+#: app/IndoorMapPage.qml:361
 #, kde-format
 msgctxt "@action:intoolbar Go up one floor"
 msgid "Floor up"
@@ -2865,42 +2865,42 @@ msgstr "프로그램 멤버십"
 msgid "Show Pass"
 msgstr "패스 표시"
 
-#: app/publictransport.cpp:130 app/publictransport.cpp:157
+#: app/publictransport.cpp:131 app/publictransport.cpp:158
 #, kde-format
 msgid "Walk"
 msgstr "걷기"
 
-#: app/publictransport.cpp:132
+#: app/publictransport.cpp:133
 #, kde-format
 msgid "Wait"
 msgstr "대기"
 
-#: app/publictransport.cpp:141
+#: app/publictransport.cpp:142
 #, kde-format
 msgid "Rented bicycle"
 msgstr "대여한 자전거"
 
-#: app/publictransport.cpp:143
+#: app/publictransport.cpp:144
 #, kde-format
 msgid "Rented moped"
 msgstr "대여한 모페드"
 
-#: app/publictransport.cpp:145
+#: app/publictransport.cpp:146
 #, kde-format
 msgid "Rented kick scooter"
 msgstr "대여한 킥 스쿠터"
 
-#: app/publictransport.cpp:147
+#: app/publictransport.cpp:148
 #, kde-format
 msgid "Rented car"
 msgstr "렌터카"
 
-#: app/publictransport.cpp:153
+#: app/publictransport.cpp:154
 #, kde-format
 msgid "Bicycle"
 msgstr "자전거"
 
-#: app/publictransport.cpp:155 app/StatisticsPage.qml:148
+#: app/publictransport.cpp:156 app/StatisticsPage.qml:148
 #, kde-format
 msgid "Car"
 msgstr "자동차"
@@ -3403,13 +3403,13 @@ msgstr "최근 사용"
 msgid "Most often used"
 msgstr "자주 사용함"
 
-#: app/StopPickerPage.qml:132 app/StopPickerPage.qml:212
+#: app/StopPickerPage.qml:133 app/StopPickerPage.qml:213
 #, kde-format
 msgctxt "location name, locality, region, country"
 msgid "%1, %2, %3, %4"
 msgstr ""
 
-#: app/StopPickerPage.qml:138 app/StopPickerPage.qml:218
+#: app/StopPickerPage.qml:139 app/StopPickerPage.qml:219
 #, fuzzy, kde-format
 #| msgctxt "weekday, date"
 #| msgid "%1, %2"
@@ -3417,7 +3417,7 @@ msgctxt "location name, locality, country"
 msgid "%1, %2, %3"
 msgstr "%2 %1"
 
-#: app/StopPickerPage.qml:143 app/StopPickerPage.qml:223
+#: app/StopPickerPage.qml:144 app/StopPickerPage.qml:224
 #, fuzzy, kde-format
 #| msgctxt "weekday, date"
 #| msgid "%1, %2"
@@ -3425,7 +3425,7 @@ msgctxt "location name, region, country"
 msgid "%1, %2, %3"
 msgstr "%2 %1"
 
-#: app/StopPickerPage.qml:164 app/StopPickerPage.qml:245
+#: app/StopPickerPage.qml:165 app/StopPickerPage.qml:246
 #, fuzzy, kde-format
 #| msgctxt "weekday, date"
 #| msgid "%1, %2"
@@ -3433,7 +3433,7 @@ msgctxt "locality, region, country"
 msgid "%1, %2, %3"
 msgstr "%2 %1"
 
-#: app/StopPickerPage.qml:169 app/StopPickerPage.qml:250
+#: app/StopPickerPage.qml:170 app/StopPickerPage.qml:251
 #, fuzzy, kde-format
 #| msgctxt "weekday, date"
 #| msgid "%1, %2"
@@ -3441,7 +3441,7 @@ msgctxt "locality, country"
 msgid "%1, %2"
 msgstr "%2 %1"
 
-#: app/StopPickerPage.qml:173 app/StopPickerPage.qml:254
+#: app/StopPickerPage.qml:174 app/StopPickerPage.qml:255
 #, fuzzy, kde-format
 #| msgctxt "weekday, date"
 #| msgid "%1, %2"
@@ -3449,12 +3449,12 @@ msgctxt "region, country"
 msgid "%1, %2"
 msgstr "%2 %1"
 
-#: app/StopPickerPage.qml:188
+#: app/StopPickerPage.qml:189
 #, kde-format
 msgid "Remove history entry"
 msgstr "과거 기록 항목 삭제"
 
-#: app/StopPickerPage.qml:293
+#: app/StopPickerPage.qml:294
 #, kde-format
 msgid "No locations found"
 msgstr "위치를 찾을 수 없음"
