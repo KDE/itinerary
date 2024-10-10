@@ -62,6 +62,17 @@ Kirigami.ScrollablePage {
             onClicked: DevelopmentModeController.enablePublicTransportLogging();
         }
 
+        QQC2.TextField {
+            id: localeEdit
+            placeholderText: "locale"
+            Layout.fillWidth: true
+        }
+        QQC2.Button {
+            text: "Retranslate"
+            Layout.fillWidth: true
+            onClicked: DevelopmentModeController.retranslate(localeEdit.text)
+        }
+
         QQC2.Button {
             text: "Crash"
             Layout.fillWidth: true

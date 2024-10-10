@@ -91,6 +91,13 @@ void DevelopmentModeController::clearOsmTileCache()
     QDir(base + QLatin1StringView("/17")).removeRecursively();
 }
 
+void DevelopmentModeController::retranslate(const QString &locale)
+{
+    qputenv("LANGUAGE", locale.toUtf8());
+    QCoreApplication::sendEvent(QCoreApplication::instance(), new QEvent(QEvent::LocaleChange));
+    QCoreApplication::sendEvent(QCoreApplication::instance(), new QEvent(QEvent::LanguageChange));
+}
+
 void DevelopmentModeController::crash()
 {
     std::raise(SIGSEGV);
