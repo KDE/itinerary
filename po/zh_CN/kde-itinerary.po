@@ -275,9 +275,7 @@ msgid "Replace"
 msgstr "替换"
 
 #: app/applicationcontroller.cpp:188
-#, fuzzy, kde-format
-#| msgctxt "weekday, date"
-#| msgid "%1, %2"
+#, kde-format
 msgctxt "geo coordinate"
 msgid "%1, %2"
 msgstr "%2，%1"
@@ -1128,11 +1126,10 @@ msgid "Boarding time has to be before the departure time."
 msgstr ""
 
 #: app/FlightEditor.qml:139
-#, fuzzy, kde-format
-#| msgid "Boarding Pass"
+#, kde-format
 msgctxt "flight departure boarding group"
 msgid "Boarding group"
-msgstr "登机牌"
+msgstr ""
 
 #: app/FlightEditor.qml:144
 #, kde-format
@@ -3385,41 +3382,31 @@ msgid "%1, %2, %3, %4"
 msgstr ""
 
 #: app/StopPickerPage.qml:139 app/StopPickerPage.qml:219
-#, fuzzy, kde-format
-#| msgctxt "weekday, date"
-#| msgid "%1, %2"
+#, kde-format
 msgctxt "location name, locality, country"
 msgid "%1, %2, %3"
-msgstr "%2，%1"
+msgstr ""
 
 #: app/StopPickerPage.qml:144 app/StopPickerPage.qml:224
-#, fuzzy, kde-format
-#| msgctxt "weekday, date"
-#| msgid "%1, %2"
+#, kde-format
 msgctxt "location name, region, country"
 msgid "%1, %2, %3"
-msgstr "%2，%1"
+msgstr ""
 
 #: app/StopPickerPage.qml:165 app/StopPickerPage.qml:246
-#, fuzzy, kde-format
-#| msgctxt "weekday, date"
-#| msgid "%1, %2"
+#, kde-format
 msgctxt "locality, region, country"
 msgid "%1, %2, %3"
-msgstr "%2，%1"
+msgstr ""
 
 #: app/StopPickerPage.qml:170 app/StopPickerPage.qml:251
-#, fuzzy, kde-format
-#| msgctxt "weekday, date"
-#| msgid "%1, %2"
+#, kde-format
 msgctxt "locality, country"
 msgid "%1, %2"
 msgstr "%2，%1"
 
 #: app/StopPickerPage.qml:174 app/StopPickerPage.qml:255
-#, fuzzy, kde-format
-#| msgctxt "weekday, date"
-#| msgid "%1, %2"
+#, kde-format
 msgctxt "region, country"
 msgid "%1, %2"
 msgstr "%2，%1"
@@ -4211,22 +4198,3 @@ msgstr ""
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr ""
-
-#~ msgctxt "seat number"
-#~ msgid "Number:"
-#~ msgstr "数字："
-
-#~ msgctxt "seat type"
-#~ msgid "Type:"
-#~ msgstr "类型："
-
-#~ msgctxt "coach of a train"
-#~ msgid "Coach:"
-#~ msgstr "车厢："
-
-#~ msgctxt "Train seat"
-#~ msgid "Seat:"
-#~ msgstr "座号："
-
-#~ msgid "Class:"
-#~ msgstr "座位等级："
