@@ -468,7 +468,7 @@ int main(int argc, char **argv)
     auto l10nContext = new KLocalizedContext(&engine);
     l10nContext->setTranslationDomain(QStringLiteral(TRANSLATION_DOMAIN));
     engine.rootContext()->setContextObject(l10nContext);
-    engine.load(QStringLiteral("qrc:/qt/qml/org/kde/itinerary/main.qml"));
+    engine.loadFromModule("org.kde.itinerary", "Main");
 
     // Exit on QML load error.
     if (engine.rootObjects().isEmpty()) {

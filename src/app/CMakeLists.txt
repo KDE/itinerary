@@ -116,8 +116,8 @@ target_sources(itinerary-app PRIVATE
     unitconversion.cpp
     weatherforecastmodel.cpp
 )
-qt_add_qml_module(itinerary-app URI org.kde.itinerary NO_PLUGIN QML_FILES
-    main.qml
+ecm_add_qml_module(itinerary-app URI org.kde.itinerary NO_PLUGIN QML_FILES
+    Main.qml
     AboutPage.qml
     ActionsCard.qml
     AlternativeJourneyPage.qml

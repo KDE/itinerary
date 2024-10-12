@@ -44,7 +44,7 @@ Kirigami.ApplicationWindow {
             timer.restart();
         }
     }
-    
+
     Timer {
         id: timer
         interval: 300
