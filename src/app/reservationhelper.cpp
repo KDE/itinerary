@@ -18,6 +18,7 @@
 #include <KItinerary/Ticket>
 #include <KItinerary/Visit>
 
+#include <KPublicTransport/Feature>
 #include <KPublicTransport/Line>
 #include <KPublicTransport/RentalVehicle>
 
@@ -164,7 +165,7 @@ QString ReservationHelper::defaultIconName(const QVariant &res)
         return u"meeting-attending"_s;
     }
     if (JsonLd::isA<FoodEstablishmentReservation>(res)) {
-        return u"qrc:///images/foodestablishment.svg"_s;
+        return KPublicTransport::Feature::typeIconName(KPublicTransport::Feature::Restaurant);
     }
     if (JsonLd::isA<RentalCarReservation>(res)) {
         return KPublicTransport::RentalVehicle::vehicleTypeIconName(KPublicTransport::RentalVehicle::Car);

@@ -218,7 +218,7 @@ private Q_SLOTS:
 
         idx = ctrl.index(3, 0);
         QCOMPARE(idx.data(ImportController::TitleRole).toString(), "Raclette"_L1);
-        QCOMPARE(idx.data(ImportController::IconNameRole).toString(), "qrc:///images/foodestablishment.svg"_L1);
+        QVERIFY(idx.data(ImportController::IconNameRole).toString().contains("restaurant"_L1));
         QCOMPARE(idx.data(ImportController::SelectedRole).toBool(), true);
         res = idx.data(ImportController::DataRole);
         QVERIFY(KItinerary::JsonLd::isA<KItinerary::FoodEstablishmentReservation>(res));

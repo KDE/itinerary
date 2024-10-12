@@ -44,6 +44,7 @@
 #include <KItinerary/SortUtil>
 #include <KItinerary/Ticket>
 
+#include <KPublicTransport/Feature>
 #include <KPublicTransport/Line>
 
 #if HAVE_KHEALTHCERTIFICATE
@@ -677,7 +678,7 @@ QVariant ImportController::data(const QModelIndex &index, int role) const
                         return u"go-home-symbolic"_s;
                     }
                     if (JsonLd::isA<FoodEstablishment>(elem.data) || JsonLd::isA<LocalBusiness>(elem.data)) {
-                        return u"qrc:///images/foodestablishment.svg"_s;
+                        return KPublicTransport::Feature::typeIconName(KPublicTransport::Feature::Restaurant);
                     }
                     return ReservationHelper::defaultIconName(elem.data);
                 case ImportElement::HealthCertificate:

@@ -164,7 +164,7 @@ Kirigami.ScrollablePage {
         },
         Kirigami.Action {
             text: i18n("Add restaurant…")
-            icon.name: "qrc:///images/foodestablishment.svg"
+            icon.name: KPublicTransport.FeatureType.typeIconName(KPublicTransport.Feature.Restaurant)
             onTriggered: {
                 const dt = root.isEmptyTripGroup ? new Date() : dateTimeAtIndex(currentIndex());
                 let res =  Factory.makeFoodEstablishmentReservation();
