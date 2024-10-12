@@ -116,8 +116,9 @@ FormCard.FormCard {
             }
         }
 
-        status: Kirigami.MessageType.Error
-        statusMessage: tripGroupSelector.currentIndex < 0 ? i18n("A trip must be selected.") : ""
+        // TODO needs https://invent.kde.org/libraries/kirigami-addons/-/merge_requests/263
+        // status: Kirigami.MessageType.Error
+        // statusMessage: tripGroupSelector.currentIndex < 0 ? i18n("A trip must be selected.") : ""
 
         Component.onCompleted: tripGroupSelector.setDefaultSelection()
     }
