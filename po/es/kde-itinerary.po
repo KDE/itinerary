@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-10 00:39+0000\n"
+"POT-Creation-Date: 2024-10-13 00:40+0000\n"
 "PO-Revision-Date: 2024-09-28 12:45+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -29,7 +29,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "ecuadra@eloihr.net"
 
-#: app/AboutPage.qml:18 app/main.qml:233
+#: app/AboutPage.qml:18 app/Main.qml:233
 #, kde-format
 msgid "About"
 msgstr "Acerca de"
@@ -120,7 +120,7 @@ msgstr "Editar"
 msgid "Add to calendar…"
 msgstr "Añadir al calendario..."
 
-#: app/ActionsCard.qml:74 app/main.qml:221 app/TripGroupDelegate.qml:182
+#: app/ActionsCard.qml:74 app/Main.qml:221 app/TripGroupDelegate.qml:182
 #: app/TripGroupPage.qml:650
 #, kde-format
 msgid "Export…"
@@ -797,7 +797,7 @@ msgstr "Proveedores de datos:"
 msgid "Add Document"
 msgstr "Añadir documento"
 
-#: app/DocumentsCard.qml:37 app/main.qml:125 app/main.qml:126
+#: app/DocumentsCard.qml:37 app/Main.qml:125 app/Main.qml:126
 #, kde-format
 msgid "All Files (*.*)"
 msgstr "Todos los archivos (*.*)"
@@ -1388,7 +1388,7 @@ msgstr "Borrar pase"
 msgid "Do you really want to delete this pass?"
 msgstr "¿Realmente desea borrar este pase?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:310 app/main.qml:21 app/main.qml:161
+#: app/gpxexport.cpp:33 app/main.cpp:310 app/Main.qml:21 app/Main.qml:161
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -1408,7 +1408,7 @@ msgstr "Tren %1 de %2 a %3"
 msgid "Bus %1 from %2 to %3"
 msgstr "Autobús %1 de %2 a %3"
 
-#: app/gpxexport.cpp:58 app/reservationhelper.cpp:138
+#: app/gpxexport.cpp:58 app/reservationhelper.cpp:139
 #, kde-format
 msgid "Ferry from %1 to %2"
 msgstr "Ferry de %1 a %2"
@@ -1503,7 +1503,7 @@ msgstr "Prueba %1 (%2)"
 msgid "Recovery (%1)"
 msgstr "Recuperación (%1)"
 
-#: app/HealthCertificatePage.qml:16 app/main.qml:195
+#: app/HealthCertificatePage.qml:16 app/Main.qml:195
 #, kde-format
 msgid "Health Certificates"
 msgstr "Certificados sanitarios"
@@ -1765,28 +1765,28 @@ msgstr "Hora de check-in"
 msgid "Check-out time"
 msgstr "Hora de check-out"
 
-#: app/importcontroller.cpp:153 app/importcontroller.cpp:469
+#: app/importcontroller.cpp:154 app/importcontroller.cpp:470
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Importación fallida: %1"
 
-#: app/importcontroller.cpp:158
+#: app/importcontroller.cpp:159
 #, kde-format
 msgid "Import failed: File too large."
 msgstr "Importación fallida: Archivo demasiado grande."
 
-#: app/importcontroller.cpp:217 app/importcontroller.cpp:314
+#: app/importcontroller.cpp:218 app/importcontroller.cpp:315
 #, kde-format
 msgid "Found nothing to import."
 msgstr "No se ha encontrado nada para importar."
 
-#: app/importcontroller.cpp:441
+#: app/importcontroller.cpp:442
 #, kde-format
 msgid "No importable events found in this calendar."
 msgstr ""
 "Se han encontrado eventos en este calendario que no se pueden importar."
 
-#: app/importcontroller.cpp:623
+#: app/importcontroller.cpp:624
 #, kde-format
 msgid "Backup"
 msgstr "Copia de seguridad"
@@ -2213,7 +2213,7 @@ msgstr "Vuelo %1 a %2:"
 msgid "Itinerary change"
 msgstr "Cambio de itinerario"
 
-#: app/LiveStatusPage.qml:19 app/main.qml:206
+#: app/LiveStatusPage.qml:19 app/Main.qml:206
 #, kde-format
 msgid "Live Status"
 msgstr "Estado en directo"
@@ -2437,97 +2437,97 @@ msgctxt "@info:shell"
 msgid "Files or URLs to import."
 msgstr "Archivos o URL para importar."
 
-#: app/main.qml:61
+#: app/Main.qml:61
 #, kde-format
 msgid "Open File…"
 msgstr "Abrir archivo..."
 
-#: app/main.qml:69 app/TicketTokenEditorCard.qml:129
+#: app/Main.qml:69 app/TicketTokenEditorCard.qml:129
 #, kde-format
 msgid "Paste"
 msgstr "Pegar"
 
-#: app/main.qml:76
+#: app/Main.qml:76
 #, kde-format
 msgid "Scan Barcode…"
 msgstr "Escanear código de barras..."
 
-#: app/main.qml:84
+#: app/Main.qml:84
 #, kde-format
 msgid "Add from Calendar…"
 msgstr "Añadir desde calendario..."
 
-#: app/main.qml:98
+#: app/Main.qml:98
 #, kde-format
 msgid "Deutsche Bahn Online Ticket…"
 msgstr "Billete en línea de Deutsche Bahn..."
 
-#: app/main.qml:107
+#: app/Main.qml:107
 #, kde-format
 msgid "SNCF Online Ticket…"
 msgstr "Billete en línea de SNCF..."
 
-#: app/main.qml:120
+#: app/Main.qml:120
 #, kde-format
 msgid "Import Reservation"
 msgstr "Importar reserva"
 
-#: app/main.qml:126
+#: app/Main.qml:126
 #, kde-format
 msgid "PkPass files (*.pkpass)"
 msgstr "Archivos PkPass (*.pkpass)"
 
-#: app/main.qml:126
+#: app/Main.qml:126
 #, kde-format
 msgid "PDF files (*.pdf)"
 msgstr "Archivos PDF (*.pdf)"
 
-#: app/main.qml:126
+#: app/Main.qml:126
 #, kde-format
 msgid "iCal events (*.ics)"
 msgstr "Eventos iCal (*.ics)"
 
-#: app/main.qml:126 app/main.qml:135
+#: app/Main.qml:126 app/Main.qml:135
 #, kde-format
 msgid "KDE Itinerary files (*.itinerary)"
 msgstr "Archivos de KDE Itinerary (*.itinerary)"
 
-#: app/main.qml:133
+#: app/Main.qml:133
 #, kde-format
 msgid "Export Itinerary Data"
 msgstr "Exportar datos del itinerario"
 
-#: app/main.qml:166 app/PassPage.qml:139
+#: app/Main.qml:166 app/PassPage.qml:139
 #, kde-format
 msgid "Import…"
 msgstr "Importar..."
 
-#: app/main.qml:171
+#: app/Main.qml:171
 #, kde-format
 msgid "Check for Updates"
 msgstr "Comprobar actualizaciones"
 
-#: app/main.qml:180
+#: app/Main.qml:180
 #, kde-format
 msgid "Download Maps"
 msgstr "Descargar mapas"
 
-#: app/main.qml:188 app/StatisticsPage.qml:15
+#: app/Main.qml:188 app/StatisticsPage.qml:15
 #, kde-format
 msgid "Statistics"
 msgstr "Estadísticas"
 
-#: app/main.qml:214 app/WelcomePage.qml:41
+#: app/Main.qml:214 app/WelcomePage.qml:41
 #, kde-format
 msgid "Settings…"
 msgstr "Preferencias..."
 
-#: app/main.qml:226 app/WelcomePage.qml:16
+#: app/Main.qml:226 app/WelcomePage.qml:16
 #, kde-format
 msgid "Help"
 msgstr "Ayuda"
 
-#: app/main.qml:343
+#: app/Main.qml:343
 #, kde-format
 msgid "Map download finished."
 msgstr "Descarga de mapas finalizada."
@@ -2955,17 +2955,17 @@ msgstr[1] "%1 espacios"
 msgid "Documents and Tickets"
 msgstr "Documentos y billetes"
 
-#: app/reservationhelper.cpp:129
+#: app/reservationhelper.cpp:130
 #, kde-format
 msgid "Flight from %1 to %2"
 msgstr "Vuelo de %1 a %2"
 
-#: app/reservationhelper.cpp:132
+#: app/reservationhelper.cpp:133
 #, kde-format
 msgid "Train from %1 to %2"
 msgstr "Tren de %1 a %2"
 
-#: app/reservationhelper.cpp:135
+#: app/reservationhelper.cpp:136
 #, kde-format
 msgid "Bus from %1 to %2"
 msgstr "Autobús de %1 a %2"
