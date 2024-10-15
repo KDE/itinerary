@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-13 00:40+0000\n"
+"POT-Creation-Date: 2024-10-15 00:40+0000\n"
 "PO-Revision-Date: 2024-09-30 12:12+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -2861,42 +2861,42 @@ msgstr "Adhesion de Programma"
 msgid "Show Pass"
 msgstr "Monstra Pass"
 
-#: app/publictransport.cpp:131 app/publictransport.cpp:158
+#: app/publictransport.cpp:130 app/publictransport.cpp:157
 #, kde-format
 msgid "Walk"
 msgstr "Promenada"
 
-#: app/publictransport.cpp:133
+#: app/publictransport.cpp:132
 #, kde-format
 msgid "Wait"
 msgstr "Pausa"
 
-#: app/publictransport.cpp:142
+#: app/publictransport.cpp:141
 #, kde-format
 msgid "Rented bicycle"
 msgstr "Bicycletta locate"
 
-#: app/publictransport.cpp:144
+#: app/publictransport.cpp:143
 #, kde-format
 msgid "Rented moped"
 msgstr "Cyclo a motor locate"
 
-#: app/publictransport.cpp:146
+#: app/publictransport.cpp:145
 #, kde-format
 msgid "Rented kick scooter"
 msgstr "Monopatin locate"
 
-#: app/publictransport.cpp:148
+#: app/publictransport.cpp:147
 #, kde-format
 msgid "Rented car"
 msgstr "Auto de location"
 
-#: app/publictransport.cpp:154
+#: app/publictransport.cpp:153
 #, kde-format
 msgid "Bicycle"
 msgstr "Bicycletta"
 
-#: app/publictransport.cpp:156 app/StatisticsPage.qml:148
+#: app/publictransport.cpp:155 app/StatisticsPage.qml:148
 #, kde-format
 msgid "Car"
 msgstr "Automobile"
