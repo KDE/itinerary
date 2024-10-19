@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-15 00:40+0000\n"
-"PO-Revision-Date: 2024-09-20 15:15+0200\n"
+"PO-Revision-Date: 2024-10-18 16:02+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 24.08.1\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -380,7 +380,7 @@ msgstr "Čas příjezdu: %1"
 #: app/BoatEditor.qml:17
 #, kde-format
 msgid "New Boat Trip"
-msgstr ""
+msgstr "Nový výlet lodí"
 
 #: app/BoatEditor.qml:17
 #, kde-format
@@ -1137,7 +1137,7 @@ msgstr ""
 #, kde-format
 msgctxt "flight departure boarding group"
 msgid "Boarding group"
-msgstr ""
+msgstr "Nastupující skupina"
 
 #: app/FlightEditor.qml:144
 #, kde-format
@@ -2047,7 +2047,7 @@ msgstr "Hledat výlet"
 #: app/JourneyRequestPage.qml:232
 #, kde-format
 msgid "Mode of transportation"
-msgstr ""
+msgstr "Režim přepravy"
 
 #: app/JourneyRequestPage.qml:241
 #, kde-format
@@ -3402,37 +3402,37 @@ msgstr ""
 #, kde-format
 msgctxt "location name, locality, region, country"
 msgid "%1, %2, %3, %4"
-msgstr ""
+msgstr "%1, %2, %3, %4"
 
 #: app/StopPickerPage.qml:139 app/StopPickerPage.qml:219
 #, kde-format
 msgctxt "location name, locality, country"
 msgid "%1, %2, %3"
-msgstr ""
+msgstr "%1, %2, %3"
 
 #: app/StopPickerPage.qml:144 app/StopPickerPage.qml:224
 #, kde-format
 msgctxt "location name, region, country"
 msgid "%1, %2, %3"
-msgstr ""
+msgstr "%1, %2, %3"
 
 #: app/StopPickerPage.qml:165 app/StopPickerPage.qml:246
 #, kde-format
 msgctxt "locality, region, country"
 msgid "%1, %2, %3"
-msgstr ""
+msgstr "%1, %2, %3"
 
 #: app/StopPickerPage.qml:170 app/StopPickerPage.qml:251
 #, kde-format
 msgctxt "locality, country"
 msgid "%1, %2"
-msgstr ""
+msgstr "%1, %2"
 
 #: app/StopPickerPage.qml:174 app/StopPickerPage.qml:255
 #, kde-format
 msgctxt "region, country"
 msgid "%1, %2"
-msgstr ""
+msgstr "%1, %2"
 
 #: app/StopPickerPage.qml:189
 #, kde-format
