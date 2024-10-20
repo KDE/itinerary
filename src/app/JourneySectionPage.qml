@@ -25,7 +25,7 @@ Kirigami.Page {
 
     title: i18n("Journey Details")
 
-    property var journeySection
+    property KPublicTransport.journeySection journeySection
     property alias showProgress: sectionModel.showProgress
     property alias enableMapView: mapButton.visible
     default property alias _children: root.children
@@ -383,8 +383,8 @@ Kirigami.Page {
                         id: line
                         line.width: 10
                         line.color: journeySection.route.line.hasColor ? journeySection.route.line.color : Kirigami.Theme.textColor
-                        path: PublicTransport.pathToGeoCoordinates(journeySection)
-                        }
+                        path: KPublicTransport.MapUtils.polyline(root.journeySection);
+                    }
 
                     QtLocation.MapQuickItem {
                         coordinate {
@@ -451,10 +451,6 @@ Kirigami.Page {
                         anchorPoint.x: sourceItem.width/2
                         anchorPoint.y: sourceItem.height/2
 
-                        Component.onCompleted: {
-                            map.center.latitude = line.path[(line.pathLength()/2).toFixed(0)].latitude
-                            map.center.longitude = line.path[(line.pathLength()/2).toFixed(0)].longitude
-                        }
                         sourceItem: Rectangle {
                             width:15
                             height:15
@@ -474,6 +470,16 @@ Kirigami.Page {
                         }
                     }
                 }
+
+                function centerOnJourney() {
+                    const bbox = KPublicTransport.MapUtils.boundingBox(root.journeySection);
+                    map.center = KPublicTransport.MapUtils.center(bbox);
+                    map.zoomLevel = KPublicTransport.MapUtils.zoomLevel(bbox, map.width, map.height);
+                }
+
+                onWidthChanged: centerOnJourney();
+                onHeightChanged: centerOnJourney();
+                Component.onCompleted: centerOnJourney();
             }
         }
     }
