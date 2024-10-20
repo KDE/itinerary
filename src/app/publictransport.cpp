@@ -28,7 +28,6 @@
 #include <QDateTime>
 #include <QDebug>
 #include <QUrl>
-#include <kpublictransport/journey.h>
 
 bool PublicTransport::isBusMode(KPublicTransport::Line::Mode mode)
 {
@@ -521,34 +520,6 @@ bool PublicTransport::isSameStopoverForLayout(const KPublicTransport::Stopover &
     const auto lhsPlatform = lhs.hasExpectedPlatform() ? lhs.expectedPlatform() : lhs.scheduledPlatform();
     const auto rhsPlatform = rhs.hasExpectedPlatform() ? rhs.expectedPlatform() : rhs.scheduledPlatform();
     return lhsPlatform == rhsPlatform;
-}
-
-QList<QGeoCoordinate>PublicTransport::pathToGeoCoordinates(const KPublicTransport::JourneySection &jny)
-{
-    QList<QGeoCoordinate> result;
-
-    const auto path = jny.path();
-    if (path.isEmpty()) {
-        result.push_back({jny.departure().stopPoint().latitude(), jny.departure().stopPoint().longitude()});
-        for (const auto &s : jny.intermediateStops()) {
-            if (!s.stopPoint().hasCoordinate()) {
-                continue;
-            }
-
-            result.push_back({s.stopPoint().latitude(), s.stopPoint().longitude()});
-        }
-        result.push_back({jny.arrival().stopPoint().latitude(), jny.arrival().stopPoint().longitude()});
-        return result;
-    }
-
-    for (const auto &section : path.sections()) {
-        const auto path = section.path();
-        for (const auto &p : path) {
-            result.push_back({p.y(), p.x()});
-        }
-    }
-
-    return result;
 }
 
 KPublicTransport::Load::Category PublicTransport::maximumOccupancy(const QList<KPublicTransport::LoadInfo> &loadInfo)

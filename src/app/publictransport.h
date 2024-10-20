@@ -20,8 +20,6 @@
 #include <KPublicTransport/Location>
 #include <KPublicTransport/Manager>
 
-#include <QGeoCoordinate>
-
 namespace KPublicTransport {
 class Journey;
 class JourneySection;
@@ -112,11 +110,6 @@ public:
      *  change invalidates vehicle layout data.
      */
     [[nodiscard]] static bool isSameStopoverForLayout(const KPublicTransport::Stopover &lhs, const KPublicTransport::Stopover &rhs);
-
-    /** Convert a KPublicTransport::JourneySection path into a QGeoCoordinate list for consumption by a QtLocation
-     *  map item.
-     */
-    Q_INVOKABLE [[nodiscard]] static QList<QGeoCoordinate> pathToGeoCoordinates(const KPublicTransport::JourneySection &jny);
 
     /** Returns the maximum occupancy found in the given load information set. */
     Q_INVOKABLE [[nodiscard]] static KPublicTransport::Load::Category maximumOccupancy(const QList<KPublicTransport::LoadInfo> &loadInfo);
