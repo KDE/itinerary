@@ -44,5 +44,6 @@ android {
     defaultConfig {
         minSdkVersion @ANDROID_API_LEVEL@
         targetSdkVersion @ANDROID_SDK_COMPILE_API@
+        namespace "org.kde.solidextras"
     }
 }
