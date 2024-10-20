@@ -50,6 +50,7 @@
 #include "tripgroupcontroller.h"
 #include "tripgroupfilterproxymodel.h"
 #include "tripgroupmanager.h"
+#include "tripgroupmapmodel.h"
 #include "tripgroupmodel.h"
 #include "tripgroupproxymodel.h"
 #include "tripgroupsplitmodel.h"
@@ -170,6 +171,7 @@ void registerApplicationTypes()
     qmlRegisterType<TransferDelegateController>("org.kde.itinerary", 1, 0, "TransferDelegateController");
     qmlRegisterType<TripGroupController>("org.kde.itinerary", 1, 0, "TripGroupController");
     qmlRegisterType<TripGroupFilterProxyModel>("org.kde.itinerary", 1, 0, "TripGroupFilterProxyModel");
+    qmlRegisterType<TripGroupMapModel>("org.kde.itinerary", 1, 0, "TripGroupMapModel");
     qmlRegisterType<TripGroupProxyModel>("org.kde.itinerary", 1, 0, "TripGroupProxyModel");
     qmlRegisterType<TripGroupSplitModel>("org.kde.itinerary", 1, 0, "TripGroupSplitModel");
     qmlRegisterType<WeatherForecastModel>("org.kde.itinerary", 1, 0, "WeatherForecastModel");

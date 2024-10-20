@@ -319,6 +319,11 @@ Kirigami.ScrollablePage {
     }
 
     Component {
+        id: tripGroupMapPage
+        TripGroupMapPage { tripGroupId: root.tripGroupId }
+    }
+
+    Component {
         id: flightDetailsPage
         FlightPage { editor: flightEditorPage }
     }
@@ -463,6 +468,13 @@ Kirigami.ScrollablePage {
                     icon.name: "view-currency-list"
                     text: root.controller.currencies.length > 0 ? i18np("Currency: %2", "Currencies: %2", root.controller.currencies.length, root.controller.currencies.join(", ")) : ""
                     visible: root.controller.currencies.length > 0
+                }
+
+                FormCard.FormButtonDelegate {
+                    icon.name: "map-globe"
+                    text: i18n("Show map…")
+                    visible: !root.isEmptyTripGroup
+                    onClicked: applicationWindow().pageStack.push(tripGroupMapPage);
                 }
             }
 
