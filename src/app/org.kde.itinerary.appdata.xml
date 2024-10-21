@@ -8,7 +8,9 @@
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>LGPL-2.0-or-later</project_license>
   <content_rating type="oars-1.1"/>
-  <developer_name translate="no">KDE</developer_name>
+  <developer id="kde.org">
+    <name translate="no">KDE</name>
+  </developer>
   <name>KDE Itinerary</name>
   <name xml:lang="ca">KDE Itinerary</name>
   <name xml:lang="ca-valencia">KDE Itinerary</name>
