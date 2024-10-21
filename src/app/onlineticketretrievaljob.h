@@ -37,14 +37,16 @@ Q_SIGNALS:
 
 private:
     void dbRequestFindOrder(const QVariantMap &arguments);
-    static QString dbParseKwid(QIODevice *io);
+    static QStringList dbParseKwid(QIODevice *io);
     void dbRequestOrderDetails(const QVariantMap &arguments);
 
+    void setupReply(QNetworkReply *reply);
     void handleReply(QNetworkReply *reply);
 
     QJsonArray m_result;
     QString m_errorMsg;
     QNetworkAccessManager *m_nam;
+    int m_pendingReplies = 0;
 };
 
 #endif // ONLINETICKETRETRIEVALJOB_H

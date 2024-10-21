@@ -16,8 +16,8 @@ print(f"Request 1:\n{postData}\n")
 req = requests.post('https://fahrkarten.bahn.de/mobile/dbc/xs.go?', data=postData.encode())
 print(f"Reply 1:\n{req.text}\n")
 
-kwid = re.search(r'kwid="([^"]*)"', req.text).group(1)
-postData = f'<rqorderdetails version="1.0"><rqheader v="23040000" os="KCI" app="KCI-Webservice"/><rqorder on="{arguments.ref}" kwid="{kwid}"/><authname tln="{arguments.name}"/></rqorderdetails>'
-print(f"Request 2:\n{postData}\n")
-req = requests.post('https://fahrkarten.bahn.de/mobile/dbc/xs.go?', data=postData.encode())
-print(f"Reply 2:\n{req.text}")
+for kwid in re.findall(r'kwid="([^"]*)"', req.text):
+    postData = f'<rqorderdetails version="1.0"><rqheader v="23040000" os="KCI" app="KCI-Webservice"/><rqorder on="{arguments.ref}" kwid="{kwid}"/><authname tln="{arguments.name}"/></rqorderdetails>'
+    print(f"Request 2:\n{postData}\n")
+    req = requests.post('https://fahrkarten.bahn.de/mobile/dbc/xs.go?', data=postData.encode())
+    print(f"Reply 2:\n{req.text}")
