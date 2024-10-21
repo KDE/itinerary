@@ -326,7 +326,6 @@ Kirigami.ApplicationWindow {
     Connections {
         target: ImportController
         function onShowImportPage() {
-            console.log("XXXX");
             if (ImportController.canAutoCommit()) {
                 console.log("Auto commit");
                 ApplicationController.commitImport(ImportController);
