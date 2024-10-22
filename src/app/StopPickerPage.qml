@@ -118,6 +118,7 @@ Kirigami.ScrollablePage {
         sortRoleName: Settings.read("StopPicker/historySortMode", "lastUsed")
         onSortRoleChanged: Settings.write("StopPicker/historySortMode", sortRoleName)
         sortOrder: sortRoleName == "locationName" ? Qt.AscendingOrder : Qt.DescendingOrder
+        sortCaseSensitivity: Qt.CaseInsensitive
     }
 
     Component {
