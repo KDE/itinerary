@@ -10,6 +10,7 @@
 
 #include <KItinerary/BoatTrip>
 #include <KItinerary/BusTrip>
+#include <KItinerary/Event>
 #include <KItinerary/ExtractorPostprocessor>
 #include <KItinerary/Reservation>
 #include <KItinerary/TrainTrip>
@@ -84,6 +85,13 @@ KPublicTransport::Location PublicTransport::locationFromPlace(const QVariant& pl
     }
     if (JsonLd::isA<TrainReservation>(reservation) || JsonLd::isA<BusReservation>(reservation)) {
         loc.setType(KPublicTransport::Location::Stop);
+    }
+    if (JsonLd::isA<LodgingReservation>(reservation)) {
+        loc.setName(reservation.value<LodgingReservation>().reservationFor().value<LodgingBusiness>().name());
+        loc.setType(KPublicTransport::Location::Address);
+    }
+    if (JsonLd::isA<EventReservation>(reservation)) {
+        loc.setName(reservation.value<EventReservation>().reservationFor().value<Event>().location().value<Place>().name());
     }
     const auto addr = KItinerary::LocationUtil::address(place);
     loc.setStreetAddress(addr.streetAddress());
