@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-15 00:40+0000\n"
+"POT-Creation-Date: 2024-10-22 00:40+0000\n"
 "PO-Revision-Date: 2024-09-28 12:45+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -2527,7 +2527,7 @@ msgstr "Preferencias..."
 msgid "Help"
 msgstr "Ayuda"
 
-#: app/Main.qml:343
+#: app/Main.qml:342
 #, kde-format
 msgid "Map download finished."
 msgstr "Descarga de mapas finalizada."
