@@ -112,6 +112,22 @@ Kirigami.ScrollablePage {
     LocationHistoryModel {
         id: locationHistoryModel
     }
+    TripGroupLocationModel {
+        id: tripGroupLocationModel
+        tripGroupManager: TripGroupManager
+        tripGroupId: ApplicationController.contextTripGroupId
+        onLocationsChanged: {
+            locationHistoryModel.clearPresetLocations();
+            for (let i = 0; i < tripGroupLocationModel.rowCount(); ++i) {
+                const idx = tripGroupLocationModel.index(i, 0);
+                locationHistoryModel.addPresetLocation(
+                    tripGroupLocationModel.data(idx, TripGroupLocationModel.LocationRole),
+                    tripGroupLocationModel.data(idx, TripGroupLocationModel.LastUsedRole),
+                    tripGroupLocationModel.data(idx, TripGroupLocationModel.UseCountRole)
+                );
+            }
+        }
+    }
     KSortFilterProxyModel {
         id: historySortModel
         sourceModel: locationHistoryModel
@@ -191,6 +207,7 @@ Kirigami.ScrollablePage {
                     onTriggered: {
                         sourceModel.removeRows(model.index, 1)
                     }
+                    enabled: model.removable
                 }
             ]
             onClicked: {

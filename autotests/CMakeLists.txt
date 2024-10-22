@@ -42,6 +42,7 @@ ecm_add_test(onlineticketretrievaltest.cpp mocknetworkaccessmanager.cpp TEST_NAM
 ecm_add_test(tripgroupmodeltest.cpp LINK_LIBRARIES Qt::Test itinerary)
 ecm_add_test(tripgroupcontrollertest.cpp LINK_LIBRARIES Qt::Test itinerary)
 ecm_add_test(tripgroupsplitmodeltest.cpp LINK_LIBRARIES Qt::Test itinerary)
+ecm_add_test(tripgrouplocationmodeltest.cpp LINK_LIBRARIES Qt::Test itinerary)
 
 ecm_add_test(weathertest.cpp LINK_LIBRARIES Qt::Test itinerary-weather)
 target_include_directories(weathertest PRIVATE ${CMAKE_BINARY_DIR})
