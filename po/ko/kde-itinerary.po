@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-22 00:40+0000\n"
+"POT-Creation-Date: 2024-10-24 00:40+0000\n"
 "PO-Revision-Date: 2024-08-20 23:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1391,7 +1391,7 @@ msgstr "패스 삭제"
 msgid "Do you really want to delete this pass?"
 msgstr "이 패스를 삭제하시겠습니까?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:310 app/Main.qml:21 app/Main.qml:161
+#: app/gpxexport.cpp:33 app/main.cpp:312 app/Main.qml:21 app/Main.qml:161
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE 여행 정보"
@@ -2415,23 +2415,23 @@ msgstr "M형"
 msgid "Type N"
 msgstr "N형"
 
-#: app/main.cpp:318
+#: app/main.cpp:320
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "디지털 여행 도우미"
 
-#: app/main.cpp:319
+#: app/main.cpp:321
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "Copyright © The KDE Community"
 
-#: app/main.cpp:326
+#: app/main.cpp:328
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "지정한 페이지의 여행 정보 열기"
 
-#: app/main.cpp:331
+#: app/main.cpp:333
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
@@ -2865,42 +2865,42 @@ msgstr "프로그램 멤버십"
 msgid "Show Pass"
 msgstr "패스 표시"
 
-#: app/publictransport.cpp:130 app/publictransport.cpp:157
+#: app/publictransport.cpp:138 app/publictransport.cpp:165
 #, kde-format
 msgid "Walk"
 msgstr "걷기"
 
-#: app/publictransport.cpp:132
+#: app/publictransport.cpp:140
 #, kde-format
 msgid "Wait"
 msgstr "대기"
 
-#: app/publictransport.cpp:141
+#: app/publictransport.cpp:149
 #, kde-format
 msgid "Rented bicycle"
 msgstr "대여한 자전거"
 
-#: app/publictransport.cpp:143
+#: app/publictransport.cpp:151
 #, kde-format
 msgid "Rented moped"
 msgstr "대여한 모페드"
 
-#: app/publictransport.cpp:145
+#: app/publictransport.cpp:153
 #, kde-format
 msgid "Rented kick scooter"
 msgstr "대여한 킥 스쿠터"
 
-#: app/publictransport.cpp:147
+#: app/publictransport.cpp:155
 #, kde-format
 msgid "Rented car"
 msgstr "렌터카"
 
-#: app/publictransport.cpp:153
+#: app/publictransport.cpp:161
 #, kde-format
 msgid "Bicycle"
 msgstr "자전거"
 
-#: app/publictransport.cpp:155 app/StatisticsPage.qml:148
+#: app/publictransport.cpp:163 app/StatisticsPage.qml:148
 #, kde-format
 msgid "Car"
 msgstr "자동차"
@@ -3403,13 +3403,13 @@ msgstr "최근 사용"
 msgid "Most often used"
 msgstr "자주 사용함"
 
-#: app/StopPickerPage.qml:133 app/StopPickerPage.qml:213
+#: app/StopPickerPage.qml:150 app/StopPickerPage.qml:231
 #, kde-format
 msgctxt "location name, locality, region, country"
 msgid "%1, %2, %3, %4"
 msgstr ""
 
-#: app/StopPickerPage.qml:139 app/StopPickerPage.qml:219
+#: app/StopPickerPage.qml:156 app/StopPickerPage.qml:237
 #, fuzzy, kde-format
 #| msgctxt "weekday, date"
 #| msgid "%1, %2"
@@ -3417,7 +3417,7 @@ msgctxt "location name, locality, country"
 msgid "%1, %2, %3"
 msgstr "%2 %1"
 
-#: app/StopPickerPage.qml:144 app/StopPickerPage.qml:224
+#: app/StopPickerPage.qml:161 app/StopPickerPage.qml:242
 #, fuzzy, kde-format
 #| msgctxt "weekday, date"
 #| msgid "%1, %2"
@@ -3425,7 +3425,7 @@ msgctxt "location name, region, country"
 msgid "%1, %2, %3"
 msgstr "%2 %1"
 
-#: app/StopPickerPage.qml:165 app/StopPickerPage.qml:246
+#: app/StopPickerPage.qml:182 app/StopPickerPage.qml:264
 #, fuzzy, kde-format
 #| msgctxt "weekday, date"
 #| msgid "%1, %2"
@@ -3433,7 +3433,7 @@ msgctxt "locality, region, country"
 msgid "%1, %2, %3"
 msgstr "%2 %1"
 
-#: app/StopPickerPage.qml:170 app/StopPickerPage.qml:251
+#: app/StopPickerPage.qml:187 app/StopPickerPage.qml:269
 #, fuzzy, kde-format
 #| msgctxt "weekday, date"
 #| msgid "%1, %2"
@@ -3441,7 +3441,7 @@ msgctxt "locality, country"
 msgid "%1, %2"
 msgstr "%2 %1"
 
-#: app/StopPickerPage.qml:174 app/StopPickerPage.qml:255
+#: app/StopPickerPage.qml:191 app/StopPickerPage.qml:273
 #, fuzzy, kde-format
 #| msgctxt "weekday, date"
 #| msgid "%1, %2"
@@ -3449,12 +3449,12 @@ msgctxt "region, country"
 msgid "%1, %2"
 msgstr "%2 %1"
 
-#: app/StopPickerPage.qml:189
+#: app/StopPickerPage.qml:206
 #, kde-format
 msgid "Remove history entry"
 msgstr "과거 기록 항목 삭제"
 
-#: app/StopPickerPage.qml:294
+#: app/StopPickerPage.qml:312
 #, kde-format
 msgid "No locations found"
 msgstr "위치를 찾을 수 없음"
