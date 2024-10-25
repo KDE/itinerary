@@ -10,6 +10,8 @@
 #include <KItinerary/Place>
 #include <KItinerary/PriceUtil>
 
+#include <KPublicTransport/Location>
+
 #include <KContacts/Address>
 
 #include <KCountry>
@@ -44,6 +46,14 @@ static KContacts::Address variantToKContactsAddress(const QVariant &obj)
         address.setLocality(a.addressLocality());
         address.setRegion(a.addressRegion());
         address.setCountry(a.addressCountry());
+    }
+    if (obj.typeId() == qMetaTypeId<KPublicTransport::Location>()) {
+        const auto a = obj.value<KPublicTransport::Location>();
+        address.setStreet(a.streetAddress());
+        address.setPostalCode(a.postalCode());
+        address.setLocality(a.locality());
+        address.setRegion(a.region());
+        address.setCountry(a.country());
     }
     return address;
 }
