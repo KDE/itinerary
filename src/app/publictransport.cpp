@@ -30,24 +30,6 @@
 #include <QUrl>
 #include <kpublictransport/journey.h>
 
-bool PublicTransport::isTrainMode(KPublicTransport::Line::Mode mode)
-{
-    using namespace KPublicTransport;
-    switch (mode) {
-        case Line::Train:
-        case Line::Funicular:
-        case Line::LocalTrain:
-        case Line::LongDistanceTrain:
-        case Line::Metro:
-        case Line::RailShuttle:
-        case Line::RapidTransit:
-        case Line::Tramway:
-            return true;
-        default:
-            return false;
-    }
-}
-
 bool PublicTransport::isBusMode(KPublicTransport::Line::Mode mode)
 {
     using namespace KPublicTransport;
@@ -248,7 +230,7 @@ static QVariant postProcessOne(const QVariant &res)
 QVariant PublicTransport::reservationFromJourneySection(const KPublicTransport::JourneySection &section)
 {
     using namespace KItinerary;
-    if (isTrainMode(section.route().line().mode())) {
+    if (KPublicTransport::Line::modeIsRailBound(section.route().line().mode())) {
         return postProcessOne(::applyJourneySection(TrainReservation(), section));
     }
     if (isBusMode(section.route().line().mode())) {
@@ -285,7 +267,7 @@ QVariant PublicTransport::mergeDeparture(const QVariant &res, const KPublicTrans
     using namespace KItinerary;
 
     QVariant newRes;
-    if (isTrainMode(dep.route().line().mode())) {
+    if (KPublicTransport::Line::modeIsRailBound(dep.route().line().mode())) {
         TrainTrip trip;
         trip.setDepartureStation(placeFromLocation<TrainStation>(dep.stopPoint()));
         trip.setDepartureTime(dep.scheduledDepartureTime());
@@ -311,7 +293,7 @@ QVariant PublicTransport::mergeArrival(const QVariant &res, const KPublicTranspo
     using namespace KItinerary;
 
     QVariant newRes;
-    if (isTrainMode(arr.route().line().mode())) {
+    if (KPublicTransport::Line::modeIsRailBound(arr.route().line().mode())) {
         TrainTrip trip;
         trip.setArrivalStation(placeFromLocation<TrainStation>(arr.stopPoint()));
         trip.setArrivalTime(arr.scheduledArrivalTime());

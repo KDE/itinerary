@@ -22,7 +22,7 @@ bool PublicTransportMatcher::isSameMode(const QVariant &res, KPublicTransport::L
     using namespace KPublicTransport;
 
     if (KItinerary::JsonLd::isA<KItinerary::TrainReservation>(res)) {
-        return PublicTransport::isTrainMode(mode);
+        return KPublicTransport::Line::modeIsRailBound(mode);
     } else if (KItinerary::JsonLd::isA<KItinerary::BusReservation>(res)) {
         return PublicTransport::isBusMode(mode);
     } else if (KItinerary::JsonLd::isA<KItinerary::FlightReservation>(res)) {
