@@ -17,7 +17,7 @@ share/mime/packages/kde6\.xml
 lib/qml/org/kde/kirigamiaddons/(settings|sounds|treeview)/.*
 
 # unused image formats
-plugins/imageformats/.*_(qico|qgif)_.*\.so
+plugins/imageformats/.*_qico_.*\.so
 
 # translation catalogs of dependencies not needed here
 share/locale/.*/LC_MESSAGES/(karchive6|kcodecs6|kconfig6|knotifications6|libkmime6)_qt\.qm
