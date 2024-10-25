@@ -172,7 +172,7 @@
             "from": {
                 "@type": "Location",
                 "country": "DE",
-                "floorLevel": 0,
+                "floorLevel": -2147483648,
                 "latitude": 52.51860046386719,
                 "longitude": 13.376299858093262,
                 "region": "DE-BE",
@@ -183,7 +183,7 @@
             "to": {
                 "@type": "Location",
                 "country": "DE",
-                "floorLevel": 0,
+                "floorLevel": -2147483648,
                 "latitude": 52.55379867553711,
                 "longitude": 13.29319953918457,
                 "name": "Tegel",
@@ -492,7 +492,7 @@
             "from": {
                 "@type": "Location",
                 "country": "DE",
-                "floorLevel": 0,
+                "floorLevel": -2147483648,
                 "latitude": 52.55379867553711,
                 "longitude": 13.29319953918457,
                 "name": "Tegel",
@@ -504,7 +504,7 @@
             "to": {
                 "@type": "Location",
                 "country": "DE",
-                "floorLevel": 0,
+                "floorLevel": -2147483648,
                 "latitude": 52.51860046386719,
                 "longitude": 13.376299858093262,
                 "region": "DE-BE",
