@@ -50,6 +50,7 @@ target_sources(itinerary PRIVATE
     tripgroupcontroller.cpp
     tripgroupfilterproxymodel.cpp
     tripgroupmanager.cpp
+    tripgroupmapmodel.cpp
     tripgroupmodel.cpp
     tripgrouplocationmodel.cpp
     tripgroupproxymodel.cpp
@@ -190,6 +191,8 @@ ecm_add_qml_module(itinerary-app URI org.kde.itinerary NO_PLUGIN QML_FILES
     LiveStatusPage.qml
     LocationInfoDelegate.qml
     LocationPicker.qml
+    MapCircle.qml
+    MapPin.qml
     MapView.qml
     MatrixRoomSelectionSheet.qml
     NavigationBar.qml
@@ -232,6 +235,7 @@ ecm_add_qml_module(itinerary-app URI org.kde.itinerary NO_PLUGIN QML_FILES
     TransportIcon.qml
     TripGroupDelegate.qml
     TripGroupEditorDialog.qml
+    TripGroupMapPage.qml
     TripGroupMergeDialog.qml
     TripGroupPage.qml
     TripGroupSelectorCard.qml
