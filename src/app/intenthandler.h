@@ -10,7 +10,8 @@
 
 class IntentHandlerPrivate;
 
-namespace KAndroidExtras {
+namespace KAndroidExtras
+{
 class Intent;
 }
 

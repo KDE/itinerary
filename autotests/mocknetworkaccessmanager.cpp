@@ -11,7 +11,10 @@ class MockNetworkReply : public QNetworkReply
 {
     Q_OBJECT
 public:
-    explicit MockNetworkReply(const QNetworkAccessManager::Operation op, const QNetworkRequest &request,  const MockNetworkAccessManager::Reply &replyData, QObject *parent);
+    explicit MockNetworkReply(const QNetworkAccessManager::Operation op,
+                              const QNetworkRequest &request,
+                              const MockNetworkAccessManager::Reply &replyData,
+                              QObject *parent);
 
     qint64 bytesAvailable() const override;
     void abort() override;
@@ -24,7 +27,10 @@ private:
     qint64 m_offset = 0;
 };
 
-MockNetworkReply::MockNetworkReply(const QNetworkAccessManager::Operation op, const QNetworkRequest &request, const MockNetworkAccessManager::Reply &replyData, QObject *parent)
+MockNetworkReply::MockNetworkReply(const QNetworkAccessManager::Operation op,
+                                   const QNetworkRequest &request,
+                                   const MockNetworkAccessManager::Reply &replyData,
+                                   QObject *parent)
     : QNetworkReply(parent)
     , m_data(replyData.data)
 {
@@ -66,7 +72,7 @@ qint64 MockNetworkReply::readData(char *data, qint64 maxSize)
     return length;
 }
 
-QNetworkReply* MockNetworkAccessManager::createRequest(QNetworkAccessManager::Operation op, const QNetworkRequest &originalReq, QIODevice *outgoingData)
+QNetworkReply *MockNetworkAccessManager::createRequest(QNetworkAccessManager::Operation op, const QNetworkRequest &originalReq, QIODevice *outgoingData)
 {
     Request r{op, originalReq, outgoingData ? outgoingData->readAll() : QByteArray()};
     requests.push_back(std::move(r));

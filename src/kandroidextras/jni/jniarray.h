@@ -13,24 +13,40 @@
 
 #include <QJniEnvironment>
 
-namespace KAndroidExtras {
+namespace KAndroidExtras
+{
 
 ///@cond internal
-namespace Internal {
+namespace Internal
+{
 
 /** Primitive type array type traits. */
-template <typename T> struct array_trait {
+template<typename T>
+struct array_trait {
     typedef jobjectArray type;
 };
 
-#define MAKE_ARRAY_TRAIT(base_type, type_name) \
-template <> struct array_trait<base_type> { \
-    typedef base_type ## Array type; \
-    static inline type newArray(QJniEnvironment &env, jsize size) { return env->New ## type_name ## Array(size); } \
-    static inline base_type* getArrayElements(QJniEnvironment &env, type array, jboolean *isCopy) { return env->Get ## type_name ## ArrayElements(array, isCopy); } \
-    static inline void releaseArrayElements(QJniEnvironment &env, type array, base_type *data, jint mode) { return env->Release ## type_name ## ArrayElements(array, data, mode); } \
-    static inline void setArrayRegion(QJniEnvironment &env, type array, jsize start, jsize length, const base_type *data) { env->Set ## type_name ## ArrayRegion(array, start, length, data); } \
-};
+#define MAKE_ARRAY_TRAIT(base_type, type_name)                                                                                                                 \
+    template<>                                                                                                                                                 \
+    struct array_trait<base_type> {                                                                                                                            \
+        typedef base_type##Array type;                                                                                                                         \
+        static inline type newArray(QJniEnvironment &env, jsize size)                                                                                          \
+        {                                                                                                                                                      \
+            return env->New##type_name##Array(size);                                                                                                           \
+        }                                                                                                                                                      \
+        static inline base_type *getArrayElements(QJniEnvironment &env, type array, jboolean *isCopy)                                                          \
+        {                                                                                                                                                      \
+            return env->Get##type_name##ArrayElements(array, isCopy);                                                                                          \
+        }                                                                                                                                                      \
+        static inline void releaseArrayElements(QJniEnvironment &env, type array, base_type *data, jint mode)                                                  \
+        {                                                                                                                                                      \
+            return env->Release##type_name##ArrayElements(array, data, mode);                                                                                  \
+        }                                                                                                                                                      \
+        static inline void setArrayRegion(QJniEnvironment &env, type array, jsize start, jsize length, const base_type *data)                                  \
+        {                                                                                                                                                      \
+            env->Set##type_name##ArrayRegion(array, start, length, data);                                                                                      \
+        }                                                                                                                                                      \
+    };
 
 MAKE_ARRAY_TRAIT(jboolean, Boolean)
 MAKE_ARRAY_TRAIT(jbyte, Byte)
@@ -44,11 +60,12 @@ MAKE_ARRAY_TRAIT(jdouble, Double)
 #undef MAKE_ARRAY_TRAIT
 
 /** Meta function for retrieving a JNI array .*/
-template <typename Container, typename Value, bool is_primitive> struct FromArray {};
+template<typename Container, typename Value, bool is_primitive>
+struct FromArray {
+};
 
-template <typename Container>
-struct FromArray<Container, QJniObject, false>
-{
+template<typename Container>
+struct FromArray<Container, QJniObject, false> {
     inline auto operator()(const QJniObject &array) const
     {
         if (!array.isValid()) {
@@ -66,9 +83,8 @@ struct FromArray<Container, QJniObject, false>
     }
 };
 
-template <typename Container, typename Value>
-struct FromArray<Container, Value, false>
-{
+template<typename Container, typename Value>
+struct FromArray<Container, Value, false> {
     inline auto operator()(const QJniObject &array) const
     {
         if (!array.isValid()) {
@@ -87,9 +103,8 @@ struct FromArray<Container, Value, false>
 };
 
 // specializations for primitive types
-template <typename Container, typename Value>
-struct FromArray<Container, Value, true>
-{
+template<typename Container, typename Value>
+struct FromArray<Container, Value, true> {
     typedef array_trait<Value> _t;
     inline auto operator()(const QJniObject &array) const
     {
@@ -112,15 +127,19 @@ struct FromArray<Container, Value, true>
 };
 
 // array wrapper, common base for primitive and non-primitive types
-template <typename T>
-class ArrayImplBase {
+template<typename T>
+class ArrayImplBase
+{
 public:
     typedef T value_type;
     typedef jsize size_type;
     typedef jsize difference_type;
 
     ArrayImplBase() = default;
-    inline ArrayImplBase(const QJniObject &array) : m_array(array) {}
+    inline ArrayImplBase(const QJniObject &array)
+        : m_array(array)
+    {
+    }
     ArrayImplBase(const ArrayImplBase &) = default;
     ArrayImplBase(ArrayImplBase &&) = default;
 
@@ -134,27 +153,37 @@ public:
         return env->GetArrayLength(a);
     }
 
-    inline operator QJniObject() const {
+    inline operator QJniObject() const
+    {
         return m_array;
     }
-    inline QJniObject jniHandle() const { return m_array; }
+    inline QJniObject jniHandle() const
+    {
+        return m_array;
+    }
 
 protected:
     typedef array_trait<T> _t;
 
-    typename _t::type handle() const { return static_cast<typename _t::type>(m_array.object()); }
+    typename _t::type handle() const
+    {
+        return static_cast<typename _t::type>(m_array.object());
+    }
 
     QJniObject m_array;
 };
 
-template <typename T, bool is_primitive>
-class ArrayImpl {};
+template<typename T, bool is_primitive>
+class ArrayImpl
+{
+};
 
 // array wrapper for primitive types
-template <typename T>
+template<typename T>
 class ArrayImpl<T, true> : public ArrayImplBase<T>
 {
     static_assert(!Internal::is_invalid_primitive_type<T>::value, "Using an incompatible primitive type!");
+
 public:
     inline ArrayImpl(const QJniObject &array)
         : ArrayImplBase<T>(array)
@@ -172,8 +201,8 @@ public:
     }
 
     ArrayImpl() = default;
-    ArrayImpl(const ArrayImpl&) = delete; // ### ref count m_data and allow copying?
-    ArrayImpl(ArrayImpl&&) = default;
+    ArrayImpl(const ArrayImpl &) = delete; // ### ref count m_data and allow copying?
+    ArrayImpl(ArrayImpl &&) = default;
     ~ArrayImpl()
     {
         QJniEnvironment env;
@@ -185,8 +214,14 @@ public:
         return m_data[index];
     }
 
-    T* begin() const { return m_data; }
-    T* end() const { return m_data + ArrayImplBase<T>::size(); }
+    T *begin() const
+    {
+        return m_data;
+    }
+    T *end() const
+    {
+        return m_data + ArrayImplBase<T>::size();
+    }
 
 private:
     inline void getArrayElements()
@@ -202,7 +237,7 @@ private:
 };
 
 // array wrapper for non-primitive types
-template <typename T>
+template<typename T>
 class ArrayImpl<T, false> : public ArrayImplBase<T>
 {
 public:
@@ -225,8 +260,8 @@ public:
     }
 
     ArrayImpl() = default;
-    ArrayImpl(const ArrayImpl&) = default;
-    ArrayImpl(ArrayImpl&&) = default;
+    ArrayImpl(const ArrayImpl &) = default;
+    ArrayImpl(ArrayImpl &&) = default;
 
     auto operator[](jsize index) const
     {
@@ -242,18 +277,23 @@ public:
             QJniEnvironment env;
             return Internal::return_wrapper<T>::toReturnValue(QJniObject::fromLocalRef(env->GetObjectArrayElement(c.handle(), index)));
         }
-        inline ref& operator=(typename Internal::argument<T>::type v)
+        inline ref &operator=(typename Internal::argument<T>::type v)
         {
             QJniEnvironment env;
             env->SetObjectArrayElement(c.handle(), index, Internal::argument<T>::toCallArgument(v));
             return *this;
         }
+
     private:
         ArrayImpl<T, false> &c;
         jsize index;
 
         friend class ArrayImpl<T, false>;
-        inline ref(jsize _i, ArrayImpl<T, false> &_c) : c(_c), index(_i) {}
+        inline ref(jsize _i, ArrayImpl<T, false> &_c)
+            : c(_c)
+            , index(_i)
+        {
+        }
     };
     ref operator[](jsize index)
     {
@@ -264,53 +304,86 @@ public:
     {
         const ArrayImpl<T, false> &c;
         jsize i = 0;
+
     public:
         typedef jsize difference_type;
         typedef T value_type;
-        typedef T& reference;
+        typedef T &reference;
         typedef std::random_access_iterator_tag iterator_category;
-        typedef T* pointer;
+        typedef T *pointer;
 
-        const_iterator(const ArrayImpl<T, false> &_c, jsize _i) : c(_c), i(_i) {}
+        const_iterator(const ArrayImpl<T, false> &_c, jsize _i)
+            : c(_c)
+            , i(_i)
+        {
+        }
 
-        difference_type operator-(const_iterator other) const { return i - other.i; }
+        difference_type operator-(const_iterator other) const
+        {
+            return i - other.i;
+        }
 
-        const_iterator& operator++() { ++i; return *this; }
-        const_iterator operator++(int) { return const_iterator(c, i++); }
+        const_iterator &operator++()
+        {
+            ++i;
+            return *this;
+        }
+        const_iterator operator++(int)
+        {
+            return const_iterator(c, i++);
+        }
 
-        bool operator==(const_iterator other) const { return i == other.i; }
-        bool operator!=(const_iterator other) const { return i != other.i; }
+        bool operator==(const_iterator other) const
+        {
+            return i == other.i;
+        }
+        bool operator!=(const_iterator other) const
+        {
+            return i != other.i;
+        }
 
-        auto operator*() const {
+        auto operator*() const
+        {
             return c[i];
         }
     };
 
-    const_iterator begin() const { return const_iterator(*this, 0); }
-    const_iterator end() const { return const_iterator(*this, ArrayImplBase<T>::size()); }
-
+    const_iterator begin() const
+    {
+        return const_iterator(*this, 0);
+    }
+    const_iterator end() const
+    {
+        return const_iterator(*this, ArrayImplBase<T>::size());
+    }
 };
 
 }
 ///@endcond
 
-namespace Jni {
+namespace Jni
+{
 
 /** Convert a JNI array to a C++ container.
-    *  Container value types can be any of
-    *  - QJniObject
-    *  - a primitive JNI type
-    *  - a type with a conversion defined with @c JNI_DECLARE_CONVERTER
-    */
-template <typename Container> constexpr __attribute__((__unused__)) Internal::FromArray<Container, typename Container::value_type, Jni::is_primitive_type<typename Container::value_type>::value> fromArray = {};
+ *  Container value types can be any of
+ *  - QJniObject
+ *  - a primitive JNI type
+ *  - a type with a conversion defined with @c JNI_DECLARE_CONVERTER
+ */
+template<typename Container>
+constexpr
+    __attribute__((__unused__)) Internal::FromArray<Container, typename Container::value_type, Jni::is_primitive_type<typename Container::value_type>::value>
+        fromArray = {};
 
 /** Container-like wrapper for JNI arrays. */
-template <typename T>
-class Array : public Internal::ArrayImpl<T, Jni::is_primitive_type<T>::value> {
+template<typename T>
+class Array : public Internal::ArrayImpl<T, Jni::is_primitive_type<T>::value>
+{
 public:
     using Internal::ArrayImpl<T, Jni::is_primitive_type<T>::value>::ArrayImpl;
-    template <typename Container>
-    inline operator Container() const {
+    template<typename Container>
+    inline operator Container() const
+    {
         // ### should this be re-implemented in terms of Jni::Array API rather than direct JNI access?
         return Jni::fromArray<Container>(this->m_array);
     }

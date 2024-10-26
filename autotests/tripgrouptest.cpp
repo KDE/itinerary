@@ -14,11 +14,11 @@
 #include "tripgroup.h"
 #include "tripgroupmanager.h"
 
-#include <QtTest/qtest.h>
 #include <QAbstractItemModelTester>
 #include <QSignalSpy>
 #include <QStandardPaths>
 #include <QTemporaryFile>
+#include <QtTest/qtest.h>
 
 using namespace Qt::Literals::StringLiterals;
 
@@ -105,7 +105,7 @@ private Q_SLOTS:
             TripGroupManager mgr;
             QSignalSpy addSpy(&mgr, &TripGroupManager::tripGroupAdded);
             QVERIFY(addSpy.isValid());
-            mgr.setReservationManager (&resMgr);
+            mgr.setReservationManager(&resMgr);
             mgr.setTransferManager(&transferMgr);
             QCOMPARE(addSpy.size(), 3);
             QCOMPARE(mgr.tripGroup(addSpy.at(0).at(0).toString()).elements().size(), 2);
@@ -119,7 +119,7 @@ private Q_SLOTS:
         ctrl->commitImport(&importer);
         {
             TripGroupManager mgr;
-            mgr.setReservationManager (&resMgr);
+            mgr.setReservationManager(&resMgr);
             mgr.setTransferManager(&transferMgr);
             QCOMPARE(mgr.tripGroups().size(), 1);
             QCOMPARE(mgr.tripGroup(mgr.tripGroups().at(0)).elements().size(), 4);
@@ -131,7 +131,7 @@ private Q_SLOTS:
         ctrl->commitImport(&importer);
         {
             TripGroupManager mgr;
-            mgr.setReservationManager (&resMgr);
+            mgr.setReservationManager(&resMgr);
             mgr.setTransferManager(&transferMgr);
             QCOMPARE(mgr.tripGroups().size(), 1);
             QCOMPARE(mgr.tripGroup(mgr.tripGroups().at(0)).elements().size(), 2);
@@ -143,7 +143,7 @@ private Q_SLOTS:
         ctrl->commitImport(&importer);
         {
             TripGroupManager mgr;
-            mgr.setReservationManager (&resMgr);
+            mgr.setReservationManager(&resMgr);
             mgr.setTransferManager(&transferMgr);
             QCOMPARE(mgr.tripGroups().size(), 1);
             QCOMPARE(mgr.tripGroup(mgr.tripGroups().at(0)).elements().size(), 4);
@@ -155,7 +155,7 @@ private Q_SLOTS:
         ctrl->commitImport(&importer);
         {
             TripGroupManager mgr;
-            mgr.setReservationManager (&resMgr);
+            mgr.setReservationManager(&resMgr);
             mgr.setTransferManager(&transferMgr);
             QCOMPARE(mgr.tripGroups().size(), 2);
             auto tg1 = mgr.tripGroup(mgr.tripGroups().at(0));
@@ -174,7 +174,7 @@ private Q_SLOTS:
         ctrl->commitImport(&importer);
         {
             TripGroupManager mgr;
-            mgr.setReservationManager (&resMgr);
+            mgr.setReservationManager(&resMgr);
             mgr.setTransferManager(&transferMgr);
             QCOMPARE(mgr.tripGroups().size(), 1);
             QCOMPARE(mgr.tripGroup(mgr.tripGroups().at(0)).elements().size(), 1);
@@ -186,7 +186,7 @@ private Q_SLOTS:
         ctrl->commitImport(&importer);
         {
             TripGroupManager mgr;
-            mgr.setReservationManager (&resMgr);
+            mgr.setReservationManager(&resMgr);
             mgr.setTransferManager(&transferMgr);
             QCOMPARE(mgr.tripGroups().size(), 1);
             QCOMPARE(mgr.tripGroup(mgr.tripGroups().at(0)).elements().size(), 1);
@@ -253,19 +253,28 @@ private Q_SLOTS:
         QTest::addColumn<QString>("fileName");
         QTest::addColumn<QString>("expectedName");
 
-        QTest::newRow("SFO one way") << QStringLiteral(SOURCE_DIR "/data/google-multi-passenger-flight.json") << QStringLiteral("San Francisco Airport (March 2017)");
-        QTest::newRow("FLR one way multi traveller") << QStringLiteral(SOURCE_DIR "/data/timeline/multi-traveler-merge-with-countryinfo.json") << QStringLiteral("Peretola (January 2000)");
+        QTest::newRow("SFO one way") << QStringLiteral(SOURCE_DIR "/data/google-multi-passenger-flight.json")
+                                     << QStringLiteral("San Francisco Airport (March 2017)");
+        QTest::newRow("FLR one way multi traveller") << QStringLiteral(SOURCE_DIR "/data/timeline/multi-traveler-merge-with-countryinfo.json")
+                                                     << QStringLiteral("Peretola (January 2000)");
         QTest::newRow("Randa") << QStringLiteral(SOURCE_DIR "/../tests/randa2017.json") << QStringLiteral("Randa (September 2017)");
         QTest::newRow("Almeria") << QStringLiteral(SOURCE_DIR "/../tests/akademy2017.json") << QStringLiteral("Almería (July 2017)");
-        QTest::newRow("Symmetric") << QStringLiteral(SOURCE_DIR "/data/tripgroup/deutschebahn_two-leg-return.txt.json") << QStringLiteral("Somewhere(Specific) (November 2027)");
-        QTest::newRow("Symmetric, 2 elements") << QStringLiteral(SOURCE_DIR "/data/tripgroup/flight-direct-return.json") << QStringLiteral("Oslo Airport (June 2018)");
-        QTest::newRow("Triangular, different PNR") << QStringLiteral(SOURCE_DIR "/data/tripgroup/train-triangular-different-pnr.json") << QStringLiteral("Nürnberg Hbf (February/March 2018)");
-        QTest::newRow("Imbalanced roundtrip") << QStringLiteral(SOURCE_DIR "/data/tripgroup/imbalanced-return-trip.json") << QStringLiteral("Milano Centrale (September 2019)");
-        QTest::newRow("IATA BCBP no times") << QStringLiteral(SOURCE_DIR "/data/tripgroup/iata-bcbp-no-times.json") << QStringLiteral("Milan Malpensa (September 2019)");
+        QTest::newRow("Symmetric") << QStringLiteral(SOURCE_DIR "/data/tripgroup/deutschebahn_two-leg-return.txt.json")
+                                   << QStringLiteral("Somewhere(Specific) (November 2027)");
+        QTest::newRow("Symmetric, 2 elements") << QStringLiteral(SOURCE_DIR "/data/tripgroup/flight-direct-return.json")
+                                               << QStringLiteral("Oslo Airport (June 2018)");
+        QTest::newRow("Triangular, different PNR") << QStringLiteral(SOURCE_DIR "/data/tripgroup/train-triangular-different-pnr.json")
+                                                   << QStringLiteral("Nürnberg Hbf (February/March 2018)");
+        QTest::newRow("Imbalanced roundtrip") << QStringLiteral(SOURCE_DIR "/data/tripgroup/imbalanced-return-trip.json")
+                                              << QStringLiteral("Milano Centrale (September 2019)");
+        QTest::newRow("IATA BCBP no times") << QStringLiteral(SOURCE_DIR "/data/tripgroup/iata-bcbp-no-times.json")
+                                            << QStringLiteral("Milan Malpensa (September 2019)");
         QTest::newRow("Unidirectional") << QStringLiteral(SOURCE_DIR "/data/tripgroup/unidirectional-train-trip.json") << u"Milano Centrale (September 2019)"_s;
-        QTest::newRow("Unidirectional with events") << QStringLiteral(SOURCE_DIR "/data/tripgroup/unidirectional-with-events.json") << u"KDE Akademy 2024 (September 2024)"_s;
+        QTest::newRow("Unidirectional with events") << QStringLiteral(SOURCE_DIR "/data/tripgroup/unidirectional-with-events.json")
+                                                    << u"KDE Akademy 2024 (September 2024)"_s;
         QTest::newRow("multi-day-event") << QStringLiteral(SOURCE_DIR "/data/timeline/event-multi-day.json") << u"KDE Akademy 2023 (July 2023)"_s;
-        QTest::newRow("flight-cancelation") << QStringLiteral(SOURCE_DIR "/data/timeline/flight-cancelation.json") << u"John F. Kennedy International Airport (October 1996)"_s;
+        QTest::newRow("flight-cancelation") << QStringLiteral(SOURCE_DIR "/data/timeline/flight-cancelation.json")
+                                            << u"John F. Kennedy International Airport (October 1996)"_s;
     }
 
     void testGroupName()
@@ -294,7 +303,7 @@ private Q_SLOTS:
         // ensure that also every item individually gets a name assigned
         for (const auto &resId : resMgr.batches()) {
             const auto name = mgr.guessName({resId});
-            qDebug() << name <<resMgr.reservation(resId);
+            qDebug() << name << resMgr.reservation(resId);
             QVERIFY(!name.isEmpty());
             QVERIFY(!name.startsWith(' '_L1));
             QVERIFY(!name.startsWith('('_L1));
@@ -394,7 +403,7 @@ private Q_SLOTS:
             QCOMPARE(tg.hasAutomaticName(), false);
             QCOMPARE(tg.name(), "New Group Name"_L1);
             QCOMPARE(tg.elements().size(), resMgr.batches().size());
-            for (const auto &resId :resMgr.batches()) {
+            for (const auto &resId : resMgr.batches()) {
                 QCOMPARE(tgMgr.tripGroupIdForReservation(resId), mergeId);
             }
         }
@@ -479,7 +488,7 @@ private Q_SLOTS:
         ctrl->commitImport(&importer);
         QCOMPARE(tgMgr.tripGroups().size(), 1);
 
-        QStringList elements({ resMgr.batches()[0], resMgr.batches()[1], resMgr.batches()[2] });
+        QStringList elements({resMgr.batches()[0], resMgr.batches()[1], resMgr.batches()[2]});
         const auto tgId = tgMgr.createGroup(elements, u"New Group"_s);
         QVERIFY(!tgId.isEmpty());
         QCOMPARE(tgMgr.tripGroups().size(), 2);
@@ -530,7 +539,7 @@ private Q_SLOTS:
         QCOMPARE(tgMgr.tripGroups().size(), 1);
         QCOMPARE(resMgr.batches().size(), 11);
 
-        QStringList elements({ resMgr.batches()[8], resMgr.batches()[9], resMgr.batches()[10] });
+        QStringList elements({resMgr.batches()[8], resMgr.batches()[9], resMgr.batches()[10]});
         const auto tgId = tgMgr.createGroup(elements, u"New Group"_s);
         QVERIFY(!tgId.isEmpty());
         QCOMPARE(tgMgr.tripGroups().size(), 2);
@@ -583,7 +592,7 @@ private Q_SLOTS:
         importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
 
         // create new group from the first half
-        for (int i = importer.rowCount() / 2; i <importer.rowCount(); ++i) {
+        for (int i = importer.rowCount() / 2; i < importer.rowCount(); ++i) {
             QVERIFY(importer.setData(importer.index(i, 0), false, ImportController::SelectedRole));
         }
         importer.setTripGroupName(u"Custom Group Name"_s);
@@ -697,7 +706,7 @@ private Q_SLOTS:
         ctrl->commitImport(&importer);
         QCOMPARE(tgMgr.tripGroups().size(), 1);
 
-        QStringList elements({ resMgr.batches()[0], resMgr.batches()[1], resMgr.batches()[2] });
+        QStringList elements({resMgr.batches()[0], resMgr.batches()[1], resMgr.batches()[2]});
         const auto tgId = tgMgr.createGroup(elements, u"New Group"_s);
         QVERIFY(!tgId.isEmpty());
         QCOMPARE(tgMgr.tripGroups().size(), 2);
@@ -731,8 +740,12 @@ private Q_SLOTS:
         QCOMPARE(resMgr.batches().size(), 11);
         QCOMPARE(tgMgr.tripGroups().size(), 2);
 
-        const auto newTg1 = tgMgr.tripGroup(tgMgr.tripGroups()[0]).beginDateTime() < tgMgr.tripGroup(tgMgr.tripGroups()[1]).beginDateTime() ? tgMgr.tripGroup(tgMgr.tripGroups()[0]) : tgMgr.tripGroup(tgMgr.tripGroups()[1]);
-        const auto newTg2 = tgMgr.tripGroup(tgMgr.tripGroups()[1]).beginDateTime() < tgMgr.tripGroup(tgMgr.tripGroups()[0]).beginDateTime() ? tgMgr.tripGroup(tgMgr.tripGroups()[0]) : tgMgr.tripGroup(tgMgr.tripGroups()[1]);
+        const auto newTg1 = tgMgr.tripGroup(tgMgr.tripGroups()[0]).beginDateTime() < tgMgr.tripGroup(tgMgr.tripGroups()[1]).beginDateTime()
+            ? tgMgr.tripGroup(tgMgr.tripGroups()[0])
+            : tgMgr.tripGroup(tgMgr.tripGroups()[1]);
+        const auto newTg2 = tgMgr.tripGroup(tgMgr.tripGroups()[1]).beginDateTime() < tgMgr.tripGroup(tgMgr.tripGroups()[0]).beginDateTime()
+            ? tgMgr.tripGroup(tgMgr.tripGroups()[0])
+            : tgMgr.tripGroup(tgMgr.tripGroups()[1]);
 
         QCOMPARE(newTg1.elements().size(), 3);
         QCOMPARE(newTg1.name(), "New Group"_L1);

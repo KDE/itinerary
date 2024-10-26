@@ -17,19 +17,17 @@ class ReservationManager;
 class TicketTokenModel : public QAbstractListModel
 {
     Q_OBJECT
-    Q_PROPERTY(QObject* reservationManager READ reservationManager WRITE setReservationManager)
+    Q_PROPERTY(QObject *reservationManager READ reservationManager WRITE setReservationManager)
     Q_PROPERTY(QStringList reservationIds READ reservationIds WRITE setReservationIds)
     Q_PROPERTY(int initialIndex READ initialIndex NOTIFY initialIndexChanged)
 
 public:
-    enum Roles {
-        ReservationRole = Qt::UserRole
-    };
+    enum Roles { ReservationRole = Qt::UserRole };
 
     explicit TicketTokenModel(QObject *parent = nullptr);
     ~TicketTokenModel() override;
 
-    QObject* reservationManager() const;
+    QObject *reservationManager() const;
     void setReservationManager(QObject *mgr);
     QStringList reservationIds() const;
     void setReservationIds(const QStringList &resIds);

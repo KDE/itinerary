@@ -4,10 +4,10 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+#include <KAndroidExtras/JavaTypes>
 #include <KAndroidExtras/JniArray>
 #include <KAndroidExtras/JniProperty>
 #include <KAndroidExtras/JniTypeTraits>
-#include <KAndroidExtras/JavaTypes>
 #include <KAndroidExtras/Uri>
 
 #include <QtTest/qtest.h>
@@ -42,7 +42,7 @@ private Q_SLOTS:
         JNIEnv::m_arrayLength = 2;
         const auto a2 = Jni::fromArray<QStringList>(array);
         QCOMPARE(a2.size(), 2);
-        QCOMPARE(a2, QStringList({ QStringLiteral("ctor: 0"), QStringLiteral("ctor: 1") }));
+        QCOMPARE(a2, QStringList({QStringLiteral("ctor: 0"), QStringLiteral("ctor: 1")}));
 
         JNIEnv::m_arrayLength = 4;
         const auto a3 = Jni::fromArray<std::vector<int>>(array);

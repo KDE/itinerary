@@ -9,7 +9,8 @@
 
 #include "gpx/gpxwriter.h"
 
-namespace KPublicTransport {
+namespace KPublicTransport
+{
 class JourneySection;
 }
 

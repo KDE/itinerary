@@ -20,7 +20,7 @@ class OnlineTicketImporter : public QObject
     Q_OBJECT
     Q_PROPERTY(bool searching READ searching NOTIFY searchingChanged)
     Q_PROPERTY(QString errorMessage READ errorMessage NOTIFY searchingChanged)
-    Q_PROPERTY(ImportController* importController MEMBER m_importController NOTIFY importControllerChanged)
+    Q_PROPERTY(ImportController *importController MEMBER m_importController NOTIFY importControllerChanged)
 
 public:
     explicit OnlineTicketImporter(QObject *parent = nullptr);
@@ -31,7 +31,7 @@ public:
 
     Q_INVOKABLE void search(const QString &sourceId, const QVariantMap &arguments);
 
-    static void setNetworkAccessManagerFactory(const std::function<QNetworkAccessManager*()> &namFactory);
+    static void setNetworkAccessManagerFactory(const std::function<QNetworkAccessManager *()> &namFactory);
 
 Q_SIGNALS:
     void searchingChanged();
@@ -42,7 +42,7 @@ Q_SIGNALS:
 private:
     void handleRetrievalFinished();
 
-    static std::function<QNetworkAccessManager*()> s_namFactory;
+    static std::function<QNetworkAccessManager *()> s_namFactory;
 
     ImportController *m_importController = nullptr;
     OnlineTicketRetrievalJob *m_currentJob = nullptr;

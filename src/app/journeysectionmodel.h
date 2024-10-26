@@ -12,7 +12,8 @@
 
 #include <vector>
 
-namespace KPublicTransport {
+namespace KPublicTransport
+{
 class Stopover;
 }
 

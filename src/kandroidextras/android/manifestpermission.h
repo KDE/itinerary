@@ -8,11 +8,12 @@
 #define KANDROIDEXTRAS_MANIFESTPERMISSIONM_H
 
 #include <KAndroidExtras/AndroidTypes>
+#include <KAndroidExtras/JavaTypes>
 #include <KAndroidExtras/JniObject>
 #include <KAndroidExtras/JniProperty>
-#include <KAndroidExtras/JavaTypes>
 
-namespace KAndroidExtras {
+namespace KAndroidExtras
+{
 
 /**
  * Access to manifest permissions.

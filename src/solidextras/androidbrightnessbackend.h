@@ -7,13 +7,11 @@
 #ifndef ANDROIDBRIGHTNESSBACKEND_H
 #define ANDROIDBRIGHTNESSBACKEND_H
 
-#include <QObject>
 #include "brightnessmanager.h"
-
+#include <QObject>
 
 class AndroidBrightnessBackend : public BrightnessBackend
 {
-
 public:
     explicit AndroidBrightnessBackend(QObject *parent = nullptr);
     virtual ~AndroidBrightnessBackend();

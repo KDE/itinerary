@@ -18,9 +18,9 @@
 #include <KItinerary/LocationUtil>
 
 #include <QAbstractItemModelTester>
-#include <QtTest/qtest.h>
 #include <QSignalSpy>
 #include <QStandardPaths>
+#include <QtTest/qtest.h>
 
 using namespace Qt::Literals;
 using namespace KItinerary;
@@ -50,7 +50,7 @@ private Q_SLOTS:
     void testModel()
     {
         TripGroupModel model;
-        model.setCurrentDateTime(QDateTime{{2017, 3 , 4}, {15, 0}, QTimeZone("America/New_York")});
+        model.setCurrentDateTime(QDateTime{{2017, 3, 4}, {15, 0}, QTimeZone("America/New_York")});
         QAbstractItemModelTester modelTest(&model);
         QSignalSpy insertSpy(&model, &QAbstractItemModel::rowsInserted);
         QSignalSpy updateSpy(&model, &QAbstractItemModel::dataChanged);
@@ -128,7 +128,7 @@ private Q_SLOTS:
     void testAdjacency()
     {
         TripGroupModel model;
-        model.setCurrentDateTime(QDateTime{{2017, 3 , 4}, {15, 0}, QTimeZone("America/New_York")});
+        model.setCurrentDateTime(QDateTime{{2017, 3, 4}, {15, 0}, QTimeZone("America/New_York")});
         QAbstractItemModelTester modelTest(&model);
 
         ReservationManager resMgr;
@@ -196,7 +196,7 @@ private Q_SLOTS:
     void testIntersection()
     {
         TripGroupModel model;
-        model.setCurrentDateTime(QDateTime{{2017, 3 , 4}, {15, 0}, QTimeZone("America/New_York")});
+        model.setCurrentDateTime(QDateTime{{2017, 3, 4}, {15, 0}, QTimeZone("America/New_York")});
         QAbstractItemModelTester modelTest(&model);
 
         ReservationManager resMgr;

@@ -14,8 +14,8 @@
 #include <KItinerary/LocationUtil>
 #include <KItinerary/Person>
 #include <KItinerary/Reservation>
-#include <KItinerary/TrainTrip>
 #include <KItinerary/Ticket>
+#include <KItinerary/TrainTrip>
 #include <KItinerary/Visit>
 
 #include <KPublicTransport/Feature>
@@ -102,7 +102,7 @@ QString ReservationHelper::vdvOrganizationId(const QVariant &res)
     return {};
 }
 
-bool ReservationHelper::isUnbound(const QVariant& res)
+bool ReservationHelper::isUnbound(const QVariant &res)
 {
     if (JsonLd::isA<TrainReservation>(res)) {
         return !res.value<TrainReservation>().reservationFor().value<TrainTrip>().departureTime().isValid();

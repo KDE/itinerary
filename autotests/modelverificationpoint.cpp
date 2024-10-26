@@ -36,24 +36,23 @@ void ModelVerificationPoint::setJsonPropertyFilter(std::vector<QString> &&filter
 QJsonValue ModelVerificationPoint::variantToJson(const QVariant &v) const
 {
     switch (v.userType()) {
-        case QMetaType::QString:
-            return v.toString();
-        case QMetaType::QStringList:
-        {
-            const auto l = v.toStringList();
-            if (l.isEmpty()) {
-                return {};
-            }
-            QJsonArray a;
-            std::copy(l.begin(), l.end(), std::back_inserter(a));
-            return a;
+    case QMetaType::QString:
+        return v.toString();
+    case QMetaType::QStringList: {
+        const auto l = v.toStringList();
+        if (l.isEmpty()) {
+            return {};
         }
-        case QMetaType::Bool:
-            return v.toBool();
-        case QMetaType::Int:
-            return v.toInt();
-        default:
-            break;
+        QJsonArray a;
+        std::copy(l.begin(), l.end(), std::back_inserter(a));
+        return a;
+    }
+    case QMetaType::Bool:
+        return v.toBool();
+    case QMetaType::Int:
+        return v.toInt();
+    default:
+        break;
     }
 
     if (QMetaType(v.userType()).metaObject()) {
@@ -63,7 +62,7 @@ QJsonValue ModelVerificationPoint::variantToJson(const QVariant &v) const
         }
         return obj;
     } else if (v.userType() == qMetaTypeId<QList<QVariant>>()) {
-      return KItinerary::JsonLdDocument::toJson(v.value<QList<QVariant>>());
+        return KItinerary::JsonLdDocument::toJson(v.value<QList<QVariant>>());
     }
 
     return {};

@@ -17,8 +17,8 @@ class TripGroupController : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(QString tripGroupId MEMBER m_tgId NOTIFY tripGroupChanged)
-    Q_PROPERTY(TripGroupModel* tripGroupModel MEMBER m_tripGroupModel WRITE setTripGroupModel NOTIFY setupChanged)
-    Q_PROPERTY(WeatherForecastManager* weatherForecastManager MEMBER m_weatherMgr WRITE setWeatherForecastManager NOTIFY setupChanged)
+    Q_PROPERTY(TripGroupModel *tripGroupModel MEMBER m_tripGroupModel WRITE setTripGroupModel NOTIFY setupChanged)
+    Q_PROPERTY(WeatherForecastManager *weatherForecastManager MEMBER m_weatherMgr WRITE setWeatherForecastManager NOTIFY setupChanged)
     Q_PROPERTY(QString homeCountryIsoCode MEMBER m_homeCountry NOTIFY locationInfoChanged)
     Q_PROPERTY(QString homeCurrency MEMBER m_homeCurrency NOTIFY locationInfoChanged)
 

@@ -4,15 +4,15 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "testhelper.h"
 #include "mocknetworkaccessmanager.h"
+#include "testhelper.h"
 
 #include "pkpassmanager.h"
 
-#include <QUrl>
-#include <QtTest/qtest.h>
 #include <QSignalSpy>
 #include <QStandardPaths>
+#include <QUrl>
+#include <QtTest/qtest.h>
 
 void initLocale()
 {
@@ -81,7 +81,9 @@ private Q_SLOTS:
     void testCaptivePortalFailure()
     {
         PkPassManager mgr;
-        mgr.setNetworkAccessManagerFactory([this]() { return &m_nam; });
+        mgr.setNetworkAccessManagerFactory([this]() {
+            return &m_nam;
+        });
         Test::clearAll(&mgr);
         QSignalSpy addSpy(&mgr, &PkPassManager::passAdded);
         QSignalSpy updateSpy(&mgr, &PkPassManager::passUpdated);

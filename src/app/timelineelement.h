@@ -14,12 +14,14 @@
 class TimelineModel;
 class Transfer;
 
-namespace KItinerary {
+namespace KItinerary
+{
 class GeoCoordinates;
 }
 
 /** TimelineModel items. */
-class TimelineElement {
+class TimelineElement
+{
     Q_GADGET
 
 public:
@@ -44,11 +46,7 @@ public:
     Q_ENUM(ElementType)
 
     // indicates whether an element is self-contained or the beginning/end of a longer timespan/range
-    enum RangeType {
-        SelfContained,
-        RangeBegin,
-        RangeEnd
-    };
+    enum RangeType { SelfContained, RangeBegin, RangeEnd };
     Q_ENUM(RangeType)
 
     explicit TimelineElement();

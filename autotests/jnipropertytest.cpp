@@ -5,9 +5,9 @@
 */
 
 #include "kandroidextras/jniproperty.h"
+#include "kandroidextras/intent.h"
 #include "kandroidextras/jnitypes.h"
 #include "kandroidextras/manifestpermission.h"
-#include "kandroidextras/intent.h"
 #include "kandroidextras/uri.h"
 
 #include <QtTest/qtest.h>
@@ -23,14 +23,14 @@ class TestClass
     JNI_CONSTANT(jint, FLAG_GRANT_READ_URI_PERMISSION)
     JNI_CONSTANT(android::net::Uri, OBJECT_TYPE_PROPERTY)
     JNI_CONSTANT(bool, BOOL_PROPERTY)
-//     JNI_CONSTANT(uint32_t, UNSIGNED_PROPERTY) // must not compile
+    //     JNI_CONSTANT(uint32_t, UNSIGNED_PROPERTY) // must not compile
 
     JNI_PROPERTY(java::lang::String, myStringField)
     JNI_PROPERTY(int, myIntField)
     JNI_PROPERTY(android::net::Uri, myUriField)
     JNI_PROPERTY(android::content::Intent, myIntentField)
     JNI_PROPERTY(bool, myBoolProperty)
-//     JNI_PROPERTY(uint32_t, myUsignedProperty) // must not compile
+    //     JNI_PROPERTY(uint32_t, myUsignedProperty) // must not compile
 
 public:
     friend class JniPropertyTest;
@@ -54,7 +54,8 @@ private Q_SLOTS:
         bool b = TestClass::BOOL_PROPERTY;
 
         QCOMPARE(QJniObject::m_staticProtocol.size(), 4);
-        QCOMPARE(QJniObject::m_staticProtocol.at(0), QLatin1StringView("getStaticObjectField: android/content/Intent ACTION_CREATE_DOCUMENT Ljava/lang/String;"));
+        QCOMPARE(QJniObject::m_staticProtocol.at(0),
+                 QLatin1StringView("getStaticObjectField: android/content/Intent ACTION_CREATE_DOCUMENT Ljava/lang/String;"));
         QCOMPARE(QJniObject::m_staticProtocol.at(1), QLatin1StringView("getStaticField<>: android/content/Intent FLAG_GRANT_READ_URI_PERMISSION I"));
         QCOMPARE(QJniObject::m_staticProtocol.at(2), QLatin1StringView("getStaticObjectField: android/content/Intent OBJECT_TYPE_PROPERTY Landroid/net/Uri;"));
         QCOMPARE(QJniObject::m_staticProtocol.at(3), QLatin1StringView("getStaticField<>: android/content/Intent BOOL_PROPERTY Z"));
@@ -62,7 +63,6 @@ private Q_SLOTS:
         const QString p4 = ManifestPermission::READ_CALENDAR;
         Q_UNUSED(p4)
         QCOMPARE(QJniObject::m_staticProtocol.at(4), QLatin1StringView("getStaticObjectField: android/Manifest$permission READ_CALENDAR Ljava/lang/String;"));
-
 
         TestClass obj;
         const QString foo = obj.myStringField;

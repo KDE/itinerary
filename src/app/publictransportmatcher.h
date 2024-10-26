@@ -8,7 +8,8 @@
 
 #include <KPublicTransport/Line>
 
-namespace KPublicTransport {
+namespace KPublicTransport
+{
 class Journey;
 class JourneySection;
 class Stopover;

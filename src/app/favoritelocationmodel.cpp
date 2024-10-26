@@ -19,8 +19,8 @@
 
 #include <QDebug>
 #include <QDir>
-#include <QJsonArray>
 #include <QFile>
+#include <QJsonArray>
 #include <QSettings>
 #include <QStandardPaths>
 
@@ -39,10 +39,10 @@ FavoriteLocation::FavoriteLocation()
 {
 }
 
-FavoriteLocation::FavoriteLocation(const FavoriteLocation&) = default;
+FavoriteLocation::FavoriteLocation(const FavoriteLocation &) = default;
 FavoriteLocation::FavoriteLocation(FavoriteLocation &&) = default;
 FavoriteLocation::~FavoriteLocation() = default;
-FavoriteLocation& FavoriteLocation::operator=(const FavoriteLocation&) = default;
+FavoriteLocation &FavoriteLocation::operator=(const FavoriteLocation &) = default;
 
 bool FavoriteLocation::isValid() const
 {
@@ -82,7 +82,7 @@ void FavoriteLocation::setLongitude(float lon)
     d->longitude = lon;
 }
 
-FavoriteLocation FavoriteLocation::fromJson(const QJsonObject& obj)
+FavoriteLocation FavoriteLocation::fromJson(const QJsonObject &obj)
 {
     return Json::fromJson<FavoriteLocation>(obj);
 }
@@ -92,7 +92,7 @@ std::vector<FavoriteLocation> FavoriteLocation::fromJson(const QJsonArray &array
     return Json::fromJson<FavoriteLocation>(array);
 }
 
-QJsonObject FavoriteLocation::toJson(const FavoriteLocation& loc)
+QJsonObject FavoriteLocation::toJson(const FavoriteLocation &loc)
 {
     return Json::toJson(loc);
 }
@@ -101,7 +101,6 @@ QJsonArray FavoriteLocation::toJson(const std::vector<FavoriteLocation> &locs)
 {
     return Json::toJson(locs);
 }
-
 
 static QString favoriteLocationPath()
 {
@@ -146,15 +145,15 @@ void FavoriteLocationModel::appendNewLocation()
     beginInsertRows({}, rowCount(), rowCount());
     FavoriteLocation loc;
     switch (rowCount()) {
-        case 0:
-            loc.setName(i18n("Home"));
-            break;
-        case 1:
-            loc.setName(i18n("Work"));
-            break;
-        default:
-            loc.setName(i18n("Location %1", rowCount() + 1));
-            break;
+    case 0:
+        loc.setName(i18n("Home"));
+        break;
+    case 1:
+        loc.setName(i18n("Work"));
+        break;
+    default:
+        loc.setName(i18n("Location %1", rowCount() + 1));
+        break;
     }
     m_locations.push_back(loc);
     endInsertRows();
@@ -182,7 +181,7 @@ void FavoriteLocationModel::removeLocation(int row)
     saveLocations();
 }
 
-const std::vector<FavoriteLocation>& FavoriteLocationModel::favoriteLocations() const
+const std::vector<FavoriteLocation> &FavoriteLocationModel::favoriteLocations() const
 {
     return m_locations;
 }
@@ -211,14 +210,14 @@ QVariant FavoriteLocationModel::data(const QModelIndex &index, int role) const
 
     const auto &loc = m_locations[index.row()];
     switch (role) {
-        case Qt::DisplayRole:
-            return loc.name();
-        case FavoriteLocationModel::LatitudeRole:
-            return loc.latitude();
-        case FavoriteLocationModel::LongitudeRole:
-            return loc.longitude();
-        case FavoriteLocationModel::FavoriteLocationRole:
-            return QVariant::fromValue(loc);
+    case Qt::DisplayRole:
+        return loc.name();
+    case FavoriteLocationModel::LatitudeRole:
+        return loc.latitude();
+    case FavoriteLocationModel::LongitudeRole:
+        return loc.longitude();
+    case FavoriteLocationModel::FavoriteLocationRole:
+        return QVariant::fromValue(loc);
     }
 
     return {};
@@ -232,21 +231,21 @@ bool FavoriteLocationModel::setData(const QModelIndex &index, const QVariant &va
 
     auto &loc = m_locations[index.row()];
     switch (role) {
-        case Qt::DisplayRole:
-            loc.setName(value.toString());
-            Q_EMIT dataChanged(index, index);
-            saveLocations();
-            return true;
-        case FavoriteLocationModel::LatitudeRole:
-            loc.setLatitude(value.toFloat());
-            Q_EMIT dataChanged(index, index);
-            saveLocations();
-            return true;
-        case FavoriteLocationModel::LongitudeRole:
-            loc.setLongitude(value.toFloat());
-            Q_EMIT dataChanged(index, index);
-            saveLocations();
-            return true;
+    case Qt::DisplayRole:
+        loc.setName(value.toString());
+        Q_EMIT dataChanged(index, index);
+        saveLocations();
+        return true;
+    case FavoriteLocationModel::LatitudeRole:
+        loc.setLatitude(value.toFloat());
+        Q_EMIT dataChanged(index, index);
+        saveLocations();
+        return true;
+    case FavoriteLocationModel::LongitudeRole:
+        loc.setLongitude(value.toFloat());
+        Q_EMIT dataChanged(index, index);
+        saveLocations();
+        return true;
     }
 
     return false;

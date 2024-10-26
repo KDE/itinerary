@@ -14,11 +14,11 @@
 #include "tripgroupmanager.h"
 #include "tripgroupmodel.h"
 
-#include <QUrl>
-#include <QtTest/qtest.h>
 #include <QSignalSpy>
 #include <QStandardPaths>
 #include <QTimeZone>
+#include <QUrl>
+#include <QtTest/qtest.h>
 
 using namespace KItinerary;
 

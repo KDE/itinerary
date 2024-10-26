@@ -129,12 +129,13 @@ void Exporter::exportTripGroup(const QString &tripGroupId, const TripGroup &tg)
     m_file->addCustomData(BUNDLE_TRIPGROUP_DOMAIN, tripGroupId, QJsonDocument(TripGroup::toJson(tg)).toJson());
 }
 
-void Exporter::exportFavoriteLocations(const FavoriteLocationModel* favLocModel)
+void Exporter::exportFavoriteLocations(const FavoriteLocationModel *favLocModel)
 {
     // export favorite locations
     if (favLocModel->rowCount() > 0) {
-        m_file->addCustomData(BUNDLE_FAVORITE_LOCATION_DOMAIN, u"locations"_s,
-                        QJsonDocument(FavoriteLocation::toJson(favLocModel->favoriteLocations())).toJson());
+        m_file->addCustomData(BUNDLE_FAVORITE_LOCATION_DOMAIN,
+                              u"locations"_s,
+                              QJsonDocument(FavoriteLocation::toJson(favLocModel->favoriteLocations())).toJson());
     }
 }
 
@@ -142,11 +143,9 @@ void Exporter::exportPasses(const PassManager *passMgr)
 {
     for (int i = 0; i < passMgr->rowCount(); ++i) {
         const auto idx = passMgr->index(i, 0);
-        m_file->addCustomData(
-            BUNDLE_PASS_DOMAIN,
-            passMgr->data(idx, PassManager::PassIdRole).toString(),
-            passMgr->data(idx, PassManager::PassDataRole).toByteArray()
-        );
+        m_file->addCustomData(BUNDLE_PASS_DOMAIN,
+                              passMgr->data(idx, PassManager::PassIdRole).toString(),
+                              passMgr->data(idx, PassManager::PassDataRole).toByteArray());
     }
 }
 
@@ -154,10 +153,9 @@ void Exporter::exportHealthCertificates(const HealthCertificateManager *healthCe
 {
     for (int i = 0; i < healthCertMgr->rowCount(); ++i) {
         const auto idx = healthCertMgr->index(i, 0);
-        m_file->addCustomData(
-            BUNDLE_HEALTH_CERTIFICATE_DOMAIN,
-            healthCertMgr->data(idx, HealthCertificateManager::StorageIdRole).toString(),
-            healthCertMgr->data(idx, HealthCertificateManager::RawDataRole).toByteArray());
+        m_file->addCustomData(BUNDLE_HEALTH_CERTIFICATE_DOMAIN,
+                              healthCertMgr->data(idx, HealthCertificateManager::StorageIdRole).toString(),
+                              healthCertMgr->data(idx, HealthCertificateManager::RawDataRole).toByteArray());
     }
 }
 
@@ -197,7 +195,6 @@ void Exporter::exportSettings()
     m_file->addCustomData(BUNDLE_SETTINGS_DOMAIN, QStringLiteral("settings.ini"), f.readAll());
 }
 
-
 Importer::Importer(const KItinerary::File *file)
     : m_file(file)
 {
@@ -221,7 +218,7 @@ int Importer::importPasses(PkPassManager *pkPassMgr)
     return passIds.size();
 }
 
-int Importer::importDocuments(DocumentManager* docMgr)
+int Importer::importDocuments(DocumentManager *docMgr)
 {
     const auto docIds = m_file->documents();
     for (const auto &docId : docIds) {
@@ -235,7 +232,8 @@ int Importer::importTransfers(const ReservationManager *resMgr, TransferManager 
     int count = 0;
     const auto resIds = m_file->reservations();
     for (const auto &batchId : resIds) {
-        auto t = Transfer::fromJson(QJsonDocument::fromJson(m_file->customData(BUNDLE_TRANSFER_DOMAIN, Transfer::identifier(batchId, Transfer::Before))).object());
+        auto t =
+            Transfer::fromJson(QJsonDocument::fromJson(m_file->customData(BUNDLE_TRANSFER_DOMAIN, Transfer::identifier(batchId, Transfer::Before))).object());
         transferMgr->importTransfer(t);
         count += t.state() != Transfer::UndefinedState ? 1 : 0;
         t = Transfer::fromJson(QJsonDocument::fromJson(m_file->customData(BUNDLE_TRANSFER_DOMAIN, Transfer::identifier(batchId, Transfer::After))).object());

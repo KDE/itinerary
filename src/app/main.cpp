@@ -9,8 +9,8 @@
 #include "logging.h"
 
 #include "applicationcontroller.h"
-#include "countrysubdivisionmodel.h"
 #include "clipboard.h"
+#include "countrysubdivisionmodel.h"
 #include "developmentmodecontroller.h"
 #include "documentmanager.h"
 #include "documentsmodel.h"
@@ -31,9 +31,9 @@
 #include "notificationconfigcontroller.h"
 #include "onlineticketimporter.h"
 #include "passmanager.h"
-#include "pkpassmanager.h"
 #include "permissionmanager.h"
 #include "pkpassimageprovider.h"
+#include "pkpassmanager.h"
 #include "publictransport.h"
 #include "reservationhelper.h"
 #include "reservationmanager.h"
@@ -60,8 +60,8 @@
 #include "weatherforecastmodel.h"
 
 #if HAVE_MATRIX
-#include "matrix/matrixroomsmodel.h"
 #include "matrix/matrixbeacon.h"
+#include "matrix/matrixroomsmodel.h"
 #endif
 
 #include "weatherforecastmanager.h"
@@ -72,9 +72,9 @@
 #include <KItinerary/PriceUtil>
 #include <KItinerary/Ticket>
 
-#include <KPkPass/Field>
 #include <KPkPass/Barcode>
 #include <KPkPass/BoardingPass>
+#include <KPkPass/Field>
 
 #ifndef Q_OS_ANDROID
 #include <KDBusService>
@@ -91,9 +91,9 @@
 #include <KCrash>
 #endif
 
-#include <QQuickStyle>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
+#include <QQuickStyle>
 
 #ifdef Q_OS_ANDROID
 #include "kandroidextras/activity.h"
@@ -135,19 +135,19 @@ void registerKItineraryTypes()
     qRegisterMetaType<KItinerary::KnowledgeDb::DrivingSide>();
     qmlRegisterUncreatableMetaObject(KItinerary::Ticket::staticMetaObject, "org.kde.kitinerary", 1, 0, "Ticket", {});
     qmlRegisterUncreatableMetaObject(KItinerary::KnowledgeDb::staticMetaObject, "org.kde.kitinerary", 1, 0, "KnowledgeDb", {});
-    qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "PriceUtil", [](QQmlEngine*, QJSEngine *engine) -> QJSValue {
+    qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "PriceUtil", [](QQmlEngine *, QJSEngine *engine) -> QJSValue {
         return engine->toScriptValue(KItinerary::PriceUtil());
     });
 }
 
 void registerApplicationTypes()
 {
-    qRegisterMetaType<ReservationManager*>();
+    qRegisterMetaType<ReservationManager *>();
     qRegisterMetaType<Transfer::Alignment>();
-    qRegisterMetaType<TripGroupManager*>();
+    qRegisterMetaType<TripGroupManager *>();
     qRegisterMetaType<WeatherForecast>();
     qRegisterMetaType<Permission::Permission>();
-    qRegisterMetaType<HealthCertificateManager*>();
+    qRegisterMetaType<HealthCertificateManager *>();
 
     qmlRegisterUncreatableMetaObject(LocationInformation::staticMetaObject, "org.kde.itinerary", 1, 0, "LocationInformation", {});
     qmlRegisterUncreatableMetaObject(StatisticsItem::staticMetaObject, "org.kde.itinerary", 1, 0, "StatisticsItem", {});
@@ -202,12 +202,11 @@ static ImportController *s_importController = nullptr;
 static TripGroupModel *s_tripGroupModel = nullptr;
 static TraewellingController *s_traewellingController = nullptr;
 
-#define REGISTER_SINGLETON_INSTANCE(Class, Instance) \
-    qmlRegisterSingletonInstance<Class>("org.kde.itinerary", 1, 0, #Class, Instance);
+#define REGISTER_SINGLETON_INSTANCE(Class, Instance) qmlRegisterSingletonInstance<Class>("org.kde.itinerary", 1, 0, #Class, Instance);
 
-#define REGISTER_SINGLETON_GADGET_FACTORY(Class) \
-    qmlRegisterSingletonType("org.kde.itinerary", 1, 0, #Class, [](QQmlEngine*, QJSEngine *engine) -> QJSValue { \
-        return engine->toScriptValue(Class()); \
+#define REGISTER_SINGLETON_GADGET_FACTORY(Class)                                                                                                               \
+    qmlRegisterSingletonType("org.kde.itinerary", 1, 0, #Class, [](QQmlEngine *, QJSEngine *engine) -> QJSValue {                                              \
+        return engine->toScriptValue(Class());                                                                                                                 \
     });
 
 void registerApplicationSingletons()
@@ -264,7 +263,11 @@ static QNetworkAccessManager *namFactory()
     return s_nam;
 }
 
-void handleCommandLineArguments(ApplicationController *appController, ImportController *importController, const QStringList &args, bool isTemporary, const QString &page)
+void handleCommandLineArguments(ApplicationController *appController,
+                                ImportController *importController,
+                                const QStringList &args,
+                                bool isTemporary,
+                                const QString &page)
 {
     for (const auto &file : args) {
         const auto localUrl = QUrl::fromLocalFile(file);
@@ -456,18 +459,20 @@ int main(int argc, char **argv)
     QQmlApplicationEngine engine;
 
     auto pkPassImageProvider = new PkPassImageProvider;
-    pkPassImageProvider->registerPassProvider([&pkPassMgr](const QString &passTypeId, const QString &serialNum) -> KPkPass::Pass* {
+    pkPassImageProvider->registerPassProvider([&pkPassMgr](const QString &passTypeId, const QString &serialNum) -> KPkPass::Pass * {
         return pkPassMgr.pass(passTypeId + '/'_L1 + QString::fromUtf8(serialNum.toUtf8().toBase64(QByteArray::Base64UrlEncoding)));
     });
-    pkPassImageProvider->registerPassProvider([&importController](const QString &passTypeId, const QString &serialNum) -> KPkPass::Pass* {
-        if (const auto it = importController.pkPasses().find(KItinerary::DocumentUtil::idForPkPass(passTypeId, serialNum)); it != importController.pkPasses().end()) {
+    pkPassImageProvider->registerPassProvider([&importController](const QString &passTypeId, const QString &serialNum) -> KPkPass::Pass * {
+        if (const auto it = importController.pkPasses().find(KItinerary::DocumentUtil::idForPkPass(passTypeId, serialNum));
+            it != importController.pkPasses().end()) {
             if (!(*it).second.pass) {
                 (*it).second.pass.reset(KPkPass::Pass::fromData((*it).second.data));
             }
             return (*it).second.pass.get();
         }
         return nullptr;
-    });    engine.addImageProvider(QStringLiteral("org.kde.pkpass"), pkPassImageProvider);
+    });
+    engine.addImageProvider(QStringLiteral("org.kde.pkpass"), pkPassImageProvider);
 
     auto l10nContext = new KLocalizedContext(&engine);
     l10nContext->setTranslationDomain(QStringLiteral(TRANSLATION_DOMAIN));

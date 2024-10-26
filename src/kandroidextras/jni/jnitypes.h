@@ -10,40 +10,84 @@
 #include "jnipp.h"
 
 /** C++/Android integration utilities built on top of @c QJniObject. */
-namespace KAndroidExtras {
+namespace KAndroidExtras
+{
 
 ///@cond internal
 
 // preprocessor "iteration" for regular classes
-#define JNI_TYPE_1(name, type, ...) \
-    struct type { static constexpr const char* jniName() { return name #type; } };
-#define JNI_TYPE_2(name, type, ...) \
-    namespace type { JNI_TYPE_1(name #type "/", __VA_ARGS__) }
-#define JNI_TYPE_3(name, type, ...) \
-    namespace type { JNI_TYPE_2(name #type "/", __VA_ARGS__) }
-#define JNI_TYPE_4(name, type, ...) \
-    namespace type { JNI_TYPE_3(name #type "/", __VA_ARGS__) }
-#define JNI_TYPE_5(name, type, ...) \
-    namespace type { JNI_TYPE_4(name #type "/", __VA_ARGS__) }
-#define JNI_TYPE_6(name, type, ...) \
-    namespace type { JNI_TYPE_5(name #type "/", __VA_ARGS__) }
-#define JNI_TYPE_7(name, type, ...) \
-    namespace type { JNI_TYPE_6(#type "/", __VA_ARGS__) }
+#define JNI_TYPE_1(name, type, ...)                                                                                                                            \
+    struct type {                                                                                                                                              \
+        static constexpr const char *jniName()                                                                                                                 \
+        {                                                                                                                                                      \
+            return name #type;                                                                                                                                 \
+        }                                                                                                                                                      \
+    };
+#define JNI_TYPE_2(name, type, ...)                                                                                                                            \
+    namespace type                                                                                                                                             \
+    {                                                                                                                                                          \
+    JNI_TYPE_1(name #type "/", __VA_ARGS__)                                                                                                                    \
+    }
+#define JNI_TYPE_3(name, type, ...)                                                                                                                            \
+    namespace type                                                                                                                                             \
+    {                                                                                                                                                          \
+    JNI_TYPE_2(name #type "/", __VA_ARGS__)                                                                                                                    \
+    }
+#define JNI_TYPE_4(name, type, ...)                                                                                                                            \
+    namespace type                                                                                                                                             \
+    {                                                                                                                                                          \
+    JNI_TYPE_3(name #type "/", __VA_ARGS__)                                                                                                                    \
+    }
+#define JNI_TYPE_5(name, type, ...)                                                                                                                            \
+    namespace type                                                                                                                                             \
+    {                                                                                                                                                          \
+    JNI_TYPE_4(name #type "/", __VA_ARGS__)                                                                                                                    \
+    }
+#define JNI_TYPE_6(name, type, ...)                                                                                                                            \
+    namespace type                                                                                                                                             \
+    {                                                                                                                                                          \
+    JNI_TYPE_5(name #type "/", __VA_ARGS__)                                                                                                                    \
+    }
+#define JNI_TYPE_7(name, type, ...)                                                                                                                            \
+    namespace type                                                                                                                                             \
+    {                                                                                                                                                          \
+    JNI_TYPE_6(#type "/", __VA_ARGS__)                                                                                                                         \
+    }
 #define JNI_TYPE_(N, name, ...) JNI_PP_CONCAT(JNI_TYPE_, N)(name, __VA_ARGS__)
 
 // preprocessor "iteration" for nested classes
-#define JNI_NESTED_TYPE_2(name, type, nested_type, ...) \
-    struct type ## _ ## nested_type { static constexpr const char* jniName() { return name #type "$" #nested_type; } };
-#define JNI_NESTED_TYPE_3(name, type, ...) \
-    namespace type { JNI_NESTED_TYPE_2(name #type "/", __VA_ARGS__) }
-#define JNI_NESTED_TYPE_4(name, type, ...) \
-    namespace type { JNI_NESTED_TYPE_3(name #type "/", __VA_ARGS__) }
-#define JNI_NESTED_TYPE_5(name, type, ...) \
-    namespace type { JNI_NESTED_TYPE_4(name #type "/", __VA_ARGS__) }
-#define JNI_NESTED_TYPE_6(name, type, ...) \
-    namespace type { JNI_NESTED_TYPE_5(name #type "/", __VA_ARGS__) }
-#define JNI_NESTED_TYPE_7(name, type, ...) \
-    namespace type { JNI_NESTED_TYPE_6(#type "/", __VA_ARGS__) }
+#define JNI_NESTED_TYPE_2(name, type, nested_type, ...)                                                                                                        \
+    struct type##_##nested_type {                                                                                                                              \
+        static constexpr const char *jniName()                                                                                                                 \
+        {                                                                                                                                                      \
+            return name #type "$" #nested_type;                                                                                                                \
+        }                                                                                                                                                      \
+    };
+#define JNI_NESTED_TYPE_3(name, type, ...)                                                                                                                     \
+    namespace type                                                                                                                                             \
+    {                                                                                                                                                          \
+    JNI_NESTED_TYPE_2(name #type "/", __VA_ARGS__)                                                                                                             \
+    }
+#define JNI_NESTED_TYPE_4(name, type, ...)                                                                                                                     \
+    namespace type                                                                                                                                             \
+    {                                                                                                                                                          \
+    JNI_NESTED_TYPE_3(name #type "/", __VA_ARGS__)                                                                                                             \
+    }
+#define JNI_NESTED_TYPE_5(name, type, ...)                                                                                                                     \
+    namespace type                                                                                                                                             \
+    {                                                                                                                                                          \
+    JNI_NESTED_TYPE_4(name #type "/", __VA_ARGS__)                                                                                                             \
+    }
+#define JNI_NESTED_TYPE_6(name, type, ...)                                                                                                                     \
+    namespace type                                                                                                                                             \
+    {                                                                                                                                                          \
+    JNI_NESTED_TYPE_5(name #type "/", __VA_ARGS__)                                                                                                             \
+    }
+#define JNI_NESTED_TYPE_7(name, type, ...)                                                                                                                     \
+    namespace type                                                                                                                                             \
+    {                                                                                                                                                          \
+    JNI_NESTED_TYPE_6(#type "/", __VA_ARGS__)                                                                                                                  \
+    }
 #define JNI_NESTED_TYPE_(N, name, ...) JNI_PP_CONCAT(JNI_NESTED_TYPE_, N)(name, __VA_ARGS__)
 
 ///@endcond
@@ -57,8 +101,12 @@ namespace KAndroidExtras {
 /** Functions for interfacing with the Java Native Interface (JNI). */
 namespace Jni
 {
-    /** Returns the JNI type name of the given template argument. */
-    template <typename T> inline constexpr const char* typeName() { return T::jniName(); }
+/** Returns the JNI type name of the given template argument. */
+template<typename T>
+inline constexpr const char *typeName()
+{
+    return T::jniName();
+}
 }
 
 }

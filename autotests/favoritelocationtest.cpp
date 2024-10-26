@@ -7,9 +7,9 @@
 #include "favoritelocationmodel.h"
 
 #include <QAbstractItemModelTester>
-#include <QtTest/qtest.h>
 #include <QSignalSpy>
 #include <QStandardPaths>
+#include <QtTest/qtest.h>
 
 class FavoriteLocationTest : public QObject
 {

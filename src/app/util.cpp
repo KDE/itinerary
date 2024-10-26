@@ -26,7 +26,7 @@
 
 using namespace KItinerary;
 
-QDateTime Util::dateTimeStripTimezone(const QVariant& obj, const QString& propertyName)
+QDateTime Util::dateTimeStripTimezone(const QVariant &obj, const QString &propertyName)
 {
     auto dt = JsonLdDocument::readProperty(obj, propertyName.toUtf8().constData()).toDateTime();
     if (!dt.isValid()) {
@@ -37,7 +37,7 @@ QDateTime Util::dateTimeStripTimezone(const QVariant& obj, const QString& proper
     return dt;
 }
 
-QVariant Util::setDateTimePreserveTimezone(const QVariant &obj, const QString& propertyName, QDateTime value)
+QVariant Util::setDateTimePreserveTimezone(const QVariant &obj, const QString &propertyName, QDateTime value)
 {
     if (!value.isValid()) {
         qCDebug(Log) << "Invalid date passed for property" << propertyName;
@@ -68,7 +68,7 @@ bool Util::isRichText(const QString &text)
     return false;
 }
 
-QString Util::textToHtml(const QString& text)
+QString Util::textToHtml(const QString &text)
 {
     if (isRichText(text)) {
         return text;
@@ -88,7 +88,7 @@ QString Util::emailUrl(const QString &emailAddress)
 
 void Util::sortModel(QObject *model, int column, Qt::SortOrder sortOrder)
 {
-    if (auto qaim = qobject_cast<QAbstractItemModel*>(model)) {
+    if (auto qaim = qobject_cast<QAbstractItemModel *>(model)) {
         qaim->sort(column, sortOrder);
     }
 }

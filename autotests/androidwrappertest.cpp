@@ -4,8 +4,8 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include <KAndroidExtras/Context>
 #include <KAndroidExtras/ContentResolver>
+#include <KAndroidExtras/Context>
 
 #include <QJniObject>
 #include <QtTest/qtest.h>
@@ -29,16 +29,18 @@ private Q_SLOTS:
     void testContentResolver()
     {
 #ifndef Q_OS_ANDROID
-        QCOMPARE(ContentResolver::fileName(QUrl()), QLatin1StringView(
-            "global androidContext()\n"
-            "callObjectMethod: getContentResolver ()Landroid/content/ContentResolver; ()\n"
-            "callObjectMethod: query (Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor; (oIIII)\n"
-            "callMethod: getColumnIndex (Ljava/lang/String;)I (o)\n"
-            "callMethod: moveToFirst ()Z ()\n"
-            "callObjectMethod: getString (I)Ljava/lang/String; (I)"
-        ));
+        QCOMPARE(
+            ContentResolver::fileName(QUrl()),
+            QLatin1StringView("global androidContext()\n"
+                              "callObjectMethod: getContentResolver ()Landroid/content/ContentResolver; ()\n"
+                              "callObjectMethod: query "
+                              "(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor; (oIIII)\n"
+                              "callMethod: getColumnIndex (Ljava/lang/String;)I (o)\n"
+                              "callMethod: moveToFirst ()Z ()\n"
+                              "callObjectMethod: getString (I)Ljava/lang/String; (I)"));
         QCOMPARE(QJniObject::m_staticProtocol.size(), 1);
-        QCOMPARE(QJniObject::m_staticProtocol.at(0), QLatin1StringView("getStaticObjectField: android/provider/OpenableColumns DISPLAY_NAME Ljava/lang/String;"));
+        QCOMPARE(QJniObject::m_staticProtocol.at(0),
+                 QLatin1StringView("getStaticObjectField: android/provider/OpenableColumns DISPLAY_NAME Ljava/lang/String;"));
 #endif
     }
 };

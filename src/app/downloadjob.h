@@ -35,9 +35,9 @@ Q_SIGNALS:
 private:
     [[nodiscard]] bool handleOsmUrl(const QUrl &url, QNetworkAccessManager *nam);
     [[nodiscard]] bool handleOnlineTicketRetrievalUrl(const QUrl &url, QNetworkAccessManager *nam);
-    [[nodiscard]] QNetworkReply* makeActivityPubRequest(QUrl url, QNetworkAccessManager *nam);
+    [[nodiscard]] QNetworkReply *makeActivityPubRequest(QUrl url, QNetworkAccessManager *nam);
     [[nodiscard]] bool handleActivityPubReply(QNetworkReply *reply);
-    [[nodiscard]] QNetworkReply* makeDownloadRequest(QUrl url, QNetworkAccessManager *nam);
+    [[nodiscard]] QNetworkReply *makeDownloadRequest(QUrl url, QNetworkAccessManager *nam);
     void handleDownloadReply(QNetworkReply *reply);
 
     QByteArray m_data;

@@ -20,9 +20,11 @@ struct IncidenceKey {
     }
 };
 
-namespace std {
-template <>
-class hash<IncidenceKey> {
+namespace std
+{
+template<>
+class hash<IncidenceKey>
+{
 public:
     std::size_t operator()(const IncidenceKey &key) const
     {

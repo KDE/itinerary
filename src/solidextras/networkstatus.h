@@ -11,7 +11,8 @@
 
 #include <QObject>
 
-namespace SolidExtras {
+namespace SolidExtras
+{
 
 /** Basic information about the network status (connectivity, metering). */
 class SOLIDEXTRAS_EXPORT NetworkStatus : public QObject
@@ -20,11 +21,7 @@ class SOLIDEXTRAS_EXPORT NetworkStatus : public QObject
     Q_PROPERTY(State connectivity READ connectivity NOTIFY connectivityChanged)
     Q_PROPERTY(State metered READ metered NOTIFY meteredChanged)
 public:
-    enum State {
-        Unknown,
-        Yes,
-        No
-    };
+    enum State { Unknown, Yes, No };
     Q_ENUM(State)
 
     explicit NetworkStatus(QObject *parent = nullptr);

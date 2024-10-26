@@ -17,13 +17,7 @@
 class LiveData
 {
 public:
-    enum Type {
-        NoType = 0,
-        Departure = 1,
-        Arrival = 2,
-        Journey = 4,
-        AllTypes = Departure | Arrival | Journey
-    };
+    enum Type { NoType = 0, Departure = 1, Arrival = 2, Journey = 4, AllTypes = Departure | Arrival | Journey };
 
     [[nodiscard]] KPublicTransport::Stopover stopover(Type type) const;
     void setStopover(Type type, const KPublicTransport::Stopover &stop);

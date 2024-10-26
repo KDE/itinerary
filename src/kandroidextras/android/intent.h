@@ -10,14 +10,15 @@
 #include "kandroidextras_export.h"
 
 #include <KAndroidExtras/AndroidTypes>
+#include <KAndroidExtras/JavaTypes>
 #include <KAndroidExtras/JniMethod>
 #include <KAndroidExtras/JniProperty>
-#include <KAndroidExtras/JavaTypes>
 #include <KAndroidExtras/Uri>
 
 class QUrl;
 
-namespace KAndroidExtras {
+namespace KAndroidExtras
+{
 
 /** Methods to interact with android.content.Intent objects.
  *  This does not only offer features beyond what QAndroidIntent, it also provides
@@ -53,7 +54,7 @@ public:
     QString getStringExtra(const QJniObject &name) const;
     QStringList getStringArrayExtra(const QJniObject &name) const;
     /** Add extra intent data of type @tparam T. */
-    template <typename T>
+    template<typename T>
     inline void putExtra(const QJniObject &name, const QJniObject &value)
     {
         jniHandle().callObjectMethod("putExtra", Jni::signature<android::content::Intent(java::lang::String, T)>(), name.object(), value.object());
@@ -89,8 +90,8 @@ public:
     JNI_CONSTANT(jint, FLAG_GRANT_WRITE_URI_PERMISSION)
 
 private:
-    template <typename T>
-    QJniObject getObjectExtra(const char* methodName, const QJniObject &name) const;
+    template<typename T>
+    QJniObject getObjectExtra(const char *methodName, const QJniObject &name) const;
 };
 
 }

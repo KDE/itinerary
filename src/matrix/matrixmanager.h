@@ -56,7 +56,6 @@ private:
     Quotient::AccountRegistry m_accountRegistry;
 
     void setInfoString(const QString &infoString);
-
 };
 
-#endif //MATRIXMANAGER_H
+#endif // MATRIXMANAGER_H

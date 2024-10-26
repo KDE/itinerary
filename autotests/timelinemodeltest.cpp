@@ -15,8 +15,8 @@
 #include "pkpassmanager.h"
 #include "reservationmanager.h"
 #include "timelinemodel.h"
-#include "tripgroupmanager.h"
 #include "transfermanager.h"
+#include "tripgroupmanager.h"
 #include "weatherinformation.h"
 
 #include "weatherforecast.h"
@@ -28,10 +28,10 @@
 
 #include <QAbstractItemModelTester>
 #include <QDirIterator>
-#include <QUrl>
-#include <QtTest/qtest.h>
 #include <QSignalSpy>
 #include <QStandardPaths>
+#include <QUrl>
+#include <QtTest/qtest.h>
 
 using namespace Qt::Literals::StringLiterals;
 
@@ -78,7 +78,8 @@ private Q_SLOTS:
         TimelineElement flight(nullptr, TimelineElement::Flight, dt);
         QTest::newRow("locinfo-before-flight") << locInfo << flight;
 
-        QTest::newRow("location-info-before-transfer") << TimelineElement(nullptr, TimelineElement::LocationInfo, dt) << TimelineElement(nullptr, TimelineElement::Transfer, dt);
+        QTest::newRow("location-info-before-transfer")
+            << TimelineElement(nullptr, TimelineElement::LocationInfo, dt) << TimelineElement(nullptr, TimelineElement::Transfer, dt);
     }
 
     void testElementCompare()

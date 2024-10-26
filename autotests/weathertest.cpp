@@ -47,10 +47,10 @@ private Q_SLOTS:
         QCOMPARE(forecasts.size(), 233);
 
         for (unsigned int i = 0; i < (forecasts.size() - 1); ++i) {
-            QVERIFY(forecasts[i].dateTime() < forecasts[i+1].dateTime());
+            QVERIFY(forecasts[i].dateTime() < forecasts[i + 1].dateTime());
         }
 
-        QDateTime dt(QDate(2118, 7, 26), QTime(6,0), QTimeZone::UTC);
+        QDateTime dt(QDate(2118, 7, 26), QTime(6, 0), QTimeZone::UTC);
         auto it = std::lower_bound(forecasts.begin(), forecasts.end(), dt, [](const WeatherForecast &lhs, const QDateTime &rhs) {
             return lhs.dateTime() < rhs;
         });

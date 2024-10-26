@@ -80,7 +80,7 @@ void NavigationController::showOnWheelmap(float latitude, float longitude)
     QDesktopServices::openUrl(url);
 }
 
-bool NavigationController::canNavigateTo(const QVariant& place)
+bool NavigationController::canNavigateTo(const QVariant &place)
 {
     if (place.isNull()) {
         return false;
@@ -97,25 +97,24 @@ bool NavigationController::canNavigateTo(const QVariant& place)
 #endif
 }
 
-void NavigationController::navigateTo(const QVariant& place)
+void NavigationController::navigateTo(const QVariant &place)
 {
     if (place.isNull()) {
         return;
     }
 
 #ifdef Q_OS_ANDROID
-    const auto geo = LocationUtil::geo(place);;
+    const auto geo = LocationUtil::geo(place);
+    ;
     const auto addr = LocationUtil::address(place);
 
     QUrl url;
     url.setScheme(QStringLiteral("google.navigation"));
     if (geo.isValid()) {
-        url.setPath(QLatin1StringView("q=") + QString::number(geo.latitude())+ QLatin1Char(',') + QString::number(geo.longitude()));
+        url.setPath(QLatin1StringView("q=") + QString::number(geo.latitude()) + QLatin1Char(',') + QString::number(geo.longitude()));
     } else if (!addr.isEmpty()) {
-        url.setPath(QLatin1StringView("q=") + addr.streetAddress() + QLatin1StringView(", ")
-            + addr.postalCode() + QLatin1Char(' ')
-            + addr.addressLocality() + QLatin1StringView(", ")
-            + addr.addressCountry());
+        url.setPath(QLatin1StringView("q=") + addr.streetAddress() + QLatin1StringView(", ") + addr.postalCode() + QLatin1Char(' ') + addr.addressLocality()
+                    + QLatin1StringView(", ") + addr.addressCountry());
     } else {
         return;
     }
@@ -162,8 +161,8 @@ void NavigationController::navigateTo(const QGeoPositionInfo &from, const QVaria
         url.setPath(QStringLiteral("/directions"));
         QUrlQuery query;
         query.addQueryItem(QLatin1StringView("route"),
-            QString::number(from.coordinate().latitude()) + QLatin1Char(',') + QString::number(from.coordinate().longitude())
-            + QLatin1Char(';') + QString::number(geo.latitude()) + QLatin1Char(',') + QString::number(geo.longitude()));
+                           QString::number(from.coordinate().latitude()) + QLatin1Char(',') + QString::number(from.coordinate().longitude()) + QLatin1Char(';')
+                               + QString::number(geo.latitude()) + QLatin1Char(',') + QString::number(geo.longitude()));
         url.setQuery(query);
         QDesktopServices::openUrl(url);
         return;
@@ -171,7 +170,7 @@ void NavigationController::navigateTo(const QGeoPositionInfo &from, const QVaria
 }
 #endif
 
-void NavigationController::navigateTo(const QVariant& from, const QVariant& to)
+void NavigationController::navigateTo(const QVariant &from, const QVariant &to)
 {
     const auto fromGeo = LocationUtil::geo(from);
     const auto toGeo = LocationUtil::geo(to);
@@ -203,8 +202,8 @@ void NavigationController::navigateTo(const QVariant& from, const QVariant& to)
     url.setPath(QStringLiteral("/directions"));
     QUrlQuery query;
     query.addQueryItem(QLatin1StringView("route"),
-        QString::number(fromGeo.latitude()) + QLatin1Char(',') + QString::number(fromGeo.longitude())
-        + QLatin1Char(';') + QString::number(toGeo.latitude()) + QLatin1Char(',') + QString::number(toGeo.longitude()));
+                       QString::number(fromGeo.latitude()) + QLatin1Char(',') + QString::number(fromGeo.longitude()) + QLatin1Char(';')
+                           + QString::number(toGeo.latitude()) + QLatin1Char(',') + QString::number(toGeo.longitude()));
     url.setQuery(query);
     QDesktopServices::openUrl(url);
 #endif

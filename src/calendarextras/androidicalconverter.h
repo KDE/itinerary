@@ -42,7 +42,7 @@ private:
     static std::vector<JniExtendedPropertyData> writeExtendedProperties(const KCalendarCore::Incidence *incidence);
 
     /** Parse RDATE/EXDATE Android encoding. */
-    template <typename T>
+    template<typename T>
     static QList<T> readRDates(const QString &data);
     /** Write RDATE/EXDATE entries in the Android format. */
     static QString writeRDates(const QList<QDate> &rdates);

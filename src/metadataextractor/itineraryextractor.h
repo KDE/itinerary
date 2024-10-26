@@ -15,8 +15,7 @@ namespace KFileMetaData
 class ItineraryExtractor : public ExtractorPlugin
 {
     Q_OBJECT
-    Q_PLUGIN_METADATA(IID "org.kde.kf5.kfilemetadata.ExtractorPlugin"
-                      FILE "itineraryextractor.json")
+    Q_PLUGIN_METADATA(IID "org.kde.kf5.kfilemetadata.ExtractorPlugin" FILE "itineraryextractor.json")
     Q_INTERFACES(KFileMetaData::ExtractorPlugin)
 
 public:

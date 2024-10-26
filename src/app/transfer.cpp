@@ -36,10 +36,10 @@ Transfer::Transfer()
 {
 }
 
-Transfer::Transfer(const Transfer&) = default;
+Transfer::Transfer(const Transfer &) = default;
 Transfer::~Transfer() = default;
 
-Transfer& Transfer::operator=(const Transfer&) = default;
+Transfer &Transfer::operator=(const Transfer &) = default;
 
 Transfer::Alignment Transfer::alignment() const
 {
@@ -118,7 +118,7 @@ QString Transfer::toName() const
     return d->m_toName;
 }
 
-void Transfer::setToName(const QString& toName)
+void Transfer::setToName(const QString &toName)
 {
     d.detach();
     d->m_toName = toName;
@@ -168,7 +168,7 @@ QDateTime Transfer::anchorTime() const
     return d->m_anchorTime;
 }
 
-void Transfer::setAnchorTime(const QDateTime& dt)
+void Transfer::setAnchorTime(const QDateTime &dt)
 {
     d.detach();
     d->m_anchorTime = dt;
@@ -222,17 +222,10 @@ QString Transfer::identifier(const QString &resId, Transfer::Alignment alignment
 
 bool Transfer::operator==(const Transfer &other) const
 {
-    if (d->m_alignment == other.d->m_alignment
-     && d->m_state == other.d->m_state
-     && KPublicTransport::Location::isSame(d->m_from, other.d->m_from)
-     && KPublicTransport::Location::isSame(d->m_to, other.d->m_to)
-     && KPublicTransport::Journey::isSame(d->m_journey, other.d->m_journey)
-     && d->m_fromName == other.d->m_fromName
-     && d->m_toName == other.d->m_toName
-     && d->m_anchorTime == other.d->m_anchorTime
-     && d->m_anchorDelta == other.d->m_anchorDelta
-     && d->m_floatingLocationType == other.d->m_floatingLocationType)
-    {
+    if (d->m_alignment == other.d->m_alignment && d->m_state == other.d->m_state && KPublicTransport::Location::isSame(d->m_from, other.d->m_from)
+        && KPublicTransport::Location::isSame(d->m_to, other.d->m_to) && KPublicTransport::Journey::isSame(d->m_journey, other.d->m_journey)
+        && d->m_fromName == other.d->m_fromName && d->m_toName == other.d->m_toName && d->m_anchorTime == other.d->m_anchorTime
+        && d->m_anchorDelta == other.d->m_anchorDelta && d->m_floatingLocationType == other.d->m_floatingLocationType) {
         if (d->m_state == Transfer::Selected) {
             return false; // we lack a way to check if m_journey is exactly identical!
         }

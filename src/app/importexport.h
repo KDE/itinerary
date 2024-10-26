@@ -20,7 +20,8 @@ class TransferManager;
 class TripGroup;
 class TripGroupManager;
 
-namespace KItinerary {
+namespace KItinerary
+{
 class File;
 }
 

@@ -6,19 +6,19 @@
 
 #include "testhelper.h"
 
-#include "statisticsmodel.h"
-#include "statisticstimerangemodel.h"
 #include "applicationcontroller.h"
 #include "importcontroller.h"
 #include "reservationmanager.h"
+#include "statisticsmodel.h"
+#include "statisticstimerangemodel.h"
 #include "transfermanager.h"
 #include "tripgroupmanager.h"
 
 #include <QAbstractItemModelTester>
-#include <QUrl>
-#include <QtTest/qtest.h>
 #include <QSignalSpy>
 #include <QStandardPaths>
+#include <QUrl>
+#include <QtTest/qtest.h>
 
 void initLocale()
 {
@@ -65,7 +65,8 @@ private Q_SLOTS:
         importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/akademy2017.json")));
         importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/akademy2018-program.json")));
         ctrl->commitImport(&importer);
-        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/timeline/flight-cancelation.json"))); // canceled flight, should not change stats
+        importer.importFromUrl(
+            QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/timeline/flight-cancelation.json"))); // canceled flight, should not change stats
         ctrl->commitImport(&importer);
 
         stats.setTimeRange({}, {});

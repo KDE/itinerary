@@ -9,7 +9,8 @@
 
 #include <KAndroidExtras/JniTypes>
 
-namespace KAndroidExtras {
+namespace KAndroidExtras
+{
 
 JNI_TYPE(android, content, ContentResolver)
 JNI_TYPE(android, content, Context)

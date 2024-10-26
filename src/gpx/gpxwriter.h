@@ -12,7 +12,8 @@
 class QDateTime;
 class QIODevice;
 
-namespace Gpx {
+namespace Gpx
+{
 
 /** GPX file writer.
  *  @see https://www.topografix.com/GPX/1/1/

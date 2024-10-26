@@ -28,28 +28,40 @@ public:
     bool addEvent(const KCalendarCore::Event::Ptr &event) override;
     bool deleteEvent(const KCalendarCore::Event::Ptr &event) override;
     bool deleteEventInstances(const KCalendarCore::Event::Ptr &event) override;
-    KCalendarCore::Event::List rawEvents(KCalendarCore::EventSortField sortField = KCalendarCore::EventSortUnsorted, KCalendarCore::SortDirection sortDirection = KCalendarCore::SortDirectionAscending) const override;
+    KCalendarCore::Event::List rawEvents(KCalendarCore::EventSortField sortField = KCalendarCore::EventSortUnsorted,
+                                         KCalendarCore::SortDirection sortDirection = KCalendarCore::SortDirectionAscending) const override;
     KCalendarCore::Event::List rawEvents(const QDate &start, const QDate &end, const QTimeZone &timeZone = {}, bool inclusive = false) const override;
-    KCalendarCore::Event::List rawEventsForDate(const QDate &date,  const QTimeZone &timeZone = {}, KCalendarCore::EventSortField sortField = KCalendarCore::EventSortUnsorted, KCalendarCore::SortDirection sortDirection = KCalendarCore::SortDirectionAscending) const override;
+    KCalendarCore::Event::List rawEventsForDate(const QDate &date,
+                                                const QTimeZone &timeZone = {},
+                                                KCalendarCore::EventSortField sortField = KCalendarCore::EventSortUnsorted,
+                                                KCalendarCore::SortDirection sortDirection = KCalendarCore::SortDirectionAscending) const override;
     KCalendarCore::Event::Ptr event(const QString &uid, const QDateTime &recurrenceId = {}) const override;
-    KCalendarCore::Event::List eventInstances(const KCalendarCore::Incidence::Ptr &event, KCalendarCore::EventSortField sortField = KCalendarCore::EventSortUnsorted, KCalendarCore::SortDirection sortDirection = KCalendarCore::SortDirectionAscending) const override;
+    KCalendarCore::Event::List eventInstances(const KCalendarCore::Incidence::Ptr &event,
+                                              KCalendarCore::EventSortField sortField = KCalendarCore::EventSortUnsorted,
+                                              KCalendarCore::SortDirection sortDirection = KCalendarCore::SortDirectionAscending) const override;
 
     bool addTodo(const KCalendarCore::Todo::Ptr &todo) override;
     bool deleteTodo(const KCalendarCore::Todo::Ptr &todo) override;
     bool deleteTodoInstances(const KCalendarCore::Todo::Ptr &todo) override;
-    KCalendarCore::Todo::List rawTodos(KCalendarCore::TodoSortField sortField = KCalendarCore::TodoSortUnsorted, KCalendarCore::SortDirection sortDirection = KCalendarCore::SortDirectionAscending) const override;
+    KCalendarCore::Todo::List rawTodos(KCalendarCore::TodoSortField sortField = KCalendarCore::TodoSortUnsorted,
+                                       KCalendarCore::SortDirection sortDirection = KCalendarCore::SortDirectionAscending) const override;
     KCalendarCore::Todo::List rawTodosForDate(const QDate &date) const override;
     KCalendarCore::Todo::List rawTodos(const QDate &start, const QDate &end, const QTimeZone &timeZone = {}, bool inclusive = false) const override;
     KCalendarCore::Todo::Ptr todo(const QString &uid, const QDateTime &recurrenceId = {}) const override;
-    KCalendarCore::Todo::List todoInstances(const KCalendarCore::Incidence::Ptr &todo, KCalendarCore::TodoSortField sortField = KCalendarCore::TodoSortUnsorted, KCalendarCore::SortDirection sortDirection = KCalendarCore::SortDirectionAscending) const override;
+    KCalendarCore::Todo::List todoInstances(const KCalendarCore::Incidence::Ptr &todo,
+                                            KCalendarCore::TodoSortField sortField = KCalendarCore::TodoSortUnsorted,
+                                            KCalendarCore::SortDirection sortDirection = KCalendarCore::SortDirectionAscending) const override;
 
     bool addJournal(const KCalendarCore::Journal::Ptr &journal) override;
     bool deleteJournal(const KCalendarCore::Journal::Ptr &journal) override;
     bool deleteJournalInstances(const KCalendarCore::Journal::Ptr &journal) override;
-    KCalendarCore::Journal::List rawJournals(KCalendarCore::JournalSortField sortField = KCalendarCore::JournalSortUnsorted, KCalendarCore::SortDirection sortDirection = KCalendarCore::SortDirectionAscending) const override;
+    KCalendarCore::Journal::List rawJournals(KCalendarCore::JournalSortField sortField = KCalendarCore::JournalSortUnsorted,
+                                             KCalendarCore::SortDirection sortDirection = KCalendarCore::SortDirectionAscending) const override;
     KCalendarCore::Journal::List rawJournalsForDate(const QDate &date) const override;
     KCalendarCore::Journal::Ptr journal(const QString &uid, const QDateTime &recurrenceId = {}) const override;
-    KCalendarCore::Journal::List journalInstances(const KCalendarCore::Incidence::Ptr &journal, KCalendarCore::JournalSortField sortField = KCalendarCore::JournalSortUnsorted, KCalendarCore::SortDirection sortDirection = KCalendarCore::SortDirectionAscending) const override;
+    KCalendarCore::Journal::List journalInstances(const KCalendarCore::Incidence::Ptr &journal,
+                                                  KCalendarCore::JournalSortField sortField = KCalendarCore::JournalSortUnsorted,
+                                                  KCalendarCore::SortDirection sortDirection = KCalendarCore::SortDirectionAscending) const override;
 
     KCalendarCore::Alarm::List alarms(const QDateTime &from, const QDateTime &to, bool excludeBlockedAlarms = false) const override;
 

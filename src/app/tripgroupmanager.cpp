@@ -5,11 +5,11 @@
 */
 
 #include "tripgroupmanager.h"
-#include "tripgroup.h"
 #include "constants.h"
 #include "logging.h"
 #include "reservationmanager.h"
 #include "transfermanager.h"
+#include "tripgroup.h"
 
 #include <KItinerary/Event>
 #include <KItinerary/LocationUtil>
@@ -33,15 +33,15 @@ using namespace KItinerary;
 constexpr inline const auto MaximumTripDuration = 20; // in days
 constexpr inline const auto MaximumTripElements = 30;
 
-TripGroupManager::TripGroupManager(QObject* parent) :
-    QObject(parent)
+TripGroupManager::TripGroupManager(QObject *parent)
+    : QObject(parent)
 {
     load();
 }
 
 TripGroupManager::~TripGroupManager() = default;
 
-ReservationManager* TripGroupManager::reservationManager() const
+ReservationManager *TripGroupManager::reservationManager() const
 {
     return m_resMgr;
 }
@@ -72,7 +72,9 @@ void TripGroupManager::setTransferManager(TransferManager *transferMgr)
 {
     m_transferMgr = transferMgr;
 
-    const auto transferChangedWrapper = [this](const Transfer &t) { transferChanged(t.reservationId(), t.alignment()); };
+    const auto transferChangedWrapper = [this](const Transfer &t) {
+        transferChanged(t.reservationId(), t.alignment());
+    };
     connect(m_transferMgr, &TransferManager::transferAdded, this, transferChangedWrapper);
     connect(m_transferMgr, &TransferManager::transferChanged, this, transferChangedWrapper);
     connect(m_transferMgr, &TransferManager::transferRemoved, this, &TripGroupManager::transferChanged);
@@ -326,7 +328,7 @@ void TripGroupManager::transferChanged(const QString &resId, Transfer::Alignment
 
     // if transfers leading or trailing the trip group changed, the start/end time of the group change
     if ((alignment == Transfer::Before && tgIt.value().elements().constFirst() == resId)
-     || (alignment == Transfer::After && tgIt.value().elements().constLast() == resId)) {
+        || (alignment == Transfer::After && tgIt.value().elements().constLast() == resId)) {
         if (recomputeTripGroupTimes(tgIt.value())) {
             tgIt.value().store(fileForGroup(tgIt.key()));
             Q_EMIT tripGroupChanged(tgId);
@@ -364,7 +366,7 @@ void TripGroupManager::scanAll()
 static bool isConnectedTransition(const QVariant &fromRes, const QVariant &toRes)
 {
     const auto from = LocationUtil::arrivalLocation(fromRes);
-    const auto to = LocationUtil::isLocationChange(toRes) ? LocationUtil::departureLocation(toRes) :LocationUtil::location(toRes);
+    const auto to = LocationUtil::isLocationChange(toRes) ? LocationUtil::departureLocation(toRes) : LocationUtil::location(toRes);
     if (LocationUtil::isSameLocation(from, to, LocationUtil::CityLevel)) {
         return true;
     }
@@ -437,13 +439,15 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
 
         // check for connected transitions (ie. previous arrival == current departure)
         const auto prevArrival = LocationUtil::arrivalLocation(prevRes);
-        const auto curDeparture = isLocationChange ? LocationUtil::departureLocation(curRes) :LocationUtil::location(curRes);
+        const auto curDeparture = isLocationChange ? LocationUtil::departureLocation(curRes) : LocationUtil::location(curRes);
         const auto connectedTransition = isConnectedTransition(prevRes, curRes);
-        qDebug() << "  current transition goes from" << LocationUtil::name(prevArrival) << "to" << (isLocationChange ? LocationUtil::name(LocationUtil::arrivalLocation(curRes)) : LocationUtil::name(curDeparture)) << connectedTransition;
+        qDebug() << "  current transition goes from" << LocationUtil::name(prevArrival) << "to"
+                 << (isLocationChange ? LocationUtil::name(LocationUtil::arrivalLocation(curRes)) : LocationUtil::name(curDeparture)) << connectedTransition;
 
         if (!connectedSearchDone) {
             if (!connectedTransition && isLocationChange) {
-                qDebug() << "  aborting connectivity search, not an adjacent transition from" << LocationUtil::name(prevArrival) << "to" << LocationUtil::name(curDeparture);
+                qDebug() << "  aborting connectivity search, not an adjacent transition from" << LocationUtil::name(prevArrival) << "to"
+                         << LocationUtil::name(curDeparture);
                 connectedSearchDone = true;
             }
             if (connectedTransition) {
@@ -461,7 +465,7 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
             }
         }
 
-        if (isLocationChange && !resNumSearchDone &&  JsonLd::canConvert<Reservation>(curRes)) {
+        if (isLocationChange && !resNumSearchDone && JsonLd::canConvert<Reservation>(curRes)) {
             const auto resNum = JsonLd::convert<Reservation>(curRes).reservationNumber();
             if (!resNum.isEmpty()) {
                 const auto r = std::find_if(m_resNumSearch.begin(), m_resNumSearch.end(), [curRes, resNum](const auto &elem) {
@@ -471,7 +475,8 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
                     // mode of transport or reservation changed: we consider this still part of the trip if connectivity
                     // search thinks this is part of the same trip too, and we are not at home again yet
                     if (connectedTransition && !LocationUtil::isSameLocation(prevArrival, beginDeparture, LocationUtil::CityLevel)) {
-                        qDebug() << "  considering transition to" << LocationUtil::name(LocationUtil::arrivalLocation(curRes)) << "as part of trip despite unknown reservation number";
+                        qDebug() << "  considering transition to" << LocationUtil::name(LocationUtil::arrivalLocation(curRes))
+                                 << "as part of trip despite unknown reservation number";
                         m_resNumSearch.push_back({curRes.userType(), resNum});
                         resNumIt = it;
                     } else {
@@ -794,7 +799,9 @@ QString TripGroupManager::guessName(const QStringList &elements) const
 {
     QVariantList reservations;
     reservations.reserve(elements.size());
-    std::transform(elements.begin(), elements.end(), std::back_inserter(reservations), [this](const auto &resId) { return m_resMgr->reservation(resId); });
+    std::transform(elements.begin(), elements.end(), std::back_inserter(reservations), [this](const auto &resId) {
+        return m_resMgr->reservation(resId);
+    });
     return guessNameForReservations(reservations);
 }
 
@@ -849,16 +856,24 @@ QString TripGroupManager::guessNameForReservations(const QVariantList &elements)
         }
     }
 
-
     // part 2: the time range of the trip
     // three cases: within 1 month, crossing a month boundary in one year, crossing a year boundary
     const auto beginDt = SortUtil::startDateTime(elements.at(0));
     const auto endDt = SortUtil::endDateTime(elements.constLast());
     if (beginDt.date().year() == endDt.date().year() || !endDt.isValid()) {
         if (beginDt.date().month() == endDt.date().month() || !endDt.isValid()) {
-            return i18nc("%1 is destination, %2 is the standalone month name, %3 is the year", "%1 (%2 %3)", dest, QLocale().standaloneMonthName(beginDt.date().month(), QLocale::LongFormat), beginDt.date().toString(u"yyyy"));
+            return i18nc("%1 is destination, %2 is the standalone month name, %3 is the year",
+                         "%1 (%2 %3)",
+                         dest,
+                         QLocale().standaloneMonthName(beginDt.date().month(), QLocale::LongFormat),
+                         beginDt.date().toString(u"yyyy"));
         }
-        return i18nc("%1 is destination, %2 and %3 are the standalone month names and %4 is the year", "%1 (%2/%3 %4)", dest, QLocale().monthName(beginDt.date().month(), QLocale::LongFormat), QLocale().standaloneMonthName(endDt.date().month(), QLocale::LongFormat), beginDt.date().toString(u"yyyy"));
+        return i18nc("%1 is destination, %2 and %3 are the standalone month names and %4 is the year",
+                     "%1 (%2/%3 %4)",
+                     dest,
+                     QLocale().monthName(beginDt.date().month(), QLocale::LongFormat),
+                     QLocale().standaloneMonthName(endDt.date().month(), QLocale::LongFormat),
+                     beginDt.date().toString(u"yyyy"));
     }
     return i18nc("%1 is destination, %2 and %3 are years", "%1 (%2/%3)", dest, beginDt.date().toString(u"yyyy"), endDt.date().toString(u"yyyy"));
 }

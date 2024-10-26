@@ -21,8 +21,7 @@
 TimelineSectionDelegateController::TimelineSectionDelegateController(QObject *parent)
     : QObject(parent)
 {
-    connect(this, &TimelineSectionDelegateController::tripGroupModelChanged,
-            this, &TimelineSectionDelegateController::dateChanged);
+    connect(this, &TimelineSectionDelegateController::tripGroupModelChanged, this, &TimelineSectionDelegateController::dateChanged);
 }
 
 TimelineSectionDelegateController::~TimelineSectionDelegateController() = default;
@@ -44,7 +43,7 @@ void TimelineSectionDelegateController::setDateString(const QString &dtStr)
     Q_EMIT dateChanged();
 }
 
-TripGroupModel* TimelineSectionDelegateController::tripGroupModel() const
+TripGroupModel *TimelineSectionDelegateController::tripGroupModel() const
 {
     return m_model;
 }

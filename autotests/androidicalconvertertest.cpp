@@ -118,8 +118,7 @@ private Q_SLOTS:
                                    QDateTime({2021, 12, 31}, {15, 30}, QTimeZone("Europe/Brussels")),
                                    QDateTime({2022, 1, 7}, {15, 30}, QTimeZone("Europe/Brussels"))}));
         QCOMPARE(AndroidIcalConverter::readRDates<QDateTime>(QStringLiteral("20201230T000000Z,20211229T190000Z")),
-                 QList<QDateTime>({QDateTime({2020, 12, 30}, {0, 0}, QTimeZone::UTC),
-                                   QDateTime({2021, 12, 29}, {19, 0}, QTimeZone::UTC)}));
+                 QList<QDateTime>({QDateTime({2020, 12, 30}, {0, 0}, QTimeZone::UTC), QDateTime({2021, 12, 29}, {19, 0}, QTimeZone::UTC)}));
         QCOMPARE(AndroidIcalConverter::readRDates<QDateTime>(QStringLiteral("Europe/Helsinki;20210513T122346")),
                  QList<QDateTime>({QDateTime({2021, 05, 13}, {12, 23, 46}, QTimeZone("Europe/Helsinki"))}));
 
@@ -133,14 +132,13 @@ private Q_SLOTS:
                  QLatin1StringView("20220520T200000Z"));
         QCOMPARE(AndroidIcalConverter::writeRDates(QList<QDateTime>({QDateTime({2021, 05, 13}, {12, 23, 46}, QTimeZone("Europe/Helsinki"))})),
                  QLatin1StringView("Europe/Helsinki;20210513T122346"));
-        QCOMPARE(AndroidIcalConverter::writeRDates(QList<QDateTime>({QDateTime({2020, 12, 30}, {0, 0}, QTimeZone::UTC),
-                                                                     QDateTime({2021, 12, 29}, {19, 0}, QTimeZone::UTC)})),
+        QCOMPARE(AndroidIcalConverter::writeRDates(
+                     QList<QDateTime>({QDateTime({2020, 12, 30}, {0, 0}, QTimeZone::UTC), QDateTime({2021, 12, 29}, {19, 0}, QTimeZone::UTC)})),
                  QLatin1StringView("20201230T000000Z,20211229T190000Z"));
         QCOMPARE(AndroidIcalConverter::writeRDates(QList<QDateTime>({QDateTime({2021, 12, 24}, {15, 30}, QTimeZone("Europe/Brussels")),
                                                                      QDateTime({2021, 12, 31}, {15, 30}, QTimeZone::UTC),
                                                                      QDateTime({2022, 1, 7}, {15, 30}, QTimeZone("Europe/Brussels"))})),
                  QLatin1StringView("Europe/Brussels;20211224T153000,20211231T163000,20220107T153000"));
-
 
         QCOMPARE(AndroidIcalConverter::writeRDates(QList<QDate>()), QString());
         QCOMPARE(AndroidIcalConverter::writeRDates(QList<QDate>({{2022, 5, 28}})), QLatin1StringView("20220528"));

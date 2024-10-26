@@ -62,16 +62,14 @@ bool PublicTransportMatcher::isSameRoute(const KPublicTransport::Route &lhs, con
 bool PublicTransportMatcher::isDepartureForReservation(const QVariant &res, const KPublicTransport::Stopover &dep)
 {
     const auto lineData = ReservationHelper::lineNameAndNumber(res);
-    return PublicTransportMatcher::isSameMode(res, dep.route().line().mode())
-        && KItinerary::SortUtil::startDateTime(res) == dep.scheduledDepartureTime()
+    return PublicTransportMatcher::isSameMode(res, dep.route().line().mode()) && KItinerary::SortUtil::startDateTime(res) == dep.scheduledDepartureTime()
         && PublicTransportMatcher::isSameRoute(dep.route(), lineData.first, lineData.second);
 }
 
 bool PublicTransportMatcher::isArrivalForReservation(const QVariant &res, const KPublicTransport::Stopover &arr)
 {
     const auto lineData = ReservationHelper::lineNameAndNumber(res);
-    return PublicTransportMatcher::isSameMode(res, arr.route().line().mode())
-        && KItinerary::SortUtil::endDateTime(res) == arr.scheduledArrivalTime()
+    return PublicTransportMatcher::isSameMode(res, arr.route().line().mode()) && KItinerary::SortUtil::endDateTime(res) == arr.scheduledArrivalTime()
         && PublicTransportMatcher::isSameRoute(arr.route(), lineData.first, lineData.second);
 }
 
@@ -119,8 +117,8 @@ static bool isSameArrival(const QVariant &arrLoc, const QVariant &res, const QDa
 KPublicTransport::JourneySection PublicTransportMatcher::subJourneyForReservation(const QVariant &res, const KPublicTransport::JourneySection &journey)
 {
     const auto lineData = ReservationHelper::lineNameAndNumber(res);
-    if (!PublicTransportMatcher::isSameMode(res, journey.route().line().mode()) ||
-        !PublicTransportMatcher::isSameRoute(journey.route(), lineData.first, lineData.second)) {
+    if (!PublicTransportMatcher::isSameMode(res, journey.route().line().mode())
+        || !PublicTransportMatcher::isSameRoute(journey.route(), lineData.first, lineData.second)) {
         return {};
     }
 
@@ -129,7 +127,7 @@ KPublicTransport::JourneySection PublicTransportMatcher::subJourneyForReservatio
 
     auto it = stopovers.begin();
     if (!isSameDeparture(KItinerary::LocationUtil::departureLocation(res), res, KItinerary::SortUtil::startDateTime(res), journey.departure())) {
-        for (;it != stopovers.end(); ++it) {
+        for (; it != stopovers.end(); ++it) {
             if (isSameDeparture(KItinerary::LocationUtil::departureLocation(res), res, KItinerary::SortUtil::startDateTime(res), *it)) {
                 result.setDeparture(*it);
                 break;
@@ -141,13 +139,14 @@ KPublicTransport::JourneySection PublicTransportMatcher::subJourneyForReservatio
     }
     ++it;
     auto it2 = it;
-    for (;it2 != stopovers.end(); ++it2) {
+    for (; it2 != stopovers.end(); ++it2) {
         if (isSameArrival(KItinerary::LocationUtil::arrivalLocation(res), res, KItinerary::SortUtil::endDateTime(res), *it2)) {
             result.setArrival(*it2);
             break;
         }
     }
-    if (it2 == stopovers.end() && !isSameArrival(KItinerary::LocationUtil::arrivalLocation(res), res, KItinerary::SortUtil::endDateTime(res), journey.arrival())) {
+    if (it2 == stopovers.end()
+        && !isSameArrival(KItinerary::LocationUtil::arrivalLocation(res), res, KItinerary::SortUtil::endDateTime(res), journey.arrival())) {
         return {};
     }
 

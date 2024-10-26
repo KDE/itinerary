@@ -36,7 +36,6 @@ private:
     std::vector<Device> m_devices;
 };
 
-
 class KDEConnect : public QObject
 {
     Q_OBJECT

@@ -8,7 +8,7 @@
 
 /** Sorting proxy for matrix rooms. */
 // TODO this probably should have configurable sorting modes (activity, alphabetically, etc)
-class MatrixRoomsSortProxyModel :  public QSortFilterProxyModel
+class MatrixRoomsSortProxyModel : public QSortFilterProxyModel
 {
     Q_OBJECT
 public:

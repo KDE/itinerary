@@ -20,7 +20,8 @@
 #include <KPublicTransport/Location>
 #include <KPublicTransport/Manager>
 
-namespace KPublicTransport {
+namespace KPublicTransport
+{
 class Journey;
 class JourneySection;
 class RentalVehicle;
@@ -42,7 +43,7 @@ public:
     Q_INVOKABLE static KPublicTransport::Location locationFromPlace(const QVariant &place, const QVariant &reservation);
 
     /** Create a KItinerary place type from the given KPublicTransport::Location. */
-    template <typename T>
+    template<typename T>
     static T placeFromLocation(const KPublicTransport::Location &loc);
 
     /** Same as the above, but usable from QML. */
@@ -53,7 +54,7 @@ public:
      *  Unlike mergeStation(), this does not assume both sides refer to the same location, and @p location has precedence.
      *  Data from @p station is only considered if both sides refer to the same location.
      */
-    template <typename T>
+    template<typename T>
     static T updateToLocation(const T &place, const KPublicTransport::Location &loc);
 
     /** Creates a reservation from the given journey section. */
@@ -96,7 +97,7 @@ public:
     static KPublicTransport::JourneySection lastTransportSection(const KPublicTransport::Journey &journey);
 
     /** Selects suitable backends based on UIC operator codes from the reservation. */
-    template <typename Request>
+    template<typename Request>
     static void selectBackends(Request &request, KPublicTransport::Manager *mgr, const QVariant &res);
 
     /** Convert KPublicTransport mode enum to one for KOSMIndoorMap */
@@ -121,8 +122,7 @@ private:
     static QStringList suitableBackendsForReservation(KPublicTransport::Manager *mgr, const QVariant &res);
 };
 
-
-template <typename T>
+template<typename T>
 inline T PublicTransport::placeFromLocation(const KPublicTransport::Location &loc)
 {
     T place;
@@ -135,7 +135,7 @@ inline T PublicTransport::placeFromLocation(const KPublicTransport::Location &lo
     return place;
 }
 
-template <typename T>
+template<typename T>
 inline T PublicTransport::updateToLocation(const T &place, const KPublicTransport::Location &loc)
 {
     using namespace KItinerary;
@@ -148,7 +148,7 @@ inline T PublicTransport::updateToLocation(const T &place, const KPublicTranspor
     return newPlace;
 }
 
-template <typename Request>
+template<typename Request>
 inline void PublicTransport::selectBackends(Request &request, KPublicTransport::Manager *mgr, const QVariant &res)
 {
     request.setBackendIds(suitableBackendsForReservation(mgr, res));

@@ -3,20 +3,20 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "testhelper.h"
 #include "passmanager.h"
+#include "testhelper.h"
 
 #include <KItinerary/JsonLdDocument>
 #include <KItinerary/ProgramMembership>
 #include <KItinerary/Ticket>
 
-#include <qtest.h>
 #include <QAbstractItemModelTester>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QSignalSpy>
 #include <QStandardPaths>
 #include <QTemporaryFile>
+#include <qtest.h>
 
 using namespace KItinerary;
 
@@ -39,10 +39,16 @@ private Q_SLOTS:
         QCOMPARE(mgr.rowCount(), 0);
 
         // test import
-        QVERIFY(!mgr.import(JsonLdDocument::fromJsonSingular(QJsonDocument::fromJson(Test::readFile(QStringLiteral(SOURCE_DIR "/data/bahncard.json"))).object())).isEmpty());
-        QVERIFY(!mgr.import(JsonLdDocument::fromJsonSingular(QJsonDocument::fromJson(Test::readFile(QStringLiteral(SOURCE_DIR "/data/9euroticket.json"))).object())).isEmpty());
+        QVERIFY(
+            !mgr.import(JsonLdDocument::fromJsonSingular(QJsonDocument::fromJson(Test::readFile(QStringLiteral(SOURCE_DIR "/data/bahncard.json"))).object()))
+                 .isEmpty());
+        QVERIFY(
+            !mgr.import(JsonLdDocument::fromJsonSingular(QJsonDocument::fromJson(Test::readFile(QStringLiteral(SOURCE_DIR "/data/9euroticket.json"))).object()))
+                 .isEmpty());
         // duplicates get merged
-        QVERIFY(!mgr.import(JsonLdDocument::fromJsonSingular(QJsonDocument::fromJson(Test::readFile(QStringLiteral(SOURCE_DIR "/data/9euroticket.json"))).object())).isEmpty());
+        QVERIFY(
+            !mgr.import(JsonLdDocument::fromJsonSingular(QJsonDocument::fromJson(Test::readFile(QStringLiteral(SOURCE_DIR "/data/9euroticket.json"))).object()))
+                 .isEmpty());
         QCOMPARE(mgr.rowCount(), 2);
 
         // retrieval
@@ -74,8 +80,6 @@ private Q_SLOTS:
 
         mgr.remove(passId2);
         QCOMPARE(mgr.rowCount(), 1);
-
-
 
         {
             // test persistence
@@ -117,7 +121,9 @@ private Q_SLOTS:
 
         PassManager mgr;
         Test::clearAll(&mgr);
-        QVERIFY(!mgr.import(JsonLdDocument::fromJsonSingular(QJsonDocument::fromJson(Test::readFile(QStringLiteral(SOURCE_DIR "/data/bahncard.json"))).object())).isEmpty());
+        QVERIFY(
+            !mgr.import(JsonLdDocument::fromJsonSingular(QJsonDocument::fromJson(Test::readFile(QStringLiteral(SOURCE_DIR "/data/bahncard.json"))).object()))
+                 .isEmpty());
         const auto passId = mgr.index(0, 0).data(PassManager::PassIdRole).toString();
         QVERIFY(!passId.isEmpty());
 
@@ -140,7 +146,8 @@ private Q_SLOTS:
         Test::clearAll(&mgr);
         QCOMPARE(mgr.rowCount(), 0);
 
-        const auto passId = mgr.import(JsonLdDocument::fromJsonSingular(QJsonDocument::fromJson(Test::readFile(QStringLiteral(SOURCE_DIR "/data/9euroticket.json"))).object()));
+        const auto passId =
+            mgr.import(JsonLdDocument::fromJsonSingular(QJsonDocument::fromJson(Test::readFile(QStringLiteral(SOURCE_DIR "/data/9euroticket.json"))).object()));
         QVERIFY(!passId.isEmpty());
 
         auto pass = mgr.pass(passId).value<Ticket>();

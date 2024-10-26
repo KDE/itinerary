@@ -23,12 +23,14 @@ class ReservationManager;
 class TransferManager;
 class TripGroupManager;
 
-namespace KItinerary {
+namespace KItinerary
+{
 class ExtractorDocumentNode;
 class File;
 }
 
-namespace KAndroidExtras {
+namespace KAndroidExtras
+{
 class Intent;
 }
 
@@ -54,7 +56,7 @@ public:
     explicit ApplicationController(QObject *parent = nullptr);
     ~ApplicationController() override;
 
-    void setNetworkAccessManagerFactory(const std::function<QNetworkAccessManager*()> &namFactory);
+    void setNetworkAccessManagerFactory(const std::function<QNetworkAccessManager *()> &namFactory);
 
     void requestOpenPage(const QString &page, const QVariantMap &properties = {});
 
@@ -76,7 +78,7 @@ public:
     /** Add a newly created reservation and add it to a trip group. */
     Q_INVOKABLE [[nodiscard]] QString addNewReservation(const QVariant &res, const QString &tgId);
 
-    static ApplicationController* instance();
+    static ApplicationController *instance();
 
     // data export
     Q_INVOKABLE void exportToFile(const QUrl &url);
@@ -138,7 +140,7 @@ private:
     TripGroupManager *m_tripGroupMgr = nullptr;
     PassManager *m_passMgr = nullptr;
     mutable HealthCertificateManager *m_healthCertMgr = nullptr;
-    std::function<QNetworkAccessManager*()> m_namFactory;
+    std::function<QNetworkAccessManager *()> m_namFactory;
 
     QString m_contextTripGroupId;
 

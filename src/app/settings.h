@@ -20,12 +20,14 @@ class Settings : public QObject
     Q_PROPERTY(bool preloadMapData READ preloadMapData WRITE setPreloadMapData NOTIFY preloadMapDataChanged)
 
     Q_PROPERTY(bool performCurrencyConversion READ performCurrencyConversion WRITE setPerformCurrencyConversion NOTIFY performCurrencyConversionChanged)
-    Q_PROPERTY(bool wikimediaOnlineContentEnabled MEMBER m_wikimediaOnlineContentEnabled WRITE setWikimediaOnlineContentEnabled NOTIFY wikimediaOnlineContentEnabledChanged)
+    Q_PROPERTY(bool wikimediaOnlineContentEnabled MEMBER m_wikimediaOnlineContentEnabled WRITE setWikimediaOnlineContentEnabled NOTIFY
+                   wikimediaOnlineContentEnabledChanged)
 
     Q_PROPERTY(bool autoAddTransfers READ autoAddTransfers WRITE setAutoAddTransfers NOTIFY autoAddTransfersChanged)
     Q_PROPERTY(bool autoFillTransfers READ autoFillTransfers WRITE setAutoFillTransfers NOTIFY autoFillTransfersChanged)
 
-    Q_PROPERTY(bool showNotificationOnLockScreen READ showNotificationOnLockScreen WRITE setShowNotificationOnLockScreen NOTIFY showNotificationOnLockScreenChanged)
+    Q_PROPERTY(
+        bool showNotificationOnLockScreen READ showNotificationOnLockScreen WRITE setShowNotificationOnLockScreen NOTIFY showNotificationOnLockScreenChanged)
 
     Q_PROPERTY(bool osmContributorMode MEMBER m_osmContributorMode WRITE setOsmContributorMode NOTIFY osmContributorModeChanged)
     Q_PROPERTY(bool developmentMode READ developmentMode WRITE setDevelopmentMode NOTIFY developmentModeChanged)

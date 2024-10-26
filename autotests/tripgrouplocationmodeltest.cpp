@@ -9,15 +9,15 @@
 #include "importcontroller.h"
 #include "reservationmanager.h"
 #include "transfermanager.h"
-#include "tripgroupmanager.h"
 #include "tripgrouplocationmodel.h"
+#include "tripgroupmanager.h"
 
 #include <KItinerary/LocationUtil>
 
 #include <QAbstractItemModelTester>
-#include <QtTest/qtest.h>
 #include <QSignalSpy>
 #include <QStandardPaths>
+#include <QtTest/qtest.h>
 
 using namespace Qt::Literals;
 using namespace KItinerary;

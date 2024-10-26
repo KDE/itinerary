@@ -21,7 +21,7 @@ Intent::operator QJniObject() const
     return jniHandle();
 }
 
-template <typename T>
+template<typename T>
 QJniObject Intent::getObjectExtra(const char *methodName, const QJniObject &name) const
 {
     return jniHandle().callObjectMethod(methodName, Jni::signature<T(java::lang::String)>(), name.object());

@@ -103,7 +103,7 @@ ImportController::ImportController(QObject *parent)
 
 ImportController::~ImportController() = default;
 
-void ImportController::setNetworkAccessManagerFactory(const std::function<QNetworkAccessManager*()> &namFactory)
+void ImportController::setNetworkAccessManagerFactory(const std::function<QNetworkAccessManager *()> &namFactory)
 {
     m_namFactory = namFactory;
 }
@@ -269,7 +269,7 @@ void ImportController::importData(const QByteArray &data, const QString &fileNam
                 DocumentUtil::addDocumentId(res, docId);
             }
             qCDebug(Log) << "Found reservation:" << res;
-            addElement({ .type = ImportElement::Reservation, .data = res });
+            addElement({.type = ImportElement::Reservation, .data = res});
             continue;
         }
         // check if this is a partial update for a reservation we already know
@@ -278,7 +278,7 @@ void ImportController::importData(const QByteArray &data, const QString &fileNam
             auto existingRes = m_resMgr->isPartialUpdate(res);
             if (!existingRes.isNull()) {
                 qCDebug(Log) << "Found partial update for" << existingRes;
-                addElement({ .type = ImportElement::Reservation, .data = existingRes, .updateData = res });
+                addElement({.type = ImportElement::Reservation, .data = existingRes, .updateData = res});
                 continue;
             } else {
                 qCDebug(Log) << "Got partial update but didn't find matching reservation" << res;
@@ -290,7 +290,7 @@ void ImportController::importData(const QByteArray &data, const QString &fileNam
             if (!docId.isEmpty()) {
                 DocumentUtil::addDocumentId(res, docId);
             }
-            addElement({ .type = ImportElement::Pass, .data = res });
+            addElement({.type = ImportElement::Pass, .data = res});
             continue;
         }
 
@@ -298,7 +298,7 @@ void ImportController::importData(const QByteArray &data, const QString &fileNam
         // this needs to special-case events, as those wont have times as template
         // and thus will be considered invalid by the validator
         if (templateValidator.isValidElement(res) || JsonLd::isA<EventReservation>(res)) {
-            addElement({ .type = ImportElement::Template, .data = res });
+            addElement({.type = ImportElement::Template, .data = res});
         }
     }
 
@@ -316,7 +316,7 @@ void ImportController::importData(const QByteArray &data, const QString &fileNam
     }
 }
 
-void ImportController::importText(const QString& text)
+void ImportController::importText(const QString &text)
 {
     importData(text.toUtf8());
 }
@@ -400,9 +400,14 @@ void ImportController::importFromIntent(const KAndroidExtras::Intent &intent)
 void ImportController::importFromCalendar(KCalendarCore::Calendar *calendar)
 {
     if (calendar->isLoading()) {
-        connect(calendar, &KCalendarCore::Calendar::isLoadingChanged, this, [this, calendar]() {
-            importFromCalendar(calendar);
-        }, Qt::SingleShotConnection);
+        connect(
+            calendar,
+            &KCalendarCore::Calendar::isLoadingChanged,
+            this,
+            [this, calendar]() {
+                importFromCalendar(calendar);
+            },
+            Qt::SingleShotConnection);
         return;
     }
 
@@ -433,7 +438,7 @@ void ImportController::importFromCalendar(KCalendarCore::Calendar *calendar)
                 continue;
             }
 
-            addElement({ .type = ImportElement::Reservation, .data = r, .selected = selected });
+            addElement({.type = ImportElement::Reservation, .data = r, .selected = selected});
             ++count;
         }
     }
@@ -446,7 +451,7 @@ void ImportController::importFromCalendar(KCalendarCore::Calendar *calendar)
 bool ImportController::importBundle(const QUrl &url)
 {
     auto f = std::make_unique<KItinerary::File>(FileHelper::toLocalFile(url));
-    return importBundle({ .backingData = {}, .data = std::move(f) });
+    return importBundle({.backingData = {}, .data = std::move(f)});
 }
 
 bool ImportController::importBundle(const QByteArray &data)
@@ -455,7 +460,7 @@ bool ImportController::importBundle(const QByteArray &data)
     buffer->setData(data);
     buffer->open(QBuffer::ReadOnly);
     auto f = std::make_unique<KItinerary::File>(buffer.get());
-    return importBundle({ .backingData = std::move(buffer), .data = std::move(f) });
+    return importBundle({.backingData = std::move(buffer), .data = std::move(f)});
 }
 
 [[nodiscard]] static bool isFullBackup(const KItinerary::File *file)
@@ -473,7 +478,7 @@ bool ImportController::importBundle(ImportBundle &&bundle)
 
     const auto tgIds = bundle.data->listCustomData(BUNDLE_TRIPGROUP_DOMAIN);
     if (tgIds.size() > 1 || isFullBackup(bundle.data.get())) {
-        addElement({ .type = ImportElement::Backup, .data = {}, .bundleIdx = (int)m_stagedBundles.size() });
+        addElement({.type = ImportElement::Backup, .data = {}, .bundleIdx = (int)m_stagedBundles.size()});
         m_stagedBundles.push_back(std::move(bundle));
         return true;
     }
@@ -481,7 +486,7 @@ bool ImportController::importBundle(ImportBundle &&bundle)
     int count = 0;
     const auto resIds = bundle.data->reservations();
     for (const auto &resId : resIds) {
-        addElement({ .type = ImportElement::Reservation, .data = bundle.data->reservation(resId), .id = resId, .bundleIdx = (int)m_stagedBundles.size() });
+        addElement({.type = ImportElement::Reservation, .data = bundle.data->reservation(resId), .id = resId, .bundleIdx = (int)m_stagedBundles.size()});
         ++count;
     }
 
@@ -489,7 +494,7 @@ bool ImportController::importBundle(ImportBundle &&bundle)
     for (const auto &id : passIds) {
         const auto data = bundle.data->customData(BUNDLE_PASS_DOMAIN, id);
         const auto pass = KItinerary::JsonLdDocument::fromJsonSingular(QJsonDocument::fromJson(data).object());
-        addElement({ .type = ImportElement::Pass, .data = pass, .id = id });
+        addElement({.type = ImportElement::Pass, .data = pass, .id = id});
         ++count;
     }
 
@@ -497,7 +502,7 @@ bool ImportController::importBundle(ImportBundle &&bundle)
     const auto certIds = bundle.data->listCustomData(BUNDLE_HEALTH_CERTIFICATE_DOMAIN);
     for (const auto &certId : certIds) {
         const auto cert = KHealthCertificateParser::parse(bundle.data->customData(BUNDLE_HEALTH_CERTIFICATE_DOMAIN, certId));
-        addElement({ .type = ImportElement::HealthCertificate, .data = cert });
+        addElement({.type = ImportElement::HealthCertificate, .data = cert});
         ++count;
     }
 #endif
@@ -511,7 +516,7 @@ bool ImportController::importBundle(ImportBundle &&bundle)
     }
 
     const auto pkPassIds = bundle.data->passes();
-    for (const auto &passId :pkPassIds) {
+    for (const auto &passId : pkPassIds) {
         // careful, there are different id mangling schemes used here!
         const auto [passTypeIdentifier, serialNum] = KItinerary::File::decodePassId(passId);
         const auto pkPassId = KItinerary::DocumentUtil::idForPkPass(passTypeIdentifier, serialNum);
@@ -545,7 +550,7 @@ void ImportController::importNode(const KItinerary::ExtractorDocumentNode &node)
 
     // Apple wallet passes
     if (node.mimeType() == "application/vnd.apple.pkpass"_L1) {
-        const auto pass = node.content<KPkPass::Pass*>();
+        const auto pass = node.content<KPkPass::Pass *>();
         if (!pass || pass->type() == KPkPass::Pass::Coupon || pass->type() == KPkPass::Pass::StoreCard) {
             // no support for displaying those yet
             return;
@@ -563,8 +568,8 @@ void ImportController::importNode(const KItinerary::ExtractorDocumentNode &node)
             wrapper.setValidUntil(pass->expirationDate());
             QVariant v(wrapper);
             KItinerary::DocumentUtil::addDocumentId(v, KItinerary::DocumentUtil::idForPkPass(pass->passTypeIdentifier(), pass->serialNumber()));
-            addElement({ .type = ImportElement::Pass, .data = v });
-            m_stagedPkPasses[pkPassId] = ImportPkPass{ .data = pass->rawData() };
+            addElement({.type = ImportElement::Pass, .data = v});
+            m_stagedPkPasses[pkPassId] = ImportPkPass{.data = pass->rawData()};
         }
     }
 
@@ -573,7 +578,7 @@ void ImportController::importNode(const KItinerary::ExtractorDocumentNode &node)
     if (node.mimeType() == "text/plain"_L1 || node.mimeType() == "application/octet-stream"_L1) {
         const auto cert = KHealthCertificateParser::parse(node.mimeType() == "text/plain"_L1 ? node.content<QString>().toUtf8() : node.content<QByteArray>());
         if (!cert.isNull()) {
-            addElement({ .type = ImportElement::HealthCertificate, .data = cert });
+            addElement({.type = ImportElement::HealthCertificate, .data = cert});
         }
     }
 #endif
@@ -597,119 +602,116 @@ QVariant ImportController::data(const QModelIndex &index, int role) const
 
     const auto &elem = m_stagedElements[index.row()];
     switch (role) {
-        case TitleRole:
-        {
-            switch (elem.type) {
-                case ImportElement::Reservation:
-                    return ReservationHelper::label(elem.data);
-                case ImportElement::Pass:
-                    if (JsonLd::isA<Ticket>(elem.data)) {
-                        return elem.data.value<Ticket>().name();
-                    }
-                    if (JsonLd::isA<ProgramMembership>(elem.data)) {
-                        return elem.data.value<ProgramMembership>().programName();
-                    }
-                    if (JsonLd::isA<GenericPkPass>(elem.data)) {
-                        return elem.data.value<GenericPkPass>().name();
-                    }
-                    break;
-                case ImportElement::Template:
-                    if (JsonLd::isA<EventReservation>(elem.data)) {
-                        return LocationUtil::name(elem.data.value<EventReservation>().reservationFor().value<Event>().location());
-                    }
-                    return LocationUtil::name(elem.data);
-                case ImportElement::HealthCertificate:
-                    return HealthCertificateManager::displayName(elem.data);
-                case ImportElement::Backup:
-                    return i18n("Backup");
+    case TitleRole: {
+        switch (elem.type) {
+        case ImportElement::Reservation:
+            return ReservationHelper::label(elem.data);
+        case ImportElement::Pass:
+            if (JsonLd::isA<Ticket>(elem.data)) {
+                return elem.data.value<Ticket>().name();
+            }
+            if (JsonLd::isA<ProgramMembership>(elem.data)) {
+                return elem.data.value<ProgramMembership>().programName();
+            }
+            if (JsonLd::isA<GenericPkPass>(elem.data)) {
+                return elem.data.value<GenericPkPass>().name();
             }
             break;
+        case ImportElement::Template:
+            if (JsonLd::isA<EventReservation>(elem.data)) {
+                return LocationUtil::name(elem.data.value<EventReservation>().reservationFor().value<Event>().location());
+            }
+            return LocationUtil::name(elem.data);
+        case ImportElement::HealthCertificate:
+            return HealthCertificateManager::displayName(elem.data);
+        case ImportElement::Backup:
+            return i18n("Backup");
         }
-        case SubtitleRole:
-        {
-            switch (elem.type) {
-                case ImportElement::Reservation:
-                    if (SortUtil::hasStartTime(elem.data)) {
-                        return QLocale().toString(SortUtil::startDateTime(elem.data));
-                    }
-                    return QLocale().toString(SortUtil::startDateTime(elem.data).date());
-                case ImportElement::Pass:
-                    if (JsonLd::isA<GenericPkPass>(elem.data)) {
-                        return QLocale().toString(elem.data.value<GenericPkPass>().validUntil().date());
-                    }
-                    return QLocale().toString(SortUtil::startDateTime(elem.data).date());
-                case ImportElement::Template:
-                    return QString();
-                case ImportElement::HealthCertificate:
+        break;
+    }
+    case SubtitleRole: {
+        switch (elem.type) {
+        case ImportElement::Reservation:
+            if (SortUtil::hasStartTime(elem.data)) {
+                return QLocale().toString(SortUtil::startDateTime(elem.data));
+            }
+            return QLocale().toString(SortUtil::startDateTime(elem.data).date());
+        case ImportElement::Pass:
+            if (JsonLd::isA<GenericPkPass>(elem.data)) {
+                return QLocale().toString(elem.data.value<GenericPkPass>().validUntil().date());
+            }
+            return QLocale().toString(SortUtil::startDateTime(elem.data).date());
+        case ImportElement::Template:
+            return QString();
+        case ImportElement::HealthCertificate:
 #if HAVE_KHEALTHCERTIFICATE
-                    return QLocale().toString(KHealthCertificate::relevantUntil(elem.data).date());
+            return QLocale().toString(KHealthCertificate::relevantUntil(elem.data).date());
 #else
-                    break;
+            break;
 #endif
-                case ImportElement::Backup:
-                    // TODO can we get the ctime of the backup?
-                    break;
-            }
+        case ImportElement::Backup:
+            // TODO can we get the ctime of the backup?
             break;
         }
-        case IconNameRole:
-        {
-            // use pkpass icon if we have one
-            const auto docIds = DocumentUtil::documentIds(m_stagedElements[index.row()].data) + DocumentUtil::documentIds(m_stagedElements[index.row()].updateData);
-            for (const auto &docId : docIds) {
-                if (const auto it = m_stagedPkPasses.find(docId.toString()); it != m_stagedPkPasses.end() && !(*it).second.data.isEmpty()) {
-                    if (!(*it).second.pass) {
-                        (*it).second.pass.reset(KPkPass::Pass::fromData((*it).second.data));
-                    }
-                    if ((*it).second.pass->hasIcon()) {
-                        QUrl passId((*it).first);
-                        return QString("image://org.kde.pkpass/"_L1 + passId.host() + '/'_L1 +  QString::fromUtf8(QStringView(passId.path()).mid(1).toUtf8().toBase64(QByteArray::Base64UrlEncoding)) + "/icon"_L1);
-                    }
+        break;
+    }
+    case IconNameRole: {
+        // use pkpass icon if we have one
+        const auto docIds = DocumentUtil::documentIds(m_stagedElements[index.row()].data) + DocumentUtil::documentIds(m_stagedElements[index.row()].updateData);
+        for (const auto &docId : docIds) {
+            if (const auto it = m_stagedPkPasses.find(docId.toString()); it != m_stagedPkPasses.end() && !(*it).second.data.isEmpty()) {
+                if (!(*it).second.pass) {
+                    (*it).second.pass.reset(KPkPass::Pass::fromData((*it).second.data));
+                }
+                if ((*it).second.pass->hasIcon()) {
+                    QUrl passId((*it).first);
+                    return QString("image://org.kde.pkpass/"_L1 + passId.host() + '/'_L1
+                                   + QString::fromUtf8(QStringView(passId.path()).mid(1).toUtf8().toBase64(QByteArray::Base64UrlEncoding)) + "/icon"_L1);
                 }
             }
+        }
 
-            // ... and generic icons otherwise
-            switch (elem.type) {
-                case ImportElement::Reservation:
-                case ImportElement::Pass:
-                    return ReservationHelper::defaultIconName(elem.data);
-                case ImportElement::Template:
-                    if (JsonLd::isA<LodgingBusiness>(elem.data)) {
-                        return u"go-home-symbolic"_s;
-                    }
-                    if (JsonLd::isA<FoodEstablishment>(elem.data) || JsonLd::isA<LocalBusiness>(elem.data)) {
-                        return KPublicTransport::Feature::typeIconName(KPublicTransport::Feature::Restaurant);
-                    }
-                    return ReservationHelper::defaultIconName(elem.data);
-                case ImportElement::HealthCertificate:
-                    return u"cross-shape"_s;
-                case ImportElement::Backup:
-                    return u"backup"_s;
+        // ... and generic icons otherwise
+        switch (elem.type) {
+        case ImportElement::Reservation:
+        case ImportElement::Pass:
+            return ReservationHelper::defaultIconName(elem.data);
+        case ImportElement::Template:
+            if (JsonLd::isA<LodgingBusiness>(elem.data)) {
+                return u"go-home-symbolic"_s;
             }
-            return u"question"_s;
-        }
-        case TypeRole:
-            return m_stagedElements[index.row()].type;
-        case SelectedRole:
-            return m_stagedElements[index.row()].selected;
-        case DataRole:
-            return m_stagedElements[index.row()].data;
-        case BatchSizeRole:
-            return m_stagedElements[index.row()].batch.size();
-        case AttachmentCountRole:
-        {
-            int count = 0;
-            const auto docIds = DocumentUtil::documentIds(m_stagedElements[index.row()].data) + DocumentUtil::documentIds(m_stagedElements[index.row()].updateData);
-            for (const auto &docId : docIds) {
-                if (const auto it = m_stagedDocuments.find(docId.toString()); it != m_stagedDocuments.end() && !(*it).second.data.isEmpty()) {
-                    ++count;
-                }
-                if (const auto it = m_stagedPkPasses.find(docId.toString()); it != m_stagedPkPasses.end() && !(*it).second.data.isEmpty()) {
-                    ++count;
-                }
+            if (JsonLd::isA<FoodEstablishment>(elem.data) || JsonLd::isA<LocalBusiness>(elem.data)) {
+                return KPublicTransport::Feature::typeIconName(KPublicTransport::Feature::Restaurant);
             }
-            return count;
+            return ReservationHelper::defaultIconName(elem.data);
+        case ImportElement::HealthCertificate:
+            return u"cross-shape"_s;
+        case ImportElement::Backup:
+            return u"backup"_s;
         }
+        return u"question"_s;
+    }
+    case TypeRole:
+        return m_stagedElements[index.row()].type;
+    case SelectedRole:
+        return m_stagedElements[index.row()].selected;
+    case DataRole:
+        return m_stagedElements[index.row()].data;
+    case BatchSizeRole:
+        return m_stagedElements[index.row()].batch.size();
+    case AttachmentCountRole: {
+        int count = 0;
+        const auto docIds = DocumentUtil::documentIds(m_stagedElements[index.row()].data) + DocumentUtil::documentIds(m_stagedElements[index.row()].updateData);
+        for (const auto &docId : docIds) {
+            if (const auto it = m_stagedDocuments.find(docId.toString()); it != m_stagedDocuments.end() && !(*it).second.data.isEmpty()) {
+                ++count;
+            }
+            if (const auto it = m_stagedPkPasses.find(docId.toString()); it != m_stagedPkPasses.end() && !(*it).second.data.isEmpty()) {
+                ++count;
+            }
+        }
+        return count;
+    }
     }
 
     return {};
@@ -719,11 +721,11 @@ bool ImportController::setData(const QModelIndex &index, const QVariant &value, 
 {
     auto &ev = m_stagedElements[index.row()];
     switch (role) {
-        case SelectedRole:
-            ev.selected = value.toBool();
-            Q_EMIT dataChanged(index, index);
-            Q_EMIT selectionChanged();
-            return true;
+    case SelectedRole:
+        ev.selected = value.toBool();
+        Q_EMIT dataChanged(index, index);
+        Q_EMIT selectionChanged();
+        return true;
     }
     return false;
 }
@@ -744,7 +746,9 @@ QHash<int, QByteArray> ImportController::roleNames() const
 
 bool ImportController::hasSelection() const
 {
-    return std::any_of(m_stagedElements.begin(), m_stagedElements.end(), [](const auto &elem) { return elem.selected; });
+    return std::any_of(m_stagedElements.begin(), m_stagedElements.end(), [](const auto &elem) {
+        return elem.selected;
+    });
 }
 
 bool ImportController::hasSelectedReservation() const
@@ -784,7 +788,7 @@ QDateTime ImportController::selectionEndDateTime() const
             end = end.isValid() ? std::max(end, KItinerary::SortUtil::endDateTime(elem.data)) : KItinerary::SortUtil::endDateTime(elem.data);
         }
     }
-    return end.isValid() ? end :selectionBeginDateTime();
+    return end.isValid() ? end : selectionBeginDateTime();
 }
 
 void ImportController::setAutoCommitEnabled(bool enable)
@@ -866,29 +870,31 @@ bool ImportController::canAutoCommit() const
     }
 
     // everything is selected
-    return std::all_of(m_stagedElements.begin(), m_stagedElements.end(), [](const auto &elem) { return elem.selected; });
+    return std::all_of(m_stagedElements.begin(), m_stagedElements.end(), [](const auto &elem) {
+        return elem.selected;
+    });
 }
 
 [[nodiscard]] static QDateTime elementSortTime(const ImportElement &elem)
 {
     switch (elem.type) {
-        case ImportElement::Reservation:
-            break; // handled elsewhere
-        case ImportElement::Pass:
-            if (KItinerary::JsonLd::isA<GenericPkPass>(elem.data)) {
-                return elem.data.value<GenericPkPass>().validUntil();
-            }
-            return KItinerary::SortUtil::startDateTime(elem.data);
-        case ImportElement::Template:
-            return {};
-        case ImportElement::HealthCertificate:
+    case ImportElement::Reservation:
+        break; // handled elsewhere
+    case ImportElement::Pass:
+        if (KItinerary::JsonLd::isA<GenericPkPass>(elem.data)) {
+            return elem.data.value<GenericPkPass>().validUntil();
+        }
+        return KItinerary::SortUtil::startDateTime(elem.data);
+    case ImportElement::Template:
+        return {};
+    case ImportElement::HealthCertificate:
 #if HAVE_KHEALTHCERTIFICATE
-            return KHealthCertificate::relevantUntil(elem.data);
+        return KHealthCertificate::relevantUntil(elem.data);
 #else
-            break;
+        break;
 #endif
-        case ImportElement::Backup:
-            break;
+    case ImportElement::Backup:
+        break;
     }
     return {};
 }
@@ -913,7 +919,7 @@ bool ImportController::canAutoCommit() const
         return KItinerary::SortUtil::isBefore(lhs.data, rhs.data);
     }
 
-    return elementSortTime(lhs) <elementSortTime(rhs);
+    return elementSortTime(lhs) < elementSortTime(rhs);
 }
 
 void ImportController::addElement(ImportElement &&elem)
@@ -960,22 +966,22 @@ void ImportController::addElement(ImportElement &&elem)
     }
 }
 
-const std::vector<ImportElement>& ImportController::elements() const
+const std::vector<ImportElement> &ImportController::elements() const
 {
     return m_stagedElements;
 }
 
-std::unordered_map<QString, ImportDocument>& ImportController::documents()
+std::unordered_map<QString, ImportDocument> &ImportController::documents()
 {
     return m_stagedDocuments;
 }
 
-std::unordered_map<QString, ImportPkPass>& ImportController::pkPasses()
+std::unordered_map<QString, ImportPkPass> &ImportController::pkPasses()
 {
     return m_stagedPkPasses;
 }
 
-const std::vector<ImportBundle>& ImportController::bundles() const
+const std::vector<ImportBundle> &ImportController::bundles() const
 {
     return m_stagedBundles;
 }

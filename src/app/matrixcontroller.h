@@ -6,8 +6,8 @@
 #ifndef MATRIXCONTROLLER_H
 #define MATRIXCONTROLLER_H
 
-#include <QObject>
 #include <QAbstractItemModel>
+#include <QObject>
 class MatrixManager;
 class MatrixRoomsModel;
 class MatrixRoomsSortProxyModel;
@@ -20,7 +20,7 @@ class MatrixController : public QObject
     Q_PROPERTY(bool isAvailable READ isAvailable CONSTANT)
     Q_PROPERTY(QObject *manager READ manager CONSTANT)
     /** Matrix rooms model. */
-    Q_PROPERTY(QAbstractItemModel* roomsModel READ roomsModel CONSTANT)
+    Q_PROPERTY(QAbstractItemModel *roomsModel READ roomsModel CONSTANT)
 
 public:
     explicit MatrixController(QObject *parent = nullptr);
@@ -28,8 +28,8 @@ public:
 
     static bool isAvailable();
 
-    QObject* manager() const;
-    QAbstractItemModel* roomsModel();
+    QObject *manager() const;
+    QAbstractItemModel *roomsModel();
 
 private:
     MatrixManager *m_mgr = nullptr;

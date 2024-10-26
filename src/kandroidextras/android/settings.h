@@ -10,7 +10,8 @@
 #include <KAndroidExtras/AndroidTypes>
 #include <KAndroidExtras/JniProperty>
 
-namespace KAndroidExtras {
+namespace KAndroidExtras
+{
 
 /** Methods around android.provider.Settings. */
 class Settings

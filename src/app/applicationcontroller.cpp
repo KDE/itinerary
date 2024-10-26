@@ -30,8 +30,8 @@
 #include <KItinerary/DocumentUtil>
 #include <KItinerary/Event>
 #include <KItinerary/ExtractorCapabilities>
-#include <KItinerary/ExtractorEngine>
 #include <KItinerary/ExtractorDocumentNode>
+#include <KItinerary/ExtractorEngine>
 #include <KItinerary/ExtractorPostprocessor>
 #include <KItinerary/File>
 #include <KItinerary/JsonLdDocument>
@@ -55,15 +55,15 @@
 #include <QMimeData>
 #include <QMimeDatabase>
 #include <QNetworkAccessManager>
-#include <QNetworkRequest>
 #include <QNetworkReply>
+#include <QNetworkRequest>
 #include <QScopedValueRollback>
 #include <QStandardPaths>
 #include <QTemporaryDir>
 #include <QTemporaryFile>
-#include <QUuid>
 #include <QUrl>
 #include <QUrlQuery>
+#include <QUuid>
 
 #ifdef Q_OS_ANDROID
 #include "android/itineraryactivity.h"
@@ -80,9 +80,9 @@
 using namespace Qt::Literals::StringLiterals;
 using namespace KItinerary;
 
-ApplicationController* ApplicationController::s_instance = nullptr;
+ApplicationController *ApplicationController::s_instance = nullptr;
 
-ApplicationController::ApplicationController(QObject* parent)
+ApplicationController::ApplicationController(QObject *parent)
     : QObject(parent)
 {
     s_instance = this;
@@ -93,12 +93,12 @@ ApplicationController::~ApplicationController()
     s_instance = nullptr;
 }
 
-void ApplicationController::setNetworkAccessManagerFactory(const std::function<QNetworkAccessManager*()> &namFactory)
+void ApplicationController::setNetworkAccessManagerFactory(const std::function<QNetworkAccessManager *()> &namFactory)
 {
     m_namFactory = namFactory;
 }
 
-ApplicationController* ApplicationController::instance()
+ApplicationController *ApplicationController::instance()
 {
     return s_instance;
 }
@@ -108,23 +108,23 @@ void ApplicationController::requestOpenPage(const QString &page, const QVariantM
     Q_EMIT openPageRequested(page, properties);
 }
 
-void ApplicationController::setReservationManager(ReservationManager* resMgr)
+void ApplicationController::setReservationManager(ReservationManager *resMgr)
 {
     m_resMgr = resMgr;
 }
 
-void ApplicationController::setPkPassManager(PkPassManager* pkPassMgr)
+void ApplicationController::setPkPassManager(PkPassManager *pkPassMgr)
 {
     m_pkPassMgr = pkPassMgr;
     connect(m_pkPassMgr, &PkPassManager::passUpdated, this, &ApplicationController::pkPassUpdated);
 }
 
-void ApplicationController::setDocumentManager(DocumentManager* docMgr)
+void ApplicationController::setDocumentManager(DocumentManager *docMgr)
 {
     m_docMgr = docMgr;
 }
 
-void ApplicationController::setTransferManager(TransferManager* transferMgr)
+void ApplicationController::setTransferManager(TransferManager *transferMgr)
 {
     m_transferMgr = transferMgr;
 }
@@ -206,60 +206,63 @@ void ApplicationController::commitImport(ImportController *importController)
 
         QVariantList docIds;
         switch (elem.type) {
-            case ImportElement::Reservation:
-                tripGroupElements.push_back(m_resMgr->addReservation(elem.updateData.isNull() ? elem.data : elem.updateData, elem.id));
-                docIds = DocumentUtil::documentIds(elem.data);
-                for (const auto &r : elem.batch) {
-                    m_resMgr->addReservation(r);
-                    docIds += DocumentUtil::documentIds(r);
+        case ImportElement::Reservation:
+            tripGroupElements.push_back(m_resMgr->addReservation(elem.updateData.isNull() ? elem.data : elem.updateData, elem.id));
+            docIds = DocumentUtil::documentIds(elem.data);
+            for (const auto &r : elem.batch) {
+                m_resMgr->addReservation(r);
+                docIds += DocumentUtil::documentIds(r);
+            }
+
+            if (elem.bundleIdx >= 0 && !elem.id.isEmpty()) {
+                const auto bundle = importController->bundles()[elem.bundleIdx].data.get();
+
+                auto t = Transfer::fromJson(
+                    QJsonDocument::fromJson(bundle->customData(BUNDLE_TRANSFER_DOMAIN, Transfer::identifier(elem.id, Transfer::Before))).object());
+                m_transferMgr->importTransfer(t);
+                t = Transfer::fromJson(
+                    QJsonDocument::fromJson(bundle->customData(BUNDLE_TRANSFER_DOMAIN, Transfer::identifier(elem.id, Transfer::After))).object());
+                m_transferMgr->importTransfer(t);
+
+                const auto obj = QJsonDocument::fromJson(bundle->customData(BUNDLE_LIVE_DATA_DOMAIN, elem.id)).object();
+                if (!obj.isEmpty()) {
+                    auto ld = LiveData::fromJson(obj);
+                    ld.store(elem.id);
+                    m_liveDataMgr->importData(elem.id, std::move(ld));
                 }
+            }
 
-                if (elem.bundleIdx >= 0 && !elem.id.isEmpty()) {
-                    const auto bundle = importController->bundles()[elem.bundleIdx].data.get();
-
-                    auto t = Transfer::fromJson(QJsonDocument::fromJson(bundle->customData(BUNDLE_TRANSFER_DOMAIN, Transfer::identifier(elem.id, Transfer::Before))).object());
-                    m_transferMgr->importTransfer(t);
-                    t = Transfer::fromJson(QJsonDocument::fromJson(bundle->customData(BUNDLE_TRANSFER_DOMAIN, Transfer::identifier(elem.id, Transfer::After))).object());
-                    m_transferMgr->importTransfer(t);
-
-                    const auto obj = QJsonDocument::fromJson(bundle->customData(BUNDLE_LIVE_DATA_DOMAIN, elem.id)).object();
-                    if (!obj.isEmpty()) {
-                        auto ld = LiveData::fromJson(obj);
-                        ld.store(elem.id);
-                        m_liveDataMgr->importData(elem.id, std::move(ld));
-                    }
-                }
-
-                ++reservationCount;
-                break;
-            case ImportElement::Pass:
-                docIds = DocumentUtil::documentIds(elem.data);
-                m_passMgr->import(elem.data, elem.id);
-                ++passCount;
-                break;
-            case ImportElement::HealthCertificate:
-                m_healthCertMgr->importCertificate(HealthCertificateManager::certificateRawData(elem.data));
-                ++healthCertCount;
-                break;
-            case ImportElement::Template:
-                if (JsonLd::isA<LodgingBusiness>(elem.data)) { // TODO can't we do the reservation promotion in ImportController and share the model representation with reservations?
-                    LodgingReservation res;
-                    res.setReservationFor(elem.data);
-                    res.setPotentialAction(elem.data.value<LodgingBusiness>().potentialAction());
-                    Q_EMIT editNewHotelReservation(res);
-                } else if (JsonLd::isA<FoodEstablishment>(elem.data) || JsonLd::isA<LocalBusiness>(elem.data)) {
-                    // LocalBusiness is frequently used for restaurants in website annotations
-                    FoodEstablishmentReservation res;
-                    res.setReservationFor(elem.data);
-                    res.setPotentialAction(JsonLd::convert<Organization>(elem.data).potentialAction());
-                    Q_EMIT editNewRestaurantReservation(res);
-                } else if (JsonLd::isA<EventReservation>(elem.data)) {
-                    Q_EMIT editNewEventReservation(elem.data);
-                }
-                break;
-            case ImportElement::Backup:
-                importBundle(importController->bundles()[elem.bundleIdx].data.get());
-                break;
+            ++reservationCount;
+            break;
+        case ImportElement::Pass:
+            docIds = DocumentUtil::documentIds(elem.data);
+            m_passMgr->import(elem.data, elem.id);
+            ++passCount;
+            break;
+        case ImportElement::HealthCertificate:
+            m_healthCertMgr->importCertificate(HealthCertificateManager::certificateRawData(elem.data));
+            ++healthCertCount;
+            break;
+        case ImportElement::Template:
+            if (JsonLd::isA<LodgingBusiness>(
+                    elem.data)) { // TODO can't we do the reservation promotion in ImportController and share the model representation with reservations?
+                LodgingReservation res;
+                res.setReservationFor(elem.data);
+                res.setPotentialAction(elem.data.value<LodgingBusiness>().potentialAction());
+                Q_EMIT editNewHotelReservation(res);
+            } else if (JsonLd::isA<FoodEstablishment>(elem.data) || JsonLd::isA<LocalBusiness>(elem.data)) {
+                // LocalBusiness is frequently used for restaurants in website annotations
+                FoodEstablishmentReservation res;
+                res.setReservationFor(elem.data);
+                res.setPotentialAction(JsonLd::convert<Organization>(elem.data).potentialAction());
+                Q_EMIT editNewRestaurantReservation(res);
+            } else if (JsonLd::isA<EventReservation>(elem.data)) {
+                Q_EMIT editNewEventReservation(elem.data);
+            }
+            break;
+        case ImportElement::Backup:
+            importBundle(importController->bundles()[elem.bundleIdx].data.get());
+            break;
         }
 
         for (const auto &docId : docIds) {
@@ -307,7 +310,6 @@ void ApplicationController::commitImport(ImportController *importController)
     }
     if (passCount) {
         Q_EMIT infoMessage(i18np("One pass imported.", "%1 passes imported.", passCount));
-
     }
     if (healthCertCount) {
         Q_EMIT infoMessage(i18np("One health certificate imported.", "%1 health certificates imported.", healthCertCount));
@@ -557,7 +559,7 @@ void ApplicationController::pkPassUpdated(const QString &passId)
 
     const auto pass = m_pkPassMgr->pass(passId);
     KItinerary::ExtractorEngine engine;
-    engine.setContent(QVariant::fromValue<KPkPass::Pass*>(pass), u"application/vnd.apple.pkpass");
+    engine.setContent(QVariant::fromValue<KPkPass::Pass *>(pass), u"application/vnd.apple.pkpass");
     m_resMgr->addReservationsWithPostProcessing(JsonLdDocument::fromJson(engine.extract()));
 }
 
@@ -671,10 +673,10 @@ bool ApplicationController::hasHealthCertificateSupport() const
     return HealthCertificateManager::isAvailable();
 }
 
-HealthCertificateManager* ApplicationController::healthCertificateManager() const
+HealthCertificateManager *ApplicationController::healthCertificateManager() const
 {
     if (!m_healthCertMgr) {
-        m_healthCertMgr = new HealthCertificateManager(const_cast<ApplicationController*>(this));
+        m_healthCertMgr = new HealthCertificateManager(const_cast<ApplicationController *>(this));
     }
     return m_healthCertMgr;
 }

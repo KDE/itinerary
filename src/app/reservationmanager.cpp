@@ -10,8 +10,8 @@
 #include "logging.h"
 #include "reservationhelper.h"
 
-#include <KItinerary/ExtractorPostprocessor>
 #include <KItinerary/Event>
+#include <KItinerary/ExtractorPostprocessor>
 #include <KItinerary/Flight>
 #include <KItinerary/JsonLdDocument>
 #include <KItinerary/MergeUtil>
@@ -36,7 +36,7 @@
 using namespace KItinerary;
 using namespace Qt::Literals;
 
-ReservationManager::ReservationManager(QObject* parent)
+ReservationManager::ReservationManager(QObject *parent)
     : QObject(parent)
     , m_validator(ReservationManager::validator())
 {
@@ -50,17 +50,15 @@ ReservationManager::~ReservationManager() = default;
 KItinerary::ExtractorValidator ReservationManager::validator()
 {
     KItinerary::ExtractorValidator v;
-    v.setAcceptedTypes<
-        BoatReservation,
-        BusReservation,
-        EventReservation,
-        FlightReservation,
-        FoodEstablishmentReservation,
-        LodgingReservation,
-        RentalCarReservation,
-        TrainReservation,
-        TouristAttractionVisit
-    >();
+    v.setAcceptedTypes<BoatReservation,
+                       BusReservation,
+                       EventReservation,
+                       FlightReservation,
+                       FoodEstablishmentReservation,
+                       LodgingReservation,
+                       RentalCarReservation,
+                       TrainReservation,
+                       TouristAttractionVisit>();
     return v;
 }
 
@@ -74,7 +72,7 @@ bool ReservationManager::hasBatch(const QString &batchId) const
     return m_batchToResMap.contains(batchId);
 }
 
-QVariant ReservationManager::reservation(const QString& id) const
+QVariant ReservationManager::reservation(const QString &id) const
 {
     if (id.isEmpty()) {
         return {};
@@ -158,7 +156,9 @@ QString ReservationManager::addReservation(const QVariant &res, const QString &r
 {
     // deal with partial updates
     if (!m_validator.isValidElement(res)) {
-        const auto cleanup = qScopeGuard([this] { m_validator.setAcceptOnlyCompleteElements(true); });
+        const auto cleanup = qScopeGuard([this] {
+            m_validator.setAcceptOnlyCompleteElements(true);
+        });
         m_validator.setAcceptOnlyCompleteElements(false);
         if (m_validator.isValidElement(res)) {
             const auto ids = applyPartialUpdate(res);
@@ -261,7 +261,7 @@ void ReservationManager::storeReservation(const QString &resId, const QVariant &
     m_reservations.insert(resId, res);
 }
 
-void ReservationManager::removeReservation(const QString& id)
+void ReservationManager::removeReservation(const QString &id)
 {
     const auto batchId = m_resToBatchMap.value(id);
     removeFromBatch(id, batchId);
@@ -274,7 +274,7 @@ void ReservationManager::removeReservation(const QString& id)
     m_reservations.remove(id);
 }
 
-const std::vector<QString>& ReservationManager::batches() const
+const std::vector<QString> &ReservationManager::batches() const
 {
     return m_batches;
 }
@@ -605,7 +605,7 @@ QString ReservationManager::previousBatch(const QString &batchId) const
     return *(it - 1);
 }
 
-QString ReservationManager::nextBatch(const QString& batchId) const
+QString ReservationManager::nextBatch(const QString &batchId) const
 {
     // ### this can be optimized by relying on m_batches being sorted by start date
     const auto it = std::find(m_batches.begin(), m_batches.end(), batchId);

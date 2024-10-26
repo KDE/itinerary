@@ -10,8 +10,8 @@
 
 #include <KCalendarCore/ICalFormat>
 
-#include <QtTest/qtest.h>
 #include <QStandardPaths>
+#include <QtTest/qtest.h>
 
 class CalendarHelperTest : public QObject
 {

@@ -17,7 +17,8 @@
 
 #include <vector>
 
-namespace KPublicTransport {
+namespace KPublicTransport
+{
 class JourneyReply;
 class JourneySection;
 class Manager;
@@ -34,12 +35,12 @@ class ReservationManager;
 class LiveDataManager : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(KPublicTransport::Manager* publicTransportManager READ publicTransportManager CONSTANT)
+    Q_PROPERTY(KPublicTransport::Manager *publicTransportManager READ publicTransportManager CONSTANT)
 public:
     explicit LiveDataManager(QObject *parent = nullptr);
     ~LiveDataManager() override;
 
-    KPublicTransport::Manager* publicTransportManager() const;
+    KPublicTransport::Manager *publicTransportManager() const;
 
     void setReservationManager(ReservationManager *resMgr);
     void setPkPassManager(PkPassManager *pkPassMgr);
@@ -110,7 +111,7 @@ private:
     /** Check if the trip @p res has arrived, based on the best knowledge we have. */
     bool hasArrived(const QString &resId, const QVariant &res) const;
 
-    LiveData& data(const QString &resId) const;
+    LiveData &data(const QString &resId) const;
 
     void poll();
     /// @p force will bypass the check if the data is still up to date
@@ -131,7 +132,7 @@ private:
     PkPassManager *m_pkPassMgr;
     KPublicTransport::Manager *m_ptMgr;
     std::vector<QString> m_reservations;
-    mutable QHash <QString, LiveData> m_data;
+    mutable QHash<QString, LiveData> m_data;
     QHash<QString, QDateTime> m_lastPollAttempt; // poll cooldown on error
     QHash<QString, QPointer<KNotification>> m_notifications;
     bool m_showNotificationsOnLockScreen = false;

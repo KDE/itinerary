@@ -26,7 +26,7 @@ TripGroupProxyModel::~TripGroupProxyModel() = default;
 
 void TripGroupProxyModel::setSourceModel(QAbstractItemModel *sourceModel)
 {
-    m_sourceModel = qobject_cast<TimelineModel*>(sourceModel);
+    m_sourceModel = qobject_cast<TimelineModel *>(sourceModel);
     Q_ASSERT(m_sourceModel);
     connect(m_sourceModel, &TimelineModel::todayRowChanged, this, &TripGroupProxyModel::todayRowChanged);
     connect(m_sourceModel, &TimelineModel::todayRowChanged, this, &TripGroupProxyModel::invalidateFilter);

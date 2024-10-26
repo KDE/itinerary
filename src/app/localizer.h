@@ -40,5 +40,4 @@ public:
     Q_INVOKABLE static QString formatCurrency(double value, const QString &isoCode);
 };
 
-
 #endif // LOCALIZER_H

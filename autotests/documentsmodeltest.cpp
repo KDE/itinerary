@@ -6,15 +6,15 @@
 
 #include "testhelper.h"
 
-#include "documentsmodel.h"
 #include "documentmanager.h"
+#include "documentsmodel.h"
 #include "importcontroller.h"
 #include "timelinedelegatecontroller.h"
 
 #include <QAbstractItemModelTester>
-#include <QtTest/qtest.h>
 #include <QSignalSpy>
 #include <QStandardPaths>
+#include <QtTest/qtest.h>
 
 class DocumentsModelTest : public QObject
 {

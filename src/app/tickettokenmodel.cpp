@@ -17,21 +17,21 @@
 
 using namespace KItinerary;
 
-TicketTokenModel::TicketTokenModel(QObject* parent)
+TicketTokenModel::TicketTokenModel(QObject *parent)
     : QAbstractListModel(parent)
 {
 }
 
 TicketTokenModel::~TicketTokenModel() = default;
 
-QObject * TicketTokenModel::reservationManager() const
+QObject *TicketTokenModel::reservationManager() const
 {
     return m_resMgr;
 }
 
 void TicketTokenModel::setReservationManager(QObject *mgr)
 {
-    m_resMgr = qobject_cast<ReservationManager*>(mgr);
+    m_resMgr = qobject_cast<ReservationManager *>(mgr);
     setReservationIds(m_pendingResIds);
 }
 
@@ -40,7 +40,7 @@ QStringList TicketTokenModel::reservationIds() const
     return m_resIds;
 }
 
-void TicketTokenModel::setReservationIds(const QStringList& resIds)
+void TicketTokenModel::setReservationIds(const QStringList &resIds)
 {
     if (!m_resMgr) {
         m_pendingResIds = resIds;
@@ -95,30 +95,29 @@ QString TicketTokenModel::reservationIdAt(int row) const
     return m_resIds.at(row);
 }
 
-int TicketTokenModel::rowCount(const QModelIndex& parent) const
+int TicketTokenModel::rowCount(const QModelIndex &parent) const
 {
     if (parent.isValid())
         return 0;
     return m_resIds.size();
 }
 
-QVariant TicketTokenModel::data(const QModelIndex& index, int role) const
+QVariant TicketTokenModel::data(const QModelIndex &index, int role) const
 {
     if (!index.isValid() || !m_resMgr || index.row() >= m_resIds.size())
         return {};
 
     const auto res = m_resMgr->reservation(m_resIds.at(index.row()));
     switch (role) {
-        case Qt::DisplayRole:
-        {
-            const auto ticket = JsonLd::convert<Reservation>(res).reservedTicket().value<Ticket>();
-            if (!ticket.name().isEmpty()) {
-                return i18n("%1 (%2)", m_personNames.at(index.row()), ticket.name());
-            }
-            return m_personNames.at(index.row());
+    case Qt::DisplayRole: {
+        const auto ticket = JsonLd::convert<Reservation>(res).reservedTicket().value<Ticket>();
+        if (!ticket.name().isEmpty()) {
+            return i18n("%1 (%2)", m_personNames.at(index.row()), ticket.name());
         }
-        case ReservationRole:
-            return res;
+        return m_personNames.at(index.row());
+    }
+    case ReservationRole:
+        return res;
     }
 
     return {};

@@ -25,10 +25,10 @@ class TimelineModel : public QAbstractListModel
     Q_OBJECT
     Q_PROPERTY(int todayRow READ todayRow NOTIFY todayRowChanged)
 
-    Q_PROPERTY(ReservationManager* reservationManager MEMBER m_resMgr WRITE setReservationManager NOTIFY setupChanged)
-    Q_PROPERTY(TransferManager* transferManager MEMBER m_transferManager WRITE setTransferManager NOTIFY setupChanged)
-    Q_PROPERTY(TripGroupManager* tripGroupManager READ tripGroupManager WRITE setTripGroupManager NOTIFY setupChanged)
-    Q_PROPERTY(WeatherForecastManager* weatherForecastManager MEMBER m_weatherMgr WRITE setWeatherForecastManager NOTIFY setupChanged)
+    Q_PROPERTY(ReservationManager *reservationManager MEMBER m_resMgr WRITE setReservationManager NOTIFY setupChanged)
+    Q_PROPERTY(TransferManager *transferManager MEMBER m_transferManager WRITE setTransferManager NOTIFY setupChanged)
+    Q_PROPERTY(TripGroupManager *tripGroupManager READ tripGroupManager WRITE setTripGroupManager NOTIFY setupChanged)
+    Q_PROPERTY(WeatherForecastManager *weatherForecastManager MEMBER m_weatherMgr WRITE setWeatherForecastManager NOTIFY setupChanged)
     Q_PROPERTY(QString homeCountryIsoCode MEMBER m_homeCountry WRITE setHomeCountryIsoCode NOTIFY setupChanged)
 
     /** Show only a single trip group. */
@@ -64,14 +64,14 @@ public:
 
     void setReservationManager(ReservationManager *mgr);
     void setWeatherForecastManager(WeatherForecastManager *mgr);
-    [[nodiscard]] TripGroupManager* tripGroupManager() const;
+    [[nodiscard]] TripGroupManager *tripGroupManager() const;
     void setTripGroupManager(TripGroupManager *mgr);
     void setHomeCountryIsoCode(const QString &isoCode);
     void setTransferManager(TransferManager *mgr);
     void setTripGroupId(const QString &tgId);
 
-    [[nodiscard]] QVariant data(const QModelIndex& index, int role) const override;
-    [[nodiscard]] int rowCount(const QModelIndex& parent = QModelIndex()) const override;
+    [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
+    [[nodiscard]] int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     [[nodiscard]] QHash<int, QByteArray> roleNames() const override;
 
     [[nodiscard]] int todayRow() const;

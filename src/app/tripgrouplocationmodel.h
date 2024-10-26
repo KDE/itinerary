@@ -18,7 +18,7 @@ class TripGroupLocationModel : public QAbstractListModel
 {
     Q_OBJECT
     Q_PROPERTY(QString tripGroupId MEMBER m_tripGroupId NOTIFY setupChanged)
-    Q_PROPERTY(TripGroupManager* tripGroupManager MEMBER m_tripGroupMgr WRITE setTripGroupManager NOTIFY setupChanged)
+    Q_PROPERTY(TripGroupManager *tripGroupManager MEMBER m_tripGroupMgr WRITE setTripGroupManager NOTIFY setupChanged)
 
 public:
     explicit TripGroupLocationModel(QObject *parent = nullptr);
@@ -36,7 +36,7 @@ public:
     };
     Q_ENUM(Role)
 
-    [[nodiscard]] int rowCount(const QModelIndex& parent = {}) const override;
+    [[nodiscard]] int rowCount(const QModelIndex &parent = {}) const override;
     [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
     [[nodiscard]] QHash<int, QByteArray> roleNames() const override;
 

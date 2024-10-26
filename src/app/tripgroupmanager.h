@@ -9,8 +9,8 @@
 
 #include "transfer.h"
 
-#include <QObject>
 #include <QHash>
+#include <QObject>
 
 class ReservationManager;
 class TransferManager;
@@ -26,7 +26,7 @@ public:
     explicit TripGroupManager(QObject *parent = nullptr);
     ~TripGroupManager() override;
 
-    [[nodiscard]] ReservationManager* reservationManager() const;
+    [[nodiscard]] ReservationManager *reservationManager() const;
     void setReservationManager(ReservationManager *resMgr);
     void setTransferManager(TransferManager *transferMgr);
 
@@ -157,6 +157,7 @@ public:
             m_tgMgr->resume();
         }
     }
+
 private:
     TripGroupManager *m_tgMgr;
 };

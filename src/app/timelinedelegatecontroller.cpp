@@ -12,10 +12,10 @@
 #include "livedatamanager.h"
 #include "locationhelper.h"
 #include "logging.h"
-#include "reservationhelper.h"
-#include "reservationmanager.h"
 #include "publictransport.h"
 #include "publictransportmatcher.h"
+#include "reservationhelper.h"
+#include "reservationmanager.h"
 #include "transfer.h"
 #include "transfermanager.h"
 #include "tripgroup.h"
@@ -27,8 +27,8 @@
 #include <KItinerary/Flight>
 #include <KItinerary/JsonLdDocument>
 #include <KItinerary/LocationUtil>
-#include <KItinerary/SortUtil>
 #include <KItinerary/Reservation>
+#include <KItinerary/SortUtil>
 #include <KItinerary/Ticket>
 #include <KItinerary/TrainTrip>
 
@@ -43,14 +43,14 @@
 #include <QDateTime>
 #include <QDebug>
 #include <QPointF>
-#include <QTimer>
 #include <QTimeZone>
+#include <QTimer>
 
 using namespace Qt::Literals;
 
-QTimer* TimelineDelegateController::s_currentTimer = nullptr;
+QTimer *TimelineDelegateController::s_currentTimer = nullptr;
 int TimelineDelegateController::s_progressRefCount = 0;
-QTimer* TimelineDelegateController::s_progressTimer = nullptr;
+QTimer *TimelineDelegateController::s_progressTimer = nullptr;
 
 using namespace KItinerary;
 
@@ -62,14 +62,16 @@ TimelineDelegateController::TimelineDelegateController(QObject *parent)
         s_currentTimer->setSingleShot(true);
         s_currentTimer->setTimerType(Qt::VeryCoarseTimer);
     }
-    connect(s_currentTimer, &QTimer::timeout, this, [this]() { checkForUpdate(m_batchId); });
+    connect(s_currentTimer, &QTimer::timeout, this, [this]() {
+        checkForUpdate(m_batchId);
+    });
 
     connect(this, &TimelineDelegateController::contentChanged, this, &TimelineDelegateController::connectionWarningChanged);
 }
 
 TimelineDelegateController::~TimelineDelegateController() = default;
 
-ReservationManager* TimelineDelegateController::reservationManager() const
+ReservationManager *TimelineDelegateController::reservationManager() const
 {
     return m_resMgr;
 }
@@ -98,7 +100,7 @@ void TimelineDelegateController::setReservationManager(ReservationManager *resMg
     checkForUpdate(m_batchId);
 }
 
-LiveDataManager* TimelineDelegateController::liveDataManager() const
+LiveDataManager *TimelineDelegateController::liveDataManager() const
 {
     return m_liveDataMgr;
 }
@@ -141,7 +143,7 @@ void TimelineDelegateController::setLiveDataManager(LiveDataManager *liveDataMgr
     checkForUpdate(m_batchId);
 }
 
-TransferManager* TimelineDelegateController::transferManager() const
+TransferManager *TimelineDelegateController::transferManager() const
 {
     return m_transferMgr;
 }
@@ -156,7 +158,7 @@ void TimelineDelegateController::setTransferManager(TransferManager *transferMgr
     Q_EMIT setupChanged();
 }
 
-DocumentManager* TimelineDelegateController::documentManager() const
+DocumentManager *TimelineDelegateController::documentManager() const
 {
     return m_documentMgr;
 }
@@ -274,7 +276,7 @@ KPublicTransport::JourneySection TimelineDelegateController::journey() const
     return m_liveDataMgr->journey(m_batchId);
 }
 
-void TimelineDelegateController::checkForUpdate(const QString& batchId)
+void TimelineDelegateController::checkForUpdate(const QString &batchId)
 {
     if (!m_resMgr || m_batchId.isEmpty()) {
         setCurrent(false);
@@ -321,7 +323,7 @@ QDateTime TimelineDelegateController::relevantStartDateTime(const QVariant &res)
     return startTime;
 }
 
-QDateTime TimelineDelegateController::liveStartDateTime(const QVariant& res) const
+QDateTime TimelineDelegateController::liveStartDateTime(const QVariant &res) const
 {
     if (m_liveDataMgr) {
         const auto dep = m_liveDataMgr->departure(m_batchId);
@@ -332,7 +334,7 @@ QDateTime TimelineDelegateController::liveStartDateTime(const QVariant& res) con
     return SortUtil::startDateTime(res);
 }
 
-QDateTime TimelineDelegateController::liveEndDateTime(const QVariant& res) const
+QDateTime TimelineDelegateController::liveEndDateTime(const QVariant &res) const
 {
     if (m_liveDataMgr) {
         const auto arr = m_liveDataMgr->arrival(m_batchId);
@@ -351,7 +353,7 @@ void TimelineDelegateController::scheduleNextUpdate(std::chrono::milliseconds ms
     s_currentTimer->start(ms);
 }
 
-void TimelineDelegateController::batchChanged(const QString& batchId)
+void TimelineDelegateController::batchChanged(const QString &batchId)
 {
     if (batchId != m_batchId || m_batchId.isEmpty()) {
         return;
@@ -430,13 +432,15 @@ bool TimelineDelegateController::isPublicTransport() const
 
 static bool isJourneyCandidate(const QVariant &res)
 {
-    // TODO do we really need to constrain this to trains/buses? a long distance train can be a suitable alternative for a missed short distance flight for example
+    // TODO do we really need to constrain this to trains/buses? a long distance train can be a suitable alternative for a missed short distance flight for
+    // example
     return LocationUtil::isLocationChange(res) && (JsonLd::isA<TrainReservation>(res) || JsonLd::isA<BusReservation>(res));
 }
 
 static bool isLayover(const QVariant &res1, const QVariant &res2)
 {
-    if (!LocationUtil::isLocationChange(res1) || !LocationUtil::isLocationChange(res2) || ReservationHelper::isUnbound(res1) || ReservationHelper::isUnbound(res2)) {
+    if (!LocationUtil::isLocationChange(res1) || !LocationUtil::isLocationChange(res2) || ReservationHelper::isUnbound(res1)
+        || ReservationHelper::isUnbound(res2)) {
         return false;
     }
 
@@ -953,7 +957,7 @@ static void applyVehicleLayout(KPublicTransport::Stopover &stop, const KPublicTr
     }
 }
 
-void TimelineDelegateController::setVehicleLayout(const KPublicTransport::Stopover& stopover, bool arrival)
+void TimelineDelegateController::setVehicleLayout(const KPublicTransport::Stopover &stopover, bool arrival)
 {
     auto jny = journey();
     if (!arrival) {

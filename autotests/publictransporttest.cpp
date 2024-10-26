@@ -7,16 +7,16 @@
 #include "publictransport.h"
 
 #include <KItinerary/Reservation>
-#include <KItinerary/TrainTrip>
 #include <KItinerary/Ticket>
+#include <KItinerary/TrainTrip>
 
 #include <KPublicTransport/Journey>
 #include <KPublicTransport/JourneyRequest>
 #include <KPublicTransport/Manager>
 
-#include <QtTest/qtest.h>
 #include <QStandardPaths>
 #include <QTimeZone>
+#include <QtTest/qtest.h>
 
 using namespace KItinerary;
 
@@ -137,7 +137,7 @@ private Q_SLOTS:
 
         mgr.setBackendEnabled(QLatin1StringView("at_oebb"), true);
         PublicTransport::selectBackends(req, &mgr, res);
-        QCOMPARE(req.backendIds(), QStringList({ QLatin1StringView("at_oebb") }));
+        QCOMPARE(req.backendIds(), QStringList({QLatin1StringView("at_oebb")}));
         mgr.setBackendEnabled(QLatin1StringView("at_oebb"), false);
         PublicTransport::selectBackends(req, &mgr, res);
         QCOMPARE(req.backendIds(), QStringList());
@@ -147,7 +147,7 @@ private Q_SLOTS:
         res.setReservationFor(trip);
         mgr.setBackendEnabled(QLatin1StringView("de_db"), true);
         PublicTransport::selectBackends(req, &mgr, res);
-        QCOMPARE(req.backendIds(), QStringList({ QLatin1StringView("de_db") }));
+        QCOMPARE(req.backendIds(), QStringList({QLatin1StringView("de_db")}));
     }
 };
 

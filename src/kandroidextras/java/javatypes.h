@@ -7,10 +7,11 @@
 #ifndef KANDROIDEXTRAS_JAVATYPES_H
 #define KANDROIDEXTRAS_JAVATYPES_H
 
-#include <KAndroidExtras/JniTypes>
 #include <KAndroidExtras/JniTypeTraits>
+#include <KAndroidExtras/JniTypes>
 
-namespace KAndroidExtras {
+namespace KAndroidExtras
+{
 
 JNI_TYPE(java, io, File)
 JNI_TYPE(java, lang, String)
@@ -21,4 +22,3 @@ JNI_DECLARE_CONVERTER(java::lang::String, QString, (value.toString()), (QJniObje
 }
 
 #endif // KANDROIDEXTRAS_JAVATYPES_H
-

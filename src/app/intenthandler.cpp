@@ -12,7 +12,8 @@
 #include "kandroidextras/intent.h"
 #endif
 
-class IntentHandlerPrivate {
+class IntentHandlerPrivate
+{
 public:
     static void onNewIntent(const KAndroidExtras::Intent &intent);
 };
@@ -24,7 +25,7 @@ void IntentHandlerPrivate::onNewIntent(const KAndroidExtras::Intent &intent)
     }
 }
 
-IntentHandler* IntentHandler::s_instance = nullptr;
+IntentHandler *IntentHandler::s_instance = nullptr;
 
 #ifdef Q_OS_ANDROID
 
@@ -37,10 +38,10 @@ static void importFromIntent(JNIEnv *env, jobject that, jobject data)
 }
 
 static const JNINativeMethod methods[] = {
-    {"importFromIntent", "(Landroid/content/Intent;)V", (void*)importFromIntent},
+    {"importFromIntent", "(Landroid/content/Intent;)V", (void *)importFromIntent},
 };
 
-Q_DECL_EXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void*)
+Q_DECL_EXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void *)
 {
     static bool initialized = false;
     if (initialized)
@@ -48,7 +49,7 @@ Q_DECL_EXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void*)
     initialized = true;
 
     JNIEnv *env = nullptr;
-    if (vm->GetEnv((void**)&env, JNI_VERSION_1_4) != JNI_OK) {
+    if (vm->GetEnv((void **)&env, JNI_VERSION_1_4) != JNI_OK) {
         qCWarning(Log) << "Failed to get JNI environment.";
         return -1;
     }

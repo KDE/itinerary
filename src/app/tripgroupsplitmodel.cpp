@@ -60,17 +60,17 @@ QVariant TripGroupSplitModel::data(const QModelIndex &index, int role) const
 
     const auto res = m_resMgr->reservation(m_elements.at(index.row()));
     switch (role) {
-        case Qt::DisplayRole:
-            return ReservationHelper::label(res);
-        case SubtitleRole:
-            if (SortUtil::hasStartTime(res)) {
-                return QLocale().toString(SortUtil::startDateTime(res));
-            }
-            return QLocale().toString(SortUtil::startDateTime(res).date());
-        case IconNameRole:
-            return ReservationHelper::defaultIconName(res);
-        case SelectedRole:
-            return index.row() >= m_beginSelection && index.row() < m_endSelection;
+    case Qt::DisplayRole:
+        return ReservationHelper::label(res);
+    case SubtitleRole:
+        if (SortUtil::hasStartTime(res)) {
+            return QLocale().toString(SortUtil::startDateTime(res));
+        }
+        return QLocale().toString(SortUtil::startDateTime(res).date());
+    case IconNameRole:
+        return ReservationHelper::defaultIconName(res);
+    case SelectedRole:
+        return index.row() >= m_beginSelection && index.row() < m_endSelection;
     }
 
     return {};
@@ -109,7 +109,7 @@ bool TripGroupSplitModel::setData(const QModelIndex &index, const QVariant &valu
             }
         }
 
-        assert(m_beginSelection <m_endSelection);
+        assert(m_beginSelection < m_endSelection);
         assert(m_beginSelection < rowCount());
         assert(m_endSelection > 0);
         assert(m_endSelection <= rowCount());

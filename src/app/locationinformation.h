@@ -50,11 +50,7 @@ public:
     LocationInformation();
     ~LocationInformation();
 
-    enum PowerPlugCompatibility {
-        FullyCompatible,
-        PartiallyCompatible,
-        Incompatible
-    };
+    enum PowerPlugCompatibility { FullyCompatible, PartiallyCompatible, Incompatible };
     Q_ENUM(PowerPlugCompatibility)
 
     [[nodiscard]] bool operator==(const LocationInformation &other) const;

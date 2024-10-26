@@ -15,19 +15,16 @@ class ReservationManager;
 class StatisticsTimeRangeModel : public QAbstractListModel
 {
     Q_OBJECT
-    Q_PROPERTY(ReservationManager* reservationManager READ reservationManager WRITE setReservationManager NOTIFY setupChanged)
+    Q_PROPERTY(ReservationManager *reservationManager READ reservationManager WRITE setReservationManager NOTIFY setupChanged)
 
 public:
     explicit StatisticsTimeRangeModel(QObject *parent = nullptr);
     ~StatisticsTimeRangeModel() override;
 
-    enum CustomRoles {
-        BeginRole = Qt::UserRole,
-        EndRole
-    };
+    enum CustomRoles { BeginRole = Qt::UserRole, EndRole };
     Q_ENUM(CustomRoles);
 
-    ReservationManager* reservationManager() const;
+    ReservationManager *reservationManager() const;
     void setReservationManager(ReservationManager *resMgr);
 
     int rowCount(const QModelIndex &parent = {}) const override;

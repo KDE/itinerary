@@ -9,8 +9,11 @@
 #include <QJniObject>
 
 /** Mock object for QtAndroid namespace. */
-namespace QtAndroidPrivate {
-    inline void startActivity(const QJniObject&, int) {}
+namespace QtAndroidPrivate
+{
+inline void startActivity(const QJniObject &, int)
+{
+}
 }
 
 #endif

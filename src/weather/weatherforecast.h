@@ -52,9 +52,9 @@ public:
     Q_FLAG(SymbolType)
 
     WeatherForecast();
-    WeatherForecast(const WeatherForecast&);
+    WeatherForecast(const WeatherForecast &);
     ~WeatherForecast();
-    WeatherForecast& operator=(const WeatherForecast&);
+    WeatherForecast &operator=(const WeatherForecast &);
 
     bool isValid() const;
 

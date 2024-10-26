@@ -9,7 +9,8 @@
 
 #include <QXmlStreamReader>
 
-namespace Gpx {
+namespace Gpx
+{
 
 /** GPX reader. */
 class Reader : public QXmlStreamReader

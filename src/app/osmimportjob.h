@@ -11,7 +11,8 @@
 #include <QObject>
 #include <QVariant>
 
-namespace OSM {
+namespace OSM
+{
 class Element;
 }
 

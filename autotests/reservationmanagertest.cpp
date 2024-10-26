@@ -8,17 +8,17 @@
 
 #include "applicationcontroller.h"
 #include "importcontroller.h"
-#include "reservationmanager.h"
 #include "pkpassmanager.h"
+#include "reservationmanager.h"
 
 #include <KItinerary/Flight>
 #include <KItinerary/Reservation>
 
-#include <QtTest/qtest.h>
-#include <QSignalSpy>
-#include <QStandardPaths>
 #include <KItinerary/Place>
 #include <KItinerary/Visit>
+#include <QSignalSpy>
+#include <QStandardPaths>
+#include <QtTest/qtest.h>
 
 using namespace KItinerary;
 

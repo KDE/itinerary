@@ -17,9 +17,9 @@
 #include "weatherforecast.h"
 #include "weatherforecastmanager.h"
 
-#include <QtTest/qtest.h>
 #include <QSignalSpy>
 #include <QStandardPaths>
+#include <QtTest/qtest.h>
 
 using namespace Qt::Literals;
 

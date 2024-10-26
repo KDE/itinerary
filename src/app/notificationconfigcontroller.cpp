@@ -6,7 +6,6 @@
 
 #include "notificationconfigcontroller.h"
 
-
 #ifdef Q_OS_ANDROID
 #include "kandroidextras/activity.h"
 #include "kandroidextras/context.h"
@@ -47,6 +46,5 @@ void NotificationConfigController::configureNotifications()
     // TODO
 #endif
 }
-
 
 #include "moc_notificationconfigcontroller.cpp"

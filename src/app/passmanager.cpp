@@ -190,7 +190,8 @@ QString PassManager::findMatchingPass(const QVariant &pass) const
                     continue; // expired
                 }
                 const auto name = entry.data.value<KItinerary::ProgramMembership>().programName();
-                if (name.isEmpty() || (!name.contains(program.programName(), Qt::CaseInsensitive) && !(program.programName().contains(name, Qt::CaseInsensitive)))) {
+                if (name.isEmpty()
+                    || (!name.contains(program.programName(), Qt::CaseInsensitive) && !(program.programName().contains(name, Qt::CaseInsensitive)))) {
                     continue;
                 }
                 if (id.isEmpty()) {
@@ -210,7 +211,7 @@ QVariant PassManager::pass(const QString &passId) const
     const auto it = std::find_if(m_entries.begin(), m_entries.end(), [passId](const auto &entry) {
         return entry.id == passId;
     });
-    return it == m_entries.end() ? QVariant(): (*it).data;
+    return it == m_entries.end() ? QVariant() : (*it).data;
 }
 
 QVariant PassManager::data(const QModelIndex &index, int role) const
@@ -221,59 +222,58 @@ QVariant PassManager::data(const QModelIndex &index, int role) const
 
     auto &entry = m_entries[index.row()];
     switch (role) {
-        case PassRole:
-            return entry.data;
-        case PassIdRole:
-            return entry.id;
-        case PassTypeRole:
-            if (JsonLd::isA<KItinerary::ProgramMembership>(entry.data)) {
-                return ProgramMembership;
-            }
-            if (JsonLd::isA<GenericPkPass>(entry.data)) {
-                return PkPass;
-            }
-            if (JsonLd::isA<KItinerary::Ticket>(entry.data)) {
-                return Ticket;
-            }
-            qCWarning(Log) << "Invalid pass type!" << entry.data;
-            // return a valid result here, as an invalid one will completely break the delegate chooser and
-            // nothing will be display at all. With a valid type we'll get an empty item that to the very least
-            // allows deletion
-            return Ticket;
-        case PassDataRole:
-            return JsonIO::convert(rawData(entry), JsonIO::JSON);
-        case NameRole:
-            return entry.name();
-        case ValidUntilRole:
-            return entry.validUntil();
-        case SectionRole:
-            if (const auto dt = entry.validUntil(); dt.isValid() && dt < m_baseTime) {
-                return i18nc("no longer valid tickets", "Expired");
-            }
-            if (const auto dt = entry.validFrom(); dt.isValid() && dt > m_baseTime) {
-                return i18nc("not yet valid tickets", "Future");
-            }
-            return i18nc("not yet expired tickets", "Valid");
-        case ValidRangeLabelRole:
-        {
-            // TODO align this with the time labels in the trip groups? those handle a few more cases...
-            const auto from = entry.validFrom();
-            const auto to = entry.validUntil();
-            if (!from.isValid()) {
-                return {};
-            }
-            const auto days = from.daysTo(to);
-            if (!to.isValid() || days <= 1) {
-                return QLocale().toString(from.date(), QLocale::ShortFormat);
-            }
-            if (days >= 28 && days <= 31) {
-                return QLocale().toString(from, QStringLiteral("MMMM yyyy"));
-            }
-            if (days >= 365 && days <= 366) {
-                return QLocale().toString(from, QStringLiteral("yyyy"));
-            }
-            return i18n("%1 - %2", QLocale().toString(from.date(), QLocale::ShortFormat), QLocale().toString(to.date(), QLocale::ShortFormat));
+    case PassRole:
+        return entry.data;
+    case PassIdRole:
+        return entry.id;
+    case PassTypeRole:
+        if (JsonLd::isA<KItinerary::ProgramMembership>(entry.data)) {
+            return ProgramMembership;
         }
+        if (JsonLd::isA<GenericPkPass>(entry.data)) {
+            return PkPass;
+        }
+        if (JsonLd::isA<KItinerary::Ticket>(entry.data)) {
+            return Ticket;
+        }
+        qCWarning(Log) << "Invalid pass type!" << entry.data;
+        // return a valid result here, as an invalid one will completely break the delegate chooser and
+        // nothing will be display at all. With a valid type we'll get an empty item that to the very least
+        // allows deletion
+        return Ticket;
+    case PassDataRole:
+        return JsonIO::convert(rawData(entry), JsonIO::JSON);
+    case NameRole:
+        return entry.name();
+    case ValidUntilRole:
+        return entry.validUntil();
+    case SectionRole:
+        if (const auto dt = entry.validUntil(); dt.isValid() && dt < m_baseTime) {
+            return i18nc("no longer valid tickets", "Expired");
+        }
+        if (const auto dt = entry.validFrom(); dt.isValid() && dt > m_baseTime) {
+            return i18nc("not yet valid tickets", "Future");
+        }
+        return i18nc("not yet expired tickets", "Valid");
+    case ValidRangeLabelRole: {
+        // TODO align this with the time labels in the trip groups? those handle a few more cases...
+        const auto from = entry.validFrom();
+        const auto to = entry.validUntil();
+        if (!from.isValid()) {
+            return {};
+        }
+        const auto days = from.daysTo(to);
+        if (!to.isValid() || days <= 1) {
+            return QLocale().toString(from.date(), QLocale::ShortFormat);
+        }
+        if (days >= 28 && days <= 31) {
+            return QLocale().toString(from, QStringLiteral("MMMM yyyy"));
+        }
+        if (days >= 365 && days <= 366) {
+            return QLocale().toString(from, QStringLiteral("yyyy"));
+        }
+        return i18n("%1 - %2", QLocale().toString(from.date(), QLocale::ShortFormat), QLocale().toString(to.date(), QLocale::ShortFormat));
+    }
     }
 
     return {};
@@ -335,7 +335,9 @@ QByteArray PassManager::rawData(const Entry &entry) const
 
 void PassManager::update(const QString &passId, const QVariant &pass)
 {
-    auto it = std::find_if(m_entries.begin(), m_entries.end(), [&passId](const auto &lhs) { return lhs.id == passId; });
+    auto it = std::find_if(m_entries.begin(), m_entries.end(), [&passId](const auto &lhs) {
+        return lhs.id == passId;
+    });
     if (it == m_entries.end()) {
         qWarning() << "couldn't find pass to update!?" << passId << pass;
         return;
@@ -361,12 +363,12 @@ bool PassManager::remove(const QString &passId)
     return false;
 }
 
-bool PassManager::removeRow(int row, const QModelIndex& parent)
+bool PassManager::removeRow(int row, const QModelIndex &parent)
 {
     return QAbstractListModel::removeRow(row, parent);
 }
 
-bool PassManager::removeRows(int row, int count, const QModelIndex& parent)
+bool PassManager::removeRows(int row, int count, const QModelIndex &parent)
 {
     if (parent.isValid()) {
         return false;
@@ -382,7 +384,7 @@ bool PassManager::removeRows(int row, int count, const QModelIndex& parent)
     return true;
 }
 
-QVariantList PassManager::documentIds(const QVariant& pass)
+QVariantList PassManager::documentIds(const QVariant &pass)
 {
     return DocumentUtil::documentIds(pass);
 }

@@ -44,7 +44,7 @@ public:
     // QAbstractListModel interface
     [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
     [[nodiscard]] QHash<int, QByteArray> roleNames() const override;
-    [[nodiscard]] int rowCount(const QModelIndex& parent = {}) const override;
+    [[nodiscard]] int rowCount(const QModelIndex &parent = {}) const override;
 
     // adjacecy queries
     /** Trips next to @p tripGroupId which are suitable candidates for merging. */

@@ -40,36 +40,24 @@ class Transfer
     Q_PROPERTY(bool isReachable READ isReachable STORED false)
 public:
     Transfer();
-    Transfer(const Transfer&);
+    Transfer(const Transfer &);
     ~Transfer();
-    Transfer& operator=(const Transfer&);
+    Transfer &operator=(const Transfer &);
 
     /** Aligned to the begin or end of the corresponding reservation. */
-    enum Alignment {
-        Before,
-        After
-    };
+    enum Alignment { Before, After };
     Q_ENUM(Alignment)
     [[nodiscard]] Alignment alignment() const;
     void setAlignment(Alignment alignment);
 
     /** No journey selected, journey selected, or explicitly discarded. */
-    enum State {
-        UndefinedState,
-        Pending,
-        Selected,
-        Discarded,
-        Searching
-    };
+    enum State { UndefinedState, Pending, Selected, Discarded, Searching };
     Q_ENUM(State)
     [[nodiscard]] State state() const;
     void setState(State state);
 
     /** Source of the floating side location. */
-    enum FloatingLocationType {
-        Reservation,
-        FavoriteLocation
-    };
+    enum FloatingLocationType { Reservation, FavoriteLocation };
     Q_ENUM(FloatingLocationType)
     [[nodiscard]] FloatingLocationType floatingLocationType() const;
     void setFloatingLocationType(FloatingLocationType type);

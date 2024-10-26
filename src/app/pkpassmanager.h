@@ -14,7 +14,8 @@
 
 class QNetworkAccessManager;
 
-namespace KPkPass {
+namespace KPkPass
+{
 class Pass;
 }
 
@@ -25,11 +26,11 @@ public:
     explicit PkPassManager(QObject *parent = nullptr);
     ~PkPassManager() override;
 
-    void setNetworkAccessManagerFactory(const std::function<QNetworkAccessManager*()> &namFactory);
+    void setNetworkAccessManagerFactory(const std::function<QNetworkAccessManager *()> &namFactory);
 
     [[nodiscard]] static QList<QString> passes();
 
-    Q_INVOKABLE [[nodiscard]] KPkPass::Pass* pass(const QString &passId);
+    Q_INVOKABLE [[nodiscard]] KPkPass::Pass *pass(const QString &passId);
     Q_INVOKABLE [[nodiscard]] bool hasPass(const QString &passId) const;
     Q_INVOKABLE [[nodiscard]] static QString passId(const QVariant &reservation);
 
@@ -59,8 +60,8 @@ private:
     void importPassFromTempFile(const QUrl &tmpFile);
     QString doImportPass(const QUrl &url, const QByteArray &data, ImportMode mode);
 
-    QHash<QString, KPkPass::Pass*> m_passes;
-    std::function<QNetworkAccessManager*()> m_namFactory;
+    QHash<QString, KPkPass::Pass *> m_passes;
+    std::function<QNetworkAccessManager *()> m_namFactory;
 };
 
 #endif // PKPASSMANAGER_H

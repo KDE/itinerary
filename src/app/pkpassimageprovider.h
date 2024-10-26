@@ -12,7 +12,8 @@
 #include <functional>
 #include <vector>
 
-namespace KPkPass {
+namespace KPkPass
+{
 class Pass;
 }
 
@@ -23,14 +24,14 @@ public:
     explicit PkPassImageProvider();
     ~PkPassImageProvider();
 
-    void registerPassProvider(std::function<KPkPass::Pass*(const QString&, const QString &)> &&passProvider);
+    void registerPassProvider(std::function<KPkPass::Pass *(const QString &, const QString &)> &&passProvider);
 
     [[nodiscard]] QImage requestImage(const QString &id, QSize *size, const QSize &requestedSize) override;
 
 private:
     Q_DISABLE_COPY(PkPassImageProvider)
 
-    std::vector<std::function<KPkPass::Pass*(const QString&, const QString &)>> m_passProviders;
+    std::vector<std::function<KPkPass::Pass *(const QString &, const QString &)>> m_passProviders;
 };
 
 #endif // PKPASSIMAGEPROVIDER_H

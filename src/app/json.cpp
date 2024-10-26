@@ -21,46 +21,42 @@
 static QJsonValue variantToJson(const QVariant &v)
 {
     switch (v.userType()) {
-        case QMetaType::QString:
-        {
-            const auto s = v.toString();
-            return s.isNull() ? QJsonValue() : v.toString();
+    case QMetaType::QString: {
+        const auto s = v.toString();
+        return s.isNull() ? QJsonValue() : v.toString();
+    }
+    case QMetaType::Double:
+    case QMetaType::Float: {
+        auto d = v.toDouble();
+        if (std::isnan(d)) {
+            return QJsonValue::Null;
         }
-        case QMetaType::Double:
-        case QMetaType::Float:
-        {
-            auto d = v.toDouble();
-            if (std::isnan(d)) {
-                return QJsonValue::Null;
-            }
-            return d;
+        return d;
+    }
+    case QMetaType::Int:
+        return v.toInt();
+    case QMetaType::QDateTime: {
+        const auto dt = v.toDateTime();
+        if (!dt.isValid()) {
+            return {};
         }
-        case QMetaType::Int:
-            return v.toInt();
-        case QMetaType::QDateTime:
-        {
-            const auto dt = v.toDateTime();
-            if (!dt.isValid()) {
-                return {};
-            }
-            if (dt.timeSpec() == Qt::TimeZone) {
-                QJsonObject dtObj;
-                dtObj.insert(QStringLiteral("value"), dt.toString(Qt::ISODate));
-                dtObj.insert(QStringLiteral("timezone"), QString::fromUtf8(dt.timeZone().id()));
-                return dtObj;
-            }
-            return v.toDateTime().toString(Qt::ISODate);
+        if (dt.timeSpec() == Qt::TimeZone) {
+            QJsonObject dtObj;
+            dtObj.insert(QStringLiteral("value"), dt.toString(Qt::ISODate));
+            dtObj.insert(QStringLiteral("timezone"), QString::fromUtf8(dt.timeZone().id()));
+            return dtObj;
         }
-        case QMetaType::QUrl:
-        {
-            const auto url = v.toUrl();
-            return url.isValid() ? url.toString() : QJsonValue();
-        }
-        case QMetaType::QColor:
-        {
-            const auto c = v.value<QColor>();
-            return c.isValid() ? v.value<QColor>().name() : QJsonValue();;
-        }
+        return v.toDateTime().toString(Qt::ISODate);
+    }
+    case QMetaType::QUrl: {
+        const auto url = v.toUrl();
+        return url.isValid() ? url.toString() : QJsonValue();
+    }
+    case QMetaType::QColor: {
+        const auto c = v.value<QColor>();
+        return c.isValid() ? v.value<QColor>().name() : QJsonValue();
+        ;
+    }
     }
 
     if (v.canConvert<QVariantList>()) {
@@ -115,44 +111,42 @@ QJsonObject Json::toJson(const QMetaObject *mo, const void *elem)
 static QVariant variantFromJson(const QJsonValue &v, int mt)
 {
     switch (mt) {
-        case QMetaType::QString:
-            return v.toString();
-        case QMetaType::Double:
-        case QMetaType::Float:
-            return v.toDouble();
-        case QMetaType::Int:
-            return v.toInt();
-        case QMetaType::QDateTime:
-        {
-            if (v.isObject()) {
-                const auto dtObj = v.toObject();
-                auto valueIt = dtObj.find(QLatin1StringView("value"));
-                if (valueIt == dtObj.end()) {
-                    valueIt = dtObj.find(QLatin1StringView("@value")); // JSON-LD compat
-                }
-                if (valueIt == dtObj.end()) {
-                    return {};
-                }
-                auto dt = QDateTime::fromString(valueIt.value().toString(), Qt::ISODate);
-                dt.setTimeZone(QTimeZone(dtObj.value(QLatin1StringView("timezone")).toString().toUtf8()));
-                return dt;
+    case QMetaType::QString:
+        return v.toString();
+    case QMetaType::Double:
+    case QMetaType::Float:
+        return v.toDouble();
+    case QMetaType::Int:
+        return v.toInt();
+    case QMetaType::QDateTime: {
+        if (v.isObject()) {
+            const auto dtObj = v.toObject();
+            auto valueIt = dtObj.find(QLatin1StringView("value"));
+            if (valueIt == dtObj.end()) {
+                valueIt = dtObj.find(QLatin1StringView("@value")); // JSON-LD compat
             }
-            return QDateTime::fromString(v.toString(), Qt::ISODate);
-        }
-        case QMetaType::QUrl:
-            return QUrl(v.toString());
-        case QMetaType::QStringList:
-        {
-            const auto a = v.toArray();
-            QStringList l;
-            l.reserve(a.size());
-            for (const auto &av : a) {
-                l.push_back(av.toString());
+            if (valueIt == dtObj.end()) {
+                return {};
             }
-            return l;
+            auto dt = QDateTime::fromString(valueIt.value().toString(), Qt::ISODate);
+            dt.setTimeZone(QTimeZone(dtObj.value(QLatin1StringView("timezone")).toString().toUtf8()));
+            return dt;
         }
-        case QMetaType::QColor:
-            return QColor(v.toString());
+        return QDateTime::fromString(v.toString(), Qt::ISODate);
+    }
+    case QMetaType::QUrl:
+        return QUrl(v.toString());
+    case QMetaType::QStringList: {
+        const auto a = v.toArray();
+        QStringList l;
+        l.reserve(a.size());
+        for (const auto &av : a) {
+            l.push_back(av.toString());
+        }
+        return l;
+    }
+    case QMetaType::QColor:
+        return QColor(v.toString());
     }
 
     return {};
@@ -201,7 +195,7 @@ void Json::fromJson(const QMetaObject *mo, const QJsonObject &obj, void *elem)
                 continue;
             }
             auto valueData = mt.create();
-            *reinterpret_cast<int*>(valueData) = numValue;
+            *reinterpret_cast<int *>(valueData) = numValue;
             QVariant value(prop.metaType(), valueData);
             prop.writeOnGadget(elem, value);
             continue;

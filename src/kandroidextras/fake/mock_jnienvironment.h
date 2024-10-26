@@ -8,12 +8,19 @@
 
 #include "jni.h"
 
-namespace KAndroidExtras {
+namespace KAndroidExtras
+{
 class MockJniEnvironment
 {
 public:
-    inline jclass findClass(const char *) { return nullptr; }
-    inline JNIEnv* operator->() { return &m_env; }
+    inline jclass findClass(const char *)
+    {
+        return nullptr;
+    }
+    inline JNIEnv *operator->()
+    {
+        return &m_env;
+    }
 
 protected:
     mutable JNIEnv m_env;

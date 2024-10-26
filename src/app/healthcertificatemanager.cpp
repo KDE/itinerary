@@ -4,8 +4,8 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "config-itinerary.h"
 #include "healthcertificatemanager.h"
+#include "config-itinerary.h"
 
 #if HAVE_KHEALTHCERTIFICATE
 #include <KHealthCertificate/KHealthCertificateParser>
@@ -94,7 +94,7 @@ void HealthCertificateManager::removeCertificate(int row)
     endRemoveRows();
 }
 
-int HealthCertificateManager::rowCount(const QModelIndex& parent) const
+int HealthCertificateManager::rowCount(const QModelIndex &parent) const
 {
     if (parent.isValid()) {
         return 0;
@@ -110,14 +110,14 @@ QVariant HealthCertificateManager::data(const QModelIndex &index, int role) cons
 
     const auto &v = m_certificates[index.row()];
     switch (role) {
-        case Qt::DisplayRole:
-            return displayName(v.cert);
-        case CertificateRole:
-            return v.cert;
-        case RawDataRole:
-            return certificateRawData(v.cert);
-        case StorageIdRole:
-            return v.name;
+    case Qt::DisplayRole:
+        return displayName(v.cert);
+    case CertificateRole:
+        return v.cert;
+    case RawDataRole:
+        return certificateRawData(v.cert);
+    case StorageIdRole:
+        return v.name;
     }
     return {};
 }
@@ -143,7 +143,9 @@ QString HealthCertificateManager::displayName(const QVariant &certificate)
     }
     if (certificate.userType() == qMetaTypeId<KTestCertificate>()) {
         const auto cert = certificate.value<KTestCertificate>();
-        return i18n("Test %1 (%2)", QLocale().toString(cert.date().isValid() ? cert.date() : cert.certificateIssueDate().date(), QLocale::NarrowFormat), cert.name());
+        return i18n("Test %1 (%2)",
+                    QLocale().toString(cert.date().isValid() ? cert.date() : cert.certificateIssueDate().date(), QLocale::NarrowFormat),
+                    cert.name());
     }
     if (certificate.userType() == qMetaTypeId<KRecoveryCertificate>()) {
         const auto cert = certificate.value<KRecoveryCertificate>();

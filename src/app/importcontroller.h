@@ -25,16 +25,19 @@
 
 class ReservationManager;
 
-namespace KItinerary {
+namespace KItinerary
+{
 class ExtractorDocumentNode;
 class File;
 }
 
-namespace KMime {
+namespace KMime
+{
 class Message;
 }
 
-namespace KAndroidExtras {
+namespace KAndroidExtras
+{
 class Intent;
 }
 
@@ -115,7 +118,7 @@ public:
     explicit ImportController(QObject *parent = nullptr);
     ~ImportController();
 
-    void setNetworkAccessManagerFactory(const std::function<QNetworkAccessManager*()> &namFactory);
+    void setNetworkAccessManagerFactory(const std::function<QNetworkAccessManager *()> &namFactory);
     void setReservationManager(const ReservationManager *resMgr);
 
     enum Role {
@@ -171,10 +174,10 @@ public:
     [[nodiscard]] TripGroup tripGroup() const;
 
     // for actually importing
-    const std::vector<ImportElement>& elements() const;
-    std::unordered_map<QString, ImportDocument>& documents();
-    std::unordered_map<QString, ImportPkPass>& pkPasses();
-    const std::vector<ImportBundle>& bundles() const;
+    const std::vector<ImportElement> &elements() const;
+    std::unordered_map<QString, ImportDocument> &documents();
+    std::unordered_map<QString, ImportPkPass> &pkPasses();
+    const std::vector<ImportBundle> &bundles() const;
 
 Q_SIGNALS:
     /** Emitted when staged elements are added for the first time. */
@@ -199,7 +202,7 @@ private:
 
     [[nodiscard]] QDate today() const;
 
-    std::function<QNetworkAccessManager*()> m_namFactory;
+    std::function<QNetworkAccessManager *()> m_namFactory;
     const ReservationManager *m_resMgr = nullptr;
 
     std::vector<ImportElement> m_stagedElements;

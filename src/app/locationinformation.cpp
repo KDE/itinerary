@@ -17,11 +17,12 @@ using namespace KItinerary;
 LocationInformation::LocationInformation() = default;
 LocationInformation::~LocationInformation() = default;
 
-bool LocationInformation::operator==(const LocationInformation& other) const
+bool LocationInformation::operator==(const LocationInformation &other) const
 {
-    const auto dsEqual = m_drivingSide == other.m_drivingSide || m_drivingSide == KnowledgeDb::DrivingSide::Unknown || other.m_drivingSide == KnowledgeDb::DrivingSide::Unknown;
-    const auto ppEqual = (m_incompatPlugs == other.m_incompatPlugs && m_incompatSockets == other.m_incompatSockets)
-                        || m_powerPlugs == KnowledgeDb::Unknown || other.m_powerPlugs == KnowledgeDb::Unknown;
+    const auto dsEqual =
+        m_drivingSide == other.m_drivingSide || m_drivingSide == KnowledgeDb::DrivingSide::Unknown || other.m_drivingSide == KnowledgeDb::DrivingSide::Unknown;
+    const auto ppEqual = (m_incompatPlugs == other.m_incompatPlugs && m_incompatSockets == other.m_incompatSockets) || m_powerPlugs == KnowledgeDb::Unknown
+        || other.m_powerPlugs == KnowledgeDb::Unknown;
     const auto currencyEqual = m_currency == other.m_currency || m_currency.isEmpty() || other.m_currency.isEmpty();
 
     return dsEqual && ppEqual && !hasRelevantTimeZoneChange(other) && currencyEqual;
@@ -32,7 +33,7 @@ QString LocationInformation::isoCode() const
     return m_isoCode;
 }
 
-void LocationInformation::setIsoCode(const QString& isoCode)
+void LocationInformation::setIsoCode(const QString &isoCode)
 {
     if (m_isoCode == isoCode) {
         return;
@@ -82,9 +83,12 @@ bool LocationInformation::drivingSideDiffers() const
 QString LocationInformation::drivingSideLabel() const
 {
     switch (m_drivingSide) {
-        case KItinerary::KnowledgeDb::DrivingSide::Right: return i18n("People are driving on the right side.");
-        case KItinerary::KnowledgeDb::DrivingSide::Left: return i18n("People are driving on the left side.");
-        case KItinerary::KnowledgeDb::DrivingSide::Unknown: return {};
+    case KItinerary::KnowledgeDb::DrivingSide::Right:
+        return i18n("People are driving on the right side.");
+    case KItinerary::KnowledgeDb::DrivingSide::Left:
+        return i18n("People are driving on the left side.");
+    case KItinerary::KnowledgeDb::DrivingSide::Unknown:
+        return {};
     }
     return {};
 }
@@ -100,20 +104,20 @@ struct plugTypeName {
 }
 
 static const plug_name_table[] = {
-    { KnowledgeDb::TypeA, kli18n("Type A") },
-    { KnowledgeDb::TypeB, kli18n("Type B") },
-    { KnowledgeDb::TypeC, kli18n("Europlug") },
-    { KnowledgeDb::TypeD, kli18n("Type D") },
-    { KnowledgeDb::TypeE, kli18n("Type E") },
-    { KnowledgeDb::TypeF, kli18n("Schuko") },
-    { KnowledgeDb::TypeG, kli18n("Type G") },
-    { KnowledgeDb::TypeH, kli18n("Type H") },
-    { KnowledgeDb::TypeI, kli18n("Type I") },
-    { KnowledgeDb::TypeJ, kli18n("Type J") },
-    { KnowledgeDb::TypeK, kli18n("Type K") },
-    { KnowledgeDb::TypeL, kli18n("Type L") },
-    { KnowledgeDb::TypeM, kli18n("Type M") },
-    { KnowledgeDb::TypeN, kli18n("Type N") },
+    {KnowledgeDb::TypeA, kli18n("Type A")},
+    {KnowledgeDb::TypeB, kli18n("Type B")},
+    {KnowledgeDb::TypeC, kli18n("Europlug")},
+    {KnowledgeDb::TypeD, kli18n("Type D")},
+    {KnowledgeDb::TypeE, kli18n("Type E")},
+    {KnowledgeDb::TypeF, kli18n("Schuko")},
+    {KnowledgeDb::TypeG, kli18n("Type G")},
+    {KnowledgeDb::TypeH, kli18n("Type H")},
+    {KnowledgeDb::TypeI, kli18n("Type I")},
+    {KnowledgeDb::TypeJ, kli18n("Type J")},
+    {KnowledgeDb::TypeK, kli18n("Type K")},
+    {KnowledgeDb::TypeL, kli18n("Type L")},
+    {KnowledgeDb::TypeM, kli18n("Type M")},
+    {KnowledgeDb::TypeN, kli18n("Type N")},
 };
 
 static QString plugTypesToString(KnowledgeDb::PowerPlugTypes type)
@@ -182,16 +186,14 @@ void LocationInformation::setTimeZone(const QTimeZone &tz, const QDateTime &tran
     if (m_timeZoneOffsetDelta == 0 && m_timeZone.isValid() && m_timeZone.hasDaylightTime() && m_timeZone.hasTransitions()) {
         const auto nextTrans = m_timeZone.nextTransition(transitionTime.addSecs(-1));
         if (std::abs(nextTrans.atUtc.secsTo(transitionTime)) <= 3600) {
-            m_timeZoneOffsetDelta = m_timeZone.offsetFromUtc(transitionTime.addSecs(3601))
-                - m_timeZone.offsetFromUtc(transitionTime.addSecs(-3601));
+            m_timeZoneOffsetDelta = m_timeZone.offsetFromUtc(transitionTime.addSecs(3601)) - m_timeZone.offsetFromUtc(transitionTime.addSecs(-3601));
         }
     }
 }
 
 bool LocationInformation::hasRelevantTimeZoneChange(const LocationInformation &other) const
 {
-    return m_timeZone.isValid() && other.m_timeZone.isValid()
-        && m_timeZone.offsetFromUtc(m_transitionTime) != other.m_timeZone.offsetFromUtc(m_transitionTime);
+    return m_timeZone.isValid() && other.m_timeZone.isValid() && m_timeZone.offsetFromUtc(m_transitionTime) != other.m_timeZone.offsetFromUtc(m_transitionTime);
 }
 
 bool LocationInformation::timeZoneDiffers() const

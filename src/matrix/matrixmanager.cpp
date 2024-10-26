@@ -3,8 +3,8 @@
 
 #include "matrixmanager.h"
 
-#include <Quotient/room.h>
 #include "Quotient/settings.h"
+#include <Quotient/room.h>
 
 #include <KLocalizedString>
 #include <QCoreApplication>
@@ -15,17 +15,22 @@ MatrixManager::MatrixManager(QObject *parent)
     : QObject(parent)
 {
     m_accountRegistry.invokeLogin();
-    connect(&m_accountRegistry, &AccountRegistry::rowsInserted, this, [this](){
+    connect(&m_accountRegistry, &AccountRegistry::rowsInserted, this, [this]() {
         Q_EMIT connectedChanged();
         Q_EMIT userIdChanged();
         Q_EMIT connectionChanged();
         setInfoString(i18n("Syncing…"));
-        connect(m_accountRegistry.accounts()[0], &Connection::syncDone, this, [this](){
-            setInfoString({});
-            m_accountRegistry.accounts()[0]->stopSync();
-        }, Qt::SingleShotConnection);
+        connect(
+            m_accountRegistry.accounts()[0],
+            &Connection::syncDone,
+            this,
+            [this]() {
+                setInfoString({});
+                m_accountRegistry.accounts()[0]->stopSync();
+            },
+            Qt::SingleShotConnection);
     });
-    connect(&m_accountRegistry, &AccountRegistry::rowsRemoved, this, [this](){
+    connect(&m_accountRegistry, &AccountRegistry::rowsRemoved, this, [this]() {
         Q_EMIT connectedChanged();
         Q_EMIT userIdChanged();
         Q_EMIT connectionChanged();
@@ -36,13 +41,18 @@ void MatrixManager::login(const QString &matrixId, const QString &password)
 {
     auto connection = new Connection(this);
     connection->resolveServer(matrixId);
-    connect(connection, &Connection::loginFlowsChanged, this, [this, connection, matrixId, password](){
-        if (!connection->supportsPasswordAuth()) {
-            setInfoString(i18n("This server does not support logging in using a password"));
-        }
-        auto username = matrixId.mid(1, matrixId.indexOf(QLatin1Char(':')) - 1);
-        connection->loginWithPassword(username, password, qAppName(), {});
-    }, Qt::SingleShotConnection);
+    connect(
+        connection,
+        &Connection::loginFlowsChanged,
+        this,
+        [this, connection, matrixId, password]() {
+            if (!connection->supportsPasswordAuth()) {
+                setInfoString(i18n("This server does not support logging in using a password"));
+            }
+            auto username = matrixId.mid(1, matrixId.indexOf(QLatin1Char(':')) - 1);
+            connection->loginWithPassword(username, password, qAppName(), {});
+        },
+        Qt::SingleShotConnection);
 
     connect(connection, &Connection::connected, this, [this, connection] {
         AccountSettings account(connection->userId());
@@ -54,10 +64,15 @@ void MatrixManager::login(const QString &matrixId, const QString &password)
         Q_EMIT connectedChanged();
 
         setInfoString(i18n("Syncing…"));
-        connect(connection, &Connection::syncDone, this, [connection, this](){
-            connection->stopSync();
-            setInfoString({});
-        }, Qt::SingleShotConnection);
+        connect(
+            connection,
+            &Connection::syncDone,
+            this,
+            [connection, this]() {
+                connection->stopSync();
+                setInfoString({});
+            },
+            Qt::SingleShotConnection);
     });
 
     connect(connection, &Connection::loginError, this, [this](const QString &message) {
@@ -106,9 +121,14 @@ void MatrixManager::sync()
     auto connection = m_accountRegistry.accounts()[0];
     connection->sync();
     setInfoString(i18n("Syncing…"));
-    connect(connection, &Connection::syncDone, this, [this](){
-        setInfoString({});
-    }, Qt::SingleShotConnection);
+    connect(
+        connection,
+        &Connection::syncDone,
+        this,
+        [this]() {
+            setInfoString({});
+        },
+        Qt::SingleShotConnection);
 }
 
 void MatrixManager::postEvent(const QString &roomId, const QString &type, const QJsonObject &content)
@@ -118,21 +138,19 @@ void MatrixManager::postEvent(const QString &roomId, const QString &type, const 
 
 void MatrixManager::postLocation(const QString &roomId, float latitude, float longitude, const QString &description)
 {
-    QJsonObject content{
-            {QLatin1StringView("body"), description},
-            {QLatin1StringView("msgtype"), QLatin1StringView("m.location")},
-            {QLatin1StringView("org.matrix.msc3488.asset"), QJsonObject {
-                    {QLatin1StringView("type"), QLatin1StringView("m.pin")}, // TODO location type (hotel, restaurant, train station, ...) here?
-                    //{"name", description} // TODO location description ("Volker's Hotel") here?
-            }},
-            {QLatin1StringView("org.matrix.msc3488.ts"), QDateTime::currentDateTime().toMSecsSinceEpoch()},
-            {QLatin1StringView("geo_uri"), QLatin1StringView("geo:%1,%2").arg(QString::number(latitude), QString::number(longitude))},
-            {QLatin1StringView("org.matrix.msc1767.text"), description},
-            {QLatin1StringView("org.matrix.msc3488.location"), QJsonObject {
-                {QLatin1StringView("uri"), QLatin1StringView("geo:%1,%2").arg(QString::number(latitude), QString::number(longitude))},
-                {QLatin1StringView("description"), description}
-            }}
-    };
+    QJsonObject content{{QLatin1StringView("body"), description},
+                        {QLatin1StringView("msgtype"), QLatin1StringView("m.location")},
+                        {QLatin1StringView("org.matrix.msc3488.asset"),
+                         QJsonObject{
+                             {QLatin1StringView("type"), QLatin1StringView("m.pin")}, // TODO location type (hotel, restaurant, train station, ...) here?
+                             //{"name", description} // TODO location description ("Volker's Hotel") here?
+                         }},
+                        {QLatin1StringView("org.matrix.msc3488.ts"), QDateTime::currentDateTime().toMSecsSinceEpoch()},
+                        {QLatin1StringView("geo_uri"), QLatin1StringView("geo:%1,%2").arg(QString::number(latitude), QString::number(longitude))},
+                        {QLatin1StringView("org.matrix.msc1767.text"), description},
+                        {QLatin1StringView("org.matrix.msc3488.location"),
+                         QJsonObject{{QLatin1StringView("uri"), QLatin1StringView("geo:%1,%2").arg(QString::number(latitude), QString::number(longitude))},
+                                     {QLatin1StringView("description"), description}}}};
 
     postEvent(roomId, QLatin1StringView("m.room.message"), content);
 }

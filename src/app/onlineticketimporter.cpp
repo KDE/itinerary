@@ -4,8 +4,8 @@
 */
 
 #include "onlineticketimporter.h"
-#include "onlineticketretrievaljob.h"
 #include "logging.h"
+#include "onlineticketretrievaljob.h"
 
 #include <QJsonDocument>
 #include <QNetworkAccessManager>
@@ -13,7 +13,7 @@
 
 #include <cassert>
 
-std::function<QNetworkAccessManager*()> OnlineTicketImporter::s_namFactory;
+std::function<QNetworkAccessManager *()> OnlineTicketImporter::s_namFactory;
 
 OnlineTicketImporter::OnlineTicketImporter(QObject *parent)
     : QObject(parent)
@@ -27,7 +27,7 @@ bool OnlineTicketImporter::searching() const
     return m_currentJob;
 }
 
-void OnlineTicketImporter::setNetworkAccessManagerFactory(const std::function<QNetworkAccessManager*()> &namFactory)
+void OnlineTicketImporter::setNetworkAccessManagerFactory(const std::function<QNetworkAccessManager *()> &namFactory)
 {
     s_namFactory = namFactory;
 }

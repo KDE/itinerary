@@ -14,8 +14,7 @@
 #include <functional>
 
 /** Weather forecast data tile coordinates */
-struct WeatherTile
-{
+struct WeatherTile {
     // tile size in 1/nth of a degree
     static const constexpr auto Size = 10.0;
 
@@ -23,7 +22,8 @@ struct WeatherTile
     inline WeatherTile(float latitude, float longitude)
         : lat(int16_t(::round(latitude * WeatherTile::Size)))
         , lon(int16_t(::round(longitude * WeatherTile::Size)))
-    {}
+    {
+    }
 
     inline bool operator<(WeatherTile other) const
     {
@@ -53,14 +53,13 @@ Q_DECLARE_METATYPE(WeatherTile)
 
 namespace std
 {
-    template<> struct hash<WeatherTile>
+template<>
+struct hash<WeatherTile> {
+    inline std::size_t operator()(const WeatherTile &t) const noexcept
     {
-        inline std::size_t operator()(const WeatherTile &t) const noexcept
-        {
-            return std::hash<uint32_t>{}(t.lat << 16 | t.lon);
-        }
-    };
+        return std::hash<uint32_t>{}(t.lat << 16 | t.lon);
+    }
+};
 }
 
 #endif // WEATHERTILE_H
-

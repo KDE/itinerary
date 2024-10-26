@@ -16,12 +16,12 @@ class AndroidCalendarPlugin : public KCalendarCore::CalendarPlugin
     Q_OBJECT
     Q_PLUGIN_METADATA(IID "org.kde.kcalendarcore.CalendarPlugin")
 public:
-    explicit AndroidCalendarPlugin (QObject *parent = nullptr, const QVariantList &args = {});
+    explicit AndroidCalendarPlugin(QObject *parent = nullptr, const QVariantList &args = {});
     ~AndroidCalendarPlugin();
 
     QList<KCalendarCore::Calendar::Ptr> calendars() const override;
 
-  private:
+private:
     void loadCalendars() const;
 
     mutable QList<KCalendarCore::Calendar::Ptr> m_calendars;

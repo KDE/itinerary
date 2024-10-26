@@ -11,14 +11,14 @@
 /** Permission enum for use in QML. */
 namespace Permission
 {
-    Q_NAMESPACE
-    enum Permission {
-        InvalidPermission, // captures QML errors resultin in "0" enum values
-        ReadCalendar,
-        WriteCalendar,
-        Camera,
-    };
-    Q_ENUM_NS(Permission)
+Q_NAMESPACE
+enum Permission {
+    InvalidPermission, // captures QML errors resultin in "0" enum values
+    ReadCalendar,
+    WriteCalendar,
+    Camera,
+};
+Q_ENUM_NS(Permission)
 }
 
 /** Check and request platform permissions for access to controlled resources (calendar, location, etc). */

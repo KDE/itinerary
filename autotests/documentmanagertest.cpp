@@ -4,15 +4,15 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "testhelper.h"
 #include "documentmanager.h"
+#include "testhelper.h"
 
 #include <KItinerary/CreativeWork>
 
-#include <QtTest/qtest.h>
 #include <QSignalSpy>
 #include <QStandardPaths>
 #include <QTemporaryFile>
+#include <QtTest/qtest.h>
 
 using namespace KItinerary;
 

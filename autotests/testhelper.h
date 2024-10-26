@@ -22,7 +22,7 @@
 namespace Test
 {
 
-template <typename T>
+template<typename T>
 inline bool compareJson(const QString &refFile, const T &output, const T &ref)
 {
     if (output != ref) {
@@ -45,7 +45,6 @@ inline bool compareJson(const QString &refFile, const T &output, const T &ref)
     }
     return true;
 }
-
 
 /** Read the entire file content. */
 inline QByteArray readFile(const QString &fn)
@@ -81,7 +80,6 @@ inline void clearAll(DocumentManager *docMgr)
         docMgr->removeDocument(id);
     }
     Q_ASSERT(docMgr->documents().isEmpty());
-
 }
 
 inline void clearAll(PassManager *passMgr)

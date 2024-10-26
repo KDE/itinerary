@@ -136,7 +136,9 @@ QVariantList TripGroupController::locationInformation() const
         if (destCountry.isEmpty() || destCountry == m_homeCountry) {
             continue;
         }
-        if (std::any_of(l.constBegin(), l.constEnd(), [destCountry](const QVariant &v) { return v.value<LocationInformation>().isoCode() == destCountry; })) {
+        if (std::any_of(l.constBegin(), l.constEnd(), [destCountry](const QVariant &v) {
+                return v.value<LocationInformation>().isoCode() == destCountry;
+            })) {
             continue;
         }
 

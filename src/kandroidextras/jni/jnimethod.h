@@ -13,7 +13,8 @@
 #include "jnireturnvalue.h"
 #include "jnitypetraits.h"
 
-namespace KAndroidExtras {
+namespace KAndroidExtras
+{
 ///@cond internal
 
 // method parameter generation
@@ -37,61 +38,65 @@ namespace KAndroidExtras {
 #define JNI_ARGS_(N, accu, ...) JNI_PP_CONCAT(JNI_ARGS_, N)(accu, __VA_ARGS__)
 #define JNI_ARGS(...) JNI_ARGS_(JNI_PP_NARG(__VA_ARGS__), "", __VA_ARGS__)
 
-namespace Internal {
-    // method call wrapper
-    template <typename RetT>
-    struct caller {
-        static_assert(!is_invalid_primitive_type<RetT>::value, "Using an incompatible primitive type!");
-        template <typename ...Args>
-        static auto call(const QJniObject &handle, const char *name, const char *signature, Args&&... args)
-        {
-            if constexpr (std::is_same_v<RetT, void>) {
-                handle.callMethod<RetT>(name, signature, std::forward<Args>(args)...);
-            } else if constexpr (Jni::is_primitive_type<RetT>::value) {
-                return Internal::return_wrapper<RetT>::toReturnValue(handle.callMethod<typename primitive_value<RetT>::JniType>(name, signature, std::forward<Args>(args)...));
-            } else {
-                return Internal::return_wrapper<RetT>::toReturnValue(handle.callObjectMethod(name, signature, std::forward<Args>(args)...));
-            }
+namespace Internal
+{
+// method call wrapper
+template<typename RetT>
+struct caller {
+    static_assert(!is_invalid_primitive_type<RetT>::value, "Using an incompatible primitive type!");
+    template<typename... Args>
+    static auto call(const QJniObject &handle, const char *name, const char *signature, Args &&...args)
+    {
+        if constexpr (std::is_same_v<RetT, void>) {
+            handle.callMethod<RetT>(name, signature, std::forward<Args>(args)...);
+        } else if constexpr (Jni::is_primitive_type<RetT>::value) {
+            return Internal::return_wrapper<RetT>::toReturnValue(
+                handle.callMethod<typename primitive_value<RetT>::JniType>(name, signature, std::forward<Args>(args)...));
+        } else {
+            return Internal::return_wrapper<RetT>::toReturnValue(handle.callObjectMethod(name, signature, std::forward<Args>(args)...));
         }
+    }
 
-        static auto call(const QJniObject &handle, const char *name, const char *signature)
-        {
-            if constexpr (std::is_same_v<RetT, void>) {
-                return handle.callMethod<RetT>(name, signature);
-            } else if constexpr (Jni::is_primitive_type<RetT>::value) {
-                return Internal::return_wrapper<RetT>::toReturnValue(handle.callMethod<typename primitive_value<RetT>::JniType>(name, signature));
-            } else {
-                return Internal::return_wrapper<RetT>::toReturnValue(handle.callObjectMethod(name, signature));
-            }
+    static auto call(const QJniObject &handle, const char *name, const char *signature)
+    {
+        if constexpr (std::is_same_v<RetT, void>) {
+            return handle.callMethod<RetT>(name, signature);
+        } else if constexpr (Jni::is_primitive_type<RetT>::value) {
+            return Internal::return_wrapper<RetT>::toReturnValue(handle.callMethod<typename primitive_value<RetT>::JniType>(name, signature));
+        } else {
+            return Internal::return_wrapper<RetT>::toReturnValue(handle.callObjectMethod(name, signature));
         }
-    };
+    }
+};
 
-    // static method call wrapper
-    template <typename RetT>
-    struct static_caller {
-        static_assert(!is_invalid_primitive_type<RetT>::value, "Using an incompatible primitive type!");
-        template <typename ...Args>
-        static auto call(const char *className, const char *name, const char *signature, Args&&... args)
-        {
-            if constexpr (std::is_same_v<RetT, void>) {
-                return QJniObject::callStaticMethod<RetT>(className, name, signature, std::forward<Args>(args)...);
-            } else if constexpr (Jni::is_primitive_type<RetT>::value) {
-                return Internal::return_wrapper<RetT>::toReturnValue(QJniObject::callStaticMethod<typename primitive_value<RetT>::JniType>(className, name, signature, std::forward<Args>(args)...));
-            } else {
-                return Internal::return_wrapper<RetT>::toReturnValue(QJniObject::callStaticObjectMethod(className, name, signature, std::forward<Args>(args)...));
-            }
+// static method call wrapper
+template<typename RetT>
+struct static_caller {
+    static_assert(!is_invalid_primitive_type<RetT>::value, "Using an incompatible primitive type!");
+    template<typename... Args>
+    static auto call(const char *className, const char *name, const char *signature, Args &&...args)
+    {
+        if constexpr (std::is_same_v<RetT, void>) {
+            return QJniObject::callStaticMethod<RetT>(className, name, signature, std::forward<Args>(args)...);
+        } else if constexpr (Jni::is_primitive_type<RetT>::value) {
+            return Internal::return_wrapper<RetT>::toReturnValue(
+                QJniObject::callStaticMethod<typename primitive_value<RetT>::JniType>(className, name, signature, std::forward<Args>(args)...));
+        } else {
+            return Internal::return_wrapper<RetT>::toReturnValue(QJniObject::callStaticObjectMethod(className, name, signature, std::forward<Args>(args)...));
         }
-        static auto call(const char *className, const char *name, const char *signature)
-        {
-            if constexpr (std::is_same_v<RetT, void>) {
-                return QJniObject::callStaticMethod<RetT>(className, name, signature);
-            } else if constexpr (Jni::is_primitive_type<RetT>::value) {
-                return Internal::return_wrapper<RetT>::toReturnValue(QJniObject::callStaticMethod<typename primitive_value<RetT>::JniType>(className, name, signature));
-            } else {
-                return Internal::return_wrapper<RetT>::toReturnValue(QJniObject::callStaticObjectMethod(className, name, signature));
-            }
+    }
+    static auto call(const char *className, const char *name, const char *signature)
+    {
+        if constexpr (std::is_same_v<RetT, void>) {
+            return QJniObject::callStaticMethod<RetT>(className, name, signature);
+        } else if constexpr (Jni::is_primitive_type<RetT>::value) {
+            return Internal::return_wrapper<RetT>::toReturnValue(
+                QJniObject::callStaticMethod<typename primitive_value<RetT>::JniType>(className, name, signature));
+        } else {
+            return Internal::return_wrapper<RetT>::toReturnValue(QJniObject::callStaticObjectMethod(className, name, signature));
         }
-    };
+    }
+};
 }
 ///@endcond
 
@@ -120,11 +125,12 @@ namespace Internal {
  * @param Args A list or argument types (can be empty). Must either be primitive types or types declared
  *        with @c JNI_TYPE.
  */
-#define JNI_METHOD(RetT, Name, ...) \
-inline auto Name( JNI_PARAMS(__VA_ARGS__) ) const { \
-    using namespace KAndroidExtras; \
-    return Internal::caller<RetT>::call(jniHandle(), "" #Name, Jni::signature<RetT(__VA_ARGS__)>() __VA_OPT__(,) JNI_ARGS(__VA_ARGS__)); \
-}
+#define JNI_METHOD(RetT, Name, ...)                                                                                                                            \
+    inline auto Name(JNI_PARAMS(__VA_ARGS__)) const                                                                                                            \
+    {                                                                                                                                                          \
+        using namespace KAndroidExtras;                                                                                                                        \
+        return Internal::caller<RetT>::call(jniHandle(), "" #Name, Jni::signature<RetT(__VA_ARGS__)>() __VA_OPT__(, ) JNI_ARGS(__VA_ARGS__));                  \
+    }
 
 /**
  * Wrap a JNI static method call.
@@ -151,11 +157,14 @@ inline auto Name( JNI_PARAMS(__VA_ARGS__) ) const { \
  * @param Args A list or argument types (can be empty). Must either be primitive types or types declared
  *        with @c JNI_TYPE.
  */
-#define JNI_STATIC_METHOD(RetT, Name, ...) \
-static inline auto Name( JNI_PARAMS(__VA_ARGS__) ) { \
-    using namespace KAndroidExtras; \
-    return Internal::static_caller<RetT>::call(Jni::typeName<_jni_ThisType>(), "" #Name, Jni::signature<RetT(__VA_ARGS__)>() __VA_OPT__(,) JNI_ARGS(__VA_ARGS__)); \
-}
+#define JNI_STATIC_METHOD(RetT, Name, ...)                                                                                                                     \
+    static inline auto Name(JNI_PARAMS(__VA_ARGS__))                                                                                                           \
+    {                                                                                                                                                          \
+        using namespace KAndroidExtras;                                                                                                                        \
+        return Internal::static_caller<RetT>::call(Jni::typeName<_jni_ThisType>(),                                                                             \
+                                                   "" #Name,                                                                                                   \
+                                                   Jni::signature<RetT(__VA_ARGS__)>() __VA_OPT__(, ) JNI_ARGS(__VA_ARGS__));                                  \
+    }
 
 /**
  * Wrap a JNI constructor call.
@@ -171,11 +180,12 @@ static inline auto Name( JNI_PARAMS(__VA_ARGS__) ) { \
  * @param Args A list or argument types (can be empty). Must either be primitive types or types declared
  *        with @c JNI_TYPE.
  */
-#define JNI_CONSTRUCTOR(Name, ...) \
-inline Name( JNI_PARAMS(__VA_ARGS__) ) { \
-    using namespace KAndroidExtras; \
-    setJniHandle(QJniObject(Jni::typeName<_jni_ThisType>(), (const char*)Jni::signature<void(__VA_ARGS__)>() __VA_OPT__(,) JNI_ARGS(__VA_ARGS__))); \
-}
+#define JNI_CONSTRUCTOR(Name, ...)                                                                                                                             \
+    inline Name(JNI_PARAMS(__VA_ARGS__))                                                                                                                       \
+    {                                                                                                                                                          \
+        using namespace KAndroidExtras;                                                                                                                        \
+        setJniHandle(QJniObject(Jni::typeName<_jni_ThisType>(), (const char *)Jni::signature<void(__VA_ARGS__)>() __VA_OPT__(, ) JNI_ARGS(__VA_ARGS__)));      \
+    }
 
 }
 

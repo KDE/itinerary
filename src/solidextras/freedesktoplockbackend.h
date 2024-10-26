@@ -7,14 +7,13 @@
 #ifndef SOLIDLOCKBACKEND_H
 #define SOLIDLOCKBACKEND_H
 
-#include <QObject>
 #include "lockmanager.h"
+#include <QObject>
 
 class OrgFreedesktopScreenSaverInterface;
 
 class FreedesktopLockBackend : public LockBackend
 {
-
 public:
     explicit FreedesktopLockBackend(QObject *parent = nullptr);
 
@@ -22,9 +21,8 @@ public:
     void setInhibitionOn(const QString &explanation) override;
 
 private:
-    OrgFreedesktopScreenSaverInterface* m_iface;
+    OrgFreedesktopScreenSaverInterface *m_iface;
     int m_cookie;
 };
 
 #endif //  SOLIDLOCKBACKEND_H
-

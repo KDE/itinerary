@@ -11,12 +11,13 @@
 
 class QJniObject;
 
-namespace KAndroidExtras {
+namespace KAndroidExtras
+{
 
 /** Methods around android.content.Context. */
 namespace Context
 {
-    KANDROIDEXTRAS_EXPORT QJniObject getPackageName();
+KANDROIDEXTRAS_EXPORT QJniObject getPackageName();
 }
 
 }

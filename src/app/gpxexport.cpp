@@ -26,7 +26,7 @@
 using namespace KItinerary;
 using namespace KPublicTransport;
 
-GpxExport::GpxExport(QIODevice* out)
+GpxExport::GpxExport(QIODevice *out)
     : m_writer(out)
 {
     m_writer.writeStartMetadata();
@@ -44,7 +44,10 @@ void GpxExport::writeReservation(const QVariant &res, const KPublicTransport::Jo
         const auto arr = LocationUtil::arrivalLocation(res);
 
         if (JsonLd::isA<FlightReservation>(res)) {
-            m_writer.writeName(i18n("Flight %1 from %2 to %3", res.value<FlightReservation>().reservationFor().value<Flight>().flightNumber(), LocationUtil::name(dep), LocationUtil::name(arr)));
+            m_writer.writeName(i18n("Flight %1 from %2 to %3",
+                                    res.value<FlightReservation>().reservationFor().value<Flight>().flightNumber(),
+                                    LocationUtil::name(dep),
+                                    LocationUtil::name(arr)));
         } else if (JsonLd::isA<TrainReservation>(res)) {
             const auto train = res.value<TrainReservation>().reservationFor().value<TrainTrip>();
             const QString n = train.trainName() + QLatin1Char(' ') + train.trainNumber();
@@ -132,7 +135,7 @@ void GpxExport::writeReservation(const QVariant &res, const KPublicTransport::Jo
     }
 }
 
-void GpxExport::writeSelfContainedTransfer(const Transfer& transfer)
+void GpxExport::writeSelfContainedTransfer(const Transfer &transfer)
 {
     if (transfer.state() != Transfer::Selected) {
         return;

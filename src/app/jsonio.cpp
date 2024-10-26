@@ -37,16 +37,16 @@ QJsonValue JsonIO::read(const QByteArray &data)
 QByteArray JsonIO::write(const QJsonValue &value, OutputFormat format)
 {
     switch (format) {
-        case JSON:
-            if (value.isArray()) {
-                return QJsonDocument(value.toArray()).toJson(QJsonDocument::Compact);
-            }
-            if (value.isObject()) {
-                return QJsonDocument(value.toObject()).toJson(QJsonDocument::Compact);
-            }
-            return {};
-        case CBOR:
-            return QCborValue::fromJsonValue(value).toCbor();
+    case JSON:
+        if (value.isArray()) {
+            return QJsonDocument(value.toArray()).toJson(QJsonDocument::Compact);
+        }
+        if (value.isObject()) {
+            return QJsonDocument(value.toObject()).toJson(QJsonDocument::Compact);
+        }
+        return {};
+    case CBOR:
+        return QCborValue::fromJsonValue(value).toCbor();
     }
     return {};
 }

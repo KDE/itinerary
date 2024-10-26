@@ -17,13 +17,10 @@ class WeatherForecastManager;
 class WeatherForecastModel : public QAbstractListModel
 {
     Q_OBJECT
-    Q_PROPERTY(QObject* weatherForecastManager READ weatherForecastManager WRITE setWeatherForecastManager)
+    Q_PROPERTY(QObject *weatherForecastManager READ weatherForecastManager WRITE setWeatherForecastManager)
     Q_PROPERTY(QVariant weatherForecast READ weatherForecast WRITE setWeatherForecast)
 public:
-    enum Roles {
-        WeatherForecastRole = Qt::UserRole,
-        LocalizedTimeRole
-    };
+    enum Roles { WeatherForecastRole = Qt::UserRole, LocalizedTimeRole };
 
     explicit WeatherForecastModel(QObject *parent = nullptr);
     ~WeatherForecastModel() override;
@@ -32,7 +29,7 @@ public:
     QVariant data(const QModelIndex &index, int role) const override;
     QHash<int, QByteArray> roleNames() const override;
 
-    QObject* weatherForecastManager() const;
+    QObject *weatherForecastManager() const;
     void setWeatherForecastManager(QObject *mgr);
     QVariant weatherForecast() const;
     void setWeatherForecast(const QVariant &fc);

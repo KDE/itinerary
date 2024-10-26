@@ -10,15 +10,15 @@
 #include "applicationcontroller.h"
 #include "importcontroller.h"
 #include "reservationmanager.h"
-#include "transfermanager.h"
 #include "timelinemodel.h"
+#include "transfermanager.h"
 #include "tripgroupmanager.h"
 #include "tripgroupproxymodel.h"
 
 #include <QAbstractItemModelTester>
-#include <QtTest/qtest.h>
 #include <QSignalSpy>
 #include <QStandardPaths>
+#include <QtTest/qtest.h>
 
 using namespace Qt::Literals;
 
@@ -166,7 +166,6 @@ private Q_SLOTS:
         QCOMPARE(proxy.rowCount(), 3);
         QVERIFY(vp2.verify(&proxy));
     }
-
 };
 QTEST_GUILESS_MAIN(TripGroupProxyTest)
 

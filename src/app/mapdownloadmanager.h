@@ -14,11 +14,13 @@
 
 class ReservationManager;
 
-namespace SolidExtras {
+namespace SolidExtras
+{
 class NetworkStatus;
 }
 
-namespace KOSMIndoorMap {
+namespace KOSMIndoorMap
+{
 class MapLoader;
 }
 

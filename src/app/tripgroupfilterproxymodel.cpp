@@ -6,7 +6,7 @@
 #include "tripgroupmodel.h"
 
 TripGroupFilterProxyModel::TripGroupFilterProxyModel(QObject *parent)
-    :QSortFilterProxyModel(parent)
+    : QSortFilterProxyModel(parent)
 {
 }
 

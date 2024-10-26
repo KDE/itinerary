@@ -5,16 +5,16 @@
 */
 
 #include "publictransport.h"
-#include "reservationhelper.h"
 #include "logging.h"
+#include "reservationhelper.h"
 
 #include <KItinerary/BoatTrip>
 #include <KItinerary/BusTrip>
 #include <KItinerary/Event>
 #include <KItinerary/ExtractorPostprocessor>
 #include <KItinerary/Reservation>
-#include <KItinerary/TrainTrip>
 #include <KItinerary/Ticket>
+#include <KItinerary/TrainTrip>
 
 #include <KPublicTransport/Attribution>
 #include <KPublicTransport/Backend>
@@ -33,12 +33,12 @@ bool PublicTransport::isBusMode(KPublicTransport::Line::Mode mode)
 {
     using namespace KPublicTransport;
     switch (mode) {
-        case Line::Bus:
-        case Line::Coach:
-        case Line::Shuttle:
-            return true;
-        default:
-            return false;
+    case Line::Bus:
+    case Line::Coach:
+    case Line::Shuttle:
+        return true;
+    default:
+        return false;
     }
 }
 
@@ -46,22 +46,22 @@ bool PublicTransport::isBoatMode(KPublicTransport::Line::Mode mode)
 {
     using namespace KPublicTransport;
     switch (mode) {
-        case Line::Boat:
-        case Line::Ferry:
-            return true;
-        default:
-            return false;
+    case Line::Boat:
+    case Line::Ferry:
+        return true;
+    default:
+        return false;
     }
 }
 
-KPublicTransport::Location PublicTransport::locationFromPlace(const QVariant& place, const QVariant &reservation)
+KPublicTransport::Location PublicTransport::locationFromPlace(const QVariant &place, const QVariant &reservation)
 {
     using namespace KItinerary;
 
     KPublicTransport::Location loc;
 
-    if (JsonLd::isA<FlightReservation>(reservation) || JsonLd::isA<TrainReservation>(reservation)
-     || JsonLd::isA<BusReservation>(reservation) || JsonLd::isA<BoatReservation>(reservation)) {
+    if (JsonLd::isA<FlightReservation>(reservation) || JsonLd::isA<TrainReservation>(reservation) || JsonLd::isA<BusReservation>(reservation)
+        || JsonLd::isA<BoatReservation>(reservation)) {
         loc.setName(KItinerary::LocationUtil::name(place));
     }
     if (JsonLd::isA<TrainReservation>(reservation) || JsonLd::isA<BusReservation>(reservation)) {
@@ -111,41 +111,41 @@ QString PublicTransport::journeySectionLabel(const KPublicTransport::JourneySect
 {
     using namespace KPublicTransport;
     switch (journeySection.mode()) {
-        case JourneySection::Invalid:
+    case JourneySection::Invalid:
+        break;
+    case JourneySection::PublicTransport:
+        return journeySection.route().line().name();
+    case JourneySection::Walking:
+        return i18n("Walk");
+    case JourneySection::Waiting:
+        return i18n("Wait");
+    case JourneySection::Transfer:
+        break; // ?
+    case JourneySection::RentedVehicle:
+        switch (journeySection.rentalVehicle().type()) {
+        case RentalVehicle::Unknown:
             break;
-        case JourneySection::PublicTransport:
-            return journeySection.route().line().name();
-        case JourneySection::Walking:
+        case RentalVehicle::Bicycle:
+        case RentalVehicle::Pedelec:
+            return i18n("Rented bicycle");
+        case RentalVehicle::ElectricMoped:
+            return i18n("Rented moped");
+        case RentalVehicle::ElectricKickScooter:
+            return i18n("Rented kick scooter");
+        case RentalVehicle::Car:
+            return i18n("Rented car");
+        }
+        break;
+    case JourneySection::IndividualTransport:
+        switch (journeySection.individualTransport().mode()) {
+        case IndividualTransport::Bike:
+            return i18n("Bicycle");
+        case IndividualTransport::Car:
+            return i18n("Car");
+        case IndividualTransport::Walk:
             return i18n("Walk");
-        case JourneySection::Waiting:
-            return i18n("Wait");
-        case JourneySection::Transfer:
-            break; // ?
-        case JourneySection::RentedVehicle:
-            switch (journeySection.rentalVehicle().type()) {
-                case RentalVehicle::Unknown:
-                    break;
-                case RentalVehicle::Bicycle:
-                case RentalVehicle::Pedelec:
-                    return i18n("Rented bicycle");
-                case RentalVehicle::ElectricMoped:
-                    return i18n("Rented moped");
-                case RentalVehicle::ElectricKickScooter:
-                    return i18n("Rented kick scooter");
-                case RentalVehicle::Car:
-                    return i18n("Rented car");
-            }
-            break;
-        case JourneySection::IndividualTransport:
-            switch (journeySection.individualTransport().mode()) {
-                case IndividualTransport::Bike:
-                    return i18n("Bicycle");
-                case IndividualTransport::Car:
-                    return i18n("Car");
-                case IndividualTransport::Walk:
-                    return i18n("Walk");
-            }
-            break;
+        }
+        break;
     }
     return {};
 }
@@ -329,7 +329,7 @@ KPublicTransport::StopoverRequest PublicTransport::stopoverRequestForPlace(const
     return req;
 }
 
-QString PublicTransport::attributionSummary(const QVariantList& attributions) const
+QString PublicTransport::attributionSummary(const QVariantList &attributions) const
 {
     QStringList l;
     l.reserve(attributions.size());
@@ -339,7 +339,8 @@ QString PublicTransport::attributionSummary(const QVariantList& attributions) co
             return other.template value<KPublicTransport::Attribution>().name() == attr.name();
         });
         if (multi > 1) {
-            l.push_back(QLatin1StringView("<a href=\"") + attr.url().toString() + QLatin1StringView("\">") + attr.name() + QLatin1StringView(" (") + attr.license() + QLatin1StringView(")</a>"));
+            l.push_back(QLatin1StringView("<a href=\"") + attr.url().toString() + QLatin1StringView("\">") + attr.name() + QLatin1StringView(" (")
+                        + attr.license() + QLatin1StringView(")</a>"));
         } else {
             l.push_back(QLatin1StringView("<a href=\"") + attr.url().toString() + QLatin1StringView("\">") + attr.name() + QLatin1StringView("</a>"));
         }
@@ -352,38 +353,40 @@ bool PublicTransport::warnAboutSection(const KPublicTransport::JourneySection &s
     using namespace KPublicTransport;
 
     switch (section.mode()) {
-        case JourneySection::Invalid:
+    case JourneySection::Invalid:
+        return false;
+    case JourneySection::Walking:
+    case JourneySection::Transfer:
+        return section.duration() > 20 * 60 || section.distance() > 1000;
+    case JourneySection::Waiting:
+        return section.duration() > 20 * 60;
+    case JourneySection::PublicTransport:
+        return std::any_of(section.loadInformation().begin(), section.loadInformation().end(), [](const auto &load) {
+            return load.load() == Load::Full;
+        });
+    case JourneySection::RentedVehicle:
+        switch (section.rentalVehicle().type()) {
+        case RentalVehicle::Unknown:
             return false;
-        case JourneySection::Walking:
-        case JourneySection::Transfer:
-            return section.duration() > 20*60 || section.distance() > 1000;
-        case JourneySection::Waiting:
-            return section.duration() > 20*60;
-        case JourneySection::PublicTransport:
-            return std::any_of(section.loadInformation().begin(), section.loadInformation().end(), [](const auto &load) { return load.load() == Load::Full; });
-        case JourneySection::RentedVehicle:
-            switch (section.rentalVehicle().type()) {
-                case RentalVehicle::Unknown:
-                    return false;
-                case RentalVehicle::Bicycle:
-                    return section.duration() > 60*60 || section.distance() > 20000;
-                case RentalVehicle::ElectricKickScooter:
-                case RentalVehicle::ElectricMoped:
-                case RentalVehicle::Pedelec:
-                case RentalVehicle::Car:
-                    return false; // ???
-            }
-            break;
-        case JourneySection::IndividualTransport:
-            switch (section.individualTransport().mode()) {
-                case IndividualTransport::Walk:
-                    return section.duration() > 20*60 || section.distance() > 1000;
-                case IndividualTransport::Bike:
-                    return section.duration() > 60*60 || section.distance() > 20000;
-                case IndividualTransport::Car:
-                    return false;
-            }
-            break;
+        case RentalVehicle::Bicycle:
+            return section.duration() > 60 * 60 || section.distance() > 20000;
+        case RentalVehicle::ElectricKickScooter:
+        case RentalVehicle::ElectricMoped:
+        case RentalVehicle::Pedelec:
+        case RentalVehicle::Car:
+            return false; // ???
+        }
+        break;
+    case JourneySection::IndividualTransport:
+        switch (section.individualTransport().mode()) {
+        case IndividualTransport::Walk:
+            return section.duration() > 20 * 60 || section.distance() > 1000;
+        case IndividualTransport::Bike:
+            return section.duration() > 60 * 60 || section.distance() > 20000;
+        case IndividualTransport::Car:
+            return false;
+        }
+        break;
     }
 
     return false;
@@ -446,7 +449,7 @@ QStringList PublicTransport::suitableBackendsForReservation(KPublicTransport::Ma
             if (!mgr->isBackendEnabled(backend.identifier())) {
                 continue;
             }
-            for (const auto cov : { CoverageArea::Realtime, CoverageArea::Regular, CoverageArea::Any }) {
+            for (const auto cov : {CoverageArea::Realtime, CoverageArea::Regular, CoverageArea::Any}) {
                 if (backend.coverageArea(cov).uicCompanyCodes().contains(companyCode)) {
                     backendIds.push_back(backend.identifier());
                     break;
@@ -461,7 +464,7 @@ QStringList PublicTransport::suitableBackendsForReservation(KPublicTransport::Ma
             if (!mgr->isBackendEnabled(backend.identifier())) {
                 continue;
             }
-            for (const auto cov : { CoverageArea::Realtime, CoverageArea::Regular, CoverageArea::Any }) {
+            for (const auto cov : {CoverageArea::Realtime, CoverageArea::Regular, CoverageArea::Any}) {
                 if (backend.coverageArea(cov).vdvOrganizationIds().contains(vdvOrgId)) {
                     backendIds.push_back(backend.identifier());
                     break;
@@ -478,29 +481,29 @@ KOSMIndoorMap::Platform::Mode PublicTransport::lineModeToPlatformMode(KPublicTra
     using namespace KPublicTransport;
 
     switch (lineMode) {
-        case Line::Unknown:
-        case Line::AerialLift:
-        case Line::Air:
-        case Line::Boat:
-        case Line::Ferry:
-        case Line::Taxi:
-        case Line::RideShare:
-            return KOSMIndoorMap::Platform::Unknown;
-        case Line::Bus:
-        case Line::Coach:
-        case Line::Shuttle:
-            return KOSMIndoorMap::Platform::Bus;
-        case Line::Funicular:
-        case Line::LocalTrain:
-        case Line::LongDistanceTrain:
-        case Line::RailShuttle:
-        case Line::RapidTransit:
-        case Line::Train:
-            return KOSMIndoorMap::Platform::Rail;
-        case Line::Metro:
-            return KOSMIndoorMap::Platform::Subway;
-        case Line::Tramway:
-            return KOSMIndoorMap::Platform::Tram;
+    case Line::Unknown:
+    case Line::AerialLift:
+    case Line::Air:
+    case Line::Boat:
+    case Line::Ferry:
+    case Line::Taxi:
+    case Line::RideShare:
+        return KOSMIndoorMap::Platform::Unknown;
+    case Line::Bus:
+    case Line::Coach:
+    case Line::Shuttle:
+        return KOSMIndoorMap::Platform::Bus;
+    case Line::Funicular:
+    case Line::LocalTrain:
+    case Line::LongDistanceTrain:
+    case Line::RailShuttle:
+    case Line::RapidTransit:
+    case Line::Train:
+        return KOSMIndoorMap::Platform::Rail;
+    case Line::Metro:
+        return KOSMIndoorMap::Platform::Subway;
+    case Line::Tramway:
+        return KOSMIndoorMap::Platform::Tram;
     }
 
     return KOSMIndoorMap::Platform::Unknown;

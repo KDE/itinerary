@@ -7,14 +7,13 @@
 #ifndef SOLIDBRIGHTNESSBACKEND_H
 #define SOLIDBRIGHTNESSBACKEND_H
 
-#include <QObject>
 #include "brightnessmanager.h"
+#include <QObject>
 
 class OrgKdeSolidPowerManagementActionsBrightnessControlInterface;
 
 class SolidBrightnessBackend : public BrightnessBackend
 {
-
 public:
     explicit SolidBrightnessBackend(QObject *parent = nullptr);
     ~SolidBrightnessBackend() override;

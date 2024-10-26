@@ -6,11 +6,11 @@
 
 #include "testhelper.h"
 
-#include "timelinedelegatecontroller.h"
 #include "applicationcontroller.h"
 #include "importcontroller.h"
 #include "livedatamanager.h"
 #include "reservationmanager.h"
+#include "timelinedelegatecontroller.h"
 #include "transfermanager.h"
 #include "tripgroupmanager.h"
 
@@ -20,15 +20,15 @@
 #include <KPublicTransport/Journey>
 #include <KPublicTransport/JourneyRequest>
 
+#include <QJSValue>
 #include <QJsonDocument>
 #include <QJsonObject>
-#include <QJSValue>
-#include <QUrl>
 #include <QQmlEngine>
-#include <QtTest/qtest.h>
 #include <QSignalSpy>
 #include <QStandardPaths>
 #include <QTimeZone>
+#include <QUrl>
+#include <QtTest/qtest.h>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace KItinerary;
@@ -257,7 +257,8 @@ private Q_SLOTS:
         QSignalSpy rmSpy(&mgr, &ReservationManager::batchRemoved);
 
         // apply alternative with 3 segments to test segment insertion
-        const auto jny3 = KPublicTransport::Journey::fromJson(QJsonDocument::fromJson(readFile(QLatin1StringView(SOURCE_DIR "/data/publictransport/randa-zrh-3-sections.json"))).object());
+        const auto jny3 = KPublicTransport::Journey::fromJson(
+            QJsonDocument::fromJson(readFile(QLatin1StringView(SOURCE_DIR "/data/publictransport/randa-zrh-3-sections.json"))).object());
         controller.applyJourney(QVariant::fromValue(jny3), true);
         QCOMPARE(mgr.batches().size(), batchCount + 1);
         QCOMPARE(addSpy.size(), 3);
@@ -273,7 +274,8 @@ private Q_SLOTS:
         updateSpy.clear();
         contentSpy.clear();
         rmSpy.clear();
-        const auto jny2 = KPublicTransport::Journey::fromJson(QJsonDocument::fromJson(readFile(QLatin1StringView(SOURCE_DIR "/data/publictransport/randa-zrh-2-sections.json"))).object());
+        const auto jny2 = KPublicTransport::Journey::fromJson(
+            QJsonDocument::fromJson(readFile(QLatin1StringView(SOURCE_DIR "/data/publictransport/randa-zrh-2-sections.json"))).object());
         controller.applyJourney(QVariant::fromValue(jny2), true);
         QCOMPARE(mgr.batches().size(), batchCount);
         QCOMPARE(addSpy.size(), 0);

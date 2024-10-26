@@ -7,16 +7,15 @@
 
 #include <QAbstractListModel>
 
-
 namespace Quotient
 {
-    class Connection;
-    class Room;
+class Connection;
+class Room;
 }
 
 class MatrixRoomsModel : public QAbstractListModel
 {
-Q_OBJECT
+    Q_OBJECT
     Q_PROPERTY(Quotient::Connection *connection READ connection WRITE setConnection NOTIFY connectionChanged)
 
 public:
@@ -63,7 +62,7 @@ private Q_SLOTS:
     void deleteRoom(Quotient::Room *room);
     void refresh(Quotient::Room *room, const QList<int> &roles = {});
 
-  private:
+private:
     Quotient::Connection *m_connection = nullptr;
 
     QList<Quotient::Room *> m_rooms;

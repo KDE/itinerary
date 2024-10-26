@@ -22,8 +22,8 @@ public:
     ~TripGroupProxyModel() override;
 
     void setSourceModel(QAbstractItemModel *sourceModel) override;
-    QVariant data(const QModelIndex & index, int role) const override;
-    bool filterAcceptsRow(int source_row, const QModelIndex & source_parent) const override;
+    QVariant data(const QModelIndex &index, int role) const override;
+    bool filterAcceptsRow(int source_row, const QModelIndex &source_parent) const override;
 
     Q_INVOKABLE void collapse(const QString &groupId);
     Q_INVOKABLE void expand(const QString &groupId);

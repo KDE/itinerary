@@ -25,12 +25,13 @@ AndroidCalendarPlugin::AndroidCalendarPlugin(QObject *parent, const QVariantList
 
 AndroidCalendarPlugin::~AndroidCalendarPlugin() = default;
 
-QList<KCalendarCore::Calendar::Ptr> AndroidCalendarPlugin::calendars() const {
-  if (m_calendars.isEmpty()) {
-    loadCalendars();
-  }
+QList<KCalendarCore::Calendar::Ptr> AndroidCalendarPlugin::calendars() const
+{
+    if (m_calendars.isEmpty()) {
+        loadCalendars();
+    }
 
-  return m_calendars;
+    return m_calendars;
 }
 
 void AndroidCalendarPlugin::loadCalendars() const

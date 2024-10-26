@@ -12,9 +12,9 @@
 #include "tripgroupsplitmodel.h"
 
 #include <QAbstractItemModelTester>
-#include <QtTest/qtest.h>
 #include <QSignalSpy>
 #include <QStandardPaths>
+#include <QtTest/qtest.h>
 
 using namespace Qt::Literals;
 
@@ -115,7 +115,6 @@ private Q_SLOTS:
         QCOMPARE(model.index(4, 0).data(TripGroupSplitModel::SelectedRole).toBool(), true);
         QCOMPARE(model.index(5, 0).data(TripGroupSplitModel::SelectedRole).toBool(), false);
         QCOMPARE(model.index(10, 0).data(TripGroupSplitModel::SelectedRole).toBool(), false);
-
     }
 };
 QTEST_GUILESS_MAIN(TripGroupSplitModelTest)

@@ -34,7 +34,6 @@ void BrightnessManager::toggleBrightness()
     m_backend->toggleBrightness();
 }
 
-
 void BrightnessBackend::toggleBrightness()
 {
     if (m_maximized) {

@@ -110,7 +110,8 @@ QVariant TripGroupModel::data(const QModelIndex &index, int role) const
     case TripGroupIdRole:
         return tgId;
     case IsSingleDayRole:
-        return tripGroup.beginDateTime().isValid() && (!tripGroup.endDateTime().isValid() || tripGroup.beginDateTime().date() == tripGroup.endDateTime().date());
+        return tripGroup.beginDateTime().isValid()
+            && (!tripGroup.endDateTime().isValid() || tripGroup.beginDateTime().date() == tripGroup.endDateTime().date());
     default:
         return {};
     }
@@ -119,13 +120,13 @@ QVariant TripGroupModel::data(const QModelIndex &index, int role) const
 QHash<int, QByteArray> TripGroupModel::roleNames() const
 {
     return {
-        { Qt::DisplayRole, "name" },
-        { BeginRole, "begin" },
-        { EndRole, "end" },
-        { PositionRole, "position" },
-        { TripGroupRole, "tripGroup" },
-        { TripGroupIdRole, "tripGroupId" },
-        { IsSingleDayRole, "isSingleDay" },
+        {Qt::DisplayRole, "name"},
+        {BeginRole, "begin"},
+        {EndRole, "end"},
+        {PositionRole, "position"},
+        {TripGroupRole, "tripGroup"},
+        {TripGroupIdRole, "tripGroupId"},
+        {IsSingleDayRole, "isSingleDay"},
     };
 }
 
@@ -164,7 +165,7 @@ QStringList TripGroupModel::adjacentTripGroups(const QDateTime &from, const QDat
         res.push_back(*std::prev(it));
     }
 
-    for (;it != m_tripGroups.end(); ++it) {
+    for (; it != m_tripGroups.end(); ++it) {
         res.push_back(*it);
         if (from > m_tripGroupManager->tripGroup(*it).endDateTime()) {
             break;
@@ -181,7 +182,7 @@ QStringList TripGroupModel::intersectingTripGroups(const QDateTime &from, const 
     });
 
     QStringList res;
-    for (;it != m_tripGroups.end(); ++it) {
+    for (; it != m_tripGroups.end(); ++it) {
         const auto tg = m_tripGroupManager->tripGroup(*it);
         if (!tg.beginDateTime().isValid()) {
             continue;
@@ -251,7 +252,8 @@ QString TripGroupModel::currentTripGroupId() const
 QString TripGroupModel::currentBatchId() const
 {
     // find the closest trip group
-    auto tgIds = intersectingTripGroups(now().addSecs(-Constants::CurrentBatchTrailingMargin.count()), now().addSecs(Constants::CurrentBatchLeadingMargin.count()));
+    auto tgIds =
+        intersectingTripGroups(now().addSecs(-Constants::CurrentBatchTrailingMargin.count()), now().addSecs(Constants::CurrentBatchLeadingMargin.count()));
     while (tgIds.size() > 1) { // tgIds is sorted by trip group start time
         const auto tg1 = m_tripGroupManager->tripGroup(tgIds.at(tgIds.size() - 1));
         const auto tg2 = m_tripGroupManager->tripGroup(tgIds.at(tgIds.size() - 2));
@@ -440,7 +442,8 @@ void TripGroupModel::scheduleUpdate()
 void TripGroupModel::scheduleCurrentBatchTimer()
 {
     // find relevant trip groups
-    auto tgIds = intersectingTripGroups(now().addSecs(-Constants::CurrentBatchTrailingMargin.count()), now().addSecs(Constants::CurrentBatchLeadingMargin.count()));
+    auto tgIds =
+        intersectingTripGroups(now().addSecs(-Constants::CurrentBatchTrailingMargin.count()), now().addSecs(Constants::CurrentBatchLeadingMargin.count()));
     while (tgIds.size() > 1) { // tgIds is sorted by trip group start time
         const auto tg1 = m_tripGroupManager->tripGroup(tgIds.at(tgIds.size() - 1));
         const auto tg2 = m_tripGroupManager->tripGroup(tgIds.at(tgIds.size() - 2));

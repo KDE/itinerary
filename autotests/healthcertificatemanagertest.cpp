@@ -4,12 +4,12 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include <config-itinerary.h>
-#include "applicationcontroller.h"
 #include "healthcertificatemanager.h"
+#include "applicationcontroller.h"
 #include "importcontroller.h"
 #include "pkpassmanager.h"
 #include "reservationmanager.h"
+#include <config-itinerary.h>
 
 #include <QAbstractItemModelTester>
 #include <QSignalSpy>
@@ -65,7 +65,7 @@ private Q_SLOTS:
             QCOMPARE(insertSpy.size(), 1);
             QVERIFY(!mgr->data(mgr->index(0, 0), Qt::DisplayRole).toString().isEmpty());
             QVERIFY(!mgr->data(mgr->index(0, 0), HealthCertificateManager::CertificateRole).isNull());
-            QCOMPARE(mgr->data(mgr->index(0, 0), HealthCertificateManager::RawDataRole).toByteArray(),  rawData);
+            QCOMPARE(mgr->data(mgr->index(0, 0), HealthCertificateManager::RawDataRole).toByteArray(), rawData);
             QVERIFY(!mgr->data(mgr->index(0, 0), HealthCertificateManager::StorageIdRole).toString().isEmpty());
 
             QCOMPARE(infoSpy.size(), 1);
@@ -120,7 +120,6 @@ private Q_SLOTS:
             QAbstractItemModelTester modelTester(mgr);
             QSignalSpy insertSpy(mgr, &QAbstractItemModel::rowsInserted);
 
-
 #if HAVE_KHEALTHCERTIFICATE
             QCOMPARE(mgr->rowCount(), 1);
             const auto rawData = readFile(QLatin1StringView(SOURCE_DIR "/data/health-certificates/partial-vaccination.divoc"));
@@ -131,7 +130,7 @@ private Q_SLOTS:
             QCOMPARE(insertSpy.size(), 1);
             QVERIFY(!mgr->data(mgr->index(0, 0), Qt::DisplayRole).toString().isEmpty());
             QVERIFY(!mgr->data(mgr->index(0, 0), HealthCertificateManager::CertificateRole).isNull());
-            QCOMPARE(mgr->data(mgr->index(0, 0), HealthCertificateManager::RawDataRole).toByteArray(),  rawData);
+            QCOMPARE(mgr->data(mgr->index(0, 0), HealthCertificateManager::RawDataRole).toByteArray(), rawData);
             QVERIFY(!mgr->data(mgr->index(0, 0), HealthCertificateManager::StorageIdRole).toString().isEmpty());
 
             QCOMPARE(infoSpy.size(), 1);

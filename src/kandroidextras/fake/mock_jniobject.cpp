@@ -35,8 +35,8 @@ MockJniObjectBase::MockJniObjectBase(jobject object)
     addToProtocol(QLatin1StringView("ctor: o"));
 }
 
-MockJniObjectBase::MockJniObjectBase(const MockJniObjectBase&) = default;
-MockJniObjectBase & MockJniObjectBase::operator=(const MockJniObjectBase&) = default;
+MockJniObjectBase::MockJniObjectBase(const MockJniObjectBase &) = default;
+MockJniObjectBase &MockJniObjectBase::operator=(const MockJniObjectBase &) = default;
 MockJniObjectBase::~MockJniObjectBase() = default;
 
 QStringList MockJniObjectBase::protocol() const
@@ -76,5 +76,5 @@ void MockJniObjectBase::setValue(const QVariant &value)
 
 void MockJniObjectBase::setData(jobject object)
 {
-    d = reinterpret_cast<MockJniObjectBasePrivate*>(object);
+    d = reinterpret_cast<MockJniObjectBasePrivate *>(object);
 }

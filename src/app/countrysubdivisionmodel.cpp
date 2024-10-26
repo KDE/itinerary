@@ -52,10 +52,10 @@ QVariant CountrySubdivisionModel::data(const QModelIndex &index, int role) const
     }
 
     switch (role) {
-        case Qt::DisplayRole:
-            return m_subdivs.at(index.row()).name();
-        case CodeRole:
-            return m_subdivs.at(index.row()).code();
+    case Qt::DisplayRole:
+        return m_subdivs.at(index.row()).name();
+    case CodeRole:
+        return m_subdivs.at(index.row()).code();
     }
 
     return {};
@@ -73,7 +73,8 @@ int CountrySubdivisionModel::rowForNameOrCode(const QString &input) const
 {
     for (auto i = 0; i < m_subdivs.size(); ++i) {
         const auto subdiv = m_subdivs[i];
-        if (subdiv.code().compare(input, Qt::CaseInsensitive) == 0 || QStringView(subdiv.code()).mid(3).compare(input, Qt::CaseInsensitive) == 0 || subdiv.name().compare(input, Qt::CaseInsensitive) == 0) {
+        if (subdiv.code().compare(input, Qt::CaseInsensitive) == 0 || QStringView(subdiv.code()).mid(3).compare(input, Qt::CaseInsensitive) == 0
+            || subdiv.name().compare(input, Qt::CaseInsensitive) == 0) {
             return i;
         }
     }

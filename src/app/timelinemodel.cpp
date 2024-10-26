@@ -8,9 +8,9 @@
 #include "locationhelper.h"
 #include "locationinformation.h"
 #include "reservationmanager.h"
+#include "transfermanager.h"
 #include "tripgroup.h"
 #include "tripgroupmanager.h"
-#include "transfermanager.h"
 #include "weatherinformation.h"
 
 #include "weatherforecast.h"
@@ -55,8 +55,7 @@ static bool needsSplitting(const QVariant &res)
         return true;
     }
 
-    return JsonLd::isA<LodgingReservation>(res)
-        || JsonLd::isA<RentalCarReservation>(res);
+    return JsonLd::isA<LodgingReservation>(res) || JsonLd::isA<RentalCarReservation>(res);
 }
 
 static QTimeZone timeZone(const QDateTime &dt)
@@ -92,7 +91,7 @@ TimelineModel::TimelineModel(QObject *parent)
 
 TimelineModel::~TimelineModel() = default;
 
-void TimelineModel::setReservationManager(ReservationManager* mgr)
+void TimelineModel::setReservationManager(ReservationManager *mgr)
 {
     if (m_resMgr == mgr) {
         return;
@@ -109,7 +108,7 @@ void TimelineModel::setReservationManager(ReservationManager* mgr)
     QMetaObject::invokeMethod(this, &TimelineModel::populate, Qt::QueuedConnection);
 }
 
-void TimelineModel::setWeatherForecastManager(WeatherForecastManager* mgr)
+void TimelineModel::setWeatherForecastManager(WeatherForecastManager *mgr)
 {
     if (m_weatherMgr == mgr) {
         return;
@@ -121,7 +120,7 @@ void TimelineModel::setWeatherForecastManager(WeatherForecastManager* mgr)
     Q_EMIT setupChanged();
 }
 
-TripGroupManager* TimelineModel::tripGroupManager() const
+TripGroupManager *TimelineModel::tripGroupManager() const
 {
     return m_tripGroupManager;
 }
@@ -185,7 +184,7 @@ void TimelineModel::setTripGroupId(const QString &tgId)
     QMetaObject::invokeMethod(this, &TimelineModel::populate, Qt::QueuedConnection);
 }
 
-int TimelineModel::rowCount(const QModelIndex& parent) const
+int TimelineModel::rowCount(const QModelIndex &parent) const
 {
     if (parent.isValid() || !m_resMgr) {
         return 0;
@@ -193,7 +192,7 @@ int TimelineModel::rowCount(const QModelIndex& parent) const
     return (int)m_elements.size();
 }
 
-QVariant TimelineModel::data(const QModelIndex& index, int role) const
+QVariant TimelineModel::data(const QModelIndex &index, int role) const
 {
     if (!index.isValid() || !m_resMgr) {
         return {};
@@ -201,69 +200,68 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
 
     const auto &elem = m_elements.at(index.row());
     switch (role) {
-        case SectionHeaderRole:
-            // see TimelineSectionDelegateController
-            return elem.dt.date().toString(Qt::ISODate);
-        case BatchIdRole:
-            return elem.isReservation() ? elem.batchId() : QString();
-        case ElementTypeRole:
-            return elem.elementType;
-        case TodayEmptyRole:
-            if (elem.elementType == TimelineElement::TodayMarker) {
-                return isDateEmpty(m_elements.at(index.row()).dt.date());
-            }
-            return {};
-        case IsTodayRole:
-            return elem.dt.date() == today();
-        case ElementRangeRole:
-            return elem.rangeType;
-        case LocationInformationRole:
-            if (elem.elementType == TimelineElement::LocationInfo) {
-                return elem.content();
-            }
-            break;
-        case WeatherForecastRole:
-            if (elem.elementType == TimelineElement::WeatherForecast) {
-                return elem.content();
-            }
-            break;
-        case ReservationsRole:
-        {
-            if (!elem.isReservation()) {
-                return {};
-            }
-            const auto resIds = m_resMgr->reservationsForBatch(elem.batchId());
-            QList<QVariant> v;
-            v.reserve(resIds.size());
-            for (const auto &resId : resIds) {
-                v.push_back(m_resMgr->reservation(resId));
-            }
-            std::sort(v.begin(), v.end(), SortUtil::isBefore);
-            return QVariant::fromValue(v);
+    case SectionHeaderRole:
+        // see TimelineSectionDelegateController
+        return elem.dt.date().toString(Qt::ISODate);
+    case BatchIdRole:
+        return elem.isReservation() ? elem.batchId() : QString();
+    case ElementTypeRole:
+        return elem.elementType;
+    case TodayEmptyRole:
+        if (elem.elementType == TimelineElement::TodayMarker) {
+            return isDateEmpty(m_elements.at(index.row()).dt.date());
         }
-        case TripGroupIdRole:
-            if (elem.elementType == TimelineElement::TripGroup) {
-                return elem.content();
-            }
-            break;
-        case TripGroupRole:
-            if (elem.elementType == TimelineElement::TripGroup) {
-                return QVariant::fromValue(m_tripGroupManager->tripGroup(elem.content().toString()));
-            }
-            break;
-        case TransferRole:
-            if (elem.elementType == TimelineElement::Transfer) {
-                return elem.content();
-            }
-            break;
-        case StartDateTimeRole:
-            return elem.dt;
-        case EndDateTimeRole:
-            return elem.endDateTime();
-        case IsTimeboxedRole:
-            return elem.isTimeBoxed();
-        case IsCanceledRole:
-            return elem.isCanceled();
+        return {};
+    case IsTodayRole:
+        return elem.dt.date() == today();
+    case ElementRangeRole:
+        return elem.rangeType;
+    case LocationInformationRole:
+        if (elem.elementType == TimelineElement::LocationInfo) {
+            return elem.content();
+        }
+        break;
+    case WeatherForecastRole:
+        if (elem.elementType == TimelineElement::WeatherForecast) {
+            return elem.content();
+        }
+        break;
+    case ReservationsRole: {
+        if (!elem.isReservation()) {
+            return {};
+        }
+        const auto resIds = m_resMgr->reservationsForBatch(elem.batchId());
+        QList<QVariant> v;
+        v.reserve(resIds.size());
+        for (const auto &resId : resIds) {
+            v.push_back(m_resMgr->reservation(resId));
+        }
+        std::sort(v.begin(), v.end(), SortUtil::isBefore);
+        return QVariant::fromValue(v);
+    }
+    case TripGroupIdRole:
+        if (elem.elementType == TimelineElement::TripGroup) {
+            return elem.content();
+        }
+        break;
+    case TripGroupRole:
+        if (elem.elementType == TimelineElement::TripGroup) {
+            return QVariant::fromValue(m_tripGroupManager->tripGroup(elem.content().toString()));
+        }
+        break;
+    case TransferRole:
+        if (elem.elementType == TimelineElement::Transfer) {
+            return elem.content();
+        }
+        break;
+    case StartDateTimeRole:
+        return elem.dt;
+    case EndDateTimeRole:
+        return elem.endDateTime();
+    case IsTimeboxedRole:
+        return elem.isTimeBoxed();
+    case IsCanceledRole:
+        return elem.isCanceled();
     }
     return {};
 }
@@ -288,7 +286,9 @@ QHash<int, QByteArray> TimelineModel::roleNames() const
 
 int TimelineModel::todayRow() const
 {
-    const auto it = std::find_if(m_elements.begin(), m_elements.end(), [](const auto &e) { return e.elementType == TimelineElement::TodayMarker; });
+    const auto it = std::find_if(m_elements.begin(), m_elements.end(), [](const auto &e) {
+        return e.elementType == TimelineElement::TodayMarker;
+    });
     return it != m_elements.end() ? (int)std::distance(m_elements.begin(), it) : -1;
 }
 
@@ -421,7 +421,7 @@ void TimelineModel::batchChanged(const QString &resId)
     updateInformationElements();
 }
 
-void TimelineModel::batchRenamed(const QString& oldBatchId, const QString& newBatchId)
+void TimelineModel::batchRenamed(const QString &oldBatchId, const QString &newBatchId)
 {
     if (!m_isPopulated || !m_tripGroupId.isEmpty()) {
         return;
@@ -506,7 +506,8 @@ void TimelineModel::updateTodayMarker()
     auto dt = now();
     auto it = std::lower_bound(m_elements.begin(), m_elements.end(), dt);
 
-    if ((!m_tripGroup.beginDateTime().isValid() || m_tripGroup.beginDateTime().date() <= dt.date()) && (!m_tripGroup.endDateTime().isValid() || dt.date() <= m_tripGroup.endDateTime().date())) {
+    if ((!m_tripGroup.beginDateTime().isValid() || m_tripGroup.beginDateTime().date() <= dt.date())
+        && (!m_tripGroup.endDateTime().isValid() || dt.date() <= m_tripGroup.endDateTime().date())) {
         if (it != m_elements.begin()) {
             const auto prevIt = std::prev(it);
             // check if the previous element is the old today marker, if so nothing to do
@@ -621,7 +622,8 @@ void TimelineModel::updateInformationElements()
             auto endDt = searchWindowEnd;
             for (auto nextIt = it; std::next(nextIt) != m_elements.end();) {
                 ++nextIt;
-                if ((*nextIt).isInformational() || (*nextIt).isCanceled() || ((*nextIt).elementType == TimelineElement::Transfer && (*nextIt).content().value<Transfer>().state() != Transfer::Selected)) {
+                if ((*nextIt).isInformational() || (*nextIt).isCanceled()
+                    || ((*nextIt).elementType == TimelineElement::Transfer && (*nextIt).content().value<Transfer>().state() != Transfer::Selected)) {
                     continue;
                 }
                 endDt = std::min(endDt, (*nextIt).dt);
@@ -700,8 +702,7 @@ void TimelineModel::updateWeatherElements()
         ++it;
     }
 
-    while(it != m_elements.end() && date < maxForecastTime) {
-
+    while (it != m_elements.end() && date < maxForecastTime) {
         if ((*it).dt < date || (*it).elementType == TimelineElement::TodayMarker) {
             // clean up outdated weather elements (happens when merging previously split ranges)
             if ((*it).elementType == TimelineElement::WeatherForecast) {
@@ -794,7 +795,7 @@ void TimelineModel::updateWeatherElements()
     qDebug() << "weather recomputation done";
 }
 
-void TimelineModel::updateTransfersForBatch(const QString& batchId)
+void TimelineModel::updateTransfersForBatch(const QString &batchId)
 {
     if (!m_transferManager) {
         return;
@@ -835,7 +836,7 @@ void TimelineModel::setCurrentDateTime(const QDateTime &dt)
     }
 }
 
-void TimelineModel::tripGroupAdded(const QString& groupId)
+void TimelineModel::tripGroupAdded(const QString &groupId)
 {
     if (!m_isPopulated || !m_tripGroupId.isEmpty()) {
         return;
@@ -862,7 +863,7 @@ void TimelineModel::tripGroupAdded(const QString& groupId)
     }
 }
 
-void TimelineModel::tripGroupChanged(const QString& groupId)
+void TimelineModel::tripGroupChanged(const QString &groupId)
 {
     if (!m_isPopulated) {
         return;
@@ -890,7 +891,7 @@ void TimelineModel::tripGroupChanged(const QString& groupId)
     }
 }
 
-void TimelineModel::tripGroupRemoved(const QString& groupId)
+void TimelineModel::tripGroupRemoved(const QString &groupId)
 {
     if (!m_isPopulated) {
         return;
@@ -916,7 +917,7 @@ void TimelineModel::tripGroupRemoved(const QString& groupId)
     }
 }
 
-void TimelineModel::transferChanged(const Transfer& transfer)
+void TimelineModel::transferChanged(const Transfer &transfer)
 {
     if (!m_isPopulated || transfer.state() == Transfer::UndefinedState) {
         return;
@@ -955,8 +956,7 @@ void TimelineModel::transferRemoved(const QString &resId, Transfer::Alignment al
     }
 
     auto it = std::find_if(m_elements.begin(), m_elements.end(), [resId, alignment](const auto &e) {
-        return e.elementType == TimelineElement::Transfer && e.batchId() == resId
-            && e.content().template value<Transfer>().alignment() == alignment;
+        return e.elementType == TimelineElement::Transfer && e.batchId() == resId && e.content().template value<Transfer>().alignment() == alignment;
     });
     if (it == m_elements.end()) {
         return;

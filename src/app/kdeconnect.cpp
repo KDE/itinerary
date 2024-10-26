@@ -3,8 +3,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "config-itinerary.h"
 #include "kdeconnect.h"
+#include "config-itinerary.h"
 
 #if HAVE_DBUS
 #include <QDBusConnection>
@@ -20,7 +20,6 @@
 KDEConnectDeviceModel::KDEConnectDeviceModel(QObject *parent)
     : QAbstractListModel(parent)
 {
-
 }
 
 KDEConnectDeviceModel::~KDEConnectDeviceModel() = default;
@@ -76,10 +75,10 @@ QVariant KDEConnectDeviceModel::data(const QModelIndex &index, int role) const
     }
 
     switch (role) {
-        case DeviceNameRole:
-            return m_devices[index.row()].name;
-        case DeviceIdRole:
-            return m_devices[index.row()].deviceId;
+    case DeviceNameRole:
+        return m_devices[index.row()].name;
+    case DeviceIdRole:
+        return m_devices[index.row()].deviceId;
     }
 
     return {};

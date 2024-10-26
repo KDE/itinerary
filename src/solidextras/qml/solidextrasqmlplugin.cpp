@@ -16,20 +16,20 @@ class SolidExtrasQmlPlugin : public QQmlExtensionPlugin
 {
     Q_OBJECT
     Q_PLUGIN_METADATA(IID "org.qt-project.Qt.QQmlExtensionInterface")
-    void registerTypes(const char* uri) override;
+    void registerTypes(const char *uri) override;
 };
 
 using namespace SolidExtras;
 
-void SolidExtrasQmlPlugin::registerTypes(const char*)
+void SolidExtrasQmlPlugin::registerTypes(const char *)
 {
-    qmlRegisterSingletonType<NetworkStatus>("org.kde.solidextras", 1, 0, "BrightnessManager", [](QQmlEngine*, QJSEngine*) -> QObject* {
+    qmlRegisterSingletonType<NetworkStatus>("org.kde.solidextras", 1, 0, "BrightnessManager", [](QQmlEngine *, QJSEngine *) -> QObject * {
         return new BrightnessManager;
     });
-    qmlRegisterSingletonType<NetworkStatus>("org.kde.solidextras", 1, 0, "LockManager", [](QQmlEngine*, QJSEngine*) -> QObject* {
+    qmlRegisterSingletonType<NetworkStatus>("org.kde.solidextras", 1, 0, "LockManager", [](QQmlEngine *, QJSEngine *) -> QObject * {
         return new LockManager;
     });
-    qmlRegisterSingletonType<NetworkStatus>("org.kde.solidextras", 1, 0, "NetworkStatus", [](QQmlEngine*, QJSEngine*) -> QObject* {
+    qmlRegisterSingletonType<NetworkStatus>("org.kde.solidextras", 1, 0, "NetworkStatus", [](QQmlEngine *, QJSEngine *) -> QObject * {
         return new NetworkStatus;
     });
 }

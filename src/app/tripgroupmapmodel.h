@@ -14,8 +14,7 @@
 #include <QColor>
 #include <QObject>
 
-struct MapPathEntry
-{
+struct MapPathEntry {
     Q_GADGET
     Q_PROPERTY(KPublicTransport::JourneySection journeySection MEMBER journeySection CONSTANT)
     Q_PROPERTY(QColor color MEMBER color CONSTANT)
@@ -29,8 +28,7 @@ public:
     double width = 1.0;
 };
 
-struct MapPointEntry
-{
+struct MapPointEntry {
     Q_GADGET
     Q_PROPERTY(KPublicTransport::Location location MEMBER location CONSTANT)
     Q_PROPERTY(QColor color MEMBER color CONSTANT)
@@ -49,9 +47,9 @@ class TripGroupMapModel : public QObject
     Q_OBJECT
 
     Q_PROPERTY(QString tripGroupId MEMBER m_tripGroupId NOTIFY tripGroupIdChanged FINAL)
-    Q_PROPERTY(TripGroupManager* tripGroupManager MEMBER m_tripGroupMgr NOTIFY setupChanged FINAL)
-    Q_PROPERTY(LiveDataManager* liveDataManager MEMBER m_liveDataMgr NOTIFY setupChanged FINAL)
-    Q_PROPERTY(TransferManager* transferManager MEMBER m_transferMgr NOTIFY setupChanged FINAL)
+    Q_PROPERTY(TripGroupManager *tripGroupManager MEMBER m_tripGroupMgr NOTIFY setupChanged FINAL)
+    Q_PROPERTY(LiveDataManager *liveDataManager MEMBER m_liveDataMgr NOTIFY setupChanged FINAL)
+    Q_PROPERTY(TransferManager *transferManager MEMBER m_transferMgr NOTIFY setupChanged FINAL)
 
     Q_PROPERTY(QList<MapPathEntry> journeySections READ journeySections NOTIFY contentChanged FINAL)
     Q_PROPERTY(QList<MapPointEntry> points READ points NOTIFY contentChanged FINAL)

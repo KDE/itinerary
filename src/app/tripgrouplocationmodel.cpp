@@ -13,7 +13,7 @@
 using namespace KItinerary;
 
 TripGroupLocationModel::TripGroupLocationModel(QObject *parent)
-    :QAbstractListModel(parent)
+    : QAbstractListModel(parent)
 {
     connect(this, &TripGroupLocationModel::setupChanged, this, &TripGroupLocationModel::populate);
 }
@@ -48,11 +48,16 @@ QVariant TripGroupLocationModel::data(const QModelIndex &index, int role) const
 
     const auto &entry = m_locations[index.row()];
     switch (role) {
-        case LocationRole: return entry.location;
-        case LocationNameRole: return entry.location.name();
-        case LastUsedRole: return entry.lastUse;
-        case UseCountRole: return entry.useCount;
-        case IsRemovableRole: return false;
+    case LocationRole:
+        return entry.location;
+    case LocationNameRole:
+        return entry.location.name();
+    case LastUsedRole:
+        return entry.lastUse;
+    case UseCountRole:
+        return entry.useCount;
+    case IsRemovableRole:
+        return false;
     }
     return {};
 }

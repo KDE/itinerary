@@ -38,7 +38,9 @@ OsmImportJob::OsmImportJob(OSM::Type type, OSM::Id id, QNetworkAccessManager *na
     req.setHeader(QNetworkRequest::UserAgentHeader, ApplicationController::userAgent());
     auto reply = nam->get(req);
     reply->setParent(this);
-    connect(reply, &QNetworkReply::finished, this, [reply, this]() { handleReply(reply); });
+    connect(reply, &QNetworkReply::finished, this, [reply, this]() {
+        handleReply(reply);
+    });
 }
 
 OsmImportJob::~OsmImportJob() = default;
@@ -65,7 +67,12 @@ void OsmImportJob::handleReply(QNetworkReply *reply)
         if (reader->hasError()) {
             m_errorMsg = reader->errorString();
         } else {
-            OSM::for_each(dataSet, [&dataSet](OSM::Element e) { e.recomputeBoundingBox(dataSet); },  OSM::IncludeRelations | OSM::IncludeWays);
+            OSM::for_each(
+                dataSet,
+                [&dataSet](OSM::Element e) {
+                    e.recomputeBoundingBox(dataSet);
+                },
+                OSM::IncludeRelations | OSM::IncludeWays);
             m_result = convertElement(OSM::lookupElement(dataSet, m_type, m_id));
         }
     }
@@ -86,7 +93,7 @@ void OsmImportJob::handleReply(QNetworkReply *reply)
     return addr;
 }
 
-template <typename P>
+template<typename P>
 static void convertContactData(P &p, OSM::Element e)
 {
     p.setUrl(QUrl(QString::fromUtf8(e.tagValue("website", "contact:website", "url", "operator:website"))));
@@ -98,9 +105,7 @@ QVariant OsmImportJob::convertElement(OSM::Element e)
 {
     const auto building = e.tagValue("building");
     const auto tourism = e.tagValue("tourism");
-    if (tourism == "apartment" || tourism == "chalet" || tourism == "guest_house" || tourism == "hostel" || tourism == "hotel"
-     || building == "hotel")
-    {
+    if (tourism == "apartment" || tourism == "chalet" || tourism == "guest_house" || tourism == "hostel" || tourism == "hotel" || building == "hotel") {
         KItinerary::LodgingBusiness h;
         h.setName(QString::fromUtf8(e.tagValue(OSM::Languages::fromQLocale(QLocale()), "name", "loc_name", "int_name", "brand")));
         h.setGeo(KItinerary::GeoCoordinates(e.center().latF(), e.center().lonF())); // TODO for ways we could check for the entrance node even
@@ -110,9 +115,8 @@ QVariant OsmImportJob::convertElement(OSM::Element e)
     }
 
     const auto amenity = e.tagValue("amenity");
-    if (amenity == "bar" || amenity == "biergarten" || amenity == "cafe" || amenity == "fast_food"
-     || amenity == "ice_cream" || amenity == "pub" || amenity == "restaurant")
-    {
+    if (amenity == "bar" || amenity == "biergarten" || amenity == "cafe" || amenity == "fast_food" || amenity == "ice_cream" || amenity == "pub"
+        || amenity == "restaurant") {
         KItinerary::FoodEstablishment r;
         r.setName(QString::fromUtf8(e.tagValue(OSM::Languages::fromQLocale(QLocale()), "name", "loc_name", "int_name", "brand")));
         r.setGeo(KItinerary::GeoCoordinates(e.center().latF(), e.center().lonF())); // TODO for ways we could check for the entrance node even
@@ -124,11 +128,9 @@ QVariant OsmImportJob::convertElement(OSM::Element e)
     const auto leisure = e.tagValue("leisure");
     const auto office = e.tagValue("office");
     if (amenity == "cinema" || amenity == "conference_centre" || amenity == "events_venue" || amenity == "exhibition_centre" || amenity == "theatre"
-        || leisure == "escape_game" || leisure == "minature_golf" || leisure == "stadium" || leisure == "water_park"
-        || !office.isEmpty()
-        || (!building.isEmpty() && building != "no")
-        || tourism == "attraction" || tourism == "gallery" || tourism == "museum" || tourism == "theme_park" || tourism == "zoo")
-    {
+        || leisure == "escape_game" || leisure == "minature_golf" || leisure == "stadium" || leisure == "water_park" || !office.isEmpty()
+        || (!building.isEmpty() && building != "no") || tourism == "attraction" || tourism == "gallery" || tourism == "museum" || tourism == "theme_park"
+        || tourism == "zoo") {
         KItinerary::Place loc;
         loc.setName(QString::fromUtf8(e.tagValue(OSM::Languages::fromQLocale(QLocale()), "name", "loc_name", "int_name", "brand")));
         loc.setGeo(KItinerary::GeoCoordinates(e.center().latF(), e.center().lonF())); // TODO for ways we could check for the entrance node even

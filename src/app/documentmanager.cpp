@@ -22,27 +22,27 @@
 
 using namespace KItinerary;
 
-DocumentManager::DocumentManager(QObject* parent)
+DocumentManager::DocumentManager(QObject *parent)
     : QObject(parent)
 {
 }
 
 DocumentManager::~DocumentManager() = default;
 
-QList<QString> DocumentManager::documents() const {
-  QList<QString> docs;
+QList<QString> DocumentManager::documents() const
+{
+    QList<QString> docs;
 
-  QDirIterator it(basePath(), QDir::Dirs | QDir::NoDotAndDotDot,
-                  QDirIterator::NoIteratorFlags);
-  while (it.hasNext()) {
-    it.next();
-    docs.push_back(it.fileName());
-  }
+    QDirIterator it(basePath(), QDir::Dirs | QDir::NoDotAndDotDot, QDirIterator::NoIteratorFlags);
+    while (it.hasNext()) {
+        it.next();
+        docs.push_back(it.fileName());
+    }
 
-  return docs;
+    return docs;
 }
 
-bool DocumentManager::hasDocument(const QString& id) const
+bool DocumentManager::hasDocument(const QString &id) const
 {
     return QDir(basePath() + id).exists();
 }
@@ -103,7 +103,7 @@ void DocumentManager::addDocument(const QString &id, const QVariant &info, const
     Q_EMIT documentAdded(id);
 }
 
-void DocumentManager::addDocument(const QString& id, const QVariant& info, const QString& filePath)
+void DocumentManager::addDocument(const QString &id, const QVariant &info, const QString &filePath)
 {
     if (!JsonLd::canConvert<CreativeWork>(info)) {
         qCWarning(Log) << "Invalid document meta data" << info;
@@ -138,7 +138,7 @@ void DocumentManager::addDocument(const QString& id, const QVariant& info, const
     Q_EMIT documentAdded(id);
 }
 
-void DocumentManager::removeDocument(const QString& id)
+void DocumentManager::removeDocument(const QString &id)
 {
     const QString path = basePath() + id;
     QDir docDir(path);

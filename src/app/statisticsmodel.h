@@ -25,12 +25,7 @@ class StatisticsItem
     Q_PROPERTY(Trend trend MEMBER m_trend CONSTANT)
 
 public:
-    enum Trend {
-        TrendUnknown,
-        TrendUp,
-        TrendDown,
-        TrendUnchanged
-    };
+    enum Trend { TrendUnknown, TrendUp, TrendDown, TrendUnchanged };
     Q_ENUM(Trend)
 
     StatisticsItem();
@@ -75,16 +70,16 @@ class StatisticsModel : public QObject
     Q_PROPERTY(StatisticsItem boatDistance READ boatDistance NOTIFY changed)
     Q_PROPERTY(StatisticsItem boatCO2 READ boatCO2 NOTIFY changed)
 
-    Q_PROPERTY(ReservationManager* reservationManager READ reservationManager WRITE setReservationManager NOTIFY setupChanged)
-    Q_PROPERTY(TripGroupManager* tripGroupManager READ tripGroupManager WRITE setTripGroupManager NOTIFY setupChanged)
+    Q_PROPERTY(ReservationManager *reservationManager READ reservationManager WRITE setReservationManager NOTIFY setupChanged)
+    Q_PROPERTY(TripGroupManager *tripGroupManager READ tripGroupManager WRITE setTripGroupManager NOTIFY setupChanged)
 
 public:
     explicit StatisticsModel(QObject *parent = nullptr);
     ~StatisticsModel() override;
 
-    ReservationManager* reservationManager() const;
+    ReservationManager *reservationManager() const;
     void setReservationManager(ReservationManager *resMgr);
-    TripGroupManager* tripGroupManager() const;
+    TripGroupManager *tripGroupManager() const;
     void setTripGroupManager(TripGroupManager *tripGroupMgr);
 
     Q_INVOKABLE void setTimeRange(const QDate &begin, const QDate &end);

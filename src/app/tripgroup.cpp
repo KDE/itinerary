@@ -52,9 +52,15 @@ void TripGroup::setIsAutomaticallyGrouped(bool automatic)
     m_automaticallyGrouped = automatic;
 }
 
-QList<QString> TripGroup::elements() const { return m_elements; }
+QList<QString> TripGroup::elements() const
+{
+    return m_elements;
+}
 
-void TripGroup::setElements(const QList<QString> &elems) { m_elements = elems; }
+void TripGroup::setElements(const QList<QString> &elems)
+{
+    m_elements = elems;
+}
 
 QJsonObject TripGroup::toJson(const TripGroup &group)
 {

@@ -14,21 +14,22 @@ class QJniObject;
 class QString;
 class QUrl;
 
-namespace KAndroidExtras {
+namespace KAndroidExtras
+{
 
 /** Methods for working with Android's ContentResolver. */
 namespace ContentResolver
 {
-    /** Get the JNI content resolver. */
-    KANDROIDEXTRAS_EXPORT QJniObject get();
+/** Get the JNI content resolver. */
+KANDROIDEXTRAS_EXPORT QJniObject get();
 
-    /** Returns the mime type of the given content: URL.
-     * @see Android ContentResolver.getType
-     */
-    KANDROIDEXTRAS_EXPORT QString mimeType(const QUrl &url);
+/** Returns the mime type of the given content: URL.
+ * @see Android ContentResolver.getType
+ */
+KANDROIDEXTRAS_EXPORT QString mimeType(const QUrl &url);
 
-    /** File name of a file provided by a content: URL. */
-    KANDROIDEXTRAS_EXPORT QString fileName(const QUrl &url);
+/** File name of a file provided by a content: URL. */
+KANDROIDEXTRAS_EXPORT QString fileName(const QUrl &url);
 }
 
 }

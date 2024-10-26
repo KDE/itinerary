@@ -21,17 +21,17 @@ using namespace Qt::Literals::StringLiterals;
 {
     QString typeStr;
     switch (type) {
-        case LiveData::Departure:
-            typeStr = u"departure"_s;
-            break;
-        case LiveData::Arrival:
-            typeStr = u"arrival"_s;
-            break;
-        case LiveData::Journey:
-            typeStr = u"journey"_s;
-            break;
-        default:
-            assert(false);
+    case LiveData::Departure:
+        typeStr = u"departure"_s;
+        break;
+    case LiveData::Arrival:
+        typeStr = u"arrival"_s;
+        break;
+    case LiveData::Journey:
+        typeStr = u"journey"_s;
+        break;
+    default:
+        assert(false);
     }
     return QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + "/publictransport/"_L1 + typeStr + '/'_L1;
 }
@@ -65,10 +65,17 @@ void LiveData::setStopover(LiveData::Type type, const KPublicTransport::Stopover
 void LiveData::setTimestamp(LiveData::Type type, const QDateTime &dt)
 {
     switch (type) {
-        case LiveData::Departure: departureTimestamp = dt; break;
-        case LiveData::Arrival: arrivalTimestamp = dt; break;
-        case LiveData::Journey: journeyTimestamp = dt; break;
-        default: assert(false);
+    case LiveData::Departure:
+        departureTimestamp = dt;
+        break;
+    case LiveData::Arrival:
+        arrivalTimestamp = dt;
+        break;
+    case LiveData::Journey:
+        journeyTimestamp = dt;
+        break;
+    default:
+        assert(false);
     }
 }
 
@@ -127,9 +134,9 @@ void LiveData::store(const QString &resId, int types) const
     }
 }
 
-void LiveData::remove(const QString& resId)
+void LiveData::remove(const QString &resId)
 {
-    for (auto type : { Departure, Arrival, Journey }) {
+    for (auto type : {Departure, Arrival, Journey}) {
         storeOne(resId, type, {}, {});
     }
 }
@@ -152,7 +159,7 @@ static void listOne(LiveData::Type type, std::vector<QString> &ids)
 std::vector<QString> LiveData::listAll()
 {
     std::vector<QString> ids;
-    for (auto type : { Departure, Arrival, Journey }) {
+    for (auto type : {Departure, Arrival, Journey}) {
         listOne(type, ids);
     }
     return ids;
@@ -184,7 +191,7 @@ LiveData LiveData::fromJson(const QJsonObject &obj)
 
 void LiveData::clearStorage()
 {
-    for (auto type : { Departure, Arrival, Journey }) {
+    for (auto type : {Departure, Arrival, Journey}) {
         const auto path = basePath(type);
         if (path.isEmpty()) {
             continue; // just to not accidentally kill everything...

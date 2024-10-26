@@ -24,9 +24,9 @@
 #include <QTimeZone>
 
 #ifdef Q_OS_ANDROID
+#include "kandroidextras/javalocale.h"
 #include "kandroidextras/javatypes.h"
 #include "kandroidextras/jnisignature.h"
-#include "kandroidextras/javalocale.h"
 
 using namespace KAndroidExtras;
 #endif
@@ -69,9 +69,8 @@ QString Localizer::formatAddress(const QVariant &obj) const
 
 static bool addressEmptyExceptForCountry(const KContacts::Address &address)
 {
-    return address.street().isEmpty() && address.locality().isEmpty()
-            && address.postalCode().isEmpty() && address.region().isEmpty()
-            && !address.country().isEmpty();
+    return address.street().isEmpty() && address.locality().isEmpty() && address.postalCode().isEmpty() && address.region().isEmpty()
+        && !address.country().isEmpty();
 }
 
 QString Localizer::formatAddressWithContext(const QVariant &obj, const QVariant &otherObj, const QString &homeCountryIsoCode)
@@ -129,10 +128,14 @@ static QString tzAbbreviation(const QDateTime &dt)
 #ifdef Q_OS_ANDROID
     // the QTimeZone backend implementation on Android isn't as complete as the desktop ones, so we need to do this ourselves here
     // eventually, this should be upstreamed to Qt
-    auto abbr = QJniObject::callStaticObjectMethod("org/kde/itinerary/QTimeZone", "abbreviation",
-                    Jni::signature<java::lang::String(java::lang::String, jlong, java::util::Locale, bool)>(),
-                    QJniObject::fromString(QString::fromUtf8(tz.id())).object(), dt.toMSecsSinceEpoch(),
-                    KAndroidExtras::Locale::current().object(), tz.isDaylightTime(dt)).toString();
+    auto abbr = QJniObject::callStaticObjectMethod("org/kde/itinerary/QTimeZone",
+                                                   "abbreviation",
+                                                   Jni::signature<java::lang::String(java::lang::String, jlong, java::util::Locale, bool)>(),
+                                                   QJniObject::fromString(QString::fromUtf8(tz.id())).object(),
+                                                   dt.toMSecsSinceEpoch(),
+                                                   KAndroidExtras::Locale::current().object(),
+                                                   tz.isDaylightTime(dt))
+                    .toString();
 
     if (!abbr.isEmpty()) {
         return abbr;
@@ -174,7 +177,7 @@ QString Localizer::formatDate(const QVariant &obj, const QString &propertyName) 
     return QLocale().toString(dt, QLocale::ShortFormat);
 }
 
-QString Localizer::formatDateTime(const QVariant& obj, const QString& propertyName) const
+QString Localizer::formatDateTime(const QVariant &obj, const QString &propertyName) const
 {
     const auto dt = JsonLdDocument::readProperty(obj, propertyName.toUtf8().constData()).toDateTime();
     if (!dt.isValid()) {
@@ -188,7 +191,7 @@ QString Localizer::formatDateTime(const QVariant& obj, const QString& propertyNa
     return s;
 }
 
-QString Localizer::formatDateOrDateTimeLocal(const QVariant& obj, const QString& propertyName) const
+QString Localizer::formatDateOrDateTimeLocal(const QVariant &obj, const QString &propertyName) const
 {
     const auto dt = JsonLdDocument::readProperty(obj, propertyName.toUtf8().constData()).toDateTime();
     if (!dt.isValid()) {
@@ -217,9 +220,9 @@ QString Localizer::formatDistance(int meter)
         return i18nc("distance in meter", "%1 m", meter);
     }
     if (meter < 10000) {
-        return i18nc("distance in kilometer", "%1 km", ((int)meter/100)/10.0);
+        return i18nc("distance in kilometer", "%1 km", ((int)meter / 100) / 10.0);
     }
-    return i18nc("distance in kilometer", "%1 km", (int)qRound(meter/1000.0));
+    return i18nc("distance in kilometer", "%1 km", (int)qRound(meter / 1000.0));
 }
 
 QString Localizer::formatSpeed(int km_per_hour)
@@ -234,10 +237,9 @@ QString Localizer::formatWeight(int gram)
         return i18nc("weight in gram", "%1 g", gram);
     }
     if (gram < 10000) {
-        return i18nc("weight in kilogram", "%1 kg", ((int)gram/100)/10.0);
+        return i18nc("weight in kilogram", "%1 kg", ((int)gram / 100) / 10.0);
     }
-    return i18nc("weight in kilogram", "%1 kg", (int)qRound(gram/1000.0));
-
+    return i18nc("weight in kilogram", "%1 kg", (int)qRound(gram / 1000.0));
 }
 
 QString Localizer::formatTemperature(double temperature)

@@ -17,7 +17,7 @@ MatrixController::MatrixController(QObject *parent)
     : QObject(parent)
 {
 #if HAVE_MATRIX
-    qRegisterMetaType<MatrixManager*>();
+    qRegisterMetaType<MatrixManager *>();
     m_mgr = new MatrixManager(this);
 #endif
 }
@@ -33,7 +33,7 @@ bool MatrixController::isAvailable()
 #endif
 }
 
-QObject* MatrixController::manager() const
+QObject *MatrixController::manager() const
 {
 #if HAVE_MATRIX
     return m_mgr;
@@ -42,13 +42,15 @@ QObject* MatrixController::manager() const
 #endif
 }
 
-QAbstractItemModel* MatrixController::roomsModel()
+QAbstractItemModel *MatrixController::roomsModel()
 {
 #if HAVE_MATRIX
     if (!m_roomsModel) {
         auto roomsModel = new MatrixRoomsModel(this);
         roomsModel->setConnection(m_mgr->connection());
-        connect(m_mgr, &MatrixManager::connectionChanged, roomsModel, [roomsModel, this]() { roomsModel->setConnection(m_mgr->connection()); });
+        connect(m_mgr, &MatrixManager::connectionChanged, roomsModel, [roomsModel, this]() {
+            roomsModel->setConnection(m_mgr->connection());
+        });
 
         m_roomsModel = new MatrixRoomsSortProxyModel(this);
         m_roomsModel->setSourceModel(roomsModel);

@@ -7,11 +7,12 @@
 #define KANDROIDEXTRAS_CALENDARCONTRACT_H
 
 #include <KAndroidExtras/AndroidTypes>
+#include <KAndroidExtras/JavaTypes>
 #include <KAndroidExtras/JniObject>
 #include <KAndroidExtras/JniProperty>
-#include <KAndroidExtras/JavaTypes>
 
-namespace KAndroidExtras {
+namespace KAndroidExtras
+{
 
 /** CalendarContracts.EventColumns wrapper. */
 class CalendarColumns

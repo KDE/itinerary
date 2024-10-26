@@ -8,8 +8,8 @@
 #include <QDebug>
 
 #ifdef Q_OS_ANDROID
-#include <KAndroidExtras/ManifestPermission>
 #include "private/qandroidextras_p.h"
+#include <KAndroidExtras/ManifestPermission>
 #endif
 
 #ifdef Q_OS_ANDROID
@@ -17,14 +17,14 @@ static QString permissionName(Permission::Permission p)
 {
     using namespace KAndroidExtras;
     switch (p) {
-        case Permission::InvalidPermission:
-            Q_UNREACHABLE();
-        case Permission::ReadCalendar:
-            return ManifestPermission::READ_CALENDAR;
-        case Permission::WriteCalendar:
-            return ManifestPermission::WRITE_CALENDAR;
-        case Permission::Camera:
-            return ManifestPermission::CAMERA;
+    case Permission::InvalidPermission:
+        Q_UNREACHABLE();
+    case Permission::ReadCalendar:
+        return ManifestPermission::READ_CALENDAR;
+    case Permission::WriteCalendar:
+        return ManifestPermission::WRITE_CALENDAR;
+    case Permission::Camera:
+        return ManifestPermission::CAMERA;
     }
 }
 #endif

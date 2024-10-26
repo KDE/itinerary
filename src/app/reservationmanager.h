@@ -13,7 +13,6 @@
 #include <QObject>
 #include <QVariant>
 
-
 /** Manages JSON-LD reservation data.
  *  This is done on two levels:
  *  - the raw individual reservation elements (one per traveler and per trip)
@@ -54,7 +53,7 @@ public:
     QList<QString> addReservationsWithPostProcessing(const QList<QVariant> &resData);
     Q_INVOKABLE QString addReservationWithPostProcessing(const QVariant &resData);
 
-    const std::vector<QString>& batches() const;
+    const std::vector<QString> &batches() const;
     bool hasBatch(const QString &batchId) const;
     QString batchForReservation(const QString &resId) const;
     Q_INVOKABLE QStringList reservationsForBatch(const QString &batchId) const;

@@ -24,7 +24,7 @@ StatisticsTimeRangeModel::StatisticsTimeRangeModel(QObject *parent)
 
 StatisticsTimeRangeModel::~StatisticsTimeRangeModel() = default;
 
-ReservationManager* StatisticsTimeRangeModel::reservationManager() const
+ReservationManager *StatisticsTimeRangeModel::reservationManager() const
 {
     return m_resMgr;
 }
@@ -64,21 +64,21 @@ int StatisticsTimeRangeModel::rowCount(const QModelIndex &parent) const
 QVariant StatisticsTimeRangeModel::data(const QModelIndex &index, int role) const
 {
     switch (role) {
-        case Qt::DisplayRole:
-            if (index.row() == 0) {
-                return i18n("Total");
-            }
-            return QLocale().toString(QDate(m_years[index.row() - 1], 1, 1), QStringLiteral("yyyy"));
-        case BeginRole:
-            if (index.row() == 0 || index.row() == (int)m_years.size()) { // first range is open ended here, to skip trend computation
-                return QDate();
-            }
-            return QDate(m_years[index.row() - 1], 1, 1);
-        case EndRole:
-            if (index.row() == 0) {
-                return QDate();
-            }
-            return QDate(m_years[index.row() - 1], 12, 31);
+    case Qt::DisplayRole:
+        if (index.row() == 0) {
+            return i18n("Total");
+        }
+        return QLocale().toString(QDate(m_years[index.row() - 1], 1, 1), QStringLiteral("yyyy"));
+    case BeginRole:
+        if (index.row() == 0 || index.row() == (int)m_years.size()) { // first range is open ended here, to skip trend computation
+            return QDate();
+        }
+        return QDate(m_years[index.row() - 1], 1, 1);
+    case EndRole:
+        if (index.row() == 0) {
+            return QDate();
+        }
+        return QDate(m_years[index.row() - 1], 12, 31);
     }
 
     return {};

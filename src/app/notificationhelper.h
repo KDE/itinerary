@@ -9,20 +9,21 @@
 
 #include "livedata.h"
 
-namespace KPublicTransport {
+namespace KPublicTransport
+{
 class Stopover;
 }
 
 /** Helper methods for generating notifications about itinerary changes. */
 namespace NotificationHelper
 {
-    /** Checks whether something relevant changed and we should notify about this. */
-    bool shouldNotify(const KPublicTransport::Stopover &oldStop, const KPublicTransport::Stopover &newStop, LiveData::Type context);
+/** Checks whether something relevant changed and we should notify about this. */
+bool shouldNotify(const KPublicTransport::Stopover &oldStop, const KPublicTransport::Stopover &newStop, LiveData::Type context);
 
-    /** Returns the title string for the disruption notification for @p data. */
-    QString title(const LiveData &data);
-    /** Returns the message text for the disruption notification for @p data. */
-    QString message(const LiveData &data);
+/** Returns the title string for the disruption notification for @p data. */
+QString title(const LiveData &data);
+/** Returns the message text for the disruption notification for @p data. */
+QString message(const LiveData &data);
 }
 
 #endif // NOTIFICATIONHELPER_H

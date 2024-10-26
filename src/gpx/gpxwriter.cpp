@@ -8,7 +8,7 @@
 
 #include <QDateTime>
 
-Gpx::Writer::Writer(QIODevice* device)
+Gpx::Writer::Writer(QIODevice *device)
     : m_writer(device)
 {
     m_writer.setAutoFormatting(true);
@@ -69,7 +69,7 @@ void Gpx::Writer::writeEndRoutePoint()
     m_writer.writeEndElement();
 }
 
-void Gpx::Writer::writeName(const QString& name)
+void Gpx::Writer::writeName(const QString &name)
 {
     m_writer.writeTextElement(QStringLiteral("name"), name);
 }

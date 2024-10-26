@@ -7,10 +7,10 @@
 #include "transfermanager.h"
 
 #include "constants.h"
-#include "jsonio.h"
-#include "logging.h"
 #include "favoritelocationmodel.h"
+#include "jsonio.h"
 #include "livedatamanager.h"
+#include "logging.h"
 #include "publictransport.h"
 #include "reservationhelper.h"
 #include "reservationmanager.h"
@@ -51,9 +51,9 @@ TransferManager::~TransferManager() = default;
 void TransferManager::setReservationManager(ReservationManager *resMgr)
 {
     m_resMgr = resMgr;
-    connect(m_resMgr, &ReservationManager::batchAdded, this, qOverload<const QString&>(&TransferManager::checkReservation));
-    connect(m_resMgr, &ReservationManager::batchChanged, this, qOverload<const QString&>(&TransferManager::checkReservation));
-    connect(m_resMgr, &ReservationManager::batchContentChanged, this, qOverload<const QString&>(&TransferManager::checkReservation));
+    connect(m_resMgr, &ReservationManager::batchAdded, this, qOverload<const QString &>(&TransferManager::checkReservation));
+    connect(m_resMgr, &ReservationManager::batchChanged, this, qOverload<const QString &>(&TransferManager::checkReservation));
+    connect(m_resMgr, &ReservationManager::batchContentChanged, this, qOverload<const QString &>(&TransferManager::checkReservation));
     connect(m_resMgr, &ReservationManager::batchRemoved, this, &TransferManager::reservationRemoved);
     rescan();
 }
@@ -61,7 +61,9 @@ void TransferManager::setReservationManager(ReservationManager *resMgr)
 void TransferManager::setFavoriteLocationModel(FavoriteLocationModel *favLocModel)
 {
     m_favLocModel = favLocModel;
-    connect(m_favLocModel, &FavoriteLocationModel::rowsInserted, this, [this]() { rescan(true); });
+    connect(m_favLocModel, &FavoriteLocationModel::rowsInserted, this, [this]() {
+        rescan(true);
+    });
     rescan();
 }
 
@@ -81,7 +83,7 @@ void TransferManager::setLiveDataManager(LiveDataManager *liveDataMgr)
         // TODO if there's existing transfer, check if we miss this now
         // if so: warn and search for a new one if auto transfers are enabled
     });
-    connect(m_liveDataMgr, &LiveDataManager::journeyUpdated, this, qOverload<const QString&>(&TransferManager::checkReservation), Qt::QueuedConnection);
+    connect(m_liveDataMgr, &LiveDataManager::journeyUpdated, this, qOverload<const QString &>(&TransferManager::checkReservation), Qt::QueuedConnection);
     rescan();
 }
 
@@ -117,7 +119,7 @@ void TransferManager::setJourneyForTransfer(Transfer transfer, const KPublicTran
     Q_EMIT transferChanged(transfer);
 }
 
-Transfer TransferManager::setFavoriteLocationForTransfer(Transfer transfer, const FavoriteLocation& favoriteLocation)
+Transfer TransferManager::setFavoriteLocationForTransfer(Transfer transfer, const FavoriteLocation &favoriteLocation)
 {
     if (transfer.floatingLocationType() != Transfer::FavoriteLocation) {
         qCWarning(Log) << "Attempting to changing transfer floating location of wrong type";
@@ -150,7 +152,7 @@ void TransferManager::discardTransfer(Transfer transfer)
     addOrUpdateTransfer(transfer);
 }
 
-bool TransferManager::canAddTransfer(const QString& resId, Transfer::Alignment alignment) const
+bool TransferManager::canAddTransfer(const QString &resId, Transfer::Alignment alignment) const
 {
     auto t = transfer(resId, alignment);
     if (t.state() == Transfer::Selected || t.state() == Transfer::Pending) {
@@ -166,7 +168,7 @@ bool TransferManager::canAddTransfer(const QString& resId, Transfer::Alignment a
     return canAdd && t.hasLocations() && t.anchorTime().isValid();
 }
 
-Transfer TransferManager::addTransfer(const QString& resId, Transfer::Alignment alignment)
+Transfer TransferManager::addTransfer(const QString &resId, Transfer::Alignment alignment)
 {
     const auto res = m_resMgr->reservation(resId);
 
@@ -264,18 +266,18 @@ void TransferManager::checkReservation(const QString &resId, const QVariant &res
 
     const auto action = alignment == Transfer::Before ? checkTransferBefore(resId, res, t) : checkTransferAfter(resId, res, t);
     switch (action) {
-        case ShouldAutoAdd:
-            // don't auto-add transfers that would require name-based searches, that's not reliable enough
-            if (t.hasCoordinates()) {
-                addOrUpdateTransfer(t);
-                break;
-            }
-            [[fallthrough]];
-        case CanAddManually:
+    case ShouldAutoAdd:
+        // don't auto-add transfers that would require name-based searches, that's not reliable enough
+        if (t.hasCoordinates()) {
+            addOrUpdateTransfer(t);
             break;
-        case ShouldRemove:
-            removeTransfer(t);
-            break;
+        }
+        [[fallthrough]];
+    case CanAddManually:
+        break;
+    case ShouldRemove:
+        removeTransfer(t);
+        break;
     }
 }
 
@@ -354,7 +356,8 @@ TransferManager::CheckTransferResult TransferManager::checkTransferBefore(const 
     // check if there is a transfer after prevRes already
     const auto prevTransfer = this->transfer(prevResId, Transfer::After);
     if (prevTransfer.state() != Transfer::UndefinedState && prevTransfer.state() != Transfer::Discarded) {
-        if (prevTransfer.floatingLocationType() == Transfer::FavoriteLocation && KPublicTransport::Location::distance(transfer.to(), prevTransfer.to()) < Constants::MaximumFavoriteLocationTransferDistance) {
+        if (prevTransfer.floatingLocationType() == Transfer::FavoriteLocation
+            && KPublicTransport::Location::distance(transfer.to(), prevTransfer.to()) < Constants::MaximumFavoriteLocationTransferDistance) {
             transfer.setFrom(prevTransfer.to());
             transfer.setFromName(prevTransfer.toName());
             transfer.setFloatingLocationType(Transfer::FavoriteLocation);
@@ -374,7 +377,8 @@ TransferManager::CheckTransferResult TransferManager::checkTransferBefore(const 
     const auto departureTime = SortUtil::startDateTime(res);
     const std::chrono::seconds layoverTime(arrivalTime.secsTo(departureTime));
 
-    if (!toLoc.isNull() && !prevLoc.isNull() && isLikelyNotSameLocation(toLoc, prevLoc) && isPlausibleDistance(toLoc, prevLoc) && layoverTime < Constants::FavoriteLocationAutoTransferThreshold) {
+    if (!toLoc.isNull() && !prevLoc.isNull() && isLikelyNotSameLocation(toLoc, prevLoc) && isPlausibleDistance(toLoc, prevLoc)
+        && layoverTime < Constants::FavoriteLocationAutoTransferThreshold) {
         transfer.setFrom(PublicTransport::locationFromPlace(prevLoc, prevRes));
         transfer.setFromName(LocationUtil::name(prevLoc));
         transfer.setFloatingLocationType(Transfer::Reservation);
@@ -382,13 +386,16 @@ TransferManager::CheckTransferResult TransferManager::checkTransferBefore(const 
     }
 
     // transfer to favorite at destination of a roundtrip trip group, or when the time gap is sufficiently large in general
-    if (LocationUtil::isLocationChange(res) && ((LocationUtil::isLocationChange(prevRes) && LocationUtil::isSameLocation(toLoc, prevLoc, LocationUtil::CityLevel)) || layoverTime > Constants::FavoriteLocationAutoTransferThreshold)) {
+    if (LocationUtil::isLocationChange(res)
+        && ((LocationUtil::isLocationChange(prevRes) && LocationUtil::isSameLocation(toLoc, prevLoc, LocationUtil::CityLevel))
+            || layoverTime > Constants::FavoriteLocationAutoTransferThreshold)) {
         transfer.setFloatingLocationType(Transfer::FavoriteLocation);
         const auto f = pickFavorite(toLoc, resId, Transfer::Before);
         transfer.setFrom(locationFromFavorite(f));
         transfer.setFromName(f.name());
-        return layoverTime < Constants::MaximumLayoverTime ? ShouldRemove
-             : layoverTime < Constants::FavoriteLocationAutoTransferThreshold ? CanAddManually : ShouldAutoAdd;
+        return layoverTime < Constants::MaximumLayoverTime                   ? ShouldRemove
+            : layoverTime < Constants::FavoriteLocationAutoTransferThreshold ? CanAddManually
+                                                                             : ShouldAutoAdd;
     }
 
     return ShouldRemove;
@@ -436,12 +443,13 @@ TransferManager::CheckTransferResult TransferManager::checkTransferAfter(const Q
     // check if there is a transfer before nextRes already
     const auto nextTransfer = this->transfer(nextResId, Transfer::Before);
     if (nextTransfer.state() != Transfer::UndefinedState && nextTransfer.state() != Transfer::Discarded) {
-        if (nextTransfer.floatingLocationType() == Transfer::FavoriteLocation && KPublicTransport::Location::distance(transfer.from(), nextTransfer.from()) < Constants::MaximumFavoriteLocationTransferDistance) {
+        if (nextTransfer.floatingLocationType() == Transfer::FavoriteLocation
+            && KPublicTransport::Location::distance(transfer.from(), nextTransfer.from()) < Constants::MaximumFavoriteLocationTransferDistance) {
             transfer.setTo(nextTransfer.from());
             transfer.setToName(nextTransfer.fromName());
             transfer.setFloatingLocationType(Transfer::FavoriteLocation);
             const std::chrono::seconds layoverTime(SortUtil::endDateTime(res).secsTo(nextTransfer.anchorTime()));
-            return layoverTime < Constants::FavoriteLocationAutoTransferThreshold ? CanAddManually :ShouldAutoAdd;
+            return layoverTime < Constants::FavoriteLocationAutoTransferThreshold ? CanAddManually : ShouldAutoAdd;
         }
         return ShouldRemove;
     }
@@ -456,7 +464,8 @@ TransferManager::CheckTransferResult TransferManager::checkTransferAfter(const Q
     const auto departureTime = SortUtil::startDateTime(nextRes);
     const std::chrono::seconds layoverTime(arrivalTime.secsTo(departureTime));
 
-    if (!fromLoc.isNull() && !nextLoc.isNull() && isLikelyNotSameLocation(fromLoc, nextLoc) && isPlausibleDistance(fromLoc, nextLoc) && layoverTime < Constants::FavoriteLocationAutoTransferThreshold) {
+    if (!fromLoc.isNull() && !nextLoc.isNull() && isLikelyNotSameLocation(fromLoc, nextLoc) && isPlausibleDistance(fromLoc, nextLoc)
+        && layoverTime < Constants::FavoriteLocationAutoTransferThreshold) {
         qDebug() << "AFTER" << res << nextRes << LocationUtil::name(fromLoc) << LocationUtil::name(nextLoc) << transfer.anchorTime() << isLocationChange;
         transfer.setTo(PublicTransport::locationFromPlace(nextLoc, nextRes));
         transfer.setToName(LocationUtil::name(nextLoc));
@@ -465,13 +474,16 @@ TransferManager::CheckTransferResult TransferManager::checkTransferAfter(const Q
     }
 
     // transfer to favorite at destination of a roundtrip trip group, or when the time gap is sufficiently large in general
-    if (LocationUtil::isLocationChange(res) && ((LocationUtil::isLocationChange(nextRes) && LocationUtil::isSameLocation(fromLoc, nextLoc, LocationUtil::CityLevel)) || layoverTime > Constants::FavoriteLocationAutoTransferThreshold)) {
+    if (LocationUtil::isLocationChange(res)
+        && ((LocationUtil::isLocationChange(nextRes) && LocationUtil::isSameLocation(fromLoc, nextLoc, LocationUtil::CityLevel))
+            || layoverTime > Constants::FavoriteLocationAutoTransferThreshold)) {
         transfer.setFloatingLocationType(Transfer::FavoriteLocation);
         const auto f = pickFavorite(fromLoc, resId, Transfer::After);
         transfer.setTo(locationFromFavorite(f));
         transfer.setToName(f.name());
-        return layoverTime < Constants::MaximumLayoverTime ? ShouldRemove
-             : layoverTime < Constants::FavoriteLocationAutoTransferThreshold ? CanAddManually : ShouldAutoAdd;
+        return layoverTime < Constants::MaximumLayoverTime                   ? ShouldRemove
+            : layoverTime < Constants::FavoriteLocationAutoTransferThreshold ? CanAddManually
+                                                                             : ShouldAutoAdd;
     }
 
     return ShouldRemove;
@@ -491,12 +503,12 @@ void TransferManager::reservationRemoved(const QString &resId)
 // default transfer anchor deltas (in minutes)
 enum { FlightDelta, TrainDelta, BusDelta, BoatDelta, RestaurantDelta, FallbackDelta };
 static constexpr const int default_deltas[][2] = {
-    { 90, 30 }, // Flight
-    { 20, 10 }, // Train
-    { 15, 10 }, // Bus
-    { 60, 30 }, // Boat/Ferry
-    {  5,  5 }, // Restaurant
-    { 30, 15 }, // anything else
+    {90, 30}, // Flight
+    {20, 10}, // Train
+    {15, 10}, // Bus
+    {60, 30}, // Boat/Ferry
+    {5, 5}, // Restaurant
+    {30, 15}, // anything else
 };
 
 void TransferManager::determineAnchorDeltaDefault(Transfer &transfer, const QVariant &res) const
@@ -530,7 +542,7 @@ QDateTime TransferManager::anchorTimeBefore(const QString &resId, const QVariant
             return departure.expectedDepartureTime();
         }
     }
-        if (JsonLd::isA<FlightReservation>(res)) {
+    if (JsonLd::isA<FlightReservation>(res)) {
         const auto flight = res.value<FlightReservation>().reservationFor().value<Flight>();
         if (flight.boardingTime().isValid()) {
             return flight.boardingTime();
@@ -654,7 +666,7 @@ static QString transferBasePath()
     return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1StringView("/transfers/");
 }
 
-Transfer TransferManager::readFromFile(const QString& resId, Transfer::Alignment alignment) const
+Transfer TransferManager::readFromFile(const QString &resId, Transfer::Alignment alignment) const
 {
     const QString fileName = transferBasePath() + Transfer::identifier(resId, alignment) + QLatin1StringView(".json");
     QFile f(fileName);

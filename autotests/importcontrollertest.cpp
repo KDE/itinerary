@@ -126,7 +126,8 @@ private Q_SLOTS:
         QCOMPARE(ctrl.documents().size(), 0);
         QCOMPARE(showImportPageSpy.size(), 0);
 
-        resMgr.addReservation(KItinerary::JsonLdDocument::fromJson(QJsonDocument::fromJson(Test::readFile(QLatin1StringView(SOURCE_DIR "/data/4U8465-v1.json"))).array()).at(0));
+        resMgr.addReservation(
+            KItinerary::JsonLdDocument::fromJson(QJsonDocument::fromJson(Test::readFile(QLatin1StringView(SOURCE_DIR "/data/4U8465-v1.json"))).array()).at(0));
         QCOMPARE(resMgr.batches().size(), 1);
 
         ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/4U8465-cancel.json")));
@@ -183,7 +184,7 @@ private Q_SLOTS:
         QVERIFY(format.load(calendar, QLatin1StringView(SOURCE_DIR "/data/randa2017.ics")));
 
         QCOMPARE(ctrl.hasSelection(), false);
-        ctrl.m_todayOverride = { 2017, 6, 27 };
+        ctrl.m_todayOverride = {2017, 6, 27};
         ctrl.importFromCalendar(calendar.data());
 
         QCOMPARE(ctrl.rowCount(), 5);
@@ -304,7 +305,10 @@ private Q_SLOTS:
     {
         ImportController ctrl;
         QAbstractItemModelTester modelTest(&ctrl);
-        ctrl.importData("{\"@context\": \"http://schema.org\", \"@type\": \"Event\", \"location\": { \"@type\": \"Place\", \"address\": { \"@type\": \"PostalAddress\", \"addressCountry\": \"CH\", \"addressLocality\": \"Randa\", \"addressRegion\": \"Wallis\", \"postalCode\": \"3928\", \"streetAddress\": \"Haus Maria am Weg\" }, \"geo\": { \"@type\": \"GeoCoordinates\", \"latitude\": 46.09903, \"longitude\": 7.78326 }, \"name\": \"Haus Randa\"} }");
+        ctrl.importData(
+            "{\"@context\": \"http://schema.org\", \"@type\": \"Event\", \"location\": { \"@type\": \"Place\", \"address\": { \"@type\": \"PostalAddress\", "
+            "\"addressCountry\": \"CH\", \"addressLocality\": \"Randa\", \"addressRegion\": \"Wallis\", \"postalCode\": \"3928\", \"streetAddress\": \"Haus "
+            "Maria am Weg\" }, \"geo\": { \"@type\": \"GeoCoordinates\", \"latitude\": 46.09903, \"longitude\": 7.78326 }, \"name\": \"Haus Randa\"} }");
 
         QCOMPARE(ctrl.rowCount(), 1);
         auto idx = ctrl.index(0, 0);

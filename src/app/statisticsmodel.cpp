@@ -5,8 +5,8 @@
 */
 
 #include "statisticsmodel.h"
-#include "locationhelper.h"
 #include "localizer.h"
+#include "locationhelper.h"
 #include "reservationmanager.h"
 #include "tripgroup.h"
 #include "tripgroupmanager.h"
@@ -46,7 +46,7 @@ StatisticsModel::StatisticsModel(QObject *parent)
 
 StatisticsModel::~StatisticsModel() = default;
 
-ReservationManager* StatisticsModel::reservationManager() const
+ReservationManager *StatisticsModel::reservationManager() const
 {
     return m_resMgr;
 }
@@ -61,12 +61,12 @@ void StatisticsModel::setReservationManager(ReservationManager *resMgr)
     Q_EMIT setupChanged();
 }
 
-TripGroupManager* StatisticsModel::tripGroupManager() const
+TripGroupManager *StatisticsModel::tripGroupManager() const
 {
     return m_tripGroupMgr;
 }
 
-void StatisticsModel::setTripGroupManager(TripGroupManager* tripGroupMgr)
+void StatisticsModel::setTripGroupManager(TripGroupManager *tripGroupMgr)
 {
     if (m_tripGroupMgr == tripGroupMgr) {
         return;
@@ -239,7 +239,7 @@ int StatisticsModel::co2emission(StatisticsModel::AggregateType type, int distan
     return distance * emissionPerKm[type];
 }
 
-void StatisticsModel::computeStats(const QVariant& res, int (&statData)[AGGREGATE_TYPE_COUNT][STAT_TYPE_COUNT])
+void StatisticsModel::computeStats(const QVariant &res, int (&statData)[AGGREGATE_TYPE_COUNT][STAT_TYPE_COUNT])
 {
     const auto type = typeForReservation(res);
     const auto dist = distance(res);
@@ -317,9 +317,11 @@ void StatisticsModel::recompute()
 
         if (!isPrev) {
             auto c = LocationHelper::departureCountry(res);
-            if (!c.isEmpty()) m_countries.insert(c);
+            if (!c.isEmpty())
+                m_countries.insert(c);
             c = LocationHelper::destinationCountry(res);
-            if (!c.isEmpty()) m_countries.insert(c);
+            if (!c.isEmpty())
+                m_countries.insert(c);
         }
     }
 

@@ -4,9 +4,9 @@
 */
 
 #include "kandroidextras/jnimethod.h"
-#include "kandroidextras/jnitypes.h"
 #include "kandroidextras/intent.h"
 #include "kandroidextras/javatypes.h"
+#include "kandroidextras/jnitypes.h"
 
 #include <QtTest/qtest.h>
 
@@ -48,11 +48,11 @@ public:
     JNI_CONSTRUCTOR(TestClass, bool)
 
     // basic C++ types that do not map to JNI (must not compile)
-//     JNI_METHOD(void, setUnsigned, uint32_t)
-//     JNI_STATIC_METHOD(void, setStaticUnsigned, uint64_t)
-//     JNI_METHOD(char, charReturn)
-//     JNI_STATIC_METHOD(uint64_t, staticCharReturn);
-//     JNI_CONSTRUCTOR(TestClass, char)
+    //     JNI_METHOD(void, setUnsigned, uint32_t)
+    //     JNI_STATIC_METHOD(void, setStaticUnsigned, uint64_t)
+    //     JNI_METHOD(char, charReturn)
+    //     JNI_STATIC_METHOD(uint64_t, staticCharReturn);
+    //     JNI_CONSTRUCTOR(TestClass, char)
 
     friend class JniMethodTest;
 };
@@ -68,7 +68,7 @@ private Q_SLOTS:
         QString s = obj.getName();
         Q_UNUSED(s);
         obj.setName(QStringLiteral("bla"));
-         // explicit cast needed when coming from untyped JNI handler
+        // explicit cast needed when coming from untyped JNI handler
         obj.setName(Jni::Object<java::lang::String>(QJniObject::fromString(QStringLiteral("bla"))));
         int i = obj.getFlags();
         Q_UNUSED(i);

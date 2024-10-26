@@ -7,13 +7,13 @@
 #include "testhelper.h"
 
 #include "applicationcontroller.h"
-#include "pkpassmanager.h"
-#include "reservationmanager.h"
 #include "documentmanager.h"
 #include "favoritelocationmodel.h"
 #include "importcontroller.h"
 #include "livedatamanager.h"
 #include "passmanager.h"
+#include "pkpassmanager.h"
+#include "reservationmanager.h"
 #include "transfermanager.h"
 #include "tripgroupmanager.h"
 
@@ -21,11 +21,11 @@
 #include <KItinerary/ExtractorCapabilities>
 #include <KItinerary/File>
 
-#include <QUrl>
-#include <QtTest/qtest.h>
 #include <QSignalSpy>
 #include <QStandardPaths>
 #include <QTemporaryFile>
+#include <QUrl>
+#include <QtTest/qtest.h>
 
 using namespace Qt::Literals::StringLiterals;
 

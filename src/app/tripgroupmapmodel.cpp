@@ -37,7 +37,7 @@ QList<MapPathEntry> TripGroupMapModel::journeySections() const
     return m_journeySections;
 }
 
-QList<MapPointEntry>TripGroupMapModel::points() const
+QList<MapPointEntry> TripGroupMapModel::points() const
 {
     return m_points;
 }
@@ -95,7 +95,8 @@ void TripGroupMapModel::recompute()
             point.color = BACKROUND_COLOR;
             point.textColor = FOREGOUND_COLOR;
             point.iconName = ReservationHelper::defaultIconName(res);
-            m_boundingBox |= QRectF(QPointF(point.location.longitude(), point.location.latitude()), QPointF(point.location.longitude(), point.location.latitude()));
+            m_boundingBox |=
+                QRectF(QPointF(point.location.longitude(), point.location.latitude()), QPointF(point.location.longitude(), point.location.latitude()));
             m_points.push_back(std::move(point));
         }
 
@@ -128,36 +129,36 @@ void TripGroupMapModel::expandJourneySection(KPublicTransport::JourneySection jn
     entry.textColor = FOREGOUND_COLOR;
 
     switch (jnySec.mode()) {
-        case JourneySection::Invalid:
-        case JourneySection::Waiting:
-            return;
-        case JourneySection::PublicTransport:
-            if (jnySec.route().line().hasColor()) {
-                entry.color = jnySec.route().line().color();
-            }
-            if (jnySec.route().line().hasTextColor()) {
-                entry.textColor = jnySec.route().line().textColor();
-            }
-            entry.width = jnySec.route().line().mode() == Line::Mode::Air ? 2.0 : 10.0;
-            break;
-        case JourneySection::Walking:
-        case JourneySection::Transfer:
-        case JourneySection::IndividualTransport:
-        case JourneySection::RentedVehicle:
-            entry.width = 4.0;
-            break;
+    case JourneySection::Invalid:
+    case JourneySection::Waiting:
+        return;
+    case JourneySection::PublicTransport:
+        if (jnySec.route().line().hasColor()) {
+            entry.color = jnySec.route().line().color();
+        }
+        if (jnySec.route().line().hasTextColor()) {
+            entry.textColor = jnySec.route().line().textColor();
+        }
+        entry.width = jnySec.route().line().mode() == Line::Mode::Air ? 2.0 : 10.0;
+        break;
+    case JourneySection::Walking:
+    case JourneySection::Transfer:
+    case JourneySection::IndividualTransport:
+    case JourneySection::RentedVehicle:
+        entry.width = 4.0;
+        break;
     }
 
     // generate path if missing
     if (jnySec.path().sections().empty()) {
         PathSection pathSec;
-        pathSec.setPath({ QPointF{jnySec.from().longitude(), jnySec.from().latitude()}, QPointF{jnySec.to().longitude(), jnySec.to().latitude()}});
+        pathSec.setPath({QPointF{jnySec.from().longitude(), jnySec.from().latitude()}, QPointF{jnySec.to().longitude(), jnySec.to().latitude()}});
         Path path;
         path.setSections({pathSec});
         jnySec.setPath(path);
     }
 
-    for (const auto &pathSec: jnySec.path().sections()) {
+    for (const auto &pathSec : jnySec.path().sections()) {
         m_boundingBox |= pathSec.path().boundingRect();
     }
 

@@ -4,8 +4,8 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "config-itinerary.h"
 #include "settings.h"
+#include "config-itinerary.h"
 
 #include <KCountry>
 
@@ -49,7 +49,7 @@ QVariant Settings::read(const QString &key, const QVariant &defaultValue)
     return s.value(key, defaultValue);
 }
 
-void Settings::write(const QString& key, const QVariant& value)
+void Settings::write(const QString &key, const QVariant &value)
 {
     QSettings s;
     s.setValue(key, value);
@@ -93,7 +93,7 @@ QString Settings::homeCountryIsoCode() const
     return m_homeCountry;
 }
 
-void Settings::setHomeCountryIsoCode(const QString& isoCode)
+void Settings::setHomeCountryIsoCode(const QString &isoCode)
 {
     if (m_homeCountry == isoCode) {
         return;

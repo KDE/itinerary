@@ -10,16 +10,16 @@
 #include <KItinerary/Reservation>
 #include <KItinerary/TrainTrip>
 
-#include <KPublicTransport/Line>
 #include <KPublicTransport/Journey>
+#include <KPublicTransport/Line>
 #include <KPublicTransport/Stopover>
 
-#include <QtTest/qtest.h>
 #include <QDateTime>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QStandardPaths>
 #include <QTimeZone>
+#include <QtTest/qtest.h>
 
 #define s(x) QStringLiteral(x)
 
@@ -45,7 +45,8 @@ private Q_SLOTS:
 
     void testMatchSubJourney()
     {
-        const auto journey = KPublicTransport::Journey::fromJson(QJsonDocument::fromJson(Test::readFile(QLatin1StringView(SOURCE_DIR "/data/publictransport/db-wifi-journey.json"))).object());
+        const auto journey = KPublicTransport::Journey::fromJson(
+            QJsonDocument::fromJson(Test::readFile(QLatin1StringView(SOURCE_DIR "/data/publictransport/db-wifi-journey.json"))).object());
         QCOMPARE(journey.sections().size(), 1);
 
         KItinerary::TrainStation departure, arrival;

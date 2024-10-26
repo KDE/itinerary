@@ -10,9 +10,9 @@
 #include <KAndroidExtras/Intent>
 #include <KAndroidExtras/JniSignature>
 
+#include "private/qandroidextras_p.h"
 #include <QCoreApplication>
 #include <QJniEnvironment>
-#include "private/qandroidextras_p.h"
 
 using namespace KAndroidExtras;
 

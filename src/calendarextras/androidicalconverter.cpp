@@ -21,11 +21,12 @@
 
 using namespace Qt::Literals::StringLiterals;
 
-namespace ical {
-    using property_ptr = std::unique_ptr<icalproperty, decltype(&icalproperty_free)>;
+namespace ical
+{
+using property_ptr = std::unique_ptr<icalproperty, decltype(&icalproperty_free)>;
 }
 
-KCalendarCore::Event::Ptr AndroidIcalConverter::readEvent(const JniEventData& data)
+KCalendarCore::Event::Ptr AndroidIcalConverter::readEvent(const JniEventData &data)
 {
     if (!KAndroidExtras::Jni::handle(data).isValid()) {
         return nullptr;
@@ -164,24 +165,24 @@ JniEventData AndroidIcalConverter::writeEvent(const KCalendarCore::Event::Ptr &e
     }
 
     switch (event->secrecy()) {
-        case KCalendarCore::Event::SecrecyPrivate:
-            data.accessLevel = KAndroidExtras::EventsColumns::ACCESS_PRIVATE;
-            break;
-        case KCalendarCore::Event::SecrecyConfidential:
-            data.accessLevel = KAndroidExtras::EventsColumns::ACCESS_CONFIDENTIAL;
-            break;
-        case KCalendarCore::Event::SecrecyPublic:
-            data.accessLevel = KAndroidExtras::EventsColumns::ACCESS_PUBLIC;
-            break;
+    case KCalendarCore::Event::SecrecyPrivate:
+        data.accessLevel = KAndroidExtras::EventsColumns::ACCESS_PRIVATE;
+        break;
+    case KCalendarCore::Event::SecrecyConfidential:
+        data.accessLevel = KAndroidExtras::EventsColumns::ACCESS_CONFIDENTIAL;
+        break;
+    case KCalendarCore::Event::SecrecyPublic:
+        data.accessLevel = KAndroidExtras::EventsColumns::ACCESS_PUBLIC;
+        break;
     }
 
     switch (event->transparency()) {
-        case KCalendarCore::Event::Transparent:
-            data.availability = KAndroidExtras::EventsColumns::AVAILABILITY_FREE;
-            break;
-        case KCalendarCore::Event::Opaque:
-            data.availability = KAndroidExtras::EventsColumns::AVAILABILITY_BUSY;
-            break;
+    case KCalendarCore::Event::Transparent:
+        data.availability = KAndroidExtras::EventsColumns::AVAILABILITY_FREE;
+        break;
+    case KCalendarCore::Event::Opaque:
+        data.availability = KAndroidExtras::EventsColumns::AVAILABILITY_BUSY;
+        break;
     }
 
     data.organizer = event->organizer().email();
@@ -254,20 +255,20 @@ JniReminderData AndroidIcalConverter::writeAlarm(const KCalendarCore::Alarm::Ptr
     JniReminderData data;
     data.minutes = -alarm->startOffset().asSeconds() / 60;
     switch (alarm->type()) {
-        case KCalendarCore::Alarm::Audio:
-        case KCalendarCore::Alarm::Display:
-        case KCalendarCore::Alarm::Procedure:
-        case KCalendarCore::Alarm::Invalid:
-            data.method = KAndroidExtras::RemindersColumns::METHOD_ALERT;
-            break;
-        case KCalendarCore::Alarm::Email:
-            data.method = KAndroidExtras::RemindersColumns::METHOD_EMAIL;
-            break;
+    case KCalendarCore::Alarm::Audio:
+    case KCalendarCore::Alarm::Display:
+    case KCalendarCore::Alarm::Procedure:
+    case KCalendarCore::Alarm::Invalid:
+        data.method = KAndroidExtras::RemindersColumns::METHOD_ALERT;
+        break;
+    case KCalendarCore::Alarm::Email:
+        data.method = KAndroidExtras::RemindersColumns::METHOD_EMAIL;
+        break;
     }
     return data;
 }
 
-KCalendarCore::Attendee AndroidIcalConverter::readAttendee(const JniAttendeeData& data)
+KCalendarCore::Attendee AndroidIcalConverter::readAttendee(const JniAttendeeData &data)
 {
     KCalendarCore::Attendee attendee(data.name, data.email);
 
@@ -315,51 +316,51 @@ JniAttendeeData AndroidIcalConverter::writeAttendee(const KCalendarCore::Attende
     data.email = attendee.email();
 
     switch (attendee.cuType()) {
-        case KCalendarCore::Attendee::Individual:
-        case KCalendarCore::Attendee::Group:
-        case KCalendarCore::Attendee::Unknown:
-            data.relationship = KAndroidExtras::AttendeesColumns::RELATIONSHIP_ATTENDEE;
-            break;
-        case KCalendarCore::Attendee::Room:
-        case KCalendarCore::Attendee::Resource:
-            data.type = KAndroidExtras::AttendeesColumns::TYPE_RESOURCE;
-            break;
+    case KCalendarCore::Attendee::Individual:
+    case KCalendarCore::Attendee::Group:
+    case KCalendarCore::Attendee::Unknown:
+        data.relationship = KAndroidExtras::AttendeesColumns::RELATIONSHIP_ATTENDEE;
+        break;
+    case KCalendarCore::Attendee::Room:
+    case KCalendarCore::Attendee::Resource:
+        data.type = KAndroidExtras::AttendeesColumns::TYPE_RESOURCE;
+        break;
     }
 
     switch (attendee.role()) {
-        case KCalendarCore::Attendee::ReqParticipant:
-            data.type = KAndroidExtras::AttendeesColumns::TYPE_REQUIRED;
-            break;
-        case KCalendarCore::Attendee::OptParticipant:
-            data.type = KAndroidExtras::AttendeesColumns::TYPE_OPTIONAL;
-            break;
-        case KCalendarCore::Attendee::NonParticipant:
-            data.type = KAndroidExtras::AttendeesColumns::TYPE_NONE;
-            break;
-        case KCalendarCore::Attendee::Chair:
-            // TODO?
-            break;
+    case KCalendarCore::Attendee::ReqParticipant:
+        data.type = KAndroidExtras::AttendeesColumns::TYPE_REQUIRED;
+        break;
+    case KCalendarCore::Attendee::OptParticipant:
+        data.type = KAndroidExtras::AttendeesColumns::TYPE_OPTIONAL;
+        break;
+    case KCalendarCore::Attendee::NonParticipant:
+        data.type = KAndroidExtras::AttendeesColumns::TYPE_NONE;
+        break;
+    case KCalendarCore::Attendee::Chair:
+        // TODO?
+        break;
     }
 
     switch (attendee.status()) {
-        case KCalendarCore::Attendee::NeedsAction:
-            data.status = KAndroidExtras::AttendeesColumns::ATTENDEE_STATUS_INVITED;
-            break;
-        case KCalendarCore::Attendee::Accepted:
-            data.status = KAndroidExtras::AttendeesColumns::ATTENDEE_STATUS_ACCEPTED;
-            break;
-        case KCalendarCore::Attendee::Declined:
-            data.status = KAndroidExtras::AttendeesColumns::ATTENDEE_STATUS_DECLINED;
-            break;
-        case KCalendarCore::Attendee::Tentative:
-            data.status = KAndroidExtras::AttendeesColumns::ATTENDEE_STATUS_TENTATIVE;
-            break;
-        case KCalendarCore::Attendee::Delegated:
-        case KCalendarCore::Attendee::InProcess:
-        case KCalendarCore::Attendee::Completed:
-        case KCalendarCore::Attendee::None:
-            data.status = KAndroidExtras::AttendeesColumns::ATTENDEE_STATUS_NONE;
-            break;
+    case KCalendarCore::Attendee::NeedsAction:
+        data.status = KAndroidExtras::AttendeesColumns::ATTENDEE_STATUS_INVITED;
+        break;
+    case KCalendarCore::Attendee::Accepted:
+        data.status = KAndroidExtras::AttendeesColumns::ATTENDEE_STATUS_ACCEPTED;
+        break;
+    case KCalendarCore::Attendee::Declined:
+        data.status = KAndroidExtras::AttendeesColumns::ATTENDEE_STATUS_DECLINED;
+        break;
+    case KCalendarCore::Attendee::Tentative:
+        data.status = KAndroidExtras::AttendeesColumns::ATTENDEE_STATUS_TENTATIVE;
+        break;
+    case KCalendarCore::Attendee::Delegated:
+    case KCalendarCore::Attendee::InProcess:
+    case KCalendarCore::Attendee::Completed:
+    case KCalendarCore::Attendee::None:
+        data.status = KAndroidExtras::AttendeesColumns::ATTENDEE_STATUS_NONE;
+        break;
     }
 
     return data;
@@ -376,28 +377,26 @@ void AndroidIcalConverter::addExtendedProperty(KCalendarCore::Incidence *inciden
 
     // ### we can probably reuse large parts if icalformat_p.cpp with a bit of refactoring after moving to KCalendarCore
     switch (icalproperty_isa(p.get())) {
-        case ICAL_CREATED_PROPERTY:
-        {
-            icaldatetimeperiodtype tp;
-            tp.time = icalproperty_get_created(p.get());
-            incidence->setCreated(QDateTime({tp.time.year, tp.time.month, tp.time.day}, {tp.time.hour, tp.time.minute, tp.time.second}, QTimeZone::UTC));
-            break;
-        }
-        case ICAL_GEO_PROPERTY:
-        {
-            icalgeotype geo = icalproperty_get_geo(p.get());
-            incidence->setGeoLatitude(geo.lat);
-            incidence->setGeoLongitude(geo.lon);
-            break;
-        }
-        case ICAL_PRIORITY_PROPERTY:
-            incidence->setPriority(icalproperty_get_priority(p.get()));
-            break;
-        case ICAL_X_PROPERTY:
-            incidence->setNonKDECustomProperty(name.toUtf8(), value);
-            break;
-        default:
-            qWarning() << "Unhandled property type:" << name << value;
+    case ICAL_CREATED_PROPERTY: {
+        icaldatetimeperiodtype tp;
+        tp.time = icalproperty_get_created(p.get());
+        incidence->setCreated(QDateTime({tp.time.year, tp.time.month, tp.time.day}, {tp.time.hour, tp.time.minute, tp.time.second}, QTimeZone::UTC));
+        break;
+    }
+    case ICAL_GEO_PROPERTY: {
+        icalgeotype geo = icalproperty_get_geo(p.get());
+        incidence->setGeoLatitude(geo.lat);
+        incidence->setGeoLongitude(geo.lon);
+        break;
+    }
+    case ICAL_PRIORITY_PROPERTY:
+        incidence->setPriority(icalproperty_get_priority(p.get()));
+        break;
+    case ICAL_X_PROPERTY:
+        incidence->setNonKDECustomProperty(name.toUtf8(), value);
+        break;
+    default:
+        qWarning() << "Unhandled property type:" << name << value;
     }
 }
 
@@ -420,7 +419,7 @@ static JniExtendedPropertyData writeExtendedProperty(const ical::property_ptr &p
     const auto icalValue = icalproperty_get_value(prop.get());
     const auto value = QString::fromUtf8(icalvalue_as_ical_string(icalValue));
     return writeExtendedProperty(name, value);
- }
+}
 
 std::vector<JniExtendedPropertyData> AndroidIcalConverter::writeExtendedProperties(const KCalendarCore::Incidence *incidence)
 {

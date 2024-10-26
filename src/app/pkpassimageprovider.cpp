@@ -21,7 +21,7 @@ PkPassImageProvider::PkPassImageProvider()
 
 PkPassImageProvider::~PkPassImageProvider() = default;
 
-void PkPassImageProvider::registerPassProvider(std::function<KPkPass::Pass*(const QString&, const QString &)> &&passProvider)
+void PkPassImageProvider::registerPassProvider(std::function<KPkPass::Pass *(const QString &, const QString &)> &&passProvider)
 {
     m_passProviders.push_back(std::move(passProvider));
 }
@@ -59,6 +59,6 @@ QImage PkPassImageProvider::requestImage(const QString &id, QSize *size, const Q
         return img;
     }
 
-    qDebug() << "could not find pass:" <<passTypeIdentifier << serialNum << id;
+    qDebug() << "could not find pass:" << passTypeIdentifier << serialNum << id;
     return {};
 }

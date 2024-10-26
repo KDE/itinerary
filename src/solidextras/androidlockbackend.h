@@ -7,13 +7,11 @@
 #ifndef ANDROIDLOCKBACKEND_H
 #define ANDROIDLOCKBACKEND_H
 
-#include <QObject>
 #include "lockmanager.h"
-
+#include <QObject>
 
 class AndroidLockBackend : public LockBackend
 {
-
 public:
     explicit AndroidLockBackend(QObject *parent = nullptr);
     virtual ~AndroidLockBackend();
@@ -23,4 +21,3 @@ public:
 };
 
 #endif //  ANDROIDBRIGHTNESSBACKEND_H
-

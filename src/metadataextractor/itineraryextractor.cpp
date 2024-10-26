@@ -6,9 +6,9 @@
 
 #include "itineraryextractor.h"
 
+#include <KItinerary/Datatypes>
 #include <KItinerary/ExtractorEngine>
 #include <KItinerary/ExtractorPostprocessor>
-#include <KItinerary/Datatypes>
 #include <KItinerary/JsonLdDocument>
 #include <KItinerary/LocationUtil>
 
@@ -28,16 +28,14 @@
 using namespace KFileMetaData;
 using namespace KItinerary;
 
-ItineraryExtractor::ItineraryExtractor(QObject* parent)
+ItineraryExtractor::ItineraryExtractor(QObject *parent)
     : ExtractorPlugin(parent)
 {
 }
 
 QStringList ItineraryExtractor::mimetypes() const
 {
-    return QStringList{
-        QStringLiteral("application/vnd.apple.pkpass")
-    };
+    return QStringList{QStringLiteral("application/vnd.apple.pkpass")};
 }
 
 void KFileMetaData::ItineraryExtractor::extract(ExtractionResult *result)
@@ -115,13 +113,14 @@ void KFileMetaData::ItineraryExtractor::extract(ExtractionResult *result)
         }
     } else if (JsonLd::isA<Flight>(res->reservationFor())) {
         const auto flight = res->reservationFor().value<Flight>();
-        result->add(Property::Subject, i18nc("Airline Flightnumber from Airport to Airport on Date",
-                                             "%1%2 from %3 to %4 on %5",
-                                             flight.airline().iataCode(),
-                                             flight.flightNumber(),
-                                             flight.departureAirport().iataCode(),
-                                             flight.arrivalAirport().iataCode(),
-                                             QLocale().toString(flight.departureDay(), QLocale::ShortFormat)));
+        result->add(Property::Subject,
+                    i18nc("Airline Flightnumber from Airport to Airport on Date",
+                          "%1%2 from %3 to %4 on %5",
+                          flight.airline().iataCode(),
+                          flight.flightNumber(),
+                          flight.departureAirport().iataCode(),
+                          flight.arrivalAirport().iataCode(),
+                          QLocale().toString(flight.departureDay(), QLocale::ShortFormat)));
     }
 }
 

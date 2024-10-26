@@ -3,22 +3,22 @@
 
 #include "traewellingcontroller.h"
 
+#include <QCoreApplication>
+#include <QCryptographicHash>
 #include <QDebug>
 #include <QDesktopServices>
-#include <QCryptographicHash>
-#include <QUrlQuery>
-#include <QNetworkRequest>
-#include <QNetworkAccessManager>
-#include <QTcpServer>
+#include <QEventLoop>
 #include <QHostAddress>
-#include <QRegularExpression>
+#include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
-#include <QEventLoop>
-#include <QCoreApplication>
-#include <QJsonArray>
+#include <QNetworkAccessManager>
+#include <QNetworkRequest>
 #include <QRandomGenerator>
+#include <QRegularExpression>
 #include <QSettings>
+#include <QTcpServer>
+#include <QUrlQuery>
 
 #include <qt6keychain/keychain.h>
 
@@ -68,7 +68,7 @@ static void deleteKeychain(const QString &key)
     loop.exec();
 }
 
-TraewellingController::TraewellingController(std::function<QNetworkAccessManager*()> namFactory, QObject *parent)
+TraewellingController::TraewellingController(std::function<QNetworkAccessManager *()> namFactory, QObject *parent)
     : QObject(parent)
     , m_namFactory(std::move(namFactory))
 {
@@ -95,10 +95,9 @@ TraewellingController::TraewellingController(std::function<QNetworkAccessManager
                 query.addQueryItem(QLatin1StringView("client_id"), QLatin1StringView("98"));
                 QNetworkRequest refreshRequest(tokenUrl);
                 refreshRequest.setHeader(QNetworkRequest::UserAgentHeader, ApplicationController::userAgent());
-                refreshRequest.setHeader(QNetworkRequest::ContentTypeHeader,
-                    QStringLiteral("application/x-www-form-urlencoded"));
+                refreshRequest.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/x-www-form-urlencoded"));
                 auto refreshReply = m_namFactory()->post(refreshRequest, query.toString(QUrl::FullyEncoded).toUtf8());
-                connect(refreshReply, &QNetworkReply::finished, this, [this, refreshReply](){
+                connect(refreshReply, &QNetworkReply::finished, this, [this, refreshReply]() {
                     if (refreshReply->error() != QNetworkReply::NoError) {
                         logout(false);
                         return;
@@ -117,7 +116,6 @@ TraewellingController::TraewellingController(std::function<QNetworkAccessManager
             }
             reply->deleteLater();
         });
-
     }
 }
 
@@ -127,7 +125,7 @@ void TraewellingController::get(const QString &endpoint, const QUrlQuery &query,
     request.setRawHeader("Authorization", QStringLiteral("Bearer %1").arg(m_accessToken).toLatin1());
     request.setHeader(QNetworkRequest::UserAgentHeader, ApplicationController::userAgent());
     auto reply = m_namFactory()->get(request);
-    connect(reply, &QNetworkReply::finished, this, [then, reply](){
+    connect(reply, &QNetworkReply::finished, this, [then, reply]() {
         auto json = QJsonDocument::fromJson(reply->readAll()).object();
         then(json);
         reply->deleteLater();
@@ -141,7 +139,7 @@ void TraewellingController::post(const QString &endpoint, const QByteArray &data
     request.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
     request.setHeader(QNetworkRequest::UserAgentHeader, ApplicationController::userAgent());
     auto reply = m_namFactory()->post(request, data);
-    connect(reply, &QNetworkReply::finished, this, [then, reply](){
+    connect(reply, &QNetworkReply::finished, this, [then, reply]() {
         auto json = QJsonDocument::fromJson(reply->readAll()).object();
         then(json, reply->error());
         reply->deleteLater();
@@ -150,7 +148,7 @@ void TraewellingController::post(const QString &endpoint, const QByteArray &data
 
 void TraewellingController::loadData()
 {
-    get(QLatin1StringView("/api/v1/auth/user"), {}, [this](const QJsonObject &json){
+    get(QLatin1StringView("/api/v1/auth/user"), {}, [this](const QJsonObject &json) {
         setUsername(json[QStringLiteral("data")][QStringLiteral("username")].toString());
     });
 }
@@ -158,9 +156,12 @@ void TraewellingController::loadData()
 void TraewellingController::login()
 {
     m_state = QString::number(QRandomGenerator::securelySeeded().generate64());
-    m_verifier = QCryptographicHash::hash(QStringLiteral("Random %1").arg(QRandomGenerator::securelySeeded().generate64()).toLatin1(), QCryptographicHash::Sha256).toHex();
+    m_verifier =
+        QCryptographicHash::hash(QStringLiteral("Random %1").arg(QRandomGenerator::securelySeeded().generate64()).toLatin1(), QCryptographicHash::Sha256)
+            .toHex();
     auto challenge = QString::fromLatin1(QCryptographicHash::hash(m_verifier, QCryptographicHash::Sha256).toBase64());
-    auto challengeString = challenge.replace(QLatin1Char('+'), QLatin1Char('-')).replace(QLatin1Char('/'), QLatin1Char('_')).left(challenge.indexOf(QLatin1Char('=')));
+    auto challengeString =
+        challenge.replace(QLatin1Char('+'), QLatin1Char('-')).replace(QLatin1Char('/'), QLatin1Char('_')).left(challenge.indexOf(QLatin1Char('=')));
     QUrlQuery query;
     query.addQueryItem(QLatin1StringView("code_challenge"), challengeString);
     query.addQueryItem(QStringLiteral("code_challenge_method"), QLatin1StringView("S256"));
@@ -197,10 +198,9 @@ void TraewellingController::login()
             query.addQueryItem(QLatin1StringView("client_id"), QLatin1StringView("98"));
             QNetworkRequest request(tokenUrl);
             request.setHeader(QNetworkRequest::UserAgentHeader, ApplicationController::userAgent());
-            request.setHeader(QNetworkRequest::ContentTypeHeader,
-                QStringLiteral("application/x-www-form-urlencoded"));
+            request.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/x-www-form-urlencoded"));
             auto reply = m_namFactory()->post(request, query.toString(QUrl::FullyEncoded).toUtf8());
-            connect(reply, &QNetworkReply::finished, this, [this, reply](){
+            connect(reply, &QNetworkReply::finished, this, [this, reply]() {
                 auto json = QJsonDocument::fromJson(reply->readAll()).object();
                 setAccessToken(json[QLatin1StringView("access_token")].toString());
                 const auto refreshToken = json[QLatin1StringView("refresh_token")].toString();
@@ -218,7 +218,7 @@ void TraewellingController::login()
 void TraewellingController::logout(bool server)
 {
     if (server) {
-        post(QStringLiteral("/api/v1/auth/logout"), {}, [](const auto &, auto){});
+        post(QStringLiteral("/api/v1/auth/logout"), {}, [](const auto &, auto) {});
     }
     QSettings settings;
     settings.setValue("TraewellingEnabled", false);
@@ -250,12 +250,16 @@ bool TraewellingController::isLoggedIn() const
     return m_accessToken.length() > 0;
 }
 
-void TraewellingController::checkin(const QString &departureStationName, const QString &destinationStationName, const QDateTime &departureTime, const QDateTime &arrivalTime, const QString &directionStationName)
+void TraewellingController::checkin(const QString &departureStationName,
+                                    const QString &destinationStationName,
+                                    const QDateTime &departureTime,
+                                    const QDateTime &arrivalTime,
+                                    const QString &directionStationName)
 {
     get(QStringLiteral("/api/v1/trains/station/autocomplete/%1").arg(departureStationName), {}, [=, this](const QJsonObject &data) {
         const auto array = data[QStringLiteral("data")].toArray();
         if (array.size() == 0) {
-            //TODO: Error, no station found
+            // TODO: Error, no station found
             return;
         }
         const auto departureId = data[QStringLiteral("data")].toArray()[0][QStringLiteral("id")].toInt();
@@ -263,7 +267,7 @@ void TraewellingController::checkin(const QString &departureStationName, const Q
         get(QStringLiteral("/api/v1/trains/station/autocomplete/%1").arg(destinationStationName), {}, [=, this](const QJsonObject &data) {
             const auto array = data[QStringLiteral("data")].toArray();
             if (array.size() == 0) {
-                //TODO: Error, no station found
+                // TODO: Error, no station found
                 return;
             }
             const auto arrivalId = data[QStringLiteral("data")].toArray()[0][QStringLiteral("id")].toInt();
@@ -280,7 +284,7 @@ void TraewellingController::checkin(const QString &departureStationName, const Q
                         break;
                     }
                 }
-                QJsonObject request {
+                QJsonObject request{
                     {QStringLiteral("body"), QStringLiteral("Traewelling with KDE Itinerary")},
                     {QStringLiteral("business"), 0},
                     {QStringLiteral("visibility"), 0},

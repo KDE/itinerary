@@ -15,15 +15,22 @@
 #include <QCoreApplication>
 #include <QDebug>
 
-namespace SolidExtras {
+namespace SolidExtras
+{
 class PortalNetworkMonitor : public QObject
 {
     Q_OBJECT
 public:
     static bool hasPortal();
-    static NetworkStatus::State connectivity() { return instance()->m_connected; }
-    static NetworkStatus::State metered() { return instance()->m_metered; }
-    static PortalNetworkMonitor* instance();
+    static NetworkStatus::State connectivity()
+    {
+        return instance()->m_connected;
+    }
+    static NetworkStatus::State metered()
+    {
+        return instance()->m_metered;
+    }
+    static PortalNetworkMonitor *instance();
 
 Q_SIGNALS:
     void connectivityChanged();
@@ -50,7 +57,7 @@ PortalNetworkMonitor::PortalNetworkMonitor(QObject *parent)
     }
 }
 
-PortalNetworkMonitor* PortalNetworkMonitor::instance()
+PortalNetworkMonitor *PortalNetworkMonitor::instance()
 {
     static PortalNetworkMonitor *s_instance = new PortalNetworkMonitor(QCoreApplication::instance());
     return s_instance;
@@ -84,7 +91,6 @@ void PortalNetworkMonitor::asyncUpdate()
     });
 }
 
-
 NetworkStatus::NetworkStatus(QObject *parent)
     : QObject(parent)
 {
@@ -107,14 +113,14 @@ NetworkStatus::State NetworkStatus::connectivity() const
     }
 #if HAVE_NM
     switch (NetworkManager::connectivity()) {
-        case NetworkManager::UnknownConnectivity:
-            return Unknown;
-        case NetworkManager::NoConnectivity:
-        case NetworkManager::Portal:
-        case NetworkManager::Limited:
-            return No;
-        case NetworkManager::Full:
-            return Yes;
+    case NetworkManager::UnknownConnectivity:
+        return Unknown;
+    case NetworkManager::NoConnectivity:
+    case NetworkManager::Portal:
+    case NetworkManager::Limited:
+        return No;
+    case NetworkManager::Full:
+        return Yes;
     }
     Q_UNREACHABLE();
 #endif
@@ -128,14 +134,14 @@ NetworkStatus::State NetworkStatus::metered() const
     }
 #if HAVE_NM
     switch (NetworkManager::metered()) {
-        case NetworkManager::Device::UnknownStatus:
-            return Unknown;
-        case NetworkManager::Device::GuessYes:
-        case NetworkManager::Device::Yes:
-            return Yes;
-        case NetworkManager::Device::GuessNo:
-        case NetworkManager::Device::No:
-            return No;
+    case NetworkManager::Device::UnknownStatus:
+        return Unknown;
+    case NetworkManager::Device::GuessYes:
+    case NetworkManager::Device::Yes:
+        return Yes;
+    case NetworkManager::Device::GuessNo:
+    case NetworkManager::Device::No:
+        return No;
     }
     Q_UNREACHABLE();
 #endif

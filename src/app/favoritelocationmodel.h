@@ -27,10 +27,10 @@ class FavoriteLocation
 
 public:
     FavoriteLocation();
-    FavoriteLocation(const FavoriteLocation&);
-    FavoriteLocation(FavoriteLocation&&);
+    FavoriteLocation(const FavoriteLocation &);
+    FavoriteLocation(FavoriteLocation &&);
     ~FavoriteLocation();
-    FavoriteLocation& operator=(const FavoriteLocation&);
+    FavoriteLocation &operator=(const FavoriteLocation &);
 
     /** Name set and coordinate valid. */
     bool isValid() const;
@@ -46,6 +46,7 @@ public:
     static std::vector<FavoriteLocation> fromJson(const QJsonArray &array);
     static QJsonArray toJson(const std::vector<FavoriteLocation> &locs);
     static QJsonObject toJson(const FavoriteLocation &loc);
+
 private:
     QExplicitlySharedDataPointer<FavoriteLocationPrivate> d;
 };
@@ -73,7 +74,7 @@ public:
     Q_INVOKABLE void removeLocation(int row);
 
     /** All favorite locations. */
-    const std::vector<FavoriteLocation>& favoriteLocations() const;
+    const std::vector<FavoriteLocation> &favoriteLocations() const;
     /** Set favorite locations to @p locs.
      *  Used for importing.
      */
@@ -86,7 +87,7 @@ public:
 
     int rowCount(const QModelIndex &parent = {}) const override;
     QVariant data(const QModelIndex &index, int role) const override;
-    bool setData(const QModelIndex & index, const QVariant & value, int role) override;
+    bool setData(const QModelIndex &index, const QVariant &value, int role) override;
     QHash<int, QByteArray> roleNames() const override;
 
 private:

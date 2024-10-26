@@ -6,23 +6,23 @@
 
 #include "testhelper.h"
 
+#include "applicationcontroller.h"
+#include "favoritelocationmodel.h"
+#include "importcontroller.h"
+#include "livedatamanager.h"
+#include "reservationmanager.h"
 #include "transfer.h"
 #include "transfermanager.h"
-#include "applicationcontroller.h"
-#include "importcontroller.h"
-#include "reservationmanager.h"
 #include "tripgroupmanager.h"
-#include "favoritelocationmodel.h"
-#include "livedatamanager.h"
 
 #include <QDirIterator>
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
-#include <QtTest/qtest.h>
 #include <QSignalSpy>
 #include <QStandardPaths>
 #include <QTimeZone>
+#include <QtTest/qtest.h>
 
 using namespace Qt::Literals::StringLiterals;
 
@@ -76,8 +76,8 @@ private Q_SLOTS:
         ImportController importer;
         importer.setReservationManager(&resMgr);
         importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
-//         ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/akademy2017.json")));
-//         ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/akademy2018-program.json")));
+        //         ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/akademy2017.json")));
+        //         ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/akademy2018-program.json")));
         ctrl->commitImport(&importer);
 
         QCOMPARE(addSpy.size() - removeSpy.size(), 3); // to/from home, and one in between
@@ -133,7 +133,7 @@ private Q_SLOTS:
         QCOMPARE(transfer.state(), Transfer::Selected);
         QCOMPARE(transfer.journey().sections().size(), 1);
         QCOMPARE(transfer.journey().scheduledArrivalTime(), QDateTime({2017, 9, 10}, {5, 30}, QTimeZone("Europe/Berlin")));
-        QCOMPARE(transfer.anchorTimeDelta(), 45*60);
+        QCOMPARE(transfer.anchorTimeDelta(), 45 * 60);
 
         addSpy.clear();
         changeSpy.clear();

@@ -6,15 +6,17 @@
 
 #include "uri.h"
 
-#include <KAndroidExtras/JniSignature>
 #include <KAndroidExtras/JavaTypes>
+#include <KAndroidExtras/JniSignature>
 
 using namespace KAndroidExtras;
 
 QJniObject Uri::fromUrl(const QUrl &url)
 {
-    return QJniObject::callStaticObjectMethod(Jni::typeName<android::net::Uri>(), "parse", Jni::signature<android::net::Uri(java::lang::String)>(),
-        QJniObject::fromString(url.toString(QUrl::FullyEncoded)).object<jstring>());
+    return QJniObject::callStaticObjectMethod(Jni::typeName<android::net::Uri>(),
+                                              "parse",
+                                              Jni::signature<android::net::Uri(java::lang::String)>(),
+                                              QJniObject::fromString(url.toString(QUrl::FullyEncoded)).object<jstring>());
 }
 
 QUrl Uri::toUrl(const QJniObject &uri)

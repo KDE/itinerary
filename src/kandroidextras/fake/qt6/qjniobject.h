@@ -9,7 +9,8 @@
 #include "mock_jniobject.h"
 
 /** Mock object for QJniObject outside of Android, for automated testing. */
-class KANDROIDEXTRAS_EXPORT QJniObject : public KAndroidExtras::Internal::MockJniObject<QJniObject> {
+class KANDROIDEXTRAS_EXPORT QJniObject : public KAndroidExtras::Internal::MockJniObject<QJniObject>
+{
 public:
     using MockJniObject<QJniObject>::MockJniObject;
 };

@@ -10,7 +10,7 @@ using namespace Quotient;
 Q_DECLARE_METATYPE(Quotient::JoinState)
 
 MatrixRoomsModel::MatrixRoomsModel(QObject *parent)
-        : QAbstractListModel(parent)
+    : QAbstractListModel(parent)
 {
 }
 
@@ -156,49 +156,50 @@ QVariant MatrixRoomsModel::data(const QModelIndex &index, int role) const
     }
     Room *room = m_rooms.at(index.row());
     switch (role) {
-        case DisplayNameRole:
-            return room->displayName();
-        case AvatarRole:
-            return room->avatarMediaId();
-        case CanonicalAliasRole:
-            return room->canonicalAlias();
-        case TopicRole:
-            return room->topic();
-        case IdRole:
-            return room->id();
-        case AvatarImageRole:
-            return room->avatar(48);
-        case CategoryRole:
-            if (room->joinState() == JoinState::Invite) {
-                return InvitedRoom;
+    case DisplayNameRole:
+        return room->displayName();
+    case AvatarRole:
+        return room->avatarMediaId();
+    case CanonicalAliasRole:
+        return room->canonicalAlias();
+    case TopicRole:
+        return room->topic();
+    case IdRole:
+        return room->id();
+    case AvatarImageRole:
+        return room->avatar(48);
+    case CategoryRole:
+        if (room->joinState() == JoinState::Invite) {
+            return InvitedRoom;
+        }
+        if (room->isFavourite()) {
+            return FavoriteRoom;
+        }
+        if (room->isLowPriority()) {
+            return LowPriorityRoom;
+        }
+        if (room->isDirectChat()) {
+            return DirectChatRoom;
+        }
+        if (const RoomCreateEvent *creationEvent = room->creation(); creationEvent) {
+            const auto contentJson = creationEvent->contentJson();
+            if (contentJson.value(Quotient::TypeKey) == QLatin1StringView("m.space")) {
+                return Space;
             }
-            if (room->isFavourite()) {
-                return FavoriteRoom;
-            }
-            if (room->isLowPriority()) {
-                return LowPriorityRoom;
-            }
-            if (room->isDirectChat()) {
-                return DirectChatRoom;
-            }
-            if (const RoomCreateEvent *creationEvent = room->creation(); creationEvent) {
-                const auto contentJson = creationEvent->contentJson();
-                if (contentJson.value(Quotient::TypeKey) == QLatin1StringView("m.space")) {
-                    return Space;
-                }
-            }
-            return RegularRoom;
+        }
+        return RegularRoom;
     }
     return {};
 }
 
-void MatrixRoomsModel::refresh(Room *room, const QList<int> &roles) {
-  const auto it = std::find(m_rooms.begin(), m_rooms.end(), room);
-  if (it == m_rooms.end()) {
-    return;
-  }
-  const auto idx = index(it - m_rooms.begin());
-  Q_EMIT dataChanged(idx, idx, roles);
+void MatrixRoomsModel::refresh(Room *room, const QList<int> &roles)
+{
+    const auto it = std::find(m_rooms.begin(), m_rooms.end(), room);
+    if (it == m_rooms.end()) {
+        return;
+    }
+    const auto idx = index(it - m_rooms.begin());
+    Q_EMIT dataChanged(idx, idx, roles);
 }
 
 QHash<int, QByteArray> MatrixRoomsModel::roleNames() const

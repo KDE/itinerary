@@ -26,7 +26,7 @@ DocumentsModel::DocumentsModel(QObject *parent)
 
 DocumentsModel::~DocumentsModel() = default;
 
-int DocumentsModel::rowCount(const QModelIndex& parent) const
+int DocumentsModel::rowCount(const QModelIndex &parent) const
 {
     if (parent.isValid()) {
         return 0;
@@ -41,32 +41,30 @@ QVariant DocumentsModel::data(const QModelIndex &index, int role) const
     }
 
     switch (role) {
-        case Qt::DisplayRole:
-        {
-            const auto info = m_docMgr->documentInfo(m_docIds[index.row()]);
-            if (JsonLd::canConvert<CreativeWork>(info)) {
-                const auto docInfo = JsonLd::convert<CreativeWork>(info);
-                return docInfo.description().isEmpty() ? docInfo.name() : docInfo.description();
-            }
-            break;
+    case Qt::DisplayRole: {
+        const auto info = m_docMgr->documentInfo(m_docIds[index.row()]);
+        if (JsonLd::canConvert<CreativeWork>(info)) {
+            const auto docInfo = JsonLd::convert<CreativeWork>(info);
+            return docInfo.description().isEmpty() ? docInfo.name() : docInfo.description();
         }
-        case Qt::DecorationRole:
-        {
-            const auto info = m_docMgr->documentInfo(m_docIds[index.row()]);
-            if (JsonLd::canConvert<CreativeWork>(info)) {
-                const auto docInfo = JsonLd::convert<CreativeWork>(info);
-                QMimeDatabase db;
-                const auto mt = db.mimeTypeForName(docInfo.encodingFormat());
-                return mt.iconName();
-            }
-            break;
+        break;
+    }
+    case Qt::DecorationRole: {
+        const auto info = m_docMgr->documentInfo(m_docIds[index.row()]);
+        if (JsonLd::canConvert<CreativeWork>(info)) {
+            const auto docInfo = JsonLd::convert<CreativeWork>(info);
+            QMimeDatabase db;
+            const auto mt = db.mimeTypeForName(docInfo.encodingFormat());
+            return mt.iconName();
         }
-        case DocumentIdRole:
-            return m_docIds[index.row()];
-        case DocumentInfoRole:
-            return m_docMgr->documentInfo(m_docIds[index.row()]);
-        case DocumentFilePathRole:
-            return QUrl::fromLocalFile(m_docMgr->documentFilePath(m_docIds[index.row()]));
+        break;
+    }
+    case DocumentIdRole:
+        return m_docIds[index.row()];
+    case DocumentInfoRole:
+        return m_docMgr->documentInfo(m_docIds[index.row()]);
+    case DocumentFilePathRole:
+        return QUrl::fromLocalFile(m_docMgr->documentFilePath(m_docIds[index.row()]));
     }
 
     return {};

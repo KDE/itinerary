@@ -14,10 +14,12 @@
 class BrightnessBackend : public QObject
 {
 public:
-    explicit BrightnessBackend(QObject *parent = nullptr) : QObject(parent)
-    , m_maximized()
-    , m_previousValue()
-    {}
+    explicit BrightnessBackend(QObject *parent = nullptr)
+        : QObject(parent)
+        , m_maximized()
+        , m_previousValue()
+    {
+    }
     ~BrightnessBackend() override = default;
 
 public:
@@ -49,4 +51,3 @@ private:
 };
 
 #endif //  BRIGHTNESSMANAGER_H
-

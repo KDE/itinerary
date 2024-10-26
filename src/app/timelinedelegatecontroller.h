@@ -7,9 +7,9 @@
 #ifndef TIMELINEDELEGATECONTROLLER_H
 #define TIMELINEDELEGATECONTROLLER_H
 
-#include <KPublicTransport/Stopover>
 #include <KPublicTransport/Journey>
 #include <KPublicTransport/JourneyRequest>
+#include <KPublicTransport/Stopover>
 
 #include <KCalendarCore/Calendar>
 
@@ -32,11 +32,11 @@ class DocumentManager;
 class TimelineDelegateController : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(ReservationManager* reservationManager READ reservationManager WRITE setReservationManager NOTIFY setupChanged)
-    Q_PROPERTY(LiveDataManager* liveDataManager READ liveDataManager WRITE setLiveDataManager NOTIFY setupChanged)
-    Q_PROPERTY(TransferManager* transferManager READ transferManager WRITE setTransferManager NOTIFY setupChanged)
-    Q_PROPERTY(DocumentManager* documentManager READ documentManager WRITE setDocumentManager NOTIFY setupChanged)
-    Q_PROPERTY(TripGroupManager* tripGroupManager MEMBER m_tripGroupMgr NOTIFY setupChanged)
+    Q_PROPERTY(ReservationManager *reservationManager READ reservationManager WRITE setReservationManager NOTIFY setupChanged)
+    Q_PROPERTY(LiveDataManager *liveDataManager READ liveDataManager WRITE setLiveDataManager NOTIFY setupChanged)
+    Q_PROPERTY(TransferManager *transferManager READ transferManager WRITE setTransferManager NOTIFY setupChanged)
+    Q_PROPERTY(DocumentManager *documentManager READ documentManager WRITE setDocumentManager NOTIFY setupChanged)
+    Q_PROPERTY(TripGroupManager *tripGroupManager MEMBER m_tripGroupMgr NOTIFY setupChanged)
     Q_PROPERTY(QString batchId READ batchId WRITE setBatchId NOTIFY batchIdChanged)
 
     Q_PROPERTY(bool isCurrent READ isCurrent NOTIFY currentChanged)
@@ -66,7 +66,8 @@ class TimelineDelegateController : public QObject
     /** A KPublicTransport::JourneyRequest for the current journey.
      *  This includes the current element as well as any immediately connected following elements.
      */
-    Q_PROPERTY(KPublicTransport::JourneyRequest journeyRequestFull READ journeyRequestFull NOTIFY contentChanged) // TODO technically notification also depends on other elements, so similar to previousLocationChanged
+    Q_PROPERTY(KPublicTransport::JourneyRequest journeyRequestFull READ journeyRequestFull NOTIFY
+                   contentChanged) // TODO technically notification also depends on other elements, so similar to previousLocationChanged
     /** A KPublicTransport::JourneyRequest for the current element.
      *  This does not include any connected following elements.
      */
@@ -92,13 +93,13 @@ public:
     TimelineDelegateController(QObject *parent = nullptr);
     ~TimelineDelegateController() override;
 
-    [[nodiscard]] ReservationManager* reservationManager() const;
+    [[nodiscard]] ReservationManager *reservationManager() const;
     void setReservationManager(ReservationManager *resMgr);
-    [[nodiscard]] LiveDataManager* liveDataManager() const;
+    [[nodiscard]] LiveDataManager *liveDataManager() const;
     void setLiveDataManager(LiveDataManager *liveDataMgr);
-    [[nodiscard]] TransferManager* transferManager() const;
+    [[nodiscard]] TransferManager *transferManager() const;
     void setTransferManager(TransferManager *transferMgr);
-    [[nodiscard]] DocumentManager* documentManager() const;
+    [[nodiscard]] DocumentManager *documentManager() const;
     void setDocumentManager(DocumentManager *documentMgr);
 
     [[nodiscard]] QString batchId() const;

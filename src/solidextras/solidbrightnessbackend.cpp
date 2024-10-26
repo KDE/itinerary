@@ -6,17 +6,17 @@
 
 #include "solidbrightnessbackend.h"
 
-#include <brightnesscontroldbusinterface.h>
 #include <QDBusConnection>
 #include <QDebug>
+#include <brightnesscontroldbusinterface.h>
 
 SolidBrightnessBackend::SolidBrightnessBackend(QObject *parent)
     : BrightnessBackend(parent)
 {
-    m_iface = new OrgKdeSolidPowerManagementActionsBrightnessControlInterface(
-            QStringLiteral("org.kde.Solid.PowerManagement"),
-            QStringLiteral("/org/kde/Solid/PowerManagement/Actions/BrightnessControl"),
-            QDBusConnection::sessionBus(), this);
+    m_iface = new OrgKdeSolidPowerManagementActionsBrightnessControlInterface(QStringLiteral("org.kde.Solid.PowerManagement"),
+                                                                              QStringLiteral("/org/kde/Solid/PowerManagement/Actions/BrightnessControl"),
+                                                                              QDBusConnection::sessionBus(),
+                                                                              this);
 }
 
 SolidBrightnessBackend::~SolidBrightnessBackend()

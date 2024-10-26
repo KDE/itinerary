@@ -14,8 +14,10 @@
 class LockBackend : public QObject
 {
 public:
-    explicit LockBackend(QObject *parent = nullptr) : QObject(parent)
-    {}
+    explicit LockBackend(QObject *parent = nullptr)
+        : QObject(parent)
+    {
+    }
     ~LockBackend() override = default;
     virtual void setInhibitionOn(const QString &explanation) = 0;
     virtual void setInhibitionOff() = 0;
@@ -35,6 +37,7 @@ public Q_SLOTS:
      *  (not used on all platforms).
      */
     void toggleInhibitScreenLock(const QString &explanation);
+
 private:
     LockBackend *m_backend;
     bool m_inhibit;

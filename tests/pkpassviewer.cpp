@@ -4,13 +4,13 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "pkpassmanager.h"
 #include "pkpassimageprovider.h"
+#include "pkpassmanager.h"
 #include "util.h"
 
-#include <KPkPass/Field>
 #include <KPkPass/Barcode>
 #include <KPkPass/BoardingPass>
+#include <KPkPass/Field>
 
 #include <KLocalizedContext>
 
@@ -46,7 +46,7 @@ int main(int argc, char **argv)
     qmlRegisterUncreatableMetaObject(KPkPass::Field::staticMetaObject, "org.kde.pkpass", 1, 0, "Field", {});
     qmlRegisterUncreatableType<KPkPass::Pass>("org.kde.pkpass", 1, 0, "Pass", {});
     qmlRegisterUncreatableType<KPkPass::BoardingPass>("org.kde.pkpass", 1, 0, "BoardingPass", {});
-    qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "Util", [](QQmlEngine*, QJSEngine *engine) -> QJSValue {
+    qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "Util", [](QQmlEngine *, QJSEngine *engine) -> QJSValue {
         return engine->toScriptValue(Util());
     });
 
@@ -54,7 +54,7 @@ int main(int argc, char **argv)
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
 
     auto pkPassImageProvider = new PkPassImageProvider;
-    pkPassImageProvider->registerPassProvider([&passMgr](const QString &passTypeId, const QString &serialNum) -> KPkPass::Pass* {
+    pkPassImageProvider->registerPassProvider([&passMgr](const QString &passTypeId, const QString &serialNum) -> KPkPass::Pass * {
         return passMgr.pass(passTypeId + '/'_L1 + QString::fromUtf8(serialNum.toUtf8().toBase64(QByteArray::Base64UrlEncoding)));
     });
     engine.addImageProvider(QStringLiteral("org.kde.pkpass"), pkPassImageProvider);
@@ -65,4 +65,3 @@ int main(int argc, char **argv)
 
     return app.exec();
 }
-

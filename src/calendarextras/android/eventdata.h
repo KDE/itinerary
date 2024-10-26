@@ -6,11 +6,11 @@
 #ifndef KCALENDARCORE_JNI_EVENTDATA_H
 #define KCALENDARCORE_JNI_EVENTDATA_H
 
+#include "kandroidextras/javatypes.h"
 #include "kandroidextras/jnimethod.h"
 #include "kandroidextras/jniobject.h"
 #include "kandroidextras/jniproperty.h"
 #include "kandroidextras/jnitypes.h"
-#include "kandroidextras/javatypes.h"
 
 JNI_TYPE(org, kde, kcalendarcore, EventData)
 JNI_TYPE(org, kde, kcalendarcore, AttendeeData)
@@ -18,7 +18,8 @@ JNI_TYPE(org, kde, kcalendarcore, ExtendedPropertyData)
 JNI_TYPE(org, kde, kcalendarcore, ReminderData)
 
 /** JNI wrapper for the event reminder data class. */
-class JniReminderData {
+class JniReminderData
+{
     JNI_OBJECT(JniReminderData, org::kde::kcalendarcore::ReminderData)
 public:
     JNI_CONSTRUCTOR(JniReminderData)
@@ -27,7 +28,8 @@ public:
 };
 
 /** JNI wrapper for the event extended property data class. */
-class JniExtendedPropertyData {
+class JniExtendedPropertyData
+{
     JNI_OBJECT(JniExtendedPropertyData, org::kde::kcalendarcore::ExtendedPropertyData)
 public:
     JNI_CONSTRUCTOR(JniExtendedPropertyData)
@@ -36,7 +38,8 @@ public:
 };
 
 /** JNI wrapper for the event reminder data class. */
-class JniAttendeeData {
+class JniAttendeeData
+{
     JNI_OBJECT(JniAttendeeData, org::kde::kcalendarcore::AttendeeData)
 public:
     JNI_CONSTRUCTOR(JniAttendeeData)
@@ -48,7 +51,8 @@ public:
 };
 
 /** JNI wrapper for the event data class. */
-class JniEventData {
+class JniEventData
+{
     JNI_OBJECT(JniEventData, org::kde::kcalendarcore::EventData)
 public:
     JNI_CONSTRUCTOR(JniEventData)

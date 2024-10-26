@@ -4,8 +4,8 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "publictransport.h"
 #include "localizer.h"
+#include "publictransport.h"
 
 #include <KPublicTransport/Stopover>
 
@@ -50,10 +50,10 @@ int main(int argc, char **argv)
 
     const auto stopover = KPublicTransport::Stopover::fromJson(QJsonDocument::fromJson(file.readAll()).object());
 
-    qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "PublicTransport", [](QQmlEngine*, QJSEngine *engine) -> QJSValue { \
-        return engine->toScriptValue(PublicTransport()); \
+    qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "PublicTransport", [](QQmlEngine *, QJSEngine *engine) -> QJSValue {
+        return engine->toScriptValue(PublicTransport());
     });
-    qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "Localizer", [](QQmlEngine*, QJSEngine *engine) -> QJSValue {
+    qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "Localizer", [](QQmlEngine *, QJSEngine *engine) -> QJSValue {
         return engine->toScriptValue(Localizer());
     });
 

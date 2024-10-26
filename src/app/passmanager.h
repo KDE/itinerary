@@ -9,7 +9,10 @@
 #include <QAbstractListModel>
 #include <QDateTime>
 
-namespace KItinerary { class ExtractorValidator; }
+namespace KItinerary
+{
+class ExtractorValidator;
+}
 
 /** Holds time-less pass or program membership elements.
  *  Not to be confused with PkPassManager, which handles storage
@@ -84,7 +87,10 @@ private:
     };
 
     struct PassComparator {
-        PassComparator(const QDateTime &baseTime) : m_baseTime(baseTime) {}
+        PassComparator(const QDateTime &baseTime)
+            : m_baseTime(baseTime)
+        {
+        }
         bool operator()(const PassManager::Entry &lhs, const PassManager::Entry &rhs) const;
         QDateTime m_baseTime;
     };

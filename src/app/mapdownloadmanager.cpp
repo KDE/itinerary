@@ -23,7 +23,7 @@
 using namespace KItinerary;
 using SolidExtras::NetworkStatus;
 
-MapDownloadManager::MapDownloadManager(QObject* parent)
+MapDownloadManager::MapDownloadManager(QObject *parent)
     : QObject(parent)
     , m_netStatus(new NetworkStatus(this))
 {
@@ -71,7 +71,7 @@ bool MapDownloadManager::canAutoDownload() const
     return m_autoDownloadEnabled && m_netStatus->connectivity() != NetworkStatus::No && m_netStatus->metered() == NetworkStatus::No;
 }
 
-void MapDownloadManager::addAutomaticRequestForBatch(const QString& batchId)
+void MapDownloadManager::addAutomaticRequestForBatch(const QString &batchId)
 {
     addRequestForBatch(batchId);
     if (canAutoDownload()) {
@@ -128,7 +128,7 @@ void MapDownloadManager::addRequest(double lat, double lon, const QDateTime &cac
         }
     }
 
-    m_pendingRequests.push_back({ lat, lon, cacheUntil });
+    m_pendingRequests.push_back({lat, lon, cacheUntil});
 }
 
 void MapDownloadManager::downloadNext()
