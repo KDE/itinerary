@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-24 00:40+0000\n"
+"POT-Creation-Date: 2024-10-26 00:40+0000\n"
 "PO-Revision-Date: 2024-10-18 17:04+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -2255,43 +2255,43 @@ msgstr "Position"
 msgid "Journey"
 msgstr "Journey"
 
-#: app/localizer.cpp:162
+#: app/localizer.cpp:172
 #, kde-format
 msgctxt "day-only date format"
 msgid "dd MMMM"
 msgstr "dd MMMM"
 
-#: app/localizer.cpp:207
+#: app/localizer.cpp:217
 #, kde-format
 msgctxt "distance in meter"
 msgid "%1 m"
 msgstr "%1 m"
 
-#: app/localizer.cpp:210 app/localizer.cpp:212
+#: app/localizer.cpp:220 app/localizer.cpp:222
 #, kde-format
 msgctxt "distance in kilometer"
 msgid "%1 km"
 msgstr "%1 km"
 
-#: app/localizer.cpp:218
+#: app/localizer.cpp:228
 #, kde-format
 msgctxt "speed in kilometers per hour"
 msgid "%1 km/h"
 msgstr "%1 km/h"
 
-#: app/localizer.cpp:224
+#: app/localizer.cpp:234
 #, kde-format
 msgctxt "weight in gram"
 msgid "%1 g"
 msgstr "%1 g"
 
-#: app/localizer.cpp:227 app/localizer.cpp:229
+#: app/localizer.cpp:237 app/localizer.cpp:239
 #, kde-format
 msgctxt "weight in kilogram"
 msgid "%1 kg"
 msgstr "%1 kg"
 
-#: app/localizer.cpp:235
+#: app/localizer.cpp:245
 #, kde-format
 msgctxt "temperature"
 msgid "%1°C"
@@ -2860,42 +2860,42 @@ msgstr "Program Membership"
 msgid "Show Pass"
 msgstr "Show Pass"
 
-#: app/publictransport.cpp:138 app/publictransport.cpp:165
+#: app/publictransport.cpp:120 app/publictransport.cpp:147
 #, kde-format
 msgid "Walk"
 msgstr "Walk"
 
-#: app/publictransport.cpp:140
+#: app/publictransport.cpp:122
 #, kde-format
 msgid "Wait"
 msgstr "Wait"
 
-#: app/publictransport.cpp:149
+#: app/publictransport.cpp:131
 #, kde-format
 msgid "Rented bicycle"
 msgstr "Rented bicycle"
 
-#: app/publictransport.cpp:151
+#: app/publictransport.cpp:133
 #, kde-format
 msgid "Rented moped"
 msgstr "Rented moped"
 
-#: app/publictransport.cpp:153
+#: app/publictransport.cpp:135
 #, kde-format
 msgid "Rented kick scooter"
 msgstr "Rented kick scooter"
 
-#: app/publictransport.cpp:155
+#: app/publictransport.cpp:137
 #, kde-format
 msgid "Rented car"
 msgstr "Rented car"
 
-#: app/publictransport.cpp:161
+#: app/publictransport.cpp:143
 #, kde-format
 msgid "Bicycle"
 msgstr "Bicycle"
 
-#: app/publictransport.cpp:163 app/StatisticsPage.qml:148
+#: app/publictransport.cpp:145 app/StatisticsPage.qml:148
 #, kde-format
 msgid "Car"
 msgstr "Car"

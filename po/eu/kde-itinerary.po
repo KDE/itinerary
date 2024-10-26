@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-24 00:40+0000\n"
+"POT-Creation-Date: 2024-10-26 00:40+0000\n"
 "PO-Revision-Date: 2024-09-30 17:01+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -2260,43 +2260,43 @@ msgstr "Kokapena"
 msgid "Journey"
 msgstr "Bidaia"
 
-#: app/localizer.cpp:162
+#: app/localizer.cpp:172
 #, kde-format
 msgctxt "day-only date format"
 msgid "dd MMMM"
 msgstr "MMMM dd"
 
-#: app/localizer.cpp:207
+#: app/localizer.cpp:217
 #, kde-format
 msgctxt "distance in meter"
 msgid "%1 m"
 msgstr "%1 m"
 
-#: app/localizer.cpp:210 app/localizer.cpp:212
+#: app/localizer.cpp:220 app/localizer.cpp:222
 #, kde-format
 msgctxt "distance in kilometer"
 msgid "%1 km"
 msgstr "%1 km"
 
-#: app/localizer.cpp:218
+#: app/localizer.cpp:228
 #, kde-format
 msgctxt "speed in kilometers per hour"
 msgid "%1 km/h"
 msgstr "%1 km/h"
 
-#: app/localizer.cpp:224
+#: app/localizer.cpp:234
 #, kde-format
 msgctxt "weight in gram"
 msgid "%1 g"
 msgstr "%1 g"
 
-#: app/localizer.cpp:227 app/localizer.cpp:229
+#: app/localizer.cpp:237 app/localizer.cpp:239
 #, kde-format
 msgctxt "weight in kilogram"
 msgid "%1 kg"
 msgstr "%1 kg"
 
-#: app/localizer.cpp:235
+#: app/localizer.cpp:245
 #, kde-format
 msgctxt "temperature"
 msgid "%1°C"
@@ -2867,42 +2867,42 @@ msgstr "Programaren bazkidetza"
 msgid "Show Pass"
 msgstr "Erakutsi sarrera"
 
-#: app/publictransport.cpp:138 app/publictransport.cpp:165
+#: app/publictransport.cpp:120 app/publictransport.cpp:147
 #, kde-format
 msgid "Walk"
 msgstr "Oinez"
 
-#: app/publictransport.cpp:140
+#: app/publictransport.cpp:122
 #, kde-format
 msgid "Wait"
 msgstr "Itxoin"
 
-#: app/publictransport.cpp:149
+#: app/publictransport.cpp:131
 #, kde-format
 msgid "Rented bicycle"
 msgstr "Alokairuko bizikleta"
 
-#: app/publictransport.cpp:151
+#: app/publictransport.cpp:133
 #, kde-format
 msgid "Rented moped"
 msgstr "Alokairuko ziklomotorra"
 
-#: app/publictransport.cpp:153
+#: app/publictransport.cpp:135
 #, kde-format
 msgid "Rented kick scooter"
 msgstr "Alokairuko patinete elektrikoa"
 
-#: app/publictransport.cpp:155
+#: app/publictransport.cpp:137
 #, kde-format
 msgid "Rented car"
 msgstr "Alokairuko autoa"
 
-#: app/publictransport.cpp:161
+#: app/publictransport.cpp:143
 #, kde-format
 msgid "Bicycle"
 msgstr "Bizikleta"
 
-#: app/publictransport.cpp:163 app/StatisticsPage.qml:148
+#: app/publictransport.cpp:145 app/StatisticsPage.qml:148
 #, kde-format
 msgid "Car"
 msgstr "Autoa"
