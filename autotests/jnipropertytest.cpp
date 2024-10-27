@@ -23,14 +23,14 @@ class TestClass
     JNI_CONSTANT(jint, FLAG_GRANT_READ_URI_PERMISSION)
     JNI_CONSTANT(android::net::Uri, OBJECT_TYPE_PROPERTY)
     JNI_CONSTANT(bool, BOOL_PROPERTY)
-    //     JNI_CONSTANT(uint32_t, UNSIGNED_PROPERTY) // must not compile
+    // JNI_CONSTANT(uint32_t, UNSIGNED_PROPERTY) // must not compile
 
     JNI_PROPERTY(java::lang::String, myStringField)
     JNI_PROPERTY(int, myIntField)
     JNI_PROPERTY(android::net::Uri, myUriField)
     JNI_PROPERTY(android::content::Intent, myIntentField)
     JNI_PROPERTY(bool, myBoolProperty)
-    //     JNI_PROPERTY(uint32_t, myUsignedProperty) // must not compile
+    // JNI_PROPERTY(uint32_t, myUsignedProperty) // must not compile
 
 public:
     friend class JniPropertyTest;

@@ -48,11 +48,11 @@ public:
     JNI_CONSTRUCTOR(TestClass, bool)
 
     // basic C++ types that do not map to JNI (must not compile)
-    //     JNI_METHOD(void, setUnsigned, uint32_t)
-    //     JNI_STATIC_METHOD(void, setStaticUnsigned, uint64_t)
-    //     JNI_METHOD(char, charReturn)
-    //     JNI_STATIC_METHOD(uint64_t, staticCharReturn);
-    //     JNI_CONSTRUCTOR(TestClass, char)
+    // JNI_METHOD(void, setUnsigned, uint32_t)
+    // JNI_STATIC_METHOD(void, setStaticUnsigned, uint64_t)
+    // JNI_METHOD(char, charReturn)
+    // JNI_STATIC_METHOD(uint64_t, staticCharReturn);
+    // JNI_CONSTRUCTOR(TestClass, char)
 
     friend class JniMethodTest;
 };

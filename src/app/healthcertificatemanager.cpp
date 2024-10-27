@@ -4,8 +4,9 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "healthcertificatemanager.h"
 #include "config-itinerary.h"
+
+#include "healthcertificatemanager.h"
 
 #if HAVE_KHEALTHCERTIFICATE
 #include <KHealthCertificate/KHealthCertificateParser>

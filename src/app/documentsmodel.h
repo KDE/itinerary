@@ -25,7 +25,11 @@ public:
     explicit DocumentsModel(QObject *parent = nullptr);
     ~DocumentsModel() override;
 
-    enum Roles { DocumentIdRole = Qt::UserRole, DocumentInfoRole, DocumentFilePathRole };
+    enum Roles {
+        DocumentIdRole = Qt::UserRole,
+        DocumentInfoRole,
+        DocumentFilePathRole
+    };
 
     int rowCount(const QModelIndex &parent = {}) const override;
     QVariant data(const QModelIndex &index, int role) const override;

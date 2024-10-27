@@ -50,6 +50,7 @@ class PassTest(ItineraryTestCase):
         # self.assertFalse(self.driver.find_element(by=AppiumBy.NAME, value="BahnCard 25 (2. Kl.) (BC25)").is_displayed())
 
     def test_addProgramMembership(self):
+        self.openContextDrawer()
         self.driver.find_element(by=AppiumBy.NAME, value="Add Program Membership…").click()
         saveButton = self.driver.find_element(by=AppiumBy.NAME, value="Save")
         self.assertFalse(saveButton.is_enabled())

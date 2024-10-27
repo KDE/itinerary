@@ -4,12 +4,13 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+#include <config-itinerary.h>
+
 #include "healthcertificatemanager.h"
 #include "applicationcontroller.h"
 #include "importcontroller.h"
 #include "pkpassmanager.h"
 #include "reservationmanager.h"
-#include <config-itinerary.h>
 
 #include <QAbstractItemModelTester>
 #include <QSignalSpy>

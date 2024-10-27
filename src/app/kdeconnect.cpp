@@ -3,8 +3,9 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "kdeconnect.h"
 #include "config-itinerary.h"
+
+#include "kdeconnect.h"
 
 #if HAVE_DBUS
 #include <QDBusConnection>

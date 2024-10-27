@@ -107,19 +107,14 @@ QString DevelopmentModeController::screenInfo()
     QString info;
     const auto screens = QGuiApplication::screens();
     for (auto screen : screens) {
-        info += screen->name() + QLatin1Char(' ') + screen->model() + QLatin1Char(' ') + screen->serialNumber() + QLatin1Char('\n');
-        info += QLatin1StringView("size: ") + QString::number(screen->size().width()) + QLatin1Char('x') + QString::number(screen->size().height())
-            + QLatin1Char('\n');
-        info += QLatin1StringView("virtual size: ") + QString::number(screen->virtualSize().width()) + QLatin1Char('x')
-            + QString::number(screen->virtualSize().height()) + QLatin1Char('\n');
-        info += QLatin1StringView("physical size: ") + QString::number(screen->physicalSize().width()) + QLatin1Char('x')
-            + QString::number(screen->physicalSize().height()) + QLatin1Char('\n');
-        info += QLatin1StringView("logical DPI: ") + QString::number(screen->logicalDotsPerInchX()) + QLatin1Char('x')
-            + QString::number(screen->logicalDotsPerInchY()) + QLatin1Char('\n');
-        info += QLatin1StringView("physical DPI: ") + QString::number(screen->physicalDotsPerInchX()) + QLatin1Char('x')
-            + QString::number(screen->physicalDotsPerInchY()) + QLatin1Char('\n');
-        info += QLatin1StringView("device pixel ratio: ") + QString::number(screen->devicePixelRatio()) + QLatin1Char('\n');
-        info += QLatin1Char('\n');
+        info += screen->name() +' '_L1 + screen->model() +' '_L1 + screen->serialNumber() +'\n'_L1;
+        info += "size: "_L1 + QString::number(screen->size().width()) + 'x'_L1 + QString::number(screen->size().height()) + '\n'_L1;
+        info += "virtual size: "_L1 + QString::number(screen->virtualSize().width()) + 'x'_L1 + QString::number(screen->virtualSize().height()) +'\n'_L1;
+        info += "physical size: "_L1 + QString::number(screen->physicalSize().width()) + 'x'_L1 + QString::number(screen->physicalSize().height()) +'\n'_L1;
+        info += "logical DPI: "_L1 + QString::number(screen->logicalDotsPerInchX()) + 'x'_L1 + QString::number(screen->logicalDotsPerInchY()) +'\n'_L1;
+        info += "physical DPI: "_L1 + QString::number(screen->physicalDotsPerInchX()) + 'x'_L1 + QString::number(screen->physicalDotsPerInchY()) +'\n'_L1;
+        info += "device pixel ratio: "_L1 + QString::number(screen->devicePixelRatio()) +'\n'_L1;
+        info +='\n'_L1;
     }
     return info;
 }

@@ -111,7 +111,10 @@ bool DownloadJob::handleOnlineTicketRetrievalUrl(const QUrl &url, QNetworkAccess
     if (url.host() == "dbnavigator.bahn.de"_L1 && url.path() == "/loadorder"_L1) {
         const auto query = QUrlQuery(url);
         sourceId = u"db"_s;
-        args = {{"name"_L1, query.queryItemValue("name"_L1).toUpper()}, {"reference"_L1, query.queryItemValue("on"_L1)}};
+        args = {
+            {"name"_L1, query.queryItemValue("name"_L1).toUpper()},
+            {"reference"_L1, query.queryItemValue("on"_L1)}
+        };
     }
     if (url.host() == "int.bahn.de"_L1 || url.host() == "www.bahn.de"_L1) {
         const auto query = QUrlQuery(url);

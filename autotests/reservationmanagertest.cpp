@@ -12,10 +12,10 @@
 #include "reservationmanager.h"
 
 #include <KItinerary/Flight>
-#include <KItinerary/Reservation>
-
 #include <KItinerary/Place>
+#include <KItinerary/Reservation>
 #include <KItinerary/Visit>
+
 #include <QSignalSpy>
 #include <QStandardPaths>
 #include <QtTest/qtest.h>
