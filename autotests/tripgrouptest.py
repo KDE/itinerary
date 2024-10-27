@@ -22,8 +22,18 @@ class TripGroupTest(ItineraryTestCase):
 
     def testEmptyGroup(self):
         self.driver.find_element(by=AppiumBy.NAME, value="Add trip").click()
+        addDialog = self.driver.find_element(by=AppiumBy.NAME, value="Add Trip")
+        self.assertTrue(addDialog.is_displayed())
+        self.driver.find_element(by=AppiumBy.NAME, value="Cancel").click()
+
+        self.driver.find_element(by=AppiumBy.NAME, value="Add trip").click()
+        addDialog = self.driver.find_element(by=AppiumBy.NAME, value="Add Trip")
+        saveBtn = addDialog.find_element(by=AppiumBy.NAME, value="Save")
+        self.assertFalse(saveBtn.is_enabled())
         self.driver.find_element(by=AppiumBy.NAME, value="Trip name:").send_keys("My New Trip")
-        self.driver.find_element(by=AppiumBy.NAME, value="Save").click()
+        self.assertTrue(saveBtn.is_enabled())
+        saveBtn.click()
+
         self.driver.find_element(by=AppiumBy.NAME, value="My New Trip").click()
 
         self.driver.find_element(by=AppiumBy.NAME, value="Add event…").click()
