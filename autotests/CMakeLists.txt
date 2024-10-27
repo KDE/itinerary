@@ -64,6 +64,10 @@ endfunction()
 add_selenium_test(apptest)
 add_selenium_test(passtest)
 add_selenium_test(onlineimporttest)
+if (NOT Qt6Core_VERSION VERSION_EQUAL 6.8.0 OR NOT DEFINED ENV{KDECI_BUILD}) # missing https://codereview.qt-project.org/c/qt/qtdeclarative/+/599986
 add_selenium_test(reservationtest)
+endif()
 add_selenium_test(settingstest)
+if (NOT Qt6Core_VERSION VERSION_EQUAL 6.8.0 OR NOT DEFINED ENV{KDECI_BUILD}) # missing https://codereview.qt-project.org/c/qt/qtdeclarative/+/599986
 add_selenium_test(tripgrouptest)
+endif()
