@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-26 00:40+0000\n"
+"POT-Creation-Date: 2024-10-27 00:40+0000\n"
 "PO-Revision-Date: 2024-03-26 16:14+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -121,7 +121,7 @@ msgid "Add to calendar…"
 msgstr "Hozzáadás a naptárhoz…"
 
 #: app/ActionsCard.qml:74 app/Main.qml:221 app/TripGroupDelegate.qml:182
-#: app/TripGroupPage.qml:650
+#: app/TripGroupPage.qml:662
 #, fuzzy, kde-format
 #| msgid "Export"
 msgid "Export…"
@@ -174,7 +174,7 @@ msgid "Itinerary file (*.itinerary)"
 msgstr "Itinerary fájl (*.itinerary)"
 
 #: app/ActionsCard.qml:173 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:618
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:630
 #, kde-format
 msgid "Actions"
 msgstr "Műveletek"
@@ -289,21 +289,21 @@ msgctxt "geo coordinate"
 msgid "%1, %2"
 msgstr "%2, %1"
 
-#: app/applicationcontroller.cpp:306
+#: app/applicationcontroller.cpp:309
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] "1 foglalás importálva."
 msgstr[1] "%1 foglalás importálva."
 
-#: app/applicationcontroller.cpp:309
+#: app/applicationcontroller.cpp:312
 #, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
 msgstr[0] "1 kártya importálva."
 msgstr[1] "%1 kártya importálva."
 
-#: app/applicationcontroller.cpp:313
+#: app/applicationcontroller.cpp:315
 #, fuzzy, kde-format
 #| msgid "Health certificate imported."
 msgid "One health certificate imported."
@@ -311,30 +311,30 @@ msgid_plural "%1 health certificates imported."
 msgstr[0] "Egészségügyi igazolás importálva."
 msgstr[1] "Egészségügyi igazolás importálva."
 
-#: app/applicationcontroller.cpp:335 app/applicationcontroller.cpp:376
-#: app/applicationcontroller.cpp:394 app/applicationcontroller.cpp:439
-#: app/applicationcontroller.cpp:478 app/applicationcontroller.cpp:496
+#: app/applicationcontroller.cpp:337 app/applicationcontroller.cpp:378
+#: app/applicationcontroller.cpp:396 app/applicationcontroller.cpp:441
+#: app/applicationcontroller.cpp:480 app/applicationcontroller.cpp:498
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Exportálás sikertelen: %1"
 
-#: app/applicationcontroller.cpp:350 app/applicationcontroller.cpp:359
-#: app/applicationcontroller.cpp:452 app/applicationcontroller.cpp:461
+#: app/applicationcontroller.cpp:352 app/applicationcontroller.cpp:361
+#: app/applicationcontroller.cpp:454 app/applicationcontroller.cpp:463
 #, kde-format
 msgid "Export completed."
 msgstr "Az exportálás befejeződött."
 
-#: app/applicationcontroller.cpp:386
+#: app/applicationcontroller.cpp:388
 #, kde-format
 msgid "Trip sent."
 msgstr "Kirándulás elküldve."
 
-#: app/applicationcontroller.cpp:488
+#: app/applicationcontroller.cpp:490
 #, kde-format
 msgid "Reservation sent."
 msgstr "Foglalás elküldve."
 
-#: app/applicationcontroller.cpp:546
+#: app/applicationcontroller.cpp:548
 #, kde-format
 msgid "Import completed."
 msgstr "Az importálás befejeződött."
@@ -837,12 +837,12 @@ msgstr "Nincsenek dokumentumok mellékelve ehhez a foglaláshoz."
 msgid "Add Document…"
 msgstr "Dokumentum hozzáadása"
 
-#: app/downloadjob.cpp:160
+#: app/downloadjob.cpp:159
 #, kde-format
 msgid "Network error: %1"
 msgstr "Hálózati hiba: %1"
 
-#: app/downloadjob.cpp:191
+#: app/downloadjob.cpp:190
 #, kde-format
 msgid "Download failed: %1"
 msgstr "Letöltés sikertelen: %1"
@@ -976,18 +976,18 @@ msgctxt "event venue seat type"
 msgid "Type: <b>%1</b>"
 msgstr "Kocsi"
 
-#: app/favoritelocationmodel.cpp:130 app/favoritelocationmodel.cpp:150
+#: app/favoritelocationmodel.cpp:129 app/favoritelocationmodel.cpp:149
 #: app/SettingsPage.qml:35
 #, kde-format
 msgid "Home"
 msgstr "Otthon"
 
-#: app/favoritelocationmodel.cpp:153
+#: app/favoritelocationmodel.cpp:152
 #, kde-format
 msgid "Work"
 msgstr "Munkahely"
 
-#: app/favoritelocationmodel.cpp:156
+#: app/favoritelocationmodel.cpp:155
 #, kde-format
 msgid "Location %1"
 msgstr "Hely: %1"
@@ -1418,7 +1418,7 @@ msgstr "Kártya törlése"
 msgid "Do you really want to delete this pass?"
 msgstr "Biztosan törölni szeretné ezt a kártyát?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:312 app/Main.qml:21 app/Main.qml:161
+#: app/gpxexport.cpp:33 app/main.cpp:317 app/Main.qml:21 app/Main.qml:161
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -1428,17 +1428,17 @@ msgstr "KDE Itinerary"
 msgid "Flight %1 from %2 to %3"
 msgstr "%1 járat, %2 → %3"
 
-#: app/gpxexport.cpp:51
+#: app/gpxexport.cpp:54
 #, kde-format
 msgid "Train %1 from %2 to %3"
 msgstr "%1. vonat, %2 → %3"
 
-#: app/gpxexport.cpp:55
+#: app/gpxexport.cpp:58
 #, kde-format
 msgid "Bus %1 from %2 to %3"
 msgstr "%1. busz, %2 → %3"
 
-#: app/gpxexport.cpp:58 app/reservationhelper.cpp:139
+#: app/gpxexport.cpp:61 app/reservationhelper.cpp:139
 #, kde-format
 msgid "Ferry from %1 to %2"
 msgstr "%1 → %2 komp"
@@ -1528,7 +1528,7 @@ msgstr "Oltás (%1)"
 msgid "Test %1 (%2)"
 msgstr "%1. teszt ( %2)"
 
-#: app/healthcertificatemanager.cpp:150
+#: app/healthcertificatemanager.cpp:152
 #, kde-format
 msgid "Recovery (%1)"
 msgstr "Felépülés (%1)"
@@ -1795,7 +1795,7 @@ msgstr "Bejelentkezés ideje"
 msgid "Check-out time"
 msgstr "Kijelentkezés ideje"
 
-#: app/importcontroller.cpp:154 app/importcontroller.cpp:470
+#: app/importcontroller.cpp:154 app/importcontroller.cpp:475
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Sikertelen importálás: %1"
@@ -1811,12 +1811,12 @@ msgstr "Sikertelen importálás: a fájl túl nagy."
 msgid "Found nothing to import."
 msgstr "Semmi sem lett importálva."
 
-#: app/importcontroller.cpp:442
+#: app/importcontroller.cpp:447
 #, kde-format
 msgid "No importable events found in this calendar."
 msgstr "Nem találhatók importálható események ebben a naptárban."
 
-#: app/importcontroller.cpp:624
+#: app/importcontroller.cpp:628
 #, kde-format
 msgid "Backup"
 msgstr ""
@@ -2125,7 +2125,7 @@ msgstr "Hajók vagy kompok"
 msgid "%1 to %2 (%3)"
 msgstr "%1 ide: %2 (%3)"
 
-#: app/JourneySectionDelegate.qml:180 app/tickettokenmodel.cpp:116
+#: app/JourneySectionDelegate.qml:180 app/tickettokenmodel.cpp:115
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
@@ -2187,12 +2187,12 @@ msgstr "Átlagos sebesség: %1"
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionPage.qml:218
+#: app/JourneySectionPage.qml:218 app/TripGroupMapPage.qml:210
 #, kde-format
 msgid "Platform:"
 msgstr ""
 
-#: app/JourneySectionPage.qml:251
+#: app/JourneySectionPage.qml:251 app/TripGroupMapPage.qml:221
 #, kde-format
 msgid "Occupancy:"
 msgstr ""
@@ -2202,7 +2202,7 @@ msgstr ""
 msgid "Show location"
 msgstr "Hely megjelenítése"
 
-#: app/JourneySectionPage.qml:484
+#: app/JourneySectionPage.qml:490
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2239,12 +2239,12 @@ msgstr[1] "%1 átszállás"
 msgid "Click to extend"
 msgstr "Kattintson a kibontáshoz"
 
-#: app/livedatamanager.cpp:790
+#: app/livedatamanager.cpp:803
 #, kde-format
 msgid "Flight %1 to %2:"
 msgstr "%1. járat ide: %2:"
 
-#: app/livedatamanager.cpp:796
+#: app/livedatamanager.cpp:809
 #, kde-format
 msgid "Itinerary change"
 msgstr "Itinermódosítás"
@@ -2297,43 +2297,43 @@ msgstr "Pozíció"
 msgid "Journey"
 msgstr "Utazás"
 
-#: app/localizer.cpp:172
+#: app/localizer.cpp:175
 #, kde-format
 msgctxt "day-only date format"
 msgid "dd MMMM"
 msgstr "MMMM dd"
 
-#: app/localizer.cpp:217
+#: app/localizer.cpp:220
 #, kde-format
 msgctxt "distance in meter"
 msgid "%1 m"
 msgstr "%1 m"
 
-#: app/localizer.cpp:220 app/localizer.cpp:222
+#: app/localizer.cpp:223 app/localizer.cpp:225
 #, kde-format
 msgctxt "distance in kilometer"
 msgid "%1 km"
 msgstr "%1 km"
 
-#: app/localizer.cpp:228
+#: app/localizer.cpp:231
 #, kde-format
 msgctxt "speed in kilometers per hour"
 msgid "%1 km/h"
 msgstr "%1 km/h"
 
-#: app/localizer.cpp:234
+#: app/localizer.cpp:237
 #, kde-format
 msgctxt "weight in gram"
 msgid "%1 g"
 msgstr "%1 g"
 
-#: app/localizer.cpp:237 app/localizer.cpp:239
+#: app/localizer.cpp:240 app/localizer.cpp:242
 #, kde-format
 msgctxt "weight in kilogram"
 msgid "%1 kg"
 msgstr "%1 kg"
 
-#: app/localizer.cpp:245
+#: app/localizer.cpp:247
 #, kde-format
 msgctxt "temperature"
 msgid "%1°C"
@@ -2387,90 +2387,90 @@ msgstr "Pénznem: %1 = %2"
 msgid "Currency: %1"
 msgstr "Pénznem: %1"
 
-#: app/locationinformation.cpp:85
+#: app/locationinformation.cpp:87
 #, kde-format
 msgid "People are driving on the right side."
 msgstr "Jobb oldali közlekedési rend van érvényben."
 
-#: app/locationinformation.cpp:86
+#: app/locationinformation.cpp:89
 #, kde-format
 msgid "People are driving on the left side."
 msgstr "Bal oldali közlekedési rend van érvényben."
 
-#: app/locationinformation.cpp:103
+#: app/locationinformation.cpp:107
 msgid "Type A"
 msgstr "A -típusú"
 
-#: app/locationinformation.cpp:104
+#: app/locationinformation.cpp:108
 msgid "Type B"
 msgstr "B-típusú"
 
-#: app/locationinformation.cpp:105
+#: app/locationinformation.cpp:109
 msgid "Europlug"
 msgstr "Europlug"
 
-#: app/locationinformation.cpp:106
+#: app/locationinformation.cpp:110
 msgid "Type D"
 msgstr "D-típusú"
 
-#: app/locationinformation.cpp:107
+#: app/locationinformation.cpp:111
 msgid "Type E"
 msgstr "E-típusú"
 
-#: app/locationinformation.cpp:108
+#: app/locationinformation.cpp:112
 msgid "Schuko"
 msgstr "Schuko"
 
-#: app/locationinformation.cpp:109
+#: app/locationinformation.cpp:113
 msgid "Type G"
 msgstr "G-típusú"
 
-#: app/locationinformation.cpp:110
+#: app/locationinformation.cpp:114
 msgid "Type H"
 msgstr "H-típusú"
 
-#: app/locationinformation.cpp:111
+#: app/locationinformation.cpp:115
 msgid "Type I"
 msgstr "I-típusú"
 
-#: app/locationinformation.cpp:112
+#: app/locationinformation.cpp:116
 msgid "Type J"
 msgstr "J-típusú"
 
-#: app/locationinformation.cpp:113
+#: app/locationinformation.cpp:117
 msgid "Type K"
 msgstr "K-típusú"
 
-#: app/locationinformation.cpp:114
+#: app/locationinformation.cpp:118
 msgid "Type L"
 msgstr "L-típusú"
 
-#: app/locationinformation.cpp:115
+#: app/locationinformation.cpp:119
 msgid "Type M"
 msgstr "M-típusú"
 
-#: app/locationinformation.cpp:116
+#: app/locationinformation.cpp:120
 msgid "Type N"
 msgstr "N-típusú"
 
-#: app/main.cpp:320
+#: app/main.cpp:325
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Digitális utazási segéd"
 
-#: app/main.cpp:321
+#: app/main.cpp:326
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "Copyright © A KDE közösség"
 
-#: app/main.cpp:328
+#: app/main.cpp:333
 #, fuzzy, kde-format
 #| msgid "Open Itinerary on the given page"
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Itinerary megnyitása a megadott oldalon"
 
-#: app/main.cpp:333
+#: app/main.cpp:338
 #, fuzzy, kde-format
 #| msgid "Files or URLs to import."
 msgctxt "@info:shell"
@@ -2645,48 +2645,48 @@ msgctxt "@title:tab"
 msgid "Current Ticket"
 msgstr "Jelenlegi jegy"
 
-#: app/notificationhelper.cpp:62
+#: app/notificationhelper.cpp:61
 #, kde-format
 msgid "Disruption on %1"
 msgstr "Forgalmi zavarok: %1"
 
-#: app/notificationhelper.cpp:70
+#: app/notificationhelper.cpp:69
 #, kde-format
 msgid "Changes on %1"
 msgstr "Átszállások: %1"
 
-#: app/notificationhelper.cpp:74
+#: app/notificationhelper.cpp:73
 #, kde-format
 msgid "Delays on %1"
 msgstr "Késések: %1"
 
-#: app/notificationhelper.cpp:77
+#: app/notificationhelper.cpp:76
 #, kde-format
 msgid "Delayed departure on %1"
 msgstr "Késedelmes indulás: %1"
 
-#: app/notificationhelper.cpp:80
+#: app/notificationhelper.cpp:79
 #, kde-format
 msgid "Earlier departure on %1"
 msgstr "Korábbi indulás: %1"
 
-#: app/notificationhelper.cpp:83
+#: app/notificationhelper.cpp:82
 #, kde-format
 msgid "Delayed arrival on %1"
 msgstr "Késedelmes érkezés: %1"
 
-#: app/notificationhelper.cpp:87
+#: app/notificationhelper.cpp:86
 #, kde-format
 msgid "Platform change on %1"
 msgstr "Peronváltozás: %1"
 
-#: app/notificationhelper.cpp:97
+#: app/notificationhelper.cpp:96
 #, kde-format
 msgctxt "a train/bus journey canceled by its operator"
 msgid "Trip has been canceled."
 msgstr "A kirándulást törölték."
 
-#: app/notificationhelper.cpp:99
+#: app/notificationhelper.cpp:98
 #, kde-format
 msgctxt "a train/bus journey canceled by its operator"
 msgid "Arrival has been canceled."
@@ -2697,22 +2697,22 @@ msgstr "Az érkezést törölték."
 msgid "New departure time is: %1 (+%2)"
 msgstr "Új indulási idő: %1 (+%2)"
 
-#: app/notificationhelper.cpp:105
+#: app/notificationhelper.cpp:106
 #, kde-format
 msgid "New departure time is: %1 (%2)"
 msgstr "Az új indulási idő: %1 (%2)"
 
-#: app/notificationhelper.cpp:109
+#: app/notificationhelper.cpp:110
 #, kde-format
 msgid "New arrival time is: %1 (+%2)"
 msgstr "Új érkezési idő: %1 (+%2)"
 
-#: app/notificationhelper.cpp:113
+#: app/notificationhelper.cpp:114
 #, kde-format
 msgid "New departure platform is: %1"
 msgstr "Új indulási peron: %1"
 
-#: app/notificationhelper.cpp:116
+#: app/notificationhelper.cpp:117
 #, kde-format
 msgid "New arrival platform is: %1"
 msgstr "Új érkezési peron: %1"
@@ -2758,25 +2758,25 @@ msgstr "Online jegy"
 msgid "Search…"
 msgstr "Keresés…"
 
-#: app/passmanager.cpp:251
+#: app/passmanager.cpp:252
 #, kde-format
 msgctxt "no longer valid tickets"
 msgid "Expired"
 msgstr "Lejárt"
 
-#: app/passmanager.cpp:254
+#: app/passmanager.cpp:255
 #, kde-format
 msgctxt "not yet valid tickets"
 msgid "Future"
 msgstr "Jövőbeli"
 
-#: app/passmanager.cpp:256
+#: app/passmanager.cpp:257
 #, kde-format
 msgctxt "not yet expired tickets"
 msgid "Valid"
 msgstr "Érvényes"
 
-#: app/passmanager.cpp:275 app/TripGroupPage.qml:431
+#: app/passmanager.cpp:275 app/TripGroupPage.qml:436
 #, kde-format
 msgid "%1 - %2"
 msgstr "%1 - %2"
@@ -2918,42 +2918,42 @@ msgstr "Programtagság"
 msgid "Show Pass"
 msgstr "Térkép megjelenítése"
 
-#: app/publictransport.cpp:120 app/publictransport.cpp:147
+#: app/publictransport.cpp:119 app/publictransport.cpp:146
 #, kde-format
 msgid "Walk"
 msgstr "Séta"
 
-#: app/publictransport.cpp:122
+#: app/publictransport.cpp:121
 #, kde-format
 msgid "Wait"
 msgstr "Várakozás"
 
-#: app/publictransport.cpp:131
+#: app/publictransport.cpp:130
 #, kde-format
 msgid "Rented bicycle"
 msgstr "Bérelt kerékpár"
 
-#: app/publictransport.cpp:133
+#: app/publictransport.cpp:132
 #, kde-format
 msgid "Rented moped"
 msgstr "Bérelt moped"
 
-#: app/publictransport.cpp:135
+#: app/publictransport.cpp:134
 #, kde-format
 msgid "Rented kick scooter"
 msgstr "Bérelt robogó"
 
-#: app/publictransport.cpp:137
+#: app/publictransport.cpp:136
 #, kde-format
 msgid "Rented car"
 msgstr "Bérelt autó"
 
-#: app/publictransport.cpp:143
+#: app/publictransport.cpp:142
 #, kde-format
 msgid "Bicycle"
 msgstr "Kerékpár"
 
-#: app/publictransport.cpp:145 app/StatisticsPage.qml:148
+#: app/publictransport.cpp:144 app/StatisticsPage.qml:148
 #, kde-format
 msgid "Car"
 msgstr "Autó"
@@ -3613,13 +3613,13 @@ msgstr "Esemény hozzáadása…"
 msgid "Add restaurant…"
 msgstr "Étterem hozzáadása…"
 
-#: app/TimelinePage.qml:166 app/TripGroupPage.qml:682
+#: app/TimelinePage.qml:166 app/TripGroupPage.qml:694
 #, kde-format
 msgctxt "@action:button"
 msgid "Go To Now"
 msgstr ""
 
-#: app/TimelinePage.qml:173 app/TripGroupPage.qml:690
+#: app/TimelinePage.qml:173 app/TripGroupPage.qml:702
 #: app/TripGroupsPage.qml:125
 #, kde-format
 msgctxt "@action:button"
@@ -3654,17 +3654,17 @@ msgstr "GPX-fájlként…"
 msgid "Export Trip"
 msgstr "Kirándulás exportálása"
 
-#: app/TimelinePage.qml:493 app/TripGroupPage.qml:591
+#: app/TimelinePage.qml:493 app/TripGroupPage.qml:603
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr ""
 
-#: app/timelinesectiondelegatecontroller.cpp:65
+#: app/timelinesectiondelegatecontroller.cpp:64
 #, kde-format
 msgid "Today"
 msgstr "Ma"
 
-#: app/timelinesectiondelegatecontroller.cpp:67
+#: app/timelinesectiondelegatecontroller.cpp:66
 #, kde-format
 msgctxt "weekday, date"
 msgid "%1, %2"
@@ -3898,7 +3898,7 @@ msgid_plural "Date: %2 (%1 days)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: app/TripGroupDelegate.qml:116 app/TripGroupPage.qml:438
+#: app/TripGroupDelegate.qml:116 app/TripGroupPage.qml:443
 #: app/WeatherForecastDelegate.qml:48 app/WeatherForecastPage.qml:93
 #, kde-format
 msgctxt "temperature range"
@@ -3920,7 +3920,7 @@ msgstr ""
 msgid "%1: no compatible power plugs (%2)"
 msgstr ""
 
-#: app/TripGroupDelegate.qml:145 app/TripGroupPage.qml:464
+#: app/TripGroupDelegate.qml:145 app/TripGroupPage.qml:469
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
@@ -3933,7 +3933,7 @@ msgstr[1] ""
 msgid "Edit…"
 msgstr "Szerkesztés"
 
-#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:657
+#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:669
 #, kde-format
 msgid "Delete trip"
 msgstr "Kirándulás törlése"
@@ -3959,13 +3959,13 @@ msgctxt "@label:textbox"
 msgid "Trip name:"
 msgstr "Jegy neve"
 
-#: app/tripgroupmanager.cpp:859
+#: app/tripgroupmanager.cpp:866
 #, kde-format
 msgctxt "%1 is destination, %2 is the standalone month name, %3 is the year"
 msgid "%1 (%2 %3)"
 msgstr "%1 (%3 %2)"
 
-#: app/tripgroupmanager.cpp:861
+#: app/tripgroupmanager.cpp:872
 #, kde-format
 msgctxt ""
 "%1 is destination, %2 and %3 are the standalone month names and %4 is the "
@@ -3973,10 +3973,22 @@ msgctxt ""
 msgid "%1 (%2/%3 %4)"
 msgstr ""
 
-#: app/tripgroupmanager.cpp:863
+#: app/tripgroupmanager.cpp:878
 #, kde-format
 msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"
+msgstr ""
+
+#: app/TripGroupMapPage.qml:239
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "View Indoor Map"
+msgid "Show indoor map"
+msgstr "Beltéri térkép megtekintése"
+
+#: app/TripGroupMapPage.qml:287
+#, kde-format
+msgid "Address:"
 msgstr ""
 
 #: app/TripGroupMergeDialog.qml:17
@@ -4011,54 +4023,61 @@ msgstr "Hajókirándulás szerkesztése"
 msgid "Do you really want to delete the trip '%1'?"
 msgstr "Biztosan törölni szeretné ezt a kirándulást?"
 
-#: app/TripGroupPage.qml:432
+#: app/TripGroupPage.qml:437
 #, kde-format
 msgid "One day"
 msgid_plural "%1 days"
 msgstr[0] ""
 msgstr[1] ""
 
-#: app/TripGroupPage.qml:452
+#: app/TripGroupPage.qml:457
 #, fuzzy, kde-format
 #| msgid "Some incompatible power sockets: %1"
 msgid "Some incompatible power sockets (%1)"
 msgstr "Néhány nem kompatibilis konnektor: %1"
 
-#: app/TripGroupPage.qml:454
+#: app/TripGroupPage.qml:459
 #, fuzzy, kde-format
 #| msgid "Some incompatible power plugs: %1"
 msgid "Some incompatible power plugs (%1)"
 msgstr "Néhány nem kompatibilis hálózati csatlakozó: %1"
 
-#: app/TripGroupPage.qml:457
+#: app/TripGroupPage.qml:462
 #, fuzzy, kde-format
 #| msgid "Some incompatible power plugs: %1"
 msgid "No compatible power plugs (%1)"
 msgstr "Néhány nem kompatibilis hálózati csatlakozó: %1"
 
-#: app/TripGroupPage.qml:470
+#: app/TripGroupPage.qml:475
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Show Map"
+msgid "Show map…"
+msgstr "Térkép megjelenítése"
+
+#: app/TripGroupPage.qml:482
 #, fuzzy, kde-format
 #| msgid "Import..."
 msgid "Import"
 msgstr "Importálás…"
 
-#: app/TripGroupPage.qml:484
+#: app/TripGroupPage.qml:496
 #, kde-format
 msgid "Add"
 msgstr ""
 
-#: app/TripGroupPage.qml:623
+#: app/TripGroupPage.qml:635
 #, fuzzy, kde-format
 #| msgid "Rename"
 msgid "Rename…"
 msgstr "Átnevezés"
 
-#: app/TripGroupPage.qml:632
+#: app/TripGroupPage.qml:644
 #, kde-format
 msgid "Merge trips…"
 msgstr ""
 
-#: app/TripGroupPage.qml:643
+#: app/TripGroupPage.qml:655
 #, fuzzy, kde-format
 #| msgid "Add transfer after"
 msgid "Split trip…"
@@ -4307,23 +4326,23 @@ msgstr ""
 msgid "Got it!"
 msgstr ""
 
-#: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:56
-#: matrix/matrixmanager.cpp:108
+#: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:66
+#: matrix/matrixmanager.cpp:123
 #, kde-format
 msgid "Syncing…"
 msgstr "Szinkronizálás…"
 
-#: matrix/matrixmanager.cpp:41
+#: matrix/matrixmanager.cpp:50
 #, kde-format
 msgid "This server does not support logging in using a password"
 msgstr ""
 
-#: matrix/matrixmanager.cpp:67
+#: matrix/matrixmanager.cpp:82
 #, kde-format
 msgid "Logging in"
 msgstr "Bejelentkezés"
 
-#: metadataextractor/itineraryextractor.cpp:119
+#: metadataextractor/itineraryextractor.cpp:118
 #, kde-format
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"

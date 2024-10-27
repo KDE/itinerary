@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-26 00:40+0000\n"
+"POT-Creation-Date: 2024-10-27 00:40+0000\n"
 "PO-Revision-Date: 2024-09-28 08:30+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -124,7 +124,7 @@ msgid "Add to calendar…"
 msgstr "Додати до календаря…"
 
 #: app/ActionsCard.qml:74 app/Main.qml:221 app/TripGroupDelegate.qml:182
-#: app/TripGroupPage.qml:650
+#: app/TripGroupPage.qml:662
 #, kde-format
 msgid "Export…"
 msgstr "Експортувати…"
@@ -175,7 +175,7 @@ msgid "Itinerary file (*.itinerary)"
 msgstr "файл Itinerary (*.itinerary)"
 
 #: app/ActionsCard.qml:173 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:618
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:630
 #, kde-format
 msgid "Actions"
 msgstr "Дії"
@@ -286,7 +286,7 @@ msgctxt "geo coordinate"
 msgid "%1, %2"
 msgstr "%1, %2"
 
-#: app/applicationcontroller.cpp:306
+#: app/applicationcontroller.cpp:309
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
@@ -295,7 +295,7 @@ msgstr[1] "Імпортовано %1 резервування"
 msgstr[2] "Імпортовано %1 резервувань"
 msgstr[3] "Імпортовано одне резервування"
 
-#: app/applicationcontroller.cpp:309
+#: app/applicationcontroller.cpp:312
 #, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
@@ -304,7 +304,7 @@ msgstr[1] "Імпортовано %1 безкоштовні квитки."
 msgstr[2] "Імпортовано %1 безкоштовних квитків."
 msgstr[3] "Імпортовано безкоштовний квиток."
 
-#: app/applicationcontroller.cpp:313
+#: app/applicationcontroller.cpp:315
 #, kde-format
 msgid "One health certificate imported."
 msgid_plural "%1 health certificates imported."
@@ -313,30 +313,30 @@ msgstr[1] "Імпортовано %1 сертифікати здоров'я."
 msgstr[2] "Імпортовано %1 сертифікатів здоров'я."
 msgstr[3] "Імпортовано один сертифікат здоров'я."
 
-#: app/applicationcontroller.cpp:335 app/applicationcontroller.cpp:376
-#: app/applicationcontroller.cpp:394 app/applicationcontroller.cpp:439
-#: app/applicationcontroller.cpp:478 app/applicationcontroller.cpp:496
+#: app/applicationcontroller.cpp:337 app/applicationcontroller.cpp:378
+#: app/applicationcontroller.cpp:396 app/applicationcontroller.cpp:441
+#: app/applicationcontroller.cpp:480 app/applicationcontroller.cpp:498
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Не вдалося експортувати: %1"
 
-#: app/applicationcontroller.cpp:350 app/applicationcontroller.cpp:359
-#: app/applicationcontroller.cpp:452 app/applicationcontroller.cpp:461
+#: app/applicationcontroller.cpp:352 app/applicationcontroller.cpp:361
+#: app/applicationcontroller.cpp:454 app/applicationcontroller.cpp:463
 #, kde-format
 msgid "Export completed."
 msgstr "Експортування завершено."
 
-#: app/applicationcontroller.cpp:386
+#: app/applicationcontroller.cpp:388
 #, kde-format
 msgid "Trip sent."
 msgstr "Подорож надіслано."
 
-#: app/applicationcontroller.cpp:488
+#: app/applicationcontroller.cpp:490
 #, kde-format
 msgid "Reservation sent."
 msgstr "Резервування надіслано."
 
-#: app/applicationcontroller.cpp:546
+#: app/applicationcontroller.cpp:548
 #, kde-format
 msgid "Import completed."
 msgstr "Імпортування завершено."
@@ -836,12 +836,12 @@ msgstr "До цього резервування не долучено жодн�
 msgid "Add Document…"
 msgstr "Додати документ…"
 
-#: app/downloadjob.cpp:160
+#: app/downloadjob.cpp:159
 #, kde-format
 msgid "Network error: %1"
 msgstr "Помилка мережі: %1"
 
-#: app/downloadjob.cpp:191
+#: app/downloadjob.cpp:190
 #, kde-format
 msgid "Download failed: %1"
 msgstr "Невдала спроба отримання: %1"
@@ -967,18 +967,18 @@ msgctxt "event venue seat type"
 msgid "Type: <b>%1</b>"
 msgstr "Тип: <b>%1</b>"
 
-#: app/favoritelocationmodel.cpp:130 app/favoritelocationmodel.cpp:150
+#: app/favoritelocationmodel.cpp:129 app/favoritelocationmodel.cpp:149
 #: app/SettingsPage.qml:35
 #, kde-format
 msgid "Home"
 msgstr "Домівка"
 
-#: app/favoritelocationmodel.cpp:153
+#: app/favoritelocationmodel.cpp:152
 #, kde-format
 msgid "Work"
 msgstr "Робота"
 
-#: app/favoritelocationmodel.cpp:156
+#: app/favoritelocationmodel.cpp:155
 #, kde-format
 msgid "Location %1"
 msgstr "Місце %1"
@@ -1397,7 +1397,7 @@ msgstr "Вилучити безкоштовний квиток"
 msgid "Do you really want to delete this pass?"
 msgstr "Ви справді бажаєте вилучити цей безкоштовний квиток?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:312 app/Main.qml:21 app/Main.qml:161
+#: app/gpxexport.cpp:33 app/main.cpp:317 app/Main.qml:21 app/Main.qml:161
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -1407,17 +1407,17 @@ msgstr "KDE Itinerary"
 msgid "Flight %1 from %2 to %3"
 msgstr "Рейс %1 з %2 до %3"
 
-#: app/gpxexport.cpp:51
+#: app/gpxexport.cpp:54
 #, kde-format
 msgid "Train %1 from %2 to %3"
 msgstr "Потяг %1 з %2 до %3"
 
-#: app/gpxexport.cpp:55
+#: app/gpxexport.cpp:58
 #, kde-format
 msgid "Bus %1 from %2 to %3"
 msgstr "Автобус %1 з %2 до %3"
 
-#: app/gpxexport.cpp:58 app/reservationhelper.cpp:139
+#: app/gpxexport.cpp:61 app/reservationhelper.cpp:139
 #, kde-format
 msgid "Ferry from %1 to %2"
 msgstr "Пором з %1 до %2"
@@ -1507,7 +1507,7 @@ msgstr "Вакцинація (%1)"
 msgid "Test %1 (%2)"
 msgstr "Тест %1 (%2)"
 
-#: app/healthcertificatemanager.cpp:150
+#: app/healthcertificatemanager.cpp:152
 #, kde-format
 msgid "Recovery (%1)"
 msgstr "Відновлення (%1)"
@@ -1775,7 +1775,7 @@ msgstr "Час перевірки на вході"
 msgid "Check-out time"
 msgstr "Час перевірки на виході"
 
-#: app/importcontroller.cpp:154 app/importcontroller.cpp:470
+#: app/importcontroller.cpp:154 app/importcontroller.cpp:475
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Не вдалося імпортувати: %1"
@@ -1790,12 +1790,12 @@ msgstr "Не вдалося імпортувати: надто великий ф
 msgid "Found nothing to import."
 msgstr "Не знайдено даних для імпортування."
 
-#: app/importcontroller.cpp:442
+#: app/importcontroller.cpp:447
 #, kde-format
 msgid "No importable events found in this calendar."
 msgstr "У цьому календарі не знайдено придатних до імпортування записів подій."
 
-#: app/importcontroller.cpp:624
+#: app/importcontroller.cpp:628
 #, kde-format
 msgid "Backup"
 msgstr "Резервна копія"
@@ -2098,7 +2098,7 @@ msgstr "Судна або пороми"
 msgid "%1 to %2 (%3)"
 msgstr "з %1 до %2 (%3)"
 
-#: app/JourneySectionDelegate.qml:180 app/tickettokenmodel.cpp:116
+#: app/JourneySectionDelegate.qml:180 app/tickettokenmodel.cpp:115
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
@@ -2160,12 +2160,12 @@ msgstr "Середня швидкість: %1"
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionPage.qml:218
+#: app/JourneySectionPage.qml:218 app/TripGroupMapPage.qml:210
 #, kde-format
 msgid "Platform:"
 msgstr "Платформа:"
 
-#: app/JourneySectionPage.qml:251
+#: app/JourneySectionPage.qml:251 app/TripGroupMapPage.qml:221
 #, kde-format
 msgid "Occupancy:"
 msgstr "Заповненість:"
@@ -2175,7 +2175,7 @@ msgstr "Заповненість:"
 msgid "Show location"
 msgstr "Показати місце"
 
-#: app/JourneySectionPage.qml:484
+#: app/JourneySectionPage.qml:490
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2214,12 +2214,12 @@ msgstr[3] "%1 зміна"
 msgid "Click to extend"
 msgstr "Натисніть, щоб розширити"
 
-#: app/livedatamanager.cpp:790
+#: app/livedatamanager.cpp:803
 #, kde-format
 msgid "Flight %1 to %2:"
 msgstr "Рейс %1 до %2:"
 
-#: app/livedatamanager.cpp:796
+#: app/livedatamanager.cpp:809
 #, kde-format
 msgid "Itinerary change"
 msgstr "Зміна маршруту"
@@ -2272,43 +2272,43 @@ msgstr "Розташування"
 msgid "Journey"
 msgstr "Подорож"
 
-#: app/localizer.cpp:172
+#: app/localizer.cpp:175
 #, kde-format
 msgctxt "day-only date format"
 msgid "dd MMMM"
 msgstr "dd MMMM"
 
-#: app/localizer.cpp:217
+#: app/localizer.cpp:220
 #, kde-format
 msgctxt "distance in meter"
 msgid "%1 m"
 msgstr "%1 м"
 
-#: app/localizer.cpp:220 app/localizer.cpp:222
+#: app/localizer.cpp:223 app/localizer.cpp:225
 #, kde-format
 msgctxt "distance in kilometer"
 msgid "%1 km"
 msgstr "%1 км"
 
-#: app/localizer.cpp:228
+#: app/localizer.cpp:231
 #, kde-format
 msgctxt "speed in kilometers per hour"
 msgid "%1 km/h"
 msgstr "%1 км/год"
 
-#: app/localizer.cpp:234
+#: app/localizer.cpp:237
 #, kde-format
 msgctxt "weight in gram"
 msgid "%1 g"
 msgstr "%1 г"
 
-#: app/localizer.cpp:237 app/localizer.cpp:239
+#: app/localizer.cpp:240 app/localizer.cpp:242
 #, kde-format
 msgctxt "weight in kilogram"
 msgid "%1 kg"
 msgstr "%1 кг"
 
-#: app/localizer.cpp:245
+#: app/localizer.cpp:247
 #, kde-format
 msgctxt "temperature"
 msgid "%1°C"
@@ -2361,89 +2361,89 @@ msgstr "Валюта: %1 = %2"
 msgid "Currency: %1"
 msgstr "Валюта: %1"
 
-#: app/locationinformation.cpp:85
+#: app/locationinformation.cpp:87
 #, kde-format
 msgid "People are driving on the right side."
 msgstr "Автомобілі рухаються правим боком дороги."
 
-#: app/locationinformation.cpp:86
+#: app/locationinformation.cpp:89
 #, kde-format
 msgid "People are driving on the left side."
 msgstr "Автомобілі рухаються лівим боком дороги."
 
-#: app/locationinformation.cpp:103
+#: app/locationinformation.cpp:107
 msgid "Type A"
 msgstr "Тип A"
 
-#: app/locationinformation.cpp:104
+#: app/locationinformation.cpp:108
 msgid "Type B"
 msgstr "Тип B"
 
-#: app/locationinformation.cpp:105
+#: app/locationinformation.cpp:109
 msgid "Europlug"
 msgstr "Europlug"
 
-#: app/locationinformation.cpp:106
+#: app/locationinformation.cpp:110
 msgid "Type D"
 msgstr "Тип D"
 
-#: app/locationinformation.cpp:107
+#: app/locationinformation.cpp:111
 msgid "Type E"
 msgstr "Тип E"
 
-#: app/locationinformation.cpp:108
+#: app/locationinformation.cpp:112
 msgid "Schuko"
 msgstr "Schuko"
 
-#: app/locationinformation.cpp:109
+#: app/locationinformation.cpp:113
 msgid "Type G"
 msgstr "Тип G"
 
-#: app/locationinformation.cpp:110
+#: app/locationinformation.cpp:114
 msgid "Type H"
 msgstr "Тип H"
 
-#: app/locationinformation.cpp:111
+#: app/locationinformation.cpp:115
 msgid "Type I"
 msgstr "Тип I"
 
-#: app/locationinformation.cpp:112
+#: app/locationinformation.cpp:116
 msgid "Type J"
 msgstr "Тип J"
 
-#: app/locationinformation.cpp:113
+#: app/locationinformation.cpp:117
 msgid "Type K"
 msgstr "Тип K"
 
-#: app/locationinformation.cpp:114
+#: app/locationinformation.cpp:118
 msgid "Type L"
 msgstr "Тип L"
 
-#: app/locationinformation.cpp:115
+#: app/locationinformation.cpp:119
 msgid "Type M"
 msgstr "Тип M"
 
-#: app/locationinformation.cpp:116
+#: app/locationinformation.cpp:120
 msgid "Type N"
 msgstr "Тип N"
 
-#: app/main.cpp:320
+#: app/main.cpp:325
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Цифровий помічник у подорожах"
 
-#: app/main.cpp:321
+#: app/main.cpp:326
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "© Спільнота KDE"
 
-#: app/main.cpp:328
+#: app/main.cpp:333
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Відкрити Itinerary на вказаній сторінці"
 
-#: app/main.cpp:333
+#: app/main.cpp:338
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
@@ -2609,48 +2609,48 @@ msgctxt "@title:tab"
 msgid "Current Ticket"
 msgstr "Поточний квиток"
 
-#: app/notificationhelper.cpp:62
+#: app/notificationhelper.cpp:61
 #, kde-format
 msgid "Disruption on %1"
 msgstr "Аварія на %1"
 
-#: app/notificationhelper.cpp:70
+#: app/notificationhelper.cpp:69
 #, kde-format
 msgid "Changes on %1"
 msgstr "Зміни у %1"
 
-#: app/notificationhelper.cpp:74
+#: app/notificationhelper.cpp:73
 #, kde-format
 msgid "Delays on %1"
 msgstr "Затримки на %1"
 
-#: app/notificationhelper.cpp:77
+#: app/notificationhelper.cpp:76
 #, kde-format
 msgid "Delayed departure on %1"
 msgstr "Відкладено відправлення %1"
 
-#: app/notificationhelper.cpp:80
+#: app/notificationhelper.cpp:79
 #, kde-format
 msgid "Earlier departure on %1"
 msgstr "Відправлення зсунуто до %1"
 
-#: app/notificationhelper.cpp:83
+#: app/notificationhelper.cpp:82
 #, kde-format
 msgid "Delayed arrival on %1"
 msgstr "Відкладено прибуття %1"
 
-#: app/notificationhelper.cpp:87
+#: app/notificationhelper.cpp:86
 #, kde-format
 msgid "Platform change on %1"
 msgstr "Зміна платформи %1"
 
-#: app/notificationhelper.cpp:97
+#: app/notificationhelper.cpp:96
 #, kde-format
 msgctxt "a train/bus journey canceled by its operator"
 msgid "Trip has been canceled."
 msgstr "Подорож було скасовано."
 
-#: app/notificationhelper.cpp:99
+#: app/notificationhelper.cpp:98
 #, kde-format
 msgctxt "a train/bus journey canceled by its operator"
 msgid "Arrival has been canceled."
@@ -2661,22 +2661,22 @@ msgstr "Прибуття було скасовано."
 msgid "New departure time is: %1 (+%2)"
 msgstr "Новий час відправлення: %1 (+%2)"
 
-#: app/notificationhelper.cpp:105
+#: app/notificationhelper.cpp:106
 #, kde-format
 msgid "New departure time is: %1 (%2)"
 msgstr "Новий час відправлення: %1 (%2)"
 
-#: app/notificationhelper.cpp:109
+#: app/notificationhelper.cpp:110
 #, kde-format
 msgid "New arrival time is: %1 (+%2)"
 msgstr "Новий час прибуття: %1 (+%2)"
 
-#: app/notificationhelper.cpp:113
+#: app/notificationhelper.cpp:114
 #, kde-format
 msgid "New departure platform is: %1"
 msgstr "Нова платформа відправлення: %1"
 
-#: app/notificationhelper.cpp:116
+#: app/notificationhelper.cpp:117
 #, kde-format
 msgid "New arrival platform is: %1"
 msgstr "Нова платформа прибуття: %1"
@@ -2721,25 +2721,25 @@ msgstr "Інтернет-квиток"
 msgid "Search…"
 msgstr "Шукати…"
 
-#: app/passmanager.cpp:251
+#: app/passmanager.cpp:252
 #, kde-format
 msgctxt "no longer valid tickets"
 msgid "Expired"
 msgstr "Прострочені"
 
-#: app/passmanager.cpp:254
+#: app/passmanager.cpp:255
 #, kde-format
 msgctxt "not yet valid tickets"
 msgid "Future"
 msgstr "Майбутні"
 
-#: app/passmanager.cpp:256
+#: app/passmanager.cpp:257
 #, kde-format
 msgctxt "not yet expired tickets"
 msgid "Valid"
 msgstr "Чинні"
 
-#: app/passmanager.cpp:275 app/TripGroupPage.qml:431
+#: app/passmanager.cpp:275 app/TripGroupPage.qml:436
 #, kde-format
 msgid "%1 - %2"
 msgstr "%1 – %2"
@@ -2878,42 +2878,42 @@ msgstr "Участь у програмі"
 msgid "Show Pass"
 msgstr "Показ квитка"
 
-#: app/publictransport.cpp:120 app/publictransport.cpp:147
+#: app/publictransport.cpp:119 app/publictransport.cpp:146
 #, kde-format
 msgid "Walk"
 msgstr "Перехід"
 
-#: app/publictransport.cpp:122
+#: app/publictransport.cpp:121
 #, kde-format
 msgid "Wait"
 msgstr "Очікування"
 
-#: app/publictransport.cpp:131
+#: app/publictransport.cpp:130
 #, kde-format
 msgid "Rented bicycle"
 msgstr "Орендований велосипед"
 
-#: app/publictransport.cpp:133
+#: app/publictransport.cpp:132
 #, kde-format
 msgid "Rented moped"
 msgstr "Орендований мопед"
 
-#: app/publictransport.cpp:135
+#: app/publictransport.cpp:134
 #, kde-format
 msgid "Rented kick scooter"
 msgstr "Орендований самокат"
 
-#: app/publictransport.cpp:137
+#: app/publictransport.cpp:136
 #, kde-format
 msgid "Rented car"
 msgstr "Орендоване авто"
 
-#: app/publictransport.cpp:143
+#: app/publictransport.cpp:142
 #, kde-format
 msgid "Bicycle"
 msgstr "Велосипед"
 
-#: app/publictransport.cpp:145 app/StatisticsPage.qml:148
+#: app/publictransport.cpp:144 app/StatisticsPage.qml:148
 #, kde-format
 msgid "Car"
 msgstr "Автомобіль"
@@ -3573,13 +3573,13 @@ msgstr "Додати подію"
 msgid "Add restaurant…"
 msgstr "Додати ресторан…"
 
-#: app/TimelinePage.qml:166 app/TripGroupPage.qml:682
+#: app/TimelinePage.qml:166 app/TripGroupPage.qml:694
 #, kde-format
 msgctxt "@action:button"
 msgid "Go To Now"
 msgstr "Перейти зараз"
 
-#: app/TimelinePage.qml:173 app/TripGroupPage.qml:690
+#: app/TimelinePage.qml:173 app/TripGroupPage.qml:702
 #: app/TripGroupsPage.qml:125
 #, kde-format
 msgctxt "@action:button"
@@ -3613,17 +3613,17 @@ msgstr "Як файл GPX…"
 msgid "Export Trip"
 msgstr "Експорт подорожі"
 
-#: app/TimelinePage.qml:493 app/TripGroupPage.qml:591
+#: app/TimelinePage.qml:493 app/TripGroupPage.qml:603
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "У маршрутах на сьогодні даних немає."
 
-#: app/timelinesectiondelegatecontroller.cpp:65
+#: app/timelinesectiondelegatecontroller.cpp:64
 #, kde-format
 msgid "Today"
 msgstr "Сьогодні"
 
-#: app/timelinesectiondelegatecontroller.cpp:67
+#: app/timelinesectiondelegatecontroller.cpp:66
 #, kde-format
 msgctxt "weekday, date"
 msgid "%1, %2"
@@ -3856,7 +3856,7 @@ msgstr[1] "Дата: %2 (%1 дні)"
 msgstr[2] "Дата: %2 (%1 днів)"
 msgstr[3] "Дата: %2 (%1 день)"
 
-#: app/TripGroupDelegate.qml:116 app/TripGroupPage.qml:438
+#: app/TripGroupDelegate.qml:116 app/TripGroupPage.qml:443
 #: app/WeatherForecastDelegate.qml:48 app/WeatherForecastPage.qml:93
 #, kde-format
 msgctxt "temperature range"
@@ -3878,7 +3878,7 @@ msgstr "%1: несумісні штекери (%2)"
 msgid "%1: no compatible power plugs (%2)"
 msgstr "%1: немає сумісних штекерів (%2)"
 
-#: app/TripGroupDelegate.qml:145 app/TripGroupPage.qml:464
+#: app/TripGroupDelegate.qml:145 app/TripGroupPage.qml:469
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
@@ -3892,7 +3892,7 @@ msgstr[3] "Валюта: %2"
 msgid "Edit…"
 msgstr "Змінити…"
 
-#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:657
+#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:669
 #, kde-format
 msgid "Delete trip"
 msgstr "Вилучити подорож"
@@ -3916,13 +3916,13 @@ msgctxt "@label:textbox"
 msgid "Trip name:"
 msgstr "Назва подорожі:"
 
-#: app/tripgroupmanager.cpp:859
+#: app/tripgroupmanager.cpp:866
 #, kde-format
 msgctxt "%1 is destination, %2 is the standalone month name, %3 is the year"
 msgid "%1 (%2 %3)"
 msgstr "%1 (%2 %3)"
 
-#: app/tripgroupmanager.cpp:861
+#: app/tripgroupmanager.cpp:872
 #, kde-format
 msgctxt ""
 "%1 is destination, %2 and %3 are the standalone month names and %4 is the "
@@ -3930,11 +3930,23 @@ msgctxt ""
 msgid "%1 (%2/%3 %4)"
 msgstr "%1 (%2/%3 %4)"
 
-#: app/tripgroupmanager.cpp:863
+#: app/tripgroupmanager.cpp:878
 #, kde-format
 msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"
 msgstr "%1 (%2/%3)"
+
+#: app/TripGroupMapPage.qml:239
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "View Indoor Map"
+msgid "Show indoor map"
+msgstr "Переглянути внутрішню карту"
+
+#: app/TripGroupMapPage.qml:287
+#, kde-format
+msgid "Address:"
+msgstr ""
 
 #: app/TripGroupMergeDialog.qml:17
 #, kde-format
@@ -3964,7 +3976,7 @@ msgstr "Додати до подорожі"
 msgid "Do you really want to delete the trip '%1'?"
 msgstr "Ви справді бажаєте вилучити подорож «%1»?"
 
-#: app/TripGroupPage.qml:432
+#: app/TripGroupPage.qml:437
 #, kde-format
 msgid "One day"
 msgid_plural "%1 days"
@@ -3973,42 +3985,49 @@ msgstr[1] "%1 дні"
 msgstr[2] "%1 днів"
 msgstr[3] "Один день"
 
-#: app/TripGroupPage.qml:452
+#: app/TripGroupPage.qml:457
 #, kde-format
 msgid "Some incompatible power sockets (%1)"
 msgstr "Несумісні розетки (%1)"
 
-#: app/TripGroupPage.qml:454
+#: app/TripGroupPage.qml:459
 #, kde-format
 msgid "Some incompatible power plugs (%1)"
 msgstr "Несумісні штекери (%1)"
 
-#: app/TripGroupPage.qml:457
+#: app/TripGroupPage.qml:462
 #, kde-format
 msgid "No compatible power plugs (%1)"
 msgstr "Немає сумісних штекерів (%1)"
 
-#: app/TripGroupPage.qml:470
+#: app/TripGroupPage.qml:475
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Show Map"
+msgid "Show map…"
+msgstr "Показати мапу"
+
+#: app/TripGroupPage.qml:482
 #, kde-format
 msgid "Import"
 msgstr "Імпортувати"
 
-#: app/TripGroupPage.qml:484
+#: app/TripGroupPage.qml:496
 #, kde-format
 msgid "Add"
 msgstr "Додати"
 
-#: app/TripGroupPage.qml:623
+#: app/TripGroupPage.qml:635
 #, kde-format
 msgid "Rename…"
 msgstr "Перейменувати…"
 
-#: app/TripGroupPage.qml:632
+#: app/TripGroupPage.qml:644
 #, kde-format
 msgid "Merge trips…"
 msgstr "Об'єднати подорожі…"
 
-#: app/TripGroupPage.qml:643
+#: app/TripGroupPage.qml:655
 #, kde-format
 msgid "Split trip…"
 msgstr "Розділена подорож…"
@@ -4253,23 +4272,23 @@ msgstr ""
 msgid "Got it!"
 msgstr "Гаразд!"
 
-#: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:56
-#: matrix/matrixmanager.cpp:108
+#: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:66
+#: matrix/matrixmanager.cpp:123
 #, kde-format
 msgid "Syncing…"
 msgstr "Синхронізація…"
 
-#: matrix/matrixmanager.cpp:41
+#: matrix/matrixmanager.cpp:50
 #, kde-format
 msgid "This server does not support logging in using a password"
 msgstr "На цьому сервері не передбачено підтримки входу за допомогою пароля"
 
-#: matrix/matrixmanager.cpp:67
+#: matrix/matrixmanager.cpp:82
 #, kde-format
 msgid "Logging in"
 msgstr "Вхід до системи"
 
-#: metadataextractor/itineraryextractor.cpp:119
+#: metadataextractor/itineraryextractor.cpp:118
 #, kde-format
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
