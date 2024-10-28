@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-27 00:40+0000\n"
+"POT-Creation-Date: 2024-10-28 00:40+0000\n"
 "PO-Revision-Date: 2023-07-29 15:30-0300\n"
 "Last-Translator: Geraldo Simiao <geraldosimiao@fedoraproject.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -890,12 +890,12 @@ msgstr "Nenhum documento anexado a esta reserva."
 msgid "Add Document…"
 msgstr "Adicionar documento"
 
-#: app/downloadjob.cpp:159
+#: app/downloadjob.cpp:162
 #, kde-format
 msgid "Network error: %1"
 msgstr "Erro de rede: %1"
 
-#: app/downloadjob.cpp:190
+#: app/downloadjob.cpp:193
 #, kde-format
 msgid "Download failed: %1"
 msgstr "Falha ao baixar: %1"
@@ -1594,22 +1594,22 @@ msgstr "Teste expirado"
 msgid "Recovery certificate valid"
 msgstr "Certificado inválido"
 
-#: app/healthcertificatemanager.cpp:140
+#: app/healthcertificatemanager.cpp:141
 #, kde-format
 msgid "Vaccination %1/%2 (%3)"
 msgstr "Vacinação %1/%2 (%3)"
 
-#: app/healthcertificatemanager.cpp:142
+#: app/healthcertificatemanager.cpp:143
 #, kde-format
 msgid "Vaccination (%1)"
 msgstr "Vacinação (%1)"
 
-#: app/healthcertificatemanager.cpp:146
+#: app/healthcertificatemanager.cpp:147
 #, kde-format
 msgid "Test %1 (%2)"
 msgstr "Teste %1 (%2)"
 
-#: app/healthcertificatemanager.cpp:152
+#: app/healthcertificatemanager.cpp:153
 #, kde-format
 msgid "Recovery (%1)"
 msgstr "Recuperação (%1)"

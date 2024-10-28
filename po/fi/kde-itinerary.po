@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-27 00:40+0000\n"
+"POT-Creation-Date: 2024-10-28 00:40+0000\n"
 "PO-Revision-Date: 2024-02-27 13:39+0200\n"
 "Last-Translator: Kimmo Kujansuu <mrkujansuu@gmail.com>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -835,12 +835,12 @@ msgstr "Tähän varaukseen ei ole liitetty asiakirjoja."
 msgid "Add Document…"
 msgstr "Lisää asiakirja"
 
-#: app/downloadjob.cpp:159
+#: app/downloadjob.cpp:162
 #, kde-format
 msgid "Network error: %1"
 msgstr "Verkkovirhe: %1"
 
-#: app/downloadjob.cpp:190
+#: app/downloadjob.cpp:193
 #, kde-format
 msgid "Download failed: %1"
 msgstr "Lataus epäonnistui: %1"
@@ -1512,22 +1512,22 @@ msgstr "Koetulos on vanhentunut"
 msgid "Recovery certificate valid"
 msgstr "Kelvollinen palautusvarmenne"
 
-#: app/healthcertificatemanager.cpp:140
+#: app/healthcertificatemanager.cpp:141
 #, kde-format
 msgid "Vaccination %1/%2 (%3)"
 msgstr "Rokotus %1/%2 (%3)"
 
-#: app/healthcertificatemanager.cpp:142
+#: app/healthcertificatemanager.cpp:143
 #, kde-format
 msgid "Vaccination (%1)"
 msgstr "Rokotus (%1)"
 
-#: app/healthcertificatemanager.cpp:146
+#: app/healthcertificatemanager.cpp:147
 #, kde-format
 msgid "Test %1 (%2)"
 msgstr "Testi %1 (%2)"
 
-#: app/healthcertificatemanager.cpp:152
+#: app/healthcertificatemanager.cpp:153
 #, kde-format
 msgid "Recovery (%1)"
 msgstr "Toipuminen (%1)"

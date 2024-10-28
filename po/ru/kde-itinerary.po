@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-27 00:40+0000\n"
+"POT-Creation-Date: 2024-10-28 00:40+0000\n"
 "PO-Revision-Date: 2024-02-09 23:07+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -859,12 +859,12 @@ msgstr "К этому бронированию не добавлены ника�
 msgid "Add Document…"
 msgstr "Добавить документ"
 
-#: app/downloadjob.cpp:159
+#: app/downloadjob.cpp:162
 #, kde-format
 msgid "Network error: %1"
 msgstr "Ошибка сети: %1"
 
-#: app/downloadjob.cpp:190
+#: app/downloadjob.cpp:193
 #, kde-format
 msgid "Download failed: %1"
 msgstr "Ошибка загрузки: %1"
@@ -1539,22 +1539,22 @@ msgstr "Тест истёк"
 msgid "Recovery certificate valid"
 msgstr "Сертификат выздоровления действителен"
 
-#: app/healthcertificatemanager.cpp:140
+#: app/healthcertificatemanager.cpp:141
 #, kde-format
 msgid "Vaccination %1/%2 (%3)"
 msgstr "Вакцинация %1/%2 (%3)"
 
-#: app/healthcertificatemanager.cpp:142
+#: app/healthcertificatemanager.cpp:143
 #, kde-format
 msgid "Vaccination (%1)"
 msgstr "Вакцинация (%1)"
 
-#: app/healthcertificatemanager.cpp:146
+#: app/healthcertificatemanager.cpp:147
 #, kde-format
 msgid "Test %1 (%2)"
 msgstr "Тест %1 (%2)"
 
-#: app/healthcertificatemanager.cpp:152
+#: app/healthcertificatemanager.cpp:153
 #, kde-format
 msgid "Recovery (%1)"
 msgstr "Перенесённое заболевание (%1)"

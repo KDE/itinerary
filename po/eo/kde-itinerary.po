@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-27 00:40+0000\n"
+"POT-Creation-Date: 2024-10-28 00:40+0000\n"
 "PO-Revision-Date: 2024-09-19 21:59+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -825,12 +825,12 @@ msgstr "Neniuj dokumentoj alkroĉitaj al ĉi tiu rezervo."
 msgid "Add Document…"
 msgstr "Aldoni Dokumenton…"
 
-#: app/downloadjob.cpp:159
+#: app/downloadjob.cpp:162
 #, kde-format
 msgid "Network error: %1"
 msgstr "Reta eraro: %1"
 
-#: app/downloadjob.cpp:190
+#: app/downloadjob.cpp:193
 #, kde-format
 msgid "Download failed: %1"
 msgstr "Elŝuto malsukcesis: %1"
@@ -1482,22 +1482,22 @@ msgstr "Testo eksvalidiĝis"
 msgid "Recovery certificate valid"
 msgstr "Reakira atestilo valida"
 
-#: app/healthcertificatemanager.cpp:140
+#: app/healthcertificatemanager.cpp:141
 #, kde-format
 msgid "Vaccination %1/%2 (%3)"
 msgstr "Vakcinado %1/%2 (%3)"
 
-#: app/healthcertificatemanager.cpp:142
+#: app/healthcertificatemanager.cpp:143
 #, kde-format
 msgid "Vaccination (%1)"
 msgstr "Vakcinado (%1)"
 
-#: app/healthcertificatemanager.cpp:146
+#: app/healthcertificatemanager.cpp:147
 #, kde-format
 msgid "Test %1 (%2)"
 msgstr "Testo %1 (%2)"
 
-#: app/healthcertificatemanager.cpp:152
+#: app/healthcertificatemanager.cpp:153
 #, kde-format
 msgid "Recovery (%1)"
 msgstr "Reakiro (%1)"

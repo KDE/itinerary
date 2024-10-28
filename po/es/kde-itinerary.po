@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-27 00:40+0000\n"
-"PO-Revision-Date: 2024-09-28 12:45+0200\n"
+"POT-Creation-Date: 2024-10-28 00:40+0000\n"
+"PO-Revision-Date: 2024-10-27 08:56+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.08.1\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -827,12 +827,12 @@ msgstr "No hay documentos adjuntos para esta reserva."
 msgid "Add Document…"
 msgstr "Añadir documento..."
 
-#: app/downloadjob.cpp:159
+#: app/downloadjob.cpp:162
 #, kde-format
 msgid "Network error: %1"
 msgstr "Error de red: %1"
 
-#: app/downloadjob.cpp:190
+#: app/downloadjob.cpp:193
 #, kde-format
 msgid "Download failed: %1"
 msgstr "Descarga fallida: %1"
@@ -1483,22 +1483,22 @@ msgstr "Prueba caducada"
 msgid "Recovery certificate valid"
 msgstr "Certificado de recuperación válido"
 
-#: app/healthcertificatemanager.cpp:140
+#: app/healthcertificatemanager.cpp:141
 #, kde-format
 msgid "Vaccination %1/%2 (%3)"
 msgstr "Vacunación %1/%2 (%3)"
 
-#: app/healthcertificatemanager.cpp:142
+#: app/healthcertificatemanager.cpp:143
 #, kde-format
 msgid "Vaccination (%1)"
 msgstr "Vacunación (%1)"
 
-#: app/healthcertificatemanager.cpp:146
+#: app/healthcertificatemanager.cpp:147
 #, kde-format
 msgid "Test %1 (%2)"
 msgstr "Prueba %1 (%2)"
 
-#: app/healthcertificatemanager.cpp:152
+#: app/healthcertificatemanager.cpp:153
 #, kde-format
 msgid "Recovery (%1)"
 msgstr "Recuperación (%1)"
@@ -3918,16 +3918,14 @@ msgid "%1 (%2/%3)"
 msgstr "%1 (%2/%3)"
 
 #: app/TripGroupMapPage.qml:239
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "View Indoor Map"
+#, kde-format
 msgid "Show indoor map"
-msgstr "Ver mapa del interior"
+msgstr "Mostrar mapa del interior"
 
 #: app/TripGroupMapPage.qml:287
 #, kde-format
 msgid "Address:"
-msgstr ""
+msgstr "Dirección:"
 
 #: app/TripGroupMergeDialog.qml:17
 #, kde-format
@@ -3980,11 +3978,9 @@ msgid "No compatible power plugs (%1)"
 msgstr "No hay clavijas de corriente compatibles (%1)"
 
 #: app/TripGroupPage.qml:475
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Show Map"
+#, kde-format
 msgid "Show map…"
-msgstr "Mostrar mapa"
+msgstr "Mostrar mapa..."
 
 #: app/TripGroupPage.qml:482
 #, kde-format

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-27 00:40+0000\n"
-"PO-Revision-Date: 2024-10-04 01:12+0300\n"
+"POT-Creation-Date: 2024-10-28 00:40+0000\n"
+"PO-Revision-Date: 2024-10-27 14:11+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -826,12 +826,12 @@ msgstr "Bu rezervasyonu ekli belge yok."
 msgid "Add Document…"
 msgstr "Belge Ekle…"
 
-#: app/downloadjob.cpp:159
+#: app/downloadjob.cpp:162
 #, kde-format
 msgid "Network error: %1"
 msgstr "Ağ hatası: %1"
 
-#: app/downloadjob.cpp:190
+#: app/downloadjob.cpp:193
 #, kde-format
 msgid "Download failed: %1"
 msgstr "İndirme başarısız: %1"
@@ -1482,22 +1482,22 @@ msgstr "Test süresi dolmuş"
 msgid "Recovery certificate valid"
 msgstr "İyileşme sertifikası geçerli"
 
-#: app/healthcertificatemanager.cpp:140
+#: app/healthcertificatemanager.cpp:141
 #, kde-format
 msgid "Vaccination %1/%2 (%3)"
 msgstr "Aşılama %1/%2 (%3)"
 
-#: app/healthcertificatemanager.cpp:142
+#: app/healthcertificatemanager.cpp:143
 #, kde-format
 msgid "Vaccination (%1)"
 msgstr "Aşılama (%1)"
 
-#: app/healthcertificatemanager.cpp:146
+#: app/healthcertificatemanager.cpp:147
 #, kde-format
 msgid "Test %1 (%2)"
 msgstr "Test %1 (%2)"
 
-#: app/healthcertificatemanager.cpp:152
+#: app/healthcertificatemanager.cpp:153
 #, kde-format
 msgid "Recovery (%1)"
 msgstr "İyileşme (%1)"
@@ -3908,16 +3908,14 @@ msgid "%1 (%2/%3)"
 msgstr "%1 (%2/%3)"
 
 #: app/TripGroupMapPage.qml:239
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "View Indoor Map"
+#, kde-format
 msgid "Show indoor map"
-msgstr "İç Haritayı Görüntüle"
+msgstr "İç mekan haritasını göster"
 
 #: app/TripGroupMapPage.qml:287
 #, kde-format
 msgid "Address:"
-msgstr ""
+msgstr "Adres:"
 
 #: app/TripGroupMergeDialog.qml:17
 #, kde-format
@@ -3970,11 +3968,9 @@ msgid "No compatible power plugs (%1)"
 msgstr "Uyumlu fiş yok (%1)"
 
 #: app/TripGroupPage.qml:475
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Show Map"
+#, kde-format
 msgid "Show map…"
-msgstr "Haritayı Göster"
+msgstr "Haritayı göster…"
 
 #: app/TripGroupPage.qml:482
 #, kde-format

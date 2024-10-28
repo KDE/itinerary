@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-27 00:40+0000\n"
-"PO-Revision-Date: 2024-09-28 08:30+0300\n"
+"POT-Creation-Date: 2024-10-28 00:40+0000\n"
+"PO-Revision-Date: 2024-10-27 13:02+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -836,12 +836,12 @@ msgstr "До цього резервування не долучено жодн�
 msgid "Add Document…"
 msgstr "Додати документ…"
 
-#: app/downloadjob.cpp:159
+#: app/downloadjob.cpp:162
 #, kde-format
 msgid "Network error: %1"
 msgstr "Помилка мережі: %1"
 
-#: app/downloadjob.cpp:190
+#: app/downloadjob.cpp:193
 #, kde-format
 msgid "Download failed: %1"
 msgstr "Невдала спроба отримання: %1"
@@ -1492,22 +1492,22 @@ msgstr "Термін дії тестування сплив"
 msgid "Recovery certificate valid"
 msgstr "Сертифікат видужання є чинним"
 
-#: app/healthcertificatemanager.cpp:140
+#: app/healthcertificatemanager.cpp:141
 #, kde-format
 msgid "Vaccination %1/%2 (%3)"
 msgstr "Вакцинація %1 з %2 (%3)"
 
-#: app/healthcertificatemanager.cpp:142
+#: app/healthcertificatemanager.cpp:143
 #, kde-format
 msgid "Vaccination (%1)"
 msgstr "Вакцинація (%1)"
 
-#: app/healthcertificatemanager.cpp:146
+#: app/healthcertificatemanager.cpp:147
 #, kde-format
 msgid "Test %1 (%2)"
 msgstr "Тест %1 (%2)"
 
-#: app/healthcertificatemanager.cpp:152
+#: app/healthcertificatemanager.cpp:153
 #, kde-format
 msgid "Recovery (%1)"
 msgstr "Відновлення (%1)"
@@ -3937,16 +3937,14 @@ msgid "%1 (%2/%3)"
 msgstr "%1 (%2/%3)"
 
 #: app/TripGroupMapPage.qml:239
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "View Indoor Map"
+#, kde-format
 msgid "Show indoor map"
 msgstr "Переглянути внутрішню карту"
 
 #: app/TripGroupMapPage.qml:287
 #, kde-format
 msgid "Address:"
-msgstr ""
+msgstr "Адреса:"
 
 #: app/TripGroupMergeDialog.qml:17
 #, kde-format
@@ -4001,11 +3999,9 @@ msgid "No compatible power plugs (%1)"
 msgstr "Немає сумісних штекерів (%1)"
 
 #: app/TripGroupPage.qml:475
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Show Map"
+#, kde-format
 msgid "Show map…"
-msgstr "Показати мапу"
+msgstr "Показати карту…"
 
 #: app/TripGroupPage.qml:482
 #, kde-format
