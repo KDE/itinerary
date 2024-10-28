@@ -99,7 +99,7 @@ Kirigami.Page {
 
         // path maneauvers
         Repeater {
-            model: mapModel.journeySections.filter((jny) => { return jny.journeySection.mode == KPublicTransport.journeySection.Walking; })
+            model: mapModel.journeySections.filter((jny) => { return jny.journeySection.mode == KPublicTransport.JourneySection.Walking || jny.journeySection.mode == KPublicTransport.JourneySection.RentedVehicle || jny.journeySection.mode == KPublicTransport.JourneySection.IndividualTransport || jny.journeySection.mode == KPublicTransport.JourneySection.Transfer; })
             Repeater {
                 property var jnySection: modelData
                 model: modelData.journeySection.path.sections
