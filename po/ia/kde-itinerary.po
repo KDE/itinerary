@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-28 00:40+0000\n"
-"PO-Revision-Date: 2024-09-30 12:12+0200\n"
+"POT-Creation-Date: 2024-10-29 00:40+0000\n"
+"PO-Revision-Date: 2024-10-28 11:08+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -2147,22 +2147,7 @@ msgstr "Velocitate medie: %1"
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionPage.qml:218 app/TripGroupMapPage.qml:210
-#, kde-format
-msgid "Platform:"
-msgstr "Platteforma:"
-
-#: app/JourneySectionPage.qml:251 app/TripGroupMapPage.qml:221
-#, kde-format
-msgid "Occupancy:"
-msgstr "Occupation :"
-
-#: app/JourneySectionPage.qml:269 app/JourneySectionStopDelegate.qml:162
-#, kde-format
-msgid "Show location"
-msgstr "Monstra location"
-
-#: app/JourneySectionPage.qml:490
+#: app/JourneySectionPage.qml:368
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2185,6 +2170,11 @@ msgstr "Bassino %1"
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
 msgstr "Pl. %1"
+
+#: app/JourneySectionStopDelegate.qml:162
+#, kde-format
+msgid "Show location"
+msgstr "Monstra location"
 
 #: app/JourneySummaryDelegate.qml:48
 #, kde-format
@@ -2526,6 +2516,21 @@ msgstr "Adjuta"
 #, kde-format
 msgid "Map download finished."
 msgstr "Discargamento de mappa terminate."
+
+#: app/MapStopoverInfoSheetDrawer.qml:55
+#, kde-format
+msgid "Platform:"
+msgstr "Platteforma:"
+
+#: app/MapStopoverInfoSheetDrawer.qml:66
+#, kde-format
+msgid "Occupancy:"
+msgstr "Occupation :"
+
+#: app/MapStopoverInfoSheetDrawer.qml:84
+#, kde-format
+msgid "Show indoor map"
+msgstr "Monstra mappa interior"
 
 #: app/MatrixRoomSelectionSheet.qml:19
 #, kde-format
@@ -3908,17 +3913,10 @@ msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"
 msgstr "%1 (%2/%3)"
 
-#: app/TripGroupMapPage.qml:239
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "View Indoor Map"
-msgid "Show indoor map"
-msgstr "Mappa de vista interior"
-
-#: app/TripGroupMapPage.qml:287
+#: app/TripGroupMapPage.qml:192
 #, kde-format
 msgid "Address:"
-msgstr ""
+msgstr "Adresse:"
 
 #: app/TripGroupMergeDialog.qml:17
 #, kde-format
@@ -3971,11 +3969,9 @@ msgid "No compatible power plugs (%1)"
 msgstr "Necun prisas electric compatibile (%1)"
 
 #: app/TripGroupPage.qml:475
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Show Map"
+#, kde-format
 msgid "Show map…"
-msgstr "Monstra mappa"
+msgstr "Monstra mappa…"
 
 #: app/TripGroupPage.qml:482
 #, kde-format
@@ -4021,6 +4017,11 @@ msgstr "Nomine de viage non pote esser vacue."
 #, kde-format
 msgid "Add to:"
 msgstr "Adde a:"
+
+#: app/TripGroupSelectorCard.qml:120
+#, kde-format
+msgid "A trip must be selected."
+msgstr ""
 
 #: app/TripGroupsPage.qml:15
 #, kde-format

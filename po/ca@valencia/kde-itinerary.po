@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-28 00:40+0000\n"
+"POT-Creation-Date: 2024-10-29 00:40+0000\n"
 "PO-Revision-Date: 2024-10-27 10:14+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -2149,22 +2149,7 @@ msgstr "Velocitat mitjana: %1"
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionPage.qml:218 app/TripGroupMapPage.qml:210
-#, kde-format
-msgid "Platform:"
-msgstr "Andana:"
-
-#: app/JourneySectionPage.qml:251 app/TripGroupMapPage.qml:221
-#, kde-format
-msgid "Occupancy:"
-msgstr "Ocupació:"
-
-#: app/JourneySectionPage.qml:269 app/JourneySectionStopDelegate.qml:162
-#, kde-format
-msgid "Show location"
-msgstr "Mostra la ubicació"
-
-#: app/JourneySectionPage.qml:490
+#: app/JourneySectionPage.qml:368
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2188,6 +2173,11 @@ msgstr "Moll %1"
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
 msgstr "An. %1"
+
+#: app/JourneySectionStopDelegate.qml:162
+#, kde-format
+msgid "Show location"
+msgstr "Mostra la ubicació"
 
 #: app/JourneySummaryDelegate.qml:48
 #, kde-format
@@ -2532,6 +2522,21 @@ msgstr "Ajuda"
 #, kde-format
 msgid "Map download finished."
 msgstr "Ha acabat la baixada dels mapes."
+
+#: app/MapStopoverInfoSheetDrawer.qml:55
+#, kde-format
+msgid "Platform:"
+msgstr "Andana:"
+
+#: app/MapStopoverInfoSheetDrawer.qml:66
+#, kde-format
+msgid "Occupancy:"
+msgstr "Ocupació:"
+
+#: app/MapStopoverInfoSheetDrawer.qml:84
+#, kde-format
+msgid "Show indoor map"
+msgstr "Mostra el mapa de l'interior"
 
 #: app/MatrixRoomSelectionSheet.qml:19
 #, kde-format
@@ -3919,12 +3924,7 @@ msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"
 msgstr "%1 (%2/%3)"
 
-#: app/TripGroupMapPage.qml:239
-#, kde-format
-msgid "Show indoor map"
-msgstr "Mostra el mapa de l'interior"
-
-#: app/TripGroupMapPage.qml:287
+#: app/TripGroupMapPage.qml:192
 #, kde-format
 msgid "Address:"
 msgstr "Adreça:"
@@ -4028,6 +4028,11 @@ msgstr "El nom del viatge no pot estar buit."
 #, kde-format
 msgid "Add to:"
 msgstr "Afig a:"
+
+#: app/TripGroupSelectorCard.qml:120
+#, kde-format
+msgid "A trip must be selected."
+msgstr ""
 
 #: app/TripGroupsPage.qml:15
 #, kde-format

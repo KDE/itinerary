@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-28 00:40+0000\n"
+"POT-Creation-Date: 2024-10-29 00:40+0000\n"
 "PO-Revision-Date: 2024-10-27 07:57+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -2155,22 +2155,7 @@ msgstr "מהירות ממוצעת: %1"
 msgid "CO₂: %1"
 msgstr "פחמן דו־חמצני: %1"
 
-#: app/JourneySectionPage.qml:218 app/TripGroupMapPage.qml:210
-#, kde-format
-msgid "Platform:"
-msgstr "רציף:"
-
-#: app/JourneySectionPage.qml:251 app/TripGroupMapPage.qml:221
-#, kde-format
-msgid "Occupancy:"
-msgstr "תפוסה:"
-
-#: app/JourneySectionPage.qml:269 app/JourneySectionStopDelegate.qml:162
-#, kde-format
-msgid "Show location"
-msgstr "הצגת מקום"
-
-#: app/JourneySectionPage.qml:490
+#: app/JourneySectionPage.qml:368
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2193,6 +2178,11 @@ msgstr "מעגן %1"
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
 msgstr "רציף %1"
+
+#: app/JourneySectionStopDelegate.qml:162
+#, kde-format
+msgid "Show location"
+msgstr "הצגת מקום"
 
 #: app/JourneySummaryDelegate.qml:48
 #, kde-format
@@ -2536,6 +2526,21 @@ msgstr "עזרה"
 #, kde-format
 msgid "Map download finished."
 msgstr "הורדת המפה הסתיימה."
+
+#: app/MapStopoverInfoSheetDrawer.qml:55
+#, kde-format
+msgid "Platform:"
+msgstr "רציף:"
+
+#: app/MapStopoverInfoSheetDrawer.qml:66
+#, kde-format
+msgid "Occupancy:"
+msgstr "תפוסה:"
+
+#: app/MapStopoverInfoSheetDrawer.qml:84
+#, kde-format
+msgid "Show indoor map"
+msgstr "הצגת מפה פנימית"
 
 #: app/MatrixRoomSelectionSheet.qml:19
 #, kde-format
@@ -3916,12 +3921,7 @@ msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"
 msgstr "%1 (%2/%3)"
 
-#: app/TripGroupMapPage.qml:239
-#, kde-format
-msgid "Show indoor map"
-msgstr "הצגת מפה פנימית"
-
-#: app/TripGroupMapPage.qml:287
+#: app/TripGroupMapPage.qml:192
 #, kde-format
 msgid "Address:"
 msgstr "כתובת:"
@@ -4027,6 +4027,11 @@ msgstr "שם הטיול לא יכול להיות ריק."
 #, kde-format
 msgid "Add to:"
 msgstr "הוספה אל:"
+
+#: app/TripGroupSelectorCard.qml:120
+#, kde-format
+msgid "A trip must be selected."
+msgstr ""
 
 #: app/TripGroupsPage.qml:15
 #, kde-format

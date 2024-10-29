@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-28 00:40+0000\n"
+"POT-Creation-Date: 2024-10-29 00:40+0000\n"
 "PO-Revision-Date: 2024-09-28 13:01+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -2147,22 +2147,7 @@ msgstr "Velocidade media: %1"
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionPage.qml:218 app/TripGroupMapPage.qml:210
-#, kde-format
-msgid "Platform:"
-msgstr "Plataforma:"
-
-#: app/JourneySectionPage.qml:251 app/TripGroupMapPage.qml:221
-#, kde-format
-msgid "Occupancy:"
-msgstr "Ocupación:"
-
-#: app/JourneySectionPage.qml:269 app/JourneySectionStopDelegate.qml:162
-#, kde-format
-msgid "Show location"
-msgstr "Amosar a localización"
-
-#: app/JourneySectionPage.qml:490
+#: app/JourneySectionPage.qml:368
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2189,6 +2174,11 @@ msgstr "Dár. %1"
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
 msgstr "Pl. %1"
+
+#: app/JourneySectionStopDelegate.qml:162
+#, kde-format
+msgid "Show location"
+msgstr "Amosar a localización"
 
 #: app/JourneySummaryDelegate.qml:48
 #, kde-format
@@ -2531,6 +2521,23 @@ msgstr "Axuda"
 #, kde-format
 msgid "Map download finished."
 msgstr "Rematou a descarga do mapa."
+
+#: app/MapStopoverInfoSheetDrawer.qml:55
+#, kde-format
+msgid "Platform:"
+msgstr "Plataforma:"
+
+#: app/MapStopoverInfoSheetDrawer.qml:66
+#, kde-format
+msgid "Occupancy:"
+msgstr "Ocupación:"
+
+#: app/MapStopoverInfoSheetDrawer.qml:84
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "View Indoor Map"
+msgid "Show indoor map"
+msgstr "Ver o mapa interior"
 
 #: app/MatrixRoomSelectionSheet.qml:19
 #, kde-format
@@ -3915,14 +3922,7 @@ msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"
 msgstr "%1 (%2-%3)"
 
-#: app/TripGroupMapPage.qml:239
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "View Indoor Map"
-msgid "Show indoor map"
-msgstr "Ver o mapa interior"
-
-#: app/TripGroupMapPage.qml:287
+#: app/TripGroupMapPage.qml:192
 #, kde-format
 msgid "Address:"
 msgstr ""
@@ -4028,6 +4028,11 @@ msgstr "O nome da viaxe non pode estar baleiro."
 #, kde-format
 msgid "Add to:"
 msgstr "Engadir a:"
+
+#: app/TripGroupSelectorCard.qml:120
+#, kde-format
+msgid "A trip must be selected."
+msgstr ""
 
 #: app/TripGroupsPage.qml:15
 #, kde-format

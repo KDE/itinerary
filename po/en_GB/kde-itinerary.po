@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-28 00:40+0000\n"
+"POT-Creation-Date: 2024-10-29 00:40+0000\n"
 "PO-Revision-Date: 2024-10-18 17:04+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -2146,22 +2146,7 @@ msgstr "Average Speed: %1"
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionPage.qml:218 app/TripGroupMapPage.qml:210
-#, kde-format
-msgid "Platform:"
-msgstr "Platform:"
-
-#: app/JourneySectionPage.qml:251 app/TripGroupMapPage.qml:221
-#, kde-format
-msgid "Occupancy:"
-msgstr "Occupancy:"
-
-#: app/JourneySectionPage.qml:269 app/JourneySectionStopDelegate.qml:162
-#, kde-format
-msgid "Show location"
-msgstr "Show location"
-
-#: app/JourneySectionPage.qml:490
+#: app/JourneySectionPage.qml:368
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2184,6 +2169,11 @@ msgstr "Dock %1"
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
 msgstr "Pl. %1"
+
+#: app/JourneySectionStopDelegate.qml:162
+#, kde-format
+msgid "Show location"
+msgstr "Show location"
 
 #: app/JourneySummaryDelegate.qml:48
 #, kde-format
@@ -2526,6 +2516,23 @@ msgstr "Help"
 #, kde-format
 msgid "Map download finished."
 msgstr "Map download finished."
+
+#: app/MapStopoverInfoSheetDrawer.qml:55
+#, kde-format
+msgid "Platform:"
+msgstr "Platform:"
+
+#: app/MapStopoverInfoSheetDrawer.qml:66
+#, kde-format
+msgid "Occupancy:"
+msgstr "Occupancy:"
+
+#: app/MapStopoverInfoSheetDrawer.qml:84
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "View Indoor Map"
+msgid "Show indoor map"
+msgstr "View Indoor Map"
 
 #: app/MatrixRoomSelectionSheet.qml:19
 #, kde-format
@@ -3904,14 +3911,7 @@ msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"
 msgstr "%1 (%2/%3)"
 
-#: app/TripGroupMapPage.qml:239
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "View Indoor Map"
-msgid "Show indoor map"
-msgstr "View Indoor Map"
-
-#: app/TripGroupMapPage.qml:287
+#: app/TripGroupMapPage.qml:192
 #, kde-format
 msgid "Address:"
 msgstr ""
@@ -4017,6 +4017,11 @@ msgstr "Trip name must not be empty."
 #, kde-format
 msgid "Add to:"
 msgstr "Add to:"
+
+#: app/TripGroupSelectorCard.qml:120
+#, kde-format
+msgid "A trip must be selected."
+msgstr ""
 
 #: app/TripGroupsPage.qml:15
 #, kde-format

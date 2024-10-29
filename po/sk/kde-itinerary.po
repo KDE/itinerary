@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-28 00:40+0000\n"
+"POT-Creation-Date: 2024-10-29 00:40+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -2296,23 +2296,7 @@ msgstr ""
 msgid "CO₂: %1"
 msgstr "CO₂: %1g"
 
-#: app/JourneySectionPage.qml:218 app/TripGroupMapPage.qml:210
-#, kde-format
-msgid "Platform:"
-msgstr "Platforma:"
-
-#: app/JourneySectionPage.qml:251 app/TripGroupMapPage.qml:221
-#, kde-format
-msgid "Occupancy:"
-msgstr ""
-
-#: app/JourneySectionPage.qml:269 app/JourneySectionStopDelegate.qml:162
-#, fuzzy, kde-format
-#| msgid "Location:"
-msgid "Show location"
-msgstr "Umiestnenie:"
-
-#: app/JourneySectionPage.qml:490
+#: app/JourneySectionPage.qml:368
 #, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2335,6 +2319,12 @@ msgstr ""
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
 msgstr ""
+
+#: app/JourneySectionStopDelegate.qml:162
+#, fuzzy, kde-format
+#| msgid "Location:"
+msgid "Show location"
+msgstr "Umiestnenie:"
 
 #: app/JourneySummaryDelegate.qml:48
 #, kde-format
@@ -2694,6 +2684,21 @@ msgstr "Pomocník"
 #, kde-format
 msgid "Map download finished."
 msgstr ""
+
+#: app/MapStopoverInfoSheetDrawer.qml:55
+#, kde-format
+msgid "Platform:"
+msgstr "Platforma:"
+
+#: app/MapStopoverInfoSheetDrawer.qml:66
+#, kde-format
+msgid "Occupancy:"
+msgstr ""
+
+#: app/MapStopoverInfoSheetDrawer.qml:84
+#, fuzzy, kde-format
+msgid "Show indoor map"
+msgstr "Zobraziť názvy"
 
 #: app/MatrixRoomSelectionSheet.qml:19
 #, fuzzy, kde-format
@@ -4142,12 +4147,7 @@ msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"
 msgstr "%1 (%2/%3)"
 
-#: app/TripGroupMapPage.qml:239
-#, fuzzy, kde-format
-msgid "Show indoor map"
-msgstr "Zobraziť názvy"
-
-#: app/TripGroupMapPage.qml:287
+#: app/TripGroupMapPage.qml:192
 #, kde-format
 msgid "Address:"
 msgstr ""
@@ -4265,6 +4265,11 @@ msgstr "Odletový terminál:"
 #| msgid "Add Document..."
 msgid "Add to:"
 msgstr "Pridať dokument..."
+
+#: app/TripGroupSelectorCard.qml:120
+#, kde-format
+msgid "A trip must be selected."
+msgstr ""
 
 #: app/TripGroupsPage.qml:15
 #, fuzzy, kde-format

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-28 00:40+0000\n"
+"POT-Creation-Date: 2024-10-29 00:40+0000\n"
 "PO-Revision-Date: 2024-03-26 16:14+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -2187,22 +2187,7 @@ msgstr "Átlagos sebesség: %1"
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionPage.qml:218 app/TripGroupMapPage.qml:210
-#, kde-format
-msgid "Platform:"
-msgstr ""
-
-#: app/JourneySectionPage.qml:251 app/TripGroupMapPage.qml:221
-#, kde-format
-msgid "Occupancy:"
-msgstr ""
-
-#: app/JourneySectionPage.qml:269 app/JourneySectionStopDelegate.qml:162
-#, kde-format
-msgid "Show location"
-msgstr "Hely megjelenítése"
-
-#: app/JourneySectionPage.qml:490
+#: app/JourneySectionPage.qml:368
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2225,6 +2210,11 @@ msgstr "%1. dokk"
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
 msgstr "%1. peron"
+
+#: app/JourneySectionStopDelegate.qml:162
+#, kde-format
+msgid "Show location"
+msgstr "Hely megjelenítése"
 
 #: app/JourneySummaryDelegate.qml:48
 #, kde-format
@@ -2578,6 +2568,23 @@ msgstr "Súgó"
 #, kde-format
 msgid "Map download finished."
 msgstr "Térképletöltés befejezve."
+
+#: app/MapStopoverInfoSheetDrawer.qml:55
+#, kde-format
+msgid "Platform:"
+msgstr ""
+
+#: app/MapStopoverInfoSheetDrawer.qml:66
+#, kde-format
+msgid "Occupancy:"
+msgstr ""
+
+#: app/MapStopoverInfoSheetDrawer.qml:84
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "View Indoor Map"
+msgid "Show indoor map"
+msgstr "Beltéri térkép megtekintése"
 
 #: app/MatrixRoomSelectionSheet.qml:19
 #, fuzzy, kde-format
@@ -3979,14 +3986,7 @@ msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"
 msgstr ""
 
-#: app/TripGroupMapPage.qml:239
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "View Indoor Map"
-msgid "Show indoor map"
-msgstr "Beltéri térkép megtekintése"
-
-#: app/TripGroupMapPage.qml:287
+#: app/TripGroupMapPage.qml:192
 #, kde-format
 msgid "Address:"
 msgstr ""
@@ -4104,6 +4104,11 @@ msgstr "A jegy neve nem lehet üres."
 #: app/TripGroupSelectorCard.qml:93
 #, kde-format
 msgid "Add to:"
+msgstr ""
+
+#: app/TripGroupSelectorCard.qml:120
+#, kde-format
+msgid "A trip must be selected."
 msgstr ""
 
 #: app/TripGroupsPage.qml:15

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-28 00:40+0000\n"
+"POT-Creation-Date: 2024-10-29 00:40+0000\n"
 "PO-Revision-Date: 2024-10-27 08:56+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -2151,22 +2151,7 @@ msgstr "Velocidad media: %1"
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionPage.qml:218 app/TripGroupMapPage.qml:210
-#, kde-format
-msgid "Platform:"
-msgstr "Andén:"
-
-#: app/JourneySectionPage.qml:251 app/TripGroupMapPage.qml:221
-#, kde-format
-msgid "Occupancy:"
-msgstr "Ocupación:"
-
-#: app/JourneySectionPage.qml:269 app/JourneySectionStopDelegate.qml:162
-#, kde-format
-msgid "Show location"
-msgstr "Mostrar ubicación"
-
-#: app/JourneySectionPage.qml:490
+#: app/JourneySectionPage.qml:368
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2189,6 +2174,11 @@ msgstr "Muelle %1"
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
 msgstr "An. %1"
+
+#: app/JourneySectionStopDelegate.qml:162
+#, kde-format
+msgid "Show location"
+msgstr "Mostrar ubicación"
 
 #: app/JourneySummaryDelegate.qml:48
 #, kde-format
@@ -2531,6 +2521,21 @@ msgstr "Ayuda"
 #, kde-format
 msgid "Map download finished."
 msgstr "Descarga de mapas finalizada."
+
+#: app/MapStopoverInfoSheetDrawer.qml:55
+#, kde-format
+msgid "Platform:"
+msgstr "Andén:"
+
+#: app/MapStopoverInfoSheetDrawer.qml:66
+#, kde-format
+msgid "Occupancy:"
+msgstr "Ocupación:"
+
+#: app/MapStopoverInfoSheetDrawer.qml:84
+#, kde-format
+msgid "Show indoor map"
+msgstr "Mostrar mapa del interior"
 
 #: app/MatrixRoomSelectionSheet.qml:19
 #, kde-format
@@ -3917,12 +3922,7 @@ msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"
 msgstr "%1 (%2/%3)"
 
-#: app/TripGroupMapPage.qml:239
-#, kde-format
-msgid "Show indoor map"
-msgstr "Mostrar mapa del interior"
-
-#: app/TripGroupMapPage.qml:287
+#: app/TripGroupMapPage.qml:192
 #, kde-format
 msgid "Address:"
 msgstr "Dirección:"
@@ -4026,6 +4026,11 @@ msgstr "El nombre del viaje no puede estar vacío."
 #, kde-format
 msgid "Add to:"
 msgstr "Añadir a:"
+
+#: app/TripGroupSelectorCard.qml:120
+#, kde-format
+msgid "A trip must be selected."
+msgstr ""
 
 #: app/TripGroupsPage.qml:15
 #, kde-format

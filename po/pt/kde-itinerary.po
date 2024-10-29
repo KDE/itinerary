@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kitinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-28 00:40+0000\n"
+"POT-Creation-Date: 2024-10-29 00:40+0000\n"
 "PO-Revision-Date: 2023-07-14 22:15+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -2225,23 +2225,7 @@ msgstr ""
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionPage.qml:218 app/TripGroupMapPage.qml:210
-#, fuzzy, kde-format
-#| msgid "Platform"
-msgid "Platform:"
-msgstr "Plataforma"
-
-#: app/JourneySectionPage.qml:251 app/TripGroupMapPage.qml:221
-#, kde-format
-msgid "Occupancy:"
-msgstr ""
-
-#: app/JourneySectionPage.qml:269 app/JourneySectionStopDelegate.qml:162
-#, kde-format
-msgid "Show location"
-msgstr "Mostrar a localização"
-
-#: app/JourneySectionPage.qml:490
+#: app/JourneySectionPage.qml:368
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Show More…"
@@ -2266,6 +2250,11 @@ msgstr "Cais %1"
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
 msgstr "Pl. %1"
+
+#: app/JourneySectionStopDelegate.qml:162
+#, kde-format
+msgid "Show location"
+msgstr "Mostrar a localização"
 
 #: app/JourneySummaryDelegate.qml:48
 #, kde-format
@@ -2621,6 +2610,24 @@ msgstr "Ajuda"
 #, kde-format
 msgid "Map download finished."
 msgstr "Terminou a transferência do mapa."
+
+#: app/MapStopoverInfoSheetDrawer.qml:55
+#, fuzzy, kde-format
+#| msgid "Platform"
+msgid "Platform:"
+msgstr "Plataforma"
+
+#: app/MapStopoverInfoSheetDrawer.qml:66
+#, kde-format
+msgid "Occupancy:"
+msgstr ""
+
+#: app/MapStopoverInfoSheetDrawer.qml:84
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "View Indoor Map"
+msgid "Show indoor map"
+msgstr "Ver o Mapa do Interior"
 
 #: app/MatrixRoomSelectionSheet.qml:19
 #, fuzzy, kde-format
@@ -4068,14 +4075,7 @@ msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"
 msgstr "%1 (%2/%3)"
 
-#: app/TripGroupMapPage.qml:239
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "View Indoor Map"
-msgid "Show indoor map"
-msgstr "Ver o Mapa do Interior"
-
-#: app/TripGroupMapPage.qml:287
+#: app/TripGroupMapPage.qml:192
 #, kde-format
 msgid "Address:"
 msgstr ""
@@ -4197,6 +4197,11 @@ msgstr "O nome do bilhete não pode estar vazio."
 #| msgid "Add train trip..."
 msgid "Add to:"
 msgstr "Adicionar uma viagem de comboio..."
+
+#: app/TripGroupSelectorCard.qml:120
+#, kde-format
+msgid "A trip must be selected."
+msgstr ""
 
 #: app/TripGroupsPage.qml:15
 #, fuzzy, kde-format

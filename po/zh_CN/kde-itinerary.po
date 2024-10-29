@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-28 00:40+0000\n"
+"POT-Creation-Date: 2024-10-29 00:40+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -2134,22 +2134,7 @@ msgstr ""
 msgid "CO₂: %1"
 msgstr ""
 
-#: app/JourneySectionPage.qml:218 app/TripGroupMapPage.qml:210
-#, kde-format
-msgid "Platform:"
-msgstr ""
-
-#: app/JourneySectionPage.qml:251 app/TripGroupMapPage.qml:221
-#, kde-format
-msgid "Occupancy:"
-msgstr ""
-
-#: app/JourneySectionPage.qml:269 app/JourneySectionStopDelegate.qml:162
-#, kde-format
-msgid "Show location"
-msgstr ""
-
-#: app/JourneySectionPage.qml:490
+#: app/JourneySectionPage.qml:368
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2171,6 +2156,11 @@ msgstr ""
 #, kde-format
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
+msgstr ""
+
+#: app/JourneySectionStopDelegate.qml:162
+#, kde-format
+msgid "Show location"
 msgstr ""
 
 #: app/JourneySummaryDelegate.qml:48
@@ -2512,6 +2502,21 @@ msgstr "帮助"
 #, kde-format
 msgid "Map download finished."
 msgstr "地图下载完毕。"
+
+#: app/MapStopoverInfoSheetDrawer.qml:55
+#, kde-format
+msgid "Platform:"
+msgstr ""
+
+#: app/MapStopoverInfoSheetDrawer.qml:66
+#, kde-format
+msgid "Occupancy:"
+msgstr ""
+
+#: app/MapStopoverInfoSheetDrawer.qml:84
+#, kde-format
+msgid "Show indoor map"
+msgstr ""
 
 #: app/MatrixRoomSelectionSheet.qml:19
 #, kde-format
@@ -3874,12 +3879,7 @@ msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"
 msgstr ""
 
-#: app/TripGroupMapPage.qml:239
-#, kde-format
-msgid "Show indoor map"
-msgstr ""
-
-#: app/TripGroupMapPage.qml:287
+#: app/TripGroupMapPage.qml:192
 #, kde-format
 msgid "Address:"
 msgstr ""
@@ -3981,6 +3981,11 @@ msgstr ""
 #: app/TripGroupSelectorCard.qml:93
 #, kde-format
 msgid "Add to:"
+msgstr ""
+
+#: app/TripGroupSelectorCard.qml:120
+#, kde-format
+msgid "A trip must be selected."
 msgstr ""
 
 #: app/TripGroupsPage.qml:15
