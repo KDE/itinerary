@@ -264,87 +264,52 @@ Kirigami.Page {
                         path: KPublicTransport.MapUtils.polyline(root.journeySection);
                     }
 
-                    QtLocation.MapQuickItem {
+                    MapCircle {
                         coordinate {
-
                            latitude: journeySection.departure.stopPoint.latitude
                            longitude: journeySection.departure.stopPoint.longitude
                         }
-                        anchorPoint.x: sourceItem.width/2
-                        anchorPoint.y: sourceItem.height/2
-                        sourceItem: Rectangle {
-                            width:15
-                            height:15
-                            radius: height/2
-                            border.width: 2
-                            border.color: line.line.color
-                            MouseArea {
-                                anchors.fill: parent
-                                scale: 2
-                                onClicked: {
-                                    sheetDrawer.open()
-                                    sheetDrawer.isArrival = false
-                                    sheetDrawer.isDeparture = true
-                                    sheetDrawer.stop = journeySection.departure
-                                }
-                            }
-                            }
+                        color: line.line.color
+                        size: 15
+                        onClicked: {
+                            sheetDrawer.open()
+                            sheetDrawer.isArrival = false
+                            sheetDrawer.isDeparture = true
+                            sheetDrawer.stop = journeySection.departure
                         }
+                    }
 
                     Repeater {
                         model: sectionModel
-
-                        QtLocation.MapQuickItem {
+                        MapCircle {
                             coordinate {
-
                                latitude: model.stopover.stopPoint.latitude
                                longitude: model.stopover.stopPoint.longitude
                             }
-                            anchorPoint.x: sourceItem.width/2
-                            anchorPoint.y: sourceItem.height/2
-                            sourceItem: Rectangle {
-                                width: 6
-                                height: 6
-                                radius: height/2
-                                opacity: 0.5
-                                MouseArea {
-                                    anchors.fill: parent
-                                    scale: 3
-                                    onClicked: {
-                                        sheetDrawer.open()
-                                        sheetDrawer.isArrival = false
-                                        sheetDrawer.isDeparture = false
-                                        sheetDrawer.stop = model.stopover
-                                    }
-                                }
+                            size: 6
+                            borderWidth: 1
+                            color: line.line.color
+                            textColor: Qt.alpha("white", 0.5)
+                            onClicked: {
+                                sheetDrawer.open()
+                                sheetDrawer.isArrival = false
+                                sheetDrawer.isDeparture = false
+                                sheetDrawer.stop = model.stopover
                             }
                         }
                     }
-                    QtLocation.MapQuickItem {
+                    MapCircle {
                         coordinate {
-
                            latitude: journeySection.arrival.stopPoint.latitude
                            longitude: journeySection.arrival.stopPoint.longitude
                         }
-                        anchorPoint.x: sourceItem.width/2
-                        anchorPoint.y: sourceItem.height/2
-
-                        sourceItem: Rectangle {
-                            width:15
-                            height:15
-                            radius: height/2
-                            border.width: 2
-                            border.color: line.line.color
-                            MouseArea {
-                                anchors.fill: parent
-                                scale: 2
-                                onClicked: {
-                                    sheetDrawer.open()
-                                    sheetDrawer.isArrival = true
-                                    sheetDrawer.isDeparture = false
-                                    sheetDrawer.stop = journeySection.arrival
-                                }
-                            }
+                        color: line.line.color
+                        size: 15
+                        onClicked: {
+                            sheetDrawer.open()
+                            sheetDrawer.isArrival = true
+                            sheetDrawer.isDeparture = false
+                            sheetDrawer.stop = journeySection.arrival
                         }
                     }
                 }
