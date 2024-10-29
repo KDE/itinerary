@@ -28,18 +28,22 @@ SheetDrawer {
                 elide: Qt.ElideRight
             }
 
+            readonly property bool showDepartureTime: (stopInfoDrawer.isDeparture && stopInfoDrawer.stop.scheduledDepartureTime) || !stopInfoDrawer.stop.scheduledArrivalTime
+
             QQC2.Label {
                 id: departureTime
-                Layout.rightMargin: delayLabel.visible ? 0:Kirigami.Units.largeSpacing
-                text: Localizer.formatTime(stopInfoDrawer.stop, "scheduledDepartureTime")
+                Layout.rightMargin: delayLabel.visible ? 0 : Kirigami.Units.largeSpacing
+                text: Localizer.formatTime(stopInfoDrawer.stop, headerLayout.showDepartureTime ? "scheduledDepartureTime" : "scheduledArrivalTime")
                 font.strikeout: stopInfoDrawer.stop.disruptionEffect === KPublicTransport.Disruption.NoService
             }
             QQC2.Label {
                 id: delayLabel
+                readonly property int delay: headerLayout.showDepartureTime ? stopInfoDrawer.stop.departureDelay : stopInfoDrawer.stop.arrivalDelay
+
                 Layout.rightMargin: Kirigami.Units.largeSpacing
-                text: (stopInfoDrawer.stop.departureDelay >= 0 ? "+" : "") + stopInfoDrawer.stop.departureDelay
-                color: stopInfoDrawer.stop.departureDelay > 1 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
-                visible: departureTime.visible && stopInfoDrawer.stop.hasExpectedDepartureTime && stopInfoDrawer.stop.disruptionEffect !== KPublicTransport.Disruption.NoService
+                text: (delayLabel.delay >= 0 ? "+" : "") + delayLabel.delay
+                color: delayLabel.delay > 1 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
+                visible: headerLayout.showDepartureTime ? stopInfoDrawer.stop.hasExpectedDepartureTime : stopInfoDrawer.stop.hasExpectedArrivalTime && stopInfoDrawer.stop.disruptionEffect !== KPublicTransport.Disruption.NoService
             }
         }
     }
