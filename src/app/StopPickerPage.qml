@@ -22,12 +22,29 @@ Kirigami.ScrollablePage {
     property string initialCountry: Qt.locale().name.match(/_([A-Z]{2})/)[1]
     property var location
 
+    Kirigami.PromptDialog {
+        id: clearConfirmDialog
+        title: i18n("Clear History")
+        subtitle: i18n("Do you really want to remove all previously searched locations?")
+        standardButtons: QQC2.Dialog.Cancel
+        customFooterActions: [
+            Kirigami.Action {
+                text: i18n("Remove")
+                icon.name: "edit-clear-history"
+                onTriggered: {
+                    locationHistoryModel.clear();
+                    deleteConfirmDialog.close();
+                }
+            }
+        ]
+    }
+
     QQC2.ActionGroup { id: sortActionGroup }
     actions: [
         Kirigami.Action {
             text: i18n("Clear history")
             icon.name: "edit-clear-history"
-            onTriggered: locationHistoryModel.clear()
+            onTriggered: clearConfirmDialog.open()
         },
         Kirigami.Action { separator: true },
 

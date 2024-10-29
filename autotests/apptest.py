@@ -32,6 +32,23 @@ class ItineraryTest(ItineraryTestCase):
 
         self.assertFalse(self.driver.find_element(by=AppiumBy.NAME, value="Search Journey").is_enabled())
 
+        self.driver.find_element(by=AppiumBy.NAME, value="To:").click()
+        # exists in history
+        self.assertTrue(self.driver.find_element(by=AppiumBy.NAME, value="Randa, Valais, Switzerland").is_displayed())
+
+        # clear history
+        self.openContextDrawer()
+        self.assertTrue(self.driver.find_element(by=AppiumBy.NAME, value="Clear history").is_enabled())
+        self.driver.find_element(by=AppiumBy.NAME, value="Clear history").click()
+        self.driver.find_element(by=AppiumBy.NAME, value="Cancel").click()
+        self.assertTrue(self.driver.find_element(by=AppiumBy.NAME, value="Randa, Valais, Switzerland").is_displayed())
+        self.openContextDrawer()
+        self.driver.find_element(by=AppiumBy.NAME, value="Clear history").click()
+        self.driver.find_element(by=AppiumBy.NAME, value="Remove").click()
+        # self.assertFalse(self.driver.find_element(by=AppiumBy.NAME, value="Randa, Valais, Switzerland").is_displayed())
+        self.goBack()
+
+
     def test_import(self):
         self.triggerImportAction("Scan Barcode…")
         self.assertTrue(self.driver.find_element(by=AppiumBy.NAME, value="No camera available.").is_displayed())
