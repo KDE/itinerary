@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-29 00:40+0000\n"
+"POT-Creation-Date: 2024-10-30 00:40+0000\n"
 "PO-Revision-Date: 2024-08-20 23:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -2153,7 +2153,7 @@ msgstr "평균 속도: %1"
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionPage.qml:368
+#: app/JourneySectionPage.qml:333
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2522,17 +2522,17 @@ msgstr "도움말"
 msgid "Map download finished."
 msgstr "지도를 다운로드했습니다."
 
-#: app/MapStopoverInfoSheetDrawer.qml:55
+#: app/MapStopoverInfoSheetDrawer.qml:59
 #, kde-format
 msgid "Platform:"
 msgstr "승강장:"
 
-#: app/MapStopoverInfoSheetDrawer.qml:66
+#: app/MapStopoverInfoSheetDrawer.qml:70
 #, kde-format
 msgid "Occupancy:"
 msgstr "혼잡도:"
 
-#: app/MapStopoverInfoSheetDrawer.qml:84
+#: app/MapStopoverInfoSheetDrawer.qml:88
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "View Indoor Map"
@@ -3390,33 +3390,50 @@ msgstr "합계"
 msgid "Train"
 msgstr "기차"
 
+#: app/StopPickerPage.qml:27
+#, fuzzy, kde-format
+#| msgid "Clear history"
+msgid "Clear History"
+msgstr "기록 삭제"
+
 #: app/StopPickerPage.qml:28
+#, fuzzy, kde-format
+#| msgid "Do you really want to delete this certificate?"
+msgid "Do you really want to remove all previously searched locations?"
+msgstr "이 증명서를 삭제하시겠습니까?"
+
+#: app/StopPickerPage.qml:32
+#, kde-format
+msgid "Remove"
+msgstr ""
+
+#: app/StopPickerPage.qml:45
 #, kde-format
 msgid "Clear history"
 msgstr "기록 삭제"
 
-#: app/StopPickerPage.qml:38
+#: app/StopPickerPage.qml:55
 #, kde-format
 msgid "Sort by name"
 msgstr "이름순으로 정렬"
 
-#: app/StopPickerPage.qml:45
+#: app/StopPickerPage.qml:62
 #, kde-format
 msgid "Most recently used"
 msgstr "최근 사용"
 
-#: app/StopPickerPage.qml:52
+#: app/StopPickerPage.qml:69
 #, kde-format
 msgid "Most often used"
 msgstr "자주 사용함"
 
-#: app/StopPickerPage.qml:150 app/StopPickerPage.qml:231
+#: app/StopPickerPage.qml:167 app/StopPickerPage.qml:248
 #, kde-format
 msgctxt "location name, locality, region, country"
 msgid "%1, %2, %3, %4"
 msgstr ""
 
-#: app/StopPickerPage.qml:156 app/StopPickerPage.qml:237
+#: app/StopPickerPage.qml:173 app/StopPickerPage.qml:254
 #, fuzzy, kde-format
 #| msgctxt "weekday, date"
 #| msgid "%1, %2"
@@ -3424,7 +3441,7 @@ msgctxt "location name, locality, country"
 msgid "%1, %2, %3"
 msgstr "%2 %1"
 
-#: app/StopPickerPage.qml:161 app/StopPickerPage.qml:242
+#: app/StopPickerPage.qml:178 app/StopPickerPage.qml:259
 #, fuzzy, kde-format
 #| msgctxt "weekday, date"
 #| msgid "%1, %2"
@@ -3432,7 +3449,7 @@ msgctxt "location name, region, country"
 msgid "%1, %2, %3"
 msgstr "%2 %1"
 
-#: app/StopPickerPage.qml:182 app/StopPickerPage.qml:264
+#: app/StopPickerPage.qml:199 app/StopPickerPage.qml:281
 #, fuzzy, kde-format
 #| msgctxt "weekday, date"
 #| msgid "%1, %2"
@@ -3440,7 +3457,7 @@ msgctxt "locality, region, country"
 msgid "%1, %2, %3"
 msgstr "%2 %1"
 
-#: app/StopPickerPage.qml:187 app/StopPickerPage.qml:269
+#: app/StopPickerPage.qml:204 app/StopPickerPage.qml:286
 #, fuzzy, kde-format
 #| msgctxt "weekday, date"
 #| msgid "%1, %2"
@@ -3448,7 +3465,7 @@ msgctxt "locality, country"
 msgid "%1, %2"
 msgstr "%2 %1"
 
-#: app/StopPickerPage.qml:191 app/StopPickerPage.qml:273
+#: app/StopPickerPage.qml:208 app/StopPickerPage.qml:290
 #, fuzzy, kde-format
 #| msgctxt "weekday, date"
 #| msgid "%1, %2"
@@ -3456,12 +3473,12 @@ msgctxt "region, country"
 msgid "%1, %2"
 msgstr "%2 %1"
 
-#: app/StopPickerPage.qml:206
+#: app/StopPickerPage.qml:223
 #, kde-format
 msgid "Remove history entry"
 msgstr "과거 기록 항목 삭제"
 
-#: app/StopPickerPage.qml:312
+#: app/StopPickerPage.qml:329
 #, kde-format
 msgid "No locations found"
 msgstr "위치를 찾을 수 없음"

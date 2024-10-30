@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-29 00:40+0000\n"
+"POT-Creation-Date: 2024-10-30 00:40+0000\n"
 "PO-Revision-Date: 2024-02-27 13:39+0200\n"
 "Last-Translator: Kimmo Kujansuu <mrkujansuu@gmail.com>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -2187,7 +2187,7 @@ msgstr "Keskinopeus: %1"
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionPage.qml:368
+#: app/JourneySectionPage.qml:333
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2568,17 +2568,17 @@ msgstr "Ohje"
 msgid "Map download finished."
 msgstr "Kartan lataus valmistui."
 
-#: app/MapStopoverInfoSheetDrawer.qml:55
+#: app/MapStopoverInfoSheetDrawer.qml:59
 #, kde-format
 msgid "Platform:"
 msgstr "Laituri:"
 
-#: app/MapStopoverInfoSheetDrawer.qml:66
+#: app/MapStopoverInfoSheetDrawer.qml:70
 #, kde-format
 msgid "Occupancy:"
 msgstr ""
 
-#: app/MapStopoverInfoSheetDrawer.qml:84
+#: app/MapStopoverInfoSheetDrawer.qml:88
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "View Indoor Map"
@@ -3457,33 +3457,50 @@ msgstr "Kaikkiaan"
 msgid "Train"
 msgstr "Juna"
 
+#: app/StopPickerPage.qml:27
+#, fuzzy, kde-format
+#| msgid "Clear history"
+msgid "Clear History"
+msgstr "Tyhjennä historia"
+
 #: app/StopPickerPage.qml:28
+#, fuzzy, kde-format
+#| msgid "Do you really want to delete this certificate?"
+msgid "Do you really want to remove all previously searched locations?"
+msgstr "Haluatko varmasti poistaa tämän todistuksen?"
+
+#: app/StopPickerPage.qml:32
+#, kde-format
+msgid "Remove"
+msgstr ""
+
+#: app/StopPickerPage.qml:45
 #, kde-format
 msgid "Clear history"
 msgstr "Tyhjennä historia"
 
-#: app/StopPickerPage.qml:38
+#: app/StopPickerPage.qml:55
 #, kde-format
 msgid "Sort by name"
 msgstr "Lajittele nimen mukaan"
 
-#: app/StopPickerPage.qml:45
+#: app/StopPickerPage.qml:62
 #, kde-format
 msgid "Most recently used"
 msgstr "Viimeisimmin käytetyt"
 
-#: app/StopPickerPage.qml:52
+#: app/StopPickerPage.qml:69
 #, kde-format
 msgid "Most often used"
 msgstr "Useimmin käytetyt"
 
-#: app/StopPickerPage.qml:150 app/StopPickerPage.qml:231
+#: app/StopPickerPage.qml:167 app/StopPickerPage.qml:248
 #, kde-format
 msgctxt "location name, locality, region, country"
 msgid "%1, %2, %3, %4"
 msgstr ""
 
-#: app/StopPickerPage.qml:156 app/StopPickerPage.qml:237
+#: app/StopPickerPage.qml:173 app/StopPickerPage.qml:254
 #, fuzzy, kde-format
 #| msgctxt "weekday, date"
 #| msgid "%1, %2"
@@ -3491,7 +3508,7 @@ msgctxt "location name, locality, country"
 msgid "%1, %2, %3"
 msgstr "%1 %2"
 
-#: app/StopPickerPage.qml:161 app/StopPickerPage.qml:242
+#: app/StopPickerPage.qml:178 app/StopPickerPage.qml:259
 #, fuzzy, kde-format
 #| msgctxt "weekday, date"
 #| msgid "%1, %2"
@@ -3499,7 +3516,7 @@ msgctxt "location name, region, country"
 msgid "%1, %2, %3"
 msgstr "%1 %2"
 
-#: app/StopPickerPage.qml:182 app/StopPickerPage.qml:264
+#: app/StopPickerPage.qml:199 app/StopPickerPage.qml:281
 #, fuzzy, kde-format
 #| msgctxt "weekday, date"
 #| msgid "%1, %2"
@@ -3507,7 +3524,7 @@ msgctxt "locality, region, country"
 msgid "%1, %2, %3"
 msgstr "%1 %2"
 
-#: app/StopPickerPage.qml:187 app/StopPickerPage.qml:269
+#: app/StopPickerPage.qml:204 app/StopPickerPage.qml:286
 #, fuzzy, kde-format
 #| msgctxt "weekday, date"
 #| msgid "%1, %2"
@@ -3515,7 +3532,7 @@ msgctxt "locality, country"
 msgid "%1, %2"
 msgstr "%1 %2"
 
-#: app/StopPickerPage.qml:191 app/StopPickerPage.qml:273
+#: app/StopPickerPage.qml:208 app/StopPickerPage.qml:290
 #, fuzzy, kde-format
 #| msgctxt "weekday, date"
 #| msgid "%1, %2"
@@ -3523,12 +3540,12 @@ msgctxt "region, country"
 msgid "%1, %2"
 msgstr "%1 %2"
 
-#: app/StopPickerPage.qml:206
+#: app/StopPickerPage.qml:223
 #, kde-format
 msgid "Remove history entry"
 msgstr "Poista historiatietue"
 
-#: app/StopPickerPage.qml:312
+#: app/StopPickerPage.qml:329
 #, kde-format
 msgid "No locations found"
 msgstr "Sijainteja ei löytynyt"

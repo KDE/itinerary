@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-29 00:40+0000\n"
-"PO-Revision-Date: 2024-10-27 03:52+0100\n"
+"POT-Creation-Date: 2024-10-30 00:40+0000\n"
+"PO-Revision-Date: 2024-10-29 02:53+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -2145,7 +2145,7 @@ msgstr "საშუალო სიჩქარე: %1"
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionPage.qml:368
+#: app/JourneySectionPage.qml:333
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2516,17 +2516,17 @@ msgstr "დახმარება"
 msgid "Map download finished."
 msgstr "რუკის გადმოწერა დასრულდა."
 
-#: app/MapStopoverInfoSheetDrawer.qml:55
+#: app/MapStopoverInfoSheetDrawer.qml:59
 #, kde-format
 msgid "Platform:"
 msgstr "პლატფორმა:"
 
-#: app/MapStopoverInfoSheetDrawer.qml:66
+#: app/MapStopoverInfoSheetDrawer.qml:70
 #, kde-format
 msgid "Occupancy:"
 msgstr "დაკავებულობა:"
 
-#: app/MapStopoverInfoSheetDrawer.qml:84
+#: app/MapStopoverInfoSheetDrawer.qml:88
 #, kde-format
 msgid "Show indoor map"
 msgstr "შიდა რუკის ჩვენება"
@@ -3390,68 +3390,85 @@ msgstr "ჯამში"
 msgid "Train"
 msgstr "მატარებელი"
 
+#: app/StopPickerPage.qml:27
+#, fuzzy, kde-format
+#| msgid "Clear history"
+msgid "Clear History"
+msgstr "ისტორიის გაწმენდა"
+
 #: app/StopPickerPage.qml:28
+#, fuzzy, kde-format
+#| msgid "Do you really want to delete this certificate?"
+msgid "Do you really want to remove all previously searched locations?"
+msgstr "ნამდვილად გსურთ ამ სერტიფიკატის წაშლა?"
+
+#: app/StopPickerPage.qml:32
+#, kde-format
+msgid "Remove"
+msgstr ""
+
+#: app/StopPickerPage.qml:45
 #, kde-format
 msgid "Clear history"
 msgstr "ისტორიის გაწმენდა"
 
-#: app/StopPickerPage.qml:38
+#: app/StopPickerPage.qml:55
 #, kde-format
 msgid "Sort by name"
 msgstr "სახელით დალაგება"
 
-#: app/StopPickerPage.qml:45
+#: app/StopPickerPage.qml:62
 #, kde-format
 msgid "Most recently used"
 msgstr "ყველაზე ცოტა ხნის წინ გამოყენებული"
 
-#: app/StopPickerPage.qml:52
+#: app/StopPickerPage.qml:69
 #, kde-format
 msgid "Most often used"
 msgstr "ყველაზე ხშირად გამოყენებული"
 
-#: app/StopPickerPage.qml:150 app/StopPickerPage.qml:231
+#: app/StopPickerPage.qml:167 app/StopPickerPage.qml:248
 #, kde-format
 msgctxt "location name, locality, region, country"
 msgid "%1, %2, %3, %4"
 msgstr "%1, %2, %3, %4"
 
-#: app/StopPickerPage.qml:156 app/StopPickerPage.qml:237
+#: app/StopPickerPage.qml:173 app/StopPickerPage.qml:254
 #, kde-format
 msgctxt "location name, locality, country"
 msgid "%1, %2, %3"
 msgstr "%1, %2, %3"
 
-#: app/StopPickerPage.qml:161 app/StopPickerPage.qml:242
+#: app/StopPickerPage.qml:178 app/StopPickerPage.qml:259
 #, kde-format
 msgctxt "location name, region, country"
 msgid "%1, %2, %3"
 msgstr "%1, %2, %3"
 
-#: app/StopPickerPage.qml:182 app/StopPickerPage.qml:264
+#: app/StopPickerPage.qml:199 app/StopPickerPage.qml:281
 #, kde-format
 msgctxt "locality, region, country"
 msgid "%1, %2, %3"
 msgstr "%1, %2, %3"
 
-#: app/StopPickerPage.qml:187 app/StopPickerPage.qml:269
+#: app/StopPickerPage.qml:204 app/StopPickerPage.qml:286
 #, kde-format
 msgctxt "locality, country"
 msgid "%1, %2"
 msgstr "%1, %2"
 
-#: app/StopPickerPage.qml:191 app/StopPickerPage.qml:273
+#: app/StopPickerPage.qml:208 app/StopPickerPage.qml:290
 #, kde-format
 msgctxt "region, country"
 msgid "%1, %2"
 msgstr "%1, %2"
 
-#: app/StopPickerPage.qml:206
+#: app/StopPickerPage.qml:223
 #, kde-format
 msgid "Remove history entry"
 msgstr "ისტორიის ჩანწერის წაშლა"
 
-#: app/StopPickerPage.qml:312
+#: app/StopPickerPage.qml:329
 #, kde-format
 msgid "No locations found"
 msgstr "მდებარეობები ვერ მოიძებნა"
@@ -4019,7 +4036,7 @@ msgstr "დაემატება:"
 #: app/TripGroupSelectorCard.qml:120
 #, kde-format
 msgid "A trip must be selected."
-msgstr ""
+msgstr "მოგზაურობა არჩეული უნდა იყოს."
 
 #: app/TripGroupsPage.qml:15
 #, kde-format
