@@ -352,7 +352,7 @@ void ImportController::importFromIntent(const KAndroidExtras::Intent &intent)
         }
 
         KMime::Message msg;
-        msg.subject()->fromUnicodeString(subject, "utf-8");
+        msg.subject()->fromUnicodeString(subject);
         for (const auto &f : from) {
             KMime::Types::Mailbox mb;
             mb.fromUnicodeString(f);
@@ -373,7 +373,7 @@ void ImportController::importFromIntent(const KAndroidExtras::Intent &intent)
                 auto att = new KMime::Content;
                 att->contentType()->setMimeType(ContentResolver::mimeType(attUrl).toUtf8());
                 att->contentTransferEncoding()->setEncoding(KMime::Headers::CEbase64);
-                att->contentType()->setName(attUrl.fileName(), "utf-8");
+                att->contentType()->setName(attUrl.fileName());
                 QFile f(a);
                 if (!f.open(QFile::ReadOnly)) {
                     qCWarning(Log) << "Failed to open attachment:" << a << f.errorString();
