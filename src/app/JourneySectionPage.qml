@@ -260,7 +260,8 @@ Kirigami.Page {
                     QtLocation.MapPolyline {
                         id: line
                         line.width: 10
-                        line.color: journeySection.route.line.hasColor ? journeySection.route.line.color : Kirigami.Theme.textColor
+                        // hardcoded Breeze black, can't use Kirigami theme colors as we need contrast to OSM tiles here, also in dark mode
+                        line.color: journeySection.route.line.hasColor ? journeySection.route.line.color : "#232629"
                         path: KPublicTransport.MapUtils.polyline(root.journeySection);
                     }
 
@@ -289,7 +290,7 @@ Kirigami.Page {
                             size: 6
                             borderWidth: 1
                             color: line.line.color
-                            textColor: Qt.alpha("white", 0.5)
+                            textColor: Qt.alpha("#eff0f1", 0.5)
                             onClicked: {
                                 sheetDrawer.open()
                                 sheetDrawer.isArrival = false
