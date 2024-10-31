@@ -69,7 +69,7 @@ private Q_SLOTS:
         const auto fc = controller.weatherForecast();
         QVERIFY(fc.isValid());
         QCOMPARE(fc.minimumTemperature(), 7.74224f);
-        QCOMPARE(fc.maximumTemperature(), 47.4647f);
+        QCOMPARE(fc.maximumTemperature(), 52.5597f);
 
         controller.setProperty("homeCountryIsoCode", u"DE"_s);
         const auto countries = controller.locationInformation();

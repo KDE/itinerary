@@ -86,9 +86,27 @@ WeatherForecast TripGroupController::weatherForecast() const
 
     const auto group = m_tripGroupModel->tripGroupManager()->tripGroup(m_tgId);
     const auto elems = group.elements();
+    if (elems.empty()) {
+        return {};
+    }
+
     QVariant startRes;
     QDateTime lastEndTime = group.beginDateTime();
     WeatherForecast fc;
+
+    // home weather before departure
+    if (const auto res = m_tripGroupModel->tripGroupManager()->reservationManager()->reservation(elems.front()); LocationUtil::isLocationChange(res)) {
+        const auto depTime = SortUtil::startDateTime(res);
+        const auto startGeo = LocationUtil::geo(LocationUtil::departureLocation(res));
+        if (startGeo.isValid() && depTime.isValid()) {
+            const auto newFc = m_weatherMgr->forecast(startGeo.latitude(), startGeo.longitude(), depTime.date().startOfDay(), depTime);
+            if (!fc.isValid() && newFc.isValid()) {
+                fc.setDateTime(depTime.date().startOfDay());
+                fc.setRange(std::numeric_limits<int>::max());
+            }
+            fc.merge(newFc);
+        }
+    }
 
     for (const auto &resId : elems) {
         const auto res = m_tripGroupModel->tripGroupManager()->reservationManager()->reservation(resId);
@@ -111,6 +129,20 @@ WeatherForecast TripGroupController::weatherForecast() const
             lastEndTime = endDt;
         }
         startRes = res;
+    }
+
+    // home weather after arrival
+    if (const auto res = m_tripGroupModel->tripGroupManager()->reservationManager()->reservation(elems.back()); LocationUtil::isLocationChange(res)) {
+        const auto arrTime = SortUtil::endDateTime(res);
+        const auto endGeo = LocationUtil::geo(LocationUtil::arrivalLocation(res));
+        if (endGeo.isValid() && arrTime.isValid()) {
+            const auto newFc = m_weatherMgr->forecast(endGeo.latitude(), endGeo.longitude(), arrTime, arrTime.date().endOfDay());
+            if (!fc.isValid() && newFc.isValid()) {
+                fc.setDateTime(arrTime);
+                fc.setRange(std::numeric_limits<int>::max());
+            }
+            fc.merge(newFc);
+        }
     }
 
     return fc;
