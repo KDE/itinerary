@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-30 00:40+0000\n"
+"POT-Creation-Date: 2024-10-31 00:40+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -2134,7 +2134,7 @@ msgstr ""
 msgid "CO₂: %1"
 msgstr ""
 
-#: app/JourneySectionPage.qml:333
+#: app/JourneySectionPage.qml:334
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -3366,10 +3366,9 @@ msgid "Clear History"
 msgstr ""
 
 #: app/StopPickerPage.qml:28
-#, fuzzy, kde-format
-#| msgid "Do you really want to delete this certificate?"
+#, kde-format
 msgid "Do you really want to remove all previously searched locations?"
-msgstr "您确定要删除此证书吗？"
+msgstr ""
 
 #: app/StopPickerPage.qml:32
 #, kde-format

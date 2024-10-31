@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-30 00:40+0000\n"
-"PO-Revision-Date: 2024-10-29 09:53+0100\n"
+"POT-Creation-Date: 2024-10-31 00:40+0000\n"
+"PO-Revision-Date: 2024-10-30 10:26+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -2149,7 +2149,7 @@ msgstr "Velocitat mitjana: %1"
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionPage.qml:333
+#: app/JourneySectionPage.qml:334
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -3403,21 +3403,19 @@ msgid "Train"
 msgstr "Tren"
 
 #: app/StopPickerPage.qml:27
-#, fuzzy, kde-format
-#| msgid "Clear history"
+#, kde-format
 msgid "Clear History"
 msgstr "Neteja l'historial"
 
 #: app/StopPickerPage.qml:28
-#, fuzzy, kde-format
-#| msgid "Do you really want to delete this certificate?"
+#, kde-format
 msgid "Do you really want to remove all previously searched locations?"
-msgstr "Segur que voleu suprimir aquest certificat?"
+msgstr "Segur que voleu eliminar totes les ubicacions cercades anteriorment?"
 
 #: app/StopPickerPage.qml:32
 #, kde-format
 msgid "Remove"
-msgstr ""
+msgstr "Elimina"
 
 #: app/StopPickerPage.qml:45
 #, kde-format

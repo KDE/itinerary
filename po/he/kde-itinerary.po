@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-30 00:40+0000\n"
-"PO-Revision-Date: 2024-10-29 07:49+0200\n"
+"POT-Creation-Date: 2024-10-31 00:40+0000\n"
+"PO-Revision-Date: 2024-10-30 09:52+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -2155,7 +2155,7 @@ msgstr "מהירות ממוצעת: %1"
 msgid "CO₂: %1"
 msgstr "פחמן דו־חמצני: %1"
 
-#: app/JourneySectionPage.qml:333
+#: app/JourneySectionPage.qml:334
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -3397,21 +3397,19 @@ msgid "Train"
 msgstr "רכבת"
 
 #: app/StopPickerPage.qml:27
-#, fuzzy, kde-format
-#| msgid "Clear history"
+#, kde-format
 msgid "Clear History"
 msgstr "פינוי ההיסטוריה"
 
 #: app/StopPickerPage.qml:28
-#, fuzzy, kde-format
-#| msgid "Do you really want to delete this certificate?"
+#, kde-format
 msgid "Do you really want to remove all previously searched locations?"
-msgstr "למחוק את האישור הזה?"
+msgstr "להסיר את כל המקומים שחיפשת בעבר?"
 
 #: app/StopPickerPage.qml:32
 #, kde-format
 msgid "Remove"
-msgstr ""
+msgstr "הסרה"
 
 #: app/StopPickerPage.qml:45
 #, kde-format
