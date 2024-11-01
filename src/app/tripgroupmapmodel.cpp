@@ -106,6 +106,20 @@ void TripGroupMapModel::recompute()
         }
     }
 
+    // improve overlapping stop points:
+    // prefer those tied to a public transport section, as those have time/platform information
+    for (qsizetype i = 0; i < m_journeySections.size(); ++i) {
+        if (m_journeySections[i].journeySection.mode() != JourneySection::PublicTransport) {
+            continue;
+        }
+        if (i > 0 && m_journeySections[i-1].journeySection.mode() != JourneySection::PublicTransport) {
+            m_journeySections[i-1].showEnd = Location::distance(m_journeySections[i-1].journeySection.to(), m_journeySections[i].journeySection.from()) > 5.0;
+        }
+        if (i < m_journeySections.size() - 1 && m_journeySections[i+1].journeySection.mode() != JourneySection::PublicTransport) {
+            m_journeySections[i+1].showStart = Location::distance(m_journeySections[i].journeySection.to(), m_journeySections[i+1].journeySection.from()) > 5.0;
+        }
+    }
+
     Q_EMIT contentChanged();
 }
 

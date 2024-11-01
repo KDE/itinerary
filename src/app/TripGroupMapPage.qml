@@ -63,6 +63,7 @@ Kirigami.Page {
                 color: modelData.color
                 textColor: modelData.textColor
                 size: 15
+                visible: modelData.showStart
                 onClicked: {
                     stopInfoDrawer.open();
                     stopInfoDrawer.isArrival = false;
@@ -129,6 +130,7 @@ Kirigami.Page {
                 color: modelData.color
                 textColor: modelData.textColor
                 size: 15
+                visible: modelData.showEnd
                 onClicked: {
                     stopInfoDrawer.open()
                     stopInfoDrawer.isArrival = true

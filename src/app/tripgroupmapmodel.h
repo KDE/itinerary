@@ -20,12 +20,16 @@ struct MapPathEntry {
     Q_PROPERTY(QColor color MEMBER color CONSTANT)
     Q_PROPERTY(QColor textColor MEMBER textColor CONSTANT)
     Q_PROPERTY(double width MEMBER width CONSTANT)
+    Q_PROPERTY(bool showStart MEMBER showStart CONSTANT)
+    Q_PROPERTY(bool showEnd MEMBER showEnd CONSTANT)
 
 public:
     KPublicTransport::JourneySection journeySection;
     QColor color;
     QColor textColor;
     double width = 1.0;
+    bool showStart = true;
+    bool showEnd = true;
 };
 
 struct MapPointEntry {
