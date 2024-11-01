@@ -131,8 +131,8 @@ Kirigami.Page {
                 size: 15
                 onClicked: {
                     stopInfoDrawer.open()
-                    stopInfoDrawer.isArrival = false
-                    stopInfoDrawer.isDeparture = true
+                    stopInfoDrawer.isArrival = true
+                    stopInfoDrawer.isDeparture = false
                     stopInfoDrawer.stop = modelData.journeySection.arrival
                 }
             }

@@ -28,7 +28,7 @@ SheetDrawer {
                 elide: Qt.ElideRight
             }
 
-            readonly property bool showDepartureTime: (stopInfoDrawer.isDeparture && stopInfoDrawer.stop.scheduledDepartureTime) || !stopInfoDrawer.stop.scheduledArrivalTime
+            readonly property bool showDepartureTime: (stopInfoDrawer.isDeparture && !isNaN(stopInfoDrawer.stop.scheduledDepartureTime.getTime())) || !stopInfoDrawer.stop.scheduledArrivalTime
 
             QQC2.Label {
                 id: departureTime
