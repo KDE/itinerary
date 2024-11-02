@@ -106,6 +106,29 @@ void TripGroupMapModel::recompute()
         }
     }
 
+    // merge adjacent walking sections
+    for (qsizetype i = 1; i < m_journeySections.size(); ++i) {
+        if (m_journeySections[i-1].journeySection.mode() != JourneySection::Walking || m_journeySections[i].journeySection.mode() != JourneySection::Walking) {
+            continue;
+        }
+        if (Location::distance(m_journeySections[i-1].journeySection.to(), m_journeySections[i].journeySection.from()) > 50) {
+            continue;
+        }
+        if (m_journeySections[i-1].journeySection.scheduledArrivalTime().secsTo(m_journeySections[i].journeySection.scheduledDepartureTime()) > 3600) {
+            continue;
+        }
+        auto path = m_journeySections[i-1].journeySection.path();
+        auto pathSecs = path.takeSections();
+        auto pathSecs2 = m_journeySections[i].journeySection.path().takeSections();
+        std::move(pathSecs2.begin(), pathSecs2.end(), std::back_inserter(pathSecs));
+        path.setSections(std::move(pathSecs));
+        m_journeySections[i-1].journeySection.setPath(path);
+        m_journeySections[i-1].journeySection.setScheduledArrivalTime(m_journeySections[i].journeySection.scheduledArrivalTime());
+
+        m_journeySections.remove(i, 1);
+        --i;
+    }
+
     // improve overlapping stop points:
     // prefer those tied to a public transport section, as those have time/platform information
     for (qsizetype i = 0; i < m_journeySections.size(); ++i) {
@@ -155,8 +178,10 @@ void TripGroupMapModel::expandJourneySection(KPublicTransport::JourneySection jn
         }
         entry.width = jnySec.route().line().mode() == Line::Mode::Air ? 2.0 : 10.0;
         break;
-    case JourneySection::Walking:
     case JourneySection::Transfer:
+        entry.journeySection.setMode(JourneySection::Walking); // simplifies checks down the line
+        [[fallthrough]];
+    case JourneySection::Walking:
     case JourneySection::IndividualTransport:
     case JourneySection::RentedVehicle:
         entry.width = 4.0;
