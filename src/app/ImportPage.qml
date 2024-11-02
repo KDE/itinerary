@@ -25,7 +25,7 @@ FormCard.FormCardPage {
     TripGroupSelectorCard {
         id: tripGroupSelector
         visible: root.controller.hasSelectedReservation
-        tripGroupCandidates: TripGroupModel.intersectingTripGroups(root.controller.selectionBeginDateTime, root.controller.selectionEndDateTime)
+        tripGroupCandidates: TripGroupModel.intersectingXorAdjacentTripGroups(root.controller.selectionBeginDateTime, root.controller.selectionEndDateTime)
         suggestedName: root.controller.tripGroupName === "" ?
             TripGroupManager.guessNameForReservations(root.controller.selectedReservations) :
             root.controller.tripGroupName
