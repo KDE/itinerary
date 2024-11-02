@@ -109,11 +109,23 @@ Kirigami.ScrollablePage {
             onClicked: root.openTripGroupPage(delegate.tripGroupId)
             Accessible.onPressAction: root.openTripGroupPage(delegate.tripGroupId)
         }
+
+        Kirigami.PlaceholderMessage {
+            anchors.centerIn: tripsView
+            visible: tripsView.count === 0
+            text: i18n("No trips added yet.")
+            helpfulAction: Kirigami.Action {
+                text: i18nc("@action:button", "Add trip")
+                icon.name: "list-add-symbolic"
+                onTriggered: createTripDialog.open();
+            }
+        }
     }
 
     Components.FloatingButton {
         id: button
         parent: root.overlay
+        visible: tripsView.count > 0
         anchors {
             right: parent.right
             rightMargin: Kirigami.Settings.isMobile ? Kirigami.Units.largeSpacing : Kirigami.Units.largeSpacing + (root.contentItem.QQC2.ScrollBar && root.contentItem.QQC2.ScrollBar.vertical ? root.contentItem.QQC2.ScrollBar.vertical.width : 0)
