@@ -77,38 +77,38 @@ public:
     explicit StatisticsModel(QObject *parent = nullptr);
     ~StatisticsModel() override;
 
-    ReservationManager *reservationManager() const;
+    [[nodiscard]] ReservationManager *reservationManager() const;
     void setReservationManager(ReservationManager *resMgr);
-    TripGroupManager *tripGroupManager() const;
+    [[nodiscard]] TripGroupManager *tripGroupManager() const;
     void setTripGroupManager(TripGroupManager *tripGroupMgr);
 
     Q_INVOKABLE void setTimeRange(const QDate &begin, const QDate &end);
 
-    StatisticsItem totalCount() const;
-    StatisticsItem totalDistance() const;
-    StatisticsItem totalNights() const;
-    StatisticsItem totalCO2() const;
-    StatisticsItem visitedCountries() const;
+    [[nodiscard]] StatisticsItem totalCount() const;
+    [[nodiscard]] StatisticsItem totalDistance() const;
+    [[nodiscard]] StatisticsItem totalNights() const;
+    [[nodiscard]] StatisticsItem totalCO2() const;
+    [[nodiscard]] StatisticsItem visitedCountries() const;
 
-    StatisticsItem flightCount() const;
-    StatisticsItem flightDistance() const;
-    StatisticsItem flightCO2() const;
+    [[nodiscard]] StatisticsItem flightCount() const;
+    [[nodiscard]] StatisticsItem flightDistance() const;
+    [[nodiscard]] StatisticsItem flightCO2() const;
 
-    StatisticsItem trainCount() const;
-    StatisticsItem trainDistance() const;
-    StatisticsItem trainCO2() const;
+    [[nodiscard]] StatisticsItem trainCount() const;
+    [[nodiscard]] StatisticsItem trainDistance() const;
+    [[nodiscard]] StatisticsItem trainCO2() const;
 
-    StatisticsItem busCount() const;
-    StatisticsItem busDistance() const;
-    StatisticsItem busCO2() const;
+    [[nodiscard]] StatisticsItem busCount() const;
+    [[nodiscard]] StatisticsItem busDistance() const;
+    [[nodiscard]] StatisticsItem busCO2() const;
 
-    StatisticsItem carCount() const;
-    StatisticsItem carDistance() const;
-    StatisticsItem carCO2() const;
+    [[nodiscard]] StatisticsItem carCount() const;
+    [[nodiscard]] StatisticsItem carDistance() const;
+    [[nodiscard]] StatisticsItem carCO2() const;
 
-    StatisticsItem boatCount() const;
-    StatisticsItem boatDistance() const;
-    StatisticsItem boatCO2() const;
+    [[nodiscard]] StatisticsItem boatCount() const;
+    [[nodiscard]] StatisticsItem boatDistance() const;
+    [[nodiscard]] StatisticsItem boatCO2() const;
 
 Q_SIGNALS:
     void setupChanged();
@@ -126,12 +126,12 @@ private:
     enum AggregateType { Total, Flight, Train, Bus, Car, Boat, AGGREGATE_TYPE_COUNT };
     enum StatType { TripCount, Distance, CO2, STAT_TYPE_COUNT };
 
-    AggregateType typeForReservation(const QVariant &res) const;
-    int co2emission(AggregateType type, int distance) const;
+    [[nodiscard]] static AggregateType typeForReservation(const QVariant &res);
+    [[nodiscard]] static int co2emission(AggregateType type, int distance);
     void computeStats(const QVariant &res, int (&statData)[AGGREGATE_TYPE_COUNT][STAT_TYPE_COUNT]);
 
-    StatisticsItem::Trend trend(int current, int prev) const;
-    StatisticsItem::Trend trend(AggregateType type, StatType stat) const;
+    [[nodiscard]] StatisticsItem::Trend trend(int current, int prev) const;
+    [[nodiscard]] StatisticsItem::Trend trend(AggregateType type, StatType stat) const;
 
     std::set<QString> m_countries;
 

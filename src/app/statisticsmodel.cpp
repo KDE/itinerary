@@ -195,15 +195,18 @@ StatisticsItem StatisticsModel::boatCO2() const
     return StatisticsItem(i18n("CO₂"), Localizer::formatWeight(m_statData[Boat][CO2]), trend(Boat, CO2), m_hasData[Boat]);
 }
 
-StatisticsModel::AggregateType StatisticsModel::typeForReservation(const QVariant &res) const
+StatisticsModel::AggregateType StatisticsModel::typeForReservation(const QVariant &res)
 {
     if (JsonLd::isA<FlightReservation>(res)) {
         return Flight;
-    } else if (JsonLd::isA<TrainReservation>(res)) {
+    }
+    if (JsonLd::isA<TrainReservation>(res)) {
         return Train;
-    } else if (JsonLd::isA<BusReservation>(res)) {
+    }
+    if (JsonLd::isA<BusReservation>(res)) {
         return Bus;
-    } else if (JsonLd::isA<BoatReservation>(res)) {
+    }
+    if (JsonLd::isA<BoatReservation>(res)) {
         return Boat;
     }
     return Car;
@@ -219,7 +222,7 @@ static const int emissionPerKm[] = {
     113, // ferry
 };
 
-int StatisticsModel::co2emission(StatisticsModel::AggregateType type, int distance) const
+int StatisticsModel::co2emission(StatisticsModel::AggregateType type, int distance)
 {
     return distance * emissionPerKm[type];
 }
@@ -302,11 +305,13 @@ void StatisticsModel::recompute()
 
         if (!isPrev) {
             auto c = LocationHelper::departureCountry(res);
-            if (!c.isEmpty())
+            if (!c.isEmpty()) {
                 m_countries.insert(c);
+            }
             c = LocationHelper::destinationCountry(res);
-            if (!c.isEmpty())
+            if (!c.isEmpty()) {
                 m_countries.insert(c);
+            }
         }
     }
 
