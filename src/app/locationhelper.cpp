@@ -55,3 +55,18 @@ QString LocationHelper::regionCode(const QVariant &loc)
 
     return code;
 }
+
+double LocationHelper::distance(const QVariant &res)
+{
+    const auto dep = LocationUtil::departureLocation(res);
+    const auto arr = LocationUtil::arrivalLocation(res);
+    if (dep.isNull() || arr.isNull()) {
+        return 0;
+    }
+    const auto depGeo = LocationUtil::geo(dep);
+    const auto arrGeo = LocationUtil::geo(arr);
+    if (!depGeo.isValid() || !arrGeo.isValid()) {
+        return 0;
+    }
+    return std::max(0, LocationUtil::distance(depGeo, arrGeo));
+}

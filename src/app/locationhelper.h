@@ -13,12 +13,15 @@ class QVariant;
 namespace LocationHelper
 {
 /** Departing country for location changes, location country otherwise. */
-QString departureCountry(const QVariant &res);
+[[nodiscard]] QString departureCountry(const QVariant &res);
 /** Arrival country for location changes, location country otherwise. */
-QString destinationCountry(const QVariant &res);
+[[nodiscard]] QString destinationCountry(const QVariant &res);
 
 /** ISO 3166-1/2 country or region code for @p loc. */
-QString regionCode(const QVariant &loc);
+[[nodiscard]] QString regionCode(const QVariant &loc);
+
+/** Travel distance for @p res, assuming that is a location change. */
+[[nodiscard]] double distance(const QVariant &res);
 }
 
 #endif // LOCATIONHELPER_H

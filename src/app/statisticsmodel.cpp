@@ -209,21 +209,6 @@ StatisticsModel::AggregateType StatisticsModel::typeForReservation(const QVarian
     return Car;
 }
 
-static int distance(const QVariant &res)
-{
-    const auto dep = LocationUtil::departureLocation(res);
-    const auto arr = LocationUtil::arrivalLocation(res);
-    if (dep.isNull() || arr.isNull()) {
-        return 0;
-    }
-    const auto depGeo = LocationUtil::geo(dep);
-    const auto arrGeo = LocationUtil::geo(arr);
-    if (!depGeo.isValid() || !arrGeo.isValid()) {
-        return 0;
-    }
-    return std::max(0, LocationUtil::distance(depGeo, arrGeo));
-}
-
 // from https://en.wikipedia.org/wiki/Environmental_impact_of_transport
 static const int emissionPerKm[] = {
     0,
@@ -242,8 +227,8 @@ int StatisticsModel::co2emission(StatisticsModel::AggregateType type, int distan
 void StatisticsModel::computeStats(const QVariant &res, int (&statData)[AGGREGATE_TYPE_COUNT][STAT_TYPE_COUNT])
 {
     const auto type = typeForReservation(res);
-    const auto dist = distance(res);
-    const auto co2 = co2emission(type, dist / 1000);
+    const auto dist = LocationHelper::distance(res);
+    const auto co2 = co2emission(type, dist / 1000.0);
 
     statData[type][TripCount]++;
     statData[type][Distance] += dist;
