@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-31 00:40+0000\n"
+"POT-Creation-Date: 2024-11-02 00:40+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -4163,7 +4163,7 @@ msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"
 msgstr "%1 (%2/%3)"
 
-#: app/TripGroupMapPage.qml:192
+#: app/TripGroupMapPage.qml:194
 #, kde-format
 msgid "Address:"
 msgstr ""
