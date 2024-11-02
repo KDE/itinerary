@@ -67,6 +67,11 @@ void TransferManager::setFavoriteLocationModel(FavoriteLocationModel *favLocMode
     rescan();
 }
 
+LiveDataManager* TransferManager::liveDataManager() const
+{
+    return m_liveDataMgr;
+}
+
 void TransferManager::setLiveDataManager(LiveDataManager *liveDataMgr)
 {
     m_liveDataMgr = liveDataMgr;

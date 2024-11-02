@@ -7,6 +7,7 @@
 
 #include "applicationcontroller.h"
 #include "importcontroller.h"
+#include "livedatamanager.h"
 #include "locationinformation.h"
 #include "reservationmanager.h"
 #include "transfermanager.h"
@@ -36,7 +37,9 @@ private Q_SLOTS:
     void testController()
     {
         ReservationManager resMgr;
+        LiveDataManager ldm;
         TransferManager transferMgr;
+        transferMgr.setLiveDataManager(&ldm);
         Test::clearAll(&resMgr);
         TripGroupManager::clear();
         TripGroupManager mgr;
@@ -59,6 +62,7 @@ private Q_SLOTS:
 
         TripGroupController controller;
         controller.setProperty("tripGroupId", mgr.tripGroups().at(0));
+        controller.setProperty("transferManager", QVariant::fromValue(&transferMgr));
         // must not crash with partial setup
         QCOMPARE(controller.canMerge(), false);
         QCOMPARE(controller.canSplit(), false);
@@ -85,6 +89,9 @@ private Q_SLOTS:
 
         QCOMPARE(controller.canSplit(), true);
         QCOMPARE(controller.canMerge(), false);
+
+        QCOMPARE(controller.totalDistance(), 1642386.0);
+        QCOMPARE(controller.totalCO2Emission(), 380538.0);
 
         importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
         ctrl->commitImport(&importer);

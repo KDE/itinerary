@@ -29,6 +29,7 @@ Kirigami.ScrollablePage {
         weatherForecastManager: WeatherForecastManager
         homeCountryIsoCode: Settings.homeCountryIsoCode
         homeCurrency: Country.fromAlpha2(Settings.homeCountryIsoCode).currencyCode
+        transferManager: TransferManager
     }
 
     title: tripGroup.name
@@ -625,6 +626,37 @@ Kirigami.ScrollablePage {
 
         footer: ColumnLayout {
             width: listView.width
+
+            FormCard.FormHeader {
+                title: i18n("Statistics")
+                visible: distanceStats.visible || co2Stats.visible || costStats.visible
+            }
+            FormCard.FormCard {
+                FormCard.FormTextDelegate {
+                    id: distanceStats
+                    text: i18n("Distance")
+                    description: Localizer.formatDistance(root.controller.totalDistance)
+                    visible: root.controller.totalDistance > 0
+                }
+                FormCard.FormDelegateSeparator {
+                    visible: distanceStats.visible
+                }
+                FormCard.FormTextDelegate {
+                    id: co2Stats
+                    text: i18n("CO₂")
+                    description: Localizer.formatWeight(root.controller.totalCO2Emission)
+                    visible: root.controller.totalCO2Emission > 0
+                }
+                FormCard.FormDelegateSeparator {
+                    visible: co2Stats.visible
+                }
+                FormCard.FormTextDelegate {
+                    id: costStats
+                    text: i18n("Cost")
+                    description: Localizer.formatCurrency(23.0, "EUR") // TODO
+                    visible: false // TODO
+                }
+            }
 
             FormCard.FormHeader {
                 title: i18n("Actions")

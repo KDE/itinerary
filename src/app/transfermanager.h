@@ -31,6 +31,7 @@ public:
     ~TransferManager() override;
     void setReservationManager(ReservationManager *resMgr);
     void setFavoriteLocationModel(FavoriteLocationModel *favLocModel);
+    [[nodiscard]] LiveDataManager* liveDataManager() const;
     void setLiveDataManager(LiveDataManager *liveDataMgr);
 
     void setAutoAddTransfers(bool enabled);

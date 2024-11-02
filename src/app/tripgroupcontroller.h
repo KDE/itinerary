@@ -6,6 +6,7 @@
 #ifndef TRIPGROUPCONTROLLER_H
 #define TRIPGROUPCONTROLLER_H
 
+#include "transfermanager.h"
 #include "tripgroupmodel.h"
 #include "weatherforecast.h"
 #include "weatherforecastmanager.h"
@@ -26,8 +27,13 @@ class TripGroupController : public QObject
     Q_PROPERTY(QVariantList locationInformation READ locationInformation NOTIFY locationInfoChanged)
     Q_PROPERTY(QStringList currencies READ currencies NOTIFY locationInfoChanged)
 
+    Q_PROPERTY(TransferManager *transferManager MEMBER m_tranferMgr NOTIFY setupChanged)
+
     Q_PROPERTY(bool canMerge READ canMerge NOTIFY adjacencyChanged)
     Q_PROPERTY(bool canSplit READ canSplit NOTIFY tripGroupContentChanged)
+
+    Q_PROPERTY(double totalDistance READ totalDistance NOTIFY tripGroupContentChanged)
+    Q_PROPERTY(double totalCO2Emission READ totalCO2Emission NOTIFY tripGroupContentChanged)
 
 public:
     explicit TripGroupController(QObject *parent = nullptr);
@@ -43,6 +49,9 @@ public:
     [[nodiscard]] bool canMerge() const;
     [[nodiscard]] bool canSplit() const;
 
+    [[nodiscard]] double totalDistance() const;
+    [[nodiscard]] double totalCO2Emission() const;
+
 Q_SIGNALS:
     void setupChanged();
     void tripGroupChanged();
@@ -54,6 +63,7 @@ Q_SIGNALS:
 private:
     TripGroupModel *m_tripGroupModel = nullptr;
     WeatherForecastManager *m_weatherMgr = nullptr;
+    TransferManager *m_tranferMgr = nullptr;
     QString m_tgId;
 
     QString m_homeCountry;

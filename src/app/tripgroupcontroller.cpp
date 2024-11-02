@@ -5,8 +5,11 @@
 
 #include "tripgroupcontroller.h"
 
+#include "livedatamanager.h"
+#include "locationhelper.h"
 #include "locationinformation.h"
 #include "reservationmanager.h"
+#include "statisticsmodel.h"
 #include "tripgroup.h"
 #include "tripgroupmanager.h"
 
@@ -228,6 +231,62 @@ bool TripGroupController::canSplit() const
     }
 
     return m_tripGroupModel->tripGroupManager()->tripGroup(m_tgId).elements().size() > 1;
+}
+
+double TripGroupController::totalDistance() const
+{
+    if (!m_tripGroupModel || !m_tranferMgr) {
+        return 0.0;
+    }
+
+    double dist = 0.0;
+    const auto elems = m_tripGroupModel->tripGroupManager()->tripGroup(m_tgId).elements();
+    for (const auto &resId : elems) {
+        const auto res = m_tripGroupModel->tripGroupManager()->reservationManager()->reservation(resId);
+        if (LocationUtil::isLocationChange(res)) {
+            if (const auto jny = m_tranferMgr->liveDataManager()->journey(resId); jny.mode() != KPublicTransport::JourneySection::Invalid) {
+                dist += jny.distance();
+            } else {
+                dist += LocationHelper::distance(res);
+            }
+        }
+
+        for (const auto &alignment : {Transfer::Before, Transfer::After}) {
+            if (const auto t = m_tranferMgr->transfer(resId, alignment); t.state() == Transfer::Selected) {
+                dist += t.journey().distance();
+            }
+        }
+    }
+
+    return dist;
+}
+
+double TripGroupController::totalCO2Emission() const
+{
+    if (!m_tripGroupModel || !m_tranferMgr) {
+        return 0.0;
+    }
+
+    double co2 = 0.0;
+    const auto elems = m_tripGroupModel->tripGroupManager()->tripGroup(m_tgId).elements();
+    for (const auto &resId : elems) {
+        const auto res = m_tripGroupModel->tripGroupManager()->reservationManager()->reservation(resId);
+        if (LocationUtil::isLocationChange(res)) {
+            if (const auto jny = m_tranferMgr->liveDataManager()->journey(resId); jny.mode() != KPublicTransport::JourneySection::Invalid) {
+                co2 += std::max(0, jny.co2Emission());
+            } else {
+                co2 += StatisticsModel::co2Emission(res);
+            }
+        }
+
+        for (const auto &alignment : {Transfer::Before, Transfer::After}) {
+            if (const auto t = m_tranferMgr->transfer(resId, alignment); t.state() == Transfer::Selected) {
+                co2 += t.journey().co2Emission();
+            }
+        }
+    }
+
+    return co2;
 }
 
 #include "moc_tripgroupcontroller.cpp"
