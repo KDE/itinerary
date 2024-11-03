@@ -14,6 +14,7 @@
 
 class ReservationManager;
 class TripGroupManager;
+class TransferManager;
 
 /** Statistics data item. */
 class StatisticsItem
@@ -72,6 +73,7 @@ class StatisticsModel : public QObject
 
     Q_PROPERTY(ReservationManager *reservationManager READ reservationManager WRITE setReservationManager NOTIFY setupChanged)
     Q_PROPERTY(TripGroupManager *tripGroupManager READ tripGroupManager WRITE setTripGroupManager NOTIFY setupChanged)
+    Q_PROPERTY(TransferManager *transferManager MEMBER m_transferMgr WRITE setTransferManager NOTIFY setupChanged)
 
 public:
     explicit StatisticsModel(QObject *parent = nullptr);
@@ -81,6 +83,7 @@ public:
     void setReservationManager(ReservationManager *resMgr);
     [[nodiscard]] TripGroupManager *tripGroupManager() const;
     void setTripGroupManager(TripGroupManager *tripGroupMgr);
+    void setTransferManager(TransferManager *transferMgr);
 
     Q_INVOKABLE void setTimeRange(const QDate &begin, const QDate &end);
 
@@ -123,6 +126,7 @@ private:
 
     ReservationManager *m_resMgr = nullptr;
     TripGroupManager *m_tripGroupMgr = nullptr;
+    TransferManager *m_transferMgr = nullptr;
     QDate m_begin;
     QDate m_end;
 
@@ -130,8 +134,8 @@ private:
     enum StatType { TripCount, Distance, CO2, STAT_TYPE_COUNT };
 
     [[nodiscard]] static AggregateType typeForReservation(const QVariant &res);
-    [[nodiscard]] static int co2emission(AggregateType type, double distance);
-    void computeStats(const QVariant &res, int (&statData)[AGGREGATE_TYPE_COUNT][STAT_TYPE_COUNT]);
+    [[nodiscard]] static double co2emission(AggregateType type, double distance);
+    void computeStats(const QString &resId, const QVariant &res, int (&statData)[AGGREGATE_TYPE_COUNT][STAT_TYPE_COUNT]);
 
     [[nodiscard]] StatisticsItem::Trend trend(int current, int prev) const;
     [[nodiscard]] StatisticsItem::Trend trend(AggregateType type, StatType stat) const;

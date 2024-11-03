@@ -16,6 +16,7 @@ FormCard.FormCardPage {
 
     property alias reservationManager: model.reservationManager
     property alias tripGroupManager: model.tripGroupManager
+    property alias transferManager: model.transferManager
 
     data: [
         StatisticsModel {

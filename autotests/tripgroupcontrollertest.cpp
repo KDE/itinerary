@@ -91,7 +91,7 @@ private Q_SLOTS:
         QCOMPARE(controller.canMerge(), false);
 
         QCOMPARE(controller.totalDistance(), 1642386.0);
-        QCOMPARE(controller.totalCO2Emission(), 380538.0);
+        QCOMPARE(controller.totalCO2Emission(), 380542.132);
 
         importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
         ctrl->commitImport(&importer);

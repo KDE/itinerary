@@ -8,6 +8,7 @@
 
 #include "applicationcontroller.h"
 #include "importcontroller.h"
+#include "livedatamanager.h"
 #include "reservationmanager.h"
 #include "statisticsmodel.h"
 #include "statisticstimerangemodel.h"
@@ -44,7 +45,9 @@ private Q_SLOTS:
     void testStats()
     {
         ReservationManager resMgr;
+        LiveDataManager ldm;
         TransferManager transferMgr;
+        transferMgr.setLiveDataManager(&ldm);
         Test::clearAll(&resMgr);
         TripGroupManager::clear();
         TripGroupManager tgMgr;
@@ -58,6 +61,7 @@ private Q_SLOTS:
         QSignalSpy changeSpy(&stats, &StatisticsModel::changed);
         stats.setReservationManager(&resMgr);
         stats.setTripGroupManager(&tgMgr);
+        stats.setTransferManager(&transferMgr);
 
         ImportController importer;
         importer.setReservationManager(&resMgr);

@@ -5,9 +5,11 @@
 */
 
 #include "statisticsmodel.h"
+#include "livedatamanager.h"
 #include "localizer.h"
 #include "locationhelper.h"
 #include "reservationmanager.h"
+#include "transfermanager.h"
 #include "tripgroup.h"
 #include "tripgroupmanager.h"
 
@@ -15,6 +17,8 @@
 #include <KItinerary/Place>
 #include <KItinerary/Reservation>
 #include <KItinerary/SortUtil>
+
+#include <KPublicTransport/Journey>
 
 #include <KCountry>
 #include <KLocalizedString>
@@ -73,6 +77,16 @@ void StatisticsModel::setTripGroupManager(TripGroupManager *tripGroupMgr)
     }
     m_tripGroupMgr = tripGroupMgr;
     connect(m_tripGroupMgr, &TripGroupManager::tripGroupAdded, this, &StatisticsModel::recompute);
+    Q_EMIT setupChanged();
+}
+
+void StatisticsModel::setTransferManager(TransferManager *transferMgr)
+{
+    if (m_transferMgr == transferMgr) {
+        return;
+    }
+    m_transferMgr = transferMgr;
+    connect(m_transferMgr, &TransferManager::transferAdded, this, &StatisticsModel::recompute);
     Q_EMIT setupChanged();
 }
 
@@ -222,7 +236,7 @@ static const int emissionPerKm[] = {
     113, // ferry
 };
 
-int StatisticsModel::co2emission(StatisticsModel::AggregateType type, double distance)
+double StatisticsModel::co2emission(StatisticsModel::AggregateType type, double distance)
 {
     return distance * emissionPerKm[type];
 }
@@ -232,11 +246,17 @@ double StatisticsModel::co2Emission(const QVariant &res)
     return co2emission(typeForReservation(res), LocationHelper::distance(res) / 1000.0);
 }
 
-void StatisticsModel::computeStats(const QVariant &res, int (&statData)[AGGREGATE_TYPE_COUNT][STAT_TYPE_COUNT])
+void StatisticsModel::computeStats(const QString &resId, const QVariant &res, int (&statData)[AGGREGATE_TYPE_COUNT][STAT_TYPE_COUNT])
 {
     const auto type = typeForReservation(res);
-    const auto dist = LocationHelper::distance(res);
-    const auto co2 = co2emission(type, dist / 1000.0);
+    double dist = LocationHelper::distance(res);
+    double co2 = co2emission(type, dist / 1000.0);
+
+    // live data is more accurate when present
+    if (const auto jny = m_transferMgr->liveDataManager()->journey(resId); jny.mode() != KPublicTransport::JourneySection::Invalid) {
+        dist = std::max<double>(dist, jny.distance()); // we cannot possibly get shorter than the direct distance
+        co2 = jny.co2Emission();
+    }
 
     statData[type][TripCount]++;
     statData[type][Distance] += dist;
@@ -257,7 +277,7 @@ void StatisticsModel::recompute()
     m_prevHotelCount = 0;
     m_countries.clear();
 
-    if (!m_resMgr || !m_tripGroupMgr) {
+    if (!m_resMgr || !m_tripGroupMgr || !m_transferMgr) {
         return;
     }
 
@@ -293,7 +313,7 @@ void StatisticsModel::recompute()
         }
 
         if (LocationUtil::isLocationChange(res)) {
-            computeStats(res, isPrev ? m_prevStatData : m_statData);
+            computeStats(batchId, res, isPrev ? m_prevStatData : m_statData);
         } else if (JsonLd::isA<LodgingReservation>(res)) {
             const auto hotel = res.value<LodgingReservation>();
             if (isPrev) {

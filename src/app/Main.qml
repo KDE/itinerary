@@ -369,6 +369,7 @@ Kirigami.ApplicationWindow {
         StatisticsPage {
             reservationManager: ReservationManager
             tripGroupManager: TripGroupManager
+            transferManager: TransferManager
         }
     }
     Component {
