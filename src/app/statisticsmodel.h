@@ -16,6 +16,8 @@ class ReservationManager;
 class TripGroupManager;
 class TransferManager;
 
+namespace KPublicTransport { class Journey; }
+
 /** Statistics data item. */
 class StatisticsItem
 {
@@ -136,6 +138,7 @@ private:
     [[nodiscard]] static AggregateType typeForReservation(const QVariant &res);
     [[nodiscard]] static double co2emission(AggregateType type, double distance);
     void computeStats(const QString &resId, const QVariant &res, int (&statData)[AGGREGATE_TYPE_COUNT][STAT_TYPE_COUNT]);
+    void computeStats(const KPublicTransport::Journey &journey, int (&statData)[AGGREGATE_TYPE_COUNT][STAT_TYPE_COUNT]);
 
     [[nodiscard]] StatisticsItem::Trend trend(int current, int prev) const;
     [[nodiscard]] StatisticsItem::Trend trend(AggregateType type, StatType stat) const;

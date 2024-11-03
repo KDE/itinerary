@@ -19,6 +19,7 @@
 #include <KItinerary/SortUtil>
 
 #include <KPublicTransport/Journey>
+#include <KPublicTransport/RentalVehicle>
 
 #include <KCountry>
 #include <KLocalizedString>
@@ -267,6 +268,71 @@ void StatisticsModel::computeStats(const QString &resId, const QVariant &res, in
     statData[Total][CO2] += co2;
 }
 
+void StatisticsModel::computeStats(const KPublicTransport::Journey &journey, int (&statData)[AGGREGATE_TYPE_COUNT][STAT_TYPE_COUNT])
+{
+    struct {
+        KPublicTransport::Line::Mode mode;
+        StatisticsModel::AggregateType type;
+    } static constexpr const lineModeMap[] = {
+        { KPublicTransport::Line::Air, StatisticsModel::Flight },
+        { KPublicTransport::Line::Boat, StatisticsModel::Boat },
+        { KPublicTransport::Line::Bus, StatisticsModel::Bus },
+        { KPublicTransport::Line::Coach, StatisticsModel::Bus },
+        { KPublicTransport::Line::Ferry, StatisticsModel::Boat },
+        { KPublicTransport::Line::Funicular, StatisticsModel::Train },
+        { KPublicTransport::Line::LocalTrain, StatisticsModel::Train },
+        { KPublicTransport::Line::LongDistanceTrain, StatisticsModel::Train },
+        { KPublicTransport::Line::Metro, StatisticsModel::Train },
+        { KPublicTransport::Line::RailShuttle, StatisticsModel::Train },
+        { KPublicTransport::Line::Shuttle, StatisticsModel::Bus },
+        { KPublicTransport::Line::Taxi, StatisticsModel::Car },
+        { KPublicTransport::Line::Train, StatisticsModel::Train },
+        { KPublicTransport::Line::Tramway, StatisticsModel::Train },
+        { KPublicTransport::Line::RideShare, StatisticsModel::Car },
+        // { KPublicTransport::Line::AerialLift, StatisticsModel::Train }, ### where to map this to?
+    };
+
+
+    for (const auto &jny :journey.sections()) {
+        StatisticsModel::AggregateType type = StatisticsModel::Total;
+        switch (jny.mode()) {
+            case KPublicTransport::JourneySection::Invalid:
+            case KPublicTransport::JourneySection::Walking:
+            case KPublicTransport::JourneySection::Transfer:
+            case KPublicTransport::JourneySection::Waiting:
+                break;
+            case KPublicTransport::JourneySection::PublicTransport:
+                for (const auto &m :lineModeMap) {
+                    if (m.mode == jny.route().line().mode()) {
+                        type = m.type;
+                    }
+                }
+                break;
+            case KPublicTransport::JourneySection::IndividualTransport:
+                if (jny.individualTransport().mode() == KPublicTransport::IndividualTransport::Car) {
+                    type = StatisticsModel::Car;
+                }
+                break;
+            case KPublicTransport::JourneySection::RentedVehicle:
+                if (jny.rentalVehicle().type() == KPublicTransport::RentalVehicle::Car) {
+                    type = StatisticsModel::Car;
+                }
+                break;
+        }
+        if (type == StatisticsModel::Total) {
+            continue;
+        }
+
+        statData[type][TripCount]++;
+        statData[type][Distance] += jny.distance();
+        statData[type][CO2] += jny.co2Emission();
+
+        statData[Total][TripCount]++;
+        statData[Total][Distance] += jny.distance();
+        statData[Total][CO2] += jny.co2Emission();
+    }
+}
+
 void StatisticsModel::recompute()
 {
     memset(m_statData, 0, AGGREGATE_TYPE_COUNT * STAT_TYPE_COUNT * sizeof(int));
@@ -320,6 +386,12 @@ void StatisticsModel::recompute()
                 m_prevHotelCount += hotel.checkinTime().daysTo(hotel.checkoutTime());
             } else {
                 m_hotelCount += hotel.checkinTime().daysTo(hotel.checkoutTime());
+            }
+        }
+
+        for (const auto alignment : { Transfer::Before, Transfer::After}) {
+            if (const auto t = m_transferMgr->transfer(batchId, alignment); t.state() == Transfer::Selected) {
+                computeStats(t.journey(), isPrev ? m_prevStatData : m_statData);
             }
         }
 
