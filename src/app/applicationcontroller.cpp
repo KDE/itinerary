@@ -207,7 +207,7 @@ void ApplicationController::commitImport(ImportController *importController)
         QVariantList docIds;
         switch (elem.type) {
         case ImportElement::Reservation:
-            tripGroupElements.push_back(m_resMgr->addReservation(elem.updateData.isNull() ? elem.data : elem.updateData, elem.id));
+            tripGroupElements.push_back(m_resMgr->batchForReservation(m_resMgr->addReservation(elem.updateData.isNull() ? elem.data : elem.updateData, elem.id)));
             docIds = DocumentUtil::documentIds(elem.data);
             for (const auto &r : elem.batch) {
                 m_resMgr->addReservation(r);

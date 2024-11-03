@@ -15,6 +15,8 @@
 #include "tripgroupmanager.h"
 
 #include <QAbstractItemModelTester>
+#include <QJsonArray>
+#include <QJsonObject>
 #include <QSignalSpy>
 #include <QStandardPaths>
 #include <QTemporaryFile>
@@ -757,6 +759,44 @@ private Q_SLOTS:
         QCOMPARE(newTg2.matrixRoomId(), "#group2:kde.org"_L1);
         QCOMPARE(newTg2.isAutomaticallyGrouped(), false);
         QCOMPARE(newTg2.hasAutomaticName(), false);
+    }
+
+    void testIncrementalBatchImport()
+    {
+        ReservationManager resMgr;
+        TransferManager transferMgr;
+        Test::clearAll(&resMgr);
+        TripGroupManager mgr;
+        mgr.setReservationManager(&resMgr);
+        mgr.setTransferManager(&transferMgr);
+        auto ctrl = Test::makeAppController();
+        ctrl->setReservationManager(&resMgr);
+        ctrl->setTripGroupManager(&mgr);
+        ImportController importer;
+        importer.setReservationManager(&resMgr);
+
+        const auto data = QJsonDocument::fromJson(Test::readFile(QLatin1StringView(SOURCE_DIR "/data/google-multi-passenger-flight.json"))).array();
+        QCOMPARE(data.size(), 4);
+        importer.importData(QJsonDocument(data[0].toObject()).toJson());
+        QCOMPARE(importer.rowCount(), 1);
+        ctrl->commitImport(&importer);
+
+        QCOMPARE(resMgr.batches().size(), 1);
+        QCOMPARE(mgr.tripGroups().size(), 1);
+        auto tg = mgr.tripGroup(mgr.tripGroups()[0]);
+        QCOMPARE(tg.elements().size(), 1);
+        QVERIFY(!tg.name().isEmpty());
+
+        importer.importData(QJsonDocument(data[2].toObject()).toJson());
+        importer.setTripGroupId(mgr.tripGroups()[0]);
+        QCOMPARE(importer.rowCount(), 1);
+        ctrl->commitImport(&importer);
+
+        QCOMPARE(resMgr.batches().size(), 1);
+        QCOMPARE(mgr.tripGroups().size(), 1);
+        tg = mgr.tripGroup(mgr.tripGroups()[0]);
+        QCOMPARE(tg.elements().size(), 1);
+        QVERIFY(!tg.name().isEmpty());
     }
 };
 QTEST_GUILESS_MAIN(TripGroupTest)

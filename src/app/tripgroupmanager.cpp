@@ -968,7 +968,7 @@ void TripGroupManager::removeElementsFromGroups(const QStringList &elements, con
     QStringList groupsToUpdate;
     for (const auto &resId : elements) {
         const auto it = m_reservationToGroupMap.constFind(resId);
-        if (it == m_reservationToGroupMap.cend() || it.key() == excludedTgId) {
+        if (it == m_reservationToGroupMap.cend() || it.value() == excludedTgId) {
             continue;
         }
         if (!groupsToUpdate.contains(it.value())) {
