@@ -110,6 +110,9 @@ public:
     [[nodiscard]] StatisticsItem boatDistance() const;
     [[nodiscard]] StatisticsItem boatCO2() const;
 
+    /** Computes the estimated CO2 emission for @p res. */
+    [[nodiscard]] static double co2Emission(const QVariant &res);
+
 Q_SIGNALS:
     void setupChanged();
     void changed();
@@ -127,7 +130,7 @@ private:
     enum StatType { TripCount, Distance, CO2, STAT_TYPE_COUNT };
 
     [[nodiscard]] static AggregateType typeForReservation(const QVariant &res);
-    [[nodiscard]] static int co2emission(AggregateType type, int distance);
+    [[nodiscard]] static int co2emission(AggregateType type, double distance);
     void computeStats(const QVariant &res, int (&statData)[AGGREGATE_TYPE_COUNT][STAT_TYPE_COUNT]);
 
     [[nodiscard]] StatisticsItem::Trend trend(int current, int prev) const;

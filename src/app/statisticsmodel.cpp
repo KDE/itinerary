@@ -222,9 +222,14 @@ static const int emissionPerKm[] = {
     113, // ferry
 };
 
-int StatisticsModel::co2emission(StatisticsModel::AggregateType type, int distance)
+int StatisticsModel::co2emission(StatisticsModel::AggregateType type, double distance)
 {
     return distance * emissionPerKm[type];
+}
+
+double StatisticsModel::co2Emission(const QVariant &res)
+{
+    return co2emission(typeForReservation(res), LocationHelper::distance(res) / 1000.0);
 }
 
 void StatisticsModel::computeStats(const QVariant &res, int (&statData)[AGGREGATE_TYPE_COUNT][STAT_TYPE_COUNT])

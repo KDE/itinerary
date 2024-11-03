@@ -84,7 +84,7 @@ private Q_SLOTS:
         QCOMPARE(item.m_trend, StatisticsItem::TrendUnknown);
         QCOMPARE(item.m_hasData, true);
         item = stats.totalCO2();
-        QCOMPARE(item.m_value, QLatin1StringView("1,673 kg"));
+        QCOMPARE(item.m_value, QLatin1StringView("1,674 kg"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendUnknown);
         QCOMPARE(item.m_hasData, true);
 
@@ -97,7 +97,7 @@ private Q_SLOTS:
         QCOMPARE(item.m_trend, StatisticsItem::TrendUnknown);
         QCOMPARE(item.m_hasData, true);
         item = stats.flightCO2();
-        QCOMPARE(item.m_value, QLatin1StringView("1,669 kg"));
+        QCOMPARE(item.m_value, QLatin1StringView("1,670 kg"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendUnknown);
         QCOMPARE(item.m_hasData, true);
 
@@ -110,7 +110,7 @@ private Q_SLOTS:
         QCOMPARE(item.m_trend, StatisticsItem::TrendUnknown);
         QCOMPARE(item.m_hasData, true);
         item = stats.trainCO2();
-        QCOMPARE(item.m_value, QLatin1StringView("4.4 kg"));
+        QCOMPARE(item.m_value, QLatin1StringView("4.5 kg"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendUnknown);
         QCOMPARE(item.m_hasData, true);
 
@@ -135,7 +135,7 @@ private Q_SLOTS:
         QCOMPARE(item.m_trend, StatisticsItem::TrendDown);
         QCOMPARE(item.m_hasData, true);
         item = stats.totalCO2();
-        QCOMPARE(item.m_value, QLatin1StringView("380 kg"));
+        QCOMPARE(item.m_value, QLatin1StringView("381 kg"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendDown);
         QCOMPARE(item.m_hasData, true);
 
@@ -161,7 +161,7 @@ private Q_SLOTS:
         QCOMPARE(item.m_trend, StatisticsItem::TrendUp);
         QCOMPARE(item.m_hasData, true);
         item = stats.trainCO2();
-        QCOMPARE(item.m_value, QLatin1StringView("4.4 kg"));
+        QCOMPARE(item.m_value, QLatin1StringView("4.5 kg"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendUp);
         QCOMPARE(item.m_hasData, true);
 
