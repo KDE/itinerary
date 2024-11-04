@@ -858,7 +858,15 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="24.08.3" date="2024-11-07"/>
+    <release version="24.08.3" date="2024-11-07">
+      <description>
+        <ul>
+          <li>New or improved travel document extractor for Agoda, Booking.com, NS, planway.com, Renfe, VietJet Air and Thai state railways.</li>
+          <li>Added support for NS onboard API.</li>
+          <li>Fixed display of disrupted/canceled journeys.</li>
+        </ul>
+      </description>
+    </release>
     <release version="24.08.2" date="2024-10-10">
       <description>
         <ul>
