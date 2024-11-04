@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-03 00:40+0000\n"
+"POT-Creation-Date: 2024-11-04 00:40+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -120,7 +120,7 @@ msgid "Add to calendar…"
 msgstr "Pridať dokument..."
 
 #: app/ActionsCard.qml:74 app/Main.qml:221 app/TripGroupDelegate.qml:182
-#: app/TripGroupPage.qml:662
+#: app/TripGroupPage.qml:694
 #, fuzzy, kde-format
 #| msgid "Export..."
 msgid "Export…"
@@ -131,7 +131,7 @@ msgstr "Exportovať..."
 #: app/HealthCertificatePage.qml:46 app/HealthCertificatePage.qml:60
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:171
 #: app/TicketPage.qml:47 app/TicketPage.qml:171 app/TimelinePage.qml:221
-#: app/TripGroupPage.qml:310
+#: app/TripGroupPage.qml:311
 #, kde-format
 msgid "Delete"
 msgstr "Vymazať"
@@ -147,19 +147,19 @@ msgstr "Odstrániť dokument"
 msgid "Do you really want to delete this event?"
 msgstr "Naozaj chcete odstrániť túto udalosť?"
 
-#: app/ActionsCard.qml:138 app/TimelinePage.qml:235 app/TripGroupPage.qml:229
+#: app/ActionsCard.qml:138 app/TimelinePage.qml:235 app/TripGroupPage.qml:230
 #, fuzzy, kde-format
 #| msgid "Export..."
 msgid "Export"
 msgstr "Exportovať..."
 
-#: app/ActionsCard.qml:141 app/TimelinePage.qml:238 app/TripGroupPage.qml:232
+#: app/ActionsCard.qml:141 app/TimelinePage.qml:238 app/TripGroupPage.qml:233
 #, fuzzy, kde-format
 #| msgid "KDE Itinerary"
 msgid "As Itinerary file…"
 msgstr "KDE Itinerár"
 
-#: app/ActionsCard.qml:152 app/TimelinePage.qml:262 app/TripGroupPage.qml:254
+#: app/ActionsCard.qml:152 app/TimelinePage.qml:262 app/TripGroupPage.qml:255
 #, fuzzy, kde-format
 #| msgid "End time: %1"
 msgid "Send to %1"
@@ -171,13 +171,13 @@ msgstr "Čas konca: %1"
 msgid "Export Reservation"
 msgstr "Rezervácia hotela"
 
-#: app/ActionsCard.qml:168 app/TimelinePage.qml:278 app/TripGroupPage.qml:272
+#: app/ActionsCard.qml:168 app/TimelinePage.qml:278 app/TripGroupPage.qml:273
 #, kde-format
 msgid "Itinerary file (*.itinerary)"
 msgstr ""
 
 #: app/ActionsCard.qml:173 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:630
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:662
 #, fuzzy, kde-format
 #| msgid "Application"
 msgid "Actions"
@@ -411,7 +411,7 @@ msgstr "Pridať dokument..."
 msgid "Edit Boat Trip"
 msgstr "Exportovať..."
 
-#: app/BoatEditor.qml:55 app/BoatPage.qml:28 app/StatisticsPage.qml:134
+#: app/BoatEditor.qml:55 app/BoatPage.qml:28 app/StatisticsPage.qml:135
 #, kde-format
 msgid "Boat"
 msgstr ""
@@ -1063,7 +1063,7 @@ msgid "Export Favorite Locations"
 msgstr "Obľúbené miesta"
 
 #: app/FavoriteLocationPage.qml:38 app/FavoriteLocationPage.qml:46
-#: app/TimelinePage.qml:296 app/TripGroupPage.qml:288
+#: app/TimelinePage.qml:296 app/TripGroupPage.qml:289
 #, fuzzy, kde-format
 #| msgid "All Files (*.*)"
 msgid "GPX Files (*.gpx)"
@@ -1262,7 +1262,7 @@ msgctxt "flight arrival"
 msgid "Arrival time has to be after the departure time."
 msgstr ""
 
-#: app/FlightEditor.qml:182 app/FlightPage.qml:15 app/StatisticsPage.qml:92
+#: app/FlightEditor.qml:182 app/FlightPage.qml:15 app/StatisticsPage.qml:93
 #, kde-format
 msgid "Flight"
 msgstr "Let"
@@ -2091,7 +2091,7 @@ msgstr "Metro"
 msgid "Tramway"
 msgstr "Električka"
 
-#: app/IndoorMapPlatformSheet.qml:87 app/StatisticsPage.qml:120
+#: app/IndoorMapPlatformSheet.qml:87 app/StatisticsPage.qml:121
 #, kde-format
 msgid "Bus"
 msgstr "Autobus"
@@ -2101,6 +2101,12 @@ msgstr "Autobus"
 msgctxt "time in hours"
 msgid "%1 h"
 msgstr ""
+
+#: app/JourneyPathPage.qml:175 app/JourneySectionPage.qml:334
+#, fuzzy, kde-format
+msgctxt "@action:button"
+msgid "Show Map"
+msgstr "Zobraziť názvy"
 
 #: app/JourneyQueryPage.qml:89 app/TransferPage.qml:248
 #, kde-format
@@ -2295,12 +2301,6 @@ msgstr ""
 #| msgid "CO₂: %1g"
 msgid "CO₂: %1"
 msgstr "CO₂: %1g"
-
-#: app/JourneySectionPage.qml:334
-#, fuzzy, kde-format
-msgctxt "@action:button"
-msgid "Show Map"
-msgstr "Zobraziť názvy"
 
 #: app/JourneySectionStopDelegate.qml:144
 #, kde-format
@@ -2664,7 +2664,7 @@ msgstr "Skontrolovať aktualizácie"
 msgid "Download Maps"
 msgstr "&Prevziať mapy..."
 
-#: app/Main.qml:188 app/StatisticsPage.qml:15
+#: app/Main.qml:188 app/StatisticsPage.qml:15 app/TripGroupPage.qml:631
 #, fuzzy, kde-format
 msgid "Statistics"
 msgstr "Štatistika"
@@ -2908,7 +2908,7 @@ msgctxt "not yet expired tickets"
 msgid "Valid"
 msgstr "Platné od:"
 
-#: app/passmanager.cpp:275 app/TripGroupPage.qml:436
+#: app/passmanager.cpp:275 app/TripGroupPage.qml:437
 #, kde-format
 msgid "%1 - %2"
 msgstr ""
@@ -3088,7 +3088,7 @@ msgstr "Prenajaté auto"
 msgid "Bicycle"
 msgstr ""
 
-#: app/publictransport.cpp:144 app/StatisticsPage.qml:148
+#: app/publictransport.cpp:144 app/StatisticsPage.qml:149
 #, kde-format
 msgid "Car"
 msgstr "Auto"
@@ -3497,72 +3497,74 @@ msgstr ""
 msgid "Enables OSM editing options."
 msgstr ""
 
-#: app/statisticsmodel.cpp:92
+#: app/statisticsmodel.cpp:107
 #, fuzzy, kde-format
 #| msgid "Trip: %1"
 msgid "Trips"
 msgstr "Výlet: %1"
 
-#: app/statisticsmodel.cpp:97 app/statisticsmodel.cpp:130
-#: app/statisticsmodel.cpp:145 app/statisticsmodel.cpp:160
-#: app/statisticsmodel.cpp:175 app/statisticsmodel.cpp:190
+#: app/statisticsmodel.cpp:112 app/statisticsmodel.cpp:145
+#: app/statisticsmodel.cpp:160 app/statisticsmodel.cpp:175
+#: app/statisticsmodel.cpp:190 app/statisticsmodel.cpp:205
+#: app/TripGroupPage.qml:637
 #, kde-format
 msgid "Distance"
 msgstr "Vzdialenosť"
 
-#: app/statisticsmodel.cpp:102
+#: app/statisticsmodel.cpp:117
 #, kde-format
 msgid "Hotel nights"
 msgstr ""
 
-#: app/statisticsmodel.cpp:107 app/statisticsmodel.cpp:135
-#: app/statisticsmodel.cpp:150 app/statisticsmodel.cpp:165
-#: app/statisticsmodel.cpp:180 app/statisticsmodel.cpp:195
+#: app/statisticsmodel.cpp:122 app/statisticsmodel.cpp:150
+#: app/statisticsmodel.cpp:165 app/statisticsmodel.cpp:180
+#: app/statisticsmodel.cpp:195 app/statisticsmodel.cpp:210
+#: app/TripGroupPage.qml:646
 #, kde-format
 msgid "CO₂"
 msgstr "CO₂"
 
-#: app/statisticsmodel.cpp:120
+#: app/statisticsmodel.cpp:135
 #, kde-format
 msgid "Visited countries"
 msgstr "Navštívené krajiny"
 
-#: app/statisticsmodel.cpp:125
+#: app/statisticsmodel.cpp:140
 #, kde-format
 msgid "Flights"
 msgstr "Lety"
 
-#: app/statisticsmodel.cpp:140
+#: app/statisticsmodel.cpp:155
 #, kde-format
 msgid "Train rides"
 msgstr ""
 
-#: app/statisticsmodel.cpp:155
+#: app/statisticsmodel.cpp:170
 #, kde-format
 msgid "Bus rides"
 msgstr ""
 
-#: app/statisticsmodel.cpp:170
+#: app/statisticsmodel.cpp:185
 #, kde-format
 msgid "Car rides"
 msgstr ""
 
-#: app/statisticsmodel.cpp:185
+#: app/statisticsmodel.cpp:200
 #, kde-format
 msgid "Boat trips"
 msgstr ""
 
-#: app/StatisticsPage.qml:34
+#: app/StatisticsPage.qml:35
 #, kde-format
 msgid "Year"
 msgstr ""
 
-#: app/StatisticsPage.qml:46 app/statisticstimerangemodel.cpp:69
+#: app/StatisticsPage.qml:47 app/statisticstimerangemodel.cpp:69
 #, kde-format
 msgid "Total"
 msgstr "Celkovo"
 
-#: app/StatisticsPage.qml:106 app/TrainEditor.qml:88
+#: app/StatisticsPage.qml:107 app/TrainEditor.qml:88
 #, fuzzy, kde-format
 #| msgid "Trains"
 msgid "Train"
@@ -3734,48 +3736,48 @@ msgstr ""
 msgid "My Itinerary"
 msgstr ""
 
-#: app/TimelinePage.qml:90 app/TripGroupPage.qml:112
+#: app/TimelinePage.qml:90 app/TripGroupPage.qml:113
 #, fuzzy, kde-format
 #| msgid "Add Document..."
 msgid "Add train trip…"
 msgstr "Pridať dokument..."
 
-#: app/TimelinePage.qml:97 app/TripGroupPage.qml:119
+#: app/TimelinePage.qml:97 app/TripGroupPage.qml:120
 #, fuzzy, kde-format
 #| msgid "Add Document..."
 msgid "Add flight…"
 msgstr "Pridať dokument..."
 
-#: app/TimelinePage.qml:109 app/TripGroupPage.qml:131
+#: app/TimelinePage.qml:109 app/TripGroupPage.qml:132
 #, fuzzy, kde-format
 #| msgid "Add Document..."
 msgid "Add ferry trip…"
 msgstr "Pridať dokument..."
 
-#: app/TimelinePage.qml:121 app/TripGroupPage.qml:143
+#: app/TimelinePage.qml:121 app/TripGroupPage.qml:144
 #, fuzzy, kde-format
 #| msgid "Application"
 msgid "Add accommodation…"
 msgstr "Aplikácia"
 
-#: app/TimelinePage.qml:132 app/TripGroupPage.qml:154
+#: app/TimelinePage.qml:132 app/TripGroupPage.qml:155
 #, fuzzy, kde-format
 #| msgid "Add Document..."
 msgid "Add event…"
 msgstr "Pridať dokument..."
 
-#: app/TimelinePage.qml:144 app/TripGroupPage.qml:166
+#: app/TimelinePage.qml:144 app/TripGroupPage.qml:167
 #, fuzzy, kde-format
 msgid "Add restaurant…"
 msgstr "Rezervácia reštaurácie: %1"
 
-#: app/TimelinePage.qml:166 app/TripGroupPage.qml:694
+#: app/TimelinePage.qml:166 app/TripGroupPage.qml:726
 #, kde-format
 msgctxt "@action:button"
 msgid "Go To Now"
 msgstr ""
 
-#: app/TimelinePage.qml:173 app/TripGroupPage.qml:702
+#: app/TimelinePage.qml:173 app/TripGroupPage.qml:734
 #: app/TripGroupsPage.qml:118 app/TripGroupsPage.qml:137
 #, fuzzy, kde-format
 #| msgid "Add Document..."
@@ -3790,7 +3792,7 @@ msgctxt "@title:group"
 msgid "Add New Trip"
 msgstr "Pridať dokument..."
 
-#: app/TimelinePage.qml:214 app/TripGroupPage.qml:303
+#: app/TimelinePage.qml:214 app/TripGroupPage.qml:304
 #, fuzzy, kde-format
 #| msgid "Delete Document"
 msgid "Delete Trip"
@@ -3802,19 +3804,19 @@ msgstr "Odstrániť dokument"
 msgid "Do you really want to delete this trip?"
 msgstr "Naozaj chcete odstrániť túto udalosť?"
 
-#: app/TimelinePage.qml:247 app/TripGroupPage.qml:240
+#: app/TimelinePage.qml:247 app/TripGroupPage.qml:241
 #, kde-format
 msgid "As GPX file…"
 msgstr ""
 
-#: app/TimelinePage.qml:277 app/TimelinePage.qml:294 app/TripGroupPage.qml:271
-#: app/TripGroupPage.qml:286
+#: app/TimelinePage.qml:277 app/TimelinePage.qml:294 app/TripGroupPage.qml:272
+#: app/TripGroupPage.qml:287
 #, fuzzy, kde-format
 #| msgid "Export..."
 msgid "Export Trip"
 msgstr "Exportovať..."
 
-#: app/TimelinePage.qml:493 app/TripGroupPage.qml:603
+#: app/TimelinePage.qml:493 app/TripGroupPage.qml:604
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr ""
@@ -4075,7 +4077,7 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: app/TripGroupDelegate.qml:116 app/TripGroupPage.qml:443
+#: app/TripGroupDelegate.qml:116 app/TripGroupPage.qml:444
 #: app/WeatherForecastDelegate.qml:48 app/WeatherForecastPage.qml:93
 #, fuzzy, kde-format
 #| msgid "%1°C / %2°C"
@@ -4098,7 +4100,7 @@ msgstr ""
 msgid "%1: no compatible power plugs (%2)"
 msgstr ""
 
-#: app/TripGroupDelegate.qml:145 app/TripGroupPage.qml:469
+#: app/TripGroupDelegate.qml:145 app/TripGroupPage.qml:470
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
@@ -4112,7 +4114,7 @@ msgstr[2] ""
 msgid "Edit…"
 msgstr "Upraviť"
 
-#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:669
+#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:701
 #, fuzzy, kde-format
 #| msgid "Delete Document"
 msgid "Delete trip"
@@ -4187,20 +4189,20 @@ msgctxt "@action:button"
 msgid "Merge"
 msgstr "Odstrániť dokument"
 
-#: app/TripGroupPage.qml:182
+#: app/TripGroupPage.qml:183
 #, fuzzy, kde-format
 #| msgid "Add Document..."
 msgctxt "@title:group"
 msgid "Add to Trip"
 msgstr "Pridať dokument..."
 
-#: app/TripGroupPage.qml:304
+#: app/TripGroupPage.qml:305
 #, fuzzy, kde-format
 #| msgid "Do you really want to delete this event?"
 msgid "Do you really want to delete the trip '%1'?"
 msgstr "Naozaj chcete odstrániť túto udalosť?"
 
-#: app/TripGroupPage.qml:437
+#: app/TripGroupPage.qml:438
 #, kde-format
 msgid "One day"
 msgid_plural "%1 days"
@@ -4208,51 +4210,56 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: app/TripGroupPage.qml:457
+#: app/TripGroupPage.qml:458
 #, kde-format
 msgid "Some incompatible power sockets (%1)"
 msgstr ""
 
-#: app/TripGroupPage.qml:459
+#: app/TripGroupPage.qml:460
 #, kde-format
 msgid "Some incompatible power plugs (%1)"
 msgstr ""
 
-#: app/TripGroupPage.qml:462
+#: app/TripGroupPage.qml:463
 #, kde-format
 msgid "No compatible power plugs (%1)"
 msgstr ""
 
-#: app/TripGroupPage.qml:475
+#: app/TripGroupPage.qml:476
 #, fuzzy, kde-format
 msgid "Show map…"
 msgstr "Zobraziť názvy"
 
-#: app/TripGroupPage.qml:482
+#: app/TripGroupPage.qml:483
 #, fuzzy, kde-format
 #| msgid "Import..."
 msgid "Import"
 msgstr "Importovať..."
 
-#: app/TripGroupPage.qml:496
+#: app/TripGroupPage.qml:497
 #, fuzzy, kde-format
 #| msgid "Add Document..."
 msgid "Add"
 msgstr "Pridať dokument..."
 
-#: app/TripGroupPage.qml:635
+#: app/TripGroupPage.qml:655
+#, kde-format
+msgid "Cost"
+msgstr ""
+
+#: app/TripGroupPage.qml:667
 #, fuzzy, kde-format
 #| msgid "Rename"
 msgid "Rename…"
 msgstr "Premenovať"
 
-#: app/TripGroupPage.qml:644
+#: app/TripGroupPage.qml:676
 #, fuzzy, kde-format
 #| msgid "Add Document..."
 msgid "Merge trips…"
 msgstr "Pridať dokument..."
 
-#: app/TripGroupPage.qml:655
+#: app/TripGroupPage.qml:687
 #, fuzzy, kde-format
 #| msgid "Add Document..."
 msgid "Split trip…"
