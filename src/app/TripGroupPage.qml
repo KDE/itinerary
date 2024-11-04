@@ -30,6 +30,7 @@ Kirigami.ScrollablePage {
         homeCountryIsoCode: Settings.homeCountryIsoCode
         homeCurrency: Country.fromAlpha2(Settings.homeCountryIsoCode).currencyCode
         transferManager: TransferManager
+        convertCurrency: Settings.performCurrencyConversion
     }
 
     title: tripGroup.name
@@ -653,8 +654,8 @@ Kirigami.ScrollablePage {
                 FormCard.FormTextDelegate {
                     id: costStats
                     text: i18n("Cost")
-                    description: Localizer.formatCurrency(23.0, "EUR") // TODO
-                    visible: false // TODO
+                    description: Localizer.formatCurrency(root.controller.totalCost.value, root.controller.totalCost.currency)
+                    visible: !isNaN(root.controller.totalCost.value)
                 }
             }
 

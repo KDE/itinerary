@@ -9,6 +9,7 @@ target_sources(itinerary PRIVATE
     applicationcontroller.cpp
     calendarhelper.cpp
     clipboard.cpp
+    costaccumulator.cpp
     documentmanager.cpp
     documentsmodel.cpp
     downloadjob.cpp
@@ -85,6 +86,7 @@ target_link_libraries(itinerary PUBLIC
     KF6::CoreAddons
     KF6::Notifications
     KF6::Holidays
+    KF6::UnitConversion
     Qt::Network
     Qt::Quick
     Qt::Positioning
@@ -255,7 +257,6 @@ ecm_add_qml_module(itinerary-app URI org.kde.itinerary NO_PLUGIN QML_FILES
 target_include_directories(itinerary-app PRIVATE ${CMAKE_BINARY_DIR})
 target_link_libraries(itinerary-app PRIVATE
     itinerary
-    KF6::UnitConversion
     Qt::QuickControls2
     KCalendarCoreExtras
     Qt6Keychain::Qt6Keychain

@@ -1,0 +1,46 @@
+[
+    {
+        "@context": "http://schema.org",
+        "@type": "TrainReservation",
+        "modifiedTime": "2017-06-22T00:00:00",
+        "reservationFor": {
+            "@type": "TrainTrip",
+            "arrivalStation": {
+                "@type": "TrainStation",
+                "name": "Visp"
+            },
+            "arrivalTime": "2017-09-10T14:02:00+02:00",
+            "departureStation": {
+                "@type": "TrainStation",
+                "name": "Zürich Flughafen"
+            },
+            "departureTime": "2017-09-10T11:40:00+02:00",
+            "trainName": "IC",
+            "trainNumber": "816"
+        },
+        "totalPrice": "23",
+        "priceCurrency": "DEM"
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "TrainReservation",
+        "modifiedTime": "2017-06-22T00:00:00",
+        "reservationFor": {
+            "@type": "TrainTrip",
+            "arrivalStation": {
+                "@type": "TrainStation",
+                "name": "Randa"
+            },
+            "arrivalTime": "2017-09-10T14:53:00+02:00",
+            "departureStation": {
+                "@type": "TrainStation",
+                "name": "Visp"
+            },
+            "departureTime": "2017-09-10T14:08:00+02:00",
+            "trainName": "R",
+            "trainNumber": "241"
+        },
+        "totalPrice": "35",
+        "priceCurrency": "EUR"
+    }
+]

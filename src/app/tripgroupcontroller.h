@@ -6,6 +6,7 @@
 #ifndef TRIPGROUPCONTROLLER_H
 #define TRIPGROUPCONTROLLER_H
 
+#include "costaccumulator.h"
 #include "transfermanager.h"
 #include "tripgroupmodel.h"
 #include "weatherforecast.h"
@@ -22,6 +23,7 @@ class TripGroupController : public QObject
     Q_PROPERTY(WeatherForecastManager *weatherForecastManager MEMBER m_weatherMgr WRITE setWeatherForecastManager NOTIFY setupChanged)
     Q_PROPERTY(QString homeCountryIsoCode MEMBER m_homeCountry NOTIFY locationInfoChanged)
     Q_PROPERTY(QString homeCurrency MEMBER m_homeCurrency NOTIFY locationInfoChanged)
+    Q_PROPERTY(bool convertCurrency MEMBER m_convertCurrency NOTIFY tripGroupContentChanged)
 
     Q_PROPERTY(WeatherForecast weatherForecast READ weatherForecast NOTIFY weatherForecastChanged)
     Q_PROPERTY(QVariantList locationInformation READ locationInformation NOTIFY locationInfoChanged)
@@ -34,6 +36,7 @@ class TripGroupController : public QObject
 
     Q_PROPERTY(double totalDistance READ totalDistance NOTIFY tripGroupContentChanged)
     Q_PROPERTY(double totalCO2Emission READ totalCO2Emission NOTIFY tripGroupContentChanged)
+    Q_PROPERTY(Price totalCost READ totalCost NOTIFY tripGroupContentChanged)
 
 public:
     explicit TripGroupController(QObject *parent = nullptr);
@@ -51,6 +54,7 @@ public:
 
     [[nodiscard]] double totalDistance() const;
     [[nodiscard]] double totalCO2Emission() const;
+    [[nodiscard]] Price totalCost() const;
 
 Q_SIGNALS:
     void setupChanged();
@@ -68,6 +72,8 @@ private:
 
     QString m_homeCountry;
     QString m_homeCurrency;
+
+    bool m_convertCurrency = false;
 };
 
 #endif // TRIPGROUPCONTROLLER_H

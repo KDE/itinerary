@@ -1,0 +1,104 @@
+[
+    {
+        "@context": "http://schema.org",
+        "@type": "FlightReservation",
+        "modifiedTime": "2017-06-22T00:00:00",
+        "reservationFor": {
+            "@type": "Flight",
+            "airline": {
+                "@type": "Airline",
+                "iataCode": "LX"
+            },
+            "arrivalAirport": {
+                "@type": "Airport",
+                "iataCode": "ZRH",
+                "name": "Zürich"
+            },
+            "arrivalTime": "2017-09-10T08:15:00+02:00",
+            "departureAirport": {
+                "@type": "Airport",
+                "iataCode": "TXL",
+                "name": "Berlin Tegel"
+            },
+            "departureDay": "2017-09-10",
+            "departureTime": "2017-09-10T06:45:00+02:00",
+            "flightNumber": "963"
+        },
+        "reservationNumber": "XXX007",
+        "totalPrice": "142",
+        "priceCurrency": "CHF"
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "TrainReservation",
+        "modifiedTime": "2017-06-22T00:00:00",
+        "reservationFor": {
+            "@type": "TrainTrip",
+            "arrivalStation": {
+                "@type": "TrainStation",
+                "name": "Visp"
+            },
+            "arrivalTime": "2017-09-10T14:02:00+02:00",
+            "departureStation": {
+                "@type": "TrainStation",
+                "name": "Zürich Flughafen"
+            },
+            "departureTime": "2017-09-10T11:40:00+02:00",
+            "trainName": "IC",
+            "trainNumber": "816"
+        },
+        "totalPrice": "23",
+        "priceCurrency": "CHF"
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "TrainReservation",
+        "modifiedTime": "2017-06-22T00:00:00",
+        "reservationFor": {
+            "@type": "TrainTrip",
+            "arrivalStation": {
+                "@type": "TrainStation",
+                "name": "Randa"
+            },
+            "arrivalTime": "2017-09-10T14:53:00+02:00",
+            "departureStation": {
+                "@type": "TrainStation",
+                "name": "Visp"
+            },
+            "departureTime": "2017-09-10T14:08:00+02:00",
+            "trainName": "R",
+            "trainNumber": "241"
+        },
+        "totalPrice": "35",
+        "priceCurrency": "CHF"
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "FlightReservation",
+        "modifiedTime": "2017-06-22T00:00:00",
+        "reservationFor": {
+            "@type": "Flight",
+            "airline": {
+                "@type": "Airline",
+                "iataCode": "LX"
+            },
+            "arrivalAirport": {
+                "@type": "Airport",
+                "iataCode": "TXL",
+                "name": "Berlin Tegel"
+            },
+            "arrivalTime": "2017-09-15T22:15:00+02:00",
+            "departureAirport": {
+                "@type": "Airport",
+                "iataCode": "ZRH",
+                "name": "Zürich"
+            },
+            "departureDay": "2017-09-15",
+            "departureTime": "2017-09-15T20:50:00+02:00",
+            "flightNumber": "962"
+        },
+        "reservationNumber": "XXX007",
+        "totalPrice": "142",
+        "priceCurrency": "CHF"
+    }
+]

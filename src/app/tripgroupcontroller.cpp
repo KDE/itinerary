@@ -289,4 +289,21 @@ double TripGroupController::totalCO2Emission() const
     return co2;
 }
 
+Price TripGroupController::totalCost() const
+{
+    if (!m_tripGroupModel) {
+        return {};
+    }
+
+    CostAccumulator accu(m_tripGroupModel->tripGroupManager()->reservationManager());
+    if (m_convertCurrency) {
+        accu.setTargetCurrency(m_homeCurrency);
+    }
+    const auto elems = m_tripGroupModel->tripGroupManager()->tripGroup(m_tgId).elements();
+    for (const auto &elem : elems) {
+        accu.addBatch(elem);
+    }
+    return accu.totalCost();
+}
+
 #include "moc_tripgroupcontroller.cpp"

@@ -1,0 +1,54 @@
+[
+    {
+        "@context": "http://schema.org",
+        "@type": "TrainReservation",
+        "modifiedTime": "2017-06-22T00:00:00",
+        "reservationFor": {
+            "@type": "TrainTrip",
+            "arrivalStation": {
+                "@type": "TrainStation",
+                "name": "Visp"
+            },
+            "arrivalTime": "2017-09-10T14:02:00+02:00",
+            "departureStation": {
+                "@type": "TrainStation",
+                "name": "Zürich Flughafen"
+            },
+            "departureTime": "2017-09-10T11:40:00+02:00",
+            "trainName": "IC",
+            "trainNumber": "816"
+        },
+        "totalPrice": 23,
+        "priceCurrency": "EUR",
+        "underName": {
+            "@type": "Person",
+            "name": "Konqui Dragon"
+        }
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "TrainReservation",
+        "modifiedTime": "2017-06-22T00:00:00",
+        "reservationFor": {
+            "@type": "TrainTrip",
+            "arrivalStation": {
+                "@type": "TrainStation",
+                "name": "Visp"
+            },
+            "arrivalTime": "2017-09-10T14:02:00+02:00",
+            "departureStation": {
+                "@type": "TrainStation",
+                "name": "Zürich Flughafen"
+            },
+            "departureTime": "2017-09-10T11:40:00+02:00",
+            "trainName": "IC",
+            "trainNumber": "816"
+        },
+        "totalPrice": 23,
+        "priceCurrency": "EUR",
+        "underName": {
+            "@type": "Person",
+            "name": "Katie Dragon"
+        }
+    }
+]
