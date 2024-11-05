@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-04 00:40+0000\n"
-"PO-Revision-Date: 2024-11-03 09:55+0100\n"
+"PO-Revision-Date: 2024-11-04 09:42+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -4013,7 +4013,7 @@ msgstr "Afegeix"
 #: app/TripGroupPage.qml:655
 #, kde-format
 msgid "Cost"
-msgstr ""
+msgstr "Cost"
 
 #: app/TripGroupPage.qml:667
 #, kde-format
@@ -4301,155 +4301,3 @@ msgstr "S'està iniciant la sessió"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 des de %3 a %4 el %5"
-
-#~ msgctxt "seat section, e.g. block in a stadium"
-#~ msgid "Section:"
-#~ msgstr "Secció:"
-
-#~ msgctxt "seat row"
-#~ msgid "Row:"
-#~ msgstr "Fila:"
-
-#~ msgctxt "seat number"
-#~ msgid "Number:"
-#~ msgstr "Número:"
-
-#~ msgctxt "seat type"
-#~ msgid "Type:"
-#~ msgstr "Tipus:"
-
-#~ msgctxt "coach of a train"
-#~ msgid "Coach:"
-#~ msgstr "Vagó:"
-
-#~ msgctxt "Train seat"
-#~ msgid "Seat:"
-#~ msgstr "Seient:"
-
-#~ msgid "Class:"
-#~ msgstr "Classe:"
-
-#~ msgid "Terminal: %1  Gate: %2  Seat: %3"
-#~ msgstr "Terminal: %1  Porta: %2  Seient: %3"
-
-#~ msgid "Export..."
-#~ msgstr "Exporta..."
-
-#~ msgid "Add Document..."
-#~ msgstr "Afegeix un document..."
-
-#~ msgid "Pick..."
-#~ msgstr "Selecció..."
-
-#~ msgid "Scan Barcode..."
-#~ msgstr "Escaneja un codi de barres..."
-
-#~ msgid "Import..."
-#~ msgstr "Importa..."
-
-#~ msgid "Settings..."
-#~ msgstr "Arranjament..."
-
-#~ msgid "Public Transport Information Sources..."
-#~ msgstr "Fonts d'informació de transport públic..."
-
-#~ msgctxt "@title"
-#~ msgid "Find Amenity"
-#~ msgstr "Cerca de serveis"
-
-#~ msgid "Pass imported."
-#~ msgstr "S'ha importat el passi."
-
-#~ msgid "Calendar Import"
-#~ msgstr "Importa un calendari"
-
-#~ msgid "Import selected events"
-#~ msgstr "Importa els esdeveniments seleccionats"
-
-#~ msgid "Ticket imported"
-#~ msgstr "El bitllet s'ha importat"
-
-#~ msgid "Import from Clipboard"
-#~ msgstr "Importa des del porta-retalls"
-
-#~ msgid "Vehicle Load:"
-#~ msgstr "Càrrega del vehicle:"
-
-#~ msgctxt "vehicle load"
-#~ msgid "FULL"
-#~ msgstr "Completa"
-
-#~ msgctxt "vehicle load"
-#~ msgid "Medium occupancy"
-#~ msgstr "Ocupació mitjana"
-
-#~ msgctxt "vehicle load"
-#~ msgid "High occupancy"
-#~ msgstr "Ocupació alta"
-
-#~ msgid "%1 (not available)"
-#~ msgstr "%1 (no disponible)"
-
-#~ msgctxt "train coach feature"
-#~ msgid "Air conditioning"
-#~ msgstr "Aire condicionat"
-
-#~ msgctxt "train coach feature"
-#~ msgid "Bistro or restaurant"
-#~ msgstr "Bistrot or restaurant"
-
-#~ msgctxt "train coach feature"
-#~ msgid "Toddler area"
-#~ msgstr "Àrea infantil"
-
-#~ msgctxt "train coach feature"
-#~ msgid "Family area"
-#~ msgstr "Àrea familiar"
-
-#~ msgctxt "train coach feature"
-#~ msgid "Wheelchair accessible"
-#~ msgstr "Accessible amb cadira de rodes"
-
-#~ msgctxt "train coach feature"
-#~ msgid "Quiet area"
-#~ msgstr "Àrea de silenci"
-
-#~ msgctxt "train coach feature"
-#~ msgid "Business area"
-#~ msgstr "Àrea de negocis"
-
-#~ msgctxt "train coach feature"
-#~ msgid "Bike storage"
-#~ msgstr "Emmagatzematge de bicicletes"
-
-#~ msgctxt "train coach feature"
-#~ msgid "Toilet"
-#~ msgstr "Lavabo"
-
-#~ msgctxt "train coach feature"
-#~ msgid "Wheelchair accessible toilet"
-#~ msgstr "Lavabo accessible amb cadira de rodes"
-
-#~ msgctxt "train coach feature"
-#~ msgid "Information point"
-#~ msgstr "Punt d'informació"
-
-#~ msgctxt "train coach feature"
-#~ msgid "Wi-Fi"
-#~ msgstr "Wi-Fi"
-
-#~ msgctxt "train coach feature"
-#~ msgid "Power sockets"
-#~ msgstr "Preses de corrent"
-
-#~ msgctxt "vehicle load"
-#~ msgid "Low"
-#~ msgstr "Baixa"
-
-#~ msgctxt "vehicle load"
-#~ msgid "Medium"
-#~ msgstr "Mitjana"
-
-#~ msgctxt "vehicle load"
-#~ msgid "High"
-#~ msgstr "Alta"
