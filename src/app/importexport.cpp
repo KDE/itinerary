@@ -24,6 +24,8 @@
 #include <KItinerary/File>
 #include <KItinerary/JsonLdDocument>
 
+#include <KPublicTransport/Location>
+
 #include <QFile>
 #include <QJsonArray>
 #include <QJsonDocument>
@@ -99,20 +101,40 @@ void Exporter::exportDocument(const DocumentManager *docMgr, const QString &docI
 
 void Exporter::exportTransfers(const ReservationManager *resMgr, const TransferManager *transferMgr)
 {
+    std::vector<FavoriteLocation> favLocs;
     for (const auto &batchId : resMgr->batches()) {
-        exportTransfersForBatch(batchId, transferMgr);
+        exportTransfersForBatch(batchId, transferMgr, favLocs);
     }
 }
 
-void Exporter::exportTransfersForBatch(const QString &batchId, const TransferManager *transferMgr)
+static void addFavoriteLocation(const KPublicTransport::Location &loc, const QString &name, std::vector<FavoriteLocation> &favoriteLocations)
 {
-    auto t = transferMgr->transfer(batchId, Transfer::Before);
-    if (t.state() != Transfer::UndefinedState) {
-        m_file->addCustomData(BUNDLE_TRANSFER_DOMAIN, t.identifier(), QJsonDocument(Transfer::toJson(t)).toJson());
+    FavoriteLocation fav;
+    fav.setName(name);
+    fav.setLatitude(loc.latitude());
+    fav.setLongitude(loc.longitude());
+    if (!fav.isValid()) {
+        return;
     }
-    t = transferMgr->transfer(batchId, Transfer::After);
-    if (t.state() != Transfer::UndefinedState) {
+
+    if (std::find(favoriteLocations.begin(), favoriteLocations.end(), fav) == favoriteLocations.end()) {
+        favoriteLocations.push_back(std::move(fav));
+    }
+}
+
+void Exporter::exportTransfersForBatch(const QString &batchId, const TransferManager *transferMgr, std::vector<FavoriteLocation> &favoriteLocations)
+{
+    if (const auto t = transferMgr->transfer(batchId, Transfer::Before); t.state() != Transfer::UndefinedState) {
         m_file->addCustomData(BUNDLE_TRANSFER_DOMAIN, t.identifier(), QJsonDocument(Transfer::toJson(t)).toJson());
+        if (t.floatingLocationType() == Transfer::FavoriteLocation) {
+            addFavoriteLocation(t.from(), t.fromName(), favoriteLocations);
+        }
+    }
+    if (const auto t = transferMgr->transfer(batchId, Transfer::After); t.state() != Transfer::UndefinedState) {
+        m_file->addCustomData(BUNDLE_TRANSFER_DOMAIN, t.identifier(), QJsonDocument(Transfer::toJson(t)).toJson());
+        if (t.floatingLocationType() == Transfer::FavoriteLocation) {
+            addFavoriteLocation(t.to(), t.toName(), favoriteLocations);
+        }
     }
 }
 

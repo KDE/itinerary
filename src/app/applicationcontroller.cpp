@@ -401,11 +401,12 @@ bool ApplicationController::exportTripToFile(const QString &tripGroupId, const Q
     const auto batchIds = tg.elements();
 
     QSet<QString> docIdSet;
+    std::vector<FavoriteLocation> favoriteLocations;
 
     Exporter exporter(&f);
     for (const auto &batchId : batchIds) {
         exporter.exportReservationBatch(m_resMgr, batchId);
-        exporter.exportTransfersForBatch(batchId, m_transferMgr);
+        exporter.exportTransfersForBatch(batchId, m_transferMgr, favoriteLocations);
         exporter.exportLiveDataForBatch(batchId);
 
         const auto resIds = m_resMgr->reservationsForBatch(batchId);
@@ -426,6 +427,7 @@ bool ApplicationController::exportTripToFile(const QString &tripGroupId, const Q
         }
     }
     exporter.exportTripGroup(tripGroupId, tg);
+    exporter.exportFavoriteLocations(favoriteLocations);
     return true;
 }
 
@@ -500,10 +502,11 @@ bool ApplicationController::exportBatchToFile(const QString &batchId, const QStr
     }
 
     QSet<QString> docIdSet;
+    std::vector<FavoriteLocation> favoriteLocations;
 
     Exporter exporter(&f);
     exporter.exportReservationBatch(m_resMgr, batchId);
-    exporter.exportTransfersForBatch(batchId, m_transferMgr);
+    exporter.exportTransfersForBatch(batchId, m_transferMgr, favoriteLocations);
     exporter.exportLiveDataForBatch(batchId);
 
     const auto resIds = m_resMgr->reservationsForBatch(batchId);
@@ -522,6 +525,7 @@ bool ApplicationController::exportBatchToFile(const QString &batchId, const QStr
             }
         }
     }
+    exporter.exportFavoriteLocations(favoriteLocations);
     return true;
 }
 

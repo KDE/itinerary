@@ -43,7 +43,7 @@ public:
     void exportDocuments(const DocumentManager *docMgr);
     void exportDocument(const DocumentManager *docMgr, const QString &docId);
     void exportTransfers(const ReservationManager *resMgr, const TransferManager *transferMgr);
-    void exportTransfersForBatch(const QString &batchId, const TransferManager *transferMgr);
+    void exportTransfersForBatch(const QString &batchId, const TransferManager *transferMgr, std::vector<FavoriteLocation> &favoriteLocations);
     void exportTripGroups(const TripGroupManager *tripGroupMgr);
     void exportTripGroup(const QString &tripGroupId, const TripGroup &tg);
     void exportFavoriteLocations(const std::vector<FavoriteLocation> &favLocs);
