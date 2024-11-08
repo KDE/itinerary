@@ -32,6 +32,8 @@ public:
     ~FavoriteLocation();
     FavoriteLocation &operator=(const FavoriteLocation &);
 
+    [[nodiscard]] bool operator==(const FavoriteLocation &other) const;
+
     /** Name set and coordinate valid. */
     [[nodiscard]] bool isValid() const;
 

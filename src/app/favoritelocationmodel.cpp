@@ -45,6 +45,11 @@ FavoriteLocation::FavoriteLocation(FavoriteLocation &&) = default;
 FavoriteLocation::~FavoriteLocation() = default;
 FavoriteLocation &FavoriteLocation::operator=(const FavoriteLocation &) = default;
 
+bool FavoriteLocation::operator==(const FavoriteLocation &other) const
+{
+    return d->name == other.d->name && qFuzzyCompare(d->latitude, other.d->latitude) && qFuzzyCompare(d->longitude, other.d->longitude);
+}
+
 bool FavoriteLocation::isValid() const
 {
     return !d->name.isEmpty() && !std::isnan(d->latitude) && !std::isnan(d->longitude);
