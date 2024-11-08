@@ -129,13 +129,12 @@ void Exporter::exportTripGroup(const QString &tripGroupId, const TripGroup &tg)
     m_file->addCustomData(BUNDLE_TRIPGROUP_DOMAIN, tripGroupId, QJsonDocument(TripGroup::toJson(tg)).toJson());
 }
 
-void Exporter::exportFavoriteLocations(const FavoriteLocationModel *favLocModel)
+void Exporter::exportFavoriteLocations(const std::vector<FavoriteLocation> &favLocs)
 {
-    // export favorite locations
-    if (favLocModel->rowCount() > 0) {
+    if (!favLocs.empty()) {
         m_file->addCustomData(BUNDLE_FAVORITE_LOCATION_DOMAIN,
                               u"locations"_s,
-                              QJsonDocument(FavoriteLocation::toJson(favLocModel->favoriteLocations())).toJson());
+                              QJsonDocument(FavoriteLocation::toJson(favLocs)).toJson());
     }
 }
 

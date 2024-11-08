@@ -9,7 +9,10 @@
 
 #include <QHash>
 
+#include <vector>
+
 class DocumentManager;
+class FavoriteLocation;
 class FavoriteLocationModel;
 class HealthCertificateManager;
 class LiveDataManager;
@@ -43,7 +46,7 @@ public:
     void exportTransfersForBatch(const QString &batchId, const TransferManager *transferMgr);
     void exportTripGroups(const TripGroupManager *tripGroupMgr);
     void exportTripGroup(const QString &tripGroupId, const TripGroup &tg);
-    void exportFavoriteLocations(const FavoriteLocationModel *favLocModel);
+    void exportFavoriteLocations(const std::vector<FavoriteLocation> &favLocs);
     void exportPasses(const PassManager *passMgr);
     void exportHealthCertificates(const HealthCertificateManager *healthCertMgr);
     void exportLiveData();

@@ -342,7 +342,7 @@ void ApplicationController::exportToFile(const QUrl &url)
     exporter.exportReservations(m_resMgr);
     exporter.exportPasses(m_pkPassMgr);
     exporter.exportDocuments(m_docMgr);
-    exporter.exportFavoriteLocations(m_favLocModel);
+    exporter.exportFavoriteLocations(m_favLocModel->favoriteLocations());
     exporter.exportTransfers(m_resMgr, m_transferMgr);
     exporter.exportTripGroups(m_tripGroupMgr);
     exporter.exportPasses(m_passMgr);
