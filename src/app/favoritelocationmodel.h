@@ -22,8 +22,8 @@ class FavoriteLocation
 {
     Q_GADGET
     Q_PROPERTY(QString name READ name WRITE setName)
-    Q_PROPERTY(float latitude READ latitude WRITE setLatitude)
-    Q_PROPERTY(float longitude READ longitude WRITE setLongitude)
+    Q_PROPERTY(double latitude READ latitude WRITE setLatitude)
+    Q_PROPERTY(double longitude READ longitude WRITE setLongitude)
 
 public:
     FavoriteLocation();
@@ -33,19 +33,19 @@ public:
     FavoriteLocation &operator=(const FavoriteLocation &);
 
     /** Name set and coordinate valid. */
-    bool isValid() const;
+    [[nodiscard]] bool isValid() const;
 
-    QString name() const;
+    [[nodiscard]] QString name() const;
     void setName(const QString &name);
-    float latitude() const;
-    void setLatitude(float lat);
-    float longitude() const;
-    void setLongitude(float lon);
+    [[nodiscard]] double latitude() const;
+    void setLatitude(double lat);
+    [[nodiscard]] double longitude() const;
+    void setLongitude(double lon);
 
-    static FavoriteLocation fromJson(const QJsonObject &obj);
-    static std::vector<FavoriteLocation> fromJson(const QJsonArray &array);
-    static QJsonArray toJson(const std::vector<FavoriteLocation> &locs);
-    static QJsonObject toJson(const FavoriteLocation &loc);
+    [[nodiscard]] static FavoriteLocation fromJson(const QJsonObject &obj);
+    [[nodiscard]] static std::vector<FavoriteLocation> fromJson(const QJsonArray &array);
+    [[nodiscard]] static QJsonArray toJson(const std::vector<FavoriteLocation> &locs);
+    [[nodiscard]] static QJsonObject toJson(const FavoriteLocation &loc);
 
 private:
     QExplicitlySharedDataPointer<FavoriteLocationPrivate> d;
@@ -74,7 +74,7 @@ public:
     Q_INVOKABLE void removeLocation(int row);
 
     /** All favorite locations. */
-    const std::vector<FavoriteLocation> &favoriteLocations() const;
+    [[nodiscard]] const std::vector<FavoriteLocation> &favoriteLocations() const;
     /** Set favorite locations to @p locs.
      *  Used for importing.
      */
@@ -85,10 +85,10 @@ public:
     /** Import from GPX. */
     Q_INVOKABLE void importFromGpx(const QString &filePath);
 
-    int rowCount(const QModelIndex &parent = {}) const override;
-    QVariant data(const QModelIndex &index, int role) const override;
-    bool setData(const QModelIndex &index, const QVariant &value, int role) override;
-    QHash<int, QByteArray> roleNames() const override;
+    [[nodiscard]] int rowCount(const QModelIndex &parent = {}) const override;
+    [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
+    [[nodiscard]] bool setData(const QModelIndex &index, const QVariant &value, int role) override;
+    [[nodiscard]] QHash<int, QByteArray> roleNames() const override;
 
 private:
     void saveLocations() const;

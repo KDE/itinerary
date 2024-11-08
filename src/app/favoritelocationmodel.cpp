@@ -13,11 +13,10 @@
 
 #include "gpx/gpxreader.h"
 
-#include <KItinerary/LocationUtil>
+#include <KPublicTransport//Location>
 
 #include <KLocalizedString>
 
-#include <QDebug>
 #include <QDir>
 #include <QFile>
 #include <QJsonArray>
@@ -26,12 +25,14 @@
 
 #include <cmath>
 
+using namespace Qt::Literals;
+
 class FavoriteLocationPrivate : public QSharedData
 {
 public:
     QString name;
-    float latitude = NAN;
-    float longitude = NAN;
+    double latitude = NAN;
+    double longitude = NAN;
 };
 
 FavoriteLocation::FavoriteLocation()
@@ -60,23 +61,23 @@ void FavoriteLocation::setName(const QString &name)
     d->name = name;
 }
 
-float FavoriteLocation::latitude() const
+double FavoriteLocation::latitude() const
 {
     return d->latitude;
 }
 
-void FavoriteLocation::setLatitude(float lat)
+void FavoriteLocation::setLatitude(double lat)
 {
     d.detach();
     d->latitude = lat;
 }
 
-float FavoriteLocation::longitude() const
+double FavoriteLocation::longitude() const
 {
     return d->longitude;
 }
 
-void FavoriteLocation::setLongitude(float lon)
+void FavoriteLocation::setLongitude(double lon)
 {
     d.detach();
     d->longitude = lon;
@@ -104,14 +105,14 @@ QJsonArray FavoriteLocation::toJson(const std::vector<FavoriteLocation> &locs)
 
 static QString favoriteLocationPath()
 {
-    return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1StringView("/favorite-locations/");
+    return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/favorite-locations/"_L1;
 }
 
 FavoriteLocationModel::FavoriteLocationModel(QObject *parent)
     : QAbstractListModel(parent)
 {
     // load existing locations
-    QFile f(favoriteLocationPath() + QLatin1StringView("locations.json"));
+    QFile f(favoriteLocationPath() + "locations.json"_L1);
     if (f.open(QFile::ReadOnly)) { // error is fine, file might not exist yet
         const auto val = JsonIO::read(f.readAll());
         beginResetModel();
@@ -123,9 +124,9 @@ FavoriteLocationModel::FavoriteLocationModel(QObject *parent)
     if (m_locations.empty()) {
         FavoriteLocation home;
         QSettings settings;
-        settings.beginGroup(QStringLiteral("HomeLocation"));
-        home.setLatitude(settings.value(QStringLiteral("Latitude"), NAN).toFloat());
-        home.setLongitude(settings.value(QStringLiteral("Longitude"), NAN).toFloat());
+        settings.beginGroup("HomeLocation");
+        home.setLatitude(settings.value("Latitude", NAN).toFloat());
+        home.setLongitude(settings.value("Longitude", NAN).toFloat());
         home.setName(i18n("Home"));
         if (home.isValid()) {
             beginInsertRows({}, 0, 0);
@@ -134,7 +135,7 @@ FavoriteLocationModel::FavoriteLocationModel(QObject *parent)
             saveLocations();
         }
         settings.endGroup();
-        settings.remove(QStringLiteral("HomeLocation"));
+        settings.remove("HomeLocation");
     }
 }
 
@@ -163,7 +164,7 @@ void FavoriteLocationModel::appendNewLocation()
 void FavoriteLocationModel::appendLocationIfMissing(FavoriteLocation &&loc)
 {
     for (const auto &l : m_locations) {
-        if (KItinerary::LocationUtil::distance(l.latitude(), l.longitude(), loc.latitude(), loc.longitude()) < 10) {
+        if (KPublicTransport::Location::distance(l.latitude(), l.longitude(), loc.latitude(), loc.longitude()) < 10) {
             qCDebug(Log) << "Not importing" << loc.name() << "due to" << l.name() << "close by";
             return;
         }
@@ -199,7 +200,7 @@ int FavoriteLocationModel::rowCount(const QModelIndex &parent) const
     if (parent.isValid()) {
         return 0;
     }
-    return m_locations.size();
+    return (int)m_locations.size();
 }
 
 QVariant FavoriteLocationModel::data(const QModelIndex &index, int role) const
@@ -264,7 +265,7 @@ void FavoriteLocationModel::saveLocations() const
 {
     const auto basePath = favoriteLocationPath();
     QDir().mkpath(basePath);
-    QFile f(basePath + QLatin1StringView("locations.json"));
+    QFile f(basePath + "locations.json"_L1);
     if (!f.open(QFile::WriteOnly)) {
         qWarning() << "Failed to save favorite locations:" << f.errorString() << f.fileName();
         return;
