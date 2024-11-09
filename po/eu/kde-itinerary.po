@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-07 00:40+0000\n"
+"POT-Creation-Date: 2024-11-09 00:40+0000\n"
 "PO-Revision-Date: 2024-10-27 06:55+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -310,14 +310,14 @@ msgstr[0] "Osasun ziurtagiri bat inportatu da."
 msgstr[1] "%1 osasun ziurtagiri inportatu dira."
 
 #: app/applicationcontroller.cpp:337 app/applicationcontroller.cpp:378
-#: app/applicationcontroller.cpp:396 app/applicationcontroller.cpp:441
-#: app/applicationcontroller.cpp:480 app/applicationcontroller.cpp:498
+#: app/applicationcontroller.cpp:396 app/applicationcontroller.cpp:443
+#: app/applicationcontroller.cpp:482 app/applicationcontroller.cpp:500
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Esportatzea huts egin du: %1"
 
 #: app/applicationcontroller.cpp:352 app/applicationcontroller.cpp:361
-#: app/applicationcontroller.cpp:454 app/applicationcontroller.cpp:463
+#: app/applicationcontroller.cpp:456 app/applicationcontroller.cpp:465
 #, kde-format
 msgid "Export completed."
 msgstr "Esportatzea osatu da."
@@ -327,12 +327,12 @@ msgstr "Esportatzea osatu da."
 msgid "Trip sent."
 msgstr "Txangoa bidali da."
 
-#: app/applicationcontroller.cpp:490
+#: app/applicationcontroller.cpp:492
 #, kde-format
 msgid "Reservation sent."
 msgstr "Erreserba bidalita."
 
-#: app/applicationcontroller.cpp:548
+#: app/applicationcontroller.cpp:552
 #, kde-format
 msgid "Import completed."
 msgstr "Inportatzea osatu da."
@@ -961,18 +961,18 @@ msgctxt "event venue seat type"
 msgid "Type: <b>%1</b>"
 msgstr "Mota: <b>%1</b>"
 
-#: app/favoritelocationmodel.cpp:129 app/favoritelocationmodel.cpp:149
+#: app/favoritelocationmodel.cpp:135 app/favoritelocationmodel.cpp:155
 #: app/SettingsPage.qml:35
 #, kde-format
 msgid "Home"
 msgstr "Etxea"
 
-#: app/favoritelocationmodel.cpp:152
+#: app/favoritelocationmodel.cpp:158
 #, kde-format
 msgid "Work"
 msgstr "Lana"
 
-#: app/favoritelocationmodel.cpp:155
+#: app/favoritelocationmodel.cpp:161
 #, kde-format
 msgid "Location %1"
 msgstr "%1 kokalekua"

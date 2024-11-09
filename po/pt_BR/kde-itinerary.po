@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-07 00:40+0000\n"
+"POT-Creation-Date: 2024-11-09 00:40+0000\n"
 "PO-Revision-Date: 2023-07-29 15:30-0300\n"
 "Last-Translator: Geraldo Simiao <geraldosimiao@fedoraproject.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -322,14 +322,14 @@ msgstr[0] "Certificado de saúde importado ."
 msgstr[1] "Certificado de saúde importado ."
 
 #: app/applicationcontroller.cpp:337 app/applicationcontroller.cpp:378
-#: app/applicationcontroller.cpp:396 app/applicationcontroller.cpp:441
-#: app/applicationcontroller.cpp:480 app/applicationcontroller.cpp:498
+#: app/applicationcontroller.cpp:396 app/applicationcontroller.cpp:443
+#: app/applicationcontroller.cpp:482 app/applicationcontroller.cpp:500
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Falha na exportação: %1"
 
 #: app/applicationcontroller.cpp:352 app/applicationcontroller.cpp:361
-#: app/applicationcontroller.cpp:454 app/applicationcontroller.cpp:463
+#: app/applicationcontroller.cpp:456 app/applicationcontroller.cpp:465
 #, kde-format
 msgid "Export completed."
 msgstr "Exportação concluída."
@@ -340,13 +340,13 @@ msgstr "Exportação concluída."
 msgid "Trip sent."
 msgstr "Viagens"
 
-#: app/applicationcontroller.cpp:490
+#: app/applicationcontroller.cpp:492
 #, fuzzy, kde-format
 #| msgid "Reservation"
 msgid "Reservation sent."
 msgstr "Reserva"
 
-#: app/applicationcontroller.cpp:548
+#: app/applicationcontroller.cpp:552
 #, kde-format
 msgid "Import completed."
 msgstr "Importação concluída."
@@ -1033,18 +1033,18 @@ msgctxt "event venue seat type"
 msgid "Type: <b>%1</b>"
 msgstr "Vagão:"
 
-#: app/favoritelocationmodel.cpp:129 app/favoritelocationmodel.cpp:149
+#: app/favoritelocationmodel.cpp:135 app/favoritelocationmodel.cpp:155
 #: app/SettingsPage.qml:35
 #, kde-format
 msgid "Home"
 msgstr "Casa"
 
-#: app/favoritelocationmodel.cpp:152
+#: app/favoritelocationmodel.cpp:158
 #, kde-format
 msgid "Work"
 msgstr "Trabalho"
 
-#: app/favoritelocationmodel.cpp:155
+#: app/favoritelocationmodel.cpp:161
 #, kde-format
 msgid "Location %1"
 msgstr "Localização %1"
