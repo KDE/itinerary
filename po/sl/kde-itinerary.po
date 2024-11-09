@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-07 00:40+0000\n"
+"POT-Creation-Date: 2024-11-09 02:31+0000\n"
 "PO-Revision-Date: 2024-11-04 06:42+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -310,14 +310,14 @@ msgstr[2] "%1 zdravstveni potrdili uvoženi."
 msgstr[3] "%1 zdravstvenih potrdil uvoženo."
 
 #: app/applicationcontroller.cpp:337 app/applicationcontroller.cpp:378
-#: app/applicationcontroller.cpp:396 app/applicationcontroller.cpp:441
-#: app/applicationcontroller.cpp:480 app/applicationcontroller.cpp:498
+#: app/applicationcontroller.cpp:396 app/applicationcontroller.cpp:443
+#: app/applicationcontroller.cpp:482 app/applicationcontroller.cpp:500
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Izvoz ni uspel: %1"
 
 #: app/applicationcontroller.cpp:352 app/applicationcontroller.cpp:361
-#: app/applicationcontroller.cpp:454 app/applicationcontroller.cpp:463
+#: app/applicationcontroller.cpp:456 app/applicationcontroller.cpp:465
 #, kde-format
 msgid "Export completed."
 msgstr "Izvoz dokončan."
@@ -327,12 +327,12 @@ msgstr "Izvoz dokončan."
 msgid "Trip sent."
 msgstr "Izlet poslan."
 
-#: app/applicationcontroller.cpp:490
+#: app/applicationcontroller.cpp:492
 #, kde-format
 msgid "Reservation sent."
 msgstr "Rezervacija poslana."
 
-#: app/applicationcontroller.cpp:548
+#: app/applicationcontroller.cpp:552
 #, kde-format
 msgid "Import completed."
 msgstr "Uvoz dokončan."
@@ -963,18 +963,18 @@ msgctxt "event venue seat type"
 msgid "Type: <b>%1</b>"
 msgstr "Vrsta: <b>%1</b>"
 
-#: app/favoritelocationmodel.cpp:129 app/favoritelocationmodel.cpp:149
+#: app/favoritelocationmodel.cpp:135 app/favoritelocationmodel.cpp:155
 #: app/SettingsPage.qml:35
 #, kde-format
 msgid "Home"
 msgstr "Domov"
 
-#: app/favoritelocationmodel.cpp:152
+#: app/favoritelocationmodel.cpp:158
 #, kde-format
 msgid "Work"
 msgstr "Posel"
 
-#: app/favoritelocationmodel.cpp:155
+#: app/favoritelocationmodel.cpp:161
 #, kde-format
 msgid "Location %1"
 msgstr "Lokacija %1"

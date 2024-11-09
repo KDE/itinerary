@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-07 00:40+0000\n"
+"POT-Creation-Date: 2024-11-09 02:31+0000\n"
 "PO-Revision-Date: 2024-11-04 05:02+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -303,14 +303,14 @@ msgstr[0] "ჯანმრთელობის სერტიფიკატ�
 msgstr[1] "%1 ჯანმრთელობის სერტიფიკატი შემოტანილია."
 
 #: app/applicationcontroller.cpp:337 app/applicationcontroller.cpp:378
-#: app/applicationcontroller.cpp:396 app/applicationcontroller.cpp:441
-#: app/applicationcontroller.cpp:480 app/applicationcontroller.cpp:498
+#: app/applicationcontroller.cpp:396 app/applicationcontroller.cpp:443
+#: app/applicationcontroller.cpp:482 app/applicationcontroller.cpp:500
 #, kde-format
 msgid "Export failed: %1"
 msgstr "გატანის შეცდომა: %1"
 
 #: app/applicationcontroller.cpp:352 app/applicationcontroller.cpp:361
-#: app/applicationcontroller.cpp:454 app/applicationcontroller.cpp:463
+#: app/applicationcontroller.cpp:456 app/applicationcontroller.cpp:465
 #, kde-format
 msgid "Export completed."
 msgstr "გატანა დასრულდა."
@@ -320,12 +320,12 @@ msgstr "გატანა დასრულდა."
 msgid "Trip sent."
 msgstr "მოგზაურობა გაგზავნილია."
 
-#: app/applicationcontroller.cpp:490
+#: app/applicationcontroller.cpp:492
 #, kde-format
 msgid "Reservation sent."
 msgstr "ჯავშანი გაგზავნილია."
 
-#: app/applicationcontroller.cpp:548
+#: app/applicationcontroller.cpp:552
 #, kde-format
 msgid "Import completed."
 msgstr "შემოტანა დასრულდა."
@@ -954,18 +954,18 @@ msgctxt "event venue seat type"
 msgid "Type: <b>%1</b>"
 msgstr "ტიპი: <b>%1</b>"
 
-#: app/favoritelocationmodel.cpp:129 app/favoritelocationmodel.cpp:149
+#: app/favoritelocationmodel.cpp:135 app/favoritelocationmodel.cpp:155
 #: app/SettingsPage.qml:35
 #, kde-format
 msgid "Home"
 msgstr "საწყისი"
 
-#: app/favoritelocationmodel.cpp:152
+#: app/favoritelocationmodel.cpp:158
 #, kde-format
 msgid "Work"
 msgstr "სამუშაო"
 
-#: app/favoritelocationmodel.cpp:155
+#: app/favoritelocationmodel.cpp:161
 #, kde-format
 msgid "Location %1"
 msgstr "მდებარეობა %1"
