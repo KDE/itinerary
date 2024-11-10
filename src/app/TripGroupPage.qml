@@ -634,6 +634,7 @@ Kirigami.ScrollablePage {
                 visible: distanceStats.visible || co2Stats.visible || costStats.visible
             }
             FormCard.FormCard {
+                visible: distanceStats.visible || co2Stats.visible || costStats.visible
                 FormCard.FormTextDelegate {
                     id: distanceStats
                     text: i18n("Distance")
