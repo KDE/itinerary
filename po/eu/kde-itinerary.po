@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-09 00:40+0000\n"
-"PO-Revision-Date: 2024-10-27 06:55+0100\n"
+"PO-Revision-Date: 2024-11-09 11:41+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.08.2\n"
+"X-Generator: Lokalize 24.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -3399,21 +3399,19 @@ msgid "Train"
 msgstr "Trena"
 
 #: app/StopPickerPage.qml:27
-#, fuzzy, kde-format
-#| msgid "Clear history"
+#, kde-format
 msgid "Clear History"
 msgstr "Garbitu historia"
 
 #: app/StopPickerPage.qml:28
-#, fuzzy, kde-format
-#| msgid "Do you really want to delete this certificate?"
+#, kde-format
 msgid "Do you really want to remove all previously searched locations?"
-msgstr "Benetan ezabatu nahi duzu ziurtagiri hori?"
+msgstr "Benetan kendu nahi dituzu aurrez bilatutako kokaleku guztiak?"
 
 #: app/StopPickerPage.qml:32
 #, kde-format
 msgid "Remove"
-msgstr ""
+msgstr "Kendu"
 
 #: app/StopPickerPage.qml:45
 #, kde-format
@@ -4009,7 +4007,7 @@ msgstr "Gehitu"
 #: app/TripGroupPage.qml:656
 #, kde-format
 msgid "Cost"
-msgstr ""
+msgstr "Kostua"
 
 #: app/TripGroupPage.qml:668
 #, kde-format
@@ -4049,7 +4047,7 @@ msgstr "Gehitu hemen:"
 #: app/TripGroupSelectorCard.qml:120
 #, kde-format
 msgid "A trip must be selected."
-msgstr ""
+msgstr "Txango bat hautatu behar da."
 
 #: app/TripGroupsPage.qml:15
 #, kde-format
@@ -4089,7 +4087,7 @@ msgstr "Datorrena"
 #: app/TripGroupsPage.qml:116
 #, kde-format
 msgid "No trips added yet."
-msgstr ""
+msgstr "Oraindik ez da txangorik gehitu."
 
 #: app/TripGroupSplitPage.qml:15
 #, kde-format

@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-09 00:40+0000\n"
-"PO-Revision-Date: 2024-10-30 10:26+0100\n"
+"PO-Revision-Date: 2024-11-04 09:42+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.08.2\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -4014,7 +4014,7 @@ msgstr "Afig"
 #: app/TripGroupPage.qml:656
 #, kde-format
 msgid "Cost"
-msgstr ""
+msgstr "Cost"
 
 #: app/TripGroupPage.qml:668
 #, kde-format
@@ -4094,7 +4094,7 @@ msgstr "Pròxims"
 #: app/TripGroupsPage.qml:116
 #, kde-format
 msgid "No trips added yet."
-msgstr ""
+msgstr "Encara no s'ha afegit cap viatge."
 
 #: app/TripGroupSplitPage.qml:15
 #, kde-format
