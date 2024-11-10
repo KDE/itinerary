@@ -215,6 +215,28 @@ int main(int argc, char **argv)
     aboutData.setShortDescription(i18n("Digital Travel Assistant"));
     aboutData.setCopyrightStatement(i18n("Copyright © The KDE Community"));
     aboutData.setDesktopFileName(QStringLiteral("org.kde.itinerary"));
+
+    aboutData.addComponent(i18nc("@info:credit", "Wikidata"), i18nc("@info:credit", "Provides various metadata like train station names, driving side, and power plug types."), {}, u"https://www.wikidata.org/"_s, KAboutLicense::CC0_V1);
+    aboutData.addComponent(i18nc("@info:credit", "OpenStreetMap"), i18nc("@info:credit", "Provides both indoor and outdoor maps. ©OpenStreetMap contributors"), {}, u"https://www.openstreetmap.org/"_s, KAboutLicense::ODbL_V1);
+    aboutData.addComponent(i18nc("@info:credit", "OpenSSL"), i18nc("@info:credit", "Secure network interaction with TLS. © 1998-2018 The OpenSSL Project"), {}, u"https://www.openssl.org/"_s, KAboutLicense::Apache_V2);
+    aboutData.addComponent(i18nc("@info:credit", "ZXing"), i18nc("@info:credit", "QR-Code scanning. © 2016 ZXing Authors, © 2016 Nu-book Inc."), {}, u"https://github.com/nu-book/zxing-cpp"_s, KAboutLicense::Apache_V2);
+    aboutData.addComponent(i18nc("@info:credit", "Poppler"), i18nc("@info:credit", "PDF parsing"), {}, u"https://poppler.freedesktop.org/"_s, KAboutLicense::GPL_V2);
+
+#ifdef Q_OS_ANDROID
+    aboutData.addComponent(i18nc("@info:credit", "FreeType"), i18nc("@info:credit", "Copyright (C) 2006-2020 by David Turner, Robert Wilhelm, and Werner Lemberg."), {}, u"https://www.freetype.org/"_s, KAboutLicense::FTL);
+    aboutData.addComponent(i18nc("@info:credit", "libintl lite"), i18nc("@info:credit", "Internalisation"), {}, u"https://github.com/j-jorge/libintl-lite"_s, KAboutLicense::BSL_V1);
+#endif
+
+    aboutData.addComponent(i18nc("@info:credit", "libqrencode"), i18nc("@info:credit", "QR-Code Generation. © 2006-2018 Kentaro Fukuchi"), {}, u"https://github.com/fukuchi/libqrencode"_s, KAboutLicense::LGPL_V2_1);
+    aboutData.addComponent(i18nc("@info:credit", "libical"), i18nc("@info:credit", "© The libical developers"), {}, u"https://github.com/libical/libical"_s, KAboutLicense::LGPL_V2_1);
+    aboutData.addComponent(i18nc("@info:credit", "libxml2"), i18nc("@info:credit", "Copyright (C) 1998-2012 Daniel Veillard"), {}, u"https://gitlab.gnome.org/GNOME/libxml2/-/wikis/home"_s, KAboutLicense::MIT);
+
+#if HAVE_MATRIX
+    aboutData.addComponent(i18nc("@info:credit", "libQuotient"), i18nc("@info:credit", "Matrix integration."), {}, u"https://github.com/quotient-im/libquotient"_s, KAboutLicense::LGPL_V2_1);
+    aboutData.addComponent(i18nc("@info:credit", "QtKeychain"), i18nc("@info:credit", "Secure password storage."), {}, u"https://github.com/frankosterfeld/qtkeychain/"_s, KAboutLicense::BSD_3_Clause);
+    aboutData.addComponent(i18nc("@info:credit", "Olm"), i18nc("@info:credit", "Matrix crypto library."), {}, u"https://gitlab.matrix.org/matrix-org/olm"_s, KAboutLicense::Apache_V2);
+#endif
+
     KAboutData::setApplicationData(aboutData);
 
     QCommandLineParser parser;
