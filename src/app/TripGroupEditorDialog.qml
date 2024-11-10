@@ -24,6 +24,7 @@ FormCard.FormCardDialog {
         label: i18nc("@label:textbox", "Trip name:")
         onAccepted: root.accept();
         text: tripGroup?.name ?? ""
+        focus: true
     }
 
     standardButtons: QQC2.Dialog.Cancel | QQC2.Dialog.Save
