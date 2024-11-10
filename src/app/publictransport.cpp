@@ -74,6 +74,9 @@ KPublicTransport::Location PublicTransport::locationFromPlace(const QVariant &pl
     if (JsonLd::isA<EventReservation>(reservation)) {
         loc.setName(reservation.value<EventReservation>().reservationFor().value<Event>().location().value<Place>().name());
     }
+    if (JsonLd::isA<FoodEstablishmentReservation>(reservation)) {
+        loc.setName(reservation.value<FoodEstablishmentReservation>().reservationFor().value<FoodEstablishment>().name());
+    }
     const auto addr = KItinerary::LocationUtil::address(place);
     loc.setStreetAddress(addr.streetAddress());
     loc.setPostalCode(addr.postalCode());
