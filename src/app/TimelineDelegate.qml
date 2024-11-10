@@ -102,6 +102,8 @@ FormCard.FormCard {
         contentItem: RowLayout {
             id: headerLayout
 
+            spacing: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
+
             TransportIcon {
                 id: _headerIcon
                 color: root.headerTextColor

@@ -29,9 +29,8 @@ Item {
     property real trailingProgress
     property alias stopoverPassed: lineSegment.showStop
 
-    x: Kirigami.Units.gridUnit
     implicitHeight: layout.implicitHeight + Kirigami.Units.gridUnit * 2
-    implicitWidth: ListView.view.width - x - Kirigami.Units.largeSpacing
+    implicitWidth: ListView.view.width - ListView.view.leftMargin - ListView.view.rightMargin
 
     GridLayout {
         id: layout

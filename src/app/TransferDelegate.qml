@@ -46,13 +46,14 @@ FormCard.FormCard {
         }
         contentItem: RowLayout {
             id: headerLayout
-            anchors.fill: parent
-            anchors.margins: Kirigami.Units.largeSpacing
+
+            spacing: Kirigami.Units.smallSpacing
 
             Kirigami.Icon {
                 source: KPublicTransport.JourneySectionMode.modeIconName(KPublicTransport.JourneySection.Transfer)
                 Layout.preferredWidth: Kirigami.Units.iconSizes.smallMedium
                 Layout.preferredHeight: Layout.preferredWidth
+                Layout.rightMargin: Kirigami.Units.largeSpacing
                 color: Kirigami.Theme.textColor
                 isMask: true
             }

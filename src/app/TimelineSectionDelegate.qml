@@ -9,7 +9,9 @@ import org.kde.kirigamiaddons.formcard as FormCard
 import QtQuick.Layouts
 import org.kde.itinerary
 
-QQC2.Pane {
+FormCard.FormHeader {
+    id: root
+
     property alias day: _controller.date
     property QtObject controller: TimelineSectionDelegateController {
         id: _controller;
@@ -17,43 +19,20 @@ QQC2.Pane {
     }
 
     width: ListView.view.width
+    title: controller.title
+    topPadding: Kirigami.Units.smallSpacing
 
-    contentItem: RowLayout {
-        Item{ Layout.fillWidth: true }
-        RowLayout{
-            Layout.margins: Kirigami.Units.smallSpacing
-            Layout.maximumWidth: Kirigami.Units.gridUnit * 29
-            Kirigami.Icon {
-                source: "view-calendar-day"
-                color: controller.isHoliday ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
-                isMask: controller.isHoliday
-                implicitHeight: Kirigami.Units.iconSizes.smallMedium
-                implicitWidth: Kirigami.Units.iconSizes.smallMedium
-                Layout.alignment: Qt.AlignTop
-            }
-            ColumnLayout {
-                Layout.fillWidth: true
-                spacing: 0
-                Kirigami.Heading {
-                    id: titleLabel
-                    text: controller.title
-                    type: Kirigami.Heading.Type.Secondary
-                    font.weight: controller.isToday === Kirigami.Heading.Type.Primary ? Font.DemiBold : Font.Normal
-                    Layout.fillWidth: true
-                    level: 4
-                    Accessible.ignored: true
-                }
-                QQC2.Label {
-                    Layout.fillWidth: true
-                    text: controller.subTitle
-                    visible: text
-                    Accessible.ignored: !visible
-                    Layout.bottomMargin: Kirigami.Units.smallSpacing
-                }
-            }
-        }
-        Item{ Layout.fillWidth: true }
+    Accessible.description: controller.subTitle
+
+    trailing: QQC2.Label {
+        topPadding: root.topPadding
+        bottomPadding: root.bottomPadding
+        leftPadding: root.leftPadding
+        rightPadding: root.rightPadding
+
+        text: controller.subTitle
+        color: Kirigami.Theme.disabledTextColor
+
+        Accessible.ignored: true
     }
-
-    Accessible.name: titleLabel.text
 }

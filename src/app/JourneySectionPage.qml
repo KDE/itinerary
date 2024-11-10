@@ -194,9 +194,13 @@ Kirigami.Page {
                     id: scrollview
                     anchors.fill: parent
 
+                    QQC2.ScrollBar.horizontal.policy: QQC2.ScrollBar.AlwaysOff
+
                     ListView {
                         clip: true
                         model: sectionModel
+                        leftMargin: Kirigami.Units.largeSpacing
+                        rightMargin: Kirigami.Units.largeSpacing
                         header: JourneySectionStopDelegate {
                             x: 0
                             stop: journeySection.departure
@@ -227,7 +231,9 @@ Kirigami.Page {
                             }
                         }
                         footer: ColumnLayout {
-                            width: ListView.view.width
+                            width: ListView.view.width - ListView.view.leftMargin - ListView.view.rightMargin
+                            spacing: Kirigami.Units.smallSpacing
+
                             JourneySectionStopDelegate {
                                 Layout.fillWidth: true
                                 stop: journeySection.arrival
