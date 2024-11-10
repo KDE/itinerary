@@ -62,150 +62,6 @@ Kirigami.ScrollablePage {
         return listView.model.data(idx, TimelineModel.StartDateTimeRole);
     }
 
-    function addTrainTrip() {
-        const HOUR = 60 * 60 * 1000;
-        let roundInterval = HOUR;
-        let dt = new Date();
-
-        if (!root.isEmptyTripGroup) {
-            // find date/time at the current screen center
-            const idx = currentIndex();
-
-            if (listView.model.data(idx, TimelineModel.IsTimeboxedRole) && !listView.model.data(idx, TimelineModel.IsCanceledRole)) {
-                dt = listView.model.data(idx, TimelineModel.EndDateTimeRole);
-                roundInterval = 5 * 60 * 1000;
-            } else {
-                dt = listView.model.data(idx, TimelineModel.StartDateTimeRole);
-            }
-        }
-
-        // clamp to future times and round to the next plausible hour
-        const now = new Date();
-        if (!dt || dt.getTime() < now.getTime()) {
-            dt = now;
-        }
-        if (dt.getTime() % HOUR == 0 && dt.getHours() == 0) {
-            dt.setTime(dt.getTime() + HOUR * 8);
-        } else {
-            dt.setTime(dt.getTime() + roundInterval - (dt.getTime() % roundInterval));
-        }
-
-        // determine where we are at that time
-        const place = TripGroupModel.locationAtTime(dt);
-        var country = Settings.homeCountryIsoCode;
-        var departureLocation;
-        if (place) {
-            country = place.address.addressCountry;
-            departureLocation = PublicTransport.locationFromPlace(place, undefined);
-            departureLocation.name = place.name;
-        }
-
-        pageStack.clear()
-        pageStack.push(Qt.resolvedUrl("JourneyRequestPage.qml"), {
-            publicTransportManager: LiveDataManager.publicTransportManager,
-            initialCountry: country,
-            initialDateTime: dt,
-            departureStop: departureLocation
-        });
-    }
-
-    property list<Kirigami.Action> addActions: [
-        Kirigami.Action {
-            text: i18n("Add train trip…")
-            icon.name: "list-add-symbolic"
-            onTriggered: {
-                addTrainTrip()
-            }
-        },
-        Kirigami.Action {
-            text: i18n("Add flight…")
-            icon.name: KPublicTransport.LineMode.iconName(KPublicTransport.Line.Air)
-            onTriggered: {
-                const dt = root.isEmptyTripGroup ? new Date() : dateTimeAtIndex(currentIndex());
-                let res =  Factory.makeFlightReservation();
-                let trip = res.reservationFor;
-                trip.departureTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), dt.getHours() == 0 ? 8 : dt.getHours() + 1, 0);
-                res.reservationFor = trip;
-                applicationWindow().pageStack.push(flightEditorPage, {reservation: res});
-            }
-        },
-        Kirigami.Action {
-            text: i18n("Add ferry trip…")
-            icon.name: KPublicTransport.LineMode.iconName(KPublicTransport.Line.Ferry)
-            onTriggered: {
-                const dt = root.isEmptyTripGroup ? new Date() : dateTimeAtIndex(currentIndex());
-                let res =  Factory.makeBoatReservation();
-                let trip = res.reservationFor;
-                trip.departureTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), dt.getHours() == 0 ? 8 : dt.getHours() + 1, 0);
-                res.reservationFor = trip;
-                applicationWindow().pageStack.push(boatEditorPage, {reservation: res});
-            }
-        },
-        Kirigami.Action {
-            text: i18n("Add accommodation…")
-            icon.name: "go-home-symbolic"
-            onTriggered: {
-                const dt = root.isEmptyTripGroup ? new Date() : dateTimeAtIndex(currentIndex());
-                let res =  Factory.makeLodgingReservation();
-                res.checkinTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), 15, 0);
-                res.checkoutTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate() + 1, 11, 0);
-                applicationWindow().pageStack.push(hotelEditorPage, {reservation: res});
-            }
-        },
-        Kirigami.Action {
-            text: i18n("Add event…")
-            icon.name: "meeting-attending"
-            onTriggered: {
-                const dt = root.isEmptyTripGroup ? new Date() : dateTimeAtIndex(currentIndex());
-                let res = Factory.makeEventReservation();
-                let ev = res.reservationFor;
-                ev.startDate = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), dt.getHours() == 0 ? 8 : dt.getHours() + 1, 0);
-                res.reservationFor = ev;
-                applicationWindow().pageStack.push(eventEditorPage, {reservation: res});
-            }
-        },
-        Kirigami.Action {
-            text: i18n("Add restaurant…")
-            icon.name: KPublicTransport.FeatureType.typeIconName(KPublicTransport.Feature.Restaurant)
-            onTriggered: {
-                const dt = root.isEmptyTripGroup ? new Date() : dateTimeAtIndex(currentIndex());
-                let res =  Factory.makeFoodEstablishmentReservation();
-                res.startTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), 20, 0);
-                res.endTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), 22, 0);
-                applicationWindow().pageStack.push(restaurantEditorPage, {reservation: res});
-            }
-        }
-    ]
-
-    SheetDrawer {
-        id: addMenu
-        headerItem: Kirigami.Heading {
-            leftPadding: Kirigami.Units.smallSpacing
-            text: i18nc("@title:group", "Add to Trip")
-        }
-        contentItem: QQC2.Control{
-            rightPadding: 0
-            leftPadding: 0
-            topPadding: Kirigami.Units.smallSpacing * 0.5
-            bottomPadding: Kirigami.Units.smallSpacing * 0.5
-            contentItem: ColumnLayout {
-                Repeater {
-                    model: root.addActions
-                    delegate: QQC2.ItemDelegate {
-                        required property Kirigami.Action modelData
-                        Layout.fillWidth: true
-                        text: modelData.text
-                        icon.name: modelData.icon.name
-                        onClicked: {
-                            addMenu.close()
-                            modelData.triggered()
-                        }
-                    }
-                }
-            }
-        }
-    }
-
     TripGroupEditorDialog {
         id: tripGroupEditor
         onAccepted: {
@@ -480,30 +336,15 @@ Kirigami.ScrollablePage {
                 }
             }
 
-            FormCard.FormHeader {
-                title: i18n("Import")
-                visible: root.isEmptyTripGroup
-            }
             FormCard.FormCard {
-                visible: root.isEmptyTripGroup
-                Repeater {
-                    model: importActions
-                    FormCard.FormButtonDelegate {
-                        action: modelData
-                    }
-                }
-            }
+                Layout.topMargin: Kirigami.Units.gridUnit
 
-            FormCard.FormHeader {
-                title: i18n("Add")
                 visible: root.isEmptyTripGroup
-            }
-            FormCard.FormCard {
-                visible: root.isEmptyTripGroup
-                Repeater {
-                    model: root.addActions
-                    FormCard.FormButtonDelegate {
-                        action: modelData
+
+                FormCard.AbstractFormDelegate {
+                    background: null
+                    contentItem: Kirigami.PlaceholderMessage {
+                        text: i18nc("@info", "Empty Trip")
                     }
                 }
             }
@@ -633,6 +474,7 @@ Kirigami.ScrollablePage {
                 visible: distanceStats.visible || co2Stats.visible || costStats.visible
             }
             FormCard.FormCard {
+                visible: distanceStats.visible || co2Stats.visible || costStats.visible
                 FormCard.FormTextDelegate {
                     id: distanceStats
                     text: i18n("Distance")
@@ -664,6 +506,9 @@ Kirigami.ScrollablePage {
             }
 
             FormCard.FormCard {
+                FormCard.FormButtonDelegate {
+                    action: addTripAction
+                }
                 FormCard.FormButtonDelegate {
                     text: i18n("Rename…")
                     icon.name: "edit-rename"
@@ -732,11 +577,30 @@ Kirigami.ScrollablePage {
         }
 
         trailingAction: Kirigami.Action{
-            text: i18nc("@action:button", "Add trip")
+            id: addTripAction
+            text: i18nc("@action:button", "Add to Trip")
             icon.name: "list-add-symbolic"
-            onTriggered: addMenu.open()
+            onTriggered: {
+                const component = Qt.createComponent("org.kde.itinerary", "TripGroupImportPage");
+                root.Window.window.pageStack.push(component, {
+                    listView: listView,
+                    isEmptyTripGroup: root.isEmptyTripGroup,
+                });
+            }
             tooltip: text
         }
+    }
+
+    Components.FloatingButton {
+        parent: root.overlay
+        visible: root.isEmptyTripGroup
+        anchors {
+            right: parent.right
+            rightMargin: Kirigami.Settings.isMobile ? Kirigami.Units.largeSpacing : Kirigami.Units.largeSpacing + (root.contentItem.QQC2.ScrollBar && root.contentItem.QQC2.ScrollBar.vertical ? root.contentItem.QQC2.ScrollBar.vertical.width : 0)
+            bottom: parent.bottom
+            bottomMargin: Kirigami.Units.largeSpacing
+        }
+        action: addTripAction
     }
 
     onTripGroupIdChanged: {
