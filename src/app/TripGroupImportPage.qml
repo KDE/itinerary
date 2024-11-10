@@ -1,12 +1,15 @@
 // SPDX-FileCopyrightText: 2024 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
+import QtCore as QtCore
 import QtQuick
 import QtQuick.Controls as T
 import QtQuick.Window
+import QtQuick.Dialogs
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kpublictransport as KPublicTransport
+import org.kde.calendarcore as KCalendarCore
 import org.kde.itinerary
 
 FormCard.FormCardPage {
@@ -62,6 +65,92 @@ FormCard.FormCardPage {
             departureStop: departureLocation
         });
     }
+
+    FileDialog {
+        id: importFileDialog
+        fileMode: FileDialog.OpenFile
+        title: i18n("Import Reservation")
+        currentFolder: QtCore.StandardPaths.writableLocation(QtCore.StandardPaths.DocumentsLocation)
+        // Android has no file type selector, we get the superset of all filters there since Qt6 (apart from "all"),
+        // so don't set any filters on Android in order to be able to open everything we can read
+        nameFilters:  Qt.platform.os === "android" ?
+            [i18n("All Files (*.*)")] :
+            [i18n("All Files (*.*)"), i18n("PkPass files (*.pkpass)"), i18n("PDF files (*.pdf)"), i18n("iCal events (*.ics)"), i18n("KDE Itinerary files (*.itinerary)")]
+        onAccepted: ImportController.importFromUrl(selectedFile)
+    }
+
+    CalendarSelectionSheet {
+        id: calendarSelector
+        // parent: root.Overlay.overlay
+        onCalendarSelected: (calendar) => {
+            ImportController.enableAutoCommit = false;
+            ImportController.importFromCalendar(calendar);
+        }
+    }
+
+    Component {
+        id: calendarModel
+        // needs to be created on demand, after we have calendar access permissions
+        KCalendarCore.CalendarListModel {}
+    }
+
+    readonly property list<Kirigami.Action> importActions: [
+        Kirigami.Action {
+            text: i18n("File")
+            icon.name: "document-open"
+            shortcut: StandardKey.Open
+            onTriggered: {
+                importFileDialog.open();
+            }
+        },
+        Kirigami.Action {
+            text: i18n("Clipboard")
+            icon.name: "edit-paste"
+            enabled: Clipboard.hasText || Clipboard.hasUrls || Clipboard.hasBinaryData
+            shortcut: StandardKey.Paste
+            onTriggered: ImportController.importFromClipboard()
+        },
+        Kirigami.Action {
+            text: i18n("Barcode")
+            icon.name: "view-barcode-qr"
+            onTriggered: {
+                root.Window.window.pageStack.layers.push(scanBarcodeComponent);
+            }
+        },
+        Kirigami.Action {
+            icon.name: "view-calendar-day"
+            text: i18n("Calendar")
+            onTriggered: {
+                PermissionManager.requestPermission(Permission.ReadCalendar, function() {
+                    if (!calendarSelector.model) {
+                        calendarSelector.model = calendarModel.createObject(root);
+                    }
+                    calendarSelector.open();
+                })
+            }
+            visible: KCalendarCore.CalendarPluginLoader.hasPlugin
+        },
+        // TODO this should not be hardcoded here, but dynamically filled based on what online ticket
+        // sources we support
+        Kirigami.Action {
+            text: i18n("Deutsche Bahn Online Ticket")
+            icon.name: "download"
+            onTriggered: {
+                root.Window.window.pageStack.push(Qt.createComponent("org.kde.itinerary", "OnlineImportPage"), {
+                    source: "db",
+                });
+            }
+        },
+        Kirigami.Action {
+            text: i18n("SNCF Online Ticket")
+            icon.name: "download"
+            onTriggered: {
+                root.Window.window.pageStack.layers.push(Qt.createComponent("org.kde.itinerary", "OnlineImportPage"), {
+                    source: "sncf"
+                });
+            }
+        }
+    ]
 
     readonly property list<Kirigami.Action> addActions: [
         Kirigami.Action {
@@ -132,7 +221,7 @@ FormCard.FormCardPage {
     ]
 
     FormCard.FormHeader {
-        title: i18n("Import")
+        title: i18nc("@title:group", "Import From")
     }
 
     FormCard.FormCard {
