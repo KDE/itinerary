@@ -63,7 +63,7 @@ find_package(Qt6Keychain CONFIG REQUIRED)
 find_package(LibIcal 3.0)
 find_package(ZLIB REQUIRED)
 set(QUOTIENT_FORCE_NAMESPACED_INCLUDES ON)
-find_package(QuotientQt6 0.7.2 CONFIG)
+find_package(QuotientQt6 0.8.2 CONFIG)
 find_package(SeleniumWebDriverATSPI)
 
 set_package_properties("ZLIB" PROPERTIES PURPOSE "Needed for retrieving weather forecast data.")

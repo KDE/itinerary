@@ -22,6 +22,11 @@ MatrixController::MatrixController(QObject *parent)
     : QObject(parent)
 {
 #if HAVE_MATRIX
+#ifdef Quotient_E2EE_ENABLED
+    Quotient::Connection::setEncryptionDefault(true);
+    Quotient::Connection::setDirectChatEncryptionDefault(true);
+#endif
+
     qRegisterMetaType<MatrixManager *>();
     m_mgr = new MatrixManager(this);
     if (const auto hostName = QSysInfo::machineHostName(); !hostName.isEmpty()) {
