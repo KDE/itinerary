@@ -326,8 +326,8 @@ int main(int argc, char **argv)
     aboutData.setCopyrightStatement(i18n("Copyright © The KDE Community"));
     aboutData.setDesktopFileName(QStringLiteral("org.kde.itinerary"));
 
-    aboutData.addComponent(i18nc("@info:credit", "Wikidata"), i18nc("@info:credit", "Provides various metadata like train station names, driving side and power plug types."), {}, u"https://www.wikidata.org/"_s, KAboutLicense::CC0_V1);
-    aboutData.addComponent(i18nc("@info:credit", "OpenStreetMap"), i18nc("@info:credit", "Provides both in-door and out-door maps. ©OpenStreetMap contributors"), {}, u"https://www.openstreetmap.org/"_s, KAboutLicense::ODbL_V1);
+    aboutData.addComponent(i18nc("@info:credit", "Wikidata"), i18nc("@info:credit", "Provides various metadata like train station names, driving side, and power plug types."), {}, u"https://www.wikidata.org/"_s, KAboutLicense::CC0_V1);
+    aboutData.addComponent(i18nc("@info:credit", "OpenStreetMap"), i18nc("@info:credit", "Provides both indoor and outdoor maps. ©OpenStreetMap contributors"), {}, u"https://www.openstreetmap.org/"_s, KAboutLicense::ODbL_V1);
     aboutData.addComponent(i18nc("@info:credit", "OpenSSL"), i18nc("@info:credit", "Secure network interaction with TLS. © 1998-2018 The OpenSSL Project"), {}, u"https://www.openssl.org/"_s, KAboutLicense::Apache_V2);
     aboutData.addComponent(i18nc("@info:credit", "ZXing"), i18nc("@info:credit", "QR-Code scanning. © 2016 ZXing Authors, © 2016 Nu-book Inc."), {}, u"https://github.com/nu-book/zxing-cpp"_s, KAboutLicense::Apache_V2);
     aboutData.addComponent(i18nc("@info:credit", "Poppler"), i18nc("@info:credit", "PDF parsing"), {}, u"https://poppler.freedesktop.org/"_s, KAboutLicense::GPL_V2);
