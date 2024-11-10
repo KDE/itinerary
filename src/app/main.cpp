@@ -62,6 +62,8 @@
 #if HAVE_MATRIX
 #include "matrix/matrixbeacon.h"
 #include "matrix/matrixroomsmodel.h"
+
+#include <Quotient/keyverificationsession.h>
 #endif
 
 #include "weatherforecastmanager.h"
@@ -138,6 +140,13 @@ void registerKItineraryTypes()
     qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "PriceUtil", [](QQmlEngine *, QJSEngine *engine) -> QJSValue {
         return engine->toScriptValue(KItinerary::PriceUtil());
     });
+}
+
+void registerQuotientTypes()
+{
+#if HAVE_MATRIX
+    qmlRegisterUncreatableType<Quotient::KeyVerificationSession>("org.kde.quotient", 1, 0, "KeyVerificationSession", {});
+#endif
 }
 
 void registerApplicationTypes()
@@ -453,6 +462,7 @@ int main(int argc, char **argv)
 
     registerKPkPassTypes();
     registerKItineraryTypes();
+    registerQuotientTypes();
     registerApplicationTypes();
     registerApplicationSingletons();
 

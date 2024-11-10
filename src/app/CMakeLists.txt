@@ -198,6 +198,7 @@ ecm_add_qml_module(itinerary-app URI org.kde.itinerary NO_PLUGIN QML_FILES
     MapStopoverInfoSheetDrawer.qml
     MapView.qml
     MatrixRoomSelectionSheet.qml
+    MatrixKeyVerificationPage.qml
     NavigationBar.qml
     OnlineImportPage.qml
     PassPage.qml
@@ -337,6 +338,9 @@ if (ANDROID)
         raindrop
         reverse
         search
+        security-high
+        security-medium-symbolic
+        security-low
         settings-configure
         split
         temperature-cold

@@ -421,4 +421,14 @@ Kirigami.ApplicationWindow {
             pageStack.layers.currentItem.forceActiveFocus();
         }
     }
+
+    Connections {
+        target: MatrixController.manager.connection
+        function onNewKeyVerificationSession(session) {
+            root.pageStack.pushDialogLayer(Qt.createComponent("org.kde.itinerary", "MatrixKeyVerificationPage"),
+                { session: session },
+                { title: i18nc("@title:window", "Matrix Session Verification") }
+            );
+        }
+    }
 }
