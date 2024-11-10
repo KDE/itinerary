@@ -342,7 +342,7 @@ int main(int argc, char **argv)
     aboutData.addComponent(i18nc("@info:credit", "libxml2"), i18nc("@info:credit", "Copyright (C) 1998-2012 Daniel Veillard"), {}, u"https://gitlab.gnome.org/GNOME/libxml2/-/wikis/home"_s, KAboutLicense::MIT);
 
 #if HAVE_MATRIX
-    aboutData.addComponent(i18nc("@info:credit", "libQuotient"), i18nc("@info:credit", "Matrix integration."), {}, u"https://github.com/frankosterfeld/qtkeychain/"_s, KAboutLicense::LGPL_V2_1);
+    aboutData.addComponent(i18nc("@info:credit", "libQuotient"), i18nc("@info:credit", "Matrix integration."), {}, u"https://github.com/quotient-im/libquotient"_s, KAboutLicense::LGPL_V2_1);
     aboutData.addComponent(i18nc("@info:credit", "QtKeychain"), i18nc("@info:credit", "Secure password storage."), {}, u"https://github.com/frankosterfeld/qtkeychain/"_s, KAboutLicense::BSD_3_Clause);
     aboutData.addComponent(i18nc("@info:credit", "Olm"), i18nc("@info:credit", "Matrix crypto library."), {}, u"https://gitlab.matrix.org/matrix-org/olm"_s, KAboutLicense::Apache_V2);
 #endif
