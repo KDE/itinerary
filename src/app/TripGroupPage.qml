@@ -100,7 +100,6 @@ Kirigami.ScrollablePage {
             departureLocation.name = place.name;
         }
 
-        pageStack.clear()
         pageStack.push(Qt.resolvedUrl("JourneyRequestPage.qml"), {
             publicTransportManager: LiveDataManager.publicTransportManager,
             initialCountry: country,
