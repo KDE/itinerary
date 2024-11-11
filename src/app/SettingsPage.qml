@@ -308,6 +308,16 @@ FormCard.FormCardPage {
                 MatrixController.manager.login(matrixId.text, matrixPassword.text);
             }
         }
+        FormCard.FormDelegateSeparator {
+            visible: matrixSessionVerified.visible
+        }
+        FormCard.FormTextDelegate {
+            id: matrixSessionVerified
+            text: MatrixController.manager.isVerifiedSession ? i18nc("Matrix session verification", "Session verified") : i18nc("Matrix session verification", "Session not verified.")
+            description: MatrixController.manager.isVerifiedSession ? i18n("No further action required.") : i18nc("Matrix session verification", "Initiate session verification in your Matrix chat client.")
+            icon.name: MatrixController.manager.isVerifiedSession ? "security-high" : "security-low"
+            visible: MatrixController.manager.connected
+        }
         FormCard.FormDelegateSeparator { above: loginButton }
         FormCard.FormButtonDelegate {
             id: loginButton

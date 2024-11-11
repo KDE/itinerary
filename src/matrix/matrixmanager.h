@@ -15,6 +15,7 @@ class MatrixManager : public QObject
     Q_PROPERTY(bool connected READ connected NOTIFY connectedChanged)
     Q_PROPERTY(QString infoString READ infoString NOTIFY infoStringChanged)
     Q_PROPERTY(QString userId READ userId NOTIFY userIdChanged)
+    Q_PROPERTY(bool isVerifiedSession READ isVerifiedSession NOTIFY sessionVerifiedChanged)
     Q_PROPERTY(Quotient::Connection *connection READ connection NOTIFY connectionChanged)
 
 public:
@@ -40,10 +41,11 @@ public:
      */
     Q_INVOKABLE void sync();
 
-    QString infoString() const;
-    bool connected() const;
-    QString userId() const;
-    Quotient::Connection *connection() const;
+    [[nodiscard]] QString infoString() const;
+    [[nodiscard]] bool connected() const;
+    [[nodiscard]] QString userId() const;
+    [[nodiscard]] bool isVerifiedSession() const;
+    [[nodiscard]] Quotient::Connection *connection() const;
 
     Q_INVOKABLE void postLocation(const QString &roomId, float latitude, float longitude, const QString &description);
     void postEvent(const QString &roomId, const QString &type, const QJsonObject &content);
@@ -52,6 +54,7 @@ Q_SIGNALS:
     void connectedChanged();
     void infoStringChanged();
     void userIdChanged();
+    void sessionVerifiedChanged();
     void connectionChanged();
 
 private:

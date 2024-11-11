@@ -20,9 +20,12 @@ MatrixManager::MatrixManager(QObject *parent)
         Q_EMIT userIdChanged();
         Q_EMIT connectionChanged();
         setInfoString(i18n("Syncing…"));
-        connect(m_accountRegistry.accounts()[0], &Connection::syncDone, this, [this](){
+        auto connection = m_accountRegistry.accounts()[0];
+        connect(connection, &Connection::syncDone, this, [this](){
             setInfoString({});
         }, Qt::SingleShotConnection);
+
+        connect(connection, &Connection::sessionVerified, this, &MatrixManager::sessionVerifiedChanged, Qt::QueuedConnection);
     });
     connect(&m_accountRegistry, &AccountRegistry::rowsRemoved, this, [this]() {
         Q_EMIT connectedChanged();
@@ -88,6 +91,15 @@ QString MatrixManager::infoString() const
 bool MatrixManager::connected() const
 {
     return m_accountRegistry.count() > 0;
+}
+
+bool MatrixManager::isVerifiedSession() const
+{
+    if (!connected()) {
+        return false;
+    }
+    const auto c = connection();
+    return c->isVerifiedDevice(c->userId(), c->deviceId());
 }
 
 void MatrixManager::setInfoString(const QString &infoString)
