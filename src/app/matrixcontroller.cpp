@@ -13,12 +13,22 @@
 #include "matrix/matrixroomssortproxymodel.h"
 #endif
 
+#include <QGuiApplication>
+#include <QSysInfo>
+
+using namespace Qt::Literals;
+
 MatrixController::MatrixController(QObject *parent)
     : QObject(parent)
 {
 #if HAVE_MATRIX
     qRegisterMetaType<MatrixManager *>();
     m_mgr = new MatrixManager(this);
+    if (const auto hostName = QSysInfo::machineHostName(); !hostName.isEmpty()) {
+        m_mgr->setDeviceName(QGuiApplication::applicationDisplayName() + " ("_L1 + hostName + ')'_L1);
+    } else {
+        m_mgr->setDeviceName(QGuiApplication::applicationDisplayName());
+    }
 #endif
 }
 
