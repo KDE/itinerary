@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-09 00:40+0000\n"
+"POT-Creation-Date: 2024-11-11 00:40+0000\n"
 "PO-Revision-Date: 2024-11-04 16:59+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -120,7 +120,7 @@ msgid "Add to calendar…"
 msgstr "Takvime Ekle…"
 
 #: app/ActionsCard.qml:74 app/Main.qml:221 app/TripGroupDelegate.qml:182
-#: app/TripGroupPage.qml:695
+#: app/TripGroupPage.qml:697
 #, kde-format
 msgid "Export…"
 msgstr "Dışa Aktar…"
@@ -171,7 +171,7 @@ msgid "Itinerary file (*.itinerary)"
 msgstr "Yol Kılavuzu dosyası (*.itinerary)"
 
 #: app/ActionsCard.qml:173 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:663
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:665
 #, kde-format
 msgid "Actions"
 msgstr "Eylemler"
@@ -359,8 +359,8 @@ msgstr "Kullanılabilir kamera yok."
 msgid "Light"
 msgstr "Açık"
 
-#: app/BoatDelegate.qml:18 app/BusDelegate.qml:33 app/TrainDelegate.qml:34
-#: app/TrainPage.qml:84 app/TransferDelegate.qml:61
+#: app/BoatDelegate.qml:18 app/BusDelegate.qml:35 app/TrainDelegate.qml:36
+#: app/TrainPage.qml:84 app/TransferDelegate.qml:62
 #, kde-format
 msgid "%1 to %2"
 msgstr "%1 → %2"
@@ -516,13 +516,15 @@ msgctxt "@title:group"
 msgid "Booking"
 msgstr "Rezervasyon"
 
-#: app/BusDelegate.qml:127 app/TrainDelegate.qml:159 app/TrainPage.qml:319
-#, kde-format
-msgctxt "train seat"
+#: app/BusDelegate.qml:149
+#, fuzzy, kde-format
+#| msgctxt "train seat"
+#| msgid "Seat: <b>%1</b>"
+msgctxt "bus seat"
 msgid "Seat: <b>%1</b>"
 msgstr "Koltuk: <b>%1</b>"
 
-#: app/BusDelegate.qml:152 app/TrainDelegate.qml:194
+#: app/BusDelegate.qml:176 app/TrainDelegate.qml:220
 #, kde-format
 msgid "1 intermediate stop"
 msgid_plural "%1 intermediate stops"
@@ -1967,7 +1969,7 @@ msgctxt "time in hours"
 msgid "%1 h"
 msgstr "%1 sa"
 
-#: app/JourneyPathPage.qml:175 app/JourneySectionPage.qml:334
+#: app/JourneyPathPage.qml:175 app/JourneySectionPage.qml:340
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2154,25 +2156,25 @@ msgstr "Ortalama hız: %1"
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionStopDelegate.qml:144
+#: app/JourneySectionStopDelegate.qml:143
 #, kde-format
 msgctxt "Abreviation of train platform"
 msgid "Pl. %1"
 msgstr "Pl. %1"
 
-#: app/JourneySectionStopDelegate.qml:146
+#: app/JourneySectionStopDelegate.qml:145
 #, kde-format
 msgctxt "Ferry dock, if possible use an abreviation"
 msgid "Dock %1"
 msgstr "Rıht. %1"
 
-#: app/JourneySectionStopDelegate.qml:148
+#: app/JourneySectionStopDelegate.qml:147
 #, kde-format
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
 msgstr "Pl. %1"
 
-#: app/JourneySectionStopDelegate.qml:162
+#: app/JourneySectionStopDelegate.qml:161
 #, kde-format
 msgid "Show location"
 msgstr "Konumu göster"
@@ -2499,7 +2501,7 @@ msgstr "Güncellemeleri Denetle"
 msgid "Download Maps"
 msgstr "Haritalar İndir"
 
-#: app/Main.qml:188 app/StatisticsPage.qml:15 app/TripGroupPage.qml:632
+#: app/Main.qml:188 app/StatisticsPage.qml:15 app/TripGroupPage.qml:633
 #, kde-format
 msgid "Statistics"
 msgstr "İstatistikler"
@@ -2729,7 +2731,7 @@ msgctxt "not yet expired tickets"
 msgid "Valid"
 msgstr "Geçerli"
 
-#: app/passmanager.cpp:275 app/TripGroupPage.qml:438
+#: app/passmanager.cpp:275 app/TripGroupPage.qml:439
 #, kde-format
 msgid "%1 - %2"
 msgstr "%1 — %2"
@@ -2869,42 +2871,42 @@ msgstr "Program Üyeliği"
 msgid "Show Pass"
 msgstr "Geçişi Göster"
 
-#: app/publictransport.cpp:119 app/publictransport.cpp:146
+#: app/publictransport.cpp:122 app/publictransport.cpp:149
 #, kde-format
 msgid "Walk"
 msgstr "Yürü"
 
-#: app/publictransport.cpp:121
+#: app/publictransport.cpp:124
 #, kde-format
 msgid "Wait"
 msgstr "Bekle"
 
-#: app/publictransport.cpp:130
+#: app/publictransport.cpp:133
 #, kde-format
 msgid "Rented bicycle"
 msgstr "Kiralanmış bisiklet"
 
-#: app/publictransport.cpp:132
+#: app/publictransport.cpp:135
 #, kde-format
 msgid "Rented moped"
 msgstr "Kiralanmış moped"
 
-#: app/publictransport.cpp:134
+#: app/publictransport.cpp:137
 #, kde-format
 msgid "Rented kick scooter"
 msgstr "Kiralanmış mobilet"
 
-#: app/publictransport.cpp:136
+#: app/publictransport.cpp:139
 #, kde-format
 msgid "Rented car"
 msgstr "Kiralanmış araç"
 
-#: app/publictransport.cpp:142
+#: app/publictransport.cpp:145
 #, kde-format
 msgid "Bicycle"
 msgstr "Bisiklet"
 
-#: app/publictransport.cpp:144 app/StatisticsPage.qml:149
+#: app/publictransport.cpp:147 app/StatisticsPage.qml:149
 #, kde-format
 msgid "Car"
 msgstr "Araba"
@@ -3330,7 +3332,7 @@ msgstr "Geziler"
 #: app/statisticsmodel.cpp:112 app/statisticsmodel.cpp:145
 #: app/statisticsmodel.cpp:160 app/statisticsmodel.cpp:175
 #: app/statisticsmodel.cpp:190 app/statisticsmodel.cpp:205
-#: app/TripGroupPage.qml:638
+#: app/TripGroupPage.qml:640
 #, kde-format
 msgid "Distance"
 msgstr "Uzaklık"
@@ -3343,7 +3345,7 @@ msgstr "Otel gecelemeleri"
 #: app/statisticsmodel.cpp:122 app/statisticsmodel.cpp:150
 #: app/statisticsmodel.cpp:165 app/statisticsmodel.cpp:180
 #: app/statisticsmodel.cpp:195 app/statisticsmodel.cpp:210
-#: app/TripGroupPage.qml:647
+#: app/TripGroupPage.qml:649
 #, kde-format
 msgid "CO₂"
 msgstr "CO₂"
@@ -3571,13 +3573,13 @@ msgstr "Etkinlik Ekle…"
 msgid "Add restaurant…"
 msgstr "Restoran Ekle…"
 
-#: app/TimelinePage.qml:166 app/TripGroupPage.qml:727
+#: app/TimelinePage.qml:166 app/TripGroupPage.qml:729
 #, kde-format
 msgctxt "@action:button"
 msgid "Go To Now"
 msgstr "Şimdiye Git"
 
-#: app/TimelinePage.qml:173 app/TripGroupPage.qml:735
+#: app/TimelinePage.qml:173 app/TripGroupPage.qml:737
 #: app/TripGroupsPage.qml:118 app/TripGroupsPage.qml:137
 #, kde-format
 msgctxt "@action:button"
@@ -3652,18 +3654,24 @@ msgstr "Varış"
 msgid "Arrival Time"
 msgstr "Varış Zamanı"
 
-#: app/TrainDelegate.qml:117 app/TrainDelegate.qml:333
+#: app/TrainDelegate.qml:132 app/TrainDelegate.qml:369
 #, kde-format
 msgid "Pl. %1"
 msgstr "Pl. %1"
 
-#: app/TrainDelegate.qml:153 app/TrainPage.qml:312
+#: app/TrainDelegate.qml:177 app/TrainPage.qml:312
 #, kde-format
 msgctxt "train coach"
 msgid "Coach: <b>%1</b>"
 msgstr "Otobüs: <b>%1</b>"
 
-#: app/TrainDelegate.qml:167 app/TrainPage.qml:327
+#: app/TrainDelegate.qml:183 app/TrainPage.qml:319
+#, kde-format
+msgctxt "train seat"
+msgid "Seat: <b>%1</b>"
+msgstr "Koltuk: <b>%1</b>"
+
+#: app/TrainDelegate.qml:191 app/TrainPage.qml:327
 #, kde-format
 msgctxt "train class"
 msgid "Class: <b>%1</b>"
@@ -3775,12 +3783,12 @@ msgstr "Traewelling’e eklendi"
 msgid "Failed to add to Traewelling"
 msgstr "Traewelling’e eklenemedi"
 
-#: app/TransferDelegate.qml:109
+#: app/TransferDelegate.qml:110
 #, kde-format
 msgid "Select transfer"
 msgstr "Aktarma seç"
 
-#: app/TransferDelegate.qml:119
+#: app/TransferDelegate.qml:120
 #, kde-format
 msgid "Delete transfer"
 msgstr "Aktarmayı sil"
@@ -3852,7 +3860,7 @@ msgid_plural "Date: %2 (%1 days)"
 msgstr[0] "Tarih: %2 (bir gün)"
 msgstr[1] "Tarih: %2 (%1 gün)"
 
-#: app/TripGroupDelegate.qml:116 app/TripGroupPage.qml:445
+#: app/TripGroupDelegate.qml:116 app/TripGroupPage.qml:446
 #: app/WeatherForecastDelegate.qml:48 app/WeatherForecastPage.qml:93
 #, kde-format
 msgctxt "temperature range"
@@ -3874,7 +3882,7 @@ msgstr "%1: Bazı fişler uyumsuz (%2)"
 msgid "%1: no compatible power plugs (%2)"
 msgstr "%1: Uyumlu fiş yok (%2)"
 
-#: app/TripGroupDelegate.qml:145 app/TripGroupPage.qml:471
+#: app/TripGroupDelegate.qml:145 app/TripGroupPage.qml:472
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
@@ -3886,7 +3894,7 @@ msgstr[1] "Para birimleri: %2"
 msgid "Edit…"
 msgstr "Düzenle…"
 
-#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:702
+#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:704
 #, kde-format
 msgid "Delete trip"
 msgstr "Geziyi sil"
@@ -3963,59 +3971,59 @@ msgstr "Geziye Ekle"
 msgid "Do you really want to delete the trip '%1'?"
 msgstr "“%1” gezisini silmeyi gerçekten istiyor musunuz?"
 
-#: app/TripGroupPage.qml:439
+#: app/TripGroupPage.qml:440
 #, kde-format
 msgid "One day"
 msgid_plural "%1 days"
 msgstr[0] "1 gün"
 msgstr[1] "%1 gün"
 
-#: app/TripGroupPage.qml:459
+#: app/TripGroupPage.qml:460
 #, kde-format
 msgid "Some incompatible power sockets (%1)"
 msgstr "Bazı prizler uyumsuz (%1)"
 
-#: app/TripGroupPage.qml:461
+#: app/TripGroupPage.qml:462
 #, kde-format
 msgid "Some incompatible power plugs (%1)"
 msgstr "Bazı fişler uyumsuz (%1)"
 
-#: app/TripGroupPage.qml:464
+#: app/TripGroupPage.qml:465
 #, kde-format
 msgid "No compatible power plugs (%1)"
 msgstr "Uyumlu fiş yok (%1)"
 
-#: app/TripGroupPage.qml:477
+#: app/TripGroupPage.qml:478
 #, kde-format
 msgid "Show map…"
 msgstr "Haritayı göster…"
 
-#: app/TripGroupPage.qml:484
+#: app/TripGroupPage.qml:485
 #, kde-format
 msgid "Import"
 msgstr "İçe Aktar"
 
-#: app/TripGroupPage.qml:498
+#: app/TripGroupPage.qml:499
 #, kde-format
 msgid "Add"
 msgstr "Ekle"
 
-#: app/TripGroupPage.qml:656
+#: app/TripGroupPage.qml:658
 #, kde-format
 msgid "Cost"
 msgstr "Maliyet"
 
-#: app/TripGroupPage.qml:668
+#: app/TripGroupPage.qml:670
 #, kde-format
 msgid "Rename…"
 msgstr "Yeniden Adlandır…"
 
-#: app/TripGroupPage.qml:677
+#: app/TripGroupPage.qml:679
 #, kde-format
 msgid "Merge trips…"
 msgstr "Gezileri Birleştir…"
 
-#: app/TripGroupPage.qml:688
+#: app/TripGroupPage.qml:690
 #, kde-format
 msgid "Split trip…"
 msgstr "Geziyi Böl…"

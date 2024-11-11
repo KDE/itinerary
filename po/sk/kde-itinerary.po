@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-09 00:40+0000\n"
+"POT-Creation-Date: 2024-11-11 00:40+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -120,7 +120,7 @@ msgid "Add to calendar…"
 msgstr "Pridať dokument..."
 
 #: app/ActionsCard.qml:74 app/Main.qml:221 app/TripGroupDelegate.qml:182
-#: app/TripGroupPage.qml:695
+#: app/TripGroupPage.qml:697
 #, fuzzy, kde-format
 #| msgid "Export..."
 msgid "Export…"
@@ -177,7 +177,7 @@ msgid "Itinerary file (*.itinerary)"
 msgstr ""
 
 #: app/ActionsCard.qml:173 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:663
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:665
 #, fuzzy, kde-format
 #| msgid "Application"
 msgid "Actions"
@@ -378,8 +378,8 @@ msgstr ""
 msgid "Light"
 msgstr "Let"
 
-#: app/BoatDelegate.qml:18 app/BusDelegate.qml:33 app/TrainDelegate.qml:34
-#: app/TrainPage.qml:84 app/TransferDelegate.qml:61
+#: app/BoatDelegate.qml:18 app/BusDelegate.qml:35 app/TrainDelegate.qml:36
+#: app/TrainPage.qml:84 app/TransferDelegate.qml:62
 #, kde-format
 msgid "%1 to %2"
 msgstr "%1 do %2"
@@ -552,13 +552,14 @@ msgctxt "@title:group"
 msgid "Booking"
 msgstr "Rezervácia"
 
-#: app/BusDelegate.qml:127 app/TrainDelegate.qml:159 app/TrainPage.qml:319
-#, kde-format
-msgctxt "train seat"
+#: app/BusDelegate.qml:149
+#, fuzzy, kde-format
+#| msgid "Direction: %1"
+msgctxt "bus seat"
 msgid "Seat: <b>%1</b>"
-msgstr ""
+msgstr "Smer: %1"
 
-#: app/BusDelegate.qml:152 app/TrainDelegate.qml:194
+#: app/BusDelegate.qml:176 app/TrainDelegate.qml:220
 #, kde-format
 msgid "1 intermediate stop"
 msgid_plural "%1 intermediate stops"
@@ -2102,7 +2103,7 @@ msgctxt "time in hours"
 msgid "%1 h"
 msgstr ""
 
-#: app/JourneyPathPage.qml:175 app/JourneySectionPage.qml:334
+#: app/JourneyPathPage.qml:175 app/JourneySectionPage.qml:340
 #, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2302,25 +2303,25 @@ msgstr ""
 msgid "CO₂: %1"
 msgstr "CO₂: %1g"
 
-#: app/JourneySectionStopDelegate.qml:144
+#: app/JourneySectionStopDelegate.qml:143
 #, kde-format
 msgctxt "Abreviation of train platform"
 msgid "Pl. %1"
 msgstr ""
 
-#: app/JourneySectionStopDelegate.qml:146
+#: app/JourneySectionStopDelegate.qml:145
 #, kde-format
 msgctxt "Ferry dock, if possible use an abreviation"
 msgid "Dock %1"
 msgstr ""
 
-#: app/JourneySectionStopDelegate.qml:148
+#: app/JourneySectionStopDelegate.qml:147
 #, kde-format
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
 msgstr ""
 
-#: app/JourneySectionStopDelegate.qml:162
+#: app/JourneySectionStopDelegate.qml:161
 #, fuzzy, kde-format
 #| msgid "Location:"
 msgid "Show location"
@@ -2664,7 +2665,7 @@ msgstr "Skontrolovať aktualizácie"
 msgid "Download Maps"
 msgstr "&Prevziať mapy..."
 
-#: app/Main.qml:188 app/StatisticsPage.qml:15 app/TripGroupPage.qml:632
+#: app/Main.qml:188 app/StatisticsPage.qml:15 app/TripGroupPage.qml:633
 #, fuzzy, kde-format
 msgid "Statistics"
 msgstr "Štatistika"
@@ -2908,7 +2909,7 @@ msgctxt "not yet expired tickets"
 msgid "Valid"
 msgstr "Platné od:"
 
-#: app/passmanager.cpp:275 app/TripGroupPage.qml:438
+#: app/passmanager.cpp:275 app/TripGroupPage.qml:439
 #, kde-format
 msgid "%1 - %2"
 msgstr ""
@@ -3052,43 +3053,43 @@ msgstr ""
 msgid "Show Pass"
 msgstr "Zobraziť názvy"
 
-#: app/publictransport.cpp:119 app/publictransport.cpp:146
+#: app/publictransport.cpp:122 app/publictransport.cpp:149
 #, kde-format
 msgid "Walk"
 msgstr ""
 
-#: app/publictransport.cpp:121
+#: app/publictransport.cpp:124
 #, fuzzy, kde-format
 msgid "Wait"
 msgstr "Čakanie"
 
-#: app/publictransport.cpp:130
+#: app/publictransport.cpp:133
 #, kde-format
 msgid "Rented bicycle"
 msgstr ""
 
-#: app/publictransport.cpp:132
+#: app/publictransport.cpp:135
 #, kde-format
 msgid "Rented moped"
 msgstr ""
 
-#: app/publictransport.cpp:134
+#: app/publictransport.cpp:137
 #, kde-format
 msgid "Rented kick scooter"
 msgstr ""
 
-#: app/publictransport.cpp:136
+#: app/publictransport.cpp:139
 #, fuzzy, kde-format
 #| msgid "Rental Car"
 msgid "Rented car"
 msgstr "Prenajaté auto"
 
-#: app/publictransport.cpp:142
+#: app/publictransport.cpp:145
 #, kde-format
 msgid "Bicycle"
 msgstr ""
 
-#: app/publictransport.cpp:144 app/StatisticsPage.qml:149
+#: app/publictransport.cpp:147 app/StatisticsPage.qml:149
 #, kde-format
 msgid "Car"
 msgstr "Auto"
@@ -3506,7 +3507,7 @@ msgstr "Výlet: %1"
 #: app/statisticsmodel.cpp:112 app/statisticsmodel.cpp:145
 #: app/statisticsmodel.cpp:160 app/statisticsmodel.cpp:175
 #: app/statisticsmodel.cpp:190 app/statisticsmodel.cpp:205
-#: app/TripGroupPage.qml:638
+#: app/TripGroupPage.qml:640
 #, kde-format
 msgid "Distance"
 msgstr "Vzdialenosť"
@@ -3519,7 +3520,7 @@ msgstr ""
 #: app/statisticsmodel.cpp:122 app/statisticsmodel.cpp:150
 #: app/statisticsmodel.cpp:165 app/statisticsmodel.cpp:180
 #: app/statisticsmodel.cpp:195 app/statisticsmodel.cpp:210
-#: app/TripGroupPage.qml:647
+#: app/TripGroupPage.qml:649
 #, kde-format
 msgid "CO₂"
 msgstr "CO₂"
@@ -3771,13 +3772,13 @@ msgstr "Pridať dokument..."
 msgid "Add restaurant…"
 msgstr "Rezervácia reštaurácie: %1"
 
-#: app/TimelinePage.qml:166 app/TripGroupPage.qml:727
+#: app/TimelinePage.qml:166 app/TripGroupPage.qml:729
 #, kde-format
 msgctxt "@action:button"
 msgid "Go To Now"
 msgstr ""
 
-#: app/TimelinePage.qml:173 app/TripGroupPage.qml:735
+#: app/TimelinePage.qml:173 app/TripGroupPage.qml:737
 #: app/TripGroupsPage.qml:118 app/TripGroupsPage.qml:137
 #, fuzzy, kde-format
 #| msgid "Add Document..."
@@ -3858,19 +3859,25 @@ msgstr "Príchod"
 msgid "Arrival Time"
 msgstr "Čas príchodu: %1"
 
-#: app/TrainDelegate.qml:117 app/TrainDelegate.qml:333
+#: app/TrainDelegate.qml:132 app/TrainDelegate.qml:369
 #, kde-format
 msgid "Pl. %1"
 msgstr ""
 
-#: app/TrainDelegate.qml:153 app/TrainPage.qml:312
+#: app/TrainDelegate.qml:177 app/TrainPage.qml:312
 #, fuzzy, kde-format
 #| msgid "Coach:"
 msgctxt "train coach"
 msgid "Coach: <b>%1</b>"
 msgstr "Tréner:"
 
-#: app/TrainDelegate.qml:167 app/TrainPage.qml:327
+#: app/TrainDelegate.qml:183 app/TrainPage.qml:319
+#, kde-format
+msgctxt "train seat"
+msgid "Seat: <b>%1</b>"
+msgstr ""
+
+#: app/TrainDelegate.qml:191 app/TrainPage.qml:327
 #, kde-format
 msgctxt "train class"
 msgid "Class: <b>%1</b>"
@@ -3996,13 +4003,13 @@ msgstr ""
 msgid "Failed to add to Traewelling"
 msgstr ""
 
-#: app/TransferDelegate.qml:109
+#: app/TransferDelegate.qml:110
 #, fuzzy, kde-format
 #| msgid "Delete Document"
 msgid "Select transfer"
 msgstr "Odstrániť dokument"
 
-#: app/TransferDelegate.qml:119
+#: app/TransferDelegate.qml:120
 #, fuzzy, kde-format
 #| msgid "Delete Document"
 msgid "Delete transfer"
@@ -4077,7 +4084,7 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: app/TripGroupDelegate.qml:116 app/TripGroupPage.qml:445
+#: app/TripGroupDelegate.qml:116 app/TripGroupPage.qml:446
 #: app/WeatherForecastDelegate.qml:48 app/WeatherForecastPage.qml:93
 #, fuzzy, kde-format
 #| msgid "%1°C / %2°C"
@@ -4100,7 +4107,7 @@ msgstr ""
 msgid "%1: no compatible power plugs (%2)"
 msgstr ""
 
-#: app/TripGroupDelegate.qml:145 app/TripGroupPage.qml:471
+#: app/TripGroupDelegate.qml:145 app/TripGroupPage.qml:472
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
@@ -4114,7 +4121,7 @@ msgstr[2] ""
 msgid "Edit…"
 msgstr "Upraviť"
 
-#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:702
+#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:704
 #, fuzzy, kde-format
 #| msgid "Delete Document"
 msgid "Delete trip"
@@ -4202,7 +4209,7 @@ msgstr "Pridať dokument..."
 msgid "Do you really want to delete the trip '%1'?"
 msgstr "Naozaj chcete odstrániť túto udalosť?"
 
-#: app/TripGroupPage.qml:439
+#: app/TripGroupPage.qml:440
 #, kde-format
 msgid "One day"
 msgid_plural "%1 days"
@@ -4210,56 +4217,56 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: app/TripGroupPage.qml:459
+#: app/TripGroupPage.qml:460
 #, kde-format
 msgid "Some incompatible power sockets (%1)"
 msgstr ""
 
-#: app/TripGroupPage.qml:461
+#: app/TripGroupPage.qml:462
 #, kde-format
 msgid "Some incompatible power plugs (%1)"
 msgstr ""
 
-#: app/TripGroupPage.qml:464
+#: app/TripGroupPage.qml:465
 #, kde-format
 msgid "No compatible power plugs (%1)"
 msgstr ""
 
-#: app/TripGroupPage.qml:477
+#: app/TripGroupPage.qml:478
 #, fuzzy, kde-format
 msgid "Show map…"
 msgstr "Zobraziť názvy"
 
-#: app/TripGroupPage.qml:484
+#: app/TripGroupPage.qml:485
 #, fuzzy, kde-format
 #| msgid "Import..."
 msgid "Import"
 msgstr "Importovať..."
 
-#: app/TripGroupPage.qml:498
+#: app/TripGroupPage.qml:499
 #, fuzzy, kde-format
 #| msgid "Add Document..."
 msgid "Add"
 msgstr "Pridať dokument..."
 
-#: app/TripGroupPage.qml:656
+#: app/TripGroupPage.qml:658
 #, kde-format
 msgid "Cost"
 msgstr ""
 
-#: app/TripGroupPage.qml:668
+#: app/TripGroupPage.qml:670
 #, fuzzy, kde-format
 #| msgid "Rename"
 msgid "Rename…"
 msgstr "Premenovať"
 
-#: app/TripGroupPage.qml:677
+#: app/TripGroupPage.qml:679
 #, fuzzy, kde-format
 #| msgid "Add Document..."
 msgid "Merge trips…"
 msgstr "Pridať dokument..."
 
-#: app/TripGroupPage.qml:688
+#: app/TripGroupPage.qml:690
 #, fuzzy, kde-format
 #| msgid "Add Document..."
 msgid "Split trip…"

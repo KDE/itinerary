@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-09 00:40+0000\n"
+"POT-Creation-Date: 2024-11-11 00:40+0000\n"
 "PO-Revision-Date: 2024-08-20 23:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -118,7 +118,7 @@ msgid "Add to calendar…"
 msgstr "캘린더에 추가…"
 
 #: app/ActionsCard.qml:74 app/Main.qml:221 app/TripGroupDelegate.qml:182
-#: app/TripGroupPage.qml:695
+#: app/TripGroupPage.qml:697
 #, kde-format
 msgid "Export…"
 msgstr "내보내기…"
@@ -169,7 +169,7 @@ msgid "Itinerary file (*.itinerary)"
 msgstr "Itinerary 파일 (*.itinerary)"
 
 #: app/ActionsCard.qml:173 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:663
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:665
 #, kde-format
 msgid "Actions"
 msgstr "동작"
@@ -354,8 +354,8 @@ msgstr "사용 가능한 카메라가 없습니다."
 msgid "Light"
 msgstr "조명"
 
-#: app/BoatDelegate.qml:18 app/BusDelegate.qml:33 app/TrainDelegate.qml:34
-#: app/TrainPage.qml:84 app/TransferDelegate.qml:61
+#: app/BoatDelegate.qml:18 app/BusDelegate.qml:35 app/TrainDelegate.qml:36
+#: app/TrainPage.qml:84 app/TransferDelegate.qml:62
 #, kde-format
 msgid "%1 to %2"
 msgstr "%1에서 %2(으)로|/|%1에서 %2$[으 %2]로"
@@ -513,13 +513,15 @@ msgctxt "@title:group"
 msgid "Booking"
 msgstr "예약"
 
-#: app/BusDelegate.qml:127 app/TrainDelegate.qml:159 app/TrainPage.qml:319
-#, kde-format
-msgctxt "train seat"
+#: app/BusDelegate.qml:149
+#, fuzzy, kde-format
+#| msgctxt "train seat"
+#| msgid "Seat: <b>%1</b>"
+msgctxt "bus seat"
 msgid "Seat: <b>%1</b>"
 msgstr "좌석: <b>%1</b>"
 
-#: app/BusDelegate.qml:152 app/TrainDelegate.qml:194
+#: app/BusDelegate.qml:176 app/TrainDelegate.qml:220
 #, kde-format
 msgid "1 intermediate stop"
 msgid_plural "%1 intermediate stops"
@@ -1971,7 +1973,7 @@ msgctxt "time in hours"
 msgid "%1 h"
 msgstr "%1시간"
 
-#: app/JourneyPathPage.qml:175 app/JourneySectionPage.qml:334
+#: app/JourneyPathPage.qml:175 app/JourneySectionPage.qml:340
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2159,25 +2161,25 @@ msgstr "평균 속도: %1"
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionStopDelegate.qml:144
+#: app/JourneySectionStopDelegate.qml:143
 #, kde-format
 msgctxt "Abreviation of train platform"
 msgid "Pl. %1"
 msgstr "%1번"
 
-#: app/JourneySectionStopDelegate.qml:146
+#: app/JourneySectionStopDelegate.qml:145
 #, kde-format
 msgctxt "Ferry dock, if possible use an abreviation"
 msgid "Dock %1"
 msgstr "%1번"
 
-#: app/JourneySectionStopDelegate.qml:148
+#: app/JourneySectionStopDelegate.qml:147
 #, kde-format
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
 msgstr "%1번"
 
-#: app/JourneySectionStopDelegate.qml:162
+#: app/JourneySectionStopDelegate.qml:161
 #, kde-format
 msgid "Show location"
 msgstr "위치 표시"
@@ -2502,7 +2504,7 @@ msgstr "업데이트 확인"
 msgid "Download Maps"
 msgstr "지도 다운로드"
 
-#: app/Main.qml:188 app/StatisticsPage.qml:15 app/TripGroupPage.qml:632
+#: app/Main.qml:188 app/StatisticsPage.qml:15 app/TripGroupPage.qml:633
 #, kde-format
 msgid "Statistics"
 msgstr "통계"
@@ -2734,7 +2736,7 @@ msgctxt "not yet expired tickets"
 msgid "Valid"
 msgstr "유효함"
 
-#: app/passmanager.cpp:275 app/TripGroupPage.qml:438
+#: app/passmanager.cpp:275 app/TripGroupPage.qml:439
 #, kde-format
 msgid "%1 - %2"
 msgstr "%1 - %2"
@@ -2872,42 +2874,42 @@ msgstr "프로그램 멤버십"
 msgid "Show Pass"
 msgstr "패스 표시"
 
-#: app/publictransport.cpp:119 app/publictransport.cpp:146
+#: app/publictransport.cpp:122 app/publictransport.cpp:149
 #, kde-format
 msgid "Walk"
 msgstr "걷기"
 
-#: app/publictransport.cpp:121
+#: app/publictransport.cpp:124
 #, kde-format
 msgid "Wait"
 msgstr "대기"
 
-#: app/publictransport.cpp:130
+#: app/publictransport.cpp:133
 #, kde-format
 msgid "Rented bicycle"
 msgstr "대여한 자전거"
 
-#: app/publictransport.cpp:132
+#: app/publictransport.cpp:135
 #, kde-format
 msgid "Rented moped"
 msgstr "대여한 모페드"
 
-#: app/publictransport.cpp:134
+#: app/publictransport.cpp:137
 #, kde-format
 msgid "Rented kick scooter"
 msgstr "대여한 킥 스쿠터"
 
-#: app/publictransport.cpp:136
+#: app/publictransport.cpp:139
 #, kde-format
 msgid "Rented car"
 msgstr "렌터카"
 
-#: app/publictransport.cpp:142
+#: app/publictransport.cpp:145
 #, kde-format
 msgid "Bicycle"
 msgstr "자전거"
 
-#: app/publictransport.cpp:144 app/StatisticsPage.qml:149
+#: app/publictransport.cpp:147 app/StatisticsPage.qml:149
 #, kde-format
 msgid "Car"
 msgstr "자동차"
@@ -3329,7 +3331,7 @@ msgstr "여행"
 #: app/statisticsmodel.cpp:112 app/statisticsmodel.cpp:145
 #: app/statisticsmodel.cpp:160 app/statisticsmodel.cpp:175
 #: app/statisticsmodel.cpp:190 app/statisticsmodel.cpp:205
-#: app/TripGroupPage.qml:638
+#: app/TripGroupPage.qml:640
 #, kde-format
 msgid "Distance"
 msgstr "거리"
@@ -3342,7 +3344,7 @@ msgstr "호텔 숙박"
 #: app/statisticsmodel.cpp:122 app/statisticsmodel.cpp:150
 #: app/statisticsmodel.cpp:165 app/statisticsmodel.cpp:180
 #: app/statisticsmodel.cpp:195 app/statisticsmodel.cpp:210
-#: app/TripGroupPage.qml:647
+#: app/TripGroupPage.qml:649
 #, kde-format
 msgid "CO₂"
 msgstr "CO₂"
@@ -3581,13 +3583,13 @@ msgstr "행사 추가…"
 msgid "Add restaurant…"
 msgstr "음식점 추가…"
 
-#: app/TimelinePage.qml:166 app/TripGroupPage.qml:727
+#: app/TimelinePage.qml:166 app/TripGroupPage.qml:729
 #, kde-format
 msgctxt "@action:button"
 msgid "Go To Now"
 msgstr "현재로 이동"
 
-#: app/TimelinePage.qml:173 app/TripGroupPage.qml:735
+#: app/TimelinePage.qml:173 app/TripGroupPage.qml:737
 #: app/TripGroupsPage.qml:118 app/TripGroupsPage.qml:137
 #, kde-format
 msgctxt "@action:button"
@@ -3662,18 +3664,24 @@ msgstr "도착"
 msgid "Arrival Time"
 msgstr "도착 시간"
 
-#: app/TrainDelegate.qml:117 app/TrainDelegate.qml:333
+#: app/TrainDelegate.qml:132 app/TrainDelegate.qml:369
 #, kde-format
 msgid "Pl. %1"
 msgstr "%1번"
 
-#: app/TrainDelegate.qml:153 app/TrainPage.qml:312
+#: app/TrainDelegate.qml:177 app/TrainPage.qml:312
 #, kde-format
 msgctxt "train coach"
 msgid "Coach: <b>%1</b>"
 msgstr "차량: <b>%1</b>"
 
-#: app/TrainDelegate.qml:167 app/TrainPage.qml:327
+#: app/TrainDelegate.qml:183 app/TrainPage.qml:319
+#, kde-format
+msgctxt "train seat"
+msgid "Seat: <b>%1</b>"
+msgstr "좌석: <b>%1</b>"
+
+#: app/TrainDelegate.qml:191 app/TrainPage.qml:327
 #, kde-format
 msgctxt "train class"
 msgid "Class: <b>%1</b>"
@@ -3785,12 +3793,12 @@ msgstr "Traewelling에 추가됨"
 msgid "Failed to add to Traewelling"
 msgstr "Traewelling에 추가할 수 없음"
 
-#: app/TransferDelegate.qml:109
+#: app/TransferDelegate.qml:110
 #, kde-format
 msgid "Select transfer"
 msgstr "환승 선택"
 
-#: app/TransferDelegate.qml:119
+#: app/TransferDelegate.qml:120
 #, kde-format
 msgid "Delete transfer"
 msgstr "환승 삭제"
@@ -3861,7 +3869,7 @@ msgid "Date: %2 (one day)"
 msgid_plural "Date: %2 (%1 days)"
 msgstr[0] "날짜: %2(%1일)"
 
-#: app/TripGroupDelegate.qml:116 app/TripGroupPage.qml:445
+#: app/TripGroupDelegate.qml:116 app/TripGroupPage.qml:446
 #: app/WeatherForecastDelegate.qml:48 app/WeatherForecastPage.qml:93
 #, kde-format
 msgctxt "temperature range"
@@ -3883,7 +3891,7 @@ msgstr "%1: 일부 전원 플러그 호환되지 않음(%2)"
 msgid "%1: no compatible power plugs (%2)"
 msgstr "%1: 호환되는 전원 플러그 없음(%2)"
 
-#: app/TripGroupDelegate.qml:145 app/TripGroupPage.qml:471
+#: app/TripGroupDelegate.qml:145 app/TripGroupPage.qml:472
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
@@ -3894,7 +3902,7 @@ msgstr[0] "통화: %2"
 msgid "Edit…"
 msgstr "편집…"
 
-#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:702
+#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:704
 #, kde-format
 msgid "Delete trip"
 msgstr "여정 삭제"
@@ -3974,64 +3982,64 @@ msgstr "여정 추가"
 msgid "Do you really want to delete the trip '%1'?"
 msgstr "'%1' 여행을 삭제하시겠습니까?"
 
-#: app/TripGroupPage.qml:439
+#: app/TripGroupPage.qml:440
 #, kde-format
 msgid "One day"
 msgid_plural "%1 days"
 msgstr[0] "%1일"
 
-#: app/TripGroupPage.qml:459
+#: app/TripGroupPage.qml:460
 #, kde-format
 msgid "Some incompatible power sockets (%1)"
 msgstr "일부 전원 콘센트 호환되지 않음(%1)"
 
-#: app/TripGroupPage.qml:461
+#: app/TripGroupPage.qml:462
 #, kde-format
 msgid "Some incompatible power plugs (%1)"
 msgstr "일부 전원 플러그 호환되지 않음(%1)"
 
-#: app/TripGroupPage.qml:464
+#: app/TripGroupPage.qml:465
 #, kde-format
 msgid "No compatible power plugs (%1)"
 msgstr "호환되는 전원 플러그 없음(%1)"
 
-#: app/TripGroupPage.qml:477
+#: app/TripGroupPage.qml:478
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Show Map"
 msgid "Show map…"
 msgstr "지도 표시"
 
-#: app/TripGroupPage.qml:484
+#: app/TripGroupPage.qml:485
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Import"
 msgid "Import"
 msgstr "가져오기"
 
-#: app/TripGroupPage.qml:498
+#: app/TripGroupPage.qml:499
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Add trip"
 msgid "Add"
 msgstr "여정 추가"
 
-#: app/TripGroupPage.qml:656
+#: app/TripGroupPage.qml:658
 #, kde-format
 msgid "Cost"
 msgstr ""
 
-#: app/TripGroupPage.qml:668
+#: app/TripGroupPage.qml:670
 #, kde-format
 msgid "Rename…"
 msgstr "이름 바꾸기…"
 
-#: app/TripGroupPage.qml:677
+#: app/TripGroupPage.qml:679
 #, kde-format
 msgid "Merge trips…"
 msgstr "여정 합치기…"
 
-#: app/TripGroupPage.qml:688
+#: app/TripGroupPage.qml:690
 #, kde-format
 msgid "Split trip…"
 msgstr "여정 나누기…"
