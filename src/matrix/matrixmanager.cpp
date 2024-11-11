@@ -37,8 +37,17 @@ MatrixManager::MatrixManager(QObject *parent)
     });
 }
 
+void MatrixManager::setDeviceName(const QString &deviceName)
+{
+    m_deviceName = deviceName;
+}
+
 void MatrixManager::login(const QString &matrixId, const QString &password)
 {
+    if (m_deviceName.isEmpty()) {
+        m_deviceName = qAppName();
+    }
+
     auto connection = new Connection(this);
     connection->resolveServer(matrixId);
     connect(
@@ -50,7 +59,7 @@ void MatrixManager::login(const QString &matrixId, const QString &password)
                 setInfoString(i18n("This server does not support logging in using a password"));
             }
             auto username = matrixId.mid(1, matrixId.indexOf(QLatin1Char(':')) - 1);
-            connection->loginWithPassword(username, password, qAppName(), {});
+            connection->loginWithPassword(username, password, m_deviceName, {});
         },
         Qt::SingleShotConnection);
 
@@ -59,7 +68,7 @@ void MatrixManager::login(const QString &matrixId, const QString &password)
         account.setKeepLoggedIn(true);
         account.setHomeserver(connection->homeserver());
         account.setDeviceId(connection->deviceId());
-        account.setDeviceName(qAppName());
+        account.setDeviceName(m_deviceName);
         account.sync();
         Q_EMIT connectedChanged();
 

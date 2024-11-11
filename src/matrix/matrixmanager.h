@@ -20,6 +20,9 @@ class MatrixManager : public QObject
 public:
     explicit MatrixManager(QObject *parent = nullptr);
 
+    /** Device name to be used for new connections. */
+    void setDeviceName(const QString &deviceName);
+
     /**
      * Log in to a connection
      * @param matrixId user id in the form @user:server.tld
@@ -53,6 +56,7 @@ Q_SIGNALS:
 
 private:
     QString m_infoString;
+    QString m_deviceName;
     Quotient::AccountRegistry m_accountRegistry;
 
     void setInfoString(const QString &infoString);
