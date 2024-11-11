@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-09 02:31+0000\n"
-"PO-Revision-Date: 2024-10-05 12:34+0200\n"
+"PO-Revision-Date: 2024-11-10 15:29+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -2535,11 +2535,9 @@ msgid "Occupancy:"
 msgstr "Zapełnienie:"
 
 #: app/MapStopoverInfoSheetDrawer.qml:88
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "View Indoor Map"
+#, kde-format
 msgid "Show indoor map"
-msgstr "Zobacz mapę wnętrz"
+msgstr "Pokaż mapę wnętrz"
 
 #: app/MatrixRoomSelectionSheet.qml:19
 #, kde-format
@@ -3406,21 +3404,19 @@ msgid "Train"
 msgstr "Pociąg"
 
 #: app/StopPickerPage.qml:27
-#, fuzzy, kde-format
-#| msgid "Clear history"
+#, kde-format
 msgid "Clear History"
 msgstr "Wyczyść historię"
 
 #: app/StopPickerPage.qml:28
-#, fuzzy, kde-format
-#| msgid "Do you really want to delete this certificate?"
+#, kde-format
 msgid "Do you really want to remove all previously searched locations?"
-msgstr "Czy na pewno usunąć ten certyfikat?"
+msgstr "Czy na pewno usunąć wszystkie poprzednio szukane miejsca?"
 
 #: app/StopPickerPage.qml:32
 #, kde-format
 msgid "Remove"
-msgstr ""
+msgstr "Usuń"
 
 #: app/StopPickerPage.qml:45
 #, kde-format
@@ -3948,7 +3944,7 @@ msgstr "%1 (%2/%3)"
 #: app/TripGroupMapPage.qml:194
 #, kde-format
 msgid "Address:"
-msgstr ""
+msgstr "Adres:"
 
 #: app/TripGroupMergeDialog.qml:17
 #, kde-format
@@ -4002,11 +3998,9 @@ msgid "No compatible power plugs (%1)"
 msgstr "Brak zgodnych wtyczek elektrycznych (%1)"
 
 #: app/TripGroupPage.qml:477
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Show Map"
+#, kde-format
 msgid "Show map…"
-msgstr "Pokaż mapę"
+msgstr "Pokaż mapę…"
 
 #: app/TripGroupPage.qml:484
 #, kde-format
@@ -4021,7 +4015,7 @@ msgstr "Dodaj"
 #: app/TripGroupPage.qml:656
 #, kde-format
 msgid "Cost"
-msgstr ""
+msgstr "Koszt"
 
 #: app/TripGroupPage.qml:668
 #, kde-format
@@ -4061,7 +4055,7 @@ msgstr "Dodaj do:"
 #: app/TripGroupSelectorCard.qml:120
 #, kde-format
 msgid "A trip must be selected."
-msgstr ""
+msgstr "Trzeba wybrać podróż."
 
 #: app/TripGroupsPage.qml:15
 #, kde-format
@@ -4101,7 +4095,7 @@ msgstr "Nadchodzące"
 #: app/TripGroupsPage.qml:116
 #, kde-format
 msgid "No trips added yet."
-msgstr ""
+msgstr "Nie dodano jeszcze żadnej podróży."
 
 #: app/TripGroupSplitPage.qml:15
 #, kde-format
