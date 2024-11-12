@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-11 00:40+0000\n"
-"PO-Revision-Date: 2024-11-09 11:41+0100\n"
+"POT-Creation-Date: 2024-11-12 00:41+0000\n"
+"PO-Revision-Date: 2024-11-11 06:54+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -521,9 +521,7 @@ msgid "Booking"
 msgstr "Erreserba"
 
 #: app/BusDelegate.qml:149
-#, fuzzy, kde-format
-#| msgctxt "train seat"
-#| msgid "Seat: <b>%1</b>"
+#, kde-format
 msgctxt "bus seat"
 msgid "Seat: <b>%1</b>"
 msgstr "Eserlekua: <b>%1</b>"
@@ -4282,18 +4280,18 @@ msgstr ""
 msgid "Got it!"
 msgstr "Ulertuta!"
 
-#: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:66
-#: matrix/matrixmanager.cpp:123
+#: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:75
+#: matrix/matrixmanager.cpp:132
 #, kde-format
 msgid "Syncing…"
 msgstr "Sinkronizatzen..."
 
-#: matrix/matrixmanager.cpp:50
+#: matrix/matrixmanager.cpp:59
 #, kde-format
 msgid "This server does not support logging in using a password"
 msgstr "Zerbitzari horrek ez du pasahitz bat erabiliz saio-hastea onartzen"
 
-#: matrix/matrixmanager.cpp:82
+#: matrix/matrixmanager.cpp:91
 #, kde-format
 msgid "Logging in"
 msgstr "Saioa hasten"
