@@ -82,6 +82,7 @@ FormCard.FormCard {
 
     property color headerTextColor: controller.isCanceled ? headerBackground.Kirigami.Theme.disabledTextColor : headerBackground.Kirigami.Theme.textColor
     FormCard.AbstractFormDelegate {
+        visible: false
         onClicked: root.clicked()
         background: Rectangle {
             id: headerBackground

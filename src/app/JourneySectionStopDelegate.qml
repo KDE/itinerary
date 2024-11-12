@@ -29,7 +29,7 @@ Item {
     property real trailingProgress
     property alias stopoverPassed: lineSegment.showStop
 
-    implicitHeight: layout.implicitHeight + Kirigami.Units.gridUnit * 2
+    implicitHeight: layout.implicitHeight + Kirigami.Units.gridUnit
     implicitWidth: ListView.view.width - ListView.view.leftMargin - ListView.view.rightMargin
 
     GridLayout {
@@ -45,6 +45,8 @@ Item {
             Layout.row: 0
             Layout.fillHeight: true
             Layout.rowSpan: 2
+            Layout.topMargin: isDeparture ? Kirigami.Units.gridUnit : 0
+            Layout.alignment: isDeparture ? Qt.AlignTop : Qt.AlignBottom
 
             isArrival: root.isArrival
             isDeparture: root.isDeparture

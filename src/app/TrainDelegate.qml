@@ -67,6 +67,8 @@ TimelineDelegate {
 
             ColumnLayout{
                 spacing: 0
+                Layout.alignment: Qt.AlignTop
+
                 JourneySectionStopDelegateLineSegment {
                     lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
                     isDeparture: true
@@ -85,7 +87,7 @@ TimelineDelegate {
             ColumnLayout {
                 spacing: 0
 
-                Layout.bottomMargin:  Kirigami.Units.largeSpacing
+                Layout.bottomMargin: Kirigami.Units.largeSpacing
                 Layout.fillHeight: true
                 Layout.fillWidth: true
 
@@ -99,6 +101,7 @@ TimelineDelegate {
                         spacing: Kirigami.Units.smallSpacing
 
                         Layout.minimumWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
+                        Layout.alignment: Qt.AlignTop
 
                         QQC2.Label {
                             id: depTime
@@ -112,14 +115,48 @@ TimelineDelegate {
                             Accessible.ignored: !visible
                         }
                     }
-                    QQC2.Label {
-                        Layout.fillWidth: true
-                        font.bold: true
-                        text: reservationFor.departureStation.name
-                        elide: Text.ElideRight
+
+                    ColumnLayout {
+                        spacing: Kirigami.Units.smallSpacing
+
+                        QQC2.Label {
+                            Layout.fillWidth: true
+                            font.bold: true
+                            text: reservationFor.departureStation.name
+                            elide: Text.ElideRight
+                        }
+
+                        QQC2.Control {
+                            visible: root.reservationFor.trainName || root.reservationFor.trainNumber
+                            contentItem: RowLayout {
+                                spacing: Kirigami.Units.smallSpacing
+                                TransportIcon {
+                                    color: "white"
+                                    isMask: true
+                                    size: Kirigami.Units.iconSizes.smallMedium
+                                    source: root.headerIcon.source
+                                }
+                                QQC2.Label {
+                                    color: "white"
+                                    text: root.reservationFor.trainName + " " + root.reservationFor.trainNumber
+                                }
+                            }
+                            background: Rectangle {
+                                radius: Kirigami.Units.cornerRadius
+                                color: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
+                            }
+                        }
+
+                        QQC2.Label {
+                            text: departure.route.direction ? i18nc("Direction of the transport mode", "To %1", departure.route.direction) : ""
+                            visible: departure.route.direction
+                            Layout.fillWidth: true
+                        }
                     }
+
                     QQC2.Label {
-                        Layout.alignment: Qt.AlignRight
+                        Layout.alignment: Qt.AlignRight | Qt.AlignTop
+
                         text: {
                             let platform = "";
                             if (departure.hasExpectedPlatform) {
@@ -137,7 +174,7 @@ TimelineDelegate {
                     }
                 }
 
-                RowLayout{
+                RowLayout {
                     id: departureCountryLayout
 
                     spacing: Kirigami.Units.smallSpacing
@@ -150,10 +187,10 @@ TimelineDelegate {
                     QQC2.Label {
                         id: departureCountryLabel
 
+                        width: topLayout.width
                         text: Localizer.formatAddressWithContext(reservationFor.departureStation.address,
                                                                  reservationFor.arrivalStation.address,
                                                                  Settings.homeCountryIsoCode)
-
                         Layout.fillWidth: true
                     }
                 }
@@ -227,12 +264,6 @@ TimelineDelegate {
                         Layout.fillWidth: true
                     }
                 }
-            }
-            Kirigami.Separator {
-                visible: stopRepeater.count === 0
-                Layout.topMargin: Kirigami.Units.smallSpacing
-                Layout.bottomMargin: Kirigami.Units.smallSpacing
-                Layout.fillWidth: true
             }
         }
 
@@ -373,6 +404,7 @@ TimelineDelegate {
                         }
                     }
                 }
+
                 RowLayout {
                     id: arrivalCountryLayout
 

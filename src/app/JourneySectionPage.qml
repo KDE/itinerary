@@ -175,8 +175,7 @@ Kirigami.Page {
         anchors.fill: parent
     }
 
-    ColumnLayout{
-        anchors.fill: parent
+    contentItem: ColumnLayout{
         spacing: 0
 
         QQC2.SwipeView {
