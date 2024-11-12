@@ -304,6 +304,9 @@ FormCard.FormCardPage {
             label: i18n("Password")
             echoMode: TextInput.Password
             visible: !MatrixController.manager.connected
+            onAccepted: {
+                MatrixController.manager.login(matrixId.text, matrixPassword.text);
+            }
         }
         FormCard.FormDelegateSeparator { above: loginButton }
         FormCard.FormButtonDelegate {

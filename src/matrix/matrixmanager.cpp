@@ -44,6 +44,10 @@ void MatrixManager::setDeviceName(const QString &deviceName)
 
 void MatrixManager::login(const QString &matrixId, const QString &password)
 {
+    if (connected()) {
+        qWarning() << "Triggering login while already connected!?";
+        return;
+    }
     if (m_deviceName.isEmpty()) {
         m_deviceName = qAppName();
     }
