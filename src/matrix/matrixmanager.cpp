@@ -80,7 +80,7 @@ void MatrixManager::login(const QString &matrixId, const QString &password)
         setInfoString(message);
     });
 
-    setInfoString(i18n("Logging in"));
+    setInfoString(i18n("Logging in…"));
 }
 
 QString MatrixManager::infoString() const
@@ -116,6 +116,7 @@ QString MatrixManager::userId() const
 void MatrixManager::logout()
 {
     m_accountRegistry.accounts()[0]->logout();
+    setInfoString(i18n("Logged out"));
 }
 
 Quotient::Connection *MatrixManager::connection() const
