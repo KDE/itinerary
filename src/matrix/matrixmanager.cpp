@@ -51,18 +51,13 @@ void MatrixManager::login(const QString &matrixId, const QString &password)
 
     auto connection = new Connection(this);
     connection->resolveServer(matrixId);
-    connect(
-        connection,
-        &Connection::loginFlowsChanged,
-        this,
-        [this, connection, matrixId, password]() {
-            if (!connection->supportsPasswordAuth()) {
-                setInfoString(i18n("This server does not support logging in using a password"));
-            }
-            auto username = matrixId.mid(1, matrixId.indexOf(QLatin1Char(':')) - 1);
-            connection->loginWithPassword(username, password, m_deviceName, {});
-        },
-        Qt::SingleShotConnection);
+    connect(connection, &Connection::loginFlowsChanged, this, [this, connection, matrixId, password]() {
+        if (!connection->supportsPasswordAuth()) {
+            setInfoString(i18n("This server does not support logging in using a password"));
+        }
+        auto username = matrixId.mid(1, matrixId.indexOf(QLatin1Char(':')) - 1);
+        connection->loginWithPassword(username, password, m_deviceName, {});
+    }, Qt::SingleShotConnection);
 
     connect(connection, &Connection::connected, this, [this, connection] {
         AccountSettings account(connection->userId());
