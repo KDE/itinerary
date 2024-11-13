@@ -20,15 +20,9 @@ MatrixManager::MatrixManager(QObject *parent)
         Q_EMIT userIdChanged();
         Q_EMIT connectionChanged();
         setInfoString(i18n("Syncing…"));
-        connect(
-            m_accountRegistry.accounts()[0],
-            &Connection::syncDone,
-            this,
-            [this]() {
-                setInfoString({});
-                m_accountRegistry.accounts()[0]->stopSync();
-            },
-            Qt::SingleShotConnection);
+        connect(m_accountRegistry.accounts()[0], &Connection::syncDone, this, [this](){
+            setInfoString({});
+        }, Qt::SingleShotConnection);
     });
     connect(&m_accountRegistry, &AccountRegistry::rowsRemoved, this, [this]() {
         Q_EMIT connectedChanged();
