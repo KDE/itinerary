@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-12 00:41+0000\n"
+"POT-Creation-Date: 2024-11-13 00:40+0000\n"
 "PO-Revision-Date: 2024-11-11 04:23+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -470,39 +470,39 @@ msgstr "ტერმინალი"
 msgid "Arrival time"
 msgstr "ჩამოსვლის დრო"
 
-#: app/BookingCard.qml:23
+#: app/BookingCard.qml:24
 #, kde-format
 msgid "Booking"
 msgstr "დაჯავშვნა"
 
-#: app/BookingCard.qml:29 app/BookingEditorCard.qml:43
+#: app/BookingCard.qml:30 app/BookingEditorCard.qml:43
 #, kde-format
 msgid "Reference"
 msgstr "მითითება"
 
-#: app/BookingCard.qml:35 app/BookingCard.qml:67
+#: app/BookingCard.qml:36 app/BookingCard.qml:68
 #: app/ProgramMembershipCard.qml:46 app/ProgramMembershipPage.qml:101
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy to Clipboard"
 msgstr "გაცვლის ბუფერში კოპირება"
 
-#: app/BookingCard.qml:39
+#: app/BookingCard.qml:40
 #, kde-format
 msgid "Booking reference copied to clipboard"
 msgstr "ჯავშნის მიმართვა დაკოპირდა ბუფერში"
 
-#: app/BookingCard.qml:52 app/BookingEditorCard.qml:51 app/TicketEditor.qml:71
+#: app/BookingCard.qml:53 app/BookingEditorCard.qml:51 app/TicketEditor.qml:71
 #, kde-format
 msgid "Under name"
 msgstr "სახელით"
 
-#: app/BookingCard.qml:61
+#: app/BookingCard.qml:62
 #, kde-format
 msgid "Ticket number:"
 msgstr "ბილეთის ნომერი:"
 
-#: app/BookingCard.qml:71
+#: app/BookingCard.qml:72
 #, kde-format
 msgid "Ticket number copied to clipboard"
 msgstr "ბილეთის ნომერი დაკოპირდა ბუფერში"
@@ -3248,7 +3248,7 @@ msgstr ""
 msgid "Matrix Integration"
 msgstr "Matrix-ის ინტეგრაცია"
 
-#: app/SettingsPage.qml:284 app/SettingsPage.qml:328
+#: app/SettingsPage.qml:284 app/SettingsPage.qml:331
 #, kde-format
 msgid "Logged in as %1"
 msgstr "შეხვედით, როგორც %1"
@@ -3268,22 +3268,22 @@ msgstr "Matrix ID"
 msgid "Password"
 msgstr "პაროლი"
 
-#: app/SettingsPage.qml:311
+#: app/SettingsPage.qml:314
 #, kde-format
 msgid "Log out"
 msgstr "გასვლა"
 
-#: app/SettingsPage.qml:311
+#: app/SettingsPage.qml:314
 #, kde-format
 msgid "Log in"
 msgstr "შესვლა"
 
-#: app/SettingsPage.qml:318
+#: app/SettingsPage.qml:321
 #, kde-format
 msgid "Traewelling Integration"
 msgstr "Traewelling-სთან ინტეგრაცია"
 
-#: app/SettingsPage.qml:323
+#: app/SettingsPage.qml:326
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -3296,27 +3296,27 @@ msgstr ""
 "მოგზაურობები ჟურნალში ჩაიწეროთ.მეტი ინფორმაციისთვი ეწვიეთ ვებგვერდს <a href="
 "\"https://traewelling.de\">traewelling.de</a>"
 
-#: app/SettingsPage.qml:331
+#: app/SettingsPage.qml:334
 #, kde-format
 msgid "Login"
 msgstr "შესვლა"
 
-#: app/SettingsPage.qml:336
+#: app/SettingsPage.qml:339
 #, kde-format
 msgid "Logout"
 msgstr "გასვლა"
 
-#: app/SettingsPage.qml:343
+#: app/SettingsPage.qml:346
 #, kde-format
 msgid "Contributing"
 msgstr "წვლილი შეიტანა"
 
-#: app/SettingsPage.qml:347
+#: app/SettingsPage.qml:350
 #, kde-format
 msgid "I contribute to OpenStreetMap"
 msgstr "მე შემაქვს წვლილი OpenStreetMap-ზე"
 
-#: app/SettingsPage.qml:348
+#: app/SettingsPage.qml:351
 #, kde-format
 msgid "Enables OSM editing options."
 msgstr "OSM-ის ჩასწორების პარამეტრების ჩართვა."
@@ -4271,18 +4271,18 @@ msgstr ""
 msgid "Got it!"
 msgstr "Გავიგე!"
 
-#: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:75
-#: matrix/matrixmanager.cpp:132
+#: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:79
+#: matrix/matrixmanager.cpp:136
 #, kde-format
 msgid "Syncing…"
 msgstr "სინქრონიზაცია…"
 
-#: matrix/matrixmanager.cpp:59
+#: matrix/matrixmanager.cpp:63
 #, kde-format
 msgid "This server does not support logging in using a password"
 msgstr "ამ სერვერს პაროლით შესვლის მხარდაჭერა არ გააჩნია"
 
-#: matrix/matrixmanager.cpp:91
+#: matrix/matrixmanager.cpp:95
 #, kde-format
 msgid "Logging in"
 msgstr "შესვლა"

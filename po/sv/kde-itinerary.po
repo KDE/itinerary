@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-12 00:41+0000\n"
+"POT-Creation-Date: 2024-11-13 00:40+0000\n"
 "PO-Revision-Date: 2024-09-28 07:12+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -471,39 +471,39 @@ msgstr "Terminal"
 msgid "Arrival time"
 msgstr "Ankomsttid"
 
-#: app/BookingCard.qml:23
+#: app/BookingCard.qml:24
 #, kde-format
 msgid "Booking"
 msgstr "Bokning"
 
-#: app/BookingCard.qml:29 app/BookingEditorCard.qml:43
+#: app/BookingCard.qml:30 app/BookingEditorCard.qml:43
 #, kde-format
 msgid "Reference"
 msgstr "Referens"
 
-#: app/BookingCard.qml:35 app/BookingCard.qml:67
+#: app/BookingCard.qml:36 app/BookingCard.qml:68
 #: app/ProgramMembershipCard.qml:46 app/ProgramMembershipPage.qml:101
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy to Clipboard"
 msgstr "Kopiera till klippbordet"
 
-#: app/BookingCard.qml:39
+#: app/BookingCard.qml:40
 #, kde-format
 msgid "Booking reference copied to clipboard"
 msgstr "Bokningsreferens kopierad till klippbordet"
 
-#: app/BookingCard.qml:52 app/BookingEditorCard.qml:51 app/TicketEditor.qml:71
+#: app/BookingCard.qml:53 app/BookingEditorCard.qml:51 app/TicketEditor.qml:71
 #, kde-format
 msgid "Under name"
 msgstr "I namn"
 
-#: app/BookingCard.qml:61
+#: app/BookingCard.qml:62
 #, kde-format
 msgid "Ticket number:"
 msgstr "Biljettnummer:"
 
-#: app/BookingCard.qml:71
+#: app/BookingCard.qml:72
 #, kde-format
 msgid "Ticket number copied to clipboard"
 msgstr "Biljettnummer kopierat till klippbordet"
@@ -3246,7 +3246,7 @@ msgstr "Ombordinformation stöds tyvärr inte för närvarande på din enhet."
 msgid "Matrix Integration"
 msgstr "Integrering med Matrix"
 
-#: app/SettingsPage.qml:284 app/SettingsPage.qml:328
+#: app/SettingsPage.qml:284 app/SettingsPage.qml:331
 #, kde-format
 msgid "Logged in as %1"
 msgstr "Inloggad som %1"
@@ -3266,22 +3266,22 @@ msgstr "Matrix-id"
 msgid "Password"
 msgstr "Lösenord"
 
-#: app/SettingsPage.qml:311
+#: app/SettingsPage.qml:314
 #, kde-format
 msgid "Log out"
 msgstr "Logga ut"
 
-#: app/SettingsPage.qml:311
+#: app/SettingsPage.qml:314
 #, kde-format
 msgid "Log in"
 msgstr "Logga in"
 
-#: app/SettingsPage.qml:318
+#: app/SettingsPage.qml:321
 #, kde-format
 msgid "Traewelling Integration"
 msgstr "Integrering med Traewelling"
 
-#: app/SettingsPage.qml:323
+#: app/SettingsPage.qml:326
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -3294,27 +3294,27 @@ msgstr ""
 "kollektivtrafikresor. För mer information besök <a href=\"https://"
 "traewelling.de\">traewelling.de</a>."
 
-#: app/SettingsPage.qml:331
+#: app/SettingsPage.qml:334
 #, kde-format
 msgid "Login"
 msgstr "Logga in"
 
-#: app/SettingsPage.qml:336
+#: app/SettingsPage.qml:339
 #, kde-format
 msgid "Logout"
 msgstr "Logga ut"
 
-#: app/SettingsPage.qml:343
+#: app/SettingsPage.qml:346
 #, kde-format
 msgid "Contributing"
 msgstr "Bidra"
 
-#: app/SettingsPage.qml:347
+#: app/SettingsPage.qml:350
 #, kde-format
 msgid "I contribute to OpenStreetMap"
 msgstr "Jag bidrar till OpenStreetMap"
 
-#: app/SettingsPage.qml:348
+#: app/SettingsPage.qml:351
 #, kde-format
 msgid "Enables OSM editing options."
 msgstr "Aktivera OSM redigeringsalternativ"
@@ -4274,18 +4274,18 @@ msgstr ""
 msgid "Got it!"
 msgstr "Jag förstår!"
 
-#: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:75
-#: matrix/matrixmanager.cpp:132
+#: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:79
+#: matrix/matrixmanager.cpp:136
 #, kde-format
 msgid "Syncing…"
 msgstr "Synkroniserar…"
 
-#: matrix/matrixmanager.cpp:59
+#: matrix/matrixmanager.cpp:63
 #, kde-format
 msgid "This server does not support logging in using a password"
 msgstr "Servern stöder inte att logga in med användning av ett lösenord"
 
-#: matrix/matrixmanager.cpp:91
+#: matrix/matrixmanager.cpp:95
 #, kde-format
 msgid "Logging in"
 msgstr "Loggar in"

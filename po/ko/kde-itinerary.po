@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-12 00:41+0000\n"
+"POT-Creation-Date: 2024-11-13 00:40+0000\n"
 "PO-Revision-Date: 2024-08-20 23:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -470,39 +470,39 @@ msgstr "터미널"
 msgid "Arrival time"
 msgstr "도착 시간"
 
-#: app/BookingCard.qml:23
+#: app/BookingCard.qml:24
 #, kde-format
 msgid "Booking"
 msgstr "예약"
 
-#: app/BookingCard.qml:29 app/BookingEditorCard.qml:43
+#: app/BookingCard.qml:30 app/BookingEditorCard.qml:43
 #, kde-format
 msgid "Reference"
 msgstr "참조"
 
-#: app/BookingCard.qml:35 app/BookingCard.qml:67
+#: app/BookingCard.qml:36 app/BookingCard.qml:68
 #: app/ProgramMembershipCard.qml:46 app/ProgramMembershipPage.qml:101
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy to Clipboard"
 msgstr "클립보드에 복사"
 
-#: app/BookingCard.qml:39
+#: app/BookingCard.qml:40
 #, kde-format
 msgid "Booking reference copied to clipboard"
 msgstr "예약 번호가 클립보드에 복사됨"
 
-#: app/BookingCard.qml:52 app/BookingEditorCard.qml:51 app/TicketEditor.qml:71
+#: app/BookingCard.qml:53 app/BookingEditorCard.qml:51 app/TicketEditor.qml:71
 #, kde-format
 msgid "Under name"
 msgstr "예약자 이름"
 
-#: app/BookingCard.qml:61
+#: app/BookingCard.qml:62
 #, kde-format
 msgid "Ticket number:"
 msgstr "승차권 번호:"
 
-#: app/BookingCard.qml:71
+#: app/BookingCard.qml:72
 #, kde-format
 msgid "Ticket number copied to clipboard"
 msgstr "승차권 번호가 클립보드에 복사됨"
@@ -3251,7 +3251,7 @@ msgstr "현재 사용 중인 장치에서 차내 정보를 지원하지 않습�
 msgid "Matrix Integration"
 msgstr "Matrix 통합"
 
-#: app/SettingsPage.qml:284 app/SettingsPage.qml:328
+#: app/SettingsPage.qml:284 app/SettingsPage.qml:331
 #, kde-format
 msgid "Logged in as %1"
 msgstr "%1(으)로 로그인됨"
@@ -3271,22 +3271,22 @@ msgstr "Matrix ID"
 msgid "Password"
 msgstr "암호"
 
-#: app/SettingsPage.qml:311
+#: app/SettingsPage.qml:314
 #, kde-format
 msgid "Log out"
 msgstr "로그아웃"
 
-#: app/SettingsPage.qml:311
+#: app/SettingsPage.qml:314
 #, kde-format
 msgid "Log in"
 msgstr "로그인"
 
-#: app/SettingsPage.qml:318
+#: app/SettingsPage.qml:321
 #, kde-format
 msgid "Traewelling Integration"
 msgstr "Traewelling 통합"
 
-#: app/SettingsPage.qml:323
+#: app/SettingsPage.qml:326
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -3298,27 +3298,27 @@ msgstr ""
 "수 있습니다. 자세한 정보는 <a href=\"https://traewelling.de\">traewelling."
 "de</a> 사이트를 참조하십시오"
 
-#: app/SettingsPage.qml:331
+#: app/SettingsPage.qml:334
 #, kde-format
 msgid "Login"
 msgstr "로그인"
 
-#: app/SettingsPage.qml:336
+#: app/SettingsPage.qml:339
 #, kde-format
 msgid "Logout"
 msgstr "로그아웃"
 
-#: app/SettingsPage.qml:343
+#: app/SettingsPage.qml:346
 #, kde-format
 msgid "Contributing"
 msgstr "기여"
 
-#: app/SettingsPage.qml:347
+#: app/SettingsPage.qml:350
 #, kde-format
 msgid "I contribute to OpenStreetMap"
 msgstr "저는 OpenStreetMap에 기여합니다"
 
-#: app/SettingsPage.qml:348
+#: app/SettingsPage.qml:351
 #, kde-format
 msgid "Enables OSM editing options."
 msgstr "OSM 편집 옵션을 활성화합니다."
@@ -4301,18 +4301,18 @@ msgstr ""
 msgid "Got it!"
 msgstr "알겠습니다!"
 
-#: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:75
-#: matrix/matrixmanager.cpp:132
+#: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:79
+#: matrix/matrixmanager.cpp:136
 #, kde-format
 msgid "Syncing…"
 msgstr "동기화 중…"
 
-#: matrix/matrixmanager.cpp:59
+#: matrix/matrixmanager.cpp:63
 #, kde-format
 msgid "This server does not support logging in using a password"
 msgstr "서버에서 암호로 로그인을 지원하지 않음"
 
-#: matrix/matrixmanager.cpp:91
+#: matrix/matrixmanager.cpp:95
 #, kde-format
 msgid "Logging in"
 msgstr "로그인 중"

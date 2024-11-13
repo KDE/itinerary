@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-12 00:41+0000\n"
-"PO-Revision-Date: 2024-11-04 20:36+0100\n"
+"POT-Creation-Date: 2024-11-13 00:40+0000\n"
+"PO-Revision-Date: 2024-11-11 20:09+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.08.2\n"
+"X-Generator: Lokalize 24.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -472,39 +472,39 @@ msgstr "Terminale"
 msgid "Arrival time"
 msgstr "Orario di arrivo"
 
-#: app/BookingCard.qml:23
+#: app/BookingCard.qml:24
 #, kde-format
 msgid "Booking"
 msgstr "Prenotazione"
 
-#: app/BookingCard.qml:29 app/BookingEditorCard.qml:43
+#: app/BookingCard.qml:30 app/BookingEditorCard.qml:43
 #, kde-format
 msgid "Reference"
 msgstr "Riferimento"
 
-#: app/BookingCard.qml:35 app/BookingCard.qml:67
+#: app/BookingCard.qml:36 app/BookingCard.qml:68
 #: app/ProgramMembershipCard.qml:46 app/ProgramMembershipPage.qml:101
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy to Clipboard"
 msgstr "Copia negli appunti"
 
-#: app/BookingCard.qml:39
+#: app/BookingCard.qml:40
 #, kde-format
 msgid "Booking reference copied to clipboard"
 msgstr "Riferimento della prenotazione copiato negli appunti"
 
-#: app/BookingCard.qml:52 app/BookingEditorCard.qml:51 app/TicketEditor.qml:71
+#: app/BookingCard.qml:53 app/BookingEditorCard.qml:51 app/TicketEditor.qml:71
 #, kde-format
 msgid "Under name"
 msgstr "Con il nome"
 
-#: app/BookingCard.qml:61
+#: app/BookingCard.qml:62
 #, kde-format
 msgid "Ticket number:"
 msgstr "Numero del biglietto:"
 
-#: app/BookingCard.qml:71
+#: app/BookingCard.qml:72
 #, kde-format
 msgid "Ticket number copied to clipboard"
 msgstr "Numero del biglietto copiato negli appunti"
@@ -516,9 +516,7 @@ msgid "Booking"
 msgstr "Prenotazione"
 
 #: app/BusDelegate.qml:149
-#, fuzzy, kde-format
-#| msgctxt "train seat"
-#| msgid "Seat: <b>%1</b>"
+#, kde-format
 msgctxt "bus seat"
 msgid "Seat: <b>%1</b>"
 msgstr "Posto: <b>%1</b>"
@@ -3257,7 +3255,7 @@ msgstr ""
 msgid "Matrix Integration"
 msgstr "Integrazione Matrix"
 
-#: app/SettingsPage.qml:284 app/SettingsPage.qml:328
+#: app/SettingsPage.qml:284 app/SettingsPage.qml:331
 #, kde-format
 msgid "Logged in as %1"
 msgstr "Accesso eseguito come %1"
@@ -3277,22 +3275,22 @@ msgstr "ID Matrix"
 msgid "Password"
 msgstr "Password"
 
-#: app/SettingsPage.qml:311
+#: app/SettingsPage.qml:314
 #, kde-format
 msgid "Log out"
 msgstr "Esci"
 
-#: app/SettingsPage.qml:311
+#: app/SettingsPage.qml:314
 #, kde-format
 msgid "Log in"
 msgstr "Accedi"
 
-#: app/SettingsPage.qml:318
+#: app/SettingsPage.qml:321
 #, kde-format
 msgid "Traewelling Integration"
 msgstr "Integrazione Traewelling"
 
-#: app/SettingsPage.qml:323
+#: app/SettingsPage.qml:326
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -3305,27 +3303,27 @@ msgstr ""
 "pubblici. Per maggiori informazioni, visita <a href=\"https://traewelling.de"
 "\">traewelling.de</a>"
 
-#: app/SettingsPage.qml:331
+#: app/SettingsPage.qml:334
 #, kde-format
 msgid "Login"
 msgstr "Accedi"
 
-#: app/SettingsPage.qml:336
+#: app/SettingsPage.qml:339
 #, kde-format
 msgid "Logout"
 msgstr "Chiudi sessione"
 
-#: app/SettingsPage.qml:343
+#: app/SettingsPage.qml:346
 #, kde-format
 msgid "Contributing"
 msgstr "Contribuire"
 
-#: app/SettingsPage.qml:347
+#: app/SettingsPage.qml:350
 #, kde-format
 msgid "I contribute to OpenStreetMap"
 msgstr "Contribuisco a OpenStreetMap"
 
-#: app/SettingsPage.qml:348
+#: app/SettingsPage.qml:351
 #, kde-format
 msgid "Enables OSM editing options."
 msgstr "Abilita le opzioni di modifica OSM."
@@ -4282,18 +4280,18 @@ msgstr ""
 msgid "Got it!"
 msgstr "Ricevuto!"
 
-#: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:75
-#: matrix/matrixmanager.cpp:132
+#: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:79
+#: matrix/matrixmanager.cpp:136
 #, kde-format
 msgid "Syncing…"
 msgstr "Sincronizzazione…"
 
-#: matrix/matrixmanager.cpp:59
+#: matrix/matrixmanager.cpp:63
 #, kde-format
 msgid "This server does not support logging in using a password"
 msgstr "Questo server non supporta l'accesso tramite password"
 
-#: matrix/matrixmanager.cpp:91
+#: matrix/matrixmanager.cpp:95
 #, kde-format
 msgid "Logging in"
 msgstr "Accesso"
