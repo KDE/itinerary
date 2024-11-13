@@ -75,7 +75,9 @@ void MatrixManager::login(const QString &matrixId, const QString &password)
         account.setDeviceName(m_deviceName);
         account.sync();
         m_accountRegistry.add(connection);
-    });
+        connection->setLazyLoading(true);
+        connection->syncLoop();
+    }, Qt::SingleShotConnection);
 
     connect(connection, &Connection::loginError, this, [this](const QString &message) {
         setInfoString(message);
