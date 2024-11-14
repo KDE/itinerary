@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-13 00:40+0000\n"
+"POT-Creation-Date: 2024-11-14 00:40+0000\n"
 "PO-Revision-Date: 2024-11-12 12:03+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -4285,8 +4285,7 @@ msgstr ""
 msgid "Got it!"
 msgstr "¡Entendido!"
 
-#: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:79
-#: matrix/matrixmanager.cpp:136
+#: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:127
 #, kde-format
 msgid "Syncing…"
 msgstr "Sincronizando..."
@@ -4296,7 +4295,7 @@ msgstr "Sincronizando..."
 msgid "This server does not support logging in using a password"
 msgstr "Este servidor no permite iniciar sesión usando una contraseña"
 
-#: matrix/matrixmanager.cpp:95
+#: matrix/matrixmanager.cpp:86
 #, kde-format
 msgid "Logging in"
 msgstr "Iniciando sesión"

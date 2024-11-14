@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kitinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-13 00:40+0000\n"
+"POT-Creation-Date: 2024-11-14 00:40+0000\n"
 "PO-Revision-Date: 2023-07-14 22:15+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -4480,8 +4480,7 @@ msgstr ""
 msgid "Got it!"
 msgstr "Compreendi!"
 
-#: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:79
-#: matrix/matrixmanager.cpp:136
+#: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:127
 #, kde-format
 msgid "Syncing…"
 msgstr "A sincronizar…"
@@ -4491,7 +4490,7 @@ msgstr "A sincronizar…"
 msgid "This server does not support logging in using a password"
 msgstr "Este servidor não suporta a autenticação com senhas"
 
-#: matrix/matrixmanager.cpp:95
+#: matrix/matrixmanager.cpp:86
 #, kde-format
 msgid "Logging in"
 msgstr "A autenticar"

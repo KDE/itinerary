@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-13 00:40+0000\n"
-"PO-Revision-Date: 2024-11-04 09:42+0100\n"
+"POT-Creation-Date: 2024-11-14 00:40+0000\n"
+"PO-Revision-Date: 2024-11-11 09:30+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -517,9 +517,7 @@ msgid "Booking"
 msgstr "Reserva"
 
 #: app/BusDelegate.qml:149
-#, fuzzy, kde-format
-#| msgctxt "train seat"
-#| msgid "Seat: <b>%1</b>"
+#, kde-format
 msgctxt "bus seat"
 msgid "Seat: <b>%1</b>"
 msgstr "Seient: <b>%1</b>"
@@ -4288,8 +4286,7 @@ msgstr ""
 msgid "Got it!"
 msgstr "Entesos!"
 
-#: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:79
-#: matrix/matrixmanager.cpp:136
+#: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:127
 #, kde-format
 msgid "Syncing…"
 msgstr "S'està sincronitzant…"
@@ -4299,7 +4296,7 @@ msgstr "S'està sincronitzant…"
 msgid "This server does not support logging in using a password"
 msgstr "Este servidor no permet iniciar la sessió utilitzant una contrasenya"
 
-#: matrix/matrixmanager.cpp:95
+#: matrix/matrixmanager.cpp:86
 #, kde-format
 msgid "Logging in"
 msgstr "S'està iniciant la sessió"

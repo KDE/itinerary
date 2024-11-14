@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-13 00:40+0000\n"
-"PO-Revision-Date: 2024-11-05 07:16+0100\n"
+"POT-Creation-Date: 2024-11-14 00:40+0000\n"
+"PO-Revision-Date: 2024-11-12 09:04+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Accelerator-Marker: &\n"
 "X-Environment: kde\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.08.3\n"
 "X-Text-Markup: kde4\n"
 
 #, kde-format
@@ -522,9 +522,7 @@ msgid "Booking"
 msgstr "Réservations"
 
 #: app/BusDelegate.qml:149
-#, fuzzy, kde-format
-#| msgctxt "train seat"
-#| msgid "Seat: <b>%1</b>"
+#, kde-format
 msgctxt "bus seat"
 msgid "Seat: <b>%1</b>"
 msgstr "Siège : <b>%1</b>"
@@ -4321,8 +4319,7 @@ msgstr ""
 msgid "Got it!"
 msgstr "Compris !"
 
-#: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:79
-#: matrix/matrixmanager.cpp:136
+#: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:127
 #, kde-format
 msgid "Syncing…"
 msgstr "Synchronisation…"
@@ -4333,7 +4330,7 @@ msgid "This server does not support logging in using a password"
 msgstr ""
 "Ce serveur ne prend pas en charge la connexion à l'aide d'un mot de passe"
 
-#: matrix/matrixmanager.cpp:95
+#: matrix/matrixmanager.cpp:86
 #, kde-format
 msgid "Logging in"
 msgstr "Connexion en cours"
