@@ -101,7 +101,7 @@ QVariant TripGroupModel::data(const QModelIndex &index, int role) const
             return Position::Future;
         }
 
-        if (!tripGroup.endDateTime().isValid()) {
+        if (!tripGroup.endDateTime().isValid() && tripGroup.beginDateTime().date() < today()) {
             return Position::Past; // end-less are never current, the future case is already covered above
         }
         return Position::Current;
