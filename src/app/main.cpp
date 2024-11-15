@@ -458,6 +458,10 @@ int main(int argc, char **argv)
 #if HAVE_MATRIX
     matrixSyncManager.setMatrixManager(qobject_cast<MatrixManager*>(matrixController.manager()));
     matrixSyncManager.setTripGroupManager(&tripGroupMgr);
+    matrixSyncManager.setDocumentManager(&docMgr);
+    matrixSyncManager.setLiveDataManager(&liveDataMgr);
+    matrixSyncManager.setTransferManager(&transferManager);
+    matrixSyncManager.setPkPassManager(&pkPassMgr);
     matrixSyncManager.setAutoSyncTrips(settings.matrixAutoSyncTrips());
     QObject::connect(&settings, &Settings::matrixAutoSyncTripsChanged, &matrixSyncManager, &MatrixSyncManager::setAutoSyncTrips);
 #endif

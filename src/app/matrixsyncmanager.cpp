@@ -5,32 +5,119 @@
 
 #include "matrixsyncmanager.h"
 
+#include "documentmanager.h"
+#include "livedatamanager.h"
 #include "logging.h"
+#include "matrixsynccontent.h"
+#include "pkpassmanager.h"
 #include "reservationmanager.h"
+#include "transfer.h"
+#include "transfermanager.h"
 #include "tripgroup.h"
 #include "tripgroupmanager.h"
 
+#if HAVE_MATRIX
 #include <matrix/matrixmanager.h>
 
-#include <KItinerary/JsonLdDocument>
-
 #include <Quotient/connection.h>
+#include <Quotient/csapi/room_state.h>
+#include <Quotient/jobs/downloadfilejob.h>
 #include <Quotient/room.h>
+#endif
+
+#include <KItinerary/DocumentUtil>
+#include <KItinerary/JsonLdDocument>
 
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QScopedValueRollback>
+#include <QUrl>
 
 using namespace Qt::Literals;
 
 constexpr inline auto MatrixRoomTypeKey = "type"_L1;
 constexpr inline auto ItineraryRoomType = "org.kde.itinerary.tripSync"_L1;
-constexpr inline auto ReservationEventType = "org.kde.itinerary.reservation"_L1;
 
 MatrixSyncManager::MatrixSyncManager(QObject *parent)
     : QObject(parent)
 {
+    // local changes going out
+    connect(&m_stateQueue, &MatrixSyncLocalStateQueue::batchChanged, this, [this](const QString &batchId, const QString &tgId) {
+        const auto room = roomForTripGroup(tgId);
+        setState(room, MatrixSyncContent::stateEventForBatch(batchId, m_tripGroupMgr->reservationManager()));
+    });
+    connect(&m_stateQueue, &MatrixSyncLocalStateQueue::batchRemoved, this, [this](const QString &batchId, const QString &tgId) {
+        const auto room = roomForTripGroup(tgId);
+        setState(room, MatrixSyncContent::stateEventForDeletedBatch(batchId));
+    });
+
+    connect(&m_stateQueue, &MatrixSyncLocalStateQueue::liveDataChanged, this, [this](const QString &batchId) {
+        const auto room = roomForBatch(batchId);
+        setState(room, MatrixSyncContent::stateEventForLiveData(batchId));
+    });
+
+    connect(&m_stateQueue, &MatrixSyncLocalStateQueue::transferChanged, this, [this](const QString &batchId, Transfer::Alignment alignment) {
+        const auto room = roomForBatch(batchId);
+        setState(room, MatrixSyncContent::stateEventForTransfer(batchId, alignment, m_transferMgr));
+    });
+
+    connect(&m_stateQueue, &MatrixSyncLocalStateQueue::documentAdded, this, [this](const QString &docId, const QString &tgId) {
+        const auto room = roomForTripGroup(tgId);
+        setState(room, MatrixSyncContent::stateEventForDocument(docId, m_docMgr));
+    });
+    connect(&m_stateQueue, &MatrixSyncLocalStateQueue::pkPassChanged, this, [this](const QString &passId, const QString &tgId) {
+        const auto room = roomForTripGroup(tgId);
+        setState(room, MatrixSyncContent::stateEventForPkPass(passId));
+    });
+
+
+    // remote changes coming in
+    connect(&m_remoteQueue, &MatrixSyncRemoteStateQueue::downloadFile, this, [this](const MatrixSyncStateEvent &state) {
+        auto job = m_matrixMgr->connection()->downloadFile(state.url(), state.encryptionData());
+        connect(job, &Quotient::DownloadFileJob::success, this, [this, job]() {
+            job->deleteLater();
+            m_remoteQueue.setFileName(job->targetFileName());
+        });
+        connect(job, &Quotient::DownloadFileJob::failure, this, [this, job]() {
+            job->deleteLater();
+            m_remoteQueue.downloadFailed();
+        });
+    });
+
+    connect(&m_remoteQueue, &MatrixSyncRemoteStateQueue::reservationEvent, this, [this](const MatrixSyncStateEvent &state) {
+        MatrixSyncLocalChangeLock recursionLock(&m_stateQueue);
+        TripGroupingBlocker blocker(m_tripGroupMgr);
+        const auto resId = MatrixSyncContent::readBatch(state, m_tripGroupMgr->reservationManager());
+
+        // we can get here also without a matching trip group, when creating a new one
+        // that is fine, the trip group will be created later below then
+        if (const auto &tgId = m_roomToTripGroupMap.value(state.roomId()); !tgId.isEmpty()) {
+            auto tg = m_tripGroupMgr->tripGroup(tgId);
+            if (!resId.isEmpty() && !tg.elements().contains(resId)) {
+                qCDebug(Log) << "adding reservation to trip group" << resId << tgId << tg.elements();
+                m_tripGroupMgr->addToGroup({resId}, tgId);
+            }
+            // resId.isEmpty() ie. deletion will be automatically propagated
+        }
+    });
+    connect(&m_remoteQueue, &MatrixSyncRemoteStateQueue::liveDataEvent, this, [this](const MatrixSyncStateEvent &state) {
+        MatrixSyncLocalChangeLock recursionLock(&m_stateQueue);
+        MatrixSyncContent::readLiveData(state, m_ldm);
+    });
+    connect(&m_remoteQueue, &MatrixSyncRemoteStateQueue::transferEvent, this, [this](const MatrixSyncStateEvent &state) {
+        MatrixSyncLocalChangeLock recursionLock(&m_stateQueue);
+        MatrixSyncContent::readTransfer(state, m_transferMgr);
+    });
+    connect(&m_remoteQueue, &MatrixSyncRemoteStateQueue::documentEvent, this, [this](const MatrixSyncStateEvent &state) {
+        MatrixSyncLocalChangeLock recursionLock(&m_stateQueue);
+        m_docMgr->addDocument(state.stateKey(), state.extraData("metadata"_L1), state.fileName());
+    });
+    connect(&m_remoteQueue, &MatrixSyncRemoteStateQueue::pkPassEvent, this, [this](const MatrixSyncStateEvent &state) {
+        MatrixSyncLocalChangeLock recursionLock(&m_stateQueue);
+        m_pkPassMgr->importPass(QUrl::fromLocalFile(state.fileName()));
+    });
 }
+
 
 MatrixSyncManager::~MatrixSyncManager() = default;
 
@@ -44,6 +131,30 @@ void MatrixSyncManager::setTripGroupManager(TripGroupManager *tripGroupMgr)
 void MatrixSyncManager::setMatrixManager(MatrixManager *mxMgr)
 {
     m_matrixMgr = mxMgr;
+    init();
+}
+
+void MatrixSyncManager::setDocumentManager(DocumentManager *docMgr)
+{
+    m_docMgr = docMgr;
+    init();
+}
+
+void MatrixSyncManager::setLiveDataManager(LiveDataManager *ldm)
+{
+    m_ldm = ldm;
+    init();
+}
+
+void MatrixSyncManager::setTransferManager(TransferManager *transferMgr)
+{
+    m_transferMgr = transferMgr;
+    init();
+}
+
+void MatrixSyncManager::setPkPassManager(PkPassManager *pkPassMgr)
+{
+    m_pkPassMgr = pkPassMgr;
     init();
 }
 
@@ -101,7 +212,7 @@ void MatrixSyncManager::syncTripGroup(const QString &tgId)
             m_roomToTripGroupMap[job->roomId()] = tgId;
 
             for (const auto &elem : tg.elements()) {
-                writeBatchToRoom(elem, room);
+                writeBatchToRoom(elem, tgId);
             }
 
             initRoom(room);
@@ -113,7 +224,7 @@ void MatrixSyncManager::syncTripGroup(const QString &tgId)
 #if HAVE_MATRIX
 void MatrixSyncManager::init()
 {
-    if (!m_matrixMgr || !m_tripGroupMgr) {
+    if (!m_matrixMgr || !m_tripGroupMgr || !m_docMgr || !m_ldm || !m_transferMgr || !m_pkPassMgr) {
         return;
     }
 
@@ -135,6 +246,31 @@ void MatrixSyncManager::init()
         initConnection(m_matrixMgr->connection());
     }
     connect(m_matrixMgr, &MatrixManager::connectionChanged, this, [this]() { initConnection(m_matrixMgr->connection()); });
+
+    connect(m_tripGroupMgr->reservationManager(), &ReservationManager::batchChanged, &m_stateQueue, [this](const auto &batchId) {
+        m_stateQueue.append(MatrixSyncLocalStateQueue::BatchChange, batchId, m_tripGroupMgr->tripGroupIdForReservation(batchId));
+    });
+    connect(m_tripGroupMgr->reservationManager(), &ReservationManager::batchContentChanged, &m_stateQueue, [this](const auto &batchId) {
+        m_stateQueue.append(MatrixSyncLocalStateQueue::BatchChange, batchId, m_tripGroupMgr->tripGroupIdForReservation(batchId));
+    });
+
+    connect(m_ldm, &LiveDataManager::journeyUpdated, &m_stateQueue, [this](const auto &batchId) {
+        m_stateQueue.append(MatrixSyncLocalStateQueue::LiveDataChange, batchId);
+    });
+
+    connect(m_transferMgr, &TransferManager::transferAdded, &m_stateQueue, [this](const auto &transfer) {
+        m_stateQueue.append(MatrixSyncLocalStateQueue::TransferChange, transfer.identifier());
+    });
+    connect(m_transferMgr, &TransferManager::transferChanged, &m_stateQueue, [this](const auto &transfer) {
+        m_stateQueue.append(MatrixSyncLocalStateQueue::TransferChange, transfer.identifier());
+    });
+    connect(m_transferMgr, &TransferManager::transferRemoved, &m_stateQueue, [this](const auto &batchId, auto align) {
+        m_stateQueue.append(MatrixSyncLocalStateQueue::TransferChange, Transfer::identifier(batchId, align));
+    });
+
+    connect(m_pkPassMgr, &PkPassManager::passUpdated, &m_stateQueue, [this](const auto &passId) {
+        m_stateQueue.append(MatrixSyncLocalStateQueue::PkPassChange, passId, tripGroupForPkPass(passId));
+    });
 }
 
 void MatrixSyncManager::initConnection(Quotient::Connection *connection)
@@ -148,6 +284,16 @@ void MatrixSyncManager::initConnection(Quotient::Connection *connection)
     connect(connection, &Quotient::Connection::joinedRoom, this, &MatrixSyncManager::joinedRoom);
     connect(connection, &Quotient::Connection::leftRoom, this, &MatrixSyncManager::deleteRoom);
     connect(connection, &Quotient::Connection::aboutToDeleteRoom, this, &MatrixSyncManager::deleteRoom);
+    connect(connection, &Quotient::Connection::isOnlineChanged, this, [this]{
+        if (m_matrixMgr->connection()->isOnline() == m_isOnline) {
+            return;
+        }
+        m_isOnline = m_matrixMgr->connection()->isOnline();
+        if (m_isOnline) {
+            qCDebug(Log) << "Matrix connection online, starting replay";
+            m_stateQueue.retry();
+        }
+    });
 
     if (m_matrixMgr->connected()) {
         reloadRooms();
@@ -162,6 +308,30 @@ void MatrixSyncManager::initRoom(Quotient::Room *room)
         for (const auto &event : events) {
             roomEvent(room, event.get());
         }
+    });
+    connect(room, &Quotient::Room::newFileTransfer, this, [](const QString &id, const QUrl &localFile) {
+        qCDebug(Log) << "newFileTransfer" << id <<localFile;
+    });
+    connect(room, &Quotient::Room::fileTransferCompleted, this, [this, room](const QString &id, [[maybe_unused]] const QUrl &localFile, const Quotient::FileSourceInfo &info) {
+        qCDebug(Log) << "fileTransferCompleted" << id;
+        if (!m_currentUpload || (*m_currentUpload).stateKey() != id) {
+            qCDebug(Log) << "  not the transfer we were waiting on" << (m_currentUpload ? (*m_currentUpload).stateKey() : QString());
+            return; // not one of ours
+        }
+        m_currentUpload->setFileInfo(info);
+        if (!m_currentUpload->needsUpload()) {
+            setState(room, std::move(*m_currentUpload));
+        } else {
+            qCWarning(Log) << "Something went wrong with upload state tracking" << m_currentUpload->stateKey();
+        }
+    });
+    connect(room, &Quotient::Room::fileTransferFailed, this, [](const QString &id, const QString &errorMsg) {
+        // TODO error handling
+        qCWarning(Log) << "file transfer failed:" << id <<errorMsg;
+    });
+    connect(room, &Quotient::Room::fileTransferProgress, this, [](const QString &id, qint64 progress, qint64 total) {
+        // TODO
+        qCDebug(Log) << "file transfer progress" << id << progress << total;
     });
 }
 
@@ -212,7 +382,7 @@ void MatrixSyncManager::roomTopicChanged(Quotient::Room *room)
 void MatrixSyncManager::roomEvent(Quotient::Room *room, const Quotient::RoomEvent *event)
 {
     qDebug() << "NEW EVENT" << room->id() << event->contentJson();
-    if (!event->isStateEvent() || event->matrixType() != ReservationEventType) {
+    if (!event->isStateEvent()) {
         return;
     }
     const auto it = m_roomToTripGroupMap.find(room->id());
@@ -220,16 +390,12 @@ void MatrixSyncManager::roomEvent(Quotient::Room *room, const Quotient::RoomEven
         return;
     }
 
-    QScopedValueRollback recursionLock(m_recursionLock, true);
-    TripGroupingBlocker blocker(m_tripGroupMgr);
-    const auto resId = readBatchFromStateEvent(static_cast<const Quotient::StateEvent*>(event));
-
-    auto tg = m_tripGroupMgr->tripGroup(it.value());
-    if (!resId.isEmpty() && !tg.elements().contains(resId)) {
-        qCDebug(Log) << "adding reservation to trip group" << resId << it.value() << tg.elements();
-        m_tripGroupMgr->addToGroup({resId}, it.value());
+    const auto state = static_cast<const Quotient::StateEvent*>(event);
+    if (state->matrixType() == MatrixSync::DocumentEventType && m_docMgr->hasDocument(state->stateKey())) {
+        return;
     }
-    // resId.isEmpty() ie. deletion will be automatically propagated
+
+    m_remoteQueue.append(*state);
 }
 
 void MatrixSyncManager::joinedRoom(Quotient::Room *room, Quotient::Room *prevRoom)
@@ -262,7 +428,7 @@ void MatrixSyncManager::deleteRoom(Quotient::Room *room)
 
 void MatrixSyncManager::tripGroupAdded(const QString &tgId)
 {
-    if (!m_autoSyncTrips || m_recursionLock) {
+    if (!m_autoSyncTrips || m_stateQueue.isSuspended()) {
         return;
     }
     syncTripGroup(tgId);
@@ -270,22 +436,18 @@ void MatrixSyncManager::tripGroupAdded(const QString &tgId)
 
 void MatrixSyncManager::tripGroupChanged(const QString &tgId)
 {
-    if (m_recursionLock) {
+    if (m_stateQueue.isSuspended()) {
         return;
     }
 
     qDebug() << tgId;
-    if (!m_matrixMgr->connected()) { // TODO what do we do with changes while not connected?
-        return;
-    }
-
     const auto tg = m_tripGroupMgr->tripGroup(tgId);
     qDebug() << tg.matrixRoomId();
     if (tg.matrixRoomId().isEmpty()) {
         return; // not a synchronized room
     }
 
-    auto room = m_matrixMgr->connection()->room(tg.matrixRoomId());
+    const auto room = m_matrixMgr->connection()->room(tg.matrixRoomId());
     if (!room) {
         qDebug() << "room not found?" << tg.matrixRoomId();
         return;
@@ -296,23 +458,25 @@ void MatrixSyncManager::tripGroupChanged(const QString &tgId)
         room->setTopic(tg.name());
     }
 
-    // TODO update group content
-    // TODO this still needs proper state tracking
-    const auto elems = tg.elements();
-    for (const auto &resId : elems) {
-        writeBatchToRoom(resId, room);
-    }
-    const auto states = room->currentState().eventsOfType(ReservationEventType);
+    // update group content
+    const auto states = room->currentState().eventsOfType(MatrixSync::ReservationEventType);
+    auto elems = tg.elements();
     for (auto event : states) {
-        if (!elems.contains(event->stateKey())) {
-            writeBatchDeletionToRoom(event->stateKey(), room);
+        const auto it = std::find(elems.begin(), elems.end(), event->stateKey());
+        if (it == elems.end()) {
+            m_stateQueue.append(MatrixSyncLocalStateQueue::BatchRemove, event->stateKey(), tgId);
+        } else {
+            elems.erase(it);
         }
+    }
+    for (const auto &batchId : elems) {
+        writeBatchToRoom(batchId, tgId);
     }
 }
 
 void MatrixSyncManager::tripGroupRemoved(const QString &tgId)
 {
-    if (m_recursionLock) {
+    if (m_stateQueue.isSuspended()) {
         return;
     }
 
@@ -339,17 +503,36 @@ void MatrixSyncManager::tripGroupRemoved(const QString &tgId)
 
 void MatrixSyncManager::createTripGroupFromRoom(Quotient::Room *room)
 {
-    QScopedValueRollback recursionLock(m_recursionLock, true);
+    MatrixSyncLocalChangeLock recursionLock(&m_stateQueue);
     TripGroupingBlocker tgBlocker(m_tripGroupMgr);
+
+    // load existing documents
+    const auto documents = room->currentState().eventsOfType(MatrixSync::DocumentEventType);
+    for (auto event : documents) {
+        if (!m_docMgr->hasDocument(event->stateKey())) {
+            m_remoteQueue.append(*event);
+        }
+    }
 
     // load existing content
     QStringList elems;
-    const auto states = room->currentState().eventsOfType(ReservationEventType);
+    const auto states = room->currentState().eventsOfType(MatrixSync::ReservationEventType);
     for (auto event : states) {
-        auto resId = readBatchFromStateEvent(event);
-        if (!resId.isEmpty()) {
-            elems.push_back(std::move(resId));
-        }
+        m_remoteQueue.append(*event);
+        elems.push_back(event->stateKey());
+    }
+    const auto ldmStates = room->currentState().eventsOfType(MatrixSync::LiveDataEventType);
+    for (auto event : ldmStates) {
+        m_remoteQueue.append(*event);
+    }
+    const auto transferStates = room->currentState().eventsOfType(MatrixSync::TransferEventType);
+    for (auto event :transferStates) {
+        m_remoteQueue.append(*event);
+    }
+
+    const auto pkPasses = room->currentState().eventsOfType(MatrixSync::PkPassEventType);
+    for (auto pass : pkPasses) {
+        m_remoteQueue.append(*pass);
     }
 
     // create group
@@ -364,53 +547,105 @@ void MatrixSyncManager::createTripGroupFromRoom(Quotient::Room *room)
     m_roomToTripGroupMap.insert(room->id(), tgId);
 }
 
-QString MatrixSyncManager::readBatchFromStateEvent(const Quotient::StateEvent *event)
+void MatrixSyncManager::writeBatchToRoom(const QString &batchId, const QString &tgId)
 {
-    const auto resJson = event->contentJson()["content"_L1].toString().toUtf8();
-    if (resJson.isEmpty()) {
-        // deleted
-        m_tripGroupMgr->reservationManager()->removeBatch(event->stateKey());
+    const auto resIds = m_tripGroupMgr->reservationManager()->reservationsForBatch(batchId);
+    for (const auto &resId : resIds) {
+        const auto res = m_tripGroupMgr->reservationManager()->reservation(resId);
+        const auto docIds = KItinerary::DocumentUtil::documentIds(res);
+        qCDebug(Log) << docIds;
+        for (const auto &docIdV : docIds) {
+            const auto docId = docIdV.toString();
+            qCDebug(Log) << docId << m_docMgr->hasDocument(docId);
+            if (!docId.isEmpty() && m_docMgr->hasDocument(docId)) {
+                m_stateQueue.append(MatrixSyncLocalStateQueue::DocumentAdd, docId, tgId);
+            }
+        }
+        if (const auto pkPassId = PkPassManager::passId(res); !pkPassId.isEmpty()) {
+            m_stateQueue.append(MatrixSyncLocalStateQueue::PkPassChange, pkPassId, tgId);
+        }
+    }
+
+    m_stateQueue.append(MatrixSyncLocalStateQueue::BatchChange, batchId, tgId);
+
+    if (m_ldm->journey(batchId).mode() != KPublicTransport::JourneySection::Invalid) {
+        m_stateQueue.append(MatrixSyncLocalStateQueue::LiveDataChange, batchId);
+    }
+    for (const auto align : { Transfer::Before, Transfer::After }) {
+        const auto transfer = m_transferMgr->transfer(batchId, align);
+        if (transfer.state() != Transfer::UndefinedState) {
+            m_stateQueue.append(MatrixSyncLocalStateQueue::TransferChange, Transfer::identifier(batchId, align));
+        }
+    }
+}
+
+Quotient::Room* MatrixSyncManager::roomForTripGroup(const QString &tgId) const
+{
+    const auto tg = m_tripGroupMgr->tripGroup(tgId);
+    if (tg.matrixRoomId().isEmpty()) {
         return {};
     }
 
-    const auto res = KItinerary::JsonLdDocument::fromJsonSingular(QJsonDocument::fromJson(resJson).object());
-    // TODO batch vs reservation separation!
-    auto resId = event->stateKey();
-    if (m_tripGroupMgr->reservationManager()->hasBatch(resId)) {
-        qCDebug(Log) << "updating reservation" << resId;
-        m_tripGroupMgr->reservationManager()->updateReservation(resId, res);
-        qCDebug(Log) << "updated reservation" << resId;
-    } else {
-        qCDebug(Log) << "creating reservation" << resId;
-        resId = m_tripGroupMgr->reservationManager()->addReservation(res, resId);
-        qCDebug(Log) << "created reservation" << resId;
+    auto room = m_matrixMgr->connection()->room(tg.matrixRoomId());
+    if (!room) {
+        qCDebug(Log) << "room not found?" << tg.matrixRoomId();
+        return {};
     }
-    return resId;
+
+    return room;
 }
 
-void MatrixSyncManager::writeBatchToRoom(const QString &batchId, Quotient::Room *room)
+Quotient::Room* MatrixSyncManager::roomForBatch(const QString &batchId) const
 {
-    if (!m_matrixMgr->connected()) {
+    return roomForTripGroup(m_tripGroupMgr->tripGroupIdForReservation(batchId));
+}
+
+void MatrixSyncManager::setState(Quotient::Room *room, MatrixSyncStateEvent &&state)
+{
+    if (!room) {
+        qCDebug(Log) << "Can't set state event, got no room!" << state.type() << state.stateKey();
+        m_stateQueue.replayNext();
         return;
     }
 
-    const auto res = m_tripGroupMgr->reservationManager()->reservation(batchId);
-    Quotient::StateEvent state(ReservationEventType, batchId, QJsonObject({
-        {"content"_L1, QString::fromUtf8(QJsonDocument(KItinerary::JsonLdDocument::toJson(res)).toJson(QJsonDocument::Compact))}
-    }));
-    room->setState(state); // TODO error handling?
-    qCDebug(Log) << "Set state event for" << batchId << room->id();
-}
-
-void MatrixSyncManager::writeBatchDeletionToRoom(const QString &batchId, Quotient::Room *room)
-{
-    if (!m_matrixMgr->connected()) {
+    if (state.needsUpload()) {
+        qCDebug(Log) << "Uploading file for local state change" << state.type() << state.stateKey();
+        room->uploadFile(state.stateKey(), QUrl::fromLocalFile(state.fileName()));
+        m_currentUpload = std::move(state);
         return;
     }
 
-    Quotient::StateEvent state(ReservationEventType, batchId, {});
-    room->setState(state); // TODO error handling?
-    qCDebug(Log) << "Removed reservation" << batchId << room->id();
+    qCDebug(Log) << "Setting state event for" << state.type() << state.stateKey() << "in room" << room->id();
+    auto job = room->setState(state.toQuotient());
+    connect(job, &Quotient::SetRoomStateWithKeyJob::finished, this, [this, job]() {
+        if (!job->status().good()) {
+            qCWarning(Log) << job->status();
+            // for persistent errors retry wont help
+            if (job->status().code == Quotient::BaseJob::StatusCode::NotFound) { // that's what most 41x errors are mapped to
+                qCWarning(Log) << "considering error as persistent and skipping";
+                m_stateQueue.replayNext();
+            }
+        } else {
+            m_stateQueue.replayNext();
+        }
+    });
+}
+
+QString MatrixSyncManager::tripGroupForPkPass(const QString &pkPassId) const
+{
+    for (auto it = m_roomToTripGroupMap.begin(); it != m_roomToTripGroupMap.end(); ++it) {
+        const auto tg = m_tripGroupMgr->tripGroup(it.value());
+        const auto elems = tg.elements();
+        for (const auto &batchId : elems) {
+            const auto resIds = m_tripGroupMgr->reservationManager()->reservationsForBatch(batchId);
+            for (const auto &resId : resIds) {
+                if (PkPassManager::passId(m_tripGroupMgr->reservationManager()->reservation(resId)) == pkPassId) {
+                    return it.value();
+                }
+            }
+        }
+    }
+    return {};
 }
 #endif
 

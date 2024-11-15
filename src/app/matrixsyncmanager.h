@@ -8,10 +8,19 @@
 
 #include <config-itinerary.h>
 
+#include "matrixsynclocalstatequeue.h"
+#include "matrixsyncremotestatequeue.h"
+#include "matrixsyncstateevent.h"
+
 #include <QHash>
 #include <QObject>
+#include <QSet>
 
+class DocumentManager;
+class LiveDataManager;
 class MatrixManager;
+class PkPassManager;
+class TransferManager;
 class TripGroupManager;
 
 namespace Quotient {
@@ -20,7 +29,6 @@ class Room;
 class RoomEvent;
 class StateEvent;
 }
-
 
 /** Matrix-based trip synchronization. */
 class MatrixSyncManager : public QObject
@@ -33,6 +41,10 @@ public:
 #if HAVE_MATRIX
     void setMatrixManager(MatrixManager *mxMgr);
     void setTripGroupManager(TripGroupManager *tripGroupMgr);
+    void setDocumentManager(DocumentManager *docMgr);
+    void setLiveDataManager(LiveDataManager *ldm);
+    void setTransferManager(TransferManager *transferMgr);
+    void setPkPassManager(PkPassManager *pkPassMgr);
     void setAutoSyncTrips(bool autoSync);
 #endif
 
@@ -57,18 +69,35 @@ private:
     void tripGroupChanged(const QString &tgId);
     void tripGroupRemoved(const QString &tgId);
 
-    void createTripGroupFromRoom(Quotient::Room *room);
-    QString readBatchFromStateEvent(const Quotient::StateEvent *event);
+    void pkPassChanged(const QString &passId);
 
-    void writeBatchToRoom(const QString &batchId, Quotient::Room *room);
-    void writeBatchDeletionToRoom(const QString &bathId, Quotient::Room *room);
+    void createTripGroupFromRoom(Quotient::Room *room);
+
+    void writeBatchToRoom(const QString &batchId, const QString &tgId);
+
+    [[nodiscard]] Quotient::Room* roomForTripGroup(const QString &tgId) const;
+    [[nodiscard]] Quotient::Room* roomForBatch(const QString &batchId) const;
+    void setState(Quotient::Room *room, MatrixSyncStateEvent &&state);
+
+    /** Brute force search for the trip group a pkpass belongs into.
+     *  We might want something for efficient than that eventually.
+     */
+    [[nodiscard]] QString tripGroupForPkPass(const QString &pkPassId) const;
+
+    MatrixSyncLocalStateQueue m_stateQueue;
+    MatrixSyncRemoteStateQueue m_remoteQueue;
+    std::optional<MatrixSyncStateEvent> m_currentUpload;
 
     MatrixManager *m_matrixMgr = nullptr;
     TripGroupManager *m_tripGroupMgr = nullptr;
+    DocumentManager *m_docMgr = nullptr;
+    LiveDataManager *m_ldm = nullptr;
+    TransferManager *m_transferMgr = nullptr;
+    PkPassManager *m_pkPassMgr = nullptr;
     // map Matrix room ids to trip groups
     QHash<QString, QString> m_roomToTripGroupMap;
     bool m_autoSyncTrips = false;
-    bool m_recursionLock = false;
+    bool m_isOnline = false;
 #endif
 };
 
