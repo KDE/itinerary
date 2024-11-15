@@ -10,7 +10,9 @@
 
 #include <QHash>
 #include <QObject>
+#include <QSet>
 
+class DocumentManager;
 class MatrixManager;
 class TripGroupManager;
 
@@ -20,7 +22,6 @@ class Room;
 class RoomEvent;
 class StateEvent;
 }
-
 
 /** Matrix-based trip synchronization. */
 class MatrixSyncManager : public QObject
@@ -33,6 +34,7 @@ public:
 #if HAVE_MATRIX
     void setMatrixManager(MatrixManager *mxMgr);
     void setTripGroupManager(TripGroupManager *tripGroupMgr);
+    void setDocumentManager(DocumentManager *docMgr);
     void setAutoSyncTrips(bool autoSync);
 #endif
 
@@ -59,14 +61,19 @@ private:
 
     void createTripGroupFromRoom(Quotient::Room *room);
     QString readBatchFromStateEvent(const Quotient::StateEvent *event);
+    void readDocumentFromStateEvent(const Quotient::StateEvent *event);
 
     void writeBatchToRoom(const QString &batchId, Quotient::Room *room);
-    void writeBatchDeletionToRoom(const QString &bathId, Quotient::Room *room);
+    void writeBatchDeletionToRoom(const QString &batchId, Quotient::Room *room);
+    void writeDocumentToRoom(const QString &docId, Quotient::Room *room);
 
     MatrixManager *m_matrixMgr = nullptr;
     TripGroupManager *m_tripGroupMgr = nullptr;
+    DocumentManager *m_docMgr = nullptr;
     // map Matrix room ids to trip groups
     QHash<QString, QString> m_roomToTripGroupMap;
+    QSet<QString> m_pendingDocumentUploads;
+    QSet<QString> m_pendingDocumentDownloads;
     bool m_autoSyncTrips = false;
     bool m_recursionLock = false;
 #endif

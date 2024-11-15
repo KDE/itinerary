@@ -5,27 +5,34 @@
 
 #include "matrixsyncmanager.h"
 
+#include "documentmanager.h"
 #include "logging.h"
 #include "reservationmanager.h"
 #include "tripgroup.h"
 #include "tripgroupmanager.h"
 
+#if HAVE_MATRIX
 #include <matrix/matrixmanager.h>
 
-#include <KItinerary/JsonLdDocument>
-
 #include <Quotient/connection.h>
+#include <Quotient/jobs/downloadfilejob.h>
 #include <Quotient/room.h>
+#endif
+
+#include <KItinerary/DocumentUtil>
+#include <KItinerary/JsonLdDocument>
 
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QScopedValueRollback>
+#include <QUrl>
 
 using namespace Qt::Literals;
 
 constexpr inline auto MatrixRoomTypeKey = "type"_L1;
 constexpr inline auto ItineraryRoomType = "org.kde.itinerary.tripSync"_L1;
 constexpr inline auto ReservationEventType = "org.kde.itinerary.reservation"_L1;
+constexpr inline auto DocumentEventType = "org.kde.itinerary.document"_L1;
 
 MatrixSyncManager::MatrixSyncManager(QObject *parent)
     : QObject(parent)
@@ -44,6 +51,12 @@ void MatrixSyncManager::setTripGroupManager(TripGroupManager *tripGroupMgr)
 void MatrixSyncManager::setMatrixManager(MatrixManager *mxMgr)
 {
     m_matrixMgr = mxMgr;
+    init();
+}
+
+void MatrixSyncManager::setDocumentManager(DocumentManager *docMgr)
+{
+    m_docMgr = docMgr;
     init();
 }
 
@@ -113,7 +126,7 @@ void MatrixSyncManager::syncTripGroup(const QString &tgId)
 #if HAVE_MATRIX
 void MatrixSyncManager::init()
 {
-    if (!m_matrixMgr || !m_tripGroupMgr) {
+    if (!m_matrixMgr || !m_tripGroupMgr || !m_docMgr) {
         return;
     }
 
@@ -162,6 +175,35 @@ void MatrixSyncManager::initRoom(Quotient::Room *room)
         for (const auto &event : events) {
             roomEvent(room, event.get());
         }
+    });
+    connect(room, &Quotient::Room::newFileTransfer, this, [](const QString &id, const QUrl &localFile) {
+        qCDebug(Log) << "newFileTransfer" << id <<localFile;
+    });
+    connect(room, &Quotient::Room::fileTransferCompleted, this, [this, room](const QString &id, [[maybe_unused]] const QUrl &localFile, Quotient::FileSourceInfo info) {
+        qCDebug(Log) << "fileTransferCompleted" << id <<m_pendingDocumentUploads;
+        if (m_pendingDocumentUploads.contains(id)) {
+            const auto url = Quotient::getUrlFromSourceInfo(info);
+            qCDebug(Log) << "File upload completed" << id << url;
+            m_pendingDocumentUploads.remove(id);
+
+            QJsonObject file;
+            Quotient::JsonObjectConverter<Quotient::EncryptedFileMetadata>::dumpTo(file, std::get<Quotient::EncryptedFileMetadata>(info));
+
+            Quotient::StateEvent state(DocumentEventType, id, QJsonObject({
+                {"url"_L1, url.toString()},
+                {"file"_L1, file},
+                {"metadata"_L1, KItinerary::JsonLdDocument::toJson(m_docMgr->documentInfo(id))}
+            }));
+            room->setState(state); // TODO error handling?
+        }
+    });
+    connect(room, &Quotient::Room::fileTransferFailed, this, [](const QString &id, const QString &errorMsg) {
+        // TODO error handling
+        qCWarning(Log) << "file transfer failed:" << id <<errorMsg;
+    });
+    connect(room, &Quotient::Room::fileTransferProgress, this, [](const QString &id, qint64 progress, qint64 total) {
+        // TODO
+        qCDebug(Log) << "file transfer progress" << id << progress << total;
     });
 }
 
@@ -212,7 +254,7 @@ void MatrixSyncManager::roomTopicChanged(Quotient::Room *room)
 void MatrixSyncManager::roomEvent(Quotient::Room *room, const Quotient::RoomEvent *event)
 {
     qDebug() << "NEW EVENT" << room->id() << event->contentJson();
-    if (!event->isStateEvent() || event->matrixType() != ReservationEventType) {
+    if (!event->isStateEvent()) {
         return;
     }
     const auto it = m_roomToTripGroupMap.find(room->id());
@@ -220,16 +262,22 @@ void MatrixSyncManager::roomEvent(Quotient::Room *room, const Quotient::RoomEven
         return;
     }
 
-    QScopedValueRollback recursionLock(m_recursionLock, true);
-    TripGroupingBlocker blocker(m_tripGroupMgr);
-    const auto resId = readBatchFromStateEvent(static_cast<const Quotient::StateEvent*>(event));
+    if (event->matrixType() == ReservationEventType) {
+        QScopedValueRollback recursionLock(m_recursionLock, true);
+        TripGroupingBlocker blocker(m_tripGroupMgr);
+        const auto resId = readBatchFromStateEvent(static_cast<const Quotient::StateEvent*>(event));
 
-    auto tg = m_tripGroupMgr->tripGroup(it.value());
-    if (!resId.isEmpty() && !tg.elements().contains(resId)) {
-        qCDebug(Log) << "adding reservation to trip group" << resId << it.value() << tg.elements();
-        m_tripGroupMgr->addToGroup({resId}, it.value());
+        auto tg = m_tripGroupMgr->tripGroup(it.value());
+        if (!resId.isEmpty() && !tg.elements().contains(resId)) {
+            qCDebug(Log) << "adding reservation to trip group" << resId << it.value() << tg.elements();
+            m_tripGroupMgr->addToGroup({resId}, it.value());
+        }
+        // resId.isEmpty() ie. deletion will be automatically propagated
     }
-    // resId.isEmpty() ie. deletion will be automatically propagated
+
+    if (event->matrixType() == DocumentEventType) {
+        readDocumentFromStateEvent(static_cast<const Quotient::StateEvent*>(event));
+    }
 }
 
 void MatrixSyncManager::joinedRoom(Quotient::Room *room, Quotient::Room *prevRoom)
@@ -342,6 +390,12 @@ void MatrixSyncManager::createTripGroupFromRoom(Quotient::Room *room)
     QScopedValueRollback recursionLock(m_recursionLock, true);
     TripGroupingBlocker tgBlocker(m_tripGroupMgr);
 
+    // load existing documents
+    const auto documents = room->currentState().eventsOfType(DocumentEventType);
+    for (auto event :documents) {
+        readDocumentFromStateEvent(event);
+    }
+
     // load existing content
     QStringList elems;
     const auto states = room->currentState().eventsOfType(ReservationEventType);
@@ -388,12 +442,53 @@ QString MatrixSyncManager::readBatchFromStateEvent(const Quotient::StateEvent *e
     return resId;
 }
 
+void MatrixSyncManager::readDocumentFromStateEvent(const Quotient::StateEvent *event)
+{
+    const auto docId = event->stateKey();
+    if (m_docMgr->hasDocument(docId) || m_pendingDocumentDownloads.contains(docId)) {
+        return;
+    }
+
+    const auto url = QUrl(event->contentJson().value("url"_L1).toString());
+    const auto metaData = KItinerary::JsonLdDocument::fromJsonSingular(event->contentJson().value("metadata"_L1).toObject());
+    Quotient::EncryptedFileMetadata encryptionData;
+    Quotient::JsonObjectConverter<Quotient::EncryptedFileMetadata>::fillFrom(event->contentJson().value("file"_L1).toObject(), encryptionData);
+    m_pendingDocumentDownloads.insert(docId);
+    auto job = m_matrixMgr->connection()->downloadFile(url, encryptionData);
+    connect(job, &Quotient::DownloadFileJob::success, this, [this, job, metaData, docId]() {
+        qCDebug(Log) << "Download suceeded" << docId;
+        job->deleteLater();
+        m_pendingDocumentDownloads.remove(docId);
+        m_docMgr->addDocument(docId, metaData, job->targetFileName());
+    });
+    connect(job, &Quotient::DownloadFileJob::failure, this, [this, job, docId]() {
+        qCDebug(Log) << "Download failed" << job->errorString() << docId;
+        job->deleteLater();
+        m_pendingDocumentDownloads.remove(docId);
+    });
+}
+
 void MatrixSyncManager::writeBatchToRoom(const QString &batchId, Quotient::Room *room)
 {
     if (!m_matrixMgr->connected()) {
         return;
     }
 
+    const auto resIds = m_tripGroupMgr->reservationManager()->reservationsForBatch(batchId);
+    for (const auto &resId : resIds) {
+        const auto res = m_tripGroupMgr->reservationManager()->reservation(resId);
+        const auto docIds = KItinerary::DocumentUtil::documentIds(res);
+        qCDebug(Log) << docIds;
+        for (const auto &docIdV : docIds) {
+            const auto docId = docIdV.toString();
+            qCDebug(Log) << docId << m_docMgr->hasDocument(docId);
+            if (!docId.isEmpty() && m_docMgr->hasDocument(docId)) {
+                writeDocumentToRoom(docId, room);
+            }
+        }
+    }
+
+    // TODO write the full batch!
     const auto res = m_tripGroupMgr->reservationManager()->reservation(batchId);
     Quotient::StateEvent state(ReservationEventType, batchId, QJsonObject({
         {"content"_L1, QString::fromUtf8(QJsonDocument(KItinerary::JsonLdDocument::toJson(res)).toJson(QJsonDocument::Compact))}
@@ -411,6 +506,23 @@ void MatrixSyncManager::writeBatchDeletionToRoom(const QString &batchId, Quotien
     Quotient::StateEvent state(ReservationEventType, batchId, {});
     room->setState(state); // TODO error handling?
     qCDebug(Log) << "Removed reservation" << batchId << room->id();
+}
+
+void MatrixSyncManager::writeDocumentToRoom(const QString &docId, Quotient::Room *room)
+{
+    qCDebug(Log) << "writeDocumentToRoom" << docId << room->id() <<m_pendingDocumentUploads << room->currentState().contains(DocumentEventType, docId);
+    if (m_pendingDocumentUploads.contains(docId)) { // upload already in progress
+        return;
+    }
+
+    if (room->currentState().contains(DocumentEventType, docId)) { // already uploaded
+        return;
+    }
+
+    qCDebug(Log) << "Starting file upload" << docId << QUrl::fromLocalFile(m_docMgr->documentFilePath(docId));
+    m_pendingDocumentUploads.insert(docId);
+    room->uploadFile(docId, QUrl::fromLocalFile(m_docMgr->documentFilePath(docId)));
+    qDebug(Log) << "status:" << room->fileTransferInfo(docId).status;
 }
 #endif
 
