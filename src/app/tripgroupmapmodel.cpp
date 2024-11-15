@@ -189,7 +189,8 @@ void TripGroupMapModel::expandJourneySection(KPublicTransport::JourneySection jn
     }
 
     // generate path if missing
-    if (jnySec.path().sections().empty()) {
+    const auto jnyPath = jnySec.path();
+    if (jnyPath.sections().empty()) {
         PathSection pathSec;
         pathSec.setPath({QPointF{jnySec.from().longitude(), jnySec.from().latitude()}, QPointF{jnySec.to().longitude(), jnySec.to().latitude()}});
         Path path;
@@ -197,7 +198,7 @@ void TripGroupMapModel::expandJourneySection(KPublicTransport::JourneySection jn
         jnySec.setPath(path);
     }
 
-    for (const auto &pathSec : jnySec.path().sections()) {
+    for (const auto &pathSec : jnyPath.sections()) {
         m_boundingBox |= pathSec.path().boundingRect();
     }
 
