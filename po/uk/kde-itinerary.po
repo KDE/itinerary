@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-15 00:40+0000\n"
-"PO-Revision-Date: 2024-11-11 17:55+0200\n"
+"PO-Revision-Date: 2024-11-15 17:43+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -2535,11 +2535,10 @@ msgid "Map download finished."
 msgstr "Отримання карти завершено."
 
 #: app/Main.qml:430
-#, fuzzy, kde-format
-#| msgid "Matrix Integration"
+#, kde-format
 msgctxt "@title:window"
 msgid "Matrix Session Verification"
-msgstr "Інтеграція з Matrix"
+msgstr "Перевірка сеансу Matrix"
 
 #: app/MapStopoverInfoSheetDrawer.qml:59
 #, kde-format
@@ -2557,64 +2556,63 @@ msgid "Show indoor map"
 msgstr "Переглянути внутрішню карту"
 
 #: app/MatrixKeyVerificationPage.qml:12
-#, fuzzy, kde-format
-#| msgid "Matrix Integration"
+#, kde-format
 msgid "Matrix Session Verification"
-msgstr "Інтеграція з Matrix"
+msgstr "Перевірка сеансу Matrix"
 
 #: app/MatrixKeyVerificationPage.qml:41
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Waiting for device to accept verification."
-msgstr ""
+msgstr "Очікуємо на прийняття пристроєм підтвердження."
 
 #: app/MatrixKeyVerificationPage.qml:43
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Incoming key verification request from device <b>%1</b>"
-msgstr ""
+msgstr "Вхідний запит щодо перевірки ключа від пристрою <b>%1</b>"
 
 #: app/MatrixKeyVerificationPage.qml:45
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Waiting for other party to verify."
-msgstr ""
+msgstr "Очікування на перевірку з іншого боку"
 
 #: app/MatrixKeyVerificationPage.qml:47
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Successfully verified device <b>%1</b>"
-msgstr ""
+msgstr "Успішно перевірено пристрій <b>%1</b>"
 
 #: app/MatrixKeyVerificationPage.qml:52
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session verification was canceled for unknown reason."
-msgstr ""
+msgstr "Перевірку сеансу скасовано через невідому причину."
 
 #: app/MatrixKeyVerificationPage.qml:54
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session verification timed out."
-msgstr ""
+msgstr "Перевищено час очікування на підтвердження сеансу."
 
 #: app/MatrixKeyVerificationPage.qml:56
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session verification timed out for remote party."
-msgstr ""
+msgstr "Перевищено час очікування на підтвердження з боку іншого пристрою."
 
 #: app/MatrixKeyVerificationPage.qml:58
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "You canceled the session verification."
-msgstr ""
+msgstr "Вами скасовано перевірку сеансу."
 
 #: app/MatrixKeyVerificationPage.qml:60
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The remote party canceled the session verification."
-msgstr ""
+msgstr "Перевірку сеансу скасовано на боці іншого пристрою."
 
 #: app/MatrixKeyVerificationPage.qml:62
 #, kde-format
@@ -2623,6 +2621,7 @@ msgid ""
 "The session verification was canceled because we received an unexpected "
 "message."
 msgstr ""
+"Перевірку сеансу скасовано, оскільки отримано неочікуване повідомлення."
 
 #: app/MatrixKeyVerificationPage.qml:64
 #, kde-format
@@ -2631,6 +2630,8 @@ msgid ""
 "The remote party canceled the session verification because it received an "
 "unexpected message."
 msgstr ""
+"Перевірку сеансу скасовано на боці іншого пристрою, оскільки ним отримано "
+"неочікуване повідомлення."
 
 #: app/MatrixKeyVerificationPage.qml:66
 #, kde-format
@@ -2639,6 +2640,8 @@ msgid ""
 "The session verification was canceled because it received a message for an "
 "unknown session."
 msgstr ""
+"Перевірку сеансу скасовано, оскільки отримано повідомлення з невідомого "
+"сеансу."
 
 #: app/MatrixKeyVerificationPage.qml:68
 #, kde-format
@@ -2647,6 +2650,8 @@ msgid ""
 "The remote party canceled the session verification because it received a "
 "message for an unknown session."
 msgstr ""
+"Перевірку сеансу скасовано на боці іншого пристрою, оскільки ним отримано "
+"повідомлення з невідомого сеансу."
 
 #: app/MatrixKeyVerificationPage.qml:70
 #, kde-format
@@ -2655,6 +2660,8 @@ msgid ""
 "The session verification was canceled because NeoChat is unable to handle "
 "this verification method."
 msgstr ""
+"Перевірку сеансу скасовано, оскільки NeoChat не може обробити цей спосіб "
+"перевірки."
 
 #: app/MatrixKeyVerificationPage.qml:72
 #, kde-format
@@ -2663,12 +2670,14 @@ msgid ""
 "The remote party canceled the session verification because it is unable to "
 "handle this verification method."
 msgstr ""
+"Перевірку сеансу скасовано на боці іншого пристрою, оскільки обробка ним "
+"цього способу перевірки неможлива."
 
 #: app/MatrixKeyVerificationPage.qml:74
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session verification was canceled because the keys are incorrect."
-msgstr ""
+msgstr "Перевірку сеансу скасовано, оскільки ключі є помилковими."
 
 #: app/MatrixKeyVerificationPage.qml:76
 #, kde-format
@@ -2679,6 +2688,11 @@ msgid ""
 "\n"
 "<b>Please log out and log back in, your session is broken/corrupt.</b>"
 msgstr ""
+"Перевірку сеансу скасовано на боці іншого пристрою, оскільки ключі є "
+"помилковими.\n"
+"\n"
+"<b>Будь ласка, вийдіть з облікового запису і увійдіть знову. Дані вашого "
+"сеансу пошкоджено.</b>"
 
 #: app/MatrixKeyVerificationPage.qml:78
 #, kde-format
@@ -2686,6 +2700,8 @@ msgctxt "Matrix session verification"
 msgid ""
 "The session verification was canceled because it verifies an unexpected user."
 msgstr ""
+"Перевірку сеансу скасовано, оскільки у ній виконується перевірка "
+"неочікуваного користувача."
 
 #: app/MatrixKeyVerificationPage.qml:80
 #, kde-format
@@ -2694,13 +2710,15 @@ msgid ""
 "The remote party canceled the session verification because it verifies an "
 "unexpected user."
 msgstr ""
+"Перевірку сеансу скасовано на боці іншого пристрою, оскільки у ній "
+"виконується перевірка неочікуваного користувача."
 
 #: app/MatrixKeyVerificationPage.qml:82
 #, kde-format
 msgctxt "Matrix session verification"
 msgid ""
 "The session verification was canceled because we received an invalid message."
-msgstr ""
+msgstr "Перевірку сеансу скасовано, оскільки отримано некоректне повідомлення."
 
 #: app/MatrixKeyVerificationPage.qml:84
 #, kde-format
@@ -2709,18 +2727,20 @@ msgid ""
 "The remote party canceled the session verification because it received an "
 "invalid message."
 msgstr ""
+"Перевірку сеансу скасовано на боці іншого пристрою, оскільки ним отримано "
+"некоректне повідомлення."
 
 #: app/MatrixKeyVerificationPage.qml:87
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session was accepted on a different device"
-msgstr ""
+msgstr "Сеанс було прийнято на іншому пристрої"
 
 #: app/MatrixKeyVerificationPage.qml:89
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session verification was canceled because of a mismatched key."
-msgstr ""
+msgstr "Перевірку сеансу скасовано, оскільки ключі не збігаються."
 
 #: app/MatrixKeyVerificationPage.qml:91
 #, kde-format
@@ -2729,12 +2749,14 @@ msgid ""
 "The remote party canceled the session verification because of a mismatched "
 "key."
 msgstr ""
+"Перевірку сеансу скасовано на боці іншого пристрою через невідповідність "
+"ключів."
 
 #: app/MatrixKeyVerificationPage.qml:93
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session verification was canceled because the keys do not match."
-msgstr ""
+msgstr "Перевірку сеансу скасовано, оскільки ключі не збігаються."
 
 #: app/MatrixKeyVerificationPage.qml:95
 #, kde-format
@@ -2743,25 +2765,26 @@ msgid ""
 "The remote party canceled the session verification because the keys do not "
 "match."
 msgstr ""
+"Перевірку сеансу скасовано на боці іншого пристрою, оскільки ключі не "
+"збігаються."
 
 #: app/MatrixKeyVerificationPage.qml:97
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session verification was canceled due to an unknown error."
-msgstr ""
+msgstr "Перевірку сеансу скасовано через невідому помилку."
 
 #: app/MatrixKeyVerificationPage.qml:114
-#, fuzzy, kde-format
-#| msgid "Notifications"
+#, kde-format
 msgctxt "Matrix session verfication"
 msgid "Emoji Verification"
-msgstr "Сповіщення"
+msgstr "Перевірка емодзі"
 
 #: app/MatrixKeyVerificationPage.qml:117
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Compare a set of emoji on both devices."
-msgstr ""
+msgstr "Порівняйте набір емоційок на обох пристроях."
 
 #: app/MatrixKeyVerificationPage.qml:128
 #, kde-format
@@ -2769,18 +2792,20 @@ msgctxt "Matrix session verification"
 msgid ""
 "Confirm the emoji below are displayed on both devices, in the same order."
 msgstr ""
+"Підтвердьте, що наведені нижче емоційки показано на обох пристроях у тому "
+"самому порядку."
 
 #: app/MatrixKeyVerificationPage.qml:165
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "They match"
-msgstr ""
+msgstr "Збігаються"
 
 #: app/MatrixKeyVerificationPage.qml:171
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "They don't match"
-msgstr ""
+msgstr "Не збігаються"
 
 #: app/MatrixKeyVerificationPage.qml:207
 #, kde-format
@@ -2790,7 +2815,7 @@ msgstr "Прийняти"
 #: app/MatrixKeyVerificationPage.qml:213
 #, kde-format
 msgid "Decline"
-msgstr ""
+msgstr "Відхилити"
 
 #: app/MatrixRoomSelectionSheet.qml:19
 #, kde-format
@@ -3541,19 +3566,19 @@ msgstr "Пароль"
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Session verified"
-msgstr ""
+msgstr "Сеанс перевірено"
 
 #: app/SettingsPage.qml:316
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Session not verified."
-msgstr ""
+msgstr "Сеанс не перевірено."
 
 #: app/SettingsPage.qml:317
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Initiate session verification in your Matrix chat client."
-msgstr ""
+msgstr "Ініціювати перевірку сеансу у вашому клієнті спілкування у Matrix."
 
 #: app/SettingsPage.qml:324
 #, kde-format
@@ -4578,16 +4603,14 @@ msgid "This server does not support logging in using a password"
 msgstr "На цьому сервері не передбачено підтримки входу за допомогою пароля"
 
 #: matrix/matrixmanager.cpp:78
-#, fuzzy, kde-format
-#| msgid "Logging in"
+#, kde-format
 msgid "Logging in…"
-msgstr "Вхід до системи"
+msgstr "Вхід до системи…"
 
 #: matrix/matrixmanager.cpp:114
-#, fuzzy, kde-format
-#| msgid "Log out"
+#, kde-format
 msgid "Logged out"
-msgstr "Вийти"
+msgstr "Вийшли"
 
 #: metadataextractor/itineraryextractor.cpp:118
 #, kde-format

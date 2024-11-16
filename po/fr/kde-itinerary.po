@@ -2788,7 +2788,8 @@ msgid "They don't match"
 msgstr ""
 
 #: app/MatrixKeyVerificationPage.qml:207
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Accept"
 msgid "Accept"
 msgstr "Accepter"
 
