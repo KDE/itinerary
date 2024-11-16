@@ -746,6 +746,16 @@ Kirigami.ScrollablePage {
                     onClicked: MatrixSyncManager.syncTripGroup(root.tripGroupId)
                 }
                 FormCard.FormButtonDelegate {
+                    text: "Detach from Matrix"
+                    icon.name: "list-remove"
+                    visible: Settings.developmentMode && root.tripGroup.matrixRoomId !== ""
+                    onClicked: {
+                        root.tripGroup.matrixRoomId = ""
+                        TripGroupManager.updateTripGroup(root.tripGroupId, root.tripGroup);
+                        root.tripGroup = TripGroupManager.tripGroup(root.tripGroupId);
+                    }
+                }
+                FormCard.FormButtonDelegate {
                     text: i18n("Delete trip")
                     icon.name: "edit-delete"
                     onClicked: deleteTripGroupWarningDialog.open()
