@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-09 02:31+0000\n"
+"POT-Creation-Date: 2024-11-18 02:39+0000\n"
 "PO-Revision-Date: 2024-11-04 06:42+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -119,7 +119,7 @@ msgid "Add to calendar…"
 msgstr "Dodaj v koledar…"
 
 #: app/ActionsCard.qml:74 app/Main.qml:221 app/TripGroupDelegate.qml:182
-#: app/TripGroupPage.qml:695
+#: app/TripGroupPage.qml:696
 #, kde-format
 msgid "Export…"
 msgstr "Izvozi…"
@@ -170,7 +170,7 @@ msgid "Itinerary file (*.itinerary)"
 msgstr "Datoteka itinerarja (* .itinerary)"
 
 #: app/ActionsCard.qml:173 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:663
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:664
 #, kde-format
 msgid "Actions"
 msgstr "Akcije"
@@ -477,39 +477,39 @@ msgstr "Terminal"
 msgid "Arrival time"
 msgstr "Čas prihoda"
 
-#: app/BookingCard.qml:23
+#: app/BookingCard.qml:24
 #, kde-format
 msgid "Booking"
 msgstr "Rezervacija"
 
-#: app/BookingCard.qml:29 app/BookingEditorCard.qml:43
+#: app/BookingCard.qml:30 app/BookingEditorCard.qml:43
 #, kde-format
 msgid "Reference"
 msgstr "Referenca"
 
-#: app/BookingCard.qml:35 app/BookingCard.qml:67
+#: app/BookingCard.qml:36 app/BookingCard.qml:68
 #: app/ProgramMembershipCard.qml:46 app/ProgramMembershipPage.qml:101
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy to Clipboard"
 msgstr "Kopiraj v odložišče"
 
-#: app/BookingCard.qml:39
+#: app/BookingCard.qml:40
 #, kde-format
 msgid "Booking reference copied to clipboard"
 msgstr "Referenca rezervacije kopirana na odložišče"
 
-#: app/BookingCard.qml:52 app/BookingEditorCard.qml:51 app/TicketEditor.qml:71
+#: app/BookingCard.qml:53 app/BookingEditorCard.qml:51 app/TicketEditor.qml:71
 #, kde-format
 msgid "Under name"
 msgstr "Pod imenom"
 
-#: app/BookingCard.qml:61
+#: app/BookingCard.qml:62
 #, kde-format
 msgid "Ticket number:"
 msgstr "Številka vozovnice:"
 
-#: app/BookingCard.qml:71
+#: app/BookingCard.qml:72
 #, kde-format
 msgid "Ticket number copied to clipboard"
 msgstr "Številka vozovnice kopirana na odložišče"
@@ -2876,42 +2876,42 @@ msgstr "Članstvo v programu"
 msgid "Show Pass"
 msgstr "Prikaži prepustnico"
 
-#: app/publictransport.cpp:119 app/publictransport.cpp:146
+#: app/publictransport.cpp:122 app/publictransport.cpp:149
 #, kde-format
 msgid "Walk"
 msgstr "Hoja"
 
-#: app/publictransport.cpp:121
+#: app/publictransport.cpp:124
 #, kde-format
 msgid "Wait"
 msgstr "Čakanje"
 
-#: app/publictransport.cpp:130
+#: app/publictransport.cpp:133
 #, kde-format
 msgid "Rented bicycle"
 msgstr "Najet bicikelj"
 
-#: app/publictransport.cpp:132
+#: app/publictransport.cpp:135
 #, kde-format
 msgid "Rented moped"
 msgstr "Najet moped"
 
-#: app/publictransport.cpp:134
+#: app/publictransport.cpp:137
 #, kde-format
 msgid "Rented kick scooter"
 msgstr "Najet skuter"
 
-#: app/publictransport.cpp:136
+#: app/publictransport.cpp:139
 #, kde-format
 msgid "Rented car"
 msgstr "Najet avto"
 
-#: app/publictransport.cpp:142
+#: app/publictransport.cpp:145
 #, kde-format
 msgid "Bicycle"
 msgstr "Bicikelj"
 
-#: app/publictransport.cpp:144 app/StatisticsPage.qml:149
+#: app/publictransport.cpp:147 app/StatisticsPage.qml:149
 #, kde-format
 msgid "Car"
 msgstr "Avto"
@@ -3259,7 +3259,7 @@ msgstr "Na žalost Informacije niso podprte na vaši napravi ob tem času."
 msgid "Matrix Integration"
 msgstr "Integracija z Matrixom"
 
-#: app/SettingsPage.qml:284 app/SettingsPage.qml:328
+#: app/SettingsPage.qml:284 app/SettingsPage.qml:331
 #, kde-format
 msgid "Logged in as %1"
 msgstr "Prijavljen kot %1"
@@ -3279,22 +3279,22 @@ msgstr "Identifikator za Matrix"
 msgid "Password"
 msgstr "Geslo"
 
-#: app/SettingsPage.qml:311
+#: app/SettingsPage.qml:314
 #, kde-format
 msgid "Log out"
 msgstr "Odjavi se"
 
-#: app/SettingsPage.qml:311
+#: app/SettingsPage.qml:314
 #, kde-format
 msgid "Log in"
 msgstr "Prijavi se"
 
-#: app/SettingsPage.qml:318
+#: app/SettingsPage.qml:321
 #, kde-format
 msgid "Traewelling Integration"
 msgstr "Integracija s Traewelling"
 
-#: app/SettingsPage.qml:323
+#: app/SettingsPage.qml:326
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -3307,27 +3307,27 @@ msgstr ""
 "javnim prevozom. Za več informacij obiščite <a href=\"https://traewelling.de"
 "\">traewelling.de</a>"
 
-#: app/SettingsPage.qml:331
+#: app/SettingsPage.qml:334
 #, kde-format
 msgid "Login"
 msgstr "Prijava"
 
-#: app/SettingsPage.qml:336
+#: app/SettingsPage.qml:339
 #, kde-format
 msgid "Logout"
 msgstr "Odjava"
 
-#: app/SettingsPage.qml:343
+#: app/SettingsPage.qml:346
 #, kde-format
 msgid "Contributing"
 msgstr "Pripevali"
 
-#: app/SettingsPage.qml:347
+#: app/SettingsPage.qml:350
 #, kde-format
 msgid "I contribute to OpenStreetMap"
 msgstr "Prispevam k OpenStreetMap"
 
-#: app/SettingsPage.qml:348
+#: app/SettingsPage.qml:351
 #, kde-format
 msgid "Enables OSM editing options."
 msgstr "Omogoči možnosti urejanja OSM."
@@ -3340,7 +3340,7 @@ msgstr "Izleti"
 #: app/statisticsmodel.cpp:112 app/statisticsmodel.cpp:145
 #: app/statisticsmodel.cpp:160 app/statisticsmodel.cpp:175
 #: app/statisticsmodel.cpp:190 app/statisticsmodel.cpp:205
-#: app/TripGroupPage.qml:638
+#: app/TripGroupPage.qml:639
 #, kde-format
 msgid "Distance"
 msgstr "Razdalje"
@@ -3353,7 +3353,7 @@ msgstr "Hotelske nočitve"
 #: app/statisticsmodel.cpp:122 app/statisticsmodel.cpp:150
 #: app/statisticsmodel.cpp:165 app/statisticsmodel.cpp:180
 #: app/statisticsmodel.cpp:195 app/statisticsmodel.cpp:210
-#: app/TripGroupPage.qml:647
+#: app/TripGroupPage.qml:648
 #, kde-format
 msgid "CO₂"
 msgstr "CO₂"
@@ -3580,13 +3580,13 @@ msgstr "Dodaj dogodek…"
 msgid "Add restaurant…"
 msgstr "Dodaj restavracijo…"
 
-#: app/TimelinePage.qml:166 app/TripGroupPage.qml:727
+#: app/TimelinePage.qml:166 app/TripGroupPage.qml:728
 #, kde-format
 msgctxt "@action:button"
 msgid "Go To Now"
 msgstr "Pojdi na Zdaj"
 
-#: app/TimelinePage.qml:173 app/TripGroupPage.qml:735
+#: app/TimelinePage.qml:173 app/TripGroupPage.qml:736
 #: app/TripGroupsPage.qml:118 app/TripGroupsPage.qml:137
 #, kde-format
 msgctxt "@action:button"
@@ -3899,7 +3899,7 @@ msgstr[3] "Valut: %2"
 msgid "Edit…"
 msgstr "Uredi…"
 
-#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:702
+#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:703
 #, kde-format
 msgid "Delete trip"
 msgstr "Izbriši potovanje"
@@ -4015,22 +4015,22 @@ msgstr "Uvozi"
 msgid "Add"
 msgstr "Dodaj"
 
-#: app/TripGroupPage.qml:656
+#: app/TripGroupPage.qml:657
 #, kde-format
 msgid "Cost"
 msgstr "Strošek"
 
-#: app/TripGroupPage.qml:668
+#: app/TripGroupPage.qml:669
 #, kde-format
 msgid "Rename…"
 msgstr "Preimenuj…"
 
-#: app/TripGroupPage.qml:677
+#: app/TripGroupPage.qml:678
 #, kde-format
 msgid "Merge trips…"
 msgstr "Zlij potovanja…"
 
-#: app/TripGroupPage.qml:688
+#: app/TripGroupPage.qml:689
 #, kde-format
 msgid "Split trip…"
 msgstr "Razcepi potovanje…"
@@ -4283,18 +4283,17 @@ msgstr ""
 msgid "Got it!"
 msgstr "Razumem!"
 
-#: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:66
-#: matrix/matrixmanager.cpp:123
+#: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:125
 #, kde-format
 msgid "Syncing…"
 msgstr "Sinhroniziranje…"
 
-#: matrix/matrixmanager.cpp:50
+#: matrix/matrixmanager.cpp:63
 #, kde-format
 msgid "This server does not support logging in using a password"
 msgstr "Ta strežnik ne podpira prijav z geslom"
 
-#: matrix/matrixmanager.cpp:82
+#: matrix/matrixmanager.cpp:84
 #, kde-format
 msgid "Logging in"
 msgstr "Prijavljanje"

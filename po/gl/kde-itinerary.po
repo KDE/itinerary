@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-09 02:31+0000\n"
+"POT-Creation-Date: 2024-11-18 02:39+0000\n"
 "PO-Revision-Date: 2024-11-09 16:45+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -118,7 +118,7 @@ msgid "Add to calendar…"
 msgstr "Engadir ao calendario…"
 
 #: app/ActionsCard.qml:74 app/Main.qml:221 app/TripGroupDelegate.qml:182
-#: app/TripGroupPage.qml:695
+#: app/TripGroupPage.qml:696
 #, kde-format
 msgid "Export…"
 msgstr "Exportar…"
@@ -169,7 +169,7 @@ msgid "Itinerary file (*.itinerary)"
 msgstr "Ficheiro de itinerario (*.itinerary)"
 
 #: app/ActionsCard.qml:173 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:663
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:664
 #, kde-format
 msgid "Actions"
 msgstr "Accións"
@@ -471,39 +471,39 @@ msgstr "Estación"
 msgid "Arrival time"
 msgstr "Hora de chegada"
 
-#: app/BookingCard.qml:23
+#: app/BookingCard.qml:24
 #, kde-format
 msgid "Booking"
 msgstr "Reserva"
 
-#: app/BookingCard.qml:29 app/BookingEditorCard.qml:43
+#: app/BookingCard.qml:30 app/BookingEditorCard.qml:43
 #, kde-format
 msgid "Reference"
 msgstr "Referencia"
 
-#: app/BookingCard.qml:35 app/BookingCard.qml:67
+#: app/BookingCard.qml:36 app/BookingCard.qml:68
 #: app/ProgramMembershipCard.qml:46 app/ProgramMembershipPage.qml:101
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy to Clipboard"
 msgstr "Copiar no portapapeis."
 
-#: app/BookingCard.qml:39
+#: app/BookingCard.qml:40
 #, kde-format
 msgid "Booking reference copied to clipboard"
 msgstr "A referencia da reserva copiouse no portapapeis"
 
-#: app/BookingCard.qml:52 app/BookingEditorCard.qml:51 app/TicketEditor.qml:71
+#: app/BookingCard.qml:53 app/BookingEditorCard.qml:51 app/TicketEditor.qml:71
 #, kde-format
 msgid "Under name"
 msgstr "A nome de"
 
-#: app/BookingCard.qml:61
+#: app/BookingCard.qml:62
 #, kde-format
 msgid "Ticket number:"
 msgstr "Número do billete:"
 
-#: app/BookingCard.qml:71
+#: app/BookingCard.qml:72
 #, kde-format
 msgid "Ticket number copied to clipboard"
 msgstr "O número do billete copiouse no portapapeis"
@@ -2873,42 +2873,42 @@ msgstr "Afiliación ao programa"
 msgid "Show Pass"
 msgstr "Amosar o pase"
 
-#: app/publictransport.cpp:119 app/publictransport.cpp:146
+#: app/publictransport.cpp:122 app/publictransport.cpp:149
 #, kde-format
 msgid "Walk"
 msgstr "Camiñar"
 
-#: app/publictransport.cpp:121
+#: app/publictransport.cpp:124
 #, kde-format
 msgid "Wait"
 msgstr "Agardar"
 
-#: app/publictransport.cpp:130
+#: app/publictransport.cpp:133
 #, kde-format
 msgid "Rented bicycle"
 msgstr "Bicicleta alugada"
 
-#: app/publictransport.cpp:132
+#: app/publictransport.cpp:135
 #, kde-format
 msgid "Rented moped"
 msgstr "Ciclomotor alugado"
 
-#: app/publictransport.cpp:134
+#: app/publictransport.cpp:137
 #, kde-format
 msgid "Rented kick scooter"
 msgstr "Patinete alugado"
 
-#: app/publictransport.cpp:136
+#: app/publictransport.cpp:139
 #, kde-format
 msgid "Rented car"
 msgstr "Coche alugado"
 
-#: app/publictransport.cpp:142
+#: app/publictransport.cpp:145
 #, kde-format
 msgid "Bicycle"
 msgstr "Bicicleta"
 
-#: app/publictransport.cpp:144 app/StatisticsPage.qml:149
+#: app/publictransport.cpp:147 app/StatisticsPage.qml:149
 #, kde-format
 msgid "Car"
 msgstr "Coche"
@@ -3257,7 +3257,7 @@ msgstr ""
 msgid "Matrix Integration"
 msgstr "Integración con Matrix"
 
-#: app/SettingsPage.qml:284 app/SettingsPage.qml:328
+#: app/SettingsPage.qml:284 app/SettingsPage.qml:331
 #, kde-format
 msgid "Logged in as %1"
 msgstr "Accedeu como %1"
@@ -3277,22 +3277,22 @@ msgstr "Identificador de Matrix"
 msgid "Password"
 msgstr "Contrasinal"
 
-#: app/SettingsPage.qml:311
+#: app/SettingsPage.qml:314
 #, kde-format
 msgid "Log out"
 msgstr "Saír"
 
-#: app/SettingsPage.qml:311
+#: app/SettingsPage.qml:314
 #, kde-format
 msgid "Log in"
 msgstr "Acceder"
 
-#: app/SettingsPage.qml:318
+#: app/SettingsPage.qml:321
 #, kde-format
 msgid "Traewelling Integration"
 msgstr "Integración con Traewelling"
 
-#: app/SettingsPage.qml:323
+#: app/SettingsPage.qml:326
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -3305,27 +3305,27 @@ msgstr ""
 "súas viaxes en transporte público. Para máis información, consulte <a href="
 "\"https://traewelling.de\">traewelling.de</a>."
 
-#: app/SettingsPage.qml:331
+#: app/SettingsPage.qml:334
 #, kde-format
 msgid "Login"
 msgstr "Acceder"
 
-#: app/SettingsPage.qml:336
+#: app/SettingsPage.qml:339
 #, kde-format
 msgid "Logout"
 msgstr "Saír"
 
-#: app/SettingsPage.qml:343
+#: app/SettingsPage.qml:346
 #, kde-format
 msgid "Contributing"
 msgstr "Contribuír"
 
-#: app/SettingsPage.qml:347
+#: app/SettingsPage.qml:350
 #, kde-format
 msgid "I contribute to OpenStreetMap"
 msgstr "Contribúo a OpenStreetMap"
 
-#: app/SettingsPage.qml:348
+#: app/SettingsPage.qml:351
 #, kde-format
 msgid "Enables OSM editing options."
 msgstr "Activa as opcións de edición de OSM."
@@ -3338,7 +3338,7 @@ msgstr "Viaxes"
 #: app/statisticsmodel.cpp:112 app/statisticsmodel.cpp:145
 #: app/statisticsmodel.cpp:160 app/statisticsmodel.cpp:175
 #: app/statisticsmodel.cpp:190 app/statisticsmodel.cpp:205
-#: app/TripGroupPage.qml:638
+#: app/TripGroupPage.qml:639
 #, kde-format
 msgid "Distance"
 msgstr "Distancia"
@@ -3351,7 +3351,7 @@ msgstr "Noites de hotel"
 #: app/statisticsmodel.cpp:122 app/statisticsmodel.cpp:150
 #: app/statisticsmodel.cpp:165 app/statisticsmodel.cpp:180
 #: app/statisticsmodel.cpp:195 app/statisticsmodel.cpp:210
-#: app/TripGroupPage.qml:647
+#: app/TripGroupPage.qml:648
 #, kde-format
 msgid "CO₂"
 msgstr "CO₂"
@@ -3578,13 +3578,13 @@ msgstr "Engadir un evento…"
 msgid "Add restaurant…"
 msgstr "Engadir un restaurante…"
 
-#: app/TimelinePage.qml:166 app/TripGroupPage.qml:727
+#: app/TimelinePage.qml:166 app/TripGroupPage.qml:728
 #, kde-format
 msgctxt "@action:button"
 msgid "Go To Now"
 msgstr "Ir a agora"
 
-#: app/TimelinePage.qml:173 app/TripGroupPage.qml:735
+#: app/TimelinePage.qml:173 app/TripGroupPage.qml:736
 #: app/TripGroupsPage.qml:118 app/TripGroupsPage.qml:137
 #, kde-format
 msgctxt "@action:button"
@@ -3893,7 +3893,7 @@ msgstr[1] "Divisas: %2"
 msgid "Edit…"
 msgstr "Editar…"
 
-#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:702
+#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:703
 #, kde-format
 msgid "Delete trip"
 msgstr "Eliminar a viaxe"
@@ -4007,22 +4007,22 @@ msgstr "Importar"
 msgid "Add"
 msgstr "Engadir"
 
-#: app/TripGroupPage.qml:656
+#: app/TripGroupPage.qml:657
 #, kde-format
 msgid "Cost"
 msgstr "Custo"
 
-#: app/TripGroupPage.qml:668
+#: app/TripGroupPage.qml:669
 #, kde-format
 msgid "Rename…"
 msgstr "Renomear…"
 
-#: app/TripGroupPage.qml:677
+#: app/TripGroupPage.qml:678
 #, kde-format
 msgid "Merge trips…"
 msgstr "Fusionar as viaxes…"
 
-#: app/TripGroupPage.qml:688
+#: app/TripGroupPage.qml:689
 #, kde-format
 msgid "Split trip…"
 msgstr "Dividir a viaxe…"
@@ -4276,18 +4276,17 @@ msgstr ""
 msgid "Got it!"
 msgstr "Entendido!"
 
-#: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:66
-#: matrix/matrixmanager.cpp:123
+#: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:125
 #, kde-format
 msgid "Syncing…"
 msgstr "Sincronizando…"
 
-#: matrix/matrixmanager.cpp:50
+#: matrix/matrixmanager.cpp:63
 #, kde-format
 msgid "This server does not support logging in using a password"
 msgstr "O servidor non permite acceder con contrasinal."
 
-#: matrix/matrixmanager.cpp:82
+#: matrix/matrixmanager.cpp:84
 #, kde-format
 msgid "Logging in"
 msgstr "Accedendo"
