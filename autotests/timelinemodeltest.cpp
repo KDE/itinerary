@@ -675,6 +675,9 @@ private Q_SLOTS:
 
     void testContent()
     {
+        if constexpr (sizeof(double) == 4) {
+            QSKIP("test data assumes 64bit double resolution - skipping");
+        }
         QFETCH(QString, baseName);
         ReservationManager resMgr;
         Test::clearAll(&resMgr);
