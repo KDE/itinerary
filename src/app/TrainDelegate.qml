@@ -13,241 +13,74 @@ TimelineDelegate {
     id: root
     property bool expanded: false
     property var journeySection: root.controller.journey
-    headerIcon {
-        source: departure.route.line.mode == Line.Unknown ? ReservationHelper.defaultIconName(root.reservation) : departure.route.line.iconName
-        isMask: !departure.route.line.hasLogo && !departure.route.line.hasModeLogo
-    }
-    Item {
-        JourneySectionModel {
-            id: sectionModel
-            journeySection: root.journeySection
-            showProgress: true
-        }
+
+    JourneySectionModel {
+        id: sectionModel
+        journeySection: root.journeySection
+        showProgress: true
     }
 
-    headerItem: RowLayout {
-        spacing: Kirigami.Units.smallSpacing
+    contentItem: ColumnLayout {
+        spacing: 0
 
-        QQC2.Label {
-            id: headerLabel
-            text: {
-                if (reservationFor.trainName || reservationFor.trainNumber) {
-                    return reservationFor.trainName + " " + reservationFor.trainNumber;
+        TimelineDelegateDepartureLayout {
+            id: departureLayout
+
+            progress: root.controller.progress
+            reservationFor: root.reservationFor
+            transportName: root.reservationFor.trainName + " " + root.reservationFor.trainNumber
+            transportIcon: departure.route.line.mode == Line.Unknown ? ReservationHelper.defaultIconName(root.reservation) : departure.route.line.iconName
+            departure: root.departure
+            departureName: root.reservationFor.departureStation.name
+            departurePlatform: {
+                let platform = "";
+                if (departure.hasExpectedPlatform) {
+                    platform = departure.expectedPlatform;
+                } else if (reservationFor.departurePlatform) {
+                    platform = reservationFor.departurePlatform;
                 }
-                return i18n("%1 to %2", reservationFor.departureStation.name, reservationFor.arrivalStation.name);
-            }
-            color: root.headerTextColor
-            elide: Text.ElideRight
 
-            Accessible.ignored: true
+                if (platform) {
+                    return i18n("Pl. %1", platform);
+                } else {
+                    return "";
+                }
+            }
+            Component.onCompleted: progress = root.controller.progress;
+            departureCountry: Localizer.formatAddressWithContext(reservationFor.departureStation.address,
+                                                         reservationFor.arrivalStation.address,
+                                                         Settings.homeCountryIsoCode)
         }
-        QQC2.Label {
-            text: departure.route.direction? "→ " + departure.route.direction : ""
-            color: root.headerTextColor
-            elide: Text.ElideRight
+
+        TimelineDelegateSeatRow {
+            route: root.departure.route
+            hasSeat: root.hasSeat
+
+            Component.onCompleted: progress = root.controller.progress
+
+            TimelineDelegateSeatRowLabel {
+                text: i18nc("train coach", "Coach: <b>%1</b>", root.reservation?.reservedTicket?.ticketedSeat?.seatSection || "-")
+            }
+            Kirigami.Separator {
+                Layout.fillHeight: true
+            }
+            TimelineDelegateSeatRowLabel {
+                text: i18nc("train seat", "Seat: <b>%1</b>", root.seatString())
+            }
+            Kirigami.Separator {
+                Layout.fillHeight: true
+            }
+            TimelineDelegateSeatRowLabel {
+                text: {
+                    const s = root.reservation?.reservedTicket?.ticketedSeat?.seatingType;
+                    return i18nc("train class", "Class: <b>%1</b>", s !== "" ? s : "-");
+                }
+                lowPriority: true
+            }
+        }
+
+        RowLayout {
             Layout.fillWidth: true
-        }
-        QQC2.Label {
-            text: Localizer.formatTime(reservationFor, "departureTime")
-            color: root.headerTextColor
-        }
-        QQC2.Label {
-            text: (departure.departureDelay >= 0 ? "+" : "") + departure.departureDelay
-            color: (departure.departureDelay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
-            visible: departure.hasExpectedDepartureTime
-            Accessible.ignored: !visible
-        }
-    }
-
-    contentItem: Column {
-        id: topLayout
-
-        RowLayout {
-            width: parent.width
-            spacing: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
-
-            ColumnLayout{
-                spacing: 0
-                Layout.alignment: Qt.AlignTop
-
-                JourneySectionStopDelegateLineSegment {
-                    lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
-                    isDeparture: true
-
-                    Layout.fillHeight: true
-                    Component.onCompleted: {
-                        leadingProgress = root.controller.progress > 0 ? 1.0 : 0;
-                        trailingProgress = root.controller.progress > 0 ? 1.0 : 0;
-                    }
-                }
-                JourneySectionStopDelegateLineSegment {
-                    visible: departureCountryLayout.visible
-                    lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
-                    hasStop: false
-                    Component.onCompleted: {
-                        leadingProgress = controller.progress > 0 ? 1.0 : 0;
-                        trailingProgress = controller.progress > 0 ? 1.0 : 0;
-                    }
-
-                    Layout.fillHeight: true
-                }
-            }
-
-            ColumnLayout {
-                spacing: 0
-
-                Layout.bottomMargin: Kirigami.Units.largeSpacing
-                Layout.fillHeight: true
-                Layout.fillWidth: true
-
-                RowLayout {
-                    spacing: Kirigami.Units.smallSpacing
-
-                    Layout.fillHeight: true
-                    Layout.fillWidth: true
-
-                    RowLayout {
-                        spacing: Kirigami.Units.smallSpacing
-
-                        Layout.minimumWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
-                        Layout.alignment: Qt.AlignTop
-
-                        QQC2.Label {
-                            id: depTime
-                            text: Localizer.formatTime(reservationFor, "departureTime")
-                        }
-
-                        QQC2.Label {
-                            text: (departure.departureDelay >= 0 ? "+" : "") + departure.departureDelay
-                            color: (departure.departureDelay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
-                            visible: departure.hasExpectedDepartureTime
-                            Accessible.ignored: !visible
-                        }
-                    }
-
-                    ColumnLayout {
-                        spacing: Kirigami.Units.smallSpacing
-
-                        QQC2.Label {
-                            Layout.fillWidth: true
-                            font.bold: true
-                            text: reservationFor.departureStation.name + " " + (controller.progress > 0 ? 1 : 0)
-                            elide: Text.ElideRight
-                        }
-
-                        QQC2.Control {
-                            visible: root.reservationFor.trainName || root.reservationFor.trainNumber
-                            contentItem: RowLayout {
-                                spacing: Kirigami.Units.smallSpacing
-                                TransportIcon {
-                                    color: "white"
-                                    isMask: true
-                                    size: Kirigami.Units.iconSizes.smallMedium
-                                    source: root.headerIcon.source
-                                }
-                                QQC2.Label {
-                                    color: "white"
-                                    text: root.reservationFor.trainName + " " + root.reservationFor.trainNumber
-                                }
-                            }
-                            background: Rectangle {
-                                radius: Kirigami.Units.cornerRadius
-                                color: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
-                            }
-                        }
-
-                        QQC2.Label {
-                            text: departure.route.direction ? i18nc("Direction of the transport mode", "To %1", departure.route.direction) : ""
-                            visible: departure.route.direction
-                            Layout.fillWidth: true
-                        }
-                    }
-
-                    QQC2.Label {
-                        Layout.alignment: Qt.AlignRight | Qt.AlignTop
-
-                        text: {
-                            let platform = "";
-                            if (departure.hasExpectedPlatform) {
-                                platform = departure.expectedPlatform;
-                            } else if (reservationFor.departurePlatform) {
-                                platform = reservationFor.departurePlatform;
-                            }
-
-                            if (platform) {
-                                return i18n("Pl. %1", platform);
-                            } else {
-                                return "";
-                            }
-                        }
-                    }
-                }
-
-                RowLayout {
-                    id: departureCountryLayout
-
-                    spacing: Kirigami.Units.smallSpacing
-                    visible: departureCountryLabel.text.length > 0
-
-                    Item {
-                        Layout.minimumWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
-                    }
-
-                    QQC2.Label {
-                        id: departureCountryLabel
-
-                        width: topLayout.width
-                        text: Localizer.formatAddressWithContext(reservationFor.departureStation.address,
-                                                                 reservationFor.arrivalStation.address,
-                                                                 Settings.homeCountryIsoCode)
-                        Layout.fillWidth: true
-                    }
-                }
-            }
-        }
-
-        RowLayout {
-            visible: root.hasSeat
-            width: parent.width
-            spacing: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
-
-            JourneySectionStopDelegateLineSegment {
-                Layout.fillHeight: true
-                lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
-                isDeparture: false
-                hasStop: false
-
-                Component.onCompleted: {
-                    leadingProgress = root.controller.progress > 0 ? 1.0 : 0;
-                    trailingProgress = root.controller.progress > 0 ? 1.0 : 0;
-                }
-            }
-
-            TimelineDelegateSeatRow {
-                TimelineDelegateSeatRowLabel {
-                    text: i18nc("train coach", "Coach: <b>%1</b>", root.reservation?.reservedTicket?.ticketedSeat?.seatSection || "-")
-                }
-                Kirigami.Separator {
-                    Layout.fillHeight: true
-                }
-                TimelineDelegateSeatRowLabel {
-                    text: i18nc("train seat", "Seat: <b>%1</b>", root.seatString())
-                }
-                Kirigami.Separator {
-                    Layout.fillHeight: true
-                }
-                TimelineDelegateSeatRowLabel {
-                    text: {
-                        const s = root.reservation?.reservedTicket?.ticketedSeat?.seatingType;
-                        return i18nc("train class", "Class: <b>%1</b>", s !== "" ? s : "-");
-                    }
-                    lowPriority: true
-                }
-            }
-        }
-
-        RowLayout {
-            width: parent.width
             spacing: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
 
             JourneySectionStopDelegateLineSegment {
@@ -297,7 +130,7 @@ TimelineDelegate {
                 clip: true
                 visible: false
                 spacing: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
-                width: parent.width
+                Layout.fillWidth: true
                 onHiddenChanged: if (!hidden) {
                     visible = true
                     showAnimation.running=true
@@ -333,7 +166,7 @@ TimelineDelegate {
                     trailingProgress: model.stopoverPassed ? 1.0 : 0
                 }
                 RowLayout {
-                    Layout.minimumWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
+                    Layout.minimumWidth: departureLayout.depTimeWidth + Kirigami.Units.largeSpacing * 3.5
                     QQC2.Label{
                         text: Localizer.formatTime(model.stopover , model.stopover.scheduledDepartureTime > 0 ? "scheduledDepartureTime" : "scheduledArrivalTime")
                         font.strikeout: model.stopover.disruptionEffect === Disruption.NoService
@@ -356,102 +189,36 @@ TimelineDelegate {
             }
         }
 
-        RowLayout {
-            width: parent.width
-            spacing: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
-
-            ColumnLayout {
-                spacing: 0
-                JourneySectionStopDelegateLineSegment {
-                    visible: arrivalCountryLayout.visible
-                    Layout.fillHeight: true
-                    lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
-                    hasStop: false
-                }
-                JourneySectionStopDelegateLineSegment {
-                    Layout.fillHeight: true
-                    lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
-                    leadingProgress: controller.progress === 0.99 ? 1 : 0
-                    trailingProgress: controller.progress === 0.99 ? 1 : 0
-                    isArrival: true
-                }
-            }
-            ColumnLayout{
-                spacing:0
-
-                Layout.topMargin: Kirigami.Units.largeSpacing
-                Layout.fillHeight: true
-                Layout.fillWidth: true
-
-                RowLayout {
-                    spacing: Kirigami.Units.smallSpacing
-
-                    Layout.fillHeight: true
-                    Layout.fillWidth: true
-
-                    RowLayout {
-                        spacing: Kirigami.Units.smallSpacing
-
-                        Layout.minimumWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
-
-                        QQC2.Label {
-                            text: Localizer.formatTime(reservationFor, "arrivalTime")
-                        }
-                        QQC2.Label {
-                            text: (arrival.arrivalDelay >= 0 ? "+" : "") + arrival.arrivalDelay
-                            color: (arrival.arrivalDelay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
-                            visible: arrival.hasExpectedArrivalTime
-                            Accessible.ignored: !visible
-                        }
-                    }
-                    QQC2.Label {
-                        Layout.fillWidth: true
-                        font.bold: true
-                        text: reservationFor.arrivalStation.name
-                        elide: Text.ElideRight
-                    }
-                    QQC2.Label {
-                        Layout.alignment: Qt.AlignRight
-                        text: {
-                            let platform = "";
-                            if (arrival.hasExpectedPlatform) {
-                                platform = arrival.expectedPlatform;
-                            } else if (reservationFor.arrivalPlatform) {
-                                platform = reservationFor.arrivalPlatform;
-                            }
-
-                            if (platform) {
-                                return i18n("Pl. %1", platform);
-                            } else {
-                                return "";
-                            }
-                        }
-                    }
+        TimelineDelegateArrivalLayout {
+            reservationFor: root.reservationFor
+            depTimeWidth: departureLayout.depTimeWidth
+            arrival: root.arrival
+            arrivalName: reservationFor.arrivalStation.name
+            arrivalCountry: Localizer.formatAddressWithContext(reservationFor.arrivalStation.address,
+                                                         reservationFor.departureStation.address,
+                                                         Settings.homeCountryIsoCode)
+            arrivalPlatform: {
+                let platform = "";
+                if (arrival.hasExpectedPlatform) {
+                    platform = arrival.expectedPlatform;
+                } else if (reservationFor.arrivalPlatform) {
+                    platform = reservationFor.arrivalPlatform;
                 }
 
-                RowLayout {
-                    id: arrivalCountryLayout
-
-                    spacing: Kirigami.Units.smallSpacing
-                    visible: arrivalCountryLabel.text.length > 0
-
-                    Item {
-                        Layout.minimumWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
-                    }
-
-                    QQC2.Label {
-                        id: arrivalCountryLabel
-
-                        width: topLayout.width
-                        text: Localizer.formatAddressWithContext(reservationFor.arrivalStation.address,
-                                                                 reservationFor.departureStation.address,
-                                                                 Settings.homeCountryIsoCode)
-                        Layout.fillWidth: true
-                    }
+                if (platform) {
+                    return i18n("Pl. %1", platform);
+                } else {
+                    return "";
                 }
             }
+
+            Component.onCompleted: progress = root.controller.progress;
         }
     }
 
-    Accessible.name: headerLabel.text
+    Accessible.name: if (reservationFor.trainName || reservationFor.trainNumber) {
+        return reservationFor.trainName + " " + reservationFor.trainNumber;
+    } else {
+        return i18n("%1 to %2", reservationFor.departureStation.name, reservationFor.arrivalStation.name);
+    }
 }

@@ -12,52 +12,33 @@ import org.kde.itinerary
 
 TimelineDelegate {
     id: root
-    headerIconSource: root.departure.route.line.mode == Line.Unknown ? ReservationHelper.defaultIconName(root.reservation) : root.departure.route.line.iconName
-    headerItem: RowLayout {
-        QQC2.Label {
-            text: i18n("%1 to %2", reservationFor.departureBoatTerminal.name, reservationFor.arrivalBoatTerminal.name);
-            color: root.headerTextColor
-            elide: Text.ElideRight
-            Layout.fillWidth: true
-        }
-        QQC2.Label {
-            text: Localizer.formatTime(reservationFor, "departureTime")
-            color: root.headerTextColor
-        }
-    }
 
-    contentItem: Column {
-        id: topLayout
-        spacing: Kirigami.Units.smallSpacing
+    contentItem: ColumnLayout {
+        spacing: 0
 
-        QQC2.Label {
-            text: i18n("From: %1", reservationFor.departureBoatTerminal.name)
-            width: topLayout.width
+        TimelineDelegateDepartureLayout {
+            id: departureLayout
+            reservationFor: root.reservationFor
+            departure: root.departure
+            progress: root.controller.progress
+            departureName: reservationFor.departureBoatTerminal.name
+            departureCountry: Localizer.formatAddressWithContext(reservationFor.departureBoatTerminal.address,
+
+                                                                 reservationFor.arrivalBoatTerminal.address,
+                                                                 Settings.homeCountryIsoCode)
+            transportName: root.reservationFor.name.length > 0 ? root.reservationFor.name : i18nc("default transport name for a boat trip", "Ferry")
+            transportIcon: root.departure.route.line.mode == Line.Unknown ? ReservationHelper.defaultIconName(root.reservation) : root.departure.route.line.iconName
         }
-        QQC2.Label {
-            visible: text !== ""
-            width: topLayout.width
-            text: Localizer.formatAddressWithContext(reservationFor.departureBoatTerminal.address,
-                                                     reservationFor.arrivalBoatTerminal.address,
-                                                     Settings.homeCountryIsoCode)
-        }
-        Kirigami.Separator {
-            width: topLayout.width
-        }
-        QQC2.Label {
-            text: i18n("To: %1", reservationFor.arrivalBoatTerminal.name)
-            width: topLayout.width
-        }
-        QQC2.Label {
-            visible: text !== ""
-            width: topLayout.width
-            text: Localizer.formatAddressWithContext(reservationFor.arrivalBoatTerminal.address,
+
+        TimelineDelegateArrivalLayout {
+            depTimeWidth: departureLayout.depTimeWidth
+            arrival: root.arrival
+            progress: root.controller.progress
+            reservationFor: root.reservationFor
+            arrivalName: reservationFor.arrivalBoatTerminal.name
+            arrivalCountry: Localizer.formatAddressWithContext(reservationFor.arrivalBoatTerminal.address,
                                                      reservationFor.departureBoatTerminal.address,
                                                      Settings.homeCountryIsoCode)
-        }
-        QQC2.Label {
-            text: i18n("Arrival time: %1", Localizer.formatDateTime(reservationFor, "arrivalTime"))
-            wrapMode: Text.WordWrap
         }
     }
 }
