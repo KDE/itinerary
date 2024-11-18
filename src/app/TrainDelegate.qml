@@ -21,6 +21,7 @@ TimelineDelegate {
         JourneySectionModel {
             id: sectionModel
             journeySection: root.journeySection
+            showProgress: true
         }
     }
 
@@ -74,11 +75,19 @@ TimelineDelegate {
                     isDeparture: true
 
                     Layout.fillHeight: true
+                    Component.onCompleted: {
+                        leadingProgress = root.controller.progress > 0 ? 1.0 : 0;
+                        trailingProgress = root.controller.progress > 0 ? 1.0 : 0;
+                    }
                 }
                 JourneySectionStopDelegateLineSegment {
                     visible: departureCountryLayout.visible
                     lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
                     hasStop: false
+                    Component.onCompleted: {
+                        leadingProgress = controller.progress > 0 ? 1.0 : 0;
+                        trailingProgress = controller.progress > 0 ? 1.0 : 0;
+                    }
 
                     Layout.fillHeight: true
                 }
@@ -122,7 +131,7 @@ TimelineDelegate {
                         QQC2.Label {
                             Layout.fillWidth: true
                             font.bold: true
-                            text: reservationFor.departureStation.name
+                            text: reservationFor.departureStation.name + " " + (controller.progress > 0 ? 1 : 0)
                             elide: Text.ElideRight
                         }
 
@@ -207,6 +216,11 @@ TimelineDelegate {
                 lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
                 isDeparture: false
                 hasStop: false
+
+                Component.onCompleted: {
+                    leadingProgress = root.controller.progress > 0 ? 1.0 : 0;
+                    trailingProgress = root.controller.progress > 0 ? 1.0 : 0;
+                }
             }
 
             TimelineDelegateSeatRow {
@@ -241,6 +255,11 @@ TimelineDelegate {
                 lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
                 isDeparture: false
                 hasStop: false
+
+                Component.onCompleted: {
+                    leadingProgress = controller.progress > 0 ? 1.0 : 0;
+                    trailingProgress = controller.progress > 0 ? 1.0 : 0;
+                }
             }
             QQC2.ToolButton {
                 visible: stopRepeater.count !== 0
@@ -309,6 +328,9 @@ TimelineDelegate {
                     Layout.fillHeight: true
                     lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
                     hasStop: model.stopover.disruptionEffect !== Disruption.NoService
+
+                    leadingProgress: model.stopoverPassed ? 1.0 : 0
+                    trailingProgress: model.stopoverPassed ? 1.0 : 0
                 }
                 RowLayout {
                     Layout.minimumWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
@@ -349,6 +371,8 @@ TimelineDelegate {
                 JourneySectionStopDelegateLineSegment {
                     Layout.fillHeight: true
                     lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
+                    leadingProgress: controller.progress === 0.99 ? 1 : 0
+                    trailingProgress: controller.progress === 0.99 ? 1 : 0
                     isArrival: true
                 }
             }

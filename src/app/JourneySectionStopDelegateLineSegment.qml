@@ -24,6 +24,7 @@ Item {
 
     property real leadingProgress: NaN
     property real trailingProgress: NaN
+
     property bool hasStop: true
     property bool showStop: lineSegment.hasStop
 

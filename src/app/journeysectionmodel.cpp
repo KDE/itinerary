@@ -72,6 +72,8 @@ QVariant JourneySectionModel::data(const QModelIndex &index, int role) const
     }
 
     switch (role) {
+    case Qt::DisplayRole:
+        return m_journey.intermediateStops()[index.row()].stopPoint().name();
     case LeadingSegmentLengthRole:
         return m_data[index.row()].leadingLength;
     case TrailingSegmentLengthtRole:
