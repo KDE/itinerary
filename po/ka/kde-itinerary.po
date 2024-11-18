@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-15 00:40+0000\n"
-"PO-Revision-Date: 2024-11-15 05:59+0100\n"
+"PO-Revision-Date: 2024-11-16 05:51+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -2754,7 +2754,7 @@ msgstr "ემოჯის გადამოწმება"
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Compare a set of emoji on both devices."
-msgstr "შეადარეთ ემოჯიების სეტი ორივე მოწყობილობაზე"
+msgstr "შეადარეთ ემოჯიების სეტი ორივე მოწყობილობაზე."
 
 #: app/MatrixKeyVerificationPage.qml:128
 #, kde-format
