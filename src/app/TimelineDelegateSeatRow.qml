@@ -9,9 +9,10 @@ import org.kde.kirigami as Kirigami
 RowLayout {
     id: root
 
-    required property var route
+    property var route
     required property bool hasSeat
     property real progress
+    property alias lineSegmentVisible: lineSegment.visible
 
     default property alias __rowData: layout.data
 
@@ -21,7 +22,8 @@ RowLayout {
     Layout.fillWidth: true
 
     JourneySectionStopDelegateLineSegment {
-        lineColor: root.route.line.hasColor ? root.route.line.color : Kirigami.Theme.textColor
+        id: lineSegment
+        lineColor: root.route?.line.hasColor ? root.route.line.color : Kirigami.Theme.textColor
         isDeparture: false
         hasStop: false
 

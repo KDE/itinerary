@@ -12,24 +12,34 @@ import org.kde.itinerary
 
 TimelineDelegate {
     id: root
+
     readonly property var touristAttraction: ReservationManager.reservation(root.batchId).touristAttraction
 
-    headerIconSource: "meeting-attending" // TODO better icon, e.g. something like 🎢?
-    headerItem: RowLayout {
-        QQC2.Label {
-            text: touristAttraction.name
-            color: root.headerTextColor
-            Layout.fillWidth: true
-        }
-        QQC2.Label {
-            text: Localizer.formatTime(reservation, "arrivalTime")
-            color: root.headerTextColor
-        }
-    }
-
-    contentItem: Column {
-        id: topLayout
+    contentItem: ColumnLayout {
         spacing: Kirigami.Units.smallSpacing
+
+        RowLayout {
+            spacing: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
+
+            Layout.fillWidth: true
+
+            TransportIcon {
+                size: Kirigami.Units.iconSizes.smallMedium
+                source: "meeting-attending"
+            }
+
+            Kirigami.Heading {
+                text: touristAttraction.name
+                level: 3
+                Layout.fillWidth: true
+            }
+
+            Kirigami.Heading {
+                level: 2
+                text: Localizer.formatTime(reservation, "arrivalTime")
+                color: root.headerTextColor
+            }
+        }
 
         QQC2.Label {
             visible: text !== ""

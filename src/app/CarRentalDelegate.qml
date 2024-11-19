@@ -13,49 +13,57 @@ import org.kde.itinerary
 TimelineDelegate {
     id: root
 
-    headerIconSource: ReservationHelper.defaultIconName(root.reservation)
-    headerItem: RowLayout {
-        QQC2.Label {
-            text: root.rangeType == TimelineElement.RangeEnd ?
-                i18n("Rental Car Drop-off") :
-                i18n("Rental Car Pick-up")
-            color: root.headerTextColor
-            Layout.fillWidth: true
-        }
-        QQC2.Label {
-            text: root.rangeType ==  TimelineElement.RangeEnd ?
-                Localizer.formatTime(reservation, "dropoffTime") :
-                Localizer.formatTime(reservation, "pickupTime")
-            color: root.headerTextColor
-        }
-    }
-
-    contentItem: Column {
-        id: topLayout
+    contentItem: ColumnLayout {
         spacing: Kirigami.Units.smallSpacing
 
+        RowLayout {
+            Layout.fillWidth: true
+            spacing: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
+
+            TransportIcon {
+                size: Kirigami.Units.iconSizes.smallMedium
+                source: ReservationHelper.defaultIconName(root.reservation)
+            }
+            QQC2.Label {
+                text: root.rangeType == TimelineElement.RangeEnd ?
+                    i18n("Rental Car Drop-off") :
+                    i18n("Rental Car Pick-up")
+                color: root.headerTextColor
+                Layout.fillWidth: true
+            }
+            QQC2.Label {
+                text: root.rangeType ==  TimelineElement.RangeEnd ?
+                    Localizer.formatTime(reservation, "dropoffTime") :
+                    Localizer.formatTime(reservation, "pickupTime")
+                color: root.headerTextColor
+            }
+        }
+
         QQC2.Label {
+            Layout.fillWidth: true
             text: reservation.pickupLocation.name
             visible: root.rangeType != TimelineElement.RangeEnd
         }
         QQC2.Label {
             visible: text !== ""
-            width: topLayout.width
+            Layout.fillWidth: true
             text: Localizer.formatAddressWithContext(reservation.pickupLocation.address,
                                                      reservation.dropoffLocation.address,
                                                      Settings.homeCountryIsoCode)
         }
         QQC2.Label {
+            Layout.fillWidth: true
             text: i18n("Drop-off: %1", Localizer.formatDateTime(reservation, "dropoffTime"))
             visible: root.rangeType != TimelineElement.RangeEnd
         }
         QQC2.Label {
+            Layout.fillWidth: true
             text: reservation.dropoffLocation.name
             visible: root.rangeType != TimelineElement.RangeBegin
         }
         QQC2.Label {
             visible: text !== ""
-            width: topLayout.width
+            Layout.fillWidth: true
             text: Localizer.formatAddressWithContext(reservation.dropoffLocation.address,
                                                      reservation.pickupLocation.address,
                                                      Settings.homeCountryIsoCode)

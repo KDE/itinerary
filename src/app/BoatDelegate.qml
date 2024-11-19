@@ -31,7 +31,6 @@ TimelineDelegate {
         }
 
         TimelineDelegateArrivalLayout {
-            depTimeWidth: departureLayout.depTimeWidth
             arrival: root.arrival
             progress: root.controller.progress
             reservationFor: root.reservationFor

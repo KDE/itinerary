@@ -13,34 +13,44 @@ import org.kde.itinerary
 TimelineDelegate {
     id: root
 
-    headerIconSource: ReservationHelper.defaultIconName(root.reservation)
-    headerItem: RowLayout {
-        QQC2.Label {
-            id: headerLabel
-            text: root.rangeType == TimelineElement.RangeEnd ?
-                i18n("End: %1", reservationFor.name) : reservationFor.name
-            color: root.headerTextColor
-            elide: Text.ElideRight
-            wrapMode: Text.WordWrap
-            maximumLineCount: 2
-            Layout.fillWidth: true
-            Accessible.ignored: true
-        }
-        QQC2.Label {
-            text: {
-                if (root.rangeType == TimelineElement.RangeEnd)
-                    return Localizer.formatTime(reservationFor, "endDate");
-                if (reservationFor.doorTime > 0)
-                    return Localizer.formatTime(reservationFor, "doorTime");
-                return Localizer.formatTime(reservationFor, "startDate");
-            }
-            color: root.headerTextColor
-        }
-    }
-
     contentItem: Column {
         id: topLayout
         spacing: Kirigami.Units.smallSpacing
+
+        RowLayout {
+            spacing: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
+
+            Layout.fillWidth: true
+
+            TransportIcon {
+                size: Kirigami.Units.iconSizes.smallMedium
+                source: ReservationHelper.defaultIconName(root.reservation)
+            }
+
+            Kirigami.Heading {
+                id: headerLabel
+
+                level: 2
+                text: root.rangeType == TimelineElement.RangeEnd ?
+                    i18n("End: %1", reservationFor.name) : reservationFor.name
+                elide: Text.ElideRight
+                wrapMode: Text.WordWrap
+                maximumLineCount: 2
+                Layout.fillWidth: true
+                Accessible.ignored: true
+            }
+
+            Kirigami.Heading {
+                level: 2
+                text: {
+                    if (root.rangeType == TimelineElement.RangeEnd)
+                        return Localizer.formatTime(reservationFor, "endDate");
+                    if (reservationFor.doorTime > 0)
+                        return Localizer.formatTime(reservationFor, "doorTime");
+                    return Localizer.formatTime(reservationFor, "startDate");
+                }
+            }
+        }
 
         QQC2.Label {
             text: reservationFor.location != undefined ? reservationFor.location.name : ""
@@ -63,7 +73,8 @@ TimelineDelegate {
         }
 
         TimelineDelegateSeatRow {
-            visible: root.hasSeat
+            hasSeat: root.hasSeat
+            lineSegmentVisible: false
             width: topLayout.width
 
             TimelineDelegateSeatRowLabel {

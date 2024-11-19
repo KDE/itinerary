@@ -50,9 +50,9 @@ TimelineDelegate {
             transportIcon: ReservationHelper.defaultIconName(root.reservation)
 
             QQC2.Label {
-                Layout.leftMargin: departureLayout.depTimeWidth + Kirigami.Units.largeSpacing * 4
                 visible: !isNaN(root.reservationFor.boardingTime.getTime())
-                text: !isNaN(root.reservationFor.boardingTime.getTime()) ? i18nc("@info", "<b>Boarding time:</b> %1", Localizer.formatTime(root.reservationFor, "boardingTime")) : ''
+                text: !isNaN(root.reservationFor.boardingTime.getTime()) ? i18nc("@info", "Boarding time: %1", Localizer.formatTime(root.reservationFor, "boardingTime")) : ''
+                font.weight: Font.DemiBold
             }
         }
 
@@ -80,7 +80,6 @@ TimelineDelegate {
         }
 
         TimelineDelegateArrivalLayout {
-            depTimeWidth: departureLayout.depTimeWidth
             arrival: root.arrival
             progress: root.controller.progress
             reservationFor: root.reservationFor

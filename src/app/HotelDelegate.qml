@@ -13,27 +13,36 @@ import org.kde.itinerary
 TimelineDelegate {
     id: root
 
-    headerIconSource: ReservationHelper.defaultIconName(root.reservation)
-    headerItem: QQC2.Label {
-        id: headerLabel
-        text: root.rangeType == TimelineElement.RangeEnd ?
-            i18n("Check-out %1", reservationFor.name) : reservationFor.name
-        color: root.headerTextColor
-        elide: Text.ElideRight
-        Layout.fillWidth: true
-        Accessible.ignored: true
-    }
-
-    contentItem: Column {
-        id: topLayout
+    contentItem: ColumnLayout {
         spacing: Kirigami.Units.smallSpacing
+
+        RowLayout {
+            spacing: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
+
+            Layout.fillWidth: true
+
+            TransportIcon {
+                size: Kirigami.Units.iconSizes.smallMedium
+                source: ReservationHelper.defaultIconName(root.reservation)
+            }
+
+            Kirigami.Heading {
+                id: headerLabel
+                level: 3
+                text: root.rangeType == TimelineElement.RangeEnd ?
+                    i18n("Check-out %1", reservationFor.name) : reservationFor.name
+                wrapMode: Text.WordWrap
+                Layout.fillWidth: true
+                Accessible.ignored: true
+            }
+        }
 
         QQC2.Label {
             visible: text !== ""
-            width: topLayout.width
             text: Localizer.formatAddressWithContext(reservationFor.address, null, Settings.homeCountryIsoCode)
             wrapMode: Text.WordWrap
         }
+
         QQC2.Label {
             text: i18n("Check-in time: %1", Localizer.formatTime(reservation, "checkinTime"))
             color: Kirigami.Theme.textColor
@@ -46,7 +55,6 @@ TimelineDelegate {
             color: Kirigami.Theme.textColor
             visible: root.rangeType == TimelineElement.RangeBegin || !Util.isStartOfDay(reservation, "checkoutTime")
         }
-
     }
 
     Accessible.name: headerLabel.text

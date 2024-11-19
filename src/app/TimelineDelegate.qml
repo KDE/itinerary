@@ -29,9 +29,6 @@ FormCard.FormCard {
     /** Details page to show when clicking the delegate. */
     property Component detailsPage: null
 
-    property Item headerItem
-    property alias headerIcon: _headerIcon
-    property alias headerIconSource: _headerIcon.source
     property alias contentItem: content.contentItem
     signal clicked
 
@@ -80,51 +77,10 @@ FormCard.FormCard {
         return s.join(", ");
     }
 
-    property color headerTextColor: controller.isCanceled ? headerBackground.Kirigami.Theme.disabledTextColor : headerBackground.Kirigami.Theme.textColor
-    FormCard.AbstractFormDelegate {
-        visible: false
-        onClicked: root.clicked()
-        background: Rectangle {
-            id: headerBackground
-            color: Kirigami.Theme.backgroundColor
-            Kirigami.Theme.colorSet: controller.isCurrent ? Kirigami.Theme.Selection : controller.isCanceled ? Kirigami.Theme.View : Kirigami.Theme.Header
-            Kirigami.Theme.inherit: false
-
-            Rectangle {
-                id: progressBar
-                visible: controller.isCurrent
-                anchors.bottom: headerBackground.bottom
-                anchors.left: headerBackground.left
-                height: Kirigami.Units.smallSpacing
-                width: controller.progress * headerBackground.width
-                color: Kirigami.Theme.visitedLinkColor
-            }
-        }
-        contentItem: RowLayout {
-            id: headerLayout
-
-            spacing: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
-
-            TransportIcon {
-                id: _headerIcon
-                color: root.headerTextColor
-                isMask: true
-                size: Kirigami.Units.iconSizes.smallMedium
-            }
-        }
-    }
-
     FormCard.AbstractFormDelegate {
         id: content
         onClicked: root.clicked()
         Layout.fillWidth: true
-
-    }
-
-    onHeaderItemChanged: {
-        if (headerItem) {
-            headerItem.parent = headerLayout
-        }
     }
 
     Accessible.onPressAction: root.clicked()

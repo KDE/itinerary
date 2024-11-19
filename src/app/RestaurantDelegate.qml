@@ -13,26 +13,33 @@ import org.kde.itinerary
 TimelineDelegate {
     id: root
 
-    headerIconSource: ReservationHelper.defaultIconName(root.reservation)
-    headerItem: RowLayout {
-        QQC2.Label {
-            id: headerLabel
-            text: reservationFor.name
-            color: root.headerTextColor
-            elide: Text.ElideRight
+    contentItem: ColumnLayout {
+        spacing: Kirigami.Units.smallSpacing
+        RowLayout {
+            spacing: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
 
             Layout.fillWidth: true
-            Accessible.ignored: true
-        }
-        QQC2.Label {
-            text: Localizer.formatTime(reservation, "startTime")
-            color: root.headerTextColor
-        }
-    }
 
-    contentItem: Column {
-        id: topLayout
-        spacing: Kirigami.Units.smallSpacing
+            TransportIcon {
+                size: Kirigami.Units.iconSizes.smallMedium
+                source: ReservationHelper.defaultIconName(root.reservation)
+            }
+
+            Kirigami.Heading {
+                id: headerLabel
+                level: 3
+                text: reservationFor.name
+                elide: Text.ElideRight
+
+                Layout.fillWidth: true
+                Accessible.ignored: true
+            }
+
+            Kirigami.Heading {
+                text: Localizer.formatTime(reservation, "startTime")
+                level: 2
+            }
+        }
 
         QQC2.Label {
             visible: text !== ""

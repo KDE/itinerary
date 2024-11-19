@@ -22,6 +22,8 @@ FormCard.AbstractFormDelegate {
     topPadding: 0
     bottomPadding: 0
 
+    background.visible: modelData.mode == JourneySection.PublicTransport || modelData.path.sections.length > 1
+
     onClicked: {
         if (modelData.mode == JourneySection.PublicTransport) {
             applicationWindow().pageStack.push(journeySectionPage, {

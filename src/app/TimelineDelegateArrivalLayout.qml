@@ -12,12 +12,12 @@ RowLayout {
     id: root
 
     required property var arrival
+    property var departure: arrival
     required property string arrivalName
     property string arrivalPlatform
     required property string arrivalCountry
     property real progress
     required property var reservationFor
-    required property int depTimeWidth
 
     spacing: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
 
@@ -26,82 +26,80 @@ RowLayout {
     ColumnLayout {
         spacing: 0
         JourneySectionStopDelegateLineSegment {
-            visible: arrivalCountryLayout.visible
             Layout.fillHeight: true
-            lineColor: root.arrival.route.line.hasColor ? root.arrival.route.line.color : Kirigami.Theme.textColor
-            leadingProgress: root.progress === 0.99 ? 1 : 0
-            trailingProgress: root.progress === 0.99 ? 1 : 0
+            lineColor: root.departure.route.line.hasColor ? root.departure.route.line.color : Kirigami.Theme.textColor
+            leadingProgress: root.progress > 0.99 ? 1 : 0
+            trailingProgress: root.progress > 0.99 ? 1 : 0
             hasStop: false
         }
         JourneySectionStopDelegateLineSegment {
             Layout.fillHeight: true
-            lineColor: root.arrival.route.line.hasColor ? root.arrival.route.line.color : Kirigami.Theme.textColor
-            leadingProgress: root.progress === 0.99 ? 1 : 0
-            trailingProgress: root.progress === 0.99 ? 1 : 0
+            lineColor: root.departure.route.line.hasColor ? root.departure.route.line.color : Kirigami.Theme.textColor
+            leadingProgress: root.progress > 0.99 ? 1 : 0
+            trailingProgress: root.progress > 0.99 ? 1 : 0
             isArrival: true
         }
     }
 
     ColumnLayout {
-        spacing: 0
+        spacing: Kirigami.Units.smallSpacing
 
-        Layout.topMargin: Kirigami.Units.largeSpacing
         Layout.fillHeight: true
         Layout.fillWidth: true
+
+        Kirigami.Separator {
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+        }
 
         RowLayout {
             spacing: Kirigami.Units.smallSpacing
 
-            Layout.fillHeight: true
-            Layout.fillWidth: true
-
-            RowLayout {
-                spacing: Kirigami.Units.smallSpacing
-
-                Layout.minimumWidth: root.depTimeWidth + Kirigami.Units.largeSpacing * 3.5
-
-                QQC2.Label {
-                    text: Localizer.formatTime(reservationFor, "arrivalTime")
-                }
-
-                QQC2.Label {
-                    text: (arrival.arrivalDelay >= 0 ? "+" : "") + arrival.arrivalDelay
-                    color: (arrival.arrivalDelay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
-                    visible: arrival.hasExpectedArrivalTime
-                    Accessible.ignored: !visible
-                }
-            }
-
-            QQC2.Label {
-                Layout.fillWidth: true
-                font.bold: true
+            Kirigami.Heading {
+                level: 3
                 text: root.arrivalName
                 elide: Text.ElideRight
+                Layout.fillWidth: root.arrivalCountry.length === 0
             }
 
             QQC2.Label {
-                Layout.alignment: Qt.AlignRight
-                text: root.arrivalPlatform
-                visible: root.arrivalPlatform.length > 0
+                visible: root.arrivalCountry.length > 0
+                elide: Text.ElideRight
+                text: '(' + root.arrivalCountry + ')'
+                opacity: 0.8
+                Layout.fillWidth: true
+            }
+
+            Kirigami.Heading {
+                level: 2
+                text: root.arrival.hasExpectedArrivalTime ? Localizer.formatTime(root.arrival, "expectedArrivalTime") : Localizer.formatTime(reservationFor, "arrivalTime")
             }
         }
 
         RowLayout {
-            id: arrivalCountryLayout
-
             spacing: Kirigami.Units.smallSpacing
-            visible: arrivalCountryLabel.text.length > 0
+            visible: root.arrival.hasExpectedArrivalTime
 
-            Item {
-                Layout.minimumWidth: root.depTimeWidth + Kirigami.Units.largeSpacing * 3.5
+            Kirigami.Heading {
+                level: 5
+                text: oldTime.visible ? i18nc("duration of the delay e.g. Delayed 5 min", "Delayed %1", Localizer.formatDurationCustom(root.arrival.arrivalDelay * 60)) + ' - ' : i18nc("@info", "On time")
+                color: oldTime.visible ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
+                font.weight: Font.DemiBold
             }
 
             QQC2.Label {
-                id: arrivalCountryLabel
+                id: oldTime
 
-                text: root.arrivalCountry
-                Layout.fillWidth: true
+                opacity: 0.8
+                visible: root.arrival.arrivalDelay * 60 > 1
+                text: Localizer.formatTime(root.arrival, "scheduledArrivalTime")
+                font.strikeout: true
             }
+        }
+
+        QQC2.Label {
+            text: root.arrivalPlatform
+            visible: text.length > 0
         }
     }
 }

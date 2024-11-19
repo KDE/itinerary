@@ -18,7 +18,6 @@ RowLayout {
     property string transportName
     property string transportIcon
     property real progress
-    property alias depTimeWidth: depTime.width
     required property var reservationFor
 
     default property alias _content: innerLayout.children
@@ -40,7 +39,6 @@ RowLayout {
         }
 
         JourneySectionStopDelegateLineSegment {
-            visible: departureCountryLayout.visible
             lineColor: root.departure.route.line.hasColor ? root.departure.route.line.color : Kirigami.Theme.textColor
             hasStop: false
             leadingProgress: root.progress > 0 ? 1 : 0
@@ -53,7 +51,7 @@ RowLayout {
     ColumnLayout {
         id: innerLayout
 
-        spacing: 0
+        spacing: Kirigami.Units.largeSpacing
 
         Layout.bottomMargin: Kirigami.Units.largeSpacing
         Layout.fillHeight: true
@@ -61,90 +59,84 @@ RowLayout {
 
         RowLayout {
             spacing: Kirigami.Units.smallSpacing
-
-            Layout.fillHeight: true
-            Layout.fillWidth: true
-
-            RowLayout {
-                spacing: Kirigami.Units.smallSpacing
-
-                Layout.minimumWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
-                Layout.alignment: Qt.AlignTop
-
-                QQC2.Label {
-                    id: depTime
-                    text: Localizer.formatTime(reservationFor, "departureTime")
-                }
-
-                QQC2.Label {
-                    text: (departure.departureDelay >= 0 ? "+" : "") + departure.departureDelay
-                    color: (departure.departureDelay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
-                    visible: departure.hasExpectedDepartureTime
-                    Accessible.ignored: !visible
-                }
-            }
-
-            ColumnLayout {
-                spacing: Kirigami.Units.smallSpacing
-
-                QQC2.Label {
-                    Layout.fillWidth: true
-                    font.bold: true
-                    text: root.departureName
-                    elide: Text.ElideRight
-                }
-
-                QQC2.Control {
-                    contentItem: RowLayout {
-                        spacing: Kirigami.Units.smallSpacing
-                        TransportIcon {
-                            color: "white"
-                            isMask: true
-                            size: Kirigami.Units.iconSizes.smallMedium
-                            source: root.transportIcon
-                        }
-                        QQC2.Label {
-                            color: "white"
-                            text: root.transportName
-                            visible: root.transportName.length > 0
-                        }
-                    }
-                    background: Rectangle {
-                        radius: Kirigami.Units.cornerRadius
-                        color: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
-                    }
-                }
-
-                QQC2.Label {
-                    text: departure.route.direction ? i18nc("Direction of the transport mode", "To %1", departure.route.direction) : ""
-                    visible: departure.route.direction
-                    Layout.fillWidth: true
-                }
+            Kirigami.Heading {
+                level: 2
+                text: root.departureName
+                elide: Text.ElideRight
+                Layout.fillWidth: root.departureCountry.length === 0
             }
 
             QQC2.Label {
-                Layout.alignment: Qt.AlignRight | Qt.AlignTop
+                visible: root.departureCountry.length > 0
+                elide: Text.ElideRight
+                text: '(' + root.departureCountry + ')'
+                opacity: 0.8
+                Layout.fillWidth: true
+            }
 
-                text: root.departurePlatform
+            Kirigami.Heading {
+                text: departure.hasExpectedDepartureTime ? Localizer.formatTime(root.departure, "expectedDepartureTime") : Localizer.formatTime(reservationFor, "departureTime")
             }
         }
 
         RowLayout {
-            id: departureCountryLayout
+            QQC2.Control {
+                leftPadding: Kirigami.Units.smallSpacing
+                rightPadding: Kirigami.Units.smallSpacing
+                topPadding: Kirigami.Units.smallSpacing
+                bottomPadding: Kirigami.Units.smallSpacing
 
-            spacing: Kirigami.Units.smallSpacing
-            visible: departureCountryLabel.text.length > 0
-
-            Item {
-                Layout.minimumWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
+                contentItem: RowLayout {
+                    spacing: Kirigami.Units.smallSpacing
+                    TransportIcon {
+                        color: "white"
+                        isMask: true
+                        size: Kirigami.Units.iconSizes.smallMedium
+                        source: root.transportIcon
+                    }
+                    QQC2.Label {
+                        color: "white"
+                        text: root.transportName
+                        visible: root.transportName.length > 0
+                    }
+                }
+                background: Rectangle {
+                    radius: Kirigami.Units.cornerRadius
+                    color: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
+                }
             }
 
             QQC2.Label {
-                id: departureCountryLabel
-
-                text: root.departureCountry
+                text: departure.route.direction ? i18nc("Direction of the transport mode", "To %1", departure.route.direction) : ""
+                visible: departure.route.direction
                 Layout.fillWidth: true
             }
+        }
+
+        RowLayout {
+            spacing: Kirigami.Units.smallSpacing
+            visible: root.departure.hasExpectedDepartureTime
+
+            Kirigami.Heading {
+                level: 5
+                text: oldTime.visible ? i18nc("duration of the delay", "Delayed %1", Localizer.formatDurationCustom(root.departure.departureDelay * 60)) + ' - ' : i18nc("@info", "On time")
+                color: oldTime.visible ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
+                font.weight: Font.DemiBold
+            }
+
+            QQC2.Label {
+                id: oldTime
+
+                opacity: 0.8
+                text: Localizer.formatTime(root.departure, "scheduledDepartureTime")
+                font.strikeout: true
+                visible: root.departure.departureDelay * 60 > 1
+            }
+        }
+
+        QQC2.Label {
+            text: root.departurePlatform
+            visible: text.length > 0
         }
     }
 }

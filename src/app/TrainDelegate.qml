@@ -11,6 +11,7 @@ import org.kde.itinerary
 
 TimelineDelegate {
     id: root
+
     property bool expanded: false
     property var journeySection: root.controller.journey
 
@@ -41,12 +42,15 @@ TimelineDelegate {
                 }
 
                 if (platform) {
-                    return i18n("Pl. %1", platform);
+                    return i18n("Platform %1", platform);
                 } else {
                     return "";
                 }
             }
-            Component.onCompleted: progress = root.controller.progress;
+            Component.onCompleted: {
+                progress = root.controller.progress;
+            }
+
             departureCountry: Localizer.formatAddressWithContext(reservationFor.departureStation.address,
                                                          reservationFor.arrivalStation.address,
                                                          Settings.homeCountryIsoCode)
@@ -106,13 +110,9 @@ TimelineDelegate {
                         color: Kirigami.Theme.disabledTextColor
                     }
                     QQC2.Label {
-                        text: i18np("1 intermediate stop", "%1 intermediate stops", stopRepeater.count)
+                        text: i18np("1 intermediate stop (%2)", "%1 intermediate stops (%2)", stopRepeater.count, Localizer.formatDurationCustom(root.journeySection.duration))
                         color: Kirigami.Theme.disabledTextColor
                         Layout.rightMargin: Kirigami.Units.largeSpacing
-                    }
-                    Kirigami.Separator {
-                        Layout.topMargin: Kirigami.Units.smallSpacing
-                        Layout.bottomMargin: Kirigami.Units.smallSpacing
                         Layout.fillWidth: true
                     }
                 }
@@ -162,12 +162,18 @@ TimelineDelegate {
                     lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
                     hasStop: model.stopover.disruptionEffect !== Disruption.NoService
 
-                    leadingProgress: model.stopoverPassed ? 1.0 : 0
-                    trailingProgress: model.stopoverPassed ? 1.0 : 0
+                    leadingProgress: root.progress > 0 && model.stopoverPassed ? 1.0 : 0
+                    trailingProgress: root.progress > 0 && model.stopoverPassed ? 1.0 : 0
+                }
+                QQC2.Label{
+                    text: model.stopover.stopPoint.name
+                    Layout.fillWidth: true
+                    elide: Text.ElideRight
+                    font.strikeout: model.stopover.disruptionEffect === Disruption.NoService
                 }
                 RowLayout {
-                    Layout.minimumWidth: departureLayout.depTimeWidth + Kirigami.Units.largeSpacing * 3.5
-                    QQC2.Label{
+                    QQC2.Label {
+                        opacity: 0.8
                         text: Localizer.formatTime(model.stopover , model.stopover.scheduledDepartureTime > 0 ? "scheduledDepartureTime" : "scheduledArrivalTime")
                         font.strikeout: model.stopover.disruptionEffect === Disruption.NoService
                     }
@@ -180,19 +186,13 @@ TimelineDelegate {
                         Accessible.ignored: !visible
                     }
                 }
-                QQC2.Label{
-                    text: model.stopover.stopPoint.name
-                    Layout.fillWidth: true
-                    elide: Text.ElideRight
-                    font.strikeout: model.stopover.disruptionEffect === Disruption.NoService
-                }
             }
         }
 
         TimelineDelegateArrivalLayout {
             reservationFor: root.reservationFor
-            depTimeWidth: departureLayout.depTimeWidth
             arrival: root.arrival
+            departure: root.departure
             arrivalName: reservationFor.arrivalStation.name
             arrivalCountry: Localizer.formatAddressWithContext(reservationFor.arrivalStation.address,
                                                          reservationFor.departureStation.address,
@@ -206,13 +206,15 @@ TimelineDelegate {
                 }
 
                 if (platform) {
-                    return i18n("Pl. %1", platform);
+                    return i18n("Platform %1", platform);
                 } else {
                     return "";
                 }
             }
 
-            Component.onCompleted: progress = root.controller.progress;
+            Component.onCompleted: {
+                progress = root.controller.progress;
+            }
         }
     }
 

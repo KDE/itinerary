@@ -44,8 +44,9 @@ FormCard.FormCard {
                     Layout.preferredHeight: Layout.preferredWidth
                 }
 
-                QQC2.Label {
+                Kirigami.Heading {
                     id: headerLabel
+                    level: 3
                     text: root.locationInfo.dstDiffers ?
                         (root.locationInfo.isDst ? i18n("Daylight Saving Time") : i18nc("opposite to daylight saving time", "Standard Time"))
                         : i18n("Entering %1", Country.fromAlpha2(locationInfo.isoCode).name)
