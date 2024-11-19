@@ -13,17 +13,15 @@ import org.kde.itinerary
 TimelineDelegate {
     id: root
 
-    function airportDisplayString(airport)
-    {
+    function airportDisplayString(airport: var): string {
         return airport.name ? airport.name : airport.iataCode;
     }
 
-    function airportDisplayCode(airport)
-    {
+    function airportDisplayCode(airport: var): string {
         return airport.iataCode ? airport.iataCode : airport.name;
     }
 
-    function airplaneSeatString() {
+    function airplaneSeat(): string {
         var s = new Array();
         for (var i = 0; i < root.resIds.length; ++i) {
             var res = ReservationManager.reservation(root.resIds[i]);
@@ -35,83 +33,65 @@ TimelineDelegate {
         return s.join(", ");
     }
 
-    headerIconSource: ReservationHelper.defaultIconName(root.reservation)
-    headerItem: RowLayout {
-        QQC2.Label {
-            id: headerLabel
-            text: i18n("%1 %2 → %3",
-                reservationFor.airline.iataCode + " " + reservationFor.flightNumber,
-                airportDisplayCode(reservationFor.departureAirport),
-                airportDisplayCode(reservationFor.arrivalAirport))
-            color: root.headerTextColor
-            elide: Text.ElideRight
-            Layout.fillWidth: true
-            Accessible.ignored: true
-        }
-        QQC2.Label {
-            text: isNaN(reservationFor.boardingTime.getTime()) ?
-                Localizer.formatTime(reservationFor, "departureTime") :
-                Localizer.formatTime(reservationFor, "boardingTime")
-            color: root.headerTextColor
-        }
-    }
+    contentItem: ColumnLayout {
+        spacing: 0
 
-    contentItem: Column {
-        id: topLayout
-        spacing: Kirigami.Units.smallSpacing
+        TimelineDelegateDepartureLayout {
+            id: departureLayout
 
-        QQC2.Label {
-            text: i18nc("flight departure, %1 is airport, %2 is time", "Departure from %1: %2",
-                airportDisplayString(reservationFor.departureAirport),
-                Localizer.formatTime(reservationFor, "departureTime") + " ")
-            color: Kirigami.Theme.textColor
-            wrapMode: Text.WordWrap
-            width: topLayout.width
-        }
-        QQC2.Label {
-            visible: text !== ""
-            width: topLayout.width
-            text: Localizer.formatAddressWithContext(reservationFor.departureAirport.address,
-                                                     reservationFor.arrivalAirport.address,
+            reservationFor: root.reservationFor
+            departure: root.departure
+            progress: root.controller.progress
+            departureName: root.airportDisplayString(root.reservationFor.departureAirport) + " " + root.airportDisplayCode(reservationFor.departureAirport)
+            departureCountry: Localizer.formatAddressWithContext(root.reservationFor.departureAirport.address,
+                                                     root.reservationFor.arrivalAirport.address,
                                                      Settings.homeCountryIsoCode)
+            transportName: root.reservationFor.airline.iataCode + " " + root.reservationFor.flightNumber
+            transportIcon: ReservationHelper.defaultIconName(root.reservation)
+
+            QQC2.Label {
+                Layout.leftMargin: departureLayout.depTimeWidth + Kirigami.Units.largeSpacing * 4
+                visible: !isNaN(root.reservationFor.boardingTime.getTime())
+                text: !isNaN(root.reservationFor.boardingTime.getTime()) ? i18nc("@info", "<b>Boarding time:</b> %1", Localizer.formatTime(root.reservationFor, "boardingTime")) : ''
+            }
         }
 
         TimelineDelegateSeatRow {
-            width: topLayout.width
+            route: root.departure.route
+            hasSeat: root.hasSeat
+
+            Component.onCompleted: progress = root.controller.progress;
 
             TimelineDelegateSeatRowLabel {
-                text: i18nc("flight departure terminal", "Terminal: <b>%1</b>", reservationFor.departureTerminal || "-")
+                text: i18nc("flight departure terminal", "Terminal: <b>%1</b>", root.reservationFor.departureTerminal || "-")
             }
             Kirigami.Separator {
                 Layout.fillHeight: true
             }
             TimelineDelegateSeatRowLabel {
-                text: i18nc("flight departure gate", "Gate: <b>%1</b>", reservationFor.departureGate || "-")
+                text: i18nc("flight departure gate", "Gate: <b>%1</b>", root.reservationFor.departureGate || "-")
             }
             Kirigami.Separator {
                 Layout.fillHeight: true
             }
             TimelineDelegateSeatRowLabel {
-                text: i18nc("flight seats", "Seat: <b>%1</b>", airplaneSeatString())
+                text: i18nc("flight seats", "Seat: <b>%1</b>", root.airplaneSeat())
             }
         }
 
-        QQC2.Label {
-            text: i18nc("flight arrival, %1 is airport, %2 is time", "Arrival at %1: %2",
-                airportDisplayString(reservationFor.arrivalAirport),
-                Localizer.formatDateTime(reservationFor, "arrivalTime") + " ")
-            color: Kirigami.Theme.textColor
-            wrapMode: Text.WordWrap
-            width: topLayout.width
-        }
-        QQC2.Label {
-            visible: text !== ""
-            width: topLayout.width
-            text: Localizer.formatAddressWithContext(reservationFor.arrivalAirport.address,
-                                                     reservationFor.departureAirport.address,
+        TimelineDelegateArrivalLayout {
+            depTimeWidth: departureLayout.depTimeWidth
+            arrival: root.arrival
+            progress: root.controller.progress
+            reservationFor: root.reservationFor
+            arrivalName: root.airportDisplayString(root.reservationFor.arrivalAirport) + ' ' + root.airportDisplayCode(root.reservationFor.arrivalAirport)
+            arrivalCountry: Localizer.formatAddressWithContext(root.reservationFor.arrivalAirport.address,
+                                                     root.reservationFor.departureAirport.address,
                                                      Settings.homeCountryIsoCode)
         }
     }
 
-    Accessible.name: headerLabel.text
+    Accessible.name: i18n("%1 %2 → %3", root.reservationFor.airline.iataCode + " " + root.reservationFor.flightNumber,
+                root.airportDisplayCode(root.reservationFor.departureAirport),
+                root.airportDisplayCode(root.reservationFor.arrivalAirport))
 }

@@ -21,6 +21,8 @@ RowLayout {
     property alias depTimeWidth: depTime.width
     required property var reservationFor
 
+    default property alias _content: innerLayout.children
+
     spacing: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
 
     Layout.fillWidth: true
