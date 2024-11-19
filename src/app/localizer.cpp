@@ -211,7 +211,38 @@ QString Localizer::formatDuration(int seconds) const
     if (seconds < 0) {
         return QLocale().negativeSign() + KFormat().formatDuration((-seconds * 1000), KFormat::HideSeconds);
     }
-    return KFormat().formatDuration(seconds * 1000, KFormat::HideSeconds);
+    return KFormat().formatDuration((-seconds * 1000), KFormat::HideSeconds);
+}
+
+QString Localizer::formatDurationCustom(int seconds) const
+{
+    enum TimeConstants {
+        SecsInDay = 86400,
+        SecsInHour = 3600,
+        SecsInMinute = 60,
+    };
+
+    bool isNegative = seconds < 0;
+    if (isNegative) {
+        seconds = -seconds;
+    }
+
+    int hours = seconds / SecsInHour;
+    seconds = seconds % SecsInHour;
+    int minutes = seconds / SecsInMinute;
+
+    QString duration;
+    if (hours == 0) {
+        duration = i18nc("Duration in minutes", "%1 min", minutes);
+    } else if (minutes == 0) {
+        duration = i18nc("Duration in hours and minutes", "%1 hr", hours);
+    } else {
+        duration = i18nc("Duration in hours and minutes", "%1 hr %2 min", hours, minutes);
+    }
+    if (isNegative) {
+        duration = QLocale().negativeSign() + duration;
+    }
+    return duration;
 }
 
 QString Localizer::formatDistance(int meter)
