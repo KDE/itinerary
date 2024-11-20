@@ -73,6 +73,34 @@ static bool addressEmptyExceptForCountry(const KContacts::Address &address)
         && !address.country().isEmpty();
 }
 
+static bool includeCountry(const KContacts::Address &address, const QVariant &otherObj, const QString &homeCountryIsoCode)
+{
+    if (homeCountryIsoCode.isEmpty()) {
+        return true;
+    }
+
+    if (address.country() != homeCountryIsoCode) {
+        return true;
+    }
+
+    const KContacts::Address otherAddress = variantToKContactsAddress(otherObj);
+    return !otherAddress.country().isEmpty() && address.country() != otherAddress.country();
+};
+
+QString Localizer::formatCountryWithContext(const QVariant &obj, const QVariant &otherObj, const QString &homeCountryIsoCode)
+{
+    const KContacts::Address address = variantToKContactsAddress(obj);
+
+    if (address.isEmpty()) {
+        return {};
+    }
+
+    if (includeCountry(address, otherObj, homeCountryIsoCode)) {
+        return KCountry::fromAlpha2(address.country()).name();
+    }
+    return {};
+}
+
 QString Localizer::formatAddressWithContext(const QVariant &obj, const QVariant &otherObj, const QString &homeCountryIsoCode)
 {
     const KContacts::Address address = variantToKContactsAddress(obj);
@@ -81,32 +109,10 @@ QString Localizer::formatAddressWithContext(const QVariant &obj, const QVariant 
         return {};
     }
 
-    const bool includeCountry = [&] {
-        if (homeCountryIsoCode.isEmpty()) {
-            return true;
-        }
-
-        if (!addressEmptyExceptForCountry(address)) {
-            return true;
-        }
-
-        if (address.country() != homeCountryIsoCode) {
-            return true;
-        }
-
-        const KContacts::Address otherAddress = variantToKContactsAddress(otherObj);
-        if (!otherAddress.country().isEmpty() && address.country() != otherAddress.country()) {
-            return true;
-        }
-
-        return false;
-    }();
-
-    if (includeCountry) {
+    if (!addressEmptyExceptForCountry(address) || includeCountry(address, otherObj, homeCountryIsoCode)) {
         return address.formatted(KContacts::AddressFormatStyle::MultiLineInternational);
-    } else {
-        return address.formatted(KContacts::AddressFormatStyle::MultiLineDomestic);
     }
+    return address.formatted(KContacts::AddressFormatStyle::MultiLineDomestic);
 }
 
 static bool needsTimeZone(const QDateTime &dt)

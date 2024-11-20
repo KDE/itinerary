@@ -42,7 +42,7 @@ TimelineDelegate {
                 progress = root.controller.progress;
             }
 
-            departureCountry: Localizer.formatAddressWithContext(reservationFor.departureBusStop.address,
+            departureCountry: Localizer.formatCountryWithContext(reservationFor.departureBusStop.address,
                                                                  reservationFor.arrivalBusStop.address,
                                                                  Settings.homeCountryIsoCode)
         }
@@ -165,7 +165,7 @@ TimelineDelegate {
             reservationFor: root.reservationFor
             arrival: root.arrival
             arrivalName: reservationFor.arrivalBusStop.name
-            arrivalCountry: Localizer.formatAddressWithContext(reservationFor.arrivalBusStop.address,
+            arrivalCountry: Localizer.formatCountryWithContext(reservationFor.arrivalBusStop.address,
                                                                  reservationFor.departureBusStop.address,
                                                                  Settings.homeCountryIsoCode)
             Component.onCompleted: progress = root.controller.progress;

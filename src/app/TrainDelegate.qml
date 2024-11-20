@@ -51,7 +51,7 @@ TimelineDelegate {
                 progress = root.controller.progress;
             }
 
-            departureCountry: Localizer.formatAddressWithContext(reservationFor.departureStation.address,
+            departureCountry: Localizer.formatCountryWithContext(reservationFor.departureStation.address,
                                                          reservationFor.arrivalStation.address,
                                                          Settings.homeCountryIsoCode)
         }
@@ -194,7 +194,7 @@ TimelineDelegate {
             arrival: root.arrival
             departure: root.departure
             arrivalName: reservationFor.arrivalStation.name
-            arrivalCountry: Localizer.formatAddressWithContext(reservationFor.arrivalStation.address,
+            arrivalCountry: Localizer.formatCountryWithContext(reservationFor.arrivalStation.address,
                                                          reservationFor.departureStation.address,
                                                          Settings.homeCountryIsoCode)
             arrivalPlatform: {
