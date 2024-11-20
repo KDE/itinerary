@@ -51,7 +51,7 @@ RowLayout {
     ColumnLayout {
         id: innerLayout
 
-        spacing: Kirigami.Units.largeSpacing
+        spacing: Kirigami.Units.smallSpacing
 
         Layout.bottomMargin: Kirigami.Units.largeSpacing
         Layout.fillHeight: true
@@ -114,7 +114,7 @@ RowLayout {
         }
 
         RowLayout {
-            spacing: Kirigami.Units.smallSpacing
+            spacing: 0
             visible: root.departure.hasExpectedDepartureTime
 
             Kirigami.Heading {

@@ -77,7 +77,7 @@ RowLayout {
         }
 
         RowLayout {
-            spacing: Kirigami.Units.smallSpacing
+            spacing: 0
             visible: root.arrival.hasExpectedArrivalTime
 
             Kirigami.Heading {
