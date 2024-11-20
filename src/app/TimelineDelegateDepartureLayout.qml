@@ -89,26 +89,27 @@ RowLayout {
                 contentItem: RowLayout {
                     spacing: Kirigami.Units.smallSpacing
                     TransportIcon {
-                        color: "white"
+                        color: root.departure.route.line.hasColor ? "white" : Kirigami.Theme.backgroundColor
                         isMask: true
                         size: Kirigami.Units.iconSizes.smallMedium
                         source: root.transportIcon
                     }
                     QQC2.Label {
-                        color: "white"
+                        color: root.departure.route.line.hasColor ? "white" : Kirigami.Theme.backgroundColor
                         text: root.transportName
                         visible: root.transportName.length > 0
                     }
                 }
                 background: Rectangle {
                     radius: Kirigami.Units.cornerRadius
-                    color: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
+                    color: root.departure.route.line.hasColor ? root.departure.route.line.color : Kirigami.Theme.textColor
                 }
             }
 
             QQC2.Label {
                 text: departure.route.direction ? i18nc("Direction of the transport mode", "To %1", departure.route.direction) : ""
                 visible: departure.route.direction
+                elide: Text.ElideRight
                 Layout.fillWidth: true
             }
         }

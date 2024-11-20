@@ -43,7 +43,7 @@ TimelineDelegate {
             departure: root.departure
             progress: root.controller.progress
             departureName: root.airportDisplayString(root.reservationFor.departureAirport) + " " + root.airportDisplayCode(reservationFor.departureAirport)
-            departureCountry: Localizer.formatAddressWithContext(root.reservationFor.departureAirport.address,
+            departureCountry: Localizer.formatCountryWithContext(root.reservationFor.departureAirport.address,
                                                      root.reservationFor.arrivalAirport.address,
                                                      Settings.homeCountryIsoCode)
             transportName: root.reservationFor.airline.iataCode + " " + root.reservationFor.flightNumber
@@ -84,7 +84,7 @@ TimelineDelegate {
             progress: root.controller.progress
             reservationFor: root.reservationFor
             arrivalName: root.airportDisplayString(root.reservationFor.arrivalAirport) + ' ' + root.airportDisplayCode(root.reservationFor.arrivalAirport)
-            arrivalCountry: Localizer.formatAddressWithContext(root.reservationFor.arrivalAirport.address,
+            arrivalCountry: Localizer.formatCountryWithContext(root.reservationFor.arrivalAirport.address,
                                                      root.reservationFor.departureAirport.address,
                                                      Settings.homeCountryIsoCode)
         }

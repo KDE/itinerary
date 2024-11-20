@@ -13,7 +13,7 @@ import org.kde.itinerary
 TimelineDelegate {
     id: root
 
-    contentItem: Column {
+    contentItem: ColumnLayout {
         id: topLayout
         spacing: Kirigami.Units.smallSpacing
 

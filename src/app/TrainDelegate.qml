@@ -111,6 +111,7 @@ TimelineDelegate {
                     }
                     QQC2.Label {
                         text: i18np("1 intermediate stop (%2)", "%1 intermediate stops (%2)", stopRepeater.count, Localizer.formatDurationCustom(root.journeySection.duration))
+                        elide: Text.ElideRight
                         color: Kirigami.Theme.disabledTextColor
                         Layout.rightMargin: Kirigami.Units.largeSpacing
                         Layout.fillWidth: true
