@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-15 00:40+0000\n"
-"PO-Revision-Date: 2024-11-11 06:54+0100\n"
+"PO-Revision-Date: 2024-11-19 20:38+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -2523,11 +2523,10 @@ msgid "Map download finished."
 msgstr "Mapa zama-jaistea amaitu da."
 
 #: app/Main.qml:430
-#, fuzzy, kde-format
-#| msgid "Matrix Integration"
+#, kde-format
 msgctxt "@title:window"
 msgid "Matrix Session Verification"
-msgstr "«Matrix»ekin bateratzea"
+msgstr "«Matrix»eko saioaren egiaztapena"
 
 #: app/MapStopoverInfoSheetDrawer.qml:59
 #, kde-format
@@ -2545,64 +2544,63 @@ msgid "Show indoor map"
 msgstr "Erakutsi barnealdeko mapa"
 
 #: app/MatrixKeyVerificationPage.qml:12
-#, fuzzy, kde-format
-#| msgid "Matrix Integration"
+#, kde-format
 msgid "Matrix Session Verification"
-msgstr "«Matrix»ekin bateratzea"
+msgstr "«Matrix»eko saioaren egiaztapena"
 
 #: app/MatrixKeyVerificationPage.qml:41
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Waiting for device to accept verification."
-msgstr ""
+msgstr "Gailuak egiaztapena onartzeko zain."
 
 #: app/MatrixKeyVerificationPage.qml:43
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Incoming key verification request from device <b>%1</b>"
-msgstr ""
+msgstr "<b>%1</b> gailuaren, sarrerako gakoaren egiaztapen eskaera"
 
 #: app/MatrixKeyVerificationPage.qml:45
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Waiting for other party to verify."
-msgstr ""
+msgstr "Beste aldea egiaztatzeko zain."
 
 #: app/MatrixKeyVerificationPage.qml:47
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Successfully verified device <b>%1</b>"
-msgstr ""
+msgstr "<b>%1</b> gailuaren egiaztapen arrakastatsua"
 
 #: app/MatrixKeyVerificationPage.qml:52
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session verification was canceled for unknown reason."
-msgstr ""
+msgstr "Saioaren egiaztapena arrazoi ezezagunengatik bertan behera utzi da."
 
 #: app/MatrixKeyVerificationPage.qml:54
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session verification timed out."
-msgstr ""
+msgstr "Saioaren egiaztapenaren denbora-muga gainditu da."
 
 #: app/MatrixKeyVerificationPage.qml:56
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session verification timed out for remote party."
-msgstr ""
+msgstr "Urrutiko aldearen saioaren egiaztapenak denbora-muga gainditu du."
 
 #: app/MatrixKeyVerificationPage.qml:58
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "You canceled the session verification."
-msgstr ""
+msgstr "Saioaren egiaztapena bertan behera utzi duzu."
 
 #: app/MatrixKeyVerificationPage.qml:60
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The remote party canceled the session verification."
-msgstr ""
+msgstr "Urrutiko aldeak saioaren egiaztapena bertan behera utzi du."
 
 #: app/MatrixKeyVerificationPage.qml:62
 #, kde-format
@@ -2611,6 +2609,8 @@ msgid ""
 "The session verification was canceled because we received an unexpected "
 "message."
 msgstr ""
+"Saioaren egiaztapena bertan behera utzi da, ustekabeko mezu bat jaso "
+"dugulako."
 
 #: app/MatrixKeyVerificationPage.qml:64
 #, kde-format
@@ -2619,6 +2619,8 @@ msgid ""
 "The remote party canceled the session verification because it received an "
 "unexpected message."
 msgstr ""
+"Urrutiko aldeak saioaren egiaztapena bertan behera utzi du, ustekabeko mezu "
+"bat jaso duelako."
 
 #: app/MatrixKeyVerificationPage.qml:66
 #, kde-format
@@ -2627,6 +2629,8 @@ msgid ""
 "The session verification was canceled because it received a message for an "
 "unknown session."
 msgstr ""
+"Saioaren egiaztapena bertan behera utzi da, saio ezezagun baten mezua jaso "
+"duelako."
 
 #: app/MatrixKeyVerificationPage.qml:68
 #, kde-format
@@ -2635,6 +2639,8 @@ msgid ""
 "The remote party canceled the session verification because it received a "
 "message for an unknown session."
 msgstr ""
+"Urrutiko aldeak saioaren egiaztapena bertan behera utzi du, saio ezezagun "
+"baten mezu bat jaso duelako."
 
 #: app/MatrixKeyVerificationPage.qml:70
 #, kde-format
@@ -2643,6 +2649,8 @@ msgid ""
 "The session verification was canceled because NeoChat is unable to handle "
 "this verification method."
 msgstr ""
+"Saioaren egiaztapena bertan behera utzi da, NeoChat, egiaztapen metodoa "
+"maneiatzeko gai ez delako."
 
 #: app/MatrixKeyVerificationPage.qml:72
 #, kde-format
@@ -2651,12 +2659,14 @@ msgid ""
 "The remote party canceled the session verification because it is unable to "
 "handle this verification method."
 msgstr ""
+"Urrutiko aldeak saioaren egiaztapena bertan behera utzi du, egiaztapen "
+"metodo hau maneiatzeko gai ez delako."
 
 #: app/MatrixKeyVerificationPage.qml:74
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session verification was canceled because the keys are incorrect."
-msgstr ""
+msgstr "Saioaren egiaztapena bertan behera utzi da, gakoak okerrak direlako."
 
 #: app/MatrixKeyVerificationPage.qml:76
 #, kde-format
@@ -2667,6 +2677,11 @@ msgid ""
 "\n"
 "<b>Please log out and log back in, your session is broken/corrupt.</b>"
 msgstr ""
+"Urrutiko aldeak saioaren egiaztapena bertan behera utzi du gakoak okerrak "
+"direlako.\n"
+"\n"
+"<b>Mesedez, saiotik irten eta atzera sartu, zure saioa hautsita/hondatuta "
+"dago.</b>"
 
 #: app/MatrixKeyVerificationPage.qml:78
 #, kde-format
@@ -2674,6 +2689,8 @@ msgctxt "Matrix session verification"
 msgid ""
 "The session verification was canceled because it verifies an unexpected user."
 msgstr ""
+"Saioaren egiaztapena bertan behera utzi da, ustekabeko erabiltzaile bat "
+"egiaztatzen duelako."
 
 #: app/MatrixKeyVerificationPage.qml:80
 #, kde-format
@@ -2682,6 +2699,8 @@ msgid ""
 "The remote party canceled the session verification because it verifies an "
 "unexpected user."
 msgstr ""
+"Urrutiko aldeak saioaren egiaztapena bertan behera utzi du, ustekabeko "
+"erabiltzaile bat egiaztatzen duelako."
 
 #: app/MatrixKeyVerificationPage.qml:82
 #, kde-format
@@ -2689,6 +2708,7 @@ msgctxt "Matrix session verification"
 msgid ""
 "The session verification was canceled because we received an invalid message."
 msgstr ""
+"Saioaren egiaztapena bertan behera utzi da, mezu baliogabe bat jaso dugulako."
 
 #: app/MatrixKeyVerificationPage.qml:84
 #, kde-format
@@ -2697,18 +2717,22 @@ msgid ""
 "The remote party canceled the session verification because it received an "
 "invalid message."
 msgstr ""
+"Urrutiko aldeak saioaren egiaztapena bertan behera utzi du mezu baliogabe "
+"bat jaso duelako."
 
 #: app/MatrixKeyVerificationPage.qml:87
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session was accepted on a different device"
-msgstr ""
+msgstr "Saioa beste gailu batean onartu da"
 
 #: app/MatrixKeyVerificationPage.qml:89
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session verification was canceled because of a mismatched key."
 msgstr ""
+"Saioaren egiaztapena bertan behera utzi da, bat ez datorren gako baten "
+"ondorioz."
 
 #: app/MatrixKeyVerificationPage.qml:91
 #, kde-format
@@ -2717,12 +2741,14 @@ msgid ""
 "The remote party canceled the session verification because of a mismatched "
 "key."
 msgstr ""
+"Urrutiko aldeak saioaren egiaztapena bertan behera utzi du, bat ez datorren "
+"gako baten ondorioz."
 
 #: app/MatrixKeyVerificationPage.qml:93
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session verification was canceled because the keys do not match."
-msgstr ""
+msgstr "Saioaren egiaztapena bertan behera utzi da, gakoa bat ez datorrelako."
 
 #: app/MatrixKeyVerificationPage.qml:95
 #, kde-format
@@ -2731,25 +2757,27 @@ msgid ""
 "The remote party canceled the session verification because the keys do not "
 "match."
 msgstr ""
+"Urrutiko aldeak saioaren egiaztapena bertan behera utzi du, gakoak bat ez "
+"datozelako."
 
 #: app/MatrixKeyVerificationPage.qml:97
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session verification was canceled due to an unknown error."
 msgstr ""
+"Saioaren egiaztapena bertan behera utzi da, errore ezezagun baten ondorioz."
 
 #: app/MatrixKeyVerificationPage.qml:114
-#, fuzzy, kde-format
-#| msgid "Notifications"
+#, kde-format
 msgctxt "Matrix session verfication"
 msgid "Emoji Verification"
-msgstr "Jakinarazpenak"
+msgstr "Emoji egiaztapena"
 
 #: app/MatrixKeyVerificationPage.qml:117
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Compare a set of emoji on both devices."
-msgstr ""
+msgstr "Alderatu emoji-multzo bat bi gailuetan."
 
 #: app/MatrixKeyVerificationPage.qml:128
 #, kde-format
@@ -2757,28 +2785,29 @@ msgctxt "Matrix session verification"
 msgid ""
 "Confirm the emoji below are displayed on both devices, in the same order."
 msgstr ""
+"Baieztatu beheko emojiak bi galuetan, hurrenkera berean azaltzen direla."
 
 #: app/MatrixKeyVerificationPage.qml:165
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "They match"
-msgstr ""
+msgstr "Bat datoz"
 
 #: app/MatrixKeyVerificationPage.qml:171
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "They don't match"
-msgstr ""
+msgstr "Ez datoz bat"
 
 #: app/MatrixKeyVerificationPage.qml:207
 #, kde-format
 msgid "Accept"
-msgstr ""
+msgstr "Onartu"
 
 #: app/MatrixKeyVerificationPage.qml:213
 #, kde-format
 msgid "Decline"
-msgstr ""
+msgstr "Uko egin"
 
 #: app/MatrixRoomSelectionSheet.qml:19
 #, kde-format
@@ -2819,7 +2848,7 @@ msgstr "Lehentasun txikia"
 #, kde-format
 msgctxt "matrix room type"
 msgid "Spaces"
-msgstr "Espazioak"
+msgstr "Tokiak"
 
 #: app/NavigationBar.qml:18
 #, kde-format
@@ -3046,7 +3075,7 @@ msgstr "Zenbakia"
 #: app/ProgramMembershipCard.qml:50 app/ProgramMembershipPage.qml:105
 #, kde-format
 msgid "Program membership number copied to clipboard"
-msgstr "Programako bazkide zenbakia arbelera kopiatu da"
+msgstr "Programako bazkidetza zenbakia arbelera kopiatu da"
 
 #: app/ProgramMembershipCard.qml:63
 #, kde-format
@@ -3081,7 +3110,7 @@ msgstr "Bazkidetza"
 #: app/ProgramMembershipEditor.qml:84 app/ProgramMembershipPage.qml:86
 #, kde-format
 msgid "Member"
-msgstr "Bazkidea"
+msgstr "Kidea"
 
 #: app/ProgramMembershipEditor.qml:97 app/ProgramMembershipPage.qml:117
 #: app/TicketPage.qml:92
@@ -3194,8 +3223,8 @@ msgstr "Une honetan ez dago eskuragarri"
 #, kde-format
 msgid "One space"
 msgid_plural "%1 spaces"
-msgstr[0] "Leku bat"
-msgstr[1] "%1 leku"
+msgstr[0] "Toki bat"
+msgstr[1] "%1 toki"
 
 #: app/ReservationDocumentsCard.qml:19
 #, kde-format
@@ -3521,19 +3550,19 @@ msgstr "Pasahitza"
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Session verified"
-msgstr ""
+msgstr "Saioa egiaztatuta"
 
 #: app/SettingsPage.qml:316
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Session not verified."
-msgstr ""
+msgstr "Saioa ez egiaztatuta."
 
 #: app/SettingsPage.qml:317
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Initiate session verification in your Matrix chat client."
-msgstr ""
+msgstr "Hasi saioaren egiaztapena Matrix-erako zure berriketa bezeroan."
 
 #: app/SettingsPage.qml:324
 #, kde-format
@@ -3566,7 +3595,7 @@ msgstr ""
 #: app/SettingsPage.qml:344
 #, kde-format
 msgid "Login"
-msgstr "Saioa hasi"
+msgstr "Saioan sartu"
 
 #: app/SettingsPage.qml:349
 #, kde-format
@@ -4552,16 +4581,14 @@ msgid "This server does not support logging in using a password"
 msgstr "Zerbitzari horrek ez du pasahitz bat erabiliz saio-hastea onartzen"
 
 #: matrix/matrixmanager.cpp:78
-#, fuzzy, kde-format
-#| msgid "Logging in"
+#, kde-format
 msgid "Logging in…"
-msgstr "Saioa hasten"
+msgstr "Saioan sartzen..."
 
 #: matrix/matrixmanager.cpp:114
-#, fuzzy, kde-format
-#| msgid "Log out"
+#, kde-format
 msgid "Logged out"
-msgstr "Itxi saioa"
+msgstr "Saiotik aterata"
 
 #: metadataextractor/itineraryextractor.cpp:118
 #, kde-format
