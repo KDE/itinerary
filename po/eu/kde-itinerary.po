@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-18 02:39+0000\n"
-"PO-Revision-Date: 2024-11-09 11:41+0100\n"
+"PO-Revision-Date: 2024-11-19 20:34+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -2576,7 +2576,7 @@ msgstr "Lehentasun txikia"
 #, kde-format
 msgctxt "matrix room type"
 msgid "Spaces"
-msgstr "Espazioak"
+msgstr "Tokiak"
 
 #: app/NavigationBar.qml:18
 #, kde-format
@@ -2803,7 +2803,7 @@ msgstr "Zenbakia"
 #: app/ProgramMembershipCard.qml:50 app/ProgramMembershipPage.qml:105
 #, kde-format
 msgid "Program membership number copied to clipboard"
-msgstr "Programako bazkide zenbakia arbelera kopiatu da"
+msgstr "Programako bazkidetza zenbakia arbelera kopiatu da"
 
 #: app/ProgramMembershipCard.qml:63
 #, kde-format
@@ -2838,7 +2838,7 @@ msgstr "Bazkidetza"
 #: app/ProgramMembershipEditor.qml:84 app/ProgramMembershipPage.qml:86
 #, kde-format
 msgid "Member"
-msgstr "Bazkidea"
+msgstr "Kidea"
 
 #: app/ProgramMembershipEditor.qml:97 app/ProgramMembershipPage.qml:117
 #: app/TicketPage.qml:92
@@ -2951,8 +2951,8 @@ msgstr "Une honetan ez dago eskuragarri"
 #, kde-format
 msgid "One space"
 msgid_plural "%1 spaces"
-msgstr[0] "Leku bat"
-msgstr[1] "%1 leku"
+msgstr[0] "Toki bat"
+msgstr[1] "%1 toki"
 
 #: app/ReservationDocumentsCard.qml:19
 #, kde-format
@@ -3305,7 +3305,7 @@ msgstr ""
 #: app/SettingsPage.qml:334
 #, kde-format
 msgid "Login"
-msgstr "Saioa hasi"
+msgstr "Saioan sartu"
 
 #: app/SettingsPage.qml:339
 #, kde-format
