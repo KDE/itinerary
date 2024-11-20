@@ -30,10 +30,10 @@ RowLayout {
         spacing: 0
 
         JourneySectionStopDelegateLineSegment {
+            Layout.minimumHeight: implicitWidth
             lineColor: root.departure.route.line.hasColor ? root.departure.route.line.color : Kirigami.Theme.textColor
             isDeparture: true
 
-            Layout.fillHeight: true
             leadingProgress: root.progress > 0 ? 1 : 0
             trailingProgress: root.progress > 0 ? 1 : 0
         }
