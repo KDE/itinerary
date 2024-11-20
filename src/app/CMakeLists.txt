@@ -258,6 +258,7 @@ ecm_add_qml_module(itinerary-app URI org.kde.itinerary NO_PLUGIN QML_FILES
 target_include_directories(itinerary-app PRIVATE ${CMAKE_BINARY_DIR})
 target_link_libraries(itinerary-app PRIVATE
     itinerary
+    KF6::I18nQml
     Qt::QuickControls2
     KCalendarCoreExtras
     Qt6Keychain::Qt6Keychain
