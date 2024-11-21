@@ -70,7 +70,7 @@ ColumnLayout {
             visible: KCalendarCore.CalendarPluginLoader.hasPlugin
         },
         Kirigami.Action {
-            icon.name: "export-symbolic"
+            icon.name: "document-export-symbolic"
             text: i18n("Export…")
             onTriggered: exportBatchDialog.open()
         },
@@ -139,7 +139,7 @@ ColumnLayout {
         property list<QQC2.Action> _actions: [
             Kirigami.Action {
                 text: i18n("As Itinerary file…")
-                icon.name: "export-symbolic"
+                icon.name: "document-export-symbolic"
                 onTriggered: batchFileExportDialog.open()
             }
         ]

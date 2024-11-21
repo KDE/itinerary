@@ -219,7 +219,7 @@ Kirigami.ApplicationWindow {
             },
             Kirigami.Action {
                 text: i18n("Export…")
-                icon.name: "export-symbolic"
+                icon.name: "document-export-symbolic"
                 onTriggered: exportDialog.open()
             },
             Kirigami.Action {

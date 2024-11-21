@@ -299,6 +299,7 @@ if (ANDROID)
         dialog-error-symbolic
         dialog-ok
         document-edit
+        document-export-symbolic
         document-import
         document-open
         document-save
@@ -310,7 +311,6 @@ if (ANDROID)
         edit-rename
         emblem-important
         emblem-shared-symbolic
-        export-symbolic
         flag
         flashlight-off
         flashlight-on

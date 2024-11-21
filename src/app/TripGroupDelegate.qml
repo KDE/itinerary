@@ -173,7 +173,7 @@ FormCard.FormCard {
                         QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                     }
                     QQC2.ToolButton {
-                        icon.name: "export-symbolic"
+                        icon.name: "document-export-symbolic"
                         onClicked: {
                             exportTripGroupDialog.tripGroupId = root.tripGroupId
                             exportTripGroupDialog.suggestedFileName = root.tripGroup.slugName
