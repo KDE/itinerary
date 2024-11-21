@@ -62,7 +62,7 @@ private Q_SLOTS:
         QVERIFY(!idx.data(PassManager::PassDataRole).toByteArray().isEmpty());
         QCOMPARE(idx.data(PassManager::NameRole).toString(), QLatin1StringView("BahnCard 25 (2. Kl.) (BC25)"));
         QCOMPARE(idx.data(PassManager::ValidUntilRole).toDateTime(), QDateTime({2122, 3, 24}, {23, 59, 59}));
-        QVERIFY(!idx.data(PassManager::SectionRole).toString().isEmpty());
+        QVERIFY(!idx.data(PassManager::StateRole).toString().isEmpty());
         QVERIFY(!mgr.pass(passId).isNull());
 
         idx = mgr.index(1, 0);
@@ -75,7 +75,7 @@ private Q_SLOTS:
         QVERIFY(!idx.data(PassManager::PassDataRole).toByteArray().isEmpty());
         QCOMPARE(idx.data(PassManager::NameRole).toString(), QLatin1StringView("9-Euro-Ticket"));
         QCOMPARE(idx.data(PassManager::ValidUntilRole).toDateTime(), QDateTime({2022, 5, 31}, {23, 59, 59}));
-        QVERIFY(!idx.data(PassManager::SectionRole).toString().isEmpty());
+        QVERIFY(!idx.data(PassManager::StateRole).toString().isEmpty());
         QVERIFY(!mgr.pass(passId2).isNull());
 
         mgr.remove(passId2);

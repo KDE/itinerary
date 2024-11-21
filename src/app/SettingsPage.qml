@@ -25,34 +25,6 @@ FormCard.FormCardPage {
         }
     }
 
-    property Component favoriteLocationPage: Component {
-        id: favoriteLocationPage
-        FavoriteLocationPage {}
-    }
-
-    // Home location
-    FormCard.FormHeader {
-        title: i18n("Home")
-    }
-    FormCard.FormCard {
-        CountryComboBoxDelegate {
-            text: i18n("Home Country")
-            model: Country.allCountries.map(c => c.alpha2).sort((lhs, rhs) => {
-                return Country.fromAlpha2(lhs).name.localeCompare(Country.fromAlpha2(rhs).name);
-            })
-            initialCountry: Settings.homeCountryIsoCode
-            onActivated: Settings.homeCountryIsoCode = currentValue
-        }
-
-        FormCard.FormDelegateSeparator {}
-
-        FormCard.FormButtonDelegate {
-            text: i18n("Favorite Locations")
-            icon.name: "go-home-symbolic"
-            onClicked: applicationWindow().pageStack.layers.push(favoriteLocationPage);
-        }
-    }
-
     // Online services
     FormCard.FormHeader {
         title: i18n("Online Services")
