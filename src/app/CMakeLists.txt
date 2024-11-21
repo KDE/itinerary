@@ -146,6 +146,7 @@ ecm_add_qml_module(itinerary-app URI org.kde.itinerary NO_PLUGIN QML_FILES
     ContactEditorCard.qml
     CountryComboBox.qml
     CountryComboBoxDelegate.qml
+    DelayRow.qml
     DepartureQueryPage.qml
     DetailsPage.qml
     DevelopmentModePage.qml

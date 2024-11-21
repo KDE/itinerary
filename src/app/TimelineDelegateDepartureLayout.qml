@@ -114,25 +114,11 @@ RowLayout {
             }
         }
 
-        RowLayout {
-            spacing: 0
+        DelayRow {
             visible: root.departure.hasExpectedDepartureTime
-
-            Kirigami.Heading {
-                level: 5
-                text: oldTime.visible ? i18nc("duration of the delay", "Delayed %1", Localizer.formatDurationCustom(root.departure.departureDelay * 60)) + ' - ' : i18nc("@info", "On time")
-                color: oldTime.visible ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
-                font.weight: Font.DemiBold
-            }
-
-            QQC2.Label {
-                id: oldTime
-
-                opacity: 0.8
-                text: Localizer.formatTime(root.departure, "scheduledDepartureTime")
-                font.strikeout: true
-                visible: root.departure.departureDelay * 60 > 1
-            }
+            stopover: root.departure
+            delay: root.departure.departureDelay
+            originalTime: Localizer.formatTime(root.departure, "scheduledDepartureTime")
         }
 
         QQC2.Label {
