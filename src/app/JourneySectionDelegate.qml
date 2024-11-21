@@ -75,7 +75,7 @@ anchors.centerIn: parent
                 Layout.topMargin: Kirigami.Units.mediumSpacing
                 Layout.fillWidth: true
                 spacing: Kirigami.Units.smallSpacing
-                visible: ( root.modelData.mode !== JourneySection.Waiting && modelData.mode !== JourneySection.Walking ) || index === 0
+                visible: (root.modelData.mode !== JourneySection.Waiting && modelData.mode !== JourneySection.Walking ) || index === 0
 
                 Kirigami.Heading {
                     level: 2
@@ -85,7 +85,7 @@ anchors.centerIn: parent
 
                 Kirigami.Heading {
                     id: depTime
-                    text: Localizer.formatTime(root.modelData, "expectedDepartureTime")
+                    text: root.modelData.hasExpectedDepartureTime ? Localizer.formatTime(root.modelData, "expectedDepartureTime") : Localizer.formatTime(root.modelData, "scheduledDepartureTime")
                 }
             }
         }
@@ -149,6 +149,7 @@ anchors.centerIn: parent
                     }
 
                     QQC2.Label {
+                        Layout.topMargin: modelData.mode !== JourneySection.PublicTransport ? Kirigami.Units.largeSpacing : 0
                         text: switch (modelData.mode) {
                         case JourneySection.PublicTransport:
                         {
@@ -285,6 +286,8 @@ anchors.centerIn: parent
             }
 
             ColumnLayout {
+                spacing: 0
+
                 Kirigami.Separator {
                     Layout.topMargin: Kirigami.Units.largeSpacing
                     Layout.fillWidth: true
@@ -293,16 +296,18 @@ anchors.centerIn: parent
                 RowLayout {
                     spacing: Kirigami.Units.smallSpacing
 
+                    Layout.topMargin: Kirigami.Units.smallSpacing
+
                     Kirigami.Heading {
-                        level: 3
+                        level: 4
                         text: root.modelData.to.name
                         elide: Text.ElideRight
                         Layout.fillWidth: true
                     }
 
                     Kirigami.Heading {
-                        level: 2
-                        text: Localizer.formatTime(root.modelData, "expectedArrivalTime")
+                        level: 3
+                        text: root.modelData.hasExpectedArrivalTime ? Localizer.formatTime(root.modelData, "expectedArrivalTime") : Localizer.formatTime(root.modelData, "scheduledArrivalTime")
                     }
                 }
 

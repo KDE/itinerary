@@ -71,20 +71,20 @@ FormCard.FormCard {
             }
             QQC2.Label {
                 text: Localizer.formatTime(transfer.journey, "scheduledDepartureTime")
-                visible: transfer.state == Transfer.Selected
+                visible: transfer.state === Transfer.Selected && !root.journeyDetailsExpanded
                 color: Kirigami.Theme.textColor
                 Accessible.ignored: !visible
             }
             QQC2.Label {
                 text: (transfer.journey.departureDelay >= 0 ? "+" : "") + transfer.journey.departureDelay
                 color: (transfer.journey.departureDelay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
-                visible: transfer.state == Transfer.Selected && transfer.journey.hasExpectedDepartureTime
+                visible: transfer.state === Transfer.Selected && transfer.journey.hasExpectedDepartureTime && !root.journeyDetailsExpanded
                 Accessible.ignored: !visible
             }
 
             QQC2.BusyIndicator {
                 running: visible
-                visible: transfer.state == Transfer.Searching
+                visible: transfer.state === Transfer.Searching
                 Accessible.ignored: !visible
             }
         }
