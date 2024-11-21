@@ -159,7 +159,7 @@ anchors.centerIn: parent
                         case JourneySection.Walking:
                             if (modelData.distance == 0)
                                 return i18n("Walk (%1)", Localizer.formatDurationCustom(modelData.duration));
-                            return i18n("Walk %1 (%2)", Localizer.formatDurationCustom(modelData.distance), Localizer.formatDuration(modelData.duration));
+                            return i18n("Walk %1 (%2)", Localizer.formatDistance(modelData.distance), Localizer.formatDurationCustom(modelData.duration));
                         case JourneySection.Transfer:
                             return i18n("Transfer (%1)", Localizer.formatDurationCustom(modelData.duration))
                         case JourneySection.Waiting:
@@ -260,19 +260,18 @@ anchors.centerIn: parent
         // last row: arrival information
         RowLayout {
             spacing: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
+            visible: modelData.mode !== JourneySection.Walking || index === modelLength
 
             Layout.fillWidth: true
 
             Item {
                 Layout.preferredWidth: departureLine.width
                 Layout.fillHeight: true
-                visible: modelData.mode !== JourneySection.Walking || index === modelLength
 
                 Rectangle{
                     visible: index !== modelLength || modelData.mode === JourneySection.Walking
                     height: parent.height
                     anchors.centerIn: parent
-                    Layout.margins: 0
                     color: Kirigami.Theme.disabledTextColor
                     width: Math.round(Kirigami.Units.smallSpacing / 2)
                 }
@@ -319,9 +318,6 @@ anchors.centerIn: parent
                     text: i18nc("@info", "Platform %1", platform)
                     visible: platform.length > 0
                 }
-
-                //visible: ( modelData.mode !== JourneySection.Waiting && modelData.mode !== JourneySection.Walking) || index === modelLength
-                //modelData.to.name
             }
         }
     }
