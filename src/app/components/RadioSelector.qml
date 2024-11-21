@@ -19,7 +19,7 @@ Item{
     Layout.fillWidth: consistentWidth
 
     QQC2.ButtonGroup {
-        buttons: switchLayout.children
+        buttons: switchLayout.children.filter((child) => child !== repeater)
     }
 
     RowLayout {
