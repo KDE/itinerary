@@ -24,6 +24,8 @@ TimelineDelegate {
     }
 
     contentItem: ColumnLayout {
+        spacing: 0
+
         TimelineDelegateDepartureLayout {
             id: departureLayout
 
@@ -173,5 +175,10 @@ TimelineDelegate {
         }
     }
 
-    Accessible.name: headerLabel.text
+    Accessible.name: {
+        if (reservationFor.busName || reservationFor.busNumber ) {
+            return reservationFor.busName + " " + reservationFor.busNumber
+        }
+        return i18n("%1 to %2", reservationFor.departureBusStop.name, reservationFor.arrivalBusStop.name);
+    }
 }
