@@ -22,23 +22,25 @@ FormCard.FormCard {
         transfer: root.transfer
     }
     FormCard.AbstractFormDelegate {
-        background: Rectangle {
+        background: Item {
             id: headerBackground
-            color: Kirigami.Theme.backgroundColor
-            Kirigami.Theme.colorSet: controller.isCurrent ? Kirigami.Theme.Selection : Kirigami.Theme.Header
-            Kirigami.Theme.inherit: false
             Rectangle {
                 id: progressBar
+
                 visible: controller.isCurrent
-                anchors.bottom: headerBackground.bottom
-                anchors.left: headerBackground.left
                 height: Kirigami.Units.smallSpacing
                 width: controller.progress * headerBackground.width
                 color: Kirigami.Theme.visitedLinkColor
+                radius: Kirigami.Units.cornerRadius
+
+                anchors {
+                    bottom: headerBackground.bottom
+                    left: headerBackground.left
+                }
             }
         }
         onClicked: {
-            if (transfer.state == Transfer.Selected) {
+            if (transfer.state === Transfer.Selected) {
                 journeyDetailsExpanded = !journeyDetailsExpanded;
             } else {
                 applicationWindow().pageStack.push(detailsComponent);
