@@ -105,7 +105,7 @@ ColumnLayout {
         model: regionModel
         textRole: "display"
         valueRole: "code"
-        visible: (root.addressFormat.usedFields & KContacts.AddressFormatField.Region) || editText
+        visible: (root.addressFormat.usedFields & KContacts.AddressFormatField.Region)
 
         function tryFindRegion(input) {
             const i = regionModel.rowForNameOrCode(input)
