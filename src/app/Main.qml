@@ -127,15 +127,6 @@ Kirigami.ApplicationWindow {
         onAccepted: ImportController.importFromUrl(selectedFile)
     }
 
-    FileDialog {
-        id: exportDialog
-        fileMode: FileDialog.SaveFile
-        title: i18n("Export Itinerary Data")
-        currentFolder: QtCore.StandardPaths.writableLocation(QtCore.StandardPaths.DocumentsLocation)
-        nameFilters: [i18n("KDE Itinerary files (*.itinerary)")]
-        onAccepted: ApplicationController.exportToFile(selectedFile)
-    }
-
     Component {
         id: calendarModel
         // needs to be created on demand, after we have calendar access permissions
@@ -193,11 +184,6 @@ Kirigami.ApplicationWindow {
                 enabled: pageStack.layers.depth < 2
                 shortcut: StandardKey.Preferences
                 onTriggered: pageStack.layers.push(Qt.createComponent("org.kde.itinerary", "SettingsPage"))
-            },
-            Kirigami.Action {
-                text: i18n("Export…")
-                icon.name: "document-export-symbolic"
-                onTriggered: exportDialog.open()
             },
             Kirigami.Action {
                 text: i18n("Help")

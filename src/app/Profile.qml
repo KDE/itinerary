@@ -2,7 +2,9 @@
 // SPDX-FileCopyrightText: 2024 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
+import QtCore as QtCore
 import QtQuick
+import QtQuick.Dialogs
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import QtQuick.Templates as T
@@ -27,7 +29,7 @@ FormCard.FormCardPage {
 
     // Home location
     FormCard.FormHeader {
-        title: i18n("Home")
+        title: i18nc("@title:group", "My Locations")
     }
 
     FormCard.FormCard {
@@ -141,6 +143,35 @@ FormCard.FormCardPage {
                 tripGroupManager: TripGroupManager,
                 transferManager: TransferManager,
             })
+        }
+    }
+
+    FormCard.FormHeader {
+        title: i18nc("@title:group", "Data Portability")
+    }
+
+    FormCard.FormCard {
+        FormCard.FormButtonDelegate {
+            text: i18nc("@action:button", "Import")
+            icon.name: 'document-import-symbolic'
+            onClicked: importFileDialog.open();
+        }
+
+        FormCard.FormDelegateSeparator {}
+
+        FormCard.FormButtonDelegate {
+            text: i18nc("@action:button", "Export")
+            icon.name: "document-export-symbolic"
+            onClicked: exportDialog.open()
+
+            FileDialog {
+                id: exportDialog
+                fileMode: FileDialog.SaveFile
+                title: i18n("Export Itinerary Data")
+                currentFolder: QtCore.StandardPaths.writableLocation(QtCore.StandardPaths.DocumentsLocation)
+                nameFilters: [i18n("KDE Itinerary files (*.itinerary)")]
+                onAccepted: ApplicationController.exportToFile(selectedFile)
+            }
         }
     }
 }
