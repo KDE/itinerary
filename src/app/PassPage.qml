@@ -6,153 +6,103 @@
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
-import QtQuick.Templates as T
-import Qt.labs.qmlmodels as Models
 import org.kde.kitemmodels
 import org.kde.kirigami as Kirigami
-import org.kde.kirigamiaddons.components
+import org.kde.kirigamiaddons.formcard as FormCard
 
 import org.kde.itinerary
 
-Kirigami.ScrollablePage {
+FormCard.FormCardPage {
     id: root
+
     title: i18n("Passes and Programs")
 
-    property T.Action addAction: QQC2.Action {
-        text: i18n("Add Program Membership…")
-        icon.name: "list-add-symbolic"
-        onTriggered: {
-            const editorComponent = Qt.createComponent("org.kde.itinerary", "ProgramMembershipEditor");
-            applicationWindow().pageStack.push(editorComponent, {
-                programMembership: Factory.makeProgramMembership(),
-                passId: "",
-                pageStack: pageStack
-            });
-        }
+    FormCard.FormHeader {
+        title: i18nc("@title", "Add Program Membership…")
     }
 
+    FormCard.FormCard {
+        FormCard.FormButtonDelegate {
+            text: i18nc("@action:button", "Import from File")
+            onClicked: importFileDialog.open()
+        }
 
-    Models.DelegateChooser {
-        id: chooser
-        role: "type"
-        Models.DelegateChoice {
-            roleValue: PassManager.ProgramMembership
-            QQC2.ItemDelegate {
-                id: delegate
-                readonly property string pkPassId: PkPassManager.passId(model.pass)
-                highlighted: false
-                text: contentItem.title
-                width: ListView.view.width
-                contentItem: Kirigami.IconTitleSubtitle {
-                    icon.name: delegate.pkPassId !== "" ? "image://org.kde.pkpass/" + delegate.pkPassId + "/icon" : ReservationHelper.defaultIconName(model.pass)
-                    title: model.pass.programName
-                    subtitle: {
-                        if (!model.pass.member.name)
-                            return model.pass.membershipNumber;
-                        if (!model.pass.membershipNumber)
-                            return model.pass.member.name;
-                        return i18nc("name - number", "%1 - %2", model.pass.member.name, model.pass.membershipNumber)
-                    }
-                }
-                onClicked: {
-                    const programMembershipPage = Qt.createComponent("org.kde.itinerary", "ProgramMembershipPage");
-                    applicationWindow().pageStack.push(programMembershipPage, {
-                        programMembership: model.pass,
-                        passId: model.passId,
-                    });
-                }
-                Accessible.onPressAction: clicked()
-            }
-        }
-        Models.DelegateChoice {
-            roleValue: PassManager.PkPass
-            QQC2.ItemDelegate {
-                readonly property string pkPassId: PkPassManager.passId(model.pass)
-                readonly property var pkPass: PkPassManager.pass(pkPassId)
-                highlighted: false
-                text: contentItem.title
-                width: ListView.view.width
-                contentItem: Kirigami.IconTitleSubtitle {
-                    title: pkPass.description
-                    subtitle: pkPass.organizationName
-                    icon.name: pkPass.hasIcon ? "image://org.kde.pkpass/" + pkPassId + "/icon" : ReservationHelper.defaultIconName(model.pass)
-                }
-                onClicked: {
-                    const pkpassComponent = Qt.createComponent("org.kde.itinerary", "GenericPkPassPage");
-                    applicationWindow().pageStack.push(pkpassComponent, {
-                        passId: pkPassId,
-                        pass: pkPass,
-                        genericPassId: model.passId,
-                    });
-                }
-                Accessible.onPressAction: click()
-            }
-        }
-        Models.DelegateChoice {
-            roleValue: PassManager.Ticket
-            QQC2.ItemDelegate {
-                id: delegate
-                readonly property string pkPassId: PkPassManager.passId(model.pass)
-                highlighted: false
-                text: contentItem.title
-                width: ListView.view.width
-                contentItem: Kirigami.IconTitleSubtitle {
-                    icon.name: delegate.pkPassId !== "" ? "image://org.kde.pkpass/" + delegate.pkPassId + "/icon" : ReservationHelper.defaultIconName(model.pass)
-                    title: model.pass.name
-                    subtitle: {
-                        if (model.pass.underName.name === "")
-                            return model.validRangeLabel;
-                        if (model.validRangeLabel === "")
-                            return model.pass.underName.name;
-                        return i18nc("name - valid time range", "%1 - %2", model.pass.underName.name, model.validRangeLabel);
-                    }
-                }
-                onClicked: {
-                    const ticketComponent = Qt.createComponent("org.kde.itinerary", "TicketPage");
-                    applicationWindow().pageStack.push(ticketComponent, {
-                        ticket: model.pass,
-                        passId: model.passId,
-                    });
-                }
-                Accessible.onPressAction: click()
+        FormCard.FormDelegateSeparator {}
+
+        FormCard.FormButtonDelegate {
+            text: i18nc("@action:button", "Manually import")
+            onClicked: {
+                const editorComponent = Qt.createComponent("org.kde.itinerary", "ProgramMembershipEditor");
+                applicationWindow().pageStack.push(editorComponent, {
+                    programMembership: Factory.makeProgramMembership(),
+                    passId: "",
+                    pageStack: pageStack
+                });
             }
         }
     }
 
-    ListView {
-        id: passListView
-        model: PassManager
-        delegate: chooser
-        section.delegate: Kirigami.ListSectionHeader {
-            text: section
-            width: ListView.view.width
-        }
-        section.property: "section"
+    FormCard.FormHeader {
+        title: i18nc("not yet expired tickets", "Valid")
+        visible: validRepeater.count > 0
+    }
 
-        Kirigami.PlaceholderMessage {
-            anchors.centerIn: parent
-            width: parent.width
-            visible: passListView.count === 0
-            icon.name: "wallet-open"
-            text: i18n("Import bonus or discount program cards or flat rate passes.")
-            helpfulAction: Kirigami.Action {
-                text: i18n("Import…")
-                icon.name: "document-open"
-                onTriggered: importFileDialog.open()
+    FormCard.FormCard {
+        visible: validRepeater.count > 0
+        Repeater {
+            id: validRepeater
+
+            model: KSortFilterProxyModel {
+                sourceModel: PassManager
+                filterRoleName: "state"
+                filterString: "valid"
             }
+
+            delegate: PassDelegate {}
         }
     }
 
-    leftPadding: 0
-    rightPadding: 0
+    FormCard.FormHeader {
+        visible: futureRepeater.count > 0
+        title: i18nc("not yet valid tickets", "Future")
+    }
 
-    data: FloatingButton {
-        anchors {
-            right: parent.right
-            rightMargin: Kirigami.Units.largeSpacing + (root.contentItem.QQC2.ScrollBar && root.contentItem.QQC2.ScrollBar.vertical ? root.contentItem.QQC2.ScrollBar.vertical.width : 0)
-            bottom: parent.bottom
-            bottomMargin: Kirigami.Units.largeSpacing
+    FormCard.FormCard {
+        visible: futureRepeater.count > 0
+        Repeater {
+            id: futureRepeater
+
+            model: KSortFilterProxyModel {
+                sourceModel: PassManager
+                filterRoleName: "state"
+                filterRowCallback: function(source_row, source_parent) {
+                  return sourceModel.data(sourceModel.index(source_row, 0, source_parent), PassManager.StateRole) === "future";
+                };
+            }
+
+            delegate: PassDelegate {}
         }
-        action: root.addAction
+    }
+
+    FormCard.FormHeader {
+        visible: expiredRepeater.count > 0
+        title: i18nc("no longer valid tickets", "Expired")
+    }
+
+    FormCard.FormCard {
+        visible: expiredRepeater.count > 0
+        Repeater {
+            id: expiredRepeater
+
+            model: KSortFilterProxyModel {
+                sourceModel: PassManager
+                filterRoleName: "state"
+                filterRowCallback: function(source_row, source_parent) {
+                  return sourceModel.data(sourceModel.index(source_row, 0, source_parent), PassManager.StateRole) === "expired";
+                };
+            }
+
+            delegate: PassDelegate {}
+        }
     }
 }

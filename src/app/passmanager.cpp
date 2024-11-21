@@ -25,6 +25,7 @@
 #include <QUuid>
 
 using namespace KItinerary;
+using namespace Qt::StringLiterals;
 
 static bool isSamePass(const GenericPkPass &lhs, const GenericPkPass &rhs)
 {
@@ -247,14 +248,14 @@ QVariant PassManager::data(const QModelIndex &index, int role) const
         return entry.name();
     case ValidUntilRole:
         return entry.validUntil();
-    case SectionRole:
+    case StateRole: 
         if (const auto dt = entry.validUntil(); dt.isValid() && dt < m_baseTime) {
-            return i18nc("no longer valid tickets", "Expired");
+            return u"expired"_s;
         }
         if (const auto dt = entry.validFrom(); dt.isValid() && dt > m_baseTime) {
-            return i18nc("not yet valid tickets", "Future");
+            return u"future"_s;
         }
-        return i18nc("not yet expired tickets", "Valid");
+        return u"valid"_s;
     case ValidRangeLabelRole: {
         // TODO align this with the time labels in the trip groups? those handle a few more cases...
         const auto from = entry.validFrom();
@@ -287,8 +288,8 @@ QHash<int, QByteArray> PassManager::roleNames() const
     r.insert(PassTypeRole, "type");
     r.insert(NameRole, "name");
     r.insert(ValidUntilRole, "validUntil");
-    r.insert(SectionRole, "section");
     r.insert(ValidRangeLabelRole, "validRangeLabel");
+    r.insert(StateRole, "state");
     return r;
 }
 

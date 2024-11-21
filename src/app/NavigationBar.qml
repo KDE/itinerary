@@ -38,10 +38,10 @@ Kirigami.NavigationTabBar {
             }
         },
         Kirigami.PagePoolAction {
-            icon.name: "wallet-open"
-            text: i18nc("@title:tab", "Passes & Programs")
+            icon.name: "user-identity-symbolic"
+            text: i18nc("@title:tab", "Profile")
             pagePool: pagepool
-            page: Qt.resolvedUrl("PassPage.qml")
+            page: Qt.resolvedUrl("Profile.qml")
         },
         Kirigami.Action {
             text: i18nc("@title:tab", "Current Ticket")

@@ -203,12 +203,14 @@ ecm_add_qml_module(itinerary-app URI org.kde.itinerary NO_PLUGIN QML_FILES
     NavigationBar.qml
     OnlineImportPage.qml
     PassPage.qml
+    PassDelegate.qml
     PkPassBarcode.qml
     PkPassPage.qml
     ProgramMembershipCard.qml
     ProgramMembershipEditorCard.qml
     ProgramMembershipEditor.qml
     ProgramMembershipPage.qml
+    Profile.qml
     PublicTransportBackendPage.qml
     PublicTransportFeatureList.qml
     ReservationDocumentsCard.qml

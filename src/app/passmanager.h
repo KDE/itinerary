@@ -21,6 +21,7 @@ class ExtractorValidator;
 class PassManager : public QAbstractListModel
 {
     Q_OBJECT
+
 public:
     explicit PassManager(QObject *parent = nullptr);
     ~PassManager();
@@ -32,7 +33,7 @@ public:
         PassDataRole,
         NameRole,
         ValidUntilRole,
-        SectionRole,
+        StateRole,
         ValidRangeLabelRole,
     };
     Q_ENUM(Roles)

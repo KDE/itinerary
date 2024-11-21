@@ -168,13 +168,6 @@ Kirigami.ApplicationWindow {
                 children: importActions
             },
             Kirigami.Action {
-                id: statsAction
-                text: i18n("Statistics")
-                icon.name: "view-statistics"
-                enabled: pageStack.layers.depth < 2
-                onTriggered: pageStack.layers.push(statisticsComponent)
-            },
-            Kirigami.Action {
                 id: healthCertAction
                 text: i18n("Health Certificates")
                 icon.name: "cross-shape"
@@ -278,9 +271,6 @@ Kirigami.ApplicationWindow {
             case "currentTicket":
                 pagepool.loadPage(Qt.resolvedUrl("TripGroupsPage.qml")).openCurrentReservation()
                 break;
-            case "stats":
-                statsAction.trigger();
-                break;
             case "healthCert":
                 healthCertAction.trigger();
                 break;
@@ -346,14 +336,6 @@ Kirigami.ApplicationWindow {
                     applicationWindow().pageStack.goBack();
                 }
             }
-        }
-    }
-    Component {
-        id: statisticsComponent
-        StatisticsPage {
-            reservationManager: ReservationManager
-            tripGroupManager: TripGroupManager
-            transferManager: TransferManager
         }
     }
     Component {
