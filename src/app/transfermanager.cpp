@@ -381,25 +381,32 @@ TransferManager::CheckTransferResult TransferManager::checkTransferBefore(const 
     const auto arrivalTime = SortUtil::endDateTime(prevRes);
     const auto departureTime = SortUtil::startDateTime(res);
     const std::chrono::seconds layoverTime(arrivalTime.secsTo(departureTime));
+    const std::chrono::days layoverDays(arrivalTime.date().daysTo(departureTime.date()));
 
     if (!toLoc.isNull() && !prevLoc.isNull() && isLikelyNotSameLocation(toLoc, prevLoc) && isPlausibleDistance(toLoc, prevLoc)
         && layoverTime < Constants::FavoriteLocationAutoTransferThreshold) {
-        transfer.setFrom(PublicTransport::locationFromPlace(prevLoc, prevRes));
-        transfer.setFromName(LocationUtil::name(prevLoc));
-        transfer.setFloatingLocationType(Transfer::Reservation);
+        const auto f = pickFavorite(toLoc, resId, Transfer::Before);
+        if (f.isValid() && layoverDays >= Constants::FavoriteLocationAutoTransferThreshold && !isLocationChange) {
+            transfer.setFrom(locationFromFavorite(f));
+            transfer.setFromName(f.name());
+            transfer.setFloatingLocationType(Transfer::FavoriteLocation);
+        } else {
+            transfer.setFrom(PublicTransport::locationFromPlace(prevLoc, prevRes));
+            transfer.setFromName(LocationUtil::name(prevLoc));
+            transfer.setFloatingLocationType(Transfer::Reservation);
+        }
         return isLocationChange ? ShouldAutoAdd : CanAddManually;
     }
 
     // transfer to favorite at destination of a roundtrip trip group, or when the time gap is sufficiently large in general
-    if (LocationUtil::isLocationChange(res)
-        && ((LocationUtil::isLocationChange(prevRes) && LocationUtil::isSameLocation(toLoc, prevLoc, LocationUtil::CityLevel))
-            || layoverTime > Constants::FavoriteLocationAutoTransferThreshold)) {
+    if ((LocationUtil::isLocationChange(prevRes) && LocationUtil::isSameLocation(toLoc, prevLoc, LocationUtil::CityLevel))
+            || layoverTime > Constants::FavoriteLocationAutoTransferThreshold) {
         transfer.setFloatingLocationType(Transfer::FavoriteLocation);
         const auto f = pickFavorite(toLoc, resId, Transfer::Before);
         transfer.setFrom(locationFromFavorite(f));
         transfer.setFromName(f.name());
         return layoverTime < Constants::MaximumLayoverTime                   ? ShouldRemove
-            : layoverTime < Constants::FavoriteLocationAutoTransferThreshold ? CanAddManually
+            : layoverTime < Constants::FavoriteLocationAutoTransferThreshold || !LocationUtil::isLocationChange(res) ? CanAddManually
                                                                              : ShouldAutoAdd;
     }
 
@@ -468,26 +475,33 @@ TransferManager::CheckTransferResult TransferManager::checkTransferAfter(const Q
     const auto arrivalTime = SortUtil::endDateTime(res);
     const auto departureTime = SortUtil::startDateTime(nextRes);
     const std::chrono::seconds layoverTime(arrivalTime.secsTo(departureTime));
+    const std::chrono::days layoverDays(arrivalTime.date().daysTo(departureTime.date()));
 
     if (!fromLoc.isNull() && !nextLoc.isNull() && isLikelyNotSameLocation(fromLoc, nextLoc) && isPlausibleDistance(fromLoc, nextLoc)
         && layoverTime < Constants::FavoriteLocationAutoTransferThreshold) {
         qDebug() << "AFTER" << res << nextRes << LocationUtil::name(fromLoc) << LocationUtil::name(nextLoc) << transfer.anchorTime() << isLocationChange;
-        transfer.setTo(PublicTransport::locationFromPlace(nextLoc, nextRes));
-        transfer.setToName(LocationUtil::name(nextLoc));
-        transfer.setFloatingLocationType(Transfer::Reservation);
+        const auto f = pickFavorite(fromLoc, resId, Transfer::After);
+        if (f.isValid() && layoverDays >= Constants::FavoriteLocationAutoTransferThreshold && !isLocationChange) {
+            transfer.setTo(locationFromFavorite(f));
+            transfer.setToName(f.name());
+            transfer.setFloatingLocationType(Transfer::FavoriteLocation);
+        } else {
+            transfer.setTo(PublicTransport::locationFromPlace(nextLoc, nextRes));
+            transfer.setToName(LocationUtil::name(nextLoc));
+            transfer.setFloatingLocationType(Transfer::Reservation);
+        }
         return isLocationChange ? ShouldAutoAdd : CanAddManually;
     }
 
     // transfer to favorite at destination of a roundtrip trip group, or when the time gap is sufficiently large in general
-    if (LocationUtil::isLocationChange(res)
-        && ((LocationUtil::isLocationChange(nextRes) && LocationUtil::isSameLocation(fromLoc, nextLoc, LocationUtil::CityLevel))
-            || layoverTime > Constants::FavoriteLocationAutoTransferThreshold)) {
+    if ((LocationUtil::isLocationChange(nextRes) && LocationUtil::isSameLocation(fromLoc, nextLoc, LocationUtil::CityLevel))
+            || layoverTime > Constants::FavoriteLocationAutoTransferThreshold) {
         transfer.setFloatingLocationType(Transfer::FavoriteLocation);
         const auto f = pickFavorite(fromLoc, resId, Transfer::After);
         transfer.setTo(locationFromFavorite(f));
         transfer.setToName(f.name());
         return layoverTime < Constants::MaximumLayoverTime                   ? ShouldRemove
-            : layoverTime < Constants::FavoriteLocationAutoTransferThreshold ? CanAddManually
+            : layoverTime < Constants::FavoriteLocationAutoTransferThreshold || !LocationUtil::isLocationChange(res) ? CanAddManually
                                                                              : ShouldAutoAdd;
     }
 
