@@ -33,21 +33,48 @@ FormCard.AbstractFormDelegate {
     }
 
     contentItem: ColumnLayout {
+        id: mainLayout
+
+        spacing: Kirigami.Units.smallSpacing
+
         RowLayout {
-            Repeater {
-                model: root.journey.sections
-                delegate: TransportIcon {
-                    source: modelData.iconName
-                    color: PublicTransport.warnAboutSection(modelData) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
-                    isMask: modelData.mode != JourneySection.PublicTransport || (!modelData.route.line.hasLogo && !modelData.route.line.hasModeLogo)
-                    size: Kirigami.Units.iconSizes.small
-                    Accessible.name: PublicTransport.journeySectionLabel(modelData)
+            spacing: Kirigami.Units.smallSpacing
+
+            Layout.fillWidth: true
+
+            Kirigami.Heading {
+                id: departureTimeLabel
+
+                level: 4
+                text: Localizer.formatTime(root.journey, "scheduledDepartureTime")
+                font {
+                    weight: Font.DemiBold
+                    strikeout: root.journey.disruptionEffect === Disruption.NoService
                 }
             }
+
+            Kirigami.Heading {
+                id: separatorLabel
+
+                level: 4
+                text: '-'
+            }
+
+            Kirigami.Heading {
+                id: arrivalTimeLabel
+
+                level: 4
+                text: Localizer.formatTime(root.journey, "scheduledArrivalTime")
+                font {
+                    weight: Font.DemiBold
+                    strikeout: root.journey.disruptionEffect === Disruption.NoService
+                }
+            }
+
             QQC2.Label {
-                text: i18ncp("number of switches to another transport", "One change", "%1 changes", root.journey.numberOfChanges)
+                text: ' | ' + Localizer.formatDurationCustom(root.journey.duration) + ' | ' + i18ncp("number of switches to another transport", "One change", "%1 changes", root.journey.numberOfChanges)
+                elide: Text.ElideRight
                 Layout.fillWidth: true
-                Accessible.ignored: !parent.visible
             }
 
             KPublicTransport.OccupancyIndicator {
@@ -57,8 +84,103 @@ FormCard.AbstractFormDelegate {
             }
         }
 
+        RowLayout {
+            spacing: Kirigami.Units.smallSpacing
+            visible: (root.journey.hasExpectedDepartureTime || root.journey.hasExpectedArrivalTime) && root.journey.disruptionEffect !== Disruption.NoService
+
+            Layout.fillWidth: true
+
+            Kirigami.Heading {
+                readonly property bool hasDepartureDelay: root.journey.departureDelay > 0
+
+                level: 4
+                text: root.journey.hasExpectedDepartureTime ? Localizer.formatTime(root.journey, "expectedDepartureTime") : ''
+                color: hasDepartureDelay ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
+                font.weight: Font.DemiBold
+                Layout.minimumWidth: departureTimeLabel.width
+            }
+
+            Item {
+                Layout.minimumWidth: separatorLabel.width
+            }
+
+            Kirigami.Heading {
+                readonly property bool hasArrivalDelay: root.journey.arrivalDelay > 0
+
+                level: 4
+                text: root.journey.hasExpectedArrivalTime ? Localizer.formatTime(root.journey, "expectedArrivalTime") : ''
+                color: hasArrivalDelay ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
+                font.weight: Font.DemiBold
+                Layout.minimumWidth: arrivalTimeLabel.width
+            }
+        }
+
+        RowLayout {
+            id: sectionsRow
+
+            spacing: Kirigami.Units.smallSpacing
+
+            Layout.fillWidth: true
+
+            Repeater {
+                model: root.journey.sections
+                delegate: QQC2.Control {
+                    id: sectionDelegate
+
+                    required property var modelData
+
+                    leftPadding: Kirigami.Units.smallSpacing
+                    rightPadding: Kirigami.Units.smallSpacing
+                    topPadding: Kirigami.Units.smallSpacing
+                    bottomPadding: Kirigami.Units.smallSpacing
+
+                    Layout.fillWidth: true
+                    Layout.maximumWidth: sectionDelegate.modelData.mode === JourneySection.PublicTransport ? Number.POSITIVE_INFINITY : implicitWidth
+
+                    contentItem: RowLayout {
+                        spacing: Kirigami.Units.smallSpacing
+
+                        TransportIcon {
+                            color: if (sectionDelegate.modelData.mode === JourneySection.PublicTransport) {
+                                sectionDelegate.modelData.route.line.hasTextColor ? sectionDelegate.modelData.route.line.textColor : Kirigami.Theme.backgroundColor
+                            } else {
+                                return Kirigami.Theme.textColor;
+                            }
+                            isMask: true
+                            size: Kirigami.Units.iconSizes.smallMedium
+                            source: sectionDelegate.modelData.iconName
+                            visible: sectionDelegate.modelData.mode !== JourneySection.PublicTransport
+                            Accessible.name: PublicTransport.journeySectionLabel(modelData)
+                        }
+
+                        QQC2.Label {
+                            id: lineName
+                            Layout.minimumHeight: Kirigami.Units.iconSizes.smallMedium
+                            color: sectionDelegate.modelData.route.line.hasTextColor ? sectionDelegate.modelData.route.line.textColor : Kirigami.Theme.backgroundColor;
+                            text: sectionDelegate.modelData.route.line.name
+                            visible: sectionDelegate.modelData.mode === JourneySection.PublicTransport
+                            font.weight: Font.DemiBold
+                            horizontalAlignment: Text.AlignHCenter
+                            Layout.fillWidth: true
+                        }
+                    }
+
+                    background: Rectangle {
+                        radius: Kirigami.Units.cornerRadius
+                        color: sectionDelegate.modelData.route.line.hasColor ? sectionDelegate.modelData.route.line.color : Kirigami.Theme.textColor
+                        visible: sectionDelegate.modelData.mode === JourneySection.PublicTransport
+                    }
+                }
+            }
+
+            // color: PublicTransport.warnAboutSection(modelData) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
+
+        }
+
         QQC2.Label {
             text: i18n("Click to extend")
+
+            Layout.fillWidth: true
         }
     }
 }

@@ -57,8 +57,6 @@ ColumnLayout {
             font.strikeout: journey.disruptionEffect === Disruption.NoService
         }
 
-
-
         QQC2.Label {
             text: Localizer.formatDurationCustom(journey.duration)
             font.bold: true

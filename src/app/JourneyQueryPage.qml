@@ -55,10 +55,6 @@ Kirigami.ScrollablePage {
             required property int index
             required property var journey
 
-            JourneyDelegateHeader {
-                journey: top.journey
-            }
-
             Repeater {
                 id: journeyRepeater
                 delegate: JourneySectionDelegate {

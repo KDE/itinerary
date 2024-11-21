@@ -213,10 +213,6 @@ Kirigami.ScrollablePage {
 
             width: ListView.view.width
 
-            JourneyDelegateHeader {
-                journey: top.journey
-            }
-
             Repeater {
                 id: journeyRepeater
                 delegate: JourneySectionDelegate{
