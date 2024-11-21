@@ -80,6 +80,7 @@ anchors.centerIn: parent
                 Kirigami.Heading {
                     level: 2
                     text: modelData.from.name
+                    elide: Text.ElideRight
                     Layout.fillWidth: true
                 }
 
@@ -118,8 +119,12 @@ anchors.centerIn: parent
             ColumnLayout {
                 spacing: Kirigami.Units.smallSpacing
 
+                Layout.fillWidth: true
+
                 RowLayout {
                     spacing: Kirigami.Units.smallSpacing
+
+                    Layout.fillWidth: true
 
                     QQC2.Control {
                         leftPadding: Kirigami.Units.smallSpacing
@@ -149,14 +154,13 @@ anchors.centerIn: parent
                     }
 
                     QQC2.Label {
-                        Layout.topMargin: modelData.mode !== JourneySection.PublicTransport ? Kirigami.Units.largeSpacing : 0
+                        elide: Text.ElideRight
+                        visible: text.length > 0
                         text: switch (modelData.mode) {
                         case JourneySection.PublicTransport:
-                        {
                             if (modelData.route.direction)
-                                return i18n("To %1 (%2)", modelData.route.direction, Localizer.formatDurationCustom(modelData.duration));
-                            return i18n("(%1)", Localizer.formatDurationCustom(modelData.duration));
-                        }
+                                return i18n("To %1", modelData.route.direction);
+                            return ''
                         case JourneySection.Walking:
                             if (modelData.distance == 0)
                                 return i18n("Walk (%1)", Localizer.formatDurationCustom(modelData.duration));
@@ -171,7 +175,18 @@ anchors.centerIn: parent
                             return i18n("Drive %1 (%2)", Localizer.formatDistance(modelData.distance), Localizer.formatDuration(modelData.duration));
                         return "???";
                         }
+
+                        Layout.topMargin: modelData.mode !== JourneySection.PublicTransport ? Kirigami.Units.largeSpacing : 0
+                        Layout.fillWidth: true
                     }
+                }
+
+                QQC2.Label {
+                    visible: text.length > 0
+                    elide: Text.ElideRight
+                    text: modelData.mode === JourneySection.PublicTransport ? Localizer.formatDurationCustom(modelData.duration) : ''
+
+                    Layout.fillWidth: true
                 }
 
                 DelayRow {
@@ -287,6 +302,7 @@ anchors.centerIn: parent
 
             ColumnLayout {
                 spacing: 0
+                Layout.fillWidth: true
 
                 Kirigami.Separator {
                     Layout.topMargin: Kirigami.Units.largeSpacing
@@ -296,6 +312,7 @@ anchors.centerIn: parent
                 RowLayout {
                     spacing: Kirigami.Units.smallSpacing
 
+                    Layout.fillWidth: true
                     Layout.topMargin: Kirigami.Units.smallSpacing
 
                     Kirigami.Heading {
@@ -322,6 +339,8 @@ anchors.centerIn: parent
                     readonly property string platform: modelData.hasExpectedArrivalPlatform ? modelData.expectedArrivalPlatform : modelData.scheduledArrivalPlatform
                     text: i18nc("@info", "Platform %1", platform)
                     visible: platform.length > 0
+
+                    Layout.fillWidth: true
                 }
             }
         }
