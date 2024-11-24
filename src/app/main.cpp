@@ -156,7 +156,7 @@ void registerApplicationTypes()
     qRegisterMetaType<TripGroupManager *>();
     qRegisterMetaType<WeatherForecast>();
     qRegisterMetaType<Permission::Permission>();
-    qRegisterMetaType<HealthCertificateManager *>();
+    qmlRegisterUncreatableMetaObject(HealthCertificateManager::staticMetaObject, "org.kde.itinerary", 1, 0, "HealthCertificateManager", {});
 
     qmlRegisterUncreatableMetaObject(LocationInformation::staticMetaObject, "org.kde.itinerary", 1, 0, "LocationInformation", {});
     qmlRegisterUncreatableMetaObject(StatisticsItem::staticMetaObject, "org.kde.itinerary", 1, 0, "StatisticsItem", {});

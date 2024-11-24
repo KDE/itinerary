@@ -13,6 +13,9 @@ import org.kde.itinerary
 
 Kirigami.Page {
     id: root
+
+    property var initialCertificate: null
+
     title: i18n("Health Certificates")
 
     leftPadding: 0
@@ -85,6 +88,9 @@ Kirigami.Page {
             }
             onCurrentIndexChanged: Settings.write("HealthCertificatePage/currentCertificateIndex", currentIndex)
             currentIndex: Settings.read("HealthCertificatePage/currentCertificateIndex", 0)
+            Component.onCompleted: if (root.initialCertificate !== null) {
+                currentIndex = indexOfValue(root.initialCertificate);
+            }
         }
         Kirigami.Separator {
             Layout.fillWidth: true

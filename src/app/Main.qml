@@ -159,17 +159,6 @@ Kirigami.ApplicationWindow {
                 children: importActions
             },
             Kirigami.Action {
-                id: healthCertAction
-                text: i18n("Health Certificates")
-                icon.name: "cross-shape"
-                onTriggered: {
-                    healtCertificateComponent.source = Qt.resolvedUrl("HealthCertificatePage.qml")
-                    pageStack.layers.push(healtCertificateComponent.item)
-                }
-                enabled: pageStack.layers.depth < 2
-                visible: ApplicationController.hasHealthCertificateSupport && ApplicationController.healthCertificateManager.rowCount() > 0
-            },
-            Kirigami.Action {
                 id: liveAction
                 text: i18n("Live Status")
                 icon.name: "media-playback-playing"
@@ -258,7 +247,7 @@ Kirigami.ApplicationWindow {
                 pagepool.loadPage(Qt.resolvedUrl("TripGroupsPage.qml")).openCurrentReservation()
                 break;
             case "healthCert":
-                healthCertAction.trigger();
+                root.pageStack.push(Qt.resolvedUrl("HealthCertificatePage.qml"))
                 break;
             case "live":
                 liveAction.trigger();
@@ -327,10 +316,6 @@ Kirigami.ApplicationWindow {
     Component {
         id: passComponent
         PassPage {}
-    }
-    // replace loader with component once we depend on KHealthCertificate unconditionally
-    Loader {
-        id: healtCertificateComponent
     }
     Component {
         id: journeySectionPage

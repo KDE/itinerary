@@ -28,11 +28,15 @@ public:
     bool importCertificate(const QByteArray &rawData);
     Q_INVOKABLE void removeCertificate(int row);
 
-    enum {
+    enum ExtraRoles {
         CertificateRole = Qt::UserRole,
+        NameRole,
+        CertificateNameRole,
+        IsValidRole,
         RawDataRole,
         StorageIdRole,
     };
+    Q_ENUM(ExtraRoles);
 
     int rowCount(const QModelIndex &parent = {}) const override;
     QVariant data(const QModelIndex &index, int role) const override;
@@ -40,6 +44,15 @@ public:
 
     /** Human-readable title for displaying for the given certificate. */
     [[nodiscard]] static QString displayName(const QVariant &cert);
+
+    /** Name of the person on the certificate */
+    [[nodiscard]] static QString name(const QVariant &cert);
+
+    /** Display name of the certificate */
+    [[nodiscard]] static QString certificateName(const QVariant &cert);
+
+    /** Validity of the certificate */
+    [[nodiscard]] static bool isValid(const QVariant &cert);
 
     /** Raw data representation of @p cert, independent of its type. */
     [[nodiscard]] static QByteArray certificateRawData(const QVariant &cert);
