@@ -20,16 +20,103 @@ import org.kde.itinerary
 FormCard.FormCardPage {
     id: root
 
-    title: i18nc("@title", "Profile")
+    title: i18nc("@title", "My Data")
 
-    Component {
-        id: favoriteLocationPage
-        FavoriteLocationPage {}
+    // Passes and Programs
+    FormCard.FormHeader {
+        title: i18nc("@title", "Passes and Programs")
     }
 
-    // Home location
+    FormCard.FormCard {
+        FormCard.AbstractFormDelegate {
+            visible: passRepeater.count === 0
+            topPadding: Kirigami.Units.gridUnit
+            bottomPadding: Kirigami.Units.gridUnit
+            contentItem: Kirigami.PlaceholderMessage {
+                icon {
+                    name: "wallet-open"
+                    height: Kirigami.Units.iconSizes.medium
+                    width: Kirigami.Units.iconSizes.medium
+                }
+                text: i18n("No valid bonus or discount program cards or flat rate passes found.")
+            }
+        }
+
+        Repeater {
+            id: passRepeater
+
+            model: KSortFilterProxyModel {
+                sourceModel: PassManager
+                filterRoleName: "state"
+                filterRegularExpression: /valid/
+            }
+
+            delegate: PassDelegate {}
+        }
+
+        FormCard.FormDelegateSeparator {}
+
+        FormCard.FormButtonDelegate {
+            text: i18nc("@action:button", "Manage your Passes")
+            onClicked: QQC2.ApplicationWindow.window.pageStack.push(Qt.createComponent("org.kde.itinerary", "PassPage"))
+        }
+    }
+
+    // Health Certificates
     FormCard.FormHeader {
-        title: i18nc("@title:group", "My Locations")
+        title: i18nc("@title", "Health Certificates")
+        visible: ApplicationController.hasHealthCertificateSupport && ApplicationController.healthCertificateManager.rowCount() > 0
+    }
+
+    FormCard.FormCard {
+        visible: ApplicationController.hasHealthCertificateSupport && ApplicationController.healthCertificateManager.rowCount() > 0
+
+        FormCard.AbstractFormDelegate {
+            visible: healthCertificateRepeater.count === 0
+            topPadding: Kirigami.Units.gridUnit
+            bottomPadding: Kirigami.Units.gridUnit
+            contentItem: Kirigami.PlaceholderMessage {
+                icon {
+                    name: "cross-shape"
+                    height: Kirigami.Units.iconSizes.medium
+                    width: Kirigami.Units.iconSizes.medium
+                }
+                text: i18n("No valid health certificate found.")
+            }
+        }
+
+        Repeater {
+            id: healthCertificateRepeater
+
+            model: KSortFilterProxyModel {
+                sourceModel: ApplicationController.healthCertificateManager
+                filterRowCallback: function(source_row, source_parent) {
+                    const isValid = sourceModel.data(sourceModel.index(source_row, 0, source_parent), HealthCertificateManager.IsValidRole);
+                    return isValid;
+                };
+            }
+
+            delegate: FormCard.FormButtonDelegate {
+                required property string name
+                required property string certificateName
+                required property var certificate
+
+                icon.name: "cross-shape"
+                text: certificateName
+                description: name
+
+                onClicked: {
+                    QQC2.ApplicationWindow.window.pageStack.push(Qt.resolvedUrl("HealthCertificatePage.qml"), {
+                        initialCertificate: certificate,
+                    })
+                }
+            }
+        }
+    }
+
+    // Saved location
+    FormCard.FormHeader {
+        title: i18nc("@title:group", "Saved Locations")
     }
 
     FormCard.FormCard {
@@ -47,44 +134,7 @@ FormCard.FormCardPage {
         FormCard.FormButtonDelegate {
             text: i18n("Favorite Locations")
             icon.name: "go-home-symbolic"
-            onClicked: applicationWindow().pageStack.layers.push(favoriteLocationPage);
-        }
-    }
-
-
-    FormCard.FormHeader {
-        title: i18nc("@title", "Passes and Programs")
-    }
-
-    FormCard.FormCard {
-        FormCard.AbstractFormDelegate {
-            visible: passRepeater.count === 0
-            topPadding: Kirigami.Units.gridUnit * 2
-            rightPadding: Kirigami.Units.gridUnit * 2
-            contentItem: Kirigami.PlaceholderMessage {
-                icon.name: "wallet-open"
-                text: i18n("No bonus or discount program cards or flat rate passes found.")
-            }
-        }
-
-        Repeater {
-            id: passRepeater
-
-            model: KSortFilterProxyModel {
-                sourceModel: PassManager
-                filterRowCallback: function(source_row, source_parent) {
-                  return sourceModel.data(sourceModel.index(source_row, 0, source_parent), PassManager.StateRole) === "valid";
-                };
-            }
-
-            delegate: PassDelegate {}
-        }
-
-        FormCard.FormDelegateSeparator {}
-
-        FormCard.FormButtonDelegate {
-            text: i18nc("@action:button", "Manage your Passes")
-            onClicked: QQC2.ApplicationWindow.window.pageStack.push(Qt.createComponent("org.kde.itinerary", "PassPage"))
+            onClicked: applicationWindow().pageStack.layers.push(Qt.createComponent("org.kde.itinerary", "FavoriteLocationPage"))
         }
     }
 

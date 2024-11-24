@@ -39,7 +39,7 @@ Kirigami.NavigationTabBar {
         },
         Kirigami.PagePoolAction {
             icon.name: "user-identity-symbolic"
-            text: i18nc("@title:tab", "Profile")
+            text: i18nc("@title:tab", "My Data")
             pagePool: pagepool
             page: Qt.resolvedUrl("Profile.qml")
         },
