@@ -162,6 +162,21 @@ void TripGroup::setEndDateTime(const QDateTime &endDt)
     m_endDateTime = endDt;
 }
 
+bool TripGroup::hasEnded(const QDateTime &now) const
+{
+    // we have an end date, and it's in the past
+    if (m_endDateTime.isValid() && now.date() > m_endDateTime.date()) {
+        return true;
+    }
+
+    // we have no end date but a start date, and that is in the past
+    if (!m_endDateTime.isValid() && m_beginDateTime.isValid() && m_beginDateTime.date() < now.date()) {
+        return true;
+    }
+
+    return false;
+}
+
 QString TripGroup::matrixRoomId() const
 {
     return m_matrixRoomId;

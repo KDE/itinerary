@@ -177,6 +177,14 @@ void LiveDataManager::checkForUpdates()
     pollForUpdates(true);
 }
 
+void LiveDataManager::checkForUpdates(const QStringList &batchIds)
+{
+    clearArrived();
+    for (const auto &batchId : batchIds) {
+        pollBatchForUpdates(batchId, true);
+    }
+}
+
 [[nodiscard]] static bool canSelectBackend(const KPublicTransport::Location &loc)
 {
     return loc.hasCoordinate() || loc.country().size() == 2;
@@ -651,6 +659,43 @@ void LiveDataManager::poll()
 
 void LiveDataManager::pollForUpdates(bool force)
 {
+    clearArrived();
+
+    for (const auto &batchId : m_reservations) {
+        pollBatchForUpdates(batchId, force);
+    }
+}
+
+void LiveDataManager::pollBatchForUpdates(const QString &batchId, bool force)
+{
+    if (!force && nextPollTimeForReservation(batchId) > 60 * 1000) {
+        // data is still "fresh" according to the poll policy
+        return;
+    }
+
+    const auto res = m_resMgr->reservation(batchId);
+    if (hasArrived(batchId, res)) {
+        return;
+    }
+
+    if (JsonLd::isA<TrainReservation>(res) || JsonLd::isA<BusReservation>(res)) {
+        checkReservation(res, batchId);
+    }
+
+    // check for pkpass updates, for each element in this batch
+    const auto resIds = m_resMgr->reservationsForBatch(batchId);
+    for (const auto &resId : resIds) {
+        const auto res = m_resMgr->reservation(resId);
+        const auto passId = PkPassManager::passId(res);
+        if (!passId.isEmpty()) {
+            m_lastPollAttempt.insert(batchId, now());
+            m_pkPassMgr->updatePass(passId);
+        }
+    }
+}
+
+void LiveDataManager::clearArrived()
+{
     for (auto it = m_reservations.begin(); it != m_reservations.end();) {
         const auto batchId = *it;
         const auto res = m_resMgr->reservation(*it);
@@ -660,28 +705,8 @@ void LiveDataManager::pollForUpdates(bool force)
             cancelNotification(*it);
             it = m_reservations.erase(it);
             m_lastPollAttempt.remove(batchId);
-            continue;
-        }
-        ++it;
-
-        if (!force && nextPollTimeForReservation(batchId) > 60 * 1000) {
-            // data is still "fresh" according to the poll policy
-            continue;
-        }
-
-        if (JsonLd::isA<TrainReservation>(res) || JsonLd::isA<BusReservation>(res)) {
-            checkReservation(res, batchId);
-        }
-
-        // check for pkpass updates, for each element in this batch
-        const auto resIds = m_resMgr->reservationsForBatch(batchId);
-        for (const auto &resId : resIds) {
-            const auto res = m_resMgr->reservation(resId);
-            const auto passId = m_pkPassMgr->passId(res);
-            if (!passId.isEmpty()) {
-                m_lastPollAttempt.insert(batchId, now());
-                m_pkPassMgr->updatePass(passId);
-            }
+        } else {
+            ++it;
         }
     }
 }

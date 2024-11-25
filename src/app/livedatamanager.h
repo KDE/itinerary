@@ -73,9 +73,11 @@ public:
     /** Trigger disruption notification, only exposed for testing here. */
     Q_INVOKABLE void showNotification(const QString &resId);
 
-public Q_SLOTS:
     /** Checks all applicable elements for updates. */
-    void checkForUpdates();
+    Q_INVOKABLE void checkForUpdates();
+
+    /** Checks the given batches for updates. */
+    Q_INVOKABLE void checkForUpdates(const QStringList &batchIds);
 
 Q_SIGNALS:
     void arrivalUpdated(const QString &resId);
@@ -116,6 +118,8 @@ private:
     void poll();
     /// @p force will bypass the check if the data is still up to date
     void pollForUpdates(bool force);
+    void pollBatchForUpdates(const QString &batchId, bool force);
+    void clearArrived();
     int nextPollTime() const;
     int nextPollTimeForReservation(const QString &resId) const;
 

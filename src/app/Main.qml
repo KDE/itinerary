@@ -168,15 +168,6 @@ Kirigami.ApplicationWindow {
                 children: importActions
             },
             Kirigami.Action {
-                text: i18n("Check for Updates")
-                icon.name: "view-refresh"
-                enabled: Solid.NetworkStatus.connectivity != Solid.NetworkStatus.No
-                shortcut: StandardKey.Refresh
-                onTriggered: {
-                    LiveDataManager.checkForUpdates();
-                }
-            },
-            Kirigami.Action {
                 text: i18n("Download Maps")
                 icon.name: "download"
                 enabled: Solid.NetworkStatus.connectivity != Solid.NetworkStatus.No

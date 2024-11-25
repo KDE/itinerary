@@ -29,6 +29,8 @@ class TripGroup
     Q_PROPERTY(QString slugName READ slugName)
     Q_PROPERTY(QList<QString> elements READ elements)
 
+    Q_PROPERTY(bool hasEnded READ hasEnded STORED false)
+
 public:
     explicit TripGroup();
     ~TripGroup();
@@ -48,6 +50,9 @@ public:
     void setBeginDateTime(const QDateTime &beginDt);
     [[nodiscard]] QDateTime endDateTime() const;
     void setEndDateTime(const QDateTime &endDt);
+
+    /** Returns @c true if we consider this trip group in the past. */
+    [[nodiscard]] bool hasEnded(const QDateTime &now = QDateTime::currentDateTime()) const;
 
     /** Matrix room used for syncing this trip group. */
     [[nodiscard]] QString matrixRoomId() const;

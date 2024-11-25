@@ -93,7 +93,7 @@ QVariant TripGroupModel::data(const QModelIndex &index, int role) const
         return tripGroup.endDateTime();
     case PositionRole:
         // NOTE: when adjusting this adjust scheduleUpdate accordingly!
-        if (tripGroup.endDateTime().isValid() && today() > tripGroup.endDateTime().date()) {
+        if (tripGroup.hasEnded(now())) {
             return Position::Past;
         }
 
@@ -101,9 +101,6 @@ QVariant TripGroupModel::data(const QModelIndex &index, int role) const
             return Position::Future;
         }
 
-        if (!tripGroup.endDateTime().isValid() && tripGroup.beginDateTime().date() < today()) {
-            return Position::Past; // end-less are never current, the future case is already covered above
-        }
         return Position::Current;
     case TripGroupRole:
         return QVariant::fromValue(tripGroup);

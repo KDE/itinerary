@@ -11,6 +11,7 @@ import org.kde.i18n.localeData
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kirigamiaddons.components as Components
+import org.kde.solidextras as Solid
 import org.kde.kpublictransport as KPublicTransport
 import org.kde.itinerary
 
@@ -666,6 +667,16 @@ Kirigami.ScrollablePage {
             }
 
             FormCard.FormCard {
+                FormCard.FormButtonDelegate {
+                    action: Kirigami.Action {
+                        text: i18n("Check for Updates")
+                        icon.name: "view-refresh"
+                        enabled: Solid.NetworkStatus.connectivity != Solid.NetworkStatus.No
+                        shortcut: StandardKey.Refresh
+                        onTriggered: LiveDataManager.checkForUpdates(root.tripGroup.elements);
+                    }
+                    visible: !root.isEmptyTripGroup && !root.tripGroup.hasEnded
+                }
                 FormCard.FormButtonDelegate {
                     text: i18n("Rename…")
                     icon.name: "edit-rename"
