@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-15 00:40+0000\n"
-"PO-Revision-Date: 2024-09-28 07:12+0200\n"
+"PO-Revision-Date: 2024-11-24 19:09+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 24.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -515,9 +515,7 @@ msgid "Booking"
 msgstr "Bokning"
 
 #: app/BusDelegate.qml:149
-#, fuzzy, kde-format
-#| msgctxt "train seat"
-#| msgid "Seat: <b>%1</b>"
+#, kde-format
 msgctxt "bus seat"
 msgid "Seat: <b>%1</b>"
 msgstr "Plats: <b>%1</b>"
@@ -2518,11 +2516,10 @@ msgid "Map download finished."
 msgstr "Nerladdning av kartor klar."
 
 #: app/Main.qml:430
-#, fuzzy, kde-format
-#| msgid "Matrix Integration"
+#, kde-format
 msgctxt "@title:window"
 msgid "Matrix Session Verification"
-msgstr "Integrering med Matrix"
+msgstr "Matrix sessionsverifikation"
 
 #: app/MapStopoverInfoSheetDrawer.qml:59
 #, kde-format
@@ -2535,71 +2532,68 @@ msgid "Occupancy:"
 msgstr "Beläggning:"
 
 #: app/MapStopoverInfoSheetDrawer.qml:88
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "View Indoor Map"
+#, kde-format
 msgid "Show indoor map"
 msgstr "Visa inomhuskarta"
 
 #: app/MatrixKeyVerificationPage.qml:12
-#, fuzzy, kde-format
-#| msgid "Matrix Integration"
+#, kde-format
 msgid "Matrix Session Verification"
-msgstr "Integrering med Matrix"
+msgstr "Matrix sessionsverifikation"
 
 #: app/MatrixKeyVerificationPage.qml:41
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Waiting for device to accept verification."
-msgstr ""
+msgstr "Väntar på att enheten ska acceptera verifikation."
 
 #: app/MatrixKeyVerificationPage.qml:43
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Incoming key verification request from device <b>%1</b>"
-msgstr ""
+msgstr "Inkommande begäran om nyckelverifikation från enhet <b>%1</b>"
 
 #: app/MatrixKeyVerificationPage.qml:45
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Waiting for other party to verify."
-msgstr ""
+msgstr "Väntar på att andra sidan ska verifiera."
 
 #: app/MatrixKeyVerificationPage.qml:47
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Successfully verified device <b>%1</b>"
-msgstr ""
+msgstr "Verifierade enhet <b>%1</b> med lyckat resultat"
 
 #: app/MatrixKeyVerificationPage.qml:52
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session verification was canceled for unknown reason."
-msgstr ""
+msgstr "Sessionsverifikationen avbröts av okänd anledning."
 
 #: app/MatrixKeyVerificationPage.qml:54
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session verification timed out."
-msgstr ""
+msgstr "1"
 
 #: app/MatrixKeyVerificationPage.qml:56
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session verification timed out for remote party."
-msgstr ""
+msgstr "Tidsgräns för sessionsverifikation gick ut för motparten."
 
 #: app/MatrixKeyVerificationPage.qml:58
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "You canceled the session verification."
-msgstr ""
+msgstr "Du avbröt sessionsverifikationen."
 
 #: app/MatrixKeyVerificationPage.qml:60
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The remote party canceled the session verification."
-msgstr ""
+msgstr "Den andra parten avbröt sessionsverifikation."
 
 #: app/MatrixKeyVerificationPage.qml:62
 #, kde-format
@@ -2608,6 +2602,7 @@ msgid ""
 "The session verification was canceled because we received an unexpected "
 "message."
 msgstr ""
+"Sessionsverifikationen avbröts eftersom vi tog emot ett oväntat meddelande."
 
 #: app/MatrixKeyVerificationPage.qml:64
 #, kde-format
@@ -2616,6 +2611,8 @@ msgid ""
 "The remote party canceled the session verification because it received an "
 "unexpected message."
 msgstr ""
+"Den andra parten avbröt sessionsverifikationen eftersom ett oväntat "
+"meddelande togs emot."
 
 #: app/MatrixKeyVerificationPage.qml:66
 #, kde-format
@@ -2624,6 +2621,8 @@ msgid ""
 "The session verification was canceled because it received a message for an "
 "unknown session."
 msgstr ""
+"Sessionsverifikationen avbröts eftersom den tog emot ett meddelande för en "
+"okänd session."
 
 #: app/MatrixKeyVerificationPage.qml:68
 #, kde-format
@@ -2632,6 +2631,8 @@ msgid ""
 "The remote party canceled the session verification because it received a "
 "message for an unknown session."
 msgstr ""
+"Den andra parten avbröt sessionsverifikationen eftersom den tog emot ett "
+"meddelande för en okänd session."
 
 #: app/MatrixKeyVerificationPage.qml:70
 #, kde-format
@@ -2640,6 +2641,8 @@ msgid ""
 "The session verification was canceled because NeoChat is unable to handle "
 "this verification method."
 msgstr ""
+"Sessionsverifikationen avbröts eftersom NeoChat inte kan hantera "
+"verifikationsmetoden."
 
 #: app/MatrixKeyVerificationPage.qml:72
 #, kde-format
@@ -2648,12 +2651,14 @@ msgid ""
 "The remote party canceled the session verification because it is unable to "
 "handle this verification method."
 msgstr ""
+"Den andra parten avbröt sessionsverifikationen eftersom den inte kan hantera "
+"verifikationsmetoden."
 
 #: app/MatrixKeyVerificationPage.qml:74
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session verification was canceled because the keys are incorrect."
-msgstr ""
+msgstr "Sessionsverifikationen avbröts eftersom nycklarna är felaktiga."
 
 #: app/MatrixKeyVerificationPage.qml:76
 #, kde-format
@@ -2664,6 +2669,9 @@ msgid ""
 "\n"
 "<b>Please log out and log back in, your session is broken/corrupt.</b>"
 msgstr ""
+"Motparten avbröt sessionsverifieringen eftersom nycklarna är felaktiga.\n"
+"\n"
+"<b>Logga ut och logga in igen, din session är felaktig eller förvanskad.</b>"
 
 #: app/MatrixKeyVerificationPage.qml:78
 #, kde-format
@@ -2671,6 +2679,7 @@ msgctxt "Matrix session verification"
 msgid ""
 "The session verification was canceled because it verifies an unexpected user."
 msgstr ""
+"Sessionsverifikationen avbröts eftersom den verifierar en oväntad användare."
 
 #: app/MatrixKeyVerificationPage.qml:80
 #, kde-format
@@ -2679,6 +2688,8 @@ msgid ""
 "The remote party canceled the session verification because it verifies an "
 "unexpected user."
 msgstr ""
+"Den andra parten avbröt sessionsverifikationen eftersom den verifierar en "
+"oväntad användare."
 
 #: app/MatrixKeyVerificationPage.qml:82
 #, kde-format
@@ -2686,6 +2697,7 @@ msgctxt "Matrix session verification"
 msgid ""
 "The session verification was canceled because we received an invalid message."
 msgstr ""
+"Sessionsverifikationen avbröts eftersom vi tog emot ett ogiltigt meddelande."
 
 #: app/MatrixKeyVerificationPage.qml:84
 #, kde-format
@@ -2694,18 +2706,20 @@ msgid ""
 "The remote party canceled the session verification because it received an "
 "invalid message."
 msgstr ""
+"Den andra parten avbröt sessionsverifikationen eftersom den tog emot ett "
+"ogiltigt meddelande."
 
 #: app/MatrixKeyVerificationPage.qml:87
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session was accepted on a different device"
-msgstr ""
+msgstr "Sessionen accepterades med en annan enhet"
 
 #: app/MatrixKeyVerificationPage.qml:89
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session verification was canceled because of a mismatched key."
-msgstr ""
+msgstr "Sessionsverifikationen avbröts på grund av en nyckel som inte matchar."
 
 #: app/MatrixKeyVerificationPage.qml:91
 #, kde-format
@@ -2714,12 +2728,14 @@ msgid ""
 "The remote party canceled the session verification because of a mismatched "
 "key."
 msgstr ""
+"Den andra parten avbröt sessionsverifikationen på grund av en nyckel som "
+"inte matchar."
 
 #: app/MatrixKeyVerificationPage.qml:93
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session verification was canceled because the keys do not match."
-msgstr ""
+msgstr "Sessionsverifikationen avbröts eftersom nycklarna inte matchar."
 
 #: app/MatrixKeyVerificationPage.qml:95
 #, kde-format
@@ -2728,44 +2744,45 @@ msgid ""
 "The remote party canceled the session verification because the keys do not "
 "match."
 msgstr ""
+"Den andra parten avbröt sessionsverifikationen eftersom nycklarna inte "
+"matchar."
 
 #: app/MatrixKeyVerificationPage.qml:97
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session verification was canceled due to an unknown error."
-msgstr ""
+msgstr "Sessionsverifikationen avbröts på grund av ett okänt fel."
 
 #: app/MatrixKeyVerificationPage.qml:114
-#, fuzzy, kde-format
-#| msgid "Notifications"
+#, kde-format
 msgctxt "Matrix session verfication"
 msgid "Emoji Verification"
-msgstr "Underrättelser"
+msgstr "Verifikation av emoji"
 
 #: app/MatrixKeyVerificationPage.qml:117
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Compare a set of emoji on both devices."
-msgstr ""
+msgstr "Jämför en uppsättning emoji på båda enheter."
 
 #: app/MatrixKeyVerificationPage.qml:128
 #, kde-format
 msgctxt "Matrix session verification"
 msgid ""
 "Confirm the emoji below are displayed on both devices, in the same order."
-msgstr ""
+msgstr "Bekräfta att emoji nedan visas på båda enheter, i samma ordning."
 
 #: app/MatrixKeyVerificationPage.qml:165
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "They match"
-msgstr ""
+msgstr "De stämmer"
 
 #: app/MatrixKeyVerificationPage.qml:171
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "They don't match"
-msgstr ""
+msgstr "De stämmer inte"
 
 #: app/MatrixKeyVerificationPage.qml:207
 #, kde-format
@@ -2775,7 +2792,7 @@ msgstr "Acceptera"
 #: app/MatrixKeyVerificationPage.qml:213
 #, kde-format
 msgid "Decline"
-msgstr ""
+msgstr "Neka"
 
 #: app/MatrixRoomSelectionSheet.qml:19
 #, kde-format
@@ -3513,19 +3530,19 @@ msgstr "Lösenord"
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Session verified"
-msgstr ""
+msgstr "Session verifierad"
 
 #: app/SettingsPage.qml:316
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Session not verified."
-msgstr ""
+msgstr "Session inte verifierad."
 
 #: app/SettingsPage.qml:317
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Initiate session verification in your Matrix chat client."
-msgstr ""
+msgstr "Initiera sessionsverifikation i ditt Matrix chattprogram."
 
 #: app/SettingsPage.qml:324
 #, kde-format
@@ -3652,21 +3669,19 @@ msgid "Train"
 msgstr "Tåg"
 
 #: app/StopPickerPage.qml:27
-#, fuzzy, kde-format
-#| msgid "Clear history"
+#, kde-format
 msgid "Clear History"
 msgstr "Rensa historik"
 
 #: app/StopPickerPage.qml:28
-#, fuzzy, kde-format
-#| msgid "Do you really want to delete this certificate?"
+#, kde-format
 msgid "Do you really want to remove all previously searched locations?"
-msgstr "Vill du verkligen ta bort intyget?"
+msgstr "Vill du verkligen ta bort alla tidigare sökta platser?"
 
 #: app/StopPickerPage.qml:32
 #, kde-format
 msgid "Remove"
-msgstr ""
+msgstr "Ta bort"
 
 #: app/StopPickerPage.qml:45
 #, kde-format
@@ -4198,7 +4213,7 @@ msgstr "%1 (%2 - %3)"
 #: app/TripGroupMapPage.qml:194
 #, kde-format
 msgid "Address:"
-msgstr ""
+msgstr "Adress:"
 
 #: app/TripGroupMergeDialog.qml:17
 #, kde-format
@@ -4251,11 +4266,9 @@ msgid "No compatible power plugs (%1)"
 msgstr "Inga kompatibla elkontakter (%1)"
 
 #: app/TripGroupPage.qml:478
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Show Map"
+#, kde-format
 msgid "Show map…"
-msgstr "Visa karta"
+msgstr "Visa karta…"
 
 #: app/TripGroupPage.qml:485
 #, kde-format
@@ -4270,7 +4283,7 @@ msgstr "Lägg till"
 #: app/TripGroupPage.qml:658
 #, kde-format
 msgid "Cost"
-msgstr ""
+msgstr "Kostnad"
 
 #: app/TripGroupPage.qml:670
 #, kde-format
@@ -4310,7 +4323,7 @@ msgstr "Lägg till i:"
 #: app/TripGroupSelectorCard.qml:120
 #, kde-format
 msgid "A trip must be selected."
-msgstr ""
+msgstr "En resa måste vara markerad."
 
 #: app/TripGroupsPage.qml:15
 #, kde-format
@@ -4350,7 +4363,7 @@ msgstr "Kommande"
 #: app/TripGroupsPage.qml:116
 #, kde-format
 msgid "No trips added yet."
-msgstr ""
+msgstr "Inga resor tillagda ännu."
 
 #: app/TripGroupSplitPage.qml:15
 #, kde-format
@@ -4546,16 +4559,14 @@ msgid "This server does not support logging in using a password"
 msgstr "Servern stöder inte att logga in med användning av ett lösenord"
 
 #: matrix/matrixmanager.cpp:78
-#, fuzzy, kde-format
-#| msgid "Logging in"
+#, kde-format
 msgid "Logging in…"
-msgstr "Loggar in"
+msgstr "Loggar in…"
 
 #: matrix/matrixmanager.cpp:114
-#, fuzzy, kde-format
-#| msgid "Log out"
+#, kde-format
 msgid "Logged out"
-msgstr "Logga ut"
+msgstr "Utloggand"
 
 #: metadataextractor/itineraryextractor.cpp:118
 #, kde-format
