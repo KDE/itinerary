@@ -66,6 +66,16 @@ void MapDownloadManager::download()
     downloadNext();
 }
 
+void MapDownloadManager::download(const QStringList &batchIds)
+{
+    for (const auto &batchId : batchIds) {
+        addRequestForBatch(batchId, true);
+    }
+
+    qDebug() << m_pendingRequests.size() << "pending download requests" << m_netStatus->connectivity() << m_netStatus->metered();
+    downloadNext();
+}
+
 bool MapDownloadManager::canAutoDownload() const
 {
     return m_autoDownloadEnabled && m_netStatus->connectivity() != NetworkStatus::No && m_netStatus->metered() == NetworkStatus::No;
@@ -79,14 +89,14 @@ void MapDownloadManager::addAutomaticRequestForBatch(const QString &batchId)
     }
 }
 
-void MapDownloadManager::addRequestForBatch(const QString &batchId)
+void MapDownloadManager::addRequestForBatch(const QString &batchId, bool force)
 {
     const auto res = m_resMgr->reservation(batchId);
     if (!LocationUtil::isLocationChange(res)) {
         return;
     }
     const auto arrTime = SortUtil::endDateTime(res);
-    if (isRelevantTime(arrTime)) {
+    if (force || isRelevantTime(arrTime)) {
         const auto arr = LocationUtil::arrivalLocation(res);
         const auto arrGeo = LocationUtil::geo(arr);
         qDebug() << LocationUtil::name(arr) << arrGeo.latitude() << arrGeo.longitude();
@@ -94,7 +104,7 @@ void MapDownloadManager::addRequestForBatch(const QString &batchId)
     }
 
     const auto depTime = SortUtil::startDateTime(res);
-    if (isRelevantTime(depTime)) {
+    if (force || isRelevantTime(depTime)) {
         const auto dep = LocationUtil::departureLocation(res);
         const auto depGeo = LocationUtil::geo(dep);
         qDebug() << LocationUtil::name(dep) << depGeo.latitude() << depGeo.longitude();

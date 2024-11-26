@@ -705,6 +705,14 @@ Kirigami.ScrollablePage {
                     onClicked: applicationWindow().pageStack.push(tripGroupSplitPage, { tripGroup: root.tripGroup });
                 }
                 FormCard.FormButtonDelegate {
+                    text: i18n("Download Maps")
+                    icon.name: "download"
+                    icon.color: Solid.NetworkStatus.metered != Solid.NetworkStatus.No ? Kirigami.Theme.neutralTextColor : Kirigami.Theme.textColor
+                    enabled: Solid.NetworkStatus.connectivity != Solid.NetworkStatus.No
+                    visible: !root.isEmptyTripGroup && !root.tripGroup.hasEnded
+                    onClicked: MapDownloadManager.download(root.tripGroup.elements);
+                }
+                FormCard.FormButtonDelegate {
                     text: i18n("Export…")
                     icon.name: "document-export-symbolic"
                     enabled: !root.isEmptyTripGroup

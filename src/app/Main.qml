@@ -168,13 +168,6 @@ Kirigami.ApplicationWindow {
                 children: importActions
             },
             Kirigami.Action {
-                text: i18n("Download Maps")
-                icon.name: "download"
-                enabled: Solid.NetworkStatus.connectivity != Solid.NetworkStatus.No
-                icon.color: Solid.NetworkStatus.metered != Solid.NetworkStatus.No ? Kirigami.Theme.neutralTextColor : Kirigami.Theme.textColor
-                onTriggered: MapDownloadManager.download();
-            },
-            Kirigami.Action {
                 id: statsAction
                 text: i18n("Statistics")
                 icon.name: "view-statistics"
