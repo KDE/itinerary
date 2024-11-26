@@ -56,26 +56,36 @@ TimelineDelegate {
             text: reservationFor.location != undefined ? reservationFor.location.name : ""
             visible: text !== ""
             wrapMode: Text.WordWrap
-            width: topLayout.width
+
+            Layout.fillWidth: true
         }
         QQC2.Label {
             visible: reservationFor.location != undefined && !reservationFor.location.address.isEmpty
-            width: topLayout.width
+            wrapMode: Text.WordWrap
             text: Localizer.formatAddressWithContext(reservationFor.location.address, null, Settings.homeCountryIsoCode)
+
+            Layout.fillWidth: true
         }
         QQC2.Label {
+            wrapMode: Text.WordWrap
             text: i18n("Start time: %1", Localizer.formatDateTime(reservationFor, "startDate"))
             visible: root.rangeType != TimelineElement.RangeEnd && reservationFor.doorTime > 0
+
+            Layout.fillWidth: true
         }
         QQC2.Label {
+            wrapMode: Text.WordWrap
             text: i18n("End time: %1", Localizer.formatDateTime(reservationFor, "endDate"));
             visible: root.rangeType != TimelineElement.RangeEnd && reservationFor.endDate > 0
+
+            Layout.fillWidth: true
         }
 
         TimelineDelegateSeatRow {
             hasSeat: root.hasSeat
             lineSegmentVisible: false
-            width: topLayout.width
+
+            Layout.fillWidth: true
 
             TimelineDelegateSeatRowLabel {
                 text: i18nc("event venue seat section", "Section: <b>%1</b>", reservation?.reservedTicket?.ticketedSeat?.seatSection || "-")
