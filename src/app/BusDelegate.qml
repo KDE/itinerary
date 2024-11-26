@@ -94,6 +94,13 @@ TimelineDelegate {
                     }
                 }
             }
+            QQC2.Label {
+                visible: stopRepeater.count === 0
+                text: i18n("0 intermediate stop (%1)", Localizer.formatDurationCustom(root.journeySection.duration))
+                elide: Text.ElideRight
+                color: Kirigami.Theme.disabledTextColor
+                Layout.fillWidth: true
+            }
         }
 
         Repeater {
