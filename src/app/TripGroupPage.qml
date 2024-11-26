@@ -232,7 +232,7 @@ Kirigami.ScrollablePage {
         property list<QQC2.Action> _actions: [
             Kirigami.Action {
                 text: i18n("As Itinerary file…")
-                icon.name: "export-symbolic"
+                icon.name: "document-export-symbolic"
                 onTriggered: {
                     tripGroupFileExportDialog.currentFile = root.tripGroup.slugName + ".itinerary"
                     tripGroupFileExportDialog.open();
@@ -694,7 +694,7 @@ Kirigami.ScrollablePage {
                 }
                 FormCard.FormButtonDelegate {
                     text: i18n("Export…")
-                    icon.name: "export-symbolic"
+                    icon.name: "document-export-symbolic"
                     enabled: !root.isEmptyTripGroup
                     visible: !root.isEmptyTripGroup
                     onClicked: exportTripGroupDialog.open()

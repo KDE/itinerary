@@ -73,7 +73,7 @@ Kirigami.Page {
         },
         Kirigami.Action {
             text: i18n("Export to GPX")
-            icon.name: "export-symbolic"
+            icon.name: "document-export-symbolic"
             onTriggered: favoriteGpxExportDialog.open()
         },
         Kirigami.Action {
