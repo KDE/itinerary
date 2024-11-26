@@ -126,31 +126,11 @@ anchors.centerIn: parent
 
                     Layout.fillWidth: true
 
-                    QQC2.Control {
-                        leftPadding: Kirigami.Units.smallSpacing
-                        rightPadding: Kirigami.Units.smallSpacing
-                        topPadding: Kirigami.Units.smallSpacing
-                        bottomPadding: Kirigami.Units.smallSpacing
-                        visible: root.modelData.mode ===  JourneySection.PublicTransport
-
-                        contentItem: RowLayout {
-                            spacing: Kirigami.Units.smallSpacing
-                            TransportIcon {
-                                color: root.modelData.route.line.hasTextColor ? modelData.route.line.textColor : Kirigami.Theme.backgroundColor
-                                isMask: true
-                                size: Kirigami.Units.iconSizes.smallMedium
-                                source: root.modelData.iconName
-                            }
-                            QQC2.Label {
-                                color: root.modelData.route.line.hasTextColor ? modelData.route.line.textColor : Kirigami.Theme.backgroundColor
-                                text: root.modelData.route.line.name
-                                visible: root.modelData.route.line.name.length > 0
-                            }
-                        }
-                        background: Rectangle {
-                            radius: Kirigami.Units.cornerRadius
-                            color: root.modelData.route.line.hasColor ? root.modelData.route.line.color : Kirigami.Theme.textColor
-                        }
+                    TransportNameControl {
+                        iconName: root.modelData.iconName
+                        line: root.modelData.route.line
+                        mode: root.modelData.mode
+                        visible: root.modelData.mode === JourneySection.PublicTransport
                     }
 
                     QQC2.Label {

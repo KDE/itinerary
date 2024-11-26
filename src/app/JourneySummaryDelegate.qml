@@ -124,52 +124,18 @@ FormCard.AbstractFormDelegate {
 
             Repeater {
                 model: root.journey.sections
-                delegate: QQC2.Control {
+                delegate: TransportNameControl {
                     id: sectionDelegate
 
                     required property var modelData
 
-                    leftPadding: Kirigami.Units.smallSpacing
-                    rightPadding: Kirigami.Units.smallSpacing
-                    topPadding: Kirigami.Units.smallSpacing
-                    bottomPadding: Kirigami.Units.smallSpacing
+                    iconName: modelData.iconName
+                    line: modelData.route.line
+                    mode: modelData.mode
+                    modeName: PublicTransport.journeySectionLabel(modelData)
 
                     Layout.fillWidth: true
                     Layout.maximumWidth: sectionDelegate.modelData.mode === JourneySection.PublicTransport ? Number.POSITIVE_INFINITY : implicitWidth
-
-                    contentItem: RowLayout {
-                        spacing: Kirigami.Units.smallSpacing
-
-                        TransportIcon {
-                            color: if (sectionDelegate.modelData.mode === JourneySection.PublicTransport) {
-                                sectionDelegate.modelData.route.line.hasTextColor ? sectionDelegate.modelData.route.line.textColor : Kirigami.Theme.backgroundColor
-                            } else {
-                                return Kirigami.Theme.textColor;
-                            }
-                            isMask: true
-                            size: Kirigami.Units.iconSizes.smallMedium
-                            source: sectionDelegate.modelData.iconName
-                            visible: sectionDelegate.modelData.mode !== JourneySection.PublicTransport
-                            Accessible.name: PublicTransport.journeySectionLabel(modelData)
-                        }
-
-                        QQC2.Label {
-                            id: lineName
-                            Layout.minimumHeight: Kirigami.Units.iconSizes.smallMedium
-                            color: sectionDelegate.modelData.route.line.hasTextColor ? sectionDelegate.modelData.route.line.textColor : Kirigami.Theme.backgroundColor;
-                            text: sectionDelegate.modelData.route.line.name
-                            visible: sectionDelegate.modelData.mode === JourneySection.PublicTransport
-                            font.weight: Font.DemiBold
-                            horizontalAlignment: Text.AlignHCenter
-                            Layout.fillWidth: true
-                        }
-                    }
-
-                    background: Rectangle {
-                        radius: Kirigami.Units.cornerRadius
-                        color: sectionDelegate.modelData.route.line.hasColor ? sectionDelegate.modelData.route.line.color : Kirigami.Theme.textColor
-                        visible: sectionDelegate.modelData.mode === JourneySection.PublicTransport
-                    }
                 }
             }
 

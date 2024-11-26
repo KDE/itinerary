@@ -80,30 +80,11 @@ RowLayout {
         }
 
         RowLayout {
-            QQC2.Control {
-                leftPadding: Kirigami.Units.smallSpacing
-                rightPadding: Kirigami.Units.smallSpacing
-                topPadding: Kirigami.Units.smallSpacing
-                bottomPadding: Kirigami.Units.smallSpacing
-
-                contentItem: RowLayout {
-                    spacing: Kirigami.Units.smallSpacing
-                    TransportIcon {
-                        color: root.departure.route.line.hasColor ? "white" : Kirigami.Theme.backgroundColor
-                        isMask: true
-                        size: Kirigami.Units.iconSizes.smallMedium
-                        source: root.transportIcon
-                    }
-                    QQC2.Label {
-                        color: root.departure.route.line.hasColor ? "white" : Kirigami.Theme.backgroundColor
-                        text: root.transportName
-                        visible: root.transportName.length > 0
-                    }
-                }
-                background: Rectangle {
-                    radius: Kirigami.Units.cornerRadius
-                    color: root.departure.route.line.hasColor ? root.departure.route.line.color : Kirigami.Theme.textColor
-                }
+            TransportNameControl {
+                line: root.departure.route.line
+                mode: JourneySection.PublicTransport
+                iconName: root.transportIcon
+                lineName: root.transportName
             }
 
             QQC2.Label {

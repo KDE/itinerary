@@ -240,6 +240,7 @@ ecm_add_qml_module(itinerary-app URI org.kde.itinerary NO_PLUGIN QML_FILES
     TransferDelegate.qml
     TransferPage.qml
     TransportIcon.qml
+    TransportNameControl.qml
     TripGroupDelegate.qml
     TripGroupEditorDialog.qml
     TripGroupMapPage.qml
