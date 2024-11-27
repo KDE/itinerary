@@ -43,8 +43,9 @@ TimelineDelegate {
 
         QQC2.Label {
             visible: text !== ""
-            width: topLayout.width
             text: Localizer.formatAddressWithContext(reservationFor.address, null, Settings.homeCountryIsoCode)
+
+            Layout.fillWidth: true
         }
     }
 

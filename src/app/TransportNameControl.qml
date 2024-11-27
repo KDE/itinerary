@@ -85,7 +85,7 @@ QQC2.Control {
         id: background
 
         radius: Kirigami.Units.cornerRadius
-        color: root.line.hasColor ? root.line.color : Kirigami.Theme.backgroundColor
+        color: root.line.hasColor ? root.line.color : Kirigami.Theme.textColor
         visible: root.mode === JourneySection.PublicTransport
     }
 }

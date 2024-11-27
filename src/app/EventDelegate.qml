@@ -14,7 +14,6 @@ TimelineDelegate {
     id: root
 
     contentItem: ColumnLayout {
-        id: topLayout
         spacing: Kirigami.Units.smallSpacing
 
         RowLayout {
