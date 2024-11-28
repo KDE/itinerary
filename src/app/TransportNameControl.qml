@@ -21,14 +21,17 @@ QQC2.Control {
     topPadding: Kirigami.Units.smallSpacing
     bottomPadding: Kirigami.Units.smallSpacing
 
+    clip: true
+
     contentItem: RowLayout {
-        spacing: Kirigami.Units.smallSpacing
+        spacing: 0
 
         Item {
             Layout.fillWidth: true
         }
 
         TransportIcon {
+            id: transportIcon
             color: if (background.visible) {
                 return lineName.color;
             } else {
@@ -38,9 +41,11 @@ QQC2.Control {
             size: Kirigami.Units.iconSizes.smallMedium
             source: root.iconName
             Accessible.name: root.modeName
+
+            Layout.rightMargin: lineName.visible ? Kirigami.Units.smallSpacing : 0
         }
 
-        QQC2.Label {
+        Kirigami.Heading {
             id: lineName
 
             function getDarkness(background: color): real {
@@ -67,13 +72,16 @@ QQC2.Control {
 
                 return backgroundIsDark && isDarkTheme ? Kirigami.Theme.textColor : Kirigami.Theme.backgroundColor;
             }
+            level: 4
             text: root.lineName
             visible: text.length > 0 && root.mode === JourneySection.PublicTransport && root.iconName.startsWith('qrc:')
             elide: Text.ElideRight
             font.weight: Font.DemiBold
             horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
 
             Layout.minimumHeight: Kirigami.Units.iconSizes.smallMedium
+            Layout.fillHeight: true
         }
 
         Item {
