@@ -19,9 +19,9 @@ QQC2.ComboBox {
     /** Initially selected country. */
     property string initialCountry
 
-   onModelChanged: {
-       model = model.sort((lhs, rhs) => { return Country.fromAlpha2(lhs).name.localeCompare(Country.fromAlpha2(rhs).name); });
-   }
+    function sort(model) {
+        return model.sort((lhs, rhs) => { return Country.fromAlpha2(lhs).name.localeCompare(Country.fromAlpha2(rhs).name); });
+    }
 
     displayText: currentCountry ? (currentCountry.emojiFlag + ' ' + currentCountry.name) : ""
 
