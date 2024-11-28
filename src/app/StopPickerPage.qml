@@ -106,7 +106,7 @@ Kirigami.ScrollablePage {
                         }
                     }
                 }
-                return [...new Set(countries)];
+                return sort([...new Set(countries)]);
             }
             initialCountry: root.initialCountry
             onCurrentValueChanged: root.updateQuery();
