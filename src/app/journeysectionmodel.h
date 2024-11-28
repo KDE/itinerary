@@ -36,6 +36,8 @@ class JourneySectionModel : public QAbstractListModel
 
     // when disabled, progress is always 0 / not passed
     Q_PROPERTY(bool showProgress MEMBER m_showProgress NOTIFY showProgressChanged)
+    Q_PROPERTY(int sectionCount READ sectionCount NOTIFY journeySectionChanged)
+
 public:
     explicit JourneySectionModel(QObject *parent = nullptr);
     ~JourneySectionModel();
@@ -65,6 +67,8 @@ public:
     // for unit testing
     void setCurrentDateTime(const QDateTime &dt);
     QDateTime currentDateTime() const;
+
+    int sectionCount() const;
 
 Q_SIGNALS:
     void journeySectionChanged();

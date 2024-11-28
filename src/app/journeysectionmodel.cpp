@@ -39,6 +39,11 @@ KPublicTransport::JourneySection JourneySectionModel::journeySection() const
     return m_journey;
 }
 
+int JourneySectionModel::sectionCount() const
+{
+    return rowCount();
+}
+
 void JourneySectionModel::setJourneySection(const KPublicTransport::JourneySection &section)
 {
     // is this an update to the current state? if so, try to avoid resetting the model

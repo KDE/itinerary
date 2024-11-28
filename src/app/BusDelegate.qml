@@ -103,69 +103,68 @@ TimelineDelegate {
             }
         }
 
-        Repeater {
-            id: stopRepeater
-            model: sectionModel
-            delegate: RowLayout {
-                id: stopDelegate
+        Item {
+            implicitHeight: children.filter(item => item !== stopRepeater && item !== bar)
+                .reduce((currentValue, item) => item.implicitHeight + currentValue, 0)
 
-                property bool hidden: !expanded
+            Layout.fillWidth: true
 
-                width: parent.width
-                clip: true
-                visible: false
-                spacing: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
-                onHiddenChanged: if (!hidden) {
-                    visible = true
-                    showAnimation.running=true
-                } else {
-                    hideAnimation.running = true
+            Behavior on implicitHeight {
+                NumberAnimation {
+                    duration: Kirigami.Units.shortDuration
                 }
-                PropertyAnimation { id: showAnimation;
-                                    target: stopDelegate;
-                                    property: "height";
-                                    from: 0;
-                                    to: stopDelegate.implicitHeight;
-                                    duration: 200
-                                    easing.type: Easing.InOutCubic
-                }
+            }
 
-                PropertyAnimation { id: hideAnimation;
-                                    target: stopDelegate;
-                                    property: "height";
-                                    from: stopDelegate.implicitHeight;
-                                    to: 0;
-                                    duration: 200
-                                    onFinished: stopDelegate.visible = false
-                                    easing.type: Easing.InOutCubic
-
+            Rectangle {
+                id: bar
+                anchors {
+                    top: parent.top
+                    bottom: parent.bottom
                 }
-                JourneySectionStopDelegateLineSegment {
+                width: Kirigami.Units.smallSpacing * 4
+                x: Math.round((Kirigami.Units.iconSizes.smallMedium - width) / 2)
 
-                    Layout.fillHeight: true
-                    lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
-                    hasStop: model.stopover.disruptionEffect !== Disruption.NoService
-                }
-                QQC2.Label{
-                    text: model.stopover.stopPoint.name
+                color: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
+            }
+
+            Repeater {
+                id: stopRepeater
+
+                model: root.expanded ? sectionModel : []
+                delegate: RowLayout {
+                    id: stopDelegate
+
+                    spacing: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
+
                     Layout.fillWidth: true
-                    elide: Text.ElideRight
-                    font.strikeout: model.stopover.disruptionEffect === Disruption.NoService
-                }
-                RowLayout {
-                    Layout.minimumWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
-                    QQC2.Label {
-                        opacity: 0.8
-                        text: Localizer.formatTime(model.stopover , model.stopover.scheduledDepartureTime > 0 ? "scheduledDepartureTime" : "scheduledArrivalTime")
+
+                    JourneySectionStopDelegateLineSegment {
+
+                        Layout.fillHeight: true
+                        lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
+                        hasStop: model.stopover.disruptionEffect !== Disruption.NoService
+                    }
+                    QQC2.Label{
+                        text: model.stopover.stopPoint.name
+                        Layout.fillWidth: true
+                        elide: Text.ElideRight
                         font.strikeout: model.stopover.disruptionEffect === Disruption.NoService
                     }
-                    QQC2.Label {
-                        id: stopDelayLabel
-                        readonly property int delay: model.stopover.scheduledDepartureTime > 0 ? model.stopover.departureDelay : model.stopover.arrivalDelay
-                        text: (stopDelayLabel.delay >= 0 ? "+" : "") + stopDelayLabel.delay
-                        color: (stopDelayLabel.delay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
-                        visible: model.stopover.hasExpectedArrivalTime && model.stopover.disruptionEffect !== Disruption.NoService
-                        Accessible.ignored: !visible
+                    RowLayout {
+                        Layout.minimumWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
+                        QQC2.Label {
+                            opacity: 0.8
+                            text: Localizer.formatTime(model.stopover , model.stopover.scheduledDepartureTime > 0 ? "scheduledDepartureTime" : "scheduledArrivalTime")
+                            font.strikeout: model.stopover.disruptionEffect === Disruption.NoService
+                        }
+                        QQC2.Label {
+                            id: stopDelayLabel
+                            readonly property int delay: model.stopover.scheduledDepartureTime > 0 ? model.stopover.departureDelay : model.stopover.arrivalDelay
+                            text: (stopDelayLabel.delay >= 0 ? "+" : "") + stopDelayLabel.delay
+                            color: (stopDelayLabel.delay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
+                            visible: model.stopover.hasExpectedArrivalTime && model.stopover.disruptionEffect !== Disruption.NoService
+                            Accessible.ignored: !visible
+                        }
                     }
                 }
             }
