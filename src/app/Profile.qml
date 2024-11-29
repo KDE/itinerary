@@ -28,18 +28,10 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
-        FormCard.AbstractFormDelegate {
+        FormCard.FormPlaceholderMessageDelegate {
             visible: passRepeater.count === 0
-            topPadding: Kirigami.Units.gridUnit
-            bottomPadding: Kirigami.Units.gridUnit
-            contentItem: Kirigami.PlaceholderMessage {
-                icon {
-                    name: "wallet-open"
-                    height: Kirigami.Units.iconSizes.medium
-                    width: Kirigami.Units.iconSizes.medium
-                }
-                text: i18n("No valid bonus or discount program cards or flat rate passes found.")
-            }
+            icon.name: "wallet-open"
+            text: i18n("No valid bonus or discount program cards or flat rate passes found.")
         }
 
         Repeater {
@@ -71,18 +63,10 @@ FormCard.FormCardPage {
     FormCard.FormCard {
         visible: ApplicationController.hasHealthCertificateSupport && ApplicationController.healthCertificateManager.rowCount() > 0
 
-        FormCard.AbstractFormDelegate {
+        FormCard.FormPlaceholderMessageDelegate {
             visible: healthCertificateRepeater.count === 0
-            topPadding: Kirigami.Units.gridUnit
-            bottomPadding: Kirigami.Units.gridUnit
-            contentItem: Kirigami.PlaceholderMessage {
-                icon {
-                    name: "cross-shape"
-                    height: Kirigami.Units.iconSizes.medium
-                    width: Kirigami.Units.iconSizes.medium
-                }
-                text: i18n("No valid health certificate found.")
-            }
+            icon.name: "cross-shape"
+            text: i18n("No valid health certificate found.")
         }
 
         Repeater {
