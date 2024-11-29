@@ -11,7 +11,6 @@ import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kirigamiaddons.dateandtime as Addon
 import org.kde.kpublictransport
 import org.kde.itinerary
-import "./components" as Components
 
 FormCard.FormCardPage {
     id: root
@@ -138,34 +137,26 @@ FormCard.FormCardPage {
         }
         FormCard.FormDelegateSeparator {
             below: toButton
-            above: timeSelector
+            above: departureArrivalSelector
         }
 
-        FormCard.AbstractFormDelegate {
-            id: timeSelector
+        FormCard.FormRadioSelectorDelegate {
+            id: departureArrivalSelector
 
-            topPadding: Kirigami.Units.largeSpacing
-            bottomPadding: Kirigami.Units.largeSpacing
+            consistentWidth: true
 
-            background: null
-            contentItem: Components.RadioSelector{
-                id: departureArrivalSelector
-
-                consistentWidth: true
-
-                actions: [
-                    Kirigami.Action {
-                        text: i18nc("train or bus departure", "Departure")
-                    },
-                    Kirigami.Action {
-                        text: i18nc("train or bus arrival", "Arrival")
-                    }
-                ]
-            }
+            actions: [
+                Kirigami.Action {
+                    text: i18nc("train or bus departure", "Departure")
+                },
+                Kirigami.Action {
+                    text: i18nc("train or bus arrival", "Arrival")
+                }
+            ]
         }
 
         FormCard.FormDelegateSeparator {
-            below: timeSelector
+            below: departureArrivalSelector
             above: dateTimeInput
         }
 
@@ -176,7 +167,7 @@ FormCard.FormCardPage {
         }
 
         FormCard.FormDelegateSeparator {
-            below: timeSelector
+            below: dateTimeInput
             above: searchButton
         }
 

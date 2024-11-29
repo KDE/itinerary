@@ -9,7 +9,6 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.itinerary
-import "./components" as Components
 
 /** New or existing trip group selection UI for import/edit pages. */
 FormCard.FormCard {
@@ -50,30 +49,24 @@ FormCard.FormCard {
     readonly property bool isValidInput: (root.mode === TripGroupSelectorCard.Mode.Create && root.name !== "")
         || (root.mode === TripGroupSelectorCard.Mode.Add && tripGroupSelector.currentIndex >= 0)
 
-    FormCard.AbstractFormDelegate {
-        topPadding: Kirigami.Units.largeSpacing
-        bottomPadding: Kirigami.Units.largeSpacing
+    FormCard.FormRadioSelectorDelegate {
+        id: newOrAddSelector
 
-        background: null
-        contentItem: Components.RadioSelector{
-            id: newOrAddSelector
+        selectedIndex: root.tripGroupCandidates.length === 1
+            || TripGroupModel.emptyTripGroups().length > 0
+            || ApplicationController.contextTripGroupId !== "" ? 1 : 0
 
-            defaultIndex: root.tripGroupCandidates.length === 1
-                || TripGroupModel.emptyTripGroups().length > 0
-                || ApplicationController.contextTripGroupId !== "" ? 1 : 0
+        consistentWidth: true
 
-            consistentWidth: true
-
-            actions: [
-                Kirigami.Action {
-                    text: i18n("New Trip")
-                },
-                Kirigami.Action {
-                    text: i18n("Add to Trip")
-                    enabled: tripGroupSelector.count > 0
-                }
-            ]
-        }
+        actions: [
+            Kirigami.Action {
+                text: i18n("New Trip")
+            },
+            Kirigami.Action {
+                text: i18n("Add to Trip")
+                enabled: tripGroupSelector.count > 0
+            }
+        ]
     }
 
     FormCard.FormDelegateSeparator {}

@@ -255,7 +255,6 @@ ecm_add_qml_module(itinerary-app URI org.kde.itinerary NO_PLUGIN QML_FILES
     WeatherForecastPage.qml
     WelcomePage.qml
 
-    components/RadioSelector.qml
     onlineimport/db.qml
     onlineimport/sncf.qml
 )
