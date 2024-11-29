@@ -51,30 +51,32 @@ FormCard.FormCard {
         || (root.mode === TripGroupSelectorCard.Mode.Add && tripGroupSelector.currentIndex >= 0)
 
     FormCard.AbstractFormDelegate {
-        contentItem: ColumnLayout {
-            Components.RadioSelector{
-                id: newOrAddSelector
-                defaultIndex: root.tripGroupCandidates.length === 1
-                    || TripGroupModel.emptyTripGroups().length > 0
-                    || ApplicationController.contextTripGroupId !== "" ? 1 : 0
+        topPadding: Kirigami.Units.largeSpacing
+        bottomPadding: Kirigami.Units.largeSpacing
 
-                Layout.fillWidth: true
-                Layout.alignment: Qt.AlignHCenter
-                Layout.maximumWidth: Kirigami.Units.gridUnit * 20
-                consistentWidth: true
+        background: null
+        contentItem: Components.RadioSelector{
+            id: newOrAddSelector
 
-                actions: [
-                    Kirigami.Action {
-                        text: i18n("New Trip")
-                    },
-                    Kirigami.Action {
-                        text: i18n("Add to Trip")
-                        enabled: tripGroupSelector.count > 0
-                    }
-                ]
-            }
+            defaultIndex: root.tripGroupCandidates.length === 1
+                || TripGroupModel.emptyTripGroups().length > 0
+                || ApplicationController.contextTripGroupId !== "" ? 1 : 0
+
+            consistentWidth: true
+
+            actions: [
+                Kirigami.Action {
+                    text: i18n("New Trip")
+                },
+                Kirigami.Action {
+                    text: i18n("Add to Trip")
+                    enabled: tripGroupSelector.count > 0
+                }
+            ]
         }
     }
+
+    FormCard.FormDelegateSeparator {}
 
     FormCard.FormTextFieldDelegate {
         id: nameEdit

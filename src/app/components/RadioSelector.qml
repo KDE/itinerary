@@ -41,7 +41,7 @@ Item{
 
                 Layout.fillWidth: true
                 Layout.preferredWidth: consistentWidth ? (container.width/repeater.count)-(switchLayout.spacing/repeater.count-1) : button.implicitWidth
-                Layout.minimumHeight: Math.round(Kirigami.Units.gridUnit * 1.5)
+                Layout.minimumHeight: Kirigami.Units.gridUnit * 2
 
                 checkable: true
                 text: modelData.text
@@ -50,7 +50,7 @@ Item{
                 background: Rectangle{
                     anchors.fill: button
 
-                    radius: height/2
+                    radius: Kirigami.Units.cornerRadius
                     color: Kirigami.Theme.textColor
                     opacity: button.hovered ? 0.1 : 0
 
@@ -155,7 +155,7 @@ Item{
         y: switchLayout.y
         z: switchLayout.z - 1
         height: switchLayout.implicitHeight
-        radius: height/2
+        radius: Kirigami.Units.cornerRadius
 
         color: Kirigami.Theme.hoverColor
         opacity: 0.4
