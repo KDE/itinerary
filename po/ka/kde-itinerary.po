@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-29 00:41+0000\n"
-"PO-Revision-Date: 2024-11-16 05:51+0100\n"
+"PO-Revision-Date: 2024-11-29 04:52+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -357,9 +357,7 @@ msgid "Light"
 msgstr "ღია"
 
 #: app/BoatDelegate.qml:29
-#, fuzzy, kde-format
-#| msgctxt "journey query search constraint, title"
-#| msgid "Ferry"
+#, kde-format
 msgctxt "default transport name for a boat trip"
 msgid "Ferry"
 msgstr "ბორანი"
@@ -501,11 +499,10 @@ msgid "Booking"
 msgstr "დაჯავშვნა"
 
 #: app/BusDelegate.qml:37
-#, fuzzy, kde-format
-#| msgid "Bus"
+#, kde-format
 msgctxt "@info"
 msgid "Bus"
-msgstr "მატარებელი"
+msgstr "ავტობუსი"
 
 #: app/BusDelegate.qml:58
 #, kde-format
@@ -514,20 +511,16 @@ msgid "Seat: <b>%1</b>"
 msgstr "სავარძელი: <b>%1</b>"
 
 #: app/BusDelegate.qml:89 app/TrainDelegate.qml:113
-#, fuzzy, kde-format
-#| msgid "1 intermediate stop"
-#| msgid_plural "%1 intermediate stops"
+#, kde-format
 msgid "1 intermediate stop (%2)"
 msgid_plural "%1 intermediate stops (%2)"
-msgstr[0] "1 შუალედური გაჩერება"
-msgstr[1] "%1 შუალედური გაჩერება"
+msgstr[0] "1 შუალედური გაჩერება (%2)"
+msgstr[1] "%1 შუალედური გაჩერება (%2)"
 
 #: app/BusDelegate.qml:99 app/TrainDelegate.qml:123
-#, fuzzy, kde-format
-#| msgid "1 intermediate stop"
-#| msgid_plural "%1 intermediate stops"
+#, kde-format
 msgid "0 intermediate stop (%1)"
-msgstr "1 შუალედური გაჩერება"
+msgstr "0 შუალედური გაჩერება (%1)"
 
 #: app/BusDelegate.qml:189 app/TrainDelegate.qml:232 app/TrainPage.qml:84
 #: app/TransferDelegate.qml:64
@@ -756,18 +749,16 @@ msgid "Canceled"
 msgstr "გაუქმებულია"
 
 #: app/DelayRow.qml:24
-#, fuzzy, kde-format
-#| msgid "Delays on %1"
+#, kde-format
 msgctxt "duration of the delay"
 msgid "Delayed %1"
-msgstr "დაყოვნებები %1-ზე"
+msgstr "აგვიანებს %1-ით"
 
 #: app/DelayRow.qml:26
-#, fuzzy, kde-format
-#| msgid "End time"
+#, kde-format
 msgctxt "@info"
 msgid "On time"
-msgstr "დასრულების დრო"
+msgstr "დროულად"
 
 #: app/DepartureQueryPage.qml:22
 #, kde-format
@@ -1057,11 +1048,10 @@ msgid "Pick Location"
 msgstr "აირჩიეთ მდებარეობა"
 
 #: app/FlightDelegate.qml:54
-#, fuzzy, kde-format
-#| msgid "Boarding time:"
+#, kde-format
 msgctxt "@info"
 msgid "Boarding time: %1"
-msgstr "ჩასხდომის დრო:"
+msgstr "ჩაჯდომის დრო: %1"
 
 #: app/FlightDelegate.qml:66
 #, kde-format
@@ -1974,7 +1964,7 @@ msgstr "ტრამვაი"
 #: app/IndoorMapPlatformSheet.qml:87 app/StatisticsPage.qml:121
 #, kde-format
 msgid "Bus"
-msgstr "მატარებელი"
+msgstr "ავტობუსი"
 
 #: app/JourneyPathPage.qml:175 app/JourneySectionPage.qml:339
 #, kde-format
@@ -2097,9 +2087,7 @@ msgid "Boats or ferries"
 msgstr "ნავები ან ბორნები"
 
 #: app/JourneySectionDelegate.qml:142
-#, fuzzy, kde-format
-#| msgctxt "to travel destination"
-#| msgid "To %1"
+#, kde-format
 msgid "To %1"
 msgstr "%1-მდე"
 
@@ -2134,8 +2122,7 @@ msgid "Drive %1 (%2)"
 msgstr "მანქანით %1 (%2)"
 
 #: app/JourneySectionDelegate.qml:180 app/JourneySectionDelegate.qml:320
-#, fuzzy, kde-format
-#| msgid "Platform: %1"
+#, kde-format
 msgctxt "@info"
 msgid "Platform %1"
 msgstr "პლატფორმა: %1"
@@ -2267,17 +2254,13 @@ msgid "dd MMMM"
 msgstr "დდ თთთთ"
 
 #: app/localizer.cpp:242
-#, fuzzy, kde-format
-#| msgctxt "distance in meter"
-#| msgid "%1 m"
+#, kde-format
 msgctxt "Duration in minutes"
 msgid "%1 min"
-msgstr "%1 მ"
+msgstr "%1 წთ"
 
 #: app/localizer.cpp:244
-#, fuzzy, kde-format
-#| msgctxt "time in hours"
-#| msgid "%1 h"
+#, kde-format
 msgctxt "Duration in hours and minutes"
 msgid "%1 hr"
 msgstr "%1 სთ"
@@ -2286,7 +2269,7 @@ msgstr "%1 სთ"
 #, kde-format
 msgctxt "Duration in hours and minutes"
 msgid "%1 hr %2 min"
-msgstr ""
+msgstr "%1 სთ %2 წთ"
 
 #: app/localizer.cpp:257
 #, kde-format
@@ -3841,9 +3824,7 @@ msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: app/TimelineDelegateDepartureLayout.qml:91
-#, fuzzy, kde-format
-#| msgctxt "to travel destination"
-#| msgid "To %1"
+#, kde-format
 msgctxt "Direction of the transport mode"
 msgid "To %1"
 msgstr "%1-მდე"
@@ -3965,8 +3946,7 @@ msgid "Arrival Time"
 msgstr "ჩამოსვლის დრო"
 
 #: app/TrainDelegate.qml:45 app/TrainDelegate.qml:217
-#, fuzzy, kde-format
-#| msgid "Platform: %1"
+#, kde-format
 msgid "Platform %1"
 msgstr "პლატფორმა: %1"
 

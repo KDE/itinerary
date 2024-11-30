@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-29 00:41+0000\n"
-"PO-Revision-Date: 2024-11-16 21:33+0300\n"
+"PO-Revision-Date: 2024-11-29 15:34+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -360,9 +360,7 @@ msgid "Light"
 msgstr "Açık"
 
 #: app/BoatDelegate.qml:29
-#, fuzzy, kde-format
-#| msgctxt "journey query search constraint, title"
-#| msgid "Ferry"
+#, kde-format
 msgctxt "default transport name for a boat trip"
 msgid "Ferry"
 msgstr "Feribot"
@@ -504,8 +502,7 @@ msgid "Booking"
 msgstr "Rezervasyon"
 
 #: app/BusDelegate.qml:37
-#, fuzzy, kde-format
-#| msgid "Bus"
+#, kde-format
 msgctxt "@info"
 msgid "Bus"
 msgstr "Otobüs"
@@ -517,20 +514,16 @@ msgid "Seat: <b>%1</b>"
 msgstr "Koltuk: <b>%1</b>"
 
 #: app/BusDelegate.qml:89 app/TrainDelegate.qml:113
-#, fuzzy, kde-format
-#| msgid "1 intermediate stop"
-#| msgid_plural "%1 intermediate stops"
+#, kde-format
 msgid "1 intermediate stop (%2)"
 msgid_plural "%1 intermediate stops (%2)"
-msgstr[0] "1 ara durak"
-msgstr[1] "%1 ara durak"
+msgstr[0] "1 ara durak (%2)"
+msgstr[1] "%1 ara durak (%2)"
 
 #: app/BusDelegate.qml:99 app/TrainDelegate.qml:123
-#, fuzzy, kde-format
-#| msgid "1 intermediate stop"
-#| msgid_plural "%1 intermediate stops"
+#, kde-format
 msgid "0 intermediate stop (%1)"
-msgstr "1 ara durak"
+msgstr "0 ara durak (%1)"
 
 #: app/BusDelegate.qml:189 app/TrainDelegate.qml:232 app/TrainPage.qml:84
 #: app/TransferDelegate.qml:64
@@ -759,18 +752,16 @@ msgid "Canceled"
 msgstr "İptal Edildi"
 
 #: app/DelayRow.qml:24
-#, fuzzy, kde-format
-#| msgid "Delays on %1"
+#, kde-format
 msgctxt "duration of the delay"
 msgid "Delayed %1"
-msgstr "%1 için gecikmeler"
+msgstr "%1 kadar gecikti"
 
 #: app/DelayRow.qml:26
-#, fuzzy, kde-format
-#| msgid "End time"
+#, kde-format
 msgctxt "@info"
 msgid "On time"
-msgstr "Bitiş zamanı"
+msgstr "Zamanında"
 
 #: app/DepartureQueryPage.qml:22
 #, kde-format
@@ -1060,11 +1051,10 @@ msgid "Pick Location"
 msgstr "Konum Seç"
 
 #: app/FlightDelegate.qml:54
-#, fuzzy, kde-format
-#| msgid "Boarding time"
+#, kde-format
 msgctxt "@info"
 msgid "Boarding time: %1"
-msgstr "Biniş zamanı"
+msgstr "Biniş zamanı: %1"
 
 #: app/FlightDelegate.qml:66
 #, kde-format
@@ -2100,11 +2090,9 @@ msgid "Boats or ferries"
 msgstr "Botlar veya feribotlar"
 
 #: app/JourneySectionDelegate.qml:142
-#, fuzzy, kde-format
-#| msgctxt "to travel destination"
-#| msgid "To %1"
+#, kde-format
 msgid "To %1"
-msgstr "Şuraya: %1"
+msgstr "%1 yönüne"
 
 #: app/JourneySectionDelegate.qml:146
 #, kde-format
@@ -2137,11 +2125,10 @@ msgid "Drive %1 (%2)"
 msgstr "%1 Sür (%2)"
 
 #: app/JourneySectionDelegate.qml:180 app/JourneySectionDelegate.qml:320
-#, fuzzy, kde-format
-#| msgid "Platform: %1"
+#, kde-format
 msgctxt "@info"
 msgid "Platform %1"
-msgstr "Platform: %1"
+msgstr "Platform %1"
 
 #: app/JourneySectionDelegate.qml:247 app/JourneySectionPage.qml:139
 #: app/VehicleLayoutPage.qml:230
@@ -2270,17 +2257,13 @@ msgid "dd MMMM"
 msgstr "gg AAAA"
 
 #: app/localizer.cpp:242
-#, fuzzy, kde-format
-#| msgctxt "distance in meter"
-#| msgid "%1 m"
+#, kde-format
 msgctxt "Duration in minutes"
 msgid "%1 min"
-msgstr "%1 m"
+msgstr "%1 dak"
 
 #: app/localizer.cpp:244
-#, fuzzy, kde-format
-#| msgctxt "time in hours"
-#| msgid "%1 h"
+#, kde-format
 msgctxt "Duration in hours and minutes"
 msgid "%1 hr"
 msgstr "%1 sa"
@@ -2289,7 +2272,7 @@ msgstr "%1 sa"
 #, kde-format
 msgctxt "Duration in hours and minutes"
 msgid "%1 hr %2 min"
-msgstr ""
+msgstr "%1 sa %2 dak"
 
 #: app/localizer.cpp:257
 #, kde-format
@@ -3854,12 +3837,10 @@ msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: app/TimelineDelegateDepartureLayout.qml:91
-#, fuzzy, kde-format
-#| msgctxt "to travel destination"
-#| msgid "To %1"
+#, kde-format
 msgctxt "Direction of the transport mode"
 msgid "To %1"
-msgstr "Şuraya: %1"
+msgstr "%1 yönüne"
 
 #: app/TimelinePage.qml:20
 #, kde-format
@@ -3978,10 +3959,9 @@ msgid "Arrival Time"
 msgstr "Varış Zamanı"
 
 #: app/TrainDelegate.qml:45 app/TrainDelegate.qml:217
-#, fuzzy, kde-format
-#| msgid "Platform: %1"
+#, kde-format
 msgid "Platform %1"
-msgstr "Platform: %1"
+msgstr "Platform %1"
 
 #: app/TrainDelegate.qml:66 app/TrainPage.qml:312
 #, kde-format
