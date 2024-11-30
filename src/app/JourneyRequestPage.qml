@@ -230,8 +230,6 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
-        Layout.topMargin: Kirigami.Units.largeSpacing
-
         FormCard.FormSwitchDelegate {
             id: longDistanceSwitch
             text: i18nc("journey query search constraint, title", "Long distance trains")
