@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-29 00:41+0000\n"
+"POT-Creation-Date: 2024-12-01 00:40+0000\n"
 "PO-Revision-Date: 2024-08-20 23:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -530,7 +530,7 @@ msgstr[0] "중간 정거장 %1개"
 msgid "0 intermediate stop (%1)"
 msgstr "중간 정거장 %1개"
 
-#: app/BusDelegate.qml:189 app/TrainDelegate.qml:232 app/TrainPage.qml:84
+#: app/BusDelegate.qml:188 app/TrainDelegate.qml:231 app/TrainPage.qml:84
 #: app/TransferDelegate.qml:64
 #, kde-format
 msgid "%1 to %2"
@@ -3966,7 +3966,7 @@ msgstr "도착"
 msgid "Arrival Time"
 msgstr "도착 시간"
 
-#: app/TrainDelegate.qml:45 app/TrainDelegate.qml:217
+#: app/TrainDelegate.qml:45 app/TrainDelegate.qml:216
 #, fuzzy, kde-format
 #| msgid "Platform: %1"
 msgid "Platform %1"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-29 00:41+0000\n"
+"POT-Creation-Date: 2024-12-01 00:40+0000\n"
 "PO-Revision-Date: 2024-11-29 15:34+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -525,7 +525,7 @@ msgstr[1] "%1 ara durak (%2)"
 msgid "0 intermediate stop (%1)"
 msgstr "0 ara durak (%1)"
 
-#: app/BusDelegate.qml:189 app/TrainDelegate.qml:232 app/TrainPage.qml:84
+#: app/BusDelegate.qml:188 app/TrainDelegate.qml:231 app/TrainPage.qml:84
 #: app/TransferDelegate.qml:64
 #, kde-format
 msgid "%1 to %2"
@@ -3958,7 +3958,7 @@ msgstr "Varış"
 msgid "Arrival Time"
 msgstr "Varış Zamanı"
 
-#: app/TrainDelegate.qml:45 app/TrainDelegate.qml:217
+#: app/TrainDelegate.qml:45 app/TrainDelegate.qml:216
 #, kde-format
 msgid "Platform %1"
 msgstr "Platform %1"

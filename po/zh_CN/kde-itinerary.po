@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-29 00:41+0000\n"
+"POT-Creation-Date: 2024-12-01 00:40+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -495,8 +495,7 @@ msgid "Booking"
 msgstr "预约详情"
 
 #: app/BusDelegate.qml:37
-#, fuzzy, kde-format
-#| msgid "Bus"
+#, kde-format
 msgctxt "@info"
 msgid "Bus"
 msgstr "公共汽车"
@@ -518,7 +517,7 @@ msgstr[0] ""
 msgid "0 intermediate stop (%1)"
 msgstr ""
 
-#: app/BusDelegate.qml:189 app/TrainDelegate.qml:232 app/TrainPage.qml:84
+#: app/BusDelegate.qml:188 app/TrainDelegate.qml:231 app/TrainPage.qml:84
 #: app/TransferDelegate.qml:64
 #, kde-format
 msgid "%1 to %2"
@@ -745,18 +744,16 @@ msgid "Canceled"
 msgstr "已取消"
 
 #: app/DelayRow.qml:24
-#, fuzzy, kde-format
-#| msgid "Delays on %1"
+#, kde-format
 msgctxt "duration of the delay"
 msgid "Delayed %1"
-msgstr "线路 %1 发生延误"
+msgstr ""
 
 #: app/DelayRow.qml:26
-#, fuzzy, kde-format
-#| msgid "End time: %1"
+#, kde-format
 msgctxt "@info"
 msgid "On time"
-msgstr "结束时间：%1"
+msgstr ""
 
 #: app/DepartureQueryPage.qml:22
 #, kde-format
@@ -1046,11 +1043,10 @@ msgid "Pick Location"
 msgstr "选择地点"
 
 #: app/FlightDelegate.qml:54
-#, fuzzy, kde-format
-#| msgid "Start time: %1"
+#, kde-format
 msgctxt "@info"
 msgid "Boarding time: %1"
-msgstr "开始时间：%1"
+msgstr ""
 
 #: app/FlightDelegate.qml:66
 #, kde-format
@@ -2115,11 +2111,10 @@ msgid "Drive %1 (%2)"
 msgstr ""
 
 #: app/JourneySectionDelegate.qml:180 app/JourneySectionDelegate.qml:320
-#, fuzzy, kde-format
-#| msgid "Platform: %1"
+#, kde-format
 msgctxt "@info"
 msgid "Platform %1"
-msgstr "站台：%1"
+msgstr ""
 
 #: app/JourneySectionDelegate.qml:247 app/JourneySectionPage.qml:139
 #: app/VehicleLayoutPage.qml:230
@@ -3905,11 +3900,10 @@ msgstr "到达信息"
 msgid "Arrival Time"
 msgstr ""
 
-#: app/TrainDelegate.qml:45 app/TrainDelegate.qml:217
-#, fuzzy, kde-format
-#| msgid "Platform: %1"
+#: app/TrainDelegate.qml:45 app/TrainDelegate.qml:216
+#, kde-format
 msgid "Platform %1"
-msgstr "站台：%1"
+msgstr ""
 
 #: app/TrainDelegate.qml:66 app/TrainPage.qml:312
 #, kde-format
@@ -4551,23 +4545,3 @@ msgstr ""
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr ""
-
-#~ msgid "From: %1"
-#~ msgstr "出发站：%1"
-
-#~ msgid "To: %1"
-#~ msgstr "到达站：%1"
-
-#~ msgid "Arrival time: %1"
-#~ msgstr "到达时间：%1"
-
-#~ msgctxt "flight departure, %1 is airport, %2 is time"
-#~ msgid "Departure from %1: %2"
-#~ msgstr "从 %1 出发的时间：%2"
-
-#~ msgctxt "flight arrival, %1 is airport, %2 is time"
-#~ msgid "Arrival at %1: %2"
-#~ msgstr "到达 %1 的时间：%2"
-
-#~ msgid "%1 to %2 (%3)"
-#~ msgstr "%1 往 %2 方向 (%3)"
