@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-18 02:39+0000\n"
-"PO-Revision-Date: 2024-11-10 15:29+0100\n"
+"PO-Revision-Date: 2024-11-30 09:07+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -560,7 +560,7 @@ msgstr "Zmień stację przyjazdu"
 #, kde-format
 msgctxt "@title"
 msgid "Bus"
-msgstr "Bus"
+msgstr "Autobus"
 
 #: app/BusEditor.qml:89
 #, kde-format
