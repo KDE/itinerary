@@ -1312,4 +1312,8 @@
     <value key="KDE::matrix">#itinerary:kde.org</value>
     <value key="KDE::supporters">jxn_30;Gabriel Karlsson;Yogesh Girikumar;Luca Weiss;1peter10</value>
   </custom>
+  <branding>
+    <color type="primary" scheme_preference="light">#cdecfc</color>
+    <color type="primary" scheme_preference="dark">#17529b</color>
+  </branding>
 </component>
