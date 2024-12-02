@@ -5,12 +5,12 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
-import org.kde.kpublictransport
+import org.kde.kpublictransport as KPublicTransport
 
 QQC2.Control {
     id: root
 
-    required property var line
+    required property KPublicTransport.line line
     required property int mode
     property string modeName
     property string iconName
@@ -74,7 +74,7 @@ QQC2.Control {
             }
             level: 4
             text: root.lineName
-            visible: text.length > 0 && root.mode === JourneySection.PublicTransport && root.iconName.startsWith('qrc:')
+            visible: text.length > 0 && root.mode === KPublicTransport.JourneySection.PublicTransport && !root.line.hasLogo
             elide: Text.ElideRight
             font.weight: Font.DemiBold
             horizontalAlignment: Text.AlignHCenter
@@ -94,6 +94,6 @@ QQC2.Control {
 
         radius: Kirigami.Units.cornerRadius
         color: root.line.hasColor ? root.line.color : Kirigami.Theme.textColor
-        visible: root.mode === JourneySection.PublicTransport
+        visible: root.mode === KPublicTransport.JourneySection.PublicTransport
     }
 }
