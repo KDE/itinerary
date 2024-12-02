@@ -40,6 +40,15 @@ Kirigami.ScrollablePage {
 
     onStopoverChanged: vehicleModel.request.stopover = root.stopover;
 
+    background: Rectangle {
+        color: Kirigami.Theme.backgroundColor
+
+        Kirigami.Theme.colorSet: Kirigami.Theme.View
+        Kirigami.Theme.inherit: false
+    }
+
+    topPadding: 0
+
     KPublicTransport.VehicleLayoutQueryModel {
         id: vehicleModel
 
@@ -120,133 +129,145 @@ Kirigami.ScrollablePage {
         return Qt.tint(bg, Qt.rgba(fg.r, fg.g, fg.b, alpha));
     }
 
-    header: Item {
-        height: childrenRect.height + 2 * Kirigami.Units.gridUnit
-        GridLayout {
-            anchors.top: parent.top
-            anchors.left: parent.left
-            anchors.right: parent.right
-            anchors.margins: Kirigami.Units.gridUnit
+    header: ColumnLayout {
+        spacing: Kirigami.Units.smallSpacing
 
-            columns: 2
-            columnSpacing: Kirigami.Units.largeSpacing
-            rows: 4
-            rowSpacing: 0
+        RowLayout {
+            spacing: Kirigami.Units.smallSpacing
 
-            Kirigami.Icon {
-                Layout.rowSpan: 4
-                id: icon
-                source: vehicleModel.stopover.route.line.iconName
-                width: height
-                height: Kirigami.Units.iconSizes.large
-                isMask: !vehicleModel.stopover.route.line.hasLogo && !vehicleModel.stopover.route.line.hasModeLogo
+            TransportNameControl {
+                line: vehicleModel.stopover.route.line
+                mode: KPublicTransport.JourneySection.PublicTransport
+                iconName: vehicleModel.stopover.route.line.iconName
+                lineName: vehicleModel.stopover.route.line.modeString + ' ' + vehicleModel.stopover.route.line.name
             }
 
             QQC2.Label {
-                Layout.row: 0
-                Layout.column: 1
+                text: i18nc("Direction of the transport mode", "To %1", vehicleModel.stopover.stopPoint.name)
+                visible: departure.route.direction
+                elide: Text.ElideRight
                 Layout.fillWidth: true
-                text: "<b>" + vehicleModel.stopover.route.line.modeString + " " + vehicleModel.stopover.route.line.name + "</b> ("
-                            + vehicleModel.stopover.stopPoint.name + ")"
             }
 
-            QQC2.Label {
-                Layout.row: 1
-                Layout.column: 1
-                Layout.columnSpan: 2
-                text: if (vehicleModel.stopover.scheduledDepartureTime > 0) {
-                    i18n("Departure: %1", Localizer.formatDateTime(vehicleModel.stopover, "scheduledDepartureTime"))
-                } else if (vehicleModel.stopover.scheduledArrivalTime > 0) {
-                    i18n("Arrival: %1", Localizer.formatDateTime(vehicleModel.stopover, "scheduledArrivalTime"))
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            Layout.leftMargin: Kirigami.Units.largeSpacing
+            Layout.rightMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+        }
+
+        QQC2.Label {
+
+            wrapMode: Text.Wrap
+            text: if (vehicleModel.stopover.scheduledDepartureTime > 0) {
+                i18n("Departure: %1", Localizer.formatDateTime(vehicleModel.stopover, "scheduledDepartureTime"))
+            } else if (vehicleModel.stopover.scheduledArrivalTime > 0) {
+                i18n("Arrival: %1", Localizer.formatDateTime(vehicleModel.stopover, "scheduledArrivalTime"))
+            }
+
+            Layout.leftMargin: Kirigami.Units.largeSpacing
+            Layout.rightMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+        }
+
+        QQC2.Label {
+            property string platformName: {
+                if (vehicleModel.platform.name)
+                    return vehicleModel.platform.name;
+                if (vehicleModel.stopover.expectedPlatform)
+                    return vehicleModel.stopover.expectedPlatform;
+                if (vehicleModel.stopover.scheduledPlatform)
+                    return vehicleModel.stopover.scheduledPlatform;
+                return "-";
+            }
+
+            wrapMode: Text.Wrap
+            text: i18n("Platform: %1", platformName)
+
+            Layout.leftMargin: Kirigami.Units.largeSpacing
+            Layout.rightMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+        }
+
+        QQC2.Label {
+            wrapMode: Text.Wrap
+            text: i18n("Coach: %1 Seat: %2", (root.selectedVehicleSection ? root.selectedVehicleSection : "-"), (root.seat ? root.seat : "-"))
+            visible: root.selectedVehicleSection !== "" || root.seat !== ""
+
+            Layout.leftMargin: Kirigami.Units.largeSpacing
+            Layout.rightMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+        }
+
+        RowLayout {
+            spacing: Kirigami.Units.smallSpacing
+
+            Repeater {
+                model: root.stopover.features
+                delegate: KPublicTransport.FeatureIcon {
+                    feature: modelData
+                    Layout.preferredHeight: Kirigami.Units.iconSizes.small
+                    Layout.preferredWidth: Kirigami.Units.iconSizes.small
                 }
             }
 
-            QQC2.Label {
-                property string platformName: {
-                    if (vehicleModel.platform.name)
-                        return vehicleModel.platform.name;
-                    if (vehicleModel.stopover.expectedPlatform)
-                        return vehicleModel.stopover.expectedPlatform;
-                    if (vehicleModel.stopover.scheduledPlatform)
-                        return vehicleModel.stopover.scheduledPlatform;
-                    return "-";
-                }
-
-                Layout.row: 2
-                Layout.column: 1
-                Layout.columnSpan: 2
-                text: i18n("Platform: %1", platformName)
-            }
-            QQC2.Label {
-                Layout.row: 3
-                Layout.column: 1
-                Layout.columnSpan: 2
-                text: i18n("Coach: %1 Seat: %2", (root.selectedVehicleSection ? root.selectedVehicleSection : "-"), (root.seat ? root.seat : "-"))
-                visible: root.selectedVehicleSection !== "" || root.seat !== ""
+            TapHandler {
+                onTapped: vehicleSheet.open()
             }
 
-            RowLayout {
-                Layout.row: 4
-                Layout.column: 1
-                Layout.columnSpan: 2
-                spacing: Kirigami.Units.smallSpacing
-                Repeater {
-                    model: root.stopover.features
-                    delegate: KPublicTransport.FeatureIcon {
-                        feature: modelData
-                        Layout.preferredHeight: Kirigami.Units.iconSizes.small
-                        Layout.preferredWidth: Kirigami.Units.iconSizes.small
-                    }
-                }
+            Layout.leftMargin: Kirigami.Units.largeSpacing
+            Layout.rightMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+        }
 
-                TapHandler {
-                    onTapped: vehicleSheet.open()
-                }
+        QQC2.Label {
+            id: notesLabel
+
+            text: root.stopover.notes.join("<br/>")
+            textFormat: Text.RichText
+            wrapMode: Text.Wrap
+            // Doesn't work with RichText.
+            elide: Text.ElideRight
+            maximumLineCount: 5
+            clip: true
+            visible: root.stopover.notes.length > 0
+            font.italic: true
+            onLinkActivated: Qt.openUrlExternally(link)
+
+            Layout.maximumHeight: Kirigami.Units.gridUnit * maximumLineCount
+            Layout.leftMargin: Kirigami.Units.largeSpacing
+            Layout.rightMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+        }
+
+        Kirigami.LinkButton {
+            text: i18nc("@action:button", "Show More…")
+            visible: notesLabel.implicitHeight > notesLabel.height
+            onClicked: vehicleSheet.open();
+
+            Layout.leftMargin: Kirigami.Units.largeSpacing
+            Layout.rightMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+        }
+
+        Kirigami.Separator {
+            Layout.fillWidth: true
+        }
+    }
+
+    data: SheetDrawer {
+        id: vehicleSheet
+
+        contentItem: ColumnLayout {
+            PublicTransportFeatureList {
+                model: root.stopover.features
             }
-
             QQC2.Label {
-                id: notesLabel
-                Layout.row: 5
-                Layout.column: 1
-                Layout.columnSpan: 2
                 Layout.fillWidth: true
                 text: root.stopover.notes.join("<br/>")
                 textFormat: Text.RichText
                 wrapMode: Text.Wrap
-                verticalAlignment: Text.AlignTop
-                // Doesn't work with RichText.
-                elide: Text.ElideRight
-                maximumLineCount: 5
-                Layout.maximumHeight: Kirigami.Units.gridUnit * maximumLineCount
-                clip: true
-                visible: root.stopover.notes.length > 0
-                font.italic: true
                 onLinkActivated: Qt.openUrlExternally(link)
-            }
-            Kirigami.LinkButton {
-                Layout.row: 6
-                Layout.column: 1
-                Layout.columnSpan: 2
-                text: i18nc("@action:button", "Show More…")
-                visible: notesLabel.implicitHeight > notesLabel.height
-                onClicked: vehicleSheet.open();
-            }
-        }
-
-        SheetDrawer {
-            id: vehicleSheet
-            contentItem: ColumnLayout {
-                PublicTransportFeatureList {
-                    model: root.stopover.features
-                }
-                QQC2.Label {
-                    Layout.fillWidth: true
-                    text: root.stopover.notes.join("<br/>")
-                    textFormat: Text.RichText
-                    wrapMode: Text.Wrap
-                    onLinkActivated: Qt.openUrlExternally(link)
-                    padding: Kirigami.Units.largeSpacing * 2
-                }
+                padding: Kirigami.Units.largeSpacing * 2
             }
         }
     }

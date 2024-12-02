@@ -80,6 +80,8 @@ RowLayout {
         }
 
         RowLayout {
+            spacing: Kirigami.Units.smallSpacing
+
             TransportNameControl {
                 line: root.departure.route.line
                 mode: JourneySection.PublicTransport
