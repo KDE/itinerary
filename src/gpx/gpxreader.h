@@ -27,9 +27,9 @@ public:
     bool isWaypointEnd() const;
 
     /** Returns the latitude of the current waypoint, route point or track point. */
-    float latitude() const;
+    double latitude() const;
     /** Returns the longitude of the current waypoint, route point or track point. */
-    float longitude() const;
+    double longitude() const;
 
     /** Returns @c true if the current element is a name property. */
     bool isGpxName() const;

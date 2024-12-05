@@ -30,10 +30,10 @@ public:
     void writeStartRoute();
     void writeEndRoute();
 
-    void writeStartWaypoint(float latitude, float longitude);
+    void writeStartWaypoint(double latitude, double longitude);
     void writeEndWaypoint();
 
-    void writeStartRoutePoint(float latitude, float longitude);
+    void writeStartRoutePoint(double latitude, double longitude);
     void writeEndRoutePoint();
 
     void writeName(const QString &name);

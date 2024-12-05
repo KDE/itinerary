@@ -42,7 +42,7 @@ public Q_SLOTS:
      * @param speed in km/s
      * @param altitude in meter
      */
-    void updateLocation(float latitude, float longitude, float heading = NAN, float speed = NAN, float altitude = NAN);
+    void updateLocation(double latitude, double longitude, float heading = NAN, float speed = NAN, float altitude = NAN);
 
 Q_SIGNALS:
     void connectionChanged();
@@ -55,8 +55,8 @@ private:
     Quotient::Connection *m_connection = nullptr;
     QString m_roomId;
     QString m_beaconInfoId;
-    float m_latitude = NAN;
-    float m_longitude = NAN;
+    double m_latitude = NAN;
+    double m_longitude = NAN;
 };
 
 #endif // MATRIXBEACON_H

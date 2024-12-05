@@ -21,12 +21,12 @@ bool Gpx::Reader::isWaypointEnd() const
     return isEndElement() && name() == QLatin1StringView("wpt");
 }
 
-float Gpx::Reader::latitude() const
+double Gpx::Reader::latitude() const
 {
     return attributes().value(QLatin1StringView("lat")).toFloat();
 }
 
-float Gpx::Reader::longitude() const
+double Gpx::Reader::longitude() const
 {
     return attributes().value(QLatin1StringView("lon")).toFloat();
 }

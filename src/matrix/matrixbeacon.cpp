@@ -120,7 +120,7 @@ void MatrixBeacon::stop()
     room->setState(ev);
 }
 
-static QString geoUri(float latitude, float longitude, float altitude)
+static QString geoUri(double latitude, double longitude, float altitude)
 {
     QString uri = QLatin1StringView("geo:") + QString::number(latitude) + QLatin1Char(',') + QString::number(longitude);
     if (!std::isnan(altitude)) {
@@ -129,7 +129,7 @@ static QString geoUri(float latitude, float longitude, float altitude)
     return uri;
 }
 
-void MatrixBeacon::updateLocation(float latitude, float longitude, float heading, float speed, float altitude)
+void MatrixBeacon::updateLocation(double latitude, double longitude, float heading, float speed, float altitude)
 {
     m_latitude = latitude;
     m_longitude = longitude;

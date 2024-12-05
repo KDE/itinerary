@@ -57,7 +57,7 @@ void NavigationController::showOnMap(const QVariant &place)
     }
 }
 
-void NavigationController::showOnMap(float latitude, float longitude, int zoom)
+void NavigationController::showOnMap(double latitude, double longitude, int zoom)
 {
     QUrl url;
     url.setScheme(QStringLiteral("geo"));
@@ -68,7 +68,7 @@ void NavigationController::showOnMap(float latitude, float longitude, int zoom)
     QDesktopServices::openUrl(url);
 }
 
-void NavigationController::showOnWheelmap(float latitude, float longitude)
+void NavigationController::showOnWheelmap(double latitude, double longitude)
 {
     QUrl url;
     url.setScheme(QStringLiteral("https"));

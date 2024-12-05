@@ -128,7 +128,7 @@ inline T PublicTransport::placeFromLocation(const KPublicTransport::Location &lo
     T place;
     place.setName(loc.name());
     if (loc.hasCoordinate()) {
-        place.setGeo(KItinerary::GeoCoordinates{(float)loc.latitude(), (float)loc.longitude()});
+        place.setGeo(KItinerary::GeoCoordinates{loc.latitude(), loc.longitude()});
     }
     place.setIdentifier(idenfitierFromLocation(loc));
     place.setAddress(addressFromLocation(loc));
