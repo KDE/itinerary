@@ -858,7 +858,17 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="24.12.0" date="2024-12-12"/>
+    <release version="24.12.0" date="2024-12-12">
+      <description>
+        <ul>
+          <li>New per-trip timeline view.</li>
+          <li>New trip map view.</li>
+          <li>New per-trip statistics.</li>
+          <li>New or improved travel document extractor for Coloseum, Dimedis Fairmate, Droplabs, European Sleeper, Flixbus, Leo Express, SNCF.</li>
+          <li>Improved location search for public transport searches.</li>
+        </ul>
+      </description>
+    </release>
     <release version="24.08.3" date="2024-11-07">
       <description>
         <ul>
