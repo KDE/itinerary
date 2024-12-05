@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-01 00:40+0000\n"
-"PO-Revision-Date: 2024-11-11 19:25+0100\n"
+"PO-Revision-Date: 2024-12-04 21:45+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -358,9 +358,7 @@ msgid "Light"
 msgstr "Luz"
 
 #: app/BoatDelegate.qml:29
-#, fuzzy, kde-format
-#| msgctxt "journey query search constraint, title"
-#| msgid "Ferry"
+#, kde-format
 msgctxt "default transport name for a boat trip"
 msgid "Ferry"
 msgstr "Transbordador"
@@ -502,8 +500,7 @@ msgid "Booking"
 msgstr "Reserva"
 
 #: app/BusDelegate.qml:37
-#, fuzzy, kde-format
-#| msgid "Bus"
+#, kde-format
 msgctxt "@info"
 msgid "Bus"
 msgstr "Bus"
@@ -515,20 +512,16 @@ msgid "Seat: <b>%1</b>"
 msgstr "Asento: <b>%1</b>"
 
 #: app/BusDelegate.qml:89 app/TrainDelegate.qml:113
-#, fuzzy, kde-format
-#| msgid "1 intermediate stop"
-#| msgid_plural "%1 intermediate stops"
+#, kde-format
 msgid "1 intermediate stop (%2)"
 msgid_plural "%1 intermediate stops (%2)"
-msgstr[0] "1 parada intermedia"
-msgstr[1] "%1 paradas intermedias"
+msgstr[0] "1 parada intermedia (%2)"
+msgstr[1] "%1 paradas intermedias (%2)"
 
 #: app/BusDelegate.qml:99 app/TrainDelegate.qml:123
-#, fuzzy, kde-format
-#| msgid "1 intermediate stop"
-#| msgid_plural "%1 intermediate stops"
+#, kde-format
 msgid "0 intermediate stop (%1)"
-msgstr "1 parada intermedia"
+msgstr "0 paradas intermedias (%1)"
 
 #: app/BusDelegate.qml:188 app/TrainDelegate.qml:231 app/TrainPage.qml:84
 #: app/TransferDelegate.qml:64
@@ -757,18 +750,16 @@ msgid "Canceled"
 msgstr "Cancelouse"
 
 #: app/DelayRow.qml:24
-#, fuzzy, kde-format
-#| msgid "Delays on %1"
+#, kde-format
 msgctxt "duration of the delay"
 msgid "Delayed %1"
-msgstr "Atrasos en %1"
+msgstr "Atrasouse %1"
 
 #: app/DelayRow.qml:26
-#, fuzzy, kde-format
-#| msgid "End time"
+#, kde-format
 msgctxt "@info"
 msgid "On time"
-msgstr "Hora de fin"
+msgstr "En hora"
 
 #: app/DepartureQueryPage.qml:22
 #, kde-format
@@ -1058,11 +1049,10 @@ msgid "Pick Location"
 msgstr "Escoller a localización"
 
 #: app/FlightDelegate.qml:54
-#, fuzzy, kde-format
-#| msgid "Boarding time:"
+#, kde-format
 msgctxt "@info"
 msgid "Boarding time: %1"
-msgstr "Hora de embarque:"
+msgstr "Hora de embarque: %1"
 
 #: app/FlightDelegate.qml:66
 #, kde-format
@@ -2099,9 +2089,7 @@ msgid "Boats or ferries"
 msgstr "Barcos ou transbordadores"
 
 #: app/JourneySectionDelegate.qml:142
-#, fuzzy, kde-format
-#| msgctxt "to travel destination"
-#| msgid "To %1"
+#, kde-format
 msgid "To %1"
 msgstr "A %1"
 
@@ -2136,11 +2124,10 @@ msgid "Drive %1 (%2)"
 msgstr "Conducir %1 (%2)"
 
 #: app/JourneySectionDelegate.qml:180 app/JourneySectionDelegate.qml:320
-#, fuzzy, kde-format
-#| msgid "Platform: %1"
+#, kde-format
 msgctxt "@info"
 msgid "Platform %1"
-msgstr "Plataforma: %1"
+msgstr "Plataforma %1"
 
 #: app/JourneySectionDelegate.qml:247 app/JourneySectionPage.qml:139
 #: app/VehicleLayoutPage.qml:230
@@ -2273,26 +2260,22 @@ msgid "dd MMMM"
 msgstr "dd 'de' MMMM"
 
 #: app/localizer.cpp:242
-#, fuzzy, kde-format
-#| msgctxt "distance in meter"
-#| msgid "%1 m"
+#, kde-format
 msgctxt "Duration in minutes"
 msgid "%1 min"
-msgstr "%1 m"
+msgstr "%1 minutos"
 
 #: app/localizer.cpp:244
-#, fuzzy, kde-format
-#| msgctxt "time in hours"
-#| msgid "%1 h"
+#, kde-format
 msgctxt "Duration in hours and minutes"
 msgid "%1 hr"
-msgstr "%1 h"
+msgstr "%1 horas"
 
 #: app/localizer.cpp:246
 #, kde-format
 msgctxt "Duration in hours and minutes"
 msgid "%1 hr %2 min"
-msgstr ""
+msgstr "%1 horas %2 minutos"
 
 #: app/localizer.cpp:257
 #, kde-format
@@ -2551,11 +2534,10 @@ msgid "Map download finished."
 msgstr "Rematou a descarga do mapa."
 
 #: app/Main.qml:414
-#, fuzzy, kde-format
-#| msgid "Matrix Integration"
+#, kde-format
 msgctxt "@title:window"
 msgid "Matrix Session Verification"
-msgstr "Integración con Matrix"
+msgstr "Verificación de sesión de Matrix"
 
 #: app/MapStopoverInfoSheetDrawer.qml:59
 #, kde-format
@@ -2573,64 +2555,64 @@ msgid "Show indoor map"
 msgstr "Amosar o mapa interior"
 
 #: app/MatrixKeyVerificationPage.qml:12
-#, fuzzy, kde-format
-#| msgid "Matrix Integration"
+#, kde-format
 msgid "Matrix Session Verification"
-msgstr "Integración con Matrix"
+msgstr "Verificación de sesión de Matrix"
 
 #: app/MatrixKeyVerificationPage.qml:41
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Waiting for device to accept verification."
-msgstr ""
+msgstr "Agardando a que o dispositivo acepte a verificación."
 
 #: app/MatrixKeyVerificationPage.qml:43
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Incoming key verification request from device <b>%1</b>"
 msgstr ""
+"Recibiuse unha solicitude de verificación de chave do dispositivo <b>%1</b>."
 
 #: app/MatrixKeyVerificationPage.qml:45
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Waiting for other party to verify."
-msgstr ""
+msgstr "Agardando pola verificación no outro extremo."
 
 #: app/MatrixKeyVerificationPage.qml:47
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Successfully verified device <b>%1</b>"
-msgstr ""
+msgstr "Verificouse o dispositivo <b>%1</b>."
 
 #: app/MatrixKeyVerificationPage.qml:52
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session verification was canceled for unknown reason."
-msgstr ""
+msgstr "A sesión de verificación cancelouse por motivos descoñecidos."
 
 #: app/MatrixKeyVerificationPage.qml:54
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session verification timed out."
-msgstr ""
+msgstr "A verificación da sesión superou o tempo límite."
 
 #: app/MatrixKeyVerificationPage.qml:56
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session verification timed out for remote party."
-msgstr ""
+msgstr "A verificación da sesión superou o tempo límite para o outro extremo."
 
 #: app/MatrixKeyVerificationPage.qml:58
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "You canceled the session verification."
-msgstr ""
+msgstr "Vostede cancelou a verificación da sesión."
 
 #: app/MatrixKeyVerificationPage.qml:60
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The remote party canceled the session verification."
-msgstr ""
+msgstr "O outro extremo cancelou a verificación da sesión."
 
 #: app/MatrixKeyVerificationPage.qml:62
 #, kde-format
@@ -2639,6 +2621,8 @@ msgid ""
 "The session verification was canceled because we received an unexpected "
 "message."
 msgstr ""
+"A verificación da sesión cancelouse porque se recibiu unha mensaxe "
+"inesperada."
 
 #: app/MatrixKeyVerificationPage.qml:64
 #, kde-format
@@ -2647,6 +2631,8 @@ msgid ""
 "The remote party canceled the session verification because it received an "
 "unexpected message."
 msgstr ""
+"O outro extremo cancelou a verificación da sesión porque recibiu unha "
+"mensaxe inesperada."
 
 #: app/MatrixKeyVerificationPage.qml:66
 #, kde-format
@@ -2655,6 +2641,8 @@ msgid ""
 "The session verification was canceled because it received a message for an "
 "unknown session."
 msgstr ""
+"A verificación da sesión cancelouse porque recibiu unha mensaxe para unha "
+"sesión descoñecida."
 
 #: app/MatrixKeyVerificationPage.qml:68
 #, kde-format
@@ -2663,6 +2651,8 @@ msgid ""
 "The remote party canceled the session verification because it received a "
 "message for an unknown session."
 msgstr ""
+"O outro extremo cancelou a verificación da sesión porque recibiu unha "
+"mensaxe para unha sesión descoñecida."
 
 #: app/MatrixKeyVerificationPage.qml:70
 #, kde-format
@@ -2671,6 +2661,8 @@ msgid ""
 "The session verification was canceled because NeoChat is unable to handle "
 "this verification method."
 msgstr ""
+"A verificación da sesión cancelouse porque NeoChat non pode xestionar este "
+"método de verificación."
 
 #: app/MatrixKeyVerificationPage.qml:72
 #, kde-format
@@ -2679,12 +2671,14 @@ msgid ""
 "The remote party canceled the session verification because it is unable to "
 "handle this verification method."
 msgstr ""
+"O outro extremo cancelou a verificación da sesión porque non pode xestionar "
+"este método de verificación."
 
 #: app/MatrixKeyVerificationPage.qml:74
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session verification was canceled because the keys are incorrect."
-msgstr ""
+msgstr "A verificación da sesión cancelouse porque as chaves son incorrectas."
 
 #: app/MatrixKeyVerificationPage.qml:76
 #, kde-format
@@ -2695,6 +2689,10 @@ msgid ""
 "\n"
 "<b>Please log out and log back in, your session is broken/corrupt.</b>"
 msgstr ""
+"O outro extremo cancelou a verificación da sesión porque as chaves son "
+"incorrectas.\n"
+"\n"
+"<b>Saia e identifíquese de novo, a súa sesión está rota ou corrompida.</b>"
 
 #: app/MatrixKeyVerificationPage.qml:78
 #, kde-format
@@ -2702,6 +2700,8 @@ msgctxt "Matrix session verification"
 msgid ""
 "The session verification was canceled because it verifies an unexpected user."
 msgstr ""
+"A verificación da sesión cancelouse porque verifica unha persoa usuaria "
+"inesperada."
 
 #: app/MatrixKeyVerificationPage.qml:80
 #, kde-format
@@ -2710,6 +2710,8 @@ msgid ""
 "The remote party canceled the session verification because it verifies an "
 "unexpected user."
 msgstr ""
+"O outro extremo cancelou a verificación da sesión porque verifica unha "
+"persoa usuaria inesperada."
 
 #: app/MatrixKeyVerificationPage.qml:82
 #, kde-format
@@ -2717,6 +2719,8 @@ msgctxt "Matrix session verification"
 msgid ""
 "The session verification was canceled because we received an invalid message."
 msgstr ""
+"A verificación da sesión cancelouse porque se recibiu unha mensaxe non "
+"válida."
 
 #: app/MatrixKeyVerificationPage.qml:84
 #, kde-format
@@ -2725,18 +2729,20 @@ msgid ""
 "The remote party canceled the session verification because it received an "
 "invalid message."
 msgstr ""
+"O outro extremo cancelou a verificación da sesión porque recibiu unha "
+"mensaxe non válida."
 
 #: app/MatrixKeyVerificationPage.qml:87
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session was accepted on a different device"
-msgstr ""
+msgstr "A sesión aceptouse nun dispositivo distinto."
 
 #: app/MatrixKeyVerificationPage.qml:89
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session verification was canceled because of a mismatched key."
-msgstr ""
+msgstr "A verificación da sesión cancelouse por unha chave que non coincidía."
 
 #: app/MatrixKeyVerificationPage.qml:91
 #, kde-format
@@ -2745,12 +2751,14 @@ msgid ""
 "The remote party canceled the session verification because of a mismatched "
 "key."
 msgstr ""
+"O outro extremo cancelou a verificación da sesión por unha chave que non "
+"coincidía."
 
 #: app/MatrixKeyVerificationPage.qml:93
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session verification was canceled because the keys do not match."
-msgstr ""
+msgstr "A verificación da sesión cancelouse porque as chaves non coinciden."
 
 #: app/MatrixKeyVerificationPage.qml:95
 #, kde-format
@@ -2759,25 +2767,26 @@ msgid ""
 "The remote party canceled the session verification because the keys do not "
 "match."
 msgstr ""
+"O outro extremo cancelou a verificación da sesión porque as chaves non "
+"coinciden."
 
 #: app/MatrixKeyVerificationPage.qml:97
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session verification was canceled due to an unknown error."
-msgstr ""
+msgstr "A verificación da sesión cancelouse por un erro descoñecido."
 
 #: app/MatrixKeyVerificationPage.qml:114
-#, fuzzy, kde-format
-#| msgid "Notifications"
+#, kde-format
 msgctxt "Matrix session verfication"
 msgid "Emoji Verification"
-msgstr "Notificacións"
+msgstr "Verificación de emoción"
 
 #: app/MatrixKeyVerificationPage.qml:117
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Compare a set of emoji on both devices."
-msgstr ""
+msgstr "Comparar un conxunto de emocións nos dous dispositivos."
 
 #: app/MatrixKeyVerificationPage.qml:128
 #, kde-format
@@ -2785,28 +2794,30 @@ msgctxt "Matrix session verification"
 msgid ""
 "Confirm the emoji below are displayed on both devices, in the same order."
 msgstr ""
+"Confirme que as seguintes emoción se amosan nos dous dispositivos, na mesma "
+"orde."
 
 #: app/MatrixKeyVerificationPage.qml:165
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "They match"
-msgstr ""
+msgstr "Coinciden"
 
 #: app/MatrixKeyVerificationPage.qml:171
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "They don't match"
-msgstr ""
+msgstr "Non coinciden"
 
 #: app/MatrixKeyVerificationPage.qml:207
 #, kde-format
 msgid "Accept"
-msgstr ""
+msgstr "Aceptar"
 
 #: app/MatrixKeyVerificationPage.qml:213
 #, kde-format
 msgid "Decline"
-msgstr ""
+msgstr "Rexeitar"
 
 #: app/MatrixRoomSelectionSheet.qml:19
 #, kde-format
@@ -3552,19 +3563,19 @@ msgstr "Contrasinal"
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Session verified"
-msgstr ""
+msgstr "Verificouse a sesión"
 
 #: app/SettingsPage.qml:316
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Session not verified."
-msgstr ""
+msgstr "A sesión non está verificada."
 
 #: app/SettingsPage.qml:317
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Initiate session verification in your Matrix chat client."
-msgstr ""
+msgstr "Inicie a verificación da sesión no seu cliente de charla de Matrix."
 
 #: app/SettingsPage.qml:324
 #, kde-format
@@ -3838,9 +3849,7 @@ msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: app/TimelineDelegateDepartureLayout.qml:91
-#, fuzzy, kde-format
-#| msgctxt "to travel destination"
-#| msgid "To %1"
+#, kde-format
 msgctxt "Direction of the transport mode"
 msgid "To %1"
 msgstr "A %1"
@@ -3962,10 +3971,9 @@ msgid "Arrival Time"
 msgstr "Hora de chegada"
 
 #: app/TrainDelegate.qml:45 app/TrainDelegate.qml:216
-#, fuzzy, kde-format
-#| msgid "Platform: %1"
+#, kde-format
 msgid "Platform %1"
-msgstr "Plataforma: %1"
+msgstr "Plataforma %1"
 
 #: app/TrainDelegate.qml:66 app/TrainPage.qml:312
 #, kde-format
@@ -4606,16 +4614,14 @@ msgid "This server does not support logging in using a password"
 msgstr "O servidor non permite acceder con contrasinal."
 
 #: matrix/matrixmanager.cpp:78
-#, fuzzy, kde-format
-#| msgid "Logging in"
+#, kde-format
 msgid "Logging in…"
-msgstr "Accedendo"
+msgstr "Accedendo…"
 
 #: matrix/matrixmanager.cpp:114
-#, fuzzy, kde-format
-#| msgid "Log out"
+#, kde-format
 msgid "Logged out"
-msgstr "Saír"
+msgstr "Sesión pechada"
 
 #: metadataextractor/itineraryextractor.cpp:118
 #, kde-format
