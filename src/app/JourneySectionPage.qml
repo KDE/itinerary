@@ -34,142 +34,147 @@ Kirigami.Page {
 
     padding: 0
     header: ColumnLayout {
-        spacing: 0
+        spacing: Kirigami.Units.smallSpacing
         visible: root.journeySection != undefined
 
-        GridLayout {
-            columns: 2
-            columnSpacing: Kirigami.Units.largeSpacing
-            rows: 4
-            rowSpacing: 0
+        RowLayout {
+            spacing: Kirigami.Units.smallSpacing
 
-            Layout.margins: Kirigami.Units.gridUnit
-
-            TransportIcon {
-                Layout.rowSpan: 4
-                Layout.alignment: Qt.AlignTop
-                Layout.rightMargin: Kirigami.Units.largeSpacing
-                id: icon
-                source: journeySection.route.line.iconName
-                Layout.preferredWidth: height
-                Layout.preferredHeight: Kirigami.Units.iconSizes.large
-                isMask: !journeySection.route.line.hasLogo && !journeySection.route.line.hasModeLogo
+            TransportNameControl {
+                line: journeySection.route.line
+                mode: KPublicTransport.JourneySection.PublicTransport
+                iconName: root.journeySection.route.line.iconName
+                lineName: root.journeySection.route.line.modeString + " " + root.journeySection.route.line.name
             }
 
             QQC2.Label {
-                Layout.row: 0
-                Layout.column: 1
-                Layout.fillWidth: true
-                text: "<b>" + journeySection.route.line.modeString + " " + journeySection.route.line.name + "</b>"
-            }
-
-            QQC2.Label {
-                Layout.row: 1
-                Layout.column: 1
-                Layout.columnSpan: 2
-                text: i18n("Direction: %1", journeySection.route.direction)
-                visible: journeySection.route.direction !== ""
-            }
-
-            QQC2.Label {
-                Layout.row: 2
-                Layout.column: 1
-                Layout.columnSpan: 2
-                text: i18n("Distance: %1", Localizer.formatDistance(journeySection.distance))
-                visible: journeySection.distance > 0
-            }
-            QQC2.Label {
-                Layout.row: 3
-                Layout.column: 1
-                Layout.columnSpan: 2
-                text: i18n("Average Speed: %1", Localizer.formatSpeed(journeySection.distance / journeySection.duration * 3.6))
-                visible: journeySection.distance > 0 && journeySection.duration > 0
-            }
-            QQC2.Label {
-                Layout.row: 4
-                Layout.column: 1
-                Layout.columnSpan: 2
-                text: i18n("CO₂: %1", Localizer.formatWeight(journeySection.co2Emission))
-                visible: journeySection.co2Emission > 0
-            }
-
-            RowLayout {
-                Layout.row: 5
-                Layout.column: 1
-                Layout.columnSpan: 2
-                spacing: Kirigami.Units.smallSpacing
-                Repeater {
-                    model: root.journeySection.departureVehicleLayout.combinedFeatures
-                    delegate: KPublicTransport.FeatureIcon {
-                        feature: modelData
-                        Layout.preferredHeight: Kirigami.Units.iconSizes.small
-                        Layout.preferredWidth: Kirigami.Units.iconSizes.small
-                    }
-                }
-
-                TapHandler {
-                    onTapped: moreNotesSheet.open()
-                }
-            }
-
-            QQC2.Label {
-                id: notesLabel
-                Layout.row: 6
-                Layout.column: 1
-                Layout.columnSpan: 2
-                Layout.fillWidth: true
-                text: journeySection.notes.join("<br/>")
-                textFormat: Text.RichText
-                wrapMode: Text.Wrap
-                verticalAlignment: Text.AlignTop
-                // Doesn't work with RichText.
+                text: i18nc("Direction of the transport mode", "To %1", journeySection.route.direction)
+                visible: journeySection.route.direction.length > 0
                 elide: Text.ElideRight
-                maximumLineCount: 5
-                Layout.maximumHeight: Kirigami.Units.gridUnit * maximumLineCount
-                clip: true
-                visible: journeySection.notes.length > 0
-                font.italic: true
-                onLinkActivated: Qt.openUrlExternally(link)
+                Layout.fillWidth: true
             }
 
-            Kirigami.LinkButton {
-                Layout.row: 7
-                Layout.column: 1
-                Layout.columnSpan: 2
-                text: i18nc("@action:button", "Show More…")
-                visible: notesLabel.implicitHeight > notesLabel.height
-                onClicked: {
-                    moreNotesSheet.open();
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            Layout.leftMargin: Kirigami.Units.largeSpacing
+            Layout.rightMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+        }
+
+        QQC2.Label {
+            text: i18n("Distance: %1", Localizer.formatDistance(journeySection.distance))
+            visible: journeySection.distance > 0
+            wrapMode: Text.Wrap
+
+            Layout.leftMargin: Kirigami.Units.largeSpacing
+            Layout.rightMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+        }
+
+        QQC2.Label {
+            text: i18n("Average Speed: %1", Localizer.formatSpeed(journeySection.distance / journeySection.duration * 3.6))
+            visible: journeySection.distance > 0 && journeySection.duration > 0
+            wrapMode: Text.Wrap
+
+            Layout.leftMargin: Kirigami.Units.largeSpacing
+            Layout.rightMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+        }
+
+        QQC2.Label {
+            text: i18n("CO₂: %1", Localizer.formatWeight(journeySection.co2Emission))
+            visible: journeySection.co2Emission > 0
+            wrapMode: Text.Wrap
+
+            Layout.leftMargin: Kirigami.Units.largeSpacing
+            Layout.rightMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+        }
+
+        RowLayout {
+            spacing: Kirigami.Units.smallSpacing
+
+            Layout.leftMargin: Kirigami.Units.largeSpacing
+            Layout.rightMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+
+            Repeater {
+                model: root.journeySection.departureVehicleLayout.combinedFeatures
+                delegate: KPublicTransport.FeatureIcon {
+                    feature: modelData
+                    Layout.preferredHeight: Kirigami.Units.iconSizes.small
+                    Layout.preferredWidth: Kirigami.Units.iconSizes.small
                 }
+            }
+
+            TapHandler {
+                onTapped: moreNotesSheet.open()
             }
         }
 
-        SheetDrawer {
-            id: moreNotesSheet
-            contentItem: ColumnLayout {
-                PublicTransportFeatureList {
-                    model: root.journeySection.departureVehicleLayout.combinedFeatures
-                }
-                QQC2.Label {
-                    Layout.fillWidth: true
-                    text: journeySection.notes.join("<br/>")
-                    textFormat: Text.RichText
-                    wrapMode: Text.Wrap
-                    onLinkActivated: Qt.openUrlExternally(link)
-                    padding: Kirigami.Units.largeSpacing * 2
-                }
+        QQC2.Label {
+            id: notesLabel
+
+            text: journeySection.notes.join("<br/>")
+            textFormat: Text.RichText
+            wrapMode: Text.Wrap
+            verticalAlignment: Text.AlignTop
+            // Doesn't work with RichText.
+            elide: Text.ElideRight
+            maximumLineCount: 5
+            clip: true
+            visible: journeySection.notes.length > 0
+            font.italic: true
+            onLinkActivated: Qt.openUrlExternally(link)
+
+            Layout.maximumHeight: Kirigami.Units.gridUnit * maximumLineCount
+            Layout.leftMargin: Kirigami.Units.largeSpacing
+            Layout.rightMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+        }
+
+        Kirigami.LinkButton {
+            text: i18nc("@action:button", "Show More…")
+            visible: notesLabel.implicitHeight > notesLabel.height
+            onClicked: {
+                moreNotesSheet.open();
             }
+
+            Layout.leftMargin: Kirigami.Units.largeSpacing
+            Layout.rightMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
         }
 
         Kirigami.Separator {
             Layout.fillWidth: true
         }
     }
+
+    data: SheetDrawer {
+        id: moreNotesSheet
+
+        contentItem: ColumnLayout {
+            spacing: Kirigami.Units.smallSpacing
+
+            PublicTransportFeatureList {
+                model: root.journeySection.departureVehicleLayout.combinedFeatures
+            }
+
+            QQC2.Label {
+                Layout.fillWidth: true
+                text: journeySection.notes.join("<br/>")
+                textFormat: Text.RichText
+                wrapMode: Text.Wrap
+                onLinkActivated: Qt.openUrlExternally(link)
+                padding: Kirigami.Units.largeSpacing * 2
+            }
+        }
+    }
+
     JourneySectionModel {
         id: sectionModel
         journeySection: root.journeySection
-
     }
+
     MapStopoverInfoSheetDrawer {
         id: sheetDrawer
         anchors.fill: parent
