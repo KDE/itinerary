@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-01 00:40+0000\n"
+"POT-Creation-Date: 2024-12-06 00:41+0000\n"
 "PO-Revision-Date: 2024-11-29 10:51+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -224,35 +224,35 @@ msgid "To %1"
 msgstr "אל %1"
 
 #: app/AlternativeJourneyPage.qml:88 app/DepartureQueryPage.qml:41
-#: app/JourneyRequestPage.qml:240 app/TransferPage.qml:108
+#: app/JourneyRequestPage.qml:235 app/TransferPage.qml:108
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Long distance trains"
 msgstr "רכבות למרחקים ארוכים"
 
 #: app/AlternativeJourneyPage.qml:96 app/DepartureQueryPage.qml:48
-#: app/JourneyRequestPage.qml:250 app/TransferPage.qml:116
+#: app/JourneyRequestPage.qml:245 app/TransferPage.qml:116
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Local trains"
 msgstr "רכבות מקומיות"
 
 #: app/AlternativeJourneyPage.qml:104 app/DepartureQueryPage.qml:55
-#: app/JourneyRequestPage.qml:260 app/TransferPage.qml:124
+#: app/JourneyRequestPage.qml:255 app/TransferPage.qml:124
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Rapid transit"
 msgstr "תחבורה מהירה"
 
 #: app/AlternativeJourneyPage.qml:112 app/DepartureQueryPage.qml:62
-#: app/JourneyRequestPage.qml:270 app/TransferPage.qml:132
+#: app/JourneyRequestPage.qml:265 app/TransferPage.qml:132
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Bus"
 msgstr "אוטובוס"
 
 #: app/AlternativeJourneyPage.qml:120 app/DepartureQueryPage.qml:69
-#: app/JourneyRequestPage.qml:280 app/TransferPage.qml:140
+#: app/JourneyRequestPage.qml:275 app/TransferPage.qml:140
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ferry"
@@ -384,7 +384,7 @@ msgid "Boat"
 msgstr "סירה"
 
 #: app/BoatEditor.qml:59 app/EventEditor.qml:54 app/FlightEditor.qml:72
-#: app/HotelEditor.qml:51 app/ImportPage.qml:21 app/JourneyRequestPage.qml:222
+#: app/HotelEditor.qml:51 app/ImportPage.qml:21 app/JourneyRequestPage.qml:219
 #: app/RestaurantEditor.qml:53
 #, kde-format
 msgid "Trip"
@@ -1976,7 +1976,7 @@ msgstr "רכבת חשמלית"
 msgid "Bus"
 msgstr "אוטובוס"
 
-#: app/JourneyPathPage.qml:175 app/JourneySectionPage.qml:339
+#: app/JourneyPathPage.qml:175 app/JourneySectionPage.qml:344
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -1998,99 +1998,99 @@ msgstr "טעינת החלפת טיסות קודמות"
 msgid "Still fetching results…"
 msgstr "התוצאות עדיין מתקבלות…"
 
-#: app/JourneyRequestPage.qml:35 app/JourneyRequestPage.qml:61
+#: app/JourneyRequestPage.qml:34 app/JourneyRequestPage.qml:60
 #, kde-format
 msgid "Select Journey"
 msgstr "בחירת מסע"
 
-#: app/JourneyRequestPage.qml:41 app/JourneyRequestPage.qml:105
+#: app/JourneyRequestPage.qml:40 app/JourneyRequestPage.qml:104
 #, kde-format
 msgctxt "departure train station"
 msgid "Select Departure Stop"
 msgstr "בחירת תחנת יציאה"
 
-#: app/JourneyRequestPage.qml:51 app/JourneyRequestPage.qml:119
+#: app/JourneyRequestPage.qml:50 app/JourneyRequestPage.qml:118
 #, kde-format
 msgctxt "arrival train station"
 msgid "Select Arrival Stop"
 msgstr "בחירת תחנת הגעה"
 
-#: app/JourneyRequestPage.qml:104
+#: app/JourneyRequestPage.qml:103
 #, kde-format
 msgctxt "departure train station"
 msgid "From:"
 msgstr "מ־:"
 
-#: app/JourneyRequestPage.qml:118
+#: app/JourneyRequestPage.qml:117
 #, kde-format
 msgctxt "arrival train station"
 msgid "To:"
 msgstr "אל:"
 
-#: app/JourneyRequestPage.qml:136
+#: app/JourneyRequestPage.qml:135
 #, kde-format
 msgid "Swap departure and arrival"
 msgstr "החלפת יציאה והגעה"
 
-#: app/JourneyRequestPage.qml:157
+#: app/JourneyRequestPage.qml:150
 #, kde-format
 msgctxt "train or bus departure"
 msgid "Departure"
 msgstr "יציאה"
 
-#: app/JourneyRequestPage.qml:160
+#: app/JourneyRequestPage.qml:153
 #, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival"
 msgstr "הגעה"
 
-#: app/JourneyRequestPage.qml:169
+#: app/JourneyRequestPage.qml:166
 #, kde-format
 msgctxt "train or bus departure"
 msgid "Departure time"
 msgstr "זמן היציאה"
 
-#: app/JourneyRequestPage.qml:169
+#: app/JourneyRequestPage.qml:166
 #, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival time"
 msgstr "זמן ההגעה"
 
-#: app/JourneyRequestPage.qml:180
+#: app/JourneyRequestPage.qml:177
 #, kde-format
 msgid "Search Journey"
 msgstr "חיפוש מסע"
 
-#: app/JourneyRequestPage.qml:232
+#: app/JourneyRequestPage.qml:229
 #, kde-format
 msgid "Mode of transportation"
 msgstr "צורת תעבורה"
 
-#: app/JourneyRequestPage.qml:241
+#: app/JourneyRequestPage.qml:236
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "High speed or intercity trains"
 msgstr "רכבות מהירות או בין עירוניות"
 
-#: app/JourneyRequestPage.qml:251
+#: app/JourneyRequestPage.qml:246
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Regional or local trains"
 msgstr "רכבות אזוריות או מקומיות"
 
-#: app/JourneyRequestPage.qml:261
+#: app/JourneyRequestPage.qml:256
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Rapid transit, metro, trams"
 msgstr "תחבורה מהירה, רכבת תחתית, רכבות חשמליות"
 
-#: app/JourneyRequestPage.qml:271
+#: app/JourneyRequestPage.qml:266
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Local or regional bus services"
 msgstr "שירותי אוטובוס מקומיים או אזוריים"
 
-#: app/JourneyRequestPage.qml:281
+#: app/JourneyRequestPage.qml:276
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
@@ -2137,29 +2137,31 @@ msgctxt "@info"
 msgid "Platform %1"
 msgstr "רציף %1"
 
-#: app/JourneySectionDelegate.qml:247 app/JourneySectionPage.qml:139
-#: app/VehicleLayoutPage.qml:230
+#: app/JourneySectionDelegate.qml:247 app/JourneySectionPage.qml:136
+#: app/VehicleLayoutPage.qml:243
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr "להציג עוד…"
 
-#: app/JourneySectionPage.qml:70
+#: app/JourneySectionPage.qml:51 app/TimelineDelegateDepartureLayout.qml:93
+#: app/VehicleLayoutPage.qml:146
 #, kde-format
-msgid "Direction: %1"
-msgstr "כיוון: %1"
+msgctxt "Direction of the transport mode"
+msgid "To %1"
+msgstr "אל %1"
 
-#: app/JourneySectionPage.qml:78
+#: app/JourneySectionPage.qml:64
 #, kde-format
 msgid "Distance: %1"
 msgstr "מרחק: %1"
 
-#: app/JourneySectionPage.qml:85
+#: app/JourneySectionPage.qml:74
 #, kde-format
 msgid "Average Speed: %1"
 msgstr "מהירות ממוצעת: %1"
 
-#: app/JourneySectionPage.qml:92
+#: app/JourneySectionPage.qml:84
 #, kde-format
 msgid "CO₂: %1"
 msgstr "פחמן דו־חמצני: %1"
@@ -3817,12 +3819,6 @@ msgstr "נוסע/ת %1"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: app/TimelineDelegateDepartureLayout.qml:91
-#, kde-format
-msgctxt "Direction of the transport mode"
-msgid "To %1"
-msgstr "אל %1"
-
 #: app/TimelinePage.qml:20
 #, kde-format
 msgid "My Itinerary"
@@ -4201,7 +4197,7 @@ msgid "Edit Trip"
 msgstr "עריכת טיול"
 
 #: app/TripGroupEditorDialog.qml:24 app/TripGroupMergeDialog.qml:56
-#: app/TripGroupSelectorCard.qml:82
+#: app/TripGroupSelectorCard.qml:77
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Trip name:"
@@ -4329,27 +4325,27 @@ msgstr "פיצול טיול…"
 msgid "Download Maps"
 msgstr "הורדת מפות"
 
-#: app/TripGroupSelectorCard.qml:68
+#: app/TripGroupSelectorCard.qml:63
 #, kde-format
 msgid "New Trip"
 msgstr "טיול חדש"
 
-#: app/TripGroupSelectorCard.qml:71
+#: app/TripGroupSelectorCard.qml:66
 #, kde-format
 msgid "Add to Trip"
 msgstr "הוספה לטיול"
 
-#: app/TripGroupSelectorCard.qml:88
+#: app/TripGroupSelectorCard.qml:83
 #, kde-format
 msgid "Trip name must not be empty."
 msgstr "שם הטיול לא יכול להיות ריק."
 
-#: app/TripGroupSelectorCard.qml:93
+#: app/TripGroupSelectorCard.qml:88
 #, kde-format
 msgid "Add to:"
 msgstr "הוספה אל:"
 
-#: app/TripGroupSelectorCard.qml:120
+#: app/TripGroupSelectorCard.qml:115
 #, kde-format
 msgid "A trip must be selected."
 msgstr "יש לבחור טיול."
@@ -4423,77 +4419,77 @@ msgstr "פיצול טיול"
 msgid "Vehicle Layout"
 msgstr "פריסת כלי תחבורה"
 
-#: app/VehicleLayoutPage.qml:66
+#: app/VehicleLayoutPage.qml:75
 #, kde-format
 msgid "First class"
 msgstr "מחלקה ראשונה"
 
-#: app/VehicleLayoutPage.qml:68
+#: app/VehicleLayoutPage.qml:77
 #, kde-format
 msgid "Second class"
 msgstr "מחלקה שנייה"
 
-#: app/VehicleLayoutPage.qml:70
+#: app/VehicleLayoutPage.qml:79
 #, kde-format
 msgid "First/second class"
 msgstr "מחלקה ראשונה/שנייה"
 
-#: app/VehicleLayoutPage.qml:71
+#: app/VehicleLayoutPage.qml:80
 #, kde-format
 msgid "Unknown class"
 msgstr "מחלקה לא ידועה"
 
-#: app/VehicleLayoutPage.qml:82
+#: app/VehicleLayoutPage.qml:91
 #, kde-format
 msgctxt "train coach"
 msgid "Coach %1"
 msgstr "קרון %1"
 
-#: app/VehicleLayoutPage.qml:92
+#: app/VehicleLayoutPage.qml:101
 #, kde-format
 msgctxt "train coach type"
 msgid "Sleeping car"
 msgstr "קרון שינה"
 
-#: app/VehicleLayoutPage.qml:94
+#: app/VehicleLayoutPage.qml:103
 #, kde-format
 msgctxt "train coach type"
 msgid "Couchette car"
 msgstr "קרון תאי שינה"
 
-#: app/VehicleLayoutPage.qml:96
+#: app/VehicleLayoutPage.qml:105
 #, kde-format
 msgctxt "train coach type"
 msgid "Restaurant car"
 msgstr "קרון מסעדה"
 
-#: app/VehicleLayoutPage.qml:98
+#: app/VehicleLayoutPage.qml:107
 #, kde-format
 msgctxt "train coach type"
 msgid "Car transport car"
 msgstr "קרון הובלת מכוניות"
 
-#: app/VehicleLayoutPage.qml:158
+#: app/VehicleLayoutPage.qml:162
 #, kde-format
 msgid "Departure: %1"
 msgstr "יציאה: %1"
 
-#: app/VehicleLayoutPage.qml:160
+#: app/VehicleLayoutPage.qml:164
 #, kde-format
 msgid "Arrival: %1"
 msgstr "הגעה: %1"
 
-#: app/VehicleLayoutPage.qml:178
+#: app/VehicleLayoutPage.qml:184
 #, kde-format
 msgid "Platform: %1"
 msgstr "רציף: %1"
 
-#: app/VehicleLayoutPage.qml:184
+#: app/VehicleLayoutPage.qml:193
 #, kde-format
 msgid "Coach: %1 Seat: %2"
 msgstr "קרון: %1 מושב: %2"
 
-#: app/VehicleLayoutPage.qml:429
+#: app/VehicleLayoutPage.qml:450
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "פרטי סידור כלי התחבורה אינם זמינים."
@@ -4599,6 +4595,9 @@ msgstr "יצאת"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 מ%3 אל %4 ב־%5"
+
+#~ msgid "Direction: %1"
+#~ msgstr "כיוון: %1"
 
 #~ msgid "From: %1"
 #~ msgstr "מ־: %1"

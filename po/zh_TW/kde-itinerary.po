@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-01 00:40+0000\n"
+"POT-Creation-Date: 2024-12-06 00:41+0000\n"
 "PO-Revision-Date: 2024-11-28 16:26+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -221,35 +221,35 @@ msgid "To %1"
 msgstr "到 %1"
 
 #: app/AlternativeJourneyPage.qml:88 app/DepartureQueryPage.qml:41
-#: app/JourneyRequestPage.qml:240 app/TransferPage.qml:108
+#: app/JourneyRequestPage.qml:235 app/TransferPage.qml:108
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Long distance trains"
 msgstr "長途列車"
 
 #: app/AlternativeJourneyPage.qml:96 app/DepartureQueryPage.qml:48
-#: app/JourneyRequestPage.qml:250 app/TransferPage.qml:116
+#: app/JourneyRequestPage.qml:245 app/TransferPage.qml:116
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Local trains"
 msgstr "區域鐵路"
 
 #: app/AlternativeJourneyPage.qml:104 app/DepartureQueryPage.qml:55
-#: app/JourneyRequestPage.qml:260 app/TransferPage.qml:124
+#: app/JourneyRequestPage.qml:255 app/TransferPage.qml:124
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Rapid transit"
 msgstr "捷運"
 
 #: app/AlternativeJourneyPage.qml:112 app/DepartureQueryPage.qml:62
-#: app/JourneyRequestPage.qml:270 app/TransferPage.qml:132
+#: app/JourneyRequestPage.qml:265 app/TransferPage.qml:132
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Bus"
 msgstr "公車"
 
 #: app/AlternativeJourneyPage.qml:120 app/DepartureQueryPage.qml:69
-#: app/JourneyRequestPage.qml:280 app/TransferPage.qml:140
+#: app/JourneyRequestPage.qml:275 app/TransferPage.qml:140
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ferry"
@@ -378,7 +378,7 @@ msgid "Boat"
 msgstr "船班"
 
 #: app/BoatEditor.qml:59 app/EventEditor.qml:54 app/FlightEditor.qml:72
-#: app/HotelEditor.qml:51 app/ImportPage.qml:21 app/JourneyRequestPage.qml:222
+#: app/HotelEditor.qml:51 app/ImportPage.qml:21 app/JourneyRequestPage.qml:219
 #: app/RestaurantEditor.qml:53
 #, fuzzy, kde-format
 #| msgid "Trips"
@@ -1982,7 +1982,7 @@ msgstr "路面電車"
 msgid "Bus"
 msgstr "公車"
 
-#: app/JourneyPathPage.qml:175 app/JourneySectionPage.qml:339
+#: app/JourneyPathPage.qml:175 app/JourneySectionPage.qml:344
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2004,100 +2004,100 @@ msgstr "載入更早的轉乘"
 msgid "Still fetching results…"
 msgstr "還在抓取結果…"
 
-#: app/JourneyRequestPage.qml:35 app/JourneyRequestPage.qml:61
+#: app/JourneyRequestPage.qml:34 app/JourneyRequestPage.qml:60
 #, kde-format
 msgid "Select Journey"
 msgstr "選擇旅程"
 
-#: app/JourneyRequestPage.qml:41 app/JourneyRequestPage.qml:105
+#: app/JourneyRequestPage.qml:40 app/JourneyRequestPage.qml:104
 #, kde-format
 msgctxt "departure train station"
 msgid "Select Departure Stop"
 msgstr "選擇出發車站"
 
-#: app/JourneyRequestPage.qml:51 app/JourneyRequestPage.qml:119
+#: app/JourneyRequestPage.qml:50 app/JourneyRequestPage.qml:118
 #, kde-format
 msgctxt "arrival train station"
 msgid "Select Arrival Stop"
 msgstr "選擇抵達車站"
 
-#: app/JourneyRequestPage.qml:104
+#: app/JourneyRequestPage.qml:103
 #, kde-format
 msgctxt "departure train station"
 msgid "From:"
 msgstr "從："
 
-#: app/JourneyRequestPage.qml:118
+#: app/JourneyRequestPage.qml:117
 #, kde-format
 msgctxt "arrival train station"
 msgid "To:"
 msgstr "到："
 
-#: app/JourneyRequestPage.qml:136
+#: app/JourneyRequestPage.qml:135
 #, kde-format
 msgid "Swap departure and arrival"
 msgstr "交換出發及抵達"
 
-#: app/JourneyRequestPage.qml:157
+#: app/JourneyRequestPage.qml:150
 #, kde-format
 msgctxt "train or bus departure"
 msgid "Departure"
 msgstr "出發"
 
-#: app/JourneyRequestPage.qml:160
+#: app/JourneyRequestPage.qml:153
 #, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival"
 msgstr "抵達"
 
-#: app/JourneyRequestPage.qml:169
+#: app/JourneyRequestPage.qml:166
 #, kde-format
 msgctxt "train or bus departure"
 msgid "Departure time"
 msgstr "出發時間"
 
-#: app/JourneyRequestPage.qml:169
+#: app/JourneyRequestPage.qml:166
 #, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival time"
 msgstr "抵達時間"
 
-#: app/JourneyRequestPage.qml:180
+#: app/JourneyRequestPage.qml:177
 #, kde-format
 msgid "Search Journey"
 msgstr "搜尋旅程"
 
-#: app/JourneyRequestPage.qml:232
+#: app/JourneyRequestPage.qml:229
 #, fuzzy, kde-format
 #| msgid "More information"
 msgid "Mode of transportation"
 msgstr "更多資訊"
 
-#: app/JourneyRequestPage.qml:241
+#: app/JourneyRequestPage.qml:236
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "High speed or intercity trains"
 msgstr "高鐵或城際列車"
 
-#: app/JourneyRequestPage.qml:251
+#: app/JourneyRequestPage.qml:246
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Regional or local trains"
 msgstr "區域或當地鐵路"
 
-#: app/JourneyRequestPage.qml:261
+#: app/JourneyRequestPage.qml:256
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Rapid transit, metro, trams"
 msgstr "捷運、地鐵、輕軌"
 
-#: app/JourneyRequestPage.qml:271
+#: app/JourneyRequestPage.qml:266
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Local or regional bus services"
 msgstr "本地或區域公車服務"
 
-#: app/JourneyRequestPage.qml:281
+#: app/JourneyRequestPage.qml:276
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
@@ -2147,29 +2147,33 @@ msgctxt "@info"
 msgid "Platform %1"
 msgstr "月台：%1"
 
-#: app/JourneySectionDelegate.qml:247 app/JourneySectionPage.qml:139
-#: app/VehicleLayoutPage.qml:230
+#: app/JourneySectionDelegate.qml:247 app/JourneySectionPage.qml:136
+#: app/VehicleLayoutPage.qml:243
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr "顯示更多…"
 
-#: app/JourneySectionPage.qml:70
-#, kde-format
-msgid "Direction: %1"
-msgstr "方向：%1"
+#: app/JourneySectionPage.qml:51 app/TimelineDelegateDepartureLayout.qml:93
+#: app/VehicleLayoutPage.qml:146
+#, fuzzy, kde-format
+#| msgctxt "to travel destination"
+#| msgid "To %1"
+msgctxt "Direction of the transport mode"
+msgid "To %1"
+msgstr "到 %1"
 
-#: app/JourneySectionPage.qml:78
+#: app/JourneySectionPage.qml:64
 #, kde-format
 msgid "Distance: %1"
 msgstr "距離：%1"
 
-#: app/JourneySectionPage.qml:85
+#: app/JourneySectionPage.qml:74
 #, kde-format
 msgid "Average Speed: %1"
 msgstr "平均速度：%1"
 
-#: app/JourneySectionPage.qml:92
+#: app/JourneySectionPage.qml:84
 #, kde-format
 msgid "CO₂: %1"
 msgstr "CO₂：%1"
@@ -3831,14 +3835,6 @@ msgstr ""
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: app/TimelineDelegateDepartureLayout.qml:91
-#, fuzzy, kde-format
-#| msgctxt "to travel destination"
-#| msgid "To %1"
-msgctxt "Direction of the transport mode"
-msgid "To %1"
-msgstr "到 %1"
-
 #: app/TimelinePage.qml:20
 #, kde-format
 msgid "My Itinerary"
@@ -4212,7 +4208,7 @@ msgid "Edit Trip"
 msgstr "編輯旅程"
 
 #: app/TripGroupEditorDialog.qml:24 app/TripGroupMergeDialog.qml:56
-#: app/TripGroupSelectorCard.qml:82
+#: app/TripGroupSelectorCard.qml:77
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Trip name:"
@@ -4345,34 +4341,34 @@ msgstr "分割旅程…"
 msgid "Download Maps"
 msgstr "下載地圖"
 
-#: app/TripGroupSelectorCard.qml:68
+#: app/TripGroupSelectorCard.qml:63
 #, fuzzy, kde-format
 #| msgctxt "@title:group"
 #| msgid "Add New Trip"
 msgid "New Trip"
 msgstr "新增旅程"
 
-#: app/TripGroupSelectorCard.qml:71
+#: app/TripGroupSelectorCard.qml:66
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Add Trip"
 msgid "Add to Trip"
 msgstr "新增旅程"
 
-#: app/TripGroupSelectorCard.qml:88
+#: app/TripGroupSelectorCard.qml:83
 #, fuzzy, kde-format
 #| msgid "Ticket name must not be empty."
 msgid "Trip name must not be empty."
 msgstr "票券名稱不能是空白的。"
 
-#: app/TripGroupSelectorCard.qml:93
+#: app/TripGroupSelectorCard.qml:88
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Add trip"
 msgid "Add to:"
 msgstr "新增旅程"
 
-#: app/TripGroupSelectorCard.qml:120
+#: app/TripGroupSelectorCard.qml:115
 #, kde-format
 msgid "A trip must be selected."
 msgstr ""
@@ -4447,77 +4443,77 @@ msgstr "分割旅程"
 msgid "Vehicle Layout"
 msgstr "交通工具佈局"
 
-#: app/VehicleLayoutPage.qml:66
+#: app/VehicleLayoutPage.qml:75
 #, kde-format
 msgid "First class"
 msgstr "頭等"
 
-#: app/VehicleLayoutPage.qml:68
+#: app/VehicleLayoutPage.qml:77
 #, kde-format
 msgid "Second class"
 msgstr "二等"
 
-#: app/VehicleLayoutPage.qml:70
+#: app/VehicleLayoutPage.qml:79
 #, kde-format
 msgid "First/second class"
 msgstr "頭等/二等"
 
-#: app/VehicleLayoutPage.qml:71
+#: app/VehicleLayoutPage.qml:80
 #, kde-format
 msgid "Unknown class"
 msgstr "未知的艙等"
 
-#: app/VehicleLayoutPage.qml:82
+#: app/VehicleLayoutPage.qml:91
 #, kde-format
 msgctxt "train coach"
 msgid "Coach %1"
 msgstr "車廂 %1"
 
-#: app/VehicleLayoutPage.qml:92
+#: app/VehicleLayoutPage.qml:101
 #, kde-format
 msgctxt "train coach type"
 msgid "Sleeping car"
 msgstr "臥鋪車"
 
-#: app/VehicleLayoutPage.qml:94
+#: app/VehicleLayoutPage.qml:103
 #, kde-format
 msgctxt "train coach type"
 msgid "Couchette car"
 msgstr "半臥鋪車廂"
 
-#: app/VehicleLayoutPage.qml:96
+#: app/VehicleLayoutPage.qml:105
 #, kde-format
 msgctxt "train coach type"
 msgid "Restaurant car"
 msgstr "餐車"
 
-#: app/VehicleLayoutPage.qml:98
+#: app/VehicleLayoutPage.qml:107
 #, kde-format
 msgctxt "train coach type"
 msgid "Car transport car"
 msgstr "汽車運輸車廂"
 
-#: app/VehicleLayoutPage.qml:158
+#: app/VehicleLayoutPage.qml:162
 #, kde-format
 msgid "Departure: %1"
 msgstr "出發：%1"
 
-#: app/VehicleLayoutPage.qml:160
+#: app/VehicleLayoutPage.qml:164
 #, kde-format
 msgid "Arrival: %1"
 msgstr "抵達：%1"
 
-#: app/VehicleLayoutPage.qml:178
+#: app/VehicleLayoutPage.qml:184
 #, kde-format
 msgid "Platform: %1"
 msgstr "月台：%1"
 
-#: app/VehicleLayoutPage.qml:184
+#: app/VehicleLayoutPage.qml:193
 #, kde-format
 msgid "Coach: %1 Seat: %2"
 msgstr "車廂：%1 座位：%2"
 
-#: app/VehicleLayoutPage.qml:429
+#: app/VehicleLayoutPage.qml:450
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "沒有可用的交通工具佈局資訊。"
@@ -4623,6 +4619,9 @@ msgstr "登出"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 從 %3 到 %4 於 %5"
+
+#~ msgid "Direction: %1"
+#~ msgstr "方向：%1"
 
 #~ msgid "From: %1"
 #~ msgstr "從：%1"
