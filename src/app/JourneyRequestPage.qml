@@ -143,26 +143,32 @@ FormCard.FormCardPage {
 
         FormCard.AbstractFormDelegate {
             id: timeSelector
-            contentItem: ColumnLayout {
-                Components.RadioSelector{
-                    id: departureArrivalSelector
 
-                    Layout.fillWidth: true
-                    Layout.alignment: Qt.AlignHCenter
-                    Layout.maximumWidth: Kirigami.Units.gridUnit * 20
-                    consistentWidth: true
+            topPadding: Kirigami.Units.largeSpacing
+            bottomPadding: Kirigami.Units.largeSpacing
 
-                    actions: [
-                        Kirigami.Action {
-                            text: i18nc("train or bus departure", "Departure")
-                        },
-                        Kirigami.Action {
-                            text: i18nc("train or bus arrival", "Arrival")
-                        }
-                    ]
-                }
+            background: null
+            contentItem: Components.RadioSelector{
+                id: departureArrivalSelector
+
+                consistentWidth: true
+
+                actions: [
+                    Kirigami.Action {
+                        text: i18nc("train or bus departure", "Departure")
+                    },
+                    Kirigami.Action {
+                        text: i18nc("train or bus arrival", "Arrival")
+                    }
+                ]
             }
         }
+
+        FormCard.FormDelegateSeparator {
+            below: timeSelector
+            above: dateTimeInput
+        }
+
         FormCard.FormDateTimeDelegate {
             id: dateTimeInput
             value: root.initialDateTime
