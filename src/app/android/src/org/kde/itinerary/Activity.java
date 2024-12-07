@@ -33,6 +33,12 @@ public class Activity extends QtActivity
         importFromIntent(intent);
     }
 
+    @Override
+    public void onCreate() {
+        theme.applyStyle(R.style.OptOutEdgeToEdgeEnforcement, false);
+        super.onCreate();
+    }
+
     public Uri openDocument(String filePath)
     {
         Log.i(TAG, filePath);
