@@ -101,8 +101,8 @@ Kirigami.ScrollablePage {
             departureLocation.name = place.name;
         }
 
-        pageStack.clear()
-        pageStack.push(Qt.resolvedUrl("JourneyRequestPage.qml"), {
+        root.Kirigami.PageStack.clear()
+        root.Kirigami.PageStack.push(Qt.resolvedUrl("JourneyRequestPage.qml"), {
             publicTransportManager: LiveDataManager.publicTransportManager,
             initialCountry: country,
             initialDateTime: dt,
@@ -127,7 +127,7 @@ Kirigami.ScrollablePage {
                 let trip = res.reservationFor;
                 trip.departureTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), dt.getHours() == 0 ? 8 : dt.getHours() + 1, 0);
                 res.reservationFor = trip;
-                applicationWindow().pageStack.push(flightEditorPage, {reservation: res});
+                root.Kirigami.PageStack.push(flightEditorPage, {reservation: res});
             }
         },
         Kirigami.Action {
@@ -139,7 +139,7 @@ Kirigami.ScrollablePage {
                 let trip = res.reservationFor;
                 trip.departureTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), dt.getHours() == 0 ? 8 : dt.getHours() + 1, 0);
                 res.reservationFor = trip;
-                applicationWindow().pageStack.push(boatEditorPage, {reservation: res});
+                root.Kirigami.PageStack.push(boatEditorPage, {reservation: res});
             }
         },
         Kirigami.Action {
@@ -150,7 +150,7 @@ Kirigami.ScrollablePage {
                 let res =  Factory.makeLodgingReservation();
                 res.checkinTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), 15, 0);
                 res.checkoutTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate() + 1, 11, 0);
-                applicationWindow().pageStack.push(hotelEditorPage, {reservation: res});
+                root.Kirigami.PageStack.push(hotelEditorPage, {reservation: res});
             }
         },
         Kirigami.Action {
@@ -162,7 +162,7 @@ Kirigami.ScrollablePage {
                 let ev = res.reservationFor;
                 ev.startDate = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), dt.getHours() == 0 ? 8 : dt.getHours() + 1, 0);
                 res.reservationFor = ev;
-                applicationWindow().pageStack.push(eventEditorPage, {reservation: res});
+                root.Kirigami.PageStack.push(eventEditorPage, {reservation: res});
             }
         },
         Kirigami.Action {
@@ -173,7 +173,7 @@ Kirigami.ScrollablePage {
                 let res =  Factory.makeFoodEstablishmentReservation();
                 res.startTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), 20, 0);
                 res.endTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), 22, 0);
-                applicationWindow().pageStack.push(restaurantEditorPage, {reservation: res});
+                root.Kirigami.PageStack.push(restaurantEditorPage, {reservation: res});
             }
         }
     ]
@@ -315,7 +315,7 @@ Kirigami.ScrollablePage {
                 onTriggered: {
                     TripGroupManager.removeReservationsInGroup(root.tripGroupId);
                     deleteTripGroupWarningDialog.close();
-                    applicationWindow().pageStack.pop();
+                    root.Kirigami.PageStack.pageStack.pop();
                 }
             }
         ]
@@ -403,10 +403,10 @@ Kirigami.ScrollablePage {
     }
 
     function showDetailsPage(detailsComponent, batchId) {
-        while (applicationWindow().pageStack.depth > 2) {
-            applicationWindow().pageStack.pop();
+        while (root.Kirigami.PageStack.pageStack.depth > 2) {
+            root.Kirigami.PageStack.pageStack.pageStack.pop();
         }
-        applicationWindow().pageStack.push(detailsComponent, { batchId: batchId });
+        root.Kirigami.PageStack.push(detailsComponent, { batchId: batchId });
     }
 
     TimelineModel {
@@ -478,7 +478,7 @@ Kirigami.ScrollablePage {
                     icon.name: "map-globe"
                     text: i18n("Show map…")
                     visible: !root.isEmptyTripGroup
-                    onClicked: applicationWindow().pageStack.push(tripGroupMapPage);
+                    onClicked: root.Kirigami.PageStack.push(tripGroupMapPage);
                 }
             }
 
@@ -702,7 +702,7 @@ Kirigami.ScrollablePage {
                     icon.name: "split"
                     enabled: root.controller.canSplit
                     visible: !root.isEmptyTripGroup
-                    onClicked: applicationWindow().pageStack.push(tripGroupSplitPage, { tripGroup: root.tripGroup });
+                    onClicked: root.Kirigami.PageStack.push(tripGroupSplitPage, { tripGroup: root.tripGroup });
                 }
                 FormCard.FormButtonDelegate {
                     text: i18n("Download Maps")
