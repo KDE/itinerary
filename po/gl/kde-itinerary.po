@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-06 00:41+0000\n"
-"PO-Revision-Date: 2024-12-04 21:45+0100\n"
+"PO-Revision-Date: 2024-12-08 08:48+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -1605,7 +1605,7 @@ msgstr "Identificador:"
 #: app/HealthCertificateVaccination.qml:123
 #, kde-format
 msgid "Issued:"
-msgstr "Expendición:"
+msgstr "Expedición:"
 
 #: app/HealthCertificateRecovery.qml:86 app/HealthCertificateTest.qml:124
 #: app/HealthCertificateVaccination.qml:127
