@@ -35,10 +35,6 @@ Dependencies:
     'frameworks/kfilemetadata': '@latest-kf6'
     'frameworks/kwindowsystem': '@latest-kf6'
 
-- 'on': ['Linux']
-  'require':
-    'frameworks/networkmanager-qt': '@latest-kf6'
-
 RuntimeDependencies:
 - 'on': ['Linux']
   'require':

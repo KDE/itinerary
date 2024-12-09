@@ -14,11 +14,6 @@
 
 class ReservationManager;
 
-namespace SolidExtras
-{
-class NetworkStatus;
-}
-
 namespace KOSMIndoorMap
 {
 class MapLoader;
@@ -73,7 +68,6 @@ private:
     Request m_currentRequest;
 
     KOSMIndoorMap::MapLoader *m_loader = nullptr;
-    SolidExtras::NetworkStatus *m_netStatus = nullptr;
 };
 
 #endif // MAPDOWNLOADMANAGER_H

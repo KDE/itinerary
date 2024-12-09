@@ -4,12 +4,12 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+import QtNetwork as QtNetwork
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.components as Components
-import org.kde.solidextras as Solid
 import org.kde.kpublictransport as PT
 import org.kde.kosmindoormap
 import org.kde.itinerary
@@ -94,8 +94,8 @@ Kirigami.Page {
             id: equipmentAction
             text: i18n("Show Elevator Status")
             checkable: true
-            enabled: !map.mapLoader.isLoading && Solid.NetworkStatus.connectivity != Solid.NetworkStatus.No
-            icon.color: Solid.NetworkStatus.metered != Solid.NetworkStatus.No ? Kirigami.Theme.neutralTextColor : Kirigami.Theme.textColor
+            enabled: !map.mapLoader.isLoading && (QtNetwork.NetworkInformation.reachability === QtNetwork.NetworkInformation.Reachability.Online || QtNetwork.NetworkInformation.reachability === QtNetwork.NetworkInformation.Reachability.Unknown)
+            icon.color: QtNetwork.NetworkInformation.isMetered ? Kirigami.Theme.neutralTextColor : Kirigami.Theme.textColor
             onTriggered: queryLiveLocationData();
         },
         Kirigami.Action {
@@ -103,8 +103,8 @@ Kirigami.Page {
             icon.name: "car"
             text: i18n("Show Rental Vehicles")
             checkable: true
-            enabled: !map.mapLoader.isLoading && Solid.NetworkStatus.connectivity != Solid.NetworkStatus.No
-            icon.color: Solid.NetworkStatus.metered != Solid.NetworkStatus.No ? Kirigami.Theme.neutralTextColor : Kirigami.Theme.textColor
+            enabled: !map.mapLoader.isLoading && (QtNetwork.NetworkInformation.reachability === QtNetwork.NetworkInformation.Reachability.Online || QtNetwork.NetworkInformation.reachability === QtNetwork.NetworkInformation.Reachability.Unknown)
+            icon.color: QtNetwork.NetworkInformation.isMetered ? Kirigami.Theme.neutralTextColor : Kirigami.Theme.textColor
             onTriggered: queryLiveLocationData();
         },
         Kirigami.Action { separator: true },

@@ -10,7 +10,6 @@
 
 #include "solidextras/brightnessmanager.h"
 #include "solidextras/lockmanager.h"
-#include "solidextras/networkstatus.h"
 
 class SolidExtrasQmlPlugin : public QQmlExtensionPlugin
 {
@@ -19,18 +18,13 @@ class SolidExtrasQmlPlugin : public QQmlExtensionPlugin
     void registerTypes(const char *uri) override;
 };
 
-using namespace SolidExtras;
-
 void SolidExtrasQmlPlugin::registerTypes(const char *)
 {
-    qmlRegisterSingletonType<NetworkStatus>("org.kde.solidextras", 1, 0, "BrightnessManager", [](QQmlEngine *, QJSEngine *) -> QObject * {
+    qmlRegisterSingletonType<BrightnessManager>("org.kde.solidextras", 1, 0, "BrightnessManager", [](QQmlEngine *, QJSEngine *) -> QObject * {
         return new BrightnessManager;
     });
-    qmlRegisterSingletonType<NetworkStatus>("org.kde.solidextras", 1, 0, "LockManager", [](QQmlEngine *, QJSEngine *) -> QObject * {
+    qmlRegisterSingletonType<LockManager>("org.kde.solidextras", 1, 0, "LockManager", [](QQmlEngine *, QJSEngine *) -> QObject * {
         return new LockManager;
-    });
-    qmlRegisterSingletonType<NetworkStatus>("org.kde.solidextras", 1, 0, "NetworkStatus", [](QQmlEngine *, QJSEngine *) -> QObject * {
-        return new NetworkStatus;
     });
 }
 
