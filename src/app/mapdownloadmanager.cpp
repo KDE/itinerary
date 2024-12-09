@@ -4,10 +4,9 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+#include "logging.h"
 #include "mapdownloadmanager.h"
 #include "reservationmanager.h"
-
-#include "solidextras/networkstatus.h"
 
 #include <KOSMIndoorMap/MapLoader>
 
@@ -15,20 +14,20 @@
 #include <KItinerary/Place>
 #include <KItinerary/SortUtil>
 
-#include <QDebug>
+#include <QNetworkInformation>
 #include <QTimer>
 
 #include <cmath>
 
 using namespace KItinerary;
-using SolidExtras::NetworkStatus;
 
 MapDownloadManager::MapDownloadManager(QObject *parent)
     : QObject(parent)
-    , m_netStatus(new NetworkStatus(this))
 {
-    connect(m_netStatus, &NetworkStatus::connectivityChanged, this, &MapDownloadManager::networkStatusChanged);
-    connect(m_netStatus, &NetworkStatus::meteredChanged, this, &MapDownloadManager::networkStatusChanged);
+    QNetworkInformation::loadDefaultBackend();
+    auto netInfo = QNetworkInformation::instance();
+    connect(netInfo, &QNetworkInformation::reachabilityChanged, this, &MapDownloadManager::networkStatusChanged);
+    connect(netInfo, &QNetworkInformation::isMeteredChanged, this, &MapDownloadManager::networkStatusChanged);
 }
 
 MapDownloadManager::~MapDownloadManager() = default;
@@ -62,7 +61,8 @@ void MapDownloadManager::download()
         addRequestForBatch(batchId);
     }
 
-    qDebug() << m_pendingRequests.size() << "pending download requests" << m_netStatus->connectivity() << m_netStatus->metered();
+    const auto netInfo = QNetworkInformation::instance();
+    qCDebug(Log) << m_pendingRequests.size() << "pending download requests" << netInfo->reachability() << netInfo->isMetered();
     downloadNext();
 }
 
@@ -72,13 +72,15 @@ void MapDownloadManager::download(const QStringList &batchIds)
         addRequestForBatch(batchId, true);
     }
 
-    qDebug() << m_pendingRequests.size() << "pending download requests" << m_netStatus->connectivity() << m_netStatus->metered();
+    const auto netInfo = QNetworkInformation::instance();
+    qCDebug(Log) << m_pendingRequests.size() << "pending download requests" << netInfo->reachability() << netInfo->isMetered();
     downloadNext();
 }
 
 bool MapDownloadManager::canAutoDownload() const
 {
-    return m_autoDownloadEnabled && m_netStatus->connectivity() != NetworkStatus::No && m_netStatus->metered() == NetworkStatus::No;
+    const auto netInfo = QNetworkInformation::instance();
+    return m_autoDownloadEnabled && (netInfo->reachability() == QNetworkInformation::Reachability::Online || netInfo->reachability() == QNetworkInformation::Reachability::Unknown) && !netInfo->isMetered();
 }
 
 void MapDownloadManager::addAutomaticRequestForBatch(const QString &batchId)
