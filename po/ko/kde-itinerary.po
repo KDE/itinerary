@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-06 00:41+0000\n"
-"PO-Revision-Date: 2024-08-20 23:16+0200\n"
+"PO-Revision-Date: 2024-12-09 23:39+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -275,12 +275,10 @@ msgid "Replace"
 msgstr "바꾸기"
 
 #: app/applicationcontroller.cpp:188
-#, fuzzy, kde-format
-#| msgctxt "weekday, date"
-#| msgid "%1, %2"
+#, kde-format
 msgctxt "geo coordinate"
 msgid "%1, %2"
-msgstr "%2 %1"
+msgstr "%1, %2"
 
 #: app/applicationcontroller.cpp:309
 #, kde-format
@@ -363,10 +361,9 @@ msgid "Ferry"
 msgstr "선박"
 
 #: app/BoatEditor.qml:17
-#, fuzzy, kde-format
-#| msgid "New Trip"
+#, kde-format
 msgid "New Boat Trip"
-msgstr "새 여정"
+msgstr "새 선박 여정"
 
 #: app/BoatEditor.qml:17
 #, kde-format
@@ -381,10 +378,9 @@ msgstr "선박"
 #: app/BoatEditor.qml:59 app/EventEditor.qml:54 app/FlightEditor.qml:72
 #: app/HotelEditor.qml:51 app/ImportPage.qml:21 app/JourneyRequestPage.qml:219
 #: app/RestaurantEditor.qml:53
-#, fuzzy, kde-format
-#| msgid "Trips"
+#, kde-format
 msgid "Trip"
-msgstr "여행"
+msgstr "여정"
 
 #: app/BoatEditor.qml:71 app/BoatPage.qml:54
 #, kde-format
@@ -508,9 +504,7 @@ msgid "Bus"
 msgstr "버스"
 
 #: app/BusDelegate.qml:58
-#, fuzzy, kde-format
-#| msgctxt "train seat"
-#| msgid "Seat: <b>%1</b>"
+#, kde-format
 msgctxt "bus seat"
 msgid "Seat: <b>%1</b>"
 msgstr "좌석: <b>%1</b>"
@@ -897,12 +891,10 @@ msgid "Number: <b>%1</b>"
 msgstr "번호: <b>%1</b>"
 
 #: app/EventEditor.qml:19
-#, fuzzy, kde-format
-#| msgctxt "event as in concert/conference/show, not as in appointment"
-#| msgid "Event"
+#, kde-format
 msgctxt "event as in concert/conference/show, not as in appointment"
 msgid "New Event"
-msgstr "행사"
+msgstr "새 행사"
 
 #: app/EventEditor.qml:20
 #, kde-format
@@ -975,12 +967,10 @@ msgid "Seat"
 msgstr "좌석"
 
 #: app/EventPage.qml:126
-#, fuzzy, kde-format
-#| msgctxt "flight departure gate"
-#| msgid "Gate: <b>%1</b>"
+#, kde-format
 msgctxt "event venue seat type"
 msgid "Type: <b>%1</b>"
-msgstr "탑승구: <b>%1</b>"
+msgstr "종류: <b>%1</b>"
 
 #: app/favoritelocationmodel.cpp:135 app/favoritelocationmodel.cpp:155
 #: app/SettingsPage.qml:35
@@ -1092,10 +1082,9 @@ msgid "%1 %2 → %3"
 msgstr "%1 %2 → %3"
 
 #: app/FlightEditor.qml:17
-#, fuzzy, kde-format
-#| msgid "Flight"
+#, kde-format
 msgid "New Flight"
-msgstr "항공편"
+msgstr "새 항공편"
 
 #: app/FlightEditor.qml:17
 #, kde-format
@@ -1155,8 +1144,7 @@ msgid "Boarding time has to be before the departure time."
 msgstr "탑승 시간은 출발 시간 이전이어야 합니다."
 
 #: app/FlightEditor.qml:139
-#, fuzzy, kde-format
-#| msgid "Boarding group"
+#, kde-format
 msgctxt "flight departure boarding group"
 msgid "Boarding group"
 msgstr "탑승 그룹"
@@ -1716,10 +1704,9 @@ msgid "Check-out time: %1"
 msgstr "체크아웃 시간: %1"
 
 #: app/HotelEditor.qml:19
-#, fuzzy, kde-format
-#| msgid "Hotel Reservation"
+#, kde-format
 msgid "New Hotel Reservation"
-msgstr "호텔 예약"
+msgstr "새 호텔 예약"
 
 #: app/HotelEditor.qml:19
 #, kde-format
@@ -1817,15 +1804,13 @@ msgid "Import"
 msgstr "가져오기"
 
 #: app/ImportPage.qml:35
-#, fuzzy, kde-format
-#| msgid "Selected items to import."
+#, kde-format
 msgctxt "@title:group"
 msgid "Items to Import"
-msgstr "가져오도록 선택한 항목입니다."
+msgstr "가져올 항목"
 
 #: app/ImportPage.qml:74
-#, fuzzy, kde-format
-#| msgid "Import selection"
+#, kde-format
 msgctxt "@action:button"
 msgid "Import selection"
 msgstr "선택 가져오기"
@@ -2071,10 +2056,9 @@ msgid "Search Journey"
 msgstr "여정 검색"
 
 #: app/JourneyRequestPage.qml:229
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgid "Mode of transportation"
-msgstr "더 많은 정보"
+msgstr "운송 수단"
 
 #: app/JourneyRequestPage.qml:236
 #, kde-format
@@ -2557,11 +2541,10 @@ msgid "Map download finished."
 msgstr "지도를 다운로드했습니다."
 
 #: app/Main.qml:414
-#, fuzzy, kde-format
-#| msgid "Matrix Integration"
+#, kde-format
 msgctxt "@title:window"
 msgid "Matrix Session Verification"
-msgstr "Matrix 통합"
+msgstr "Matrix 세션 검증"
 
 #: app/MapStopoverInfoSheetDrawer.qml:59
 #, kde-format
@@ -2574,71 +2557,68 @@ msgid "Occupancy:"
 msgstr "혼잡도:"
 
 #: app/MapStopoverInfoSheetDrawer.qml:88
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "View Indoor Map"
+#, kde-format
 msgid "Show indoor map"
 msgstr "실내 지도 표시"
 
 #: app/MatrixKeyVerificationPage.qml:12
-#, fuzzy, kde-format
-#| msgid "Matrix Integration"
+#, kde-format
 msgid "Matrix Session Verification"
-msgstr "Matrix 통합"
+msgstr "Matrix 세션 검증"
 
 #: app/MatrixKeyVerificationPage.qml:41
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Waiting for device to accept verification."
-msgstr ""
+msgstr "장치에서 확인을 수락하기를 기다리고 있습니다."
 
 #: app/MatrixKeyVerificationPage.qml:43
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Incoming key verification request from device <b>%1</b>"
-msgstr ""
+msgstr "<b>%1</b> 장치에서 들어오는 키 확인 요청을 받음"
 
 #: app/MatrixKeyVerificationPage.qml:45
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Waiting for other party to verify."
-msgstr ""
+msgstr "다른 쪽에서 확인 작업을 완료하기를 기다리고 있습니다."
 
 #: app/MatrixKeyVerificationPage.qml:47
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Successfully verified device <b>%1</b>"
-msgstr ""
+msgstr "<b>%1</b> 장치를 성공적으로 확인함"
 
 #: app/MatrixKeyVerificationPage.qml:52
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session verification was canceled for unknown reason."
-msgstr ""
+msgstr "알 수 없는 이유로 세션 확인이 취소되었습니다."
 
 #: app/MatrixKeyVerificationPage.qml:54
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session verification timed out."
-msgstr ""
+msgstr "세션 확인 시간이 초과되었습니다."
 
 #: app/MatrixKeyVerificationPage.qml:56
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session verification timed out for remote party."
-msgstr ""
+msgstr "원격지의 세션 확인 시간이 초과되었습니다."
 
 #: app/MatrixKeyVerificationPage.qml:58
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "You canceled the session verification."
-msgstr ""
+msgstr "세션 확인 과정을 취소했습니다."
 
 #: app/MatrixKeyVerificationPage.qml:60
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The remote party canceled the session verification."
-msgstr ""
+msgstr "원격지에서 세션 확인을 취소했습니다."
 
 #: app/MatrixKeyVerificationPage.qml:62
 #, kde-format
@@ -2646,7 +2626,7 @@ msgctxt "Matrix session verification"
 msgid ""
 "The session verification was canceled because we received an unexpected "
 "message."
-msgstr ""
+msgstr "예상하지 못한 메시지를 받아서 세션 확인을 취소했습니다."
 
 #: app/MatrixKeyVerificationPage.qml:64
 #, kde-format
@@ -2654,7 +2634,7 @@ msgctxt "Matrix session verification"
 msgid ""
 "The remote party canceled the session verification because it received an "
 "unexpected message."
-msgstr ""
+msgstr "원격지에서 예상하지 못한 메시지를 받아서 세션 확인을 취소했습니다."
 
 #: app/MatrixKeyVerificationPage.qml:66
 #, kde-format
@@ -2662,7 +2642,7 @@ msgctxt "Matrix session verification"
 msgid ""
 "The session verification was canceled because it received a message for an "
 "unknown session."
-msgstr ""
+msgstr "알 수 없는 세션에 대한 메시지를 받아서 세션 확인을 취소했습니다."
 
 #: app/MatrixKeyVerificationPage.qml:68
 #, kde-format
@@ -2671,6 +2651,7 @@ msgid ""
 "The remote party canceled the session verification because it received a "
 "message for an unknown session."
 msgstr ""
+"원격지에서 알 수 없는 세션에 대한 메시지를 받아서 세션 확인을 취소했습니다."
 
 #: app/MatrixKeyVerificationPage.qml:70
 #, kde-format
@@ -2678,7 +2659,7 @@ msgctxt "Matrix session verification"
 msgid ""
 "The session verification was canceled because NeoChat is unable to handle "
 "this verification method."
-msgstr ""
+msgstr "NeoChat에서 이 확인 방식을 지원하지 않아서 세션 확인을 취소했습니다."
 
 #: app/MatrixKeyVerificationPage.qml:72
 #, kde-format
@@ -2686,13 +2667,13 @@ msgctxt "Matrix session verification"
 msgid ""
 "The remote party canceled the session verification because it is unable to "
 "handle this verification method."
-msgstr ""
+msgstr "원격지에서 이 확인 방식을 지원하지 않아서 세션 확인을 취소했습니다."
 
 #: app/MatrixKeyVerificationPage.qml:74
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session verification was canceled because the keys are incorrect."
-msgstr ""
+msgstr "키가 잘못되어서 세션 확인을 취소했습니다."
 
 #: app/MatrixKeyVerificationPage.qml:76
 #, kde-format
@@ -2703,13 +2684,16 @@ msgid ""
 "\n"
 "<b>Please log out and log back in, your session is broken/corrupt.</b>"
 msgstr ""
+"원격지에서 키가 잘못되어서 세션 확인을 취소했습니다.\n"
+"\n"
+"<b>로그아웃하고 다시 로그인하십시오. 세션이 망가졌거나 손상되었습니다.</b>"
 
 #: app/MatrixKeyVerificationPage.qml:78
 #, kde-format
 msgctxt "Matrix session verification"
 msgid ""
 "The session verification was canceled because it verifies an unexpected user."
-msgstr ""
+msgstr "예상하지 못한 사용자를 검증해서 세션 확인을 취소했습니다."
 
 #: app/MatrixKeyVerificationPage.qml:80
 #, kde-format
@@ -2717,14 +2701,14 @@ msgctxt "Matrix session verification"
 msgid ""
 "The remote party canceled the session verification because it verifies an "
 "unexpected user."
-msgstr ""
+msgstr "원격지에서 예상하지 못한 사용자를 검증해서 세션 확인을 취소했습니다."
 
 #: app/MatrixKeyVerificationPage.qml:82
 #, kde-format
 msgctxt "Matrix session verification"
 msgid ""
 "The session verification was canceled because we received an invalid message."
-msgstr ""
+msgstr "잘못된 메시지를 받아서 세션 확인을 취소했습니다."
 
 #: app/MatrixKeyVerificationPage.qml:84
 #, kde-format
@@ -2732,19 +2716,19 @@ msgctxt "Matrix session verification"
 msgid ""
 "The remote party canceled the session verification because it received an "
 "invalid message."
-msgstr ""
+msgstr "원격지에서 잘못된 메시지를 받아서 세션 확인을 취소했습니다."
 
 #: app/MatrixKeyVerificationPage.qml:87
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session was accepted on a different device"
-msgstr ""
+msgstr "다른 장치에서 세션이 수락되었습니다."
 
 #: app/MatrixKeyVerificationPage.qml:89
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session verification was canceled because of a mismatched key."
-msgstr ""
+msgstr "키가 일치하지 않아서 세션 확인을 취소했습니다."
 
 #: app/MatrixKeyVerificationPage.qml:91
 #, kde-format
@@ -2752,13 +2736,13 @@ msgctxt "Matrix session verification"
 msgid ""
 "The remote party canceled the session verification because of a mismatched "
 "key."
-msgstr ""
+msgstr "원격지에서 키가 일치하지 않아서 세션 확인을 취소했습니다."
 
 #: app/MatrixKeyVerificationPage.qml:93
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session verification was canceled because the keys do not match."
-msgstr ""
+msgstr "키가 일치하지 않아서 세션 확인을 취소했습니다."
 
 #: app/MatrixKeyVerificationPage.qml:95
 #, kde-format
@@ -2766,45 +2750,44 @@ msgctxt "Matrix session verification"
 msgid ""
 "The remote party canceled the session verification because the keys do not "
 "match."
-msgstr ""
+msgstr "원격지에서 키가 일치하지 않아서 세션 확인을 취소했습니다."
 
 #: app/MatrixKeyVerificationPage.qml:97
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session verification was canceled due to an unknown error."
-msgstr ""
+msgstr "알 수 없는 이유로 세션 확인이 취소되었습니다."
 
 #: app/MatrixKeyVerificationPage.qml:114
-#, fuzzy, kde-format
-#| msgid "Notifications"
+#, kde-format
 msgctxt "Matrix session verfication"
 msgid "Emoji Verification"
-msgstr "알림"
+msgstr "이모지 확인"
 
 #: app/MatrixKeyVerificationPage.qml:117
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Compare a set of emoji on both devices."
-msgstr ""
+msgstr "양쪽 장치에 표시된 이모지를 비교하십시오."
 
 #: app/MatrixKeyVerificationPage.qml:128
 #, kde-format
 msgctxt "Matrix session verification"
 msgid ""
 "Confirm the emoji below are displayed on both devices, in the same order."
-msgstr ""
+msgstr "양쪽 장치에 같은 이모지가 같은 순서대로 표시되어 있는지 확인하십시오."
 
 #: app/MatrixKeyVerificationPage.qml:165
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "They match"
-msgstr ""
+msgstr "일치합니다"
 
 #: app/MatrixKeyVerificationPage.qml:171
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "They don't match"
-msgstr ""
+msgstr "일치하지 않습니다"
 
 #: app/MatrixKeyVerificationPage.qml:207
 #, kde-format
@@ -2814,7 +2797,7 @@ msgstr "수락"
 #: app/MatrixKeyVerificationPage.qml:213
 #, kde-format
 msgid "Decline"
-msgstr ""
+msgstr "거절"
 
 #: app/MatrixRoomSelectionSheet.qml:19
 #, kde-format
@@ -3251,11 +3234,10 @@ msgid "Bus from %1 to %2"
 msgstr "%1에서 %2(으)로 가는 버스|/|%1에서 %2$[으 %2]로 가는 버스"
 
 #: app/RestaurantEditor.qml:18
-#, fuzzy, kde-format
-#| msgid "Restaurant"
+#, kde-format
 msgctxt "@title"
 msgid "New Restaurant"
-msgstr "음식점"
+msgstr "새 음식점"
 
 #: app/RestaurantEditor.qml:19
 #, kde-format
@@ -3550,19 +3532,19 @@ msgstr "암호"
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Session verified"
-msgstr ""
+msgstr "세션 검증됨"
 
 #: app/SettingsPage.qml:316
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Session not verified."
-msgstr ""
+msgstr "세션이 검증되지 않았습니다."
 
 #: app/SettingsPage.qml:317
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Initiate session verification in your Matrix chat client."
-msgstr ""
+msgstr "Matrix 채팅 클라이언트에서 세션 검증을 시작하십시오."
 
 #: app/SettingsPage.qml:324
 #, kde-format
@@ -3688,21 +3670,19 @@ msgid "Train"
 msgstr "기차"
 
 #: app/StopPickerPage.qml:27
-#, fuzzy, kde-format
-#| msgid "Clear history"
+#, kde-format
 msgid "Clear History"
-msgstr "기록 삭제"
+msgstr "과거 기록 비우기"
 
 #: app/StopPickerPage.qml:28
-#, fuzzy, kde-format
-#| msgid "Do you really want to delete this certificate?"
+#, kde-format
 msgid "Do you really want to remove all previously searched locations?"
-msgstr "이 증명서를 삭제하시겠습니까?"
+msgstr "이전에 검색한 모든 위치를 삭제하시겠습니까?"
 
 #: app/StopPickerPage.qml:32
 #, kde-format
 msgid "Remove"
-msgstr ""
+msgstr "삭제"
 
 #: app/StopPickerPage.qml:45
 #, kde-format
@@ -3728,44 +3708,34 @@ msgstr "자주 사용함"
 #, kde-format
 msgctxt "location name, locality, region, country"
 msgid "%1, %2, %3, %4"
-msgstr ""
+msgstr "%4 %3 %2 %1"
 
 #: app/StopPickerPage.qml:173 app/StopPickerPage.qml:254
-#, fuzzy, kde-format
-#| msgctxt "weekday, date"
-#| msgid "%1, %2"
+#, kde-format
 msgctxt "location name, locality, country"
 msgid "%1, %2, %3"
-msgstr "%2 %1"
+msgstr "%3 %2 %1"
 
 #: app/StopPickerPage.qml:178 app/StopPickerPage.qml:259
-#, fuzzy, kde-format
-#| msgctxt "weekday, date"
-#| msgid "%1, %2"
+#, kde-format
 msgctxt "location name, region, country"
 msgid "%1, %2, %3"
-msgstr "%2 %1"
+msgstr "%3 %2 %1"
 
 #: app/StopPickerPage.qml:199 app/StopPickerPage.qml:281
-#, fuzzy, kde-format
-#| msgctxt "weekday, date"
-#| msgid "%1, %2"
+#, kde-format
 msgctxt "locality, region, country"
 msgid "%1, %2, %3"
-msgstr "%2 %1"
+msgstr "%3 %2 %1"
 
 #: app/StopPickerPage.qml:204 app/StopPickerPage.qml:286
-#, fuzzy, kde-format
-#| msgctxt "weekday, date"
-#| msgid "%1, %2"
+#, kde-format
 msgctxt "locality, country"
 msgid "%1, %2"
 msgstr "%2 %1"
 
 #: app/StopPickerPage.qml:208 app/StopPickerPage.qml:290
-#, fuzzy, kde-format
-#| msgctxt "weekday, date"
-#| msgid "%1, %2"
+#, kde-format
 msgctxt "region, country"
 msgid "%1, %2"
 msgstr "%2 %1"
@@ -4248,7 +4218,7 @@ msgstr "%1(%2년/%3년)"
 #: app/TripGroupMapPage.qml:194
 #, kde-format
 msgid "Address:"
-msgstr ""
+msgstr "주소:"
 
 #: app/TripGroupMergeDialog.qml:17
 #, kde-format
@@ -4262,19 +4232,16 @@ msgid "Merge with:"
 msgstr "합칠 대상:"
 
 #: app/TripGroupMergeDialog.qml:78
-#, fuzzy, kde-format
-#| msgid "Merge"
+#, kde-format
 msgctxt "@action:button"
 msgid "Merge"
 msgstr "합치기"
 
 #: app/TripGroupPage.qml:185
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add Trip"
+#, kde-format
 msgctxt "@title:group"
 msgid "Add to Trip"
-msgstr "여정 추가"
+msgstr "여정에 추가"
 
 #: app/TripGroupPage.qml:307
 #, kde-format
@@ -4303,30 +4270,24 @@ msgid "No compatible power plugs (%1)"
 msgstr "호환되는 전원 플러그 없음(%1)"
 
 #: app/TripGroupPage.qml:479
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Show Map"
+#, kde-format
 msgid "Show map…"
-msgstr "지도 표시"
+msgstr "지도 표시…"
 
 #: app/TripGroupPage.qml:486
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Import"
+#, kde-format
 msgid "Import"
 msgstr "가져오기"
 
 #: app/TripGroupPage.qml:500
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add trip"
+#, kde-format
 msgid "Add"
-msgstr "여정 추가"
+msgstr "추가"
 
 #: app/TripGroupPage.qml:659
 #, kde-format
 msgid "Cost"
-msgstr ""
+msgstr "비용"
 
 #: app/TripGroupPage.qml:672
 #, kde-format
@@ -4359,29 +4320,24 @@ msgid "New Trip"
 msgstr "새 여정"
 
 #: app/TripGroupSelectorCard.qml:66
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add Trip"
+#, kde-format
 msgid "Add to Trip"
-msgstr "여정 추가"
+msgstr "여정에 추가"
 
 #: app/TripGroupSelectorCard.qml:83
-#, fuzzy, kde-format
-#| msgid "Ticket name must not be empty."
+#, kde-format
 msgid "Trip name must not be empty."
-msgstr "티켓 이름이 비어 있으면 안 됩니다."
+msgstr "여정 이름이 비어 있으면 안 됩니다."
 
 #: app/TripGroupSelectorCard.qml:88
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add trip"
+#, kde-format
 msgid "Add to:"
-msgstr "여정 추가"
+msgstr "다음에 추가:"
 
 #: app/TripGroupSelectorCard.qml:115
 #, kde-format
 msgid "A trip must be selected."
-msgstr ""
+msgstr "여정을 선택해야 합니다."
 
 #: app/TripGroupsPage.qml:15
 #, kde-format
@@ -4408,8 +4364,7 @@ msgid "Current trip"
 msgstr "현재 여정"
 
 #: app/TripGroupsPage.qml:99
-#, fuzzy, kde-format
-#| msgid "%1 - %2"
+#, kde-format
 msgctxt "date range"
 msgid "%1 - %2"
 msgstr "%1 - %2"
@@ -4417,39 +4372,33 @@ msgstr "%1 - %2"
 #: app/TripGroupsPage.qml:100
 #, kde-format
 msgid "Upcoming"
-msgstr ""
+msgstr "예정됨"
 
 #: app/TripGroupsPage.qml:116
 #, kde-format
 msgid "No trips added yet."
-msgstr ""
+msgstr "추가한 여정이 없습니다."
 
 #: app/TripGroupSplitPage.qml:15
-#, fuzzy, kde-format
-#| msgid "Split Trip"
+#, kde-format
 msgctxt "@title:window"
 msgid "Split Trip"
 msgstr "여정 분할"
 
 #: app/TripGroupSplitPage.qml:28
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Trip name:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "New Trip name:"
-msgstr "여정 이름:"
+msgstr "새 여정 이름:"
 
 #: app/TripGroupSplitPage.qml:35
-#, fuzzy, kde-format
-#| msgctxt "seat section, e.g. block in a stadium"
-#| msgid "Section:"
+#, kde-format
 msgctxt "@title:group"
 msgid "Sections"
 msgstr "구역:"
 
 #: app/TripGroupSplitPage.qml:77
-#, fuzzy, kde-format
-#| msgid "Split trip"
+#, kde-format
 msgctxt "@action:button"
 msgid "Split trip"
 msgstr "여정 분할"
@@ -4621,16 +4570,14 @@ msgid "This server does not support logging in using a password"
 msgstr "서버에서 암호로 로그인을 지원하지 않음"
 
 #: matrix/matrixmanager.cpp:78
-#, fuzzy, kde-format
-#| msgid "Logging in"
+#, kde-format
 msgid "Logging in…"
-msgstr "로그인 중"
+msgstr "로그인 중…"
 
 #: matrix/matrixmanager.cpp:114
-#, fuzzy, kde-format
-#| msgid "Log out"
+#, kde-format
 msgid "Logged out"
-msgstr "로그아웃"
+msgstr "로그아웃함"
 
 #: metadataextractor/itineraryextractor.cpp:118
 #, kde-format
