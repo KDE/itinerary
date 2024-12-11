@@ -9,7 +9,7 @@
 
 #include <KPublicTransport/Stopover>
 
-#include <KLocalizedContext>
+#include <KLocalizedQmlContext>
 
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
@@ -58,7 +58,7 @@ int main(int argc, char **argv)
     });
 
     QQmlApplicationEngine engine;
-    engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
+    KLocalization::setupLocalizedContext(&engine);
     engine.rootContext()->setContextProperty(QStringLiteral("_stopover"), stopover);
     engine.rootContext()->setContextProperty(QStringLiteral("_coach"), parser.value(coachOpt));
     engine.rootContext()->setContextProperty(QStringLiteral("_seat"), parser.value(seatOpt));

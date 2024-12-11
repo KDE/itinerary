@@ -12,7 +12,7 @@
 #include <KPublicTransport/JourneyRequest>
 #include <KPublicTransport/Location>
 
-#include <KLocalizedContext>
+#include <KLocalizedQmlContext>
 
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
@@ -66,7 +66,7 @@ int main(int argc, char **argv)
     });
 
     QQmlApplicationEngine engine;
-    engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
+    KLocalization::setupLocalizedContext(&engine);
     engine.rootContext()->setContextProperty(QStringLiteral("_request"), req);
     engine.load(QStringLiteral("qrc:/qt/qml/org/kde/itinerary/journeyquerytest.qml"));
 

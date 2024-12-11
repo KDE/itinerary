@@ -12,7 +12,7 @@
 #include <KPkPass/BoardingPass>
 #include <KPkPass/Field>
 
-#include <KLocalizedContext>
+#include <KLocalizedQmlContext>
 
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
@@ -51,7 +51,7 @@ int main(int argc, char **argv)
     });
 
     QQmlApplicationEngine engine;
-    engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
+    KLocalization::setupLocalizedContext(&engine);
 
     auto pkPassImageProvider = new PkPassImageProvider;
     pkPassImageProvider->registerPassProvider([&passMgr](const QString &passTypeId, const QString &serialNum) -> KPkPass::Pass * {

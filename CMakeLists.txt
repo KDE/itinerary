@@ -10,7 +10,7 @@ set (RELEASE_SERVICE_VERSION_MICRO "70")
 set (RELEASE_SERVICE_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_VERSION_MINOR}.${RELEASE_SERVICE_VERSION_MICRO}")
 project(itinerary VERSION ${RELEASE_SERVICE_VERSION})
 
-set(QT_MIN_VERSION 6.5)
+set(QT_MIN_VERSION 6.7)
 set(KF_MIN_VERSION 6.8)
 set(GEAR_MIN_VERSION 24.08)
 set(PIM_MIN_VERSION 6.2)
@@ -113,8 +113,8 @@ else()
 endif()
 
 ecm_set_disabled_deprecation_versions(
-    QT 6.4.0
-    KF 6.5.0
+    QT ${QT_MIN_VERSION}
+    KF ${KF_MIN_VERSION}
 )
 
 add_subdirectory(src)
