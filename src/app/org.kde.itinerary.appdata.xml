@@ -36,6 +36,7 @@
   <name xml:lang="pt">KDE Itinerary</name>
   <name xml:lang="pt-BR">KDE Itinerary</name>
   <name xml:lang="ru">Маршруты KDE</name>
+  <name xml:lang="sa">केडीई यात्रासूची</name>
   <name xml:lang="sk">KDE Itinerár</name>
   <name xml:lang="sl">KDE Itinerary</name>
   <name xml:lang="sv">KDE-resplan</name>
@@ -69,6 +70,7 @@
   <summary xml:lang="pt">Assistente de viagens digital</summary>
   <summary xml:lang="pt-BR">Assistente de viagens digital</summary>
   <summary xml:lang="ru">Цифровой помощник в путешествиях</summary>
+  <summary xml:lang="sa">डिजिटल यात्रा सहायक</summary>
   <summary xml:lang="sk">Digitálny cestovný asistent</summary>
   <summary xml:lang="sl">Digitalni potovalni pomočnik</summary>
   <summary xml:lang="sv">Digitalt resehjälpprogram</summary>
@@ -103,6 +105,7 @@
     <p xml:lang="pt">O KDE Itinerary é um assistente digital de viagens com a prioridade de proteger a sua privacidade.</p>
     <p xml:lang="pt-BR">O KDE Itinerary é um assistente de viagens digital com prioridade na proteção de sua privacidade.</p>
     <p xml:lang="ru">Маршруты KDE — это цифровой помощник в путешествиях, в котором сделан акцент на обеспечении конфиденциальности пользователя.</p>
+    <p xml:lang="sa">KDE Itinerary एकः डिजिटलयात्रासहायकः अस्ति यस्य प्राथमिकता भवतः गोपनीयतायाः रक्षणं भवति ।</p>
     <p xml:lang="sl">KDE Itinerary je digitalni pomočnik pri potovanju s pomembno zasnovo pri zaščiti vaše zasebnosti.</p>
     <p xml:lang="sv">KDE-resplan är ett digitalt resehjälpprogram som prioriterar att skydda din integritet.</p>
     <p xml:lang="tr">KDE Yol Kılavuzu, gizliliğinize öncelik veren bir sayısal yolculuk asistanıdır.</p>
@@ -136,6 +139,7 @@
     <p xml:lang="pt">Funcionalidades:</p>
     <p xml:lang="pt-BR">Funcionalidades:</p>
     <p xml:lang="ru">Возможности:</p>
+    <p xml:lang="sa">गुणाः:</p>
     <p xml:lang="sk">Funkcie:</p>
     <p xml:lang="sl">Zmožnosti:</p>
     <p xml:lang="sv">Funktioner:</p>
@@ -169,6 +173,7 @@
       <li xml:lang="pt">Visão cronológica de um itinerário de viagens unificado com o agrupamento automático das viagens.</li>
       <li xml:lang="pt-BR">Exibição cronológica de um itinerário de viagem unificado com agrupamento automático de viagem.</li>
       <li xml:lang="ru">Просмотр расписания унифицированного маршрута с автоматической группировкой по поездкам.</li>
+      <li xml:lang="sa">स्वचालितयात्रासमूहीकरणेन सह एकीकृतयात्रायात्रासूचिकायाः समयरेखादृश्यम्।</li>
       <li xml:lang="sl">Pogled časovnice poenotenega plana potovanja s samodejnim grupiranjem potovanj.</li>
       <li xml:lang="sv">TIdslinjevisning av en enhetlig resplan med automatisk resegruppering.</li>
       <li xml:lang="tr">Otomatik yolculuk gruplandırması ile birleşik yolcu belgelerinin zaman akışı görünümü.</li>
@@ -200,6 +205,7 @@
       <li xml:lang="pt">Suporta as reservas de comboios, autocarros e voos, assim como dos hotéis, restaurantes, eventos e alugueres de carros.</li>
       <li xml:lang="pt-BR">Suporta reservas de trens, ônibus e voos, bem como reservas de hotéis, restaurantes, eventos e aluguel de veículos.</li>
       <li xml:lang="ru">Поддержка заказа билетов на поезда, автобусы и самолеты, а также бронирования прокатных автомобилей, гостиничных номеров, мест в ресторанах и посещения мероприятий.</li>
+      <li xml:lang="sa">रेलयानस्य, बसयानस्य, विमानस्य च बुकिंगस्य समर्थनं करोति तथा च होटेल्, रेस्टोरन्ट्, इवेण्ट्, किरायेण कारस्य आरक्षणं च समर्थयति ।</li>
       <li xml:lang="sl">Podpira rezervacije vlakov, avtobusov in letal kot tudi hotelov, restavracij, dogodkov in rezervacij najema avtomobilov.</li>
       <li xml:lang="sv">Stöder tåg-, buss-, och flygbokningar samt bokning av hotell, restauranger, evenemang och hyrbilar.</li>
       <li xml:lang="tr">Tren, otobüs ve uçak rezervasyonlarının yanı sıra otel, restoran ve kiralık araç rezervasyonlarını da destekler.</li>
@@ -231,6 +237,7 @@
       <li xml:lang="pt">Gestão de cartões de embarque.</li>
       <li xml:lang="pt-BR">Gerenciamento de cartões de embarque.</li>
       <li xml:lang="ru">Управление посадочными талонами.</li>
+      <li xml:lang="sa">बोर्डिंग पास प्रबन्धन।</li>
       <li xml:lang="sk">Správa leteniek</li>
       <li xml:lang="sl">Upravljanje vstopnih kuponov.</li>
       <li xml:lang="sv">Hantering av boardingkort.</li>
@@ -263,6 +270,7 @@
       <li xml:lang="pt">Suporta a gestão de bilhetes para reservas multi-viajantes e multi-bilhetes.</li>
       <li xml:lang="pt-BR">Suporta o gerenciamento de bilhetes para reservas de vários viajantes e multibancos.</li>
       <li xml:lang="ru">Поддержка управления работой с билетами для заказа с пересадками и одновременного заказа нескольких билетов.</li>
+      <li xml:lang="sa">बहुयात्री-बहु-टिकट-बुकिंग्-कृते टिकट-प्रबन्धनस्य समर्थनं करोति ।</li>
       <li xml:lang="sl">Podpira upravljanje vozovnic za več potnikov in rezervacij za več vozovnic.</li>
       <li xml:lang="sv">Stöder biljetthantering för bokningar med flera resenärer och biljetter.</li>
       <li xml:lang="tr">Çok yolculu ve çok biletli rezervasyonlar için bilet yönetimi desteği.</li>
@@ -294,6 +302,7 @@
       <li xml:lang="pt">Extracção automática dos dados da reserva a partir de vários formatos de entrada, operando localmente no seu dispositivo.</li>
       <li xml:lang="pt-BR">Extração automática de dados de reserva de vários formatos de entrada, realizada localmente no seu dispositivo.</li>
       <li xml:lang="ru">Автоматическое извлечение данных бронирования из различных входных форматов, которое происходит непосредственно на устройстве пользователя.</li>
+      <li xml:lang="sa">विविधनिवेशस्वरूपेभ्यः स्वचालितं बुकिंगदत्तांशनिष्कासनं, यत् भवतः उपकरणे स्थानीयरूपेण क्रियते ।</li>
       <li xml:lang="sl">Avtomatsko pridobivanje podatkov iz različnih vhodnih formatov lokalno v vaši napravi.</li>
       <li xml:lang="sv">Automatisk extrahering av bokningsinformation från diverse indataformat, utförd lokalt på din enhet.</li>
       <li xml:lang="tr">Yerel olarak aygıtınızda gerçekleştirilen, çeşitli girdi biçimlerinden otomatik rezervasyon verisi çıkarımı.</li>
@@ -325,6 +334,7 @@
       <li xml:lang="pt">Informações em tempo-real de atrasos e mudança de plataformas nos comboios.</li>
       <li xml:lang="pt-BR">Atraso em tempo real e informações de mudança de plataforma para trens.</li>
       <li xml:lang="ru">Информация о задержках и изменениях платформ для поездов.</li>
+      <li xml:lang="sa">रेलयानानां कृते वास्तविकसमयविलम्बः, मञ्चपरिवर्तनस्य सूचना च।</li>
       <li xml:lang="sl">Informacije o zamudah v realnem času in o spremembah peronov za vlake.</li>
       <li xml:lang="sv">Information i realtid om fördröjningar och plattformsändringar för tåg.</li>
       <li xml:lang="tr">Trenler için gerçek zamanlı gecikme ve platform değişikliği bilgisi.</li>
@@ -356,6 +366,7 @@
       <li xml:lang="pt">Previsão meteorológica no destino, ao longo da sua viagem.</li>
       <li xml:lang="pt-BR">Previsão meteorológica para os destinos de sua viagem.</li>
       <li xml:lang="ru">Показ прогноза погоды в пункте назначения по ходу путешествия.</li>
+      <li xml:lang="sa">भवतः यात्रायाः गन्तव्यस्थानस्य मौसमस्य पूर्वानुमानम्।</li>
       <li xml:lang="sl">Vremenska napoved za cilje ob vašem potovanju.</li>
       <li xml:lang="sv">Väderprognos för mål längs resan.</li>
       <li xml:lang="tr">Yolculuk noktalarınız için hava durumu tahmini.</li>
@@ -387,6 +398,7 @@
       <li xml:lang="pt">Controlo total sobre todo o acesso 'online'.</li>
       <li xml:lang="pt-BR">Controle completo sobre todos os acessos online.</li>
       <li xml:lang="ru">Полное управление всеми параметрами доступа в Интернет.</li>
+      <li xml:lang="sa">सर्वेषां ऑनलाइन-प्रवेशस्य पूर्णं नियन्त्रणम्।</li>
       <li xml:lang="sl">Popoln nadzor nad vsemi spletnimi dostopi.</li>
       <li xml:lang="sv">Fullständig kontroll över alla nätåtkomster.</li>
       <li xml:lang="tr">Tüm çevrimiçi erişim üzerinde tam denetim.</li>
@@ -418,6 +430,7 @@
       <li xml:lang="pt">Selecção de ligações de comboio alternativas para bilhetes não vinculados ou para ligações perdidas.</li>
       <li xml:lang="pt-BR">Seleção de conexões ferroviárias alternativas em bilhetes não consolidados ou em conexões perdidas.</li>
       <li xml:lang="ru">Выбор альтернативных железнодорожных маршрутов при наличии проездного илиопоздании на пересадку.</li>
+      <li xml:lang="sa">अनबाउण्ड् टिकटेषु अथवा गम्यमानेषु संयोजनेषु वैकल्पिकरेलसंयोजनानां चयनम्।</li>
       <li xml:lang="sl">Izbira alternativnih železniških povezav na nevezanih vozovnicah ali vozovnicah zamujenih povezav.</li>
       <li xml:lang="sv">Val av alternativa tågförbindelser på öppna biljetter eller vid missade anslutningar.</li>
       <li xml:lang="tr">Açık biletler veya kaçırılan aktarmalar için alternatif tren önerileri seçimi.</li>
@@ -449,6 +462,7 @@
       <li xml:lang="pt">Navegação local em transportes terrestres entre elementos do seu itinerário.</li>
       <li xml:lang="pt-BR">Navegação por transporte terrestre local entre elementos do seu itinerário. </li>
       <li xml:lang="ru">Навигация по местному наземному транспорту между фрагментами маршрута.</li>
+      <li xml:lang="sa">भवतः यात्रासूचनायाः तत्त्वानां मध्ये स्थानीयं भूपरिवहनयानयात्रा।</li>
       <li xml:lang="sl">Lokalna navigacija po zemeljskih prevozi med elementi vašega plana potovanja.</li>
       <li xml:lang="sv">Navigering för lokal marktransport mellan delar av resplanen.</li>
       <li xml:lang="tr">Yolcu belgesi ögeleriniz arasında yerel yer ulaşımı dolaşımı.</li>
@@ -479,6 +493,7 @@
       <li xml:lang="pt">Área de disposição dos lugares do comboio (apenas com alguns operadores).</li>
       <li xml:lang="pt-BR">Visualização do layout do vagão (somente para alguns operadores).</li>
       <li xml:lang="ru">Просмотр мест в вагоне поезда (только для некоторых операторов).</li>
+      <li xml:lang="sa">रेलयानस्य कोचविन्यासदृश्यं (केवलं केषाञ्चन संचालकानाम् कृते)।</li>
       <li xml:lang="sl">Pogled postavitve vlaka (samo za nekatere operaterje).</li>
       <li xml:lang="sv">Tågvagnslayout (bara för vissa operatörer).</li>
       <li xml:lang="tr">Tren vagonu yerleşimi görünümü (yalnızca bazı operatörlerde).</li>
@@ -509,6 +524,7 @@
       <li xml:lang="pt">Mapas das estações de comboio e aeroportos por pisos, baseados em dados do OpenStreetMap.</li>
       <li xml:lang="pt-BR">Mapas de estações de trem e aeroportos por andar com base em dados do OpenStreetMap.</li>
       <li xml:lang="ru">Поэтажные карты железнодорожных станций и аэропортов на основе данных OpenStreetMap.</li>
+      <li xml:lang="sa">OpenStreetMap आँकडानां आधारेण रेलस्थानकस्य विमानस्थानकस्य च प्रतितलस्य मानचित्रम् ।</li>
       <li xml:lang="sl">Zemljevidi železniške postaje in letališča po nadstropjih na podlagi podatkov OpenStreetMap.</li>
       <li xml:lang="sv">Tågstations- och flygplatskartor för varje våning baserade på data från OpenStreetMap.</li>
       <li xml:lang="tr">OpenStreetMap verisine dayalı tren istasyonu ve havaalanı kat haritaları.</li>
@@ -539,6 +555,7 @@
       <li xml:lang="pt">Poderá mostrar as bicicletas de aluguer com bloqueios ou livres no mapa das estações dos correios.</li>
       <li xml:lang="pt-BR">As bicicletas de aluguel disponíveis em docas ou avulsas podem ser exibidas no mapa da estação de trem.</li>
       <li xml:lang="ru">На карте железнодорожной станции могут быть показаны доступные прокатныевелосипеды со стационарной или произвольной парковкой.</li>
+      <li xml:lang="sa">उपलब्धानि गोदी-आधारितानि अथवा मुक्त-प्लवमानानि किराया-द्विचक्रिकाः रेलस्थानकस्य मानचित्रे प्रदर्शयितुं शक्यन्ते ।</li>
       <li xml:lang="sl">Razpoložljiva kolesa za najem na stebričkih ali prosto dostopna kolesa na zemljevidu železniške postaje.</li>
       <li xml:lang="sv">Tillgängliga stationsbaserade eller fristående hyrcyklar kan visas på tågstationskartan.</li>
       <li xml:lang="tr">Tren istasyonu haritasında rıhtımlı veya serbest bırakılmış kiralık bisiklet bilgisi görüntülenebilir.</li>
@@ -570,6 +587,7 @@
       <li xml:lang="pt">Estatísticas pessoais da viagem para acompanhar o impacto ambiental.</li>
       <li xml:lang="pt-BR">Estatísticas pessoais da viagem para monitorar o impacto ambiental.</li>
       <li xml:lang="ru">Личная статистика путешествий для наблюдения за воздействием на окружающую среду.</li>
+      <li xml:lang="sa">पर्यावरणप्रभावस्य निरीक्षणार्थं व्यक्तिगतयात्रासांख्यिकी।</li>
       <li xml:lang="sl">Osebna statistika potovanj za spremljanje vplivov na okolje.</li>
       <li xml:lang="sv">Personlig resestatistik för att övervaka miljöpåverkan.</li>
       <li xml:lang="tr">Çevre etkisini izlemek üzere kişisel yolculuk istatistikleri.</li>
@@ -602,6 +620,7 @@
     <p xml:lang="pt">O KDE Itinerary funciona melhor com o 'plugin' de extracção de itinerários e com o KDE Connect, o Nextcloud Hub ou o DavDroid.</p>
     <p xml:lang="pt-BR">O KDE Itinerary funciona melhor junto com o plugin de extração de itinerário do KMail e KDE Connect ou Nextcloud Hub e DavDroid.</p>
     <p xml:lang="ru">Программа «Маршруты KDE» лучше всего работает с модулем извлечения маршрутов KMail и KDE Connect или Nextcloud Hub и DavDroid.</p>
+    <p xml:lang="sa">KDE यात्रासूची KMail इत्यस्य यात्रासूचीनिष्कासनप्लग-इन् तथा KDE Connect, अथवा Nextcloud Hub तथा DavDroid इत्येतयोः पार्श्वे सर्वोत्तमरूपेण कार्यं करोति ।</p>
     <p xml:lang="sl">KDE Itinerary deluje najbolje skupaj z dodatki z vtičnikom za ekstrakcijo podatkov v KMail in KDE Connect ali Nextcloud Hub in DavDroid.</p>
     <p xml:lang="sv">KDE-resplan fungerar bäst tillsammans med Kmails insticksprogram för extrahering av resplan och KDE-anslut, eller Nextcloud-navet och DavDroid.</p>
     <p xml:lang="tr">KDE Yol Kılavuzu, en iyi olarak K Posta’nın yolculuk belgesi çıkarma eklentisi ve KDE Bağlan, Nextcloud Hub veya DavDroid ile birlikte çalışır.</p>
@@ -636,6 +655,7 @@
       <caption xml:lang="pt">Vista cronológica</caption>
       <caption xml:lang="pt-BR">Exibição cronológica</caption>
       <caption xml:lang="ru">Просмотр расписания</caption>
+      <caption xml:lang="sa">समयरेखादृश्यम्</caption>
       <caption xml:lang="sl">Pogled časovnice</caption>
       <caption xml:lang="sv">Tidslinjevisning</caption>
       <caption xml:lang="tr">Zaman akışı görünümü</caption>
@@ -670,6 +690,7 @@
       <caption xml:lang="pt">Vista do cartão de embarque</caption>
       <caption xml:lang="pt-BR">Visualização do cartão de embarque</caption>
       <caption xml:lang="ru">Просмотр посадочных талонов</caption>
+      <caption xml:lang="sa">बोर्डिंग पास दृश्य</caption>
       <caption xml:lang="sl">Pogled vstopnega kupona</caption>
       <caption xml:lang="sv">Visning av boardingkort</caption>
       <caption xml:lang="tr">Biniş kartı görünümü</caption>
@@ -703,6 +724,7 @@
       <caption xml:lang="pt">Área de disposição dos comboios que realça o lugar com uma reserva</caption>
       <caption xml:lang="pt-BR">Visualização do layout do trem destacando o vagão com reserva de assento</caption>
       <caption xml:lang="ru">Просмотр мест в вагонах поезда с подсветкой вагона с забронированным местом</caption>
+      <caption xml:lang="sa">आसनआरक्षणेन सह कोचं प्रकाशयन् रेलविन्यासदृश्यम्</caption>
       <caption xml:lang="sl">Pogled postavitve vlaka s poudarjenim vagonom in rezervacijo sedeža</caption>
       <caption xml:lang="sv">Tågplatsvisning som färglägger vagnen med platsbokning</caption>
       <caption xml:lang="tr">Koltuk rezervasyonunu vurgulayan vagon görünümlü tren yerleşimi</caption>
@@ -736,6 +758,7 @@
       <caption xml:lang="pt">Mapa das plataformas das estações de comboio que realça as plataformas de partidas</caption>
       <caption xml:lang="pt-BR">Mapa da plataforma da estação de trem, destacando as plataformas de chegada e partida</caption>
       <caption xml:lang="ru">Карта платформ железнодорожной станции с подсветкой платформ прибытия и отправления</caption>
+      <caption xml:lang="sa">रेलस्थानकस्य मञ्चनक्शा, आगमनप्रस्थानमञ्चान् प्रकाशयति</caption>
       <caption xml:lang="sl">Zemljevid perona železniške postaje s poudarkom na peronih za prihod in odhod</caption>
       <caption xml:lang="sv">Tågstationskarta för plattformar, som markerar ankomst- och avgångsplattformar</caption>
       <caption xml:lang="tr">Varış ve kalkış platformlarını vurgulayan tren istasyonu platform haritası</caption>
@@ -769,6 +792,7 @@
       <caption xml:lang="pt">Mapa das estações de comboios que mostra a disponibilidade em tempo-real das bicicletas de aluguer</caption>
       <caption xml:lang="pt-BR">Mapa da estação de trem mostrando a disponibilidade em tempo real de aluguel de bicicletas</caption>
       <caption xml:lang="ru">Карта железнодорожной станции с показом доступности прокатных велосипедов в режиме реального времени</caption>
+      <caption xml:lang="sa">किरायाद्विचक्रिकाणां वास्तविकसमये उपलब्धतां दर्शयति रेलस्थानकस्य मानचित्रम्</caption>
       <caption xml:lang="sl">Zemljevid železniške postaje sproti prikazuje razpoložljivost koles za najem</caption>
       <caption xml:lang="sv">Tågstationskarta som visar tillgängliga hyrcyklar i realtid.</caption>
       <caption xml:lang="tr">Kiralık bisikletlerin kullanılabilirliğini gösteren tren istasyonu haritası</caption>
@@ -802,6 +826,7 @@
       <caption xml:lang="pt">Informações detalhadas para a entidade de selecção no mapa das estações de comboios</caption>
       <caption xml:lang="pt-BR">Informação detalhada para a entidade selecionada no mapa da estação de trem</caption>
       <caption xml:lang="ru">Подробные сведения о выбранном объекте на карте железнодорожной станции</caption>
+      <caption xml:lang="sa">रेलस्थानकस्य मानचित्रे चयनितस्य सत्तायाः विस्तृतसूचना</caption>
       <caption xml:lang="sl">Podrobne informacije za izbrani predmet na zemljevidu železniške postaje</caption>
       <caption xml:lang="sv">Detaljerad information om objektet som valts på tågstationskartan</caption>
       <caption xml:lang="tr">Tren istasyonu haritasında seçili varlık için ayrıntılı bilgi</caption>
@@ -836,6 +861,7 @@
       <caption xml:lang="pt">Área de estatísticas de viagens</caption>
       <caption xml:lang="pt-BR">Visualização de estatísticas da viagem</caption>
       <caption xml:lang="ru">Просмотр статистики путешествий</caption>
+      <caption xml:lang="sa">यात्रा सांख्यिकी दृश्य</caption>
       <caption xml:lang="sl">Pogled potovalne statistike</caption>
       <caption xml:lang="sv">Visning av resestatistik</caption>
       <caption xml:lang="tr">Yolculuk istatistikleri görünümü</caption>
