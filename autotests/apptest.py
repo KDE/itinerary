@@ -55,12 +55,6 @@ class ItineraryTest(ItineraryTestCase):
         self.assertFalse(self.driver.find_element(by=AppiumBy.NAME, value="Light").is_enabled())
         self.goBack()
 
-    def test_statistics(self):
-        self.openGlobalDrawer()
-        self.driver.find_element(by=AppiumBy.NAME, value="Statistics").click()
-        # TODO year combo box inaccessible
-        self.goBack()
-
     def test_about(self):
         self.openGlobalDrawer()
         self.driver.find_element(by=AppiumBy.NAME, value="About").click()

@@ -22,10 +22,6 @@ class SettingsTest(ItineraryTestCase):
 
         # TODO home country combo box not accessible
 
-        self.driver.find_element(by=AppiumBy.NAME, value="Favorite Locations").click()
-        # TODO favorite location combo box inaccessbile
-        self.goBack()
-
         trafficData = self.driver.find_element(by=AppiumBy.NAME, value="Query Traffic Data")
         self.assertEqual(trafficData.get_attribute("checked"), "false")
         trafficData.send_keys(Keys.SPACE) # TODO there is no toggle()?

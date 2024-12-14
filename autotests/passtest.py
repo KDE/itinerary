@@ -15,15 +15,17 @@ import time
 class PassTest(ItineraryTestCase):
     def setUp(self):
         # open the passes & programs page
-        self.driver.find_element(by=AppiumBy.NAME, value="Passes & Programs").click()
+        self.driver.find_element(by=AppiumBy.NAME, value="My Data").click()
+
+        self.driver.find_element(by=AppiumBy.NAME, value="Manage your Passes").click()
 
     def test_programMembership(self):
-        self.assertTrue(self.driver.find_element(by=AppiumBy.NAME, value="Import…").is_displayed())
-        self.assertTrue(self.driver.find_element(by=AppiumBy.NAME, value="Import…").is_enabled())
-        self.driver.find_element(by=AppiumBy.NAME, value="Import…").click()
+        self.assertTrue(self.driver.find_element(by=AppiumBy.NAME, value="Import From File").is_displayed())
+        self.assertTrue(self.driver.find_element(by=AppiumBy.NAME, value="Import From File").is_enabled())
+        self.driver.find_element(by=AppiumBy.NAME, value="Import From File").click()
         self.openFile("data/bahncard.json")
         self.driver.find_element(by=AppiumBy.NAME, value="Import selection").click()
-        self.assertFalse(self.driver.find_element(by=AppiumBy.NAME, value="Import…").is_displayed())
+        self.assertFalse(self.driver.find_element(by=AppiumBy.NAME, value="Import From File").is_displayed())
         self.driver.find_element(by=AppiumBy.NAME, value="BahnCard 25 (2. Kl.) (BC25)").click()
         self.driver.find_element(by=AppiumBy.NAME, value="Edit").click()
 
@@ -50,7 +52,7 @@ class PassTest(ItineraryTestCase):
         # self.assertFalse(self.driver.find_element(by=AppiumBy.NAME, value="BahnCard 25 (2. Kl.) (BC25)").is_displayed())
 
     def test_addProgramMembership(self):
-        self.driver.find_element(by=AppiumBy.NAME, value="Add Program Membership…").click()
+        self.driver.find_element(by=AppiumBy.NAME, value="Add Manually").click()
         saveButton = self.driver.find_element(by=AppiumBy.NAME, value="Save")
         self.assertFalse(saveButton.is_enabled())
 
