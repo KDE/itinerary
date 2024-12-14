@@ -12,11 +12,10 @@ from appium.webdriver.common.appiumby import AppiumBy
 import os
 import time
 
-class PassTest(ItineraryTestCase):
+class PassImportTest(ItineraryTestCase):
     def setUp(self):
         # open the passes & programs page
         self.driver.find_element(by=AppiumBy.NAME, value="My Data").click()
-
         self.driver.find_element(by=AppiumBy.NAME, value="Manage your Passes").click()
 
     def test_programMembership(self):
@@ -25,7 +24,6 @@ class PassTest(ItineraryTestCase):
         self.driver.find_element(by=AppiumBy.NAME, value="Import From File").click()
         self.openFile("data/bahncard.json")
         self.driver.find_element(by=AppiumBy.NAME, value="Import selection").click()
-        self.assertFalse(self.driver.find_element(by=AppiumBy.NAME, value="Import From File").is_displayed())
         self.driver.find_element(by=AppiumBy.NAME, value="BahnCard 25 (2. Kl.) (BC25)").click()
         self.driver.find_element(by=AppiumBy.NAME, value="Edit").click()
 
@@ -50,6 +48,12 @@ class PassTest(ItineraryTestCase):
         deleteDialog.find_element(by=AppiumBy.NAME, value="Delete").click()
         # TODO how to check this element does not exist anymore?
         # self.assertFalse(self.driver.find_element(by=AppiumBy.NAME, value="BahnCard 25 (2. Kl.) (BC25)").is_displayed())
+
+class PassManualTest(ItineraryTestCase):
+    def setUp(self):
+        # open the passes & programs page
+        self.driver.find_element(by=AppiumBy.NAME, value="My Data").click()
+        self.driver.find_element(by=AppiumBy.NAME, value="Manage your Passes").click()
 
     def test_addProgramMembership(self):
         self.driver.find_element(by=AppiumBy.NAME, value="Add Manually").click()

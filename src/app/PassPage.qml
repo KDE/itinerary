@@ -35,7 +35,7 @@ FormCard.FormCardPage {
             icon.name: "list-add-symbolic"
             onClicked: {
                 const editorComponent = Qt.createComponent("org.kde.itinerary", "ProgramMembershipEditor");
-                applicationWindow().pageStack.push(editorComponent, {
+                root.QQC2.ApplicationWindow.window.pageStack.push(editorComponent, {
                     programMembership: Factory.makeProgramMembership(),
                     passId: "",
                     pageStack: pageStack

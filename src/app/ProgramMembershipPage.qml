@@ -46,7 +46,7 @@ FormCard.FormCardPage {
                     icon.name: "edit-delete"
                     onTriggered: {
                         PassManager.remove(passId)
-                        applicationWindow().pageStack.pop();
+                        root.QQC2.ApplicationWindow.window.pageStack.pop();
                     }
                 }
             ]
@@ -102,7 +102,7 @@ FormCard.FormCardPage {
                     icon.name: "edit-copy"
                     onClicked: {
                         Clipboard.saveText(programMembership.membershipNumber);
-                        applicationWindow().showPassiveNotification(i18n("Program membership number copied to clipboard"));
+                        root.QQC2.ApplicationWindow.window.showPassiveNotification(i18n("Program membership number copied to clipboard"));
                     }
 
                     QQC2.ToolTip.text: text
@@ -145,7 +145,7 @@ FormCard.FormCardPage {
                 icon.name: passButton.passId !== "" ? "image://org.kde.pkpass/" + passButton.passId + "/icon" : ""
                 text: i18n("Show Pass")
                 visible: PkPassManager.hasPass(passButton.passId)
-                onClicked: applicationWindow().pageStack.push(pkpassComponent, {"passId": passButton.passId });
+                onClicked: root.QQC2.ApplicationWindow.window.pageStack.push(pkpassComponent, {"passId": passButton.passId });
 
                 Component {
                     id: pkpassComponent
@@ -159,7 +159,7 @@ FormCard.FormCardPage {
                 text: i18n("Edit")
                 onClicked: {
                     const programMembershipEditor = Qt.createComponent("org.kde.itinerary", "ProgramMembershipEditor");
-                    applicationWindow().pageStack.push(programMembershipEditor, {
+                    root.QQC2.ApplicationWindow.window.pageStack.push(programMembershipEditor, {
                         passId: root.passId,
                         programMembership: root.programMembership,
                         pageStack: pageStack,

@@ -48,7 +48,7 @@ FormCard.FormCardPage {
                     icon.name: "edit-delete"
                     onTriggered: {
                         PassManager.remove(passId)
-                        applicationWindow().pageStack.pop();
+                        root.QQC2.ApplicationWindow.window.pageStack.pop();
                     }
                 }
             ]
