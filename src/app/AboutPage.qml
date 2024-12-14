@@ -17,8 +17,6 @@ FormCard.AboutPage {
 
     title: i18n("About")
 
-    aboutData: About
-
     data: ListModel {
         id: licenseModel
         ListElement {

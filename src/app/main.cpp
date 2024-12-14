@@ -248,10 +248,6 @@ void registerApplicationSingletons()
     REGISTER_SINGLETON_GADGET_FACTORY(UnitConversion)
     REGISTER_SINGLETON_GADGET_FACTORY(Util)
 
-    qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "About", [](QQmlEngine *engine, QJSEngine *) -> QJSValue {
-        return engine->toScriptValue(KAboutData::applicationData());
-    });
-
     qmlRegisterSingletonType<Clipboard>("org.kde.itinerary", 1, 0, "Clipboard", [](QQmlEngine *, QJSEngine *) -> QObject * {
         return new Clipboard;
     });
