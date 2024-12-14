@@ -18,19 +18,21 @@ FormCard.FormCardPage {
     title: i18n("Passes and Programs")
 
     FormCard.FormHeader {
-        title: i18nc("@title", "Add Program Membership…")
+        title: i18nc("@title", "Add Program Membership")
     }
 
     FormCard.FormCard {
         FormCard.FormButtonDelegate {
-            text: i18nc("@action:button", "Import from File")
+            text: i18nc("@action:button", "Import From File")
+            icon.name: "document-import-symbolic"
             onClicked: importFileDialog.open()
         }
 
         FormCard.FormDelegateSeparator {}
 
         FormCard.FormButtonDelegate {
-            text: i18nc("@action:button", "Manually import")
+            text: i18nc("@action:button", "Add Manually")
+            icon.name: "list-add-symbolic"
             onClicked: {
                 const editorComponent = Qt.createComponent("org.kde.itinerary", "ProgramMembershipEditor");
                 applicationWindow().pageStack.push(editorComponent, {

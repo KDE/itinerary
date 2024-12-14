@@ -201,6 +201,7 @@ ecm_add_qml_module(itinerary-app URI org.kde.itinerary NO_PLUGIN QML_FILES
     MatrixRoomSelectionSheet.qml
     MatrixKeyVerificationPage.qml
     NavigationBar.qml
+    MyDataPage.qml
     OnlineImportPage.qml
     PassPage.qml
     PassDelegate.qml
@@ -210,7 +211,6 @@ ecm_add_qml_module(itinerary-app URI org.kde.itinerary NO_PLUGIN QML_FILES
     ProgramMembershipEditorCard.qml
     ProgramMembershipEditor.qml
     ProgramMembershipPage.qml
-    Profile.qml
     PublicTransportBackendPage.qml
     PublicTransportFeatureList.qml
     ReservationDocumentsCard.qml
@@ -305,7 +305,7 @@ if (ANDROID)
         dialog-ok
         document-edit
         document-export-symbolic
-        document-import
+        document-import-symbolic
         document-open
         document-save
         documentinfo

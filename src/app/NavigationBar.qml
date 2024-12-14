@@ -41,7 +41,7 @@ Kirigami.NavigationTabBar {
             icon.name: "user-identity-symbolic"
             text: i18nc("@title:tab", "My Data")
             pagePool: pagepool
-            page: Qt.resolvedUrl("Profile.qml")
+            page: Qt.resolvedUrl("MyDataPage.qml")
         },
         Kirigami.Action {
             text: i18nc("@title:tab", "Current Ticket")

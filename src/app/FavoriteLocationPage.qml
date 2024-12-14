@@ -78,7 +78,7 @@ Kirigami.Page {
         },
         Kirigami.Action {
             text: i18n("Import from GPX")
-            icon.name: "document-import"
+            icon.name: "document-import-symbolic"
             onTriggered: favoriteGpxImportDialog.open()
         }
     ]
