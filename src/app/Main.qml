@@ -257,7 +257,11 @@ Kirigami.ApplicationWindow {
                 });
                 break;
             case "live":
-                liveAction.trigger();
+                if (onboardStatus.status === OnboardStatus.Onboard) {
+                    liveAction.trigger();
+                } else {
+                    root.showPassiveNotification(i18nc("@info:status", "No onboard information available."));
+                }
                 break;
             case "journeyRequest":
                 properties["publicTransportManager"] = LiveDataManager.publicTransportManager;
