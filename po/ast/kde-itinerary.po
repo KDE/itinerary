@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-06 00:41+0000\n"
+"POT-Creation-Date: 2024-12-15 00:41+0000\n"
 "PO-Revision-Date: 2023-11-07 21:26+0100\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: \n"
@@ -32,54 +32,54 @@ msgstr "alministradores@softastur.org"
 msgid "About"
 msgstr ""
 
-#: app/AboutPage.qml:146
+#: app/AboutPage.qml:144
 #, kde-format
 msgid "Copyright: %1"
 msgstr ""
 
-#: app/AboutPage.qml:152
+#: app/AboutPage.qml:150
 #, kde-format
 msgid "Homepage: <a href=\"%1\">%1</a>"
 msgstr ""
 
-#: app/AboutPage.qml:159
+#: app/AboutPage.qml:157
 #, kde-format
 msgid "License: <a href=\"https://spdx.org/licenses/%1.html\">%2</a>"
 msgstr ""
 
-#: app/AboutPage.qml:178
+#: app/AboutPage.qml:176
 #, kde-format
 msgid "License: <a href=\"%2\">%1</a>"
 msgstr ""
 
-#: app/AboutPage.qml:187
+#: app/AboutPage.qml:185
 #, kde-format
 msgid ""
 "KDE Itinerary is developed by the KDE community as free software and uses "
 "the components listed below."
 msgstr ""
 
-#: app/AboutPage.qml:198
+#: app/AboutPage.qml:196
 #, kde-format
 msgid "KDE Itinerary uses public transport data from the following sources."
 msgstr ""
 
-#: app/AboutPage.qml:209
+#: app/AboutPage.qml:207
 #, kde-format
 msgid "Developer information"
 msgstr ""
 
-#: app/AboutPage.qml:215
+#: app/AboutPage.qml:213
 #, kde-format
 msgid "Application version: %1"
 msgstr ""
 
-#: app/AboutPage.qml:231
+#: app/AboutPage.qml:229
 #, kde-format
 msgid "Extractor capabilities:"
 msgstr ""
 
-#: app/AboutPage.qml:236
+#: app/AboutPage.qml:234
 #, kde-format
 msgid "Extractor capabilities copied to clipboard"
 msgstr ""
@@ -1389,7 +1389,7 @@ msgstr ""
 msgid "Do you really want to delete this pass?"
 msgstr ""
 
-#: app/gpxexport.cpp:33 app/main.cpp:326 app/Main.qml:21 app/Main.qml:161
+#: app/gpxexport.cpp:33 app/main.cpp:322 app/Main.qml:21 app/Main.qml:161
 #, kde-format
 msgid "KDE Itinerary"
 msgstr ""
@@ -2413,23 +2413,23 @@ msgstr ""
 msgid "Type N"
 msgstr ""
 
-#: app/main.cpp:334
+#: app/main.cpp:330
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr ""
 
-#: app/main.cpp:335
+#: app/main.cpp:331
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr ""
 
-#: app/main.cpp:342
+#: app/main.cpp:338
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr ""
 
-#: app/main.cpp:347
+#: app/main.cpp:343
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."

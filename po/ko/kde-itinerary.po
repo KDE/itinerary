@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-06 00:41+0000\n"
+"POT-Creation-Date: 2024-12-15 00:41+0000\n"
 "PO-Revision-Date: 2024-12-09 23:39+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -32,27 +32,27 @@ msgstr "kde@peremen.name"
 msgid "About"
 msgstr "정보"
 
-#: app/AboutPage.qml:146
+#: app/AboutPage.qml:144
 #, kde-format
 msgid "Copyright: %1"
 msgstr "저작권: %1"
 
-#: app/AboutPage.qml:152
+#: app/AboutPage.qml:150
 #, kde-format
 msgid "Homepage: <a href=\"%1\">%1</a>"
 msgstr "홈페이지: <a href=\"%1\">%1</a>"
 
-#: app/AboutPage.qml:159
+#: app/AboutPage.qml:157
 #, kde-format
 msgid "License: <a href=\"https://spdx.org/licenses/%1.html\">%2</a>"
 msgstr "라이선스: <a href=\"https://spdx.org/licenses/%1.html\">%2</a>"
 
-#: app/AboutPage.qml:178
+#: app/AboutPage.qml:176
 #, kde-format
 msgid "License: <a href=\"%2\">%1</a>"
 msgstr "라이선스: <a href=\"%2\">%1</a>"
 
-#: app/AboutPage.qml:187
+#: app/AboutPage.qml:185
 #, kde-format
 msgid ""
 "KDE Itinerary is developed by the KDE community as free software and uses "
@@ -61,27 +61,27 @@ msgstr ""
 "KDE 여행 정보는 KDE 커뮤니티에서 개발되는 자유 소프트웨어입니다. 다음 구성 요"
 "소를 사용합니다."
 
-#: app/AboutPage.qml:198
+#: app/AboutPage.qml:196
 #, kde-format
 msgid "KDE Itinerary uses public transport data from the following sources."
 msgstr "KDE 여행 정보는 다음에서 제공하는 대중 교통 데이터를 사용합니다."
 
-#: app/AboutPage.qml:209
+#: app/AboutPage.qml:207
 #, kde-format
 msgid "Developer information"
 msgstr "개발자 정보"
 
-#: app/AboutPage.qml:215
+#: app/AboutPage.qml:213
 #, kde-format
 msgid "Application version: %1"
 msgstr "앱 버전: %1"
 
-#: app/AboutPage.qml:231
+#: app/AboutPage.qml:229
 #, kde-format
 msgid "Extractor capabilities:"
 msgstr "추출기 기능:"
 
-#: app/AboutPage.qml:236
+#: app/AboutPage.qml:234
 #, kde-format
 msgid "Extractor capabilities copied to clipboard"
 msgstr "클립보드에 추출기 기능 복사됨"
@@ -1399,7 +1399,7 @@ msgstr "패스 삭제"
 msgid "Do you really want to delete this pass?"
 msgstr "이 패스를 삭제하시겠습니까?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:326 app/Main.qml:21 app/Main.qml:161
+#: app/gpxexport.cpp:33 app/main.cpp:322 app/Main.qml:21 app/Main.qml:161
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE 여행 정보"
@@ -2433,23 +2433,23 @@ msgstr "M형"
 msgid "Type N"
 msgstr "N형"
 
-#: app/main.cpp:334
+#: app/main.cpp:330
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "디지털 여행 도우미"
 
-#: app/main.cpp:335
+#: app/main.cpp:331
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "Copyright © The KDE Community"
 
-#: app/main.cpp:342
+#: app/main.cpp:338
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "지정한 페이지의 여행 정보 열기"
 
-#: app/main.cpp:347
+#: app/main.cpp:343
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."

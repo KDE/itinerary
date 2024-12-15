@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-06 00:41+0000\n"
+"POT-Creation-Date: 2024-12-15 00:41+0000\n"
 "PO-Revision-Date: 2024-11-15 12:21+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -35,27 +35,27 @@ msgstr "translation-team@basealt.ru"
 msgid "About"
 msgstr "О программе"
 
-#: app/AboutPage.qml:146
+#: app/AboutPage.qml:144
 #, kde-format
 msgid "Copyright: %1"
 msgstr "Авторские права: %1"
 
-#: app/AboutPage.qml:152
+#: app/AboutPage.qml:150
 #, kde-format
 msgid "Homepage: <a href=\"%1\">%1</a>"
 msgstr "Домашняя страница: <a href=\"%1\">%1</a>"
 
-#: app/AboutPage.qml:159
+#: app/AboutPage.qml:157
 #, kde-format
 msgid "License: <a href=\"https://spdx.org/licenses/%1.html\">%2</a>"
 msgstr "Лицензия: <a href=\"https://spdx.org/licenses/%1.html\">%2</a>"
 
-#: app/AboutPage.qml:178
+#: app/AboutPage.qml:176
 #, kde-format
 msgid "License: <a href=\"%2\">%1</a>"
 msgstr "Лицензия: <a href=\"%2\">%1</a>"
 
-#: app/AboutPage.qml:187
+#: app/AboutPage.qml:185
 #, kde-format
 msgid ""
 "KDE Itinerary is developed by the KDE community as free software and uses "
@@ -65,29 +65,29 @@ msgstr ""
 "программное обеспечение. В ней использованы компоненты, список которых "
 "приведён далее."
 
-#: app/AboutPage.qml:198
+#: app/AboutPage.qml:196
 #, kde-format
 msgid "KDE Itinerary uses public transport data from the following sources."
 msgstr ""
 "Программа «Маршруты KDE» использует данные об общественном транспорте из "
 "следующих источников."
 
-#: app/AboutPage.qml:209
+#: app/AboutPage.qml:207
 #, kde-format
 msgid "Developer information"
 msgstr "Информация для разработчиков"
 
-#: app/AboutPage.qml:215
+#: app/AboutPage.qml:213
 #, kde-format
 msgid "Application version: %1"
 msgstr "Версия приложения: %1"
 
-#: app/AboutPage.qml:231
+#: app/AboutPage.qml:229
 #, kde-format
 msgid "Extractor capabilities:"
 msgstr "Возможности средства извлечения:"
 
-#: app/AboutPage.qml:236
+#: app/AboutPage.qml:234
 #, kde-format
 msgid "Extractor capabilities copied to clipboard"
 msgstr "Возможности средства извлечения скопированы в буфер обмена"
@@ -1415,7 +1415,7 @@ msgstr "Удалить пропуск"
 msgid "Do you really want to delete this pass?"
 msgstr "Удалить этот пропуск?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:326 app/Main.qml:21 app/Main.qml:161
+#: app/gpxexport.cpp:33 app/main.cpp:322 app/Main.qml:21 app/Main.qml:161
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "Маршруты KDE"
@@ -2460,23 +2460,23 @@ msgstr "Тип M"
 msgid "Type N"
 msgstr "Тип N"
 
-#: app/main.cpp:334
+#: app/main.cpp:330
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Цифровой помощник в путешествиях"
 
-#: app/main.cpp:335
+#: app/main.cpp:331
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "© Сообщество KDE"
 
-#: app/main.cpp:342
+#: app/main.cpp:338
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Открыть программу на указанной странице"
 
-#: app/main.cpp:347
+#: app/main.cpp:343
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."

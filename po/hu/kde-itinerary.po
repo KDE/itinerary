@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-06 00:41+0000\n"
+"POT-Creation-Date: 2024-12-15 00:41+0000\n"
 "PO-Revision-Date: 2024-03-26 16:14+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -32,27 +32,27 @@ msgstr "ulysses@fsf.hu"
 msgid "About"
 msgstr "Névjegy"
 
-#: app/AboutPage.qml:146
+#: app/AboutPage.qml:144
 #, kde-format
 msgid "Copyright: %1"
 msgstr "Copyright: %1"
 
-#: app/AboutPage.qml:152
+#: app/AboutPage.qml:150
 #, kde-format
 msgid "Homepage: <a href=\"%1\">%1</a>"
 msgstr "Honlap: <a href=\"%1\">%1</a>"
 
-#: app/AboutPage.qml:159
+#: app/AboutPage.qml:157
 #, kde-format
 msgid "License: <a href=\"https://spdx.org/licenses/%1.html\">%2</a>"
 msgstr "Licenc: <a href=\"https://spdx.org/licenses/%1.html\">%2</a>"
 
-#: app/AboutPage.qml:178
+#: app/AboutPage.qml:176
 #, kde-format
 msgid "License: <a href=\"%2\">%1</a>"
 msgstr "Licenc: <a href=\"%2\">%1</a>"
 
-#: app/AboutPage.qml:187
+#: app/AboutPage.qml:185
 #, kde-format
 msgid ""
 "KDE Itinerary is developed by the KDE community as free software and uses "
@@ -61,29 +61,29 @@ msgstr ""
 "A KDE Itinerary a KDE közösség által fejlesztett szabad szoftver, és az "
 "alábbi komponenseket használja."
 
-#: app/AboutPage.qml:198
+#: app/AboutPage.qml:196
 #, kde-format
 msgid "KDE Itinerary uses public transport data from the following sources."
 msgstr ""
 "A KDE Itinerary a következő forrásokból származó tömegközlekedési adatokat "
 "használja."
 
-#: app/AboutPage.qml:209
+#: app/AboutPage.qml:207
 #, kde-format
 msgid "Developer information"
 msgstr "Fejlesztői információk"
 
-#: app/AboutPage.qml:215
+#: app/AboutPage.qml:213
 #, kde-format
 msgid "Application version: %1"
 msgstr "Alkalmazásverzió: %1"
 
-#: app/AboutPage.qml:231
+#: app/AboutPage.qml:229
 #, kde-format
 msgid "Extractor capabilities:"
 msgstr "Kinyerőképességek:"
 
-#: app/AboutPage.qml:236
+#: app/AboutPage.qml:234
 #, kde-format
 msgid "Extractor capabilities copied to clipboard"
 msgstr "Kinyerőképességek a vágólapra másolva"
@@ -1437,7 +1437,7 @@ msgstr "Kártya törlése"
 msgid "Do you really want to delete this pass?"
 msgstr "Biztosan törölni szeretné ezt a kártyát?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:326 app/Main.qml:21 app/Main.qml:161
+#: app/gpxexport.cpp:33 app/main.cpp:322 app/Main.qml:21 app/Main.qml:161
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -2486,24 +2486,24 @@ msgstr "M-típusú"
 msgid "Type N"
 msgstr "N-típusú"
 
-#: app/main.cpp:334
+#: app/main.cpp:330
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Digitális utazási segéd"
 
-#: app/main.cpp:335
+#: app/main.cpp:331
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "Copyright © A KDE közösség"
 
-#: app/main.cpp:342
+#: app/main.cpp:338
 #, fuzzy, kde-format
 #| msgid "Open Itinerary on the given page"
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Itinerary megnyitása a megadott oldalon"
 
-#: app/main.cpp:347
+#: app/main.cpp:343
 #, fuzzy, kde-format
 #| msgid "Files or URLs to import."
 msgctxt "@info:shell"
