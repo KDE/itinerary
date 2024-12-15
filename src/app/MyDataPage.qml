@@ -171,6 +171,7 @@ FormCard.FormCardPage {
         Layout.topMargin: Kirigami.Units.smallSpacing
 
         FormCard.FormButtonDelegate {
+            icon.name: 'view-statistics-symbolic'
             text: i18nc("@action:button", "See all Statistics")
             onClicked: QQC2.ApplicationWindow.window.pageStack.push(Qt.createComponent("org.kde.itinerary", "StatisticsPage"), {
                 reservationManager: ReservationManager,

@@ -174,7 +174,7 @@ Name[tr]=İstatistikler
 Name[uk]=Статистика
 Name[x-test]=xxStatisticsxx
 Name[zh_TW]=統計資料
-Icon=view-statistics
+Icon=view-statistics-symbolic
 Exec=itinerary --page stats
 
 [Desktop Action healthCert]

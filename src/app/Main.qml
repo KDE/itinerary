@@ -249,6 +249,13 @@ Kirigami.ApplicationWindow {
             case "healthCert":
                 root.pageStack.push(Qt.resolvedUrl("HealthCertificatePage.qml"))
                 break;
+            case "stats":
+                root.pageStack.push(Qt.createComponent("org.kde.itinerary", "StatisticsPage"), {
+                    reservationManager: ReservationManager,
+                    tripGroupManager: TripGroupManager,
+                    transferManager: TransferManager,
+                });
+                break;
             case "live":
                 liveAction.trigger();
                 break;

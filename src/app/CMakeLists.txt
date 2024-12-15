@@ -358,7 +358,7 @@ if (ANDROID)
         view-currency-list
         view-list-details
         view-refresh
-        view-statistics
+        view-statistics-symbolic
         wallet-open
         zoom-in-symbolic
         zoom-out-symbolic
