@@ -237,8 +237,12 @@ Kirigami.ApplicationWindow {
 
     Connections {
         target: ApplicationController
-        function onInfoMessage(msg) { showPassiveNotification(msg, "short"); }
-        function onOpenPageRequested(page, properties) {
+
+        function onInfoMessage(msg: string): void {
+            showPassiveNotification(msg, "short");
+        }
+
+        function onOpenPageRequested(page: string, properties: var): void {
             while (pageStack.layers.depth > 1) {
                 pageStack.layers.pop();
             }
@@ -272,20 +276,22 @@ Kirigami.ApplicationWindow {
                 console.warn("Requested to open unknown page", page);
             }
         }
-        function onEditNewHotelReservation(res) {
-            applicationWindow().pageStack.push(hotelEditorPage, {reservation: res});
+
+        function onEditNewHotelReservation(res: var): void {
+            root.pageStack.push(hotelEditorPage, {reservation: res});
         }
-        function onEditNewRestaurantReservation(res) {
-            applicationWindow().pageStack.push(restaurantEditorPage, {reservation: res});
+
+        function onEditNewRestaurantReservation(res: var): void {
+            root.pageStack.push(restaurantEditorPage, {reservation: res});
         }
-        function onEditNewEventReservation(res) {
-            applicationWindow().pageStack.push(eventEditorPage, {reservation: res});
+        function onEditNewEventReservation(res: var): void {
+            root.pageStack.push(eventEditorPage, {reservation: res});
         }
     }
 
     Connections {
         target: ImportController
-        function onShowImportPage() {
+        function onShowImportPage(): void {
             if (ImportController.canAutoCommit()) {
                 console.log("Auto commit");
                 ApplicationController.commitImport(ImportController);
@@ -299,7 +305,9 @@ Kirigami.ApplicationWindow {
 
     Connections {
         target: MapDownloadManager
-        function onFinished() { showPassiveNotification(i18n("Map download finished."), "short"); }
+        function onFinished(): void {
+            root.showPassiveNotification(i18n("Map download finished."), "short");
+        }
     }
 
     Component.onCompleted: {
@@ -344,13 +352,13 @@ Kirigami.ApplicationWindow {
     // "singleton" OSM QtLocation plugin
     // we only want one of these, and created only when absolutely necessary
     // as this triggers network operations on creation already
-    function osmPlugin() {
+    function osmPlugin(): QtLocation.Plugin {
         if (!__qtLocationOSMPlugin) {
             __qtLocationOSMPlugin = __qtLocationOSMPluginComponent.createObject();
         }
         return __qtLocationOSMPlugin;
     }
-    property var __qtLocationOSMPlugin: null
+    property QtLocation.Plugin __qtLocationOSMPlugin: null
     Component {
         id: __qtLocationOSMPluginComponent
         QtLocation.Plugin {
@@ -365,14 +373,14 @@ Kirigami.ApplicationWindow {
     // ### if there isn't a proper fix for this, should this happen in Kirigami instead?
     Connections {
         target: pageStack.layers
-        function onCurrentItemChanged() {
-            pageStack.layers.currentItem.forceActiveFocus();
+        function onCurrentItemChanged(): void {
+            root.pageStack.layers.currentItem.forceActiveFocus();
         }
     }
 
     Connections {
         target: MatrixController.manager.connection
-        function onNewKeyVerificationSession(session) {
+        function onNewKeyVerificationSession(session: var): void {
             root.pageStack.pushDialogLayer(Qt.createComponent("org.kde.itinerary", "MatrixKeyVerificationPage"),
                 { session: session },
                 { title: i18nc("@title:window", "Matrix Session Verification") }
