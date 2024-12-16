@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-15 00:41+0000\n"
+"POT-Creation-Date: 2024-12-16 00:43+0000\n"
 "PO-Revision-Date: 2024-12-09 23:39+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -27,7 +27,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde@peremen.name"
 
-#: app/AboutPage.qml:18 app/Main.qml:217
+#: app/AboutPage.qml:18 app/Main.qml:185
 #, kde-format
 msgid "About"
 msgstr "정보"
@@ -117,7 +117,7 @@ msgstr "편집"
 msgid "Add to calendar…"
 msgstr "캘린더에 추가…"
 
-#: app/ActionsCard.qml:74 app/Main.qml:205 app/TripGroupDelegate.qml:182
+#: app/ActionsCard.qml:74 app/TripGroupDelegate.qml:182
 #: app/TripGroupPage.qml:716
 #, kde-format
 msgid "Export…"
@@ -125,7 +125,7 @@ msgstr "내보내기…"
 
 #: app/ActionsCard.qml:79 app/ActionsCard.qml:125 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
-#: app/HealthCertificatePage.qml:46 app/HealthCertificatePage.qml:60
+#: app/HealthCertificatePage.qml:49 app/HealthCertificatePage.qml:63
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:171
 #: app/TicketPage.qml:47 app/TicketPage.qml:171 app/TimelinePage.qml:221
 #: app/TripGroupPage.qml:313
@@ -973,7 +973,6 @@ msgid "Type: <b>%1</b>"
 msgstr "종류: <b>%1</b>"
 
 #: app/favoritelocationmodel.cpp:135 app/favoritelocationmodel.cpp:155
-#: app/SettingsPage.qml:35
 #, kde-format
 msgid "Home"
 msgstr "집"
@@ -988,7 +987,7 @@ msgstr "직장"
 msgid "Location %1"
 msgstr "위치 %1"
 
-#: app/FavoriteLocationPage.qml:20 app/SettingsPage.qml:50
+#: app/FavoriteLocationPage.qml:20 app/MyDataPage.qml:119
 #, kde-format
 msgid "Favorite Locations"
 msgstr "즐겨찾는 위치"
@@ -1399,7 +1398,7 @@ msgstr "패스 삭제"
 msgid "Do you really want to delete this pass?"
 msgstr "이 패스를 삭제하시겠습니까?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:322 app/Main.qml:21 app/Main.qml:161
+#: app/gpxexport.cpp:33 app/main.cpp:322 app/Main.qml:21 app/Main.qml:152
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE 여행 정보"
@@ -1494,42 +1493,53 @@ msgstr "검사가 만료됨"
 msgid "Recovery certificate valid"
 msgstr "완치 증명서가 유효함"
 
-#: app/healthcertificatemanager.cpp:141
-#, kde-format
-msgid "Vaccination %1/%2 (%3)"
+#: app/healthcertificatemanager.cpp:145
+#, fuzzy, kde-format
+#| msgid "%1 (%2)"
+msgctxt ""
+msgid "%1 (%2)"
+msgstr "%1(%2)"
+
+#: app/healthcertificatemanager.cpp:154
+#, fuzzy, kde-format
+#| msgid "Vaccination %1/%2 (%3)"
+msgid "Vaccination for %1 (%2/%3)"
 msgstr "예방 접종 %1/%2(%3)"
 
-#: app/healthcertificatemanager.cpp:143
-#, kde-format
-msgid "Vaccination (%1)"
+#: app/healthcertificatemanager.cpp:156
+#, fuzzy, kde-format
+#| msgid "Vaccination (%1)"
+msgid "Vaccination for %1"
 msgstr "예방 접종(%1)"
 
-#: app/healthcertificatemanager.cpp:147
-#, kde-format
-msgid "Test %1 (%2)"
+#: app/healthcertificatemanager.cpp:160
+#, fuzzy, kde-format
+#| msgid "Test %1 (%2)"
+msgid "Test %1 for %2"
 msgstr "검사 %1(%2)"
 
-#: app/healthcertificatemanager.cpp:153
-#, kde-format
-msgid "Recovery (%1)"
+#: app/healthcertificatemanager.cpp:166
+#, fuzzy, kde-format
+#| msgid "Recovery (%1)"
+msgid "Recovery %1 for %1"
 msgstr "완치(%1)"
 
-#: app/HealthCertificatePage.qml:16 app/Main.qml:179
+#: app/HealthCertificatePage.qml:19
 #, kde-format
 msgid "Health Certificates"
 msgstr "건강 증명서"
 
-#: app/HealthCertificatePage.qml:55
+#: app/HealthCertificatePage.qml:58
 #, kde-format
 msgid "Delete Certificate"
 msgstr "증명서 삭제"
 
-#: app/HealthCertificatePage.qml:56
+#: app/HealthCertificatePage.qml:59
 #, kde-format
 msgid "Do you really want to delete this certificate?"
 msgstr "이 증명서를 삭제하시겠습니까?"
 
-#: app/HealthCertificatePage.qml:126
+#: app/HealthCertificatePage.qml:132
 #, kde-format
 msgid ""
 "<p>You can import the following health certificates by scanning them with a "
@@ -2210,7 +2220,7 @@ msgstr "%2(으)로 가는 %1 항공편|/|%2$[으 %2]로 가는 %1 항공편"
 msgid "Itinerary change"
 msgstr "여정 변경"
 
-#: app/LiveStatusPage.qml:19 app/Main.qml:190
+#: app/LiveStatusPage.qml:19 app/Main.qml:163
 #, kde-format
 msgid "Live Status"
 msgstr "실시간 상태"
@@ -2490,6 +2500,11 @@ msgstr "SNCF 온라인 승차권…"
 msgid "Import Reservation"
 msgstr "예약 가져오기"
 
+#: app/Main.qml:126 app/MyDataPage.qml:207
+#, kde-format
+msgid "KDE Itinerary files (*.itinerary)"
+msgstr "KDE 여행 정보 파일 (*.itinerary)"
+
 #: app/Main.qml:126
 #, kde-format
 msgid "PkPass files (*.pkpass)"
@@ -2505,42 +2520,34 @@ msgstr "PDF 파일 (*.pdf)"
 msgid "iCal events (*.ics)"
 msgstr "iCal 이벤트 (*.ics)"
 
-#: app/Main.qml:126 app/Main.qml:135
-#, kde-format
-msgid "KDE Itinerary files (*.itinerary)"
-msgstr "KDE 여행 정보 파일 (*.itinerary)"
-
-#: app/Main.qml:133
-#, kde-format
-msgid "Export Itinerary Data"
-msgstr "여행 정보 내보내기"
-
-#: app/Main.qml:166 app/PassPage.qml:139
+#: app/Main.qml:157
 #, kde-format
 msgid "Import…"
 msgstr "가져오기…"
 
-#: app/Main.qml:172 app/StatisticsPage.qml:15 app/TripGroupPage.qml:634
-#, kde-format
-msgid "Statistics"
-msgstr "통계"
-
-#: app/Main.qml:198 app/WelcomePage.qml:41
+#: app/Main.qml:171 app/WelcomePage.qml:41
 #, kde-format
 msgid "Settings…"
 msgstr "설정…"
 
-#: app/Main.qml:210 app/WelcomePage.qml:16
+#: app/Main.qml:178 app/WelcomePage.qml:16
 #, kde-format
 msgid "Help"
 msgstr "도움말"
 
-#: app/Main.qml:326
+#: app/Main.qml:267
+#, fuzzy, kde-format
+#| msgid "Wi-Fi access for onboard information is available."
+msgctxt "@info:status"
+msgid "No onboard information available."
+msgstr "Wi-Fi를 통한 차내 정보에 접근할 수 있습니다."
+
+#: app/Main.qml:309
 #, kde-format
 msgid "Map download finished."
 msgstr "지도를 다운로드했습니다."
 
-#: app/Main.qml:414
+#: app/Main.qml:386
 #, kde-format
 msgctxt "@title:window"
 msgid "Matrix Session Verification"
@@ -2840,6 +2847,94 @@ msgctxt "matrix room type"
 msgid "Spaces"
 msgstr "스페이스"
 
+#: app/MyDataPage.qml:23
+#, kde-format
+msgctxt "@title"
+msgid "My Data"
+msgstr ""
+
+#: app/MyDataPage.qml:27
+#, fuzzy, kde-format
+#| msgid "Passes and Programs"
+msgctxt "@title"
+msgid "Passes and Programs"
+msgstr "패스와 프로그램"
+
+#: app/MyDataPage.qml:34
+#, fuzzy, kde-format
+#| msgid "Import bonus or discount program cards or flat rate passes."
+msgid "No valid bonus or discount program cards or flat rate passes found."
+msgstr "보너스나 할인 프로그램 카드나 정액 패스를 가져옵니다."
+
+#: app/MyDataPage.qml:52
+#, kde-format
+msgctxt "@action:button"
+msgid "Manage your Passes"
+msgstr ""
+
+#: app/MyDataPage.qml:59
+#, fuzzy, kde-format
+#| msgid "Health Certificates"
+msgctxt "@title"
+msgid "Health Certificates"
+msgstr "건강 증명서"
+
+#: app/MyDataPage.qml:69
+#, fuzzy, kde-format
+#| msgid "One health certificate imported."
+#| msgid_plural "%1 health certificates imported."
+msgid "No valid health certificate found."
+msgstr "건강 증명서 %1개를 가져왔습니다."
+
+#: app/MyDataPage.qml:103
+#, fuzzy, kde-format
+#| msgid "Favorite Locations"
+msgctxt "@title:group"
+msgid "Saved Locations"
+msgstr "즐겨찾는 위치"
+
+#: app/MyDataPage.qml:108
+#, kde-format
+msgid "Home Country"
+msgstr "거주 국가"
+
+#: app/MyDataPage.qml:126 app/StatisticsPage.qml:15 app/TripGroupPage.qml:634
+#, kde-format
+msgid "Statistics"
+msgstr "통계"
+
+#: app/MyDataPage.qml:175
+#, fuzzy, kde-format
+#| msgid "Statistics"
+msgctxt "@action:button"
+msgid "See all Statistics"
+msgstr "통계"
+
+#: app/MyDataPage.qml:185
+#, kde-format
+msgctxt "@title:group"
+msgid "Data Portability"
+msgstr ""
+
+#: app/MyDataPage.qml:190
+#, fuzzy, kde-format
+#| msgid "Import"
+msgctxt "@action:button"
+msgid "Import"
+msgstr "가져오기"
+
+#: app/MyDataPage.qml:198
+#, fuzzy, kde-format
+#| msgid "Export"
+msgctxt "@action:button"
+msgid "Export"
+msgstr "내보내기"
+
+#: app/MyDataPage.qml:205
+#, kde-format
+msgid "Export Itinerary Data"
+msgstr "여행 정보 내보내기"
+
 #: app/NavigationBar.qml:18
 #, kde-format
 msgctxt "@title:tab This isn't the app name, but the English noun"
@@ -2855,8 +2950,8 @@ msgstr "여행 계획"
 #: app/NavigationBar.qml:42
 #, kde-format
 msgctxt "@title:tab"
-msgid "Passes & Programs"
-msgstr "패스와 프로그램"
+msgid "My Data"
+msgstr ""
 
 #: app/NavigationBar.qml:47
 #, kde-format
@@ -2976,55 +3071,65 @@ msgstr "온라인 티켓"
 msgid "Search…"
 msgstr "검색…"
 
-#: app/passmanager.cpp:252
-#, kde-format
-msgctxt "no longer valid tickets"
-msgid "Expired"
-msgstr "만료됨"
-
-#: app/passmanager.cpp:255
-#, kde-format
-msgctxt "not yet valid tickets"
-msgid "Future"
-msgstr "미래"
-
-#: app/passmanager.cpp:257
-#, kde-format
-msgctxt "not yet expired tickets"
-msgid "Valid"
-msgstr "유효함"
-
-#: app/passmanager.cpp:275 app/TripGroupPage.qml:440
-#, kde-format
-msgid "%1 - %2"
-msgstr "%1 - %2"
-
-#: app/PassPage.qml:19
-#, kde-format
-msgid "Passes and Programs"
-msgstr "패스와 프로그램"
-
-#: app/PassPage.qml:22
-#, kde-format
-msgid "Add Program Membership…"
-msgstr "프로그램 멤버십 추가…"
-
-#: app/PassPage.qml:54
+#: app/PassDelegate.qml:36
 #, kde-format
 msgctxt "name - number"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/PassPage.qml:107
+#: app/PassDelegate.qml:44
 #, kde-format
 msgctxt "name - valid time range"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/PassPage.qml:137
+#: app/passmanager.cpp:276 app/TripGroupPage.qml:440
 #, kde-format
-msgid "Import bonus or discount program cards or flat rate passes."
-msgstr "보너스나 할인 프로그램 카드나 정액 패스를 가져옵니다."
+msgid "%1 - %2"
+msgstr "%1 - %2"
+
+#: app/PassPage.qml:18
+#, kde-format
+msgid "Passes and Programs"
+msgstr "패스와 프로그램"
+
+#: app/PassPage.qml:21
+#, fuzzy, kde-format
+#| msgid "Add Program Membership…"
+msgctxt "@title"
+msgid "Add Program Membership"
+msgstr "프로그램 멤버십 추가…"
+
+#: app/PassPage.qml:26
+#, fuzzy, kde-format
+#| msgid "Import from GPX"
+msgctxt "@action:button"
+msgid "Import From File"
+msgstr "GPX에서 가져오기"
+
+#: app/PassPage.qml:34
+#, kde-format
+msgctxt "@action:button"
+msgid "Add Manually"
+msgstr ""
+
+#: app/PassPage.qml:48
+#, kde-format
+msgctxt "not yet expired tickets"
+msgid "Valid"
+msgstr "유효함"
+
+#: app/PassPage.qml:69
+#, kde-format
+msgctxt "not yet valid tickets"
+msgid "Future"
+msgstr "미래"
+
+#: app/PassPage.qml:91
+#, kde-format
+msgctxt "no longer valid tickets"
+msgid "Expired"
+msgstr "만료됨"
 
 #: app/PkPassPage.qml:17
 #, kde-format
@@ -3293,22 +3398,17 @@ msgstr "인원 수"
 msgid "Settings"
 msgstr "설정"
 
-#: app/SettingsPage.qml:39
-#, kde-format
-msgid "Home Country"
-msgstr "거주 국가"
-
-#: app/SettingsPage.qml:58
+#: app/SettingsPage.qml:30
 #, kde-format
 msgid "Online Services"
 msgstr "온라인 서비스"
 
-#: app/SettingsPage.qml:62
+#: app/SettingsPage.qml:34
 #, kde-format
 msgid "Query Traffic Data"
 msgstr "교통량 데이터 조회"
 
-#: app/SettingsPage.qml:65
+#: app/SettingsPage.qml:37
 #, kde-format
 msgid ""
 "When enabled, this will query transport provider online services for changes "
@@ -3317,12 +3417,12 @@ msgstr ""
 "이 옵션을 사용하면 교통 서비스 사업자 온라인 서비스에 조회하여 지연, 탑승구, "
 "승강장 변경을 조회합니다."
 
-#: app/SettingsPage.qml:71
+#: app/SettingsPage.qml:43
 #, kde-format
 msgid "Use insecure services"
 msgstr "비보안 서비스 사용"
 
-#: app/SettingsPage.qml:74
+#: app/SettingsPage.qml:46
 #, kde-format
 msgid ""
 "Enabling this will also use online services that do not offer transport "
@@ -3333,23 +3433,23 @@ msgstr ""
 "옵션 사용을 추천하지 않지만, 일부 서비스의 라이브 데이터를 가져오려면 필요합"
 "니다."
 
-#: app/SettingsPage.qml:82
+#: app/SettingsPage.qml:54
 #, kde-format
 msgid "Public Transport Information Sources…"
 msgstr "대중 교통 정보 원본…"
 
-#: app/SettingsPage.qml:91 app/WeatherForecastDelegate.qml:83
+#: app/SettingsPage.qml:63 app/WeatherForecastDelegate.qml:83
 #: app/WeatherForecastPage.qml:19
 #, kde-format
 msgid "Weather Forecast"
 msgstr "일기 예보"
 
-#: app/SettingsPage.qml:94
+#: app/SettingsPage.qml:66
 #, kde-format
 msgid "Showing weather forecasts will query online services."
 msgstr "일기 예보를 표시하면 온라인 서비스에 조회합니다."
 
-#: app/SettingsPage.qml:99 app/WeatherForecastPage.qml:36
+#: app/SettingsPage.qml:71 app/WeatherForecastPage.qml:36
 #, kde-format
 msgid ""
 "Using data from <a href=\"https://www.met.no/\">The Norwegian Meteorological "
@@ -3360,12 +3460,12 @@ msgstr ""
 "\"https://creativecommons.org/licenses/by/4.0\">크리에이티브 커먼즈 4.0 저작"
 "자표시 국제판</a> 라이선스로 제공됩니다."
 
-#: app/SettingsPage.qml:108
+#: app/SettingsPage.qml:80
 #, kde-format
 msgid "Preload Map Data"
 msgstr "지도 데이터 미리 불러오기"
 
-#: app/SettingsPage.qml:111
+#: app/SettingsPage.qml:83
 #, kde-format
 msgid ""
 "Enabling this will download maps for all stations and airports for upcoming "
@@ -3374,44 +3474,44 @@ msgstr ""
 "이 옵션을 사용하면 Wi-Fi 네트워크에 연결했을 때 다가오는 여정에서 경유할 모"
 "든 역과 공항의 지도를 다운로드합니다."
 
-#: app/SettingsPage.qml:118
+#: app/SettingsPage.qml:90
 #, kde-format
 msgid "Currency Conversion"
 msgstr "통화 변환"
 
-#: app/SettingsPage.qml:121
+#: app/SettingsPage.qml:93
 #, kde-format
 msgid ""
 "Enabling this will perform online queries for exchange rates to currencies "
 "at travel destinations."
 msgstr "이 옵션을 사용하면 온라인에서 여행지의 환율 정보를 가져옵니다."
 
-#: app/SettingsPage.qml:127
+#: app/SettingsPage.qml:99
 #, kde-format
 msgid "Wikimedia Online Content"
 msgstr "위키미디어 온라인 콘텐츠"
 
-#: app/SettingsPage.qml:130
+#: app/SettingsPage.qml:102
 #, kde-format
 msgid "Use additional online content from Wikimedia and Wikidata."
 msgstr "위키미디어 및 위키데이터의 추가 온라인 콘텐츠를 사용합니다.\t"
 
-#: app/SettingsPage.qml:137
+#: app/SettingsPage.qml:109
 #, kde-format
 msgid "Transfer Assistant"
 msgstr "환승 도우미"
 
-#: app/SettingsPage.qml:141
+#: app/SettingsPage.qml:113
 #, kde-format
 msgid "Automatically add transfers"
 msgstr "자동으로 환승 추가"
 
-#: app/SettingsPage.qml:149
+#: app/SettingsPage.qml:121
 #, kde-format
 msgid "Automatically fill transfers"
 msgstr "자동으로 환승 채우기"
 
-#: app/SettingsPage.qml:150
+#: app/SettingsPage.qml:122
 #, kde-format
 msgid ""
 "When enabled, this will query transport provider online services "
@@ -3420,148 +3520,148 @@ msgstr ""
 "이 옵션을 사용하면 교통 서비스 사업자 온라인 서비스에 조회하여 환승 정보를 조"
 "회합니다."
 
-#: app/SettingsPage.qml:161
+#: app/SettingsPage.qml:133
 #, kde-format
 msgid "Notifications"
 msgstr "알림"
 
-#: app/SettingsPage.qml:166
+#: app/SettingsPage.qml:138
 #, kde-format
 msgid "Configure Notifications…"
 msgstr "알림 설정…"
 
-#: app/SettingsPage.qml:175
+#: app/SettingsPage.qml:147
 #, kde-format
 msgid "Show notifications on lock screen"
 msgstr "잠금 화면에 알림 표시"
 
-#: app/SettingsPage.qml:185 app/SettingsPage.qml:214
+#: app/SettingsPage.qml:157 app/SettingsPage.qml:186
 #, kde-format
 msgid "Request permissions…"
 msgstr "권한 요청…"
 
-#: app/SettingsPage.qml:186
+#: app/SettingsPage.qml:158
 #, kde-format
 msgid "Additional permissions are required to show notifications."
 msgstr "알림을 표시하려면 추가 권한이 필요합니다."
 
-#: app/SettingsPage.qml:196
+#: app/SettingsPage.qml:168
 #, kde-format
 msgid "Notification permissions are available"
 msgstr "알림 권한을 사용할 수 있음"
 
-#: app/SettingsPage.qml:197 app/SettingsPage.qml:239 app/SettingsPage.qml:317
+#: app/SettingsPage.qml:169 app/SettingsPage.qml:211 app/SettingsPage.qml:289
 #, kde-format
 msgid "No further action required."
 msgstr "더 이상 필요한 동작이 없습니다."
 
-#: app/SettingsPage.qml:210
+#: app/SettingsPage.qml:182
 #, kde-format
 msgid "Onboard Status"
 msgstr "차내 정보"
 
-#: app/SettingsPage.qml:215
+#: app/SettingsPage.qml:187
 #, kde-format
 msgid "Additional permissions are required to access the Wi-Fi status."
 msgstr "Wi-Fi 상태에 접근하려면 추가 권한이 필요합니다."
 
-#: app/SettingsPage.qml:226
+#: app/SettingsPage.qml:198
 #, kde-format
 msgid "Wi-Fi access for onboard information is available."
 msgstr "Wi-Fi를 통한 차내 정보에 접근할 수 있습니다."
 
-#: app/SettingsPage.qml:228
+#: app/SettingsPage.qml:200
 #, kde-format
 msgid "Wi-Fi is not enabled"
 msgstr "Wi-Fi가 비활성화됨"
 
-#: app/SettingsPage.qml:230
+#: app/SettingsPage.qml:202
 #, kde-format
 msgid "Location service is not enabled"
 msgstr "위치 서비스가 비활성화됨"
 
-#: app/SettingsPage.qml:232
+#: app/SettingsPage.qml:204
 #, kde-format
 msgid "Wi-Fi access is not available on this system"
 msgstr "이 시스템에서 Wi-Fi에 접근할 수 없음"
 
-#: app/SettingsPage.qml:241
+#: app/SettingsPage.qml:213
 #, kde-format
 msgid "Enable Wi-Fi on your system to access onboard information."
 msgstr "차내 정보를 확인하려면 시스템의 Wi-Fi를 활성화해야 합니다."
 
-#: app/SettingsPage.qml:243
+#: app/SettingsPage.qml:215
 #, kde-format
 msgid ""
 "Enable the location service on your device to access onboard information."
 msgstr "차내 정보를 확인하려면 시스템의 위치 서비스를 활성화해야 합니다."
 
-#: app/SettingsPage.qml:245
+#: app/SettingsPage.qml:217
 #, kde-format
 msgid ""
 "Onboard information are unfortunately not supported on your device at this "
 "time."
 msgstr "현재 사용 중인 장치에서 차내 정보를 지원하지 않습니다."
 
-#: app/SettingsPage.qml:277
+#: app/SettingsPage.qml:249
 #, kde-format
 msgid "Matrix Integration"
 msgstr "Matrix 통합"
 
-#: app/SettingsPage.qml:284 app/SettingsPage.qml:341
+#: app/SettingsPage.qml:256 app/SettingsPage.qml:313
 #, kde-format
 msgid "Logged in as %1"
 msgstr "%1(으)로 로그인됨"
 
-#: app/SettingsPage.qml:288
+#: app/SettingsPage.qml:260
 #, kde-format
 msgid "Synchronize rooms"
 msgstr "방 동기화"
 
-#: app/SettingsPage.qml:295
+#: app/SettingsPage.qml:267
 #, kde-format
 msgid "Matrix ID"
 msgstr "Matrix ID"
 
-#: app/SettingsPage.qml:304
+#: app/SettingsPage.qml:276
 #, kde-format
 msgid "Password"
 msgstr "암호"
 
-#: app/SettingsPage.qml:316
+#: app/SettingsPage.qml:288
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Session verified"
 msgstr "세션 검증됨"
 
-#: app/SettingsPage.qml:316
+#: app/SettingsPage.qml:288
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Session not verified."
 msgstr "세션이 검증되지 않았습니다."
 
-#: app/SettingsPage.qml:317
+#: app/SettingsPage.qml:289
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Initiate session verification in your Matrix chat client."
 msgstr "Matrix 채팅 클라이언트에서 세션 검증을 시작하십시오."
 
-#: app/SettingsPage.qml:324
+#: app/SettingsPage.qml:296
 #, kde-format
 msgid "Log out"
 msgstr "로그아웃"
 
-#: app/SettingsPage.qml:324
+#: app/SettingsPage.qml:296
 #, kde-format
 msgid "Log in"
 msgstr "로그인"
 
-#: app/SettingsPage.qml:331
+#: app/SettingsPage.qml:303
 #, kde-format
 msgid "Traewelling Integration"
 msgstr "Traewelling 통합"
 
-#: app/SettingsPage.qml:336
+#: app/SettingsPage.qml:308
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -3573,27 +3673,27 @@ msgstr ""
 "수 있습니다. 자세한 정보는 <a href=\"https://traewelling.de\">traewelling."
 "de</a> 사이트를 참조하십시오"
 
-#: app/SettingsPage.qml:344
+#: app/SettingsPage.qml:316
 #, kde-format
 msgid "Login"
 msgstr "로그인"
 
-#: app/SettingsPage.qml:349
+#: app/SettingsPage.qml:321
 #, kde-format
 msgid "Logout"
 msgstr "로그아웃"
 
-#: app/SettingsPage.qml:356
+#: app/SettingsPage.qml:328
 #, kde-format
 msgid "Contributing"
 msgstr "기여"
 
-#: app/SettingsPage.qml:360
+#: app/SettingsPage.qml:332
 #, kde-format
 msgid "I contribute to OpenStreetMap"
 msgstr "저는 OpenStreetMap에 기여합니다"
 
-#: app/SettingsPage.qml:361
+#: app/SettingsPage.qml:333
 #, kde-format
 msgid "Enables OSM editing options."
 msgstr "OSM 편집 옵션을 활성화합니다."
@@ -4584,6 +4684,10 @@ msgstr "로그아웃함"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%5에 %3에서 %4(으)로 가는 %1%2|/|%5에 %3에서 %4$[으 %4]로 가는 %1%2"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Passes & Programs"
+#~ msgstr "패스와 프로그램"
 
 #~ msgid "Direction: %1"
 #~ msgstr "방향: %1"

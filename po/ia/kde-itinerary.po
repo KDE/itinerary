@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-15 00:41+0000\n"
+"POT-Creation-Date: 2024-12-16 00:43+0000\n"
 "PO-Revision-Date: 2024-11-29 11:58+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -28,7 +28,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "g.sora@tiscali.it"
 
-#: app/AboutPage.qml:18 app/Main.qml:217
+#: app/AboutPage.qml:18 app/Main.qml:185
 #, kde-format
 msgid "About"
 msgstr "A proposito"
@@ -118,7 +118,7 @@ msgstr "Edita"
 msgid "Add to calendar…"
 msgstr "Adde a Calendario..."
 
-#: app/ActionsCard.qml:74 app/Main.qml:205 app/TripGroupDelegate.qml:182
+#: app/ActionsCard.qml:74 app/TripGroupDelegate.qml:182
 #: app/TripGroupPage.qml:716
 #, kde-format
 msgid "Export…"
@@ -126,7 +126,7 @@ msgstr "Exporta…"
 
 #: app/ActionsCard.qml:79 app/ActionsCard.qml:125 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
-#: app/HealthCertificatePage.qml:46 app/HealthCertificatePage.qml:60
+#: app/HealthCertificatePage.qml:49 app/HealthCertificatePage.qml:63
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:171
 #: app/TicketPage.qml:47 app/TicketPage.qml:171 app/TimelinePage.qml:221
 #: app/TripGroupPage.qml:313
@@ -971,7 +971,6 @@ msgid "Type: <b>%1</b>"
 msgstr "Typo: <b>%1</b>"
 
 #: app/favoritelocationmodel.cpp:135 app/favoritelocationmodel.cpp:155
-#: app/SettingsPage.qml:35
 #, kde-format
 msgid "Home"
 msgstr "Domo"
@@ -986,7 +985,7 @@ msgstr "Labor"
 msgid "Location %1"
 msgstr "Location %1"
 
-#: app/FavoriteLocationPage.qml:20 app/SettingsPage.qml:50
+#: app/FavoriteLocationPage.qml:20 app/MyDataPage.qml:119
 #, kde-format
 msgid "Favorite Locations"
 msgstr "Locationes favorite"
@@ -1394,7 +1393,7 @@ msgstr "Dele Pass"
 msgid "Do you really want to delete this pass?"
 msgstr "Tu vermente vole deler iste pass?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:322 app/Main.qml:21 app/Main.qml:161
+#: app/gpxexport.cpp:33 app/main.cpp:322 app/Main.qml:21 app/Main.qml:152
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -1489,42 +1488,53 @@ msgstr "Test expirate"
 msgid "Recovery certificate valid"
 msgstr "Certificato de recuperation valide"
 
-#: app/healthcertificatemanager.cpp:141
-#, kde-format
-msgid "Vaccination %1/%2 (%3)"
+#: app/healthcertificatemanager.cpp:145
+#, fuzzy, kde-format
+#| msgid "%1 (%2)"
+msgctxt ""
+msgid "%1 (%2)"
+msgstr "%1 (%2)"
+
+#: app/healthcertificatemanager.cpp:154
+#, fuzzy, kde-format
+#| msgid "Vaccination %1/%2 (%3)"
+msgid "Vaccination for %1 (%2/%3)"
 msgstr "Vaccination %1/%2 (%3)"
 
-#: app/healthcertificatemanager.cpp:143
-#, kde-format
-msgid "Vaccination (%1)"
+#: app/healthcertificatemanager.cpp:156
+#, fuzzy, kde-format
+#| msgid "Vaccination (%1)"
+msgid "Vaccination for %1"
 msgstr "Vaccination (%1)"
 
-#: app/healthcertificatemanager.cpp:147
-#, kde-format
-msgid "Test %1 (%2)"
+#: app/healthcertificatemanager.cpp:160
+#, fuzzy, kde-format
+#| msgid "Test %1 (%2)"
+msgid "Test %1 for %2"
 msgstr "Essaya %1 (%2)"
 
-#: app/healthcertificatemanager.cpp:153
-#, kde-format
-msgid "Recovery (%1)"
+#: app/healthcertificatemanager.cpp:166
+#, fuzzy, kde-format
+#| msgid "Recovery (%1)"
+msgid "Recovery %1 for %1"
 msgstr "Recuperation (%1)"
 
-#: app/HealthCertificatePage.qml:16 app/Main.qml:179
+#: app/HealthCertificatePage.qml:19
 #, kde-format
 msgid "Health Certificates"
 msgstr "Certificatos de Sanitate"
 
-#: app/HealthCertificatePage.qml:55
+#: app/HealthCertificatePage.qml:58
 #, kde-format
 msgid "Delete Certificate"
 msgstr "Dele certificato"
 
-#: app/HealthCertificatePage.qml:56
+#: app/HealthCertificatePage.qml:59
 #, kde-format
 msgid "Do you really want to delete this certificate?"
 msgstr "Tu vermente vole deler iste certificato?"
 
-#: app/HealthCertificatePage.qml:126
+#: app/HealthCertificatePage.qml:132
 #, kde-format
 msgid ""
 "<p>You can import the following health certificates by scanning them with a "
@@ -2204,7 +2214,7 @@ msgstr "Volo %1 a %2:"
 msgid "Itinerary change"
 msgstr "Cambio de itinerario"
 
-#: app/LiveStatusPage.qml:19 app/Main.qml:190
+#: app/LiveStatusPage.qml:19 app/Main.qml:163
 #, kde-format
 msgid "Live Status"
 msgstr "Stato de Vita"
@@ -2480,6 +2490,11 @@ msgstr "Billet in linea de SNFC..."
 msgid "Import Reservation"
 msgstr "Importa reservation"
 
+#: app/Main.qml:126 app/MyDataPage.qml:207
+#, kde-format
+msgid "KDE Itinerary files (*.itinerary)"
+msgstr "Files de KDE Itinerary  (*.itinerary)"
+
 #: app/Main.qml:126
 #, kde-format
 msgid "PkPass files (*.pkpass)"
@@ -2495,42 +2510,34 @@ msgstr "Files PDF(*.pdf)"
 msgid "iCal events (*.ics)"
 msgstr "Eventos de iCal  (*.ics)"
 
-#: app/Main.qml:126 app/Main.qml:135
-#, kde-format
-msgid "KDE Itinerary files (*.itinerary)"
-msgstr "Files de KDE Itinerary  (*.itinerary)"
-
-#: app/Main.qml:133
-#, kde-format
-msgid "Export Itinerary Data"
-msgstr "Exporta datos de itinerario"
-
-#: app/Main.qml:166 app/PassPage.qml:139
+#: app/Main.qml:157
 #, kde-format
 msgid "Import…"
 msgstr "Importa…"
 
-#: app/Main.qml:172 app/StatisticsPage.qml:15 app/TripGroupPage.qml:634
-#, kde-format
-msgid "Statistics"
-msgstr "Statistica"
-
-#: app/Main.qml:198 app/WelcomePage.qml:41
+#: app/Main.qml:171 app/WelcomePage.qml:41
 #, kde-format
 msgid "Settings…"
 msgstr "Preferentias…"
 
-#: app/Main.qml:210 app/WelcomePage.qml:16
+#: app/Main.qml:178 app/WelcomePage.qml:16
 #, kde-format
 msgid "Help"
 msgstr "Adjuta"
 
-#: app/Main.qml:326
+#: app/Main.qml:267
+#, fuzzy, kde-format
+#| msgid "Wi-Fi access for onboard information is available."
+msgctxt "@info:status"
+msgid "No onboard information available."
+msgstr "Accesso Wi-Fi per information de a bordo es disponibile."
+
+#: app/Main.qml:309
 #, kde-format
 msgid "Map download finished."
 msgstr "Discargamento de mappa terminate."
 
-#: app/Main.qml:414
+#: app/Main.qml:386
 #, kde-format
 msgctxt "@title:window"
 msgid "Matrix Session Verification"
@@ -2863,6 +2870,95 @@ msgctxt "matrix room type"
 msgid "Spaces"
 msgstr "Spatios"
 
+#: app/MyDataPage.qml:23
+#, kde-format
+msgctxt "@title"
+msgid "My Data"
+msgstr ""
+
+#: app/MyDataPage.qml:27
+#, fuzzy, kde-format
+#| msgid "Passes and Programs"
+msgctxt "@title"
+msgid "Passes and Programs"
+msgstr "Passes e Programmas"
+
+#: app/MyDataPage.qml:34
+#, fuzzy, kde-format
+#| msgid "Import bonus or discount program cards or flat rate passes."
+msgid "No valid bonus or discount program cards or flat rate passes found."
+msgstr ""
+"Importa bonus o cartas de programma de disconto o passes de rata platte."
+
+#: app/MyDataPage.qml:52
+#, kde-format
+msgctxt "@action:button"
+msgid "Manage your Passes"
+msgstr ""
+
+#: app/MyDataPage.qml:59
+#, fuzzy, kde-format
+#| msgid "Health Certificates"
+msgctxt "@title"
+msgid "Health Certificates"
+msgstr "Certificatos de Sanitate"
+
+#: app/MyDataPage.qml:69
+#, fuzzy, kde-format
+#| msgid "One health certificate imported."
+#| msgid_plural "%1 health certificates imported."
+msgid "No valid health certificate found."
+msgstr "Un certificato de Sanitate importate."
+
+#: app/MyDataPage.qml:103
+#, fuzzy, kde-format
+#| msgid "Favorite Locations"
+msgctxt "@title:group"
+msgid "Saved Locations"
+msgstr "Locationes favorite"
+
+#: app/MyDataPage.qml:108
+#, kde-format
+msgid "Home Country"
+msgstr "Pais de domo"
+
+#: app/MyDataPage.qml:126 app/StatisticsPage.qml:15 app/TripGroupPage.qml:634
+#, kde-format
+msgid "Statistics"
+msgstr "Statistica"
+
+#: app/MyDataPage.qml:175
+#, fuzzy, kde-format
+#| msgid "Statistics"
+msgctxt "@action:button"
+msgid "See all Statistics"
+msgstr "Statistica"
+
+#: app/MyDataPage.qml:185
+#, kde-format
+msgctxt "@title:group"
+msgid "Data Portability"
+msgstr ""
+
+#: app/MyDataPage.qml:190
+#, fuzzy, kde-format
+#| msgid "Import"
+msgctxt "@action:button"
+msgid "Import"
+msgstr "Importa"
+
+#: app/MyDataPage.qml:198
+#, fuzzy, kde-format
+#| msgid "Export"
+msgctxt "@action:button"
+msgid "Export"
+msgstr "Exporta"
+
+#: app/MyDataPage.qml:205
+#, kde-format
+msgid "Export Itinerary Data"
+msgstr "Exporta datos de itinerario"
+
 #: app/NavigationBar.qml:18
 #, kde-format
 msgctxt "@title:tab This isn't the app name, but the English noun"
@@ -2878,8 +2974,8 @@ msgstr "Planifica viage"
 #: app/NavigationBar.qml:42
 #, kde-format
 msgctxt "@title:tab"
-msgid "Passes & Programs"
-msgstr "Passes & Programmas"
+msgid "My Data"
+msgstr ""
 
 #: app/NavigationBar.qml:47
 #, kde-format
@@ -2999,56 +3095,65 @@ msgstr "Billet In Linea"
 msgid "Search…"
 msgstr "Cerca..."
 
-#: app/passmanager.cpp:252
-#, kde-format
-msgctxt "no longer valid tickets"
-msgid "Expired"
-msgstr "Expirate"
-
-#: app/passmanager.cpp:255
-#, kde-format
-msgctxt "not yet valid tickets"
-msgid "Future"
-msgstr "Futuro"
-
-#: app/passmanager.cpp:257
-#, kde-format
-msgctxt "not yet expired tickets"
-msgid "Valid"
-msgstr "Valide"
-
-#: app/passmanager.cpp:275 app/TripGroupPage.qml:440
-#, kde-format
-msgid "%1 - %2"
-msgstr "%1 - %2"
-
-#: app/PassPage.qml:19
-#, kde-format
-msgid "Passes and Programs"
-msgstr "Passes e Programmas"
-
-#: app/PassPage.qml:22
-#, kde-format
-msgid "Add Program Membership…"
-msgstr "Adde Adhesion de Programma..."
-
-#: app/PassPage.qml:54
+#: app/PassDelegate.qml:36
 #, kde-format
 msgctxt "name - number"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/PassPage.qml:107
+#: app/PassDelegate.qml:44
 #, kde-format
 msgctxt "name - valid time range"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/PassPage.qml:137
+#: app/passmanager.cpp:276 app/TripGroupPage.qml:440
 #, kde-format
-msgid "Import bonus or discount program cards or flat rate passes."
+msgid "%1 - %2"
+msgstr "%1 - %2"
+
+#: app/PassPage.qml:18
+#, kde-format
+msgid "Passes and Programs"
+msgstr "Passes e Programmas"
+
+#: app/PassPage.qml:21
+#, fuzzy, kde-format
+#| msgid "Add Program Membership…"
+msgctxt "@title"
+msgid "Add Program Membership"
+msgstr "Adde Adhesion de Programma..."
+
+#: app/PassPage.qml:26
+#, fuzzy, kde-format
+#| msgid "Import from GPX"
+msgctxt "@action:button"
+msgid "Import From File"
+msgstr "Importa ex GPX"
+
+#: app/PassPage.qml:34
+#, kde-format
+msgctxt "@action:button"
+msgid "Add Manually"
 msgstr ""
-"Importa bonus o cartas de programma de disconto o passes de rata platte."
+
+#: app/PassPage.qml:48
+#, kde-format
+msgctxt "not yet expired tickets"
+msgid "Valid"
+msgstr "Valide"
+
+#: app/PassPage.qml:69
+#, kde-format
+msgctxt "not yet valid tickets"
+msgid "Future"
+msgstr "Futuro"
+
+#: app/PassPage.qml:91
+#, kde-format
+msgctxt "no longer valid tickets"
+msgid "Expired"
+msgstr "Expirate"
 
 #: app/PkPassPage.qml:17
 #, kde-format
@@ -3318,22 +3423,17 @@ msgstr "Grandor de festa (Party)"
 msgid "Settings"
 msgstr "Preferentias"
 
-#: app/SettingsPage.qml:39
-#, kde-format
-msgid "Home Country"
-msgstr "Pais de domo"
-
-#: app/SettingsPage.qml:58
+#: app/SettingsPage.qml:30
 #, kde-format
 msgid "Online Services"
 msgstr "Servicios in linea"
 
-#: app/SettingsPage.qml:62
+#: app/SettingsPage.qml:34
 #, kde-format
 msgid "Query Traffic Data"
 msgstr "Requere Datos de Traffico"
 
-#: app/SettingsPage.qml:65
+#: app/SettingsPage.qml:37
 #, kde-format
 msgid ""
 "When enabled, this will query transport provider online services for changes "
@@ -3343,12 +3443,12 @@ msgstr ""
 "transporto per cambiamentos tal como retardos o cambiamentos de porta e "
 "platteforma."
 
-#: app/SettingsPage.qml:71
+#: app/SettingsPage.qml:43
 #, kde-format
 msgid "Use insecure services"
 msgstr "Usa servicios insecure"
 
-#: app/SettingsPage.qml:74
+#: app/SettingsPage.qml:46
 #, kde-format
 msgid ""
 "Enabling this will also use online services that do not offer transport "
@@ -3359,23 +3459,23 @@ msgstr ""
 "transporto. Isto non es recommendate, ma poterea esser inevitabile quando "
 "depende sur datos actual ex certe fornitores."
 
-#: app/SettingsPage.qml:82
+#: app/SettingsPage.qml:54
 #, kde-format
 msgid "Public Transport Information Sources…"
 msgstr "Fontes de information de Transporto Public..."
 
-#: app/SettingsPage.qml:91 app/WeatherForecastDelegate.qml:83
+#: app/SettingsPage.qml:63 app/WeatherForecastDelegate.qml:83
 #: app/WeatherForecastPage.qml:19
 #, kde-format
 msgid "Weather Forecast"
 msgstr "Prevision Meteorologic"
 
-#: app/SettingsPage.qml:94
+#: app/SettingsPage.qml:66
 #, kde-format
 msgid "Showing weather forecasts will query online services."
 msgstr "Mostrar previsiones meteorologic demandera servicios in linea."
 
-#: app/SettingsPage.qml:99 app/WeatherForecastPage.qml:36
+#: app/SettingsPage.qml:71 app/WeatherForecastPage.qml:36
 #, kde-format
 msgid ""
 "Using data from <a href=\"https://www.met.no/\">The Norwegian Meteorological "
@@ -3386,12 +3486,12 @@ msgstr ""
 "Meteorological Institute</a> sub licentia <a href=\"https://creativecommons."
 "org/licenses/by/4.0\">Creative Commons 4.0 BY International</a>."
 
-#: app/SettingsPage.qml:108
+#: app/SettingsPage.qml:80
 #, kde-format
 msgid "Preload Map Data"
 msgstr "Precarga datos de mappa"
 
-#: app/SettingsPage.qml:111
+#: app/SettingsPage.qml:83
 #, kde-format
 msgid ""
 "Enabling this will download maps for all stations and airports for upcoming "
@@ -3400,12 +3500,12 @@ msgstr ""
 "Habilitar isto discargara mappas per omne stationes e aeroportos per futur "
 "viages quando connectite a rete WiFi."
 
-#: app/SettingsPage.qml:118
+#: app/SettingsPage.qml:90
 #, kde-format
 msgid "Currency Conversion"
 msgstr "Conversion de numerario"
 
-#: app/SettingsPage.qml:121
+#: app/SettingsPage.qml:93
 #, kde-format
 msgid ""
 "Enabling this will perform online queries for exchange rates to currencies "
@@ -3414,32 +3514,32 @@ msgstr ""
 "Habilitar isto executara  demandas in linea per excambiar ratas a numerarios "
 "a destinationes de viage."
 
-#: app/SettingsPage.qml:127
+#: app/SettingsPage.qml:99
 #, kde-format
 msgid "Wikimedia Online Content"
 msgstr "Wikimedia Online Content (Contentoin linea de Wikimedia)"
 
-#: app/SettingsPage.qml:130
+#: app/SettingsPage.qml:102
 #, kde-format
 msgid "Use additional online content from Wikimedia and Wikidata."
 msgstr "Usa contento additional in linea ex Wikimedia e Wikidata."
 
-#: app/SettingsPage.qml:137
+#: app/SettingsPage.qml:109
 #, kde-format
 msgid "Transfer Assistant"
 msgstr "Assistente de transferentias"
 
-#: app/SettingsPage.qml:141
+#: app/SettingsPage.qml:113
 #, kde-format
 msgid "Automatically add transfers"
 msgstr "Adde automaticmente transferentias"
 
-#: app/SettingsPage.qml:149
+#: app/SettingsPage.qml:121
 #, kde-format
 msgid "Automatically fill transfers"
 msgstr "Automaticmente reimple transferentias"
 
-#: app/SettingsPage.qml:150
+#: app/SettingsPage.qml:122
 #, kde-format
 msgid ""
 "When enabled, this will query transport provider online services "
@@ -3448,77 +3548,77 @@ msgstr ""
 "Quando habilitate, isto demendera automaticmente servicios in linea de "
 "fornitor de transporto per information de transferentia."
 
-#: app/SettingsPage.qml:161
+#: app/SettingsPage.qml:133
 #, kde-format
 msgid "Notifications"
 msgstr "Notificationes"
 
-#: app/SettingsPage.qml:166
+#: app/SettingsPage.qml:138
 #, kde-format
 msgid "Configure Notifications…"
 msgstr "Configura notificationes ..."
 
-#: app/SettingsPage.qml:175
+#: app/SettingsPage.qml:147
 #, kde-format
 msgid "Show notifications on lock screen"
 msgstr "Monstra notificationes sur schermo blocate"
 
-#: app/SettingsPage.qml:185 app/SettingsPage.qml:214
+#: app/SettingsPage.qml:157 app/SettingsPage.qml:186
 #, kde-format
 msgid "Request permissions…"
 msgstr "Demanda permissiones..."
 
-#: app/SettingsPage.qml:186
+#: app/SettingsPage.qml:158
 #, kde-format
 msgid "Additional permissions are required to show notifications."
 msgstr "Permissiones additional es requirite per monstrar notificationes."
 
-#: app/SettingsPage.qml:196
+#: app/SettingsPage.qml:168
 #, kde-format
 msgid "Notification permissions are available"
 msgstr "Permissiones de notification es disponibile"
 
-#: app/SettingsPage.qml:197 app/SettingsPage.qml:239 app/SettingsPage.qml:317
+#: app/SettingsPage.qml:169 app/SettingsPage.qml:211 app/SettingsPage.qml:289
 #, kde-format
 msgid "No further action required."
 msgstr "Necun ulterior action es requirite."
 
-#: app/SettingsPage.qml:210
+#: app/SettingsPage.qml:182
 #, kde-format
 msgid "Onboard Status"
 msgstr "Stato de a bordo"
 
-#: app/SettingsPage.qml:215
+#: app/SettingsPage.qml:187
 #, kde-format
 msgid "Additional permissions are required to access the Wi-Fi status."
 msgstr "Permissiones additional es requirite per acceder al stato de Wi-Fi."
 
-#: app/SettingsPage.qml:226
+#: app/SettingsPage.qml:198
 #, kde-format
 msgid "Wi-Fi access for onboard information is available."
 msgstr "Accesso Wi-Fi per information de a bordo es disponibile."
 
-#: app/SettingsPage.qml:228
+#: app/SettingsPage.qml:200
 #, kde-format
 msgid "Wi-Fi is not enabled"
 msgstr "Wi-Fi non es habilitate"
 
-#: app/SettingsPage.qml:230
+#: app/SettingsPage.qml:202
 #, kde-format
 msgid "Location service is not enabled"
 msgstr "Servicio de location non es habilitate"
 
-#: app/SettingsPage.qml:232
+#: app/SettingsPage.qml:204
 #, kde-format
 msgid "Wi-Fi access is not available on this system"
 msgstr "Accesso Wi-Fi non es disponibile sur iste systema"
 
-#: app/SettingsPage.qml:241
+#: app/SettingsPage.qml:213
 #, kde-format
 msgid "Enable Wi-Fi on your system to access onboard information."
 msgstr "Habilita Wi-Fi sur tu systema per acceder a information a bordo."
 
-#: app/SettingsPage.qml:243
+#: app/SettingsPage.qml:215
 #, kde-format
 msgid ""
 "Enable the location service on your device to access onboard information."
@@ -3526,7 +3626,7 @@ msgstr ""
 "Habilita le servicio de location sur tu dispositivo per acceder a "
 "information de a bordo."
 
-#: app/SettingsPage.qml:245
+#: app/SettingsPage.qml:217
 #, kde-format
 msgid ""
 "Onboard information are unfortunately not supported on your device at this "
@@ -3535,44 +3635,44 @@ msgstr ""
 "Information de a bordo infortunatemente non es supportate sur tu dispositivo "
 "nunc."
 
-#: app/SettingsPage.qml:277
+#: app/SettingsPage.qml:249
 #, kde-format
 msgid "Matrix Integration"
 msgstr "Integration de Matrix"
 
-#: app/SettingsPage.qml:284 app/SettingsPage.qml:341
+#: app/SettingsPage.qml:256 app/SettingsPage.qml:313
 #, kde-format
 msgid "Logged in as %1"
 msgstr "Accedite como %1"
 
-#: app/SettingsPage.qml:288
+#: app/SettingsPage.qml:260
 #, kde-format
 msgid "Synchronize rooms"
 msgstr "Synchronisa salas"
 
-#: app/SettingsPage.qml:295
+#: app/SettingsPage.qml:267
 #, kde-format
 msgid "Matrix ID"
 msgstr "ID de Matrix"
 
-#: app/SettingsPage.qml:304
+#: app/SettingsPage.qml:276
 #, kde-format
 msgid "Password"
 msgstr "Contrasigno"
 
-#: app/SettingsPage.qml:316
+#: app/SettingsPage.qml:288
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Session verified"
 msgstr "Session verificate"
 
-#: app/SettingsPage.qml:316
+#: app/SettingsPage.qml:288
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Session not verified."
 msgstr "Session non verificate."
 
-#: app/SettingsPage.qml:317
+#: app/SettingsPage.qml:289
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Initiate session verification in your Matrix chat client."
@@ -3580,22 +3680,22 @@ msgstr ""
 "Initia verification de session in tu cliente de convesation in directo de "
 "Matrix."
 
-#: app/SettingsPage.qml:324
+#: app/SettingsPage.qml:296
 #, kde-format
 msgid "Log out"
 msgstr "Claude session"
 
-#: app/SettingsPage.qml:324
+#: app/SettingsPage.qml:296
 #, kde-format
 msgid "Log in"
 msgstr "Accede"
 
-#: app/SettingsPage.qml:331
+#: app/SettingsPage.qml:303
 #, kde-format
 msgid "Traewelling Integration"
 msgstr "Integration de Traewelling"
 
-#: app/SettingsPage.qml:336
+#: app/SettingsPage.qml:308
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -3608,27 +3708,27 @@ msgstr ""
 "information , tu visita <a href=\"https://traewelling.de\">traewelling.de</"
 "a> "
 
-#: app/SettingsPage.qml:344
+#: app/SettingsPage.qml:316
 #, kde-format
 msgid "Login"
 msgstr "Accesso de identification"
 
-#: app/SettingsPage.qml:349
+#: app/SettingsPage.qml:321
 #, kde-format
 msgid "Logout"
 msgstr "Clausura de session"
 
-#: app/SettingsPage.qml:356
+#: app/SettingsPage.qml:328
 #, kde-format
 msgid "Contributing"
 msgstr "Contribuer"
 
-#: app/SettingsPage.qml:360
+#: app/SettingsPage.qml:332
 #, kde-format
 msgid "I contribute to OpenStreetMap"
 msgstr "Io contribue a OpenStreetMap"
 
-#: app/SettingsPage.qml:361
+#: app/SettingsPage.qml:333
 #, kde-format
 msgid "Enables OSM editing options."
 msgstr "Habilita optiones de mofificar de OSM"
@@ -4624,6 +4724,10 @@ msgstr "Claude session"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 ex %3 a %4 le %5"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Passes & Programs"
+#~ msgstr "Passes & Programmas"
 
 #~ msgid "Direction: %1"
 #~ msgstr "Direction: %1"

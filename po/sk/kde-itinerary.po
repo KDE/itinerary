@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-15 00:41+0000\n"
+"POT-Creation-Date: 2024-12-16 00:43+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -26,7 +26,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "wizzardsk@gmail.com"
 
-#: app/AboutPage.qml:18 app/Main.qml:217
+#: app/AboutPage.qml:18 app/Main.qml:185
 #, kde-format
 msgid "About"
 msgstr "O aplikácii"
@@ -119,7 +119,7 @@ msgstr "Upraviť"
 msgid "Add to calendar…"
 msgstr "Pridať dokument..."
 
-#: app/ActionsCard.qml:74 app/Main.qml:205 app/TripGroupDelegate.qml:182
+#: app/ActionsCard.qml:74 app/TripGroupDelegate.qml:182
 #: app/TripGroupPage.qml:716
 #, fuzzy, kde-format
 #| msgid "Export..."
@@ -128,7 +128,7 @@ msgstr "Exportovať..."
 
 #: app/ActionsCard.qml:79 app/ActionsCard.qml:125 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
-#: app/HealthCertificatePage.qml:46 app/HealthCertificatePage.qml:60
+#: app/HealthCertificatePage.qml:49 app/HealthCertificatePage.qml:63
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:171
 #: app/TicketPage.qml:47 app/TicketPage.qml:171 app/TimelinePage.qml:221
 #: app/TripGroupPage.qml:313
@@ -1053,7 +1053,6 @@ msgid "Type: <b>%1</b>"
 msgstr "Tréner:"
 
 #: app/favoritelocationmodel.cpp:135 app/favoritelocationmodel.cpp:155
-#: app/SettingsPage.qml:35
 #, kde-format
 msgid "Home"
 msgstr "Domov"
@@ -1068,7 +1067,7 @@ msgstr "Práca"
 msgid "Location %1"
 msgstr "Umiestnenie %1"
 
-#: app/FavoriteLocationPage.qml:20 app/SettingsPage.qml:50
+#: app/FavoriteLocationPage.qml:20 app/MyDataPage.qml:119
 #, kde-format
 msgid "Favorite Locations"
 msgstr "Obľúbené miesta"
@@ -1513,7 +1512,7 @@ msgstr "Vymazať"
 msgid "Do you really want to delete this pass?"
 msgstr "Naozaj chcete odstrániť túto udalosť?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:322 app/Main.qml:21 app/Main.qml:161
+#: app/gpxexport.cpp:33 app/main.cpp:322 app/Main.qml:21 app/Main.qml:152
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerár"
@@ -1613,46 +1612,53 @@ msgstr "platnosť certifikátu vypršala"
 msgid "Recovery certificate valid"
 msgstr ""
 
-#: app/healthcertificatemanager.cpp:141
-#, fuzzy, kde-format
-msgid "Vaccination %1/%2 (%3)"
-msgstr "Vakcinácia %1 (%2/%3)"
-
-#: app/healthcertificatemanager.cpp:143
-#, fuzzy, kde-format
-#| msgid "Vaccination"
-msgid "Vaccination (%1)"
-msgstr "Vakcinácia"
-
-#: app/healthcertificatemanager.cpp:147
+#: app/healthcertificatemanager.cpp:145
 #, fuzzy, kde-format
 #| msgid "%1 (%2)"
-msgid "Test %1 (%2)"
+msgctxt ""
+msgid "%1 (%2)"
+msgstr "%1 (%2)"
+
+#: app/healthcertificatemanager.cpp:154
+#, fuzzy, kde-format
+msgid "Vaccination for %1 (%2/%3)"
+msgstr "Vakcinácia %1 (%2/%3)"
+
+#: app/healthcertificatemanager.cpp:156
+#, fuzzy, kde-format
+#| msgid "Vaccination"
+msgid "Vaccination for %1"
+msgstr "Vakcinácia"
+
+#: app/healthcertificatemanager.cpp:160
+#, fuzzy, kde-format
+#| msgid "%1 (%2)"
+msgid "Test %1 for %2"
 msgstr "Test"
 
-#: app/healthcertificatemanager.cpp:153
+#: app/healthcertificatemanager.cpp:166
 #, fuzzy, kde-format
-msgid "Recovery (%1)"
+msgid "Recovery %1 for %1"
 msgstr "Obnova"
 
-#: app/HealthCertificatePage.qml:16 app/Main.qml:179
+#: app/HealthCertificatePage.qml:19
 #, kde-format
 msgid "Health Certificates"
 msgstr "Zdravotné certifikáty"
 
-#: app/HealthCertificatePage.qml:55
+#: app/HealthCertificatePage.qml:58
 #, fuzzy, kde-format
 #| msgid "Health Certificates"
 msgid "Delete Certificate"
 msgstr "Zdravotné certifikáty"
 
-#: app/HealthCertificatePage.qml:56
+#: app/HealthCertificatePage.qml:59
 #, fuzzy, kde-format
 #| msgid "Do you really want to delete this event?"
 msgid "Do you really want to delete this certificate?"
 msgstr "Naozaj chcete odstrániť túto udalosť?"
 
-#: app/HealthCertificatePage.qml:126
+#: app/HealthCertificatePage.qml:132
 #, kde-format
 msgid ""
 "<p>You can import the following health certificates by scanning them with a "
@@ -2361,7 +2367,7 @@ msgstr "Let %1 z %2 do %3"
 msgid "Itinerary change"
 msgstr ""
 
-#: app/LiveStatusPage.qml:19 app/Main.qml:190
+#: app/LiveStatusPage.qml:19 app/Main.qml:163
 #, kde-format
 msgid "Live Status"
 msgstr ""
@@ -2650,6 +2656,11 @@ msgstr "Online služby"
 msgid "Import Reservation"
 msgstr ""
 
+#: app/Main.qml:126 app/MyDataPage.qml:207
+#, kde-format
+msgid "KDE Itinerary files (*.itinerary)"
+msgstr ""
+
 #: app/Main.qml:126
 #, kde-format
 msgid "PkPass files (*.pkpass)"
@@ -2665,45 +2676,35 @@ msgstr "PDF súbory (*.pdf)"
 msgid "iCal events (*.ics)"
 msgstr ""
 
-#: app/Main.qml:126 app/Main.qml:135
-#, kde-format
-msgid "KDE Itinerary files (*.itinerary)"
-msgstr ""
-
-#: app/Main.qml:133
-#, fuzzy, kde-format
-#| msgid "KDE Itinerary"
-msgid "Export Itinerary Data"
-msgstr "KDE Itinerár"
-
-#: app/Main.qml:166 app/PassPage.qml:139
+#: app/Main.qml:157
 #, fuzzy, kde-format
 #| msgid "Import..."
 msgid "Import…"
 msgstr "Importovať..."
 
-#: app/Main.qml:172 app/StatisticsPage.qml:15 app/TripGroupPage.qml:634
-#, fuzzy, kde-format
-msgid "Statistics"
-msgstr "Štatistika"
-
-#: app/Main.qml:198 app/WelcomePage.qml:41
+#: app/Main.qml:171 app/WelcomePage.qml:41
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgid "Settings…"
 msgstr "Nastavenia"
 
-#: app/Main.qml:210 app/WelcomePage.qml:16
+#: app/Main.qml:178 app/WelcomePage.qml:16
 #, fuzzy, kde-format
 msgid "Help"
 msgstr "Pomocník"
 
-#: app/Main.qml:326
+#: app/Main.qml:267
+#, kde-format
+msgctxt "@info:status"
+msgid "No onboard information available."
+msgstr ""
+
+#: app/Main.qml:309
 #, kde-format
 msgid "Map download finished."
 msgstr ""
 
-#: app/Main.qml:414
+#: app/Main.qml:386
 #, kde-format
 msgctxt "@title:window"
 msgid "Matrix Session Verification"
@@ -3002,6 +3003,91 @@ msgctxt "matrix room type"
 msgid "Spaces"
 msgstr ""
 
+#: app/MyDataPage.qml:23
+#, kde-format
+msgctxt "@title"
+msgid "My Data"
+msgstr ""
+
+#: app/MyDataPage.qml:27
+#, kde-format
+msgctxt "@title"
+msgid "Passes and Programs"
+msgstr ""
+
+#: app/MyDataPage.qml:34
+#, kde-format
+msgid "No valid bonus or discount program cards or flat rate passes found."
+msgstr ""
+
+#: app/MyDataPage.qml:52
+#, kde-format
+msgctxt "@action:button"
+msgid "Manage your Passes"
+msgstr ""
+
+#: app/MyDataPage.qml:59
+#, fuzzy, kde-format
+#| msgid "Health Certificates"
+msgctxt "@title"
+msgid "Health Certificates"
+msgstr "Zdravotné certifikáty"
+
+#: app/MyDataPage.qml:69
+#, fuzzy, kde-format
+#| msgid "Health Certificates"
+msgid "No valid health certificate found."
+msgstr "Zdravotné certifikáty"
+
+#: app/MyDataPage.qml:103
+#, fuzzy, kde-format
+#| msgid "Favorite Locations"
+msgctxt "@title:group"
+msgid "Saved Locations"
+msgstr "Obľúbené miesta"
+
+#: app/MyDataPage.qml:108
+#, kde-format
+msgid "Home Country"
+msgstr "Domáca krajina"
+
+#: app/MyDataPage.qml:126 app/StatisticsPage.qml:15 app/TripGroupPage.qml:634
+#, fuzzy, kde-format
+msgid "Statistics"
+msgstr "Štatistika"
+
+#: app/MyDataPage.qml:175
+#, fuzzy, kde-format
+msgctxt "@action:button"
+msgid "See all Statistics"
+msgstr "Štatistika"
+
+#: app/MyDataPage.qml:185
+#, kde-format
+msgctxt "@title:group"
+msgid "Data Portability"
+msgstr ""
+
+#: app/MyDataPage.qml:190
+#, fuzzy, kde-format
+#| msgid "Import..."
+msgctxt "@action:button"
+msgid "Import"
+msgstr "Importovať..."
+
+#: app/MyDataPage.qml:198
+#, fuzzy, kde-format
+#| msgid "Export..."
+msgctxt "@action:button"
+msgid "Export"
+msgstr "Exportovať..."
+
+#: app/MyDataPage.qml:205
+#, fuzzy, kde-format
+#| msgid "KDE Itinerary"
+msgid "Export Itinerary Data"
+msgstr "KDE Itinerár"
+
 #: app/NavigationBar.qml:18
 #, fuzzy, kde-format
 #| msgid "KDE Itinerary"
@@ -3019,7 +3105,7 @@ msgstr "Odstrániť dokument"
 #: app/NavigationBar.qml:42
 #, kde-format
 msgctxt "@title:tab"
-msgid "Passes & Programs"
+msgid "My Data"
 msgstr ""
 
 #: app/NavigationBar.qml:47
@@ -3147,57 +3233,66 @@ msgstr "Online služby"
 msgid "Search…"
 msgstr ""
 
-#: app/passmanager.cpp:252
-#, fuzzy, kde-format
-#| msgid "Expires:"
-msgctxt "no longer valid tickets"
-msgid "Expired"
-msgstr "Vyprší:"
-
-#: app/passmanager.cpp:255
+#: app/PassDelegate.qml:36
 #, kde-format
-msgctxt "not yet valid tickets"
-msgid "Future"
+msgctxt "name - number"
+msgid "%1 - %2"
 msgstr ""
 
-#: app/passmanager.cpp:257
+#: app/PassDelegate.qml:44
+#, kde-format
+msgctxt "name - valid time range"
+msgid "%1 - %2"
+msgstr ""
+
+#: app/passmanager.cpp:276 app/TripGroupPage.qml:440
+#, kde-format
+msgid "%1 - %2"
+msgstr ""
+
+#: app/PassPage.qml:18
+#, kde-format
+msgid "Passes and Programs"
+msgstr ""
+
+#: app/PassPage.qml:21
+#, fuzzy, kde-format
+msgctxt "@title"
+msgid "Add Program Membership"
+msgstr "Číslo:"
+
+#: app/PassPage.qml:26
+#, fuzzy, kde-format
+#| msgid "Import from Clipboard"
+msgctxt "@action:button"
+msgid "Import From File"
+msgstr "Importovať zo schránky"
+
+#: app/PassPage.qml:34
+#, kde-format
+msgctxt "@action:button"
+msgid "Add Manually"
+msgstr ""
+
+#: app/PassPage.qml:48
 #, fuzzy, kde-format
 #| msgid "Valid from:"
 msgctxt "not yet expired tickets"
 msgid "Valid"
 msgstr "Platné od:"
 
-#: app/passmanager.cpp:275 app/TripGroupPage.qml:440
+#: app/PassPage.qml:69
 #, kde-format
-msgid "%1 - %2"
+msgctxt "not yet valid tickets"
+msgid "Future"
 msgstr ""
 
-#: app/PassPage.qml:19
-#, kde-format
-msgid "Passes and Programs"
-msgstr ""
-
-#: app/PassPage.qml:22
-#, kde-format
-msgid "Add Program Membership…"
-msgstr ""
-
-#: app/PassPage.qml:54
-#, kde-format
-msgctxt "name - number"
-msgid "%1 - %2"
-msgstr ""
-
-#: app/PassPage.qml:107
-#, kde-format
-msgctxt "name - valid time range"
-msgid "%1 - %2"
-msgstr ""
-
-#: app/PassPage.qml:137
-#, kde-format
-msgid "Import bonus or discount program cards or flat rate passes."
-msgstr ""
+#: app/PassPage.qml:91
+#, fuzzy, kde-format
+#| msgid "Expires:"
+msgctxt "no longer valid tickets"
+msgid "Expired"
+msgstr "Vyprší:"
 
 #: app/PkPassPage.qml:17
 #, kde-format
@@ -3482,34 +3577,29 @@ msgstr ""
 msgid "Settings"
 msgstr "Nastavenia"
 
-#: app/SettingsPage.qml:39
-#, kde-format
-msgid "Home Country"
-msgstr "Domáca krajina"
-
-#: app/SettingsPage.qml:58
+#: app/SettingsPage.qml:30
 #, kde-format
 msgid "Online Services"
 msgstr "Online služby"
 
-#: app/SettingsPage.qml:62
+#: app/SettingsPage.qml:34
 #, kde-format
 msgid "Query Traffic Data"
 msgstr ""
 
-#: app/SettingsPage.qml:65
+#: app/SettingsPage.qml:37
 #, kde-format
 msgid ""
 "When enabled, this will query transport provider online services for changes "
 "such as delays or gate and platform changes."
 msgstr ""
 
-#: app/SettingsPage.qml:71
+#: app/SettingsPage.qml:43
 #, kde-format
 msgid "Use insecure services"
 msgstr ""
 
-#: app/SettingsPage.qml:74
+#: app/SettingsPage.qml:46
 #, kde-format
 msgid ""
 "Enabling this will also use online services that do not offer transport "
@@ -3517,24 +3607,24 @@ msgid ""
 "on live data from certain providers."
 msgstr ""
 
-#: app/SettingsPage.qml:82
+#: app/SettingsPage.qml:54
 #, fuzzy, kde-format
 #| msgid "Transport Data"
 msgid "Public Transport Information Sources…"
 msgstr "Údaje o doprave"
 
-#: app/SettingsPage.qml:91 app/WeatherForecastDelegate.qml:83
+#: app/SettingsPage.qml:63 app/WeatherForecastDelegate.qml:83
 #: app/WeatherForecastPage.qml:19
 #, kde-format
 msgid "Weather Forecast"
 msgstr "Predpoveď počasia"
 
-#: app/SettingsPage.qml:94
+#: app/SettingsPage.qml:66
 #, kde-format
 msgid "Showing weather forecasts will query online services."
 msgstr ""
 
-#: app/SettingsPage.qml:99 app/WeatherForecastPage.qml:36
+#: app/SettingsPage.qml:71 app/WeatherForecastPage.qml:36
 #, kde-format
 msgid ""
 "Using data from <a href=\"https://www.met.no/\">The Norwegian Meteorological "
@@ -3542,205 +3632,205 @@ msgid ""
 "by/4.0\">Creative Commons 4.0 BY International</a> license."
 msgstr ""
 
-#: app/SettingsPage.qml:108
+#: app/SettingsPage.qml:80
 #, kde-format
 msgid "Preload Map Data"
 msgstr ""
 
-#: app/SettingsPage.qml:111
+#: app/SettingsPage.qml:83
 #, kde-format
 msgid ""
 "Enabling this will download maps for all stations and airports for upcoming "
 "trips when connected to Wifi network."
 msgstr ""
 
-#: app/SettingsPage.qml:118
+#: app/SettingsPage.qml:90
 #, kde-format
 msgid "Currency Conversion"
 msgstr ""
 
-#: app/SettingsPage.qml:121
+#: app/SettingsPage.qml:93
 #, kde-format
 msgid ""
 "Enabling this will perform online queries for exchange rates to currencies "
 "at travel destinations."
 msgstr ""
 
-#: app/SettingsPage.qml:127
+#: app/SettingsPage.qml:99
 #, kde-format
 msgid "Wikimedia Online Content"
 msgstr ""
 
-#: app/SettingsPage.qml:130
+#: app/SettingsPage.qml:102
 #, kde-format
 msgid "Use additional online content from Wikimedia and Wikidata."
 msgstr ""
 
-#: app/SettingsPage.qml:137
+#: app/SettingsPage.qml:109
 #, kde-format
 msgid "Transfer Assistant"
 msgstr ""
 
-#: app/SettingsPage.qml:141
+#: app/SettingsPage.qml:113
 #, kde-format
 msgid "Automatically add transfers"
 msgstr ""
 
-#: app/SettingsPage.qml:149
+#: app/SettingsPage.qml:121
 #, kde-format
 msgid "Automatically fill transfers"
 msgstr ""
 
-#: app/SettingsPage.qml:150
+#: app/SettingsPage.qml:122
 #, kde-format
 msgid ""
 "When enabled, this will query transport provider online services "
 "automatically for transfer information."
 msgstr ""
 
-#: app/SettingsPage.qml:161
+#: app/SettingsPage.qml:133
 #, kde-format
 msgid "Notifications"
 msgstr "Oznámenia"
 
-#: app/SettingsPage.qml:166
+#: app/SettingsPage.qml:138
 #, fuzzy, kde-format
 #| msgid "Configure Notifications..."
 msgid "Configure Notifications…"
 msgstr "Nastaviť upozornenia..."
 
-#: app/SettingsPage.qml:175
+#: app/SettingsPage.qml:147
 #, kde-format
 msgid "Show notifications on lock screen"
 msgstr ""
 
-#: app/SettingsPage.qml:185 app/SettingsPage.qml:214
+#: app/SettingsPage.qml:157 app/SettingsPage.qml:186
 #, kde-format
 msgid "Request permissions…"
 msgstr ""
 
-#: app/SettingsPage.qml:186
+#: app/SettingsPage.qml:158
 #, kde-format
 msgid "Additional permissions are required to show notifications."
 msgstr ""
 
-#: app/SettingsPage.qml:196
+#: app/SettingsPage.qml:168
 #, kde-format
 msgid "Notification permissions are available"
 msgstr ""
 
-#: app/SettingsPage.qml:197 app/SettingsPage.qml:239 app/SettingsPage.qml:317
+#: app/SettingsPage.qml:169 app/SettingsPage.qml:211 app/SettingsPage.qml:289
 #, kde-format
 msgid "No further action required."
 msgstr ""
 
-#: app/SettingsPage.qml:210
+#: app/SettingsPage.qml:182
 #, kde-format
 msgid "Onboard Status"
 msgstr ""
 
-#: app/SettingsPage.qml:215
+#: app/SettingsPage.qml:187
 #, kde-format
 msgid "Additional permissions are required to access the Wi-Fi status."
 msgstr ""
 
-#: app/SettingsPage.qml:226
+#: app/SettingsPage.qml:198
 #, kde-format
 msgid "Wi-Fi access for onboard information is available."
 msgstr ""
 
-#: app/SettingsPage.qml:228
+#: app/SettingsPage.qml:200
 #, kde-format
 msgid "Wi-Fi is not enabled"
 msgstr ""
 
-#: app/SettingsPage.qml:230
+#: app/SettingsPage.qml:202
 #, kde-format
 msgid "Location service is not enabled"
 msgstr ""
 
-#: app/SettingsPage.qml:232
+#: app/SettingsPage.qml:204
 #, kde-format
 msgid "Wi-Fi access is not available on this system"
 msgstr ""
 
-#: app/SettingsPage.qml:241
+#: app/SettingsPage.qml:213
 #, kde-format
 msgid "Enable Wi-Fi on your system to access onboard information."
 msgstr ""
 
-#: app/SettingsPage.qml:243
+#: app/SettingsPage.qml:215
 #, kde-format
 msgid ""
 "Enable the location service on your device to access onboard information."
 msgstr ""
 
-#: app/SettingsPage.qml:245
+#: app/SettingsPage.qml:217
 #, kde-format
 msgid ""
 "Onboard information are unfortunately not supported on your device at this "
 "time."
 msgstr ""
 
-#: app/SettingsPage.qml:277
+#: app/SettingsPage.qml:249
 #, kde-format
 msgid "Matrix Integration"
 msgstr ""
 
-#: app/SettingsPage.qml:284 app/SettingsPage.qml:341
+#: app/SettingsPage.qml:256 app/SettingsPage.qml:313
 #, kde-format
 msgid "Logged in as %1"
 msgstr ""
 
-#: app/SettingsPage.qml:288
+#: app/SettingsPage.qml:260
 #, kde-format
 msgid "Synchronize rooms"
 msgstr ""
 
-#: app/SettingsPage.qml:295
+#: app/SettingsPage.qml:267
 #, kde-format
 msgid "Matrix ID"
 msgstr ""
 
-#: app/SettingsPage.qml:304
+#: app/SettingsPage.qml:276
 #, kde-format
 msgid "Password"
 msgstr ""
 
-#: app/SettingsPage.qml:316
+#: app/SettingsPage.qml:288
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Session verified"
 msgstr ""
 
-#: app/SettingsPage.qml:316
+#: app/SettingsPage.qml:288
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Session not verified."
 msgstr ""
 
-#: app/SettingsPage.qml:317
+#: app/SettingsPage.qml:289
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Initiate session verification in your Matrix chat client."
 msgstr ""
 
-#: app/SettingsPage.qml:324
+#: app/SettingsPage.qml:296
 #, kde-format
 msgid "Log out"
 msgstr ""
 
-#: app/SettingsPage.qml:324
+#: app/SettingsPage.qml:296
 #, kde-format
 msgid "Log in"
 msgstr ""
 
-#: app/SettingsPage.qml:331
+#: app/SettingsPage.qml:303
 #, kde-format
 msgid "Traewelling Integration"
 msgstr ""
 
-#: app/SettingsPage.qml:336
+#: app/SettingsPage.qml:308
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -3749,27 +3839,27 @@ msgid ""
 "information, visit <a href=\"https://traewelling.de\">traewelling.de</a>"
 msgstr ""
 
-#: app/SettingsPage.qml:344
+#: app/SettingsPage.qml:316
 #, kde-format
 msgid "Login"
 msgstr ""
 
-#: app/SettingsPage.qml:349
+#: app/SettingsPage.qml:321
 #, kde-format
 msgid "Logout"
 msgstr ""
 
-#: app/SettingsPage.qml:356
+#: app/SettingsPage.qml:328
 #, kde-format
 msgid "Contributing"
 msgstr ""
 
-#: app/SettingsPage.qml:360
+#: app/SettingsPage.qml:332
 #, kde-format
 msgid "I contribute to OpenStreetMap"
 msgstr ""
 
-#: app/SettingsPage.qml:361
+#: app/SettingsPage.qml:333
 #, kde-format
 msgid "Enables OSM editing options."
 msgstr ""
@@ -4919,9 +5009,6 @@ msgstr "Autobus %1 z %2 do %3"
 #, fuzzy
 #~ msgid "Ticket imported"
 #~ msgstr "Poradové číslo:"
-
-#~ msgid "Import from Clipboard"
-#~ msgstr "Importovať zo schránky"
 
 #, fuzzy
 #~| msgid "Vehicle"

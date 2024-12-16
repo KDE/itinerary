@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-15 00:41+0000\n"
+"POT-Creation-Date: 2024-12-16 00:43+0000\n"
 "PO-Revision-Date: 2024-12-01 14:37+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -28,7 +28,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "translator@legisign.org"
 
-#: app/AboutPage.qml:18 app/Main.qml:217
+#: app/AboutPage.qml:18 app/Main.qml:185
 #, kde-format
 msgid "About"
 msgstr "Tietoa"
@@ -118,7 +118,7 @@ msgstr "Muokkaa"
 msgid "Add to calendar…"
 msgstr "Lisää kalenteriin…"
 
-#: app/ActionsCard.qml:74 app/Main.qml:205 app/TripGroupDelegate.qml:182
+#: app/ActionsCard.qml:74 app/TripGroupDelegate.qml:182
 #: app/TripGroupPage.qml:716
 #, kde-format
 msgid "Export…"
@@ -126,7 +126,7 @@ msgstr "Vie…"
 
 #: app/ActionsCard.qml:79 app/ActionsCard.qml:125 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
-#: app/HealthCertificatePage.qml:46 app/HealthCertificatePage.qml:60
+#: app/HealthCertificatePage.qml:49 app/HealthCertificatePage.qml:63
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:171
 #: app/TicketPage.qml:47 app/TicketPage.qml:171 app/TimelinePage.qml:221
 #: app/TripGroupPage.qml:313
@@ -969,7 +969,6 @@ msgid "Type: <b>%1</b>"
 msgstr "Tyyppi: <b>%1</b>"
 
 #: app/favoritelocationmodel.cpp:135 app/favoritelocationmodel.cpp:155
-#: app/SettingsPage.qml:35
 #, kde-format
 msgid "Home"
 msgstr "Koti"
@@ -984,7 +983,7 @@ msgstr "Työ"
 msgid "Location %1"
 msgstr "Sijainti %1"
 
-#: app/FavoriteLocationPage.qml:20 app/SettingsPage.qml:50
+#: app/FavoriteLocationPage.qml:20 app/MyDataPage.qml:119
 #, kde-format
 msgid "Favorite Locations"
 msgstr "Suosikkisijainnit"
@@ -1392,7 +1391,7 @@ msgstr "Poista lippu"
 msgid "Do you really want to delete this pass?"
 msgstr "Haluatko varmasti poistaa tämän lipun?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:322 app/Main.qml:21 app/Main.qml:161
+#: app/gpxexport.cpp:33 app/main.cpp:322 app/Main.qml:21 app/Main.qml:152
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -1488,42 +1487,53 @@ msgstr "Koetulos on vanhentunut"
 msgid "Recovery certificate valid"
 msgstr "Kelvollinen palautusvarmenne"
 
-#: app/healthcertificatemanager.cpp:141
-#, kde-format
-msgid "Vaccination %1/%2 (%3)"
+#: app/healthcertificatemanager.cpp:145
+#, fuzzy, kde-format
+#| msgid "%1 (%2)"
+msgctxt ""
+msgid "%1 (%2)"
+msgstr "%1 (%2)"
+
+#: app/healthcertificatemanager.cpp:154
+#, fuzzy, kde-format
+#| msgid "Vaccination %1/%2 (%3)"
+msgid "Vaccination for %1 (%2/%3)"
 msgstr "Rokotus %1/%2 (%3)"
 
-#: app/healthcertificatemanager.cpp:143
-#, kde-format
-msgid "Vaccination (%1)"
+#: app/healthcertificatemanager.cpp:156
+#, fuzzy, kde-format
+#| msgid "Vaccination (%1)"
+msgid "Vaccination for %1"
 msgstr "Rokotus (%1)"
 
-#: app/healthcertificatemanager.cpp:147
-#, kde-format
-msgid "Test %1 (%2)"
+#: app/healthcertificatemanager.cpp:160
+#, fuzzy, kde-format
+#| msgid "Test %1 (%2)"
+msgid "Test %1 for %2"
 msgstr "Testi %1 (%2)"
 
-#: app/healthcertificatemanager.cpp:153
-#, kde-format
-msgid "Recovery (%1)"
+#: app/healthcertificatemanager.cpp:166
+#, fuzzy, kde-format
+#| msgid "Recovery (%1)"
+msgid "Recovery %1 for %1"
 msgstr "Toipuminen (%1)"
 
-#: app/HealthCertificatePage.qml:16 app/Main.qml:179
+#: app/HealthCertificatePage.qml:19
 #, kde-format
 msgid "Health Certificates"
 msgstr "Terveystodistukset"
 
-#: app/HealthCertificatePage.qml:55
+#: app/HealthCertificatePage.qml:58
 #, kde-format
 msgid "Delete Certificate"
 msgstr "Poista todistus"
 
-#: app/HealthCertificatePage.qml:56
+#: app/HealthCertificatePage.qml:59
 #, kde-format
 msgid "Do you really want to delete this certificate?"
 msgstr "Haluatko varmasti poistaa tämän todistuksen?"
 
-#: app/HealthCertificatePage.qml:126
+#: app/HealthCertificatePage.qml:132
 #, kde-format
 msgid ""
 "<p>You can import the following health certificates by scanning them with a "
@@ -2204,7 +2214,7 @@ msgstr "Lento %1–%2:"
 msgid "Itinerary change"
 msgstr "Matkasuunnitelman muutos"
 
-#: app/LiveStatusPage.qml:19 app/Main.qml:190
+#: app/LiveStatusPage.qml:19 app/Main.qml:163
 #, kde-format
 msgid "Live Status"
 msgstr "Elävä tilanne"
@@ -2480,6 +2490,11 @@ msgstr "SNCF:n verkkolippu…"
 msgid "Import Reservation"
 msgstr "Tuo varaus"
 
+#: app/Main.qml:126 app/MyDataPage.qml:207
+#, kde-format
+msgid "KDE Itinerary files (*.itinerary)"
+msgstr "KDE Itinerary -tiedostot (*.itinerary)"
+
 #: app/Main.qml:126
 #, kde-format
 msgid "PkPass files (*.pkpass)"
@@ -2495,42 +2510,34 @@ msgstr "PDF-tiedostot (*.pdf)"
 msgid "iCal events (*.ics)"
 msgstr "iCal-tapahtumat (*.ics)"
 
-#: app/Main.qml:126 app/Main.qml:135
-#, kde-format
-msgid "KDE Itinerary files (*.itinerary)"
-msgstr "KDE Itinerary -tiedostot (*.itinerary)"
-
-#: app/Main.qml:133
-#, kde-format
-msgid "Export Itinerary Data"
-msgstr "Vie matkasuunnitelmatiedot"
-
-#: app/Main.qml:166 app/PassPage.qml:139
+#: app/Main.qml:157
 #, kde-format
 msgid "Import…"
 msgstr "Tuo…"
 
-#: app/Main.qml:172 app/StatisticsPage.qml:15 app/TripGroupPage.qml:634
-#, kde-format
-msgid "Statistics"
-msgstr "Tilastot"
-
-#: app/Main.qml:198 app/WelcomePage.qml:41
+#: app/Main.qml:171 app/WelcomePage.qml:41
 #, kde-format
 msgid "Settings…"
 msgstr "Asetukset…"
 
-#: app/Main.qml:210 app/WelcomePage.qml:16
+#: app/Main.qml:178 app/WelcomePage.qml:16
 #, kde-format
 msgid "Help"
 msgstr "Ohje"
 
-#: app/Main.qml:326
+#: app/Main.qml:267
+#, fuzzy, kde-format
+#| msgid "Wi-Fi access for onboard information is available."
+msgctxt "@info:status"
+msgid "No onboard information available."
+msgstr "Tietoa kulkuvälineen langattomasta verkosta ei ole saatavilla."
+
+#: app/Main.qml:309
 #, kde-format
 msgid "Map download finished."
 msgstr "Kartan lataus valmistui."
 
-#: app/Main.qml:414
+#: app/Main.qml:386
 #, kde-format
 msgctxt "@title:window"
 msgid "Matrix Session Verification"
@@ -2849,6 +2856,94 @@ msgctxt "matrix room type"
 msgid "Spaces"
 msgstr "Välilyönnit"
 
+#: app/MyDataPage.qml:23
+#, kde-format
+msgctxt "@title"
+msgid "My Data"
+msgstr ""
+
+#: app/MyDataPage.qml:27
+#, fuzzy, kde-format
+#| msgid "Passes and Programs"
+msgctxt "@title"
+msgid "Passes and Programs"
+msgstr "Liput ja ohjelmat"
+
+#: app/MyDataPage.qml:34
+#, fuzzy, kde-format
+#| msgid "Import bonus or discount program cards or flat rate passes."
+msgid "No valid bonus or discount program cards or flat rate passes found."
+msgstr "Tuo bonus- tai alennusohjelmakortit tai kiinteähintaiset liput."
+
+#: app/MyDataPage.qml:52
+#, kde-format
+msgctxt "@action:button"
+msgid "Manage your Passes"
+msgstr ""
+
+#: app/MyDataPage.qml:59
+#, fuzzy, kde-format
+#| msgid "Health Certificates"
+msgctxt "@title"
+msgid "Health Certificates"
+msgstr "Terveystodistukset"
+
+#: app/MyDataPage.qml:69
+#, fuzzy, kde-format
+#| msgid "One health certificate imported."
+#| msgid_plural "%1 health certificates imported."
+msgid "No valid health certificate found."
+msgstr "Tuotiin yksi terveystodistus."
+
+#: app/MyDataPage.qml:103
+#, fuzzy, kde-format
+#| msgid "Favorite Locations"
+msgctxt "@title:group"
+msgid "Saved Locations"
+msgstr "Suosikkisijainnit"
+
+#: app/MyDataPage.qml:108
+#, kde-format
+msgid "Home Country"
+msgstr "Kotimaa"
+
+#: app/MyDataPage.qml:126 app/StatisticsPage.qml:15 app/TripGroupPage.qml:634
+#, kde-format
+msgid "Statistics"
+msgstr "Tilastot"
+
+#: app/MyDataPage.qml:175
+#, fuzzy, kde-format
+#| msgid "Statistics"
+msgctxt "@action:button"
+msgid "See all Statistics"
+msgstr "Tilastot"
+
+#: app/MyDataPage.qml:185
+#, kde-format
+msgctxt "@title:group"
+msgid "Data Portability"
+msgstr ""
+
+#: app/MyDataPage.qml:190
+#, fuzzy, kde-format
+#| msgid "Import"
+msgctxt "@action:button"
+msgid "Import"
+msgstr "Tuo"
+
+#: app/MyDataPage.qml:198
+#, fuzzy, kde-format
+#| msgid "Export"
+msgctxt "@action:button"
+msgid "Export"
+msgstr "Vie"
+
+#: app/MyDataPage.qml:205
+#, kde-format
+msgid "Export Itinerary Data"
+msgstr "Vie matkasuunnitelmatiedot"
+
 #: app/NavigationBar.qml:18
 #, kde-format
 msgctxt "@title:tab This isn't the app name, but the English noun"
@@ -2864,8 +2959,8 @@ msgstr "Suunnittele matka"
 #: app/NavigationBar.qml:42
 #, kde-format
 msgctxt "@title:tab"
-msgid "Passes & Programs"
-msgstr "Liput ja ohjelmat"
+msgid "My Data"
+msgstr ""
 
 #: app/NavigationBar.qml:47
 #, kde-format
@@ -2985,55 +3080,65 @@ msgstr "Verkkolippu"
 msgid "Search…"
 msgstr "Etsi…"
 
-#: app/passmanager.cpp:252
-#, kde-format
-msgctxt "no longer valid tickets"
-msgid "Expired"
-msgstr "Vanhentunut"
-
-#: app/passmanager.cpp:255
-#, kde-format
-msgctxt "not yet valid tickets"
-msgid "Future"
-msgstr "Tulevaisuus"
-
-#: app/passmanager.cpp:257
-#, kde-format
-msgctxt "not yet expired tickets"
-msgid "Valid"
-msgstr "Kelvollinen"
-
-#: app/passmanager.cpp:275 app/TripGroupPage.qml:440
-#, kde-format
-msgid "%1 - %2"
-msgstr "%1 – %2"
-
-#: app/PassPage.qml:19
-#, kde-format
-msgid "Passes and Programs"
-msgstr "Liput ja ohjelmat"
-
-#: app/PassPage.qml:22
-#, kde-format
-msgid "Add Program Membership…"
-msgstr "Lisää ohjelman jäsenyys…"
-
-#: app/PassPage.qml:54
+#: app/PassDelegate.qml:36
 #, kde-format
 msgctxt "name - number"
 msgid "%1 - %2"
 msgstr "%1 – %2"
 
-#: app/PassPage.qml:107
+#: app/PassDelegate.qml:44
 #, kde-format
 msgctxt "name - valid time range"
 msgid "%1 - %2"
 msgstr "%1 – %2"
 
-#: app/PassPage.qml:137
+#: app/passmanager.cpp:276 app/TripGroupPage.qml:440
 #, kde-format
-msgid "Import bonus or discount program cards or flat rate passes."
-msgstr "Tuo bonus- tai alennusohjelmakortit tai kiinteähintaiset liput."
+msgid "%1 - %2"
+msgstr "%1 – %2"
+
+#: app/PassPage.qml:18
+#, kde-format
+msgid "Passes and Programs"
+msgstr "Liput ja ohjelmat"
+
+#: app/PassPage.qml:21
+#, fuzzy, kde-format
+#| msgid "Add Program Membership…"
+msgctxt "@title"
+msgid "Add Program Membership"
+msgstr "Lisää ohjelman jäsenyys…"
+
+#: app/PassPage.qml:26
+#, fuzzy, kde-format
+#| msgid "Import from GPX"
+msgctxt "@action:button"
+msgid "Import From File"
+msgstr "Tuo GPX-muodosta"
+
+#: app/PassPage.qml:34
+#, kde-format
+msgctxt "@action:button"
+msgid "Add Manually"
+msgstr ""
+
+#: app/PassPage.qml:48
+#, kde-format
+msgctxt "not yet expired tickets"
+msgid "Valid"
+msgstr "Kelvollinen"
+
+#: app/PassPage.qml:69
+#, kde-format
+msgctxt "not yet valid tickets"
+msgid "Future"
+msgstr "Tulevaisuus"
+
+#: app/PassPage.qml:91
+#, kde-format
+msgctxt "no longer valid tickets"
+msgid "Expired"
+msgstr "Vanhentunut"
 
 #: app/PkPassPage.qml:17
 #, kde-format
@@ -3304,22 +3409,17 @@ msgstr "Seurueen koko"
 msgid "Settings"
 msgstr "Asetukset"
 
-#: app/SettingsPage.qml:39
-#, kde-format
-msgid "Home Country"
-msgstr "Kotimaa"
-
-#: app/SettingsPage.qml:58
+#: app/SettingsPage.qml:30
 #, kde-format
 msgid "Online Services"
 msgstr "Verkkopalvelut"
 
-#: app/SettingsPage.qml:62
+#: app/SettingsPage.qml:34
 #, kde-format
 msgid "Query Traffic Data"
 msgstr "Kysele liikennetiedot"
 
-#: app/SettingsPage.qml:65
+#: app/SettingsPage.qml:37
 #, kde-format
 msgid ""
 "When enabled, this will query transport provider online services for changes "
@@ -3328,12 +3428,12 @@ msgstr ""
 "Jos käytössä, muutostiedot kuten viivästykset ja portin tai laiturin "
 "vaihdokset kysellään verkkopalveluntarjoajilta."
 
-#: app/SettingsPage.qml:71
+#: app/SettingsPage.qml:43
 #, kde-format
 msgid "Use insecure services"
 msgstr "Salli salaamattomat palvelut"
 
-#: app/SettingsPage.qml:74
+#: app/SettingsPage.qml:46
 #, kde-format
 msgid ""
 "Enabling this will also use online services that do not offer transport "
@@ -3344,23 +3444,23 @@ msgstr ""
 "verkkopalveluja. Tätä ei suositella, mutta käyttöä ei aina voi välttää, jos "
 "haluaa joiltakin tarjoajilta ajantasaista tietoa."
 
-#: app/SettingsPage.qml:82
+#: app/SettingsPage.qml:54
 #, kde-format
 msgid "Public Transport Information Sources…"
 msgstr "Julkisen liikenteen tietolähteet…"
 
-#: app/SettingsPage.qml:91 app/WeatherForecastDelegate.qml:83
+#: app/SettingsPage.qml:63 app/WeatherForecastDelegate.qml:83
 #: app/WeatherForecastPage.qml:19
 #, kde-format
 msgid "Weather Forecast"
 msgstr "Sääennuste"
 
-#: app/SettingsPage.qml:94
+#: app/SettingsPage.qml:66
 #, kde-format
 msgid "Showing weather forecasts will query online services."
 msgstr "Sääennusteiden näyttö kyselee verkkopalveluista."
 
-#: app/SettingsPage.qml:99 app/WeatherForecastPage.qml:36
+#: app/SettingsPage.qml:71 app/WeatherForecastPage.qml:36
 #, kde-format
 msgid ""
 "Using data from <a href=\"https://www.met.no/\">The Norwegian Meteorological "
@@ -3371,12 +3471,12 @@ msgstr ""
 "tietoja <a href=\"https://creativecommons.org/licenses/by/4.0\">Creative "
 "Commons 4.0 BY International</a> -lisenssillä."
 
-#: app/SettingsPage.qml:108
+#: app/SettingsPage.qml:80
 #, kde-format
 msgid "Preload Map Data"
 msgstr "Esilataa karttatiedot"
 
-#: app/SettingsPage.qml:111
+#: app/SettingsPage.qml:83
 #, kde-format
 msgid ""
 "Enabling this will download maps for all stations and airports for upcoming "
@@ -3385,12 +3485,12 @@ msgstr ""
 "Ottamalla tämä käyttöön kaikkien tulevien matkojen asemien kartat ladataan, "
 "kun ollaan langattomassa verkossa."
 
-#: app/SettingsPage.qml:118
+#: app/SettingsPage.qml:90
 #, kde-format
 msgid "Currency Conversion"
 msgstr "Valuutanmuunnos"
 
-#: app/SettingsPage.qml:121
+#: app/SettingsPage.qml:93
 #, kde-format
 msgid ""
 "Enabling this will perform online queries for exchange rates to currencies "
@@ -3398,32 +3498,32 @@ msgid ""
 msgstr ""
 "Tämän käyttöönotto kyselee verkosta matkakohteiden valuutanvaihtokursseja."
 
-#: app/SettingsPage.qml:127
+#: app/SettingsPage.qml:99
 #, kde-format
 msgid "Wikimedia Online Content"
 msgstr "Wikimedian verkkosisältö"
 
-#: app/SettingsPage.qml:130
+#: app/SettingsPage.qml:102
 #, kde-format
 msgid "Use additional online content from Wikimedia and Wikidata."
 msgstr "Käytä Wikimedian ja Wikidatan lisäverkkosisältöä."
 
-#: app/SettingsPage.qml:137
+#: app/SettingsPage.qml:109
 #, kde-format
 msgid "Transfer Assistant"
 msgstr "Vaihtoavustaja"
 
-#: app/SettingsPage.qml:141
+#: app/SettingsPage.qml:113
 #, kde-format
 msgid "Automatically add transfers"
 msgstr "Lisää vaihdot automaattisesti"
 
-#: app/SettingsPage.qml:149
+#: app/SettingsPage.qml:121
 #, kde-format
 msgid "Automatically fill transfers"
 msgstr "Täytä vaihdot automaattisesti"
 
-#: app/SettingsPage.qml:150
+#: app/SettingsPage.qml:122
 #, kde-format
 msgid ""
 "When enabled, this will query transport provider online services "
@@ -3432,80 +3532,80 @@ msgstr ""
 "Jos käytössä, vaihtotiedot kysellään verkkopalveluntarjoajilta "
 "automaattisesti."
 
-#: app/SettingsPage.qml:161
+#: app/SettingsPage.qml:133
 #, kde-format
 msgid "Notifications"
 msgstr "Ilmoitukset"
 
-#: app/SettingsPage.qml:166
+#: app/SettingsPage.qml:138
 #, kde-format
 msgid "Configure Notifications…"
 msgstr "Ilmoitusasetukset…"
 
-#: app/SettingsPage.qml:175
+#: app/SettingsPage.qml:147
 #, kde-format
 msgid "Show notifications on lock screen"
 msgstr "Näytä ilmoitukset lukitusnäytöllä"
 
-#: app/SettingsPage.qml:185 app/SettingsPage.qml:214
+#: app/SettingsPage.qml:157 app/SettingsPage.qml:186
 #, kde-format
 msgid "Request permissions…"
 msgstr "Pyydä käyttölupaa…"
 
-#: app/SettingsPage.qml:186
+#: app/SettingsPage.qml:158
 #, kde-format
 msgid "Additional permissions are required to show notifications."
 msgstr "Ilmoituksen näyttämiseksi vaaditaan lisäkäyttöoikeuksia."
 
-#: app/SettingsPage.qml:196
+#: app/SettingsPage.qml:168
 #, kde-format
 msgid "Notification permissions are available"
 msgstr "Ilmoituskäyttöoikeudet ovat käytettävissä"
 
-#: app/SettingsPage.qml:197 app/SettingsPage.qml:239 app/SettingsPage.qml:317
+#: app/SettingsPage.qml:169 app/SettingsPage.qml:211 app/SettingsPage.qml:289
 #, kde-format
 msgid "No further action required."
 msgstr "Lisätoimia ei vaadita."
 
 # Huono. ”Onboard” voi kai tässä koskea muutakin kuin laivaa (?), eikä ole aivan selvää, tarkoittaako ”status” ’tilannetta’ vai jotakin muuta.
-#: app/SettingsPage.qml:210
+#: app/SettingsPage.qml:182
 #, kde-format
 msgid "Onboard Status"
 msgstr "Laivaannousun tilanne"
 
-#: app/SettingsPage.qml:215
+#: app/SettingsPage.qml:187
 #, kde-format
 msgid "Additional permissions are required to access the Wi-Fi status."
 msgstr "Langattoman verkon tilan saamiseksi vaaditaan lisäkäyttöoikeuksia."
 
-#: app/SettingsPage.qml:226
+#: app/SettingsPage.qml:198
 #, kde-format
 msgid "Wi-Fi access for onboard information is available."
 msgstr "Tietoa kulkuvälineen langattomasta verkosta ei ole saatavilla."
 
-#: app/SettingsPage.qml:228
+#: app/SettingsPage.qml:200
 #, kde-format
 msgid "Wi-Fi is not enabled"
 msgstr "Langaton verkko ei ole käytössä"
 
-#: app/SettingsPage.qml:230
+#: app/SettingsPage.qml:202
 #, kde-format
 msgid "Location service is not enabled"
 msgstr "Sijaintipalvelu ei ole käytössä"
 
-#: app/SettingsPage.qml:232
+#: app/SettingsPage.qml:204
 #, kde-format
 msgid "Wi-Fi access is not available on this system"
 msgstr "Pääsy langattomaan verkkoon ei ole käytettävissä"
 
-#: app/SettingsPage.qml:241
+#: app/SettingsPage.qml:213
 #, kde-format
 msgid "Enable Wi-Fi on your system to access onboard information."
 msgstr ""
 "Laivaannousun tilanteen selvittämiseksi salli laitteen käyttää langatonta "
 "verkkoa."
 
-#: app/SettingsPage.qml:243
+#: app/SettingsPage.qml:215
 #, kde-format
 msgid ""
 "Enable the location service on your device to access onboard information."
@@ -3513,72 +3613,72 @@ msgstr ""
 "Laivaannousutietojen selvittämiseksi salli laitteen käyttää "
 "paikannuspalvelua."
 
-#: app/SettingsPage.qml:245
+#: app/SettingsPage.qml:217
 #, kde-format
 msgid ""
 "Onboard information are unfortunately not supported on your device at this "
 "time."
 msgstr "Laite ei valitettavasti toistaiseksi tue laivaannousutietoja."
 
-#: app/SettingsPage.qml:277
+#: app/SettingsPage.qml:249
 #, kde-format
 msgid "Matrix Integration"
 msgstr "Matrix-eheytys"
 
-#: app/SettingsPage.qml:284 app/SettingsPage.qml:341
+#: app/SettingsPage.qml:256 app/SettingsPage.qml:313
 #, kde-format
 msgid "Logged in as %1"
 msgstr "Kirjauduttu tunnuksella %1"
 
-#: app/SettingsPage.qml:288
+#: app/SettingsPage.qml:260
 #, kde-format
 msgid "Synchronize rooms"
 msgstr "Tahdista huoneet"
 
-#: app/SettingsPage.qml:295
+#: app/SettingsPage.qml:267
 #, kde-format
 msgid "Matrix ID"
 msgstr "Matrix-tunniste"
 
-#: app/SettingsPage.qml:304
+#: app/SettingsPage.qml:276
 #, kde-format
 msgid "Password"
 msgstr "Salasana"
 
-#: app/SettingsPage.qml:316
+#: app/SettingsPage.qml:288
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Session verified"
 msgstr "Istunto varmennettu"
 
-#: app/SettingsPage.qml:316
+#: app/SettingsPage.qml:288
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Session not verified."
 msgstr "Istuntoa ei varmennettu."
 
-#: app/SettingsPage.qml:317
+#: app/SettingsPage.qml:289
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Initiate session verification in your Matrix chat client."
 msgstr "Käynnistä istunnon varmennus Matrix-keskusteluasiakkaassa."
 
-#: app/SettingsPage.qml:324
+#: app/SettingsPage.qml:296
 #, kde-format
 msgid "Log out"
 msgstr "Kirjaudu ulos"
 
-#: app/SettingsPage.qml:324
+#: app/SettingsPage.qml:296
 #, kde-format
 msgid "Log in"
 msgstr "Kirjaudu"
 
-#: app/SettingsPage.qml:331
+#: app/SettingsPage.qml:303
 #, kde-format
 msgid "Traewelling Integration"
 msgstr "Traewelling-eheytys"
 
-#: app/SettingsPage.qml:336
+#: app/SettingsPage.qml:308
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -3590,27 +3690,27 @@ msgstr ""
 "missä olet ja missä julkisen liikenteen matkoilla voi kirjautua. Lisätietoa "
 "löytyy sivulta <a href=\"https://traewelling.de/\">traewelling.de</a>"
 
-#: app/SettingsPage.qml:344
+#: app/SettingsPage.qml:316
 #, kde-format
 msgid "Login"
 msgstr "Kirjaudu"
 
-#: app/SettingsPage.qml:349
+#: app/SettingsPage.qml:321
 #, kde-format
 msgid "Logout"
 msgstr "Kirjaudu ulos"
 
-#: app/SettingsPage.qml:356
+#: app/SettingsPage.qml:328
 #, kde-format
 msgid "Contributing"
 msgstr "Avustaminen"
 
-#: app/SettingsPage.qml:360
+#: app/SettingsPage.qml:332
 #, kde-format
 msgid "I contribute to OpenStreetMap"
 msgstr "Avustan OpenStreetMapiä"
 
-#: app/SettingsPage.qml:361
+#: app/SettingsPage.qml:333
 #, kde-format
 msgid "Enables OSM editing options."
 msgstr "Ottaa käyttöön OSM-muokkausvalinnat."
@@ -4604,6 +4704,10 @@ msgstr "Kirjauduttu ulos"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 portilta %3 portille %4 %5"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Passes & Programs"
+#~ msgstr "Liput ja ohjelmat"
 
 #~ msgid "Direction: %1"
 #~ msgstr "Suunta: %1"
