@@ -163,7 +163,7 @@ QString HealthCertificateManager::certificateName(const QVariant &certificate)
     }
     if (certificate.userType() == qMetaTypeId<KRecoveryCertificate>()) {
         const auto cert = certificate.value<KRecoveryCertificate>();
-        return i18n("Recovery %1 for %1", QLocale().toString(cert.certificateIssueDate().date(), QLocale::NarrowFormat), cert.disease());
+        return i18n("Recovery %1 for %2", QLocale().toString(cert.certificateIssueDate().date(), QLocale::NarrowFormat), cert.disease());
     }
 #endif
     return {};
