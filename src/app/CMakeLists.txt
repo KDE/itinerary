@@ -186,11 +186,8 @@ ecm_add_qml_module(itinerary-app URI org.kde.itinerary NO_PLUGIN QML_FILES
     JourneyPathPage.qml
     JourneyRequestPage.qml
     JourneyQueryPage.qml
-    JourneySectionDelegate.qml
     JourneySectionPage.qml
     JourneySectionStopDelegate.qml
-    JourneySectionStopDelegateLineSegment.qml
-    JourneySummaryDelegate.qml
     LiveStatusPage.qml
     LocationInfoDelegate.qml
     LocationPicker.qml
@@ -241,8 +238,6 @@ ecm_add_qml_module(itinerary-app URI org.kde.itinerary NO_PLUGIN QML_FILES
     TrainPage.qml
     TransferDelegate.qml
     TransferPage.qml
-    TransportIcon.qml
-    TransportNameControl.qml
     TripGroupDelegate.qml
     TripGroupEditorDialog.qml
     TripGroupMapPage.qml
@@ -252,7 +247,6 @@ ecm_add_qml_module(itinerary-app URI org.kde.itinerary NO_PLUGIN QML_FILES
     TripGroupSplitPage.qml
     TripGroupsPage.qml
     VehicleLayoutPage.qml
-    VerticalNavigationButton.qml
     WeatherForecastDelegate.qml
     WeatherForecastPage.qml
     WelcomePage.qml

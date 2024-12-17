@@ -9,33 +9,21 @@ import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kitemmodels
-import org.kde.kpublictransport
+import org.kde.kpublictransport.ui as KPublicTransport
 import org.kde.itinerary
 import org.kde.kirigamiaddons.formcard as FormCard
 
-Kirigami.ScrollablePage {
+PublicTransport.AbstractJourneySelectionPage {
     id: root
+
     property var transfer
     readonly property var reservation: ReservationManager.reservation(transfer.reservationId)
+
     title: i18n("Select Transfer")
 
-    JourneyQueryModel {
+    journeyModel: KPublicTransport.JourneyQueryModel {
         id: journeyModel
         manager: LiveDataManager.publicTransportManager
-    }
-
-    KSortFilterProxyModel {
-        id: sortedJourneyModel
-        sourceModel: journeyModel
-        sortRole: JourneyQueryModel.ScheduledDepartureTime
-        dynamicSortFilter: true
-        Component.onCompleted: Util.sortModel(sortedJourneyModel, 0, Qt.Ascending)
-    }
-
-    background: Rectangle {
-        Kirigami.Theme.colorSet: Kirigami.Theme.Window
-        Kirigami.Theme.inherit: false
-        color: Kirigami.Theme.backgroundColor
     }
 
     actions: [
@@ -73,14 +61,14 @@ Kirigami.ScrollablePage {
         Kirigami.Action {
             id: bikeAction
             text: i18n("Bike")
-            icon.source: IndividualTransportMode.modeIconName(IndividualTransport.Bike)
+            icon.source: KPublicTransport.IndividualTransportMode.modeIconName(IndividualTransport.Bike)
             checkable: true
             onCheckedChanged: queryJourney()
         },
         Kirigami.Action {
             id: bikeRideAction
             text: i18n("Bike & Ride")
-            icon.source: IndividualTransportMode.modeIconName(IndividualTransport.Bike)
+            icon.source: KPublicTransport.IndividualTransportMode.modeIconName(IndividualTransport.Bike)
             checkable: true
             visible: root.transfer.alignment == Transfer.Before && root.transfer.floatingLocationType == Transfer.FavoriteLocation
             onCheckedChanged: queryJourney()
@@ -88,14 +76,14 @@ Kirigami.ScrollablePage {
         Kirigami.Action {
             id: bikeSharingAction
             text: i18n("Shared Bikes")
-            icon.source: RentalVehicleType.vehicleTypeIconName(RentalVehicle.Bicycle)
+            icon.source: KPublicTransport.RentalVehicleType.vehicleTypeIconName(RentalVehicle.Bicycle)
             checkable: true
             onCheckedChanged: queryJourney()
         },
         Kirigami.Action {
             id: parkRideAction
             text: i18n("Park & Ride")
-            icon.source: RentalVehicleType.vehicleTypeIconName(RentalVehicle.Car)
+            icon.source: KPublicTransport.RentalVehicleType.vehicleTypeIconName(RentalVehicle.Car)
             checkable: true
             visible: root.transfer.alignment == Transfer.Before && root.transfer.floatingLocationType == Transfer.FavoriteLocation
             onCheckedChanged: queryJourney()
@@ -106,7 +94,7 @@ Kirigami.ScrollablePage {
         Kirigami.Action {
             id: longDistanceModeAction
             text: i18nc("journey query search constraint, title", "Long distance trains")
-            icon.source: LineMode.iconName(Line.LongDistanceTrain)
+            icon.source: KPublicTransport.LineMode.iconName(KPublicTransport.Line.LongDistanceTrain)
             checkable: true
             checked: true
             onCheckedChanged: queryJourney()
@@ -114,7 +102,7 @@ Kirigami.ScrollablePage {
         Kirigami.Action {
             id: localTrainModeAction
             text: i18nc("journey query search constraint, title", "Local trains")
-            icon.source: LineMode.iconName(Line.LocalTrain)
+            icon.source: KPublicTransport.LineMode.iconName(KPublicTransport.Line.LocalTrain)
             checkable: true
             checked: true
             onCheckedChanged: queryJourney()
@@ -122,7 +110,7 @@ Kirigami.ScrollablePage {
         Kirigami.Action {
             id: rapidTransitModeAction
             text: i18nc("journey query search constraint, title", "Rapid transit")
-            icon.source: LineMode.iconName(Line.Tramway)
+            icon.source: KPublicTransport.LineMode.iconName(KPublicTransport.Line.Tramway)
             checkable: true
             checked: true
             onCheckedChanged: queryJourney()
@@ -130,7 +118,7 @@ Kirigami.ScrollablePage {
         Kirigami.Action {
             id: busModeAction
             text: i18nc("journey query search constraint, title", "Bus")
-            icon.source: LineMode.iconName(Line.Bus)
+            icon.source: KPublicTransport.LineMode.iconName(KPublicTransport.Line.Bus)
             checkable: true
             checked: true
             onCheckedChanged: queryJourney()
@@ -138,15 +126,14 @@ Kirigami.ScrollablePage {
         Kirigami.Action {
             id: ferryModeAction
             text: i18nc("journey query search constraint, title", "Ferry")
-            icon.source: LineMode.iconName(Line.Ferry)
+            icon.source: KPublicTransport.LineMode.iconName(KPublicTransport.Line.Ferry)
             checkable: true
             checked: true
             onCheckedChanged: queryJourney()
         }
     ]
 
-    function allLineModes()
-    {
+    function allLineModes(): bool {
         for (const s of [longDistanceModeAction, localTrainModeAction, rapidTransitModeAction, busModeAction, ferryModeAction]) {
             if (!s.checked) {
                 return false;
@@ -155,7 +142,7 @@ Kirigami.ScrollablePage {
         return true;
     }
 
-    function queryJourney() {
+    function queryJourney(): void {
         journeyModel.request = TransferManager.journeyRequestForTransfer(transfer);
         let lineModes = [];
         let accessMode = [];
@@ -163,15 +150,15 @@ Kirigami.ScrollablePage {
 
         if (!allLineModes()) {
             if (longDistanceModeAction.checked)
-                lineModes.push(Line.LongDistanceTrain, Line.Train);
+                lineModes.push(PublicTransport.Line.LongDistanceTrain, PublicTransport.Line.Train);
             if (localTrainModeAction.checked)
-                lineModes.push(Line.LocalTrain);
+                lineModes.push(PublicTransport.Line.LocalTrain);
             if (rapidTransitModeAction.checked)
-                lineModes.push(Line.RapidTransit, Line.Metro, Line.Tramway, Line.RailShuttle);
+                lineModes.push(PublicTransport.Line.RapidTransit, PublicTransport.Line.Metro, PublicTransport.Line.Tramway, PublicTransport.Line.RailShuttle);
             if (busModeAction.checked)
-                lineModes.push(Line.Bus, Line.Coach);
+                lineModes.push(PublicTransport.Line.Bus, PublicTransport.Line.Coach);
             if (ferryModeAction.checked)
-                lineModes.push(Line.Ferry, Line.Boat);
+                lineModes.push(PublicTransport.Line.Ferry, PublicTransport.Line.Boat);
         }
 
         if (bikeAction.checked) {
@@ -200,57 +187,6 @@ Kirigami.ScrollablePage {
             favLocCombo.currentIndex = favLocCombo.find(transfer.alignment == Transfer.Before ? transfer.fromName : transfer.toName);
         }
         queryJourney();
-    }
-
-    Component {
-        id: journeyDelegate
-
-        FormCard.FormCard {
-            id: top
-
-            required property int index
-            required property var journey
-
-            width: ListView.view.width
-
-            Repeater {
-                id: journeyRepeater
-                delegate: JourneySectionDelegate{
-                    Layout.fillWidth: true
-                    modelLength: journeyRepeater.count - 1
-
-                }
-                model: journeyView.currentIndex === top.index ? top.journey.sections : 0
-            }
-
-            JourneySummaryDelegate {
-                id: summaryButton
-
-                journey: top.journey
-                visible: journeyView.currentIndex !== top.index
-                onClicked: journeyView.currentIndex = top.index
-
-                Layout.fillWidth: true
-            }
-
-            FormCard.FormDelegateSeparator {
-                above: selectButton
-                visible: journeyView.currentIndex === top.index
-            }
-
-            FormCard.FormButtonDelegate {
-                id: selectButton
-
-                text: i18n("Select")
-                icon.name: "checkmark"
-                visible: journeyView.currentIndex === top.index
-                enabled: top.journey.disruptionEffect !== Disruption.NoService
-                onClicked: {
-                    TransferManager.setJourneyForTransfer(root.transfer, top.journey);
-                    applicationWindow().pageStack.pop();
-                }
-            }
-        }
     }
 
     header: QQC2.Pane {
@@ -295,54 +231,6 @@ Kirigami.ScrollablePage {
                     queryJourney();
                 }
             }
-        }
-    }
-
-    ListView {
-        id: journeyView
-
-        clip: true
-        delegate: journeyDelegate
-        model: sortedJourneyModel
-        spacing: Kirigami.Units.largeSpacing
-
-        header: VerticalNavigationButton {
-            visible: journeyModel.canQueryPrevious
-            width: journeyView.width
-            text: i18nc("@action:button", "Load earlier connections")
-            iconName: "go-up-symbolic"
-            onClicked: journeyModel.queryPrevious()
-        }
-
-        footer: VerticalNavigationButton {
-            visible: journeyModel.canQueryNext
-            width: journeyView.width
-            iconName: "go-down-symbolic"
-            text: i18nc("@action:button", "Load later connections")
-            onClicked: journeyModel.queryNext()
-
-            FormCard.FormCard {
-                visible: journeyModel.attributions.length > 0
-
-                FormCard.FormTextDelegate {
-                    text: i18n("Data providers:")
-                    description: PublicTransport.attributionSummary(journeyModel.attributions)
-                    onLinkActivated: Qt.openUrlExternally(link)
-                }
-            }
-        }
-
-        QQC2.BusyIndicator {
-            anchors.centerIn: parent
-            running: journeyModel.loading
-        }
-
-        QQC2.Label {
-            anchors.centerIn: parent
-            width: parent.width - Kirigami.Units.gridUnit * 4
-            text: journeyModel.errorMessage
-            color: Kirigami.Theme.negativeTextColor
-            wrapMode: Text.Wrap
         }
     }
 }

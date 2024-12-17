@@ -40,7 +40,7 @@ Kirigami.Page {
         RowLayout {
             spacing: Kirigami.Units.smallSpacing
 
-            TransportNameControl {
+            KPublicTransport.TransportNameControl {
                 line: journeySection.route.line
                 mode: KPublicTransport.JourneySection.PublicTransport
                 iconName: root.journeySection.route.line.iconName

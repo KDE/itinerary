@@ -39,7 +39,7 @@ Item {
         columns: 6
         rows: 3
         rowSpacing: 0
-        JourneySectionStopDelegateLineSegment {
+        KPublicTransport.JourneySectionStopDelegateLineSegment {
             id: lineSegment
             Layout.column: 0
             Layout.row: 0
@@ -188,8 +188,7 @@ Item {
             QQC2.ToolTip.visible: hovered
         }
 
-
-        JourneySectionStopDelegateLineSegment {
+        KPublicTransport.JourneySectionStopDelegateLineSegment {
             id: stopNotesLine
             Layout.column: 0
             Layout.row: 2

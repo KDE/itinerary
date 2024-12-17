@@ -40,7 +40,7 @@ FormCard.FormCard {
             }
         }
         onClicked: {
-            if (transfer.state === Transfer.Selected) {
+            if (transfer.state === KPublicTransport.Transfer.Selected) {
                 journeyDetailsExpanded = !journeyDetailsExpanded;
             } else {
                 applicationWindow().pageStack.push(detailsComponent);
@@ -71,7 +71,7 @@ FormCard.FormCard {
             }
             QQC2.Label {
                 text: Localizer.formatTime(transfer.journey, "scheduledDepartureTime")
-                visible: transfer.state === Transfer.Selected && !root.journeyDetailsExpanded
+                visible: transfer.state === KPublicTransport.Transfer.Selected && !root.journeyDetailsExpanded
                 color: Kirigami.Theme.textColor
                 Accessible.ignored: !visible
             }
@@ -84,7 +84,7 @@ FormCard.FormCard {
 
             QQC2.BusyIndicator {
                 running: visible
-                visible: transfer.state === Transfer.Searching
+                visible: transfer.state === KPublicTransport.Transfer.Searching
                 Accessible.ignored: !visible
             }
         }
@@ -92,17 +92,17 @@ FormCard.FormCard {
 
     Repeater {
         id: journeyRepeater
-        delegate: JourneySectionDelegate{
+        delegate: KPublicTransport.JourneySectionDelegate {
             Layout.fillWidth: true
             modelLength: journeyRepeater.count - 1
 
         }
-        model: (transfer.state == Transfer.Selected && journeyDetailsExpanded) ? transfer.journey.sections : 0
+        model: (transfer.state == KPublicTransport.Transfer.Selected && journeyDetailsExpanded) ? transfer.journey.sections : 0
     }
 
-    JourneySummaryDelegate {
+    KPublicTransport.JourneySummaryDelegate {
         journey: transfer.journey
-        visible: transfer.state == Transfer.Selected && !journeyDetailsExpanded
+        visible: transfer.state == KPublicTransport.Transfer.Selected && !journeyDetailsExpanded
         Layout.fillWidth: true
         onClicked: journeyDetailsExpanded = true
     }
@@ -111,9 +111,9 @@ FormCard.FormCard {
         icon.name: "checkmark"
         text: i18n("Select transfer")
         onClicked: applicationWindow().pageStack.push(detailsComponent)
-        visible: transfer.state === Transfer.Pending
-            || transfer.state === Transfer.Searching
-            || transfer.state === Transfer.Selected && journeyDetailsExpanded
+        visible: transfer.state === KPublicTransport.Transfer.Pending
+            || transfer.state === KPublicTransport.Transfer.Searching
+            || transfer.state === KPublicTransport.Transfer.Selected && journeyDetailsExpanded
         Accessible.ignored: !visible
     }
 
@@ -121,7 +121,7 @@ FormCard.FormCard {
         icon.name: "edit-delete"
         text: i18n("Delete transfer")
         onClicked: TransferManager.discardTransfer(transfer)
-        visible: transfer.state == Transfer.Pending || transfer.state == Transfer.Searching
+        visible: transfer.state == KPublicTransport.Transfer.Pending || transfer.state == KPublicTransport.Transfer.Searching
         Accessible.ignored: !visible
     }
     Item{

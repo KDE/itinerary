@@ -250,7 +250,7 @@ Kirigami.ScrollablePage {
         model: departureModel
         spacing: Kirigami.Units.largeSpacing
 
-        header: VerticalNavigationButton {
+        header: KPublicTransport.VerticalNavigationButton {
             visible: departureModel.canQueryPrevious
             width: journeyView.width
             text: i18nc("@action:button", "Load earlier departures")
@@ -258,7 +258,7 @@ Kirigami.ScrollablePage {
             onClicked: departureModel.queryPrevious()
         }
 
-        footer: VerticalNavigationButton {
+        footer: KPublicTransport.VerticalNavigationButton {
             visible: departureModel.canQueryNext
             width: journeyView.width
             iconName: "go-down-symbolic"

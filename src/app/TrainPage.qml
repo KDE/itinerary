@@ -8,7 +8,7 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kirigamiaddons.components as KirigamiComponents
-import org.kde.kpublictransport as KPublicTransport
+import org.kde.kpublictransport.ui as KPublicTransport
 import org.kde.kitinerary
 import org.kde.itinerary
 
@@ -57,7 +57,7 @@ DetailsPage {
     ColumnLayout {
         spacing: 0
 
-        TransportIcon {
+        KPublicTransport.TransportIcon {
             id: transportIcon
             Layout.alignment: Qt.AlignHCenter
             // A bit of extra spacing since the logos often have no padding.

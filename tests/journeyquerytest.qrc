@@ -8,12 +8,7 @@
         <file alias="qt/qml/org/kde/itinerary/JourneyDelegateHeader.qml">../src/app/JourneyDelegateHeader.qml</file>
         <file alias="qt/qml/org/kde/itinerary/JourneyPathPage.qml">../src/app/JourneyPathPage.qml</file>
         <file alias="qt/qml/org/kde/itinerary/JourneyQueryPage.qml">../src/app/JourneyQueryPage.qml</file>
-        <file alias="qt/qml/org/kde/itinerary/JourneySectionDelegate.qml">../src/app/JourneySectionDelegate.qml</file>
         <file alias="qt/qml/org/kde/itinerary/JourneySectionPage.qml">../src/app/JourneySectionPage.qml</file>
         <file alias="qt/qml/org/kde/itinerary/JourneySectionStopDelegate.qml">../src/app/JourneySectionStopDelegate.qml</file>
-        <file alias="qt/qml/org/kde/itinerary/JourneySectionStopDelegateLineSegment.qml">../src/app/JourneySectionStopDelegateLineSegment.qml</file>
-        <file alias="qt/qml/org/kde/itinerary/JourneySummaryDelegate.qml">../src/app/JourneySummaryDelegate.qml</file>
-        <file alias="qt/qml/org/kde/itinerary/TransportIcon.qml">../src/app/TransportIcon.qml</file>
-        <file alias="qt/qml/org/kde/itinerary/VerticalNavigationButton.qml">../src/app/VerticalNavigationButton.qml</file>
     </qresource>
 </RCC>
