@@ -184,23 +184,18 @@ Kirigami.ScrollablePage {
             leftPadding: Kirigami.Units.smallSpacing
             text: i18nc("@title:group", "Add to Trip")
         }
-        contentItem: QQC2.Control{
-            rightPadding: 0
-            leftPadding: 0
-            topPadding: Kirigami.Units.smallSpacing * 0.5
-            bottomPadding: Kirigami.Units.smallSpacing * 0.5
-            contentItem: ColumnLayout {
-                Repeater {
-                    model: root.addActions
-                    delegate: QQC2.ItemDelegate {
-                        required property Kirigami.Action modelData
-                        Layout.fillWidth: true
-                        text: modelData.text
-                        icon.name: modelData.icon.name
-                        onClicked: {
-                            addMenu.close()
-                            modelData.triggered()
-                        }
+        contentItem: ColumnLayout {
+            spacing: 0
+            Repeater {
+                model: root.addActions
+                delegate: FormCard.FormButtonDelegate {
+                    required property Kirigami.Action modelData
+                    Layout.fillWidth: true
+                    text: modelData.text
+                    icon.name: modelData.icon.name
+                    onClicked: {
+                        addMenu.close()
+                        modelData.triggered()
                     }
                 }
             }
