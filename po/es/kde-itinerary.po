@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-08 02:29+0000\n"
-"PO-Revision-Date: 2024-11-04 18:09+0100\n"
+"PO-Revision-Date: 2024-12-16 12:05+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.08.2\n"
+"X-Generator: Lokalize 24.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -303,8 +303,8 @@ msgstr[1] "%1 pases importados."
 #, kde-format
 msgid "One health certificate imported."
 msgid_plural "%1 health certificates imported."
-msgstr[0] "1 certificado de salud importado."
-msgstr[1] "%1 certificados de salud importados."
+msgstr[0] "1 certificado sanitario importado."
+msgstr[1] "%1 certificados sanitarios importados."
 
 #: app/applicationcontroller.cpp:337 app/applicationcontroller.cpp:378
 #: app/applicationcontroller.cpp:396 app/applicationcontroller.cpp:443
@@ -1527,8 +1527,8 @@ msgid ""
 "li><li>SMART Health Cards (SHC) as used in parts of Canada and the US.</li></"
 "p>"
 msgstr ""
-"<p>Puede importar los siguientes certificados de salud escaneándolos con una "
-"aplicación de escaneo de códigos de barras:<ul><li>«Certificados verdes "
+"<p>Puede importar los siguientes certificados sanitarios escaneándolos con "
+"una aplicación de escaneo de códigos de barras:<ul><li>«Certificados verdes "
 "digitales» europeos de vacunaciones, pruebas o recuperación.</"
 "li><li>Certificados de vacunación indios.</li><li>Tarjetas sanitarias "
 "inteligentes (SHC), como las que se usan en partes de Canadá y de EE. UU.</"
@@ -3242,8 +3242,8 @@ msgstr "Active la wifi de su sistema para acceder a información de a bordo."
 msgid ""
 "Enable the location service on your device to access onboard information."
 msgstr ""
-"Active el servicio de ubicación en su dispositivo para acceder a información "
-"de a bordo."
+"Active el servicio de localización en su dispositivo para acceder a "
+"información de a bordo."
 
 #: app/SettingsPage.qml:245
 #, kde-format
@@ -3483,7 +3483,7 @@ msgstr "Eliminar entrada del historial"
 #: app/StopPickerPage.qml:329
 #, kde-format
 msgid "No locations found"
-msgstr "No se han encontrado ubicaciones"
+msgstr "No se han encontrado lugares"
 
 #: app/TicketEditor.qml:18
 #, kde-format
