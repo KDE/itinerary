@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-16 00:43+0000\n"
-"PO-Revision-Date: 2024-11-29 09:30+0100\n"
+"POT-Creation-Date: 2024-12-17 00:40+0000\n"
+"PO-Revision-Date: 2024-12-16 11:07+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -1490,35 +1490,31 @@ msgid "Recovery certificate valid"
 msgstr "Certificat de recuperació vàlid"
 
 #: app/healthcertificatemanager.cpp:145
-#, fuzzy, kde-format
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt ""
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: app/healthcertificatemanager.cpp:154
-#, fuzzy, kde-format
-#| msgid "Vaccination %1/%2 (%3)"
+#, kde-format
 msgid "Vaccination for %1 (%2/%3)"
-msgstr "Vaccinació %1/%2 (%3)"
+msgstr "Vaccinació de %1 (%2/%3)"
 
 #: app/healthcertificatemanager.cpp:156
-#, fuzzy, kde-format
-#| msgid "Vaccination (%1)"
+#, kde-format
 msgid "Vaccination for %1"
-msgstr "Vaccinació (%1)"
+msgstr "Vaccinació de %1"
 
 #: app/healthcertificatemanager.cpp:160
-#, fuzzy, kde-format
-#| msgid "Test %1 (%2)"
+#, kde-format
 msgid "Test %1 for %2"
-msgstr "Prova %1 (%2)"
+msgstr "Prova %1 de %2"
 
 #: app/healthcertificatemanager.cpp:166
 #, fuzzy, kde-format
-#| msgid "Recovery (%1)"
-msgid "Recovery %1 for %1"
-msgstr "Recuperació (%1)"
+#| msgid "Recovery %1 for %1"
+msgid "Recovery %1 for %2"
+msgstr "Recuperació %1 de %1"
 
 #: app/HealthCertificatePage.qml:19
 #, kde-format
@@ -2532,11 +2528,10 @@ msgid "Help"
 msgstr "Ajuda"
 
 #: app/Main.qml:267
-#, fuzzy, kde-format
-#| msgid "Wi-Fi access for onboard information is available."
+#, kde-format
 msgctxt "@info:status"
 msgid "No onboard information available."
-msgstr "Hi ha disponible l'accés Wi-Fi per a la informació d'incorporació."
+msgstr "No hi ha informació disponible a bord."
 
 #: app/Main.qml:309
 #, kde-format
@@ -2879,49 +2874,43 @@ msgstr "Espais"
 #, kde-format
 msgctxt "@title"
 msgid "My Data"
-msgstr ""
+msgstr "Les meves dades"
 
 #: app/MyDataPage.qml:27
-#, fuzzy, kde-format
-#| msgid "Passes and Programs"
+#, kde-format
 msgctxt "@title"
 msgid "Passes and Programs"
 msgstr "Passis i programes"
 
 #: app/MyDataPage.qml:34
-#, fuzzy, kde-format
-#| msgid "Import bonus or discount program cards or flat rate passes."
+#, kde-format
 msgid "No valid bonus or discount program cards or flat rate passes found."
 msgstr ""
-"Importa bonificacions o targetes de programes de descomptes o passis de "
-"tarifa plana."
+"No s'ha trobat cap bonificació o targeta de programes de descomptes o passi "
+"de tarifa plana vàlid."
 
 #: app/MyDataPage.qml:52
 #, kde-format
 msgctxt "@action:button"
 msgid "Manage your Passes"
-msgstr ""
+msgstr "Gestioneu els passis"
 
 #: app/MyDataPage.qml:59
-#, fuzzy, kde-format
-#| msgid "Health Certificates"
+#, kde-format
 msgctxt "@title"
 msgid "Health Certificates"
 msgstr "Certificats de salut"
 
 #: app/MyDataPage.qml:69
-#, fuzzy, kde-format
-#| msgid "One health certificate imported."
-#| msgid_plural "%1 health certificates imported."
+#, kde-format
 msgid "No valid health certificate found."
-msgstr "S'ha importat un certificat de salut."
+msgstr "No s'ha trobat cap certificat de salut vàlid."
 
 #: app/MyDataPage.qml:103
-#, fuzzy, kde-format
-#| msgid "Favorite Locations"
+#, kde-format
 msgctxt "@title:group"
 msgid "Saved Locations"
-msgstr "Ubicacions preferides"
+msgstr "Ubicacions desades"
 
 #: app/MyDataPage.qml:108
 #, kde-format
@@ -2934,28 +2923,25 @@ msgid "Statistics"
 msgstr "Estadístiques"
 
 #: app/MyDataPage.qml:175
-#, fuzzy, kde-format
-#| msgid "Statistics"
+#, kde-format
 msgctxt "@action:button"
 msgid "See all Statistics"
-msgstr "Estadístiques"
+msgstr "Veure totes les estadístiques"
 
 #: app/MyDataPage.qml:185
 #, kde-format
 msgctxt "@title:group"
 msgid "Data Portability"
-msgstr ""
+msgstr "Portabilitat de dades"
 
 #: app/MyDataPage.qml:190
-#, fuzzy, kde-format
-#| msgid "Import"
+#, kde-format
 msgctxt "@action:button"
 msgid "Import"
 msgstr "Importa"
 
 #: app/MyDataPage.qml:198
-#, fuzzy, kde-format
-#| msgid "Export"
+#, kde-format
 msgctxt "@action:button"
 msgid "Export"
 msgstr "Exporta"
@@ -2981,7 +2967,7 @@ msgstr "Pla de viatge"
 #, kde-format
 msgctxt "@title:tab"
 msgid "My Data"
-msgstr ""
+msgstr "Les meves dades"
 
 #: app/NavigationBar.qml:47
 #, kde-format
@@ -3124,24 +3110,22 @@ msgid "Passes and Programs"
 msgstr "Passis i programes"
 
 #: app/PassPage.qml:21
-#, fuzzy, kde-format
-#| msgid "Add Program Membership…"
+#, kde-format
 msgctxt "@title"
 msgid "Add Program Membership"
-msgstr "Afegeix un programa d'afiliació…"
+msgstr "Afegeix un programa d'afiliació"
 
 #: app/PassPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Import from GPX"
+#, kde-format
 msgctxt "@action:button"
 msgid "Import From File"
-msgstr "Importa des de GPX"
+msgstr "Importa des d'un fitxer"
 
 #: app/PassPage.qml:34
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Manually"
-msgstr ""
+msgstr "Afegeix manualment"
 
 #: app/PassPage.qml:48
 #, kde-format

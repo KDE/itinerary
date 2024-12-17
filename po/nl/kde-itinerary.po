@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-16 00:43+0000\n"
-"PO-Revision-Date: 2024-11-29 10:44+0100\n"
+"POT-Creation-Date: 2024-12-17 00:40+0000\n"
+"PO-Revision-Date: 2024-12-16 11:29+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.08.3\n"
+"X-Generator: Lokalize 24.12.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1490,35 +1490,31 @@ msgid "Recovery certificate valid"
 msgstr "Herstelcertificaat geldig"
 
 #: app/healthcertificatemanager.cpp:145
-#, fuzzy, kde-format
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt ""
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: app/healthcertificatemanager.cpp:154
-#, fuzzy, kde-format
-#| msgid "Vaccination %1/%2 (%3)"
+#, kde-format
 msgid "Vaccination for %1 (%2/%3)"
-msgstr "Vaccinatie %1/%2 (%3)"
+msgstr "Vaccinatie voor %1 (%2/%3)"
 
 #: app/healthcertificatemanager.cpp:156
-#, fuzzy, kde-format
-#| msgid "Vaccination (%1)"
+#, kde-format
 msgid "Vaccination for %1"
-msgstr "Vaccinatie (%1)"
+msgstr "Vaccinatie voor %1"
 
 #: app/healthcertificatemanager.cpp:160
-#, fuzzy, kde-format
-#| msgid "Test %1 (%2)"
+#, kde-format
 msgid "Test %1 for %2"
-msgstr "Test %1 (%2)"
+msgstr "Test %1 voor %2"
 
 #: app/healthcertificatemanager.cpp:166
 #, fuzzy, kde-format
-#| msgid "Recovery (%1)"
-msgid "Recovery %1 for %1"
-msgstr "Herstel (%1)"
+#| msgid "Recovery %1 for %1"
+msgid "Recovery %1 for %2"
+msgstr "Herstel %1 voor %1"
 
 #: app/HealthCertificatePage.qml:19
 #, kde-format
@@ -2527,11 +2523,10 @@ msgid "Help"
 msgstr "Help"
 
 #: app/Main.qml:267
-#, fuzzy, kde-format
-#| msgid "Wi-Fi access for onboard information is available."
+#, kde-format
 msgctxt "@info:status"
 msgid "No onboard information available."
-msgstr "Toegang tot Wi-Fi voor informatie aan boord is beschikbaar."
+msgstr "Geen informatie aan boord beschikbaar."
 
 #: app/Main.qml:309
 #, kde-format
@@ -2873,47 +2868,42 @@ msgstr "Ruimten"
 #, kde-format
 msgctxt "@title"
 msgid "My Data"
-msgstr ""
+msgstr "Mijn gegevens"
 
 #: app/MyDataPage.qml:27
-#, fuzzy, kde-format
-#| msgid "Passes and Programs"
+#, kde-format
 msgctxt "@title"
 msgid "Passes and Programs"
 msgstr "Passen en programma's"
 
 #: app/MyDataPage.qml:34
-#, fuzzy, kde-format
-#| msgid "Import bonus or discount program cards or flat rate passes."
+#, kde-format
 msgid "No valid bonus or discount program cards or flat rate passes found."
-msgstr "Bonus of kortingsprogrammakaarten of vlak tariefpassen."
+msgstr ""
+"Geen geldige bonus of kortingsprogrammakaarten of vlak tariefpassen gevonden."
 
 #: app/MyDataPage.qml:52
 #, kde-format
 msgctxt "@action:button"
 msgid "Manage your Passes"
-msgstr ""
+msgstr "Uw passen beheren"
 
 #: app/MyDataPage.qml:59
-#, fuzzy, kde-format
-#| msgid "Health Certificates"
+#, kde-format
 msgctxt "@title"
 msgid "Health Certificates"
 msgstr "Gezondheidscertificaten"
 
 #: app/MyDataPage.qml:69
-#, fuzzy, kde-format
-#| msgid "One health certificate imported."
-#| msgid_plural "%1 health certificates imported."
+#, kde-format
 msgid "No valid health certificate found."
-msgstr "Eén gezondheidscertificaten geïmporteerd."
+msgstr "Geen geldig gezondheidscertificaat gevonden."
 
 #: app/MyDataPage.qml:103
-#, fuzzy, kde-format
-#| msgid "Favorite Locations"
+#, kde-format
 msgctxt "@title:group"
 msgid "Saved Locations"
-msgstr "Favoriete locaties"
+msgstr "Opgeslagen locaties"
 
 #: app/MyDataPage.qml:108
 #, kde-format
@@ -2926,28 +2916,25 @@ msgid "Statistics"
 msgstr "Statistieken"
 
 #: app/MyDataPage.qml:175
-#, fuzzy, kde-format
-#| msgid "Statistics"
+#, kde-format
 msgctxt "@action:button"
 msgid "See all Statistics"
-msgstr "Statistieken"
+msgstr "Zie alle statistieken"
 
 #: app/MyDataPage.qml:185
 #, kde-format
 msgctxt "@title:group"
 msgid "Data Portability"
-msgstr ""
+msgstr "Overdraagbaarheid van gegevens"
 
 #: app/MyDataPage.qml:190
-#, fuzzy, kde-format
-#| msgid "Import"
+#, kde-format
 msgctxt "@action:button"
 msgid "Import"
 msgstr "Importeren"
 
 #: app/MyDataPage.qml:198
-#, fuzzy, kde-format
-#| msgid "Export"
+#, kde-format
 msgctxt "@action:button"
 msgid "Export"
 msgstr "Exporteren"
@@ -2973,7 +2960,7 @@ msgstr "Reis plannen"
 #, kde-format
 msgctxt "@title:tab"
 msgid "My Data"
-msgstr ""
+msgstr "Mijn gegevens"
 
 #: app/NavigationBar.qml:47
 #, kde-format
@@ -3116,24 +3103,22 @@ msgid "Passes and Programs"
 msgstr "Passen en programma's"
 
 #: app/PassPage.qml:21
-#, fuzzy, kde-format
-#| msgid "Add Program Membership…"
+#, kde-format
 msgctxt "@title"
 msgid "Add Program Membership"
-msgstr "Lidmaatschap van programma toevoegen…"
+msgstr "Lidmaatschap van programma toevoegen"
 
 #: app/PassPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Import from GPX"
+#, kde-format
 msgctxt "@action:button"
 msgid "Import From File"
-msgstr "Uit GPX importeren"
+msgstr "Uit bestand importeren"
 
 #: app/PassPage.qml:34
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Manually"
-msgstr ""
+msgstr "Handmatig toevoegen"
 
 #: app/PassPage.qml:48
 #, kde-format

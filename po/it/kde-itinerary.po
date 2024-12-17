@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-16 00:43+0000\n"
+"POT-Creation-Date: 2024-12-17 00:40+0000\n"
 "PO-Revision-Date: 2024-12-01 12:30+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -1516,7 +1516,7 @@ msgstr "Esame %1 (%2)"
 #: app/healthcertificatemanager.cpp:166
 #, fuzzy, kde-format
 #| msgid "Recovery (%1)"
-msgid "Recovery %1 for %1"
+msgid "Recovery %1 for %2"
 msgstr "Guarigione (%1)"
 
 #: app/HealthCertificatePage.qml:19

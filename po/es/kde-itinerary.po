@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-16 00:43+0000\n"
-"PO-Revision-Date: 2024-11-30 02:15+0100\n"
+"POT-Creation-Date: 2024-12-17 00:40+0000\n"
+"PO-Revision-Date: 2024-12-16 12:05+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -303,8 +303,8 @@ msgstr[1] "%1 pases importados."
 #, kde-format
 msgid "One health certificate imported."
 msgid_plural "%1 health certificates imported."
-msgstr[0] "1 certificado de salud importado."
-msgstr[1] "%1 certificados de salud importados."
+msgstr[0] "1 certificado sanitario importado."
+msgstr[1] "%1 certificados sanitarios importados."
 
 #: app/applicationcontroller.cpp:337 app/applicationcontroller.cpp:378
 #: app/applicationcontroller.cpp:396 app/applicationcontroller.cpp:443
@@ -1491,35 +1491,31 @@ msgid "Recovery certificate valid"
 msgstr "Certificado de recuperación válido"
 
 #: app/healthcertificatemanager.cpp:145
-#, fuzzy, kde-format
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt ""
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: app/healthcertificatemanager.cpp:154
-#, fuzzy, kde-format
-#| msgid "Vaccination %1/%2 (%3)"
+#, kde-format
 msgid "Vaccination for %1 (%2/%3)"
-msgstr "Vacunación %1/%2 (%3)"
+msgstr "Vacunación para %1 (%2/%3)"
 
 #: app/healthcertificatemanager.cpp:156
-#, fuzzy, kde-format
-#| msgid "Vaccination (%1)"
+#, kde-format
 msgid "Vaccination for %1"
-msgstr "Vacunación (%1)"
+msgstr "Vacunación para %1"
 
 #: app/healthcertificatemanager.cpp:160
-#, fuzzy, kde-format
-#| msgid "Test %1 (%2)"
+#, kde-format
 msgid "Test %1 for %2"
-msgstr "Prueba %1 (%2)"
+msgstr "Prueba %1 para %2"
 
 #: app/healthcertificatemanager.cpp:166
 #, fuzzy, kde-format
-#| msgid "Recovery (%1)"
-msgid "Recovery %1 for %1"
-msgstr "Recuperación (%1)"
+#| msgid "Recovery %1 for %1"
+msgid "Recovery %1 for %2"
+msgstr "Recuperación %1 para %1"
 
 #: app/HealthCertificatePage.qml:19
 #, kde-format
@@ -1545,8 +1541,8 @@ msgid ""
 "li><li>SMART Health Cards (SHC) as used in parts of Canada and the US.</li></"
 "p>"
 msgstr ""
-"<p>Puede importar los siguientes certificados de salud escaneándolos con una "
-"aplicación de escaneo de códigos de barras:<ul><li>«Certificados verdes "
+"<p>Puede importar los siguientes certificados sanitarios escaneándolos con "
+"una aplicación de escaneo de códigos de barras:<ul><li>«Certificados verdes "
 "digitales» europeos de vacunaciones, pruebas o recuperación.</"
 "li><li>Certificados de vacunación indios.</li><li>Tarjetas sanitarias "
 "inteligentes (SHC), como las que se usan en partes de Canadá y de EE. UU.</"
@@ -2531,11 +2527,10 @@ msgid "Help"
 msgstr "Ayuda"
 
 #: app/Main.qml:267
-#, fuzzy, kde-format
-#| msgid "Wi-Fi access for onboard information is available."
+#, kde-format
 msgctxt "@info:status"
 msgid "No onboard information available."
-msgstr "El acceso wifi para la información de a bordo está disponible."
+msgstr "Información de a bordo no disponible."
 
 #: app/Main.qml:309
 #, kde-format
@@ -2879,49 +2874,43 @@ msgstr "Espacios"
 #, kde-format
 msgctxt "@title"
 msgid "My Data"
-msgstr ""
+msgstr "Mis datos"
 
 #: app/MyDataPage.qml:27
-#, fuzzy, kde-format
-#| msgid "Passes and Programs"
+#, kde-format
 msgctxt "@title"
 msgid "Passes and Programs"
 msgstr "Pases y programas"
 
 #: app/MyDataPage.qml:34
-#, fuzzy, kde-format
-#| msgid "Import bonus or discount program cards or flat rate passes."
+#, kde-format
 msgid "No valid bonus or discount program cards or flat rate passes found."
 msgstr ""
-"Importar tarjetas de bonificación o de programas de descuentos o pases de "
-"tarifa plana."
+"No se han encontrado tarjetas de bonificación, de programas de descuentos ni "
+"pases de tarifa plana válidos."
 
 #: app/MyDataPage.qml:52
 #, kde-format
 msgctxt "@action:button"
 msgid "Manage your Passes"
-msgstr ""
+msgstr "Gestión de pases"
 
 #: app/MyDataPage.qml:59
-#, fuzzy, kde-format
-#| msgid "Health Certificates"
+#, kde-format
 msgctxt "@title"
 msgid "Health Certificates"
 msgstr "Certificados sanitarios"
 
 #: app/MyDataPage.qml:69
-#, fuzzy, kde-format
-#| msgid "One health certificate imported."
-#| msgid_plural "%1 health certificates imported."
+#, kde-format
 msgid "No valid health certificate found."
-msgstr "1 certificado de salud importado."
+msgstr "No se han encontrado certificados sanitarios válidos."
 
 #: app/MyDataPage.qml:103
-#, fuzzy, kde-format
-#| msgid "Favorite Locations"
+#, kde-format
 msgctxt "@title:group"
 msgid "Saved Locations"
-msgstr "Ubicaciones favoritas"
+msgstr "Ubicaciones guardadas"
 
 #: app/MyDataPage.qml:108
 #, kde-format
@@ -2934,28 +2923,25 @@ msgid "Statistics"
 msgstr "Estadísticas"
 
 #: app/MyDataPage.qml:175
-#, fuzzy, kde-format
-#| msgid "Statistics"
+#, kde-format
 msgctxt "@action:button"
 msgid "See all Statistics"
-msgstr "Estadísticas"
+msgstr "Ver todas las estadísticas"
 
 #: app/MyDataPage.qml:185
 #, kde-format
 msgctxt "@title:group"
 msgid "Data Portability"
-msgstr ""
+msgstr "Portabilidad de datos"
 
 #: app/MyDataPage.qml:190
-#, fuzzy, kde-format
-#| msgid "Import"
+#, kde-format
 msgctxt "@action:button"
 msgid "Import"
 msgstr "Importar"
 
 #: app/MyDataPage.qml:198
-#, fuzzy, kde-format
-#| msgid "Export"
+#, kde-format
 msgctxt "@action:button"
 msgid "Export"
 msgstr "Exportar"
@@ -2981,7 +2967,7 @@ msgstr "Planificar viaje"
 #, kde-format
 msgctxt "@title:tab"
 msgid "My Data"
-msgstr ""
+msgstr "Mis datos"
 
 #: app/NavigationBar.qml:47
 #, kde-format
@@ -3124,24 +3110,22 @@ msgid "Passes and Programs"
 msgstr "Pases y programas"
 
 #: app/PassPage.qml:21
-#, fuzzy, kde-format
-#| msgid "Add Program Membership…"
+#, kde-format
 msgctxt "@title"
 msgid "Add Program Membership"
-msgstr "Añadir pertenencia a programa..."
+msgstr "Añadir pertenencia a programa"
 
 #: app/PassPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Import from GPX"
+#, kde-format
 msgctxt "@action:button"
 msgid "Import From File"
-msgstr "Importar de GPX"
+msgstr "Importar de archivo"
 
 #: app/PassPage.qml:34
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Manually"
-msgstr ""
+msgstr "Añadir manualmente"
 
 #: app/PassPage.qml:48
 #, kde-format
@@ -3632,8 +3616,8 @@ msgstr "Active la wifi de su sistema para acceder a información de a bordo."
 msgid ""
 "Enable the location service on your device to access onboard information."
 msgstr ""
-"Active el servicio de ubicación en su dispositivo para acceder a información "
-"de a bordo."
+"Active el servicio de localización en su dispositivo para acceder a "
+"información de a bordo."
 
 #: app/SettingsPage.qml:217
 #, kde-format
@@ -3891,7 +3875,7 @@ msgstr "Eliminar entrada del historial"
 #: app/StopPickerPage.qml:329
 #, kde-format
 msgid "No locations found"
-msgstr "No se han encontrado ubicaciones"
+msgstr "No se han encontrado lugares"
 
 #: app/TicketEditor.qml:18
 #, kde-format

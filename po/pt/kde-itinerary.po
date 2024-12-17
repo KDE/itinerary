@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kitinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-16 00:43+0000\n"
+"POT-Creation-Date: 2024-12-17 00:40+0000\n"
 "PO-Revision-Date: 2023-07-14 22:15+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -1586,7 +1586,7 @@ msgstr "Teste %1 (%2)"
 #: app/healthcertificatemanager.cpp:166
 #, fuzzy, kde-format
 #| msgid "Recovery (%1)"
-msgid "Recovery %1 for %1"
+msgid "Recovery %1 for %2"
 msgstr "Recuperação (%1)"
 
 #: app/HealthCertificatePage.qml:19
