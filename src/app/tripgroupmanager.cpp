@@ -122,6 +122,11 @@ TripGroup TripGroupManager::tripGroupForReservation(const QString &resId) const
     return tripGroup(m_reservationToGroupMap.value(resId));
 }
 
+bool TripGroupManager::isEmpty() const
+{
+    return m_tripGroups.empty();
+}
+
 QString TripGroupManager::basePath()
 {
     return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/tripgroups/"_L1;
