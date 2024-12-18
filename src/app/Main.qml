@@ -343,7 +343,7 @@ Kirigami.ApplicationWindow {
     }
 
     Component.onCompleted: {
-        if (ReservationManager.isEmpty()) {
+        if (ReservationManager.isEmpty() && TripGroupManager.isEmpty()) {
             pageStack.push(Qt.createComponent("org.kde.itinerary", "WelcomePage"));
         }
     }

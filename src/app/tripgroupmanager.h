@@ -41,6 +41,8 @@ public:
     Q_INVOKABLE [[nodiscard]] QString tripGroupIdForReservation(const QString &resId) const;
     [[nodiscard]] TripGroup tripGroupForReservation(const QString &resId) const;
 
+    Q_INVOKABLE [[nodiscard]] bool isEmpty() const;
+
     static void clear(); // for testing only!
 
     /** Update @p group, e.g. after editing its name. */
