@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-17 00:40+0000\n"
-"PO-Revision-Date: 2024-12-16 11:07+0100\n"
+"PO-Revision-Date: 2024-12-17 10:36+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -1511,10 +1511,9 @@ msgid "Test %1 for %2"
 msgstr "Prova %1 de %2"
 
 #: app/healthcertificatemanager.cpp:166
-#, fuzzy, kde-format
-#| msgid "Recovery %1 for %1"
+#, kde-format
 msgid "Recovery %1 for %2"
-msgstr "Recuperació %1 de %1"
+msgstr "Recuperació %1 de %2"
 
 #: app/HealthCertificatePage.qml:19
 #, kde-format

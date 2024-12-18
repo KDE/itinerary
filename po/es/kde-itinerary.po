@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-17 00:40+0000\n"
-"PO-Revision-Date: 2024-12-16 12:05+0100\n"
+"PO-Revision-Date: 2024-12-18 00:04+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.08.3\n"
+"X-Generator: Lokalize 24.12.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1512,10 +1512,9 @@ msgid "Test %1 for %2"
 msgstr "Prueba %1 para %2"
 
 #: app/healthcertificatemanager.cpp:166
-#, fuzzy, kde-format
-#| msgid "Recovery %1 for %1"
+#, kde-format
 msgid "Recovery %1 for %2"
-msgstr "Recuperación %1 para %1"
+msgstr "Recuperación %1 para %2"
 
 #: app/HealthCertificatePage.qml:19
 #, kde-format

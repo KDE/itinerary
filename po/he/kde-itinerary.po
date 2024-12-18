@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-17 00:40+0000\n"
-"PO-Revision-Date: 2024-12-16 08:08+0200\n"
+"PO-Revision-Date: 2024-12-17 08:07+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Lokalize 24.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1516,10 +1516,9 @@ msgid "Test %1 for %2"
 msgstr "בדיקה %1 לאיתור %2"
 
 #: app/healthcertificatemanager.cpp:166
-#, fuzzy, kde-format
-#| msgid "Recovery %1 for %1"
+#, kde-format
 msgid "Recovery %1 for %2"
-msgstr "החלמה %1 מ%1"
+msgstr "החלמה %1 מ%2"
 
 #: app/HealthCertificatePage.qml:19
 #, kde-format
