@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-19 00:41+0000\n"
-"PO-Revision-Date: 2024-12-14 02:11+0530\n"
+"PO-Revision-Date: 2024-12-19 21:54+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
 "Language: sa\n"
@@ -81,7 +81,7 @@ msgstr "अनुप्रयोगसंस्करणम् : %1"
 #: app/AboutPage.qml:229
 #, kde-format
 msgid "Extractor capabilities:"
-msgstr "निष्कर्षकक्षमता : १."
+msgstr "निष्कर्षकक्षमता :"
 
 #: app/AboutPage.qml:234
 #, kde-format
@@ -488,7 +488,7 @@ msgstr "नाम्ना"
 #: app/BookingCard.qml:62
 #, kde-format
 msgid "Ticket number:"
-msgstr "टिकटसङ्ख्या : १."
+msgstr "टिकटसङ्ख्या :"
 
 #: app/BookingCard.qml:72
 #, kde-format
@@ -803,7 +803,7 @@ msgstr "पश्चात् संयोजनानि लोडयन्त�
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
-msgstr "दत्तांशप्रदातारः : १."
+msgstr "दत्तांशप्रदातारः :"
 
 #: app/DocumentsCard.qml:35
 #, kde-format
@@ -1199,7 +1199,7 @@ msgstr "आसन"
 #: app/FlightPage.qml:59
 #, kde-format
 msgid "Sequence Number:"
-msgstr "अनुक्रम संख्या : १."
+msgstr "अनुक्रम संख्या :"
 
 #: app/FlightPage.qml:68
 #, kde-format
@@ -1490,35 +1490,30 @@ msgid "Recovery certificate valid"
 msgstr "पुनर्प्राप्ति प्रमाणपत्र वैधम्"
 
 #: app/healthcertificatemanager.cpp:145
-#, fuzzy, kde-format
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt ""
 msgid "%1 (%2)"
-msgstr "%1 (%2) २."
+msgstr "%1 (%2)"
 
 #: app/healthcertificatemanager.cpp:154
-#, fuzzy, kde-format
-#| msgid "Vaccination %1/%2 (%3)"
+#, kde-format
 msgid "Vaccination for %1 (%2/%3)"
-msgstr "टीकाकरण %1/%2 (%3) २."
+msgstr "टीकाकरण %1/%2 (%3)"
 
 #: app/healthcertificatemanager.cpp:156
-#, fuzzy, kde-format
-#| msgid "Vaccination (%1)"
+#, kde-format
 msgid "Vaccination for %1"
-msgstr "टीकाकरणम् (%1) २."
+msgstr "टीकाकरणम् (%1)"
 
 #: app/healthcertificatemanager.cpp:160
-#, fuzzy, kde-format
-#| msgid "Test %1 (%2)"
+#, kde-format
 msgid "Test %1 for %2"
-msgstr "परीक्षणं %1 (%2) ."
+msgstr "%2 कृते %1 परीक्षणं कुर्वन्तु"
 
 #: app/healthcertificatemanager.cpp:166
-#, fuzzy, kde-format
-#| msgid "Recovery (%1)"
+#, kde-format
 msgid "Recovery %1 for %2"
-msgstr "पुनर्प्राप्तिः (%1) २."
+msgstr "%2 कृते %1 पुनर्प्राप्तिः"
 
 #: app/HealthCertificatePage.qml:19
 #, kde-format
@@ -1565,7 +1560,7 @@ msgstr "नामः:"
 #: app/HealthCertificateVaccination.qml:42
 #, kde-format
 msgid "Date of birth:"
-msgstr "जन्मतिथिः : १."
+msgstr "जन्मतिथिः :"
 
 #: app/HealthCertificateRecovery.qml:43
 #, kde-format
@@ -1575,7 +1570,7 @@ msgstr "पुनर्प्राप्ति"
 #: app/HealthCertificateRecovery.qml:48
 #, kde-format
 msgid "Positive test:"
-msgstr "सकारात्मकपरीक्षा : १."
+msgstr "सकारात्मकपरीक्षा :"
 
 #: app/HealthCertificateRecovery.qml:52 app/HealthCertificateTest.qml:55
 #: app/HealthCertificateVaccination.qml:66
@@ -1586,12 +1581,12 @@ msgstr "रोगः:"
 #: app/HealthCertificateRecovery.qml:56
 #, kde-format
 msgid "Valid from:"
-msgstr "तः वैधम् : १."
+msgstr "तः वैधम् :"
 
 #: app/HealthCertificateRecovery.qml:60
 #, kde-format
 msgid "Valid until:"
-msgstr "यावत् वैधम् : १."
+msgstr "यावत् वैधम् :"
 
 #: app/HealthCertificateRecovery.qml:65 app/HealthCertificateTest.qml:102
 #: app/HealthCertificateVaccination.qml:103
@@ -1603,7 +1598,7 @@ msgstr "प्रमाणपत्रं"
 #: app/HealthCertificateVaccination.qml:108
 #, kde-format
 msgid "Issuer:"
-msgstr "जारीकर्ता : १."
+msgstr "जारीकर्ता :"
 
 #: app/HealthCertificateRecovery.qml:75 app/HealthCertificateTest.qml:112
 #: app/HealthCertificateVaccination.qml:115
@@ -2526,11 +2521,10 @@ msgid "Help"
 msgstr "साहाय्यम्‌"
 
 #: app/Main.qml:267
-#, fuzzy, kde-format
-#| msgid "Wi-Fi access for onboard information is available."
+#, kde-format
 msgctxt "@info:status"
 msgid "No onboard information available."
-msgstr "जहाजे सूचनायै वाई-फाई-प्रवेशः उपलभ्यते ।"
+msgstr "जहाजे सूचना उपलब्धा नास्ति।"
 
 #: app/Main.qml:309
 #, kde-format
@@ -2840,47 +2834,41 @@ msgstr "रिक्तस्थानानि"
 #, kde-format
 msgctxt "@title"
 msgid "My Data"
-msgstr ""
+msgstr "मम दत्तांशः"
 
 #: app/MyDataPage.qml:27
-#, fuzzy, kde-format
-#| msgid "Passes and Programs"
+#, kde-format
 msgctxt "@title"
 msgid "Passes and Programs"
 msgstr "उत्तीर्णाः कार्यक्रमाः च"
 
 #: app/MyDataPage.qml:34
-#, fuzzy, kde-format
-#| msgid "Import bonus or discount program cards or flat rate passes."
+#, kde-format
 msgid "No valid bonus or discount program cards or flat rate passes found."
-msgstr "बोनस अथवा डिस्काउंट प्रोग्राम कार्ड अथवा फ्लैट रेट् पास आयात करें।"
+msgstr "वैध बोनसः वा छूटकार्यक्रमपत्राणि वा सपाटदरपास् वा न प्राप्यन्ते।"
 
 #: app/MyDataPage.qml:52
 #, kde-format
 msgctxt "@action:button"
 msgid "Manage your Passes"
-msgstr ""
+msgstr "स्वस्य Passes प्रबन्धयन्तु"
 
 #: app/MyDataPage.qml:59
-#, fuzzy, kde-format
-#| msgid "Health Certificates"
+#, kde-format
 msgctxt "@title"
 msgid "Health Certificates"
 msgstr "स्वास्थ्य प्रमाण पत्र"
 
 #: app/MyDataPage.qml:69
-#, fuzzy, kde-format
-#| msgid "One health certificate imported."
-#| msgid_plural "%1 health certificates imported."
+#, kde-format
 msgid "No valid health certificate found."
-msgstr "एकं स्वास्थ्यप्रमाणपत्रं आयातितम्।"
+msgstr "वैधस्वास्थ्यप्रमाणपत्रं न प्राप्तम्।"
 
 #: app/MyDataPage.qml:103
-#, fuzzy, kde-format
-#| msgid "Favorite Locations"
+#, kde-format
 msgctxt "@title:group"
 msgid "Saved Locations"
-msgstr "प्रियस्थानानि"
+msgstr "रक्षितानि स्थानानि"
 
 #: app/MyDataPage.qml:108
 #, kde-format
@@ -2893,28 +2881,25 @@ msgid "Statistics"
 msgstr "सांख्यिकी"
 
 #: app/MyDataPage.qml:175
-#, fuzzy, kde-format
-#| msgid "Statistics"
+#, kde-format
 msgctxt "@action:button"
 msgid "See all Statistics"
-msgstr "सांख्यिकी"
+msgstr "सर्वाणि सांख्यिकी पश्यन्तु"
 
 #: app/MyDataPage.qml:185
 #, kde-format
 msgctxt "@title:group"
 msgid "Data Portability"
-msgstr ""
+msgstr "दत्तांश पोर्टेबिलिटी"
 
 #: app/MyDataPage.qml:190
-#, fuzzy, kde-format
-#| msgid "Import"
+#, kde-format
 msgctxt "@action:button"
 msgid "Import"
 msgstr "आयात"
 
 #: app/MyDataPage.qml:198
-#, fuzzy, kde-format
-#| msgid "Export"
+#, kde-format
 msgctxt "@action:button"
 msgid "Export"
 msgstr "निर्यात"
@@ -2940,7 +2925,7 @@ msgstr "योजना यात्रा"
 #, kde-format
 msgctxt "@title:tab"
 msgid "My Data"
-msgstr ""
+msgstr "मम दत्तांशः"
 
 #: app/NavigationBar.qml:47
 #, kde-format
@@ -3083,24 +3068,22 @@ msgid "Passes and Programs"
 msgstr "उत्तीर्णाः कार्यक्रमाः च"
 
 #: app/PassPage.qml:21
-#, fuzzy, kde-format
-#| msgid "Add Program Membership…"
+#, kde-format
 msgctxt "@title"
 msgid "Add Program Membership"
-msgstr "कार्यक्रमस्य सदस्यतां योजयतु…"
+msgstr "कार्यक्रमस्य सदस्यतां योजयतु"
 
 #: app/PassPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Import from GPX"
+#, kde-format
 msgctxt "@action:button"
 msgid "Import From File"
-msgstr "GPX तः आयातम्"
+msgstr "सञ्चिकातः आयातम्"
 
 #: app/PassPage.qml:34
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Manually"
-msgstr ""
+msgstr "हस्तचलितरूपेण योजयन्तु"
 
 #: app/PassPage.qml:48
 #, kde-format
