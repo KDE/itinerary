@@ -154,7 +154,8 @@ void ImportController::importLocalFile(const QUrl &url)
         Q_EMIT infoMessage(i18n("Import failed: %1", f.errorString()));
         return;
     }
-    if (f.size() > 10000000 && !FileHelper::fileName(url).endsWith(".itinerary"_L1)) {
+    const auto isItineraryFile = FileHelper::fileName(url).endsWith(".itinerary"_L1, Qt::CaseInsensitive);
+    if (f.size() > 10000000 && !isItineraryFile) {
         qCWarning(Log) << "File too large, ignoring" << f.fileName() << f.size();
         Q_EMIT infoMessage(i18n("Import failed: File too large."));
         return;
@@ -163,7 +164,7 @@ void ImportController::importLocalFile(const QUrl &url)
     // deal with things we can import more efficiently from a file directly
     const auto head = f.peek(4);
     if (FileHelper::hasZipHeader(head)) {
-        if (url.fileName().endsWith(".itinerary"_L1, Qt::CaseInsensitive) && importBundle(url)) {
+        if (isItineraryFile && importBundle(url)) {
             return;
         }
     }
