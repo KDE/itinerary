@@ -1,8 +1,8 @@
 # SPDX-License-Identifier: CC0-1.0
 # SPDX-FileCopyrightText: 2023 Volker Krause <vkrause@kde.org>
 
-# we use the Breeze style, so anything related to Material is unnecessary
-qml/QtQuick/Controls/Material/.*
+# we use the Breeze style, so anything related to Material or Fluent is unnecessary
+qml/QtQuick/Controls/(FluentWinUI3|Material)/.*
 lib/qml/org/kde/kirigami/styles/Material/.*
 
 # data files for ki18n that we don't need
