@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-19 00:41+0000\n"
+"POT-Creation-Date: 2024-12-21 00:41+0000\n"
 "PO-Revision-Date: 2023-07-29 15:30-0300\n"
 "Last-Translator: Geraldo Simiao <geraldosimiao@fedoraproject.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -1904,28 +1904,28 @@ msgstr "Horário do registro de entrada:"
 msgid "Check-out time"
 msgstr "Horário do registro de saída:"
 
-#: app/importcontroller.cpp:154 app/importcontroller.cpp:475
+#: app/importcontroller.cpp:154 app/importcontroller.cpp:476
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Falha ao importar: %1"
 
-#: app/importcontroller.cpp:159
+#: app/importcontroller.cpp:160
 #, kde-format
 msgid "Import failed: File too large."
 msgstr "Falha ao importar: arquivo muito grande."
 
-#: app/importcontroller.cpp:218 app/importcontroller.cpp:315
+#: app/importcontroller.cpp:219 app/importcontroller.cpp:316
 #, fuzzy, kde-format
 #| msgid "Nothing imported."
 msgid "Found nothing to import."
 msgstr "Nada a importar."
 
-#: app/importcontroller.cpp:447
+#: app/importcontroller.cpp:448
 #, kde-format
 msgid "No importable events found in this calendar."
 msgstr "Nenhum evento importável encontrado neste calendário."
 
-#: app/importcontroller.cpp:628
+#: app/importcontroller.cpp:629
 #, kde-format
 msgid "Backup"
 msgstr ""

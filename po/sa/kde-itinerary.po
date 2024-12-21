@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-19 00:41+0000\n"
-"PO-Revision-Date: 2024-12-19 21:54+0530\n"
+"POT-Creation-Date: 2024-12-21 00:41+0000\n"
+"PO-Revision-Date: 2024-12-20 22:01+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
 "Language: sa\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n>2);\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -517,13 +517,13 @@ msgstr "आसनम् : <b>%1</b>"
 #, kde-format
 msgid "1 intermediate stop (%2)"
 msgid_plural "%1 intermediate stops (%2)"
-msgstr[0] "१ मध्यविरामः (%2) २."
+msgstr[0] "१ मध्यविरामः (%2)"
 msgstr[1] "%1 मध्यवर्ती विरामः (%2) ."
 
 #: app/BusDelegate.qml:99 app/TrainDelegate.qml:123
 #, kde-format
 msgid "0 intermediate stop (%1)"
-msgstr "० मध्यवर्ती विराम (%1) २."
+msgstr "० मध्यवर्ती विराम (%1)"
 
 #: app/BusDelegate.qml:188 app/TrainDelegate.qml:231 app/TrainPage.qml:84
 #: app/TransferDelegate.qml:64
@@ -1000,7 +1000,7 @@ msgstr "प्रियस्थानानि निर्यातयन्�
 #: app/TimelinePage.qml:296 app/TripGroupPage.qml:291
 #, kde-format
 msgid "GPX Files (*.gpx)"
-msgstr "जीपीएक्स सञ्चिकाः (*.gpx) २."
+msgstr "जीपीएक्स सञ्चिकाः (*.gpx)"
 
 #: app/FavoriteLocationPage.qml:44
 #, kde-format
@@ -1372,7 +1372,7 @@ msgstr "मूल्य"
 #, kde-format
 msgctxt "prices in local and home currency"
 msgid "%1 (%2)"
-msgstr "%1 (%2) २."
+msgstr "%1 (%2)"
 
 #: app/FormPriceEditDelegate.qml:33
 #, kde-format
@@ -1604,19 +1604,19 @@ msgstr "जारीकर्ता :"
 #: app/HealthCertificateVaccination.qml:115
 #, kde-format
 msgid "Identifier:"
-msgstr "परिचयकः : १."
+msgstr "परिचयकः :"
 
 #: app/HealthCertificateRecovery.qml:82 app/HealthCertificateTest.qml:120
 #: app/HealthCertificateVaccination.qml:123
 #, kde-format
 msgid "Issued:"
-msgstr "निर्गतम् : १."
+msgstr "निर्गतम् :"
 
 #: app/HealthCertificateRecovery.qml:86 app/HealthCertificateTest.qml:124
 #: app/HealthCertificateVaccination.qml:127
 #, kde-format
 msgid "Expires:"
-msgstr "अवधिः समाप्तः भवति : १."
+msgstr "अवधिः समाप्तः भवति :"
 
 #: app/HealthCertificateRecovery.qml:101 app/HealthCertificateTest.qml:139
 #: app/HealthCertificateVaccination.qml:142
@@ -1652,7 +1652,7 @@ msgstr "परिणाम:"
 #: app/HealthCertificateTest.qml:90
 #, kde-format
 msgid "Test Center:"
-msgstr "परीक्षणकेन्द्रम् : १."
+msgstr "परीक्षणकेन्द्रम् :"
 
 #: app/HealthCertificateTest.qml:96 app/HealthCertificateVaccination.qml:97
 #, kde-format
@@ -1668,8 +1668,8 @@ msgstr "रोगप्रतिबन्ध"
 #, kde-format
 msgid "%2 (%1 day ago)"
 msgid_plural "%2 (%1 days ago)"
-msgstr[0] "%2 (%1 दिवसपूर्वम्) २."
-msgstr[1] "%2 (%1 दिवसपूर्वम्) २."
+msgstr[0] "%2 (%1 दिवसपूर्वम्)"
+msgstr[1] "%2 (%1 दिवसपूर्वम्)"
 
 #: app/HealthCertificateVaccination.qml:76
 #, kde-format
@@ -1679,7 +1679,7 @@ msgstr "निवारक:"
 #: app/HealthCertificateVaccination.qml:84
 #, kde-format
 msgid "Manufacturer:"
-msgstr "निर्माता : १."
+msgstr "निर्माता :"
 
 #: app/HealthCertificateVaccination.qml:88
 #, kde-format
@@ -1689,7 +1689,7 @@ msgstr "%1/%2"
 #: app/HealthCertificateVaccination.qml:89
 #, kde-format
 msgid "Dose:"
-msgstr "मात्रा : १."
+msgstr "मात्रा :"
 
 #: app/HotelDelegate.qml:33
 #, kde-format
@@ -1775,27 +1775,27 @@ msgstr "चेक-इन समय"
 msgid "Check-out time"
 msgstr "चेक-आउट समय"
 
-#: app/importcontroller.cpp:154 app/importcontroller.cpp:475
+#: app/importcontroller.cpp:154 app/importcontroller.cpp:476
 #, kde-format
 msgid "Import failed: %1"
 msgstr "आयातः विफलः: %1"
 
-#: app/importcontroller.cpp:159
+#: app/importcontroller.cpp:160
 #, kde-format
 msgid "Import failed: File too large."
 msgstr "आयातः विफलः: सञ्चिका अतीव विशाला।"
 
-#: app/importcontroller.cpp:218 app/importcontroller.cpp:315
+#: app/importcontroller.cpp:219 app/importcontroller.cpp:316
 #, kde-format
 msgid "Found nothing to import."
 msgstr "आयातार्थं किमपि न लब्धम्।"
 
-#: app/importcontroller.cpp:447
+#: app/importcontroller.cpp:448
 #, kde-format
 msgid "No importable events found in this calendar."
 msgstr "अस्मिन् पञ्चाङ्गे आयातयोग्याः घटनाः न प्राप्यन्ते ।"
 
-#: app/importcontroller.cpp:628
+#: app/importcontroller.cpp:629
 #, kde-format
 msgid "Backup"
 msgstr "बैकअप"
@@ -1828,19 +1828,19 @@ msgstr "द्वारं ज्ञातव्यम्"
 #, kde-format
 msgctxt "flight departure/arrival gate"
 msgid "%1 (arrival + departure)"
-msgstr "%1 (आगमन + प्रस्थान) २."
+msgstr "%1 (आगमन + प्रस्थान)"
 
 #: app/IndoorMapGateSheet.qml:35
 #, kde-format
 msgctxt "flight departure gate"
 msgid "%1 (departure)"
-msgstr "%1 (प्रस्थानम्) २."
+msgstr "%1 (प्रस्थानम्)"
 
 #: app/IndoorMapGateSheet.qml:37
 #, kde-format
 msgctxt "flight arrival gate"
 msgid "%1 (arrival)"
-msgstr "%1 (आगमनम्) २."
+msgstr "%1 (आगमनम्)"
 
 #: app/IndoorMapInfoSheet.qml:21 app/IndoorMapPage.qml:127
 #, kde-format
@@ -1934,19 +1934,19 @@ msgstr "मञ्चं ज्ञातव्यम्"
 #, kde-format
 msgctxt "train arrival/departure platform"
 msgid "%1 (arrival/departure)"
-msgstr "%1 (आगमन/प्रस्थान) २."
+msgstr "%1 (आगमन/प्रस्थान)"
 
 #: app/IndoorMapPlatformSheet.qml:42
 #, kde-format
 msgctxt "train departure platform"
 msgid "%1 (departure)"
-msgstr "%1 (प्रस्थानम्) २."
+msgstr "%1 (प्रस्थानम्)"
 
 #: app/IndoorMapPlatformSheet.qml:44
 #, kde-format
 msgctxt "train arrival platform"
 msgid "%1 (arrival)"
-msgstr "%1 (आगमनम्) २."
+msgstr "%1 (आगमनम्)"
 
 #: app/IndoorMapPlatformSheet.qml:83
 #, kde-format
@@ -2101,27 +2101,27 @@ msgstr "%1 प्रति"
 #: app/JourneySectionDelegate.qml:146
 #, kde-format
 msgid "Walk (%1)"
-msgstr "चलना (%1) २."
+msgstr "चलना (%1)"
 
 #: app/JourneySectionDelegate.qml:147
 #, kde-format
 msgid "Walk %1 (%2)"
-msgstr "चलन् %1 (%2) २."
+msgstr "चलन् %1 (%2)"
 
 #: app/JourneySectionDelegate.qml:149
 #, kde-format
 msgid "Transfer (%1)"
-msgstr "स्थानान्तरणम् (%1) ९."
+msgstr "स्थानान्तरणम् (%1)"
 
 #: app/JourneySectionDelegate.qml:151
 #, kde-format
 msgid "Wait (%1)"
-msgstr "प्रतीक्ष्यताम् (%1) २."
+msgstr "प्रतीक्ष्यताम् (%1)"
 
 #: app/JourneySectionDelegate.qml:153
 #, kde-format
 msgid "%1 %2 (%3)"
-msgstr "%1 %2 (%3) २."
+msgstr "%1 %2 (%3)"
 
 #: app/JourneySectionDelegate.qml:155
 #, kde-format
@@ -2545,7 +2545,7 @@ msgstr "तमङ्गः:"
 #: app/MapStopoverInfoSheetDrawer.qml:70
 #, kde-format
 msgid "Occupancy:"
-msgstr "अधिग्रहणम् : १."
+msgstr "अधिग्रहणम् :"
 
 #: app/MapStopoverInfoSheetDrawer.qml:88
 #, kde-format
@@ -3889,7 +3889,7 @@ msgstr "यात्री %1"
 #: app/tickettokenmodel.cpp:115
 #, kde-format
 msgid "%1 (%2)"
-msgstr "%1 (%2) २."
+msgstr "%1 (%2)"
 
 #: app/TimelinePage.qml:20
 #, kde-format
@@ -4210,7 +4210,7 @@ msgstr "यात्राः %1"
 #, kde-format
 msgid "Date: %2 (one day)"
 msgid_plural "Date: %2 (%1 days)"
-msgstr[0] "तिथिः %2 (एकदिवसः) २."
+msgstr[0] "तिथिः %2 (एकदिवसः)"
 msgstr[1] "तिथिः %2 (%1 दिवसाः)"
 
 #: app/TripGroupDelegate.qml:116 app/TripGroupPage.qml:447
@@ -4269,13 +4269,13 @@ msgstr "यात्रा सम्पादयतु"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Trip name:"
-msgstr "यात्रायाः नाम : १."
+msgstr "यात्रायाः नाम :"
 
 #: app/tripgroupmanager.cpp:871
 #, kde-format
 msgctxt "%1 is destination, %2 is the standalone month name, %3 is the year"
 msgid "%1 (%2 %3)"
-msgstr "%1 (%2 %3) २."
+msgstr "%1 (%2 %3)"
 
 #: app/tripgroupmanager.cpp:877
 #, kde-format
@@ -4283,13 +4283,13 @@ msgctxt ""
 "%1 is destination, %2 and %3 are the standalone month names and %4 is the "
 "year"
 msgid "%1 (%2/%3 %4)"
-msgstr "%1 (%2/%3 %4) २."
+msgstr "%1 (%2/%3 %4)"
 
 #: app/tripgroupmanager.cpp:883
 #, kde-format
 msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"
-msgstr "%1 (%2/%3) २."
+msgstr "%1 (%2/%3)"
 
 #: app/TripGroupMapPage.qml:194
 #, kde-format
@@ -4305,7 +4305,7 @@ msgstr "यात्राः विलयनम्"
 #: app/TripGroupMergeDialog.qml:39
 #, kde-format
 msgid "Merge with:"
-msgstr "विलीनीकरणं कुर्वन्तु : १."
+msgstr "विलीनीकरणं कुर्वन्तु :"
 
 #: app/TripGroupMergeDialog.qml:78
 #, kde-format
@@ -4466,7 +4466,7 @@ msgstr "विभक्त यात्रा"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "New Trip name:"
-msgstr "नवीन यात्रा नाम : १."
+msgstr "नवीन यात्रा नाम :"
 
 #: app/TripGroupSplitPage.qml:35
 #, kde-format
