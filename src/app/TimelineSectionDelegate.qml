@@ -31,7 +31,7 @@ FormCard.FormHeader {
         rightPadding: root.rightPadding
 
         text: controller.subTitle
-        color: Kirigami.Theme.disabledTextColor
+        color: root.controller.isHoliday ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.disabledTextColor
 
         Accessible.ignored: true
     }
