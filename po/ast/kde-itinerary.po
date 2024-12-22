@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-21 00:41+0000\n"
+"POT-Creation-Date: 2024-12-22 00:40+0000\n"
 "PO-Revision-Date: 2023-11-07 21:26+0100\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: \n"
@@ -116,7 +116,7 @@ msgid "Add to calendar…"
 msgstr ""
 
 #: app/ActionsCard.qml:74 app/TripGroupDelegate.qml:182
-#: app/TripGroupPage.qml:716
+#: app/TripGroupPage.qml:711
 #, kde-format
 msgid "Export…"
 msgstr ""
@@ -126,7 +126,7 @@ msgstr ""
 #: app/HealthCertificatePage.qml:49 app/HealthCertificatePage.qml:63
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:171
 #: app/TicketPage.qml:47 app/TicketPage.qml:171 app/TimelinePage.qml:221
-#: app/TripGroupPage.qml:313
+#: app/TripGroupPage.qml:308
 #, kde-format
 msgid "Delete"
 msgstr ""
@@ -141,17 +141,17 @@ msgstr ""
 msgid "Do you really want to delete this event?"
 msgstr ""
 
-#: app/ActionsCard.qml:138 app/TimelinePage.qml:235 app/TripGroupPage.qml:232
+#: app/ActionsCard.qml:138 app/TimelinePage.qml:235 app/TripGroupPage.qml:227
 #, kde-format
 msgid "Export"
 msgstr ""
 
-#: app/ActionsCard.qml:141 app/TimelinePage.qml:238 app/TripGroupPage.qml:235
+#: app/ActionsCard.qml:141 app/TimelinePage.qml:238 app/TripGroupPage.qml:230
 #, kde-format
 msgid "As Itinerary file…"
 msgstr ""
 
-#: app/ActionsCard.qml:152 app/TimelinePage.qml:262 app/TripGroupPage.qml:257
+#: app/ActionsCard.qml:152 app/TimelinePage.qml:262 app/TripGroupPage.qml:252
 #, kde-format
 msgid "Send to %1"
 msgstr ""
@@ -161,13 +161,13 @@ msgstr ""
 msgid "Export Reservation"
 msgstr ""
 
-#: app/ActionsCard.qml:168 app/TimelinePage.qml:278 app/TripGroupPage.qml:275
+#: app/ActionsCard.qml:168 app/TimelinePage.qml:278 app/TripGroupPage.qml:270
 #, kde-format
 msgid "Itinerary file (*.itinerary)"
 msgstr ""
 
 #: app/ActionsCard.qml:173 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:666
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:661
 #, kde-format
 msgid "Actions"
 msgstr ""
@@ -991,7 +991,7 @@ msgid "Export Favorite Locations"
 msgstr ""
 
 #: app/FavoriteLocationPage.qml:38 app/FavoriteLocationPage.qml:46
-#: app/TimelinePage.qml:296 app/TripGroupPage.qml:291
+#: app/TimelinePage.qml:296 app/TripGroupPage.qml:286
 #, kde-format
 msgid "GPX Files (*.gpx)"
 msgstr ""
@@ -2862,7 +2862,7 @@ msgstr ""
 msgid "Home Country"
 msgstr ""
 
-#: app/MyDataPage.qml:126 app/StatisticsPage.qml:15 app/TripGroupPage.qml:634
+#: app/MyDataPage.qml:126 app/StatisticsPage.qml:15 app/TripGroupPage.qml:629
 #, kde-format
 msgid "Statistics"
 msgstr ""
@@ -3044,7 +3044,7 @@ msgctxt "name - valid time range"
 msgid "%1 - %2"
 msgstr ""
 
-#: app/passmanager.cpp:276 app/TripGroupPage.qml:440
+#: app/passmanager.cpp:276 app/TripGroupPage.qml:435
 #, kde-format
 msgid "%1 - %2"
 msgstr ""
@@ -3651,7 +3651,7 @@ msgstr ""
 #: app/statisticsmodel.cpp:112 app/statisticsmodel.cpp:145
 #: app/statisticsmodel.cpp:160 app/statisticsmodel.cpp:175
 #: app/statisticsmodel.cpp:190 app/statisticsmodel.cpp:205
-#: app/TripGroupPage.qml:641
+#: app/TripGroupPage.qml:636
 #, kde-format
 msgid "Distance"
 msgstr ""
@@ -3664,7 +3664,7 @@ msgstr ""
 #: app/statisticsmodel.cpp:122 app/statisticsmodel.cpp:150
 #: app/statisticsmodel.cpp:165 app/statisticsmodel.cpp:180
 #: app/statisticsmodel.cpp:195 app/statisticsmodel.cpp:210
-#: app/TripGroupPage.qml:650
+#: app/TripGroupPage.qml:645
 #, kde-format
 msgid "CO₂"
 msgstr ""
@@ -3896,13 +3896,13 @@ msgstr ""
 msgid "Add restaurant…"
 msgstr ""
 
-#: app/TimelinePage.qml:166 app/TripGroupPage.qml:748
+#: app/TimelinePage.qml:166 app/TripGroupPage.qml:743
 #, kde-format
 msgctxt "@action:button"
 msgid "Go To Now"
 msgstr ""
 
-#: app/TimelinePage.qml:173 app/TripGroupPage.qml:756
+#: app/TimelinePage.qml:173 app/TripGroupPage.qml:751
 #: app/TripGroupsPage.qml:118 app/TripGroupsPage.qml:137
 #, kde-format
 msgctxt "@action:button"
@@ -3915,7 +3915,7 @@ msgctxt "@title:group"
 msgid "Add New Trip"
 msgstr ""
 
-#: app/TimelinePage.qml:214 app/TripGroupPage.qml:306
+#: app/TimelinePage.qml:214 app/TripGroupPage.qml:301
 #, kde-format
 msgid "Delete Trip"
 msgstr ""
@@ -3925,18 +3925,18 @@ msgstr ""
 msgid "Do you really want to delete this trip?"
 msgstr ""
 
-#: app/TimelinePage.qml:247 app/TripGroupPage.qml:243
+#: app/TimelinePage.qml:247 app/TripGroupPage.qml:238
 #, kde-format
 msgid "As GPX file…"
 msgstr ""
 
-#: app/TimelinePage.qml:277 app/TimelinePage.qml:294 app/TripGroupPage.qml:274
-#: app/TripGroupPage.qml:289
+#: app/TimelinePage.qml:277 app/TimelinePage.qml:294 app/TripGroupPage.qml:269
+#: app/TripGroupPage.qml:284
 #, kde-format
 msgid "Export Trip"
 msgstr ""
 
-#: app/TimelinePage.qml:493 app/TripGroupPage.qml:606
+#: app/TimelinePage.qml:493 app/TripGroupPage.qml:601
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr ""
@@ -4183,7 +4183,7 @@ msgid_plural "Date: %2 (%1 days)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: app/TripGroupDelegate.qml:116 app/TripGroupPage.qml:447
+#: app/TripGroupDelegate.qml:116 app/TripGroupPage.qml:442
 #: app/WeatherForecastDelegate.qml:48 app/WeatherForecastPage.qml:93
 #, kde-format
 msgctxt "temperature range"
@@ -4205,7 +4205,7 @@ msgstr ""
 msgid "%1: no compatible power plugs (%2)"
 msgstr ""
 
-#: app/TripGroupDelegate.qml:145 app/TripGroupPage.qml:473
+#: app/TripGroupDelegate.qml:145 app/TripGroupPage.qml:468
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
@@ -4217,7 +4217,7 @@ msgstr[1] ""
 msgid "Edit…"
 msgstr ""
 
-#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:723
+#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:718
 #, kde-format
 msgid "Delete trip"
 msgstr ""
@@ -4289,74 +4289,74 @@ msgctxt "@title:group"
 msgid "Add to Trip"
 msgstr ""
 
-#: app/TripGroupPage.qml:307
+#: app/TripGroupPage.qml:302
 #, kde-format
 msgid "Do you really want to delete the trip '%1'?"
 msgstr ""
 
-#: app/TripGroupPage.qml:441
+#: app/TripGroupPage.qml:436
 #, kde-format
 msgid "One day"
 msgid_plural "%1 days"
 msgstr[0] ""
 msgstr[1] ""
 
-#: app/TripGroupPage.qml:461
+#: app/TripGroupPage.qml:456
 #, kde-format
 msgid "Some incompatible power sockets (%1)"
 msgstr ""
 
-#: app/TripGroupPage.qml:463
+#: app/TripGroupPage.qml:458
 #, kde-format
 msgid "Some incompatible power plugs (%1)"
 msgstr ""
 
-#: app/TripGroupPage.qml:466
+#: app/TripGroupPage.qml:461
 #, kde-format
 msgid "No compatible power plugs (%1)"
 msgstr ""
 
-#: app/TripGroupPage.qml:479
+#: app/TripGroupPage.qml:474
 #, kde-format
 msgid "Show map…"
 msgstr ""
 
-#: app/TripGroupPage.qml:486
+#: app/TripGroupPage.qml:481
 #, kde-format
 msgid "Import"
 msgstr ""
 
-#: app/TripGroupPage.qml:500
+#: app/TripGroupPage.qml:495
 #, kde-format
 msgid "Add"
 msgstr ""
 
-#: app/TripGroupPage.qml:659
+#: app/TripGroupPage.qml:654
 #, kde-format
 msgid "Cost"
 msgstr ""
 
-#: app/TripGroupPage.qml:672
+#: app/TripGroupPage.qml:667
 #, kde-format
 msgid "Check for Updates"
 msgstr ""
 
-#: app/TripGroupPage.qml:681
+#: app/TripGroupPage.qml:676
 #, kde-format
 msgid "Rename…"
 msgstr ""
 
-#: app/TripGroupPage.qml:690
+#: app/TripGroupPage.qml:685
 #, kde-format
 msgid "Merge trips…"
 msgstr ""
 
-#: app/TripGroupPage.qml:701
+#: app/TripGroupPage.qml:696
 #, kde-format
 msgid "Split trip…"
 msgstr ""
 
-#: app/TripGroupPage.qml:708
+#: app/TripGroupPage.qml:703
 #, kde-format
 msgid "Download Maps"
 msgstr ""
