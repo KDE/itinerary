@@ -180,15 +180,12 @@ Kirigami.Page {
         anchors.fill: parent
     }
 
-    contentItem: ColumnLayout{
-        spacing: 0
-
+    contentItem: Item {
         QQC2.SwipeView {
             id: view
             clip: true
             interactive: root.enableMapView
-            Layout.fillHeight: true
-            Layout.fillWidth: true
+            anchors.fill: parent
             Item {
                 id: listPage
 
@@ -336,24 +333,20 @@ Kirigami.Page {
                 Component.onCompleted: centerOnJourney();
             }
         }
-    }
+        Components.FloatingButton {
+            id: mapButton
+            icon.name: checked ? "format-list-unordered" : "map-gnomonic"
+            text: i18nc("@action:button", "Show Map")
+            onClicked: view.currentIndex === 0 ? view.currentIndex = 1 : view.currentIndex = 0
+            checkable: true
+            checked: view.currentIndex === 1
 
-    Components.FloatingButton {
-        id: mapButton
-        icon.name: checked ? "format-list-unordered" : "map-gnomonic"
-        text: i18nc("@action:button", "Show Map")
-        onClicked: view.currentIndex === 0 ? view.currentIndex = 1 : view.currentIndex = 0
-        checkable: true
-        checked: view.currentIndex === 1
-
-        anchors {
-            right: parent.right
-            rightMargin: Kirigami.Units.largeSpacing + (scrollview.QQC2.ScrollBar && scrollview.QQC2.ScrollBar.vertical ? scrollview.QQC2.ScrollBar.vertical.width : 0)
-            bottom: parent.bottom
-            bottomMargin: Kirigami.Units.largeSpacing
+            anchors {
+                right: parent.right
+                rightMargin: Kirigami.Units.largeSpacing + (scrollview.QQC2.ScrollBar && scrollview.QQC2.ScrollBar.vertical ? scrollview.QQC2.ScrollBar.vertical.width : 0)
+                bottom: parent.bottom
+                bottomMargin: Kirigami.Units.largeSpacing
+            }
         }
-
     }
-
-
 }
