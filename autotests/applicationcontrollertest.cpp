@@ -14,6 +14,7 @@
 #include "passmanager.h"
 #include "pkpassmanager.h"
 #include "reservationmanager.h"
+#include "settings.h"
 #include "transfermanager.h"
 #include "tripgroupmanager.h"
 
@@ -181,8 +182,12 @@ private Q_SLOTS:
 
         LiveDataManager liveDataMgr;
 
+        Settings settings;
+        settings.setHomeCountryIsoCode(u"XX"_s);
+
         ApplicationController appController;
         QSignalSpy infoSpy(&appController, &ApplicationController::infoMessage);
+        QSignalSpy settingsReloadSpy(&appController, &ApplicationController::reloadSettings);
         appController.setPkPassManager(&pkPassMgr);
         appController.setReservationManager(&resMgr);
         appController.setDocumentManager(&docMgr);
@@ -229,6 +234,7 @@ private Q_SLOTS:
         QCOMPARE(pkPassMgr.passes().size(), 1);
         QCOMPARE(passMgr.rowCount(), 1);
         QCOMPARE(infoSpy.size(), 2);
+        QCOMPARE(settingsReloadSpy.size(), 1);
 
         Test::clearAll(&pkPassMgr);
         Test::clearAll(&resMgr);
@@ -244,6 +250,7 @@ private Q_SLOTS:
         QCOMPARE(pkPassMgr.passes().size(), 1);
         QCOMPARE(passMgr.rowCount(), 1);
         QCOMPARE(infoSpy.size(), 3);
+        QCOMPARE(settingsReloadSpy.size(), 2);
     }
 
     void testExportTripGroup()

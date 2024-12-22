@@ -120,6 +120,9 @@ Q_SIGNALS:
 
     void contextTripGroupIdChanged();
 
+    /** Indicates a backup restore changed application settings. */
+    void reloadSettings();
+
 private:
     bool importBundle(KItinerary::File *file);
     void pkPassUpdated(const QString &passId);

@@ -18,30 +18,53 @@ using namespace Qt::Literals::StringLiterals;
 Settings::Settings(QObject *parent)
     : QObject(parent)
 {
-    QSettings s;
-    s.beginGroup("Settings"_L1);
-    m_weatherEnabled = s.value("WeatherForecastEnabled"_L1, false).toBool();
-
-    const auto currentCountry = KCountry::fromQLocale(QLocale().territory()).alpha2();
-    m_homeCountry = s.value("HomeCountry"_L1, currentCountry).toString();
-
-    m_queryLiveData = s.value("QueryLiveData"_L1, false).toBool();
-
-    m_preloadMapData = s.value("PreloadMapData"_L1, false).toBool();
-
-    m_currencyConversion = s.value("PerformCurrencyConversion"_L1, false).toBool();
-    m_wikimediaOnlineContentEnabled = s.value("WikimediaOnlineContent"_L1, false).toBool();
-
-    m_autoAddTransfers = s.value("AutoAddTransfers"_L1, true).toBool();
-    m_autoFillTransfers = s.value("AutoFillTransfers"_L1, false).toBool() && m_queryLiveData && m_autoAddTransfers;
-
-    m_showNotificationOnLockScreen = s.value("ShowNotificationOnLockScreen"_L1, false).toBool();
-
-    m_osmContributorMode = s.value("OsmContributorMode"_L1, false).toBool();
-    m_developmentMode = s.value("DevelopmentMode"_L1, false).toBool();
+    m_homeCountry = KCountry::fromQLocale(QLocale().territory()).alpha2();
+    load();
 }
 
 Settings::~Settings() = default;
+
+void Settings::load()
+{
+    QSettings s;
+    s.beginGroup("Settings"_L1);
+    m_weatherEnabled = s.value("WeatherForecastEnabled"_L1, m_weatherEnabled).toBool();
+
+
+    m_homeCountry = s.value("HomeCountry"_L1, m_homeCountry).toString();
+
+    m_queryLiveData = s.value("QueryLiveData"_L1, m_queryLiveData).toBool();
+
+    m_preloadMapData = s.value("PreloadMapData"_L1, m_preloadMapData).toBool();
+
+    m_currencyConversion = s.value("PerformCurrencyConversion"_L1, m_currencyConversion).toBool();
+    m_wikimediaOnlineContentEnabled = s.value("WikimediaOnlineContent"_L1, m_wikimediaOnlineContentEnabled).toBool();
+
+    m_autoAddTransfers = s.value("AutoAddTransfers"_L1, m_autoAddTransfers).toBool();
+    m_autoFillTransfers = s.value("AutoFillTransfers"_L1, m_autoFillTransfers).toBool() && m_queryLiveData && m_autoAddTransfers;
+
+    m_showNotificationOnLockScreen = s.value("ShowNotificationOnLockScreen"_L1, m_showNotificationOnLockScreen).toBool();
+
+    m_osmContributorMode = s.value("OsmContributorMode"_L1, m_osmContributorMode).toBool();
+    m_developmentMode = s.value("DevelopmentMode"_L1, m_developmentMode).toBool();
+}
+
+void Settings::reloadSettings()
+{
+    load();
+
+    Q_EMIT weatherForecastEnabledChanged(m_weatherEnabled);
+    Q_EMIT homeCountryIsoCodeChanged(m_homeCountry);
+    Q_EMIT queryLiveDataChanged(m_queryLiveData);
+    Q_EMIT preloadMapDataChanged(m_preloadMapData);
+    Q_EMIT performCurrencyConversionChanged(m_currencyConversion);
+    Q_EMIT wikimediaOnlineContentEnabledChanged(m_wikimediaOnlineContentEnabled);
+    Q_EMIT autoAddTransfersChanged(m_autoAddTransfers);
+    Q_EMIT autoFillTransfersChanged(m_autoFillTransfers);
+    Q_EMIT showNotificationOnLockScreenChanged(m_showNotificationOnLockScreen);
+    Q_EMIT developmentModeChanged(m_developmentMode);
+    Q_EMIT osmContributorModeChanged(m_osmContributorMode);
+}
 
 QVariant Settings::read(const QString &key, const QVariant &defaultValue)
 {

@@ -533,6 +533,7 @@ bool ApplicationController::importBundle(KItinerary::File *file)
 {
     Importer importer(file);
     int count = 0;
+    int settingsCount = 0;
     {
         TripGroupingBlocker groupingBlocker(m_tripGroupMgr);
         QSignalBlocker blocker(this); // suppress infoMessage()
@@ -545,7 +546,12 @@ bool ApplicationController::importBundle(KItinerary::File *file)
         count += importer.importPasses(m_passMgr);
         count += importer.importHealthCertificates(healthCertificateManager());
         count += importer.importLiveData(m_liveDataMgr);
-        count += importer.importSettings();
+        settingsCount += importer.importSettings();
+    }
+
+    if (settingsCount > 0) {
+        Q_EMIT reloadSettings();
+        count += settingsCount;
     }
 
     if (count > 0) {

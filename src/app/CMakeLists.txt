@@ -41,6 +41,7 @@ target_sources(itinerary PRIVATE
     publictransportmatcher.cpp
     reservationhelper.cpp
     reservationmanager.cpp
+    settings.cpp
     statisticsmodel.cpp
     statisticstimerangemodel.cpp
     timelinedelegatecontroller.cpp
@@ -113,7 +114,6 @@ target_sources(itinerary-app PRIVATE
     notifyrc.qrc
     onlineticketimporter.cpp
     permissionmanager.cpp
-    settings.cpp
     tickettokenmodel.cpp
     traewellingcontroller.cpp
     transferdelegatecontroller.cpp

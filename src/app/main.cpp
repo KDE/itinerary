@@ -453,6 +453,7 @@ int main(int argc, char **argv)
 #endif
     QObject::connect(&intentHandler, &IntentHandler::handleIntent, &appController, &ApplicationController::handleIntent);
     QObject::connect(&importController, &ImportController::infoMessage, &appController, &ApplicationController::infoMessage);
+    QObject::connect(&appController, &ApplicationController::reloadSettings, &settings, &Settings::reloadSettings);
 
     OnlineTicketImporter::setNetworkAccessManagerFactory(namFactory);
 

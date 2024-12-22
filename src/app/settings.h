@@ -73,6 +73,11 @@ public:
     [[nodiscard]] bool developmentMode() const;
     void setDevelopmentMode(bool enabled);
 
+    /** Reload settings from disk and emit change notifications.
+     *  For use during restoring backups.
+     */
+    void reloadSettings();
+
 Q_SIGNALS:
     void weatherForecastEnabledChanged(bool enabled);
     void homeCountryIsoCodeChanged(const QString &isoCode);
@@ -87,6 +92,8 @@ Q_SIGNALS:
     void osmContributorModeChanged(bool enabled);
 
 private:
+    void load();
+
     QString m_homeCountry;
     bool m_weatherEnabled = false;
     bool m_queryLiveData = false;
