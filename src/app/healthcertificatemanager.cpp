@@ -142,7 +142,7 @@ QHash<int, QByteArray> HealthCertificateManager::roleNames() const
 
 QString HealthCertificateManager::displayName(const QVariant &certificate)
 {
-    return i18nc("", "%1 (%2)", certificateName(certificate), name(certificate));
+    return i18nc("health certification", "%1 (%2)", certificateName(certificate), name(certificate));
 }
 
 QString HealthCertificateManager::certificateName(const QVariant &certificate)
