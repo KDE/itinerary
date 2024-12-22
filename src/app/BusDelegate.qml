@@ -139,10 +139,23 @@ TimelineDelegate {
                     Layout.fillWidth: true
 
                     JourneySectionStopDelegateLineSegment {
-
+                        id: intermediateStopLine
                         Layout.fillHeight: true
                         lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
                         hasStop: model.stopover.disruptionEffect !== Disruption.NoService
+
+                        leadingProgress: root.controller.isCurrent && model.leadingProgress
+                        trailingProgress: root.controller.isCurrent && model.trailingProgress
+                        Binding {
+                            target: model
+                            property: "leadingLength"
+                            value: intermediateStopLine.leadingLineLength
+                        }
+                        Binding {
+                            target: model
+                            property: "trailingLength"
+                            value: intermediateStopLine.trailingLineLength
+                        }
                     }
                     QQC2.Label{
                         text: model.stopover.stopPoint.name
