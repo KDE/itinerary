@@ -197,7 +197,11 @@ FormCard.FormCardPage {
         FormCard.FormButtonDelegate {
             text: i18nc("@action:button", "Export")
             icon.name: "document-export-symbolic"
-            onClicked: exportDialog.open()
+            onClicked: {
+                const today = new Date();
+                exportDialog.currentFile = today.toISOString().substr(0, 10) + "-kde-itinerary-backup.itinerary"
+                exportDialog.open();
+            }
 
             FileDialog {
                 id: exportDialog
