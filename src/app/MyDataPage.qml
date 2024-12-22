@@ -96,6 +96,11 @@ FormCard.FormCardPage {
                 }
             }
         }
+        FormCard.FormButtonDelegate {
+            text: i18nc("@action:button", "Manage your health certificates")
+            onClicked: QQC2.ApplicationWindow.window.pageStack.push(Qt.createComponent("org.kde.itinerary", "HealthCertificatePage"))
+        }
+
     }
 
     // Saved location
