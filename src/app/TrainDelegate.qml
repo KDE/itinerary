@@ -41,12 +41,15 @@ TimelineDelegate {
                     platform = reservationFor.departurePlatform;
                 }
 
-                if (platform) {
+                if (platform && root.departure.platformChanged) {
+                    return i18n("Platform changed to %1", platform);
+                } else if (platform) {
                     return i18n("Platform %1", platform);
                 } else {
                     return "";
                 }
             }
+            departurePlatformChanged: root.departure.platformChanged
             Component.onCompleted: {
                 progress = root.controller.progress;
             }
@@ -212,12 +215,15 @@ TimelineDelegate {
                     platform = reservationFor.arrivalPlatform;
                 }
 
-                if (platform) {
+                if (platform && root.arrival.platformChanged) {
+                    return i18n("Platform changed to %1", platform);
+                } else if (platform) {
                     return i18n("Platform %1", platform);
                 } else {
                     return "";
                 }
             }
+            arrivalPlatformChanged: root.arrival.platformChanged
 
             Component.onCompleted: {
                 progress = root.controller.progress;

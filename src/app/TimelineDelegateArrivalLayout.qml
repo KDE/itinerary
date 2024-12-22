@@ -15,6 +15,7 @@ RowLayout {
     property var departure: arrival
     required property string arrivalName
     property string arrivalPlatform
+    property bool arrivalPlatformChanged
     required property string arrivalCountry
     property real progress
     required property var reservationFor
@@ -86,6 +87,8 @@ RowLayout {
         QQC2.Label {
             text: root.arrivalPlatform
             visible: text.length > 0
+            color: root.arrivalPlatformChanged ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
+            font.weight: root.arrivalPlatformChanged ? Font.DemiBold : Font.Normal
         }
     }
 }

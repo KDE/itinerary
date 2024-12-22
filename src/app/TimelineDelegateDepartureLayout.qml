@@ -15,6 +15,7 @@ RowLayout {
     required property var departureName
     required property string departureCountry
     property string departurePlatform
+    property bool departurePlatformChanged: false
     property string transportName
     property string transportIcon
     property real progress
@@ -107,6 +108,8 @@ RowLayout {
         QQC2.Label {
             text: root.departurePlatform
             visible: text.length > 0
+            color: root.departurePlatformChanged ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
+            font.weight: root.departurePlatformChanged ? Font.DemiBold : Font.Normal
         }
     }
 }
