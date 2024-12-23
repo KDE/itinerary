@@ -232,7 +232,6 @@ ecm_add_qml_module(itinerary-app URI org.kde.itinerary NO_PLUGIN QML_FILES
     TimelineDelegateDepartureLayout.qml
     TimelineDelegateSeatRow.qml
     TimelineDelegateSeatRowLabel.qml
-    TimelinePage.qml
     TimelineSectionDelegate.qml
     TouristAttractionDelegate.qml
     TouristAttractionPage.qml
@@ -243,7 +242,6 @@ ecm_add_qml_module(itinerary-app URI org.kde.itinerary NO_PLUGIN QML_FILES
     TransferPage.qml
     TransportIcon.qml
     TransportNameControl.qml
-    TripGroupDelegate.qml
     TripGroupEditorDialog.qml
     TripGroupMapPage.qml
     TripGroupMergeDialog.qml
