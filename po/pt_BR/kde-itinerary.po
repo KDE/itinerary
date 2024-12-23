@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-22 00:40+0000\n"
+"POT-Creation-Date: 2024-12-23 00:41+0000\n"
 "PO-Revision-Date: 2023-07-29 15:30-0300\n"
 "Last-Translator: Geraldo Simiao <geraldosimiao@fedoraproject.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -346,7 +346,7 @@ msgstr "Viagens"
 msgid "Reservation sent."
 msgstr "Reserva"
 
-#: app/applicationcontroller.cpp:552
+#: app/applicationcontroller.cpp:558
 #, kde-format
 msgid "Import completed."
 msgstr "Importação concluída."
@@ -557,19 +557,19 @@ msgctxt "bus seat"
 msgid "Seat: <b>%1</b>"
 msgstr "Direção: %1"
 
-#: app/BusDelegate.qml:89 app/TrainDelegate.qml:113
+#: app/BusDelegate.qml:89 app/TrainDelegate.qml:116
 #, kde-format
 msgid "1 intermediate stop (%2)"
 msgid_plural "%1 intermediate stops (%2)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: app/BusDelegate.qml:99 app/TrainDelegate.qml:123
+#: app/BusDelegate.qml:99 app/TrainDelegate.qml:126
 #, kde-format
 msgid "0 intermediate stop (%1)"
 msgstr ""
 
-#: app/BusDelegate.qml:188 app/TrainDelegate.qml:231 app/TrainPage.qml:84
+#: app/BusDelegate.qml:201 app/TrainDelegate.qml:248 app/TrainPage.qml:84
 #: app/TransferDelegate.qml:64
 #, kde-format
 msgid "%1 to %2"
@@ -1068,7 +1068,7 @@ msgstr "Trabalho"
 msgid "Location %1"
 msgstr "Localização %1"
 
-#: app/FavoriteLocationPage.qml:20 app/MyDataPage.qml:119
+#: app/FavoriteLocationPage.qml:20 app/MyDataPage.qml:124
 #, kde-format
 msgid "Favorite Locations"
 msgstr "Localizações favoritas"
@@ -1611,7 +1611,7 @@ msgstr "Certificado inválido"
 #: app/healthcertificatemanager.cpp:145
 #, fuzzy, kde-format
 #| msgid "%1 (%2)"
-msgctxt ""
+msgctxt "health certificate"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
@@ -2110,7 +2110,7 @@ msgstr "Teleférico"
 msgid "Bus"
 msgstr "Ônibus"
 
-#: app/JourneyPathPage.qml:175 app/JourneySectionPage.qml:344
+#: app/JourneyPathPage.qml:175 app/JourneySectionPage.qml:339
 #, fuzzy, kde-format
 #| msgid "Show"
 msgctxt "@action:button"
@@ -2293,7 +2293,7 @@ msgctxt "@action:button"
 msgid "Show More…"
 msgstr ""
 
-#: app/JourneySectionPage.qml:51 app/TimelineDelegateDepartureLayout.qml:93
+#: app/JourneySectionPage.qml:51 app/TimelineDelegateDepartureLayout.qml:94
 #: app/VehicleLayoutPage.qml:146
 #, fuzzy, kde-format
 #| msgctxt "to travel destination"
@@ -2661,7 +2661,7 @@ msgstr "Passagem de trem"
 msgid "Import Reservation"
 msgstr "Importar reserva"
 
-#: app/Main.qml:126 app/MyDataPage.qml:207
+#: app/Main.qml:126 app/MyDataPage.qml:216
 #, kde-format
 msgid "KDE Itinerary files (*.itinerary)"
 msgstr "Arquivos do KDE Itinerary (*.itinerary)"
@@ -3047,51 +3047,58 @@ msgstr "Certificados de saúde"
 msgid "No valid health certificate found."
 msgstr "Certificado de saúde importado ."
 
-#: app/MyDataPage.qml:103
+#: app/MyDataPage.qml:100
+#, fuzzy, kde-format
+#| msgid "Health Certificates"
+msgctxt "@action:button"
+msgid "Manage your health certificates"
+msgstr "Certificados de saúde"
+
+#: app/MyDataPage.qml:108
 #, fuzzy, kde-format
 #| msgid "Favorite Locations"
 msgctxt "@title:group"
 msgid "Saved Locations"
 msgstr "Localizações favoritas"
 
-#: app/MyDataPage.qml:108
+#: app/MyDataPage.qml:113
 #, kde-format
 msgid "Home Country"
 msgstr "País natal"
 
-#: app/MyDataPage.qml:126 app/StatisticsPage.qml:15 app/TripGroupPage.qml:629
+#: app/MyDataPage.qml:131 app/StatisticsPage.qml:15 app/TripGroupPage.qml:629
 #, kde-format
 msgid "Statistics"
 msgstr "Estatísticas"
 
-#: app/MyDataPage.qml:175
+#: app/MyDataPage.qml:180
 #, fuzzy, kde-format
 #| msgid "Statistics"
 msgctxt "@action:button"
 msgid "See all Statistics"
 msgstr "Estatísticas"
 
-#: app/MyDataPage.qml:185
+#: app/MyDataPage.qml:190
 #, kde-format
 msgctxt "@title:group"
 msgid "Data Portability"
 msgstr ""
 
-#: app/MyDataPage.qml:190
+#: app/MyDataPage.qml:195
 #, fuzzy, kde-format
 #| msgid "Import..."
 msgctxt "@action:button"
 msgid "Import"
 msgstr "Importar..."
 
-#: app/MyDataPage.qml:198
+#: app/MyDataPage.qml:203
 #, fuzzy, kde-format
 #| msgid "Export..."
 msgctxt "@action:button"
 msgid "Export"
 msgstr "Exportar..."
 
-#: app/MyDataPage.qml:205
+#: app/MyDataPage.qml:214
 #, kde-format
 msgid "Export Itinerary Data"
 msgstr "Exportar dados do itinerário"
@@ -4274,26 +4281,32 @@ msgstr "Chegada"
 msgid "Arrival Time"
 msgstr "Hora de chegada:"
 
-#: app/TrainDelegate.qml:45 app/TrainDelegate.qml:216
+#: app/TrainDelegate.qml:45 app/TrainDelegate.qml:230
+#, fuzzy, kde-format
+#| msgid "Platform change on %1"
+msgid "Platform changed to %1"
+msgstr "Alteração de plataforma em %1"
+
+#: app/TrainDelegate.qml:47 app/TrainDelegate.qml:232
 #, fuzzy, kde-format
 #| msgid "Platform: %1"
 msgid "Platform %1"
 msgstr "Plataforma: %1"
 
-#: app/TrainDelegate.qml:66 app/TrainPage.qml:312
+#: app/TrainDelegate.qml:69 app/TrainPage.qml:312
 #, fuzzy, kde-format
 #| msgid "Coach:"
 msgctxt "train coach"
 msgid "Coach: <b>%1</b>"
 msgstr "Vagão:"
 
-#: app/TrainDelegate.qml:72 app/TrainPage.qml:319
+#: app/TrainDelegate.qml:75 app/TrainPage.qml:319
 #, kde-format
 msgctxt "train seat"
 msgid "Seat: <b>%1</b>"
 msgstr ""
 
-#: app/TrainDelegate.qml:80 app/TrainPage.qml:327
+#: app/TrainDelegate.qml:83 app/TrainPage.qml:327
 #, kde-format
 msgctxt "train class"
 msgid "Class: <b>%1</b>"
@@ -4982,6 +4995,12 @@ msgstr ""
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 de %3 para %4 em %5"
+
+#, fuzzy
+#~| msgid "%1 (%2)"
+#~ msgctxt ""
+#~ msgid "%1 (%2)"
+#~ msgstr "%1 (%2)"
 
 #~ msgid "Direction: %1"
 #~ msgstr "Direção: %1"

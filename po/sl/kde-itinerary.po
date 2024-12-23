@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-22 00:40+0000\n"
+"POT-Creation-Date: 2024-12-23 00:41+0000\n"
 "PO-Revision-Date: 2024-12-17 07:09+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -332,7 +332,7 @@ msgstr "Izlet poslan."
 msgid "Reservation sent."
 msgstr "Rezervacija poslana."
 
-#: app/applicationcontroller.cpp:552
+#: app/applicationcontroller.cpp:558
 #, kde-format
 msgid "Import completed."
 msgstr "Uvoz dokončan."
@@ -517,7 +517,7 @@ msgctxt "bus seat"
 msgid "Seat: <b>%1</b>"
 msgstr "Sedež: <b>%1</b>"
 
-#: app/BusDelegate.qml:89 app/TrainDelegate.qml:113
+#: app/BusDelegate.qml:89 app/TrainDelegate.qml:116
 #, kde-format
 msgid "1 intermediate stop (%2)"
 msgid_plural "%1 intermediate stops (%2)"
@@ -526,12 +526,12 @@ msgstr[1] "%1 vmesna postanka (%2)"
 msgstr[2] "%1 vmesni postanki (%2)"
 msgstr[3] "%1 vmesnih postankov (%2)"
 
-#: app/BusDelegate.qml:99 app/TrainDelegate.qml:123
+#: app/BusDelegate.qml:99 app/TrainDelegate.qml:126
 #, kde-format
 msgid "0 intermediate stop (%1)"
 msgstr "0 vmesnih postankov (%1)"
 
-#: app/BusDelegate.qml:188 app/TrainDelegate.qml:231 app/TrainPage.qml:84
+#: app/BusDelegate.qml:201 app/TrainDelegate.qml:248 app/TrainPage.qml:84
 #: app/TransferDelegate.qml:64
 #, kde-format
 msgid "%1 to %2"
@@ -992,7 +992,7 @@ msgstr "Posel"
 msgid "Location %1"
 msgstr "Lokacija %1"
 
-#: app/FavoriteLocationPage.qml:20 app/MyDataPage.qml:119
+#: app/FavoriteLocationPage.qml:20 app/MyDataPage.qml:124
 #, kde-format
 msgid "Favorite Locations"
 msgstr "Priljubljene lokacije"
@@ -1496,8 +1496,9 @@ msgid "Recovery certificate valid"
 msgstr "Veljavno potrdilo o prebolelosti"
 
 #: app/healthcertificatemanager.cpp:145
-#, kde-format
-msgctxt ""
+#, fuzzy, kde-format
+#| msgid "%1 (%2)"
+msgctxt "health certificate"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
@@ -1982,7 +1983,7 @@ msgstr "Tramvaj"
 msgid "Bus"
 msgstr "Avtobus"
 
-#: app/JourneyPathPage.qml:175 app/JourneySectionPage.qml:344
+#: app/JourneyPathPage.qml:175 app/JourneySectionPage.qml:339
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2150,7 +2151,7 @@ msgctxt "@action:button"
 msgid "Show More…"
 msgstr "Prikaži več…"
 
-#: app/JourneySectionPage.qml:51 app/TimelineDelegateDepartureLayout.qml:93
+#: app/JourneySectionPage.qml:51 app/TimelineDelegateDepartureLayout.qml:94
 #: app/VehicleLayoutPage.qml:146
 #, kde-format
 msgctxt "Direction of the transport mode"
@@ -2496,7 +2497,7 @@ msgstr "SNCF spletna vozovnica…"
 msgid "Import Reservation"
 msgstr "Uvozi rezervacijo"
 
-#: app/Main.qml:126 app/MyDataPage.qml:207
+#: app/Main.qml:126 app/MyDataPage.qml:216
 #, kde-format
 msgid "KDE Itinerary files (*.itinerary)"
 msgstr "Datoteke itinerarja KDE (* .itinerary)"
@@ -2901,47 +2902,54 @@ msgstr "Zdravstvena potrdila"
 msgid "No valid health certificate found."
 msgstr "Ni najdenega veljavnega zdravstvenega spričevala."
 
-#: app/MyDataPage.qml:103
+#: app/MyDataPage.qml:100
+#, fuzzy, kde-format
+#| msgid "Health Certificates"
+msgctxt "@action:button"
+msgid "Manage your health certificates"
+msgstr "Zdravstvena potrdila"
+
+#: app/MyDataPage.qml:108
 #, kde-format
 msgctxt "@title:group"
 msgid "Saved Locations"
 msgstr "Shranjene lokacije"
 
-#: app/MyDataPage.qml:108
+#: app/MyDataPage.qml:113
 #, kde-format
 msgid "Home Country"
 msgstr "Država izvora"
 
-#: app/MyDataPage.qml:126 app/StatisticsPage.qml:15 app/TripGroupPage.qml:629
+#: app/MyDataPage.qml:131 app/StatisticsPage.qml:15 app/TripGroupPage.qml:629
 #, kde-format
 msgid "Statistics"
 msgstr "Statistika"
 
-#: app/MyDataPage.qml:175
+#: app/MyDataPage.qml:180
 #, kde-format
 msgctxt "@action:button"
 msgid "See all Statistics"
 msgstr "Pogled vso statistiko"
 
-#: app/MyDataPage.qml:185
+#: app/MyDataPage.qml:190
 #, kde-format
 msgctxt "@title:group"
 msgid "Data Portability"
 msgstr "Prenosljivost podatkov"
 
-#: app/MyDataPage.qml:190
+#: app/MyDataPage.qml:195
 #, kde-format
 msgctxt "@action:button"
 msgid "Import"
 msgstr "Uvozi"
 
-#: app/MyDataPage.qml:198
+#: app/MyDataPage.qml:203
 #, kde-format
 msgctxt "@action:button"
 msgid "Export"
 msgstr "Izvozi"
 
-#: app/MyDataPage.qml:205
+#: app/MyDataPage.qml:214
 #, kde-format
 msgid "Export Itinerary Data"
 msgstr "Izvoz podatkov itinerarja"
@@ -4049,24 +4057,30 @@ msgstr "Prihod"
 msgid "Arrival Time"
 msgstr "Čas prihoda"
 
-#: app/TrainDelegate.qml:45 app/TrainDelegate.qml:216
+#: app/TrainDelegate.qml:45 app/TrainDelegate.qml:230
+#, fuzzy, kde-format
+#| msgid "Platform change on %1"
+msgid "Platform changed to %1"
+msgstr "Zamenjava perona na %1"
+
+#: app/TrainDelegate.qml:47 app/TrainDelegate.qml:232
 #, kde-format
 msgid "Platform %1"
 msgstr "Peron %1"
 
-#: app/TrainDelegate.qml:66 app/TrainPage.qml:312
+#: app/TrainDelegate.qml:69 app/TrainPage.qml:312
 #, kde-format
 msgctxt "train coach"
 msgid "Coach: <b>%1</b>"
 msgstr "Vagon: <b>%1</b>"
 
-#: app/TrainDelegate.qml:72 app/TrainPage.qml:319
+#: app/TrainDelegate.qml:75 app/TrainPage.qml:319
 #, kde-format
 msgctxt "train seat"
 msgid "Seat: <b>%1</b>"
 msgstr "Sedež: <b>%1</b>"
 
-#: app/TrainDelegate.qml:80 app/TrainPage.qml:327
+#: app/TrainDelegate.qml:83 app/TrainPage.qml:327
 #, kde-format
 msgctxt "train class"
 msgid "Class: <b>%1</b>"
@@ -4712,6 +4726,10 @@ msgstr "Odjavljen"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 od %3 do %4 na %5"
+
+#~ msgctxt ""
+#~ msgid "%1 (%2)"
+#~ msgstr "%1 (%2)"
 
 #~ msgctxt "@title:tab"
 #~ msgid "Passes & Programs"
