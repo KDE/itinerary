@@ -42,9 +42,9 @@ TimelineDelegate {
                 }
 
                 if (platform && root.departure.platformChanged) {
-                    return i18n("Platform changed to %1", platform);
+                    return i18nc("train station platform", "Platform changed to %1", platform);
                 } else if (platform) {
-                    return i18n("Platform %1", platform);
+                    return i18nc("train station platform", "Platform %1", platform);
                 } else {
                     return "";
                 }
@@ -227,9 +227,9 @@ TimelineDelegate {
                 }
 
                 if (platform && root.arrival.platformChanged) {
-                    return i18n("Platform changed to %1", platform);
+                    return i18nc("train station platform", "Platform changed to %1", platform);
                 } else if (platform) {
-                    return i18n("Platform %1", platform);
+                    return i18nc("train station platform", "Platform %1", platform);
                 } else {
                     return "";
                 }
