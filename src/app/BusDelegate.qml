@@ -198,6 +198,6 @@ TimelineDelegate {
         if (reservationFor.busName || reservationFor.busNumber ) {
             return reservationFor.busName + " " + reservationFor.busNumber
         }
-        return i18n("%1 to %2", reservationFor.departureBusStop.name, reservationFor.arrivalBusStop.name);
+        return i18nc("from location 1 to location 2", "%1 to %2", reservationFor.departureBusStop.name, reservationFor.arrivalBusStop.name);
     }
 }

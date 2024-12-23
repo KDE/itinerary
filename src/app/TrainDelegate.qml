@@ -245,6 +245,6 @@ TimelineDelegate {
     Accessible.name: if (reservationFor.trainName || reservationFor.trainNumber) {
         return reservationFor.trainName + " " + reservationFor.trainNumber;
     } else {
-        return i18n("%1 to %2", reservationFor.departureStation.name, reservationFor.arrivalStation.name);
+        return i18nc("from location 1 to location 2", "%1 to %2", reservationFor.departureStation.name, reservationFor.arrivalStation.name);
     }
 }
