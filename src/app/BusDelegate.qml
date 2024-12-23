@@ -40,6 +40,24 @@ TimelineDelegate {
             transportIcon: departure.route.line.mode == Line.Unknown ?  ReservationHelper.defaultIconName(root.reservation) : departure.route.line.iconName
             departure: root.departure
             departureName: reservationFor.departureBusStop.name
+            departurePlatform: {
+                let platform = "";
+                if (departure.hasExpectedPlatform) {
+                    platform = departure.expectedPlatform;
+                } else if (reservationFor.departurePlatform) {
+                    platform = reservationFor.departurePlatform;
+                }
+
+                if (platform && root.departure.platformChanged) {
+                    return i18nc("bus station platform", "Platform changed to %1", platform);
+                } else if (platform) {
+                    return i18nc("bus station platform", "Platform %1", platform);
+                } else {
+                    return "";
+                }
+            }
+            departurePlatformChanged: root.departure.platformChanged
+
             Component.onCompleted: {
                 progress = root.controller.progress;
             }
@@ -190,6 +208,24 @@ TimelineDelegate {
             arrivalCountry: Localizer.formatCountryWithContext(reservationFor.arrivalBusStop.address,
                                                                  reservationFor.departureBusStop.address,
                                                                  Settings.homeCountryIsoCode)
+            arrivalPlatform: {
+                let platform = "";
+                if (arrival.hasExpectedPlatform) {
+                    platform = arrival.expectedPlatform;
+                } else if (reservationFor.arrivalPlatform) {
+                    platform = reservationFor.arrivalPlatform;
+                }
+
+                if (platform && root.arrival.platformChanged) {
+                    return i18nc("bus station platform", "Platform changed to %1", platform);
+                } else if (platform) {
+                    return i18nc("bus station platform", "Platform %1", platform);
+                } else {
+                    return "";
+                }
+            }
+            arrivalPlatformChanged: root.arrival.platformChanged
+
             Component.onCompleted: progress = root.controller.progress;
         }
     }
