@@ -194,15 +194,15 @@ bool HealthCertificateManager::isValid(const QVariant &certificate)
 #if HAVE_KHEALTHCERTIFICATE
     if (certificate.userType() == qMetaTypeId<KVaccinationCertificate>()) {
         const auto cert = certificate.value<KVaccinationCertificate>();
-        return cert.certificateExpiryDate().date() >= now;
+        return !cert.certificateExpiryDate().isValid() || cert.certificateExpiryDate().date() >= now;
     }
     if (certificate.userType() == qMetaTypeId<KTestCertificate>()) {
         const auto cert = certificate.value<KTestCertificate>();
-        return cert.certificateExpiryDate().date() >= now;
+        return !cert.certificateExpiryDate().isValid() || cert.certificateExpiryDate().date() >= now;
     }
     if (certificate.userType() == qMetaTypeId<KRecoveryCertificate>()) {
         const auto cert = certificate.value<KRecoveryCertificate>();
-        return cert.validUntil() >= now;
+        return !cert.validUntil().isValid() || cert.validUntil() >= now;
     }
 #endif
     return {};
