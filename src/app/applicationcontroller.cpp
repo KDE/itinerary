@@ -240,7 +240,7 @@ void ApplicationController::commitImport(ImportController *importController)
             ++passCount;
             break;
         case ImportElement::HealthCertificate:
-            m_healthCertMgr->importCertificate(HealthCertificateManager::certificateRawData(elem.data));
+            healthCertificateManager()->importCertificate(HealthCertificateManager::certificateRawData(elem.data));
             ++healthCertCount;
             break;
         case ImportElement::Template:
