@@ -4,11 +4,13 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+#include "config-itinerary.h"
 #include "testhelper.h"
 
 #include "applicationcontroller.h"
 #include "documentmanager.h"
 #include "favoritelocationmodel.h"
+#include "healthcertificatemanager.h"
 #include "importcontroller.h"
 #include "livedatamanager.h"
 #include "passmanager.h"
@@ -154,6 +156,19 @@ private Q_SLOTS:
         QCOMPARE(infoSpy.size(), 3);
         QCOMPARE(docMgr.documents().size(), 1);
         QCOMPARE(importer.rowCount(), 0);
+
+#if HAVE_KHEALTHCERTIFICATE
+        {
+            HealthCertificateManager mgr;
+            while (mgr.rowCount()) {
+                mgr.removeCertificate(0);
+            }
+        }
+
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/health-certificates/negative-pcr-test-fr.pdf")));
+        appController.commitImport(&importer);
+        QCOMPARE(appController.healthCertificateManager()->rowCount(), 1);
+#endif
     }
 
     void testExportFile()
