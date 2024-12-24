@@ -153,7 +153,10 @@ QString HealthCertificateManager::certificateName(const QVariant &certificate)
         if (cert.dose() > 0 && cert.totalDoses() > 0) {
             return i18n("Vaccination for %1 (%2/%3)", cert.disease(), cert.dose(), cert.totalDoses());
         }
-        return i18n("Vaccination for %1", cert.disease());
+        if (!cert.disease().isEmpty()) {
+            return i18n("Vaccination for %1", cert.disease());
+        }
+        return i18n("Vaccination");
     }
     if (certificate.userType() == qMetaTypeId<KTestCertificate>()) {
         const auto cert = certificate.value<KTestCertificate>();
