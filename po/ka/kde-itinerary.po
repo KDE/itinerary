@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-24 00:40+0000\n"
-"PO-Revision-Date: 2024-12-23 05:23+0100\n"
+"POT-Creation-Date: 2024-12-25 00:41+0000\n"
+"PO-Revision-Date: 2024-12-24 05:25+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -503,18 +503,16 @@ msgid "Bus"
 msgstr "ავტობუსი"
 
 #: app/BusDelegate.qml:52 app/BusDelegate.qml:220
-#, fuzzy, kde-format
-#| msgid "Platform changed to %1"
+#, kde-format
 msgctxt "bus station platform"
 msgid "Platform changed to %1"
 msgstr "პლატფორმა შეიცვალა %1-ზე"
 
 #: app/BusDelegate.qml:54 app/BusDelegate.qml:222
-#, fuzzy, kde-format
-#| msgid "Platform %1"
+#, kde-format
 msgctxt "bus station platform"
 msgid "Platform %1"
-msgstr "პლატფორმა: %1"
+msgstr "პლატფორმა %1"
 
 #: app/BusDelegate.qml:76
 #, kde-format
@@ -535,8 +533,7 @@ msgid "0 intermediate stop (%1)"
 msgstr "0 შუალედური გაჩერება (%1)"
 
 #: app/BusDelegate.qml:237 app/TrainDelegate.qml:248
-#, fuzzy, kde-format
-#| msgid "%1 to %2"
+#, kde-format
 msgctxt "from location 1 to location 2"
 msgid "%1 to %2"
 msgstr "%1 %2-მდე"
@@ -1510,17 +1507,22 @@ msgstr "%1 (%2)"
 msgid "Vaccination for %1 (%2/%3)"
 msgstr "ვაქცინაცია %1-სთვის (%2/%3)"
 
-#: app/healthcertificatemanager.cpp:156
+#: app/healthcertificatemanager.cpp:157
 #, kde-format
 msgid "Vaccination for %1"
 msgstr "ვაქცინაცია %1-სთვის"
 
-#: app/healthcertificatemanager.cpp:160
+#: app/healthcertificatemanager.cpp:159 app/HealthCertificateVaccination.qml:47
+#, kde-format
+msgid "Vaccination"
+msgstr "ვაქცინაცია"
+
+#: app/healthcertificatemanager.cpp:163
 #, kde-format
 msgid "Test %1 for %2"
 msgstr "%1-ის შემოწმება %2-ზე"
 
-#: app/healthcertificatemanager.cpp:166
+#: app/healthcertificatemanager.cpp:169
 #, kde-format
 msgid "Recovery %1 for %2"
 msgstr "%1-ის აღდგენა %2-სთვის"
@@ -1669,11 +1671,6 @@ msgstr "ტესტირების ცენტრი:"
 #, kde-format
 msgid "Country:"
 msgstr "ქვეყანა:"
-
-#: app/HealthCertificateVaccination.qml:47
-#, kde-format
-msgid "Vaccination"
-msgstr "ვაქცინაცია"
 
 #: app/HealthCertificateVaccination.qml:55
 #, kde-format
@@ -3964,18 +3961,16 @@ msgid "Arrival Time"
 msgstr "ჩამოსვლის დრო"
 
 #: app/TrainDelegate.qml:45 app/TrainDelegate.qml:230
-#, fuzzy, kde-format
-#| msgid "Platform changed to %1"
+#, kde-format
 msgctxt "train station platform"
 msgid "Platform changed to %1"
 msgstr "პლატფორმა შეიცვალა %1-ზე"
 
 #: app/TrainDelegate.qml:47 app/TrainDelegate.qml:232
-#, fuzzy, kde-format
-#| msgid "Platform %1"
+#, kde-format
 msgctxt "train station platform"
 msgid "Platform %1"
-msgstr "პლატფორმა: %1"
+msgstr "პლატფორმა %1"
 
 #: app/TrainDelegate.qml:69 app/TrainPage.qml:312
 #, kde-format

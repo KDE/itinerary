@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-24 00:40+0000\n"
+"POT-Creation-Date: 2024-12-25 00:41+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -1637,19 +1637,24 @@ msgstr "%1 (%2)"
 msgid "Vaccination for %1 (%2/%3)"
 msgstr "Vakcinácia %1 (%2/%3)"
 
-#: app/healthcertificatemanager.cpp:156
+#: app/healthcertificatemanager.cpp:157
 #, fuzzy, kde-format
 #| msgid "Vaccination"
 msgid "Vaccination for %1"
 msgstr "Vakcinácia"
 
-#: app/healthcertificatemanager.cpp:160
+#: app/healthcertificatemanager.cpp:159 app/HealthCertificateVaccination.qml:47
+#, kde-format
+msgid "Vaccination"
+msgstr "Vakcinácia"
+
+#: app/healthcertificatemanager.cpp:163
 #, fuzzy, kde-format
 #| msgid "%1 (%2)"
 msgid "Test %1 for %2"
 msgstr "Test"
 
-#: app/healthcertificatemanager.cpp:166
+#: app/healthcertificatemanager.cpp:169
 #, fuzzy, kde-format
 msgid "Recovery %1 for %2"
 msgstr "Obnova"
@@ -1795,11 +1800,6 @@ msgstr ""
 #, kde-format
 msgid "Country:"
 msgstr "Krajina:"
-
-#: app/HealthCertificateVaccination.qml:47
-#, kde-format
-msgid "Vaccination"
-msgstr "Vakcinácia"
 
 #: app/HealthCertificateVaccination.qml:55
 #, kde-format

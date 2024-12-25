@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-24 00:40+0000\n"
-"PO-Revision-Date: 2024-12-17 08:07+0200\n"
+"POT-Creation-Date: 2024-12-25 00:41+0000\n"
+"PO-Revision-Date: 2024-12-24 07:37+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 24.08.3\n"
+"X-Generator: Lokalize 24.12.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -509,15 +509,13 @@ msgid "Bus"
 msgstr "אוטובוס"
 
 #: app/BusDelegate.qml:52 app/BusDelegate.qml:220
-#, fuzzy, kde-format
-#| msgid "Platform change on %1"
+#, kde-format
 msgctxt "bus station platform"
 msgid "Platform changed to %1"
-msgstr "החלפת רציף ב־%1"
+msgstr "הרציף התחלף ל־%1"
 
 #: app/BusDelegate.qml:54 app/BusDelegate.qml:222
-#, fuzzy, kde-format
-#| msgid "Platform %1"
+#, kde-format
 msgctxt "bus station platform"
 msgid "Platform %1"
 msgstr "רציף %1"
@@ -543,8 +541,7 @@ msgid "0 intermediate stop (%1)"
 msgstr "0 תחנות ביניים (%1)"
 
 #: app/BusDelegate.qml:237 app/TrainDelegate.qml:248
-#, fuzzy, kde-format
-#| msgid "%1 to %2"
+#, kde-format
 msgctxt "from location 1 to location 2"
 msgid "%1 to %2"
 msgstr "%1 אל %2"
@@ -1508,8 +1505,7 @@ msgid "Recovery certificate valid"
 msgstr "אישור החלפה תקף"
 
 #: app/healthcertificatemanager.cpp:145
-#, fuzzy, kde-format
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "health certificate"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
@@ -1519,17 +1515,22 @@ msgstr "%1 (%2)"
 msgid "Vaccination for %1 (%2/%3)"
 msgstr "חיסון למניעת %1 (%2/%3)"
 
-#: app/healthcertificatemanager.cpp:156
+#: app/healthcertificatemanager.cpp:157
 #, kde-format
 msgid "Vaccination for %1"
 msgstr "חיסון למניעת %1"
 
-#: app/healthcertificatemanager.cpp:160
+#: app/healthcertificatemanager.cpp:159 app/HealthCertificateVaccination.qml:47
+#, kde-format
+msgid "Vaccination"
+msgstr "חיסון"
+
+#: app/healthcertificatemanager.cpp:163
 #, kde-format
 msgid "Test %1 for %2"
 msgstr "בדיקה %1 לאיתור %2"
 
-#: app/healthcertificatemanager.cpp:166
+#: app/healthcertificatemanager.cpp:169
 #, kde-format
 msgid "Recovery %1 for %2"
 msgstr "החלמה %1 מ%2"
@@ -1678,11 +1679,6 @@ msgstr "מרכז בדיקות:"
 #, kde-format
 msgid "Country:"
 msgstr "מדינה:"
-
-#: app/HealthCertificateVaccination.qml:47
-#, kde-format
-msgid "Vaccination"
-msgstr "חיסון"
 
 #: app/HealthCertificateVaccination.qml:55
 #, kde-format
@@ -2889,11 +2885,10 @@ msgid "No valid health certificate found."
 msgstr "לא נמצאו אישורי בריאות תקפים."
 
 #: app/MyDataPage.qml:100
-#, fuzzy, kde-format
-#| msgid "Health Certificates"
+#, kde-format
 msgctxt "@action:button"
 msgid "Manage your health certificates"
-msgstr "אישורי בריאות"
+msgstr "ניהול אישורי הבריאות שלך"
 
 #: app/MyDataPage.qml:108
 #, kde-format
@@ -3960,15 +3955,13 @@ msgid "Arrival Time"
 msgstr "זמן ההגעה"
 
 #: app/TrainDelegate.qml:45 app/TrainDelegate.qml:230
-#, fuzzy, kde-format
-#| msgid "Platform change on %1"
+#, kde-format
 msgctxt "train station platform"
 msgid "Platform changed to %1"
-msgstr "החלפת רציף ב־%1"
+msgstr "הרציף התחלף ל־%1"
 
 #: app/TrainDelegate.qml:47 app/TrainDelegate.qml:232
-#, fuzzy, kde-format
-#| msgid "Platform %1"
+#, kde-format
 msgctxt "train station platform"
 msgid "Platform %1"
 msgstr "רציף %1"

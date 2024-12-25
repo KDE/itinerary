@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-24 00:40+0000\n"
-"PO-Revision-Date: 2024-12-20 22:01+0530\n"
-"Last-Translator: kali <skkalwar999@gmail.com>\n"
+"POT-Creation-Date: 2024-12-25 00:41+0000\n"
+"PO-Revision-Date: 2024-12-24 20:39+0530\n"
+"Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
 "Language: sa\n"
 "MIME-Version: 1.0\n"
@@ -22,12 +22,12 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "भवतः नामानि"
+msgstr "श्रीकान्त् कलवार्"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "भवतः ईमेलपत्राणि"
+msgstr "skkalwar999@gmail.com"
 
 #: app/AboutPage.qml:18 app/Main.qml:185
 #, kde-format
@@ -506,15 +506,13 @@ msgid "Bus"
 msgstr "बस"
 
 #: app/BusDelegate.qml:52 app/BusDelegate.qml:220
-#, fuzzy, kde-format
-#| msgid "Platform change on %1"
+#, kde-format
 msgctxt "bus station platform"
 msgid "Platform changed to %1"
-msgstr "%1 इत्यत्र मञ्चपरिवर्तनं"
+msgstr "मञ्चः %1 इति परिवर्तितः"
 
 #: app/BusDelegate.qml:54 app/BusDelegate.qml:222
-#, fuzzy, kde-format
-#| msgid "Platform %1"
+#, kde-format
 msgctxt "bus station platform"
 msgid "Platform %1"
 msgstr "मञ्चः %1"
@@ -538,8 +536,7 @@ msgid "0 intermediate stop (%1)"
 msgstr "० मध्यवर्ती विराम (%1)"
 
 #: app/BusDelegate.qml:237 app/TrainDelegate.qml:248
-#, fuzzy, kde-format
-#| msgid "%1 to %2"
+#, kde-format
 msgctxt "from location 1 to location 2"
 msgid "%1 to %2"
 msgstr "%1 तः %2 पर्यन्तम्"
@@ -1503,8 +1500,7 @@ msgid "Recovery certificate valid"
 msgstr "पुनर्प्राप्ति प्रमाणपत्र वैधम्"
 
 #: app/healthcertificatemanager.cpp:145
-#, fuzzy, kde-format
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "health certificate"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
@@ -1514,17 +1510,22 @@ msgstr "%1 (%2)"
 msgid "Vaccination for %1 (%2/%3)"
 msgstr "टीकाकरण %1/%2 (%3)"
 
-#: app/healthcertificatemanager.cpp:156
+#: app/healthcertificatemanager.cpp:157
 #, kde-format
 msgid "Vaccination for %1"
 msgstr "टीकाकरणम् (%1)"
 
-#: app/healthcertificatemanager.cpp:160
+#: app/healthcertificatemanager.cpp:159 app/HealthCertificateVaccination.qml:47
+#, kde-format
+msgid "Vaccination"
+msgstr "रोगप्रतिबन्ध"
+
+#: app/healthcertificatemanager.cpp:163
 #, kde-format
 msgid "Test %1 for %2"
 msgstr "%2 कृते %1 परीक्षणं कुर्वन्तु"
 
-#: app/healthcertificatemanager.cpp:166
+#: app/healthcertificatemanager.cpp:169
 #, kde-format
 msgid "Recovery %1 for %2"
 msgstr "%2 कृते %1 पुनर्प्राप्तिः"
@@ -1672,11 +1673,6 @@ msgstr "परीक्षणकेन्द्रम् :"
 #, kde-format
 msgid "Country:"
 msgstr "देशः:"
-
-#: app/HealthCertificateVaccination.qml:47
-#, kde-format
-msgid "Vaccination"
-msgstr "रोगप्रतिबन्ध"
 
 #: app/HealthCertificateVaccination.qml:55
 #, kde-format
@@ -2879,8 +2875,7 @@ msgid "No valid health certificate found."
 msgstr "वैधस्वास्थ्यप्रमाणपत्रं न प्राप्तम्।"
 
 #: app/MyDataPage.qml:100
-#, fuzzy, kde-format
-#| msgid "Health Certificates"
+#, kde-format
 msgctxt "@action:button"
 msgid "Manage your health certificates"
 msgstr "स्वास्थ्य प्रमाण पत्र"
@@ -3949,15 +3944,13 @@ msgid "Arrival Time"
 msgstr "आगमन समय"
 
 #: app/TrainDelegate.qml:45 app/TrainDelegate.qml:230
-#, fuzzy, kde-format
-#| msgid "Platform change on %1"
+#, kde-format
 msgctxt "train station platform"
 msgid "Platform changed to %1"
-msgstr "%1 इत्यत्र मञ्चपरिवर्तनं"
+msgstr "मञ्चः %1 इति परिवर्तितः"
 
 #: app/TrainDelegate.qml:47 app/TrainDelegate.qml:232
-#, fuzzy, kde-format
-#| msgid "Platform %1"
+#, kde-format
 msgctxt "train station platform"
 msgid "Platform %1"
 msgstr "मञ्चः %1"

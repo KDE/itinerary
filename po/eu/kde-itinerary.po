@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-24 00:40+0000\n"
-"PO-Revision-Date: 2024-12-21 08:03+0100\n"
+"POT-Creation-Date: 2024-12-25 00:41+0000\n"
+"PO-Revision-Date: 2024-12-24 20:23+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -510,15 +510,13 @@ msgid "Bus"
 msgstr "Autobusa"
 
 #: app/BusDelegate.qml:52 app/BusDelegate.qml:220
-#, fuzzy, kde-format
-#| msgid "Platform change on %1"
+#, kde-format
 msgctxt "bus station platform"
 msgid "Platform changed to %1"
-msgstr "Nasa aldaketa %1(e)n"
+msgstr "Nasa %1(e)ra aldatu da"
 
 #: app/BusDelegate.qml:54 app/BusDelegate.qml:222
-#, fuzzy, kde-format
-#| msgid "Platform %1"
+#, kde-format
 msgctxt "bus station platform"
 msgid "Platform %1"
 msgstr "%1. nasa"
@@ -542,11 +540,10 @@ msgid "0 intermediate stop (%1)"
 msgstr "Tarteko 0 geldialdi (%1)"
 
 #: app/BusDelegate.qml:237 app/TrainDelegate.qml:248
-#, fuzzy, kde-format
-#| msgid "%1 to %2"
+#, kde-format
 msgctxt "from location 1 to location 2"
 msgid "%1 to %2"
-msgstr "%1 %2(e)ra"
+msgstr "%1(e)tik %2(e)ra"
 
 #: app/BusEditor.qml:17
 #, kde-format
@@ -1507,8 +1504,7 @@ msgid "Recovery certificate valid"
 msgstr "Sendatze ziurtagiri balioduna"
 
 #: app/healthcertificatemanager.cpp:145
-#, fuzzy, kde-format
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "health certificate"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
@@ -1518,17 +1514,22 @@ msgstr "%1 (%2)"
 msgid "Vaccination for %1 (%2/%3)"
 msgstr "%1(e)ren txertaketa (%2/%3)"
 
-#: app/healthcertificatemanager.cpp:156
+#: app/healthcertificatemanager.cpp:157
 #, kde-format
 msgid "Vaccination for %1"
 msgstr "%1(e)ren txertaketa"
 
-#: app/healthcertificatemanager.cpp:160
+#: app/healthcertificatemanager.cpp:159 app/HealthCertificateVaccination.qml:47
+#, kde-format
+msgid "Vaccination"
+msgstr "Txertaketa"
+
+#: app/healthcertificatemanager.cpp:163
 #, kde-format
 msgid "Test %1 for %2"
 msgstr "Probatu %1 %2(e)rako"
 
-#: app/healthcertificatemanager.cpp:166
+#: app/healthcertificatemanager.cpp:169
 #, kde-format
 msgid "Recovery %1 for %2"
 msgstr "%2(e)rako %1 osatzea"
@@ -1677,11 +1678,6 @@ msgstr "Proba zentroa:"
 #, kde-format
 msgid "Country:"
 msgstr "Herrialdea:"
-
-#: app/HealthCertificateVaccination.qml:47
-#, kde-format
-msgid "Vaccination"
-msgstr "Txertaketa"
 
 #: app/HealthCertificateVaccination.qml:55
 #, kde-format
@@ -2915,11 +2911,10 @@ msgid "No valid health certificate found."
 msgstr "Ez da osasun ziurtagiri baliodunik aurkitu."
 
 #: app/MyDataPage.qml:100
-#, fuzzy, kde-format
-#| msgid "Health Certificates"
+#, kde-format
 msgctxt "@action:button"
 msgid "Manage your health certificates"
-msgstr "Osasun ziurtagiriak"
+msgstr "Zure osasun ziurtagiriak kudeatu"
 
 #: app/MyDataPage.qml:108
 #, kde-format
@@ -3989,15 +3984,13 @@ msgid "Arrival Time"
 msgstr "Iritsiera-ordua"
 
 #: app/TrainDelegate.qml:45 app/TrainDelegate.qml:230
-#, fuzzy, kde-format
-#| msgid "Platform change on %1"
+#, kde-format
 msgctxt "train station platform"
 msgid "Platform changed to %1"
-msgstr "Nasa aldaketa %1(e)n"
+msgstr "Nasa %1(e)ra aldatu da"
 
 #: app/TrainDelegate.qml:47 app/TrainDelegate.qml:232
-#, fuzzy, kde-format
-#| msgid "Platform %1"
+#, kde-format
 msgctxt "train station platform"
 msgid "Platform %1"
 msgstr "%1. nasa"

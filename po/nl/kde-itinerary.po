@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-24 00:40+0000\n"
-"PO-Revision-Date: 2024-12-23 10:52+0100\n"
+"POT-Creation-Date: 2024-12-25 00:41+0000\n"
+"PO-Revision-Date: 2024-12-24 11:11+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -506,15 +506,13 @@ msgid "Bus"
 msgstr "Bus"
 
 #: app/BusDelegate.qml:52 app/BusDelegate.qml:220
-#, fuzzy, kde-format
-#| msgid "Platform changed to %1"
+#, kde-format
 msgctxt "bus station platform"
 msgid "Platform changed to %1"
 msgstr "Perron gewijzigd naar %1"
 
 #: app/BusDelegate.qml:54 app/BusDelegate.qml:222
-#, fuzzy, kde-format
-#| msgid "Platform %1"
+#, kde-format
 msgctxt "bus station platform"
 msgid "Platform %1"
 msgstr "Perron %1"
@@ -538,11 +536,10 @@ msgid "0 intermediate stop (%1)"
 msgstr "0 tussenstoppen (%1)"
 
 #: app/BusDelegate.qml:237 app/TrainDelegate.qml:248
-#, fuzzy, kde-format
-#| msgid "%1 to %2"
+#, kde-format
 msgctxt "from location 1 to location 2"
 msgid "%1 to %2"
-msgstr "%1 tot %2"
+msgstr "%1 naar %2"
 
 #: app/BusEditor.qml:17
 #, kde-format
@@ -1513,17 +1510,22 @@ msgstr "%1 (%2)"
 msgid "Vaccination for %1 (%2/%3)"
 msgstr "Vaccinatie voor %1 (%2/%3)"
 
-#: app/healthcertificatemanager.cpp:156
+#: app/healthcertificatemanager.cpp:157
 #, kde-format
 msgid "Vaccination for %1"
 msgstr "Vaccinatie voor %1"
 
-#: app/healthcertificatemanager.cpp:160
+#: app/healthcertificatemanager.cpp:159 app/HealthCertificateVaccination.qml:47
+#, kde-format
+msgid "Vaccination"
+msgstr "Vaccinatie"
+
+#: app/healthcertificatemanager.cpp:163
 #, kde-format
 msgid "Test %1 for %2"
 msgstr "Test %1 voor %2"
 
-#: app/healthcertificatemanager.cpp:166
+#: app/healthcertificatemanager.cpp:169
 #, kde-format
 msgid "Recovery %1 for %2"
 msgstr "Herstel %1 voor %2"
@@ -1672,11 +1674,6 @@ msgstr "Testcentrum:"
 #, kde-format
 msgid "Country:"
 msgstr "Land:"
-
-#: app/HealthCertificateVaccination.qml:47
-#, kde-format
-msgid "Vaccination"
-msgstr "Vaccinatie"
 
 #: app/HealthCertificateVaccination.qml:55
 #, kde-format
@@ -3989,15 +3986,13 @@ msgid "Arrival Time"
 msgstr "Aankomsttijd"
 
 #: app/TrainDelegate.qml:45 app/TrainDelegate.qml:230
-#, fuzzy, kde-format
-#| msgid "Platform changed to %1"
+#, kde-format
 msgctxt "train station platform"
 msgid "Platform changed to %1"
 msgstr "Perron gewijzigd naar %1"
 
 #: app/TrainDelegate.qml:47 app/TrainDelegate.qml:232
-#, fuzzy, kde-format
-#| msgid "Platform %1"
+#, kde-format
 msgctxt "train station platform"
 msgid "Platform %1"
 msgstr "Perron %1"

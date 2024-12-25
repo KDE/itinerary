@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-24 00:40+0000\n"
+"POT-Creation-Date: 2024-12-25 00:41+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -499,18 +499,16 @@ msgid "Bus"
 msgstr "公共汽车"
 
 #: app/BusDelegate.qml:52 app/BusDelegate.qml:220
-#, fuzzy, kde-format
-#| msgid "Platform change on %1"
+#, kde-format
 msgctxt "bus station platform"
 msgid "Platform changed to %1"
-msgstr "线路 %1 站台更改"
+msgstr ""
 
 #: app/BusDelegate.qml:54 app/BusDelegate.qml:222
-#, fuzzy, kde-format
-#| msgid "Platform: %1"
+#, kde-format
 msgctxt "bus station platform"
 msgid "Platform %1"
-msgstr "站台：%1"
+msgstr ""
 
 #: app/BusDelegate.qml:76
 #, kde-format
@@ -530,8 +528,7 @@ msgid "0 intermediate stop (%1)"
 msgstr ""
 
 #: app/BusDelegate.qml:237 app/TrainDelegate.qml:248
-#, fuzzy, kde-format
-#| msgid "%1 to %2"
+#, kde-format
 msgctxt "from location 1 to location 2"
 msgid "%1 to %2"
 msgstr "%1 到 %2"
@@ -1505,17 +1502,22 @@ msgstr "%1 (%2)"
 msgid "Vaccination for %1 (%2/%3)"
 msgstr ""
 
-#: app/healthcertificatemanager.cpp:156
+#: app/healthcertificatemanager.cpp:157
 #, kde-format
 msgid "Vaccination for %1"
 msgstr ""
 
-#: app/healthcertificatemanager.cpp:160
+#: app/healthcertificatemanager.cpp:159 app/HealthCertificateVaccination.qml:47
+#, kde-format
+msgid "Vaccination"
+msgstr "接种情况"
+
+#: app/healthcertificatemanager.cpp:163
 #, kde-format
 msgid "Test %1 for %2"
 msgstr ""
 
-#: app/healthcertificatemanager.cpp:166
+#: app/healthcertificatemanager.cpp:169
 #, kde-format
 msgid "Recovery %1 for %2"
 msgstr ""
@@ -1659,11 +1661,6 @@ msgstr "检测机构："
 #, kde-format
 msgid "Country:"
 msgstr "国家："
-
-#: app/HealthCertificateVaccination.qml:47
-#, kde-format
-msgid "Vaccination"
-msgstr "接种情况"
 
 #: app/HealthCertificateVaccination.qml:55
 #, kde-format
@@ -3922,18 +3919,16 @@ msgid "Arrival Time"
 msgstr ""
 
 #: app/TrainDelegate.qml:45 app/TrainDelegate.qml:230
-#, fuzzy, kde-format
-#| msgid "Platform change on %1"
+#, kde-format
 msgctxt "train station platform"
 msgid "Platform changed to %1"
-msgstr "线路 %1 站台更改"
+msgstr ""
 
 #: app/TrainDelegate.qml:47 app/TrainDelegate.qml:232
-#, fuzzy, kde-format
-#| msgid "Platform: %1"
+#, kde-format
 msgctxt "train station platform"
 msgid "Platform %1"
-msgstr "站台：%1"
+msgstr ""
 
 #: app/TrainDelegate.qml:69 app/TrainPage.qml:312
 #, kde-format
@@ -4612,25 +4607,3 @@ msgstr ""
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr ""
-
-#~ msgid "My Itinerary"
-#~ msgstr "我的行程"
-
-#~ msgid "Do you really want to delete this trip?"
-#~ msgstr "您确定要删除此行程吗？"
-
-#~ msgid "Trip: %1"
-#~ msgstr "行程：%1"
-
-#~ msgid "Date: %2 (one day)"
-#~ msgid_plural "Date: %2 (%1 days)"
-#~ msgstr[0] "日期：%2 (%1 天)"
-
-#~ msgid "%1: some incompatible power sockets (%2)"
-#~ msgstr "%1：部分电源插座不兼容 (%2)"
-
-#~ msgid "%1: some incompatible power plugs (%2)"
-#~ msgstr "%1：部分电源插头不兼容 (%2)"
-
-#~ msgid "%1: no compatible power plugs (%2)"
-#~ msgstr "%1：没有兼容的电源插头 (%2)"

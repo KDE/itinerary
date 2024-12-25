@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-24 00:40+0000\n"
-"PO-Revision-Date: 2024-12-23 14:16+0300\n"
+"POT-Creation-Date: 2024-12-25 00:41+0000\n"
+"PO-Revision-Date: 2024-12-24 12:38+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -506,18 +506,16 @@ msgid "Bus"
 msgstr "Otobüs"
 
 #: app/BusDelegate.qml:52 app/BusDelegate.qml:220
-#, fuzzy, kde-format
-#| msgid "Platform changed to %1"
+#, kde-format
 msgctxt "bus station platform"
 msgid "Platform changed to %1"
-msgstr "Platform %1 olarak değiştirildi"
+msgstr "Peron %1 olarak değiştirildi"
 
 #: app/BusDelegate.qml:54 app/BusDelegate.qml:222
-#, fuzzy, kde-format
-#| msgid "Platform %1"
+#, kde-format
 msgctxt "bus station platform"
 msgid "Platform %1"
-msgstr "Platform %1"
+msgstr "Peron %1"
 
 #: app/BusDelegate.qml:76
 #, kde-format
@@ -538,8 +536,7 @@ msgid "0 intermediate stop (%1)"
 msgstr "0 ara durak (%1)"
 
 #: app/BusDelegate.qml:237 app/TrainDelegate.qml:248
-#, fuzzy, kde-format
-#| msgid "%1 to %2"
+#, kde-format
 msgctxt "from location 1 to location 2"
 msgid "%1 to %2"
 msgstr "%1 → %2"
@@ -591,7 +588,7 @@ msgstr "Durdur"
 #, kde-format
 msgctxt "bus stop platform"
 msgid "Platform"
-msgstr "Platform"
+msgstr "Peron"
 
 #: app/BusEditor.qml:103 app/TrainEditor.qml:111
 #, kde-format
@@ -641,7 +638,7 @@ msgstr "İstasyon"
 #, kde-format
 msgctxt "bus station platform"
 msgid "Platform"
-msgstr "Platform"
+msgstr "Peron"
 
 #: app/BusPage.qml:121
 #, kde-format
@@ -1367,7 +1364,7 @@ msgstr "Koordinattan adrese"
 #: app/FormPlatformDelegate.qml:19
 #, kde-format
 msgid "Platform"
-msgstr "Platform"
+msgstr "Peron"
 
 #: app/FormPlatformDelegate.qml:44
 #, kde-format
@@ -1513,17 +1510,22 @@ msgstr "%1 (%2)"
 msgid "Vaccination for %1 (%2/%3)"
 msgstr "%1 Aşılaması (%2/%3)"
 
-#: app/healthcertificatemanager.cpp:156
+#: app/healthcertificatemanager.cpp:157
 #, kde-format
 msgid "Vaccination for %1"
 msgstr "%1 aşılaması"
 
-#: app/healthcertificatemanager.cpp:160
+#: app/healthcertificatemanager.cpp:159 app/HealthCertificateVaccination.qml:47
+#, kde-format
+msgid "Vaccination"
+msgstr "Aşılama"
+
+#: app/healthcertificatemanager.cpp:163
 #, kde-format
 msgid "Test %1 for %2"
 msgstr "%2 için %1 testi"
 
-#: app/healthcertificatemanager.cpp:166
+#: app/healthcertificatemanager.cpp:169
 #, kde-format
 msgid "Recovery %1 for %2"
 msgstr "%2 için %1 iyileşmesi"
@@ -1672,11 +1674,6 @@ msgstr "Sınama merkezi:"
 #, kde-format
 msgid "Country:"
 msgstr "Ülke:"
-
-#: app/HealthCertificateVaccination.qml:47
-#, kde-format
-msgid "Vaccination"
-msgstr "Aşılama"
 
 #: app/HealthCertificateVaccination.qml:55
 #, kde-format
@@ -1889,7 +1886,7 @@ msgstr "Uzaklaştır"
 #: app/IndoorMapPage.qml:75
 #, kde-format
 msgid "Find Platform"
-msgstr "Platform Bul"
+msgstr "Peron Bul"
 
 #: app/IndoorMapPage.qml:82
 #, kde-format
@@ -1942,7 +1939,7 @@ msgstr "Bir kat yukarı"
 #, kde-format
 msgctxt "@title"
 msgid "Find Platform"
-msgstr "Platform Bul"
+msgstr "Peron Bul"
 
 #: app/IndoorMapPlatformSheet.qml:40
 #, kde-format
@@ -1965,12 +1962,12 @@ msgstr "%1 (varış)"
 #: app/IndoorMapPlatformSheet.qml:83
 #, kde-format
 msgid "Railway"
-msgstr "Tren Yolu"
+msgstr "Demiryolu"
 
 #: app/IndoorMapPlatformSheet.qml:84
 #, kde-format
 msgid "Light Rail"
-msgstr "Hafif Tren"
+msgstr "Hafif Raylı"
 
 #: app/IndoorMapPlatformSheet.qml:85
 #, kde-format
@@ -2146,7 +2143,7 @@ msgstr "%1 Sür (%2)"
 #, kde-format
 msgctxt "@info"
 msgid "Platform %1"
-msgstr "Platform %1"
+msgstr "Peron %1"
 
 #: app/JourneySectionDelegate.qml:247 app/JourneySectionPage.qml:136
 #: app/VehicleLayoutPage.qml:243
@@ -2181,7 +2178,7 @@ msgstr "CO₂: %1"
 #, kde-format
 msgctxt "Abreviation of train platform"
 msgid "Pl. %1"
-msgstr "Pl. %1"
+msgstr "Pe. %1"
 
 #: app/JourneySectionStopDelegate.qml:145
 #, kde-format
@@ -2193,7 +2190,7 @@ msgstr "Rıht. %1"
 #, kde-format
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
-msgstr "Pl. %1"
+msgstr "Pe. %1"
 
 #: app/JourneySectionStopDelegate.qml:161
 #, kde-format
@@ -2555,7 +2552,7 @@ msgstr "Matrix Oturumu Doğrulaması"
 #: app/MapStopoverInfoSheetDrawer.qml:59
 #, kde-format
 msgid "Platform:"
-msgstr "Platform:"
+msgstr "Peron:"
 
 #: app/MapStopoverInfoSheetDrawer.qml:70
 #, kde-format
@@ -3010,7 +3007,7 @@ msgstr "%1 için gecikmiş varış"
 #: app/notificationhelper.cpp:86
 #, kde-format
 msgid "Platform change on %1"
-msgstr "%1 için platform değişikliği"
+msgstr "%1 için peron değişikliği"
 
 #: app/notificationhelper.cpp:96
 #, kde-format
@@ -3042,12 +3039,12 @@ msgstr "Yeni varış zamanı: %1 (+%2)"
 #: app/notificationhelper.cpp:114
 #, kde-format
 msgid "New departure platform is: %1"
-msgstr "Yeni kalkış platformu: %1"
+msgstr "Yeni kalkış peronu: %1"
 
 #: app/notificationhelper.cpp:117
 #, kde-format
 msgid "New arrival platform is: %1"
-msgstr "Yeni varış platformu: %1"
+msgstr "Yeni varış peronu: %1"
 
 #: app/onlineimport/db.qml:28 app/onlineimport/sncf.qml:28
 #, kde-format
@@ -3433,7 +3430,7 @@ msgid ""
 "such as delays or gate and platform changes."
 msgstr ""
 "Etkinleştirildiğinde, bu çevrimiçi taşıma sağlayıcı hizmetlerini örneğin "
-"gecikmeler veya kapı ve platform değişiklikleri için sorgular."
+"gecikmeler veya kapı ve peron değişiklikleri için sorgular."
 
 #: app/SettingsPage.qml:43
 #, kde-format
@@ -3976,18 +3973,16 @@ msgid "Arrival Time"
 msgstr "Varış Zamanı"
 
 #: app/TrainDelegate.qml:45 app/TrainDelegate.qml:230
-#, fuzzy, kde-format
-#| msgid "Platform changed to %1"
+#, kde-format
 msgctxt "train station platform"
 msgid "Platform changed to %1"
-msgstr "Platform %1 olarak değiştirildi"
+msgstr "Peron %1 olarak değiştirildi"
 
 #: app/TrainDelegate.qml:47 app/TrainDelegate.qml:232
-#, fuzzy, kde-format
-#| msgid "Platform %1"
+#, kde-format
 msgctxt "train station platform"
 msgid "Platform %1"
-msgstr "Platform %1"
+msgstr "Peron %1"
 
 #: app/TrainDelegate.qml:69 app/TrainPage.qml:312
 #, kde-format
@@ -4039,7 +4034,7 @@ msgstr "İstasyon"
 #, kde-format
 msgctxt "train platform"
 msgid "Platform"
-msgstr "Platform"
+msgstr "Peron"
 
 #: app/TrainEditor.qml:119
 #, kde-format
@@ -4561,7 +4556,7 @@ msgstr "Varış: %1"
 #: app/VehicleLayoutPage.qml:184
 #, kde-format
 msgid "Platform: %1"
-msgstr "Platform: %1"
+msgstr "Peron: %1"
 
 #: app/VehicleLayoutPage.qml:193
 #, kde-format

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-24 00:40+0000\n"
+"POT-Creation-Date: 2024-12-25 00:41+0000\n"
 "PO-Revision-Date: 2024-11-28 16:26+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -1528,19 +1528,24 @@ msgstr "%1 (%2)"
 msgid "Vaccination for %1 (%2/%3)"
 msgstr "疫苗 %1/%2 (%3)"
 
-#: app/healthcertificatemanager.cpp:156
+#: app/healthcertificatemanager.cpp:157
 #, fuzzy, kde-format
 #| msgid "Vaccination (%1)"
 msgid "Vaccination for %1"
 msgstr "疫苗 (%1)"
 
-#: app/healthcertificatemanager.cpp:160
+#: app/healthcertificatemanager.cpp:159 app/HealthCertificateVaccination.qml:47
+#, kde-format
+msgid "Vaccination"
+msgstr "疫苗"
+
+#: app/healthcertificatemanager.cpp:163
 #, fuzzy, kde-format
 #| msgid "Test %1 (%2)"
 msgid "Test %1 for %2"
 msgstr "檢驗 %1 (%2)"
 
-#: app/healthcertificatemanager.cpp:166
+#: app/healthcertificatemanager.cpp:169
 #, fuzzy, kde-format
 #| msgid "Recovery (%1)"
 msgid "Recovery %1 for %2"
@@ -1689,11 +1694,6 @@ msgstr "檢驗中心"
 #, kde-format
 msgid "Country:"
 msgstr "國家："
-
-#: app/HealthCertificateVaccination.qml:47
-#, kde-format
-msgid "Vaccination"
-msgstr "疫苗"
 
 #: app/HealthCertificateVaccination.qml:55
 #, kde-format
