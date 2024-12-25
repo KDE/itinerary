@@ -95,6 +95,7 @@ TimelineDelegate {
             arrivalCountry: Localizer.formatCountryWithContext(root.reservationFor.arrivalAirport.address,
                                                      root.reservationFor.departureAirport.address,
                                                      Settings.homeCountryIsoCode)
+            arrivalPlatform: root.reservationFor.arrivalTerminal ? i18nc("airport terminal", "Terminal %1", root.reservationFor.arrivalTerminal) : ""
         }
     }
 
