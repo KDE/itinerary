@@ -66,7 +66,7 @@ TimelineDelegate {
 
         TimelineDelegateSeatRow {
             route: root.departure.route
-            hasSeat: root.hasSeat
+            hasSeat: root.hasSeat || root.reservationFor.departureTerminal || root.reservationFor.departureGate
 
             Component.onCompleted: progress = root.controller.progress;
 
