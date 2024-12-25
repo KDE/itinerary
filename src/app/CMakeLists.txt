@@ -110,6 +110,7 @@ target_sources(itinerary-app PRIVATE
     factory.cpp
     mapdownloadmanager.cpp
     matrixcontroller.cpp
+    migrator.cpp
     notificationconfigcontroller.cpp
     notifyrc.qrc
     onlineticketimporter.cpp

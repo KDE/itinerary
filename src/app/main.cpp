@@ -27,6 +27,7 @@
 #include "locationinformation.h"
 #include "mapdownloadmanager.h"
 #include "matrixcontroller.h"
+#include "migrator.h"
 #include "navigationcontroller.h"
 #include "notificationconfigcontroller.h"
 #include "onlineticketimporter.h"
@@ -350,6 +351,8 @@ int main(int argc, char **argv)
 #if !defined(Q_OS_ANDROID) && !defined(Q_OS_HAIKU)
     KDBusService service(KDBusService::Unique);
 #endif
+
+    Migrator::run();
 
     IntentHandler intentHandler;
 
