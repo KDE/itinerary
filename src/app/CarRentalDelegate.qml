@@ -20,8 +20,9 @@ TimelineDelegate {
             Layout.fillWidth: true
             spacing: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
 
-            TransportIcon {
-                size: Kirigami.Units.iconSizes.smallMedium
+            Kirigami.Icon {
+                Layout.preferredHeight: Kirigami.Units.iconSizes.smallMedium
+                Layout.preferredWidth: Kirigami.Units.iconSizes.smallMedium
                 source: ReservationHelper.defaultIconName(root.reservation)
             }
             QQC2.Label {

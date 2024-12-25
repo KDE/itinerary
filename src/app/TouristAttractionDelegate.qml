@@ -23,8 +23,9 @@ TimelineDelegate {
 
             Layout.fillWidth: true
 
-            TransportIcon {
-                size: Kirigami.Units.iconSizes.smallMedium
+            Kirigami.Icon {
+                Layout.preferredHeight: Kirigami.Units.iconSizes.smallMedium
+                Layout.preferredWidth: Kirigami.Units.iconSizes.smallMedium
                 source: "meeting-attending"
             }
 
@@ -37,7 +38,6 @@ TimelineDelegate {
             Kirigami.Heading {
                 level: 2
                 text: Localizer.formatTime(reservation, "arrivalTime")
-                color: root.headerTextColor
             }
         }
 

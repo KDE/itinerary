@@ -20,8 +20,9 @@ TimelineDelegate {
 
             Layout.fillWidth: true
 
-            TransportIcon {
-                size: Kirigami.Units.iconSizes.smallMedium
+            Kirigami.Icon {
+                Layout.preferredWidth: Kirigami.Units.iconSizes.smallMedium
+                Layout.preferredHeight: Kirigami.Units.iconSizes.smallMedium
                 source: ReservationHelper.defaultIconName(root.reservation)
             }
 
