@@ -33,6 +33,14 @@ TimelineDelegate {
         return s.join(", ");
     }
 
+    readonly property bool hasSeat: {
+        for (const resId of resIds) {
+            if (ReservationManager.reservation(resId).airplaneSeat)
+                return true;
+        }
+        return false;
+    }
+
     contentItem: ColumnLayout {
         spacing: 0
 
