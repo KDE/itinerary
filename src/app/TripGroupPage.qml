@@ -764,7 +764,7 @@ Kirigami.ScrollablePage {
     // or a side-effect of the binding loop on delegate heights
     Timer {
         id: positionTimer
-        interval: 0
+        interval: 10
         repeat: false
         onTriggered: listView.positionViewAtIndex(timelineModel.todayRow, ListView.Beginning);
     }
