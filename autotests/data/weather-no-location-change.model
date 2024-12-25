@@ -1,30 +1,6 @@
 [
     {
         "isToday": false,
-        "rangeType": 1,
-        "sectionHeader": "2023-02-26",
-        "tripGroup": {
-            "@context": "http://schema.org",
-            "@type": "TripGroup",
-            "automaticName": true,
-            "automaticallyGrouped": true,
-            "beginDateTime": {
-                "@type": "QDateTime",
-                "@value": "2023-02-26T16:00:00+01:00",
-                "timezone": "Europe/Berlin"
-            },
-            "endDateTime": {
-                "@type": "QDateTime",
-                "@value": "2023-03-18T00:00:00+01:00",
-                "timezone": "Europe/Berlin"
-            },
-            "name": "Berlin Hbf (February/March 2023)",
-            "slugName": "berlin-hbf-february-march-2023"
-        },
-        "type": 2
-    },
-    {
-        "isToday": false,
         "rangeType": 0,
         "reservations": [
             {
@@ -92,7 +68,7 @@
                     "@type": "Event",
                     "endDate": {
                         "@type": "QDateTime",
-                        "@value": "2023-03-18T00:00:00+01:00",
+                        "@value": "2023-03-18T18:00:00+01:00",
                         "timezone": "Europe/Berlin"
                     },
                     "location": {
@@ -170,6 +146,26 @@
     },
     {
         "isToday": false,
+        "rangeType": 0,
+        "sectionHeader": "2023-03-18",
+        "type": 3,
+        "weatherInformation": {
+            "@context": "http://schema.org",
+            "@type": "WeatherInformation",
+            "forecast": {
+                "@type": "WeatherForecast",
+                "maximumTemperature": 52.43093490600586,
+                "minimumTemperature": 13.531732559204102,
+                "precipitation": 23,
+                "range": 24,
+                "symbolIconName": "weather-few-clouds",
+                "valid": true,
+                "windSpeed": 0
+            }
+        }
+    },
+    {
+        "isToday": false,
         "rangeType": 2,
         "reservations": [
             {
@@ -180,7 +176,7 @@
                     "@type": "Event",
                     "endDate": {
                         "@type": "QDateTime",
-                        "@value": "2023-03-18T00:00:00+01:00",
+                        "@value": "2023-03-18T18:00:00+01:00",
                         "timezone": "Europe/Berlin"
                     },
                     "location": {
@@ -208,188 +204,5 @@
         ],
         "sectionHeader": "2023-03-18",
         "type": 13
-    },
-    {
-        "isToday": false,
-        "rangeType": 2,
-        "sectionHeader": "2023-03-18",
-        "tripGroup": {
-            "@context": "http://schema.org",
-            "@type": "TripGroup",
-            "automaticName": true,
-            "automaticallyGrouped": true,
-            "beginDateTime": {
-                "@type": "QDateTime",
-                "@value": "2023-02-26T16:00:00+01:00",
-                "timezone": "Europe/Berlin"
-            },
-            "endDateTime": {
-                "@type": "QDateTime",
-                "@value": "2023-03-18T00:00:00+01:00",
-                "timezone": "Europe/Berlin"
-            },
-            "name": "Berlin Hbf (February/March 2023)",
-            "slugName": "berlin-hbf-february-march-2023"
-        },
-        "type": 2
-    },
-    {
-        "isToday": false,
-        "rangeType": 0,
-        "sectionHeader": "2023-03-18",
-        "type": 3,
-        "weatherInformation": {
-            "@context": "http://schema.org",
-            "@type": "WeatherInformation",
-            "forecast": {
-                "@type": "WeatherForecast",
-                "maximumTemperature": 52.43093490600586,
-                "minimumTemperature": 13.531732559204102,
-                "precipitation": 23,
-                "range": 24,
-                "symbolIconName": "weather-few-clouds",
-                "valid": true,
-                "windSpeed": 0
-            }
-        }
-    },
-    {
-        "isToday": false,
-        "rangeType": 0,
-        "sectionHeader": "2023-03-19",
-        "type": 3,
-        "weatherInformation": {
-            "@context": "http://schema.org",
-            "@type": "WeatherInformation",
-            "forecast": {
-                "@type": "WeatherForecast",
-                "maximumTemperature": 52.43093490600586,
-                "minimumTemperature": 13.531732559204102,
-                "precipitation": 23,
-                "range": 24,
-                "symbolIconName": "weather-few-clouds",
-                "valid": true,
-                "windSpeed": 0
-            }
-        }
-    },
-    {
-        "isToday": false,
-        "rangeType": 0,
-        "sectionHeader": "2023-03-20",
-        "type": 3,
-        "weatherInformation": {
-            "@context": "http://schema.org",
-            "@type": "WeatherInformation",
-            "forecast": {
-                "@type": "WeatherForecast",
-                "maximumTemperature": 52.43093490600586,
-                "minimumTemperature": 13.531732559204102,
-                "precipitation": 23,
-                "range": 24,
-                "symbolIconName": "weather-few-clouds",
-                "valid": true,
-                "windSpeed": 0
-            }
-        }
-    },
-    {
-        "isToday": false,
-        "rangeType": 0,
-        "sectionHeader": "2023-03-21",
-        "type": 3,
-        "weatherInformation": {
-            "@context": "http://schema.org",
-            "@type": "WeatherInformation",
-            "forecast": {
-                "@type": "WeatherForecast",
-                "maximumTemperature": 52.43093490600586,
-                "minimumTemperature": 13.531732559204102,
-                "precipitation": 23,
-                "range": 24,
-                "symbolIconName": "weather-few-clouds",
-                "valid": true,
-                "windSpeed": 0
-            }
-        }
-    },
-    {
-        "isToday": false,
-        "rangeType": 0,
-        "sectionHeader": "2023-03-22",
-        "type": 3,
-        "weatherInformation": {
-            "@context": "http://schema.org",
-            "@type": "WeatherInformation",
-            "forecast": {
-                "@type": "WeatherForecast",
-                "maximumTemperature": 52.43093490600586,
-                "minimumTemperature": 13.531732559204102,
-                "precipitation": 23,
-                "range": 24,
-                "symbolIconName": "weather-few-clouds",
-                "valid": true,
-                "windSpeed": 0
-            }
-        }
-    },
-    {
-        "isToday": false,
-        "rangeType": 0,
-        "sectionHeader": "2023-03-23",
-        "type": 3,
-        "weatherInformation": {
-            "@context": "http://schema.org",
-            "@type": "WeatherInformation",
-            "forecast": {
-                "@type": "WeatherForecast",
-                "maximumTemperature": 52.43093490600586,
-                "minimumTemperature": 13.531732559204102,
-                "precipitation": 23,
-                "range": 24,
-                "symbolIconName": "weather-few-clouds",
-                "valid": true,
-                "windSpeed": 0
-            }
-        }
-    },
-    {
-        "isToday": false,
-        "rangeType": 0,
-        "sectionHeader": "2023-03-24",
-        "type": 3,
-        "weatherInformation": {
-            "@context": "http://schema.org",
-            "@type": "WeatherInformation",
-            "forecast": {
-                "@type": "WeatherForecast",
-                "maximumTemperature": 52.43093490600586,
-                "minimumTemperature": 13.531732559204102,
-                "precipitation": 23,
-                "range": 24,
-                "symbolIconName": "weather-few-clouds",
-                "valid": true,
-                "windSpeed": 0
-            }
-        }
-    },
-    {
-        "isToday": false,
-        "locationInformation": {
-            "@context": "http://schema.org",
-            "@type": "LocationInformation",
-            "currencyDiffers": false,
-            "drivingSide": "Unknown",
-            "drivingSideDiffers": false,
-            "dstDiffers": true,
-            "isDst": true,
-            "powerPlugCompatibility": "FullyCompatible",
-            "timeZoneDiffers": true,
-            "timeZoneName": "Central European Summer Time",
-            "timeZoneOffsetDelta": 3600
-        },
-        "rangeType": 0,
-        "sectionHeader": "2023-03-26",
-        "type": 4
     }
 ]

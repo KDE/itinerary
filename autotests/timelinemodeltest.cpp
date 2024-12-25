@@ -498,8 +498,13 @@ private Q_SLOTS:
         importer.setReservationManager(&resMgr);
         importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/weather-no-location-change.json")));
         ctrl->commitImport(&importer);
+
+        QCOMPARE(groupMgr.tripGroups().size(), 1);
+        model.setTripGroupId(groupMgr.tripGroups()[0]);
+        Test::waitForReset(&model);
+
         ModelVerificationPoint vp0(QLatin1StringView(SOURCE_DIR "/data/weather-no-location-change.model"));
-        vp0.setRoleFilter({TimelineModel::BatchIdRole, TimelineModel::TripGroupIdRole});
+        vp0.setRoleFilter({TimelineModel::BatchIdRole});
         vp0.setJsonPropertyFilter({"elements"_L1});
         QVERIFY(vp0.verify(&model));
     }
