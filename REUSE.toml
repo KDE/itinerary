@@ -7,7 +7,7 @@ SPDX-PackageSupplier = "Volker Krause <vkrause@kde.org>"
 SPDX-PackageDownloadLocation = "https://invent.kde.org/pim/itinerary"
 
 [[annotations]]
-path = ["autotests/data/**.ics", "autotests/data/**.json", "autotests/data/**.model", "autotests/data/**.pkpass", "autotests/data/**.xml", "autotests/data/timeline/**", "autotests/data/tripgroup/**.json", "autotests/data/tripgroupproxy/**.model", "autotests/data/publictransport/**.json", "autotests/data/**.itinerary", "autotests/data/transfer/**.ref"]
+path = ["autotests/data/**.ics", "autotests/data/**.json", "autotests/data/**.model", "autotests/data/**.pkpass", "autotests/data/**.xml", "autotests/data/timeline/**", "autotests/data/tripgroup/**.json", "autotests/data/publictransport/**.json", "autotests/data/**.itinerary", "autotests/data/transfer/**.ref"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "none"
 SPDX-License-Identifier = "CC0-1.0"

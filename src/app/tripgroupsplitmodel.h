@@ -52,4 +52,4 @@ private:
     qsizetype m_endSelection = 0;
 };
 
-#endif // TRIPGROUPPROXYMODEL_H
+#endif

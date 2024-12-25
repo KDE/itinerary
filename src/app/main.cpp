@@ -54,7 +54,6 @@
 #include "tripgroupmanager.h"
 #include "tripgroupmapmodel.h"
 #include "tripgroupmodel.h"
-#include "tripgroupproxymodel.h"
 #include "tripgroupsplitmodel.h"
 #include "unitconversion.h"
 #include "util.h"
@@ -184,7 +183,6 @@ void registerApplicationTypes()
     qmlRegisterType<TripGroupFilterProxyModel>("org.kde.itinerary", 1, 0, "TripGroupFilterProxyModel");
     qmlRegisterType<TripGroupLocationModel>("org.kde.itinerary", 1, 0, "TripGroupLocationModel");
     qmlRegisterType<TripGroupMapModel>("org.kde.itinerary", 1, 0, "TripGroupMapModel");
-    qmlRegisterType<TripGroupProxyModel>("org.kde.itinerary", 1, 0, "TripGroupProxyModel");
     qmlRegisterType<TripGroupSplitModel>("org.kde.itinerary", 1, 0, "TripGroupSplitModel");
     qmlRegisterType<WeatherForecastModel>("org.kde.itinerary", 1, 0, "WeatherForecastModel");
 #if HAVE_MATRIX
