@@ -82,6 +82,7 @@ private Q_SLOTS:
         QCOMPARE(idx.data(Qt::DisplayRole).toString(), "San Francisco Airport (March 2017)"_L1);
         QCOMPARE(idx.data(TripGroupModel::PositionRole).toInt(), TripGroupModel::Current);
         QCOMPARE(model.currentTripGroupId(), tgMgr.tripGroups().at(0));
+        QCOMPARE(model.currentOrNextRow(), 0);
 
         importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
         ctrl->commitImport(&importer);
@@ -93,6 +94,7 @@ private Q_SLOTS:
         QCOMPARE(idx.data(TripGroupModel::PositionRole).toInt(), TripGroupModel::Future);
         const auto tgId = idx.data(TripGroupModel::TripGroupIdRole).toString();
         QVERIFY(!tgId.isEmpty());
+        QCOMPARE(model.currentOrNextRow(), 1);
 
         importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/timeline/multi-traveler-merge-with-countryinfo.json")));
         ctrl->commitImport(&importer);
@@ -102,6 +104,7 @@ private Q_SLOTS:
         idx = model.index(2, 0);
         QCOMPARE(idx.data(Qt::DisplayRole).toString(), "Peretola (January 2000)"_L1);
         QCOMPARE(idx.data(TripGroupModel::PositionRole).toInt(), TripGroupModel::Past);
+        QCOMPARE(model.currentOrNextRow(), 1);
 
         insertSpy.clear();
 

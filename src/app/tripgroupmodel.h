@@ -17,6 +17,7 @@ class TripGroupModel : public QAbstractListModel
     QML_ELEMENT
 
     Q_PROPERTY(QString currentBatchId READ currentBatchId NOTIFY currentBatchChanged)
+    Q_PROPERTY(int currentOrNextRow READ currentOrNextRow NOTIFY currentBatchChanged)
 
 public:
     enum ExtraRoles {
@@ -67,6 +68,9 @@ public:
 
     /** The location we are in at the given date/time. */
     Q_INVOKABLE [[nodiscard]] QVariant locationAtTime(const QDateTime &dt) const;
+
+    /** Current or next row, for initial view positioning. */
+    [[nodiscard]] int currentOrNextRow() const;
 
     // for unit testing
     void setCurrentDateTime(const QDateTime &dt);

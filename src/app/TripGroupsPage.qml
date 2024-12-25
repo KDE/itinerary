@@ -174,4 +174,13 @@ Kirigami.ScrollablePage {
             }
         }
     }
+
+    // HACK has to happen sufficiently delayed for the list view having its final height
+    // see also TripGroupPage.qml
+    Timer {
+        id: initialPositionTimer
+        interval: 10
+        onTriggered: tripsView.positionViewAtIndex(TripGroupModel.currentOrNextRow, ListView.Contain);
+    }
+    Component.onCompleted: initialPositionTimer.start()
 }

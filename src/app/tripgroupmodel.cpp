@@ -540,6 +540,24 @@ QVariant TripGroupModel::locationAtTime(const QDateTime &dt) const
     return {};
 }
 
+int TripGroupModel::currentOrNextRow() const
+{
+    if (m_tripGroups.empty()) {
+        return -1;
+    }
+
+    const auto dt = now();
+    int row = 0;
+    for (; row < (int)m_tripGroups.size(); ++row) {
+        if (m_tripGroupManager->tripGroup(m_tripGroups[row]).hasEnded(dt)) {
+            --row;
+            break;
+        }
+    }
+
+    return std::clamp(row, 0, (int)m_tripGroups.size() - 1);
+}
+
 QDateTime TripGroupModel::now() const
 {
     if (Q_UNLIKELY(m_unitTestTime.isValid())) {
