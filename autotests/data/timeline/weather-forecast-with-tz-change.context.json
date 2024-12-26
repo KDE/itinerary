@@ -1,0 +1,36 @@
+[
+   {
+        "@context": "http://schema.org",
+        "@type": "FlightReservation",
+        "modifiedTime": "2020-01-22T00:00:00",
+        "reservationFor": {
+            "@type": "Flight",
+            "airline": {
+                "@type": "Airline",
+                "iataCode": "XY"
+            },
+            "arrivalAirport": {
+                "@type": "Airport",
+                "iataCode": "TXL",
+                "name": "Tegel"
+            },
+            "arrivalTime": {
+                "@type": "QDateTime",
+                "@value": "1995-10-17T18:35:00+01:00",
+                "timezone": "Europe/Berlin"
+            },
+            "departureAirport": {
+                "@type": "Airport",
+                "iataCode": "FRA"
+            },
+            "departureDay": "1995-10-17",
+            "departureTime": {
+                "@type": "QDateTime",
+                "@value": "1995-10-17T17:35:00+01:00",
+                "timezone": "Europe/Berlin"
+            },
+            "flightNumber": "1234"
+        },
+        "reservationNumber": "XXX006"
+    }
+]

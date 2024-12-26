@@ -1,37 +1,4 @@
-[{
-    "@context": "http://schema.org",
-    "@type": "FlightReservation",
-    "modifiedTime": "1996-06-01T08:30:00-08:00",
-    "reservationFor": {
-        "@type": "Flight",
-        "airline": {
-            "@type": "Airline",
-            "iataCode": "AB"
-        },
-        "arrivalAirport": {
-            "@type": "Airport",
-            "iataCode": "PDL"
-        },
-        "arrivalTime": {
-            "@type": "QDateTime",
-            "@value": "2023-01-01T12:30:00+00:00",
-            "timezone": "Atlantic/Azores"
-        },
-        "departureAirport": {
-            "@type": "Airport",
-            "iataCode": "BER"
-        },
-        "departureTime": {
-            "@type": "QDateTime",
-            "@value": "2023-01-01T08:30:00+00:00",
-            "timezone": "Europe/Berlin"
-        },
-        "departureDay": "2023-01-01",
-        "flightNumber": "9876"
-    },
-    "reservationNumber": "ABC123",
-    "reservationStatus": "http://schema.org/ReservationConfirmed"
-},
+[
 {
     "@context": "http://schema.org",
     "@type": "FlightReservation",

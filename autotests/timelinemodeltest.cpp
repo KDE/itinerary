@@ -23,6 +23,7 @@
 #include "weatherforecastmanager.h"
 
 #include <KItinerary/Flight>
+#include <KItinerary/LocationUtil>
 #include <KItinerary/Place>
 #include <KItinerary/Reservation>
 
@@ -675,6 +676,9 @@ private Q_SLOTS:
         QDirIterator it(QLatin1StringView(SOURCE_DIR "/data/timeline/"), {QLatin1StringView("*.json")});
         while (it.hasNext()) {
             it.next();
+            if (it.fileInfo().fileName().endsWith(".context.json"_L1)) {
+                continue;
+            }
             const auto baseName = it.fileInfo().baseName();
             QTest::newRow(baseName.toUtf8().constData()) << baseName;
         }
@@ -690,10 +694,6 @@ private Q_SLOTS:
         Test::clearAll(&resMgr);
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&resMgr);
-        ImportController importer;
-        importer.setReservationManager(&resMgr);
-        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/timeline/") + baseName + QLatin1StringView(".json")));
-        ctrl->commitImport(&importer);
         WeatherForecastManager weatherMgr;
         weatherMgr.setTestModeEnabled(true);
 
@@ -720,6 +720,24 @@ private Q_SLOTS:
         TripGroupManager groupMgr;
         groupMgr.setReservationManager(&resMgr);
         groupMgr.setTransferManager(&transferMgr);
+        ctrl->setTripGroupManager(&groupMgr);
+
+        ImportController importer;
+        importer.setReservationManager(&resMgr);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/timeline/") + baseName + ".context.json"_L1));
+        ctrl->commitImport(&importer);
+
+        QVariant initialLocation;
+        if (!groupMgr.tripGroups().empty()) {
+            const auto tg = groupMgr.tripGroup(groupMgr.tripGroups()[0]);
+            QCOMPARE(tg.elements().size(), 1);
+            initialLocation = KItinerary::LocationUtil::arrivalLocation(resMgr.reservation(tg.elements()[0]));
+        }
+
+        QSignalSpy tgAddSpy(&groupMgr, &TripGroupManager::tripGroupAdded);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/timeline/") + baseName + ".json"_L1));
+        ctrl->commitImport(&importer);
+        QCOMPARE(tgAddSpy.size(), 1);
 
         TimelineModel model;
         QAbstractItemModelTester tester(&model);
@@ -729,6 +747,8 @@ private Q_SLOTS:
         model.setTripGroupManager(&groupMgr);
         model.setWeatherForecastManager(&weatherMgr);
         model.setTransferManager(&transferMgr);
+        model.setTripGroupId(tgAddSpy.at(0).at(0).toString());
+        model.setProperty("initialLocation", initialLocation);
         Test::waitForReset(&model);
 
         // check state is correct for data imported at the start
@@ -739,8 +759,20 @@ private Q_SLOTS:
 
         // retry with loading during runtime
         Test::clearAll(&resMgr);
-        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/timeline/") + baseName + QLatin1StringView(".json")));
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/timeline/") + baseName + ".context.json"_L1));
+        importer.setTripGroupName(u"Context Group"_s);
         ctrl->commitImport(&importer);
+        tgAddSpy.clear();
+
+        const auto newTgId = groupMgr.createEmptyGroup(u"Test Group"_s);
+        importer.setTripGroupId(newTgId);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/timeline/") + baseName + ".json"_L1));
+        ctrl->commitImport(&importer);
+        QCOMPARE(tgAddSpy.size(), 1);
+        QCOMPARE(tgAddSpy.at(0).at(0).toString(), newTgId);
+
+        model.setTripGroupId(newTgId);
+        Test::waitForReset(&model);
         QVERIFY(vp.verify(&model));
     }
 

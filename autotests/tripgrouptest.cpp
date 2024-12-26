@@ -153,6 +153,7 @@ private Q_SLOTS:
 
         Test::clearAll(&resMgr);
         TripGroupManager::clear();
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/timeline/no-arrival-time.context.json")));
         importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/timeline/no-arrival-time.json")));
         ctrl->commitImport(&importer);
         {
