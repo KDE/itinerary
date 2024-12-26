@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-25 00:41+0000\n"
+"POT-Creation-Date: 2024-12-26 00:41+0000\n"
 "PO-Revision-Date: 2024-03-26 16:14+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -688,17 +688,17 @@ msgctxt "@title"
 msgid "Select Calendar"
 msgstr "Naptár kiválasztása"
 
-#: app/CarRentalDelegate.qml:29
+#: app/CarRentalDelegate.qml:30
 #, kde-format
 msgid "Rental Car Drop-off"
 msgstr "Bérautó leadása"
 
-#: app/CarRentalDelegate.qml:30
+#: app/CarRentalDelegate.qml:31
 #, kde-format
 msgid "Rental Car Pick-up"
 msgstr "Bérautó átvétele "
 
-#: app/CarRentalDelegate.qml:56
+#: app/CarRentalDelegate.qml:57
 #, kde-format
 msgid "Drop-off: %1"
 msgstr "Leadás: %1"
@@ -890,29 +890,29 @@ msgctxt "@action:button"
 msgid "Save"
 msgstr "Mentés"
 
-#: app/EventDelegate.qml:34
+#: app/EventDelegate.qml:35
 #, kde-format
 msgid "End: %1"
 msgstr "Befejezés: %1"
 
-#: app/EventDelegate.qml:70
+#: app/EventDelegate.qml:71
 #, kde-format
 msgid "Start time: %1"
 msgstr "Kezdési idő: %1"
 
-#: app/EventDelegate.qml:77
+#: app/EventDelegate.qml:78
 #, kde-format
 msgid "End time: %1"
 msgstr "Befejezési idő: %1"
 
-#: app/EventDelegate.qml:90 app/EventPage.qml:108
+#: app/EventDelegate.qml:91 app/EventPage.qml:108
 #, fuzzy, kde-format
 #| msgid "Direction: %1"
 msgctxt "event venue seat section"
 msgid "Section: <b>%1</b>"
 msgstr "Irány: %1"
 
-#: app/EventDelegate.qml:96 app/EventPage.qml:114
+#: app/EventDelegate.qml:97 app/EventPage.qml:114
 #, fuzzy, kde-format
 #| msgctxt "carriage on a train"
 #| msgid "Coach"
@@ -920,7 +920,7 @@ msgctxt "event venue seat row"
 msgid "Row: <b>%1</b>"
 msgstr "Kocsi"
 
-#: app/EventDelegate.qml:102 app/EventPage.qml:120
+#: app/EventDelegate.qml:103 app/EventPage.qml:120
 #, fuzzy, kde-format
 #| msgid "Direction: %1"
 msgctxt "event venue seat number"
@@ -1092,32 +1092,39 @@ msgstr "Átnevezés"
 msgid "Pick Location"
 msgstr "Hely kiválasztása"
 
-#: app/FlightDelegate.qml:54
+#: app/FlightDelegate.qml:62
 #, fuzzy, kde-format
 #| msgid "Boarding time"
 msgctxt "@info"
 msgid "Boarding time: %1"
 msgstr "Beszállási idő"
 
-#: app/FlightDelegate.qml:66
+#: app/FlightDelegate.qml:74
 #, kde-format
 msgctxt "flight departure terminal"
 msgid "Terminal: <b>%1</b>"
 msgstr ""
 
-#: app/FlightDelegate.qml:72
+#: app/FlightDelegate.qml:80
 #, kde-format
 msgctxt "flight departure gate"
 msgid "Gate: <b>%1</b>"
 msgstr ""
 
-#: app/FlightDelegate.qml:78
+#: app/FlightDelegate.qml:86
 #, kde-format
 msgctxt "flight seats"
 msgid "Seat: <b>%1</b>"
 msgstr ""
 
-#: app/FlightDelegate.qml:93
+#: app/FlightDelegate.qml:98
+#, fuzzy, kde-format
+#| msgid "Terminal"
+msgctxt "airport terminal"
+msgid "Terminal %1"
+msgstr "Terminál"
+
+#: app/FlightDelegate.qml:102
 #, kde-format
 msgid "%1 %2 → %3"
 msgstr "%1 %2 → %3"
@@ -1449,7 +1456,7 @@ msgstr "Kártya törlése"
 msgid "Do you really want to delete this pass?"
 msgstr "Biztosan törölni szeretné ezt a kártyát?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:322 app/Main.qml:21 app/Main.qml:152
+#: app/gpxexport.cpp:33 app/main.cpp:321 app/Main.qml:21 app/Main.qml:152
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -1752,17 +1759,17 @@ msgstr "%1 / %2"
 msgid "Dose:"
 msgstr "Dózis:"
 
-#: app/HotelDelegate.qml:33
+#: app/HotelDelegate.qml:34
 #, kde-format
 msgid "Check-out %1"
 msgstr "Kijelentkezés: %1"
 
-#: app/HotelDelegate.qml:47
+#: app/HotelDelegate.qml:48
 #, kde-format
 msgid "Check-in time: %1"
 msgstr "Bejelentkezés ideje: %1"
 
-#: app/HotelDelegate.qml:53 app/HotelDelegate.qml:54
+#: app/HotelDelegate.qml:54 app/HotelDelegate.qml:55
 #, kde-format
 msgid "Check-out time: %1"
 msgstr "Kijelentkezés ideje: %1"
@@ -2509,24 +2516,24 @@ msgstr "M-típusú"
 msgid "Type N"
 msgstr "N-típusú"
 
-#: app/main.cpp:330
+#: app/main.cpp:329
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Digitális utazási segéd"
 
-#: app/main.cpp:331
+#: app/main.cpp:330
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "Copyright © A KDE közösség"
 
-#: app/main.cpp:338
+#: app/main.cpp:337
 #, fuzzy, kde-format
 #| msgid "Open Itinerary on the given page"
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Itinerary megnyitása a megadott oldalon"
 
-#: app/main.cpp:343
+#: app/main.cpp:342
 #, fuzzy, kde-format
 #| msgid "Files or URLs to import."
 msgctxt "@info:shell"
