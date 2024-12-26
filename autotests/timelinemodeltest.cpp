@@ -664,7 +664,7 @@ private Q_SLOTS:
         // changing the day should move the today marker and weather one day forward
         model.setCurrentDateTime(QDateTime({2017, 9, 12}, {19, 30}));
         ModelVerificationPoint vp3(QLatin1StringView(SOURCE_DIR "/data/timeline/daychange-r3.model"));
-        vp3.setRoleFilter({TimelineModel::BatchIdRole, TimelineModel::TripGroupIdRole});
+        vp3.setRoleFilter({TimelineModel::BatchIdRole});
         vp3.setJsonPropertyFilter({"elements"_L1});
         QVERIFY(vp3.verify(&model));
     }
@@ -753,7 +753,7 @@ private Q_SLOTS:
 
         // check state is correct for data imported at the start
         ModelVerificationPoint vp(QLatin1StringView(SOURCE_DIR "/data/timeline/") + baseName + QLatin1StringView(".model"));
-        vp.setRoleFilter({TimelineModel::BatchIdRole, TimelineModel::TripGroupIdRole});
+        vp.setRoleFilter({TimelineModel::BatchIdRole});
         vp.setJsonPropertyFilter({"reservationId"_L1, "elements"_L1});
         QVERIFY(vp.verify(&model));
 

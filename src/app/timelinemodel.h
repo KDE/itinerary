@@ -49,8 +49,6 @@ public:
         LocationInformationRole,
         WeatherForecastRole,
         ReservationsRole, // for unit testing
-        TripGroupIdRole,
-        TripGroupRole,
         TransferRole,
         StartDateTimeRole,
         EndDateTimeRole,
