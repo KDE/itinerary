@@ -30,6 +30,15 @@ JourneySectionModel::JourneySectionModel(QObject *parent)
         }
         Q_EMIT journeySectionChanged();
     });
+
+    connect(&m_updateTimer, &QTimer::timeout, this, [this]() {
+        if (!m_data.empty()) {
+            Q_EMIT dataChanged(index(0, 0), index(rowCount() - 1, 0));
+        }
+    });
+    m_updateTimer.setTimerType(Qt::VeryCoarseTimer);
+    m_updateTimer.setInterval(std::chrono::minutes(1));
+    m_updateTimer.setSingleShot(false);
 }
 
 JourneySectionModel::~JourneySectionModel() = default;
@@ -60,6 +69,12 @@ void JourneySectionModel::setJourneySection(const KPublicTransport::JourneySecti
     m_data.resize(m_journey.intermediateStops().size());
     endResetModel();
     Q_EMIT journeySectionChanged();
+
+    if (m_data.empty()) {
+        m_updateTimer.stop();
+    } else {
+        m_updateTimer.start();
+    }
 }
 
 int JourneySectionModel::rowCount(const QModelIndex &parent) const

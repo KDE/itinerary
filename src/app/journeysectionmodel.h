@@ -9,6 +9,7 @@
 #include <KPublicTransport/Journey>
 
 #include <QAbstractItemModel>
+#include <QTimer>
 
 #include <vector>
 
@@ -90,6 +91,7 @@ private:
     std::vector<Data> m_data;
     float m_departureTrailingLength = 0.0f;
     float m_arrivalLeadingLength = 0.0f;
+    QTimer m_updateTimer;
 
     bool m_showProgress = false;
 
