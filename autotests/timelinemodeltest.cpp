@@ -626,43 +626,43 @@ private Q_SLOTS:
         TripGroupManager groupMgr;
         groupMgr.setReservationManager(&resMgr);
         groupMgr.setTransferManager(&transferMgr);
+        ctrl->setTripGroupManager(&groupMgr);
         WeatherForecastManager weatherMgr;
         weatherMgr.setTestModeEnabled(true);
+
+        ImportController importer;
+        importer.setReservationManager(&resMgr);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
+        importer.setTripGroupName(u"Randa 2017"_s);
+        ctrl->commitImport(&importer);
+        QCOMPARE(groupMgr.tripGroups().size(), 1);
 
         TimelineModel model;
         QAbstractItemModelTester tester(&model);
         model.setHomeCountryIsoCode(QStringLiteral("DE"));
-        model.setCurrentDateTime(QDateTime({2196, 10, 14}, {12, 34}));
+        model.setCurrentDateTime(QDateTime({2017, 9, 1}, {12, 34}));
         model.setReservationManager(&resMgr);
         model.setTransferManager(&transferMgr);
         model.setTripGroupManager(&groupMgr);
         model.setWeatherForecastManager(&weatherMgr);
+        model.setTripGroupId(groupMgr.tripGroups()[0]);
         Test::waitForReset(&model);
 
+        // before the trip, close enough for weather but no today marker
         ModelVerificationPoint vp0(QLatin1StringView(SOURCE_DIR "/data/timeline/daychange-r0.model"));
         vp0.setRoleFilter({TimelineModel::BatchIdRole});
         vp0.setJsonPropertyFilter({"elements"_L1});
         QVERIFY(vp0.verify(&model));
 
         // changing the day should move the today marker
-        model.setCurrentDateTime(QDateTime({2196, 10, 15}, {0, 15}));
+        model.setCurrentDateTime(QDateTime({2017, 9, 11}, {0, 15}));
         ModelVerificationPoint vp1(QLatin1StringView(SOURCE_DIR "/data/timeline/daychange-r1.model"));
         vp1.setRoleFilter({TimelineModel::BatchIdRole});
         vp1.setJsonPropertyFilter({"elements"_L1});
         QVERIFY(vp1.verify(&model));
 
-        // load something to define the current location, so we get weather
-        ImportController importer;
-        importer.setReservationManager(&resMgr);
-        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/flight-txl-lhr-sfo.json")));
-        ctrl->commitImport(&importer);
-        ModelVerificationPoint vp2(QLatin1StringView(SOURCE_DIR "/data/timeline/daychange-r2.model"));
-        vp2.setRoleFilter({TimelineModel::BatchIdRole, TimelineModel::TripGroupIdRole});
-        vp2.setJsonPropertyFilter({"elements"_L1});
-        QVERIFY(vp2.verify(&model));
-
         // changing the day should move the today marker and weather one day forward
-        model.setCurrentDateTime(QDateTime({2196, 10, 16}, {19, 30}));
+        model.setCurrentDateTime(QDateTime({2017, 9, 12}, {19, 30}));
         ModelVerificationPoint vp3(QLatin1StringView(SOURCE_DIR "/data/timeline/daychange-r3.model"));
         vp3.setRoleFilter({TimelineModel::BatchIdRole, TimelineModel::TripGroupIdRole});
         vp3.setJsonPropertyFilter({"elements"_L1});
