@@ -667,7 +667,7 @@ void TimelineModel::updateWeatherElements()
     // round to next full hour
     date.setTime(QTime(date.time().hour(), 0));
     date = date.addSecs(60 * 60);
-    auto maxForecastTime = m_weatherMgr->maximumForecastTime(date.date());
+    auto maxForecastTime = m_weatherMgr->maximumForecastTime(today());
     if (m_tripGroup.endDateTime().isValid()) {
         maxForecastTime = std::min(maxForecastTime, m_tripGroup.endDateTime());
     }
