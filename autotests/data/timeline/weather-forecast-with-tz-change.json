@@ -26,8 +26,8 @@
             "departureDay": "1995-10-17",
             "departureTime": {
                 "@type": "QDateTime",
-                "@value": "1995-10-17T17:35:00+02:00",
-                "timezone": "Europe/Helsinki"
+                "@value": "1995-10-17T17:35:00+01:00",
+                "timezone": "Europe/Berlin"
             },
             "flightNumber": "1234"
         },

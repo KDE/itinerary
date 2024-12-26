@@ -544,16 +544,17 @@ private Q_SLOTS:
         importer.setReservationManager(&resMgr);
         importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
         ctrl->commitImport(&importer);
-        QCOMPARE(model.rowCount(), 7); // 1x group begin, 2x Flight, 1x tz change info, 1x group end, 1x DST info, 1x TodayMarker
-        QCOMPARE(updateSpy.count(), 4);
+        QCOMPARE(model.rowCount(), 8); // 1x group begin, 2x Flight, 2x tz change info, 1x group end, 1x DST info, 1x TodayMarker
+        QCOMPARE(updateSpy.count(), 7);
         QCOMPARE(rmSpy.count(), 3);
         QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
-        QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
-        QCOMPARE(model.index(3, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
-        QCOMPARE(model.index(5, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
-        QCOMPARE(model.index(6, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
+        QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
+        QCOMPARE(model.index(3, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
+        QCOMPARE(model.index(4, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
+        QCOMPARE(model.index(6, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
+        QCOMPARE(model.index(7, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
         QCOMPARE(resMgr.reservationsForBatch(model.index(1, 0).data(TimelineModel::BatchIdRole).toString()).size(), 2);
-        QCOMPARE(resMgr.reservationsForBatch(model.index(2, 0).data(TimelineModel::BatchIdRole).toString()).size(), 2);
+        QCOMPARE(resMgr.reservationsForBatch(model.index(3, 0).data(TimelineModel::BatchIdRole).toString()).size(), 2);
 
         // already existing data
         {
@@ -565,14 +566,15 @@ private Q_SLOTS:
             model.setTripGroupManager(&groupMgr);
             Test::waitForReset(&model);
 
-            QCOMPARE(model.rowCount(), 7); // 1x group begin, 2x Flight, 1x tz change info, 1x group end, 1x DST info, 1x TodayMarker
+            QCOMPARE(model.rowCount(), 8); // 1x group begin, 2x Flight, 2x tz change info, 1x group end, 1x DST info, 1x TodayMarker
             QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
-            QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
-            QCOMPARE(model.index(3, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
-            QCOMPARE(model.index(5, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
-            QCOMPARE(model.index(6, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
+            QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
+            QCOMPARE(model.index(3, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
+            QCOMPARE(model.index(4, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
+            QCOMPARE(model.index(6, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
+            QCOMPARE(model.index(7, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
             QCOMPARE(resMgr.reservationsForBatch(model.index(1, 0).data(TimelineModel::BatchIdRole).toString()).size(), 2);
-            QCOMPARE(resMgr.reservationsForBatch(model.index(2, 0).data(TimelineModel::BatchIdRole).toString()).size(), 2);
+            QCOMPARE(resMgr.reservationsForBatch(model.index(3, 0).data(TimelineModel::BatchIdRole).toString()).size(), 2);
         }
 
         // update splits element
@@ -586,8 +588,8 @@ private Q_SLOTS:
         flight.setDepartureTime(flight.departureTime().addDays(1));
         res.setReservationFor(flight);
         resMgr.updateReservation(resId, res);
-        QCOMPARE(model.rowCount(), 8);
-        QCOMPARE(updateSpy.count(), 4);
+        QCOMPARE(model.rowCount(), 9);
+        QCOMPARE(updateSpy.count(), 5);
         QCOMPARE(insertSpy.count(), 6);
         QCOMPARE(rmSpy.count(), 5);
 
@@ -598,8 +600,8 @@ private Q_SLOTS:
         flight.setDepartureTime(flight.departureTime().addDays(-1));
         res.setReservationFor(flight);
         resMgr.updateReservation(resId, res);
-        QCOMPARE(model.rowCount(), 5);
-        QCOMPARE(updateSpy.count(), 3);
+        QCOMPARE(model.rowCount(), 6);
+        QCOMPARE(updateSpy.count(), 5);
         QCOMPARE(rmSpy.count(), 5);
         QCOMPARE(insertSpy.count(), 2);
 
@@ -608,8 +610,8 @@ private Q_SLOTS:
         rmSpy.clear();
         Test::clearAll(&resMgr);
         QCOMPARE(model.rowCount(), 1);
-        QCOMPARE(rmSpy.count(), 7);
-        QCOMPARE(updateSpy.count(), 3);
+        QCOMPARE(rmSpy.count(), 8);
+        QCOMPARE(updateSpy.count(), 6);
     }
 
     void testDayChange()
@@ -779,7 +781,7 @@ private Q_SLOTS:
         model.setTripGroupId(tgId1);
 
         Test::waitForReset(&model);
-        QCOMPARE(model.rowCount(), 3);
+        QCOMPARE(model.rowCount(), 4);
 
         model.setTripGroupId(tgId2);
         QCOMPARE(model.rowCount(), 0);

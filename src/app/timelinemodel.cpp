@@ -572,6 +572,10 @@ void TimelineModel::updateInformationElements()
 
         auto newCountry = homeCountry;
         newCountry.setIsoCode(LocationUtil::address((*it).destination()).addressCountry());
+        if (!previousCountry.timeZone().isValid() && (*it).isLocationChange()) {
+            // if we don't know the previous timezone, start with the departure location of a location change
+            previousCountry.setTimeZone(timeZone((*it).dt), (*it).dt);
+        }
         newCountry.setTimeZone(previousCountry.timeZone(), (*it).dt);
         newCountry.setTimeZone(timeZone((*it).endDateTime()), (*it).dt);
         if (newCountry == previousCountry) {

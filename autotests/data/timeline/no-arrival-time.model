@@ -108,6 +108,27 @@
     },
     {
         "isToday": false,
+        "locationInformation": {
+            "@context": "http://schema.org",
+            "@type": "LocationInformation",
+            "currencyCode": "EUR",
+            "currencyDiffers": false,
+            "drivingSide": "Right",
+            "drivingSideDiffers": false,
+            "dstDiffers": false,
+            "isDst": false,
+            "isoCode": "PT",
+            "powerPlugCompatibility": "FullyCompatible",
+            "timeZoneDiffers": true,
+            "timeZoneName": "Azores Standard Time",
+            "timeZoneOffsetDelta": -7200
+        },
+        "rangeType": 0,
+        "sectionHeader": "2023-01-01",
+        "type": 4
+    },
+    {
+        "isToday": false,
         "rangeType": 1,
         "sectionHeader": "2023-06-27",
         "tripGroup": {

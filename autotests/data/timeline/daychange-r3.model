@@ -101,9 +101,9 @@
             "powerPlugCompatibility": "Incompatible",
             "powerPlugTypes": "Europlug, Schuko",
             "powerSocketTypes": "Type G",
-            "timeZoneDiffers": false,
+            "timeZoneDiffers": true,
             "timeZoneName": "Greenwich Mean Time",
-            "timeZoneOffsetDelta": 0
+            "timeZoneOffsetDelta": -3600
         },
         "rangeType": 0,
         "sectionHeader": "2017-01-04",
