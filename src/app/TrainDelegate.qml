@@ -18,7 +18,7 @@ TimelineDelegate {
     JourneySectionModel {
         id: sectionModel
         journeySection: root.journeySection
-        showProgress: true
+        showProgress: root.controller.isCurrent
     }
 
     contentItem: ColumnLayout {
@@ -172,8 +172,8 @@ TimelineDelegate {
                         lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
                         hasStop: model.stopover.disruptionEffect !== Disruption.NoService
 
-                        leadingProgress: root.controller.isCurrent && model.leadingProgress
-                        trailingProgress: root.controller.isCurrent && model.trailingProgress
+                        leadingProgress: model.leadingProgress
+                        trailingProgress: model.trailingProgress
                         Binding {
                             target: model
                             property: "leadingLength"
