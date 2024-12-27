@@ -106,6 +106,7 @@ private Q_SLOTS:
         TripGroupManager groupMgr;
         groupMgr.setReservationManager(&resMgr);
         groupMgr.setTransferManager(&transferMgr);
+        ctrl->setTripGroupManager(&groupMgr);
 
         TimelineModel model;
         model.setCurrentDateTime({{2024, 3, 31}, {17, 18}});
@@ -122,39 +123,32 @@ private Q_SLOTS:
         QSignalSpy rmSpy(&model, &TimelineModel::rowsRemoved);
         QVERIFY(rmSpy.isValid());
 
-        QCOMPARE(model.rowCount(), 1);
-        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
         ImportController importer;
         importer.setReservationManager(&resMgr);
+        importer.setTripGroupName(u"Test Group"_s);
         importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/boardingpass-v1.pkpass")));
         ctrl->commitImport(&importer);
-        QCOMPARE(insertSpy.size(), 2);
-        QCOMPARE(insertSpy.at(0).at(1).toInt(), 0);
-        QCOMPARE(insertSpy.at(0).at(2).toInt(), 0);
-        QCOMPARE(updateSpy.size(), 1);
-        QCOMPARE(model.rowCount(), 3);
-        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
-        QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo); // DST change
-        QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
 
+        QCOMPARE(groupMgr.tripGroups().size(), 1);
+        const auto tgId = groupMgr.tripGroups()[0];
+        model.setTripGroupId(tgId);
+        Test::waitForReset(&model);
+
+        QCOMPARE(model.rowCount(), 1);
+        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
         insertSpy.clear();
         updateSpy.clear();
-        rmSpy.clear();
+
         importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/boardingpass-v2.pkpass")));
+        importer.setTripGroupId(tgId);
         ctrl->commitImport(&importer);
-        QCOMPARE(insertSpy.size(), 1);
+        QCOMPARE(insertSpy.size(), 0);
         QCOMPARE(updateSpy.size(), 1);
         QCOMPARE(updateSpy.at(0).at(0).toModelIndex().row(), 0);
-        QCOMPARE(model.rowCount(), 3);
-
-        insertSpy.clear();
-        updateSpy.clear();
-        rmSpy.clear();
-        Test::clearAll(&resMgr);
-        QCOMPARE(insertSpy.size(), 0);
-        QCOMPARE(updateSpy.size(), 0);
-        QCOMPARE(rmSpy.size(), 2);
         QCOMPARE(model.rowCount(), 1);
+
+        Test::clearAll(&resMgr);
+        QCOMPARE(model.rowCount(), 0);
     }
 
     void testNestedElements()
