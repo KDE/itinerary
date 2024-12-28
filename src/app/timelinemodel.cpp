@@ -610,7 +610,7 @@ void TimelineModel::updateInformationElements()
         }
         auto searchWindowEnd = now().addDays(DST_DAYS_AFTER);
         if (m_tripGroup.endDateTime().isValid()) {
-            searchWindowEnd = std::min(searchWindowEnd, m_tripGroup.beginDateTime());
+            searchWindowEnd = std::min(searchWindowEnd, m_tripGroup.endDateTime());
         }
 
         for (auto it = m_elements.begin(); it != m_elements.end(); ++it) {
