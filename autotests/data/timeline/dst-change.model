@@ -1,0 +1,366 @@
+[
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "reservations": [
+            {
+                "@context": "http://schema.org",
+                "@type": "FlightReservation",
+                "modifiedTime": "1996-05-01T08:30:00-08:00",
+                "reservationFor": {
+                    "@type": "Flight",
+                    "airline": {
+                        "@type": "Airline",
+                        "iataCode": "UA",
+                        "name": "United"
+                    },
+                    "arrivalAirport": {
+                        "@type": "Airport",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "US"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 40.63970184326172,
+                            "longitude": -73.77890014648438
+                        },
+                        "iataCode": "JFK",
+                        "name": "John F. Kennedy International Airport"
+                    },
+                    "arrivalTime": {
+                        "@type": "QDateTime",
+                        "@value": "1996-10-11T06:30:00-04:00",
+                        "timezone": "America/New_York"
+                    },
+                    "departureAirport": {
+                        "@type": "Airport",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "US"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 37.6161994934082,
+                            "longitude": -122.39199829101562
+                        },
+                        "iataCode": "SFO",
+                        "name": "San Francisco Airport"
+                    },
+                    "departureDay": "1996-10-10",
+                    "departureTime": {
+                        "@type": "QDateTime",
+                        "@value": "1996-10-10T20:15:00-07:00",
+                        "timezone": "America/Los_Angeles"
+                    },
+                    "flightNumber": "110"
+                },
+                "reservationNumber": "RXJ34P",
+                "reservationStatus": "http://schema.org/ReservationConfirmed",
+                "underName": {
+                    "@type": "Person",
+                    "name": "Eva Green"
+                }
+            }
+        ],
+        "sectionHeader": "1996-10-10",
+        "type": 6
+    },
+    {
+        "isToday": false,
+        "locationInformation": {
+            "@context": "http://schema.org",
+            "@type": "LocationInformation",
+            "currencyCode": "USD",
+            "currencyDiffers": true,
+            "drivingSide": "Right",
+            "drivingSideDiffers": false,
+            "dstDiffers": false,
+            "isDst": true,
+            "isoCode": "US",
+            "powerPlugCompatibility": "Incompatible",
+            "powerPlugTypes": "Europlug, Schuko",
+            "powerSocketTypes": "Type A, Type B",
+            "timeZoneDiffers": true,
+            "timeZoneName": "Eastern Daylight Time",
+            "timeZoneOffsetDelta": 10800
+        },
+        "rangeType": 0,
+        "sectionHeader": "1996-10-11",
+        "type": 4
+    },
+    {
+        "isToday": true,
+        "isTodayEmpty": false,
+        "rangeType": 0,
+        "sectionHeader": "1996-10-14",
+        "type": 1
+    },
+    {
+        "isToday": true,
+        "rangeType": 0,
+        "sectionHeader": "1996-10-14",
+        "type": 3,
+        "weatherInformation": {
+            "@context": "http://schema.org",
+            "@type": "WeatherInformation",
+            "forecast": {
+                "@type": "WeatherForecast",
+                "maximumTemperature": 40.63970184326172,
+                "minimumTemperature": -73.77890014648438,
+                "precipitation": 23,
+                "range": 11,
+                "symbolIconName": "weather-few-clouds",
+                "valid": true,
+                "windSpeed": 0
+            },
+            "locationName": "John F. Kennedy International Airport"
+        }
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "sectionHeader": "1996-10-15",
+        "type": 3,
+        "weatherInformation": {
+            "@context": "http://schema.org",
+            "@type": "WeatherInformation",
+            "forecast": {
+                "@type": "WeatherForecast",
+                "maximumTemperature": 40.63970184326172,
+                "minimumTemperature": -73.77890014648438,
+                "precipitation": 23,
+                "range": 24,
+                "symbolIconName": "weather-few-clouds",
+                "valid": true,
+                "windSpeed": 0
+            },
+            "locationName": "John F. Kennedy International Airport"
+        }
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "sectionHeader": "1996-10-16",
+        "type": 3,
+        "weatherInformation": {
+            "@context": "http://schema.org",
+            "@type": "WeatherInformation",
+            "forecast": {
+                "@type": "WeatherForecast",
+                "maximumTemperature": 40.63970184326172,
+                "minimumTemperature": -73.77890014648438,
+                "precipitation": 23,
+                "range": 24,
+                "symbolIconName": "weather-few-clouds",
+                "valid": true,
+                "windSpeed": 0
+            },
+            "locationName": "John F. Kennedy International Airport"
+        }
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "sectionHeader": "1996-10-17",
+        "type": 3,
+        "weatherInformation": {
+            "@context": "http://schema.org",
+            "@type": "WeatherInformation",
+            "forecast": {
+                "@type": "WeatherForecast",
+                "maximumTemperature": 40.63970184326172,
+                "minimumTemperature": -73.77890014648438,
+                "precipitation": 23,
+                "range": 24,
+                "symbolIconName": "weather-few-clouds",
+                "valid": true,
+                "windSpeed": 0
+            },
+            "locationName": "John F. Kennedy International Airport"
+        }
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "sectionHeader": "1996-10-18",
+        "type": 3,
+        "weatherInformation": {
+            "@context": "http://schema.org",
+            "@type": "WeatherInformation",
+            "forecast": {
+                "@type": "WeatherForecast",
+                "maximumTemperature": 40.63970184326172,
+                "minimumTemperature": -73.77890014648438,
+                "precipitation": 23,
+                "range": 24,
+                "symbolIconName": "weather-few-clouds",
+                "valid": true,
+                "windSpeed": 0
+            },
+            "locationName": "John F. Kennedy International Airport"
+        }
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "sectionHeader": "1996-10-19",
+        "type": 3,
+        "weatherInformation": {
+            "@context": "http://schema.org",
+            "@type": "WeatherInformation",
+            "forecast": {
+                "@type": "WeatherForecast",
+                "maximumTemperature": 40.63970184326172,
+                "minimumTemperature": -73.77890014648438,
+                "precipitation": 23,
+                "range": 24,
+                "symbolIconName": "weather-few-clouds",
+                "valid": true,
+                "windSpeed": 0
+            },
+            "locationName": "John F. Kennedy International Airport"
+        }
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "sectionHeader": "1996-10-20",
+        "type": 3,
+        "weatherInformation": {
+            "@context": "http://schema.org",
+            "@type": "WeatherInformation",
+            "forecast": {
+                "@type": "WeatherForecast",
+                "maximumTemperature": 40.63970184326172,
+                "minimumTemperature": -73.77890014648438,
+                "precipitation": 23,
+                "range": 24,
+                "symbolIconName": "weather-few-clouds",
+                "valid": true,
+                "windSpeed": 0
+            },
+            "locationName": "John F. Kennedy International Airport"
+        }
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "sectionHeader": "1996-10-21",
+        "type": 3,
+        "weatherInformation": {
+            "@context": "http://schema.org",
+            "@type": "WeatherInformation",
+            "forecast": {
+                "@type": "WeatherForecast",
+                "maximumTemperature": 40.63970184326172,
+                "minimumTemperature": -73.77890014648438,
+                "precipitation": 23,
+                "range": 24,
+                "symbolIconName": "weather-few-clouds",
+                "valid": true,
+                "windSpeed": 0
+            },
+            "locationName": "John F. Kennedy International Airport"
+        }
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "sectionHeader": "1996-10-22",
+        "type": 3,
+        "weatherInformation": {
+            "@context": "http://schema.org",
+            "@type": "WeatherInformation",
+            "forecast": {
+                "@type": "WeatherForecast",
+                "maximumTemperature": 40.63970184326172,
+                "minimumTemperature": -73.77890014648438,
+                "precipitation": 23,
+                "range": 24,
+                "symbolIconName": "weather-few-clouds",
+                "valid": true,
+                "windSpeed": 0
+            },
+            "locationName": "John F. Kennedy International Airport"
+        }
+    },
+    {
+        "isToday": false,
+        "locationInformation": {
+            "@context": "http://schema.org",
+            "@type": "LocationInformation",
+            "currencyDiffers": false,
+            "drivingSide": "Unknown",
+            "drivingSideDiffers": false,
+            "dstDiffers": true,
+            "isDst": false,
+            "powerPlugCompatibility": "FullyCompatible",
+            "timeZoneDiffers": true,
+            "timeZoneName": "Eastern Standard Time",
+            "timeZoneOffsetDelta": -3600
+        },
+        "rangeType": 0,
+        "sectionHeader": "1996-10-27",
+        "type": 4
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "reservations": [
+            {
+                "@context": "http://schema.org",
+                "@type": "FlightReservation",
+                "modifiedTime": "1996-05-01T08:30:00-08:00",
+                "reservationFor": {
+                    "@type": "Flight",
+                    "airline": {
+                        "@type": "Airline",
+                        "iataCode": "UA",
+                        "name": "United"
+                    },
+                    "arrivalAirport": {
+                        "@type": "Airport",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "US"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 37.6161994934082,
+                            "longitude": -122.39199829101562
+                        },
+                        "iataCode": "SFO",
+                        "name": "San Francisco Airport"
+                    },
+                    "arrivalTime": "1996-10-29T20:15:00-07:00",
+                    "departureAirport": {
+                        "@type": "Airport",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "US"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 40.63970184326172,
+                            "longitude": -73.77890014648438
+                        },
+                        "iataCode": "JFK",
+                        "name": "John F. Kennedy International Airport"
+                    },
+                    "departureDay": "1996-10-29",
+                    "departureTime": "1996-10-29T06:30:00-04:00",
+                    "flightNumber": "109"
+                },
+                "reservationNumber": "RXJ34P",
+                "reservationStatus": "http://schema.org/ReservationConfirmed",
+                "underName": {
+                    "@type": "Person",
+                    "name": "Eva Green"
+                }
+            }
+        ],
+        "sectionHeader": "1996-10-29",
+        "type": 6
+    }
+]

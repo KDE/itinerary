@@ -1,0 +1,64 @@
+[{
+  "@context": "http://schema.org",
+  "@type": "FlightReservation",
+  "reservationNumber": "RXJ34P",
+  "reservationStatus": "http://schema.org/Confirmed",
+  "underName": {
+    "@type": "Person",
+    "name": "Eva Green"
+  },
+  "reservationFor": {
+    "@type": "Flight",
+    "flightNumber": "110",
+    "airline": {
+      "@type": "Airline",
+      "name": "United",
+      "iataCode": "UA"
+    },
+    "departureAirport": {
+      "@type": "Airport",
+      "name": "San Francisco Airport",
+      "iataCode": "SFO"
+    },
+    "departureTime": "1996-10-10T20:15:00-07:00",
+    "arrivalAirport": {
+      "@type": "Airport",
+      "name": "John F. Kennedy International Airport",
+      "iataCode": "JFK"
+    },
+    "arrivalTime": "1996-10-11T06:30:00-04:00"
+  },
+  "modifiedTime": "1996-05-01T08:30:00-08:00"
+},
+{
+  "@context": "http://schema.org",
+  "@type": "FlightReservation",
+  "reservationNumber": "RXJ34P",
+  "reservationStatus": "http://schema.org/Confirmed",
+  "underName": {
+    "@type": "Person",
+    "name": "Eva Green"
+  },
+  "reservationFor": {
+    "@type": "Flight",
+    "flightNumber": "109",
+    "airline": {
+      "@type": "Airline",
+      "name": "United",
+      "iataCode": "UA"
+    },
+    "arrivalAirport": {
+      "@type": "Airport",
+      "name": "San Francisco Airport",
+      "iataCode": "SFO"
+    },
+    "arrivalTime": "1996-10-29T20:15:00-07:00",
+    "departureAirport": {
+      "@type": "Airport",
+      "name": "John F. Kennedy International Airport",
+      "iataCode": "JFK"
+    },
+    "departureTime": "1996-10-29T06:30:00-04:00"
+  },
+  "modifiedTime": "1996-05-01T08:30:00-08:00"
+}]
