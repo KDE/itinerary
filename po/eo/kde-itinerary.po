@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-26 00:41+0000\n"
-"PO-Revision-Date: 2024-09-19 21:59+0200\n"
+"PO-Revision-Date: 2024-12-27 23:54+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -357,9 +357,7 @@ msgid "Light"
 msgstr "Lumo"
 
 #: app/BoatDelegate.qml:29
-#, fuzzy, kde-format
-#| msgctxt "journey query search constraint, title"
-#| msgid "Ferry"
+#, kde-format
 msgctxt "default transport name for a boat trip"
 msgid "Ferry"
 msgstr "Pramo"
@@ -501,56 +499,46 @@ msgid "Booking"
 msgstr "Rezervado"
 
 #: app/BusDelegate.qml:37
-#, fuzzy, kde-format
-#| msgid "Bus"
+#, kde-format
 msgctxt "@info"
 msgid "Bus"
 msgstr "Buso"
 
 #: app/BusDelegate.qml:52 app/BusDelegate.qml:220
-#, fuzzy, kde-format
-#| msgid "Platform change on %1"
+#, kde-format
 msgctxt "bus station platform"
 msgid "Platform changed to %1"
-msgstr "Platformŝanĝo je %1"
+msgstr "Platformo ŝanĝita al %1"
 
 #: app/BusDelegate.qml:54 app/BusDelegate.qml:222
-#, fuzzy, kde-format
-#| msgid "Platform: %1"
+#, kde-format
 msgctxt "bus station platform"
 msgid "Platform %1"
-msgstr "Platformo: %1"
+msgstr "Platformo %1"
 
 #: app/BusDelegate.qml:76
-#, fuzzy, kde-format
-#| msgctxt "train seat"
-#| msgid "Seat: <b>%1</b>"
+#, kde-format
 msgctxt "bus seat"
 msgid "Seat: <b>%1</b>"
 msgstr "Sidloko: <b>%1</b>"
 
 #: app/BusDelegate.qml:107 app/TrainDelegate.qml:116
-#, fuzzy, kde-format
-#| msgid "1 intermediate stop"
-#| msgid_plural "%1 intermediate stops"
+#, kde-format
 msgid "1 intermediate stop (%2)"
 msgid_plural "%1 intermediate stops (%2)"
-msgstr[0] "1 survoja halto"
-msgstr[1] "%1 survojaj haltoj"
+msgstr[0] "1 survoja halto (%2)"
+msgstr[1] "%1 survojaj haltoj (%2)"
 
 #: app/BusDelegate.qml:117 app/TrainDelegate.qml:126
-#, fuzzy, kde-format
-#| msgid "1 intermediate stop"
-#| msgid_plural "%1 intermediate stops"
+#, kde-format
 msgid "0 intermediate stop (%1)"
-msgstr "1 survoja halto"
+msgstr "0 survoja halto (%1)"
 
 #: app/BusDelegate.qml:237 app/TrainDelegate.qml:248
-#, fuzzy, kde-format
-#| msgid "%1 to %2"
+#, kde-format
 msgctxt "from location 1 to location 2"
 msgid "%1 to %2"
-msgstr "%1 ĝis %2"
+msgstr "%1 al %2"
 
 #: app/BusEditor.qml:17
 #, kde-format
@@ -773,18 +761,16 @@ msgid "Canceled"
 msgstr "Nuligite"
 
 #: app/DelayRow.qml:24
-#, fuzzy, kde-format
-#| msgid "Delays on %1"
+#, kde-format
 msgctxt "duration of the delay"
 msgid "Delayed %1"
-msgstr "Prokrastoj je %1"
+msgstr "Prokrastita je %1"
 
 #: app/DelayRow.qml:26
-#, fuzzy, kde-format
-#| msgid "End time"
+#, kde-format
 msgctxt "@info"
 msgid "On time"
-msgstr "Fintempo"
+msgstr "Ĝustatempe"
 
 #: app/DepartureQueryPage.qml:22
 #, kde-format
@@ -1073,11 +1059,10 @@ msgid "Pick Location"
 msgstr "Elekti Lokon"
 
 #: app/FlightDelegate.qml:62
-#, fuzzy, kde-format
-#| msgid "Boarding time"
+#, kde-format
 msgctxt "@info"
 msgid "Boarding time: %1"
-msgstr "Enŝipiĝotempo"
+msgstr "Enŝipiĝotempo: %1"
 
 #: app/FlightDelegate.qml:74
 #, kde-format
@@ -1098,11 +1083,10 @@ msgid "Seat: <b>%1</b>"
 msgstr "Seĝo: <b>%1</b>"
 
 #: app/FlightDelegate.qml:98
-#, fuzzy, kde-format
-#| msgid "Terminal"
+#, kde-format
 msgctxt "airport terminal"
 msgid "Terminal %1"
-msgstr "Terminalo"
+msgstr "Terminalo %1"
 
 #: app/FlightDelegate.qml:102
 #, kde-format
@@ -1172,8 +1156,7 @@ msgid "Boarding time has to be before the departure time."
 msgstr "Enŝipiĝa horo devas esti antaŭ la foriro."
 
 #: app/FlightEditor.qml:139
-#, fuzzy, kde-format
-#| msgid "Boarding group"
+#, kde-format
 msgctxt "flight departure boarding group"
 msgid "Boarding group"
 msgstr "Enirgrupo"
@@ -1522,23 +1505,20 @@ msgid "Recovery certificate valid"
 msgstr "Reakira atestilo valida"
 
 #: app/healthcertificatemanager.cpp:145
-#, fuzzy, kde-format
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "health certificate"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: app/healthcertificatemanager.cpp:154
-#, fuzzy, kde-format
-#| msgid "Vaccination %1/%2 (%3)"
+#, kde-format
 msgid "Vaccination for %1 (%2/%3)"
-msgstr "Vakcinado %1/%2 (%3)"
+msgstr "Vakcinado por %1 (%2/%3)"
 
 #: app/healthcertificatemanager.cpp:157
-#, fuzzy, kde-format
-#| msgid "Vaccination (%1)"
+#, kde-format
 msgid "Vaccination for %1"
-msgstr "Vakcinado (%1)"
+msgstr "Vakcinado por %1"
 
 #: app/healthcertificatemanager.cpp:159 app/HealthCertificateVaccination.qml:47
 #, kde-format
@@ -1546,16 +1526,14 @@ msgid "Vaccination"
 msgstr "Vakcinado"
 
 #: app/healthcertificatemanager.cpp:163
-#, fuzzy, kde-format
-#| msgid "Test %1 (%2)"
+#, kde-format
 msgid "Test %1 for %2"
-msgstr "Testo %1 (%2)"
+msgstr "Testo %1 por %2"
 
 #: app/healthcertificatemanager.cpp:169
-#, fuzzy, kde-format
-#| msgid "Recovery (%1)"
+#, kde-format
 msgid "Recovery %1 for %2"
-msgstr "Reakiro (%1)"
+msgstr "Resaniĝo %1 por %2"
 
 #: app/HealthCertificatePage.qml:19
 #, kde-format
@@ -2131,9 +2109,7 @@ msgid "Boats or ferries"
 msgstr "Boatoj aŭ pramoj"
 
 #: app/JourneySectionDelegate.qml:142
-#, fuzzy, kde-format
-#| msgctxt "to travel destination"
-#| msgid "To %1"
+#, kde-format
 msgid "To %1"
 msgstr "Al %1"
 
@@ -2168,11 +2144,10 @@ msgid "Drive %1 (%2)"
 msgstr "Veturi %1 (%2)"
 
 #: app/JourneySectionDelegate.qml:180 app/JourneySectionDelegate.qml:320
-#, fuzzy, kde-format
-#| msgid "Platform: %1"
+#, kde-format
 msgctxt "@info"
 msgid "Platform %1"
-msgstr "Platformo: %1"
+msgstr "Platformo %1"
 
 #: app/JourneySectionDelegate.qml:247 app/JourneySectionPage.qml:136
 #: app/VehicleLayoutPage.qml:243
@@ -2183,9 +2158,7 @@ msgstr "Montri pli…"
 
 #: app/JourneySectionPage.qml:51 app/TimelineDelegateDepartureLayout.qml:94
 #: app/VehicleLayoutPage.qml:146
-#, fuzzy, kde-format
-#| msgctxt "to travel destination"
-#| msgid "To %1"
+#, kde-format
 msgctxt "Direction of the transport mode"
 msgid "To %1"
 msgstr "Al %1"
@@ -2304,17 +2277,13 @@ msgid "dd MMMM"
 msgstr "dd MMMM"
 
 #: app/localizer.cpp:242
-#, fuzzy, kde-format
-#| msgctxt "distance in meter"
-#| msgid "%1 m"
+#, kde-format
 msgctxt "Duration in minutes"
 msgid "%1 min"
-msgstr "%1 m"
+msgstr "%1 min"
 
 #: app/localizer.cpp:244
-#, fuzzy, kde-format
-#| msgctxt "time in hours"
-#| msgid "%1 h"
+#, kde-format
 msgctxt "Duration in hours and minutes"
 msgid "%1 hr"
 msgstr "%1 h"
@@ -2323,7 +2292,7 @@ msgstr "%1 h"
 #, kde-format
 msgctxt "Duration in hours and minutes"
 msgid "%1 hr %2 min"
-msgstr ""
+msgstr "%1 h %2 min"
 
 #: app/localizer.cpp:257
 #, kde-format
@@ -2567,11 +2536,10 @@ msgid "Help"
 msgstr "Helpo"
 
 #: app/Main.qml:267
-#, fuzzy, kde-format
-#| msgid "Wi-Fi access for onboard information is available."
+#, kde-format
 msgctxt "@info:status"
 msgid "No onboard information available."
-msgstr "Wi-Fi-aliro por enŝipaj informoj haveblas."
+msgstr "Neniu enŝipa informo haveblas."
 
 #: app/Main.qml:309
 #, kde-format
@@ -2579,11 +2547,10 @@ msgid "Map download finished."
 msgstr "Elŝuto de mapo finiĝis."
 
 #: app/Main.qml:386
-#, fuzzy, kde-format
-#| msgid "Matrix Integration"
+#, kde-format
 msgctxt "@title:window"
 msgid "Matrix Session Verification"
-msgstr "Matrica Integriĝo"
+msgstr "Matricosesia Konfirmo"
 
 #: app/MapStopoverInfoSheetDrawer.qml:59
 #, kde-format
@@ -2596,17 +2563,14 @@ msgid "Occupancy:"
 msgstr "Okupiteco:"
 
 #: app/MapStopoverInfoSheetDrawer.qml:88
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "View Indoor Map"
+#, kde-format
 msgid "Show indoor map"
-msgstr "Rigardi Endoman Mapon"
+msgstr "Rigardi endoman mapon"
 
 #: app/MatrixKeyVerificationPage.qml:12
-#, fuzzy, kde-format
-#| msgid "Matrix Integration"
+#, kde-format
 msgid "Matrix Session Verification"
-msgstr "Matrica Integriĝo"
+msgstr "Matricosesia Konfirmo"
 
 #: app/MatrixKeyVerificationPage.qml:41
 #, kde-format
@@ -2797,11 +2761,10 @@ msgid "The session verification was canceled due to an unknown error."
 msgstr ""
 
 #: app/MatrixKeyVerificationPage.qml:114
-#, fuzzy, kde-format
-#| msgid "Notifications"
+#, kde-format
 msgctxt "Matrix session verfication"
 msgid "Emoji Verification"
-msgstr "Sciigoj"
+msgstr "Emoĝi-Konfirmo"
 
 #: app/MatrixKeyVerificationPage.qml:117
 #, kde-format
@@ -2820,23 +2783,23 @@ msgstr ""
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "They match"
-msgstr ""
+msgstr "Ili kongruas"
 
 #: app/MatrixKeyVerificationPage.qml:171
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "They don't match"
-msgstr ""
+msgstr "Ili ne kongruas"
 
 #: app/MatrixKeyVerificationPage.qml:207
 #, kde-format
 msgid "Accept"
-msgstr ""
+msgstr "Akcepti"
 
 #: app/MatrixKeyVerificationPage.qml:213
 #, kde-format
 msgid "Decline"
-msgstr ""
+msgstr "Malakcepti"
 
 #: app/MatrixRoomSelectionSheet.qml:19
 #, kde-format
@@ -2886,51 +2849,46 @@ msgid "My Data"
 msgstr ""
 
 #: app/MyDataPage.qml:27
-#, fuzzy, kde-format
-#| msgid "Passes and Programs"
+#, kde-format
 msgctxt "@title"
 msgid "Passes and Programs"
 msgstr "Enirpermesiloj kaj Programoj"
 
 #: app/MyDataPage.qml:34
-#, fuzzy, kde-format
-#| msgid "Import bonus or discount program cards or flat rate passes."
+#, kde-format
 msgid "No valid bonus or discount program cards or flat rate passes found."
-msgstr "Importi gratifikojn aŭ rabatajn programkartojn aŭ plattaristojn."
+msgstr ""
+"Trovis neniujn validajn gratifikajn aŭ rabatajn programkartojn aŭ "
+"plattarifajn permesilojn."
 
 #: app/MyDataPage.qml:52
 #, kde-format
 msgctxt "@action:button"
 msgid "Manage your Passes"
-msgstr ""
+msgstr "Administru viajn Permesilojn"
 
 #: app/MyDataPage.qml:59
-#, fuzzy, kde-format
-#| msgid "Health Certificates"
+#, kde-format
 msgctxt "@title"
 msgid "Health Certificates"
-msgstr "Sanaj Atestiloj"
+msgstr "Sanecaj Atestiloj"
 
 #: app/MyDataPage.qml:69
-#, fuzzy, kde-format
-#| msgid "One health certificate imported."
-#| msgid_plural "%1 health certificates imported."
+#, kde-format
 msgid "No valid health certificate found."
-msgstr "Enportis unu sanatestilon."
+msgstr "Troviĝis neniu valida sanatestilo."
 
 #: app/MyDataPage.qml:100
-#, fuzzy, kde-format
-#| msgid "Health Certificates"
+#, kde-format
 msgctxt "@action:button"
 msgid "Manage your health certificates"
-msgstr "Sanaj Atestiloj"
+msgstr "Mastrumu viajn sanatestilojn"
 
 #: app/MyDataPage.qml:108
-#, fuzzy, kde-format
-#| msgid "Favorite Locations"
+#, kde-format
 msgctxt "@title:group"
 msgid "Saved Locations"
-msgstr "Ŝatataj Lokoj"
+msgstr "Konservitaj Lokoj"
 
 #: app/MyDataPage.qml:113
 #, kde-format
@@ -2943,31 +2901,28 @@ msgid "Statistics"
 msgstr "Statistiko"
 
 #: app/MyDataPage.qml:180
-#, fuzzy, kde-format
-#| msgid "Statistics"
+#, kde-format
 msgctxt "@action:button"
 msgid "See all Statistics"
-msgstr "Statistiko"
+msgstr "Vidi ĉiujn Statistikojn"
 
 #: app/MyDataPage.qml:190
 #, kde-format
 msgctxt "@title:group"
 msgid "Data Portability"
-msgstr ""
+msgstr "Portebleco de Datumoj"
 
 #: app/MyDataPage.qml:195
-#, fuzzy, kde-format
-#| msgid "Import"
+#, kde-format
 msgctxt "@action:button"
 msgid "Import"
 msgstr "Enporti"
 
 #: app/MyDataPage.qml:203
-#, fuzzy, kde-format
-#| msgid "Export"
+#, kde-format
 msgctxt "@action:button"
 msgid "Export"
-msgstr "Elporto"
+msgstr "Elporti"
 
 #: app/MyDataPage.qml:214
 #, kde-format
@@ -3133,24 +3088,22 @@ msgid "Passes and Programs"
 msgstr "Enirpermesiloj kaj Programoj"
 
 #: app/PassPage.qml:21
-#, fuzzy, kde-format
-#| msgid "Add Program Membership…"
+#, kde-format
 msgctxt "@title"
 msgid "Add Program Membership"
 msgstr "Aldoni Programan Membrecon…"
 
 #: app/PassPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Import from GPX"
+#, kde-format
 msgctxt "@action:button"
 msgid "Import From File"
-msgstr "Enporti el GPX"
+msgstr "Enporti el Dosiero"
 
 #: app/PassPage.qml:34
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Manually"
-msgstr ""
+msgstr "Aldoni Permane"
 
 #: app/PassPage.qml:48
 #, kde-format
@@ -3815,26 +3768,24 @@ msgid "Train"
 msgstr "Trajno"
 
 #: app/StopPickerPage.qml:27
-#, fuzzy, kde-format
-#| msgid "Clear history"
+#, kde-format
 msgid "Clear History"
-msgstr "Klarigi historion"
+msgstr "Viŝi Historion"
 
 #: app/StopPickerPage.qml:28
-#, fuzzy, kde-format
-#| msgid "Do you really want to delete this certificate?"
+#, kde-format
 msgid "Do you really want to remove all previously searched locations?"
-msgstr "Ĉu vi vere volas forigi ĉi tiun atestilon?"
+msgstr "Ĉu vi vere volas forigi ĉiujn antaŭe serĉitajn lokojn?"
 
 #: app/StopPickerPage.qml:32
 #, kde-format
 msgid "Remove"
-msgstr ""
+msgstr "Forigi"
 
 #: app/StopPickerPage.qml:45
 #, kde-format
 msgid "Clear history"
-msgstr "Klarigi historion"
+msgstr "Viŝi historion"
 
 #: app/StopPickerPage.qml:55
 #, kde-format
@@ -3855,44 +3806,34 @@ msgstr "Plej ofte uzata"
 #, kde-format
 msgctxt "location name, locality, region, country"
 msgid "%1, %2, %3, %4"
-msgstr ""
+msgstr "%1, %2, %3, %4"
 
 #: app/StopPickerPage.qml:173 app/StopPickerPage.qml:254
-#, fuzzy, kde-format
-#| msgctxt "geo coordinate"
-#| msgid "%1, %2"
+#, kde-format
 msgctxt "location name, locality, country"
 msgid "%1, %2, %3"
-msgstr "%1, %2"
+msgstr "%1, %2, %3"
 
 #: app/StopPickerPage.qml:178 app/StopPickerPage.qml:259
-#, fuzzy, kde-format
-#| msgctxt "geo coordinate"
-#| msgid "%1, %2"
+#, kde-format
 msgctxt "location name, region, country"
 msgid "%1, %2, %3"
-msgstr "%1, %2"
+msgstr "%1, %2, %3"
 
 #: app/StopPickerPage.qml:199 app/StopPickerPage.qml:281
-#, fuzzy, kde-format
-#| msgctxt "geo coordinate"
-#| msgid "%1, %2"
+#, kde-format
 msgctxt "locality, region, country"
 msgid "%1, %2, %3"
-msgstr "%1, %2"
+msgstr "%1, %2, %3"
 
 #: app/StopPickerPage.qml:204 app/StopPickerPage.qml:286
-#, fuzzy, kde-format
-#| msgctxt "geo coordinate"
-#| msgid "%1, %2"
+#, kde-format
 msgctxt "locality, country"
 msgid "%1, %2"
 msgstr "%1, %2"
 
 #: app/StopPickerPage.qml:208 app/StopPickerPage.qml:290
-#, fuzzy, kde-format
-#| msgctxt "geo coordinate"
-#| msgid "%1, %2"
+#, kde-format
 msgctxt "region, country"
 msgid "%1, %2"
 msgstr "%1, %2"
@@ -4010,18 +3951,16 @@ msgid "Arrival Time"
 msgstr "Alvena Horo"
 
 #: app/TrainDelegate.qml:45 app/TrainDelegate.qml:230
-#, fuzzy, kde-format
-#| msgid "Platform change on %1"
+#, kde-format
 msgctxt "train station platform"
 msgid "Platform changed to %1"
-msgstr "Platformŝanĝo je %1"
+msgstr "Platformo ŝanĝita al %1"
 
 #: app/TrainDelegate.qml:47 app/TrainDelegate.qml:232
-#, fuzzy, kde-format
-#| msgid "Platform: %1"
+#, kde-format
 msgctxt "train station platform"
 msgid "Platform %1"
-msgstr "Platformo: %1"
+msgstr "Platformo %1"
 
 #: app/TrainDelegate.qml:69 app/TrainPage.qml:312
 #, kde-format
@@ -4371,11 +4310,9 @@ msgstr[0] "Valuto: %2"
 msgstr[1] "Valutoj: %2"
 
 #: app/TripGroupPage.qml:474
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Show Map"
+#, kde-format
 msgid "Show map…"
-msgstr "Montri Mapon"
+msgstr "Montri mapon…"
 
 #: app/TripGroupPage.qml:481
 #, kde-format
@@ -4698,85 +4635,17 @@ msgid "This server does not support logging in using a password"
 msgstr "Ĉi tiu servilo ne subtenas ensaluti per pasvorto"
 
 #: matrix/matrixmanager.cpp:78
-#, fuzzy, kde-format
-#| msgid "Logging in"
+#, kde-format
 msgid "Logging in…"
-msgstr "Ensalutante"
+msgstr "Ensalutante…"
 
 #: matrix/matrixmanager.cpp:114
-#, fuzzy, kde-format
-#| msgid "Log out"
+#, kde-format
 msgid "Logged out"
-msgstr "Elsaluti"
+msgstr "Elsalutita"
 
 #: metadataextractor/itineraryextractor.cpp:118
 #, kde-format
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 de %3 al %4 je %5"
-
-#~ msgid "My Itinerary"
-#~ msgstr "Mia Itinero"
-
-#~ msgctxt "@title:group"
-#~ msgid "Add New Trip"
-#~ msgstr "Aldoni Novan Vojaĝon"
-
-#~ msgid "Do you really want to delete this trip?"
-#~ msgstr "Ĉu vi vere volas forigi ĉi tiun vojaĝon?"
-
-#~ msgid "Trip: %1"
-#~ msgstr "Vojaĝo: %1"
-
-#~ msgid "Date: %2 (one day)"
-#~ msgid_plural "Date: %2 (%1 days)"
-#~ msgstr[0] "Dato: %2 (unu tago)"
-#~ msgstr[1] "Dato: %2 (%1 tagoj)"
-
-#~ msgid "%1: some incompatible power sockets (%2)"
-#~ msgstr "%1: kelkaj nekongruaj elektraj ingoj (%2)"
-
-#~ msgid "%1: some incompatible power plugs (%2)"
-#~ msgstr "%1: kelkaj nekongruaj elektraj ŝtopiloj (%2)"
-
-#~ msgid "%1: no compatible power plugs (%2)"
-#~ msgstr "%1: neniuj kongruaj elektraj ŝtopiloj (%2)"
-
-#~ msgid "Edit…"
-#~ msgstr "Redakti…"
-
-#, fuzzy
-#~| msgid "%1 (%2)"
-#~ msgctxt ""
-#~ msgid "%1 (%2)"
-#~ msgstr "%1 (%2)"
-
-#~ msgctxt "@title:tab"
-#~ msgid "Passes & Programs"
-#~ msgstr "Enirpermesiloj & Programoj"
-
-#~ msgid "Direction: %1"
-#~ msgstr "Direkto: %1"
-
-#~ msgid "From: %1"
-#~ msgstr "De: %1"
-
-#~ msgid "To: %1"
-#~ msgstr "Al: %1"
-
-#~ msgid "Arrival time: %1"
-#~ msgstr "Alventempo: %1"
-
-#~ msgctxt "flight departure, %1 is airport, %2 is time"
-#~ msgid "Departure from %1: %2"
-#~ msgstr "Foriro el %1: %2"
-
-#~ msgctxt "flight arrival, %1 is airport, %2 is time"
-#~ msgid "Arrival at %1: %2"
-#~ msgstr "Alveno ĉe %1: %2"
-
-#~ msgid "%1 to %2 (%3)"
-#~ msgstr "%1 ĝis %2 (%3)"
-
-#~ msgid "Pl. %1"
-#~ msgstr "Pl. %1"
