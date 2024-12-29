@@ -434,6 +434,8 @@ Kirigami.ScrollablePage {
                     description: dateLabel.dayCount >= 1 ? i18np("One day", "%1 days", dateLabel.dayCount) : ""
                 }
 
+                FormCard.FormDelegateSeparator {}
+
                 FormCard.FormTextDelegate {
                     visible: root.controller.weatherForecast.valid
                     icon.name:  root.controller.weatherForecast.symbolIconName
@@ -441,29 +443,49 @@ Kirigami.ScrollablePage {
                                                                  Localizer.formatTemperature(root.controller.weatherForecast.maximumTemperature))
                 }
 
+                FormCard.FormDelegateSeparator {
+                    visible: root.controller.weatherForecast.valid
+                }
+
                 Repeater {
                     model: root.controller.locationInformation
 
-                    FormCard.FormTextDelegate {
-                        icon.name: "documentinfo"
-                        icon.color: modelData.powerPlugCompatibility == LocationInformation.PartiallyCompatible ? Kirigami.Theme.neutralTextColor : Kirigami.Theme.negativeTextColor
-                        text: Country.fromAlpha2(modelData.isoCode).name
-                        description: {
-                            if (modelData.powerPlugCompatibility == LocationInformation.PartiallyCompatible) {
-                                if (modelData.powerPlugTypes.length === 0) {
-                                    return i18n("Some incompatible power sockets (%1)", modelData.powerSocketTypes);
-                                } else {
-                                    return i18n("Some incompatible power plugs (%1)", modelData.powerPlugTypes);
+                    ColumnLayout {
+                        spacing: 0
+
+                        FormCard.FormDelegateSeparator {
+                            visible: index > 0 || root.controller.weatherForecast.valid
+                        }
+
+                        FormCard.FormTextDelegate {
+                            icon.name: "documentinfo"
+                            icon.color: modelData.powerPlugCompatibility == LocationInformation.PartiallyCompatible ? Kirigami.Theme.neutralTextColor : Kirigami.Theme.negativeTextColor
+                            text: Country.fromAlpha2(modelData.isoCode).name
+                            description: {
+                                if (modelData.powerPlugCompatibility == LocationInformation.PartiallyCompatible) {
+                                    if (modelData.powerPlugTypes.length === 0) {
+                                        return i18n("Some incompatible power sockets (%1)", modelData.powerSocketTypes);
+                                    } else {
+                                        return i18n("Some incompatible power plugs (%1)", modelData.powerPlugTypes);
+                                    }
                                 }
+                                return i18n("No compatible power plugs (%1)", modelData.powerSocketTypes);
                             }
-                            return i18n("No compatible power plugs (%1)", modelData.powerSocketTypes);
                         }
                     }
+                }
+
+                FormCard.FormDelegateSeparator {
+                    visible: root.controller.locationInformation.length > 0
                 }
 
                 FormCard.FormTextDelegate {
                     icon.name: "view-currency-list"
                     text: root.controller.currencies.length > 0 ? i18np("Currency: %2", "Currencies: %2", root.controller.currencies.length, root.controller.currencies.join(", ")) : ""
+                    visible: root.controller.currencies.length > 0
+                }
+
+                FormCard.FormDelegateSeparator {
                     visible: root.controller.currencies.length > 0
                 }
 
