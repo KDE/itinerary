@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-26 00:41+0000\n"
-"PO-Revision-Date: 2024-12-23 10:28+0100\n"
+"PO-Revision-Date: 2024-12-26 10:52+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -506,15 +506,13 @@ msgid "Bus"
 msgstr "Autobús"
 
 #: app/BusDelegate.qml:52 app/BusDelegate.qml:220
-#, fuzzy, kde-format
-#| msgid "Platform changed to %1"
+#, kde-format
 msgctxt "bus station platform"
 msgid "Platform changed to %1"
 msgstr "L'andana ha canviat a %1"
 
 #: app/BusDelegate.qml:54 app/BusDelegate.qml:222
-#, fuzzy, kde-format
-#| msgid "Platform %1"
+#, kde-format
 msgctxt "bus station platform"
 msgid "Platform %1"
 msgstr "Andana %1"
@@ -538,8 +536,7 @@ msgid "0 intermediate stop (%1)"
 msgstr "0 parada intermèdia (%1)"
 
 #: app/BusDelegate.qml:237 app/TrainDelegate.qml:248
-#, fuzzy, kde-format
-#| msgid "%1 to %2"
+#, kde-format
 msgctxt "from location 1 to location 2"
 msgid "%1 to %2"
 msgstr "%1 a %2"
@@ -1087,11 +1084,10 @@ msgid "Seat: <b>%1</b>"
 msgstr "Seient: <b>%1</b>"
 
 #: app/FlightDelegate.qml:98
-#, fuzzy, kde-format
-#| msgid "Terminal"
+#, kde-format
 msgctxt "airport terminal"
 msgid "Terminal %1"
-msgstr "Terminal"
+msgstr "Terminal %1"
 
 #: app/FlightDelegate.qml:102
 #, kde-format
@@ -4005,15 +4001,13 @@ msgid "Arrival Time"
 msgstr "Hora d'arribada"
 
 #: app/TrainDelegate.qml:45 app/TrainDelegate.qml:230
-#, fuzzy, kde-format
-#| msgid "Platform changed to %1"
+#, kde-format
 msgctxt "train station platform"
 msgid "Platform changed to %1"
 msgstr "L'andana ha canviat a %1"
 
 #: app/TrainDelegate.qml:47 app/TrainDelegate.qml:232
-#, fuzzy, kde-format
-#| msgid "Platform %1"
+#, kde-format
 msgctxt "train station platform"
 msgid "Platform %1"
 msgstr "Andana %1"
@@ -4707,33 +4701,3 @@ msgstr "Ha finalitzat la sessió"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 des de %3 a %4 el %5"
-
-#~ msgid "My Itinerary"
-#~ msgstr "El meu itinerari"
-
-#~ msgctxt "@title:group"
-#~ msgid "Add New Trip"
-#~ msgstr "Afig un viatge nou"
-
-#~ msgid "Do you really want to delete this trip?"
-#~ msgstr "Segur que voleu suprimir este viatge?"
-
-#~ msgid "Trip: %1"
-#~ msgstr "Viatge: %1"
-
-#~ msgid "Date: %2 (one day)"
-#~ msgid_plural "Date: %2 (%1 days)"
-#~ msgstr[0] "Data: %2 (un dia)"
-#~ msgstr[1] "Data: %2 (%1 dies)"
-
-#~ msgid "%1: some incompatible power sockets (%2)"
-#~ msgstr "%1: algunes preses de corrent són incompatibles (%2)"
-
-#~ msgid "%1: some incompatible power plugs (%2)"
-#~ msgstr "%1: alguns endolls són incompatibles (%2)"
-
-#~ msgid "%1: no compatible power plugs (%2)"
-#~ msgstr "%1: no hi ha preses de corrent compatibles (%2)"
-
-#~ msgid "Edit…"
-#~ msgstr "Edita…"
