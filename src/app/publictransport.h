@@ -9,6 +9,7 @@
 
 #include <QVariant>
 
+#include <KItinerary/JsonLdDocument>
 #include <KItinerary/LocationUtil>
 #include <KItinerary/MergeUtil>
 #include <KItinerary/Place>
@@ -142,7 +143,7 @@ inline T PublicTransport::updateToLocation(const T &place, const KPublicTranspor
 
     auto newPlace = placeFromLocation<T>(loc);
     if (LocationUtil::isSameLocation(place, newPlace)) {
-        return MergeUtil::merge(place, newPlace).template value<T>();
+        return KItinerary::JsonLdDocument::apply(place, newPlace).template value<T>();
     }
 
     return newPlace;
