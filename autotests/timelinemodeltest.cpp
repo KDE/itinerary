@@ -292,166 +292,73 @@ private Q_SLOTS:
 
         ReservationManager resMgr;
         Test::clearAll(&resMgr);
+        auto ctrl = Test::makeAppController();
+        ctrl->setReservationManager(&resMgr);
         TransferManager::clear();
         TransferManager transferMgr;
         TripGroupManager groupMgr;
         groupMgr.setReservationManager(&resMgr);
         groupMgr.setTransferManager(&transferMgr);
+        ctrl->setTripGroupManager(&groupMgr);
         WeatherForecastManager weatherMgr;
         weatherMgr.setTestModeEnabled(true);
 
         TimelineModel model;
         QAbstractItemModelTester tester(&model);
+        model.setHomeCountryIsoCode(QStringLiteral("DE"));
+        model.setCurrentDateTime(QDateTime({2017, 9, 11}, {12, 34}));
         model.setReservationManager(&resMgr);
         model.setTransferManager(&transferMgr);
         model.setTripGroupManager(&groupMgr);
         model.setWeatherForecastManager(&weatherMgr);
+
+        ImportController importer;
+        importer.setReservationManager(&resMgr);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
+        importer.setTripGroupName(u"Randa 2017"_s);
+        ctrl->commitImport(&importer);
+
+        QCOMPARE(groupMgr.tripGroups().size(), 1);
+        model.setTripGroupId(groupMgr.tripGroups()[0]);
         Test::waitForReset(&model);
-        QCOMPARE(model.rowCount(), 1); // no weather data, as we don't know where we are
 
-        // Add an element that will result in a defined location
-        GeoCoordinates geo;
-        geo.setLatitude(52.0f);
-        geo.setLongitude(13.0f);
-        Airport a;
-        a.setName(u"Berlin"_s);
-        a.setGeo(geo);
-        Flight f;
-        f.setArrivalAirport(a);
-        f.setDepartureTime(QDateTime(QDate(2018, 1, 1), QTime(0, 0)));
-        a.setName(u"Zurich"_s);
-        a.setGeo({});
-        f.setDepartureAirport(a);
-        FlightReservation res;
-        res.setReservationFor(f);
-        resMgr.addReservation(res);
-
-        // if there's only <1h left in a day, we wont get a weather element
-        auto currentDate = QDate::currentDate();
-        if (QDateTime::currentDateTimeUtc().time().hour() >= 23) {
-            currentDate = currentDate.addDays(1);
-        }
-
-        QCOMPARE(model.rowCount(), 11); // 1x flight, 1x today, 9x weather
+        QCOMPARE(model.rowCount(), 22);
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
-        QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
-        QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineElement::WeatherForecast);
-        auto fc = model.index(2, 0).data(TimelineModel::WeatherForecastRole).value<WeatherInformation>().forecast;
+        QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
+        QCOMPARE(model.index(3, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TrainTrip);
+        QCOMPARE(model.index(6, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
+        QCOMPARE(model.index(7, 0).data(TimelineModel::ElementTypeRole), TimelineElement::WeatherForecast);
+        auto fc = model.index(7, 0).data(TimelineModel::WeatherForecastRole).value<WeatherInformation>().forecast;
         QVERIFY(fc.isValid());
-        QCOMPARE(fc.dateTime().date(), currentDate);
-        QCOMPARE(fc.minimumTemperature(), 13.0f);
-        QCOMPARE(fc.maximumTemperature(), 52.0f);
-        QCOMPARE(model.index(10, 0).data(TimelineModel::ElementTypeRole), TimelineElement::WeatherForecast);
-        fc = model.index(10, 0).data(TimelineModel::WeatherForecastRole).value<WeatherInformation>().forecast;
-        QVERIFY(fc.isValid());
-        QCOMPARE(fc.dateTime().date(), currentDate.addDays(8));
+        QCOMPARE(fc.dateTime().date(), QDate(2017, 9, 11));
+        QCOMPARE(fc.minimumTemperature(), 7.78326f);
+        QCOMPARE(fc.maximumTemperature(), 46.099f);
 
-        // Add a flight one day from now changing location mid-day
-        geo.setLatitude(46.0f);
-        geo.setLongitude(8.0f);
-        a.setGeo(geo);
-        f.setArrivalAirport(a);
-        f.setDepartureTime(QDateTime(currentDate.addDays(1), QTime(12, 0)));
-        f.setArrivalTime(QDateTime(currentDate.addDays(1), QTime(14, 0)));
-        res.setReservationFor(f);
-        resMgr.addReservation(res);
+        QCOMPARE(model.index(16, 0).data(TimelineModel::ElementTypeRole), TimelineElement::WeatherForecast);
+        fc = model.index(16, 0).data(TimelineModel::WeatherForecastRole).value<WeatherInformation>().forecast;
+        QVERIFY(fc.isValid());
+        QCOMPARE(fc.dateTime().date(), QDate(2017, 9, 15));
+        QCOMPARE(fc.minimumTemperature(), 7.78326f);
+        QCOMPARE(fc.maximumTemperature(), 46.099f);
 
-        QCOMPARE(model.rowCount(), 13); // 2x flight, 1x today, 10x weather
-        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
-        QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
-        QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineElement::WeatherForecast);
-        fc = model.index(2, 0).data(TimelineModel::WeatherForecastRole).value<WeatherInformation>().forecast;
+        QCOMPARE(model.index(19, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TrainTrip);
+        QCOMPARE(model.index(20, 0).data(TimelineModel::ElementTypeRole), TimelineElement::WeatherForecast);
+        fc = model.index(20, 0).data(TimelineModel::WeatherForecastRole).value<WeatherInformation>().forecast;
         QVERIFY(fc.isValid());
-        QCOMPARE(fc.dateTime().date(), currentDate);
-        QCOMPARE(model.index(3, 0).data(TimelineModel::ElementTypeRole), TimelineElement::WeatherForecast);
-        fc = model.index(3, 0).data(TimelineModel::WeatherForecastRole).value<WeatherInformation>().forecast;
-        QVERIFY(fc.isValid());
-        QCOMPARE(fc.minimumTemperature(), 13.0f);
-        QCOMPARE(fc.maximumTemperature(), 52.0f);
-        QCOMPARE(fc.dateTime(), QDateTime(currentDate.addDays(1), QTime(0, 0)));
-        QCOMPARE(model.index(4, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
-        QCOMPARE(model.index(5, 0).data(TimelineModel::ElementTypeRole), TimelineElement::WeatherForecast);
-        fc = model.index(5, 0).data(TimelineModel::WeatherForecastRole).value<WeatherInformation>().forecast;
-        QVERIFY(fc.isValid());
-        QCOMPARE(fc.minimumTemperature(), 8.0f);
-        QCOMPARE(fc.maximumTemperature(), 46.0f);
-        QCOMPARE(fc.dateTime(), QDateTime(currentDate.addDays(1), QTime(14, 0)));
-        QCOMPARE(model.index(6, 0).data(TimelineModel::ElementTypeRole), TimelineElement::WeatherForecast);
-        fc = model.index(6, 0).data(TimelineModel::WeatherForecastRole).value<WeatherInformation>().forecast;
-        QCOMPARE(fc.minimumTemperature(), 8.0f);
-        QCOMPARE(fc.maximumTemperature(), 46.0f);
-        QVERIFY(fc.isValid());
-        QCOMPARE(fc.dateTime(), QDateTime(currentDate.addDays(2), QTime(0, 0)));
+        QCOMPARE(fc.dateTime().date(), QDate(2017, 9, 15));
+        QCOMPARE(fc.minimumTemperature(), 8.56222f);
+        QCOMPARE(fc.maximumTemperature(), 47.4503f);
+
+        QCOMPARE(model.index(21, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
 
         // check we get update signals for all weather elements
         QSignalSpy spy(&model, &TimelineModel::dataChanged);
         QVERIFY(spy.isValid());
         Q_EMIT weatherMgr.forecastUpdated();
-        QCOMPARE(spy.size(), 10);
-        QCOMPARE(model.rowCount(), 13); // 2x flight, 1x today, 10x weather
+        QCOMPARE(model.rowCount(), 22);
+        QCOMPARE(spy.size(), 8);
 
-        fc = model.index(3, 0).data(TimelineModel::WeatherForecastRole).value<WeatherInformation>().forecast;
-        QVERIFY(fc.isValid());
-        QCOMPARE(fc.minimumTemperature(), 13.0f);
-        QCOMPARE(fc.maximumTemperature(), 52.0f);
-        QCOMPARE(fc.dateTime(), QDateTime(currentDate.addDays(1), QTime(0, 0)));
-        fc = model.index(9, 0).data(TimelineModel::WeatherForecastRole).value<WeatherInformation>().forecast;
-        QVERIFY(fc.isValid());
-        QCOMPARE(fc.minimumTemperature(), 8.0f);
-        QCOMPARE(fc.maximumTemperature(), 46.0f);
-        QCOMPARE(fc.dateTime(), QDateTime(currentDate.addDays(5), QTime(0, 0)));
-
-        // add a location change far in the future, this must not change anything
-        // NOTE: this adds visible trip grouping
-        geo.setLatitude(60.0f);
-        geo.setLongitude(11.0f);
-        a.setGeo(geo);
-        f.setArrivalAirport(a);
-        f.setDepartureTime(QDateTime(currentDate.addYears(1), QTime(6, 0)));
-        res.setReservationFor(f);
-        resMgr.addReservation(res);
-        QCOMPARE(model.rowCount(), 16);
-
-        fc = model.index(3, 0).data(TimelineModel::WeatherForecastRole).value<WeatherInformation>().forecast;
-        QVERIFY(fc.isValid());
-        QCOMPARE(fc.minimumTemperature(), 13.0f);
-        QCOMPARE(fc.maximumTemperature(), 52.0f);
-        QCOMPARE(fc.dateTime(), QDateTime(currentDate.addDays(1), QTime(0, 0)));
-        fc = model.index(11, 0).data(TimelineModel::WeatherForecastRole).value<WeatherInformation>().forecast;
-        QVERIFY(fc.isValid());
-        QCOMPARE(fc.minimumTemperature(), 8.0f);
-        QCOMPARE(fc.maximumTemperature(), 46.0f);
-        QCOMPARE(fc.dateTime(), QDateTime(currentDate.addDays(5), QTime(0, 0)));
-
-        // result is the same when data hasn't been added incrementally
-        {
-            TimelineModel model;
-            QAbstractItemModelTester tester(&model);
-            model.setReservationManager(&resMgr);
-            model.setTransferManager(&transferMgr);
-            model.setTripGroupManager(&groupMgr);
-            model.setWeatherForecastManager(&weatherMgr);
-            Test::waitForReset(&model);
-            QCOMPARE(model.rowCount(), 16);
-
-            fc = model.index(3, 0).data(TimelineModel::WeatherForecastRole).value<WeatherInformation>().forecast;
-            QVERIFY(fc.isValid());
-            QCOMPARE(fc.minimumTemperature(), 13.0f);
-            QCOMPARE(fc.maximumTemperature(), 52.0f);
-            QCOMPARE(fc.dateTime(), QDateTime(currentDate.addDays(1), QTime(0, 0)));
-            fc = model.index(11, 0).data(TimelineModel::WeatherForecastRole).value<WeatherInformation>().forecast;
-            QVERIFY(fc.isValid());
-            QCOMPARE(fc.minimumTemperature(), 8.0f);
-            QCOMPARE(fc.maximumTemperature(), 46.0f);
-            QCOMPARE(fc.dateTime(), QDateTime(currentDate.addDays(5), QTime(0, 0)));
-        }
-
-        // clean up
-        auto resId = model.index(15, 0).data(TimelineModel::BatchIdRole).toString();
-        resMgr.removeReservation(resId);
-        resId = model.index(5, 0).data(TimelineModel::BatchIdRole).toString();
-        resMgr.removeReservation(resId);
-        QCOMPARE(model.rowCount(), 13);
+        // TODO test weather on departure day/arrival day at the start/final lcoation
 
         // test case: two consecutive location changes, the first one to an unknown location
         // result: the weather element before the first location change ends with the start of that
