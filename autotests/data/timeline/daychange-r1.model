@@ -854,5 +854,26 @@
         ],
         "sectionHeader": "2017-09-15",
         "type": 6
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "sectionHeader": "2017-09-15",
+        "type": 3,
+        "weatherInformation": {
+            "@context": "http://schema.org",
+            "@type": "WeatherInformation",
+            "forecast": {
+                "@type": "WeatherForecast",
+                "maximumTemperature": 52.55970001220703,
+                "minimumTemperature": 13.287799835205078,
+                "precipitation": 23,
+                "range": 2,
+                "symbolIconName": "weather-few-clouds-night",
+                "valid": true,
+                "windSpeed": 0
+            },
+            "locationName": "Berlin Tegel"
+        }
     }
 ]

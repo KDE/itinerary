@@ -3,6 +3,26 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "1996-10-16",
+        "type": 3,
+        "weatherInformation": {
+            "@context": "http://schema.org",
+            "@type": "WeatherInformation",
+            "forecast": {
+                "@type": "WeatherForecast",
+                "maximumTemperature": 52.55379867553711,
+                "minimumTemperature": 13.29319953918457,
+                "precipitation": 23,
+                "range": 17,
+                "symbolIconName": "weather-few-clouds",
+                "valid": true,
+                "windSpeed": 0
+            }
+        }
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "sectionHeader": "1996-10-16",
         "transfer": {
             "@context": "http://schema.org",
             "@type": "Transfer",
@@ -38,26 +58,6 @@
             "toName": "Tegel"
         },
         "type": 5
-    },
-    {
-        "isToday": false,
-        "rangeType": 0,
-        "sectionHeader": "1996-10-16",
-        "type": 3,
-        "weatherInformation": {
-            "@context": "http://schema.org",
-            "@type": "WeatherInformation",
-            "forecast": {
-                "@type": "WeatherForecast",
-                "maximumTemperature": 52.55379867553711,
-                "minimumTemperature": 13.29319953918457,
-                "precipitation": 23,
-                "range": 1,
-                "symbolIconName": "weather-few-clouds",
-                "valid": true,
-                "windSpeed": 0
-            }
-        }
     },
     {
         "isToday": false,
@@ -378,5 +378,26 @@
             "toName": "Home"
         },
         "type": 5
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "sectionHeader": "1996-10-17",
+        "type": 3,
+        "weatherInformation": {
+            "@context": "http://schema.org",
+            "@type": "WeatherInformation",
+            "forecast": {
+                "@type": "WeatherForecast",
+                "maximumTemperature": 52.55379867553711,
+                "minimumTemperature": 13.29319953918457,
+                "precipitation": 23,
+                "range": 5,
+                "symbolIconName": "weather-few-clouds-night",
+                "valid": true,
+                "windSpeed": 0
+            },
+            "locationName": "Tegel"
+        }
     }
 ]

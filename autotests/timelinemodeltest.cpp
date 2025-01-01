@@ -322,7 +322,7 @@ private Q_SLOTS:
         model.setTripGroupId(groupMgr.tripGroups()[0]);
         Test::waitForReset(&model);
 
-        QCOMPARE(model.rowCount(), 22);
+        QCOMPARE(model.rowCount(), 23);
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
         QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
         QCOMPARE(model.index(3, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TrainTrip);
@@ -350,15 +350,19 @@ private Q_SLOTS:
         QCOMPARE(fc.maximumTemperature(), 47.4503f);
 
         QCOMPARE(model.index(21, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
+        QCOMPARE(model.index(22, 0).data(TimelineModel::ElementTypeRole), TimelineElement::WeatherForecast);
+        fc = model.index(22, 0).data(TimelineModel::WeatherForecastRole).value<WeatherInformation>().forecast;
+        QVERIFY(fc.isValid());
+        QCOMPARE(fc.dateTime().date(), QDate(2017, 9, 15));
+        QCOMPARE(fc.minimumTemperature(), 13.2878f);
+        QCOMPARE(fc.maximumTemperature(), 52.5597f);
 
         // check we get update signals for all weather elements
         QSignalSpy spy(&model, &TimelineModel::dataChanged);
         QVERIFY(spy.isValid());
         Q_EMIT weatherMgr.forecastUpdated();
-        QCOMPARE(model.rowCount(), 22);
-        QCOMPARE(spy.size(), 8);
-
-        // TODO test weather on departure day/arrival day at the start/final lcoation
+        QCOMPARE(model.rowCount(), 23);
+        QCOMPARE(spy.size(), 9);
 
         // test case: two consecutive location changes, the first one to an unknown location
         // result: the weather element before the first location change ends with the start of that

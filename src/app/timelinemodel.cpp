@@ -654,14 +654,18 @@ void TimelineModel::updateWeatherElements()
 
     auto date = now();
     if (m_tripGroup.beginDateTime().isValid()) {
-        date = std::max(date, m_tripGroup.beginDateTime());
+        auto tgStartOfDay = m_tripGroup.beginDateTime();
+        tgStartOfDay.setTime({0, 0});
+        date = std::max(date, tgStartOfDay);
     }
     // round to next full hour
     date.setTime(QTime(date.time().hour(), 0));
-    date = date.addSecs(60 * 60);
+    date = date.addDuration(std::chrono::hours(1));
     auto maxForecastTime = m_weatherMgr->maximumForecastTime(today());
     if (m_tripGroup.endDateTime().isValid()) {
-        maxForecastTime = std::min(maxForecastTime, m_tripGroup.endDateTime());
+        auto tgEndOfDay = m_tripGroup.endDateTime();
+        tgEndOfDay.setTime({23, 59, 59});
+        maxForecastTime = std::min(maxForecastTime, tgEndOfDay);
     }
 
     // look through the past, clean up weather elements there and figure out where we are
