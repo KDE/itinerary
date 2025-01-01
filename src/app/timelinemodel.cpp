@@ -733,7 +733,7 @@ void TimelineModel::updateWeatherElements()
             if ((*it2).dt >= endTime) {
                 break;
             }
-            if ((*it2).isLocationChange()) {
+            if ((*it2).isLocationChange() && !(*it2).isCanceled()) {
                 // exclude the actual travel time from forecast ranges
                 endTime = std::min(endTime, (*it2).dt);
                 nextStartTime = std::max(endTime, (*it2).endDateTime());
