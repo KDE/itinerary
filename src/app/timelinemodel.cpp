@@ -513,7 +513,7 @@ void TimelineModel::updateTodayMarker()
     }
 
     const auto oldRow = todayRow();
-    if (oldRow >= newRow) {
+    if (oldRow >= newRow && newRow >= 0) {
         return;
     }
 
@@ -871,7 +871,9 @@ void TimelineModel::tripGroupChanged(const QString &groupId)
         tripGroupAdded(groupId);
     } else if (m_tripGroupId == groupId) {
         const auto oldElems = m_tripGroup.elements();
-        m_tripGroup = m_tripGroupManager->tripGroup(groupId);
+        const auto tg = m_tripGroupManager->tripGroup(groupId);
+        const auto timesChanged = tg.beginDateTime() != m_tripGroup.beginDateTime() || tg.endDateTime() != m_tripGroup.endDateTime();
+        m_tripGroup = tg;
         const auto newElems = m_tripGroup.elements();
 
         for (const auto &oldBatchId : oldElems) {
@@ -883,6 +885,11 @@ void TimelineModel::tripGroupChanged(const QString &groupId)
             if (!oldElems.contains(newBatchId)) {
                 batchAdded(newBatchId);
             }
+        }
+
+        // needed when start or end time changed
+        if (timesChanged) {
+            updateTodayMarker();
         }
     }
 }

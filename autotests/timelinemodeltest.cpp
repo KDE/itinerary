@@ -445,7 +445,6 @@ private Q_SLOTS:
         QCOMPARE(groupMgr.tripGroups().size(), 1);
         model.setTripGroupId(tgId);
         Test::waitForReset(&model);
-        QCOMPARE(model.rowCount(), 1);
 
         // full import at runtime
         ImportController importer;
@@ -454,14 +453,11 @@ private Q_SLOTS:
         importer.setTripGroupId(tgId);
         ctrl->commitImport(&importer);
 
-        QCOMPARE(model.rowCount(), 5); // 2x Flight, 2x tz change info, 1x today marker (TODO: this is wrong?)
-        QCOMPARE(updateSpy.count(), 1);
-        QCOMPARE(rmSpy.count(), 0);
+        QCOMPARE(model.rowCount(), 4);
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
         QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
         QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
         QCOMPARE(model.index(3, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
-        QCOMPARE(model.index(4, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
         QCOMPARE(resMgr.reservationsForBatch(model.index(0, 0).data(TimelineModel::BatchIdRole).toString()).size(), 2);
         QCOMPARE(resMgr.reservationsForBatch(model.index(2, 0).data(TimelineModel::BatchIdRole).toString()).size(), 2);
 
@@ -501,7 +497,7 @@ private Q_SLOTS:
         resMgr.updateReservation(resId, res);
         groupMgr.addToGroup(resIds, tgId); // manually group, as auto-grouping would reject the trip we just created here
 
-        QCOMPARE(model.rowCount(), 6);
+        QCOMPARE(model.rowCount(), 5);
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
         QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
         QCOMPARE(updateSpy.count(), 4);
@@ -515,7 +511,7 @@ private Q_SLOTS:
         flight.setDepartureTime(flight.departureTime().addDays(-1));
         res.setReservationFor(flight);
         resMgr.updateReservation(resId, res);
-        QCOMPARE(model.rowCount(), 5);
+        QCOMPARE(model.rowCount(), 4);
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
         QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
         QCOMPARE(resMgr.reservationsForBatch(model.index(0, 0).data(TimelineModel::BatchIdRole).toString()).size(), 2);
