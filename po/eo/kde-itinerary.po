@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-01 02:32+0000\n"
-"PO-Revision-Date: 2024-09-19 21:59+0200\n"
+"PO-Revision-Date: 2024-12-27 23:54+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -147,7 +147,7 @@ msgstr "Ĉu vi vere volas forigi ĉi tiun eventon?"
 #: app/ActionsCard.qml:138 app/TimelinePage.qml:235 app/TripGroupPage.qml:226
 #, kde-format
 msgid "Export"
-msgstr "Elporto"
+msgstr "Elporti"
 
 #: app/ActionsCard.qml:141 app/TimelinePage.qml:238 app/TripGroupPage.qml:229
 #, kde-format
@@ -411,12 +411,12 @@ msgstr "Foriro"
 #, kde-format
 msgctxt "Boat departure"
 msgid "Departure Time"
-msgstr "Foriro Tempo"
+msgstr "Forira Horo"
 
 #: app/BoatEditor.qml:81
 #, kde-format
 msgid "Departure time has to be set."
-msgstr "La foriro tempo devas esti fiksita."
+msgstr "La forirhoro devas esti fiksita."
 
 #: app/BoatEditor.qml:86 app/BoatEditor.qml:127
 #, kde-format
@@ -439,7 +439,7 @@ msgstr "Alveno"
 #, kde-format
 msgctxt "Boat arrival"
 msgid "Arrival Time"
-msgstr "Alvena Tempo"
+msgstr "Alvena Horo"
 
 #: app/BoatEditor.qml:120
 #, kde-format
@@ -459,7 +459,7 @@ msgstr "Ŝipa Bileto"
 #: app/BoatPage.qml:59 app/BusPage.qml:68 app/TrainPage.qml:122
 #, kde-format
 msgid "Departure time"
-msgstr "Forirtempo"
+msgstr "Forira horo"
 
 #: app/BoatPage.qml:66 app/BoatPage.qml:96
 #, kde-format
@@ -613,7 +613,7 @@ msgstr "Foriro"
 #: app/BusPage.qml:88 app/TrainPage.qml:151
 #, kde-format
 msgid "Departure date"
-msgstr "Ekveturdato"
+msgstr "Ekflugdato"
 
 #: app/BusPage.qml:96 app/BusPage.qml:157
 #, kde-format
@@ -1062,7 +1062,7 @@ msgstr "Pordego: <b>%1</b>"
 #, kde-format
 msgctxt "flight seats"
 msgid "Seat: <b>%1</b>"
-msgstr "Seĝo: <b>%1</b>"
+msgstr "Sidloko: <b>%1</b>"
 
 #: app/FlightDelegate.qml:100
 #, kde-format
@@ -1107,7 +1107,7 @@ msgstr "Terminalo"
 #, kde-format
 msgctxt "flight departure time"
 msgid "Time"
-msgstr "Forirtempo"
+msgstr "Tempo"
 
 #: app/FlightEditor.qml:109
 #, kde-format
@@ -1133,8 +1133,7 @@ msgid "Boarding time has to be before the departure time."
 msgstr "Enŝipiĝa horo devas esti antaŭ la foriro."
 
 #: app/FlightEditor.qml:139
-#, fuzzy, kde-format
-#| msgid "Boarding group"
+#, kde-format
 msgctxt "flight departure boarding group"
 msgid "Boarding group"
 msgstr "Enirgrupo"
@@ -1213,13 +1212,13 @@ msgstr "Flugkompanio"
 #, kde-format
 msgctxt "Flight departure"
 msgid "Departure"
-msgstr "Forflugo"
+msgstr "Foriro"
 
 #: app/FlightPage.qml:117
 #, kde-format
 msgctxt "flight departure"
 msgid "Departure time"
-msgstr "Ekflughoro"
+msgstr "Forira horo"
 
 #: app/FlightPage.qml:122
 #, kde-format
@@ -1505,7 +1504,7 @@ msgstr "Reakiro (%1)"
 #: app/HealthCertificatePage.qml:16 app/Main.qml:195
 #, kde-format
 msgid "Health Certificates"
-msgstr "Sanaj Atestiloj"
+msgstr "Sanecaj Atestiloj"
 
 #: app/HealthCertificatePage.qml:55
 #, kde-format
@@ -2528,11 +2527,9 @@ msgid "Occupancy:"
 msgstr "Okupiteco:"
 
 #: app/MapStopoverInfoSheetDrawer.qml:88
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "View Indoor Map"
+#, kde-format
 msgid "Show indoor map"
-msgstr "Rigardi Endoman Mapon"
+msgstr "Rigardi endoman mapon"
 
 #: app/MatrixRoomSelectionSheet.qml:19
 #, kde-format
@@ -3393,26 +3390,24 @@ msgid "Train"
 msgstr "Trajno"
 
 #: app/StopPickerPage.qml:27
-#, fuzzy, kde-format
-#| msgid "Clear history"
+#, kde-format
 msgid "Clear History"
-msgstr "Klarigi historion"
+msgstr "Viŝi Historion"
 
 #: app/StopPickerPage.qml:28
-#, fuzzy, kde-format
-#| msgid "Do you really want to delete this certificate?"
+#, kde-format
 msgid "Do you really want to remove all previously searched locations?"
-msgstr "Ĉu vi vere volas forigi ĉi tiun atestilon?"
+msgstr "Ĉu vi vere volas forigi ĉiujn antaŭe serĉitajn lokojn?"
 
 #: app/StopPickerPage.qml:32
 #, kde-format
 msgid "Remove"
-msgstr ""
+msgstr "Forigi"
 
 #: app/StopPickerPage.qml:45
 #, kde-format
 msgid "Clear history"
-msgstr "Klarigi historion"
+msgstr "Viŝi historion"
 
 #: app/StopPickerPage.qml:55
 #, kde-format
@@ -3433,44 +3428,34 @@ msgstr "Plej ofte uzata"
 #, kde-format
 msgctxt "location name, locality, region, country"
 msgid "%1, %2, %3, %4"
-msgstr ""
+msgstr "%1, %2, %3, %4"
 
 #: app/StopPickerPage.qml:173 app/StopPickerPage.qml:254
-#, fuzzy, kde-format
-#| msgctxt "geo coordinate"
-#| msgid "%1, %2"
+#, kde-format
 msgctxt "location name, locality, country"
 msgid "%1, %2, %3"
-msgstr "%1, %2"
+msgstr "%1, %2, %3"
 
 #: app/StopPickerPage.qml:178 app/StopPickerPage.qml:259
-#, fuzzy, kde-format
-#| msgctxt "geo coordinate"
-#| msgid "%1, %2"
+#, kde-format
 msgctxt "location name, region, country"
 msgid "%1, %2, %3"
-msgstr "%1, %2"
+msgstr "%1, %2, %3"
 
 #: app/StopPickerPage.qml:199 app/StopPickerPage.qml:281
-#, fuzzy, kde-format
-#| msgctxt "geo coordinate"
-#| msgid "%1, %2"
+#, kde-format
 msgctxt "locality, region, country"
 msgid "%1, %2, %3"
-msgstr "%1, %2"
+msgstr "%1, %2, %3"
 
 #: app/StopPickerPage.qml:204 app/StopPickerPage.qml:286
-#, fuzzy, kde-format
-#| msgctxt "geo coordinate"
-#| msgid "%1, %2"
+#, kde-format
 msgctxt "locality, country"
 msgid "%1, %2"
 msgstr "%1, %2"
 
 #: app/StopPickerPage.qml:208 app/StopPickerPage.qml:290
-#, fuzzy, kde-format
-#| msgctxt "geo coordinate"
-#| msgid "%1, %2"
+#, kde-format
 msgctxt "region, country"
 msgid "%1, %2"
 msgstr "%1, %2"
@@ -3996,11 +3981,9 @@ msgid "No compatible power plugs (%1)"
 msgstr "Neniuj kongruaj elektraj ŝtopiloj (%1)"
 
 #: app/TripGroupPage.qml:472
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Show Map"
+#, kde-format
 msgid "Show map…"
-msgstr "Montri Mapon"
+msgstr "Montri mapon…"
 
 #: app/TripGroupPage.qml:479
 #, kde-format
