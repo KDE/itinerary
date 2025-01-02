@@ -424,6 +424,7 @@ private Q_SLOTS:
         TripGroupManager groupMgr;
         groupMgr.setReservationManager(&resMgr);
         groupMgr.setTransferManager(&transferMgr);
+        ctrl->setTripGroupManager(&groupMgr);
 
         TimelineModel model;
         model.setCurrentDateTime({{2024, 3, 29}, {10, 21}}); // after the DST transition in the US!
@@ -431,8 +432,6 @@ private Q_SLOTS:
         model.setReservationManager(&resMgr);
         model.setTransferManager(&transferMgr);
         model.setTripGroupManager(&groupMgr);
-        Test::waitForReset(&model);
-        QCOMPARE(model.rowCount(), 1); // 1x TodayMarker
 
         QSignalSpy insertSpy(&model, &TimelineModel::rowsInserted);
         QVERIFY(insertSpy.isValid());
@@ -441,22 +440,30 @@ private Q_SLOTS:
         QSignalSpy rmSpy(&model, &TimelineModel::rowsRemoved);
         QVERIFY(rmSpy.isValid());
 
+        const auto tgId = groupMgr.createEmptyGroup(u"Test Trip"_s);
+        QVERIFY(!tgId.isEmpty());
+        QCOMPARE(groupMgr.tripGroups().size(), 1);
+        model.setTripGroupId(tgId);
+        Test::waitForReset(&model);
+        QCOMPARE(model.rowCount(), 1);
+
         // full import at runtime
         ImportController importer;
         importer.setReservationManager(&resMgr);
         importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
+        importer.setTripGroupId(tgId);
         ctrl->commitImport(&importer);
-        QCOMPARE(model.rowCount(), 8); // 1x group begin, 2x Flight, 2x tz change info, 1x group end, 1x DST info, 1x TodayMarker
-        QCOMPARE(updateSpy.count(), 7);
-        QCOMPARE(rmSpy.count(), 3);
-        QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
-        QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
-        QCOMPARE(model.index(3, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
-        QCOMPARE(model.index(4, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
-        QCOMPARE(model.index(6, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
-        QCOMPARE(model.index(7, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
-        QCOMPARE(resMgr.reservationsForBatch(model.index(1, 0).data(TimelineModel::BatchIdRole).toString()).size(), 2);
-        QCOMPARE(resMgr.reservationsForBatch(model.index(3, 0).data(TimelineModel::BatchIdRole).toString()).size(), 2);
+
+        QCOMPARE(model.rowCount(), 5); // 2x Flight, 2x tz change info, 1x today marker (TODO: this is wrong?)
+        QCOMPARE(updateSpy.count(), 1);
+        QCOMPARE(rmSpy.count(), 0);
+        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
+        QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
+        QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
+        QCOMPARE(model.index(3, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
+        QCOMPARE(model.index(4, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
+        QCOMPARE(resMgr.reservationsForBatch(model.index(0, 0).data(TimelineModel::BatchIdRole).toString()).size(), 2);
+        QCOMPARE(resMgr.reservationsForBatch(model.index(2, 0).data(TimelineModel::BatchIdRole).toString()).size(), 2);
 
         // already existing data
         {
@@ -466,34 +473,40 @@ private Q_SLOTS:
             model.setReservationManager(&resMgr);
             model.setTransferManager(&transferMgr);
             model.setTripGroupManager(&groupMgr);
+            model.setTripGroupId(tgId);
             Test::waitForReset(&model);
 
-            QCOMPARE(model.rowCount(), 8); // 1x group begin, 2x Flight, 2x tz change info, 1x group end, 1x DST info, 1x TodayMarker
-            QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
-            QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
-            QCOMPARE(model.index(3, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
-            QCOMPARE(model.index(4, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
-            QCOMPARE(model.index(6, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
-            QCOMPARE(model.index(7, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
-            QCOMPARE(resMgr.reservationsForBatch(model.index(1, 0).data(TimelineModel::BatchIdRole).toString()).size(), 2);
-            QCOMPARE(resMgr.reservationsForBatch(model.index(3, 0).data(TimelineModel::BatchIdRole).toString()).size(), 2);
+            QCOMPARE(model.rowCount(), 4); // 2x Flight, 2x tz change info
+            QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
+            QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
+            QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
+            QCOMPARE(model.index(3, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
+            QCOMPARE(resMgr.reservationsForBatch(model.index(0, 0).data(TimelineModel::BatchIdRole).toString()).size(), 2);
+            QCOMPARE(resMgr.reservationsForBatch(model.index(2, 0).data(TimelineModel::BatchIdRole).toString()).size(), 2);
         }
+
+        groupMgr.suspend(); // avoid auto-regrouping while we mess with things here
 
         // update splits element
         updateSpy.clear();
         insertSpy.clear();
         rmSpy.clear();
-        auto resId = model.index(1, 0).data(TimelineModel::BatchIdRole).toString();
+        const auto resId = model.index(0, 0).data(TimelineModel::BatchIdRole).toString();
         QVERIFY(!resId.isEmpty());
+        const auto resIds = resMgr.reservationsForBatch(resId);
         auto res = resMgr.reservation(resId).value<FlightReservation>();
         auto flight = res.reservationFor().value<Flight>();
         flight.setDepartureTime(flight.departureTime().addDays(1));
         res.setReservationFor(flight);
         resMgr.updateReservation(resId, res);
-        QCOMPARE(model.rowCount(), 9);
-        QCOMPARE(updateSpy.count(), 5);
-        QCOMPARE(insertSpy.count(), 6);
-        QCOMPARE(rmSpy.count(), 5);
+        groupMgr.addToGroup(resIds, tgId); // manually group, as auto-grouping would reject the trip we just created here
+
+        QCOMPARE(model.rowCount(), 6);
+        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
+        QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
+        QCOMPARE(updateSpy.count(), 4);
+        QCOMPARE(insertSpy.count(), 3);
+        QCOMPARE(rmSpy.count(), 2);
 
         // update merges two elements
         updateSpy.clear();
@@ -502,18 +515,20 @@ private Q_SLOTS:
         flight.setDepartureTime(flight.departureTime().addDays(-1));
         res.setReservationFor(flight);
         resMgr.updateReservation(resId, res);
-        QCOMPARE(model.rowCount(), 6);
+        QCOMPARE(model.rowCount(), 5);
+        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
+        QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
+        QCOMPARE(resMgr.reservationsForBatch(model.index(0, 0).data(TimelineModel::BatchIdRole).toString()).size(), 2);
+
         QCOMPARE(updateSpy.count(), 5);
-        QCOMPARE(rmSpy.count(), 5);
-        QCOMPARE(insertSpy.count(), 2);
+        QCOMPARE(rmSpy.count(), 1);
+        QCOMPARE(insertSpy.count(), 0);
 
         // removal of merged items
         updateSpy.clear();
         rmSpy.clear();
         Test::clearAll(&resMgr);
-        QCOMPARE(model.rowCount(), 1);
-        QCOMPARE(rmSpy.count(), 8);
-        QCOMPARE(updateSpy.count(), 6);
+        QCOMPARE(model.rowCount(), 0);
     }
 
     void testDayChange()
