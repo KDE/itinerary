@@ -285,7 +285,7 @@ void ApplicationController::commitImport(ImportController *importController)
 
     // add or update trip group
     QString tripGroupId;
-    if (!tripGroupElements.isEmpty() && m_tripGroupMgr) { // TODO many unit tests don't provide m_tripGroupMgr, fix this eventually
+    if (!tripGroupElements.isEmpty()) {
         if (!importController->tripGroupId().isEmpty()) {
             tripGroupId = importController->tripGroupId();
             m_tripGroupMgr->addToGroup(tripGroupElements, tripGroupId);
