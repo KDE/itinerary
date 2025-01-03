@@ -66,7 +66,7 @@
             }
         ],
         "sectionHeader": "2017-09-10",
-        "type": 6
+        "type": 5
     },
     {
         "isToday": false,
@@ -89,7 +89,7 @@
         },
         "rangeType": 0,
         "sectionHeader": "2017-09-10",
-        "type": 4
+        "type": 3
     },
     {
         "isToday": false,
@@ -162,7 +162,7 @@
             }
         ],
         "sectionHeader": "2017-09-10",
-        "type": 7
+        "type": 6
     },
     {
         "isToday": false,
@@ -225,7 +225,7 @@
             }
         ],
         "sectionHeader": "2017-09-10",
-        "type": 7
+        "type": 6
     },
     {
         "isToday": false,
@@ -269,7 +269,7 @@
             }
         ],
         "sectionHeader": "2017-09-10",
-        "type": 13
+        "type": 12
     },
     {
         "isToday": false,
@@ -311,7 +311,7 @@
             }
         ],
         "sectionHeader": "2017-09-10",
-        "type": 14
+        "type": 13
     },
     {
         "isToday": true,
@@ -324,7 +324,7 @@
         "isToday": true,
         "rangeType": 0,
         "sectionHeader": "2017-09-11",
-        "type": 3,
+        "type": 2,
         "weatherInformation": {
             "@context": "http://schema.org",
             "@type": "WeatherInformation",
@@ -345,7 +345,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "2017-09-12",
-        "type": 3,
+        "type": 2,
         "weatherInformation": {
             "@context": "http://schema.org",
             "@type": "WeatherInformation",
@@ -366,7 +366,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "2017-09-13",
-        "type": 3,
+        "type": 2,
         "weatherInformation": {
             "@context": "http://schema.org",
             "@type": "WeatherInformation",
@@ -431,13 +431,13 @@
             }
         ],
         "sectionHeader": "2017-09-13",
-        "type": 9
+        "type": 8
     },
     {
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "2017-09-13",
-        "type": 3,
+        "type": 2,
         "weatherInformation": {
             "@context": "http://schema.org",
             "@type": "WeatherInformation",
@@ -488,13 +488,13 @@
             }
         ],
         "sectionHeader": "2017-09-13",
-        "type": 12
+        "type": 11
     },
     {
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "2017-09-14",
-        "type": 3,
+        "type": 2,
         "weatherInformation": {
             "@context": "http://schema.org",
             "@type": "WeatherInformation",
@@ -551,7 +551,7 @@
             }
         ],
         "sectionHeader": "2017-09-14",
-        "type": 11
+        "type": 10
     },
     {
         "isToday": false,
@@ -593,13 +593,13 @@
             }
         ],
         "sectionHeader": "2017-09-15",
-        "type": 14
+        "type": 13
     },
     {
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "2017-09-15",
-        "type": 3,
+        "type": 2,
         "weatherInformation": {
             "@context": "http://schema.org",
             "@type": "WeatherInformation",
@@ -677,13 +677,13 @@
             }
         ],
         "sectionHeader": "2017-09-15",
-        "type": 7
+        "type": 6
     },
     {
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "2017-09-15",
-        "type": 3,
+        "type": 2,
         "weatherInformation": {
             "@context": "http://schema.org",
             "@type": "WeatherInformation",
@@ -762,13 +762,13 @@
             }
         ],
         "sectionHeader": "2017-09-15",
-        "type": 7
+        "type": 6
     },
     {
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "2017-09-15",
-        "type": 3,
+        "type": 2,
         "weatherInformation": {
             "@context": "http://schema.org",
             "@type": "WeatherInformation",
@@ -853,13 +853,13 @@
             }
         ],
         "sectionHeader": "2017-09-15",
-        "type": 6
+        "type": 5
     },
     {
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "2017-09-15",
-        "type": 3,
+        "type": 2,
         "weatherInformation": {
             "@context": "http://schema.org",
             "@type": "WeatherInformation",

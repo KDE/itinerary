@@ -66,12 +66,6 @@ private Q_SLOTS:
 
         const auto dt = QDateTime::currentDateTimeUtc();
 
-        TimelineElement group(nullptr, TimelineElement::TripGroup, dt);
-        group.rangeType = TimelineElement::RangeBegin;
-        QTest::newRow("transfer-group-begin") << group << TimelineElement(nullptr, TimelineElement::Transfer, dt);
-        group.rangeType = TimelineElement::RangeEnd;
-        QTest::newRow("transfer-group-end") << TimelineElement(nullptr, TimelineElement::Transfer, dt) << group;
-
         TimelineElement locInfo(nullptr, TimelineElement::LocationInfo, dt);
         TimelineElement hotel(nullptr, TimelineElement::Hotel, dt);
         hotel.rangeType = TimelineElement::RangeBegin;

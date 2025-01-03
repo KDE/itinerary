@@ -64,7 +64,7 @@
             }
         ],
         "sectionHeader": "1996-10-10",
-        "type": 6
+        "type": 5
     },
     {
         "isToday": false,
@@ -87,7 +87,7 @@
         },
         "rangeType": 0,
         "sectionHeader": "1996-10-11",
-        "type": 4
+        "type": 3
     },
     {
         "isToday": true,
@@ -100,7 +100,7 @@
         "isToday": true,
         "rangeType": 0,
         "sectionHeader": "1996-10-14",
-        "type": 3,
+        "type": 2,
         "weatherInformation": {
             "@context": "http://schema.org",
             "@type": "WeatherInformation",
@@ -121,7 +121,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "1996-10-15",
-        "type": 3,
+        "type": 2,
         "weatherInformation": {
             "@context": "http://schema.org",
             "@type": "WeatherInformation",
@@ -142,7 +142,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "1996-10-16",
-        "type": 3,
+        "type": 2,
         "weatherInformation": {
             "@context": "http://schema.org",
             "@type": "WeatherInformation",
@@ -163,7 +163,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "1996-10-17",
-        "type": 3,
+        "type": 2,
         "weatherInformation": {
             "@context": "http://schema.org",
             "@type": "WeatherInformation",
@@ -184,7 +184,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "1996-10-18",
-        "type": 3,
+        "type": 2,
         "weatherInformation": {
             "@context": "http://schema.org",
             "@type": "WeatherInformation",
@@ -205,7 +205,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "1996-10-19",
-        "type": 3,
+        "type": 2,
         "weatherInformation": {
             "@context": "http://schema.org",
             "@type": "WeatherInformation",
@@ -226,7 +226,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "1996-10-20",
-        "type": 3,
+        "type": 2,
         "weatherInformation": {
             "@context": "http://schema.org",
             "@type": "WeatherInformation",
@@ -247,7 +247,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "1996-10-21",
-        "type": 3,
+        "type": 2,
         "weatherInformation": {
             "@context": "http://schema.org",
             "@type": "WeatherInformation",
@@ -268,7 +268,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "1996-10-22",
-        "type": 3,
+        "type": 2,
         "weatherInformation": {
             "@context": "http://schema.org",
             "@type": "WeatherInformation",
@@ -302,7 +302,7 @@
         },
         "rangeType": 0,
         "sectionHeader": "1996-10-27",
-        "type": 4
+        "type": 3
     },
     {
         "isToday": false,
@@ -361,6 +361,6 @@
             }
         ],
         "sectionHeader": "1996-10-29",
-        "type": 6
+        "type": 5
     }
 ]

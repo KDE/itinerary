@@ -3,7 +3,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "1996-10-16",
-        "type": 3,
+        "type": 2,
         "weatherInformation": {
             "@context": "http://schema.org",
             "@type": "WeatherInformation",
@@ -57,7 +57,7 @@
             },
             "toName": "Tegel"
         },
-        "type": 5
+        "type": 4
     },
     {
         "isToday": false,
@@ -120,7 +120,7 @@
             }
         ],
         "sectionHeader": "1996-10-16",
-        "type": 6
+        "type": 5
     },
     {
         "isToday": false,
@@ -141,13 +141,13 @@
         },
         "rangeType": 0,
         "sectionHeader": "1996-10-16",
-        "type": 4
+        "type": 3
     },
     {
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "1996-10-16",
-        "type": 3,
+        "type": 2,
         "weatherInformation": {
             "@context": "http://schema.org",
             "@type": "WeatherInformation",
@@ -197,7 +197,7 @@
             }
         ],
         "sectionHeader": "1996-10-16",
-        "type": 14
+        "type": 13
     },
     {
         "isToday": false,
@@ -232,13 +232,13 @@
             }
         ],
         "sectionHeader": "1996-10-17",
-        "type": 14
+        "type": 13
     },
     {
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "1996-10-17",
-        "type": 3,
+        "type": 2,
         "weatherInformation": {
             "@context": "http://schema.org",
             "@type": "WeatherInformation",
@@ -316,7 +316,7 @@
             }
         ],
         "sectionHeader": "1996-10-17",
-        "type": 6
+        "type": 5
     },
     {
         "isToday": false,
@@ -337,7 +337,7 @@
         },
         "rangeType": 0,
         "sectionHeader": "1996-10-17",
-        "type": 4
+        "type": 3
     },
     {
         "isToday": false,
@@ -377,13 +377,13 @@
             },
             "toName": "Home"
         },
-        "type": 5
+        "type": 4
     },
     {
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "1996-10-17",
-        "type": 3,
+        "type": 2,
         "weatherInformation": {
             "@context": "http://schema.org",
             "@type": "WeatherInformation",

@@ -102,7 +102,6 @@ void TimelineModel::setReservationManager(ReservationManager *mgr)
     connect(mgr, &ReservationManager::batchAdded, this, &TimelineModel::batchAdded);
     connect(mgr, &ReservationManager::batchChanged, this, &TimelineModel::batchChanged);
     connect(mgr, &ReservationManager::batchContentChanged, this, &TimelineModel::batchChanged);
-    connect(mgr, &ReservationManager::batchRenamed, this, &TimelineModel::batchRenamed);
     connect(mgr, &ReservationManager::batchRemoved, this, &TimelineModel::batchRemoved);
     Q_EMIT setupChanged();
     QMetaObject::invokeMethod(this, &TimelineModel::populate, Qt::QueuedConnection);
@@ -132,7 +131,6 @@ void TimelineModel::setTripGroupManager(TripGroupManager *mgr)
     }
 
     m_tripGroupManager = mgr;
-    connect(mgr, &TripGroupManager::tripGroupAdded, this, &TimelineModel::tripGroupAdded);
     connect(mgr, &TripGroupManager::tripGroupChanged, this, &TimelineModel::tripGroupChanged);
     connect(mgr, &TripGroupManager::tripGroupRemoved, this, &TimelineModel::tripGroupRemoved);
     Q_EMIT setupChanged();
@@ -282,39 +280,23 @@ int TimelineModel::todayRow() const
 
 void TimelineModel::populate()
 {
-    if (m_isPopulated || !m_resMgr || !m_transferManager || !m_tripGroupManager) {
+    if (m_isPopulated || !m_resMgr || !m_transferManager || !m_tripGroupManager || m_tripGroupId.isEmpty()) {
         return;
     }
     m_isPopulated = true;
 
     beginResetModel();
-    if (m_tripGroupId.isEmpty()) {
-        for (const auto &resId : m_resMgr->batches()) {
-            populateReservation(resId);
-        }
-    } else {
-        m_tripGroup = m_tripGroupManager->tripGroup(m_tripGroupId);
-        const auto elems = m_tripGroup.elements();
-        for (const auto &resId : elems) {
-            populateReservation(resId);
-        }
+    m_tripGroup = m_tripGroupManager->tripGroup(m_tripGroupId);
+    const auto elems = m_tripGroup.elements();
+    for (const auto &resId : elems) {
+        populateReservation(resId);
     }
     std::sort(m_elements.begin(), m_elements.end());
     endResetModel();
 
     // load existing transfers and trip groups into the model
-    if (m_tripGroupId.isEmpty()) {
-        for (const auto &batchId : m_resMgr->batches()) {
-            updateTransfersForBatch(batchId);
-        }
-        for (const auto &group : m_tripGroupManager->tripGroups()) {
-            tripGroupAdded(group);
-        }
-    } else {
-        const auto elems = m_tripGroup.elements();
-        for (const auto &batchId : elems) {
-            updateTransfersForBatch(batchId);
-        }
+    for (const auto &batchId : elems) {
+        updateTransfersForBatch(batchId);
     }
 
     updateTodayMarker();
@@ -339,7 +321,7 @@ void TimelineModel::populateReservation(const QString &resId)
 
 void TimelineModel::batchAdded(const QString &resId)
 {
-    if (!m_isPopulated || (!m_tripGroupId.isEmpty() && !m_tripGroup.elements().contains(resId))) {
+    if (!m_isPopulated || !m_tripGroup.elements().contains(resId)) {
         return;
     }
 
@@ -394,7 +376,7 @@ std::vector<TimelineElement>::iterator TimelineModel::insertOrUpdate(std::vector
 
 void TimelineModel::batchChanged(const QString &resId)
 {
-    if (!m_isPopulated || (!m_tripGroupId.isEmpty() && !m_tripGroup.elements().contains(resId))) {
+    if (!m_isPopulated || !m_tripGroup.elements().contains(resId)) {
         return;
     }
 
@@ -407,27 +389,6 @@ void TimelineModel::batchChanged(const QString &resId)
     }
 
     updateInformationElements();
-}
-
-void TimelineModel::batchRenamed(const QString &oldBatchId, const QString &newBatchId)
-{
-    if (!m_isPopulated || !m_tripGroupId.isEmpty()) {
-        return;
-    }
-
-    for (auto it = m_elements.begin(); it != m_elements.end(); ++it) {
-        if (!(*it).isReservation() || (*it).batchId() != oldBatchId) {
-            continue;
-        }
-
-        (*it).setContent(newBatchId);
-        const auto idx = index((int)std::distance(m_elements.begin(), it), 0);
-        Q_EMIT dataChanged(idx, idx);
-
-        if ((*it).rangeType == TimelineElement::SelfContained || (*it).rangeType == TimelineElement::RangeEnd) {
-            break;
-        }
-    }
 }
 
 void TimelineModel::updateElement(const QString &resId, const QVariant &res, TimelineElement::RangeType rangeType)
@@ -832,87 +793,38 @@ void TimelineModel::setCurrentDateTime(const QDateTime &dt)
     }
 }
 
-void TimelineModel::tripGroupAdded(const QString &groupId)
-{
-    if (!m_isPopulated || !m_tripGroupId.isEmpty()) {
-        return;
-    }
-
-    const auto g = m_tripGroupManager->tripGroup(groupId);
-    if (g.elements().size() < 2) {
-        return;
-    }
-
-    TimelineElement beginElem{this, TimelineElement::TripGroup, g.beginDateTime(), groupId};
-    beginElem.rangeType = TimelineElement::RangeBegin;
-    const auto startRow = insertElement(std::move(beginElem));
-
-    TimelineElement endElem{this, TimelineElement::TripGroup, g.endDateTime(), groupId};
-    endElem.rangeType = TimelineElement::RangeEnd;
-    const auto endRow = insertElement(std::move(endElem));
-
-    // elements in that group now have a trip group id
-    if (endRow - startRow > 1) {
-        const auto beginIdx = index(startRow + 1, 0);
-        const auto endIdx = index(endRow - 1, 0);
-        Q_EMIT dataChanged(beginIdx, endIdx);
-    }
-}
-
 void TimelineModel::tripGroupChanged(const QString &groupId)
 {
     if (!m_isPopulated) {
         return;
     }
 
-    if (m_tripGroupId.isEmpty()) {
-        // ### this can be done better probably
-        tripGroupRemoved(groupId);
-        tripGroupAdded(groupId);
-    } else if (m_tripGroupId == groupId) {
-        const auto oldElems = m_tripGroup.elements();
-        const auto tg = m_tripGroupManager->tripGroup(groupId);
-        const auto timesChanged = tg.beginDateTime() != m_tripGroup.beginDateTime() || tg.endDateTime() != m_tripGroup.endDateTime();
-        m_tripGroup = tg;
-        const auto newElems = m_tripGroup.elements();
+    const auto oldElems = m_tripGroup.elements();
+    const auto tg = m_tripGroupManager->tripGroup(groupId);
+    const auto timesChanged = tg.beginDateTime() != m_tripGroup.beginDateTime() || tg.endDateTime() != m_tripGroup.endDateTime();
+    m_tripGroup = tg;
+    const auto newElems = m_tripGroup.elements();
 
-        for (const auto &oldBatchId : oldElems) {
-            if (!newElems.contains(oldBatchId)) {
-                batchRemoved(oldBatchId);
-            }
+    for (const auto &oldBatchId : oldElems) {
+        if (!newElems.contains(oldBatchId)) {
+            batchRemoved(oldBatchId);
         }
-        for (const auto &newBatchId : newElems) {
-            if (!oldElems.contains(newBatchId)) {
-                batchAdded(newBatchId);
-            }
+    }
+    for (const auto &newBatchId : newElems) {
+        if (!oldElems.contains(newBatchId)) {
+            batchAdded(newBatchId);
         }
+    }
 
-        // needed when start or end time changed
-        if (timesChanged) {
-            updateTodayMarker();
-        }
+    // needed when start or end time changed
+    if (timesChanged) {
+        updateTodayMarker();
     }
 }
 
 void TimelineModel::tripGroupRemoved(const QString &groupId)
 {
-    if (!m_isPopulated) {
-        return;
-    }
-
-    if (m_tripGroupId.isEmpty()) {
-        for (auto it = m_elements.begin(); it != m_elements.end();) {
-            if ((*it).elementType != TimelineElement::TripGroup || (*it).content().toString() != groupId) {
-                ++it;
-                continue;
-            }
-
-            const auto row = (int)std::distance(m_elements.begin(), it);
-            beginRemoveRows({}, row, row);
-            it = m_elements.erase(it);
-            endRemoveRows();
-        }
-    } else if (m_tripGroupId == groupId) {
+    if (m_isPopulated && m_tripGroupId == groupId) {
         beginResetModel();
         m_elements.clear();
         m_isPopulated = false;

@@ -29,7 +29,6 @@ public:
     enum ElementType {
         Undefined,
         TodayMarker,
-        TripGroup,
         WeatherForecast,
         LocationInfo,
         Transfer,

@@ -94,10 +94,8 @@ private:
     std::vector<TimelineElement>::iterator insertOrUpdate(std::vector<TimelineElement>::iterator it, TimelineElement &&elem);
     void batchChanged(const QString &resId);
     void updateElement(const QString &resId, const QVariant &res, TimelineElement::RangeType rangeType);
-    void batchRenamed(const QString &oldBatchId, const QString &newBatchId);
     void batchRemoved(const QString &resId);
 
-    void tripGroupAdded(const QString &groupId);
     void tripGroupChanged(const QString &groupId);
     void tripGroupRemoved(const QString &groupId);
 

@@ -140,7 +140,6 @@ bool TimelineElement::isReservation() const
         return true;
     case Undefined:
     case TodayMarker:
-    case TripGroup:
     case WeatherForecast:
     case LocationInfo:
     case Transfer:
@@ -204,7 +203,6 @@ bool TimelineElement::isTimeBoxed() const
     switch (elementType) {
     case Undefined:
     case TodayMarker:
-    case TripGroup:
     case WeatherForecast:
     case LocationInfo:
         return false;
@@ -231,7 +229,6 @@ bool TimelineElement::isInformational() const
     switch (elementType) {
     case Undefined:
     case TodayMarker:
-    case TripGroup:
     case WeatherForecast:
     case LocationInfo:
         return true;
