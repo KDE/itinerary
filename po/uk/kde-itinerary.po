@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-01 02:32+0000\n"
+"POT-Creation-Date: 2025-01-03 02:32+0000\n"
 "PO-Revision-Date: 2024-11-04 19:50+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -124,7 +124,7 @@ msgid "Add to calendar…"
 msgstr "Додати до календаря…"
 
 #: app/ActionsCard.qml:74 app/Main.qml:221 app/TripGroupDelegate.qml:182
-#: app/TripGroupPage.qml:691
+#: app/TripGroupPage.qml:713
 #, kde-format
 msgid "Export…"
 msgstr "Експортувати…"
@@ -175,7 +175,7 @@ msgid "Itinerary file (*.itinerary)"
 msgstr "файл Itinerary (*.itinerary)"
 
 #: app/ActionsCard.qml:173 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:659
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:681
 #, kde-format
 msgid "Actions"
 msgstr "Дії"
@@ -2514,7 +2514,7 @@ msgstr "Перевірити наявність оновлень"
 msgid "Download Maps"
 msgstr "Отримати карти"
 
-#: app/Main.qml:188 app/StatisticsPage.qml:15 app/TripGroupPage.qml:627
+#: app/Main.qml:188 app/StatisticsPage.qml:15 app/TripGroupPage.qml:649
 #, kde-format
 msgid "Statistics"
 msgstr "Статистика"
@@ -3355,7 +3355,7 @@ msgstr "Поїздки"
 #: app/statisticsmodel.cpp:112 app/statisticsmodel.cpp:145
 #: app/statisticsmodel.cpp:160 app/statisticsmodel.cpp:175
 #: app/statisticsmodel.cpp:190 app/statisticsmodel.cpp:205
-#: app/TripGroupPage.qml:634
+#: app/TripGroupPage.qml:656
 #, kde-format
 msgid "Distance"
 msgstr "Відстань"
@@ -3368,7 +3368,7 @@ msgstr "Ночівля у готелях"
 #: app/statisticsmodel.cpp:122 app/statisticsmodel.cpp:150
 #: app/statisticsmodel.cpp:165 app/statisticsmodel.cpp:180
 #: app/statisticsmodel.cpp:195 app/statisticsmodel.cpp:210
-#: app/TripGroupPage.qml:643
+#: app/TripGroupPage.qml:665
 #, kde-format
 msgid "CO₂"
 msgstr "CO₂"
@@ -3595,13 +3595,13 @@ msgstr "Додати подію"
 msgid "Add restaurant…"
 msgstr "Додати ресторан…"
 
-#: app/TimelinePage.qml:166 app/TripGroupPage.qml:723
+#: app/TimelinePage.qml:166 app/TripGroupPage.qml:745
 #, kde-format
 msgctxt "@action:button"
 msgid "Go To Now"
 msgstr "Перейти зараз"
 
-#: app/TimelinePage.qml:173 app/TripGroupPage.qml:731
+#: app/TimelinePage.qml:173 app/TripGroupPage.qml:753
 #: app/TripGroupsPage.qml:118 app/TripGroupsPage.qml:137
 #, kde-format
 msgctxt "@action:button"
@@ -3635,7 +3635,7 @@ msgstr "Як файл GPX…"
 msgid "Export Trip"
 msgstr "Експорт подорожі"
 
-#: app/TimelinePage.qml:493 app/TripGroupPage.qml:600
+#: app/TimelinePage.qml:493 app/TripGroupPage.qml:622
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "У маршрутах на сьогодні даних немає."
@@ -3878,7 +3878,7 @@ msgstr[1] "Дата: %2 (%1 дні)"
 msgstr[2] "Дата: %2 (%1 днів)"
 msgstr[3] "Дата: %2 (%1 день)"
 
-#: app/TripGroupDelegate.qml:116 app/TripGroupPage.qml:440
+#: app/TripGroupDelegate.qml:116 app/TripGroupPage.qml:442
 #: app/WeatherForecastDelegate.qml:48 app/WeatherForecastPage.qml:93
 #, kde-format
 msgctxt "temperature range"
@@ -3900,7 +3900,7 @@ msgstr "%1: несумісні штекери (%2)"
 msgid "%1: no compatible power plugs (%2)"
 msgstr "%1: немає сумісних штекерів (%2)"
 
-#: app/TripGroupDelegate.qml:145 app/TripGroupPage.qml:466
+#: app/TripGroupDelegate.qml:145 app/TripGroupPage.qml:484
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
@@ -3914,7 +3914,7 @@ msgstr[3] "Валюта: %2"
 msgid "Edit…"
 msgstr "Змінити…"
 
-#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:698
+#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:720
 #, kde-format
 msgid "Delete trip"
 msgstr "Вилучити подорож"
@@ -4000,52 +4000,52 @@ msgstr[1] "%1 дні"
 msgstr[2] "%1 днів"
 msgstr[3] "Один день"
 
-#: app/TripGroupPage.qml:454
+#: app/TripGroupPage.qml:467
 #, kde-format
 msgid "Some incompatible power sockets (%1)"
 msgstr "Несумісні розетки (%1)"
 
-#: app/TripGroupPage.qml:456
+#: app/TripGroupPage.qml:469
 #, kde-format
 msgid "Some incompatible power plugs (%1)"
 msgstr "Несумісні штекери (%1)"
 
-#: app/TripGroupPage.qml:459
+#: app/TripGroupPage.qml:472
 #, kde-format
 msgid "No compatible power plugs (%1)"
 msgstr "Немає сумісних штекерів (%1)"
 
-#: app/TripGroupPage.qml:472
+#: app/TripGroupPage.qml:494
 #, kde-format
 msgid "Show map…"
 msgstr "Показати карту…"
 
-#: app/TripGroupPage.qml:479
+#: app/TripGroupPage.qml:501
 #, kde-format
 msgid "Import"
 msgstr "Імпортувати"
 
-#: app/TripGroupPage.qml:493
+#: app/TripGroupPage.qml:515
 #, kde-format
 msgid "Add"
 msgstr "Додати"
 
-#: app/TripGroupPage.qml:652
+#: app/TripGroupPage.qml:674
 #, kde-format
 msgid "Cost"
 msgstr "Вартість"
 
-#: app/TripGroupPage.qml:664
+#: app/TripGroupPage.qml:686
 #, kde-format
 msgid "Rename…"
 msgstr "Перейменувати…"
 
-#: app/TripGroupPage.qml:673
+#: app/TripGroupPage.qml:695
 #, kde-format
 msgid "Merge trips…"
 msgstr "Об'єднати подорожі…"
 
-#: app/TripGroupPage.qml:684
+#: app/TripGroupPage.qml:706
 #, kde-format
 msgid "Split trip…"
 msgstr "Розділена подорож…"

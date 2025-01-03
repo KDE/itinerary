@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-01 02:32+0000\n"
+"POT-Creation-Date: 2025-01-03 02:32+0000\n"
 "PO-Revision-Date: 2024-11-19 20:34+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -124,7 +124,7 @@ msgid "Add to calendar…"
 msgstr "Gehitu egutegira..."
 
 #: app/ActionsCard.qml:74 app/Main.qml:221 app/TripGroupDelegate.qml:182
-#: app/TripGroupPage.qml:691
+#: app/TripGroupPage.qml:713
 #, kde-format
 msgid "Export…"
 msgstr "Esportatu..."
@@ -175,7 +175,7 @@ msgid "Itinerary file (*.itinerary)"
 msgstr "«Itinerary» fitxategia (*.itinerary)"
 
 #: app/ActionsCard.qml:173 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:659
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:681
 #, kde-format
 msgid "Actions"
 msgstr "Ekintzak"
@@ -2502,7 +2502,7 @@ msgstr "Egiaztatu eguneratzeak"
 msgid "Download Maps"
 msgstr "Mapak zama-jaitsi"
 
-#: app/Main.qml:188 app/StatisticsPage.qml:15 app/TripGroupPage.qml:627
+#: app/Main.qml:188 app/StatisticsPage.qml:15 app/TripGroupPage.qml:649
 #, kde-format
 msgid "Statistics"
 msgstr "Estatistikak"
@@ -3335,7 +3335,7 @@ msgstr "Txangoak"
 #: app/statisticsmodel.cpp:112 app/statisticsmodel.cpp:145
 #: app/statisticsmodel.cpp:160 app/statisticsmodel.cpp:175
 #: app/statisticsmodel.cpp:190 app/statisticsmodel.cpp:205
-#: app/TripGroupPage.qml:634
+#: app/TripGroupPage.qml:656
 #, kde-format
 msgid "Distance"
 msgstr "Distantzia"
@@ -3348,7 +3348,7 @@ msgstr "Hotel gauak"
 #: app/statisticsmodel.cpp:122 app/statisticsmodel.cpp:150
 #: app/statisticsmodel.cpp:165 app/statisticsmodel.cpp:180
 #: app/statisticsmodel.cpp:195 app/statisticsmodel.cpp:210
-#: app/TripGroupPage.qml:643
+#: app/TripGroupPage.qml:665
 #, kde-format
 msgid "CO₂"
 msgstr "CO₂"
@@ -3575,13 +3575,13 @@ msgstr "Gehitu ekitaldia..."
 msgid "Add restaurant…"
 msgstr "Gehitu jatetxea..."
 
-#: app/TimelinePage.qml:166 app/TripGroupPage.qml:723
+#: app/TimelinePage.qml:166 app/TripGroupPage.qml:745
 #, kde-format
 msgctxt "@action:button"
 msgid "Go To Now"
 msgstr "Joan orainera"
 
-#: app/TimelinePage.qml:173 app/TripGroupPage.qml:731
+#: app/TimelinePage.qml:173 app/TripGroupPage.qml:753
 #: app/TripGroupsPage.qml:118 app/TripGroupsPage.qml:137
 #, kde-format
 msgctxt "@action:button"
@@ -3615,7 +3615,7 @@ msgstr "GPX fitxategi gisa..."
 msgid "Export Trip"
 msgstr "Esportatu txangoa"
 
-#: app/TimelinePage.qml:493 app/TripGroupPage.qml:600
+#: app/TimelinePage.qml:493 app/TripGroupPage.qml:622
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Ibilbidean gaurko ez dago ezer."
@@ -3856,7 +3856,7 @@ msgid_plural "Date: %2 (%1 days)"
 msgstr[0] "Data: %2 (egun bat)"
 msgstr[1] "Data: %2 (%1 egun)"
 
-#: app/TripGroupDelegate.qml:116 app/TripGroupPage.qml:440
+#: app/TripGroupDelegate.qml:116 app/TripGroupPage.qml:442
 #: app/WeatherForecastDelegate.qml:48 app/WeatherForecastPage.qml:93
 #, kde-format
 msgctxt "temperature range"
@@ -3878,7 +3878,7 @@ msgstr "%1: entxufe ez bateragarri batzuk (%2)"
 msgid "%1: no compatible power plugs (%2)"
 msgstr "%1: entxufe ez bateragarriak (%2)"
 
-#: app/TripGroupDelegate.qml:145 app/TripGroupPage.qml:466
+#: app/TripGroupDelegate.qml:145 app/TripGroupPage.qml:484
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
@@ -3890,7 +3890,7 @@ msgstr[1] "Dibisak: %2"
 msgid "Edit…"
 msgstr "Editatu…"
 
-#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:698
+#: app/TripGroupDelegate.qml:190 app/TripGroupPage.qml:720
 #, kde-format
 msgid "Delete trip"
 msgstr "Ezabatu txangoa"
@@ -3974,52 +3974,52 @@ msgid_plural "%1 days"
 msgstr[0] "Egun bat"
 msgstr[1] "%1 egun"
 
-#: app/TripGroupPage.qml:454
+#: app/TripGroupPage.qml:467
 #, kde-format
 msgid "Some incompatible power sockets (%1)"
 msgstr "Indar-hargune bateraezin batzuk (%1)"
 
-#: app/TripGroupPage.qml:456
+#: app/TripGroupPage.qml:469
 #, kde-format
 msgid "Some incompatible power plugs (%1)"
 msgstr "Indar-hargune bateraezin batzuk (%1)"
 
-#: app/TripGroupPage.qml:459
+#: app/TripGroupPage.qml:472
 #, kde-format
 msgid "No compatible power plugs (%1)"
 msgstr "Indar-hargune bateraezinak (%1)"
 
-#: app/TripGroupPage.qml:472
+#: app/TripGroupPage.qml:494
 #, kde-format
 msgid "Show map…"
 msgstr "Erakutsi mapa..."
 
-#: app/TripGroupPage.qml:479
+#: app/TripGroupPage.qml:501
 #, kde-format
 msgid "Import"
 msgstr "Inportatu"
 
-#: app/TripGroupPage.qml:493
+#: app/TripGroupPage.qml:515
 #, kde-format
 msgid "Add"
 msgstr "Gehitu"
 
-#: app/TripGroupPage.qml:652
+#: app/TripGroupPage.qml:674
 #, kde-format
 msgid "Cost"
 msgstr "Kostua"
 
-#: app/TripGroupPage.qml:664
+#: app/TripGroupPage.qml:686
 #, kde-format
 msgid "Rename…"
 msgstr "Berrizendatu…"
 
-#: app/TripGroupPage.qml:673
+#: app/TripGroupPage.qml:695
 #, kde-format
 msgid "Merge trips…"
 msgstr "Txangoak bateratu..."
 
-#: app/TripGroupPage.qml:684
+#: app/TripGroupPage.qml:706
 #, kde-format
 msgid "Split trip…"
 msgstr "Txangoa zatitu..."
