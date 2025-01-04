@@ -80,9 +80,6 @@ public:
     static bool isBusMode(KPublicTransport::Line::Mode mode);
     static bool isBoatMode(KPublicTransport::Line::Mode mode);
 
-    /** Provide a label that represents @p journeySection. */
-    Q_INVOKABLE QString journeySectionLabel(const KPublicTransport::JourneySection &journeySection) const;
-
     /** Create a KPublicTransport::StopoverRequest for the given KItinerary place. */
     Q_INVOKABLE KPublicTransport::StopoverRequest stopoverRequestForPlace(const QVariant &place, const QDateTime &dt) const;
 

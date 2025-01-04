@@ -110,49 +110,6 @@ QVariant PublicTransport::busStationFromLocation(const KPublicTransport::Locatio
     return PublicTransport::placeFromLocation<KItinerary::BusStation>(loc);
 }
 
-QString PublicTransport::journeySectionLabel(const KPublicTransport::JourneySection &journeySection) const
-{
-    using namespace KPublicTransport;
-    switch (journeySection.mode()) {
-    case JourneySection::Invalid:
-        break;
-    case JourneySection::PublicTransport:
-        return journeySection.route().line().name();
-    case JourneySection::Walking:
-        return i18n("Walk");
-    case JourneySection::Waiting:
-        return i18n("Wait");
-    case JourneySection::Transfer:
-        break; // ?
-    case JourneySection::RentedVehicle:
-        switch (journeySection.rentalVehicle().type()) {
-        case RentalVehicle::Unknown:
-            break;
-        case RentalVehicle::Bicycle:
-        case RentalVehicle::Pedelec:
-            return i18n("Rented bicycle");
-        case RentalVehicle::ElectricMoped:
-            return i18n("Rented moped");
-        case RentalVehicle::ElectricKickScooter:
-            return i18n("Rented kick scooter");
-        case RentalVehicle::Car:
-            return i18n("Rented car");
-        }
-        break;
-    case JourneySection::IndividualTransport:
-        switch (journeySection.individualTransport().mode()) {
-        case IndividualTransport::Bike:
-            return i18n("Bicycle");
-        case IndividualTransport::Car:
-            return i18n("Car");
-        case IndividualTransport::Walk:
-            return i18n("Walk");
-        }
-        break;
-    }
-    return {};
-}
-
 static KItinerary::Ticket clearSeat(KItinerary::Ticket ticket)
 {
     auto seat = ticket.ticketedSeat();

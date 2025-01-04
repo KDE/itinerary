@@ -132,7 +132,7 @@ FormCard.AbstractFormDelegate {
                     iconName: modelData.iconName
                     line: modelData.route.line
                     mode: modelData.mode
-                    modeName: PublicTransport.journeySectionLabel(modelData)
+                    modeName: modelData.label
 
                     Layout.fillWidth: true
                     Layout.maximumWidth: sectionDelegate.modelData.mode === JourneySection.PublicTransport ? Number.POSITIVE_INFINITY : implicitWidth
