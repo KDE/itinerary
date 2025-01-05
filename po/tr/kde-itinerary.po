@@ -1,7 +1,7 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the itinerary package.
 #
-# SPDX-FileCopyrightText: 2022, 2023, 2024 Emir SARI <emir_sari@icloud.com>
+# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025 Emir SARI <emir_sari@icloud.com>
 # Volkan Gezer <volkangezer@gmail.com>, 2021.
 # Emir SARI <emir_sari@icloud.com>, 2023.
 msgid ""
@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-03 02:32+0000\n"
-"PO-Revision-Date: 2024-12-24 12:38+0300\n"
+"PO-Revision-Date: 2025-01-04 15:54+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -2882,22 +2882,22 @@ msgstr "Bekle"
 #: app/publictransport.cpp:133
 #, kde-format
 msgid "Rented bicycle"
-msgstr "Kiralanmış bisiklet"
+msgstr "Kiralık bisiklet"
 
 #: app/publictransport.cpp:135
 #, kde-format
 msgid "Rented moped"
-msgstr "Kiralanmış moped"
+msgstr "Kiralık moped"
 
 #: app/publictransport.cpp:137
 #, kde-format
 msgid "Rented kick scooter"
-msgstr "Kiralanmış mobilet"
+msgstr "Kiralık ayaklı kaykay"
 
 #: app/publictransport.cpp:139
 #, kde-format
 msgid "Rented car"
-msgstr "Kiralanmış araç"
+msgstr "Kiralık araç"
 
 #: app/publictransport.cpp:145
 #, kde-format
