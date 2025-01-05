@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-30 00:42+0000\n"
+"POT-Creation-Date: 2025-01-05 00:41+0000\n"
 "PO-Revision-Date: 2024-12-03 20:46+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -3272,46 +3272,6 @@ msgstr "Programmedlemskap"
 msgid "Show Pass"
 msgstr "Visa pass"
 
-#: app/publictransport.cpp:122 app/publictransport.cpp:149
-#, kde-format
-msgid "Walk"
-msgstr "Gå"
-
-#: app/publictransport.cpp:124
-#, kde-format
-msgid "Wait"
-msgstr "Vänta"
-
-#: app/publictransport.cpp:133
-#, kde-format
-msgid "Rented bicycle"
-msgstr "Hyrcykel"
-
-#: app/publictransport.cpp:135
-#, kde-format
-msgid "Rented moped"
-msgstr "Hyrmoped"
-
-#: app/publictransport.cpp:137
-#, kde-format
-msgid "Rented kick scooter"
-msgstr "Hyrd sparkcykel"
-
-#: app/publictransport.cpp:139
-#, kde-format
-msgid "Rented car"
-msgstr "Hyrbil"
-
-#: app/publictransport.cpp:145
-#, kde-format
-msgid "Bicycle"
-msgstr "Cykel"
-
-#: app/publictransport.cpp:147 app/StatisticsPage.qml:149
-#, kde-format
-msgid "Car"
-msgstr "Bil"
-
 #: app/PublicTransportBackendPage.qml:17
 #, kde-format
 msgid "Public Transport Information Sources"
@@ -3807,6 +3767,11 @@ msgstr "Totalt"
 #, kde-format
 msgid "Train"
 msgstr "Tåg"
+
+#: app/StatisticsPage.qml:149
+#, kde-format
+msgid "Car"
+msgstr "Bil"
 
 #: app/StopPickerPage.qml:27
 #, kde-format
@@ -4693,6 +4658,27 @@ msgstr "Utloggand"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 från %3 till %4 %5"
+
+#~ msgid "Walk"
+#~ msgstr "Gå"
+
+#~ msgid "Wait"
+#~ msgstr "Vänta"
+
+#~ msgid "Rented bicycle"
+#~ msgstr "Hyrcykel"
+
+#~ msgid "Rented moped"
+#~ msgstr "Hyrmoped"
+
+#~ msgid "Rented kick scooter"
+#~ msgstr "Hyrd sparkcykel"
+
+#~ msgid "Rented car"
+#~ msgstr "Hyrbil"
+
+#~ msgid "Bicycle"
+#~ msgstr "Cykel"
 
 #~ msgid "My Itinerary"
 #~ msgstr "Min resplan"

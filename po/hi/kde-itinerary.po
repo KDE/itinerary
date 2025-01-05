@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-30 00:42+0000\n"
+"POT-Creation-Date: 2025-01-05 00:41+0000\n"
 "PO-Revision-Date: 2024-12-15 19:32+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
@@ -3259,46 +3259,6 @@ msgstr "कार्यक्रम सदस्यता"
 msgid "Show Pass"
 msgstr "पास दिखाएं"
 
-#: app/publictransport.cpp:122 app/publictransport.cpp:149
-#, kde-format
-msgid "Walk"
-msgstr "टहलना"
-
-#: app/publictransport.cpp:124
-#, kde-format
-msgid "Wait"
-msgstr "इंतज़ार"
-
-#: app/publictransport.cpp:133
-#, kde-format
-msgid "Rented bicycle"
-msgstr "किराये की साइकिल"
-
-#: app/publictransport.cpp:135
-#, kde-format
-msgid "Rented moped"
-msgstr "किराये पर मोपेड"
-
-#: app/publictransport.cpp:137
-#, kde-format
-msgid "Rented kick scooter"
-msgstr "किराये पर लिया गया किक स्कूटर"
-
-#: app/publictransport.cpp:139
-#, kde-format
-msgid "Rented car"
-msgstr "किराये की कार"
-
-#: app/publictransport.cpp:145
-#, kde-format
-msgid "Bicycle"
-msgstr "साइकिल"
-
-#: app/publictransport.cpp:147 app/StatisticsPage.qml:149
-#, kde-format
-msgid "Car"
-msgstr "कार"
-
 #: app/PublicTransportBackendPage.qml:17
 #, kde-format
 msgid "Public Transport Information Sources"
@@ -3793,6 +3753,11 @@ msgstr "कुल"
 #, kde-format
 msgid "Train"
 msgstr "रेलगाड़ी"
+
+#: app/StatisticsPage.qml:149
+#, kde-format
+msgid "Car"
+msgstr "कार"
 
 #: app/StopPickerPage.qml:27
 #, kde-format
@@ -4677,6 +4642,27 @@ msgstr "बाहर आ गये"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 %3 से %4 तक %5 पर"
+
+#~ msgid "Walk"
+#~ msgstr "टहलना"
+
+#~ msgid "Wait"
+#~ msgstr "इंतज़ार"
+
+#~ msgid "Rented bicycle"
+#~ msgstr "किराये की साइकिल"
+
+#~ msgid "Rented moped"
+#~ msgstr "किराये पर मोपेड"
+
+#~ msgid "Rented kick scooter"
+#~ msgstr "किराये पर लिया गया किक स्कूटर"
+
+#~ msgid "Rented car"
+#~ msgstr "किराये की कार"
+
+#~ msgid "Bicycle"
+#~ msgstr "साइकिल"
 
 #~ msgid "My Itinerary"
 #~ msgstr "मेरा यात्रा कार्यक्रम"

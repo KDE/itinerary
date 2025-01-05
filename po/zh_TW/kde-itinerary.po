@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-30 00:42+0000\n"
+"POT-Creation-Date: 2025-01-05 00:41+0000\n"
 "PO-Revision-Date: 2024-11-28 16:26+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -3278,46 +3278,6 @@ msgstr ""
 msgid "Show Pass"
 msgstr "顯示證明"
 
-#: app/publictransport.cpp:122 app/publictransport.cpp:149
-#, kde-format
-msgid "Walk"
-msgstr "步行"
-
-#: app/publictransport.cpp:124
-#, kde-format
-msgid "Wait"
-msgstr "等待"
-
-#: app/publictransport.cpp:133
-#, kde-format
-msgid "Rented bicycle"
-msgstr "租用的腳踏車"
-
-#: app/publictransport.cpp:135
-#, kde-format
-msgid "Rented moped"
-msgstr ""
-
-#: app/publictransport.cpp:137
-#, kde-format
-msgid "Rented kick scooter"
-msgstr ""
-
-#: app/publictransport.cpp:139
-#, kde-format
-msgid "Rented car"
-msgstr "租用的汽車"
-
-#: app/publictransport.cpp:145
-#, kde-format
-msgid "Bicycle"
-msgstr "腳踏車"
-
-#: app/publictransport.cpp:147 app/StatisticsPage.qml:149
-#, kde-format
-msgid "Car"
-msgstr "汽車"
-
 #: app/PublicTransportBackendPage.qml:17
 #, kde-format
 msgid "Public Transport Information Sources"
@@ -3802,6 +3762,11 @@ msgstr "總計"
 #, kde-format
 msgid "Train"
 msgstr "火車"
+
+#: app/StatisticsPage.qml:149
+#, kde-format
+msgid "Car"
+msgstr "汽車"
 
 #: app/StopPickerPage.qml:27
 #, fuzzy, kde-format
@@ -4711,6 +4676,21 @@ msgstr "登出"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 從 %3 到 %4 於 %5"
+
+#~ msgid "Walk"
+#~ msgstr "步行"
+
+#~ msgid "Wait"
+#~ msgstr "等待"
+
+#~ msgid "Rented bicycle"
+#~ msgstr "租用的腳踏車"
+
+#~ msgid "Rented car"
+#~ msgstr "租用的汽車"
+
+#~ msgid "Bicycle"
+#~ msgstr "腳踏車"
 
 #~ msgid "My Itinerary"
 #~ msgstr "我的旅行計劃"

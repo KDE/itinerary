@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-30 00:42+0000\n"
+"POT-Creation-Date: 2025-01-05 00:41+0000\n"
 "PO-Revision-Date: 2024-12-27 12:00+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -3267,46 +3267,6 @@ msgstr "Adhesion de Programma"
 msgid "Show Pass"
 msgstr "Monstra Pass"
 
-#: app/publictransport.cpp:122 app/publictransport.cpp:149
-#, kde-format
-msgid "Walk"
-msgstr "Promenada"
-
-#: app/publictransport.cpp:124
-#, kde-format
-msgid "Wait"
-msgstr "Pausa"
-
-#: app/publictransport.cpp:133
-#, kde-format
-msgid "Rented bicycle"
-msgstr "Bicycletta locate"
-
-#: app/publictransport.cpp:135
-#, kde-format
-msgid "Rented moped"
-msgstr "Cyclo a motor locate"
-
-#: app/publictransport.cpp:137
-#, kde-format
-msgid "Rented kick scooter"
-msgstr "Monopatin locate"
-
-#: app/publictransport.cpp:139
-#, kde-format
-msgid "Rented car"
-msgstr "Auto de location"
-
-#: app/publictransport.cpp:145
-#, kde-format
-msgid "Bicycle"
-msgstr "Bicycletta"
-
-#: app/publictransport.cpp:147 app/StatisticsPage.qml:149
-#, kde-format
-msgid "Car"
-msgstr "Automobile"
-
 #: app/PublicTransportBackendPage.qml:17
 #, kde-format
 msgid "Public Transport Information Sources"
@@ -3809,6 +3769,11 @@ msgstr "Total"
 #, kde-format
 msgid "Train"
 msgstr "Traino"
+
+#: app/StatisticsPage.qml:149
+#, kde-format
+msgid "Car"
+msgstr "Automobile"
 
 #: app/StopPickerPage.qml:27
 #, kde-format
@@ -4693,6 +4658,27 @@ msgstr "Claude session"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 ex %3 a %4 le %5"
+
+#~ msgid "Walk"
+#~ msgstr "Promenada"
+
+#~ msgid "Wait"
+#~ msgstr "Pausa"
+
+#~ msgid "Rented bicycle"
+#~ msgstr "Bicycletta locate"
+
+#~ msgid "Rented moped"
+#~ msgstr "Cyclo a motor locate"
+
+#~ msgid "Rented kick scooter"
+#~ msgstr "Monopatin locate"
+
+#~ msgid "Rented car"
+#~ msgstr "Auto de location"
+
+#~ msgid "Bicycle"
+#~ msgstr "Bicycletta"
 
 #~ msgid "My Itinerary"
 #~ msgstr "Mi Itinerario"

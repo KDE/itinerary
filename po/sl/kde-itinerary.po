@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-30 00:42+0000\n"
+"POT-Creation-Date: 2025-01-05 00:41+0000\n"
 "PO-Revision-Date: 2024-12-26 08:16+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -3268,46 +3268,6 @@ msgstr "Članstvo v programu"
 msgid "Show Pass"
 msgstr "Prikaži prepustnico"
 
-#: app/publictransport.cpp:122 app/publictransport.cpp:149
-#, kde-format
-msgid "Walk"
-msgstr "Hoja"
-
-#: app/publictransport.cpp:124
-#, kde-format
-msgid "Wait"
-msgstr "Čakanje"
-
-#: app/publictransport.cpp:133
-#, kde-format
-msgid "Rented bicycle"
-msgstr "Najet bicikelj"
-
-#: app/publictransport.cpp:135
-#, kde-format
-msgid "Rented moped"
-msgstr "Najet moped"
-
-#: app/publictransport.cpp:137
-#, kde-format
-msgid "Rented kick scooter"
-msgstr "Najet skuter"
-
-#: app/publictransport.cpp:139
-#, kde-format
-msgid "Rented car"
-msgstr "Najet avto"
-
-#: app/publictransport.cpp:145
-#, kde-format
-msgid "Bicycle"
-msgstr "Bicikelj"
-
-#: app/publictransport.cpp:147 app/StatisticsPage.qml:149
-#, kde-format
-msgid "Car"
-msgstr "Avto"
-
 #: app/PublicTransportBackendPage.qml:17
 #, kde-format
 msgid "Public Transport Information Sources"
@@ -3807,6 +3767,11 @@ msgstr "Skupaj"
 #, kde-format
 msgid "Train"
 msgstr "Vlak"
+
+#: app/StatisticsPage.qml:149
+#, kde-format
+msgid "Car"
+msgstr "Avto"
 
 #: app/StopPickerPage.qml:27
 #, kde-format
@@ -4695,6 +4660,27 @@ msgstr "Odjavljen"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 od %3 do %4 na %5"
+
+#~ msgid "Walk"
+#~ msgstr "Hoja"
+
+#~ msgid "Wait"
+#~ msgstr "Čakanje"
+
+#~ msgid "Rented bicycle"
+#~ msgstr "Najet bicikelj"
+
+#~ msgid "Rented moped"
+#~ msgstr "Najet moped"
+
+#~ msgid "Rented kick scooter"
+#~ msgstr "Najet skuter"
+
+#~ msgid "Rented car"
+#~ msgstr "Najet avto"
+
+#~ msgid "Bicycle"
+#~ msgstr "Bicikelj"
 
 #~ msgid "My Itinerary"
 #~ msgstr "Moj itinerar"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-30 00:42+0000\n"
+"POT-Creation-Date: 2025-01-05 00:41+0000\n"
 "PO-Revision-Date: 2024-12-26 20:15+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -3267,46 +3267,6 @@ msgstr "Programaren bazkidetza"
 msgid "Show Pass"
 msgstr "Erakutsi sarrera"
 
-#: app/publictransport.cpp:122 app/publictransport.cpp:149
-#, kde-format
-msgid "Walk"
-msgstr "Oinez"
-
-#: app/publictransport.cpp:124
-#, kde-format
-msgid "Wait"
-msgstr "Itxoin"
-
-#: app/publictransport.cpp:133
-#, kde-format
-msgid "Rented bicycle"
-msgstr "Alokairuko bizikleta"
-
-#: app/publictransport.cpp:135
-#, kde-format
-msgid "Rented moped"
-msgstr "Alokairuko ziklomotorra"
-
-#: app/publictransport.cpp:137
-#, kde-format
-msgid "Rented kick scooter"
-msgstr "Alokairuko patinete elektrikoa"
-
-#: app/publictransport.cpp:139
-#, kde-format
-msgid "Rented car"
-msgstr "Alokairuko autoa"
-
-#: app/publictransport.cpp:145
-#, kde-format
-msgid "Bicycle"
-msgstr "Bizikleta"
-
-#: app/publictransport.cpp:147 app/StatisticsPage.qml:149
-#, kde-format
-msgid "Car"
-msgstr "Autoa"
-
 #: app/PublicTransportBackendPage.qml:17
 #, kde-format
 msgid "Public Transport Information Sources"
@@ -3805,6 +3765,11 @@ msgstr "Guztira"
 #, kde-format
 msgid "Train"
 msgstr "Trena"
+
+#: app/StatisticsPage.qml:149
+#, kde-format
+msgid "Car"
+msgstr "Autoa"
 
 #: app/StopPickerPage.qml:27
 #, kde-format
@@ -4691,6 +4656,27 @@ msgstr "Saiotik aterata"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 %3(e)tik %4(e)ra %5(e)an"
+
+#~ msgid "Walk"
+#~ msgstr "Oinez"
+
+#~ msgid "Wait"
+#~ msgstr "Itxoin"
+
+#~ msgid "Rented bicycle"
+#~ msgstr "Alokairuko bizikleta"
+
+#~ msgid "Rented moped"
+#~ msgstr "Alokairuko ziklomotorra"
+
+#~ msgid "Rented kick scooter"
+#~ msgstr "Alokairuko patinete elektrikoa"
+
+#~ msgid "Rented car"
+#~ msgstr "Alokairuko autoa"
+
+#~ msgid "Bicycle"
+#~ msgstr "Bizikleta"
 
 #~ msgid "My Itinerary"
 #~ msgstr "Nire ibilbidea"

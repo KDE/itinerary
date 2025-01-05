@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-30 00:42+0000\n"
+"POT-Creation-Date: 2025-01-05 00:41+0000\n"
 "PO-Revision-Date: 2024-12-01 14:37+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -3273,46 +3273,6 @@ msgstr "Ohjelman jäsenyys"
 msgid "Show Pass"
 msgstr "Näytä ohjelmakortti"
 
-#: app/publictransport.cpp:122 app/publictransport.cpp:149
-#, kde-format
-msgid "Walk"
-msgstr "Kävely"
-
-#: app/publictransport.cpp:124
-#, kde-format
-msgid "Wait"
-msgstr "Odota"
-
-#: app/publictransport.cpp:133
-#, kde-format
-msgid "Rented bicycle"
-msgstr "Vuokrapolkupyörä"
-
-#: app/publictransport.cpp:135
-#, kde-format
-msgid "Rented moped"
-msgstr "Vuokramopo"
-
-#: app/publictransport.cpp:137
-#, kde-format
-msgid "Rented kick scooter"
-msgstr "Vuokrapotkulauta"
-
-#: app/publictransport.cpp:139
-#, kde-format
-msgid "Rented car"
-msgstr "Vuokra-auto"
-
-#: app/publictransport.cpp:145
-#, kde-format
-msgid "Bicycle"
-msgstr "Polkupyörä"
-
-#: app/publictransport.cpp:147 app/StatisticsPage.qml:149
-#, kde-format
-msgid "Car"
-msgstr "Auto"
-
 #: app/PublicTransportBackendPage.qml:17
 #, kde-format
 msgid "Public Transport Information Sources"
@@ -3812,6 +3772,11 @@ msgstr "Kaikkiaan"
 #, kde-format
 msgid "Train"
 msgstr "Juna"
+
+#: app/StatisticsPage.qml:149
+#, kde-format
+msgid "Car"
+msgstr "Auto"
 
 #: app/StopPickerPage.qml:27
 #, kde-format
@@ -4696,6 +4661,27 @@ msgstr "Kirjauduttu ulos"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 portilta %3 portille %4 %5"
+
+#~ msgid "Walk"
+#~ msgstr "Kävely"
+
+#~ msgid "Wait"
+#~ msgstr "Odota"
+
+#~ msgid "Rented bicycle"
+#~ msgstr "Vuokrapolkupyörä"
+
+#~ msgid "Rented moped"
+#~ msgstr "Vuokramopo"
+
+#~ msgid "Rented kick scooter"
+#~ msgstr "Vuokrapotkulauta"
+
+#~ msgid "Rented car"
+#~ msgstr "Vuokra-auto"
+
+#~ msgid "Bicycle"
+#~ msgstr "Polkupyörä"
 
 #~ msgid "My Itinerary"
 #~ msgstr "Matkasuunnitelmani"

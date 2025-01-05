@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-30 00:42+0000\n"
+"POT-Creation-Date: 2025-01-05 00:41+0000\n"
 "PO-Revision-Date: 2024-11-16 12:52+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -3298,46 +3298,6 @@ msgstr "Program Membership"
 msgid "Show Pass"
 msgstr "Show Pass"
 
-#: app/publictransport.cpp:122 app/publictransport.cpp:149
-#, kde-format
-msgid "Walk"
-msgstr "Walk"
-
-#: app/publictransport.cpp:124
-#, kde-format
-msgid "Wait"
-msgstr "Wait"
-
-#: app/publictransport.cpp:133
-#, kde-format
-msgid "Rented bicycle"
-msgstr "Rented bicycle"
-
-#: app/publictransport.cpp:135
-#, kde-format
-msgid "Rented moped"
-msgstr "Rented moped"
-
-#: app/publictransport.cpp:137
-#, kde-format
-msgid "Rented kick scooter"
-msgstr "Rented kick scooter"
-
-#: app/publictransport.cpp:139
-#, kde-format
-msgid "Rented car"
-msgstr "Rented car"
-
-#: app/publictransport.cpp:145
-#, kde-format
-msgid "Bicycle"
-msgstr "Bicycle"
-
-#: app/publictransport.cpp:147 app/StatisticsPage.qml:149
-#, kde-format
-msgid "Car"
-msgstr "Car"
-
 #: app/PublicTransportBackendPage.qml:17
 #, kde-format
 msgid "Public Transport Information Sources"
@@ -3835,6 +3795,11 @@ msgstr "Total"
 #, kde-format
 msgid "Train"
 msgstr "Train"
+
+#: app/StatisticsPage.qml:149
+#, kde-format
+msgid "Car"
+msgstr "Car"
 
 #: app/StopPickerPage.qml:27
 #, kde-format
@@ -4720,6 +4685,27 @@ msgstr "Logged out"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 from %3 to %4 on %5"
+
+#~ msgid "Walk"
+#~ msgstr "Walk"
+
+#~ msgid "Wait"
+#~ msgstr "Wait"
+
+#~ msgid "Rented bicycle"
+#~ msgstr "Rented bicycle"
+
+#~ msgid "Rented moped"
+#~ msgstr "Rented moped"
+
+#~ msgid "Rented kick scooter"
+#~ msgstr "Rented kick scooter"
+
+#~ msgid "Rented car"
+#~ msgstr "Rented car"
+
+#~ msgid "Bicycle"
+#~ msgstr "Bicycle"
 
 #~ msgid "My Itinerary"
 #~ msgstr "My Itinerary"

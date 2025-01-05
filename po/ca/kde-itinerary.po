@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-30 00:42+0000\n"
+"POT-Creation-Date: 2025-01-05 00:41+0000\n"
 "PO-Revision-Date: 2024-12-26 10:52+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -3272,46 +3272,6 @@ msgstr "Programa d'afiliació"
 msgid "Show Pass"
 msgstr "Mostra el passi"
 
-#: app/publictransport.cpp:122 app/publictransport.cpp:149
-#, kde-format
-msgid "Walk"
-msgstr "Caminar"
-
-#: app/publictransport.cpp:124
-#, kde-format
-msgid "Wait"
-msgstr "Esperar"
-
-#: app/publictransport.cpp:133
-#, kde-format
-msgid "Rented bicycle"
-msgstr "Bicicleta llogada"
-
-#: app/publictransport.cpp:135
-#, kde-format
-msgid "Rented moped"
-msgstr "Ciclomotor llogat"
-
-#: app/publictransport.cpp:137
-#, kde-format
-msgid "Rented kick scooter"
-msgstr "Patinet elèctric llogat"
-
-#: app/publictransport.cpp:139
-#, kde-format
-msgid "Rented car"
-msgstr "Cotxe llogat"
-
-#: app/publictransport.cpp:145
-#, kde-format
-msgid "Bicycle"
-msgstr "Bicicleta"
-
-#: app/publictransport.cpp:147 app/StatisticsPage.qml:149
-#, kde-format
-msgid "Car"
-msgstr "Cotxe"
-
 #: app/PublicTransportBackendPage.qml:17
 #, kde-format
 msgid "Public Transport Information Sources"
@@ -3815,6 +3775,11 @@ msgstr "Total"
 #, kde-format
 msgid "Train"
 msgstr "Tren"
+
+#: app/StatisticsPage.qml:149
+#, kde-format
+msgid "Car"
+msgstr "Cotxe"
 
 #: app/StopPickerPage.qml:27
 #, kde-format
@@ -4701,6 +4666,27 @@ msgstr "Ha finalitzat la sessió"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 des de %3 a %4 el %5"
+
+#~ msgid "Walk"
+#~ msgstr "Caminar"
+
+#~ msgid "Wait"
+#~ msgstr "Esperar"
+
+#~ msgid "Rented bicycle"
+#~ msgstr "Bicicleta llogada"
+
+#~ msgid "Rented moped"
+#~ msgstr "Ciclomotor llogat"
+
+#~ msgid "Rented kick scooter"
+#~ msgstr "Patinet elèctric llogat"
+
+#~ msgid "Rented car"
+#~ msgstr "Cotxe llogat"
+
+#~ msgid "Bicycle"
+#~ msgstr "Bicicleta"
 
 #~ msgid "My Itinerary"
 #~ msgstr "El meu itinerari"

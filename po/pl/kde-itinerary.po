@@ -1,13 +1,13 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the itinerary package.
+# SPDX-FileCopyrightText: 2019, 2020, 2021, 2022, 2023, 2024, 2025 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
 #
-# SPDX-FileCopyrightText: 2019, 2020, 2021, 2022, 2023, 2024 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-30 00:42+0000\n"
-"PO-Revision-Date: 2024-11-30 09:07+0100\n"
+"POT-Creation-Date: 2025-01-05 00:41+0000\n"
+"PO-Revision-Date: 2025-01-04 07:35+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 24.08.3\n"
+"X-Generator: Lokalize 24.12.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -507,15 +507,13 @@ msgid "Bus"
 msgstr "Autobus"
 
 #: app/BusDelegate.qml:52 app/BusDelegate.qml:220
-#, fuzzy, kde-format
-#| msgid "Platform change on %1"
+#, kde-format
 msgctxt "bus station platform"
 msgid "Platform changed to %1"
 msgstr "Zmiana platformy na %1"
 
 #: app/BusDelegate.qml:54 app/BusDelegate.qml:222
-#, fuzzy, kde-format
-#| msgid "Platform %1"
+#, kde-format
 msgctxt "bus station platform"
 msgid "Platform %1"
 msgstr "Platforma %1"
@@ -540,8 +538,7 @@ msgid "0 intermediate stop (%1)"
 msgstr "0 pośrednich przystanków (%1)"
 
 #: app/BusDelegate.qml:237 app/TrainDelegate.qml:248
-#, fuzzy, kde-format
-#| msgid "%1 to %2"
+#, kde-format
 msgctxt "from location 1 to location 2"
 msgid "%1 to %2"
 msgstr "%1 do %2"
@@ -1089,11 +1086,10 @@ msgid "Seat: <b>%1</b>"
 msgstr "Miejsce: <b>%1</b>"
 
 #: app/FlightDelegate.qml:98
-#, fuzzy, kde-format
-#| msgid "Terminal"
+#, kde-format
 msgctxt "airport terminal"
 msgid "Terminal %1"
-msgstr "Terminal"
+msgstr "Terminal %1"
 
 #: app/FlightDelegate.qml:102
 #, kde-format
@@ -1512,23 +1508,20 @@ msgid "Recovery certificate valid"
 msgstr "Certyfikat ozdrowienia ważny"
 
 #: app/healthcertificatemanager.cpp:145
-#, fuzzy, kde-format
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "health certificate"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: app/healthcertificatemanager.cpp:154
-#, fuzzy, kde-format
-#| msgid "Vaccination %1/%2 (%3)"
+#, kde-format
 msgid "Vaccination for %1 (%2/%3)"
-msgstr "Szczepienie %1/%2 (%3)"
+msgstr "Szczepienie na %1 (%2/%3)"
 
 #: app/healthcertificatemanager.cpp:157
-#, fuzzy, kde-format
-#| msgid "Vaccination (%1)"
+#, kde-format
 msgid "Vaccination for %1"
-msgstr "Szczepienie (%1)"
+msgstr "Szczepienie ma %1"
 
 #: app/healthcertificatemanager.cpp:159 app/HealthCertificateVaccination.qml:47
 #, kde-format
@@ -1536,16 +1529,14 @@ msgid "Vaccination"
 msgstr "Szczepienie"
 
 #: app/healthcertificatemanager.cpp:163
-#, fuzzy, kde-format
-#| msgid "Test %1 (%2)"
+#, kde-format
 msgid "Test %1 for %2"
-msgstr "Badanie %1 (%2)"
+msgstr "Badanie %1 przez %2"
 
 #: app/healthcertificatemanager.cpp:169
-#, fuzzy, kde-format
-#| msgid "Recovery (%1)"
+#, kde-format
 msgid "Recovery %1 for %2"
-msgstr "Zdrowienie (%1)"
+msgstr "Zdrowienie %1 przez %2"
 
 #: app/HealthCertificatePage.qml:19
 #, kde-format
@@ -2553,12 +2544,10 @@ msgid "Help"
 msgstr "Pomoc"
 
 #: app/Main.qml:267
-#, fuzzy, kde-format
-#| msgid "Wi-Fi access for onboard information is available."
+#, kde-format
 msgctxt "@info:status"
 msgid "No onboard information available."
-msgstr ""
-"Dostęp do Wi-Fi w celach dowiedzenia się o karcie pokładowej jest dostępny."
+msgstr "Nie znaleziono żadnych szczegółów o wejściu na pokład."
 
 #: app/Main.qml:309
 #, kde-format
@@ -2893,56 +2882,49 @@ msgstr "Odstępy"
 #, kde-format
 msgctxt "@title"
 msgid "My Data"
-msgstr ""
+msgstr "Moje dane"
 
 #: app/MyDataPage.qml:27
-#, fuzzy, kde-format
-#| msgid "Passes and Programs"
+#, kde-format
 msgctxt "@title"
 msgid "Passes and Programs"
 msgstr "Wejściówki i programy"
 
 #: app/MyDataPage.qml:34
-#, fuzzy, kde-format
-#| msgid "Import bonus or discount program cards or flat rate passes."
+#, kde-format
 msgid "No valid bonus or discount program cards or flat rate passes found."
 msgstr ""
-"Zaimportuj karty programów bonusowych, opustowych lub wejściówki na zasadach "
-"stałej stawki."
+"Nie znaleziono żadnej karty zniżkowej, czy programu bonusowego, czy "
+"okresowej."
 
 #: app/MyDataPage.qml:52
 #, kde-format
 msgctxt "@action:button"
 msgid "Manage your Passes"
-msgstr ""
+msgstr "Zarządzaj swoimi kartami"
 
 #: app/MyDataPage.qml:59
-#, fuzzy, kde-format
-#| msgid "Health Certificates"
+#, kde-format
 msgctxt "@title"
 msgid "Health Certificates"
 msgstr "Certyfikaty zdrowia"
 
 #: app/MyDataPage.qml:69
-#, fuzzy, kde-format
-#| msgid "One health certificate imported."
-#| msgid_plural "%1 health certificates imported."
+#, kde-format
 msgid "No valid health certificate found."
-msgstr "Zaimportowano jeden certyfikat zdrowia."
+msgstr "Nie znaleziono żadnego certyfikatu zdrowia."
 
 #: app/MyDataPage.qml:100
-#, fuzzy, kde-format
-#| msgid "Health Certificates"
+#, kde-format
 msgctxt "@action:button"
 msgid "Manage your health certificates"
-msgstr "Certyfikaty zdrowia"
+msgstr "Zarządzaj swoimi certyfikatami zdrowia"
 
 #: app/MyDataPage.qml:108
-#, fuzzy, kde-format
-#| msgid "Favorite Locations"
+#, kde-format
 msgctxt "@title:group"
 msgid "Saved Locations"
-msgstr "Ulubione miejsca"
+msgstr "Zapisane miejsca"
 
 #: app/MyDataPage.qml:113
 #, kde-format
@@ -2955,28 +2937,25 @@ msgid "Statistics"
 msgstr "Statystyki"
 
 #: app/MyDataPage.qml:180
-#, fuzzy, kde-format
-#| msgid "Statistics"
+#, kde-format
 msgctxt "@action:button"
 msgid "See all Statistics"
-msgstr "Statystyki"
+msgstr "Obejrzyj wszystkie statystyki"
 
 #: app/MyDataPage.qml:190
 #, kde-format
 msgctxt "@title:group"
 msgid "Data Portability"
-msgstr ""
+msgstr "Przenośność danych"
 
 #: app/MyDataPage.qml:195
-#, fuzzy, kde-format
-#| msgid "Import"
+#, kde-format
 msgctxt "@action:button"
 msgid "Import"
 msgstr "Zaimportuj"
 
 #: app/MyDataPage.qml:203
-#, fuzzy, kde-format
-#| msgid "Export"
+#, kde-format
 msgctxt "@action:button"
 msgid "Export"
 msgstr "Wyeksportuj"
@@ -3002,7 +2981,7 @@ msgstr "Plan podróży"
 #, kde-format
 msgctxt "@title:tab"
 msgid "My Data"
-msgstr ""
+msgstr "Moje dane"
 
 #: app/NavigationBar.qml:47
 #, kde-format
@@ -3145,24 +3124,22 @@ msgid "Passes and Programs"
 msgstr "Wejściówki i programy"
 
 #: app/PassPage.qml:21
-#, fuzzy, kde-format
-#| msgid "Add Program Membership…"
+#, kde-format
 msgctxt "@title"
 msgid "Add Program Membership"
-msgstr "Dodaj członkostwo w programie…"
+msgstr "Dodaj członkostwo w programie"
 
 #: app/PassPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Import from GPX"
+#, kde-format
 msgctxt "@action:button"
 msgid "Import From File"
-msgstr "Zaimportuj z GPX"
+msgstr "Zaimportuj z pliku"
 
 #: app/PassPage.qml:34
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Manually"
-msgstr ""
+msgstr "Dodaj ręcznie"
 
 #: app/PassPage.qml:48
 #, kde-format
@@ -3287,46 +3264,6 @@ msgstr "Członkostwo w programie"
 #, kde-format
 msgid "Show Pass"
 msgstr "Pokaż wejściówkę"
-
-#: app/publictransport.cpp:122 app/publictransport.cpp:149
-#, kde-format
-msgid "Walk"
-msgstr "Pieszo"
-
-#: app/publictransport.cpp:124
-#, kde-format
-msgid "Wait"
-msgstr "Oczekiwanie"
-
-#: app/publictransport.cpp:133
-#, kde-format
-msgid "Rented bicycle"
-msgstr "Rower z wypożyczalni"
-
-#: app/publictransport.cpp:135
-#, kde-format
-msgid "Rented moped"
-msgstr "Skuter z wypożyczalni"
-
-#: app/publictransport.cpp:137
-#, kde-format
-msgid "Rented kick scooter"
-msgstr "Hulajnoga z wypożyczalni"
-
-#: app/publictransport.cpp:139
-#, kde-format
-msgid "Rented car"
-msgstr "Samochód z wypożyczalni"
-
-#: app/publictransport.cpp:145
-#, kde-format
-msgid "Bicycle"
-msgstr "Rower"
-
-#: app/publictransport.cpp:147 app/StatisticsPage.qml:149
-#, kde-format
-msgid "Car"
-msgstr "Samochód"
 
 #: app/PublicTransportBackendPage.qml:17
 #, kde-format
@@ -3830,6 +3767,11 @@ msgstr "Razem"
 msgid "Train"
 msgstr "Pociąg"
 
+#: app/StatisticsPage.qml:149
+#, kde-format
+msgid "Car"
+msgstr "Samochód"
+
 #: app/StopPickerPage.qml:27
 #, kde-format
 msgid "Clear History"
@@ -4014,15 +3956,13 @@ msgid "Arrival Time"
 msgstr "Czas przybycia"
 
 #: app/TrainDelegate.qml:45 app/TrainDelegate.qml:230
-#, fuzzy, kde-format
-#| msgid "Platform change on %1"
+#, kde-format
 msgctxt "train station platform"
 msgid "Platform changed to %1"
 msgstr "Zmiana platformy na %1"
 
 #: app/TrainDelegate.qml:47 app/TrainDelegate.qml:232
-#, fuzzy, kde-format
-#| msgid "Platform %1"
+#, kde-format
 msgctxt "train station platform"
 msgid "Platform %1"
 msgstr "Platforma %1"
@@ -4716,6 +4656,27 @@ msgstr "Wylogowany"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 z %3 do %4 o czasie %5"
+
+#~ msgid "Walk"
+#~ msgstr "Pieszo"
+
+#~ msgid "Wait"
+#~ msgstr "Oczekiwanie"
+
+#~ msgid "Rented bicycle"
+#~ msgstr "Rower z wypożyczalni"
+
+#~ msgid "Rented moped"
+#~ msgstr "Skuter z wypożyczalni"
+
+#~ msgid "Rented kick scooter"
+#~ msgstr "Hulajnoga z wypożyczalni"
+
+#~ msgid "Rented car"
+#~ msgstr "Samochód z wypożyczalni"
+
+#~ msgid "Bicycle"
+#~ msgstr "Rower"
 
 #~ msgid "My Itinerary"
 #~ msgstr "Mój plan podróży"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-30 00:42+0000\n"
+"POT-Creation-Date: 2025-01-05 00:41+0000\n"
 "PO-Revision-Date: 2024-12-27 23:54+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -3229,46 +3229,6 @@ msgstr "Programo-Membreco"
 msgid "Show Pass"
 msgstr "Montri Legitimilon"
 
-#: app/publictransport.cpp:122 app/publictransport.cpp:149
-#, kde-format
-msgid "Walk"
-msgstr "Promeni"
-
-#: app/publictransport.cpp:124
-#, kde-format
-msgid "Wait"
-msgstr "Atendi"
-
-#: app/publictransport.cpp:133
-#, kde-format
-msgid "Rented bicycle"
-msgstr "Luita biciklo"
-
-#: app/publictransport.cpp:135
-#, kde-format
-msgid "Rented moped"
-msgstr "Luita mopedo"
-
-#: app/publictransport.cpp:137
-#, kde-format
-msgid "Rented kick scooter"
-msgstr "Luita piedskotero"
-
-#: app/publictransport.cpp:139
-#, kde-format
-msgid "Rented car"
-msgstr "Luita aŭto"
-
-#: app/publictransport.cpp:145
-#, kde-format
-msgid "Bicycle"
-msgstr "Biciklo"
-
-#: app/publictransport.cpp:147 app/StatisticsPage.qml:149
-#, kde-format
-msgid "Car"
-msgstr "Aŭto"
-
 #: app/PublicTransportBackendPage.qml:17
 #, kde-format
 msgid "Public Transport Information Sources"
@@ -3766,6 +3726,11 @@ msgstr "Entute"
 #, kde-format
 msgid "Train"
 msgstr "Trajno"
+
+#: app/StatisticsPage.qml:149
+#, kde-format
+msgid "Car"
+msgstr "Aŭto"
 
 #: app/StopPickerPage.qml:27
 #, kde-format
@@ -4649,3 +4614,24 @@ msgstr "Elsalutita"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 de %3 al %4 je %5"
+
+#~ msgid "Walk"
+#~ msgstr "Promeni"
+
+#~ msgid "Wait"
+#~ msgstr "Atendi"
+
+#~ msgid "Rented bicycle"
+#~ msgstr "Luita biciklo"
+
+#~ msgid "Rented moped"
+#~ msgstr "Luita mopedo"
+
+#~ msgid "Rented kick scooter"
+#~ msgstr "Luita piedskotero"
+
+#~ msgid "Rented car"
+#~ msgstr "Luita aŭto"
+
+#~ msgid "Bicycle"
+#~ msgstr "Biciklo"

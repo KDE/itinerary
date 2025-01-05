@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-30 00:42+0000\n"
+"POT-Creation-Date: 2025-01-05 00:41+0000\n"
 "PO-Revision-Date: 2024-12-29 22:55+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -3231,46 +3231,6 @@ msgstr "कार्यक्रम सदस्यता"
 msgid "Show Pass"
 msgstr "पास दर्शयतु"
 
-#: app/publictransport.cpp:122 app/publictransport.cpp:149
-#, kde-format
-msgid "Walk"
-msgstr "अटतु"
-
-#: app/publictransport.cpp:124
-#, kde-format
-msgid "Wait"
-msgstr "प्रतीक्षतु"
-
-#: app/publictransport.cpp:133
-#, kde-format
-msgid "Rented bicycle"
-msgstr "भाडे सायकल"
-
-#: app/publictransport.cpp:135
-#, kde-format
-msgid "Rented moped"
-msgstr "किराये मोपेड"
-
-#: app/publictransport.cpp:137
-#, kde-format
-msgid "Rented kick scooter"
-msgstr "किराये किक स्कूटर"
-
-#: app/publictransport.cpp:139
-#, kde-format
-msgid "Rented car"
-msgstr "भाडे कारः"
-
-#: app/publictransport.cpp:145
-#, kde-format
-msgid "Bicycle"
-msgstr "द्विचक्रिका"
-
-#: app/publictransport.cpp:147 app/StatisticsPage.qml:149
-#, kde-format
-msgid "Car"
-msgstr "कारयानम्‌"
-
 #: app/PublicTransportBackendPage.qml:17
 #, kde-format
 msgid "Public Transport Information Sources"
@@ -3765,6 +3725,11 @@ msgstr "कुल"
 #, kde-format
 msgid "Train"
 msgstr "रेलयानम्‌"
+
+#: app/StatisticsPage.qml:149
+#, kde-format
+msgid "Car"
+msgstr "कारयानम्‌"
 
 #: app/StopPickerPage.qml:27
 #, kde-format
@@ -4647,6 +4612,27 @@ msgstr "लॉग आउट् कृतवान्"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 %3 तः %4 पर्यन्तं %5 पर्यन्तम्"
+
+#~ msgid "Walk"
+#~ msgstr "अटतु"
+
+#~ msgid "Wait"
+#~ msgstr "प्रतीक्षतु"
+
+#~ msgid "Rented bicycle"
+#~ msgstr "भाडे सायकल"
+
+#~ msgid "Rented moped"
+#~ msgstr "किराये मोपेड"
+
+#~ msgid "Rented kick scooter"
+#~ msgstr "किराये किक स्कूटर"
+
+#~ msgid "Rented car"
+#~ msgstr "भाडे कारः"
+
+#~ msgid "Bicycle"
+#~ msgstr "द्विचक्रिका"
 
 #~ msgid "My Itinerary"
 #~ msgstr "मम यात्रासूची"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-30 00:42+0000\n"
+"POT-Creation-Date: 2025-01-05 00:41+0000\n"
 "PO-Revision-Date: 2023-05-11 10:49+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -3280,46 +3280,6 @@ msgstr ""
 msgid "Show Pass"
 msgstr "تمريران"
 
-#: app/publictransport.cpp:122 app/publictransport.cpp:149
-#, kde-format
-msgid "Walk"
-msgstr ""
-
-#: app/publictransport.cpp:124
-#, kde-format
-msgid "Wait"
-msgstr ""
-
-#: app/publictransport.cpp:133
-#, kde-format
-msgid "Rented bicycle"
-msgstr ""
-
-#: app/publictransport.cpp:135
-#, kde-format
-msgid "Rented moped"
-msgstr ""
-
-#: app/publictransport.cpp:137
-#, kde-format
-msgid "Rented kick scooter"
-msgstr ""
-
-#: app/publictransport.cpp:139
-#, kde-format
-msgid "Rented car"
-msgstr ""
-
-#: app/publictransport.cpp:145
-#, kde-format
-msgid "Bicycle"
-msgstr "درّاجة هوائيّة"
-
-#: app/publictransport.cpp:147 app/StatisticsPage.qml:149
-#, fuzzy, kde-format
-msgid "Car"
-msgstr "سيارة"
-
 #: app/PublicTransportBackendPage.qml:17
 #, kde-format
 msgid "Public Transport Information Sources"
@@ -3803,6 +3763,11 @@ msgstr "المجموع"
 #, kde-format
 msgid "Train"
 msgstr "قطار"
+
+#: app/StatisticsPage.qml:149
+#, fuzzy, kde-format
+msgid "Car"
+msgstr "سيارة"
 
 #: app/StopPickerPage.qml:27
 #, fuzzy, kde-format
@@ -4713,6 +4678,9 @@ msgstr ""
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr ""
+
+#~ msgid "Bicycle"
+#~ msgstr "درّاجة هوائيّة"
 
 #, fuzzy
 #~| msgid "Restaurant"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-30 00:42+0000\n"
+"POT-Creation-Date: 2025-01-05 00:41+0000\n"
 "PO-Revision-Date: 2024-12-24 16:45+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -3224,46 +3224,6 @@ msgstr "프로그램 멤버십"
 msgid "Show Pass"
 msgstr "패스 표시"
 
-#: app/publictransport.cpp:122 app/publictransport.cpp:149
-#, kde-format
-msgid "Walk"
-msgstr "걷기"
-
-#: app/publictransport.cpp:124
-#, kde-format
-msgid "Wait"
-msgstr "대기"
-
-#: app/publictransport.cpp:133
-#, kde-format
-msgid "Rented bicycle"
-msgstr "대여한 자전거"
-
-#: app/publictransport.cpp:135
-#, kde-format
-msgid "Rented moped"
-msgstr "대여한 모페드"
-
-#: app/publictransport.cpp:137
-#, kde-format
-msgid "Rented kick scooter"
-msgstr "대여한 킥 스쿠터"
-
-#: app/publictransport.cpp:139
-#, kde-format
-msgid "Rented car"
-msgstr "렌터카"
-
-#: app/publictransport.cpp:145
-#, kde-format
-msgid "Bicycle"
-msgstr "자전거"
-
-#: app/publictransport.cpp:147 app/StatisticsPage.qml:149
-#, kde-format
-msgid "Car"
-msgstr "자동차"
-
 #: app/PublicTransportBackendPage.qml:17
 #, kde-format
 msgid "Public Transport Information Sources"
@@ -3755,6 +3715,11 @@ msgstr "합계"
 #, kde-format
 msgid "Train"
 msgstr "기차"
+
+#: app/StatisticsPage.qml:149
+#, kde-format
+msgid "Car"
+msgstr "자동차"
 
 #: app/StopPickerPage.qml:27
 #, kde-format
@@ -4634,6 +4599,27 @@ msgstr "로그아웃함"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%5에 %3에서 %4(으)로 가는 %1%2|/|%5에 %3에서 %4$[으 %4]로 가는 %1%2"
+
+#~ msgid "Walk"
+#~ msgstr "걷기"
+
+#~ msgid "Wait"
+#~ msgstr "대기"
+
+#~ msgid "Rented bicycle"
+#~ msgstr "대여한 자전거"
+
+#~ msgid "Rented moped"
+#~ msgstr "대여한 모페드"
+
+#~ msgid "Rented kick scooter"
+#~ msgstr "대여한 킥 스쿠터"
+
+#~ msgid "Rented car"
+#~ msgstr "렌터카"
+
+#~ msgid "Bicycle"
+#~ msgstr "자전거"
 
 #~ msgid "My Itinerary"
 #~ msgstr "내 여정"

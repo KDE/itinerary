@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-30 00:42+0000\n"
+"POT-Creation-Date: 2025-01-05 00:41+0000\n"
 "PO-Revision-Date: 2024-11-15 12:21+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -3289,46 +3289,6 @@ msgstr "Участие в программе"
 msgid "Show Pass"
 msgstr "Показать пропуск"
 
-#: app/publictransport.cpp:122 app/publictransport.cpp:149
-#, kde-format
-msgid "Walk"
-msgstr "Переход"
-
-#: app/publictransport.cpp:124
-#, kde-format
-msgid "Wait"
-msgstr "Ожидание"
-
-#: app/publictransport.cpp:133
-#, kde-format
-msgid "Rented bicycle"
-msgstr "Арендованный велосипед"
-
-#: app/publictransport.cpp:135
-#, kde-format
-msgid "Rented moped"
-msgstr "Арендованный мопед"
-
-#: app/publictransport.cpp:137
-#, kde-format
-msgid "Rented kick scooter"
-msgstr "Арендованный самокат"
-
-#: app/publictransport.cpp:139
-#, kde-format
-msgid "Rented car"
-msgstr "Арендованный автомобиль"
-
-#: app/publictransport.cpp:145
-#, kde-format
-msgid "Bicycle"
-msgstr "Велосипед"
-
-#: app/publictransport.cpp:147 app/StatisticsPage.qml:149
-#, kde-format
-msgid "Car"
-msgstr "Автомобиль"
-
 #: app/PublicTransportBackendPage.qml:17
 #, kde-format
 msgid "Public Transport Information Sources"
@@ -3835,6 +3795,11 @@ msgstr "Всего"
 #, kde-format
 msgid "Train"
 msgstr "Железная дорога"
+
+#: app/StatisticsPage.qml:149
+#, kde-format
+msgid "Car"
+msgstr "Автомобиль"
 
 #: app/StopPickerPage.qml:27
 #, kde-format
@@ -4726,6 +4691,27 @@ msgstr "Завершить сеанс"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 из %3 в %4 %5"
+
+#~ msgid "Walk"
+#~ msgstr "Переход"
+
+#~ msgid "Wait"
+#~ msgstr "Ожидание"
+
+#~ msgid "Rented bicycle"
+#~ msgstr "Арендованный велосипед"
+
+#~ msgid "Rented moped"
+#~ msgstr "Арендованный мопед"
+
+#~ msgid "Rented kick scooter"
+#~ msgstr "Арендованный самокат"
+
+#~ msgid "Rented car"
+#~ msgstr "Арендованный автомобиль"
+
+#~ msgid "Bicycle"
+#~ msgstr "Велосипед"
 
 #~ msgid "My Itinerary"
 #~ msgstr "Мой маршрут"

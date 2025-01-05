@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-30 00:42+0000\n"
+"POT-Creation-Date: 2025-01-05 00:41+0000\n"
 "PO-Revision-Date: 2023-07-29 15:30-0300\n"
 "Last-Translator: Geraldo Simiao <geraldosimiao@fedoraproject.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -3448,49 +3448,6 @@ msgstr ""
 msgid "Show Pass"
 msgstr "Exibir nomes"
 
-#: app/publictransport.cpp:122 app/publictransport.cpp:149
-#, fuzzy, kde-format
-#| msgid "Walk (%1)"
-msgid "Walk"
-msgstr "Caminhada (%1"
-
-#: app/publictransport.cpp:124
-#, fuzzy, kde-format
-#| msgid "Wait (%1)"
-msgid "Wait"
-msgstr "Espera (%1)"
-
-#: app/publictransport.cpp:133
-#, kde-format
-msgid "Rented bicycle"
-msgstr ""
-
-#: app/publictransport.cpp:135
-#, kde-format
-msgid "Rented moped"
-msgstr ""
-
-#: app/publictransport.cpp:137
-#, kde-format
-msgid "Rented kick scooter"
-msgstr ""
-
-#: app/publictransport.cpp:139
-#, fuzzy, kde-format
-#| msgid "Rental Car"
-msgid "Rented car"
-msgstr "Carro alugado"
-
-#: app/publictransport.cpp:145
-#, kde-format
-msgid "Bicycle"
-msgstr ""
-
-#: app/publictransport.cpp:147 app/StatisticsPage.qml:149
-#, kde-format
-msgid "Car"
-msgstr "Carro"
-
 #: app/PublicTransportBackendPage.qml:17
 #, kde-format
 msgid "Public Transport Information Sources"
@@ -4009,6 +3966,11 @@ msgstr "Total"
 #| msgid "Trains"
 msgid "Train"
 msgstr "Trens"
+
+#: app/StatisticsPage.qml:149
+#, kde-format
+msgid "Car"
+msgstr "Carro"
 
 #: app/StopPickerPage.qml:27
 #, fuzzy, kde-format
@@ -4971,6 +4933,21 @@ msgstr ""
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 de %3 para %4 em %5"
+
+#, fuzzy
+#~| msgid "Walk (%1)"
+#~ msgid "Walk"
+#~ msgstr "Caminhada (%1"
+
+#, fuzzy
+#~| msgid "Wait (%1)"
+#~ msgid "Wait"
+#~ msgstr "Espera (%1)"
+
+#, fuzzy
+#~| msgid "Rental Car"
+#~ msgid "Rented car"
+#~ msgstr "Carro alugado"
 
 #~ msgid "My Itinerary"
 #~ msgstr "Meu itinerário"

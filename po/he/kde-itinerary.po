@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-30 00:42+0000\n"
+"POT-Creation-Date: 2025-01-05 00:41+0000\n"
 "PO-Revision-Date: 2024-12-27 08:33+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -3241,46 +3241,6 @@ msgstr "חברות בתוכנית"
 msgid "Show Pass"
 msgstr "הצגת אישור"
 
-#: app/publictransport.cpp:122 app/publictransport.cpp:149
-#, kde-format
-msgid "Walk"
-msgstr "ללכת"
-
-#: app/publictransport.cpp:124
-#, kde-format
-msgid "Wait"
-msgstr "להמתין"
-
-#: app/publictransport.cpp:133
-#, kde-format
-msgid "Rented bicycle"
-msgstr "אופניים שכורים"
-
-#: app/publictransport.cpp:135
-#, kde-format
-msgid "Rented moped"
-msgstr "טוסטוס שכור"
-
-#: app/publictransport.cpp:137
-#, kde-format
-msgid "Rented kick scooter"
-msgstr "קורקינט שכור"
-
-#: app/publictransport.cpp:139
-#, kde-format
-msgid "Rented car"
-msgstr "מכונית שכורה"
-
-#: app/publictransport.cpp:145
-#, kde-format
-msgid "Bicycle"
-msgstr "אופניים"
-
-#: app/publictransport.cpp:147 app/StatisticsPage.qml:149
-#, kde-format
-msgid "Car"
-msgstr "מכונית"
-
 #: app/PublicTransportBackendPage.qml:17
 #, kde-format
 msgid "Public Transport Information Sources"
@@ -3776,6 +3736,11 @@ msgstr "סך הכול"
 #, kde-format
 msgid "Train"
 msgstr "רכבת"
+
+#: app/StatisticsPage.qml:149
+#, kde-format
+msgid "Car"
+msgstr "מכונית"
 
 #: app/StopPickerPage.qml:27
 #, kde-format
@@ -4661,6 +4626,27 @@ msgstr "יצאת"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 מ%3 אל %4 ב־%5"
+
+#~ msgid "Walk"
+#~ msgstr "ללכת"
+
+#~ msgid "Wait"
+#~ msgstr "להמתין"
+
+#~ msgid "Rented bicycle"
+#~ msgstr "אופניים שכורים"
+
+#~ msgid "Rented moped"
+#~ msgstr "טוסטוס שכור"
+
+#~ msgid "Rented kick scooter"
+#~ msgstr "קורקינט שכור"
+
+#~ msgid "Rented car"
+#~ msgstr "מכונית שכורה"
+
+#~ msgid "Bicycle"
+#~ msgstr "אופניים"
 
 #~ msgid "My Itinerary"
 #~ msgstr "תוכנית המסע שלי"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-30 00:42+0000\n"
+"POT-Creation-Date: 2025-01-05 00:41+0000\n"
 "PO-Revision-Date: 2024-12-26 02:43+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -3244,46 +3244,6 @@ msgstr "პროგრამის წევრობა"
 msgid "Show Pass"
 msgstr "ბილეთის ჩვენება"
 
-#: app/publictransport.cpp:122 app/publictransport.cpp:149
-#, kde-format
-msgid "Walk"
-msgstr "გასეირნება"
-
-#: app/publictransport.cpp:124
-#, kde-format
-msgid "Wait"
-msgstr "მოცდა"
-
-#: app/publictransport.cpp:133
-#, kde-format
-msgid "Rented bicycle"
-msgstr "ნაქირავები ველოსიპედი"
-
-#: app/publictransport.cpp:135
-#, kde-format
-msgid "Rented moped"
-msgstr "ნაქირავები მოპედი"
-
-#: app/publictransport.cpp:137
-#, kde-format
-msgid "Rented kick scooter"
-msgstr "ნაქირავები წასაკრავი სკუტერი"
-
-#: app/publictransport.cpp:139
-#, kde-format
-msgid "Rented car"
-msgstr "ნაქირავები მანქანა"
-
-#: app/publictransport.cpp:145
-#, kde-format
-msgid "Bicycle"
-msgstr "ველოსიპედი"
-
-#: app/publictransport.cpp:147 app/StatisticsPage.qml:149
-#, kde-format
-msgid "Car"
-msgstr "მანქანა"
-
 #: app/PublicTransportBackendPage.qml:17
 #, kde-format
 msgid "Public Transport Information Sources"
@@ -3782,6 +3742,11 @@ msgstr "ჯამში"
 #, kde-format
 msgid "Train"
 msgstr "მატარებელი"
+
+#: app/StatisticsPage.qml:149
+#, kde-format
+msgid "Car"
+msgstr "მანქანა"
 
 #: app/StopPickerPage.qml:27
 #, kde-format
@@ -4665,6 +4630,27 @@ msgstr "გამოხვედით"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 -ი %3-დან %4-მდე %5-ზე"
+
+#~ msgid "Walk"
+#~ msgstr "გასეირნება"
+
+#~ msgid "Wait"
+#~ msgstr "მოცდა"
+
+#~ msgid "Rented bicycle"
+#~ msgstr "ნაქირავები ველოსიპედი"
+
+#~ msgid "Rented moped"
+#~ msgstr "ნაქირავები მოპედი"
+
+#~ msgid "Rented kick scooter"
+#~ msgstr "ნაქირავები წასაკრავი სკუტერი"
+
+#~ msgid "Rented car"
+#~ msgstr "ნაქირავები მანქანა"
+
+#~ msgid "Bicycle"
+#~ msgstr "ველოსიპედი"
 
 #~ msgid "My Itinerary"
 #~ msgstr "ჩემი მარშრუტი"
