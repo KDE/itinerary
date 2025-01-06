@@ -13,7 +13,6 @@
         <file alias="qt/qml/org/kde/itinerary/JourneySectionStopDelegate.qml">../src/app/JourneySectionStopDelegate.qml</file>
         <file alias="qt/qml/org/kde/itinerary/JourneySectionStopDelegateLineSegment.qml">../src/app/JourneySectionStopDelegateLineSegment.qml</file>
         <file alias="qt/qml/org/kde/itinerary/JourneySummaryDelegate.qml">../src/app/JourneySummaryDelegate.qml</file>
-        <file alias="qt/qml/org/kde/itinerary/TransportIcon.qml">../src/app/TransportIcon.qml</file>
         <file alias="qt/qml/org/kde/itinerary/VerticalNavigationButton.qml">../src/app/VerticalNavigationButton.qml</file>
     </qresource>
 </RCC>

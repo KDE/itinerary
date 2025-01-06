@@ -6,6 +6,7 @@ import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kpublictransport as KPublicTransport
+import org.kde.kpublictransport.ui as KPublicTransport
 
 QQC2.Control {
     id: root
@@ -30,7 +31,7 @@ QQC2.Control {
             Layout.fillWidth: true
         }
 
-        TransportIcon {
+        KPublicTransport.TransportIcon {
             id: transportIcon
             color: if (background.visible) {
                 return lineName.color;
@@ -38,7 +39,7 @@ QQC2.Control {
                 Kirigami.Theme.textColor
             }
             isMask: true
-            size: Kirigami.Units.iconSizes.smallMedium
+            iconHeight: Kirigami.Units.iconSizes.smallMedium
             source: root.iconName
             Accessible.name: root.modeName
 

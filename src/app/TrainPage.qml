@@ -9,6 +9,7 @@ import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kirigamiaddons.components as KirigamiComponents
 import org.kde.kpublictransport as KPublicTransport
+import org.kde.kpublictransport.ui as KPublicTransport
 import org.kde.kitinerary
 import org.kde.itinerary
 
@@ -57,13 +58,13 @@ DetailsPage {
     ColumnLayout {
         spacing: 0
 
-        TransportIcon {
+        KPublicTransport.TransportIcon {
             id: transportIcon
             Layout.alignment: Qt.AlignHCenter
             // A bit of extra spacing since the logos often have no padding.
-            Layout.bottomMargin: departure.route.line.hasLogo || departure.route.line.hasModeLogo ? Kirigami.Units.largeSpacing : 0
-            size: Kirigami.Units.iconSizes.medium
-            source: departure.route.line.mode === KPublicTransport.Line.Unknown ? ReservationHelper.defaultIconName(root.reservation) : departure.route.line.iconName
+            Layout.bottomMargin: root.departure.route.line.hasLogo || root.departure.route.line.hasModeLogo ? Kirigami.Units.largeSpacing : 0
+            iconHeight: Kirigami.Units.iconSizes.medium
+            source: root.departure.route.line.mode === KPublicTransport.Line.Unknown ? ReservationHelper.defaultIconName(root.reservation) : departure.route.line.iconName
         }
 
         Kirigami.Heading {

@@ -9,6 +9,7 @@ import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kpublictransport as PublicTransport
+import org.kde.kpublictransport.ui as PublicTransport
 import org.kde.kosmindoormap
 import org.kde.itinerary
 
@@ -48,9 +49,8 @@ Kirigami.Dialog {
 
                     Repeater {
                         model: platform.lines
-                        delegate: Image {
-                            height: Kirigami.Units.iconSizes.small
-                            width: Math.round(Kirigami.Units.iconSizes.small * implicitWidth / implicitHeight)
+                        delegate: PublicTransport.TransportIcon {
+                            iconHeight: Kirigami.Units.iconSizes.small
                             anchors.verticalCenter: label.verticalCenter
                             visible: source != ""
                             source: {
