@@ -89,7 +89,7 @@ DetailsPage {
             FormCard.FormButtonDelegate {
                 text: i18n("Website")
                 description: reservationFor.url
-                icon.name: "globe"
+                icon.name: "globe-symbolic"
                 onClicked: Qt.openUrlExternally(reservationFor.url)
                 visible: reservationFor.url != ""
             }

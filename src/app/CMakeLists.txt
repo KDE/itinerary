@@ -278,6 +278,7 @@ if (ANDROID)
     configure_file(${CMAKE_CURRENT_SOURCE_DIR}/android/version.gradle.in ${CMAKE_BINARY_DIR}/version.gradle)
 
     kirigami_package_breeze_icons(ICONS
+        applications-development-symbolic
         application-pdf
         arrow-down
         arrow-left
@@ -302,7 +303,9 @@ if (ANDROID)
         document-open
         document-save
         documentinfo
+        donate-symbolic
         download
+        edit-copy-symbolic
         edit-delete
         edit-download
         edit-paste
@@ -314,7 +317,7 @@ if (ANDROID)
         flashlight-on
         folder-documents-symbolic
         format-list-unordered
-        globe
+        globe-symbolic
         go-down-symbolic
         go-home-symbolic
         go-next-symbolic
@@ -342,6 +345,7 @@ if (ANDROID)
         temperature-cold
         temperature-normal
         temperature-warm
+        tools-report-bug-symbolic
         view-barcode-qr
         view-calendar
         view-calendar-day
@@ -350,6 +354,7 @@ if (ANDROID)
         view-refresh
         view-statistics
         wallet-open
+        window-close-symbolic
         zoom-in-symbolic
         zoom-out-symbolic
 

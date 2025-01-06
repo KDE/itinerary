@@ -46,7 +46,7 @@ ColumnLayout {
         FormCard.FormButtonDelegate {
             text: i18n("Website")
             description: contact.url
-            icon.name: "globe"
+            icon.name: "globe-symbolic"
             onClicked: Qt.openUrlExternally(contact.url)
             visible: contact.url != ""
         }
