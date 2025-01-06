@@ -910,7 +910,17 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="24.12.1" date="2025-01-09"/>
+    <release version="24.12.1" date="2025-01-09">
+      <description>
+        <ul>
+          <li>Allow to add transfers in more cases.</li>
+          <li>Fix adding daylight saving time info elements in single trip group mode.</li>
+          <li>Ignore cancelled elements when determining weather forecast length.</li>
+          <li>Override instead of merge destination names when applying new journeys.</li>
+          <li>Fix crash on importing health certificates.</li>
+        </ul>
+      </description>
+    </release>
     <release version="24.12.0" date="2024-12-12">
       <description>
         <ul>
