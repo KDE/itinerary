@@ -14,7 +14,7 @@ TimelineDelegate {
     id: root
 
     function airportDisplayString(airport: var): string {
-        return airport.name ? airport.name : airport.iataCode;
+        return [airport.name, airport.iataCode].filter(item => !!item).join(" ");
     }
 
     function airportDisplayCode(airport: var): string {
@@ -50,7 +50,7 @@ TimelineDelegate {
             reservationFor: root.reservationFor
             departure: root.departure
             progress: root.controller.progress
-            departureName: root.airportDisplayString(root.reservationFor.departureAirport) + " " + root.airportDisplayCode(reservationFor.departureAirport)
+            departureName: root.airportDisplayString(root.reservationFor.departureAirport)
             departureCountry: Localizer.formatCountryWithContext(root.reservationFor.departureAirport.address,
                                                      root.reservationFor.arrivalAirport.address,
                                                      Settings.homeCountryIsoCode)
@@ -91,7 +91,7 @@ TimelineDelegate {
             arrival: root.arrival
             progress: root.controller.progress
             reservationFor: root.reservationFor
-            arrivalName: root.airportDisplayString(root.reservationFor.arrivalAirport) + ' ' + root.airportDisplayCode(root.reservationFor.arrivalAirport)
+            arrivalName: root.airportDisplayString(root.reservationFor.arrivalAirport)
             arrivalCountry: Localizer.formatCountryWithContext(root.reservationFor.arrivalAirport.address,
                                                      root.reservationFor.departureAirport.address,
                                                      Settings.homeCountryIsoCode)
