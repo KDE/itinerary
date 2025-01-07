@@ -129,10 +129,7 @@ FormCard.AbstractFormDelegate {
 
                     required property var modelData
 
-                    iconName: modelData.iconName
-                    line: modelData.route.line
-                    mode: modelData.mode
-                    modeName: modelData.label
+                    journeySection: modelData
 
                     Layout.fillWidth: true
                     Layout.maximumWidth: sectionDelegate.modelData.mode === JourneySection.PublicTransport ? Number.POSITIVE_INFINITY : implicitWidth

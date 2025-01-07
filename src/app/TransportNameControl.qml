@@ -8,14 +8,41 @@ import org.kde.kirigami as Kirigami
 import org.kde.kpublictransport as KPublicTransport
 import org.kde.kpublictransport.ui as KPublicTransport
 
+/** Visual representation of a journey section in a horizontal bar display.
+ *  Also usable as a stand-alone transport line indicator.
+ *
+ *  Public transport sections are shown in line colors (or inverted text colors if none available),
+ *  all other section modes are shown in regular text colors without background.
+ */
 QQC2.Control {
     id: root
 
-    required property KPublicTransport.line line
-    required property int mode
-    property string modeName
-    property string iconName
-    property string lineName: line.name
+    /** The journey section to represent.
+     *  Setting this (and leaving all other properties untouched) is the easiest and preferred
+     *  way of using this.
+     *
+     *  If set all other properties are populated from this automatically.
+     *  If not set, at least line and journeySectionMode need to be specified instead.
+     */
+    property KPublicTransport.journeySection journeySection
+
+    /** Line information of the journey section. */
+    property KPublicTransport.line line: journeySection.route.line
+
+    /** Journey section mode.
+     *  @see KPublicTransport::JourneySection::Mode
+     */
+    property int journeySectionMode: root.journeySection.mode === KPublicTransport.JourneySection.Invalid ? KPublicTransport.JourneySection.PublicTransport : root.journeySection.mode
+
+    /** Description of the journey section mode.
+     *  Not displayed in the UI but used as an a11y text for mode icons.
+     */
+    property string modeName: root.journeySection.label
+
+    /** Icon representing the mode of transport or the line logo. */
+    property string iconName: root.journeySection.mode === KPublicTransport.JourneySection.Invalid ? root.line.iconName : root.journeySection.iconName
+    /** Displayed name of the public transport line. */
+    property string lineName: root.line.name
 
     leftPadding: Kirigami.Units.smallSpacing
     rightPadding: Kirigami.Units.smallSpacing
@@ -49,21 +76,12 @@ QQC2.Control {
         Kirigami.Heading {
             id: lineName
 
-            function getDarkness(background: color): real {
-                const temp = Qt.darker(background, 1);
-                const a = 1 - (0.299 * temp.r + 0.587 * temp.g + 0.114 * temp.b);
-                return a;
-            }
-
-            readonly property bool isDarkTheme: {
-                const temp = Qt.darker(Kirigami.Theme.backgroundColor, 1);
-                return temp.a > 0 && getDarkness(Kirigami.Theme.backgroundColor) >= 0.4;
-            }
+            readonly property bool isDarkTheme: Kirigami.Theme.backgroundColor.hslLightness < 0.4
 
             color: {
-                const backgroundIsDark = getDarkness(background.color) >= 0.4;
+                const backgroundIsDark = background.color.hslLightness < 0.4;
                 if (root.line.hasTextColor) {
-                    const foregroundIsLight = getDarkness(root.line.textColor) < 0.4;
+                    const foregroundIsLight = root.line.textColor.hslLightness >= 0.4;
                     if (foregroundIsLight === backgroundIsDark) {
                         return root.line.textColor;
                     }
@@ -75,7 +93,7 @@ QQC2.Control {
             }
             level: 4
             text: root.lineName
-            visible: text.length > 0 && root.mode === KPublicTransport.JourneySection.PublicTransport && !root.line.hasLogo
+            visible: text.length > 0 && root.journeySectionMode === KPublicTransport.JourneySection.PublicTransport && !root.line.hasLogo
             elide: Text.ElideRight
             font.weight: Font.DemiBold
             horizontalAlignment: Text.AlignHCenter
@@ -95,6 +113,6 @@ QQC2.Control {
 
         radius: Kirigami.Units.cornerRadius
         color: root.line.hasColor ? root.line.color : Kirigami.Theme.textColor
-        visible: root.mode === KPublicTransport.JourneySection.PublicTransport
+        visible: root.journeySectionMode === KPublicTransport.JourneySection.PublicTransport
     }
 }

@@ -41,10 +41,7 @@ Kirigami.Page {
             spacing: Kirigami.Units.smallSpacing
 
             TransportNameControl {
-                line: journeySection.route.line
-                mode: KPublicTransport.JourneySection.PublicTransport
-                iconName: root.journeySection.route.line.iconName
-                lineName: root.journeySection.route.line.modeString + " " + root.journeySection.route.line.name
+                journeySection: root.journeySection
             }
 
             QQC2.Label {

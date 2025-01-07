@@ -127,9 +127,7 @@ anchors.centerIn: parent
                     Layout.fillWidth: true
 
                     TransportNameControl {
-                        iconName: root.modelData.iconName
-                        line: root.modelData.route.line
-                        mode: root.modelData.mode
+                        journeySection: root.modelData
                         visible: root.modelData.mode === JourneySection.PublicTransport
                     }
 

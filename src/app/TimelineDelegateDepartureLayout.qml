@@ -85,7 +85,6 @@ RowLayout {
 
             TransportNameControl {
                 line: root.departure.route.line
-                mode: JourneySection.PublicTransport
                 iconName: root.transportIcon
                 lineName: root.transportName
             }

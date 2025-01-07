@@ -137,9 +137,6 @@ Kirigami.ScrollablePage {
 
             TransportNameControl {
                 line: vehicleModel.stopover.route.line
-                mode: KPublicTransport.JourneySection.PublicTransport
-                iconName: vehicleModel.stopover.route.line.iconName
-                lineName: vehicleModel.stopover.route.line.modeString + ' ' + vehicleModel.stopover.route.line.name
             }
 
             QQC2.Label {
