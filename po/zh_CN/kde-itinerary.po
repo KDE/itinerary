@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-05 00:41+0000\n"
+"POT-Creation-Date: 2025-01-07 00:41+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -433,7 +433,7 @@ msgstr ""
 msgid "Boat Ticket"
 msgstr ""
 
-#: app/BoatPage.qml:59 app/BusPage.qml:68 app/TrainPage.qml:122
+#: app/BoatPage.qml:59 app/BusPage.qml:68 app/TrainPage.qml:123
 #, kde-format
 msgid "Departure time"
 msgstr ""
@@ -444,7 +444,7 @@ msgctxt "Boat terminal"
 msgid "Terminal"
 msgstr ""
 
-#: app/BoatPage.qml:89 app/BusPage.qml:133 app/TrainPage.qml:217
+#: app/BoatPage.qml:89 app/BusPage.qml:133 app/TrainPage.qml:218
 #, kde-format
 msgid "Arrival time"
 msgstr ""
@@ -615,7 +615,7 @@ msgctxt "Bus departure"
 msgid "Departure"
 msgstr ""
 
-#: app/BusPage.qml:88 app/TrainPage.qml:151
+#: app/BusPage.qml:88 app/TrainPage.qml:152
 #, kde-format
 msgid "Departure date"
 msgstr ""
@@ -638,12 +638,12 @@ msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr ""
 
-#: app/BusPage.qml:212 app/TrainPage.qml:360
+#: app/BusPage.qml:212 app/TrainPage.qml:361
 #, kde-format
 msgid "Alternatives"
 msgstr "改签"
 
-#: app/BusPage.qml:217 app/JourneySectionPage.qml:26 app/TrainPage.qml:365
+#: app/BusPage.qml:217 app/JourneySectionPage.qml:26 app/TrainPage.qml:366
 #, kde-format
 msgid "Journey Details"
 msgstr "旅程详情"
@@ -1927,25 +1927,25 @@ msgctxt "@action:intoolbar Go up one floor"
 msgid "Floor up"
 msgstr ""
 
-#: app/IndoorMapPlatformSheet.qml:20
+#: app/IndoorMapPlatformSheet.qml:21
 #, kde-format
 msgctxt "@title"
 msgid "Find Platform"
 msgstr "查找站台"
 
-#: app/IndoorMapPlatformSheet.qml:40
+#: app/IndoorMapPlatformSheet.qml:41
 #, kde-format
 msgctxt "train arrival/departure platform"
 msgid "%1 (arrival/departure)"
 msgstr "%1 号登机口 (到达/出发)"
 
-#: app/IndoorMapPlatformSheet.qml:42
+#: app/IndoorMapPlatformSheet.qml:43
 #, kde-format
 msgctxt "train departure platform"
 msgid "%1 (departure)"
 msgstr "%1 号登机口 (出发)"
 
-#: app/IndoorMapPlatformSheet.qml:44
+#: app/IndoorMapPlatformSheet.qml:45
 #, kde-format
 msgctxt "train arrival platform"
 msgid "%1 (arrival)"
@@ -3901,19 +3901,19 @@ msgctxt "train station platform"
 msgid "Platform %1"
 msgstr ""
 
-#: app/TrainDelegate.qml:69 app/TrainPage.qml:312
+#: app/TrainDelegate.qml:69 app/TrainPage.qml:313
 #, kde-format
 msgctxt "train coach"
 msgid "Coach: <b>%1</b>"
 msgstr ""
 
-#: app/TrainDelegate.qml:75 app/TrainPage.qml:319
+#: app/TrainDelegate.qml:75 app/TrainPage.qml:320
 #, kde-format
 msgctxt "train seat"
 msgid "Seat: <b>%1</b>"
 msgstr ""
 
-#: app/TrainDelegate.qml:83 app/TrainPage.qml:327
+#: app/TrainDelegate.qml:83 app/TrainPage.qml:328
 #, kde-format
 msgctxt "train class"
 msgid "Class: <b>%1</b>"
@@ -3940,8 +3940,8 @@ msgctxt "train departure"
 msgid "Departure"
 msgstr ""
 
-#: app/TrainEditor.qml:98 app/TrainEditor.qml:124 app/TrainPage.qml:159
-#: app/TrainPage.qml:251
+#: app/TrainEditor.qml:98 app/TrainEditor.qml:124 app/TrainPage.qml:160
+#: app/TrainPage.qml:252
 #, kde-format
 msgctxt "train station"
 msgid "Station"
@@ -3959,7 +3959,7 @@ msgctxt "train arrival"
 msgid "Arrival"
 msgstr ""
 
-#: app/TrainEditor.qml:146 app/TrainEditor.qml:158 app/TrainPage.qml:303
+#: app/TrainEditor.qml:146 app/TrainEditor.qml:158 app/TrainPage.qml:304
 #, kde-format
 msgctxt "Train seat"
 msgid "Seat"
@@ -3977,55 +3977,55 @@ msgctxt "seating class on a train"
 msgid "Class"
 msgstr ""
 
-#: app/TrainPage.qml:18
+#: app/TrainPage.qml:19
 #, kde-format
 msgid "Train Ticket"
 msgstr "火车票"
 
-#: app/TrainPage.qml:84 app/TransferDelegate.qml:64
+#: app/TrainPage.qml:85 app/TransferDelegate.qml:64
 #, kde-format
 msgid "%1 to %2"
 msgstr "%1 到 %2"
 
-#: app/TrainPage.qml:116
+#: app/TrainPage.qml:117
 #, kde-format
 msgctxt "Train departure"
 msgid "Departure"
 msgstr ""
 
-#: app/TrainPage.qml:187 app/TrainPage.qml:278
+#: app/TrainPage.qml:188 app/TrainPage.qml:279
 #, kde-format
 msgid "Additional notes"
 msgstr ""
 
-#: app/TrainPage.qml:202
+#: app/TrainPage.qml:203
 #, kde-format
 msgid "Departure Vehicle Layout"
 msgstr "离站列车编组"
 
-#: app/TrainPage.qml:211
+#: app/TrainPage.qml:212
 #, kde-format
 msgctxt "Train arrival"
 msgid "Arrival"
 msgstr ""
 
-#: app/TrainPage.qml:293
+#: app/TrainPage.qml:294
 #, kde-format
 msgid "Arrival Vehicle Layout"
 msgstr "到站列车编组"
 
-#: app/TrainPage.qml:352
+#: app/TrainPage.qml:353
 #, kde-format
 msgctxt "@action:button"
 msgid "Add to Traewelling"
 msgstr "添加到 Traewelling"
 
-#: app/TrainPage.qml:385
+#: app/TrainPage.qml:386
 #, kde-format
 msgid "Added to Traewelling"
 msgstr "已添加到 Traewelling"
 
-#: app/TrainPage.qml:385
+#: app/TrainPage.qml:386
 #, kde-format
 msgid "Failed to add to Traewelling"
 msgstr "无法添加到 Traewelling"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-05 00:41+0000\n"
+"POT-Creation-Date: 2025-01-07 00:41+0000\n"
 "PO-Revision-Date: 2024-12-15 19:32+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
@@ -439,7 +439,7 @@ msgstr "आगमन टर्मिनल खाली नहीं होन�
 msgid "Boat Ticket"
 msgstr "नाव टिकट"
 
-#: app/BoatPage.qml:59 app/BusPage.qml:68 app/TrainPage.qml:122
+#: app/BoatPage.qml:59 app/BusPage.qml:68 app/TrainPage.qml:123
 #, kde-format
 msgid "Departure time"
 msgstr "प्रस्थान समय"
@@ -450,7 +450,7 @@ msgctxt "Boat terminal"
 msgid "Terminal"
 msgstr "टर्मिनल"
 
-#: app/BoatPage.qml:89 app/BusPage.qml:133 app/TrainPage.qml:217
+#: app/BoatPage.qml:89 app/BusPage.qml:133 app/TrainPage.qml:218
 #, kde-format
 msgid "Arrival time"
 msgstr "आगमन समय"
@@ -625,7 +625,7 @@ msgctxt "Bus departure"
 msgid "Departure"
 msgstr "प्रस्थान"
 
-#: app/BusPage.qml:88 app/TrainPage.qml:151
+#: app/BusPage.qml:88 app/TrainPage.qml:152
 #, kde-format
 msgid "Departure date"
 msgstr "प्रस्थान की तारीख"
@@ -648,12 +648,12 @@ msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "आगमन"
 
-#: app/BusPage.qml:212 app/TrainPage.qml:360
+#: app/BusPage.qml:212 app/TrainPage.qml:361
 #, kde-format
 msgid "Alternatives"
 msgstr "वैकल्पिक"
 
-#: app/BusPage.qml:217 app/JourneySectionPage.qml:26 app/TrainPage.qml:365
+#: app/BusPage.qml:217 app/JourneySectionPage.qml:26 app/TrainPage.qml:366
 #, kde-format
 msgid "Journey Details"
 msgstr "यात्रा विवरण"
@@ -1948,25 +1948,25 @@ msgctxt "@action:intoolbar Go up one floor"
 msgid "Floor up"
 msgstr "मंजिल ऊपर"
 
-#: app/IndoorMapPlatformSheet.qml:20
+#: app/IndoorMapPlatformSheet.qml:21
 #, kde-format
 msgctxt "@title"
 msgid "Find Platform"
 msgstr "प्लेटफ़ॉर्म खोजें"
 
-#: app/IndoorMapPlatformSheet.qml:40
+#: app/IndoorMapPlatformSheet.qml:41
 #, kde-format
 msgctxt "train arrival/departure platform"
 msgid "%1 (arrival/departure)"
 msgstr "%1 (आगमन/प्रस्थान)"
 
-#: app/IndoorMapPlatformSheet.qml:42
+#: app/IndoorMapPlatformSheet.qml:43
 #, kde-format
 msgctxt "train departure platform"
 msgid "%1 (departure)"
 msgstr "%1 (प्रस्थान)"
 
-#: app/IndoorMapPlatformSheet.qml:44
+#: app/IndoorMapPlatformSheet.qml:45
 #, kde-format
 msgctxt "train arrival platform"
 msgid "%1 (arrival)"
@@ -3956,19 +3956,19 @@ msgctxt "train station platform"
 msgid "Platform %1"
 msgstr "प्लेटफ़ॉर्म%1"
 
-#: app/TrainDelegate.qml:69 app/TrainPage.qml:312
+#: app/TrainDelegate.qml:69 app/TrainPage.qml:313
 #, kde-format
 msgctxt "train coach"
 msgid "Coach: <b>%1</b>"
 msgstr "कोच: <b>%1</b>"
 
-#: app/TrainDelegate.qml:75 app/TrainPage.qml:319
+#: app/TrainDelegate.qml:75 app/TrainPage.qml:320
 #, kde-format
 msgctxt "train seat"
 msgid "Seat: <b>%1</b>"
 msgstr "सीटः <b>%1</b>"
 
-#: app/TrainDelegate.qml:83 app/TrainPage.qml:327
+#: app/TrainDelegate.qml:83 app/TrainPage.qml:328
 #, kde-format
 msgctxt "train class"
 msgid "Class: <b>%1</b>"
@@ -3995,8 +3995,8 @@ msgctxt "train departure"
 msgid "Departure"
 msgstr "प्रस्थान"
 
-#: app/TrainEditor.qml:98 app/TrainEditor.qml:124 app/TrainPage.qml:159
-#: app/TrainPage.qml:251
+#: app/TrainEditor.qml:98 app/TrainEditor.qml:124 app/TrainPage.qml:160
+#: app/TrainPage.qml:252
 #, kde-format
 msgctxt "train station"
 msgid "Station"
@@ -4014,7 +4014,7 @@ msgctxt "train arrival"
 msgid "Arrival"
 msgstr "आगमन"
 
-#: app/TrainEditor.qml:146 app/TrainEditor.qml:158 app/TrainPage.qml:303
+#: app/TrainEditor.qml:146 app/TrainEditor.qml:158 app/TrainPage.qml:304
 #, kde-format
 msgctxt "Train seat"
 msgid "Seat"
@@ -4032,55 +4032,55 @@ msgctxt "seating class on a train"
 msgid "Class"
 msgstr "कक्षा"
 
-#: app/TrainPage.qml:18
+#: app/TrainPage.qml:19
 #, kde-format
 msgid "Train Ticket"
 msgstr "ट्रेन की टिकट"
 
-#: app/TrainPage.qml:84 app/TransferDelegate.qml:64
+#: app/TrainPage.qml:85 app/TransferDelegate.qml:64
 #, kde-format
 msgid "%1 to %2"
 msgstr "%1 से %2"
 
-#: app/TrainPage.qml:116
+#: app/TrainPage.qml:117
 #, kde-format
 msgctxt "Train departure"
 msgid "Departure"
 msgstr "प्रस्थान"
 
-#: app/TrainPage.qml:187 app/TrainPage.qml:278
+#: app/TrainPage.qml:188 app/TrainPage.qml:279
 #, kde-format
 msgid "Additional notes"
 msgstr "अतिरिक्त टिप्पणी"
 
-#: app/TrainPage.qml:202
+#: app/TrainPage.qml:203
 #, kde-format
 msgid "Departure Vehicle Layout"
 msgstr "प्रस्थान वाहन लेआउट"
 
-#: app/TrainPage.qml:211
+#: app/TrainPage.qml:212
 #, kde-format
 msgctxt "Train arrival"
 msgid "Arrival"
 msgstr "आगमन"
 
-#: app/TrainPage.qml:293
+#: app/TrainPage.qml:294
 #, kde-format
 msgid "Arrival Vehicle Layout"
 msgstr "आगमन वाहन लेआउट"
 
-#: app/TrainPage.qml:352
+#: app/TrainPage.qml:353
 #, kde-format
 msgctxt "@action:button"
 msgid "Add to Traewelling"
 msgstr "Traewelling में जोड़ें"
 
-#: app/TrainPage.qml:385
+#: app/TrainPage.qml:386
 #, kde-format
 msgid "Added to Traewelling"
 msgstr "Traewelling में जोड़ा गया"
 
-#: app/TrainPage.qml:385
+#: app/TrainPage.qml:386
 #, kde-format
 msgid "Failed to add to Traewelling"
 msgstr "Traewelling में जोड़ने में विफल"
