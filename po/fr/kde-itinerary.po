@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023, 2024 Xavier Besnard <xavier.besnard@kde.org>
+# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023, 2024, 2025 Xavier Besnard <xavier.besnard@kde.org>
 # Simon Depiets <sdepiets@gmail.com>, 2019, 2020.
 # Xavier Besnard <xavier.besnard@kde.org>, 2023.
 # Thomas Vergnaud <thomas.vergnaud@mailo.eu>, 2023.
@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-03 02:32+0000\n"
-"PO-Revision-Date: 2024-11-05 07:16+0100\n"
+"PO-Revision-Date: 2025-01-08 12:11+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -1191,7 +1191,7 @@ msgstr "Numéro de vol"
 #: app/FlightEditor.qml:194
 #, kde-format
 msgid "Invalid flight number."
-msgstr "Numéro de vol invalide."
+msgstr "Numéro de vol non valable."
 
 #: app/FlightEditor.qml:199 app/FlightEditor.qml:206 app/FlightPage.qml:94
 #, kde-format
@@ -2979,7 +2979,7 @@ msgstr "Documents et tickets"
 #: app/reservationhelper.cpp:130
 #, kde-format
 msgid "Flight from %1 to %2"
-msgstr "Vol  de %1 vers %2"
+msgstr "Vol de %1 vers %2"
 
 #: app/reservationhelper.cpp:133
 #, kde-format
