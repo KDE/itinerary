@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-07 00:41+0000\n"
+"POT-Creation-Date: 2025-01-09 00:41+0000\n"
 "PO-Revision-Date: 2024-11-28 16:26+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -2012,7 +2012,7 @@ msgstr "路面電車"
 msgid "Bus"
 msgstr "公車"
 
-#: app/JourneyPathPage.qml:175 app/JourneySectionPage.qml:339
+#: app/JourneyPathPage.qml:175 app/JourneySectionPage.qml:336
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2133,59 +2133,59 @@ msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
 msgstr "船班或渡輪"
 
-#: app/JourneySectionDelegate.qml:142
+#: app/JourneySectionDelegate.qml:140
 #, fuzzy, kde-format
 #| msgctxt "to travel destination"
 #| msgid "To %1"
 msgid "To %1"
 msgstr "到 %1"
 
-#: app/JourneySectionDelegate.qml:146
+#: app/JourneySectionDelegate.qml:144
 #, kde-format
 msgid "Walk (%1)"
 msgstr "步行 (%1)"
 
-#: app/JourneySectionDelegate.qml:147
+#: app/JourneySectionDelegate.qml:145
 #, kde-format
 msgid "Walk %1 (%2)"
 msgstr "步行 %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:149
+#: app/JourneySectionDelegate.qml:147
 #, kde-format
 msgid "Transfer (%1)"
 msgstr "轉乘 (%1)"
 
-#: app/JourneySectionDelegate.qml:151
+#: app/JourneySectionDelegate.qml:149
 #, kde-format
 msgid "Wait (%1)"
 msgstr "等待 (%1)"
 
-#: app/JourneySectionDelegate.qml:153
+#: app/JourneySectionDelegate.qml:151
 #, kde-format
 msgid "%1 %2 (%3)"
 msgstr "%1 %2 (%3)"
 
-#: app/JourneySectionDelegate.qml:155
+#: app/JourneySectionDelegate.qml:153
 #, kde-format
 msgid "Drive %1 (%2)"
 msgstr ""
 
-#: app/JourneySectionDelegate.qml:180 app/JourneySectionDelegate.qml:320
+#: app/JourneySectionDelegate.qml:178 app/JourneySectionDelegate.qml:318
 #, fuzzy, kde-format
 #| msgid "Platform: %1"
 msgctxt "@info"
 msgid "Platform %1"
 msgstr "月台：%1"
 
-#: app/JourneySectionDelegate.qml:247 app/JourneySectionPage.qml:136
-#: app/VehicleLayoutPage.qml:243
+#: app/JourneySectionDelegate.qml:245 app/JourneySectionPage.qml:133
+#: app/VehicleLayoutPage.qml:240
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr "顯示更多…"
 
-#: app/JourneySectionPage.qml:51 app/TimelineDelegateDepartureLayout.qml:94
-#: app/VehicleLayoutPage.qml:146
+#: app/JourneySectionPage.qml:48 app/TimelineDelegateDepartureLayout.qml:93
+#: app/VehicleLayoutPage.qml:143
 #, fuzzy, kde-format
 #| msgctxt "to travel destination"
 #| msgid "To %1"
@@ -2193,17 +2193,17 @@ msgctxt "Direction of the transport mode"
 msgid "To %1"
 msgstr "到 %1"
 
-#: app/JourneySectionPage.qml:64
+#: app/JourneySectionPage.qml:61
 #, kde-format
 msgid "Distance: %1"
 msgstr "距離：%1"
 
-#: app/JourneySectionPage.qml:74
+#: app/JourneySectionPage.qml:71
 #, kde-format
 msgid "Average Speed: %1"
 msgstr "平均速度：%1"
 
-#: app/JourneySectionPage.qml:84
+#: app/JourneySectionPage.qml:81
 #, kde-format
 msgid "CO₂: %1"
 msgstr "CO₂：%1"
@@ -2238,7 +2238,7 @@ msgid "One change"
 msgid_plural "%1 changes"
 msgstr[0] "%1 次轉乘"
 
-#: app/JourneySummaryDelegate.qml:147
+#: app/JourneySummaryDelegate.qml:144
 #, kde-format
 msgid "Click to extend"
 msgstr "按一下來展開"
@@ -4550,27 +4550,27 @@ msgctxt "train coach type"
 msgid "Car transport car"
 msgstr "汽車運輸車廂"
 
-#: app/VehicleLayoutPage.qml:162
+#: app/VehicleLayoutPage.qml:159
 #, kde-format
 msgid "Departure: %1"
 msgstr "出發：%1"
 
-#: app/VehicleLayoutPage.qml:164
+#: app/VehicleLayoutPage.qml:161
 #, kde-format
 msgid "Arrival: %1"
 msgstr "抵達：%1"
 
-#: app/VehicleLayoutPage.qml:184
+#: app/VehicleLayoutPage.qml:181
 #, kde-format
 msgid "Platform: %1"
 msgstr "月台：%1"
 
-#: app/VehicleLayoutPage.qml:193
+#: app/VehicleLayoutPage.qml:190
 #, kde-format
 msgid "Coach: %1 Seat: %2"
 msgstr "車廂：%1 座位：%2"
 
-#: app/VehicleLayoutPage.qml:450
+#: app/VehicleLayoutPage.qml:447
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "沒有可用的交通工具佈局資訊。"

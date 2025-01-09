@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-07 00:41+0000\n"
+"POT-Creation-Date: 2025-01-09 00:41+0000\n"
 "PO-Revision-Date: 2023-07-29 15:30-0300\n"
 "Last-Translator: Geraldo Simiao <geraldosimiao@fedoraproject.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -2130,7 +2130,7 @@ msgstr "Teleférico"
 msgid "Bus"
 msgstr "Ônibus"
 
-#: app/JourneyPathPage.qml:175 app/JourneySectionPage.qml:339
+#: app/JourneyPathPage.qml:175 app/JourneySectionPage.qml:336
 #, fuzzy, kde-format
 #| msgid "Show"
 msgctxt "@action:button"
@@ -2261,60 +2261,60 @@ msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
 msgstr "Viagens de barco"
 
-#: app/JourneySectionDelegate.qml:142
+#: app/JourneySectionDelegate.qml:140
 #, fuzzy, kde-format
 #| msgctxt "to travel destination"
 #| msgid "To %1"
 msgid "To %1"
 msgstr "Para %1"
 
-#: app/JourneySectionDelegate.qml:146
+#: app/JourneySectionDelegate.qml:144
 #, kde-format
 msgid "Walk (%1)"
 msgstr "Caminhada (%1"
 
-#: app/JourneySectionDelegate.qml:147
+#: app/JourneySectionDelegate.qml:145
 #, kde-format
 msgid "Walk %1 (%2)"
 msgstr "Caminhada %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:149
+#: app/JourneySectionDelegate.qml:147
 #, kde-format
 msgid "Transfer (%1)"
 msgstr "Translado (%1)"
 
-#: app/JourneySectionDelegate.qml:151
+#: app/JourneySectionDelegate.qml:149
 #, kde-format
 msgid "Wait (%1)"
 msgstr "Espera (%1)"
 
-#: app/JourneySectionDelegate.qml:153
+#: app/JourneySectionDelegate.qml:151
 #, kde-format
 msgid "%1 %2 (%3)"
 msgstr "%1 %2 (%3)"
 
-#: app/JourneySectionDelegate.qml:155
+#: app/JourneySectionDelegate.qml:153
 #, fuzzy, kde-format
 #| msgid "Test %1 (%2)"
 msgid "Drive %1 (%2)"
 msgstr "Teste %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:180 app/JourneySectionDelegate.qml:320
+#: app/JourneySectionDelegate.qml:178 app/JourneySectionDelegate.qml:318
 #, fuzzy, kde-format
 #| msgid "Platform: %1"
 msgctxt "@info"
 msgid "Platform %1"
 msgstr "Plataforma: %1"
 
-#: app/JourneySectionDelegate.qml:247 app/JourneySectionPage.qml:136
-#: app/VehicleLayoutPage.qml:243
+#: app/JourneySectionDelegate.qml:245 app/JourneySectionPage.qml:133
+#: app/VehicleLayoutPage.qml:240
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr ""
 
-#: app/JourneySectionPage.qml:51 app/TimelineDelegateDepartureLayout.qml:94
-#: app/VehicleLayoutPage.qml:146
+#: app/JourneySectionPage.qml:48 app/TimelineDelegateDepartureLayout.qml:93
+#: app/VehicleLayoutPage.qml:143
 #, fuzzy, kde-format
 #| msgctxt "to travel destination"
 #| msgid "To %1"
@@ -2322,17 +2322,17 @@ msgctxt "Direction of the transport mode"
 msgid "To %1"
 msgstr "Para %1"
 
-#: app/JourneySectionPage.qml:64
+#: app/JourneySectionPage.qml:61
 #, kde-format
 msgid "Distance: %1"
 msgstr "Distância: %1"
 
-#: app/JourneySectionPage.qml:74
+#: app/JourneySectionPage.qml:71
 #, kde-format
 msgid "Average Speed: %1"
 msgstr ""
 
-#: app/JourneySectionPage.qml:84
+#: app/JourneySectionPage.qml:81
 #, fuzzy, kde-format
 #| msgid "CO₂: %1g"
 msgid "CO₂: %1"
@@ -2370,7 +2370,7 @@ msgid_plural "%1 changes"
 msgstr[0] "Uma alteração"
 msgstr[1] "%1 alterações"
 
-#: app/JourneySummaryDelegate.qml:147
+#: app/JourneySummaryDelegate.qml:144
 #, kde-format
 msgid "Click to extend"
 msgstr ""
@@ -4808,27 +4808,27 @@ msgctxt "train coach type"
 msgid "Car transport car"
 msgstr "Dados de transporte"
 
-#: app/VehicleLayoutPage.qml:162
+#: app/VehicleLayoutPage.qml:159
 #, kde-format
 msgid "Departure: %1"
 msgstr "Partida: %1"
 
-#: app/VehicleLayoutPage.qml:164
+#: app/VehicleLayoutPage.qml:161
 #, kde-format
 msgid "Arrival: %1"
 msgstr "Chegada: %1"
 
-#: app/VehicleLayoutPage.qml:184
+#: app/VehicleLayoutPage.qml:181
 #, kde-format
 msgid "Platform: %1"
 msgstr "Plataforma: %1"
 
-#: app/VehicleLayoutPage.qml:193
+#: app/VehicleLayoutPage.qml:190
 #, kde-format
 msgid "Coach: %1 Seat: %2"
 msgstr "Vagão: %1 Assento: %2"
 
-#: app/VehicleLayoutPage.qml:450
+#: app/VehicleLayoutPage.qml:447
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "Nenhuma informação de layout de veículo disponível."

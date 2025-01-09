@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023, 2024 Xavier Besnard <xavier.besnard@kde.org>
+# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023, 2024, 2025 Xavier Besnard <xavier.besnard@kde.org>
 # Simon Depiets <sdepiets@gmail.com>, 2019, 2020.
 # Xavier Besnard <xavier.besnard@kde.org>, 2023.
 # Thomas Vergnaud <thomas.vergnaud@mailo.eu>, 2023.
@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-07 00:41+0000\n"
-"PO-Revision-Date: 2024-12-27 08:59+0100\n"
+"POT-Creation-Date: 2025-01-09 00:41+0000\n"
+"PO-Revision-Date: 2025-01-08 12:11+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -1212,7 +1212,7 @@ msgstr "Numéro de vol"
 #: app/FlightEditor.qml:194
 #, kde-format
 msgid "Invalid flight number."
-msgstr "Numéro de vol invalide."
+msgstr "Numéro de vol non valable."
 
 #: app/FlightEditor.qml:199 app/FlightEditor.qml:206 app/FlightPage.qml:94
 #, kde-format
@@ -2005,7 +2005,7 @@ msgstr "Tram"
 msgid "Bus"
 msgstr "Bus"
 
-#: app/JourneyPathPage.qml:175 app/JourneySectionPage.qml:339
+#: app/JourneyPathPage.qml:175 app/JourneySectionPage.qml:336
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2127,72 +2127,72 @@ msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
 msgstr "Bateaux ou traversiers"
 
-#: app/JourneySectionDelegate.qml:142
+#: app/JourneySectionDelegate.qml:140
 #, kde-format
 msgid "To %1"
 msgstr "Vers %1"
 
-#: app/JourneySectionDelegate.qml:146
+#: app/JourneySectionDelegate.qml:144
 #, kde-format
 msgid "Walk (%1)"
 msgstr "Marche (%1)"
 
-#: app/JourneySectionDelegate.qml:147
+#: app/JourneySectionDelegate.qml:145
 #, kde-format
 msgid "Walk %1 (%2)"
 msgstr "Marche %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:149
+#: app/JourneySectionDelegate.qml:147
 #, kde-format
 msgid "Transfer (%1)"
 msgstr "Correspondance (%1)"
 
-#: app/JourneySectionDelegate.qml:151
+#: app/JourneySectionDelegate.qml:149
 #, kde-format
 msgid "Wait (%1)"
 msgstr "Attente (%1)"
 
-#: app/JourneySectionDelegate.qml:153
+#: app/JourneySectionDelegate.qml:151
 #, kde-format
 msgid "%1 %2 (%3)"
 msgstr "%1 %2 (%3)"
 
-#: app/JourneySectionDelegate.qml:155
+#: app/JourneySectionDelegate.qml:153
 #, kde-format
 msgid "Drive %1 (%2)"
 msgstr "Trajet %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:180 app/JourneySectionDelegate.qml:320
+#: app/JourneySectionDelegate.qml:178 app/JourneySectionDelegate.qml:318
 #, kde-format
 msgctxt "@info"
 msgid "Platform %1"
 msgstr "Quai %1"
 
-#: app/JourneySectionDelegate.qml:247 app/JourneySectionPage.qml:136
-#: app/VehicleLayoutPage.qml:243
+#: app/JourneySectionDelegate.qml:245 app/JourneySectionPage.qml:133
+#: app/VehicleLayoutPage.qml:240
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr "Afficher plus…"
 
-#: app/JourneySectionPage.qml:51 app/TimelineDelegateDepartureLayout.qml:94
-#: app/VehicleLayoutPage.qml:146
+#: app/JourneySectionPage.qml:48 app/TimelineDelegateDepartureLayout.qml:93
+#: app/VehicleLayoutPage.qml:143
 #, kde-format
 msgctxt "Direction of the transport mode"
 msgid "To %1"
 msgstr "Vers %1"
 
-#: app/JourneySectionPage.qml:64
+#: app/JourneySectionPage.qml:61
 #, kde-format
 msgid "Distance: %1"
 msgstr "Distance : %1"
 
-#: app/JourneySectionPage.qml:74
+#: app/JourneySectionPage.qml:71
 #, kde-format
 msgid "Average Speed: %1"
 msgstr "Vitesse moyenne : %1"
 
-#: app/JourneySectionPage.qml:84
+#: app/JourneySectionPage.qml:81
 #, kde-format
 msgid "CO₂: %1"
 msgstr "CO₂ : %1"
@@ -2228,7 +2228,7 @@ msgid_plural "%1 changes"
 msgstr[0] "Une modification"
 msgstr[1] "%1 modifications"
 
-#: app/JourneySummaryDelegate.qml:147
+#: app/JourneySummaryDelegate.qml:144
 #, kde-format
 msgid "Click to extend"
 msgstr "Cliquer pour développer"
@@ -3338,7 +3338,7 @@ msgstr "Documents et tickets"
 #: app/reservationhelper.cpp:130
 #, kde-format
 msgid "Flight from %1 to %2"
-msgstr "Vol  de %1 vers %2"
+msgstr "Vol de %1 vers %2"
 
 #: app/reservationhelper.cpp:133
 #, kde-format
@@ -4570,27 +4570,27 @@ msgctxt "train coach type"
 msgid "Car transport car"
 msgstr "Plate-forme de transport de voitures"
 
-#: app/VehicleLayoutPage.qml:162
+#: app/VehicleLayoutPage.qml:159
 #, kde-format
 msgid "Departure: %1"
 msgstr "Départ : %1"
 
-#: app/VehicleLayoutPage.qml:164
+#: app/VehicleLayoutPage.qml:161
 #, kde-format
 msgid "Arrival: %1"
 msgstr "Arrivée : %1"
 
-#: app/VehicleLayoutPage.qml:184
+#: app/VehicleLayoutPage.qml:181
 #, kde-format
 msgid "Platform: %1"
 msgstr "Quai : %1"
 
-#: app/VehicleLayoutPage.qml:193
+#: app/VehicleLayoutPage.qml:190
 #, kde-format
 msgid "Coach: %1 Seat: %2"
 msgstr "Voiture : %1 Siège : %2"
 
-#: app/VehicleLayoutPage.qml:450
+#: app/VehicleLayoutPage.qml:447
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "Aucune information de disposition du véhicule disponible."

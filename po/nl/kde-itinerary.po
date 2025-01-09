@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-07 00:41+0000\n"
+"POT-Creation-Date: 2025-01-09 00:41+0000\n"
 "PO-Revision-Date: 2024-12-26 10:12+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -1990,7 +1990,7 @@ msgstr "Tram"
 msgid "Bus"
 msgstr "Bus"
 
-#: app/JourneyPathPage.qml:175 app/JourneySectionPage.qml:339
+#: app/JourneyPathPage.qml:175 app/JourneySectionPage.qml:336
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2110,72 +2110,72 @@ msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
 msgstr "Boten of veerboten"
 
-#: app/JourneySectionDelegate.qml:142
+#: app/JourneySectionDelegate.qml:140
 #, kde-format
 msgid "To %1"
 msgstr "Naar %1"
 
-#: app/JourneySectionDelegate.qml:146
+#: app/JourneySectionDelegate.qml:144
 #, kde-format
 msgid "Walk (%1)"
 msgstr "Walk (%1)"
 
-#: app/JourneySectionDelegate.qml:147
+#: app/JourneySectionDelegate.qml:145
 #, kde-format
 msgid "Walk %1 (%2)"
 msgstr "Lopen %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:149
+#: app/JourneySectionDelegate.qml:147
 #, kde-format
 msgid "Transfer (%1)"
 msgstr "Transfer (%1)"
 
-#: app/JourneySectionDelegate.qml:151
+#: app/JourneySectionDelegate.qml:149
 #, kde-format
 msgid "Wait (%1)"
 msgstr "Wachten (%1)"
 
-#: app/JourneySectionDelegate.qml:153
+#: app/JourneySectionDelegate.qml:151
 #, kde-format
 msgid "%1 %2 (%3)"
 msgstr "%1 %2 (%3)"
 
-#: app/JourneySectionDelegate.qml:155
+#: app/JourneySectionDelegate.qml:153
 #, kde-format
 msgid "Drive %1 (%2)"
 msgstr "Autorijden %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:180 app/JourneySectionDelegate.qml:320
+#: app/JourneySectionDelegate.qml:178 app/JourneySectionDelegate.qml:318
 #, kde-format
 msgctxt "@info"
 msgid "Platform %1"
 msgstr "Perron %1"
 
-#: app/JourneySectionDelegate.qml:247 app/JourneySectionPage.qml:136
-#: app/VehicleLayoutPage.qml:243
+#: app/JourneySectionDelegate.qml:245 app/JourneySectionPage.qml:133
+#: app/VehicleLayoutPage.qml:240
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr "Meer tonen…"
 
-#: app/JourneySectionPage.qml:51 app/TimelineDelegateDepartureLayout.qml:94
-#: app/VehicleLayoutPage.qml:146
+#: app/JourneySectionPage.qml:48 app/TimelineDelegateDepartureLayout.qml:93
+#: app/VehicleLayoutPage.qml:143
 #, kde-format
 msgctxt "Direction of the transport mode"
 msgid "To %1"
 msgstr "Naar %1"
 
-#: app/JourneySectionPage.qml:64
+#: app/JourneySectionPage.qml:61
 #, kde-format
 msgid "Distance: %1"
 msgstr "Afstand: %1"
 
-#: app/JourneySectionPage.qml:74
+#: app/JourneySectionPage.qml:71
 #, kde-format
 msgid "Average Speed: %1"
 msgstr "Gemiddelde snelheid: %1"
 
-#: app/JourneySectionPage.qml:84
+#: app/JourneySectionPage.qml:81
 #, kde-format
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
@@ -2211,7 +2211,7 @@ msgid_plural "%1 changes"
 msgstr[0] "Eén overstap"
 msgstr[1] "%1 keer overstappen"
 
-#: app/JourneySummaryDelegate.qml:147
+#: app/JourneySummaryDelegate.qml:144
 #, kde-format
 msgid "Click to extend"
 msgstr "Klik om uit te breiden"
@@ -4527,27 +4527,27 @@ msgctxt "train coach type"
 msgid "Car transport car"
 msgstr "Autotransportwagon"
 
-#: app/VehicleLayoutPage.qml:162
+#: app/VehicleLayoutPage.qml:159
 #, kde-format
 msgid "Departure: %1"
 msgstr "Vertrek: %1"
 
-#: app/VehicleLayoutPage.qml:164
+#: app/VehicleLayoutPage.qml:161
 #, kde-format
 msgid "Arrival: %1"
 msgstr "Aankomst: %1"
 
-#: app/VehicleLayoutPage.qml:184
+#: app/VehicleLayoutPage.qml:181
 #, kde-format
 msgid "Platform: %1"
 msgstr "Platform: %1"
 
-#: app/VehicleLayoutPage.qml:193
+#: app/VehicleLayoutPage.qml:190
 #, kde-format
 msgid "Coach: %1 Seat: %2"
 msgstr "Bus: %1 zitplaats: %2"
 
-#: app/VehicleLayoutPage.qml:450
+#: app/VehicleLayoutPage.qml:447
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "Geen informatie over de indeling van het voertuig beschikbaar."
