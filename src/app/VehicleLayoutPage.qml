@@ -135,7 +135,7 @@ Kirigami.ScrollablePage {
         RowLayout {
             spacing: Kirigami.Units.smallSpacing
 
-            TransportNameControl {
+            KPublicTransport.TransportNameControl {
                 line: vehicleModel.stopover.route.line
             }
 

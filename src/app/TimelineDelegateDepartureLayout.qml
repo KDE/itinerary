@@ -6,6 +6,7 @@ import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kpublictransport
+import org.kde.kpublictransport.ui as KPublicTransport
 import org.kde.itinerary
 
 RowLayout {
@@ -83,7 +84,7 @@ RowLayout {
         RowLayout {
             spacing: Kirigami.Units.smallSpacing
 
-            TransportNameControl {
+            KPublicTransport.TransportNameControl {
                 line: root.departure.route.line
                 iconName: root.transportIcon
                 lineName: root.transportName

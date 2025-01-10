@@ -126,7 +126,7 @@ anchors.centerIn: parent
 
                     Layout.fillWidth: true
 
-                    TransportNameControl {
+                    KPublicTransport.TransportNameControl {
                         journeySection: root.modelData
                         visible: root.modelData.mode === JourneySection.PublicTransport
                     }

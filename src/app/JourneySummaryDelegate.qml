@@ -124,7 +124,7 @@ FormCard.AbstractFormDelegate {
 
             Repeater {
                 model: root.journey.sections
-                delegate: TransportNameControl {
+                delegate: KPublicTransport.TransportNameControl {
                     id: sectionDelegate
 
                     required property var modelData

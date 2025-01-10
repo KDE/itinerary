@@ -40,7 +40,7 @@ Kirigami.Page {
         RowLayout {
             spacing: Kirigami.Units.smallSpacing
 
-            TransportNameControl {
+            KPublicTransport.TransportNameControl {
                 journeySection: root.journeySection
             }
 
