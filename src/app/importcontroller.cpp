@@ -16,7 +16,6 @@
 #include "passmanager.h"
 #include "reservationhelper.h"
 #include "reservationmanager.h"
-#include "tripgroup.h"
 
 #ifdef Q_OS_ANDROID
 #include "android/itineraryactivity.h"

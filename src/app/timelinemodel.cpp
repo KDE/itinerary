@@ -9,7 +9,6 @@
 #include "locationinformation.h"
 #include "reservationmanager.h"
 #include "transfermanager.h"
-#include "tripgroup.h"
 #include "tripgroupmanager.h"
 #include "weatherinformation.h"
 
