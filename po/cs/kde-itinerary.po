@@ -3388,8 +3388,7 @@ msgid "Train"
 msgstr "Vlak"
 
 #: app/StopPickerPage.qml:27
-#, fuzzy, kde-format
-#| msgid "Clear history"
+#, kde-format
 msgid "Clear History"
 msgstr "Vyprázdnit historii"
 
@@ -3402,7 +3401,7 @@ msgstr "Opravdu si přejete smazat tento certifikát?"
 #: app/StopPickerPage.qml:32
 #, kde-format
 msgid "Remove"
-msgstr ""
+msgstr "Odstranit"
 
 #: app/StopPickerPage.qml:45
 #, kde-format
@@ -3929,7 +3928,7 @@ msgstr "%1 (%2/%3)"
 #: app/TripGroupMapPage.qml:194
 #, kde-format
 msgid "Address:"
-msgstr ""
+msgstr "Adresa:"
 
 #: app/TripGroupMergeDialog.qml:17
 #, kde-format
@@ -4002,7 +4001,7 @@ msgstr "Přidat"
 #: app/TripGroupPage.qml:674
 #, kde-format
 msgid "Cost"
-msgstr ""
+msgstr "Cena"
 
 #: app/TripGroupPage.qml:686
 #, kde-format
