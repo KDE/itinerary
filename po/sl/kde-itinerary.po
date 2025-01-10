@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-09 00:41+0000\n"
+"POT-Creation-Date: 2025-01-10 09:28+0000\n"
 "PO-Revision-Date: 2024-12-26 08:16+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -1800,27 +1800,27 @@ msgstr "Čas prijave"
 msgid "Check-out time"
 msgstr "Čas odjave"
 
-#: app/importcontroller.cpp:154 app/importcontroller.cpp:476
+#: app/importcontroller.cpp:153 app/importcontroller.cpp:475
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Uvoz ni uspel: %1"
 
-#: app/importcontroller.cpp:160
+#: app/importcontroller.cpp:159
 #, kde-format
 msgid "Import failed: File too large."
 msgstr "Uvoz ni uspel: Datoteka prevelika."
 
-#: app/importcontroller.cpp:219 app/importcontroller.cpp:316
+#: app/importcontroller.cpp:218 app/importcontroller.cpp:315
 #, kde-format
 msgid "Found nothing to import."
 msgstr "Ničesar ni najdenega za uvoz."
 
-#: app/importcontroller.cpp:448
+#: app/importcontroller.cpp:447
 #, kde-format
 msgid "No importable events found in this calendar."
 msgstr "Ni najdenih dogodkov za uvoz v tem koledarju."
 
-#: app/importcontroller.cpp:629
+#: app/importcontroller.cpp:628
 #, kde-format
 msgid "Backup"
 msgstr "Varovalna kopija"

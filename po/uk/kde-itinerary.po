@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-09 00:41+0000\n"
+"POT-Creation-Date: 2025-01-10 09:28+0000\n"
 "PO-Revision-Date: 2024-12-26 22:12+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -1804,27 +1804,27 @@ msgstr "Час перевірки на вході"
 msgid "Check-out time"
 msgstr "Час перевірки на виході"
 
-#: app/importcontroller.cpp:154 app/importcontroller.cpp:476
+#: app/importcontroller.cpp:153 app/importcontroller.cpp:475
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Не вдалося імпортувати: %1"
 
-#: app/importcontroller.cpp:160
+#: app/importcontroller.cpp:159
 #, kde-format
 msgid "Import failed: File too large."
 msgstr "Не вдалося імпортувати: надто великий файл."
 
-#: app/importcontroller.cpp:219 app/importcontroller.cpp:316
+#: app/importcontroller.cpp:218 app/importcontroller.cpp:315
 #, kde-format
 msgid "Found nothing to import."
 msgstr "Не знайдено даних для імпортування."
 
-#: app/importcontroller.cpp:448
+#: app/importcontroller.cpp:447
 #, kde-format
 msgid "No importable events found in this calendar."
 msgstr "У цьому календарі не знайдено придатних до імпортування записів подій."
 
-#: app/importcontroller.cpp:629
+#: app/importcontroller.cpp:628
 #, kde-format
 msgid "Backup"
 msgstr "Резервна копія"

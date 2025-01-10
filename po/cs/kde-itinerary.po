@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-09 00:41+0000\n"
+"POT-Creation-Date: 2025-01-10 09:28+0000\n"
 "PO-Revision-Date: 2024-10-18 16:02+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -1806,28 +1806,28 @@ msgstr ""
 msgid "Check-out time"
 msgstr ""
 
-#: app/importcontroller.cpp:154 app/importcontroller.cpp:476
+#: app/importcontroller.cpp:153 app/importcontroller.cpp:475
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Import selhal: %1"
 
-#: app/importcontroller.cpp:160
+#: app/importcontroller.cpp:159
 #, kde-format
 msgid "Import failed: File too large."
 msgstr "Import selhal: Soubor je příliš velký."
 
-#: app/importcontroller.cpp:219 app/importcontroller.cpp:316
+#: app/importcontroller.cpp:218 app/importcontroller.cpp:315
 #, kde-format
 msgid "Found nothing to import."
 msgstr ""
 
-#: app/importcontroller.cpp:448
+#: app/importcontroller.cpp:447
 #, kde-format
 msgid "No importable events found in this calendar."
 msgstr ""
 "V tomto kalendáři nebyly nalezeny žádné události, které lze importovat."
 
-#: app/importcontroller.cpp:629
+#: app/importcontroller.cpp:628
 #, kde-format
 msgid "Backup"
 msgstr "Záloha"
@@ -2827,12 +2827,12 @@ msgstr ""
 #: app/MatrixKeyVerificationPage.qml:207
 #, kde-format
 msgid "Accept"
-msgstr ""
+msgstr "Přijmout"
 
 #: app/MatrixKeyVerificationPage.qml:213
 #, kde-format
 msgid "Decline"
-msgstr ""
+msgstr "Odmítnout"
 
 #: app/MatrixRoomSelectionSheet.qml:19
 #, kde-format
@@ -2949,15 +2949,13 @@ msgid "Data Portability"
 msgstr ""
 
 #: app/MyDataPage.qml:195
-#, fuzzy, kde-format
-#| msgid "Import"
+#, kde-format
 msgctxt "@action:button"
 msgid "Import"
 msgstr "Importovat"
 
 #: app/MyDataPage.qml:203
-#, fuzzy, kde-format
-#| msgid "Export"
+#, kde-format
 msgctxt "@action:button"
 msgid "Export"
 msgstr "Exportovat"
@@ -3768,8 +3766,7 @@ msgid "Car"
 msgstr "Auto"
 
 #: app/StopPickerPage.qml:27
-#, fuzzy, kde-format
-#| msgid "Clear history"
+#, kde-format
 msgid "Clear History"
 msgstr "Vyprázdnit historii"
 
@@ -3782,7 +3779,7 @@ msgstr "Opravdu si přejete smazat tento certifikát?"
 #: app/StopPickerPage.qml:32
 #, kde-format
 msgid "Remove"
-msgstr ""
+msgstr "Odstranit"
 
 #: app/StopPickerPage.qml:45
 #, kde-format
@@ -4202,7 +4199,7 @@ msgstr "%1 (%2/%3)"
 #: app/TripGroupMapPage.qml:194
 #, kde-format
 msgid "Address:"
-msgstr ""
+msgstr "Adresa:"
 
 #: app/TripGroupMergeDialog.qml:17
 #, kde-format
@@ -4340,7 +4337,7 @@ msgstr "Dnes nemáte v itineráři nic."
 #: app/TripGroupPage.qml:676
 #, kde-format
 msgid "Cost"
-msgstr ""
+msgstr "Cena"
 
 #: app/TripGroupPage.qml:689
 #, kde-format
@@ -4643,16 +4640,14 @@ msgid "This server does not support logging in using a password"
 msgstr "Tento server nepodporuje přihlášení pomocí hesla"
 
 #: matrix/matrixmanager.cpp:78
-#, fuzzy, kde-format
-#| msgid "Logging in"
+#, kde-format
 msgid "Logging in…"
-msgstr "Přihlašování"
+msgstr "Přihlašování…"
 
 #: matrix/matrixmanager.cpp:114
-#, fuzzy, kde-format
-#| msgid "Log out"
+#, kde-format
 msgid "Logged out"
-msgstr "Odhlásit se"
+msgstr "Odhlášen"
 
 #: metadataextractor/itineraryextractor.cpp:118
 #, kde-format

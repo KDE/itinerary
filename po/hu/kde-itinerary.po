@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-09 00:41+0000\n"
+"POT-Creation-Date: 2025-01-10 09:28+0000\n"
 "PO-Revision-Date: 2024-03-26 16:14+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -1844,28 +1844,28 @@ msgstr "Bejelentkezés ideje"
 msgid "Check-out time"
 msgstr "Kijelentkezés ideje"
 
-#: app/importcontroller.cpp:154 app/importcontroller.cpp:476
+#: app/importcontroller.cpp:153 app/importcontroller.cpp:475
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Sikertelen importálás: %1"
 
-#: app/importcontroller.cpp:160
+#: app/importcontroller.cpp:159
 #, kde-format
 msgid "Import failed: File too large."
 msgstr "Sikertelen importálás: a fájl túl nagy."
 
-#: app/importcontroller.cpp:219 app/importcontroller.cpp:316
+#: app/importcontroller.cpp:218 app/importcontroller.cpp:315
 #, fuzzy, kde-format
 #| msgid "Nothing imported."
 msgid "Found nothing to import."
 msgstr "Semmi sem lett importálva."
 
-#: app/importcontroller.cpp:448
+#: app/importcontroller.cpp:447
 #, kde-format
 msgid "No importable events found in this calendar."
 msgstr "Nem találhatók importálható események ebben a naptárban."
 
-#: app/importcontroller.cpp:629
+#: app/importcontroller.cpp:628
 #, kde-format
 msgid "Backup"
 msgstr ""
