@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-10 09:28+0000\n"
+"POT-Creation-Date: 2025-01-11 00:41+0000\n"
 "PO-Revision-Date: 2024-12-26 20:15+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -2162,7 +2162,7 @@ msgctxt "@action:button"
 msgid "Show More…"
 msgstr "Erakutsi gehiago..."
 
-#: app/JourneySectionPage.qml:48 app/TimelineDelegateDepartureLayout.qml:93
+#: app/JourneySectionPage.qml:48 app/TimelineDelegateDepartureLayout.qml:94
 #: app/VehicleLayoutPage.qml:143
 #, kde-format
 msgctxt "Direction of the transport mode"
