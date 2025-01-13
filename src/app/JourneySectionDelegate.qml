@@ -168,10 +168,10 @@ anchors.centerIn: parent
                 }
 
                 DelayRow {
-                    stopover: root.modelData
+                    stopover: root.modelData.departure
                     delay: root.modelData.departureDelay
                     originalTime: Localizer.formatTime(root.modelData, "scheduledDepartureTime")
-                    visible: root.modelData.hasExpectedDepartureTime
+                    visible: root.modelData.hasExpectedDepartureTime || root.modelData.disruptionEffect === KPublicTransport.Disruption.NoService
                 }
 
                 QQC2.Label {
@@ -307,8 +307,8 @@ anchors.centerIn: parent
                 }
 
                 DelayRow {
-                    stopover: root.modelData
-                    visible: root.modelData.hasExpectedArrivalTime
+                    stopover: root.modelData.arrival
+                    visible: root.modelData.hasExpectedArrivalTime || root.modelData.disruptionEffect === KPublicTransport.Disruption.NoService
                     delay: root.modelData.arrivalDelay
                     originalTime: Localizer.formatTime(root.modelData, "scheduledArrivalTime")
                 }
