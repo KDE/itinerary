@@ -115,29 +115,10 @@ FormCard.AbstractFormDelegate {
             }
         }
 
-        RowLayout {
+        KPublicTransport.JourneyHorizontalBar {
             id: sectionsRow
-
-            spacing: Kirigami.Units.smallSpacing
-
             Layout.fillWidth: true
-
-            Repeater {
-                model: root.journey.sections
-                delegate: KPublicTransport.TransportNameControl {
-                    id: sectionDelegate
-
-                    required property var modelData
-
-                    journeySection: modelData
-
-                    Layout.fillWidth: true
-                    Layout.maximumWidth: sectionDelegate.modelData.mode === JourneySection.PublicTransport ? Number.POSITIVE_INFINITY : implicitWidth
-                }
-            }
-
-            // color: PublicTransport.warnAboutSection(modelData) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
-
+            journey: root.journey
         }
 
         QQC2.Label {

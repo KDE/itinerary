@@ -86,9 +86,6 @@ public:
     /** Produces a short summary of the given attribution information. */
     Q_INVOKABLE QString attributionSummary(const QVariantList &attributions) const;
 
-    /** Returns @c true when we want to highlight @p sections due to looking problematic. */
-    Q_INVOKABLE bool warnAboutSection(const KPublicTransport::JourneySection &section) const;
-
     /** First public transport section of the given section. */
     static KPublicTransport::JourneySection firstTransportSection(const KPublicTransport::Journey &journey);
     /** Last public transport section of the given section. */

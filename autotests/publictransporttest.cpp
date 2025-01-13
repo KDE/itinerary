@@ -113,16 +113,6 @@ private Q_SLOTS:
         QCOMPARE(newTicket.ticketedSeat().seatingType(), seat.seatingType()); // class is preserved
     }
 
-    void testWarn()
-    {
-        KPublicTransport::JourneySection section;
-        QVERIFY(!PublicTransport().warnAboutSection(section));
-        section.setMode(KPublicTransport::JourneySection::Walking);
-        QVERIFY(!PublicTransport().warnAboutSection(section));
-        section.setDistance(2000);
-        QVERIFY(PublicTransport().warnAboutSection(section));
-    }
-
     void testBackendSelection()
     {
         Organization provider;

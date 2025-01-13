@@ -308,50 +308,6 @@ QString PublicTransport::attributionSummary(const QVariantList &attributions) co
     return QLocale().createSeparatedList(l);
 }
 
-bool PublicTransport::warnAboutSection(const KPublicTransport::JourneySection &section) const
-{
-    using namespace KPublicTransport;
-
-    switch (section.mode()) {
-    case JourneySection::Invalid:
-        return false;
-    case JourneySection::Walking:
-    case JourneySection::Transfer:
-        return section.duration() > 20 * 60 || section.distance() > 1000;
-    case JourneySection::Waiting:
-        return section.duration() > 20 * 60;
-    case JourneySection::PublicTransport:
-        return std::any_of(section.loadInformation().begin(), section.loadInformation().end(), [](const auto &load) {
-            return load.load() == Load::Full;
-        });
-    case JourneySection::RentedVehicle:
-        switch (section.rentalVehicle().type()) {
-        case RentalVehicle::Unknown:
-            return false;
-        case RentalVehicle::Bicycle:
-            return section.duration() > 60 * 60 || section.distance() > 20000;
-        case RentalVehicle::ElectricKickScooter:
-        case RentalVehicle::ElectricMoped:
-        case RentalVehicle::Pedelec:
-        case RentalVehicle::Car:
-            return false; // ???
-        }
-        break;
-    case JourneySection::IndividualTransport:
-        switch (section.individualTransport().mode()) {
-        case IndividualTransport::Walk:
-            return section.duration() > 20 * 60 || section.distance() > 1000;
-        case IndividualTransport::Bike:
-            return section.duration() > 60 * 60 || section.distance() > 20000;
-        case IndividualTransport::Car:
-            return false;
-        }
-        break;
-    }
-
-    return false;
-}
-
 QString PublicTransport::idenfitierFromLocation(const KPublicTransport::Location &loc)
 {
     auto id = loc.identifier(QLatin1StringView("ibnr"));
