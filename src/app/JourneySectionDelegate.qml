@@ -214,7 +214,7 @@ anchors.centerIn: parent
                         parent: applicationWindow().overlay
 
                         headerItem: Kirigami.Heading {
-                            text: journeyTitleLabel.text
+                            text: root.modelData.label
                             elide: Qt.ElideRight
                             Layout.fillWidth: true
                             leftPadding: Kirigami.Units.smallSpacing
