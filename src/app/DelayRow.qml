@@ -12,7 +12,7 @@ RowLayout {
 
     spacing: 0
 
-    required property var stopover
+    required property KPublicTransport.stopover stopover
     required property int delay
     required property string originalTime
 

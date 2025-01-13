@@ -4,6 +4,8 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
@@ -15,7 +17,7 @@ import org.kde.kirigamiaddons.formcard as FormCard
 
 FormCard.AbstractFormDelegate {
     id: root
-    required property var modelData
+    required property KPublicTransport.journeySection modelData
     required property int index
     required property int modelLength
 
@@ -65,9 +67,9 @@ anchors.centerIn: parent
                     }
                     height: parent.height
                     width: implicitWidth
-                    lineColor: modelData.route.line.hasColor ? modelData.route.line.color : Kirigami.Theme.textColor
+                    lineColor: root.modelData.route.line.hasColor ? root.modelData.route.line.color : Kirigami.Theme.textColor
                     isDeparture: true
-                    visible:  modelData.mode !== JourneySection.Transfer && modelData.mode !== JourneySection.Walking && modelData.mode !== JourneySection.Walking
+                    visible:  root.modelData.mode !== JourneySection.Transfer && root.modelData.mode !== JourneySection.Walking && root.modelData.mode !== JourneySection.Walking
                 }
             }
 
@@ -75,11 +77,11 @@ anchors.centerIn: parent
                 Layout.topMargin: Kirigami.Units.mediumSpacing
                 Layout.fillWidth: true
                 spacing: Kirigami.Units.smallSpacing
-                visible: (root.modelData.mode !== JourneySection.Waiting && modelData.mode !== JourneySection.Walking ) || index === 0
+                visible: (root.modelData.mode !== JourneySection.Waiting && root.modelData.mode !== JourneySection.Walking ) || root.index === 0
 
                 Kirigami.Heading {
                     level: 2
-                    text: modelData.from.name
+                    text: root.modelData.from.name
                     elide: Text.ElideRight
                     Layout.fillWidth: true
                 }
@@ -110,9 +112,9 @@ anchors.centerIn: parent
 
                 JourneySectionStopDelegateLineSegment {
                     anchors.fill: parent
-                    lineColor: modelData.route.line.hasColor ? modelData.route.line.color : Kirigami.Theme.textColor
+                    lineColor: root.modelData.route.line.hasColor ? root.modelData.route.line.color : Kirigami.Theme.textColor
                     hasStop: false
-                    visible: modelData.mode !== JourneySection.Transfer && modelData.mode !== JourneySection.Walking && modelData.mode !== JourneySection.Waiting
+                    visible: root.modelData.mode !== JourneySection.Transfer && root.modelData.mode !== JourneySection.Walking && root.modelData.mode !== JourneySection.Waiting
                 }
             }
 
@@ -134,27 +136,27 @@ anchors.centerIn: parent
                     QQC2.Label {
                         elide: Text.ElideRight
                         visible: text.length > 0
-                        text: switch (modelData.mode) {
+                        text: switch (root.modelData.mode) {
                         case JourneySection.PublicTransport:
-                            if (modelData.route.direction)
-                                return i18n("To %1", modelData.route.direction);
+                            if (root.modelData.route.direction)
+                                return i18n("To %1", root.modelData.route.direction);
                             return ''
                         case JourneySection.Walking:
                             if (modelData.distance == 0)
-                                return i18n("Walk (%1)", Localizer.formatDurationCustom(modelData.duration));
-                            return i18n("Walk %1 (%2)", Localizer.formatDistance(modelData.distance), Localizer.formatDurationCustom(modelData.duration));
+                                return i18n("Walk (%1)", Localizer.formatDurationCustom(root.modelData.duration));
+                            return i18n("Walk %1 (%2)", Localizer.formatDistance(root.modelData.distance), Localizer.formatDurationCustom(root.modelData.duration));
                         case JourneySection.Transfer:
-                            return i18n("Transfer (%1)", Localizer.formatDurationCustom(modelData.duration))
+                            return i18n("Transfer (%1)", Localizer.formatDurationCustom(root.modelData.duration))
                         case JourneySection.Waiting:
-                            return i18n("Wait (%1)", Localizer.formatDurationCustom(modelData.duration))
+                            return i18n("Wait (%1)", Localizer.formatDurationCustom(root.modelData.duration))
                         case JourneySection.RentedVehicle:
-                            return i18n("%1 %2 (%3)", modelData.rentalVehicle.network.name, Localizer.formatDistance(modelData.distance), Localizer.formatDurationCustom(modelData.duration));
+                            return i18n("%1 %2 (%3)", root.modelData.rentalVehicle.network.name, Localizer.formatDistance(root.modelData.distance), Localizer.formatDurationCustom(root.modelData.duration));
                         case JourneySection.IndividualTransport:
-                            return i18n("Drive %1 (%2)", Localizer.formatDistance(modelData.distance), Localizer.formatDuration(modelData.duration));
+                            return i18n("Drive %1 (%2)", Localizer.formatDistance(root.modelData.distance), Localizer.formatDuration(root.modelData.duration));
                         return "???";
                         }
 
-                        Layout.topMargin: modelData.mode !== JourneySection.PublicTransport ? Kirigami.Units.largeSpacing : 0
+                        Layout.topMargin: root.modelData.mode !== JourneySection.PublicTransport ? Kirigami.Units.largeSpacing : 0
                         Layout.fillWidth: true
                     }
                 }
@@ -162,7 +164,7 @@ anchors.centerIn: parent
                 QQC2.Label {
                     visible: text.length > 0
                     elide: Text.ElideRight
-                    text: modelData.mode === JourneySection.PublicTransport ? Localizer.formatDurationCustom(modelData.duration) : ''
+                    text: root.modelData.mode === JourneySection.PublicTransport ? Localizer.formatDurationCustom(root.modelData.duration) : ''
 
                     Layout.fillWidth: true
                 }
@@ -175,16 +177,17 @@ anchors.centerIn: parent
                 }
 
                 QQC2.Label {
-                    text: i18nc("@info", "Platform %1", modelData.hasExpectedDeparturePlatform ? modelData.expectedDeparturePlatform : modelData.scheduledDeparturePlatform)
-                    color: modelData.departurePlatformChanged ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
+                    text: i18nc("@info", "Platform %1", root.modelData.hasExpectedDeparturePlatform ? root.modelData.expectedDeparturePlatform : root.modelData.scheduledDeparturePlatform)
+                    color: root.modelData.departurePlatformChanged ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
                     visible: root.modelData.scheduledDeparturePlatform.length > 0
                 }
 
                 RowLayout {
                     spacing: Kirigami.Units.smallSpacing
                     Repeater {
-                        model: modelData.features
+                        model: root.modelData.features
                         delegate: KPublicTransport.FeatureIcon {
+                            required property KPublicTransport.feature modelData
                             feature: modelData
                             Layout.preferredHeight: Kirigami.Units.iconSizes.small
                             Layout.preferredWidth: Kirigami.Units.iconSizes.small
@@ -195,7 +198,7 @@ anchors.centerIn: parent
                     id: notesLabel
                     Layout.fillWidth: true
                     Layout.fillHeight: true
-                    text: modelData.notes.join("<br/>")
+                    text: root.modelData.notes.join("<br/>")
                     color: Kirigami.Theme.disabledTextColor
                     textFormat: Text.RichText
                     wrapMode: Text.Wrap
@@ -204,7 +207,7 @@ anchors.centerIn: parent
                     elide: Text.ElideRight
                     maximumLineCount: 3
                     Layout.maximumHeight: Kirigami.Units.gridUnit * maximumLineCount
-                    visible: modelData.notes.length > 0
+                    visible: root.modelData.notes.length > 0
                     font.italic: true
                     clip: implicitHeight > height
                     onLinkActivated: Qt.openUrlExternally(link)
@@ -225,11 +228,11 @@ anchors.centerIn: parent
                             Layout.preferredWidth: Kirigami.Units.gridUnit * 60
                             Layout.maximumWidth: root.width
                             PublicTransportFeatureList {
-                                model: modelData.features
+                                model: root.modelData.features
                             }
                             QQC2.Label {
                                 Layout.fillWidth: true
-                                text: modelData.notes.join("<br/>")
+                                text: root.modelData.notes.join("<br/>")
                                 textFormat: Text.RichText
                                 wrapMode: Text.Wrap
                                 onLinkActivated: Qt.openUrlExternally(link)
@@ -254,7 +257,7 @@ anchors.centerIn: parent
         // last row: arrival information
         RowLayout {
             spacing: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
-            visible: modelData.mode !== JourneySection.Walking || index === modelLength
+            visible: root.modelData.mode !== JourneySection.Walking || root.index === root.modelLength
 
             Layout.fillWidth: true
 
@@ -263,7 +266,7 @@ anchors.centerIn: parent
                 Layout.fillHeight: true
 
                 Rectangle{
-                    visible: index !== modelLength || modelData.mode === JourneySection.Walking
+                    visible: root.index !== root.modelLength || root.modelData.mode === JourneySection.Walking
                     height: parent.height
                     anchors.centerIn: parent
                     color: Kirigami.Theme.disabledTextColor
@@ -272,9 +275,9 @@ anchors.centerIn: parent
                 JourneySectionStopDelegateLineSegment {
                     anchors.fill: parent
                     anchors.bottomMargin: Kirigami.Units.mediumSpacing
-                    lineColor: modelData.route.line.hasColor ? modelData.route.line.color : Kirigami.Theme.textColor
+                    lineColor: root.modelData.route.line.hasColor ? root.modelData.route.line.color : Kirigami.Theme.textColor
                     isArrival: true
-                    visible:  modelData.mode !== JourneySection.Transfer && modelData.mode !== JourneySection.Walking && modelData.mode !== JourneySection.Waiting
+                    visible:  root.modelData.mode !== JourneySection.Transfer && root.modelData.mode !== JourneySection.Walking && root.modelData.mode !== JourneySection.Waiting
                 }
             }
 
@@ -314,7 +317,7 @@ anchors.centerIn: parent
                 }
 
                 QQC2.Label {
-                    readonly property string platform: modelData.hasExpectedArrivalPlatform ? modelData.expectedArrivalPlatform : modelData.scheduledArrivalPlatform
+                    readonly property string platform: root.modelData.hasExpectedArrivalPlatform ? root.modelData.expectedArrivalPlatform : root.modelData.scheduledArrivalPlatform
                     text: i18nc("@info", "Platform %1", platform)
                     visible: platform.length > 0
 
