@@ -170,7 +170,7 @@ anchors.centerIn: parent
                 DelayRow {
                     stopover: root.modelData
                     delay: root.modelData.departureDelay
-                    originalTime: Localizer.formatTime(root.arrival, "scheduledDepartureTime")
+                    originalTime: Localizer.formatTime(root.modelData, "scheduledDepartureTime")
                     visible: root.modelData.hasExpectedDepartureTime
                 }
 
