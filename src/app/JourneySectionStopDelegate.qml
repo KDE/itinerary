@@ -8,13 +8,13 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
-import org.kde.kpublictransport
+import org.kde.kpublictransport as KPublicTransport
 import org.kde.kpublictransport.ui as KPublicTransport
 import org.kde.itinerary
 
 Item {
     id: root
-    property var stop
+    property KPublicTransport.stopover stop
     property bool isDeparture: false
     property bool isArrival: false
 
@@ -48,8 +48,8 @@ Item {
 
             isArrival: root.isArrival
             isDeparture: root.isDeparture
-            lineColor: stop.route.line.hasColor ? stop.route.line.color : Kirigami.Theme.textColor
-            hasStop: !isIntermediate || stop.disruptionEffect !== Disruption.NoService
+            lineColor: root.stop.route.line.hasColor ? root.stop.route.line.color : Kirigami.Theme.textColor
+            hasStop: !isIntermediate || root.stop.disruptionEffect !== KPublicTransport.Disruption.NoService
             showStop: false
             trailingProgress: Math.min(1.0, (root.trailingProgress * root.trailingSegmentLength) / lineSegment.trailingLineLength)
         }
@@ -58,20 +58,20 @@ Item {
             id: arrivalTime
             Layout.column: 1
             Layout.row: 0
-            Layout.rowSpan: isSingleTime ? 2 : 1
-            Layout.alignment: isSingleTime ? Qt.AlignVCenter : Qt.AlignBottom
+            Layout.rowSpan: root.isSingleTime ? 2 : 1
+            Layout.alignment: root.isSingleTime ? Qt.AlignVCenter : Qt.AlignBottom
             text: Localizer.formatTime(stop, "scheduledArrivalTime")
-            visible: stop.scheduledArrivalTime > 0 && !isSameTime
-            font.strikeout: stop.disruptionEffect === Disruption.NoService
+            visible: root.stop.scheduledArrivalTime > 0 && !root.isSameTime
+            font.strikeout: root.stop.disruptionEffect === KPublicTransport.Disruption.NoService
         }
         QQC2.Label {
             Layout.column: 2
             Layout.row: 0
             Layout.rowSpan: arrivalTime.Layout.rowSpan
-            Layout.alignment: isSingleTime ? Qt.AlignVCenter : Qt.AlignBottom
-            text: (stop.arrivalDelay >= 0 ? "+" : "") + stop.arrivalDelay
-            color: stop.arrivalDelay > 1 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
-            visible: arrivalTime.visible && stop.hasExpectedArrivalTime && !isSameTime && stop.disruptionEffect !== Disruption.NoService
+            Layout.alignment: root.isSingleTime ? Qt.AlignVCenter : Qt.AlignBottom
+            text: (root.stop.arrivalDelay >= 0 ? "+" : "") + root.stop.arrivalDelay
+            color: root.stop.arrivalDelay > 1 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
+            visible: arrivalTime.visible && root.stop.hasExpectedArrivalTime && !root.isSameTime && root.stop.disruptionEffect !== KPublicTransport.Disruption.NoService
         }
 
         QQC2.Label {
@@ -79,39 +79,39 @@ Item {
             Layout.row: 0
             Layout.rowSpan: arrivalTime.Layout.rowSpan
             Layout.fillWidth: true
-            Layout.alignment: isSingleTime ? Qt.AlignVCenter : Qt.AlignBottom
-            text: stop.stopPoint.name
+            Layout.alignment: root.isSingleTime ? Qt.AlignVCenter : Qt.AlignBottom
+            text: root.stop.stopPoint.name
             elide: Text.ElideRight
             font.bold: root.isDeparture || root.isArrival
-            font.strikeout: stop.disruptionEffect === Disruption.NoService
+            font.strikeout: root.stop.disruptionEffect === KPublicTransport.Disruption.NoService
         }
 
         QQC2.Label {
             id: departureTime
             Layout.column: 1
-            Layout.row: isSingleTime ? 0 : 1
-            Layout.rowSpan: isSingleTime ? 2 : 1
-            Layout.alignment: isSingleTime ? Qt.AlignVCenter : Qt.AlignTop
+            Layout.row: root.isSingleTime ? 0 : 1
+            Layout.rowSpan: root.isSingleTime ? 2 : 1
+            Layout.alignment: root.isSingleTime ? Qt.AlignVCenter : Qt.AlignTop
             text: Localizer.formatTime(stop, "scheduledDepartureTime")
-            visible: stop.scheduledDepartureTime > 0
-            font.strikeout: stop.disruptionEffect === Disruption.NoService
+            visible: root.stop.scheduledDepartureTime > 0
+            font.strikeout: root.stop.disruptionEffect === KPublicTransport.Disruption.NoService
         }
 
         QQC2.Label {
             Layout.column: 2
             Layout.row: departureTime.Layout.row
             Layout.rowSpan: departureTime.Layout.rowSpan
-            Layout.alignment: isSingleTime ? Qt.AlignVCenter : Qt.AlignTop
-            text: (stop.departureDelay >= 0 ? "+" : "") + stop.departureDelay
-            color: stop.departureDelay > 1 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
-            visible: departureTime.visible && stop.hasExpectedDepartureTime && stop.disruptionEffect !== Disruption.NoService
+            Layout.alignment: root.isSingleTime ? Qt.AlignVCenter : Qt.AlignTop
+            text: (root.stop.departureDelay >= 0 ? "+" : "") + root.stop.departureDelay
+            color: root.stop.departureDelay > 1 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
+            visible: departureTime.visible && root.stop.hasExpectedDepartureTime && root.stop.disruptionEffect !== KPublicTransport.Disruption.NoService
         }
 
         KPublicTransport.OccupancyIndicator {
             Layout.column: 3
             Layout.row: 1
             Layout.rowSpan: 1
-            Layout.alignment: isSingleTime ? Qt.AlignVCenter : Qt.AlignTop
+            Layout.alignment: root.isSingleTime ? Qt.AlignVCenter : Qt.AlignTop
             Layout.preferredHeight: Kirigami.Units.iconSizes.small
             Layout.preferredWidth: Kirigami.Units.iconSizes.small
             occupancy: PublicTransport.maximumOccupancy(stop.loadInformation)
@@ -121,59 +121,59 @@ Item {
             Layout.column: 4
             Layout.row: 0
             Layout.rowSpan: arrivalTime.Layout.rowSpan
-            Layout.alignment: isSingleTime ? Qt.AlignVCenter : Qt.AlignBottom
+            Layout.alignment: root.isSingleTime ? Qt.AlignVCenter : Qt.AlignBottom
 
-            color: stop.hasExpectedPlatform ? (stop.platformChanged ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor) : Kirigami.Theme.textColor
+            color: root.stop.hasExpectedPlatform ? (root.stop.platformChanged ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor) : Kirigami.Theme.textColor
             text: {
-                const platform = stop.hasExpectedPlatform ? stop.expectedPlatform : stop.scheduledPlatform;
+                const platform = root.stop.hasExpectedPlatform ? root.stop.expectedPlatform : root.stop.scheduledPlatform;
 
                 if (platform.length === 0) {
                     return '';
                 }
 
-                switch (stop.route.line.mode) {
-                    case Line.Train:
-                    case Line.Funicular:
-                    case Line.LocalTrain:
-                    case Line.LongDistanceTrain:
-                    case Line.Metro:
-                    case Line.RailShuttle:
-                    case Line.RapidTransit:
-                    case Line.Tramway:
+                switch (root.stop.route.line.mode) {
+                    case KPublicTransport.Line.Train:
+                    case KPublicTransport.Line.Funicular:
+                    case KPublicTransport.Line.LocalTrain:
+                    case KPublicTransport.Line.LongDistanceTrain:
+                    case KPublicTransport.Line.Metro:
+                    case KPublicTransport.Line.RailShuttle:
+                    case KPublicTransport.Line.RapidTransit:
+                    case KPublicTransport.Line.Tramway:
                         return i18nc("Abreviation of train platform", "Pl. %1", platform)
-                    case Line.Ferry:
+                    case KPublicTransport.Line.Ferry:
                         return i18nc("Ferry dock, if possible use an abreviation", "Dock %1", platform)
                     default:
                         return i18nc("Generic abreviation of platform", "Pl. %1", platform)
                 }
             }
-            visible: stop.disruptionEffect !== Disruption.NoService
+            visible: root.stop.disruptionEffect !== KPublicTransport.Disruption.NoService
         }
 
         QQC2.ToolButton {
             Layout.column: 5
             Layout.row: 0
             Layout.rowSpan: arrivalTime.Layout.rowSpan
-            Layout.alignment: isSingleTime ? Qt.AlignVCenter : Qt.AlignBottom
-            Layout.bottomMargin: isSingleTime ? 0 : Math.round(-height / 4)
-            visible: stop.stopPoint.hasCoordinate && stop.disruptionEffect !== Disruption.NoService
+            Layout.alignment: root.isSingleTime ? Qt.AlignVCenter : Qt.AlignBottom
+            Layout.bottomMargin: root.isSingleTime ? 0 : Math.round(-height / 4)
+            visible: root.stop.stopPoint.hasCoordinate && root.stop.disruptionEffect !== KPublicTransport.Disruption.NoService
             icon.name: "map-symbolic"
             text: i18n("Show location")
             display: QQC2.AbstractButton.IconOnly
             onClicked: {
                 const args = {
-                    coordinate: Qt.point(stop.stopPoint.longitude, stop.stopPoint.latitude),
-                    placeName: stop.stopPoint.name
+                    coordinate: Qt.point(root.stop.stopPoint.longitude, root.stop.stopPoint.latitude),
+                    placeName: root.stop.stopPoint.name
                 };
-                if (!isDeparture) {
-                    args.arrivalPlatformName = stop.hasExpectedPlatform ? stop.expectedPlatform : stop.scheduledPlatform;
-                    args.arrivalPlatformMode = PublicTransport.lineModeToPlatformMode(stop.route.line.mode);
-                    args.arrivalPlatformIfopt = stop.stopPoint.identifier("ifopt");
+                if (!root.isDeparture) {
+                    args.arrivalPlatformName = root.stop.hasExpectedPlatform ? root.stop.expectedPlatform : root.stop.scheduledPlatform;
+                    args.arrivalPlatformMode = PublicTransport.lineModeToPlatformMode(root.stop.route.line.mode);
+                    args.arrivalPlatformIfopt = root.stop.stopPoint.identifier("ifopt");
                 }
-                if (!isArrival) {
-                    args.departurePlatformName = stop.hasExpectedPlatform ? stop.expectedPlatform : stop.scheduledPlatform;
-                    args.departurePlatformMode = PublicTransport.lineModeToPlatformMode(stop.route.line.mode);
-                    args.departurePlatformIfopt = stop.stopPoint.identifier("ifopt");
+                if (!root.isArrival) {
+                    args.departurePlatformName = root.stop.hasExpectedPlatform ? root.stop.expectedPlatform : root.stop.scheduledPlatform;
+                    args.departurePlatformMode = PublicTransport.lineModeToPlatformMode(root.stop.route.line.mode);
+                    args.departurePlatformIfopt = root.stop.stopPoint.identifier("ifopt");
                 }
 
                 // ensure the map page ends up on top
@@ -195,7 +195,7 @@ Item {
             Layout.row: 2
             Layout.fillHeight: true
             visible: notesLabel.visible
-            lineColor: stop.route.line.hasColor ? stop.route.line.color : Kirigami.Theme.textColor
+            lineColor: root.stop.route.line.hasColor ? root.stop.route.line.color : Kirigami.Theme.textColor
             hasStop: false
             showStop: false
             leadingProgress:  Math.max(0, ((root.trailingProgress * root.trailingSegmentLength) - lineSegment.trailingLineLength) / stopNotesLine.height)
@@ -209,10 +209,10 @@ Item {
             Layout.fillWidth: true
             Layout.fillHeight: true
             verticalAlignment: Qt.AlignTop
-            text: stop.notes.join("<br/>")
+            text: root.stop.notes.join("<br/>")
             textFormat: Text.RichText
             wrapMode: Text.Wrap
-            visible: stop.notes.length > 0 && !isDeparture
+            visible: root.stop.notes.length > 0 && !root.isDeparture
             font.italic: true
             onLinkActivated: Qt.openUrlExternally(link)
             color: Kirigami.Theme.disabledTextColor
