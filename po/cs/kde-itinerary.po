@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-11 00:41+0000\n"
+"POT-Creation-Date: 2025-01-14 00:42+0000\n"
 "PO-Revision-Date: 2024-10-18 16:02+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -2125,51 +2125,51 @@ msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
 msgstr "Lodě nebo přívozy"
 
-#: app/JourneySectionDelegate.qml:140
+#: app/JourneySectionDelegate.qml:142
 #, fuzzy, kde-format
 #| msgctxt "to travel destination"
 #| msgid "To %1"
 msgid "To %1"
 msgstr "Do %1"
 
-#: app/JourneySectionDelegate.qml:144
+#: app/JourneySectionDelegate.qml:146
 #, kde-format
 msgid "Walk (%1)"
 msgstr "Chůze (%1)"
 
-#: app/JourneySectionDelegate.qml:145
+#: app/JourneySectionDelegate.qml:147
 #, kde-format
 msgid "Walk %1 (%2)"
 msgstr "Chůze %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:147
+#: app/JourneySectionDelegate.qml:149
 #, kde-format
 msgid "Transfer (%1)"
 msgstr "Přesun (%1)"
 
-#: app/JourneySectionDelegate.qml:149
+#: app/JourneySectionDelegate.qml:151
 #, kde-format
 msgid "Wait (%1)"
 msgstr "Počkat (%1)"
 
-#: app/JourneySectionDelegate.qml:151
+#: app/JourneySectionDelegate.qml:153
 #, kde-format
 msgid "%1 %2 (%3)"
 msgstr "%1 %2 (%3)"
 
-#: app/JourneySectionDelegate.qml:153
+#: app/JourneySectionDelegate.qml:155
 #, kde-format
 msgid "Drive %1 (%2)"
 msgstr ""
 
-#: app/JourneySectionDelegate.qml:178 app/JourneySectionDelegate.qml:318
+#: app/JourneySectionDelegate.qml:180 app/JourneySectionDelegate.qml:321
 #, fuzzy, kde-format
 #| msgid "Platform: %1"
 msgctxt "@info"
 msgid "Platform %1"
 msgstr "Nástupiště: %1"
 
-#: app/JourneySectionDelegate.qml:245 app/JourneySectionPage.qml:133
+#: app/JourneySectionDelegate.qml:248 app/JourneySectionPage.qml:133
 #: app/VehicleLayoutPage.qml:240
 #, kde-format
 msgctxt "@action:button"
@@ -2232,7 +2232,7 @@ msgstr[0] "Jeden přestup"
 msgstr[1] "%1 přestupy"
 msgstr[2] "%1 přestupů"
 
-#: app/JourneySummaryDelegate.qml:144
+#: app/JourneySummaryDelegate.qml:125
 #, kde-format
 msgid "Click to extend"
 msgstr ""

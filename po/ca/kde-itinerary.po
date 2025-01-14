@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-11 00:41+0000\n"
+"POT-Creation-Date: 2025-01-14 00:42+0000\n"
 "PO-Revision-Date: 2024-12-26 10:52+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -2111,48 +2111,48 @@ msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
 msgstr "Vaixells o ferris"
 
-#: app/JourneySectionDelegate.qml:140
+#: app/JourneySectionDelegate.qml:142
 #, kde-format
 msgid "To %1"
 msgstr "A %1"
 
-#: app/JourneySectionDelegate.qml:144
+#: app/JourneySectionDelegate.qml:146
 #, kde-format
 msgid "Walk (%1)"
 msgstr "Caminar (%1)"
 
-#: app/JourneySectionDelegate.qml:145
+#: app/JourneySectionDelegate.qml:147
 #, kde-format
 msgid "Walk %1 (%2)"
 msgstr "Caminar %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:147
+#: app/JourneySectionDelegate.qml:149
 #, kde-format
 msgid "Transfer (%1)"
 msgstr "Transbordament (%1)"
 
-#: app/JourneySectionDelegate.qml:149
+#: app/JourneySectionDelegate.qml:151
 #, kde-format
 msgid "Wait (%1)"
 msgstr "Espera (%1)"
 
-#: app/JourneySectionDelegate.qml:151
+#: app/JourneySectionDelegate.qml:153
 #, kde-format
 msgid "%1 %2 (%3)"
 msgstr "%1 %2 (%3)"
 
-#: app/JourneySectionDelegate.qml:153
+#: app/JourneySectionDelegate.qml:155
 #, kde-format
 msgid "Drive %1 (%2)"
 msgstr "Condueix %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:178 app/JourneySectionDelegate.qml:318
+#: app/JourneySectionDelegate.qml:180 app/JourneySectionDelegate.qml:321
 #, kde-format
 msgctxt "@info"
 msgid "Platform %1"
 msgstr "Andana %1"
 
-#: app/JourneySectionDelegate.qml:245 app/JourneySectionPage.qml:133
+#: app/JourneySectionDelegate.qml:248 app/JourneySectionPage.qml:133
 #: app/VehicleLayoutPage.qml:240
 #, kde-format
 msgctxt "@action:button"
@@ -2213,7 +2213,7 @@ msgid_plural "%1 changes"
 msgstr[0] "Un canvi"
 msgstr[1] "%1 canvis"
 
-#: app/JourneySummaryDelegate.qml:144
+#: app/JourneySummaryDelegate.qml:125
 #, kde-format
 msgid "Click to extend"
 msgstr "Cliqueu per a ampliar"

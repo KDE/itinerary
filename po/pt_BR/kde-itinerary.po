@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-11 00:41+0000\n"
+"POT-Creation-Date: 2025-01-14 00:42+0000\n"
 "PO-Revision-Date: 2023-07-29 15:30-0300\n"
 "Last-Translator: Geraldo Simiao <geraldosimiao@fedoraproject.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -2261,52 +2261,52 @@ msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
 msgstr "Viagens de barco"
 
-#: app/JourneySectionDelegate.qml:140
+#: app/JourneySectionDelegate.qml:142
 #, fuzzy, kde-format
 #| msgctxt "to travel destination"
 #| msgid "To %1"
 msgid "To %1"
 msgstr "Para %1"
 
-#: app/JourneySectionDelegate.qml:144
+#: app/JourneySectionDelegate.qml:146
 #, kde-format
 msgid "Walk (%1)"
 msgstr "Caminhada (%1"
 
-#: app/JourneySectionDelegate.qml:145
+#: app/JourneySectionDelegate.qml:147
 #, kde-format
 msgid "Walk %1 (%2)"
 msgstr "Caminhada %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:147
+#: app/JourneySectionDelegate.qml:149
 #, kde-format
 msgid "Transfer (%1)"
 msgstr "Translado (%1)"
 
-#: app/JourneySectionDelegate.qml:149
+#: app/JourneySectionDelegate.qml:151
 #, kde-format
 msgid "Wait (%1)"
 msgstr "Espera (%1)"
 
-#: app/JourneySectionDelegate.qml:151
+#: app/JourneySectionDelegate.qml:153
 #, kde-format
 msgid "%1 %2 (%3)"
 msgstr "%1 %2 (%3)"
 
-#: app/JourneySectionDelegate.qml:153
+#: app/JourneySectionDelegate.qml:155
 #, fuzzy, kde-format
 #| msgid "Test %1 (%2)"
 msgid "Drive %1 (%2)"
 msgstr "Teste %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:178 app/JourneySectionDelegate.qml:318
+#: app/JourneySectionDelegate.qml:180 app/JourneySectionDelegate.qml:321
 #, fuzzy, kde-format
 #| msgid "Platform: %1"
 msgctxt "@info"
 msgid "Platform %1"
 msgstr "Plataforma: %1"
 
-#: app/JourneySectionDelegate.qml:245 app/JourneySectionPage.qml:133
+#: app/JourneySectionDelegate.qml:248 app/JourneySectionPage.qml:133
 #: app/VehicleLayoutPage.qml:240
 #, kde-format
 msgctxt "@action:button"
@@ -2370,7 +2370,7 @@ msgid_plural "%1 changes"
 msgstr[0] "Uma alteração"
 msgstr[1] "%1 alterações"
 
-#: app/JourneySummaryDelegate.qml:144
+#: app/JourneySummaryDelegate.qml:125
 #, kde-format
 msgid "Click to extend"
 msgstr ""
