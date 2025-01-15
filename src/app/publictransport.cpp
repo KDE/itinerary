@@ -441,14 +441,4 @@ bool PublicTransport::isSameStopoverForLayout(const KPublicTransport::Stopover &
     return lhsPlatform == rhsPlatform;
 }
 
-KPublicTransport::Load::Category PublicTransport::maximumOccupancy(const QList<KPublicTransport::LoadInfo> &loadInfo)
-{
-    using namespace KPublicTransport;
-    auto o = Load::Unknown;
-    for (const auto &l : loadInfo) {
-        o = std::max(o, l.load());
-    }
-    return o;
-}
-
 #include "moc_publictransport.cpp"

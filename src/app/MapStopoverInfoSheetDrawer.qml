@@ -62,7 +62,7 @@ SheetDrawer {
             }
             FormCard.AbstractFormDelegate {
                 Layout.fillWidth: true
-                visible: PublicTransport.maximumOccupancy(stopInfoDrawer.stop.loadInformation) != KPublicTransport.Load.Unknown
+                visible: stopInfoDrawer.stop.maximumOccupancy !== KPublicTransport.Load.Unknown
                     contentItem: ColumnLayout {
                         spacing: Kirigami.Units.mediumSpacing
 
@@ -73,7 +73,7 @@ SheetDrawer {
                             Accessible.ignored: true
                         }
                         KPublicTransport.OccupancyIndicator {
-                            occupancy: PublicTransport.maximumOccupancy(stopInfoDrawer.stop.loadInformation)
+                            occupancy: stopInfoDrawer.stop.maximumOccupancy
                             Layout.preferredHeight: Kirigami.Units.iconSizes.small
                             Layout.preferredWidth: Kirigami.Units.iconSizes.small
                         }

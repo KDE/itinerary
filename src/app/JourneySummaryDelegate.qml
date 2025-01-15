@@ -19,19 +19,6 @@ FormCard.AbstractFormDelegate {
 
     required property var journey
 
-    readonly property int sectionWithMaxLoad: {
-        var loadMax = Load.Unknown;
-        var loadMaxIdx = -1;
-        for (var i = 0; root.journey != undefined && i < root.journey.sections.length; ++i) {
-            var l = PublicTransport.maximumOccupancy(root.journey.sections[i].loadInformation);
-            if (l > loadMax) {
-                loadMax = l;
-                loadMaxIdx = i;
-            }
-        }
-        return loadMaxIdx;
-    }
-
     contentItem: ColumnLayout {
         id: mainLayout
 
@@ -78,9 +65,10 @@ FormCard.AbstractFormDelegate {
             }
 
             KPublicTransport.OccupancyIndicator {
-                occupancy: sectionWithMaxLoad < 0 ? Load.Unknown : PublicTransport.maximumOccupancy(root.journey.sections[sectionWithMaxLoad].loadInformation)
+                occupancy: root.journey.maximumOccupancy
                 Layout.preferredHeight: Kirigami.Units.iconSizes.small
                 Layout.preferredWidth: Kirigami.Units.iconSizes.small
+                Layout.minimumWidth: Kirigami.Units.iconSizes.small
             }
         }
 

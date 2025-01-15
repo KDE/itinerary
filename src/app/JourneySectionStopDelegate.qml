@@ -114,7 +114,7 @@ Item {
             Layout.alignment: root.isSingleTime ? Qt.AlignVCenter : Qt.AlignTop
             Layout.preferredHeight: Kirigami.Units.iconSizes.small
             Layout.preferredWidth: Kirigami.Units.iconSizes.small
-            occupancy: PublicTransport.maximumOccupancy(stop.loadInformation)
+            occupancy: root.stop.maximumOccupancy
         }
 
         QQC2.Label {

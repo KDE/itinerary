@@ -107,9 +107,6 @@ public:
      */
     [[nodiscard]] static bool isSameStopoverForLayout(const KPublicTransport::Stopover &lhs, const KPublicTransport::Stopover &rhs);
 
-    /** Returns the maximum occupancy found in the given load information set. */
-    Q_INVOKABLE [[nodiscard]] static KPublicTransport::Load::Category maximumOccupancy(const QList<KPublicTransport::LoadInfo> &loadInfo);
-
 private:
     // for use by the template code
     static QString idenfitierFromLocation(const KPublicTransport::Location &loc);
