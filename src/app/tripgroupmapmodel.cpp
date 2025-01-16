@@ -153,7 +153,7 @@ void TripGroupMapModel::expandJourney(const KPublicTransport::Journey &jny)
     }
 }
 
-void TripGroupMapModel::expandJourneySection(KPublicTransport::JourneySection jnySec)
+void TripGroupMapModel::expandJourneySection(const KPublicTransport::JourneySection &jnySec)
 {
     if (!jnySec.from().hasCoordinate() || !jnySec.to().hasCoordinate()) {
         return;
@@ -189,13 +189,11 @@ void TripGroupMapModel::expandJourneySection(KPublicTransport::JourneySection jn
     }
 
     // generate path if missing
-    const auto jnyPath = jnySec.path();
+    auto jnyPath = jnySec.path();
     if (jnyPath.sections().empty()) {
         PathSection pathSec;
         pathSec.setPath({QPointF{jnySec.from().longitude(), jnySec.from().latitude()}, QPointF{jnySec.to().longitude(), jnySec.to().latitude()}});
-        Path path;
-        path.setSections({pathSec});
-        jnySec.setPath(path);
+        jnyPath.setSections({pathSec});
     }
 
     for (const auto &pathSec : jnyPath.sections()) {
