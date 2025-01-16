@@ -75,7 +75,7 @@ Q_SIGNALS:
 private:
     void recompute();
     void expandJourney(const KPublicTransport::Journey &jny);
-    void expandJourneySection(KPublicTransport::JourneySection jnySec);
+    void expandJourneySection(const KPublicTransport::JourneySection &jnySec);
 
     QString m_tripGroupId;
     QList<MapPathEntry> m_journeySections;
