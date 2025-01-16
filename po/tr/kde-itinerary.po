@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-14 00:42+0000\n"
+"POT-Creation-Date: 2025-01-16 00:41+0000\n"
 "PO-Revision-Date: 2025-01-04 15:54+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -2203,7 +2203,7 @@ msgstr "Pe. %1"
 msgid "Show location"
 msgstr "Konumu göster"
 
-#: app/JourneySummaryDelegate.qml:75
+#: app/JourneySummaryDelegate.qml:62
 #, kde-format
 msgctxt "number of switches to another transport"
 msgid "One change"
@@ -2211,7 +2211,7 @@ msgid_plural "%1 changes"
 msgstr[0] "1 aktarma"
 msgstr[1] "%1 aktarma"
 
-#: app/JourneySummaryDelegate.qml:125
+#: app/JourneySummaryDelegate.qml:113
 #, kde-format
 msgid "Click to extend"
 msgstr "Genişletmek için tıkla"

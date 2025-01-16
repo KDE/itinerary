@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-14 00:42+0000\n"
+"POT-Creation-Date: 2025-01-16 00:41+0000\n"
 "PO-Revision-Date: 2024-12-24 16:45+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -2195,14 +2195,14 @@ msgstr "%1번"
 msgid "Show location"
 msgstr "위치 표시"
 
-#: app/JourneySummaryDelegate.qml:75
+#: app/JourneySummaryDelegate.qml:62
 #, kde-format
 msgctxt "number of switches to another transport"
 msgid "One change"
 msgid_plural "%1 changes"
 msgstr[0] "환승 %1회"
 
-#: app/JourneySummaryDelegate.qml:125
+#: app/JourneySummaryDelegate.qml:113
 #, kde-format
 msgid "Click to extend"
 msgstr "클릭하여 확장"

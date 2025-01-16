@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-14 00:42+0000\n"
+"POT-Creation-Date: 2025-01-16 00:41+0000\n"
 "PO-Revision-Date: 2024-11-28 16:26+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -2231,14 +2231,14 @@ msgstr "第 %1 月台"
 msgid "Show location"
 msgstr "顯示位置"
 
-#: app/JourneySummaryDelegate.qml:75
+#: app/JourneySummaryDelegate.qml:62
 #, kde-format
 msgctxt "number of switches to another transport"
 msgid "One change"
 msgid_plural "%1 changes"
 msgstr[0] "%1 次轉乘"
 
-#: app/JourneySummaryDelegate.qml:125
+#: app/JourneySummaryDelegate.qml:113
 #, kde-format
 msgid "Click to extend"
 msgstr "按一下來展開"

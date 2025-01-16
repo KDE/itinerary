@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-14 00:42+0000\n"
+"POT-Creation-Date: 2025-01-16 00:41+0000\n"
 "PO-Revision-Date: 2024-12-27 08:33+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -2210,7 +2210,7 @@ msgstr "רציף %1"
 msgid "Show location"
 msgstr "הצגת מקום"
 
-#: app/JourneySummaryDelegate.qml:75
+#: app/JourneySummaryDelegate.qml:62
 #, kde-format
 msgctxt "number of switches to another transport"
 msgid "One change"
@@ -2220,7 +2220,7 @@ msgstr[1] "שתי החלפות"
 msgstr[2] "%1 החלפות"
 msgstr[3] "%1 החלפות"
 
-#: app/JourneySummaryDelegate.qml:125
+#: app/JourneySummaryDelegate.qml:113
 #, kde-format
 msgid "Click to extend"
 msgstr "לחיצה על הרחבה"

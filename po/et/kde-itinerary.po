@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-14 00:42+0000\n"
+"POT-Creation-Date: 2025-01-16 00:41+0000\n"
 "PO-Revision-Date: 2020-05-04 10:51+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -2401,7 +2401,7 @@ msgstr ""
 msgid "Show location"
 msgstr "Asukoht:"
 
-#: app/JourneySummaryDelegate.qml:75
+#: app/JourneySummaryDelegate.qml:62
 #, fuzzy, kde-format
 #| msgid "One change"
 #| msgid_plural "%1 changes"
@@ -2411,7 +2411,7 @@ msgid_plural "%1 changes"
 msgstr[0] "Üks ümberistumine"
 msgstr[1] "%1 ümberistumist"
 
-#: app/JourneySummaryDelegate.qml:125
+#: app/JourneySummaryDelegate.qml:113
 #, kde-format
 msgid "Click to extend"
 msgstr ""

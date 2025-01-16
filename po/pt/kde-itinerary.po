@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kitinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-14 00:42+0000\n"
+"POT-Creation-Date: 2025-01-16 00:41+0000\n"
 "PO-Revision-Date: 2023-07-14 22:15+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -2303,7 +2303,7 @@ msgstr "Pl. %1"
 msgid "Show location"
 msgstr "Mostrar a localização"
 
-#: app/JourneySummaryDelegate.qml:75
+#: app/JourneySummaryDelegate.qml:62
 #, kde-format
 msgctxt "number of switches to another transport"
 msgid "One change"
@@ -2311,7 +2311,7 @@ msgid_plural "%1 changes"
 msgstr[0] "Uma alteração"
 msgstr[1] "%1 alterações"
 
-#: app/JourneySummaryDelegate.qml:125
+#: app/JourneySummaryDelegate.qml:113
 #, kde-format
 msgid "Click to extend"
 msgstr "Carregue para estender"
