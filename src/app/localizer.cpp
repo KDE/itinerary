@@ -217,7 +217,7 @@ QString Localizer::formatDuration(int seconds) const
     if (seconds < 0) {
         return QLocale().negativeSign() + KFormat().formatDuration((-seconds * 1000), KFormat::HideSeconds);
     }
-    return KFormat().formatDuration((-seconds * 1000), KFormat::HideSeconds);
+    return KFormat().formatDuration((seconds * 1000), KFormat::HideSeconds);
 }
 
 QString Localizer::formatDurationCustom(int seconds) const
