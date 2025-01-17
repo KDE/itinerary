@@ -1336,4 +1336,12 @@
     <color type="primary" scheme_preference="light">#cdecfc</color>
     <color type="primary" scheme_preference="dark">#17529b</color>
   </branding>
+  <recommends>
+    <control>keyboard</control>
+    <control>pointing</control>
+    <control>touch</control>
+  </recommends>
+  <requires>
+    <display_length compare="ge">360</display_length>
+  </requires>
 </component>
