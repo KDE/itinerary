@@ -76,7 +76,7 @@ Kirigami.Page {
     FloatingButton {
         anchors {
             right: parent.right
-            rightMargin: Kirigami.Units.largeSpacing + (root.contentItem.QQC2.ScrollBar && root.contentItem.QQC2.ScrollBar.vertical ? root.contentItem.QQC2.ScrollBar.vertical.width : 0)
+            rightMargin: Kirigami.Units.largeSpacing
             bottom: parent.bottom
             bottomMargin: Kirigami.Units.largeSpacing
         }
