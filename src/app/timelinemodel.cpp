@@ -794,7 +794,7 @@ void TimelineModel::setCurrentDateTime(const QDateTime &dt)
 
 void TimelineModel::tripGroupChanged(const QString &groupId)
 {
-    if (!m_isPopulated) {
+    if (!m_isPopulated || m_tripGroupId != groupId) {
         return;
     }
 
