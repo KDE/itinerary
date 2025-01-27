@@ -10,6 +10,7 @@ import org.kde.kirigami as Kirigami
 import org.kde.itinerary
 
 PkPassPage {
+    id: root
     property string genericPassId
 
     Kirigami.PromptDialog {
@@ -24,8 +25,8 @@ PkPassPage {
                 text: i18n("Delete")
                 icon.name: "edit-delete"
                 onTriggered: {
-                    PassManager.remove(genericPassId)
-                    applicationWindow().pageStack.pop();
+                    PassManager.remove(genericPassId);
+                    root.QQC2.ApplicationWindow.window.pageStack.pop();
                 }
             }
         ]
