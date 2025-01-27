@@ -74,12 +74,14 @@ FormCard.FormCardPage {
             text: i18nc("@action:button", "Import selection")
             enabled: root.controller.hasSelection && (tripGroupSelector.isValidInput || !root.controller.hasSelectedReservation)
             onClicked: {
-                switch (tripGroupSelector.mode) {
-                    case TripGroupSelectorCard.Mode.Create:
-                        root.controller.tripGroupName = tripGroupSelector.name;
-                        break;
-                    case TripGroupSelectorCard.Mode.Add:
-                        root.controller.tripGroupId = tripGroupSelector.tripGroupId;
+                if (root.controller.hasSelectedReservation) {
+                    switch (tripGroupSelector.mode) {
+                        case TripGroupSelectorCard.Mode.Create:
+                            root.controller.tripGroupName = tripGroupSelector.name;
+                            break;
+                        case TripGroupSelectorCard.Mode.Add:
+                            root.controller.tripGroupId = tripGroupSelector.tripGroupId;
+                    }
                 }
                 ApplicationController.commitImport(root.controller);
                 if (root.controller.count === 0) {
