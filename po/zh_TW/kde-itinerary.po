@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-16 00:41+0000\n"
+"POT-Creation-Date: 2025-01-28 00:41+0000\n"
 "PO-Revision-Date: 2024-11-28 16:26+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -121,7 +121,7 @@ msgid "Export…"
 msgstr "匯出…"
 
 #: app/ActionsCard.qml:79 app/ActionsCard.qml:125 app/DocumentsCard.qml:87
-#: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
+#: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:49 app/HealthCertificatePage.qml:63
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:171
 #: app/TicketPage.qml:47 app/TicketPage.qml:171 app/TripGroupPage.qml:308
@@ -1417,12 +1417,12 @@ msgstr "價格"
 msgid "Not a valid number."
 msgstr "不是有效的數字。"
 
-#: app/GenericPkPassPage.qml:18 app/ProgramMembershipPage.qml:38
+#: app/GenericPkPassPage.qml:19 app/ProgramMembershipPage.qml:38
 #, kde-format
 msgid "Delete Pass"
 msgstr "刪除票卡"
 
-#: app/GenericPkPassPage.qml:19 app/ProgramMembershipPage.qml:39
+#: app/GenericPkPassPage.qml:20 app/ProgramMembershipPage.qml:39
 #, kde-format
 msgid "Do you really want to delete this pass?"
 msgstr "您確定要刪除這張票卡嗎？"
