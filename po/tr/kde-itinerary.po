@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-03 02:32+0000\n"
+"POT-Creation-Date: 2025-01-28 02:34+0000\n"
 "PO-Revision-Date: 2025-01-04 15:54+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -126,7 +126,7 @@ msgid "Export…"
 msgstr "Dışa Aktar…"
 
 #: app/ActionsCard.qml:79 app/ActionsCard.qml:125 app/DocumentsCard.qml:87
-#: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
+#: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:46 app/HealthCertificatePage.qml:60
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:171
 #: app/TicketPage.qml:47 app/TicketPage.qml:171 app/TimelinePage.qml:221
@@ -1377,12 +1377,12 @@ msgstr "Fiyat"
 msgid "Not a valid number."
 msgstr "Geçerli bir sayı değil."
 
-#: app/GenericPkPassPage.qml:18 app/ProgramMembershipPage.qml:38
+#: app/GenericPkPassPage.qml:19 app/ProgramMembershipPage.qml:38
 #, kde-format
 msgid "Delete Pass"
 msgstr "Kartı Sil"
 
-#: app/GenericPkPassPage.qml:19 app/ProgramMembershipPage.qml:39
+#: app/GenericPkPassPage.qml:20 app/ProgramMembershipPage.qml:39
 #, kde-format
 msgid "Do you really want to delete this pass?"
 msgstr "Bu kartı silmeyi gerçekten istiyor musunuz?"
