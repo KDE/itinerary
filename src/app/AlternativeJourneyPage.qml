@@ -59,23 +59,23 @@ JourneyQueryPage {
         QQC2.ActionGroup { id: journeyActionGroup },
         Kirigami.Action {
             id: fullJourneyAction
-            text: i18nc("to travel destination", "To %1", controller.journeyRequestFull.to.name)
+            text: i18nc("to travel destination", "To %1", root.controller.journeyRequestFull.to.name)
             checkable: true
-            checked: controller.journeyRequestFull.to.name == root.journeyRequest.to.name
+            checked: root.controller.journeyRequestFull.to.name == root.journeyRequest.to.name
             icon.name: "go-next-symbolic"
-            visible: controller.journeyRequestFull.to.name != controller.journeyRequestOne.to.name
+            visible: root.controller.journeyRequestFull.to.name != root.controller.journeyRequestOne.to.name
             QQC2.ActionGroup.group: journeyActionGroup
-            onTriggered: updateRequest()
+            onTriggered: root.updateRequest()
         },
         Kirigami.Action {
             id: oneJourneyAction
-            text: i18nc("to travel destination", "To %1", controller.journeyRequestOne.to.name)
+            text: i18nc("to travel destination", "To %1", root.controller.journeyRequestOne.to.name)
             checkable: true
-            checked: controller.journeyRequestOne.to.name == root.journeyRequest.to.name
+            checked: root.controller.journeyRequestOne.to.name == root.journeyRequest.to.name
             icon.name: "go-next-symbolic"
-            visible: controller.journeyRequestFull.to.name != controller.journeyRequestOne.to.name
+            visible: root.controller.journeyRequestFull.to.name != root.controller.journeyRequestOne.to.name
             QQC2.ActionGroup.group: journeyActionGroup
-            onTriggered: updateRequest()
+            onTriggered: root.updateRequest()
         },
 
         Kirigami.Action {
@@ -89,7 +89,7 @@ JourneyQueryPage {
             icon.source: LineMode.iconName(Line.LongDistanceTrain)
             checkable: true
             checked: true
-            onTriggered: updateRequest()
+            onTriggered: root.updateRequest()
         },
         Kirigami.Action {
             id: localTrainModeAction
@@ -97,7 +97,7 @@ JourneyQueryPage {
             icon.source: LineMode.iconName(Line.LocalTrain)
             checkable: true
             checked: true
-            onTriggered: updateRequest()
+            onTriggered: root.updateRequest()
         },
         Kirigami.Action {
             id: rapidTransitModeAction
@@ -105,7 +105,7 @@ JourneyQueryPage {
             icon.source: LineMode.iconName(Line.Tramway)
             checkable: true
             checked: true
-            onTriggered: updateRequest()
+            onTriggered: root.updateRequest()
         },
         Kirigami.Action {
             id: busModeAction
@@ -113,7 +113,7 @@ JourneyQueryPage {
             icon.source: LineMode.iconName(Line.Bus)
             checkable: true
             checked: true
-            onTriggered: updateRequest()
+            onTriggered: root.updateRequest()
         },
         Kirigami.Action {
             id: ferryModeAction
@@ -121,7 +121,7 @@ JourneyQueryPage {
             icon.source: LineMode.iconName(Line.Ferry)
             checkable: true
             checked: true
-            onTriggered: updateRequest()
+            onTriggered: root.updateRequest()
         },
 
         Kirigami.PromptDialog {
@@ -135,7 +135,7 @@ JourneyQueryPage {
                     text: i18n("Replace")
                     icon.name: "document-save"
                     onTriggered: {
-                        controller.applyJourney(root.journey, root.journeyRequest.to.name == controller.journeyRequestFull.to.name);
+                        root.controller.applyJourney(root.journey, root.journeyRequest.to.name == root.controller.journeyRequestFull.to.name);
                         replaceWarningDialog.close()
                         applicationWindow().pageStack.pop();
                     }

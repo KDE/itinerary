@@ -20,7 +20,7 @@ ColumnLayout {
 
     spacing: 0
 
-    property var batchId
+    property string batchId
     property var editor
     property var reservation
     property list<QQC2.Action> additionalActions
