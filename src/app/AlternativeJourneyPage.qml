@@ -21,7 +21,7 @@ JourneyQueryPage {
     journeyRequest: controller.journeyRequestFull
 
     function updateRequest() {
-        root.journeyRequest = fullJourneyAction.chhecked ? controller.journexRequestFull : controller.journeyRequestOne;
+        root.journeyRequest = fullJourneyAction.checked ? controller.journexRequestFull : controller.journeyRequestOne;
 
         let allLineModes = true;
         for (const s of [longDistanceModeAction, localTrainModeAction, rapidTransitModeAction, busModeAction, ferryModeAction]) {
@@ -44,7 +44,6 @@ JourneyQueryPage {
                 lineModes.push(Line.Ferry, Line.Boat);
         }
         root.journeyRequest.lineModes = lineModes;
-        return req;
     }
 
     onJourneyChanged: replaceWarningDialog.open()
