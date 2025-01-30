@@ -386,7 +386,7 @@ TransferManager::CheckTransferResult TransferManager::checkTransferBefore(const 
     if (!toLoc.isNull() && !prevLoc.isNull() && isLikelyNotSameLocation(toLoc, prevLoc) && isPlausibleDistance(toLoc, prevLoc)
         && layoverTime < Constants::FavoriteLocationAutoTransferThreshold) {
         const auto f = pickFavorite(toLoc, resId, Transfer::Before);
-        if (f.isValid() && layoverDays >= Constants::FavoriteLocationAutoTransferThreshold && !isLocationChange) {
+        if (f.isValid() && layoverDays >= Constants::FavoriteLocationAutoTransferThreshold && layoverTime >= Constants::MaximumLayoverTime) {
             transfer.setFrom(locationFromFavorite(f));
             transfer.setFromName(f.name());
             transfer.setFloatingLocationType(Transfer::FavoriteLocation);
@@ -481,7 +481,7 @@ TransferManager::CheckTransferResult TransferManager::checkTransferAfter(const Q
         && layoverTime < Constants::FavoriteLocationAutoTransferThreshold) {
         qDebug() << "AFTER" << res << nextRes << LocationUtil::name(fromLoc) << LocationUtil::name(nextLoc) << transfer.anchorTime() << isLocationChange;
         const auto f = pickFavorite(fromLoc, resId, Transfer::After);
-        if (f.isValid() && layoverDays >= Constants::FavoriteLocationAutoTransferThreshold && !isLocationChange) {
+        if (f.isValid() && layoverDays >= Constants::FavoriteLocationAutoTransferThreshold && layoverTime >= Constants::MaximumLayoverTime) {
             transfer.setTo(locationFromFavorite(f));
             transfer.setToName(f.name());
             transfer.setFloatingLocationType(Transfer::FavoriteLocation);
