@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-28 00:41+0000\n"
+"POT-Creation-Date: 2025-01-30 00:41+0000\n"
 "PO-Revision-Date: 2024-12-29 22:55+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -216,53 +216,53 @@ msgstr "आरक्षणं पश्यन्तु"
 msgid "Alternative Connections"
 msgstr "वैकल्पिकसंयोजनानि"
 
-#: app/AlternativeJourneyPage.qml:62 app/AlternativeJourneyPage.qml:72
+#: app/AlternativeJourneyPage.qml:61 app/AlternativeJourneyPage.qml:71
 #, kde-format
 msgctxt "to travel destination"
 msgid "To %1"
 msgstr "%1 प्रति"
 
-#: app/AlternativeJourneyPage.qml:88 app/DepartureQueryPage.qml:41
+#: app/AlternativeJourneyPage.qml:87 app/DepartureQueryPage.qml:41
 #: app/JourneyRequestPage.qml:235 app/TransferPage.qml:108
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Long distance trains"
 msgstr "दीर्घदूरस्य रेलयानानि"
 
-#: app/AlternativeJourneyPage.qml:96 app/DepartureQueryPage.qml:48
+#: app/AlternativeJourneyPage.qml:95 app/DepartureQueryPage.qml:48
 #: app/JourneyRequestPage.qml:245 app/TransferPage.qml:116
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Local trains"
 msgstr "स्थानीय रेलयान"
 
-#: app/AlternativeJourneyPage.qml:104 app/DepartureQueryPage.qml:55
+#: app/AlternativeJourneyPage.qml:103 app/DepartureQueryPage.qml:55
 #: app/JourneyRequestPage.qml:255 app/TransferPage.qml:124
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Rapid transit"
 msgstr "द्रुतगत्या पारगमनम्"
 
-#: app/AlternativeJourneyPage.qml:112 app/DepartureQueryPage.qml:62
+#: app/AlternativeJourneyPage.qml:111 app/DepartureQueryPage.qml:62
 #: app/JourneyRequestPage.qml:265 app/TransferPage.qml:132
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Bus"
 msgstr "बस"
 
-#: app/AlternativeJourneyPage.qml:120 app/DepartureQueryPage.qml:69
+#: app/AlternativeJourneyPage.qml:119 app/DepartureQueryPage.qml:69
 #: app/JourneyRequestPage.qml:275 app/TransferPage.qml:140
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ferry"
 msgstr "फेरी"
 
-#: app/AlternativeJourneyPage.qml:130
+#: app/AlternativeJourneyPage.qml:129
 #, kde-format
 msgid "Replace Journey"
 msgstr "यात्रां प्रतिस्थापयतु"
 
-#: app/AlternativeJourneyPage.qml:131
+#: app/AlternativeJourneyPage.qml:130
 #, kde-format
 msgid ""
 "Do you really want to replace your existing reservation with the newly "
@@ -271,7 +271,7 @@ msgstr ""
 "किं भवन्तः वास्तवमेव स्वस्य विद्यमानस्य आरक्षणस्य स्थाने नवचयनितयात्रायाः स्थाने स्थापयितुम् "
 "इच्छन्ति?"
 
-#: app/AlternativeJourneyPage.qml:135
+#: app/AlternativeJourneyPage.qml:134
 #, kde-format
 msgid "Replace"
 msgstr "प्रत्याहृ"
