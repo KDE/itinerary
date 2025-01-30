@@ -317,6 +317,11 @@ static KPublicTransport::Stopover applyLayoutData(const KPublicTransport::Stopov
 
 static void applyMissingStopoverData(KPublicTransport::Stopover &stop, const KPublicTransport::Stopover &oldStop)
 {
+    if (!stop.stopPoint().hasCoordinate()) { // DB's new API doesn't have coordinates in stopover queries...
+        auto s = stop.stopPoint();
+        s.setCoordinate(oldStop.stopPoint().latitude(), oldStop.stopPoint().longitude());
+        stop.setStopPoint(s);
+    }
     if (stop.notes().empty()) {
         stop.setNotes(oldStop.notes());
     }
