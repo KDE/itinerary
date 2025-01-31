@@ -26,8 +26,8 @@
 #include <KPublicTransport/Location>
 #include <KPublicTransport/Manager>
 #include <KPublicTransport/OnboardStatus>
-#include <KPublicTransport/StopoverReply>
-#include <KPublicTransport/StopoverRequest>
+#include <KPublicTransport/TripReply>
+#include <KPublicTransport/TripRequest>
 
 #include <KPkPass/Pass>
 
@@ -219,60 +219,34 @@ void LiveDataManager::checkReservation(const QVariant &res, const QString &resId
         }
     }
 
-    if (!hasDeparted(resId, res)) {
-        StopoverRequest req(PublicTransport::locationFromPlace(LocationUtil::departureLocation(res), res));
-        req.setMode(StopoverRequest::QueryDeparture);
-        req.setDateTime(SortUtil::startDateTime(res));
+    if (const auto jny = data(resId).journey; jny.mode() == JourneySection::PublicTransport) {
+        TripRequest req(jny);
+        req.setDownloadAssets(true);
         PublicTransport::selectBackends(req, m_ptMgr, res);
-        if (canSelectBackend(req.stop()) || !req.backendIds().isEmpty()) {
-            auto reply = m_ptMgr->queryStopover(req);
+        if (canSelectBackend(jny.from()) || canSelectBackend(jny.to()) || !req.backendIds().isEmpty() || jny.hasIdentifiers()) {
+            auto reply = m_ptMgr->queryTrip(req);
             connect(reply, &Reply::finished, this, [this, resId, reply]() {
-                stopoverQueryFinished(reply, LiveData::Departure, resId);
-            });
-            m_lastPollAttempt.insert(resId, now());
-        }
-    }
-
-    if (!arrived) {
-        StopoverRequest req(PublicTransport::locationFromPlace(LocationUtil::arrivalLocation(res), res));
-        req.setMode(StopoverRequest::QueryArrival);
-        req.setDateTime(SortUtil::endDateTime(res));
-        PublicTransport::selectBackends(req, m_ptMgr, res);
-        if (canSelectBackend(req.stop()) || !req.backendIds().isEmpty()) {
-            auto reply = m_ptMgr->queryStopover(req);
-            connect(reply, &Reply::finished, this, [this, resId, reply]() {
-                stopoverQueryFinished(reply, LiveData::Arrival, resId);
+                reply->deleteLater();
+                if (reply->error() == Reply::NoError) {
+                    auto jny = reply->journeySection();
+                    if (jny.mode() == JourneySection::PublicTransport) {
+                        applyJourney(resId, jny);
+                        return;
+                    }
+                }
+                // record this is a failed lookup so we don't try again
+                tripQueryFailed(resId);
             });
             m_lastPollAttempt.insert(resId, now());
         }
     }
 }
 
-void LiveDataManager::stopoverQueryFinished(KPublicTransport::StopoverReply *reply, LiveData::Type type, const QString &resId)
+void LiveDataManager::tripQueryFailed(const QString &resId)
 {
-    reply->deleteLater();
-    if (reply->error() != KPublicTransport::Reply::NoError) {
-        qCDebug(Log) << reply->error() << reply->errorString();
-        return;
-    }
-    stopoverQueryFinished(reply->takeResult(), type, resId);
-}
-
-void LiveDataManager::stopoverQueryFinished(std::vector<KPublicTransport::Stopover> &&result, LiveData::Type type, const QString &resId)
-{
-    const auto res = m_resMgr->reservation(resId);
-    for (const auto &stop : result) {
-        qCDebug(Log) << "Got stopover information:" << stop.route().line().name() << stop.scheduledDepartureTime();
-        if (type == LiveData::Arrival ? PublicTransportMatcher::isArrivalForReservation(res, stop)
-                                      : PublicTransportMatcher::isDepartureForReservation(res, stop)) {
-            qCDebug(Log) << "Found stopover information:" << stop.route().line().name() << stop.expectedPlatform() << stop.expectedDepartureTime();
-            updateStopoverData(stop, type, resId, res);
-            return;
-        }
-    }
-
-    // record this is a failed lookup so we don't try again
-    data(resId).setTimestamp(type, now());
+    data(resId).setTimestamp(LiveData::Arrival, now());
+    data(resId).setTimestamp(LiveData::Departure, now());
+    data(resId).setTimestamp(LiveData::Journey, now());
 }
 
 void LiveDataManager::journeyQueryFinished(KPublicTransport::JourneyReply *reply, const QString &resId)
@@ -335,45 +309,6 @@ static void applyMissingStopoverData(KPublicTransport::Stopover &stop, const KPu
     }
     if (stop.loadInformation().empty()) {
         stop.setLoadInformation(std::vector<KPublicTransport::LoadInfo>(oldStop.loadInformation()));
-    }
-}
-
-void LiveDataManager::updateStopoverData(const KPublicTransport::Stopover &stop, LiveData::Type type, const QString &resId, const QVariant &res)
-{
-    auto &ld = data(resId);
-    const auto oldStop = ld.stopover(type);
-    auto newStop = stop;
-    newStop.applyMetaData(true); // download logo assets if needed
-
-    // retain already existing vehicle/platform layout data if we are still departing/arriving in the same place
-    if (PublicTransport::isSameStopoverForLayout(newStop, oldStop)) {
-        newStop = applyLayoutData(newStop, oldStop);
-    }
-    applyMissingStopoverData(newStop, oldStop);
-
-    ld.setStopover(type, newStop);
-    ld.setTimestamp(type, now());
-    if (type == LiveData::Departure) {
-        ld.journey.setDeparture(newStop);
-    } else {
-        ld.journey.setArrival(newStop);
-    }
-    ld.journeyTimestamp = now();
-    ld.store(resId);
-
-    // update reservation with live data
-    const auto newRes = type == LiveData::Arrival ? PublicTransport::mergeArrival(res, newStop) : PublicTransport::mergeDeparture(res, newStop);
-    if (!ReservationHelper::equals(res, newRes)) {
-        m_resMgr->updateReservation(resId, newRes);
-    }
-
-    // emit update signals
-    Q_EMIT type == LiveData::Arrival ? arrivalUpdated(resId) : departureUpdated(resId);
-    Q_EMIT journeyUpdated(resId);
-
-    // check if we need to notify
-    if (NotificationHelper::shouldNotify(oldStop, newStop, type)) {
-        showNotification(resId, ld);
     }
 }
 

@@ -1,7 +1,18 @@
 {
     "disruptionEffect": "NormalService",
     "expectedArrivalTime": "2017-09-10T14:04:00+02:00",
-    "expectedPlatform": "6",
+    "expectedArrivalPlatform": "6",
+    "from": {
+        "identifier": {
+            "ibnr": "ibnr:8503016"
+        },
+        "country": "CH",
+        "latitude": 47.45029830932617,
+        "longitude": 8.562219619750977,
+        "name": "Zürich Flughafen",
+        "type": "Stop"
+    },
+    "mode": "PublicTransport",
     "route": {
         "line": {
             "mode": "LongDistanceTrain",
@@ -9,8 +20,10 @@
         }
     },
     "scheduledArrivalTime": "2017-09-10T14:02:00+02:00",
-    "scheduledPlatform": "7",
-    "stopPoint": {
+    "scheduledArrivalPlatform": "7",
+    "scheduledDepartureTime": "2017-09-10T11:40:00+02:00",
+    "scheduledDeparturePlatform": "3",
+    "to": {
         "identifier": {
             "ibnr": "8501605"
         },

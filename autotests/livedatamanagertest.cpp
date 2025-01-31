@@ -113,12 +113,11 @@ private Q_SLOTS:
         QCOMPARE(resMgr.reservation(trainLeg1).value<TrainReservation>().reservationFor().value<TrainTrip>().arrivalStation().address().addressLocality(),
                  QString());
 
-        const auto leg1Arr =
-            KPublicTransport::Stopover::fromJson(QJsonDocument::fromJson(Test::readFile(s(SOURCE_DIR "/data/livedata/randa2017-leg1-arrival.json"))).object());
-        ldm.stopoverQueryFinished({leg1Arr}, LiveData::Arrival, trainLeg1);
+        const auto leg1Jny = KPublicTransport::JourneySection::fromJson(QJsonDocument::fromJson(Test::readFile(s(SOURCE_DIR "/data/livedata/randa2017-leg1-journey.json"))).object());
+        ldm.applyJourney(trainLeg1, leg1Jny);
         QCOMPARE(arrivalUpdateSpy.size(), 1);
         QCOMPARE(arrivalUpdateSpy.at(0).at(0).toString(), trainLeg1);
-        QCOMPARE(departureUpdateSpy.size(), 0);
+        QCOMPARE(departureUpdateSpy.size(), 1);
         QCOMPARE(ldm.arrival(trainLeg1).arrivalDelay(), 2);
         QCOMPARE(ldm.nextPollTimeForReservation(trainLeg1), 15 * 60 * 1000); // 15 min in msecs
         // reservation was updated with additional location data
@@ -134,8 +133,7 @@ private Q_SLOTS:
         }
 
         // failed lookups are recorded to avoid a polling loop
-        ldm.stopoverQueryFinished({leg1Arr}, LiveData::Departure, trainLeg2);
-        ldm.stopoverQueryFinished({leg1Arr}, LiveData::Arrival, trainLeg2);
+        ldm.tripQueryFailed(trainLeg2);
         QCOMPARE(ldm.departure(trainLeg2).stopPoint().isEmpty(), true);
         QCOMPARE(ldm.nextPollTimeForReservation(trainLeg2), 15 * 60 * 1000);
     }
