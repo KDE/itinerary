@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-31 00:41+0000\n"
+"POT-Creation-Date: 2025-02-01 00:41+0000\n"
 "PO-Revision-Date: 2023-05-11 10:49+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -2256,12 +2256,12 @@ msgstr[5] ""
 msgid "Click to extend"
 msgstr ""
 
-#: app/livedatamanager.cpp:833
+#: app/livedatamanager.cpp:768
 #, fuzzy, kde-format
 msgid "Flight %1 to %2:"
 msgstr "إلى"
 
-#: app/livedatamanager.cpp:839
+#: app/livedatamanager.cpp:774
 #, kde-format
 msgid "Itinerary change"
 msgstr ""
