@@ -193,10 +193,13 @@ void LiveDataManager::checkForUpdates(const QStringList &batchIds)
 void LiveDataManager::checkReservation(const QVariant &res, const QString &resId)
 {
     using namespace KPublicTransport;
-    const auto arrived = hasArrived(resId, res);
+    if (hasArrived(resId, res)) {
+        return;
+    }
+
 
     // load full journey if we don't have one yet
-    if (!arrived && data(resId).journey.mode() == JourneySection::Invalid) {
+    if (data(resId).journey.mode() == JourneySection::Invalid) {
         const auto from = PublicTransport::locationFromPlace(LocationUtil::departureLocation(res), res);
         const auto to = PublicTransport::locationFromPlace(LocationUtil::arrivalLocation(res), res);
         JourneyRequest req(from, to);
