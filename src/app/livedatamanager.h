@@ -92,7 +92,6 @@ private:
     void batchRemoved(const QString &resId);
 
     void checkReservation(const QVariant &res, const QString &resId);
-    void journeyQueryFinished(KPublicTransport::JourneyReply *reply, const QString &resId);
     void tripQueryFailed(const QString &resId);
 
     void updateJourneyData(const KPublicTransport::JourneySection &journey, const QString &resId, const QVariant &res);

@@ -197,51 +197,33 @@ void LiveDataManager::checkReservation(const QVariant &res, const QString &resId
         return;
     }
 
-
-    // load full journey if we don't have one yet
-    if (data(resId).journey.mode() == JourneySection::Invalid) {
-        const auto from = PublicTransport::locationFromPlace(LocationUtil::departureLocation(res), res);
-        const auto to = PublicTransport::locationFromPlace(LocationUtil::arrivalLocation(res), res);
-        JourneyRequest req(from, to);
-        // start searching slightly earlier, so leading walking section because our coordinates
-        // aren't exactly at the right spot wont make the routing service consider the train we
-        // are looking for as impossible to reach on time
-        req.setDateTime(SortUtil::startDateTime(res).addSecs(-600));
-        req.setDateTimeMode(JourneyRequest::Departure);
-        req.setIncludeIntermediateStops(true);
-        req.setIncludePaths(true);
-        req.setModes(JourneySection::PublicTransport);
-        PublicTransport::selectBackends(req, m_ptMgr, res);
-        if (canSelectBackend(from) || canSelectBackend(to) || !req.backendIds().isEmpty()) {
-            auto reply = m_ptMgr->queryJourney(req);
-            connect(reply, &Reply::finished, this, [this, resId, reply]() {
-                journeyQueryFinished(reply, resId);
-            });
-            m_lastPollAttempt.insert(resId, now());
-            return;
-        }
+    auto jny = data(resId).journey;
+    if (jny.mode() == JourneySection::Invalid) {
+        jny.setMode(JourneySection::PublicTransport);
+        jny.setFrom(PublicTransport::locationFromPlace(LocationUtil::departureLocation(res), res));
+        jny.setTo(PublicTransport::locationFromPlace(LocationUtil::arrivalLocation(res), res));
+        jny.setScheduledDepartureTime(SortUtil::startDateTime(res));
+        jny.setRoute(PublicTransport::routeForReservation(res));
     }
 
-    if (const auto jny = data(resId).journey; jny.mode() == JourneySection::PublicTransport) {
-        TripRequest req(jny);
-        req.setDownloadAssets(true);
-        PublicTransport::selectBackends(req, m_ptMgr, res);
-        if (canSelectBackend(jny.from()) || canSelectBackend(jny.to()) || !req.backendIds().isEmpty() || jny.hasIdentifiers()) {
-            auto reply = m_ptMgr->queryTrip(req);
-            connect(reply, &Reply::finished, this, [this, resId, reply]() {
-                reply->deleteLater();
-                if (reply->error() == Reply::NoError) {
-                    auto jny = reply->journeySection();
-                    if (jny.mode() == JourneySection::PublicTransport) {
-                        applyJourney(resId, jny);
-                        return;
-                    }
+    TripRequest req(jny);
+    req.setDownloadAssets(true);
+    PublicTransport::selectBackends(req, m_ptMgr, res);
+    if (canSelectBackend(jny.from()) || canSelectBackend(jny.to()) || !req.backendIds().isEmpty() || jny.hasIdentifiers()) {
+        auto reply = m_ptMgr->queryTrip(req);
+        connect(reply, &Reply::finished, this, [this, resId, reply]() {
+            reply->deleteLater();
+            if (reply->error() == Reply::NoError) {
+                auto jny = reply->journeySection();
+                if (jny.mode() == JourneySection::PublicTransport) {
+                    applyJourney(resId, jny);
+                    return;
                 }
-                // record this is a failed lookup so we don't try again
-                tripQueryFailed(resId);
-            });
-            m_lastPollAttempt.insert(resId, now());
-        }
+            }
+            // record this is a failed lookup so we don't try again
+            tripQueryFailed(resId);
+        });
+        m_lastPollAttempt.insert(resId, now());
     }
 }
 
@@ -250,42 +232,6 @@ void LiveDataManager::tripQueryFailed(const QString &resId)
     data(resId).setTimestamp(LiveData::Arrival, now());
     data(resId).setTimestamp(LiveData::Departure, now());
     data(resId).setTimestamp(LiveData::Journey, now());
-}
-
-void LiveDataManager::journeyQueryFinished(KPublicTransport::JourneyReply *reply, const QString &resId)
-{
-    reply->deleteLater();
-    if (reply->error() != KPublicTransport::Reply::NoError) {
-        qCDebug(Log) << reply->error() << reply->errorString();
-        return;
-    }
-
-    using namespace KPublicTransport;
-    const auto res = m_resMgr->reservation(resId);
-    for (const auto &journey : reply->result()) {
-        if (std::count_if(journey.sections().begin(),
-                          journey.sections().end(),
-                          [](const auto &sec) {
-                              return sec.mode() == JourneySection::PublicTransport;
-                          })
-            != 1) {
-            continue;
-        }
-        const auto it = std::find_if(journey.sections().begin(), journey.sections().end(), [](const auto &sec) {
-            return sec.mode() == JourneySection::PublicTransport;
-        });
-        assert(it != journey.sections().end());
-        qCDebug(Log) << "Got journey information:" << (*it).route().line().name() << (*it).scheduledDepartureTime();
-        if (PublicTransportMatcher::isJourneyForReservation(res, (*it))) {
-            qCDebug(Log) << "Found journey information:" << (*it).route().line().name() << (*it).expectedDeparturePlatform() << (*it).expectedDepartureTime();
-            updateJourneyData((*it), resId, res);
-            return;
-        }
-    }
-
-    // record this is a failed lookup so we don't try again
-    data(resId).setTimestamp(LiveData::Arrival, now());
-    data(resId).setTimestamp(LiveData::Departure, now());
 }
 
 static KPublicTransport::Stopover applyLayoutData(const KPublicTransport::Stopover &stop, const KPublicTransport::Stopover &layout)
