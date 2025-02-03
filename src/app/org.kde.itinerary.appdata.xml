@@ -912,7 +912,17 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="24.12.2" date="2025-02-06"/>
+    <release version="24.12.2" date="2025-02-06">
+      <description>
+        <ul>
+          <li>New and improved travel document extractors for American Airlines, Bilkom, Booking.com, CitizenM, Deutsche Bahn, Eurostar, Flixbus, KD, Koleo, Lufthansa, PKP, Polregio, SBB, Southwest, Universe.</li>
+          <li>Fix public transport access for Deutsche Bahn (Germany), Digitransit (Finnland), Entur (Norway) and Rolph (Germany).</li>
+          <li>Allow transfers to favorite location independent of the next reservation.</li>
+          <li>Fix importing passes or other things without an attached trip group.</li>
+          <li>Fix deleting generic pkpass passes.</li>
+        </ul>
+      </description>
+    </release>
     <release version="24.12.1" date="2025-01-09">
       <description>
         <ul>
