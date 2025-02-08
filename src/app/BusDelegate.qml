@@ -93,7 +93,7 @@ TimelineDelegate {
             }
 
             QQC2.ToolButton {
-                visible: stopRepeater.count !== 0
+                visible: sectionModel.sectionCount !== 0
                 Layout.fillWidth: true
                 onClicked: expanded = !expanded
                 contentItem: RowLayout {
@@ -104,7 +104,7 @@ TimelineDelegate {
                         color: Kirigami.Theme.disabledTextColor
                     }
                     QQC2.Label {
-                        text: i18np("1 intermediate stop (%2)", "%1 intermediate stops (%2)", stopRepeater.count, Localizer.formatDurationCustom(root.journeySection.duration))
+                        text: i18np("1 intermediate stop (%2)", "%1 intermediate stops (%2)", sectionModel.sectionCount, Localizer.formatDurationCustom(root.journeySection.duration))
                         elide: Text.ElideRight
                         color: Kirigami.Theme.disabledTextColor
                         Layout.rightMargin: Kirigami.Units.largeSpacing
@@ -113,7 +113,7 @@ TimelineDelegate {
                 }
             }
             QQC2.Label {
-                visible: stopRepeater.count === 0 && root.journeySection.duration > 0
+                visible: sectionModel.sectionCount === 0 && root.journeySection.duration > 0
                 text: i18n("0 intermediate stop (%1)", Localizer.formatDurationCustom(root.journeySection.duration))
                 elide: Text.ElideRight
                 color: Kirigami.Theme.disabledTextColor
@@ -154,7 +154,8 @@ TimelineDelegate {
 
                     spacing: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
 
-                    Layout.fillWidth: true
+                    width: parent.width
+                    y: index * height
 
                     JourneySectionStopDelegateLineSegment {
                         id: intermediateStopLine
@@ -182,7 +183,6 @@ TimelineDelegate {
                         font.strikeout: model.stopover.disruptionEffect === Disruption.NoService
                     }
                     RowLayout {
-                        Layout.minimumWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
                         QQC2.Label {
                             opacity: 0.8
                             text: Localizer.formatTime(model.stopover , model.stopover.scheduledDepartureTime > 0 ? "scheduledDepartureTime" : "scheduledArrivalTime")
