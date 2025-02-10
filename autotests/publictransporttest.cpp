@@ -4,6 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+#include "testhelper.h"
 #include "publictransport.h"
 
 #include <KItinerary/Reservation>
@@ -14,10 +15,12 @@
 #include <KPublicTransport/JourneyRequest>
 #include <KPublicTransport/Manager>
 
+#include <QJsonArray>
 #include <QStandardPaths>
 #include <QTimeZone>
 #include <QtTest/qtest.h>
 
+using namespace Qt::Literals;
 using namespace KItinerary;
 
 class PublicTransportTest : public QObject
@@ -138,6 +141,32 @@ private Q_SLOTS:
         mgr.setBackendEnabled(QLatin1StringView("de_db"), true);
         PublicTransport::selectBackends(req, &mgr, res);
         QCOMPARE(req.backendIds(), QStringList({QLatin1StringView("de_db")}));
+    }
+
+    void testRouteForReservation_data()
+    {
+        QTest::addColumn<int>("row");
+        QTest::addColumn<KPublicTransport::Line::Mode>("mode");
+        QTest::addColumn<QString>("name");
+
+        QTest::newRow("flight") << 0 << KPublicTransport::Line::Air << u"LX 963"_s;
+        QTest::newRow("train") << 1 << KPublicTransport::Line::Train << u"IC 816"_s;
+        QTest::newRow("bus") << 6 << KPublicTransport::Line::Bus << u"Zermatt Taxi"_s;
+        QTest::newRow("invalid") << 3 << KPublicTransport::Line::Unknown << QString();
+    }
+
+    void testRouteForReservation()
+    {
+        QFETCH(int, row);
+        QFETCH(KPublicTransport::Line::Mode, mode);
+        QFETCH(QString, name);
+
+        const auto reservations = KItinerary::JsonLdDocument::fromJson(QJsonDocument::fromJson(Test::readFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json"))).array());
+        QVERIFY(!reservations.empty());
+        const auto route = PublicTransport::routeForReservation(reservations[row]);
+
+        QCOMPARE(route.line().mode(), mode);
+        QCOMPARE(route.line().name(), name);
     }
 };
 

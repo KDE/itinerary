@@ -107,6 +107,9 @@ public:
      */
     [[nodiscard]] static bool isSameStopoverForLayout(const KPublicTransport::Stopover &lhs, const KPublicTransport::Stopover &rhs);
 
+    /** Create a KPublicTransport::Route for a given reservation, for use in journey/trip queries. */
+    [[nodiscard]] static KPublicTransport::Route routeForReservation(const QVariant &res);
+
 private:
     // for use by the template code
     static QString idenfitierFromLocation(const KPublicTransport::Location &loc);

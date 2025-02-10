@@ -12,6 +12,7 @@
 #include <KItinerary/BusTrip>
 #include <KItinerary/Event>
 #include <KItinerary/ExtractorPostprocessor>
+#include <KItinerary/Flight>
 #include <KItinerary/Reservation>
 #include <KItinerary/Ticket>
 #include <KItinerary/TrainTrip>
@@ -28,6 +29,8 @@
 #include <QDateTime>
 #include <QDebug>
 #include <QUrl>
+
+using namespace Qt::Literals;
 
 bool PublicTransport::isBusMode(KPublicTransport::Line::Mode mode)
 {
@@ -439,6 +442,38 @@ bool PublicTransport::isSameStopoverForLayout(const KPublicTransport::Stopover &
     const auto lhsPlatform = lhs.hasExpectedPlatform() ? lhs.expectedPlatform() : lhs.scheduledPlatform();
     const auto rhsPlatform = rhs.hasExpectedPlatform() ? rhs.expectedPlatform() : rhs.scheduledPlatform();
     return lhsPlatform == rhsPlatform;
+}
+
+KPublicTransport::Route PublicTransport::routeForReservation(const QVariant &res)
+{
+    using namespace KItinerary;
+    using namespace KPublicTransport;
+
+    Line line;
+    if (JsonLd::isA<TrainReservation>(res)) {
+        const auto train = res.value<TrainReservation>().reservationFor().value<TrainTrip>();
+        line.setMode(Line::Train);
+        line.setName(QString(train.trainName() + ' '_L1 + train.trainNumber()).trimmed());
+    } else if (JsonLd::isA<BusReservation>(res)) {
+        const auto bus = res.value<BusReservation>().reservationFor().value<BusTrip>();
+        line.setMode(Line::Bus);
+        line.setName(QString(bus.busName() + ' '_L1 + bus.busNumber()).trimmed());
+    } else if (JsonLd::isA<FlightReservation>(res)) {
+        const auto flight = res.value<FlightReservation>().reservationFor().value<Flight>();
+        line.setMode(Line::Air);
+        line.setName(flight.airline().iataCode() + ' '_L1 + flight.flightNumber());
+    } else if (JsonLd::isA<BoatReservation>(res)) {
+        const auto boat = res.value<BoatReservation>().reservationFor().value<BoatTrip>();
+        line.setMode(Line::Boat);
+        line.setName(boat.name());
+    } else {
+        qCDebug(Log) << "Unhandled reservation type" << res;
+        return {};
+    }
+
+    Route route;
+    route.setLine(line);
+    return route;
 }
 
 #include "moc_publictransport.cpp"
