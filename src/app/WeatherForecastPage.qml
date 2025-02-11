@@ -36,6 +36,7 @@ Kirigami.ScrollablePage {
             text: i18n("Using data from <a href=\"https://www.met.no/\">The Norwegian Meteorological Institute</a> under <a href=\"https://creativecommons.org/licenses/by/4.0\">Creative Commons 4.0 BY International</a> license.")
             font: Kirigami.Theme.smallFont
             wrapMode: Text.WordWrap
+            verticalAlignment: Text.AlignVCenter
             onLinkActivated: Qt.openUrlExternally(link)
         }
     }
