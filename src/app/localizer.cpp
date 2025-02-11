@@ -5,6 +5,7 @@
 */
 
 #include "localizer.h"
+#include "settings.h"
 
 #include <KItinerary/JsonLdDocument>
 #include <KItinerary/Place>
@@ -13,6 +14,8 @@
 #include <KPublicTransport/Location>
 
 #include <KContacts/Address>
+
+#include <KUnitConversion/Converter>
 
 #include <KCountry>
 #include <KFormat>
@@ -35,6 +38,7 @@ using namespace KAndroidExtras;
 #include <cstring>
 
 using namespace KItinerary;
+using namespace Qt::StringLiterals;
 
 static KContacts::Address variantToKContactsAddress(const QVariant &obj)
 {
@@ -281,7 +285,12 @@ QString Localizer::formatWeight(int gram)
 
 QString Localizer::formatTemperature(double temperature)
 {
-    return i18nc("temperature", "%1°C", (int)qRound(temperature));
+    using KUnitConversion::UnitId;
+
+    const QString homeCountry = Settings::read("Settings/HomeCountry"_L1, KCountry::fromQLocale(QLocale().territory()).alpha2()).toString();
+    const auto targetUnit = homeCountry == QStringLiteral("US") ? UnitId::Fahrenheit : UnitId::Celsius;
+
+    return KUnitConversion::Converter().convert(KUnitConversion::Value(temperature, UnitId::Celsius), targetUnit).round(0).toSymbolString();
 }
 
 QString Localizer::formatCurrency(double value, const QString &isoCode)
