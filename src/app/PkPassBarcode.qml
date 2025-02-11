@@ -20,7 +20,7 @@ Rectangle {
     color: "white"
     radius: 6
     Layout.alignment: Qt.AlignCenter
-    visible: barcode.barcodeType !== Prison.Barcode.Null
+    visible: pass && pass.barcodes[0].format !== KPkPass.Barcode.Invalid
 
     ColumnLayout {
         id: barcodeLayout
@@ -32,21 +32,20 @@ Rectangle {
             Layout.preferredWidth: 0.8 * root.maximumWidth
             Layout.preferredHeight: implicitHeight * (Layout.preferredWidth / implicitWidth)
             barcodeType: {
-                switch(pass.barcodes[0].format) {
+                switch(root.pass.barcodes[0].format) {
                     case KPkPass.Barcode.QR: return Prison.Barcode.QRCode
                     case KPkPass.Barcode.Aztec: return Prison.Barcode.Aztec
                     case KPkPass.Barcode.PDF417: return Prison.Barcode.PDF417;
                     case KPkPass.Barcode.Code128: return Prison.Barcode.Code128;
                 }
-                return Prison.Barcode.Null;
             }
-            content: pass.barcodes[0].message
+            content: root.pass.barcodes[0].message
         }
 
         QQC2.Label {
             Layout.fillWidth: true
             Layout.maximumWidth: root.maximumWidth
-            text: pass.barcodes[0].alternativeText
+            text: root.pass.barcodes[0].alternativeText
             color: "black"
             visible: text.length > 0
             wrapMode: Text.Wrap

@@ -19,7 +19,7 @@ Item {
     clip: true
 
     /** Barcode format to use, using the KItinerary::Ticket enum. */
-    property var barcodeType
+    property int barcodeType: Ticket.Unknown
     /** Barcode content, as string or byte array. */
     property var barcodeContent
 
@@ -66,8 +66,6 @@ Item {
             rotation: background.showVertical ? 90 : 0
             barcodeType:
             {
-                if (barcodeContainer.barcodeType == undefined)
-                    return Prison.Barcode.Null;
                 switch (barcodeContainer.barcodeType) {
                     case Ticket.QRCode: return Prison.Barcode.QRCode;
                     case Ticket.AztecCode: return Prison.Barcode.Aztec;
@@ -77,14 +75,8 @@ Item {
                     case Ticket.Code39: return Prison.Barcode.Code39;
                     case Ticket.EAN13: return Prison.Barcode.EAN13;
                 }
-                return Prison.Barcode.Null;
             }
-            content:
-            {
-                if (barcode.barcodeType == Prison.Barcode.Null || barcodeContainer.barcodeType == undefined)
-                    return "";
-                return barcodeContainer.barcodeContent;
-            }
+            content: barcodeContainer.barcodeType === Ticket.Unknown ? "" : barcodeContainer.barcodeContent
         }
     }
 }

@@ -55,7 +55,7 @@ ColumnLayout {
         id: barcodeContainer
         Layout.alignment: Qt.AlignCenter
         Layout.fillWidth: true
-        barcodeType: currentTicket ? currentTicket.ticketTokenType : undefined
+        barcodeType: currentTicket ? currentTicket.ticketTokenType : Ticket.Unknown
         barcodeContent: currentTicket ? currentTicket.ticketTokenData : undefined
         onDoubleClicked: root.scanModeToggled()
     }
