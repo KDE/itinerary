@@ -24,6 +24,7 @@ repositories {
 
 apply plugin: 'com.android.application'
 apply from: '../version.gradle'
+def timestamp = (int)(new Date().getTime()/1000)
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
@@ -78,9 +79,9 @@ android {
         targetSdkVersion qtTargetSdkVersion
         applicationId "org.kde.itinerary"
         namespace "org.kde.itinerary"
-        versionName ecmVersionName
-        versionCode ecmVersionCode
-        manifestPlaceholders = [versionName: ecmVersionName, versionCode: ecmVersionCode]
+        versionCode timestamp
+        versionName projectVersionFull
+        manifestPlaceholders = [versionName: projectVersionFull, versionCode: timestamp]
     }
 
     androidResources {
