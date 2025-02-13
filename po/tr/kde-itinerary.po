@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-04 00:41+0000\n"
+"POT-Creation-Date: 2025-02-13 00:45+0000\n"
 "PO-Revision-Date: 2025-01-04 15:54+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -2273,65 +2273,59 @@ msgstr "Konum"
 msgid "Journey"
 msgstr "Yolculuk"
 
-#: app/localizer.cpp:181
+#: app/localizer.cpp:185
 #, kde-format
 msgctxt "day-only date format"
 msgid "dd MMMM"
 msgstr "gg AAAA"
 
-#: app/localizer.cpp:242
+#: app/localizer.cpp:246
 #, kde-format
 msgctxt "Duration in minutes"
 msgid "%1 min"
 msgstr "%1 dak"
 
-#: app/localizer.cpp:244
+#: app/localizer.cpp:248
 #, kde-format
 msgctxt "Duration in hours and minutes"
 msgid "%1 hr"
 msgstr "%1 sa"
 
-#: app/localizer.cpp:246
+#: app/localizer.cpp:250
 #, kde-format
 msgctxt "Duration in hours and minutes"
 msgid "%1 hr %2 min"
 msgstr "%1 sa %2 dak"
 
-#: app/localizer.cpp:257
+#: app/localizer.cpp:261
 #, kde-format
 msgctxt "distance in meter"
 msgid "%1 m"
 msgstr "%1 m"
 
-#: app/localizer.cpp:260 app/localizer.cpp:262
+#: app/localizer.cpp:264 app/localizer.cpp:266
 #, kde-format
 msgctxt "distance in kilometer"
 msgid "%1 km"
 msgstr "%1 km"
 
-#: app/localizer.cpp:268
+#: app/localizer.cpp:272
 #, kde-format
 msgctxt "speed in kilometers per hour"
 msgid "%1 km/h"
 msgstr "%1 km/sa"
 
-#: app/localizer.cpp:274
+#: app/localizer.cpp:278
 #, kde-format
 msgctxt "weight in gram"
 msgid "%1 g"
 msgstr "%1 g"
 
-#: app/localizer.cpp:277 app/localizer.cpp:279
+#: app/localizer.cpp:281 app/localizer.cpp:283
 #, kde-format
 msgctxt "weight in kilogram"
 msgid "%1 kg"
 msgstr "%1 kg"
-
-#: app/localizer.cpp:284
-#, kde-format
-msgctxt "temperature"
-msgid "%1°C"
-msgstr "%1 °C"
 
 #: app/LocationInfoDelegate.qml:51
 #, kde-format
@@ -4274,7 +4268,7 @@ msgstr[0] "1 gün"
 msgstr[1] "%1 gün"
 
 #: app/TripGroupPage.qml:444 app/WeatherForecastDelegate.qml:48
-#: app/WeatherForecastPage.qml:93
+#: app/WeatherForecastPage.qml:94
 #, kde-format
 msgctxt "temperature range"
 msgid "%1 / %2"
@@ -4539,13 +4533,13 @@ msgstr "Otobüs: %1 Koltuk: %2"
 msgid "No vehicle layout information available."
 msgstr "Araç yerleşim bilgisi yok."
 
-#: app/WeatherForecastDelegate.qml:61 app/WeatherForecastPage.qml:106
+#: app/WeatherForecastDelegate.qml:61 app/WeatherForecastPage.qml:107
 #, kde-format
 msgctxt "precipitation"
 msgid "%1 mm"
 msgstr "%1 mm"
 
-#: app/WeatherForecastDelegate.qml:74 app/WeatherForecastPage.qml:119
+#: app/WeatherForecastDelegate.qml:74 app/WeatherForecastPage.qml:120
 #, kde-format
 msgctxt "windSpeed"
 msgid "%1 m/s"
@@ -4642,6 +4636,10 @@ msgstr "Oturum kapatıldı."
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%5 tarihinde %3 havaalanından %4 havaalanına %1%2"
+
+#~ msgctxt "temperature"
+#~ msgid "%1°C"
+#~ msgstr "%1 °C"
 
 #~ msgid "Walk"
 #~ msgstr "Yürü"
