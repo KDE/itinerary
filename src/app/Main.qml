@@ -164,7 +164,7 @@ Kirigami.ApplicationWindow {
         actions: [
             Kirigami.Action {
                 text: i18n("Import…")
-                icon.name: "document-import"
+                icon.name: "document-import-symbolic"
                 children: importActions
             },
             Kirigami.Action {
