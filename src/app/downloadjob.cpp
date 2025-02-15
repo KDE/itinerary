@@ -5,8 +5,8 @@
 
 #include "downloadjob.h"
 #include "logging.h"
+#include "nominatimimportjob.h"
 #include "onlineticketretrievaljob.h"
-#include "osmimportjob.h"
 
 #include <KItinerary/JsonLdDocument>
 
@@ -89,8 +89,8 @@ bool DownloadJob::handleOsmUrl(const QUrl &url, QNetworkAccessManager *nam)
         return false;
     }
 
-    auto job = new OsmImportJob(type, pathMatch.capturedView(2).toLongLong(), nam, this);
-    connect(job, &OsmImportJob::finished, this, [this, job]() {
+    auto job = new NominatimImportJob(type, pathMatch.capturedView(2).toLongLong(), nam, this);
+    connect(job, &NominatimImportJob::finished, this, [this, job]() {
         job->deleteLater();
         if (job->result().isNull()) {
             m_errorMessage = job->errorMessage();

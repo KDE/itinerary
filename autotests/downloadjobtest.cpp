@@ -13,6 +13,8 @@
 #include <QUrl>
 #include <QtTest/qtest.h>
 
+using namespace Qt::Literals;
+
 class DownloadJobTest : public QObject
 {
     Q_OBJECT
@@ -86,10 +88,7 @@ private Q_SLOTS:
         m_nam.replies.push(
             {QNetworkReply::NoError,
              200,
-             QByteArray("<osm version=\"0.6\"><node id=\"448814556\" lat=\"52.5135789\" lon=\"13.4184810\"><tag k=\"addr:city\" v=\"Berlin\"/><tag "
-                        "k=\"addr:country\" v=\"DE\"/><tag k=\"addr:housenumber\" v=\"6\"/><tag k=\"addr:postcode\" v=\"10179\"/><tag k=\"addr:street\" "
-                        "v=\"Brückenstraße\"/><tag k=\"addr:suburb\" v=\"Mitte\"/><tag k=\"amenity\" v=\"restaurant\"/><tag k=\"contact:website\" "
-                        "v=\"http://www.ming-dynastie.de\"/><tag k=\"cuisine\" v=\"chinese\"/><tag k=\"name\" v=\"Ming Dynastie\"/></node></osm>"),
+             QByteArray("{\"type\":\"FeatureCollection\",\"geocoding\":{\"version\":\"0.1.0\",\"attribution\":\"Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright\",\"licence\":\"ODbL\"},\"features\":[{\"type\":\"Feature\",\"properties\":{\"geocoding\":{\"place_id\":133218569,\"osm_type\":\"node\",\"osm_id\":448814556,\"osm_key\":\"amenity\",\"osm_value\":\"restaurant\",\"type\":\"house\",\"label\":\"Ming Dynastie, 6, Brückenstraße, Luisenstadt, Mitte, Berlin, 10179, Germany\",\"name\":\"Ming Dynastie\",\"housenumber\":\"6\",\"postcode\":\"10179\",\"street\":\"Brückenstraße\",\"locality\":\"Luisenstadt\",\"district\":\"Mitte\",\"city\":\"Berlin\",\"country\":\"Germany\",\"country_code\":\"de\",\"admin\":{\"level10\":\"Mitte\",\"level9\":\"Mitte\",\"level4\":\"Berlin\"}}},\"geometry\":{\"type\": \"Point\",\"coordinates\": [13.418481, 52.5135789]}}]}"),
              QString()});
 
         DownloadJob job(QUrl(QStringLiteral("https://www.openstreetmap.org/node/448814556")), &m_nam);
@@ -98,11 +97,12 @@ private Q_SLOTS:
 
         QCOMPARE(m_nam.requests.size(), 1);
         QCOMPARE(m_nam.requests[0].op, QNetworkAccessManager::GetOperation);
-        QCOMPARE(m_nam.requests[0].request.url(), QUrl(QStringLiteral("https://www.openstreetmap.org/api/0.6/node/448814556")));
+        QCOMPARE(m_nam.requests[0].request.url(), QUrl(u"https://nominatim.openstreetmap.org/lookup?osm_ids=N448814556&extratags=1&format=geocodejson"_s));
 
         QCOMPARE(job.hasError(), false);
         QCOMPARE(job.errorMessage(), QString());
         QVERIFY(job.data().contains("@context"));
+        QVERIFY(job.data().contains("FoodEstablishment"));
     }
 
     void test404()
