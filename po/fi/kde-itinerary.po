@@ -1,6 +1,6 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the itinerary package.
-# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Tommi Nieminen <translator@legisign.org>
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2025 Tommi Nieminen <translator@legisign.org>
 # SPDX-FileCopyrightText: 2024 Kimmo Kujansuu <mrkujansuu@gmail.com>
 #
 msgid ""
@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-14 00:43+0000\n"
-"PO-Revision-Date: 2024-12-01 14:37+0200\n"
+"PO-Revision-Date: 2025-01-28 18:21+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -503,15 +503,13 @@ msgid "Bus"
 msgstr "Bussi"
 
 #: app/BusDelegate.qml:52 app/BusDelegate.qml:220
-#, fuzzy, kde-format
-#| msgid "Platform change on %1"
+#, kde-format
 msgctxt "bus station platform"
 msgid "Platform changed to %1"
-msgstr "Laiturin muutos: %1"
+msgstr "Laituriksi vaihtunut %1"
 
 #: app/BusDelegate.qml:54 app/BusDelegate.qml:222
-#, fuzzy, kde-format
-#| msgid "Platform %1"
+#, kde-format
 msgctxt "bus station platform"
 msgid "Platform %1"
 msgstr "Laituri %1"
@@ -535,8 +533,7 @@ msgid "0 intermediate stop (%1)"
 msgstr "0 välipysäkkiä (%1)"
 
 #: app/BusDelegate.qml:237 app/TrainDelegate.qml:248
-#, fuzzy, kde-format
-#| msgid "%1 to %2"
+#, kde-format
 msgctxt "from location 1 to location 2"
 msgid "%1 to %2"
 msgstr "%1 – %2"
@@ -554,7 +551,7 @@ msgstr "Nouse junaan myöhemmin"
 #: app/BusEditor.qml:51
 #, kde-format
 msgid "Change departure stop"
-msgstr "Vaihda lähtöpysäkkiä"
+msgstr "Vaihda lähtöpysäkki"
 
 #: app/BusEditor.qml:61 app/TrainEditor.qml:65
 #, kde-format
@@ -564,7 +561,7 @@ msgstr "Nouse junasta myöhemmin"
 #: app/BusEditor.qml:64
 #, kde-format
 msgid "Change arrival stop"
-msgstr "Vaihta saapumispysäkkiä"
+msgstr "Vaihda saapumispysäkki"
 
 #: app/BusEditor.qml:84
 #, kde-format
@@ -1084,11 +1081,10 @@ msgid "Seat: <b>%1</b>"
 msgstr "Paikka: <b>%1</b>"
 
 #: app/FlightDelegate.qml:98
-#, fuzzy, kde-format
-#| msgid "Terminal"
+#, kde-format
 msgctxt "airport terminal"
 msgid "Terminal %1"
-msgstr "Terminaali"
+msgstr "Terminaali %1"
 
 #: app/FlightDelegate.qml:102
 #, kde-format
@@ -1508,21 +1504,18 @@ msgid "Recovery certificate valid"
 msgstr "Kelvollinen palautusvarmenne"
 
 #: app/healthcertificatemanager.cpp:145
-#, fuzzy, kde-format
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "health certificate"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: app/healthcertificatemanager.cpp:154
-#, fuzzy, kde-format
-#| msgid "Vaccination %1/%2 (%3)"
+#, kde-format
 msgid "Vaccination for %1 (%2/%3)"
-msgstr "Rokotus %1/%2 (%3)"
+msgstr "Rokotus (%1, %2/%3)"
 
 #: app/healthcertificatemanager.cpp:157
-#, fuzzy, kde-format
-#| msgid "Vaccination (%1)"
+#, kde-format
 msgid "Vaccination for %1"
 msgstr "Rokotus (%1)"
 
@@ -1532,16 +1525,14 @@ msgid "Vaccination"
 msgstr "Rokotus"
 
 #: app/healthcertificatemanager.cpp:163
-#, fuzzy, kde-format
-#| msgid "Test %1 (%2)"
+#, kde-format
 msgid "Test %1 for %2"
 msgstr "Testi %1 (%2)"
 
 #: app/healthcertificatemanager.cpp:169
-#, fuzzy, kde-format
-#| msgid "Recovery (%1)"
+#, kde-format
 msgid "Recovery %1 for %2"
-msgstr "Toipuminen (%1)"
+msgstr "Toipuminen %1 (%2)"
 
 #: app/HealthCertificatePage.qml:19
 #, kde-format
@@ -2874,54 +2865,49 @@ msgstr "Välilyönnit"
 #, kde-format
 msgctxt "@title"
 msgid "My Data"
-msgstr ""
+msgstr "Omat tietoni"
 
 #: app/MyDataPage.qml:27
-#, fuzzy, kde-format
-#| msgid "Passes and Programs"
+#, kde-format
 msgctxt "@title"
 msgid "Passes and Programs"
 msgstr "Liput ja ohjelmat"
 
 #: app/MyDataPage.qml:34
-#, fuzzy, kde-format
-#| msgid "Import bonus or discount program cards or flat rate passes."
+#, kde-format
 msgid "No valid bonus or discount program cards or flat rate passes found."
-msgstr "Tuo bonus- tai alennusohjelmakortit tai kiinteähintaiset liput."
+msgstr ""
+"Kelvollisia bonus- tai alennusohjelmakortteja tai kiinteähintaisia lippuja "
+"ei löytynyt."
 
 #: app/MyDataPage.qml:52
 #, kde-format
 msgctxt "@action:button"
 msgid "Manage your Passes"
-msgstr ""
+msgstr "Hallinnoi lippuja"
 
 #: app/MyDataPage.qml:59
-#, fuzzy, kde-format
-#| msgid "Health Certificates"
+#, kde-format
 msgctxt "@title"
 msgid "Health Certificates"
 msgstr "Terveystodistukset"
 
 #: app/MyDataPage.qml:69
-#, fuzzy, kde-format
-#| msgid "One health certificate imported."
-#| msgid_plural "%1 health certificates imported."
+#, kde-format
 msgid "No valid health certificate found."
-msgstr "Tuotiin yksi terveystodistus."
+msgstr "Kelvollisia terveystodistuksia ei löytynyt."
 
 #: app/MyDataPage.qml:100
-#, fuzzy, kde-format
-#| msgid "Health Certificates"
+#, kde-format
 msgctxt "@action:button"
 msgid "Manage your health certificates"
-msgstr "Terveystodistukset"
+msgstr "Hallinnoi terveystodistuksia"
 
 #: app/MyDataPage.qml:108
-#, fuzzy, kde-format
-#| msgid "Favorite Locations"
+#, kde-format
 msgctxt "@title:group"
 msgid "Saved Locations"
-msgstr "Suosikkisijainnit"
+msgstr "Tallennetut sijainnit"
 
 #: app/MyDataPage.qml:113
 #, kde-format
@@ -2934,28 +2920,25 @@ msgid "Statistics"
 msgstr "Tilastot"
 
 #: app/MyDataPage.qml:180
-#, fuzzy, kde-format
-#| msgid "Statistics"
+#, kde-format
 msgctxt "@action:button"
 msgid "See all Statistics"
-msgstr "Tilastot"
+msgstr "Katso kaikki tilastot"
 
 #: app/MyDataPage.qml:190
 #, kde-format
 msgctxt "@title:group"
 msgid "Data Portability"
-msgstr ""
+msgstr "Tietojen siirrettävyys"
 
 #: app/MyDataPage.qml:195
-#, fuzzy, kde-format
-#| msgid "Import"
+#, kde-format
 msgctxt "@action:button"
 msgid "Import"
 msgstr "Tuo"
 
 #: app/MyDataPage.qml:203
-#, fuzzy, kde-format
-#| msgid "Export"
+#, kde-format
 msgctxt "@action:button"
 msgid "Export"
 msgstr "Vie"
@@ -2981,7 +2964,7 @@ msgstr "Suunnittele matka"
 #, kde-format
 msgctxt "@title:tab"
 msgid "My Data"
-msgstr ""
+msgstr "Omat tietoni"
 
 #: app/NavigationBar.qml:47
 #, kde-format
@@ -3124,24 +3107,22 @@ msgid "Passes and Programs"
 msgstr "Liput ja ohjelmat"
 
 #: app/PassPage.qml:21
-#, fuzzy, kde-format
-#| msgid "Add Program Membership…"
+#, kde-format
 msgctxt "@title"
 msgid "Add Program Membership"
-msgstr "Lisää ohjelman jäsenyys…"
+msgstr "Lisää ohjelman jäsenyys"
 
 #: app/PassPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Import from GPX"
+#, kde-format
 msgctxt "@action:button"
 msgid "Import From File"
-msgstr "Tuo GPX-muodosta"
+msgstr "Tuo tiedostosta"
 
 #: app/PassPage.qml:34
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Manually"
-msgstr ""
+msgstr "Lisää itse"
 
 #: app/PassPage.qml:48
 #, kde-format
@@ -3956,15 +3937,13 @@ msgid "Arrival Time"
 msgstr "Saapumisaika:"
 
 #: app/TrainDelegate.qml:45 app/TrainDelegate.qml:230
-#, fuzzy, kde-format
-#| msgid "Platform change on %1"
+#, kde-format
 msgctxt "train station platform"
 msgid "Platform changed to %1"
-msgstr "Laiturin muutos: %1"
+msgstr "Laituriksi vaihtunut %1"
 
 #: app/TrainDelegate.qml:47 app/TrainDelegate.qml:232
-#, fuzzy, kde-format
-#| msgid "Platform %1"
+#, kde-format
 msgctxt "train station platform"
 msgid "Platform %1"
 msgstr "Laituri %1"
@@ -3995,12 +3974,12 @@ msgstr "Muokkaa junavarausta"
 #: app/TrainEditor.qml:55
 #, kde-format
 msgid "Change departure station"
-msgstr "Vaihda lähtöasemaa"
+msgstr "Vaihda lähtöasema"
 
 #: app/TrainEditor.qml:68
 #, kde-format
 msgid "Change arrival station"
-msgstr "Vaihta tuloasemaa"
+msgstr "Vaihda tuloasema"
 
 #: app/TrainEditor.qml:93
 #, kde-format
