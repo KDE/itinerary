@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the itinerary package.
 #
 # Automatically generated, 2019.
-# SPDX-FileCopyrightText: 2019, 2020, 2021, 2022, 2023, 2024 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2019, 2020, 2021, 2022, 2023, 2024, 2025 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-14 00:43+0000\n"
-"PO-Revision-Date: 2024-12-26 20:31+0100\n"
+"PO-Revision-Date: 2025-02-18 02:26+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.12.0\n"
+"X-Generator: Lokalize 24.12.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -118,12 +118,12 @@ msgstr "Editar"
 #: app/ActionsCard.qml:63
 #, kde-format
 msgid "Add to calendar…"
-msgstr "Añadir al calendario..."
+msgstr "Añadir al calendario…"
 
 #: app/ActionsCard.qml:74 app/TripGroupPage.qml:733
 #, kde-format
 msgid "Export…"
-msgstr "Exportar..."
+msgstr "Exportar…"
 
 #: app/ActionsCard.qml:79 app/ActionsCard.qml:125 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
@@ -152,7 +152,7 @@ msgstr "Exportar"
 #: app/ActionsCard.qml:141 app/TripGroupPage.qml:230
 #, kde-format
 msgid "As Itinerary file…"
-msgstr "Como archivo de Itinerary..."
+msgstr "Como archivo de Itinerary…"
 
 #: app/ActionsCard.qml:152 app/TripGroupPage.qml:252
 #, kde-format
@@ -849,7 +849,7 @@ msgstr "No hay documentos adjuntos para esta reserva."
 #: app/DocumentsCard.qml:117
 #, kde-format
 msgid "Add Document…"
-msgstr "Añadir documento..."
+msgstr "Añadir documento…"
 
 #: app/downloadjob.cpp:162
 #, kde-format
@@ -1356,7 +1356,7 @@ msgstr "%1°, %2°"
 #: app/FormPlaceEditorDelegate.qml:197
 #, kde-format
 msgid "Pick…"
-msgstr "Recoger..."
+msgstr "Recoger…"
 
 #: app/FormPlaceEditorDelegate.qml:215
 #, kde-format
@@ -2013,7 +2013,7 @@ msgstr "Cargar conexiones anteriores"
 #: app/JourneyQueryPage.qml:175
 #, kde-format
 msgid "Still fetching results…"
-msgstr "Todavía se están obteniendo resultados..."
+msgstr "Todavía se están obteniendo resultados…"
 
 #: app/JourneyRequestPage.qml:34 app/JourneyRequestPage.qml:60
 #, kde-format
@@ -2159,7 +2159,7 @@ msgstr "Andén %1"
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
-msgstr "Mostrar más..."
+msgstr "Mostrar más…"
 
 #: app/JourneySectionPage.qml:48 app/TimelineDelegateDepartureLayout.qml:94
 #: app/VehicleLayoutPage.qml:143
@@ -2264,7 +2264,7 @@ msgstr "Seguir automáticamente en el mapa"
 #: app/LiveStatusPage.qml:180 app/LiveStatusPage.qml:192
 #, kde-format
 msgid "Waiting for data…"
-msgstr "Esperando datos..."
+msgstr "Esperando datos…"
 
 #: app/LiveStatusPage.qml:204
 #, kde-format
@@ -2468,7 +2468,7 @@ msgstr "Archivos o URL para importar."
 #: app/Main.qml:61
 #, kde-format
 msgid "Open File…"
-msgstr "Abrir archivo..."
+msgstr "Abrir archivo…"
 
 #: app/Main.qml:69 app/TicketTokenEditorCard.qml:129
 #, kde-format
@@ -2478,22 +2478,22 @@ msgstr "Pegar"
 #: app/Main.qml:76
 #, kde-format
 msgid "Scan Barcode…"
-msgstr "Escanear código de barras..."
+msgstr "Escanear código de barras…"
 
 #: app/Main.qml:84
 #, kde-format
 msgid "Add from Calendar…"
-msgstr "Añadir desde calendario..."
+msgstr "Añadir desde calendario…"
 
 #: app/Main.qml:98
 #, kde-format
 msgid "Deutsche Bahn Online Ticket…"
-msgstr "Billete en línea de Deutsche Bahn..."
+msgstr "Billete en línea de Deutsche Bahn…"
 
 #: app/Main.qml:107
 #, kde-format
 msgid "SNCF Online Ticket…"
-msgstr "Billete en línea de SNCF..."
+msgstr "Billete en línea de SNCF…"
 
 #: app/Main.qml:120
 #, kde-format
@@ -2523,12 +2523,12 @@ msgstr "Eventos iCal (*.ics)"
 #: app/Main.qml:157
 #, kde-format
 msgid "Import…"
-msgstr "Importar..."
+msgstr "Importar…"
 
 #: app/Main.qml:171 app/WelcomePage.qml:41
 #, kde-format
 msgid "Settings…"
-msgstr "Preferencias..."
+msgstr "Preferencias…"
 
 #: app/Main.qml:178 app/WelcomePage.qml:16
 #, kde-format
@@ -2841,7 +2841,7 @@ msgstr "Declinar"
 #: app/MatrixRoomSelectionSheet.qml:19
 #, kde-format
 msgid "Share location…"
-msgstr "Compartir ubicación..."
+msgstr "Compartir ubicación…"
 
 #: app/MatrixRoomSelectionSheet.qml:36
 #, kde-format
@@ -3100,7 +3100,7 @@ msgstr "Billete en línea"
 #: app/OnlineImportPage.qml:54
 #, kde-format
 msgid "Search…"
-msgstr "Buscar..."
+msgstr "Buscar…"
 
 #: app/PassDelegate.qml:36
 #, kde-format
@@ -3428,7 +3428,7 @@ msgstr ""
 #: app/SettingsPage.qml:54
 #, kde-format
 msgid "Public Transport Information Sources…"
-msgstr "Fuentes de información de transporte público..."
+msgstr "Fuentes de información de transporte público…"
 
 #: app/SettingsPage.qml:63 app/WeatherForecastDelegate.qml:83
 #: app/WeatherForecastPage.qml:19
@@ -3524,7 +3524,7 @@ msgstr "Notificaciones"
 #: app/SettingsPage.qml:138
 #, kde-format
 msgid "Configure Notifications…"
-msgstr "Configurar las notificaciones..."
+msgstr "Configurar las notificaciones…"
 
 #: app/SettingsPage.qml:147
 #, kde-format
@@ -3534,7 +3534,7 @@ msgstr "Mostrar notificaciones en la pantalla de bloqueo"
 #: app/SettingsPage.qml:157 app/SettingsPage.qml:186
 #, kde-format
 msgid "Request permissions…"
-msgstr "Solicitar permisos..."
+msgstr "Solicitar permisos…"
 
 #: app/SettingsPage.qml:158
 #, kde-format
@@ -3906,7 +3906,7 @@ msgstr "Seleccionar billete"
 #: app/TicketTokenEditorCard.qml:91
 #, kde-format
 msgid "Scan barcode…"
-msgstr "Escanear código de barras..."
+msgstr "Escanear código de barras…"
 
 #: app/tickettokenmodel.cpp:74
 #, kde-format
@@ -4229,32 +4229,32 @@ msgstr "Fusionar"
 #: app/TripGroupPage.qml:115
 #, kde-format
 msgid "Add train trip…"
-msgstr "Añadir viaje en tren..."
+msgstr "Añadir viaje en tren…"
 
 #: app/TripGroupPage.qml:122
 #, kde-format
 msgid "Add flight…"
-msgstr "Añadir vuelo..."
+msgstr "Añadir vuelo…"
 
 #: app/TripGroupPage.qml:134
 #, kde-format
 msgid "Add ferry trip…"
-msgstr "Añadir viaje en ferry..."
+msgstr "Añadir viaje en ferry…"
 
 #: app/TripGroupPage.qml:146
 #, kde-format
 msgid "Add accommodation…"
-msgstr "Añadir alojamiento..."
+msgstr "Añadir alojamiento…"
 
 #: app/TripGroupPage.qml:157
 #, kde-format
 msgid "Add event…"
-msgstr "Añadir evento..."
+msgstr "Añadir evento…"
 
 #: app/TripGroupPage.qml:169
 #, kde-format
 msgid "Add restaurant…"
-msgstr "Añadir restaurante..."
+msgstr "Añadir restaurante…"
 
 #: app/TripGroupPage.qml:185
 #, kde-format
@@ -4265,7 +4265,7 @@ msgstr "Añadir a viaje"
 #: app/TripGroupPage.qml:238
 #, kde-format
 msgid "As GPX file…"
-msgstr "Como archivo GPX..."
+msgstr "Como archivo GPX…"
 
 #: app/TripGroupPage.qml:269 app/TripGroupPage.qml:284
 #, kde-format
@@ -4321,7 +4321,7 @@ msgstr[1] "Divisas: %2"
 #: app/TripGroupPage.qml:496
 #, kde-format
 msgid "Show map…"
-msgstr "Mostrar mapa..."
+msgstr "Mostrar mapa…"
 
 #: app/TripGroupPage.qml:503
 #, kde-format
@@ -4351,17 +4351,17 @@ msgstr "Comprobar actualizaciones"
 #: app/TripGroupPage.qml:698
 #, kde-format
 msgid "Rename…"
-msgstr "Cambiar nombre..."
+msgstr "Cambiar nombre…"
 
 #: app/TripGroupPage.qml:707
 #, kde-format
 msgid "Merge trips…"
-msgstr "Fusionar viajes..."
+msgstr "Fusionar viajes…"
 
 #: app/TripGroupPage.qml:718
 #, kde-format
 msgid "Split trip…"
-msgstr "Dividir viaje..."
+msgstr "Dividir viaje…"
 
 #: app/TripGroupPage.qml:725
 #, kde-format
@@ -4638,7 +4638,7 @@ msgstr "¡Entendido!"
 #: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:129
 #, kde-format
 msgid "Syncing…"
-msgstr "Sincronizando..."
+msgstr "Sincronizando…"
 
 #: matrix/matrixmanager.cpp:56
 #, kde-format
@@ -4648,7 +4648,7 @@ msgstr "Este servidor no permite iniciar sesión usando una contraseña"
 #: matrix/matrixmanager.cpp:78
 #, kde-format
 msgid "Logging in…"
-msgstr "Iniciando sesión..."
+msgstr "Iniciando sesión…"
 
 #: matrix/matrixmanager.cpp:114
 #, kde-format
