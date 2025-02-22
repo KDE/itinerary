@@ -102,6 +102,7 @@ Kirigami.ApplicationWindow {
                     source: "db",
                 });
             }
+            visible: false // FIXME API endpoint is no longer responding
         },
         Kirigami.Action {
             text: i18n("SNCF Online Ticket…")
