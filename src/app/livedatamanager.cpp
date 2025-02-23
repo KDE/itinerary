@@ -433,7 +433,7 @@ void LiveDataManager::updateJourneyData(const KPublicTransport::JourneySection &
 
     // update reservation with live data
     const auto newRes = PublicTransport::mergeJourney(res, ld.journey);
-    if (!ReservationHelper::equals(res, newRes)) {
+    if (!ReservationHelper::equals(res, newRes) && res.typeId() == newRes.typeId()) {
         m_resMgr->updateReservation(resId, newRes);
     }
 
