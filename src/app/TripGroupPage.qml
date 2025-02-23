@@ -7,7 +7,8 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import QtQuick.Dialogs
-import Qt.labs.qmlmodels as Models
+import Qt.labs.qmlmodels
+import QtQml.Models
 import org.kde.i18n.localeData
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
@@ -536,9 +537,9 @@ Kirigami.ScrollablePage {
             criteria: ViewSection.FullString
         }
 
-        delegate: Models.DelegateChooser {
+        delegate: DelegateChooser {
             role: "type"
-            Models.DelegateChoice {
+            DelegateChoice {
                 roleValue: TimelineElement.Flight
                 FlightDelegate {
                     batchId: model.batchId
@@ -546,7 +547,7 @@ Kirigami.ScrollablePage {
                     detailsPage: flightDetailsPage
                 }
             }
-            Models.DelegateChoice {
+            DelegateChoice {
                 roleValue: TimelineElement.Hotel
                 HotelDelegate {
                     batchId: model.batchId
@@ -554,7 +555,7 @@ Kirigami.ScrollablePage {
                     detailsPage: hotelDetailsPage
                 }
             }
-            Models.DelegateChoice {
+            DelegateChoice {
                 roleValue: TimelineElement.TrainTrip
                 TrainDelegate {
                     batchId: model.batchId
@@ -562,7 +563,7 @@ Kirigami.ScrollablePage {
                     detailsPage: trainDetailsPage
                 }
             }
-            Models.DelegateChoice {
+            DelegateChoice {
                 roleValue: TimelineElement.BusTrip
                 BusDelegate {
                     batchId: model.batchId
@@ -570,7 +571,7 @@ Kirigami.ScrollablePage {
                     detailsPage: busDetailsPage
                 }
             }
-            Models.DelegateChoice {
+            DelegateChoice {
                 roleValue: TimelineElement.Restaurant
                 RestaurantDelegate {
                     batchId: model.batchId
@@ -578,7 +579,7 @@ Kirigami.ScrollablePage {
                     detailsPage: restaurantDetailsPage
                 }
             }
-            Models.DelegateChoice {
+            DelegateChoice {
                 roleValue: TimelineElement.TouristAttraction
                 TouristAttractionDelegate {
                     batchId: model.batchId
@@ -586,7 +587,7 @@ Kirigami.ScrollablePage {
                     detailsPage: touristAttractionDetailsPage
                 }
             }
-            Models.DelegateChoice {
+            DelegateChoice {
                 roleValue: TimelineElement.Event
                 EventDelegate {
                     batchId: model.batchId
@@ -594,7 +595,7 @@ Kirigami.ScrollablePage {
                     detailsPage: eventDetailsPage
                 }
             }
-            Models.DelegateChoice {
+            DelegateChoice {
                 roleValue: TimelineElement.CarRental
                 CarRentalDelegate {
                     batchId: model.batchId
@@ -602,7 +603,7 @@ Kirigami.ScrollablePage {
                     detailsPage: carRentalDetailsPage
                 }
             }
-            Models.DelegateChoice {
+            DelegateChoice {
                 roleValue: TimelineElement.BoatTrip
                 BoatDelegate {
                     batchId: model.batchId
@@ -610,7 +611,7 @@ Kirigami.ScrollablePage {
                     detailsPage: boatDetailsPage
                 }
             }
-            Models.DelegateChoice {
+            DelegateChoice {
                 roleValue: TimelineElement.TodayMarker
                 RowLayout {
                     width: ListView.view.width
@@ -627,17 +628,17 @@ Kirigami.ScrollablePage {
 
                 }
             }
-            Models.DelegateChoice {
+            DelegateChoice {
                 roleValue: TimelineElement.LocationInfo
                 LocationInfoDelegate {
                     locationInfo: model.locationInformation
                 }
             }
-            Models.DelegateChoice {
+            DelegateChoice {
                 roleValue: TimelineElement.WeatherForecast
                 WeatherForecastDelegate {}
             }
-            Models.DelegateChoice {
+            DelegateChoice {
                 roleValue: TimelineElement.Transfer
                 TransferDelegate {}
             }
