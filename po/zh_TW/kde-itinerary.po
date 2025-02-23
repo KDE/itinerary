@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-31 02:35+0000\n"
+"POT-Creation-Date: 2025-02-23 02:30+0000\n"
 "PO-Revision-Date: 2024-11-28 16:26+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -27,7 +27,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "mail@kisaragi-hiu.com"
 
-#: app/AboutPage.qml:18 app/Main.qml:233
+#: app/AboutPage.qml:18 app/Main.qml:234
 #, kde-format
 msgid "About"
 msgstr "關於"
@@ -115,7 +115,7 @@ msgstr "編輯"
 msgid "Add to calendar…"
 msgstr "加入至行事曆…"
 
-#: app/ActionsCard.qml:74 app/Main.qml:221 app/TripGroupDelegate.qml:182
+#: app/ActionsCard.qml:74 app/Main.qml:222 app/TripGroupDelegate.qml:182
 #: app/TripGroupPage.qml:713
 #, kde-format
 msgid "Export…"
@@ -791,7 +791,7 @@ msgstr "資料提供者："
 msgid "Add Document"
 msgstr "新增文件"
 
-#: app/DocumentsCard.qml:37 app/Main.qml:125 app/Main.qml:126
+#: app/DocumentsCard.qml:37 app/Main.qml:126 app/Main.qml:127
 #, kde-format
 msgid "All Files (*.*)"
 msgstr "所有檔案 (*.*)"
@@ -1388,7 +1388,7 @@ msgstr "刪除票卡"
 msgid "Do you really want to delete this pass?"
 msgstr "您確定要刪除這張票卡嗎？"
 
-#: app/gpxexport.cpp:33 app/main.cpp:317 app/Main.qml:21 app/Main.qml:161
+#: app/gpxexport.cpp:33 app/main.cpp:317 app/Main.qml:21 app/Main.qml:162
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE 旅行計劃"
@@ -1503,7 +1503,7 @@ msgstr "檢驗 %1 (%2)"
 msgid "Recovery (%1)"
 msgstr "復原 (%1)"
 
-#: app/HealthCertificatePage.qml:16 app/Main.qml:195
+#: app/HealthCertificatePage.qml:16 app/Main.qml:196
 #, kde-format
 msgid "Health Certificates"
 msgstr "健康憑證"
@@ -2201,7 +2201,7 @@ msgstr "從 %1 到 %2 的航班："
 msgid "Itinerary change"
 msgstr "行程預訂變更"
 
-#: app/LiveStatusPage.qml:19 app/Main.qml:206
+#: app/LiveStatusPage.qml:19 app/Main.qml:207
 #, kde-format
 msgid "Live Status"
 msgstr "實時狀態"
@@ -2449,72 +2449,72 @@ msgstr "從行事曆新增…"
 msgid "Deutsche Bahn Online Ticket…"
 msgstr "Deutsche Bahn 線上票券…"
 
-#: app/Main.qml:107
+#: app/Main.qml:108
 #, kde-format
 msgid "SNCF Online Ticket…"
 msgstr "SNCF 線上票券…"
 
-#: app/Main.qml:120
+#: app/Main.qml:121
 #, kde-format
 msgid "Import Reservation"
 msgstr "匯入預約"
 
-#: app/Main.qml:126
+#: app/Main.qml:127
 #, kde-format
 msgid "PkPass files (*.pkpass)"
 msgstr "PkPass 檔案 (*.pkpass)"
 
-#: app/Main.qml:126
+#: app/Main.qml:127
 #, kde-format
 msgid "PDF files (*.pdf)"
 msgstr "PDF 檔案 (*.pdf)"
 
-#: app/Main.qml:126
+#: app/Main.qml:127
 #, kde-format
 msgid "iCal events (*.ics)"
 msgstr "iCal 活動 (*.ics)"
 
-#: app/Main.qml:126 app/Main.qml:135
+#: app/Main.qml:127 app/Main.qml:136
 #, kde-format
 msgid "KDE Itinerary files (*.itinerary)"
 msgstr "KDE 旅行計劃檔案 (*.itinerary)"
 
-#: app/Main.qml:133
+#: app/Main.qml:134
 #, kde-format
 msgid "Export Itinerary Data"
 msgstr "匯出旅行計劃資料"
 
-#: app/Main.qml:166 app/PassPage.qml:139
+#: app/Main.qml:167 app/PassPage.qml:139
 #, kde-format
 msgid "Import…"
 msgstr "匯入…"
 
-#: app/Main.qml:171
+#: app/Main.qml:172
 #, kde-format
 msgid "Check for Updates"
 msgstr "檢查是否有更新"
 
-#: app/Main.qml:180
+#: app/Main.qml:181
 #, kde-format
 msgid "Download Maps"
 msgstr "下載地圖"
 
-#: app/Main.qml:188 app/StatisticsPage.qml:15 app/TripGroupPage.qml:649
+#: app/Main.qml:189 app/StatisticsPage.qml:15 app/TripGroupPage.qml:649
 #, kde-format
 msgid "Statistics"
 msgstr "統計資料"
 
-#: app/Main.qml:214 app/WelcomePage.qml:41
+#: app/Main.qml:215 app/WelcomePage.qml:41
 #, kde-format
 msgid "Settings…"
 msgstr "設定…"
 
-#: app/Main.qml:226 app/WelcomePage.qml:16
+#: app/Main.qml:227 app/WelcomePage.qml:16
 #, kde-format
 msgid "Help"
 msgstr "說明"
 
-#: app/Main.qml:342
+#: app/Main.qml:343
 #, kde-format
 msgid "Map download finished."
 msgstr "地圖下載完成。"

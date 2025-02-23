@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-31 02:35+0000\n"
+"POT-Creation-Date: 2025-02-23 02:30+0000\n"
 "PO-Revision-Date: 2023-05-11 10:49+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -27,7 +27,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "zayed.alsaidi@gmail.com"
 
-#: app/AboutPage.qml:18 app/Main.qml:233
+#: app/AboutPage.qml:18 app/Main.qml:234
 #, kde-format
 msgid "About"
 msgstr "عن"
@@ -116,7 +116,7 @@ msgstr "حرّر"
 msgid "Add to calendar…"
 msgstr "أضف إلى التّقويم..."
 
-#: app/ActionsCard.qml:74 app/Main.qml:221 app/TripGroupDelegate.qml:182
+#: app/ActionsCard.qml:74 app/Main.qml:222 app/TripGroupDelegate.qml:182
 #: app/TripGroupPage.qml:713
 #, fuzzy, kde-format
 #| msgid "Export..."
@@ -818,7 +818,7 @@ msgstr ""
 msgid "Add Document"
 msgstr ""
 
-#: app/DocumentsCard.qml:37 app/Main.qml:125 app/Main.qml:126
+#: app/DocumentsCard.qml:37 app/Main.qml:126 app/Main.qml:127
 #, kde-format
 msgid "All Files (*.*)"
 msgstr "كل الملفات (*.*)"
@@ -1412,7 +1412,7 @@ msgstr ""
 msgid "Do you really want to delete this pass?"
 msgstr ""
 
-#: app/gpxexport.cpp:33 app/main.cpp:317 app/Main.qml:21 app/Main.qml:161
+#: app/gpxexport.cpp:33 app/main.cpp:317 app/Main.qml:21 app/Main.qml:162
 #, kde-format
 msgid "KDE Itinerary"
 msgstr ""
@@ -1527,7 +1527,7 @@ msgstr "ا&ختبر..."
 msgid "Recovery (%1)"
 msgstr ""
 
-#: app/HealthCertificatePage.qml:16 app/Main.qml:195
+#: app/HealthCertificatePage.qml:16 app/Main.qml:196
 #, kde-format
 msgid "Health Certificates"
 msgstr ""
@@ -2232,7 +2232,7 @@ msgstr "إلى"
 msgid "Itinerary change"
 msgstr ""
 
-#: app/LiveStatusPage.qml:19 app/Main.qml:206
+#: app/LiveStatusPage.qml:19 app/Main.qml:207
 #, kde-format
 msgid "Live Status"
 msgstr ""
@@ -2482,74 +2482,74 @@ msgstr "أضف إلى التّقويم..."
 msgid "Deutsche Bahn Online Ticket…"
 msgstr "الخدمات على ال&شابكة"
 
-#: app/Main.qml:107
+#: app/Main.qml:108
 #, fuzzy, kde-format
 msgid "SNCF Online Ticket…"
 msgstr "الخدمات على ال&شابكة"
 
-#: app/Main.qml:120
+#: app/Main.qml:121
 #, kde-format
 msgid "Import Reservation"
 msgstr ""
 
-#: app/Main.qml:126
+#: app/Main.qml:127
 #, kde-format
 msgid "PkPass files (*.pkpass)"
 msgstr ""
 
-#: app/Main.qml:126
+#: app/Main.qml:127
 #, kde-format
 msgid "PDF files (*.pdf)"
 msgstr ""
 
-#: app/Main.qml:126
+#: app/Main.qml:127
 #, kde-format
 msgid "iCal events (*.ics)"
 msgstr ""
 
-#: app/Main.qml:126 app/Main.qml:135
+#: app/Main.qml:127 app/Main.qml:136
 #, kde-format
 msgid "KDE Itinerary files (*.itinerary)"
 msgstr ""
 
-#: app/Main.qml:133
+#: app/Main.qml:134
 #, kde-format
 msgid "Export Itinerary Data"
 msgstr ""
 
-#: app/Main.qml:166 app/PassPage.qml:139
+#: app/Main.qml:167 app/PassPage.qml:139
 #, fuzzy, kde-format
 #| msgid "Import..."
 msgid "Import…"
 msgstr "استورد..."
 
-#: app/Main.qml:171
+#: app/Main.qml:172
 #, kde-format
 msgid "Check for Updates"
 msgstr ""
 
-#: app/Main.qml:180
+#: app/Main.qml:181
 #, kde-format
 msgid "Download Maps"
 msgstr "نزل الخرائط"
 
-#: app/Main.qml:188 app/StatisticsPage.qml:15 app/TripGroupPage.qml:649
+#: app/Main.qml:189 app/StatisticsPage.qml:15 app/TripGroupPage.qml:649
 #, kde-format
 msgid "Statistics"
 msgstr ""
 
-#: app/Main.qml:214 app/WelcomePage.qml:41
+#: app/Main.qml:215 app/WelcomePage.qml:41
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgid "Settings…"
 msgstr "إعدادات"
 
-#: app/Main.qml:226 app/WelcomePage.qml:16
+#: app/Main.qml:227 app/WelcomePage.qml:16
 #, kde-format
 msgid "Help"
 msgstr "مساعدة"
 
-#: app/Main.qml:342
+#: app/Main.qml:343
 #, kde-format
 msgid "Map download finished."
 msgstr ""

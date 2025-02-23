@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-31 02:35+0000\n"
+"POT-Creation-Date: 2025-02-23 02:30+0000\n"
 "PO-Revision-Date: 2025-01-06 13:22+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -27,7 +27,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "adrian@chaves.gal"
 
-#: app/AboutPage.qml:18 app/Main.qml:233
+#: app/AboutPage.qml:18 app/Main.qml:234
 #, kde-format
 msgid "About"
 msgstr "Sobre"
@@ -117,7 +117,7 @@ msgstr "Editar"
 msgid "Add to calendar…"
 msgstr "Engadir ao calendario…"
 
-#: app/ActionsCard.qml:74 app/Main.qml:221 app/TripGroupDelegate.qml:182
+#: app/ActionsCard.qml:74 app/Main.qml:222 app/TripGroupDelegate.qml:182
 #: app/TripGroupPage.qml:713
 #, kde-format
 msgid "Export…"
@@ -794,7 +794,7 @@ msgstr "Fornecedores de datos:"
 msgid "Add Document"
 msgstr "Engadir un documento"
 
-#: app/DocumentsCard.qml:37 app/Main.qml:125 app/Main.qml:126
+#: app/DocumentsCard.qml:37 app/Main.qml:126 app/Main.qml:127
 #, kde-format
 msgid "All Files (*.*)"
 msgstr "Todos os ficheiros (*.*)"
@@ -1385,7 +1385,7 @@ msgstr "Eliminar o pase"
 msgid "Do you really want to delete this pass?"
 msgstr "Seguro que quere eliminar o pase?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:317 app/Main.qml:21 app/Main.qml:161
+#: app/gpxexport.cpp:33 app/main.cpp:317 app/Main.qml:21 app/Main.qml:162
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -1500,7 +1500,7 @@ msgstr "Proba %1 (%2)"
 msgid "Recovery (%1)"
 msgstr "Recuperación (%1)"
 
-#: app/HealthCertificatePage.qml:16 app/Main.qml:195
+#: app/HealthCertificatePage.qml:16 app/Main.qml:196
 #, kde-format
 msgid "Health Certificates"
 msgstr "Certificados sanitarios"
@@ -2203,7 +2203,7 @@ msgstr "Voo %1 a %2:"
 msgid "Itinerary change"
 msgstr "Cambio de itinerario"
 
-#: app/LiveStatusPage.qml:19 app/Main.qml:206
+#: app/LiveStatusPage.qml:19 app/Main.qml:207
 #, kde-format
 msgid "Live Status"
 msgstr "Estado en directo"
@@ -2452,72 +2452,72 @@ msgstr "Engadir do calendario…"
 msgid "Deutsche Bahn Online Ticket…"
 msgstr "Billete por Internet de Deutsche…"
 
-#: app/Main.qml:107
+#: app/Main.qml:108
 #, kde-format
 msgid "SNCF Online Ticket…"
 msgstr "Billete por Internet de SNCF…"
 
-#: app/Main.qml:120
+#: app/Main.qml:121
 #, kde-format
 msgid "Import Reservation"
 msgstr "Importar a reserva"
 
-#: app/Main.qml:126
+#: app/Main.qml:127
 #, kde-format
 msgid "PkPass files (*.pkpass)"
 msgstr "Ficheiros PkPass (*.pkpass)"
 
-#: app/Main.qml:126
+#: app/Main.qml:127
 #, kde-format
 msgid "PDF files (*.pdf)"
 msgstr "Ficheiros PDF (*.pdf)"
 
-#: app/Main.qml:126
+#: app/Main.qml:127
 #, kde-format
 msgid "iCal events (*.ics)"
 msgstr "Eventos de iCal (*.ics)"
 
-#: app/Main.qml:126 app/Main.qml:135
+#: app/Main.qml:127 app/Main.qml:136
 #, kde-format
 msgid "KDE Itinerary files (*.itinerary)"
 msgstr "Ficheiros de KDE Itinerary (*.itinerary)"
 
-#: app/Main.qml:133
+#: app/Main.qml:134
 #, kde-format
 msgid "Export Itinerary Data"
 msgstr "Exportar os datos do itinerario"
 
-#: app/Main.qml:166 app/PassPage.qml:139
+#: app/Main.qml:167 app/PassPage.qml:139
 #, kde-format
 msgid "Import…"
 msgstr "Importar…"
 
-#: app/Main.qml:171
+#: app/Main.qml:172
 #, kde-format
 msgid "Check for Updates"
 msgstr "Comprobar se hai novas actualizacións"
 
-#: app/Main.qml:180
+#: app/Main.qml:181
 #, kde-format
 msgid "Download Maps"
 msgstr "Descargar mapas"
 
-#: app/Main.qml:188 app/StatisticsPage.qml:15 app/TripGroupPage.qml:649
+#: app/Main.qml:189 app/StatisticsPage.qml:15 app/TripGroupPage.qml:649
 #, kde-format
 msgid "Statistics"
 msgstr "Estatísticas"
 
-#: app/Main.qml:214 app/WelcomePage.qml:41
+#: app/Main.qml:215 app/WelcomePage.qml:41
 #, kde-format
 msgid "Settings…"
 msgstr "Configuración…"
 
-#: app/Main.qml:226 app/WelcomePage.qml:16
+#: app/Main.qml:227 app/WelcomePage.qml:16
 #, kde-format
 msgid "Help"
 msgstr "Axuda"
 
-#: app/Main.qml:342
+#: app/Main.qml:343
 #, kde-format
 msgid "Map download finished."
 msgstr "Rematou a descarga do mapa."
