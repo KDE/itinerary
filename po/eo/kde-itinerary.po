@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-14 00:43+0000\n"
+"POT-Creation-Date: 2025-02-23 00:41+0000\n"
 "PO-Revision-Date: 2024-12-27 23:54+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -28,7 +28,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "olivermkellogg@gmail.com"
 
-#: app/AboutPage.qml:18 app/Main.qml:185
+#: app/AboutPage.qml:18 app/Main.qml:186
 #, kde-format
 msgid "About"
 msgstr "Pri"
@@ -819,7 +819,7 @@ msgstr "Provizantoj de datumoj:"
 msgid "Add Document"
 msgstr "Aldoni Dokumenton"
 
-#: app/DocumentsCard.qml:37 app/Main.qml:125 app/Main.qml:126
+#: app/DocumentsCard.qml:37 app/Main.qml:126 app/Main.qml:127
 #, kde-format
 msgid "All Files (*.*)"
 msgstr "Ĉiuj dosieroj (*.*)"
@@ -1409,7 +1409,7 @@ msgstr "Forigi Enirpermesilon"
 msgid "Do you really want to delete this pass?"
 msgstr "Ĉu vi vere volas forigi ĉi tiun enirpermesilon?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:321 app/Main.qml:21 app/Main.qml:152
+#: app/gpxexport.cpp:33 app/main.cpp:321 app/Main.qml:21 app/Main.qml:153
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE-Itinero"
@@ -2224,7 +2224,7 @@ msgstr "Flugo %1 al %2:"
 msgid "Itinerary change"
 msgstr "Itinera ŝanĝo"
 
-#: app/LiveStatusPage.qml:19 app/Main.qml:163
+#: app/LiveStatusPage.qml:19 app/Main.qml:164
 #, kde-format
 msgid "Live Status"
 msgstr "Viva Statuso"
@@ -2484,63 +2484,63 @@ msgstr "Aldoni el Kalendaro…"
 msgid "Deutsche Bahn Online Ticket…"
 msgstr "Reta Bileto de Deutsche Bahn…"
 
-#: app/Main.qml:107
+#: app/Main.qml:108
 #, kde-format
 msgid "SNCF Online Ticket…"
 msgstr "Reta Bileto de SNCF…"
 
-#: app/Main.qml:120
+#: app/Main.qml:121
 #, kde-format
 msgid "Import Reservation"
 msgstr "Importo Rezervado"
 
-#: app/Main.qml:126 app/MyDataPage.qml:216
+#: app/Main.qml:127 app/MyDataPage.qml:216
 #, kde-format
 msgid "KDE Itinerary files (*.itinerary)"
 msgstr "KDE-Itineraj dosieroj (*.itinerary)"
 
-#: app/Main.qml:126
+#: app/Main.qml:127
 #, kde-format
 msgid "PkPass files (*.pkpass)"
 msgstr "PkPass-dosieroj (*.pkpass)"
 
-#: app/Main.qml:126
+#: app/Main.qml:127
 #, kde-format
 msgid "PDF files (*.pdf)"
 msgstr "PDF-dosieroj (*.pdf)"
 
-#: app/Main.qml:126
+#: app/Main.qml:127
 #, kde-format
 msgid "iCal events (*.ics)"
 msgstr "iCal-eventoj (*.ics)"
 
-#: app/Main.qml:157
+#: app/Main.qml:158
 #, kde-format
 msgid "Import…"
 msgstr "Enporti…"
 
-#: app/Main.qml:171 app/WelcomePage.qml:41
+#: app/Main.qml:172 app/WelcomePage.qml:41
 #, kde-format
 msgid "Settings…"
 msgstr "Agordo…"
 
-#: app/Main.qml:178 app/WelcomePage.qml:16
+#: app/Main.qml:179 app/WelcomePage.qml:16
 #, kde-format
 msgid "Help"
 msgstr "Helpo"
 
-#: app/Main.qml:267
+#: app/Main.qml:268
 #, kde-format
 msgctxt "@info:status"
 msgid "No onboard information available."
 msgstr "Neniu enŝipa informo haveblas."
 
-#: app/Main.qml:309
+#: app/Main.qml:310
 #, kde-format
 msgid "Map download finished."
 msgstr "Elŝuto de mapo finiĝis."
 
-#: app/Main.qml:386
+#: app/Main.qml:387
 #, kde-format
 msgctxt "@title:window"
 msgid "Matrix Session Verification"

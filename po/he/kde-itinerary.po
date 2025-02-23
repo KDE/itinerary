@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-14 00:43+0000\n"
+"POT-Creation-Date: 2025-02-23 00:41+0000\n"
 "PO-Revision-Date: 2024-12-27 08:33+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -28,7 +28,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde-l10n-he@kde.org"
 
-#: app/AboutPage.qml:18 app/Main.qml:185
+#: app/AboutPage.qml:18 app/Main.qml:186
 #, kde-format
 msgid "About"
 msgstr "על אודות"
@@ -825,7 +825,7 @@ msgstr "ספקי נתונים:"
 msgid "Add Document"
 msgstr "הוספת מסמך"
 
-#: app/DocumentsCard.qml:37 app/Main.qml:125 app/Main.qml:126
+#: app/DocumentsCard.qml:37 app/Main.qml:126 app/Main.qml:127
 #, kde-format
 msgid "All Files (*.*)"
 msgstr "כל הקבצים (*.*)"
@@ -1415,7 +1415,7 @@ msgstr "מחיקת אישור"
 msgid "Do you really want to delete this pass?"
 msgstr "למחוק את האישור הזה?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:321 app/Main.qml:21 app/Main.qml:152
+#: app/gpxexport.cpp:33 app/main.cpp:321 app/Main.qml:21 app/Main.qml:153
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -2235,7 +2235,7 @@ msgstr "טיסה %1 אל %2:"
 msgid "Itinerary change"
 msgstr "שינוי בתוכנית המסע"
 
-#: app/LiveStatusPage.qml:19 app/Main.qml:163
+#: app/LiveStatusPage.qml:19 app/Main.qml:164
 #, kde-format
 msgid "Live Status"
 msgstr "מצב בזמן אמת"
@@ -2495,63 +2495,63 @@ msgstr "הוספה מלוח השנה…"
 msgid "Deutsche Bahn Online Ticket…"
 msgstr "כרטיס מקוון של Deutsche Bahn…"
 
-#: app/Main.qml:107
+#: app/Main.qml:108
 #, kde-format
 msgid "SNCF Online Ticket…"
 msgstr "כרטיס מקוון של SNCF…"
 
-#: app/Main.qml:120
+#: app/Main.qml:121
 #, kde-format
 msgid "Import Reservation"
 msgstr "ייבוא הזמנה"
 
-#: app/Main.qml:126 app/MyDataPage.qml:216
+#: app/Main.qml:127 app/MyDataPage.qml:216
 #, kde-format
 msgid "KDE Itinerary files (*.itinerary)"
 msgstr "קובצי KDE Itinerary‏ (‎*.itinerary)"
 
-#: app/Main.qml:126
+#: app/Main.qml:127
 #, kde-format
 msgid "PkPass files (*.pkpass)"
 msgstr "קובצי PkPass‏ (‎*.pkpass)"
 
-#: app/Main.qml:126
+#: app/Main.qml:127
 #, kde-format
 msgid "PDF files (*.pdf)"
 msgstr "קובצי PDF‏ (‎*.pdf)"
 
-#: app/Main.qml:126
+#: app/Main.qml:127
 #, kde-format
 msgid "iCal events (*.ics)"
 msgstr "אירועי iCal‏ (‎*.ics)"
 
-#: app/Main.qml:157
+#: app/Main.qml:158
 #, kde-format
 msgid "Import…"
 msgstr "ייבוא…"
 
-#: app/Main.qml:171 app/WelcomePage.qml:41
+#: app/Main.qml:172 app/WelcomePage.qml:41
 #, kde-format
 msgid "Settings…"
 msgstr "הגדרות…"
 
-#: app/Main.qml:178 app/WelcomePage.qml:16
+#: app/Main.qml:179 app/WelcomePage.qml:16
 #, kde-format
 msgid "Help"
 msgstr "עזרה"
 
-#: app/Main.qml:267
+#: app/Main.qml:268
 #, kde-format
 msgctxt "@info:status"
 msgid "No onboard information available."
 msgstr "אין פרטי עלייה למטוס."
 
-#: app/Main.qml:309
+#: app/Main.qml:310
 #, kde-format
 msgid "Map download finished."
 msgstr "הורדת המפה הסתיימה."
 
-#: app/Main.qml:386
+#: app/Main.qml:387
 #, kde-format
 msgctxt "@title:window"
 msgid "Matrix Session Verification"
