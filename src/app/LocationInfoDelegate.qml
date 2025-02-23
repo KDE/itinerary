@@ -90,8 +90,7 @@ FormCard.FormCard {
 
             QQC2.Label {
                 text: visible ? i18n("Timezone change: %1 (%2)", locationInfo.timeZoneName,
-                                     (locationInfo.timeZoneOffsetDelta >= 0 ? "+" : "")
-                                     + Localizer.formatDuration(locationInfo.timeZoneOffsetDelta)) : ""
+                                     Localizer.formatTimeZoneOffset(locationInfo.timeZoneOffsetDelta)) : ""
                 visible: locationInfo.timeZoneDiffers
                 wrapMode: Text.WordWrap
                 Accessible.ignored: !visible

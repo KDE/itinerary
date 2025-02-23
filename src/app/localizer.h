@@ -27,7 +27,7 @@ public:
     Q_INVOKABLE QString formatDateTime(const QVariant &obj, const QString &propertyName) const;
     /** Auto-detect date or date/time, and convert to local time zone. */
     Q_INVOKABLE QString formatDateOrDateTimeLocal(const QVariant &obj, const QString &propertyName) const;
-    Q_INVOKABLE QString formatDuration(int seconds) const;
+    Q_INVOKABLE [[nodiscard]] static QString formatTimeZoneOffset(qint64 seconds);
     Q_INVOKABLE QString formatDurationCustom(int seconds) const;
     /** Format a distance value. */
     Q_INVOKABLE static QString formatDistance(int meter);

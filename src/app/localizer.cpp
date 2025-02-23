@@ -216,12 +216,12 @@ QString Localizer::formatDateOrDateTimeLocal(const QVariant &obj, const QString 
     return QLocale().toString(dt.toLocalTime(), QLocale::ShortFormat);
 }
 
-QString Localizer::formatDuration(int seconds) const
+QString Localizer::formatTimeZoneOffset(qint64 seconds)
 {
     if (seconds < 0) {
         return QLocale().negativeSign() + KFormat().formatDuration((-seconds * 1000), KFormat::HideSeconds);
     }
-    return KFormat().formatDuration((seconds * 1000), KFormat::HideSeconds);
+    return QLocale().positiveSign() + KFormat().formatDuration((seconds * 1000), KFormat::HideSeconds);
 }
 
 QString Localizer::formatDurationCustom(int seconds) const

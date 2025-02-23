@@ -152,7 +152,7 @@ anchors.centerIn: parent
                         case JourneySection.RentedVehicle:
                             return i18n("%1 %2 (%3)", root.modelData.rentalVehicle.network.name, Localizer.formatDistance(root.modelData.distance), Localizer.formatDurationCustom(root.modelData.duration));
                         case JourneySection.IndividualTransport:
-                            return i18n("Drive %1 (%2)", Localizer.formatDistance(root.modelData.distance), Localizer.formatDuration(root.modelData.duration));
+                            return i18n("Drive %1 (%2)", Localizer.formatDistance(root.modelData.distance), Localizer.formatDurationCustom(root.modelData.duration));
                         return "???";
                         }
 
