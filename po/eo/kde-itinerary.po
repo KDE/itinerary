@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-23 00:41+0000\n"
+"POT-Creation-Date: 2025-02-24 00:41+0000\n"
 "PO-Revision-Date: 2024-12-27 23:54+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -2360,13 +2360,13 @@ msgstr "Kelkaj nekongruaj elektraj ŝtopiloj: %1"
 msgid "Timezone change: %1 (%2)"
 msgstr "Horzona ŝanĝo: %1 (%2)"
 
-#: app/LocationInfoDelegate.qml:115
+#: app/LocationInfoDelegate.qml:114
 #, kde-format
 msgctxt "currency conversion rate"
 msgid "Currency: %1 = %2"
 msgstr "Valuto: %1 = %2"
 
-#: app/LocationInfoDelegate.qml:117
+#: app/LocationInfoDelegate.qml:116
 #, kde-format
 msgid "Currency: %1"
 msgstr "Valuto: %1"

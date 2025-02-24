@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kitinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-23 00:41+0000\n"
+"POT-Creation-Date: 2025-02-24 00:41+0000\n"
 "PO-Revision-Date: 2023-07-14 22:15+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -2468,14 +2468,14 @@ msgstr "Algumas ligações à corrente incompatíveis: %1"
 msgid "Timezone change: %1 (%2)"
 msgstr "Mudança de fuso-horário: %1 (%2)"
 
-#: app/LocationInfoDelegate.qml:115
+#: app/LocationInfoDelegate.qml:114
 #, fuzzy, kde-format
 #| msgid "Currency: %1"
 msgctxt "currency conversion rate"
 msgid "Currency: %1 = %2"
 msgstr "Moeda: %1"
 
-#: app/LocationInfoDelegate.qml:117
+#: app/LocationInfoDelegate.qml:116
 #, kde-format
 msgid "Currency: %1"
 msgstr "Moeda: %1"

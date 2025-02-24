@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-23 00:41+0000\n"
+"POT-Creation-Date: 2025-02-24 00:41+0000\n"
 "PO-Revision-Date: 2025-01-04 15:54+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -2363,13 +2363,13 @@ msgstr "Bazı fişler uyumsuz: %1"
 msgid "Timezone change: %1 (%2)"
 msgstr "Zaman dilimi değişikliği: %1 (%2)"
 
-#: app/LocationInfoDelegate.qml:115
+#: app/LocationInfoDelegate.qml:114
 #, kde-format
 msgctxt "currency conversion rate"
 msgid "Currency: %1 = %2"
 msgstr "Para birimi: %1 = %2"
 
-#: app/LocationInfoDelegate.qml:117
+#: app/LocationInfoDelegate.qml:116
 #, kde-format
 msgid "Currency: %1"
 msgstr "Para birimi: %1"

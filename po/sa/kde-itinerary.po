@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-23 00:41+0000\n"
+"POT-Creation-Date: 2025-02-24 00:41+0000\n"
 "PO-Revision-Date: 2024-12-29 22:55+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -2361,13 +2361,13 @@ msgstr "केचन असङ्गताः शक्तिप्लग्: %1
 msgid "Timezone change: %1 (%2)"
 msgstr "समयक्षेत्रपरिवर्तनम् : %1 (%2)"
 
-#: app/LocationInfoDelegate.qml:115
+#: app/LocationInfoDelegate.qml:114
 #, kde-format
 msgctxt "currency conversion rate"
 msgid "Currency: %1 = %2"
 msgstr "मुद्रा: %1 = %2"
 
-#: app/LocationInfoDelegate.qml:117
+#: app/LocationInfoDelegate.qml:116
 #, kde-format
 msgid "Currency: %1"
 msgstr "मुद्राः %1"
