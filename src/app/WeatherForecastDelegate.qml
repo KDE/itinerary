@@ -43,10 +43,7 @@ FormCard.FormCard {
                 }
             }
             QQC2.Label {
-                text: Math.round(root.weatherForecast.minimumTemperature) === Math.round(root.weatherForecast.maximumTemperature) ?
-                    Localizer.formatTemperature(root.weatherForecast.maximumTemperature) :
-                    i18nc("temperature range", "%1 / %2",  Localizer.formatTemperature(root.weatherForecast.minimumTemperature),
-                                                           Localizer.formatTemperature(root.weatherForecast.maximumTemperature))
+                text: Localizer.formatTemperatureRange(root.weatherForecast.minimumTemperature, root.weatherForecast.maximumTemperature, Settings.useFahrenheit)
                 Layout.rightMargin: Kirigami.Units.largeSpacing
             }
 

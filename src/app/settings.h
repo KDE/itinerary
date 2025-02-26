@@ -32,6 +32,8 @@ class Settings : public QObject
     Q_PROPERTY(bool osmContributorMode MEMBER m_osmContributorMode WRITE setOsmContributorMode NOTIFY osmContributorModeChanged)
     Q_PROPERTY(bool developmentMode READ developmentMode WRITE setDevelopmentMode NOTIFY developmentModeChanged)
 
+    Q_PROPERTY(bool useFahrenheit READ useFahrenheit NOTIFY homeCountryIsoCodeChanged)
+
 public:
     explicit Settings(QObject *parent = nullptr);
     ~Settings() override;
@@ -77,6 +79,8 @@ public:
      *  For use during restoring backups.
      */
     void reloadSettings();
+
+    [[nodiscard]] bool useFahrenheit() const;
 
 Q_SIGNALS:
     void weatherForecastEnabledChanged(bool enabled);

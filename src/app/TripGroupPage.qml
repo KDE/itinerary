@@ -442,8 +442,7 @@ Kirigami.ScrollablePage {
                 FormCard.FormTextDelegate {
                     visible: root.controller.weatherForecast.valid
                     icon.name:  root.controller.weatherForecast.symbolIconName
-                    text: i18nc("temperature range", "%1 / %2",  Localizer.formatTemperature(root.controller.weatherForecast.minimumTemperature),
-                                                                 Localizer.formatTemperature(root.controller.weatherForecast.maximumTemperature))
+                    text: Localizer.formatTemperatureRange(root.controller.weatherForecast.minimumTemperature, root.controller.weatherForecast.maximumTemperature, Settings.useFahrenheit)
                 }
 
                 FormCard.FormDelegateSeparator {

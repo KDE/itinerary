@@ -5,7 +5,6 @@
 */
 
 #include "settings.h"
-#include "config-itinerary.h"
 
 #include <KCountry>
 
@@ -295,6 +294,11 @@ void Settings::setDevelopmentMode(bool enabled)
     s.beginGroup("Settings"_L1);
     s.setValue("DevelopmentMode"_L1, m_developmentMode);
     Q_EMIT developmentModeChanged(m_developmentMode);
+}
+
+bool Settings::useFahrenheit() const
+{
+    return m_homeCountry == "US"_L1;
 }
 
 #include "moc_settings.cpp"

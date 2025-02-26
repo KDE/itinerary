@@ -5,7 +5,6 @@
 */
 
 #include "localizer.h"
-#include "settings.h"
 
 #include <KItinerary/JsonLdDocument>
 #include <KItinerary/Place>
@@ -283,14 +282,19 @@ QString Localizer::formatWeight(int gram)
     return i18nc("weight in kilogram", "%1 kg", (int)qRound(gram / 1000.0));
 }
 
-QString Localizer::formatTemperature(double temperature)
+QString Localizer::formatTemperatureRange(double minTemperature, double maxTemperature, bool useFahrenheit)
 {
     using KUnitConversion::UnitId;
 
-    const QString homeCountry = Settings::read("Settings/HomeCountry"_L1, KCountry::fromQLocale(QLocale().territory()).alpha2()).toString();
-    const auto targetUnit = homeCountry == QStringLiteral("US") ? UnitId::Fahrenheit : UnitId::Celsius;
+    const auto targetUnit = useFahrenheit ? UnitId::Fahrenheit : UnitId::Celsius;
 
-    return KUnitConversion::Converter().convert(KUnitConversion::Value(temperature, UnitId::Celsius), targetUnit).round(0).toSymbolString();
+    const auto minVal = KUnitConversion::Converter().convert(KUnitConversion::Value(minTemperature, UnitId::Celsius), targetUnit).round(0);
+    const auto maxVal = KUnitConversion::Converter().convert(KUnitConversion::Value(maxTemperature, UnitId::Celsius), targetUnit).round(0);
+
+    if (minVal.number() == maxVal.number()) {
+        return minVal.toSymbolString();
+    }
+    return i18nc("temperature range", "%1 / %2", minVal.toSymbolString(), maxVal.toSymbolString());
 }
 
 QString Localizer::formatCurrency(double value, const QString &isoCode)

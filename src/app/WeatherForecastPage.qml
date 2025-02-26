@@ -89,10 +89,7 @@ Kirigami.ScrollablePage {
                     }
                 }
                 QQC2.Label {
-                    text: weatherForecastDelegate.weatherForecast.minimumTemperature === weatherForecastDelegate.weatherForecast.maximumTemperature ?
-                        Localizer.formatTemperature(weatherForecastDelegate.weatherForecast.maximumTemperature) :
-                        i18nc("temperature range", "%1 / %2",  Localizer.formatTemperature(weatherForecastDelegate.weatherForecast.minimumTemperature),
-                                                            Localizer.formatTemperature(weatherForecastDelegate.weatherForecast.maximumTemperature))
+                    text: Localizer.formatTemperatureRange(weatherForecastDelegate.weatherForecast.minimumTemperature, weatherForecastDelegate.weatherForecast.maximumTemperature, Settings.useFahrenheit)
                     Layout.rightMargin: Kirigami.Units.largeSpacing
                 }
 

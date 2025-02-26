@@ -35,8 +35,8 @@ public:
     Q_INVOKABLE static QString formatSpeed(int km_per_hour);
     /** Format a weight value. */
     Q_INVOKABLE static QString formatWeight(int gram);
-    /** Format a temperature, given in degree Celsius. */
-    Q_INVOKABLE static QString formatTemperature(double temperature);
+    /** Format a temperature range, given in degree Celsius. */
+    Q_INVOKABLE static QString formatTemperatureRange(double minTemperature, double maxTemperature, bool useFahrenheit);
 
     /** Format a currency value using the given currency to select the appropriate amount of decimals. */
     Q_INVOKABLE static QString formatCurrency(double value, const QString &isoCode);
