@@ -20,6 +20,7 @@ QtLocation.MapQuickItem {
 
     anchorPoint.x: sourceItem.width / 2
     anchorPoint.y: sourceItem.height
+    autoFadeIn: false
 
     sourceItem: Kirigami.Icon {
         id: mainIcon
