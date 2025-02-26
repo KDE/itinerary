@@ -95,8 +95,8 @@ void TripGroupMapModel::recompute()
             point.color = BACKROUND_COLOR;
             point.textColor = FOREGOUND_COLOR;
             point.iconName = ReservationHelper::defaultIconName(res);
-            m_boundingBox |=
-                QRectF(QPointF(point.location.longitude(), point.location.latitude()), QPointF(point.location.longitude(), point.location.latitude()));
+            m_boundingBox |= QRectF(QPointF(point.location.longitude() - 0.001, point.location.latitude() - 0.001),
+                                    QPointF(point.location.longitude() + 0.001, point.location.latitude() + 0.001));
             m_points.push_back(std::move(point));
         }
 
