@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-27 00:41+0000\n"
+"POT-Creation-Date: 2025-02-28 00:42+0000\n"
 "PO-Revision-Date: 2024-12-27 12:00+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -118,7 +118,7 @@ msgstr "Edita"
 msgid "Add to calendar…"
 msgstr "Adde a Calendario..."
 
-#: app/ActionsCard.qml:74 app/TripGroupPage.qml:734
+#: app/ActionsCard.qml:74 app/TripGroupPage.qml:733
 #, kde-format
 msgid "Export…"
 msgstr "Exporta…"
@@ -168,7 +168,7 @@ msgid "Itinerary file (*.itinerary)"
 msgstr "Files de  Itinerary  (*.itinerary)"
 
 #: app/ActionsCard.qml:173 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:684
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:683
 #, kde-format
 msgid "Actions"
 msgstr "Actiones"
@@ -2271,59 +2271,65 @@ msgstr "Position"
 msgid "Journey"
 msgstr "Viage"
 
-#: app/localizer.cpp:185
+#: app/localizer.cpp:184
 #, kde-format
 msgctxt "day-only date format"
 msgid "dd MMMM"
 msgstr "dd MMMM"
 
-#: app/localizer.cpp:246
+#: app/localizer.cpp:245
 #, kde-format
 msgctxt "Duration in minutes"
 msgid "%1 min"
 msgstr "%1 min"
 
-#: app/localizer.cpp:248
+#: app/localizer.cpp:247
 #, kde-format
 msgctxt "Duration in hours and minutes"
 msgid "%1 hr"
 msgstr "%1 hr"
 
-#: app/localizer.cpp:250
+#: app/localizer.cpp:249
 #, kde-format
 msgctxt "Duration in hours and minutes"
 msgid "%1 hr %2 min"
 msgstr "%1 hr %2 min"
 
-#: app/localizer.cpp:261
+#: app/localizer.cpp:260
 #, kde-format
 msgctxt "distance in meter"
 msgid "%1 m"
 msgstr "%1 m"
 
-#: app/localizer.cpp:264 app/localizer.cpp:266
+#: app/localizer.cpp:263 app/localizer.cpp:265
 #, kde-format
 msgctxt "distance in kilometer"
 msgid "%1 km"
 msgstr "%1 km"
 
-#: app/localizer.cpp:272
+#: app/localizer.cpp:271
 #, kde-format
 msgctxt "speed in kilometers per hour"
 msgid "%1 km/h"
 msgstr "%1 km/h"
 
-#: app/localizer.cpp:278
+#: app/localizer.cpp:277
 #, kde-format
 msgctxt "weight in gram"
 msgid "%1 g"
 msgstr "%1 g"
 
-#: app/localizer.cpp:281 app/localizer.cpp:283
+#: app/localizer.cpp:280 app/localizer.cpp:282
 #, kde-format
 msgctxt "weight in kilogram"
 msgid "%1 kg"
 msgstr "%1 kg"
+
+#: app/localizer.cpp:297
+#, kde-format
+msgctxt "temperature range"
+msgid "%1 / %2"
+msgstr "%1 / %2"
 
 #: app/LocationInfoDelegate.qml:51
 #, kde-format
@@ -2927,7 +2933,7 @@ msgstr "Locationes salveguardate"
 msgid "Home Country"
 msgstr "Pais de domo"
 
-#: app/MyDataPage.qml:131 app/StatisticsPage.qml:15 app/TripGroupPage.qml:652
+#: app/MyDataPage.qml:131 app/StatisticsPage.qml:15 app/TripGroupPage.qml:651
 #, kde-format
 msgid "Statistics"
 msgstr "Statistica"
@@ -3424,7 +3430,7 @@ msgstr ""
 msgid "Public Transport Information Sources…"
 msgstr "Fontes de information de Transporto Public..."
 
-#: app/SettingsPage.qml:63 app/WeatherForecastDelegate.qml:83
+#: app/SettingsPage.qml:63 app/WeatherForecastDelegate.qml:80
 #: app/WeatherForecastPage.qml:19
 #, kde-format
 msgid "Weather Forecast"
@@ -3701,7 +3707,7 @@ msgstr "Tours"
 #: app/statisticsmodel.cpp:112 app/statisticsmodel.cpp:145
 #: app/statisticsmodel.cpp:160 app/statisticsmodel.cpp:175
 #: app/statisticsmodel.cpp:190 app/statisticsmodel.cpp:205
-#: app/TripGroupPage.qml:659
+#: app/TripGroupPage.qml:658
 #, kde-format
 msgid "Distance"
 msgstr "Distantia:"
@@ -3714,7 +3720,7 @@ msgstr "Noctes de Hotel"
 #: app/statisticsmodel.cpp:122 app/statisticsmodel.cpp:150
 #: app/statisticsmodel.cpp:165 app/statisticsmodel.cpp:180
 #: app/statisticsmodel.cpp:195 app/statisticsmodel.cpp:210
-#: app/TripGroupPage.qml:668
+#: app/TripGroupPage.qml:667
 #, kde-format
 msgid "CO₂"
 msgstr "CO₂"
@@ -4282,97 +4288,90 @@ msgid_plural "%1 days"
 msgstr[0] "Un die"
 msgstr[1] "%1 dies"
 
-#: app/TripGroupPage.qml:445 app/WeatherForecastDelegate.qml:48
-#: app/WeatherForecastPage.qml:94
-#, kde-format
-msgctxt "temperature range"
-msgid "%1 / %2"
-msgstr "%1 / %2"
-
-#: app/TripGroupPage.qml:470
+#: app/TripGroupPage.qml:469
 #, kde-format
 msgid "Some incompatible power sockets (%1)"
 msgstr "Alcun prisas electric incompatibile: (%1)"
 
-#: app/TripGroupPage.qml:472
+#: app/TripGroupPage.qml:471
 #, kde-format
 msgid "Some incompatible power plugs (%1)"
 msgstr "Alcun claves de contacto electric incompatibile: (%1)"
 
-#: app/TripGroupPage.qml:475
+#: app/TripGroupPage.qml:474
 #, kde-format
 msgid "No compatible power plugs (%1)"
 msgstr "Necun prisas electric compatibile (%1)"
 
-#: app/TripGroupPage.qml:487
+#: app/TripGroupPage.qml:486
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
 msgstr[0] "Numerario: %2"
 msgstr[1] "Numerarios: %2"
 
-#: app/TripGroupPage.qml:497
+#: app/TripGroupPage.qml:496
 #, kde-format
 msgid "Show map…"
 msgstr "Monstra mappa…"
 
-#: app/TripGroupPage.qml:504
+#: app/TripGroupPage.qml:503
 #, kde-format
 msgid "Import"
 msgstr "Importa"
 
-#: app/TripGroupPage.qml:518
+#: app/TripGroupPage.qml:517
 #, kde-format
 msgid "Add"
 msgstr "Adde"
 
-#: app/TripGroupPage.qml:624
+#: app/TripGroupPage.qml:623
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Nihil sur le itinerario per hodie."
 
-#: app/TripGroupPage.qml:677
+#: app/TripGroupPage.qml:676
 #, kde-format
 msgid "Cost"
 msgstr "Costo"
 
-#: app/TripGroupPage.qml:690
+#: app/TripGroupPage.qml:689
 #, kde-format
 msgid "Check for Updates"
 msgstr "Marcar per actualisationes"
 
-#: app/TripGroupPage.qml:699
+#: app/TripGroupPage.qml:698
 #, kde-format
 msgid "Rename…"
 msgstr "Renomina…"
 
-#: app/TripGroupPage.qml:708
+#: app/TripGroupPage.qml:707
 #, kde-format
 msgid "Merge trips…"
 msgstr "Fusiona viages..."
 
-#: app/TripGroupPage.qml:719
+#: app/TripGroupPage.qml:718
 #, kde-format
 msgid "Split trip…"
 msgstr "Scinde viage..."
 
-#: app/TripGroupPage.qml:726
+#: app/TripGroupPage.qml:725
 #, kde-format
 msgid "Download Maps"
 msgstr "Discarga Mappas"
 
-#: app/TripGroupPage.qml:741
+#: app/TripGroupPage.qml:740
 #, kde-format
 msgid "Delete trip"
 msgstr "Dele viage"
 
-#: app/TripGroupPage.qml:766
+#: app/TripGroupPage.qml:765
 #, kde-format
 msgctxt "@action:button"
 msgid "Go To Now"
 msgstr "Vade a Nunc"
 
-#: app/TripGroupPage.qml:774 app/TripGroupsPage.qml:118
+#: app/TripGroupPage.qml:773 app/TripGroupsPage.qml:118
 #: app/TripGroupsPage.qml:137
 #, kde-format
 msgctxt "@action:button"
@@ -4548,13 +4547,13 @@ msgstr "Autocar: %1 Placia: %2"
 msgid "No vehicle layout information available."
 msgstr "Nulle information de disposition de vehiculo disponibile."
 
-#: app/WeatherForecastDelegate.qml:61 app/WeatherForecastPage.qml:107
+#: app/WeatherForecastDelegate.qml:58 app/WeatherForecastPage.qml:104
 #, kde-format
 msgctxt "precipitation"
 msgid "%1 mm"
 msgstr "%1 mm"
 
-#: app/WeatherForecastDelegate.qml:74 app/WeatherForecastPage.qml:120
+#: app/WeatherForecastDelegate.qml:71 app/WeatherForecastPage.qml:117
 #, kde-format
 msgctxt "windSpeed"
 msgid "%1 m/s"

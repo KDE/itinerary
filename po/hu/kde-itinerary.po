@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-27 00:41+0000\n"
+"POT-Creation-Date: 2025-02-28 00:42+0000\n"
 "PO-Revision-Date: 2024-03-26 16:14+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -120,7 +120,7 @@ msgstr "Szerkesztés"
 msgid "Add to calendar…"
 msgstr "Hozzáadás a naptárhoz…"
 
-#: app/ActionsCard.qml:74 app/TripGroupPage.qml:734
+#: app/ActionsCard.qml:74 app/TripGroupPage.qml:733
 #, fuzzy, kde-format
 #| msgid "Export"
 msgid "Export…"
@@ -172,7 +172,7 @@ msgid "Itinerary file (*.itinerary)"
 msgstr "Itinerary fájl (*.itinerary)"
 
 #: app/ActionsCard.qml:173 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:684
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:683
 #, kde-format
 msgid "Actions"
 msgstr "Műveletek"
@@ -2338,13 +2338,13 @@ msgstr "Pozíció"
 msgid "Journey"
 msgstr "Utazás"
 
-#: app/localizer.cpp:185
+#: app/localizer.cpp:184
 #, kde-format
 msgctxt "day-only date format"
 msgid "dd MMMM"
 msgstr "MMMM dd"
 
-#: app/localizer.cpp:246
+#: app/localizer.cpp:245
 #, fuzzy, kde-format
 #| msgctxt "distance in meter"
 #| msgid "%1 m"
@@ -2352,7 +2352,7 @@ msgctxt "Duration in minutes"
 msgid "%1 min"
 msgstr "%1 m"
 
-#: app/localizer.cpp:248
+#: app/localizer.cpp:247
 #, fuzzy, kde-format
 #| msgctxt "time in hours"
 #| msgid "%1 h"
@@ -2360,41 +2360,47 @@ msgctxt "Duration in hours and minutes"
 msgid "%1 hr"
 msgstr "%1 ó"
 
-#: app/localizer.cpp:250
+#: app/localizer.cpp:249
 #, kde-format
 msgctxt "Duration in hours and minutes"
 msgid "%1 hr %2 min"
 msgstr ""
 
-#: app/localizer.cpp:261
+#: app/localizer.cpp:260
 #, kde-format
 msgctxt "distance in meter"
 msgid "%1 m"
 msgstr "%1 m"
 
-#: app/localizer.cpp:264 app/localizer.cpp:266
+#: app/localizer.cpp:263 app/localizer.cpp:265
 #, kde-format
 msgctxt "distance in kilometer"
 msgid "%1 km"
 msgstr "%1 km"
 
-#: app/localizer.cpp:272
+#: app/localizer.cpp:271
 #, kde-format
 msgctxt "speed in kilometers per hour"
 msgid "%1 km/h"
 msgstr "%1 km/h"
 
-#: app/localizer.cpp:278
+#: app/localizer.cpp:277
 #, kde-format
 msgctxt "weight in gram"
 msgid "%1 g"
 msgstr "%1 g"
 
-#: app/localizer.cpp:281 app/localizer.cpp:283
+#: app/localizer.cpp:280 app/localizer.cpp:282
 #, kde-format
 msgctxt "weight in kilogram"
 msgid "%1 kg"
 msgstr "%1 kg"
+
+#: app/localizer.cpp:297
+#, kde-format
+msgctxt "temperature range"
+msgid "%1 / %2"
+msgstr "%1 / %2"
 
 #: app/LocationInfoDelegate.qml:51
 #, kde-format
@@ -2982,7 +2988,7 @@ msgstr "Kedvenc helyek"
 msgid "Home Country"
 msgstr "Haza"
 
-#: app/MyDataPage.qml:131 app/StatisticsPage.qml:15 app/TripGroupPage.qml:652
+#: app/MyDataPage.qml:131 app/StatisticsPage.qml:15 app/TripGroupPage.qml:651
 #, kde-format
 msgid "Statistics"
 msgstr "Statisztikák"
@@ -3491,7 +3497,7 @@ msgstr ""
 msgid "Public Transport Information Sources…"
 msgstr "Tömegközlekedési információforrások"
 
-#: app/SettingsPage.qml:63 app/WeatherForecastDelegate.qml:83
+#: app/SettingsPage.qml:63 app/WeatherForecastDelegate.qml:80
 #: app/WeatherForecastPage.qml:19
 #, kde-format
 msgid "Weather Forecast"
@@ -3751,7 +3757,7 @@ msgstr ""
 #: app/statisticsmodel.cpp:112 app/statisticsmodel.cpp:145
 #: app/statisticsmodel.cpp:160 app/statisticsmodel.cpp:175
 #: app/statisticsmodel.cpp:190 app/statisticsmodel.cpp:205
-#: app/TripGroupPage.qml:659
+#: app/TripGroupPage.qml:658
 #, kde-format
 msgid "Distance"
 msgstr ""
@@ -3764,7 +3770,7 @@ msgstr ""
 #: app/statisticsmodel.cpp:122 app/statisticsmodel.cpp:150
 #: app/statisticsmodel.cpp:165 app/statisticsmodel.cpp:180
 #: app/statisticsmodel.cpp:195 app/statisticsmodel.cpp:210
-#: app/TripGroupPage.qml:668
+#: app/TripGroupPage.qml:667
 #, kde-format
 msgid "CO₂"
 msgstr "CO₂"
@@ -4365,105 +4371,98 @@ msgid_plural "%1 days"
 msgstr[0] ""
 msgstr[1] ""
 
-#: app/TripGroupPage.qml:445 app/WeatherForecastDelegate.qml:48
-#: app/WeatherForecastPage.qml:94
-#, kde-format
-msgctxt "temperature range"
-msgid "%1 / %2"
-msgstr "%1 / %2"
-
-#: app/TripGroupPage.qml:470
+#: app/TripGroupPage.qml:469
 #, fuzzy, kde-format
 #| msgid "Some incompatible power sockets: %1"
 msgid "Some incompatible power sockets (%1)"
 msgstr "Néhány nem kompatibilis konnektor: %1"
 
-#: app/TripGroupPage.qml:472
+#: app/TripGroupPage.qml:471
 #, fuzzy, kde-format
 #| msgid "Some incompatible power plugs: %1"
 msgid "Some incompatible power plugs (%1)"
 msgstr "Néhány nem kompatibilis hálózati csatlakozó: %1"
 
-#: app/TripGroupPage.qml:475
+#: app/TripGroupPage.qml:474
 #, fuzzy, kde-format
 #| msgid "Some incompatible power plugs: %1"
 msgid "No compatible power plugs (%1)"
 msgstr "Néhány nem kompatibilis hálózati csatlakozó: %1"
 
-#: app/TripGroupPage.qml:487
+#: app/TripGroupPage.qml:486
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
 msgstr[0] ""
 msgstr[1] ""
 
-#: app/TripGroupPage.qml:497
+#: app/TripGroupPage.qml:496
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Show Map"
 msgid "Show map…"
 msgstr "Térkép megjelenítése"
 
-#: app/TripGroupPage.qml:504
+#: app/TripGroupPage.qml:503
 #, fuzzy, kde-format
 #| msgid "Import..."
 msgid "Import"
 msgstr "Importálás…"
 
-#: app/TripGroupPage.qml:518
+#: app/TripGroupPage.qml:517
 #, kde-format
 msgid "Add"
 msgstr ""
 
-#: app/TripGroupPage.qml:624
+#: app/TripGroupPage.qml:623
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr ""
 
-#: app/TripGroupPage.qml:677
+#: app/TripGroupPage.qml:676
 #, kde-format
 msgid "Cost"
 msgstr ""
 
-#: app/TripGroupPage.qml:690
+#: app/TripGroupPage.qml:689
 #, kde-format
 msgid "Check for Updates"
 msgstr "Frissítések keresése"
 
-#: app/TripGroupPage.qml:699
+#: app/TripGroupPage.qml:698
 #, fuzzy, kde-format
 #| msgid "Rename"
 msgid "Rename…"
 msgstr "Átnevezés"
 
-#: app/TripGroupPage.qml:708
+#: app/TripGroupPage.qml:707
 #, kde-format
 msgid "Merge trips…"
 msgstr ""
 
-#: app/TripGroupPage.qml:719
+#: app/TripGroupPage.qml:718
 #, fuzzy, kde-format
 #| msgid "Add transfer after"
 msgid "Split trip…"
 msgstr "Átszállás hozzáadása után"
 
-#: app/TripGroupPage.qml:726
+#: app/TripGroupPage.qml:725
 #, kde-format
 msgid "Download Maps"
 msgstr "Térképek letöltése"
 
-#: app/TripGroupPage.qml:741
+#: app/TripGroupPage.qml:740
 #, kde-format
 msgid "Delete trip"
 msgstr "Kirándulás törlése"
 
-#: app/TripGroupPage.qml:766
+#: app/TripGroupPage.qml:765
 #, kde-format
 msgctxt "@action:button"
 msgid "Go To Now"
 msgstr ""
 
-#: app/TripGroupPage.qml:774 app/TripGroupsPage.qml:118
+#: app/TripGroupPage.qml:773 app/TripGroupsPage.qml:118
 #: app/TripGroupsPage.qml:137
 #, kde-format
 msgctxt "@action:button"
@@ -4658,13 +4657,13 @@ msgstr ""
 msgid "No vehicle layout information available."
 msgstr ""
 
-#: app/WeatherForecastDelegate.qml:61 app/WeatherForecastPage.qml:107
+#: app/WeatherForecastDelegate.qml:58 app/WeatherForecastPage.qml:104
 #, kde-format
 msgctxt "precipitation"
 msgid "%1 mm"
 msgstr "%1 mm"
 
-#: app/WeatherForecastDelegate.qml:74 app/WeatherForecastPage.qml:120
+#: app/WeatherForecastDelegate.qml:71 app/WeatherForecastPage.qml:117
 #, kde-format
 msgctxt "windSpeed"
 msgid "%1 m/s"
