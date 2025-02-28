@@ -255,12 +255,12 @@ void StatisticsModel::computeStats(const QString &resId, const QVariant &res, in
     }
 
     statData[type][TripCount]++;
-    statData[type][Distance] += dist;
-    statData[type][CO2] += co2;
+    statData[type][Distance] += (int)std::round(dist);
+    statData[type][CO2] += (int)std::round(co2);
 
     statData[Total][TripCount]++;
-    statData[Total][Distance] += dist;
-    statData[Total][CO2] += co2;
+    statData[Total][Distance] += (int)std::round(dist);
+    statData[Total][CO2] += (int)std::round(co2);
 }
 
 void StatisticsModel::computeStats(const KPublicTransport::Journey &journey, int (&statData)[AGGREGATE_TYPE_COUNT][STAT_TYPE_COUNT])
@@ -330,8 +330,8 @@ void StatisticsModel::computeStats(const KPublicTransport::Journey &journey, int
 
 void StatisticsModel::recompute()
 {
-    memset(m_statData, 0, AGGREGATE_TYPE_COUNT * STAT_TYPE_COUNT * sizeof(int));
-    memset(m_prevStatData, 0, AGGREGATE_TYPE_COUNT * STAT_TYPE_COUNT * sizeof(int));
+    memset(m_statData, 0, (std::size_t)qToUnderlying(AGGREGATE_TYPE_COUNT) * qToUnderlying(STAT_TYPE_COUNT) * sizeof(int));
+    memset(m_prevStatData, 0, (std::size_t)qToUnderlying(AGGREGATE_TYPE_COUNT) * qToUnderlying(STAT_TYPE_COUNT) * sizeof(int));
     memset(m_hasData, 0, AGGREGATE_TYPE_COUNT * sizeof(bool));
     m_hasData[Total] = true;
     m_hotelCount = 0;
@@ -378,9 +378,9 @@ void StatisticsModel::recompute()
         } else if (JsonLd::isA<LodgingReservation>(res)) {
             const auto hotel = res.value<LodgingReservation>();
             if (isPrev) {
-                m_prevHotelCount += hotel.checkinTime().daysTo(hotel.checkoutTime());
+                m_prevHotelCount += (int)hotel.checkinTime().daysTo(hotel.checkoutTime());
             } else {
-                m_hotelCount += hotel.checkinTime().daysTo(hotel.checkoutTime());
+                m_hotelCount += (int)hotel.checkinTime().daysTo(hotel.checkoutTime());
             }
         }
 
@@ -407,8 +407,8 @@ void StatisticsModel::recompute()
         }
     }
 
-    m_tripGroupCount = tripGroups.size();
-    m_prevTripGroupCount = prevTripGroups.size();
+    m_tripGroupCount = (int)tripGroups.size();
+    m_prevTripGroupCount = (int)prevTripGroups.size();
 
     Q_EMIT changed();
 }
