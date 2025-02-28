@@ -56,7 +56,7 @@ function(add_selenium_test test)
     if (SeleniumWebDriverATSPI_FOUND OR (CMAKE_SYSTEM_NAME MATCHES "Linux" AND DEFINED ENV{KDECI_BUILD}))
         add_test(NAME appium-${test} COMMAND selenium-webdriver-at-spi-run ${CMAKE_CURRENT_SOURCE_DIR}/${test}.py)
         set_tests_properties(appium-${test} PROPERTIES
-            ENVIRONMENT "USE_CUSTOM_BUS=1;QT_QUICK_CONTROLS_MOBILE=1;QT_QUICK_CONTROLS_STYLE=org.kde.breeze"
+            ENVIRONMENT "USE_CUSTOM_BUS=1;QT_QUICK_CONTROLS_MOBILE=1;QT_QUICK_CONTROLS_STYLE=org.kde.breeze;LANG=en_US.utf-8"
             TIMEOUT 120
         )
     endif()

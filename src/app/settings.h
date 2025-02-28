@@ -7,6 +7,8 @@
 #ifndef SETTINGS_H
 #define SETTINGS_H
 
+#include <KFormat>
+
 #include <QObject>
 #include <QUrl>
 
@@ -16,6 +18,7 @@ class Settings : public QObject
     Q_OBJECT
     Q_PROPERTY(bool weatherForecastEnabled READ weatherForecastEnabled WRITE setWeatherForecastEnabled NOTIFY weatherForecastEnabledChanged)
     Q_PROPERTY(QString homeCountryIsoCode READ homeCountryIsoCode WRITE setHomeCountryIsoCode NOTIFY homeCountryIsoCodeChanged)
+    Q_PROPERTY(bool forceMetricUnits READ forceMetricUnits WRITE setForceMetricUnits NOTIFY forceMetricUnitsChanged)
     Q_PROPERTY(bool queryLiveData READ queryLiveData WRITE setQueryLiveData NOTIFY queryLiveDataChanged)
     Q_PROPERTY(bool preloadMapData READ preloadMapData WRITE setPreloadMapData NOTIFY preloadMapDataChanged)
 
@@ -32,7 +35,8 @@ class Settings : public QObject
     Q_PROPERTY(bool osmContributorMode MEMBER m_osmContributorMode WRITE setOsmContributorMode NOTIFY osmContributorModeChanged)
     Q_PROPERTY(bool developmentMode READ developmentMode WRITE setDevelopmentMode NOTIFY developmentModeChanged)
 
-    Q_PROPERTY(bool useFahrenheit READ useFahrenheit NOTIFY homeCountryIsoCodeChanged)
+    Q_PROPERTY(bool useFahrenheit READ useFahrenheit NOTIFY useFahrenheitChanged)
+    Q_PROPERTY(KFormat::DistanceFormatOptions distanceFormat READ distanceFormat NOTIFY forceMetricUnitsChanged)
 
 public:
     explicit Settings(QObject *parent = nullptr);
@@ -50,6 +54,9 @@ public:
 
     [[nodiscard]] QString homeCountryIsoCode() const;
     void setHomeCountryIsoCode(const QString &isoCode);
+
+    [[nodiscard]] bool forceMetricUnits() const;
+    void setForceMetricUnits(bool force);
 
     [[nodiscard]] bool queryLiveData() const;
     void setQueryLiveData(bool queryLiveData);
@@ -81,10 +88,12 @@ public:
     void reloadSettings();
 
     [[nodiscard]] bool useFahrenheit() const;
+    [[nodiscard]] KFormat::DistanceFormatOptions distanceFormat() const;
 
 Q_SIGNALS:
     void weatherForecastEnabledChanged(bool enabled);
     void homeCountryIsoCodeChanged(const QString &isoCode);
+    void forceMetricUnitsChanged(bool force);
     void queryLiveDataChanged(bool enabled);
     void preloadMapDataChanged(bool preload);
     void performCurrencyConversionChanged(bool enabled);
@@ -94,11 +103,13 @@ Q_SIGNALS:
     void showNotificationOnLockScreenChanged(bool enabled);
     void developmentModeChanged(bool enabled);
     void osmContributorModeChanged(bool enabled);
+    void useFahrenheitChanged();
 
 private:
     void load();
 
     QString m_homeCountry;
+    bool m_forceMetricUnits = false;
     bool m_weatherEnabled = false;
     bool m_queryLiveData = false;
     bool m_preloadMapData = false;

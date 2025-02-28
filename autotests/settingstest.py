@@ -5,26 +5,23 @@
 from itinerarytestcase import ItineraryTestCase
 
 import unittest
-from appium import webdriver
-from appium.options.common.base import AppiumOptions
 from appium.webdriver.common.appiumby import AppiumBy
-import selenium.common.exceptions
-from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import WebDriverWait
 
-import os
 
 class SettingsTest(ItineraryTestCase):
     def test_settings(self):
         self.openGlobalDrawer()
         self.driver.find_element(by=AppiumBy.NAME, value="Settings…").click()
 
-        # TODO home country combo box not accessible
+        # we run in en-US locale, so the metric unit switch has to exist
+        metricSwitch = self.driver.find_element(by=AppiumBy.NAME, value="Use metric units")
+        self.assertTrue(metricSwitch.is_displayed())
+        metricSwitch.click()
 
         trafficData = self.driver.find_element(by=AppiumBy.NAME, value="Query Traffic Data")
         self.assertEqual(trafficData.get_attribute("checked"), "false")
-        trafficData.send_keys(Keys.SPACE) # TODO there is no toggle()?
+        trafficData.send_keys(Keys.SPACE)  # TODO there is no toggle()?
         self.assertEqual(trafficData.get_attribute("checked"), "true")
 
         self.driver.find_element(by=AppiumBy.NAME, value="Public Transport Information Sources…").click()
@@ -35,6 +32,7 @@ class SettingsTest(ItineraryTestCase):
         self.driver.find_element(by=AppiumBy.NAME, value="Settings…").click()
         self.assertEqual(self.driver.find_element(by=AppiumBy.NAME, value="Query Traffic Data").get_attribute("checked"), "true")
         self.goBack()
+
 
 if __name__ == '__main__':
     unittest.main()

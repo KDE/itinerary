@@ -2,8 +2,8 @@
 // SPDX-FileCopyrightText: 2022 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
+import QtQml
 import QtQuick
-import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import QtPositioning
 import org.kde.kirigami as Kirigami
@@ -22,6 +22,24 @@ FormCard.FormCardPage {
         id: ptBackendPage
         PublicTransportBackendPage {
             publicTransportManager: LiveDataManager.publicTransportManager
+        }
+    }
+
+    FormCard.FormHeader {
+        title: i18n("Localization")
+        visible: localizationCard.visible
+    }
+    FormCard.FormCard {
+        id: localizationCard
+        visible: forceMetricSwitch.visible
+
+        FormCard.FormSwitchDelegate {
+            id: forceMetricSwitch
+            text: i18n("Use metric units")
+            description: i18n("Use metric units for distance and temperature values regardless of the platform region settings.")
+            checked: Settings.forceMetricUnits
+            onToggled: Settings.forceMetricUnits = checked
+            visible: Qt.locale().measurementSystem !== Locale.MetricSystem || Settings.homeCountryIsoCode === "US"
         }
     }
 

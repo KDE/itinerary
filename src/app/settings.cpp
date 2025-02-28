@@ -29,8 +29,8 @@ void Settings::load()
     s.beginGroup("Settings"_L1);
     m_weatherEnabled = s.value("WeatherForecastEnabled"_L1, m_weatherEnabled).toBool();
 
-
     m_homeCountry = s.value("HomeCountry"_L1, m_homeCountry).toString();
+    m_forceMetricUnits = s.value("ForceMetricUnits"_L1, m_forceMetricUnits).toBool();
 
     m_queryLiveData = s.value("QueryLiveData"_L1, m_queryLiveData).toBool();
 
@@ -46,6 +46,9 @@ void Settings::load()
 
     m_osmContributorMode = s.value("OsmContributorMode"_L1, m_osmContributorMode).toBool();
     m_developmentMode = s.value("DevelopmentMode"_L1, m_developmentMode).toBool();
+
+    connect(this, &Settings::homeCountryIsoCodeChanged, this, &Settings::useFahrenheitChanged);
+    connect(this, &Settings::forceMetricUnitsChanged, this, &Settings::useFahrenheitChanged);
 }
 
 void Settings::reloadSettings()
@@ -54,6 +57,7 @@ void Settings::reloadSettings()
 
     Q_EMIT weatherForecastEnabledChanged(m_weatherEnabled);
     Q_EMIT homeCountryIsoCodeChanged(m_homeCountry);
+    Q_EMIT forceMetricUnitsChanged(m_forceMetricUnits);
     Q_EMIT queryLiveDataChanged(m_queryLiveData);
     Q_EMIT preloadMapDataChanged(m_preloadMapData);
     Q_EMIT performCurrencyConversionChanged(m_currencyConversion);
@@ -127,6 +131,25 @@ void Settings::setHomeCountryIsoCode(const QString &isoCode)
     s.setValue("HomeCountry"_L1, isoCode);
 
     Q_EMIT homeCountryIsoCodeChanged(isoCode);
+}
+
+bool Settings::forceMetricUnits() const
+{
+    return m_forceMetricUnits;
+}
+
+void Settings::setForceMetricUnits(bool force)
+{
+    if (m_forceMetricUnits == force) {
+        return;
+    }
+
+    m_forceMetricUnits = force;
+    QSettings s;
+    s.beginGroup("Settings"_L1);
+    s.setValue("ForceMetricUnits"_L1, force);
+
+    Q_EMIT forceMetricUnitsChanged(force);
 }
 
 bool Settings::queryLiveData() const
@@ -298,7 +321,15 @@ void Settings::setDevelopmentMode(bool enabled)
 
 bool Settings::useFahrenheit() const
 {
-    return m_homeCountry == "US"_L1;
+    return m_homeCountry == "US"_L1 && !m_forceMetricUnits;
+}
+
+KFormat::DistanceFormatOptions Settings::distanceFormat() const
+{
+    if (QLocale().measurementSystem() != QLocale::MetricSystem && m_forceMetricUnits) {
+        return KFormat::MetricDistanceUnits;
+    }
+    return KFormat::LocaleDistanceUnits;
 }
 
 #include "moc_settings.cpp"
