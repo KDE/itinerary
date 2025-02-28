@@ -58,6 +58,7 @@ private Q_SLOTS:
         ctrl->setTransferManager(&transferMgr);
 
         StatisticsModel stats;
+        stats.setProperty("distanceFormat", KFormat::MetricDistanceUnits);
         QSignalSpy changeSpy(&stats, &StatisticsModel::changed);
         stats.setReservationManager(&resMgr);
         stats.setTripGroupManager(&tgMgr);

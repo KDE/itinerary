@@ -7,6 +7,8 @@
 #ifndef STATISTICSMODEL_H
 #define STATISTICSMODEL_H
 
+#include <KFormat>
+
 #include <QDate>
 #include <QObject>
 
@@ -76,6 +78,7 @@ class StatisticsModel : public QObject
     Q_PROPERTY(ReservationManager *reservationManager MEMBER m_resMgr WRITE setReservationManager NOTIFY setupChanged)
     Q_PROPERTY(TripGroupManager *tripGroupManager MEMBER m_tripGroupMgr WRITE setTripGroupManager NOTIFY setupChanged)
     Q_PROPERTY(TransferManager *transferManager MEMBER m_transferMgr WRITE setTransferManager NOTIFY setupChanged)
+    Q_PROPERTY(KFormat::DistanceFormatOptions distanceFormat MEMBER m_distanceFormat NOTIFY setupChanged)
 
 public:
     explicit StatisticsModel(QObject *parent = nullptr);
@@ -127,6 +130,8 @@ private:
     ReservationManager *m_resMgr = nullptr;
     TripGroupManager *m_tripGroupMgr = nullptr;
     TransferManager *m_transferMgr = nullptr;
+    KFormat m_formatter;
+    KFormat::DistanceFormatOptions m_distanceFormat = KFormat::LocaleDistanceUnits;
     QDate m_begin;
     QDate m_end;
 
@@ -138,6 +143,7 @@ private:
     void computeStats(const QString &resId, const QVariant &res, int (&statData)[AGGREGATE_TYPE_COUNT][STAT_TYPE_COUNT]);
     void computeStats(const KPublicTransport::Journey &journey, int (&statData)[AGGREGATE_TYPE_COUNT][STAT_TYPE_COUNT]);
 
+    [[nodiscard]] QString formatDistance(int dist) const;
     [[nodiscard]] StatisticsItem::Trend trend(int current, int prev) const;
     [[nodiscard]] StatisticsItem::Trend trend(AggregateType type, StatType stat) const;
 

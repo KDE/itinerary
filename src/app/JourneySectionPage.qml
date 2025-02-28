@@ -9,6 +9,7 @@ import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import QtLocation as QtLocation
 import QtPositioning as QtPositioning
+import org.kde.coreaddons as CoreAddons
 import org.kde.kirigami as Kirigami
 import org.kde.kirigami.delegates as KirigamiDelegates
 import org.kde.kirigamiaddons.formcard as FormCard
@@ -58,7 +59,7 @@ Kirigami.Page {
         }
 
         QQC2.Label {
-            text: i18n("Distance: %1", Localizer.formatDistance(journeySection.distance))
+            text: i18n("Distance: %1", CoreAddons.Format.formatDistance(journeySection.distance, Settings.distanceFormat))
             visible: journeySection.distance > 0
             wrapMode: Text.Wrap
 

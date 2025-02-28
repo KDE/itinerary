@@ -9,6 +9,7 @@ import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import QtLocation as QtLocation
 import QtPositioning as QtPositioning
+import org.kde.coreaddons as CoreAddons
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.components as Components
 import org.kde.kpublictransport as KPublicTransport
@@ -63,7 +64,7 @@ Kirigami.Page {
                     Layout.row: 1
                     Layout.column: 2
                     visible: section.distance > 0
-                    text: Localizer.formatDistance(section.distance)
+                    text: CoreAddons.Format.formatDistance(section.distance, Settings.distanceFormat)
                 }
 
                 // direction indicator

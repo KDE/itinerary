@@ -9,6 +9,7 @@ import QtQuick.Controls as QQC2
 import QtQuick.Dialogs
 import Qt.labs.qmlmodels
 import QtQml.Models
+import org.kde.coreaddons as CoreAddons
 import org.kde.i18n.localeData
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
@@ -656,7 +657,7 @@ Kirigami.ScrollablePage {
                 FormCard.FormTextDelegate {
                     id: distanceStats
                     text: i18n("Distance")
-                    description: Localizer.formatDistance(root.controller.totalDistance)
+                    description: CoreAddons.Format.formatDistance(root.controller.totalDistance, Settings.distanceFormat)
                     visible: root.controller.totalDistance > 0
                 }
                 FormCard.FormDelegateSeparator {

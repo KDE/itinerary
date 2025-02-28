@@ -104,7 +104,7 @@ StatisticsItem StatisticsModel::totalCount() const
 
 StatisticsItem StatisticsModel::totalDistance() const
 {
-    return StatisticsItem(i18n("Distance"), Localizer::formatDistance(m_statData[Total][Distance]), trend(Total, Distance));
+    return StatisticsItem(i18n("Distance"), formatDistance(m_statData[Total][Distance]), trend(Total, Distance));
 }
 
 StatisticsItem StatisticsModel::totalNights() const
@@ -137,7 +137,7 @@ StatisticsItem StatisticsModel::flightCount() const
 
 StatisticsItem StatisticsModel::flightDistance() const
 {
-    return StatisticsItem(i18n("Distance"), Localizer::formatDistance(m_statData[Flight][Distance]), trend(Flight, Distance), m_hasData[Flight]);
+    return StatisticsItem(i18n("Distance"), formatDistance(m_statData[Flight][Distance]), trend(Flight, Distance), m_hasData[Flight]);
 }
 
 StatisticsItem StatisticsModel::flightCO2() const
@@ -152,7 +152,7 @@ StatisticsItem StatisticsModel::trainCount() const
 
 StatisticsItem StatisticsModel::trainDistance() const
 {
-    return StatisticsItem(i18n("Distance"), Localizer::formatDistance(m_statData[Train][Distance]), trend(Train, Distance), m_hasData[Train]);
+    return StatisticsItem(i18n("Distance"), formatDistance(m_statData[Train][Distance]), trend(Train, Distance), m_hasData[Train]);
 }
 
 StatisticsItem StatisticsModel::trainCO2() const
@@ -167,7 +167,7 @@ StatisticsItem StatisticsModel::busCount() const
 
 StatisticsItem StatisticsModel::busDistance() const
 {
-    return StatisticsItem(i18n("Distance"), Localizer::formatDistance(m_statData[Bus][Distance]), trend(Bus, Distance), m_hasData[Bus]);
+    return StatisticsItem(i18n("Distance"), formatDistance(m_statData[Bus][Distance]), trend(Bus, Distance), m_hasData[Bus]);
 }
 
 StatisticsItem StatisticsModel::busCO2() const
@@ -182,7 +182,7 @@ StatisticsItem StatisticsModel::carCount() const
 
 StatisticsItem StatisticsModel::carDistance() const
 {
-    return StatisticsItem(i18n("Distance"), Localizer::formatDistance(m_statData[Car][Distance]), trend(Car, Distance), m_hasData[Car]);
+    return StatisticsItem(i18n("Distance"), formatDistance(m_statData[Car][Distance]), trend(Car, Distance), m_hasData[Car]);
 }
 
 StatisticsItem StatisticsModel::carCO2() const
@@ -197,7 +197,7 @@ StatisticsItem StatisticsModel::boatCount() const
 
 StatisticsItem StatisticsModel::boatDistance() const
 {
-    return StatisticsItem(i18n("Distance"), Localizer::formatDistance(m_statData[Boat][Distance]), trend(Boat, Distance), m_hasData[Boat]);
+    return StatisticsItem(i18n("Distance"), formatDistance(m_statData[Boat][Distance]), trend(Boat, Distance), m_hasData[Boat]);
 }
 
 StatisticsItem StatisticsModel::boatCO2() const
@@ -421,6 +421,11 @@ bool StatisticsModel::isRelevantTripGroup(const QString &tgId) const
         const auto res = m_resMgr->reservation(elem);
         return LocationUtil::isLocationChange(res);
     });
+}
+
+QString StatisticsModel::formatDistance(int dist) const
+{
+    return m_formatter.formatDistance(dist, m_distanceFormat);
 }
 
 StatisticsItem::Trend StatisticsModel::trend(int current, int prev) const

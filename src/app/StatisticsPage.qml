@@ -21,6 +21,7 @@ FormCard.FormCardPage {
     data: [
         StatisticsModel {
             id: model
+            distanceFormat: Settings.distanceFormat
         },
         StatisticsTimeRangeModel {
             id: timeRangeModel

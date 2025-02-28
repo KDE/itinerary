@@ -254,17 +254,6 @@ QString Localizer::formatDurationCustom(int seconds) const
     return duration;
 }
 
-QString Localizer::formatDistance(int meter)
-{
-    if (meter < 1000) {
-        return i18nc("distance in meter", "%1 m", meter);
-    }
-    if (meter < 10000) {
-        return i18nc("distance in kilometer", "%1 km", ((int)meter / 100) / 10.0);
-    }
-    return i18nc("distance in kilometer", "%1 km", (int)qRound(meter / 1000.0));
-}
-
 QString Localizer::formatSpeed(int km_per_hour)
 {
     // TODO locale-specific unit conversion

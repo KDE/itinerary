@@ -139,6 +139,7 @@ FormCard.FormCardPage {
             reservationManager: ReservationManager
             tripGroupManager: TripGroupManager
             transferManager: TransferManager
+            distanceFormat: Settings.distanceFormat
         }
 
         StatisticsTimeRangeModel {
