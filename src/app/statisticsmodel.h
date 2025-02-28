@@ -73,17 +73,15 @@ class StatisticsModel : public QObject
     Q_PROPERTY(StatisticsItem boatDistance READ boatDistance NOTIFY changed)
     Q_PROPERTY(StatisticsItem boatCO2 READ boatCO2 NOTIFY changed)
 
-    Q_PROPERTY(ReservationManager *reservationManager READ reservationManager WRITE setReservationManager NOTIFY setupChanged)
-    Q_PROPERTY(TripGroupManager *tripGroupManager READ tripGroupManager WRITE setTripGroupManager NOTIFY setupChanged)
+    Q_PROPERTY(ReservationManager *reservationManager MEMBER m_resMgr WRITE setReservationManager NOTIFY setupChanged)
+    Q_PROPERTY(TripGroupManager *tripGroupManager MEMBER m_tripGroupMgr WRITE setTripGroupManager NOTIFY setupChanged)
     Q_PROPERTY(TransferManager *transferManager MEMBER m_transferMgr WRITE setTransferManager NOTIFY setupChanged)
 
 public:
     explicit StatisticsModel(QObject *parent = nullptr);
     ~StatisticsModel() override;
 
-    [[nodiscard]] ReservationManager *reservationManager() const;
     void setReservationManager(ReservationManager *resMgr);
-    [[nodiscard]] TripGroupManager *tripGroupManager() const;
     void setTripGroupManager(TripGroupManager *tripGroupMgr);
     void setTransferManager(TransferManager *transferMgr);
 

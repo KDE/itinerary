@@ -51,11 +51,6 @@ StatisticsModel::StatisticsModel(QObject *parent)
 
 StatisticsModel::~StatisticsModel() = default;
 
-ReservationManager *StatisticsModel::reservationManager() const
-{
-    return m_resMgr;
-}
-
 void StatisticsModel::setReservationManager(ReservationManager *resMgr)
 {
     if (m_resMgr == resMgr) {
@@ -63,12 +58,9 @@ void StatisticsModel::setReservationManager(ReservationManager *resMgr)
     }
     m_resMgr = resMgr;
     connect(m_resMgr, &ReservationManager::batchAdded, this, &StatisticsModel::recompute);
+    connect(m_resMgr, &ReservationManager::batchContentChanged, this, &StatisticsModel::recompute);
+    connect(m_resMgr, &ReservationManager::batchRemoved, this, &StatisticsModel::recompute);
     Q_EMIT setupChanged();
-}
-
-TripGroupManager *StatisticsModel::tripGroupManager() const
-{
-    return m_tripGroupMgr;
 }
 
 void StatisticsModel::setTripGroupManager(TripGroupManager *tripGroupMgr)
@@ -78,6 +70,7 @@ void StatisticsModel::setTripGroupManager(TripGroupManager *tripGroupMgr)
     }
     m_tripGroupMgr = tripGroupMgr;
     connect(m_tripGroupMgr, &TripGroupManager::tripGroupAdded, this, &StatisticsModel::recompute);
+    connect(m_tripGroupMgr, &TripGroupManager::tripGroupRemoved, this, &StatisticsModel::recompute);
     Q_EMIT setupChanged();
 }
 
@@ -88,6 +81,8 @@ void StatisticsModel::setTransferManager(TransferManager *transferMgr)
     }
     m_transferMgr = transferMgr;
     connect(m_transferMgr, &TransferManager::transferAdded, this, &StatisticsModel::recompute);
+    connect(m_transferMgr, &TransferManager::transferChanged, this, &StatisticsModel::recompute);
+    connect(m_transferMgr, &TransferManager::transferRemoved, this, &StatisticsModel::recompute);
     Q_EMIT setupChanged();
 }
 
