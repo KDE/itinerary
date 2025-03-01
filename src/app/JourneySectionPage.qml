@@ -69,7 +69,7 @@ Kirigami.Page {
         }
 
         QQC2.Label {
-            text: i18n("Average Speed: %1", Localizer.formatSpeed(journeySection.distance / journeySection.duration * 3.6))
+            text: i18n("Average Speed: %1", Localizer.formatSpeed(journeySection.distance / journeySection.duration * 3.6, Settings.distanceFormat))
             visible: journeySection.distance > 0 && journeySection.duration > 0
             wrapMode: Text.Wrap
 

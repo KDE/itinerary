@@ -254,10 +254,14 @@ QString Localizer::formatDurationCustom(int seconds) const
     return duration;
 }
 
-QString Localizer::formatSpeed(int km_per_hour)
+QString Localizer::formatSpeed(double km_per_hour, KFormat::DistanceFormatOptions formatOpts)
 {
-    // TODO locale-specific unit conversion
-    return i18nc("speed in kilometers per hour", "%1 km/h", km_per_hour);
+    auto targetUnit = KUnitConversion::UnitId::KilometerPerHour;
+    if (const auto ms = QLocale().measurementSystem(); (ms == QLocale::ImperialUKSystem || ms == QLocale::ImperialUSSystem) && (formatOpts & KFormat::MetricDistanceUnits) == 0) {
+        targetUnit = KUnitConversion::UnitId::MilePerHour;
+    }
+
+    return KUnitConversion::Converter().convert(KUnitConversion::Value(km_per_hour, KUnitConversion::UnitId::KilometerPerHour), targetUnit).round(0).toSymbolString();
 }
 
 QString Localizer::formatWeight(int gram)

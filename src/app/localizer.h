@@ -7,6 +7,8 @@
 #ifndef LOCALIZER_H
 #define LOCALIZER_H
 
+#include <KFormat>
+
 #include <QObject>
 
 class QVariant;
@@ -30,7 +32,7 @@ public:
     Q_INVOKABLE [[nodiscard]] static QString formatTimeZoneOffset(qint64 seconds);
     Q_INVOKABLE QString formatDurationCustom(int seconds) const;
     /** Format speed value. */
-    Q_INVOKABLE static QString formatSpeed(int km_per_hour);
+    Q_INVOKABLE [[nodiscard]] static QString formatSpeed(double km_per_hour, KFormat::DistanceFormatOptions formatOpts);
     /** Format a weight value. */
     Q_INVOKABLE static QString formatWeight(int gram);
     /** Format a temperature range, given in degree Celsius. */

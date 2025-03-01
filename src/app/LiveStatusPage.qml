@@ -146,7 +146,7 @@ Kirigami.Page {
                             Kirigami.Theme.colorSet: Kirigami.Theme.Selection
                             Kirigami.Theme.inherit: false
                             anchors.top: icon.bottom
-                            text: Localizer.formatSpeed(onboardStatus.speed)
+                            text: Localizer.formatSpeed(onboardStatus.speed, Settings.distanceFormat)
                             visible: onboardStatus.hasSpeed
                             background: Rectangle { color: Kirigami.Theme.backgroundColor }
                         }
