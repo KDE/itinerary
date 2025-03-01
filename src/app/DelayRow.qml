@@ -21,7 +21,7 @@ RowLayout {
         text: if (root.stopover.disruptionEffect === KPublicTransport.Disruption.NoService) {
             return i18nc("a train/bus journey canceled by its operator", "Canceled") + ' - ';
         } else if (oldTime.visible) {
-            return i18nc("duration of the delay", "Delayed %1", Localizer.formatDurationCustom(root.delay * 60)) + ' - ';
+            return i18nc("duration of the delay", "Delayed %1", Localizer.formatDuration(root.delay * 60)) + ' - ';
         } else {
             return i18nc("@info", "On time");
         }

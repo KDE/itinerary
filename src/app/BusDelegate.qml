@@ -104,7 +104,7 @@ TimelineDelegate {
                         color: Kirigami.Theme.disabledTextColor
                     }
                     QQC2.Label {
-                        text: i18np("1 intermediate stop (%2)", "%1 intermediate stops (%2)", sectionModel.sectionCount, Localizer.formatDurationCustom(root.journeySection.duration))
+                        text: i18np("1 intermediate stop (%2)", "%1 intermediate stops (%2)", sectionModel.sectionCount, Localizer.formatDuration(root.journeySection.duration))
                         elide: Text.ElideRight
                         color: Kirigami.Theme.disabledTextColor
                         Layout.rightMargin: Kirigami.Units.largeSpacing
@@ -114,7 +114,7 @@ TimelineDelegate {
             }
             QQC2.Label {
                 visible: sectionModel.sectionCount === 0 && root.journeySection.duration > 0
-                text: i18n("0 intermediate stop (%1)", Localizer.formatDurationCustom(root.journeySection.duration))
+                text: i18n("0 intermediate stop (%1)", Localizer.formatDuration(root.journeySection.duration))
                 elide: Text.ElideRight
                 color: Kirigami.Theme.disabledTextColor
                 Layout.fillWidth: true

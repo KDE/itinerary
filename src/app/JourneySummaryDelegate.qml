@@ -59,7 +59,7 @@ FormCard.AbstractFormDelegate {
             }
 
             QQC2.Label {
-                text: ' | ' + Localizer.formatDurationCustom(root.journey.duration) + ' | ' + i18ncp("number of switches to another transport", "One change", "%1 changes", root.journey.numberOfChanges)
+                text: ' | ' + Localizer.formatDuration(root.journey.duration) + ' | ' + i18ncp("number of switches to another transport", "One change", "%1 changes", root.journey.numberOfChanges)
                 elide: Text.ElideRight
                 Layout.fillWidth: true
             }

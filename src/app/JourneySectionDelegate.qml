@@ -144,16 +144,16 @@ anchors.centerIn: parent
                             return ''
                         case JourneySection.Walking:
                             if (modelData.distance == 0)
-                                return i18n("Walk (%1)", Localizer.formatDurationCustom(root.modelData.duration));
-                            return i18n("Walk %1 (%2)", CoreAddons.Format.formatDistance(root.modelData.distance, Settings.distanceFormat), Localizer.formatDurationCustom(root.modelData.duration));
+                                return i18n("Walk (%1)", Localizer.formatDuration(root.modelData.duration));
+                            return i18n("Walk %1 (%2)", CoreAddons.Format.formatDistance(root.modelData.distance, Settings.distanceFormat), Localizer.formatDuration(root.modelData.duration));
                         case JourneySection.Transfer:
-                            return i18n("Transfer (%1)", Localizer.formatDurationCustom(root.modelData.duration))
+                            return i18n("Transfer (%1)", Localizer.formatDuration(root.modelData.duration))
                         case JourneySection.Waiting:
-                            return i18n("Wait (%1)", Localizer.formatDurationCustom(root.modelData.duration))
+                            return i18n("Wait (%1)", Localizer.formatDuration(root.modelData.duration))
                         case JourneySection.RentedVehicle:
-                            return i18n("%1 %2 (%3)", root.modelData.rentalVehicle.network.name, CoreAddons.Format.formatDistance(root.modelData.distance, Settings.distanceFormat), Localizer.formatDurationCustom(root.modelData.duration));
+                            return i18n("%1 %2 (%3)", root.modelData.rentalVehicle.network.name, CoreAddons.Format.formatDistance(root.modelData.distance, Settings.distanceFormat), Localizer.formatDuration(root.modelData.duration));
                         case JourneySection.IndividualTransport:
-                            return i18n("Drive %1 (%2)", CoreAddons.Format.formatDistance(root.modelData.distance, Settings.distanceFormat), Localizer.formatDurationCustom(root.modelData.duration));
+                            return i18n("Drive %1 (%2)", CoreAddons.Format.formatDistance(root.modelData.distance, Settings.distanceFormat), Localizer.formatDuration(root.modelData.duration));
                         return "???";
                         }
 
@@ -165,7 +165,7 @@ anchors.centerIn: parent
                 QQC2.Label {
                     visible: text.length > 0
                     elide: Text.ElideRight
-                    text: root.modelData.mode === JourneySection.PublicTransport ? Localizer.formatDurationCustom(root.modelData.duration) : ''
+                    text: root.modelData.mode === JourneySection.PublicTransport ? Localizer.formatDuration(root.modelData.duration) : ''
 
                     Layout.fillWidth: true
                 }

@@ -223,35 +223,10 @@ QString Localizer::formatTimeZoneOffset(qint64 seconds)
     return QLocale().positiveSign() + KFormat().formatDuration((seconds * 1000), KFormat::HideSeconds);
 }
 
-QString Localizer::formatDurationCustom(int seconds) const
+QString Localizer::formatDuration(int seconds)
 {
-    enum TimeConstants {
-        SecsInDay = 86400,
-        SecsInHour = 3600,
-        SecsInMinute = 60,
-    };
-
-    bool isNegative = seconds < 0;
-    if (isNegative) {
-        seconds = -seconds;
-    }
-
-    int hours = seconds / SecsInHour;
-    seconds = seconds % SecsInHour;
-    int minutes = seconds / SecsInMinute;
-
-    QString duration;
-    if (hours == 0) {
-        duration = i18nc("Duration in minutes", "%1 min", minutes);
-    } else if (minutes == 0) {
-        duration = i18nc("Duration in hours and minutes", "%1 hr", hours);
-    } else {
-        duration = i18nc("Duration in hours and minutes", "%1 hr %2 min", hours, minutes);
-    }
-    if (isNegative) {
-        duration = QLocale().negativeSign() + duration;
-    }
-    return duration;
+    const auto opts = static_cast<KFormat::DurationFormatOptions>(KFormat::AbbreviatedDuration | KFormat::HideSeconds); // ### workaround for KF < 6.12
+    return KFormat().formatDuration((quint64)seconds * 1000, opts);
 }
 
 QString Localizer::formatSpeed(double km_per_hour, KFormat::DistanceFormatOptions formatOpts)

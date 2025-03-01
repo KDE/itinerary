@@ -58,7 +58,7 @@ ColumnLayout {
         }
 
         QQC2.Label {
-            text: Localizer.formatDurationCustom(journey.duration)
+            text: Localizer.formatDuration(journey.duration)
             font.bold: true
             color: Kirigami.Theme.textColor
             Layout.fillWidth: true

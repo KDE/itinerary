@@ -30,7 +30,7 @@ public:
     /** Auto-detect date or date/time, and convert to local time zone. */
     Q_INVOKABLE QString formatDateOrDateTimeLocal(const QVariant &obj, const QString &propertyName) const;
     Q_INVOKABLE [[nodiscard]] static QString formatTimeZoneOffset(qint64 seconds);
-    Q_INVOKABLE QString formatDurationCustom(int seconds) const;
+    Q_INVOKABLE [[nodiscard]] static QString formatDuration(int seconds);
     /** Format speed value. */
     Q_INVOKABLE [[nodiscard]] static QString formatSpeed(double km_per_hour, KFormat::DistanceFormatOptions formatOpts);
     /** Format a weight value. */
