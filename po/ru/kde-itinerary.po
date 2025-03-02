@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-28 00:42+0000\n"
+"POT-Creation-Date: 2025-03-02 00:41+0000\n"
 "PO-Revision-Date: 2024-11-15 12:21+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -123,7 +123,7 @@ msgstr "Изменить"
 msgid "Add to calendar…"
 msgstr "Добавить в календарь…"
 
-#: app/ActionsCard.qml:74 app/TripGroupPage.qml:733
+#: app/ActionsCard.qml:74 app/TripGroupPage.qml:734
 #, kde-format
 msgid "Export…"
 msgstr "Экспорт…"
@@ -132,7 +132,7 @@ msgstr "Экспорт…"
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:49 app/HealthCertificatePage.qml:63
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:171
-#: app/TicketPage.qml:47 app/TicketPage.qml:171 app/TripGroupPage.qml:309
+#: app/TicketPage.qml:47 app/TicketPage.qml:171 app/TripGroupPage.qml:310
 #, kde-format
 msgid "Delete"
 msgstr "Удалить"
@@ -147,17 +147,17 @@ msgstr "Удалить событие"
 msgid "Do you really want to delete this event?"
 msgstr "Удалить это событие?"
 
-#: app/ActionsCard.qml:138 app/TripGroupPage.qml:228
+#: app/ActionsCard.qml:138 app/TripGroupPage.qml:229
 #, kde-format
 msgid "Export"
 msgstr "Экспорт"
 
-#: app/ActionsCard.qml:141 app/TripGroupPage.qml:231
+#: app/ActionsCard.qml:141 app/TripGroupPage.qml:232
 #, kde-format
 msgid "As Itinerary file…"
 msgstr "Как файл Itinerary…"
 
-#: app/ActionsCard.qml:152 app/TripGroupPage.qml:253
+#: app/ActionsCard.qml:152 app/TripGroupPage.qml:254
 #, kde-format
 msgid "Send to %1"
 msgstr "Отправить %1"
@@ -167,13 +167,13 @@ msgstr "Отправить %1"
 msgid "Export Reservation"
 msgstr "Экспорт бронирования"
 
-#: app/ActionsCard.qml:168 app/TripGroupPage.qml:271
+#: app/ActionsCard.qml:168 app/TripGroupPage.qml:272
 #, kde-format
 msgid "Itinerary file (*.itinerary)"
 msgstr "Файл программы «Маршруты KDE» (*.itinerary)"
 
 #: app/ActionsCard.qml:173 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:683
+#: app/TicketPage.qml:130 app/TripGroupPage.qml:684
 #, kde-format
 msgid "Actions"
 msgstr "Действия"
@@ -383,7 +383,7 @@ msgstr "Новая поездка на лодке"
 msgid "Edit Boat Trip"
 msgstr "Изменение поездки на лодке"
 
-#: app/BoatEditor.qml:55 app/BoatPage.qml:28 app/StatisticsPage.qml:135
+#: app/BoatEditor.qml:55 app/BoatPage.qml:28 app/StatisticsPage.qml:136
 #, kde-format
 msgid "Boat"
 msgstr "Лодка"
@@ -671,7 +671,7 @@ msgstr "Прибытие"
 msgid "Alternatives"
 msgstr "Варианты"
 
-#: app/BusPage.qml:217 app/JourneySectionPage.qml:26 app/TrainPage.qml:366
+#: app/BusPage.qml:217 app/JourneySectionPage.qml:27 app/TrainPage.qml:366
 #, kde-format
 msgid "Journey Details"
 msgstr "Сведения о поездке"
@@ -1029,7 +1029,7 @@ msgid "Export Favorite Locations"
 msgstr "Экспорт избранных расположений"
 
 #: app/FavoriteLocationPage.qml:38 app/FavoriteLocationPage.qml:46
-#: app/TripGroupPage.qml:287
+#: app/TripGroupPage.qml:288
 #, kde-format
 msgid "GPX Files (*.gpx)"
 msgstr "Файлы GPX (*.*)"
@@ -1215,7 +1215,7 @@ msgctxt "flight arrival"
 msgid "Arrival time has to be after the departure time."
 msgstr "Время прибытия должно быть больше времени отправления."
 
-#: app/FlightEditor.qml:182 app/FlightPage.qml:15 app/StatisticsPage.qml:93
+#: app/FlightEditor.qml:182 app/FlightPage.qml:15 app/StatisticsPage.qml:94
 #, kde-format
 msgid "Flight"
 msgstr "Рейс"
@@ -2016,12 +2016,12 @@ msgstr "Метро"
 msgid "Tramway"
 msgstr "Трамвай"
 
-#: app/IndoorMapPlatformSheet.qml:87 app/StatisticsPage.qml:121
+#: app/IndoorMapPlatformSheet.qml:87 app/StatisticsPage.qml:122
 #, kde-format
 msgid "Bus"
 msgstr "Автобус"
 
-#: app/JourneyPathPage.qml:175 app/JourneySectionPage.qml:336
+#: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:337
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2141,58 +2141,58 @@ msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
 msgstr "Лодки или паромы"
 
-#: app/JourneySectionDelegate.qml:142
+#: app/JourneySectionDelegate.qml:143
 #, fuzzy, kde-format
 #| msgctxt "to travel destination"
 #| msgid "To %1"
 msgid "To %1"
 msgstr "До %1"
 
-#: app/JourneySectionDelegate.qml:146
+#: app/JourneySectionDelegate.qml:147
 #, kde-format
 msgid "Walk (%1)"
 msgstr "Переход (%1)"
 
-#: app/JourneySectionDelegate.qml:147
+#: app/JourneySectionDelegate.qml:148
 #, kde-format
 msgid "Walk %1 (%2)"
 msgstr "Переход %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:149
+#: app/JourneySectionDelegate.qml:150
 #, kde-format
 msgid "Transfer (%1)"
 msgstr "Пересадка (%1)"
 
-#: app/JourneySectionDelegate.qml:151
+#: app/JourneySectionDelegate.qml:152
 #, kde-format
 msgid "Wait (%1)"
 msgstr "Ожидание (%1)"
 
-#: app/JourneySectionDelegate.qml:153
+#: app/JourneySectionDelegate.qml:154
 #, kde-format
 msgid "%1 %2 (%3)"
 msgstr "%1 %2 (%3)"
 
-#: app/JourneySectionDelegate.qml:155
+#: app/JourneySectionDelegate.qml:156
 #, kde-format
 msgid "Drive %1 (%2)"
 msgstr "Проезд %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:180 app/JourneySectionDelegate.qml:321
+#: app/JourneySectionDelegate.qml:181 app/JourneySectionDelegate.qml:322
 #, fuzzy, kde-format
 #| msgid "Platform: %1"
 msgctxt "@info"
 msgid "Platform %1"
 msgstr "Платформа: %1"
 
-#: app/JourneySectionDelegate.qml:248 app/JourneySectionPage.qml:133
+#: app/JourneySectionDelegate.qml:249 app/JourneySectionPage.qml:134
 #: app/VehicleLayoutPage.qml:240
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr "Показать больше…"
 
-#: app/JourneySectionPage.qml:48 app/TimelineDelegateDepartureLayout.qml:94
+#: app/JourneySectionPage.qml:49 app/TimelineDelegateDepartureLayout.qml:94
 #: app/VehicleLayoutPage.qml:143
 #, fuzzy, kde-format
 #| msgctxt "to travel destination"
@@ -2201,17 +2201,17 @@ msgctxt "Direction of the transport mode"
 msgid "To %1"
 msgstr "До %1"
 
-#: app/JourneySectionPage.qml:61
+#: app/JourneySectionPage.qml:62
 #, kde-format
 msgid "Distance: %1"
 msgstr "Расстояние: %1"
 
-#: app/JourneySectionPage.qml:71
+#: app/JourneySectionPage.qml:72
 #, kde-format
 msgid "Average Speed: %1"
 msgstr "Средняя скорость: %1"
 
-#: app/JourneySectionPage.qml:81
+#: app/JourneySectionPage.qml:82
 #, kde-format
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
@@ -2338,37 +2338,19 @@ msgctxt "Duration in hours and minutes"
 msgid "%1 hr %2 min"
 msgstr ""
 
-#: app/localizer.cpp:260
-#, kde-format
-msgctxt "distance in meter"
-msgid "%1 m"
-msgstr "%1 м"
-
-#: app/localizer.cpp:263 app/localizer.cpp:265
-#, kde-format
-msgctxt "distance in kilometer"
-msgid "%1 km"
-msgstr "%1 км"
-
-#: app/localizer.cpp:271
-#, kde-format
-msgctxt "speed in kilometers per hour"
-msgid "%1 km/h"
-msgstr "%1 км/ч"
-
-#: app/localizer.cpp:277
+#: app/localizer.cpp:270
 #, kde-format
 msgctxt "weight in gram"
 msgid "%1 g"
 msgstr "%1 г"
 
-#: app/localizer.cpp:280 app/localizer.cpp:282
+#: app/localizer.cpp:273 app/localizer.cpp:275
 #, kde-format
 msgctxt "weight in kilogram"
 msgid "%1 kg"
 msgstr "%1 кг"
 
-#: app/localizer.cpp:297
+#: app/localizer.cpp:290
 #, kde-format
 msgctxt "temperature range"
 msgid "%1 / %2"
@@ -2547,7 +2529,7 @@ msgstr "Онлайн-билет SNCF…"
 msgid "Import Reservation"
 msgstr "Импорт бронирования"
 
-#: app/Main.qml:127 app/MyDataPage.qml:216
+#: app/Main.qml:127 app/MyDataPage.qml:217
 #, kde-format
 msgid "KDE Itinerary files (*.itinerary)"
 msgstr "Файлы программы «Маршруты KDE» (*.itinerary)"
@@ -2950,39 +2932,39 @@ msgstr "Избранные расположения"
 msgid "Home Country"
 msgstr "Страна (домашний адрес)"
 
-#: app/MyDataPage.qml:131 app/StatisticsPage.qml:15 app/TripGroupPage.qml:651
+#: app/MyDataPage.qml:131 app/StatisticsPage.qml:15 app/TripGroupPage.qml:652
 #, kde-format
 msgid "Statistics"
 msgstr "Статистика"
 
-#: app/MyDataPage.qml:180
+#: app/MyDataPage.qml:181
 #, fuzzy, kde-format
 #| msgid "Statistics"
 msgctxt "@action:button"
 msgid "See all Statistics"
 msgstr "Статистика"
 
-#: app/MyDataPage.qml:190
+#: app/MyDataPage.qml:191
 #, kde-format
 msgctxt "@title:group"
 msgid "Data Portability"
 msgstr ""
 
-#: app/MyDataPage.qml:195
+#: app/MyDataPage.qml:196
 #, fuzzy, kde-format
 #| msgid "Import"
 msgctxt "@action:button"
 msgid "Import"
 msgstr "Импорт"
 
-#: app/MyDataPage.qml:203
+#: app/MyDataPage.qml:204
 #, fuzzy, kde-format
 #| msgid "Export"
 msgctxt "@action:button"
 msgid "Export"
 msgstr "Экспорт"
 
-#: app/MyDataPage.qml:214
+#: app/MyDataPage.qml:215
 #, kde-format
 msgid "Export Itinerary Data"
 msgstr "Экспорт данных маршрута"
@@ -3135,7 +3117,7 @@ msgctxt "name - valid time range"
 msgid "%1 - %2"
 msgstr "%1 — %2"
 
-#: app/passmanager.cpp:276 app/TripGroupPage.qml:436
+#: app/passmanager.cpp:276 app/TripGroupPage.qml:437
 #, kde-format
 msgid "%1 - %2"
 msgstr "%1 — %2"
@@ -3413,17 +3395,35 @@ msgstr "Количество гостей"
 msgid "Settings"
 msgstr "Параметры"
 
-#: app/SettingsPage.qml:30
+#: app/SettingsPage.qml:29
+#, fuzzy, kde-format
+#| msgid "Location"
+msgid "Localization"
+msgstr "Расположение"
+
+#: app/SettingsPage.qml:38
+#, kde-format
+msgid "Use metric units"
+msgstr ""
+
+#: app/SettingsPage.qml:39
+#, kde-format
+msgid ""
+"Use metric units for distance and temperature values regardless of the "
+"platform region settings."
+msgstr ""
+
+#: app/SettingsPage.qml:48
 #, kde-format
 msgid "Online Services"
 msgstr "Интернет-службы"
 
-#: app/SettingsPage.qml:34
+#: app/SettingsPage.qml:52
 #, kde-format
 msgid "Query Traffic Data"
 msgstr "Запрашивать данные трафика"
 
-#: app/SettingsPage.qml:37
+#: app/SettingsPage.qml:55
 #, kde-format
 msgid ""
 "When enabled, this will query transport provider online services for changes "
@@ -3433,12 +3433,12 @@ msgstr ""
 "интернет-служб транспортных компаний сведения об изменениях в маршрутах "
 "(например, задержек или смены выходов или платформ)."
 
-#: app/SettingsPage.qml:43
+#: app/SettingsPage.qml:61
 #, kde-format
 msgid "Use insecure services"
 msgstr "Использовать незащищённые службы"
 
-#: app/SettingsPage.qml:46
+#: app/SettingsPage.qml:64
 #, kde-format
 msgid ""
 "Enabling this will also use online services that do not offer transport "
@@ -3450,23 +3450,23 @@ msgstr ""
 "может быть единственным вариантом при работе с реальными данными от "
 "некоторых компаний."
 
-#: app/SettingsPage.qml:54
+#: app/SettingsPage.qml:72
 #, kde-format
 msgid "Public Transport Information Sources…"
 msgstr "Источники данных об общественном транспорте…"
 
-#: app/SettingsPage.qml:63 app/WeatherForecastDelegate.qml:80
+#: app/SettingsPage.qml:81 app/WeatherForecastDelegate.qml:80
 #: app/WeatherForecastPage.qml:19
 #, kde-format
 msgid "Weather Forecast"
 msgstr "Прогноз погоды"
 
-#: app/SettingsPage.qml:66
+#: app/SettingsPage.qml:84
 #, kde-format
 msgid "Showing weather forecasts will query online services."
 msgstr "При отображении прогноза погода опрашиваются интернет-службы."
 
-#: app/SettingsPage.qml:71 app/WeatherForecastPage.qml:36
+#: app/SettingsPage.qml:89 app/WeatherForecastPage.qml:36
 #, kde-format
 msgid ""
 "Using data from <a href=\"https://www.met.no/\">The Norwegian Meteorological "
@@ -3478,12 +3478,12 @@ msgstr ""
 "creativecommons.org/licenses/by/4.0\">Creative Commons 4.0 BY International</"
 "a>."
 
-#: app/SettingsPage.qml:80
+#: app/SettingsPage.qml:98
 #, kde-format
 msgid "Preload Map Data"
 msgstr "Предварительная загрузка данных карт"
 
-#: app/SettingsPage.qml:83
+#: app/SettingsPage.qml:101
 #, kde-format
 msgid ""
 "Enabling this will download maps for all stations and airports for upcoming "
@@ -3493,12 +3493,12 @@ msgstr ""
 "и аэропортов предстоящих путешествий, как только будет установлено "
 "соединение с сетью Wi-Fi."
 
-#: app/SettingsPage.qml:90
+#: app/SettingsPage.qml:108
 #, kde-format
 msgid "Currency Conversion"
 msgstr "Конвертация валюты"
 
-#: app/SettingsPage.qml:93
+#: app/SettingsPage.qml:111
 #, kde-format
 msgid ""
 "Enabling this will perform online queries for exchange rates to currencies "
@@ -3507,32 +3507,32 @@ msgstr ""
 "При включении этого параметра будут выполняться интернет-запросы обменных "
 "курсов валют в местах назначения."
 
-#: app/SettingsPage.qml:99
+#: app/SettingsPage.qml:117
 #, kde-format
 msgid "Wikimedia Online Content"
 msgstr "Интернет-данные Викимедиа"
 
-#: app/SettingsPage.qml:102
+#: app/SettingsPage.qml:120
 #, kde-format
 msgid "Use additional online content from Wikimedia and Wikidata."
 msgstr "Использовать дополнительные интернет-данные из Викимедиа и Викиданные."
 
-#: app/SettingsPage.qml:109
+#: app/SettingsPage.qml:127
 #, kde-format
 msgid "Transfer Assistant"
 msgstr "Помощник для пересадок"
 
-#: app/SettingsPage.qml:113
+#: app/SettingsPage.qml:131
 #, kde-format
 msgid "Automatically add transfers"
 msgstr "Автоматически добавлять пересадки"
 
-#: app/SettingsPage.qml:121
+#: app/SettingsPage.qml:139
 #, kde-format
 msgid "Automatically fill transfers"
 msgstr "Автоматически заполнять пересадки"
 
-#: app/SettingsPage.qml:122
+#: app/SettingsPage.qml:140
 #, kde-format
 msgid ""
 "When enabled, this will query transport provider online services "
@@ -3541,78 +3541,78 @@ msgstr ""
 "Если этот параметр включён, программа будет автоматически запрашивать у "
 "интернет-служб транспортных компаний информацию о пересадках."
 
-#: app/SettingsPage.qml:133
+#: app/SettingsPage.qml:151
 #, kde-format
 msgid "Notifications"
 msgstr "Уведомления"
 
-#: app/SettingsPage.qml:138
+#: app/SettingsPage.qml:156
 #, kde-format
 msgid "Configure Notifications…"
 msgstr "Настроить уведомления…"
 
-#: app/SettingsPage.qml:147
+#: app/SettingsPage.qml:165
 #, kde-format
 msgid "Show notifications on lock screen"
 msgstr "Показывать уведомления на экране блокировки"
 
-#: app/SettingsPage.qml:157 app/SettingsPage.qml:186
+#: app/SettingsPage.qml:175 app/SettingsPage.qml:204
 #, kde-format
 msgid "Request permissions…"
 msgstr "Запросить права доступа…"
 
-#: app/SettingsPage.qml:158
+#: app/SettingsPage.qml:176
 #, kde-format
 msgid "Additional permissions are required to show notifications."
 msgstr "Для показа уведомлений необходимы дополнительные права доступа."
 
-#: app/SettingsPage.qml:168
+#: app/SettingsPage.qml:186
 #, kde-format
 msgid "Notification permissions are available"
 msgstr "Доступны права доступа к уведомлениям"
 
-#: app/SettingsPage.qml:169 app/SettingsPage.qml:211 app/SettingsPage.qml:289
+#: app/SettingsPage.qml:187 app/SettingsPage.qml:229 app/SettingsPage.qml:307
 #, kde-format
 msgid "No further action required."
 msgstr "Дальнейшие действия не требуются."
 
-#: app/SettingsPage.qml:182
+#: app/SettingsPage.qml:200
 #, kde-format
 msgid "Onboard Status"
 msgstr "Статус посадки"
 
-#: app/SettingsPage.qml:187
+#: app/SettingsPage.qml:205
 #, kde-format
 msgid "Additional permissions are required to access the Wi-Fi status."
 msgstr "Для доступа к статусу Wi-Fi требуются дополнительные права доступа."
 
-#: app/SettingsPage.qml:198
+#: app/SettingsPage.qml:216
 #, kde-format
 msgid "Wi-Fi access for onboard information is available."
 msgstr "Подключение к Wi-Fi для получения информации о посадке недоступно."
 
-#: app/SettingsPage.qml:200
+#: app/SettingsPage.qml:218
 #, kde-format
 msgid "Wi-Fi is not enabled"
 msgstr "Wi-Fi отключён"
 
-#: app/SettingsPage.qml:202
+#: app/SettingsPage.qml:220
 #, kde-format
 msgid "Location service is not enabled"
 msgstr "Служба местоположения не включена"
 
-#: app/SettingsPage.qml:204
+#: app/SettingsPage.qml:222
 #, kde-format
 msgid "Wi-Fi access is not available on this system"
 msgstr "В системе недоступно подключение к Wi-Fi"
 
-#: app/SettingsPage.qml:213
+#: app/SettingsPage.qml:231
 #, kde-format
 msgid "Enable Wi-Fi on your system to access onboard information."
 msgstr ""
 "Включите Wi-Fi на своей системе для получения доступа к информации о посадке."
 
-#: app/SettingsPage.qml:215
+#: app/SettingsPage.qml:233
 #, kde-format
 msgid ""
 "Enable the location service on your device to access onboard information."
@@ -3620,7 +3620,7 @@ msgstr ""
 "Включите службу определения местоположения на устройстве, чтобы получить "
 "доступ к информации о посадке."
 
-#: app/SettingsPage.qml:217
+#: app/SettingsPage.qml:235
 #, kde-format
 msgid ""
 "Onboard information are unfortunately not supported on your device at this "
@@ -3629,65 +3629,65 @@ msgstr ""
 "В настоящий момент информация о посадке не поддерживается на данном "
 "устройстве."
 
-#: app/SettingsPage.qml:249
+#: app/SettingsPage.qml:267
 #, kde-format
 msgid "Matrix Integration"
 msgstr "Интеграция с Matrix"
 
-#: app/SettingsPage.qml:256 app/SettingsPage.qml:313
+#: app/SettingsPage.qml:274 app/SettingsPage.qml:331
 #, kde-format
 msgid "Logged in as %1"
 msgstr "Вход выполнен: %1"
 
-#: app/SettingsPage.qml:260
+#: app/SettingsPage.qml:278
 #, kde-format
 msgid "Synchronize rooms"
 msgstr "Синхронизировать комнаты"
 
-#: app/SettingsPage.qml:267
+#: app/SettingsPage.qml:285
 #, kde-format
 msgid "Matrix ID"
 msgstr "Matrix ID"
 
-#: app/SettingsPage.qml:276
+#: app/SettingsPage.qml:294
 #, kde-format
 msgid "Password"
 msgstr "Пароль"
 
-#: app/SettingsPage.qml:288
+#: app/SettingsPage.qml:306
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Session verified"
 msgstr ""
 
-#: app/SettingsPage.qml:288
+#: app/SettingsPage.qml:306
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Session not verified."
 msgstr ""
 
-#: app/SettingsPage.qml:289
+#: app/SettingsPage.qml:307
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Initiate session verification in your Matrix chat client."
 msgstr ""
 
-#: app/SettingsPage.qml:296
+#: app/SettingsPage.qml:314
 #, kde-format
 msgid "Log out"
 msgstr "Завершить сеанс"
 
-#: app/SettingsPage.qml:296
+#: app/SettingsPage.qml:314
 #, kde-format
 msgid "Log in"
 msgstr "Войти"
 
-#: app/SettingsPage.qml:303
+#: app/SettingsPage.qml:321
 #, kde-format
 msgid "Traewelling Integration"
 msgstr "Интеграция с Traewelling"
 
-#: app/SettingsPage.qml:308
+#: app/SettingsPage.qml:326
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -3700,103 +3700,103 @@ msgstr ""
 "Дополнительные сведения доступны на веб-сайте <a href=\"https://traewelling."
 "de\">traewelling.de</a>"
 
-#: app/SettingsPage.qml:316
+#: app/SettingsPage.qml:334
 #, kde-format
 msgid "Login"
 msgstr "Вход"
 
-#: app/SettingsPage.qml:321
+#: app/SettingsPage.qml:339
 #, kde-format
 msgid "Logout"
 msgstr "Выход"
 
-#: app/SettingsPage.qml:328
+#: app/SettingsPage.qml:346
 #, kde-format
 msgid "Contributing"
 msgstr "Участие"
 
-#: app/SettingsPage.qml:332
+#: app/SettingsPage.qml:350
 #, kde-format
 msgid "I contribute to OpenStreetMap"
 msgstr "Я принимаю участие в проекте OpenStreetMap"
 
-#: app/SettingsPage.qml:333
+#: app/SettingsPage.qml:351
 #, kde-format
 msgid "Enables OSM editing options."
 msgstr "Включает параметры редактирования OSM."
 
-#: app/statisticsmodel.cpp:107
+#: app/statisticsmodel.cpp:102
 #, kde-format
 msgid "Trips"
 msgstr "Поездки"
 
-#: app/statisticsmodel.cpp:112 app/statisticsmodel.cpp:145
-#: app/statisticsmodel.cpp:160 app/statisticsmodel.cpp:175
-#: app/statisticsmodel.cpp:190 app/statisticsmodel.cpp:205
-#: app/TripGroupPage.qml:658
+#: app/statisticsmodel.cpp:107 app/statisticsmodel.cpp:140
+#: app/statisticsmodel.cpp:155 app/statisticsmodel.cpp:170
+#: app/statisticsmodel.cpp:185 app/statisticsmodel.cpp:200
+#: app/TripGroupPage.qml:659
 #, kde-format
 msgid "Distance"
 msgstr "Расстояние"
 
-#: app/statisticsmodel.cpp:117
+#: app/statisticsmodel.cpp:112
 #, kde-format
 msgid "Hotel nights"
 msgstr "Ночлег в гостиницах"
 
-#: app/statisticsmodel.cpp:122 app/statisticsmodel.cpp:150
-#: app/statisticsmodel.cpp:165 app/statisticsmodel.cpp:180
-#: app/statisticsmodel.cpp:195 app/statisticsmodel.cpp:210
-#: app/TripGroupPage.qml:667
+#: app/statisticsmodel.cpp:117 app/statisticsmodel.cpp:145
+#: app/statisticsmodel.cpp:160 app/statisticsmodel.cpp:175
+#: app/statisticsmodel.cpp:190 app/statisticsmodel.cpp:205
+#: app/TripGroupPage.qml:668
 #, kde-format
 msgid "CO₂"
 msgstr "CO₂"
 
-#: app/statisticsmodel.cpp:135
+#: app/statisticsmodel.cpp:130
 #, kde-format
 msgid "Visited countries"
 msgstr "Посещённые страны"
 
-#: app/statisticsmodel.cpp:140
+#: app/statisticsmodel.cpp:135
 #, kde-format
 msgid "Flights"
 msgstr "Рейсы"
 
-#: app/statisticsmodel.cpp:155
+#: app/statisticsmodel.cpp:150
 #, kde-format
 msgid "Train rides"
 msgstr "Поездки на поезде"
 
-#: app/statisticsmodel.cpp:170
+#: app/statisticsmodel.cpp:165
 #, kde-format
 msgid "Bus rides"
 msgstr "Поездки на автобусе"
 
-#: app/statisticsmodel.cpp:185
+#: app/statisticsmodel.cpp:180
 #, kde-format
 msgid "Car rides"
 msgstr "Поездки на автомобиле"
 
-#: app/statisticsmodel.cpp:200
+#: app/statisticsmodel.cpp:195
 #, kde-format
 msgid "Boat trips"
 msgstr "Поездки на лодке"
 
-#: app/StatisticsPage.qml:35
+#: app/StatisticsPage.qml:36
 #, kde-format
 msgid "Year"
 msgstr "Год"
 
-#: app/StatisticsPage.qml:47 app/statisticstimerangemodel.cpp:69
+#: app/StatisticsPage.qml:48 app/statisticstimerangemodel.cpp:69
 #, kde-format
 msgid "Total"
 msgstr "Всего"
 
-#: app/StatisticsPage.qml:107 app/TrainEditor.qml:88
+#: app/StatisticsPage.qml:108 app/TrainEditor.qml:88
 #, kde-format
 msgid "Train"
 msgstr "Железная дорога"
 
-#: app/StatisticsPage.qml:149
+#: app/StatisticsPage.qml:150
 #, kde-format
 msgid "Car"
 msgstr "Автомобиль"
@@ -4253,63 +4253,63 @@ msgctxt "@action:button"
 msgid "Merge"
 msgstr "Объединить"
 
-#: app/TripGroupPage.qml:116
+#: app/TripGroupPage.qml:117
 #, kde-format
 msgid "Add train trip…"
 msgstr "Добавить поездку на поезде…"
 
-#: app/TripGroupPage.qml:123
+#: app/TripGroupPage.qml:124
 #, kde-format
 msgid "Add flight…"
 msgstr "Добавить рейс…"
 
-#: app/TripGroupPage.qml:135
+#: app/TripGroupPage.qml:136
 #, kde-format
 msgid "Add ferry trip…"
 msgstr "Добавить поездку на пароме…"
 
-#: app/TripGroupPage.qml:147
+#: app/TripGroupPage.qml:148
 #, kde-format
 msgid "Add accommodation…"
 msgstr "Добавить место проживания…"
 
-#: app/TripGroupPage.qml:158
+#: app/TripGroupPage.qml:159
 #, kde-format
 msgid "Add event…"
 msgstr "Добавить событие…"
 
-#: app/TripGroupPage.qml:170
+#: app/TripGroupPage.qml:171
 #, kde-format
 msgid "Add restaurant…"
 msgstr "Добавить ресторан…"
 
-#: app/TripGroupPage.qml:186
+#: app/TripGroupPage.qml:187
 #, kde-format
 msgctxt "@title:group"
 msgid "Add to Trip"
 msgstr "Добавление к поездке"
 
-#: app/TripGroupPage.qml:239
+#: app/TripGroupPage.qml:240
 #, kde-format
 msgid "As GPX file…"
 msgstr "Как файл GPX…"
 
-#: app/TripGroupPage.qml:270 app/TripGroupPage.qml:285
+#: app/TripGroupPage.qml:271 app/TripGroupPage.qml:286
 #, kde-format
 msgid "Export Trip"
 msgstr "Экспорт поездки"
 
-#: app/TripGroupPage.qml:302
+#: app/TripGroupPage.qml:303
 #, kde-format
 msgid "Delete Trip"
 msgstr "Удалить поездку"
 
-#: app/TripGroupPage.qml:303
+#: app/TripGroupPage.qml:304
 #, kde-format
 msgid "Do you really want to delete the trip '%1'?"
 msgstr "Удалить поездку «%1»?"
 
-#: app/TripGroupPage.qml:437
+#: app/TripGroupPage.qml:438
 #, kde-format
 msgid "One day"
 msgid_plural "%1 days"
@@ -4318,22 +4318,22 @@ msgstr[1] "%1 дня"
 msgstr[2] "%1 дней"
 msgstr[3] "Один день"
 
-#: app/TripGroupPage.qml:469
+#: app/TripGroupPage.qml:470
 #, kde-format
 msgid "Some incompatible power sockets (%1)"
 msgstr "Несовместимые розетки (%1)"
 
-#: app/TripGroupPage.qml:471
+#: app/TripGroupPage.qml:472
 #, kde-format
 msgid "Some incompatible power plugs (%1)"
 msgstr "Несовместимые вилки (%1)"
 
-#: app/TripGroupPage.qml:474
+#: app/TripGroupPage.qml:475
 #, kde-format
 msgid "No compatible power plugs (%1)"
 msgstr "Нет совместимых вилок (%1)"
 
-#: app/TripGroupPage.qml:486
+#: app/TripGroupPage.qml:487
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
@@ -4342,68 +4342,68 @@ msgstr[1] "Валюты: %2"
 msgstr[2] "Валюты: %2"
 msgstr[3] "Валюта: %2"
 
-#: app/TripGroupPage.qml:496
+#: app/TripGroupPage.qml:497
 #, kde-format
 msgid "Show map…"
 msgstr "Показать карту…"
 
-#: app/TripGroupPage.qml:503
+#: app/TripGroupPage.qml:504
 #, kde-format
 msgid "Import"
 msgstr "Импорт"
 
-#: app/TripGroupPage.qml:517
+#: app/TripGroupPage.qml:518
 #, kde-format
 msgid "Add"
 msgstr "Добавить"
 
-#: app/TripGroupPage.qml:623
+#: app/TripGroupPage.qml:624
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Нет данных маршрута на сегодня."
 
-#: app/TripGroupPage.qml:676
+#: app/TripGroupPage.qml:677
 #, kde-format
 msgid "Cost"
 msgstr "Стоимость"
 
-#: app/TripGroupPage.qml:689
+#: app/TripGroupPage.qml:690
 #, kde-format
 msgid "Check for Updates"
 msgstr "Проверить обновления"
 
-#: app/TripGroupPage.qml:698
+#: app/TripGroupPage.qml:699
 #, kde-format
 msgid "Rename…"
 msgstr "Переименовать…"
 
-#: app/TripGroupPage.qml:707
+#: app/TripGroupPage.qml:708
 #, kde-format
 msgid "Merge trips…"
 msgstr "Объединить поездки…"
 
-#: app/TripGroupPage.qml:718
+#: app/TripGroupPage.qml:719
 #, kde-format
 msgid "Split trip…"
 msgstr "Разделить поездку…"
 
-#: app/TripGroupPage.qml:725
+#: app/TripGroupPage.qml:726
 #, kde-format
 msgid "Download Maps"
 msgstr "Загрузить карты"
 
-#: app/TripGroupPage.qml:740
+#: app/TripGroupPage.qml:741
 #, kde-format
 msgid "Delete trip"
 msgstr "Удалить поездку"
 
-#: app/TripGroupPage.qml:765
+#: app/TripGroupPage.qml:766
 #, kde-format
 msgctxt "@action:button"
 msgid "Go To Now"
 msgstr "Перейти к текущему времени"
 
-#: app/TripGroupPage.qml:773 app/TripGroupsPage.qml:118
+#: app/TripGroupPage.qml:774 app/TripGroupsPage.qml:118
 #: app/TripGroupsPage.qml:137
 #, kde-format
 msgctxt "@action:button"
@@ -4684,6 +4684,18 @@ msgstr "Завершить сеанс"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 из %3 в %4 %5"
+
+#~ msgctxt "distance in meter"
+#~ msgid "%1 m"
+#~ msgstr "%1 м"
+
+#~ msgctxt "distance in kilometer"
+#~ msgid "%1 km"
+#~ msgstr "%1 км"
+
+#~ msgctxt "speed in kilometers per hour"
+#~ msgid "%1 km/h"
+#~ msgstr "%1 км/ч"
 
 #~ msgctxt "temperature"
 #~ msgid "%1°C"
