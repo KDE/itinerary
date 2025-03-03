@@ -3,13 +3,13 @@
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2019, 2020, 2021, 2022, 2023, 2024.
+# Yuri Chornoivan <yurchor@ukr.net>, 2019, 2020, 2021, 2022, 2023, 2024, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-02 00:41+0000\n"
-"PO-Revision-Date: 2024-12-26 22:12+0200\n"
+"POT-Creation-Date: 2025-03-03 00:41+0000\n"
+"PO-Revision-Date: 2025-03-02 09:30+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -2296,35 +2296,17 @@ msgstr "dd MMMM"
 
 #: app/localizer.cpp:245
 #, kde-format
-msgctxt "Duration in minutes"
-msgid "%1 min"
-msgstr "%1 хв"
-
-#: app/localizer.cpp:247
-#, kde-format
-msgctxt "Duration in hours and minutes"
-msgid "%1 hr"
-msgstr "%1 год"
-
-#: app/localizer.cpp:249
-#, kde-format
-msgctxt "Duration in hours and minutes"
-msgid "%1 hr %2 min"
-msgstr "%1 год %2 хв"
-
-#: app/localizer.cpp:270
-#, kde-format
 msgctxt "weight in gram"
 msgid "%1 g"
 msgstr "%1 г"
 
-#: app/localizer.cpp:273 app/localizer.cpp:275
+#: app/localizer.cpp:248 app/localizer.cpp:250
 #, kde-format
 msgctxt "weight in kilogram"
 msgid "%1 kg"
 msgstr "%1 кг"
 
-#: app/localizer.cpp:290
+#: app/localizer.cpp:265
 #, kde-format
 msgctxt "temperature range"
 msgid "%1 / %2"
@@ -3382,15 +3364,14 @@ msgid "Settings"
 msgstr "Параметри"
 
 #: app/SettingsPage.qml:29
-#, fuzzy, kde-format
-#| msgid "Location"
+#, kde-format
 msgid "Localization"
-msgstr "Місце"
+msgstr "Локалізація"
 
 #: app/SettingsPage.qml:38
 #, kde-format
 msgid "Use metric units"
-msgstr ""
+msgstr "Метричні одиниці"
 
 #: app/SettingsPage.qml:39
 #, kde-format
@@ -3398,6 +3379,8 @@ msgid ""
 "Use metric units for distance and temperature values regardless of the "
 "platform region settings."
 msgstr ""
+"Використовувати для значень відстані і температури метричні одиниці, "
+"незалежно від регіональних параметрів платформи."
 
 #: app/SettingsPage.qml:48
 #, kde-format
@@ -4670,6 +4653,18 @@ msgstr "Вийшли"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 з %3 до %4 %5"
+
+#~ msgctxt "Duration in minutes"
+#~ msgid "%1 min"
+#~ msgstr "%1 хв"
+
+#~ msgctxt "Duration in hours and minutes"
+#~ msgid "%1 hr"
+#~ msgstr "%1 год"
+
+#~ msgctxt "Duration in hours and minutes"
+#~ msgid "%1 hr %2 min"
+#~ msgstr "%1 год %2 хв"
 
 #~ msgctxt "distance in meter"
 #~ msgid "%1 m"

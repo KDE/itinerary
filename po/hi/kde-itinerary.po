@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-02 00:41+0000\n"
+"POT-Creation-Date: 2025-03-03 00:41+0000\n"
 "PO-Revision-Date: 2024-12-15 19:32+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
@@ -2287,35 +2287,17 @@ msgstr "डीडी एमएमएमएम"
 
 #: app/localizer.cpp:245
 #, kde-format
-msgctxt "Duration in minutes"
-msgid "%1 min"
-msgstr "%1 मिनट"
-
-#: app/localizer.cpp:247
-#, kde-format
-msgctxt "Duration in hours and minutes"
-msgid "%1 hr"
-msgstr "%1 घंटा"
-
-#: app/localizer.cpp:249
-#, kde-format
-msgctxt "Duration in hours and minutes"
-msgid "%1 hr %2 min"
-msgstr "%1 घंटा %2 मिनट"
-
-#: app/localizer.cpp:270
-#, kde-format
 msgctxt "weight in gram"
 msgid "%1 g"
 msgstr "%1 ग्राम"
 
-#: app/localizer.cpp:273 app/localizer.cpp:275
+#: app/localizer.cpp:248 app/localizer.cpp:250
 #, kde-format
 msgctxt "weight in kilogram"
 msgid "%1 kg"
 msgstr "%1 किग्रा"
 
-#: app/localizer.cpp:290
+#: app/localizer.cpp:265
 #, kde-format
 msgctxt "temperature range"
 msgid "%1 / %2"
@@ -4635,6 +4617,18 @@ msgstr "बाहर आ गये"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 %3 से %4 तक %5 पर"
+
+#~ msgctxt "Duration in minutes"
+#~ msgid "%1 min"
+#~ msgstr "%1 मिनट"
+
+#~ msgctxt "Duration in hours and minutes"
+#~ msgid "%1 hr"
+#~ msgstr "%1 घंटा"
+
+#~ msgctxt "Duration in hours and minutes"
+#~ msgid "%1 hr %2 min"
+#~ msgstr "%1 घंटा %2 मिनट"
 
 #~ msgctxt "distance in meter"
 #~ msgid "%1 m"

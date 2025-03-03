@@ -1,5 +1,5 @@
-# Translation of kde-itinerary to Spanish
-# Copyright (C) 2019 This file is copyright:
+# Translation of kde-itinerary.po to Spanish
+# Copyright (C) 2019-2025 This file is copyright:
 # This file is distributed under the same license as the itinerary package.
 #
 # Automatically generated, 2019.
@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-02 00:41+0000\n"
-"PO-Revision-Date: 2025-02-18 02:26+0100\n"
+"POT-Creation-Date: 2025-03-03 00:41+0000\n"
+"PO-Revision-Date: 2025-03-02 03:22+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -2284,35 +2284,17 @@ msgstr "dd MMMM"
 
 #: app/localizer.cpp:245
 #, kde-format
-msgctxt "Duration in minutes"
-msgid "%1 min"
-msgstr "%1 m"
-
-#: app/localizer.cpp:247
-#, kde-format
-msgctxt "Duration in hours and minutes"
-msgid "%1 hr"
-msgstr "%1 h"
-
-#: app/localizer.cpp:249
-#, kde-format
-msgctxt "Duration in hours and minutes"
-msgid "%1 hr %2 min"
-msgstr "%1 h y %2 m"
-
-#: app/localizer.cpp:270
-#, kde-format
 msgctxt "weight in gram"
 msgid "%1 g"
 msgstr "%1 g"
 
-#: app/localizer.cpp:273 app/localizer.cpp:275
+#: app/localizer.cpp:248 app/localizer.cpp:250
 #, kde-format
 msgctxt "weight in kilogram"
 msgid "%1 kg"
 msgstr "%1 kg"
 
-#: app/localizer.cpp:290
+#: app/localizer.cpp:265
 #, kde-format
 msgctxt "temperature range"
 msgid "%1 / %2"
@@ -3378,15 +3360,14 @@ msgid "Settings"
 msgstr "Preferencias"
 
 #: app/SettingsPage.qml:29
-#, fuzzy, kde-format
-#| msgid "Location"
+#, kde-format
 msgid "Localization"
-msgstr "Ubicación"
+msgstr "Localización"
 
 #: app/SettingsPage.qml:38
 #, kde-format
 msgid "Use metric units"
-msgstr ""
+msgstr "Usar unidades métricas"
 
 #: app/SettingsPage.qml:39
 #, kde-format
@@ -3394,6 +3375,8 @@ msgid ""
 "Use metric units for distance and temperature values regardless of the "
 "platform region settings."
 msgstr ""
+"Usar unidades métricas para los valores de distancia y temperatura sin tener "
+"en cuenta las preferencias regionales de la plataforma."
 
 #: app/SettingsPage.qml:48
 #, kde-format
@@ -4660,503 +4643,14 @@ msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 de %3 a %4 el %5"
 
-#~ msgctxt "distance in meter"
-#~ msgid "%1 m"
+#~ msgctxt "Duration in minutes"
+#~ msgid "%1 min"
 #~ msgstr "%1 m"
 
-#~ msgctxt "distance in kilometer"
-#~ msgid "%1 km"
-#~ msgstr "%1 km"
-
-#~ msgctxt "speed in kilometers per hour"
-#~ msgid "%1 km/h"
-#~ msgstr "%1 km/h"
-
-#~ msgctxt "temperature"
-#~ msgid "%1°C"
-#~ msgstr "%1°C"
-
-#~ msgid "Walk"
-#~ msgstr "Caminar"
-
-#~ msgid "Wait"
-#~ msgstr "Esperar"
-
-#~ msgid "Rented bicycle"
-#~ msgstr "Bicicleta alquilada"
-
-#~ msgid "Rented moped"
-#~ msgstr "Ciclomotor alquilado"
-
-#~ msgid "Rented kick scooter"
-#~ msgstr "Monopatín alquilado"
-
-#~ msgid "Rented car"
-#~ msgstr "Automóvil alquilado"
-
-#~ msgid "Bicycle"
-#~ msgstr "Bicicleta"
-
-#~ msgid "My Itinerary"
-#~ msgstr "Mi itinerario"
-
-#~ msgctxt "@title:group"
-#~ msgid "Add New Trip"
-#~ msgstr "Añadir nuevo viaje"
-
-#~ msgid "Do you really want to delete this trip?"
-#~ msgstr "¿Realmente desea borrar este viaje?"
-
-#~ msgid "Trip: %1"
-#~ msgstr "Viaje: %1"
-
-#~ msgid "Date: %2 (one day)"
-#~ msgid_plural "Date: %2 (%1 days)"
-#~ msgstr[0] "Fecha: %2 (1 día)"
-#~ msgstr[1] "Fecha: %2 (%1 días)"
-
-#~ msgid "%1: some incompatible power sockets (%2)"
-#~ msgstr "%1: algunas tomas de corriente incompatibles (%2)"
-
-#~ msgid "%1: some incompatible power plugs (%2)"
-#~ msgstr "%1: algunas clavijas de corriente incompatibles (%2)"
-
-#~ msgid "%1: no compatible power plugs (%2)"
-#~ msgstr "%1: sin clavijas de corriente compatibles (%2)"
-
-#~ msgid "Edit…"
-#~ msgstr "Editar..."
-
-#~ msgctxt ""
-#~ msgid "%1 (%2)"
-#~ msgstr "%1 (%2)"
-
-#~ msgctxt "@title:tab"
-#~ msgid "Passes & Programs"
-#~ msgstr "Pases y programas"
-
-#~ msgid "Direction: %1"
-#~ msgstr "Dirección: %1"
-
-#~ msgid "From: %1"
-#~ msgstr "De: %1"
-
-#~ msgid "To: %1"
-#~ msgstr "A: %1"
-
-#~ msgid "Arrival time: %1"
-#~ msgstr "Hora de llegada: %1"
-
-#~ msgctxt "flight departure, %1 is airport, %2 is time"
-#~ msgid "Departure from %1: %2"
-#~ msgstr "Salida de %1: %2"
-
-#~ msgctxt "flight arrival, %1 is airport, %2 is time"
-#~ msgid "Arrival at %1: %2"
-#~ msgstr "Llegada a %1: %2"
-
-#~ msgid "%1 to %2 (%3)"
-#~ msgstr "%1 a %2 (%3)"
-
-#~ msgid "Pl. %1"
-#~ msgstr "An. %1"
-
-#~ msgctxt "seat section, e.g. block in a stadium"
-#~ msgid "Section:"
-#~ msgstr "Sección:"
-
-#~ msgctxt "seat row"
-#~ msgid "Row:"
-#~ msgstr "Fila:"
-
-#~ msgctxt "seat number"
-#~ msgid "Number:"
-#~ msgstr "Número:"
-
-#~ msgctxt "seat type"
-#~ msgid "Type:"
-#~ msgstr "Tipo:"
-
-#~ msgctxt "coach of a train"
-#~ msgid "Coach:"
-#~ msgstr "Coche:"
-
-#~ msgctxt "Train seat"
-#~ msgid "Seat:"
-#~ msgstr "Asiento:"
-
-#~ msgid "Class:"
-#~ msgstr "Clase:"
-
-#~ msgid "Terminal: %1  Gate: %2  Seat: %3"
-#~ msgstr "Terminal: %1  Puerta: %2  Asiento: %3"
-
-#~ msgid "Export..."
-#~ msgstr "Exportar..."
-
-#~ msgid "Add Document..."
-#~ msgstr "Añadir documento..."
-
-#~ msgid "Pick..."
-#~ msgstr "Elegir..."
-
-#~ msgid "Scan Barcode..."
-#~ msgstr "Escanear código de barras..."
-
-#~ msgid "Import..."
-#~ msgstr "Importar..."
-
-#~ msgid "Settings..."
-#~ msgstr "Preferencias..."
-
-#~ msgid "Public Transport Information Sources..."
-#~ msgstr "Fuentes de información de transporte público..."
-
-#~ msgctxt "@title"
-#~ msgid "Find Amenity"
-#~ msgstr "Encontrar servicio"
-
-#~ msgid "Pass imported."
-#~ msgstr "Pase importado."
-
-#~ msgid "Calendar Import"
-#~ msgstr "Importación de calendario"
-
-#~ msgid "Import selected events"
-#~ msgstr "Importar los eventos seleccionados"
-
-#~ msgid "Ticket imported"
-#~ msgstr "Billete importado"
-
-#~ msgid "Import from Clipboard"
-#~ msgstr "Importar del portapapeles"
-
-#~ msgid "Vehicle Load:"
-#~ msgstr "Carga del vehículo:"
-
-#~ msgctxt "vehicle load"
-#~ msgid "FULL"
-#~ msgstr "Completa"
-
-#~ msgctxt "vehicle load"
-#~ msgid "Medium occupancy"
-#~ msgstr "Media ocupación"
-
-#~ msgctxt "vehicle load"
-#~ msgid "High occupancy"
-#~ msgstr "Alta ocupación"
-
-#~ msgid "%1 (not available)"
-#~ msgstr "%1 (no disponible)"
-
-#~ msgctxt "train coach feature"
-#~ msgid "Air conditioning"
-#~ msgstr "Aire acondicionado"
-
-#~ msgctxt "train coach feature"
-#~ msgid "Bistro or restaurant"
-#~ msgstr "Bistró o restaurante"
-
-#~ msgctxt "train coach feature"
-#~ msgid "Toddler area"
-#~ msgstr "Área para bebés"
-
-#~ msgctxt "train coach feature"
-#~ msgid "Family area"
-#~ msgstr "Área familiar"
-
-#~ msgctxt "train coach feature"
-#~ msgid "Wheelchair accessible"
-#~ msgstr "Accesible para sillas de ruedas"
-
-#~ msgctxt "train coach feature"
-#~ msgid "Quiet area"
-#~ msgstr "Área silenciosa"
-
-#~ msgctxt "train coach feature"
-#~ msgid "Business area"
-#~ msgstr "Área de negocios"
-
-#~ msgctxt "train coach feature"
-#~ msgid "Bike storage"
-#~ msgstr "Almacenamiento de bicicletas"
-
-#~ msgctxt "train coach feature"
-#~ msgid "Toilet"
-#~ msgstr "Lavabo"
-
-#~ msgctxt "train coach feature"
-#~ msgid "Wheelchair accessible toilet"
-#~ msgstr "Lavabo accesible para sillas de ruedas"
-
-#~ msgctxt "train coach feature"
-#~ msgid "Information point"
-#~ msgstr "Punto de información"
-
-#~ msgctxt "train coach feature"
-#~ msgid "Wi-Fi"
-#~ msgstr "Wifi"
-
-#~ msgctxt "train coach feature"
-#~ msgid "Power sockets"
-#~ msgstr "Tomas de corriente"
-
-#~ msgctxt "vehicle load"
-#~ msgid "Low"
-#~ msgstr "Baja"
-
-#~ msgctxt "vehicle load"
-#~ msgid "Medium"
-#~ msgstr "Media"
-
-#~ msgctxt "vehicle load"
-#~ msgid "High"
-#~ msgstr "Alta"
-
-#~ msgid "document-open"
-#~ msgstr "abrir documento"
-
-#~ msgid "Depature Time"
-#~ msgstr "Hora de salida"
-
-#~ msgid "%1 intermediate stops"
-#~ msgstr "%1 paradas intermedias"
-
-#~ msgctxt "departure time for a train"
-#~ msgid "Departure time:"
-#~ msgstr "Hora de salida:"
-
-#~ msgid "(+ 1 day)"
-#~ msgstr "(+ 1 día)"
-
-#~ msgctxt "Arrival at the location is a day later"
-#~ msgid "(+ 1 day)"
-#~ msgstr "(+ 1 día)"
-
-#~ msgctxt "Train departure"
-#~ msgid "Departure from %1 on platform %2"
-#~ msgstr "Salida de %1 del andén %2"
-
-#~ msgctxt "Train departure"
-#~ msgid "Departure from %1"
-#~ msgstr "Salida de %1"
-
-#~ msgctxt "Train arrival"
-#~ msgid "Arrival at %1 on platform %2"
-#~ msgstr "Llegada a %1 en el andén %2"
-
-#~ msgctxt "Train arrival"
-#~ msgid "Arrival at %1"
-#~ msgstr "Llegada a %1"
-
-#~ msgid "Passes && Programs"
-#~ msgstr "Pases y programas"
-
-#~ msgctxt "currency conversion rate"
-#~ msgid "1 %1 = %2 %3"
-#~ msgstr "1 %1 = %2 %3"
-
-#~ msgid "Export trip to GPX"
-#~ msgstr "Exportar viaje a GPX"
-
-#~ msgid "PkPass or JSON-LD file to import."
-#~ msgstr "Archivo PkPass o JSON-LD a importar."
-
-#~ msgid "Application"
-#~ msgstr "Aplicación"
-
-#~ msgid "Version"
-#~ msgstr "Versión"
-
-#~ msgid "Data providers: %1"
-#~ msgstr "Proveedores de datos: %1"
-
-#~ msgid "Select..."
-#~ msgstr "Seleccionar..."
-
-#~ msgid "Select transfer..."
-#~ msgstr "Seleccionar trasbordo..."
-
-#~| msgid "Depature Time"
-#~ msgctxt "Boat departure"
-#~ msgid "Deparutre Time"
-#~ msgstr "Hora de salida"
-
-#~ msgid "Frequent Traveler Program"
-#~ msgstr "Programa de viajero frecuente"
-
-#~ msgctxt "name of a frequent flyer program"
-#~ msgid "Program"
-#~ msgstr "Programa"
-
-#~ msgid "%1°C / %2°C"
-#~ msgstr "%1°C / %2°C"
-
-#~ msgctxt "flight departure"
-#~ msgid "Departure"
-#~ msgstr "Salida"
-
-#~ msgctxt "flight departure time"
-#~ msgid "Departure time:"
-#~ msgstr "Hora de salida:"
-
-#~ msgctxt "flight departure terminal"
-#~ msgid "Departure terminal:"
-#~ msgstr "Terminal de salida:"
-
-#~ msgctxt "flight departure gate"
-#~ msgid "Departure gate:"
-#~ msgstr "Puerta de embarque:"
-
-#~ msgid "Telephone:"
-#~ msgstr "Teléfono:"
-
-#~ msgid "Email:"
-#~ msgstr "Correo electrónico:"
-
-#~ msgid "Pick coordinate"
-#~ msgstr "Elegir coordenadas"
-
-#~ msgctxt "train station"
-#~ msgid "Station:"
-#~ msgstr "Estación:"
-
-#~ msgid "Reference:"
-#~ msgstr "Referencia:"
-
-#~ msgid "%1°C"
-#~ msgstr "%1°C"
-
-#~ msgid "☂ %1 mm"
-#~ msgstr "☂ %1 mm"
-
-#~ msgid "🌬️ %1 m/s"
-#~ msgstr "🌬️ %1 m/s"
-
-#~ msgid "Temperature: %1°C"
-#~ msgstr "Temperatura: %1°C"
-
-#~ msgid "Temperature: %1°C / %2°C"
-#~ msgstr "Temperatura: %1°C / %2°C"
-
-#~ msgid "Precipitation: %1 mm"
-#~ msgstr "Lluvia: %1 mm"
-
-#~ msgid "%1m"
-#~ msgstr "%1 m"
-
-#~ msgid "%1km"
-#~ msgstr "%1 km"
-
-#~ msgctxt "%1 is month name, %2 is year"
-#~ msgid "%1 %2"
-#~ msgstr "%1 de %2"
-
-#~ msgctxt "kirigami-addons"
-#~ msgid "Days"
-#~ msgstr "Días"
-
-#~ msgctxt "kirigami-addons"
-#~ msgid "Months"
-#~ msgstr "Meses"
-
-#~ msgctxt "kirigami-addons"
-#~ msgid "Years"
-#~ msgstr "Años"
-
-#~ msgid "Previous"
-#~ msgstr "Anterior"
-
-#~ msgid "Next"
-#~ msgstr "Siguiente"
-
-#~ msgid "Cancel"
-#~ msgstr "Cancelar"
-
-#~ msgid "Number:"
-#~ msgstr "Número:"
-
-#~| msgid "Boarding time:"
-#~ msgid "Bording time"
-#~ msgstr "Hora de embarque"
-
-#~ msgid "Documents (%1)"
-#~ msgstr "Documentos (%1)"
-
-#~ msgid "Open Document"
-#~ msgstr "Abrir documento"
-
-#~ msgctxt "flight arrival"
-#~ msgid "Arrival"
-#~ msgstr "Llegada"
-
-#~ msgctxt "name of a frequent flyer program"
-#~ msgid "Program:"
-#~ msgstr "Programa:"
-
-#~ msgid "Elevator"
-#~ msgstr "Ascensor"
-
-#~ msgctxt "@action"
-#~ msgid "Hide Names"
-#~ msgstr "Ocultar nombres"
-
-#~ msgctxt "@title:window"
-#~ msgid "Edit date/time"
-#~ msgstr "Editar fecha/hora"
-
-#~ msgid "Ok"
-#~ msgstr "Aceptar"
-
-#~ msgid "Check Calendar"
-#~ msgstr "Comprobar el calendario"
-
-#~ msgid "Currencies: %1"
-#~ msgstr "Divisas: %1"
-
-#~ msgid "@action:button"
-#~ msgstr "@action:button"
-
-#~ msgid "People are driving on the wrong side."
-#~ msgstr "La gente está conduciendo en el lado incorrecto."
-
-#~ msgid "NAA Test:"
-#~ msgstr "Prueba NAA:"
-
-#~ msgid "RAT Test:"
-#~ msgstr "Prueba RAT:"
-
-#~ msgctxt "a train/bus journey cancelled by its operator"
-#~ msgid "Cancelled"
-#~ msgstr "Cancelado"
-
-#~ msgid "<p>There's a number of ways to import data into KDE Itinerary:<ul>"
-#~ msgstr "<p>Existen varias formas de importar datos en KDE Itinerary:<ul>"
-
-#~ msgid "Postal Code:"
-#~ msgstr "Código postal:"
-
-#~ msgid "Pick Home Location"
-#~ msgstr "Seleccionar ubicación inicial"
-
-#~ msgid "%1 (%3/%4)"
-#~ msgstr "%1 (%3/%4)"
-
-#~ msgid "%1 %2°C ☂ %3mm"
-#~ msgstr "%1 %2°C ☂ %3 mm"
-
-#~ msgid "%1 %2°C / %3°C"
-#~ msgstr "%1 %2°C / %3°C"
-
-#~ msgid "%1 %2°C / %3°C ☂ %4 mm"
-#~ msgstr "%1 %2°C / %3°C ☂ %4 mm"
-
-#~ msgid ""
-#~ "All Files (*.*);;PkPass files (*.pkpass);;PDF files (*.pdf);;KDE "
-#~ "Itinerary files (*.itinerary)"
-#~ msgstr ""
-#~ "Todos los archivos (*.*);;Archivos de PkPass (*.pkpass);;Archivos PDF (*."
-#~ "pdf);;Archivos de KDE Itinerary (*.itinerary)"
-
-#~ msgid "JSON files (*.json)"
-#~ msgstr "Archivos JSON (*.json)"
+#~ msgctxt "Duration in hours and minutes"
+#~ msgid "%1 hr"
+#~ msgstr "%1 h"
+
+#~ msgctxt "Duration in hours and minutes"
+#~ msgid "%1 hr %2 min"
+#~ msgstr "%1 h y %2 m"

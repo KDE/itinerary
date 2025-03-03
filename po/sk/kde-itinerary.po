@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-02 00:41+0000\n"
+"POT-Creation-Date: 2025-03-03 00:41+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -2443,38 +2443,19 @@ msgid "dd MMMM"
 msgstr ""
 
 #: app/localizer.cpp:245
-#, fuzzy, kde-format
-#| msgid "☂ %1 mm"
-msgctxt "Duration in minutes"
-msgid "%1 min"
-msgstr "☂ %1 mm"
-
-#: app/localizer.cpp:247
-#, kde-format
-msgctxt "Duration in hours and minutes"
-msgid "%1 hr"
-msgstr ""
-
-#: app/localizer.cpp:249
-#, kde-format
-msgctxt "Duration in hours and minutes"
-msgid "%1 hr %2 min"
-msgstr ""
-
-#: app/localizer.cpp:270
 #, kde-format
 msgctxt "weight in gram"
 msgid "%1 g"
 msgstr ""
 
-#: app/localizer.cpp:273 app/localizer.cpp:275
+#: app/localizer.cpp:248 app/localizer.cpp:250
 #, fuzzy, kde-format
 #| msgid "%1 kg"
 msgctxt "weight in kilogram"
 msgid "%1 kg"
 msgstr "%1 kg"
 
-#: app/localizer.cpp:290
+#: app/localizer.cpp:265
 #, fuzzy, kde-format
 #| msgid "%1°C / %2°C"
 msgctxt "temperature range"
@@ -4876,6 +4857,12 @@ msgstr ""
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "Autobus %1 z %2 do %3"
+
+#, fuzzy
+#~| msgid "☂ %1 mm"
+#~ msgctxt "Duration in minutes"
+#~ msgid "%1 min"
+#~ msgstr "☂ %1 mm"
 
 #, fuzzy
 #~| msgid "☂ %1 mm"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kitinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-02 00:41+0000\n"
+"POT-Creation-Date: 2025-03-03 00:41+0000\n"
 "PO-Revision-Date: 2023-07-14 22:15+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -2382,38 +2382,18 @@ msgid "dd MMMM"
 msgstr "dd de MMMM"
 
 #: app/localizer.cpp:245
-#, fuzzy, kde-format
-#| msgctxt "distance in meter"
-#| msgid "%1 m"
-msgctxt "Duration in minutes"
-msgid "%1 min"
-msgstr "%1 m"
-
-#: app/localizer.cpp:247
-#, kde-format
-msgctxt "Duration in hours and minutes"
-msgid "%1 hr"
-msgstr ""
-
-#: app/localizer.cpp:249
-#, kde-format
-msgctxt "Duration in hours and minutes"
-msgid "%1 hr %2 min"
-msgstr ""
-
-#: app/localizer.cpp:270
 #, kde-format
 msgctxt "weight in gram"
 msgid "%1 g"
 msgstr "%1 g"
 
-#: app/localizer.cpp:273 app/localizer.cpp:275
+#: app/localizer.cpp:248 app/localizer.cpp:250
 #, kde-format
 msgctxt "weight in kilogram"
 msgid "%1 kg"
 msgstr "%1 kg"
 
-#: app/localizer.cpp:290
+#: app/localizer.cpp:265
 #, kde-format
 msgctxt "temperature range"
 msgid "%1 / %2"
@@ -4852,6 +4832,13 @@ msgstr "Encerrar"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 de %3 até %4 a %5"
+
+#, fuzzy
+#~| msgctxt "distance in meter"
+#~| msgid "%1 m"
+#~ msgctxt "Duration in minutes"
+#~ msgid "%1 min"
+#~ msgstr "%1 m"
 
 #~ msgctxt "distance in meter"
 #~ msgid "%1 m"
