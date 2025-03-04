@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the itinerary package.
 #
-# SPDX-FileCopyrightText: 2024 Yaron Shahrabani <sh.yaron@gmail.com>
+# SPDX-FileCopyrightText: 2024, 2025 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-03 00:41+0000\n"
-"PO-Revision-Date: 2024-12-27 08:33+0200\n"
+"PO-Revision-Date: 2025-03-02 07:30+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 24.12.0\n"
+"X-Generator: Lokalize 24.12.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -3330,15 +3330,14 @@ msgid "Settings"
 msgstr "הגדרות"
 
 #: app/SettingsPage.qml:29
-#, fuzzy, kde-format
-#| msgid "Location"
+#, kde-format
 msgid "Localization"
-msgstr "מקום"
+msgstr "התאמה מקומית"
 
 #: app/SettingsPage.qml:38
 #, kde-format
 msgid "Use metric units"
-msgstr ""
+msgstr "להשתמש ביחידות מטריות"
 
 #: app/SettingsPage.qml:39
 #, kde-format
@@ -3346,6 +3345,7 @@ msgid ""
 "Use metric units for distance and temperature values regardless of the "
 "platform region settings."
 msgstr ""
+"להשתמש ביחידות מטריות לערכי מרחק וטמפרטורה ללא תלות בהגדרות אזור הפלטפורמה."
 
 #: app/SettingsPage.qml:48
 #, kde-format
