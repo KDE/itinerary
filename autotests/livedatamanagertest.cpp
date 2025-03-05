@@ -46,19 +46,19 @@ private Q_SLOTS:
 
         {
             LiveData ld;
-            ld.departure.setScheduledDepartureTime({{2017, 9, 10}, {11, 0}});
-            ld.departureTimestamp = {{2017, 1, 1}, {0, 0}};
-            ld.store(s("testId"), LiveData::Departure);
+            ld.journey.setMode(KPublicTransport::JourneySection::PublicTransport);
+            ld.journey.setScheduledDepartureTime({{2017, 9, 10}, {11, 0}});
+            ld.journeyTimestamp = {{2017, 1, 1}, {0, 0}};
+            ld.store(s("testId"), LiveData::Journey);
         }
 
         QCOMPARE(LiveData::listAll(), std::vector<QString>({s("testId")}));
 
         {
             auto ld = LiveData::load(s("testId"));
-            QCOMPARE(ld.departure.scheduledDepartureTime(), QDateTime({2017, 9, 10}, {11, 0}));
-            QCOMPARE(ld.departureTimestamp, QDateTime({2017, 1, 1}, {0, 0}));
-            QVERIFY(!ld.arrivalTimestamp.isValid());
-            ld.departure = {};
+            QCOMPARE(ld.journey.scheduledDepartureTime(), QDateTime({2017, 9, 10}, {11, 0}));
+            QCOMPARE(ld.journeyTimestamp, QDateTime({2017, 1, 1}, {0, 0}));
+            ld.journey = {};
             ld.store(s("testId"), LiveData::AllTypes);
         }
 
