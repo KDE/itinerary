@@ -1,16 +1,16 @@
 # Translation of kde-itinerary.po to Catalan (Valencian)
-# Copyright (C) 2019-2024 This_file_is_part_of_KDE
+# Copyright (C) 2019-2025 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
 # SPDX-FileCopyrightText: 2019, 2020, 2021, 2022, 2023, 2024 Antoni Bella Pérez <antonibella5@yahoo.com>
-# SPDX-FileCopyrightText: 2019, 2020, 2021, 2022, 2023, 2024 Josep M. Ferrer <txemaq@gmail.com>
+# SPDX-FileCopyrightText: 2019, 2020, 2021, 2022, 2023, 2024, 2025 Josep M. Ferrer <txemaq@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-03 00:41+0000\n"
-"PO-Revision-Date: 2024-12-26 10:52+0100\n"
+"PO-Revision-Date: 2025-03-02 09:56+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -3359,15 +3359,14 @@ msgid "Settings"
 msgstr "Configuració"
 
 #: app/SettingsPage.qml:29
-#, fuzzy, kde-format
-#| msgid "Location"
+#, kde-format
 msgid "Localization"
 msgstr "Ubicació"
 
 #: app/SettingsPage.qml:38
 #, kde-format
 msgid "Use metric units"
-msgstr ""
+msgstr "Utilitza unitats mètriques"
 
 #: app/SettingsPage.qml:39
 #, kde-format
@@ -3375,6 +3374,8 @@ msgid ""
 "Use metric units for distance and temperature values regardless of the "
 "platform region settings."
 msgstr ""
+"Utilitza unitats mètriques per als valors de distància i temperatura "
+"independentment de la configuració de la regió de la plataforma."
 
 #: app/SettingsPage.qml:48
 #, kde-format
@@ -4641,52 +4642,3 @@ msgstr "Ha finalitzat la sessió"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 des de %3 a %4 el %5"
-
-#~ msgctxt "Duration in minutes"
-#~ msgid "%1 min"
-#~ msgstr "%1 min"
-
-#~ msgctxt "Duration in hours and minutes"
-#~ msgid "%1 hr"
-#~ msgstr "%1 h"
-
-#~ msgctxt "Duration in hours and minutes"
-#~ msgid "%1 hr %2 min"
-#~ msgstr "%1 h %2 min"
-
-#~ msgctxt "distance in meter"
-#~ msgid "%1 m"
-#~ msgstr "%1 m"
-
-#~ msgctxt "distance in kilometer"
-#~ msgid "%1 km"
-#~ msgstr "%1 km"
-
-#~ msgctxt "speed in kilometers per hour"
-#~ msgid "%1 km/h"
-#~ msgstr "%1 km/h"
-
-#~ msgctxt "temperature"
-#~ msgid "%1°C"
-#~ msgstr "%1°C"
-
-#~ msgid "Walk"
-#~ msgstr "Caminar"
-
-#~ msgid "Wait"
-#~ msgstr "Esperar"
-
-#~ msgid "Rented bicycle"
-#~ msgstr "Bicicleta llogada"
-
-#~ msgid "Rented moped"
-#~ msgstr "Ciclomotor llogat"
-
-#~ msgid "Rented kick scooter"
-#~ msgstr "Patinet elèctric llogat"
-
-#~ msgid "Rented car"
-#~ msgstr "Cotxe llogat"
-
-#~ msgid "Bicycle"
-#~ msgstr "Bicicleta"

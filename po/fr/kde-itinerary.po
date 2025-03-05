@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-03 00:41+0000\n"
-"PO-Revision-Date: 2025-01-08 12:11+0100\n"
+"PO-Revision-Date: 2025-03-03 09:42+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Accelerator-Marker: &\n"
 "X-Environment: kde\n"
-"X-Generator: Lokalize 24.12.0\n"
+"X-Generator: Lokalize 24.12.2\n"
 "X-Text-Markup: kde4\n"
 
 #, kde-format
@@ -3375,15 +3375,14 @@ msgid "Settings"
 msgstr "Configuration"
 
 #: app/SettingsPage.qml:29
-#, fuzzy, kde-format
-#| msgid "Location"
+#, kde-format
 msgid "Localization"
-msgstr "Emplacement"
+msgstr "Localisation"
 
 #: app/SettingsPage.qml:38
 #, kde-format
 msgid "Use metric units"
-msgstr ""
+msgstr "Utiliser des unités métriques"
 
 #: app/SettingsPage.qml:39
 #, kde-format
@@ -3391,6 +3390,8 @@ msgid ""
 "Use metric units for distance and temperature values regardless of the "
 "platform region settings."
 msgstr ""
+"Utilisez des unités métriques pour les valeurs de distance et de "
+"température, quelque soit la configuration de la région de la plate-forme."
 
 #: app/SettingsPage.qml:48
 #, kde-format
