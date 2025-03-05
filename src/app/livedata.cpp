@@ -50,18 +50,6 @@ static QJsonObject loadOne(const QString &resId, LiveData::Type type, QDateTime 
     return JsonIO::read(f.readAll()).toObject();
 }
 
-KPublicTransport::Stopover LiveData::stopover(LiveData::Type type) const
-{
-    assert(type == Arrival || type == Departure);
-    return type == Arrival ? arrival : departure;
-}
-
-void LiveData::setStopover(LiveData::Type type, const KPublicTransport::Stopover &stop)
-{
-    assert(type == Arrival || type == Departure);
-    type == Arrival ? arrival = stop : departure = stop;
-}
-
 void LiveData::setTimestamp(LiveData::Type type, const QDateTime &dt)
 {
     switch (type) {

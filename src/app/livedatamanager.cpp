@@ -299,8 +299,8 @@ static void applyMissingJourneyData(KPublicTransport::JourneySection &journey, c
 void LiveDataManager::updateJourneyData(const KPublicTransport::JourneySection &journey, const QString &resId, const QVariant &res)
 {
     auto &ld = data(resId);
-    const auto oldDep = ld.stopover(LiveData::Departure);
-    const auto oldArr = ld.stopover(LiveData::Arrival);
+    const auto oldDep = ld.departure;
+    const auto oldArr = ld.arrival;
     const auto oldJny = ld.journey;
     ld.journey = journey;
 
