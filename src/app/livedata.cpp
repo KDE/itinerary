@@ -17,64 +17,33 @@
 
 using namespace Qt::Literals::StringLiterals;
 
-[[nodiscard]] static QString basePath(LiveData::Type type)
-{
-    QString typeStr;
-    switch (type) {
-    case LiveData::Departure:
-        typeStr = u"departure"_s;
-        break;
-    case LiveData::Arrival:
-        typeStr = u"arrival"_s;
-        break;
-    case LiveData::Journey:
-        typeStr = u"journey"_s;
-        break;
-    default:
-        assert(false);
-    }
-    return QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + "/publictransport/"_L1 + typeStr + '/'_L1;
-}
-
-static QJsonObject loadOne(const QString &resId, LiveData::Type type, QDateTime &timestamp)
-{
-    const auto path = basePath(type);
-
-    QFile f(path + resId + ".json"_L1);
-    if (!f.open(QFile::ReadOnly)) {
-        timestamp = {};
-        return {};
-    }
-
-    timestamp = f.fileTime(QFile::FileModificationTime);
-    return JsonIO::read(f.readAll()).toObject();
-}
-
 bool LiveData::isEmpty() const
 {
-    return departure.stopPoint().isEmpty() && arrival.stopPoint().isEmpty() && journey.from().isEmpty() && journey.to().isEmpty();
+    return journey.from().isEmpty() && journey.to().isEmpty();
 }
 
 LiveData LiveData::load(const QString &resId)
 {
-    QDateTime dummy;
     LiveData ld;
-    auto obj = loadOne(resId, Departure, dummy);
-    ld.departure = KPublicTransport::Stopover::fromJson(obj);
-    obj = loadOne(resId, Arrival, dummy);
-    ld.arrival = KPublicTransport::Stopover::fromJson(obj);
-    obj = loadOne(resId, Journey, ld.journeyTimestamp);
-    ld.journey = KPublicTransport::JourneySection::fromJson(obj);
+
+    QFile f(basePath() + resId + ".json"_L1);
+    if (!f.open(QFile::ReadOnly)) {
+        return ld;
+    }
+
+    ld.journeyTimestamp = f.fileTime(QFile::FileModificationTime);
+    ld.journey = KPublicTransport::JourneySection::fromJson(JsonIO::read(f.readAll()).toObject());
     return ld;
 }
 
-static void storeOne(const QString &resId, LiveData::Type type, const QJsonObject &obj, const QDateTime &dt)
+void LiveData::store(const QString &resId) const
 {
-    const auto path = basePath(type);
+    const auto path = basePath();
     QDir().mkpath(path);
 
     const QString fileName = path + resId + ".json"_L1;
 
+    const auto obj = KPublicTransport::JourneySection::toJson(journey);
     if (obj.isEmpty()) {
         QFile::remove(fileName);
     } else {
@@ -88,51 +57,22 @@ static void storeOne(const QString &resId, LiveData::Type type, const QJsonObjec
 
         // mtime changes need to be done without content changes to take effect
         file.open(QFile::WriteOnly | QFile::Append);
-        file.setFileTime(dt, QFile::FileModificationTime);
+        file.setFileTime(journeyTimestamp, QFile::FileModificationTime);
         file.close();
-    }
-}
-
-void LiveData::store(const QString &resId, int types) const
-{
-    if (types & Departure) {
-        storeOne(resId, Departure, KPublicTransport::Stopover::toJson(departure), journeyTimestamp);
-    }
-    if (types & Arrival) {
-        storeOne(resId, Arrival, KPublicTransport::Stopover::toJson(arrival), journeyTimestamp);
-    }
-    if (types & Journey) {
-        storeOne(resId, Journey, KPublicTransport::JourneySection::toJson(journey), journeyTimestamp);
     }
 }
 
 void LiveData::remove(const QString &resId)
 {
-    for (auto type : {Departure, Arrival, Journey}) {
-        storeOne(resId, type, {}, {});
-    }
-}
-
-static void listOne(LiveData::Type type, std::vector<QString> &ids)
-{
-    QDir dir(basePath(type));
-    QDirIterator it(basePath(type), QDir::Files);
-    while (it.hasNext()) {
-        it.next();
-        const auto id = it.fileInfo().baseName();
-        const auto idIt = std::lower_bound(ids.begin(), ids.end(), id);
-        if (idIt != ids.end() && (*idIt) == id) {
-            continue;
-        }
-        ids.insert(idIt, id);
-    }
+    QFile::remove(basePath() + resId + ".json"_L1);
 }
 
 std::vector<QString> LiveData::listAll()
 {
     std::vector<QString> ids;
-    for (auto type : {Departure, Arrival, Journey}) {
-        listOne(type, ids);
+    for (QDirIterator it(basePath(), QDir::Files); it.hasNext();) {
+        it.next();
+        ids.push_back(it.fileInfo().baseName());
     }
     return ids;
 }
@@ -140,8 +80,6 @@ std::vector<QString> LiveData::listAll()
 QJsonObject LiveData::toJson(const LiveData &ld)
 {
     QJsonObject obj;
-    obj.insert("departure"_L1, KPublicTransport::Stopover::toJson(ld.departure));
-    obj.insert("arrival"_L1, KPublicTransport::Stopover::toJson(ld.arrival));
     obj.insert("journey"_L1, KPublicTransport::JourneySection::toJson(ld.journey));
     obj.insert("journeyTimestamp"_L1, ld.journeyTimestamp.toString(Qt::ISODate));
     return obj;
@@ -150,20 +88,28 @@ QJsonObject LiveData::toJson(const LiveData &ld)
 LiveData LiveData::fromJson(const QJsonObject &obj)
 {
     LiveData ld;
-    ld.departure = KPublicTransport::Stopover::fromJson(obj.value("departure"_L1).toObject());
-    ld.arrival = KPublicTransport::Stopover::fromJson(obj.value("arrival"_L1).toObject());
     ld.journey = KPublicTransport::JourneySection::fromJson(obj.value("journey"_L1).toObject());
     ld.journeyTimestamp = QDateTime::fromString(obj.value("journeyTimestamp"_L1).toString(), Qt::ISODate);
+
+    // backward compatibility
+    if (auto it = obj.find("departure"_L1); it != obj.end()) {
+        const auto dep = KPublicTransport::Stopover::fromJson((*it).toObject());
+        ld.journey.setDeparture(dep);
+    }
+    if (auto it = obj.find("arrival"_L1); it != obj.end()) {
+        const auto arr = KPublicTransport::Stopover::fromJson((*it).toObject());
+        ld.journey.setArrival(arr);
+    }
+
     return ld;
+}
+
+QString LiveData::basePath()
+{
+    return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/livedata/"_L1;
 }
 
 void LiveData::clearStorage()
 {
-    for (auto type : {Departure, Arrival, Journey}) {
-        const auto path = basePath(type);
-        if (path.isEmpty()) {
-            continue; // just to not accidentally kill everything...
-        }
-        QDir(path).removeRecursively();
-    }
+    QDir(basePath()).removeRecursively();
 }

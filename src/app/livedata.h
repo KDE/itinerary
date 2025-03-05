@@ -17,19 +17,20 @@
 class LiveData
 {
 public:
-    enum Type { NoType = 0, Departure = 1, Arrival = 2, Journey = 4, AllTypes = Departure | Arrival | Journey };
+    enum Type { NoType = 0, Departure = 1, Arrival = 2, Journey = 4 };
 
     [[nodiscard]] bool isEmpty() const;
 
-    KPublicTransport::Stopover departure;
-    KPublicTransport::Stopover arrival;
     KPublicTransport::JourneySection journey;
     QDateTime journeyTimestamp;
+
+    [[nodiscard]] inline KPublicTransport::Stopover departure() const { return journey.departure(); }
+    [[nodiscard]] inline KPublicTransport::Stopover arrival() const { return journey.arrival(); }
 
     /** Load live data for reservation batch with id @resId. */
     [[nodiscard]] static LiveData load(const QString &resId);
     /** Store this data for reservation batch @p resId. */
-    void store(const QString &resId, int types = AllTypes) const;
+    void store(const QString &resId) const;
     /** Removes all stored data for a given id. */
     static void remove(const QString &resId);
 
@@ -42,6 +43,11 @@ public:
     [[nodiscard]] static QJsonObject toJson(const LiveData &ld);
     /** Deserialize from JSON. */
     [[nodiscard]] static LiveData fromJson(const QJsonObject &obj);
+
+    /** Base path for live data storage.
+     *  Do not use directly, only exposed for data migration.
+     */
+    [[nodiscard]] static QString basePath();
 
     /** Clears all stored live data.
      *  @internal For unit tests only.

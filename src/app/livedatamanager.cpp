@@ -138,12 +138,12 @@ void LiveDataManager::setShowNotificationsOnLockScreen(bool enabled)
 
 KPublicTransport::Stopover LiveDataManager::arrival(const QString &resId) const
 {
-    return data(resId).arrival;
+    return data(resId).journey.arrival();
 }
 
 KPublicTransport::Stopover LiveDataManager::departure(const QString &resId) const
 {
-    return data(resId).departure;
+    return data(resId).journey.departure();
 }
 
 KPublicTransport::JourneySection LiveDataManager::journey(const QString &resId) const
@@ -156,9 +156,7 @@ void LiveDataManager::setJourney(const QString &resId, const KPublicTransport::J
     auto &ld = data(resId);
     ld.journey = journey;
     ld.journeyTimestamp = now();
-    ld.departure = journey.departure();
-    ld.arrival = journey.arrival();
-    ld.store(resId, LiveData::AllTypes);
+    ld.store(resId);
 
     Q_EMIT journeyUpdated(resId);
 }
@@ -293,27 +291,21 @@ static void applyMissingJourneyData(KPublicTransport::JourneySection &journey, c
 void LiveDataManager::updateJourneyData(const KPublicTransport::JourneySection &journey, const QString &resId, const QVariant &res)
 {
     auto &ld = data(resId);
-    const auto oldDep = ld.departure;
-    const auto oldArr = ld.arrival;
     const auto oldJny = ld.journey;
     ld.journey = journey;
 
     // retain already existing vehicle/platform layout data if we are still departing/arriving in the same place
-    if (PublicTransport::isSameStopoverForLayout(ld.departure, journey.departure())) {
-        ld.journey.setDeparture(applyLayoutData(journey.departure(), ld.departure));
+    if (PublicTransport::isSameStopoverForLayout(oldJny.departure(), journey.departure())) {
+        ld.journey.setDeparture(applyLayoutData(journey.departure(), oldJny.departure()));
     }
-    if (PublicTransport::isSameStopoverForLayout(ld.arrival, journey.arrival())) {
-        ld.journey.setArrival(applyLayoutData(journey.arrival(), ld.arrival));
+    if (PublicTransport::isSameStopoverForLayout(oldJny.arrival(), journey.arrival())) {
+        ld.journey.setArrival(applyLayoutData(journey.arrival(), oldJny.arrival()));
     }
     applyMissingJourneyData(ld.journey, oldJny);
 
     ld.journey.applyMetaData(true); // download logo assets if needed
     ld.journeyTimestamp = now();
-    ld.departure = ld.journey.departure();
-    ld.departure.addNotes(oldDep.notes());
-    ld.arrival = ld.journey.arrival();
-    ld.arrival.setNotes(oldArr.notes());
-    ld.store(resId, LiveData::AllTypes);
+    ld.store(resId);
 
     // update reservation with live data
     std::vector<ReservationManager::ReservationChange> resUpdates;
@@ -331,8 +323,8 @@ void LiveDataManager::updateJourneyData(const KPublicTransport::JourneySection &
     Q_EMIT journeyUpdated(resId);
 
     // check if we need to notify
-    if (NotificationHelper::shouldNotify(oldDep, ld.journey.departure(), LiveData::Departure)
-        || NotificationHelper::shouldNotify(oldArr, ld.journey.arrival(), LiveData::Arrival)) {
+    if (NotificationHelper::shouldNotify(oldJny.departure(), ld.journey.departure(), LiveData::Departure)
+        || NotificationHelper::shouldNotify(oldJny.arrival(), ld.journey.arrival(), LiveData::Arrival)) {
         showNotification(resId, ld);
     }
 }
@@ -487,15 +479,9 @@ void LiveDataManager::batchChanged(const QString &resId)
     const auto dataIt = m_data.find(resId);
     if (dataIt != m_data.end()) {
         if ((*dataIt).journeyTimestamp.isValid() && !PublicTransportMatcher::isJourneyForReservation(res, (*dataIt).journey)) {
-            (*dataIt).departure = {};
-            (*dataIt).store(resId, LiveData::Departure);
-
-            (*dataIt).arrival = {};
-            (*dataIt).store(resId, LiveData::Arrival);
-
             (*dataIt).journey = {};
             (*dataIt).journeyTimestamp = {};
-            (*dataIt).store(resId, LiveData::Journey);
+            (*dataIt).store(resId);
             Q_EMIT journeyUpdated(resId);
         }
     }

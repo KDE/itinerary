@@ -14,6 +14,7 @@ public:
 
 private:
     static void dropTripGroupExpandCollapseState();
+    static void moveLiveData();
 };
 
 #endif

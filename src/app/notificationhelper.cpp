@@ -45,11 +45,8 @@ bool NotificationHelper::shouldNotify(const Stopover &oldStop, const Stopover &n
 
 static QString lineName(const LiveData &data)
 {
-    if (!data.departure.route().line().name().isEmpty()) {
-        return data.departure.route().line().name();
-    }
-    if (!data.arrival.route().line().name().isEmpty()) {
-        return data.arrival.route().line().name();
+    if (!data.journey.route().line().name().isEmpty()) {
+        return data.journey.route().line().name();
     }
     qCWarning(Log) << "Trying to create notification but no line name available!?";
     return {};
@@ -57,13 +54,13 @@ static QString lineName(const LiveData &data)
 
 QString NotificationHelper::title(const LiveData &data)
 {
-    if (data.departure.disruptionEffect() != Disruption::NormalService || data.arrival.disruptionEffect() != Disruption::NormalService) {
+    if (data.departure().disruptionEffect() != Disruption::NormalService || data.arrival().disruptionEffect() != Disruption::NormalService) {
         return i18n("Disruption on %1", lineName(data));
     }
 
-    const auto platformChange = data.departure.platformChanged() || data.arrival.platformChanged();
-    const auto oneDelay = data.departure.departureDelay() != 0 || data.arrival.arrivalDelay() > 0;
-    const auto multiDelay = data.departure.departureDelay() != 0 && data.arrival.arrivalDelay() > 0;
+    const auto platformChange = data.departure().platformChanged() || data.arrival().platformChanged();
+    const auto oneDelay = data.departure().departureDelay() != 0 || data.arrival().arrivalDelay() > 0;
+    const auto multiDelay = data.departure().departureDelay() != 0 && data.arrival().arrivalDelay() > 0;
 
     if (platformChange && oneDelay) {
         return i18n("Changes on %1", lineName(data));
@@ -72,13 +69,13 @@ QString NotificationHelper::title(const LiveData &data)
     if (multiDelay) {
         return i18n("Delays on %1", lineName(data));
     }
-    if (data.departure.departureDelay() > 0) {
+    if (data.departure().departureDelay() > 0) {
         return i18n("Delayed departure on %1", lineName(data));
     }
-    if (data.departure.departureDelay() < 0) {
+    if (data.departure().departureDelay() < 0) {
         return i18n("Earlier departure on %1", lineName(data));
     }
-    if (data.arrival.arrivalDelay() > 0) {
+    if (data.arrival().arrivalDelay() > 0) {
         return i18n("Delayed arrival on %1", lineName(data));
     }
 
@@ -92,29 +89,29 @@ QString NotificationHelper::title(const LiveData &data)
 QString NotificationHelper::message(const LiveData &data)
 {
     QStringList msgs;
-    if (data.departure.disruptionEffect() == Disruption::NoService) {
+    if (data.departure().disruptionEffect() == Disruption::NoService) {
         msgs.push_back(i18nc("a train/bus journey canceled by its operator", "Trip has been canceled."));
-    } else if (data.arrival.disruptionEffect() == Disruption::NoService) {
+    } else if (data.arrival().disruptionEffect() == Disruption::NoService) {
         msgs.push_back(i18nc("a train/bus journey canceled by its operator", "Arrival has been canceled."));
     }
 
-    if (data.departure.departureDelay() > 0) {
+    if (data.departure().departureDelay() > 0) {
         msgs.push_back(
-            i18n("New departure time is: %1 (+%2)", QLocale().toString(data.departure.expectedDepartureTime().time()), data.departure.departureDelay()));
-    } else if (data.departure.departureDelay() < 0) {
+            i18n("New departure time is: %1 (+%2)", QLocale().toString(data.journey.departure().expectedDepartureTime().time()), data.departure().departureDelay()));
+    } else if (data.departure().departureDelay() < 0) {
         msgs.push_back(
-            i18n("New departure time is: %1 (%2)", QLocale().toString(data.departure.expectedDepartureTime().time()), data.departure.departureDelay()));
+            i18n("New departure time is: %1 (%2)", QLocale().toString(data.departure().expectedDepartureTime().time()), data.departure().departureDelay()));
     }
 
-    if (data.arrival.arrivalDelay() > 0) {
-        msgs.push_back(i18n("New arrival time is: %1 (+%2)", QLocale().toString(data.arrival.expectedArrivalTime().time()), data.arrival.arrivalDelay()));
+    if (data.arrival().arrivalDelay() > 0) {
+        msgs.push_back(i18n("New arrival time is: %1 (+%2)", QLocale().toString(data.arrival().expectedArrivalTime().time()), data.arrival().arrivalDelay()));
     }
 
-    if (data.departure.platformChanged()) {
-        msgs.push_back(i18n("New departure platform is: %1", data.departure.expectedPlatform()));
+    if (data.departure().platformChanged()) {
+        msgs.push_back(i18n("New departure platform is: %1", data.departure().expectedPlatform()));
     }
-    if (data.arrival.platformChanged()) {
-        msgs.push_back(i18n("New arrival platform is: %1", data.arrival.expectedPlatform()));
+    if (data.arrival().platformChanged()) {
+        msgs.push_back(i18n("New arrival platform is: %1", data.arrival().expectedPlatform()));
     }
 
     return msgs.join(QLatin1Char('\n'));
