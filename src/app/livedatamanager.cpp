@@ -644,23 +644,15 @@ int LiveDataManager::nextPollTimeForReservation(const QString &resId) const
 
     // check last poll time for this reservation
     const auto &ld = data(resId);
-    const auto lastArrivalPoll = ld.arrivalTimestamp;
-    const auto lastDeparturePoll = lastDeparturePollTime(resId, res);
-    auto lastRelevantPoll = lastArrivalPoll;
-    // ignore departure if we have already departed
-    if (!hasDeparted(resId, res) && lastDeparturePoll.isValid()) {
-        if (!lastArrivalPoll.isValid() || lastArrivalPoll > lastDeparturePoll) {
-            lastRelevantPoll = lastDeparturePoll;
-        }
-    }
+    const auto lastRelevantPoll = lastPollTime(resId, res);
     const int lastPollDist = (!lastRelevantPoll.isValid() || lastRelevantPoll > now) ? MAX_POLL_INTERVAL // no poll yet == long time ago
                                                                                      : lastRelevantPoll.secsTo(now);
     return std::max((it->pollInterval - lastPollDist) * 1000, pollCooldown(resId)); // we need msecs
 }
 
-QDateTime LiveDataManager::lastDeparturePollTime(const QString &batchId, const QVariant &res) const
+QDateTime LiveDataManager::lastPollTime(const QString &batchId, const QVariant &res) const
 {
-    auto dt = data(batchId).departureTimestamp;
+    auto dt = data(batchId).journeyTimestamp;
     if (dt.isValid()) {
         return dt;
     }

@@ -123,7 +123,7 @@ private:
     int pollCooldown(const QString &redId) const;
 
     /** Last time we queried any kind of departure information for this reservation batch. */
-    QDateTime lastDeparturePollTime(const QString &batchId, const QVariant &res) const;
+    [[nodiscard]] QDateTime lastPollTime(const QString &batchId, const QVariant &res) const;
 
     /** Notifications handling for pkpass updates. */
     void pkPassUpdated(const QString &passId, const QStringList &changes);
