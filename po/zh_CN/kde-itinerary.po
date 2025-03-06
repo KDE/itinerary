@@ -3303,10 +3303,9 @@ msgid "Settings"
 msgstr "设置"
 
 #: app/SettingsPage.qml:29
-#, fuzzy, kde-format
-#| msgid "Location %1"
+#, kde-format
 msgid "Localization"
-msgstr "地点 %1"
+msgstr ""
 
 #: app/SettingsPage.qml:38
 #, kde-format
@@ -4561,15 +4560,3 @@ msgstr "已登出"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr ""
-
-#~ msgctxt "Duration in minutes"
-#~ msgid "%1 min"
-#~ msgstr "%1 分钟"
-
-#~ msgctxt "Duration in hours and minutes"
-#~ msgid "%1 hr"
-#~ msgstr "%1 小时"
-
-#~ msgctxt "Duration in hours and minutes"
-#~ msgid "%1 hr %2 min"
-#~ msgstr "%1 小时 %2 分钟"
