@@ -19,14 +19,10 @@ class LiveData
 public:
     enum Type { NoType = 0, Departure = 1, Arrival = 2, Journey = 4, AllTypes = Departure | Arrival | Journey };
 
-    void setTimestamp(Type type, const QDateTime &dt);
-
     [[nodiscard]] bool isEmpty() const;
 
     KPublicTransport::Stopover departure;
-    QDateTime departureTimestamp;
     KPublicTransport::Stopover arrival;
-    QDateTime arrivalTimestamp;
     KPublicTransport::JourneySection journey;
     QDateTime journeyTimestamp;
 

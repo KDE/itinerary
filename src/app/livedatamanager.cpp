@@ -157,9 +157,7 @@ void LiveDataManager::setJourney(const QString &resId, const KPublicTransport::J
     ld.journey = journey;
     ld.journeyTimestamp = now();
     ld.departure = journey.departure();
-    ld.departureTimestamp = now();
     ld.arrival = journey.arrival();
-    ld.arrivalTimestamp = now();
     ld.store(resId, LiveData::AllTypes);
 
     Q_EMIT journeyUpdated(resId);
@@ -229,9 +227,7 @@ void LiveDataManager::checkReservation(const QVariant &res, const QString &resId
 
 void LiveDataManager::tripQueryFailed(const QString &resId)
 {
-    data(resId).setTimestamp(LiveData::Arrival, now());
-    data(resId).setTimestamp(LiveData::Departure, now());
-    data(resId).setTimestamp(LiveData::Journey, now());
+    data(resId).journeyTimestamp = now();
 }
 
 static KPublicTransport::Stopover applyLayoutData(const KPublicTransport::Stopover &stop, const KPublicTransport::Stopover &layout)
@@ -317,10 +313,8 @@ void LiveDataManager::updateJourneyData(const KPublicTransport::JourneySection &
     ld.journeyTimestamp = now();
     ld.departure = ld.journey.departure();
     ld.departure.addNotes(oldDep.notes());
-    ld.departureTimestamp = now();
     ld.arrival = ld.journey.arrival();
     ld.arrival.setNotes(oldArr.notes());
-    ld.arrivalTimestamp = now();
     ld.store(resId, LiveData::AllTypes);
 
     // update reservation with live data
@@ -492,24 +486,19 @@ void LiveDataManager::batchChanged(const QString &resId)
     const auto res = m_resMgr->reservation(resId);
     const auto dataIt = m_data.find(resId);
     if (dataIt != m_data.end()) {
-        if ((*dataIt).departureTimestamp.isValid() && !PublicTransportMatcher::isDepartureForReservation(res, (*dataIt).departure)) {
-            (*dataIt).departure = {};
-            (*dataIt).departureTimestamp = {};
-            (*dataIt).store(resId, LiveData::Departure);
-            Q_EMIT departureUpdated(resId);
-        }
-        if ((*dataIt).arrivalTimestamp.isValid() && !PublicTransportMatcher::isArrivalForReservation(res, (*dataIt).arrival)) {
-            (*dataIt).arrival = {};
-            (*dataIt).arrivalTimestamp = {};
-            (*dataIt).store(resId, LiveData::Arrival);
-            Q_EMIT arrivalUpdated(resId);
-        }
-
         if ((*dataIt).journeyTimestamp.isValid() && !PublicTransportMatcher::isJourneyForReservation(res, (*dataIt).journey)) {
             (*dataIt).journey = {};
             (*dataIt).journeyTimestamp = {};
             (*dataIt).store(resId, LiveData::Journey);
             Q_EMIT journeyUpdated(resId);
+
+            (*dataIt).departure = {};
+            (*dataIt).store(resId, LiveData::Departure);
+            Q_EMIT departureUpdated(resId);
+
+            (*dataIt).arrival = {};
+            (*dataIt).store(resId, LiveData::Arrival);
+            Q_EMIT arrivalUpdated(resId);
         }
     }
 

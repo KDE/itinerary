@@ -50,23 +50,6 @@ static QJsonObject loadOne(const QString &resId, LiveData::Type type, QDateTime 
     return JsonIO::read(f.readAll()).toObject();
 }
 
-void LiveData::setTimestamp(LiveData::Type type, const QDateTime &dt)
-{
-    switch (type) {
-    case LiveData::Departure:
-        departureTimestamp = dt;
-        break;
-    case LiveData::Arrival:
-        arrivalTimestamp = dt;
-        break;
-    case LiveData::Journey:
-        journeyTimestamp = dt;
-        break;
-    default:
-        assert(false);
-    }
-}
-
 bool LiveData::isEmpty() const
 {
     return departure.stopPoint().isEmpty() && arrival.stopPoint().isEmpty() && journey.from().isEmpty() && journey.to().isEmpty();
@@ -74,10 +57,11 @@ bool LiveData::isEmpty() const
 
 LiveData LiveData::load(const QString &resId)
 {
+    QDateTime dummy;
     LiveData ld;
-    auto obj = loadOne(resId, Departure, ld.departureTimestamp);
+    auto obj = loadOne(resId, Departure, dummy);
     ld.departure = KPublicTransport::Stopover::fromJson(obj);
-    obj = loadOne(resId, Arrival, ld.arrivalTimestamp);
+    obj = loadOne(resId, Arrival, dummy);
     ld.arrival = KPublicTransport::Stopover::fromJson(obj);
     obj = loadOne(resId, Journey, ld.journeyTimestamp);
     ld.journey = KPublicTransport::JourneySection::fromJson(obj);
@@ -112,10 +96,10 @@ static void storeOne(const QString &resId, LiveData::Type type, const QJsonObjec
 void LiveData::store(const QString &resId, int types) const
 {
     if (types & Departure) {
-        storeOne(resId, Departure, KPublicTransport::Stopover::toJson(departure), departureTimestamp);
+        storeOne(resId, Departure, KPublicTransport::Stopover::toJson(departure), journeyTimestamp);
     }
     if (types & Arrival) {
-        storeOne(resId, Arrival, KPublicTransport::Stopover::toJson(arrival), arrivalTimestamp);
+        storeOne(resId, Arrival, KPublicTransport::Stopover::toJson(arrival), journeyTimestamp);
     }
     if (types & Journey) {
         storeOne(resId, Journey, KPublicTransport::JourneySection::toJson(journey), journeyTimestamp);
@@ -157,9 +141,7 @@ QJsonObject LiveData::toJson(const LiveData &ld)
 {
     QJsonObject obj;
     obj.insert("departure"_L1, KPublicTransport::Stopover::toJson(ld.departure));
-    obj.insert("departureTimestamp"_L1, ld.departureTimestamp.toString(Qt::ISODate));
     obj.insert("arrival"_L1, KPublicTransport::Stopover::toJson(ld.arrival));
-    obj.insert("arrivalTimestamp"_L1, ld.arrivalTimestamp.toString(Qt::ISODate));
     obj.insert("journey"_L1, KPublicTransport::JourneySection::toJson(ld.journey));
     obj.insert("journeyTimestamp"_L1, ld.journeyTimestamp.toString(Qt::ISODate));
     return obj;
@@ -169,9 +151,7 @@ LiveData LiveData::fromJson(const QJsonObject &obj)
 {
     LiveData ld;
     ld.departure = KPublicTransport::Stopover::fromJson(obj.value("departure"_L1).toObject());
-    ld.departureTimestamp = QDateTime::fromString(obj.value("departureTimestamp"_L1).toString(), Qt::ISODate);
     ld.arrival = KPublicTransport::Stopover::fromJson(obj.value("arrival"_L1).toObject());
-    ld.arrivalTimestamp = QDateTime::fromString(obj.value("arrivalTimestamp"_L1).toString(), Qt::ISODate);
     ld.journey = KPublicTransport::JourneySection::fromJson(obj.value("journey"_L1).toObject());
     ld.journeyTimestamp = QDateTime::fromString(obj.value("journeyTimestamp"_L1).toString(), Qt::ISODate);
     return ld;
