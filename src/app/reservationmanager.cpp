@@ -121,12 +121,12 @@ QVariant ReservationManager::reservation(const QString &id) const
 
 QString ReservationManager::reservationsBasePath()
 {
-    return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1StringView("/reservations/");
+    return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/reservations/"_L1;
 }
 
 QString ReservationManager::batchesBasePath()
 {
-    return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1StringView("/batches/");
+    return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/batches/"_L1;
 }
 
 QList<QString> ReservationManager::addReservationsWithPostProcessing(const QList<QVariant> &resData)

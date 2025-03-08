@@ -77,6 +77,12 @@ public:
     /** Returns the reservation for which @p res is a partial update. */
     [[nodiscard]] QVariant isPartialUpdate(const QVariant &res) const;
 
+    /* Storage locations of reservations and batches
+     * Do not use directly, apart from special cases like Migrator.
+     */
+    static QString reservationsBasePath();
+    static QString batchesBasePath();
+
 Q_SIGNALS:
     void reservationAdded(const QString &id);
     void reservationChanged(const QString &id);
@@ -98,8 +104,6 @@ Q_SIGNALS:
     void batchRemoved(const QString &batchId);
 
 private:
-    static QString reservationsBasePath();
-    static QString batchesBasePath();
     void storeReservation(const QString &resId, const QVariant &res) const;
 
     void loadBatches();
