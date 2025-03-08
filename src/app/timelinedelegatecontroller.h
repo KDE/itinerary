@@ -47,14 +47,14 @@ class TimelineDelegateController : public QObject
      */
     Q_PROPERTY(QVariant previousLocation READ previousLocation NOTIFY previousLocationChanged)
 
-    Q_PROPERTY(KPublicTransport::Stopover arrival READ arrival NOTIFY arrivalChanged)
-    Q_PROPERTY(KPublicTransport::Stopover departure READ departure NOTIFY departureChanged)
+    Q_PROPERTY(KPublicTransport::Stopover arrival READ arrival NOTIFY journeyChanged)
+    Q_PROPERTY(KPublicTransport::Stopover departure READ departure NOTIFY journeyChanged)
     Q_PROPERTY(KPublicTransport::JourneySection journey READ journey NOTIFY journeyChanged)
 
     /** Effective end time, ie. our best knowledge of arriving at the destination (for transit elements), or
      *  ending of the associated event for non-transit elements.
      */
-    Q_PROPERTY(QDateTime effectiveEndTime READ effectiveEndTime NOTIFY arrivalChanged)
+    Q_PROPERTY(QDateTime effectiveEndTime READ effectiveEndTime NOTIFY journeyChanged)
 
     /** Returns whether this is a location changing element. */
     Q_PROPERTY(bool isLocationChange READ isLocationChange NOTIFY contentChanged)
@@ -152,8 +152,6 @@ Q_SIGNALS:
     void contentChanged();
     void currentChanged();
     void progressChanged();
-    void arrivalChanged();
-    void departureChanged();
     void journeyChanged();
     void previousLocationChanged();
     void connectionWarningChanged();
