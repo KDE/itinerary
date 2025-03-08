@@ -161,8 +161,6 @@ void LiveDataManager::setJourney(const QString &resId, const KPublicTransport::J
     ld.store(resId, LiveData::AllTypes);
 
     Q_EMIT journeyUpdated(resId);
-    Q_EMIT departureUpdated(resId);
-    Q_EMIT arrivalUpdated(resId);
 }
 
 void LiveDataManager::applyJourney(const QString &resId, const KPublicTransport::JourneySection &journey)
@@ -325,8 +323,6 @@ void LiveDataManager::updateJourneyData(const KPublicTransport::JourneySection &
 
     // emit update signals
     Q_EMIT journeyUpdated(resId);
-    Q_EMIT departureUpdated(resId);
-    Q_EMIT arrivalUpdated(resId);
 
     // check if we need to notify
     if (NotificationHelper::shouldNotify(oldDep, ld.journey.departure(), LiveData::Departure)
@@ -431,8 +427,6 @@ void LiveDataManager::importData(const QString &resId, LiveData &&data)
     // we don't need to store data, Importer already does that
     m_data[resId] = std::move(data);
     Q_EMIT journeyUpdated(resId);
-    Q_EMIT departureUpdated(resId);
-    Q_EMIT arrivalUpdated(resId);
 }
 
 bool LiveDataManager::isRelevant(const QString &resId) const
@@ -487,18 +481,16 @@ void LiveDataManager::batchChanged(const QString &resId)
     const auto dataIt = m_data.find(resId);
     if (dataIt != m_data.end()) {
         if ((*dataIt).journeyTimestamp.isValid() && !PublicTransportMatcher::isJourneyForReservation(res, (*dataIt).journey)) {
+            (*dataIt).departure = {};
+            (*dataIt).store(resId, LiveData::Departure);
+
+            (*dataIt).arrival = {};
+            (*dataIt).store(resId, LiveData::Arrival);
+
             (*dataIt).journey = {};
             (*dataIt).journeyTimestamp = {};
             (*dataIt).store(resId, LiveData::Journey);
             Q_EMIT journeyUpdated(resId);
-
-            (*dataIt).departure = {};
-            (*dataIt).store(resId, LiveData::Departure);
-            Q_EMIT departureUpdated(resId);
-
-            (*dataIt).arrival = {};
-            (*dataIt).store(resId, LiveData::Arrival);
-            Q_EMIT arrivalUpdated(resId);
         }
     }
 

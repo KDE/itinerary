@@ -75,14 +75,18 @@ LiveDataManager* TransferManager::liveDataManager() const
 void TransferManager::setLiveDataManager(LiveDataManager *liveDataMgr)
 {
     m_liveDataMgr = liveDataMgr;
-    connect(m_liveDataMgr, &LiveDataManager::arrivalUpdated, this, [this](const QString &resId) {
+    connect(m_liveDataMgr, &LiveDataManager::journeyUpdated, this, [this](const QString &resId) {
         // update anchor time if we have a transfer for this
         auto t = transfer(resId, Transfer::After);
         if (t.state() == Transfer::Discarded || t.state() == Transfer::UndefinedState) {
             return;
         }
 
-        t.setAnchorTime(anchorTimeAfter(resId, m_resMgr->reservation(resId)));
+        const auto anchorTime = anchorTimeAfter(resId, m_resMgr->reservation(resId));
+        if (t.anchorTime() == anchorTime) {
+            return;
+        }
+        t.setAnchorTime(anchorTime);
         addOrUpdateTransfer(t);
 
         // TODO if there's existing transfer, check if we miss this now

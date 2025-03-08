@@ -118,20 +118,7 @@ void TimelineDelegateController::setLiveDataManager(LiveDataManager *liveDataMgr
     Q_EMIT journeyChanged();
     Q_EMIT layoutChanged();
 
-    connect(m_liveDataMgr, &LiveDataManager::arrivalUpdated, this, &TimelineDelegateController::checkForUpdate);
-    connect(m_liveDataMgr, &LiveDataManager::departureUpdated, this, &TimelineDelegateController::checkForUpdate);
-    connect(m_liveDataMgr, &LiveDataManager::arrivalUpdated, this, [this](const auto &batchId) {
-        if (batchId == m_batchId) {
-            Q_EMIT arrivalChanged();
-            Q_EMIT journeyChanged();
-        }
-    });
-    connect(m_liveDataMgr, &LiveDataManager::departureUpdated, this, [this](const auto &batchId) {
-        if (batchId == m_batchId) {
-            Q_EMIT departureChanged();
-            Q_EMIT journeyChanged();
-        }
-    });
+    connect(m_liveDataMgr, &LiveDataManager::journeyUpdated, this, &TimelineDelegateController::checkForUpdate);
     connect(m_liveDataMgr, &LiveDataManager::journeyUpdated, this, [this](const auto &batchId) {
         if (batchId == m_batchId) {
             Q_EMIT departureChanged();

@@ -75,8 +75,7 @@ private Q_SLOTS:
 
         LiveDataManager ldm;
         ldm.setPkPassManager(&pkPassMgr);
-        QSignalSpy arrivalUpdateSpy(&ldm, &LiveDataManager::arrivalUpdated);
-        QSignalSpy departureUpdateSpy(&ldm, &LiveDataManager::departureUpdated);
+        QSignalSpy journeyUpdateSpy(&ldm, &LiveDataManager::journeyUpdated);
         ldm.setPollingEnabled(false); // we don't want to trigger network requests here
         QVERIFY(ldm.publicTransportManager());
         ldm.m_unitTestTime = QDateTime({2017, 9, 10}, {12, 0}, QTimeZone("Europe/Zurich")); // that's in the middle of the first train leg
@@ -115,9 +114,8 @@ private Q_SLOTS:
 
         const auto leg1Jny = KPublicTransport::JourneySection::fromJson(QJsonDocument::fromJson(Test::readFile(s(SOURCE_DIR "/data/livedata/randa2017-leg1-journey.json"))).object());
         ldm.applyJourney(trainLeg1, leg1Jny);
-        QCOMPARE(arrivalUpdateSpy.size(), 1);
-        QCOMPARE(arrivalUpdateSpy.at(0).at(0).toString(), trainLeg1);
-        QCOMPARE(departureUpdateSpy.size(), 1);
+        QCOMPARE(journeyUpdateSpy.size(), 1);
+        QCOMPARE(journeyUpdateSpy.at(0).at(0).toString(), trainLeg1);
         QCOMPARE(ldm.arrival(trainLeg1).arrivalDelay(), 2);
         QCOMPARE(ldm.nextPollTimeForReservation(trainLeg1), 15 * 60 * 1000); // 15 min in msecs
         // reservation was updated with additional location data

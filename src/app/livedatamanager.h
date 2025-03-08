@@ -79,8 +79,6 @@ public:
     Q_INVOKABLE void checkForUpdates(const QStringList &batchIds);
 
 Q_SIGNALS:
-    void arrivalUpdated(const QString &resId);
-    void departureUpdated(const QString &resId);
     void journeyUpdated(const QString &resId);
 
 private:
