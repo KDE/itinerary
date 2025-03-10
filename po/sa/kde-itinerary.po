@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-03 00:41+0000\n"
+"POT-Creation-Date: 2025-03-10 00:42+0000\n"
 "PO-Revision-Date: 2025-03-02 14:47+0530\n"
 "Last-Translator: Shreekant Kalwar <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -2215,12 +2215,12 @@ msgstr[1] "%1 परिवर्तते"
 msgid "Click to extend"
 msgstr "विस्तारं कर्तुं क्लिक् कुर्वन्तु"
 
-#: app/livedatamanager.cpp:717
+#: app/livedatamanager.cpp:709
 #, kde-format
 msgid "Flight %1 to %2:"
 msgstr "%1 तः %2 पर्यन्तम् उड्डयनम्:"
 
-#: app/livedatamanager.cpp:723
+#: app/livedatamanager.cpp:715
 #, kde-format
 msgid "Itinerary change"
 msgstr "यात्रासूची परिवर्तनम्"

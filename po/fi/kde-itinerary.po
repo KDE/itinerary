@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-03 00:41+0000\n"
-"PO-Revision-Date: 2025-01-28 18:21+0200\n"
+"POT-Creation-Date: 2025-03-10 00:42+0000\n"
+"PO-Revision-Date: 2025-02-15 18:07+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -2215,12 +2215,12 @@ msgstr[1] "%1 vaihtoa"
 msgid "Click to extend"
 msgstr "Laajenna napsauttamalla"
 
-#: app/livedatamanager.cpp:717
+#: app/livedatamanager.cpp:709
 #, kde-format
 msgid "Flight %1 to %2:"
 msgstr "Lento %1–%2:"
 
-#: app/livedatamanager.cpp:723
+#: app/livedatamanager.cpp:715
 #, kde-format
 msgid "Itinerary change"
 msgstr "Matkasuunnitelman muutos"
@@ -2501,11 +2501,10 @@ msgid "Help"
 msgstr "Ohje"
 
 #: app/Main.qml:268
-#, fuzzy, kde-format
-#| msgid "Wi-Fi access for onboard information is available."
+#, kde-format
 msgctxt "@info:status"
 msgid "No onboard information available."
-msgstr "Tietoa kulkuvälineen langattomasta verkosta ei ole saatavilla."
+msgstr "Matka-aikaista tietoa ei ole saatavilla."
 
 #: app/Main.qml:310
 #, kde-format

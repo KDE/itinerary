@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-03 00:41+0000\n"
+"POT-Creation-Date: 2025-03-10 00:42+0000\n"
 "PO-Revision-Date: 2025-03-02 14:01+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -2216,12 +2216,12 @@ msgstr[1] "%1 keer overstappen"
 msgid "Click to extend"
 msgstr "Klik om uit te breiden"
 
-#: app/livedatamanager.cpp:717
+#: app/livedatamanager.cpp:709
 #, kde-format
 msgid "Flight %1 to %2:"
 msgstr "Vlucht %1 naar %2:"
 
-#: app/livedatamanager.cpp:723
+#: app/livedatamanager.cpp:715
 #, kde-format
 msgid "Itinerary change"
 msgstr "Wijziging van reisroute"
