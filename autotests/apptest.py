@@ -22,8 +22,7 @@ class ItineraryTest(ItineraryTestCase):
 
         self.driver.find_element(by=AppiumBy.NAME, value="From:").click()
         self.driver.find_element('description', value="Select country").click()
-        # TODO we cannot scroll in the popup yet to get to Switzerland!
-        self.driver.find_element(by=AppiumBy.NAME, value="Liechtenstein").click()
+        self.driver.find_element(by=AppiumBy.NAME, value="Switzerland").click()
         searchField = self.driver.find_element(by=AppiumBy.NAME, value="Search")
         self.assertTrue(searchField.is_displayed())
         searchField.clear()
