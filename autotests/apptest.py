@@ -27,20 +27,20 @@ class ItineraryTest(ItineraryTestCase):
         self.assertTrue(searchField.is_displayed())
         searchField.clear()
         searchField.send_keys("Randa")
-        self.driver.find_element(by=AppiumBy.NAME, value="Randa, Valais, Switzerland").click()
+        self.driver.find_element(by=AppiumBy.NAME, value="Randa, Randa, Valais, Switzerland").click()
 
         self.assertFalse(self.driver.find_element(by=AppiumBy.NAME, value="Search Journey").is_enabled())
 
         self.driver.find_element(by=AppiumBy.NAME, value="To:").click()
         # exists in history
-        self.assertTrue(self.driver.find_element(by=AppiumBy.NAME, value="Randa, Valais, Switzerland").is_displayed())
+        self.assertTrue(self.driver.find_element(by=AppiumBy.NAME, value="Randa, Randa, Valais, Switzerland").is_displayed())
 
         # clear history
         self.openContextDrawer()
         self.assertTrue(self.driver.find_element(by=AppiumBy.NAME, value="Clear history").is_enabled())
         self.driver.find_element(by=AppiumBy.NAME, value="Clear history").click()
         self.driver.find_element(by=AppiumBy.NAME, value="Cancel").click()
-        self.assertTrue(self.driver.find_element(by=AppiumBy.NAME, value="Randa, Valais, Switzerland").is_displayed())
+        self.assertTrue(self.driver.find_element(by=AppiumBy.NAME, value="Randa, Randa, Valais, Switzerland").is_displayed())
         self.openContextDrawer()
         self.driver.find_element(by=AppiumBy.NAME, value="Clear history").click()
         self.driver.find_element(by=AppiumBy.NAME, value="Remove").click()
