@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-10 00:42+0000\n"
+"POT-Creation-Date: 2025-03-12 00:42+0000\n"
 "PO-Revision-Date: 2024-03-26 16:14+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -2280,12 +2280,12 @@ msgstr[1] "%1 átszállás"
 msgid "Click to extend"
 msgstr "Kattintson a kibontáshoz"
 
-#: app/livedatamanager.cpp:709
+#: app/livedatamanager.cpp:698
 #, kde-format
 msgid "Flight %1 to %2:"
 msgstr "%1. járat ide: %2:"
 
-#: app/livedatamanager.cpp:715
+#: app/livedatamanager.cpp:704
 #, kde-format
 msgid "Itinerary change"
 msgstr "Itinermódosítás"
