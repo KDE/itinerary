@@ -163,13 +163,13 @@ Kirigami.ScrollablePage {
                 let country = Country.fromAlpha2(model.location.country)
                 let region = CountrySubdivision.fromCode(model.location.region)
 
-                if (model.location.locality && region && country) {
+                if (model.location.locality && model.location.name !== model.location.locality && region && country) {
                     return i18nc("location name, locality, region, country", "%1, %2, %3, %4",
                                  model.location.name,
                                  model.location.locality,
                                  region.name,
                                  country.name)
-                } else if (model.location.locality && country) {
+                } else if (model.location.locality && model.location.name !== model.location.locality && country) {
                     return i18nc("location name, locality, country", "%1, %2, %3",
                                  model.location.name,
                                  model.location.locality,
@@ -195,12 +195,12 @@ Kirigami.ScrollablePage {
                     let country = Country.fromAlpha2(model.location.country)
                     let region = CountrySubdivision.fromCode(model.location.region)
 
-                    if (model.location.locality && region && country) {
+                    if (model.location.locality && model.location.name !== model.location.locality && region && country) {
                         return i18nc("locality, region, country", "%1, %2, %3",
                                      model.location.locality,
                                      region.name,
                                      country.name)
-                    } else if (model.location.locality && country) {
+                    } else if (model.location.locality && model.location.name !== model.location.locality && country) {
                         return i18nc("locality, country", "%1, %2",
                                      model.location.locality,
                                      country.name)
@@ -244,13 +244,13 @@ Kirigami.ScrollablePage {
                 let country = Country.fromAlpha2(model.location.country)
                 let region = CountrySubdivision.fromCode(model.location.region)
 
-                if (model.location.locality && region && country) {
+                if (model.location.locality && model.location.name !== model.location.locality && region && country) {
                     return i18nc("location name, locality, region, country", "%1, %2, %3, %4",
                                  model.location.name,
                                  model.location.locality,
                                  region.name,
                                  country.name)
-                } else if (model.location.locality && country) {
+                } else if (model.location.locality && model.location.name !== model.location.locality && country) {
                     return i18nc("location name, locality, country", "%1, %2, %3",
                                  model.location.name,
                                  model.location.locality,
@@ -277,12 +277,12 @@ Kirigami.ScrollablePage {
                     let country = Country.fromAlpha2(model.location.country)
                     let region = CountrySubdivision.fromCode(model.location.region)
 
-                    if (model.location.locality && region && country) {
+                    if (model.location.locality && model.location.name !== model.location.locality && region && country) {
                         return i18nc("locality, region, country", "%1, %2, %3",
                                      model.location.locality,
                                      region.name,
                                      country.name)
-                    } else if (model.location.locality && country) {
+                    } else if (model.location.locality && model.location.name !== model.location.locality && country) {
                         return i18nc("locality, country", "%1, %2",
                                      model.location.locality,
                                      country.name)
