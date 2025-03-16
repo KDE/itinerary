@@ -69,7 +69,7 @@ FormCard.FormCard {
         for (const resId of resIds) {
             const res = ReservationManager.reservation(resId);
             const seat = res?.reservedTicket?.ticketedSeat;
-            if (seat)
+            if (seat && seat.seatNumber)
                 s.push(seat.seatNumber);
         }
         if (s.length === 0)
