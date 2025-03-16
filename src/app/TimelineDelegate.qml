@@ -64,6 +64,19 @@ FormCard.FormCard {
         return false;
     }
 
+    function seatSectionString(): string {
+        let s = []
+        for (const resId of resIds) {
+            const res = ReservationManager.reservation(resId);
+            const seat = res?.reservedTicket?.ticketedSeat;
+            if (seat && seat.seatSection)
+                s.push(seat.seatSection);
+        }
+        if (s.length === 0)
+            return "-";
+        return s.join(", ");
+    }
+
     function seatString(): string {
         let s = []
         for (const resId of resIds) {
