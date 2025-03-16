@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-15 00:42+0000\n"
-"PO-Revision-Date: 2024-12-27 23:54+0100\n"
+"PO-Revision-Date: 2025-03-15 10:38+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -3316,15 +3316,14 @@ msgid "Settings"
 msgstr "Agordoj"
 
 #: app/SettingsPage.qml:29
-#, fuzzy, kde-format
-#| msgid "Location"
+#, kde-format
 msgid "Localization"
-msgstr "Loko"
+msgstr "Lokspecifeco"
 
 #: app/SettingsPage.qml:38
 #, kde-format
 msgid "Use metric units"
-msgstr ""
+msgstr "Uzi metrikajn unuojn"
 
 #: app/SettingsPage.qml:39
 #, kde-format
@@ -3332,6 +3331,8 @@ msgid ""
 "Use metric units for distance and temperature values regardless of the "
 "platform region settings."
 msgstr ""
+"Uzi metrikajn unuojn por distanco kaj temperaturvaloroj sendepende de la "
+"platformaj region-agordoj."
 
 #: app/SettingsPage.qml:48
 #, kde-format
@@ -4589,52 +4590,3 @@ msgstr "Elsalutita"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 de %3 al %4 je %5"
-
-#~ msgctxt "Duration in minutes"
-#~ msgid "%1 min"
-#~ msgstr "%1 min"
-
-#~ msgctxt "Duration in hours and minutes"
-#~ msgid "%1 hr"
-#~ msgstr "%1 h"
-
-#~ msgctxt "Duration in hours and minutes"
-#~ msgid "%1 hr %2 min"
-#~ msgstr "%1 h %2 min"
-
-#~ msgctxt "distance in meter"
-#~ msgid "%1 m"
-#~ msgstr "%1 m"
-
-#~ msgctxt "distance in kilometer"
-#~ msgid "%1 km"
-#~ msgstr "%1 km"
-
-#~ msgctxt "speed in kilometers per hour"
-#~ msgid "%1 km/h"
-#~ msgstr "%1 km/h"
-
-#~ msgctxt "temperature"
-#~ msgid "%1°C"
-#~ msgstr "%1°C"
-
-#~ msgid "Walk"
-#~ msgstr "Promeni"
-
-#~ msgid "Wait"
-#~ msgstr "Atendi"
-
-#~ msgid "Rented bicycle"
-#~ msgstr "Luita biciklo"
-
-#~ msgid "Rented moped"
-#~ msgstr "Luita mopedo"
-
-#~ msgid "Rented kick scooter"
-#~ msgstr "Luita piedskotero"
-
-#~ msgid "Rented car"
-#~ msgstr "Luita aŭto"
-
-#~ msgid "Bicycle"
-#~ msgstr "Biciklo"
