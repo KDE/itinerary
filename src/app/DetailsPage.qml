@@ -29,7 +29,7 @@ Kirigami.ScrollablePage {
         for (const reservationId of root.reservationIds) {
             const reservation = ReservationManager.reservation(reservationId);
             const seat = reservation?.reservedTicket?.ticketedSeat;
-            if (seat) {
+            if (seat && seat.seatNumber) {
                 s.push(seat.seatNumber);
             }
         }
