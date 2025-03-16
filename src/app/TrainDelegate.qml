@@ -66,7 +66,7 @@ TimelineDelegate {
             Component.onCompleted: progress = root.controller.progress
 
             TimelineDelegateSeatRowLabel {
-                text: i18nc("train coach", "Coach: <b>%1</b>", root.reservation?.reservedTicket?.ticketedSeat?.seatSection || "-")
+                text: i18nc("train coach", "Coach: <b>%1</b>", root.seatSectionString())
             }
             Kirigami.Separator {
                 Layout.fillHeight: true

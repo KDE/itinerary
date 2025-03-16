@@ -24,6 +24,19 @@ Kirigami.ScrollablePage {
     property Component editor
     readonly property var reservationIds: ReservationManager.reservationsForBatch(root.batchId)
 
+    function seatSectionString(): string {
+        let s = []
+        for (const reservationId of root.reservationIds) {
+            const reservation = ReservationManager.reservation(reservationId);
+            const seat = reservation?.reservedTicket?.ticketedSeat;
+            if (seat && seat.seatSection)
+                s.push(seat.seatSection);
+        }
+        if (s.length === 0)
+            return "-";
+        return s.join(", ");
+    }
+
     function seatString(): string {
         let s = [];
         for (const reservationId of root.reservationIds) {
@@ -38,7 +51,6 @@ Kirigami.ScrollablePage {
         }
         return s.join(", ");
     }
-
 
 
     /** @c true if we have at least one seat reserverion in this batch. */
