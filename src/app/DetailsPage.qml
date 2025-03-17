@@ -34,7 +34,7 @@ Kirigami.ScrollablePage {
         }
         if (s.length === 0)
             return "-";
-        return s.join(", ");
+        return [...new Set(s)].join(", ");
     }
 
     function seatString(): string {
