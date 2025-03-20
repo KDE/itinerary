@@ -3318,10 +3318,9 @@ msgid "Settings"
 msgstr "Nastavení"
 
 #: app/SettingsPage.qml:29
-#, fuzzy, kde-format
-#| msgid "Location"
+#, kde-format
 msgid "Localization"
-msgstr "Umístění"
+msgstr "Překlad"
 
 #: app/SettingsPage.qml:38
 #, kde-format
