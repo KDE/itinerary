@@ -10,12 +10,13 @@ import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kirigamiaddons.dateandtime as Addon
 import org.kde.kpublictransport
+import org.kde.kpublictransport.ui as KPublicTransport
 import org.kde.itinerary
 
 FormCard.FormCardPage {
     id: root
 
-    property var publicTransportManager
+    property KPublicTransport.Manager publicTransportManager
 
     /**
      * Pre-selected country in the location pickers.
@@ -28,29 +29,33 @@ FormCard.FormCardPage {
     Kirigami.Theme.inherit: false
     Kirigami.Theme.colorSet: Kirigami.Theme.Window
 
-    property var departureStop
-    property var arrivalStop
+    property KPublicTransport.location departureStop
+    property KPublicTransport.location arrivalStop
 
     title: i18n("Select Journey")
 
     data: [
         Component {
             id: departurePicker
-            StopPickerPage {
+            KPublicTransport.StopPickerPage {
                 title: i18nc("departure train station", "Select Departure Stop")
                 publicTransportManager: root.publicTransportManager
                 initialCountry: root.initialCountry
                 // force a deep copy, otherwise this breaks as soon as the other stop picker page is shown...
                 onLocationChanged: root.departureStop = PublicTransport.copyLocation(location);
+                historySortRoleName: Settings.read("StopPicker/historySortMode", "lastUsed")
+                onHistorySortRoleChanged: (sortRoleName) => Settings.write("StopPicker/historySortMode", sortRoleName)
             }
         },
         Component {
             id: arrivalPicker
-            StopPickerPage {
+            KPublicTransport.StopPickerPage {
                 title: i18nc("arrival train station", "Select Arrival Stop")
                 publicTransportManager: root.publicTransportManager
                 initialCountry: root.initialCountry
                 onLocationChanged: root.arrivalStop = PublicTransport.copyLocation(location)
+                historySortRoleName: Settings.read("StopPicker/historySortMode", "lastUsed")
+                onHistorySortRoleChanged: (sortRoleName) => Settings.write("StopPicker/historySortMode", sortRoleName)
             }
         },
         Component {

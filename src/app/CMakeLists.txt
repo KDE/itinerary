@@ -145,7 +145,6 @@ ecm_add_qml_module(itinerary-app URI org.kde.itinerary NO_PLUGIN QML_FILES
     CarRentalPage.qml
     ContactCard.qml
     ContactEditorCard.qml
-    CountryComboBox.qml
     CountryComboBoxDelegate.qml
     DelayRow.qml
     DepartureQueryPage.qml
@@ -223,7 +222,6 @@ ecm_add_qml_module(itinerary-app URI org.kde.itinerary NO_PLUGIN QML_FILES
     SheetDrawer.qml
     StatisticsDelegate.qml
     StatisticsPage.qml
-    StopPickerPage.qml
     TicketEditor.qml
     TicketPage.qml
     TicketTokenDelegate.qml
