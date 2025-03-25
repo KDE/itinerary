@@ -310,6 +310,7 @@ if (ANDROID)
         donate-symbolic
         download
         edit-copy-symbolic
+        edit-cut
         edit-delete
         edit-download
         edit-paste
