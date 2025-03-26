@@ -11,6 +11,8 @@
 
 #include <utility>
 
+class ReservationManager;
+
 class QString;
 class QVariant;
 
@@ -39,6 +41,12 @@ public:
 
     /** Default icon name for the given element. */
     Q_INVOKABLE [[nodiscard]] static QString defaultIconName(const QVariant &res);
+
+    /** Batch defining the location preceeding to @p resId.
+     *  That's usually ReservationManager::previousBatch, apart from nested
+     *  non-location change elements.
+     */
+    [[nodiscard]] static QString previousBatch(ReservationManager *resMgr, const QString &resId);
 };
 
 #endif // RESERVATIONHELPER_H

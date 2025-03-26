@@ -242,18 +242,12 @@ void TransferManager::checkReservation(const QString &resId)
 
     checkReservation(resId, res, Transfer::Before);
     // also check after the previous reservation
-    auto prevResId = resId;
-    while (true) {
-        prevResId = m_resMgr->previousBatch(prevResId);
-        if (prevResId.isEmpty()) {
-            break;
-        }
-        const auto prevRes = m_resMgr->reservation(prevResId);
-        if (!ReservationHelper::isCancelled(prevRes)) {
-            checkReservation(prevResId, prevRes, Transfer::After);
-            break;
-        }
+    const auto prevResId = ReservationHelper::previousBatch(m_resMgr, resId);
+    if (prevResId.isEmpty()) {
+        return;
     }
+    const auto prevRes = m_resMgr->reservation(prevResId);
+    checkReservation(prevResId, prevRes, Transfer::After);
 }
 
 void TransferManager::checkReservation(const QString &resId, const QVariant &res, Transfer::Alignment alignment)
@@ -345,22 +339,15 @@ TransferManager::CheckTransferResult TransferManager::checkTransferBefore(const 
     // - res is an event and we are not at its location already
 
     // find the first preceding non-cancelled reservation
-    QString prevResId = resId;
-    QVariant prevRes;
-    while (true) {
-        prevResId = m_resMgr->previousBatch(prevResId); // TODO this fails for multiple nested range elements!
-        if (prevResId.isEmpty()) {
-            const auto f = pickFavorite(toLoc, resId, Transfer::Before);
-            transfer.setFrom(locationFromFavorite(f));
-            transfer.setFromName(f.name());
-            transfer.setFloatingLocationType(Transfer::FavoriteLocation);
-            return ShouldAutoAdd;
-        }
-        prevRes = m_resMgr->reservation(prevResId);
-        if (!ReservationHelper::isCancelled(prevRes)) {
-            break;
-        }
+    const auto prevResId = ReservationHelper::previousBatch(m_resMgr, resId);
+    if (prevResId.isEmpty()) {
+        const auto f = pickFavorite(toLoc, resId, Transfer::Before);
+        transfer.setFrom(locationFromFavorite(f));
+        transfer.setFromName(f.name());
+        transfer.setFloatingLocationType(Transfer::FavoriteLocation);
+        return ShouldAutoAdd;
     }
+    const auto prevRes = m_resMgr->reservation(prevResId);
 
     // check if there is a transfer after prevRes already
     const auto prevTransfer = this->transfer(prevResId, Transfer::After);

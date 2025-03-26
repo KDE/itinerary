@@ -5,7 +5,9 @@
 */
 
 #include "reservationhelper.h"
+
 #include "genericpkpass.h"
+#include "reservationmanager.h"
 
 #include <KItinerary/BoatTrip>
 #include <KItinerary/BusTrip>
@@ -14,6 +16,7 @@
 #include <KItinerary/LocationUtil>
 #include <KItinerary/Person>
 #include <KItinerary/Reservation>
+#include <KItinerary/SortUtil>
 #include <KItinerary/Ticket>
 #include <KItinerary/TrainTrip>
 #include <KItinerary/Visit>
@@ -179,6 +182,38 @@ QString ReservationHelper::defaultIconName(const QVariant &res)
     }
 
     return {};
+}
+
+QString ReservationHelper::previousBatch(ReservationManager *resMgr, const QString &resId)
+{
+    QString id = resId;
+    QString prevId;
+    QVariant prevRes;
+
+    while (true) {
+        id = resMgr->previousBatch(id);
+        if (id.isEmpty()) {
+            return prevId;
+        }
+        auto res = resMgr->reservation(id);
+
+        if (ReservationHelper::isCancelled(id)) {
+            continue;
+        }
+
+        if (LocationUtil::isLocationChange(res) || !SortUtil::hasEndTime(res)) {
+            return prevId.isEmpty() ? id : prevId;
+        }
+
+        if (!prevId.isEmpty() && SortUtil::endDateTime(res) < SortUtil::endDateTime(prevRes)) {
+            continue;
+        }
+
+        prevId = id;
+        prevRes = res;
+    }
+
+    return prevId;
 }
 
 #include "moc_reservationhelper.cpp"
