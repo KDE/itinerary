@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-15 00:42+0000\n"
-"PO-Revision-Date: 2025-01-11 20:50+0100\n"
+"POT-Creation-Date: 2025-03-27 00:42+0000\n"
+"PO-Revision-Date: 2025-03-26 17:51+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -1428,7 +1428,7 @@ msgstr "Tåg %1 från %2 till %3"
 msgid "Bus %1 from %2 to %3"
 msgstr "Buss %1 från %2 till %3"
 
-#: app/gpxexport.cpp:61 app/reservationhelper.cpp:139
+#: app/gpxexport.cpp:61 app/reservationhelper.cpp:142
 #, kde-format
 msgid "Ferry from %1 to %2"
 msgstr "Färja från %1 till %2"
@@ -3263,17 +3263,17 @@ msgstr[1] "%1 platser"
 msgid "Documents and Tickets"
 msgstr "Dokument och biljetter"
 
-#: app/reservationhelper.cpp:130
+#: app/reservationhelper.cpp:133
 #, kde-format
 msgid "Flight from %1 to %2"
 msgstr "Flyg från %1 till %2"
 
-#: app/reservationhelper.cpp:133
+#: app/reservationhelper.cpp:136
 #, kde-format
 msgid "Train from %1 to %2"
 msgstr "Tåg från %1 till %2"
 
-#: app/reservationhelper.cpp:136
+#: app/reservationhelper.cpp:139
 #, kde-format
 msgid "Bus from %1 to %2"
 msgstr "Buss från %1 till %2"
@@ -3339,15 +3339,14 @@ msgid "Settings"
 msgstr "Inställningar"
 
 #: app/SettingsPage.qml:29
-#, fuzzy, kde-format
-#| msgid "Location"
+#, kde-format
 msgid "Localization"
-msgstr "Plats"
+msgstr "Landsanpassning"
 
 #: app/SettingsPage.qml:38
 #, kde-format
 msgid "Use metric units"
-msgstr ""
+msgstr "Använd metriska enheter"
 
 #: app/SettingsPage.qml:39
 #, kde-format
@@ -3355,6 +3354,8 @@ msgid ""
 "Use metric units for distance and temperature values regardless of the "
 "platform region settings."
 msgstr ""
+"Använd metriska enheter för avstånd och temperaturvärden oberoende av "
+"plattformens landsinställningar."
 
 #: app/SettingsPage.qml:48
 #, kde-format

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-15 00:42+0000\n"
+"POT-Creation-Date: 2025-03-27 00:42+0000\n"
 "PO-Revision-Date: 2025-02-27 20:24-0300\n"
 "Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -1552,7 +1552,7 @@ msgstr "Trem %1 de %2 para %3"
 msgid "Bus %1 from %2 to %3"
 msgstr "Ônibus %1 de %2 para %3"
 
-#: app/gpxexport.cpp:61 app/reservationhelper.cpp:139
+#: app/gpxexport.cpp:61 app/reservationhelper.cpp:142
 #, kde-format
 msgid "Ferry from %1 to %2"
 msgstr "Balsa de %1 para %2"
@@ -3462,19 +3462,19 @@ msgstr[1] "%1 alterações"
 msgid "Documents and Tickets"
 msgstr "Ingresso do evento"
 
-#: app/reservationhelper.cpp:130
+#: app/reservationhelper.cpp:133
 #, fuzzy, kde-format
 #| msgid "Flight %1 from %2 to %3"
 msgid "Flight from %1 to %2"
 msgstr "Voo %1 de %2 para %3"
 
-#: app/reservationhelper.cpp:133
+#: app/reservationhelper.cpp:136
 #, fuzzy, kde-format
 #| msgid "Train %1 from %2 to %3"
 msgid "Train from %1 to %2"
 msgstr "Trem %1 de %2 para %3"
 
-#: app/reservationhelper.cpp:136
+#: app/reservationhelper.cpp:139
 #, fuzzy, kde-format
 #| msgid "Bus %1 from %2 to %3"
 msgid "Bus from %1 to %2"

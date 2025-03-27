@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-15 00:42+0000\n"
+"POT-Creation-Date: 2025-03-27 00:42+0000\n"
 "PO-Revision-Date: 2024-12-24 16:45+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1425,7 +1425,7 @@ msgstr "%2에서 %3(으)로 가는 %1 열차|/|%2에서 %3$[으 %3]로 가는 %1
 msgid "Bus %1 from %2 to %3"
 msgstr "%2에서 %3(으)로 가는 %1 버스|/|%2에서 %3$[으 %3]로 가는 %1 버스"
 
-#: app/gpxexport.cpp:61 app/reservationhelper.cpp:139
+#: app/gpxexport.cpp:61 app/reservationhelper.cpp:142
 #, kde-format
 msgid "Ferry from %1 to %2"
 msgstr "%1에서 %2(으)로 가는 선박|/|%1에서 %2$[으 %2]로 가는 선박"
@@ -3234,17 +3234,17 @@ msgstr[0] "%1석"
 msgid "Documents and Tickets"
 msgstr "문서와 티켓"
 
-#: app/reservationhelper.cpp:130
+#: app/reservationhelper.cpp:133
 #, kde-format
 msgid "Flight from %1 to %2"
 msgstr "%1에서 %2(으)로 가는 항공편|/|%1에서 %2$[으 %2]로 가는 항공편"
 
-#: app/reservationhelper.cpp:133
+#: app/reservationhelper.cpp:136
 #, kde-format
 msgid "Train from %1 to %2"
 msgstr "%1에서 %2(으)로 가는 열차|/|%1에서 %2$[으 %2]로 가는 열차"
 
-#: app/reservationhelper.cpp:136
+#: app/reservationhelper.cpp:139
 #, kde-format
 msgid "Bus from %1 to %2"
 msgstr "%1에서 %2(으)로 가는 버스|/|%1에서 %2$[으 %2]로 가는 버스"
