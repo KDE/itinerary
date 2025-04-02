@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-03 00:41+0000\n"
-"PO-Revision-Date: 2025-03-31 17:16+0300\n"
+"PO-Revision-Date: 2025-04-01 10:26+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
 "Language: ru\n"
@@ -224,7 +224,7 @@ msgstr "Альтернативные железнодорожные маршру
 #, kde-format
 msgctxt "to travel destination"
 msgid "To %1"
-msgstr "До %1"
+msgstr "В %1"
 
 #: app/AlternativeJourneyPage.qml:87 app/DepartureQueryPage.qml:41
 #: app/JourneyRequestPage.qml:235 app/TransferPage.qml:108
@@ -1522,16 +1522,14 @@ msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: app/healthcertificatemanager.cpp:154
-#, fuzzy, kde-format
-#| msgid "Vaccination %1/%2 (%3)"
+#, kde-format
 msgid "Vaccination for %1 (%2/%3)"
-msgstr "Вакцинация %1/%2 (%3)"
+msgstr "Вакцинация: %1 (%2/%3)"
 
 #: app/healthcertificatemanager.cpp:157
-#, fuzzy, kde-format
-#| msgid "Vaccination (%1)"
+#, kde-format
 msgid "Vaccination for %1"
-msgstr "Вакцинация (%1)"
+msgstr "Вакцинация: %1"
 
 #: app/healthcertificatemanager.cpp:159 app/HealthCertificateVaccination.qml:47
 #, kde-format
@@ -1539,16 +1537,14 @@ msgid "Vaccination"
 msgstr "Вакцинация"
 
 #: app/healthcertificatemanager.cpp:163
-#, fuzzy, kde-format
-#| msgid "Test %1 (%2)"
+#, kde-format
 msgid "Test %1 for %2"
-msgstr "Тест %1 (%2)"
+msgstr "Тестирование %1 на %2"
 
 #: app/healthcertificatemanager.cpp:169
-#, fuzzy, kde-format
-#| msgid "Recovery (%1)"
+#, kde-format
 msgid "Recovery %1 for %2"
-msgstr "Перенесённое заболевание (%1)"
+msgstr "Выздоровление %1 (перенесённое заболевание: %2)"
 
 #: app/HealthCertificatePage.qml:19
 #, kde-format
@@ -2127,11 +2123,9 @@ msgid "Boats or ferries"
 msgstr "Лодки или паромы"
 
 #: app/JourneySectionDelegate.qml:143
-#, fuzzy, kde-format
-#| msgctxt "to travel destination"
-#| msgid "To %1"
+#, kde-format
 msgid "To %1"
-msgstr "До %1"
+msgstr "В %1"
 
 #: app/JourneySectionDelegate.qml:147
 #, kde-format
@@ -2178,12 +2172,10 @@ msgstr "Показать больше…"
 
 #: app/JourneySectionPage.qml:49 app/TimelineDelegateDepartureLayout.qml:94
 #: app/VehicleLayoutPage.qml:143
-#, fuzzy, kde-format
-#| msgctxt "to travel destination"
-#| msgid "To %1"
+#, kde-format
 msgctxt "Direction of the transport mode"
 msgid "To %1"
-msgstr "До %1"
+msgstr "В %1"
 
 #: app/JourneySectionPage.qml:62
 #, kde-format
@@ -2527,11 +2519,10 @@ msgid "Help"
 msgstr "Справка"
 
 #: app/Main.qml:268
-#, fuzzy, kde-format
-#| msgid "Wi-Fi access for onboard information is available."
+#, kde-format
 msgctxt "@info:status"
 msgid "No onboard information available."
-msgstr "Подключение к Wi-Fi для получения информации о посадке недоступно."
+msgstr "Информация о посадке недоступна."
 
 #: app/Main.qml:310
 #, kde-format
@@ -2568,25 +2559,25 @@ msgstr "Проверка сеанса Matrix"
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Waiting for device to accept verification."
-msgstr ""
+msgstr "Ожидание принятия проверки на этом устройстве."
 
 #: app/MatrixKeyVerificationPage.qml:43
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Incoming key verification request from device <b>%1</b>"
-msgstr ""
+msgstr "Входящий запрос на проверку ключа с устройства <b>%1</b>"
 
 #: app/MatrixKeyVerificationPage.qml:45
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Waiting for other party to verify."
-msgstr ""
+msgstr "Ожидание подтверждения другой стороной."
 
 #: app/MatrixKeyVerificationPage.qml:47
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Successfully verified device <b>%1</b>"
-msgstr ""
+msgstr "Устройство <b>%1</b> успешно проверено"
 
 #: app/MatrixKeyVerificationPage.qml:52
 #, kde-format
@@ -2875,25 +2866,21 @@ msgid "Manage your Passes"
 msgstr "Управление пропусками"
 
 #: app/MyDataPage.qml:59
-#, fuzzy, kde-format
-#| msgid "Health Certificates"
+#, kde-format
 msgctxt "@title"
 msgid "Health Certificates"
 msgstr "Сертификаты здоровья"
 
 #: app/MyDataPage.qml:69
-#, fuzzy, kde-format
-#| msgid "One health certificate imported."
-#| msgid_plural "%1 health certificates imported."
+#, kde-format
 msgid "No valid health certificate found."
-msgstr "Импортирован %1 сертификат здоровья."
+msgstr "Не найдено действительных сертификатов здоровья."
 
 #: app/MyDataPage.qml:100
-#, fuzzy, kde-format
-#| msgid "Health Certificates"
+#, kde-format
 msgctxt "@action:button"
 msgid "Manage your health certificates"
-msgstr "Сертификаты здоровья"
+msgstr "Управление сертификатами здоровья"
 
 #: app/MyDataPage.qml:108
 #, kde-format
@@ -2912,11 +2899,10 @@ msgid "Statistics"
 msgstr "Статистика"
 
 #: app/MyDataPage.qml:181
-#, fuzzy, kde-format
-#| msgid "Statistics"
+#, kde-format
 msgctxt "@action:button"
 msgid "See all Statistics"
-msgstr "Статистика"
+msgstr "Показать всю статистику"
 
 #: app/MyDataPage.qml:191
 #, kde-format
@@ -3956,18 +3942,16 @@ msgid "Arrival Time"
 msgstr "Время прибытия"
 
 #: app/TrainDelegate.qml:45 app/TrainDelegate.qml:230
-#, fuzzy, kde-format
-#| msgid "Platform change on %1"
+#, kde-format
 msgctxt "train station platform"
 msgid "Platform changed to %1"
-msgstr "Смена платформы %1"
+msgstr "Платформа изменена на %1"
 
 #: app/TrainDelegate.qml:47 app/TrainDelegate.qml:232
-#, fuzzy, kde-format
-#| msgid "Platform: %1"
+#, kde-format
 msgctxt "train station platform"
 msgid "Platform %1"
-msgstr "Платформа: %1"
+msgstr "Платформа %1"
 
 #: app/TrainDelegate.qml:69 app/TrainPage.qml:313
 #, kde-format
@@ -4641,14 +4625,14 @@ msgid "This server does not support logging in using a password"
 msgstr "Сервер не поддерживает вход по паролю"
 
 #: matrix/matrixmanager.cpp:78
-#, fuzzy, kde-format
+#, kde-format
 msgid "Logging in…"
-msgstr "Вход в систему"
+msgstr "Вход…"
 
 #: matrix/matrixmanager.cpp:114
-#, fuzzy, kde-format
+#, kde-format
 msgid "Logged out"
-msgstr "Завершить сеанс"
+msgstr "Выполнен выход"
 
 #: metadataextractor/itineraryextractor.cpp:118
 #, kde-format
