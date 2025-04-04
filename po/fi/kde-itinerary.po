@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-03 00:41+0000\n"
-"PO-Revision-Date: 2025-02-15 18:07+0200\n"
+"PO-Revision-Date: 2025-03-23 15:54+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -3341,15 +3341,14 @@ msgid "Settings"
 msgstr "Asetukset"
 
 #: app/SettingsPage.qml:29
-#, fuzzy, kde-format
-#| msgid "Location"
+#, kde-format
 msgid "Localization"
-msgstr "Sijainti"
+msgstr "Kotoistus"
 
 #: app/SettingsPage.qml:38
 #, kde-format
 msgid "Use metric units"
-msgstr ""
+msgstr "Käytä metrisiä yksiköitä"
 
 #: app/SettingsPage.qml:39
 #, kde-format
@@ -3357,6 +3356,8 @@ msgid ""
 "Use metric units for distance and temperature values regardless of the "
 "platform region settings."
 msgstr ""
+"Käytä alustan alueasetuksista riippumatta etäisyyteen ja lämpötilaan "
+"metrisiä yksiköitä."
 
 #: app/SettingsPage.qml:48
 #, kde-format
