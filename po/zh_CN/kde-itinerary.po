@@ -3305,19 +3305,19 @@ msgstr "设置"
 #: app/SettingsPage.qml:29
 #, kde-format
 msgid "Localization"
-msgstr ""
+msgstr "本地化"
 
 #: app/SettingsPage.qml:38
 #, kde-format
 msgid "Use metric units"
-msgstr ""
+msgstr "使用公制单位"
 
 #: app/SettingsPage.qml:39
 #, kde-format
 msgid ""
 "Use metric units for distance and temperature values regardless of the "
 "platform region settings."
-msgstr ""
+msgstr "忽略平台区域设置，始终使用公制单位表示距离和温度值。"
 
 #: app/SettingsPage.qml:48
 #, kde-format
