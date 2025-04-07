@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the itinerary package.
-# SPDX-FileCopyrightText: 2019, 2020, 2021, 2022, 2023, 2024 Shinjo Park <kde@peremen.name>
+# SPDX-FileCopyrightText: 2019, 2020, 2021, 2022, 2023, 2024, 2025 Shinjo Park <kde@peremen.name>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-03 00:41+0000\n"
-"PO-Revision-Date: 2024-12-24 16:45+0100\n"
+"PO-Revision-Date: 2025-04-06 22:15+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -1076,11 +1076,10 @@ msgid "Seat: <b>%1</b>"
 msgstr "좌석: <b>%1</b>"
 
 #: app/FlightDelegate.qml:98
-#, fuzzy, kde-format
-#| msgid "Terminal"
+#, kde-format
 msgctxt "airport terminal"
 msgid "Terminal %1"
-msgstr "터미널"
+msgstr "터미널 %1"
 
 #: app/FlightDelegate.qml:102
 #, kde-format
@@ -3310,22 +3309,21 @@ msgid "Settings"
 msgstr "설정"
 
 #: app/SettingsPage.qml:29
-#, fuzzy, kde-format
-#| msgid "Location"
+#, kde-format
 msgid "Localization"
-msgstr "위치"
+msgstr "지역화"
 
 #: app/SettingsPage.qml:38
 #, kde-format
 msgid "Use metric units"
-msgstr ""
+msgstr "미터법 단위 사용"
 
 #: app/SettingsPage.qml:39
 #, kde-format
 msgid ""
 "Use metric units for distance and temperature values regardless of the "
 "platform region settings."
-msgstr ""
+msgstr "플랫폼의 지역 설정과 관계 없이 미터법 거리와 온도 단위를 사용합니다."
 
 #: app/SettingsPage.qml:48
 #, kde-format
