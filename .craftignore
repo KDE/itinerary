@@ -34,4 +34,4 @@ share/locale/.*/LC_MESSAGES/kconfigwidgets6\.mo
 share/locale/.*/LC_MESSAGES/(kitemviews6|kwidgetsaddons6)_qt\.qm
 
 # unused Qt translation catalogs
-translations/(qtconnectivity|qtdeclarative|qtlocations|qtmultimedia|qtwebsockets)_.*\.qm
+translations/(qtconnectivity|qtdeclarative|qtlocation|qtmultimedia|qtwebsockets)_.*\.qm
