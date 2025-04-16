@@ -6,6 +6,7 @@
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
+import QtQuick.Effects as Effects
 import QtLocation as QtLocation
 import QtPositioning
 import org.kde.kirigami as Kirigami
@@ -23,11 +24,91 @@ Kirigami.Page {
     topPadding: 0
     bottomPadding: 0
 
+    property string mapStyle: Settings.read("LiveStatusPage/MapStyle", "");
+    readonly property bool isRailBound: !onboardStatus.hasJourney || onboardStatus.journey.route.line.isRailBound
+    readonly property string effectiveMapStyle: root.isRailBound ? root.mapStyle : ""
+
+    property QtLocation.Map overlayMap
+
+    // this whole convoluted setup is needed due to Map.plugin being a write-once property
+    // so we can neither just swap that at runtime nor can we have property bindings on plugin
+    // parameters
+    onEffectiveMapStyleChanged: {
+        if (root.overlayMap)
+            root.overlayMap.destroy()
+        // must not be map as parent, otherwise the layer effect applies to us
+        root.overlayMap = overlayMapComponent.createObject(map.parent);
+        root.overlayMap.plugin = root.effectiveMapStyle === "" ? overlayPlugin : railwayMapPlugin.createObject(root.overlayMap);
+        root.overlayMap.activeMapType = root.overlayMap.supportedMapTypes[root.overlayMap.supportedMapTypes.length - 1]
+        if (root.isRailBound)
+            Settings.write("LiveStatusPage/MapStyle", root.mapStyle);
+    }
+    Component.onCompleted: {
+        if (!root.overlayMap)
+            root.onEffectiveMapStyleChanged()
+    }
+
+    QQC2.ActionGroup { id: mapStyleGroup }
     actions: [
         Kirigami.Action {
             text: matrixBeacon.isActive ? i18n("Stop Location Sharing") : i18n("Share Location via Matrix")
             icon.name: matrixBeacon.isActive ? "dialog-cancel" : "emblem-shared-symbolic"
             onTriggered: matrixBeacon.isActive ? matrixBeacon.stop() : matrixRoomSheet.open()
+        },
+        Kirigami.Action {
+            QQC2.ActionGroup.group: mapStyleGroup
+            checkable: true
+            checked: root.mapStyle === ""
+            text: i18nc("map style", "Normal map")
+            icon.name: "map-gnomonic"
+            // TODO only for rail-bound modes
+            visible: onboardStatus.supportsPosition && root.isRailBound
+            onTriggered: root.mapStyle = ""
+        },
+        Kirigami.Action {
+            QQC2.ActionGroup.group: mapStyleGroup
+            checkable: true
+            checked: root.mapStyle === "standard"
+            text: i18nc("map style", "Railway infrastructure map")
+            icon.name: "map-gnomonic"
+            visible: onboardStatus.supportsPosition && root.isRailBound
+            onTriggered: root.mapStyle = "standard"
+        },
+        Kirigami.Action {
+            QQC2.ActionGroup.group: mapStyleGroup
+            checkable: true
+            checked: root.mapStyle === "signals"
+            text: i18nc("map style", "Railway signalling map")
+            icon.name: "map-gnomonic"
+            visible: onboardStatus.supportsPosition && root.isRailBound
+            onTriggered: root.mapStyle = "signals"
+        },
+        Kirigami.Action {
+            QQC2.ActionGroup.group: mapStyleGroup
+            checkable: true
+            checked: root.mapStyle === "maxspeed"
+            text: i18nc("map style", "Railway speed map")
+            icon.name: "map-gnomonic"
+            visible: onboardStatus.supportsPosition && root.isRailBound
+            onTriggered: root.mapStyle = "maxspeed"
+        },
+        Kirigami.Action {
+            QQC2.ActionGroup.group: mapStyleGroup
+            checkable: true
+            checked: root.mapStyle === "electrification"
+            text: i18nc("map style", "Railway electrification map")
+            icon.name: "map-gnomonic"
+            visible: onboardStatus.supportsPosition && root.isRailBound
+            onTriggered: root.mapStyle = "electrification"
+        },
+        Kirigami.Action {
+            QQC2.ActionGroup.group: mapStyleGroup
+            checkable: true
+            checked: root.mapStyle === "gauge"
+            text: i18nc("map style", "Railway gauge map")
+            icon.name: "map-gnomonic"
+            visible: onboardStatus.supportsPosition && root.isRailBound
+            onTriggered: root.mapStyle = "gauge"
         }
     ]
 
@@ -100,6 +181,7 @@ Kirigami.Page {
         interactive: footerTabBar.visible
 
         Kirigami.Page {
+            id: mapPage
             leftPadding: 0
             rightPadding: 0
             topPadding: 0
@@ -108,6 +190,7 @@ Kirigami.Page {
 
             MapView {
                 id: map
+                copyrightsVisible: root.effectiveMapStyle === ""
                 property bool autoFollow: true
 
                 function autoPositionMap() {
@@ -123,32 +206,75 @@ Kirigami.Page {
                 onZoomLevelChanged: autoFollow = false
                 onCenterChanged: autoFollow = false
 
-                QtLocation.MapQuickItem {
-                    coordinate: QtPositioning.coordinate(onboardStatus.latitude, onboardStatus.longitude)
-                    anchorPoint {
-                        x: icon.width / 2
-                        y: onboardStatus.hasHeading ? icon.height / 2 : icon.height
-                    }
-                    visible: onboardStatus.hasPosition
-                    sourceItem: Item {
-                        Kirigami.Icon {
-                            id: icon
-                            source: onboardStatus.hasHeading ? "go-up-symbolic" : "map-symbolic"
-                            width: height
-                            height: Kirigami.Units.iconSizes.medium
-                            color: Kirigami.Theme.highlightColor
-                            isMask: true
-                            rotation: onboardStatus.hasHeading ? onboardStatus.heading : 0.0
-                            transformOrigin: Item.Center
-                            onTransformOriginChanged: icon.transformOrigin = Item.Center
+                layer.enabled: root.effectiveMapStyle !== ""
+                layer.effect: Effects.MultiEffect {
+                    saturation: -1.0
+                }
+            }
+
+            QtLocation.Plugin {
+                id: overlayPlugin
+                name: "itemsoverlay"
+            }
+
+            Component {
+                id: railwayMapPlugin
+                QtLocation.Plugin {
+                    name: "osm"
+                    QtLocation.PluginParameter { name: "osm.useragent"; value: ApplicationController.userAgent }
+                    QtLocation.PluginParameter { name: "osm.mapping.custom.host"; value: "https://tiles.openrailwaymap.org/" + root.mapStyle + "/%z/%x/%y.png" }
+                    QtLocation.PluginParameter { name: "osm.mapping.providersrepository.disabled"; value: true }
+                    QtLocation.PluginParameter { name: "osm.mapping.custom.datacopyright"; value: "OpenStreetMap contributors" }
+                    QtLocation.PluginParameter { name: "osm.mapping.custom.mapcopyright"; value: "OpenRailwayMap" }
+                    QtLocation.PluginParameter { name: "osm.mapping.cache.directory"; value: Util.cacheLocation("QtLocation-OpenRailwayMap/" + root.mapStyle) }
+                }
+            }
+
+            Component {
+                id: overlayMapComponent
+                QtLocation.Map {
+                    id: mapOverlay
+                    anchors.fill: map
+                    center: map.center
+                    color: 'transparent'
+                    minimumFieldOfView: map.minimumFieldOfView
+                    maximumFieldOfView: map.maximumFieldOfView
+                    minimumTilt: map.minimumTilt
+                    maximumTilt: map.maximumTilt
+                    minimumZoomLevel: map.minimumZoomLevel
+                    maximumZoomLevel: map.maximumZoomLevel
+                    zoomLevel: map.zoomLevel
+                    tilt: map.tilt;
+                    bearing: map.bearing
+                    fieldOfView: map.fieldOfView
+
+                    QtLocation.MapQuickItem {
+                        coordinate: QtPositioning.coordinate(onboardStatus.latitude, onboardStatus.longitude)
+                        anchorPoint {
+                            x: icon.width / 2
+                            y: onboardStatus.hasHeading ? icon.height / 2 : icon.height
                         }
-                        QQC2.Label {
-                            Kirigami.Theme.colorSet: Kirigami.Theme.Selection
-                            Kirigami.Theme.inherit: false
-                            anchors.top: icon.bottom
-                            text: Localizer.formatSpeed(onboardStatus.speed, Settings.distanceFormat)
-                            visible: onboardStatus.hasSpeed
-                            background: Rectangle { color: Kirigami.Theme.backgroundColor }
+                        visible: onboardStatus.hasPosition
+                        sourceItem: Item {
+                            Kirigami.Icon {
+                                id: icon
+                                source: onboardStatus.hasHeading ? "go-up-symbolic" : "map-symbolic"
+                                width: height
+                                height: Kirigami.Units.iconSizes.medium
+                                color: Kirigami.Theme.highlightColor
+                                isMask: true
+                                rotation: onboardStatus.hasHeading ? onboardStatus.heading : 0.0
+                                transformOrigin: Item.Center
+                                onTransformOriginChanged: icon.transformOrigin = Item.Center
+                            }
+                            QQC2.Label {
+                                Kirigami.Theme.colorSet: Kirigami.Theme.Selection
+                                Kirigami.Theme.inherit: false
+                                anchors.top: icon.bottom
+                                text: Localizer.formatSpeed(onboardStatus.speed, Settings.distanceFormat)
+                                visible: onboardStatus.hasSpeed
+                                background: Rectangle { color: Kirigami.Theme.backgroundColor }
+                            }
                         }
                     }
                 }
