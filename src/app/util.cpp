@@ -17,13 +17,16 @@
 #include <QAbstractItemModel>
 #include <QColor>
 #include <QDateTime>
+#include <QDir>
 #include <QFile>
 #include <QImage>
+#include <QStandardPaths>
 #include <QTimeZone>
 #include <QUrl>
 
 #include <cmath>
 
+using namespace Qt::Literals;
 using namespace KItinerary;
 
 QDateTime Util::dateTimeStripTimezone(const QVariant &obj, const QString &propertyName)
@@ -125,6 +128,13 @@ bool Util::isDarkImage(const QImage &img)
 QString Util::toBase64(const QByteArray &data)
 {
     return QString::fromLatin1(data.toBase64());
+}
+
+QString Util::cacheLocation(const QString &relativePath)
+{
+    auto path = QStandardPaths::writableLocation(QStandardPaths::GenericCacheLocation) + '/'_L1 + relativePath;
+    QDir().mkpath(path);
+    return path;
 }
 
 #include "moc_util.cpp"

@@ -53,6 +53,11 @@ public:
 
     /** Base64 encoding. */
     Q_INVOKABLE [[nodiscard]] static QString toBase64(const QByteArray &data);
+
+    /** Returns and creates cache location path.
+     *  QtCore.StandardPaths returns URLs that QtLocation can't deal with.
+     */
+    Q_INVOKABLE [[nodiscard]] static QString cacheLocation(const QString &relativePath);
 };
 
 #endif // UTIL_H
