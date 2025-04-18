@@ -53,6 +53,12 @@ add_test(NAME itinerary-self-test COMMAND itinerary-app --self-test)
 
 # Selenium-based UI tests
 function(add_selenium_test test)
+    # FIXME as of April 2025 Appium tests don't work reliably on the KDE CI anymore :(
+    if (DEFINED ENV{KDECI_BUILD})
+        message("Skipping appium-${test} on CI!")
+        return()
+    endif()
+
     if (SeleniumWebDriverATSPI_FOUND OR (CMAKE_SYSTEM_NAME MATCHES "Linux" AND DEFINED ENV{KDECI_BUILD}))
         add_test(NAME appium-${test} COMMAND selenium-webdriver-at-spi-run ${CMAKE_CURRENT_SOURCE_DIR}/${test}.py)
         set_tests_properties(appium-${test} PROPERTIES
