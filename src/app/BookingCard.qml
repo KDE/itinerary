@@ -78,7 +78,24 @@ ColumnLayout {
             }
         }
 
+
         FormCard.FormDelegateSeparator { visible: ticketNumberLabel.visible }
+
+        FormCard.FormTextDelegate {
+            id: ticketValidFromLabel
+            text: i18n("Ticket valid from")
+            description: Localizer.formatDateOrDateTimeLocal(root.reservation.reservedTicket, "validFrom")
+            visible: !isNaN(root.reservation.reservedTicket.validFrom.getTime())
+        }
+        FormCard.FormDelegateSeparator { visible: ticketValidFromLabel.visible }
+
+        FormCard.FormTextDelegate {
+            id: ticketValidUntilLabel
+            text: i18n("Ticket valid until")
+            description: Localizer.formatDateOrDateTimeLocal(root.reservation.reservedTicket, "validUntil")
+            visible: !isNaN(root.reservation.reservedTicket.validUntil.getTime())
+        }
+        FormCard.FormDelegateSeparator { visible: ticketValidUntilLabel.visible }
 
         FormPriceDelegate {
             id: priceLabel
