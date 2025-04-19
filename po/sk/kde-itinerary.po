@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-27 00:42+0000\n"
+"POT-Creation-Date: 2025-04-19 00:42+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -527,6 +527,18 @@ msgstr "Poradové číslo:"
 #, kde-format
 msgid "Ticket number copied to clipboard"
 msgstr ""
+
+#: app/BookingCard.qml:86
+#, fuzzy, kde-format
+#| msgid "Valid from:"
+msgid "Ticket valid from"
+msgstr "Platné od:"
+
+#: app/BookingCard.qml:94
+#, fuzzy, kde-format
+#| msgid "Valid until:"
+msgid "Ticket valid until"
+msgstr "Platný do:"
 
 #: app/BookingEditorCard.qml:37
 #, fuzzy, kde-format

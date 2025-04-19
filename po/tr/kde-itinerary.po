@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-27 00:42+0000\n"
+"POT-Creation-Date: 2025-04-19 00:42+0000\n"
 "PO-Revision-Date: 2025-03-02 13:05+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -492,6 +492,18 @@ msgstr "Bilet numarası:"
 #, kde-format
 msgid "Ticket number copied to clipboard"
 msgstr "Bilet numarası panoya kopyalandı"
+
+#: app/BookingCard.qml:86
+#, fuzzy, kde-format
+#| msgid "Valid from"
+msgid "Ticket valid from"
+msgstr "Geçerlilik başlangıcı"
+
+#: app/BookingCard.qml:94
+#, fuzzy, kde-format
+#| msgid "Valid until"
+msgid "Ticket valid until"
+msgstr "Geçerlilik bitimi"
 
 #: app/BookingEditorCard.qml:37
 #, kde-format

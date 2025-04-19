@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-27 00:42+0000\n"
+"POT-Creation-Date: 2025-04-19 00:42+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -485,6 +485,19 @@ msgstr ""
 #, kde-format
 msgid "Ticket number copied to clipboard"
 msgstr "票据号码已复制到剪贴板"
+
+#: app/BookingCard.qml:86
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "Ticket Barcode"
+msgid "Ticket valid from"
+msgstr "车票/门票条形码"
+
+#: app/BookingCard.qml:94
+#, fuzzy, kde-format
+#| msgid "Valid until:"
+msgid "Ticket valid until"
+msgstr "有效期至："
 
 #: app/BookingEditorCard.qml:37
 #, kde-format

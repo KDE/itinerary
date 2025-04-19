@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-27 00:42+0000\n"
+"POT-Creation-Date: 2025-04-19 00:42+0000\n"
 "PO-Revision-Date: 2025-03-02 03:22+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -493,6 +493,18 @@ msgstr "Número de billete:"
 #, kde-format
 msgid "Ticket number copied to clipboard"
 msgstr "Número de billete copiado al portapapeles"
+
+#: app/BookingCard.qml:86
+#, fuzzy, kde-format
+#| msgid "Valid from"
+msgid "Ticket valid from"
+msgstr "Válido desde"
+
+#: app/BookingCard.qml:94
+#, fuzzy, kde-format
+#| msgid "Valid until"
+msgid "Ticket valid until"
+msgstr "Válido hasta"
 
 #: app/BookingEditorCard.qml:37
 #, kde-format
