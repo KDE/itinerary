@@ -42,6 +42,15 @@ TripGroupController::TripGroupController(QObject *parent)
     connect(this, &TripGroupController::setupChanged, this, &TripGroupController::locationInfoChanged);
     connect(this, &TripGroupController::tripGroupChanged, this, &TripGroupController::locationInfoChanged);
     connect(this, &TripGroupController::tripGroupChanged, this, &TripGroupController::tripGroupContentChanged);
+
+    m_tripEndUpdate.setTimerType(Qt::VeryCoarseTimer);
+    m_tripEndUpdate.setSingleShot(false);
+    m_tripEndUpdate.setInterval(std::chrono::seconds(QDateTime::currentDateTime().secsTo(QDate::currentDate().addDays(1).startOfDay())));
+    connect(&m_tripEndUpdate, &QTimer::timeout, this, [this]() {
+        Q_EMIT tripEnded();
+        m_tripEndUpdate.setInterval(std::chrono::seconds(QDateTime::currentDateTime().secsTo(QDate::currentDate().addDays(1).startOfDay())));
+    });
+    connect(this, &TripGroupController::tripGroupContentChanged, this, &TripGroupController::tripEnded);
 }
 
 TripGroupController::~TripGroupController() = default;
@@ -304,6 +313,16 @@ Price TripGroupController::totalCost() const
         accu.addBatch(elem);
     }
     return accu.totalCost();
+}
+
+bool TripGroupController::isPastTrip() const
+{
+    if (!m_tripGroupModel || m_tgId.isEmpty()) {
+        return true;
+    }
+
+    const auto tg = m_tripGroupModel->tripGroupManager()->tripGroup(m_tgId);
+    return tg.hasEnded() && !(tg.endDateTime().isValid() && tg.endDateTime().date() == QDate::currentDate());
 }
 
 #include "moc_tripgroupcontroller.cpp"

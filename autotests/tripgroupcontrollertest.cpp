@@ -67,6 +67,7 @@ private Q_SLOTS:
         QCOMPARE(controller.canMerge(), false);
         QCOMPARE(controller.canSplit(), false);
         QVERIFY(!controller.weatherForecast().isValid());
+        QVERIFY(controller.isPastTrip());
 
         controller.setTripGroupModel(&tgModel);
         controller.setWeatherForecastManager(&fcMgr);
@@ -74,6 +75,7 @@ private Q_SLOTS:
         QVERIFY(fc.isValid());
         QCOMPARE(fc.minimumTemperature(), 7.74224f);
         QCOMPARE(fc.maximumTemperature(), 52.5597f);
+        QVERIFY(controller.isPastTrip());
 
         controller.setProperty("homeCountryIsoCode", u"DE"_s);
         const auto countries = controller.locationInformation();

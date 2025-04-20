@@ -13,6 +13,7 @@
 #include "weatherforecastmanager.h"
 
 #include <QObject>
+#include <QTimer>
 
 /** Provides the information and actions shown in the trip group delegate. */
 class TripGroupController : public QObject
@@ -38,6 +39,12 @@ class TripGroupController : public QObject
     Q_PROPERTY(double totalCO2Emission READ totalCO2Emission NOTIFY tripGroupContentChanged)
     Q_PROPERTY(Price totalCost READ totalCost NOTIFY tripGroupContentChanged)
 
+    /** Trip is very high certainty over.
+     *  That is, not immediately after the scheduled arrival, at a time when it's
+     *  safe to disable trip-related actions.
+     */
+    Q_PROPERTY(bool isPastTrip READ isPastTrip NOTIFY tripEnded)
+
 public:
     explicit TripGroupController(QObject *parent = nullptr);
     ~TripGroupController();
@@ -56,6 +63,8 @@ public:
     [[nodiscard]] double totalCO2Emission() const;
     [[nodiscard]] Price totalCost() const;
 
+    [[nodiscard]] bool isPastTrip() const;
+
 Q_SIGNALS:
     void setupChanged();
     void tripGroupChanged();
@@ -63,6 +72,7 @@ Q_SIGNALS:
     void weatherForecastChanged();
     void locationInfoChanged();
     void tripGroupContentChanged();
+    void tripEnded();
 
 private:
     TripGroupModel *m_tripGroupModel = nullptr;
@@ -72,6 +82,8 @@ private:
 
     QString m_homeCountry;
     QString m_homeCurrency;
+
+    QTimer m_tripEndUpdate;
 
     bool m_convertCurrency = false;
 };
