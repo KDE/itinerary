@@ -693,7 +693,7 @@ Kirigami.ScrollablePage {
                         shortcut: StandardKey.Refresh
                         onTriggered: LiveDataManager.checkForUpdates(root.tripGroup.elements);
                     }
-                    visible: !root.isEmptyTripGroup && !root.tripGroup.hasEnded
+                    visible: !root.isEmptyTripGroup && !root.controller.isPastTrip
                 }
                 FormCard.FormButtonDelegate {
                     text: i18n("Rename…")
@@ -727,7 +727,7 @@ Kirigami.ScrollablePage {
                     icon.name: "download"
                     icon.color: QtNetwork.NetworkInformation.isMetered ? Kirigami.Theme.neutralTextColor : Kirigami.Theme.textColor
                     enabled: QtNetwork.NetworkInformation.reachability === QtNetwork.NetworkInformation.Reachability.Online || QtNetwork.NetworkInformation.reachability === QtNetwork.NetworkInformation.Reachability.Unknown
-                    visible: !root.isEmptyTripGroup && !root.tripGroup.hasEnded
+                    visible: !root.isEmptyTripGroup && !root.controller.isPastTrip
                     onClicked: MapDownloadManager.download(root.tripGroup.elements);
                 }
                 FormCard.FormButtonDelegate {
