@@ -194,7 +194,7 @@ Item {
             Layout.column: 0
             Layout.row: 2
             Layout.fillHeight: true
-            visible: notesLabel.visible
+            visible: notesLabel.visible && !root.isArrival
             lineColor: root.stop.route.line.hasColor ? root.stop.route.line.color : Kirigami.Theme.textColor
             hasStop: false
             showStop: false
