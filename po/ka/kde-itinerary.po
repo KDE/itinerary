@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-19 00:42+0000\n"
-"PO-Revision-Date: 2025-03-02 04:38+0100\n"
+"PO-Revision-Date: 2025-04-19 04:08+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -491,16 +491,14 @@ msgid "Ticket number copied to clipboard"
 msgstr "ბილეთის ნომერი დაკოპირდა ბუფერში"
 
 #: app/BookingCard.qml:86
-#, fuzzy, kde-format
-#| msgid "Valid from"
+#, kde-format
 msgid "Ticket valid from"
-msgstr "Ძალაშია"
+msgstr "ბილეთი Ძალაშია ვადიდან"
 
 #: app/BookingCard.qml:94
-#, fuzzy, kde-format
-#| msgid "Valid until"
+#, kde-format
 msgid "Ticket valid until"
-msgstr "ვადა"
+msgstr "ბილეთის ვადა"
 
 #: app/BookingEditorCard.qml:37
 #, kde-format

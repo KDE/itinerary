@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-19 00:42+0000\n"
-"PO-Revision-Date: 2025-03-02 09:56+0100\n"
+"PO-Revision-Date: 2025-04-19 11:10+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 24.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -494,16 +494,14 @@ msgid "Ticket number copied to clipboard"
 msgstr "El número de tiquet s'ha copiat a dins del porta-retalls"
 
 #: app/BookingCard.qml:86
-#, fuzzy, kde-format
-#| msgid "Valid from"
+#, kde-format
 msgid "Ticket valid from"
-msgstr "Vàlida des de"
+msgstr "Tiquet vàlid des de"
 
 #: app/BookingCard.qml:94
-#, fuzzy, kde-format
-#| msgid "Valid until"
+#, kde-format
 msgid "Ticket valid until"
-msgstr "Vàlid fins a"
+msgstr "Tiquet vàlid fins a"
 
 #: app/BookingEditorCard.qml:37
 #, kde-format

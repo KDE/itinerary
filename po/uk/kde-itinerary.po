@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-19 00:42+0000\n"
-"PO-Revision-Date: 2025-03-02 09:30+0200\n"
+"PO-Revision-Date: 2025-04-19 18:41+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -502,16 +502,14 @@ msgid "Ticket number copied to clipboard"
 msgstr "Номер квитка скопійовано до буфера"
 
 #: app/BookingCard.qml:86
-#, fuzzy, kde-format
-#| msgid "Valid from"
+#, kde-format
 msgid "Ticket valid from"
-msgstr "Початок чинності"
+msgstr "Початок дії квитка"
 
 #: app/BookingCard.qml:94
-#, fuzzy, kde-format
-#| msgid "Valid until"
+#, kde-format
 msgid "Ticket valid until"
-msgstr "Завершення чинності"
+msgstr "Завершення дії квитка"
 
 #: app/BookingEditorCard.qml:37
 #, kde-format
