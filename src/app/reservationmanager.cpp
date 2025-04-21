@@ -261,6 +261,28 @@ void ReservationManager::storeReservation(const QString &resId, const QVariant &
     m_reservations.insert(resId, res);
 }
 
+void ReservationManager::updateBatch(const std::vector<ReservationManager::ReservationChange> &batch)
+{
+    if (batch.empty()) {
+        return;
+    }
+
+    QString batchId;
+    for (const auto &change : batch) {
+        const auto bid = batchForReservation(change.id);
+        if (batchId.isEmpty()) {
+            batchId = bid;
+        }
+        assert(batchId == bid && !batchId.isEmpty());
+        storeReservation(change.id, change.res);
+    }
+    // TODO can probably be done more efficiently by only moving batchId
+    std::sort(m_batches.begin(), m_batches.end(), [this](const auto &lhs, const auto &rhs) {
+        return SortUtil::isBefore(reservation(lhs), reservation(rhs));
+    });
+    Q_EMIT batchContentChanged(batchId);
+}
+
 void ReservationManager::removeReservation(const QString &id)
 {
     const auto batchId = m_resToBatchMap.value(id);

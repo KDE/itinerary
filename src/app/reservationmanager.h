@@ -53,6 +53,13 @@ public:
     QList<QString> addReservationsWithPostProcessing(const QList<QVariant> &resData);
     Q_INVOKABLE QString addReservationWithPostProcessing(const QVariant &resData);
 
+    struct ReservationChange {
+        QString id;
+        QVariant res;
+    };
+    /** Update an entire batch, without attempting re-batching. */
+    void updateBatch(const std::vector<ReservationChange> &batch);
+
     const std::vector<QString> &batches() const;
     bool hasBatch(const QString &batchId) const;
     QString batchForReservation(const QString &resId) const;

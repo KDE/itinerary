@@ -324,10 +324,16 @@ void LiveDataManager::updateJourneyData(const KPublicTransport::JourneySection &
     ld.store(resId, LiveData::AllTypes);
 
     // update reservation with live data
-    const auto newRes = PublicTransport::mergeJourney(res, ld.journey);
-    if (!ReservationHelper::equals(res, newRes) && res.typeId() == newRes.typeId()) {
-        m_resMgr->updateReservation(resId, newRes);
+    std::vector<ReservationManager::ReservationChange> resUpdates;
+    for (const auto &id : m_resMgr->reservationsForBatch(resId)) {
+        const auto r = m_resMgr->reservation(id);
+        const auto newRes = PublicTransport::mergeJourney(r, ld.journey);
+        if (!ReservationHelper::equals(r, newRes) && r.typeId() == newRes.typeId()) {
+            resUpdates.emplace_back(id, newRes);
+        }
     }
+    qCDebug(Log) << "submitting" << resUpdates.size() << "reservation changes";
+    m_resMgr->updateBatch(resUpdates);
 
     // emit update signals
     Q_EMIT journeyUpdated(resId);
