@@ -247,6 +247,7 @@ Kirigami.Page {
                     tilt: map.tilt;
                     bearing: map.bearing
                     fieldOfView: map.fieldOfView
+                    z: map.z + 1
 
                     QtLocation.MapQuickItem {
                         coordinate: QtPositioning.coordinate(onboardStatus.latitude, onboardStatus.longitude)
@@ -286,6 +287,7 @@ Kirigami.Page {
                 icon.name: "map-symbolic"
                 text: i18n("Automatically follow on the map")
                 display: QQC2.Button.IconOnly
+                z: map.z + 10
                 QQC2.ToolTip.text: text
                 QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                 QQC2.ToolTip.visible: hovered
