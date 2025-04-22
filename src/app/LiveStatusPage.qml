@@ -258,7 +258,7 @@ Kirigami.Page {
                         sourceItem: Item {
                             Kirigami.Icon {
                                 id: icon
-                                source: onboardStatus.hasHeading ? "go-up-symbolic" : "map-symbolic"
+                                source: onboardStatus.hasHeading ? "qrc:///images/arrow.svg" : "map-symbolic"
                                 width: height
                                 height: Kirigami.Units.iconSizes.medium
                                 color: Kirigami.Theme.highlightColor
