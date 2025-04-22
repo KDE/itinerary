@@ -24,8 +24,10 @@ Kirigami.Page {
     topPadding: 0
     bottomPadding: 0
 
+    required property OnboardStatus onboardStatus
+
     property string mapStyle: Settings.read("LiveStatusPage/MapStyle", "");
-    readonly property bool isRailBound: !onboardStatus.hasJourney || onboardStatus.journey.route.line.isRailBound
+    readonly property bool isRailBound: !root.onboardStatus.hasJourney || root.onboardStatus.journey.sections[0].route.line.isRailBound
     readonly property string effectiveMapStyle: root.isRailBound ? root.mapStyle : ""
 
     property QtLocation.Map overlayMap
@@ -62,7 +64,7 @@ Kirigami.Page {
             text: i18nc("map style", "Normal map")
             icon.name: "map-gnomonic"
             // TODO only for rail-bound modes
-            visible: onboardStatus.supportsPosition && root.isRailBound
+            visible: root.onboardStatus.supportsPosition && root.isRailBound
             onTriggered: root.mapStyle = ""
         },
         Kirigami.Action {
@@ -71,7 +73,7 @@ Kirigami.Page {
             checked: root.mapStyle === "standard"
             text: i18nc("map style", "Railway infrastructure map")
             icon.name: "map-gnomonic"
-            visible: onboardStatus.supportsPosition && root.isRailBound
+            visible: root.onboardStatus.supportsPosition && root.isRailBound
             onTriggered: root.mapStyle = "standard"
         },
         Kirigami.Action {
@@ -80,7 +82,7 @@ Kirigami.Page {
             checked: root.mapStyle === "signals"
             text: i18nc("map style", "Railway signalling map")
             icon.name: "map-gnomonic"
-            visible: onboardStatus.supportsPosition && root.isRailBound
+            visible: root.onboardStatus.supportsPosition && root.isRailBound
             onTriggered: root.mapStyle = "signals"
         },
         Kirigami.Action {
@@ -89,7 +91,7 @@ Kirigami.Page {
             checked: root.mapStyle === "maxspeed"
             text: i18nc("map style", "Railway speed map")
             icon.name: "map-gnomonic"
-            visible: onboardStatus.supportsPosition && root.isRailBound
+            visible: root.onboardStatus.supportsPosition && root.isRailBound
             onTriggered: root.mapStyle = "maxspeed"
         },
         Kirigami.Action {
@@ -98,7 +100,7 @@ Kirigami.Page {
             checked: root.mapStyle === "electrification"
             text: i18nc("map style", "Railway electrification map")
             icon.name: "map-gnomonic"
-            visible: onboardStatus.supportsPosition && root.isRailBound
+            visible: root.onboardStatus.supportsPosition && root.isRailBound
             onTriggered: root.mapStyle = "electrification"
         },
         Kirigami.Action {
@@ -107,7 +109,7 @@ Kirigami.Page {
             checked: root.mapStyle === "gauge"
             text: i18nc("map style", "Railway gauge map")
             icon.name: "map-gnomonic"
-            visible: onboardStatus.supportsPosition && root.isRailBound
+            visible: root.onboardStatus.supportsPosition && root.isRailBound
             onTriggered: root.mapStyle = "gauge"
         }
     ]
@@ -124,7 +126,7 @@ Kirigami.Page {
 
         onPositionChanged: {
             map.autoPositionMap();
-            matrixBeacon.updateLocation(onboardStatus.latitude, onboardStatus.longitude, onboardStatus.heading, onboardStatus.speed, onboardStatus.altitude);
+            matrixBeacon.updateLocation(root.onboardStatus.latitude, root.onboardStatus.longitude, root.onboardStatus.heading, root.onboardStatus.speed, root.onboardStatus.altitude);
         }
     }
 
@@ -160,8 +162,8 @@ Kirigami.Page {
                 onTriggered: {
                     console.log(shareConfirmDialog.room.id);
                     matrixBeacon.roomId = shareConfirmDialog.room.id;
-                    if (onboardStatus.hasJourney && onboardStatus.journey.sections[0].route.line.name) {
-                        const jny = onboardStatus.journey.sections[0];
+                    if (root.onboardStatus.hasJourney && root.onboardStatus.journey.sections[0].route.line.name) {
+                        const jny = root.onboardStatus.journey.sections[0];
                         const name = jny.route.line.modeString + " " + jny.route.line.name;
                         matrixBeacon.start(name.trim());
                     } else {
@@ -177,7 +179,7 @@ Kirigami.Page {
     QQC2.SwipeView {
         id: swipeView
         anchors.fill: parent
-        currentIndex: !onboardStatus.supportsPosition ? 1 : 0
+        currentIndex: !root.onboardStatus.supportsPosition ? 1 : 0
         interactive: footerTabBar.visible
 
         Kirigami.Page {
@@ -194,15 +196,15 @@ Kirigami.Page {
                 property bool autoFollow: true
 
                 function autoPositionMap() {
-                    if (map.autoFollow && !isNaN(onboardStatus.latitude) && !isNaN(onboardStatus.longitude)) {
-                        map.center = QtPositioning.coordinate(onboardStatus.latitude, onboardStatus.longitude)
-                        map.zoomLevel = (onboardStatus.hasSpeed && onboardStatus.speed > 600) ? 8 : 12 // zoom out further when flying
+                    if (map.autoFollow && !isNaN(root.onboardStatus.latitude) && !isNaN(root.onboardStatus.longitude)) {
+                        map.center = QtPositioning.coordinate(root.onboardStatus.latitude, root.onboardStatus.longitude)
+                        map.zoomLevel = (root.onboardStatus.hasSpeed && root.onboardStatus.speed > 600) ? 8 : 12 // zoom out further when flying
                         map.autoFollow = true;
                     }
                 }
 
                 anchors.fill: parent
-                visible: !isNaN(onboardStatus.latitude) && !isNaN(onboardStatus.longitude)
+                visible: !isNaN(root.onboardStatus.latitude) && !isNaN(root.onboardStatus.longitude)
                 onZoomLevelChanged: autoFollow = false
                 onCenterChanged: autoFollow = false
 
@@ -250,21 +252,21 @@ Kirigami.Page {
                     z: map.z + 1
 
                     QtLocation.MapQuickItem {
-                        coordinate: QtPositioning.coordinate(onboardStatus.latitude, onboardStatus.longitude)
+                        coordinate: QtPositioning.coordinate(root.onboardStatus.latitude, root.onboardStatus.longitude)
                         anchorPoint {
                             x: icon.width / 2
-                            y: onboardStatus.hasHeading ? icon.height / 2 : icon.height
+                            y: root.onboardStatus.hasHeading ? icon.height / 2 : icon.height
                         }
-                        visible: onboardStatus.hasPosition
+                        visible: root.onboardStatus.hasPosition
                         sourceItem: Item {
                             Kirigami.Icon {
                                 id: icon
-                                source: onboardStatus.hasHeading ? "qrc:///images/arrow.svg" : "map-symbolic"
+                                source: root.onboardStatus.hasHeading ? "qrc:///images/arrow.svg" : "map-symbolic"
                                 width: height
                                 height: Kirigami.Units.iconSizes.medium
                                 color: Kirigami.Theme.highlightColor
                                 isMask: true
-                                rotation: onboardStatus.hasHeading ? onboardStatus.heading : 0.0
+                                rotation: root.onboardStatus.hasHeading ? root.onboardStatus.heading : 0.0
                                 transformOrigin: Item.Center
                                 onTransformOriginChanged: icon.transformOrigin = Item.Center
                             }
@@ -272,8 +274,8 @@ Kirigami.Page {
                                 Kirigami.Theme.colorSet: Kirigami.Theme.Selection
                                 Kirigami.Theme.inherit: false
                                 anchors.top: icon.bottom
-                                text: Localizer.formatSpeed(onboardStatus.speed, Settings.distanceFormat)
-                                visible: onboardStatus.hasSpeed
+                                text: Localizer.formatSpeed(root.onboardStatus.speed, Settings.distanceFormat)
+                                visible: root.onboardStatus.hasSpeed
                                 background: Rectangle { color: Kirigami.Theme.backgroundColor }
                             }
                         }
@@ -310,13 +312,13 @@ Kirigami.Page {
         }
 
         JourneySectionPage {
-            journeySection: onboardStatus.journey.sections[0]
+            journeySection: root.onboardStatus.journey.sections[0]
             showProgress: true
             enableMapView: false
 
             Kirigami.PlaceholderMessage {
                 anchors.fill: parent
-                visible: !onboardStatus.hasJourney
+                visible: !root.onboardStatus.hasJourney
                 text: i18n("Waiting for data…")
             }
         }
@@ -324,7 +326,7 @@ Kirigami.Page {
 
     footer: Kirigami.NavigationTabBar {
         id: footerTabBar
-        visible: onboardStatus.supportsPosition && onboardStatus.supportsJourney
+        visible: root.onboardStatus.supportsPosition && root.onboardStatus.supportsJourney
 
         actions: [
             Kirigami.Action {
@@ -333,8 +335,8 @@ Kirigami.Page {
                 icon.name: 'map-symbolic'
                 onTriggered: swipeView.currentIndex = 0
                 checked: swipeView.currentIndex === 0
-                enabled: onboardStatus.hasPosition
-                visible: onboardStatus.supportsPosition
+                enabled: root.onboardStatus.hasPosition
+                visible: root.onboardStatus.supportsPosition
             },
             Kirigami.Action {
                 id: journeyAction
@@ -342,8 +344,8 @@ Kirigami.Page {
                 icon.name: 'view-calendar-day'
                 onTriggered: swipeView.currentIndex = 1;
                 checked: swipeView.currentIndex === 1
-                enabled: onboardStatus.hasJourney
-                visible: onboardStatus.supportsJourney
+                enabled: root.onboardStatus.hasJourney
+                visible: root.onboardStatus.supportsJourney
             }
         ]
     }
