@@ -151,6 +151,8 @@ void LiveDataManager::setJourney(const QString &resId, const KPublicTransport::J
 {
     auto &ld = data(resId);
     ld.trip = journey;
+    ld.departureIndex = 0;
+    ld.arrivalIndex = (qsizetype)journey.intermediateStops().size() + 1;
     ld.journeyTimestamp = now();
     ld.store(resId);
 
@@ -300,6 +302,17 @@ void LiveDataManager::applyJourney(const QString &resId, const KPublicTransport:
         ld.trip.setArrival(applyLayoutData(ld.trip.arrival(), oldJny.arrival()));
     }
     applyMissingJourneyData(ld.trip, oldJny);
+
+    // determine departure/arrival indexes
+    const auto res = m_resMgr->reservation(resId);
+    for (qsizetype i = 0; i <= (qsizetype)ld.trip.intermediateStops().size() + 1; ++i) {
+        if (PublicTransportMatcher::isDepartureForReservation(res, ld.trip.stopover(i))) {
+            ld.departureIndex = i;
+        }
+        if (PublicTransportMatcher::isArrivalForReservation(res, ld.trip.stopover(i))) {
+            ld.arrivalIndex = i;
+        }
+    }
 
     ld.trip.applyMetaData(true); // download logo assets if needed
     ld.journeyTimestamp = now();

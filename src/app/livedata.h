@@ -23,6 +23,8 @@ public:
 
     KPublicTransport::JourneySection trip;
     QDateTime journeyTimestamp;
+    qsizetype departureIndex = -1;
+    qsizetype arrivalIndex = -1;
 
     [[nodiscard]] KPublicTransport::JourneySection journey() const;
     [[nodiscard]] KPublicTransport::Stopover departure() const;
@@ -54,6 +56,10 @@ public:
      *  @internal For unit tests only.
      */
     static void clearStorage();
+
+private:
+    /** Populate departure/arrival indexes for legacy data. */
+    void recoverIndexes();
 };
 
 #endif // LIVEDATA_H
