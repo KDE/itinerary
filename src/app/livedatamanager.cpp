@@ -82,12 +82,8 @@ LiveDataManager::LiveDataManager(QObject *parent)
             if (journey.sections().empty()) {
                 return;
             }
-            auto subjny = PublicTransportMatcher::subJourneyForReservation(res, journey.sections()[0]);
-            if (subjny.mode() == KPublicTransport::JourneySection::Invalid) {
-                return;
-            }
 
-            applyJourney(resId, subjny);
+            applyJourney(resId, journey.sections()[0]);
         }
     });
 }
@@ -148,13 +144,15 @@ KPublicTransport::Stopover LiveDataManager::departure(const QString &resId) cons
 
 KPublicTransport::JourneySection LiveDataManager::journey(const QString &resId) const
 {
-    return data(resId).journey;
+    return data(resId).journey();
 }
 
 void LiveDataManager::setJourney(const QString &resId, const KPublicTransport::JourneySection &journey)
 {
     auto &ld = data(resId);
-    ld.journey = journey;
+    ld.trip = journey;
+    ld.departureIndex = 0;
+    ld.arrivalIndex = (qsizetype)journey.intermediateStops().size() + 1;
     ld.journeyTimestamp = now();
     ld.store(resId);
 
@@ -186,7 +184,7 @@ void LiveDataManager::checkReservation(const QVariant &res, const QString &resId
         return;
     }
 
-    auto jny = data(resId).journey;
+    auto jny = data(resId).journey();
     if (jny.mode() == JourneySection::Invalid) {
         jny.setMode(JourneySection::PublicTransport);
         jny.setFrom(PublicTransport::locationFromPlace(LocationUtil::departureLocation(res), res));
@@ -285,20 +283,27 @@ static void applyMissingJourneyData(KPublicTransport::JourneySection &journey, c
 
 void LiveDataManager::applyJourney(const QString &resId, const KPublicTransport::JourneySection &journey)
 {
+    // align with sub/super-journey with what we already have
+    const auto subjny = PublicTransportMatcher::subJourneyForReservation(m_resMgr->reservation(resId), journey);
+    if (subjny.mode() == KPublicTransport::JourneySection::Invalid) {
+        qCDebug(Log) << "Failed to find sub journey";
+        return;
+    }
+
     auto &ld = data(resId);
-    const auto oldJny = ld.journey;
-    ld.journey = journey;
+    const auto oldJny = ld.trip;
+    ld.trip = subjny;
 
     // retain already existing vehicle/platform layout data if we are still departing/arriving in the same place
-    if (PublicTransport::isSameStopoverForLayout(oldJny.departure(), journey.departure())) {
-        ld.journey.setDeparture(applyLayoutData(journey.departure(), oldJny.departure()));
+    if (PublicTransport::isSameStopoverForLayout(oldJny.departure(), ld.trip.departure())) {
+        ld.trip.setDeparture(applyLayoutData(ld.trip.departure(), oldJny.departure()));
     }
-    if (PublicTransport::isSameStopoverForLayout(oldJny.arrival(), journey.arrival())) {
-        ld.journey.setArrival(applyLayoutData(journey.arrival(), oldJny.arrival()));
+    if (PublicTransport::isSameStopoverForLayout(oldJny.arrival(), ld.trip.arrival())) {
+        ld.trip.setArrival(applyLayoutData(ld.trip.arrival(), oldJny.arrival()));
     }
-    applyMissingJourneyData(ld.journey, oldJny);
+    applyMissingJourneyData(ld.trip, oldJny);
 
-    ld.journey.applyMetaData(true); // download logo assets if needed
+    ld.trip.applyMetaData(true); // download logo assets if needed
     ld.journeyTimestamp = now();
     ld.store(resId);
 
@@ -306,7 +311,7 @@ void LiveDataManager::applyJourney(const QString &resId, const KPublicTransport:
     std::vector<ReservationManager::ReservationChange> resUpdates;
     for (const auto &id : m_resMgr->reservationsForBatch(resId)) {
         const auto r = m_resMgr->reservation(id);
-        const auto newRes = PublicTransport::mergeJourney(r, ld.journey);
+        const auto newRes = PublicTransport::mergeJourney(r, ld.trip);
         if (!ReservationHelper::equals(r, newRes) && r.typeId() == newRes.typeId()) {
             resUpdates.emplace_back(id, newRes);
         }
@@ -473,8 +478,8 @@ void LiveDataManager::batchChanged(const QString &resId)
     const auto res = m_resMgr->reservation(resId);
     const auto dataIt = m_data.find(resId);
     if (dataIt != m_data.end()) {
-        if ((*dataIt).journeyTimestamp.isValid() && !PublicTransportMatcher::isJourneyForReservation(res, (*dataIt).journey)) {
-            (*dataIt).journey = {};
+        if ((*dataIt).journeyTimestamp.isValid() && !PublicTransportMatcher::isJourneyForReservation(res, (*dataIt).journey())) {
+            (*dataIt).trip = {};
             (*dataIt).journeyTimestamp = {};
             (*dataIt).store(resId);
             Q_EMIT journeyUpdated(resId);

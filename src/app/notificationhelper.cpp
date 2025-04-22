@@ -45,8 +45,8 @@ bool NotificationHelper::shouldNotify(const Stopover &oldStop, const Stopover &n
 
 static QString lineName(const LiveData &data)
 {
-    if (!data.journey.route().line().name().isEmpty()) {
-        return data.journey.route().line().name();
+    if (!data.journey().route().line().name().isEmpty()) {
+        return data.journey().route().line().name();
     }
     qCWarning(Log) << "Trying to create notification but no line name available!?";
     return {};

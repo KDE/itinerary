@@ -19,7 +19,22 @@ using namespace Qt::Literals::StringLiterals;
 
 bool LiveData::isEmpty() const
 {
-    return journey.from().isEmpty() && journey.to().isEmpty();
+    return trip.from().isEmpty() && trip.to().isEmpty();
+}
+
+KPublicTransport::JourneySection LiveData::journey() const
+{
+    return (departureIndex < 0 || arrivalIndex < 0) ? trip : trip.subsection(departureIndex, arrivalIndex);
+}
+
+KPublicTransport::Stopover LiveData::departure() const
+{
+    return departureIndex < 0 ? trip.departure() : trip.stopover(departureIndex);
+}
+
+KPublicTransport::Stopover LiveData::arrival() const
+{
+    return arrivalIndex < 0 ? trip.arrival() : trip.stopover(arrivalIndex);
 }
 
 LiveData LiveData::load(const QString &resId)
@@ -32,7 +47,18 @@ LiveData LiveData::load(const QString &resId)
     }
 
     ld.journeyTimestamp = f.fileTime(QFile::FileModificationTime);
-    ld.journey = KPublicTransport::JourneySection::fromJson(JsonIO::read(f.readAll()).toObject());
+    ld.trip = KPublicTransport::JourneySection::fromJson(JsonIO::read(f.readAll()).toObject());
+
+    QFile metaFile(basePath() + resId + "meta"_L1);
+    if (!metaFile.open(QFile::ReadOnly)) {
+        return ld;
+    }
+
+    const auto metaObj = JsonIO::read(metaFile.readAll()).toObject();
+    ld.departureIndex = metaObj.value("departureIndex"_L1).toInteger(-1);
+    ld.arrivalIndex = metaObj.value("arrivalIndex"_L1).toInteger(-1);
+    ld.recoverIndexes();
+
     return ld;
 }
 
@@ -42,14 +68,16 @@ void LiveData::store(const QString &resId) const
     QDir().mkpath(path);
 
     const QString fileName = path + resId + ".json"_L1;
+    const QString metaFileName = path + resId + ".meta"_L1;
 
-    const auto obj = KPublicTransport::JourneySection::toJson(journey);
+    const auto obj = KPublicTransport::JourneySection::toJson(trip);
     if (obj.isEmpty()) {
         QFile::remove(fileName);
+        QFile::remove(metaFileName);
     } else {
         QFile file(fileName);
         if (!file.open(QFile::WriteOnly | QFile::Truncate)) {
-            qCWarning(Log) << "Failed to open public transport cache file:" << file.fileName() << file.errorString();
+            qCWarning(Log) << "Failed to open trip data file:" << file.fileName() << file.errorString();
             return;
         }
         file.write(JsonIO::write(obj));
@@ -59,18 +87,30 @@ void LiveData::store(const QString &resId) const
         file.open(QFile::WriteOnly | QFile::Append);
         file.setFileTime(journeyTimestamp, QFile::FileModificationTime);
         file.close();
+
+        QFile metaFile(metaFileName);
+        if (!metaFile.open(QFile::WriteOnly | QFile::Truncate)) {
+            qCWarning(Log) << "Failed to open public trip metadata file:" << metaFile.fileName() << metaFile.errorString();
+            return;
+        }
+        QJsonObject metaObj{
+            {"departureIndex"_L1, departureIndex},
+            {"arrivalIndex"_L1, arrivalIndex}
+        };
+        metaFile.write(JsonIO::write(metaObj));
     }
 }
 
 void LiveData::remove(const QString &resId)
 {
     QFile::remove(basePath() + resId + ".json"_L1);
+    QFile::remove(basePath() + resId + ".meta"_L1);
 }
 
 std::vector<QString> LiveData::listAll()
 {
     std::vector<QString> ids;
-    for (QDirIterator it(basePath(), QDir::Files); it.hasNext();) {
+    for (QDirIterator it(basePath(), {"*.json"_L1}, QDir::Files); it.hasNext();) {
         it.next();
         ids.push_back(it.fileInfo().baseName());
     }
@@ -80,26 +120,31 @@ std::vector<QString> LiveData::listAll()
 QJsonObject LiveData::toJson(const LiveData &ld)
 {
     QJsonObject obj;
-    obj.insert("journey"_L1, KPublicTransport::JourneySection::toJson(ld.journey));
+    obj.insert("journey"_L1, KPublicTransport::JourneySection::toJson(ld.trip));
     obj.insert("journeyTimestamp"_L1, ld.journeyTimestamp.toString(Qt::ISODate));
+    obj.insert("departureIndex"_L1, ld.departureIndex);
+    obj.insert("arrivalIndex"_L1, ld.arrivalIndex);
     return obj;
 }
 
 LiveData LiveData::fromJson(const QJsonObject &obj)
 {
     LiveData ld;
-    ld.journey = KPublicTransport::JourneySection::fromJson(obj.value("journey"_L1).toObject());
+    ld.trip = KPublicTransport::JourneySection::fromJson(obj.value("journey"_L1).toObject());
     ld.journeyTimestamp = QDateTime::fromString(obj.value("journeyTimestamp"_L1).toString(), Qt::ISODate);
 
-    // backward compatibility
+    // backward compatibility for old journey storage format
     if (auto it = obj.find("departure"_L1); it != obj.end()) {
         const auto dep = KPublicTransport::Stopover::fromJson((*it).toObject());
-        ld.journey.setDeparture(dep);
+        ld.trip.setDeparture(dep);
     }
     if (auto it = obj.find("arrival"_L1); it != obj.end()) {
         const auto arr = KPublicTransport::Stopover::fromJson((*it).toObject());
-        ld.journey.setArrival(arr);
+        ld.trip.setArrival(arr);
     }
+
+    // backward compatibility for missing trip indexes
+    ld.recoverIndexes();
 
     return ld;
 }
@@ -112,4 +157,15 @@ QString LiveData::basePath()
 void LiveData::clearStorage()
 {
     QDir(basePath()).removeRecursively();
+}
+
+void LiveData::recoverIndexes()
+{
+    if (trip.mode() != KPublicTransport::JourneySection::PublicTransport) {
+        return;
+    }
+    departureIndex = std::max<qsizetype>(0, departureIndex);
+    if (arrivalIndex < 0) {
+        arrivalIndex = (qsizetype)trip.intermediateStops().size() + 1;
+    }
 }

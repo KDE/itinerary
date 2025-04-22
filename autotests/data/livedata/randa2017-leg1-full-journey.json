@@ -1,0 +1,607 @@
+{
+    "arrival": {
+        "disruptionEffect": "NormalService",
+        "route": {
+            "destination": {
+                "country": "CH",
+                "identifier": {
+                    "db": "8501609",
+                    "db-hafas": "A=1@O=Brig@X=7988093@Y=46319419@U=80@L=8501609@i=U×008501609@",
+                    "ibnr": "8501609",
+                    "uic": "8501609"
+                },
+                "latitude": 46.319419,
+                "longitude": 7.988093,
+                "name": "Brig",
+                "region": "CH-VS",
+                "type": "Stop"
+            },
+            "direction": "Brig",
+            "line": {
+                "mode": "LongDistanceTrain",
+                "name": "IC 816",
+                "operatorName": "Schweizerische Bundesbahnen"
+            }
+        },
+        "scheduledArrivalTime": {
+            "timezone": "Europe/Zurich",
+            "value": "2017-09-10T14:13:00+02:00"
+        },
+        "scheduledPlatform": "3",
+        "stopPoint": {
+            "country": "CH",
+            "identifier": {
+                "db": "8501609",
+                "db-hafas": "A=1@O=Brig@X=7988093@Y=46319419@U=80@L=8501609@i=U×008501609@",
+                "ibnr": "8501609",
+                "uic": "8501609"
+            },
+            "latitude": 46.319419,
+            "longitude": 7.988093,
+            "name": "Brig",
+            "region": "CH-VS",
+            "type": "Stop"
+        }
+    },
+    "departure": {
+        "disruptionEffect": "NormalService",
+        "route": {
+            "destination": {
+                "country": "CH",
+                "identifier": {
+                    "db": "8501609",
+                    "db-hafas": "A=1@O=Brig@X=7988093@Y=46319419@U=80@L=8501609@i=U×008501609@",
+                    "ibnr": "8501609",
+                    "uic": "8501609"
+                },
+                "latitude": 46.319419,
+                "longitude": 7.988093,
+                "name": "Brig",
+                "region": "CH-VS",
+                "type": "Stop"
+            },
+            "direction": "Brig",
+            "line": {
+                "mode": "LongDistanceTrain",
+                "name": "IC 816",
+                "operatorName": "Schweizerische Bundesbahnen"
+            }
+        },
+        "scheduledDepartureTime": {
+            "timezone": "Europe/Zurich",
+            "value": "2017-09-10T10:47:00+02:00"
+        },
+        "scheduledPlatform": "3",
+        "stopPoint": {
+            "identifier": {
+                "db": "8506121",
+                "db-hafas": "A=1@O=Romanshorn@X=9379372@Y=47565521@U=80@L=8506121@i=U×008506121@",
+                "ibnr": "8506121",
+                "uic": "8506121"
+            },
+            "latitude": 47.565521,
+            "longitude": 9.379372,
+            "name": "Romanshorn",
+            "type": "Stop"
+        },
+        "vehicleLayout": {
+            "direction": "UnknownDirection",
+            "features": [
+                {
+                    "availability": "Available",
+                    "disruptionEffect": "NormalService",
+                    "name": "Bordrestaurant",
+                    "type": "Restaurant"
+                },
+                {
+                    "availability": "Available",
+                    "disruptionEffect": "NormalService",
+                    "name": "Quiet Zone",
+                    "type": "SilentArea"
+                },
+                {
+                    "availability": "Available",
+                    "disruptionEffect": "NormalService",
+                    "name": "business-compartment",
+                    "type": "BusinessArea"
+                },
+                {
+                    "availability": "Conditional",
+                    "disruptionEffect": "NormalService",
+                    "name": "Bicycles conveyed - subject to reservation",
+                    "type": "BikeStorage"
+                }
+            ]
+        }
+    },
+    "intermediateStops": [
+        {
+            "disruptionEffect": "NormalService",
+            "route": {
+                "destination": {
+                    "country": "CH",
+                    "identifier": {
+                        "db": "8501609",
+                        "db-hafas": "A=1@O=Brig@X=7988093@Y=46319419@U=80@L=8501609@i=U×008501609@",
+                        "ibnr": "8501609",
+                        "uic": "8501609"
+                    },
+                    "latitude": 46.319419,
+                    "longitude": 7.988093,
+                    "name": "Brig",
+                    "region": "CH-VS",
+                    "type": "Stop"
+                },
+                "direction": "Brig",
+                "line": {
+                    "mode": "LongDistanceTrain",
+                    "name": "IC 816",
+                    "operatorName": "Schweizerische Bundesbahnen"
+                }
+            },
+            "scheduledArrivalTime": {
+                "timezone": "Europe/Zurich",
+                "value": "2017-09-10T10:53:00+02:00"
+            },
+            "scheduledDepartureTime": {
+                "timezone": "Europe/Zurich",
+                "value": "2017-09-10T10:53:00+02:00"
+            },
+            "scheduledPlatform": "1",
+            "stopPoint": {
+                "country": "CH",
+                "identifier": {
+                    "db": "8506109",
+                    "db-hafas": "A=1@O=Amriswil@X=9301921@Y=47550572@U=80@L=8506109@i=U×008506109@",
+                    "ibnr": "8506109",
+                    "uic": "8506109"
+                },
+                "latitude": 47.550572,
+                "longitude": 9.301921,
+                "name": "Amriswil",
+                "region": "CH-TG",
+                "type": "Stop"
+            }
+        },
+        {
+            "disruptionEffect": "NormalService",
+            "route": {
+                "destination": {
+                    "country": "CH",
+                    "identifier": {
+                        "db": "8501609",
+                        "db-hafas": "A=1@O=Brig@X=7988093@Y=46319419@U=80@L=8501609@i=U×008501609@",
+                        "ibnr": "8501609",
+                        "uic": "8501609"
+                    },
+                    "latitude": 46.319419,
+                    "longitude": 7.988093,
+                    "name": "Brig",
+                    "region": "CH-VS",
+                    "type": "Stop"
+                },
+                "direction": "Brig",
+                "line": {
+                    "mode": "LongDistanceTrain",
+                    "name": "IC 816",
+                    "operatorName": "Schweizerische Bundesbahnen"
+                }
+            },
+            "scheduledArrivalTime": {
+                "timezone": "Europe/Zurich",
+                "value": "2017-09-10T11:05:00+02:00"
+            },
+            "scheduledDepartureTime": {
+                "timezone": "Europe/Zurich",
+                "value": "2017-09-10T11:06:00+02:00"
+            },
+            "scheduledPlatform": "3",
+            "stopPoint": {
+                "country": "CH",
+                "identifier": {
+                    "db": "8506105",
+                    "db-hafas": "A=1@O=Weinfelden@X=9106369@Y=47566223@U=80@L=8506105@i=U×008506105@",
+                    "ibnr": "8506105",
+                    "uic": "8506105"
+                },
+                "latitude": 47.566223,
+                "longitude": 9.106369,
+                "name": "Weinfelden",
+                "region": "CH-TG",
+                "type": "Stop"
+            }
+        },
+        {
+            "disruptionEffect": "NormalService",
+            "route": {
+                "destination": {
+                    "country": "CH",
+                    "identifier": {
+                        "db": "8501609",
+                        "db-hafas": "A=1@O=Brig@X=7988093@Y=46319419@U=80@L=8501609@i=U×008501609@",
+                        "ibnr": "8501609",
+                        "uic": "8501609"
+                    },
+                    "latitude": 46.319419,
+                    "longitude": 7.988093,
+                    "name": "Brig",
+                    "region": "CH-VS",
+                    "type": "Stop"
+                },
+                "direction": "Brig",
+                "line": {
+                    "mode": "LongDistanceTrain",
+                    "name": "IC 816",
+                    "operatorName": "Schweizerische Bundesbahnen"
+                }
+            },
+            "scheduledArrivalTime": {
+                "timezone": "Europe/Zurich",
+                "value": "2017-09-10T11:17:00+02:00"
+            },
+            "scheduledDepartureTime": {
+                "timezone": "Europe/Zurich",
+                "value": "2017-09-10T11:18:00+02:00"
+            },
+            "scheduledPlatform": "1",
+            "stopPoint": {
+                "country": "CH",
+                "identifier": {
+                    "db": "8506100",
+                    "db-hafas": "A=1@O=Frauenfeld@X=8896561@Y=47558159@U=80@L=8506100@i=U×008506100@",
+                    "ibnr": "8506100",
+                    "uic": "8506100"
+                },
+                "latitude": 47.558159,
+                "longitude": 8.896561,
+                "name": "Frauenfeld",
+                "type": "Stop"
+            }
+        },
+        {
+            "disruptionEffect": "NormalService",
+            "route": {
+                "destination": {
+                    "country": "CH",
+                    "identifier": {
+                        "db": "8501609",
+                        "db-hafas": "A=1@O=Brig@X=7988093@Y=46319419@U=80@L=8501609@i=U×008501609@",
+                        "ibnr": "8501609",
+                        "uic": "8501609"
+                    },
+                    "latitude": 46.319419,
+                    "longitude": 7.988093,
+                    "name": "Brig",
+                    "region": "CH-VS",
+                    "type": "Stop"
+                },
+                "direction": "Brig",
+                "line": {
+                    "mode": "LongDistanceTrain",
+                    "name": "IC 816",
+                    "operatorName": "Schweizerische Bundesbahnen"
+                }
+            },
+            "scheduledArrivalTime": {
+                "timezone": "Europe/Zurich",
+                "value": "2017-09-10T11:29:00+02:00"
+            },
+            "scheduledDepartureTime": {
+                "timezone": "Europe/Zurich",
+                "value": "2017-09-10T11:31:00+02:00"
+            },
+            "scheduledPlatform": "4",
+            "stopPoint": {
+                "country": "CH",
+                "identifier": {
+                    "db": "8506000",
+                    "db-hafas": "A=1@O=Winterthur@X=8723824@Y=47500332@U=80@L=8506000@i=U×008506000@",
+                    "ibnr": "8506000",
+                    "uic": "8506000"
+                },
+                "latitude": 47.500332,
+                "longitude": 8.723824,
+                "name": "Winterthur",
+                "region": "CH-ZH",
+                "type": "Stop"
+            }
+        },
+        {
+            "disruptionEffect": "NormalService",
+            "route": {
+                "destination": {
+                    "country": "CH",
+                    "identifier": {
+                        "db": "8501609",
+                        "db-hafas": "A=1@O=Brig@X=7988093@Y=46319419@U=80@L=8501609@i=U×008501609@",
+                        "ibnr": "8501609",
+                        "uic": "8501609"
+                    },
+                    "latitude": 46.319419,
+                    "longitude": 7.988093,
+                    "name": "Brig",
+                    "region": "CH-VS",
+                    "type": "Stop"
+                },
+                "direction": "Brig",
+                "line": {
+                    "mode": "LongDistanceTrain",
+                    "name": "IC 816",
+                    "operatorName": "Schweizerische Bundesbahnen"
+                }
+            },
+            "scheduledArrivalTime": {
+                "timezone": "Europe/Zurich",
+                "value": "2017-09-10T11:39:00+02:00"
+            },
+            "scheduledDepartureTime": {
+                "timezone": "Europe/Zurich",
+                "value": "2017-09-10T11:40:00+02:00"
+            },
+            "scheduledPlatform": "3",
+            "stopPoint": {
+                "country": "CH",
+                "identifier": {
+                    "db": "8503016",
+                    "db-hafas": "A=1@O=Zürich Flughafen@X=8562405@Y=47450388@U=80@L=8503016@i=U×008503016@",
+                    "ibnr": "8503016",
+                    "uic": "8503016"
+                },
+                "latitude": 47.450388,
+                "longitude": 8.562405,
+                "name": "Zürich Flughafen",
+                "region": "CH-ZH",
+                "type": "Stop"
+            }
+        },
+        {
+            "disruptionEffect": "NormalService",
+            "route": {
+                "destination": {
+                    "country": "CH",
+                    "identifier": {
+                        "db": "8501609",
+                        "db-hafas": "A=1@O=Brig@X=7988093@Y=46319419@U=80@L=8501609@i=U×008501609@",
+                        "ibnr": "8501609",
+                        "uic": "8501609"
+                    },
+                    "latitude": 46.319419,
+                    "longitude": 7.988093,
+                    "name": "Brig",
+                    "region": "CH-VS",
+                    "type": "Stop"
+                },
+                "direction": "Brig",
+                "line": {
+                    "mode": "LongDistanceTrain",
+                    "name": "IC 816",
+                    "operatorName": "Schweizerische Bundesbahnen"
+                }
+            },
+            "scheduledArrivalTime": {
+                "timezone": "Europe/Zurich",
+                "value": "2017-09-10T11:55:00+02:00"
+            },
+            "scheduledDepartureTime": {
+                "timezone": "Europe/Zurich",
+                "value": "2017-09-10T12:02:00+02:00"
+            },
+            "scheduledPlatform": "31",
+            "stopPoint": {
+                "country": "CH",
+                "identifier": {
+                    "db": "8503000",
+                    "db-hafas": "A=1@O=Zürich HB@X=8540211@Y=47378177@U=80@L=8503000@i=U×008503000@",
+                    "ibnr": "8503000",
+                    "uic": "8503000"
+                },
+                "latitude": 47.378177,
+                "longitude": 8.540211,
+                "name": "Zürich HB",
+                "region": "CH-ZH",
+                "type": "Stop"
+            }
+        },
+        {
+            "disruptionEffect": "NormalService",
+            "route": {
+                "destination": {
+                    "country": "CH",
+                    "identifier": {
+                        "db": "8501609",
+                        "db-hafas": "A=1@O=Brig@X=7988093@Y=46319419@U=80@L=8501609@i=U×008501609@",
+                        "ibnr": "8501609",
+                        "uic": "8501609"
+                    },
+                    "latitude": 46.319419,
+                    "longitude": 7.988093,
+                    "name": "Brig",
+                    "region": "CH-VS",
+                    "type": "Stop"
+                },
+                "direction": "Brig",
+                "line": {
+                    "mode": "LongDistanceTrain",
+                    "name": "IC 816",
+                    "operatorName": "Schweizerische Bundesbahnen"
+                }
+            },
+            "scheduledArrivalTime": {
+                "timezone": "Europe/Zurich",
+                "value": "2017-09-10T12:58:00+02:00"
+            },
+            "scheduledDepartureTime": {
+                "timezone": "Europe/Zurich",
+                "value": "2017-09-10T13:07:00+02:00"
+            },
+            "scheduledPlatform": "7",
+            "stopPoint": {
+                "country": "CH",
+                "identifier": {
+                    "db": "8507000",
+                    "db-hafas": "A=1@O=Bern@X=7439131@Y=46948834@U=80@L=8507000@i=U×008507000@",
+                    "ibnr": "8507000",
+                    "uic": "8507000"
+                },
+                "latitude": 46.948834,
+                "longitude": 7.439131,
+                "name": "Bern",
+                "region": "CH-BE",
+                "type": "Stop"
+            }
+        },
+        {
+            "disruptionEffect": "NormalService",
+            "route": {
+                "destination": {
+                    "country": "CH",
+                    "identifier": {
+                        "db": "8501609",
+                        "db-hafas": "A=1@O=Brig@X=7988093@Y=46319419@U=80@L=8501609@i=U×008501609@",
+                        "ibnr": "8501609",
+                        "uic": "8501609"
+                    },
+                    "latitude": 46.319419,
+                    "longitude": 7.988093,
+                    "name": "Brig",
+                    "region": "CH-VS",
+                    "type": "Stop"
+                },
+                "direction": "Brig",
+                "line": {
+                    "mode": "LongDistanceTrain",
+                    "name": "IC 816",
+                    "operatorName": "Schweizerische Bundesbahnen"
+                }
+            },
+            "scheduledArrivalTime": {
+                "timezone": "Europe/Zurich",
+                "value": "2017-09-10T13:26:00+02:00"
+            },
+            "scheduledDepartureTime": {
+                "timezone": "Europe/Zurich",
+                "value": "2017-09-10T13:27:00+02:00"
+            },
+            "scheduledPlatform": "2",
+            "stopPoint": {
+                "country": "CH",
+                "identifier": {
+                    "db": "8507100",
+                    "db-hafas": "A=1@O=Thun@X=7629415@Y=46754694@U=80@L=8507100@i=U×008507100@",
+                    "ibnr": "8507100",
+                    "uic": "8507100"
+                },
+                "latitude": 46.754694,
+                "longitude": 7.629415,
+                "name": "Thun",
+                "region": "CH-BE",
+                "type": "Stop"
+            }
+        },
+        {
+            "disruptionEffect": "NormalService",
+            "route": {
+                "destination": {
+                    "country": "CH",
+                    "identifier": {
+                        "db": "8501609",
+                        "db-hafas": "A=1@O=Brig@X=7988093@Y=46319419@U=80@L=8501609@i=U×008501609@",
+                        "ibnr": "8501609",
+                        "uic": "8501609"
+                    },
+                    "latitude": 46.319419,
+                    "longitude": 7.988093,
+                    "name": "Brig",
+                    "region": "CH-VS",
+                    "type": "Stop"
+                },
+                "direction": "Brig",
+                "line": {
+                    "mode": "LongDistanceTrain",
+                    "name": "IC 816",
+                    "operatorName": "Schweizerische Bundesbahnen"
+                }
+            },
+            "scheduledArrivalTime": {
+                "timezone": "Europe/Zurich",
+                "value": "2017-09-10T13:37:00+02:00"
+            },
+            "scheduledDepartureTime": {
+                "timezone": "Europe/Zurich",
+                "value": "2017-09-10T13:38:00+02:00"
+            },
+            "scheduledPlatform": "3",
+            "stopPoint": {
+                "country": "CH",
+                "identifier": {
+                    "db": "8507483",
+                    "db-hafas": "A=1@O=Spiez@X=7680105@Y=46686394@U=80@L=8507483@i=U×008507483@",
+                    "ibnr": "8507483",
+                    "uic": "8507483"
+                },
+                "latitude": 46.686394,
+                "longitude": 7.680105,
+                "name": "Spiez",
+                "region": "CH-BE",
+                "type": "Stop"
+            }
+        },
+        {
+            "disruptionEffect": "NormalService",
+            "route": {
+                "destination": {
+                    "country": "CH",
+                    "identifier": {
+                        "db": "8501609",
+                        "db-hafas": "A=1@O=Brig@X=7988093@Y=46319419@U=80@L=8501609@i=U×008501609@",
+                        "ibnr": "8501609",
+                        "uic": "8501609"
+                    },
+                    "latitude": 46.319419,
+                    "longitude": 7.988093,
+                    "name": "Brig",
+                    "region": "CH-VS",
+                    "type": "Stop"
+                },
+                "direction": "Brig",
+                "line": {
+                    "mode": "LongDistanceTrain",
+                    "name": "IC 816",
+                    "operatorName": "Schweizerische Bundesbahnen"
+                }
+            },
+            "expectedArrivalTime": {
+                "timezone": "Europe/Zurich",
+                "value": "2017-09-10T14:04:00+02:00"
+            },
+            "scheduledArrivalTime": {
+                "timezone": "Europe/Zurich",
+                "value": "2017-09-10T14:02:00+02:00"
+            },
+            "scheduledDepartureTime": {
+                "timezone": "Europe/Zurich",
+                "value": "2017-09-10T14:06:00+02:00"
+            },
+            "scheduledPlatform": "7",
+            "stopPoint": {
+                "country": "CH",
+                "identifier": {
+                    "db": "8501605",
+                    "db-hafas": "A=1@O=Visp@X=7881463@Y=46294033@U=80@L=8501605@i=U×008501605@",
+                    "ibnr": "8501605",
+                    "uic": "8501605"
+                },
+                "latitude": 46.294033,
+                "longitude": 7.881463,
+                "name": "Visp",
+                "region": "CH-VS",
+                "type": "Stop"
+            }
+        }
+    ],
+    "mode": "PublicTransport",
+    "notes": [
+        "parent-and-children compartment",
+        "Reservation possible"
+    ]
+}
