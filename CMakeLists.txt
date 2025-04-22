@@ -12,7 +12,7 @@ project(itinerary VERSION ${RELEASE_SERVICE_VERSION})
 
 set(QT_MIN_VERSION 6.7)
 set(KF_MIN_VERSION 6.12)
-set(GEAR_MIN_VERSION 25.03)
+set(GEAR_MIN_VERSION 25.04)
 set(PIM_MIN_VERSION 6.2)
 
 find_package(ECM ${KF_MIN_VERSION} REQUIRED NO_MODULE)
@@ -57,7 +57,7 @@ find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS I18n CoreAddons Contacts 
 find_package(KF6KirigamiAddons 1.6.0 REQUIRED)
 find_package(KPim6PkPass ${PIM_MIN_VERSION} CONFIG REQUIRED)
 find_package(KPim6Itinerary ${PIM_MIN_VERSION} CONFIG REQUIRED)
-find_package(KPublicTransport ${GEAR_MIN_VERSION} CONFIG REQUIRED)
+find_package(KPublicTransport 25.07.71 CONFIG REQUIRED)
 find_package(KOSMIndoorMap ${GEAR_MIN_VERSION} CONFIG REQUIRED)
 find_package(KHealthCertificate ${GEAR_MIN_VERSION} CONFIG)
 find_package(Qt6Keychain CONFIG REQUIRED)
