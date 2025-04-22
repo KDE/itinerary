@@ -47,6 +47,10 @@ static int copySettings(const QSettings *from, QSettings *to)
 Exporter::Exporter(KItinerary::File *file)
     : m_file(file)
 {
+    QJsonObject versionData{
+        {"formatVersion"_L1, BUNDLE_FORMAT_VERSION}
+    };
+    m_file->addCustomData(BUNDLE_VERSION_DOMAIN, "version"_L1, QJsonDocument(versionData).toJson(QJsonDocument::Compact));
 }
 
 void Exporter::exportReservations(const ReservationManager *resMgr)
@@ -219,6 +223,12 @@ void Exporter::exportSettings()
 Importer::Importer(const KItinerary::File *file)
     : m_file(file)
 {
+}
+
+int Importer::formatVersion() const
+{
+    const auto versionData = QJsonDocument::fromJson(m_file->customData(BUNDLE_VERSION_DOMAIN, "version"_L1)).object();
+    return versionData.value("formatVersion"_L1).toInt(0);
 }
 
 int Importer::importReservations(ReservationManager *resMgr)

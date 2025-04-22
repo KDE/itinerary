@@ -62,6 +62,7 @@ class Importer
 {
 public:
     explicit Importer(const KItinerary::File *file);
+    int formatVersion() const;
 
     int importReservations(ReservationManager *resMgr);
     int importPasses(PkPassManager *pkPassMgr);

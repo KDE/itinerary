@@ -532,6 +532,10 @@ bool ApplicationController::exportBatchToFile(const QString &batchId, const QStr
 bool ApplicationController::importBundle(KItinerary::File *file)
 {
     Importer importer(file);
+    if (importer.formatVersion() >BUNDLE_FORMAT_VERSION) {
+        Q_EMIT infoMessage(i18n("File was imported with a newer version of Itinerary. Some information might not be imported correctly."));
+    }
+
     int count = 0;
     int settingsCount = 0;
     {
