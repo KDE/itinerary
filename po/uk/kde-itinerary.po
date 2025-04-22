@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-19 00:42+0000\n"
+"POT-Creation-Date: 2025-04-22 00:41+0000\n"
 "PO-Revision-Date: 2025-04-19 18:41+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -2240,12 +2240,12 @@ msgstr[3] "%1 зміна"
 msgid "Click to extend"
 msgstr "Натисніть, щоб розширити"
 
-#: app/livedatamanager.cpp:690
+#: app/livedatamanager.cpp:696
 #, kde-format
 msgid "Flight %1 to %2:"
 msgstr "Рейс %1 до %2:"
 
-#: app/livedatamanager.cpp:696
+#: app/livedatamanager.cpp:702
 #, kde-format
 msgid "Itinerary change"
 msgstr "Зміна маршруту"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-19 00:42+0000\n"
+"POT-Creation-Date: 2025-04-22 00:41+0000\n"
 "PO-Revision-Date: 2025-04-19 19:48+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -2229,12 +2229,12 @@ msgstr[1] "%1 cambios"
 msgid "Click to extend"
 msgstr "Pulse para extender"
 
-#: app/livedatamanager.cpp:690
+#: app/livedatamanager.cpp:696
 #, kde-format
 msgid "Flight %1 to %2:"
 msgstr "Vuelo %1 a %2:"
 
-#: app/livedatamanager.cpp:696
+#: app/livedatamanager.cpp:702
 #, kde-format
 msgid "Itinerary change"
 msgstr "Cambio de itinerario"

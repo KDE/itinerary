@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-19 00:42+0000\n"
-"PO-Revision-Date: 2025-04-06 22:15+0200\n"
+"POT-Creation-Date: 2025-04-22 00:41+0000\n"
+"PO-Revision-Date: 2025-04-22 01:21+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -487,16 +487,14 @@ msgid "Ticket number copied to clipboard"
 msgstr "승차권 번호가 클립보드에 복사됨"
 
 #: app/BookingCard.qml:86
-#, fuzzy, kde-format
-#| msgid "Valid from"
+#, kde-format
 msgid "Ticket valid from"
-msgstr "유효 기간 시작"
+msgstr "승차권 유효 기간 시작"
 
 #: app/BookingCard.qml:94
-#, fuzzy, kde-format
-#| msgid "Valid until"
+#, kde-format
 msgid "Ticket valid until"
-msgstr "유효 기간 끝"
+msgstr "승차권 유효 기간 끝"
 
 #: app/BookingEditorCard.qml:37
 #, kde-format
@@ -2218,12 +2216,12 @@ msgstr[0] "환승 %1회"
 msgid "Click to extend"
 msgstr "클릭하여 확장"
 
-#: app/livedatamanager.cpp:690
+#: app/livedatamanager.cpp:696
 #, kde-format
 msgid "Flight %1 to %2:"
 msgstr "%2(으)로 가는 %1 항공편|/|%2$[으 %2]로 가는 %1 항공편"
 
-#: app/livedatamanager.cpp:696
+#: app/livedatamanager.cpp:702
 #, kde-format
 msgid "Itinerary change"
 msgstr "여정 변경"

@@ -8,16 +8,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-19 00:42+0000\n"
-"PO-Revision-Date: 2025-03-02 13:05+0300\n"
-"Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
+"POT-Creation-Date: 2025-04-22 00:41+0000\n"
+"PO-Revision-Date: 2025-04-21 10:40+0300\n"
+"Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.03.70\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -494,16 +494,14 @@ msgid "Ticket number copied to clipboard"
 msgstr "Bilet numarası panoya kopyalandı"
 
 #: app/BookingCard.qml:86
-#, fuzzy, kde-format
-#| msgid "Valid from"
+#, kde-format
 msgid "Ticket valid from"
-msgstr "Geçerlilik başlangıcı"
+msgstr "Bilet geçerlilik başlangıcı"
 
 #: app/BookingCard.qml:94
-#, fuzzy, kde-format
-#| msgid "Valid until"
+#, kde-format
 msgid "Ticket valid until"
-msgstr "Geçerlilik bitimi"
+msgstr "Bilet geçerlilik bitimi"
 
 #: app/BookingEditorCard.qml:37
 #, kde-format
@@ -2228,12 +2226,12 @@ msgstr[1] "%1 aktarma"
 msgid "Click to extend"
 msgstr "Genişletmek için tıkla"
 
-#: app/livedatamanager.cpp:690
+#: app/livedatamanager.cpp:696
 #, kde-format
 msgid "Flight %1 to %2:"
 msgstr "%1 uçuşu, %2:"
 
-#: app/livedatamanager.cpp:696
+#: app/livedatamanager.cpp:702
 #, kde-format
 msgid "Itinerary change"
 msgstr "Yolcu belgesi değişikliği"

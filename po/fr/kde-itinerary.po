@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-19 00:42+0000\n"
-"PO-Revision-Date: 2025-04-18 16:08+0200\n"
+"POT-Creation-Date: 2025-04-22 00:41+0000\n"
+"PO-Revision-Date: 2025-04-20 08:54+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -497,16 +497,14 @@ msgid "Ticket number copied to clipboard"
 msgstr "Numéro de billet copié vers le presse-papier"
 
 #: app/BookingCard.qml:86
-#, fuzzy, kde-format
-#| msgid "Valid from"
+#, kde-format
 msgid "Ticket valid from"
-msgstr "Valable à partir de"
+msgstr "Ticket valable à partir de"
 
 #: app/BookingCard.qml:94
-#, fuzzy, kde-format
-#| msgid "Valid until"
+#, kde-format
 msgid "Ticket valid until"
-msgstr "Valable jusqu'à"
+msgstr "Ticket valable jusqu'à"
 
 #: app/BookingEditorCard.qml:37
 #, kde-format
@@ -2245,12 +2243,12 @@ msgstr[1] "%1 modifications"
 msgid "Click to extend"
 msgstr "Cliquer pour développer"
 
-#: app/livedatamanager.cpp:690
+#: app/livedatamanager.cpp:696
 #, kde-format
 msgid "Flight %1 to %2:"
 msgstr "Vol %1 vers %2 :"
 
-#: app/livedatamanager.cpp:696
+#: app/livedatamanager.cpp:702
 #, kde-format
 msgid "Itinerary change"
 msgstr "Changement d'itinéraire"
