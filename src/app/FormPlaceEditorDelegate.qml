@@ -179,7 +179,7 @@ ColumnLayout {
         onLocationsChanged: {
             if (count >= 1) {
                 const loc = reverseGeocodeModel.get(0).address;
-                streetAddress.text = loc.street;
+                streetAddress.text = loc.street + " " + loc.streetNumber;
                 postalCode.text = loc.postalCode
                 addressLocality.text = loc.city;
                 // countryCode is supposed to be the code already, but isn't always...
