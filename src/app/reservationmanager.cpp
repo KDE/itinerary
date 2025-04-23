@@ -237,9 +237,16 @@ QString ReservationManager::addReservationWithPostProcessing(const QVariant &res
     return !l.isEmpty() ? l.at(0) : QString();
 }
 
-void ReservationManager::updateReservation(const QString &resId, const QVariant &res)
+void ReservationManager::updateReservation(const QString &resId, QVariant res)
 {
     const auto oldRes = reservation(resId);
+
+    ExtractorPostprocessor postproc;
+    postproc.process({res});
+    const auto postProcResult = postproc.result();
+    if (postProcResult.size() == 1) {
+        res = postProcResult.at(0);
+    }
 
     storeReservation(resId, res);
     Q_EMIT reservationChanged(resId);
