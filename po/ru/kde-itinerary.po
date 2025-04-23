@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-22 00:41+0000\n"
+"POT-Creation-Date: 2025-04-23 00:42+0000\n"
 "PO-Revision-Date: 2025-04-01 10:26+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -334,7 +334,14 @@ msgstr "Поездка отправлена."
 msgid "Reservation sent."
 msgstr "Бронирование отправлено."
 
-#: app/applicationcontroller.cpp:558
+#: app/applicationcontroller.cpp:536
+#, kde-format
+msgid ""
+"File was imported with a newer version of Itinerary. Some information might "
+"not be imported correctly."
+msgstr ""
+
+#: app/applicationcontroller.cpp:562
 #, kde-format
 msgid "Import completed."
 msgstr "Импорт завершён."
@@ -1304,7 +1311,7 @@ msgstr "Поделиться местом"
 msgid "Do you really want to share %1 to the Matrix channel %2?"
 msgstr "Поделиться %1 на канале Matrix %2?"
 
-#: app/FormPlaceDelegate.qml:62 app/LiveStatusPage.qml:75
+#: app/FormPlaceDelegate.qml:62 app/LiveStatusPage.qml:158
 #, kde-format
 msgid "Share"
 msgstr "Поделиться"
@@ -2242,58 +2249,94 @@ msgstr[3] "Одна смена"
 msgid "Click to extend"
 msgstr "Нажмите для расширения"
 
-#: app/livedatamanager.cpp:696
+#: app/livedatamanager.cpp:682
 #, kde-format
 msgid "Flight %1 to %2:"
 msgstr "Рейс из %1 в %2:"
 
-#: app/livedatamanager.cpp:702
+#: app/livedatamanager.cpp:688
 #, kde-format
 msgid "Itinerary change"
 msgstr "Изменение маршрута"
 
-#: app/LiveStatusPage.qml:19 app/Main.qml:164
+#: app/LiveStatusPage.qml:20 app/Main.qml:164
 #, kde-format
 msgid "Live Status"
 msgstr "Состояние в реальном времени"
 
-#: app/LiveStatusPage.qml:28
+#: app/LiveStatusPage.qml:56
 #, kde-format
 msgid "Stop Location Sharing"
 msgstr "Прекратить делиться местоположением"
 
-#: app/LiveStatusPage.qml:28
+#: app/LiveStatusPage.qml:56
 #, kde-format
 msgid "Share Location via Matrix"
 msgstr "Делиться местоположением через Matrix"
 
-#: app/LiveStatusPage.qml:68
+#: app/LiveStatusPage.qml:64
+#, kde-format
+msgctxt "map style"
+msgid "Normal map"
+msgstr ""
+
+#: app/LiveStatusPage.qml:74
+#, kde-format
+msgctxt "map style"
+msgid "Railway infrastructure map"
+msgstr ""
+
+#: app/LiveStatusPage.qml:83
+#, kde-format
+msgctxt "map style"
+msgid "Railway signalling map"
+msgstr ""
+
+#: app/LiveStatusPage.qml:92
+#, kde-format
+msgctxt "map style"
+msgid "Railway speed map"
+msgstr ""
+
+#: app/LiveStatusPage.qml:101
+#, kde-format
+msgctxt "map style"
+msgid "Railway electrification map"
+msgstr ""
+
+#: app/LiveStatusPage.qml:110
+#, kde-format
+msgctxt "map style"
+msgid "Railway gauge map"
+msgstr ""
+
+#: app/LiveStatusPage.qml:151
 #, kde-format
 msgid "Share Live Location"
 msgstr "Поделиться местоположением в реальном времени"
 
-#: app/LiveStatusPage.qml:69
+#: app/LiveStatusPage.qml:152
 #, kde-format
 msgid ""
 "Do you really want to share your current location to the Matrix channel %1?"
 msgstr "Поделиться текущим местоположением через канал Matrix %1?"
 
-#: app/LiveStatusPage.qml:161
+#: app/LiveStatusPage.qml:290
 #, kde-format
 msgid "Automatically follow on the map"
 msgstr "Автоматически следовать по карте"
 
-#: app/LiveStatusPage.qml:180 app/LiveStatusPage.qml:192
+#: app/LiveStatusPage.qml:310 app/LiveStatusPage.qml:322
 #, kde-format
 msgid "Waiting for data…"
 msgstr "Ожидание данных…"
 
-#: app/LiveStatusPage.qml:204
+#: app/LiveStatusPage.qml:334
 #, kde-format
 msgid "Position"
 msgstr "Позиция"
 
-#: app/LiveStatusPage.qml:213
+#: app/LiveStatusPage.qml:343
 #, kde-format
 msgid "Journey"
 msgstr "Путешествие"
@@ -2963,74 +3006,74 @@ msgctxt "@title:tab"
 msgid "Current Ticket"
 msgstr "Текущий билет"
 
-#: app/notificationhelper.cpp:61
+#: app/notificationhelper.cpp:58
 #, kde-format
 msgid "Disruption on %1"
 msgstr "Непредвиденные изменения %1"
 
-#: app/notificationhelper.cpp:69
+#: app/notificationhelper.cpp:66
 #, kde-format
 msgid "Changes on %1"
 msgstr "Изменения %1"
 
-#: app/notificationhelper.cpp:73
+#: app/notificationhelper.cpp:70
 #, kde-format
 msgid "Delays on %1"
 msgstr "Задержки %1"
 
-#: app/notificationhelper.cpp:76
+#: app/notificationhelper.cpp:73
 #, kde-format
 msgid "Delayed departure on %1"
 msgstr "Задержка отправления %1"
 
-#: app/notificationhelper.cpp:79
+#: app/notificationhelper.cpp:76
 #, kde-format
 msgid "Earlier departure on %1"
 msgstr "Более ранее отправление %1"
 
-#: app/notificationhelper.cpp:82
+#: app/notificationhelper.cpp:79
 #, kde-format
 msgid "Delayed arrival on %1"
 msgstr "Задержка прибытия %1"
 
-#: app/notificationhelper.cpp:86
+#: app/notificationhelper.cpp:83
 #, kde-format
 msgid "Platform change on %1"
 msgstr "Смена платформы %1"
 
-#: app/notificationhelper.cpp:96
+#: app/notificationhelper.cpp:93
 #, kde-format
 msgctxt "a train/bus journey canceled by its operator"
 msgid "Trip has been canceled."
 msgstr "Поездка была отменена."
 
-#: app/notificationhelper.cpp:98
+#: app/notificationhelper.cpp:95
 #, kde-format
 msgctxt "a train/bus journey canceled by its operator"
 msgid "Arrival has been canceled."
 msgstr "Прибытие было отменено."
 
-#: app/notificationhelper.cpp:103
+#: app/notificationhelper.cpp:100
 #, kde-format
 msgid "New departure time is: %1 (+%2)"
 msgstr "Новое время отправления: %1 (+%2)"
 
-#: app/notificationhelper.cpp:106
+#: app/notificationhelper.cpp:103
 #, kde-format
 msgid "New departure time is: %1 (%2)"
 msgstr "Новое время отправления: %1 (%2)"
 
-#: app/notificationhelper.cpp:110
+#: app/notificationhelper.cpp:107
 #, kde-format
 msgid "New arrival time is: %1 (+%2)"
 msgstr "Новое время прибытия: %1 (+%2)"
 
-#: app/notificationhelper.cpp:114
+#: app/notificationhelper.cpp:111
 #, kde-format
 msgid "New departure platform is: %1"
 msgstr "Новая платформа отправления: %1"
 
-#: app/notificationhelper.cpp:117
+#: app/notificationhelper.cpp:114
 #, kde-format
 msgid "New arrival platform is: %1"
 msgstr "Новая платформа прибытия: %1"

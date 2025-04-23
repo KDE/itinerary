@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-22 00:41+0000\n"
+"POT-Creation-Date: 2025-04-23 00:42+0000\n"
 "PO-Revision-Date: 2024-12-15 19:32+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
@@ -325,7 +325,14 @@ msgstr "यात्रा भेजी गई."
 msgid "Reservation sent."
 msgstr "आरक्षण भेजा गया."
 
-#: app/applicationcontroller.cpp:558
+#: app/applicationcontroller.cpp:536
+#, kde-format
+msgid ""
+"File was imported with a newer version of Itinerary. Some information might "
+"not be imported correctly."
+msgstr ""
+
+#: app/applicationcontroller.cpp:562
 #, kde-format
 msgid "Import completed."
 msgstr "आयात पूर्ण हुआ."
@@ -1297,7 +1304,7 @@ msgstr "स्थान साझा करें"
 msgid "Do you really want to share %1 to the Matrix channel %2?"
 msgstr "क्या आप सचमुच %1 को मैट्रिक्स चैनल %2 से साझा करना चाहते हैं?"
 
-#: app/FormPlaceDelegate.qml:62 app/LiveStatusPage.qml:75
+#: app/FormPlaceDelegate.qml:62 app/LiveStatusPage.qml:158
 #, kde-format
 msgid "Share"
 msgstr "शेयर करना"
@@ -2235,58 +2242,94 @@ msgstr[1] "%1 परिवर्तन"
 msgid "Click to extend"
 msgstr "विस्तार हेतु क्लिक करें"
 
-#: app/livedatamanager.cpp:696
+#: app/livedatamanager.cpp:682
 #, kde-format
 msgid "Flight %1 to %2:"
 msgstr "उड़ान %1 से %2:"
 
-#: app/livedatamanager.cpp:702
+#: app/livedatamanager.cpp:688
 #, kde-format
 msgid "Itinerary change"
 msgstr "यात्रा कार्यक्रम में परिवर्तन"
 
-#: app/LiveStatusPage.qml:19 app/Main.qml:164
+#: app/LiveStatusPage.qml:20 app/Main.qml:164
 #, kde-format
 msgid "Live Status"
 msgstr "लाइव स्थिति"
 
-#: app/LiveStatusPage.qml:28
+#: app/LiveStatusPage.qml:56
 #, kde-format
 msgid "Stop Location Sharing"
 msgstr "स्थान साझा करना रोकें"
 
-#: app/LiveStatusPage.qml:28
+#: app/LiveStatusPage.qml:56
 #, kde-format
 msgid "Share Location via Matrix"
 msgstr "मैट्रिक्स के माध्यम से स्थान साझा करें"
 
-#: app/LiveStatusPage.qml:68
+#: app/LiveStatusPage.qml:64
+#, kde-format
+msgctxt "map style"
+msgid "Normal map"
+msgstr ""
+
+#: app/LiveStatusPage.qml:74
+#, kde-format
+msgctxt "map style"
+msgid "Railway infrastructure map"
+msgstr ""
+
+#: app/LiveStatusPage.qml:83
+#, kde-format
+msgctxt "map style"
+msgid "Railway signalling map"
+msgstr ""
+
+#: app/LiveStatusPage.qml:92
+#, kde-format
+msgctxt "map style"
+msgid "Railway speed map"
+msgstr ""
+
+#: app/LiveStatusPage.qml:101
+#, kde-format
+msgctxt "map style"
+msgid "Railway electrification map"
+msgstr ""
+
+#: app/LiveStatusPage.qml:110
+#, kde-format
+msgctxt "map style"
+msgid "Railway gauge map"
+msgstr ""
+
+#: app/LiveStatusPage.qml:151
 #, kde-format
 msgid "Share Live Location"
 msgstr "लाइव स्थान साझा करें"
 
-#: app/LiveStatusPage.qml:69
+#: app/LiveStatusPage.qml:152
 #, kde-format
 msgid ""
 "Do you really want to share your current location to the Matrix channel %1?"
 msgstr "क्या आप सचमुच अपना वर्तमान स्थान मैट्रिक्स चैनल %1 के साथ साझा करना चाहते हैं?"
 
-#: app/LiveStatusPage.qml:161
+#: app/LiveStatusPage.qml:290
 #, kde-format
 msgid "Automatically follow on the map"
 msgstr "मानचित्र पर स्वचालित रूप से अनुसरण करें"
 
-#: app/LiveStatusPage.qml:180 app/LiveStatusPage.qml:192
+#: app/LiveStatusPage.qml:310 app/LiveStatusPage.qml:322
 #, kde-format
 msgid "Waiting for data…"
 msgstr "डेटा की प्रतीक्षा में…"
 
-#: app/LiveStatusPage.qml:204
+#: app/LiveStatusPage.qml:334
 #, kde-format
 msgid "Position"
 msgstr "पद"
 
-#: app/LiveStatusPage.qml:213
+#: app/LiveStatusPage.qml:343
 #, kde-format
 msgid "Journey"
 msgstr "यात्रा"
@@ -2957,74 +3000,74 @@ msgctxt "@title:tab"
 msgid "Current Ticket"
 msgstr "वर्तमान टिकट"
 
-#: app/notificationhelper.cpp:61
+#: app/notificationhelper.cpp:58
 #, kde-format
 msgid "Disruption on %1"
 msgstr "%1 पर व्यवधान"
 
-#: app/notificationhelper.cpp:69
+#: app/notificationhelper.cpp:66
 #, kde-format
 msgid "Changes on %1"
 msgstr "%1 पर परिवर्तन"
 
-#: app/notificationhelper.cpp:73
+#: app/notificationhelper.cpp:70
 #, kde-format
 msgid "Delays on %1"
 msgstr "%1 पर देरी"
 
-#: app/notificationhelper.cpp:76
+#: app/notificationhelper.cpp:73
 #, kde-format
 msgid "Delayed departure on %1"
 msgstr "%1 पर विलंबित प्रस्थान"
 
-#: app/notificationhelper.cpp:79
+#: app/notificationhelper.cpp:76
 #, kde-format
 msgid "Earlier departure on %1"
 msgstr "%1 पर पहले प्रस्थान"
 
-#: app/notificationhelper.cpp:82
+#: app/notificationhelper.cpp:79
 #, kde-format
 msgid "Delayed arrival on %1"
 msgstr "%1 पर देरी से आगमन"
 
-#: app/notificationhelper.cpp:86
+#: app/notificationhelper.cpp:83
 #, kde-format
 msgid "Platform change on %1"
 msgstr "%1 पर प्लेटफ़ॉर्म परिवर्तन"
 
-#: app/notificationhelper.cpp:96
+#: app/notificationhelper.cpp:93
 #, kde-format
 msgctxt "a train/bus journey canceled by its operator"
 msgid "Trip has been canceled."
 msgstr "यात्रा रद्द कर दी गई है."
 
-#: app/notificationhelper.cpp:98
+#: app/notificationhelper.cpp:95
 #, kde-format
 msgctxt "a train/bus journey canceled by its operator"
 msgid "Arrival has been canceled."
 msgstr "आगमन रद्द कर दिया गया है."
 
-#: app/notificationhelper.cpp:103
+#: app/notificationhelper.cpp:100
 #, kde-format
 msgid "New departure time is: %1 (+%2)"
 msgstr "नया प्रस्थान समय है: %1 (+%2)"
 
-#: app/notificationhelper.cpp:106
+#: app/notificationhelper.cpp:103
 #, kde-format
 msgid "New departure time is: %1 (%2)"
 msgstr "नया प्रस्थान समय है: %1 (%2)"
 
-#: app/notificationhelper.cpp:110
+#: app/notificationhelper.cpp:107
 #, kde-format
 msgid "New arrival time is: %1 (+%2)"
 msgstr "नये आगमन का समय है: %1 (+%2)"
 
-#: app/notificationhelper.cpp:114
+#: app/notificationhelper.cpp:111
 #, kde-format
 msgid "New departure platform is: %1"
 msgstr "नया प्रस्थान प्लेटफॉर्म है: %1"
 
-#: app/notificationhelper.cpp:117
+#: app/notificationhelper.cpp:114
 #, kde-format
 msgid "New arrival platform is: %1"
 msgstr "नया आगमन प्लेटफॉर्म है: %1"
