@@ -313,6 +313,24 @@
             ]
         },
         {
+            "name": "kirigami-addons",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF"
+            ],
+            "buildsystem": "cmake-ninja",
+            "builddir": true,
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/libraries/kirigami-addons",
+                    "branch": "master"
+                }
+            ],
+            "cleanup": [
+                "/lib/cmake"
+            ]
+        },
+        {
             "name": "kpublictransport",
             "config-opts": [
                 "-DBUILD_TESTING=OFF",
@@ -395,24 +413,6 @@
                 "/mkspecs",
                 "/etc/xdg/*categories",
                 "/share/qlogging-categories5"
-            ]
-        },
-        {
-            "name": "kirigami-addons",
-            "config-opts": [
-                "-DBUILD_TESTING=OFF"
-            ],
-            "buildsystem": "cmake-ninja",
-            "builddir": true,
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://invent.kde.org/libraries/kirigami-addons",
-                    "branch": "master"
-                }
-            ],
-            "cleanup": [
-                "/lib/cmake"
             ]
         },
         {
