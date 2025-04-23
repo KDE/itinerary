@@ -144,6 +144,9 @@ ColumnLayout {
         }
 
         onLocationsChanged: {
+            if (count === 0)
+                return;
+
             let locs = [];
             for (let i = 0; i < count; ++i)
                 locs.push(geocodeModel.get(i));
@@ -154,16 +157,17 @@ ColumnLayout {
             if (postalCode.text !== "") {
                 locs = locs.filter(l => l.address.postalCode == postalCode.text);
             }
-            if (locs.length > 0) {
-                root.latitude = locs[0].coordinate.latitude;
-                root.longitude = locs[0].coordinate.longitude;
-                return;
-            }
+            const loc = locs.length > 0 ? locs[0] : geocodeModel.get(0);
+            root.latitude = loc.coordinate.latitude;
+            root.longitude = loc.coordinate.longitude;
 
-            if (count >= 1) {
-                root.latitude = geocodeModel.get(0).coordinate.latitude;
-                root.longitude = geocodeModel.get(0).coordinate.longitude;
-            }
+            // recover possibly missing address parts if we got those
+            if (!postalCode.text)
+                postalCode.text = loc.address.postalCode;
+            if (!addressCountry.currentValue)
+                addressCountry.currentIndex = addressCountry.indexOfValue(Country.fromName(loc.address.countryCode).alpha2);
+            if (!addressRegion.currentValue && (root.addressFormat.usedFields & KContacts.AddressFormatField.Region))
+                addressRegion.tryFindRegion(loc.address.state);
         }
         onErrorStringChanged: showPassiveNotification(geocodeModel.errorString, "short")
     }
