@@ -42,7 +42,8 @@ public:
      *  @returns The id of the new or existed merged reservation.
      */
     Q_INVOKABLE QString addReservation(const QVariant &res, const QString &resIdHint = {});
-    Q_INVOKABLE void updateReservation(const QString &resId, const QVariant &res);
+    /** Update existing reservation with post-processing. */
+    Q_INVOKABLE void updateReservation(const QString &resId, QVariant res);
     Q_INVOKABLE void removeReservation(const QString &id);
 
     /** Adds reservations after post-processing the input.
