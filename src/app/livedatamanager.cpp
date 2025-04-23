@@ -625,7 +625,7 @@ struct {
     {4 * 3600, 15 * 60}, // for <4h we poll every 15 minutes
     {24 * 3600, 3600}, // for <1d we poll once per hour
     {4 * 24 * 3600, 24 * 3600}, // for <4d we poll once per day
-    {60 * 24 * 3600, MAX_POLL_INTERVAL}, // anything before we should at least do one poll to get full details right away
+    {std::numeric_limits<int>::max(), MAX_POLL_INTERVAL}, // anything before we should at least do one poll to get full details right away
 };
 
 int LiveDataManager::nextPollTimeForReservation(const QString &resId) const
