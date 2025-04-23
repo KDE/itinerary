@@ -92,8 +92,6 @@ private:
     void checkReservation(const QVariant &res, const QString &resId);
     void tripQueryFailed(const QString &resId);
 
-    void updateJourneyData(const KPublicTransport::JourneySection &journey, const QString &resId, const QVariant &res);
-
     void showNotification(const QString &resId, const LiveData &ld);
     void fillNotification(KNotification *n, const LiveData &ld) const;
     void cancelNotification(const QString &resId);

@@ -87,7 +87,7 @@ LiveDataManager::LiveDataManager(QObject *parent)
                 return;
             }
 
-            updateJourneyData(subjny, resId, res);
+            applyJourney(resId, subjny);
         }
     });
 }
@@ -159,11 +159,6 @@ void LiveDataManager::setJourney(const QString &resId, const KPublicTransport::J
     ld.store(resId);
 
     Q_EMIT journeyUpdated(resId);
-}
-
-void LiveDataManager::applyJourney(const QString &resId, const KPublicTransport::JourneySection &journey)
-{
-    updateJourneyData(journey, resId, m_resMgr->reservation(resId));
 }
 
 void LiveDataManager::checkForUpdates()
@@ -288,7 +283,7 @@ static void applyMissingJourneyData(KPublicTransport::JourneySection &journey, c
     }
 }
 
-void LiveDataManager::updateJourneyData(const KPublicTransport::JourneySection &journey, const QString &resId, const QVariant &res)
+void LiveDataManager::applyJourney(const QString &resId, const KPublicTransport::JourneySection &journey)
 {
     auto &ld = data(resId);
     const auto oldJny = ld.journey;
