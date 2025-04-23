@@ -225,7 +225,7 @@ ColumnLayout {
                         geocodeAddr.postalCode = postalCode.text;
                         geocodeAddr.city = addressLocality.text;
                         geocodeAddr.state = addressRegion.currentValue ? addressRegion.currentValue : "";
-                        geocodeAddr.countryCode = addressCountry.currentValue;
+                        geocodeAddr.countryCode = addressCountry.currentValue ? addressCountry.currentValue : "";
                         geocodeModel.update();
                     }
                 },
