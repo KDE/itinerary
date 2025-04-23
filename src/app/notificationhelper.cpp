@@ -97,7 +97,7 @@ QString NotificationHelper::message(const LiveData &data)
 
     if (data.departure().departureDelay() > 0) {
         msgs.push_back(
-            i18n("New departure time is: %1 (+%2)", QLocale().toString(data.journey.departure().expectedDepartureTime().time()), data.departure().departureDelay()));
+            i18n("New departure time is: %1 (+%2)", QLocale().toString(data.departure().expectedDepartureTime().time()), data.departure().departureDelay()));
     } else if (data.departure().departureDelay() < 0) {
         msgs.push_back(
             i18n("New departure time is: %1 (%2)", QLocale().toString(data.departure().expectedDepartureTime().time()), data.departure().departureDelay()));

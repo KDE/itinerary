@@ -138,12 +138,12 @@ void LiveDataManager::setShowNotificationsOnLockScreen(bool enabled)
 
 KPublicTransport::Stopover LiveDataManager::arrival(const QString &resId) const
 {
-    return data(resId).journey.arrival();
+    return data(resId).arrival();
 }
 
 KPublicTransport::Stopover LiveDataManager::departure(const QString &resId) const
 {
-    return data(resId).journey.departure();
+    return data(resId).departure();
 }
 
 KPublicTransport::JourneySection LiveDataManager::journey(const QString &resId) const
@@ -323,8 +323,8 @@ void LiveDataManager::updateJourneyData(const KPublicTransport::JourneySection &
     Q_EMIT journeyUpdated(resId);
 
     // check if we need to notify
-    if (NotificationHelper::shouldNotify(oldJny.departure(), ld.journey.departure(), LiveData::Departure)
-        || NotificationHelper::shouldNotify(oldJny.arrival(), ld.journey.arrival(), LiveData::Arrival)) {
+    if (NotificationHelper::shouldNotify(oldJny.departure(), ld.departure(), LiveData::Departure)
+        || NotificationHelper::shouldNotify(oldJny.arrival(), ld.arrival(), LiveData::Arrival)) {
         showNotification(resId, ld);
     }
 }
