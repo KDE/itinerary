@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-23 00:42+0000\n"
-"PO-Revision-Date: 2025-04-19 04:08+0200\n"
+"POT-Creation-Date: 2025-04-24 00:42+0000\n"
+"PO-Revision-Date: 2025-04-23 03:41+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -222,35 +222,35 @@ msgid "To %1"
 msgstr "%1-მდე"
 
 #: app/AlternativeJourneyPage.qml:87 app/DepartureQueryPage.qml:41
-#: app/JourneyRequestPage.qml:235 app/TransferPage.qml:108
+#: app/JourneyRequestPage.qml:240 app/TransferPage.qml:108
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Long distance trains"
 msgstr "საქალაქთაშორისო მატარებლები"
 
 #: app/AlternativeJourneyPage.qml:95 app/DepartureQueryPage.qml:48
-#: app/JourneyRequestPage.qml:245 app/TransferPage.qml:116
+#: app/JourneyRequestPage.qml:250 app/TransferPage.qml:116
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Local trains"
 msgstr "ადგილობრივი მატარებლები"
 
 #: app/AlternativeJourneyPage.qml:103 app/DepartureQueryPage.qml:55
-#: app/JourneyRequestPage.qml:255 app/TransferPage.qml:124
+#: app/JourneyRequestPage.qml:260 app/TransferPage.qml:124
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Rapid transit"
 msgstr "სწრაფი ტრანზიტი"
 
 #: app/AlternativeJourneyPage.qml:111 app/DepartureQueryPage.qml:62
-#: app/JourneyRequestPage.qml:265 app/TransferPage.qml:132
+#: app/JourneyRequestPage.qml:270 app/TransferPage.qml:132
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Bus"
 msgstr "ავტობუსი"
 
 #: app/AlternativeJourneyPage.qml:119 app/DepartureQueryPage.qml:69
-#: app/JourneyRequestPage.qml:275 app/TransferPage.qml:140
+#: app/JourneyRequestPage.qml:280 app/TransferPage.qml:140
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ferry"
@@ -329,6 +329,8 @@ msgid ""
 "File was imported with a newer version of Itinerary. Some information might "
 "not be imported correctly."
 msgstr ""
+"ფაილი itinerary-ის უფრო ახალი ვერსიიდან შემოიტანეთ. შეიძლება ზოგიერთი "
+"ინფორმაცია არასწორად იქნას შემოტანილი."
 
 #: app/applicationcontroller.cpp:562
 #, kde-format
@@ -383,7 +385,7 @@ msgid "Boat"
 msgstr "ნავი"
 
 #: app/BoatEditor.qml:59 app/EventEditor.qml:54 app/FlightEditor.qml:72
-#: app/HotelEditor.qml:51 app/ImportPage.qml:21 app/JourneyRequestPage.qml:219
+#: app/HotelEditor.qml:51 app/ImportPage.qml:21 app/JourneyRequestPage.qml:224
 #: app/RestaurantEditor.qml:53
 #, kde-format
 msgid "Trip"
@@ -763,11 +765,6 @@ msgstr "ელფოტა"
 #, kde-format
 msgid "Website"
 msgstr "ვებსაიტი"
-
-#: app/CountryComboBox.qml:47
-#, kde-format
-msgid "Select country"
-msgstr "აირჩიეთ ქვეყანა"
 
 #: app/DelayRow.qml:22 app/DepartureQueryPage.qml:133
 #, kde-format
@@ -1356,27 +1353,27 @@ msgstr "რეგიონი"
 msgid "Country"
 msgstr "ქვეყანა"
 
-#: app/FormPlaceEditorDelegate.qml:196
+#: app/FormPlaceEditorDelegate.qml:200
 #, kde-format
 msgid "Coordinate"
 msgstr "კოორდინატი"
 
-#: app/FormPlaceEditorDelegate.qml:197
+#: app/FormPlaceEditorDelegate.qml:201
 #, kde-format
 msgid "%1°, %2°"
 msgstr "%1°, %2°"
 
-#: app/FormPlaceEditorDelegate.qml:197
+#: app/FormPlaceEditorDelegate.qml:201
 #, kde-format
 msgid "Pick…"
 msgstr "აირჩიეთ…"
 
-#: app/FormPlaceEditorDelegate.qml:215
+#: app/FormPlaceEditorDelegate.qml:219
 #, kde-format
 msgid "Address to coordinate"
 msgstr "მისამართის კოორდინატებიდან პოვნა"
 
-#: app/FormPlaceEditorDelegate.qml:231
+#: app/FormPlaceEditorDelegate.qml:235
 #, kde-format
 msgid "Coordinate to address"
 msgstr "კოორდინატებიდან მისამართის პოვნა"
@@ -2026,99 +2023,99 @@ msgstr "წინა გზების ჩატვირთვა"
 msgid "Still fetching results…"
 msgstr "შედეგების გამოთხოვა ჯერ კიდევ…"
 
-#: app/JourneyRequestPage.qml:34 app/JourneyRequestPage.qml:60
+#: app/JourneyRequestPage.qml:35 app/JourneyRequestPage.qml:65
 #, kde-format
 msgid "Select Journey"
 msgstr "აირჩიეთ მოგზაურობა"
 
-#: app/JourneyRequestPage.qml:40 app/JourneyRequestPage.qml:104
+#: app/JourneyRequestPage.qml:41 app/JourneyRequestPage.qml:109
 #, kde-format
 msgctxt "departure train station"
 msgid "Select Departure Stop"
 msgstr "აირჩიეთ გასასვლელი გაჩერება"
 
-#: app/JourneyRequestPage.qml:50 app/JourneyRequestPage.qml:118
+#: app/JourneyRequestPage.qml:53 app/JourneyRequestPage.qml:123
 #, kde-format
 msgctxt "arrival train station"
 msgid "Select Arrival Stop"
 msgstr "აირჩიეთ ჩამოსასვლელი გაჩერება"
 
-#: app/JourneyRequestPage.qml:103
+#: app/JourneyRequestPage.qml:108
 #, kde-format
 msgctxt "departure train station"
 msgid "From:"
 msgstr "საიდან:"
 
-#: app/JourneyRequestPage.qml:117
+#: app/JourneyRequestPage.qml:122
 #, kde-format
 msgctxt "arrival train station"
 msgid "To:"
 msgstr "სადამდე:"
 
-#: app/JourneyRequestPage.qml:135
+#: app/JourneyRequestPage.qml:140
 #, kde-format
 msgid "Swap departure and arrival"
 msgstr "გასვლისა და ჩამოსვლის მიმოცვლა"
 
-#: app/JourneyRequestPage.qml:150
+#: app/JourneyRequestPage.qml:155
 #, kde-format
 msgctxt "train or bus departure"
 msgid "Departure"
 msgstr "გამგზავრება"
 
-#: app/JourneyRequestPage.qml:153
+#: app/JourneyRequestPage.qml:158
 #, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival"
 msgstr "ჩამოსვლა"
 
-#: app/JourneyRequestPage.qml:166
+#: app/JourneyRequestPage.qml:171
 #, kde-format
 msgctxt "train or bus departure"
 msgid "Departure time"
 msgstr "გასვლის დრო"
 
-#: app/JourneyRequestPage.qml:166
+#: app/JourneyRequestPage.qml:171
 #, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival time"
 msgstr "ჩამოსვლის დრო"
 
-#: app/JourneyRequestPage.qml:177
+#: app/JourneyRequestPage.qml:182
 #, kde-format
 msgid "Search Journey"
 msgstr "მოგზაურობის ძებნა"
 
-#: app/JourneyRequestPage.qml:229
+#: app/JourneyRequestPage.qml:234
 #, kde-format
 msgid "Mode of transportation"
 msgstr "ტრანსპორტის რეჟიმი"
 
-#: app/JourneyRequestPage.qml:236
+#: app/JourneyRequestPage.qml:241
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "High speed or intercity trains"
 msgstr "ჩქაროსნული ან საქალაქთაშორისო მატარებლები"
 
-#: app/JourneyRequestPage.qml:246
+#: app/JourneyRequestPage.qml:251
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Regional or local trains"
 msgstr "რეგიონალური ან ადგილობრივი მატარებლები"
 
-#: app/JourneyRequestPage.qml:256
+#: app/JourneyRequestPage.qml:261
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Rapid transit, metro, trams"
 msgstr "სწრაფი ტრანზიტი, მეტრო, ტრამვაი"
 
-#: app/JourneyRequestPage.qml:266
+#: app/JourneyRequestPage.qml:271
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Local or regional bus services"
 msgstr "ადგილობრივი ან რეგიონული ავტობუსის მომსახურება"
 
-#: app/JourneyRequestPage.qml:276
+#: app/JourneyRequestPage.qml:281
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
@@ -2230,12 +2227,12 @@ msgstr[1] "%1 ცვლილება"
 msgid "Click to extend"
 msgstr "გასაფართოებლად დააწკაპუნეთ"
 
-#: app/livedatamanager.cpp:682
+#: app/livedatamanager.cpp:677
 #, kde-format
 msgid "Flight %1 to %2:"
 msgstr "ფრენა %1-დან %2-მდე:"
 
-#: app/livedatamanager.cpp:688
+#: app/livedatamanager.cpp:683
 #, kde-format
 msgid "Itinerary change"
 msgstr "მარშრუტის ცვლილება"
@@ -2259,37 +2256,37 @@ msgstr "მდებარეობის გაზიარება Matrix-ი
 #, kde-format
 msgctxt "map style"
 msgid "Normal map"
-msgstr ""
+msgstr "ნორმალური რუკა"
 
 #: app/LiveStatusPage.qml:74
 #, kde-format
 msgctxt "map style"
 msgid "Railway infrastructure map"
-msgstr ""
+msgstr "რკინიგზის ინფრასტრუქტურის რუკა"
 
 #: app/LiveStatusPage.qml:83
 #, kde-format
 msgctxt "map style"
 msgid "Railway signalling map"
-msgstr ""
+msgstr "რკინიგზის სასიგნალო რუკა"
 
 #: app/LiveStatusPage.qml:92
 #, kde-format
 msgctxt "map style"
 msgid "Railway speed map"
-msgstr ""
+msgstr "რკინიგზის სიჩქარის რუკა"
 
 #: app/LiveStatusPage.qml:101
 #, kde-format
 msgctxt "map style"
 msgid "Railway electrification map"
-msgstr ""
+msgstr "რკინიგზის ელექტრიფიკაციის რუკა"
 
 #: app/LiveStatusPage.qml:110
 #, kde-format
 msgctxt "map style"
 msgid "Railway gauge map"
-msgstr ""
+msgstr "რკინიგზის ლიანდაგების რუკა"
 
 #: app/LiveStatusPage.qml:151
 #, kde-format
@@ -3784,87 +3781,6 @@ msgstr "მატარებელი"
 msgid "Car"
 msgstr "მანქანა"
 
-#: app/StopPickerPage.qml:27
-#, kde-format
-msgid "Clear History"
-msgstr "ისტორიის გაწმენდა"
-
-#: app/StopPickerPage.qml:28
-#, kde-format
-msgid "Do you really want to remove all previously searched locations?"
-msgstr "ნამდვილად გსურთ ყველა ადრე ძებნილი მდებარეობების წაშლა?"
-
-#: app/StopPickerPage.qml:32
-#, kde-format
-msgid "Remove"
-msgstr "წაშლა"
-
-#: app/StopPickerPage.qml:45
-#, kde-format
-msgid "Clear history"
-msgstr "ისტორიის გაწმენდა"
-
-#: app/StopPickerPage.qml:55
-#, kde-format
-msgid "Sort by name"
-msgstr "სახელით დალაგება"
-
-#: app/StopPickerPage.qml:62
-#, kde-format
-msgid "Most recently used"
-msgstr "ყველაზე ცოტა ხნის წინ გამოყენებული"
-
-#: app/StopPickerPage.qml:69
-#, kde-format
-msgid "Most often used"
-msgstr "ყველაზე ხშირად გამოყენებული"
-
-#: app/StopPickerPage.qml:167 app/StopPickerPage.qml:248
-#, kde-format
-msgctxt "location name, locality, region, country"
-msgid "%1, %2, %3, %4"
-msgstr "%1, %2, %3, %4"
-
-#: app/StopPickerPage.qml:173 app/StopPickerPage.qml:254
-#, kde-format
-msgctxt "location name, locality, country"
-msgid "%1, %2, %3"
-msgstr "%1, %2, %3"
-
-#: app/StopPickerPage.qml:178 app/StopPickerPage.qml:259
-#, kde-format
-msgctxt "location name, region, country"
-msgid "%1, %2, %3"
-msgstr "%1, %2, %3"
-
-#: app/StopPickerPage.qml:199 app/StopPickerPage.qml:281
-#, kde-format
-msgctxt "locality, region, country"
-msgid "%1, %2, %3"
-msgstr "%1, %2, %3"
-
-#: app/StopPickerPage.qml:204 app/StopPickerPage.qml:286
-#, kde-format
-msgctxt "locality, country"
-msgid "%1, %2"
-msgstr "%1, %2"
-
-#: app/StopPickerPage.qml:208 app/StopPickerPage.qml:290
-#, kde-format
-msgctxt "region, country"
-msgid "%1, %2"
-msgstr "%1, %2"
-
-#: app/StopPickerPage.qml:223
-#, kde-format
-msgid "Remove history entry"
-msgstr "ისტორიის ჩანწერის წაშლა"
-
-#: app/StopPickerPage.qml:329
-#, kde-format
-msgid "No locations found"
-msgstr "მდებარეობები ვერ მოიძებნა"
-
 #: app/TicketEditor.qml:18
 #, kde-format
 msgid "Edit Ticket"
@@ -4659,6 +4575,60 @@ msgstr "გამოხვედით"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 -ი %3-დან %4-მდე %5-ზე"
+
+#~ msgid "Select country"
+#~ msgstr "აირჩიეთ ქვეყანა"
+
+#~ msgid "Clear History"
+#~ msgstr "ისტორიის გაწმენდა"
+
+#~ msgid "Do you really want to remove all previously searched locations?"
+#~ msgstr "ნამდვილად გსურთ ყველა ადრე ძებნილი მდებარეობების წაშლა?"
+
+#~ msgid "Remove"
+#~ msgstr "წაშლა"
+
+#~ msgid "Clear history"
+#~ msgstr "ისტორიის გაწმენდა"
+
+#~ msgid "Sort by name"
+#~ msgstr "სახელით დალაგება"
+
+#~ msgid "Most recently used"
+#~ msgstr "ყველაზე ცოტა ხნის წინ გამოყენებული"
+
+#~ msgid "Most often used"
+#~ msgstr "ყველაზე ხშირად გამოყენებული"
+
+#~ msgctxt "location name, locality, region, country"
+#~ msgid "%1, %2, %3, %4"
+#~ msgstr "%1, %2, %3, %4"
+
+#~ msgctxt "location name, locality, country"
+#~ msgid "%1, %2, %3"
+#~ msgstr "%1, %2, %3"
+
+#~ msgctxt "location name, region, country"
+#~ msgid "%1, %2, %3"
+#~ msgstr "%1, %2, %3"
+
+#~ msgctxt "locality, region, country"
+#~ msgid "%1, %2, %3"
+#~ msgstr "%1, %2, %3"
+
+#~ msgctxt "locality, country"
+#~ msgid "%1, %2"
+#~ msgstr "%1, %2"
+
+#~ msgctxt "region, country"
+#~ msgid "%1, %2"
+#~ msgstr "%1, %2"
+
+#~ msgid "Remove history entry"
+#~ msgstr "ისტორიის ჩანწერის წაშლა"
+
+#~ msgid "No locations found"
+#~ msgstr "მდებარეობები ვერ მოიძებნა"
 
 #~ msgctxt "Duration in minutes"
 #~ msgid "%1 min"

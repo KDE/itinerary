@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-23 00:42+0000\n"
+"POT-Creation-Date: 2025-04-24 00:42+0000\n"
 "PO-Revision-Date: 2024-10-18 16:02+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -219,35 +219,35 @@ msgid "To %1"
 msgstr "Do %1"
 
 #: app/AlternativeJourneyPage.qml:87 app/DepartureQueryPage.qml:41
-#: app/JourneyRequestPage.qml:235 app/TransferPage.qml:108
+#: app/JourneyRequestPage.qml:240 app/TransferPage.qml:108
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Long distance trains"
 msgstr "Dálkové vlaky"
 
 #: app/AlternativeJourneyPage.qml:95 app/DepartureQueryPage.qml:48
-#: app/JourneyRequestPage.qml:245 app/TransferPage.qml:116
+#: app/JourneyRequestPage.qml:250 app/TransferPage.qml:116
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Local trains"
 msgstr "Místní vlaky"
 
 #: app/AlternativeJourneyPage.qml:103 app/DepartureQueryPage.qml:55
-#: app/JourneyRequestPage.qml:255 app/TransferPage.qml:124
+#: app/JourneyRequestPage.qml:260 app/TransferPage.qml:124
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Rapid transit"
 msgstr "Rychlá doprava"
 
 #: app/AlternativeJourneyPage.qml:111 app/DepartureQueryPage.qml:62
-#: app/JourneyRequestPage.qml:265 app/TransferPage.qml:132
+#: app/JourneyRequestPage.qml:270 app/TransferPage.qml:132
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Bus"
 msgstr "Autobus"
 
 #: app/AlternativeJourneyPage.qml:119 app/DepartureQueryPage.qml:69
-#: app/JourneyRequestPage.qml:275 app/TransferPage.qml:140
+#: app/JourneyRequestPage.qml:280 app/TransferPage.qml:140
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ferry"
@@ -383,7 +383,7 @@ msgid "Boat"
 msgstr "Člun"
 
 #: app/BoatEditor.qml:59 app/EventEditor.qml:54 app/FlightEditor.qml:72
-#: app/HotelEditor.qml:51 app/ImportPage.qml:21 app/JourneyRequestPage.qml:219
+#: app/HotelEditor.qml:51 app/ImportPage.qml:21 app/JourneyRequestPage.qml:224
 #: app/RestaurantEditor.qml:53
 #, kde-format
 msgid "Trip"
@@ -766,11 +766,6 @@ msgstr "E-mail"
 #, kde-format
 msgid "Website"
 msgstr "Webová stránka"
-
-#: app/CountryComboBox.qml:47
-#, kde-format
-msgid "Select country"
-msgstr "Vyberte zemi"
 
 #: app/DelayRow.qml:22 app/DepartureQueryPage.qml:133
 #, kde-format
@@ -1361,27 +1356,27 @@ msgstr "Region"
 msgid "Country"
 msgstr "Země"
 
-#: app/FormPlaceEditorDelegate.qml:196
+#: app/FormPlaceEditorDelegate.qml:200
 #, kde-format
 msgid "Coordinate"
 msgstr "Souřadnice"
 
-#: app/FormPlaceEditorDelegate.qml:197
+#: app/FormPlaceEditorDelegate.qml:201
 #, kde-format
 msgid "%1°, %2°"
 msgstr "%1°, %2°"
 
-#: app/FormPlaceEditorDelegate.qml:197
+#: app/FormPlaceEditorDelegate.qml:201
 #, kde-format
 msgid "Pick…"
 msgstr "Výběr…"
 
-#: app/FormPlaceEditorDelegate.qml:215
+#: app/FormPlaceEditorDelegate.qml:219
 #, kde-format
 msgid "Address to coordinate"
 msgstr ""
 
-#: app/FormPlaceEditorDelegate.qml:231
+#: app/FormPlaceEditorDelegate.qml:235
 #, kde-format
 msgid "Coordinate to address"
 msgstr ""
@@ -2029,99 +2024,99 @@ msgstr "Načíst dřívější spojení"
 msgid "Still fetching results…"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:34 app/JourneyRequestPage.qml:60
+#: app/JourneyRequestPage.qml:35 app/JourneyRequestPage.qml:65
 #, kde-format
 msgid "Select Journey"
 msgstr "Vyberte výlet"
 
-#: app/JourneyRequestPage.qml:40 app/JourneyRequestPage.qml:104
+#: app/JourneyRequestPage.qml:41 app/JourneyRequestPage.qml:109
 #, kde-format
 msgctxt "departure train station"
 msgid "Select Departure Stop"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:50 app/JourneyRequestPage.qml:118
+#: app/JourneyRequestPage.qml:53 app/JourneyRequestPage.qml:123
 #, kde-format
 msgctxt "arrival train station"
 msgid "Select Arrival Stop"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:103
+#: app/JourneyRequestPage.qml:108
 #, kde-format
 msgctxt "departure train station"
 msgid "From:"
 msgstr "Z:"
 
-#: app/JourneyRequestPage.qml:117
+#: app/JourneyRequestPage.qml:122
 #, kde-format
 msgctxt "arrival train station"
 msgid "To:"
 msgstr "Do:"
 
-#: app/JourneyRequestPage.qml:135
+#: app/JourneyRequestPage.qml:140
 #, kde-format
 msgid "Swap departure and arrival"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:150
+#: app/JourneyRequestPage.qml:155
 #, kde-format
 msgctxt "train or bus departure"
 msgid "Departure"
 msgstr "Odjezd"
 
-#: app/JourneyRequestPage.qml:153
+#: app/JourneyRequestPage.qml:158
 #, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival"
 msgstr "Příjezd"
 
-#: app/JourneyRequestPage.qml:166
+#: app/JourneyRequestPage.qml:171
 #, kde-format
 msgctxt "train or bus departure"
 msgid "Departure time"
 msgstr "Čas odjezdu"
 
-#: app/JourneyRequestPage.qml:166
+#: app/JourneyRequestPage.qml:171
 #, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival time"
 msgstr "Čas příjezdu"
 
-#: app/JourneyRequestPage.qml:177
+#: app/JourneyRequestPage.qml:182
 #, kde-format
 msgid "Search Journey"
 msgstr "Hledat výlet"
 
-#: app/JourneyRequestPage.qml:229
+#: app/JourneyRequestPage.qml:234
 #, kde-format
 msgid "Mode of transportation"
 msgstr "Režim přepravy"
 
-#: app/JourneyRequestPage.qml:236
+#: app/JourneyRequestPage.qml:241
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "High speed or intercity trains"
 msgstr "Vysokorychlostní nebo meziměstské vlaky"
 
-#: app/JourneyRequestPage.qml:246
+#: app/JourneyRequestPage.qml:251
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Regional or local trains"
 msgstr "Regionální nebo místní vlaky"
 
-#: app/JourneyRequestPage.qml:256
+#: app/JourneyRequestPage.qml:261
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Rapid transit, metro, trams"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:266
+#: app/JourneyRequestPage.qml:271
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Local or regional bus services"
 msgstr "Místní nebo regionální autodopravci"
 
-#: app/JourneyRequestPage.qml:276
+#: app/JourneyRequestPage.qml:281
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
@@ -2234,12 +2229,12 @@ msgstr[2] "%1 přestupů"
 msgid "Click to extend"
 msgstr ""
 
-#: app/livedatamanager.cpp:682
+#: app/livedatamanager.cpp:677
 #, kde-format
 msgid "Flight %1 to %2:"
 msgstr "Let %1 do %2:"
 
-#: app/livedatamanager.cpp:688
+#: app/livedatamanager.cpp:683
 #, kde-format
 msgid "Itinerary change"
 msgstr "Změna itineráře"
@@ -3762,87 +3757,6 @@ msgstr "Vlak"
 msgid "Car"
 msgstr "Auto"
 
-#: app/StopPickerPage.qml:27
-#, kde-format
-msgid "Clear History"
-msgstr "Vyprázdnit historii"
-
-#: app/StopPickerPage.qml:28
-#, kde-format
-msgid "Do you really want to remove all previously searched locations?"
-msgstr ""
-
-#: app/StopPickerPage.qml:32
-#, kde-format
-msgid "Remove"
-msgstr "Odstranit"
-
-#: app/StopPickerPage.qml:45
-#, kde-format
-msgid "Clear history"
-msgstr "Vyprázdnit historii"
-
-#: app/StopPickerPage.qml:55
-#, kde-format
-msgid "Sort by name"
-msgstr "Seřadit podle jména"
-
-#: app/StopPickerPage.qml:62
-#, kde-format
-msgid "Most recently used"
-msgstr "Naposled použité"
-
-#: app/StopPickerPage.qml:69
-#, kde-format
-msgid "Most often used"
-msgstr ""
-
-#: app/StopPickerPage.qml:167 app/StopPickerPage.qml:248
-#, kde-format
-msgctxt "location name, locality, region, country"
-msgid "%1, %2, %3, %4"
-msgstr "%1, %2, %3, %4"
-
-#: app/StopPickerPage.qml:173 app/StopPickerPage.qml:254
-#, kde-format
-msgctxt "location name, locality, country"
-msgid "%1, %2, %3"
-msgstr "%1, %2, %3"
-
-#: app/StopPickerPage.qml:178 app/StopPickerPage.qml:259
-#, kde-format
-msgctxt "location name, region, country"
-msgid "%1, %2, %3"
-msgstr "%1, %2, %3"
-
-#: app/StopPickerPage.qml:199 app/StopPickerPage.qml:281
-#, kde-format
-msgctxt "locality, region, country"
-msgid "%1, %2, %3"
-msgstr "%1, %2, %3"
-
-#: app/StopPickerPage.qml:204 app/StopPickerPage.qml:286
-#, kde-format
-msgctxt "locality, country"
-msgid "%1, %2"
-msgstr "%1, %2"
-
-#: app/StopPickerPage.qml:208 app/StopPickerPage.qml:290
-#, kde-format
-msgctxt "region, country"
-msgid "%1, %2"
-msgstr "%1, %2"
-
-#: app/StopPickerPage.qml:223
-#, kde-format
-msgid "Remove history entry"
-msgstr ""
-
-#: app/StopPickerPage.qml:329
-#, kde-format
-msgid "No locations found"
-msgstr "Nenalezeno žádné místo"
-
 #: app/TicketEditor.qml:18
 #, kde-format
 msgid "Edit Ticket"
@@ -4639,6 +4553,51 @@ msgstr "Odhlášen"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 z %3 do %4 na %5"
+
+#~ msgid "Select country"
+#~ msgstr "Vyberte zemi"
+
+#~ msgid "Clear History"
+#~ msgstr "Vyprázdnit historii"
+
+#~ msgid "Remove"
+#~ msgstr "Odstranit"
+
+#~ msgid "Clear history"
+#~ msgstr "Vyprázdnit historii"
+
+#~ msgid "Sort by name"
+#~ msgstr "Seřadit podle jména"
+
+#~ msgid "Most recently used"
+#~ msgstr "Naposled použité"
+
+#~ msgctxt "location name, locality, region, country"
+#~ msgid "%1, %2, %3, %4"
+#~ msgstr "%1, %2, %3, %4"
+
+#~ msgctxt "location name, locality, country"
+#~ msgid "%1, %2, %3"
+#~ msgstr "%1, %2, %3"
+
+#~ msgctxt "location name, region, country"
+#~ msgid "%1, %2, %3"
+#~ msgstr "%1, %2, %3"
+
+#~ msgctxt "locality, region, country"
+#~ msgid "%1, %2, %3"
+#~ msgstr "%1, %2, %3"
+
+#~ msgctxt "locality, country"
+#~ msgid "%1, %2"
+#~ msgstr "%1, %2"
+
+#~ msgctxt "region, country"
+#~ msgid "%1, %2"
+#~ msgstr "%1, %2"
+
+#~ msgid "No locations found"
+#~ msgstr "Nenalezeno žádné místo"
 
 #~ msgctxt "distance in meter"
 #~ msgid "%1 m"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-23 00:42+0000\n"
+"POT-Creation-Date: 2025-04-24 00:42+0000\n"
 "PO-Revision-Date: 2025-03-03 07:03+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -221,35 +221,35 @@ msgid "To %1"
 msgstr "A %1"
 
 #: app/AlternativeJourneyPage.qml:87 app/DepartureQueryPage.qml:41
-#: app/JourneyRequestPage.qml:235 app/TransferPage.qml:108
+#: app/JourneyRequestPage.qml:240 app/TransferPage.qml:108
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Long distance trains"
 msgstr "Trens de longa distancia"
 
 #: app/AlternativeJourneyPage.qml:95 app/DepartureQueryPage.qml:48
-#: app/JourneyRequestPage.qml:245 app/TransferPage.qml:116
+#: app/JourneyRequestPage.qml:250 app/TransferPage.qml:116
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Local trains"
 msgstr "Trens locais"
 
 #: app/AlternativeJourneyPage.qml:103 app/DepartureQueryPage.qml:55
-#: app/JourneyRequestPage.qml:255 app/TransferPage.qml:124
+#: app/JourneyRequestPage.qml:260 app/TransferPage.qml:124
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Rapid transit"
 msgstr "Tránsito rápido"
 
 #: app/AlternativeJourneyPage.qml:111 app/DepartureQueryPage.qml:62
-#: app/JourneyRequestPage.qml:265 app/TransferPage.qml:132
+#: app/JourneyRequestPage.qml:270 app/TransferPage.qml:132
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Bus"
 msgstr "Bus"
 
 #: app/AlternativeJourneyPage.qml:119 app/DepartureQueryPage.qml:69
-#: app/JourneyRequestPage.qml:275 app/TransferPage.qml:140
+#: app/JourneyRequestPage.qml:280 app/TransferPage.qml:140
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ferry"
@@ -384,7 +384,7 @@ msgid "Boat"
 msgstr "Barco"
 
 #: app/BoatEditor.qml:59 app/EventEditor.qml:54 app/FlightEditor.qml:72
-#: app/HotelEditor.qml:51 app/ImportPage.qml:21 app/JourneyRequestPage.qml:219
+#: app/HotelEditor.qml:51 app/ImportPage.qml:21 app/JourneyRequestPage.qml:224
 #: app/RestaurantEditor.qml:53
 #, kde-format
 msgid "Trip"
@@ -766,11 +766,6 @@ msgstr "Enderezo de correo electrónico"
 #, kde-format
 msgid "Website"
 msgstr "Sitio web"
-
-#: app/CountryComboBox.qml:47
-#, kde-format
-msgid "Select country"
-msgstr "Seleccione un país"
 
 #: app/DelayRow.qml:22 app/DepartureQueryPage.qml:133
 #, kde-format
@@ -1359,27 +1354,27 @@ msgstr "Rexión"
 msgid "Country"
 msgstr "País"
 
-#: app/FormPlaceEditorDelegate.qml:196
+#: app/FormPlaceEditorDelegate.qml:200
 #, kde-format
 msgid "Coordinate"
 msgstr "Coordenadas"
 
-#: app/FormPlaceEditorDelegate.qml:197
+#: app/FormPlaceEditorDelegate.qml:201
 #, kde-format
 msgid "%1°, %2°"
 msgstr "%1°, %2°"
 
-#: app/FormPlaceEditorDelegate.qml:197
+#: app/FormPlaceEditorDelegate.qml:201
 #, kde-format
 msgid "Pick…"
 msgstr "Escoller…"
 
-#: app/FormPlaceEditorDelegate.qml:215
+#: app/FormPlaceEditorDelegate.qml:219
 #, kde-format
 msgid "Address to coordinate"
 msgstr "Coordenadas dun enderezo"
 
-#: app/FormPlaceEditorDelegate.qml:231
+#: app/FormPlaceEditorDelegate.qml:235
 #, kde-format
 msgid "Coordinate to address"
 msgstr "Enderezo dunhas coordenadas"
@@ -2030,99 +2025,99 @@ msgstr "Cargar conexións anteriores"
 msgid "Still fetching results…"
 msgstr "Aínda estanse obtendo os resultados…"
 
-#: app/JourneyRequestPage.qml:34 app/JourneyRequestPage.qml:60
+#: app/JourneyRequestPage.qml:35 app/JourneyRequestPage.qml:65
 #, kde-format
 msgid "Select Journey"
 msgstr "Seleccionar o traxecto"
 
-#: app/JourneyRequestPage.qml:40 app/JourneyRequestPage.qml:104
+#: app/JourneyRequestPage.qml:41 app/JourneyRequestPage.qml:109
 #, kde-format
 msgctxt "departure train station"
 msgid "Select Departure Stop"
 msgstr "Seleccionar a parada de saída"
 
-#: app/JourneyRequestPage.qml:50 app/JourneyRequestPage.qml:118
+#: app/JourneyRequestPage.qml:53 app/JourneyRequestPage.qml:123
 #, kde-format
 msgctxt "arrival train station"
 msgid "Select Arrival Stop"
 msgstr "Seleccionar a parada de chegada"
 
-#: app/JourneyRequestPage.qml:103
+#: app/JourneyRequestPage.qml:108
 #, kde-format
 msgctxt "departure train station"
 msgid "From:"
 msgstr "De:"
 
-#: app/JourneyRequestPage.qml:117
+#: app/JourneyRequestPage.qml:122
 #, kde-format
 msgctxt "arrival train station"
 msgid "To:"
 msgstr "A:"
 
-#: app/JourneyRequestPage.qml:135
+#: app/JourneyRequestPage.qml:140
 #, kde-format
 msgid "Swap departure and arrival"
 msgstr "Intercambiar a saída e a chegada"
 
-#: app/JourneyRequestPage.qml:150
+#: app/JourneyRequestPage.qml:155
 #, kde-format
 msgctxt "train or bus departure"
 msgid "Departure"
 msgstr "Saída"
 
-#: app/JourneyRequestPage.qml:153
+#: app/JourneyRequestPage.qml:158
 #, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival"
 msgstr "Chegada"
 
-#: app/JourneyRequestPage.qml:166
+#: app/JourneyRequestPage.qml:171
 #, kde-format
 msgctxt "train or bus departure"
 msgid "Departure time"
 msgstr "Hora de saída"
 
-#: app/JourneyRequestPage.qml:166
+#: app/JourneyRequestPage.qml:171
 #, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival time"
 msgstr "Hora de chegada"
 
-#: app/JourneyRequestPage.qml:177
+#: app/JourneyRequestPage.qml:182
 #, kde-format
 msgid "Search Journey"
 msgstr "Buscar no traxecto"
 
-#: app/JourneyRequestPage.qml:229
+#: app/JourneyRequestPage.qml:234
 #, kde-format
 msgid "Mode of transportation"
 msgstr "Modo de transporte"
 
-#: app/JourneyRequestPage.qml:236
+#: app/JourneyRequestPage.qml:241
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "High speed or intercity trains"
 msgstr "Alta velocidade ou trens interurbanos"
 
-#: app/JourneyRequestPage.qml:246
+#: app/JourneyRequestPage.qml:251
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Regional or local trains"
 msgstr "Trens rexionais ou locais"
 
-#: app/JourneyRequestPage.qml:256
+#: app/JourneyRequestPage.qml:261
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Rapid transit, metro, trams"
 msgstr "Tránsito rápido, metro, tranvía"
 
-#: app/JourneyRequestPage.qml:266
+#: app/JourneyRequestPage.qml:271
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Local or regional bus services"
 msgstr "Servizos de bus locais ou rexionais"
 
-#: app/JourneyRequestPage.qml:276
+#: app/JourneyRequestPage.qml:281
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
@@ -2238,12 +2233,12 @@ msgstr[1] "%1 cambios"
 msgid "Click to extend"
 msgstr "Prema para estender"
 
-#: app/livedatamanager.cpp:682
+#: app/livedatamanager.cpp:677
 #, kde-format
 msgid "Flight %1 to %2:"
 msgstr "Voo %1 a %2:"
 
-#: app/livedatamanager.cpp:688
+#: app/livedatamanager.cpp:683
 #, kde-format
 msgid "Itinerary change"
 msgstr "Cambio de itinerario"
@@ -3811,87 +3806,6 @@ msgstr "Tren"
 msgid "Car"
 msgstr "Coche"
 
-#: app/StopPickerPage.qml:27
-#, kde-format
-msgid "Clear History"
-msgstr "Borrar o historial"
-
-#: app/StopPickerPage.qml:28
-#, kde-format
-msgid "Do you really want to remove all previously searched locations?"
-msgstr "Seguro que quere retirar todas as localizacións buscadas previamente?"
-
-#: app/StopPickerPage.qml:32
-#, kde-format
-msgid "Remove"
-msgstr "Retirar"
-
-#: app/StopPickerPage.qml:45
-#, kde-format
-msgid "Clear history"
-msgstr "Borrar o historial"
-
-#: app/StopPickerPage.qml:55
-#, kde-format
-msgid "Sort by name"
-msgstr "Ordenar por nome"
-
-#: app/StopPickerPage.qml:62
-#, kde-format
-msgid "Most recently used"
-msgstr "Uso máis recente"
-
-#: app/StopPickerPage.qml:69
-#, kde-format
-msgid "Most often used"
-msgstr "Uso máis habitual"
-
-#: app/StopPickerPage.qml:167 app/StopPickerPage.qml:248
-#, kde-format
-msgctxt "location name, locality, region, country"
-msgid "%1, %2, %3, %4"
-msgstr "%1, %2, %3, %4"
-
-#: app/StopPickerPage.qml:173 app/StopPickerPage.qml:254
-#, kde-format
-msgctxt "location name, locality, country"
-msgid "%1, %2, %3"
-msgstr "%1, %2, %3"
-
-#: app/StopPickerPage.qml:178 app/StopPickerPage.qml:259
-#, kde-format
-msgctxt "location name, region, country"
-msgid "%1, %2, %3"
-msgstr "%1, %2, %3"
-
-#: app/StopPickerPage.qml:199 app/StopPickerPage.qml:281
-#, kde-format
-msgctxt "locality, region, country"
-msgid "%1, %2, %3"
-msgstr "%1, %2, %3"
-
-#: app/StopPickerPage.qml:204 app/StopPickerPage.qml:286
-#, kde-format
-msgctxt "locality, country"
-msgid "%1, %2"
-msgstr "%1, %2"
-
-#: app/StopPickerPage.qml:208 app/StopPickerPage.qml:290
-#, kde-format
-msgctxt "region, country"
-msgid "%1, %2"
-msgstr "%1, %2"
-
-#: app/StopPickerPage.qml:223
-#, kde-format
-msgid "Remove history entry"
-msgstr "Retirar a entrada do historial"
-
-#: app/StopPickerPage.qml:329
-#, kde-format
-msgid "No locations found"
-msgstr "Non se atoparon localizacións."
-
 #: app/TicketEditor.qml:18
 #, kde-format
 msgid "Edit Ticket"
@@ -4688,6 +4602,61 @@ msgstr "Saíu"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 de %3 a %4 o %5"
+
+#~ msgid "Select country"
+#~ msgstr "Seleccione un país"
+
+#~ msgid "Clear History"
+#~ msgstr "Borrar o historial"
+
+#~ msgid "Do you really want to remove all previously searched locations?"
+#~ msgstr ""
+#~ "Seguro que quere retirar todas as localizacións buscadas previamente?"
+
+#~ msgid "Remove"
+#~ msgstr "Retirar"
+
+#~ msgid "Clear history"
+#~ msgstr "Borrar o historial"
+
+#~ msgid "Sort by name"
+#~ msgstr "Ordenar por nome"
+
+#~ msgid "Most recently used"
+#~ msgstr "Uso máis recente"
+
+#~ msgid "Most often used"
+#~ msgstr "Uso máis habitual"
+
+#~ msgctxt "location name, locality, region, country"
+#~ msgid "%1, %2, %3, %4"
+#~ msgstr "%1, %2, %3, %4"
+
+#~ msgctxt "location name, locality, country"
+#~ msgid "%1, %2, %3"
+#~ msgstr "%1, %2, %3"
+
+#~ msgctxt "location name, region, country"
+#~ msgid "%1, %2, %3"
+#~ msgstr "%1, %2, %3"
+
+#~ msgctxt "locality, region, country"
+#~ msgid "%1, %2, %3"
+#~ msgstr "%1, %2, %3"
+
+#~ msgctxt "locality, country"
+#~ msgid "%1, %2"
+#~ msgstr "%1, %2"
+
+#~ msgctxt "region, country"
+#~ msgid "%1, %2"
+#~ msgstr "%1, %2"
+
+#~ msgid "Remove history entry"
+#~ msgstr "Retirar a entrada do historial"
+
+#~ msgid "No locations found"
+#~ msgstr "Non se atoparon localizacións."
 
 #~ msgctxt "Duration in minutes"
 #~ msgid "%1 min"

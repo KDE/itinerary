@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-23 00:42+0000\n"
+"POT-Creation-Date: 2025-04-24 00:42+0000\n"
 "PO-Revision-Date: 2020-05-04 10:51+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -236,14 +236,14 @@ msgid "To %1"
 msgstr ""
 
 #: app/AlternativeJourneyPage.qml:87 app/DepartureQueryPage.qml:41
-#: app/JourneyRequestPage.qml:235 app/TransferPage.qml:108
+#: app/JourneyRequestPage.qml:240 app/TransferPage.qml:108
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Long distance trains"
 msgstr ""
 
 #: app/AlternativeJourneyPage.qml:95 app/DepartureQueryPage.qml:48
-#: app/JourneyRequestPage.qml:245 app/TransferPage.qml:116
+#: app/JourneyRequestPage.qml:250 app/TransferPage.qml:116
 #, fuzzy, kde-format
 #| msgid "Location:"
 msgctxt "journey query search constraint, title"
@@ -251,14 +251,14 @@ msgid "Local trains"
 msgstr "Asukoht:"
 
 #: app/AlternativeJourneyPage.qml:103 app/DepartureQueryPage.qml:55
-#: app/JourneyRequestPage.qml:255 app/TransferPage.qml:124
+#: app/JourneyRequestPage.qml:260 app/TransferPage.qml:124
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Rapid transit"
 msgstr ""
 
 #: app/AlternativeJourneyPage.qml:111 app/DepartureQueryPage.qml:62
-#: app/JourneyRequestPage.qml:265 app/TransferPage.qml:132
+#: app/JourneyRequestPage.qml:270 app/TransferPage.qml:132
 #, fuzzy, kde-format
 #| msgid "Bus"
 msgctxt "journey query search constraint, title"
@@ -266,7 +266,7 @@ msgid "Bus"
 msgstr "Buss"
 
 #: app/AlternativeJourneyPage.qml:119 app/DepartureQueryPage.qml:69
-#: app/JourneyRequestPage.qml:275 app/TransferPage.qml:140
+#: app/JourneyRequestPage.qml:280 app/TransferPage.qml:140
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ferry"
@@ -413,7 +413,7 @@ msgid "Boat"
 msgstr ""
 
 #: app/BoatEditor.qml:59 app/EventEditor.qml:54 app/FlightEditor.qml:72
-#: app/HotelEditor.qml:51 app/ImportPage.qml:21 app/JourneyRequestPage.qml:219
+#: app/HotelEditor.qml:51 app/ImportPage.qml:21 app/JourneyRequestPage.qml:224
 #: app/RestaurantEditor.qml:53
 #, fuzzy, kde-format
 #| msgid "Trips"
@@ -841,12 +841,6 @@ msgstr "E-post:"
 #, kde-format
 msgid "Website"
 msgstr ""
-
-#: app/CountryComboBox.qml:47
-#, fuzzy, kde-format
-#| msgid "Select Transfer"
-msgid "Select country"
-msgstr "Transfeeri valimine"
 
 #: app/DelayRow.qml:22 app/DepartureQueryPage.qml:133
 #, fuzzy, kde-format
@@ -1497,28 +1491,28 @@ msgstr "Maakond/osariik:"
 msgid "Country"
 msgstr "Riik:"
 
-#: app/FormPlaceEditorDelegate.qml:196
+#: app/FormPlaceEditorDelegate.qml:200
 #, fuzzy, kde-format
 #| msgid "Boarding time:"
 msgid "Coordinate"
 msgstr "Pardalemineku aeg:"
 
-#: app/FormPlaceEditorDelegate.qml:197
+#: app/FormPlaceEditorDelegate.qml:201
 #, kde-format
 msgid "%1°, %2°"
 msgstr "%1°, %2°"
 
-#: app/FormPlaceEditorDelegate.qml:197
+#: app/FormPlaceEditorDelegate.qml:201
 #, kde-format
 msgid "Pick…"
 msgstr ""
 
-#: app/FormPlaceEditorDelegate.qml:215
+#: app/FormPlaceEditorDelegate.qml:219
 #, kde-format
 msgid "Address to coordinate"
 msgstr ""
 
-#: app/FormPlaceEditorDelegate.qml:231
+#: app/FormPlaceEditorDelegate.qml:235
 #, fuzzy, kde-format
 #| msgid "Boarding time:"
 msgid "Coordinate to address"
@@ -2212,110 +2206,110 @@ msgstr "Alternatiivsed ühendused"
 msgid "Still fetching results…"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:34 app/JourneyRequestPage.qml:60
+#: app/JourneyRequestPage.qml:35 app/JourneyRequestPage.qml:65
 #, fuzzy, kde-format
 #| msgid "Select Transfer"
 msgid "Select Journey"
 msgstr "Transfeeri valimine"
 
-#: app/JourneyRequestPage.qml:40 app/JourneyRequestPage.qml:104
+#: app/JourneyRequestPage.qml:41 app/JourneyRequestPage.qml:109
 #, fuzzy, kde-format
 #| msgid "Delayed departure on %1"
 msgctxt "departure train station"
 msgid "Select Departure Stop"
 msgstr "%1 väljumine hilineb"
 
-#: app/JourneyRequestPage.qml:50 app/JourneyRequestPage.qml:118
+#: app/JourneyRequestPage.qml:53 app/JourneyRequestPage.qml:123
 #, fuzzy, kde-format
 #| msgid "Delayed arrival on %1"
 msgctxt "arrival train station"
 msgid "Select Arrival Stop"
 msgstr "%1 saabumine hilineb"
 
-#: app/JourneyRequestPage.qml:103
+#: app/JourneyRequestPage.qml:108
 #, fuzzy, kde-format
 #| msgid "From: %1"
 msgctxt "departure train station"
 msgid "From:"
 msgstr "Asukohast: %1"
 
-#: app/JourneyRequestPage.qml:117
+#: app/JourneyRequestPage.qml:122
 #, fuzzy, kde-format
 #| msgid "To:"
 msgctxt "arrival train station"
 msgid "To:"
 msgstr "Sihtkohta:"
 
-#: app/JourneyRequestPage.qml:135
+#: app/JourneyRequestPage.qml:140
 #, kde-format
 msgid "Swap departure and arrival"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:150
+#: app/JourneyRequestPage.qml:155
 #, fuzzy, kde-format
 #| msgid "Departure"
 msgctxt "train or bus departure"
 msgid "Departure"
 msgstr "Väljumine"
 
-#: app/JourneyRequestPage.qml:153
+#: app/JourneyRequestPage.qml:158
 #, fuzzy, kde-format
 #| msgid "Arrival"
 msgctxt "train or bus arrival"
 msgid "Arrival"
 msgstr "Saabumine"
 
-#: app/JourneyRequestPage.qml:166
+#: app/JourneyRequestPage.qml:171
 #, fuzzy, kde-format
 #| msgid "Departure time:"
 msgctxt "train or bus departure"
 msgid "Departure time"
 msgstr "Väljumisaeg:"
 
-#: app/JourneyRequestPage.qml:166
+#: app/JourneyRequestPage.qml:171
 #, fuzzy, kde-format
 #| msgid "Arrival time:"
 msgctxt "train or bus arrival"
 msgid "Arrival time"
 msgstr "Saabumisaeg:"
 
-#: app/JourneyRequestPage.qml:177
+#: app/JourneyRequestPage.qml:182
 #, kde-format
 msgid "Search Journey"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:229
+#: app/JourneyRequestPage.qml:234
 #, fuzzy, kde-format
 #| msgid "More information"
 msgid "Mode of transportation"
 msgstr "Rohkem teavet"
 
-#: app/JourneyRequestPage.qml:236
+#: app/JourneyRequestPage.qml:241
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "High speed or intercity trains"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:246
+#: app/JourneyRequestPage.qml:251
 #, fuzzy, kde-format
 #| msgid "Rename favorite location"
 msgctxt "journey query search constraint, description"
 msgid "Regional or local trains"
 msgstr "Lemmikasukoha nime muutmine"
 
-#: app/JourneyRequestPage.qml:256
+#: app/JourneyRequestPage.qml:261
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Rapid transit, metro, trams"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:266
+#: app/JourneyRequestPage.qml:271
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Local or regional bus services"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:276
+#: app/JourneyRequestPage.qml:281
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
@@ -2434,13 +2428,13 @@ msgstr[1] "%1 ümberistumist"
 msgid "Click to extend"
 msgstr ""
 
-#: app/livedatamanager.cpp:682
+#: app/livedatamanager.cpp:677
 #, fuzzy, kde-format
 #| msgid "Following departure %1 from %2"
 msgid "Flight %1 to %2:"
 msgstr "Järgmine %1 väljumine kell %2"
 
-#: app/livedatamanager.cpp:688
+#: app/livedatamanager.cpp:683
 #, kde-format
 msgid "Itinerary change"
 msgstr "Itineraari muutus"
@@ -4029,98 +4023,6 @@ msgstr "Rongid"
 msgid "Car"
 msgstr "Auto"
 
-#: app/StopPickerPage.qml:27
-#, kde-format
-msgid "Clear History"
-msgstr ""
-
-#: app/StopPickerPage.qml:28
-#, fuzzy, kde-format
-#| msgid "Do you really want to delete this event?"
-msgid "Do you really want to remove all previously searched locations?"
-msgstr "Kas tõesti kustutada see sündmus?"
-
-#: app/StopPickerPage.qml:32
-#, kde-format
-msgid "Remove"
-msgstr ""
-
-#: app/StopPickerPage.qml:45
-#, kde-format
-msgid "Clear history"
-msgstr ""
-
-#: app/StopPickerPage.qml:55
-#, kde-format
-msgid "Sort by name"
-msgstr ""
-
-#: app/StopPickerPage.qml:62
-#, kde-format
-msgid "Most recently used"
-msgstr ""
-
-#: app/StopPickerPage.qml:69
-#, kde-format
-msgid "Most often used"
-msgstr ""
-
-#: app/StopPickerPage.qml:167 app/StopPickerPage.qml:248
-#, kde-format
-msgctxt "location name, locality, region, country"
-msgid "%1, %2, %3, %4"
-msgstr ""
-
-#: app/StopPickerPage.qml:173 app/StopPickerPage.qml:254
-#, fuzzy, kde-format
-#| msgctxt "weekday, date"
-#| msgid "%1, %2"
-msgctxt "location name, locality, country"
-msgid "%1, %2, %3"
-msgstr "%1, %2"
-
-#: app/StopPickerPage.qml:178 app/StopPickerPage.qml:259
-#, fuzzy, kde-format
-#| msgctxt "weekday, date"
-#| msgid "%1, %2"
-msgctxt "location name, region, country"
-msgid "%1, %2, %3"
-msgstr "%1, %2"
-
-#: app/StopPickerPage.qml:199 app/StopPickerPage.qml:281
-#, fuzzy, kde-format
-#| msgctxt "weekday, date"
-#| msgid "%1, %2"
-msgctxt "locality, region, country"
-msgid "%1, %2, %3"
-msgstr "%1, %2"
-
-#: app/StopPickerPage.qml:204 app/StopPickerPage.qml:286
-#, fuzzy, kde-format
-#| msgctxt "weekday, date"
-#| msgid "%1, %2"
-msgctxt "locality, country"
-msgid "%1, %2"
-msgstr "%1, %2"
-
-#: app/StopPickerPage.qml:208 app/StopPickerPage.qml:290
-#, fuzzy, kde-format
-#| msgctxt "weekday, date"
-#| msgid "%1, %2"
-msgctxt "region, country"
-msgid "%1, %2"
-msgstr "%1, %2"
-
-#: app/StopPickerPage.qml:223
-#, kde-format
-msgid "Remove history entry"
-msgstr ""
-
-#: app/StopPickerPage.qml:329
-#, kde-format
-msgid "No locations found"
-msgstr ""
-
 #: app/TicketEditor.qml:18
 #, fuzzy, kde-format
 #| msgid "Event Ticket"
@@ -4989,6 +4891,51 @@ msgstr ""
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "Asukohast %1 asukohta %2 (%3)"
+
+#, fuzzy
+#~| msgid "Select Transfer"
+#~ msgid "Select country"
+#~ msgstr "Transfeeri valimine"
+
+#, fuzzy
+#~| msgid "Do you really want to delete this event?"
+#~ msgid "Do you really want to remove all previously searched locations?"
+#~ msgstr "Kas tõesti kustutada see sündmus?"
+
+#, fuzzy
+#~| msgctxt "weekday, date"
+#~| msgid "%1, %2"
+#~ msgctxt "location name, locality, country"
+#~ msgid "%1, %2, %3"
+#~ msgstr "%1, %2"
+
+#, fuzzy
+#~| msgctxt "weekday, date"
+#~| msgid "%1, %2"
+#~ msgctxt "location name, region, country"
+#~ msgid "%1, %2, %3"
+#~ msgstr "%1, %2"
+
+#, fuzzy
+#~| msgctxt "weekday, date"
+#~| msgid "%1, %2"
+#~ msgctxt "locality, region, country"
+#~ msgid "%1, %2, %3"
+#~ msgstr "%1, %2"
+
+#, fuzzy
+#~| msgctxt "weekday, date"
+#~| msgid "%1, %2"
+#~ msgctxt "locality, country"
+#~ msgid "%1, %2"
+#~ msgstr "%1, %2"
+
+#, fuzzy
+#~| msgctxt "weekday, date"
+#~| msgid "%1, %2"
+#~ msgctxt "region, country"
+#~ msgid "%1, %2"
+#~ msgstr "%1, %2"
 
 #, fuzzy
 #~| msgid "☂ %1 mm"
