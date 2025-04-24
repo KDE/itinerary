@@ -1,5 +1,6 @@
 /*
  * SPDX-FileCopyrightText: 2021 Volker Krause <vkrause@kde.org>
+ * SPDX-FileCopyrightText: 2025 Carl Schwan <carl@carlschwan.eu>
  * SPDX-License-Identifier: LGPL-2.0-or-later
  */
 
@@ -7,108 +8,150 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.prison as Prison
 import org.kde.khealthcertificate as KHC
 import org.kde.itinerary
 
 ColumnLayout {
     id: root
-    width: parent.width
+
     required property var certificate
 
-    function daysTo(d1, d2) {
+    function daysTo(d1: date, d2: date): int {
         return (d2.getTime() - d1.getTime()) / (1000 * 60 * 60 * 24);
     }
 
-    Kirigami.FormLayout {
-        Layout.fillWidth: true
+    width: parent.width
+    spacing: 0
 
-        Kirigami.Separator {
-            Kirigami.FormData.isSection: true
-            Kirigami.FormData.label: i18n("Person")
-        }
+    FormCard.FormHeader {
+        title: i18n("Person")
+    }
 
-        QQC2.Label {
-            text: certificate.name
-            Kirigami.FormData.label: i18n("Name:")
-        }
-        QQC2.Label {
-            text: Localizer.formatDate(certificate, "dateOfBirth")
-            visible: !isNaN(certificate.dateOfBirth.getTime())
-            Kirigami.FormData.label: i18n("Date of birth:")
+    FormCard.FormCard {
+        FormCard.FormTextDelegate {
+            text: i18n("Name")
+            description: root.certificate.name
         }
 
-        Kirigami.Separator {
-            Kirigami.FormData.isSection: true
-            Kirigami.FormData.label: i18n("Recovery")
+        FormCard.FormDelegateSeparator {
+            visible: !isNaN(root.certificate.dateOfBirth.getTime())
         }
 
-        QQC2.Label {
-            text: certificate.dateOfPositiveTest.toLocaleDateString(Qt.locale(), Locale.ShortFormat)
-            Kirigami.FormData.label: i18n("Positive test:")
+        FormCard.FormTextDelegate {
+            text: i18n("Date of birth")
+            description: Localizer.formatDate(root.certificate, "dateOfBirth")
+            visible: !isNaN(root.certificate.dateOfBirth.getTime())
         }
-        QQC2.Label {
-            text: certificate.disease
-            Kirigami.FormData.label: i18n("Disease:")
-        }
-        QQC2.Label {
-            text: certificate.validFrom.toLocaleDateString(Qt.locale(), Locale.ShortFormat)
-            Kirigami.FormData.label: i18n("Valid from:")
-        }
-        QQC2.Label {
-            text: certificate.validUntil.toLocaleDateString(Qt.locale(), Locale.ShortFormat)
-            Kirigami.FormData.label: i18n("Valid until:")
+    }
+
+    FormCard.FormHeader {
+        title: i18n("Recovery")
+    }
+
+    FormCard.FormCard {
+        FormCard.FormTextDelegate {
+            text: i18n("Positive test")
+            description: root.certificate.dateOfPositiveTest.toLocaleDateString(Qt.locale(), Locale.ShortFormat)
         }
 
-        Kirigami.Separator {
-            Kirigami.FormData.isSection: true
-            Kirigami.FormData.label: i18n("Certificate")
+        FormCard.FormDelegateSeparator {}
+
+        FormCard.FormTextDelegate {
+            text: i18n("Disease")
+            description: root.certificate.disease
         }
 
-        QQC2.Label {
-            text: certificate.certificateIssuer
-            Kirigami.FormData.label: i18n("Issuer:")
-            visible: text !== ""
+        FormCard.FormDelegateSeparator {}
+
+        FormCard.FormTextDelegate {
+            text: i18n("Valid from")
+            description: root.certificate.validFrom.toLocaleDateString(Qt.locale(), Locale.ShortFormat)
         }
-        QQC2.Label {
-            text: certificate.certificateId
-            Kirigami.FormData.label: i18n("Identifier:")
-            wrapMode: Text.Wrap
-            Layout.fillWidth: true
+
+        FormCard.FormDelegateSeparator {}
+
+        FormCard.FormTextDelegate {
+            text: i18n("Valid until")
+            description: root.certificate.validUntil.toLocaleDateString(Qt.locale(), Locale.ShortFormat)
         }
-        QQC2.Label {
-            text: certificate.certificateIssueDate.toLocaleString(Qt.locale(), Locale.ShortFormat)
+    }
+
+    FormCard.FormHeader {
+        title: i18n("Certificate")
+    }
+
+    FormCard.FormCard {
+        FormCard.FormTextDelegate {
+            text: i18n("Issuer")
+            description: root.certificate.certificateIssuer
+            visible: description !== ""
+        }
+
+        FormCard.FormDelegateSeparator { visible: root.certificate.certificateIssuer.length > 0 }
+
+        FormCard.FormTextDelegate {
+            text: i18n("Identifier")
+            description: root.certificate.certificateId
+        }
+
+        FormCard.FormDelegateSeparator {}
+
+        FormCard.FormTextDelegate {
+            text: root.certificate.certificateIssueDate.toLocaleString(Qt.locale(), Locale.ShortFormat)
             visible: !isNaN(certificate.certificateIssueDate.getTime())
-            Kirigami.FormData.label: i18n("Issued:")
+            Kirigami.FormData.label: i18n("Issued")
         }
-        QQC2.Label {
-            text: certificate.certificateExpiryDate.toLocaleString(Qt.locale(), Locale.ShortFormat)
-            Kirigami.FormData.label: i18n("Expires:")
+
+        FormCard.FormDelegateSeparator {}
+
+        FormCard.FormTextDelegate {
+            id: expiresDelegate
+            text: i18n("Expires")
+            description: root.certificate.certificateExpiryDate.toLocaleString(Qt.locale(), Locale.ShortFormat)
             visible: !isNaN(certificate.certificateExpiryDate.getTime())
-            color: certificate.certificateExpiryDate.getTime() < Date.now() ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
+            descriptionItem.color: root.certificate.certificateExpiryDate.getTime() < Date.now() ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
         }
-        Kirigami.Icon {
-            source: {
+
+        FormCard.FormDelegateSeparator {}
+
+        FormCard.FormTextDelegate {
+            icon.name: {
                 switch(certificate.signatureState) {
-                    case KHC.HealthCertificate.ValidSignature: return "dialog-ok";
-                    case KHC.HealthCertificate.UnknownSignature: return "question";
-                    case KHC.HealthCertificate.InvalidSignature:
-                    default:
-                        return "dialog-error-symbolic";
+                case KHC.HealthCertificate.ValidSignature:
+                    return "dialog-ok-symbolic";
+                case KHC.HealthCertificate.UnknownSignature:
+                    return "question-symbolic";
+                case KHC.HealthCertificate.InvalidSignature:
+                default:
+                    return "dialog-error-symbolic";
                 }
             }
-            height: Kirigami.Units.gridUnit
-            Kirigami.FormData.label: i18n("Signature:")
-            color: {
+            text: i18n("Signature")
+            description: {
                 switch(certificate.signatureState) {
-                    case KHC.HealthCertificate.ValidSignature: return Kirigami.Theme.positiveTextColor;
-                    case KHC.HealthCertificate.UnknownSignature: return Kirigami.Theme.neutralTextColor;
-                    case KHC.HealthCertificate.InvalidSignature:
-                    default:
-                        return Kirigami.Theme.negativeTextColor;
+                case KHC.HealthCertificate.ValidSignature:
+                    return i18nc("Signature state", "Valid");
+                case KHC.HealthCertificate.UnknownSignature:
+                    return i18nc("Signature state", "Unknown");
+                case KHC.HealthCertificate.InvalidSignature:
+                default:
+                    return i18nc("Signature state", "Invalid");;
                 }
             }
-            visible: certificate.signatureState != KHC.HealthCertificate.UncheckedSignature
+            descriptionItem.color: {
+                switch(certificate.signatureState) {
+                case KHC.HealthCertificate.ValidSignature:
+                    return Kirigami.Theme.positiveTextColor;
+                case KHC.HealthCertificate.UnknownSignature:
+                    return Kirigami.Theme.neutralTextColor;
+                case KHC.HealthCertificate.InvalidSignature:
+                default:
+                    return Kirigami.Theme.negativeTextColor;
+                }
+            }
+            visible: root.certificate.signatureState != KHC.HealthCertificate.UncheckedSignature
         }
     }
 }
