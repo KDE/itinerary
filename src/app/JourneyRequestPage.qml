@@ -187,6 +187,8 @@ FormCard.FormCardPage {
                 req.maximumResults = 6;
                 req.downloadAssets = true;
                 req.includePaths = true;
+                // TODO rental vehicle support
+                req.modes = JourneySection.PublicTransport | JourneySection.Walking;
 
                 let lineModes = [];
                 if (root.fullModeSwitchState() == undefined) {
