@@ -12,25 +12,26 @@ import org.kde.kirigamiaddons.formcard as FormCard
 
 FormCard.FormCardPage {
     id: root
+
     title: i18n("Statistics")
 
-    property alias reservationManager: model.reservationManager
-    property alias tripGroupManager: model.tripGroupManager
-    property alias transferManager: model.transferManager
+    readonly property alias reservationManager: model.reservationManager
+    readonly property alias tripGroupManager: model.tripGroupManager
+    readonly property alias transferManager: model.transferManager
 
-    data: [
-        StatisticsModel {
-            id: model
-            distanceFormat: Settings.distanceFormat
-        },
-        StatisticsTimeRangeModel {
-            id: timeRangeModel
-            reservationManager: model.reservationManager
-        }
-    ]
+    StatisticsModel {
+        id: model
+        distanceFormat: Settings.distanceFormat
+    }
 
-    FormCard.FormHeader {}
+    StatisticsTimeRangeModel {
+        id: timeRangeModel
+        reservationManager: model.reservationManager
+    }
+
     FormCard.FormCard {
+        Layout.topMargin: Kirigami.Units.gridUnit
+
         FormCard.FormComboBoxDelegate {
             model: timeRangeModel
             text: i18n("Year")
@@ -61,26 +62,38 @@ FormCard.FormCardPage {
         FormCard.FormButtonDelegate {
             id: countryDetailsLink
             text: model.visitedCountries.label
-            description: model.visitedCountries.value.split(" ").map(countryCode => Country.fromAlpha2(countryCode).emojiFlag).join(" ")
-            onClicked: countryDetailsDelegate.visible = !countryDetailsDelegate.visible
-            descriptionItem.font.family: 'emoji'
+            description: model.visitedCountries.hasData ? model.visitedCountries.value.split(" ").map(countryCode => Country.fromAlpha2(countryCode).emojiFlag).join(" ") : i18nc("@info:placeholder no visited country", "None")
+            onClicked: if (model.visitedCountries.hasData) {
+                countryDetailsDelegate.visible = !countryDetailsDelegate.visible;
+            }
+            descriptionItem.font.family: model.visitedCountries.hasData ? 'emoji' : Kirigami.Theme.defaultFont.family
+            trailingLogo.visible: model.visitedCountries.hasData
+
         }
 
         FormCard.FormDelegateSeparator { visible: countryDetailsDelegate.visible }
 
         FormCard.AbstractFormDelegate {
             id: countryDetailsDelegate
-            background: Item {}
+
+            readonly property var model: visible && model.visitedCountries.hasData ? model.visitedCountries.value.split(" ") : []
+
+            background: null
             visible: false
-            property var model: visible ? model.visitedCountries.value.split(" ") : []
             contentItem: ColumnLayout {
+                spacing: Kirigami.Units.smallSpacing
+
                 Repeater {
                     id: countryDetailsRepeater
+
                     model: countryDetailsDelegate.model
+
                     QQC2.Label {
+                        required property var modelData
+                        readonly property var country: Country.fromAlpha2(modelData)
+
                         Layout.fillWidth: true
                         wrapMode: Text.WordWrap
-                        readonly property var country: Country.fromAlpha2(modelData)
                         textFormat: Text.RichText
                         text: '<span style="font-family: emoji">' + country.emojiFlag + "</span> " + country.name
                         Accessible.name: country.name

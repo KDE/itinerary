@@ -121,13 +121,13 @@ StatisticsItem StatisticsModel::visitedCountries() const
 {
     QStringList l;
     l.reserve(m_countries.size());
-    std::transform(m_countries.begin(), m_countries.end(), std::back_inserter(l), [](const auto &iso) {
+    std::ranges::transform(m_countries, std::back_inserter(l), [](const auto &iso) {
         return iso;
     });
-    std::sort(l.begin(), l.end(), [](const auto &lhs, const auto &rhs) {
+    std::ranges::sort(l, [](const auto &lhs, const auto &rhs) {
         return KCountry::fromAlpha2(lhs).name().localeAwareCompare(KCountry::fromAlpha2(rhs).name()) < 0;
     });
-    return StatisticsItem(i18n("Visited countries"), l.join(QLatin1Char(' ')), StatisticsItem::TrendUnknown);
+    return StatisticsItem(i18n("Visited countries"), l.join(QLatin1Char(' ')), StatisticsItem::TrendUnknown, !l.isEmpty());
 }
 
 StatisticsItem StatisticsModel::flightCount() const
