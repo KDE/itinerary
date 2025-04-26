@@ -224,6 +224,7 @@ ecm_add_qml_module(itinerary-app URI org.kde.itinerary NO_PLUGIN QML_FILES
     SheetDrawer.qml
     StatisticsDelegate.qml
     StatisticsPage.qml
+    StopPickerPage.qml
     TicketEditor.qml
     TicketPage.qml
     TicketTokenDelegate.qml

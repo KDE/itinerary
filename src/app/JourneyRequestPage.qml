@@ -37,7 +37,7 @@ FormCard.FormCardPage {
     data: [
         Component {
             id: departurePicker
-            KPublicTransport.StopPickerPage {
+            StopPickerPage {
                 title: i18nc("departure train station", "Select Departure Stop")
                 publicTransportManager: root.publicTransportManager
                 initialCountry: root.initialCountry
@@ -49,7 +49,7 @@ FormCard.FormCardPage {
         },
         Component {
             id: arrivalPicker
-            KPublicTransport.StopPickerPage {
+            StopPickerPage {
                 title: i18nc("arrival train station", "Select Arrival Stop")
                 publicTransportManager: root.publicTransportManager
                 initialCountry: root.initialCountry
