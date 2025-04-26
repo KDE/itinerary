@@ -225,8 +225,7 @@ QString Localizer::formatTimeZoneOffset(qint64 seconds)
 
 QString Localizer::formatDuration(int seconds)
 {
-    const auto opts = static_cast<KFormat::DurationFormatOptions>(KFormat::AbbreviatedDuration | KFormat::HideSeconds); // ### workaround for KF < 6.12
-    return KFormat().formatDuration((quint64)seconds * 1000, opts);
+    return KFormat().formatDuration((quint64)seconds * 1000, KFormat::AbbreviatedDuration | KFormat::HideSeconds);
 }
 
 QString Localizer::formatSpeed(double km_per_hour, KFormat::DistanceFormatOptions formatOpts)
