@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-25 00:42+0000\n"
+"POT-Creation-Date: 2025-04-26 00:42+0000\n"
 "PO-Revision-Date: 2025-03-15 10:38+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -379,7 +379,7 @@ msgstr "Nova Boat-Vojaĝo"
 msgid "Edit Boat Trip"
 msgstr "Redakti Boatvojaĝon"
 
-#: app/BoatEditor.qml:55 app/BoatPage.qml:28 app/StatisticsPage.qml:136
+#: app/BoatEditor.qml:55 app/BoatPage.qml:28 app/StatisticsPage.qml:149
 #, kde-format
 msgid "Boat"
 msgstr "Boato"
@@ -1204,7 +1204,7 @@ msgctxt "flight arrival"
 msgid "Arrival time has to be after the departure time."
 msgstr "Alventempo devas esti post la forirtempo."
 
-#: app/FlightEditor.qml:182 app/FlightPage.qml:15 app/StatisticsPage.qml:94
+#: app/FlightEditor.qml:182 app/FlightPage.qml:15 app/StatisticsPage.qml:107
 #, kde-format
 msgid "Flight"
 msgstr "Flugo"
@@ -1997,7 +1997,7 @@ msgstr "Metroo"
 msgid "Tramway"
 msgstr "Tramo"
 
-#: app/IndoorMapPlatformSheet.qml:87 app/StatisticsPage.qml:122
+#: app/IndoorMapPlatformSheet.qml:87 app/StatisticsPage.qml:135
 #, kde-format
 msgid "Bus"
 msgstr "Buso"
@@ -2909,7 +2909,7 @@ msgstr "Konservitaj Lokoj"
 msgid "Home Country"
 msgstr "Hejmlando"
 
-#: app/MyDataPage.qml:131 app/StatisticsPage.qml:15 app/TripGroupPage.qml:652
+#: app/MyDataPage.qml:131 app/StatisticsPage.qml:16 app/TripGroupPage.qml:652
 #, kde-format
 msgid "Statistics"
 msgstr "Statistiko"
@@ -3745,22 +3745,28 @@ msgstr "Aŭtoveturoj"
 msgid "Boat trips"
 msgstr "Ŝipaj ekskursoj"
 
-#: app/StatisticsPage.qml:36
+#: app/StatisticsPage.qml:37
 #, kde-format
 msgid "Year"
 msgstr "Jaro"
 
-#: app/StatisticsPage.qml:48 app/statisticstimerangemodel.cpp:69
+#: app/StatisticsPage.qml:49 app/statisticstimerangemodel.cpp:69
 #, kde-format
 msgid "Total"
 msgstr "Entute"
 
-#: app/StatisticsPage.qml:108 app/TrainEditor.qml:88
+#: app/StatisticsPage.qml:65
+#, kde-format
+msgctxt "@info:placeholder no visited country"
+msgid "None"
+msgstr ""
+
+#: app/StatisticsPage.qml:121 app/TrainEditor.qml:88
 #, kde-format
 msgid "Train"
 msgstr "Trajno"
 
-#: app/StatisticsPage.qml:150
+#: app/StatisticsPage.qml:163
 #, kde-format
 msgid "Car"
 msgstr "Aŭto"

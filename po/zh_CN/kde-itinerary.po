@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-25 00:42+0000\n"
+"POT-Creation-Date: 2025-04-26 00:42+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -373,7 +373,7 @@ msgstr "新建船程"
 msgid "Edit Boat Trip"
 msgstr ""
 
-#: app/BoatEditor.qml:55 app/BoatPage.qml:28 app/StatisticsPage.qml:136
+#: app/BoatEditor.qml:55 app/BoatPage.qml:28 app/StatisticsPage.qml:149
 #, kde-format
 msgid "Boat"
 msgstr ""
@@ -1198,7 +1198,7 @@ msgctxt "flight arrival"
 msgid "Arrival time has to be after the departure time."
 msgstr ""
 
-#: app/FlightEditor.qml:182 app/FlightPage.qml:15 app/StatisticsPage.qml:94
+#: app/FlightEditor.qml:182 app/FlightPage.qml:15 app/StatisticsPage.qml:107
 #, kde-format
 msgid "Flight"
 msgstr "航班信息"
@@ -1986,7 +1986,7 @@ msgstr "地铁"
 msgid "Tramway"
 msgstr "有轨电车"
 
-#: app/IndoorMapPlatformSheet.qml:87 app/StatisticsPage.qml:122
+#: app/IndoorMapPlatformSheet.qml:87 app/StatisticsPage.qml:135
 #, kde-format
 msgid "Bus"
 msgstr "公共汽车"
@@ -2898,7 +2898,7 @@ msgstr "已保存的位置"
 msgid "Home Country"
 msgstr "居住国家"
 
-#: app/MyDataPage.qml:131 app/StatisticsPage.qml:15 app/TripGroupPage.qml:652
+#: app/MyDataPage.qml:131 app/StatisticsPage.qml:16 app/TripGroupPage.qml:652
 #, kde-format
 msgid "Statistics"
 msgstr "统计数据"
@@ -3721,22 +3721,28 @@ msgstr "汽车搭乘次数"
 msgid "Boat trips"
 msgstr ""
 
-#: app/StatisticsPage.qml:36
+#: app/StatisticsPage.qml:37
 #, kde-format
 msgid "Year"
 msgstr ""
 
-#: app/StatisticsPage.qml:48 app/statisticstimerangemodel.cpp:69
+#: app/StatisticsPage.qml:49 app/statisticstimerangemodel.cpp:69
 #, kde-format
 msgid "Total"
 msgstr "合计信息"
 
-#: app/StatisticsPage.qml:108 app/TrainEditor.qml:88
+#: app/StatisticsPage.qml:65
+#, kde-format
+msgctxt "@info:placeholder no visited country"
+msgid "None"
+msgstr ""
+
+#: app/StatisticsPage.qml:121 app/TrainEditor.qml:88
 #, kde-format
 msgid "Train"
 msgstr ""
 
-#: app/StatisticsPage.qml:150
+#: app/StatisticsPage.qml:163
 #, kde-format
 msgid "Car"
 msgstr "汽车"

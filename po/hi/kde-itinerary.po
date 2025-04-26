@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-25 00:42+0000\n"
+"POT-Creation-Date: 2025-04-26 00:42+0000\n"
 "PO-Revision-Date: 2024-12-15 19:32+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
@@ -379,7 +379,7 @@ msgstr "नई नाव यात्रा"
 msgid "Edit Boat Trip"
 msgstr "नाव यात्रा संपादित करें"
 
-#: app/BoatEditor.qml:55 app/BoatPage.qml:28 app/StatisticsPage.qml:136
+#: app/BoatEditor.qml:55 app/BoatPage.qml:28 app/StatisticsPage.qml:149
 #, kde-format
 msgid "Boat"
 msgstr "नाव"
@@ -1208,7 +1208,7 @@ msgctxt "flight arrival"
 msgid "Arrival time has to be after the departure time."
 msgstr "आगमन का समय प्रस्थान के समय के बाद होना चाहिए।"
 
-#: app/FlightEditor.qml:182 app/FlightPage.qml:15 app/StatisticsPage.qml:94
+#: app/FlightEditor.qml:182 app/FlightPage.qml:15 app/StatisticsPage.qml:107
 #, kde-format
 msgid "Flight"
 msgstr "उड़ान"
@@ -2006,7 +2006,7 @@ msgstr "सबवे"
 msgid "Tramway"
 msgstr "ट्रामवे"
 
-#: app/IndoorMapPlatformSheet.qml:87 app/StatisticsPage.qml:122
+#: app/IndoorMapPlatformSheet.qml:87 app/StatisticsPage.qml:135
 #, kde-format
 msgid "Bus"
 msgstr "बस"
@@ -2934,7 +2934,7 @@ msgstr "पसंदीदा स्थान"
 msgid "Home Country"
 msgstr "स्वदेश"
 
-#: app/MyDataPage.qml:131 app/StatisticsPage.qml:15 app/TripGroupPage.qml:652
+#: app/MyDataPage.qml:131 app/StatisticsPage.qml:16 app/TripGroupPage.qml:652
 #, kde-format
 msgid "Statistics"
 msgstr "आंकड़े"
@@ -3771,22 +3771,28 @@ msgstr "कार की सवारियां"
 msgid "Boat trips"
 msgstr "नाव यात्राएं"
 
-#: app/StatisticsPage.qml:36
+#: app/StatisticsPage.qml:37
 #, kde-format
 msgid "Year"
 msgstr "वर्ष"
 
-#: app/StatisticsPage.qml:48 app/statisticstimerangemodel.cpp:69
+#: app/StatisticsPage.qml:49 app/statisticstimerangemodel.cpp:69
 #, kde-format
 msgid "Total"
 msgstr "कुल"
 
-#: app/StatisticsPage.qml:108 app/TrainEditor.qml:88
+#: app/StatisticsPage.qml:65
+#, kde-format
+msgctxt "@info:placeholder no visited country"
+msgid "None"
+msgstr ""
+
+#: app/StatisticsPage.qml:121 app/TrainEditor.qml:88
 #, kde-format
 msgid "Train"
 msgstr "रेलगाड़ी"
 
-#: app/StatisticsPage.qml:150
+#: app/StatisticsPage.qml:163
 #, kde-format
 msgid "Car"
 msgstr "कार"

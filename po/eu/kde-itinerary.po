@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-25 00:42+0000\n"
-"PO-Revision-Date: 2025-04-22 11:38+0200\n"
+"POT-Creation-Date: 2025-04-26 00:42+0000\n"
+"PO-Revision-Date: 2025-04-25 22:33+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -336,6 +336,8 @@ msgid ""
 "File was imported with a newer version of Itinerary. Some information might "
 "not be imported correctly."
 msgstr ""
+"Fitxategia Itinerary-ren bertsio berriago batekin inportatu da. Baliteke "
+"informazio batzuk behar bezala ez inportatzea."
 
 #: app/applicationcontroller.cpp:562
 #, kde-format
@@ -384,7 +386,7 @@ msgstr "Txango berria itsasontzian"
 msgid "Edit Boat Trip"
 msgstr "Editatu itsasontzi txangoa"
 
-#: app/BoatEditor.qml:55 app/BoatPage.qml:28 app/StatisticsPage.qml:136
+#: app/BoatEditor.qml:55 app/BoatPage.qml:28 app/StatisticsPage.qml:149
 #, kde-format
 msgid "Boat"
 msgstr "Itsasontzia"
@@ -1207,7 +1209,7 @@ msgctxt "flight arrival"
 msgid "Arrival time has to be after the departure time."
 msgstr "Iritsiera-ordua irteera-orduaren ondoren izan behar da."
 
-#: app/FlightEditor.qml:182 app/FlightPage.qml:15 app/StatisticsPage.qml:94
+#: app/FlightEditor.qml:182 app/FlightPage.qml:15 app/StatisticsPage.qml:107
 #, kde-format
 msgid "Flight"
 msgstr "Hegaldia"
@@ -2001,7 +2003,7 @@ msgstr "Metroa"
 msgid "Tramway"
 msgstr "Tranbia"
 
-#: app/IndoorMapPlatformSheet.qml:87 app/StatisticsPage.qml:122
+#: app/IndoorMapPlatformSheet.qml:87 app/StatisticsPage.qml:135
 #, kde-format
 msgid "Bus"
 msgstr "Autobusa"
@@ -2261,37 +2263,37 @@ msgstr "Partekatu kokapen Matrix bidez"
 #, kde-format
 msgctxt "map style"
 msgid "Normal map"
-msgstr ""
+msgstr "Mapa arrunta"
 
 #: app/LiveStatusPage.qml:74
 #, kde-format
 msgctxt "map style"
 msgid "Railway infrastructure map"
-msgstr ""
+msgstr "Trenbide-azpiegituren mapa"
 
 #: app/LiveStatusPage.qml:83
 #, kde-format
 msgctxt "map style"
 msgid "Railway signalling map"
-msgstr ""
+msgstr "Trenbide-seinaleztapenaren mapa"
 
 #: app/LiveStatusPage.qml:92
 #, kde-format
 msgctxt "map style"
 msgid "Railway speed map"
-msgstr ""
+msgstr "Trenbide-abiaduraren mapa"
 
 #: app/LiveStatusPage.qml:101
 #, kde-format
 msgctxt "map style"
 msgid "Railway electrification map"
-msgstr ""
+msgstr "Trenbidearen elektrifikazio mapa"
 
 #: app/LiveStatusPage.qml:110
 #, kde-format
 msgctxt "map style"
 msgid "Railway gauge map"
-msgstr ""
+msgstr "Trenbide-zabaleraren mapa"
 
 #: app/LiveStatusPage.qml:151
 #, kde-format
@@ -2945,7 +2947,7 @@ msgstr "Gordetako kokalekuak"
 msgid "Home Country"
 msgstr "Etxeko herrialdea"
 
-#: app/MyDataPage.qml:131 app/StatisticsPage.qml:15 app/TripGroupPage.qml:652
+#: app/MyDataPage.qml:131 app/StatisticsPage.qml:16 app/TripGroupPage.qml:652
 #, kde-format
 msgid "Statistics"
 msgstr "Estatistikak"
@@ -3782,22 +3784,28 @@ msgstr "Auto ibilaldiak"
 msgid "Boat trips"
 msgstr "Itsasontzi txangoak"
 
-#: app/StatisticsPage.qml:36
+#: app/StatisticsPage.qml:37
 #, kde-format
 msgid "Year"
 msgstr "Urtea"
 
-#: app/StatisticsPage.qml:48 app/statisticstimerangemodel.cpp:69
+#: app/StatisticsPage.qml:49 app/statisticstimerangemodel.cpp:69
 #, kde-format
 msgid "Total"
 msgstr "Guztira"
 
-#: app/StatisticsPage.qml:108 app/TrainEditor.qml:88
+#: app/StatisticsPage.qml:65
+#, kde-format
+msgctxt "@info:placeholder no visited country"
+msgid "None"
+msgstr ""
+
+#: app/StatisticsPage.qml:121 app/TrainEditor.qml:88
 #, kde-format
 msgid "Train"
 msgstr "Trena"
 
-#: app/StatisticsPage.qml:150
+#: app/StatisticsPage.qml:163
 #, kde-format
 msgid "Car"
 msgstr "Autoa"

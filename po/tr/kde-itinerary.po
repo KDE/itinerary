@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-25 00:42+0000\n"
-"PO-Revision-Date: 2025-04-21 10:40+0300\n"
+"POT-Creation-Date: 2025-04-26 00:42+0000\n"
+"PO-Revision-Date: 2025-04-25 09:35+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -332,6 +332,8 @@ msgid ""
 "File was imported with a newer version of Itinerary. Some information might "
 "not be imported correctly."
 msgstr ""
+"Dosya, Yol Kılavuzu’nun daha yeni bir sürümüyle içe aktarılmış. Bazı "
+"bilgiler düzgünce içe aktarılmamış olabilir."
 
 #: app/applicationcontroller.cpp:562
 #, kde-format
@@ -380,7 +382,7 @@ msgstr "Yeni Bot Gezisi"
 msgid "Edit Boat Trip"
 msgstr "Bot Gezisini Düzenle"
 
-#: app/BoatEditor.qml:55 app/BoatPage.qml:28 app/StatisticsPage.qml:136
+#: app/BoatEditor.qml:55 app/BoatPage.qml:28 app/StatisticsPage.qml:149
 #, kde-format
 msgid "Boat"
 msgstr "Bot"
@@ -1203,7 +1205,7 @@ msgctxt "flight arrival"
 msgid "Arrival time has to be after the departure time."
 msgstr "Varış zamanı, kalkış zamanından sonra olmalıdır."
 
-#: app/FlightEditor.qml:182 app/FlightPage.qml:15 app/StatisticsPage.qml:94
+#: app/FlightEditor.qml:182 app/FlightPage.qml:15 app/StatisticsPage.qml:107
 #, kde-format
 msgid "Flight"
 msgstr "Uçuş"
@@ -1997,7 +1999,7 @@ msgstr "Metro"
 msgid "Tramway"
 msgstr "Tramvay"
 
-#: app/IndoorMapPlatformSheet.qml:87 app/StatisticsPage.qml:122
+#: app/IndoorMapPlatformSheet.qml:87 app/StatisticsPage.qml:135
 #, kde-format
 msgid "Bus"
 msgstr "Otobüs"
@@ -2257,37 +2259,37 @@ msgstr "Konumu Matrix ile Paylaş"
 #, kde-format
 msgctxt "map style"
 msgid "Normal map"
-msgstr ""
+msgstr "Normal harita"
 
 #: app/LiveStatusPage.qml:74
 #, kde-format
 msgctxt "map style"
 msgid "Railway infrastructure map"
-msgstr ""
+msgstr "Demiryolu ağı haritası"
 
 #: app/LiveStatusPage.qml:83
 #, kde-format
 msgctxt "map style"
 msgid "Railway signalling map"
-msgstr ""
+msgstr "Demiryolu sinyalizasyon haritası"
 
 #: app/LiveStatusPage.qml:92
 #, kde-format
 msgctxt "map style"
 msgid "Railway speed map"
-msgstr ""
+msgstr "Demiryolu hız haritası"
 
 #: app/LiveStatusPage.qml:101
 #, kde-format
 msgctxt "map style"
 msgid "Railway electrification map"
-msgstr ""
+msgstr "Demiryolu elektrifikasyon haritası"
 
 #: app/LiveStatusPage.qml:110
 #, kde-format
 msgctxt "map style"
 msgid "Railway gauge map"
-msgstr ""
+msgstr "Demiryolu hat açıklığı haritası"
 
 #: app/LiveStatusPage.qml:151
 #, kde-format
@@ -2934,7 +2936,7 @@ msgstr "Kaydedilen Konumlar"
 msgid "Home Country"
 msgstr "Anayurt"
 
-#: app/MyDataPage.qml:131 app/StatisticsPage.qml:15 app/TripGroupPage.qml:652
+#: app/MyDataPage.qml:131 app/StatisticsPage.qml:16 app/TripGroupPage.qml:652
 #, kde-format
 msgid "Statistics"
 msgstr "İstatistikler"
@@ -3770,22 +3772,28 @@ msgstr "Araba binişleri"
 msgid "Boat trips"
 msgstr "Bot gezileri"
 
-#: app/StatisticsPage.qml:36
+#: app/StatisticsPage.qml:37
 #, kde-format
 msgid "Year"
 msgstr "Yıl"
 
-#: app/StatisticsPage.qml:48 app/statisticstimerangemodel.cpp:69
+#: app/StatisticsPage.qml:49 app/statisticstimerangemodel.cpp:69
 #, kde-format
 msgid "Total"
 msgstr "Toplam"
 
-#: app/StatisticsPage.qml:108 app/TrainEditor.qml:88
+#: app/StatisticsPage.qml:65
+#, kde-format
+msgctxt "@info:placeholder no visited country"
+msgid "None"
+msgstr ""
+
+#: app/StatisticsPage.qml:121 app/TrainEditor.qml:88
 #, kde-format
 msgid "Train"
 msgstr "Tren"
 
-#: app/StatisticsPage.qml:150
+#: app/StatisticsPage.qml:163
 #, kde-format
 msgid "Car"
 msgstr "Araba"
