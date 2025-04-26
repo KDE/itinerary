@@ -29,8 +29,8 @@ FormCard.FormCardPage {
     Kirigami.Theme.inherit: false
     Kirigami.Theme.colorSet: Kirigami.Theme.Window
 
-    property KPublicTransport.location departureStop
-    property KPublicTransport.location arrivalStop
+    property var departureStop
+    property var arrivalStop
 
     title: i18n("Select Journey")
 
