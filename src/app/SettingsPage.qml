@@ -11,6 +11,7 @@ import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.i18n.localeData
 import org.kde.notification as KNotification
 import org.kde.kpublictransport.onboard
+import org.kde.kpublictransport.ui as KPublicTransport
 import org.kde.itinerary
 
 FormCard.FormCardPage {
@@ -20,7 +21,7 @@ FormCard.FormCardPage {
 
     property Component ptBackendPage: Component {
         id: ptBackendPage
-        PublicTransportBackendPage {
+        KPublicTransport.BackendPage {
             publicTransportManager: LiveDataManager.publicTransportManager
         }
     }
