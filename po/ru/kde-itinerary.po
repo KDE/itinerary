@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-26 00:42+0000\n"
+"POT-Creation-Date: 2025-04-27 00:42+0000\n"
 "PO-Revision-Date: 2025-04-01 10:26+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -742,7 +742,8 @@ msgstr "Оставление"
 msgid "Vehicle"
 msgstr "Автомобиль"
 
-#: app/CarRentalPage.qml:85
+#: app/CarRentalPage.qml:85 app/HealthCertificateTest.qml:73
+#: app/HealthCertificateVaccination.qml:85
 #, kde-format
 msgid "Type"
 msgstr "Тип"
@@ -1361,7 +1362,8 @@ msgstr "Город"
 msgid "Region"
 msgstr "Регион"
 
-#: app/FormPlaceEditorDelegate.qml:129
+#: app/FormPlaceEditorDelegate.qml:129 app/HealthCertificateTest.qml:115
+#: app/HealthCertificateVaccination.qml:123
 #, kde-format
 msgid "Country"
 msgstr "Страна"
@@ -1514,7 +1516,7 @@ msgstr "Полностью вакцинированный"
 msgid "Negative test"
 msgstr "Отрицательный тест"
 
-#: app/HealthCertificateBarcode.qml:75
+#: app/HealthCertificateBarcode.qml:75 app/HealthCertificateRecovery.qml:55
 #, kde-format
 msgid "Positive test"
 msgstr "Положительный тест"
@@ -1545,7 +1547,7 @@ msgstr "Вакцинация: %1 (%2/%3)"
 msgid "Vaccination for %1"
 msgstr "Вакцинация: %1"
 
-#: app/healthcertificatemanager.cpp:159 app/HealthCertificateVaccination.qml:47
+#: app/healthcertificatemanager.cpp:159 app/HealthCertificateVaccination.qml:54
 #, kde-format
 msgid "Vaccination"
 msgstr "Вакцинация"
@@ -1590,122 +1592,142 @@ msgstr ""
 "li><li>Индийские сертификаты вакцинации.</li><li>Карты здоровья SMART (SHC), "
 "которые используются в некоторых частях Канады и в США.</li></p>"
 
-#: app/HealthCertificateRecovery.qml:28 app/HealthCertificateTest.qml:29
-#: app/HealthCertificateVaccination.qml:32
+#: app/HealthCertificateRecovery.qml:29 app/HealthCertificateTest.qml:30
+#: app/HealthCertificateVaccination.qml:33
 #, kde-format
 msgid "Person"
 msgstr "Физическое лицо"
 
-#: app/HealthCertificateRecovery.qml:33 app/HealthCertificateTest.qml:34
-#: app/HealthCertificateVaccination.qml:37
+#: app/HealthCertificateRecovery.qml:34 app/HealthCertificateTest.qml:35
+#: app/HealthCertificateVaccination.qml:38 app/ProgramMembershipCard.qml:31
+#: app/ProgramMembershipEditor.qml:70 app/ProgramMembershipEditorCard.qml:54
+#: app/TicketPage.qml:86
 #, kde-format
-msgid "Name:"
-msgstr "Имя:"
+msgid "Name"
+msgstr "Имя"
 
-#: app/HealthCertificateRecovery.qml:38 app/HealthCertificateTest.qml:39
-#: app/HealthCertificateVaccination.qml:42
-#, kde-format
-msgid "Date of birth:"
+#: app/HealthCertificateRecovery.qml:43 app/HealthCertificateTest.qml:44
+#: app/HealthCertificateVaccination.qml:47
+#, fuzzy, kde-format
+#| msgid "Date of birth:"
+msgid "Date of birth"
 msgstr "Дата рождения:"
 
-#: app/HealthCertificateRecovery.qml:43
+#: app/HealthCertificateRecovery.qml:50
 #, kde-format
 msgid "Recovery"
 msgstr "Перенесённое заболевание"
 
-#: app/HealthCertificateRecovery.qml:48
-#, kde-format
-msgid "Positive test:"
-msgstr "Положительный тест:"
-
-#: app/HealthCertificateRecovery.qml:52 app/HealthCertificateTest.qml:55
-#: app/HealthCertificateVaccination.qml:66
-#, kde-format
-msgid "Disease:"
+#: app/HealthCertificateRecovery.qml:62 app/HealthCertificateTest.qml:65
+#: app/HealthCertificateVaccination.qml:77
+#, fuzzy, kde-format
+#| msgid "Disease:"
+msgid "Disease"
 msgstr "Заболевание:"
 
-#: app/HealthCertificateRecovery.qml:56
+#: app/HealthCertificateRecovery.qml:69 app/ProgramMembershipEditor.qml:97
+#: app/ProgramMembershipPage.qml:117 app/TicketPage.qml:92
 #, kde-format
-msgid "Valid from:"
-msgstr "Действует с:"
+msgid "Valid from"
+msgstr "Действует с"
 
-#: app/HealthCertificateRecovery.qml:60
+#: app/HealthCertificateRecovery.qml:76 app/ProgramMembershipEditor.qml:111
+#: app/ProgramMembershipPage.qml:122 app/TicketPage.qml:98
 #, kde-format
-msgid "Valid until:"
-msgstr "Действует до:"
+msgid "Valid until"
+msgstr "Действует до"
 
-#: app/HealthCertificateRecovery.qml:65 app/HealthCertificateTest.qml:102
-#: app/HealthCertificateVaccination.qml:103
+#: app/HealthCertificateRecovery.qml:82 app/HealthCertificateTest.qml:122
+#: app/HealthCertificateVaccination.qml:129
 #, kde-format
 msgid "Certificate"
 msgstr "Сертификат"
 
-#: app/HealthCertificateRecovery.qml:70 app/HealthCertificateTest.qml:107
-#: app/HealthCertificateVaccination.qml:108
-#, kde-format
-msgid "Issuer:"
+#: app/HealthCertificateRecovery.qml:87 app/HealthCertificateTest.qml:127
+#: app/HealthCertificateVaccination.qml:134
+#, fuzzy, kde-format
+#| msgid "Issuer:"
+msgid "Issuer"
 msgstr "Кем выдано:"
 
-#: app/HealthCertificateRecovery.qml:75 app/HealthCertificateTest.qml:112
-#: app/HealthCertificateVaccination.qml:115
-#, kde-format
-msgid "Identifier:"
+#: app/HealthCertificateRecovery.qml:95 app/HealthCertificateTest.qml:135
+#: app/HealthCertificateVaccination.qml:142
+#, fuzzy, kde-format
+#| msgid "Identifier:"
+msgid "Identifier"
 msgstr "Идентификатор:"
 
-#: app/HealthCertificateRecovery.qml:82 app/HealthCertificateTest.qml:120
-#: app/HealthCertificateVaccination.qml:123
-#, kde-format
-msgid "Issued:"
+#: app/HealthCertificateRecovery.qml:104 app/HealthCertificateTest.qml:143
+#: app/HealthCertificateVaccination.qml:150
+#, fuzzy, kde-format
+#| msgid "Issued:"
+msgid "Issued"
 msgstr "Выдано:"
 
-#: app/HealthCertificateRecovery.qml:86 app/HealthCertificateTest.qml:124
-#: app/HealthCertificateVaccination.qml:127
-#, kde-format
-msgid "Expires:"
+#: app/HealthCertificateRecovery.qml:111 app/HealthCertificateTest.qml:151
+#: app/HealthCertificateVaccination.qml:158
+#, fuzzy, kde-format
+#| msgid "Expires:"
+msgid "Expires"
 msgstr "Истекает:"
 
-#: app/HealthCertificateRecovery.qml:101 app/HealthCertificateTest.qml:139
-#: app/HealthCertificateVaccination.qml:142
-#, kde-format
-msgid "Signature:"
+#: app/HealthCertificateRecovery.qml:131 app/HealthCertificateTest.qml:169
+#: app/HealthCertificateVaccination.qml:176
+#, fuzzy, kde-format
+#| msgid "Signature:"
+msgid "Signature"
 msgstr "Подпись:"
 
-#: app/HealthCertificateTest.qml:44
+#: app/HealthCertificateRecovery.qml:135 app/HealthCertificateTest.qml:173
+#: app/HealthCertificateVaccination.qml:180
+#, fuzzy, kde-format
+#| msgctxt "not yet expired tickets"
+#| msgid "Valid"
+msgctxt "Signature state"
+msgid "Valid"
+msgstr "Действительные"
+
+#: app/HealthCertificateRecovery.qml:137 app/HealthCertificateTest.qml:175
+#: app/HealthCertificateVaccination.qml:182
+#, fuzzy, kde-format
+#| msgid "Unknown class"
+msgctxt "Signature state"
+msgid "Unknown"
+msgstr "Неизвестный класс"
+
+#: app/HealthCertificateRecovery.qml:140 app/HealthCertificateTest.qml:178
+#: app/HealthCertificateVaccination.qml:185
+#, fuzzy, kde-format
+#| msgctxt "not yet expired tickets"
+#| msgid "Valid"
+msgctxt "Signature state"
+msgid "Invalid"
+msgstr "Действительные"
+
+#: app/HealthCertificateTest.qml:51 app/HealthCertificateTest.qml:79
 #, kde-format
 msgid "Test"
 msgstr "Тест"
 
-#: app/HealthCertificateTest.qml:49 app/HealthCertificateVaccination.qml:59
-#, kde-format
-msgid "Date:"
+#: app/HealthCertificateTest.qml:56 app/HealthCertificateVaccination.qml:60
+#, fuzzy, kde-format
+#| msgid "Date:"
+msgid "Date"
 msgstr "Дата:"
 
-#: app/HealthCertificateTest.qml:60 app/HealthCertificateVaccination.qml:71
-#, kde-format
-msgid "Type:"
-msgstr "Тип:"
-
-#: app/HealthCertificateTest.qml:68
-#, kde-format
-msgid "Test:"
-msgstr "Тест:"
-
-#: app/HealthCertificateTest.qml:85
-#, kde-format
-msgid "Result:"
+#: app/HealthCertificateTest.qml:88
+#, fuzzy, kde-format
+#| msgid "Result:"
+msgid "Result"
 msgstr "Результат:"
 
-#: app/HealthCertificateTest.qml:90
-#, kde-format
-msgid "Test Center:"
+#: app/HealthCertificateTest.qml:106
+#, fuzzy, kde-format
+#| msgid "Test Center:"
+msgid "Test Center"
 msgstr "Центр тестирования:"
 
-#: app/HealthCertificateTest.qml:96 app/HealthCertificateVaccination.qml:97
-#, kde-format
-msgid "Country:"
-msgstr "Страна:"
-
-#: app/HealthCertificateVaccination.qml:55
+#: app/HealthCertificateVaccination.qml:64
 #, kde-format
 msgid "%2 (%1 day ago)"
 msgid_plural "%2 (%1 days ago)"
@@ -1714,25 +1736,28 @@ msgstr[1] "%2 (%1 дня назад)"
 msgstr[2] "%2 (%1 дней назад)"
 msgstr[3] "%2 (один день назад)"
 
-#: app/HealthCertificateVaccination.qml:76
-#, kde-format
-msgid "Vaccine:"
+#: app/HealthCertificateVaccination.qml:92
+#, fuzzy, kde-format
+#| msgid "Vaccine:"
+msgid "Vaccine"
 msgstr "Вакцина:"
 
-#: app/HealthCertificateVaccination.qml:84
-#, kde-format
-msgid "Manufacturer:"
+#: app/HealthCertificateVaccination.qml:101
+#, fuzzy, kde-format
+#| msgid "Manufacturer:"
+msgid "Manufacturer"
 msgstr "Производитель:"
 
-#: app/HealthCertificateVaccination.qml:88
+#: app/HealthCertificateVaccination.qml:109
+#, fuzzy, kde-format
+#| msgid "Dose:"
+msgid "Dose"
+msgstr "Доза:"
+
+#: app/HealthCertificateVaccination.qml:110
 #, kde-format
 msgid "%1/%2"
 msgstr "%1/%2"
-
-#: app/HealthCertificateVaccination.qml:89
-#, kde-format
-msgid "Dose:"
-msgstr "Доза:"
 
 #: app/HotelDelegate.qml:34
 #, kde-format
@@ -2342,19 +2367,19 @@ msgctxt "day-only date format"
 msgid "dd MMMM"
 msgstr "dd MMMM"
 
-#: app/localizer.cpp:245
+#: app/localizer.cpp:244
 #, kde-format
 msgctxt "weight in gram"
 msgid "%1 g"
 msgstr "%1 г"
 
-#: app/localizer.cpp:248 app/localizer.cpp:250
+#: app/localizer.cpp:247 app/localizer.cpp:249
 #, kde-format
 msgctxt "weight in kilogram"
 msgid "%1 kg"
 msgstr "%1 кг"
 
-#: app/localizer.cpp:265
+#: app/localizer.cpp:264
 #, kde-format
 msgctxt "temperature range"
 msgid "%1 / %2"
@@ -3192,12 +3217,6 @@ msgctxt "bonus, discount or frequent traveler program"
 msgid "Program"
 msgstr "Программа"
 
-#: app/ProgramMembershipCard.qml:31 app/ProgramMembershipEditor.qml:70
-#: app/ProgramMembershipEditorCard.qml:54 app/TicketPage.qml:86
-#, kde-format
-msgid "Name"
-msgstr "Имя"
-
 #: app/ProgramMembershipCard.qml:40 app/ProgramMembershipEditor.qml:90
 #: app/ProgramMembershipEditorCard.qml:61 app/ProgramMembershipPage.qml:95
 #: app/TicketPage.qml:104
@@ -3244,18 +3263,6 @@ msgstr "Участие"
 #, kde-format
 msgid "Member"
 msgstr "Участник"
-
-#: app/ProgramMembershipEditor.qml:97 app/ProgramMembershipPage.qml:117
-#: app/TicketPage.qml:92
-#, kde-format
-msgid "Valid from"
-msgstr "Действует с"
-
-#: app/ProgramMembershipEditor.qml:111 app/ProgramMembershipPage.qml:122
-#: app/TicketPage.qml:98
-#, kde-format
-msgid "Valid until"
-msgstr "Действует до"
 
 #: app/ProgramMembershipEditor.qml:124
 #, kde-format
@@ -4614,6 +4621,27 @@ msgstr "Выполнен выход"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 из %3 в %4 %5"
+
+#~ msgid "Name:"
+#~ msgstr "Имя:"
+
+#~ msgid "Positive test:"
+#~ msgstr "Положительный тест:"
+
+#~ msgid "Valid from:"
+#~ msgstr "Действует с:"
+
+#~ msgid "Valid until:"
+#~ msgstr "Действует до:"
+
+#~ msgid "Type:"
+#~ msgstr "Тип:"
+
+#~ msgid "Test:"
+#~ msgstr "Тест:"
+
+#~ msgid "Country:"
+#~ msgstr "Страна:"
 
 #~ msgid "Select country"
 #~ msgstr "Выбор страны"

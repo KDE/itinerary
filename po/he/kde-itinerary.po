@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-26 00:42+0000\n"
-"PO-Revision-Date: 2025-04-19 18:16+0300\n"
+"POT-Creation-Date: 2025-04-27 00:42+0000\n"
+"PO-Revision-Date: 2025-04-26 10:30+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -335,6 +335,7 @@ msgid ""
 "File was imported with a newer version of Itinerary. Some information might "
 "not be imported correctly."
 msgstr ""
+"הקובץ יובא עם גרסה חדשה יותר של Itinerary. כנראה שחלק מהמידע לא ייובא כראוי."
 
 #: app/applicationcontroller.cpp:562
 #, kde-format
@@ -735,7 +736,8 @@ msgstr "מסירה"
 msgid "Vehicle"
 msgstr "מכונית"
 
-#: app/CarRentalPage.qml:85
+#: app/CarRentalPage.qml:85 app/HealthCertificateTest.qml:73
+#: app/HealthCertificateVaccination.qml:85
 #, kde-format
 msgid "Type"
 msgstr "סוג"
@@ -1354,7 +1356,8 @@ msgstr "עיר"
 msgid "Region"
 msgstr "אזור"
 
-#: app/FormPlaceEditorDelegate.qml:129
+#: app/FormPlaceEditorDelegate.qml:129 app/HealthCertificateTest.qml:115
+#: app/HealthCertificateVaccination.qml:123
 #, kde-format
 msgid "Country"
 msgstr "מדינה"
@@ -1507,7 +1510,7 @@ msgstr "חיסון מלא"
 msgid "Negative test"
 msgstr "בדיקה שלילית"
 
-#: app/HealthCertificateBarcode.qml:75
+#: app/HealthCertificateBarcode.qml:75 app/HealthCertificateRecovery.qml:55
 #, kde-format
 msgid "Positive test"
 msgstr "בדיקה חיובית"
@@ -1538,7 +1541,7 @@ msgstr "חיסון למניעת %1 (%2/%3)"
 msgid "Vaccination for %1"
 msgstr "חיסון למניעת %1"
 
-#: app/healthcertificatemanager.cpp:159 app/HealthCertificateVaccination.qml:47
+#: app/healthcertificatemanager.cpp:159 app/HealthCertificateVaccination.qml:54
 #, kde-format
 msgid "Vaccination"
 msgstr "חיסון"
@@ -1583,122 +1586,142 @@ msgstr ""
 "li><li>SMART Health Cards (SHC) - כרטיסי בריאות חכמים שנעשה בהם שימוש בחלקים "
 "מקנדה ובארצות הברית.</li></p>"
 
-#: app/HealthCertificateRecovery.qml:28 app/HealthCertificateTest.qml:29
-#: app/HealthCertificateVaccination.qml:32
+#: app/HealthCertificateRecovery.qml:29 app/HealthCertificateTest.qml:30
+#: app/HealthCertificateVaccination.qml:33
 #, kde-format
 msgid "Person"
 msgstr "אדם"
 
-#: app/HealthCertificateRecovery.qml:33 app/HealthCertificateTest.qml:34
-#: app/HealthCertificateVaccination.qml:37
+#: app/HealthCertificateRecovery.qml:34 app/HealthCertificateTest.qml:35
+#: app/HealthCertificateVaccination.qml:38 app/ProgramMembershipCard.qml:31
+#: app/ProgramMembershipEditor.qml:70 app/ProgramMembershipEditorCard.qml:54
+#: app/TicketPage.qml:86
 #, kde-format
-msgid "Name:"
-msgstr "שם:"
+msgid "Name"
+msgstr "שם"
 
-#: app/HealthCertificateRecovery.qml:38 app/HealthCertificateTest.qml:39
-#: app/HealthCertificateVaccination.qml:42
-#, kde-format
-msgid "Date of birth:"
+#: app/HealthCertificateRecovery.qml:43 app/HealthCertificateTest.qml:44
+#: app/HealthCertificateVaccination.qml:47
+#, fuzzy, kde-format
+#| msgid "Date of birth:"
+msgid "Date of birth"
 msgstr "תאריך לידה:"
 
-#: app/HealthCertificateRecovery.qml:43
+#: app/HealthCertificateRecovery.qml:50
 #, kde-format
 msgid "Recovery"
 msgstr "החלמה"
 
-#: app/HealthCertificateRecovery.qml:48
-#, kde-format
-msgid "Positive test:"
-msgstr "בדיקה חיובית:"
-
-#: app/HealthCertificateRecovery.qml:52 app/HealthCertificateTest.qml:55
-#: app/HealthCertificateVaccination.qml:66
-#, kde-format
-msgid "Disease:"
+#: app/HealthCertificateRecovery.qml:62 app/HealthCertificateTest.qml:65
+#: app/HealthCertificateVaccination.qml:77
+#, fuzzy, kde-format
+#| msgid "Disease:"
+msgid "Disease"
 msgstr "מחלה:"
 
-#: app/HealthCertificateRecovery.qml:56
+#: app/HealthCertificateRecovery.qml:69 app/ProgramMembershipEditor.qml:97
+#: app/ProgramMembershipPage.qml:117 app/TicketPage.qml:92
 #, kde-format
-msgid "Valid from:"
-msgstr "בתוקף מאז:"
+msgid "Valid from"
+msgstr "בתוקף מאז"
 
-#: app/HealthCertificateRecovery.qml:60
+#: app/HealthCertificateRecovery.qml:76 app/ProgramMembershipEditor.qml:111
+#: app/ProgramMembershipPage.qml:122 app/TicketPage.qml:98
 #, kde-format
-msgid "Valid until:"
-msgstr "בתוקף עד:"
+msgid "Valid until"
+msgstr "בתוקף עד"
 
-#: app/HealthCertificateRecovery.qml:65 app/HealthCertificateTest.qml:102
-#: app/HealthCertificateVaccination.qml:103
+#: app/HealthCertificateRecovery.qml:82 app/HealthCertificateTest.qml:122
+#: app/HealthCertificateVaccination.qml:129
 #, kde-format
 msgid "Certificate"
 msgstr "אישור"
 
-#: app/HealthCertificateRecovery.qml:70 app/HealthCertificateTest.qml:107
-#: app/HealthCertificateVaccination.qml:108
-#, kde-format
-msgid "Issuer:"
+#: app/HealthCertificateRecovery.qml:87 app/HealthCertificateTest.qml:127
+#: app/HealthCertificateVaccination.qml:134
+#, fuzzy, kde-format
+#| msgid "Issuer:"
+msgid "Issuer"
 msgstr "מנפיק:"
 
-#: app/HealthCertificateRecovery.qml:75 app/HealthCertificateTest.qml:112
-#: app/HealthCertificateVaccination.qml:115
-#, kde-format
-msgid "Identifier:"
+#: app/HealthCertificateRecovery.qml:95 app/HealthCertificateTest.qml:135
+#: app/HealthCertificateVaccination.qml:142
+#, fuzzy, kde-format
+#| msgid "Identifier:"
+msgid "Identifier"
 msgstr "מזהה:"
 
-#: app/HealthCertificateRecovery.qml:82 app/HealthCertificateTest.qml:120
-#: app/HealthCertificateVaccination.qml:123
-#, kde-format
-msgid "Issued:"
+#: app/HealthCertificateRecovery.qml:104 app/HealthCertificateTest.qml:143
+#: app/HealthCertificateVaccination.qml:150
+#, fuzzy, kde-format
+#| msgid "Issued:"
+msgid "Issued"
 msgstr "הונפק:"
 
-#: app/HealthCertificateRecovery.qml:86 app/HealthCertificateTest.qml:124
-#: app/HealthCertificateVaccination.qml:127
-#, kde-format
-msgid "Expires:"
+#: app/HealthCertificateRecovery.qml:111 app/HealthCertificateTest.qml:151
+#: app/HealthCertificateVaccination.qml:158
+#, fuzzy, kde-format
+#| msgid "Expires:"
+msgid "Expires"
 msgstr "תום תוקף:"
 
-#: app/HealthCertificateRecovery.qml:101 app/HealthCertificateTest.qml:139
-#: app/HealthCertificateVaccination.qml:142
-#, kde-format
-msgid "Signature:"
+#: app/HealthCertificateRecovery.qml:131 app/HealthCertificateTest.qml:169
+#: app/HealthCertificateVaccination.qml:176
+#, fuzzy, kde-format
+#| msgid "Signature:"
+msgid "Signature"
 msgstr "חתימה:"
 
-#: app/HealthCertificateTest.qml:44
+#: app/HealthCertificateRecovery.qml:135 app/HealthCertificateTest.qml:173
+#: app/HealthCertificateVaccination.qml:180
+#, fuzzy, kde-format
+#| msgctxt "not yet expired tickets"
+#| msgid "Valid"
+msgctxt "Signature state"
+msgid "Valid"
+msgstr "תוקף"
+
+#: app/HealthCertificateRecovery.qml:137 app/HealthCertificateTest.qml:175
+#: app/HealthCertificateVaccination.qml:182
+#, fuzzy, kde-format
+#| msgid "Unknown class"
+msgctxt "Signature state"
+msgid "Unknown"
+msgstr "מחלקה לא ידועה"
+
+#: app/HealthCertificateRecovery.qml:140 app/HealthCertificateTest.qml:178
+#: app/HealthCertificateVaccination.qml:185
+#, fuzzy, kde-format
+#| msgctxt "not yet expired tickets"
+#| msgid "Valid"
+msgctxt "Signature state"
+msgid "Invalid"
+msgstr "תוקף"
+
+#: app/HealthCertificateTest.qml:51 app/HealthCertificateTest.qml:79
 #, kde-format
 msgid "Test"
 msgstr "בדיקה"
 
-#: app/HealthCertificateTest.qml:49 app/HealthCertificateVaccination.qml:59
-#, kde-format
-msgid "Date:"
+#: app/HealthCertificateTest.qml:56 app/HealthCertificateVaccination.qml:60
+#, fuzzy, kde-format
+#| msgid "Date:"
+msgid "Date"
 msgstr "תאריך:"
 
-#: app/HealthCertificateTest.qml:60 app/HealthCertificateVaccination.qml:71
-#, kde-format
-msgid "Type:"
-msgstr "סוג:"
-
-#: app/HealthCertificateTest.qml:68
-#, kde-format
-msgid "Test:"
-msgstr "בדיקה:"
-
-#: app/HealthCertificateTest.qml:85
-#, kde-format
-msgid "Result:"
+#: app/HealthCertificateTest.qml:88
+#, fuzzy, kde-format
+#| msgid "Result:"
+msgid "Result"
 msgstr "תוצאה:"
 
-#: app/HealthCertificateTest.qml:90
-#, kde-format
-msgid "Test Center:"
+#: app/HealthCertificateTest.qml:106
+#, fuzzy, kde-format
+#| msgid "Test Center:"
+msgid "Test Center"
 msgstr "מרכז בדיקות:"
 
-#: app/HealthCertificateTest.qml:96 app/HealthCertificateVaccination.qml:97
-#, kde-format
-msgid "Country:"
-msgstr "מדינה:"
-
-#: app/HealthCertificateVaccination.qml:55
+#: app/HealthCertificateVaccination.qml:64
 #, kde-format
 msgid "%2 (%1 day ago)"
 msgid_plural "%2 (%1 days ago)"
@@ -1707,25 +1730,28 @@ msgstr[1] "%2 (שלשום)"
 msgstr[2] "%2 (לפני %1 ימים)"
 msgstr[3] "%2 (לפני %1 ימים)"
 
-#: app/HealthCertificateVaccination.qml:76
-#, kde-format
-msgid "Vaccine:"
+#: app/HealthCertificateVaccination.qml:92
+#, fuzzy, kde-format
+#| msgid "Vaccine:"
+msgid "Vaccine"
 msgstr "חיסון:"
 
-#: app/HealthCertificateVaccination.qml:84
-#, kde-format
-msgid "Manufacturer:"
+#: app/HealthCertificateVaccination.qml:101
+#, fuzzy, kde-format
+#| msgid "Manufacturer:"
+msgid "Manufacturer"
 msgstr "יצרן:"
 
-#: app/HealthCertificateVaccination.qml:88
+#: app/HealthCertificateVaccination.qml:109
+#, fuzzy, kde-format
+#| msgid "Dose:"
+msgid "Dose"
+msgstr "מינון:"
+
+#: app/HealthCertificateVaccination.qml:110
 #, kde-format
 msgid "%1/%2"
 msgstr "%1/%2"
-
-#: app/HealthCertificateVaccination.qml:89
-#, kde-format
-msgid "Dose:"
-msgstr "מינון:"
 
 #: app/HotelDelegate.qml:34
 #, kde-format
@@ -2266,37 +2292,37 @@ msgstr "שיתוף המיקום דרך Matrix"
 #, kde-format
 msgctxt "map style"
 msgid "Normal map"
-msgstr ""
+msgstr "מפה רגילה"
 
 #: app/LiveStatusPage.qml:74
 #, kde-format
 msgctxt "map style"
 msgid "Railway infrastructure map"
-msgstr ""
+msgstr "מפת תשתית מסילות רכבת"
 
 #: app/LiveStatusPage.qml:83
 #, kde-format
 msgctxt "map style"
 msgid "Railway signalling map"
-msgstr ""
+msgstr "מפת איתותי רכבת"
 
 #: app/LiveStatusPage.qml:92
 #, kde-format
 msgctxt "map style"
 msgid "Railway speed map"
-msgstr ""
+msgstr "מפת מהירויות רכבת"
 
 #: app/LiveStatusPage.qml:101
 #, kde-format
 msgctxt "map style"
 msgid "Railway electrification map"
-msgstr ""
+msgstr "מפת חשמול רכבת"
 
 #: app/LiveStatusPage.qml:110
 #, kde-format
 msgctxt "map style"
 msgid "Railway gauge map"
-msgstr ""
+msgstr "מפת רוחב מסילות"
 
 #: app/LiveStatusPage.qml:151
 #, kde-format
@@ -2335,19 +2361,19 @@ msgctxt "day-only date format"
 msgid "dd MMMM"
 msgstr "dd MMMM"
 
-#: app/localizer.cpp:245
+#: app/localizer.cpp:244
 #, kde-format
 msgctxt "weight in gram"
 msgid "%1 g"
 msgstr "%1 גרם"
 
-#: app/localizer.cpp:248 app/localizer.cpp:250
+#: app/localizer.cpp:247 app/localizer.cpp:249
 #, kde-format
 msgctxt "weight in kilogram"
 msgid "%1 kg"
 msgstr "%1 ק״ג"
 
-#: app/localizer.cpp:265
+#: app/localizer.cpp:264
 #, kde-format
 msgctxt "temperature range"
 msgid "%1 / %2"
@@ -3168,12 +3194,6 @@ msgctxt "bonus, discount or frequent traveler program"
 msgid "Program"
 msgstr "תוכנית"
 
-#: app/ProgramMembershipCard.qml:31 app/ProgramMembershipEditor.qml:70
-#: app/ProgramMembershipEditorCard.qml:54 app/TicketPage.qml:86
-#, kde-format
-msgid "Name"
-msgstr "שם"
-
 #: app/ProgramMembershipCard.qml:40 app/ProgramMembershipEditor.qml:90
 #: app/ProgramMembershipEditorCard.qml:61 app/ProgramMembershipPage.qml:95
 #: app/TicketPage.qml:104
@@ -3220,18 +3240,6 @@ msgstr "מינוי"
 #, kde-format
 msgid "Member"
 msgstr "מנוי"
-
-#: app/ProgramMembershipEditor.qml:97 app/ProgramMembershipPage.qml:117
-#: app/TicketPage.qml:92
-#, kde-format
-msgid "Valid from"
-msgstr "בתוקף מאז"
-
-#: app/ProgramMembershipEditor.qml:111 app/ProgramMembershipPage.qml:122
-#: app/TicketPage.qml:98
-#, kde-format
-msgid "Valid until"
-msgstr "בתוקף עד"
 
 #: app/ProgramMembershipEditor.qml:124
 #, kde-format
@@ -3766,7 +3774,7 @@ msgstr "סך הכול"
 #, kde-format
 msgctxt "@info:placeholder no visited country"
 msgid "None"
-msgstr ""
+msgstr "אין"
 
 #: app/StatisticsPage.qml:121 app/TrainEditor.qml:88
 #, kde-format
@@ -4574,6 +4582,27 @@ msgstr "יצאת"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 מ%3 אל %4 ב־%5"
+
+#~ msgid "Name:"
+#~ msgstr "שם:"
+
+#~ msgid "Positive test:"
+#~ msgstr "בדיקה חיובית:"
+
+#~ msgid "Valid from:"
+#~ msgstr "בתוקף מאז:"
+
+#~ msgid "Valid until:"
+#~ msgstr "בתוקף עד:"
+
+#~ msgid "Type:"
+#~ msgstr "סוג:"
+
+#~ msgid "Test:"
+#~ msgstr "בדיקה:"
+
+#~ msgid "Country:"
+#~ msgstr "מדינה:"
 
 #~ msgid "Select country"
 #~ msgstr "בחירת מדינה"

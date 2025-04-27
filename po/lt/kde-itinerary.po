@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-26 00:42+0000\n"
+"POT-Creation-Date: 2025-04-27 00:42+0000\n"
 "PO-Revision-Date: 2019-03-18 03:34+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: lt\n"
@@ -733,7 +733,8 @@ msgstr ""
 msgid "Vehicle"
 msgstr ""
 
-#: app/CarRentalPage.qml:85
+#: app/CarRentalPage.qml:85 app/HealthCertificateTest.qml:73
+#: app/HealthCertificateVaccination.qml:85
 #, kde-format
 msgid "Type"
 msgstr ""
@@ -1352,7 +1353,8 @@ msgstr ""
 msgid "Region"
 msgstr ""
 
-#: app/FormPlaceEditorDelegate.qml:129
+#: app/FormPlaceEditorDelegate.qml:129 app/HealthCertificateTest.qml:115
+#: app/HealthCertificateVaccination.qml:123
 #, kde-format
 msgid "Country"
 msgstr ""
@@ -1505,7 +1507,7 @@ msgstr ""
 msgid "Negative test"
 msgstr ""
 
-#: app/HealthCertificateBarcode.qml:75
+#: app/HealthCertificateBarcode.qml:75 app/HealthCertificateRecovery.qml:55
 #, kde-format
 msgid "Positive test"
 msgstr ""
@@ -1536,7 +1538,7 @@ msgstr ""
 msgid "Vaccination for %1"
 msgstr ""
 
-#: app/healthcertificatemanager.cpp:159 app/HealthCertificateVaccination.qml:47
+#: app/healthcertificatemanager.cpp:159 app/HealthCertificateVaccination.qml:54
 #, kde-format
 msgid "Vaccination"
 msgstr ""
@@ -1576,122 +1578,127 @@ msgid ""
 "p>"
 msgstr ""
 
-#: app/HealthCertificateRecovery.qml:28 app/HealthCertificateTest.qml:29
-#: app/HealthCertificateVaccination.qml:32
+#: app/HealthCertificateRecovery.qml:29 app/HealthCertificateTest.qml:30
+#: app/HealthCertificateVaccination.qml:33
 #, kde-format
 msgid "Person"
 msgstr ""
 
-#: app/HealthCertificateRecovery.qml:33 app/HealthCertificateTest.qml:34
-#: app/HealthCertificateVaccination.qml:37
+#: app/HealthCertificateRecovery.qml:34 app/HealthCertificateTest.qml:35
+#: app/HealthCertificateVaccination.qml:38 app/ProgramMembershipCard.qml:31
+#: app/ProgramMembershipEditor.qml:70 app/ProgramMembershipEditorCard.qml:54
+#: app/TicketPage.qml:86
 #, kde-format
-msgid "Name:"
+msgid "Name"
 msgstr ""
 
-#: app/HealthCertificateRecovery.qml:38 app/HealthCertificateTest.qml:39
-#: app/HealthCertificateVaccination.qml:42
+#: app/HealthCertificateRecovery.qml:43 app/HealthCertificateTest.qml:44
+#: app/HealthCertificateVaccination.qml:47
 #, kde-format
-msgid "Date of birth:"
+msgid "Date of birth"
 msgstr ""
 
-#: app/HealthCertificateRecovery.qml:43
+#: app/HealthCertificateRecovery.qml:50
 #, kde-format
 msgid "Recovery"
 msgstr ""
 
-#: app/HealthCertificateRecovery.qml:48
+#: app/HealthCertificateRecovery.qml:62 app/HealthCertificateTest.qml:65
+#: app/HealthCertificateVaccination.qml:77
 #, kde-format
-msgid "Positive test:"
+msgid "Disease"
 msgstr ""
 
-#: app/HealthCertificateRecovery.qml:52 app/HealthCertificateTest.qml:55
-#: app/HealthCertificateVaccination.qml:66
+#: app/HealthCertificateRecovery.qml:69 app/ProgramMembershipEditor.qml:97
+#: app/ProgramMembershipPage.qml:117 app/TicketPage.qml:92
 #, kde-format
-msgid "Disease:"
+msgid "Valid from"
 msgstr ""
 
-#: app/HealthCertificateRecovery.qml:56
+#: app/HealthCertificateRecovery.qml:76 app/ProgramMembershipEditor.qml:111
+#: app/ProgramMembershipPage.qml:122 app/TicketPage.qml:98
 #, kde-format
-msgid "Valid from:"
+msgid "Valid until"
 msgstr ""
 
-#: app/HealthCertificateRecovery.qml:60
-#, kde-format
-msgid "Valid until:"
-msgstr ""
-
-#: app/HealthCertificateRecovery.qml:65 app/HealthCertificateTest.qml:102
-#: app/HealthCertificateVaccination.qml:103
+#: app/HealthCertificateRecovery.qml:82 app/HealthCertificateTest.qml:122
+#: app/HealthCertificateVaccination.qml:129
 #, kde-format
 msgid "Certificate"
 msgstr ""
 
-#: app/HealthCertificateRecovery.qml:70 app/HealthCertificateTest.qml:107
-#: app/HealthCertificateVaccination.qml:108
+#: app/HealthCertificateRecovery.qml:87 app/HealthCertificateTest.qml:127
+#: app/HealthCertificateVaccination.qml:134
 #, kde-format
-msgid "Issuer:"
+msgid "Issuer"
 msgstr ""
 
-#: app/HealthCertificateRecovery.qml:75 app/HealthCertificateTest.qml:112
-#: app/HealthCertificateVaccination.qml:115
-#, kde-format
-msgid "Identifier:"
-msgstr ""
-
-#: app/HealthCertificateRecovery.qml:82 app/HealthCertificateTest.qml:120
-#: app/HealthCertificateVaccination.qml:123
-#, kde-format
-msgid "Issued:"
-msgstr ""
-
-#: app/HealthCertificateRecovery.qml:86 app/HealthCertificateTest.qml:124
-#: app/HealthCertificateVaccination.qml:127
-#, kde-format
-msgid "Expires:"
-msgstr ""
-
-#: app/HealthCertificateRecovery.qml:101 app/HealthCertificateTest.qml:139
+#: app/HealthCertificateRecovery.qml:95 app/HealthCertificateTest.qml:135
 #: app/HealthCertificateVaccination.qml:142
 #, kde-format
-msgid "Signature:"
+msgid "Identifier"
 msgstr ""
 
-#: app/HealthCertificateTest.qml:44
+#: app/HealthCertificateRecovery.qml:104 app/HealthCertificateTest.qml:143
+#: app/HealthCertificateVaccination.qml:150
+#, kde-format
+msgid "Issued"
+msgstr ""
+
+#: app/HealthCertificateRecovery.qml:111 app/HealthCertificateTest.qml:151
+#: app/HealthCertificateVaccination.qml:158
+#, kde-format
+msgid "Expires"
+msgstr ""
+
+#: app/HealthCertificateRecovery.qml:131 app/HealthCertificateTest.qml:169
+#: app/HealthCertificateVaccination.qml:176
+#, kde-format
+msgid "Signature"
+msgstr ""
+
+#: app/HealthCertificateRecovery.qml:135 app/HealthCertificateTest.qml:173
+#: app/HealthCertificateVaccination.qml:180
+#, kde-format
+msgctxt "Signature state"
+msgid "Valid"
+msgstr ""
+
+#: app/HealthCertificateRecovery.qml:137 app/HealthCertificateTest.qml:175
+#: app/HealthCertificateVaccination.qml:182
+#, kde-format
+msgctxt "Signature state"
+msgid "Unknown"
+msgstr ""
+
+#: app/HealthCertificateRecovery.qml:140 app/HealthCertificateTest.qml:178
+#: app/HealthCertificateVaccination.qml:185
+#, kde-format
+msgctxt "Signature state"
+msgid "Invalid"
+msgstr ""
+
+#: app/HealthCertificateTest.qml:51 app/HealthCertificateTest.qml:79
 #, kde-format
 msgid "Test"
 msgstr ""
 
-#: app/HealthCertificateTest.qml:49 app/HealthCertificateVaccination.qml:59
+#: app/HealthCertificateTest.qml:56 app/HealthCertificateVaccination.qml:60
 #, kde-format
-msgid "Date:"
+msgid "Date"
 msgstr ""
 
-#: app/HealthCertificateTest.qml:60 app/HealthCertificateVaccination.qml:71
+#: app/HealthCertificateTest.qml:88
 #, kde-format
-msgid "Type:"
+msgid "Result"
 msgstr ""
 
-#: app/HealthCertificateTest.qml:68
+#: app/HealthCertificateTest.qml:106
 #, kde-format
-msgid "Test:"
+msgid "Test Center"
 msgstr ""
 
-#: app/HealthCertificateTest.qml:85
-#, kde-format
-msgid "Result:"
-msgstr ""
-
-#: app/HealthCertificateTest.qml:90
-#, kde-format
-msgid "Test Center:"
-msgstr ""
-
-#: app/HealthCertificateTest.qml:96 app/HealthCertificateVaccination.qml:97
-#, kde-format
-msgid "Country:"
-msgstr ""
-
-#: app/HealthCertificateVaccination.qml:55
+#: app/HealthCertificateVaccination.qml:64
 #, kde-format
 msgid "%2 (%1 day ago)"
 msgid_plural "%2 (%1 days ago)"
@@ -1700,24 +1707,24 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
-#: app/HealthCertificateVaccination.qml:76
+#: app/HealthCertificateVaccination.qml:92
 #, kde-format
-msgid "Vaccine:"
+msgid "Vaccine"
 msgstr ""
 
-#: app/HealthCertificateVaccination.qml:84
+#: app/HealthCertificateVaccination.qml:101
 #, kde-format
-msgid "Manufacturer:"
+msgid "Manufacturer"
 msgstr ""
 
-#: app/HealthCertificateVaccination.qml:88
+#: app/HealthCertificateVaccination.qml:109
+#, kde-format
+msgid "Dose"
+msgstr ""
+
+#: app/HealthCertificateVaccination.qml:110
 #, kde-format
 msgid "%1/%2"
-msgstr ""
-
-#: app/HealthCertificateVaccination.qml:89
-#, kde-format
-msgid "Dose:"
 msgstr ""
 
 #: app/HotelDelegate.qml:34
@@ -2328,19 +2335,19 @@ msgctxt "day-only date format"
 msgid "dd MMMM"
 msgstr ""
 
-#: app/localizer.cpp:245
+#: app/localizer.cpp:244
 #, kde-format
 msgctxt "weight in gram"
 msgid "%1 g"
 msgstr ""
 
-#: app/localizer.cpp:248 app/localizer.cpp:250
+#: app/localizer.cpp:247 app/localizer.cpp:249
 #, kde-format
 msgctxt "weight in kilogram"
 msgid "%1 kg"
 msgstr ""
 
-#: app/localizer.cpp:265
+#: app/localizer.cpp:264
 #, kde-format
 msgctxt "temperature range"
 msgid "%1 / %2"
@@ -3158,12 +3165,6 @@ msgctxt "bonus, discount or frequent traveler program"
 msgid "Program"
 msgstr ""
 
-#: app/ProgramMembershipCard.qml:31 app/ProgramMembershipEditor.qml:70
-#: app/ProgramMembershipEditorCard.qml:54 app/TicketPage.qml:86
-#, kde-format
-msgid "Name"
-msgstr ""
-
 #: app/ProgramMembershipCard.qml:40 app/ProgramMembershipEditor.qml:90
 #: app/ProgramMembershipEditorCard.qml:61 app/ProgramMembershipPage.qml:95
 #: app/TicketPage.qml:104
@@ -3209,18 +3210,6 @@ msgstr ""
 #: app/ProgramMembershipEditor.qml:84 app/ProgramMembershipPage.qml:86
 #, kde-format
 msgid "Member"
-msgstr ""
-
-#: app/ProgramMembershipEditor.qml:97 app/ProgramMembershipPage.qml:117
-#: app/TicketPage.qml:92
-#, kde-format
-msgid "Valid from"
-msgstr ""
-
-#: app/ProgramMembershipEditor.qml:111 app/ProgramMembershipPage.qml:122
-#: app/TicketPage.qml:98
-#, kde-format
-msgid "Valid until"
 msgstr ""
 
 #: app/ProgramMembershipEditor.qml:124
