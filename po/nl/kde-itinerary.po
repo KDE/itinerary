@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-27 00:42+0000\n"
-"PO-Revision-Date: 2025-04-26 16:33+0200\n"
+"POT-Creation-Date: 2025-04-28 00:42+0000\n"
+"PO-Revision-Date: 2025-04-27 15:14+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -1598,10 +1598,9 @@ msgstr "Naam"
 
 #: app/HealthCertificateRecovery.qml:43 app/HealthCertificateTest.qml:44
 #: app/HealthCertificateVaccination.qml:47
-#, fuzzy, kde-format
-#| msgid "Date of birth:"
+#, kde-format
 msgid "Date of birth"
-msgstr "Geboortedatum:"
+msgstr "Geboortedatum"
 
 #: app/HealthCertificateRecovery.qml:50
 #, kde-format
@@ -1610,10 +1609,9 @@ msgstr "Herstellen"
 
 #: app/HealthCertificateRecovery.qml:62 app/HealthCertificateTest.qml:65
 #: app/HealthCertificateVaccination.qml:77
-#, fuzzy, kde-format
-#| msgid "Disease:"
+#, kde-format
 msgid "Disease"
-msgstr "Ziekte:"
+msgstr "Ziekte"
 
 #: app/HealthCertificateRecovery.qml:69 app/ProgramMembershipEditor.qml:97
 #: app/ProgramMembershipPage.qml:117 app/TicketPage.qml:92
@@ -1635,64 +1633,54 @@ msgstr "Certificaat"
 
 #: app/HealthCertificateRecovery.qml:87 app/HealthCertificateTest.qml:127
 #: app/HealthCertificateVaccination.qml:134
-#, fuzzy, kde-format
-#| msgid "Issuer:"
+#, kde-format
 msgid "Issuer"
-msgstr "Uitgever:"
+msgstr "Uitgever"
 
 #: app/HealthCertificateRecovery.qml:95 app/HealthCertificateTest.qml:135
 #: app/HealthCertificateVaccination.qml:142
-#, fuzzy, kde-format
-#| msgid "Identifier:"
+#, kde-format
 msgid "Identifier"
-msgstr "Identifier:"
+msgstr "Identifier"
 
 #: app/HealthCertificateRecovery.qml:104 app/HealthCertificateTest.qml:143
 #: app/HealthCertificateVaccination.qml:150
-#, fuzzy, kde-format
-#| msgid "Issued:"
+#, kde-format
 msgid "Issued"
-msgstr "Uitgegeven:"
+msgstr "Uitgegeven"
 
 #: app/HealthCertificateRecovery.qml:111 app/HealthCertificateTest.qml:151
 #: app/HealthCertificateVaccination.qml:158
-#, fuzzy, kde-format
-#| msgid "Expires:"
+#, kde-format
 msgid "Expires"
-msgstr "Vervalt:"
+msgstr "Verloopt op"
 
 #: app/HealthCertificateRecovery.qml:131 app/HealthCertificateTest.qml:169
 #: app/HealthCertificateVaccination.qml:176
-#, fuzzy, kde-format
-#| msgid "Signature:"
+#, kde-format
 msgid "Signature"
-msgstr "Handtekening:"
+msgstr "Ondertekening"
 
 #: app/HealthCertificateRecovery.qml:135 app/HealthCertificateTest.qml:173
 #: app/HealthCertificateVaccination.qml:180
-#, fuzzy, kde-format
-#| msgctxt "not yet expired tickets"
-#| msgid "Valid"
+#, kde-format
 msgctxt "Signature state"
 msgid "Valid"
 msgstr "Geldig"
 
 #: app/HealthCertificateRecovery.qml:137 app/HealthCertificateTest.qml:175
 #: app/HealthCertificateVaccination.qml:182
-#, fuzzy, kde-format
-#| msgid "Unknown class"
+#, kde-format
 msgctxt "Signature state"
 msgid "Unknown"
-msgstr "Onbekende klas"
+msgstr "Onbekend"
 
 #: app/HealthCertificateRecovery.qml:140 app/HealthCertificateTest.qml:178
 #: app/HealthCertificateVaccination.qml:185
-#, fuzzy, kde-format
-#| msgctxt "not yet expired tickets"
-#| msgid "Valid"
+#, kde-format
 msgctxt "Signature state"
 msgid "Invalid"
-msgstr "Geldig"
+msgstr "Ongeldig"
 
 #: app/HealthCertificateTest.qml:51 app/HealthCertificateTest.qml:79
 #, kde-format
@@ -1700,22 +1688,19 @@ msgid "Test"
 msgstr "Test"
 
 #: app/HealthCertificateTest.qml:56 app/HealthCertificateVaccination.qml:60
-#, fuzzy, kde-format
-#| msgid "Date:"
+#, kde-format
 msgid "Date"
-msgstr "Datum:"
+msgstr "Datum"
 
 #: app/HealthCertificateTest.qml:88
-#, fuzzy, kde-format
-#| msgid "Result:"
+#, kde-format
 msgid "Result"
-msgstr "Resultaat:"
+msgstr "Resultaat"
 
 #: app/HealthCertificateTest.qml:106
-#, fuzzy, kde-format
-#| msgid "Test Center:"
+#, kde-format
 msgid "Test Center"
-msgstr "Testcentrum:"
+msgstr "Testcentrum"
 
 #: app/HealthCertificateVaccination.qml:64
 #, kde-format
@@ -1725,22 +1710,19 @@ msgstr[0] "%2 (%1 dag geleden)"
 msgstr[1] "%2 (%1 dagen geleden)"
 
 #: app/HealthCertificateVaccination.qml:92
-#, fuzzy, kde-format
-#| msgid "Vaccine:"
+#, kde-format
 msgid "Vaccine"
-msgstr "Vaccin:"
+msgstr "Vaccin"
 
 #: app/HealthCertificateVaccination.qml:101
-#, fuzzy, kde-format
-#| msgid "Manufacturer:"
+#, kde-format
 msgid "Manufacturer"
-msgstr "Fabrikant:"
+msgstr "Fabrikant"
 
 #: app/HealthCertificateVaccination.qml:109
-#, fuzzy, kde-format
-#| msgid "Dose:"
+#, kde-format
 msgid "Dose"
-msgstr "Dosis:"
+msgstr "Dosis"
 
 #: app/HealthCertificateVaccination.qml:110
 #, kde-format
@@ -3286,26 +3268,6 @@ msgstr "Lidmaatschap van programma"
 msgid "Show Pass"
 msgstr "Pas tonen"
 
-#: app/PublicTransportBackendPage.qml:17
-#, kde-format
-msgid "Public Transport Information Sources"
-msgstr "Bronnen met informatie over openbaar vervoer"
-
-#: app/PublicTransportBackendPage.qml:95 app/PublicTransportBackendPage.qml:108
-#, kde-format
-msgid "Global"
-msgstr "Globaal"
-
-#: app/PublicTransportBackendPage.qml:97
-#, kde-format
-msgid "🇪🇺 European Union"
-msgstr "🇪🇺 Europese Unie"
-
-#: app/PublicTransportBackendPage.qml:110
-#, kde-format
-msgid "European Union"
-msgstr "Europese Unie"
-
 #: app/PublicTransportFeatureList.qml:31
 #, kde-format
 msgid "Availability unknown"
@@ -3403,22 +3365,22 @@ msgstr "Eindtijd"
 msgid "Party size"
 msgstr "Grootte van gezelschap"
 
-#: app/SettingsPage.qml:19
+#: app/SettingsPage.qml:20
 #, kde-format
 msgid "Settings"
 msgstr "Instellingen"
 
-#: app/SettingsPage.qml:29
+#: app/SettingsPage.qml:30
 #, kde-format
 msgid "Localization"
 msgstr "Aanpassen aan taalregio"
 
-#: app/SettingsPage.qml:38
+#: app/SettingsPage.qml:39
 #, kde-format
 msgid "Use metric units"
 msgstr "Metrische eenheden gebruiken"
 
-#: app/SettingsPage.qml:39
+#: app/SettingsPage.qml:40
 #, kde-format
 msgid ""
 "Use metric units for distance and temperature values regardless of the "
@@ -3427,17 +3389,17 @@ msgstr ""
 "Metrische eenheden gebruiken voor afstand en temperatuurwaarden ongeacht de "
 "regio-instellingen van het platform."
 
-#: app/SettingsPage.qml:48
+#: app/SettingsPage.qml:49
 #, kde-format
 msgid "Online Services"
 msgstr "Online diensten"
 
-#: app/SettingsPage.qml:52
+#: app/SettingsPage.qml:53
 #, kde-format
 msgid "Query Traffic Data"
 msgstr "Verkeersgegeven afvragen"
 
-#: app/SettingsPage.qml:55
+#: app/SettingsPage.qml:56
 #, kde-format
 msgid ""
 "When enabled, this will query transport provider online services for changes "
@@ -3447,12 +3409,12 @@ msgstr ""
 "transport vragen naar wijzigingen zoals vertraging of wijzigingen in gate en "
 "perron."
 
-#: app/SettingsPage.qml:61
+#: app/SettingsPage.qml:62
 #, kde-format
 msgid "Use insecure services"
 msgstr "Onveilige services gebruiken"
 
-#: app/SettingsPage.qml:64
+#: app/SettingsPage.qml:65
 #, kde-format
 msgid ""
 "Enabling this will also use online services that do not offer transport "
@@ -3464,23 +3426,23 @@ msgstr ""
 "onvermijdelijk zijn bij vertrouwen op live gegevens van bepaalde "
 "leveranciers."
 
-#: app/SettingsPage.qml:72
+#: app/SettingsPage.qml:73
 #, kde-format
 msgid "Public Transport Information Sources…"
 msgstr "Bronnen met informatie over openbaar vervoer…"
 
-#: app/SettingsPage.qml:81 app/WeatherForecastDelegate.qml:80
+#: app/SettingsPage.qml:82 app/WeatherForecastDelegate.qml:80
 #: app/WeatherForecastPage.qml:19
 #, kde-format
 msgid "Weather Forecast"
 msgstr "Weersvoorspelling"
 
-#: app/SettingsPage.qml:84
+#: app/SettingsPage.qml:85
 #, kde-format
 msgid "Showing weather forecasts will query online services."
 msgstr "Weersvoorspelling zal online services afvragen."
 
-#: app/SettingsPage.qml:89 app/WeatherForecastPage.qml:36
+#: app/SettingsPage.qml:90 app/WeatherForecastPage.qml:36
 #, kde-format
 msgid ""
 "Using data from <a href=\"https://www.met.no/\">The Norwegian Meteorological "
@@ -3492,12 +3454,12 @@ msgstr ""
 "creativecommons.org/licenses/by/4.0\">Creative Commons 4.0 BY International</"
 "a>."
 
-#: app/SettingsPage.qml:98
+#: app/SettingsPage.qml:99
 #, kde-format
 msgid "Preload Map Data"
 msgstr "Kaartgegevens vooraf laden"
 
-#: app/SettingsPage.qml:101
+#: app/SettingsPage.qml:102
 #, kde-format
 msgid ""
 "Enabling this will download maps for all stations and airports for upcoming "
@@ -3506,12 +3468,12 @@ msgstr ""
 "Dit inschakelen zal kaarten van alle stations en luchthavens voor aankomende "
 "reizen downloaden indien verbonden met een wifi-netwerk."
 
-#: app/SettingsPage.qml:108
+#: app/SettingsPage.qml:109
 #, kde-format
 msgid "Currency Conversion"
 msgstr "Valutaconversie"
 
-#: app/SettingsPage.qml:111
+#: app/SettingsPage.qml:112
 #, kde-format
 msgid ""
 "Enabling this will perform online queries for exchange rates to currencies "
@@ -3520,32 +3482,32 @@ msgstr ""
 "Dit inschakelen zal online opvragen voor wisselkoersen van valuta uitvoeren "
 "op reisbestemmingen."
 
-#: app/SettingsPage.qml:117
+#: app/SettingsPage.qml:118
 #, kde-format
 msgid "Wikimedia Online Content"
 msgstr "Online inhoud Wikimedia"
 
-#: app/SettingsPage.qml:120
+#: app/SettingsPage.qml:121
 #, kde-format
 msgid "Use additional online content from Wikimedia and Wikidata."
 msgstr "Extra online inhoud gebruiken uit Wikimedia en Wikidata."
 
-#: app/SettingsPage.qml:127
+#: app/SettingsPage.qml:128
 #, kde-format
 msgid "Transfer Assistant"
 msgstr "Overstapassistent"
 
-#: app/SettingsPage.qml:131
+#: app/SettingsPage.qml:132
 #, kde-format
 msgid "Automatically add transfers"
 msgstr "Automatisch overstappen toevoegen"
 
-#: app/SettingsPage.qml:139
+#: app/SettingsPage.qml:140
 #, kde-format
 msgid "Automatically fill transfers"
 msgstr "Automatisch overstappen vullen"
 
-#: app/SettingsPage.qml:140
+#: app/SettingsPage.qml:141
 #, kde-format
 msgid ""
 "When enabled, this will query transport provider online services "
@@ -3554,78 +3516,78 @@ msgstr ""
 "Indien ingeschakeld zal dit automatisch online services van leveranciers "
 "afvragen naar informatie over overstappen."
 
-#: app/SettingsPage.qml:151
+#: app/SettingsPage.qml:152
 #, kde-format
 msgid "Notifications"
 msgstr "Meldingen"
 
-#: app/SettingsPage.qml:156
+#: app/SettingsPage.qml:157
 #, kde-format
 msgid "Configure Notifications…"
 msgstr "Meldingen configureren…"
 
-#: app/SettingsPage.qml:165
+#: app/SettingsPage.qml:166
 #, kde-format
 msgid "Show notifications on lock screen"
 msgstr "Meldingen op vergrendeld scherm tonen"
 
-#: app/SettingsPage.qml:175 app/SettingsPage.qml:204
+#: app/SettingsPage.qml:176 app/SettingsPage.qml:205
 #, kde-format
 msgid "Request permissions…"
 msgstr "Toegangsrechten verzoeken…"
 
-#: app/SettingsPage.qml:176
+#: app/SettingsPage.qml:177
 #, kde-format
 msgid "Additional permissions are required to show notifications."
 msgstr "Extra toegangsrechten zijn vereist voor het tonen van meldingen."
 
-#: app/SettingsPage.qml:186
+#: app/SettingsPage.qml:187
 #, kde-format
 msgid "Notification permissions are available"
 msgstr "Rechten voor meldingen zijn beschikbaar"
 
-#: app/SettingsPage.qml:187 app/SettingsPage.qml:229 app/SettingsPage.qml:307
+#: app/SettingsPage.qml:188 app/SettingsPage.qml:230 app/SettingsPage.qml:308
 #, kde-format
 msgid "No further action required."
 msgstr "Geen verdere actie vereist."
 
-#: app/SettingsPage.qml:200
+#: app/SettingsPage.qml:201
 #, kde-format
 msgid "Onboard Status"
 msgstr "Status aan boord"
 
-#: app/SettingsPage.qml:205
+#: app/SettingsPage.qml:206
 #, kde-format
 msgid "Additional permissions are required to access the Wi-Fi status."
 msgstr ""
 "Extra toegangsrechten zijn vereist voor toegang tot de status van Wi-Fi."
 
-#: app/SettingsPage.qml:216
+#: app/SettingsPage.qml:217
 #, kde-format
 msgid "Wi-Fi access for onboard information is available."
 msgstr "Toegang tot Wi-Fi voor informatie aan boord is beschikbaar."
 
-#: app/SettingsPage.qml:218
+#: app/SettingsPage.qml:219
 #, kde-format
 msgid "Wi-Fi is not enabled"
 msgstr "Wi-Fi is niet ingeschakeld"
 
-#: app/SettingsPage.qml:220
+#: app/SettingsPage.qml:221
 #, kde-format
 msgid "Location service is not enabled"
 msgstr "Locatieservice is niet ingeschakeld"
 
-#: app/SettingsPage.qml:222
+#: app/SettingsPage.qml:223
 #, kde-format
 msgid "Wi-Fi access is not available on this system"
 msgstr "Toegang tot Wi-Fi is niet beschikbaar op dit systeem"
 
-#: app/SettingsPage.qml:231
+#: app/SettingsPage.qml:232
 #, kde-format
 msgid "Enable Wi-Fi on your system to access onboard information."
 msgstr "Wi-Fi op uw systeem inschakelen voor toegang tot informatie aan boord."
 
-#: app/SettingsPage.qml:233
+#: app/SettingsPage.qml:234
 #, kde-format
 msgid ""
 "Enable the location service on your device to access onboard information."
@@ -3633,7 +3595,7 @@ msgstr ""
 "De locatieservice op uw apparaat inschakelen voor toegang tot informatie aan "
 "boord."
 
-#: app/SettingsPage.qml:235
+#: app/SettingsPage.qml:236
 #, kde-format
 msgid ""
 "Onboard information are unfortunately not supported on your device at this "
@@ -3642,65 +3604,65 @@ msgstr ""
 "Informatie aan boord wordt op dit moment helaas niet ondersteund op uw "
 "apparaat."
 
-#: app/SettingsPage.qml:267
+#: app/SettingsPage.qml:268
 #, kde-format
 msgid "Matrix Integration"
 msgstr "Matrix-integratie"
 
-#: app/SettingsPage.qml:274 app/SettingsPage.qml:331
+#: app/SettingsPage.qml:275 app/SettingsPage.qml:332
 #, kde-format
 msgid "Logged in as %1"
 msgstr "Aangemeld als %1"
 
-#: app/SettingsPage.qml:278
+#: app/SettingsPage.qml:279
 #, kde-format
 msgid "Synchronize rooms"
 msgstr "Rooms synchroniseren"
 
-#: app/SettingsPage.qml:285
+#: app/SettingsPage.qml:286
 #, kde-format
 msgid "Matrix ID"
 msgstr "Matrix-ID"
 
-#: app/SettingsPage.qml:294
+#: app/SettingsPage.qml:295
 #, kde-format
 msgid "Password"
 msgstr "Wachtwoord"
 
-#: app/SettingsPage.qml:306
+#: app/SettingsPage.qml:307
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Session verified"
 msgstr "Sessie geverifieerd"
 
-#: app/SettingsPage.qml:306
+#: app/SettingsPage.qml:307
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Session not verified."
 msgstr "Session niet geverifieerd."
 
-#: app/SettingsPage.qml:307
+#: app/SettingsPage.qml:308
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Initiate session verification in your Matrix chat client."
 msgstr "Verificatie van sessie in uw Matrix chat-client initiëren."
 
-#: app/SettingsPage.qml:314
+#: app/SettingsPage.qml:315
 #, kde-format
 msgid "Log out"
 msgstr "Afmelden"
 
-#: app/SettingsPage.qml:314
+#: app/SettingsPage.qml:315
 #, kde-format
 msgid "Log in"
 msgstr "Aanmelden"
 
-#: app/SettingsPage.qml:321
+#: app/SettingsPage.qml:322
 #, kde-format
 msgid "Traewelling Integration"
 msgstr "Integratie met Traewelling"
 
-#: app/SettingsPage.qml:326
+#: app/SettingsPage.qml:327
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -3712,27 +3674,27 @@ msgstr ""
 "waar u bent en waar u uw publieke transitreizen kunt loggen. Voor meer "
 "informatie, bezoek <a href=\"https://traewelling.de\">traewelling.de</a>"
 
-#: app/SettingsPage.qml:334
+#: app/SettingsPage.qml:335
 #, kde-format
 msgid "Login"
 msgstr "Aanmelden"
 
-#: app/SettingsPage.qml:339
+#: app/SettingsPage.qml:340
 #, kde-format
 msgid "Logout"
 msgstr "Afmelden"
 
-#: app/SettingsPage.qml:346
+#: app/SettingsPage.qml:347
 #, kde-format
 msgid "Contributing"
 msgstr "Bijdragen"
 
-#: app/SettingsPage.qml:350
+#: app/SettingsPage.qml:351
 #, kde-format
 msgid "I contribute to OpenStreetMap"
 msgstr "Ik draag bij aan OpenStreetMap"
 
-#: app/SettingsPage.qml:351
+#: app/SettingsPage.qml:352
 #, kde-format
 msgid "Enables OSM editing options."
 msgstr "Opties voor bewerken met OSM inschakelen."
@@ -4614,6 +4576,18 @@ msgstr "Afgemeld"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 van %3 naar %4 op %5"
+
+#~ msgid "Public Transport Information Sources"
+#~ msgstr "Bronnen met informatie over openbaar vervoer"
+
+#~ msgid "Global"
+#~ msgstr "Globaal"
+
+#~ msgid "🇪🇺 European Union"
+#~ msgstr "🇪🇺 Europese Unie"
+
+#~ msgid "European Union"
+#~ msgstr "Europese Unie"
 
 #~ msgid "Name:"
 #~ msgstr "Naam:"

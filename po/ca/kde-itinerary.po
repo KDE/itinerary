@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-27 00:42+0000\n"
-"PO-Revision-Date: 2025-04-26 09:46+0200\n"
+"POT-Creation-Date: 2025-04-28 00:42+0000\n"
+"PO-Revision-Date: 2025-04-27 09:27+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -1598,10 +1598,9 @@ msgstr "Nom"
 
 #: app/HealthCertificateRecovery.qml:43 app/HealthCertificateTest.qml:44
 #: app/HealthCertificateVaccination.qml:47
-#, fuzzy, kde-format
-#| msgid "Date of birth:"
+#, kde-format
 msgid "Date of birth"
-msgstr "Data de naixement:"
+msgstr "Data de naixement"
 
 #: app/HealthCertificateRecovery.qml:50
 #, kde-format
@@ -1610,10 +1609,9 @@ msgstr "Recuperació"
 
 #: app/HealthCertificateRecovery.qml:62 app/HealthCertificateTest.qml:65
 #: app/HealthCertificateVaccination.qml:77
-#, fuzzy, kde-format
-#| msgid "Disease:"
+#, kde-format
 msgid "Disease"
-msgstr "Malaltia:"
+msgstr "Malaltia"
 
 #: app/HealthCertificateRecovery.qml:69 app/ProgramMembershipEditor.qml:97
 #: app/ProgramMembershipPage.qml:117 app/TicketPage.qml:92
@@ -1635,64 +1633,54 @@ msgstr "Certificat"
 
 #: app/HealthCertificateRecovery.qml:87 app/HealthCertificateTest.qml:127
 #: app/HealthCertificateVaccination.qml:134
-#, fuzzy, kde-format
-#| msgid "Issuer:"
+#, kde-format
 msgid "Issuer"
-msgstr "Emissor:"
+msgstr "Emissor"
 
 #: app/HealthCertificateRecovery.qml:95 app/HealthCertificateTest.qml:135
 #: app/HealthCertificateVaccination.qml:142
-#, fuzzy, kde-format
-#| msgid "Identifier:"
+#, kde-format
 msgid "Identifier"
-msgstr "Identificador:"
+msgstr "Identificador"
 
 #: app/HealthCertificateRecovery.qml:104 app/HealthCertificateTest.qml:143
 #: app/HealthCertificateVaccination.qml:150
-#, fuzzy, kde-format
-#| msgid "Issued:"
+#, kde-format
 msgid "Issued"
-msgstr "Emès el:"
+msgstr "Emès el"
 
 #: app/HealthCertificateRecovery.qml:111 app/HealthCertificateTest.qml:151
 #: app/HealthCertificateVaccination.qml:158
-#, fuzzy, kde-format
-#| msgid "Expires:"
+#, kde-format
 msgid "Expires"
-msgstr "Expira el:"
+msgstr "Caduca"
 
 #: app/HealthCertificateRecovery.qml:131 app/HealthCertificateTest.qml:169
 #: app/HealthCertificateVaccination.qml:176
-#, fuzzy, kde-format
-#| msgid "Signature:"
+#, kde-format
 msgid "Signature"
-msgstr "Signatura:"
+msgstr "Signatura"
 
 #: app/HealthCertificateRecovery.qml:135 app/HealthCertificateTest.qml:173
 #: app/HealthCertificateVaccination.qml:180
-#, fuzzy, kde-format
-#| msgctxt "not yet expired tickets"
-#| msgid "Valid"
+#, kde-format
 msgctxt "Signature state"
 msgid "Valid"
-msgstr "Vàlid"
+msgstr "Vàlida"
 
 #: app/HealthCertificateRecovery.qml:137 app/HealthCertificateTest.qml:175
 #: app/HealthCertificateVaccination.qml:182
-#, fuzzy, kde-format
-#| msgid "Unknown class"
+#, kde-format
 msgctxt "Signature state"
 msgid "Unknown"
-msgstr "Classe desconeguda"
+msgstr "Desconeguda"
 
 #: app/HealthCertificateRecovery.qml:140 app/HealthCertificateTest.qml:178
 #: app/HealthCertificateVaccination.qml:185
-#, fuzzy, kde-format
-#| msgctxt "not yet expired tickets"
-#| msgid "Valid"
+#, kde-format
 msgctxt "Signature state"
 msgid "Invalid"
-msgstr "Vàlid"
+msgstr "No vàlida"
 
 #: app/HealthCertificateTest.qml:51 app/HealthCertificateTest.qml:79
 #, kde-format
@@ -1700,22 +1688,19 @@ msgid "Test"
 msgstr "Prova"
 
 #: app/HealthCertificateTest.qml:56 app/HealthCertificateVaccination.qml:60
-#, fuzzy, kde-format
-#| msgid "Date:"
+#, kde-format
 msgid "Date"
-msgstr "Data:"
+msgstr "Data"
 
 #: app/HealthCertificateTest.qml:88
-#, fuzzy, kde-format
-#| msgid "Result:"
+#, kde-format
 msgid "Result"
-msgstr "Resultat:"
+msgstr "Resultat"
 
 #: app/HealthCertificateTest.qml:106
-#, fuzzy, kde-format
-#| msgid "Test Center:"
+#, kde-format
 msgid "Test Center"
-msgstr "Centre de proves:"
+msgstr "Centre de proves"
 
 #: app/HealthCertificateVaccination.qml:64
 #, kde-format
@@ -1725,22 +1710,19 @@ msgstr[0] "%2 (fa %1 dia)"
 msgstr[1] "%2 (fa %1 dies)"
 
 #: app/HealthCertificateVaccination.qml:92
-#, fuzzy, kde-format
-#| msgid "Vaccine:"
+#, kde-format
 msgid "Vaccine"
-msgstr "Vaccí:"
+msgstr "Vaccí"
 
 #: app/HealthCertificateVaccination.qml:101
-#, fuzzy, kde-format
-#| msgid "Manufacturer:"
+#, kde-format
 msgid "Manufacturer"
-msgstr "Fabricant:"
+msgstr "Fabricant"
 
 #: app/HealthCertificateVaccination.qml:109
-#, fuzzy, kde-format
-#| msgid "Dose:"
+#, kde-format
 msgid "Dose"
-msgstr "Dosi:"
+msgstr "Dosi"
 
 #: app/HealthCertificateVaccination.qml:110
 #, kde-format
@@ -3293,26 +3275,6 @@ msgstr "Programa d'afiliació"
 msgid "Show Pass"
 msgstr "Mostra el passi"
 
-#: app/PublicTransportBackendPage.qml:17
-#, kde-format
-msgid "Public Transport Information Sources"
-msgstr "Fonts d'informació de transport públic"
-
-#: app/PublicTransportBackendPage.qml:95 app/PublicTransportBackendPage.qml:108
-#, kde-format
-msgid "Global"
-msgstr "Global"
-
-#: app/PublicTransportBackendPage.qml:97
-#, kde-format
-msgid "🇪🇺 European Union"
-msgstr "🇪🇺 Unió Europea"
-
-#: app/PublicTransportBackendPage.qml:110
-#, kde-format
-msgid "European Union"
-msgstr "Unió Europea"
-
 #: app/PublicTransportFeatureList.qml:31
 #, kde-format
 msgid "Availability unknown"
@@ -3410,22 +3372,22 @@ msgstr "Hora final"
 msgid "Party size"
 msgstr "Mida del grup"
 
-#: app/SettingsPage.qml:19
+#: app/SettingsPage.qml:20
 #, kde-format
 msgid "Settings"
 msgstr "Arranjament"
 
-#: app/SettingsPage.qml:29
+#: app/SettingsPage.qml:30
 #, kde-format
 msgid "Localization"
 msgstr "Localització"
 
-#: app/SettingsPage.qml:38
+#: app/SettingsPage.qml:39
 #, kde-format
 msgid "Use metric units"
 msgstr "Utilitza unitats mètriques"
 
-#: app/SettingsPage.qml:39
+#: app/SettingsPage.qml:40
 #, kde-format
 msgid ""
 "Use metric units for distance and temperature values regardless of the "
@@ -3434,17 +3396,17 @@ msgstr ""
 "Utilitza unitats mètriques per als valors de distància i temperatura "
 "independentment de la configuració de la regió de la plataforma."
 
-#: app/SettingsPage.qml:48
+#: app/SettingsPage.qml:49
 #, kde-format
 msgid "Online Services"
 msgstr "Serveis en línia"
 
-#: app/SettingsPage.qml:52
+#: app/SettingsPage.qml:53
 #, kde-format
 msgid "Query Traffic Data"
 msgstr "Consulta les dades del trànsit"
 
-#: app/SettingsPage.qml:55
+#: app/SettingsPage.qml:56
 #, kde-format
 msgid ""
 "When enabled, this will query transport provider online services for changes "
@@ -3453,12 +3415,12 @@ msgstr ""
 "Quan estigui habilitat, es consultaran els serveis en línia del proveïdor de "
 "transports per a canvis com retards o canvis de porta i andana."
 
-#: app/SettingsPage.qml:61
+#: app/SettingsPage.qml:62
 #, kde-format
 msgid "Use insecure services"
 msgstr "Usa serveis insegurs"
 
-#: app/SettingsPage.qml:64
+#: app/SettingsPage.qml:65
 #, kde-format
 msgid ""
 "Enabling this will also use online services that do not offer transport "
@@ -3469,25 +3431,25 @@ msgstr ""
 "del transport. Això no es recomana, però pot ser inevitable en confiar en "
 "dades en temps real de determinats proveïdors."
 
-#: app/SettingsPage.qml:72
+#: app/SettingsPage.qml:73
 #, kde-format
 msgid "Public Transport Information Sources…"
 msgstr "Fonts d'informació de transport públic…"
 
-#: app/SettingsPage.qml:81 app/WeatherForecastDelegate.qml:80
+#: app/SettingsPage.qml:82 app/WeatherForecastDelegate.qml:80
 #: app/WeatherForecastPage.qml:19
 #, kde-format
 msgid "Weather Forecast"
 msgstr "Previsió meteorològica"
 
-#: app/SettingsPage.qml:84
+#: app/SettingsPage.qml:85
 #, kde-format
 msgid "Showing weather forecasts will query online services."
 msgstr ""
 "Per a mostrar les previsions meteorològiques es consultaran els serveis en "
 "línia."
 
-#: app/SettingsPage.qml:89 app/WeatherForecastPage.qml:36
+#: app/SettingsPage.qml:90 app/WeatherForecastPage.qml:36
 #, kde-format
 msgid ""
 "Using data from <a href=\"https://www.met.no/\">The Norwegian Meteorological "
@@ -3498,12 +3460,12 @@ msgstr ""
 "Noruec</a> segons la llicència <a href=\"https://creativecommons.org/"
 "licenses/by/4.0\">Creative Commons 4.0 BY internacional</a>."
 
-#: app/SettingsPage.qml:98
+#: app/SettingsPage.qml:99
 #, kde-format
 msgid "Preload Map Data"
 msgstr "Precarrega les dades dels mapes"
 
-#: app/SettingsPage.qml:101
+#: app/SettingsPage.qml:102
 #, kde-format
 msgid ""
 "Enabling this will download maps for all stations and airports for upcoming "
@@ -3512,12 +3474,12 @@ msgstr ""
 "En habilitar això es baixaran els mapes de totes les estacions i aeroports "
 "dels pròxims viatges en connectar amb una xarxa wifi."
 
-#: app/SettingsPage.qml:108
+#: app/SettingsPage.qml:109
 #, kde-format
 msgid "Currency Conversion"
 msgstr "Conversió de divises"
 
-#: app/SettingsPage.qml:111
+#: app/SettingsPage.qml:112
 #, kde-format
 msgid ""
 "Enabling this will perform online queries for exchange rates to currencies "
@@ -3526,32 +3488,32 @@ msgstr ""
 "Habilitar això realitzarà consultes en línia per als tipus de canvi a "
 "divises en les destinacions de viatges."
 
-#: app/SettingsPage.qml:117
+#: app/SettingsPage.qml:118
 #, kde-format
 msgid "Wikimedia Online Content"
 msgstr "Contingut en línia de Wikimedia"
 
-#: app/SettingsPage.qml:120
+#: app/SettingsPage.qml:121
 #, kde-format
 msgid "Use additional online content from Wikimedia and Wikidata."
 msgstr "Fa servir contingut en línia addicional de Wikimedia i Wikidata."
 
-#: app/SettingsPage.qml:127
+#: app/SettingsPage.qml:128
 #, kde-format
 msgid "Transfer Assistant"
 msgstr "Assistent de transbordament"
 
-#: app/SettingsPage.qml:131
+#: app/SettingsPage.qml:132
 #, kde-format
 msgid "Automatically add transfers"
 msgstr "Afegeix automàticament els transbordaments"
 
-#: app/SettingsPage.qml:139
+#: app/SettingsPage.qml:140
 #, kde-format
 msgid "Automatically fill transfers"
 msgstr "Omple automàticament els transbordaments"
 
-#: app/SettingsPage.qml:140
+#: app/SettingsPage.qml:141
 #, kde-format
 msgid ""
 "When enabled, this will query transport provider online services "
@@ -3560,80 +3522,80 @@ msgstr ""
 "Quan estigui activat, automàticament es consultaran els serveis en línia del "
 "proveïdor de transports per a informació dels transbordaments."
 
-#: app/SettingsPage.qml:151
+#: app/SettingsPage.qml:152
 #, kde-format
 msgid "Notifications"
 msgstr "Notificacions"
 
-#: app/SettingsPage.qml:156
+#: app/SettingsPage.qml:157
 #, kde-format
 msgid "Configure Notifications…"
 msgstr "Configura les notificacions…"
 
-#: app/SettingsPage.qml:165
+#: app/SettingsPage.qml:166
 #, kde-format
 msgid "Show notifications on lock screen"
 msgstr "Mostra les notificacions a la pantalla de bloqueig"
 
-#: app/SettingsPage.qml:175 app/SettingsPage.qml:204
+#: app/SettingsPage.qml:176 app/SettingsPage.qml:205
 #, kde-format
 msgid "Request permissions…"
 msgstr "Sol·licita els permisos…"
 
-#: app/SettingsPage.qml:176
+#: app/SettingsPage.qml:177
 #, kde-format
 msgid "Additional permissions are required to show notifications."
 msgstr "Es requereixen permisos addicionals per a mostrar notificacions."
 
-#: app/SettingsPage.qml:186
+#: app/SettingsPage.qml:187
 #, kde-format
 msgid "Notification permissions are available"
 msgstr "Els permisos de notificació estan disponibles"
 
-#: app/SettingsPage.qml:187 app/SettingsPage.qml:229 app/SettingsPage.qml:307
+#: app/SettingsPage.qml:188 app/SettingsPage.qml:230 app/SettingsPage.qml:308
 #, kde-format
 msgid "No further action required."
 msgstr "No cal cap més acció."
 
-#: app/SettingsPage.qml:200
+#: app/SettingsPage.qml:201
 #, kde-format
 msgid "Onboard Status"
 msgstr "Estat d'incorporació"
 
-#: app/SettingsPage.qml:205
+#: app/SettingsPage.qml:206
 #, kde-format
 msgid "Additional permissions are required to access the Wi-Fi status."
 msgstr ""
 "Es requereixen permisos addicionals per a accedir a l'estat de la Wi-Fi."
 
-#: app/SettingsPage.qml:216
+#: app/SettingsPage.qml:217
 #, kde-format
 msgid "Wi-Fi access for onboard information is available."
 msgstr "Hi ha disponible l'accés Wi-Fi per a la informació d'incorporació."
 
-#: app/SettingsPage.qml:218
+#: app/SettingsPage.qml:219
 #, kde-format
 msgid "Wi-Fi is not enabled"
 msgstr "La Wi-Fi no està activada"
 
-#: app/SettingsPage.qml:220
+#: app/SettingsPage.qml:221
 #, kde-format
 msgid "Location service is not enabled"
 msgstr "El servei d'ubicació no està activat"
 
-#: app/SettingsPage.qml:222
+#: app/SettingsPage.qml:223
 #, kde-format
 msgid "Wi-Fi access is not available on this system"
 msgstr "En aquest sistema no hi ha disponible l'accés Wi-Fi"
 
-#: app/SettingsPage.qml:231
+#: app/SettingsPage.qml:232
 #, kde-format
 msgid "Enable Wi-Fi on your system to access onboard information."
 msgstr ""
 "Activeu la Wi-Fi del vostre sistema per a accedir a la informació "
 "d'incorporació."
 
-#: app/SettingsPage.qml:233
+#: app/SettingsPage.qml:234
 #, kde-format
 msgid ""
 "Enable the location service on your device to access onboard information."
@@ -3641,7 +3603,7 @@ msgstr ""
 "Activeu el servei d'ubicació del vostre dispositiu per a accedir a la "
 "informació d'incorporació."
 
-#: app/SettingsPage.qml:235
+#: app/SettingsPage.qml:236
 #, kde-format
 msgid ""
 "Onboard information are unfortunately not supported on your device at this "
@@ -3650,65 +3612,65 @@ msgstr ""
 "La informació d'incorporació no està implementada en el vostre dispositiu en "
 "aquest moment."
 
-#: app/SettingsPage.qml:267
+#: app/SettingsPage.qml:268
 #, kde-format
 msgid "Matrix Integration"
 msgstr "Integració de Matrix"
 
-#: app/SettingsPage.qml:274 app/SettingsPage.qml:331
+#: app/SettingsPage.qml:275 app/SettingsPage.qml:332
 #, kde-format
 msgid "Logged in as %1"
 msgstr "Connectat com a %1"
 
-#: app/SettingsPage.qml:278
+#: app/SettingsPage.qml:279
 #, kde-format
 msgid "Synchronize rooms"
 msgstr "Sincronitza les sales"
 
-#: app/SettingsPage.qml:285
+#: app/SettingsPage.qml:286
 #, kde-format
 msgid "Matrix ID"
 msgstr "ID de Matrix"
 
-#: app/SettingsPage.qml:294
+#: app/SettingsPage.qml:295
 #, kde-format
 msgid "Password"
 msgstr "Contrasenya"
 
-#: app/SettingsPage.qml:306
+#: app/SettingsPage.qml:307
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Session verified"
 msgstr "Sessió verificada"
 
-#: app/SettingsPage.qml:306
+#: app/SettingsPage.qml:307
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Session not verified."
 msgstr "Sessió no verificada."
 
-#: app/SettingsPage.qml:307
+#: app/SettingsPage.qml:308
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Initiate session verification in your Matrix chat client."
 msgstr "Inicia la verificació de la session en el vostre client de xat Matrix."
 
-#: app/SettingsPage.qml:314
+#: app/SettingsPage.qml:315
 #, kde-format
 msgid "Log out"
 msgstr "Sortida"
 
-#: app/SettingsPage.qml:314
+#: app/SettingsPage.qml:315
 #, kde-format
 msgid "Log in"
 msgstr "Inici de sessió"
 
-#: app/SettingsPage.qml:321
+#: app/SettingsPage.qml:322
 #, kde-format
 msgid "Traewelling Integration"
 msgstr "Integració de Traewelling"
 
-#: app/SettingsPage.qml:326
+#: app/SettingsPage.qml:327
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -3720,27 +3682,27 @@ msgstr ""
 "esteu i a on podeu registrar els vostres viatges de transport públic. Per a "
 "més informació, visiteu <a href=\"https://traewelling.de\">traewelling.de</a>"
 
-#: app/SettingsPage.qml:334
+#: app/SettingsPage.qml:335
 #, kde-format
 msgid "Login"
 msgstr "Entrada"
 
-#: app/SettingsPage.qml:339
+#: app/SettingsPage.qml:340
 #, kde-format
 msgid "Logout"
 msgstr "Sortida"
 
-#: app/SettingsPage.qml:346
+#: app/SettingsPage.qml:347
 #, kde-format
 msgid "Contributing"
 msgstr "Col·laboració"
 
-#: app/SettingsPage.qml:350
+#: app/SettingsPage.qml:351
 #, kde-format
 msgid "I contribute to OpenStreetMap"
 msgstr "Jo contribueixo a l'OpenStreetMap"
 
-#: app/SettingsPage.qml:351
+#: app/SettingsPage.qml:352
 #, kde-format
 msgid "Enables OSM editing options."
 msgstr "Activa les opcions d'edició de l'OSM."
@@ -4624,6 +4586,18 @@ msgstr "Ha finalitzat la sessió"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 des de %3 a %4 el %5"
+
+#~ msgid "Public Transport Information Sources"
+#~ msgstr "Fonts d'informació de transport públic"
+
+#~ msgid "Global"
+#~ msgstr "Global"
+
+#~ msgid "🇪🇺 European Union"
+#~ msgstr "🇪🇺 Unió Europea"
+
+#~ msgid "European Union"
+#~ msgstr "Unió Europea"
 
 #~ msgid "Name:"
 #~ msgstr "Nom:"

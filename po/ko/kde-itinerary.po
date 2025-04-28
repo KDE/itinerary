@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-27 00:42+0000\n"
+"POT-Creation-Date: 2025-04-28 00:42+0000\n"
 "PO-Revision-Date: 2025-04-22 01:21+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -3242,26 +3242,6 @@ msgstr "프로그램 멤버십"
 msgid "Show Pass"
 msgstr "패스 표시"
 
-#: app/PublicTransportBackendPage.qml:17
-#, kde-format
-msgid "Public Transport Information Sources"
-msgstr "대중 교통 정보 원본"
-
-#: app/PublicTransportBackendPage.qml:95 app/PublicTransportBackendPage.qml:108
-#, kde-format
-msgid "Global"
-msgstr "전 세계"
-
-#: app/PublicTransportBackendPage.qml:97
-#, kde-format
-msgid "🇪🇺 European Union"
-msgstr "🇪🇺 유럽 연합"
-
-#: app/PublicTransportBackendPage.qml:110
-#, kde-format
-msgid "European Union"
-msgstr "유럽 연합"
-
 #: app/PublicTransportFeatureList.qml:31
 #, kde-format
 msgid "Availability unknown"
@@ -3358,39 +3338,39 @@ msgstr "종료 시간"
 msgid "Party size"
 msgstr "인원 수"
 
-#: app/SettingsPage.qml:19
+#: app/SettingsPage.qml:20
 #, kde-format
 msgid "Settings"
 msgstr "설정"
 
-#: app/SettingsPage.qml:29
+#: app/SettingsPage.qml:30
 #, kde-format
 msgid "Localization"
 msgstr "지역화"
 
-#: app/SettingsPage.qml:38
+#: app/SettingsPage.qml:39
 #, kde-format
 msgid "Use metric units"
 msgstr "미터법 단위 사용"
 
-#: app/SettingsPage.qml:39
+#: app/SettingsPage.qml:40
 #, kde-format
 msgid ""
 "Use metric units for distance and temperature values regardless of the "
 "platform region settings."
 msgstr "플랫폼의 지역 설정과 관계 없이 미터법 거리와 온도 단위를 사용합니다."
 
-#: app/SettingsPage.qml:48
+#: app/SettingsPage.qml:49
 #, kde-format
 msgid "Online Services"
 msgstr "온라인 서비스"
 
-#: app/SettingsPage.qml:52
+#: app/SettingsPage.qml:53
 #, kde-format
 msgid "Query Traffic Data"
 msgstr "교통량 데이터 조회"
 
-#: app/SettingsPage.qml:55
+#: app/SettingsPage.qml:56
 #, kde-format
 msgid ""
 "When enabled, this will query transport provider online services for changes "
@@ -3399,12 +3379,12 @@ msgstr ""
 "이 옵션을 사용하면 교통 서비스 사업자 온라인 서비스에 조회하여 지연, 탑승구, "
 "승강장 변경을 조회합니다."
 
-#: app/SettingsPage.qml:61
+#: app/SettingsPage.qml:62
 #, kde-format
 msgid "Use insecure services"
 msgstr "비보안 서비스 사용"
 
-#: app/SettingsPage.qml:64
+#: app/SettingsPage.qml:65
 #, kde-format
 msgid ""
 "Enabling this will also use online services that do not offer transport "
@@ -3415,23 +3395,23 @@ msgstr ""
 "옵션 사용을 추천하지 않지만, 일부 서비스의 라이브 데이터를 가져오려면 필요합"
 "니다."
 
-#: app/SettingsPage.qml:72
+#: app/SettingsPage.qml:73
 #, kde-format
 msgid "Public Transport Information Sources…"
 msgstr "대중 교통 정보 원본…"
 
-#: app/SettingsPage.qml:81 app/WeatherForecastDelegate.qml:80
+#: app/SettingsPage.qml:82 app/WeatherForecastDelegate.qml:80
 #: app/WeatherForecastPage.qml:19
 #, kde-format
 msgid "Weather Forecast"
 msgstr "일기 예보"
 
-#: app/SettingsPage.qml:84
+#: app/SettingsPage.qml:85
 #, kde-format
 msgid "Showing weather forecasts will query online services."
 msgstr "일기 예보를 표시하면 온라인 서비스에 조회합니다."
 
-#: app/SettingsPage.qml:89 app/WeatherForecastPage.qml:36
+#: app/SettingsPage.qml:90 app/WeatherForecastPage.qml:36
 #, kde-format
 msgid ""
 "Using data from <a href=\"https://www.met.no/\">The Norwegian Meteorological "
@@ -3442,12 +3422,12 @@ msgstr ""
 "\"https://creativecommons.org/licenses/by/4.0\">크리에이티브 커먼즈 4.0 저작"
 "자표시 국제판</a> 라이선스로 제공됩니다."
 
-#: app/SettingsPage.qml:98
+#: app/SettingsPage.qml:99
 #, kde-format
 msgid "Preload Map Data"
 msgstr "지도 데이터 미리 불러오기"
 
-#: app/SettingsPage.qml:101
+#: app/SettingsPage.qml:102
 #, kde-format
 msgid ""
 "Enabling this will download maps for all stations and airports for upcoming "
@@ -3456,44 +3436,44 @@ msgstr ""
 "이 옵션을 사용하면 Wi-Fi 네트워크에 연결했을 때 다가오는 여정에서 경유할 모"
 "든 역과 공항의 지도를 다운로드합니다."
 
-#: app/SettingsPage.qml:108
+#: app/SettingsPage.qml:109
 #, kde-format
 msgid "Currency Conversion"
 msgstr "통화 변환"
 
-#: app/SettingsPage.qml:111
+#: app/SettingsPage.qml:112
 #, kde-format
 msgid ""
 "Enabling this will perform online queries for exchange rates to currencies "
 "at travel destinations."
 msgstr "이 옵션을 사용하면 온라인에서 여행지의 환율 정보를 가져옵니다."
 
-#: app/SettingsPage.qml:117
+#: app/SettingsPage.qml:118
 #, kde-format
 msgid "Wikimedia Online Content"
 msgstr "위키미디어 온라인 콘텐츠"
 
-#: app/SettingsPage.qml:120
+#: app/SettingsPage.qml:121
 #, kde-format
 msgid "Use additional online content from Wikimedia and Wikidata."
 msgstr "위키미디어 및 위키데이터의 추가 온라인 콘텐츠를 사용합니다.\t"
 
-#: app/SettingsPage.qml:127
+#: app/SettingsPage.qml:128
 #, kde-format
 msgid "Transfer Assistant"
 msgstr "환승 도우미"
 
-#: app/SettingsPage.qml:131
+#: app/SettingsPage.qml:132
 #, kde-format
 msgid "Automatically add transfers"
 msgstr "자동으로 환승 추가"
 
-#: app/SettingsPage.qml:139
+#: app/SettingsPage.qml:140
 #, kde-format
 msgid "Automatically fill transfers"
 msgstr "자동으로 환승 채우기"
 
-#: app/SettingsPage.qml:140
+#: app/SettingsPage.qml:141
 #, kde-format
 msgid ""
 "When enabled, this will query transport provider online services "
@@ -3502,148 +3482,148 @@ msgstr ""
 "이 옵션을 사용하면 교통 서비스 사업자 온라인 서비스에 조회하여 환승 정보를 조"
 "회합니다."
 
-#: app/SettingsPage.qml:151
+#: app/SettingsPage.qml:152
 #, kde-format
 msgid "Notifications"
 msgstr "알림"
 
-#: app/SettingsPage.qml:156
+#: app/SettingsPage.qml:157
 #, kde-format
 msgid "Configure Notifications…"
 msgstr "알림 설정…"
 
-#: app/SettingsPage.qml:165
+#: app/SettingsPage.qml:166
 #, kde-format
 msgid "Show notifications on lock screen"
 msgstr "잠금 화면에 알림 표시"
 
-#: app/SettingsPage.qml:175 app/SettingsPage.qml:204
+#: app/SettingsPage.qml:176 app/SettingsPage.qml:205
 #, kde-format
 msgid "Request permissions…"
 msgstr "권한 요청…"
 
-#: app/SettingsPage.qml:176
+#: app/SettingsPage.qml:177
 #, kde-format
 msgid "Additional permissions are required to show notifications."
 msgstr "알림을 표시하려면 추가 권한이 필요합니다."
 
-#: app/SettingsPage.qml:186
+#: app/SettingsPage.qml:187
 #, kde-format
 msgid "Notification permissions are available"
 msgstr "알림 권한을 사용할 수 있음"
 
-#: app/SettingsPage.qml:187 app/SettingsPage.qml:229 app/SettingsPage.qml:307
+#: app/SettingsPage.qml:188 app/SettingsPage.qml:230 app/SettingsPage.qml:308
 #, kde-format
 msgid "No further action required."
 msgstr "더 이상 필요한 동작이 없습니다."
 
-#: app/SettingsPage.qml:200
+#: app/SettingsPage.qml:201
 #, kde-format
 msgid "Onboard Status"
 msgstr "차내 정보"
 
-#: app/SettingsPage.qml:205
+#: app/SettingsPage.qml:206
 #, kde-format
 msgid "Additional permissions are required to access the Wi-Fi status."
 msgstr "Wi-Fi 상태에 접근하려면 추가 권한이 필요합니다."
 
-#: app/SettingsPage.qml:216
+#: app/SettingsPage.qml:217
 #, kde-format
 msgid "Wi-Fi access for onboard information is available."
 msgstr "Wi-Fi를 통한 차내 정보에 접근할 수 있습니다."
 
-#: app/SettingsPage.qml:218
+#: app/SettingsPage.qml:219
 #, kde-format
 msgid "Wi-Fi is not enabled"
 msgstr "Wi-Fi가 비활성화됨"
 
-#: app/SettingsPage.qml:220
+#: app/SettingsPage.qml:221
 #, kde-format
 msgid "Location service is not enabled"
 msgstr "위치 서비스가 비활성화됨"
 
-#: app/SettingsPage.qml:222
+#: app/SettingsPage.qml:223
 #, kde-format
 msgid "Wi-Fi access is not available on this system"
 msgstr "이 시스템에서 Wi-Fi에 접근할 수 없음"
 
-#: app/SettingsPage.qml:231
+#: app/SettingsPage.qml:232
 #, kde-format
 msgid "Enable Wi-Fi on your system to access onboard information."
 msgstr "차내 정보를 확인하려면 시스템의 Wi-Fi를 활성화해야 합니다."
 
-#: app/SettingsPage.qml:233
+#: app/SettingsPage.qml:234
 #, kde-format
 msgid ""
 "Enable the location service on your device to access onboard information."
 msgstr "차내 정보를 확인하려면 시스템의 위치 서비스를 활성화해야 합니다."
 
-#: app/SettingsPage.qml:235
+#: app/SettingsPage.qml:236
 #, kde-format
 msgid ""
 "Onboard information are unfortunately not supported on your device at this "
 "time."
 msgstr "현재 사용 중인 장치에서 차내 정보를 지원하지 않습니다."
 
-#: app/SettingsPage.qml:267
+#: app/SettingsPage.qml:268
 #, kde-format
 msgid "Matrix Integration"
 msgstr "Matrix 통합"
 
-#: app/SettingsPage.qml:274 app/SettingsPage.qml:331
+#: app/SettingsPage.qml:275 app/SettingsPage.qml:332
 #, kde-format
 msgid "Logged in as %1"
 msgstr "%1(으)로 로그인됨"
 
-#: app/SettingsPage.qml:278
+#: app/SettingsPage.qml:279
 #, kde-format
 msgid "Synchronize rooms"
 msgstr "방 동기화"
 
-#: app/SettingsPage.qml:285
+#: app/SettingsPage.qml:286
 #, kde-format
 msgid "Matrix ID"
 msgstr "Matrix ID"
 
-#: app/SettingsPage.qml:294
+#: app/SettingsPage.qml:295
 #, kde-format
 msgid "Password"
 msgstr "암호"
 
-#: app/SettingsPage.qml:306
+#: app/SettingsPage.qml:307
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Session verified"
 msgstr "세션 검증됨"
 
-#: app/SettingsPage.qml:306
+#: app/SettingsPage.qml:307
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Session not verified."
 msgstr "세션이 검증되지 않았습니다."
 
-#: app/SettingsPage.qml:307
+#: app/SettingsPage.qml:308
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Initiate session verification in your Matrix chat client."
 msgstr "Matrix 채팅 클라이언트에서 세션 검증을 시작하십시오."
 
-#: app/SettingsPage.qml:314
+#: app/SettingsPage.qml:315
 #, kde-format
 msgid "Log out"
 msgstr "로그아웃"
 
-#: app/SettingsPage.qml:314
+#: app/SettingsPage.qml:315
 #, kde-format
 msgid "Log in"
 msgstr "로그인"
 
-#: app/SettingsPage.qml:321
+#: app/SettingsPage.qml:322
 #, kde-format
 msgid "Traewelling Integration"
 msgstr "Traewelling 통합"
 
-#: app/SettingsPage.qml:326
+#: app/SettingsPage.qml:327
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -3655,27 +3635,27 @@ msgstr ""
 "수 있습니다. 자세한 정보는 <a href=\"https://traewelling.de\">traewelling."
 "de</a> 사이트를 참조하십시오"
 
-#: app/SettingsPage.qml:334
+#: app/SettingsPage.qml:335
 #, kde-format
 msgid "Login"
 msgstr "로그인"
 
-#: app/SettingsPage.qml:339
+#: app/SettingsPage.qml:340
 #, kde-format
 msgid "Logout"
 msgstr "로그아웃"
 
-#: app/SettingsPage.qml:346
+#: app/SettingsPage.qml:347
 #, kde-format
 msgid "Contributing"
 msgstr "기여"
 
-#: app/SettingsPage.qml:350
+#: app/SettingsPage.qml:351
 #, kde-format
 msgid "I contribute to OpenStreetMap"
 msgstr "저는 OpenStreetMap에 기여합니다"
 
-#: app/SettingsPage.qml:351
+#: app/SettingsPage.qml:352
 #, kde-format
 msgid "Enables OSM editing options."
 msgstr "OSM 편집 옵션을 활성화합니다."
@@ -4552,6 +4532,18 @@ msgstr "로그아웃함"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%5에 %3에서 %4(으)로 가는 %1%2|/|%5에 %3에서 %4$[으 %4]로 가는 %1%2"
+
+#~ msgid "Public Transport Information Sources"
+#~ msgstr "대중 교통 정보 원본"
+
+#~ msgid "Global"
+#~ msgstr "전 세계"
+
+#~ msgid "🇪🇺 European Union"
+#~ msgstr "🇪🇺 유럽 연합"
+
+#~ msgid "European Union"
+#~ msgstr "유럽 연합"
 
 #~ msgid "Name:"
 #~ msgstr "이름:"

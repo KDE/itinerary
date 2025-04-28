@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-27 00:42+0000\n"
-"PO-Revision-Date: 2025-04-26 10:30+0300\n"
+"POT-Creation-Date: 2025-04-28 00:42+0000\n"
+"PO-Revision-Date: 2025-04-27 08:10+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -1602,10 +1602,9 @@ msgstr "שם"
 
 #: app/HealthCertificateRecovery.qml:43 app/HealthCertificateTest.qml:44
 #: app/HealthCertificateVaccination.qml:47
-#, fuzzy, kde-format
-#| msgid "Date of birth:"
+#, kde-format
 msgid "Date of birth"
-msgstr "תאריך לידה:"
+msgstr "תאריך לידה"
 
 #: app/HealthCertificateRecovery.qml:50
 #, kde-format
@@ -1614,10 +1613,9 @@ msgstr "החלמה"
 
 #: app/HealthCertificateRecovery.qml:62 app/HealthCertificateTest.qml:65
 #: app/HealthCertificateVaccination.qml:77
-#, fuzzy, kde-format
-#| msgid "Disease:"
+#, kde-format
 msgid "Disease"
-msgstr "מחלה:"
+msgstr "מחלה"
 
 #: app/HealthCertificateRecovery.qml:69 app/ProgramMembershipEditor.qml:97
 #: app/ProgramMembershipPage.qml:117 app/TicketPage.qml:92
@@ -1639,64 +1637,54 @@ msgstr "אישור"
 
 #: app/HealthCertificateRecovery.qml:87 app/HealthCertificateTest.qml:127
 #: app/HealthCertificateVaccination.qml:134
-#, fuzzy, kde-format
-#| msgid "Issuer:"
+#, kde-format
 msgid "Issuer"
-msgstr "מנפיק:"
+msgstr "מנפיק"
 
 #: app/HealthCertificateRecovery.qml:95 app/HealthCertificateTest.qml:135
 #: app/HealthCertificateVaccination.qml:142
-#, fuzzy, kde-format
-#| msgid "Identifier:"
+#, kde-format
 msgid "Identifier"
-msgstr "מזהה:"
+msgstr "מזהה"
 
 #: app/HealthCertificateRecovery.qml:104 app/HealthCertificateTest.qml:143
 #: app/HealthCertificateVaccination.qml:150
-#, fuzzy, kde-format
-#| msgid "Issued:"
+#, kde-format
 msgid "Issued"
-msgstr "הונפק:"
+msgstr "הונפק"
 
 #: app/HealthCertificateRecovery.qml:111 app/HealthCertificateTest.qml:151
 #: app/HealthCertificateVaccination.qml:158
-#, fuzzy, kde-format
-#| msgid "Expires:"
+#, kde-format
 msgid "Expires"
-msgstr "תום תוקף:"
+msgstr "תום תוקף"
 
 #: app/HealthCertificateRecovery.qml:131 app/HealthCertificateTest.qml:169
 #: app/HealthCertificateVaccination.qml:176
-#, fuzzy, kde-format
-#| msgid "Signature:"
+#, kde-format
 msgid "Signature"
-msgstr "חתימה:"
+msgstr "חתימה"
 
 #: app/HealthCertificateRecovery.qml:135 app/HealthCertificateTest.qml:173
 #: app/HealthCertificateVaccination.qml:180
-#, fuzzy, kde-format
-#| msgctxt "not yet expired tickets"
-#| msgid "Valid"
+#, kde-format
 msgctxt "Signature state"
 msgid "Valid"
 msgstr "תוקף"
 
 #: app/HealthCertificateRecovery.qml:137 app/HealthCertificateTest.qml:175
 #: app/HealthCertificateVaccination.qml:182
-#, fuzzy, kde-format
-#| msgid "Unknown class"
+#, kde-format
 msgctxt "Signature state"
 msgid "Unknown"
-msgstr "מחלקה לא ידועה"
+msgstr "לא ידוע"
 
 #: app/HealthCertificateRecovery.qml:140 app/HealthCertificateTest.qml:178
 #: app/HealthCertificateVaccination.qml:185
-#, fuzzy, kde-format
-#| msgctxt "not yet expired tickets"
-#| msgid "Valid"
+#, kde-format
 msgctxt "Signature state"
 msgid "Invalid"
-msgstr "תוקף"
+msgstr "שגוי"
 
 #: app/HealthCertificateTest.qml:51 app/HealthCertificateTest.qml:79
 #, kde-format
@@ -1704,22 +1692,19 @@ msgid "Test"
 msgstr "בדיקה"
 
 #: app/HealthCertificateTest.qml:56 app/HealthCertificateVaccination.qml:60
-#, fuzzy, kde-format
-#| msgid "Date:"
+#, kde-format
 msgid "Date"
-msgstr "תאריך:"
+msgstr "תאריך"
 
 #: app/HealthCertificateTest.qml:88
-#, fuzzy, kde-format
-#| msgid "Result:"
+#, kde-format
 msgid "Result"
-msgstr "תוצאה:"
+msgstr "תוצאה"
 
 #: app/HealthCertificateTest.qml:106
-#, fuzzy, kde-format
-#| msgid "Test Center:"
+#, kde-format
 msgid "Test Center"
-msgstr "מרכז בדיקות:"
+msgstr "מרכז בדיקות"
 
 #: app/HealthCertificateVaccination.qml:64
 #, kde-format
@@ -1731,22 +1716,19 @@ msgstr[2] "%2 (לפני %1 ימים)"
 msgstr[3] "%2 (לפני %1 ימים)"
 
 #: app/HealthCertificateVaccination.qml:92
-#, fuzzy, kde-format
-#| msgid "Vaccine:"
+#, kde-format
 msgid "Vaccine"
-msgstr "חיסון:"
+msgstr "חיסון"
 
 #: app/HealthCertificateVaccination.qml:101
-#, fuzzy, kde-format
-#| msgid "Manufacturer:"
+#, kde-format
 msgid "Manufacturer"
-msgstr "יצרן:"
+msgstr "יצרן"
 
 #: app/HealthCertificateVaccination.qml:109
-#, fuzzy, kde-format
-#| msgid "Dose:"
+#, kde-format
 msgid "Dose"
-msgstr "מינון:"
+msgstr "מינון"
 
 #: app/HealthCertificateVaccination.qml:110
 #, kde-format
@@ -3261,26 +3243,6 @@ msgstr "חברות בתוכנית"
 msgid "Show Pass"
 msgstr "הצגת אישור"
 
-#: app/PublicTransportBackendPage.qml:17
-#, kde-format
-msgid "Public Transport Information Sources"
-msgstr "מקורות פרטי תחבורה ציבורית"
-
-#: app/PublicTransportBackendPage.qml:95 app/PublicTransportBackendPage.qml:108
-#, kde-format
-msgid "Global"
-msgstr "עולמי"
-
-#: app/PublicTransportBackendPage.qml:97
-#, kde-format
-msgid "🇪🇺 European Union"
-msgstr "🇪🇺 האיחוד האירופי"
-
-#: app/PublicTransportBackendPage.qml:110
-#, kde-format
-msgid "European Union"
-msgstr "האיחוד האירופי"
-
 #: app/PublicTransportFeatureList.qml:31
 #, kde-format
 msgid "Availability unknown"
@@ -3380,22 +3342,22 @@ msgstr "זמן סיום"
 msgid "Party size"
 msgstr "כמות מוזמנים"
 
-#: app/SettingsPage.qml:19
+#: app/SettingsPage.qml:20
 #, kde-format
 msgid "Settings"
 msgstr "הגדרות"
 
-#: app/SettingsPage.qml:29
+#: app/SettingsPage.qml:30
 #, kde-format
 msgid "Localization"
 msgstr "התאמה מקומית"
 
-#: app/SettingsPage.qml:38
+#: app/SettingsPage.qml:39
 #, kde-format
 msgid "Use metric units"
 msgstr "להשתמש ביחידות מטריות"
 
-#: app/SettingsPage.qml:39
+#: app/SettingsPage.qml:40
 #, kde-format
 msgid ""
 "Use metric units for distance and temperature values regardless of the "
@@ -3403,17 +3365,17 @@ msgid ""
 msgstr ""
 "להשתמש ביחידות מטריות לערכי מרחק וטמפרטורה ללא תלות בהגדרות אזור הפלטפורמה."
 
-#: app/SettingsPage.qml:48
+#: app/SettingsPage.qml:49
 #, kde-format
 msgid "Online Services"
 msgstr "שירותים מקוונים"
 
-#: app/SettingsPage.qml:52
+#: app/SettingsPage.qml:53
 #, kde-format
 msgid "Query Traffic Data"
 msgstr "תשאול נתוני תנועה"
 
-#: app/SettingsPage.qml:55
+#: app/SettingsPage.qml:56
 #, kde-format
 msgid ""
 "When enabled, this will query transport provider online services for changes "
@@ -3422,12 +3384,12 @@ msgstr ""
 "כשהאפשרות פעילה, השירותים המקוונים של ספקי התחבורה יתושאלו בנוגע לשינויים "
 "בעיכובים או שינויים שערים ורציפים."
 
-#: app/SettingsPage.qml:61
+#: app/SettingsPage.qml:62
 #, kde-format
 msgid "Use insecure services"
 msgstr "להשתמש בשירותים מפוקפקים"
 
-#: app/SettingsPage.qml:64
+#: app/SettingsPage.qml:65
 #, kde-format
 msgid ""
 "Enabling this will also use online services that do not offer transport "
@@ -3438,23 +3400,23 @@ msgstr ""
 "התעבורה. לא מומלץ להגדיר את זה אבל יכול להיות שאי אפשר להימנע בזה כשמסתמכים "
 "על נתונים בזמן אמת מספקים מסוימים."
 
-#: app/SettingsPage.qml:72
+#: app/SettingsPage.qml:73
 #, kde-format
 msgid "Public Transport Information Sources…"
 msgstr "מקורות פרטי תחבורה ציבורית"
 
-#: app/SettingsPage.qml:81 app/WeatherForecastDelegate.qml:80
+#: app/SettingsPage.qml:82 app/WeatherForecastDelegate.qml:80
 #: app/WeatherForecastPage.qml:19
 #, kde-format
 msgid "Weather Forecast"
 msgstr "נתוני מזג אוויר"
 
-#: app/SettingsPage.qml:84
+#: app/SettingsPage.qml:85
 #, kde-format
 msgid "Showing weather forecasts will query online services."
 msgstr "הצגת תשקיפי מזג אוויר יתשאל שירותים מקוונים."
 
-#: app/SettingsPage.qml:89 app/WeatherForecastPage.qml:36
+#: app/SettingsPage.qml:90 app/WeatherForecastPage.qml:36
 #, kde-format
 msgid ""
 "Using data from <a href=\"https://www.met.no/\">The Norwegian Meteorological "
@@ -3465,12 +3427,12 @@ msgstr ""
 "הנורווגי</a> בכפוף לרישיון <a href=\"https://creativecommons.org/licenses/"
 "by/4.0\">קריאייטיב קומונז 4.0 ייחוס, בינלאומי</a>."
 
-#: app/SettingsPage.qml:98
+#: app/SettingsPage.qml:99
 #, kde-format
 msgid "Preload Map Data"
 msgstr "טעינת נתוני המפה מראש"
 
-#: app/SettingsPage.qml:101
+#: app/SettingsPage.qml:102
 #, kde-format
 msgid ""
 "Enabling this will download maps for all stations and airports for upcoming "
@@ -3479,12 +3441,12 @@ msgstr ""
 "הפעלת האפשרות הזאת תוריד את המפות לכל התחנות ונמלי התעופה לטיולים הקרובים "
 "בעת חיבור לרשת אלחוטית."
 
-#: app/SettingsPage.qml:108
+#: app/SettingsPage.qml:109
 #, kde-format
 msgid "Currency Conversion"
 msgstr "המרת מטבעות"
 
-#: app/SettingsPage.qml:111
+#: app/SettingsPage.qml:112
 #, kde-format
 msgid ""
 "Enabling this will perform online queries for exchange rates to currencies "
@@ -3492,32 +3454,32 @@ msgid ""
 msgstr ""
 "הפעלת האפשרות הזאת תבצע שאילתות מקוונות לשערי ההמרה למטבעות ביעדי הטיול."
 
-#: app/SettingsPage.qml:117
+#: app/SettingsPage.qml:118
 #, kde-format
 msgid "Wikimedia Online Content"
 msgstr "תוכן מקוון של ויקימדיה"
 
-#: app/SettingsPage.qml:120
+#: app/SettingsPage.qml:121
 #, kde-format
 msgid "Use additional online content from Wikimedia and Wikidata."
 msgstr "להשתמש בתוכן מקוון מוויקימדיה ומוויקינתונים."
 
-#: app/SettingsPage.qml:127
+#: app/SettingsPage.qml:128
 #, kde-format
 msgid "Transfer Assistant"
 msgstr "מסייע החלפות"
 
-#: app/SettingsPage.qml:131
+#: app/SettingsPage.qml:132
 #, kde-format
 msgid "Automatically add transfers"
 msgstr "להוסיף החלפות אוטומטית"
 
-#: app/SettingsPage.qml:139
+#: app/SettingsPage.qml:140
 #, kde-format
 msgid "Automatically fill transfers"
 msgstr "מילוי החלפות אוטומטית"
 
-#: app/SettingsPage.qml:140
+#: app/SettingsPage.qml:141
 #, kde-format
 msgid ""
 "When enabled, this will query transport provider online services "
@@ -3526,148 +3488,148 @@ msgstr ""
 "כאשר האפשרות פעילה, השירותים המקוונים של ספק התחבורה יתושאלו אוטומטית לגבי "
 "פרטי ההחלפות."
 
-#: app/SettingsPage.qml:151
+#: app/SettingsPage.qml:152
 #, kde-format
 msgid "Notifications"
 msgstr "התראות"
 
-#: app/SettingsPage.qml:156
+#: app/SettingsPage.qml:157
 #, kde-format
 msgid "Configure Notifications…"
 msgstr "הגדרת התראות…"
 
-#: app/SettingsPage.qml:165
+#: app/SettingsPage.qml:166
 #, kde-format
 msgid "Show notifications on lock screen"
 msgstr "הצגת התראות על מסך הנעילה"
 
-#: app/SettingsPage.qml:175 app/SettingsPage.qml:204
+#: app/SettingsPage.qml:176 app/SettingsPage.qml:205
 #, kde-format
 msgid "Request permissions…"
 msgstr "בקשת הרשאות…"
 
-#: app/SettingsPage.qml:176
+#: app/SettingsPage.qml:177
 #, kde-format
 msgid "Additional permissions are required to show notifications."
 msgstr "הרשאות נוספות נחוצות כדי להציג התראות."
 
-#: app/SettingsPage.qml:186
+#: app/SettingsPage.qml:187
 #, kde-format
 msgid "Notification permissions are available"
 msgstr "הרשאות להתראות זמינות"
 
-#: app/SettingsPage.qml:187 app/SettingsPage.qml:229 app/SettingsPage.qml:307
+#: app/SettingsPage.qml:188 app/SettingsPage.qml:230 app/SettingsPage.qml:308
 #, kde-format
 msgid "No further action required."
 msgstr "לא נדרשות פעולות נוספות."
 
-#: app/SettingsPage.qml:200
+#: app/SettingsPage.qml:201
 #, kde-format
 msgid "Onboard Status"
 msgstr "מצב התניידות"
 
-#: app/SettingsPage.qml:205
+#: app/SettingsPage.qml:206
 #, kde-format
 msgid "Additional permissions are required to access the Wi-Fi status."
 msgstr "נדרשות הרשאות נוספות כדי לגשת למצב הרשת האלחוטית."
 
-#: app/SettingsPage.qml:216
+#: app/SettingsPage.qml:217
 #, kde-format
 msgid "Wi-Fi access for onboard information is available."
 msgstr "יש גישה דרך רשת אלחוטית למידע תואם נסיעה (רכבת/טיסה/הפלגה)."
 
-#: app/SettingsPage.qml:218
+#: app/SettingsPage.qml:219
 #, kde-format
 msgid "Wi-Fi is not enabled"
 msgstr "רשת אלחוטית לא פעילה"
 
-#: app/SettingsPage.qml:220
+#: app/SettingsPage.qml:221
 #, kde-format
 msgid "Location service is not enabled"
 msgstr "שירות המיקום אינו זמין"
 
-#: app/SettingsPage.qml:222
+#: app/SettingsPage.qml:223
 #, kde-format
 msgid "Wi-Fi access is not available on this system"
 msgstr "גישה לרשת אלחוטית לא זמינה במערכת הזאת"
 
-#: app/SettingsPage.qml:231
+#: app/SettingsPage.qml:232
 #, kde-format
 msgid "Enable Wi-Fi on your system to access onboard information."
 msgstr "יש להפעיל את הרשת האלחוטית במערכת שלך כדי לגשת למידע על הנסיעה."
 
-#: app/SettingsPage.qml:233
+#: app/SettingsPage.qml:234
 #, kde-format
 msgid ""
 "Enable the location service on your device to access onboard information."
 msgstr "יש להפעיל את שירות המיקום במכשיר שלך כדי לגשת למידע בזמן הנסיעה."
 
-#: app/SettingsPage.qml:235
+#: app/SettingsPage.qml:236
 #, kde-format
 msgid ""
 "Onboard information are unfortunately not supported on your device at this "
 "time."
 msgstr "מידע בזמן הנסיעה לא נתמך על ידי המכשיר שלך נכון לעכשיו."
 
-#: app/SettingsPage.qml:267
+#: app/SettingsPage.qml:268
 #, kde-format
 msgid "Matrix Integration"
 msgstr "שילוב מול Matrix"
 
-#: app/SettingsPage.qml:274 app/SettingsPage.qml:331
+#: app/SettingsPage.qml:275 app/SettingsPage.qml:332
 #, kde-format
 msgid "Logged in as %1"
 msgstr "נכנסת למערכת בתור %1"
 
-#: app/SettingsPage.qml:278
+#: app/SettingsPage.qml:279
 #, kde-format
 msgid "Synchronize rooms"
 msgstr "סנכרון חדרים"
 
-#: app/SettingsPage.qml:285
+#: app/SettingsPage.qml:286
 #, kde-format
 msgid "Matrix ID"
 msgstr "מזהה Matrix"
 
-#: app/SettingsPage.qml:294
+#: app/SettingsPage.qml:295
 #, kde-format
 msgid "Password"
 msgstr "סיסמה"
 
-#: app/SettingsPage.qml:306
+#: app/SettingsPage.qml:307
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Session verified"
 msgstr "הפגישה אומתה"
 
-#: app/SettingsPage.qml:306
+#: app/SettingsPage.qml:307
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Session not verified."
 msgstr "הפגישה לא אומתה."
 
-#: app/SettingsPage.qml:307
+#: app/SettingsPage.qml:308
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Initiate session verification in your Matrix chat client."
 msgstr "התחלת אימות פגישה בלקוח הצ׳אט שלך לרשת Matrix."
 
-#: app/SettingsPage.qml:314
+#: app/SettingsPage.qml:315
 #, kde-format
 msgid "Log out"
 msgstr "יציאה"
 
-#: app/SettingsPage.qml:314
+#: app/SettingsPage.qml:315
 #, kde-format
 msgid "Log in"
 msgstr "כניסה"
 
-#: app/SettingsPage.qml:321
+#: app/SettingsPage.qml:322
 #, kde-format
 msgid "Traewelling Integration"
 msgstr "שילוב מול Traewelling"
 
-#: app/SettingsPage.qml:326
+#: app/SettingsPage.qml:327
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -3679,27 +3641,27 @@ msgstr ""
 "שלך ולתעד את מסעות הנסיעה הציבורית שלך. למידע נוסף, מומלץ לבקר ב־<a href="
 "\"https://traewelling.de\">traewelling.de</a>"
 
-#: app/SettingsPage.qml:334
+#: app/SettingsPage.qml:335
 #, kde-format
 msgid "Login"
 msgstr "כניסה"
 
-#: app/SettingsPage.qml:339
+#: app/SettingsPage.qml:340
 #, kde-format
 msgid "Logout"
 msgstr "יציאה"
 
-#: app/SettingsPage.qml:346
+#: app/SettingsPage.qml:347
 #, kde-format
 msgid "Contributing"
 msgstr "תרומה"
 
-#: app/SettingsPage.qml:350
+#: app/SettingsPage.qml:351
 #, kde-format
 msgid "I contribute to OpenStreetMap"
 msgstr "אני מתנדב/ת ב־OpenStreetMap"
 
-#: app/SettingsPage.qml:351
+#: app/SettingsPage.qml:352
 #, kde-format
 msgid "Enables OSM editing options."
 msgstr "הפעלת אפשרויות עריכת OSM."
@@ -4582,6 +4544,18 @@ msgstr "יצאת"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 מ%3 אל %4 ב־%5"
+
+#~ msgid "Public Transport Information Sources"
+#~ msgstr "מקורות פרטי תחבורה ציבורית"
+
+#~ msgid "Global"
+#~ msgstr "עולמי"
+
+#~ msgid "🇪🇺 European Union"
+#~ msgstr "🇪🇺 האיחוד האירופי"
+
+#~ msgid "European Union"
+#~ msgstr "האיחוד האירופי"
 
 #~ msgid "Name:"
 #~ msgstr "שם:"
