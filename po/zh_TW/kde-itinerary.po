@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-03 00:41+0000\n"
+"POT-Creation-Date: 2025-04-30 02:34+0000\n"
 "PO-Revision-Date: 2024-11-28 16:26+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -219,35 +219,35 @@ msgid "To %1"
 msgstr "到 %1"
 
 #: app/AlternativeJourneyPage.qml:87 app/DepartureQueryPage.qml:41
-#: app/JourneyRequestPage.qml:235 app/TransferPage.qml:108
+#: app/JourneyRequestPage.qml:237 app/TransferPage.qml:108
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Long distance trains"
 msgstr "長途列車"
 
 #: app/AlternativeJourneyPage.qml:95 app/DepartureQueryPage.qml:48
-#: app/JourneyRequestPage.qml:245 app/TransferPage.qml:116
+#: app/JourneyRequestPage.qml:247 app/TransferPage.qml:116
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Local trains"
 msgstr "區域鐵路"
 
 #: app/AlternativeJourneyPage.qml:103 app/DepartureQueryPage.qml:55
-#: app/JourneyRequestPage.qml:255 app/TransferPage.qml:124
+#: app/JourneyRequestPage.qml:257 app/TransferPage.qml:124
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Rapid transit"
 msgstr "捷運"
 
 #: app/AlternativeJourneyPage.qml:111 app/DepartureQueryPage.qml:62
-#: app/JourneyRequestPage.qml:265 app/TransferPage.qml:132
+#: app/JourneyRequestPage.qml:267 app/TransferPage.qml:132
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Bus"
 msgstr "公車"
 
 #: app/AlternativeJourneyPage.qml:119 app/DepartureQueryPage.qml:69
-#: app/JourneyRequestPage.qml:275 app/TransferPage.qml:140
+#: app/JourneyRequestPage.qml:277 app/TransferPage.qml:140
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ferry"
@@ -376,7 +376,7 @@ msgid "Boat"
 msgstr "船班"
 
 #: app/BoatEditor.qml:59 app/EventEditor.qml:54 app/FlightEditor.qml:72
-#: app/HotelEditor.qml:51 app/ImportPage.qml:21 app/JourneyRequestPage.qml:219
+#: app/HotelEditor.qml:51 app/ImportPage.qml:21 app/JourneyRequestPage.qml:221
 #: app/RestaurantEditor.qml:53
 #, fuzzy, kde-format
 #| msgid "Trips"
@@ -1359,27 +1359,27 @@ msgstr "地區"
 msgid "Country"
 msgstr "國家"
 
-#: app/FormPlaceEditorDelegate.qml:196
+#: app/FormPlaceEditorDelegate.qml:200
 #, kde-format
 msgid "Coordinate"
 msgstr "座標"
 
-#: app/FormPlaceEditorDelegate.qml:197
+#: app/FormPlaceEditorDelegate.qml:201
 #, kde-format
 msgid "%1°, %2°"
 msgstr "%1°, %2°"
 
-#: app/FormPlaceEditorDelegate.qml:197
+#: app/FormPlaceEditorDelegate.qml:201
 #, kde-format
 msgid "Pick…"
 msgstr ""
 
-#: app/FormPlaceEditorDelegate.qml:215
+#: app/FormPlaceEditorDelegate.qml:219
 #, kde-format
 msgid "Address to coordinate"
 msgstr "地址到座標"
 
-#: app/FormPlaceEditorDelegate.qml:231
+#: app/FormPlaceEditorDelegate.qml:235
 #, kde-format
 msgid "Coordinate to address"
 msgstr "座標到地址"
@@ -2097,37 +2097,37 @@ msgstr "抵達時間"
 msgid "Search Journey"
 msgstr "搜尋旅程"
 
-#: app/JourneyRequestPage.qml:229
+#: app/JourneyRequestPage.qml:231
 #, fuzzy, kde-format
 #| msgid "More information"
 msgid "Mode of transportation"
 msgstr "更多資訊"
 
-#: app/JourneyRequestPage.qml:236
+#: app/JourneyRequestPage.qml:238
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "High speed or intercity trains"
 msgstr "高鐵或城際列車"
 
-#: app/JourneyRequestPage.qml:246
+#: app/JourneyRequestPage.qml:248
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Regional or local trains"
 msgstr "區域或當地鐵路"
 
-#: app/JourneyRequestPage.qml:256
+#: app/JourneyRequestPage.qml:258
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Rapid transit, metro, trams"
 msgstr "捷運、地鐵、輕軌"
 
-#: app/JourneyRequestPage.qml:266
+#: app/JourneyRequestPage.qml:268
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Local or regional bus services"
 msgstr "本地或區域公車服務"
 
-#: app/JourneyRequestPage.qml:276
+#: app/JourneyRequestPage.qml:278
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
@@ -2243,12 +2243,12 @@ msgstr[0] "%1 次轉乘"
 msgid "Click to extend"
 msgstr "按一下來展開"
 
-#: app/livedatamanager.cpp:717
+#: app/livedatamanager.cpp:723
 #, kde-format
 msgid "Flight %1 to %2:"
 msgstr "從 %1 到 %2 的航班："
 
-#: app/livedatamanager.cpp:723
+#: app/livedatamanager.cpp:729
 #, kde-format
 msgid "Itinerary change"
 msgstr "行程預訂變更"
