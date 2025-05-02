@@ -122,11 +122,17 @@ KPublicTransport::JourneySection PublicTransportMatcher::subJourneyForReservatio
         return {};
     }
 
+    const auto sameDep = isSameDeparture(KItinerary::LocationUtil::departureLocation(res), res, KItinerary::SortUtil::startDateTime(res), journey.departure());
+    const auto sameArr = isSameArrival(KItinerary::LocationUtil::arrivalLocation(res), res, KItinerary::SortUtil::endDateTime(res), journey.arrival());
+    if (sameDep && sameArr) {
+        return journey;
+    }
+
     KPublicTransport::JourneySection result(journey);
     auto stopovers = result.takeIntermediateStops();
 
     auto it = stopovers.begin();
-    if (!isSameDeparture(KItinerary::LocationUtil::departureLocation(res), res, KItinerary::SortUtil::startDateTime(res), journey.departure())) {
+    if (!sameDep) {
         for (; it != stopovers.end(); ++it) {
             if (isSameDeparture(KItinerary::LocationUtil::departureLocation(res), res, KItinerary::SortUtil::startDateTime(res), *it)) {
                 result.setDeparture(*it);
@@ -145,8 +151,7 @@ KPublicTransport::JourneySection PublicTransportMatcher::subJourneyForReservatio
             break;
         }
     }
-    if (it2 == stopovers.end()
-        && !isSameArrival(KItinerary::LocationUtil::arrivalLocation(res), res, KItinerary::SortUtil::endDateTime(res), journey.arrival())) {
+    if (it2 == stopovers.end() && !sameArr) {
         return {};
     }
 
