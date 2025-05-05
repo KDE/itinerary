@@ -912,7 +912,17 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="25.04.1" date="2025-05-08"/>
+    <release version="25.04.1" date="2025-05-08">
+      <description>
+        <ul>
+          <li>New or improved travel document extractors for a&amp;o hostels, Gastronovi and ÖBB.</li>
+          <li>Improved geocoding in the address editor.</li>
+          <li>Fix trip groups getting split up when updating multi-ticket reservations.</li>
+          <li>Fix displaying city names in Transitous stop search results.</li>
+          <li>Fix ÖBB onboard API support.</li>
+        </ul>
+      </description>
+    </release>
     <release version="25.04.0" date="2025-04-17">
       <description>
         <ul>
