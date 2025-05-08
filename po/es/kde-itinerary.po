@@ -1,15 +1,15 @@
-# Translation of kde-itinerary.po to Spanish
+# Spanish translations for kde-itinerary.po package.
 # Copyright (C) 2019-2025 This file is copyright:
 # This file is distributed under the same license as the itinerary package.
-#
 # Automatically generated, 2019.
+#
 # SPDX-FileCopyrightText: 2019, 2020, 2021, 2022, 2023, 2024, 2025 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-30 02:34+0000\n"
-"PO-Revision-Date: 2025-03-02 03:22+0100\n"
+"PO-Revision-Date: 2025-05-07 18:56+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -4642,15 +4642,3 @@ msgstr "Sesión cerrada"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 de %3 a %4 el %5"
-
-#~ msgctxt "Duration in minutes"
-#~ msgid "%1 min"
-#~ msgstr "%1 m"
-
-#~ msgctxt "Duration in hours and minutes"
-#~ msgid "%1 hr"
-#~ msgstr "%1 h"
-
-#~ msgctxt "Duration in hours and minutes"
-#~ msgid "%1 hr %2 min"
-#~ msgstr "%1 h y %2 m"
