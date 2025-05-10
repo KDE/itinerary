@@ -173,4 +173,10 @@ FormCard.FormCardPage {
             }
         }
     }
+
+    // spacer for the floating buttons
+    Item {
+        visible: scanModeController.visible
+        implicitHeight: root.width < Kirigami.Units.gridUnit * 30 + scanModeController.width * 2 ? scanModeController.height : 0
+    }
 }

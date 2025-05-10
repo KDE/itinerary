@@ -15,6 +15,7 @@ DetailsPage {
     title: i18nc("event as in concert/conference/show, not as in appointment", "Event")
 
     data: BarcodeScanModeButton {
+        id: scanModeButton
         page: root
         visible: ticketToken.hasBarcode
     }
@@ -139,6 +140,12 @@ DetailsPage {
             batchId: root.batchId
             editor: root.editor
             reservation: root.reservation
+        }
+
+        // spacer for the floating buttons
+        Item {
+            visible: scanModeButton.visible
+            implicitHeight: root.width < Kirigami.Units.gridUnit * 30 + scanModeButton.width * 2 ? scanModeButton.height : 0
         }
     }
 }
