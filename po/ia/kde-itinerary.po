@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-28 00:42+0000\n"
-"PO-Revision-Date: 2025-04-22 12:00+0200\n"
+"PO-Revision-Date: 2025-05-09 16:32+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -331,6 +331,8 @@ msgid ""
 "File was imported with a newer version of Itinerary. Some information might "
 "not be imported correctly."
 msgstr ""
+"File esseva importate con un version plus nove de Itinerary. Alcun "
+"information poterea non esser importate correctemente. "
 
 #: app/applicationcontroller.cpp:562
 #, kde-format
@@ -1595,8 +1597,7 @@ msgstr "Nomine"
 
 #: app/HealthCertificateRecovery.qml:43 app/HealthCertificateTest.qml:44
 #: app/HealthCertificateVaccination.qml:47
-#, fuzzy, kde-format
-#| msgid "Date of birth:"
+#, kde-format
 msgid "Date of birth"
 msgstr "Data de nativitate:"
 
@@ -1607,10 +1608,9 @@ msgstr "Recuperation"
 
 #: app/HealthCertificateRecovery.qml:62 app/HealthCertificateTest.qml:65
 #: app/HealthCertificateVaccination.qml:77
-#, fuzzy, kde-format
-#| msgid "Disease:"
+#, kde-format
 msgid "Disease"
-msgstr "Maladia:"
+msgstr "Maladia"
 
 #: app/HealthCertificateRecovery.qml:69 app/ProgramMembershipEditor.qml:97
 #: app/ProgramMembershipPage.qml:117 app/TicketPage.qml:92
@@ -1632,64 +1632,54 @@ msgstr "Certificato"
 
 #: app/HealthCertificateRecovery.qml:87 app/HealthCertificateTest.qml:127
 #: app/HealthCertificateVaccination.qml:134
-#, fuzzy, kde-format
-#| msgid "Issuer:"
+#, kde-format
 msgid "Issuer"
-msgstr "Emettitor:"
+msgstr "Emettitor"
 
 #: app/HealthCertificateRecovery.qml:95 app/HealthCertificateTest.qml:135
 #: app/HealthCertificateVaccination.qml:142
-#, fuzzy, kde-format
-#| msgid "Identifier:"
+#, kde-format
 msgid "Identifier"
-msgstr "Identificator:"
+msgstr "Identificator"
 
 #: app/HealthCertificateRecovery.qml:104 app/HealthCertificateTest.qml:143
 #: app/HealthCertificateVaccination.qml:150
-#, fuzzy, kde-format
-#| msgid "Issued:"
+#, kde-format
 msgid "Issued"
-msgstr "Emittite:"
+msgstr "Emittite"
 
 #: app/HealthCertificateRecovery.qml:111 app/HealthCertificateTest.qml:151
 #: app/HealthCertificateVaccination.qml:158
-#, fuzzy, kde-format
-#| msgid "Expires:"
+#, kde-format
 msgid "Expires"
-msgstr "Termina:"
+msgstr "Termina"
 
 #: app/HealthCertificateRecovery.qml:131 app/HealthCertificateTest.qml:169
 #: app/HealthCertificateVaccination.qml:176
-#, fuzzy, kde-format
-#| msgid "Signature:"
+#, kde-format
 msgid "Signature"
-msgstr "Signatura:"
+msgstr "Signatura"
 
 #: app/HealthCertificateRecovery.qml:135 app/HealthCertificateTest.qml:173
 #: app/HealthCertificateVaccination.qml:180
-#, fuzzy, kde-format
-#| msgctxt "not yet expired tickets"
-#| msgid "Valid"
+#, kde-format
 msgctxt "Signature state"
 msgid "Valid"
 msgstr "Valide"
 
 #: app/HealthCertificateRecovery.qml:137 app/HealthCertificateTest.qml:175
 #: app/HealthCertificateVaccination.qml:182
-#, fuzzy, kde-format
-#| msgid "Unknown class"
+#, kde-format
 msgctxt "Signature state"
 msgid "Unknown"
-msgstr "Classe incognite"
+msgstr "Incognite"
 
 #: app/HealthCertificateRecovery.qml:140 app/HealthCertificateTest.qml:178
 #: app/HealthCertificateVaccination.qml:185
-#, fuzzy, kde-format
-#| msgctxt "not yet expired tickets"
-#| msgid "Valid"
+#, kde-format
 msgctxt "Signature state"
 msgid "Invalid"
-msgstr "Valide"
+msgstr "Invalide"
 
 #: app/HealthCertificateTest.qml:51 app/HealthCertificateTest.qml:79
 #, kde-format
@@ -1697,22 +1687,19 @@ msgid "Test"
 msgstr "Essaya"
 
 #: app/HealthCertificateTest.qml:56 app/HealthCertificateVaccination.qml:60
-#, fuzzy, kde-format
-#| msgid "Date:"
+#, kde-format
 msgid "Date"
-msgstr "Data:"
+msgstr "Data"
 
 #: app/HealthCertificateTest.qml:88
-#, fuzzy, kde-format
-#| msgid "Result:"
+#, kde-format
 msgid "Result"
-msgstr "Resultato:"
+msgstr "Resultato"
 
 #: app/HealthCertificateTest.qml:106
-#, fuzzy, kde-format
-#| msgid "Test Center:"
+#, kde-format
 msgid "Test Center"
-msgstr "Centro de test:"
+msgstr "Centro de test"
 
 #: app/HealthCertificateVaccination.qml:64
 #, kde-format
@@ -1722,22 +1709,19 @@ msgstr[0] "%2 (ante %1 die)"
 msgstr[1] "%2 (%1 dies ante)"
 
 #: app/HealthCertificateVaccination.qml:92
-#, fuzzy, kde-format
-#| msgid "Vaccine:"
+#, kde-format
 msgid "Vaccine"
-msgstr "Vaccino:"
+msgstr "Vaccino"
 
 #: app/HealthCertificateVaccination.qml:101
-#, fuzzy, kde-format
-#| msgid "Manufacturer:"
+#, kde-format
 msgid "Manufacturer"
-msgstr "Constructor:"
+msgstr "Constructor"
 
 #: app/HealthCertificateVaccination.qml:109
-#, fuzzy, kde-format
-#| msgid "Dose:"
+#, kde-format
 msgid "Dose"
-msgstr "Dose:"
+msgstr "Dose"
 
 #: app/HealthCertificateVaccination.qml:110
 #, kde-format
@@ -2281,37 +2265,37 @@ msgstr "Comparti Location via Matrix"
 #, kde-format
 msgctxt "map style"
 msgid "Normal map"
-msgstr ""
+msgstr "Mappa normal"
 
 #: app/LiveStatusPage.qml:74
 #, kde-format
 msgctxt "map style"
 msgid "Railway infrastructure map"
-msgstr ""
+msgstr "Mappa de infrastructura de Ferrovia"
 
 #: app/LiveStatusPage.qml:83
 #, kde-format
 msgctxt "map style"
 msgid "Railway signalling map"
-msgstr ""
+msgstr "Mappa de signales de Ferrovia"
 
 #: app/LiveStatusPage.qml:92
 #, kde-format
 msgctxt "map style"
 msgid "Railway speed map"
-msgstr ""
+msgstr "Mappa de velocitate de Ferrovia"
 
 #: app/LiveStatusPage.qml:101
 #, kde-format
 msgctxt "map style"
 msgid "Railway electrification map"
-msgstr ""
+msgstr "Mappa de electrification de Ferrovia"
 
 #: app/LiveStatusPage.qml:110
 #, kde-format
 msgctxt "map style"
 msgid "Railway gauge map"
-msgstr ""
+msgstr "Mappa de indicator de ferrovia"
 
 #: app/LiveStatusPage.qml:151
 #, kde-format
@@ -3787,7 +3771,7 @@ msgstr "Total"
 #, kde-format
 msgctxt "@info:placeholder no visited country"
 msgid "None"
-msgstr ""
+msgstr "Necun"
 
 #: app/StatisticsPage.qml:121 app/TrainEditor.qml:88
 #, kde-format
