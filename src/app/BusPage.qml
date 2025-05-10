@@ -22,6 +22,7 @@ DetailsPage {
     }
 
     data: BarcodeScanModeButton {
+        id: scanModeButton
         page: root
         visible: ticketToken.hasBarcode
     }
@@ -230,6 +231,12 @@ DetailsPage {
                     publicTransportManager: LiveDataManager.publicTransportManager
                 }
             }
+        }
+
+        // spacer for the floating buttons
+        Item {
+            visible: scanModeButton.visible
+            implicitHeight: root.width < Kirigami.Units.gridUnit * 30 + scanModeButton.width * 2 ? scanModeButton.height : 0
         }
     }
 }
