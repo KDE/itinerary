@@ -148,6 +148,12 @@ Kirigami.ScrollablePage {
             color: Kirigami.Theme.negativeTextColor
             wrapMode: Text.Wrap
         }
+
+        Kirigami.PlaceholderMessage {
+            anchors.fill: parent
+            text: i18n("No journeys found.")
+            visible: journeyView.count === 0 && !journeyModel.loading && journeyModel.errorMessage === ""
+        }
     }
 
     footer: ColumnLayout {
