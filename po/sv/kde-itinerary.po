@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-11 00:43+0000\n"
+"POT-Creation-Date: 2025-05-12 00:42+0000\n"
 "PO-Revision-Date: 2025-03-26 17:51+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -2043,7 +2043,13 @@ msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr "Läs in tidigare anslutningar"
 
-#: app/JourneyQueryPage.qml:175
+#: app/JourneyQueryPage.qml:154
+#, fuzzy, kde-format
+#| msgid "No locations found"
+msgid "No journeys found."
+msgstr "Inga platser hittades"
+
+#: app/JourneyQueryPage.qml:181
 #, kde-format
 msgid "Still fetching results…"
 msgstr "Hämtar fortfarande resultat…"
@@ -4658,9 +4664,6 @@ msgstr "%1%2 från %3 till %4 %5"
 
 #~ msgid "Remove history entry"
 #~ msgstr "Ta bort historikpost"
-
-#~ msgid "No locations found"
-#~ msgstr "Inga platser hittades"
 
 #~ msgctxt "Duration in minutes"
 #~ msgid "%1 min"

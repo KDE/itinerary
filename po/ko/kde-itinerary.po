@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-11 00:43+0000\n"
+"POT-Creation-Date: 2025-05-12 00:42+0000\n"
 "PO-Revision-Date: 2025-04-22 01:21+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -2035,7 +2035,13 @@ msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr "이전 연결 불러오기"
 
-#: app/JourneyQueryPage.qml:175
+#: app/JourneyQueryPage.qml:154
+#, fuzzy, kde-format
+#| msgid "No locations found"
+msgid "No journeys found."
+msgstr "위치를 찾을 수 없음"
+
+#: app/JourneyQueryPage.qml:181
 #, kde-format
 msgid "Still fetching results…"
 msgstr "결과를 계속 가져오고 있습니다…"
@@ -4616,9 +4622,6 @@ msgstr "%5에 %3에서 %4(으)로 가는 %1%2|/|%5에 %3에서 %4$[으 %4]로 �
 
 #~ msgid "Remove history entry"
 #~ msgstr "과거 기록 항목 삭제"
-
-#~ msgid "No locations found"
-#~ msgstr "위치를 찾을 수 없음"
 
 #~ msgctxt "Duration in minutes"
 #~ msgid "%1 min"

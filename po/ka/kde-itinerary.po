@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-11 00:43+0000\n"
+"POT-Creation-Date: 2025-05-12 00:42+0000\n"
 "PO-Revision-Date: 2025-04-27 05:40+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -2025,7 +2025,13 @@ msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr "წინა გზების ჩატვირთვა"
 
-#: app/JourneyQueryPage.qml:175
+#: app/JourneyQueryPage.qml:154
+#, fuzzy, kde-format
+#| msgid "No locations found"
+msgid "No journeys found."
+msgstr "მდებარეობები ვერ მოიძებნა"
+
+#: app/JourneyQueryPage.qml:181
 #, kde-format
 msgid "Still fetching results…"
 msgstr "შედეგების გამოთხოვა ჯერ კიდევ…"
@@ -4634,9 +4640,6 @@ msgstr "%1%2 -ი %3-დან %4-მდე %5-ზე"
 
 #~ msgid "Remove history entry"
 #~ msgstr "ისტორიის ჩანწერის წაშლა"
-
-#~ msgid "No locations found"
-#~ msgstr "მდებარეობები ვერ მოიძებნა"
 
 #~ msgctxt "Duration in minutes"
 #~ msgid "%1 min"

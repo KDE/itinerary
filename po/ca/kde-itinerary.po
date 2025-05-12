@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-11 00:43+0000\n"
+"POT-Creation-Date: 2025-05-12 00:42+0000\n"
 "PO-Revision-Date: 2025-04-27 09:27+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -2029,7 +2029,13 @@ msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr "Carrega les connexions anteriors"
 
-#: app/JourneyQueryPage.qml:175
+#: app/JourneyQueryPage.qml:154
+#, fuzzy, kde-format
+#| msgid "No locations found"
+msgid "No journeys found."
+msgstr "No s'ha trobat cap ubicació"
+
+#: app/JourneyQueryPage.qml:181
 #, kde-format
 msgid "Still fetching results…"
 msgstr "Encara s'estan recuperant els resultats…"
@@ -4671,9 +4677,6 @@ msgstr "%1%2 des de %3 a %4 el %5"
 
 #~ msgid "Remove history entry"
 #~ msgstr "Elimina l'entrada de l'historial"
-
-#~ msgid "No locations found"
-#~ msgstr "No s'ha trobat cap ubicació"
 
 #~ msgctxt "Duration in minutes"
 #~ msgid "%1 min"

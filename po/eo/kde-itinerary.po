@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-11 00:43+0000\n"
+"POT-Creation-Date: 2025-05-12 00:42+0000\n"
 "PO-Revision-Date: 2025-03-15 10:38+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -2044,7 +2044,13 @@ msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr "Ŝargi pli fruajn konektojn"
 
-#: app/JourneyQueryPage.qml:175
+#: app/JourneyQueryPage.qml:154
+#, fuzzy, kde-format
+#| msgid "No locations found"
+msgid "No journeys found."
+msgstr "Neniuj lokoj trovitaj"
+
+#: app/JourneyQueryPage.qml:181
 #, kde-format
 msgid "Still fetching results…"
 msgstr "Ankoraŭ akirante rezultojn…"
@@ -4636,6 +4642,3 @@ msgstr "%1%2 de %3 al %4 je %5"
 
 #~ msgid "Remove history entry"
 #~ msgstr "Forigi historian eniron"
-
-#~ msgid "No locations found"
-#~ msgstr "Neniuj lokoj trovitaj"

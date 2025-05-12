@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-11 00:43+0000\n"
+"POT-Creation-Date: 2025-05-12 00:42+0000\n"
 "PO-Revision-Date: 2025-03-03 07:03+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -2045,7 +2045,13 @@ msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr "Cargar conexións anteriores"
 
-#: app/JourneyQueryPage.qml:175
+#: app/JourneyQueryPage.qml:154
+#, fuzzy, kde-format
+#| msgid "No locations found"
+msgid "No journeys found."
+msgstr "Non se atoparon localizacións."
+
+#: app/JourneyQueryPage.qml:181
 #, kde-format
 msgid "Still fetching results…"
 msgstr "Aínda estanse obtendo os resultados…"
@@ -4680,9 +4686,6 @@ msgstr "%1%2 de %3 a %4 o %5"
 
 #~ msgid "Remove history entry"
 #~ msgstr "Retirar a entrada do historial"
-
-#~ msgid "No locations found"
-#~ msgstr "Non se atoparon localizacións."
 
 #~ msgctxt "Duration in minutes"
 #~ msgid "%1 min"

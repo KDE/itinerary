@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-11 00:43+0000\n"
+"POT-Creation-Date: 2025-05-12 00:42+0000\n"
 "PO-Revision-Date: 2025-04-27 16:29+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -2040,7 +2040,13 @@ msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr "Завантажити раніші з'єднання"
 
-#: app/JourneyQueryPage.qml:175
+#: app/JourneyQueryPage.qml:154
+#, fuzzy, kde-format
+#| msgid "No locations found"
+msgid "No journeys found."
+msgstr "Не знайдено жодного місця"
+
+#: app/JourneyQueryPage.qml:181
 #, kde-format
 msgid "Still fetching results…"
 msgstr "Продовжуємо отримувати результати…"
@@ -4681,9 +4687,6 @@ msgstr "%1%2 з %3 до %4 %5"
 
 #~ msgid "Remove history entry"
 #~ msgstr "Вилучити запис журналу"
-
-#~ msgid "No locations found"
-#~ msgstr "Не знайдено жодного місця"
 
 #~ msgctxt "Duration in minutes"
 #~ msgid "%1 min"

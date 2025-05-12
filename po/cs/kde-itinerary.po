@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-11 00:43+0000\n"
+"POT-Creation-Date: 2025-05-12 00:42+0000\n"
 "PO-Revision-Date: 2024-10-18 16:02+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -2037,7 +2037,13 @@ msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr "Načíst dřívější spojení"
 
-#: app/JourneyQueryPage.qml:175
+#: app/JourneyQueryPage.qml:154
+#, fuzzy, kde-format
+#| msgid "No locations found"
+msgid "No journeys found."
+msgstr "Nenalezeno žádné místo"
+
+#: app/JourneyQueryPage.qml:181
 #, kde-format
 msgid "Still fetching results…"
 msgstr ""
@@ -4613,9 +4619,6 @@ msgstr "%1%2 z %3 do %4 na %5"
 #~ msgctxt "region, country"
 #~ msgid "%1, %2"
 #~ msgstr "%1, %2"
-
-#~ msgid "No locations found"
-#~ msgstr "Nenalezeno žádné místo"
 
 #~ msgctxt "distance in meter"
 #~ msgid "%1 m"
