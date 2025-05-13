@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-12 00:42+0000\n"
-"PO-Revision-Date: 2025-04-27 16:29+0300\n"
+"PO-Revision-Date: 2025-05-12 09:50+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -2041,10 +2041,9 @@ msgid "Load earlier connections"
 msgstr "Завантажити раніші з'єднання"
 
 #: app/JourneyQueryPage.qml:154
-#, fuzzy, kde-format
-#| msgid "No locations found"
+#, kde-format
 msgid "No journeys found."
-msgstr "Не знайдено жодного місця"
+msgstr "Не знайдено жодної подорожі."
 
 #: app/JourneyQueryPage.qml:181
 #, kde-format

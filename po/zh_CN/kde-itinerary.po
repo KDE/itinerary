@@ -494,17 +494,14 @@ msgid "Ticket number copied to clipboard"
 msgstr "票据号码已复制到剪贴板"
 
 #: app/BookingCard.qml:86
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Ticket Barcode"
+#, kde-format
 msgid "Ticket valid from"
-msgstr "车票/门票条形码"
+msgstr ""
 
 #: app/BookingCard.qml:94
-#, fuzzy, kde-format
-#| msgid "Valid until:"
+#, kde-format
 msgid "Ticket valid until"
-msgstr "有效期至："
+msgstr ""
 
 #: app/BookingEditorCard.qml:37
 #, kde-format
@@ -1586,10 +1583,9 @@ msgstr ""
 
 #: app/HealthCertificateRecovery.qml:43 app/HealthCertificateTest.qml:44
 #: app/HealthCertificateVaccination.qml:47
-#, fuzzy, kde-format
-#| msgid "Date of birth:"
+#, kde-format
 msgid "Date of birth"
-msgstr "出生日期："
+msgstr ""
 
 #: app/HealthCertificateRecovery.qml:50
 #, kde-format
@@ -1598,10 +1594,9 @@ msgstr "痊愈状态"
 
 #: app/HealthCertificateRecovery.qml:62 app/HealthCertificateTest.qml:65
 #: app/HealthCertificateVaccination.qml:77
-#, fuzzy, kde-format
-#| msgid "Disease:"
+#, kde-format
 msgid "Disease"
-msgstr "疾病名："
+msgstr ""
 
 #: app/HealthCertificateRecovery.qml:69 app/ProgramMembershipEditor.qml:97
 #: app/ProgramMembershipPage.qml:117 app/TicketPage.qml:92
@@ -1623,54 +1618,47 @@ msgstr "证书信息"
 
 #: app/HealthCertificateRecovery.qml:87 app/HealthCertificateTest.qml:127
 #: app/HealthCertificateVaccination.qml:134
-#, fuzzy, kde-format
-#| msgid "Issuer:"
+#, kde-format
 msgid "Issuer"
-msgstr "颁发单位："
+msgstr ""
 
 #: app/HealthCertificateRecovery.qml:95 app/HealthCertificateTest.qml:135
 #: app/HealthCertificateVaccination.qml:142
-#, fuzzy, kde-format
-#| msgid "Identifier:"
+#, kde-format
 msgid "Identifier"
-msgstr "标识符："
+msgstr ""
 
 #: app/HealthCertificateRecovery.qml:104 app/HealthCertificateTest.qml:143
 #: app/HealthCertificateVaccination.qml:150
-#, fuzzy, kde-format
-#| msgid "Issued:"
+#, kde-format
 msgid "Issued"
-msgstr "颁发时间："
+msgstr ""
 
 #: app/HealthCertificateRecovery.qml:111 app/HealthCertificateTest.qml:151
 #: app/HealthCertificateVaccination.qml:158
-#, fuzzy, kde-format
-#| msgid "Expires:"
+#, kde-format
 msgid "Expires"
-msgstr "有效期至："
+msgstr ""
 
 #: app/HealthCertificateRecovery.qml:131 app/HealthCertificateTest.qml:169
 #: app/HealthCertificateVaccination.qml:176
-#, fuzzy, kde-format
-#| msgid "Signature:"
+#, kde-format
 msgid "Signature"
-msgstr "签名："
+msgstr ""
 
 #: app/HealthCertificateRecovery.qml:135 app/HealthCertificateTest.qml:173
 #: app/HealthCertificateVaccination.qml:180
-#, fuzzy, kde-format
-#| msgid "Valid from:"
+#, kde-format
 msgctxt "Signature state"
 msgid "Valid"
-msgstr "有效期自："
+msgstr ""
 
 #: app/HealthCertificateRecovery.qml:137 app/HealthCertificateTest.qml:175
 #: app/HealthCertificateVaccination.qml:182
-#, fuzzy, kde-format
-#| msgid "Unknown class"
+#, kde-format
 msgctxt "Signature state"
 msgid "Unknown"
-msgstr "未知座位等级"
+msgstr ""
 
 #: app/HealthCertificateRecovery.qml:140 app/HealthCertificateTest.qml:178
 #: app/HealthCertificateVaccination.qml:185
@@ -1685,22 +1673,19 @@ msgid "Test"
 msgstr "检测结果"
 
 #: app/HealthCertificateTest.qml:56 app/HealthCertificateVaccination.qml:60
-#, fuzzy, kde-format
-#| msgid "Date:"
+#, kde-format
 msgid "Date"
-msgstr "日期："
+msgstr ""
 
 #: app/HealthCertificateTest.qml:88
-#, fuzzy, kde-format
-#| msgid "Result:"
+#, kde-format
 msgid "Result"
-msgstr "结果："
+msgstr ""
 
 #: app/HealthCertificateTest.qml:106
-#, fuzzy, kde-format
-#| msgid "Test Center:"
+#, kde-format
 msgid "Test Center"
-msgstr "检测机构："
+msgstr ""
 
 #: app/HealthCertificateVaccination.qml:64
 #, kde-format
@@ -1709,22 +1694,19 @@ msgid_plural "%2 (%1 days ago)"
 msgstr[0] ""
 
 #: app/HealthCertificateVaccination.qml:92
-#, fuzzy, kde-format
-#| msgid "Vaccine:"
+#, kde-format
 msgid "Vaccine"
-msgstr "疫苗："
+msgstr ""
 
 #: app/HealthCertificateVaccination.qml:101
-#, fuzzy, kde-format
-#| msgid "Manufacturer:"
+#, kde-format
 msgid "Manufacturer"
-msgstr "生产厂家："
+msgstr ""
 
 #: app/HealthCertificateVaccination.qml:109
-#, fuzzy, kde-format
-#| msgid "Dose:"
+#, kde-format
 msgid "Dose"
-msgstr "接种次数："
+msgstr ""
 
 #: app/HealthCertificateVaccination.qml:110
 #, kde-format
@@ -4525,66 +4507,3 @@ msgstr "已登出"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr ""
-
-#~ msgid "Public Transport Information Sources"
-#~ msgstr "公共交通信息源"
-
-#~ msgid "Global"
-#~ msgstr "全球"
-
-#~ msgid "European Union"
-#~ msgstr "欧盟"
-
-#~ msgid "Name:"
-#~ msgstr "名称："
-
-#~ msgid "Positive test:"
-#~ msgstr "阳性检测结果："
-
-#~ msgid "Valid until:"
-#~ msgstr "有效期至："
-
-#~ msgid "Type:"
-#~ msgstr "类型："
-
-#~ msgid "Test:"
-#~ msgstr "检疫项目："
-
-#~ msgid "Country:"
-#~ msgstr "国家："
-
-#~ msgid "Select country"
-#~ msgstr "请选择国家"
-
-#~ msgid "Clear History"
-#~ msgstr "清除历史记录"
-
-#~ msgid "Do you really want to remove all previously searched locations?"
-#~ msgstr "您真的想要删除以前搜索过的所有位置吗？"
-
-#~ msgid "Remove"
-#~ msgstr "移除"
-
-#~ msgctxt "location name, locality, region, country"
-#~ msgid "%1, %2, %3, %4"
-#~ msgstr "%1, %2, %3, %4"
-
-#~ msgctxt "location name, locality, country"
-#~ msgid "%1, %2, %3"
-#~ msgstr "%1, %2, %3"
-
-#~ msgctxt "location name, region, country"
-#~ msgid "%1, %2, %3"
-#~ msgstr "%1, %2, %3"
-
-#~ msgctxt "locality, region, country"
-#~ msgid "%1, %2, %3"
-#~ msgstr "%1, %2, %3"
-
-#~ msgctxt "locality, country"
-#~ msgid "%1, %2"
-#~ msgstr "%2，%1"
-
-#~ msgctxt "region, country"
-#~ msgid "%1, %2"
-#~ msgstr "%2，%1"

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-12 00:42+0000\n"
-"PO-Revision-Date: 2025-04-27 08:18+0200\n"
+"PO-Revision-Date: 2025-05-12 07:19+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -2037,10 +2037,9 @@ msgid "Load earlier connections"
 msgstr "Naloži zgodnejše povezave"
 
 #: app/JourneyQueryPage.qml:154
-#, fuzzy, kde-format
-#| msgid "No locations found"
+#, kde-format
 msgid "No journeys found."
-msgstr "Ni najdenih lokacij"
+msgstr "Ni najdenih potovanj"
 
 #: app/JourneyQueryPage.qml:181
 #, kde-format

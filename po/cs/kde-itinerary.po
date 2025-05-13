@@ -498,16 +498,14 @@ msgid "Ticket number copied to clipboard"
 msgstr ""
 
 #: app/BookingCard.qml:86
-#, fuzzy, kde-format
-#| msgid "Valid from"
+#, kde-format
 msgid "Ticket valid from"
-msgstr "Platný od"
+msgstr ""
 
 #: app/BookingCard.qml:94
-#, fuzzy, kde-format
-#| msgid "Valid until"
+#, kde-format
 msgid "Ticket valid until"
-msgstr "Platný do"
+msgstr ""
 
 #: app/BookingEditorCard.qml:37
 #, kde-format
@@ -1594,10 +1592,9 @@ msgstr "Název"
 
 #: app/HealthCertificateRecovery.qml:43 app/HealthCertificateTest.qml:44
 #: app/HealthCertificateVaccination.qml:47
-#, fuzzy, kde-format
-#| msgid "Date of birth:"
+#, kde-format
 msgid "Date of birth"
-msgstr "Datum narození::"
+msgstr ""
 
 #: app/HealthCertificateRecovery.qml:50
 #, kde-format
@@ -1606,10 +1603,9 @@ msgstr "Zotavení"
 
 #: app/HealthCertificateRecovery.qml:62 app/HealthCertificateTest.qml:65
 #: app/HealthCertificateVaccination.qml:77
-#, fuzzy, kde-format
-#| msgid "Disease:"
+#, kde-format
 msgid "Disease"
-msgstr "Onemocnění:"
+msgstr ""
 
 #: app/HealthCertificateRecovery.qml:69 app/ProgramMembershipEditor.qml:97
 #: app/ProgramMembershipPage.qml:117 app/TicketPage.qml:92
@@ -1661,29 +1657,24 @@ msgstr "Podpis"
 
 #: app/HealthCertificateRecovery.qml:135 app/HealthCertificateTest.qml:173
 #: app/HealthCertificateVaccination.qml:180
-#, fuzzy, kde-format
-#| msgctxt "not yet expired tickets"
-#| msgid "Valid"
+#, kde-format
 msgctxt "Signature state"
 msgid "Valid"
-msgstr "Platný"
+msgstr ""
 
 #: app/HealthCertificateRecovery.qml:137 app/HealthCertificateTest.qml:175
 #: app/HealthCertificateVaccination.qml:182
-#, fuzzy, kde-format
-#| msgid "Unknown class"
+#, kde-format
 msgctxt "Signature state"
 msgid "Unknown"
-msgstr "Neznámá třída"
+msgstr ""
 
 #: app/HealthCertificateRecovery.qml:140 app/HealthCertificateTest.qml:178
 #: app/HealthCertificateVaccination.qml:185
-#, fuzzy, kde-format
-#| msgctxt "not yet expired tickets"
-#| msgid "Valid"
+#, kde-format
 msgctxt "Signature state"
 msgid "Invalid"
-msgstr "Platný"
+msgstr ""
 
 #: app/HealthCertificateTest.qml:51 app/HealthCertificateTest.qml:79
 #, kde-format
@@ -1701,10 +1692,9 @@ msgid "Result"
 msgstr "Výsledek"
 
 #: app/HealthCertificateTest.qml:106
-#, fuzzy, kde-format
-#| msgid "Test Center:"
+#, kde-format
 msgid "Test Center"
-msgstr "Testovací centrum:"
+msgstr ""
 
 #: app/HealthCertificateVaccination.qml:64
 #, kde-format
@@ -1715,10 +1705,9 @@ msgstr[1] "%2 (před %1 dny)"
 msgstr[2] "%2 (před %1 dny)"
 
 #: app/HealthCertificateVaccination.qml:92
-#, fuzzy, kde-format
-#| msgid "Vaccine:"
+#, kde-format
 msgid "Vaccine"
-msgstr "Vakcína:"
+msgstr ""
 
 #: app/HealthCertificateVaccination.qml:101
 #, kde-format
@@ -1726,10 +1715,9 @@ msgid "Manufacturer"
 msgstr "Výrobce"
 
 #: app/HealthCertificateVaccination.qml:109
-#, fuzzy, kde-format
-#| msgid "Dose:"
+#, kde-format
 msgid "Dose"
-msgstr "Dávka:"
+msgstr ""
 
 #: app/HealthCertificateVaccination.qml:110
 #, kde-format
@@ -2038,10 +2026,9 @@ msgid "Load earlier connections"
 msgstr "Načíst dřívější spojení"
 
 #: app/JourneyQueryPage.qml:154
-#, fuzzy, kde-format
-#| msgid "No locations found"
+#, kde-format
 msgid "No journeys found."
-msgstr "Nenalezeno žádné místo"
+msgstr ""
 
 #: app/JourneyQueryPage.qml:181
 #, kde-format
@@ -4544,94 +4531,3 @@ msgstr "Odhlášen"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 z %3 do %4 na %5"
-
-#~ msgid "Public Transport Information Sources"
-#~ msgstr "Zdroje informací o veřejné dopravě"
-
-#~ msgid "Global"
-#~ msgstr "Globální"
-
-#~ msgid "🇪🇺 European Union"
-#~ msgstr "🇪🇺 Evropská unie"
-
-#~ msgid "European Union"
-#~ msgstr "Evropská unie"
-
-#~ msgid "Name:"
-#~ msgstr "Název:"
-
-#~ msgid "Positive test:"
-#~ msgstr "Pozitivní test:"
-
-#~ msgid "Valid from:"
-#~ msgstr "Platí od:"
-
-#~ msgid "Valid until:"
-#~ msgstr "Platný do:"
-
-#~ msgid "Type:"
-#~ msgstr "Typ:"
-
-#~ msgid "Test:"
-#~ msgstr "Test:"
-
-#~ msgid "Country:"
-#~ msgstr "Země:"
-
-#~ msgid "Select country"
-#~ msgstr "Vyberte zemi"
-
-#~ msgid "Clear History"
-#~ msgstr "Vyprázdnit historii"
-
-#~ msgid "Remove"
-#~ msgstr "Odstranit"
-
-#~ msgid "Clear history"
-#~ msgstr "Vyprázdnit historii"
-
-#~ msgid "Sort by name"
-#~ msgstr "Seřadit podle jména"
-
-#~ msgid "Most recently used"
-#~ msgstr "Naposled použité"
-
-#~ msgctxt "location name, locality, region, country"
-#~ msgid "%1, %2, %3, %4"
-#~ msgstr "%1, %2, %3, %4"
-
-#~ msgctxt "location name, locality, country"
-#~ msgid "%1, %2, %3"
-#~ msgstr "%1, %2, %3"
-
-#~ msgctxt "location name, region, country"
-#~ msgid "%1, %2, %3"
-#~ msgstr "%1, %2, %3"
-
-#~ msgctxt "locality, region, country"
-#~ msgid "%1, %2, %3"
-#~ msgstr "%1, %2, %3"
-
-#~ msgctxt "locality, country"
-#~ msgid "%1, %2"
-#~ msgstr "%1, %2"
-
-#~ msgctxt "region, country"
-#~ msgid "%1, %2"
-#~ msgstr "%1, %2"
-
-#~ msgctxt "distance in meter"
-#~ msgid "%1 m"
-#~ msgstr "%1 m"
-
-#~ msgctxt "distance in kilometer"
-#~ msgid "%1 km"
-#~ msgstr "%1 km"
-
-#~ msgctxt "speed in kilometers per hour"
-#~ msgid "%1 km/h"
-#~ msgstr "%1 km/h"
-
-#~ msgctxt "temperature"
-#~ msgid "%1°C"
-#~ msgstr "%1°C"

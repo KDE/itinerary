@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-12 00:42+0000\n"
-"PO-Revision-Date: 2025-04-27 09:27+0200\n"
+"PO-Revision-Date: 2025-05-12 12:42+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -2030,10 +2030,9 @@ msgid "Load earlier connections"
 msgstr "Carrega les connexions anteriors"
 
 #: app/JourneyQueryPage.qml:154
-#, fuzzy, kde-format
-#| msgid "No locations found"
+#, kde-format
 msgid "No journeys found."
-msgstr "No s'ha trobat cap ubicació"
+msgstr "No s'ha trobat cap viatge."
 
 #: app/JourneyQueryPage.qml:181
 #, kde-format
