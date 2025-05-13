@@ -14,7 +14,7 @@ import org.kde.kirigami as Kirigami
 import org.kde.kirigami.delegates as KirigamiDelegates
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kirigamiaddons.components as Components
-import org.kde.kpublictransport
+import org.kde.kpublictransport as KPublicTransport
 import org.kde.kpublictransport.ui as KPublicTransport
 import org.kde.itinerary
 
@@ -46,8 +46,8 @@ Kirigami.Page {
             }
 
             QQC2.Label {
-                text: i18nc("Direction of the transport mode", "To %1", journeySection.route.direction)
-                visible: journeySection.route.direction.length > 0
+                text: i18nc("Direction of the transport mode", "To %1", root.journeySection.route.direction)
+                visible: root.journeySection.route.direction.length > 0
                 elide: Text.ElideRight
                 Layout.fillWidth: true
             }
@@ -60,7 +60,7 @@ Kirigami.Page {
 
         QQC2.Label {
             text: i18n("Distance: %1", CoreAddons.Format.formatDistance(journeySection.distance, Settings.distanceFormat))
-            visible: journeySection.distance > 0
+            visible: root.journeySection.distance > 0
             wrapMode: Text.Wrap
 
             Layout.leftMargin: Kirigami.Units.largeSpacing

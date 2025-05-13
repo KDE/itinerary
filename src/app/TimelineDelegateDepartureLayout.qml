@@ -98,11 +98,12 @@ RowLayout {
             }
         }
 
-        DelayRow {
-            visible: root.departure.hasExpectedDepartureTime
+        KPublicTransport.ExpectedTimeLabel {
+            hasExpectedTime: root.departure.hasExpectedDepartureTime
+            visible: hasExpectedTime
             stopover: root.departure
             delay: root.departure.departureDelay
-            originalTime: Localizer.formatTime(root.departure, "scheduledDepartureTime")
+            scheduledTime: delayed ? Localizer.formatTime(root.departure, "scheduledDepartureTime") : ""
         }
 
         QQC2.Label {

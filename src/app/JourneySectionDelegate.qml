@@ -170,10 +170,11 @@ anchors.centerIn: parent
                     Layout.fillWidth: true
                 }
 
-                DelayRow {
+                KPublicTransport.ExpectedTimeLabel {
                     stopover: root.modelData.departure
                     delay: root.modelData.departureDelay
-                    originalTime: Localizer.formatTime(root.modelData, "scheduledDepartureTime")
+                    scheduledTime: delayed ? Localizer.formatTime(root.modelData, "scheduledDepartureTime") : ""
+                    hasExpectedTime: root.modelData.hasExpectedDepartureTime
                     visible: root.modelData.mode !== JourneySection.Walking && (root.modelData.hasExpectedDepartureTime || root.modelData.disruptionEffect === KPublicTransport.Disruption.NoService)
                 }
 
@@ -310,11 +311,12 @@ anchors.centerIn: parent
                     }
                 }
 
-                DelayRow {
+                KPublicTransport.ExpectedTimeLabel {
                     stopover: root.modelData.arrival
                     visible: root.modelData.mode !== JourneySection.Walking && (root.modelData.hasExpectedArrivalTime || root.modelData.disruptionEffect === KPublicTransport.Disruption.NoService)
                     delay: root.modelData.arrivalDelay
-                    originalTime: Localizer.formatTime(root.modelData, "scheduledArrivalTime")
+                    scheduledTime: delayed ? Localizer.formatTime(root.modelData, "scheduledArrivalTime") : ""
+                    hasExpectedTime: root.modelData.hasExpectedArrivalTime
                 }
 
                 QQC2.Label {

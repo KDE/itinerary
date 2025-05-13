@@ -6,6 +6,7 @@ import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kpublictransport
+import org.kde.kpublictransport.ui as KPublicTransport
 import org.kde.itinerary
 
 RowLayout {
@@ -77,11 +78,12 @@ RowLayout {
             }
         }
 
-        DelayRow {
+        KPublicTransport.ExpectedTimeLabel {
             stopover: root.arrival
-            visible: root.arrival.hasExpectedArrivalTime
+            hasExpectedTime: root.arrival.hasExpectedArrivalTime
+            visible: hasExpectedTime
             delay: root.arrival.arrivalDelay
-            originalTime: Localizer.formatTime(root.arrival, "scheduledArrivalTime")
+            scheduledTime: delayed ? Localizer.formatTime(root.arrival, "scheduledArrivalTime") : ""
         }
 
         QQC2.Label {
