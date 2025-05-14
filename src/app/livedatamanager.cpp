@@ -82,12 +82,8 @@ LiveDataManager::LiveDataManager(QObject *parent)
             if (journey.sections().empty()) {
                 return;
             }
-            auto subjny = PublicTransportMatcher::subJourneyForReservation(res, journey.sections()[0]);
-            if (subjny.mode() == KPublicTransport::JourneySection::Invalid) {
-                return;
-            }
 
-            applyJourney(resId, subjny);
+            applyJourney(resId, journey.sections()[0]);
         }
     });
 }
@@ -285,16 +281,23 @@ static void applyMissingJourneyData(KPublicTransport::JourneySection &journey, c
 
 void LiveDataManager::applyJourney(const QString &resId, const KPublicTransport::JourneySection &journey)
 {
+    // align with sub/super-journey with what we already have
+    const auto subjny = PublicTransportMatcher::subJourneyForReservation(m_resMgr->reservation(resId), journey);
+    if (subjny.mode() == KPublicTransport::JourneySection::Invalid) {
+        qCDebug(Log) << "Failed to find sub journey";
+        return;
+    }
+
     auto &ld = data(resId);
     const auto oldJny = ld.journey;
-    ld.journey = journey;
+    ld.journey = subjny;
 
     // retain already existing vehicle/platform layout data if we are still departing/arriving in the same place
-    if (PublicTransport::isSameStopoverForLayout(oldJny.departure(), journey.departure())) {
-        ld.journey.setDeparture(applyLayoutData(journey.departure(), oldJny.departure()));
+    if (PublicTransport::isSameStopoverForLayout(oldJny.departure(), ld.journey.departure())) {
+        ld.journey.setDeparture(applyLayoutData(ld.journey.departure(), oldJny.departure()));
     }
-    if (PublicTransport::isSameStopoverForLayout(oldJny.arrival(), journey.arrival())) {
-        ld.journey.setArrival(applyLayoutData(journey.arrival(), oldJny.arrival()));
+    if (PublicTransport::isSameStopoverForLayout(oldJny.arrival(), ld.journey.arrival())) {
+        ld.journey.setArrival(applyLayoutData(ld.journey.arrival(), oldJny.arrival()));
     }
     applyMissingJourneyData(ld.journey, oldJny);
 

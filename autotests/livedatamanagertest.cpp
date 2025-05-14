@@ -12,6 +12,7 @@
 #include "livedata.h"
 #include "livedatamanager.h"
 #include "reservationmanager.h"
+#include "timelinedelegatecontroller.h"
 
 #include <KItinerary/Reservation>
 #include <KItinerary/TrainTrip>
@@ -27,6 +28,7 @@
 
 #define s(x) QStringLiteral(x)
 
+using namespace Qt::Literals;
 using namespace KItinerary;
 
 class LiveDataManagerTest : public QObject
@@ -109,8 +111,7 @@ private Q_SLOTS:
         QCOMPARE(ldm.nextPollTimeForReservation(trainLeg2), 0);
         QTest::qWait(0);
         QCOMPARE(ldm.nextPollTime(), 0);
-        QCOMPARE(resMgr.reservation(trainLeg1).value<TrainReservation>().reservationFor().value<TrainTrip>().arrivalStation().address().addressLocality(),
-                 QString());
+        QCOMPARE(resMgr.reservation(trainLeg1).value<TrainReservation>().reservationFor().value<TrainTrip>().arrivalStation().address().addressLocality(), QString());
 
         const auto leg1Jny = KPublicTransport::JourneySection::fromJson(QJsonDocument::fromJson(Test::readFile(s(SOURCE_DIR "/data/livedata/randa2017-leg1-journey.json"))).object());
         ldm.applyJourney(trainLeg1, leg1Jny);
@@ -121,14 +122,64 @@ private Q_SLOTS:
         // reservation was updated with additional location data
         QCOMPARE(resChangeSpy.size(), 1);
         QCOMPARE(resChangeSpy.at(0).at(0).toString(), trainLeg1);
-        QCOMPARE(resMgr.reservation(trainLeg1).value<TrainReservation>().reservationFor().value<TrainTrip>().arrivalStation().address().addressLocality(),
-                 QLatin1StringView("Visp"));
+        QCOMPARE(resMgr.reservation(trainLeg1).value<TrainReservation>().reservationFor().value<TrainTrip>().arrivalStation().address().addressLocality(), "Visp"_L1);
 
         // verify this was persisted
         {
             LiveDataManager ldm2;
             QCOMPARE(ldm.arrival(trainLeg1).arrivalDelay(), 2);
         }
+
+        // applying the same again does not update the reservation
+        ldm.applyJourney(trainLeg1, leg1Jny);
+        QCOMPARE(journeyUpdateSpy.size(), 2);
+        QCOMPARE(ldm.arrival(trainLeg1).arrivalDelay(), 2);
+        QCOMPARE(resChangeSpy.size(), 1);
+
+        // applying the full trip will not change departure/arrival
+        const auto leg1FullJny = KPublicTransport::JourneySection::fromJson(QJsonDocument::fromJson(Test::readFile(s(SOURCE_DIR "/data/livedata/randa2017-leg1-full-journey.json"))).object());
+        ldm.applyJourney(trainLeg1, leg1FullJny);
+        QCOMPARE(journeyUpdateSpy.size(), 3);
+        QCOMPARE(ldm.arrival(trainLeg1).arrivalDelay(), 2);
+        QCOMPARE(resChangeSpy.size(), 1);
+        auto &ld = ldm.data(trainLeg1);
+        QCOMPARE(ld.departure().stopPoint().name(), u"Zürich Flughafen");
+        QCOMPARE(ld.arrival().stopPoint().name(), "Visp"_L1);
+
+        // applying full journey retains trip data
+        const auto leg1PartialJny = KPublicTransport::JourneySection::fromJson(QJsonDocument::fromJson(Test::readFile(s(SOURCE_DIR "/data/livedata/randa2017-leg1-partial-journey.json"))).object());
+        ldm.applyJourney(trainLeg1, leg1PartialJny);
+        QCOMPARE(journeyUpdateSpy.size(), 4);
+        QCOMPARE(ldm.arrival(trainLeg1).arrivalDelay(), 2);
+        QCOMPARE(resChangeSpy.size(), 1);
+        ld = ldm.data(trainLeg1);
+        QCOMPARE(ld.departure().stopPoint().name(), u"Zürich Flughafen");
+        QCOMPARE(ld.arrival().stopPoint().name(), "Visp"_L1);
+
+        // applying vehicle layouts
+        QCOMPARE(ld.arrival().vehicleLayout().features().size(), 0);
+        QCOMPARE(ld.arrival().platformLayout().isEmpty(), true);
+        TimelineDelegateController tdc;
+        tdc.setBatchId(trainLeg1);
+        tdc.setLiveDataManager(&ldm);
+        const auto arrivalVehicleLayout = KPublicTransport::Stopover::merge(leg1PartialJny.arrival(), KPublicTransport::Stopover::fromJson(QJsonDocument::fromJson(Test::readFile(s(SOURCE_DIR "/data/livedata/randa2017-leg1-arrival-vehicle-layout.json"))).object()));
+        QCOMPARE(arrivalVehicleLayout.vehicleLayout().combinedFeatures().size(), 4);
+        tdc.setVehicleLayout(arrivalVehicleLayout, true);
+        QCOMPARE(journeyUpdateSpy.size(), 5);
+        ld = ldm.data(trainLeg1);
+        QCOMPARE(ld.arrival().vehicleLayout().combinedFeatures().size(), 4);
+        QCOMPARE(ld.arrival().platformLayout().isEmpty(), false);
+
+        // applying full journey retains layout information
+        ldm.applyJourney(trainLeg1, leg1PartialJny);
+        QCOMPARE(journeyUpdateSpy.size(), 6);
+        QCOMPARE(ldm.arrival(trainLeg1).arrivalDelay(), 2);
+        QCOMPARE(resChangeSpy.size(), 1);
+        ld = ldm.data(trainLeg1);
+        QCOMPARE(ld.departure().stopPoint().name(), u"Zürich Flughafen");
+        QCOMPARE(ld.arrival().stopPoint().name(), "Visp"_L1);
+        QCOMPARE(ld.arrival().vehicleLayout().combinedFeatures().size(), 4);
+        QCOMPARE(ld.arrival().platformLayout().isEmpty(), false);
 
         // failed lookups are recorded to avoid a polling loop
         ldm.tripQueryFailed(trainLeg2);
