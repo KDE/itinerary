@@ -19,7 +19,22 @@ using namespace Qt::Literals::StringLiterals;
 
 bool LiveData::isEmpty() const
 {
-    return journey.from().isEmpty() && journey.to().isEmpty();
+    return trip.from().isEmpty() && trip.to().isEmpty();
+}
+
+KPublicTransport::JourneySection LiveData::journey() const
+{
+    return trip;
+}
+
+KPublicTransport::Stopover LiveData::departure() const
+{
+    return trip.departure();
+}
+
+KPublicTransport::Stopover LiveData::arrival() const
+{
+    return trip.arrival();
 }
 
 LiveData LiveData::load(const QString &resId)
@@ -32,7 +47,7 @@ LiveData LiveData::load(const QString &resId)
     }
 
     ld.journeyTimestamp = f.fileTime(QFile::FileModificationTime);
-    ld.journey = KPublicTransport::JourneySection::fromJson(JsonIO::read(f.readAll()).toObject());
+    ld.trip = KPublicTransport::JourneySection::fromJson(JsonIO::read(f.readAll()).toObject());
     return ld;
 }
 
@@ -43,13 +58,13 @@ void LiveData::store(const QString &resId) const
 
     const QString fileName = path + resId + ".json"_L1;
 
-    const auto obj = KPublicTransport::JourneySection::toJson(journey);
+    const auto obj = KPublicTransport::JourneySection::toJson(trip);
     if (obj.isEmpty()) {
         QFile::remove(fileName);
     } else {
         QFile file(fileName);
         if (!file.open(QFile::WriteOnly | QFile::Truncate)) {
-            qCWarning(Log) << "Failed to open public transport cache file:" << file.fileName() << file.errorString();
+            qCWarning(Log) << "Failed to open trip data file:" << file.fileName() << file.errorString();
             return;
         }
         file.write(JsonIO::write(obj));
@@ -80,7 +95,7 @@ std::vector<QString> LiveData::listAll()
 QJsonObject LiveData::toJson(const LiveData &ld)
 {
     QJsonObject obj;
-    obj.insert("journey"_L1, KPublicTransport::JourneySection::toJson(ld.journey));
+    obj.insert("journey"_L1, KPublicTransport::JourneySection::toJson(ld.trip));
     obj.insert("journeyTimestamp"_L1, ld.journeyTimestamp.toString(Qt::ISODate));
     return obj;
 }
@@ -88,17 +103,17 @@ QJsonObject LiveData::toJson(const LiveData &ld)
 LiveData LiveData::fromJson(const QJsonObject &obj)
 {
     LiveData ld;
-    ld.journey = KPublicTransport::JourneySection::fromJson(obj.value("journey"_L1).toObject());
+    ld.trip = KPublicTransport::JourneySection::fromJson(obj.value("journey"_L1).toObject());
     ld.journeyTimestamp = QDateTime::fromString(obj.value("journeyTimestamp"_L1).toString(), Qt::ISODate);
 
     // backward compatibility
     if (auto it = obj.find("departure"_L1); it != obj.end()) {
         const auto dep = KPublicTransport::Stopover::fromJson((*it).toObject());
-        ld.journey.setDeparture(dep);
+        ld.trip.setDeparture(dep);
     }
     if (auto it = obj.find("arrival"_L1); it != obj.end()) {
         const auto arr = KPublicTransport::Stopover::fromJson((*it).toObject());
-        ld.journey.setArrival(arr);
+        ld.trip.setArrival(arr);
     }
 
     return ld;

@@ -21,11 +21,12 @@ public:
 
     [[nodiscard]] bool isEmpty() const;
 
-    KPublicTransport::JourneySection journey;
+    KPublicTransport::JourneySection trip;
     QDateTime journeyTimestamp;
 
-    [[nodiscard]] inline KPublicTransport::Stopover departure() const { return journey.departure(); }
-    [[nodiscard]] inline KPublicTransport::Stopover arrival() const { return journey.arrival(); }
+    [[nodiscard]] KPublicTransport::JourneySection journey() const;
+    [[nodiscard]] KPublicTransport::Stopover departure() const;
+    [[nodiscard]] KPublicTransport::Stopover arrival() const;
 
     /** Load live data for reservation batch with id @resId. */
     [[nodiscard]] static LiveData load(const QString &resId);

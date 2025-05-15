@@ -48,8 +48,8 @@ private Q_SLOTS:
 
         {
             LiveData ld;
-            ld.journey.setMode(KPublicTransport::JourneySection::PublicTransport);
-            ld.journey.setScheduledDepartureTime({{2017, 9, 10}, {11, 0}});
+            ld.trip.setMode(KPublicTransport::JourneySection::PublicTransport);
+            ld.trip.setScheduledDepartureTime({{2017, 9, 10}, {11, 0}});
             ld.journeyTimestamp = {{2017, 1, 1}, {0, 0}};
             ld.store(s("testId"));
         }
@@ -58,9 +58,9 @@ private Q_SLOTS:
 
         {
             auto ld = LiveData::load(s("testId"));
-            QCOMPARE(ld.journey.scheduledDepartureTime(), QDateTime({2017, 9, 10}, {11, 0}));
+            QCOMPARE(ld.journey().scheduledDepartureTime(), QDateTime({2017, 9, 10}, {11, 0}));
             QCOMPARE(ld.journeyTimestamp, QDateTime({2017, 1, 1}, {0, 0}));
-            ld.journey = {};
+            ld.trip = {};
             ld.store(s("testId"));
         }
 
