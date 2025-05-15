@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-12 00:42+0000\n"
+"POT-Creation-Date: 2025-05-15 00:43+0000\n"
 "PO-Revision-Date: 2025-04-22 01:21+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -760,24 +760,6 @@ msgstr "이메일"
 msgid "Website"
 msgstr "웹사이트"
 
-#: app/DelayRow.qml:22 app/DepartureQueryPage.qml:133
-#, kde-format
-msgctxt "a train/bus journey canceled by its operator"
-msgid "Canceled"
-msgstr "취소됨"
-
-#: app/DelayRow.qml:24
-#, kde-format
-msgctxt "duration of the delay"
-msgid "Delayed %1"
-msgstr "지연: %1"
-
-#: app/DelayRow.qml:26
-#, kde-format
-msgctxt "@info"
-msgid "On time"
-msgstr "정시"
-
 #: app/DepartureQueryPage.qml:22
 #, kde-format
 msgid "Departures"
@@ -794,6 +776,12 @@ msgstr "더 일찍"
 #, kde-format
 msgid "Later"
 msgstr "더 나중"
+
+#: app/DepartureQueryPage.qml:133
+#, kde-format
+msgctxt "a train/bus journey canceled by its operator"
+msgid "Canceled"
+msgstr "취소됨"
 
 #: app/DepartureQueryPage.qml:184
 #, kde-format
@@ -2179,13 +2167,13 @@ msgstr "%1 %2(%3)"
 msgid "Drive %1 (%2)"
 msgstr "%1 운전(%2)"
 
-#: app/JourneySectionDelegate.qml:181 app/JourneySectionDelegate.qml:322
+#: app/JourneySectionDelegate.qml:182 app/JourneySectionDelegate.qml:324
 #, kde-format
 msgctxt "@info"
 msgid "Platform %1"
 msgstr "승강장 %1"
 
-#: app/JourneySectionDelegate.qml:249 app/JourneySectionPage.qml:134
+#: app/JourneySectionDelegate.qml:250 app/JourneySectionPage.qml:134
 #: app/VehicleLayoutPage.qml:240
 #, kde-format
 msgctxt "@action:button"
@@ -2249,12 +2237,12 @@ msgstr[0] "환승 %1회"
 msgid "Click to extend"
 msgstr "클릭하여 확장"
 
-#: app/livedatamanager.cpp:677
+#: app/livedatamanager.cpp:680
 #, kde-format
 msgid "Flight %1 to %2:"
 msgstr "%2(으)로 가는 %1 항공편|/|%2$[으 %2]로 가는 %1 항공편"
 
-#: app/livedatamanager.cpp:683
+#: app/livedatamanager.cpp:686
 #, kde-format
 msgid "Itinerary change"
 msgstr "여정 변경"
@@ -4538,6 +4526,14 @@ msgstr "로그아웃함"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%5에 %3에서 %4(으)로 가는 %1%2|/|%5에 %3에서 %4$[으 %4]로 가는 %1%2"
+
+#~ msgctxt "duration of the delay"
+#~ msgid "Delayed %1"
+#~ msgstr "지연: %1"
+
+#~ msgctxt "@info"
+#~ msgid "On time"
+#~ msgstr "정시"
 
 #~ msgid "Public Transport Information Sources"
 #~ msgstr "대중 교통 정보 원본"

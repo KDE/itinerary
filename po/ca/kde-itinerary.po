@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-12 00:42+0000\n"
-"PO-Revision-Date: 2025-05-12 12:42+0200\n"
+"POT-Creation-Date: 2025-05-15 00:43+0000\n"
+"PO-Revision-Date: 2025-05-14 10:23+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -770,24 +770,6 @@ msgstr "Correu electrònic"
 msgid "Website"
 msgstr "Lloc web"
 
-#: app/DelayRow.qml:22 app/DepartureQueryPage.qml:133
-#, kde-format
-msgctxt "a train/bus journey canceled by its operator"
-msgid "Canceled"
-msgstr "Cancel·lat"
-
-#: app/DelayRow.qml:24
-#, kde-format
-msgctxt "duration of the delay"
-msgid "Delayed %1"
-msgstr "Retard %1"
-
-#: app/DelayRow.qml:26
-#, kde-format
-msgctxt "@info"
-msgid "On time"
-msgstr "A l'hora"
-
 #: app/DepartureQueryPage.qml:22
 #, kde-format
 msgid "Departures"
@@ -804,6 +786,12 @@ msgstr "Més d'hora"
 #, kde-format
 msgid "Later"
 msgstr "Més tard"
+
+#: app/DepartureQueryPage.qml:133
+#, kde-format
+msgctxt "a train/bus journey canceled by its operator"
+msgid "Canceled"
+msgstr "Cancel·lat"
 
 #: app/DepartureQueryPage.qml:184
 #, kde-format
@@ -2172,13 +2160,13 @@ msgstr "%1 %2 (%3)"
 msgid "Drive %1 (%2)"
 msgstr "Condueix %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:181 app/JourneySectionDelegate.qml:322
+#: app/JourneySectionDelegate.qml:182 app/JourneySectionDelegate.qml:324
 #, kde-format
 msgctxt "@info"
 msgid "Platform %1"
 msgstr "Andana %1"
 
-#: app/JourneySectionDelegate.qml:249 app/JourneySectionPage.qml:134
+#: app/JourneySectionDelegate.qml:250 app/JourneySectionPage.qml:134
 #: app/VehicleLayoutPage.qml:240
 #, kde-format
 msgctxt "@action:button"
@@ -2244,12 +2232,12 @@ msgstr[1] "%1 canvis"
 msgid "Click to extend"
 msgstr "Cliqueu per a ampliar"
 
-#: app/livedatamanager.cpp:677
+#: app/livedatamanager.cpp:680
 #, kde-format
 msgid "Flight %1 to %2:"
 msgstr "Vol %1 a %2:"
 
-#: app/livedatamanager.cpp:683
+#: app/livedatamanager.cpp:686
 #, kde-format
 msgid "Itinerary change"
 msgstr "Canvi en l'itinerari"
@@ -3035,12 +3023,12 @@ msgstr "Canvis a %1"
 #: app/notificationhelper.cpp:70
 #, kde-format
 msgid "Delays on %1"
-msgstr "Retards a %1"
+msgstr "Endarreriments a %1"
 
 #: app/notificationhelper.cpp:73
 #, kde-format
 msgid "Delayed departure on %1"
-msgstr "Sortida amb demora a %1"
+msgstr "Sortida endarrerida a %1"
 
 #: app/notificationhelper.cpp:76
 #, kde-format
@@ -3050,7 +3038,7 @@ msgstr "Sortida avançada a %1"
 #: app/notificationhelper.cpp:79
 #, kde-format
 msgid "Delayed arrival on %1"
-msgstr "Arribada amb retard a %1"
+msgstr "Arribada endarrerida a %1"
 
 #: app/notificationhelper.cpp:83
 #, kde-format
@@ -3418,7 +3406,7 @@ msgid ""
 "such as delays or gate and platform changes."
 msgstr ""
 "Quan estigui habilitat, es consultaran els serveis en línia del proveïdor de "
-"transports per a canvis com retards o canvis de porta i andana."
+"transports per a canvis com endarreriments o canvis de porta i andana."
 
 #: app/SettingsPage.qml:62
 #, kde-format
@@ -4592,99 +4580,10 @@ msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 des de %3 a %4 el %5"
 
-#~ msgid "Public Transport Information Sources"
-#~ msgstr "Fonts d'informació de transport públic"
+#~ msgctxt "duration of the delay"
+#~ msgid "Delayed %1"
+#~ msgstr "Endarrerit %1"
 
-#~ msgid "Global"
-#~ msgstr "Global"
-
-#~ msgid "🇪🇺 European Union"
-#~ msgstr "🇪🇺 Unió Europea"
-
-#~ msgid "European Union"
-#~ msgstr "Unió Europea"
-
-#~ msgid "Name:"
-#~ msgstr "Nom:"
-
-#~ msgid "Positive test:"
-#~ msgstr "Prova positiva:"
-
-#~ msgid "Valid from:"
-#~ msgstr "Vàlid des de:"
-
-#~ msgid "Valid until:"
-#~ msgstr "Vàlid fins a:"
-
-#~ msgid "Type:"
-#~ msgstr "Tipus:"
-
-#~ msgid "Test:"
-#~ msgstr "Prova:"
-
-#~ msgid "Country:"
-#~ msgstr "País:"
-
-#~ msgid "Select country"
-#~ msgstr "Seleccioneu el país"
-
-#~ msgid "Clear History"
-#~ msgstr "Neteja l'historial"
-
-#~ msgid "Do you really want to remove all previously searched locations?"
-#~ msgstr ""
-#~ "Segur que voleu eliminar totes les ubicacions cercades anteriorment?"
-
-#~ msgid "Remove"
-#~ msgstr "Elimina"
-
-#~ msgid "Clear history"
-#~ msgstr "Neteja l'historial"
-
-#~ msgid "Sort by name"
-#~ msgstr "Ordena per nom"
-
-#~ msgid "Most recently used"
-#~ msgstr "Usada més recent"
-
-#~ msgid "Most often used"
-#~ msgstr "Usada sovint"
-
-#~ msgctxt "location name, locality, region, country"
-#~ msgid "%1, %2, %3, %4"
-#~ msgstr "%1, %2, %3, %4"
-
-#~ msgctxt "location name, locality, country"
-#~ msgid "%1, %2, %3"
-#~ msgstr "%1, %2, %3"
-
-#~ msgctxt "location name, region, country"
-#~ msgid "%1, %2, %3"
-#~ msgstr "%1, %2, %3"
-
-#~ msgctxt "locality, region, country"
-#~ msgid "%1, %2, %3"
-#~ msgstr "%1, %2, %3"
-
-#~ msgctxt "locality, country"
-#~ msgid "%1, %2"
-#~ msgstr "%1, %2"
-
-#~ msgctxt "region, country"
-#~ msgid "%1, %2"
-#~ msgstr "%1, %2"
-
-#~ msgid "Remove history entry"
-#~ msgstr "Elimina l'entrada de l'historial"
-
-#~ msgctxt "Duration in minutes"
-#~ msgid "%1 min"
-#~ msgstr "%1 min"
-
-#~ msgctxt "Duration in hours and minutes"
-#~ msgid "%1 hr"
-#~ msgstr "%1 h"
-
-#~ msgctxt "Duration in hours and minutes"
-#~ msgid "%1 hr %2 min"
-#~ msgstr "%1 h %2 min"
+#~ msgctxt "@info"
+#~ msgid "On time"
+#~ msgstr "A l'hora"

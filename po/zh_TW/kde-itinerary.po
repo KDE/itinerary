@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-12 00:42+0000\n"
+"POT-Creation-Date: 2025-05-15 00:43+0000\n"
 "PO-Revision-Date: 2024-11-28 16:26+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -777,26 +777,6 @@ msgstr "電子郵件"
 msgid "Website"
 msgstr "網站"
 
-#: app/DelayRow.qml:22 app/DepartureQueryPage.qml:133
-#, kde-format
-msgctxt "a train/bus journey canceled by its operator"
-msgid "Canceled"
-msgstr "已取消"
-
-#: app/DelayRow.qml:24
-#, fuzzy, kde-format
-#| msgid "Delays on %1"
-msgctxt "duration of the delay"
-msgid "Delayed %1"
-msgstr "在 %1 的延後"
-
-#: app/DelayRow.qml:26
-#, fuzzy, kde-format
-#| msgid "End time"
-msgctxt "@info"
-msgid "On time"
-msgstr "結束時間"
-
 #: app/DepartureQueryPage.qml:22
 #, kde-format
 msgid "Departures"
@@ -813,6 +793,12 @@ msgstr "更早"
 #, kde-format
 msgid "Later"
 msgstr "更晚"
+
+#: app/DepartureQueryPage.qml:133
+#, kde-format
+msgctxt "a train/bus journey canceled by its operator"
+msgid "Canceled"
+msgstr "已取消"
 
 #: app/DepartureQueryPage.qml:184
 #, kde-format
@@ -2215,14 +2201,14 @@ msgstr "%1 %2 (%3)"
 msgid "Drive %1 (%2)"
 msgstr ""
 
-#: app/JourneySectionDelegate.qml:181 app/JourneySectionDelegate.qml:322
+#: app/JourneySectionDelegate.qml:182 app/JourneySectionDelegate.qml:324
 #, fuzzy, kde-format
 #| msgid "Platform: %1"
 msgctxt "@info"
 msgid "Platform %1"
 msgstr "月台：%1"
 
-#: app/JourneySectionDelegate.qml:249 app/JourneySectionPage.qml:134
+#: app/JourneySectionDelegate.qml:250 app/JourneySectionPage.qml:134
 #: app/VehicleLayoutPage.qml:240
 #, kde-format
 msgctxt "@action:button"
@@ -2288,12 +2274,12 @@ msgstr[0] "%1 次轉乘"
 msgid "Click to extend"
 msgstr "按一下來展開"
 
-#: app/livedatamanager.cpp:677
+#: app/livedatamanager.cpp:680
 #, kde-format
 msgid "Flight %1 to %2:"
 msgstr "從 %1 到 %2 的航班："
 
-#: app/livedatamanager.cpp:683
+#: app/livedatamanager.cpp:686
 #, kde-format
 msgid "Itinerary change"
 msgstr "行程預訂變更"
@@ -4603,6 +4589,18 @@ msgstr "登出"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 從 %3 到 %4 於 %5"
+
+#, fuzzy
+#~| msgid "Delays on %1"
+#~ msgctxt "duration of the delay"
+#~ msgid "Delayed %1"
+#~ msgstr "在 %1 的延後"
+
+#, fuzzy
+#~| msgid "End time"
+#~ msgctxt "@info"
+#~ msgid "On time"
+#~ msgstr "結束時間"
 
 #~ msgid "Public Transport Information Sources"
 #~ msgstr "公共運輸資訊來源"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-12 00:42+0000\n"
+"POT-Creation-Date: 2025-05-15 00:43+0000\n"
 "PO-Revision-Date: 2025-05-12 09:50+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -780,24 +780,6 @@ msgstr "Ел. пошта"
 msgid "Website"
 msgstr "Сайт"
 
-#: app/DelayRow.qml:22 app/DepartureQueryPage.qml:133
-#, kde-format
-msgctxt "a train/bus journey canceled by its operator"
-msgid "Canceled"
-msgstr "Скасовано"
-
-#: app/DelayRow.qml:24
-#, kde-format
-msgctxt "duration of the delay"
-msgid "Delayed %1"
-msgstr "Затримка %1"
-
-#: app/DelayRow.qml:26
-#, kde-format
-msgctxt "@info"
-msgid "On time"
-msgstr "Вчасно"
-
 #: app/DepartureQueryPage.qml:22
 #, kde-format
 msgid "Departures"
@@ -814,6 +796,12 @@ msgstr "Раніше"
 #, kde-format
 msgid "Later"
 msgstr "Пізніше"
+
+#: app/DepartureQueryPage.qml:133
+#, kde-format
+msgctxt "a train/bus journey canceled by its operator"
+msgid "Canceled"
+msgstr "Скасовано"
 
 #: app/DepartureQueryPage.qml:184
 #, kde-format
@@ -2183,13 +2171,13 @@ msgstr "%1 %2 (%3)"
 msgid "Drive %1 (%2)"
 msgstr "Проїзд %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:181 app/JourneySectionDelegate.qml:322
+#: app/JourneySectionDelegate.qml:182 app/JourneySectionDelegate.qml:324
 #, kde-format
 msgctxt "@info"
 msgid "Platform %1"
 msgstr "Платформа %1"
 
-#: app/JourneySectionDelegate.qml:249 app/JourneySectionPage.qml:134
+#: app/JourneySectionDelegate.qml:250 app/JourneySectionPage.qml:134
 #: app/VehicleLayoutPage.qml:240
 #, kde-format
 msgctxt "@action:button"
@@ -2256,12 +2244,12 @@ msgstr[3] "%1 зміна"
 msgid "Click to extend"
 msgstr "Натисніть, щоб розширити"
 
-#: app/livedatamanager.cpp:677
+#: app/livedatamanager.cpp:680
 #, kde-format
 msgid "Flight %1 to %2:"
 msgstr "Рейс %1 до %2:"
 
-#: app/livedatamanager.cpp:683
+#: app/livedatamanager.cpp:686
 #, kde-format
 msgid "Itinerary change"
 msgstr "Зміна маршруту"
@@ -4602,6 +4590,14 @@ msgstr "Вийшли"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 з %3 до %4 %5"
+
+#~ msgctxt "duration of the delay"
+#~ msgid "Delayed %1"
+#~ msgstr "Затримка %1"
+
+#~ msgctxt "@info"
+#~ msgid "On time"
+#~ msgstr "Вчасно"
 
 #~ msgid "Public Transport Information Sources"
 #~ msgstr "Джерела даних щодо громадського транспорту"

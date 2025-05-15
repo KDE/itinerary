@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2021, 2024 Alois Spitzbart <spitz234@hotmail.com>
+# SPDX-FileCopyrightText: 2021, 2024, 2025 Alois Spitzbart <spitz234@hotmail.com>
 # Burkhard Lück <lueck@hube-lueck.de>, 2019, 2020, 2021.
 # Frederik Schwarzer <schwarzer@kde.org>, 2021, 2022, 2023.
 # Frank Steinmetzger <dev-kde@felsenfleischer.de>, 2022.
@@ -8,16 +8,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-12 00:42+0000\n"
-"PO-Revision-Date: 2024-09-08 19:06+0200\n"
-"Last-Translator: Alois.spitzbart <spitz234@hotmail.com>\n"
+"POT-Creation-Date: 2025-05-15 00:43+0000\n"
+"PO-Revision-Date: 2025-05-06 18:10+0200\n"
+"Last-Translator: Alois Spitzbart <spitz234@hotmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 25.07.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -279,9 +279,7 @@ msgid "Replace"
 msgstr "Ersetzen"
 
 #: app/applicationcontroller.cpp:188
-#, fuzzy, kde-format
-#| msgctxt "weekday, date"
-#| msgid "%1, %2"
+#, kde-format
 msgctxt "geo coordinate"
 msgid "%1, %2"
 msgstr "%1, %2"
@@ -369,18 +367,15 @@ msgid "Light"
 msgstr "Licht"
 
 #: app/BoatDelegate.qml:29
-#, fuzzy, kde-format
-#| msgctxt "journey query search constraint, title"
-#| msgid "Ferry"
+#, kde-format
 msgctxt "default transport name for a boat trip"
 msgid "Ferry"
 msgstr "Fähre"
 
 #: app/BoatEditor.qml:17
-#, fuzzy, kde-format
-#| msgid "Add train trip..."
+#, kde-format
 msgid "New Boat Trip"
-msgstr "Zugreise hinzufügen ..."
+msgstr "Neue Bootsfahrt"
 
 #: app/BoatEditor.qml:17
 #, kde-format
@@ -526,53 +521,43 @@ msgid "Booking"
 msgstr "Buchung"
 
 #: app/BusDelegate.qml:37
-#, fuzzy, kde-format
-#| msgid "Bus"
+#, kde-format
 msgctxt "@info"
 msgid "Bus"
 msgstr "Bus"
 
 #: app/BusDelegate.qml:52 app/BusDelegate.qml:220
-#, fuzzy, kde-format
-#| msgid "Platform change on %1"
+#, kde-format
 msgctxt "bus station platform"
 msgid "Platform changed to %1"
-msgstr "Bahnsteigwechsel von %1"
+msgstr "Bahnsteig geändert zu %1"
 
 #: app/BusDelegate.qml:54 app/BusDelegate.qml:222
-#, fuzzy, kde-format
-#| msgid "Platform: %1"
+#, kde-format
 msgctxt "bus station platform"
 msgid "Platform %1"
-msgstr "Bahnsteig: %1"
+msgstr "Bahnsteig %1"
 
 #: app/BusDelegate.qml:76
-#, fuzzy, kde-format
-#| msgctxt "train seat"
-#| msgid "Seat: <b>%1</b>"
+#, kde-format
 msgctxt "bus seat"
 msgid "Seat: <b>%1</b>"
 msgstr "Sitz: <b>%1</b>"
 
 #: app/BusDelegate.qml:107 app/TrainDelegate.qml:116
-#, fuzzy, kde-format
-#| msgid "1 intermediate stop"
-#| msgid_plural "%1 intermediate stops"
+#, kde-format
 msgid "1 intermediate stop (%2)"
 msgid_plural "%1 intermediate stops (%2)"
-msgstr[0] "1 Zwischenhalt"
-msgstr[1] "%1 Zwischenhalte"
+msgstr[0] "1 Zwischenhalt (%2)"
+msgstr[1] "%1 Zwischenhalte (%2)"
 
 #: app/BusDelegate.qml:117 app/TrainDelegate.qml:126
-#, fuzzy, kde-format
-#| msgid "1 intermediate stop"
-#| msgid_plural "%1 intermediate stops"
+#, kde-format
 msgid "0 intermediate stop (%1)"
-msgstr "1 Zwischenhalt"
+msgstr "0 Zwischenhalte (%1)"
 
 #: app/BusDelegate.qml:237 app/TrainDelegate.qml:248
-#, fuzzy, kde-format
-#| msgid "%1 to %2"
+#, kde-format
 msgctxt "from location 1 to location 2"
 msgid "%1 to %2"
 msgstr "%1 nach %2"
@@ -787,26 +772,6 @@ msgstr "E-Mail"
 msgid "Website"
 msgstr "Webseite"
 
-#: app/DelayRow.qml:22 app/DepartureQueryPage.qml:133
-#, kde-format
-msgctxt "a train/bus journey canceled by its operator"
-msgid "Canceled"
-msgstr "Gestrichen"
-
-#: app/DelayRow.qml:24
-#, fuzzy, kde-format
-#| msgid "Delays on %1"
-msgctxt "duration of the delay"
-msgid "Delayed %1"
-msgstr "Verspätung von %1"
-
-#: app/DelayRow.qml:26
-#, fuzzy, kde-format
-#| msgid "End time"
-msgctxt "@info"
-msgid "On time"
-msgstr "Endzeitpunkt"
-
 #: app/DepartureQueryPage.qml:22
 #, kde-format
 msgid "Departures"
@@ -823,6 +788,12 @@ msgstr "Früher"
 #, kde-format
 msgid "Later"
 msgstr "Später"
+
+#: app/DepartureQueryPage.qml:133
+#, kde-format
+msgctxt "a train/bus journey canceled by its operator"
+msgid "Canceled"
+msgstr "Gestrichen"
 
 #: app/DepartureQueryPage.qml:184
 #, kde-format
@@ -934,12 +905,10 @@ msgid "Number: <b>%1</b>"
 msgstr "Nummer: <b>%1</b>"
 
 #: app/EventEditor.qml:19
-#, fuzzy, kde-format
-#| msgctxt "event as in concert/conference/show, not as in appointment"
-#| msgid "Event"
+#, kde-format
 msgctxt "event as in concert/conference/show, not as in appointment"
 msgid "New Event"
-msgstr "Veranstaltung"
+msgstr "Neue Veranstaltung"
 
 #: app/EventEditor.qml:20
 #, kde-format
@@ -1012,12 +981,10 @@ msgid "Seat"
 msgstr "Sitz"
 
 #: app/EventPage.qml:127
-#, fuzzy, kde-format
-#| msgctxt "flight departure gate"
-#| msgid "Gate: <b>%1</b>"
+#, kde-format
 msgctxt "event venue seat type"
 msgid "Type: <b>%1</b>"
-msgstr "Gate: <b>%1</b>"
+msgstr "Typ: <b>%1</b>"
 
 #: app/favoritelocationmodel.cpp:135 app/favoritelocationmodel.cpp:155
 #, kde-format
@@ -1098,11 +1065,10 @@ msgid "Pick Location"
 msgstr "Ort auswählen"
 
 #: app/FlightDelegate.qml:62
-#, fuzzy, kde-format
-#| msgid "Boarding time:"
+#, kde-format
 msgctxt "@info"
 msgid "Boarding time: %1"
-msgstr "Boardingzeit:"
+msgstr "Boarding-Zeit: %1"
 
 #: app/FlightDelegate.qml:74
 #, kde-format
@@ -1123,11 +1089,10 @@ msgid "Seat: <b>%1</b>"
 msgstr "Sitz: <b>%1</b>"
 
 #: app/FlightDelegate.qml:98
-#, fuzzy, kde-format
-#| msgid "Terminal"
+#, kde-format
 msgctxt "airport terminal"
 msgid "Terminal %1"
-msgstr "Terminal"
+msgstr "Terminal %1"
 
 #: app/FlightDelegate.qml:102
 #, kde-format
@@ -1135,10 +1100,9 @@ msgid "%1 %2 → %3"
 msgstr "%1 %2 → %3"
 
 #: app/FlightEditor.qml:17
-#, fuzzy, kde-format
-#| msgid "Flight"
+#, kde-format
 msgid "New Flight"
-msgstr "Flug"
+msgstr "Neuer Flug"
 
 #: app/FlightEditor.qml:17
 #, kde-format
@@ -1198,8 +1162,7 @@ msgid "Boarding time has to be before the departure time."
 msgstr "Die Boarding-Zeit muss vor der Abflugszeit liegen."
 
 #: app/FlightEditor.qml:139
-#, fuzzy, kde-format
-#| msgid "Boarding group"
+#, kde-format
 msgctxt "flight departure boarding group"
 msgid "Boarding group"
 msgstr "Boarding-Gruppe"
@@ -1549,8 +1512,7 @@ msgid "Recovery certificate valid"
 msgstr "Genesungsnachweis gültig"
 
 #: app/healthcertificatemanager.cpp:145
-#, fuzzy, kde-format
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "health certificate"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
@@ -1701,9 +1663,7 @@ msgstr "Signatur:"
 
 #: app/HealthCertificateRecovery.qml:135 app/HealthCertificateTest.qml:173
 #: app/HealthCertificateVaccination.qml:180
-#, fuzzy, kde-format
-#| msgctxt "not yet expired tickets"
-#| msgid "Valid"
+#, kde-format
 msgctxt "Signature state"
 msgid "Valid"
 msgstr "Gültig"
@@ -1794,10 +1754,9 @@ msgid "Check-out time: %1"
 msgstr "Check-out-Zeit: %1"
 
 #: app/HotelEditor.qml:19
-#, fuzzy, kde-format
-#| msgid "Hotel Reservation"
+#, kde-format
 msgid "New Hotel Reservation"
-msgstr "Hotelreservierung"
+msgstr "Neue Hotelreservierung"
 
 #: app/HotelEditor.qml:19
 #, kde-format
@@ -2154,10 +2113,9 @@ msgid "Search Journey"
 msgstr "Reise suchen"
 
 #: app/JourneyRequestPage.qml:236
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgid "Mode of transportation"
-msgstr "Weitere Informationen"
+msgstr "Transportmittel"
 
 #: app/JourneyRequestPage.qml:243
 #, kde-format
@@ -2190,9 +2148,7 @@ msgid "Boats or ferries"
 msgstr "Boote oder Fähren"
 
 #: app/JourneySectionDelegate.qml:143
-#, fuzzy, kde-format
-#| msgctxt "to travel destination"
-#| msgid "To %1"
+#, kde-format
 msgid "To %1"
 msgstr "Nach %1"
 
@@ -2226,14 +2182,13 @@ msgstr "%1 %2 (%3)"
 msgid "Drive %1 (%2)"
 msgstr "Fahrt %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:181 app/JourneySectionDelegate.qml:322
-#, fuzzy, kde-format
-#| msgid "Platform: %1"
+#: app/JourneySectionDelegate.qml:182 app/JourneySectionDelegate.qml:324
+#, kde-format
 msgctxt "@info"
 msgid "Platform %1"
-msgstr "Bahnsteig: %1"
+msgstr "Bahnsteig %1"
 
-#: app/JourneySectionDelegate.qml:249 app/JourneySectionPage.qml:134
+#: app/JourneySectionDelegate.qml:250 app/JourneySectionPage.qml:134
 #: app/VehicleLayoutPage.qml:240
 #, kde-format
 msgctxt "@action:button"
@@ -2242,9 +2197,7 @@ msgstr "Mehr anzeigen …"
 
 #: app/JourneySectionPage.qml:49 app/TimelineDelegateDepartureLayout.qml:94
 #: app/VehicleLayoutPage.qml:143
-#, fuzzy, kde-format
-#| msgctxt "to travel destination"
-#| msgid "To %1"
+#, kde-format
 msgctxt "Direction of the transport mode"
 msgid "To %1"
 msgstr "Nach %1"
@@ -2300,12 +2253,12 @@ msgstr[1] "%1 Umstiege"
 msgid "Click to extend"
 msgstr "Zum Erweitern klicken"
 
-#: app/livedatamanager.cpp:677
+#: app/livedatamanager.cpp:680
 #, kde-format
 msgid "Flight %1 to %2:"
 msgstr "Flug %1 nach %2:"
 
-#: app/livedatamanager.cpp:683
+#: app/livedatamanager.cpp:686
 #, kde-format
 msgid "Itinerary change"
 msgstr "Reiseplan geändert"
@@ -2627,11 +2580,10 @@ msgid "Help"
 msgstr "Hilfe"
 
 #: app/Main.qml:268
-#, fuzzy, kde-format
-#| msgid "Wi-Fi access for onboard information is available."
+#, kde-format
 msgctxt "@info:status"
 msgid "No onboard information available."
-msgstr "WLAN-Zugang für Bordinformationen ist verfügbar."
+msgstr "Keine Bordinformationen verfügbar."
 
 #: app/Main.qml:310
 #, kde-format
@@ -2656,9 +2608,7 @@ msgid "Occupancy:"
 msgstr "Auslastung:"
 
 #: app/MapStopoverInfoSheetDrawer.qml:88
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "View Indoor Map"
+#, kde-format
 msgid "Show indoor map"
 msgstr "Innenraumkarte anzeigen"
 
@@ -2673,54 +2623,57 @@ msgstr "Matrix-Integration"
 msgctxt "Matrix session verification"
 msgid "Waiting for device to accept verification."
 msgstr ""
+"Es wird auf die Annahme der Sitzungsverifizierung durch das Gerät gewartet."
 
 #: app/MatrixKeyVerificationPage.qml:43
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Incoming key verification request from device <b>%1</b>"
-msgstr ""
+msgstr "Eintreffende Anfrage zur Schlüsselverifizierung von Gerät <b>%1</b>"
 
 #: app/MatrixKeyVerificationPage.qml:45
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Waiting for other party to verify."
-msgstr ""
+msgstr "Warten auf Verifizierung durch Gegenseite."
 
 #: app/MatrixKeyVerificationPage.qml:47
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Successfully verified device <b>%1</b>"
-msgstr ""
+msgstr "Gerät <b>%1</b> erfolgreich verifiziert"
 
 #: app/MatrixKeyVerificationPage.qml:52
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session verification was canceled for unknown reason."
 msgstr ""
+"Die Sitzungsverifizierung wurde aus einem unbekannten Grund abgebrochen."
 
 #: app/MatrixKeyVerificationPage.qml:54
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session verification timed out."
-msgstr ""
+msgstr "Zeitüberschreitung während der Sitzungsverifizierung."
 
 #: app/MatrixKeyVerificationPage.qml:56
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session verification timed out for remote party."
 msgstr ""
+"Zeitüberschreitung auf der Gegenseite während der Sitzungsverifizierung."
 
 #: app/MatrixKeyVerificationPage.qml:58
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "You canceled the session verification."
-msgstr ""
+msgstr "Sie haben die Sitzungsverifizierung abgebrochen."
 
 #: app/MatrixKeyVerificationPage.qml:60
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The remote party canceled the session verification."
-msgstr ""
+msgstr "Die Gegenseite hat die Sitzungsverifizierung abgebrochen."
 
 #: app/MatrixKeyVerificationPage.qml:62
 #, kde-format
@@ -2729,6 +2682,8 @@ msgid ""
 "The session verification was canceled because we received an unexpected "
 "message."
 msgstr ""
+"Die Sitzungsverifizierung wurde abgebrochen, weil eine unerwartete Nachricht "
+"empfangen worden ist."
 
 #: app/MatrixKeyVerificationPage.qml:64
 #, kde-format
@@ -2737,6 +2692,8 @@ msgid ""
 "The remote party canceled the session verification because it received an "
 "unexpected message."
 msgstr ""
+"Die Sitzungsverifizierung wurde von der Gegenseite abgebrochen, weil sie "
+"eine unerwartete Nachricht empfangen hat."
 
 #: app/MatrixKeyVerificationPage.qml:66
 #, kde-format
@@ -2745,6 +2702,8 @@ msgid ""
 "The session verification was canceled because it received a message for an "
 "unknown session."
 msgstr ""
+"Die Sitzungsverifizierung wurde abgebrochen, weil sie eine Nachricht zu "
+"einer unbekannten Sitzung empfangen hat."
 
 #: app/MatrixKeyVerificationPage.qml:68
 #, kde-format
@@ -2753,6 +2712,8 @@ msgid ""
 "The remote party canceled the session verification because it received a "
 "message for an unknown session."
 msgstr ""
+"Die Sitzungsverifizierung wurde von der Gegenseite abgebrochen, weil sie "
+"eine Nachricht zu einer unbekannten Sitzung empfangen hat."
 
 #: app/MatrixKeyVerificationPage.qml:70
 #, kde-format
@@ -2761,6 +2722,8 @@ msgid ""
 "The session verification was canceled because NeoChat is unable to handle "
 "this verification method."
 msgstr ""
+"Die Sitzungsverifizierung wurde abgebrochen, weil NeoChat diese "
+"Verifizierungsmethode nicht verarbeiten kann."
 
 #: app/MatrixKeyVerificationPage.qml:72
 #, kde-format
@@ -2769,12 +2732,16 @@ msgid ""
 "The remote party canceled the session verification because it is unable to "
 "handle this verification method."
 msgstr ""
+"Die Sitzungsverifizierung wurde von der Gegenseite abgebrochen, weil sie "
+"diese Verifizierungsmethode nicht verarbeiten kann."
 
 #: app/MatrixKeyVerificationPage.qml:74
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session verification was canceled because the keys are incorrect."
 msgstr ""
+"Die Sitzungsverifizierung wurde abgebrochen, weil die Schlüssel nicht "
+"korrekt sind."
 
 #: app/MatrixKeyVerificationPage.qml:76
 #, kde-format
@@ -2792,6 +2759,8 @@ msgctxt "Matrix session verification"
 msgid ""
 "The session verification was canceled because it verifies an unexpected user."
 msgstr ""
+"Die Sitzungsverifizierung wurde abgebrochen, weil sie einen unerwarteten "
+"Benutzer verifiziert."
 
 #: app/MatrixKeyVerificationPage.qml:80
 #, kde-format
@@ -2800,6 +2769,8 @@ msgid ""
 "The remote party canceled the session verification because it verifies an "
 "unexpected user."
 msgstr ""
+"Die Sitzungsverifizierung wurde von der Gegenseite abgebrochen, weil sie "
+"einen unerwarteten Benutzer verifiziert."
 
 #: app/MatrixKeyVerificationPage.qml:82
 #, kde-format
@@ -2807,6 +2778,8 @@ msgctxt "Matrix session verification"
 msgid ""
 "The session verification was canceled because we received an invalid message."
 msgstr ""
+"Die Sitzungsverifizierung wurde abgebrochen, weil eine ungültige Nachricht "
+"empfangen worden ist."
 
 #: app/MatrixKeyVerificationPage.qml:84
 #, kde-format
@@ -2815,18 +2788,21 @@ msgid ""
 "The remote party canceled the session verification because it received an "
 "invalid message."
 msgstr ""
+"Die Sitzungsverifizierung wurde von der Gegenseite abgebrochen, weil sie "
+"eine ungültige Nachricht empfangen hat."
 
 #: app/MatrixKeyVerificationPage.qml:87
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session was accepted on a different device"
-msgstr ""
+msgstr "Die Sitzung wurde auf einem anderen Gerät akzeptiert"
 
 #: app/MatrixKeyVerificationPage.qml:89
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session verification was canceled because of a mismatched key."
 msgstr ""
+"Die Sitzungsverifizierung wurde wegen eines falschen Schlüssels abgebrochen."
 
 #: app/MatrixKeyVerificationPage.qml:91
 #, kde-format
@@ -2835,12 +2811,16 @@ msgid ""
 "The remote party canceled the session verification because of a mismatched "
 "key."
 msgstr ""
+"Die Sitzungsverifizierung wurde von der Gegenseite wegen eines falschen "
+"Schlüssels abgebrochen."
 
 #: app/MatrixKeyVerificationPage.qml:93
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session verification was canceled because the keys do not match."
 msgstr ""
+"Die Sitzungsverifizierung wurde abgebrochen, weil die Schlüssel nicht "
+"übereinstimmen."
 
 #: app/MatrixKeyVerificationPage.qml:95
 #, kde-format
@@ -2849,25 +2829,27 @@ msgid ""
 "The remote party canceled the session verification because the keys do not "
 "match."
 msgstr ""
+"Die Sitzungsverifizierung wurde von der Gegenseite abgebrochen, weil die "
+"Schlüssel nicht übereinstimmen."
 
 #: app/MatrixKeyVerificationPage.qml:97
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session verification was canceled due to an unknown error."
 msgstr ""
+"Die Sitzungsverifizierung wurde wegen eines unbekannten Fehlers abgebrochen."
 
 #: app/MatrixKeyVerificationPage.qml:114
-#, fuzzy, kde-format
-#| msgid "Notifications"
+#, kde-format
 msgctxt "Matrix session verfication"
 msgid "Emoji Verification"
-msgstr "Benachrichtigungen"
+msgstr "Emoji-Verifizierung"
 
 #: app/MatrixKeyVerificationPage.qml:117
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Compare a set of emoji on both devices."
-msgstr ""
+msgstr "Eine Reihe von Emoji auf beiden Geräten vergleichen."
 
 #: app/MatrixKeyVerificationPage.qml:128
 #, kde-format
@@ -2875,18 +2857,20 @@ msgctxt "Matrix session verification"
 msgid ""
 "Confirm the emoji below are displayed on both devices, in the same order."
 msgstr ""
+"Bestätigen Sie, dass die folgenden Emoji auf beiden Geräten in derselben "
+"Reihenfolge angezeigt werden."
 
 #: app/MatrixKeyVerificationPage.qml:165
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "They match"
-msgstr ""
+msgstr "Sie stimmen überein"
 
 #: app/MatrixKeyVerificationPage.qml:171
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "They don't match"
-msgstr ""
+msgstr "Sie stimmen nicht überein"
 
 #: app/MatrixKeyVerificationPage.qml:207
 #, kde-format
@@ -2896,7 +2880,7 @@ msgstr "Annehmen"
 #: app/MatrixKeyVerificationPage.qml:213
 #, kde-format
 msgid "Decline"
-msgstr ""
+msgstr "Ablehnen"
 
 #: app/MatrixRoomSelectionSheet.qml:19
 #, kde-format
@@ -2943,20 +2927,19 @@ msgstr "Spaces"
 #, kde-format
 msgctxt "@title"
 msgid "My Data"
-msgstr ""
+msgstr "Meine Daten"
 
 #: app/MyDataPage.qml:27
-#, fuzzy, kde-format
-#| msgid "Passes and Programs"
+#, kde-format
 msgctxt "@title"
 msgid "Passes and Programs"
 msgstr "Pässe und Programme"
 
 #: app/MyDataPage.qml:34
-#, fuzzy, kde-format
-#| msgid "Import bonus or discount program cards or flat rate passes."
+#, kde-format
 msgid "No valid bonus or discount program cards or flat rate passes found."
-msgstr "Bonus- und Rabattprogrammkarten oder Pauschalpässe importieren."
+msgstr ""
+"Keine gültigen Bonus- und Rabattprogrammkarten oder Pauschalpässe gefunden."
 
 #: app/MyDataPage.qml:52
 #, kde-format
@@ -2965,8 +2948,7 @@ msgid "Manage your Passes"
 msgstr ""
 
 #: app/MyDataPage.qml:59
-#, fuzzy, kde-format
-#| msgid "Health Certificates"
+#, kde-format
 msgctxt "@title"
 msgid "Health Certificates"
 msgstr "Gesundheitsnachweise"
@@ -2986,11 +2968,10 @@ msgid "Manage your health certificates"
 msgstr "Gesundheitsnachweise"
 
 #: app/MyDataPage.qml:108
-#, fuzzy, kde-format
-#| msgid "Favorite Locations"
+#, kde-format
 msgctxt "@title:group"
 msgid "Saved Locations"
-msgstr "Bevorzugte Orte"
+msgstr "Gespeicherte Standorte"
 
 #: app/MyDataPage.qml:113
 #, kde-format
@@ -3003,11 +2984,10 @@ msgid "Statistics"
 msgstr "Statistik"
 
 #: app/MyDataPage.qml:181
-#, fuzzy, kde-format
-#| msgid "Statistics"
+#, kde-format
 msgctxt "@action:button"
 msgid "See all Statistics"
-msgstr "Statistik"
+msgstr "Alle Statistiken anzeigen"
 
 #: app/MyDataPage.qml:191
 #, kde-format
@@ -3016,15 +2996,13 @@ msgid "Data Portability"
 msgstr ""
 
 #: app/MyDataPage.qml:196
-#, fuzzy, kde-format
-#| msgid "Import"
+#, kde-format
 msgctxt "@action:button"
 msgid "Import"
 msgstr "Importieren"
 
 #: app/MyDataPage.qml:204
-#, fuzzy, kde-format
-#| msgid "Export"
+#, kde-format
 msgctxt "@action:button"
 msgid "Export"
 msgstr "Exportieren"
@@ -3050,7 +3028,7 @@ msgstr "Reise planen"
 #, kde-format
 msgctxt "@title:tab"
 msgid "My Data"
-msgstr ""
+msgstr "Meine Daten"
 
 #: app/NavigationBar.qml:47
 #, kde-format
@@ -3193,24 +3171,22 @@ msgid "Passes and Programs"
 msgstr "Pässe und Programme"
 
 #: app/PassPage.qml:21
-#, fuzzy, kde-format
-#| msgid "Add Program Membership…"
+#, kde-format
 msgctxt "@title"
 msgid "Add Program Membership"
-msgstr "Programmmitgliedschaft hinzufügen …"
+msgstr "Programmmitgliedschaft hinzufügen"
 
 #: app/PassPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Import from GPX"
+#, kde-format
 msgctxt "@action:button"
 msgid "Import From File"
-msgstr "Aus GPX-Datei importieren"
+msgstr "Aus Datei importieren"
 
 #: app/PassPage.qml:34
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Manually"
-msgstr ""
+msgstr "Manuell hinzufügen"
 
 #: app/PassPage.qml:48
 #, kde-format
@@ -3361,11 +3337,10 @@ msgid "Bus from %1 to %2"
 msgstr "Bus von %1 nach %2"
 
 #: app/RestaurantEditor.qml:18
-#, fuzzy, kde-format
-#| msgid "Restaurant"
+#, kde-format
 msgctxt "@title"
 msgid "New Restaurant"
-msgstr "Restaurant"
+msgstr "Neues Restaurant"
 
 #: app/RestaurantEditor.qml:19
 #, kde-format
@@ -3430,7 +3405,7 @@ msgstr "Ort"
 #: app/SettingsPage.qml:39
 #, kde-format
 msgid "Use metric units"
-msgstr ""
+msgstr "Metrische Einheiten verwenden"
 
 #: app/SettingsPage.qml:40
 #, kde-format
@@ -3682,13 +3657,13 @@ msgstr "Passwort"
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Session verified"
-msgstr ""
+msgstr "Sitzung verifiziert"
 
 #: app/SettingsPage.qml:307
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Session not verified."
-msgstr ""
+msgstr "Sitzung nicht verifiziert."
 
 #: app/SettingsPage.qml:308
 #, kde-format
@@ -3930,18 +3905,16 @@ msgid "Arrival Time"
 msgstr "Ankunftszeit"
 
 #: app/TrainDelegate.qml:45 app/TrainDelegate.qml:230
-#, fuzzy, kde-format
-#| msgid "Platform change on %1"
+#, kde-format
 msgctxt "train station platform"
 msgid "Platform changed to %1"
-msgstr "Bahnsteigwechsel von %1"
+msgstr "Bahnsteig geändert zu %1"
 
 #: app/TrainDelegate.qml:47 app/TrainDelegate.qml:232
-#, fuzzy, kde-format
-#| msgid "Platform: %1"
+#, kde-format
 msgctxt "train station platform"
 msgid "Platform %1"
-msgstr "Bahnsteig: %1"
+msgstr "Bahnsteig %1"
 
 #: app/TrainDelegate.qml:69 app/TrainPage.qml:314
 #, kde-format
@@ -4179,7 +4152,7 @@ msgstr "%1 (%2/%3)"
 #: app/TripGroupMapPage.qml:195
 #, kde-format
 msgid "Address:"
-msgstr ""
+msgstr "Adresse:"
 
 #: app/TripGroupMergeDialog.qml:17
 #, kde-format
@@ -4284,15 +4257,12 @@ msgstr[0] "Währung: %2"
 msgstr[1] "Währungen: %2"
 
 #: app/TripGroupPage.qml:497
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Show Map"
+#, kde-format
 msgid "Show map…"
-msgstr "Karte anzeigen"
+msgstr "Karte anzeigen …"
 
 #: app/TripGroupPage.qml:504
-#, fuzzy, kde-format
-#| msgid "Import"
+#, kde-format
 msgid "Import"
 msgstr "Importieren"
 
@@ -4309,7 +4279,7 @@ msgstr "Für heute steht nichts im Reiseplan."
 #: app/TripGroupPage.qml:677
 #, kde-format
 msgid "Cost"
-msgstr ""
+msgstr "Kosten"
 
 #: app/TripGroupPage.qml:690
 #, kde-format
@@ -4377,7 +4347,7 @@ msgstr "Hinzufügen zu:"
 #: app/TripGroupSelectorCard.qml:115
 #, kde-format
 msgid "A trip must be selected."
-msgstr ""
+msgstr "Eine Reise muss ausgewählt sein."
 
 #: app/TripGroupsPage.qml:15
 #, kde-format
@@ -4417,7 +4387,7 @@ msgstr "Anstehend"
 #: app/TripGroupsPage.qml:116
 #, kde-format
 msgid "No trips added yet."
-msgstr ""
+msgstr "Noch keine Reisen hinzugefügt."
 
 #: app/TripGroupSplitPage.qml:15
 #, kde-format
@@ -4613,22 +4583,28 @@ msgid "This server does not support logging in using a password"
 msgstr ""
 
 #: matrix/matrixmanager.cpp:78
-#, fuzzy, kde-format
-#| msgid "Logging in"
+#, kde-format
 msgid "Logging in…"
-msgstr "Anmeldung läuft"
+msgstr "Anmeldevorgang läuft …"
 
 #: matrix/matrixmanager.cpp:114
-#, fuzzy, kde-format
-#| msgid "Log out"
+#, kde-format
 msgid "Logged out"
-msgstr "Abmelden"
+msgstr "Abgemeldet"
 
 #: metadataextractor/itineraryextractor.cpp:118
 #, kde-format
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 von %3 nach %4 am %5"
+
+#~ msgctxt "duration of the delay"
+#~ msgid "Delayed %1"
+#~ msgstr "Verspätet %1"
+
+#~ msgctxt "@info"
+#~ msgid "On time"
+#~ msgstr "Pünktlich"
 
 #~ msgid "Public Transport Information Sources"
 #~ msgstr "Informationsquellen für öffentlichen Verkehr"

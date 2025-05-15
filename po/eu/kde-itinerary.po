@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-12 00:42+0000\n"
+"POT-Creation-Date: 2025-05-15 00:43+0000\n"
 "PO-Revision-Date: 2025-04-25 22:33+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -774,24 +774,6 @@ msgstr "E-posta"
 msgid "Website"
 msgstr "Webgunea"
 
-#: app/DelayRow.qml:22 app/DepartureQueryPage.qml:133
-#, kde-format
-msgctxt "a train/bus journey canceled by its operator"
-msgid "Canceled"
-msgstr "Bertan behera utzita"
-
-#: app/DelayRow.qml:24
-#, kde-format
-msgctxt "duration of the delay"
-msgid "Delayed %1"
-msgstr "%1(e)ko atzerapena"
-
-#: app/DelayRow.qml:26
-#, kde-format
-msgctxt "@info"
-msgid "On time"
-msgstr "Garaiz"
-
 #: app/DepartureQueryPage.qml:22
 #, kde-format
 msgid "Departures"
@@ -808,6 +790,12 @@ msgstr "Goizago"
 #, kde-format
 msgid "Later"
 msgstr "Beranduago"
+
+#: app/DepartureQueryPage.qml:133
+#, kde-format
+msgctxt "a train/bus journey canceled by its operator"
+msgid "Canceled"
+msgstr "Bertan behera utzita"
 
 #: app/DepartureQueryPage.qml:184
 #, kde-format
@@ -2194,13 +2182,13 @@ msgstr "%1 %2 (%3)"
 msgid "Drive %1 (%2)"
 msgstr "Gidatu %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:181 app/JourneySectionDelegate.qml:322
+#: app/JourneySectionDelegate.qml:182 app/JourneySectionDelegate.qml:324
 #, kde-format
 msgctxt "@info"
 msgid "Platform %1"
 msgstr "%1. nasa"
 
-#: app/JourneySectionDelegate.qml:249 app/JourneySectionPage.qml:134
+#: app/JourneySectionDelegate.qml:250 app/JourneySectionPage.qml:134
 #: app/VehicleLayoutPage.qml:240
 #, kde-format
 msgctxt "@action:button"
@@ -2265,12 +2253,12 @@ msgstr[1] "%1 aldaketa"
 msgid "Click to extend"
 msgstr "Egin klik zabaltzeko"
 
-#: app/livedatamanager.cpp:677
+#: app/livedatamanager.cpp:680
 #, kde-format
 msgid "Flight %1 to %2:"
 msgstr "%1 hegaldia %2(e)ra:"
 
-#: app/livedatamanager.cpp:683
+#: app/livedatamanager.cpp:686
 #, kde-format
 msgid "Itinerary change"
 msgstr "Ibilbide aldaketa"
@@ -4600,6 +4588,14 @@ msgstr "Saiotik aterata"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 %3(e)tik %4(e)ra %5(e)an"
+
+#~ msgctxt "duration of the delay"
+#~ msgid "Delayed %1"
+#~ msgstr "%1(e)ko atzerapena"
+
+#~ msgctxt "@info"
+#~ msgid "On time"
+#~ msgstr "Garaiz"
 
 #~ msgid "Public Transport Information Sources"
 #~ msgstr "Garraio publikoko informazio iturriak"

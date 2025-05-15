@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-12 00:42+0000\n"
+"POT-Creation-Date: 2025-05-15 00:43+0000\n"
 "PO-Revision-Date: 2025-05-12 12:42+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -770,24 +770,6 @@ msgstr "Correu electrònic"
 msgid "Website"
 msgstr "Lloc web"
 
-#: app/DelayRow.qml:22 app/DepartureQueryPage.qml:133
-#, kde-format
-msgctxt "a train/bus journey canceled by its operator"
-msgid "Canceled"
-msgstr "Cancel·lat"
-
-#: app/DelayRow.qml:24
-#, kde-format
-msgctxt "duration of the delay"
-msgid "Delayed %1"
-msgstr "Retard %1"
-
-#: app/DelayRow.qml:26
-#, kde-format
-msgctxt "@info"
-msgid "On time"
-msgstr "A l'hora"
-
 #: app/DepartureQueryPage.qml:22
 #, kde-format
 msgid "Departures"
@@ -804,6 +786,12 @@ msgstr "Més prompte"
 #, kde-format
 msgid "Later"
 msgstr "Més tard"
+
+#: app/DepartureQueryPage.qml:133
+#, kde-format
+msgctxt "a train/bus journey canceled by its operator"
+msgid "Canceled"
+msgstr "Cancel·lat"
 
 #: app/DepartureQueryPage.qml:184
 #, kde-format
@@ -2172,13 +2160,13 @@ msgstr "%1 %2 (%3)"
 msgid "Drive %1 (%2)"
 msgstr "Conduïx %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:181 app/JourneySectionDelegate.qml:322
+#: app/JourneySectionDelegate.qml:182 app/JourneySectionDelegate.qml:324
 #, kde-format
 msgctxt "@info"
 msgid "Platform %1"
 msgstr "Andana %1"
 
-#: app/JourneySectionDelegate.qml:249 app/JourneySectionPage.qml:134
+#: app/JourneySectionDelegate.qml:250 app/JourneySectionPage.qml:134
 #: app/VehicleLayoutPage.qml:240
 #, kde-format
 msgctxt "@action:button"
@@ -2244,12 +2232,12 @@ msgstr[1] "%1 canvis"
 msgid "Click to extend"
 msgstr "Cliqueu per a ampliar"
 
-#: app/livedatamanager.cpp:677
+#: app/livedatamanager.cpp:680
 #, kde-format
 msgid "Flight %1 to %2:"
 msgstr "Vol %1 a %2:"
 
-#: app/livedatamanager.cpp:683
+#: app/livedatamanager.cpp:686
 #, kde-format
 msgid "Itinerary change"
 msgstr "Canvi en l'itinerari"
@@ -4591,3 +4579,11 @@ msgstr "Ha finalitzat la sessió"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 des de %3 a %4 el %5"
+
+#~ msgctxt "duration of the delay"
+#~ msgid "Delayed %1"
+#~ msgstr "Retard %1"
+
+#~ msgctxt "@info"
+#~ msgid "On time"
+#~ msgstr "A l'hora"

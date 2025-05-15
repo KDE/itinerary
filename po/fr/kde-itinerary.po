@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-12 00:42+0000\n"
-"PO-Revision-Date: 2025-05-01 17:19+0200\n"
+"POT-Creation-Date: 2025-05-15 00:43+0000\n"
+"PO-Revision-Date: 2025-05-13 09:11+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Accelerator-Marker: &\n"
 "X-Environment: kde\n"
-"X-Generator: Lokalize 24.12.3\n"
+"X-Generator: Lokalize 25.04.1\n"
 "X-Text-Markup: kde4\n"
 
 #, kde-format
@@ -773,24 +773,6 @@ msgstr "Courriel"
 msgid "Website"
 msgstr "Site Internet"
 
-#: app/DelayRow.qml:22 app/DepartureQueryPage.qml:133
-#, kde-format
-msgctxt "a train/bus journey canceled by its operator"
-msgid "Canceled"
-msgstr "Annulé"
-
-#: app/DelayRow.qml:24
-#, kde-format
-msgctxt "duration of the delay"
-msgid "Delayed %1"
-msgstr "En retard de %1"
-
-#: app/DelayRow.qml:26
-#, kde-format
-msgctxt "@info"
-msgid "On time"
-msgstr "À l'heure"
-
 #: app/DepartureQueryPage.qml:22
 #, kde-format
 msgid "Departures"
@@ -807,6 +789,12 @@ msgstr "Plus tôt"
 #, kde-format
 msgid "Later"
 msgstr "Plus tard"
+
+#: app/DepartureQueryPage.qml:133
+#, kde-format
+msgctxt "a train/bus journey canceled by its operator"
+msgid "Canceled"
+msgstr "Annulé"
 
 # unreviewed-context
 # unreviewed-context
@@ -2044,10 +2032,9 @@ msgid "Load earlier connections"
 msgstr "Charger les correspondances antérieures"
 
 #: app/JourneyQueryPage.qml:154
-#, fuzzy, kde-format
-#| msgid "No locations found"
+#, kde-format
 msgid "No journeys found."
-msgstr "Aucun emplacement trouvé"
+msgstr "Aucun voyage trouvé."
 
 #: app/JourneyQueryPage.qml:181
 #, kde-format
@@ -2189,13 +2176,13 @@ msgstr "%1 %2 (%3)"
 msgid "Drive %1 (%2)"
 msgstr "Trajet %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:181 app/JourneySectionDelegate.qml:322
+#: app/JourneySectionDelegate.qml:182 app/JourneySectionDelegate.qml:324
 #, kde-format
 msgctxt "@info"
 msgid "Platform %1"
 msgstr "Quai %1"
 
-#: app/JourneySectionDelegate.qml:249 app/JourneySectionPage.qml:134
+#: app/JourneySectionDelegate.qml:250 app/JourneySectionPage.qml:134
 #: app/VehicleLayoutPage.qml:240
 #, kde-format
 msgctxt "@action:button"
@@ -2260,12 +2247,12 @@ msgstr[1] "%1 modifications"
 msgid "Click to extend"
 msgstr "Cliquer pour développer"
 
-#: app/livedatamanager.cpp:677
+#: app/livedatamanager.cpp:680
 #, kde-format
 msgid "Flight %1 to %2:"
 msgstr "Vol %1 vers %2 :"
 
-#: app/livedatamanager.cpp:683
+#: app/livedatamanager.cpp:686
 #, kde-format
 msgid "Itinerary change"
 msgstr "Changement d'itinéraire"
@@ -4625,6 +4612,14 @@ msgstr "Déconnecté"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1 %2 à partir de %3 vers %4 sur %5"
+
+#~ msgctxt "duration of the delay"
+#~ msgid "Delayed %1"
+#~ msgstr "En retard de %1"
+
+#~ msgctxt "@info"
+#~ msgid "On time"
+#~ msgstr "À l'heure"
 
 #~ msgid "Public Transport Information Sources"
 #~ msgstr "Sources d'informations sur les transports publics"

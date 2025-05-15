@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-12 00:42+0000\n"
+"POT-Creation-Date: 2025-05-15 00:43+0000\n"
 "PO-Revision-Date: 2024-11-16 12:52+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -778,26 +778,6 @@ msgstr "Email"
 msgid "Website"
 msgstr "Website"
 
-#: app/DelayRow.qml:22 app/DepartureQueryPage.qml:133
-#, kde-format
-msgctxt "a train/bus journey canceled by its operator"
-msgid "Canceled"
-msgstr "Cancelled"
-
-#: app/DelayRow.qml:24
-#, fuzzy, kde-format
-#| msgid "Delays on %1"
-msgctxt "duration of the delay"
-msgid "Delayed %1"
-msgstr "Delays on %1"
-
-#: app/DelayRow.qml:26
-#, fuzzy, kde-format
-#| msgid "End time"
-msgctxt "@info"
-msgid "On time"
-msgstr "End time"
-
 #: app/DepartureQueryPage.qml:22
 #, kde-format
 msgid "Departures"
@@ -814,6 +794,12 @@ msgstr "Earlier"
 #, kde-format
 msgid "Later"
 msgstr "Later"
+
+#: app/DepartureQueryPage.qml:133
+#, kde-format
+msgctxt "a train/bus journey canceled by its operator"
+msgid "Canceled"
+msgstr "Cancelled"
 
 #: app/DepartureQueryPage.qml:184
 #, kde-format
@@ -2209,14 +2195,14 @@ msgstr "%1 %2 (%3)"
 msgid "Drive %1 (%2)"
 msgstr "Drive %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:181 app/JourneySectionDelegate.qml:322
+#: app/JourneySectionDelegate.qml:182 app/JourneySectionDelegate.qml:324
 #, fuzzy, kde-format
 #| msgid "Platform: %1"
 msgctxt "@info"
 msgid "Platform %1"
 msgstr "Platform: %1"
 
-#: app/JourneySectionDelegate.qml:249 app/JourneySectionPage.qml:134
+#: app/JourneySectionDelegate.qml:250 app/JourneySectionPage.qml:134
 #: app/VehicleLayoutPage.qml:240
 #, kde-format
 msgctxt "@action:button"
@@ -2283,12 +2269,12 @@ msgstr[1] "%1 changes"
 msgid "Click to extend"
 msgstr "Click to extend"
 
-#: app/livedatamanager.cpp:677
+#: app/livedatamanager.cpp:680
 #, kde-format
 msgid "Flight %1 to %2:"
 msgstr "Flight %1 to %2:"
 
-#: app/livedatamanager.cpp:683
+#: app/livedatamanager.cpp:686
 #, kde-format
 msgid "Itinerary change"
 msgstr "Itinerary change"
@@ -4624,6 +4610,18 @@ msgstr "Logged out"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 from %3 to %4 on %5"
+
+#, fuzzy
+#~| msgid "Delays on %1"
+#~ msgctxt "duration of the delay"
+#~ msgid "Delayed %1"
+#~ msgstr "Delays on %1"
+
+#, fuzzy
+#~| msgid "End time"
+#~ msgctxt "@info"
+#~ msgid "On time"
+#~ msgstr "End time"
 
 #~ msgid "Public Transport Information Sources"
 #~ msgstr "Public Transport Information Sources"

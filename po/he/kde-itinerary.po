@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-12 00:42+0000\n"
-"PO-Revision-Date: 2025-04-27 08:10+0300\n"
+"POT-Creation-Date: 2025-05-15 00:43+0000\n"
+"PO-Revision-Date: 2025-05-13 20:52+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 24.12.3\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -774,24 +774,6 @@ msgstr "דוא״ל"
 msgid "Website"
 msgstr "אתר"
 
-#: app/DelayRow.qml:22 app/DepartureQueryPage.qml:133
-#, kde-format
-msgctxt "a train/bus journey canceled by its operator"
-msgid "Canceled"
-msgstr "בוטל"
-
-#: app/DelayRow.qml:24
-#, kde-format
-msgctxt "duration of the delay"
-msgid "Delayed %1"
-msgstr "עיכוב ב־%1"
-
-#: app/DelayRow.qml:26
-#, kde-format
-msgctxt "@info"
-msgid "On time"
-msgstr "בזמן"
-
 #: app/DepartureQueryPage.qml:22
 #, kde-format
 msgid "Departures"
@@ -808,6 +790,12 @@ msgstr "מוקדם יותר"
 #, kde-format
 msgid "Later"
 msgstr "מאוחר יותר"
+
+#: app/DepartureQueryPage.qml:133
+#, kde-format
+msgctxt "a train/bus journey canceled by its operator"
+msgid "Canceled"
+msgstr "בוטל"
 
 #: app/DepartureQueryPage.qml:184
 #, kde-format
@@ -2035,10 +2023,9 @@ msgid "Load earlier connections"
 msgstr "טעינת החלפת טיסות קודמות"
 
 #: app/JourneyQueryPage.qml:154
-#, fuzzy, kde-format
-#| msgid "No locations found"
+#, kde-format
 msgid "No journeys found."
-msgstr "לא נמצאו מקומות"
+msgstr "לא נמצאו נסיעות."
 
 #: app/JourneyQueryPage.qml:181
 #, kde-format
@@ -2178,13 +2165,13 @@ msgstr "%1 %2 (%3)"
 msgid "Drive %1 (%2)"
 msgstr "לנהוג %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:181 app/JourneySectionDelegate.qml:322
+#: app/JourneySectionDelegate.qml:182 app/JourneySectionDelegate.qml:324
 #, kde-format
 msgctxt "@info"
 msgid "Platform %1"
 msgstr "רציף %1"
 
-#: app/JourneySectionDelegate.qml:249 app/JourneySectionPage.qml:134
+#: app/JourneySectionDelegate.qml:250 app/JourneySectionPage.qml:134
 #: app/VehicleLayoutPage.qml:240
 #, kde-format
 msgctxt "@action:button"
@@ -2251,12 +2238,12 @@ msgstr[3] "%1 החלפות"
 msgid "Click to extend"
 msgstr "לחיצה על הרחבה"
 
-#: app/livedatamanager.cpp:677
+#: app/livedatamanager.cpp:680
 #, kde-format
 msgid "Flight %1 to %2:"
 msgstr "טיסה %1 אל %2:"
 
-#: app/livedatamanager.cpp:683
+#: app/livedatamanager.cpp:686
 #, kde-format
 msgid "Itinerary change"
 msgstr "שינוי בתוכנית המסע"
@@ -4550,6 +4537,14 @@ msgstr "יצאת"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 מ%3 אל %4 ב־%5"
+
+#~ msgctxt "duration of the delay"
+#~ msgid "Delayed %1"
+#~ msgstr "עיכוב ב־%1"
+
+#~ msgctxt "@info"
+#~ msgid "On time"
+#~ msgstr "בזמן"
 
 #~ msgid "Public Transport Information Sources"
 #~ msgstr "מקורות פרטי תחבורה ציבורית"
