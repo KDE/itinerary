@@ -302,6 +302,8 @@ void LiveDataManager::applyJourney(const QString &resId, const KPublicTransport:
     }
 
     auto &ld = data(resId);
+    const auto oldDep = ld.departure();
+    const auto oldArr = ld.arrival();
     const auto oldJny = ld.trip;
     ld.trip = subjny;
 
@@ -339,8 +341,8 @@ void LiveDataManager::applyJourney(const QString &resId, const KPublicTransport:
     Q_EMIT journeyUpdated(resId);
 
     // check if we need to notify
-    if (NotificationHelper::shouldNotify(oldJny.departure(), ld.departure(), LiveData::Departure)
-        || NotificationHelper::shouldNotify(oldJny.arrival(), ld.arrival(), LiveData::Arrival)) {
+    if (NotificationHelper::shouldNotify(oldDep, ld.departure(), LiveData::Departure)
+        || NotificationHelper::shouldNotify(oldArr, ld.arrival(), LiveData::Arrival)) {
         showNotification(resId, ld);
     }
 }
