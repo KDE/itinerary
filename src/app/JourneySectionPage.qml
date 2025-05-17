@@ -27,6 +27,8 @@ Kirigami.Page {
     title: i18n("Journey Details")
 
     property KPublicTransport.journeySection journeySection
+    property int departureStopIndex: 0
+    property int arrivalStopIndex: root.journeySection.intermediateStops.length + 1
     property alias showProgress: sectionModel.showProgress
     property alias enableMapView: mapButton.visible
     default property alias _children: root.children
@@ -212,6 +214,7 @@ Kirigami.Page {
                                 value: trailingSegmentLength
                             }
                             visible: root.journeySection != undefined
+                            opacity: root.departureStopIndex > 0 ? 0.5 : 1.0
                         }
                         delegate: JourneySectionStopDelegate {
                             stop: model.stopover
@@ -228,6 +231,7 @@ Kirigami.Page {
                                 property: "trailingLength"
                                 value: trailingSegmentLength
                             }
+                            opacity: index >= root.departureStopIndex - 1 && index < root.arrivalStopIndex ? 1.0 : 0.5
                         }
                         footer: ColumnLayout {
                             width: ListView.view.width - ListView.view.leftMargin - ListView.view.rightMargin
@@ -245,6 +249,7 @@ Kirigami.Page {
                                     value: leadingSegmentLength
                                 }
                                 visible: root.journeySection != undefined
+                                opacity: root.arrivalStopIndex <= root.journeySection.intermediateStops.length ? 0.5 : 1.0
                             }
                             // spacer for floating buttons not overlapping the list view
                             Item {
