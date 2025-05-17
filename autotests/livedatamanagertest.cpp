@@ -126,6 +126,7 @@ private Q_SLOTS:
         auto &ld = ldm.data(trainLeg1);
         QCOMPARE(ld.departureIndex, 0);
         QCOMPARE(ld.arrivalIndex, 1);
+        QCOMPARE(ld.trip.intermediateStops().size(), 0);
 
         // verify this was persisted
         {
@@ -151,12 +152,16 @@ private Q_SLOTS:
         ld = ldm.data(trainLeg1);
         QCOMPARE(ld.departure().stopPoint().name(), u"Zürich Flughafen");
         QCOMPARE(ld.arrival().stopPoint().name(), "Visp"_L1);
+        QCOMPARE(ld.arrival().scheduledPlatform(), "7"_L1);
+        QCOMPARE(ld.arrival().expectedPlatform(), ""_L1);
         QCOMPARE(ld.journey().departure().stopPoint().name(), u"Zürich Flughafen");
         QCOMPARE(ld.journey().arrival().stopPoint().name(), "Visp"_L1);
-        QCOMPARE(ld.trip.departure().stopPoint().name(), u"Zürich Flughafen"); // TODO should be Romanshorn
-        QCOMPARE(ld.trip.arrival().stopPoint().name(), "Visp"_L1); // TODO should be Brig
-        QCOMPARE(ld.departureIndex, 0); // TODO should be 5
-        QCOMPARE(ld.arrivalIndex, 5); // TODO should be 10
+        QCOMPARE(ld.journey().intermediateStops().size(), 4);
+        QCOMPARE(ld.trip.departure().stopPoint().name(), "Romanshorn"_L1);
+        QCOMPARE(ld.trip.arrival().stopPoint().name(), "Brig"_L1);
+        QCOMPARE(ld.trip.intermediateStops().size(), 10);
+        QCOMPARE(ld.departureIndex, 5);
+        QCOMPARE(ld.arrivalIndex, 10);
 
         // applying full journey retains trip data
         const auto leg1PartialJny = KPublicTransport::JourneySection::fromJson(QJsonDocument::fromJson(Test::readFile(s(SOURCE_DIR "/data/livedata/randa2017-leg1-partial-journey.json"))).object());
@@ -165,10 +170,18 @@ private Q_SLOTS:
         QCOMPARE(ldm.arrival(trainLeg1).arrivalDelay(), 2);
         QCOMPARE(resChangeSpy.size(), 1);
         ld = ldm.data(trainLeg1);
-        QCOMPARE(ld.departure().stopPoint().name(), u"Zürich Flughafen");
+        QCOMPARE(ld.departure().stopPoint().name(), u"Zürich Flughafen"_s);
         QCOMPARE(ld.arrival().stopPoint().name(), "Visp"_L1);
-        QCOMPARE(ld.journey().departure().stopPoint().name(), u"Zürich Flughafen");
+        QCOMPARE(ld.journey().departure().stopPoint().name(), u"Zürich Flughafen"_s);
         QCOMPARE(ld.journey().arrival().stopPoint().name(), "Visp"_L1);
+        QCOMPARE(ld.journey().intermediateStops().size(), 4);
+        QCOMPARE(ld.arrival().scheduledPlatform(), "7"_L1);
+        QCOMPARE(ld.arrival().expectedPlatform(), "6"_L1);
+        QCOMPARE(ld.trip.departure().stopPoint().name(), "Romanshorn"_L1);
+        QCOMPARE(ld.trip.arrival().stopPoint().name(), "Brig"_L1);
+        QCOMPARE(ld.trip.intermediateStops().size(), 10);
+        QCOMPARE(ld.departureIndex, 5);
+        QCOMPARE(ld.arrivalIndex, 10);
 
         // applying vehicle layouts
         QCOMPARE(ld.arrival().vehicleLayout().features().size(), 0);
@@ -176,11 +189,16 @@ private Q_SLOTS:
         TimelineDelegateController tdc;
         tdc.setBatchId(trainLeg1);
         tdc.setLiveDataManager(&ldm);
+        QCOMPARE(tdc.journey().departure().stopPoint().name(), u"Zürich Flughafen"_s);
+        QCOMPARE(tdc.journey().arrival().stopPoint().name(), "Visp"_L1);
         const auto arrivalVehicleLayout = KPublicTransport::Stopover::merge(leg1PartialJny.arrival(), KPublicTransport::Stopover::fromJson(QJsonDocument::fromJson(Test::readFile(s(SOURCE_DIR "/data/livedata/randa2017-leg1-arrival-vehicle-layout.json"))).object()));
         QCOMPARE(arrivalVehicleLayout.vehicleLayout().combinedFeatures().size(), 4);
         tdc.setVehicleLayout(arrivalVehicleLayout, true);
         QCOMPARE(journeyUpdateSpy.size(), 5);
         ld = ldm.data(trainLeg1);
+        QCOMPARE(ld.departure().stopPoint().name(), u"Zürich Flughafen"_s);
+        QCOMPARE(ld.arrival().stopPoint().name(), "Visp"_L1);
+        QCOMPARE(ld.arrival().expectedPlatform(), "6"_L1);
         QCOMPARE(ld.arrival().vehicleLayout().combinedFeatures().size(), 4);
         QCOMPARE(ld.arrival().platformLayout().isEmpty(), false);
 
@@ -196,6 +214,13 @@ private Q_SLOTS:
         QCOMPARE(ld.arrival().platformLayout().isEmpty(), false);
         QCOMPARE(ld.journey().departure().stopPoint().name(), u"Zürich Flughafen");
         QCOMPARE(ld.journey().arrival().stopPoint().name(), "Visp"_L1);
+        QCOMPARE(ld.journey().intermediateStops().size(), 4);
+        QCOMPARE(ld.arrival().expectedPlatform(), "6"_L1);
+        QCOMPARE(ld.trip.departure().stopPoint().name(), "Romanshorn"_L1);
+        QCOMPARE(ld.trip.arrival().stopPoint().name(), "Brig"_L1);
+        QCOMPARE(ld.trip.intermediateStops().size(), 10);
+        QCOMPARE(ld.departureIndex, 5);
+        QCOMPARE(ld.arrivalIndex, 10);
 
         // failed lookups are recorded to avoid a polling loop
         ldm.tripQueryFailed(trainLeg2);

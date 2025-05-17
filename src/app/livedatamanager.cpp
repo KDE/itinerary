@@ -292,20 +292,68 @@ static void applyMissingJourneyData(KPublicTransport::JourneySection &journey, c
     }
 }
 
+[[nodiscard]] static KPublicTransport::JourneySection expandJourney(const KPublicTransport::JourneySection &jny, const KPublicTransport::JourneySection &subJny, qsizetype beginIdx, qsizetype endIdx)
+{
+    KPublicTransport::JourneySection expJny = subJny;
+
+    auto stops = jny.intermediateStops();
+    if (beginIdx > 0) {
+        expJny.setDeparture(jny.departure());
+        stops[beginIdx - 1] = subJny.departure();
+    }
+    if (endIdx < (qsizetype)stops.size() + 1) {
+        expJny.setArrival(jny.arrival());
+        stops[endIdx - 1] = subJny.arrival();
+    }
+    stops.erase(stops.begin() + beginIdx, stops.begin() + endIdx - 1);
+    stops.insert(stops.begin() + beginIdx, subJny.intermediateStops().begin(), subJny.intermediateStops().end());
+    expJny.setIntermediateStops(std::move(stops));
+
+    return expJny;
+}
+
 void LiveDataManager::applyJourney(const QString &resId, const KPublicTransport::JourneySection &journey)
 {
-    // align with sub/super-journey with what we already have
-    const auto subjny = PublicTransportMatcher::subJourneyForReservation(m_resMgr->reservation(resId), journey);
-    if (subjny.mode() == KPublicTransport::JourneySection::Invalid) {
-        qCDebug(Log) << "Failed to find sub journey";
-        return;
-    }
-
     auto &ld = data(resId);
     const auto oldDep = ld.departure();
     const auto oldArr = ld.arrival();
-    const auto oldJny = ld.trip;
-    ld.trip = subjny;
+    auto oldJny = ld.trip;
+
+    // align @p journey and @p ld.trip
+    // we can end up here in the following cases:
+    // (1) ld.trip is not set yet
+    // (2) ld.trip and journey are fully aligned
+    // (3) ld.trip is a subsection of journey
+    // (4) journey is a subsection of ld.trip
+    // we should get out of here with ld.trip either still being invalid, or with being aligned with journey
+
+    if (!ld.isEmpty()) { // excludes case (1)
+        const auto oldInNewDep = journey.indexOfStopover(oldJny.departure());
+        const auto oldInNewArr = journey.indexOfStopover(oldJny.arrival());
+
+        if (oldInNewDep == 0 && oldInNewArr == (qsizetype)journey.intermediateStops().size() + 1) {
+            ld.trip = journey; // case (2)
+        } else if (oldInNewDep < 0 || oldInNewArr <= oldInNewDep) { // not case (3)
+            const auto newInOldDep = oldJny.indexOfStopover(journey.departure());
+            const auto newInOldArr = oldJny.indexOfStopover(journey.arrival());
+            if (newInOldDep == 0 && newInOldArr == (qsizetype)oldJny.intermediateStops().size() + 1) {
+                // case (2) again, symmetry violation in indexOfStopover
+                assert(false);
+            }
+            if (newInOldDep < 0 || newInOldArr <= newInOldDep) {
+                qCWarning(Log) << "Failed to align trip data, ignoring!";
+                return;
+            }
+            // case (4)
+            ld.trip = expandJourney(oldJny, journey, newInOldDep, newInOldArr);
+
+        } else { // case (3)
+            ld.trip = journey;
+            oldJny = expandJourney(journey, oldJny, oldInNewDep, oldInNewArr);
+        }
+    } else {
+        ld.trip = journey;
+    }
 
     // retain still relevant information from the previous data
     applyMissingJourneyData(ld.trip, oldJny);
