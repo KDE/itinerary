@@ -309,7 +309,7 @@ void LiveDataManager::applyJourney(const QString &resId, const KPublicTransport:
     std::vector<ReservationManager::ReservationChange> resUpdates;
     for (const auto &id : m_resMgr->reservationsForBatch(resId)) {
         const auto r = m_resMgr->reservation(id);
-        const auto newRes = PublicTransport::mergeJourney(r, ld.trip);
+        const auto newRes = PublicTransport::mergeJourney(r, ld.journey());
         if (!ReservationHelper::equals(r, newRes) && r.typeId() == newRes.typeId()) {
             resUpdates.emplace_back(id, newRes);
         }
