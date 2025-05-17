@@ -16,6 +16,6 @@ constexpr inline const char16_t BUNDLE_TRANSFER_DOMAIN[] = u"org.kde.itinerary/t
 constexpr inline const char16_t BUNDLE_TRIPGROUP_DOMAIN[] = u"org.kde.itinerary/trips";
 constexpr inline const char16_t BUNDLE_VERSION_DOMAIN[] = u"org.kde.itinerary/version";
 
-constexpr inline const auto BUNDLE_FORMAT_VERSION = 2;
+constexpr inline const auto BUNDLE_FORMAT_VERSION = 3;
 
 #endif
