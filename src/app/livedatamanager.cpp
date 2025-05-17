@@ -248,6 +248,14 @@ static void applyMissingStopoverData(KPublicTransport::Stopover &stop, const KPu
 
 static void applyMissingJourneyData(KPublicTransport::JourneySection &journey, const KPublicTransport::JourneySection &oldJny)
 {
+    // retain already existing vehicle/platform layout data if we are still departing/arriving in the same place
+    if (PublicTransport::isSameStopoverForLayout(oldJny.departure(), journey.departure())) {
+        journey.setDeparture(applyLayoutData(journey.departure(), oldJny.departure()));
+    }
+    if (PublicTransport::isSameStopoverForLayout(oldJny.arrival(), journey.arrival())) {
+        journey.setArrival(applyLayoutData(journey.arrival(), oldJny.arrival()));
+    }
+
     if (journey.intermediateStops().size() != oldJny.intermediateStops().size()) {
         return;
     }
@@ -257,6 +265,9 @@ static void applyMissingJourneyData(KPublicTransport::JourneySection &journey, c
         if (!KPublicTransport::Stopover::isSame(stops[i], oldJny.intermediateStops()[i])) {
             journey.setIntermediateStops(std::move(stops));
             return;
+        }
+        if (PublicTransport::isSameStopoverForLayout(oldJny.intermediateStops()[i], stops[i])) {
+            stops[i] = applyLayoutData(stops[i], oldJny.intermediateStops()[i]);
         }
         applyMissingStopoverData(stops[i], oldJny.intermediateStops()[i]);
     }
@@ -294,13 +305,7 @@ void LiveDataManager::applyJourney(const QString &resId, const KPublicTransport:
     const auto oldJny = ld.trip;
     ld.trip = subjny;
 
-    // retain already existing vehicle/platform layout data if we are still departing/arriving in the same place
-    if (PublicTransport::isSameStopoverForLayout(oldJny.departure(), ld.trip.departure())) {
-        ld.trip.setDeparture(applyLayoutData(ld.trip.departure(), oldJny.departure()));
-    }
-    if (PublicTransport::isSameStopoverForLayout(oldJny.arrival(), ld.trip.arrival())) {
-        ld.trip.setArrival(applyLayoutData(ld.trip.arrival(), oldJny.arrival()));
-    }
+    // retain still relevant information from the previous data
     applyMissingJourneyData(ld.trip, oldJny);
 
     // determine departure/arrival indexes
