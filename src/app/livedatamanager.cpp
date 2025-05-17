@@ -201,7 +201,7 @@ void LiveDataManager::checkReservation(const QVariant &res, const QString &resId
         connect(reply, &Reply::finished, this, [this, resId, reply]() {
             reply->deleteLater();
             if (reply->error() == Reply::NoError) {
-                auto jny = reply->journeySection();
+                auto jny = reply->trip();
                 if (jny.mode() == JourneySection::PublicTransport) {
                     applyJourney(resId, jny);
                     return;
