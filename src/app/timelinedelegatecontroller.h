@@ -51,6 +51,10 @@ class TimelineDelegateController : public QObject
     Q_PROPERTY(KPublicTransport::Stopover departure READ departure NOTIFY journeyChanged)
     Q_PROPERTY(KPublicTransport::JourneySection journey READ journey NOTIFY journeyChanged)
 
+    Q_PROPERTY(KPublicTransport::JourneySection trip READ trip NOTIFY journeyChanged)
+    Q_PROPERTY(qsizetype tripDepartureIndex READ tripDepartureIndex NOTIFY journeyChanged)
+    Q_PROPERTY(qsizetype tripArrivalIndex READ tripArrivalIndex NOTIFY journeyChanged)
+
     /** Effective end time, ie. our best knowledge of arriving at the destination (for transit elements), or
      *  ending of the associated event for non-transit elements.
      */
@@ -113,6 +117,10 @@ public:
     [[nodiscard]] KPublicTransport::Stopover arrival() const;
     [[nodiscard]] KPublicTransport::Stopover departure() const;
     [[nodiscard]] KPublicTransport::JourneySection journey() const;
+
+    [[nodiscard]] KPublicTransport::JourneySection trip() const;
+    [[nodiscard]] qsizetype tripDepartureIndex() const;
+    [[nodiscard]] qsizetype tripArrivalIndex() const;
 
     [[nodiscard]] QDateTime effectiveEndTime() const;
 

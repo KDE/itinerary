@@ -366,7 +366,11 @@ DetailsPage {
                 Kirigami.Action {
                     text: i18n("Journey Details")
                     icon.name: "view-calendar-day"
-                    onTriggered: applicationWindow().pageStack.push(journeySectionPage, {"journeySection": root.controller.journey});
+                    onTriggered: applicationWindow().pageStack.push(journeySectionPage, {
+                        journeySection: root.controller.trip,
+                        departureStopIndex: root.controller.tripDepartureIndex,
+                        arrivalStopIndex: root.controller.tripArrivalIndex
+                    });
                     Component.onCompleted: {
                         visible = Qt.binding(function() { return root.controller.journey && root.controller.journey.intermediateStops.length > 0});
                     }
