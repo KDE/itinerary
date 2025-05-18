@@ -78,6 +78,7 @@ bool PublicTransportMatcher::isJourneyForReservation(const QVariant &res, const 
     const auto lineData = ReservationHelper::lineNameAndNumber(res);
     return PublicTransportMatcher::isSameMode(res, journey.route().line().mode())
         && KItinerary::SortUtil::startDateTime(res) == journey.scheduledDepartureTime()
+        && KItinerary::SortUtil::endDateTime(res) == journey.scheduledArrivalTime()
         && PublicTransportMatcher::isSameRoute(journey.route(), lineData.first, lineData.second);
 }
 

@@ -560,8 +560,21 @@ void LiveDataManager::batchChanged(const QString &resId)
     const auto dataIt = m_data.find(resId);
     if (dataIt != m_data.end()) {
         if ((*dataIt).journeyTimestamp.isValid() && !PublicTransportMatcher::isJourneyForReservation(res, (*dataIt).journey())) {
-            (*dataIt).trip = {};
-            (*dataIt).journeyTimestamp = {};
+            (*dataIt).departureIndex = -1;
+            (*dataIt).arrivalIndex = -1;
+            // check if the entire trip we have still applies, ie. just departure or arrival were changed
+            for (qsizetype i = 0; i <= (qsizetype)(*dataIt).trip.intermediateStops().size() + 1; ++i) {
+                if (PublicTransportMatcher::isDepartureForReservation(res, (*dataIt).trip.stopover(i))) {
+                    (*dataIt).departureIndex = i;
+                }
+                if (PublicTransportMatcher::isArrivalForReservation(res, (*dataIt).trip.stopover(i))) {
+                    (*dataIt).arrivalIndex = i;
+                }
+            }
+            if ((*dataIt).departureIndex < 0 || (*dataIt).arrivalIndex <= (*dataIt).departureIndex) {
+                (*dataIt).trip = {};
+                (*dataIt).journeyTimestamp = {};
+            }
             (*dataIt).store(resId);
             Q_EMIT journeyUpdated(resId);
         }
