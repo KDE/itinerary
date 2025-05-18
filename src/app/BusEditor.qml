@@ -47,6 +47,7 @@ EditorPage {
         id: boardSheet
         title: i18nc("bus departure", "Change Departure Stop")
         model: [root.controller.trip.departure].concat(root.controller.trip.intermediateStops).concat([root.controller.trip.arrival])
+        currentIndex: root.controller.tripDepartureIndex
         action: Kirigami.Action {
             text: i18nc("bus departure", "Change departure stop")
             onTriggered: {
@@ -60,6 +61,7 @@ EditorPage {
         id: alightSheet
         title: i18nc("bus arrival", "Change Arrival Stop")
         model: [root.controller.trip.departure].concat(root.controller.trip.intermediateStops).concat([root.controller.trip.arrival])
+        currentIndex: root.controller.tripArrivalIndex
         action: Kirigami.Action {
             text: i18nc("bus arrival", "Change arrival stop")
             onTriggered: {
