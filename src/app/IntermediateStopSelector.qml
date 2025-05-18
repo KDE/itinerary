@@ -17,6 +17,8 @@ Kirigami.Dialog {
     property Kirigami.Action action
     property alias model: stopSelector.model
     property alias currentIndex: stopSelector.currentIndex
+    property int disableBeforeIndex: -1
+    property int disableAfterIndex: stopSelector.count
 
     width: Math.min(applicationWindow().width, Kirigami.Units.gridUnit * 24)
     height: Math.min(applicationWindow().height, Kirigami.Units.gridUnit * 32)
@@ -36,7 +38,7 @@ Kirigami.Dialog {
                 }
             }
             onClicked: ListView.view.currentIndex = index
-            enabled: modelData.disruptionEffect != Disruption.NoService
+            enabled: modelData.disruptionEffect != Disruption.NoService && index > boardSheet.disableBeforeIndex && index < boardSheet.disableAfterIndex
         }
     }
 
