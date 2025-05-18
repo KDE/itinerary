@@ -45,28 +45,28 @@ EditorPage {
 
     IntermediateStopSelector {
         id: boardSheet
-        title: i18n("Board Later")
-        model: root.controller.journey.intermediateStops
+        title: i18nc("bus departure", "Change Departure Stop")
+        model: [root.controller.trip.departure].concat(root.controller.trip.intermediateStops).concat([root.controller.trip.arrival])
         action: Kirigami.Action {
-            text: i18n("Change departure stop")
+            text: i18nc("bus departure", "Change departure stop")
             onTriggered: {
-                departureBusStop = PublicTransport.busStationFromLocation(root.controller.journey.intermediateStops[boardSheet.currentIndex].stopPoint)
-                departureTime = Util.dateTimeStripTimezone(root.controller.journey.intermediateStops[boardSheet.currentIndex], "scheduledDepartureTime");
+                departureBusStop = PublicTransport.busStationFromLocation(root.controller.trip.stopover(boardSheet.currentIndex).stopPoint)
+                departureTime = Util.dateTimeStripTimezone(root.controller.trip.stopover(boardSheet.currentIndex), "scheduledDepartureTime");
                 boardSheet.close();
             }
         }
     }
     IntermediateStopSelector {
         id: alightSheet
-        title: i18n("Alight Earlier")
-        model: root.controller.journey.intermediateStops
+        title: i18nc("bus arrival", "Change Arrival Stop")
+        model: [root.controller.trip.departure].concat(root.controller.trip.intermediateStops).concat([root.controller.trip.arrival])
         action: Kirigami.Action {
-            text: i18n("Change arrival stop")
+            text: i18nc("bus arrival", "Change arrival stop")
             onTriggered: {
-                arrivalBusStop = PublicTransport.busStationFromLocation(root.controller.journey.intermediateStops[alightSheet.currentIndex].stopPoint);
-                arrivalTime = Util.dateTimeStripTimezone(root.controller.journey.intermediateStops[alightSheet.currentIndex], "scheduledArrivalTime");
+                arrivalBusStop = PublicTransport.busStationFromLocation(root.controller.trip.stopover(alightSheet.currentIndex).stopPoint);
+                arrivalTime = Util.dateTimeStripTimezone(root.controller.trip.stopover(alightSheet.currentIndex), "scheduledArrivalTime");
                 if (!arrivalTime) {
-                    arrivalTime = Util.dateTimeStripTimezone(root.controller.journey.intermediateStops[alightSheet.currentIndex], "scheduledDepartureTime");
+                    arrivalTime = Util.dateTimeStripTimezone(root.controller.trip.stopover(alightSheet.currentIndex), "scheduledDepartureTime");
                 }
                 alightSheet.close();
             }
@@ -100,9 +100,9 @@ EditorPage {
                 text: reservationFor.departurePlatform
             }
             FormCard.FormButtonDelegate {
-                text: i18n("Board later")
-                icon.name: "arrow-right"
-                visible: root.controller.journey && root.controller.journey.intermediateStops.length > 0 // TODO also check for preceding layovers
+                text: i18nc("bus departure", "Change Departure Stop")
+                icon.name: "document-edit"
+                visible: root.controller.trip && root.controller.trip.intermediateStops.length > 0 // TODO also check for preceding layovers
                 onClicked: boardSheet.open();
             }
         }
@@ -122,9 +122,9 @@ EditorPage {
                 text: reservationFor.arrivalPlatform
             }
             FormCard.FormButtonDelegate {
-                text: i18n("Alight earlier")
-                icon.name: "arrow-left"
-                visible: root.controller.journey && root.controller.journey.intermediateStops.length > 0 // TODO also check for subsequent layovers
+                text: i18nc("bus arrival", "Change Arrival Stop")
+                icon.name: "document-edit"
+                visible: root.controller.trip && root.controller.trip.intermediateStops.length > 0 // TODO also check for subsequent layovers
                 onClicked: alightSheet.open();
             }
         }
