@@ -51,6 +51,10 @@ public:
     KPublicTransport::Stopover departure(const QString &resId) const;
     KPublicTransport::JourneySection journey(const QString &resId) const;
 
+    [[nodiscard]] KPublicTransport::JourneySection trip(const QString &resId) const;
+    [[nodiscard]] qsizetype tripDepartureIndex(const QString &resId) const;
+    [[nodiscard]] qsizetype tripArrivalIndex(const QString &resId) const;
+
     /** Sets journey data for a given reservation, overwriting all existing data
      *  and not triggering notifications.
      *  Used to retain live data from alternative journey selections for example.

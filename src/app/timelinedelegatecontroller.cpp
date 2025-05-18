@@ -256,6 +256,30 @@ KPublicTransport::JourneySection TimelineDelegateController::journey() const
     return m_liveDataMgr->journey(m_batchId);
 }
 
+KPublicTransport::JourneySection TimelineDelegateController::trip() const
+{
+    if (!m_liveDataMgr || m_batchId.isEmpty()) {
+        return {};
+    }
+    return m_liveDataMgr->trip(m_batchId);
+}
+
+qsizetype TimelineDelegateController::tripDepartureIndex() const
+{
+    if (!m_liveDataMgr || m_batchId.isEmpty()) {
+        return {};
+    }
+    return m_liveDataMgr->tripDepartureIndex(m_batchId);
+}
+
+qsizetype TimelineDelegateController::tripArrivalIndex() const
+{
+    if (!m_liveDataMgr || m_batchId.isEmpty()) {
+        return {};
+    }
+    return m_liveDataMgr->tripArrivalIndex(m_batchId);
+}
+
 void TimelineDelegateController::checkForUpdate(const QString &batchId)
 {
     if (!m_resMgr || m_batchId.isEmpty()) {

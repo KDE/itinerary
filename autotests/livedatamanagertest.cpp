@@ -201,6 +201,8 @@ private Q_SLOTS:
         QCOMPARE(ld.arrival().expectedPlatform(), "6"_L1);
         QCOMPARE(ld.arrival().vehicleLayout().combinedFeatures().size(), 4);
         QCOMPARE(ld.arrival().platformLayout().isEmpty(), false);
+        QCOMPARE(tdc.tripDepartureIndex(), 5);
+        QCOMPARE(tdc.tripArrivalIndex(), 10);
 
         // applying full journey retains layout information
         ldm.applyJourney(trainLeg1, leg1PartialJny);

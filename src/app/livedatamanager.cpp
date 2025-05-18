@@ -147,6 +147,21 @@ KPublicTransport::JourneySection LiveDataManager::journey(const QString &resId) 
     return data(resId).journey();
 }
 
+KPublicTransport::JourneySection LiveDataManager::trip(const QString &resId) const
+{
+    return data(resId).trip;
+}
+
+qsizetype LiveDataManager::tripDepartureIndex(const QString &resId) const
+{
+    return data(resId).departureIndex;
+}
+
+qsizetype LiveDataManager::tripArrivalIndex(const QString &resId) const
+{
+    return data(resId).arrivalIndex;
+}
+
 void LiveDataManager::setJourney(const QString &resId, const KPublicTransport::JourneySection &journey)
 {
     auto &ld = data(resId);
