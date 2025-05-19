@@ -20,22 +20,9 @@ Kirigami.ScrollablePage {
     property var dateTime
 
     title: i18n("Departures")
+    Kirigami.Theme.colorSet: Kirigami.Theme.Window
+
     actions: [
-        Kirigami.Action {
-            text: i18n("Earlier")
-            icon.name: "go-up-symbolic"
-            onTriggered: departureModel.queryPrevious()
-            enabled: departureModel.canQueryPrevious
-        },
-        Kirigami.Action {
-            text: i18n("Later")
-            icon.name: "go-down-symbolic"
-            onTriggered: departureModel.queryNext()
-            enabled: departureModel.canQueryNext
-        },
-
-        Kirigami.Action { separator: true },
-
         Kirigami.Action {
             id: longDistanceModeAction
             text: i18nc("journey query search constraint, title", "Long distance trains")
@@ -109,121 +96,6 @@ Kirigami.ScrollablePage {
         request: stopoverRequest();
     }
 
-    Component {
-        id: departureDelegate
-        FormCard.FormCard {
-            id: top
-            required property var departure
-            width: ListView.view.width
-            enabled: top.departure.disruptionEffect !== Disruption.NoService
-
-            FormCard.AbstractFormDelegate {
-                contentItem: GridLayout {
-                    id: contentLayout
-                    columns: 2
-
-                    // top row: departure time, departure location, departure platform
-                    RowLayout {
-                        QQC2.Label {
-                            text: Localizer.formatTime(departure, "scheduledDepartureTime")
-                        }
-                        QQC2.Label {
-                            text: {
-                                if (top.departure.disruptionEffect == Disruption.NoService)
-                                    return i18nc("a train/bus journey canceled by its operator", "Canceled");
-                                return (departure.departureDelay >= 0 ? "+" : "") + departure.departureDelay;
-                            }
-                            color: {
-                                if (top.departure.departureDelay > 1 || top.departure.disruptionEffect == Disruption.NoService)
-                                    return Kirigami.Theme.negativeTextColor;
-                                return Kirigami.Theme.positiveTextColor;
-                            }
-                            // Keeping it visible so the layout is more uniform
-                            opacity: (top.departure.hasExpectedDepartureTime || top.departure.disruptionEffect == Disruption.NoService) ? 1 : 0
-                        }
-                    }
-                    RowLayout {
-                        QQC2.Label {
-                            text: departure.stopPoint.name
-                            Layout.fillWidth: true
-                            elide: Text.ElideRight
-                        }
-                        QQC2.Label {
-                            text: departure.hasExpectedPlatform ? departure.expectedPlatform : departure.scheduledPlatform
-                            color: departure.departurePlatformChanged ? Kirigami.Theme.negativeTextColor
-                                : departure.hasExpectedPlatform ? Kirigami.Theme.positiveTextColor
-                                : Kirigami.Theme.textColor
-                            visible: departure.scheduledPlatform !== ""
-                        }
-                    }
-
-                    // middle row: mode symbol, transport mode, duration
-                    Rectangle {
-                        color: (departure.route.line.hasColor && modeIcon.isMask) ? departure.route.line.color : "transparent"
-                        implicitHeight: Kirigami.Units.iconSizes.smallMedium
-                        implicitWidth: modeIcon.width
-                        Layout.alignment: Qt.AlignHCenter
-
-                        Kirigami.Icon {
-                            id: modeIcon
-                            anchors.centerIn: parent
-                            source: departure.route.line.iconName
-                            color: departure.route.line.hasTextColor ? departure.route.line.textColor : Kirigami.Theme.textColor
-                            width: (departure.route.line.hasLogo || departure.route.line.hasModeLogo) ? implicitWidth : height
-                            height: parent.height
-                            isMask: !departure.route.line.hasLogo && !departure.route.line.hasModeLogo
-                        }
-                    }
-                    QQC2.Label {
-                        Layout.fillWidth: true
-                        text: departure.route.line.modeString + " " + departure.route.line.name;
-                    }
-
-                    // last row: arrival information
-                    QQC2.Label {
-                        text: i18nc("destination", "To:")
-                    }
-                    QQC2.Label {
-                        text: top.departure.route.direction
-                        Layout.fillWidth: true
-                        elide: Text.ElideRight
-                    }
-
-                    // optional bottom rows: features and notes, if present
-                    RowLayout {
-                        Layout.columnSpan: 2
-                        spacing: Kirigami.Units.smallSpacing
-                        Repeater {
-                            model: top.departure.features
-                            delegate: KPublicTransport.FeatureIcon {
-                                feature: modelData
-                                Layout.preferredHeight: Kirigami.Units.iconSizes.small
-                                Layout.preferredWidth: Kirigami.Units.iconSizes.small
-                            }
-                        }
-                    }
-                    QQC2.Label {
-                        Layout.columnSpan: 2
-                        Layout.fillWidth: true
-                        text: departure.notes.join("<br/>")
-                        textFormat: Text.RichText
-                        wrapMode: Text.Wrap
-                        visible: departure.notes.length > 0
-                        font.italic: true
-                        onLinkActivated: Qt.openUrlExternally(link)
-                    }
-                }
-
-                onClicked: {
-                    if (top.departure.features.length === 0)
-                        return;
-                    detailsSheet.departure = top.departure;
-                    detailsSheet.open();
-                }
-            }
-        }
-    }
-
     SheetDrawer {
         id: detailsSheet
         property var departure
@@ -246,7 +118,6 @@ Kirigami.ScrollablePage {
         id: journeyView
         anchors.fill: parent
         clip: true
-        delegate: departureDelegate
         model: departureModel
         spacing: Kirigami.Units.largeSpacing
 
@@ -256,6 +127,21 @@ Kirigami.ScrollablePage {
             text: i18nc("@action:button", "Load earlier departures")
             iconName: "go-up-symbolic"
             onClicked: departureModel.queryPrevious()
+        }
+
+        delegate: FormCard.FormCard {
+            id: delegateRoot
+            required property stopover stopover
+            width: ListView.view.width
+            StopoverFormDelegate {
+                stopover: delegateRoot.stopover
+                onClicked: {
+                    if (stopover.features.length === 0)
+                        return;
+                    detailsSheet.departure = stopover;
+                    detailsSheet.open();
+                }
+            }
         }
 
         footer: VerticalNavigationButton {
