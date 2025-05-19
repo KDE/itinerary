@@ -87,8 +87,8 @@ TimelineDelegate {
                 isDeparture: false
                 hasStop: false
                 Component.onCompleted: {
-                    leadingProgress = controller.progress > 0 ? 1.0 : 0;
-                    trailingProgress = controller.progress > 0 ? 1.0 : 0;
+                    // leadingProgress = controller.progress > 0 ? 1.0 : 0;
+                    // trailingProgress = controller.progress > 0 ? 1.0 : 0;
                 }
             }
 
@@ -162,9 +162,9 @@ TimelineDelegate {
                         Layout.fillHeight: true
                         lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
                         hasStop: model.stopover.disruptionEffect !== Disruption.NoService
-
+/*
                         leadingProgress: model.leadingProgress
-                        trailingProgress: model.trailingProgress
+                        trailingProgress: model.trailingProgress*/
                         Binding {
                             target: model
                             property: "leadingLength"

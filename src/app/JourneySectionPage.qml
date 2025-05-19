@@ -204,30 +204,14 @@ Kirigami.Page {
                             x: 0
                             stop: journeySection.departure
                             isDeparture: true
-                            trailingProgress: sectionModel.departureTrailingProgress
                             stopoverPassed: sectionModel.departed
-                            Binding {
-                                target: sectionModel
-                                property: "departureTrailingSegmentLength"
-                                value: trailingSegmentLength
-                            }
                             visible: root.journeySection != undefined
+                            progress: sectionModel.departureProgress
                         }
                         delegate: JourneySectionStopDelegate {
                             stop: model.stopover
-                            leadingProgress: model.leadingProgress
-                            trailingProgress: model.trailingProgress
                             stopoverPassed: model.stopoverPassed
-                            Binding {
-                                target: model
-                                property: "leadingLength"
-                                value: leadingSegmentLength
-                            }
-                            Binding {
-                                target: model
-                                property: "trailingLength"
-                                value: trailingSegmentLength
-                            }
+                            progress: model.progress
                         }
                         footer: ColumnLayout {
                             width: ListView.view.width - ListView.view.leftMargin - ListView.view.rightMargin
@@ -237,14 +221,9 @@ Kirigami.Page {
                                 Layout.fillWidth: true
                                 stop: journeySection.arrival
                                 isArrival: true
-                                leadingProgress: sectionModel.arrivalLeadingProgress
                                 stopoverPassed: sectionModel.arrived
-                                Binding {
-                                    target: sectionModel
-                                    property: "arrivalLeadingSegmentLength"
-                                    value: leadingSegmentLength
-                                }
                                 visible: root.journeySection != undefined
+                                progress: journeySection.arrived ? 1 : 0
                             }
                             // spacer for floating buttons not overlapping the list view
                             Item {

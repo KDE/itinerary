@@ -27,7 +27,7 @@ TimelineDelegate {
         TimelineDelegateDepartureLayout {
             id: departureLayout
 
-            progress: root.controller.progress
+            progress: sectionModel.departureProgress
             reservationFor: root.reservationFor
             transportName: root.reservationFor.trainName + " " + root.reservationFor.trainNumber
             transportIcon: departure.route.line.mode == Line.Unknown ? ReservationHelper.defaultIconName(root.reservation) : departure.route.line.iconName
@@ -97,8 +97,8 @@ TimelineDelegate {
                 hasStop: false
 
                 Component.onCompleted: {
-                    leadingProgress = controller.progress > 0 ? 1.0 : 0;
-                    trailingProgress = controller.progress > 0 ? 1.0 : 0;
+                    // leadingProgress = controller.progress > 0 ? 1.0 : 0;
+                    // trailingProgress = controller.progress > 0 ? 1.0 : 0;
                 }
             }
             QQC2.ToolButton {
@@ -171,9 +171,9 @@ TimelineDelegate {
                         Layout.fillHeight: true
                         lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
                         hasStop: model.stopover.disruptionEffect !== Disruption.NoService
-
+/*
                         leadingProgress: model.leadingProgress
-                        trailingProgress: model.trailingProgress
+                        trailingProgress: model.trailingProgress*/
                         Binding {
                             target: model
                             property: "leadingLength"

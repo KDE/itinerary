@@ -21,12 +21,8 @@ Item {
     readonly property bool isSameTime: stop.scheduledDepartureTime.getTime() == stop.scheduledArrivalTime.getTime()
     readonly property bool isSingleTime: !(stop.scheduledDepartureTime > 0 && stop.scheduledArrivalTime > 0)  || isSameTime
 
-    // outbound progress overlay properties
-    readonly property real leadingSegmentLength: lineSegment.leadingLineLength
-    readonly property real trailingSegmentLength: lineSegment.trailingLineLength + (notesLabel.visible ? stopNotesLine.height : 0)
-    // inbound progress overlay properties
-    property alias leadingProgress: lineSegment.leadingProgress
-    property real trailingProgress
+
+    property real progress
     property alias stopoverPassed: lineSegment.showStop
 
     implicitHeight: layout.implicitHeight + Kirigami.Units.gridUnit * 2
@@ -43,15 +39,16 @@ Item {
             id: lineSegment
             Layout.column: 0
             Layout.row: 0
-            Layout.fillHeight: true
             Layout.rowSpan: 2
+            Layout.fillHeight: true
 
             isArrival: root.isArrival
             isDeparture: root.isDeparture
             lineColor: root.stop.route.line.hasColor ? root.stop.route.line.color : Kirigami.Theme.textColor
             hasStop: !isIntermediate || root.stop.disruptionEffect !== KPublicTransport.Disruption.NoService
             showStop: false
-            trailingProgress: Math.min(1.0, (root.trailingProgress * root.trailingSegmentLength) / lineSegment.trailingLineLength)
+            stopY: arrivalTime.height / 2
+            progress: root.progress
         }
 
         QQC2.Label {
@@ -59,7 +56,7 @@ Item {
             Layout.column: 1
             Layout.row: 0
             Layout.rowSpan: root.isSingleTime ? 2 : 1
-            Layout.alignment: root.isSingleTime ? Qt.AlignVCenter : Qt.AlignBottom
+            Layout.alignment: Qt.AlignTop
             text: Localizer.formatTime(stop, "scheduledArrivalTime")
             visible: root.stop.scheduledArrivalTime > 0 && !root.isSameTime
             font.strikeout: root.stop.disruptionEffect === KPublicTransport.Disruption.NoService
@@ -68,7 +65,7 @@ Item {
             Layout.column: 2
             Layout.row: 0
             Layout.rowSpan: arrivalTime.Layout.rowSpan
-            Layout.alignment: root.isSingleTime ? Qt.AlignVCenter : Qt.AlignBottom
+            Layout.alignment:  Qt.AlignTop
             text: (root.stop.arrivalDelay >= 0 ? "+" : "") + root.stop.arrivalDelay
             color: root.stop.arrivalDelay > 1 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
             visible: arrivalTime.visible && root.stop.hasExpectedArrivalTime && !root.isSameTime && root.stop.disruptionEffect !== KPublicTransport.Disruption.NoService
@@ -79,7 +76,7 @@ Item {
             Layout.row: 0
             Layout.rowSpan: arrivalTime.Layout.rowSpan
             Layout.fillWidth: true
-            Layout.alignment: root.isSingleTime ? Qt.AlignVCenter : Qt.AlignBottom
+            Layout.alignment:  Qt.AlignTop
             text: root.stop.stopPoint.name
             elide: Text.ElideRight
             font.bold: root.isDeparture || root.isArrival
@@ -91,7 +88,8 @@ Item {
             Layout.column: 1
             Layout.row: root.isSingleTime ? 0 : 1
             Layout.rowSpan: root.isSingleTime ? 2 : 1
-            Layout.alignment: root.isSingleTime ? Qt.AlignVCenter : Qt.AlignTop
+            Layout.alignment:  Qt.AlignTop
+            Layout.fillHeight: true
             text: Localizer.formatTime(stop, "scheduledDepartureTime")
             visible: root.stop.scheduledDepartureTime > 0
             font.strikeout: root.stop.disruptionEffect === KPublicTransport.Disruption.NoService
@@ -101,7 +99,7 @@ Item {
             Layout.column: 2
             Layout.row: departureTime.Layout.row
             Layout.rowSpan: departureTime.Layout.rowSpan
-            Layout.alignment: root.isSingleTime ? Qt.AlignVCenter : Qt.AlignTop
+            Layout.alignment:  Qt.AlignTop
             text: (root.stop.departureDelay >= 0 ? "+" : "") + root.stop.departureDelay
             color: root.stop.departureDelay > 1 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
             visible: departureTime.visible && root.stop.hasExpectedDepartureTime && root.stop.disruptionEffect !== KPublicTransport.Disruption.NoService
@@ -111,7 +109,7 @@ Item {
             Layout.column: 3
             Layout.row: 1
             Layout.rowSpan: 1
-            Layout.alignment: root.isSingleTime ? Qt.AlignVCenter : Qt.AlignTop
+            Layout.alignment:  Qt.AlignTop
             Layout.preferredHeight: Kirigami.Units.iconSizes.small
             Layout.preferredWidth: Kirigami.Units.iconSizes.small
             occupancy: root.stop.maximumOccupancy
@@ -121,7 +119,7 @@ Item {
             Layout.column: 4
             Layout.row: 0
             Layout.rowSpan: arrivalTime.Layout.rowSpan
-            Layout.alignment: root.isSingleTime ? Qt.AlignVCenter : Qt.AlignBottom
+            Layout.alignment:  Qt.AlignTop
 
             color: root.stop.hasExpectedPlatform ? (root.stop.platformChanged ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor) : Kirigami.Theme.textColor
             text: {
@@ -154,8 +152,9 @@ Item {
             Layout.column: 5
             Layout.row: 0
             Layout.rowSpan: arrivalTime.Layout.rowSpan
-            Layout.alignment: root.isSingleTime ? Qt.AlignVCenter : Qt.AlignBottom
-            Layout.bottomMargin: root.isSingleTime ? 0 : Math.round(-height / 4)
+            Layout.alignment:  Qt.AlignTop
+            Layout.topMargin: -(height - arrivalTime.height) / 2
+            Layout.bottomMargin: -(height - arrivalTime.height) / 2
             visible: root.stop.stopPoint.hasCoordinate && root.stop.disruptionEffect !== KPublicTransport.Disruption.NoService
             icon.name: "map-symbolic"
             text: i18n("Show location")
@@ -189,18 +188,7 @@ Item {
         }
 
 
-        JourneySectionStopDelegateLineSegment {
-            id: stopNotesLine
-            Layout.column: 0
-            Layout.row: 2
-            Layout.fillHeight: true
-            visible: notesLabel.visible && !root.isArrival
-            lineColor: root.stop.route.line.hasColor ? root.stop.route.line.color : Kirigami.Theme.textColor
-            hasStop: false
-            showStop: false
-            leadingProgress:  Math.max(0, ((root.trailingProgress * root.trailingSegmentLength) - lineSegment.trailingLineLength) / stopNotesLine.height)
-            trailingProgress: stopNotesLine.leadingProgress
-        }
+
         QQC2.Label {
             id: notesLabel
             Layout.column: 3

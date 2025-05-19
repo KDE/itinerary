@@ -21,23 +21,19 @@ Item {
     property bool isArrival: false
     property color lineColor: Kirigami.Theme.textColor
     property int lineWidth: Kirigami.Units.smallSpacing * 4
-
-    property real leadingProgress: NaN
-    property real trailingProgress: NaN
+    property real stopY: isArrival ? height -  lineSegment.lineWidth / 2: lineSegment.lineWidth / 2
+    property real progress
     property bool hasStop: true
     property bool showStop: lineSegment.hasStop
 
     implicitWidth: Kirigami.Units.iconSizes.smallMedium
-
-    readonly property real leadingLineLength: line.height / 2
-    readonly property real trailingLineLength: line.height / 2
 
     readonly property bool isIntermediate: !isDeparture && !isArrival
 
     Kirigami.ShadowedRectangle {
         id: line
         x: Math.round((lineSegment.implicitWidth - lineSegment.lineWidth) / 2)
-        y: isDeparture? parent.height-height:0
+        y: isDeparture ? stopDot.y - (stopDot.x  - x) : 0
         width: lineSegment.lineWidth
         color: lineSegment.lineColor
 
@@ -50,9 +46,7 @@ Item {
         }
         height:
             if (isArrival) {
-                Math.round(parent.height / 2) + lineSegment.lineWidth / 2
-            } else if (isDeparture) {
-                Math.round(parent.height / 2) + lineSegment.lineWidth / 2
+                stopDot.y + stopDot.height + stopDot.x - x
             } else {
                 parent.height
             }
@@ -60,23 +54,24 @@ Item {
     Kirigami.ShadowedRectangle {
         id: progress
         x: line.x + (line.width - width) /2
-        y: line.y + (isDeparture ? (line.width - width) / 2 + 0.3 * line.width: 0)
+        y: line.y + (isDeparture ? (line.width - width) / 2 + 0.3 * line.width : 0)
         width: lineSegment.lineWidth * 0.6
         color: Qt.platform.os !== "android" ? Kirigami.Theme.hoverColor : Kirigami.Theme.highlightColor
         opacity: 0.9
-        height: ((isDeparture || isArrival) ? line.height - (line.width - width) / 2 - line.width * 0.3 : line.height) *
-                (
-                    isDeparture ? trailingProgress :
-                    isArrival ? leadingProgress :
-                    (leadingProgress + trailingProgress) * 0.5
-                )
+        height: {
+            const progress = ((isDeparture || isArrival) ? line.height - (line.width - width) / 2 - line.width * 0.3 : line.height) * lineSegment.progress
+            if (showStop) {
+                return Math.max(progress, stopDot.y + stopDot.height - y)
+            }
+            return progress
+        }
     }
 
 
     Rectangle {
         id: stopDot
         x: line.x + (line.width - width) / 2
-        y: parent.height / 2 - width / 2
+        y: stopY - radius
         radius: width / 2
         width: lineSegment.lineWidth * (isIntermediate ? 0.3 : 0.6)
         height: width

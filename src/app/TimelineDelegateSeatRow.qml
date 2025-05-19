@@ -27,8 +27,8 @@ RowLayout {
         isDeparture: false
         hasStop: false
 
-        leadingProgress: root.progress > 0 ? 1.0 : 0;
-        trailingProgress: root.progress > 0 ? 1.0 : 0;
+        // leadingProgress: root.progress > 0 ? 1.0 : 0;
+        // trailingProgress: root.progress > 0 ? 1.0 : 0;
 
         Layout.fillHeight: true
     }
