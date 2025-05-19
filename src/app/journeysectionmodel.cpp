@@ -13,26 +13,15 @@
 JourneySectionModel::JourneySectionModel(QObject *parent)
     : QAbstractListModel(parent)
 {
-    connect(this, &JourneySectionModel::departureTrailingSegmentLengthChanged, this, [this]() {
-        if (!m_data.empty()) {
-            Q_EMIT dataChanged(index(0, 0), index(0, 0));
-        }
-    });
-    connect(this, &JourneySectionModel::arrivalLeadingSegmentLengthChanged, this, [this]() {
-        if (!m_data.empty()) {
-            Q_EMIT dataChanged(index(rowCount() - 1, 0), index(rowCount() - 1, 0));
-        }
-    });
-
     connect(this, &JourneySectionModel::showProgressChanged, this, [this]() {
-        if (!m_data.empty()) {
+        if (!m_journey.intermediateStops().empty()) {
             Q_EMIT dataChanged(index(0, 0), index(rowCount() - 1, 0));
         }
         Q_EMIT journeySectionChanged();
     });
 
     connect(&m_updateTimer, &QTimer::timeout, this, [this]() {
-        if (!m_data.empty()) {
+        if (!m_journey.intermediateStops().empty()) {
             Q_EMIT dataChanged(index(0, 0), index(rowCount() - 1, 0));
         }
     });
@@ -65,12 +54,10 @@ void JourneySectionModel::setJourneySection(const KPublicTransport::JourneySecti
 
     beginResetModel();
     m_journey = section;
-    m_data.clear();
-    m_data.resize(m_journey.intermediateStops().size());
     endResetModel();
     Q_EMIT journeySectionChanged();
 
-    if (m_data.empty()) {
+    if (m_journey.intermediateStops().empty()) {
         m_updateTimer.stop();
     } else {
         m_updateTimer.start();
@@ -94,14 +81,8 @@ QVariant JourneySectionModel::data(const QModelIndex &index, int role) const
     switch (role) {
     case Qt::DisplayRole:
         return m_journey.intermediateStops()[index.row()].stopPoint().name();
-    case LeadingSegmentLengthRole:
-        return m_data[index.row()].leadingLength;
-    case TrailingSegmentLengthtRole:
-        return m_data[index.row()].trailingLength;
-    case LeadingSegmentProgressRole:
-        return leadingProgress(index.row());
-    case TrailingSegmentProgressRole:
-        return trailingProgress(index.row());
+    case ProgressRole:
+        return progress(index.row());
     case StopoverRole: {
         auto stop = m_journey.intermediateStops()[index.row()];
         if (stop.route().line().mode() == KPublicTransport::Line::Unknown) {
@@ -116,55 +97,21 @@ QVariant JourneySectionModel::data(const QModelIndex &index, int role) const
     return {};
 }
 
-bool JourneySectionModel::setData(const QModelIndex &index, const QVariant &value, int role)
-{
-    const auto length = value.toFloat();
-    if (length <= 0.0f) {
-        return false;
-    }
-
-    qCDebug(Log) << index << value << role;
-    switch (role) {
-    case LeadingSegmentLengthRole:
-        m_data[index.row()].leadingLength = length;
-        break;
-    case TrailingSegmentLengthtRole:
-        m_data[index.row()].trailingLength = length;
-        break;
-    default:
-        return false;
-    }
-    Q_EMIT dataChanged(index, index);
-    if (index.row() > 0) {
-        Q_EMIT dataChanged(index.sibling(index.row() - 1, 0), index.sibling(index.row() - 1, 0));
-    }
-    if (index.row() < rowCount() - 1) {
-        Q_EMIT dataChanged(index.sibling(index.row() + 1, 0), index.sibling(index.row() + 1, 0));
-    }
-    return true;
-}
-
 QHash<int, QByteArray> JourneySectionModel::roleNames() const
 {
     auto n = QAbstractListModel::roleNames();
-    n.insert(LeadingSegmentLengthRole, "leadingLength");
-    n.insert(TrailingSegmentLengthtRole, "trailingLength");
-    n.insert(LeadingSegmentProgressRole, "leadingProgress");
-    n.insert(TrailingSegmentProgressRole, "trailingProgress");
+    n.insert(ProgressRole, "progress");
     n.insert(StopoverRole, "stopover");
     n.insert(StopoverPassedRole, "stopoverPassed");
     return n;
 }
 
-float JourneySectionModel::departureTrailingProgress() const
+
+float JourneySectionModel::departureProgress() const
 {
-    return trailingProgress(-1);
+    return progress(-1);
 }
 
-float JourneySectionModel::arrivalLeadingProgress() const
-{
-    return leadingProgress(rowCount());
-}
 
 bool JourneySectionModel::departed() const
 {
@@ -203,39 +150,8 @@ static QDateTime arrivalTime(const KPublicTransport::Stopover &stop)
     return departureTime(stop);
 }
 
-float JourneySectionModel::leadingProgress(int row) const
-{
-    if (!m_showProgress) {
-        return 0.0f;
-    }
 
-    const auto now = currentDateTime();
-    const auto stop = stopoverForRow(row);
-    if (arrivalTime(stop) <= now) {
-        qCDebug(Log) << row << stop.stopPoint().name() << "already passed" << arrivalTime(stop);
-        return 1.0f;
-    }
-
-    const auto prevStop = stopoverForRow(row - 1);
-    if (departureTime(prevStop) >= now) {
-        qCDebug(Log) << row << stop.stopPoint().name() << "not passed yet";
-        return 0.0f;
-    }
-
-    const float totalTime = departureTime(prevStop).secsTo(arrivalTime(stop));
-    const float progressTime = departureTime(prevStop).secsTo(now);
-
-    const float prevLength = row > 0 ? m_data[row - 1].trailingLength : m_departureTrailingLength;
-    const float leadingLength = row >= rowCount() ? m_arrivalLeadingLength : m_data[row].leadingLength;
-    const float totalLength = leadingLength + prevLength;
-
-    const float progressLength = totalLength * (progressTime / totalTime);
-    qCDebug(Log) << row << stop.stopPoint().name() << totalTime << progressTime << totalLength << progressLength << prevLength
-                 << (progressLength < prevLength ? 0.0f : ((progressLength - prevLength) / leadingLength));
-    return progressLength < prevLength ? 0.0f : ((progressLength - prevLength) / leadingLength);
-}
-
-float JourneySectionModel::trailingProgress(int row) const
+float JourneySectionModel::progress(int row) const
 {
     if (!m_showProgress) {
         return 0.0f;
@@ -257,17 +173,11 @@ float JourneySectionModel::trailingProgress(int row) const
     const float totalTime = departureTime(stop).secsTo(arrivalTime(nextStop));
     const float progressTime = departureTime(stop).secsTo(now);
 
-    const float nextLength = row < rowCount() - 1 ? m_data[row + 1].leadingLength : m_arrivalLeadingLength;
-    const float trailingLength = row < 0 ? m_departureTrailingLength : m_data[row].trailingLength;
-    const float totalLength = trailingLength + nextLength;
 
-    const float progressLength = totalLength * (progressTime / totalTime);
-    qCDebug(Log) << row << stop.stopPoint().name() << totalTime << progressTime << totalLength << progressLength << nextLength
-                 << (progressLength > trailingLength ? 1.0f : (progressLength / trailingLength));
-    return progressLength > trailingLength ? 1.0f : (progressLength / trailingLength);
+    return std::clamp(progressTime / totalTime, 0.0f, 1.0f);
 }
 
-float JourneySectionModel::stopoverPassed(int row) const
+bool JourneySectionModel::stopoverPassed(int row) const
 {
     if (!m_showProgress) {
         return false;
@@ -281,6 +191,8 @@ float JourneySectionModel::stopoverPassed(int row) const
 void JourneySectionModel::setCurrentDateTime(const QDateTime &dt)
 {
     m_unitTestTime = dt;
+    Q_EMIT dataChanged(index(0), index(rowCount() - 1), {Role::ProgressRole, Role::StopoverPassedRole});
+    Q_EMIT journeySectionChanged();
 }
 
 QDateTime JourneySectionModel::currentDateTime() const

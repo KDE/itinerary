@@ -201,6 +201,7 @@ Kirigami.Page {
                     stop: tripView.journeySection.departure
                     isDeparture: true
                     highlight: tripView.stopIndex === 0
+                    topPadding: Kirigami.Units.largeSpacing
                 }
 
                 delegate: JourneySectionStopDelegate {

@@ -27,7 +27,7 @@ TimelineDelegate {
         TimelineDelegateDepartureLayout {
             id: departureLayout
 
-            progress: root.controller.progress
+            progress: root.expanded ? sectionModel.departureProgress : root.controller.progress
             reservationFor: root.reservationFor
             transportName: root.reservationFor.trainName + " " + root.reservationFor.trainNumber
             transportIcon: departure.route.line.mode == Line.Unknown ? ReservationHelper.defaultIconName(root.reservation) : departure.route.line.iconName
@@ -50,83 +50,64 @@ TimelineDelegate {
                 }
             }
             departurePlatformChanged: root.departure.platformChanged
-            Component.onCompleted: {
-                progress = root.controller.progress;
-            }
-
             departureCountry: Localizer.formatCountryWithContext(reservationFor.departureStation.address,
                                                          reservationFor.arrivalStation.address,
                                                          Settings.homeCountryIsoCode)
-        }
 
-        TimelineDelegateSeatRow {
-            route: root.departure.route
-            hasSeat: root.hasSeat
+            TimelineDelegateSeatRow {
+                hasSeat: root.hasSeat
 
-            Component.onCompleted: progress = root.controller.progress
-
-            TimelineDelegateSeatRowLabel {
-                text: i18nc("train coach", "Coach: <b>%1</b>", root.seatSectionString())
-            }
-            Kirigami.Separator {
-                Layout.fillHeight: true
-            }
-            TimelineDelegateSeatRowLabel {
-                text: i18nc("train seat", "Seat: <b>%1</b>", root.seatString())
-            }
-            Kirigami.Separator {
-                Layout.fillHeight: true
-            }
-            TimelineDelegateSeatRowLabel {
-                text: {
-                    const s = root.reservation?.reservedTicket?.ticketedSeat?.seatingType;
-                    return i18nc("train class", "Class: <b>%1</b>", s !== "" ? s : "-");
+                TimelineDelegateSeatRowLabel {
+                    text: i18nc("train coach", "Coach: <b>%1</b>", root.seatSectionString())
                 }
-                lowPriority: true
-            }
-        }
-
-        RowLayout {
-            Layout.fillWidth: true
-            spacing: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
-
-            JourneySectionStopDelegateLineSegment {
-                Layout.fillHeight: true
-                lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
-                isDeparture: false
-                hasStop: false
-
-                Component.onCompleted: {
-                    leadingProgress = controller.progress > 0 ? 1.0 : 0;
-                    trailingProgress = controller.progress > 0 ? 1.0 : 0;
+                Kirigami.Separator {
+                    Layout.fillHeight: true
                 }
-            }
-            QQC2.ToolButton {
-                visible: sectionModel.sectionCount !== 0
-                Layout.fillWidth: true
-                onClicked: expanded = !expanded
-                contentItem: RowLayout {
-                    spacing: 0
-                    Kirigami.Icon {
-                        source: expanded? "arrow-up" : "arrow-down"
-                        implicitHeight: Kirigami.Units.largeSpacing*2
-                        color: Kirigami.Theme.disabledTextColor
+                TimelineDelegateSeatRowLabel {
+                    text: i18nc("train seat", "Seat: <b>%1</b>", root.seatString())
+                }
+                Kirigami.Separator {
+                    Layout.fillHeight: true
+                }
+                TimelineDelegateSeatRowLabel {
+                    text: {
+                        const s = root.reservation?.reservedTicket?.ticketedSeat?.seatingType;
+                        return i18nc("train class", "Class: <b>%1</b>", s !== "" ? s : "-");
                     }
-                    QQC2.Label {
-                        text: i18np("1 intermediate stop (%2)", "%1 intermediate stops (%2)", sectionModel.sectionCount, Localizer.formatDuration(root.journeySection.duration))
-                        elide: Text.ElideRight
-                        color: Kirigami.Theme.disabledTextColor
-                        Layout.rightMargin: Kirigami.Units.largeSpacing
-                        Layout.fillWidth: true
+                    lowPriority: true
+                }
+            }
+
+            RowLayout {
+                Layout.fillWidth: true
+                spacing: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
+                QQC2.ToolButton {
+                    visible: sectionModel.sectionCount !== 0
+                    Layout.fillWidth: true
+                    onClicked: expanded = !expanded
+                    contentItem: RowLayout {
+                        spacing: 0
+                        Kirigami.Icon {
+                            source: expanded? "arrow-up" : "arrow-down"
+                            implicitHeight: Kirigami.Units.largeSpacing*2
+                            color: Kirigami.Theme.disabledTextColor
+                        }
+                        QQC2.Label {
+                            text: i18np("1 intermediate stop (%2)", "%1 intermediate stops (%2)", sectionModel.sectionCount, Localizer.formatDuration(root.journeySection.duration))
+                            elide: Text.ElideRight
+                            color: Kirigami.Theme.disabledTextColor
+                            Layout.rightMargin: Kirigami.Units.largeSpacing
+                            Layout.fillWidth: true
+                        }
                     }
                 }
-            }
-            QQC2.Label {
-                visible: sectionModel.sectionCount === 0 && root.journeySection.duration > 0
-                text: i18n("0 intermediate stop (%1)", Localizer.formatDuration(root.journeySection.duration))
-                elide: Text.ElideRight
-                color: Kirigami.Theme.disabledTextColor
-                Layout.fillWidth: true
+                QQC2.Label {
+                    visible: sectionModel.sectionCount === 0 && root.journeySection.duration > 0
+                    text: i18n("0 intermediate stop (%1)", Localizer.formatDuration(root.journeySection.duration))
+                    elide: Text.ElideRight
+                    color: Kirigami.Theme.disabledTextColor
+                    Layout.fillWidth: true
+                }
             }
         }
 
@@ -171,19 +152,7 @@ TimelineDelegate {
                         Layout.fillHeight: true
                         lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
                         hasStop: model.stopover.disruptionEffect !== Disruption.NoService
-
-                        leadingProgress: model.leadingProgress
-                        trailingProgress: model.trailingProgress
-                        Binding {
-                            target: model
-                            property: "leadingLength"
-                            value: intermediateStopLine.leadingLineLength
-                        }
-                        Binding {
-                            target: model
-                            property: "trailingLength"
-                            value: intermediateStopLine.trailingLineLength
-                        }
+                        progress: model.progress
                     }
                     QQC2.Label{
                         text: model.stopover.stopPoint.name
@@ -235,10 +204,7 @@ TimelineDelegate {
                 }
             }
             arrivalPlatformChanged: root.arrival.platformChanged
-
-            Component.onCompleted: {
-                progress = root.controller.progress;
-            }
+            progress: sectionModel.arrived ? 1 : 0
         }
     }
 

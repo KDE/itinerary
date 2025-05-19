@@ -9,10 +9,7 @@ import org.kde.kirigami as Kirigami
 RowLayout {
     id: root
 
-    property var route
     required property bool hasSeat
-    property real progress
-    property alias lineSegmentVisible: lineSegment.visible
 
     default property alias __rowData: layout.data
 
@@ -20,18 +17,6 @@ RowLayout {
     spacing: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
 
     Layout.fillWidth: true
-
-    JourneySectionStopDelegateLineSegment {
-        id: lineSegment
-        lineColor: root.route?.line.hasColor ? root.route.line.color : Kirigami.Theme.textColor
-        isDeparture: false
-        hasStop: false
-
-        leadingProgress: root.progress > 0 ? 1.0 : 0;
-        trailingProgress: root.progress > 0 ? 1.0 : 0;
-
-        Layout.fillHeight: true
-    }
 
     Rectangle {
         height: Kirigami.Units.gridUnit * 2

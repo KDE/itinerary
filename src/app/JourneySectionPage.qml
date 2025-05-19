@@ -190,34 +190,19 @@ Kirigami.Page {
                         rightMargin: Kirigami.Units.largeSpacing
                         header: JourneySectionStopDelegate {
                             x: 0
+                            topPadding: Kirigami.Units.largeSpacing
                             stop: journeySection.departure
                             isDeparture: true
                             highlight: root.departureStopIndex === 0
-                            trailingProgress: sectionModel.departureTrailingProgress
                             stopoverPassed: sectionModel.departed
-                            Binding {
-                                target: sectionModel
-                                property: "departureTrailingSegmentLength"
-                                value: trailingSegmentLength
-                            }
                             visible: root.journeySection != undefined
+                            progress: sectionModel.departureProgress
                         }
                         delegate: JourneySectionStopDelegate {
                             stop: model.stopover
-                            leadingProgress: model.leadingProgress
-                            trailingProgress: model.trailingProgress
                             stopoverPassed: model.stopoverPassed
                             highlight: root.departureStopIndex === index + 1 || root.arrivalStopIndex === index + 1
-                            Binding {
-                                target: model
-                                property: "leadingLength"
-                                value: leadingSegmentLength
-                            }
-                            Binding {
-                                target: model
-                                property: "trailingLength"
-                                value: trailingSegmentLength
-                            }
+                            progress: model.progress
                         }
                         footer: ColumnLayout {
                             width: ListView.view.width - ListView.view.leftMargin - ListView.view.rightMargin
@@ -228,14 +213,9 @@ Kirigami.Page {
                                 stop: journeySection.arrival
                                 isArrival: true
                                 highlight: root.arrivalStopIndex === root.journeySection.intermediateStops.length + 1
-                                leadingProgress: sectionModel.arrivalLeadingProgress
                                 stopoverPassed: sectionModel.arrived
-                                Binding {
-                                    target: sectionModel
-                                    property: "arrivalLeadingSegmentLength"
-                                    value: leadingSegmentLength
-                                }
                                 visible: root.journeySection != undefined
+                                progress: sectionModel.arrived ? 1 : 0
                             }
                             // spacer for floating buttons not overlapping the list view
                             Item {

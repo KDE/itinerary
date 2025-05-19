@@ -83,7 +83,6 @@ TimelineDelegate {
 
         TimelineDelegateSeatRow {
             hasSeat: root.hasSeat
-            lineSegmentVisible: false
 
             Layout.fillWidth: true
 

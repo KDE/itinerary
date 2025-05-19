@@ -62,28 +62,25 @@ TimelineDelegate {
                 text: !isNaN(root.reservationFor.boardingTime.getTime()) ? i18nc("@info", "Boarding time: %1", Localizer.formatTime(root.reservationFor, "boardingTime")) : ''
                 font.weight: Font.DemiBold
             }
-        }
 
-        TimelineDelegateSeatRow {
-            route: root.departure.route
-            hasSeat: root.hasSeat || root.reservationFor.departureTerminal || root.reservationFor.departureGate
+            TimelineDelegateSeatRow {
+                hasSeat: root.hasSeat || root.reservationFor.departureTerminal || root.reservationFor.departureGate
 
-            Component.onCompleted: progress = root.controller.progress;
-
-            TimelineDelegateSeatRowLabel {
-                text: i18nc("flight departure terminal", "Terminal: <b>%1</b>", root.reservationFor.departureTerminal || "-")
-            }
-            Kirigami.Separator {
-                Layout.fillHeight: true
-            }
-            TimelineDelegateSeatRowLabel {
-                text: i18nc("flight departure gate", "Gate: <b>%1</b>", root.reservationFor.departureGate || "-")
-            }
-            Kirigami.Separator {
-                Layout.fillHeight: true
-            }
-            TimelineDelegateSeatRowLabel {
-                text: i18nc("flight seats", "Seat: <b>%1</b>", root.airplaneSeat())
+                TimelineDelegateSeatRowLabel {
+                    text: i18nc("flight departure terminal", "Terminal: <b>%1</b>", root.reservationFor.departureTerminal || "-")
+                }
+                Kirigami.Separator {
+                    Layout.fillHeight: true
+                }
+                TimelineDelegateSeatRowLabel {
+                    text: i18nc("flight departure gate", "Gate: <b>%1</b>", root.reservationFor.departureGate || "-")
+                }
+                Kirigami.Separator {
+                    Layout.fillHeight: true
+                }
+                TimelineDelegateSeatRowLabel {
+                    text: i18nc("flight seats", "Seat: <b>%1</b>", root.airplaneSeat())
+                }
             }
         }
 

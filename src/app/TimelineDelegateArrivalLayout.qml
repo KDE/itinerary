@@ -25,22 +25,11 @@ RowLayout {
 
     Layout.fillWidth: true
 
-    ColumnLayout {
-        spacing: 0
-        JourneySectionStopDelegateLineSegment {
-            Layout.fillHeight: true
-            lineColor: root.departure.route.line.hasColor ? root.departure.route.line.color : Kirigami.Theme.textColor
-            leadingProgress: root.progress > 0.99 ? 1 : 0
-            trailingProgress: root.progress > 0.99 ? 1 : 0
-            hasStop: false
-        }
-        JourneySectionStopDelegateLineSegment {
-            Layout.minimumHeight: implicitWidth
-            lineColor: root.departure.route.line.hasColor ? root.departure.route.line.color : Kirigami.Theme.textColor
-            leadingProgress: root.progress > 0.99 ? 1 : 0
-            trailingProgress: root.progress > 0.99 ? 1 : 0
-            isArrival: true
-        }
+    JourneySectionStopDelegateLineSegment {
+        Layout.fillHeight: true
+        lineColor: root.departure.route.line.hasColor ? root.departure.route.line.color : Kirigami.Theme.textColor
+        progress: root.progress
+        isArrival: true
     }
 
     ColumnLayout {
