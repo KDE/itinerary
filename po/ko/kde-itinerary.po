@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-15 00:43+0000\n"
+"POT-Creation-Date: 2025-05-19 00:42+0000\n"
 "PO-Revision-Date: 2025-04-22 01:21+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -555,67 +555,65 @@ msgstr "%1에서 %2(으)로|/|%1에서 %2$[으 %2]로"
 msgid "Edit Bus Reservation"
 msgstr "버스 예약 편집"
 
-#: app/BusEditor.qml:48 app/TrainEditor.qml:52
-#, kde-format
-msgid "Board Later"
-msgstr "나중에 탑승"
+#: app/BusEditor.qml:48 app/BusEditor.qml:107
+#, fuzzy, kde-format
+#| msgid "Change departure stop"
+msgctxt "bus departure"
+msgid "Change Departure Stop"
+msgstr "출발 정류장 변경"
 
-#: app/BusEditor.qml:51
-#, kde-format
+#: app/BusEditor.qml:53
+#, fuzzy, kde-format
+#| msgid "Change departure stop"
+msgctxt "bus departure"
 msgid "Change departure stop"
 msgstr "출발 정류장 변경"
 
-#: app/BusEditor.qml:61 app/TrainEditor.qml:65
-#, kde-format
-msgid "Alight Earlier"
-msgstr "일찍 탑승"
+#: app/BusEditor.qml:63 app/BusEditor.qml:129
+#, fuzzy, kde-format
+#| msgid "Change arrival stop"
+msgctxt "bus arrival"
+msgid "Change Arrival Stop"
+msgstr "도착 정류장 변경"
 
-#: app/BusEditor.qml:64
-#, kde-format
+#: app/BusEditor.qml:68
+#, fuzzy, kde-format
+#| msgid "Change arrival stop"
+msgctxt "bus arrival"
 msgid "Change arrival stop"
 msgstr "도착 정류장 변경"
 
-#: app/BusEditor.qml:84
+#: app/BusEditor.qml:88
 #, kde-format
 msgctxt "@title"
 msgid "Bus"
 msgstr "버스"
 
-#: app/BusEditor.qml:89
+#: app/BusEditor.qml:93
 #, kde-format
 msgctxt "bus departure"
 msgid "Departure"
 msgstr "출발"
 
-#: app/BusEditor.qml:94 app/BusEditor.qml:116
+#: app/BusEditor.qml:98 app/BusEditor.qml:120
 #, kde-format
 msgctxt "bus stop"
 msgid "Stop"
 msgstr "정류정"
 
-#: app/BusEditor.qml:99 app/BusEditor.qml:121
+#: app/BusEditor.qml:103 app/BusEditor.qml:125
 #, kde-format
 msgctxt "bus stop platform"
 msgid "Platform"
 msgstr "승강장"
 
-#: app/BusEditor.qml:103 app/TrainEditor.qml:111
-#, kde-format
-msgid "Board later"
-msgstr "나중에 탑승"
-
-#: app/BusEditor.qml:111
+#: app/BusEditor.qml:115
 #, kde-format
 msgctxt "bus arrival"
 msgid "Arrival"
 msgstr "도착"
 
-#: app/BusEditor.qml:125 app/TrainEditor.qml:136
-#, kde-format
-msgid "Alight earlier"
-msgstr "일찍 탑승"
-
-#: app/BusEditor.qml:134 app/BusEditor.qml:140 app/BusPage.qml:183
+#: app/BusEditor.qml:138 app/BusEditor.qml:144 app/BusPage.qml:183
 #, kde-format
 msgctxt "Bus seat"
 msgid "Seat"
@@ -2237,12 +2235,12 @@ msgstr[0] "환승 %1회"
 msgid "Click to extend"
 msgstr "클릭하여 확장"
 
-#: app/livedatamanager.cpp:680
+#: app/livedatamanager.cpp:776
 #, kde-format
 msgid "Flight %1 to %2:"
 msgstr "%2(으)로 가는 %1 항공편|/|%2$[으 %2]로 가는 %1 항공편"
 
-#: app/livedatamanager.cpp:686
+#: app/livedatamanager.cpp:782
 #, kde-format
 msgid "Itinerary change"
 msgstr "여정 변경"
@@ -3726,7 +3724,7 @@ msgctxt "@info:placeholder no visited country"
 msgid "None"
 msgstr ""
 
-#: app/StatisticsPage.qml:121 app/TrainEditor.qml:88
+#: app/StatisticsPage.qml:121 app/TrainEditor.qml:92
 #, kde-format
 msgid "Train"
 msgstr "기차"
@@ -3873,54 +3871,72 @@ msgstr "등급: <b>%1</b>"
 msgid "Edit Train Reservation"
 msgstr "기차 예약 편집"
 
-#: app/TrainEditor.qml:55
-#, kde-format
+#: app/TrainEditor.qml:52 app/TrainEditor.qml:115
+#, fuzzy, kde-format
+#| msgid "Change departure station"
+msgctxt "train departure"
+msgid "Change Departure Station"
+msgstr "출발 역 변경"
+
+#: app/TrainEditor.qml:57
+#, fuzzy, kde-format
+#| msgid "Change departure station"
+msgctxt "train departure"
 msgid "Change departure station"
 msgstr "출발 역 변경"
 
-#: app/TrainEditor.qml:68
-#, kde-format
+#: app/TrainEditor.qml:67 app/TrainEditor.qml:140
+#, fuzzy, kde-format
+#| msgid "Change arrival station"
+msgctxt "train arrival"
+msgid "Change Arrival Station"
+msgstr "도착 역 변경"
+
+#: app/TrainEditor.qml:72
+#, fuzzy, kde-format
+#| msgid "Change arrival station"
+msgctxt "train arrival"
 msgid "Change arrival station"
 msgstr "도착 역 변경"
 
-#: app/TrainEditor.qml:93
+#: app/TrainEditor.qml:97
 #, kde-format
 msgctxt "train departure"
 msgid "Departure"
 msgstr "출발"
 
-#: app/TrainEditor.qml:98 app/TrainEditor.qml:124 app/TrainPage.qml:161
+#: app/TrainEditor.qml:102 app/TrainEditor.qml:128 app/TrainPage.qml:161
 #: app/TrainPage.qml:253
 #, kde-format
 msgctxt "train station"
 msgid "Station"
 msgstr "역"
 
-#: app/TrainEditor.qml:104 app/TrainEditor.qml:130
+#: app/TrainEditor.qml:108 app/TrainEditor.qml:134
 #, kde-format
 msgctxt "train platform"
 msgid "Platform"
 msgstr "승강장"
 
-#: app/TrainEditor.qml:119
+#: app/TrainEditor.qml:123
 #, kde-format
 msgctxt "train arrival"
 msgid "Arrival"
 msgstr "도착"
 
-#: app/TrainEditor.qml:146 app/TrainEditor.qml:158 app/TrainPage.qml:305
+#: app/TrainEditor.qml:150 app/TrainEditor.qml:162 app/TrainPage.qml:305
 #, kde-format
 msgctxt "Train seat"
 msgid "Seat"
 msgstr "좌석"
 
-#: app/TrainEditor.qml:152
+#: app/TrainEditor.qml:156
 #, kde-format
 msgctxt "carriage on a train"
 msgid "Coach"
 msgstr "차량"
 
-#: app/TrainEditor.qml:164
+#: app/TrainEditor.qml:168
 #, kde-format
 msgctxt "seating class on a train"
 msgid "Class"
@@ -4526,6 +4542,18 @@ msgstr "로그아웃함"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%5에 %3에서 %4(으)로 가는 %1%2|/|%5에 %3에서 %4$[으 %4]로 가는 %1%2"
+
+#~ msgid "Board Later"
+#~ msgstr "나중에 탑승"
+
+#~ msgid "Alight Earlier"
+#~ msgstr "일찍 탑승"
+
+#~ msgid "Board later"
+#~ msgstr "나중에 탑승"
+
+#~ msgid "Alight earlier"
+#~ msgstr "일찍 탑승"
 
 #~ msgctxt "duration of the delay"
 #~ msgid "Delayed %1"
