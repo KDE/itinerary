@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-19 00:42+0000\n"
-"PO-Revision-Date: 2025-05-12 07:19+0200\n"
+"PO-Revision-Date: 2025-05-19 06:52+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -572,32 +572,28 @@ msgid "Edit Bus Reservation"
 msgstr "Uredi rezervacijo avtobusa"
 
 #: app/BusEditor.qml:48 app/BusEditor.qml:107
-#, fuzzy, kde-format
-#| msgid "Change departure stop"
+#, kde-format
 msgctxt "bus departure"
 msgid "Change Departure Stop"
-msgstr "Zamenjaj začetno postajo"
+msgstr "Spremeni začetno postajališče"
 
 #: app/BusEditor.qml:53
-#, fuzzy, kde-format
-#| msgid "Change departure stop"
+#, kde-format
 msgctxt "bus departure"
 msgid "Change departure stop"
-msgstr "Zamenjaj začetno postajo"
+msgstr "Spremeni začetno postajališče"
 
 #: app/BusEditor.qml:63 app/BusEditor.qml:129
-#, fuzzy, kde-format
-#| msgid "Change arrival stop"
+#, kde-format
 msgctxt "bus arrival"
 msgid "Change Arrival Stop"
-msgstr "Zamenjaj ciljno postajo"
+msgstr "Spremeni ciljno postajališče"
 
 #: app/BusEditor.qml:68
-#, fuzzy, kde-format
-#| msgid "Change arrival stop"
+#, kde-format
 msgctxt "bus arrival"
 msgid "Change arrival stop"
-msgstr "Zamenjaj ciljno postajo"
+msgstr "Spremeni ciljno postajališče"
 
 #: app/BusEditor.qml:88
 #, kde-format
@@ -2025,7 +2021,7 @@ msgstr "Naloži zgodnejše povezave"
 #: app/JourneyQueryPage.qml:154
 #, kde-format
 msgid "No journeys found."
-msgstr "Ni najdenih potovanj"
+msgstr "Ni najdenih potovanj."
 
 #: app/JourneyQueryPage.qml:181
 #, kde-format
@@ -3910,29 +3906,25 @@ msgid "Edit Train Reservation"
 msgstr "Uredi rezervacijo vlaka"
 
 #: app/TrainEditor.qml:52 app/TrainEditor.qml:115
-#, fuzzy, kde-format
-#| msgid "Change departure station"
+#, kde-format
 msgctxt "train departure"
 msgid "Change Departure Station"
 msgstr "Spremeni začetno postajo"
 
 #: app/TrainEditor.qml:57
-#, fuzzy, kde-format
-#| msgid "Change departure station"
+#, kde-format
 msgctxt "train departure"
 msgid "Change departure station"
 msgstr "Spremeni začetno postajo"
 
 #: app/TrainEditor.qml:67 app/TrainEditor.qml:140
-#, fuzzy, kde-format
-#| msgid "Change arrival station"
+#, kde-format
 msgctxt "train arrival"
 msgid "Change Arrival Station"
 msgstr "Spremeni ciljno postajo"
 
 #: app/TrainEditor.qml:72
-#, fuzzy, kde-format
-#| msgid "Change arrival station"
+#, kde-format
 msgctxt "train arrival"
 msgid "Change arrival station"
 msgstr "Spremeni ciljno postajo"

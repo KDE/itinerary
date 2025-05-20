@@ -556,32 +556,28 @@ msgid "Edit Bus Reservation"
 msgstr ""
 
 #: app/BusEditor.qml:48 app/BusEditor.qml:107
-#, fuzzy, kde-format
-#| msgid "Departure"
+#, kde-format
 msgctxt "bus departure"
 msgid "Change Departure Stop"
-msgstr "出发时间"
+msgstr ""
 
 #: app/BusEditor.qml:53
-#, fuzzy, kde-format
-#| msgid "Delayed departure on %1"
+#, kde-format
 msgctxt "bus departure"
 msgid "Change departure stop"
-msgstr "线路 %1 延误"
+msgstr ""
 
 #: app/BusEditor.qml:63 app/BusEditor.qml:129
-#, fuzzy, kde-format
-#| msgid "Change Reservation"
+#, kde-format
 msgctxt "bus arrival"
 msgid "Change Arrival Stop"
-msgstr "修改预约"
+msgstr ""
 
 #: app/BusEditor.qml:68
-#, fuzzy, kde-format
-#| msgid "Change Reservation"
+#, kde-format
 msgctxt "bus arrival"
 msgid "Change arrival stop"
-msgstr "修改预约"
+msgstr ""
 
 #: app/BusEditor.qml:88
 #, kde-format
@@ -3842,32 +3838,28 @@ msgid "Edit Train Reservation"
 msgstr "编辑火车预订"
 
 #: app/TrainEditor.qml:52 app/TrainEditor.qml:115
-#, fuzzy, kde-format
-#| msgid "Change Reservation"
+#, kde-format
 msgctxt "train departure"
 msgid "Change Departure Station"
-msgstr "修改预约"
+msgstr ""
 
 #: app/TrainEditor.qml:57
-#, fuzzy, kde-format
-#| msgid "Change Reservation"
+#, kde-format
 msgctxt "train departure"
 msgid "Change departure station"
-msgstr "修改预约"
+msgstr ""
 
 #: app/TrainEditor.qml:67 app/TrainEditor.qml:140
-#, fuzzy, kde-format
-#| msgid "Change Reservation"
+#, kde-format
 msgctxt "train arrival"
 msgid "Change Arrival Station"
-msgstr "修改预约"
+msgstr ""
 
 #: app/TrainEditor.qml:72
-#, fuzzy, kde-format
-#| msgid "Change Reservation"
+#, kde-format
 msgctxt "train arrival"
 msgid "Change arrival station"
-msgstr "修改预约"
+msgstr ""
 
 #: app/TrainEditor.qml:97
 #, kde-format

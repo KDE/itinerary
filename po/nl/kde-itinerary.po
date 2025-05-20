@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-19 00:42+0000\n"
-"PO-Revision-Date: 2025-05-12 12:02+0200\n"
+"PO-Revision-Date: 2025-05-19 16:22+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -566,29 +566,25 @@ msgid "Edit Bus Reservation"
 msgstr "Busreservering bewerken"
 
 #: app/BusEditor.qml:48 app/BusEditor.qml:107
-#, fuzzy, kde-format
-#| msgid "Change departure stop"
+#, kde-format
 msgctxt "bus departure"
 msgid "Change Departure Stop"
 msgstr "Stopplaats voor vertrek wijzigen"
 
 #: app/BusEditor.qml:53
-#, fuzzy, kde-format
-#| msgid "Change departure stop"
+#, kde-format
 msgctxt "bus departure"
 msgid "Change departure stop"
 msgstr "Stopplaats voor vertrek wijzigen"
 
 #: app/BusEditor.qml:63 app/BusEditor.qml:129
-#, fuzzy, kde-format
-#| msgid "Change arrival stop"
+#, kde-format
 msgctxt "bus arrival"
 msgid "Change Arrival Stop"
 msgstr "Stopplaats van aankomst wijzigen"
 
 #: app/BusEditor.qml:68
-#, fuzzy, kde-format
-#| msgid "Change arrival stop"
+#, kde-format
 msgctxt "bus arrival"
 msgid "Change arrival stop"
 msgstr "Stopplaats van aankomst wijzigen"
@@ -3910,29 +3906,25 @@ msgid "Edit Train Reservation"
 msgstr "Treinreservering bewerken"
 
 #: app/TrainEditor.qml:52 app/TrainEditor.qml:115
-#, fuzzy, kde-format
-#| msgid "Change departure station"
+#, kde-format
 msgctxt "train departure"
 msgid "Change Departure Station"
 msgstr "Vertrekstation wijzigen"
 
 #: app/TrainEditor.qml:57
-#, fuzzy, kde-format
-#| msgid "Change departure station"
+#, kde-format
 msgctxt "train departure"
 msgid "Change departure station"
 msgstr "Vertrekstation wijzigen"
 
 #: app/TrainEditor.qml:67 app/TrainEditor.qml:140
-#, fuzzy, kde-format
-#| msgid "Change arrival station"
+#, kde-format
 msgctxt "train arrival"
 msgid "Change Arrival Station"
 msgstr "Aankomststation wijzigen"
 
 #: app/TrainEditor.qml:72
-#, fuzzy, kde-format
-#| msgid "Change arrival station"
+#, kde-format
 msgctxt "train arrival"
 msgid "Change arrival station"
 msgstr "Aankomststation wijzigen"

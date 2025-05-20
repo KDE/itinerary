@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-19 00:42+0000\n"
-"PO-Revision-Date: 2025-05-12 13:02+0100\n"
+"PO-Revision-Date: 2025-05-20 01:34+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -567,29 +567,25 @@ msgid "Edit Bus Reservation"
 msgstr "Editar reserva de autobús"
 
 #: app/BusEditor.qml:48 app/BusEditor.qml:107
-#, fuzzy, kde-format
-#| msgid "Change departure stop"
+#, kde-format
 msgctxt "bus departure"
 msgid "Change Departure Stop"
 msgstr "Cambiar parada de salida"
 
 #: app/BusEditor.qml:53
-#, fuzzy, kde-format
-#| msgid "Change departure stop"
+#, kde-format
 msgctxt "bus departure"
 msgid "Change departure stop"
 msgstr "Cambiar parada de salida"
 
 #: app/BusEditor.qml:63 app/BusEditor.qml:129
-#, fuzzy, kde-format
-#| msgid "Change arrival stop"
+#, kde-format
 msgctxt "bus arrival"
 msgid "Change Arrival Stop"
 msgstr "Cambiar parada de llegada"
 
 #: app/BusEditor.qml:68
-#, fuzzy, kde-format
-#| msgid "Change arrival stop"
+#, kde-format
 msgctxt "bus arrival"
 msgid "Change arrival stop"
 msgstr "Cambiar parada de llegada"
@@ -3918,29 +3914,25 @@ msgid "Edit Train Reservation"
 msgstr "Editar Reserva de tren"
 
 #: app/TrainEditor.qml:52 app/TrainEditor.qml:115
-#, fuzzy, kde-format
-#| msgid "Change departure station"
+#, kde-format
 msgctxt "train departure"
 msgid "Change Departure Station"
 msgstr "Cambiar estación de salida"
 
 #: app/TrainEditor.qml:57
-#, fuzzy, kde-format
-#| msgid "Change departure station"
+#, kde-format
 msgctxt "train departure"
 msgid "Change departure station"
 msgstr "Cambiar estación de salida"
 
 #: app/TrainEditor.qml:67 app/TrainEditor.qml:140
-#, fuzzy, kde-format
-#| msgid "Change arrival station"
+#, kde-format
 msgctxt "train arrival"
 msgid "Change Arrival Station"
 msgstr "Cambiar estación de llegada"
 
 #: app/TrainEditor.qml:72
-#, fuzzy, kde-format
-#| msgid "Change arrival station"
+#, kde-format
 msgctxt "train arrival"
 msgid "Change arrival station"
 msgstr "Cambiar estación de llegada"
@@ -4594,23 +4586,3 @@ msgstr "Sesión cerrada"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 de %3 a %4 el %5"
-
-#~ msgid "Board Later"
-#~ msgstr "Embarcar más tarde"
-
-#~ msgid "Alight Earlier"
-#~ msgstr "Bajar antes"
-
-#~ msgid "Board later"
-#~ msgstr "Embarcar más tarde"
-
-#~ msgid "Alight earlier"
-#~ msgstr "Bajar antes"
-
-#~ msgctxt "duration of the delay"
-#~ msgid "Delayed %1"
-#~ msgstr "Retraso de %1"
-
-#~ msgctxt "@info"
-#~ msgid "On time"
-#~ msgstr "A la hora"

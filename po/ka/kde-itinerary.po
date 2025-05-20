@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-19 00:42+0000\n"
-"PO-Revision-Date: 2025-05-12 04:12+0200\n"
+"PO-Revision-Date: 2025-05-19 03:40+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -563,29 +563,25 @@ msgid "Edit Bus Reservation"
 msgstr "ავტობუსის დაჯავშნის ჩასწორება"
 
 #: app/BusEditor.qml:48 app/BusEditor.qml:107
-#, fuzzy, kde-format
-#| msgid "Change departure stop"
+#, kde-format
 msgctxt "bus departure"
 msgid "Change Departure Stop"
-msgstr "გამგზავრების სადგურის შეცვლა"
+msgstr "გამგზავრების გაჩერების შეცვლა"
 
 #: app/BusEditor.qml:53
-#, fuzzy, kde-format
-#| msgid "Change departure stop"
+#, kde-format
 msgctxt "bus departure"
 msgid "Change departure stop"
-msgstr "გამგზავრების სადგურის შეცვლა"
+msgstr "გამგზავრების გაჩერების შეცვლა"
 
 #: app/BusEditor.qml:63 app/BusEditor.qml:129
-#, fuzzy, kde-format
-#| msgid "Change arrival stop"
+#, kde-format
 msgctxt "bus arrival"
 msgid "Change Arrival Stop"
 msgstr "ჩამოსვლის სადგურის შეცვლა"
 
 #: app/BusEditor.qml:68
-#, fuzzy, kde-format
-#| msgid "Change arrival stop"
+#, kde-format
 msgctxt "bus arrival"
 msgid "Change arrival stop"
 msgstr "ჩამოსვლის სადგურის შეცვლა"
@@ -3885,29 +3881,25 @@ msgid "Edit Train Reservation"
 msgstr "მატარებლის ჯავშნის ჩასწორება"
 
 #: app/TrainEditor.qml:52 app/TrainEditor.qml:115
-#, fuzzy, kde-format
-#| msgid "Change departure station"
+#, kde-format
 msgctxt "train departure"
 msgid "Change Departure Station"
 msgstr "გამგზავრების სადგურის შეცვლა"
 
 #: app/TrainEditor.qml:57
-#, fuzzy, kde-format
-#| msgid "Change departure station"
+#, kde-format
 msgctxt "train departure"
 msgid "Change departure station"
 msgstr "გამგზავრების სადგურის შეცვლა"
 
 #: app/TrainEditor.qml:67 app/TrainEditor.qml:140
-#, fuzzy, kde-format
-#| msgid "Change arrival station"
+#, kde-format
 msgctxt "train arrival"
 msgid "Change Arrival Station"
 msgstr "ჩამოსვლის სადგურის შეცვლა"
 
 #: app/TrainEditor.qml:72
-#, fuzzy, kde-format
-#| msgid "Change arrival station"
+#, kde-format
 msgctxt "train arrival"
 msgid "Change arrival station"
 msgstr "ჩამოსვლის სადგურის შეცვლა"
