@@ -8,7 +8,6 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
-import org.kde.kirigami.delegates as KirigamiDelegates
 import org.kde.kpublictransport as KPublicTransport
 import org.kde.kpublictransport.ui as KPublicTransport
 import org.kde.itinerary
@@ -18,7 +17,7 @@ Kirigami.ScrollablePage {
     title: i18n("Vehicle Layout")
 
     property alias publicTransportManager: vehicleModel.manager
-    property var stopover
+    property KPublicTransport.stopover stopover
     property string selectedVehicleSection
     property string selectedClasses
     property string seat
@@ -26,8 +25,8 @@ Kirigami.ScrollablePage {
     readonly property alias vehicleLayout: vehicleModel.stopover
     signal layoutUpdated()
 
-    readonly property var selectedClassTypes: {
-        var c = KPublicTransport.VehicleSection.UnknownClass;
+    readonly property int selectedClassTypes: {
+        let c = KPublicTransport.VehicleSection.UnknownClass;
         if (selectedClasses.match(/1/)) {
             c |= KPublicTransport.VehicleSection.FirstClass;
         }
@@ -54,8 +53,8 @@ Kirigami.ScrollablePage {
 
         onContentChanged: {
             var offset = 0;
-            if (selectedVehicleSection) {
-                offset = vehicleView.fullLength * vehicleModel.vehicle.platformPositionForSection(selectedVehicleSection);
+            if (root.selectedVehicleSection) {
+                offset = vehicleView.fullLength * vehicleModel.vehicle.platformPositionForSection(root.selectedVehicleSection);
                 offset -= root.flickable.height / 2; // place in center
             } else {
                 offset = vehicleView.fullLength * vehicleModel.vehicle.platformPositionBegin;
@@ -82,7 +81,7 @@ Kirigami.ScrollablePage {
 
     SheetDrawer {
         id: coachDrawer
-        property var coach
+        property KPublicTransport.vehicleSection coach
         headerItem: Component {
             // TODO show platform section as well?
             ColumnLayout {
@@ -199,8 +198,9 @@ Kirigami.ScrollablePage {
             spacing: Kirigami.Units.smallSpacing
 
             Repeater {
-                model: root.stopover.features
+                model: root.stopover.vehicleLayout.combinedFeatures
                 delegate: KPublicTransport.FeatureIcon {
+                    required property KPublicTransport.feature modelData
                     feature: modelData
                     Layout.preferredHeight: Kirigami.Units.iconSizes.small
                     Layout.preferredWidth: Kirigami.Units.iconSizes.small
@@ -228,7 +228,7 @@ Kirigami.ScrollablePage {
             clip: true
             visible: root.stopover.notes.length > 0
             font.italic: true
-            onLinkActivated: Qt.openUrlExternally(link)
+            onLinkActivated: (link) => { Qt.openUrlExternally(link); }
 
             Layout.maximumHeight: Kirigami.Units.gridUnit * maximumLineCount
             Layout.leftMargin: Kirigami.Units.largeSpacing
@@ -256,14 +256,14 @@ Kirigami.ScrollablePage {
 
         contentItem: ColumnLayout {
             PublicTransportFeatureList {
-                model: root.stopover.features
+                model: root.stopover.vehicleLayout.combinedFeatures
             }
             QQC2.Label {
                 Layout.fillWidth: true
                 text: root.stopover.notes.join("<br/>")
                 textFormat: Text.RichText
                 wrapMode: Text.Wrap
-                onLinkActivated: Qt.openUrlExternally(link)
+                onLinkActivated: (link) => { Qt.openUrlExternally(link); }
                 padding: Kirigami.Units.largeSpacing * 2
             }
         }
@@ -281,6 +281,8 @@ Kirigami.ScrollablePage {
             width: parent.width
             model: vehicleModel.platform.sections
             delegate: Item {
+                id: platformDelegateRoot
+                // TODO shoud be be KPublicTransport.platformSection once we depend on a new enough KPublicTransport
                 property var section: modelData
                 width: parent.width
                 y: section.begin * vehicleView.fullLength
@@ -292,7 +294,7 @@ Kirigami.ScrollablePage {
                 }
                 QQC2.Label {
                     anchors.centerIn: parent
-                    text: section.name
+                    text: platformDelegateRoot.section.name
                 }
                 Kirigami.Separator {
                     anchors { bottom: parent.bottom; left: parent.left; right: parent.right }
@@ -319,6 +321,9 @@ Kirigami.ScrollablePage {
             width: parent.width
             model: vehicleModel
             delegate: KPublicTransport.VehicleSectionItem {
+                id: delegateRoot
+                required property KPublicTransport.vehicleSection vehicleSection
+
                 readonly property bool isSelected: {
                     if (root.selectedVehicleSection == "") {
                         return root.selectedClassTypes & section.classes;
@@ -326,11 +331,11 @@ Kirigami.ScrollablePage {
                     return section.name == root.selectedVehicleSection;
                 }
 
-                section: model.vehicleSection
+                section: delegateRoot.vehicleSection
                 y: section.platformPositionBegin * vehicleView.fullLength
                 height: section.platformPositionEnd * vehicleView.fullLength - y
                 width: vehicleView.sectionWidth
-                textColor: model.vehicleSection.disruptionEffect === KPublicTransport.Disruption.NoService ?
+                textColor: delegateRoot.vehicleSection.disruptionEffect === KPublicTransport.Disruption.NoService ?
                         Kirigami.Theme.disabledTextColor :  Kirigami.Theme.textColor
                 firstClassBackground: colorMix(Kirigami.Theme.backgroundColor, Kirigami.Theme.positiveTextColor, isSelected ? 1 : 0.25)
                 secondClassBackground: colorMix(Kirigami.Theme.backgroundColor, Kirigami.Theme.focusColor, isSelected ? 1 : 0.25)
@@ -341,17 +346,17 @@ Kirigami.ScrollablePage {
                     anchors.centerIn: parent
                     QQC2.Label {
                         Layout.alignment: Qt.AlignCenter
-                        text: section.name
+                        text: delegateRoot.section.name
                         visible: text !== ""
-                        color: model.vehicleSection.disruptionEffect === KPublicTransport.Disruption.NoService ?
+                        color: delegateRoot.vehicleSection.disruptionEffect === KPublicTransport.Disruption.NoService ?
                             Kirigami.Theme.disabledTextColor :  Kirigami.Theme.textColor
                     }
                     Kirigami.Icon {
                         Layout.alignment: Qt.AlignCenter
                         Layout.preferredWidth: Kirigami.Units.iconSizes.small
                         Layout.preferredHeight: visible ? Kirigami.Units.iconSizes.small : 0
-                        source: section.type !== KPublicTransport.vehicleSection.ControlCar ? section.iconName : ""
-                        color: model.vehicleSection.disruptionEffect === KPublicTransport.Disruption.NoService ?
+                        source: delegateRoot.section.type !== KPublicTransport.VehicleSection.ControlCar ? delegateRoot.section.iconName : ""
+                        color: delegateRoot.vehicleSection.disruptionEffect === KPublicTransport.Disruption.NoService ?
                             Kirigami.Theme.disabledTextColor :  Kirigami.Theme.textColor
                         isMask: true
                         visible: source ? true : false
@@ -359,9 +364,9 @@ Kirigami.ScrollablePage {
                 }
 
                 TapHandler {
-                    enabled: model.vehicleSection.sectionFeatures.length > 0 && model.vehicleSection.disruptionEffect !== KPublicTransport.Disruption.NoService
+                    enabled: delegateRoot.vehicleSection.sectionFeatures.length > 0 && delegateRoot.vehicleSection.disruptionEffect !== KPublicTransport.Disruption.NoService
                     onTapped: {
-                        coachDrawer.coach = model.vehicleSection;
+                        coachDrawer.coach = delegateRoot.vehicleSection;
                         coachDrawer.open();
                     }
                 }
@@ -374,10 +379,11 @@ Kirigami.ScrollablePage {
 
                     RowLayout {
                         spacing: Kirigami.Units.smallSpacing
-                        visible: model.vehicleSection.disruptionEffect !== KPublicTransport.Disruption.NoService
+                        visible: delegateRoot.vehicleSection.disruptionEffect !== KPublicTransport.Disruption.NoService
                         Repeater {
-                            model: section.sectionFeatures
+                            model: delegateRoot.section.sectionFeatures
                             delegate: KPublicTransport.FeatureIcon {
+                                required property KPublicTransport.feature modelData
                                 feature: modelData
                                 Layout.preferredHeight: Kirigami.Units.iconSizes.small
                                 Layout.preferredWidth: Kirigami.Units.iconSizes.small
@@ -385,21 +391,21 @@ Kirigami.ScrollablePage {
                         }
                     }
                     QQC2.Label {
-                        visible: section.classes != KPublicTransport.VehicleSection.UnknownClass
-                        text: classesLabel(section.classes)
-                        color: model.vehicleSection.disruptionEffect === KPublicTransport.Disruption.NoService ?
+                        visible: delegateRoot.section.classes != KPublicTransport.VehicleSection.UnknownClass
+                        text: classesLabel(delegateRoot.section.classes)
+                        color: delegateRoot.vehicleSection.disruptionEffect === KPublicTransport.Disruption.NoService ?
                                 Kirigami.Theme.disabledTextColor :  Kirigami.Theme.textColor
                     }
                     KPublicTransport.OccupancyIndicator {
-                        occupancy: model.vehicleSection.load
+                        occupancy: delegateRoot.vehicleSection.load
                         Layout.preferredHeight: Kirigami.Units.iconSizes.small
                         Layout.preferredWidth: Kirigami.Units.iconSizes.small
                     }
 
                     TapHandler {
-                        enabled: model.vehicleSection.sectionFeatures.length > 0 && model.vehicleSection.disruptionEffect !== KPublicTransport.Disruption.NoService
+                        enabled: delegateRoot.vehicleSection.sectionFeatures.length > 0 && delegateRoot.vehicleSection.disruptionEffect !== KPublicTransport.Disruption.NoService
                         onTapped: {
-                            coachDrawer.coach = model.vehicleSection;
+                            coachDrawer.coach = delegateRoot.vehicleSection;
                             coachDrawer.open();
                         }
                     }
