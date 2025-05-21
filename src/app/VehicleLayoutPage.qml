@@ -140,8 +140,8 @@ Kirigami.ScrollablePage {
             }
 
             QQC2.Label {
-                text: i18nc("Direction of the transport mode", "To %1", vehicleModel.stopover.stopPoint.name)
-                visible: departure.route.direction
+                text: i18nc("Direction of the transport mode", "To %1", vehicleModel.stopover.route.direction)
+                visible: vehicleModel.stopover.route.direction
                 elide: Text.ElideRight
                 Layout.fillWidth: true
             }
