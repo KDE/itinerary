@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-15 02:40+0000\n"
-"PO-Revision-Date: 2025-03-02 09:56+0100\n"
+"PO-Revision-Date: 2025-05-14 10:23+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -765,7 +765,7 @@ msgstr "Cancel·lat"
 #, kde-format
 msgctxt "duration of the delay"
 msgid "Delayed %1"
-msgstr "Retard %1"
+msgstr "Endarrerit %1"
 
 #: app/DelayRow.qml:26
 #, kde-format
@@ -2973,12 +2973,12 @@ msgstr "Canvis a %1"
 #: app/notificationhelper.cpp:73
 #, kde-format
 msgid "Delays on %1"
-msgstr "Retards a %1"
+msgstr "Endarreriments a %1"
 
 #: app/notificationhelper.cpp:76
 #, kde-format
 msgid "Delayed departure on %1"
-msgstr "Eixida amb demora a %1"
+msgstr "Eixida endarrerida a %1"
 
 #: app/notificationhelper.cpp:79
 #, kde-format
@@ -2988,7 +2988,7 @@ msgstr "Eixida avançada a %1"
 #: app/notificationhelper.cpp:82
 #, kde-format
 msgid "Delayed arrival on %1"
-msgstr "Arribada amb retard a %1"
+msgstr "Arribada endarrerida a %1"
 
 #: app/notificationhelper.cpp:86
 #, kde-format
@@ -3394,7 +3394,7 @@ msgid ""
 "such as delays or gate and platform changes."
 msgstr ""
 "Quan estiga habilitat, es consultaran els serveis en línia del proveïdor de "
-"transports per a canvis com retards o canvis de porta i andana."
+"transports per a canvis com endarreriments o canvis de porta i andana."
 
 #: app/SettingsPage.qml:61
 #, kde-format
