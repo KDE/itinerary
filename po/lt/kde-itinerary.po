@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-19 00:42+0000\n"
+"POT-Creation-Date: 2025-05-22 00:43+0000\n"
 "PO-Revision-Date: 2019-03-18 03:34+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: lt\n"
@@ -2165,7 +2165,7 @@ msgid "Show More…"
 msgstr ""
 
 #: app/JourneySectionPage.qml:49 app/TimelineDelegateDepartureLayout.qml:94
-#: app/VehicleLayoutPage.qml:143
+#: app/VehicleLayoutPage.qml:142
 #, kde-format
 msgctxt "Direction of the transport mode"
 msgid "To %1"
@@ -4336,82 +4336,82 @@ msgctxt "@action:button"
 msgid "Split trip"
 msgstr ""
 
-#: app/VehicleLayoutPage.qml:18
+#: app/VehicleLayoutPage.qml:17
 #, kde-format
 msgid "Vehicle Layout"
 msgstr ""
 
-#: app/VehicleLayoutPage.qml:75
+#: app/VehicleLayoutPage.qml:74
 #, kde-format
 msgid "First class"
 msgstr ""
 
-#: app/VehicleLayoutPage.qml:77
+#: app/VehicleLayoutPage.qml:76
 #, kde-format
 msgid "Second class"
 msgstr ""
 
-#: app/VehicleLayoutPage.qml:79
+#: app/VehicleLayoutPage.qml:78
 #, kde-format
 msgid "First/second class"
 msgstr ""
 
-#: app/VehicleLayoutPage.qml:80
+#: app/VehicleLayoutPage.qml:79
 #, kde-format
 msgid "Unknown class"
 msgstr ""
 
-#: app/VehicleLayoutPage.qml:91
+#: app/VehicleLayoutPage.qml:90
 #, kde-format
 msgctxt "train coach"
 msgid "Coach %1"
 msgstr ""
 
-#: app/VehicleLayoutPage.qml:101
+#: app/VehicleLayoutPage.qml:100
 #, kde-format
 msgctxt "train coach type"
 msgid "Sleeping car"
 msgstr ""
 
-#: app/VehicleLayoutPage.qml:103
+#: app/VehicleLayoutPage.qml:102
 #, kde-format
 msgctxt "train coach type"
 msgid "Couchette car"
 msgstr ""
 
-#: app/VehicleLayoutPage.qml:105
+#: app/VehicleLayoutPage.qml:104
 #, kde-format
 msgctxt "train coach type"
 msgid "Restaurant car"
 msgstr ""
 
-#: app/VehicleLayoutPage.qml:107
+#: app/VehicleLayoutPage.qml:106
 #, kde-format
 msgctxt "train coach type"
 msgid "Car transport car"
 msgstr ""
 
-#: app/VehicleLayoutPage.qml:159
+#: app/VehicleLayoutPage.qml:158
 #, kde-format
 msgid "Departure: %1"
 msgstr ""
 
-#: app/VehicleLayoutPage.qml:161
+#: app/VehicleLayoutPage.qml:160
 #, kde-format
 msgid "Arrival: %1"
 msgstr ""
 
-#: app/VehicleLayoutPage.qml:181
+#: app/VehicleLayoutPage.qml:180
 #, kde-format
 msgid "Platform: %1"
 msgstr ""
 
-#: app/VehicleLayoutPage.qml:190
+#: app/VehicleLayoutPage.qml:189
 #, kde-format
 msgid "Coach: %1 Seat: %2"
 msgstr ""
 
-#: app/VehicleLayoutPage.qml:447
+#: app/VehicleLayoutPage.qml:453
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr ""
