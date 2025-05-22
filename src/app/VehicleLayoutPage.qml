@@ -69,16 +69,6 @@ Kirigami.ScrollablePage {
         }
     }
 
-    function classesLabel(cls) {
-        if (cls == KPublicTransport.VehicleSection.FirstClass)
-            return i18n("First class");
-        if (cls == KPublicTransport.VehicleSection.SecondClass)
-            return i18n("Second class");
-        if (cls == (KPublicTransport.VehicleSection.FirstClass | KPublicTransport.VehicleSection.SecondClass))
-            return i18n("First/second class");
-        return i18n("Unknown class");
-    }
-
     SheetDrawer {
         id: coachDrawer
         property KPublicTransport.vehicleSection coach
@@ -95,19 +85,8 @@ Kirigami.ScrollablePage {
                     id: subtitle
                     Layout.fillWidth: true
                     text: {
-                        switch (coachDrawer.coach.type) {
-                            case KPublicTransport.VehicleSection.SleepingCar:
-                                return i18nc("train coach type", "Sleeping car");
-                            case KPublicTransport.VehicleSection.CouchetteCar:
-                                return i18nc("train coach type", "Couchette car");
-                            case KPublicTransport.VehicleSection.RestaurantCar:
-                                return i18nc("train coach type", "Restaurant car");
-                            case KPublicTransport.VehicleSection.CarTransportCar:
-                                return i18nc("train coach type", "Car transport car");
-                            default:
-                                break
-                        }
-                        return classesLabel(coachDrawer.coach.classes);
+                        const s = coachDrawer.coach.typeName;
+                        return s !== "" ? s : coachDrawer.coach.classesName;
                     }
                     visible: subtitle.text !== ""
                 }
@@ -121,11 +100,6 @@ Kirigami.ScrollablePage {
                 }
             }
         }
-    }
-
-    function colorMix(bg, fg, alpha)
-    {
-        return Qt.tint(bg, Qt.rgba(fg.r, fg.g, fg.b, alpha));
     }
 
     header: ColumnLayout {
@@ -282,14 +256,15 @@ Kirigami.ScrollablePage {
             model: vehicleModel.platform.sections
             delegate: Item {
                 id: platformDelegateRoot
-                // TODO shoud be be KPublicTransport.platformSection once we depend on a new enough KPublicTransport
-                property var section: modelData
+                required property KPublicTransport.platformSection modelData
+                required property int index
+                property alias section: platformDelegateRoot.modelData
                 width: parent.width
                 y: section.begin * vehicleView.fullLength
                 height: section.end * vehicleView.fullLength - y
 
                 Kirigami.Separator {
-                    visible: index == 0
+                    visible: platformDelegateRoot.index === 0
                     anchors { top: parent.top; left: parent.left; right: parent.right }
                 }
                 QQC2.Label {
@@ -324,7 +299,7 @@ Kirigami.ScrollablePage {
                 id: delegateRoot
                 required property KPublicTransport.vehicleSection vehicleSection
 
-                readonly property bool isSelected: {
+                highlighted: {
                     if (root.selectedVehicleSection == "") {
                         return root.selectedClassTypes & section.classes;
                     }
@@ -335,33 +310,6 @@ Kirigami.ScrollablePage {
                 y: section.platformPositionBegin * vehicleView.fullLength
                 height: section.platformPositionEnd * vehicleView.fullLength - y
                 width: vehicleView.sectionWidth
-                textColor: delegateRoot.vehicleSection.disruptionEffect === KPublicTransport.Disruption.NoService ?
-                        Kirigami.Theme.disabledTextColor :  Kirigami.Theme.textColor
-                firstClassBackground: colorMix(Kirigami.Theme.backgroundColor, Kirigami.Theme.positiveTextColor, isSelected ? 1 : 0.25)
-                secondClassBackground: colorMix(Kirigami.Theme.backgroundColor, Kirigami.Theme.focusColor, isSelected ? 1 : 0.25)
-                inaccessibleBackground: colorMix(Kirigami.Theme.backgroundColor, Kirigami.Theme.disabledTextColor, isSelected ? 1 : 0.25)
-                restaurantBackground: colorMix(Kirigami.Theme.backgroundColor, Kirigami.Theme.neutralTextColor, isSelected ? 1 : 0.25)
-
-                ColumnLayout {
-                    anchors.centerIn: parent
-                    QQC2.Label {
-                        Layout.alignment: Qt.AlignCenter
-                        text: delegateRoot.section.name
-                        visible: text !== ""
-                        color: delegateRoot.vehicleSection.disruptionEffect === KPublicTransport.Disruption.NoService ?
-                            Kirigami.Theme.disabledTextColor :  Kirigami.Theme.textColor
-                    }
-                    Kirigami.Icon {
-                        Layout.alignment: Qt.AlignCenter
-                        Layout.preferredWidth: Kirigami.Units.iconSizes.small
-                        Layout.preferredHeight: visible ? Kirigami.Units.iconSizes.small : 0
-                        source: delegateRoot.section.type !== KPublicTransport.VehicleSection.ControlCar ? delegateRoot.section.iconName : ""
-                        color: delegateRoot.vehicleSection.disruptionEffect === KPublicTransport.Disruption.NoService ?
-                            Kirigami.Theme.disabledTextColor :  Kirigami.Theme.textColor
-                        isMask: true
-                        visible: source ? true : false
-                    }
-                }
 
                 TapHandler {
                     enabled: delegateRoot.vehicleSection.sectionFeatures.length > 0 && delegateRoot.vehicleSection.disruptionEffect !== KPublicTransport.Disruption.NoService
@@ -392,7 +340,7 @@ Kirigami.ScrollablePage {
                     }
                     QQC2.Label {
                         visible: delegateRoot.section.classes != KPublicTransport.VehicleSection.UnknownClass
-                        text: classesLabel(delegateRoot.section.classes)
+                        text: delegateRoot.section.classesName
                         color: delegateRoot.vehicleSection.disruptionEffect === KPublicTransport.Disruption.NoService ?
                                 Kirigami.Theme.disabledTextColor :  Kirigami.Theme.textColor
                     }
