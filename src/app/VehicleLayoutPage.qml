@@ -295,9 +295,8 @@ Kirigami.ScrollablePage {
             id: vehicleRepeater
             width: parent.width
             model: vehicleModel
-            delegate: KPublicTransport.VehicleSectionItem {
+            delegate: KPublicTransport.VehicleSectionDelegate {
                 id: delegateRoot
-                required property KPublicTransport.vehicleSection vehicleSection
 
                 highlighted: {
                     if (root.selectedVehicleSection == "") {
@@ -306,57 +305,13 @@ Kirigami.ScrollablePage {
                     return section.name == root.selectedVehicleSection;
                 }
 
-                section: delegateRoot.vehicleSection
-                y: section.platformPositionBegin * vehicleView.fullLength
-                height: section.platformPositionEnd * vehicleView.fullLength - y
+                y: delegateRoot.vehicleSection.platformPositionBegin * vehicleView.fullLength
+                height: delegateRoot.vehicleSection.platformPositionEnd * vehicleView.fullLength - y
                 width: vehicleView.sectionWidth
 
-                TapHandler {
-                    enabled: delegateRoot.vehicleSection.sectionFeatures.length > 0 && delegateRoot.vehicleSection.disruptionEffect !== KPublicTransport.Disruption.NoService
-                    onTapped: {
-                        coachDrawer.coach = delegateRoot.vehicleSection;
-                        coachDrawer.open();
-                    }
-                }
-
-                ColumnLayout {
-                    anchors.verticalCenter: parent.verticalCenter
-                    anchors.left: parent.right
-                    anchors.leftMargin: Kirigami.Units.largeSpacing
-                    spacing: Kirigami.Units.smallSpacing
-
-                    RowLayout {
-                        spacing: Kirigami.Units.smallSpacing
-                        visible: delegateRoot.vehicleSection.disruptionEffect !== KPublicTransport.Disruption.NoService
-                        Repeater {
-                            model: delegateRoot.section.sectionFeatures
-                            delegate: KPublicTransport.FeatureIcon {
-                                required property KPublicTransport.feature modelData
-                                feature: modelData
-                                Layout.preferredHeight: Kirigami.Units.iconSizes.small
-                                Layout.preferredWidth: Kirigami.Units.iconSizes.small
-                            }
-                        }
-                    }
-                    QQC2.Label {
-                        visible: delegateRoot.section.classes != KPublicTransport.VehicleSection.UnknownClass
-                        text: delegateRoot.section.classesName
-                        color: delegateRoot.vehicleSection.disruptionEffect === KPublicTransport.Disruption.NoService ?
-                                Kirigami.Theme.disabledTextColor :  Kirigami.Theme.textColor
-                    }
-                    KPublicTransport.OccupancyIndicator {
-                        occupancy: delegateRoot.vehicleSection.load
-                        Layout.preferredHeight: Kirigami.Units.iconSizes.small
-                        Layout.preferredWidth: Kirigami.Units.iconSizes.small
-                    }
-
-                    TapHandler {
-                        enabled: delegateRoot.vehicleSection.sectionFeatures.length > 0 && delegateRoot.vehicleSection.disruptionEffect !== KPublicTransport.Disruption.NoService
-                        onTapped: {
-                            coachDrawer.coach = delegateRoot.vehicleSection;
-                            coachDrawer.open();
-                        }
-                    }
+                onTapped: {
+                    coachDrawer.coach = delegateRoot.vehicleSection;
+                    coachDrawer.open();
                 }
             }
         }
