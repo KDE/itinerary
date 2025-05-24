@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-22 00:43+0000\n"
+"POT-Creation-Date: 2025-05-24 00:42+0000\n"
 "PO-Revision-Date: 2025-03-02 14:47+0530\n"
 "Last-Translator: Shreekant Kalwar <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -2182,14 +2182,14 @@ msgid "Platform %1"
 msgstr "मञ्चः %1"
 
 #: app/JourneySectionDelegate.qml:250 app/JourneySectionPage.qml:134
-#: app/VehicleLayoutPage.qml:240
+#: app/VehicleLayoutPage.qml:214
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr "Show More…"
 
 #: app/JourneySectionPage.qml:49 app/TimelineDelegateDepartureLayout.qml:94
-#: app/VehicleLayoutPage.qml:142
+#: app/VehicleLayoutPage.qml:116
 #, kde-format
 msgctxt "Direction of the transport mode"
 msgid "To %1"
@@ -4382,77 +4382,33 @@ msgstr "विभक्त यात्रा"
 msgid "Vehicle Layout"
 msgstr "वाहन विन्यास"
 
-#: app/VehicleLayoutPage.qml:74
-#, kde-format
-msgid "First class"
-msgstr "प्रथमश्रेणी"
-
-#: app/VehicleLayoutPage.qml:76
-#, kde-format
-msgid "Second class"
-msgstr "द्वितीयश्रेणी"
-
-#: app/VehicleLayoutPage.qml:78
-#, kde-format
-msgid "First/second class"
-msgstr "प्रथम/द्वितीय वर्ग"
-
-#: app/VehicleLayoutPage.qml:79
-#, kde-format
-msgid "Unknown class"
-msgstr "अज्ञात वर्ग"
-
-#: app/VehicleLayoutPage.qml:90
+#: app/VehicleLayoutPage.qml:80
 #, kde-format
 msgctxt "train coach"
 msgid "Coach %1"
 msgstr "प्रशिक्षकः %1"
 
-#: app/VehicleLayoutPage.qml:100
-#, kde-format
-msgctxt "train coach type"
-msgid "Sleeping car"
-msgstr "सुप्तं वाहनम्"
-
-#: app/VehicleLayoutPage.qml:102
-#, kde-format
-msgctxt "train coach type"
-msgid "Couchette car"
-msgstr "स्लीपर कार"
-
-#: app/VehicleLayoutPage.qml:104
-#, kde-format
-msgctxt "train coach type"
-msgid "Restaurant car"
-msgstr "रेस्टोरेंट कार"
-
-#: app/VehicleLayoutPage.qml:106
-#, kde-format
-msgctxt "train coach type"
-msgid "Car transport car"
-msgstr "कार परिवहन कार"
-
-#: app/VehicleLayoutPage.qml:158
+#: app/VehicleLayoutPage.qml:132
 #, kde-format
 msgid "Departure: %1"
 msgstr "प्रस्थानम् : %1"
 
-#: app/VehicleLayoutPage.qml:160
+#: app/VehicleLayoutPage.qml:134
 #, kde-format
 msgid "Arrival: %1"
 msgstr "आगमनम् : %1"
 
-#: app/VehicleLayoutPage.qml:180
+#: app/VehicleLayoutPage.qml:154
 #, kde-format
 msgid "Platform: %1"
 msgstr "मञ्चः %1"
 
-#: app/VehicleLayoutPage.qml:189
+#: app/VehicleLayoutPage.qml:163
 #, kde-format
 msgid "Coach: %1 Seat: %2"
 msgstr "प्रशिक्षकः %1 आसनम् : %2"
 
-#: app/VehicleLayoutPage.qml:453
+#: app/VehicleLayoutPage.qml:401
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "वाहनविन्यासस्य सूचना उपलब्धा नास्ति।"
@@ -4559,6 +4515,34 @@ msgstr "लॉग आउट् कृतवान्"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 %3 तः %4 पर्यन्तं %5 पर्यन्तम्"
+
+#~ msgid "First class"
+#~ msgstr "प्रथमश्रेणी"
+
+#~ msgid "Second class"
+#~ msgstr "द्वितीयश्रेणी"
+
+#~ msgid "First/second class"
+#~ msgstr "प्रथम/द्वितीय वर्ग"
+
+#~ msgid "Unknown class"
+#~ msgstr "अज्ञात वर्ग"
+
+#~ msgctxt "train coach type"
+#~ msgid "Sleeping car"
+#~ msgstr "सुप्तं वाहनम्"
+
+#~ msgctxt "train coach type"
+#~ msgid "Couchette car"
+#~ msgstr "स्लीपर कार"
+
+#~ msgctxt "train coach type"
+#~ msgid "Restaurant car"
+#~ msgstr "रेस्टोरेंट कार"
+
+#~ msgctxt "train coach type"
+#~ msgid "Car transport car"
+#~ msgstr "कार परिवहन कार"
 
 #~ msgid "Board Later"
 #~ msgstr "बोर्ड पश्चात्"

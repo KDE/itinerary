@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-22 00:43+0000\n"
+"POT-Creation-Date: 2025-05-24 00:42+0000\n"
 "PO-Revision-Date: 2025-03-15 10:28+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -2188,14 +2188,14 @@ msgid "Platform %1"
 msgstr "Platforma %1"
 
 #: app/JourneySectionDelegate.qml:250 app/JourneySectionPage.qml:134
-#: app/VehicleLayoutPage.qml:240
+#: app/VehicleLayoutPage.qml:214
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr "Pokaż więcej…"
 
 #: app/JourneySectionPage.qml:49 app/TimelineDelegateDepartureLayout.qml:94
-#: app/VehicleLayoutPage.qml:142
+#: app/VehicleLayoutPage.qml:116
 #, kde-format
 msgctxt "Direction of the transport mode"
 msgid "To %1"
@@ -4426,77 +4426,33 @@ msgstr "Podziel podróż"
 msgid "Vehicle Layout"
 msgstr "Układ pojazdu"
 
-#: app/VehicleLayoutPage.qml:74
-#, kde-format
-msgid "First class"
-msgstr "Pierwsza klasa"
-
-#: app/VehicleLayoutPage.qml:76
-#, kde-format
-msgid "Second class"
-msgstr "Druga klasa"
-
-#: app/VehicleLayoutPage.qml:78
-#, kde-format
-msgid "First/second class"
-msgstr "Pierwsza/druga klasa"
-
-#: app/VehicleLayoutPage.qml:79
-#, kde-format
-msgid "Unknown class"
-msgstr "Nieznana klasa"
-
-#: app/VehicleLayoutPage.qml:90
+#: app/VehicleLayoutPage.qml:80
 #, kde-format
 msgctxt "train coach"
 msgid "Coach %1"
 msgstr "Autokar %1"
 
-#: app/VehicleLayoutPage.qml:100
-#, kde-format
-msgctxt "train coach type"
-msgid "Sleeping car"
-msgstr "Wagon sypialniany"
-
-#: app/VehicleLayoutPage.qml:102
-#, kde-format
-msgctxt "train coach type"
-msgid "Couchette car"
-msgstr "Wagon z kuszetkami"
-
-#: app/VehicleLayoutPage.qml:104
-#, kde-format
-msgctxt "train coach type"
-msgid "Restaurant car"
-msgstr "Wagon restauracyjny"
-
-#: app/VehicleLayoutPage.qml:106
-#, kde-format
-msgctxt "train coach type"
-msgid "Car transport car"
-msgstr "Wagon na samochody"
-
-#: app/VehicleLayoutPage.qml:158
+#: app/VehicleLayoutPage.qml:132
 #, kde-format
 msgid "Departure: %1"
 msgstr "Odjazd: %1"
 
-#: app/VehicleLayoutPage.qml:160
+#: app/VehicleLayoutPage.qml:134
 #, kde-format
 msgid "Arrival: %1"
 msgstr "Przyjazd: %1"
 
-#: app/VehicleLayoutPage.qml:180
+#: app/VehicleLayoutPage.qml:154
 #, kde-format
 msgid "Platform: %1"
 msgstr "Peron: %1"
 
-#: app/VehicleLayoutPage.qml:189
+#: app/VehicleLayoutPage.qml:163
 #, kde-format
 msgid "Coach: %1 Seat: %2"
 msgstr "Autobus: %1 Siedzenie: %2"
 
-#: app/VehicleLayoutPage.qml:453
+#: app/VehicleLayoutPage.qml:401
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "Brak danych nt układu pojazdu."
@@ -4604,6 +4560,34 @@ msgstr "Wylogowany"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 z %3 do %4 o czasie %5"
+
+#~ msgid "First class"
+#~ msgstr "Pierwsza klasa"
+
+#~ msgid "Second class"
+#~ msgstr "Druga klasa"
+
+#~ msgid "First/second class"
+#~ msgstr "Pierwsza/druga klasa"
+
+#~ msgid "Unknown class"
+#~ msgstr "Nieznana klasa"
+
+#~ msgctxt "train coach type"
+#~ msgid "Sleeping car"
+#~ msgstr "Wagon sypialniany"
+
+#~ msgctxt "train coach type"
+#~ msgid "Couchette car"
+#~ msgstr "Wagon z kuszetkami"
+
+#~ msgctxt "train coach type"
+#~ msgid "Restaurant car"
+#~ msgstr "Wagon restauracyjny"
+
+#~ msgctxt "train coach type"
+#~ msgid "Car transport car"
+#~ msgstr "Wagon na samochody"
 
 #~ msgid "Board Later"
 #~ msgstr "Odpraw się później"

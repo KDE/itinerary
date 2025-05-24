@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-22 00:43+0000\n"
+"POT-Creation-Date: 2025-05-24 00:42+0000\n"
 "PO-Revision-Date: 2025-04-22 01:21+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -2172,14 +2172,14 @@ msgid "Platform %1"
 msgstr "승강장 %1"
 
 #: app/JourneySectionDelegate.qml:250 app/JourneySectionPage.qml:134
-#: app/VehicleLayoutPage.qml:240
+#: app/VehicleLayoutPage.qml:214
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr "더 보기…"
 
 #: app/JourneySectionPage.qml:49 app/TimelineDelegateDepartureLayout.qml:94
-#: app/VehicleLayoutPage.qml:142
+#: app/VehicleLayoutPage.qml:116
 #, kde-format
 msgctxt "Direction of the transport mode"
 msgid "To %1"
@@ -4366,77 +4366,33 @@ msgstr "여정 분할"
 msgid "Vehicle Layout"
 msgstr "차량 구성"
 
-#: app/VehicleLayoutPage.qml:74
-#, kde-format
-msgid "First class"
-msgstr "1등석"
-
-#: app/VehicleLayoutPage.qml:76
-#, kde-format
-msgid "Second class"
-msgstr "2등석"
-
-#: app/VehicleLayoutPage.qml:78
-#, kde-format
-msgid "First/second class"
-msgstr "1등석/2등석"
-
-#: app/VehicleLayoutPage.qml:79
-#, kde-format
-msgid "Unknown class"
-msgstr "알 수 없는 등급"
-
-#: app/VehicleLayoutPage.qml:90
+#: app/VehicleLayoutPage.qml:80
 #, kde-format
 msgctxt "train coach"
 msgid "Coach %1"
 msgstr "%1호차"
 
-#: app/VehicleLayoutPage.qml:100
-#, kde-format
-msgctxt "train coach type"
-msgid "Sleeping car"
-msgstr "침대차"
-
-#: app/VehicleLayoutPage.qml:102
-#, kde-format
-msgctxt "train coach type"
-msgid "Couchette car"
-msgstr "쿠셰트 카"
-
-#: app/VehicleLayoutPage.qml:104
-#, kde-format
-msgctxt "train coach type"
-msgid "Restaurant car"
-msgstr "식당차"
-
-#: app/VehicleLayoutPage.qml:106
-#, kde-format
-msgctxt "train coach type"
-msgid "Car transport car"
-msgstr "자동차 운반차"
-
-#: app/VehicleLayoutPage.qml:158
+#: app/VehicleLayoutPage.qml:132
 #, kde-format
 msgid "Departure: %1"
 msgstr "출발: %1"
 
-#: app/VehicleLayoutPage.qml:160
+#: app/VehicleLayoutPage.qml:134
 #, kde-format
 msgid "Arrival: %1"
 msgstr "도착: %1"
 
-#: app/VehicleLayoutPage.qml:180
+#: app/VehicleLayoutPage.qml:154
 #, kde-format
 msgid "Platform: %1"
 msgstr "승강장: %1"
 
-#: app/VehicleLayoutPage.qml:189
+#: app/VehicleLayoutPage.qml:163
 #, kde-format
 msgid "Coach: %1 Seat: %2"
 msgstr "차량: %1 좌석: %2"
 
-#: app/VehicleLayoutPage.qml:453
+#: app/VehicleLayoutPage.qml:401
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "차량 구성 정보를 알 수 없습니다."
@@ -4542,6 +4498,34 @@ msgstr "로그아웃함"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%5에 %3에서 %4(으)로 가는 %1%2|/|%5에 %3에서 %4$[으 %4]로 가는 %1%2"
+
+#~ msgid "First class"
+#~ msgstr "1등석"
+
+#~ msgid "Second class"
+#~ msgstr "2등석"
+
+#~ msgid "First/second class"
+#~ msgstr "1등석/2등석"
+
+#~ msgid "Unknown class"
+#~ msgstr "알 수 없는 등급"
+
+#~ msgctxt "train coach type"
+#~ msgid "Sleeping car"
+#~ msgstr "침대차"
+
+#~ msgctxt "train coach type"
+#~ msgid "Couchette car"
+#~ msgstr "쿠셰트 카"
+
+#~ msgctxt "train coach type"
+#~ msgid "Restaurant car"
+#~ msgstr "식당차"
+
+#~ msgctxt "train coach type"
+#~ msgid "Car transport car"
+#~ msgstr "자동차 운반차"
 
 #~ msgid "Board Later"
 #~ msgstr "나중에 탑승"
