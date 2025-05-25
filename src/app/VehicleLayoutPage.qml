@@ -243,118 +243,42 @@ Kirigami.ScrollablePage {
         }
     }
 
-    Item {
+    KPublicTransport.VehicleLayoutView {
         id: vehicleView
-        property real fullLength: vehicleModel.platform.hasAbsoluteLength ? vehicleModel.platform.length * 3.5 : 1600 // full length of the platform display
-        property real sectionWidth: 48
         width: parent.width
-        height: vehicleView.fullLength
-        implicitHeight: height
 
-        Repeater {
-            width: parent.width
-            model: vehicleModel.platform.sections
-            delegate: Item {
-                id: platformDelegateRoot
-                required property KPublicTransport.platformSection modelData
-                required property int index
-                property alias section: platformDelegateRoot.modelData
-                width: parent.width
-                y: section.begin * vehicleView.fullLength
-                height: section.end * vehicleView.fullLength - y
+        model: vehicleModel
+        highlightedVehicleSection: root.selectedVehicleSection
+        higlightedClassTypes: root.selectedClassTypes
 
-                Kirigami.Separator {
-                    visible: platformDelegateRoot.index === 0
-                    anchors { top: parent.top; left: parent.left; right: parent.right }
-                }
-                QQC2.Label {
-                    anchors.centerIn: parent
-                    text: platformDelegateRoot.section.name
-                }
-                Kirigami.Separator {
-                    anchors { bottom: parent.bottom; left: parent.left; right: parent.right }
-                }
-            }
+        onVehicleSectionTapped: (section) => {
+            coachDrawer.coach = section;
+            coachDrawer.open();
         }
+    }
 
-        Kirigami.Icon {
-            visible: vehicleModel.vehicle.direction != KPublicTransport.Vehicle.UnknownDirection
-            source: {
-                if (vehicleModel.vehicle.direction == KPublicTransport.Vehicle.Forward)
-                    return "go-up";
-                if (vehicleModel.vehicle.direction == KPublicTransport.Vehicle.Backward)
-                    return "go-down"
-                return "";
-            }
-            width: Kirigami.Units.iconSizes.small
-            height: width
-            x: vehicleView.sectionWidth / 2 - width / 2
-            y: vehicleModel.vehicle.platformPositionBegin * vehicleView.fullLength - height - Kirigami.Units.largeSpacing
-        }
-        Repeater {
-            id: vehicleRepeater
-            width: parent.width
-            model: vehicleModel
-            delegate: KPublicTransport.VehicleSectionDelegate {
-                id: delegateRoot
+    QQC2.BusyIndicator {
+        anchors.centerIn: parent
+        parent: root
+        running: vehicleModel.loading
+    }
 
-                highlighted: {
-                    if (root.selectedVehicleSection == "") {
-                        return root.selectedClassTypes & section.classes;
-                    }
-                    return section.name == root.selectedVehicleSection;
-                }
+    QQC2.Label {
+        anchors.centerIn: parent
+        parent: root
+        width: vehicleView.width
+        text: vehicleModel.errorMessage
+        color: Kirigami.Theme.negativeTextColor
+        wrapMode: Text.Wrap
+        horizontalAlignment: Text.AlignHCenter
+    }
 
-                y: delegateRoot.vehicleSection.platformPositionBegin * vehicleView.fullLength
-                height: delegateRoot.vehicleSection.platformPositionEnd * vehicleView.fullLength - y
-                width: vehicleView.sectionWidth
-
-                onTapped: {
-                    coachDrawer.coach = delegateRoot.vehicleSection;
-                    coachDrawer.open();
-                }
-            }
-        }
-        Kirigami.Icon {
-            visible: vehicleModel.vehicle.direction != KPublicTransport.Vehicle.UnknownDirection
-            source: {
-                if (vehicleModel.vehicle.direction == KPublicTransport.Vehicle.Forward)
-                    return "go-up";
-                if (vehicleModel.vehicle.direction == KPublicTransport.Vehicle.Backward)
-                    return "go-down"
-                return "";
-            }
-            width: Kirigami.Units.iconSizes.small
-            height: width
-            x: vehicleView.sectionWidth / 2 - width / 2
-            y: vehicleModel.vehicle.platformPositionEnd * vehicleView.fullLength + Kirigami.Units.largeSpacing
-        }
-
-        QQC2.BusyIndicator {
-            anchors.centerIn: parent
-            parent: root
-            running: vehicleModel.loading
-        }
-
-        QQC2.Label {
-            anchors.centerIn: parent
-            parent: root
-            width: vehicleView.width
-            text: vehicleModel.errorMessage
-            color: Kirigami.Theme.negativeTextColor
-            wrapMode: Text.Wrap
-            horizontalAlignment: Text.AlignHCenter
-        }
-
-        QQC2.Label {
-            anchors.centerIn: parent
-            parent: root
-            width: vehicleView.width
-            visible: vehicleModel.errorMessage === "" && !vehicleModel.loading && vehicleRepeater.count === 0
-            wrapMode: Text.Wrap
-            horizontalAlignment: Text.AlignHCenter
-            text: i18n("No vehicle layout information available.")
-        }
+    Kirigami.PlaceholderMessage {
+        anchors.centerIn: parent
+        parent: root
+        width: vehicleView.width
+        visible: vehicleModel.errorMessage === "" && !vehicleModel.loading && vehicleModel.vehicle.sections.length === 0
+        text: i18n("No vehicle layout information available.")
     }
 
     Component.onCompleted: contentItem.clip = true // workaround for Android not doing this automatically
