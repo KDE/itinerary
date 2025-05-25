@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-24 00:42+0000\n"
+"POT-Creation-Date: 2025-05-25 00:43+0000\n"
 "PO-Revision-Date: 2025-03-26 17:51+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -4431,7 +4431,7 @@ msgstr "Plattform: %1"
 msgid "Coach: %1 Seat: %2"
 msgstr "Buss: %1 Plats: %2"
 
-#: app/VehicleLayoutPage.qml:401
+#: app/VehicleLayoutPage.qml:356
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "Ingen information om fordonsklasser tillgänglig."

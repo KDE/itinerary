@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-24 00:42+0000\n"
+"POT-Creation-Date: 2025-05-25 00:43+0000\n"
 "PO-Revision-Date: 2025-05-19 13:28+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -4432,7 +4432,7 @@ msgstr "Andana: %1"
 msgid "Coach: %1 Seat: %2"
 msgstr "Vagó: %1 Seient: %2"
 
-#: app/VehicleLayoutPage.qml:401
+#: app/VehicleLayoutPage.qml:356
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "No hi ha informació disponible de la disposició del vehicle."
