@@ -229,15 +229,20 @@ anchors.centerIn: parent
                         contentItem: ColumnLayout {
                             Layout.preferredWidth: Kirigami.Units.gridUnit * 60
                             Layout.maximumWidth: root.width
-                            PublicTransportFeatureList {
+                            Repeater {
                                 model: root.modelData.features
+                                delegate: KPublicTransport.FeatureDelegate {
+                                    Layout.leftMargin: Kirigami.Units.largeSpacing
+                                    required property KPublicTransport.feature modelData
+                                    feature: modelData
+                                }
                             }
                             QQC2.Label {
                                 Layout.fillWidth: true
                                 text: root.modelData.notes.join("<br/>")
                                 textFormat: Text.RichText
                                 wrapMode: Text.Wrap
-                                onLinkActivated: Qt.openUrlExternally(link)
+                                onLinkActivated: (link) => { Qt.openUrlExternally(link); }
                                 padding: Kirigami.Units.largeSpacing * 2
 
                             }

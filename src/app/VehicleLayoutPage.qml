@@ -95,8 +95,13 @@ Kirigami.ScrollablePage {
 
         contentItem: Component {
             ColumnLayout {
-                PublicTransportFeatureList {
+                Repeater {
                     model: coachDrawer.coach.sectionFeatures
+                    delegate: KPublicTransport.FeatureDelegate {
+                        Layout.leftMargin: Kirigami.Units.largeSpacing
+                        required property KPublicTransport.feature modelData
+                        feature: modelData
+                    }
                 }
             }
         }
@@ -229,8 +234,13 @@ Kirigami.ScrollablePage {
         id: vehicleSheet
 
         contentItem: ColumnLayout {
-            PublicTransportFeatureList {
+            Repeater {
                 model: root.stopover.vehicleLayout.combinedFeatures
+                delegate: KPublicTransport.FeatureDelegate {
+                    Layout.leftMargin: Kirigami.Units.largeSpacing
+                    required property KPublicTransport.feature modelData
+                    feature: modelData
+                }
             }
             QQC2.Label {
                 Layout.fillWidth: true

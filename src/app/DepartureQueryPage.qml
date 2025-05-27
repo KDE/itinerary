@@ -98,17 +98,22 @@ Kirigami.ScrollablePage {
 
     SheetDrawer {
         id: detailsSheet
-        property var departure
+        property KPublicTransport.stopover departure
         contentItem: ColumnLayout {
-            PublicTransportFeatureList {
+            Repeater {
                 model: detailsSheet.departure.features
+                delegate: KPublicTransport.FeatureDelegate {
+                    Layout.leftMargin: Kirigami.Units.largeSpacing
+                    required property KPublicTransport.feature modelData
+                    feature: modelData
+                }
             }
             QQC2.Label {
                 Layout.fillWidth: true
                 text: detailsSheet.departure.notes.join("<br/>")
                 textFormat: Text.RichText
                 wrapMode: Text.Wrap
-                onLinkActivated: Qt.openUrlExternally(link)
+                onLinkActivated: (link) => { Qt.openUrlExternally(link); }
                 padding: Kirigami.Units.largeSpacing * 2
             }
         }

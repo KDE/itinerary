@@ -6,7 +6,6 @@
     <qresource prefix="/">
         <file>vehiclelayoutviewer.qml</file>
         <file alias="VehicleLayoutPage.qml">../src/app/VehicleLayoutPage.qml</file>
-        <file alias="qt/qml/org/kde/itinerary/PublicTransportFeatureList.qml">../src/app/PublicTransportFeatureList.qml</file>
         <file alias="qt/qml/org/kde/itinerary/SheetDrawer.qml">../src/app/SheetDrawer.qml</file>
     </qresource>
 </RCC>

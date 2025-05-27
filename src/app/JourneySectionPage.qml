@@ -153,16 +153,20 @@ Kirigami.Page {
         contentItem: ColumnLayout {
             spacing: Kirigami.Units.smallSpacing
 
-            PublicTransportFeatureList {
+            Repeater {
                 model: root.journeySection.departureVehicleLayout.combinedFeatures
+                delegate: KPublicTransport.FeatureDelegate {
+                    Layout.leftMargin: Kirigami.Units.largeSpacing
+                    required property KPublicTransport.feature modelData
+                    feature: modelData
+                }
             }
-
             QQC2.Label {
                 Layout.fillWidth: true
-                text: journeySection.notes.join("<br/>")
+                text: root.journeySection.notes.join("<br/>")
                 textFormat: Text.RichText
                 wrapMode: Text.Wrap
-                onLinkActivated: Qt.openUrlExternally(link)
+                onLinkActivated: (link) => { Qt.openUrlExternally(link); }
                 padding: Kirigami.Units.largeSpacing * 2
             }
         }
