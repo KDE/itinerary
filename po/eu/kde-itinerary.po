@@ -1,7 +1,7 @@
 # Translation for kde-itinerary.po to Euskara/Basque (eu).
 # Copyright (C) 2020-2025 This file is copyright:
 # This file is distributed under the same license as the itinerary package.
-# SPDX-FileCopyrightText: 2023, 2024, 2025 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2023, 2024, 2025 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
 #
 # Translators:
 # Ander Elortondo <ander.elor@gmail.com>, 2020.
@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-25 00:43+0000\n"
-"PO-Revision-Date: 2025-04-25 22:33+0200\n"
+"POT-Creation-Date: 2025-05-27 00:42+0000\n"
+"PO-Revision-Date: 2025-05-26 17:58+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.04.0\n"
+"X-Generator: Lokalize 25.04.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -570,32 +570,28 @@ msgid "Edit Bus Reservation"
 msgstr "Editatu autobus erreserba"
 
 #: app/BusEditor.qml:48 app/BusEditor.qml:107
-#, fuzzy, kde-format
-#| msgid "Change departure stop"
+#, kde-format
 msgctxt "bus departure"
 msgid "Change Departure Stop"
 msgstr "Aldatu irteerako geralekua"
 
 #: app/BusEditor.qml:53
-#, fuzzy, kde-format
-#| msgid "Change departure stop"
+#, kde-format
 msgctxt "bus departure"
 msgid "Change departure stop"
 msgstr "Aldatu irteerako geralekua"
 
 #: app/BusEditor.qml:63 app/BusEditor.qml:129
-#, fuzzy, kde-format
-#| msgid "Change arrival stop"
+#, kde-format
 msgctxt "bus arrival"
 msgid "Change Arrival Stop"
-msgstr "Aldatu iritsiera geldialdia"
+msgstr "Aldatu iritsiera geralekua"
 
 #: app/BusEditor.qml:68
-#, fuzzy, kde-format
-#| msgid "Change arrival stop"
+#, kde-format
 msgctxt "bus arrival"
 msgid "Change arrival stop"
-msgstr "Aldatu iritsiera geldialdia"
+msgstr "Aldatu iritsiera geralekua"
 
 #: app/BusEditor.qml:88
 #, kde-format
@@ -613,7 +609,7 @@ msgstr "irteera"
 #, kde-format
 msgctxt "bus stop"
 msgid "Stop"
-msgstr "Geldialdia"
+msgstr "Geralekua"
 
 #: app/BusEditor.qml:103 app/BusEditor.qml:125
 #, kde-format
@@ -1588,10 +1584,9 @@ msgstr "Izena"
 
 #: app/HealthCertificateRecovery.qml:43 app/HealthCertificateTest.qml:44
 #: app/HealthCertificateVaccination.qml:47
-#, fuzzy, kde-format
-#| msgid "Date of birth:"
+#, kde-format
 msgid "Date of birth"
-msgstr "Jaioteguna:"
+msgstr "Jaioteguna"
 
 #: app/HealthCertificateRecovery.qml:50
 #, kde-format
@@ -1600,10 +1595,9 @@ msgstr "Osatzea"
 
 #: app/HealthCertificateRecovery.qml:62 app/HealthCertificateTest.qml:65
 #: app/HealthCertificateVaccination.qml:77
-#, fuzzy, kde-format
-#| msgid "Disease:"
+#, kde-format
 msgid "Disease"
-msgstr "Gaixotasuna:"
+msgstr "Gaixotasuna"
 
 #: app/HealthCertificateRecovery.qml:69 app/ProgramMembershipEditor.qml:97
 #: app/ProgramMembershipPage.qml:117 app/TicketPage.qml:92
@@ -1625,64 +1619,54 @@ msgstr "Ziurtagiria"
 
 #: app/HealthCertificateRecovery.qml:87 app/HealthCertificateTest.qml:127
 #: app/HealthCertificateVaccination.qml:134
-#, fuzzy, kde-format
-#| msgid "Issuer:"
+#, kde-format
 msgid "Issuer"
-msgstr "Jaulkitzailea:"
+msgstr "Jaulkitzailea"
 
 #: app/HealthCertificateRecovery.qml:95 app/HealthCertificateTest.qml:135
 #: app/HealthCertificateVaccination.qml:142
-#, fuzzy, kde-format
-#| msgid "Identifier:"
+#, kde-format
 msgid "Identifier"
-msgstr "Identifikatzailea:"
+msgstr "Identifikatzailea"
 
 #: app/HealthCertificateRecovery.qml:104 app/HealthCertificateTest.qml:143
 #: app/HealthCertificateVaccination.qml:150
-#, fuzzy, kde-format
-#| msgid "Issued:"
+#, kde-format
 msgid "Issued"
-msgstr "Emana:"
+msgstr "Jaulkitzea"
 
 #: app/HealthCertificateRecovery.qml:111 app/HealthCertificateTest.qml:151
 #: app/HealthCertificateVaccination.qml:158
-#, fuzzy, kde-format
-#| msgid "Expires:"
+#, kde-format
 msgid "Expires"
-msgstr "Iraungi:"
+msgstr "Iraungi"
 
 #: app/HealthCertificateRecovery.qml:131 app/HealthCertificateTest.qml:169
 #: app/HealthCertificateVaccination.qml:176
-#, fuzzy, kde-format
-#| msgid "Signature:"
+#, kde-format
 msgid "Signature"
-msgstr "Sinadura:"
+msgstr "Sinadura"
 
 #: app/HealthCertificateRecovery.qml:135 app/HealthCertificateTest.qml:173
 #: app/HealthCertificateVaccination.qml:180
-#, fuzzy, kde-format
-#| msgctxt "not yet expired tickets"
-#| msgid "Valid"
+#, kde-format
 msgctxt "Signature state"
 msgid "Valid"
 msgstr "Balioduna"
 
 #: app/HealthCertificateRecovery.qml:137 app/HealthCertificateTest.qml:175
 #: app/HealthCertificateVaccination.qml:182
-#, fuzzy, kde-format
-#| msgid "Unknown class"
+#, kde-format
 msgctxt "Signature state"
 msgid "Unknown"
-msgstr "Klase ezezaguna"
+msgstr "Ezezaguna"
 
 #: app/HealthCertificateRecovery.qml:140 app/HealthCertificateTest.qml:178
 #: app/HealthCertificateVaccination.qml:185
-#, fuzzy, kde-format
-#| msgctxt "not yet expired tickets"
-#| msgid "Valid"
+#, kde-format
 msgctxt "Signature state"
 msgid "Invalid"
-msgstr "Balioduna"
+msgstr "Baliogabea"
 
 #: app/HealthCertificateTest.qml:51 app/HealthCertificateTest.qml:79
 #, kde-format
@@ -1690,22 +1674,19 @@ msgid "Test"
 msgstr "Proba"
 
 #: app/HealthCertificateTest.qml:56 app/HealthCertificateVaccination.qml:60
-#, fuzzy, kde-format
-#| msgid "Date:"
+#, kde-format
 msgid "Date"
-msgstr "Data:"
+msgstr "Data"
 
 #: app/HealthCertificateTest.qml:88
-#, fuzzy, kde-format
-#| msgid "Result:"
+#, kde-format
 msgid "Result"
-msgstr "Emaitza:"
+msgstr "Emaitza"
 
 #: app/HealthCertificateTest.qml:106
-#, fuzzy, kde-format
-#| msgid "Test Center:"
+#, kde-format
 msgid "Test Center"
-msgstr "Proba zentroa:"
+msgstr "Proba gunea"
 
 #: app/HealthCertificateVaccination.qml:64
 #, kde-format
@@ -1715,22 +1696,19 @@ msgstr[0] "%2 (duela egun %1)"
 msgstr[1] "%2 (duela %1 egun)"
 
 #: app/HealthCertificateVaccination.qml:92
-#, fuzzy, kde-format
-#| msgid "Vaccine:"
+#, kde-format
 msgid "Vaccine"
-msgstr "Txertoa:"
+msgstr "Txertoa"
 
 #: app/HealthCertificateVaccination.qml:101
-#, fuzzy, kde-format
-#| msgid "Manufacturer:"
+#, kde-format
 msgid "Manufacturer"
-msgstr "Fabrikatzailea:"
+msgstr "Fabrikatzailea"
 
 #: app/HealthCertificateVaccination.qml:109
-#, fuzzy, kde-format
-#| msgid "Dose:"
+#, kde-format
 msgid "Dose"
-msgstr "Dosia: "
+msgstr "Dosia"
 
 #: app/HealthCertificateVaccination.qml:110
 #, kde-format
@@ -2037,10 +2015,9 @@ msgid "Load earlier connections"
 msgstr "Zamatu aurreko konexioak"
 
 #: app/JourneyQueryPage.qml:154
-#, fuzzy, kde-format
-#| msgid "No locations found"
+#, kde-format
 msgid "No journeys found."
-msgstr "Ez du kokalekurik aurkitu"
+msgstr "Ez du bidaiarik aurkitu."
 
 #: app/JourneyQueryPage.qml:181
 #, kde-format
@@ -3777,7 +3754,7 @@ msgstr "Guztira"
 #, kde-format
 msgctxt "@info:placeholder no visited country"
 msgid "None"
-msgstr ""
+msgstr "Bat ere ez"
 
 #: app/StatisticsPage.qml:121 app/TrainEditor.qml:92
 #, kde-format
@@ -3927,32 +3904,28 @@ msgid "Edit Train Reservation"
 msgstr "Editatu tren erreserba"
 
 #: app/TrainEditor.qml:52 app/TrainEditor.qml:115
-#, fuzzy, kde-format
-#| msgid "Change departure station"
+#, kde-format
 msgctxt "train departure"
 msgid "Change Departure Station"
-msgstr "Aldatu irteera geltokia"
+msgstr "Aldatu irteera-geltokia"
 
 #: app/TrainEditor.qml:57
-#, fuzzy, kde-format
-#| msgid "Change departure station"
+#, kde-format
 msgctxt "train departure"
 msgid "Change departure station"
-msgstr "Aldatu irteera geltokia"
+msgstr "Aldatu irteera-geltokia"
 
 #: app/TrainEditor.qml:67 app/TrainEditor.qml:140
-#, fuzzy, kde-format
-#| msgid "Change arrival station"
+#, kde-format
 msgctxt "train arrival"
 msgid "Change Arrival Station"
-msgstr "Aldatu iritsiera geltokia"
+msgstr "Aldatu iritsiera-geltokia"
 
 #: app/TrainEditor.qml:72
-#, fuzzy, kde-format
-#| msgid "Change arrival station"
+#, kde-format
 msgctxt "train arrival"
 msgid "Change arrival station"
-msgstr "Aldatu iritsiera geltokia"
+msgstr "Aldatu iritsiera-geltokia"
 
 #: app/TrainEditor.qml:97
 #, kde-format
@@ -4449,7 +4422,7 @@ msgstr "Nasa: %1"
 msgid "Coach: %1 Seat: %2"
 msgstr "Bagoia: %1 Eserlekua: %2"
 
-#: app/VehicleLayoutPage.qml:356
+#: app/VehicleLayoutPage.qml:281
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "Ibilgailuaren antolamendu informazioa ez dago eskuragarri."
