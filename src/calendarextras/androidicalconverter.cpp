@@ -385,8 +385,16 @@ void AndroidIcalConverter::addExtendedProperty(KCalendarCore::Incidence *inciden
     }
     case ICAL_GEO_PROPERTY: {
         icalgeotype geo = icalproperty_get_geo(p.get());
+#if ICAL_CHECK_VERSION(3, 99, 99)
+        float geoval;
+        sscanf(geo.lat, "%f", &geoval);
+        incidence->setGeoLatitude(geoval);
+        sscanf(geo.lon, "%f", &geoval);
+        incidence->setGeoLongitude(geoval);
+#else
         incidence->setGeoLatitude(geo.lat);
         incidence->setGeoLongitude(geo.lon);
+#endif
         break;
     }
     case ICAL_PRIORITY_PROPERTY:
@@ -442,8 +450,13 @@ std::vector<JniExtendedPropertyData> AndroidIcalConverter::writeExtendedProperti
 
     if (incidence->hasGeo()) {
         icalgeotype geo;
+#if ICAL_CHECK_VERSION(3, 99, 99)
+        strncpy(geo.lat, QString::number(incidence->geoLatitude()).toLocal8Bit().data(), ICAL_GEO_LEN - 1);
+        strncpy(geo.lon, QString::number(incidence->geoLongitude()).toLocal8Bit().data(), ICAL_GEO_LEN - 1);
+#else
         geo.lat = incidence->geoLatitude();
         geo.lon = incidence->geoLongitude();
+#endif
         ical::property_ptr p(icalproperty_new_geo(geo), &icalproperty_free);
         props.push_back(::writeExtendedProperty(p));
     }

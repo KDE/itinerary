@@ -103,7 +103,11 @@ private Q_SLOTS:
         QCOMPARE(out.size(), 3);
         QCOMPARE(out[0].name, QLatin1StringView("vnd.android.cursor.item/vnd.ical4android.unknown-property"));
         QCOMPARE(QString(out[0].value), QLatin1StringView("[\"CREATED\",\"20211116T193700Z\"]"));
+#if ICAL_CHECK_VERSION(3, 99, 99)
+        QCOMPARE(QString(out[1].value), QLatin1StringView("[\"GEO\",\"52.525;13.369\"]"));
+#else
         QCOMPARE(QString(out[1].value), QLatin1StringView("[\"GEO\",\"52.525002;13.369000\"]"));
+#endif
         QCOMPARE(QString(out[2].value), QLatin1StringView("[\"X-KDE-KITINERARY-RESERVATION\",\"<json>\"]"));
     }
 
