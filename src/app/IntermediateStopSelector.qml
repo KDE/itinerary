@@ -26,6 +26,7 @@ Kirigami.Dialog {
     contentItem: ListView {
         id: stopSelector
         currentIndex: -1
+        clip: true
         delegate: QQC2.ItemDelegate {
             highlighted: ListView.isCurrentItem
             width: ListView.view.width
