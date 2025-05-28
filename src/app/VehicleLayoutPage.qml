@@ -25,17 +25,7 @@ Kirigami.ScrollablePage {
     readonly property alias vehicleLayout: vehicleModel.stopover
     signal layoutUpdated()
 
-    readonly property int selectedClassTypes: {
-        let c = KPublicTransport.VehicleSection.UnknownClass;
-        if (selectedClasses.match(/1/)) {
-            c |= KPublicTransport.VehicleSection.FirstClass;
-        }
-        if (selectedClasses.match(/2/)) {
-            c |= KPublicTransport.VehicleSection.SecondClass;
-        }
-
-        return c;
-    }
+    readonly property int selectedClassTypes: KPublicTransport.ClassUtil.fromString(root.selectedClasses)
 
     onStopoverChanged: vehicleModel.request.stopover = root.stopover;
 
