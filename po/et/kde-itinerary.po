@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-27 00:42+0000\n"
+"POT-Creation-Date: 2025-05-28 00:43+0000\n"
 "PO-Revision-Date: 2020-05-04 10:51+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -235,14 +235,14 @@ msgctxt "to travel destination"
 msgid "To %1"
 msgstr ""
 
-#: app/AlternativeJourneyPage.qml:87 app/DepartureQueryPage.qml:41
+#: app/AlternativeJourneyPage.qml:87 app/DepartureQueryPage.qml:28
 #: app/JourneyRequestPage.qml:242 app/TransferPage.qml:108
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Long distance trains"
 msgstr ""
 
-#: app/AlternativeJourneyPage.qml:95 app/DepartureQueryPage.qml:48
+#: app/AlternativeJourneyPage.qml:95 app/DepartureQueryPage.qml:35
 #: app/JourneyRequestPage.qml:252 app/TransferPage.qml:116
 #, fuzzy, kde-format
 #| msgid "Location:"
@@ -250,14 +250,14 @@ msgctxt "journey query search constraint, title"
 msgid "Local trains"
 msgstr "Asukoht:"
 
-#: app/AlternativeJourneyPage.qml:103 app/DepartureQueryPage.qml:55
+#: app/AlternativeJourneyPage.qml:103 app/DepartureQueryPage.qml:42
 #: app/JourneyRequestPage.qml:262 app/TransferPage.qml:124
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Rapid transit"
 msgstr ""
 
-#: app/AlternativeJourneyPage.qml:111 app/DepartureQueryPage.qml:62
+#: app/AlternativeJourneyPage.qml:111 app/DepartureQueryPage.qml:49
 #: app/JourneyRequestPage.qml:272 app/TransferPage.qml:132
 #, fuzzy, kde-format
 #| msgid "Bus"
@@ -265,7 +265,7 @@ msgctxt "journey query search constraint, title"
 msgid "Bus"
 msgstr "Buss"
 
-#: app/AlternativeJourneyPage.qml:119 app/DepartureQueryPage.qml:69
+#: app/AlternativeJourneyPage.qml:119 app/DepartureQueryPage.qml:56
 #: app/JourneyRequestPage.qml:282 app/TransferPage.qml:140
 #, kde-format
 msgctxt "journey query search constraint, title"
@@ -842,40 +842,14 @@ msgstr ""
 msgid "Departures"
 msgstr "Väljumised"
 
-#: app/DepartureQueryPage.qml:25 app/JourneyQueryPage.qml:32
-#: app/TransferPage.qml:61
-#, kde-format
-msgid "Earlier"
-msgstr ""
-
-#: app/DepartureQueryPage.qml:31 app/JourneyQueryPage.qml:38
-#: app/TransferPage.qml:67
-#, kde-format
-msgid "Later"
-msgstr ""
-
-#: app/DepartureQueryPage.qml:133
-#, fuzzy, kde-format
-#| msgid "Cancelled"
-msgctxt "a train/bus journey canceled by its operator"
-msgid "Canceled"
-msgstr "Ära jäetud"
-
-#: app/DepartureQueryPage.qml:184
-#, fuzzy, kde-format
-#| msgid "To:"
-msgctxt "destination"
-msgid "To:"
-msgstr "Sihtkohta:"
-
-#: app/DepartureQueryPage.qml:256
+#: app/DepartureQueryPage.qml:132
 #, fuzzy, kde-format
 #| msgid "Earlier departure on %1"
 msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "%1 väljub varem"
 
-#: app/DepartureQueryPage.qml:265 app/JourneyQueryPage.qml:125
+#: app/DepartureQueryPage.qml:156 app/JourneyQueryPage.qml:125
 #: app/TransferPage.qml:321
 #, fuzzy, kde-format
 #| msgid "Alternative Connections"
@@ -883,7 +857,7 @@ msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "Alternatiivsed ühendused"
 
-#: app/DepartureQueryPage.qml:274 app/JourneyQueryPage.qml:132
+#: app/DepartureQueryPage.qml:165 app/JourneyQueryPage.qml:132
 #: app/TransferPage.qml:328
 #, fuzzy, kde-format
 #| msgid "Data providers: %1"
@@ -2175,10 +2149,20 @@ msgstr ""
 msgid "Bus"
 msgstr "Buss"
 
-#: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:337
+#: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:341
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
+msgstr ""
+
+#: app/JourneyQueryPage.qml:32 app/TransferPage.qml:61
+#, kde-format
+msgid "Earlier"
+msgstr ""
+
+#: app/JourneyQueryPage.qml:38 app/TransferPage.qml:67
+#, kde-format
+msgid "Later"
 msgstr ""
 
 #: app/JourneyQueryPage.qml:85 app/TransferPage.qml:244
@@ -2349,22 +2333,23 @@ msgstr "Asukohast %1 asukohta %2 (%3)"
 msgid "Drive %1 (%2)"
 msgstr "%1 (%2)"
 
-#: app/JourneySectionDelegate.qml:182 app/JourneySectionDelegate.qml:324
+#: app/JourneySectionDelegate.qml:182 app/JourneySectionDelegate.qml:329
+#: app/StopoverFormDelegate.qml:100
 #, fuzzy, kde-format
 #| msgid "Platform: %1"
 msgctxt "@info"
 msgid "Platform %1"
 msgstr "Platvorm: %1"
 
-#: app/JourneySectionDelegate.qml:250 app/JourneySectionPage.qml:134
-#: app/VehicleLayoutPage.qml:214
+#: app/JourneySectionDelegate.qml:255 app/JourneySectionPage.qml:134
+#: app/VehicleLayoutPage.qml:219
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr ""
 
 #: app/JourneySectionPage.qml:49 app/TimelineDelegateDepartureLayout.qml:94
-#: app/VehicleLayoutPage.qml:116
+#: app/VehicleLayoutPage.qml:121
 #, kde-format
 msgctxt "Direction of the transport mode"
 msgid "To %1"
@@ -3467,31 +3452,6 @@ msgstr ""
 msgid "Show Pass"
 msgstr "Näita pardakaarti"
 
-#: app/PublicTransportFeatureList.qml:31
-#, kde-format
-msgid "Availability unknown"
-msgstr ""
-
-#: app/PublicTransportFeatureList.qml:33
-#, fuzzy, kde-format
-#| msgid "No vehicle layout information available."
-msgid "Not available"
-msgstr "Sõiduki struktuuriteavet ei ole saada."
-
-#: app/PublicTransportFeatureList.qml:35
-#, kde-format
-msgid "Currently not available"
-msgstr ""
-
-#: app/PublicTransportFeatureList.qml:37
-#, fuzzy, kde-format
-#| msgid "One change"
-#| msgid_plural "%1 changes"
-msgid "One space"
-msgid_plural "%1 spaces"
-msgstr[0] "Üks ümberistumine"
-msgstr[1] "%1 ümberistumist"
-
 #: app/ReservationDocumentsCard.qml:19
 #, fuzzy, kde-format
 #| msgid "Event Ticket"
@@ -3986,6 +3946,13 @@ msgstr "Rongid"
 #, kde-format
 msgid "Car"
 msgstr "Auto"
+
+#: app/StopoverFormDelegate.qml:93
+#, fuzzy, kde-format
+#| msgid "From: %1"
+msgctxt "departure stop"
+msgid "From %1"
+msgstr "Asukohast: %1"
 
 #: app/TicketEditor.qml:18
 #, fuzzy, kde-format
@@ -4696,29 +4663,29 @@ msgctxt "train coach"
 msgid "Coach %1"
 msgstr "Vagun:"
 
-#: app/VehicleLayoutPage.qml:132
+#: app/VehicleLayoutPage.qml:137
 #, fuzzy, kde-format
 #| msgid "Departure"
 msgid "Departure: %1"
 msgstr "Väljumine"
 
-#: app/VehicleLayoutPage.qml:134
+#: app/VehicleLayoutPage.qml:139
 #, fuzzy, kde-format
 #| msgid "Arrival time: %1"
 msgid "Arrival: %1"
 msgstr "Saabumisaeg: %1"
 
-#: app/VehicleLayoutPage.qml:154
+#: app/VehicleLayoutPage.qml:159
 #, kde-format
 msgid "Platform: %1"
 msgstr "Platvorm: %1"
 
-#: app/VehicleLayoutPage.qml:163
+#: app/VehicleLayoutPage.qml:168
 #, kde-format
 msgid "Coach: %1 Seat: %2"
 msgstr "Vagun: %1 Koht: %2"
 
-#: app/VehicleLayoutPage.qml:281
+#: app/VehicleLayoutPage.qml:291
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "Sõiduki struktuuriteavet ei ole saada."
@@ -4824,6 +4791,31 @@ msgstr ""
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "Asukohast %1 asukohta %2 (%3)"
+
+#, fuzzy
+#~| msgid "Cancelled"
+#~ msgctxt "a train/bus journey canceled by its operator"
+#~ msgid "Canceled"
+#~ msgstr "Ära jäetud"
+
+#, fuzzy
+#~| msgid "To:"
+#~ msgctxt "destination"
+#~ msgid "To:"
+#~ msgstr "Sihtkohta:"
+
+#, fuzzy
+#~| msgid "No vehicle layout information available."
+#~ msgid "Not available"
+#~ msgstr "Sõiduki struktuuriteavet ei ole saada."
+
+#, fuzzy
+#~| msgid "One change"
+#~| msgid_plural "%1 changes"
+#~ msgid "One space"
+#~ msgid_plural "%1 spaces"
+#~ msgstr[0] "Üks ümberistumine"
+#~ msgstr[1] "%1 ümberistumist"
 
 #~ msgid "First class"
 #~ msgstr "Esimene klass"
@@ -5026,9 +5018,6 @@ msgstr "Asukohast %1 asukohta %2 (%3)"
 
 #~ msgid "Direction: %1"
 #~ msgstr "Suund. %1"
-
-#~ msgid "From: %1"
-#~ msgstr "Asukohast: %1"
 
 #~ msgid "To: %1"
 #~ msgstr "Asukohta: %1"

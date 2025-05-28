@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-27 00:42+0000\n"
+"POT-Creation-Date: 2025-05-28 00:43+0000\n"
 "PO-Revision-Date: 2024-11-28 16:26+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -218,35 +218,35 @@ msgctxt "to travel destination"
 msgid "To %1"
 msgstr "到 %1"
 
-#: app/AlternativeJourneyPage.qml:87 app/DepartureQueryPage.qml:41
+#: app/AlternativeJourneyPage.qml:87 app/DepartureQueryPage.qml:28
 #: app/JourneyRequestPage.qml:242 app/TransferPage.qml:108
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Long distance trains"
 msgstr "長途列車"
 
-#: app/AlternativeJourneyPage.qml:95 app/DepartureQueryPage.qml:48
+#: app/AlternativeJourneyPage.qml:95 app/DepartureQueryPage.qml:35
 #: app/JourneyRequestPage.qml:252 app/TransferPage.qml:116
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Local trains"
 msgstr "區域鐵路"
 
-#: app/AlternativeJourneyPage.qml:103 app/DepartureQueryPage.qml:55
+#: app/AlternativeJourneyPage.qml:103 app/DepartureQueryPage.qml:42
 #: app/JourneyRequestPage.qml:262 app/TransferPage.qml:124
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Rapid transit"
 msgstr "捷運"
 
-#: app/AlternativeJourneyPage.qml:111 app/DepartureQueryPage.qml:62
+#: app/AlternativeJourneyPage.qml:111 app/DepartureQueryPage.qml:49
 #: app/JourneyRequestPage.qml:272 app/TransferPage.qml:132
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Bus"
 msgstr "公車"
 
-#: app/AlternativeJourneyPage.qml:119 app/DepartureQueryPage.qml:69
+#: app/AlternativeJourneyPage.qml:119 app/DepartureQueryPage.qml:56
 #: app/JourneyRequestPage.qml:282 app/TransferPage.qml:140
 #, kde-format
 msgctxt "journey query search constraint, title"
@@ -780,44 +780,20 @@ msgstr "網站"
 msgid "Departures"
 msgstr "出發"
 
-#: app/DepartureQueryPage.qml:25 app/JourneyQueryPage.qml:32
-#: app/TransferPage.qml:61
-#, kde-format
-msgid "Earlier"
-msgstr "更早"
-
-#: app/DepartureQueryPage.qml:31 app/JourneyQueryPage.qml:38
-#: app/TransferPage.qml:67
-#, kde-format
-msgid "Later"
-msgstr "更晚"
-
-#: app/DepartureQueryPage.qml:133
-#, kde-format
-msgctxt "a train/bus journey canceled by its operator"
-msgid "Canceled"
-msgstr "已取消"
-
-#: app/DepartureQueryPage.qml:184
-#, kde-format
-msgctxt "destination"
-msgid "To:"
-msgstr "到："
-
-#: app/DepartureQueryPage.qml:256
+#: app/DepartureQueryPage.qml:132
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "載入更早的出發"
 
-#: app/DepartureQueryPage.qml:265 app/JourneyQueryPage.qml:125
+#: app/DepartureQueryPage.qml:156 app/JourneyQueryPage.qml:125
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "載入更晚的轉乘"
 
-#: app/DepartureQueryPage.qml:274 app/JourneyQueryPage.qml:132
+#: app/DepartureQueryPage.qml:165 app/JourneyQueryPage.qml:132
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
@@ -2035,11 +2011,21 @@ msgstr "路面電車"
 msgid "Bus"
 msgstr "公車"
 
-#: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:337
+#: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:341
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
 msgstr "顯示地圖"
+
+#: app/JourneyQueryPage.qml:32 app/TransferPage.qml:61
+#, kde-format
+msgid "Earlier"
+msgstr "更早"
+
+#: app/JourneyQueryPage.qml:38 app/TransferPage.qml:67
+#, kde-format
+msgid "Later"
+msgstr "更晚"
 
 #: app/JourneyQueryPage.qml:85 app/TransferPage.qml:244
 #, kde-format
@@ -2199,22 +2185,23 @@ msgstr "%1 %2 (%3)"
 msgid "Drive %1 (%2)"
 msgstr ""
 
-#: app/JourneySectionDelegate.qml:182 app/JourneySectionDelegate.qml:324
+#: app/JourneySectionDelegate.qml:182 app/JourneySectionDelegate.qml:329
+#: app/StopoverFormDelegate.qml:100
 #, fuzzy, kde-format
 #| msgid "Platform: %1"
 msgctxt "@info"
 msgid "Platform %1"
 msgstr "月台：%1"
 
-#: app/JourneySectionDelegate.qml:250 app/JourneySectionPage.qml:134
-#: app/VehicleLayoutPage.qml:214
+#: app/JourneySectionDelegate.qml:255 app/JourneySectionPage.qml:134
+#: app/VehicleLayoutPage.qml:219
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr "顯示更多…"
 
 #: app/JourneySectionPage.qml:49 app/TimelineDelegateDepartureLayout.qml:94
-#: app/VehicleLayoutPage.qml:116
+#: app/VehicleLayoutPage.qml:121
 #, fuzzy, kde-format
 #| msgctxt "to travel destination"
 #| msgid "To %1"
@@ -3285,30 +3272,6 @@ msgstr ""
 msgid "Show Pass"
 msgstr "顯示證明"
 
-#: app/PublicTransportFeatureList.qml:31
-#, kde-format
-msgid "Availability unknown"
-msgstr "可用性未知"
-
-#: app/PublicTransportFeatureList.qml:33
-#, kde-format
-msgid "Not available"
-msgstr "無法使用"
-
-#: app/PublicTransportFeatureList.qml:35
-#, kde-format
-msgid "Currently not available"
-msgstr "目前無法使用"
-
-#: app/PublicTransportFeatureList.qml:37
-#, fuzzy, kde-format
-#| msgctxt "number of switches to another transport"
-#| msgid "One change"
-#| msgid_plural "%1 changes"
-msgid "One space"
-msgid_plural "%1 spaces"
-msgstr[0] "%1 次轉乘"
-
 #: app/ReservationDocumentsCard.qml:19
 #, kde-format
 msgid "Documents and Tickets"
@@ -3778,6 +3741,13 @@ msgstr "火車"
 #, kde-format
 msgid "Car"
 msgstr "汽車"
+
+#: app/StopoverFormDelegate.qml:93
+#, fuzzy, kde-format
+#| msgid "From: %1"
+msgctxt "departure stop"
+msgid "From %1"
+msgstr "從：%1"
 
 #: app/TicketEditor.qml:18
 #, kde-format
@@ -4435,27 +4405,27 @@ msgctxt "train coach"
 msgid "Coach %1"
 msgstr "車廂 %1"
 
-#: app/VehicleLayoutPage.qml:132
+#: app/VehicleLayoutPage.qml:137
 #, kde-format
 msgid "Departure: %1"
 msgstr "出發：%1"
 
-#: app/VehicleLayoutPage.qml:134
+#: app/VehicleLayoutPage.qml:139
 #, kde-format
 msgid "Arrival: %1"
 msgstr "抵達：%1"
 
-#: app/VehicleLayoutPage.qml:154
+#: app/VehicleLayoutPage.qml:159
 #, kde-format
 msgid "Platform: %1"
 msgstr "月台：%1"
 
-#: app/VehicleLayoutPage.qml:163
+#: app/VehicleLayoutPage.qml:168
 #, kde-format
 msgid "Coach: %1 Seat: %2"
 msgstr "車廂：%1 座位：%2"
 
-#: app/VehicleLayoutPage.qml:281
+#: app/VehicleLayoutPage.qml:291
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "沒有可用的交通工具佈局資訊。"
@@ -4561,6 +4531,31 @@ msgstr "登出"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 從 %3 到 %4 於 %5"
+
+#~ msgctxt "a train/bus journey canceled by its operator"
+#~ msgid "Canceled"
+#~ msgstr "已取消"
+
+#~ msgctxt "destination"
+#~ msgid "To:"
+#~ msgstr "到："
+
+#~ msgid "Availability unknown"
+#~ msgstr "可用性未知"
+
+#~ msgid "Not available"
+#~ msgstr "無法使用"
+
+#~ msgid "Currently not available"
+#~ msgstr "目前無法使用"
+
+#, fuzzy
+#~| msgctxt "number of switches to another transport"
+#~| msgid "One change"
+#~| msgid_plural "%1 changes"
+#~ msgid "One space"
+#~ msgid_plural "%1 spaces"
+#~ msgstr[0] "%1 次轉乘"
 
 #~ msgid "First class"
 #~ msgstr "頭等"
@@ -4796,9 +4791,6 @@ msgstr "%1%2 從 %3 到 %4 於 %5"
 
 #~ msgid "Direction: %1"
 #~ msgstr "方向：%1"
-
-#~ msgid "From: %1"
-#~ msgstr "從：%1"
 
 #~ msgid "To: %1"
 #~ msgstr "到：%1"
