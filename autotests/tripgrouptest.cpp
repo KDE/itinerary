@@ -28,6 +28,7 @@ void initLocale()
 {
     qputenv("LC_ALL", "en_US.utf-8");
     qputenv("LANG", "C");
+    qputenv("TZ", "UTC");
 }
 
 Q_CONSTRUCTOR_FUNCTION(initLocale)
