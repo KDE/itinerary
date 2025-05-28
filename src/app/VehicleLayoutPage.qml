@@ -93,6 +93,11 @@ Kirigami.ScrollablePage {
                         feature: modelData
                     }
                 }
+                KPublicTransport.OccupancyDelegate {
+                    Layout.leftMargin: Kirigami.Units.largeSpacing
+                    occupancy: coachDrawer.coach.load
+                    visible: occupancy != KPublicTransport.Load.Unknown
+                }
             }
         }
     }

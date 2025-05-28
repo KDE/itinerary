@@ -72,10 +72,8 @@ SheetDrawer {
                             Layout.fillWidth: true
                             Accessible.ignored: true
                         }
-                        KPublicTransport.OccupancyIndicator {
+                        KPublicTransport.OccupancyDelegate {
                             occupancy: stopInfoDrawer.stop.maximumOccupancy
-                            Layout.preferredHeight: Kirigami.Units.iconSizes.small
-                            Layout.preferredWidth: Kirigami.Units.iconSizes.small
                         }
                     }
 
