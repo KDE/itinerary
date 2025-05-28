@@ -5,9 +5,7 @@
 
 import QtQuick
 import QtLocation as QtLocation
-import QtPositioning as QtPositioning
 import org.kde.kirigami as Kirigami
-import org.kde.itinerary
 
 /** Icon in pin element for the map. */
 QtLocation.MapQuickItem {
@@ -29,7 +27,7 @@ QtLocation.MapQuickItem {
         width: height
         source: "map-symbolic"
         isMask: true
-        color: modelData.color
+        color: "#232629"
 
         Rectangle {
             id: bgRect
@@ -45,7 +43,6 @@ QtLocation.MapQuickItem {
             anchors.verticalCenterOffset: -mainIcon.height / 8
             width: height
             height: parent.height / 3 + 1
-            source: modelData.iconName
             isMask: true
             color: root.color
         }

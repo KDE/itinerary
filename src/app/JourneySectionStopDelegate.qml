@@ -17,6 +17,8 @@ Item {
     property KPublicTransport.stopover stop
     property bool isDeparture: false
     property bool isArrival: false
+    /** Highlight this entry, e.g. because it's the next stop or the departure/arrival. */
+    property bool highlight: root.isDeparture || root.isArrival
 
     readonly property bool isSameTime: stop.scheduledDepartureTime.getTime() == stop.scheduledArrivalTime.getTime()
     readonly property bool isSingleTime: !(stop.scheduledDepartureTime > 0 && stop.scheduledArrivalTime > 0)  || isSameTime
@@ -82,7 +84,7 @@ Item {
             Layout.alignment: root.isSingleTime ? Qt.AlignVCenter : Qt.AlignBottom
             text: root.stop.stopPoint.name
             elide: Text.ElideRight
-            font.bold: root.isDeparture || root.isArrival
+            font.bold: root.highlight
             font.strikeout: root.stop.disruptionEffect === KPublicTransport.Disruption.NoService
         }
 

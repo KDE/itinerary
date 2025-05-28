@@ -27,6 +27,8 @@ Kirigami.Page {
     title: i18n("Journey Details")
 
     property KPublicTransport.journeySection journeySection
+    property int departureStopIndex: 0
+    property int arrivalStopIndex: root.journeySection.intermediateStops.length + 1
     property alias showProgress: sectionModel.showProgress
     property alias enableMapView: mapButton.visible
     default property alias _children: root.children
@@ -208,6 +210,7 @@ Kirigami.Page {
                             x: 0
                             stop: journeySection.departure
                             isDeparture: true
+                            highlight: root.departureStopIndex === 0
                             trailingProgress: sectionModel.departureTrailingProgress
                             stopoverPassed: sectionModel.departed
                             Binding {
@@ -222,6 +225,7 @@ Kirigami.Page {
                             leadingProgress: model.leadingProgress
                             trailingProgress: model.trailingProgress
                             stopoverPassed: model.stopoverPassed
+                            highlight: root.departureStopIndex === index + 1 || root.arrivalStopIndex === index + 1
                             Binding {
                                 target: model
                                 property: "leadingLength"
@@ -241,6 +245,7 @@ Kirigami.Page {
                                 Layout.fillWidth: true
                                 stop: journeySection.arrival
                                 isArrival: true
+                                highlight: root.arrivalStopIndex === root.journeySection.intermediateStops.length + 1
                                 leadingProgress: sectionModel.arrivalLeadingProgress
                                 stopoverPassed: sectionModel.arrived
                                 Binding {
@@ -320,6 +325,33 @@ Kirigami.Page {
                             sheetDrawer.isArrival = true
                             sheetDrawer.isDeparture = false
                             sheetDrawer.stop = journeySection.arrival
+                        }
+                    }
+
+                    MapPin {
+                        iconName: "media-playback-start"
+                        coordinate {
+                            latitude: root.journeySection.stopover(root.departureStopIndex).stopPoint.latitude
+                            longitude: root.journeySection.stopover(root.departureStopIndex).stopPoint.longitude
+                        }
+                        onClicked: {
+                            sheetDrawer.open()
+                            sheetDrawer.isArrival = false
+                            sheetDrawer.isDeparture = true
+                            sheetDrawer.stop = root.journeySection.stopover(root.departureStopIndex)
+                        }
+                    }
+                    MapPin {
+                        iconName: "media-playback-stop"
+                        coordinate {
+                            latitude: root.journeySection.stopover(root.arrivalStopIndex).stopPoint.latitude
+                            longitude: root.journeySection.stopover(root.arrivalStopIndex).stopPoint.longitude
+                        }
+                        onClicked: {
+                            sheetDrawer.open()
+                            sheetDrawer.isArrival = true
+                            sheetDrawer.isDeparture = false
+                            sheetDrawer.stop = root.journeySection.stopover(root.arrivalStopIndex)
                         }
                     }
                 }

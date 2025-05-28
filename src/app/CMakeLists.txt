@@ -334,6 +334,8 @@ if (ANDROID)
         map-gnomonic
         map-symbolic
         media-playback-playing
+        media-playback-start
+        media-playback-stop
         meeting-attending
         merge
         message-rfc822
