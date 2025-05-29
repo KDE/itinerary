@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-28 00:43+0000\n"
+"POT-Creation-Date: 2025-05-29 00:43+0000\n"
 "PO-Revision-Date: 2025-02-27 20:24-0300\n"
 "Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -2127,7 +2127,7 @@ msgstr "Teleférico"
 msgid "Bus"
 msgstr "Ônibus"
 
-#: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:341
+#: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:373
 #, fuzzy, kde-format
 #| msgid "Show"
 msgctxt "@action:button"
@@ -2320,14 +2320,14 @@ msgctxt "@info"
 msgid "Platform %1"
 msgstr "Plataforma: %1"
 
-#: app/JourneySectionDelegate.qml:255 app/JourneySectionPage.qml:134
+#: app/JourneySectionDelegate.qml:255 app/JourneySectionPage.qml:136
 #: app/VehicleLayoutPage.qml:219
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr ""
 
-#: app/JourneySectionPage.qml:49 app/TimelineDelegateDepartureLayout.qml:94
+#: app/JourneySectionPage.qml:51 app/TimelineDelegateDepartureLayout.qml:94
 #: app/VehicleLayoutPage.qml:121
 #, fuzzy, kde-format
 #| msgctxt "to travel destination"
@@ -2336,41 +2336,41 @@ msgctxt "Direction of the transport mode"
 msgid "To %1"
 msgstr "Para %1"
 
-#: app/JourneySectionPage.qml:62
+#: app/JourneySectionPage.qml:64
 #, kde-format
 msgid "Distance: %1"
 msgstr "Distância: %1"
 
-#: app/JourneySectionPage.qml:72
+#: app/JourneySectionPage.qml:74
 #, kde-format
 msgid "Average Speed: %1"
 msgstr ""
 
-#: app/JourneySectionPage.qml:82
+#: app/JourneySectionPage.qml:84
 #, fuzzy, kde-format
 #| msgid "CO₂: %1g"
 msgid "CO₂: %1"
 msgstr "CO₂: %1g"
 
-#: app/JourneySectionStopDelegate.qml:143
+#: app/JourneySectionStopDelegate.qml:145
 #, kde-format
 msgctxt "Abreviation of train platform"
 msgid "Pl. %1"
 msgstr ""
 
-#: app/JourneySectionStopDelegate.qml:145
+#: app/JourneySectionStopDelegate.qml:147
 #, kde-format
 msgctxt "Ferry dock, if possible use an abreviation"
 msgid "Dock %1"
 msgstr ""
 
-#: app/JourneySectionStopDelegate.qml:147
+#: app/JourneySectionStopDelegate.qml:149
 #, kde-format
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
 msgstr ""
 
-#: app/JourneySectionStopDelegate.qml:161
+#: app/JourneySectionStopDelegate.qml:163
 #, fuzzy, kde-format
 #| msgid "Location:"
 msgid "Show location"
@@ -4213,12 +4213,12 @@ msgctxt "@action:button"
 msgid "Add to Traewelling"
 msgstr ""
 
-#: app/TrainPage.qml:393
+#: app/TrainPage.qml:397
 #, kde-format
 msgid "Added to Traewelling"
 msgstr ""
 
-#: app/TrainPage.qml:393
+#: app/TrainPage.qml:397
 #, kde-format
 msgid "Failed to add to Traewelling"
 msgstr ""

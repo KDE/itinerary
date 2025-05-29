@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-28 00:43+0000\n"
-"PO-Revision-Date: 2025-05-20 01:34+0100\n"
+"POT-Creation-Date: 2025-05-29 00:43+0000\n"
+"PO-Revision-Date: 2025-05-28 12:52+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -1972,7 +1972,7 @@ msgstr "Tranvía"
 msgid "Bus"
 msgstr "Autobús"
 
-#: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:341
+#: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:373
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2149,54 +2149,54 @@ msgctxt "@info"
 msgid "Platform %1"
 msgstr "Andén %1"
 
-#: app/JourneySectionDelegate.qml:255 app/JourneySectionPage.qml:134
+#: app/JourneySectionDelegate.qml:255 app/JourneySectionPage.qml:136
 #: app/VehicleLayoutPage.qml:219
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr "Mostrar más…"
 
-#: app/JourneySectionPage.qml:49 app/TimelineDelegateDepartureLayout.qml:94
+#: app/JourneySectionPage.qml:51 app/TimelineDelegateDepartureLayout.qml:94
 #: app/VehicleLayoutPage.qml:121
 #, kde-format
 msgctxt "Direction of the transport mode"
 msgid "To %1"
 msgstr "A %1"
 
-#: app/JourneySectionPage.qml:62
+#: app/JourneySectionPage.qml:64
 #, kde-format
 msgid "Distance: %1"
 msgstr "Distancia: %1"
 
-#: app/JourneySectionPage.qml:72
+#: app/JourneySectionPage.qml:74
 #, kde-format
 msgid "Average Speed: %1"
 msgstr "Velocidad media: %1"
 
-#: app/JourneySectionPage.qml:82
+#: app/JourneySectionPage.qml:84
 #, kde-format
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionStopDelegate.qml:143
+#: app/JourneySectionStopDelegate.qml:145
 #, kde-format
 msgctxt "Abreviation of train platform"
 msgid "Pl. %1"
 msgstr "An. %1"
 
-#: app/JourneySectionStopDelegate.qml:145
+#: app/JourneySectionStopDelegate.qml:147
 #, kde-format
 msgctxt "Ferry dock, if possible use an abreviation"
 msgid "Dock %1"
 msgstr "Muelle %1"
 
-#: app/JourneySectionStopDelegate.qml:147
+#: app/JourneySectionStopDelegate.qml:149
 #, kde-format
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
 msgstr "An. %1"
 
-#: app/JourneySectionStopDelegate.qml:161
+#: app/JourneySectionStopDelegate.qml:163
 #, kde-format
 msgid "Show location"
 msgstr "Mostrar ubicación"
@@ -3742,12 +3742,10 @@ msgid "Car"
 msgstr "Automóvil"
 
 #: app/StopoverFormDelegate.qml:93
-#, fuzzy, kde-format
-#| msgctxt "departure train station"
-#| msgid "From:"
+#, kde-format
 msgctxt "departure stop"
 msgid "From %1"
-msgstr "De:"
+msgstr "De %1"
 
 #: app/TicketEditor.qml:18
 #, kde-format
@@ -3996,12 +3994,12 @@ msgctxt "@action:button"
 msgid "Add to Traewelling"
 msgstr "Añadir a Traewelling"
 
-#: app/TrainPage.qml:393
+#: app/TrainPage.qml:397
 #, kde-format
 msgid "Added to Traewelling"
 msgstr "Añadido a Traewelling"
 
-#: app/TrainPage.qml:393
+#: app/TrainPage.qml:397
 #, kde-format
 msgid "Failed to add to Traewelling"
 msgstr "No se ha podido añadir a Traewelling"
@@ -4515,53 +4513,3 @@ msgstr "Sesión cerrada"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 de %3 a %4 el %5"
-
-#~ msgctxt "a train/bus journey canceled by its operator"
-#~ msgid "Canceled"
-#~ msgstr "Cancelado"
-
-#~ msgctxt "destination"
-#~ msgid "To:"
-#~ msgstr "A:"
-
-#~ msgid "Availability unknown"
-#~ msgstr "Disponibilidad desconocida"
-
-#~ msgid "Not available"
-#~ msgstr "No disponible"
-
-#~ msgid "Currently not available"
-#~ msgstr "No disponible en la actualidad"
-
-#~ msgid "One space"
-#~ msgid_plural "%1 spaces"
-#~ msgstr[0] "1 espacio"
-#~ msgstr[1] "%1 espacios"
-
-#~ msgid "First class"
-#~ msgstr "Primera clase"
-
-#~ msgid "Second class"
-#~ msgstr "Segunda clase"
-
-#~ msgid "First/second class"
-#~ msgstr "Primera/segunda clase"
-
-#~ msgid "Unknown class"
-#~ msgstr "Clase desconocida"
-
-#~ msgctxt "train coach type"
-#~ msgid "Sleeping car"
-#~ msgstr "Coche cama"
-
-#~ msgctxt "train coach type"
-#~ msgid "Couchette car"
-#~ msgstr "Coche litera"
-
-#~ msgctxt "train coach type"
-#~ msgid "Restaurant car"
-#~ msgstr "Coche restaurante"
-
-#~ msgctxt "train coach type"
-#~ msgid "Car transport car"
-#~ msgstr "Coche de transporte de autos"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-28 00:43+0000\n"
+"POT-Creation-Date: 2025-05-29 00:43+0000\n"
 "PO-Revision-Date: 2025-03-26 17:51+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -1988,7 +1988,7 @@ msgstr "Spårvagn"
 msgid "Bus"
 msgstr "Buss"
 
-#: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:341
+#: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:373
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2166,54 +2166,54 @@ msgctxt "@info"
 msgid "Platform %1"
 msgstr "Plattform %1"
 
-#: app/JourneySectionDelegate.qml:255 app/JourneySectionPage.qml:134
+#: app/JourneySectionDelegate.qml:255 app/JourneySectionPage.qml:136
 #: app/VehicleLayoutPage.qml:219
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr "Visa fler…"
 
-#: app/JourneySectionPage.qml:49 app/TimelineDelegateDepartureLayout.qml:94
+#: app/JourneySectionPage.qml:51 app/TimelineDelegateDepartureLayout.qml:94
 #: app/VehicleLayoutPage.qml:121
 #, kde-format
 msgctxt "Direction of the transport mode"
 msgid "To %1"
 msgstr "Till %1"
 
-#: app/JourneySectionPage.qml:62
+#: app/JourneySectionPage.qml:64
 #, kde-format
 msgid "Distance: %1"
 msgstr "Avstånd: %1"
 
-#: app/JourneySectionPage.qml:72
+#: app/JourneySectionPage.qml:74
 #, kde-format
 msgid "Average Speed: %1"
 msgstr "Medelhastighet: %1"
 
-#: app/JourneySectionPage.qml:82
+#: app/JourneySectionPage.qml:84
 #, kde-format
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionStopDelegate.qml:143
+#: app/JourneySectionStopDelegate.qml:145
 #, kde-format
 msgctxt "Abreviation of train platform"
 msgid "Pl. %1"
 msgstr "Pl. %1"
 
-#: app/JourneySectionStopDelegate.qml:145
+#: app/JourneySectionStopDelegate.qml:147
 #, kde-format
 msgctxt "Ferry dock, if possible use an abreviation"
 msgid "Dock %1"
 msgstr "Kaj %1"
 
-#: app/JourneySectionStopDelegate.qml:147
+#: app/JourneySectionStopDelegate.qml:149
 #, kde-format
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
 msgstr "Pl. %1"
 
-#: app/JourneySectionStopDelegate.qml:161
+#: app/JourneySectionStopDelegate.qml:163
 #, kde-format
 msgid "Show location"
 msgstr "Visa plats"
@@ -3994,12 +3994,12 @@ msgctxt "@action:button"
 msgid "Add to Traewelling"
 msgstr "Lägg till i Traewelling"
 
-#: app/TrainPage.qml:393
+#: app/TrainPage.qml:397
 #, kde-format
 msgid "Added to Traewelling"
 msgstr "Tillagd i Traewelling"
 
-#: app/TrainPage.qml:393
+#: app/TrainPage.qml:397
 #, kde-format
 msgid "Failed to add to Traewelling"
 msgstr "Misslyckades lägga till i Traewelling"
