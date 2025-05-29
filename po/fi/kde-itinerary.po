@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-15 02:40+0000\n"
-"PO-Revision-Date: 2025-03-23 15:54+0200\n"
+"PO-Revision-Date: 2025-05-28 16:44+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -420,17 +420,17 @@ msgstr "Saapuminen"
 #, kde-format
 msgctxt "Boat arrival"
 msgid "Arrival Time"
-msgstr "Saapumisaika"
+msgstr "Tuloaika"
 
 #: app/BoatEditor.qml:120
 #, kde-format
 msgid "Arrival time has to be after the departure time."
-msgstr "Saapumisajan on oltava lähtöajan jälkeen."
+msgstr "Tuloajan on oltava lähtöajan jälkeen."
 
 #: app/BoatEditor.qml:130
 #, kde-format
 msgid "Arrival terminal must not be empty."
-msgstr "Saapumisterminaali ei voi olla tyhjä."
+msgstr "Tuloterminaali ei voi olla tyhjä."
 
 #: app/BoatPage.qml:16
 #, kde-format
@@ -451,7 +451,7 @@ msgstr "Terminaali"
 #: app/BoatPage.qml:89 app/BusPage.qml:134 app/TrainPage.qml:219
 #, kde-format
 msgid "Arrival time"
-msgstr "Saapumisaika:"
+msgstr "Tuloaika:"
 
 #: app/BookingCard.qml:24
 #, kde-format
@@ -561,7 +561,7 @@ msgstr "Nouse junasta myöhemmin"
 #: app/BusEditor.qml:64
 #, kde-format
 msgid "Change arrival stop"
-msgstr "Vaihda saapumispysäkki"
+msgstr "Vaihda tulopysäkki"
 
 #: app/BusEditor.qml:84
 #, kde-format
@@ -1165,10 +1165,11 @@ msgctxt "flight arrival"
 msgid "Arrival - %1"
 msgstr "Saapuminen – %1"
 
+# Tämä on hankala: ”tulokenttä” kuulostaa enemmän syöttökentältä, jossa on laskettu kertolasku!
 #: app/FlightEditor.qml:153
 #, kde-format
 msgid "Arrival airport has to be specified."
-msgstr "Saapumiskenttä on määritettävä."
+msgstr "Kohdelentokenttä on määritettävä."
 
 #: app/FlightEditor.qml:159
 #, kde-format
@@ -1186,7 +1187,7 @@ msgstr "Aika"
 #, kde-format
 msgctxt "flight arrival"
 msgid "Arrival time has to be after the departure time."
-msgstr "Saapumisajan on oltava lähtöajan jälkeen."
+msgstr "Tuloajan on oltava lähtöajan jälkeen."
 
 #: app/FlightEditor.qml:182 app/FlightPage.qml:15 app/StatisticsPage.qml:94
 #, kde-format
@@ -1267,7 +1268,7 @@ msgstr "Saapuminen"
 #, kde-format
 msgctxt "flight arrival"
 msgid "Arrival time"
-msgstr "Saapumisaika"
+msgstr "Tuloaika"
 
 #: app/FormPlaceDelegate.qml:55
 #, kde-format
@@ -2066,7 +2067,7 @@ msgstr "Lähtöaika"
 #, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival time"
-msgstr "Saapumisaika:"
+msgstr "Tuloaika:"
 
 #: app/JourneyRequestPage.qml:177
 #, kde-format
@@ -3001,7 +3002,7 @@ msgstr "Uusi lähtöaika on: %1 (%2)"
 #: app/notificationhelper.cpp:110
 #, kde-format
 msgid "New arrival time is: %1 (+%2)"
-msgstr "Uusi saapumisaika on: %1 (+ %2)"
+msgstr "Uusi tuloaika on: %1 (+ %2)"
 
 #: app/notificationhelper.cpp:114
 #, kde-format
@@ -3011,7 +3012,7 @@ msgstr "Uusi lähtölaituri on: %1"
 #: app/notificationhelper.cpp:117
 #, kde-format
 msgid "New arrival platform is: %1"
-msgstr "Uusi saapumislaituri on: %1"
+msgstr "Uusi tulolaituri on: %1"
 
 #: app/onlineimport/db.qml:28 app/onlineimport/sncf.qml:28
 #, kde-format
@@ -3897,7 +3898,7 @@ msgstr "Tänään"
 #, kde-format
 msgctxt "weekday, date"
 msgid "%1, %2"
-msgstr "%1 %2"
+msgstr "%1, %2"
 
 #: app/TouristAttractionPage.qml:18
 #, kde-format
@@ -3922,7 +3923,7 @@ msgstr "Saapuminen"
 #: app/TouristAttractionPage.qml:54
 #, kde-format
 msgid "Arrival Time"
-msgstr "Saapumisaika:"
+msgstr "Tuloaika:"
 
 #: app/TrainDelegate.qml:45 app/TrainDelegate.qml:230
 #, kde-format
