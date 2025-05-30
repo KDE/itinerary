@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-29 00:43+0000\n"
+"POT-Creation-Date: 2025-05-30 00:43+0000\n"
 "PO-Revision-Date: 2024-11-28 16:26+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -2194,14 +2194,14 @@ msgid "Platform %1"
 msgstr "月台：%1"
 
 #: app/JourneySectionDelegate.qml:255 app/JourneySectionPage.qml:136
-#: app/VehicleLayoutPage.qml:219
+#: app/VehicleLayoutPage.qml:214
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr "顯示更多…"
 
 #: app/JourneySectionPage.qml:51 app/TimelineDelegateDepartureLayout.qml:94
-#: app/VehicleLayoutPage.qml:121
+#: app/VehicleLayoutPage.qml:116
 #, fuzzy, kde-format
 #| msgctxt "to travel destination"
 #| msgid "To %1"
@@ -2609,7 +2609,7 @@ msgstr "月台："
 msgid "Occupancy:"
 msgstr ""
 
-#: app/MapStopoverInfoSheetDrawer.qml:88
+#: app/MapStopoverInfoSheetDrawer.qml:86
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "View Indoor Map"
@@ -4399,33 +4399,33 @@ msgstr "分割旅程"
 msgid "Vehicle Layout"
 msgstr "交通工具佈局"
 
-#: app/VehicleLayoutPage.qml:80
+#: app/VehicleLayoutPage.qml:70
 #, kde-format
 msgctxt "train coach"
 msgid "Coach %1"
 msgstr "車廂 %1"
 
-#: app/VehicleLayoutPage.qml:137
+#: app/VehicleLayoutPage.qml:132
 #, kde-format
 msgid "Departure: %1"
 msgstr "出發：%1"
 
-#: app/VehicleLayoutPage.qml:139
+#: app/VehicleLayoutPage.qml:134
 #, kde-format
 msgid "Arrival: %1"
 msgstr "抵達：%1"
 
-#: app/VehicleLayoutPage.qml:159
+#: app/VehicleLayoutPage.qml:154
 #, kde-format
 msgid "Platform: %1"
 msgstr "月台：%1"
 
-#: app/VehicleLayoutPage.qml:168
+#: app/VehicleLayoutPage.qml:163
 #, kde-format
 msgid "Coach: %1 Seat: %2"
 msgstr "車廂：%1 座位：%2"
 
-#: app/VehicleLayoutPage.qml:291
+#: app/VehicleLayoutPage.qml:286
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "沒有可用的交通工具佈局資訊。"

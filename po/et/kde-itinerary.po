@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-29 00:43+0000\n"
+"POT-Creation-Date: 2025-05-30 00:43+0000\n"
 "PO-Revision-Date: 2020-05-04 10:51+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -2342,14 +2342,14 @@ msgid "Platform %1"
 msgstr "Platvorm: %1"
 
 #: app/JourneySectionDelegate.qml:255 app/JourneySectionPage.qml:136
-#: app/VehicleLayoutPage.qml:219
+#: app/VehicleLayoutPage.qml:214
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr ""
 
 #: app/JourneySectionPage.qml:51 app/TimelineDelegateDepartureLayout.qml:94
-#: app/VehicleLayoutPage.qml:121
+#: app/VehicleLayoutPage.qml:116
 #, kde-format
 msgctxt "Direction of the transport mode"
 msgid "To %1"
@@ -2778,7 +2778,7 @@ msgstr "Platvorm:"
 msgid "Occupancy:"
 msgstr ""
 
-#: app/MapStopoverInfoSheetDrawer.qml:88
+#: app/MapStopoverInfoSheetDrawer.qml:86
 #, kde-format
 msgid "Show indoor map"
 msgstr ""
@@ -4656,36 +4656,36 @@ msgstr "Sündmuse pilet"
 msgid "Vehicle Layout"
 msgstr "Sõiduki struktuur"
 
-#: app/VehicleLayoutPage.qml:80
+#: app/VehicleLayoutPage.qml:70
 #, fuzzy, kde-format
 #| msgid "Coach:"
 msgctxt "train coach"
 msgid "Coach %1"
 msgstr "Vagun:"
 
-#: app/VehicleLayoutPage.qml:137
+#: app/VehicleLayoutPage.qml:132
 #, fuzzy, kde-format
 #| msgid "Departure"
 msgid "Departure: %1"
 msgstr "Väljumine"
 
-#: app/VehicleLayoutPage.qml:139
+#: app/VehicleLayoutPage.qml:134
 #, fuzzy, kde-format
 #| msgid "Arrival time: %1"
 msgid "Arrival: %1"
 msgstr "Saabumisaeg: %1"
 
-#: app/VehicleLayoutPage.qml:159
+#: app/VehicleLayoutPage.qml:154
 #, kde-format
 msgid "Platform: %1"
 msgstr "Platvorm: %1"
 
-#: app/VehicleLayoutPage.qml:168
+#: app/VehicleLayoutPage.qml:163
 #, kde-format
 msgid "Coach: %1 Seat: %2"
 msgstr "Vagun: %1 Koht: %2"
 
-#: app/VehicleLayoutPage.qml:291
+#: app/VehicleLayoutPage.qml:286
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "Sõiduki struktuuriteavet ei ole saada."

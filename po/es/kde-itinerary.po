@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-29 00:43+0000\n"
+"POT-Creation-Date: 2025-05-30 00:43+0000\n"
 "PO-Revision-Date: 2025-05-28 12:52+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -2150,14 +2150,14 @@ msgid "Platform %1"
 msgstr "Andén %1"
 
 #: app/JourneySectionDelegate.qml:255 app/JourneySectionPage.qml:136
-#: app/VehicleLayoutPage.qml:219
+#: app/VehicleLayoutPage.qml:214
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr "Mostrar más…"
 
 #: app/JourneySectionPage.qml:51 app/TimelineDelegateDepartureLayout.qml:94
-#: app/VehicleLayoutPage.qml:121
+#: app/VehicleLayoutPage.qml:116
 #, kde-format
 msgctxt "Direction of the transport mode"
 msgid "To %1"
@@ -2563,7 +2563,7 @@ msgstr "Andén:"
 msgid "Occupancy:"
 msgstr "Ocupación:"
 
-#: app/MapStopoverInfoSheetDrawer.qml:88
+#: app/MapStopoverInfoSheetDrawer.qml:86
 #, kde-format
 msgid "Show indoor map"
 msgstr "Mostrar mapa del interior"
@@ -4377,33 +4377,33 @@ msgstr "Dividir viaje"
 msgid "Vehicle Layout"
 msgstr "Información sobre el vehículo"
 
-#: app/VehicleLayoutPage.qml:80
+#: app/VehicleLayoutPage.qml:70
 #, kde-format
 msgctxt "train coach"
 msgid "Coach %1"
 msgstr "Coche %1"
 
-#: app/VehicleLayoutPage.qml:137
+#: app/VehicleLayoutPage.qml:132
 #, kde-format
 msgid "Departure: %1"
 msgstr "Salida: %1"
 
-#: app/VehicleLayoutPage.qml:139
+#: app/VehicleLayoutPage.qml:134
 #, kde-format
 msgid "Arrival: %1"
 msgstr "Llegada: %1"
 
-#: app/VehicleLayoutPage.qml:159
+#: app/VehicleLayoutPage.qml:154
 #, kde-format
 msgid "Platform: %1"
 msgstr "Andén: %1"
 
-#: app/VehicleLayoutPage.qml:168
+#: app/VehicleLayoutPage.qml:163
 #, kde-format
 msgid "Coach: %1 Seat: %2"
 msgstr "Coche: %1 Asiento: %2"
 
-#: app/VehicleLayoutPage.qml:291
+#: app/VehicleLayoutPage.qml:286
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "No se dispone de información sobre el automóvil."

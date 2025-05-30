@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-29 00:43+0000\n"
-"PO-Revision-Date: 2025-05-26 17:58+0200\n"
+"POT-Creation-Date: 2025-05-30 00:43+0000\n"
+"PO-Revision-Date: 2025-05-29 21:22+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -2151,14 +2151,14 @@ msgid "Platform %1"
 msgstr "%1. nasa"
 
 #: app/JourneySectionDelegate.qml:255 app/JourneySectionPage.qml:136
-#: app/VehicleLayoutPage.qml:219
+#: app/VehicleLayoutPage.qml:214
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr "Erakutsi gehiago..."
 
 #: app/JourneySectionPage.qml:51 app/TimelineDelegateDepartureLayout.qml:94
-#: app/VehicleLayoutPage.qml:121
+#: app/VehicleLayoutPage.qml:116
 #, kde-format
 msgctxt "Direction of the transport mode"
 msgid "To %1"
@@ -2563,7 +2563,7 @@ msgstr "Nasa:"
 msgid "Occupancy:"
 msgstr "Okupazioa:"
 
-#: app/MapStopoverInfoSheetDrawer.qml:88
+#: app/MapStopoverInfoSheetDrawer.qml:86
 #, kde-format
 msgid "Show indoor map"
 msgstr "Erakutsi barnealdeko mapa"
@@ -3732,11 +3732,10 @@ msgid "Car"
 msgstr "Autoa"
 
 #: app/StopoverFormDelegate.qml:93
-#, fuzzy, kde-format
-#| msgid "From: %1"
+#, kde-format
 msgctxt "departure stop"
 msgid "From %1"
-msgstr "Nondik: %1"
+msgstr "%1(e)tik"
 
 #: app/TicketEditor.qml:18
 #, kde-format
@@ -4368,33 +4367,33 @@ msgstr "Txangoa zatitu"
 msgid "Vehicle Layout"
 msgstr "Ibilgailu antolamendua"
 
-#: app/VehicleLayoutPage.qml:80
+#: app/VehicleLayoutPage.qml:70
 #, kde-format
 msgctxt "train coach"
 msgid "Coach %1"
 msgstr "%1 bagoia"
 
-#: app/VehicleLayoutPage.qml:137
+#: app/VehicleLayoutPage.qml:132
 #, kde-format
 msgid "Departure: %1"
 msgstr "Irteera: %1"
 
-#: app/VehicleLayoutPage.qml:139
+#: app/VehicleLayoutPage.qml:134
 #, kde-format
 msgid "Arrival: %1"
 msgstr "Iritsiera: %1"
 
-#: app/VehicleLayoutPage.qml:159
+#: app/VehicleLayoutPage.qml:154
 #, kde-format
 msgid "Platform: %1"
 msgstr "Nasa: %1"
 
-#: app/VehicleLayoutPage.qml:168
+#: app/VehicleLayoutPage.qml:163
 #, kde-format
 msgid "Coach: %1 Seat: %2"
 msgstr "Bagoia: %1 Eserlekua: %2"
 
-#: app/VehicleLayoutPage.qml:291
+#: app/VehicleLayoutPage.qml:286
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "Ibilgailuaren antolamendu informazioa ez dago eskuragarri."

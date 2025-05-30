@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-29 00:43+0000\n"
+"POT-Creation-Date: 2025-05-30 00:43+0000\n"
 "PO-Revision-Date: 2025-05-06 18:10+0200\n"
 "Last-Translator: Alois Spitzbart <spitz234@hotmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -2174,14 +2174,14 @@ msgid "Platform %1"
 msgstr "Bahnsteig %1"
 
 #: app/JourneySectionDelegate.qml:255 app/JourneySectionPage.qml:136
-#: app/VehicleLayoutPage.qml:219
+#: app/VehicleLayoutPage.qml:214
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr "Mehr anzeigen …"
 
 #: app/JourneySectionPage.qml:51 app/TimelineDelegateDepartureLayout.qml:94
-#: app/VehicleLayoutPage.qml:121
+#: app/VehicleLayoutPage.qml:116
 #, kde-format
 msgctxt "Direction of the transport mode"
 msgid "To %1"
@@ -2592,7 +2592,7 @@ msgstr "Bahnsteig:"
 msgid "Occupancy:"
 msgstr "Auslastung:"
 
-#: app/MapStopoverInfoSheetDrawer.qml:88
+#: app/MapStopoverInfoSheetDrawer.qml:86
 #, kde-format
 msgid "Show indoor map"
 msgstr "Innenraumkarte anzeigen"
@@ -4406,33 +4406,33 @@ msgstr "Reise aufteilen"
 msgid "Vehicle Layout"
 msgstr "Wagenreihung"
 
-#: app/VehicleLayoutPage.qml:80
+#: app/VehicleLayoutPage.qml:70
 #, kde-format
 msgctxt "train coach"
 msgid "Coach %1"
 msgstr "Wagen %1"
 
-#: app/VehicleLayoutPage.qml:137
+#: app/VehicleLayoutPage.qml:132
 #, kde-format
 msgid "Departure: %1"
 msgstr "Abfahrt: %1"
 
-#: app/VehicleLayoutPage.qml:139
+#: app/VehicleLayoutPage.qml:134
 #, kde-format
 msgid "Arrival: %1"
 msgstr "Ankunft: %1"
 
-#: app/VehicleLayoutPage.qml:159
+#: app/VehicleLayoutPage.qml:154
 #, kde-format
 msgid "Platform: %1"
 msgstr "Bahnsteig: %1"
 
-#: app/VehicleLayoutPage.qml:168
+#: app/VehicleLayoutPage.qml:163
 #, kde-format
 msgid "Coach: %1 Seat: %2"
 msgstr "Wagen: %1 Sitz: %2"
 
-#: app/VehicleLayoutPage.qml:291
+#: app/VehicleLayoutPage.qml:286
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "Keine Wagenreihung verfügbar."
