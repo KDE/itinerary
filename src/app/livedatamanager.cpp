@@ -367,9 +367,13 @@ void LiveDataManager::applyJourney(const QString &resId, const KPublicTransport:
             }
             // case (4)
             ld.trip = expandJourney(oldJny, journey, newInOldDep, newInOldArr);
+            ld.departureIndex = newInOldDep;
+            ld.arrivalIndex = newInOldArr;
 
         } else { // case (3)
             ld.trip = journey;
+            ld.departureIndex = oldInNewDep;
+            ld.arrivalIndex = oldInNewArr;
             oldJny = expandJourney(journey, oldJny, oldInNewDep, oldInNewArr);
         }
     } else {
