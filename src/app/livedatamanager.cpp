@@ -73,14 +73,20 @@ LiveDataManager::LiveDataManager(QObject *parent)
             return;
         }
 
+        const auto journey = m_onboardStatus->journey();
+        if (journey.sections().empty()) {
+            return;
+        }
         for (const auto &resId : m_reservations) {
             auto res = m_resMgr->reservation(resId);
             if (!hasDeparted(resId, res) || hasArrived(resId, res)) {
                 continue;
             }
-            const auto journey = m_onboardStatus->journey();
-            if (journey.sections().empty()) {
-                return;
+
+            const auto lineData = ReservationHelper::lineNameAndNumber(res);
+            if (!PublicTransportMatcher::isSameMode(res, journey.sections()[0].route().line().mode()) ||
+                !PublicTransportMatcher::isSameRoute(journey.sections()[0].route(), lineData.first, lineData.second)) {
+                continue;
             }
 
             applyJourney(resId, journey.sections()[0]);
