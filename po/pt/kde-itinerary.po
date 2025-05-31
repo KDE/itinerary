@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kitinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-30 00:43+0000\n"
+"POT-Creation-Date: 2025-05-31 00:42+0000\n"
 "PO-Revision-Date: 2023-07-14 22:15+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -2331,13 +2331,13 @@ msgstr[1] "%1 alterações"
 msgid "Click to extend"
 msgstr "Carregue para estender"
 
-#: app/livedatamanager.cpp:776
+#: app/livedatamanager.cpp:786
 #, fuzzy, kde-format
 #| msgid "Flight %1 from %2 to %3"
 msgid "Flight %1 to %2:"
 msgstr "Voo %1 de %2 até %3"
 
-#: app/livedatamanager.cpp:782
+#: app/livedatamanager.cpp:792
 #, kde-format
 msgid "Itinerary change"
 msgstr "Mudança de itinerário"
@@ -2696,7 +2696,7 @@ msgstr "Plataforma"
 msgid "Occupancy:"
 msgstr ""
 
-#: app/MapStopoverInfoSheetDrawer.qml:86
+#: app/MapStopoverInfoSheetDrawer.qml:90
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "View Indoor Map"
@@ -4591,7 +4591,23 @@ msgstr "Plataforma: %1"
 msgid "Coach: %1 Seat: %2"
 msgstr "Coxia: %1 Lugar: %2"
 
-#: app/VehicleLayoutPage.qml:286
+#: app/VehicleLayoutPage.qml:233
+#, fuzzy, kde-format
+#| msgid "More information"
+msgid "Information"
+msgstr "Mais informações"
+
+#: app/VehicleLayoutPage.qml:250
+#, kde-format
+msgid "Occupancy"
+msgstr ""
+
+#: app/VehicleLayoutPage.qml:264
+#, kde-format
+msgid "Ammenities"
+msgstr ""
+
+#: app/VehicleLayoutPage.qml:315
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "Não está disponível nenhuma informação da disposição do veículo."
@@ -5087,12 +5103,6 @@ msgstr "%1%2 de %3 até %4 a %5"
 #~ msgctxt "train coach feature"
 #~ msgid "Family area"
 #~ msgstr "Apelido"
-
-#, fuzzy
-#~| msgid "More information"
-#~ msgctxt "train coach feature"
-#~ msgid "Information point"
-#~ msgstr "Mais informações"
 
 #~ msgctxt "vehicle load"
 #~ msgid "Low"

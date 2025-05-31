@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-30 00:43+0000\n"
+"POT-Creation-Date: 2025-05-31 00:42+0000\n"
 "PO-Revision-Date: 2023-11-07 21:26+0100\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: \n"
@@ -2198,12 +2198,12 @@ msgstr[1] ""
 msgid "Click to extend"
 msgstr ""
 
-#: app/livedatamanager.cpp:776
+#: app/livedatamanager.cpp:786
 #, kde-format
 msgid "Flight %1 to %2:"
 msgstr ""
 
-#: app/livedatamanager.cpp:782
+#: app/livedatamanager.cpp:792
 #, kde-format
 msgid "Itinerary change"
 msgstr ""
@@ -2546,7 +2546,7 @@ msgstr ""
 msgid "Occupancy:"
 msgstr ""
 
-#: app/MapStopoverInfoSheetDrawer.qml:86
+#: app/MapStopoverInfoSheetDrawer.qml:90
 #, kde-format
 msgid "Show indoor map"
 msgstr ""
@@ -4319,7 +4319,22 @@ msgstr ""
 msgid "Coach: %1 Seat: %2"
 msgstr ""
 
-#: app/VehicleLayoutPage.qml:286
+#: app/VehicleLayoutPage.qml:233
+#, kde-format
+msgid "Information"
+msgstr ""
+
+#: app/VehicleLayoutPage.qml:250
+#, kde-format
+msgid "Occupancy"
+msgstr ""
+
+#: app/VehicleLayoutPage.qml:264
+#, kde-format
+msgid "Ammenities"
+msgstr ""
+
+#: app/VehicleLayoutPage.qml:315
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr ""

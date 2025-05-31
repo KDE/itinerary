@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-30 00:43+0000\n"
+"POT-Creation-Date: 2025-05-31 00:42+0000\n"
 "PO-Revision-Date: 2024-11-28 16:26+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -2259,12 +2259,12 @@ msgstr[0] "%1 次轉乘"
 msgid "Click to extend"
 msgstr "按一下來展開"
 
-#: app/livedatamanager.cpp:776
+#: app/livedatamanager.cpp:786
 #, kde-format
 msgid "Flight %1 to %2:"
 msgstr "從 %1 到 %2 的航班："
 
-#: app/livedatamanager.cpp:782
+#: app/livedatamanager.cpp:792
 #, kde-format
 msgid "Itinerary change"
 msgstr "行程預訂變更"
@@ -2609,7 +2609,7 @@ msgstr "月台："
 msgid "Occupancy:"
 msgstr ""
 
-#: app/MapStopoverInfoSheetDrawer.qml:86
+#: app/MapStopoverInfoSheetDrawer.qml:90
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "View Indoor Map"
@@ -4425,7 +4425,23 @@ msgstr "月台：%1"
 msgid "Coach: %1 Seat: %2"
 msgstr "車廂：%1 座位：%2"
 
-#: app/VehicleLayoutPage.qml:286
+#: app/VehicleLayoutPage.qml:233
+#, fuzzy, kde-format
+#| msgid "More information"
+msgid "Information"
+msgstr "更多資訊"
+
+#: app/VehicleLayoutPage.qml:250
+#, kde-format
+msgid "Occupancy"
+msgstr ""
+
+#: app/VehicleLayoutPage.qml:264
+#, kde-format
+msgid "Ammenities"
+msgstr ""
+
+#: app/VehicleLayoutPage.qml:315
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "沒有可用的交通工具佈局資訊。"
@@ -4936,12 +4952,6 @@ msgstr "%1%2 從 %3 到 %4 於 %5"
 #~ msgctxt "train coach feature"
 #~ msgid "Wheelchair accessible toilet"
 #~ msgstr "輪椅無障礙廁所"
-
-#, fuzzy
-#~| msgid "More information"
-#~ msgctxt "train coach feature"
-#~ msgid "Information point"
-#~ msgstr "更多資訊"
 
 #~ msgctxt "train coach feature"
 #~ msgid "Wi-Fi"

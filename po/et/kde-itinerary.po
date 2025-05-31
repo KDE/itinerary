@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-30 00:43+0000\n"
+"POT-Creation-Date: 2025-05-31 00:42+0000\n"
 "PO-Revision-Date: 2020-05-04 10:51+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -2410,13 +2410,13 @@ msgstr[1] "%1 ümberistumist"
 msgid "Click to extend"
 msgstr ""
 
-#: app/livedatamanager.cpp:776
+#: app/livedatamanager.cpp:786
 #, fuzzy, kde-format
 #| msgid "Following departure %1 from %2"
 msgid "Flight %1 to %2:"
 msgstr "Järgmine %1 väljumine kell %2"
 
-#: app/livedatamanager.cpp:782
+#: app/livedatamanager.cpp:792
 #, kde-format
 msgid "Itinerary change"
 msgstr "Itineraari muutus"
@@ -2778,7 +2778,7 @@ msgstr "Platvorm:"
 msgid "Occupancy:"
 msgstr ""
 
-#: app/MapStopoverInfoSheetDrawer.qml:86
+#: app/MapStopoverInfoSheetDrawer.qml:90
 #, kde-format
 msgid "Show indoor map"
 msgstr ""
@@ -4685,7 +4685,23 @@ msgstr "Platvorm: %1"
 msgid "Coach: %1 Seat: %2"
 msgstr "Vagun: %1 Koht: %2"
 
-#: app/VehicleLayoutPage.qml:286
+#: app/VehicleLayoutPage.qml:233
+#, fuzzy, kde-format
+#| msgid "More information"
+msgid "Information"
+msgstr "Rohkem teavet"
+
+#: app/VehicleLayoutPage.qml:250
+#, kde-format
+msgid "Occupancy"
+msgstr ""
+
+#: app/VehicleLayoutPage.qml:264
+#, kde-format
+msgid "Ammenities"
+msgstr ""
+
+#: app/VehicleLayoutPage.qml:315
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "Sõiduki struktuuriteavet ei ole saada."
@@ -5109,12 +5125,6 @@ msgstr "Asukohast %1 asukohta %2 (%3)"
 #~ msgctxt "train coach feature"
 #~ msgid "Bistro or restaurant"
 #~ msgstr "Restorani muutmine"
-
-#, fuzzy
-#~| msgid "More information"
-#~ msgctxt "train coach feature"
-#~ msgid "Information point"
-#~ msgstr "Rohkem teavet"
 
 #, fuzzy
 #~| msgid "Add Document"

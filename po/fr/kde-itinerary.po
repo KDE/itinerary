@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-30 00:43+0000\n"
-"PO-Revision-Date: 2025-05-20 09:40+0200\n"
+"POT-Creation-Date: 2025-05-31 00:42+0000\n"
+"PO-Revision-Date: 2025-05-29 08:56+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -2226,12 +2226,12 @@ msgstr[1] "%1 modifications"
 msgid "Click to extend"
 msgstr "Cliquer pour développer"
 
-#: app/livedatamanager.cpp:776
+#: app/livedatamanager.cpp:786
 #, kde-format
 msgid "Flight %1 to %2:"
 msgstr "Vol %1 vers %2 :"
 
-#: app/livedatamanager.cpp:782
+#: app/livedatamanager.cpp:792
 #, kde-format
 msgid "Itinerary change"
 msgstr "Changement d'itinéraire"
@@ -2576,7 +2576,7 @@ msgstr "Quai :"
 msgid "Occupancy:"
 msgstr "Capacité d'accueil :"
 
-#: app/MapStopoverInfoSheetDrawer.qml:86
+#: app/MapStopoverInfoSheetDrawer.qml:90
 #, kde-format
 msgid "Show indoor map"
 msgstr "Afficher la carte intérieure"
@@ -3767,11 +3767,10 @@ msgid "Car"
 msgstr "Voiture"
 
 #: app/StopoverFormDelegate.qml:93
-#, fuzzy, kde-format
-#| msgid "From: %1"
+#, kde-format
 msgctxt "departure stop"
 msgid "From %1"
-msgstr "De : %1"
+msgstr "De %1"
 
 #: app/TicketEditor.qml:18
 #, kde-format
@@ -4434,7 +4433,25 @@ msgstr "Quai : %1"
 msgid "Coach: %1 Seat: %2"
 msgstr "Voiture : %1 Siège : %2"
 
-#: app/VehicleLayoutPage.qml:286
+#: app/VehicleLayoutPage.qml:233
+#, fuzzy, kde-format
+#| msgctxt "train coach feature"
+#| msgid "Information point"
+msgid "Information"
+msgstr "Point d'informations"
+
+#: app/VehicleLayoutPage.qml:250
+#, fuzzy, kde-format
+#| msgid "Occupancy:"
+msgid "Occupancy"
+msgstr "Capacité d'accueil :"
+
+#: app/VehicleLayoutPage.qml:264
+#, kde-format
+msgid "Ammenities"
+msgstr ""
+
+#: app/VehicleLayoutPage.qml:315
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "Aucune information de disposition du véhicule disponible."
@@ -4947,10 +4964,6 @@ msgstr "%1 %2 à partir de %3 vers %4 sur %5"
 #~ msgctxt "train coach feature"
 #~ msgid "Wheelchair accessible toilet"
 #~ msgstr "Toilettes accessibles aux fauteuils roulants"
-
-#~ msgctxt "train coach feature"
-#~ msgid "Information point"
-#~ msgstr "Point d'informations"
 
 #~ msgctxt "train coach feature"
 #~ msgid "Wi-Fi"

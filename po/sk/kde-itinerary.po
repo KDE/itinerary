@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-30 00:43+0000\n"
+"POT-Creation-Date: 2025-05-31 00:42+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -2383,13 +2383,13 @@ msgstr[2] "Zmeny"
 msgid "Click to extend"
 msgstr ""
 
-#: app/livedatamanager.cpp:776
+#: app/livedatamanager.cpp:786
 #, fuzzy, kde-format
 #| msgid "Flight %1 from %2 to %3"
 msgid "Flight %1 to %2:"
 msgstr "Let %1 z %2 do %3"
 
-#: app/livedatamanager.cpp:782
+#: app/livedatamanager.cpp:792
 #, kde-format
 msgid "Itinerary change"
 msgstr ""
@@ -2743,7 +2743,7 @@ msgstr "Platforma:"
 msgid "Occupancy:"
 msgstr ""
 
-#: app/MapStopoverInfoSheetDrawer.qml:86
+#: app/MapStopoverInfoSheetDrawer.qml:90
 #, fuzzy, kde-format
 msgid "Show indoor map"
 msgstr "Zobraziť názvy"
@@ -4628,7 +4628,23 @@ msgstr "Nástupište: %1"
 msgid "Coach: %1 Seat: %2"
 msgstr ""
 
-#: app/VehicleLayoutPage.qml:286
+#: app/VehicleLayoutPage.qml:233
+#, fuzzy, kde-format
+#| msgid "More information"
+msgid "Information"
+msgstr "Viac informácií"
+
+#: app/VehicleLayoutPage.qml:250
+#, kde-format
+msgid "Occupancy"
+msgstr ""
+
+#: app/VehicleLayoutPage.qml:264
+#, kde-format
+msgid "Ammenities"
+msgstr ""
+
+#: app/VehicleLayoutPage.qml:315
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr ""
@@ -4992,12 +5008,6 @@ msgstr "Autobus %1 z %2 do %3"
 #~ msgctxt "train coach feature"
 #~ msgid "Bistro or restaurant"
 #~ msgstr "Rezervácia reštaurácie: %1"
-
-#, fuzzy
-#~| msgid "More information"
-#~ msgctxt "train coach feature"
-#~ msgid "Information point"
-#~ msgstr "Viac informácií"
 
 #, fuzzy
 #~| msgid "Add Document"

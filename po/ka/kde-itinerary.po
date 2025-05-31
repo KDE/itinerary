@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-30 00:43+0000\n"
+"POT-Creation-Date: 2025-05-31 00:42+0000\n"
 "PO-Revision-Date: 2025-05-28 04:16+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -2208,12 +2208,12 @@ msgstr[1] "%1 ცვლილება"
 msgid "Click to extend"
 msgstr "გასაფართოებლად დააწკაპუნეთ"
 
-#: app/livedatamanager.cpp:776
+#: app/livedatamanager.cpp:786
 #, kde-format
 msgid "Flight %1 to %2:"
 msgstr "ფრენა %1-დან %2-მდე:"
 
-#: app/livedatamanager.cpp:782
+#: app/livedatamanager.cpp:792
 #, kde-format
 msgid "Itinerary change"
 msgstr "მარშრუტის ცვლილება"
@@ -2557,7 +2557,7 @@ msgstr "პლატფორმა:"
 msgid "Occupancy:"
 msgstr "დაკავებულობა:"
 
-#: app/MapStopoverInfoSheetDrawer.qml:86
+#: app/MapStopoverInfoSheetDrawer.qml:90
 #, kde-format
 msgid "Show indoor map"
 msgstr "შიდა რუკის ჩვენება"
@@ -4370,7 +4370,25 @@ msgstr "პლატფორმა: %1"
 msgid "Coach: %1 Seat: %2"
 msgstr "გამძღოლი: %1 სავარძელი: %2"
 
-#: app/VehicleLayoutPage.qml:286
+#: app/VehicleLayoutPage.qml:233
+#, fuzzy, kde-format
+#| msgctxt "train coach feature"
+#| msgid "Information point"
+msgid "Information"
+msgstr "ინფორმაციის წერტილი"
+
+#: app/VehicleLayoutPage.qml:250
+#, fuzzy, kde-format
+#| msgid "Occupancy:"
+msgid "Occupancy"
+msgstr "დაკავებულობა:"
+
+#: app/VehicleLayoutPage.qml:264
+#, kde-format
+msgid "Ammenities"
+msgstr ""
+
+#: app/VehicleLayoutPage.qml:315
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "მანქანის განლაგების ინფორმაცია ხელმიუწვდომელია."
@@ -4870,10 +4888,6 @@ msgstr "%1%2 -ი %3-დან %4-მდე %5-ზე"
 #~ msgctxt "train coach feature"
 #~ msgid "Wheelchair accessible toilet"
 #~ msgstr "გორგოლაჭებიანი სავარძლით წვდომადი ტუალეტი"
-
-#~ msgctxt "train coach feature"
-#~ msgid "Information point"
-#~ msgstr "ინფორმაციის წერტილი"
 
 #~ msgctxt "train coach feature"
 #~ msgid "Wi-Fi"
