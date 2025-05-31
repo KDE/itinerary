@@ -67,7 +67,7 @@ SheetDrawer {
         }
 
         Kirigami.Heading {
-            text: "Operator"
+            text: i18nc("operator/provider of a rail/bus service", "Operator")
             level: 4
             Layout.leftMargin: Kirigami.Units.largeSpacing
             visible: root.stopover.route.line.operatorName !== ""
