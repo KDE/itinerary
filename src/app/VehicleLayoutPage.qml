@@ -261,7 +261,7 @@ Kirigami.ScrollablePage {
                 }
             }
             Kirigami.Heading {
-                text: i18n("Ammenities")
+                text: i18n("Amenities")
                 level: 4
                 Layout.leftMargin: Kirigami.Units.largeSpacing
                 visible: root.stopover.vehicleLayout.combinedFeatures.length > 0
