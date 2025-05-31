@@ -71,7 +71,20 @@ Kirigami.ScrollablePage {
                     Layout.fillWidth: true
                     elide: Qt.ElideRight
                 }
-                QQC2.Label {Articles de cortesia
+                QQC2.Label {
+                    id: subtitle
+                    Layout.fillWidth: true
+                    text: {
+                        const s = coachDrawer.coach.typeName;
+                        return s !== "" ? s : coachDrawer.coach.classesName;
+                    }
+                    visible: subtitle.text !== ""
+                }
+            }
+        }
+
+        contentItem: Component {
+            ColumnLayout {
                 Repeater {
                     model: coachDrawer.coach.sectionFeatures
                     delegate: KPublicTransport.FeatureDelegate {
@@ -248,7 +261,7 @@ Kirigami.ScrollablePage {
                 }
             }
             Kirigami.Heading {
-                text: i18n("Amenities")
+                text: i18n("Ammenities")
                 level: 4
                 Layout.leftMargin: Kirigami.Units.largeSpacing
                 visible: root.stopover.vehicleLayout.combinedFeatures.length > 0
