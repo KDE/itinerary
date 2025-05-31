@@ -96,27 +96,8 @@ Kirigami.ScrollablePage {
         request: stopoverRequest();
     }
 
-    SheetDrawer {
+    StopoverInformationSheet {
         id: detailsSheet
-        property KPublicTransport.stopover departure
-        contentItem: ColumnLayout {
-            Repeater {
-                model: detailsSheet.departure.features
-                delegate: KPublicTransport.FeatureDelegate {
-                    Layout.leftMargin: Kirigami.Units.largeSpacing
-                    required property KPublicTransport.feature modelData
-                    feature: modelData
-                }
-            }
-            QQC2.Label {
-                Layout.fillWidth: true
-                text: detailsSheet.departure.notes.join("<br/>")
-                textFormat: Text.RichText
-                wrapMode: Text.Wrap
-                onLinkActivated: (link) => { Qt.openUrlExternally(link); }
-                padding: Kirigami.Units.largeSpacing * 2
-            }
-        }
     }
 
     ListView {
@@ -141,9 +122,9 @@ Kirigami.ScrollablePage {
             StopoverFormDelegate {
                 stopover: delegateRoot.stopover
                 onClicked: {
-                    if (stopover.features.length === 0)
+                    if (stopover.vehicleLayout.combinedFeatures.length === 0 && stopover.notes.length === 0 && stopover.aggregatedOccupancy.length === 0 && stopover.route.line.operatorName === "")
                         return;
-                    detailsSheet.departure = stopover;
+                    detailsSheet.stopover = stopover;
                     detailsSheet.open();
                 }
             }
