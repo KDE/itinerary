@@ -25,7 +25,7 @@ FormCard.AbstractFormDelegate {
         id: topLayout
         rowSpacing: Kirigami.Units.largeSpacing * 2
         columnSpacing: rowSpacing
-        rows: 2
+        rows: 3
         columns: 2
 
         ColumnLayout {
@@ -116,17 +116,31 @@ FormCard.AbstractFormDelegate {
         }
 
         QQC2.Label {
+            id: notesLabel
             Layout.fillWidth: true
             Layout.row: 1
             Layout.column: 0
             Layout.columnSpan: 2
+            Layout.maximumHeight: Kirigami.Units.gridUnit * maximumLineCount
 
             text: delegateRoot.stopover.notes.join("<br/>")
             textFormat: Text.RichText
             wrapMode: Text.Wrap
+            elide: Text.ElideRight
+            maximumLineCount: 3
+            clip: true
             visible: delegateRoot.stopover.notes.length > 0
             font.italic: true
             onLinkActivated: (link) => { Qt.openUrlExternally(link); }
+        }
+        Kirigami.LinkButton {
+            Layout.row: 2
+            Layout.column: 0
+            Layout.columnSpan: 2
+
+            text: i18nc("@action:button", "Show More…")
+            visible: notesLabel.implicitHeight > notesLabel.height
+            onClicked: delegateRoot.clicked()
         }
     }
 }
