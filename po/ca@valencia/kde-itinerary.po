@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-31 00:42+0000\n"
+"POT-Creation-Date: 2025-06-01 00:43+0000\n"
 "PO-Revision-Date: 2025-05-28 11:27+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -769,20 +769,20 @@ msgstr "Lloc web"
 msgid "Departures"
 msgstr "Eixides"
 
-#: app/DepartureQueryPage.qml:132
+#: app/DepartureQueryPage.qml:113
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "Carrega les eixides anteriors"
 
-#: app/DepartureQueryPage.qml:156 app/JourneyQueryPage.qml:125
+#: app/DepartureQueryPage.qml:137 app/JourneyQueryPage.qml:125
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "Carrega les connexions posteriors"
 
-#: app/DepartureQueryPage.qml:165 app/JourneyQueryPage.qml:132
+#: app/DepartureQueryPage.qml:146 app/JourneyQueryPage.qml:132
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
@@ -3748,6 +3748,29 @@ msgctxt "departure stop"
 msgid "From %1"
 msgstr "Des de %1"
 
+#: app/StopoverInformationSheet.qml:22
+#, fuzzy, kde-format
+#| msgid "More information"
+msgid "Information"
+msgstr "Més informació"
+
+#: app/StopoverInformationSheet.qml:40
+#, fuzzy, kde-format
+#| msgid "Occupancy:"
+msgid "Occupancy"
+msgstr "Ocupació:"
+
+#: app/StopoverInformationSheet.qml:55
+#, kde-format
+msgid "Amenities"
+msgstr ""
+
+#: app/StopoverInformationSheet.qml:70
+#, kde-format
+msgctxt "operator/provider of a rail/bus service"
+msgid "Operator"
+msgstr ""
+
 #: app/TicketEditor.qml:18
 #, kde-format
 msgid "Edit Ticket"
@@ -4404,24 +4427,7 @@ msgstr "Andana: %1"
 msgid "Coach: %1 Seat: %2"
 msgstr "Vagó: %1 Seient: %2"
 
-#: app/VehicleLayoutPage.qml:233
-#, fuzzy, kde-format
-#| msgid "More information"
-msgid "Information"
-msgstr "Més informació"
-
-#: app/VehicleLayoutPage.qml:250
-#, fuzzy, kde-format
-#| msgid "Occupancy:"
-msgid "Occupancy"
-msgstr "Ocupació:"
-
-#: app/VehicleLayoutPage.qml:264
-#, kde-format
-msgid "Ammenities"
-msgstr ""
-
-#: app/VehicleLayoutPage.qml:315
+#: app/VehicleLayoutPage.qml:268
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "No hi ha informació disponible de la disposició del vehicle."

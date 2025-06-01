@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-31 00:42+0000\n"
-"PO-Revision-Date: 2025-05-28 04:16+0200\n"
+"POT-Creation-Date: 2025-06-01 00:43+0000\n"
+"PO-Revision-Date: 2025-05-31 03:32+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -766,20 +766,20 @@ msgstr "ვებსაიტი"
 msgid "Departures"
 msgstr "გასვლები"
 
-#: app/DepartureQueryPage.qml:132
+#: app/DepartureQueryPage.qml:113
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "ნაადრევი გასვლების ჩატვირთვა"
 
-#: app/DepartureQueryPage.qml:156 app/JourneyQueryPage.qml:125
+#: app/DepartureQueryPage.qml:137 app/JourneyQueryPage.qml:125
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "შემდეგი გზების ჩატვირთვა"
 
-#: app/DepartureQueryPage.qml:165 app/JourneyQueryPage.qml:132
+#: app/DepartureQueryPage.qml:146 app/JourneyQueryPage.qml:132
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
@@ -3714,6 +3714,29 @@ msgctxt "departure stop"
 msgid "From %1"
 msgstr "%1-დან"
 
+#: app/StopoverInformationSheet.qml:22
+#, kde-format
+msgid "Information"
+msgstr "ინფორმაცია"
+
+#: app/StopoverInformationSheet.qml:40
+#, kde-format
+msgid "Occupancy"
+msgstr "დაკავებულობა"
+
+#: app/StopoverInformationSheet.qml:55
+#, fuzzy, kde-format
+#| msgid "Ammenities"
+msgid "Amenities"
+msgstr "კეთილმოწყობები"
+
+#: app/StopoverInformationSheet.qml:70
+#, fuzzy, kde-format
+#| msgid "Elevator"
+msgctxt "operator/provider of a rail/bus service"
+msgid "Operator"
+msgstr "ლიფტი"
+
 #: app/TicketEditor.qml:18
 #, kde-format
 msgid "Edit Ticket"
@@ -4370,25 +4393,7 @@ msgstr "პლატფორმა: %1"
 msgid "Coach: %1 Seat: %2"
 msgstr "გამძღოლი: %1 სავარძელი: %2"
 
-#: app/VehicleLayoutPage.qml:233
-#, fuzzy, kde-format
-#| msgctxt "train coach feature"
-#| msgid "Information point"
-msgid "Information"
-msgstr "ინფორმაციის წერტილი"
-
-#: app/VehicleLayoutPage.qml:250
-#, fuzzy, kde-format
-#| msgid "Occupancy:"
-msgid "Occupancy"
-msgstr "დაკავებულობა:"
-
-#: app/VehicleLayoutPage.qml:264
-#, kde-format
-msgid "Ammenities"
-msgstr ""
-
-#: app/VehicleLayoutPage.qml:315
+#: app/VehicleLayoutPage.qml:268
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "მანქანის განლაგების ინფორმაცია ხელმიუწვდომელია."
@@ -5089,9 +5094,6 @@ msgstr "%1%2 -ი %3-დან %4-მდე %5-ზე"
 #~ msgctxt "name of a frequent flyer program"
 #~ msgid "Program:"
 #~ msgstr "პროგრამა:"
-
-#~ msgid "Elevator"
-#~ msgstr "ლიფტი"
 
 #~ msgctxt "@action"
 #~ msgid "Hide Names"

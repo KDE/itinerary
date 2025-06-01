@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-31 00:42+0000\n"
+"POT-Creation-Date: 2025-06-01 00:43+0000\n"
 "PO-Revision-Date: 2019-01-23 21:00-0800\n"
 "Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -754,20 +754,20 @@ msgstr ""
 msgid "Departures"
 msgstr ""
 
-#: app/DepartureQueryPage.qml:132
+#: app/DepartureQueryPage.qml:113
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr ""
 
-#: app/DepartureQueryPage.qml:156 app/JourneyQueryPage.qml:125
+#: app/DepartureQueryPage.qml:137 app/JourneyQueryPage.qml:125
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr ""
 
-#: app/DepartureQueryPage.qml:165 app/JourneyQueryPage.qml:132
+#: app/DepartureQueryPage.qml:146 app/JourneyQueryPage.qml:132
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
@@ -3654,6 +3654,27 @@ msgctxt "departure stop"
 msgid "From %1"
 msgstr ""
 
+#: app/StopoverInformationSheet.qml:22
+#, kde-format
+msgid "Information"
+msgstr ""
+
+#: app/StopoverInformationSheet.qml:40
+#, kde-format
+msgid "Occupancy"
+msgstr ""
+
+#: app/StopoverInformationSheet.qml:55
+#, kde-format
+msgid "Amenities"
+msgstr ""
+
+#: app/StopoverInformationSheet.qml:70
+#, kde-format
+msgctxt "operator/provider of a rail/bus service"
+msgid "Operator"
+msgstr ""
+
 #: app/TicketEditor.qml:18
 #, kde-format
 msgid "Edit Ticket"
@@ -4308,22 +4329,7 @@ msgstr ""
 msgid "Coach: %1 Seat: %2"
 msgstr ""
 
-#: app/VehicleLayoutPage.qml:233
-#, kde-format
-msgid "Information"
-msgstr ""
-
-#: app/VehicleLayoutPage.qml:250
-#, kde-format
-msgid "Occupancy"
-msgstr ""
-
-#: app/VehicleLayoutPage.qml:264
-#, kde-format
-msgid "Ammenities"
-msgstr ""
-
-#: app/VehicleLayoutPage.qml:315
+#: app/VehicleLayoutPage.qml:268
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr ""

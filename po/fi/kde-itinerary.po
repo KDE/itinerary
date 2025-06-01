@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-31 00:42+0000\n"
+"POT-Creation-Date: 2025-06-01 00:43+0000\n"
 "PO-Revision-Date: 2025-05-28 16:44+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -766,20 +766,20 @@ msgstr "Verkkosivusto"
 msgid "Departures"
 msgstr "Lähdöt"
 
-#: app/DepartureQueryPage.qml:132
+#: app/DepartureQueryPage.qml:113
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "Lataa aiemmat lähdöt"
 
-#: app/DepartureQueryPage.qml:156 app/JourneyQueryPage.qml:125
+#: app/DepartureQueryPage.qml:137 app/JourneyQueryPage.qml:125
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "Lataa myöhemmät yhteydet"
 
-#: app/DepartureQueryPage.qml:165 app/JourneyQueryPage.qml:132
+#: app/DepartureQueryPage.qml:146 app/JourneyQueryPage.qml:132
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
@@ -3725,6 +3725,30 @@ msgctxt "departure stop"
 msgid "From %1"
 msgstr "Mistä: %1"
 
+#: app/StopoverInformationSheet.qml:22
+#, fuzzy, kde-format
+#| msgid "More information"
+msgid "Information"
+msgstr "Lisätietoa"
+
+#: app/StopoverInformationSheet.qml:40
+#, fuzzy, kde-format
+#| msgid "Occupancy:"
+msgid "Occupancy"
+msgstr "Käyttöaste:"
+
+#: app/StopoverInformationSheet.qml:55
+#, kde-format
+msgid "Amenities"
+msgstr ""
+
+#: app/StopoverInformationSheet.qml:70
+#, fuzzy, kde-format
+#| msgid "Elevator"
+msgctxt "operator/provider of a rail/bus service"
+msgid "Operator"
+msgstr "Hissi"
+
 #: app/TicketEditor.qml:18
 #, kde-format
 msgid "Edit Ticket"
@@ -4381,24 +4405,7 @@ msgstr "Laituri: %1"
 msgid "Coach: %1 Seat: %2"
 msgstr "Vaunu %1, paikka %2"
 
-#: app/VehicleLayoutPage.qml:233
-#, fuzzy, kde-format
-#| msgid "More information"
-msgid "Information"
-msgstr "Lisätietoa"
-
-#: app/VehicleLayoutPage.qml:250
-#, fuzzy, kde-format
-#| msgid "Occupancy:"
-msgid "Occupancy"
-msgstr "Käyttöaste:"
-
-#: app/VehicleLayoutPage.qml:264
-#, kde-format
-msgid "Ammenities"
-msgstr ""
-
-#: app/VehicleLayoutPage.qml:315
+#: app/VehicleLayoutPage.qml:268
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "Kulkuvälineen paikkatietoa ei ole saatavilla."
@@ -5059,9 +5066,6 @@ msgstr "%1%2 portilta %3 portille %4 %5"
 #~ msgctxt "name of a frequent flyer program"
 #~ msgid "Program:"
 #~ msgstr "Ohjelma:"
-
-#~ msgid "Elevator"
-#~ msgstr "Hissi"
 
 #~ msgctxt "@action"
 #~ msgid "Hide Names"

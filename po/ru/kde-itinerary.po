@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-31 00:42+0000\n"
+"POT-Creation-Date: 2025-06-01 00:43+0000\n"
 "PO-Revision-Date: 2025-04-01 10:26+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -783,20 +783,20 @@ msgstr "Сайт"
 msgid "Departures"
 msgstr "Отправления"
 
-#: app/DepartureQueryPage.qml:132
+#: app/DepartureQueryPage.qml:113
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "Загрузить более ранние отправления"
 
-#: app/DepartureQueryPage.qml:156 app/JourneyQueryPage.qml:125
+#: app/DepartureQueryPage.qml:137 app/JourneyQueryPage.qml:125
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "Загрузить более поздние маршруты"
 
-#: app/DepartureQueryPage.qml:165 app/JourneyQueryPage.qml:132
+#: app/DepartureQueryPage.qml:146 app/JourneyQueryPage.qml:132
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
@@ -3763,6 +3763,29 @@ msgctxt "departure stop"
 msgid "From %1"
 msgstr "Из: %1"
 
+#: app/StopoverInformationSheet.qml:22
+#, fuzzy, kde-format
+msgid "Information"
+msgstr "Дополнительная информация"
+
+#: app/StopoverInformationSheet.qml:40
+#, fuzzy, kde-format
+#| msgid "Occupancy:"
+msgid "Occupancy"
+msgstr "Занятость:"
+
+#: app/StopoverInformationSheet.qml:55
+#, kde-format
+msgid "Amenities"
+msgstr ""
+
+#: app/StopoverInformationSheet.qml:70
+#, fuzzy, kde-format
+#| msgid "Elevator"
+msgctxt "operator/provider of a rail/bus service"
+msgid "Operator"
+msgstr "Лифт"
+
 #: app/TicketEditor.qml:18
 #, kde-format
 msgid "Edit Ticket"
@@ -4427,23 +4450,7 @@ msgstr "Платформа: %1"
 msgid "Coach: %1 Seat: %2"
 msgstr "Вагон: %1 Место: %2"
 
-#: app/VehicleLayoutPage.qml:233
-#, fuzzy, kde-format
-msgid "Information"
-msgstr "Дополнительная информация"
-
-#: app/VehicleLayoutPage.qml:250
-#, fuzzy, kde-format
-#| msgid "Occupancy:"
-msgid "Occupancy"
-msgstr "Занятость:"
-
-#: app/VehicleLayoutPage.qml:264
-#, kde-format
-msgid "Ammenities"
-msgstr ""
-
-#: app/VehicleLayoutPage.qml:315
+#: app/VehicleLayoutPage.qml:268
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "Сведения о схеме транспортного средства недоступны."
@@ -5092,9 +5099,6 @@ msgstr "%1%2 из %3 в %4 %5"
 #~ msgctxt "name of a frequent flyer program"
 #~ msgid "Program:"
 #~ msgstr "Программа:"
-
-#~ msgid "Elevator"
-#~ msgstr "Лифт"
 
 #~ msgctxt "@action"
 #~ msgid "Hide Names"

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-31 00:42+0000\n"
-"PO-Revision-Date: 2025-05-28 07:14+0200\n"
+"POT-Creation-Date: 2025-06-01 00:43+0000\n"
+"PO-Revision-Date: 2025-05-31 21:56+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -775,20 +775,20 @@ msgstr "Spletišče"
 msgid "Departures"
 msgstr "Odhodi"
 
-#: app/DepartureQueryPage.qml:132
+#: app/DepartureQueryPage.qml:113
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "Naloži zgodnejše odhode"
 
-#: app/DepartureQueryPage.qml:156 app/JourneyQueryPage.qml:125
+#: app/DepartureQueryPage.qml:137 app/JourneyQueryPage.qml:125
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "Naloži kasnejše povezave"
 
-#: app/DepartureQueryPage.qml:165 app/JourneyQueryPage.qml:132
+#: app/DepartureQueryPage.qml:146 app/JourneyQueryPage.qml:132
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
@@ -3737,6 +3737,29 @@ msgctxt "departure stop"
 msgid "From %1"
 msgstr "Od %1"
 
+#: app/StopoverInformationSheet.qml:22
+#, kde-format
+msgid "Information"
+msgstr "Informacije"
+
+#: app/StopoverInformationSheet.qml:40
+#, kde-format
+msgid "Occupancy"
+msgstr "Zasedenost"
+
+#: app/StopoverInformationSheet.qml:55
+#, fuzzy, kde-format
+#| msgid "Ammenities"
+msgid "Amenities"
+msgstr "Ugodnosti"
+
+#: app/StopoverInformationSheet.qml:70
+#, fuzzy, kde-format
+#| msgid "Elevator"
+msgctxt "operator/provider of a rail/bus service"
+msgid "Operator"
+msgstr "Dvigalo"
+
 #: app/TicketEditor.qml:18
 #, kde-format
 msgid "Edit Ticket"
@@ -4397,25 +4420,7 @@ msgstr "Peron: %1"
 msgid "Coach: %1 Seat: %2"
 msgstr "Vagon: %1 Sedež: %2"
 
-#: app/VehicleLayoutPage.qml:233
-#, fuzzy, kde-format
-#| msgctxt "train coach feature"
-#| msgid "Information point"
-msgid "Information"
-msgstr "Informacijska točka"
-
-#: app/VehicleLayoutPage.qml:250
-#, fuzzy, kde-format
-#| msgid "Occupancy:"
-msgid "Occupancy"
-msgstr "Zasedenost:"
-
-#: app/VehicleLayoutPage.qml:264
-#, kde-format
-msgid "Ammenities"
-msgstr ""
-
-#: app/VehicleLayoutPage.qml:315
+#: app/VehicleLayoutPage.qml:268
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "Podatki o postavitvi vlaka niso na voljo."
@@ -5121,9 +5126,6 @@ msgstr "%1%2 od %3 do %4 na %5"
 #~ msgctxt "name of a frequent flyer program"
 #~ msgid "Program:"
 #~ msgstr "Program:"
-
-#~ msgid "Elevator"
-#~ msgstr "Dvigalo"
 
 #~ msgctxt "@action"
 #~ msgid "Hide Names"

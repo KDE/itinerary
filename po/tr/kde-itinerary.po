@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-31 00:42+0000\n"
-"PO-Revision-Date: 2025-05-28 13:27+0300\n"
+"POT-Creation-Date: 2025-06-01 00:43+0000\n"
+"PO-Revision-Date: 2025-05-31 20:26+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -769,20 +769,20 @@ msgstr "Web Sayfası"
 msgid "Departures"
 msgstr "Kalkışlar"
 
-#: app/DepartureQueryPage.qml:132
+#: app/DepartureQueryPage.qml:113
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "Erken kalkışları yükle"
 
-#: app/DepartureQueryPage.qml:156 app/JourneyQueryPage.qml:125
+#: app/DepartureQueryPage.qml:137 app/JourneyQueryPage.qml:125
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "Sonraki bağlantıları yükle"
 
-#: app/DepartureQueryPage.qml:165 app/JourneyQueryPage.qml:132
+#: app/DepartureQueryPage.qml:146 app/JourneyQueryPage.qml:132
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
@@ -3725,6 +3725,28 @@ msgctxt "departure stop"
 msgid "From %1"
 msgstr "Nereden: %1"
 
+#: app/StopoverInformationSheet.qml:22
+#, kde-format
+msgid "Information"
+msgstr "Bilgi"
+
+#: app/StopoverInformationSheet.qml:40
+#, kde-format
+msgid "Occupancy"
+msgstr "Doluluk"
+
+#: app/StopoverInformationSheet.qml:55
+#, fuzzy, kde-format
+#| msgid "Ammenities"
+msgid "Amenities"
+msgstr "Hizmetler"
+
+#: app/StopoverInformationSheet.qml:70
+#, kde-format
+msgctxt "operator/provider of a rail/bus service"
+msgid "Operator"
+msgstr ""
+
 #: app/TicketEditor.qml:18
 #, kde-format
 msgid "Edit Ticket"
@@ -4381,24 +4403,7 @@ msgstr "Peron: %1"
 msgid "Coach: %1 Seat: %2"
 msgstr "Otobüs: %1 Koltuk: %2"
 
-#: app/VehicleLayoutPage.qml:233
-#, fuzzy, kde-format
-#| msgid "More information"
-msgid "Information"
-msgstr "Daha fazla bilgi"
-
-#: app/VehicleLayoutPage.qml:250
-#, fuzzy, kde-format
-#| msgid "Occupancy:"
-msgid "Occupancy"
-msgstr "Doluluk:"
-
-#: app/VehicleLayoutPage.qml:264
-#, kde-format
-msgid "Ammenities"
-msgstr ""
-
-#: app/VehicleLayoutPage.qml:315
+#: app/VehicleLayoutPage.qml:268
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "Araç yerleşim bilgisi yok."

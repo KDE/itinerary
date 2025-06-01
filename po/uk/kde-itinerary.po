@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-31 00:42+0000\n"
-"PO-Revision-Date: 2025-05-28 08:42+0300\n"
+"POT-Creation-Date: 2025-06-01 00:43+0000\n"
+"PO-Revision-Date: 2025-05-31 07:34+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -779,20 +779,20 @@ msgstr "Сайт"
 msgid "Departures"
 msgstr "Відправлення"
 
-#: app/DepartureQueryPage.qml:132
+#: app/DepartureQueryPage.qml:113
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "Завантажити раніші відправлення"
 
-#: app/DepartureQueryPage.qml:156 app/JourneyQueryPage.qml:125
+#: app/DepartureQueryPage.qml:137 app/JourneyQueryPage.qml:125
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "Завантажити пізніші з'єднання"
 
-#: app/DepartureQueryPage.qml:165 app/JourneyQueryPage.qml:132
+#: app/DepartureQueryPage.qml:146 app/JourneyQueryPage.qml:132
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
@@ -3752,6 +3752,29 @@ msgctxt "departure stop"
 msgid "From %1"
 msgstr "З %1"
 
+#: app/StopoverInformationSheet.qml:22
+#, kde-format
+msgid "Information"
+msgstr "Відомості"
+
+#: app/StopoverInformationSheet.qml:40
+#, kde-format
+msgid "Occupancy"
+msgstr "Заповненість"
+
+#: app/StopoverInformationSheet.qml:55
+#, fuzzy, kde-format
+#| msgid "Ammenities"
+msgid "Amenities"
+msgstr "Зручності"
+
+#: app/StopoverInformationSheet.qml:70
+#, fuzzy, kde-format
+#| msgid "Elevator"
+msgctxt "operator/provider of a rail/bus service"
+msgid "Operator"
+msgstr "Ліфт"
+
 #: app/TicketEditor.qml:18
 #, kde-format
 msgid "Edit Ticket"
@@ -4412,25 +4435,7 @@ msgstr "Платформа: %1"
 msgid "Coach: %1 Seat: %2"
 msgstr "Вагон: %1 Місце: %2"
 
-#: app/VehicleLayoutPage.qml:233
-#, fuzzy, kde-format
-#| msgctxt "train coach feature"
-#| msgid "Information point"
-msgid "Information"
-msgstr "Інформаційний вузол"
-
-#: app/VehicleLayoutPage.qml:250
-#, fuzzy, kde-format
-#| msgid "Occupancy:"
-msgid "Occupancy"
-msgstr "Заповненість:"
-
-#: app/VehicleLayoutPage.qml:264
-#, kde-format
-msgid "Ammenities"
-msgstr ""
-
-#: app/VehicleLayoutPage.qml:315
+#: app/VehicleLayoutPage.qml:268
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "Немає доступної інформації щодо компонування засобу пересування."
@@ -5138,9 +5143,6 @@ msgstr "%1%2 з %3 до %4 %5"
 #~ msgctxt "name of a frequent flyer program"
 #~ msgid "Program:"
 #~ msgstr "Програма:"
-
-#~ msgid "Elevator"
-#~ msgstr "Ліфт"
 
 #~ msgctxt "@action"
 #~ msgid "Hide Names"

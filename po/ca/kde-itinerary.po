@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-31 00:42+0000\n"
-"PO-Revision-Date: 2025-05-28 11:27+0200\n"
+"POT-Creation-Date: 2025-06-01 00:43+0000\n"
+"PO-Revision-Date: 2025-05-31 18:46+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.04.1\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -769,20 +769,20 @@ msgstr "Lloc web"
 msgid "Departures"
 msgstr "Sortides"
 
-#: app/DepartureQueryPage.qml:132
+#: app/DepartureQueryPage.qml:113
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "Carrega les sortides anteriors"
 
-#: app/DepartureQueryPage.qml:156 app/JourneyQueryPage.qml:125
+#: app/DepartureQueryPage.qml:137 app/JourneyQueryPage.qml:125
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "Carrega les connexions posteriors"
 
-#: app/DepartureQueryPage.qml:165 app/JourneyQueryPage.qml:132
+#: app/DepartureQueryPage.qml:146 app/JourneyQueryPage.qml:132
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
@@ -3747,6 +3747,28 @@ msgctxt "departure stop"
 msgid "From %1"
 msgstr "Des de %1"
 
+#: app/StopoverInformationSheet.qml:22
+#, kde-format
+msgid "Information"
+msgstr "Informació"
+
+#: app/StopoverInformationSheet.qml:40
+#, kde-format
+msgid "Occupancy"
+msgstr "Ocupació"
+
+#: app/StopoverInformationSheet.qml:55
+#, fuzzy, kde-format
+#| msgid "Ammenities"
+msgid "Amenities"
+msgstr "Serveis"
+
+#: app/StopoverInformationSheet.qml:70
+#, kde-format
+msgctxt "operator/provider of a rail/bus service"
+msgid "Operator"
+msgstr ""
+
 #: app/TicketEditor.qml:18
 #, kde-format
 msgid "Edit Ticket"
@@ -4403,24 +4425,7 @@ msgstr "Andana: %1"
 msgid "Coach: %1 Seat: %2"
 msgstr "Vagó: %1 Seient: %2"
 
-#: app/VehicleLayoutPage.qml:233
-#, fuzzy, kde-format
-#| msgid "More information"
-msgid "Information"
-msgstr "Més informació"
-
-#: app/VehicleLayoutPage.qml:250
-#, fuzzy, kde-format
-#| msgid "Occupancy:"
-msgid "Occupancy"
-msgstr "Ocupació:"
-
-#: app/VehicleLayoutPage.qml:264
-#, kde-format
-msgid "Ammenities"
-msgstr ""
-
-#: app/VehicleLayoutPage.qml:315
+#: app/VehicleLayoutPage.qml:268
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "No hi ha informació disponible de la disposició del vehicle."
@@ -4531,53 +4536,3 @@ msgstr "Ha finalitzat la sessió"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 des de %3 a %4 el %5"
-
-#~ msgctxt "a train/bus journey canceled by its operator"
-#~ msgid "Canceled"
-#~ msgstr "Cancel·lat"
-
-#~ msgctxt "destination"
-#~ msgid "To:"
-#~ msgstr "A:"
-
-#~ msgid "Availability unknown"
-#~ msgstr "Disponibilitat desconeguda"
-
-#~ msgid "Not available"
-#~ msgstr "No disponible"
-
-#~ msgid "Currently not available"
-#~ msgstr "Actualment no és disponible"
-
-#~ msgid "One space"
-#~ msgid_plural "%1 spaces"
-#~ msgstr[0] "Un espai"
-#~ msgstr[1] "%1 espais"
-
-#~ msgid "First class"
-#~ msgstr "Primera classe"
-
-#~ msgid "Second class"
-#~ msgstr "Segona classe"
-
-#~ msgid "First/second class"
-#~ msgstr "Primera/segona classe"
-
-#~ msgid "Unknown class"
-#~ msgstr "Classe desconeguda"
-
-#~ msgctxt "train coach type"
-#~ msgid "Sleeping car"
-#~ msgstr "Vagó llit"
-
-#~ msgctxt "train coach type"
-#~ msgid "Couchette car"
-#~ msgstr "Vagó de lliteres"
-
-#~ msgctxt "train coach type"
-#~ msgid "Restaurant car"
-#~ msgstr "Vagó restaurant"
-
-#~ msgctxt "train coach type"
-#~ msgid "Car transport car"
-#~ msgstr "Vagó de transport de cotxes"
