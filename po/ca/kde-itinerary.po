@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-01 00:43+0000\n"
-"PO-Revision-Date: 2025-05-31 18:46+0200\n"
+"POT-Creation-Date: 2025-06-02 00:42+0000\n"
+"PO-Revision-Date: 2025-06-01 12:08+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -2148,7 +2148,7 @@ msgid "Platform %1"
 msgstr "Andana %1"
 
 #: app/JourneySectionDelegate.qml:255 app/JourneySectionPage.qml:136
-#: app/VehicleLayoutPage.qml:214
+#: app/StopoverFormDelegate.qml:141 app/VehicleLayoutPage.qml:214
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
@@ -3747,27 +3747,26 @@ msgctxt "departure stop"
 msgid "From %1"
 msgstr "Des de %1"
 
-#: app/StopoverInformationSheet.qml:22
+#: app/StopoverInformationSheet.qml:30
 #, kde-format
 msgid "Information"
 msgstr "Informació"
 
-#: app/StopoverInformationSheet.qml:40
+#: app/StopoverInformationSheet.qml:48
 #, kde-format
 msgid "Occupancy"
 msgstr "Ocupació"
 
-#: app/StopoverInformationSheet.qml:55
-#, fuzzy, kde-format
-#| msgid "Ammenities"
+#: app/StopoverInformationSheet.qml:63
+#, kde-format
 msgid "Amenities"
 msgstr "Serveis"
 
-#: app/StopoverInformationSheet.qml:70
+#: app/StopoverInformationSheet.qml:78
 #, kde-format
 msgctxt "operator/provider of a rail/bus service"
 msgid "Operator"
-msgstr ""
+msgstr "Operador"
 
 #: app/TicketEditor.qml:18
 #, kde-format

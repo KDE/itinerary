@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-01 00:43+0000\n"
+"POT-Creation-Date: 2025-06-02 00:42+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -2316,7 +2316,7 @@ msgid "Platform %1"
 msgstr "Nástupište: %1"
 
 #: app/JourneySectionDelegate.qml:255 app/JourneySectionPage.qml:136
-#: app/VehicleLayoutPage.qml:214
+#: app/StopoverFormDelegate.qml:141 app/VehicleLayoutPage.qml:214
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
@@ -3899,23 +3899,23 @@ msgctxt "departure stop"
 msgid "From %1"
 msgstr "Od: %1"
 
-#: app/StopoverInformationSheet.qml:22
+#: app/StopoverInformationSheet.qml:30
 #, fuzzy, kde-format
 #| msgid "More information"
 msgid "Information"
 msgstr "Viac informácií"
 
-#: app/StopoverInformationSheet.qml:40
+#: app/StopoverInformationSheet.qml:48
 #, kde-format
 msgid "Occupancy"
 msgstr ""
 
-#: app/StopoverInformationSheet.qml:55
+#: app/StopoverInformationSheet.qml:63
 #, kde-format
 msgid "Amenities"
 msgstr ""
 
-#: app/StopoverInformationSheet.qml:70
+#: app/StopoverInformationSheet.qml:78
 #, fuzzy, kde-format
 #| msgid "Elevator"
 msgctxt "operator/provider of a rail/bus service"
