@@ -149,29 +149,10 @@ Kirigami.Page {
         }
     }
 
-    data: SheetDrawer {
+    data: StopoverInformationSheet {
         id: moreNotesSheet
-
-        contentItem: ColumnLayout {
-            spacing: Kirigami.Units.smallSpacing
-
-            Repeater {
-                model: root.journeySection.departureVehicleLayout.combinedFeatures
-                delegate: KPublicTransport.FeatureDelegate {
-                    Layout.leftMargin: Kirigami.Units.largeSpacing
-                    required property KPublicTransport.feature modelData
-                    feature: modelData
-                }
-            }
-            QQC2.Label {
-                Layout.fillWidth: true
-                text: root.journeySection.notes.join("<br/>")
-                textFormat: Text.RichText
-                wrapMode: Text.Wrap
-                onLinkActivated: (link) => { Qt.openUrlExternally(link); }
-                padding: Kirigami.Units.largeSpacing * 2
-            }
-        }
+        stopover: root.journeySection.departure
+        notes: root.journeySection.notes
     }
 
     JourneySectionModel {

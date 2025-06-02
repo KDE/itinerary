@@ -122,10 +122,9 @@ Kirigami.ScrollablePage {
             StopoverFormDelegate {
                 stopover: delegateRoot.stopover
                 onClicked: {
-                    if (stopover.vehicleLayout.combinedFeatures.length === 0 && stopover.notes.length === 0 && stopover.aggregatedOccupancy.length === 0 && stopover.route.line.operatorName === "")
-                        return;
                     detailsSheet.stopover = stopover;
-                    detailsSheet.open();
+                    if (detailsSheet.hasContent)
+                        detailsSheet.open();
                 }
             }
         }

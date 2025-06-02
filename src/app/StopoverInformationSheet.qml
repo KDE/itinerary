@@ -13,9 +13,27 @@ import org.kde.kpublictransport as KPublicTransport
 import org.kde.kpublictransport.ui as KPublicTransport
 import org.kde.itinerary
 
+/** Details about a stopover, including:
+ *  - notes/service alerts
+ *  - occupancy
+ *  - vehicle ammentities
+ *  - operator/provider
+ */
 SheetDrawer {
     id: root
+    /** The KPublicTransport.Stopover to show here. */
     property KPublicTransport.stopover stopover
+    /** Notes/service alerts to show.
+     *  This defaults to stopover.notes, overriding
+     *  makes sense when e.g. showing a journey section departure.
+     */
+    property list<string> notes: stopover.notes
+
+    /** @c true if there is any content that can be shown here. */
+    readonly property bool hasContent: root.notes.length > 0
+        || root.stopover.vehicleLayout.combinedFeatures.length > 0
+        || root.stopover.aggregatedOccupancy.length > 0
+        || root.stopover.route.line.operatorName !== ""
 
     contentItem: QQC2.ScrollView {
         id: infoPage
@@ -30,18 +48,18 @@ SheetDrawer {
                 text: i18n("Information")
                 level: 4
                 Layout.leftMargin: Kirigami.Units.largeSpacing
-                visible: root.stopover.notes.length > 0
+                visible: root.notes.length > 0
             }
             QQC2.Label {
                 Layout.fillWidth: true
-                text: root.stopover.notes.join("<br/>")
+                text: root.notes.join("<br/>")
                 textFormat: Text.RichText
                 wrapMode: Text.Wrap
                 font.italic: true
                 onLinkActivated: (link) => { Qt.openUrlExternally(link); }
                 leftPadding: Kirigami.Units.largeSpacing
                 rightPadding: Kirigami.Units.largeSpacing
-                visible: root.stopover.notes.length > 0
+                visible: root.notes.length > 0
             }
 
             Kirigami.Heading {
