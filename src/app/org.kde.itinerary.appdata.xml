@@ -912,7 +912,17 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="25.04.2" date="2025-06-05"/>
+    <release version="25.04.2" date="2025-06-05">
+      <description>
+        <ul>
+          <li>New or improved travel document extractors for booking.com, Eurostar, Flixbus, IHG, Stena Line, Tallink and Viking Line.</li>
+          <li>Improved automatic public transport backend selection when crossing coverage borders.</li>
+          <li>Added onboard API support for Ouigo ES.</li>
+          <li>Fixed arrival platform parsing from OpenTripPlanner backends.</li>
+          <li>Fixed train direction display on vehicle layout page.</li>
+        </ul>
+      </description>
+    </release>
     <release version="25.04.1" date="2025-05-08">
       <description>
         <ul>
