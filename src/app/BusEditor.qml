@@ -49,6 +49,7 @@ EditorPage {
         model: [root.controller.trip.departure].concat(root.controller.trip.intermediateStops).concat([root.controller.trip.arrival])
         currentIndex: root.controller.tripDepartureIndex
         disableAfterIndex: alightSheet.currentIndex
+        forBoarding: true
         action: Kirigami.Action {
             text: i18nc("bus departure", "Change departure stop")
             onTriggered: {
@@ -64,6 +65,7 @@ EditorPage {
         model: [root.controller.trip.departure].concat(root.controller.trip.intermediateStops).concat([root.controller.trip.arrival])
         currentIndex: root.controller.tripArrivalIndex
         disableBeforeIndex: boardSheet.currentIndex
+        forBoarding: false
         action: Kirigami.Action {
             text: i18nc("bus arrival", "Change arrival stop")
             onTriggered: {

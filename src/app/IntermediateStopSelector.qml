@@ -4,11 +4,9 @@
 */
 
 import QtQuick
-import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
-import org.kde.kitinerary
-import org.kde.kpublictransport
+import org.kde.kpublictransport as KPublicTransport
 import org.kde.itinerary
 
 Kirigami.Dialog {
@@ -19,6 +17,8 @@ Kirigami.Dialog {
     property alias currentIndex: stopSelector.currentIndex
     property int disableBeforeIndex: -1
     property int disableAfterIndex: stopSelector.count
+    property bool forBoarding: true
+    readonly property bool forAlighting: !forBoarding
 
     width: Math.min(applicationWindow().width, Kirigami.Units.gridUnit * 24)
     height: Math.min(applicationWindow().height, Kirigami.Units.gridUnit * 32)
@@ -28,18 +28,26 @@ Kirigami.Dialog {
         currentIndex: -1
         clip: true
         delegate: QQC2.ItemDelegate {
+            id: delegateRoot
+            required property KPublicTransport.stopover modelData
+            required property int index
             highlighted: ListView.isCurrentItem
             width: ListView.view.width
             contentItem: Kirigami.TitleSubtitle {
+                font.strikeout: delegateRoot.modelData.disruptionEffect === KPublicTransport.Disruption.NoService
                 title: {
-                    if (modelData.scheduledDepartureTime.getTime()) {
-                        return Localizer.formatTime(modelData, "scheduledDepartureTime") + " " + modelData.stopPoint.name
+                    if (delegateRoot.modelData.scheduledDepartureTime.getTime()) {
+                        return Localizer.formatTime(delegateRoot.modelData, "scheduledDepartureTime") + " " + delegateRoot.modelData.stopPoint.name
                     }
-                    return Localizer.formatTime(modelData, "scheduledArrivalTime") + " " + modelData.stopPoint.name
+                    return Localizer.formatTime(delegateRoot.modelData, "scheduledArrivalTime") + " " + delegateRoot.modelData.stopPoint.name
                 }
             }
             onClicked: ListView.view.currentIndex = index
-            enabled: modelData.disruptionEffect != Disruption.NoService && index > boardSheet.disableBeforeIndex && index < boardSheet.disableAfterIndex
+            enabled: modelData.disruptionEffect != KPublicTransport.Disruption.NoService
+                && index > boardSheet.disableBeforeIndex
+                && index < boardSheet.disableAfterIndex
+                && (!boardSheet.forBoarding || modelData.pickupType !== KPublicTransport.PickupDropoff.NotAllowed)
+                && (!boardSheet.forAlighting || modelData.dropoffType !== KPublicTransport.PickupDropoff.NotAllowed)
         }
     }
 
