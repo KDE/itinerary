@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-02 00:42+0000\n"
-"PO-Revision-Date: 2025-05-29 08:56+0200\n"
+"POT-Creation-Date: 2025-06-03 00:43+0000\n"
+"PO-Revision-Date: 2025-06-02 09:49+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -778,14 +778,14 @@ msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "Charger les départs anticipés"
 
-#: app/DepartureQueryPage.qml:137 app/JourneyQueryPage.qml:125
+#: app/DepartureQueryPage.qml:136 app/JourneyQueryPage.qml:125
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "Charger les correspondances plus tardives"
 
-#: app/DepartureQueryPage.qml:146 app/JourneyQueryPage.qml:132
+#: app/DepartureQueryPage.qml:145 app/JourneyQueryPage.qml:132
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
@@ -1982,7 +1982,7 @@ msgstr "Tram"
 msgid "Bus"
 msgstr "Bus"
 
-#: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:373
+#: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:354
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -3772,30 +3772,26 @@ msgctxt "departure stop"
 msgid "From %1"
 msgstr "De %1"
 
-#: app/StopoverInformationSheet.qml:30
-#, fuzzy, kde-format
-#| msgctxt "train coach feature"
-#| msgid "Information point"
-msgid "Information"
-msgstr "Point d'informations"
-
 #: app/StopoverInformationSheet.qml:48
-#, fuzzy, kde-format
-#| msgid "Occupancy:"
-msgid "Occupancy"
-msgstr "Capacité d'accueil :"
+#, kde-format
+msgid "Information"
+msgstr "Informations"
 
-#: app/StopoverInformationSheet.qml:63
+#: app/StopoverInformationSheet.qml:66
+#, kde-format
+msgid "Occupancy"
+msgstr "Fréquentation"
+
+#: app/StopoverInformationSheet.qml:81
 #, kde-format
 msgid "Amenities"
-msgstr ""
+msgstr "Équipements"
 
-#: app/StopoverInformationSheet.qml:78
-#, fuzzy, kde-format
-#| msgid "Elevator"
+#: app/StopoverInformationSheet.qml:96
+#, kde-format
 msgctxt "operator/provider of a rail/bus service"
 msgid "Operator"
-msgstr "Ascenseur"
+msgstr "Compagnie"
 
 #: app/TicketEditor.qml:18
 #, kde-format

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-02 00:42+0000\n"
+"POT-Creation-Date: 2025-06-03 00:43+0000\n"
 "PO-Revision-Date: 2020-05-04 10:51+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -849,7 +849,7 @@ msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "%1 väljub varem"
 
-#: app/DepartureQueryPage.qml:137 app/JourneyQueryPage.qml:125
+#: app/DepartureQueryPage.qml:136 app/JourneyQueryPage.qml:125
 #: app/TransferPage.qml:321
 #, fuzzy, kde-format
 #| msgid "Alternative Connections"
@@ -857,7 +857,7 @@ msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "Alternatiivsed ühendused"
 
-#: app/DepartureQueryPage.qml:146 app/JourneyQueryPage.qml:132
+#: app/DepartureQueryPage.qml:145 app/JourneyQueryPage.qml:132
 #: app/TransferPage.qml:328
 #, fuzzy, kde-format
 #| msgid "Data providers: %1"
@@ -2149,7 +2149,7 @@ msgstr ""
 msgid "Bus"
 msgstr "Buss"
 
-#: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:373
+#: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:354
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -3954,23 +3954,23 @@ msgctxt "departure stop"
 msgid "From %1"
 msgstr "Asukohast: %1"
 
-#: app/StopoverInformationSheet.qml:30
+#: app/StopoverInformationSheet.qml:48
 #, fuzzy, kde-format
 #| msgid "More information"
 msgid "Information"
 msgstr "Rohkem teavet"
 
-#: app/StopoverInformationSheet.qml:48
+#: app/StopoverInformationSheet.qml:66
 #, kde-format
 msgid "Occupancy"
 msgstr ""
 
-#: app/StopoverInformationSheet.qml:63
+#: app/StopoverInformationSheet.qml:81
 #, kde-format
 msgid "Amenities"
 msgstr ""
 
-#: app/StopoverInformationSheet.qml:78
+#: app/StopoverInformationSheet.qml:96
 #, kde-format
 msgctxt "operator/provider of a rail/bus service"
 msgid "Operator"

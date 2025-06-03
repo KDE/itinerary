@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-02 00:42+0000\n"
+"POT-Creation-Date: 2025-06-03 00:43+0000\n"
 "PO-Revision-Date: 2025-04-22 01:21+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -769,14 +769,14 @@ msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "이전 출발 불러오기"
 
-#: app/DepartureQueryPage.qml:137 app/JourneyQueryPage.qml:125
+#: app/DepartureQueryPage.qml:136 app/JourneyQueryPage.qml:125
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "이후 연결 표시"
 
-#: app/DepartureQueryPage.qml:146 app/JourneyQueryPage.qml:132
+#: app/DepartureQueryPage.qml:145 app/JourneyQueryPage.qml:132
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
@@ -1980,7 +1980,7 @@ msgstr "노면 전차"
 msgid "Bus"
 msgstr "버스"
 
-#: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:373
+#: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:354
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -3707,24 +3707,24 @@ msgctxt "departure stop"
 msgid "From %1"
 msgstr "시점: %1"
 
-#: app/StopoverInformationSheet.qml:30
+#: app/StopoverInformationSheet.qml:48
 #, fuzzy, kde-format
 #| msgid "More information"
 msgid "Information"
 msgstr "더 많은 정보"
 
-#: app/StopoverInformationSheet.qml:48
+#: app/StopoverInformationSheet.qml:66
 #, fuzzy, kde-format
 #| msgid "Occupancy:"
 msgid "Occupancy"
 msgstr "혼잡도:"
 
-#: app/StopoverInformationSheet.qml:63
+#: app/StopoverInformationSheet.qml:81
 #, kde-format
 msgid "Amenities"
 msgstr ""
 
-#: app/StopoverInformationSheet.qml:78
+#: app/StopoverInformationSheet.qml:96
 #, fuzzy, kde-format
 #| msgid "Elevator"
 msgctxt "operator/provider of a rail/bus service"
