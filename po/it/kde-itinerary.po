@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-03 00:43+0000\n"
+"POT-Creation-Date: 2025-06-04 00:43+0000\n"
 "PO-Revision-Date: 2025-05-28 16:30+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -564,61 +564,61 @@ msgstr "da %1 a %2"
 msgid "Edit Bus Reservation"
 msgstr "Modifica prenotazione autobus"
 
-#: app/BusEditor.qml:48 app/BusEditor.qml:107
+#: app/BusEditor.qml:48 app/BusEditor.qml:109
 #, kde-format
 msgctxt "bus departure"
 msgid "Change Departure Stop"
 msgstr "Cambia la fermata di partenza"
 
-#: app/BusEditor.qml:53
+#: app/BusEditor.qml:54
 #, kde-format
 msgctxt "bus departure"
 msgid "Change departure stop"
 msgstr "Cambia la fermata di partenza"
 
-#: app/BusEditor.qml:63 app/BusEditor.qml:129
+#: app/BusEditor.qml:64 app/BusEditor.qml:131
 #, kde-format
 msgctxt "bus arrival"
 msgid "Change Arrival Stop"
 msgstr "Cambia la fermata di arrivo"
 
-#: app/BusEditor.qml:68
+#: app/BusEditor.qml:70
 #, kde-format
 msgctxt "bus arrival"
 msgid "Change arrival stop"
 msgstr "Cambia la fermata di arrivo"
 
-#: app/BusEditor.qml:88
+#: app/BusEditor.qml:90
 #, kde-format
 msgctxt "@title"
 msgid "Bus"
 msgstr "Autobus"
 
-#: app/BusEditor.qml:93
+#: app/BusEditor.qml:95
 #, kde-format
 msgctxt "bus departure"
 msgid "Departure"
 msgstr "Partenza"
 
-#: app/BusEditor.qml:98 app/BusEditor.qml:120
+#: app/BusEditor.qml:100 app/BusEditor.qml:122
 #, kde-format
 msgctxt "bus stop"
 msgid "Stop"
 msgstr "Fermata"
 
-#: app/BusEditor.qml:103 app/BusEditor.qml:125
+#: app/BusEditor.qml:105 app/BusEditor.qml:127
 #, kde-format
 msgctxt "bus stop platform"
 msgid "Platform"
 msgstr "Binario"
 
-#: app/BusEditor.qml:115
+#: app/BusEditor.qml:117
 #, kde-format
 msgctxt "bus arrival"
 msgid "Arrival"
 msgstr "Arrivo"
 
-#: app/BusEditor.qml:138 app/BusEditor.qml:144 app/BusPage.qml:183
+#: app/BusEditor.qml:140 app/BusEditor.qml:146 app/BusPage.qml:183
 #, kde-format
 msgctxt "Bus seat"
 msgid "Seat"
@@ -3729,7 +3729,7 @@ msgctxt "@info:placeholder no visited country"
 msgid "None"
 msgstr "Nessuna"
 
-#: app/StatisticsPage.qml:121 app/TrainEditor.qml:92
+#: app/StatisticsPage.qml:121 app/TrainEditor.qml:94
 #, kde-format
 msgid "Train"
 msgstr "Treno"
@@ -3907,68 +3907,68 @@ msgstr "Classe: <b>%1</b>"
 msgid "Edit Train Reservation"
 msgstr "Modifica prenotazione treno"
 
-#: app/TrainEditor.qml:52 app/TrainEditor.qml:115
+#: app/TrainEditor.qml:52 app/TrainEditor.qml:117
 #, kde-format
 msgctxt "train departure"
 msgid "Change Departure Station"
 msgstr "Cambia la stazione di partenza"
 
-#: app/TrainEditor.qml:57
+#: app/TrainEditor.qml:58
 #, kde-format
 msgctxt "train departure"
 msgid "Change departure station"
 msgstr "Cambia la stazione di partenza"
 
-#: app/TrainEditor.qml:67 app/TrainEditor.qml:140
+#: app/TrainEditor.qml:68 app/TrainEditor.qml:142
 #, kde-format
 msgctxt "train arrival"
 msgid "Change Arrival Station"
 msgstr "Cambia la stazione di arrivo"
 
-#: app/TrainEditor.qml:72
+#: app/TrainEditor.qml:74
 #, kde-format
 msgctxt "train arrival"
 msgid "Change arrival station"
 msgstr "Cambia la stazione di arrivo"
 
-#: app/TrainEditor.qml:97
+#: app/TrainEditor.qml:99
 #, kde-format
 msgctxt "train departure"
 msgid "Departure"
 msgstr "Partenza"
 
-#: app/TrainEditor.qml:102 app/TrainEditor.qml:128 app/TrainPage.qml:161
+#: app/TrainEditor.qml:104 app/TrainEditor.qml:130 app/TrainPage.qml:161
 #: app/TrainPage.qml:253
 #, kde-format
 msgctxt "train station"
 msgid "Station"
 msgstr "Stazione"
 
-#: app/TrainEditor.qml:108 app/TrainEditor.qml:134
+#: app/TrainEditor.qml:110 app/TrainEditor.qml:136
 #, kde-format
 msgctxt "train platform"
 msgid "Platform"
 msgstr "Binario"
 
-#: app/TrainEditor.qml:123
+#: app/TrainEditor.qml:125
 #, kde-format
 msgctxt "train arrival"
 msgid "Arrival"
 msgstr "Arrivo"
 
-#: app/TrainEditor.qml:150 app/TrainEditor.qml:162 app/TrainPage.qml:305
+#: app/TrainEditor.qml:152 app/TrainEditor.qml:164 app/TrainPage.qml:305
 #, kde-format
 msgctxt "Train seat"
 msgid "Seat"
 msgstr "Posto"
 
-#: app/TrainEditor.qml:156
+#: app/TrainEditor.qml:158
 #, kde-format
 msgctxt "carriage on a train"
 msgid "Coach"
 msgstr "Carrozza"
 
-#: app/TrainEditor.qml:168
+#: app/TrainEditor.qml:170
 #, kde-format
 msgctxt "seating class on a train"
 msgid "Class"
