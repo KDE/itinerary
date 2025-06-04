@@ -51,7 +51,8 @@ Item {
             isArrival: root.isArrival
             isDeparture: root.isDeparture
             lineColor: root.stop.route.line.hasColor ? root.stop.route.line.color : Kirigami.Theme.textColor
-            hasStop: !isIntermediate || root.stop.disruptionEffect !== KPublicTransport.Disruption.NoService
+            hasStop: root.stop.disruptionEffect !== KPublicTransport.Disruption.NoService &&
+                (root.stop.pickupType !== KPublicTransport.PickupDropoff.NotAllowed || root.stop.dropoffType !== KPublicTransport.PickupDropoff.NotAllowed)
             showStop: false
             trailingProgress: Math.min(1.0, (root.trailingProgress * root.trailingSegmentLength) / lineSegment.trailingLineLength)
         }
