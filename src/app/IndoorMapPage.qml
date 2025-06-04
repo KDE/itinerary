@@ -183,17 +183,15 @@ Kirigami.Page {
         mapData: map.mapData
 
         onPlatformIndexChanged: {
+            let idx;
             if (platformModel.departurePlatformRow >= 0) {
-                var idx = platformModel.index(platformModel.departurePlatformRow, 0);
-                map.view.floorLevel = platformModel.data(idx, PlatformModel.LevelRole)
-                map.view.centerOnGeoCoordinate(platformModel.data(idx, PlatformModel.CoordinateRole));
-                map.view.setZoomLevel(19, Qt.point(map.width / 2.0, map.height / 2.0));
+                idx = platformModel.index(platformModel.departurePlatformRow, 0);
             } else if (root.departurePlatformName == "" && platformModel.arrivalPlatformRow >= 0) {
-                var idx = platformModel.index(platformModel.arrivalPlatformRow, 0);
-                map.view.floorLevel = platformModel.data(idx, PlatformModel.LevelRole)
-                map.view.centerOnGeoCoordinate(platformModel.data(idx, PlatformModel.CoordinateRole));
-                map.view.setZoomLevel(19, Qt.point(map.width / 2.0, map.height / 2.0));
+                idx = platformModel.index(platformModel.arrivalPlatformRow, 0);
+            } else {
+                return;
             }
+            map.view.centerOn(platformModel.data(idx, PlatformModel.CoordinateRole), platformModel.data(idx, PlatformModel.LevelRole), 19);
         }
     }
 
@@ -208,17 +206,15 @@ Kirigami.Page {
         mapData: map.mapData
 
         onGateIndexChanged: {
+            let idx;
             if (gateModel.departureGateRow >= 0) {
-                var idx = gateModel.index(gateModel.departureGateRow, 0);
-                map.view.floorLevel = gateModel.data(idx, GateModel.LevelRole)
-                map.view.centerOnGeoCoordinate(gateModel.data(idx, GateModel.CoordinateRole));
-                map.view.setZoomLevel(18, Qt.point(map.width / 2.0, map.height / 2.0));
-            } else if (root.departureGateName == "" && platformModel.arrivalGateRow >= 0) {
-                var idx = platformModel.index(platformModel.arrivalGateRow, 0);
-                map.view.floorLevel = platformModel.data(idx, PlatformModel.LevelRole)
-                map.view.centerOnGeoCoordinate(platformModel.data(idx, PlatformModel.CoordinateRole));
-                map.view.setZoomLevel(19, Qt.point(map.width / 2.0, map.height / 2.0));
+                idx = gateModel.index(gateModel.departureGateRow, 0);
+            } else if (root.departureGateName == "" && gateModel.arrivalGateRow >= 0) {
+                idx = platformModel.index(gateModel.arrivalGateRow, 0);
+            } else {
+                return;
             }
+            map.view.centerOn(gateModel.data(idx, GateModel.CoordinateRole), gateModel.data(idx, GateModel.LevelRole), 18);
         }
     }
 
@@ -260,11 +256,7 @@ Kirigami.Page {
         amenityModel: AmenityModel {
             mapData: map.mapData
         }
-        onAmenitySelected: (amenity) => {
-            map.view.floorLevel = amenity.level;
-            map.view.setZoomLevel(21, Qt.point(map.width / 2.0, map.height/ 2.0));
-            map.view.centerOnGeoCoordinate(amenity.element.center);
-        }
+        onAmenitySelected: (amenity) => { map.view.centerOn(amenity.element.center, amenity.level, 21); }
     }
 
     function queryLiveLocationData()

@@ -69,9 +69,7 @@ Kirigami.Dialog {
                 }
                 highlighted: false
                 onClicked: {
-                    map.view.floorLevel = model.level
-                    map.view.centerOnGeoCoordinate(model.coordinate);
-                    map.view.setZoomLevel(19, Qt.point(map.width / 2.0, map.height/ 2.0));
+                    map.view.centerOn(model.coordinate, model.level, 19);
                     platformSheet.close();
                 }
             }
