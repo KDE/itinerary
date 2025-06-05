@@ -183,6 +183,7 @@ Kirigami.Page {
                     QQC2.ScrollBar.horizontal.policy: QQC2.ScrollBar.AlwaysOff
 
                     ListView {
+                        id: journeyListView
                         clip: true
                         model: sectionModel
                         leftMargin: Kirigami.Units.largeSpacing
@@ -363,5 +364,10 @@ Kirigami.Page {
                 bottomMargin: Kirigami.Units.largeSpacing
             }
         }
+    }
+
+    Component.onCompleted: {
+        if (root.departureStopIndex > 0)
+            journeyListView.positionViewAtIndex(root.departureStopIndex - 1, ListView.Beginning)
     }
 }
