@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-04 00:43+0000\n"
+"POT-Creation-Date: 2025-06-05 00:43+0000\n"
 "PO-Revision-Date: 2025-06-01 07:30+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -1911,18 +1911,18 @@ msgstr "Odpri mapo"
 msgid "Open wheelmap.org"
 msgstr "Odpri wheelmap.org"
 
-#: app/IndoorMapPage.qml:305
+#: app/IndoorMapPage.qml:297
 #, kde-format
 msgid "Switched to floor %1"
 msgstr "Preklopljeno na nadstropje %1"
 
-#: app/IndoorMapPage.qml:352
+#: app/IndoorMapPage.qml:344
 #, kde-format
 msgctxt "@action:intoolbar Go down one floor"
 msgid "Floor down"
 msgstr "Nadstropje nižje"
 
-#: app/IndoorMapPage.qml:361
+#: app/IndoorMapPage.qml:353
 #, kde-format
 msgctxt "@action:intoolbar Go up one floor"
 msgid "Floor up"
@@ -1952,27 +1952,27 @@ msgctxt "train arrival platform"
 msgid "%1 (arrival)"
 msgstr "%1 (prihod)"
 
-#: app/IndoorMapPlatformSheet.qml:83
+#: app/IndoorMapPlatformSheet.qml:81
 #, kde-format
 msgid "Railway"
 msgstr "Železnica"
 
-#: app/IndoorMapPlatformSheet.qml:84
+#: app/IndoorMapPlatformSheet.qml:82
 #, kde-format
 msgid "Light Rail"
 msgstr "Lahka železnica"
 
-#: app/IndoorMapPlatformSheet.qml:85
+#: app/IndoorMapPlatformSheet.qml:83
 #, kde-format
 msgid "Subway"
 msgstr "Podzemna železnica"
 
-#: app/IndoorMapPlatformSheet.qml:86
+#: app/IndoorMapPlatformSheet.qml:84
 #, kde-format
 msgid "Tramway"
 msgstr "Tramvaj"
 
-#: app/IndoorMapPlatformSheet.qml:87 app/StatisticsPage.qml:135
+#: app/IndoorMapPlatformSheet.qml:85 app/StatisticsPage.qml:135
 #, kde-format
 msgid "Bus"
 msgstr "Avtobus"
@@ -2183,25 +2183,25 @@ msgstr "Povprečna hitrost: %1"
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionStopDelegate.qml:145
+#: app/JourneySectionStopDelegate.qml:146
 #, kde-format
 msgctxt "Abreviation of train platform"
 msgid "Pl. %1"
 msgstr "Pl. %1"
 
-#: app/JourneySectionStopDelegate.qml:147
+#: app/JourneySectionStopDelegate.qml:148
 #, kde-format
 msgctxt "Ferry dock, if possible use an abreviation"
 msgid "Dock %1"
 msgstr "Pomol %1"
 
-#: app/JourneySectionStopDelegate.qml:149
+#: app/JourneySectionStopDelegate.qml:150
 #, kde-format
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
 msgstr "Pl. %1"
 
-#: app/JourneySectionStopDelegate.qml:163
+#: app/JourneySectionStopDelegate.qml:164
 #, kde-format
 msgid "Show location"
 msgstr "Prikaži lokacijo"
@@ -3737,27 +3737,6 @@ msgctxt "departure stop"
 msgid "From %1"
 msgstr "Od %1"
 
-#: app/StopoverInformationSheet.qml:48
-#, kde-format
-msgid "Information"
-msgstr "Informacije"
-
-#: app/StopoverInformationSheet.qml:66
-#, kde-format
-msgid "Occupancy"
-msgstr "Zasedenost"
-
-#: app/StopoverInformationSheet.qml:81
-#, kde-format
-msgid "Amenities"
-msgstr "Ugodnosti"
-
-#: app/StopoverInformationSheet.qml:96
-#, kde-format
-msgctxt "operator/provider of a rail/bus service"
-msgid "Operator"
-msgstr "Operater"
-
 #: app/TicketEditor.qml:18
 #, kde-format
 msgid "Edit Ticket"
@@ -4527,6 +4506,19 @@ msgstr "Odjavljen"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 od %3 do %4 na %5"
+
+#~ msgid "Information"
+#~ msgstr "Informacije"
+
+#~ msgid "Occupancy"
+#~ msgstr "Zasedenost"
+
+#~ msgid "Amenities"
+#~ msgstr "Ugodnosti"
+
+#~ msgctxt "operator/provider of a rail/bus service"
+#~ msgid "Operator"
+#~ msgstr "Operater"
 
 #~ msgctxt "a train/bus journey canceled by its operator"
 #~ msgid "Canceled"

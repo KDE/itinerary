@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-04 00:43+0000\n"
+"POT-Creation-Date: 2025-06-05 00:43+0000\n"
 "PO-Revision-Date: 2025-04-01 10:26+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -1937,18 +1937,18 @@ msgstr "Открыть карту"
 msgid "Open wheelmap.org"
 msgstr "Открыть wheelmap.org"
 
-#: app/IndoorMapPage.qml:305
+#: app/IndoorMapPage.qml:297
 #, kde-format
 msgid "Switched to floor %1"
 msgstr "Выполнено переключение на этаж %1"
 
-#: app/IndoorMapPage.qml:352
+#: app/IndoorMapPage.qml:344
 #, kde-format
 msgctxt "@action:intoolbar Go down one floor"
 msgid "Floor down"
 msgstr "Этаж ниже"
 
-#: app/IndoorMapPage.qml:361
+#: app/IndoorMapPage.qml:353
 #, kde-format
 msgctxt "@action:intoolbar Go up one floor"
 msgid "Floor up"
@@ -1978,27 +1978,27 @@ msgctxt "train arrival platform"
 msgid "%1 (arrival)"
 msgstr "%1 (прибытие)"
 
-#: app/IndoorMapPlatformSheet.qml:83
+#: app/IndoorMapPlatformSheet.qml:81
 #, kde-format
 msgid "Railway"
 msgstr "Железная дорога"
 
-#: app/IndoorMapPlatformSheet.qml:84
+#: app/IndoorMapPlatformSheet.qml:82
 #, kde-format
 msgid "Light Rail"
 msgstr "Легкорельсовый транспорт"
 
-#: app/IndoorMapPlatformSheet.qml:85
+#: app/IndoorMapPlatformSheet.qml:83
 #, kde-format
 msgid "Subway"
 msgstr "Метро"
 
-#: app/IndoorMapPlatformSheet.qml:86
+#: app/IndoorMapPlatformSheet.qml:84
 #, kde-format
 msgid "Tramway"
 msgstr "Трамвай"
 
-#: app/IndoorMapPlatformSheet.qml:87 app/StatisticsPage.qml:135
+#: app/IndoorMapPlatformSheet.qml:85 app/StatisticsPage.qml:135
 #, kde-format
 msgid "Bus"
 msgstr "Автобус"
@@ -2210,25 +2210,25 @@ msgstr "Средняя скорость: %1"
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionStopDelegate.qml:145
+#: app/JourneySectionStopDelegate.qml:146
 #, kde-format
 msgctxt "Abreviation of train platform"
 msgid "Pl. %1"
 msgstr "Пл. %1"
 
-#: app/JourneySectionStopDelegate.qml:147
+#: app/JourneySectionStopDelegate.qml:148
 #, kde-format
 msgctxt "Ferry dock, if possible use an abreviation"
 msgid "Dock %1"
 msgstr "Причал %1"
 
-#: app/JourneySectionStopDelegate.qml:149
+#: app/JourneySectionStopDelegate.qml:150
 #, kde-format
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
 msgstr "Пл. %1"
 
-#: app/JourneySectionStopDelegate.qml:163
+#: app/JourneySectionStopDelegate.qml:164
 #, kde-format
 msgid "Show location"
 msgstr "Показать местоположение"
@@ -3763,29 +3763,6 @@ msgctxt "departure stop"
 msgid "From %1"
 msgstr "Из: %1"
 
-#: app/StopoverInformationSheet.qml:48
-#, fuzzy, kde-format
-msgid "Information"
-msgstr "Дополнительная информация"
-
-#: app/StopoverInformationSheet.qml:66
-#, fuzzy, kde-format
-#| msgid "Occupancy:"
-msgid "Occupancy"
-msgstr "Занятость:"
-
-#: app/StopoverInformationSheet.qml:81
-#, kde-format
-msgid "Amenities"
-msgstr ""
-
-#: app/StopoverInformationSheet.qml:96
-#, fuzzy, kde-format
-#| msgid "Elevator"
-msgctxt "operator/provider of a rail/bus service"
-msgid "Operator"
-msgstr "Лифт"
-
 #: app/TicketEditor.qml:18
 #, kde-format
 msgid "Edit Ticket"
@@ -4560,6 +4537,21 @@ msgstr "Выполнен выход"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 из %3 в %4 %5"
+
+#, fuzzy
+#~ msgid "Information"
+#~ msgstr "Дополнительная информация"
+
+#, fuzzy
+#~| msgid "Occupancy:"
+#~ msgid "Occupancy"
+#~ msgstr "Занятость:"
+
+#, fuzzy
+#~| msgid "Elevator"
+#~ msgctxt "operator/provider of a rail/bus service"
+#~ msgid "Operator"
+#~ msgstr "Лифт"
 
 #~ msgctxt "a train/bus journey canceled by its operator"
 #~ msgid "Canceled"

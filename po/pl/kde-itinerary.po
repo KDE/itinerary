@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-04 00:43+0000\n"
+"POT-Creation-Date: 2025-06-05 00:43+0000\n"
 "PO-Revision-Date: 2025-03-15 10:28+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -1929,18 +1929,18 @@ msgstr "Otwórz mapę"
 msgid "Open wheelmap.org"
 msgstr "Otwórz wheelmap.org"
 
-#: app/IndoorMapPage.qml:305
+#: app/IndoorMapPage.qml:297
 #, kde-format
 msgid "Switched to floor %1"
 msgstr "Przełącz na poziom %1"
 
-#: app/IndoorMapPage.qml:352
+#: app/IndoorMapPage.qml:344
 #, kde-format
 msgctxt "@action:intoolbar Go down one floor"
 msgid "Floor down"
 msgstr "Piętro niżej"
 
-#: app/IndoorMapPage.qml:361
+#: app/IndoorMapPage.qml:353
 #, kde-format
 msgctxt "@action:intoolbar Go up one floor"
 msgid "Floor up"
@@ -1970,27 +1970,27 @@ msgctxt "train arrival platform"
 msgid "%1 (arrival)"
 msgstr "%1 (przybycie)"
 
-#: app/IndoorMapPlatformSheet.qml:83
+#: app/IndoorMapPlatformSheet.qml:81
 #, kde-format
 msgid "Railway"
 msgstr "Tory kolejowe"
 
-#: app/IndoorMapPlatformSheet.qml:84
+#: app/IndoorMapPlatformSheet.qml:82
 #, kde-format
 msgid "Light Rail"
 msgstr "Lekka kolej"
 
-#: app/IndoorMapPlatformSheet.qml:85
+#: app/IndoorMapPlatformSheet.qml:83
 #, kde-format
 msgid "Subway"
 msgstr "Metro"
 
-#: app/IndoorMapPlatformSheet.qml:86
+#: app/IndoorMapPlatformSheet.qml:84
 #, kde-format
 msgid "Tramway"
 msgstr "Tramwaj"
 
-#: app/IndoorMapPlatformSheet.qml:87 app/StatisticsPage.qml:135
+#: app/IndoorMapPlatformSheet.qml:85 app/StatisticsPage.qml:135
 #, kde-format
 msgid "Bus"
 msgstr "Autobus"
@@ -2202,25 +2202,25 @@ msgstr "Średnia szybkość: %1"
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionStopDelegate.qml:145
+#: app/JourneySectionStopDelegate.qml:146
 #, kde-format
 msgctxt "Abreviation of train platform"
 msgid "Pl. %1"
 msgstr "Per. %1"
 
-#: app/JourneySectionStopDelegate.qml:147
+#: app/JourneySectionStopDelegate.qml:148
 #, kde-format
 msgctxt "Ferry dock, if possible use an abreviation"
 msgid "Dock %1"
 msgstr "Dok %1"
 
-#: app/JourneySectionStopDelegate.qml:149
+#: app/JourneySectionStopDelegate.qml:150
 #, kde-format
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
 msgstr "Per. %1"
 
-#: app/JourneySectionStopDelegate.qml:163
+#: app/JourneySectionStopDelegate.qml:164
 #, kde-format
 msgid "Show location"
 msgstr "Pokaż miejsce"
@@ -3760,31 +3760,6 @@ msgctxt "departure stop"
 msgid "From %1"
 msgstr "Od: %1"
 
-#: app/StopoverInformationSheet.qml:48
-#, fuzzy, kde-format
-#| msgctxt "train coach feature"
-#| msgid "Information point"
-msgid "Information"
-msgstr "Punkt informacyjny"
-
-#: app/StopoverInformationSheet.qml:66
-#, fuzzy, kde-format
-#| msgid "Occupancy:"
-msgid "Occupancy"
-msgstr "Zapełnienie:"
-
-#: app/StopoverInformationSheet.qml:81
-#, kde-format
-msgid "Amenities"
-msgstr ""
-
-#: app/StopoverInformationSheet.qml:96
-#, fuzzy, kde-format
-#| msgid "Elevator"
-msgctxt "operator/provider of a rail/bus service"
-msgid "Operator"
-msgstr "Schody ruchome"
-
 #: app/TicketEditor.qml:18
 #, kde-format
 msgid "Edit Ticket"
@@ -4555,6 +4530,23 @@ msgstr "Wylogowany"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 z %3 do %4 o czasie %5"
+
+#, fuzzy
+#~| msgctxt "train coach feature"
+#~| msgid "Information point"
+#~ msgid "Information"
+#~ msgstr "Punkt informacyjny"
+
+#, fuzzy
+#~| msgid "Occupancy:"
+#~ msgid "Occupancy"
+#~ msgstr "Zapełnienie:"
+
+#, fuzzy
+#~| msgid "Elevator"
+#~ msgctxt "operator/provider of a rail/bus service"
+#~ msgid "Operator"
+#~ msgstr "Schody ruchome"
 
 #~ msgctxt "a train/bus journey canceled by its operator"
 #~ msgid "Canceled"
