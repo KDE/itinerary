@@ -66,6 +66,7 @@ Item {
             text: Localizer.formatTime(stop, "scheduledArrivalTime")
             visible: root.stop.scheduledArrivalTime > 0 && !root.isSameTime
             font.strikeout: root.stop.disruptionEffect === KPublicTransport.Disruption.NoService
+            opacity: root.stop.pickupType === KPublicTransport.PickupDropoff.NotAllowed && root.stop.dropoffType === KPublicTransport.PickupDropoff.NotAllowed ? 0.5 : 1.0
         }
         QQC2.Label {
             Layout.column: 2
@@ -75,6 +76,7 @@ Item {
             text: (root.stop.arrivalDelay >= 0 ? "+" : "") + root.stop.arrivalDelay
             color: root.stop.arrivalDelay > 1 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
             visible: arrivalTime.visible && root.stop.hasExpectedArrivalTime && !root.isSameTime && root.stop.disruptionEffect !== KPublicTransport.Disruption.NoService
+            opacity: root.stop.pickupType === KPublicTransport.PickupDropoff.NotAllowed && root.stop.dropoffType === KPublicTransport.PickupDropoff.NotAllowed ? 0.5 : 1.0
         }
 
         QQC2.Label {
@@ -87,6 +89,7 @@ Item {
             elide: Text.ElideRight
             font.bold: root.highlight
             font.strikeout: root.stop.disruptionEffect === KPublicTransport.Disruption.NoService
+            opacity: root.stop.pickupType === KPublicTransport.PickupDropoff.NotAllowed && root.stop.dropoffType === KPublicTransport.PickupDropoff.NotAllowed ? 0.5 : 1.0
         }
 
         QQC2.Label {
@@ -98,6 +101,7 @@ Item {
             text: Localizer.formatTime(stop, "scheduledDepartureTime")
             visible: root.stop.scheduledDepartureTime > 0
             font.strikeout: root.stop.disruptionEffect === KPublicTransport.Disruption.NoService
+            opacity: root.stop.pickupType === KPublicTransport.PickupDropoff.NotAllowed && root.stop.dropoffType === KPublicTransport.PickupDropoff.NotAllowed ? 0.5 : 1.0
         }
 
         QQC2.Label {
@@ -108,6 +112,7 @@ Item {
             text: (root.stop.departureDelay >= 0 ? "+" : "") + root.stop.departureDelay
             color: root.stop.departureDelay > 1 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
             visible: departureTime.visible && root.stop.hasExpectedDepartureTime && root.stop.disruptionEffect !== KPublicTransport.Disruption.NoService
+            opacity: root.stop.pickupType === KPublicTransport.PickupDropoff.NotAllowed && root.stop.dropoffType === KPublicTransport.PickupDropoff.NotAllowed ? 0.5 : 1.0
         }
 
         KPublicTransport.OccupancyIndicator {
@@ -151,6 +156,7 @@ Item {
                 }
             }
             visible: root.stop.disruptionEffect !== KPublicTransport.Disruption.NoService
+            opacity: root.stop.pickupType === KPublicTransport.PickupDropoff.NotAllowed && root.stop.dropoffType === KPublicTransport.PickupDropoff.NotAllowed ? 0.5 : 1.0
         }
 
         QQC2.ToolButton {
