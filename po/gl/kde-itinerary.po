@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-05 00:43+0000\n"
+"POT-Creation-Date: 2025-06-06 00:43+0000\n"
 "PO-Revision-Date: 2025-05-26 09:27+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -1968,7 +1968,7 @@ msgstr "Tranvía"
 msgid "Bus"
 msgstr "Bus"
 
-#: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:354
+#: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:355
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2174,7 +2174,7 @@ msgstr "Velocidade media: %1"
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionStopDelegate.qml:146
+#: app/JourneySectionStopDelegate.qml:151
 #, kde-format
 msgctxt "Abreviation of train platform"
 msgid "Pl. %1"
@@ -2184,19 +2184,19 @@ msgstr "Pl. %1"
 # skip-rule: trasno-dock
 # Abreviatura de «dársena».
 #
-#: app/JourneySectionStopDelegate.qml:148
+#: app/JourneySectionStopDelegate.qml:153
 #, kde-format
 msgctxt "Ferry dock, if possible use an abreviation"
 msgid "Dock %1"
 msgstr "Dár. %1"
 
-#: app/JourneySectionStopDelegate.qml:150
+#: app/JourneySectionStopDelegate.qml:155
 #, kde-format
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
 msgstr "Pl. %1"
 
-#: app/JourneySectionStopDelegate.qml:164
+#: app/JourneySectionStopDelegate.qml:170
 #, kde-format
 msgid "Show location"
 msgstr "Amosar a localización"
