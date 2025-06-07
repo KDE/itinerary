@@ -9,7 +9,6 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
-import org.kde.kirigamiaddons.components as Components
 import org.kde.kpublictransport as PT
 import org.kde.kosmindoormap
 import org.kde.itinerary
@@ -165,19 +164,6 @@ Kirigami.Page {
         }
     ]
 
-    OSMElementInformationModel {
-        id: infoModel
-        allowOnlineContent: Settings.wikimediaOnlineContentEnabled
-        debug: Settings.developmentMode
-    }
-
-    IndoorMapInfoSheet {
-        id: elementDetailsSheet
-        model: infoModel
-        regionCode: root.map.mapData.regionCode
-        timeZone: root.map.mapData.timeZone
-    }
-
     PlatformModel {
         id: platformModel
         mapData: map.mapData
@@ -224,18 +210,6 @@ Kirigami.Page {
         parent: root.overlay
     }
 
-    FloorLevelChangeModel {
-        id: floorLevelChangeModel
-        currentFloorLevel: map.view.floorLevel
-        floorLevelModel: map.floorLevels
-    }
-
-    FloorLevelSelector {
-        id: elevatorSheet
-        model: floorLevelChangeModel
-        onFloorLevelSelected: (level) => { map.view.floorLevel = level; }
-    }
-
     LocationQueryOverlayProxyModel {
         id: locationModel
         sourceModel: PT.LocationQueryModel {
@@ -274,45 +248,20 @@ Kirigami.Page {
         }
     }
 
-    IndoorMap {
+    IndoorMapView {
         id: map
         anchors.fill: parent
         overlaySources: [ gateModel, platformModel, locationModel, equipmentModel ]
 
-        IndoorMapScale {
-            map: map
-            anchors.left: map.left
-            anchors.top: map.top
-            width: 0.3 * map.width
+        elementInfoModel {
+            allowOnlineContent: Settings.wikimediaOnlineContentEnabled
+            debug: Settings.developmentMode
         }
 
-        IndoorMapAttributionLabel {
-            anchors.right: map.right
-            anchors.bottom: map.bottom
-        }
-
-        onElementPicked: {
-            floorLevelChangeModel.element = element;
-            if (floorLevelChangeModel.hasSingleLevelChange) {
-                showPassiveNotification(i18n("Switched to floor %1", floorLevelChangeModel.destinationLevelName), "short");
-                map.view.floorLevel = floorLevelChangeModel.destinationLevel;
-                return;
-            } else if (floorLevelChangeModel.hasMultipleLevelChanges) {
-                elevatorSheet.open();
-                return;
-            }
-
-            infoModel.element = element;
-            if (infoModel.name != "" || infoModel.debug) {
-                elementDetailsSheet.open();
-            }
-        }
-        onElementLongPressed: {
-            // this provides info model access for elements with other interactions
-            infoModel.element = element;
-            if (infoModel.name != "" || infoModel.debug) {
-                elementDetailsSheet.open();
-            }
+        elementInfoDialog:  IndoorMapInfoSheet {
+            model: map.elementInfoModel
+            regionCode: root.map.mapData.regionCode
+            timeZone: root.map.mapData.timeZone
         }
     }
 
@@ -328,33 +277,6 @@ Kirigami.Page {
             map.view.beginTime = root.beginTime;
             map.view.endTime = root.endTime;
             queryLiveLocationData();
-        }
-    }
-
-    Components.DoubleFloatingButton {
-        anchors {
-            right: parent.right
-            rightMargin: Kirigami.Units.largeSpacing
-            bottom: parent.bottom
-            bottomMargin: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing // to not hide the copyright information
-        }
-
-        leadingAction: Kirigami.Action {
-            icon.name: "go-down-symbolic"
-            text: i18nc("@action:intoolbar Go down one floor", "Floor down")
-            enabled: map.floorLevels.hasFloorLevelBelow(map.view.floorLevel)
-            onTriggered: map.view.floorLevel = map.floorLevels.floorLevelBelow(map.view.floorLevel)
-            visible: map.floorLevels.hasFloorLevels
-            tooltip: text
-        }
-
-        trailingAction: Kirigami.Action {
-            icon.name: "go-up-symbolic"
-            text: i18nc("@action:intoolbar Go up one floor", "Floor up")
-            enabled: map.floorLevels.hasFloorLevelAbove(map.view.floorLevel)
-            onTriggered: map.view.floorLevel = map.floorLevels.floorLevelAbove(map.view.floorLevel)
-            visible: map.floorLevels.hasFloorLevels
-            tooltip: text
         }
     }
 
