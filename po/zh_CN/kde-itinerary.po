@@ -4431,34 +4431,3 @@ msgstr "已登出"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr ""
-
-#, fuzzy
-#~| msgid "More information"
-#~ msgid "Information"
-#~ msgstr "更多信息"
-
-#, fuzzy
-#~| msgid "Occupancy:"
-#~ msgid "Occupancy"
-#~ msgstr "占有率："
-
-#~ msgctxt "a train/bus journey canceled by its operator"
-#~ msgid "Canceled"
-#~ msgstr "已取消"
-
-#~ msgctxt "destination"
-#~ msgid "To:"
-#~ msgstr "目的地："
-
-#~ msgid "Availability unknown"
-#~ msgstr "可用性未知"
-
-#~ msgid "Not available"
-#~ msgstr "不可用"
-
-#~ msgid "Currently not available"
-#~ msgstr "当前不可用"
-
-#~ msgid "One space"
-#~ msgid_plural "%1 spaces"
-#~ msgstr[0] "%1 个空位"
