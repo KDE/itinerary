@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-06 00:43+0000\n"
+"POT-Creation-Date: 2025-06-09 00:43+0000\n"
 "PO-Revision-Date: 2025-05-26 09:27+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -1837,87 +1837,70 @@ msgctxt "flight arrival gate"
 msgid "%1 (arrival)"
 msgstr "%1 (chegada)"
 
-#: app/IndoorMapInfoSheet.qml:21 app/IndoorMapPage.qml:127
+#: app/IndoorMapInfoSheet.qml:21 app/IndoorMapPage.qml:126
 #, kde-format
 msgid "Edit with iD"
 msgstr "Editar con iD"
 
-#: app/IndoorMapInfoSheet.qml:27 app/IndoorMapPage.qml:133
+#: app/IndoorMapInfoSheet.qml:27 app/IndoorMapPage.qml:132
 #, kde-format
 msgid "Edit with JOSM"
 msgstr "Editar con JOSM"
 
-#: app/IndoorMapInfoSheet.qml:33 app/IndoorMapPage.qml:139
+#: app/IndoorMapInfoSheet.qml:33 app/IndoorMapPage.qml:138
 #, kde-format
 msgid "Edit with Vespucci"
 msgstr "Editar con Vespucci"
 
-#: app/IndoorMapPage.qml:26
+#: app/IndoorMapPage.qml:25
 #, kde-format
 msgid "Floor %1"
 msgstr "Planta %1"
 
-#: app/IndoorMapPage.qml:60
+#: app/IndoorMapPage.qml:59
 #, kde-format
 msgid "Zoom In"
 msgstr "Achegar"
 
-#: app/IndoorMapPage.qml:67
+#: app/IndoorMapPage.qml:66
 #, kde-format
 msgid "Zoom Out"
 msgstr "Afastar"
 
-#: app/IndoorMapPage.qml:75
+#: app/IndoorMapPage.qml:74
 #, kde-format
 msgid "Find Platform"
 msgstr "Atopar unha plataforma"
 
-#: app/IndoorMapPage.qml:82
+#: app/IndoorMapPage.qml:81
 #, kde-format
 msgid "Find Gate"
 msgstr "Atopar unha porta"
 
-#: app/IndoorMapPage.qml:89
+#: app/IndoorMapPage.qml:88
 #, kde-format
 msgid "Find Amenity"
 msgstr "Atopar un servizo"
 
-#: app/IndoorMapPage.qml:95
+#: app/IndoorMapPage.qml:94
 #, kde-format
 msgid "Show Elevator Status"
 msgstr "Amosar o estado do ascensor"
 
-#: app/IndoorMapPage.qml:104
+#: app/IndoorMapPage.qml:103
 #, kde-format
 msgid "Show Rental Vehicles"
 msgstr "Amosar os vehículos de alugamento"
 
-#: app/IndoorMapPage.qml:112
+#: app/IndoorMapPage.qml:111
 #, kde-format
 msgid "Open Map"
 msgstr "Abrir o mapa"
 
-#: app/IndoorMapPage.qml:118
+#: app/IndoorMapPage.qml:117
 #, kde-format
 msgid "Open wheelmap.org"
 msgstr "Abrir wheelmap.org"
-
-#: app/IndoorMapPage.qml:297
-#, kde-format
-msgid "Switched to floor %1"
-msgstr "Cambiouse á planta %1"
-
-#: app/IndoorMapPage.qml:344
-#, kde-format
-msgctxt "@action:intoolbar Go down one floor"
-msgid "Floor down"
-msgstr "Unha planta abaixo"
-
-#: app/IndoorMapPage.qml:353
-#, kde-format
-msgctxt "@action:intoolbar Go up one floor"
-msgid "Floor up"
-msgstr "Unha planta arriba"
 
 #: app/IndoorMapPlatformSheet.qml:21
 #, kde-format
@@ -4506,6 +4489,17 @@ msgstr "Saíu"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 de %3 a %4 o %5"
+
+#~ msgid "Switched to floor %1"
+#~ msgstr "Cambiouse á planta %1"
+
+#~ msgctxt "@action:intoolbar Go down one floor"
+#~ msgid "Floor down"
+#~ msgstr "Unha planta abaixo"
+
+#~ msgctxt "@action:intoolbar Go up one floor"
+#~ msgid "Floor up"
+#~ msgstr "Unha planta arriba"
 
 #, fuzzy
 #~| msgctxt "train coach feature"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-06 00:43+0000\n"
+"POT-Creation-Date: 2025-06-09 00:43+0000\n"
 "PO-Revision-Date: 2024-12-15 19:32+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
@@ -1867,87 +1867,70 @@ msgctxt "flight arrival gate"
 msgid "%1 (arrival)"
 msgstr "%1 (आगमन)"
 
-#: app/IndoorMapInfoSheet.qml:21 app/IndoorMapPage.qml:127
+#: app/IndoorMapInfoSheet.qml:21 app/IndoorMapPage.qml:126
 #, kde-format
 msgid "Edit with iD"
 msgstr "iD के साथ संपादित करें"
 
-#: app/IndoorMapInfoSheet.qml:27 app/IndoorMapPage.qml:133
+#: app/IndoorMapInfoSheet.qml:27 app/IndoorMapPage.qml:132
 #, kde-format
 msgid "Edit with JOSM"
 msgstr "JOSM के साथ संपादित करें"
 
-#: app/IndoorMapInfoSheet.qml:33 app/IndoorMapPage.qml:139
+#: app/IndoorMapInfoSheet.qml:33 app/IndoorMapPage.qml:138
 #, kde-format
 msgid "Edit with Vespucci"
 msgstr "वेस्पुची के साथ संपादन करें"
 
-#: app/IndoorMapPage.qml:26
+#: app/IndoorMapPage.qml:25
 #, kde-format
 msgid "Floor %1"
 msgstr "तल %1"
 
-#: app/IndoorMapPage.qml:60
+#: app/IndoorMapPage.qml:59
 #, kde-format
 msgid "Zoom In"
 msgstr "ज़ूम इन"
 
-#: app/IndoorMapPage.qml:67
+#: app/IndoorMapPage.qml:66
 #, kde-format
 msgid "Zoom Out"
 msgstr "ज़ूम आउट"
 
-#: app/IndoorMapPage.qml:75
+#: app/IndoorMapPage.qml:74
 #, kde-format
 msgid "Find Platform"
 msgstr "प्लेटफ़ॉर्म खोजें"
 
-#: app/IndoorMapPage.qml:82
+#: app/IndoorMapPage.qml:81
 #, kde-format
 msgid "Find Gate"
 msgstr "गेट खोजें"
 
-#: app/IndoorMapPage.qml:89
+#: app/IndoorMapPage.qml:88
 #, kde-format
 msgid "Find Amenity"
 msgstr "सुविधा खोजें"
 
-#: app/IndoorMapPage.qml:95
+#: app/IndoorMapPage.qml:94
 #, kde-format
 msgid "Show Elevator Status"
 msgstr "लिफ्ट की स्थिति दिखाएं"
 
-#: app/IndoorMapPage.qml:104
+#: app/IndoorMapPage.qml:103
 #, kde-format
 msgid "Show Rental Vehicles"
 msgstr "किराये के वाहन दिखाएं"
 
-#: app/IndoorMapPage.qml:112
+#: app/IndoorMapPage.qml:111
 #, kde-format
 msgid "Open Map"
 msgstr "मानचित्र खोलें"
 
-#: app/IndoorMapPage.qml:118
+#: app/IndoorMapPage.qml:117
 #, kde-format
 msgid "Open wheelmap.org"
 msgstr "wheelmap.org खोलें"
-
-#: app/IndoorMapPage.qml:297
-#, kde-format
-msgid "Switched to floor %1"
-msgstr "मंजिल %1 पर स्विच किया गया"
-
-#: app/IndoorMapPage.qml:344
-#, kde-format
-msgctxt "@action:intoolbar Go down one floor"
-msgid "Floor down"
-msgstr "मंजिल नीचे"
-
-#: app/IndoorMapPage.qml:353
-#, kde-format
-msgctxt "@action:intoolbar Go up one floor"
-msgid "Floor up"
-msgstr "मंजिल ऊपर"
 
 #: app/IndoorMapPlatformSheet.qml:21
 #, kde-format
@@ -4518,6 +4501,17 @@ msgstr "बाहर आ गये"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 %3 से %4 तक %5 पर"
+
+#~ msgid "Switched to floor %1"
+#~ msgstr "मंजिल %1 पर स्विच किया गया"
+
+#~ msgctxt "@action:intoolbar Go down one floor"
+#~ msgid "Floor down"
+#~ msgstr "मंजिल नीचे"
+
+#~ msgctxt "@action:intoolbar Go up one floor"
+#~ msgid "Floor up"
+#~ msgstr "मंजिल ऊपर"
 
 #, fuzzy
 #~| msgid "More information"
