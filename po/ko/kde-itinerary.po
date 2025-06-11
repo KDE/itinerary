@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-09 00:43+0000\n"
-"PO-Revision-Date: 2025-04-22 01:21+0200\n"
+"PO-Revision-Date: 2025-06-10 23:57+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -325,6 +325,8 @@ msgid ""
 "File was imported with a newer version of Itinerary. Some information might "
 "not be imported correctly."
 msgstr ""
+"새로운 정보의 KDE 여행 정보에서 파일을 가져왔습니다. 일부 정보가 올바르게 표"
+"시되지 않을 수도 있습니다."
 
 #: app/applicationcontroller.cpp:562
 #, kde-format
@@ -556,29 +558,25 @@ msgid "Edit Bus Reservation"
 msgstr "버스 예약 편집"
 
 #: app/BusEditor.qml:48 app/BusEditor.qml:109
-#, fuzzy, kde-format
-#| msgid "Change departure stop"
+#, kde-format
 msgctxt "bus departure"
 msgid "Change Departure Stop"
 msgstr "출발 정류장 변경"
 
 #: app/BusEditor.qml:54
-#, fuzzy, kde-format
-#| msgid "Change departure stop"
+#, kde-format
 msgctxt "bus departure"
 msgid "Change departure stop"
 msgstr "출발 정류장 변경"
 
 #: app/BusEditor.qml:64 app/BusEditor.qml:131
-#, fuzzy, kde-format
-#| msgid "Change arrival stop"
+#, kde-format
 msgctxt "bus arrival"
 msgid "Change Arrival Stop"
 msgstr "도착 정류장 변경"
 
 #: app/BusEditor.qml:70
-#, fuzzy, kde-format
-#| msgid "Change arrival stop"
+#, kde-format
 msgctxt "bus arrival"
 msgid "Change arrival stop"
 msgstr "도착 정류장 변경"
@@ -1550,10 +1548,9 @@ msgstr "이름"
 
 #: app/HealthCertificateRecovery.qml:43 app/HealthCertificateTest.qml:44
 #: app/HealthCertificateVaccination.qml:47
-#, fuzzy, kde-format
-#| msgid "Date of birth:"
+#, kde-format
 msgid "Date of birth"
-msgstr "생년월일:"
+msgstr "생년월일"
 
 #: app/HealthCertificateRecovery.qml:50
 #, kde-format
@@ -1562,10 +1559,9 @@ msgstr "완치"
 
 #: app/HealthCertificateRecovery.qml:62 app/HealthCertificateTest.qml:65
 #: app/HealthCertificateVaccination.qml:77
-#, fuzzy, kde-format
-#| msgid "Disease:"
+#, kde-format
 msgid "Disease"
-msgstr "질병:"
+msgstr "질병"
 
 #: app/HealthCertificateRecovery.qml:69 app/ProgramMembershipEditor.qml:97
 #: app/ProgramMembershipPage.qml:117 app/TicketPage.qml:92
@@ -1587,64 +1583,54 @@ msgstr "증명서"
 
 #: app/HealthCertificateRecovery.qml:87 app/HealthCertificateTest.qml:127
 #: app/HealthCertificateVaccination.qml:134
-#, fuzzy, kde-format
-#| msgid "Issuer:"
+#, kde-format
 msgid "Issuer"
-msgstr "발급자:"
+msgstr "발급자"
 
 #: app/HealthCertificateRecovery.qml:95 app/HealthCertificateTest.qml:135
 #: app/HealthCertificateVaccination.qml:142
-#, fuzzy, kde-format
-#| msgid "Identifier:"
+#, kde-format
 msgid "Identifier"
-msgstr "식별자:"
+msgstr "식별자"
 
 #: app/HealthCertificateRecovery.qml:104 app/HealthCertificateTest.qml:143
 #: app/HealthCertificateVaccination.qml:150
-#, fuzzy, kde-format
-#| msgid "Issued:"
+#, kde-format
 msgid "Issued"
-msgstr "발급 시간:"
+msgstr "발급 시간"
 
 #: app/HealthCertificateRecovery.qml:111 app/HealthCertificateTest.qml:151
 #: app/HealthCertificateVaccination.qml:158
-#, fuzzy, kde-format
-#| msgid "Expires:"
+#, kde-format
 msgid "Expires"
-msgstr "만료 시간:"
+msgstr "만료 시간"
 
 #: app/HealthCertificateRecovery.qml:131 app/HealthCertificateTest.qml:169
 #: app/HealthCertificateVaccination.qml:176
-#, fuzzy, kde-format
-#| msgid "Signature:"
+#, kde-format
 msgid "Signature"
-msgstr "서명:"
+msgstr "서명"
 
 #: app/HealthCertificateRecovery.qml:135 app/HealthCertificateTest.qml:173
 #: app/HealthCertificateVaccination.qml:180
-#, fuzzy, kde-format
-#| msgctxt "not yet expired tickets"
-#| msgid "Valid"
+#, kde-format
 msgctxt "Signature state"
 msgid "Valid"
 msgstr "유효함"
 
 #: app/HealthCertificateRecovery.qml:137 app/HealthCertificateTest.qml:175
 #: app/HealthCertificateVaccination.qml:182
-#, fuzzy, kde-format
-#| msgid "Unknown class"
+#, kde-format
 msgctxt "Signature state"
 msgid "Unknown"
-msgstr "알 수 없는 등급"
+msgstr "알 수 없음"
 
 #: app/HealthCertificateRecovery.qml:140 app/HealthCertificateTest.qml:178
 #: app/HealthCertificateVaccination.qml:185
-#, fuzzy, kde-format
-#| msgctxt "not yet expired tickets"
-#| msgid "Valid"
+#, kde-format
 msgctxt "Signature state"
 msgid "Invalid"
-msgstr "유효함"
+msgstr "잘못됨"
 
 #: app/HealthCertificateTest.qml:51 app/HealthCertificateTest.qml:79
 #, kde-format
@@ -1652,22 +1638,19 @@ msgid "Test"
 msgstr "검사"
 
 #: app/HealthCertificateTest.qml:56 app/HealthCertificateVaccination.qml:60
-#, fuzzy, kde-format
-#| msgid "Date:"
+#, kde-format
 msgid "Date"
-msgstr "날짜:"
+msgstr "날짜"
 
 #: app/HealthCertificateTest.qml:88
-#, fuzzy, kde-format
-#| msgid "Result:"
+#, kde-format
 msgid "Result"
-msgstr "결과:"
+msgstr "결과"
 
 #: app/HealthCertificateTest.qml:106
-#, fuzzy, kde-format
-#| msgid "Test Center:"
+#, kde-format
 msgid "Test Center"
-msgstr "검사 기관:"
+msgstr "검사 기관"
 
 #: app/HealthCertificateVaccination.qml:64
 #, kde-format
@@ -1676,22 +1659,19 @@ msgid_plural "%2 (%1 days ago)"
 msgstr[0] "%2(%1일 전)"
 
 #: app/HealthCertificateVaccination.qml:92
-#, fuzzy, kde-format
-#| msgid "Vaccine:"
+#, kde-format
 msgid "Vaccine"
-msgstr "백신:"
+msgstr "백신"
 
 #: app/HealthCertificateVaccination.qml:101
-#, fuzzy, kde-format
-#| msgid "Manufacturer:"
+#, kde-format
 msgid "Manufacturer"
-msgstr "제조사:"
+msgstr "제조사"
 
 #: app/HealthCertificateVaccination.qml:109
-#, fuzzy, kde-format
-#| msgid "Dose:"
+#, kde-format
 msgid "Dose"
-msgstr "접종 차수:"
+msgstr "접종 차수"
 
 #: app/HealthCertificateVaccination.qml:110
 #, kde-format
@@ -1991,10 +1971,9 @@ msgid "Load earlier connections"
 msgstr "이전 연결 불러오기"
 
 #: app/JourneyQueryPage.qml:154
-#, fuzzy, kde-format
-#| msgid "No locations found"
+#, kde-format
 msgid "No journeys found."
-msgstr "위치를 찾을 수 없음"
+msgstr "여정을 찾을 수 없습니다."
 
 #: app/JourneyQueryPage.qml:181
 #, kde-format
@@ -2234,37 +2213,37 @@ msgstr "Matrix로 위치 공유"
 #, kde-format
 msgctxt "map style"
 msgid "Normal map"
-msgstr ""
+msgstr "일반 지도"
 
 #: app/LiveStatusPage.qml:74
 #, kde-format
 msgctxt "map style"
 msgid "Railway infrastructure map"
-msgstr ""
+msgstr "철도 시설 지도"
 
 #: app/LiveStatusPage.qml:83
 #, kde-format
 msgctxt "map style"
 msgid "Railway signalling map"
-msgstr ""
+msgstr "철도 신호 지도"
 
 #: app/LiveStatusPage.qml:92
 #, kde-format
 msgctxt "map style"
 msgid "Railway speed map"
-msgstr ""
+msgstr "최고 속도 지도"
 
 #: app/LiveStatusPage.qml:101
 #, kde-format
 msgctxt "map style"
 msgid "Railway electrification map"
-msgstr ""
+msgstr "전철화 지도"
 
 #: app/LiveStatusPage.qml:110
 #, kde-format
 msgctxt "map style"
 msgid "Railway gauge map"
-msgstr ""
+msgstr "궤간 지도"
 
 #: app/LiveStatusPage.qml:151
 #, kde-format
@@ -3671,7 +3650,7 @@ msgstr "합계"
 #, kde-format
 msgctxt "@info:placeholder no visited country"
 msgid "None"
-msgstr ""
+msgstr "없음"
 
 #: app/StatisticsPage.qml:121 app/TrainEditor.qml:94
 #, kde-format
@@ -3684,8 +3663,7 @@ msgid "Car"
 msgstr "자동차"
 
 #: app/StopoverFormDelegate.qml:93
-#, fuzzy, kde-format
-#| msgid "From: %1"
+#, kde-format
 msgctxt "departure stop"
 msgid "From %1"
 msgstr "시점: %1"
@@ -3828,29 +3806,25 @@ msgid "Edit Train Reservation"
 msgstr "기차 예약 편집"
 
 #: app/TrainEditor.qml:52 app/TrainEditor.qml:117
-#, fuzzy, kde-format
-#| msgid "Change departure station"
+#, kde-format
 msgctxt "train departure"
 msgid "Change Departure Station"
 msgstr "출발 역 변경"
 
 #: app/TrainEditor.qml:58
-#, fuzzy, kde-format
-#| msgid "Change departure station"
+#, kde-format
 msgctxt "train departure"
 msgid "Change departure station"
 msgstr "출발 역 변경"
 
 #: app/TrainEditor.qml:68 app/TrainEditor.qml:142
-#, fuzzy, kde-format
-#| msgid "Change arrival station"
+#, kde-format
 msgctxt "train arrival"
 msgid "Change Arrival Station"
 msgstr "도착 역 변경"
 
 #: app/TrainEditor.qml:74
-#, fuzzy, kde-format
-#| msgid "Change arrival station"
+#, kde-format
 msgctxt "train arrival"
 msgid "Change arrival station"
 msgstr "도착 역 변경"
