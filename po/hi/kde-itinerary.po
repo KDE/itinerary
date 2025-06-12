@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-09 00:43+0000\n"
+"POT-Creation-Date: 2025-06-12 00:42+0000\n"
 "PO-Revision-Date: 2024-12-15 19:32+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
@@ -1956,31 +1956,6 @@ msgctxt "train arrival platform"
 msgid "%1 (arrival)"
 msgstr "%1 (आगमन)"
 
-#: app/IndoorMapPlatformSheet.qml:81
-#, kde-format
-msgid "Railway"
-msgstr "रेलवे"
-
-#: app/IndoorMapPlatformSheet.qml:82
-#, kde-format
-msgid "Light Rail"
-msgstr "ट्राम की भांति हल्की रेल"
-
-#: app/IndoorMapPlatformSheet.qml:83
-#, kde-format
-msgid "Subway"
-msgstr "सबवे"
-
-#: app/IndoorMapPlatformSheet.qml:84
-#, kde-format
-msgid "Tramway"
-msgstr "ट्रामवे"
-
-#: app/IndoorMapPlatformSheet.qml:85 app/StatisticsPage.qml:135
-#, kde-format
-msgid "Bus"
-msgstr "बस"
-
 #: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:355
 #, kde-format
 msgctxt "@action:button"
@@ -3719,6 +3694,11 @@ msgstr ""
 msgid "Train"
 msgstr "रेलगाड़ी"
 
+#: app/StatisticsPage.qml:135
+#, kde-format
+msgid "Bus"
+msgstr "बस"
+
 #: app/StatisticsPage.qml:163
 #, kde-format
 msgid "Car"
@@ -4501,6 +4481,18 @@ msgstr "बाहर आ गये"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 %3 से %4 तक %5 पर"
+
+#~ msgid "Railway"
+#~ msgstr "रेलवे"
+
+#~ msgid "Light Rail"
+#~ msgstr "ट्राम की भांति हल्की रेल"
+
+#~ msgid "Subway"
+#~ msgstr "सबवे"
+
+#~ msgid "Tramway"
+#~ msgstr "ट्रामवे"
 
 #~ msgid "Switched to floor %1"
 #~ msgstr "मंजिल %1 पर स्विच किया गया"

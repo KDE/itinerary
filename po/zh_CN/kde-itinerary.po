@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-09 00:43+0000\n"
+"POT-Creation-Date: 2025-06-12 00:42+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -1911,31 +1911,6 @@ msgctxt "train arrival platform"
 msgid "%1 (arrival)"
 msgstr "%1 号登机口 (到达)"
 
-#: app/IndoorMapPlatformSheet.qml:81
-#, kde-format
-msgid "Railway"
-msgstr "铁路"
-
-#: app/IndoorMapPlatformSheet.qml:82
-#, kde-format
-msgid "Light Rail"
-msgstr "轻轨"
-
-#: app/IndoorMapPlatformSheet.qml:83
-#, kde-format
-msgid "Subway"
-msgstr "地铁"
-
-#: app/IndoorMapPlatformSheet.qml:84
-#, kde-format
-msgid "Tramway"
-msgstr "有轨电车"
-
-#: app/IndoorMapPlatformSheet.qml:85 app/StatisticsPage.qml:135
-#, kde-format
-msgid "Bus"
-msgstr "公共汽车"
-
 #: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:355
 #, kde-format
 msgctxt "@action:button"
@@ -3644,6 +3619,11 @@ msgstr ""
 msgid "Train"
 msgstr ""
 
+#: app/StatisticsPage.qml:135
+#, kde-format
+msgid "Bus"
+msgstr "公共汽车"
+
 #: app/StatisticsPage.qml:163
 #, kde-format
 msgid "Car"
@@ -4414,3 +4394,15 @@ msgstr "已登出"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr ""
+
+#~ msgid "Railway"
+#~ msgstr "铁路"
+
+#~ msgid "Light Rail"
+#~ msgstr "轻轨"
+
+#~ msgid "Subway"
+#~ msgstr "地铁"
+
+#~ msgid "Tramway"
+#~ msgstr "有轨电车"

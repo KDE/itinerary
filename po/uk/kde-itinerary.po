@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-09 00:43+0000\n"
+"POT-Creation-Date: 2025-06-12 00:42+0000\n"
 "PO-Revision-Date: 2025-06-01 12:13+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -1939,31 +1939,6 @@ msgctxt "train arrival platform"
 msgid "%1 (arrival)"
 msgstr "%1 (прибуття)"
 
-#: app/IndoorMapPlatformSheet.qml:81
-#, kde-format
-msgid "Railway"
-msgstr "Залізниця"
-
-#: app/IndoorMapPlatformSheet.qml:82
-#, kde-format
-msgid "Light Rail"
-msgstr "Легка колія"
-
-#: app/IndoorMapPlatformSheet.qml:83
-#, kde-format
-msgid "Subway"
-msgstr "Метро"
-
-#: app/IndoorMapPlatformSheet.qml:84
-#, kde-format
-msgid "Tramway"
-msgstr "Трамвай"
-
-#: app/IndoorMapPlatformSheet.qml:85 app/StatisticsPage.qml:135
-#, kde-format
-msgid "Bus"
-msgstr "Автобус"
-
 #: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:355
 #, kde-format
 msgctxt "@action:button"
@@ -3724,6 +3699,11 @@ msgstr "Немає"
 msgid "Train"
 msgstr "Залізниця"
 
+#: app/StatisticsPage.qml:135
+#, kde-format
+msgid "Bus"
+msgstr "Автобус"
+
 #: app/StatisticsPage.qml:163
 #, kde-format
 msgid "Car"
@@ -4506,6 +4486,18 @@ msgstr "Вийшли"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 з %3 до %4 %5"
+
+#~ msgid "Railway"
+#~ msgstr "Залізниця"
+
+#~ msgid "Light Rail"
+#~ msgstr "Легка колія"
+
+#~ msgid "Subway"
+#~ msgstr "Метро"
+
+#~ msgid "Tramway"
+#~ msgstr "Трамвай"
 
 #~ msgid "Switched to floor %1"
 #~ msgstr "Перемкнути на поверх %1"

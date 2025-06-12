@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-09 00:43+0000\n"
+"POT-Creation-Date: 2025-06-12 00:42+0000\n"
 "PO-Revision-Date: 2025-02-27 20:24-0300\n"
 "Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -2083,31 +2083,6 @@ msgctxt "train arrival platform"
 msgid "%1 (arrival)"
 msgstr "%1 (chegada)"
 
-#: app/IndoorMapPlatformSheet.qml:81
-#, kde-format
-msgid "Railway"
-msgstr "Ferrovia"
-
-#: app/IndoorMapPlatformSheet.qml:82
-#, kde-format
-msgid "Light Rail"
-msgstr "Ferrovia leve"
-
-#: app/IndoorMapPlatformSheet.qml:83
-#, kde-format
-msgid "Subway"
-msgstr "Metrô"
-
-#: app/IndoorMapPlatformSheet.qml:84
-#, kde-format
-msgid "Tramway"
-msgstr "Teleférico"
-
-#: app/IndoorMapPlatformSheet.qml:85 app/StatisticsPage.qml:135
-#, kde-format
-msgid "Bus"
-msgstr "Ônibus"
-
 #: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:355
 #, fuzzy, kde-format
 #| msgid "Show"
@@ -3911,6 +3886,11 @@ msgstr ""
 msgid "Train"
 msgstr "Trens"
 
+#: app/StatisticsPage.qml:135
+#, kde-format
+msgid "Bus"
+msgstr "Ônibus"
+
 #: app/StatisticsPage.qml:163
 #, kde-format
 msgid "Car"
@@ -4752,6 +4732,18 @@ msgstr ""
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 de %3 para %4 em %5"
+
+#~ msgid "Railway"
+#~ msgstr "Ferrovia"
+
+#~ msgid "Light Rail"
+#~ msgstr "Ferrovia leve"
+
+#~ msgid "Subway"
+#~ msgstr "Metrô"
+
+#~ msgid "Tramway"
+#~ msgstr "Teleférico"
 
 #~ msgid "Switched to floor %1"
 #~ msgstr "Mudou para o andar %1"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-09 00:43+0000\n"
+"POT-Creation-Date: 2025-06-12 00:42+0000\n"
 "PO-Revision-Date: 2025-06-10 23:57+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1918,31 +1918,6 @@ msgctxt "train arrival platform"
 msgid "%1 (arrival)"
 msgstr "%1(도착)"
 
-#: app/IndoorMapPlatformSheet.qml:81
-#, kde-format
-msgid "Railway"
-msgstr "철도"
-
-#: app/IndoorMapPlatformSheet.qml:82
-#, kde-format
-msgid "Light Rail"
-msgstr "경전철"
-
-#: app/IndoorMapPlatformSheet.qml:83
-#, kde-format
-msgid "Subway"
-msgstr "도시 철도"
-
-#: app/IndoorMapPlatformSheet.qml:84
-#, kde-format
-msgid "Tramway"
-msgstr "노면 전차"
-
-#: app/IndoorMapPlatformSheet.qml:85 app/StatisticsPage.qml:135
-#, kde-format
-msgid "Bus"
-msgstr "버스"
-
 #: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:355
 #, kde-format
 msgctxt "@action:button"
@@ -3657,6 +3632,11 @@ msgstr "없음"
 msgid "Train"
 msgstr "기차"
 
+#: app/StatisticsPage.qml:135
+#, kde-format
+msgid "Bus"
+msgstr "버스"
+
 #: app/StatisticsPage.qml:163
 #, kde-format
 msgid "Car"
@@ -4428,6 +4408,18 @@ msgstr "로그아웃함"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%5에 %3에서 %4(으)로 가는 %1%2|/|%5에 %3에서 %4$[으 %4]로 가는 %1%2"
+
+#~ msgid "Railway"
+#~ msgstr "철도"
+
+#~ msgid "Light Rail"
+#~ msgstr "경전철"
+
+#~ msgid "Subway"
+#~ msgstr "도시 철도"
+
+#~ msgid "Tramway"
+#~ msgstr "노면 전차"
 
 #~ msgid "Switched to floor %1"
 #~ msgstr "%1층으로 전환됨"

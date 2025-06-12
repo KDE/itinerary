@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-09 00:43+0000\n"
+"POT-Creation-Date: 2025-06-12 00:42+0000\n"
 "PO-Revision-Date: 2025-05-29 21:22+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -1931,31 +1931,6 @@ msgctxt "train arrival platform"
 msgid "%1 (arrival)"
 msgstr "%1 (iritsiera)"
 
-#: app/IndoorMapPlatformSheet.qml:81
-#, kde-format
-msgid "Railway"
-msgstr "Trenbidea"
-
-#: app/IndoorMapPlatformSheet.qml:82
-#, kde-format
-msgid "Light Rail"
-msgstr "Tren arina"
-
-#: app/IndoorMapPlatformSheet.qml:83
-#, kde-format
-msgid "Subway"
-msgstr "Metroa"
-
-#: app/IndoorMapPlatformSheet.qml:84
-#, kde-format
-msgid "Tramway"
-msgstr "Tranbia"
-
-#: app/IndoorMapPlatformSheet.qml:85 app/StatisticsPage.qml:135
-#, kde-format
-msgid "Bus"
-msgstr "Autobusa"
-
 #: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:355
 #, kde-format
 msgctxt "@action:button"
@@ -3709,6 +3684,11 @@ msgstr "Bat ere ez"
 msgid "Train"
 msgstr "Trena"
 
+#: app/StatisticsPage.qml:135
+#, kde-format
+msgid "Bus"
+msgstr "Autobusa"
+
 #: app/StatisticsPage.qml:163
 #, kde-format
 msgid "Car"
@@ -4487,6 +4467,18 @@ msgstr "Saiotik aterata"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 %3(e)tik %4(e)ra %5(e)an"
+
+#~ msgid "Railway"
+#~ msgstr "Trenbidea"
+
+#~ msgid "Light Rail"
+#~ msgstr "Tren arina"
+
+#~ msgid "Subway"
+#~ msgstr "Metroa"
+
+#~ msgid "Tramway"
+#~ msgstr "Tranbia"
 
 #~ msgid "Switched to floor %1"
 #~ msgstr "%1. solairura aldatu da"

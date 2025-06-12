@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-09 00:43+0000\n"
+"POT-Creation-Date: 2025-06-12 00:42+0000\n"
 "PO-Revision-Date: 2025-04-01 10:26+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -1961,31 +1961,6 @@ msgctxt "train arrival platform"
 msgid "%1 (arrival)"
 msgstr "%1 (прибытие)"
 
-#: app/IndoorMapPlatformSheet.qml:81
-#, kde-format
-msgid "Railway"
-msgstr "Железная дорога"
-
-#: app/IndoorMapPlatformSheet.qml:82
-#, kde-format
-msgid "Light Rail"
-msgstr "Легкорельсовый транспорт"
-
-#: app/IndoorMapPlatformSheet.qml:83
-#, kde-format
-msgid "Subway"
-msgstr "Метро"
-
-#: app/IndoorMapPlatformSheet.qml:84
-#, kde-format
-msgid "Tramway"
-msgstr "Трамвай"
-
-#: app/IndoorMapPlatformSheet.qml:85 app/StatisticsPage.qml:135
-#, kde-format
-msgid "Bus"
-msgstr "Автобус"
-
 #: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:355
 #, kde-format
 msgctxt "@action:button"
@@ -3734,6 +3709,11 @@ msgstr ""
 msgid "Train"
 msgstr "Железная дорога"
 
+#: app/StatisticsPage.qml:135
+#, kde-format
+msgid "Bus"
+msgstr "Автобус"
+
 #: app/StatisticsPage.qml:163
 #, kde-format
 msgid "Car"
@@ -4520,6 +4500,18 @@ msgstr "Выполнен выход"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 из %3 в %4 %5"
+
+#~ msgid "Railway"
+#~ msgstr "Железная дорога"
+
+#~ msgid "Light Rail"
+#~ msgstr "Легкорельсовый транспорт"
+
+#~ msgid "Subway"
+#~ msgstr "Метро"
+
+#~ msgid "Tramway"
+#~ msgstr "Трамвай"
 
 #~ msgid "Switched to floor %1"
 #~ msgstr "Выполнено переключение на этаж %1"
