@@ -5,18 +5,18 @@
 */
 
 import QtQuick
-import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kpublictransport as PublicTransport
 import org.kde.kpublictransport.ui as PublicTransport
-import org.kde.kosmindoormap
-import org.kde.itinerary
+import org.kde.kosmindoormap as KOSM
 
 Kirigami.Dialog {
-    id: platformSheet
+    id: root
 
-    property var model
+    property KOSM.PlatformModel model
+
+    signal platformSelected(platform: KOSM.platform)
 
     title: i18nc("@title", "Find Platform")
 
@@ -24,64 +24,64 @@ Kirigami.Dialog {
     height: Math.min(applicationWindow().height, Kirigami.Units.gridUnit * 32)
 
     contentItem: ListView {
-        model: platformSheet.model
+        model: root.model
         clip: true
 
-        Component {
-            id: platformDelegate
-            QQC2.ItemDelegate {
-                property var platform: model
-                width: ListView.view.width
-                contentItem: Row {
-                    spacing: Kirigami.Units.smallSpacing
-                    QQC2.Label {
-                        id: label
-                        text: {
-                            if (platform.isDeparturePlatform && platform.isArrivalPlatform)
-                                return i18nc("train arrival/departure platform", "%1 (arrival/departure)", platform.display);
-                            if (platform.isDeparturePlatform)
-                                return i18nc("train departure platform", "%1 (departure)", platform.display);
-                            if (platform.isArrivalPlatform)
-                                return i18nc("train arrival platform", "%1 (arrival)", platform.display);
-                            return platform.display
-                        }
-                    }
+        delegate: QQC2.ItemDelegate {
+            id: delegateRoot
+            required property KOSM.platform platform
+            required property bool isDeparturePlatform
+            required property bool isArrivalPlatform
 
-                    Repeater {
-                        model: platform.lines
-                        delegate: PublicTransport.TransportIcon {
-                            iconHeight: Kirigami.Units.iconSizes.small
-                            anchors.verticalCenter: label.verticalCenter
-                            visible: source != ""
-                            source: {
-                                switch (platform.mode) {
-                                    case Platform.Rail:
-                                        return PublicTransport.LineMetaData.lookup(modelData, platform.coordinate.y, platform.coordinate.x, PublicTransport.Line.Train, true).logo;
-                                    case Platform.Tram:
-                                        return PublicTransport.LineMetaData.lookup(modelData, platform.coordinate.y, platform.coordinate.x, PublicTransport.Line.Tramway, true).logo;
-                                    case Platform.Subway:
-                                        return PublicTransport.LineMetaData.lookup(modelData, platform.coordinate.y, platform.coordinate.x, PublicTransport.Line.Metro, true).logo;
-                                }
-                                return "";
+            width: ListView.view.width
+            contentItem: Row {
+                spacing: Kirigami.Units.smallSpacing
+                QQC2.Label {
+                    id: label
+                    text: {
+                        if (delegateRoot.isDeparturePlatform && delegateRoot.isArrivalPlatform)
+                            return i18nc("train arrival/departure platform", "%1 (arrival/departure)", delegateRoot.platform.name);
+                        if (delegateRoot.isDeparturePlatform)
+                            return i18nc("train departure platform", "%1 (departure)", delegateRoot.platform.name);
+                        if (delegateRoot.isArrivalPlatform)
+                            return i18nc("train arrival platform", "%1 (arrival)", delegateRoot.platform.name);
+                        return delegateRoot.platform.name
+                    }
+                }
+
+                Repeater {
+                    model: delegateRoot.platform.lines
+                    delegate: PublicTransport.TransportIcon {
+                        required property string modelData
+                        iconHeight: Kirigami.Units.iconSizes.small
+                        anchors.verticalCenter: label.verticalCenter
+                        visible: source != ""
+                        source: {
+                            switch (delegateRoot.platform.mode) {
+                                case KOSM.Platform.Rail:
+                                    return PublicTransport.LineMetaData.lookup(modelData, delegateRoot.platform.position.y, delegateRoot.platform.position.x, PublicTransport.Line.Train, true).logo;
+                                case KOSM.Platform.Tram:
+                                    return PublicTransport.LineMetaData.lookup(modelData, delegateRoot.platform.position.y, delegateRoot.platform.position.x, PublicTransport.Line.Tramway, true).logo;
+                                case KOSM.Platform.Subway:
+                                    return PublicTransport.LineMetaData.lookup(modelData, delegateRoot.platform.position.y, delegateRoot.platform.position.x, PublicTransport.Line.Metro, true).logo;
                             }
+                            return "";
                         }
                     }
                 }
-                highlighted: false
-                onClicked: {
-                    map.view.centerOn(model.coordinate, model.level, 19);
-                    platformSheet.close();
-                }
+            }
+            highlighted: false
+            onClicked: {
+                root.platformSelected(delegateRoot.platform);
+                root.close();
             }
         }
 
         section.property: "mode"
         section.delegate: Kirigami.ListSectionHeader {
-            text: PlatformUtil.modeName(parseInt(section))
+            text: KOSM.PlatformUtil.modeName(parseInt(section))
             width: ListView.view.width
         }
         section.criteria: ViewSection.FullString
-
-        delegate: platformDelegate
     }
 }

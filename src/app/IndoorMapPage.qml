@@ -185,6 +185,7 @@ Kirigami.Page {
         id: platformSheet
         model: platformModel
         parent: root.overlay
+        onPlatformSelected: (platform) => { map.view.centerOn(platform.position, platform.level, 19); }
     }
 
     GateModel {
