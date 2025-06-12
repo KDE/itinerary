@@ -219,12 +219,6 @@ Kirigami.Page {
         mapData: map.mapData
     }
 
-    RealtimeEquipmentModel {
-        id: equipmentModel
-        mapData: map.mapData
-        realtimeModel: locationModel.sourceModel
-    }
-
     AmenitySearchDialog {
         id: amenitySheet
         amenityModel: AmenityModel {
@@ -251,7 +245,13 @@ Kirigami.Page {
     IndoorMapView {
         id: map
         anchors.fill: parent
-        overlaySources: [ gateModel, platformModel, locationModel, equipmentModel ]
+
+        equipmentModel: RealtimeEquipmentModel {
+            mapData: map.mapData
+            realtimeModel: locationModel.sourceModel
+        }
+
+        overlaySources: [ gateModel, platformModel, locationModel, map.equipmentModel ]
 
         elementInfoModel {
             allowOnlineContent: Settings.wikimediaOnlineContentEnabled
