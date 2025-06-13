@@ -181,7 +181,7 @@ Kirigami.Page {
         }
     }
 
-    IndoorMapPlatformSheet {
+    PlatformDialog {
         id: platformSheet
         model: platformModel
         parent: root.overlay

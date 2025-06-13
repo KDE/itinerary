@@ -181,7 +181,6 @@ ecm_add_qml_module(itinerary-app URI org.kde.itinerary NO_PLUGIN QML_FILES
     IndoorMapGateSheet.qml
     IndoorMapInfoSheet.qml
     IndoorMapPage.qml
-    IndoorMapPlatformSheet.qml
     IntermediateStopSelector.qml
     JourneyDelegateHeader.qml
     JourneyPathPage.qml
