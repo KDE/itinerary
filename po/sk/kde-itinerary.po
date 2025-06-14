@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-12 00:42+0000\n"
+"POT-Creation-Date: 2025-06-14 00:42+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -2062,20 +2062,20 @@ msgctxt "@title"
 msgid "Find Platform"
 msgstr "Nájsť nástupište"
 
-#: app/IndoorMapPlatformSheet.qml:41
+#: app/IndoorMapPlatformSheet.qml:43
 #, fuzzy, kde-format
 #| msgid "Departure"
 msgctxt "train arrival/departure platform"
 msgid "%1 (arrival/departure)"
 msgstr "Odchod"
 
-#: app/IndoorMapPlatformSheet.qml:43
+#: app/IndoorMapPlatformSheet.qml:45
 #, kde-format
 msgctxt "train departure platform"
 msgid "%1 (departure)"
 msgstr "%1 (odchod)"
 
-#: app/IndoorMapPlatformSheet.qml:45
+#: app/IndoorMapPlatformSheet.qml:47
 #, kde-format
 msgctxt "train arrival platform"
 msgid "%1 (arrival)"
