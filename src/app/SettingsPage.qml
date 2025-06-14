@@ -23,6 +23,7 @@ FormCard.FormCardPage {
         id: ptBackendPage
         KPublicTransport.BackendPage {
             publicTransportManager: LiveDataManager.publicTransportManager
+            actions: [ onlineUpdateAction ]
         }
     }
 
