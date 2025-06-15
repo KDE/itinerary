@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-14 00:42+0000\n"
+"POT-Creation-Date: 2025-06-15 00:43+0000\n"
 "PO-Revision-Date: 2024-12-15 19:32+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
@@ -1932,30 +1932,6 @@ msgstr "मानचित्र खोलें"
 msgid "Open wheelmap.org"
 msgstr "wheelmap.org खोलें"
 
-#: app/IndoorMapPlatformSheet.qml:21
-#, kde-format
-msgctxt "@title"
-msgid "Find Platform"
-msgstr "प्लेटफ़ॉर्म खोजें"
-
-#: app/IndoorMapPlatformSheet.qml:43
-#, kde-format
-msgctxt "train arrival/departure platform"
-msgid "%1 (arrival/departure)"
-msgstr "%1 (आगमन/प्रस्थान)"
-
-#: app/IndoorMapPlatformSheet.qml:45
-#, kde-format
-msgctxt "train departure platform"
-msgid "%1 (departure)"
-msgstr "%1 (प्रस्थान)"
-
-#: app/IndoorMapPlatformSheet.qml:47
-#, kde-format
-msgctxt "train arrival platform"
-msgid "%1 (arrival)"
-msgstr "%1 (आगमन)"
-
 #: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:355
 #, kde-format
 msgctxt "@action:button"
@@ -3297,35 +3273,35 @@ msgstr "पार्टी साइज"
 msgid "Settings"
 msgstr "सेटिंग्स"
 
-#: app/SettingsPage.qml:30
+#: app/SettingsPage.qml:31
 #, fuzzy, kde-format
 #| msgid "Location"
 msgid "Localization"
 msgstr "जगह"
 
-#: app/SettingsPage.qml:39
+#: app/SettingsPage.qml:40
 #, kde-format
 msgid "Use metric units"
 msgstr ""
 
-#: app/SettingsPage.qml:40
+#: app/SettingsPage.qml:41
 #, kde-format
 msgid ""
 "Use metric units for distance and temperature values regardless of the "
 "platform region settings."
 msgstr ""
 
-#: app/SettingsPage.qml:49
+#: app/SettingsPage.qml:50
 #, kde-format
 msgid "Online Services"
 msgstr "ऑनलाइन सेवाओं"
 
-#: app/SettingsPage.qml:53
+#: app/SettingsPage.qml:54
 #, kde-format
 msgid "Query Traffic Data"
 msgstr "ट्रैफ़िक डेटा क्वेरी करें"
 
-#: app/SettingsPage.qml:56
+#: app/SettingsPage.qml:57
 #, kde-format
 msgid ""
 "When enabled, this will query transport provider online services for changes "
@@ -3334,12 +3310,12 @@ msgstr ""
 "सक्षम होने पर, यह परिवहन प्रदाता ऑनलाइन सेवाओं से विलंब या गेट और प्लेटफार्म में परिवर्तन "
 "जैसे परिवर्तनों के बारे में पूछताछ करेगा।"
 
-#: app/SettingsPage.qml:62
+#: app/SettingsPage.qml:63
 #, kde-format
 msgid "Use insecure services"
 msgstr "असुरक्षित सेवाओं का उपयोग करें"
 
-#: app/SettingsPage.qml:65
+#: app/SettingsPage.qml:66
 #, kde-format
 msgid ""
 "Enabling this will also use online services that do not offer transport "
@@ -3350,23 +3326,23 @@ msgstr ""
 "करते हैं। यह अनुशंसित नहीं है, लेकिन कुछ प्रदाताओं से लाइव डेटा पर निर्भर होने पर यह "
 "अपरिहार्य हो सकता है।"
 
-#: app/SettingsPage.qml:73
+#: app/SettingsPage.qml:74
 #, kde-format
 msgid "Public Transport Information Sources…"
 msgstr "सार्वजनिक परिवहन सूचना स्रोत…"
 
-#: app/SettingsPage.qml:82 app/WeatherForecastDelegate.qml:80
+#: app/SettingsPage.qml:83 app/WeatherForecastDelegate.qml:80
 #: app/WeatherForecastPage.qml:19
 #, kde-format
 msgid "Weather Forecast"
 msgstr "मौसम पूर्वानुमान"
 
-#: app/SettingsPage.qml:85
+#: app/SettingsPage.qml:86
 #, kde-format
 msgid "Showing weather forecasts will query online services."
 msgstr "मौसम पूर्वानुमान दिखाने से ऑनलाइन सेवाओं पर प्रश्न उठेंगे।"
 
-#: app/SettingsPage.qml:90 app/WeatherForecastPage.qml:36
+#: app/SettingsPage.qml:91 app/WeatherForecastPage.qml:36
 #, kde-format
 msgid ""
 "Using data from <a href=\"https://www.met.no/\">The Norwegian Meteorological "
@@ -3377,12 +3353,12 @@ msgstr ""
 "इंटरनेशनल</a> लाइसेंस के तहत <a href=\"https://www.met.no/\">नॉर्वेजियन मौसम विज्ञान "
 "संस्थान</a> से डेटा का उपयोग किया गया है।"
 
-#: app/SettingsPage.qml:99
+#: app/SettingsPage.qml:100
 #, kde-format
 msgid "Preload Map Data"
 msgstr "मानचित्र डेटा प्रीलोड करें"
 
-#: app/SettingsPage.qml:102
+#: app/SettingsPage.qml:103
 #, kde-format
 msgid ""
 "Enabling this will download maps for all stations and airports for upcoming "
@@ -3391,12 +3367,12 @@ msgstr ""
 "इसे सक्षम करने पर वाईफाई नेटवर्क से कनेक्ट होने पर आगामी यात्राओं के लिए सभी स्टेशनों और "
 "हवाई अड्डों के मानचित्र डाउनलोड हो जाएंगे।"
 
-#: app/SettingsPage.qml:109
+#: app/SettingsPage.qml:110
 #, kde-format
 msgid "Currency Conversion"
 msgstr "मुद्रा रूपांतरण"
 
-#: app/SettingsPage.qml:112
+#: app/SettingsPage.qml:113
 #, kde-format
 msgid ""
 "Enabling this will perform online queries for exchange rates to currencies "
@@ -3405,32 +3381,32 @@ msgstr ""
 "इसे सक्षम करने से यात्रा स्थलों पर मुद्राओं की विनिमय दरों के लिए ऑनलाइन पूछताछ की जा "
 "सकेगी।"
 
-#: app/SettingsPage.qml:118
+#: app/SettingsPage.qml:119
 #, kde-format
 msgid "Wikimedia Online Content"
 msgstr "विकिमीडिया ऑनलाइन सामग्री"
 
-#: app/SettingsPage.qml:121
+#: app/SettingsPage.qml:122
 #, kde-format
 msgid "Use additional online content from Wikimedia and Wikidata."
 msgstr "विकिमीडिया और विकिडेटा से अतिरिक्त ऑनलाइन सामग्री का उपयोग करें।"
 
-#: app/SettingsPage.qml:128
+#: app/SettingsPage.qml:129
 #, kde-format
 msgid "Transfer Assistant"
 msgstr "स्थानांतरण सहायक"
 
-#: app/SettingsPage.qml:132
+#: app/SettingsPage.qml:133
 #, kde-format
 msgid "Automatically add transfers"
 msgstr "स्वचालित रूप से स्थानान्तरण जोड़ें"
 
-#: app/SettingsPage.qml:140
+#: app/SettingsPage.qml:141
 #, kde-format
 msgid "Automatically fill transfers"
 msgstr "स्थानान्तरण स्वचालित रूप से भरें"
 
-#: app/SettingsPage.qml:141
+#: app/SettingsPage.qml:142
 #, kde-format
 msgid ""
 "When enabled, this will query transport provider online services "
@@ -3439,148 +3415,148 @@ msgstr ""
 "सक्षम होने पर, यह स्थानांतरण जानकारी के लिए परिवहन प्रदाता ऑनलाइन सेवाओं से स्वचालित "
 "रूप से पूछताछ करेगा।"
 
-#: app/SettingsPage.qml:152
+#: app/SettingsPage.qml:153
 #, kde-format
 msgid "Notifications"
 msgstr "सूचनाएं"
 
-#: app/SettingsPage.qml:157
+#: app/SettingsPage.qml:158
 #, kde-format
 msgid "Configure Notifications…"
 msgstr "सूचनाएँ कॉन्फ़िगर करें…"
 
-#: app/SettingsPage.qml:166
+#: app/SettingsPage.qml:167
 #, kde-format
 msgid "Show notifications on lock screen"
 msgstr "लॉक स्क्रीन पर सूचनाएं दिखाएं"
 
-#: app/SettingsPage.qml:176 app/SettingsPage.qml:205
+#: app/SettingsPage.qml:177 app/SettingsPage.qml:206
 #, kde-format
 msgid "Request permissions…"
 msgstr "अनुमति का अनुरोध करें…"
 
-#: app/SettingsPage.qml:177
+#: app/SettingsPage.qml:178
 #, kde-format
 msgid "Additional permissions are required to show notifications."
 msgstr "सूचनाएं दिखाने के लिए अतिरिक्त अनुमतियों की आवश्यकता होती है."
 
-#: app/SettingsPage.qml:187
+#: app/SettingsPage.qml:188
 #, kde-format
 msgid "Notification permissions are available"
 msgstr "अधिसूचना अनुमतियाँ उपलब्ध हैं"
 
-#: app/SettingsPage.qml:188 app/SettingsPage.qml:230 app/SettingsPage.qml:308
+#: app/SettingsPage.qml:189 app/SettingsPage.qml:231 app/SettingsPage.qml:309
 #, kde-format
 msgid "No further action required."
 msgstr "आगे कोई कार्रवाई की आवश्यकता नहीं है."
 
-#: app/SettingsPage.qml:201
+#: app/SettingsPage.qml:202
 #, kde-format
 msgid "Onboard Status"
 msgstr "ऑनबोर्ड स्थिति"
 
-#: app/SettingsPage.qml:206
+#: app/SettingsPage.qml:207
 #, kde-format
 msgid "Additional permissions are required to access the Wi-Fi status."
 msgstr "वाई-फाई स्थिति तक पहुंचने के लिए अतिरिक्त अनुमतियों की आवश्यकता होती है।"
 
-#: app/SettingsPage.qml:217
+#: app/SettingsPage.qml:218
 #, kde-format
 msgid "Wi-Fi access for onboard information is available."
 msgstr "विमान में जानकारी के लिए वाई-फाई की सुविधा उपलब्ध है।"
 
-#: app/SettingsPage.qml:219
+#: app/SettingsPage.qml:220
 #, kde-format
 msgid "Wi-Fi is not enabled"
 msgstr "वाई-फाई सक्षम नहीं है"
 
-#: app/SettingsPage.qml:221
+#: app/SettingsPage.qml:222
 #, kde-format
 msgid "Location service is not enabled"
 msgstr "स्थान सेवा सक्षम नहीं है"
 
-#: app/SettingsPage.qml:223
+#: app/SettingsPage.qml:224
 #, kde-format
 msgid "Wi-Fi access is not available on this system"
 msgstr "इस सिस्टम पर वाई-फाई एक्सेस उपलब्ध नहीं है"
 
-#: app/SettingsPage.qml:232
+#: app/SettingsPage.qml:233
 #, kde-format
 msgid "Enable Wi-Fi on your system to access onboard information."
 msgstr "ऑनबोर्ड जानकारी तक पहुंचने के लिए अपने सिस्टम पर वाई-फाई सक्षम करें।"
 
-#: app/SettingsPage.qml:234
+#: app/SettingsPage.qml:235
 #, kde-format
 msgid ""
 "Enable the location service on your device to access onboard information."
 msgstr "ऑनबोर्ड जानकारी तक पहुंचने के लिए अपने डिवाइस पर स्थान सेवा सक्षम करें।"
 
-#: app/SettingsPage.qml:236
+#: app/SettingsPage.qml:237
 #, kde-format
 msgid ""
 "Onboard information are unfortunately not supported on your device at this "
 "time."
 msgstr "दुर्भाग्यवश इस समय आपके डिवाइस पर ऑनबोर्ड जानकारी समर्थित नहीं है।"
 
-#: app/SettingsPage.qml:268
+#: app/SettingsPage.qml:269
 #, kde-format
 msgid "Matrix Integration"
 msgstr "मैट्रिक्स एकीकरण"
 
-#: app/SettingsPage.qml:275 app/SettingsPage.qml:332
+#: app/SettingsPage.qml:276 app/SettingsPage.qml:333
 #, kde-format
 msgid "Logged in as %1"
 msgstr "%1 के रूप में लॉग इन किया गया"
 
-#: app/SettingsPage.qml:279
+#: app/SettingsPage.qml:280
 #, kde-format
 msgid "Synchronize rooms"
 msgstr "कमरों को सिंक्रनाइज़ करें"
 
-#: app/SettingsPage.qml:286
+#: app/SettingsPage.qml:287
 #, kde-format
 msgid "Matrix ID"
 msgstr "मैट्रिक्स आईडी"
 
-#: app/SettingsPage.qml:295
+#: app/SettingsPage.qml:296
 #, kde-format
 msgid "Password"
 msgstr "पासवर्ड"
 
-#: app/SettingsPage.qml:307
+#: app/SettingsPage.qml:308
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Session verified"
 msgstr "सत्र सत्यापित"
 
-#: app/SettingsPage.qml:307
+#: app/SettingsPage.qml:308
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Session not verified."
 msgstr "सत्र सत्यापित नहीं हुआ."
 
-#: app/SettingsPage.qml:308
+#: app/SettingsPage.qml:309
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Initiate session verification in your Matrix chat client."
 msgstr "अपने मैट्रिक्स चैट क्लाइंट में सत्र सत्यापन आरंभ करें।"
 
-#: app/SettingsPage.qml:315
+#: app/SettingsPage.qml:316
 #, kde-format
 msgid "Log out"
 msgstr "लॉग आउट"
 
-#: app/SettingsPage.qml:315
+#: app/SettingsPage.qml:316
 #, kde-format
 msgid "Log in"
 msgstr "लॉग इन करें"
 
-#: app/SettingsPage.qml:322
+#: app/SettingsPage.qml:323
 #, kde-format
 msgid "Traewelling Integration"
 msgstr "ट्रैवेलिंग एकीकरण"
 
-#: app/SettingsPage.qml:327
+#: app/SettingsPage.qml:328
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -3592,27 +3568,27 @@ msgstr ""
 "आप कहाँ हैं और आप अपनी सार्वजनिक परिवहन यात्राओं को कहाँ दर्ज कर सकते हैं। अधिक जानकारी "
 "के लिए, <a href=\"https://traewelling.de\">traewelling.de</a> पर जाएँ"
 
-#: app/SettingsPage.qml:335
+#: app/SettingsPage.qml:336
 #, kde-format
 msgid "Login"
 msgstr "लॉग इन करें"
 
-#: app/SettingsPage.qml:340
+#: app/SettingsPage.qml:341
 #, kde-format
 msgid "Logout"
 msgstr "लॉग आउट"
 
-#: app/SettingsPage.qml:347
+#: app/SettingsPage.qml:348
 #, kde-format
 msgid "Contributing"
 msgstr "योगदान"
 
-#: app/SettingsPage.qml:351
+#: app/SettingsPage.qml:352
 #, kde-format
 msgid "I contribute to OpenStreetMap"
 msgstr "मैं OpenStreetMap में योगदान देता हूँ"
 
-#: app/SettingsPage.qml:352
+#: app/SettingsPage.qml:353
 #, kde-format
 msgid "Enables OSM editing options."
 msgstr "OSM संपादन विकल्प सक्षम करता है."
@@ -4481,6 +4457,22 @@ msgstr "बाहर आ गये"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 %3 से %4 तक %5 पर"
+
+#~ msgctxt "@title"
+#~ msgid "Find Platform"
+#~ msgstr "प्लेटफ़ॉर्म खोजें"
+
+#~ msgctxt "train arrival/departure platform"
+#~ msgid "%1 (arrival/departure)"
+#~ msgstr "%1 (आगमन/प्रस्थान)"
+
+#~ msgctxt "train departure platform"
+#~ msgid "%1 (departure)"
+#~ msgstr "%1 (प्रस्थान)"
+
+#~ msgctxt "train arrival platform"
+#~ msgid "%1 (arrival)"
+#~ msgstr "%1 (आगमन)"
 
 #~ msgid "Railway"
 #~ msgstr "रेलवे"

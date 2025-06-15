@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-14 00:42+0000\n"
+"POT-Creation-Date: 2025-06-15 00:43+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -1887,30 +1887,6 @@ msgstr "打开地图"
 msgid "Open wheelmap.org"
 msgstr "打开 wheelmap.org"
 
-#: app/IndoorMapPlatformSheet.qml:21
-#, kde-format
-msgctxt "@title"
-msgid "Find Platform"
-msgstr "查找站台"
-
-#: app/IndoorMapPlatformSheet.qml:43
-#, kde-format
-msgctxt "train arrival/departure platform"
-msgid "%1 (arrival/departure)"
-msgstr "%1 号登机口 (到达/出发)"
-
-#: app/IndoorMapPlatformSheet.qml:45
-#, kde-format
-msgctxt "train departure platform"
-msgid "%1 (departure)"
-msgstr "%1 号登机口 (出发)"
-
-#: app/IndoorMapPlatformSheet.qml:47
-#, kde-format
-msgctxt "train arrival platform"
-msgid "%1 (arrival)"
-msgstr "%1 号登机口 (到达)"
-
 #: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:355
 #, kde-format
 msgctxt "@action:button"
@@ -3230,34 +3206,34 @@ msgstr ""
 msgid "Settings"
 msgstr "设置"
 
-#: app/SettingsPage.qml:30
+#: app/SettingsPage.qml:31
 #, kde-format
 msgid "Localization"
 msgstr "本地化"
 
-#: app/SettingsPage.qml:39
+#: app/SettingsPage.qml:40
 #, kde-format
 msgid "Use metric units"
 msgstr "使用公制单位"
 
-#: app/SettingsPage.qml:40
+#: app/SettingsPage.qml:41
 #, kde-format
 msgid ""
 "Use metric units for distance and temperature values regardless of the "
 "platform region settings."
 msgstr "忽略平台区域设置，始终使用公制单位表示距离和温度值。"
 
-#: app/SettingsPage.qml:49
+#: app/SettingsPage.qml:50
 #, kde-format
 msgid "Online Services"
 msgstr "在线服务"
 
-#: app/SettingsPage.qml:53
+#: app/SettingsPage.qml:54
 #, kde-format
 msgid "Query Traffic Data"
 msgstr "查询交通数据"
 
-#: app/SettingsPage.qml:56
+#: app/SettingsPage.qml:57
 #, kde-format
 msgid ""
 "When enabled, this will query transport provider online services for changes "
@@ -3266,12 +3242,12 @@ msgstr ""
 "启用后，将通过交通运输提供商查询行程或线路更改，如班次延误、登机口更改或站台"
 "更改。"
 
-#: app/SettingsPage.qml:62
+#: app/SettingsPage.qml:63
 #, kde-format
 msgid "Use insecure services"
 msgstr "使用未加密的服务"
 
-#: app/SettingsPage.qml:65
+#: app/SettingsPage.qml:66
 #, kde-format
 msgid ""
 "Enabling this will also use online services that do not offer transport "
@@ -3281,23 +3257,23 @@ msgstr ""
 "启用后将同时使用不提供数据传输加密的在线服务，请只在需要使用部分提供商的未加"
 "密实时数据启用。"
 
-#: app/SettingsPage.qml:73
+#: app/SettingsPage.qml:74
 #, kde-format
 msgid "Public Transport Information Sources…"
 msgstr "Public Transport 信息源..."
 
-#: app/SettingsPage.qml:82 app/WeatherForecastDelegate.qml:80
+#: app/SettingsPage.qml:83 app/WeatherForecastDelegate.qml:80
 #: app/WeatherForecastPage.qml:19
 #, kde-format
 msgid "Weather Forecast"
 msgstr "天气预报"
 
-#: app/SettingsPage.qml:85
+#: app/SettingsPage.qml:86
 #, kde-format
 msgid "Showing weather forecasts will query online services."
 msgstr "显示天气预报需要查询在线服务。"
 
-#: app/SettingsPage.qml:90 app/WeatherForecastPage.qml:36
+#: app/SettingsPage.qml:91 app/WeatherForecastPage.qml:36
 #, kde-format
 msgid ""
 "Using data from <a href=\"https://www.met.no/\">The Norwegian Meteorological "
@@ -3308,204 +3284,204 @@ msgstr ""
 "creativecommons.org/licenses/by/4.0\">Creative Commons 4.0 BY International</"
 "a> 协议授权提供的数据。"
 
-#: app/SettingsPage.qml:99
+#: app/SettingsPage.qml:100
 #, kde-format
 msgid "Preload Map Data"
 msgstr "预加载地图数据"
 
-#: app/SettingsPage.qml:102
+#: app/SettingsPage.qml:103
 #, kde-format
 msgid ""
 "Enabling this will download maps for all stations and airports for upcoming "
 "trips when connected to Wifi network."
 msgstr "启用后，在连接 Wi-Fi 时会提前下载后续旅程的站点地图和机场地图。"
 
-#: app/SettingsPage.qml:109
+#: app/SettingsPage.qml:110
 #, kde-format
 msgid "Currency Conversion"
 msgstr ""
 
-#: app/SettingsPage.qml:112
+#: app/SettingsPage.qml:113
 #, kde-format
 msgid ""
 "Enabling this will perform online queries for exchange rates to currencies "
 "at travel destinations."
 msgstr ""
 
-#: app/SettingsPage.qml:118
+#: app/SettingsPage.qml:119
 #, kde-format
 msgid "Wikimedia Online Content"
 msgstr "Wikimedia 在线内容"
 
-#: app/SettingsPage.qml:121
+#: app/SettingsPage.qml:122
 #, kde-format
 msgid "Use additional online content from Wikimedia and Wikidata."
 msgstr "使用来自 Wikimedia 和 Wikidata 的其他在线内容。"
 
-#: app/SettingsPage.qml:128
+#: app/SettingsPage.qml:129
 #, kde-format
 msgid "Transfer Assistant"
 msgstr "换乘助手"
 
-#: app/SettingsPage.qml:132
+#: app/SettingsPage.qml:133
 #, kde-format
 msgid "Automatically add transfers"
 msgstr "自动添加换乘方式"
 
-#: app/SettingsPage.qml:140
+#: app/SettingsPage.qml:141
 #, kde-format
 msgid "Automatically fill transfers"
 msgstr "自动填写换乘方式"
 
-#: app/SettingsPage.qml:141
+#: app/SettingsPage.qml:142
 #, kde-format
 msgid ""
 "When enabled, this will query transport provider online services "
 "automatically for transfer information."
 msgstr "启用后，将通过交通服务提供商的在线服务自动查询交通信息。"
 
-#: app/SettingsPage.qml:152
+#: app/SettingsPage.qml:153
 #, kde-format
 msgid "Notifications"
 msgstr "通知"
 
-#: app/SettingsPage.qml:157
+#: app/SettingsPage.qml:158
 #, kde-format
 msgid "Configure Notifications…"
 msgstr "配置通知..."
 
-#: app/SettingsPage.qml:166
+#: app/SettingsPage.qml:167
 #, kde-format
 msgid "Show notifications on lock screen"
 msgstr "在锁屏时显示通知"
 
-#: app/SettingsPage.qml:176 app/SettingsPage.qml:205
+#: app/SettingsPage.qml:177 app/SettingsPage.qml:206
 #, kde-format
 msgid "Request permissions…"
 msgstr "请求权限..."
 
-#: app/SettingsPage.qml:177
+#: app/SettingsPage.qml:178
 #, kde-format
 msgid "Additional permissions are required to show notifications."
 msgstr "显示通知需要额外的权限。"
 
-#: app/SettingsPage.qml:187
+#: app/SettingsPage.qml:188
 #, kde-format
 msgid "Notification permissions are available"
 msgstr "通知权限可用"
 
-#: app/SettingsPage.qml:188 app/SettingsPage.qml:230 app/SettingsPage.qml:308
+#: app/SettingsPage.qml:189 app/SettingsPage.qml:231 app/SettingsPage.qml:309
 #, kde-format
 msgid "No further action required."
 msgstr ""
 
-#: app/SettingsPage.qml:201
+#: app/SettingsPage.qml:202
 #, kde-format
 msgid "Onboard Status"
 msgstr ""
 
-#: app/SettingsPage.qml:206
+#: app/SettingsPage.qml:207
 #, kde-format
 msgid "Additional permissions are required to access the Wi-Fi status."
 msgstr ""
 
-#: app/SettingsPage.qml:217
+#: app/SettingsPage.qml:218
 #, kde-format
 msgid "Wi-Fi access for onboard information is available."
 msgstr ""
 
-#: app/SettingsPage.qml:219
+#: app/SettingsPage.qml:220
 #, kde-format
 msgid "Wi-Fi is not enabled"
 msgstr ""
 
-#: app/SettingsPage.qml:221
+#: app/SettingsPage.qml:222
 #, kde-format
 msgid "Location service is not enabled"
 msgstr ""
 
-#: app/SettingsPage.qml:223
+#: app/SettingsPage.qml:224
 #, kde-format
 msgid "Wi-Fi access is not available on this system"
 msgstr ""
 
-#: app/SettingsPage.qml:232
+#: app/SettingsPage.qml:233
 #, kde-format
 msgid "Enable Wi-Fi on your system to access onboard information."
 msgstr ""
 
-#: app/SettingsPage.qml:234
+#: app/SettingsPage.qml:235
 #, kde-format
 msgid ""
 "Enable the location service on your device to access onboard information."
 msgstr ""
 
-#: app/SettingsPage.qml:236
+#: app/SettingsPage.qml:237
 #, kde-format
 msgid ""
 "Onboard information are unfortunately not supported on your device at this "
 "time."
 msgstr ""
 
-#: app/SettingsPage.qml:268
+#: app/SettingsPage.qml:269
 #, kde-format
 msgid "Matrix Integration"
 msgstr ""
 
-#: app/SettingsPage.qml:275 app/SettingsPage.qml:332
+#: app/SettingsPage.qml:276 app/SettingsPage.qml:333
 #, kde-format
 msgid "Logged in as %1"
 msgstr ""
 
-#: app/SettingsPage.qml:279
+#: app/SettingsPage.qml:280
 #, kde-format
 msgid "Synchronize rooms"
 msgstr ""
 
-#: app/SettingsPage.qml:286
+#: app/SettingsPage.qml:287
 #, kde-format
 msgid "Matrix ID"
 msgstr ""
 
-#: app/SettingsPage.qml:295
+#: app/SettingsPage.qml:296
 #, kde-format
 msgid "Password"
 msgstr ""
 
-#: app/SettingsPage.qml:307
+#: app/SettingsPage.qml:308
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Session verified"
 msgstr "会话已验证"
 
-#: app/SettingsPage.qml:307
+#: app/SettingsPage.qml:308
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Session not verified."
 msgstr "会话未验证。"
 
-#: app/SettingsPage.qml:308
+#: app/SettingsPage.qml:309
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Initiate session verification in your Matrix chat client."
 msgstr "在您的 Matrix 聊天客户端中启动会话验证。"
 
-#: app/SettingsPage.qml:315
+#: app/SettingsPage.qml:316
 #, kde-format
 msgid "Log out"
 msgstr ""
 
-#: app/SettingsPage.qml:315
+#: app/SettingsPage.qml:316
 #, kde-format
 msgid "Log in"
 msgstr ""
 
-#: app/SettingsPage.qml:322
+#: app/SettingsPage.qml:323
 #, kde-format
 msgid "Traewelling Integration"
 msgstr "Traewelling  集成"
 
-#: app/SettingsPage.qml:327
+#: app/SettingsPage.qml:328
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -3517,27 +3493,27 @@ msgstr ""
 "您的公共交通行程。如需了解更多信息，请访问 <a href=\"https://traewelling.de"
 "\">traewelling.de</a>"
 
-#: app/SettingsPage.qml:335
+#: app/SettingsPage.qml:336
 #, kde-format
 msgid "Login"
 msgstr "登录"
 
-#: app/SettingsPage.qml:340
+#: app/SettingsPage.qml:341
 #, kde-format
 msgid "Logout"
 msgstr "退出"
 
-#: app/SettingsPage.qml:347
+#: app/SettingsPage.qml:348
 #, kde-format
 msgid "Contributing"
 msgstr "参与贡献"
 
-#: app/SettingsPage.qml:351
+#: app/SettingsPage.qml:352
 #, kde-format
 msgid "I contribute to OpenStreetMap"
 msgstr "我参与了对 OpenStreetMap 的贡献"
 
-#: app/SettingsPage.qml:352
+#: app/SettingsPage.qml:353
 #, kde-format
 msgid "Enables OSM editing options."
 msgstr "启用 OSM 编辑选项。"
@@ -4395,14 +4371,18 @@ msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr ""
 
-#~ msgid "Railway"
-#~ msgstr "铁路"
+#~ msgctxt "@title"
+#~ msgid "Find Platform"
+#~ msgstr "查找站台"
 
-#~ msgid "Light Rail"
-#~ msgstr "轻轨"
+#~ msgctxt "train arrival/departure platform"
+#~ msgid "%1 (arrival/departure)"
+#~ msgstr "%1 号登机口 (到达/出发)"
 
-#~ msgid "Subway"
-#~ msgstr "地铁"
+#~ msgctxt "train departure platform"
+#~ msgid "%1 (departure)"
+#~ msgstr "%1 号登机口 (出发)"
 
-#~ msgid "Tramway"
-#~ msgstr "有轨电车"
+#~ msgctxt "train arrival platform"
+#~ msgid "%1 (arrival)"
+#~ msgstr "%1 号登机口 (到达)"
