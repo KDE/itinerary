@@ -1,0 +1,16 @@
+# SPDX-FileCopyrightText: 2025 Volker Krause <vkrause@kde.org>
+# SPDX-License-Identifier: BSD-3-Clause
+
+diff --git i/CMakeLists.txt w/CMakeLists.txt
+index a9fb3ec..09e8c99 100644
+--- i/CMakeLists.txt
++++ w/CMakeLists.txt
+@@ -4,7 +4,7 @@ set(PIM_VERSION "6.4.40")
+ project(KMime VERSION ${PIM_VERSION})
+ 
+ # ECM setup
+-set(KF_MIN_VERSION "6.14.0")
++set(KF_MIN_VERSION "6.13.0")
+ 
+ find_package(ECM ${KF_MIN_VERSION} CONFIG REQUIRED)
+ set(CMAKE_MODULE_PATH ${KMime_SOURCE_DIR}/cmake ${ECM_MODULE_PATH})

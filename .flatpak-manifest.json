@@ -2,7 +2,7 @@
     "id": "org.kde.itinerary",
     "branch": "master",
     "runtime": "org.kde.Platform",
-    "runtime-version": "6.8",
+    "runtime-version": "6.9",
     "sdk": "org.kde.Sdk",
     "command": "itinerary",
     "tags": [
@@ -253,6 +253,10 @@
                     "type": "git",
                     "url": "https://invent.kde.org/pim/kmime",
                     "branch": "master"
+                },
+                {
+                    "type": "patch",
+                    "path": "flatpak-kmime-version.patch"
                 }
             ],
             "cleanup": [
