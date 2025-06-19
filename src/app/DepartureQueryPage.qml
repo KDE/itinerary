@@ -96,10 +96,6 @@ Kirigami.ScrollablePage {
         request: stopoverRequest();
     }
 
-    StopoverInformationSheet {
-        id: detailsSheet
-    }
-
     ListView {
         id: journeyView
         anchors.fill: parent
@@ -122,9 +118,12 @@ Kirigami.ScrollablePage {
             StopoverFormDelegate {
                 stopover: delegateRoot.stopover
                 onClicked: {
-                    detailsSheet.stopover = stopover;
-                    if (detailsSheet.hasContent)
-                        detailsSheet.open();
+                    if (delegateRoot.stopover.stopPoint.hasCoordinate || delegateRoot.stopover.hasTripIdentifiers) {
+                        applicationWindow().pageStack.push(Qt.createComponent('org.kde.itinerary', 'StopoverDetailsPage'), {
+                            stopover: delegateRoot.stopover,
+                            ptMgr: LiveDataManager.publicTransportManager
+                        });
+                    }
                 }
             }
         }

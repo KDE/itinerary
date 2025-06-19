@@ -221,6 +221,7 @@ ecm_add_qml_module(itinerary-app URI org.kde.itinerary NO_PLUGIN QML_FILES
     SheetDrawer.qml
     StatisticsDelegate.qml
     StatisticsPage.qml
+    StopoverDetailsPage.qml
     StopoverInformationSheet.qml
     StopoverFormDelegate.qml
     StopPickerPage.qml
