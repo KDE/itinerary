@@ -250,64 +250,16 @@ Kirigami.Page {
 
                 objectName: "sectionMap"
 
-                MapView {
+                JourneySectionMapView {
                     id: map
+                    journeySection: root.journeySection
                     anchors.fill: parent
-                    QtLocation.MapPolyline {
-                        id: line
-                        line.width: 10
-                        // hardcoded Breeze black, can't use Kirigami theme colors as we need contrast to OSM tiles here, also in dark mode
-                        line.color: journeySection.route.line.hasColor ? journeySection.route.line.color : "#232629"
-                        path: KPublicTransport.MapUtils.polyline(root.journeySection);
-                    }
 
-                    MapCircle {
-                        coordinate {
-                           latitude: journeySection.departure.stopPoint.latitude
-                           longitude: journeySection.departure.stopPoint.longitude
-                        }
-                        color: line.line.color
-                        size: 15
-                        onClicked: {
-                            sheetDrawer.open()
-                            sheetDrawer.isArrival = false
-                            sheetDrawer.isDeparture = true
-                            sheetDrawer.stop = journeySection.departure
-                        }
-                    }
-
-                    Repeater {
-                        model: sectionModel
-                        MapCircle {
-                            coordinate {
-                               latitude: model.stopover.stopPoint.latitude
-                               longitude: model.stopover.stopPoint.longitude
-                            }
-                            size: 6
-                            borderWidth: 1
-                            color: line.line.color
-                            textColor: Qt.alpha("#eff0f1", 0.5)
-                            onClicked: {
-                                sheetDrawer.open()
-                                sheetDrawer.isArrival = false
-                                sheetDrawer.isDeparture = false
-                                sheetDrawer.stop = model.stopover
-                            }
-                        }
-                    }
-                    MapCircle {
-                        coordinate {
-                           latitude: journeySection.arrival.stopPoint.latitude
-                           longitude: journeySection.arrival.stopPoint.longitude
-                        }
-                        color: line.line.color
-                        size: 15
-                        onClicked: {
-                            sheetDrawer.open()
-                            sheetDrawer.isArrival = true
-                            sheetDrawer.isDeparture = false
-                            sheetDrawer.stop = journeySection.arrival
-                        }
+                    onStopoverClicked: (elem) => {
+                        sheetDrawer.isArrival = elem.isArrival;
+                        sheetDrawer.isDeparture = elem.isDeparture;
+                        sheetDrawer.stop = elem.stopover;
+                        sheetDrawer.open();
                     }
 
                     MapPin {
@@ -337,16 +289,6 @@ Kirigami.Page {
                         }
                     }
                 }
-
-                function centerOnJourney() {
-                    const bbox = KPublicTransport.MapUtils.boundingBox(root.journeySection);
-                    map.center = KPublicTransport.MapUtils.center(bbox);
-                    map.zoomLevel = KPublicTransport.MapUtils.zoomLevel(bbox, map.width, map.height);
-                }
-
-                onWidthChanged: centerOnJourney();
-                onHeightChanged: centerOnJourney();
-                Component.onCompleted: centerOnJourney();
             }
         }
         Components.FloatingButton {
