@@ -563,6 +563,12 @@ void ImportController::importNode(const KItinerary::ExtractorDocumentNode &node)
         } else {
             GenericPkPass wrapper;
             wrapper.setName(pass->description());
+            if (wrapper.name().isEmpty()) {
+                wrapper.setName(pass->logoText());
+            }
+            if (wrapper.name().isEmpty()) {
+                wrapper.setName(pass->organizationName());
+            }
             wrapper.setPkpassPassTypeIdentifier(pass->passTypeIdentifier());
             wrapper.setPkpassSerialNumber(pass->serialNumber());
             wrapper.setValidUntil(pass->expirationDate());
