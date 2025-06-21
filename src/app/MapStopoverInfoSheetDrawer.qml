@@ -3,6 +3,8 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
@@ -48,11 +50,15 @@ SheetDrawer {
         }
     }
 
-    contentItem: Component{
+    contentItem: QQC2.ScrollView {
+        id: scrollView
+        contentWidth: width - effectiveScrollBarWidth
+        QQC2.ScrollBar.horizontal.policy: QQC2.ScrollBar.AlwaysOff
+
         ColumnLayout {
             id: contentLayout
             spacing:0
-            width: stopInfoDrawer.width
+            width: scrollView.width - scrollView.effectiveScrollBarWidth
             FormCard.FormTextDelegate {
                 Layout.fillWidth: true
                 id: platformDelegate
@@ -82,6 +88,16 @@ SheetDrawer {
                     }
 
                 background: Item{}
+            }
+            FormCard.FormDelegateSeparator {}
+            FormCard.FormTextDelegate {
+                text: i18n("Information:")
+                description: stopInfoDrawer.stop.notes.join("<br/>")
+                descriptionItem.textFormat: Text.RichText
+                descriptionItem.wrapMode: Text.Wrap
+                descriptionItem.font.italic: true
+                visible: stopInfoDrawer.stop.notes.length > 0
+                onLinkActivated: (link) => { Qt.openUrlExternally(link); }
             }
             Item{Layout.fillHeight: true}
             FormCard.FormDelegateSeparator {}
