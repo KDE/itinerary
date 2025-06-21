@@ -78,7 +78,7 @@ Kirigami.Page {
                     delay: root.isArrival ? root.stopover.arrivalDelay : root.stopover.departureDelay
                     scheduledTime: delay != 0 ? Localizer.formatTime(root.stopover, root.isArrival ? "scheduledArrivalTime" : "scheduledDepartureTime") : ""
                     hasExpectedTime: root.isArrival ? root.stopover.hasExpectedArrivalTime : root.stopover.hasExpectedDepartureTime
-                    visible: hasExpectedTime
+                    visible: hasExpectedTime || root.stopover.disruptionEffect === KPublicTransport.Disruption.NoService
                 }
 
                 // TODO ideally this would not be shown when having a known pre-defined stop point (with the platform info added in the row above)
@@ -88,7 +88,7 @@ Kirigami.Page {
                     Layout.fillWidth: true
                     QQC2.Label {
                         id: stopNameLabel
-                        text: i18nc("departure stop", "From %1", delegateRoot.stopover.stopPoint.name)
+                        text: i18nc("departure stop", "From %1", root.stopover.stopPoint.name)
                         visible: root.stopover.stopPoint.name !== ""
                         elide: Text.ElideMiddle
                         Layout.maximumWidth: root.width - relativeTimeLabel.implicitWidth - platformLabel.implicitWidth - headerLayout.columnSpacing - root.leftPadding - root.rightPadding
@@ -106,11 +106,12 @@ Kirigami.Page {
                 id: relativeTimeLabel
                 Layout.row: 0
                 Layout.column: 1
+                font.strikeout: root.stopover.disruptionEffect === KPublicTransport.Disruption.NoService
 
                 // TODO once KFormat::formatRelativeDateTime supports narrow formatting, use that instead when within 1h of now
-                text: delegateRoot.isArrival ?
-                    Localizer.formatTime(delegateRoot.stopover, delegateRoot.stopover.hasExpectedArrivalTime ? "expectedArrivalTime" : "scheduledArrivalTime") :
-                    Localizer.formatTime(delegateRoot.stopover, delegateRoot.stopover.hasExpectedDepartureTime ? "expectedDepartureTime" : "scheduledDepartureTime")
+                text: root.isArrival ?
+                    Localizer.formatTime(root.stopover, root.stopover.hasExpectedArrivalTime ? "expectedArrivalTime" : "scheduledArrivalTime") :
+                    Localizer.formatTime(root.stopover, root.stopover.hasExpectedDepartureTime ? "expectedDepartureTime" : "scheduledDepartureTime")
             }
         }
 

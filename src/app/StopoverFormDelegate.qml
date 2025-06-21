@@ -63,7 +63,7 @@ FormCard.AbstractFormDelegate {
                     // TODO hide scheduledTime when we are not showing relative times on the right and delay is 0
                     scheduledTime: delay != 0 ? Localizer.formatTime(delegateRoot.stopover, delegateRoot.isArrival ? "scheduledArrivalTime" : "scheduledDepartureTime") : ""
                     hasExpectedTime: delegateRoot.isArrival ? delegateRoot.stopover.hasExpectedArrivalTime : delegateRoot.stopover.hasExpectedDepartureTime
-                    visible: hasExpectedTime // TODO show also when we show relative times, see below
+                    visible: hasExpectedTime || delegateRoot.stopover.disruptionEffect === KPublicTransport.Disruption.NoService // TODO show also when we show relative times, see below
                 }
 
                 KPublicTransport.OccupancyIndicator {
@@ -108,6 +108,8 @@ FormCard.AbstractFormDelegate {
             id: relativeTimeLabel
             Layout.row: 0
             Layout.column: 1
+
+            font.strikeout: delegateRoot.stopover.disruptionEffect === KPublicTransport.Disruption.NoService
 
             // TODO once KFormat::formatRelativeDateTime supports narrow formatting, use that instead when within 1h of now
             text: delegateRoot.isArrival ?
