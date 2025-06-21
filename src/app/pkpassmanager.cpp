@@ -56,14 +56,33 @@ QList<QString> PkPassManager::passes()
     return passIds;
 }
 
+[[nodiscard]] static QString passPath(const QString &passId)
+{
+    QString path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/passes/"_L1 + passId + ".pkpass"_L1;
+    if (!QFile::exists(path)) {
+        // ### this is a workaround for case-sensitivity of passTypeIdentifier getting lost when passed through QUrl::host
+        // this should eventually be resolved properly, but this allows to at least recover existing data
+        for (QDirIterator it(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/passes/"_L1, QDir::Dirs); it.hasNext();) {
+            it.next();
+            if (passId.startsWith(it.fileName() + '/'_L1, Qt::CaseInsensitive)) {
+                path = it.filePath() + passId.mid(it.fileName().size()) + ".pkpass"_L1;
+                break;
+            }
+        }
+        if (!QFile::exists(path)) {
+            return {};
+        }
+    }
+    return path;
+}
+
 bool PkPassManager::hasPass(const QString &passId) const
 {
     if (m_passes.contains(passId)) {
         return true;
     }
 
-    const QString passPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/passes/"_L1 + passId + ".pkpass"_L1;
-    return QFile::exists(passPath);
+    return !passPath(passId).isEmpty();
 }
 
 KPkPass::Pass *PkPassManager::pass(const QString &passId)
@@ -73,15 +92,15 @@ KPkPass::Pass *PkPassManager::pass(const QString &passId)
         return it.value();
     }
 
-    const QString passPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/passes/"_L1 + passId + ".pkpass"_L1;
-    if (!QFile::exists(passPath)) {
-        return nullptr;
+    const QString path = passPath(passId);
+    if (!path.isEmpty()) {
+        auto file = KPkPass::Pass::fromFile(path, this);
+        // TODO error handling
+        m_passes.insert(passId, file);
+        return file;
     }
 
-    auto file = KPkPass::Pass::fromFile(passPath, this);
-    // TODO error handling
-    m_passes.insert(passId, file);
-    return file;
+    return nullptr;
 }
 
 QString PkPassManager::passId(const QVariant &reservation)
@@ -203,8 +222,9 @@ QString PkPassManager::doImportPass(const QUrl &url, const QByteArray &data, PkP
 
 void PkPassManager::removePass(const QString &passId)
 {
-    const QString basePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/passes/"_L1;
-    QFile::remove(basePath + '/'_L1 + passId + ".pkpass"_L1);
+    if (const auto path = passPath(passId); !path.isEmpty()) {
+        QFile::remove(path);
+    }
     Q_EMIT passRemoved(passId);
     delete m_passes.take(passId);
 }
@@ -239,8 +259,7 @@ void PkPassManager::updatePass(const QString &passId)
 
 QDateTime PkPassManager::updateTime(const QString &passId)
 {
-    const QString passPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/passes/"_L1 + passId + ".pkpass"_L1;
-    QFileInfo fi(passPath);
+    QFileInfo fi(passPath(passId));
     return fi.lastModified();
 }
 
