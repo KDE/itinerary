@@ -59,47 +59,8 @@ Kirigami.ScrollablePage {
         }
     }
 
-    SheetDrawer {
+    VehicleSectionDialog {
         id: coachDrawer
-        property KPublicTransport.vehicleSection coach
-        headerItem: Component {
-            // TODO show platform section as well?
-            ColumnLayout {
-                Layout.leftMargin: Kirigami.Units.largeSpacing
-                Kirigami.Heading {
-                    text: i18nc("train coach", "Coach %1", coachDrawer.coach.name)
-                    Layout.fillWidth: true
-                    elide: Qt.ElideRight
-                }
-                QQC2.Label {
-                    id: subtitle
-                    Layout.fillWidth: true
-                    text: {
-                        const s = coachDrawer.coach.typeName;
-                        return s !== "" ? s : coachDrawer.coach.classesName;
-                    }
-                    visible: subtitle.text !== ""
-                }
-            }
-        }
-
-        contentItem: Component {
-            ColumnLayout {
-                Repeater {
-                    model: coachDrawer.coach.sectionFeatures
-                    delegate: KPublicTransport.FeatureDelegate {
-                        Layout.leftMargin: Kirigami.Units.largeSpacing
-                        required property KPublicTransport.feature modelData
-                        feature: modelData
-                    }
-                }
-                KPublicTransport.OccupancyDelegate {
-                    Layout.leftMargin: Kirigami.Units.largeSpacing
-                    occupancy: coachDrawer.coach.load
-                    visible: occupancy != KPublicTransport.Load.Unknown
-                }
-            }
-        }
     }
 
     header: ColumnLayout {

@@ -249,6 +249,7 @@ ecm_add_qml_module(itinerary-app URI org.kde.itinerary NO_PLUGIN QML_FILES
     TripGroupSplitPage.qml
     TripGroupsPage.qml
     VehicleLayoutPage.qml
+    VehicleSectionDialog.qml
     VerticalNavigationButton.qml
     WeatherForecastDelegate.qml
     WeatherForecastPage.qml
