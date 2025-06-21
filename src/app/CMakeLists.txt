@@ -279,6 +279,9 @@ if (ANDROID)
     )
 
     kirigami_package_breeze_icons(ICONS
+        ${KIRIGAMI_ADDONS_ICONS}
+        ${KPUBLICTRANSPORT_ICONS}
+
         applications-development-symbolic
         application-pdf
         arrow-down
@@ -292,6 +295,7 @@ if (ANDROID)
         channel-secure-symbolic
         checkmark
         clock
+        cloud-upload
         crosshairs
         cross-shape
         dialog-cancel
@@ -394,7 +398,6 @@ if (ANDROID)
         weather-snow
         weather-snow-scattered
         weather-storm
-        cloud-upload
     )
 
     ecm_add_android_apk(itinerary-app ANDROID_DIR ${CMAKE_CURRENT_SOURCE_DIR}/android)
