@@ -22,7 +22,7 @@ FormCard.FormButtonDelegate {
     case PassManager.ProgramMembership:
         return pass.programName;
     case PassManager.PkPass:
-        return pkPass.description;
+        return pkPass.description !== "" ? pkPass.description : pkPass.logoText;
     case PassManager.Ticket:
         return pass.name;
     }
