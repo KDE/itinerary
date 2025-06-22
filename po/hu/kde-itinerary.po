@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-15 00:43+0000\n"
+"POT-Creation-Date: 2025-06-22 00:43+0000\n"
 "PO-Revision-Date: 2024-03-26 16:14+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -396,7 +396,7 @@ msgstr "Hajó"
 
 #: app/BoatEditor.qml:59 app/EventEditor.qml:54 app/FlightEditor.qml:72
 #: app/HotelEditor.qml:51 app/ImportPage.qml:21 app/JourneyRequestPage.qml:226
-#: app/RestaurantEditor.qml:53
+#: app/RestaurantEditor.qml:53 app/StopoverDetailsPage.qml:126
 #, fuzzy, kde-format
 #| msgid "Trip sent."
 msgid "Trip"
@@ -746,7 +746,7 @@ msgstr "Hely"
 msgid "Drop-off"
 msgstr "Leadás"
 
-#: app/CarRentalPage.qml:80
+#: app/CarRentalPage.qml:80 app/StopoverDetailsPage.qml:134
 #, kde-format
 msgid "Vehicle"
 msgstr "Jármű"
@@ -794,20 +794,20 @@ msgstr "Weboldal"
 msgid "Departures"
 msgstr "Indulások"
 
-#: app/DepartureQueryPage.qml:113
+#: app/DepartureQueryPage.qml:109
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "Korábbi indulások betöltése"
 
-#: app/DepartureQueryPage.qml:136 app/JourneyQueryPage.qml:125
+#: app/DepartureQueryPage.qml:135 app/JourneyQueryPage.qml:125
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "Későbbi csatlakozások betöltése"
 
-#: app/DepartureQueryPage.qml:145 app/JourneyQueryPage.qml:132
+#: app/DepartureQueryPage.qml:144 app/JourneyQueryPage.qml:132
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
@@ -1864,7 +1864,7 @@ msgstr "Semmi sem lett importálva."
 msgid "No importable events found in this calendar."
 msgstr "Nem találhatók importálható események ebben a naptárban."
 
-#: app/importcontroller.cpp:628
+#: app/importcontroller.cpp:634
 #, kde-format
 msgid "Backup"
 msgstr ""
@@ -1980,7 +1980,7 @@ msgstr "Térkép megnyitása"
 msgid "Open wheelmap.org"
 msgstr "Wheelmap.org megnyitása"
 
-#: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:355
+#: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:297
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2155,7 +2155,7 @@ msgid "Drive %1 (%2)"
 msgstr "%1 vezetés (%2)"
 
 #: app/JourneySectionDelegate.qml:182 app/JourneySectionDelegate.qml:329
-#: app/StopoverFormDelegate.qml:100
+#: app/StopoverDetailsPage.qml:98 app/StopoverFormDelegate.qml:100
 #, fuzzy, kde-format
 #| msgid "Platform: %1"
 msgctxt "@info"
@@ -2163,14 +2163,14 @@ msgid "Platform %1"
 msgstr "Peron: %1"
 
 #: app/JourneySectionDelegate.qml:255 app/JourneySectionPage.qml:136
-#: app/StopoverFormDelegate.qml:141 app/VehicleLayoutPage.qml:214
+#: app/StopoverFormDelegate.qml:143 app/VehicleLayoutPage.qml:175
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr "Több…"
 
 #: app/JourneySectionPage.qml:51 app/TimelineDelegateDepartureLayout.qml:94
-#: app/VehicleLayoutPage.qml:116
+#: app/VehicleLayoutPage.qml:77
 #, fuzzy, kde-format
 #| msgctxt "to travel destination"
 #| msgid "To %1"
@@ -2581,17 +2581,23 @@ msgctxt "@title:window"
 msgid "Matrix Session Verification"
 msgstr "Matrix integráció"
 
-#: app/MapStopoverInfoSheetDrawer.qml:59
+#: app/MapStopoverInfoSheetDrawer.qml:65
 #, kde-format
 msgid "Platform:"
 msgstr ""
 
-#: app/MapStopoverInfoSheetDrawer.qml:70
+#: app/MapStopoverInfoSheetDrawer.qml:76
 #, kde-format
 msgid "Occupancy:"
 msgstr ""
 
-#: app/MapStopoverInfoSheetDrawer.qml:90
+#: app/MapStopoverInfoSheetDrawer.qml:94
+#, fuzzy, kde-format
+#| msgid "More information"
+msgid "Information:"
+msgstr "További információk"
+
+#: app/MapStopoverInfoSheetDrawer.qml:106
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "View Indoor Map"
@@ -3735,12 +3741,45 @@ msgstr "Busz"
 msgid "Car"
 msgstr "Autó"
 
-#: app/StopoverFormDelegate.qml:93
+#: app/StopoverDetailsPage.qml:16
+#, fuzzy, kde-format
+#| msgid "More information"
+msgctxt "train/bus arrival"
+msgid "Arrival Information"
+msgstr "További információk"
+
+#: app/StopoverDetailsPage.qml:16
+#, fuzzy, kde-format
+#| msgid "Developer information"
+msgctxt "train/bus departure"
+msgid "Departure Information"
+msgstr "Fejlesztői információk"
+
+#: app/StopoverDetailsPage.qml:91 app/StopoverFormDelegate.qml:93
 #, fuzzy, kde-format
 #| msgid "From: %1"
 msgctxt "departure stop"
 msgid "From %1"
 msgstr "Innen: %1"
+
+#: app/StopoverDetailsPage.qml:122
+#, fuzzy, kde-format
+#| msgid "More information"
+msgid "Information"
+msgstr "További információk"
+
+#: app/StopoverDetailsPage.qml:130
+#, fuzzy, kde-format
+#| msgid "Trip sent."
+msgid "Trip Map"
+msgstr "Kirándulás elküldve."
+
+#: app/StopoverDetailsPage.qml:138
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Show Map"
+msgid "Stop Map"
+msgstr "Térkép megjelenítése"
 
 #: app/TicketEditor.qml:18
 #, kde-format
@@ -4420,38 +4459,38 @@ msgstr "Kirándulás törlése"
 msgid "Vehicle Layout"
 msgstr ""
 
-#: app/VehicleLayoutPage.qml:70
+#: app/VehicleLayoutPage.qml:93
+#, kde-format
+msgid "Departure: %1"
+msgstr ""
+
+#: app/VehicleLayoutPage.qml:95
+#, kde-format
+msgid "Arrival: %1"
+msgstr ""
+
+#: app/VehicleLayoutPage.qml:115
+#, kde-format
+msgid "Platform: %1"
+msgstr "Peron: %1"
+
+#: app/VehicleLayoutPage.qml:124
+#, kde-format
+msgid "Coach: %1 Seat: %2"
+msgstr ""
+
+#: app/VehicleLayoutPage.qml:229
+#, kde-format
+msgid "No vehicle layout information available."
+msgstr ""
+
+#: app/VehicleSectionDialog.qml:27
 #, fuzzy, kde-format
 #| msgctxt "carriage on a train"
 #| msgid "Coach"
 msgctxt "train coach"
 msgid "Coach %1"
 msgstr "Kocsi"
-
-#: app/VehicleLayoutPage.qml:132
-#, kde-format
-msgid "Departure: %1"
-msgstr ""
-
-#: app/VehicleLayoutPage.qml:134
-#, kde-format
-msgid "Arrival: %1"
-msgstr ""
-
-#: app/VehicleLayoutPage.qml:154
-#, kde-format
-msgid "Platform: %1"
-msgstr "Peron: %1"
-
-#: app/VehicleLayoutPage.qml:163
-#, kde-format
-msgid "Coach: %1 Seat: %2"
-msgstr ""
-
-#: app/VehicleLayoutPage.qml:268
-#, kde-format
-msgid "No vehicle layout information available."
-msgstr ""
 
 #: app/WeatherForecastDelegate.qml:58 app/WeatherForecastPage.qml:104
 #, kde-format
@@ -4586,11 +4625,6 @@ msgstr ""
 #~ msgctxt "@action:intoolbar Go up one floor"
 #~ msgid "Floor up"
 #~ msgstr "Egy szinttel fel"
-
-#, fuzzy
-#~| msgid "More information"
-#~ msgid "Information"
-#~ msgstr "További információk"
 
 #~ msgctxt "a train/bus journey canceled by its operator"
 #~ msgid "Canceled"

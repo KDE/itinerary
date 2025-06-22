@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-15 00:43+0000\n"
+"POT-Creation-Date: 2025-06-22 00:43+0000\n"
 "PO-Revision-Date: 2025-06-01 12:13+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -397,7 +397,7 @@ msgstr "Човен"
 
 #: app/BoatEditor.qml:59 app/EventEditor.qml:54 app/FlightEditor.qml:72
 #: app/HotelEditor.qml:51 app/ImportPage.qml:21 app/JourneyRequestPage.qml:226
-#: app/RestaurantEditor.qml:53
+#: app/RestaurantEditor.qml:53 app/StopoverDetailsPage.qml:126
 #, kde-format
 msgid "Trip"
 msgstr "Подорож"
@@ -731,7 +731,7 @@ msgstr "Місце"
 msgid "Drop-off"
 msgstr "Полишення"
 
-#: app/CarRentalPage.qml:80
+#: app/CarRentalPage.qml:80 app/StopoverDetailsPage.qml:134
 #, kde-format
 msgid "Vehicle"
 msgstr "Автомобіль"
@@ -779,20 +779,20 @@ msgstr "Сайт"
 msgid "Departures"
 msgstr "Відправлення"
 
-#: app/DepartureQueryPage.qml:113
+#: app/DepartureQueryPage.qml:109
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "Завантажити раніші відправлення"
 
-#: app/DepartureQueryPage.qml:136 app/JourneyQueryPage.qml:125
+#: app/DepartureQueryPage.qml:135 app/JourneyQueryPage.qml:125
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "Завантажити пізніші з'єднання"
 
-#: app/DepartureQueryPage.qml:145 app/JourneyQueryPage.qml:132
+#: app/DepartureQueryPage.qml:144 app/JourneyQueryPage.qml:132
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
@@ -1803,7 +1803,7 @@ msgstr "Не знайдено даних для імпортування."
 msgid "No importable events found in this calendar."
 msgstr "У цьому календарі не знайдено придатних до імпортування записів подій."
 
-#: app/importcontroller.cpp:628
+#: app/importcontroller.cpp:634
 #, kde-format
 msgid "Backup"
 msgstr "Резервна копія"
@@ -1915,7 +1915,7 @@ msgstr "Відкрити карту"
 msgid "Open wheelmap.org"
 msgstr "Відкрити wheelmap.org"
 
-#: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:355
+#: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:297
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2086,21 +2086,21 @@ msgid "Drive %1 (%2)"
 msgstr "Проїзд %1 (%2)"
 
 #: app/JourneySectionDelegate.qml:182 app/JourneySectionDelegate.qml:329
-#: app/StopoverFormDelegate.qml:100
+#: app/StopoverDetailsPage.qml:98 app/StopoverFormDelegate.qml:100
 #, kde-format
 msgctxt "@info"
 msgid "Platform %1"
 msgstr "Платформа %1"
 
 #: app/JourneySectionDelegate.qml:255 app/JourneySectionPage.qml:136
-#: app/StopoverFormDelegate.qml:141 app/VehicleLayoutPage.qml:214
+#: app/StopoverFormDelegate.qml:143 app/VehicleLayoutPage.qml:175
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr "Показати більше…"
 
 #: app/JourneySectionPage.qml:51 app/TimelineDelegateDepartureLayout.qml:94
-#: app/VehicleLayoutPage.qml:116
+#: app/VehicleLayoutPage.qml:77
 #, kde-format
 msgctxt "Direction of the transport mode"
 msgid "To %1"
@@ -2499,17 +2499,23 @@ msgctxt "@title:window"
 msgid "Matrix Session Verification"
 msgstr "Перевірка сеансу Matrix"
 
-#: app/MapStopoverInfoSheetDrawer.qml:59
+#: app/MapStopoverInfoSheetDrawer.qml:65
 #, kde-format
 msgid "Platform:"
 msgstr "Платформа:"
 
-#: app/MapStopoverInfoSheetDrawer.qml:70
+#: app/MapStopoverInfoSheetDrawer.qml:76
 #, kde-format
 msgid "Occupancy:"
 msgstr "Заповненість:"
 
-#: app/MapStopoverInfoSheetDrawer.qml:90
+#: app/MapStopoverInfoSheetDrawer.qml:94
+#, fuzzy, kde-format
+#| msgid "Information"
+msgid "Information:"
+msgstr "Відомості"
+
+#: app/MapStopoverInfoSheetDrawer.qml:106
 #, kde-format
 msgid "Show indoor map"
 msgstr "Переглянути внутрішню карту"
@@ -3685,11 +3691,43 @@ msgstr "Автобус"
 msgid "Car"
 msgstr "Автомобіль"
 
-#: app/StopoverFormDelegate.qml:93
+#: app/StopoverDetailsPage.qml:16
+#, fuzzy, kde-format
+#| msgid "Information"
+msgctxt "train/bus arrival"
+msgid "Arrival Information"
+msgstr "Відомості"
+
+#: app/StopoverDetailsPage.qml:16
+#, fuzzy, kde-format
+#| msgid "Developer information"
+msgctxt "train/bus departure"
+msgid "Departure Information"
+msgstr "Відомості для розробника"
+
+#: app/StopoverDetailsPage.qml:91 app/StopoverFormDelegate.qml:93
 #, kde-format
 msgctxt "departure stop"
 msgid "From %1"
 msgstr "З %1"
+
+#: app/StopoverDetailsPage.qml:122
+#, kde-format
+msgid "Information"
+msgstr "Відомості"
+
+#: app/StopoverDetailsPage.qml:130
+#, fuzzy, kde-format
+#| msgid "Trip"
+msgid "Trip Map"
+msgstr "Подорож"
+
+#: app/StopoverDetailsPage.qml:138
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Show Map"
+msgid "Stop Map"
+msgstr "Показати мапу"
 
 #: app/TicketEditor.qml:18
 #, kde-format
@@ -4325,36 +4363,36 @@ msgstr "Розділити подорож"
 msgid "Vehicle Layout"
 msgstr "Компонування засобу пересування"
 
-#: app/VehicleLayoutPage.qml:70
-#, kde-format
-msgctxt "train coach"
-msgid "Coach %1"
-msgstr "Вагон %1"
-
-#: app/VehicleLayoutPage.qml:132
+#: app/VehicleLayoutPage.qml:93
 #, kde-format
 msgid "Departure: %1"
 msgstr "Відправлення: %1"
 
-#: app/VehicleLayoutPage.qml:134
+#: app/VehicleLayoutPage.qml:95
 #, kde-format
 msgid "Arrival: %1"
 msgstr "Прибуття: %1"
 
-#: app/VehicleLayoutPage.qml:154
+#: app/VehicleLayoutPage.qml:115
 #, kde-format
 msgid "Platform: %1"
 msgstr "Платформа: %1"
 
-#: app/VehicleLayoutPage.qml:163
+#: app/VehicleLayoutPage.qml:124
 #, kde-format
 msgid "Coach: %1 Seat: %2"
 msgstr "Вагон: %1 Місце: %2"
 
-#: app/VehicleLayoutPage.qml:268
+#: app/VehicleLayoutPage.qml:229
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "Немає доступної інформації щодо компонування засобу пересування."
+
+#: app/VehicleSectionDialog.qml:27
+#, kde-format
+msgctxt "train coach"
+msgid "Coach %1"
+msgstr "Вагон %1"
 
 #: app/WeatherForecastDelegate.qml:58 app/WeatherForecastPage.qml:104
 #, kde-format
@@ -4501,9 +4539,6 @@ msgstr "%1%2 з %3 до %4 %5"
 #~ msgctxt "@action:intoolbar Go up one floor"
 #~ msgid "Floor up"
 #~ msgstr "Поверхом вище"
-
-#~ msgid "Information"
-#~ msgstr "Відомості"
 
 #~ msgid "Occupancy"
 #~ msgstr "Заповненість"

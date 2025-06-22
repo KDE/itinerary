@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-15 00:43+0000\n"
+"POT-Creation-Date: 2025-06-22 00:43+0000\n"
 "PO-Revision-Date: 2025-02-27 20:24-0300\n"
 "Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -412,7 +412,7 @@ msgstr "Barco"
 
 #: app/BoatEditor.qml:59 app/EventEditor.qml:54 app/FlightEditor.qml:72
 #: app/HotelEditor.qml:51 app/ImportPage.qml:21 app/JourneyRequestPage.qml:226
-#: app/RestaurantEditor.qml:53
+#: app/RestaurantEditor.qml:53 app/StopoverDetailsPage.qml:126
 #, fuzzy, kde-format
 #| msgid "Trips"
 msgid "Trip"
@@ -786,7 +786,7 @@ msgstr "Localização"
 msgid "Drop-off"
 msgstr "Devolução"
 
-#: app/CarRentalPage.qml:80
+#: app/CarRentalPage.qml:80 app/StopoverDetailsPage.qml:134
 #, kde-format
 msgid "Vehicle"
 msgstr "Veículo"
@@ -835,14 +835,14 @@ msgstr "Website"
 msgid "Departures"
 msgstr "Partidas"
 
-#: app/DepartureQueryPage.qml:113
+#: app/DepartureQueryPage.qml:109
 #, fuzzy, kde-format
 #| msgid "Earlier departure on %1"
 msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "Partida antecipada em %1"
 
-#: app/DepartureQueryPage.qml:136 app/JourneyQueryPage.qml:125
+#: app/DepartureQueryPage.qml:135 app/JourneyQueryPage.qml:125
 #: app/TransferPage.qml:321
 #, fuzzy, kde-format
 #| msgid "Alternative Connections"
@@ -850,7 +850,7 @@ msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "Conexões alternativas"
 
-#: app/DepartureQueryPage.qml:145 app/JourneyQueryPage.qml:132
+#: app/DepartureQueryPage.qml:144 app/JourneyQueryPage.qml:132
 #: app/TransferPage.qml:328
 #, fuzzy, kde-format
 #| msgid "Data providers: %1"
@@ -1942,7 +1942,7 @@ msgstr "Nada a importar."
 msgid "No importable events found in this calendar."
 msgstr "Nenhum evento importável encontrado neste calendário."
 
-#: app/importcontroller.cpp:628
+#: app/importcontroller.cpp:634
 #, kde-format
 msgid "Backup"
 msgstr ""
@@ -2058,7 +2058,7 @@ msgstr "Abrir mapa"
 msgid "Open wheelmap.org"
 msgstr "Abrir wheelmap.org"
 
-#: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:355
+#: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:297
 #, fuzzy, kde-format
 #| msgid "Show"
 msgctxt "@action:button"
@@ -2244,7 +2244,7 @@ msgid "Drive %1 (%2)"
 msgstr "Teste %1 (%2)"
 
 #: app/JourneySectionDelegate.qml:182 app/JourneySectionDelegate.qml:329
-#: app/StopoverFormDelegate.qml:100
+#: app/StopoverDetailsPage.qml:98 app/StopoverFormDelegate.qml:100
 #, fuzzy, kde-format
 #| msgid "Platform: %1"
 msgctxt "@info"
@@ -2252,14 +2252,14 @@ msgid "Platform %1"
 msgstr "Plataforma: %1"
 
 #: app/JourneySectionDelegate.qml:255 app/JourneySectionPage.qml:136
-#: app/StopoverFormDelegate.qml:141 app/VehicleLayoutPage.qml:214
+#: app/StopoverFormDelegate.qml:143 app/VehicleLayoutPage.qml:175
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr ""
 
 #: app/JourneySectionPage.qml:51 app/TimelineDelegateDepartureLayout.qml:94
-#: app/VehicleLayoutPage.qml:116
+#: app/VehicleLayoutPage.qml:77
 #, fuzzy, kde-format
 #| msgctxt "to travel destination"
 #| msgid "To %1"
@@ -2677,17 +2677,23 @@ msgctxt "@title:window"
 msgid "Matrix Session Verification"
 msgstr ""
 
-#: app/MapStopoverInfoSheetDrawer.qml:59
+#: app/MapStopoverInfoSheetDrawer.qml:65
 #, kde-format
 msgid "Platform:"
 msgstr "Plataforma:"
 
-#: app/MapStopoverInfoSheetDrawer.qml:70
+#: app/MapStopoverInfoSheetDrawer.qml:76
 #, kde-format
 msgid "Occupancy:"
 msgstr ""
 
-#: app/MapStopoverInfoSheetDrawer.qml:90
+#: app/MapStopoverInfoSheetDrawer.qml:94
+#, fuzzy, kde-format
+#| msgid "More information"
+msgid "Information:"
+msgstr "Mais informações"
+
+#: app/MapStopoverInfoSheetDrawer.qml:106
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "View Indoor Map"
@@ -3871,12 +3877,44 @@ msgstr "Ônibus"
 msgid "Car"
 msgstr "Carro"
 
-#: app/StopoverFormDelegate.qml:93
+#: app/StopoverDetailsPage.qml:16
+#, fuzzy, kde-format
+#| msgid "More information"
+msgctxt "train/bus arrival"
+msgid "Arrival Information"
+msgstr "Mais informações"
+
+#: app/StopoverDetailsPage.qml:16
+#, fuzzy, kde-format
+#| msgid "More information"
+msgctxt "train/bus departure"
+msgid "Departure Information"
+msgstr "Mais informações"
+
+#: app/StopoverDetailsPage.qml:91 app/StopoverFormDelegate.qml:93
 #, fuzzy, kde-format
 #| msgid "From: %1"
 msgctxt "departure stop"
 msgid "From %1"
 msgstr "De: %1"
+
+#: app/StopoverDetailsPage.qml:122
+#, fuzzy, kde-format
+#| msgid "More information"
+msgid "Information"
+msgstr "Mais informações"
+
+#: app/StopoverDetailsPage.qml:130
+#, fuzzy, kde-format
+#| msgid "Trips"
+msgid "Trip Map"
+msgstr "Viagens"
+
+#: app/StopoverDetailsPage.qml:138
+#, fuzzy, kde-format
+#| msgid "Show"
+msgid "Stop Map"
+msgstr "Mostrar"
 
 #: app/TicketEditor.qml:18
 #, fuzzy, kde-format
@@ -4575,37 +4613,37 @@ msgstr "Ingresso do evento"
 msgid "Vehicle Layout"
 msgstr "Layout do veículo"
 
-#: app/VehicleLayoutPage.qml:70
+#: app/VehicleLayoutPage.qml:93
+#, kde-format
+msgid "Departure: %1"
+msgstr "Partida: %1"
+
+#: app/VehicleLayoutPage.qml:95
+#, kde-format
+msgid "Arrival: %1"
+msgstr "Chegada: %1"
+
+#: app/VehicleLayoutPage.qml:115
+#, kde-format
+msgid "Platform: %1"
+msgstr "Plataforma: %1"
+
+#: app/VehicleLayoutPage.qml:124
+#, kde-format
+msgid "Coach: %1 Seat: %2"
+msgstr "Vagão: %1 Assento: %2"
+
+#: app/VehicleLayoutPage.qml:229
+#, kde-format
+msgid "No vehicle layout information available."
+msgstr "Nenhuma informação de layout de veículo disponível."
+
+#: app/VehicleSectionDialog.qml:27
 #, fuzzy, kde-format
 #| msgid "Coach:"
 msgctxt "train coach"
 msgid "Coach %1"
 msgstr "Vagão:"
-
-#: app/VehicleLayoutPage.qml:132
-#, kde-format
-msgid "Departure: %1"
-msgstr "Partida: %1"
-
-#: app/VehicleLayoutPage.qml:134
-#, kde-format
-msgid "Arrival: %1"
-msgstr "Chegada: %1"
-
-#: app/VehicleLayoutPage.qml:154
-#, kde-format
-msgid "Platform: %1"
-msgstr "Plataforma: %1"
-
-#: app/VehicleLayoutPage.qml:163
-#, kde-format
-msgid "Coach: %1 Seat: %2"
-msgstr "Vagão: %1 Assento: %2"
-
-#: app/VehicleLayoutPage.qml:268
-#, kde-format
-msgid "No vehicle layout information available."
-msgstr "Nenhuma informação de layout de veículo disponível."
 
 #: app/WeatherForecastDelegate.qml:58 app/WeatherForecastPage.qml:104
 #, fuzzy, kde-format
@@ -4752,11 +4790,6 @@ msgstr "%1%2 de %3 para %4 em %5"
 #~ msgctxt "@action:intoolbar Go up one floor"
 #~ msgid "Floor up"
 #~ msgstr "Piso %1"
-
-#, fuzzy
-#~| msgid "More information"
-#~ msgid "Information"
-#~ msgstr "Mais informações"
 
 #, fuzzy
 #~| msgid "Elevator"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-15 00:43+0000\n"
+"POT-Creation-Date: 2025-06-22 00:43+0000\n"
 "PO-Revision-Date: 2025-06-01 12:08+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -389,7 +389,7 @@ msgstr "Vaixell"
 
 #: app/BoatEditor.qml:59 app/EventEditor.qml:54 app/FlightEditor.qml:72
 #: app/HotelEditor.qml:51 app/ImportPage.qml:21 app/JourneyRequestPage.qml:226
-#: app/RestaurantEditor.qml:53
+#: app/RestaurantEditor.qml:53 app/StopoverDetailsPage.qml:126
 #, kde-format
 msgid "Trip"
 msgstr "Viatge"
@@ -721,7 +721,7 @@ msgstr "Ubicació"
 msgid "Drop-off"
 msgstr "Entrega"
 
-#: app/CarRentalPage.qml:80
+#: app/CarRentalPage.qml:80 app/StopoverDetailsPage.qml:134
 #, kde-format
 msgid "Vehicle"
 msgstr "Vehicle"
@@ -769,20 +769,20 @@ msgstr "Lloc web"
 msgid "Departures"
 msgstr "Eixides"
 
-#: app/DepartureQueryPage.qml:113
+#: app/DepartureQueryPage.qml:109
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "Carrega les eixides anteriors"
 
-#: app/DepartureQueryPage.qml:136 app/JourneyQueryPage.qml:125
+#: app/DepartureQueryPage.qml:135 app/JourneyQueryPage.qml:125
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "Carrega les connexions posteriors"
 
-#: app/DepartureQueryPage.qml:145 app/JourneyQueryPage.qml:132
+#: app/DepartureQueryPage.qml:144 app/JourneyQueryPage.qml:132
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
@@ -1792,7 +1792,7 @@ msgid "No importable events found in this calendar."
 msgstr ""
 "No s'ha trobat cap esdeveniment que es puga importar en este calendari."
 
-#: app/importcontroller.cpp:628
+#: app/importcontroller.cpp:634
 #, kde-format
 msgid "Backup"
 msgstr "Còpia de seguretat"
@@ -1904,7 +1904,7 @@ msgstr "Obri un mapa"
 msgid "Open wheelmap.org"
 msgstr "Obri wheelmap.org"
 
-#: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:355
+#: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:297
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2075,21 +2075,21 @@ msgid "Drive %1 (%2)"
 msgstr "Conduïx %1 (%2)"
 
 #: app/JourneySectionDelegate.qml:182 app/JourneySectionDelegate.qml:329
-#: app/StopoverFormDelegate.qml:100
+#: app/StopoverDetailsPage.qml:98 app/StopoverFormDelegate.qml:100
 #, kde-format
 msgctxt "@info"
 msgid "Platform %1"
 msgstr "Andana %1"
 
 #: app/JourneySectionDelegate.qml:255 app/JourneySectionPage.qml:136
-#: app/StopoverFormDelegate.qml:141 app/VehicleLayoutPage.qml:214
+#: app/StopoverFormDelegate.qml:143 app/VehicleLayoutPage.qml:175
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr "Mostra'n més…"
 
 #: app/JourneySectionPage.qml:51 app/TimelineDelegateDepartureLayout.qml:94
-#: app/VehicleLayoutPage.qml:116
+#: app/VehicleLayoutPage.qml:77
 #, kde-format
 msgctxt "Direction of the transport mode"
 msgid "To %1"
@@ -2488,17 +2488,23 @@ msgctxt "@title:window"
 msgid "Matrix Session Verification"
 msgstr "Verificació de la sessió de Matrix"
 
-#: app/MapStopoverInfoSheetDrawer.qml:59
+#: app/MapStopoverInfoSheetDrawer.qml:65
 #, kde-format
 msgid "Platform:"
 msgstr "Andana:"
 
-#: app/MapStopoverInfoSheetDrawer.qml:70
+#: app/MapStopoverInfoSheetDrawer.qml:76
 #, kde-format
 msgid "Occupancy:"
 msgstr "Ocupació:"
 
-#: app/MapStopoverInfoSheetDrawer.qml:90
+#: app/MapStopoverInfoSheetDrawer.qml:94
+#, fuzzy, kde-format
+#| msgid "Information"
+msgid "Information:"
+msgstr "Informació"
+
+#: app/MapStopoverInfoSheetDrawer.qml:106
 #, kde-format
 msgid "Show indoor map"
 msgstr "Mostra el mapa de l'interior"
@@ -3681,11 +3687,43 @@ msgstr "Autobús"
 msgid "Car"
 msgstr "Cotxe"
 
-#: app/StopoverFormDelegate.qml:93
+#: app/StopoverDetailsPage.qml:16
+#, fuzzy, kde-format
+#| msgid "Information"
+msgctxt "train/bus arrival"
+msgid "Arrival Information"
+msgstr "Informació"
+
+#: app/StopoverDetailsPage.qml:16
+#, fuzzy, kde-format
+#| msgid "Developer information"
+msgctxt "train/bus departure"
+msgid "Departure Information"
+msgstr "Informació del desenvolupador"
+
+#: app/StopoverDetailsPage.qml:91 app/StopoverFormDelegate.qml:93
 #, kde-format
 msgctxt "departure stop"
 msgid "From %1"
 msgstr "Des de %1"
+
+#: app/StopoverDetailsPage.qml:122
+#, kde-format
+msgid "Information"
+msgstr "Informació"
+
+#: app/StopoverDetailsPage.qml:130
+#, fuzzy, kde-format
+#| msgid "Trip"
+msgid "Trip Map"
+msgstr "Viatge"
+
+#: app/StopoverDetailsPage.qml:138
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Show Map"
+msgid "Stop Map"
+msgstr "Mostra el mapa"
 
 #: app/TicketEditor.qml:18
 #, kde-format
@@ -4317,36 +4355,36 @@ msgstr "Dividix el viatge"
 msgid "Vehicle Layout"
 msgstr "Disposició del vehicle"
 
-#: app/VehicleLayoutPage.qml:70
-#, kde-format
-msgctxt "train coach"
-msgid "Coach %1"
-msgstr "Vagó %1"
-
-#: app/VehicleLayoutPage.qml:132
+#: app/VehicleLayoutPage.qml:93
 #, kde-format
 msgid "Departure: %1"
 msgstr "Eixida: %1"
 
-#: app/VehicleLayoutPage.qml:134
+#: app/VehicleLayoutPage.qml:95
 #, kde-format
 msgid "Arrival: %1"
 msgstr "Arribada: %1"
 
-#: app/VehicleLayoutPage.qml:154
+#: app/VehicleLayoutPage.qml:115
 #, kde-format
 msgid "Platform: %1"
 msgstr "Andana: %1"
 
-#: app/VehicleLayoutPage.qml:163
+#: app/VehicleLayoutPage.qml:124
 #, kde-format
 msgid "Coach: %1 Seat: %2"
 msgstr "Vagó: %1 Seient: %2"
 
-#: app/VehicleLayoutPage.qml:268
+#: app/VehicleLayoutPage.qml:229
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "No hi ha informació disponible de la disposició del vehicle."
+
+#: app/VehicleSectionDialog.qml:27
+#, kde-format
+msgctxt "train coach"
+msgid "Coach %1"
+msgstr "Vagó %1"
 
 #: app/WeatherForecastDelegate.qml:58 app/WeatherForecastPage.qml:104
 #, kde-format
@@ -4492,9 +4530,6 @@ msgstr "%1%2 des de %3 a %4 el %5"
 #~ msgctxt "@action:intoolbar Go up one floor"
 #~ msgid "Floor up"
 #~ msgstr "Planta amunt"
-
-#~ msgid "Information"
-#~ msgstr "Informació"
 
 #~ msgid "Occupancy"
 #~ msgstr "Ocupació"
