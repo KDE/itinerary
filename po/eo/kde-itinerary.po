@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-15 02:40+0000\n"
+"POT-Creation-Date: 2025-06-22 02:45+0000\n"
 "PO-Revision-Date: 2024-12-27 23:54+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -1810,7 +1810,7 @@ msgstr "Trovis nenion enportendan."
 msgid "No importable events found in this calendar."
 msgstr "Neniuj importeblaj eventoj trovitaj en ĉi tiu kalendaro."
 
-#: app/importcontroller.cpp:628
+#: app/importcontroller.cpp:634
 #, kde-format
 msgid "Backup"
 msgstr "Sekurkopio"

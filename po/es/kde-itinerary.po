@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-15 02:40+0000\n"
+"POT-Creation-Date: 2025-06-22 02:45+0000\n"
 "PO-Revision-Date: 2025-05-07 18:56+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -1815,7 +1815,7 @@ msgid "No importable events found in this calendar."
 msgstr ""
 "Se han encontrado eventos en este calendario que no se pueden importar."
 
-#: app/importcontroller.cpp:628
+#: app/importcontroller.cpp:634
 #, kde-format
 msgid "Backup"
 msgstr "Copia de seguridad"
