@@ -2477,10 +2477,9 @@ msgid "Occupancy:"
 msgstr "占有率："
 
 #: app/MapStopoverInfoSheetDrawer.qml:94
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgid "Information:"
-msgstr "更多信息"
+msgstr ""
 
 #: app/MapStopoverInfoSheetDrawer.qml:106
 #, kde-format
@@ -3612,18 +3611,16 @@ msgid "Car"
 msgstr "汽车"
 
 #: app/StopoverDetailsPage.qml:16
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgctxt "train/bus arrival"
 msgid "Arrival Information"
-msgstr "更多信息"
+msgstr ""
 
 #: app/StopoverDetailsPage.qml:16
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgctxt "train/bus departure"
 msgid "Departure Information"
-msgstr "更多信息"
+msgstr ""
 
 #: app/StopoverDetailsPage.qml:91 app/StopoverFormDelegate.qml:93
 #, kde-format
@@ -3632,23 +3629,19 @@ msgid "From %1"
 msgstr ""
 
 #: app/StopoverDetailsPage.qml:122
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgid "Information"
-msgstr "更多信息"
+msgstr ""
 
 #: app/StopoverDetailsPage.qml:130
-#, fuzzy, kde-format
-#| msgid "Trip"
+#, kde-format
 msgid "Trip Map"
-msgstr "旅程"
+msgstr ""
 
 #: app/StopoverDetailsPage.qml:138
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Show Map"
+#, kde-format
 msgid "Stop Map"
-msgstr "显示地图"
+msgstr ""
 
 #: app/TicketEditor.qml:18
 #, kde-format

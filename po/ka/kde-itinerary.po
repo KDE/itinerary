@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-22 00:43+0000\n"
-"PO-Revision-Date: 2025-06-01 05:31+0200\n"
+"PO-Revision-Date: 2025-06-22 04:54+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -2492,10 +2492,9 @@ msgid "Occupancy:"
 msgstr "დაკავებულობა:"
 
 #: app/MapStopoverInfoSheetDrawer.qml:94
-#, fuzzy, kde-format
-#| msgid "Information"
+#, kde-format
 msgid "Information:"
-msgstr "ინფორმაცია"
+msgstr "ინფორმაცია:"
 
 #: app/MapStopoverInfoSheetDrawer.qml:106
 #, kde-format
@@ -3654,18 +3653,16 @@ msgid "Car"
 msgstr "მანქანა"
 
 #: app/StopoverDetailsPage.qml:16
-#, fuzzy, kde-format
-#| msgid "Information"
+#, kde-format
 msgctxt "train/bus arrival"
 msgid "Arrival Information"
-msgstr "ინფორმაცია"
+msgstr "ჩამოსვლის ინფორმაცია"
 
 #: app/StopoverDetailsPage.qml:16
-#, fuzzy, kde-format
-#| msgid "Developer information"
+#, kde-format
 msgctxt "train/bus departure"
 msgid "Departure Information"
-msgstr "ინფორმაცია დეველოპერზე"
+msgstr "გამგზავრების ინფორმაცია"
 
 #: app/StopoverDetailsPage.qml:91 app/StopoverFormDelegate.qml:93
 #, kde-format
@@ -3679,17 +3676,14 @@ msgid "Information"
 msgstr "ინფორმაცია"
 
 #: app/StopoverDetailsPage.qml:130
-#, fuzzy, kde-format
-#| msgid "Trip"
+#, kde-format
 msgid "Trip Map"
-msgstr "მოგზაურობა"
+msgstr "მოგზაურობის რუკა"
 
 #: app/StopoverDetailsPage.qml:138
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Show Map"
+#, kde-format
 msgid "Stop Map"
-msgstr "რუკის ჩვენება"
+msgstr "რუკის გაჩერება"
 
 #: app/TicketEditor.qml:18
 #, kde-format

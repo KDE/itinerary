@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-22 00:43+0000\n"
-"PO-Revision-Date: 2025-06-01 12:08+0200\n"
+"PO-Revision-Date: 2025-06-22 16:00+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 25.04.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -2499,10 +2499,9 @@ msgid "Occupancy:"
 msgstr "Ocupació:"
 
 #: app/MapStopoverInfoSheetDrawer.qml:94
-#, fuzzy, kde-format
-#| msgid "Information"
+#, kde-format
 msgid "Information:"
-msgstr "Informació"
+msgstr "Informació:"
 
 #: app/MapStopoverInfoSheetDrawer.qml:106
 #, kde-format
@@ -3687,18 +3686,16 @@ msgid "Car"
 msgstr "Cotxe"
 
 #: app/StopoverDetailsPage.qml:16
-#, fuzzy, kde-format
-#| msgid "Information"
+#, kde-format
 msgctxt "train/bus arrival"
 msgid "Arrival Information"
-msgstr "Informació"
+msgstr "Informació d'arribada"
 
 #: app/StopoverDetailsPage.qml:16
-#, fuzzy, kde-format
-#| msgid "Developer information"
+#, kde-format
 msgctxt "train/bus departure"
 msgid "Departure Information"
-msgstr "Informació del desenvolupador"
+msgstr "Informació de sortida"
 
 #: app/StopoverDetailsPage.qml:91 app/StopoverFormDelegate.qml:93
 #, kde-format
@@ -3712,17 +3709,14 @@ msgid "Information"
 msgstr "Informació"
 
 #: app/StopoverDetailsPage.qml:130
-#, fuzzy, kde-format
-#| msgid "Trip"
+#, kde-format
 msgid "Trip Map"
-msgstr "Viatge"
+msgstr "Mapa del viatge"
 
 #: app/StopoverDetailsPage.qml:138
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Show Map"
+#, kde-format
 msgid "Stop Map"
-msgstr "Mostra el mapa"
+msgstr "Mapa de parades"
 
 #: app/TicketEditor.qml:18
 #, kde-format

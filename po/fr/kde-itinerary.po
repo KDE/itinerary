@@ -3732,7 +3732,8 @@ msgid "From %1"
 msgstr "De %1"
 
 #: app/StopoverDetailsPage.qml:122
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Information"
 msgid "Information"
 msgstr "Informations"
 

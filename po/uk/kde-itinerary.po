@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-22 00:43+0000\n"
-"PO-Revision-Date: 2025-06-01 12:13+0300\n"
+"PO-Revision-Date: 2025-06-22 10:29+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -2510,10 +2510,9 @@ msgid "Occupancy:"
 msgstr "Заповненість:"
 
 #: app/MapStopoverInfoSheetDrawer.qml:94
-#, fuzzy, kde-format
-#| msgid "Information"
+#, kde-format
 msgid "Information:"
-msgstr "Відомості"
+msgstr "Відомості:"
 
 #: app/MapStopoverInfoSheetDrawer.qml:106
 #, kde-format
@@ -3692,18 +3691,16 @@ msgid "Car"
 msgstr "Автомобіль"
 
 #: app/StopoverDetailsPage.qml:16
-#, fuzzy, kde-format
-#| msgid "Information"
+#, kde-format
 msgctxt "train/bus arrival"
 msgid "Arrival Information"
-msgstr "Відомості"
+msgstr "Відомості щодо прибуття"
 
 #: app/StopoverDetailsPage.qml:16
-#, fuzzy, kde-format
-#| msgid "Developer information"
+#, kde-format
 msgctxt "train/bus departure"
 msgid "Departure Information"
-msgstr "Відомості для розробника"
+msgstr "Відомості щодо відправлення"
 
 #: app/StopoverDetailsPage.qml:91 app/StopoverFormDelegate.qml:93
 #, kde-format
@@ -3717,17 +3714,14 @@ msgid "Information"
 msgstr "Відомості"
 
 #: app/StopoverDetailsPage.qml:130
-#, fuzzy, kde-format
-#| msgid "Trip"
+#, kde-format
 msgid "Trip Map"
-msgstr "Подорож"
+msgstr "Карта подорожі"
 
 #: app/StopoverDetailsPage.qml:138
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Show Map"
+#, kde-format
 msgid "Stop Map"
-msgstr "Показати мапу"
+msgstr "Карта зупинок"
 
 #: app/TicketEditor.qml:18
 #, kde-format
