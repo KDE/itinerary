@@ -26,7 +26,8 @@ RowLayout {
     Layout.fillWidth: true
 
     JourneySectionStopDelegateLineSegment {
-        Layout.fillHeight: true
+        Layout.alignment: Qt.AlignTop
+        implicitHeight: arrivalRow.height + Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
         lineColor: root.departure.route.line.hasColor ? root.departure.route.line.color : Kirigami.Theme.textColor
         progress: root.progress
         isArrival: true
@@ -44,6 +45,7 @@ RowLayout {
         }
 
         RowLayout {
+            id: arrivalRow
             spacing: Kirigami.Units.smallSpacing
 
             Kirigami.Heading {
