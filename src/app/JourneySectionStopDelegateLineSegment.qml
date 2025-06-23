@@ -61,7 +61,7 @@ Item {
         height: {
             const h = ((lineSegment.isDeparture || lineSegment.isArrival) ? line.height - (line.width - width) / 2 - line.width * 0.3 : line.height) * lineSegment.progress
             if (lineSegment.showStop && lineSegment.progress > 0) {
-                return Math.max(h, stopDot.y + stopDot.height - y)
+                return Math.max(h, stopDot.y + stopDot.radius - y)
             }
             return h;
         }
