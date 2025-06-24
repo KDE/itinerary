@@ -22,7 +22,7 @@ FormCard.FormTextDelegate {
     description: {
         const price = PriceUtil.price(root.item);
         const currency = PriceUtil.currency(root.item);
-        const homeCurrency = Country.fromAlpha2(Settings.homeCountryIsoCode).currencyCode;
+        const homeCurrency = Country.fromAlpha2(Settings.homeCountryIsoCode)?.currencyCode;
 
         if (Settings.performCurrencyConversion && homeCurrency != currency) {
             const convertedPrice = UnitConversion.convertCurrency(price, currency, homeCurrency);
