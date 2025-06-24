@@ -63,10 +63,8 @@ anchors.centerIn: parent
 
                 JourneySectionStopDelegateLineSegment {
                     id: departureLine
-                    anchors {
-                        topMargin: Kirigami.Units.mediumSpacing
-                    }
-                    height: parent.height
+                    y: Kirigami.Units.mediumSpacing + Kirigami.Units.smallSpacing
+                    height: parent.height - y
                     width: implicitWidth
                     lineColor: root.modelData.route.line.hasColor ? root.modelData.route.line.color : Kirigami.Theme.textColor
                     isDeparture: true
@@ -280,11 +278,14 @@ anchors.centerIn: parent
                     width: Math.round(Kirigami.Units.smallSpacing / 2)
                 }
                 JourneySectionStopDelegateLineSegment {
-                    anchors.fill: parent
-                    anchors.bottomMargin: Kirigami.Units.mediumSpacing
+                    anchors {
+                        top: parent.top
+                        horizontalCenter: parent.horizontalCenter
+                    }
                     lineColor: root.modelData.route.line.hasColor ? root.modelData.route.line.color : Kirigami.Theme.textColor
                     isArrival: true
                     visible:  root.modelData.mode !== JourneySection.Transfer && root.modelData.mode !== JourneySection.Walking && root.modelData.mode !== JourneySection.Waiting
+                    height: arrivalStopRow.height + Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
                 }
             }
 
@@ -298,6 +299,7 @@ anchors.centerIn: parent
                 }
 
                 RowLayout {
+                    id: arrivalStopRow
                     spacing: Kirigami.Units.smallSpacing
 
                     Layout.fillWidth: true
