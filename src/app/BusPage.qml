@@ -220,7 +220,8 @@ DetailsPage {
                     onTriggered: applicationWindow().pageStack.push(journeySectionPage, {
                         journeySection: root.controller.trip,
                         departureStopIndex: root.controller.tripDepartureIndex,
-                        arrivalStopIndex: root.controller.tripArrivalIndex
+                        arrivalStopIndex: root.controller.tripArrivalIndex,
+                        showProgress: root.controller.isCurrent
                     });
                     Component.onCompleted: {
                         visible = Qt.binding(function() { return root.controller.journey && root.controller.journey.intermediateStops.length > 0});
