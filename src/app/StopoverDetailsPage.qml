@@ -36,6 +36,7 @@ Kirigami.Page {
 
         GridLayout {
             id: headerLayout
+            Layout.fillWidth: true
             rowSpacing: Kirigami.Units.largeSpacing * 2
             columnSpacing: rowSpacing
             rows: 2
