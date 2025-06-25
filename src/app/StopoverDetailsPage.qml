@@ -202,10 +202,16 @@ Kirigami.Page {
                     isDeparture: true
                     highlight: tripView.stopIndex === 0
                     topPadding: Kirigami.Units.largeSpacing
+                    progress: journeySectionModel.departureProgress
+                    stopoverPassed: journeySectionModel.departed
                 }
 
                 delegate: JourneySectionStopDelegate {
-                    stop: modelData
+                    required property var model
+                    required property int index
+                    stop: model.stopover
+                    stopoverPassed: model.stopoverPassed
+                    progress: model.progress
                     highlight: tripView.stopIndex === index + 1
                 }
 
@@ -213,9 +219,15 @@ Kirigami.Page {
                     stop: tripView.journeySection.arrival
                     isArrival: true
                     highlight: tripView.stopIndex === tripView.count + 1
+                    stopoverPassed: journeySectionModel.arrived
                 }
 
-                model: journeySection.intermediateStops
+                JourneySectionModel {
+                    id: journeySectionModel
+                    showProgress: true
+                    journeySection: tripView.journeySection
+                }
+                model: journeySectionModel
             }
 
             Item {
