@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-22 00:43+0000\n"
+"POT-Creation-Date: 2025-06-26 00:43+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -380,7 +380,7 @@ msgstr ""
 
 #: app/BoatEditor.qml:59 app/EventEditor.qml:54 app/FlightEditor.qml:72
 #: app/HotelEditor.qml:51 app/ImportPage.qml:21 app/JourneyRequestPage.qml:226
-#: app/RestaurantEditor.qml:53 app/StopoverDetailsPage.qml:126
+#: app/RestaurantEditor.qml:53 app/StopoverDetailsPage.qml:127
 #, kde-format
 msgid "Trip"
 msgstr "旅程"
@@ -711,7 +711,7 @@ msgstr ""
 msgid "Drop-off"
 msgstr "下车信息"
 
-#: app/CarRentalPage.qml:80 app/StopoverDetailsPage.qml:134
+#: app/CarRentalPage.qml:80 app/StopoverDetailsPage.qml:135
 #, kde-format
 msgid "Vehicle"
 msgstr "车辆"
@@ -2058,7 +2058,7 @@ msgid "Drive %1 (%2)"
 msgstr ""
 
 #: app/JourneySectionDelegate.qml:182 app/JourneySectionDelegate.qml:329
-#: app/StopoverDetailsPage.qml:98 app/StopoverFormDelegate.qml:100
+#: app/StopoverDetailsPage.qml:99 app/StopoverFormDelegate.qml:100
 #, kde-format
 msgctxt "@info"
 msgid "Platform %1"
@@ -3622,23 +3622,23 @@ msgctxt "train/bus departure"
 msgid "Departure Information"
 msgstr ""
 
-#: app/StopoverDetailsPage.qml:91 app/StopoverFormDelegate.qml:93
+#: app/StopoverDetailsPage.qml:92 app/StopoverFormDelegate.qml:93
 #, kde-format
 msgctxt "departure stop"
 msgid "From %1"
 msgstr ""
 
-#: app/StopoverDetailsPage.qml:122
+#: app/StopoverDetailsPage.qml:123
 #, kde-format
 msgid "Information"
 msgstr ""
 
-#: app/StopoverDetailsPage.qml:130
+#: app/StopoverDetailsPage.qml:131
 #, kde-format
 msgid "Trip Map"
 msgstr ""
 
-#: app/StopoverDetailsPage.qml:138
+#: app/StopoverDetailsPage.qml:139
 #, kde-format
 msgid "Stop Map"
 msgstr ""

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-22 00:43+0000\n"
+"POT-Creation-Date: 2025-06-26 00:43+0000\n"
 "PO-Revision-Date: 2024-12-15 19:32+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
@@ -386,7 +386,7 @@ msgstr "नाव"
 
 #: app/BoatEditor.qml:59 app/EventEditor.qml:54 app/FlightEditor.qml:72
 #: app/HotelEditor.qml:51 app/ImportPage.qml:21 app/JourneyRequestPage.qml:226
-#: app/RestaurantEditor.qml:53 app/StopoverDetailsPage.qml:126
+#: app/RestaurantEditor.qml:53 app/StopoverDetailsPage.qml:127
 #, kde-format
 msgid "Trip"
 msgstr "यात्रा"
@@ -727,7 +727,7 @@ msgstr "जगह"
 msgid "Drop-off"
 msgstr "बाहर निकलना"
 
-#: app/CarRentalPage.qml:80 app/StopoverDetailsPage.qml:134
+#: app/CarRentalPage.qml:80 app/StopoverDetailsPage.qml:135
 #, kde-format
 msgid "Vehicle"
 msgstr "वाहन"
@@ -2104,7 +2104,7 @@ msgid "Drive %1 (%2)"
 msgstr "ड्राइव %1 (%2)"
 
 #: app/JourneySectionDelegate.qml:182 app/JourneySectionDelegate.qml:329
-#: app/StopoverDetailsPage.qml:98 app/StopoverFormDelegate.qml:100
+#: app/StopoverDetailsPage.qml:99 app/StopoverFormDelegate.qml:100
 #, kde-format
 msgctxt "@info"
 msgid "Platform %1"
@@ -3700,7 +3700,7 @@ msgctxt "train/bus departure"
 msgid "Departure Information"
 msgstr "डेवलपर जानकारी"
 
-#: app/StopoverDetailsPage.qml:91 app/StopoverFormDelegate.qml:93
+#: app/StopoverDetailsPage.qml:92 app/StopoverFormDelegate.qml:93
 #, fuzzy, kde-format
 #| msgctxt "departure train station"
 #| msgid "From:"
@@ -3708,19 +3708,19 @@ msgctxt "departure stop"
 msgid "From %1"
 msgstr "से:"
 
-#: app/StopoverDetailsPage.qml:122
+#: app/StopoverDetailsPage.qml:123
 #, fuzzy, kde-format
 #| msgid "More information"
 msgid "Information"
 msgstr "अधिक जानकारी"
 
-#: app/StopoverDetailsPage.qml:130
+#: app/StopoverDetailsPage.qml:131
 #, fuzzy, kde-format
 #| msgid "Trip"
 msgid "Trip Map"
 msgstr "यात्रा"
 
-#: app/StopoverDetailsPage.qml:138
+#: app/StopoverDetailsPage.qml:139
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Show Map"
