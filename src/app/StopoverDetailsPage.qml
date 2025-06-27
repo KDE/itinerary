@@ -152,9 +152,9 @@ Kirigami.Page {
             }
 
             onCurrentIndexChanged: {
-                // position trip view to current stop
-                if (tabBar.currentIndex === 1 && tripView.contentY < 0) {
-                    tripView.positionViewAtIndex(tripView.stopIndex - 1, ListView.Beginning)
+                // position trip view so current stop is the second in the list
+                if (tabBar.currentIndex === 1 && (tripView.contentY - tripView.originY) <= 0 && tripView.stopIndex >= 2) {
+                    tripView.positionViewAtIndex(tripView.stopIndex - 2, ListView.Beginning)
                 }
                 // trip map view on-demand loading
                 if (tabBar.currentIndex === 2 && tripView.journeySection.mode !== KPublicTransport.JourneySection.Invalid && tripMapView.journeySection.mode === KPublicTransport.JourneySection.Invalid) {
