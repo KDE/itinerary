@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-26 00:43+0000\n"
+"POT-Creation-Date: 2025-06-27 00:43+0000\n"
 "PO-Revision-Date: 2024-03-26 16:14+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -535,28 +535,28 @@ msgctxt "@info"
 msgid "Bus"
 msgstr "Busz"
 
-#: app/BusDelegate.qml:52 app/BusDelegate.qml:220
+#: app/BusDelegate.qml:52 app/BusDelegate.qml:190
 #, fuzzy, kde-format
 #| msgid "Platform change on %1"
 msgctxt "bus station platform"
 msgid "Platform changed to %1"
 msgstr "Peronváltozás: %1"
 
-#: app/BusDelegate.qml:54 app/BusDelegate.qml:222
+#: app/BusDelegate.qml:54 app/BusDelegate.qml:192
 #, fuzzy, kde-format
 #| msgid "Platform: %1"
 msgctxt "bus station platform"
 msgid "Platform %1"
 msgstr "Peron: %1"
 
-#: app/BusDelegate.qml:76
+#: app/BusDelegate.qml:69
 #, fuzzy, kde-format
 #| msgid "Direction: %1"
 msgctxt "bus seat"
 msgid "Seat: <b>%1</b>"
 msgstr "Irány: %1"
 
-#: app/BusDelegate.qml:107 app/TrainDelegate.qml:116
+#: app/BusDelegate.qml:88 app/TrainDelegate.qml:96
 #, fuzzy, kde-format
 #| msgid "1 intermediate stop"
 #| msgid_plural "%1 intermediate stops"
@@ -565,14 +565,14 @@ msgid_plural "%1 intermediate stops (%2)"
 msgstr[0] "1 köztes megálló"
 msgstr[1] "%1 köztes megálló"
 
-#: app/BusDelegate.qml:117 app/TrainDelegate.qml:126
+#: app/BusDelegate.qml:98 app/TrainDelegate.qml:106
 #, fuzzy, kde-format
 #| msgid "1 intermediate stop"
 #| msgid_plural "%1 intermediate stops"
 msgid "0 intermediate stop (%1)"
 msgstr "1 köztes megálló"
 
-#: app/BusDelegate.qml:237 app/TrainDelegate.qml:248
+#: app/BusDelegate.qml:206 app/TrainDelegate.qml:214
 #, fuzzy, kde-format
 #| msgid "%1 to %2"
 msgctxt "from location 1 to location 2"
@@ -880,14 +880,14 @@ msgstr "Kezdési idő: %1"
 msgid "End time: %1"
 msgstr "Befejezési idő: %1"
 
-#: app/EventDelegate.qml:91 app/EventPage.qml:109
+#: app/EventDelegate.qml:90 app/EventPage.qml:109
 #, fuzzy, kde-format
 #| msgid "Direction: %1"
 msgctxt "event venue seat section"
 msgid "Section: <b>%1</b>"
 msgstr "Irány: %1"
 
-#: app/EventDelegate.qml:97 app/EventPage.qml:115
+#: app/EventDelegate.qml:96 app/EventPage.qml:115
 #, fuzzy, kde-format
 #| msgctxt "carriage on a train"
 #| msgid "Coach"
@@ -895,7 +895,7 @@ msgctxt "event venue seat row"
 msgid "Row: <b>%1</b>"
 msgstr "Kocsi"
 
-#: app/EventDelegate.qml:103 app/EventPage.qml:121
+#: app/EventDelegate.qml:102 app/EventPage.qml:121
 #, fuzzy, kde-format
 #| msgid "Direction: %1"
 msgctxt "event venue seat number"
@@ -1074,32 +1074,32 @@ msgctxt "@info"
 msgid "Boarding time: %1"
 msgstr "Beszállási idő"
 
-#: app/FlightDelegate.qml:74
+#: app/FlightDelegate.qml:70
 #, kde-format
 msgctxt "flight departure terminal"
 msgid "Terminal: <b>%1</b>"
 msgstr ""
 
-#: app/FlightDelegate.qml:80
+#: app/FlightDelegate.qml:76
 #, kde-format
 msgctxt "flight departure gate"
 msgid "Gate: <b>%1</b>"
 msgstr ""
 
-#: app/FlightDelegate.qml:86
+#: app/FlightDelegate.qml:82
 #, kde-format
 msgctxt "flight seats"
 msgid "Seat: <b>%1</b>"
 msgstr ""
 
-#: app/FlightDelegate.qml:98
+#: app/FlightDelegate.qml:95
 #, fuzzy, kde-format
 #| msgid "Terminal"
 msgctxt "airport terminal"
 msgid "Terminal %1"
 msgstr "Terminál"
 
-#: app/FlightDelegate.qml:102
+#: app/FlightDelegate.qml:99
 #, kde-format
 msgid "%1 %2 → %3"
 msgstr "%1 %2 → %3"
@@ -1980,7 +1980,7 @@ msgstr "Térkép megnyitása"
 msgid "Open wheelmap.org"
 msgstr "Wheelmap.org megnyitása"
 
-#: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:297
+#: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:277
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2117,44 +2117,44 @@ msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
 msgstr "Hajók vagy kompok"
 
-#: app/JourneySectionDelegate.qml:143
+#: app/JourneySectionDelegate.qml:141
 #, fuzzy, kde-format
 #| msgctxt "to travel destination"
 #| msgid "To %1"
 msgid "To %1"
 msgstr "Ide: %1"
 
-#: app/JourneySectionDelegate.qml:147
+#: app/JourneySectionDelegate.qml:145
 #, kde-format
 msgid "Walk (%1)"
 msgstr "Séta (%1)"
 
-#: app/JourneySectionDelegate.qml:148
+#: app/JourneySectionDelegate.qml:146
 #, kde-format
 msgid "Walk %1 (%2)"
 msgstr "%1 séta (%2)"
 
-#: app/JourneySectionDelegate.qml:150
+#: app/JourneySectionDelegate.qml:148
 #, kde-format
 msgid "Transfer (%1)"
 msgstr "Átszállás (%1)"
 
-#: app/JourneySectionDelegate.qml:152
+#: app/JourneySectionDelegate.qml:150
 #, kde-format
 msgid "Wait (%1)"
 msgstr "Várakozás (%1)"
 
-#: app/JourneySectionDelegate.qml:154
+#: app/JourneySectionDelegate.qml:152
 #, kde-format
 msgid "%1 %2 (%3)"
 msgstr "%1 %2 (%3)"
 
-#: app/JourneySectionDelegate.qml:156
+#: app/JourneySectionDelegate.qml:154
 #, kde-format
 msgid "Drive %1 (%2)"
 msgstr "%1 vezetés (%2)"
 
-#: app/JourneySectionDelegate.qml:182 app/JourneySectionDelegate.qml:329
+#: app/JourneySectionDelegate.qml:180 app/JourneySectionDelegate.qml:331
 #: app/StopoverDetailsPage.qml:99 app/StopoverFormDelegate.qml:100
 #, fuzzy, kde-format
 #| msgid "Platform: %1"
@@ -2162,14 +2162,14 @@ msgctxt "@info"
 msgid "Platform %1"
 msgstr "Peron: %1"
 
-#: app/JourneySectionDelegate.qml:255 app/JourneySectionPage.qml:136
+#: app/JourneySectionDelegate.qml:253 app/JourneySectionPage.qml:136
 #: app/StopoverFormDelegate.qml:143 app/VehicleLayoutPage.qml:175
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr "Több…"
 
-#: app/JourneySectionPage.qml:51 app/TimelineDelegateDepartureLayout.qml:94
+#: app/JourneySectionPage.qml:51 app/TimelineDelegateDepartureLayout.qml:80
 #: app/VehicleLayoutPage.qml:77
 #, fuzzy, kde-format
 #| msgctxt "to travel destination"
@@ -2193,25 +2193,25 @@ msgstr "Átlagos sebesség: %1"
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionStopDelegate.qml:151
+#: app/JourneySectionStopDelegate.qml:152
 #, kde-format
 msgctxt "Abreviation of train platform"
 msgid "Pl. %1"
 msgstr "%1. vágány"
 
-#: app/JourneySectionStopDelegate.qml:153
+#: app/JourneySectionStopDelegate.qml:154
 #, kde-format
 msgctxt "Ferry dock, if possible use an abreviation"
 msgid "Dock %1"
 msgstr "%1. dokk"
 
-#: app/JourneySectionStopDelegate.qml:155
+#: app/JourneySectionStopDelegate.qml:156
 #, kde-format
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
 msgstr "%1. peron"
 
-#: app/JourneySectionStopDelegate.qml:170
+#: app/JourneySectionStopDelegate.qml:172
 #, kde-format
 msgid "Show location"
 msgstr "Hely megjelenítése"
@@ -3886,21 +3886,21 @@ msgstr "Érkezés"
 msgid "Arrival Time"
 msgstr "Érkezési idő"
 
-#: app/TrainDelegate.qml:45 app/TrainDelegate.qml:230
+#: app/TrainDelegate.qml:45 app/TrainDelegate.qml:199
 #, fuzzy, kde-format
 #| msgid "Platform change on %1"
 msgctxt "train station platform"
 msgid "Platform changed to %1"
 msgstr "Peronváltozás: %1"
 
-#: app/TrainDelegate.qml:47 app/TrainDelegate.qml:232
+#: app/TrainDelegate.qml:47 app/TrainDelegate.qml:201
 #, fuzzy, kde-format
 #| msgid "Platform: %1"
 msgctxt "train station platform"
 msgid "Platform %1"
 msgstr "Peron: %1"
 
-#: app/TrainDelegate.qml:69 app/TrainPage.qml:314
+#: app/TrainDelegate.qml:61 app/TrainPage.qml:314
 #, fuzzy, kde-format
 #| msgctxt "carriage on a train"
 #| msgid "Coach"
@@ -3908,13 +3908,13 @@ msgctxt "train coach"
 msgid "Coach: <b>%1</b>"
 msgstr "Kocsi"
 
-#: app/TrainDelegate.qml:75 app/TrainPage.qml:321
+#: app/TrainDelegate.qml:67 app/TrainPage.qml:321
 #, kde-format
 msgctxt "train seat"
 msgid "Seat: <b>%1</b>"
 msgstr ""
 
-#: app/TrainDelegate.qml:83 app/TrainPage.qml:329
+#: app/TrainDelegate.qml:75 app/TrainPage.qml:329
 #, kde-format
 msgctxt "train class"
 msgid "Class: <b>%1</b>"
@@ -4040,12 +4040,12 @@ msgctxt "@action:button"
 msgid "Add to Traewelling"
 msgstr ""
 
-#: app/TrainPage.qml:397
+#: app/TrainPage.qml:398
 #, kde-format
 msgid "Added to Traewelling"
 msgstr ""
 
-#: app/TrainPage.qml:397
+#: app/TrainPage.qml:398
 #, kde-format
 msgid "Failed to add to Traewelling"
 msgstr ""
