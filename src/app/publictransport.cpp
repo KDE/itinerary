@@ -28,6 +28,7 @@
 
 #include <QDateTime>
 #include <QDebug>
+#include <QRegularExpression>
 #include <QUrl>
 
 using namespace Qt::Literals;
@@ -178,6 +179,35 @@ static KItinerary::BoatReservation applyJourneySection(KItinerary::BoatReservati
     return res;
 }
 
+static KItinerary::FlightReservation applyJourneySection(KItinerary::FlightReservation res, const KPublicTransport::JourneySection &section)
+{
+    using namespace KItinerary;
+
+    auto flight = res.reservationFor().value<Flight>();
+    flight.setDepartureTime(section.scheduledDepartureTime());
+    flight.setArrivalTime(section.scheduledArrivalTime());
+
+    auto airline = flight.airline();
+    airline.setName(section.route().line().operatorName());
+
+    const QRegularExpression rx(uR"(([A-Z0-9]{2}) *(\d{1,4})\b)"_s);
+    if (const auto match = rx.match(section.route().line().name()); match.hasMatch()) {
+        airline.setIataCode(match.captured(1));
+        flight.setFlightNumber(match.captured(2));
+    } else {
+        flight.setFlightNumber(section.route().line().name());
+    }
+
+    flight.setDepartureAirport(PublicTransport::updateToLocation(flight.departureAirport(), section.from()));
+    flight.setDepartureGate(section.scheduledDeparturePlatform());
+    flight.setArrivalAirport(PublicTransport::updateToLocation(flight.arrivalAirport(), section.to()));
+    // TODO arrival gate
+
+    flight.setAirline(airline);
+    res.setReservationFor(flight);
+    return res;
+}
+
 static QVariant postProcessOne(const QVariant &res)
 {
     KItinerary::ExtractorPostprocessor postProc;
@@ -200,6 +230,9 @@ QVariant PublicTransport::reservationFromJourneySection(const KPublicTransport::
     }
     if (isBoatMode(section.route().line().mode())) {
         return postProcessOne(::applyJourneySection(BoatReservation(), section));
+    }
+    if (section.route().line().mode() == KPublicTransport::Line::Air) {
+        return postProcessOne(::applyJourneySection(FlightReservation(), section));
     }
 
     qCWarning(Log) << "Unsupported section type:" << section.route().line().mode();
@@ -313,13 +346,10 @@ QString PublicTransport::attributionSummary(const QVariantList &attributions) co
 
 QString PublicTransport::idenfitierFromLocation(const KPublicTransport::Location &loc)
 {
-    auto id = loc.identifier(QLatin1StringView("ibnr"));
-    if (!id.isEmpty()) {
-        return QLatin1StringView("ibnr:") + id;
-    }
-    id = loc.identifier(QLatin1StringView("uic"));
-    if (!id.isEmpty()) {
-        return QLatin1StringView("uic:") + id;
+    for (const auto &type : { "ibnr", "uic", "iata" }) {
+        if (const auto id = loc.identifier(QLatin1StringView(type)); !id.isEmpty()) {
+            return QLatin1StringView(type) + id;
+        }
     }
     return {};
 }
