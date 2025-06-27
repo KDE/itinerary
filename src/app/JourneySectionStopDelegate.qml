@@ -61,7 +61,6 @@ Item {
             id: arrivalTime
             Layout.column: 1
             Layout.row: 0
-            Layout.rowSpan: root.isSingleTime ? 2 : 1
             Layout.alignment: Qt.AlignTop
             text: Localizer.formatTime(stop, "scheduledArrivalTime")
             visible: root.stop.scheduledArrivalTime > 0 && !root.isSameTime
@@ -71,7 +70,6 @@ Item {
         QQC2.Label {
             Layout.column: 2
             Layout.row: 0
-            Layout.rowSpan: arrivalTime.Layout.rowSpan
             Layout.alignment:  Qt.AlignTop
             text: (root.stop.arrivalDelay >= 0 ? "+" : "") + root.stop.arrivalDelay
             color: root.stop.arrivalDelay > 1 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
@@ -82,7 +80,6 @@ Item {
         QQC2.Label {
             Layout.column: 3
             Layout.row: 0
-            Layout.rowSpan: arrivalTime.Layout.rowSpan
             Layout.fillWidth: true
             Layout.alignment:  Qt.AlignTop
             text: root.stop.stopPoint.name
@@ -96,9 +93,7 @@ Item {
             id: departureTime
             Layout.column: 1
             Layout.row: root.isSingleTime ? 0 : 1
-            Layout.rowSpan: root.isSingleTime ? 2 : 1
             Layout.alignment:  Qt.AlignTop
-            Layout.fillHeight: true
             text: Localizer.formatTime(stop, "scheduledDepartureTime")
             visible: root.stop.scheduledDepartureTime > 0
             font.strikeout: root.stop.disruptionEffect === KPublicTransport.Disruption.NoService
@@ -108,7 +103,6 @@ Item {
         QQC2.Label {
             Layout.column: 2
             Layout.row: departureTime.Layout.row
-            Layout.rowSpan: departureTime.Layout.rowSpan
             Layout.alignment:  Qt.AlignTop
             text: (root.stop.departureDelay >= 0 ? "+" : "") + root.stop.departureDelay
             color: root.stop.departureDelay > 1 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
@@ -117,9 +111,9 @@ Item {
         }
 
         KPublicTransport.OccupancyIndicator {
+            id: occupancyIndicator
             Layout.column: 3
             Layout.row: 1
-            Layout.rowSpan: 1
             Layout.alignment:  Qt.AlignTop
             Layout.preferredHeight: Kirigami.Units.iconSizes.small
             Layout.preferredWidth: Kirigami.Units.iconSizes.small
@@ -129,7 +123,6 @@ Item {
         QQC2.Label {
             Layout.column: 4
             Layout.row: 0
-            Layout.rowSpan: arrivalTime.Layout.rowSpan
             Layout.alignment:  Qt.AlignTop
 
             color: root.stop.hasExpectedPlatform ? (root.stop.platformChanged ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor) : Kirigami.Theme.textColor
@@ -163,7 +156,6 @@ Item {
         QQC2.ToolButton {
             Layout.column: 5
             Layout.row: 0
-            Layout.rowSpan: arrivalTime.Layout.rowSpan
             Layout.alignment:  Qt.AlignTop
             Layout.topMargin: -(height - arrivalTime.height) / 2
             Layout.bottomMargin: -(height - arrivalTime.height) / 2
@@ -202,7 +194,8 @@ Item {
         QQC2.Label {
             id: notesLabel
             Layout.column: 3
-            Layout.row: 2
+            Layout.row: (occupancyIndicator.visible || !root.isSingleTime) ? 2 : 1
+            Layout.rowSpan: (occupancyIndicator.visible || !root.isSingleTime) ? 1 : 2
             Layout.columnSpan: 3
             Layout.fillWidth: true
             Layout.fillHeight: true
