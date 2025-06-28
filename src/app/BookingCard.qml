@@ -15,7 +15,7 @@ ColumnLayout {
 
     required property var reservation
 
-    visible: referenceLabel.visible || underNameLabel.visible || ticketNumberLabel.visible || priceLabel.visible
+    visible: referenceLabel.visible || underNameLabel.visible || ticketNumberLabel.visible || priceLabel.visible || ticketValidFromLabel.visible || ticketValidUntilLabel.visible
     spacing: 0
 
     Layout.fillWidth: true
@@ -85,7 +85,7 @@ ColumnLayout {
             id: ticketValidFromLabel
             text: i18n("Ticket valid from")
             description: Localizer.formatDateOrDateTimeLocal(root.reservation.reservedTicket, "validFrom")
-            visible: !isNaN(root.reservation.reservedTicket.validFrom.getTime())
+            visible: root.reservation.reservedTicket !== undefined && !isNaN(root.reservation.reservedTicket.validFrom.getTime())
         }
         FormCard.FormDelegateSeparator { visible: ticketValidFromLabel.visible }
 
@@ -93,7 +93,7 @@ ColumnLayout {
             id: ticketValidUntilLabel
             text: i18n("Ticket valid until")
             description: Localizer.formatDateOrDateTimeLocal(root.reservation.reservedTicket, "validUntil")
-            visible: !isNaN(root.reservation.reservedTicket.validUntil.getTime())
+            visible: root.reservation.reservedTicket !== undefined && !isNaN(root.reservation.reservedTicket.validUntil.getTime())
         }
         FormCard.FormDelegateSeparator { visible: ticketValidUntilLabel.visible }
 
