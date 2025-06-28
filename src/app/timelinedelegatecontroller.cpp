@@ -38,6 +38,7 @@
 
 #include <QJSEngine>
 #include <QJSValue>
+#include <QMetaProperty>
 
 #include <QCoreApplication>
 #include <QDateTime>
@@ -504,6 +505,29 @@ KPublicTransport::JourneyRequest TimelineDelegateController::journeyRequestFull(
     return req;
 }
 
+static QVariant applyReservationProperties(QVariant to, const QVariant &res)
+{
+    if (!JsonLd::canConvert<Reservation>(res)) {
+        return to;
+    }
+
+    const auto mo = Reservation::staticMetaObject;
+    for (auto i = 0; i < mo.propertyCount(); ++i) {
+        const auto prop = mo.property(i);
+        if (!prop.isWritable() || !prop.isStored() || std::strcmp(prop.name(), "reservationFor") == 0) {
+            continue;
+        }
+
+        const auto v = prop.readOnGadget(res.constData());
+        if (v.isNull()) {
+            continue;
+        }
+        prop.writeOnGadget(to.data(), v);
+    }
+
+    return to;
+}
+
 void TimelineDelegateController::applyJourney(const QVariant &journey, bool includeFollowing)
 {
     if (!m_resMgr || !m_tripGroupMgr || m_batchId.isEmpty()) {
@@ -571,9 +595,8 @@ void TimelineDelegateController::applyJourney(const QVariant &journey, bool incl
             // copy ticket data from previous element
             // TODO this would need to be done for the entire batch!
             if (!lastResId.isEmpty()) {
-                auto lastRes = m_resMgr->reservation(lastResId);
-                JsonLdDocument::writeProperty(lastRes, "reservationFor", {});
-                res = JsonLdDocument::apply(lastRes, res);
+                const auto lastRes = m_resMgr->reservation(lastResId);
+                res = applyReservationProperties(res, lastRes);
             }
 
             const auto resId = m_resMgr->addReservation(res);
