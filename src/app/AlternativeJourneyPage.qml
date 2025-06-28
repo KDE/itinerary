@@ -8,6 +8,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kpublictransport
 import org.kde.itinerary
 
@@ -21,7 +22,9 @@ JourneyQueryPage {
     journeyRequest: controller.journeyRequestFull
 
     function updateRequest() {
-        root.journeyRequest = fullJourneyAction.checked ? controller.journexRequestFull : controller.journeyRequestOne;
+        root.journeyRequest = controller.journeyRequest;
+        root.journeyRequest.to = controller.journeyDestinations[destinationCombo.currentIndex];
+        console.log(destinationCombo.currentValue["name"])
 
         let allLineModes = true;
         for (const s of [longDistanceModeAction, localTrainModeAction, rapidTransitModeAction, busModeAction, ferryModeAction]) {
@@ -49,39 +52,14 @@ JourneyQueryPage {
     onJourneyChanged: replaceWarningDialog.open()
 
     Component.onCompleted: {
-        for (const action of [fullJourneyAction, oneJourneyAction, actionSeparator, longDistanceModeAction, localTrainModeAction, rapidTransitModeAction, busModeAction, ferryModeAction]) {
+        for (const action of [longDistanceModeAction, localTrainModeAction, rapidTransitModeAction, busModeAction, ferryModeAction]) {
                 actions.push(action);
         }
+        destinationCombo.currentIndex = destinationCombo.count - 1
+        updateRequest()
     }
 
     data: [
-        QQC2.ActionGroup { id: journeyActionGroup },
-        Kirigami.Action {
-            id: fullJourneyAction
-            text: i18nc("to travel destination", "To %1", root.controller.journeyRequestFull.to.name)
-            checkable: true
-            checked: root.controller.journeyRequestFull.to.name == root.journeyRequest.to.name
-            icon.name: "go-next-symbolic"
-            visible: root.controller.journeyRequestFull.to.name != root.controller.journeyRequestOne.to.name
-            QQC2.ActionGroup.group: journeyActionGroup
-            onTriggered: root.updateRequest()
-        },
-        Kirigami.Action {
-            id: oneJourneyAction
-            text: i18nc("to travel destination", "To %1", root.controller.journeyRequestOne.to.name)
-            checkable: true
-            checked: root.controller.journeyRequestOne.to.name == root.journeyRequest.to.name
-            icon.name: "go-next-symbolic"
-            visible: root.controller.journeyRequestFull.to.name != root.controller.journeyRequestOne.to.name
-            QQC2.ActionGroup.group: journeyActionGroup
-            onTriggered: root.updateRequest()
-        },
-
-        Kirigami.Action {
-            id: actionSeparator
-            separator: true
-        },
-
         Kirigami.Action {
             id: longDistanceModeAction
             text: i18nc("journey query search constraint, title", "Long distance trains")
@@ -134,7 +112,7 @@ JourneyQueryPage {
                     text: i18n("Replace")
                     icon.name: "document-save"
                     onTriggered: {
-                        root.controller.applyJourney(root.journey, root.journeyRequest.to.name == root.controller.journeyRequestFull.to.name);
+                        root.controller.applyJourney(root.journey, destinationCombo.currentIndex);
                         replaceWarningDialog.close()
                         applicationWindow().pageStack.pop();
                     }
@@ -142,4 +120,19 @@ JourneyQueryPage {
             ]
         }
     ]
+
+    header: ColumnLayout {
+        FormCard.FormCard {
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            Layout.bottomMargin: Kirigami.Units.largeSpacing
+            FormCard.FormComboBoxDelegate {
+                id: destinationCombo
+                text: i18n("Destination:")
+                model: root.controller.journeyDestinations
+                displayText: currentValue.name
+                textRole: "name"
+                onCurrentIndexChanged: root.updateRequest()
+            }
+        }
+    }
 }

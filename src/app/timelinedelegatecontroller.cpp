@@ -457,7 +457,7 @@ static bool isLayover(const QVariant &res1, const QVariant &res2)
     return LocationUtil::isSameLocation(LocationUtil::arrivalLocation(res1), LocationUtil::departureLocation(res2), LocationUtil::WalkingDistance);
 }
 
-KPublicTransport::JourneyRequest TimelineDelegateController::journeyRequestOne() const
+KPublicTransport::JourneyRequest TimelineDelegateController::journeyRequest() const
 {
     if (!m_resMgr || m_batchId.isEmpty() || !m_liveDataMgr) {
         return {};
@@ -470,7 +470,6 @@ KPublicTransport::JourneyRequest TimelineDelegateController::journeyRequestOne()
 
     KPublicTransport::JourneyRequest req;
     req.setFrom(PublicTransport::locationFromPlace(LocationUtil::departureLocation(res), res));
-    req.setTo(PublicTransport::locationFromPlace(LocationUtil::arrivalLocation(res), res));
     req.setDateTime(std::max(QDateTime::currentDateTime(), SortUtil::startDateTime(res)));
     req.setDateTimeMode(KPublicTransport::JourneyRequest::Departure);
     req.setDownloadAssets(true);
@@ -480,16 +479,20 @@ KPublicTransport::JourneyRequest TimelineDelegateController::journeyRequestOne()
     return req;
 }
 
-KPublicTransport::JourneyRequest TimelineDelegateController::journeyRequestFull() const
+QList<KPublicTransport::Location> TimelineDelegateController::journeyDestinations() const
 {
-    auto req = journeyRequestOne();
-    if (!req.isValid()) {
+    if (!m_resMgr || m_batchId.isEmpty() || !m_liveDataMgr) {
         return {};
     }
 
-    // find full journey by looking at subsequent elements
+    QList<KPublicTransport::Location> dests;
+
     auto prevRes = m_resMgr->reservation(m_batchId);
     auto prevBatchId = m_batchId;
+    if (!isJourneyCandidate(prevRes)) {
+        return {};
+    }
+    dests.push_back(PublicTransport::locationFromPlace(LocationUtil::arrivalLocation(prevRes), prevRes));
     while (true) {
         auto endBatchId = m_resMgr->nextBatch(prevBatchId);
         auto endRes = m_resMgr->reservation(endBatchId);
@@ -497,12 +500,12 @@ KPublicTransport::JourneyRequest TimelineDelegateController::journeyRequestFull(
             break;
         }
 
-        req.setTo(PublicTransport::locationFromPlace(LocationUtil::arrivalLocation(endRes), endRes));
+        dests.push_back(PublicTransport::locationFromPlace(LocationUtil::arrivalLocation(endRes), endRes));
         prevRes = endRes;
         prevBatchId = endBatchId;
     }
 
-    return req;
+    return dests;
 }
 
 static QVariant applyReservationProperties(QVariant to, const QVariant &res)
@@ -528,7 +531,7 @@ static QVariant applyReservationProperties(QVariant to, const QVariant &res)
     return to;
 }
 
-void TimelineDelegateController::applyJourney(const QVariant &journey, bool includeFollowing)
+void TimelineDelegateController::applyJourney(const QVariant &journey, int includeFollowing)
 {
     if (!m_resMgr || !m_tripGroupMgr || m_batchId.isEmpty()) {
         return;
@@ -545,21 +548,10 @@ void TimelineDelegateController::applyJourney(const QVariant &journey, bool incl
 
     // find all batches we are replying here (same logic as in journeyRequest)
     std::vector<QString> oldBatches({m_batchId});
-    if (includeFollowing) {
-        auto prevRes = m_resMgr->reservation(m_batchId);
-        auto prevBatchId = m_batchId;
-        while (true) {
-            auto endBatchId = m_resMgr->nextBatch(prevBatchId);
-            auto endRes = m_resMgr->reservation(endBatchId);
-            qDebug() << endRes << isJourneyCandidate(endRes) << isLayover(prevRes, endRes);
-            if (!isJourneyCandidate(endRes) || !isLayover(prevRes, endRes)) {
-                break;
-            }
-
-            oldBatches.push_back(endBatchId);
-            prevRes = endRes;
-            prevBatchId = endBatchId;
-        }
+    auto batchId = m_batchId;
+    for (auto i = 0; i < includeFollowing; ++i) {
+        batchId = m_resMgr->nextBatch(batchId);
+        oldBatches.push_back(batchId);
     }
     qCDebug(Log) << "Affected batches:" << oldBatches;
 

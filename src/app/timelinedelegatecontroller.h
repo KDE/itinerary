@@ -9,6 +9,7 @@
 
 #include <KPublicTransport/Journey>
 #include <KPublicTransport/JourneyRequest>
+#include <KPublicTransport/Location>
 #include <KPublicTransport/Stopover>
 
 #include <KCalendarCore/Calendar>
@@ -68,14 +69,13 @@ class TimelineDelegateController : public QObject
     Q_PROPERTY(bool isPublicTransport READ isPublicTransport NOTIFY contentChanged)
 
     /** A KPublicTransport::JourneyRequest for the current journey.
-     *  This includes the current element as well as any immediately connected following elements.
+     *  This has no destination on its own, @see journeyDestinations.
      */
-    Q_PROPERTY(KPublicTransport::JourneyRequest journeyRequestFull READ journeyRequestFull NOTIFY
-                   contentChanged) // TODO technically notification also depends on other elements, so similar to previousLocationChanged
-    /** A KPublicTransport::JourneyRequest for the current element.
-     *  This does not include any connected following elements.
+    Q_PROPERTY(KPublicTransport::JourneyRequest journeyRequest READ journeyRequest NOTIFY contentChanged)
+    /** Destinations for journeyRequest for this and all immediately following connected
+     *  destinations.
      */
-    Q_PROPERTY(KPublicTransport::JourneyRequest journeyRequestOne READ journeyRequestOne NOTIFY contentChanged)
+    Q_PROPERTY(QList<KPublicTransport::Location> journeyDestinations READ journeyDestinations NOTIFY contentChanged) // TODO technically notification also depends on other elements, so similar to previousLocationChanged
 
     /** Inbound connection is unlikely to work. */
     Q_PROPERTY(bool connectionWarning READ connectionWarning NOTIFY connectionWarningChanged)
@@ -127,9 +127,9 @@ public:
     [[nodiscard]] bool isLocationChange() const;
     [[nodiscard]] bool isPublicTransport() const;
 
-    [[nodiscard]] KPublicTransport::JourneyRequest journeyRequestFull() const;
-    [[nodiscard]] KPublicTransport::JourneyRequest journeyRequestOne() const;
-    Q_INVOKABLE void applyJourney(const QVariant &journey, bool includeFollowing);
+    [[nodiscard]] KPublicTransport::JourneyRequest journeyRequest() const;
+    [[nodiscard]] QList<KPublicTransport::Location> journeyDestinations() const;
+    Q_INVOKABLE void applyJourney(const QVariant &journey, int includeFollowing);
 
     [[nodiscard]] bool connectionWarning() const;
     [[nodiscard]] bool isCanceled() const;
