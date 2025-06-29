@@ -281,6 +281,22 @@ private Q_SLOTS:
         QCOMPARE(rmSpy.size(), 1);
         QCOMPARE(LiveData::listAll().size(), 2);
         QCOMPARE(tgMgr.tripGroups().size(), 1);
+
+        // apply alternative with different mode of transport
+        controller.setBatchId(mgr.batches().at(mgr.batches().size() - 3)); // begin of the new 3 segment train trip
+        addSpy.clear();
+        updateSpy.clear();
+        contentSpy.clear();
+        rmSpy.clear();
+        const auto jnyTrain = KPublicTransport::Journey::fromJson(QJsonDocument::fromJson(readFile(QLatin1StringView(SOURCE_DIR "/data/publictransport/randa-berlin-3-sections.json"))).object());
+        controller.applyJourney(QVariant::fromValue(jnyTrain), 3);
+        QCOMPARE(mgr.batches().size(), batchCount);
+        QCOMPARE(addSpy.size(), 3);
+        QCOMPARE(updateSpy.size(), 0);
+        // QCOMPARE(contentSpy.size(), 2);
+        QCOMPARE(rmSpy.size(), 3);
+        QCOMPARE(LiveData::listAll().size(), 3);
+        QCOMPARE(tgMgr.tripGroups().size(), 1);
     }
 
     void testCancel()

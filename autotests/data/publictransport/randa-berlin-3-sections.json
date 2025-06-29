@@ -1,0 +1,996 @@
+
+{
+    "sections": [
+        {
+            "arrival": {
+                "disruptionEffect": "NormalService",
+                "route": {
+                    "direction": "Visp",
+                    "line": {
+                        "mode": "LocalTrain",
+                        "name": "RE 41",
+                        "operatorName": "Matterhorn Gotthard Bahn (bvz)"
+                    },
+                    "name": "RE 258"
+                },
+                "scheduledArrivalTime": {
+                    "timezone": "Europe/Zurich",
+                    "value": "2019-07-19T17:47:00+02:00"
+                },
+                "scheduledPlatform": "3",
+                "stopPoint": {
+                    "country": "CH",
+                    "identifier": {
+                        "db": "8501605",
+                        "db-hafas": "A=1@O=Visp@X=7881463@Y=46294033@U=80@L=8501605@i=U×008501605@",
+                        "ibnr": "8501605",
+                        "uic": "8501605"
+                    },
+                    "latitude": 46.294033,
+                    "longitude": 7.881463,
+                    "name": "Visp",
+                    "region": "CH-VS",
+                    "type": "Stop"
+                }
+            },
+            "departure": {
+                "disruptionEffect": "NormalService",
+                "route": {
+                    "direction": "Visp",
+                    "line": {
+                        "mode": "LocalTrain",
+                        "name": "RE 41",
+                        "operatorName": "Matterhorn Gotthard Bahn (bvz)"
+                    },
+                    "name": "RE 258"
+                },
+                "scheduledDepartureTime": {
+                    "timezone": "Europe/Zurich",
+                    "value": "2019-07-19T16:57:00+02:00"
+                },
+                "stopPoint": {
+                    "country": "CH",
+                    "identifier": {
+                        "db": "8501687",
+                        "db-hafas": "A=1@O=Randa@X=7781926@Y=46099336@U=80@L=8501687@i=U×008501687@",
+                        "ibnr": "8501687",
+                        "uic": "8501687"
+                    },
+                    "latitude": 46.099336,
+                    "longitude": 7.781926,
+                    "name": "Randa",
+                    "region": "CH-VS",
+                    "type": "Stop"
+                },
+                "vehicleLayout": {
+                    "direction": "UnknownDirection",
+                    "features": [
+                        {
+                            "availability": "Limited",
+                            "disruptionEffect": "NormalService",
+                            "name": "Number of bicycles conveyed limited",
+                            "type": "BikeStorage"
+                        }
+                    ]
+                }
+            },
+            "identifiers": {
+                "db": "2|#VN#1#ST#1750894836#PI#0#ZI#938418#TA#0#DA#290625#1S#8501689#1T#1637#LS#8501605#LT#1747#PU#80#RT#1#CA#RE#ZE#258#ZB#RE   258#PC#3#FR#8501689#FT#1637#TO#8501605#TT#1747#"
+            },
+            "intermediateStops": [
+                {
+                    "disruptionEffect": "NormalService",
+                    "route": {
+                        "direction": "Visp",
+                        "line": {
+                            "mode": "LocalTrain",
+                            "name": "RE 41",
+                            "operatorName": "Matterhorn Gotthard Bahn (bvz)"
+                        },
+                        "name": "RE 258"
+                    },
+                    "scheduledArrivalTime": {
+                        "timezone": "Europe/Zurich",
+                        "value": "2019-07-19T17:05:00+02:00"
+                    },
+                    "scheduledDepartureTime": {
+                        "timezone": "Europe/Zurich",
+                        "value": "2019-07-19T17:05:00+02:00"
+                    },
+                    "stopPoint": {
+                        "country": "CH",
+                        "identifier": {
+                            "db": "8501686",
+                            "db-hafas": "A=1@O=Herbriggen@X=7791445@Y=46132317@U=80@L=8501686@i=U×008501686@",
+                            "ibnr": "8501686",
+                            "uic": "8501686"
+                        },
+                        "latitude": 46.132317,
+                        "longitude": 7.791445,
+                        "name": "Herbriggen",
+                        "region": "CH-VS",
+                        "type": "Stop"
+                    }
+                },
+                {
+                    "disruptionEffect": "NormalService",
+                    "route": {
+                        "direction": "Visp",
+                        "line": {
+                            "mode": "LocalTrain",
+                            "name": "RE 41",
+                            "operatorName": "Matterhorn Gotthard Bahn (bvz)"
+                        },
+                        "name": "RE 258"
+                    },
+                    "scheduledArrivalTime": {
+                        "timezone": "Europe/Zurich",
+                        "value": "2019-07-19T17:17:00+02:00"
+                    },
+                    "scheduledDepartureTime": {
+                        "timezone": "Europe/Zurich",
+                        "value": "2019-07-19T17:17:00+02:00"
+                    },
+                    "stopPoint": {
+                        "country": "CH",
+                        "identifier": {
+                            "db": "8501685",
+                            "db-hafas": "A=1@O=St. Niklaus@X=7801972@Y=46177479@U=80@L=8501685@i=U×008501685@",
+                            "ibnr": "8501685",
+                            "uic": "8501685"
+                        },
+                        "latitude": 46.177479,
+                        "longitude": 7.801972,
+                        "name": "St. Niklaus",
+                        "region": "CH-VS",
+                        "type": "Stop"
+                    }
+                },
+                {
+                    "disruptionEffect": "NormalService",
+                    "route": {
+                        "direction": "Visp",
+                        "line": {
+                            "mode": "LocalTrain",
+                            "name": "RE 41",
+                            "operatorName": "Matterhorn Gotthard Bahn (bvz)"
+                        },
+                        "name": "RE 258"
+                    },
+                    "scheduledArrivalTime": {
+                        "timezone": "Europe/Zurich",
+                        "value": "2019-07-19T17:27:00+02:00"
+                    },
+                    "scheduledDepartureTime": {
+                        "timezone": "Europe/Zurich",
+                        "value": "2019-07-19T17:28:00+02:00"
+                    },
+                    "scheduledPlatform": "2",
+                    "stopPoint": {
+                        "country": "CH",
+                        "identifier": {
+                            "db": "8501684",
+                            "db-hafas": "A=1@O=Kalpetran@X=7836913@Y=46214263@U=80@L=8501684@i=U×008501684@",
+                            "ibnr": "8501684",
+                            "uic": "8501684"
+                        },
+                        "latitude": 46.214263,
+                        "longitude": 7.836913,
+                        "name": "Kalpetran",
+                        "region": "CH-VS",
+                        "type": "Stop"
+                    }
+                },
+                {
+                    "disruptionEffect": "NormalService",
+                    "route": {
+                        "direction": "Visp",
+                        "line": {
+                            "mode": "LocalTrain",
+                            "name": "RE 41",
+                            "operatorName": "Matterhorn Gotthard Bahn (bvz)"
+                        },
+                        "name": "RE 258"
+                    },
+                    "scheduledArrivalTime": {
+                        "timezone": "Europe/Zurich",
+                        "value": "2019-07-19T17:36:00+02:00"
+                    },
+                    "scheduledDepartureTime": {
+                        "timezone": "Europe/Zurich",
+                        "value": "2019-07-19T17:38:00+02:00"
+                    },
+                    "scheduledPlatform": "1",
+                    "stopPoint": {
+                        "country": "CH",
+                        "identifier": {
+                            "db": "8501683",
+                            "db-hafas": "A=1@O=Stalden-Saas@X=7870802@Y=46231909@U=80@L=8501683@i=U×008501683@",
+                            "ibnr": "8501683",
+                            "uic": "8501683"
+                        },
+                        "latitude": 46.231909,
+                        "longitude": 7.870802,
+                        "name": "Stalden-Saas",
+                        "region": "CH-VS",
+                        "type": "Stop"
+                    }
+                }
+            ],
+            "mode": "PublicTransport",
+            "notes": [
+                "Low-floor coach"
+            ]
+        },
+        {
+            "arrival": {
+                "disruptionEffect": "NormalService",
+                "route": {
+                    "direction": "Basel SBB",
+                    "line": {
+                        "mode": "LongDistanceTrain",
+                        "name": "IC 982",
+                        "operatorName": "Schweizerische Bundesbahnen"
+                    }
+                },
+                "scheduledArrivalTime": {
+                    "timezone": "Europe/Zurich",
+                    "value": "2019-07-19T20:08:00+02:00"
+                },
+                "scheduledPlatform": "7",
+                "stopPoint": {
+                    "identifier": {
+                        "db": "8500010",
+                        "db-hafas": "A=1@O=Basel SBB@X=7589548@Y=47547408@U=80@L=8500010@i=U×008500010@",
+                        "ibnr": "8500010",
+                        "uic": "8500010"
+                    },
+                    "latitude": 47.547408,
+                    "longitude": 7.589548,
+                    "name": "Basel SBB",
+                    "type": "Stop"
+                }
+            },
+            "departure": {
+                "disruptionEffect": "NormalService",
+                "route": {
+                    "direction": "Basel SBB",
+                    "line": {
+                        "mode": "LongDistanceTrain",
+                        "name": "IC 982",
+                        "operatorName": "Schweizerische Bundesbahnen"
+                    }
+                },
+                "scheduledDepartureTime": {
+                    "timezone": "Europe/Zurich",
+                    "value": "2019-07-19T17:54:00+02:00"
+                },
+                "scheduledPlatform": "4",
+                "stopPoint": {
+                    "country": "CH",
+                    "identifier": {
+                        "db": "8501605",
+                        "db-hafas": "A=1@O=Visp@X=7881463@Y=46294033@U=80@L=8501605@i=U×008501605@",
+                        "ibnr": "8501605",
+                        "uic": "8501605"
+                    },
+                    "latitude": 46.294033,
+                    "longitude": 7.881463,
+                    "name": "Visp",
+                    "region": "CH-VS",
+                    "type": "Stop"
+                },
+                "vehicleLayout": {
+                    "direction": "UnknownDirection",
+                    "features": [
+                        {
+                            "availability": "Available",
+                            "disruptionEffect": "NormalService",
+                            "name": "Bordbistro",
+                            "type": "Restaurant"
+                        },
+                        {
+                            "availability": "Available",
+                            "disruptionEffect": "NormalService",
+                            "name": "Quiet Zone",
+                            "type": "SilentArea"
+                        },
+                        {
+                            "availability": "Available",
+                            "disruptionEffect": "NormalService",
+                            "name": "business-compartment",
+                            "type": "BusinessArea"
+                        },
+                        {
+                            "availability": "Conditional",
+                            "disruptionEffect": "NormalService",
+                            "name": "Bicycles conveyed - subject to reservation",
+                            "type": "BikeStorage"
+                        }
+                    ]
+                }
+            },
+            "identifiers": {
+                "db": "2|#VN#1#ST#1750894836#PI#0#ZI#991533#TA#0#DA#290625#1S#8501609#1T#1745#LS#8500010#LT#2008#PU#80#RT#1#CA#IC#ZE#982#ZB#IC   982#PC#1#FR#8501609#FT#1745#TO#8500010#TT#2008#"
+            },
+            "intermediateStops": [
+                {
+                    "disruptionEffect": "NormalService",
+                    "route": {
+                        "direction": "Basel SBB",
+                        "line": {
+                            "mode": "LongDistanceTrain",
+                            "name": "IC 982",
+                            "operatorName": "Schweizerische Bundesbahnen"
+                        }
+                    },
+                    "scheduledArrivalTime": {
+                        "timezone": "Europe/Zurich",
+                        "value": "2019-07-19T18:20:00+02:00"
+                    },
+                    "scheduledDepartureTime": {
+                        "timezone": "Europe/Zurich",
+                        "value": "2019-07-19T18:21:00+02:00"
+                    },
+                    "scheduledPlatform": "4",
+                    "stopPoint": {
+                        "country": "CH",
+                        "identifier": {
+                            "db": "8507483",
+                            "db-hafas": "A=1@O=Spiez@X=7680105@Y=46686394@U=80@L=8507483@i=U×008507483@",
+                            "ibnr": "8507483",
+                            "uic": "8507483"
+                        },
+                        "latitude": 46.686394,
+                        "longitude": 7.680105,
+                        "name": "Spiez",
+                        "region": "CH-BE",
+                        "type": "Stop"
+                    }
+                },
+                {
+                    "disruptionEffect": "NormalService",
+                    "route": {
+                        "direction": "Basel SBB",
+                        "line": {
+                            "mode": "LongDistanceTrain",
+                            "name": "IC 982",
+                            "operatorName": "Schweizerische Bundesbahnen"
+                        }
+                    },
+                    "scheduledArrivalTime": {
+                        "timezone": "Europe/Zurich",
+                        "value": "2019-07-19T18:30:00+02:00"
+                    },
+                    "scheduledDepartureTime": {
+                        "timezone": "Europe/Zurich",
+                        "value": "2019-07-19T18:31:00+02:00"
+                    },
+                    "scheduledPlatform": "3",
+                    "stopPoint": {
+                        "country": "CH",
+                        "identifier": {
+                            "db": "8507100",
+                            "db-hafas": "A=1@O=Thun@X=7629415@Y=46754694@U=80@L=8507100@i=U×008507100@",
+                            "ibnr": "8507100",
+                            "uic": "8507100"
+                        },
+                        "latitude": 46.754694,
+                        "longitude": 7.629415,
+                        "name": "Thun",
+                        "region": "CH-BE",
+                        "type": "Stop"
+                    }
+                },
+                {
+                    "disruptionEffect": "NormalService",
+                    "route": {
+                        "direction": "Basel SBB",
+                        "line": {
+                            "mode": "LongDistanceTrain",
+                            "name": "IC 982",
+                            "operatorName": "Schweizerische Bundesbahnen"
+                        }
+                    },
+                    "scheduledArrivalTime": {
+                        "timezone": "Europe/Zurich",
+                        "value": "2019-07-19T18:53:00+02:00"
+                    },
+                    "scheduledDepartureTime": {
+                        "timezone": "Europe/Zurich",
+                        "value": "2019-07-19T19:04:00+02:00"
+                    },
+                    "scheduledPlatform": "3",
+                    "stopPoint": {
+                        "country": "CH",
+                        "identifier": {
+                            "db": "8507000",
+                            "db-hafas": "A=1@O=Bern@X=7439131@Y=46948834@U=80@L=8507000@i=U×008507000@",
+                            "ibnr": "8507000",
+                            "uic": "8507000"
+                        },
+                        "latitude": 46.948834,
+                        "longitude": 7.439131,
+                        "name": "Bern",
+                        "region": "CH-BE",
+                        "type": "Stop"
+                    }
+                },
+                {
+                    "disruptionEffect": "NormalService",
+                    "route": {
+                        "direction": "Basel SBB",
+                        "line": {
+                            "mode": "LongDistanceTrain",
+                            "name": "IC 982",
+                            "operatorName": "Schweizerische Bundesbahnen"
+                        }
+                    },
+                    "scheduledArrivalTime": {
+                        "timezone": "Europe/Zurich",
+                        "value": "2019-07-19T19:30:00+02:00"
+                    },
+                    "scheduledDepartureTime": {
+                        "timezone": "Europe/Zurich",
+                        "value": "2019-07-19T19:33:00+02:00"
+                    },
+                    "scheduledPlatform": "7",
+                    "stopPoint": {
+                        "country": "CH",
+                        "identifier": {
+                            "db": "8500218",
+                            "db-hafas": "A=1@O=Olten@X=7907703@Y=47351938@U=80@L=8500218@i=U×008500218@",
+                            "ibnr": "8500218",
+                            "uic": "8500218"
+                        },
+                        "latitude": 47.351938,
+                        "longitude": 7.907703,
+                        "name": "Olten",
+                        "type": "Stop"
+                    }
+                },
+                {
+                    "disruptionEffect": "NormalService",
+                    "route": {
+                        "direction": "Basel SBB",
+                        "line": {
+                            "mode": "LongDistanceTrain",
+                            "name": "IC 982",
+                            "operatorName": "Schweizerische Bundesbahnen"
+                        }
+                    },
+                    "scheduledArrivalTime": {
+                        "timezone": "Europe/Zurich",
+                        "value": "2019-07-19T19:49:00+02:00"
+                    },
+                    "scheduledDepartureTime": {
+                        "timezone": "Europe/Zurich",
+                        "value": "2019-07-19T19:50:00+02:00"
+                    },
+                    "scheduledPlatform": "3",
+                    "stopPoint": {
+                        "country": "CH",
+                        "identifier": {
+                            "db": "8500026",
+                            "db-hafas": "A=1@O=Sissach@X=7811977@Y=47462640@U=80@L=8500026@i=U×008500026@",
+                            "ibnr": "8500026",
+                            "uic": "8500026"
+                        },
+                        "latitude": 47.46264,
+                        "longitude": 7.811977,
+                        "name": "Sissach",
+                        "type": "Stop"
+                    }
+                },
+                {
+                    "disruptionEffect": "NormalService",
+                    "route": {
+                        "direction": "Basel SBB",
+                        "line": {
+                            "mode": "LongDistanceTrain",
+                            "name": "IC 982",
+                            "operatorName": "Schweizerische Bundesbahnen"
+                        }
+                    },
+                    "scheduledArrivalTime": {
+                        "timezone": "Europe/Zurich",
+                        "value": "2019-07-19T19:56:00+02:00"
+                    },
+                    "scheduledDepartureTime": {
+                        "timezone": "Europe/Zurich",
+                        "value": "2019-07-19T19:57:00+02:00"
+                    },
+                    "scheduledPlatform": "4",
+                    "stopPoint": {
+                        "country": "CH",
+                        "identifier": {
+                            "db": "8500023",
+                            "db-hafas": "A=1@O=Liestal@X=7731352@Y=47484376@U=80@L=8500023@i=U×008500023@",
+                            "ibnr": "8500023",
+                            "uic": "8500023"
+                        },
+                        "latitude": 47.484376,
+                        "longitude": 7.731352,
+                        "name": "Liestal",
+                        "type": "Stop"
+                    }
+                }
+            ],
+            "mode": "PublicTransport",
+            "notes": [
+                "parent-and-children compartment",
+                "Reservation possible"
+            ]
+        },
+        {
+            "arrival": {
+                "disruptionEffect": "NormalService",
+                "route": {
+                    "line": {
+                        "mode": "LongDistanceTrain",
+                        "name": "NJ 409",
+                        "operatorName": "Österreichische Bundesbahnen, DB Fernverkehr AG"
+                    }
+                },
+                "scheduledArrivalTime": {
+                    "timezone": "Europe/Berlin",
+                    "value": "2019-07-20T07:11:00+02:00"
+                },
+                "scheduledPlatform": "8",
+                "stopPoint": {
+                    "country": "DE",
+                    "identifier": {
+                        "db": "8011113",
+                        "db-hafas": "A=1@O=Berlin Südkreuz@X=13365315@Y=52475043@U=80@L=8011113@i=U×008065971@",
+                        "ibnr": "8011113",
+                        "uic": "8065971"
+                    },
+                    "latitude": 52.475043,
+                    "longitude": 13.365315,
+                    "name": "Berlin Südkreuz",
+                    "region": "DE-BE",
+                    "type": "Stop"
+                }
+            },
+            "departure": {
+                "disruptionEffect": "NormalService",
+                "load": [
+                    {
+                        "load": "Full",
+                        "seatingClass": "2"
+                    }
+                ],
+                "route": {
+                    "line": {
+                        "mode": "LongDistanceTrain",
+                        "name": "NJ 409",
+                        "operatorName": "Österreichische Bundesbahnen, DB Fernverkehr AG"
+                    }
+                },
+                "scheduledDepartureTime": {
+                    "timezone": "Europe/Zurich",
+                    "value": "2019-07-19T21:13:00+02:00"
+                },
+                "stopPoint": {
+                    "identifier": {
+                        "db": "8500010",
+                        "db-hafas": "A=1@O=Basel SBB@X=7589548@Y=47547408@U=80@L=8500010@i=U×008500010@",
+                        "ibnr": "8500010",
+                        "uic": "8500010"
+                    },
+                    "latitude": 47.547408,
+                    "longitude": 7.589548,
+                    "name": "Basel SBB",
+                    "type": "Stop"
+                },
+                "vehicleLayout": {
+                    "direction": "UnknownDirection",
+                    "features": [
+                        {
+                            "availability": "Available",
+                            "disruptionEffect": "NormalService",
+                            "name": "snacks and beverages available from sleeper/couchette attendant",
+                            "type": "Restaurant"
+                        },
+                        {
+                            "availability": "Conditional",
+                            "disruptionEffect": "NormalService",
+                            "name": "Wheelchair space - For advance notification, call +43 5 1717",
+                            "type": "WheelchairAccessible"
+                        },
+                        {
+                            "availability": "Conditional",
+                            "disruptionEffect": "NormalService",
+                            "name": "Bicycles conveyed - subject to reservation (Basel Bad Bf - Berlin Südkreuz)",
+                            "type": "BikeStorage"
+                        },
+                        {
+                            "availability": "Available",
+                            "disruptionEffect": "NormalService",
+                            "name": "WC accessible for wheelchair",
+                            "type": "WheelchairAccessibleToilet"
+                        }
+                    ]
+                }
+            },
+            "identifiers": {
+                "db": "2|#VN#1#ST#1750894836#PI#0#ZI#354891#TA#0#DA#290625#1S#8503000#1T#1959#LS#8098160#LT#10720#PU#80#RT#1#CA#NJ#ZE#409#ZB#NJ   409#PC#1#FR#8503000#FT#1959#TO#8098160#TT#10720#"
+            },
+            "intermediateStops": [
+                {
+                    "disruptionEffect": "NormalService",
+                    "dropoffType": "NotAllowed",
+                    "notes": [
+                        "Enter only, no exiting allowed"
+                    ],
+                    "route": {
+                        "line": {
+                            "mode": "LongDistanceTrain",
+                            "name": "NJ 409",
+                            "operatorName": "Österreichische Bundesbahnen, DB Fernverkehr AG"
+                        }
+                    },
+                    "scheduledArrivalTime": {
+                        "timezone": "Europe/Zurich",
+                        "value": "2019-07-19T21:19:00+02:00"
+                    },
+                    "scheduledDepartureTime": {
+                        "timezone": "Europe/Zurich",
+                        "value": "2019-07-19T21:22:00+02:00"
+                    },
+                    "scheduledPlatform": "4",
+                    "stopPoint": {
+                        "identifier": {
+                            "db": "8000026",
+                            "db-hafas": "A=1@O=Basel Bad Bf@X=7607805@Y=47567292@U=80@L=8000026@i=U×008014431@",
+                            "ibnr": "8000026",
+                            "uic": "8014431"
+                        },
+                        "latitude": 47.567292,
+                        "longitude": 7.607805,
+                        "name": "Basel Bad Bf",
+                        "type": "Stop"
+                    }
+                },
+                {
+                    "disruptionEffect": "NormalService",
+                    "dropoffType": "NotAllowed",
+                    "notes": [
+                        "Enter only, no exiting allowed"
+                    ],
+                    "route": {
+                        "line": {
+                            "mode": "LongDistanceTrain",
+                            "name": "NJ 409",
+                            "operatorName": "Österreichische Bundesbahnen, DB Fernverkehr AG"
+                        }
+                    },
+                    "scheduledArrivalTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2019-07-19T21:56:00+02:00"
+                    },
+                    "scheduledDepartureTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2019-07-19T21:58:00+02:00"
+                    },
+                    "scheduledPlatform": "1",
+                    "stopPoint": {
+                        "country": "DE",
+                        "identifier": {
+                            "db": "8000107",
+                            "db-hafas": "A=1@O=Freiburg(Breisgau) Hbf@X=7841174@Y=47997696@U=80@L=8000107@i=U×008014350@",
+                            "ibnr": "8000107",
+                            "uic": "8014350"
+                        },
+                        "latitude": 47.997696,
+                        "longitude": 7.841174,
+                        "name": "Freiburg(Breisgau) Hbf",
+                        "region": "DE-BW",
+                        "type": "Stop"
+                    }
+                },
+                {
+                    "disruptionEffect": "NormalService",
+                    "dropoffType": "NotAllowed",
+                    "notes": [
+                        "Enter only, no exiting allowed"
+                    ],
+                    "route": {
+                        "line": {
+                            "mode": "LongDistanceTrain",
+                            "name": "NJ 409",
+                            "operatorName": "Österreichische Bundesbahnen, DB Fernverkehr AG"
+                        }
+                    },
+                    "scheduledArrivalTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2019-07-19T22:29:00+02:00"
+                    },
+                    "scheduledDepartureTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2019-07-19T22:31:00+02:00"
+                    },
+                    "scheduledPlatform": "3",
+                    "stopPoint": {
+                        "country": "DE",
+                        "identifier": {
+                            "db": "8000290",
+                            "db-hafas": "A=1@O=Offenburg@X=7946725@Y=48476479@U=80@L=8000290@i=U×008014309@",
+                            "ibnr": "8000290",
+                            "uic": "8014309"
+                        },
+                        "latitude": 48.476479,
+                        "longitude": 7.946725,
+                        "name": "Offenburg",
+                        "region": "DE-BW",
+                        "type": "Stop"
+                    }
+                },
+                {
+                    "disruptionEffect": "NormalService",
+                    "dropoffType": "NotAllowed",
+                    "notes": [
+                        "Enter only, no exiting allowed"
+                    ],
+                    "route": {
+                        "line": {
+                            "mode": "LongDistanceTrain",
+                            "name": "NJ 409",
+                            "operatorName": "Österreichische Bundesbahnen, DB Fernverkehr AG"
+                        }
+                    },
+                    "scheduledArrivalTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2019-07-19T23:05:00+02:00"
+                    },
+                    "scheduledDepartureTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2019-07-19T23:07:00+02:00"
+                    },
+                    "scheduledPlatform": "6",
+                    "stopPoint": {
+                        "country": "DE",
+                        "identifier": {
+                            "db": "8000191",
+                            "db-hafas": "A=1@O=Karlsruhe Hbf@X=8402181@Y=48993512@U=80@L=8000191@i=U×008014228@",
+                            "ibnr": "8000191",
+                            "uic": "8014228"
+                        },
+                        "latitude": 48.993512,
+                        "longitude": 8.402181,
+                        "name": "Karlsruhe Hbf",
+                        "type": "Stop"
+                    }
+                },
+                {
+                    "disruptionEffect": "NormalService",
+                    "dropoffType": "NotAllowed",
+                    "notes": [
+                        "Enter only, no exiting allowed"
+                    ],
+                    "route": {
+                        "line": {
+                            "mode": "LongDistanceTrain",
+                            "name": "NJ 409",
+                            "operatorName": "Österreichische Bundesbahnen, DB Fernverkehr AG"
+                        }
+                    },
+                    "scheduledArrivalTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2019-07-19T23:40:00+02:00"
+                    },
+                    "scheduledDepartureTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2019-07-19T23:42:00+02:00"
+                    },
+                    "scheduledPlatform": "5",
+                    "stopPoint": {
+                        "country": "DE",
+                        "identifier": {
+                            "db": "8000244",
+                            "db-hafas": "A=1@O=Mannheim Hbf@X=8468917@Y=49479352@U=80@L=8000244@i=U×008014008@",
+                            "ibnr": "8000244",
+                            "uic": "8014008"
+                        },
+                        "latitude": 49.479352,
+                        "longitude": 8.468917,
+                        "name": "Mannheim Hbf",
+                        "type": "Stop"
+                    }
+                },
+                {
+                    "disruptionEffect": "NormalService",
+                    "dropoffType": "NotAllowed",
+                    "notes": [
+                        "Enter only, no exiting allowed"
+                    ],
+                    "route": {
+                        "line": {
+                            "mode": "LongDistanceTrain",
+                            "name": "NJ 409",
+                            "operatorName": "Österreichische Bundesbahnen, DB Fernverkehr AG"
+                        }
+                    },
+                    "scheduledArrivalTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2019-07-20T00:23:00+02:00"
+                    },
+                    "scheduledDepartureTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2019-07-20T00:27:00+02:00"
+                    },
+                    "scheduledPlatform": "8",
+                    "stopPoint": {
+                        "country": "DE",
+                        "identifier": {
+                            "db": "8002041",
+                            "db-hafas": "A=1@O=Frankfurt(Main)Süd@X=8686456@Y=50099365@U=80@L=8002041@i=U×008011065@",
+                            "ibnr": "8002041",
+                            "uic": "8011065"
+                        },
+                        "latitude": 50.099365,
+                        "longitude": 8.686456,
+                        "name": "Frankfurt(Main)Süd",
+                        "region": "DE-HE",
+                        "type": "Stop"
+                    }
+                },
+                {
+                    "disruptionEffect": "NormalService",
+                    "notes": [
+                        "Exit only, no entry allowed"
+                    ],
+                    "pickupType": "NotAllowed",
+                    "route": {
+                        "line": {
+                            "mode": "LongDistanceTrain",
+                            "name": "NJ 409",
+                            "operatorName": "Österreichische Bundesbahnen, DB Fernverkehr AG"
+                        }
+                    },
+                    "scheduledArrivalTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2019-07-20T04:48:00+02:00"
+                    },
+                    "scheduledDepartureTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2019-07-20T05:18:00+02:00"
+                    },
+                    "scheduledPlatform": "15",
+                    "stopPoint": {
+                        "country": "DE",
+                        "identifier": {
+                            "db": "8010205",
+                            "db-hafas": "A=1@O=Leipzig Hbf@X=12382066@Y=51345467@U=80@L=8010205@i=U×008023179@",
+                            "ibnr": "8010205",
+                            "uic": "8023179"
+                        },
+                        "latitude": 51.345467,
+                        "longitude": 12.382066,
+                        "name": "Leipzig Hbf",
+                        "region": "DE-SN",
+                        "type": "Stop"
+                    }
+                },
+                {
+                    "disruptionEffect": "NormalService",
+                    "notes": [
+                        "Exit only, no entry allowed"
+                    ],
+                    "pickupType": "NotAllowed",
+                    "route": {
+                        "line": {
+                            "mode": "LongDistanceTrain",
+                            "name": "NJ 409",
+                            "operatorName": "Österreichische Bundesbahnen, DB Fernverkehr AG"
+                        }
+                    },
+                    "scheduledArrivalTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2019-07-20T05:37:00+02:00"
+                    },
+                    "scheduledDepartureTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2019-07-20T05:39:00+02:00"
+                    },
+                    "scheduledPlatform": "8",
+                    "stopPoint": {
+                        "country": "DE",
+                        "identifier": {
+                            "db": "8010159",
+                            "db-hafas": "A=1@O=Halle(Saale)Hbf@X=11987088@Y=51477510@U=80@L=8010159@i=U×008023002@",
+                            "ibnr": "8010159",
+                            "uic": "8023002"
+                        },
+                        "latitude": 51.47751,
+                        "longitude": 11.987088,
+                        "name": "Halle(Saale)Hbf",
+                        "region": "DE-ST",
+                        "type": "Stop"
+                    }
+                },
+                {
+                    "disruptionEffect": "NormalService",
+                    "notes": [
+                        "Exit only, no entry allowed"
+                    ],
+                    "pickupType": "NotAllowed",
+                    "route": {
+                        "line": {
+                            "mode": "LongDistanceTrain",
+                            "name": "NJ 409",
+                            "operatorName": "Österreichische Bundesbahnen, DB Fernverkehr AG"
+                        }
+                    },
+                    "scheduledArrivalTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2019-07-20T06:02:00+02:00"
+                    },
+                    "scheduledDepartureTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2019-07-20T06:04:00+02:00"
+                    },
+                    "scheduledPlatform": "2",
+                    "stopPoint": {
+                        "country": "DE",
+                        "identifier": {
+                            "db": "8010050",
+                            "db-hafas": "A=1@O=Bitterfeld@X=12316849@Y=51622857@U=80@L=8010050@i=U×008023148@",
+                            "ibnr": "8010050",
+                            "uic": "8023148"
+                        },
+                        "latitude": 51.622857,
+                        "longitude": 12.316849,
+                        "name": "Bitterfeld",
+                        "type": "Stop"
+                    }
+                },
+                {
+                    "disruptionEffect": "NormalService",
+                    "notes": [
+                        "Exit only, no entry allowed"
+                    ],
+                    "pickupType": "NotAllowed",
+                    "route": {
+                        "line": {
+                            "mode": "LongDistanceTrain",
+                            "name": "NJ 409",
+                            "operatorName": "Österreichische Bundesbahnen, DB Fernverkehr AG"
+                        }
+                    },
+                    "scheduledArrivalTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2019-07-20T06:19:00+02:00"
+                    },
+                    "scheduledDepartureTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2019-07-20T06:21:00+02:00"
+                    },
+                    "scheduledPlatform": "3",
+                    "stopPoint": {
+                        "country": "DE",
+                        "identifier": {
+                            "db": "8010222",
+                            "db-hafas": "A=1@O=Lutherstadt Wittenberg Hbf@X=12662286@Y=51867813@U=80@L=8010222@i=U×008023141@",
+                            "ibnr": "8010222",
+                            "uic": "8023141"
+                        },
+                        "latitude": 51.867813,
+                        "longitude": 12.662286,
+                        "name": "Lutherstadt Wittenberg Hbf",
+                        "region": "DE-ST",
+                        "type": "Stop"
+                    }
+                }
+            ],
+            "mode": "PublicTransport",
+            "notes": [
+                "No seats available for reservation",
+                "Subject to compulsory reservation",
+                "ÖBB Nightjet (<a href=\"https://www.nightjet.com\">www.nightjet.com</a>)",
+                "Global price",
+                "Sleeper and couchette train"
+            ]
+        }
+    ]
+}
