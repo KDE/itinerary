@@ -54,14 +54,11 @@ JourneyQueryPage {
     onJourneyChanged: replaceWarningDialog.open()
 
     Component.onCompleted: {
-        for (const action of [longDistanceModeAction, localTrainModeAction, rapidTransitModeAction, busModeAction, ferryModeAction, aircraftModeAction]) {
-                actions.push(action);
-        }
         destinationCombo.currentIndex = destinationCombo.count - 1
         updateRequest()
     }
 
-    data: [
+    actions: [
         Kirigami.Action {
             id: longDistanceModeAction
             text: i18nc("journey query search constraint, title", "Long distance trains")
@@ -109,8 +106,10 @@ JourneyQueryPage {
             checkable: true
             checked: false
             onTriggered: root.updateRequest()
-        },
+        }
+    ]
 
+    data: [
         Kirigami.PromptDialog {
             id: replaceWarningDialog
 

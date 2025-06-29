@@ -26,22 +26,6 @@ Kirigami.ScrollablePage {
     Kirigami.Theme.inherit: false
     Kirigami.Theme.colorSet: Kirigami.Theme.Window
 
-
-    actions: [
-        Kirigami.Action {
-            text: i18n("Earlier")
-            icon.name: "go-up-symbolic"
-            onTriggered: journeyModel.queryPrevious()
-            enabled: journeyModel.canQueryPrevious
-        },
-        Kirigami.Action {
-            text: i18n("Later")
-            icon.name: "go-down-symbolic"
-            onTriggered: journeyModel.queryNext()
-            enabled: journeyModel.canQueryNext
-        }
-    ]
-
     ListView {
         id: journeyView
 
