@@ -90,7 +90,7 @@ FormCard.FormCardPage {
     function fullModeSwitchState()
     {
         let state = longDistanceSwitch.checked;
-        for (const s of [localTrainSwitch, rapidTransitSwitch, busSwitch, ferrySwitch]) {
+        for (const s of [localTrainSwitch, rapidTransitSwitch, busSwitch, ferrySwitch, aircraftSwitch]) {
             if (s.checked != state) {
                 return undefined;
             }
@@ -207,6 +207,8 @@ FormCard.FormCardPage {
                         lineModes.push(Line.Bus, Line.Coach);
                     if (ferrySwitch.checked)
                         lineModes.push(Line.Ferry, Line.Boat);
+                    if (aircraftSwitch.checked)
+                        lineModes.push(Line.Air);
                 }
                 req.lineModes = lineModes;
 
@@ -284,6 +286,15 @@ FormCard.FormCardPage {
             checked: true
             leading: Kirigami.Icon {
                 source: LineMode.iconName(Line.Ferry)
+                isMask: true
+            }
+        }
+        FormCard.FormSwitchDelegate {
+            id: aircraftSwitch
+            text: i18nc("journey query search constraint, title", "Aircraft")
+            checked: false
+            leading: Kirigami.Icon {
+                source: LineMode.iconName(Line.Air)
                 isMask: true
             }
         }
