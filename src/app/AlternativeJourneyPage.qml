@@ -27,7 +27,7 @@ JourneyQueryPage {
         root.journeyRequest.to = controller.journeyDestinations[destinationCombo.currentIndex];
 
         let allLineModes = true;
-        for (const s of [longDistanceModeAction, localTrainModeAction, rapidTransitModeAction, busModeAction, ferryModeAction]) {
+        for (const s of [longDistanceModeAction, localTrainModeAction, rapidTransitModeAction, busModeAction, ferryModeAction, aircraftModeAction]) {
             if (!s.checked) {
                 allLineModes = false;
             }
@@ -45,6 +45,8 @@ JourneyQueryPage {
                 lineModes.push(Line.Bus, Line.Coach);
             if (ferryModeAction.checked)
                 lineModes.push(Line.Ferry, Line.Boat);
+            if (aircraftModeAction.checked)
+                lineModes.push(Line.Air)
         }
         root.journeyRequest.lineModes = lineModes;
     }
@@ -52,7 +54,7 @@ JourneyQueryPage {
     onJourneyChanged: replaceWarningDialog.open()
 
     Component.onCompleted: {
-        for (const action of [longDistanceModeAction, localTrainModeAction, rapidTransitModeAction, busModeAction, ferryModeAction]) {
+        for (const action of [longDistanceModeAction, localTrainModeAction, rapidTransitModeAction, busModeAction, ferryModeAction, aircraftModeAction]) {
                 actions.push(action);
         }
         destinationCombo.currentIndex = destinationCombo.count - 1
@@ -98,6 +100,14 @@ JourneyQueryPage {
             icon.source: LineMode.iconName(Line.Ferry)
             checkable: true
             checked: true
+            onTriggered: root.updateRequest()
+        },
+        Kirigami.Action {
+            id: aircraftModeAction
+            text: i18nc("journey query search constraint, title", "Aircraft")
+            icon.source: LineMode.iconName(Line.Air)
+            checkable: true
+            checked: false
             onTriggered: root.updateRequest()
         },
 
