@@ -435,9 +435,19 @@ bool TimelineDelegateController::isPublicTransport() const
 
 static bool isJourneyCandidate(const QVariant &res)
 {
-    // TODO do we really need to constrain this to trains/buses? a long distance train can be a suitable alternative for a missed short distance flight for
-    // example
-    return LocationUtil::isLocationChange(res) && (JsonLd::isA<TrainReservation>(res) || JsonLd::isA<BusReservation>(res));
+    if (JsonLd::isA<TrainReservation>(res) || JsonLd::isA<BusReservation>(res)) {
+        return true;
+    }
+
+    // any other means of transport: if the distance is realistic for long distance trains
+    if (!LocationUtil::isLocationChange(res)) {
+        return false;
+    }
+
+    const auto from = LocationUtil::geo(LocationUtil::departureLocation(res));
+    const auto to = LocationUtil::geo(LocationUtil::arrivalLocation(res));
+    const auto dist = LocationUtil::distance(from, to);
+    return !std::isnan(dist) && dist < 2'000'000;
 }
 
 static bool isLayover(const QVariant &res1, const QVariant &res2)

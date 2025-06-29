@@ -192,14 +192,17 @@ private Q_SLOTS:
         controller.setReservationManager(&mgr);
         controller.setBatchId(mgr.batches().at(0)); // flight
         controller.setLiveDataManager(&ldm);
-        QVERIFY(!controller.journeyRequest().includePaths());
-        QCOMPARE(controller.journeyDestinations().size(), 0);
+        auto jnyReq = controller.journeyRequest();
+        QVERIFY(controller.journeyRequest().includePaths());
+        QCOMPARE(jnyReq.from().name(), "Berlin Tegel"_L1);
+        QCOMPARE(controller.journeyDestinations().size(), 3);
+        QCOMPARE(controller.journeyDestinations().back().name(),"Randa"_L1);
+        QCOMPARE(controller.journeyDestinations().front().name(), u"Zürich");
 
         controller.setBatchId(mgr.batches().at(1)); // first train segment
         QCOMPARE(controller.isLocationChange(), true);
         QCOMPARE(controller.isPublicTransport(), true);
-
-        auto jnyReq = controller.journeyRequest();
+        jnyReq = controller.journeyRequest();
         QCOMPARE(jnyReq.includePaths(), true);
         QCOMPARE(jnyReq.from().name(), u"Zürich Flughafen");
         QCOMPARE(controller.journeyDestinations().size(), 2);
