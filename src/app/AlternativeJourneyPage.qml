@@ -25,7 +25,6 @@ JourneyQueryPage {
     function updateRequest() {
         root.journeyRequest = controller.journeyRequest;
         root.journeyRequest.to = controller.journeyDestinations[destinationCombo.currentIndex];
-        console.log(destinationCombo.currentValue["name"])
 
         let allLineModes = true;
         for (const s of [longDistanceModeAction, localTrainModeAction, rapidTransitModeAction, busModeAction, ferryModeAction]) {
