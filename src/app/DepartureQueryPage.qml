@@ -57,12 +57,19 @@ Kirigami.ScrollablePage {
             icon.source: LineMode.iconName(Line.Ferry)
             checkable: true
             checked: true
+        },
+        Kirigami.Action {
+            id: aircraftModeAction
+            text: i18nc("journey query search constraint, title", "Aircraft")
+            icon.source: LineMode.iconName(Line.Air)
+            checkable: true
+            checked: false
         }
     ]
 
     function allLineModes()
     {
-        for (const s of [longDistanceModeAction, localTrainModeAction, rapidTransitModeAction, busModeAction, ferryModeAction]) {
+        for (const s of [longDistanceModeAction, localTrainModeAction, rapidTransitModeAction, busModeAction, ferryModeAction, aircraftModeAction]) {
             if (!s.checked) {
                 return false;
             }
@@ -85,6 +92,8 @@ Kirigami.ScrollablePage {
                 lineModes.push(Line.Bus, Line.Coach);
             if (ferryModeAction.checked)
                 lineModes.push(Line.Ferry, Line.Boat);
+            if (aircraftModeAction.checked)
+                lineModes.push(Line.Air);
         }
         req.lineModes = lineModes;
         return req;
