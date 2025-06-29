@@ -9,6 +9,7 @@ import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
+import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.kpublictransport
 import org.kde.itinerary
 
@@ -132,6 +133,30 @@ JourneyQueryPage {
                 displayText: currentValue.name
                 textRole: "name"
                 onCurrentIndexChanged: root.updateRequest()
+                //BEGIN workaround for Kirigami-Addons < 1.8.2, TODO remove once we depend on that
+                comboBoxDelegate: Delegates.RoundedItemDelegate {
+                    required property var model
+                    required property int index
+                    implicitWidth: ListView.view ? ListView.view.width : Kirigami.Units.gridUnit * 16
+                    text: model[destinationCombo.textRole]
+                    highlighted: destinationCombo.highlightedIndex === index
+                }
+                dialogDelegate: Delegates.RoundedItemDelegate {
+                    required property var model
+                    required property int index
+
+                    implicitWidth: ListView.view ? ListView.view.width : Kirigami.Units.gridUnit * 16
+                    text: model[destinationCombo.textRole]
+
+                    Layout.topMargin: index == 0 ? Math.round(Kirigami.Units.smallSpacing / 2) : 0
+
+                    onClicked: {
+                        destinationCombo.currentIndex = index;
+                        destinationCombo.activated(index);
+                        destinationCombo.closeDialog();
+                    }
+                }
+                //END
             }
         }
     }
