@@ -57,6 +57,8 @@ public:
     Q_INVOKABLE [[nodiscard]] QString findMatchingPass(const QVariant &pass) const;
     /** Returns the pass object for @p passId. */
     Q_INVOKABLE [[nodiscard]] QVariant pass(const QString &passId) const;
+    /** Returns the raw pass data for @p passId, for exporting. */
+    [[nodiscard]] QByteArray passData(const QString &passId) const;
 
     [[nodiscard]] int rowCount(const QModelIndex &parent = {}) const override;
     [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;

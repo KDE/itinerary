@@ -174,6 +174,11 @@ void Exporter::exportPasses(const PassManager *passMgr)
     }
 }
 
+void Exporter::exportPass(const QString &passId, const PassManager *passMgr)
+{
+    m_file->addCustomData(BUNDLE_PASS_DOMAIN, passId, passMgr->passData(passId));
+}
+
 void Exporter::exportHealthCertificates(const HealthCertificateManager *healthCertMgr)
 {
     for (int i = 0; i < healthCertMgr->rowCount(); ++i) {

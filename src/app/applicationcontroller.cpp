@@ -551,6 +551,70 @@ void ApplicationController::exportBatchToGpx(const QString &batchId, const QUrl 
     Q_EMIT infoMessage(i18n("Export completed."));
 }
 
+void ApplicationController::exportPassToFile(const QString &passId, const QUrl &url)
+{
+    if (url.isEmpty()) {
+        return;
+    }
+    if (exportPassToFile(passId, FileHelper::toLocalFile(url))) {
+        Q_EMIT infoMessage(i18n("Export completed."));
+    }
+}
+
+void ApplicationController::exportPassToKDEConnect(const QString &passId, const QString &deviceId)
+{
+    if (passId.isEmpty() || deviceId.isEmpty()) {
+        return;
+    }
+
+    if (!m_tempDir) {
+        m_tempDir = std::make_unique<QTemporaryDir>();
+    }
+
+    QTemporaryFile f(m_tempDir->path() + QStringLiteral("/XXXXXX.itinerary"));
+    if (!f.open()) {
+        qCWarning(Log) << "Failed to open temporary file:" << f.errorString();
+        Q_EMIT infoMessage(i18n("Export failed: %1", f.errorString()));
+        return;
+    }
+
+    if (exportPassToFile(passId, f.fileName())) {
+        // will be removed by the temporary dir it's in, as we don't know when the upload is done
+        f.setAutoRemove(false);
+        f.close();
+        KDEConnect::sendToDevice(f.fileName(), deviceId);
+    }
+    Q_EMIT infoMessage(i18n("Pass sent."));
+}
+
+bool ApplicationController::exportPassToFile(const QString &passId, const QString &fileName)
+{
+    File f(fileName);
+    if (!f.open(File::Write)) {
+        qCWarning(Log) << f.errorString() << fileName;
+        Q_EMIT infoMessage(i18n("Export failed: %1", f.errorString()));
+        return false;
+    }
+
+    Exporter exporter(&f);
+    exporter.exportPass(passId, m_passMgr);
+
+    const auto pass = m_passMgr->pass(passId);
+    const auto pkPassId = PkPassManager::passId(pass);
+    exporter.exportPkPass(m_pkPassMgr, pkPassId);
+
+    QSet<QString> docIdSet;
+    const auto docIds = DocumentUtil::documentIds(pass);
+    for (const auto &docId : docIds) {
+        const auto id = docId.toString();
+        if (!id.isEmpty() && m_docMgr->hasDocument(id) && !docIdSet.contains(id)) {
+            exporter.exportDocument(m_docMgr, id);
+            docIdSet.insert(id);
+        }
+    }
+    return true;
+}
+
 bool ApplicationController::importBundle(KItinerary::File *file)
 {
     Importer importer(file);

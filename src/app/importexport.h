@@ -48,6 +48,7 @@ public:
     void exportTripGroup(const QString &tripGroupId, const TripGroup &tg);
     void exportFavoriteLocations(const std::vector<FavoriteLocation> &favLocs);
     void exportPasses(const PassManager *passMgr);
+    void exportPass(const QString &passId, const PassManager *passMgr);
     void exportHealthCertificates(const HealthCertificateManager *healthCertMgr);
     void exportLiveData();
     void exportLiveDataForBatch(const QString &batchId);

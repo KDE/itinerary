@@ -50,6 +50,15 @@ FormCard.FormCardPage {
                     }
                 }
             ]
+        },
+        ExportMenuDialog {
+            id: exportProgramMembershipDialog
+            title: i18n("Export Program Membership")
+            supportsGpxExport: false
+            settingsKey: "programMembership"
+            suggestedName: Util.slugify(root.programMembership.programName)
+            onExportToFile: (path) => { ApplicationController.exportPassToFile(root.passId, path); }
+            onExportToKDEConnect: (deviceId) => { ApplicationController.exportPassToKDEConnect(root.passId, deviceId); }
         }
     ]
 
@@ -154,6 +163,7 @@ FormCard.FormCardPage {
                     }
                 }
             }
+            FormCard.FormDelegateSeparator { visible: passButton.visible }
             FormCard.FormButtonDelegate {
                 icon.name: "document-edit"
                 text: i18n("Edit")
@@ -166,6 +176,13 @@ FormCard.FormCardPage {
                     });
                 }
             }
+            FormCard.FormDelegateSeparator {}
+            FormCard.FormButtonDelegate {
+                icon.name: "document-export-symbolic"
+                text: i18n("Export…")
+                onClicked: exportProgramMembershipDialog.open()
+            }
+            FormCard.FormDelegateSeparator {}
             FormCard.FormButtonDelegate {
                 icon.name: "edit-delete"
                 text: i18n("Delete")

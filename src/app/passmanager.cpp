@@ -215,6 +215,14 @@ QVariant PassManager::pass(const QString &passId) const
     return it == m_entries.end() ? QVariant() : (*it).data;
 }
 
+QByteArray PassManager::passData(const QString &passId) const
+{
+    const auto it = std::ranges::find_if(m_entries, [passId](const auto &entry) {
+        return entry.id == passId;
+    });
+    return it != m_entries.end() ? JsonIO::convert(rawData(*it), JsonIO::JSON) : QByteArray();
+}
+
 QVariant PassManager::data(const QModelIndex &index, int role) const
 {
     if (!checkIndex(index)) {

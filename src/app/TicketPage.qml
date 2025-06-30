@@ -52,6 +52,16 @@ FormCard.FormCardPage {
                     }
                 }
             ]
+        },
+
+        ExportMenuDialog {
+            id: exportTicketDialog
+            title: i18n("Export Ticket")
+            supportsGpxExport: false
+            settingsKey: "ticket"
+            suggestedName: Util.slugify(root.ticket.name)
+            onExportToFile: (path) => { ApplicationController.exportPassToFile(root.passId, path); }
+            onExportToKDEConnect: (deviceId) => { ApplicationController.exportPassToKDEConnect(root.passId, deviceId); }
         }
     ]
 
@@ -163,9 +173,13 @@ FormCard.FormCardPage {
                     TicketEditor {}
                 }
             }
-
             FormCard.FormDelegateSeparator {}
-
+            FormCard.FormButtonDelegate {
+                icon.name: "document-export-symbolic"
+                text: i18n("Export…")
+                onClicked: exportTicketDialog.open()
+            }
+            FormCard.FormDelegateSeparator {}
             FormCard.FormButtonDelegate {
                 icon.name: "edit-delete"
                 text: i18n("Delete")

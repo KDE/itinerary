@@ -88,6 +88,8 @@ public:
     Q_INVOKABLE void exportBatchToFile(const QString &batchId, const QUrl &url);
     Q_INVOKABLE void exportBatchToKDEConnect(const QString &batchId, const QString &deviceId);
     Q_INVOKABLE void exportBatchToGpx(const QString &batchId, const QUrl &url);
+    Q_INVOKABLE void exportPassToFile(const QString &passId, const QUrl &url);
+    Q_INVOKABLE void exportPassToKDEConnect(const QString &passId, const QString &deviceId);
 
     // document attaching
     Q_INVOKABLE void addDocumentToReservation(const QString &batchId, const QUrl &url);
@@ -132,6 +134,7 @@ private:
 
     bool exportTripToFile(const QString &tripGroupId, const QString &fileName);
     bool exportBatchToFile(const QString &batchId, const QString &fileName);
+    bool exportPassToFile(const QString &passId, const QString &fileName);
 
     static ApplicationController *s_instance;
 
