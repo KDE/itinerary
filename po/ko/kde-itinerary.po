@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-28 00:42+0000\n"
+"POT-Creation-Date: 2025-06-30 00:42+0000\n"
 "PO-Revision-Date: 2025-06-10 23:57+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -209,68 +209,76 @@ msgstr "예약 변경"
 msgid "View Reservation"
 msgstr "예약 보기"
 
-#: app/AlternativeJourneyPage.qml:19
+#: app/AlternativeJourneyPage.qml:21
 #, kde-format
 msgid "Alternative Connections"
 msgstr "대체 연결편"
 
-#: app/AlternativeJourneyPage.qml:61 app/AlternativeJourneyPage.qml:71
-#, kde-format
-msgctxt "to travel destination"
-msgid "To %1"
-msgstr "%1(으)로|/|%1$[으 %1]로"
-
-#: app/AlternativeJourneyPage.qml:87 app/DepartureQueryPage.qml:28
-#: app/JourneyRequestPage.qml:242 app/TransferPage.qml:108
+#: app/AlternativeJourneyPage.qml:64 app/DepartureQueryPage.qml:28
+#: app/JourneyRequestPage.qml:244 app/TransferPage.qml:108
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Long distance trains"
 msgstr "장거리 열차"
 
-#: app/AlternativeJourneyPage.qml:95 app/DepartureQueryPage.qml:35
-#: app/JourneyRequestPage.qml:252 app/TransferPage.qml:116
+#: app/AlternativeJourneyPage.qml:72 app/DepartureQueryPage.qml:35
+#: app/JourneyRequestPage.qml:254 app/TransferPage.qml:116
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Local trains"
 msgstr "지역 열차"
 
-#: app/AlternativeJourneyPage.qml:103 app/DepartureQueryPage.qml:42
-#: app/JourneyRequestPage.qml:262 app/TransferPage.qml:124
+#: app/AlternativeJourneyPage.qml:80 app/DepartureQueryPage.qml:42
+#: app/JourneyRequestPage.qml:264 app/TransferPage.qml:124
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Rapid transit"
 msgstr "도시 철도"
 
-#: app/AlternativeJourneyPage.qml:111 app/DepartureQueryPage.qml:49
-#: app/JourneyRequestPage.qml:272 app/TransferPage.qml:132
+#: app/AlternativeJourneyPage.qml:88 app/DepartureQueryPage.qml:49
+#: app/JourneyRequestPage.qml:274 app/TransferPage.qml:132
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Bus"
 msgstr "버스"
 
-#: app/AlternativeJourneyPage.qml:119 app/DepartureQueryPage.qml:56
-#: app/JourneyRequestPage.qml:282 app/TransferPage.qml:140
+#: app/AlternativeJourneyPage.qml:96 app/DepartureQueryPage.qml:56
+#: app/JourneyRequestPage.qml:284 app/TransferPage.qml:140
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ferry"
 msgstr "선박"
 
-#: app/AlternativeJourneyPage.qml:129
+#: app/AlternativeJourneyPage.qml:104 app/DepartureQueryPage.qml:63
+#: app/JourneyRequestPage.qml:294
+#, kde-format
+msgctxt "journey query search constraint, title"
+msgid "Aircraft"
+msgstr ""
+
+#: app/AlternativeJourneyPage.qml:116
 #, kde-format
 msgid "Replace Journey"
 msgstr "여정 교체"
 
-#: app/AlternativeJourneyPage.qml:130
+#: app/AlternativeJourneyPage.qml:117
 #, kde-format
 msgid ""
 "Do you really want to replace your existing reservation with the newly "
 "selected journey?"
 msgstr "기존 예약을 새로 선택한 여정으로 대체하시겠습니까?"
 
-#: app/AlternativeJourneyPage.qml:134
+#: app/AlternativeJourneyPage.qml:121
 #, kde-format
 msgid "Replace"
 msgstr "바꾸기"
+
+#: app/AlternativeJourneyPage.qml:139
+#, fuzzy, kde-format
+#| msgctxt "train station"
+#| msgid "Station:"
+msgid "Destination:"
+msgstr "정거장:"
 
 #: app/applicationcontroller.cpp:188
 #, kde-format
@@ -381,7 +389,7 @@ msgid "Boat"
 msgstr "선박"
 
 #: app/BoatEditor.qml:59 app/EventEditor.qml:54 app/FlightEditor.qml:72
-#: app/HotelEditor.qml:51 app/ImportPage.qml:21 app/JourneyRequestPage.qml:226
+#: app/HotelEditor.qml:51 app/ImportPage.qml:21 app/JourneyRequestPage.qml:228
 #: app/RestaurantEditor.qml:53 app/StopoverDetailsPage.qml:127
 #, kde-format
 msgid "Trip"
@@ -457,6 +465,12 @@ msgstr "터미널"
 #, kde-format
 msgid "Arrival time"
 msgstr "도착 시간"
+
+#: app/BoatPage.qml:126 app/BusPage.qml:213 app/FlightPage.qml:218
+#: app/TrainPage.qml:362
+#, kde-format
+msgid "Alternatives"
+msgstr "대안"
 
 #: app/BookingCard.qml:24
 #, kde-format
@@ -651,11 +665,6 @@ msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "도착"
 
-#: app/BusPage.qml:213 app/TrainPage.qml:362
-#, kde-format
-msgid "Alternatives"
-msgstr "대안"
-
 #: app/BusPage.qml:218 app/JourneySectionPage.qml:27 app/TrainPage.qml:367
 #, kde-format
 msgid "Journey Details"
@@ -761,20 +770,20 @@ msgstr "웹사이트"
 msgid "Departures"
 msgstr "출발"
 
-#: app/DepartureQueryPage.qml:109
+#: app/DepartureQueryPage.qml:118
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "이전 출발 불러오기"
 
-#: app/DepartureQueryPage.qml:135 app/JourneyQueryPage.qml:125
+#: app/DepartureQueryPage.qml:144 app/JourneyQueryPage.qml:109
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "이후 연결 표시"
 
-#: app/DepartureQueryPage.qml:144 app/JourneyQueryPage.qml:132
+#: app/DepartureQueryPage.qml:153 app/JourneyQueryPage.qml:116
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
@@ -1900,33 +1909,23 @@ msgctxt "@action:button"
 msgid "Show Map"
 msgstr "지도 표시"
 
-#: app/JourneyQueryPage.qml:32 app/TransferPage.qml:61
-#, kde-format
-msgid "Earlier"
-msgstr "더 일찍"
-
-#: app/JourneyQueryPage.qml:38 app/TransferPage.qml:67
-#, kde-format
-msgid "Later"
-msgstr "더 나중"
-
-#: app/JourneyQueryPage.qml:85 app/TransferPage.qml:244
+#: app/JourneyQueryPage.qml:69 app/TransferPage.qml:244
 #, kde-format
 msgid "Select"
 msgstr "선택"
 
-#: app/JourneyQueryPage.qml:116 app/TransferPage.qml:312
+#: app/JourneyQueryPage.qml:100 app/TransferPage.qml:312
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr "이전 연결 불러오기"
 
-#: app/JourneyQueryPage.qml:154
+#: app/JourneyQueryPage.qml:138
 #, kde-format
 msgid "No journeys found."
 msgstr "여정을 찾을 수 없습니다."
 
-#: app/JourneyQueryPage.qml:181
+#: app/JourneyQueryPage.qml:165
 #, kde-format
 msgid "Still fetching results…"
 msgstr "결과를 계속 가져오고 있습니다…"
@@ -1994,36 +1993,36 @@ msgstr "도착 시간"
 msgid "Search Journey"
 msgstr "여정 검색"
 
-#: app/JourneyRequestPage.qml:236
+#: app/JourneyRequestPage.qml:238
 #, kde-format
 msgid "Mode of transportation"
 msgstr "운송 수단"
 
-#: app/JourneyRequestPage.qml:243
+#: app/JourneyRequestPage.qml:245
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "High speed or intercity trains"
 msgstr "고속 및 도시간 철도"
 
-#: app/JourneyRequestPage.qml:253
+#: app/JourneyRequestPage.qml:255
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Regional or local trains"
 msgstr "지역 및 광역 철도"
 
-#: app/JourneyRequestPage.qml:263
+#: app/JourneyRequestPage.qml:265
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Rapid transit, metro, trams"
 msgstr "도시 철도, 노면 전차"
 
-#: app/JourneyRequestPage.qml:273
+#: app/JourneyRequestPage.qml:275
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Local or regional bus services"
 msgstr "시내 및 시외 버스 서비스"
 
-#: app/JourneyRequestPage.qml:283
+#: app/JourneyRequestPage.qml:285
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
@@ -3945,6 +3944,16 @@ msgstr "지금 출발"
 msgid "Discard"
 msgstr "무시"
 
+#: app/TransferPage.qml:61
+#, kde-format
+msgid "Earlier"
+msgstr "더 일찍"
+
+#: app/TransferPage.qml:67
+#, kde-format
+msgid "Later"
+msgstr "더 나중"
+
 #: app/TransferPage.qml:75
 #, kde-format
 msgid "Bike"
@@ -4423,6 +4432,10 @@ msgstr "로그아웃함"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%5에 %3에서 %4(으)로 가는 %1%2|/|%5에 %3에서 %4$[으 %4]로 가는 %1%2"
+
+#~ msgctxt "to travel destination"
+#~ msgid "To %1"
+#~ msgstr "%1(으)로|/|%1$[으 %1]로"
 
 #~ msgctxt "@title"
 #~ msgid "Find Platform"
@@ -4936,10 +4949,6 @@ msgstr "%5에 %3에서 %4(으)로 가는 %1%2|/|%5에 %3에서 %4$[으 %4]로 �
 
 #~ msgid "Email:"
 #~ msgstr "이메일:"
-
-#~ msgctxt "train station"
-#~ msgid "Station:"
-#~ msgstr "정거장:"
 
 #~ msgid "Reference:"
 #~ msgstr "참조:"

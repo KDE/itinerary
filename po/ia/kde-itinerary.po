@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-28 00:42+0000\n"
+"POT-Creation-Date: 2025-06-30 00:42+0000\n"
 "PO-Revision-Date: 2025-05-28 18:37+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -210,58 +210,59 @@ msgstr "Modifica reservation"
 msgid "View Reservation"
 msgstr "Vide reservation"
 
-#: app/AlternativeJourneyPage.qml:19
+#: app/AlternativeJourneyPage.qml:21
 #, kde-format
 msgid "Alternative Connections"
 msgstr "Connexiones alternative"
 
-#: app/AlternativeJourneyPage.qml:61 app/AlternativeJourneyPage.qml:71
-#, kde-format
-msgctxt "to travel destination"
-msgid "To %1"
-msgstr "A %1"
-
-#: app/AlternativeJourneyPage.qml:87 app/DepartureQueryPage.qml:28
-#: app/JourneyRequestPage.qml:242 app/TransferPage.qml:108
+#: app/AlternativeJourneyPage.qml:64 app/DepartureQueryPage.qml:28
+#: app/JourneyRequestPage.qml:244 app/TransferPage.qml:108
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Long distance trains"
 msgstr "Trainos de longe distantia"
 
-#: app/AlternativeJourneyPage.qml:95 app/DepartureQueryPage.qml:35
-#: app/JourneyRequestPage.qml:252 app/TransferPage.qml:116
+#: app/AlternativeJourneyPage.qml:72 app/DepartureQueryPage.qml:35
+#: app/JourneyRequestPage.qml:254 app/TransferPage.qml:116
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Local trains"
 msgstr "Trainos local"
 
-#: app/AlternativeJourneyPage.qml:103 app/DepartureQueryPage.qml:42
-#: app/JourneyRequestPage.qml:262 app/TransferPage.qml:124
+#: app/AlternativeJourneyPage.qml:80 app/DepartureQueryPage.qml:42
+#: app/JourneyRequestPage.qml:264 app/TransferPage.qml:124
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Rapid transit"
 msgstr "Transito Rapide"
 
-#: app/AlternativeJourneyPage.qml:111 app/DepartureQueryPage.qml:49
-#: app/JourneyRequestPage.qml:272 app/TransferPage.qml:132
+#: app/AlternativeJourneyPage.qml:88 app/DepartureQueryPage.qml:49
+#: app/JourneyRequestPage.qml:274 app/TransferPage.qml:132
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Bus"
 msgstr "Bus"
 
-#: app/AlternativeJourneyPage.qml:119 app/DepartureQueryPage.qml:56
-#: app/JourneyRequestPage.qml:282 app/TransferPage.qml:140
+#: app/AlternativeJourneyPage.qml:96 app/DepartureQueryPage.qml:56
+#: app/JourneyRequestPage.qml:284 app/TransferPage.qml:140
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ferry"
 msgstr "Ferry"
 
-#: app/AlternativeJourneyPage.qml:129
+#: app/AlternativeJourneyPage.qml:104 app/DepartureQueryPage.qml:63
+#: app/JourneyRequestPage.qml:294
+#, kde-format
+msgctxt "journey query search constraint, title"
+msgid "Aircraft"
+msgstr ""
+
+#: app/AlternativeJourneyPage.qml:116
 #, kde-format
 msgid "Replace Journey"
 msgstr "Reimplacia Viage"
 
-#: app/AlternativeJourneyPage.qml:130
+#: app/AlternativeJourneyPage.qml:117
 #, kde-format
 msgid ""
 "Do you really want to replace your existing reservation with the newly "
@@ -270,10 +271,17 @@ msgstr ""
 "Tu vermente vole reimplaciar tu reservation existente con le viage justo "
 "seligite?"
 
-#: app/AlternativeJourneyPage.qml:134
+#: app/AlternativeJourneyPage.qml:121
 #, kde-format
 msgid "Replace"
 msgstr "Reimplacia"
+
+#: app/AlternativeJourneyPage.qml:139
+#, fuzzy, kde-format
+#| msgctxt "train station"
+#| msgid "Station:"
+msgid "Destination:"
+msgstr "Station:"
 
 #: app/applicationcontroller.cpp:188
 #, kde-format
@@ -387,7 +395,7 @@ msgid "Boat"
 msgstr "Barca"
 
 #: app/BoatEditor.qml:59 app/EventEditor.qml:54 app/FlightEditor.qml:72
-#: app/HotelEditor.qml:51 app/ImportPage.qml:21 app/JourneyRequestPage.qml:226
+#: app/HotelEditor.qml:51 app/ImportPage.qml:21 app/JourneyRequestPage.qml:228
 #: app/RestaurantEditor.qml:53 app/StopoverDetailsPage.qml:127
 #, kde-format
 msgid "Trip"
@@ -463,6 +471,12 @@ msgstr "Terminal"
 #, kde-format
 msgid "Arrival time"
 msgstr "Tempore de arrivata"
+
+#: app/BoatPage.qml:126 app/BusPage.qml:213 app/FlightPage.qml:218
+#: app/TrainPage.qml:362
+#, kde-format
+msgid "Alternatives"
+msgstr "Alternativas"
 
 #: app/BookingCard.qml:24
 #, kde-format
@@ -658,11 +672,6 @@ msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "Arrivata"
 
-#: app/BusPage.qml:213 app/TrainPage.qml:362
-#, kde-format
-msgid "Alternatives"
-msgstr "Alternativas"
-
 #: app/BusPage.qml:218 app/JourneySectionPage.qml:27 app/TrainPage.qml:367
 #, kde-format
 msgid "Journey Details"
@@ -768,20 +777,20 @@ msgstr "Sito Web"
 msgid "Departures"
 msgstr "Partitas"
 
-#: app/DepartureQueryPage.qml:109
+#: app/DepartureQueryPage.qml:118
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "Carga partitas anticipate"
 
-#: app/DepartureQueryPage.qml:135 app/JourneyQueryPage.qml:125
+#: app/DepartureQueryPage.qml:144 app/JourneyQueryPage.qml:109
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "Carga connexiones ulterior"
 
-#: app/DepartureQueryPage.qml:144 app/JourneyQueryPage.qml:132
+#: app/DepartureQueryPage.qml:153 app/JourneyQueryPage.qml:116
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
@@ -1908,33 +1917,23 @@ msgctxt "@action:button"
 msgid "Show Map"
 msgstr "Monstra mappa"
 
-#: app/JourneyQueryPage.qml:32 app/TransferPage.qml:61
-#, kde-format
-msgid "Earlier"
-msgstr "Antecedente"
-
-#: app/JourneyQueryPage.qml:38 app/TransferPage.qml:67
-#, kde-format
-msgid "Later"
-msgstr "Plus tarde"
-
-#: app/JourneyQueryPage.qml:85 app/TransferPage.qml:244
+#: app/JourneyQueryPage.qml:69 app/TransferPage.qml:244
 #, kde-format
 msgid "Select"
 msgstr "Selige"
 
-#: app/JourneyQueryPage.qml:116 app/TransferPage.qml:312
+#: app/JourneyQueryPage.qml:100 app/TransferPage.qml:312
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr "Carga connexiones anterior"
 
-#: app/JourneyQueryPage.qml:154
+#: app/JourneyQueryPage.qml:138
 #, kde-format
 msgid "No journeys found."
 msgstr "Nulle viages trovate"
 
-#: app/JourneyQueryPage.qml:181
+#: app/JourneyQueryPage.qml:165
 #, kde-format
 msgid "Still fetching results…"
 msgstr "Ancora reportante resultatos..."
@@ -2002,36 +2001,36 @@ msgstr "Tempore de arrivata"
 msgid "Search Journey"
 msgstr "Cerca Viage"
 
-#: app/JourneyRequestPage.qml:236
+#: app/JourneyRequestPage.qml:238
 #, kde-format
 msgid "Mode of transportation"
 msgstr "Modo de transporto"
 
-#: app/JourneyRequestPage.qml:243
+#: app/JourneyRequestPage.qml:245
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "High speed or intercity trains"
 msgstr "Trainos de alte velocitate o intercity"
 
-#: app/JourneyRequestPage.qml:253
+#: app/JourneyRequestPage.qml:255
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Regional or local trains"
 msgstr "Trainos regionbal o local"
 
-#: app/JourneyRequestPage.qml:263
+#: app/JourneyRequestPage.qml:265
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Rapid transit, metro, trams"
 msgstr "Transito radide, metro, trams"
 
-#: app/JourneyRequestPage.qml:273
+#: app/JourneyRequestPage.qml:275
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Local or regional bus services"
 msgstr "Servicios de bus local o regional"
 
-#: app/JourneyRequestPage.qml:283
+#: app/JourneyRequestPage.qml:285
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
@@ -4004,6 +4003,16 @@ msgstr "Parti nunc"
 msgid "Discard"
 msgstr "Abandona"
 
+#: app/TransferPage.qml:61
+#, kde-format
+msgid "Earlier"
+msgstr "Antecedente"
+
+#: app/TransferPage.qml:67
+#, kde-format
+msgid "Later"
+msgstr "Plus tarde"
+
 #: app/TransferPage.qml:75
 #, kde-format
 msgid "Bike"
@@ -4487,6 +4496,10 @@ msgstr "Claude session"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 ex %3 a %4 le %5"
+
+#~ msgctxt "to travel destination"
+#~ msgid "To %1"
+#~ msgstr "A %1"
 
 #~ msgctxt "@title"
 #~ msgid "Find Platform"
@@ -5054,10 +5067,6 @@ msgstr "%1%2 ex %3 a %4 le %5"
 
 #~ msgid "Pick coordinate"
 #~ msgstr "Collige coordinata"
-
-#~ msgctxt "train station"
-#~ msgid "Station:"
-#~ msgstr "Station:"
 
 #~ msgid "Reference:"
 #~ msgstr "Referentia:"

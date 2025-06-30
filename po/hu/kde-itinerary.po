@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-28 00:42+0000\n"
+"POT-Creation-Date: 2025-06-30 00:42+0000\n"
 "PO-Revision-Date: 2024-03-26 16:14+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -214,58 +214,59 @@ msgstr "Foglalás módosítása"
 msgid "View Reservation"
 msgstr "Foglalás megtekintése"
 
-#: app/AlternativeJourneyPage.qml:19
+#: app/AlternativeJourneyPage.qml:21
 #, kde-format
 msgid "Alternative Connections"
 msgstr "Alternatív kapcsolatok"
 
-#: app/AlternativeJourneyPage.qml:61 app/AlternativeJourneyPage.qml:71
-#, kde-format
-msgctxt "to travel destination"
-msgid "To %1"
-msgstr "Ide: %1"
-
-#: app/AlternativeJourneyPage.qml:87 app/DepartureQueryPage.qml:28
-#: app/JourneyRequestPage.qml:242 app/TransferPage.qml:108
+#: app/AlternativeJourneyPage.qml:64 app/DepartureQueryPage.qml:28
+#: app/JourneyRequestPage.qml:244 app/TransferPage.qml:108
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Long distance trains"
 msgstr "Távolsági vonatok"
 
-#: app/AlternativeJourneyPage.qml:95 app/DepartureQueryPage.qml:35
-#: app/JourneyRequestPage.qml:252 app/TransferPage.qml:116
+#: app/AlternativeJourneyPage.qml:72 app/DepartureQueryPage.qml:35
+#: app/JourneyRequestPage.qml:254 app/TransferPage.qml:116
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Local trains"
 msgstr "Helyi vonatok"
 
-#: app/AlternativeJourneyPage.qml:103 app/DepartureQueryPage.qml:42
-#: app/JourneyRequestPage.qml:262 app/TransferPage.qml:124
+#: app/AlternativeJourneyPage.qml:80 app/DepartureQueryPage.qml:42
+#: app/JourneyRequestPage.qml:264 app/TransferPage.qml:124
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Rapid transit"
 msgstr "Gyorsvasút"
 
-#: app/AlternativeJourneyPage.qml:111 app/DepartureQueryPage.qml:49
-#: app/JourneyRequestPage.qml:272 app/TransferPage.qml:132
+#: app/AlternativeJourneyPage.qml:88 app/DepartureQueryPage.qml:49
+#: app/JourneyRequestPage.qml:274 app/TransferPage.qml:132
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Bus"
 msgstr "Busz"
 
-#: app/AlternativeJourneyPage.qml:119 app/DepartureQueryPage.qml:56
-#: app/JourneyRequestPage.qml:282 app/TransferPage.qml:140
+#: app/AlternativeJourneyPage.qml:96 app/DepartureQueryPage.qml:56
+#: app/JourneyRequestPage.qml:284 app/TransferPage.qml:140
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ferry"
 msgstr "Komp"
 
-#: app/AlternativeJourneyPage.qml:129
+#: app/AlternativeJourneyPage.qml:104 app/DepartureQueryPage.qml:63
+#: app/JourneyRequestPage.qml:294
+#, kde-format
+msgctxt "journey query search constraint, title"
+msgid "Aircraft"
+msgstr ""
+
+#: app/AlternativeJourneyPage.qml:116
 #, kde-format
 msgid "Replace Journey"
 msgstr "Utazás cseréje"
 
-#: app/AlternativeJourneyPage.qml:130
+#: app/AlternativeJourneyPage.qml:117
 #, kde-format
 msgid ""
 "Do you really want to replace your existing reservation with the newly "
@@ -274,10 +275,17 @@ msgstr ""
 "Biztosan ki szeretné cserélni meglévő foglalását az újonnan kiválasztott "
 "utazásra?"
 
-#: app/AlternativeJourneyPage.qml:134
+#: app/AlternativeJourneyPage.qml:121
 #, kde-format
 msgid "Replace"
 msgstr "Csere"
+
+#: app/AlternativeJourneyPage.qml:139
+#, fuzzy, kde-format
+#| msgctxt "bus station"
+#| msgid "Station"
+msgid "Destination:"
+msgstr "Állomás"
 
 #: app/applicationcontroller.cpp:188
 #, fuzzy, kde-format
@@ -395,7 +403,7 @@ msgid "Boat"
 msgstr "Hajó"
 
 #: app/BoatEditor.qml:59 app/EventEditor.qml:54 app/FlightEditor.qml:72
-#: app/HotelEditor.qml:51 app/ImportPage.qml:21 app/JourneyRequestPage.qml:226
+#: app/HotelEditor.qml:51 app/ImportPage.qml:21 app/JourneyRequestPage.qml:228
 #: app/RestaurantEditor.qml:53 app/StopoverDetailsPage.qml:127
 #, fuzzy, kde-format
 #| msgid "Trip sent."
@@ -472,6 +480,12 @@ msgstr "Kikötő"
 #, kde-format
 msgid "Arrival time"
 msgstr "Érkezési idő"
+
+#: app/BoatPage.qml:126 app/BusPage.qml:213 app/FlightPage.qml:218
+#: app/TrainPage.qml:362
+#, kde-format
+msgid "Alternatives"
+msgstr "Alternatívák"
 
 #: app/BookingCard.qml:24
 #, kde-format
@@ -683,11 +697,6 @@ msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "Érkezés"
 
-#: app/BusPage.qml:213 app/TrainPage.qml:362
-#, kde-format
-msgid "Alternatives"
-msgstr "Alternatívák"
-
 #: app/BusPage.qml:218 app/JourneySectionPage.qml:27 app/TrainPage.qml:367
 #, kde-format
 msgid "Journey Details"
@@ -794,20 +803,20 @@ msgstr "Weboldal"
 msgid "Departures"
 msgstr "Indulások"
 
-#: app/DepartureQueryPage.qml:109
+#: app/DepartureQueryPage.qml:118
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "Korábbi indulások betöltése"
 
-#: app/DepartureQueryPage.qml:135 app/JourneyQueryPage.qml:125
+#: app/DepartureQueryPage.qml:144 app/JourneyQueryPage.qml:109
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "Későbbi csatlakozások betöltése"
 
-#: app/DepartureQueryPage.qml:144 app/JourneyQueryPage.qml:132
+#: app/DepartureQueryPage.qml:153 app/JourneyQueryPage.qml:116
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
@@ -1986,34 +1995,24 @@ msgctxt "@action:button"
 msgid "Show Map"
 msgstr "Térkép megjelenítése"
 
-#: app/JourneyQueryPage.qml:32 app/TransferPage.qml:61
-#, kde-format
-msgid "Earlier"
-msgstr "Korábban"
-
-#: app/JourneyQueryPage.qml:38 app/TransferPage.qml:67
-#, kde-format
-msgid "Later"
-msgstr "Később"
-
-#: app/JourneyQueryPage.qml:85 app/TransferPage.qml:244
+#: app/JourneyQueryPage.qml:69 app/TransferPage.qml:244
 #, kde-format
 msgid "Select"
 msgstr "Kiválasztás"
 
-#: app/JourneyQueryPage.qml:116 app/TransferPage.qml:312
+#: app/JourneyQueryPage.qml:100 app/TransferPage.qml:312
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr "Korábbi csatlakozások betöltése"
 
-#: app/JourneyQueryPage.qml:154
+#: app/JourneyQueryPage.qml:138
 #, fuzzy, kde-format
 #| msgid "No ticket found"
 msgid "No journeys found."
 msgstr "Nem található jegy"
 
-#: app/JourneyQueryPage.qml:181
+#: app/JourneyQueryPage.qml:165
 #, kde-format
 msgid "Still fetching results…"
 msgstr ""
@@ -2081,37 +2080,37 @@ msgstr ""
 msgid "Search Journey"
 msgstr "Utazás keresése"
 
-#: app/JourneyRequestPage.qml:236
+#: app/JourneyRequestPage.qml:238
 #, fuzzy, kde-format
 #| msgid "More information"
 msgid "Mode of transportation"
 msgstr "További információk"
 
-#: app/JourneyRequestPage.qml:243
+#: app/JourneyRequestPage.qml:245
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "High speed or intercity trains"
 msgstr "Nagysebességű vagy intercity vonatok"
 
-#: app/JourneyRequestPage.qml:253
+#: app/JourneyRequestPage.qml:255
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Regional or local trains"
 msgstr "Regionális vagy helyi vonatok"
 
-#: app/JourneyRequestPage.qml:263
+#: app/JourneyRequestPage.qml:265
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Rapid transit, metro, trams"
 msgstr "Gyorsvasút, metró, villamosok"
 
-#: app/JourneyRequestPage.qml:273
+#: app/JourneyRequestPage.qml:275
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Local or regional bus services"
 msgstr "Helyi vagy regionális buszszolgáltatások"
 
-#: app/JourneyRequestPage.qml:283
+#: app/JourneyRequestPage.qml:285
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
@@ -4075,6 +4074,16 @@ msgstr ""
 msgid "Discard"
 msgstr ""
 
+#: app/TransferPage.qml:61
+#, kde-format
+msgid "Earlier"
+msgstr "Korábban"
+
+#: app/TransferPage.qml:67
+#, kde-format
+msgid "Later"
+msgstr "Később"
+
 #: app/TransferPage.qml:75
 #, kde-format
 msgid "Bike"
@@ -4584,6 +4593,10 @@ msgstr "Kijelentkezés"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr ""
+
+#~ msgctxt "to travel destination"
+#~ msgid "To %1"
+#~ msgstr "Ide: %1"
 
 #, fuzzy
 #~| msgid "Find Platform"

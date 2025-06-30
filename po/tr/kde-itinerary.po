@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-28 00:42+0000\n"
+"POT-Creation-Date: 2025-06-30 00:42+0000\n"
 "PO-Revision-Date: 2025-06-22 09:21+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -211,58 +211,59 @@ msgstr "Rezervasyonu Değiştir"
 msgid "View Reservation"
 msgstr "Rezervasyonu Görüntüle"
 
-#: app/AlternativeJourneyPage.qml:19
+#: app/AlternativeJourneyPage.qml:21
 #, kde-format
 msgid "Alternative Connections"
 msgstr "Alternatif Bağlantılar"
 
-#: app/AlternativeJourneyPage.qml:61 app/AlternativeJourneyPage.qml:71
-#, kde-format
-msgctxt "to travel destination"
-msgid "To %1"
-msgstr "Şuraya: %1"
-
-#: app/AlternativeJourneyPage.qml:87 app/DepartureQueryPage.qml:28
-#: app/JourneyRequestPage.qml:242 app/TransferPage.qml:108
+#: app/AlternativeJourneyPage.qml:64 app/DepartureQueryPage.qml:28
+#: app/JourneyRequestPage.qml:244 app/TransferPage.qml:108
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Long distance trains"
 msgstr "Uzun mesafe trenleri"
 
-#: app/AlternativeJourneyPage.qml:95 app/DepartureQueryPage.qml:35
-#: app/JourneyRequestPage.qml:252 app/TransferPage.qml:116
+#: app/AlternativeJourneyPage.qml:72 app/DepartureQueryPage.qml:35
+#: app/JourneyRequestPage.qml:254 app/TransferPage.qml:116
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Local trains"
 msgstr "Yerel trenler"
 
-#: app/AlternativeJourneyPage.qml:103 app/DepartureQueryPage.qml:42
-#: app/JourneyRequestPage.qml:262 app/TransferPage.qml:124
+#: app/AlternativeJourneyPage.qml:80 app/DepartureQueryPage.qml:42
+#: app/JourneyRequestPage.qml:264 app/TransferPage.qml:124
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Rapid transit"
 msgstr "Hızlı ulaşım"
 
-#: app/AlternativeJourneyPage.qml:111 app/DepartureQueryPage.qml:49
-#: app/JourneyRequestPage.qml:272 app/TransferPage.qml:132
+#: app/AlternativeJourneyPage.qml:88 app/DepartureQueryPage.qml:49
+#: app/JourneyRequestPage.qml:274 app/TransferPage.qml:132
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Bus"
 msgstr "Otobüs"
 
-#: app/AlternativeJourneyPage.qml:119 app/DepartureQueryPage.qml:56
-#: app/JourneyRequestPage.qml:282 app/TransferPage.qml:140
+#: app/AlternativeJourneyPage.qml:96 app/DepartureQueryPage.qml:56
+#: app/JourneyRequestPage.qml:284 app/TransferPage.qml:140
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ferry"
 msgstr "Feribot"
 
-#: app/AlternativeJourneyPage.qml:129
+#: app/AlternativeJourneyPage.qml:104 app/DepartureQueryPage.qml:63
+#: app/JourneyRequestPage.qml:294
+#, kde-format
+msgctxt "journey query search constraint, title"
+msgid "Aircraft"
+msgstr ""
+
+#: app/AlternativeJourneyPage.qml:116
 #, kde-format
 msgid "Replace Journey"
 msgstr "Yolculuğu Değiştir"
 
-#: app/AlternativeJourneyPage.qml:130
+#: app/AlternativeJourneyPage.qml:117
 #, kde-format
 msgid ""
 "Do you really want to replace your existing reservation with the newly "
@@ -271,10 +272,17 @@ msgstr ""
 "Var olan rezervasyonunuzu yeni seçilen yolculukla değiştirmeyi gerçekten "
 "istiyor musunuz?"
 
-#: app/AlternativeJourneyPage.qml:134
+#: app/AlternativeJourneyPage.qml:121
 #, kde-format
 msgid "Replace"
 msgstr "Değiştir"
+
+#: app/AlternativeJourneyPage.qml:139
+#, fuzzy, kde-format
+#| msgctxt "bus station"
+#| msgid "Station"
+msgid "Destination:"
+msgstr "İstasyon"
 
 #: app/applicationcontroller.cpp:188
 #, kde-format
@@ -388,7 +396,7 @@ msgid "Boat"
 msgstr "Bot"
 
 #: app/BoatEditor.qml:59 app/EventEditor.qml:54 app/FlightEditor.qml:72
-#: app/HotelEditor.qml:51 app/ImportPage.qml:21 app/JourneyRequestPage.qml:226
+#: app/HotelEditor.qml:51 app/ImportPage.qml:21 app/JourneyRequestPage.qml:228
 #: app/RestaurantEditor.qml:53 app/StopoverDetailsPage.qml:127
 #, kde-format
 msgid "Trip"
@@ -464,6 +472,12 @@ msgstr "Terminal"
 #, kde-format
 msgid "Arrival time"
 msgstr "Varış zamanı"
+
+#: app/BoatPage.qml:126 app/BusPage.qml:213 app/FlightPage.qml:218
+#: app/TrainPage.qml:362
+#, kde-format
+msgid "Alternatives"
+msgstr "Alternatifler"
 
 #: app/BookingCard.qml:24
 #, kde-format
@@ -659,11 +673,6 @@ msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "Varış"
 
-#: app/BusPage.qml:213 app/TrainPage.qml:362
-#, kde-format
-msgid "Alternatives"
-msgstr "Alternatifler"
-
 #: app/BusPage.qml:218 app/JourneySectionPage.qml:27 app/TrainPage.qml:367
 #, kde-format
 msgid "Journey Details"
@@ -769,20 +778,20 @@ msgstr "Web Sayfası"
 msgid "Departures"
 msgstr "Kalkışlar"
 
-#: app/DepartureQueryPage.qml:109
+#: app/DepartureQueryPage.qml:118
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "Erken kalkışları yükle"
 
-#: app/DepartureQueryPage.qml:135 app/JourneyQueryPage.qml:125
+#: app/DepartureQueryPage.qml:144 app/JourneyQueryPage.qml:109
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "Sonraki bağlantıları yükle"
 
-#: app/DepartureQueryPage.qml:144 app/JourneyQueryPage.qml:132
+#: app/DepartureQueryPage.qml:153 app/JourneyQueryPage.qml:116
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
@@ -1909,33 +1918,23 @@ msgctxt "@action:button"
 msgid "Show Map"
 msgstr "Haritayı Göster"
 
-#: app/JourneyQueryPage.qml:32 app/TransferPage.qml:61
-#, kde-format
-msgid "Earlier"
-msgstr "Daha Önce"
-
-#: app/JourneyQueryPage.qml:38 app/TransferPage.qml:67
-#, kde-format
-msgid "Later"
-msgstr "Sonra"
-
-#: app/JourneyQueryPage.qml:85 app/TransferPage.qml:244
+#: app/JourneyQueryPage.qml:69 app/TransferPage.qml:244
 #, kde-format
 msgid "Select"
 msgstr "Seç"
 
-#: app/JourneyQueryPage.qml:116 app/TransferPage.qml:312
+#: app/JourneyQueryPage.qml:100 app/TransferPage.qml:312
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr "Önceki bağlantıları yükle"
 
-#: app/JourneyQueryPage.qml:154
+#: app/JourneyQueryPage.qml:138
 #, kde-format
 msgid "No journeys found."
 msgstr "Bulunan yolculuk yok."
 
-#: app/JourneyQueryPage.qml:181
+#: app/JourneyQueryPage.qml:165
 #, kde-format
 msgid "Still fetching results…"
 msgstr "Sonuçlar hâlâ getiriliyor…"
@@ -2003,36 +2002,36 @@ msgstr "Varış zamanı"
 msgid "Search Journey"
 msgstr "Yolculuk Ara"
 
-#: app/JourneyRequestPage.qml:236
+#: app/JourneyRequestPage.qml:238
 #, kde-format
 msgid "Mode of transportation"
 msgstr "Ulaşım biçimi"
 
-#: app/JourneyRequestPage.qml:243
+#: app/JourneyRequestPage.qml:245
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "High speed or intercity trains"
 msgstr "Yüksek hızlı veya şehirlerarası trenler"
 
-#: app/JourneyRequestPage.qml:253
+#: app/JourneyRequestPage.qml:255
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Regional or local trains"
 msgstr "Bölgesel veya yerel trenler"
 
-#: app/JourneyRequestPage.qml:263
+#: app/JourneyRequestPage.qml:265
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Rapid transit, metro, trams"
 msgstr "Hızlı ulaşım, metro, tramvay"
 
-#: app/JourneyRequestPage.qml:273
+#: app/JourneyRequestPage.qml:275
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Local or regional bus services"
 msgstr "Yerel veya bölgesel otobüs hizmetleri"
 
-#: app/JourneyRequestPage.qml:283
+#: app/JourneyRequestPage.qml:285
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
@@ -3978,6 +3977,16 @@ msgstr "Şimdi Kalk"
 msgid "Discard"
 msgstr "At"
 
+#: app/TransferPage.qml:61
+#, kde-format
+msgid "Earlier"
+msgstr "Daha Önce"
+
+#: app/TransferPage.qml:67
+#, kde-format
+msgid "Later"
+msgstr "Sonra"
+
 #: app/TransferPage.qml:75
 #, kde-format
 msgid "Bike"
@@ -4460,6 +4469,10 @@ msgstr "Oturum kapatıldı."
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%5 tarihinde %3 havaalanından %4 havaalanına %1%2"
+
+#~ msgctxt "to travel destination"
+#~ msgid "To %1"
+#~ msgstr "Şuraya: %1"
 
 #~ msgctxt "@title"
 #~ msgid "Find Platform"
