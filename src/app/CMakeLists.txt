@@ -157,6 +157,7 @@ ecm_add_qml_module(itinerary-app URI org.kde.itinerary NO_PLUGIN QML_FILES
     EventEditor.qml
     EventPage.qml
     EventTicket.qml
+    ExportMenuDialog.qml
     FavoriteLocationPage.qml
     FlightDelegate.qml
     FlightEditor.qml

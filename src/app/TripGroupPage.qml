@@ -224,77 +224,14 @@ Kirigami.ScrollablePage {
         }
     }
 
-    Kirigami.MenuDialog {
+    ExportMenuDialog {
         id: exportTripGroupDialog
-        title: i18n("Export")
-        property list<QQC2.Action> _actions: [
-            Kirigami.Action {
-                text: i18n("As Itinerary file…")
-                icon.name: "document-export-symbolic"
-                onTriggered: {
-                    tripGroupFileExportDialog.currentFile = root.tripGroup.slugName + ".itinerary"
-                    tripGroupFileExportDialog.open();
-                }
-            },
-            Kirigami.Action {
-                text: i18n("As GPX file…")
-                icon.name: "map-globe"
-                onTriggered: {
-                    tripGroupGpxExportDialog.currentFile = root.tripGroup.slugName  + ".gpx"
-                    tripGroupGpxExportDialog.open();
-                }
-            }
-        ]
-        actions: exportTripGroupDialog._actions
-        Instantiator {
-            model: KDEConnectDeviceModel {
-                id: deviceModel
-            }
-            delegate: Kirigami.Action {
-                text: i18n("Send to %1", model.name)
-                icon.name: "kdeconnect-tray"
-                onTriggered: ApplicationController.exportTripToKDEConnect(root.tripGroupId, model.deviceId)
-            }
-            onObjectAdded: (index, object) => {
-                console.log(object)
-                exportTripGroupDialog._actions.push(object);
-            }
-        }
-        onVisibleChanged: {
-            if (exportTripGroupDialog.visible)
-                deviceModel.refresh();
-        }
-    }
-    FileDialog {
-        id: tripGroupFileExportDialog
-        fileMode: FileDialog.SaveFile
         title: i18n("Export Trip")
-        nameFilters: [i18n("Itinerary file (*.itinerary)")]
-        onAccepted: {
-            ApplicationController.exportTripToFile(root.tripGroupId, tripGroupFileExportDialog.selectedFile);
-            Settings.writeFileDialogFolder("tripGroupExport", tripGroupFileExportDialog.selectedFile)
-        }
-        onVisibleChanged: {
-            if (tripGroupFileExportDialog.visible) {
-                tripGroupFileExportDialog.currentFolder = Settings.readFileDialogFolder("tripGroupExport", QtCore.StandardPaths.writableLocation(QtCore.StandardPaths.DocumentsLocation));
-            }
-        }
-    }
-    FileDialog {
-        id: tripGroupGpxExportDialog
-        fileMode: FileDialog.SaveFile
-        title: i18n("Export Trip")
-        currentFolder: QtCore.StandardPaths.writableLocation(QtCore.StandardPaths.DocumentsLocation)
-        nameFilters: [i18n("GPX Files (*.gpx)")]
-        onAccepted: {
-            ApplicationController.exportTripToGpx(root.tripGroupId, tripGroupGpxExportDialog.selectedFile);
-            Settings.writeFileDialogFolder("tripGroupGpxExport", tripGroupGpxExportDialog.selectedFile)
-        }
-        onVisibleChanged: {
-            if (tripGroupGpxExportDialog.visible) {
-                tripGroupGpxExportDialog.currentFolder = Settings.readFileDialogFolder("tripGroupGpxExport", QtCore.StandardPaths.writableLocation(QtCore.StandardPaths.DocumentsLocation));
-            }
-        }
+        settingsKey: "tripGroup"
+        suggestedName: root.tripGroup.slugName
+        onExportToFile: (path) => { ApplicationController.exportTripToFile(root.tripGroupId, path); }
+        onExportToGpxFile: (path) => { ApplicationController.exportTripToGpx(root.tripGroupId, path); }
+        onExportToKDEConnect: (deviceId) => { ApplicationController.exportTripToKDEConnect(root.tripGroupId, deviceId); }
     }
 
     Kirigami.PromptDialog {

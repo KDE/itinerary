@@ -133,40 +133,12 @@ ColumnLayout {
         ]
     }
 
-    Kirigami.MenuDialog {
+    ExportMenuDialog {
         id: exportBatchDialog
-        title: i18n("Export")
-        property list<QQC2.Action> _actions: [
-            Kirigami.Action {
-                text: i18n("As Itinerary file…")
-                icon.name: "document-export-symbolic"
-                onTriggered: batchFileExportDialog.open()
-            }
-        ]
-        actions: exportBatchDialog._actions
-        Instantiator {
-            model: KDEConnectDeviceModel {
-                id: deviceModel
-            }
-            delegate: Kirigami.Action {
-                text: i18n("Send to %1", model.name)
-                icon.name: "kdeconnect-tray"
-                onTriggered: ApplicationController.exportBatchToKDEConnect(root.batchId, model.deviceId)
-            }
-            onObjectAdded: exportBatchDialog._actions.push(object)
-        }
-        onVisibleChanged: {
-            if (exportBatchDialog.visible)
-                deviceModel.refresh();
-        }
-    }
-    FileDialog {
-        id: batchFileExportDialog
-        fileMode: FileDialog.SaveFile
         title: i18n("Export Reservation")
-        currentFolder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
-        nameFilters: [i18n("Itinerary file (*.itinerary)")]
-        onAccepted: ApplicationController.exportBatchToFile(root.batchId, selectedFile)
+        settingsKey: "reservation"
+        onExportToFile: (path) => { ApplicationController.exportBatchToFile(root.batchId, path); }
+        onExportToKDEConnect: (deviceId) => { ApplicationController.exportBatchToKDEConnect(root.batchId, deviceId); }
     }
 
     FormCard.FormHeader {
