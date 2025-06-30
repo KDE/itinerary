@@ -137,4 +137,27 @@ QString Util::cacheLocation(const QString &relativePath)
     return path;
 }
 
+QString Util::slugify(const QString &input)
+{
+    QString s;
+    s.reserve(input.size());
+    for (auto c : input) {
+        if (c.isLetter() || c.isDigit()) {
+            c = c.toCaseFolded();
+            if (c.decompositionTag() == QChar::Canonical) {
+                c = c.decomposition().at(0);
+            }
+            s.push_back(c);
+        } else if (!s.isEmpty() && s.back() != '-'_L1) {
+            s.push_back('-'_L1);
+        }
+    }
+
+    if (s.endsWith('-'_L1)) {
+        s.chop(1);
+    }
+
+    return s;
+}
+
 #include "moc_util.cpp"

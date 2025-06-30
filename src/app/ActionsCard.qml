@@ -137,6 +137,7 @@ ColumnLayout {
         id: exportBatchDialog
         title: i18n("Export Reservation")
         settingsKey: "reservation"
+        suggestedName: Util.slugify(ReservationHelper.label(root.reservation))
         onExportToFile: (path) => { ApplicationController.exportBatchToFile(root.batchId, path); }
         onExportToKDEConnect: (deviceId) => { ApplicationController.exportBatchToKDEConnect(root.batchId, deviceId); }
     }

@@ -37,7 +37,7 @@ public:
     [[nodiscard]] static bool isCancelled(const QVariant &res);
 
     /** Display label for a given reservation. */
-    [[nodiscard]] static QString label(const QVariant &res);
+    Q_INVOKABLE [[nodiscard]] static QString label(const QVariant &res);
 
     /** Default icon name for the given element. */
     Q_INVOKABLE [[nodiscard]] static QString defaultIconName(const QVariant &res);

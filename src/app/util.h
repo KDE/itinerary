@@ -58,6 +58,9 @@ public:
      *  QtCore.StandardPaths returns URLs that QtLocation can't deal with.
      */
     Q_INVOKABLE [[nodiscard]] static QString cacheLocation(const QString &relativePath);
+
+    /** Returns a URL slug of the given input string, e.g. for use in filename suggestions. */
+    Q_INVOKABLE [[nodiscard]] static QString slugify(const QString &input);
 };
 
 #endif // UTIL_H
