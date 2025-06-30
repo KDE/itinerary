@@ -268,10 +268,10 @@ QVariant PassManager::data(const QModelIndex &index, int role) const
             return QLocale().toString(from.date(), QLocale::ShortFormat);
         }
         if (days >= 28 && days <= 31) {
-            return QLocale().toString(from, QStringLiteral("MMMM yyyy"));
+            return QLocale().toString(from, u"MMMM yyyy");
         }
         if (days >= 365 && days <= 366) {
-            return QLocale().toString(from, QStringLiteral("yyyy"));
+            return QLocale().toString(from, u"yyyy");
         }
         return i18n("%1 - %2", QLocale().toString(from.date(), QLocale::ShortFormat), QLocale().toString(to.date(), QLocale::ShortFormat));
     }
@@ -392,7 +392,7 @@ QVariantList PassManager::documentIds(const QVariant &pass)
 
 QString PassManager::basePath()
 {
-    return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1StringView("/programs/");
+    return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/programs/"_L1;
 }
 
 #include "moc_passmanager.cpp"

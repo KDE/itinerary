@@ -54,13 +54,13 @@ public:
      *  incomplete data from a ticket.
      *  An empty string is returned if no matching membership is found.
      */
-    Q_INVOKABLE QString findMatchingPass(const QVariant &pass) const;
+    Q_INVOKABLE [[nodiscard]] QString findMatchingPass(const QVariant &pass) const;
     /** Returns the pass object for @p passId. */
-    Q_INVOKABLE QVariant pass(const QString &passId) const;
+    Q_INVOKABLE [[nodiscard]] QVariant pass(const QString &passId) const;
 
-    int rowCount(const QModelIndex &parent = {}) const override;
-    QVariant data(const QModelIndex &index, int role) const override;
-    QHash<int, QByteArray> roleNames() const override;
+    [[nodiscard]] int rowCount(const QModelIndex &parent = {}) const override;
+    [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
+    [[nodiscard]] QHash<int, QByteArray> roleNames() const override;
 
     Q_INVOKABLE void update(const QString &passId, const QVariant &pass);
     Q_INVOKABLE bool remove(const QString &passId);
@@ -82,9 +82,9 @@ private:
         QString id;
         QVariant data;
 
-        QString name() const;
-        QDateTime validFrom() const;
-        QDateTime validUntil() const;
+        [[nodiscard]] QString name() const;
+        [[nodiscard]] QDateTime validFrom() const;
+        [[nodiscard]] QDateTime validUntil() const;
     };
 
     struct PassComparator {
@@ -98,7 +98,7 @@ private:
 
     void load();
     bool write(const QVariant &data, const QString &id) const;
-    QByteArray rawData(const Entry &entry) const;
+    [[nodiscard]] QByteArray rawData(const Entry &entry) const;
 
     static QString basePath();
 
