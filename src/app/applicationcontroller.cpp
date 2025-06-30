@@ -529,6 +529,28 @@ bool ApplicationController::exportBatchToFile(const QString &batchId, const QStr
     return true;
 }
 
+void ApplicationController::exportBatchToGpx(const QString &batchId, const QUrl &url)
+{
+    if (url.isEmpty()) {
+        return;
+    }
+
+    QFile f(FileHelper::toLocalFile(url));
+    if (!f.open(QFile::WriteOnly)) {
+        qCWarning(Log) << f.errorString() << f.fileName();
+        Q_EMIT infoMessage(i18n("Export failed: %1", f.errorString()));
+        return;
+    }
+    GpxExport exporter(&f);
+
+    const auto res = m_resMgr->reservation(batchId);
+    const auto transferBefore = m_transferMgr->transfer(batchId, Transfer::Before);
+    const auto transferAfter = m_transferMgr->transfer(batchId, Transfer::After);
+    exporter.writeReservation(res, m_liveDataMgr->journey(batchId), transferBefore, transferAfter);
+
+    Q_EMIT infoMessage(i18n("Export completed."));
+}
+
 bool ApplicationController::importBundle(KItinerary::File *file)
 {
     Importer importer(file);

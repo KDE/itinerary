@@ -139,6 +139,7 @@ ColumnLayout {
         settingsKey: "reservation"
         suggestedName: Util.slugify(ReservationHelper.label(root.reservation))
         onExportToFile: (path) => { ApplicationController.exportBatchToFile(root.batchId, path); }
+        onExportToGpxFile: (path) => { ApplicationController.exportBatchToGpx(root.batchId, path); }
         onExportToKDEConnect: (deviceId) => { ApplicationController.exportBatchToKDEConnect(root.batchId, deviceId); }
     }
 

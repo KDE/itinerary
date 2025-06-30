@@ -87,6 +87,7 @@ public:
     Q_INVOKABLE void exportTripToGpx(const QString &tripGroupId, const QUrl &url);
     Q_INVOKABLE void exportBatchToFile(const QString &batchId, const QUrl &url);
     Q_INVOKABLE void exportBatchToKDEConnect(const QString &batchId, const QString &deviceId);
+    Q_INVOKABLE void exportBatchToGpx(const QString &batchId, const QUrl &url);
 
     // document attaching
     Q_INVOKABLE void addDocumentToReservation(const QString &batchId, const QUrl &url);
