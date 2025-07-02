@@ -311,6 +311,7 @@ if (ANDROID)
         document-import-symbolic
         document-open
         document-save
+        document-save-as-symbolic
         documentinfo
         donate-symbolic
         download

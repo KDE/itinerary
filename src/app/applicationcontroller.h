@@ -91,6 +91,8 @@ public:
     Q_INVOKABLE void exportPassToFile(const QString &passId, const QUrl &url);
     Q_INVOKABLE void exportPassToKDEConnect(const QString &passId, const QString &deviceId);
 
+    Q_INVOKABLE void exportPkPassToFile(const QString &passId, const QUrl &url);
+
     // document attaching
     Q_INVOKABLE void addDocumentToReservation(const QString &batchId, const QUrl &url);
     Q_INVOKABLE void removeDocumentFromReservation(const QString &batchId, const QString &docId);

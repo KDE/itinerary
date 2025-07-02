@@ -279,8 +279,8 @@ bool PkPassManager::canUpdate(KPkPass::Pass *pass)
 
 QByteArray PkPassManager::rawData(const QString &passId)
 {
-    const QString passPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/passes/"_L1 + passId + ".pkpass"_L1;
-    QFile f(passPath);
+    const auto path = passPath(passId);
+    QFile f(path);
     if (!f.open(QFile::ReadOnly)) {
         qCWarning(Log) << "Failed to open pass file for pass" << passId;
         return {};

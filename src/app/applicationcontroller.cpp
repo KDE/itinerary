@@ -615,6 +615,21 @@ bool ApplicationController::exportPassToFile(const QString &passId, const QStrin
     return true;
 }
 
+void ApplicationController::exportPkPassToFile(const QString &passId, const QUrl &url)
+{
+    if (url.isEmpty()) {
+        return;
+    }
+    QFile f(FileHelper::toLocalFile(url));
+    if (!f.open(QFile::WriteOnly | QFile::Truncate)) {
+        Q_EMIT infoMessage(i18n("Saving failed: %1", f.errorString()));
+        return;
+    }
+    f.write(PkPassManager::rawData(passId));
+
+    Q_EMIT infoMessage(i18n("File saved successfully."));
+}
+
 bool ApplicationController::importBundle(KItinerary::File *file)
 {
     Importer importer(file);
