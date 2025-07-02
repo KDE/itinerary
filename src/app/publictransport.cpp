@@ -171,7 +171,7 @@ static KItinerary::BoatReservation applyJourneySection(KItinerary::BoatReservati
     auto trip = res.reservationFor().value<BoatTrip>();
     trip.setDepartureTime(section.scheduledDepartureTime());
     trip.setArrivalTime(section.scheduledArrivalTime());
-    // TODO ferry line name
+    trip.setName(section.route().line().name());
     trip.setDepartureBoatTerminal(PublicTransport::updateToLocation(trip.departureBoatTerminal(), section.from()));
     trip.setArrivalBoatTerminal(PublicTransport::updateToLocation(trip.arrivalBoatTerminal(), section.to()));
 
