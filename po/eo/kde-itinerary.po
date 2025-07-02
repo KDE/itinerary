@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-30 00:42+0000\n"
+"POT-Creation-Date: 2025-07-02 07:06+0000\n"
 "PO-Revision-Date: 2025-03-15 10:38+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -92,7 +92,7 @@ msgstr "Eltiraj kapabloj kopiitaj al tondujo"
 msgid "Show Boarding Pass"
 msgstr "Montri Enirpermesilon"
 
-#: app/ActionsCard.qml:33 app/TicketPage.qml:138
+#: app/ActionsCard.qml:33 app/TicketPage.qml:148
 #, kde-format
 msgid "Show Ticket"
 msgstr "Montri Bileton"
@@ -107,8 +107,8 @@ msgstr "Aldoni translokiĝon antaŭ"
 msgid "Add transfer after"
 msgstr "Aldoni translokiĝon post"
 
-#: app/ActionsCard.qml:57 app/ProgramMembershipPage.qml:159
-#: app/TicketPage.qml:154
+#: app/ActionsCard.qml:57 app/ProgramMembershipPage.qml:169
+#: app/TicketPage.qml:164
 #, kde-format
 msgid "Edit"
 msgstr "Redakti"
@@ -118,7 +118,8 @@ msgstr "Redakti"
 msgid "Add to calendar…"
 msgstr "Aldoni al kalendaro…"
 
-#: app/ActionsCard.qml:74 app/TripGroupPage.qml:734
+#: app/ActionsCard.qml:74 app/ProgramMembershipPage.qml:182
+#: app/TicketPage.qml:179 app/TripGroupPage.qml:671
 #, kde-format
 msgid "Export…"
 msgstr "Elporti…"
@@ -126,8 +127,8 @@ msgstr "Elporti…"
 #: app/ActionsCard.qml:79 app/ActionsCard.qml:125 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:49 app/HealthCertificatePage.qml:63
-#: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:171
-#: app/TicketPage.qml:47 app/TicketPage.qml:171 app/TripGroupPage.qml:310
+#: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:188
+#: app/TicketPage.qml:47 app/TicketPage.qml:185 app/TripGroupPage.qml:247
 #, kde-format
 msgid "Delete"
 msgstr "Forigi"
@@ -142,70 +143,50 @@ msgstr "Forigi Eventon"
 msgid "Do you really want to delete this event?"
 msgstr "Ĉu vi vere volas forigi ĉi tiun eventon?"
 
-#: app/ActionsCard.qml:138 app/TripGroupPage.qml:229
-#, kde-format
-msgid "Export"
-msgstr "Elporto"
-
-#: app/ActionsCard.qml:141 app/TripGroupPage.qml:232
-#, kde-format
-msgid "As Itinerary file…"
-msgstr "Kiel Itinera dosiero…"
-
-#: app/ActionsCard.qml:152 app/TripGroupPage.qml:254
-#, kde-format
-msgid "Send to %1"
-msgstr "Sendi al %1"
-
-#: app/ActionsCard.qml:166
+#: app/ActionsCard.qml:138
 #, kde-format
 msgid "Export Reservation"
 msgstr "Elporti Rezervadon"
 
-#: app/ActionsCard.qml:168 app/TripGroupPage.qml:272
-#, kde-format
-msgid "Itinerary file (*.itinerary)"
-msgstr "Itinera dosiero (*.itinerary)"
-
-#: app/ActionsCard.qml:173 app/ProgramMembershipPage.qml:138
-#: app/TicketPage.qml:130 app/TripGroupPage.qml:684
+#: app/ActionsCard.qml:147 app/ProgramMembershipPage.qml:147
+#: app/TicketPage.qml:140 app/TripGroupPage.qml:621
 #, kde-format
 msgid "Actions"
 msgstr "Agoj"
 
-#: app/ActionsCard.qml:191
+#: app/ActionsCard.qml:165
 #, kde-format
 msgctxt "cancel as in revoking a booking"
 msgid "Cancel Reservation"
 msgstr "Nuligi Rezervon"
 
-#: app/ActionsCard.qml:192
+#: app/ActionsCard.qml:166
 #, kde-format
 msgid "Check-in"
 msgstr "Enregistriĝo"
 
-#: app/ActionsCard.qml:193
+#: app/ActionsCard.qml:167
 #, kde-format
 msgid "Download"
 msgstr "Elŝuti"
 
-#: app/ActionsCard.qml:194
+#: app/ActionsCard.qml:168
 #, kde-format
 msgctxt "participate in an event"
 msgid "Join"
 msgstr "Partopreni"
 
-#: app/ActionsCard.qml:195
+#: app/ActionsCard.qml:169
 #, kde-format
 msgid "Reserve"
 msgstr "Rezervi"
 
-#: app/ActionsCard.qml:196
+#: app/ActionsCard.qml:170
 #, kde-format
 msgid "Change Reservation"
 msgstr "Ŝanĝi Rezervon"
 
-#: app/ActionsCard.qml:197
+#: app/ActionsCard.qml:171
 #, kde-format
 msgid "View Reservation"
 msgstr "Vidi Rezervon"
@@ -313,12 +294,15 @@ msgstr[1] "Enportis %1 sanatestilojn."
 #: app/applicationcontroller.cpp:337 app/applicationcontroller.cpp:378
 #: app/applicationcontroller.cpp:396 app/applicationcontroller.cpp:443
 #: app/applicationcontroller.cpp:482 app/applicationcontroller.cpp:500
+#: app/applicationcontroller.cpp:541 app/applicationcontroller.cpp:577
+#: app/applicationcontroller.cpp:595
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Elporto malsukcesis: %1"
 
 #: app/applicationcontroller.cpp:352 app/applicationcontroller.cpp:361
 #: app/applicationcontroller.cpp:456 app/applicationcontroller.cpp:465
+#: app/applicationcontroller.cpp:551 app/applicationcontroller.cpp:560
 #, kde-format
 msgid "Export completed."
 msgstr "Elporto finiĝis."
@@ -333,14 +317,20 @@ msgstr "Vojaĝo sendiĝis."
 msgid "Reservation sent."
 msgstr "Rezervado sendiĝis."
 
-#: app/applicationcontroller.cpp:536
+#: app/applicationcontroller.cpp:587
+#, fuzzy, kde-format
+#| msgid "Trip sent."
+msgid "Pass sent."
+msgstr "Vojaĝo sendiĝis."
+
+#: app/applicationcontroller.cpp:622
 #, kde-format
 msgid ""
 "File was imported with a newer version of Itinerary. Some information might "
 "not be imported correctly."
 msgstr ""
 
-#: app/applicationcontroller.cpp:562
+#: app/applicationcontroller.cpp:648
 #, kde-format
 msgid "Import completed."
 msgstr "Enporto finiĝis."
@@ -487,7 +477,7 @@ msgid "Reference"
 msgstr "Referenco"
 
 #: app/BookingCard.qml:36 app/BookingCard.qml:68
-#: app/ProgramMembershipCard.qml:46 app/ProgramMembershipPage.qml:101
+#: app/ProgramMembershipCard.qml:46 app/ProgramMembershipPage.qml:110
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy to Clipboard"
@@ -966,6 +956,32 @@ msgctxt "event venue seat type"
 msgid "Type: <b>%1</b>"
 msgstr "Tipo: <b>%1</b>"
 
+#: app/ExportMenuDialog.qml:32
+#, kde-format
+msgid "As Itinerary file…"
+msgstr "Kiel Itinera dosiero…"
+
+#: app/ExportMenuDialog.qml:42
+#, kde-format
+msgid "As GPX file…"
+msgstr "Kiel GPX-dosiero…"
+
+#: app/ExportMenuDialog.qml:57
+#, kde-format
+msgid "Send to %1"
+msgstr "Sendi al %1"
+
+#: app/ExportMenuDialog.qml:75
+#, kde-format
+msgid "Itinerary file (*.itinerary)"
+msgstr "Itinera dosiero (*.itinerary)"
+
+#: app/ExportMenuDialog.qml:92 app/FavoriteLocationPage.qml:38
+#: app/FavoriteLocationPage.qml:46
+#, kde-format
+msgid "GPX Files (*.gpx)"
+msgstr "GPX-dosieroj (*.gpx)"
+
 #: app/favoritelocationmodel.cpp:135 app/favoritelocationmodel.cpp:155
 #, kde-format
 msgid "Home"
@@ -990,12 +1006,6 @@ msgstr "Ŝatataj Lokoj"
 #, kde-format
 msgid "Export Favorite Locations"
 msgstr "Elporti Ŝatatajn Lokojn"
-
-#: app/FavoriteLocationPage.qml:38 app/FavoriteLocationPage.qml:46
-#: app/TripGroupPage.qml:288
-#, kde-format
-msgid "GPX Files (*.gpx)"
-msgstr "GPX-dosieroj (*.gpx)"
 
 #: app/FavoriteLocationPage.qml:44
 #, kde-format
@@ -1560,7 +1570,7 @@ msgstr "Persono"
 #: app/HealthCertificateRecovery.qml:34 app/HealthCertificateTest.qml:35
 #: app/HealthCertificateVaccination.qml:38 app/ProgramMembershipCard.qml:31
 #: app/ProgramMembershipEditor.qml:70 app/ProgramMembershipEditorCard.qml:54
-#: app/TicketPage.qml:86
+#: app/TicketPage.qml:96
 #, kde-format
 msgid "Name"
 msgstr "Nomo"
@@ -1585,13 +1595,13 @@ msgid "Disease"
 msgstr "Malsano:"
 
 #: app/HealthCertificateRecovery.qml:69 app/ProgramMembershipEditor.qml:97
-#: app/ProgramMembershipPage.qml:117 app/TicketPage.qml:92
+#: app/ProgramMembershipPage.qml:126 app/TicketPage.qml:102
 #, kde-format
 msgid "Valid from"
 msgstr "Valida de"
 
 #: app/HealthCertificateRecovery.qml:76 app/ProgramMembershipEditor.qml:111
-#: app/ProgramMembershipPage.qml:122 app/TicketPage.qml:98
+#: app/ProgramMembershipPage.qml:131 app/TicketPage.qml:108
 #, kde-format
 msgid "Valid until"
 msgstr "Valida ĝis"
@@ -2852,7 +2862,7 @@ msgstr "Konservitaj Lokoj"
 msgid "Home Country"
 msgstr "Hejmlando"
 
-#: app/MyDataPage.qml:131 app/StatisticsPage.qml:16 app/TripGroupPage.qml:652
+#: app/MyDataPage.qml:131 app/StatisticsPage.qml:16 app/TripGroupPage.qml:589
 #, kde-format
 msgid "Statistics"
 msgstr "Statistiko"
@@ -3034,7 +3044,7 @@ msgctxt "name - valid time range"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/passmanager.cpp:276 app/TripGroupPage.qml:437
+#: app/passmanager.cpp:284 app/TripGroupPage.qml:374
 #, kde-format
 msgid "%1 - %2"
 msgstr "%1 - %2"
@@ -3102,13 +3112,13 @@ msgid "Program"
 msgstr "Programo"
 
 #: app/ProgramMembershipCard.qml:40 app/ProgramMembershipEditor.qml:90
-#: app/ProgramMembershipEditorCard.qml:61 app/ProgramMembershipPage.qml:95
-#: app/TicketPage.qml:104
+#: app/ProgramMembershipEditorCard.qml:61 app/ProgramMembershipPage.qml:104
+#: app/TicketPage.qml:114
 #, kde-format
 msgid "Number"
 msgstr "Numero"
 
-#: app/ProgramMembershipCard.qml:50 app/ProgramMembershipPage.qml:105
+#: app/ProgramMembershipCard.qml:50 app/ProgramMembershipPage.qml:114
 #, kde-format
 msgid "Program membership number copied to clipboard"
 msgstr "Programa membrecnumero kopiiĝis al tondujo"
@@ -3138,12 +3148,12 @@ msgstr "Programo"
 msgid "Program name must not be empty."
 msgstr "Programnomo ne devas esti malplena."
 
-#: app/ProgramMembershipEditor.qml:78 app/ProgramMembershipPage.qml:81
+#: app/ProgramMembershipEditor.qml:78 app/ProgramMembershipPage.qml:90
 #, kde-format
 msgid "Membership"
 msgstr "Membreco"
 
-#: app/ProgramMembershipEditor.qml:84 app/ProgramMembershipPage.qml:86
+#: app/ProgramMembershipEditor.qml:84 app/ProgramMembershipPage.qml:95
 #, kde-format
 msgid "Member"
 msgstr "Membro"
@@ -3163,7 +3173,13 @@ msgstr "Strekkodo"
 msgid "Program Membership"
 msgstr "Programo-Membreco"
 
-#: app/ProgramMembershipPage.qml:146
+#: app/ProgramMembershipPage.qml:56
+#, fuzzy, kde-format
+#| msgid "Edit Program Membership"
+msgid "Export Program Membership"
+msgstr "Redakti Programan Membrecon"
+
+#: app/ProgramMembershipPage.qml:155
 #, kde-format
 msgid "Show Pass"
 msgstr "Montri Legitimilon"
@@ -3580,7 +3596,7 @@ msgstr "Vojaĝoj"
 #: app/statisticsmodel.cpp:107 app/statisticsmodel.cpp:140
 #: app/statisticsmodel.cpp:155 app/statisticsmodel.cpp:170
 #: app/statisticsmodel.cpp:185 app/statisticsmodel.cpp:200
-#: app/TripGroupPage.qml:659
+#: app/TripGroupPage.qml:596
 #, kde-format
 msgid "Distance"
 msgstr "Distanco"
@@ -3593,7 +3609,7 @@ msgstr "Hotelnoktoj"
 #: app/statisticsmodel.cpp:117 app/statisticsmodel.cpp:145
 #: app/statisticsmodel.cpp:160 app/statisticsmodel.cpp:175
 #: app/statisticsmodel.cpp:190 app/statisticsmodel.cpp:205
-#: app/TripGroupPage.qml:668
+#: app/TripGroupPage.qml:605
 #, kde-format
 msgid "CO₂"
 msgstr "CO₂"
@@ -3705,7 +3721,7 @@ msgstr "Montri Mapon"
 msgid "Edit Ticket"
 msgstr "Redakti Bileton"
 
-#: app/TicketEditor.qml:58 app/TicketPage.qml:17 app/TicketPage.qml:81
+#: app/TicketEditor.qml:58 app/TicketPage.qml:17 app/TicketPage.qml:91
 #, kde-format
 msgid "Ticket"
 msgstr "Bileto"
@@ -3730,7 +3746,13 @@ msgstr "Forigi Bileton"
 msgid "Do you really want to delete this ticket?"
 msgstr "Ĉu vi vere volas forigi ĉi tiun bileton?"
 
-#: app/TicketPage.qml:110
+#: app/TicketPage.qml:59
+#, fuzzy, kde-format
+#| msgid "Boat Ticket"
+msgid "Export Ticket"
+msgstr "Ŝipa Bileto"
+
+#: app/TicketPage.qml:120
 #, kde-format
 msgid "Class"
 msgstr "Klaso"
@@ -4133,117 +4155,112 @@ msgctxt "@title:group"
 msgid "Add to Trip"
 msgstr "Aldoni al Vojaĝo"
 
-#: app/TripGroupPage.qml:240
-#, kde-format
-msgid "As GPX file…"
-msgstr "Kiel GPX-dosiero…"
-
-#: app/TripGroupPage.qml:271 app/TripGroupPage.qml:286
+#: app/TripGroupPage.qml:229
 #, kde-format
 msgid "Export Trip"
 msgstr "Elporta Vojaĝo"
 
-#: app/TripGroupPage.qml:303
+#: app/TripGroupPage.qml:240
 #, kde-format
 msgid "Delete Trip"
 msgstr "Forigi Vojaĝon"
 
-#: app/TripGroupPage.qml:304
+#: app/TripGroupPage.qml:241
 #, kde-format
 msgid "Do you really want to delete the trip '%1'?"
 msgstr "Ĉu vi vere volas forigi la vojaĝon '%1'?"
 
-#: app/TripGroupPage.qml:438
+#: app/TripGroupPage.qml:375
 #, kde-format
 msgid "One day"
 msgid_plural "%1 days"
 msgstr[0] "Unu tago"
 msgstr[1] "%1 tagoj"
 
-#: app/TripGroupPage.qml:470
+#: app/TripGroupPage.qml:407
 #, kde-format
 msgid "Some incompatible power sockets (%1)"
 msgstr "Kelkaj nekongruaj elektraj ingoj (%1)"
 
-#: app/TripGroupPage.qml:472
+#: app/TripGroupPage.qml:409
 #, kde-format
 msgid "Some incompatible power plugs (%1)"
 msgstr "Kelkaj nekongruaj elektraj ŝtopiloj (%1)"
 
-#: app/TripGroupPage.qml:475
+#: app/TripGroupPage.qml:412
 #, kde-format
 msgid "No compatible power plugs (%1)"
 msgstr "Neniuj kongruaj elektraj ŝtopiloj (%1)"
 
-#: app/TripGroupPage.qml:487
+#: app/TripGroupPage.qml:424
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
 msgstr[0] "Valuto: %2"
 msgstr[1] "Valutoj: %2"
 
-#: app/TripGroupPage.qml:497
+#: app/TripGroupPage.qml:434
 #, kde-format
 msgid "Show map…"
 msgstr "Montri mapon…"
 
-#: app/TripGroupPage.qml:504
+#: app/TripGroupPage.qml:441
 #, kde-format
 msgid "Import"
 msgstr "Enporti"
 
-#: app/TripGroupPage.qml:518
+#: app/TripGroupPage.qml:455
 #, kde-format
 msgid "Add"
 msgstr "Aldoni"
 
-#: app/TripGroupPage.qml:624
+#: app/TripGroupPage.qml:561
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Nenio en la itinero por hodiaŭ."
 
-#: app/TripGroupPage.qml:677
+#: app/TripGroupPage.qml:614
 #, kde-format
 msgid "Cost"
 msgstr ""
 
-#: app/TripGroupPage.qml:690
+#: app/TripGroupPage.qml:627
 #, kde-format
 msgid "Check for Updates"
 msgstr "Kontroli pri Ĝisdatigoj"
 
-#: app/TripGroupPage.qml:699
+#: app/TripGroupPage.qml:636
 #, kde-format
 msgid "Rename…"
 msgstr "Alinomi…"
 
-#: app/TripGroupPage.qml:708
+#: app/TripGroupPage.qml:645
 #, kde-format
 msgid "Merge trips…"
 msgstr "Kunfandi vojaĝojn…"
 
-#: app/TripGroupPage.qml:719
+#: app/TripGroupPage.qml:656
 #, kde-format
 msgid "Split trip…"
 msgstr "Disigi vojaĝon…"
 
-#: app/TripGroupPage.qml:726
+#: app/TripGroupPage.qml:663
 #, kde-format
 msgid "Download Maps"
 msgstr "Elŝuti Mapojn"
 
-#: app/TripGroupPage.qml:741
+#: app/TripGroupPage.qml:678
 #, kde-format
 msgid "Delete trip"
 msgstr "Forigi vojaĝon"
 
-#: app/TripGroupPage.qml:766
+#: app/TripGroupPage.qml:703
 #, kde-format
 msgctxt "@action:button"
 msgid "Go To Now"
 msgstr "Iri Al Nun"
 
-#: app/TripGroupPage.qml:774 app/TripGroupsPage.qml:118
+#: app/TripGroupPage.qml:711 app/TripGroupsPage.qml:118
 #: app/TripGroupsPage.qml:137
 #, kde-format
 msgctxt "@action:button"
@@ -4478,6 +4495,9 @@ msgstr "Elsalutita"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 de %3 al %4 je %5"
+
+#~ msgid "Export"
+#~ msgstr "Elporto"
 
 #~ msgctxt "to travel destination"
 #~ msgid "To %1"
