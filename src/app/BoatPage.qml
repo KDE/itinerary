@@ -25,7 +25,7 @@ DetailsPage {
 
         CardPageTitle {
             emojiIcon: "🛳️"
-            text: i18n("Boat")
+            text: root.reservationFor.name.length > 0 ? root.reservationFor.name : i18nc("default transport name for a boat trip", "Ferry")
 
             // TODO vessel name not yet available in the data model
             // text: reservationFor.boatName
