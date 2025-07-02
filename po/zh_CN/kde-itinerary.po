@@ -274,10 +274,9 @@ msgid "Replace"
 msgstr "替换"
 
 #: app/AlternativeJourneyPage.qml:139
-#, fuzzy, kde-format
-#| msgid "Vaccination"
+#, kde-format
 msgid "Destination:"
-msgstr "接种情况"
+msgstr ""
 
 #: app/applicationcontroller.cpp:188
 #, kde-format
