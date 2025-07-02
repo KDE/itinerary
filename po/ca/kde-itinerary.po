@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-02 07:06+0000\n"
-"PO-Revision-Date: 2025-06-30 09:15+0200\n"
+"PO-Revision-Date: 2025-07-02 11:39+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -317,10 +317,9 @@ msgid "Reservation sent."
 msgstr "La reserva s'ha enviat."
 
 #: app/applicationcontroller.cpp:587
-#, fuzzy, kde-format
-#| msgid "Trip sent."
+#, kde-format
 msgid "Pass sent."
-msgstr "S'ha enviat el viatge."
+msgstr "S'ha enviat el passi."
 
 #: app/applicationcontroller.cpp:622
 #, kde-format
@@ -3191,10 +3190,9 @@ msgid "Program Membership"
 msgstr "Programa d'afiliació"
 
 #: app/ProgramMembershipPage.qml:56
-#, fuzzy, kde-format
-#| msgid "Edit Program Membership"
+#, kde-format
 msgid "Export Program Membership"
-msgstr "Edita un programa d'afiliació"
+msgstr "Exporta un programa d'afiliació"
 
 #: app/ProgramMembershipPage.qml:155
 #, kde-format
@@ -3762,10 +3760,9 @@ msgid "Do you really want to delete this ticket?"
 msgstr "Segur que voleu suprimir aquest bitllet?"
 
 #: app/TicketPage.qml:59
-#, fuzzy, kde-format
-#| msgid "Boat Ticket"
+#, kde-format
 msgid "Export Ticket"
-msgstr "Bitllet de vaixell"
+msgstr "Exporta un bitllet"
 
 #: app/TicketPage.qml:120
 #, kde-format
