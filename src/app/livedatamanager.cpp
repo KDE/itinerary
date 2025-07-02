@@ -43,6 +43,7 @@
 
 #include <cassert>
 
+using namespace Qt::Literals;
 using namespace KItinerary;
 
 static constexpr const int POLL_COOLDOWN_ON_ERROR = 30; // seconds
@@ -778,15 +779,8 @@ void LiveDataManager::pkPassUpdated(const QString &passId, const QStringList &ch
     }
 
     QString text = changes.join(QLatin1Char('\n'));
-
-    if (JsonLd::isA<FlightReservation>(passRes)) {
-        const auto flight = passRes.value<FlightReservation>().reservationFor().value<Flight>();
-
-        text.prepend(QLatin1Char('\n'));
-        text.prepend(i18n("Flight %1 to %2:",
-                          // TODO add formatter util for this.
-                          flight.airline().iataCode() + QLatin1Char(' ') + flight.flightNumber(),
-                          LocationUtil::name(LocationUtil::arrivalLocation(passRes))));
+    if (const auto title = ReservationHelper::label(passRes); !title.isEmpty()) {
+        text.prepend(title + '\n'_L1);
     }
 
     KNotification::event(KNotification::Notification, i18n("Itinerary change"), text, QLatin1StringView("clock"));
