@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-02 07:06+0000\n"
+"POT-Creation-Date: 2025-07-03 06:56+0000\n"
 "PO-Revision-Date: 2025-06-30 06:45+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -125,7 +125,7 @@ msgid "Export…"
 msgstr "Izvozi…"
 
 #: app/ActionsCard.qml:79 app/ActionsCard.qml:125 app/DocumentsCard.qml:87
-#: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
+#: app/GenericPkPassPage.qml:42 app/GenericPkPassPage.qml:63
 #: app/HealthCertificatePage.qml:49 app/HealthCertificatePage.qml:63
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:188
 #: app/TicketPage.qml:47 app/TicketPage.qml:185 app/TripGroupPage.qml:247
@@ -326,7 +326,18 @@ msgstr "Rezervacija poslana."
 msgid "Pass sent."
 msgstr "Izlet poslan."
 
-#: app/applicationcontroller.cpp:622
+#: app/applicationcontroller.cpp:625
+#, fuzzy, kde-format
+#| msgid "Download failed: %1"
+msgid "Saving failed: %1"
+msgstr "Prenos ni uspel: %1"
+
+#: app/applicationcontroller.cpp:630
+#, kde-format
+msgid "File saved successfully."
+msgstr ""
+
+#: app/applicationcontroller.cpp:637
 #, kde-format
 msgid ""
 "File was imported with a newer version of Itinerary. Some information might "
@@ -335,7 +346,7 @@ msgstr ""
 "Datoteka je bila uvožena z novejšo različico programa Itinerary. Nekatere "
 "informacije morda ne bodo pravilno uvožene."
 
-#: app/applicationcontroller.cpp:648
+#: app/applicationcontroller.cpp:663
 #, kde-format
 msgid "Import completed."
 msgstr "Uvoz dokončan."
@@ -366,7 +377,7 @@ msgstr "Kamere ni na voljo."
 msgid "Light"
 msgstr "Luč"
 
-#: app/BoatDelegate.qml:29
+#: app/BoatDelegate.qml:29 app/BoatPage.qml:28
 #, kde-format
 msgctxt "default transport name for a boat trip"
 msgid "Ferry"
@@ -382,7 +393,7 @@ msgstr "Novo ladijsko potovanje"
 msgid "Edit Boat Trip"
 msgstr "Uredi ladijsko potovanje"
 
-#: app/BoatEditor.qml:55 app/BoatPage.qml:28 app/StatisticsPage.qml:149
+#: app/BoatEditor.qml:55 app/StatisticsPage.qml:149
 #, kde-format
 msgid "Boat"
 msgstr "Ladja"
@@ -1397,15 +1408,31 @@ msgstr "Cena"
 msgid "Not a valid number."
 msgstr "Ni veljavna številka."
 
-#: app/GenericPkPassPage.qml:19 app/ProgramMembershipPage.qml:38
+#: app/GenericPkPassPage.qml:20
+#, fuzzy, kde-format
+#| msgid "Show Pass"
+msgid "Save Pass"
+msgstr "Prikaži prepustnico"
+
+#: app/GenericPkPassPage.qml:21
+#, kde-format
+msgid "Apple Wallet pass (*.pkpass)"
+msgstr ""
+
+#: app/GenericPkPassPage.qml:36 app/ProgramMembershipPage.qml:38
 #, kde-format
 msgid "Delete Pass"
 msgstr "Zbriši vozovnico"
 
-#: app/GenericPkPassPage.qml:20 app/ProgramMembershipPage.qml:39
+#: app/GenericPkPassPage.qml:37 app/ProgramMembershipPage.qml:39
 #, kde-format
 msgid "Do you really want to delete this pass?"
 msgstr "Ali res želite izbrisati to vozovnico?"
+
+#: app/GenericPkPassPage.qml:55
+#, kde-format
+msgid "Save As…"
+msgstr ""
 
 #: app/gpxexport.cpp:33 app/main.cpp:321 app/Main.qml:21 app/Main.qml:153
 #, kde-format
@@ -2163,11 +2190,6 @@ msgid "Click to extend"
 msgstr "Klikni za razširitev"
 
 #: app/livedatamanager.cpp:786
-#, kde-format
-msgid "Flight %1 to %2:"
-msgstr "Let iz %1 v %2:"
-
-#: app/livedatamanager.cpp:792
 #, kde-format
 msgid "Itinerary change"
 msgstr "Sprememba itinerarja"
@@ -4501,6 +4523,9 @@ msgstr "Odjavljen"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 od %3 do %4 na %5"
+
+#~ msgid "Flight %1 to %2:"
+#~ msgstr "Let iz %1 v %2:"
 
 #~ msgid "Export"
 #~ msgstr "Izvozi"
