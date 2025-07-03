@@ -373,7 +373,7 @@ DetailsPage {
                         showProgress: root.controller.isCurrent
                     });
                     Component.onCompleted: {
-                        visible = Qt.binding(function() { return root.controller.journey && root.controller.journey.intermediateStops.length > 0});
+                        visible = Qt.binding(function() { return root.controller.journey && (root.controller.journey.intermediateStops.length > 0 || !root.controller.journey.path.isEmpty); });
                     }
                 },
                 Kirigami.Action {
