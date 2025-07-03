@@ -3,6 +3,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+import QtNetwork as QtNetwork
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
@@ -158,6 +159,17 @@ FormCard.FormCardPage {
             }
             FormCard.FormDelegateSeparator {
                 visible: passButton.visible
+            }
+            FormCard.FormButtonDelegate {
+                id: passUpdateButton
+                text: i18n("Check for Updates")
+                icon.name: "view-refresh"
+                enabled: QtNetwork.NetworkInformation.reachability === QtNetwork.NetworkInformation.Reachability.Online || QtNetwork.NetworkInformation.reachability === QtNetwork.NetworkInformation.Reachability.Unknown
+                visible: PkPassManager.canUpdate(PkPassManager.pass(passButton.passId))
+                onClicked: PkPassManager.updatePass(passButton.passId)
+            }
+            FormCard.FormDelegateSeparator {
+                visible: passUpdateButton.visible
             }
             FormCard.FormButtonDelegate {
                 icon.name: "document-edit"

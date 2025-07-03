@@ -39,13 +39,13 @@ public:
     QString importPassFromData(const QByteArray &data);
     Q_INVOKABLE void removePass(const QString &passId);
 
-    void updatePass(const QString &passId);
+    Q_INVOKABLE void updatePass(const QString &passId);
     /** Time the pass was last updated (ie. file system mtime). */
     [[nodiscard]] static QDateTime updateTime(const QString &passId);
 
     [[nodiscard]] static QDateTime relevantDate(KPkPass::Pass *pass);
     /** Check whether @p pass can be online updated. */
-    [[nodiscard]] static bool canUpdate(KPkPass::Pass *pass);
+    Q_INVOKABLE [[nodiscard]] static bool canUpdate(KPkPass::Pass *pass);
 
     /** Raw pass file data, used for exporting. */
     [[nodiscard]] static QByteArray rawData(const QString &passId);

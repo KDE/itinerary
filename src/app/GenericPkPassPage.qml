@@ -4,6 +4,7 @@
 */
 
 import QtCore as QtCore
+import QtNetwork as QtNetwork
 import QtQuick
 import QtQuick.Dialogs
 import QtQuick.Controls as QQC2
@@ -50,6 +51,13 @@ PkPassPage {
     }
 
     actions: [
+        Kirigami.Action {
+            text: i18n("Check for Updates")
+            icon.name: "view-refresh"
+            enabled: QtNetwork.NetworkInformation.reachability === QtNetwork.NetworkInformation.Reachability.Online || QtNetwork.NetworkInformation.reachability === QtNetwork.NetworkInformation.Reachability.Unknown
+            visible: PkPassManager.canUpdate(root.pass)
+            onTriggered: PkPassManager.updatePass(root.passId)
+        },
         Kirigami.Action {
             icon.name: "document-save-as-symbolic"
             text: i18n("Save As…")
