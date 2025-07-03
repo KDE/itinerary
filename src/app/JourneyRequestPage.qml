@@ -137,7 +137,7 @@ FormCard.FormCardPage {
                     arrivalStop = oldDepartureStop
                 }
 
-                Accessible.name: i18n("Swap departure and arrival")
+                Accessible.name: i18nc("departure and arrival stops", "Swap departure and arrival")
             }
         }
         FormCard.FormDelegateSeparator {
