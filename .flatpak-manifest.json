@@ -46,38 +46,6 @@
                     "branch": "master"
                 }
             ],
-            "modules": [
-                {
-                    "name": "openjpeg",
-                    "buildsystem": "cmake-ninja",
-                    "builddir": true,
-                    "config-opts": [
-                        "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
-                        "-DBUILD_STATIC_LIBS=OFF",
-                        "-DBUILD_CODEC=OFF"
-                    ],
-                    "cleanup": [
-                        "/bin",
-                        "/include",
-                        "/lib/*.a",
-                        "/lib/openjpeg-*",
-                        "/lib/pkgconfig"
-                    ],
-                    "sources": [
-                        {
-                            "type": "archive",
-                            "url": "https://github.com/uclouvain/openjpeg/archive/v2.5.3.tar.gz",
-                            "sha256": "368fe0468228e767433c9ebdea82ad9d801a3ad1e4234421f352c8b06e7aa707",
-                            "x-checker-data": {
-                                "type": "anitya",
-                                "project-id": 2550,
-                                "stable-only": true,
-                                "url-template": "https://github.com/uclouvain/openjpeg/archive/v$version.tar.gz"
-                            }
-                        }
-                    ]
-                }
-            ],
             "cleanup": [
                 "/include",
                 "/lib/pkgconfig"
@@ -454,10 +422,14 @@
                     ],
                     "sources": [
                         {
-                            "type": "git",
-                            "url": "https://gitlab.matrix.org/matrix-org/olm.git",
-                            "commit": "92769cec711c604a1f682b95d6944578d2a1bb3d",
-                            "tag": "3.2.12"
+                            "type": "archive",
+                            "url": "https://gitlab.matrix.org/matrix-org/olm/-/archive/3.2.16/olm-3.2.16.tar.gz",
+                            "sha256": "1e90f9891009965fd064be747616da46b232086fe270b77605ec9bda34272a68",
+                            "x-checker-data": {
+                                "type": "anitya",
+                                "project-id": 29706,
+                                "url-template": "https://gitlab.matrix.org/matrix-org/olm/-/archive/$version/olm-$version.tar.gz"
+                            }
                         }
                     ],
                     "cleanup": [
