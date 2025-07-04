@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-03 06:56+0000\n"
-"PO-Revision-Date: 2025-06-30 19:17+0200\n"
+"PO-Revision-Date: 2025-07-03 15:57+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -315,21 +315,19 @@ msgid "Reservation sent."
 msgstr "Bokning skickad."
 
 #: app/applicationcontroller.cpp:587
-#, fuzzy, kde-format
-#| msgid "Trip sent."
+#, kde-format
 msgid "Pass sent."
-msgstr "Resa skickad."
+msgstr "Pass skickat."
 
 #: app/applicationcontroller.cpp:625
-#, fuzzy, kde-format
-#| msgid "Download failed: %1"
+#, kde-format
 msgid "Saving failed: %1"
-msgstr "Nerladdning misslyckades: %1"
+msgstr "Misslyckades spara: %1"
 
 #: app/applicationcontroller.cpp:630
 #, kde-format
 msgid "File saved successfully."
-msgstr ""
+msgstr "Filen sparades med lyckat resultat."
 
 #: app/applicationcontroller.cpp:637
 #, kde-format
@@ -1401,15 +1399,14 @@ msgid "Not a valid number."
 msgstr "Inte ett giltigt tal."
 
 #: app/GenericPkPassPage.qml:20
-#, fuzzy, kde-format
-#| msgid "Show Pass"
+#, kde-format
 msgid "Save Pass"
-msgstr "Visa pass"
+msgstr "Spara pass"
 
 #: app/GenericPkPassPage.qml:21
 #, kde-format
 msgid "Apple Wallet pass (*.pkpass)"
-msgstr ""
+msgstr "Apple Wallet pass (*.pkpass)"
 
 #: app/GenericPkPassPage.qml:36 app/ProgramMembershipPage.qml:38
 #, kde-format
@@ -1424,7 +1421,7 @@ msgstr "Vill du verkligen ta bort passet?"
 #: app/GenericPkPassPage.qml:55
 #, kde-format
 msgid "Save As…"
-msgstr ""
+msgstr "Spara som…"
 
 #: app/gpxexport.cpp:33 app/main.cpp:321 app/Main.qml:21 app/Main.qml:153
 #, kde-format
@@ -3193,10 +3190,9 @@ msgid "Program Membership"
 msgstr "Programmedlemskap"
 
 #: app/ProgramMembershipPage.qml:56
-#, fuzzy, kde-format
-#| msgid "Edit Program Membership"
+#, kde-format
 msgid "Export Program Membership"
-msgstr "Redigera programmedlemskap"
+msgstr "Exportera programmedlemskap"
 
 #: app/ProgramMembershipPage.qml:155
 #, kde-format
@@ -3756,10 +3752,9 @@ msgid "Do you really want to delete this ticket?"
 msgstr "Vill du verkligen ta bort biljetten?"
 
 #: app/TicketPage.qml:59
-#, fuzzy, kde-format
-#| msgid "Boat Ticket"
+#, kde-format
 msgid "Export Ticket"
-msgstr "Båtbiljett"
+msgstr "Exportera biljett"
 
 #: app/TicketPage.qml:120
 #, kde-format

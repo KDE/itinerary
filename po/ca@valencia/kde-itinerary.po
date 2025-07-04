@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-03 06:56+0000\n"
-"PO-Revision-Date: 2025-06-22 16:00+0200\n"
+"PO-Revision-Date: 2025-07-03 18:13+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.04.2\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -239,7 +239,7 @@ msgstr "Transbordador"
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Aircraft"
-msgstr ""
+msgstr "Aeronau"
 
 #: app/AlternativeJourneyPage.qml:116
 #, kde-format
@@ -259,11 +259,9 @@ msgid "Replace"
 msgstr "Substituïx"
 
 #: app/AlternativeJourneyPage.qml:139
-#, fuzzy, kde-format
-#| msgctxt "bus station"
-#| msgid "Station"
+#, kde-format
 msgid "Destination:"
-msgstr "Estació"
+msgstr "Destinació:"
 
 #: app/applicationcontroller.cpp:188
 #, kde-format
@@ -319,21 +317,19 @@ msgid "Reservation sent."
 msgstr "La reserva s'ha enviat."
 
 #: app/applicationcontroller.cpp:587
-#, fuzzy, kde-format
-#| msgid "Trip sent."
+#, kde-format
 msgid "Pass sent."
-msgstr "S'ha enviat el viatge."
+msgstr "S'ha enviat el passe."
 
 #: app/applicationcontroller.cpp:625
-#, fuzzy, kde-format
-#| msgid "Download failed: %1"
+#, kde-format
 msgid "Saving failed: %1"
-msgstr "Ha fallat la baixada: %1"
+msgstr "La guardada ha fallat: %1"
 
 #: app/applicationcontroller.cpp:630
 #, kde-format
 msgid "File saved successfully."
-msgstr ""
+msgstr "El fitxer s'ha guardat correctament."
 
 #: app/applicationcontroller.cpp:637
 #, kde-format
@@ -1405,15 +1401,14 @@ msgid "Not a valid number."
 msgstr "No és un nombre vàlid."
 
 #: app/GenericPkPassPage.qml:20
-#, fuzzy, kde-format
-#| msgid "Show Pass"
+#, kde-format
 msgid "Save Pass"
-msgstr "Mostra el passe"
+msgstr "Guarda el passe"
 
 #: app/GenericPkPassPage.qml:21
 #, kde-format
 msgid "Apple Wallet pass (*.pkpass)"
-msgstr ""
+msgstr "Passe d'Apple Wallet (*.pkpass)"
 
 #: app/GenericPkPassPage.qml:36 app/ProgramMembershipPage.qml:38
 #, kde-format
@@ -1428,7 +1423,7 @@ msgstr "Segur que voleu suprimir este passe?"
 #: app/GenericPkPassPage.qml:55
 #, kde-format
 msgid "Save As…"
-msgstr ""
+msgstr "Anomena i guarda…"
 
 #: app/gpxexport.cpp:33 app/main.cpp:321 app/Main.qml:21 app/Main.qml:153
 #, kde-format
@@ -3215,10 +3210,9 @@ msgid "Program Membership"
 msgstr "Programa d'afiliació"
 
 #: app/ProgramMembershipPage.qml:56
-#, fuzzy, kde-format
-#| msgid "Edit Program Membership"
+#, kde-format
 msgid "Export Program Membership"
-msgstr "Edita un programa d'afiliació"
+msgstr "Exporta un programa d'afiliació"
 
 #: app/ProgramMembershipPage.qml:155
 #, kde-format
@@ -3787,10 +3781,9 @@ msgid "Do you really want to delete this ticket?"
 msgstr "Segur que voleu suprimir este bitllet?"
 
 #: app/TicketPage.qml:59
-#, fuzzy, kde-format
-#| msgid "Boat Ticket"
+#, kde-format
 msgid "Export Ticket"
-msgstr "Bitllet de vaixell"
+msgstr "Exporta un bitllet"
 
 #: app/TicketPage.qml:120
 #, kde-format
@@ -4533,13 +4526,3 @@ msgstr "Ha finalitzat la sessió"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 des de %3 a %4 el %5"
-
-#~ msgid "Flight %1 to %2:"
-#~ msgstr "Vol %1 a %2:"
-
-#~ msgid "Export"
-#~ msgstr "Exporta"
-
-#~ msgctxt "to travel destination"
-#~ msgid "To %1"
-#~ msgstr "A %1"

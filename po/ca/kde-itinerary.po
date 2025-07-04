@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-03 06:56+0000\n"
-"PO-Revision-Date: 2025-07-02 11:39+0200\n"
+"PO-Revision-Date: 2025-07-03 18:13+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -322,15 +322,14 @@ msgid "Pass sent."
 msgstr "S'ha enviat el passi."
 
 #: app/applicationcontroller.cpp:625
-#, fuzzy, kde-format
-#| msgid "Download failed: %1"
+#, kde-format
 msgid "Saving failed: %1"
-msgstr "Ha fallat la baixada: %1"
+msgstr "El desament ha fallat: %1"
 
 #: app/applicationcontroller.cpp:630
 #, kde-format
 msgid "File saved successfully."
-msgstr ""
+msgstr "El fitxer s'ha desat correctament."
 
 #: app/applicationcontroller.cpp:637
 #, kde-format
@@ -1402,15 +1401,14 @@ msgid "Not a valid number."
 msgstr "No és un nombre vàlid."
 
 #: app/GenericPkPassPage.qml:20
-#, fuzzy, kde-format
-#| msgid "Show Pass"
+#, kde-format
 msgid "Save Pass"
-msgstr "Mostra el passi"
+msgstr "Desa el passi"
 
 #: app/GenericPkPassPage.qml:21
 #, kde-format
 msgid "Apple Wallet pass (*.pkpass)"
-msgstr ""
+msgstr "Passi d'Apple Wallet (*.pkpass)"
 
 #: app/GenericPkPassPage.qml:36 app/ProgramMembershipPage.qml:38
 #, kde-format
@@ -1425,7 +1423,7 @@ msgstr "Segur que voleu suprimir aquest passi?"
 #: app/GenericPkPassPage.qml:55
 #, kde-format
 msgid "Save As…"
-msgstr ""
+msgstr "Desa com a…"
 
 #: app/gpxexport.cpp:33 app/main.cpp:321 app/Main.qml:21 app/Main.qml:153
 #, kde-format

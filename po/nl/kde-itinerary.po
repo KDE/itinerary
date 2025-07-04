@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-03 06:56+0000\n"
-"PO-Revision-Date: 2025-06-30 18:08+0200\n"
+"PO-Revision-Date: 2025-07-03 14:14+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -317,21 +317,19 @@ msgid "Reservation sent."
 msgstr "Reservering verzenden."
 
 #: app/applicationcontroller.cpp:587
-#, fuzzy, kde-format
-#| msgid "Trip sent."
+#, kde-format
 msgid "Pass sent."
-msgstr "Reis verzonden."
+msgstr "Pas verzonden."
 
 #: app/applicationcontroller.cpp:625
-#, fuzzy, kde-format
-#| msgid "Download failed: %1"
+#, kde-format
 msgid "Saving failed: %1"
-msgstr "Downloaden is mislukt: %1"
+msgstr "Opslaan is mislukt: %1"
 
 #: app/applicationcontroller.cpp:630
 #, kde-format
 msgid "File saved successfully."
-msgstr ""
+msgstr "Bestand met succes opgeslagen."
 
 #: app/applicationcontroller.cpp:637
 #, kde-format
@@ -1403,15 +1401,14 @@ msgid "Not a valid number."
 msgstr "Geen geldig getal."
 
 #: app/GenericPkPassPage.qml:20
-#, fuzzy, kde-format
-#| msgid "Show Pass"
+#, kde-format
 msgid "Save Pass"
-msgstr "Pas tonen"
+msgstr "Pas opslaan"
 
 #: app/GenericPkPassPage.qml:21
 #, kde-format
 msgid "Apple Wallet pass (*.pkpass)"
-msgstr ""
+msgstr "Apple Wallet pas (*.pkpass)"
 
 #: app/GenericPkPassPage.qml:36 app/ProgramMembershipPage.qml:38
 #, kde-format
@@ -1426,7 +1423,7 @@ msgstr "Wilt u deze pas verwijderen?"
 #: app/GenericPkPassPage.qml:55
 #, kde-format
 msgid "Save As…"
-msgstr ""
+msgstr "Opslaan als…"
 
 #: app/gpxexport.cpp:33 app/main.cpp:321 app/Main.qml:21 app/Main.qml:153
 #, kde-format
@@ -3206,10 +3203,9 @@ msgid "Program Membership"
 msgstr "Lidmaatschap van programma"
 
 #: app/ProgramMembershipPage.qml:56
-#, fuzzy, kde-format
-#| msgid "Edit Program Membership"
+#, kde-format
 msgid "Export Program Membership"
-msgstr "Lidmaatschap van programma bewerken"
+msgstr "Lidmaatschap van programma exporteren"
 
 #: app/ProgramMembershipPage.qml:155
 #, kde-format
@@ -3776,10 +3772,9 @@ msgid "Do you really want to delete this ticket?"
 msgstr "Wilt u dit ticket verwijderen?"
 
 #: app/TicketPage.qml:59
-#, fuzzy, kde-format
-#| msgid "Boat Ticket"
+#, kde-format
 msgid "Export Ticket"
-msgstr "Bootkaartje"
+msgstr "Export-ticket"
 
 #: app/TicketPage.qml:120
 #, kde-format

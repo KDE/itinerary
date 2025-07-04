@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-03 06:56+0000\n"
-"PO-Revision-Date: 2025-06-30 06:45+0200\n"
+"PO-Revision-Date: 2025-07-03 10:03+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -321,21 +321,19 @@ msgid "Reservation sent."
 msgstr "Rezervacija poslana."
 
 #: app/applicationcontroller.cpp:587
-#, fuzzy, kde-format
-#| msgid "Trip sent."
+#, kde-format
 msgid "Pass sent."
-msgstr "Izlet poslan."
+msgstr "Prepustnica poslana."
 
 #: app/applicationcontroller.cpp:625
-#, fuzzy, kde-format
-#| msgid "Download failed: %1"
+#, kde-format
 msgid "Saving failed: %1"
-msgstr "Prenos ni uspel: %1"
+msgstr "Shranjevanje ni uspelo: %1"
 
 #: app/applicationcontroller.cpp:630
 #, kde-format
 msgid "File saved successfully."
-msgstr ""
+msgstr "Datoteka uspešno shranjena."
 
 #: app/applicationcontroller.cpp:637
 #, kde-format
@@ -1409,15 +1407,14 @@ msgid "Not a valid number."
 msgstr "Ni veljavna številka."
 
 #: app/GenericPkPassPage.qml:20
-#, fuzzy, kde-format
-#| msgid "Show Pass"
+#, kde-format
 msgid "Save Pass"
-msgstr "Prikaži prepustnico"
+msgstr "Shrani prepustnico"
 
 #: app/GenericPkPassPage.qml:21
 #, kde-format
 msgid "Apple Wallet pass (*.pkpass)"
-msgstr ""
+msgstr "Apple Wallet pass (*.pkpass)"
 
 #: app/GenericPkPassPage.qml:36 app/ProgramMembershipPage.qml:38
 #, kde-format
@@ -1432,7 +1429,7 @@ msgstr "Ali res želite izbrisati to vozovnico?"
 #: app/GenericPkPassPage.qml:55
 #, kde-format
 msgid "Save As…"
-msgstr ""
+msgstr "Shrani kot…"
 
 #: app/gpxexport.cpp:33 app/main.cpp:321 app/Main.qml:21 app/Main.qml:153
 #, kde-format
@@ -3209,10 +3206,9 @@ msgid "Program Membership"
 msgstr "Članstvo v programu"
 
 #: app/ProgramMembershipPage.qml:56
-#, fuzzy, kde-format
-#| msgid "Edit Program Membership"
+#, kde-format
 msgid "Export Program Membership"
-msgstr "Uredi članstvo v programu"
+msgstr "Izvozi članstvo v programu"
 
 #: app/ProgramMembershipPage.qml:155
 #, kde-format
@@ -3774,10 +3770,9 @@ msgid "Do you really want to delete this ticket?"
 msgstr "Ali zares želite izbrisati to vstopnico?"
 
 #: app/TicketPage.qml:59
-#, fuzzy, kde-format
-#| msgid "Boat Ticket"
+#, kde-format
 msgid "Export Ticket"
-msgstr "Ladijska vozovnica"
+msgstr "Izvozi vozovnico"
 
 #: app/TicketPage.qml:120
 #, kde-format

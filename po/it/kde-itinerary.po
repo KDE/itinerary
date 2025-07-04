@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-03 06:56+0000\n"
-"PO-Revision-Date: 2025-06-23 08:58+0200\n"
+"PO-Revision-Date: 2025-07-02 13:07+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -236,7 +236,7 @@ msgstr "Traghetto"
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Aircraft"
-msgstr ""
+msgstr "Aereo"
 
 #: app/AlternativeJourneyPage.qml:116
 #, kde-format
@@ -258,11 +258,9 @@ msgid "Replace"
 msgstr "Sostituisci"
 
 #: app/AlternativeJourneyPage.qml:139
-#, fuzzy, kde-format
-#| msgctxt "train station"
-#| msgid "Station:"
+#, kde-format
 msgid "Destination:"
-msgstr "Stazione:"
+msgstr "Destinazione:"
 
 #: app/applicationcontroller.cpp:188
 #, kde-format
@@ -318,10 +316,9 @@ msgid "Reservation sent."
 msgstr "Prenotazione inviata."
 
 #: app/applicationcontroller.cpp:587
-#, fuzzy, kde-format
-#| msgid "Trip sent."
+#, kde-format
 msgid "Pass sent."
-msgstr "Viaggio inviato."
+msgstr "Pass inviato."
 
 #: app/applicationcontroller.cpp:625
 #, fuzzy, kde-format
@@ -3213,10 +3210,9 @@ msgid "Program Membership"
 msgstr "Adesione al programma"
 
 #: app/ProgramMembershipPage.qml:56
-#, fuzzy, kde-format
-#| msgid "Edit Program Membership"
+#, kde-format
 msgid "Export Program Membership"
-msgstr "Modifica l'adesione al programma"
+msgstr "Esporta adesione al programma"
 
 #: app/ProgramMembershipPage.qml:155
 #, kde-format
@@ -3784,10 +3780,9 @@ msgid "Do you really want to delete this ticket?"
 msgstr "Vuoi davvero eliminare questo biglietto?"
 
 #: app/TicketPage.qml:59
-#, fuzzy, kde-format
-#| msgid "Boat Ticket"
+#, kde-format
 msgid "Export Ticket"
-msgstr "Biglietto per la nave"
+msgstr "Esporta biglietto"
 
 #: app/TicketPage.qml:120
 #, kde-format
