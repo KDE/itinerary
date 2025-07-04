@@ -46,6 +46,10 @@ std::pair<QString, QString> ReservationHelper::lineNameAndNumber(const QVariant 
         const auto flight = res.value<FlightReservation>().reservationFor().value<Flight>();
         return std::make_pair(flight.airline().iataCode(), flight.flightNumber());
     }
+    if (JsonLd::isA<BoatReservation>(res)) {
+        const auto trip = res.value<BoatReservation>().reservationFor().value<BoatTrip>();
+        return std::make_pair(trip.name(), QString());
+    }
 
     return {};
 }

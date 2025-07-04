@@ -464,7 +464,7 @@ void LiveDataManager::cancelNotification(const QString &resId)
 
 QDateTime LiveDataManager::departureTime(const QString &resId, const QVariant &res) const
 {
-    if (JsonLd::isA<TrainReservation>(res) || JsonLd::isA<BusReservation>(res)) {
+    if (JsonLd::isA<TrainReservation>(res) || JsonLd::isA<BusReservation>(res) || JsonLd::isA<BoatReservation>(res) || JsonLd::isA<FlightReservation>(res)) {
         const auto &dep = departure(resId);
         if (dep.hasExpectedDepartureTime()) {
             return dep.expectedDepartureTime();
@@ -476,7 +476,7 @@ QDateTime LiveDataManager::departureTime(const QString &resId, const QVariant &r
 
 QDateTime LiveDataManager::arrivalTime(const QString &resId, const QVariant &res) const
 {
-    if (JsonLd::isA<TrainReservation>(res) || JsonLd::isA<BusReservation>(res)) {
+    if (JsonLd::isA<TrainReservation>(res) || JsonLd::isA<BusReservation>(res) || JsonLd::isA<BoatReservation>(res) || JsonLd::isA<FlightReservation>(res)) {
         const auto &arr = arrival(resId);
         if (arr.hasExpectedArrivalTime()) {
             return arr.expectedArrivalTime();
@@ -534,6 +534,12 @@ bool LiveDataManager::isRelevant(const QString &resId) const
     // things handled by KPublicTransport
     if (JsonLd::isA<TrainReservation>(res) || JsonLd::isA<BusReservation>(res)) {
         return true;
+    }
+    // handled by KPublicTransport but in a limited capacity, so only handle things that we originally got from there for now
+    if (JsonLd::isA<BoatReservation>(res) || JsonLd::isA<FlightReservation>(res)) {
+        if (journey(resId).mode() != KPublicTransport::JourneySection::Invalid) {
+            return true;
+        }
     }
 
     // things with an updatable pkpass
@@ -647,6 +653,11 @@ void LiveDataManager::pollBatchForUpdates(const QString &batchId, bool force)
 
     if (JsonLd::isA<TrainReservation>(res) || JsonLd::isA<BusReservation>(res)) {
         checkReservation(res, batchId);
+    }
+    if (JsonLd::isA<BoatReservation>(res) || JsonLd::isA<FlightReservation>(res)) {
+        if (journey(batchId).mode() != KPublicTransport::JourneySection::Invalid) {
+            checkReservation(res, batchId);
+        }
     }
 
     // check for pkpass updates, for each element in this batch
