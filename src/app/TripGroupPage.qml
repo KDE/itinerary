@@ -290,7 +290,7 @@ Kirigami.ScrollablePage {
     }
     Component {
         id: boatDetailsPage
-        BoatPage { editor: boatEditorPage }
+        BoatPage {}
     }
     Component {
         id: touristAttractionDetailsPage

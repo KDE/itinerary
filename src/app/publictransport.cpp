@@ -104,14 +104,19 @@ KPublicTransport::Location PublicTransport::locationFromPlace(const QVariant &pl
     return loc;
 }
 
-QVariant PublicTransport::trainStationFromLocation(const KPublicTransport::Location &loc) const
+QVariant PublicTransport::trainStationFromLocation(const KPublicTransport::Location &loc)
 {
     return PublicTransport::placeFromLocation<KItinerary::TrainStation>(loc);
 }
 
-QVariant PublicTransport::busStationFromLocation(const KPublicTransport::Location &loc) const
+QVariant PublicTransport::busStationFromLocation(const KPublicTransport::Location &loc)
 {
     return PublicTransport::placeFromLocation<KItinerary::BusStation>(loc);
+}
+
+QVariant PublicTransport::boatTerminalFromLocation(const KPublicTransport::Location &loc)
+{
+    return PublicTransport::placeFromLocation<KItinerary::BoatTerminal>(loc);
 }
 
 static KItinerary::Ticket clearSeat(KItinerary::Ticket ticket)
