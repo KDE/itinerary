@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-22 02:45+0000\n"
-"PO-Revision-Date: 2025-05-13 19:23+0300\n"
+"PO-Revision-Date: 2025-07-04 15:58+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.04.1\n"
+"X-Generator: Lokalize 25.04.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -308,7 +308,7 @@ msgstr[1] "%1 sağlık sertifikası içe aktarıldı."
 #: app/applicationcontroller.cpp:482 app/applicationcontroller.cpp:500
 #, kde-format
 msgid "Export failed: %1"
-msgstr "Dışa aktarma başarısız: %1"
+msgstr "Dışa aktarılamadı: %1"
 
 #: app/applicationcontroller.cpp:352 app/applicationcontroller.cpp:361
 #: app/applicationcontroller.cpp:456 app/applicationcontroller.cpp:465
@@ -858,7 +858,7 @@ msgstr "Ağ hatası: %1"
 #: app/downloadjob.cpp:193
 #, kde-format
 msgid "Download failed: %1"
-msgstr "İndirme başarısız: %1"
+msgstr "İndirilemedi: %1"
 
 #: app/EditorPage.qml:27
 #, kde-format
@@ -1795,12 +1795,12 @@ msgstr "Çıkış zamanı"
 #: app/importcontroller.cpp:153 app/importcontroller.cpp:475
 #, kde-format
 msgid "Import failed: %1"
-msgstr "İçe aktarma başarısız: %1"
+msgstr "İçe aktarılamadı: %1"
 
 #: app/importcontroller.cpp:159
 #, kde-format
 msgid "Import failed: File too large."
-msgstr "İçe aktarma başarısız: Dosya pek büyük."
+msgstr "İçe aktarılamadı: Dosya pek büyük."
 
 #: app/importcontroller.cpp:218 app/importcontroller.cpp:315
 #, kde-format
@@ -2475,7 +2475,7 @@ msgstr "KDE Yol Kılavuzu Dosyaları (*.itinerary)"
 #: app/Main.qml:127
 #, kde-format
 msgid "PkPass files (*.pkpass)"
-msgstr "PkPass Dosyaları (*.pkpass)"
+msgstr "PkPass dosyaları (*.pkpass)"
 
 #: app/Main.qml:127
 #, kde-format
@@ -3219,7 +3219,7 @@ msgstr "Program Üyeliği"
 #: app/ProgramMembershipPage.qml:146
 #, kde-format
 msgid "Show Pass"
-msgstr "Geçişi Göster"
+msgstr "Kartı Göster"
 
 #: app/PublicTransportBackendPage.qml:17
 #, kde-format
