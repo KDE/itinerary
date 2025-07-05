@@ -60,7 +60,6 @@ private:
     void tripGroupRemoved(const QString &tgId);
 
     void createTripGroupFromRoom(Quotient::Room *room);
-    QString readBatchFromStateEvent(const Quotient::StateEvent *event);
     void readDocumentFromStateEvent(const Quotient::StateEvent *event);
 
     void writeBatchToRoom(const QString &batchId, Quotient::Room *room);
