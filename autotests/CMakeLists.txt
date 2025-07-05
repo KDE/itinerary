@@ -50,6 +50,7 @@ target_include_directories(weathertest PRIVATE ${CMAKE_BINARY_DIR})
 
 if (HAVE_MATRIX)
     ecm_add_test(matrixsyncstateeventtest.cpp LINK_LIBRARIES Qt::Test itinerary)
+    ecm_add_test(matrixsynccontenttest.cpp LINK_LIBRARIES Qt::Test itinerary)
 endif()
 
 # verify QML code
