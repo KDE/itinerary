@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-03 06:56+0000\n"
+"POT-Creation-Date: 2025-07-05 00:43+0000\n"
 "PO-Revision-Date: 2025-03-02 14:47+0530\n"
 "Last-Translator: Shreekant Kalwar <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -93,7 +93,7 @@ msgstr "क्लिप्बोर्ड् प्रति प्रतिल�
 msgid "Show Boarding Pass"
 msgstr "बोर्डिंग पास दर्शयतु"
 
-#: app/ActionsCard.qml:33 app/TicketPage.qml:148
+#: app/ActionsCard.qml:33 app/TicketPage.qml:149
 #, kde-format
 msgid "Show Ticket"
 msgstr "टिकटं दर्शयतु"
@@ -109,7 +109,7 @@ msgid "Add transfer after"
 msgstr "पश्चात् स्थानान्तरणं योजयन्तु"
 
 #: app/ActionsCard.qml:57 app/ProgramMembershipPage.qml:169
-#: app/TicketPage.qml:164
+#: app/TicketPage.qml:176
 #, kde-format
 msgid "Edit"
 msgstr "सम्पादन"
@@ -120,16 +120,16 @@ msgid "Add to calendar…"
 msgstr "पञ्चाङ्गे योजयतु…"
 
 #: app/ActionsCard.qml:74 app/ProgramMembershipPage.qml:182
-#: app/TicketPage.qml:179 app/TripGroupPage.qml:671
+#: app/TicketPage.qml:191 app/TripGroupPage.qml:671
 #, kde-format
 msgid "Export…"
 msgstr "निर्यात…"
 
 #: app/ActionsCard.qml:79 app/ActionsCard.qml:125 app/DocumentsCard.qml:87
-#: app/GenericPkPassPage.qml:42 app/GenericPkPassPage.qml:63
+#: app/GenericPkPassPage.qml:43 app/GenericPkPassPage.qml:71
 #: app/HealthCertificatePage.qml:49 app/HealthCertificatePage.qml:63
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:188
-#: app/TicketPage.qml:47 app/TicketPage.qml:185 app/TripGroupPage.qml:247
+#: app/TicketPage.qml:48 app/TicketPage.qml:197 app/TripGroupPage.qml:247
 #, kde-format
 msgid "Delete"
 msgstr "लुप्"
@@ -150,7 +150,7 @@ msgid "Export Reservation"
 msgstr "निर्यात आरक्षण"
 
 #: app/ActionsCard.qml:147 app/ProgramMembershipPage.qml:147
-#: app/TicketPage.qml:140 app/TripGroupPage.qml:621
+#: app/TicketPage.qml:141 app/TripGroupPage.qml:621
 #, kde-format
 msgid "Actions"
 msgstr "कर्माणि"
@@ -478,6 +478,12 @@ msgstr "आगमन समय"
 msgid "Alternatives"
 msgstr "विकल्पाः"
 
+#: app/BoatPage.qml:134 app/BusPage.qml:218 app/JourneySectionPage.qml:27
+#: app/TrainPage.qml:367
+#, kde-format
+msgid "Journey Details"
+msgstr "यात्रा विवरण"
+
 #: app/BookingCard.qml:24
 #, kde-format
 msgid "Booking"
@@ -677,11 +683,6 @@ msgstr "तमङ्गः"
 msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "आगमन"
-
-#: app/BusPage.qml:218 app/JourneySectionPage.qml:27 app/TrainPage.qml:367
-#, kde-format
-msgid "Journey Details"
-msgstr "यात्रा विवरण"
 
 #: app/calendarhelper.cpp:28
 #, kde-format
@@ -1408,28 +1409,34 @@ msgstr "मूल्य"
 msgid "Not a valid number."
 msgstr "न तु वैधसङ्ख्या।"
 
-#: app/GenericPkPassPage.qml:20
+#: app/GenericPkPassPage.qml:21
 #, fuzzy, kde-format
 #| msgid "Show Pass"
 msgid "Save Pass"
 msgstr "पास दर्शयतु"
 
-#: app/GenericPkPassPage.qml:21
+#: app/GenericPkPassPage.qml:22
 #, kde-format
 msgid "Apple Wallet pass (*.pkpass)"
 msgstr ""
 
-#: app/GenericPkPassPage.qml:36 app/ProgramMembershipPage.qml:38
+#: app/GenericPkPassPage.qml:37 app/ProgramMembershipPage.qml:38
 #, kde-format
 msgid "Delete Pass"
 msgstr "पासं विलोपयन्तु"
 
-#: app/GenericPkPassPage.qml:37 app/ProgramMembershipPage.qml:39
+#: app/GenericPkPassPage.qml:38 app/ProgramMembershipPage.qml:39
 #, kde-format
 msgid "Do you really want to delete this pass?"
 msgstr "किं भवन्तः वास्तवमेव एतत् पासं विलोपयितुम् इच्छन्ति?"
 
-#: app/GenericPkPassPage.qml:55
+#: app/GenericPkPassPage.qml:55 app/TicketPage.qml:165
+#: app/TripGroupPage.qml:627
+#, kde-format
+msgid "Check for Updates"
+msgstr "Updates इति पश्यन्तु"
+
+#: app/GenericPkPassPage.qml:63
 #, kde-format
 msgid "Save As…"
 msgstr ""
@@ -1454,7 +1461,7 @@ msgstr "%1 तः %2 तः %3 पर्यन्तं प्रशिक्ष
 msgid "Bus %1 from %2 to %3"
 msgstr "%2 तः %3 पर्यन्तं %1 बसयानम्"
 
-#: app/gpxexport.cpp:61 app/reservationhelper.cpp:142
+#: app/gpxexport.cpp:61 app/reservationhelper.cpp:146
 #, kde-format
 msgid "Ferry from %1 to %2"
 msgstr "%1 तः %2 पर्यन्तं नौकायानं कुर्वन्तु"
@@ -1598,7 +1605,7 @@ msgstr "व्यक्ति"
 #: app/HealthCertificateRecovery.qml:34 app/HealthCertificateTest.qml:35
 #: app/HealthCertificateVaccination.qml:38 app/ProgramMembershipCard.qml:31
 #: app/ProgramMembershipEditor.qml:70 app/ProgramMembershipEditorCard.qml:54
-#: app/TicketPage.qml:96
+#: app/TicketPage.qml:97
 #, kde-format
 msgid "Name"
 msgstr "नामः"
@@ -1623,13 +1630,13 @@ msgid "Disease"
 msgstr "रोगः:"
 
 #: app/HealthCertificateRecovery.qml:69 app/ProgramMembershipEditor.qml:97
-#: app/ProgramMembershipPage.qml:126 app/TicketPage.qml:102
+#: app/ProgramMembershipPage.qml:126 app/TicketPage.qml:103
 #, kde-format
 msgid "Valid from"
 msgstr "तः वैधम्"
 
 #: app/HealthCertificateRecovery.qml:76 app/ProgramMembershipEditor.qml:111
-#: app/ProgramMembershipPage.qml:131 app/TicketPage.qml:108
+#: app/ProgramMembershipPage.qml:131 app/TicketPage.qml:109
 #, kde-format
 msgid "Valid until"
 msgstr "यावत् वैधम्"
@@ -2028,7 +2035,9 @@ msgid "To:"
 msgstr "इत्यस्मै:"
 
 #: app/JourneyRequestPage.qml:140
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Swap departure and arrival"
+msgctxt "departure and arrival stops"
 msgid "Swap departure and arrival"
 msgstr "प्रस्थान आगमनं च स्वैप कुर्वन्तु"
 
@@ -2203,7 +2212,7 @@ msgstr[1] "%1 परिवर्तते"
 msgid "Click to extend"
 msgstr "विस्तारं कर्तुं क्लिक् कुर्वन्तु"
 
-#: app/livedatamanager.cpp:786
+#: app/livedatamanager.cpp:797
 #, kde-format
 msgid "Itinerary change"
 msgstr "यात्रासूची परिवर्तनम्"
@@ -3137,7 +3146,7 @@ msgstr "कार्यक्रम"
 
 #: app/ProgramMembershipCard.qml:40 app/ProgramMembershipEditor.qml:90
 #: app/ProgramMembershipEditorCard.qml:61 app/ProgramMembershipPage.qml:104
-#: app/TicketPage.qml:114
+#: app/TicketPage.qml:115
 #, kde-format
 msgid "Number"
 msgstr "संख्या"
@@ -3213,17 +3222,17 @@ msgstr "पास दर्शयतु"
 msgid "Documents and Tickets"
 msgstr "दस्तावेजाः टिकटं च"
 
-#: app/reservationhelper.cpp:133
+#: app/reservationhelper.cpp:137
 #, kde-format
 msgid "Flight from %1 to %2"
 msgstr "%1 तः %2 पर्यन्तं उड्डयनम्"
 
-#: app/reservationhelper.cpp:136
+#: app/reservationhelper.cpp:140
 #, kde-format
 msgid "Train from %1 to %2"
 msgstr "%1 तः %2 पर्यन्तं रेलयानं कुर्वन्तु"
 
-#: app/reservationhelper.cpp:139
+#: app/reservationhelper.cpp:143
 #, kde-format
 msgid "Bus from %1 to %2"
 msgstr "%1 तः %2 पर्यन्तं बसयानम्"
@@ -3741,7 +3750,7 @@ msgstr "नक्शा दर्शयतु"
 msgid "Edit Ticket"
 msgstr "टिकट सम्पादयतु"
 
-#: app/TicketEditor.qml:58 app/TicketPage.qml:17 app/TicketPage.qml:91
+#: app/TicketEditor.qml:58 app/TicketPage.qml:18 app/TicketPage.qml:92
 #, kde-format
 msgid "Ticket"
 msgstr "टिकटम्"
@@ -3756,23 +3765,23 @@ msgstr "टिकटस्य नाम"
 msgid "Ticket name must not be empty."
 msgstr "टिकटनाम रिक्तं न भवेत्।"
 
-#: app/TicketPage.qml:39
+#: app/TicketPage.qml:40
 #, kde-format
 msgid "Delete Ticket"
 msgstr "टिकटं विलोपयन्तु"
 
-#: app/TicketPage.qml:40
+#: app/TicketPage.qml:41
 #, kde-format
 msgid "Do you really want to delete this ticket?"
 msgstr "किं भवान् वास्तवमेव एतत् टिकटं विलोपयितुम् इच्छति ?"
 
-#: app/TicketPage.qml:59
+#: app/TicketPage.qml:60
 #, fuzzy, kde-format
 #| msgid "Boat Ticket"
 msgid "Export Ticket"
 msgstr "नौका टिकट"
 
-#: app/TicketPage.qml:120
+#: app/TicketPage.qml:121
 #, kde-format
 msgid "Class"
 msgstr "श्रेणी"
@@ -4243,11 +4252,6 @@ msgstr "अद्यतनस्य यात्रासूचौ किमप�
 #, kde-format
 msgid "Cost"
 msgstr "मूल्यम्‌"
-
-#: app/TripGroupPage.qml:627
-#, kde-format
-msgid "Check for Updates"
-msgstr "Updates इति पश्यन्तु"
 
 #: app/TripGroupPage.qml:636
 #, kde-format

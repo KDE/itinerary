@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-03 06:56+0000\n"
-"PO-Revision-Date: 2025-07-03 08:40+0300\n"
+"POT-Creation-Date: 2025-07-05 00:43+0000\n"
+"PO-Revision-Date: 2025-07-04 12:23+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -97,7 +97,7 @@ msgstr "Можливості видобування скопійовано до 
 msgid "Show Boarding Pass"
 msgstr "Показати посадковий талон"
 
-#: app/ActionsCard.qml:33 app/TicketPage.qml:148
+#: app/ActionsCard.qml:33 app/TicketPage.qml:149
 #, kde-format
 msgid "Show Ticket"
 msgstr "Показати квиток"
@@ -113,7 +113,7 @@ msgid "Add transfer after"
 msgstr "Додати пересадку після"
 
 #: app/ActionsCard.qml:57 app/ProgramMembershipPage.qml:169
-#: app/TicketPage.qml:164
+#: app/TicketPage.qml:176
 #, kde-format
 msgid "Edit"
 msgstr "Змінити"
@@ -124,16 +124,16 @@ msgid "Add to calendar…"
 msgstr "Додати до календаря…"
 
 #: app/ActionsCard.qml:74 app/ProgramMembershipPage.qml:182
-#: app/TicketPage.qml:179 app/TripGroupPage.qml:671
+#: app/TicketPage.qml:191 app/TripGroupPage.qml:671
 #, kde-format
 msgid "Export…"
 msgstr "Експортувати…"
 
 #: app/ActionsCard.qml:79 app/ActionsCard.qml:125 app/DocumentsCard.qml:87
-#: app/GenericPkPassPage.qml:42 app/GenericPkPassPage.qml:63
+#: app/GenericPkPassPage.qml:43 app/GenericPkPassPage.qml:71
 #: app/HealthCertificatePage.qml:49 app/HealthCertificatePage.qml:63
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:188
-#: app/TicketPage.qml:47 app/TicketPage.qml:185 app/TripGroupPage.qml:247
+#: app/TicketPage.qml:48 app/TicketPage.qml:197 app/TripGroupPage.qml:247
 #, kde-format
 msgid "Delete"
 msgstr "Вилучити"
@@ -154,7 +154,7 @@ msgid "Export Reservation"
 msgstr "Експортувати резервування"
 
 #: app/ActionsCard.qml:147 app/ProgramMembershipPage.qml:147
-#: app/TicketPage.qml:140 app/TripGroupPage.qml:621
+#: app/TicketPage.qml:141 app/TripGroupPage.qml:621
 #, kde-format
 msgid "Actions"
 msgstr "Дії"
@@ -330,15 +330,14 @@ msgid "Pass sent."
 msgstr "Безкоштовний квиток надіслано."
 
 #: app/applicationcontroller.cpp:625
-#, fuzzy, kde-format
-#| msgid "Download failed: %1"
+#, kde-format
 msgid "Saving failed: %1"
-msgstr "Невдала спроба отримання: %1"
+msgstr "Не вдалося зберегти: %1"
 
 #: app/applicationcontroller.cpp:630
 #, kde-format
 msgid "File saved successfully."
-msgstr ""
+msgstr "Файл успішно збережено."
 
 #: app/applicationcontroller.cpp:637
 #, kde-format
@@ -484,6 +483,12 @@ msgstr "Час прибуття"
 #, kde-format
 msgid "Alternatives"
 msgstr "Альтернативи"
+
+#: app/BoatPage.qml:134 app/BusPage.qml:218 app/JourneySectionPage.qml:27
+#: app/TrainPage.qml:367
+#, kde-format
+msgid "Journey Details"
+msgstr "Подробиці щодо подорожі"
 
 #: app/BookingCard.qml:24
 #, kde-format
@@ -680,11 +685,6 @@ msgstr "Платформа"
 msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "Прибуття"
-
-#: app/BusPage.qml:218 app/JourneySectionPage.qml:27 app/TrainPage.qml:367
-#, kde-format
-msgid "Journey Details"
-msgstr "Подробиці щодо подорожі"
 
 #: app/calendarhelper.cpp:28
 #, kde-format
@@ -1411,31 +1411,36 @@ msgstr "Ціна"
 msgid "Not a valid number."
 msgstr "Не є коректним числом."
 
-#: app/GenericPkPassPage.qml:20
-#, fuzzy, kde-format
-#| msgid "Show Pass"
-msgid "Save Pass"
-msgstr "Показ квитка"
-
 #: app/GenericPkPassPage.qml:21
 #, kde-format
-msgid "Apple Wallet pass (*.pkpass)"
-msgstr ""
+msgid "Save Pass"
+msgstr "Зберегти пропуск"
 
-#: app/GenericPkPassPage.qml:36 app/ProgramMembershipPage.qml:38
+#: app/GenericPkPassPage.qml:22
+#, kde-format
+msgid "Apple Wallet pass (*.pkpass)"
+msgstr "пропуск Apple Wallet (*.pkpass)"
+
+#: app/GenericPkPassPage.qml:37 app/ProgramMembershipPage.qml:38
 #, kde-format
 msgid "Delete Pass"
 msgstr "Вилучити безкоштовний квиток"
 
-#: app/GenericPkPassPage.qml:37 app/ProgramMembershipPage.qml:39
+#: app/GenericPkPassPage.qml:38 app/ProgramMembershipPage.qml:39
 #, kde-format
 msgid "Do you really want to delete this pass?"
 msgstr "Ви справді бажаєте вилучити цей безкоштовний квиток?"
 
-#: app/GenericPkPassPage.qml:55
+#: app/GenericPkPassPage.qml:55 app/TicketPage.qml:165
+#: app/TripGroupPage.qml:627
+#, kde-format
+msgid "Check for Updates"
+msgstr "Перевірити наявність оновлень"
+
+#: app/GenericPkPassPage.qml:63
 #, kde-format
 msgid "Save As…"
-msgstr ""
+msgstr "Зберегти як…"
 
 #: app/gpxexport.cpp:33 app/main.cpp:321 app/Main.qml:21 app/Main.qml:153
 #, kde-format
@@ -1457,7 +1462,7 @@ msgstr "Потяг %1 з %2 до %3"
 msgid "Bus %1 from %2 to %3"
 msgstr "Автобус %1 з %2 до %3"
 
-#: app/gpxexport.cpp:61 app/reservationhelper.cpp:142
+#: app/gpxexport.cpp:61 app/reservationhelper.cpp:146
 #, kde-format
 msgid "Ferry from %1 to %2"
 msgstr "Пором з %1 до %2"
@@ -1602,7 +1607,7 @@ msgstr "Особа"
 #: app/HealthCertificateRecovery.qml:34 app/HealthCertificateTest.qml:35
 #: app/HealthCertificateVaccination.qml:38 app/ProgramMembershipCard.qml:31
 #: app/ProgramMembershipEditor.qml:70 app/ProgramMembershipEditorCard.qml:54
-#: app/TicketPage.qml:96
+#: app/TicketPage.qml:97
 #, kde-format
 msgid "Name"
 msgstr "Назва"
@@ -1625,13 +1630,13 @@ msgid "Disease"
 msgstr "Захворювання"
 
 #: app/HealthCertificateRecovery.qml:69 app/ProgramMembershipEditor.qml:97
-#: app/ProgramMembershipPage.qml:126 app/TicketPage.qml:102
+#: app/ProgramMembershipPage.qml:126 app/TicketPage.qml:103
 #, kde-format
 msgid "Valid from"
 msgstr "Початок чинності"
 
 #: app/HealthCertificateRecovery.qml:76 app/ProgramMembershipEditor.qml:111
-#: app/ProgramMembershipPage.qml:131 app/TicketPage.qml:108
+#: app/ProgramMembershipPage.qml:131 app/TicketPage.qml:109
 #, kde-format
 msgid "Valid until"
 msgstr "Завершення чинності"
@@ -2015,7 +2020,9 @@ msgid "To:"
 msgstr "До:"
 
 #: app/JourneyRequestPage.qml:140
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Swap departure and arrival"
+msgctxt "departure and arrival stops"
 msgid "Swap departure and arrival"
 msgstr "Поміняти місцями відправлення і прибуття"
 
@@ -2192,7 +2199,7 @@ msgstr[3] "%1 зміна"
 msgid "Click to extend"
 msgstr "Натисніть, щоб розширити"
 
-#: app/livedatamanager.cpp:786
+#: app/livedatamanager.cpp:797
 #, kde-format
 msgid "Itinerary change"
 msgstr "Зміна маршруту"
@@ -3154,7 +3161,7 @@ msgstr "Програма"
 
 #: app/ProgramMembershipCard.qml:40 app/ProgramMembershipEditor.qml:90
 #: app/ProgramMembershipEditorCard.qml:61 app/ProgramMembershipPage.qml:104
-#: app/TicketPage.qml:114
+#: app/TicketPage.qml:115
 #, kde-format
 msgid "Number"
 msgstr "Номер"
@@ -3229,17 +3236,17 @@ msgstr "Показ квитка"
 msgid "Documents and Tickets"
 msgstr "Документи і квитки"
 
-#: app/reservationhelper.cpp:133
+#: app/reservationhelper.cpp:137
 #, kde-format
 msgid "Flight from %1 to %2"
 msgstr "Рейс з %1 до %2"
 
-#: app/reservationhelper.cpp:136
+#: app/reservationhelper.cpp:140
 #, kde-format
 msgid "Train from %1 to %2"
 msgstr "Потяг з %1 до %2"
 
-#: app/reservationhelper.cpp:139
+#: app/reservationhelper.cpp:143
 #, kde-format
 msgid "Bus from %1 to %2"
 msgstr "Автобус з %1 до %2"
@@ -3761,7 +3768,7 @@ msgstr "Карта зупинок"
 msgid "Edit Ticket"
 msgstr "Редагувати квиток"
 
-#: app/TicketEditor.qml:58 app/TicketPage.qml:17 app/TicketPage.qml:91
+#: app/TicketEditor.qml:58 app/TicketPage.qml:18 app/TicketPage.qml:92
 #, kde-format
 msgid "Ticket"
 msgstr "Квиток"
@@ -3776,22 +3783,22 @@ msgstr "Назва квитка"
 msgid "Ticket name must not be empty."
 msgstr "Назва квитка має бути непорожньою."
 
-#: app/TicketPage.qml:39
+#: app/TicketPage.qml:40
 #, kde-format
 msgid "Delete Ticket"
 msgstr "Вилучення квитка"
 
-#: app/TicketPage.qml:40
+#: app/TicketPage.qml:41
 #, kde-format
 msgid "Do you really want to delete this ticket?"
 msgstr "Ви справді бажаєте вилучити цей квиток?"
 
-#: app/TicketPage.qml:59
+#: app/TicketPage.qml:60
 #, kde-format
 msgid "Export Ticket"
 msgstr "Експортувати квиток"
 
-#: app/TicketPage.qml:120
+#: app/TicketPage.qml:121
 #, kde-format
 msgid "Class"
 msgstr "Клас"
@@ -4262,11 +4269,6 @@ msgstr "У маршрутах на сьогодні даних немає."
 #, kde-format
 msgid "Cost"
 msgstr "Вартість"
-
-#: app/TripGroupPage.qml:627
-#, kde-format
-msgid "Check for Updates"
-msgstr "Перевірити наявність оновлень"
 
 #: app/TripGroupPage.qml:636
 #, kde-format

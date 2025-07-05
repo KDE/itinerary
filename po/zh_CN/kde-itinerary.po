@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-03 06:56+0000\n"
+"POT-Creation-Date: 2025-07-05 00:43+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -91,7 +91,7 @@ msgstr ""
 msgid "Show Boarding Pass"
 msgstr "出示登机牌"
 
-#: app/ActionsCard.qml:33 app/TicketPage.qml:148
+#: app/ActionsCard.qml:33 app/TicketPage.qml:149
 #, kde-format
 msgid "Show Ticket"
 msgstr ""
@@ -107,7 +107,7 @@ msgid "Add transfer after"
 msgstr "在此项后添加换乘"
 
 #: app/ActionsCard.qml:57 app/ProgramMembershipPage.qml:169
-#: app/TicketPage.qml:164
+#: app/TicketPage.qml:176
 #, kde-format
 msgid "Edit"
 msgstr "编辑"
@@ -118,16 +118,16 @@ msgid "Add to calendar…"
 msgstr "添加到日历..."
 
 #: app/ActionsCard.qml:74 app/ProgramMembershipPage.qml:182
-#: app/TicketPage.qml:179 app/TripGroupPage.qml:671
+#: app/TicketPage.qml:191 app/TripGroupPage.qml:671
 #, kde-format
 msgid "Export…"
 msgstr "导出..."
 
 #: app/ActionsCard.qml:79 app/ActionsCard.qml:125 app/DocumentsCard.qml:87
-#: app/GenericPkPassPage.qml:42 app/GenericPkPassPage.qml:63
+#: app/GenericPkPassPage.qml:43 app/GenericPkPassPage.qml:71
 #: app/HealthCertificatePage.qml:49 app/HealthCertificatePage.qml:63
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:188
-#: app/TicketPage.qml:47 app/TicketPage.qml:185 app/TripGroupPage.qml:247
+#: app/TicketPage.qml:48 app/TicketPage.qml:197 app/TripGroupPage.qml:247
 #, kde-format
 msgid "Delete"
 msgstr "删除"
@@ -148,7 +148,7 @@ msgid "Export Reservation"
 msgstr "导出预约"
 
 #: app/ActionsCard.qml:147 app/ProgramMembershipPage.qml:147
-#: app/TicketPage.qml:140 app/TripGroupPage.qml:621
+#: app/TicketPage.qml:141 app/TripGroupPage.qml:621
 #, kde-format
 msgid "Actions"
 msgstr ""
@@ -315,10 +315,9 @@ msgid "Pass sent."
 msgstr ""
 
 #: app/applicationcontroller.cpp:625
-#, fuzzy, kde-format
-#| msgid "Download failed: %1"
+#, kde-format
 msgid "Saving failed: %1"
-msgstr "下载失败：%1"
+msgstr ""
 
 #: app/applicationcontroller.cpp:630
 #, kde-format
@@ -467,6 +466,12 @@ msgstr ""
 #, kde-format
 msgid "Alternatives"
 msgstr "改签"
+
+#: app/BoatPage.qml:134 app/BusPage.qml:218 app/JourneySectionPage.qml:27
+#: app/TrainPage.qml:367
+#, kde-format
+msgid "Journey Details"
+msgstr "旅程详情"
 
 #: app/BookingCard.qml:24
 #, kde-format
@@ -660,11 +665,6 @@ msgstr ""
 msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr ""
-
-#: app/BusPage.qml:218 app/JourneySectionPage.qml:27 app/TrainPage.qml:367
-#, kde-format
-msgid "Journey Details"
-msgstr "旅程详情"
 
 #: app/calendarhelper.cpp:28
 #, kde-format
@@ -1391,28 +1391,33 @@ msgstr ""
 msgid "Not a valid number."
 msgstr ""
 
-#: app/GenericPkPassPage.qml:20
-#, fuzzy, kde-format
-#| msgid "Show Pass"
-msgid "Save Pass"
-msgstr "显示通行证"
-
 #: app/GenericPkPassPage.qml:21
+#, kde-format
+msgid "Save Pass"
+msgstr ""
+
+#: app/GenericPkPassPage.qml:22
 #, kde-format
 msgid "Apple Wallet pass (*.pkpass)"
 msgstr ""
 
-#: app/GenericPkPassPage.qml:36 app/ProgramMembershipPage.qml:38
+#: app/GenericPkPassPage.qml:37 app/ProgramMembershipPage.qml:38
 #, kde-format
 msgid "Delete Pass"
 msgstr ""
 
-#: app/GenericPkPassPage.qml:37 app/ProgramMembershipPage.qml:39
+#: app/GenericPkPassPage.qml:38 app/ProgramMembershipPage.qml:39
 #, kde-format
 msgid "Do you really want to delete this pass?"
 msgstr ""
 
-#: app/GenericPkPassPage.qml:55
+#: app/GenericPkPassPage.qml:55 app/TicketPage.qml:165
+#: app/TripGroupPage.qml:627
+#, kde-format
+msgid "Check for Updates"
+msgstr "检查更新"
+
+#: app/GenericPkPassPage.qml:63
 #, kde-format
 msgid "Save As…"
 msgstr ""
@@ -1437,7 +1442,7 @@ msgstr "从 %2 开往 %3 的 %1 次列车"
 msgid "Bus %1 from %2 to %3"
 msgstr "从 %2 开往 %3 的 %1 次汽车"
 
-#: app/gpxexport.cpp:61 app/reservationhelper.cpp:142
+#: app/gpxexport.cpp:61 app/reservationhelper.cpp:146
 #, kde-format
 msgid "Ferry from %1 to %2"
 msgstr ""
@@ -1577,7 +1582,7 @@ msgstr "持证人信息"
 #: app/HealthCertificateRecovery.qml:34 app/HealthCertificateTest.qml:35
 #: app/HealthCertificateVaccination.qml:38 app/ProgramMembershipCard.qml:31
 #: app/ProgramMembershipEditor.qml:70 app/ProgramMembershipEditorCard.qml:54
-#: app/TicketPage.qml:96
+#: app/TicketPage.qml:97
 #, kde-format
 msgid "Name"
 msgstr ""
@@ -1600,13 +1605,13 @@ msgid "Disease"
 msgstr ""
 
 #: app/HealthCertificateRecovery.qml:69 app/ProgramMembershipEditor.qml:97
-#: app/ProgramMembershipPage.qml:126 app/TicketPage.qml:102
+#: app/ProgramMembershipPage.qml:126 app/TicketPage.qml:103
 #, kde-format
 msgid "Valid from"
 msgstr ""
 
 #: app/HealthCertificateRecovery.qml:76 app/ProgramMembershipEditor.qml:111
-#: app/ProgramMembershipPage.qml:131 app/TicketPage.qml:108
+#: app/ProgramMembershipPage.qml:131 app/TicketPage.qml:109
 #, kde-format
 msgid "Valid until"
 msgstr ""
@@ -1987,7 +1992,9 @@ msgid "To:"
 msgstr ""
 
 #: app/JourneyRequestPage.qml:140
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Swap departure and arrival"
+msgctxt "departure and arrival stops"
 msgid "Swap departure and arrival"
 msgstr "交换离开和抵达"
 
@@ -2161,7 +2168,7 @@ msgstr[0] "%1 次换乘"
 msgid "Click to extend"
 msgstr ""
 
-#: app/livedatamanager.cpp:786
+#: app/livedatamanager.cpp:797
 #, kde-format
 msgid "Itinerary change"
 msgstr "行程更变"
@@ -3094,7 +3101,7 @@ msgstr "折扣计划信息"
 
 #: app/ProgramMembershipCard.qml:40 app/ProgramMembershipEditor.qml:90
 #: app/ProgramMembershipEditorCard.qml:61 app/ProgramMembershipPage.qml:104
-#: app/TicketPage.qml:114
+#: app/TicketPage.qml:115
 #, kde-format
 msgid "Number"
 msgstr ""
@@ -3155,11 +3162,9 @@ msgid "Program Membership"
 msgstr ""
 
 #: app/ProgramMembershipPage.qml:56
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Add Program Membership"
+#, kde-format
 msgid "Export Program Membership"
-msgstr "添加程序成员资格"
+msgstr ""
 
 #: app/ProgramMembershipPage.qml:155
 #, kde-format
@@ -3171,17 +3176,17 @@ msgstr "显示通行证"
 msgid "Documents and Tickets"
 msgstr ""
 
-#: app/reservationhelper.cpp:133
+#: app/reservationhelper.cpp:137
 #, kde-format
 msgid "Flight from %1 to %2"
 msgstr "从 %1 飞往 %2 的航班"
 
-#: app/reservationhelper.cpp:136
+#: app/reservationhelper.cpp:140
 #, kde-format
 msgid "Train from %1 to %2"
 msgstr "从 %1 驶向 %2 的火车"
 
-#: app/reservationhelper.cpp:139
+#: app/reservationhelper.cpp:143
 #, kde-format
 msgid "Bus from %1 to %2"
 msgstr "从 %2 开往 %1 的公交车"
@@ -3683,7 +3688,7 @@ msgstr ""
 msgid "Edit Ticket"
 msgstr ""
 
-#: app/TicketEditor.qml:58 app/TicketPage.qml:17 app/TicketPage.qml:91
+#: app/TicketEditor.qml:58 app/TicketPage.qml:18 app/TicketPage.qml:92
 #, kde-format
 msgid "Ticket"
 msgstr ""
@@ -3698,23 +3703,22 @@ msgstr ""
 msgid "Ticket name must not be empty."
 msgstr ""
 
-#: app/TicketPage.qml:39
+#: app/TicketPage.qml:40
 #, kde-format
 msgid "Delete Ticket"
 msgstr ""
 
-#: app/TicketPage.qml:40
+#: app/TicketPage.qml:41
 #, kde-format
 msgid "Do you really want to delete this ticket?"
 msgstr ""
 
-#: app/TicketPage.qml:59
-#, fuzzy, kde-format
-#| msgid "Export Trip"
+#: app/TicketPage.qml:60
+#, kde-format
 msgid "Export Ticket"
-msgstr "导出行程"
+msgstr ""
 
-#: app/TicketPage.qml:120
+#: app/TicketPage.qml:121
 #, kde-format
 msgid "Class"
 msgstr ""
@@ -4179,11 +4183,6 @@ msgstr "今日无行程计划。"
 #, kde-format
 msgid "Cost"
 msgstr "费用"
-
-#: app/TripGroupPage.qml:627
-#, kde-format
-msgid "Check for Updates"
-msgstr "检查更新"
 
 #: app/TripGroupPage.qml:636
 #, kde-format

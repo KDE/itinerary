@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-03 06:56+0000\n"
+"POT-Creation-Date: 2025-07-05 00:43+0000\n"
 "PO-Revision-Date: 2025-02-27 20:24-0300\n"
 "Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -97,7 +97,7 @@ msgstr "Recursos do extrator:"
 msgid "Show Boarding Pass"
 msgstr "Mostrar cartão de embarque"
 
-#: app/ActionsCard.qml:33 app/TicketPage.qml:148
+#: app/ActionsCard.qml:33 app/TicketPage.qml:149
 #, kde-format
 msgid "Show Ticket"
 msgstr "Ingresso de show"
@@ -113,7 +113,7 @@ msgid "Add transfer after"
 msgstr "Adicionar translado depois"
 
 #: app/ActionsCard.qml:57 app/ProgramMembershipPage.qml:169
-#: app/TicketPage.qml:164
+#: app/TicketPage.qml:176
 #, kde-format
 msgid "Edit"
 msgstr "Editar"
@@ -125,17 +125,17 @@ msgid "Add to calendar…"
 msgstr "Adicionar ao calendário..."
 
 #: app/ActionsCard.qml:74 app/ProgramMembershipPage.qml:182
-#: app/TicketPage.qml:179 app/TripGroupPage.qml:671
+#: app/TicketPage.qml:191 app/TripGroupPage.qml:671
 #, fuzzy, kde-format
 #| msgid "Export..."
 msgid "Export…"
 msgstr "Exportar..."
 
 #: app/ActionsCard.qml:79 app/ActionsCard.qml:125 app/DocumentsCard.qml:87
-#: app/GenericPkPassPage.qml:42 app/GenericPkPassPage.qml:63
+#: app/GenericPkPassPage.qml:43 app/GenericPkPassPage.qml:71
 #: app/HealthCertificatePage.qml:49 app/HealthCertificatePage.qml:63
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:188
-#: app/TicketPage.qml:47 app/TicketPage.qml:185 app/TripGroupPage.qml:247
+#: app/TicketPage.qml:48 app/TicketPage.qml:197 app/TripGroupPage.qml:247
 #, kde-format
 msgid "Delete"
 msgstr "Excluir"
@@ -157,7 +157,7 @@ msgid "Export Reservation"
 msgstr "Importar reserva"
 
 #: app/ActionsCard.qml:147 app/ProgramMembershipPage.qml:147
-#: app/TicketPage.qml:140 app/TripGroupPage.qml:621
+#: app/TicketPage.qml:141 app/TripGroupPage.qml:621
 #, fuzzy, kde-format
 #| msgid "Application"
 msgid "Actions"
@@ -511,6 +511,12 @@ msgstr "Hora de chegada:"
 msgid "Alternatives"
 msgstr "Alternativas"
 
+#: app/BoatPage.qml:134 app/BusPage.qml:218 app/JourneySectionPage.qml:27
+#: app/TrainPage.qml:367
+#, kde-format
+msgid "Journey Details"
+msgstr "Detalhes da viagem"
+
 #: app/BookingCard.qml:24
 #, kde-format
 msgid "Booking"
@@ -733,11 +739,6 @@ msgstr "Plataforma:"
 msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "Chegada"
-
-#: app/BusPage.qml:218 app/JourneySectionPage.qml:27 app/TrainPage.qml:367
-#, kde-format
-msgid "Journey Details"
-msgstr "Detalhes da viagem"
 
 #: app/calendarhelper.cpp:28
 #, kde-format
@@ -1519,31 +1520,37 @@ msgstr ""
 msgid "Not a valid number."
 msgstr ""
 
-#: app/GenericPkPassPage.qml:20
+#: app/GenericPkPassPage.qml:21
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Show Names"
 msgid "Save Pass"
 msgstr "Exibir nomes"
 
-#: app/GenericPkPassPage.qml:21
+#: app/GenericPkPassPage.qml:22
 #, kde-format
 msgid "Apple Wallet pass (*.pkpass)"
 msgstr ""
 
-#: app/GenericPkPassPage.qml:36 app/ProgramMembershipPage.qml:38
+#: app/GenericPkPassPage.qml:37 app/ProgramMembershipPage.qml:38
 #, fuzzy, kde-format
 #| msgid "Delete"
 msgid "Delete Pass"
 msgstr "Excluir"
 
-#: app/GenericPkPassPage.qml:37 app/ProgramMembershipPage.qml:39
+#: app/GenericPkPassPage.qml:38 app/ProgramMembershipPage.qml:39
 #, fuzzy, kde-format
 #| msgid "Do you really want to delete this trip?"
 msgid "Do you really want to delete this pass?"
 msgstr "Deseja realmente excluir esta viagem?"
 
-#: app/GenericPkPassPage.qml:55
+#: app/GenericPkPassPage.qml:55 app/TicketPage.qml:165
+#: app/TripGroupPage.qml:627
+#, kde-format
+msgid "Check for Updates"
+msgstr "Procurar atualizações"
+
+#: app/GenericPkPassPage.qml:63
 #, kde-format
 msgid "Save As…"
 msgstr ""
@@ -1568,7 +1575,7 @@ msgstr "Trem %1 de %2 para %3"
 msgid "Bus %1 from %2 to %3"
 msgstr "Ônibus %1 de %2 para %3"
 
-#: app/gpxexport.cpp:61 app/reservationhelper.cpp:142
+#: app/gpxexport.cpp:61 app/reservationhelper.cpp:146
 #, kde-format
 msgid "Ferry from %1 to %2"
 msgstr "Balsa de %1 para %2"
@@ -1715,7 +1722,7 @@ msgstr "Pessoa"
 #: app/HealthCertificateRecovery.qml:34 app/HealthCertificateTest.qml:35
 #: app/HealthCertificateVaccination.qml:38 app/ProgramMembershipCard.qml:31
 #: app/ProgramMembershipEditor.qml:70 app/ProgramMembershipEditorCard.qml:54
-#: app/TicketPage.qml:96
+#: app/TicketPage.qml:97
 #, fuzzy, kde-format
 #| msgid "Name:"
 msgid "Name"
@@ -1741,14 +1748,14 @@ msgid "Disease"
 msgstr "Doença:"
 
 #: app/HealthCertificateRecovery.qml:69 app/ProgramMembershipEditor.qml:97
-#: app/ProgramMembershipPage.qml:126 app/TicketPage.qml:102
+#: app/ProgramMembershipPage.qml:126 app/TicketPage.qml:103
 #, fuzzy, kde-format
 #| msgid "Valid from:"
 msgid "Valid from"
 msgstr "Válido a partir de:"
 
 #: app/HealthCertificateRecovery.qml:76 app/ProgramMembershipEditor.qml:111
-#: app/ProgramMembershipPage.qml:131 app/TicketPage.qml:108
+#: app/ProgramMembershipPage.qml:131 app/TicketPage.qml:109
 #, fuzzy, kde-format
 #| msgid "Valid until:"
 msgid "Valid until"
@@ -2167,6 +2174,7 @@ msgstr "Para:"
 
 #: app/JourneyRequestPage.qml:140
 #, kde-format
+msgctxt "departure and arrival stops"
 msgid "Swap departure and arrival"
 msgstr ""
 
@@ -2356,7 +2364,7 @@ msgstr[1] "%1 alterações"
 msgid "Click to extend"
 msgstr ""
 
-#: app/livedatamanager.cpp:786
+#: app/livedatamanager.cpp:797
 #, kde-format
 msgid "Itinerary change"
 msgstr "Alteração no itinerário"
@@ -3331,7 +3339,7 @@ msgstr "Programa"
 
 #: app/ProgramMembershipCard.qml:40 app/ProgramMembershipEditor.qml:90
 #: app/ProgramMembershipEditorCard.qml:61 app/ProgramMembershipPage.qml:104
-#: app/TicketPage.qml:114
+#: app/TicketPage.qml:115
 #, kde-format
 msgid "Number"
 msgstr "Número"
@@ -3416,19 +3424,19 @@ msgstr "Exibir nomes"
 msgid "Documents and Tickets"
 msgstr "Ingresso do evento"
 
-#: app/reservationhelper.cpp:133
+#: app/reservationhelper.cpp:137
 #, fuzzy, kde-format
 #| msgid "Flight %1 from %2 to %3"
 msgid "Flight from %1 to %2"
 msgstr "Voo %1 de %2 para %3"
 
-#: app/reservationhelper.cpp:136
+#: app/reservationhelper.cpp:140
 #, fuzzy, kde-format
 #| msgid "Train %1 from %2 to %3"
 msgid "Train from %1 to %2"
 msgstr "Trem %1 de %2 para %3"
 
-#: app/reservationhelper.cpp:139
+#: app/reservationhelper.cpp:143
 #, fuzzy, kde-format
 #| msgid "Bus %1 from %2 to %3"
 msgid "Bus from %1 to %2"
@@ -3958,7 +3966,7 @@ msgstr "Mostrar"
 msgid "Edit Ticket"
 msgstr "Ingresso do evento"
 
-#: app/TicketEditor.qml:58 app/TicketPage.qml:17 app/TicketPage.qml:91
+#: app/TicketEditor.qml:58 app/TicketPage.qml:18 app/TicketPage.qml:92
 #, kde-format
 msgid "Ticket"
 msgstr "Ingresso"
@@ -3974,23 +3982,23 @@ msgstr "Número da passagem:"
 msgid "Ticket name must not be empty."
 msgstr ""
 
-#: app/TicketPage.qml:39
+#: app/TicketPage.qml:40
 #, kde-format
 msgid "Delete Ticket"
 msgstr "Excluir ingresso"
 
-#: app/TicketPage.qml:40
+#: app/TicketPage.qml:41
 #, kde-format
 msgid "Do you really want to delete this ticket?"
 msgstr "Deseja realmente excluir este ingresso?"
 
-#: app/TicketPage.qml:59
+#: app/TicketPage.qml:60
 #, fuzzy, kde-format
 #| msgid "Boat Ticket"
 msgid "Export Ticket"
 msgstr "Passagem de barco"
 
-#: app/TicketPage.qml:120
+#: app/TicketPage.qml:121
 #, fuzzy, kde-format
 #| msgid "Class:"
 msgid "Class"
@@ -4501,11 +4509,6 @@ msgstr "Nada no itinerário para hoje."
 #, kde-format
 msgid "Cost"
 msgstr ""
-
-#: app/TripGroupPage.qml:627
-#, kde-format
-msgid "Check for Updates"
-msgstr "Procurar atualizações"
 
 #: app/TripGroupPage.qml:636
 #, fuzzy, kde-format

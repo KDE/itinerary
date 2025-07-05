@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-03 06:56+0000\n"
+"POT-Creation-Date: 2025-07-05 00:43+0000\n"
 "PO-Revision-Date: 2020-05-04 10:51+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -94,7 +94,7 @@ msgstr "Ekstraktori võimed:"
 msgid "Show Boarding Pass"
 msgstr "Näita pardakaarti"
 
-#: app/ActionsCard.qml:33 app/TicketPage.qml:148
+#: app/ActionsCard.qml:33 app/TicketPage.qml:149
 #, fuzzy, kde-format
 #| msgid "Bus Ticket"
 msgid "Show Ticket"
@@ -111,7 +111,7 @@ msgid "Add transfer after"
 msgstr "Lisa järgnev transfeer"
 
 #: app/ActionsCard.qml:57 app/ProgramMembershipPage.qml:169
-#: app/TicketPage.qml:164
+#: app/TicketPage.qml:176
 #, kde-format
 msgid "Edit"
 msgstr "Muuda"
@@ -123,17 +123,17 @@ msgid "Add to calendar…"
 msgstr "Lisa dokument ..."
 
 #: app/ActionsCard.qml:74 app/ProgramMembershipPage.qml:182
-#: app/TicketPage.qml:179 app/TripGroupPage.qml:671
+#: app/TicketPage.qml:191 app/TripGroupPage.qml:671
 #, fuzzy, kde-format
 #| msgid "Export..."
 msgid "Export…"
 msgstr "Ekspordi ..."
 
 #: app/ActionsCard.qml:79 app/ActionsCard.qml:125 app/DocumentsCard.qml:87
-#: app/GenericPkPassPage.qml:42 app/GenericPkPassPage.qml:63
+#: app/GenericPkPassPage.qml:43 app/GenericPkPassPage.qml:71
 #: app/HealthCertificatePage.qml:49 app/HealthCertificatePage.qml:63
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:188
-#: app/TicketPage.qml:47 app/TicketPage.qml:185 app/TripGroupPage.qml:247
+#: app/TicketPage.qml:48 app/TicketPage.qml:197 app/TripGroupPage.qml:247
 #, kde-format
 msgid "Delete"
 msgstr "Kustuta"
@@ -156,7 +156,7 @@ msgid "Export Reservation"
 msgstr "Reserveeringu import"
 
 #: app/ActionsCard.qml:147 app/ProgramMembershipPage.qml:147
-#: app/TicketPage.qml:140 app/TripGroupPage.qml:621
+#: app/TicketPage.qml:141 app/TripGroupPage.qml:621
 #, fuzzy, kde-format
 #| msgid "Application"
 msgid "Actions"
@@ -512,6 +512,12 @@ msgstr "Saabumisaeg:"
 msgid "Alternatives"
 msgstr "Alternatiivid"
 
+#: app/BoatPage.qml:134 app/BusPage.qml:218 app/JourneySectionPage.qml:27
+#: app/TrainPage.qml:367
+#, kde-format
+msgid "Journey Details"
+msgstr "Teekonna üksikasjad"
+
 #: app/BookingCard.qml:24
 #, kde-format
 msgid "Booking"
@@ -732,11 +738,6 @@ msgstr "Platvorm:"
 msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "Saabumine"
-
-#: app/BusPage.qml:218 app/JourneySectionPage.qml:27 app/TrainPage.qml:367
-#, kde-format
-msgid "Journey Details"
-msgstr "Teekonna üksikasjad"
 
 #: app/calendarhelper.cpp:28
 #, fuzzy, kde-format
@@ -1538,30 +1539,36 @@ msgstr ""
 msgid "Not a valid number."
 msgstr ""
 
-#: app/GenericPkPassPage.qml:20
+#: app/GenericPkPassPage.qml:21
 #, fuzzy, kde-format
 #| msgid "Show Boarding Pass"
 msgid "Save Pass"
 msgstr "Näita pardakaarti"
 
-#: app/GenericPkPassPage.qml:21
+#: app/GenericPkPassPage.qml:22
 #, kde-format
 msgid "Apple Wallet pass (*.pkpass)"
 msgstr ""
 
-#: app/GenericPkPassPage.qml:36 app/ProgramMembershipPage.qml:38
+#: app/GenericPkPassPage.qml:37 app/ProgramMembershipPage.qml:38
 #, fuzzy, kde-format
 #| msgid "Delete"
 msgid "Delete Pass"
 msgstr "Kustuta"
 
-#: app/GenericPkPassPage.qml:37 app/ProgramMembershipPage.qml:39
+#: app/GenericPkPassPage.qml:38 app/ProgramMembershipPage.qml:39
 #, fuzzy, kde-format
 #| msgid "Do you really want to delete this event?"
 msgid "Do you really want to delete this pass?"
 msgstr "Kas tõesti kustutada see sündmus?"
 
-#: app/GenericPkPassPage.qml:55
+#: app/GenericPkPassPage.qml:55 app/TicketPage.qml:165
+#: app/TripGroupPage.qml:627
+#, kde-format
+msgid "Check for Updates"
+msgstr "Kontrolli uuendusi"
+
+#: app/GenericPkPassPage.qml:63
 #, kde-format
 msgid "Save As…"
 msgstr ""
@@ -1588,7 +1595,7 @@ msgstr ""
 msgid "Bus %1 from %2 to %3"
 msgstr "Asukohast %1 asukohta %2 (%3)"
 
-#: app/gpxexport.cpp:61 app/reservationhelper.cpp:142
+#: app/gpxexport.cpp:61 app/reservationhelper.cpp:146
 #, fuzzy, kde-format
 #| msgctxt "flight departure, %1 is airport, %2 is time"
 #| msgid "Departure from %1: %2"
@@ -1745,7 +1752,7 @@ msgstr ""
 #: app/HealthCertificateRecovery.qml:34 app/HealthCertificateTest.qml:35
 #: app/HealthCertificateVaccination.qml:38 app/ProgramMembershipCard.qml:31
 #: app/ProgramMembershipEditor.qml:70 app/ProgramMembershipEditorCard.qml:54
-#: app/TicketPage.qml:96
+#: app/TicketPage.qml:97
 #, fuzzy, kde-format
 #| msgid "Name:"
 msgid "Name"
@@ -1769,13 +1776,13 @@ msgid "Disease"
 msgstr ""
 
 #: app/HealthCertificateRecovery.qml:69 app/ProgramMembershipEditor.qml:97
-#: app/ProgramMembershipPage.qml:126 app/TicketPage.qml:102
+#: app/ProgramMembershipPage.qml:126 app/TicketPage.qml:103
 #, kde-format
 msgid "Valid from"
 msgstr ""
 
 #: app/HealthCertificateRecovery.qml:76 app/ProgramMembershipEditor.qml:111
-#: app/ProgramMembershipPage.qml:131 app/TicketPage.qml:108
+#: app/ProgramMembershipPage.qml:131 app/TicketPage.qml:109
 #, kde-format
 msgid "Valid until"
 msgstr ""
@@ -2187,6 +2194,7 @@ msgstr "Sihtkohta:"
 
 #: app/JourneyRequestPage.qml:140
 #, kde-format
+msgctxt "departure and arrival stops"
 msgid "Swap departure and arrival"
 msgstr ""
 
@@ -2374,7 +2382,7 @@ msgstr[1] "%1 ümberistumist"
 msgid "Click to extend"
 msgstr ""
 
-#: app/livedatamanager.cpp:786
+#: app/livedatamanager.cpp:797
 #, kde-format
 msgid "Itinerary change"
 msgstr "Itineraari muutus"
@@ -3345,7 +3353,7 @@ msgstr ""
 
 #: app/ProgramMembershipCard.qml:40 app/ProgramMembershipEditor.qml:90
 #: app/ProgramMembershipEditorCard.qml:61 app/ProgramMembershipPage.qml:104
-#: app/TicketPage.qml:114
+#: app/TicketPage.qml:115
 #, fuzzy, kde-format
 #| msgid "Sequence Number:"
 msgid "Number"
@@ -3428,20 +3436,20 @@ msgstr "Näita pardakaarti"
 msgid "Documents and Tickets"
 msgstr "Sündmuse pilet"
 
-#: app/reservationhelper.cpp:133
+#: app/reservationhelper.cpp:137
 #, fuzzy, kde-format
 #| msgid "Following departure %1 from %2"
 msgid "Flight from %1 to %2"
 msgstr "Järgmine %1 väljumine kell %2"
 
-#: app/reservationhelper.cpp:136
+#: app/reservationhelper.cpp:140
 #, fuzzy, kde-format
 #| msgctxt "flight departure, %1 is airport, %2 is time"
 #| msgid "Departure from %1: %2"
 msgid "Train from %1 to %2"
 msgstr "Väljumine lennujaamast %1: %2"
 
-#: app/reservationhelper.cpp:139
+#: app/reservationhelper.cpp:143
 #, fuzzy, kde-format
 #| msgid "%1 to %2 (%3)"
 msgid "Bus from %1 to %2"
@@ -3966,7 +3974,7 @@ msgstr ""
 msgid "Edit Ticket"
 msgstr "Sündmuse pilet"
 
-#: app/TicketEditor.qml:58 app/TicketPage.qml:17 app/TicketPage.qml:91
+#: app/TicketEditor.qml:58 app/TicketPage.qml:18 app/TicketPage.qml:92
 #, fuzzy, kde-format
 #| msgid "Bus Ticket"
 msgid "Ticket"
@@ -3983,25 +3991,25 @@ msgstr "Järjekorranumber:"
 msgid "Ticket name must not be empty."
 msgstr ""
 
-#: app/TicketPage.qml:39
+#: app/TicketPage.qml:40
 #, fuzzy, kde-format
 #| msgid "Event Ticket"
 msgid "Delete Ticket"
 msgstr "Sündmuse pilet"
 
-#: app/TicketPage.qml:40
+#: app/TicketPage.qml:41
 #, fuzzy, kde-format
 #| msgid "Do you really want to delete this event?"
 msgid "Do you really want to delete this ticket?"
 msgstr "Kas tõesti kustutada see sündmus?"
 
-#: app/TicketPage.qml:59
+#: app/TicketPage.qml:60
 #, fuzzy, kde-format
 #| msgid "Bus Ticket"
 msgid "Export Ticket"
 msgstr "Bussipilet"
 
-#: app/TicketPage.qml:120
+#: app/TicketPage.qml:121
 #, fuzzy, kde-format
 #| msgid "Class:"
 msgid "Class"
@@ -4517,11 +4525,6 @@ msgstr "Tänaseks ei ole itineraaris midagi."
 #, kde-format
 msgid "Cost"
 msgstr ""
-
-#: app/TripGroupPage.qml:627
-#, kde-format
-msgid "Check for Updates"
-msgstr "Kontrolli uuendusi"
 
 #: app/TripGroupPage.qml:636
 #, fuzzy, kde-format
