@@ -7,6 +7,7 @@
 
 #include "documentmanager.h"
 #include "logging.h"
+#include "matrixsynccontent.h"
 #include "reservationmanager.h"
 #include "tripgroup.h"
 #include "tripgroupmanager.h"
@@ -31,7 +32,6 @@ using namespace Qt::Literals;
 
 constexpr inline auto MatrixRoomTypeKey = "type"_L1;
 constexpr inline auto ItineraryRoomType = "org.kde.itinerary.tripSync"_L1;
-constexpr inline auto ReservationEventType = "org.kde.itinerary.reservation"_L1;
 constexpr inline auto DocumentEventType = "org.kde.itinerary.document"_L1;
 
 MatrixSyncManager::MatrixSyncManager(QObject *parent)
@@ -262,10 +262,10 @@ void MatrixSyncManager::roomEvent(Quotient::Room *room, const Quotient::RoomEven
         return;
     }
 
-    if (event->matrixType() == ReservationEventType) {
+    if (event->matrixType() == MatrixSyncContent::ReservationEventType) {
         QScopedValueRollback recursionLock(m_recursionLock, true);
         TripGroupingBlocker blocker(m_tripGroupMgr);
-        const auto resId = readBatchFromStateEvent(static_cast<const Quotient::StateEvent*>(event));
+        const auto resId = MatrixSyncContent::readBatch(static_cast<const Quotient::StateEvent*>(event), m_tripGroupMgr->reservationManager());
 
         auto tg = m_tripGroupMgr->tripGroup(it.value());
         if (!resId.isEmpty() && !tg.elements().contains(resId)) {
@@ -350,7 +350,7 @@ void MatrixSyncManager::tripGroupChanged(const QString &tgId)
     for (const auto &resId : elems) {
         writeBatchToRoom(resId, room);
     }
-    const auto states = room->currentState().eventsOfType(ReservationEventType);
+    const auto states = room->currentState().eventsOfType(MatrixSyncContent::ReservationEventType);
     for (auto event : states) {
         if (!elems.contains(event->stateKey())) {
             writeBatchDeletionToRoom(event->stateKey(), room);
@@ -398,9 +398,9 @@ void MatrixSyncManager::createTripGroupFromRoom(Quotient::Room *room)
 
     // load existing content
     QStringList elems;
-    const auto states = room->currentState().eventsOfType(ReservationEventType);
+    const auto states = room->currentState().eventsOfType(MatrixSyncContent::ReservationEventType);
     for (auto event : states) {
-        auto resId = readBatchFromStateEvent(event);
+        auto resId = MatrixSyncContent::readBatch(event, m_tripGroupMgr->reservationManager());
         if (!resId.isEmpty()) {
             elems.push_back(std::move(resId));
         }
@@ -416,30 +416,6 @@ void MatrixSyncManager::createTripGroupFromRoom(Quotient::Room *room)
     qCDebug(Log)  << "Creating trip group from Matrix" << tg.name() << room->id();
     const auto tgId = m_tripGroupMgr->createGroup(tg);
     m_roomToTripGroupMap.insert(room->id(), tgId);
-}
-
-QString MatrixSyncManager::readBatchFromStateEvent(const Quotient::StateEvent *event)
-{
-    const auto resJson = event->contentJson()["content"_L1].toString().toUtf8();
-    if (resJson.isEmpty()) {
-        // deleted
-        m_tripGroupMgr->reservationManager()->removeBatch(event->stateKey());
-        return {};
-    }
-
-    const auto res = KItinerary::JsonLdDocument::fromJsonSingular(QJsonDocument::fromJson(resJson).object());
-    // TODO batch vs reservation separation!
-    auto resId = event->stateKey();
-    if (m_tripGroupMgr->reservationManager()->hasBatch(resId)) {
-        qCDebug(Log) << "updating reservation" << resId;
-        m_tripGroupMgr->reservationManager()->updateReservation(resId, res);
-        qCDebug(Log) << "updated reservation" << resId;
-    } else {
-        qCDebug(Log) << "creating reservation" << resId;
-        resId = m_tripGroupMgr->reservationManager()->addReservation(res, resId);
-        qCDebug(Log) << "created reservation" << resId;
-    }
-    return resId;
 }
 
 void MatrixSyncManager::readDocumentFromStateEvent(const Quotient::StateEvent *event)
@@ -488,12 +464,8 @@ void MatrixSyncManager::writeBatchToRoom(const QString &batchId, Quotient::Room 
         }
     }
 
-    // TODO write the full batch!
-    const auto res = m_tripGroupMgr->reservationManager()->reservation(batchId);
-    Quotient::StateEvent state(ReservationEventType, batchId, QJsonObject({
-        {"content"_L1, QString::fromUtf8(QJsonDocument(KItinerary::JsonLdDocument::toJson(res)).toJson(QJsonDocument::Compact))}
-    }));
-    room->setState(state); // TODO error handling?
+    const auto state = MatrixSyncContent::stateEventForBatch(batchId, m_tripGroupMgr->reservationManager());
+    room->setState(*state); // TODO error handling?
     qCDebug(Log) << "Set state event for" << batchId << room->id();
 }
 
@@ -503,8 +475,8 @@ void MatrixSyncManager::writeBatchDeletionToRoom(const QString &batchId, Quotien
         return;
     }
 
-    Quotient::StateEvent state(ReservationEventType, batchId, {});
-    room->setState(state); // TODO error handling?
+    const auto state = MatrixSyncContent::stateEventForDeletedBatch(batchId);
+    room->setState(*state); // TODO error handling?
     qCDebug(Log) << "Removed reservation" << batchId << room->id();
 }
 
