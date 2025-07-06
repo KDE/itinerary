@@ -5,19 +5,19 @@
 
 #include "matrixsynccontent.h"
 
+#include "livedatamanager.h"
 #include "logging.h"
-
-#if HAVE_MATRIX
 #include "reservationmanager.h"
 
 #include <KItinerary/JsonLdDocument>
 
+#if HAVE_MATRIX
 #include <Quotient/events/stateevent.h>
 
 #include <QJsonDocument>
 #include <QJsonObject>
 
-constexpr inline auto BatchContentKey = "content"_L1;
+constexpr inline auto ContentKey = "content"_L1;
 
 std::unique_ptr<Quotient::StateEvent> MatrixSyncContent::stateEventForBatch(const QString &batchId, const ReservationManager *resMgr)
 {
@@ -28,7 +28,7 @@ std::unique_ptr<Quotient::StateEvent> MatrixSyncContent::stateEventForBatch(cons
     }
 
     auto state = std::make_unique<Quotient::StateEvent>(MatrixSyncContent::ReservationEventType, batchId, QJsonObject({
-        {BatchContentKey, QString::fromUtf8(QJsonDocument(content).toJson(QJsonDocument::Compact))}
+        {ContentKey, QString::fromUtf8(QJsonDocument(content).toJson(QJsonDocument::Compact))}
     }));
 
     return state;
@@ -42,7 +42,7 @@ std::unique_ptr<Quotient::StateEvent> MatrixSyncContent::stateEventForDeletedBat
 QString MatrixSyncContent::readBatch(const Quotient::StateEvent *event, ReservationManager *resMgr)
 {
     auto batchId = event->stateKey();
-    const auto content = QJsonDocument::fromJson(event->contentJson()[BatchContentKey].toString().toUtf8()).object();
+    const auto content = QJsonDocument::fromJson(event->contentJson().value(ContentKey).toString().toUtf8()).object();
     if (content.isEmpty()) {
         // deleted
         resMgr->removeBatch(batchId);
@@ -59,7 +59,6 @@ QString MatrixSyncContent::readBatch(const Quotient::StateEvent *event, Reservat
         changes.emplace_back(it.key(), KItinerary::JsonLdDocument::fromJsonSingular(it.value().toObject()));
     }
 
-
     if (resMgr->hasBatch(batchId)) {
         qCDebug(Log) << "updating reservation" << batchId;
         resMgr->updateBatch(changes);
@@ -74,6 +73,25 @@ QString MatrixSyncContent::readBatch(const Quotient::StateEvent *event, Reservat
     }
 
     return batchId;
+}
+
+std::unique_ptr<Quotient::StateEvent> MatrixSyncContent::stateEventForLiveData(const QString &batchId)
+{
+    const auto ld = LiveData::load(batchId);
+    auto state = std::make_unique<Quotient::StateEvent>(MatrixSyncContent::LiveDataEventType, batchId, QJsonObject({
+        {ContentKey, QString::fromUtf8(QJsonDocument(LiveData::toJson(ld)).toJson(QJsonDocument::Compact))}
+    }));
+    return state;
+}
+
+void MatrixSyncContent::readLiveData(const Quotient::StateEvent *event, LiveDataManager *ldm)
+{
+    const auto batchId = event->stateKey();
+    const auto content = QJsonDocument::fromJson(event->contentJson().value(ContentKey).toString().toUtf8()).object();
+
+    auto ld = LiveData::fromJson(content);
+    ld.store(batchId);
+    ldm->importData(batchId, std::move(ld));
 }
 
 #endif
