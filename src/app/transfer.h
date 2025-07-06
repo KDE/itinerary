@@ -106,6 +106,11 @@ public:
     /** Unique identifier usable naming the file to store this into. */
     [[nodiscard]] QString identifier() const;
     [[nodiscard]] static QString identifier(const QString &resId, Transfer::Alignment alignment);
+    struct Identifier {
+        QString id;
+        Transfer::Alignment alignment;
+    };
+    [[nodiscard]] static Identifier parseIdentifier(QStringView id);
 
     /** Check if transfers are considered identical
      *  in the sense that no update is required.
