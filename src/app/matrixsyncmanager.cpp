@@ -6,6 +6,7 @@
 #include "matrixsyncmanager.h"
 
 #include "documentmanager.h"
+#include "livedatamanager.h"
 #include "logging.h"
 #include "matrixsynccontent.h"
 #include "reservationmanager.h"
@@ -57,6 +58,12 @@ void MatrixSyncManager::setMatrixManager(MatrixManager *mxMgr)
 void MatrixSyncManager::setDocumentManager(DocumentManager *docMgr)
 {
     m_docMgr = docMgr;
+    init();
+}
+
+void MatrixSyncManager::setLiveDataManager(LiveDataManager *ldm)
+{
+    m_ldm = ldm;
     init();
 }
 
@@ -126,7 +133,7 @@ void MatrixSyncManager::syncTripGroup(const QString &tgId)
 #if HAVE_MATRIX
 void MatrixSyncManager::init()
 {
-    if (!m_matrixMgr || !m_tripGroupMgr || !m_docMgr) {
+    if (!m_matrixMgr || !m_tripGroupMgr || !m_docMgr || !m_ldm) {
         return;
     }
 
@@ -148,6 +155,8 @@ void MatrixSyncManager::init()
         initConnection(m_matrixMgr->connection());
     }
     connect(m_matrixMgr, &MatrixManager::connectionChanged, this, [this]() { initConnection(m_matrixMgr->connection()); });
+
+    connect(m_ldm, &LiveDataManager::journeyUpdated, this, &MatrixSyncManager::liveDataChanged);
 }
 
 void MatrixSyncManager::initConnection(Quotient::Connection *connection)
@@ -262,10 +271,11 @@ void MatrixSyncManager::roomEvent(Quotient::Room *room, const Quotient::RoomEven
         return;
     }
 
+    const auto state = static_cast<const Quotient::StateEvent*>(event);
     if (event->matrixType() == MatrixSyncContent::ReservationEventType) {
         QScopedValueRollback recursionLock(m_recursionLock, true);
         TripGroupingBlocker blocker(m_tripGroupMgr);
-        const auto resId = MatrixSyncContent::readBatch(static_cast<const Quotient::StateEvent*>(event), m_tripGroupMgr->reservationManager());
+        const auto resId = MatrixSyncContent::readBatch(state, m_tripGroupMgr->reservationManager());
 
         auto tg = m_tripGroupMgr->tripGroup(it.value());
         if (!resId.isEmpty() && !tg.elements().contains(resId)) {
@@ -276,7 +286,11 @@ void MatrixSyncManager::roomEvent(Quotient::Room *room, const Quotient::RoomEven
     }
 
     if (event->matrixType() == DocumentEventType) {
-        readDocumentFromStateEvent(static_cast<const Quotient::StateEvent*>(event));
+        readDocumentFromStateEvent(state);
+    }
+
+    if (event->matrixType() == MatrixSyncContent::LiveDataEventType) {
+        MatrixSyncContent::readLiveData(state, m_ldm);
     }
 }
 
@@ -385,6 +399,27 @@ void MatrixSyncManager::tripGroupRemoved(const QString &tgId)
     m_roomToTripGroupMap.erase(it);
 }
 
+void MatrixSyncManager::liveDataChanged(const QString &batchId)
+{
+    if (m_recursionLock) {
+        return;
+    }
+
+    const auto tg = m_tripGroupMgr->tripGroupForReservation(batchId);
+    if (tg.matrixRoomId().isEmpty()) {
+        return;
+    }
+
+    auto room = m_matrixMgr->connection()->room(tg.matrixRoomId());
+    if (!room) {
+        qCDebug(Log) << "room not found?" << tg.matrixRoomId();
+        return;
+    }
+
+    auto state = MatrixSyncContent::stateEventForLiveData(batchId);
+    room->setState(*state);
+}
+
 void MatrixSyncManager::createTripGroupFromRoom(Quotient::Room *room)
 {
     QScopedValueRollback recursionLock(m_recursionLock, true);
@@ -404,6 +439,10 @@ void MatrixSyncManager::createTripGroupFromRoom(Quotient::Room *room)
         if (!resId.isEmpty()) {
             elems.push_back(std::move(resId));
         }
+    }
+    const auto ldmStates = room->currentState().eventsOfType(MatrixSyncContent::LiveDataEventType);
+    for (auto event : ldmStates) {
+        MatrixSyncContent::readLiveData(event, m_ldm);
     }
 
     // create group
@@ -467,6 +506,11 @@ void MatrixSyncManager::writeBatchToRoom(const QString &batchId, Quotient::Room 
     const auto state = MatrixSyncContent::stateEventForBatch(batchId, m_tripGroupMgr->reservationManager());
     room->setState(*state); // TODO error handling?
     qCDebug(Log) << "Set state event for" << batchId << room->id();
+
+    if (m_ldm->journey(batchId).mode() != KPublicTransport::JourneySection::Invalid) {
+        const auto state = MatrixSyncContent::stateEventForLiveData(batchId);
+        room->setState(*state);
+    }
 }
 
 void MatrixSyncManager::writeBatchDeletionToRoom(const QString &batchId, Quotient::Room *room)

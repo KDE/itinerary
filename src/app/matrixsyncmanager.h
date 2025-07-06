@@ -13,6 +13,7 @@
 #include <QSet>
 
 class DocumentManager;
+class LiveDataManager;
 class MatrixManager;
 class TripGroupManager;
 
@@ -35,6 +36,7 @@ public:
     void setMatrixManager(MatrixManager *mxMgr);
     void setTripGroupManager(TripGroupManager *tripGroupMgr);
     void setDocumentManager(DocumentManager *docMgr);
+    void setLiveDataManager(LiveDataManager *ldm);
     void setAutoSyncTrips(bool autoSync);
 #endif
 
@@ -59,6 +61,8 @@ private:
     void tripGroupChanged(const QString &tgId);
     void tripGroupRemoved(const QString &tgId);
 
+    void liveDataChanged(const QString &batchId);
+
     void createTripGroupFromRoom(Quotient::Room *room);
     void readDocumentFromStateEvent(const Quotient::StateEvent *event);
 
@@ -69,6 +73,7 @@ private:
     MatrixManager *m_matrixMgr = nullptr;
     TripGroupManager *m_tripGroupMgr = nullptr;
     DocumentManager *m_docMgr = nullptr;
+    LiveDataManager *m_ldm = nullptr;
     // map Matrix room ids to trip groups
     QHash<QString, QString> m_roomToTripGroupMap;
     QSet<QString> m_pendingDocumentUploads;
