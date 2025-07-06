@@ -12,8 +12,10 @@
 
 #include <QString>
 
+class DocumentManager;
 class LiveDataManager;
 class MatrixSyncStateEvent;
+class PkPassManager;
 class ReservationManager;
 class TransferManager;
 
@@ -22,6 +24,7 @@ using namespace Qt::Literals;
 /** Matrix-based trip synchronization de/serialization methods. */
 namespace MatrixSyncContent
 {
+#if HAVE_MATRIX
     /** Create a state event for a given reservation batch. */
     [[nodiscard]] MatrixSyncStateEvent stateEventForBatch(const QString &batchId, const ReservationManager *resMgr);
     [[nodiscard]] MatrixSyncStateEvent stateEventForDeletedBatch(const QString &batchId);
@@ -40,6 +43,19 @@ namespace MatrixSyncContent
 
     /** Read transfer data from a state event. */
     void readTransfer(const MatrixSyncStateEvent &event, TransferManager *transferMgr);
+
+    /** Create a state event for an uploaded document. */
+    [[nodiscard]] MatrixSyncStateEvent stateEventForDocument(const QString &docId, const DocumentManager *docMgr);
+
+    /** Read document from state event. */
+    void readDocument(const MatrixSyncStateEvent &event, DocumentManager *docMgr);
+
+    /** Create a state event for an uploaded pkpass. */
+    [[nodiscard]] MatrixSyncStateEvent stateEventForPkPass(const QString &passId);
+
+    /** Read pkpass from state event. */
+    void readPkPass(const MatrixSyncStateEvent &event, PkPassManager *pkPassMgr);
+#endif
 }
 
 #endif
