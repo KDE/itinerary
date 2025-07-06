@@ -50,6 +50,9 @@ public:
     /** Raw pass file data, used for exporting. */
     [[nodiscard]] static QByteArray rawData(const QString &passId);
 
+    /** Path to the file containing the pass with id @p passId. */
+    [[nodiscard]] static QString passPath(const QString &passId);
+
 Q_SIGNALS:
     void passAdded(const QString &passId);
     void passUpdated(const QString &passId, const QStringList &changes);

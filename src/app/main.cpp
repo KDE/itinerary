@@ -469,6 +469,7 @@ int main(int argc, char **argv)
     matrixSyncManager.setDocumentManager(&docMgr);
     matrixSyncManager.setLiveDataManager(&liveDataMgr);
     matrixSyncManager.setTransferManager(&transferManager);
+    matrixSyncManager.setPkPassManager(&pkPassMgr);
     matrixSyncManager.setAutoSyncTrips(settings.matrixAutoSyncTrips());
     QObject::connect(&settings, &Settings::matrixAutoSyncTripsChanged, &matrixSyncManager, &MatrixSyncManager::setAutoSyncTrips);
 #endif
