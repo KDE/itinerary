@@ -142,7 +142,7 @@ ecm_add_qml_module(itinerary-app URI org.kde.itinerary NO_PLUGIN QML_FILES
     BusEditor.qml
     BusPage.qml
     CardPageTitle.qml
-    CalendarSelectionSheet.qml
+    CalendarSelectionDialog.qml
     CarRentalDelegate.qml
     CarRentalPage.qml
     ContactCard.qml
@@ -178,6 +178,7 @@ ecm_add_qml_module(itinerary-app URI org.kde.itinerary NO_PLUGIN QML_FILES
     HotelDelegate.qml
     HotelEditor.qml
     HotelPage.qml
+    ImportAction.qml
     ImportPage.qml
     IndoorMapGateSheet.qml
     IndoorMapInfoSheet.qml

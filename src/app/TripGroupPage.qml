@@ -145,10 +145,10 @@ Kirigami.ScrollablePage {
     }
 
     property list<QQC2.Action> addActions: [
-        Kirigami.Action {
-            text: i18nc("@action", "Import")
-            icon.name: "download-symbolic"
-            children: importActions
+        ImportAction {
+            id: importAction
+
+            pageStack: applicationWindow().pageStack
         },
         QQC2.Action {
             id: searchConnectionAction
@@ -256,6 +256,11 @@ Kirigami.ScrollablePage {
         headerContentItem: Kirigami.Heading {
             text: i18nc("@title:group", "Add to Trip")
         }
+
+        Component.onCompleted: if (!Kirigami.Settings.isMobile) {
+            displayMode = Components.ConvergentContextMenu.Dialog;
+        }
+        parent: root.QQC2.Overlay.overlay
 
         actions: root.addActions
     }
@@ -499,9 +504,11 @@ Kirigami.ScrollablePage {
             }
             FormCard.FormCard {
                 visible: root.isEmptyTripGroup
+
                 Repeater {
-                    model: importActions
+                    model: importAction.children
                     FormCard.FormButtonDelegate {
+                        required property QQC2.Action modelData
                         action: modelData
                     }
                 }

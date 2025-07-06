@@ -27,7 +27,7 @@ Kirigami.NavigationTabBar {
                     return;
                 }
                 if (pageStack.currentItem as TripGroupPage) {
-                    pageStack.currentItem.addTrainTrip();
+                    pageStack.currentItem.searchConnection();
                 } else {
                     pageStack.clear();
                     pageStack.push(Qt.resolvedUrl("JourneyRequestPage.qml"), {

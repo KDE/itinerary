@@ -63,7 +63,8 @@ ColumnLayout {
             text: i18n("Add to calendar…")
             onTriggered: PermissionManager.requestPermission(Permission.WriteCalendar, function() {
                 if (!writableCalendars.sourceModel) {
-                    writableCalendars.sourceModel = calendarModel.createObject(root);
+                    // needs to be created on demand, after we have calendar access permissions
+                    writableCalendars.sourceModel = Qt.createComponent("org.kde.calendarcore", "CalendarListModel").createObject(root);
                 }
                 calendarSelector.open();
             })
@@ -86,17 +87,12 @@ ColumnLayout {
         TransferPage {}
     }
 
-    Component {
-        id: calendarModel
-        // needs to be created on demand, after we have calendar access permissions
-        KCalendarCore.CalendarListModel {}
-    }
     KSortFilterProxyModel {
         id: writableCalendars
         filterRoleName: "accessMode"
         filterString: KCalendarCore.KCalendarCore.ReadWrite
     }
-    CalendarSelectionSheet {
+    CalendarSelectionDialog {
         id: calendarSelector
 
         parent: applicationWindow().overlay

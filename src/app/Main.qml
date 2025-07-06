@@ -13,7 +13,6 @@ import QtLocation as QtLocation
 import org.kde.kirigami as Kirigami
 import org.kde.solidextras as Solid
 import org.kde.kpublictransport.onboard
-import org.kde.calendarcore as KCalendarCore
 import org.kde.itinerary
 
 Kirigami.ApplicationWindow {
@@ -39,7 +38,8 @@ Kirigami.ApplicationWindow {
     // pop pages when not in use
     Connections {
         target: applicationWindow().pageStack
-        function onCurrentIndexChanged() {
+
+        function onCurrentIndexChanged(): void {
             // wait for animation to finish before popping pages
             timer.restart();
         }
@@ -56,93 +56,8 @@ Kirigami.ApplicationWindow {
         }
     }
 
-    property list<Kirigami.Action> importActions: [
-        Kirigami.Action {
-            text: i18n("Open File…")
-            icon.name: "document-open"
-            shortcut: StandardKey.Open
-            onTriggered: {
-                importFileDialog.open();
-            }
-        },
-        Kirigami.Action {
-            text: i18n("Paste")
-            icon.name: "edit-paste"
-            enabled: Clipboard.hasText || Clipboard.hasUrls || Clipboard.hasBinaryData
-            shortcut: StandardKey.Paste
-            onTriggered: ImportController.importFromClipboard()
-        },
-        Kirigami.Action {
-            text: i18n("Scan Barcode…")
-            icon.name: "view-barcode-qr"
-            onTriggered: {
-                pageStack.layers.push(scanBarcodeComponent);
-            }
-        },
-        Kirigami.Action {
-            icon.name: "view-calendar-day"
-            text: i18n("Add from Calendar…")
-            onTriggered: {
-                PermissionManager.requestPermission(Permission.ReadCalendar, function() {
-                    if (!calendarSelector.model) {
-                        calendarSelector.model = calendarModel.createObject(root);
-                    }
-                    calendarSelector.open();
-                })
-            }
-            visible: KCalendarCore.CalendarPluginLoader.hasPlugin
-        },
-        // TODO this should not be hardcoded here, but dynamically filled based on what online ticket
-        // sources we support
-        Kirigami.Action {
-            text: i18n("Deutsche Bahn Online Ticket…")
-            icon.name: "download"
-            onTriggered: {
-                pageStack.layers.push(Qt.createComponent("org.kde.itinerary", "OnlineImportPage"), {
-                    source: "db",
-                });
-            }
-            visible: false // FIXME API endpoint is no longer responding
-        },
-        Kirigami.Action {
-            text: i18n("SNCF Online Ticket…")
-            icon.name: "download"
-            onTriggered: {
-                pageStack.layers.push(Qt.createComponent("org.kde.itinerary", "OnlineImportPage"), {
-                    source: "sncf"
-                });
-            }
-        }
-    ]
-
-    FileDialog {
-        id: importFileDialog
-        fileMode: FileDialog.OpenFile
-        title: i18n("Import Reservation")
-        currentFolder: QtCore.StandardPaths.writableLocation(QtCore.StandardPaths.DocumentsLocation)
-        // Android has no file type selector, we get the superset of all filters there since Qt6 (apart from "all"),
-        // so don't set any filters on Android in order to be able to open everything we can read
-        nameFilters:  Qt.platform.os === "android" ?
-            [i18n("All Files (*.*)")] :
-            [i18n("All Files (*.*)"), i18n("PkPass files (*.pkpass)"), i18n("PDF files (*.pdf)"), i18n("iCal events (*.ics)"), i18n("KDE Itinerary files (*.itinerary)")]
-        onAccepted: ImportController.importFromUrl(selectedFile)
-    }
-
-    Component {
-        id: calendarModel
-        // needs to be created on demand, after we have calendar access permissions
-        KCalendarCore.CalendarListModel {}
-    }
     footer: NavigationBar {
         id: navigationbar
-    }
-    CalendarSelectionSheet {
-        id: calendarSelector
-        // parent: root.Overlay.overlay
-        onCalendarSelected: (calendar) => {
-            ImportController.enableAutoCommit = false;
-            ImportController.importFromCalendar(calendar);
-        }
     }
 
     OnboardStatus {
@@ -154,11 +69,6 @@ Kirigami.ApplicationWindow {
         titleIcon: "map-symbolic"
         isMenu: true
         actions: [
-            Kirigami.Action {
-                text: i18n("Import…")
-                icon.name: "document-import-symbolic"
-                children: importActions
-            },
             Kirigami.Action {
                 id: liveAction
                 text: i18n("Live Status")
@@ -317,22 +227,6 @@ Kirigami.ApplicationWindow {
         }
     }
 
-    Component {
-        id: scanBarcodeComponent
-        BarcodeScannerPage {
-            onBarcodeDetected: (result) => {
-                const prevCount = ImportController.count;
-                if (result.hasText) {
-                    ImportController.importText(result.text);
-                } else if (result.hasBinaryData) {
-                    ImportController.importData(result.binaryData);
-                }
-                if (ImportController.count != prevCount) {
-                    applicationWindow().pageStack.goBack();
-                }
-            }
-        }
-    }
     Component {
         id: passComponent
         PassPage {}
