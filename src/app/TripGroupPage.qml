@@ -54,6 +54,9 @@ Kirigami.ScrollablePage {
         for (let i = listView.contentY + listView.height * 0.8; row == -1 && i > listView.contentY; i -= 10) {
             row = listView.indexAt(0, i);
         }
+        if (row === -1) {
+            row = listView.count - 1;
+        }
         return listView.model.index(row, 0);
     }
 
@@ -63,6 +66,35 @@ Kirigami.ScrollablePage {
             return listView.model.data(idx, TimelineModel.EndDateTimeRole);
         }
         return listView.model.data(idx, TimelineModel.StartDateTimeRole);
+    }
+
+    function openEmptyReservationEditor(reservationType: int): void {
+        const dt = root.isEmptyTripGroup ? new Date() : root.dateTimeAtIndex(root.currentIndex());
+        let res;
+        let editorPage;
+        switch (reservationType) {
+        case KPublicTransport.Line.Air:
+            res = Factory.makeFlightReservation();
+            editorPage = Qt.createComponent("org.kde.itinerary", "FlightEditor")
+            break;
+        case KPublicTransport.Line.Train:
+            res = Factory.makeTrainReservation();
+            editorPage = Qt.createComponent("org.kde.itinerary", "TrainEditor")
+            break;
+        case KPublicTransport.Line.Bus:
+            res = Factory.makeBusReservation();
+            editorPage = Qt.createComponent("org.kde.itinerary", "BusEditor")
+            break;
+        case KPublicTransport.Line.Ferry:
+            res = Factory.makeBoatReservation();
+            editorPage = Qt.createComponent("org.kde.itinerary", "BoatEditor")
+        }
+        let trip = res.reservationFor;
+        if (dt) {
+            trip.departureTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), dt.getHours() == 0 ? 8 : dt.getHours() + 1, 0);
+        }
+        res.reservationFor = trip;
+        applicationWindow().pageStack.push(editorPage, {reservation: res});
     }
 
     function searchConnection(): void {
@@ -114,93 +146,113 @@ Kirigami.ScrollablePage {
 
     property list<QQC2.Action> addActions: [
         QQC2.Action {
+            id: searchConnectionAction
+
             text: i18nc("@action", "Search connection")
             icon.name: "search-symbolic"
             onTriggered: {
                 searchConnection()
             }
         },
-        QQC2.Action {
-            text: i18nc("@action", "Add flight")
-            icon.name: KPublicTransport.LineMode.iconName(KPublicTransport.Line.Air)
-            onTriggered: {
-                const dt = root.isEmptyTripGroup ? new Date() : dateTimeAtIndex(currentIndex());
-                let res =  Factory.makeFlightReservation();
-                let trip = res.reservationFor;
-                trip.departureTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), dt.getHours() == 0 ? 8 : dt.getHours() + 1, 0);
-                res.reservationFor = trip;
-                applicationWindow().pageStack.push(flightEditorPage, {reservation: res});
+        Kirigami.Action {
+            text: i18nc("@action", "Add connection")
+            icon.name: KPublicTransport.LineMode.iconName(KPublicTransport.Line.Train)
+
+            QQC2.Action {
+                id: addTrainAction
+
+                text: i18nc("@action", "Add train")
+                icon.name: KPublicTransport.LineMode.iconName(KPublicTransport.Line.Train)
+                onTriggered: {
+                    root.openEmptyReservationEditor(KPublicTransport.Line.Train);
+                }
+            }
+
+            QQC2.Action {
+                id: addBusAction
+
+                text: i18nc("@action", "Add bus")
+                icon.name: KPublicTransport.LineMode.iconName(KPublicTransport.Line.Bus)
+                onTriggered: {
+                    root.openEmptyReservationEditor(KPublicTransport.Line.Bus);
+                }
+            }
+
+            QQC2.Action {
+                id: addFlightAction
+
+                text: i18nc("@action", "Add flight")
+                icon.name: KPublicTransport.LineMode.iconName(KPublicTransport.Line.Air)
+                onTriggered: {
+                    root.openEmptyReservationEditor(KPublicTransport.Line.Air);
+                }
+            }
+
+            QQC2.Action {
+                id: addFerryAction
+
+                text: i18nc("@action", "Add ferry trip")
+                icon.name: KPublicTransport.LineMode.iconName(KPublicTransport.Line.Ferry)
+                onTriggered: {
+                    root.openEmptyReservationEditor(KPublicTransport.Line.Ferry);
+                }
             }
         },
         QQC2.Action {
-            text: i18nc("@action", "Add ferry trip")
-            icon.name: KPublicTransport.LineMode.iconName(KPublicTransport.Line.Ferry)
-            onTriggered: {
-                const dt = root.isEmptyTripGroup ? new Date() : dateTimeAtIndex(currentIndex());
-                let res =  Factory.makeBoatReservation();
-                let trip = res.reservationFor;
-                trip.departureTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), dt.getHours() == 0 ? 8 : dt.getHours() + 1, 0);
-                res.reservationFor = trip;
-                applicationWindow().pageStack.push(boatEditorPage, {reservation: res});
-            }
-        },
-        QQC2.Action {
+            id: addAccommodationAction
+
             text: i18nc("@action", "Add accommodation")
             icon.name: "go-home-symbolic"
             onTriggered: {
-                const dt = root.isEmptyTripGroup ? new Date() : dateTimeAtIndex(currentIndex());
-                let res =  Factory.makeLodgingReservation();
-                res.checkinTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), 15, 0);
-                res.checkoutTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate() + 1, 11, 0);
+                const dt = root.isEmptyTripGroup ? new Date() : root.dateTimeAtIndex(root.currentIndex());
+                let res = Factory.makeLodgingReservation();
+                if (dt) {
+                    res.checkinTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), 15, 0);
+                    res.checkoutTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate() + 1, 11, 0);
+                }
                 applicationWindow().pageStack.push(hotelEditorPage, {reservation: res});
             }
         },
         QQC2.Action {
+            id: addEventAction
+
             text: i18nc("@action", "Add event")
             icon.name: "meeting-attending"
             onTriggered: {
-                const dt = root.isEmptyTripGroup ? new Date() : dateTimeAtIndex(currentIndex());
+                const dt = root.isEmptyTripGroup ? new Date() : root.dateTimeAtIndex(root.currentIndex());
                 let res = Factory.makeEventReservation();
                 let ev = res.reservationFor;
-                ev.startDate = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), dt.getHours() == 0 ? 8 : dt.getHours() + 1, 0);
+                if (dt) {
+                    ev.startDate = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), dt.getHours() == 0 ? 8 : dt.getHours() + 1, 0);
+                }
                 res.reservationFor = ev;
                 applicationWindow().pageStack.push(eventEditorPage, {reservation: res});
             }
         },
         QQC2.Action {
+            id: addRestaurantAction
+
             text: i18n("Add restaurant")
             icon.name: KPublicTransport.FeatureType.typeIconName(KPublicTransport.Feature.Restaurant)
             onTriggered: {
-                const dt = root.isEmptyTripGroup ? new Date() : dateTimeAtIndex(currentIndex());
+                const dt = root.isEmptyTripGroup ? new Date() : root.dateTimeAtIndex(root.currentIndex());
                 let res =  Factory.makeFoodEstablishmentReservation();
-                res.startTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), 20, 0);
-                res.endTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), 22, 0);
+                if (dt) {
+                    res.startTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), 20, 0);
+                    res.endTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), 22, 0);
+                }
                 applicationWindow().pageStack.push(restaurantEditorPage, {reservation: res});
             }
         }
     ]
 
-    SheetDrawer {
+    Components.ConvergentContextMenu {
         id: addMenu
-        headerItem: Kirigami.Heading {
-            leftPadding: Kirigami.Units.smallSpacing
+        headerContentItem: Kirigami.Heading {
             text: i18nc("@title:group", "Add to Trip")
         }
-        contentItem: ColumnLayout {
-            spacing: 0
-            Repeater {
-                model: root.addActions
-                delegate: FormCard.FormButtonDelegate {
-                    required property QQC2.Action modelData
-                    text: modelData.text
-                    icon.name: modelData.icon.name
-                    onClicked: {
-                        addMenu.close()
-                        modelData.triggered()
-                    }
-                }
-            }
-        }
+
+        actions: root.addActions
     }
 
     TripGroupEditorDialog {
@@ -457,8 +509,19 @@ Kirigami.ScrollablePage {
             FormCard.FormCard {
                 visible: root.isEmptyTripGroup
                 Repeater {
-                    model: root.addActions
+                    model: [
+                        searchConnectionAction,
+                        addTrainAction,
+                        addBusAction,
+                        addFlightAction,
+                        addFerryAction,
+                        addEventAction,
+                        addAccommodationAction,
+                        addRestaurantAction
+                    ]
+
                     FormCard.FormButtonDelegate {
+                        required property QQC2.Action modelData
                         action: modelData
                     }
                 }
@@ -709,7 +772,7 @@ Kirigami.ScrollablePage {
         trailingAction: Kirigami.Action{
             text: i18nc("@action:button", "Add trip")
             icon.name: "list-add-symbolic"
-            onTriggered: addMenu.open()
+            onTriggered: addMenu.popup()
             tooltip: text
         }
     }

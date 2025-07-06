@@ -6,6 +6,7 @@
 #include "factory.h"
 
 #include <KItinerary/BoatTrip>
+#include <KItinerary/BusTrip>
 #include <KItinerary/Event>
 #include <KItinerary/Flight>
 #include <KItinerary/Person>
@@ -13,6 +14,7 @@
 #include <KItinerary/ProgramMembership>
 #include <KItinerary/Reservation>
 #include <KItinerary/Ticket>
+#include <KItinerary/TrainTrip>
 
 QVariant Factory::makeFlightReservation()
 {
@@ -25,6 +27,20 @@ QVariant Factory::makeBoatReservation()
 {
     KItinerary::BoatReservation r;
     r.setReservationFor(KItinerary::BoatTrip());
+    return r;
+}
+
+QVariant Factory::makeBusReservation()
+{
+    KItinerary::BusReservation r;
+    r.setReservationFor(KItinerary::BusTrip());
+    return r;
+}
+
+QVariant Factory::makeTrainReservation()
+{
+    KItinerary::TrainReservation r;
+    r.setReservationFor(KItinerary::TrainTrip());
     return r;
 }
 

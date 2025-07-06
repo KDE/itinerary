@@ -17,6 +17,8 @@ class Factory
 public:
     Q_INVOKABLE [[nodiscard]] static QVariant makeFlightReservation();
     Q_INVOKABLE [[nodiscard]] static QVariant makeBoatReservation();
+    Q_INVOKABLE [[nodiscard]] static QVariant makeBusReservation();
+    Q_INVOKABLE [[nodiscard]] static QVariant makeTrainReservation();
     Q_INVOKABLE [[nodiscard]] static QVariant makeEventReservation();
     Q_INVOKABLE [[nodiscard]] static QVariant makeFoodEstablishmentReservation();
     Q_INVOKABLE [[nodiscard]] static QVariant makeLodgingReservation();
