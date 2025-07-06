@@ -5,13 +5,14 @@
 
 #include "matrixsynccontent.h"
 
-#include "matrixsyncstateevent.h"
+#include "livedatamanager.h"
 #include "logging.h"
-
+#include "matrixsyncstateevent.h"
 #include "reservationmanager.h"
 
 #include <KItinerary/JsonLdDocument>
 
+#if HAVE_MATRIX
 #include <Quotient/events/stateevent.h>
 
 #include <QJsonDocument>
@@ -55,7 +56,6 @@ QString MatrixSyncContent::readBatch(const MatrixSyncStateEvent &event, Reservat
         changes.emplace_back(it.key(), KItinerary::JsonLdDocument::fromJsonSingular(it.value().toObject()));
     }
 
-
     if (resMgr->hasBatch(batchId)) {
         qCDebug(Log) << "updating reservation" << batchId;
         resMgr->updateBatch(changes);
@@ -71,3 +71,22 @@ QString MatrixSyncContent::readBatch(const MatrixSyncStateEvent &event, Reservat
 
     return batchId;
 }
+
+MatrixSyncStateEvent MatrixSyncContent::stateEventForLiveData(const QString &batchId)
+{
+    const auto ld = LiveData::load(batchId);
+    MatrixSyncStateEvent state(MatrixSync::LiveDataEventType, batchId);
+    state.setContent(QJsonDocument(LiveData::toJson(ld)).toJson(QJsonDocument::Compact));
+    return state;
+}
+
+void MatrixSyncContent::readLiveData(const MatrixSyncStateEvent &event, LiveDataManager *ldm)
+{
+    const auto batchId = event.stateKey();
+    const auto content = QJsonDocument::fromJson(event.content()).object();
+
+    auto ld = LiveData::fromJson(content);
+    ld.store(batchId);
+    ldm->importData(batchId, std::move(ld));
+}
+#endif

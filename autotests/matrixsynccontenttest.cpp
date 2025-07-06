@@ -6,9 +6,12 @@
 #include "testhelper.h"
 
 #include "importcontroller.h"
+#include "livedatamanager.h"
 #include "matrixsynccontent.h"
 #include "matrixsyncstateevent.h"
 #include "reservationmanager.h"
+
+#include <KPublicTransport/Journey>
 
 #include <Quotient/events/stateevent.h>
 
@@ -67,6 +70,50 @@ private Q_SLOTS:
         QCOMPARE(MatrixSyncContent::readBatch(ev, &mgr), QString());
         QCOMPARE(mgr.batches().size(), 1);
         QCOMPARE(mgr.hasBatch(batchId), false);
+    }
+
+    void testLiveData()
+    {
+        ReservationManager resMgr;
+        Test::clearAll(&resMgr);
+        LiveData::clearStorage();
+
+        auto ctrl = Test::makeAppController();
+        ctrl->setReservationManager(&resMgr);
+        ImportController importer;
+        importer.setReservationManager(&resMgr);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
+        ctrl->commitImport(&importer);
+        QCOMPARE(resMgr.batches().size(), 11);
+
+        PkPassManager pkPassMgr;
+        LiveDataManager ldm;
+        ldm.setPkPassManager(&pkPassMgr);
+        ldm.setPollingEnabled(false); // we don't want to trigger network requests here
+        ldm.setReservationManager(&resMgr);
+
+        const auto trainLeg1 = resMgr.batches()[1];
+        const auto evEmpty = MatrixSyncContent::stateEventForLiveData(trainLeg1);
+        QCOMPARE(evEmpty.type(), "org.kde.itinerary.livedata"_L1);
+        QCOMPARE(evEmpty.stateKey(), trainLeg1);
+
+        const auto jny = KPublicTransport::JourneySection::fromJson(QJsonDocument::fromJson(Test::readFile(QLatin1StringView(SOURCE_DIR "/data/livedata/randa2017-leg1-journey.json"))).object());
+        ldm.applyJourney(trainLeg1, jny);
+        QCOMPARE(ldm.arrival(trainLeg1).arrivalDelay(), 2);
+
+        const auto evData = MatrixSyncContent::stateEventForLiveData(trainLeg1);
+        QCOMPARE(evData.type(), "org.kde.itinerary.livedata"_L1);
+        QCOMPARE(evData.stateKey(), trainLeg1);
+        QVERIFY(!evData.content().isEmpty());
+
+        MatrixSyncContent::readLiveData(evData, &ldm);
+        QCOMPARE(ldm.arrival(trainLeg1).arrivalDelay(), 2);
+
+        MatrixSyncContent::readLiveData(evEmpty, &ldm);
+        QCOMPARE(ldm.arrival(trainLeg1).arrivalDelay(), 0);
+
+        MatrixSyncContent::readLiveData(evData, &ldm);
+        QCOMPARE(ldm.arrival(trainLeg1).arrivalDelay(), 2);
     }
 };
 
