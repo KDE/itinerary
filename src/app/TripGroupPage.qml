@@ -112,15 +112,15 @@ Kirigami.ScrollablePage {
         });
     }
 
-    property list<Kirigami.Action> addActions: [
-        Kirigami.Action {
+    property list<QQC2.Action> addActions: [
+        QQC2.Action {
             text: i18nc("@action", "Search connection…")
             icon.name: "search-symbolic"
             onTriggered: {
                 searchConnection()
             }
         },
-        Kirigami.Action {
+        QQC2.Action {
             text: i18n("Add flight…")
             icon.name: KPublicTransport.LineMode.iconName(KPublicTransport.Line.Air)
             onTriggered: {
@@ -132,7 +132,7 @@ Kirigami.ScrollablePage {
                 applicationWindow().pageStack.push(flightEditorPage, {reservation: res});
             }
         },
-        Kirigami.Action {
+        QQC2.Action {
             text: i18n("Add ferry trip…")
             icon.name: KPublicTransport.LineMode.iconName(KPublicTransport.Line.Ferry)
             onTriggered: {
@@ -144,7 +144,7 @@ Kirigami.ScrollablePage {
                 applicationWindow().pageStack.push(boatEditorPage, {reservation: res});
             }
         },
-        Kirigami.Action {
+        QQC2.Action {
             text: i18n("Add accommodation…")
             icon.name: "go-home-symbolic"
             onTriggered: {
@@ -155,7 +155,7 @@ Kirigami.ScrollablePage {
                 applicationWindow().pageStack.push(hotelEditorPage, {reservation: res});
             }
         },
-        Kirigami.Action {
+        QQC2.Action {
             text: i18n("Add event…")
             icon.name: "meeting-attending"
             onTriggered: {
@@ -167,7 +167,7 @@ Kirigami.ScrollablePage {
                 applicationWindow().pageStack.push(eventEditorPage, {reservation: res});
             }
         },
-        Kirigami.Action {
+        QQC2.Action {
             text: i18n("Add restaurant…")
             icon.name: KPublicTransport.FeatureType.typeIconName(KPublicTransport.Feature.Restaurant)
             onTriggered: {
@@ -191,8 +191,7 @@ Kirigami.ScrollablePage {
             Repeater {
                 model: root.addActions
                 delegate: FormCard.FormButtonDelegate {
-                    required property Kirigami.Action modelData
-                    Layout.fillWidth: true
+                    required property QQC2.Action modelData
                     text: modelData.text
                     icon.name: modelData.icon.name
                     onClicked: {
