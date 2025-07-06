@@ -196,6 +196,37 @@ private Q_SLOTS:
         transfer = mgr.transfer(batchId, Transfer::Before);
         QCOMPARE(transfer.state(), Transfer::UndefinedState);
     }
+
+    void testDocuments()
+    {
+        DocumentManager docMgr;
+        Test::clearAll(&docMgr);
+
+        KItinerary::CreativeWork info;
+        info.setEncodingFormat(u"application/json"_s);
+        info.setName(u"randa2017.json"_s);
+        docMgr.addDocument(u"1234"_s, info, QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json"));
+
+        QCOMPARE(docMgr.documents().size(), 1);
+
+        auto ev = MatrixSyncContent::stateEventForDocument(u"1234"_s, &docMgr);
+        QCOMPARE(ev.type(), MatrixSync::DocumentEventType);
+        QCOMPARE(ev.stateKey(), "1234"_L1);
+        QVERIFY(QFile::exists(ev.fileName()));
+        QVERIFY(ev.needsUpload());
+
+        Test::clearAll(&docMgr);
+        QVERIFY(!docMgr.hasDocument("1234"_L1));
+
+        ev.setFileName(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json"));
+        QVERIFY(!ev.needsDownload());
+        MatrixSyncContent::readDocument(ev, &docMgr);
+        QVERIFY(docMgr.hasDocument("1234"_L1));
+
+        info = docMgr.documentInfo("1234"_L1).value<KItinerary::CreativeWork>();
+        QCOMPARE(info.name(), "randa2017.json"_L1);
+        QVERIFY(QFile::exists(docMgr.documentFilePath("1234"_L1)));
+    }
 };
 
 QTEST_GUILESS_MAIN(MatrixSyncContentTest)
