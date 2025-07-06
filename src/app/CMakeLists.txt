@@ -34,6 +34,7 @@ target_sources(itinerary PRIVATE
     mapdownloadmanager.cpp
     matrixcontroller.cpp
     matrixsynccontent.cpp
+    matrixsyncoutboundstatequeue.cpp
     matrixsyncstateevent.cpp
     navigationcontroller.cpp
     nominatimimportjob.cpp
