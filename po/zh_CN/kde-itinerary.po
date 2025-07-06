@@ -14,8 +14,8 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/itinerary/kde-itinerary.pot\n"
-"X-Crowdin-File-ID: 45515\n"
+"X-Crowdin-File: /kf6-stable/messages/itinerary/kde-itinerary.pot\n"
+"X-Crowdin-File-ID: 52104\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1992,11 +1992,10 @@ msgid "To:"
 msgstr ""
 
 #: app/JourneyRequestPage.qml:140
-#, fuzzy, kde-format
-#| msgid "Swap departure and arrival"
+#, kde-format
 msgctxt "departure and arrival stops"
 msgid "Swap departure and arrival"
-msgstr "交换离开和抵达"
+msgstr ""
 
 #: app/JourneyRequestPage.qml:155
 #, kde-format
