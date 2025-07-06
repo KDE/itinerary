@@ -10,14 +10,19 @@
 
 #include "transfer.h"
 
+#if HAVE_MATRIX
+#include <Quotient/events/filesourceinfo.h>
+#endif
+
 #include <QString>
 
+class DocumentManager;
 class LiveDataManager;
 class ReservationManager;
 class TransferManager;
 
 namespace Quotient {
-    class StateEvent;
+class StateEvent;
 }
 
 using namespace Qt::Literals;
@@ -28,7 +33,10 @@ namespace MatrixSyncContent
     constexpr inline auto ReservationEventType = "org.kde.itinerary.reservation"_L1;
     constexpr inline auto LiveDataEventType = "org.kde.itinerary.livedata"_L1;
     constexpr inline auto TransferEventType = "org.kde.itinerary.transfer"_L1;
+    constexpr inline auto DocumentEventType = "org.kde.itinerary.document"_L1;
+    constexpr inline auto PkPassEventType = "org.kde.itinerary.pkpass"_L1;
 
+#if HAVE_MATRIX
     /** Create a state event for a given reservation batch. */
     [[nodiscard]] std::unique_ptr<Quotient::StateEvent> stateEventForBatch(const QString &batchId, const ReservationManager *resMgr);
     [[nodiscard]] std::unique_ptr<Quotient::StateEvent> stateEventForDeletedBatch(const QString &batchId);
@@ -47,6 +55,13 @@ namespace MatrixSyncContent
 
     /** Read transfer data from a state event. */
     void readTransfer(const Quotient::StateEvent *event, TransferManager *transferMgr);
+
+    /** Create a state event for an uploaded document. */
+    [[nodiscard]] std::unique_ptr<Quotient::StateEvent> stateEventForDocument(const QString &docId, const Quotient::FileSourceInfo &info, const DocumentManager *docMgr);
+
+    /** Create a state event for an uploaded pkpass. */
+    [[nodiscard]] std::unique_ptr<Quotient::StateEvent> stateEventForPkPass(const QString &passId, const Quotient::FileSourceInfo &info);
+#endif
 }
 
 #endif
