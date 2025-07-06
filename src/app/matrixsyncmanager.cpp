@@ -10,6 +10,7 @@
 #include "logging.h"
 #include "matrixsynccontent.h"
 #include "reservationmanager.h"
+#include "transfermanager.h"
 #include "tripgroup.h"
 #include "tripgroupmanager.h"
 
@@ -64,6 +65,12 @@ void MatrixSyncManager::setDocumentManager(DocumentManager *docMgr)
 void MatrixSyncManager::setLiveDataManager(LiveDataManager *ldm)
 {
     m_ldm = ldm;
+    init();
+}
+
+void MatrixSyncManager::setTransferManager(TransferManager *transferMgr)
+{
+    m_transferMgr = transferMgr;
     init();
 }
 
@@ -133,7 +140,7 @@ void MatrixSyncManager::syncTripGroup(const QString &tgId)
 #if HAVE_MATRIX
 void MatrixSyncManager::init()
 {
-    if (!m_matrixMgr || !m_tripGroupMgr || !m_docMgr || !m_ldm) {
+    if (!m_matrixMgr || !m_tripGroupMgr || !m_docMgr || !m_ldm || !m_transferMgr) {
         return;
     }
 
@@ -157,6 +164,10 @@ void MatrixSyncManager::init()
     connect(m_matrixMgr, &MatrixManager::connectionChanged, this, [this]() { initConnection(m_matrixMgr->connection()); });
 
     connect(m_ldm, &LiveDataManager::journeyUpdated, this, &MatrixSyncManager::liveDataChanged);
+
+    connect(m_transferMgr, &TransferManager::transferAdded, this, [this](const auto &transfer) { transferChanged(transfer.reservationId(), transfer.alignment()); });
+    connect(m_transferMgr, &TransferManager::transferChanged, this, [this](const auto &transfer) { transferChanged(transfer.reservationId(), transfer.alignment()); });
+    connect(m_transferMgr, &TransferManager::transferRemoved, this, &MatrixSyncManager::transferChanged);
 }
 
 void MatrixSyncManager::initConnection(Quotient::Connection *connection)
@@ -292,6 +303,10 @@ void MatrixSyncManager::roomEvent(Quotient::Room *room, const Quotient::RoomEven
     if (event->matrixType() == MatrixSyncContent::LiveDataEventType) {
         MatrixSyncContent::readLiveData(state, m_ldm);
     }
+
+    if (event->matrixType() == MatrixSyncContent::TransferEventType) {
+        MatrixSyncContent::readTransfer(state, m_transferMgr);
+    }
 }
 
 void MatrixSyncManager::joinedRoom(Quotient::Room *room, Quotient::Room *prevRoom)
@@ -420,6 +435,27 @@ void MatrixSyncManager::liveDataChanged(const QString &batchId)
     room->setState(*state);
 }
 
+void MatrixSyncManager::transferChanged(const QString &batchId, Transfer::Alignment alignment)
+{
+    if (m_recursionLock) {
+        return;
+    }
+
+    const auto tg = m_tripGroupMgr->tripGroupForReservation(batchId);
+    if (tg.matrixRoomId().isEmpty()) {
+        return;
+    }
+
+    auto room = m_matrixMgr->connection()->room(tg.matrixRoomId());
+    if (!room) {
+        qCDebug(Log) << "room not found?" << tg.matrixRoomId();
+        return;
+    }
+
+    auto state = MatrixSyncContent::stateEventForTransfer(batchId, alignment, m_transferMgr);
+    room->setState(*state);
+}
+
 void MatrixSyncManager::createTripGroupFromRoom(Quotient::Room *room)
 {
     QScopedValueRollback recursionLock(m_recursionLock, true);
@@ -443,6 +479,10 @@ void MatrixSyncManager::createTripGroupFromRoom(Quotient::Room *room)
     const auto ldmStates = room->currentState().eventsOfType(MatrixSyncContent::LiveDataEventType);
     for (auto event : ldmStates) {
         MatrixSyncContent::readLiveData(event, m_ldm);
+    }
+    const auto transferStates = room->currentState().eventsOfType(MatrixSyncContent::TransferEventType);
+    for (auto event :transferStates) {
+        MatrixSyncContent::readTransfer(event, m_transferMgr);
     }
 
     // create group
@@ -510,6 +550,13 @@ void MatrixSyncManager::writeBatchToRoom(const QString &batchId, Quotient::Room 
     if (m_ldm->journey(batchId).mode() != KPublicTransport::JourneySection::Invalid) {
         const auto state = MatrixSyncContent::stateEventForLiveData(batchId);
         room->setState(*state);
+    }
+    for (const auto align : { Transfer::Before, Transfer::After }) {
+        const auto transfer = m_transferMgr->transfer(batchId, align);
+        if (transfer.state() != Transfer::UndefinedState) {
+            const auto state = MatrixSyncContent::stateEventForTransfer(batchId, align, m_transferMgr);
+            room->setState(*state);
+        }
     }
 }
 

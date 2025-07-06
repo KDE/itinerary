@@ -8,6 +8,8 @@
 
 #include <config-itinerary.h>
 
+#include "transfer.h"
+
 #include <QHash>
 #include <QObject>
 #include <QSet>
@@ -15,6 +17,7 @@
 class DocumentManager;
 class LiveDataManager;
 class MatrixManager;
+class TransferManager;
 class TripGroupManager;
 
 namespace Quotient {
@@ -37,6 +40,7 @@ public:
     void setTripGroupManager(TripGroupManager *tripGroupMgr);
     void setDocumentManager(DocumentManager *docMgr);
     void setLiveDataManager(LiveDataManager *ldm);
+    void setTransferManager(TransferManager *transferMgr);
     void setAutoSyncTrips(bool autoSync);
 #endif
 
@@ -63,6 +67,8 @@ private:
 
     void liveDataChanged(const QString &batchId);
 
+    void transferChanged(const QString &batchId, Transfer::Alignment alignment);
+
     void createTripGroupFromRoom(Quotient::Room *room);
     void readDocumentFromStateEvent(const Quotient::StateEvent *event);
 
@@ -74,6 +80,7 @@ private:
     TripGroupManager *m_tripGroupMgr = nullptr;
     DocumentManager *m_docMgr = nullptr;
     LiveDataManager *m_ldm = nullptr;
+    TransferManager *m_transferMgr = nullptr;
     // map Matrix room ids to trip groups
     QHash<QString, QString> m_roomToTripGroupMap;
     QSet<QString> m_pendingDocumentUploads;
