@@ -8,6 +8,7 @@
 #include "livedatamanager.h"
 #include "logging.h"
 #include "reservationmanager.h"
+#include "transfermanager.h"
 
 #include <KItinerary/JsonLdDocument>
 
@@ -92,6 +93,31 @@ void MatrixSyncContent::readLiveData(const Quotient::StateEvent *event, LiveData
     auto ld = LiveData::fromJson(content);
     ld.store(batchId);
     ldm->importData(batchId, std::move(ld));
+}
+
+std::unique_ptr<Quotient::StateEvent>MatrixSyncContent::stateEventForTransfer(const QString &batchId, Transfer::Alignment alignment, const TransferManager *transferMgr)
+{
+    const auto transfer = transferMgr->transfer(batchId, alignment);
+    auto state = std::make_unique<Quotient::StateEvent>(MatrixSyncContent::TransferEventType, Transfer::identifier(batchId, alignment), QJsonObject({
+        {ContentKey, QString::fromUtf8(QJsonDocument(Transfer::toJson(transfer)).toJson(QJsonDocument::Compact))}
+    }));
+    return state;
+}
+
+void MatrixSyncContent::readTransfer(const Quotient::StateEvent *event, TransferManager *transferMgr)
+{
+    const auto [batchId, alignment] = Transfer::parseIdentifier(event->stateKey());
+    if (batchId.isEmpty()) {
+        return;
+    }
+    const auto content = QJsonDocument::fromJson(event->contentJson().value(ContentKey).toString().toUtf8()).object();
+    const auto transfer = Transfer::fromJson(content);
+
+    if (transfer.state() == Transfer::UndefinedState) {
+        transferMgr->removeTransfer(batchId, alignment);
+    } else {
+        transferMgr->importTransfer(transfer);
+    }
 }
 
 #endif
