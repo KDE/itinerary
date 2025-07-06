@@ -114,14 +114,14 @@ Kirigami.ScrollablePage {
 
     property list<QQC2.Action> addActions: [
         QQC2.Action {
-            text: i18nc("@action", "Search connection…")
+            text: i18nc("@action", "Search connection")
             icon.name: "search-symbolic"
             onTriggered: {
                 searchConnection()
             }
         },
         QQC2.Action {
-            text: i18n("Add flight…")
+            text: i18nc("@action", "Add flight")
             icon.name: KPublicTransport.LineMode.iconName(KPublicTransport.Line.Air)
             onTriggered: {
                 const dt = root.isEmptyTripGroup ? new Date() : dateTimeAtIndex(currentIndex());
@@ -133,7 +133,7 @@ Kirigami.ScrollablePage {
             }
         },
         QQC2.Action {
-            text: i18n("Add ferry trip…")
+            text: i18nc("@action", "Add ferry trip")
             icon.name: KPublicTransport.LineMode.iconName(KPublicTransport.Line.Ferry)
             onTriggered: {
                 const dt = root.isEmptyTripGroup ? new Date() : dateTimeAtIndex(currentIndex());
@@ -145,7 +145,7 @@ Kirigami.ScrollablePage {
             }
         },
         QQC2.Action {
-            text: i18n("Add accommodation…")
+            text: i18nc("@action", "Add accommodation")
             icon.name: "go-home-symbolic"
             onTriggered: {
                 const dt = root.isEmptyTripGroup ? new Date() : dateTimeAtIndex(currentIndex());
@@ -156,7 +156,7 @@ Kirigami.ScrollablePage {
             }
         },
         QQC2.Action {
-            text: i18n("Add event…")
+            text: i18nc("@action", "Add event")
             icon.name: "meeting-attending"
             onTriggered: {
                 const dt = root.isEmptyTripGroup ? new Date() : dateTimeAtIndex(currentIndex());
@@ -168,7 +168,7 @@ Kirigami.ScrollablePage {
             }
         },
         QQC2.Action {
-            text: i18n("Add restaurant…")
+            text: i18n("Add restaurant")
             icon.name: KPublicTransport.FeatureType.typeIconName(KPublicTransport.Feature.Restaurant)
             onTriggered: {
                 const dt = root.isEmptyTripGroup ? new Date() : dateTimeAtIndex(currentIndex());
