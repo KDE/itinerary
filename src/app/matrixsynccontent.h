@@ -10,6 +10,7 @@
 
 #include <QString>
 
+class LiveDataManager;
 class ReservationManager;
 
 namespace Quotient {
@@ -22,6 +23,7 @@ using namespace Qt::Literals;
 namespace MatrixSyncContent
 {
     constexpr inline auto ReservationEventType = "org.kde.itinerary.reservation"_L1;
+    constexpr inline auto LiveDataEventType = "org.kde.itinerary.livedata"_L1;
 
     /** Create a state event for a given reservation batch. */
     [[nodiscard]] std::unique_ptr<Quotient::StateEvent> stateEventForBatch(const QString &batchId, const ReservationManager *resMgr);
@@ -29,6 +31,12 @@ namespace MatrixSyncContent
 
     /** Read reservation batch state event. */
     [[nodiscard]] QString readBatch(const Quotient::StateEvent *event, ReservationManager *resMgr);
+
+    /** Create a state event for live data for a given batch. */
+    [[nodiscard]] std::unique_ptr<Quotient::StateEvent> stateEventForLiveData(const QString &batchId);
+
+    /** Read live data for a batch from a state event. */
+    void readLiveData(const Quotient::StateEvent *event, LiveDataManager *ldm);
 }
 
 #endif
