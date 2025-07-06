@@ -17,6 +17,7 @@
 class DocumentManager;
 class LiveDataManager;
 class MatrixManager;
+class PkPassManager;
 class TransferManager;
 class TripGroupManager;
 
@@ -41,6 +42,7 @@ public:
     void setDocumentManager(DocumentManager *docMgr);
     void setLiveDataManager(LiveDataManager *ldm);
     void setTransferManager(TransferManager *transferMgr);
+    void setPkPassManager(PkPassManager *pkPassMgr);
     void setAutoSyncTrips(bool autoSync);
 #endif
 
@@ -69,18 +71,23 @@ private:
 
     void transferChanged(const QString &batchId, Transfer::Alignment alignment);
 
+    void pkPassChanged(const QString &passId);
+
     void createTripGroupFromRoom(Quotient::Room *room);
     void readDocumentFromStateEvent(const Quotient::StateEvent *event);
+    void readPkPassFromStateEvent(const Quotient::StateEvent *event);
 
     void writeBatchToRoom(const QString &batchId, Quotient::Room *room);
     void writeBatchDeletionToRoom(const QString &batchId, Quotient::Room *room);
     void writeDocumentToRoom(const QString &docId, Quotient::Room *room);
+    void writePkPassToRoom(const QString &passId, Quotient::Room *room);
 
     MatrixManager *m_matrixMgr = nullptr;
     TripGroupManager *m_tripGroupMgr = nullptr;
     DocumentManager *m_docMgr = nullptr;
     LiveDataManager *m_ldm = nullptr;
     TransferManager *m_transferMgr = nullptr;
+    PkPassManager *m_pkPassMgr = nullptr;
     // map Matrix room ids to trip groups
     QHash<QString, QString> m_roomToTripGroupMap;
     QSet<QString> m_pendingDocumentUploads;

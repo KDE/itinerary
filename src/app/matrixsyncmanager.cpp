@@ -9,6 +9,7 @@
 #include "livedatamanager.h"
 #include "logging.h"
 #include "matrixsynccontent.h"
+#include "pkpassmanager.h"
 #include "reservationmanager.h"
 #include "transfermanager.h"
 #include "tripgroup.h"
@@ -34,7 +35,6 @@ using namespace Qt::Literals;
 
 constexpr inline auto MatrixRoomTypeKey = "type"_L1;
 constexpr inline auto ItineraryRoomType = "org.kde.itinerary.tripSync"_L1;
-constexpr inline auto DocumentEventType = "org.kde.itinerary.document"_L1;
 
 MatrixSyncManager::MatrixSyncManager(QObject *parent)
     : QObject(parent)
@@ -71,6 +71,12 @@ void MatrixSyncManager::setLiveDataManager(LiveDataManager *ldm)
 void MatrixSyncManager::setTransferManager(TransferManager *transferMgr)
 {
     m_transferMgr = transferMgr;
+    init();
+}
+
+void MatrixSyncManager::setPkPassManager(PkPassManager *pkPassMgr)
+{
+    m_pkPassMgr = pkPassMgr;
     init();
 }
 
@@ -140,7 +146,7 @@ void MatrixSyncManager::syncTripGroup(const QString &tgId)
 #if HAVE_MATRIX
 void MatrixSyncManager::init()
 {
-    if (!m_matrixMgr || !m_tripGroupMgr || !m_docMgr || !m_ldm || !m_transferMgr) {
+    if (!m_matrixMgr || !m_tripGroupMgr || !m_docMgr || !m_ldm || !m_transferMgr || !m_pkPassMgr) {
         return;
     }
 
@@ -202,19 +208,9 @@ void MatrixSyncManager::initRoom(Quotient::Room *room)
     connect(room, &Quotient::Room::fileTransferCompleted, this, [this, room](const QString &id, [[maybe_unused]] const QUrl &localFile, Quotient::FileSourceInfo info) {
         qCDebug(Log) << "fileTransferCompleted" << id <<m_pendingDocumentUploads;
         if (m_pendingDocumentUploads.contains(id)) {
-            const auto url = Quotient::getUrlFromSourceInfo(info);
-            qCDebug(Log) << "File upload completed" << id << url;
             m_pendingDocumentUploads.remove(id);
-
-            QJsonObject file;
-            Quotient::JsonObjectConverter<Quotient::EncryptedFileMetadata>::dumpTo(file, std::get<Quotient::EncryptedFileMetadata>(info));
-
-            Quotient::StateEvent state(DocumentEventType, id, QJsonObject({
-                {"url"_L1, url.toString()},
-                {"file"_L1, file},
-                {"metadata"_L1, KItinerary::JsonLdDocument::toJson(m_docMgr->documentInfo(id))}
-            }));
-            room->setState(state); // TODO error handling?
+            const auto state = MatrixSyncContent::stateEventForDocument(id, info, m_docMgr);
+            room->setState(*state); // TODO error handling?
         }
     });
     connect(room, &Quotient::Room::fileTransferFailed, this, [](const QString &id, const QString &errorMsg) {
@@ -296,7 +292,7 @@ void MatrixSyncManager::roomEvent(Quotient::Room *room, const Quotient::RoomEven
         // resId.isEmpty() ie. deletion will be automatically propagated
     }
 
-    if (event->matrixType() == DocumentEventType) {
+    if (event->matrixType() == MatrixSyncContent::DocumentEventType) {
         readDocumentFromStateEvent(state);
     }
 
@@ -306,6 +302,10 @@ void MatrixSyncManager::roomEvent(Quotient::Room *room, const Quotient::RoomEven
 
     if (event->matrixType() == MatrixSyncContent::TransferEventType) {
         MatrixSyncContent::readTransfer(state, m_transferMgr);
+    }
+
+    if (event->matrixType() == MatrixSyncContent::PkPassEventType) {
+        readPkPassFromStateEvent(state);
     }
 }
 
@@ -462,8 +462,8 @@ void MatrixSyncManager::createTripGroupFromRoom(Quotient::Room *room)
     TripGroupingBlocker tgBlocker(m_tripGroupMgr);
 
     // load existing documents
-    const auto documents = room->currentState().eventsOfType(DocumentEventType);
-    for (auto event :documents) {
+    const auto documents = room->currentState().eventsOfType(MatrixSyncContent::DocumentEventType);
+    for (auto event : documents) {
         readDocumentFromStateEvent(event);
     }
 
@@ -483,6 +483,11 @@ void MatrixSyncManager::createTripGroupFromRoom(Quotient::Room *room)
     const auto transferStates = room->currentState().eventsOfType(MatrixSyncContent::TransferEventType);
     for (auto event :transferStates) {
         MatrixSyncContent::readTransfer(event, m_transferMgr);
+    }
+
+    const auto pkPasses = room->currentState().eventsOfType(MatrixSyncContent::PkPassEventType);
+    for (auto pass : pkPasses) {
+        readPkPassFromStateEvent(pass);
     }
 
     // create group
@@ -523,6 +528,31 @@ void MatrixSyncManager::readDocumentFromStateEvent(const Quotient::StateEvent *e
     });
 }
 
+void MatrixSyncManager::readPkPassFromStateEvent(const Quotient::StateEvent *event)
+{
+    const auto passId = event->stateKey();
+    if (m_pendingDocumentDownloads.contains(passId)) {
+        return;
+    }
+
+    const auto url = QUrl(event->contentJson().value("url"_L1).toString());
+    Quotient::EncryptedFileMetadata encryptionData;
+    Quotient::JsonObjectConverter<Quotient::EncryptedFileMetadata>::fillFrom(event->contentJson().value("file"_L1).toObject(), encryptionData);
+    m_pendingDocumentDownloads.insert(passId);
+    auto job = m_matrixMgr->connection()->downloadFile(url, encryptionData);
+    connect(job, &Quotient::DownloadFileJob::success, this, [this, job, passId]() {
+        qCDebug(Log) << "Download suceeded" << passId;
+        job->deleteLater();
+        m_pendingDocumentDownloads.remove(passId);
+        m_pkPassMgr->importPass(QUrl::fromLocalFile(job->targetFileName()));
+    });
+    connect(job, &Quotient::DownloadFileJob::failure, this, [this, job, passId]() {
+        qCDebug(Log) << "Download failed" << job->errorString() << passId;
+        job->deleteLater();
+        m_pendingDocumentDownloads.remove(passId);
+    });
+}
+
 void MatrixSyncManager::writeBatchToRoom(const QString &batchId, Quotient::Room *room)
 {
     if (!m_matrixMgr->connected()) {
@@ -540,6 +570,7 @@ void MatrixSyncManager::writeBatchToRoom(const QString &batchId, Quotient::Room 
             if (!docId.isEmpty() && m_docMgr->hasDocument(docId)) {
                 writeDocumentToRoom(docId, room);
             }
+            // TODO pkpasses
         }
     }
 
@@ -573,12 +604,12 @@ void MatrixSyncManager::writeBatchDeletionToRoom(const QString &batchId, Quotien
 
 void MatrixSyncManager::writeDocumentToRoom(const QString &docId, Quotient::Room *room)
 {
-    qCDebug(Log) << "writeDocumentToRoom" << docId << room->id() <<m_pendingDocumentUploads << room->currentState().contains(DocumentEventType, docId);
+    qCDebug(Log) << "writeDocumentToRoom" << docId << room->id() <<m_pendingDocumentUploads << room->currentState().contains(MatrixSyncContent::DocumentEventType, docId);
     if (m_pendingDocumentUploads.contains(docId)) { // upload already in progress
         return;
     }
 
-    if (room->currentState().contains(DocumentEventType, docId)) { // already uploaded
+    if (room->currentState().contains(MatrixSyncContent::DocumentEventType, docId)) { // already uploaded
         return;
     }
 
@@ -586,6 +617,16 @@ void MatrixSyncManager::writeDocumentToRoom(const QString &docId, Quotient::Room
     m_pendingDocumentUploads.insert(docId);
     room->uploadFile(docId, QUrl::fromLocalFile(m_docMgr->documentFilePath(docId)));
     qDebug(Log) << "status:" << room->fileTransferInfo(docId).status;
+}
+
+void MatrixSyncManager::writePkPassToRoom(const QString &passId, Quotient::Room *room)
+{
+    if (m_pendingDocumentUploads.contains(passId)) { // TODO what about multiple updates while we are still uploading? unlike for docs this is actually valid here!
+        return;
+    }
+
+    m_pendingDocumentUploads.insert(passId);
+    room->uploadFile(passId, QUrl::fromLocalFile(PkPassManager::passPath(passId)));
 }
 #endif
 

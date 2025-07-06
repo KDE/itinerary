@@ -56,7 +56,7 @@ QList<QString> PkPassManager::passes()
     return passIds;
 }
 
-[[nodiscard]] static QString passPath(const QString &passId)
+QString PkPassManager::passPath(const QString &passId)
 {
     QString path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/passes/"_L1 + passId + ".pkpass"_L1;
     if (!QFile::exists(path)) {
