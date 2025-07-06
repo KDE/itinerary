@@ -5,9 +5,11 @@
 
 #include "matrixsynccontent.h"
 
+#include "documentmanager.h"
 #include "livedatamanager.h"
 #include "logging.h"
 #include "matrixsyncstateevent.h"
+#include "pkpassmanager.h"
 #include "reservationmanager.h"
 #include "transfermanager.h"
 
@@ -113,6 +115,21 @@ void MatrixSyncContent::readTransfer(const MatrixSyncStateEvent &event, Transfer
     } else {
         transferMgr->importTransfer(transfer);
     }
+}
+
+MatrixSyncStateEvent MatrixSyncContent::stateEventForDocument(const QString &docId, const DocumentManager *docMgr)
+{
+    MatrixSyncStateEvent state(MatrixSync::DocumentEventType, docId);
+    state.setFileName(docMgr->documentFilePath(docId));
+    state.setExtraData("metadata"_L1, KItinerary::JsonLdDocument::toJson(docMgr->documentInfo(docId)));
+    return state;
+}
+
+MatrixSyncStateEvent MatrixSyncContent::stateEventForPkPass(const QString &passId)
+{
+    MatrixSyncStateEvent state(MatrixSync::DocumentEventType, passId);
+    state.setFileName(PkPassManager::passPath(passId));
+    return state;
 }
 
 #endif
