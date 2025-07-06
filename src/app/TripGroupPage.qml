@@ -65,7 +65,7 @@ Kirigami.ScrollablePage {
         return listView.model.data(idx, TimelineModel.StartDateTimeRole);
     }
 
-    function addTrainTrip() {
+    function searchConnection(): void {
         const HOUR = 60 * 60 * 1000;
         let roundInterval = HOUR;
         let dt = new Date();
@@ -114,10 +114,10 @@ Kirigami.ScrollablePage {
 
     property list<Kirigami.Action> addActions: [
         Kirigami.Action {
-            text: i18n("Add train trip…")
-            icon.name: "list-add-symbolic"
+            text: i18nc("@action", "Search connection…")
+            icon.name: "search-symbolic"
             onTriggered: {
-                addTrainTrip()
+                searchConnection()
             }
         },
         Kirigami.Action {
