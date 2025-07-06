@@ -145,6 +145,11 @@ Kirigami.ScrollablePage {
     }
 
     property list<QQC2.Action> addActions: [
+        Kirigami.Action {
+            text: i18nc("@action", "Import")
+            icon.name: "download-symbolic"
+            children: importActions
+        },
         QQC2.Action {
             id: searchConnectionAction
 
