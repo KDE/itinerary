@@ -5,6 +5,7 @@
 
 #include "matrixsynccontent.h"
 
+#include "documentmanager.h"
 #include "livedatamanager.h"
 #include "logging.h"
 #include "reservationmanager.h"
@@ -118,6 +119,35 @@ void MatrixSyncContent::readTransfer(const Quotient::StateEvent *event, Transfer
     } else {
         transferMgr->importTransfer(transfer);
     }
+}
+
+std::unique_ptr<Quotient::StateEvent> MatrixSyncContent::stateEventForDocument(const QString &docId, const Quotient::FileSourceInfo &info, const DocumentManager *docMgr)
+{
+    const auto url = Quotient::getUrlFromSourceInfo(info);
+
+    QJsonObject file;
+    Quotient::JsonObjectConverter<Quotient::EncryptedFileMetadata>::dumpTo(file, std::get<Quotient::EncryptedFileMetadata>(info));
+
+    auto state = std::make_unique<Quotient::StateEvent>(MatrixSyncContent::DocumentEventType, docId, QJsonObject({
+        {"url"_L1, url.toString()},
+        {"file"_L1, file},
+        {"metadata"_L1, KItinerary::JsonLdDocument::toJson(docMgr->documentInfo(docId))}
+    }));
+    return state;
+}
+
+std::unique_ptr<Quotient::StateEvent> MatrixSyncContent::stateEventForPkPass(const QString &passId, const Quotient::FileSourceInfo &info)
+{
+    const auto url = Quotient::getUrlFromSourceInfo(info);
+
+    QJsonObject file;
+    Quotient::JsonObjectConverter<Quotient::EncryptedFileMetadata>::dumpTo(file, std::get<Quotient::EncryptedFileMetadata>(info));
+
+    auto state = std::make_unique<Quotient::StateEvent>(MatrixSyncContent::DocumentEventType, passId, QJsonObject({
+        {"url"_L1, url.toString()},
+        {"file"_L1, file}
+    }));
+    return state;
 }
 
 #endif
