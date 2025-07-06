@@ -9,6 +9,7 @@
 #include "logging.h"
 #include "matrixsyncstateevent.h"
 #include "reservationmanager.h"
+#include "transfermanager.h"
 
 #include <KItinerary/JsonLdDocument>
 
@@ -89,4 +90,29 @@ void MatrixSyncContent::readLiveData(const MatrixSyncStateEvent &event, LiveData
     ld.store(batchId);
     ldm->importData(batchId, std::move(ld));
 }
+
+MatrixSyncStateEvent MatrixSyncContent::stateEventForTransfer(const QString &batchId, Transfer::Alignment alignment, const TransferManager *transferMgr)
+{
+    const auto transfer = transferMgr->transfer(batchId, alignment);
+    MatrixSyncStateEvent state(MatrixSync::TransferEventType, Transfer::identifier(batchId, alignment));
+    state.setContent(QJsonDocument(Transfer::toJson(transfer)).toJson(QJsonDocument::Compact));
+    return state;
+}
+
+void MatrixSyncContent::readTransfer(const MatrixSyncStateEvent &event, TransferManager *transferMgr)
+{
+    const auto [batchId, alignment] = Transfer::parseIdentifier(event.stateKey());
+    if (batchId.isEmpty()) {
+        return;
+    }
+    const auto content = QJsonDocument::fromJson(event.content()).object();
+    const auto transfer = Transfer::fromJson(content);
+
+    if (transfer.state() == Transfer::UndefinedState) {
+        transferMgr->removeTransfer(batchId, alignment);
+    } else {
+        transferMgr->importTransfer(transfer);
+    }
+}
+
 #endif

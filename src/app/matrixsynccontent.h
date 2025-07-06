@@ -8,11 +8,14 @@
 
 #include <config-itinerary.h>
 
+#include "transfer.h"
+
 #include <QString>
 
 class LiveDataManager;
 class MatrixSyncStateEvent;
 class ReservationManager;
+class TransferManager;
 
 using namespace Qt::Literals;
 
@@ -31,6 +34,12 @@ namespace MatrixSyncContent
 
     /** Read live data for a batch from a state event. */
     void readLiveData(const MatrixSyncStateEvent &event, LiveDataManager *ldm);
+
+    /** Create a state event for a transfer. */
+    [[nodiscard]] MatrixSyncStateEvent stateEventForTransfer(const QString &batchId, Transfer::Alignment alignment, const TransferManager *transferMgr);
+
+    /** Read transfer data from a state event. */
+    void readTransfer(const MatrixSyncStateEvent &event, TransferManager *transferMgr);
 }
 
 #endif

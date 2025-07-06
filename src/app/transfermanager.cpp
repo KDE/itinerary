@@ -675,6 +675,14 @@ void TransferManager::removeTransfer(const Transfer &t)
     Q_EMIT transferRemoved(t.reservationId(), t.alignment());
 }
 
+void TransferManager::removeTransfer(const QString &batchId, Transfer::Alignment alignment)
+{
+    if (m_transfers[alignment].remove(batchId)) {
+        removeFile(batchId, alignment);
+        Q_EMIT transferRemoved(batchId, alignment);
+    }
+}
+
 static QString transferBasePath()
 {
     return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1StringView("/transfers/");

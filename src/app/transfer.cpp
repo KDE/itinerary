@@ -220,6 +220,17 @@ QString Transfer::identifier(const QString &resId, Transfer::Alignment alignment
     return resId + (alignment == Transfer::Before ? "-BEFORE"_L1 : "-AFTER"_L1);
 }
 
+Transfer::Identifier Transfer::parseIdentifier(QStringView id)
+{
+    if (id.endsWith("-BEFORE"_L1)) {
+        return { id.slice(0, id.size() - 7).toString(), Transfer::Before };
+    }
+    if (id.endsWith("-AFTER"_L1)) {
+        return { id.slice(0, id.size() - 6).toString(), Transfer::After };
+    }
+    return {};
+}
+
 bool Transfer::operator==(const Transfer &other) const
 {
     if (d->m_alignment == other.d->m_alignment && d->m_state == other.d->m_state && KPublicTransport::Location::isSame(d->m_from, other.d->m_from)

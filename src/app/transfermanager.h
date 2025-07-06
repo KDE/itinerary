@@ -57,7 +57,9 @@ public:
     /** Create a JourneyRequest for a given @p transfer. */
     Q_INVOKABLE KPublicTransport::JourneyRequest journeyRequestForTransfer(const Transfer &transfer) const;
 
+    // importing/syncing, not for the use in the UI, see e.g. discardTransfer above instead
     void importTransfer(const Transfer &transfer);
+    void removeTransfer(const QString &batchId, Transfer::Alignment alignment);
 
     // for unit tests only
     void overrideCurrentDateTime(const QDateTime &dt);
