@@ -5,16 +5,21 @@
 
 #include "testhelper.h"
 
+#include "favoritelocationmodel.h"
 #include "importcontroller.h"
 #include "livedatamanager.h"
 #include "matrixsynccontent.h"
 #include "reservationmanager.h"
+#include "transfermanager.h"
+#include "tripgroupmanager.h"
 
 #include <KPublicTransport/Journey>
 
 #include <Quotient/events/stateevent.h>
 
 #include <QtTest/qtest.h>
+
+using namespace Qt::Literals;
 
 class MatrixSyncContentTest : public QObject
 {
@@ -110,6 +115,82 @@ private Q_SLOTS:
 
         MatrixSyncContent::readLiveData(evData.get(), &ldm);
         QCOMPARE(ldm.arrival(trainLeg1).arrivalDelay(), 2);
+    }
+
+    void testTransfer()
+    {
+        ReservationManager resMgr;
+        Test::clearAll(&resMgr);
+        auto ctrl = Test::makeAppController();
+        ctrl->setReservationManager(&resMgr);
+
+        TripGroupManager::clear();
+        TripGroupManager tgMgr;
+        tgMgr.setReservationManager(&resMgr);
+
+        FavoriteLocationModel favLocModel;
+        while (favLocModel.rowCount()) {
+            favLocModel.removeLocation(0);
+        }
+        FavoriteLocation favLoc;
+        favLoc.setLatitude(52.51860f);
+        favLoc.setLongitude(13.37630f);
+        favLoc.setName(u"name"_s);
+        favLocModel.setFavoriteLocations({favLoc});
+        QCOMPARE(favLocModel.rowCount(), 1);
+
+        LiveDataManager liveDataMgr;
+
+        TransferManager::clear();
+        TransferManager mgr;
+        mgr.setFavoriteLocationModel(&favLocModel);
+        mgr.overrideCurrentDateTime(QDateTime({2017, 1, 1}, {}));
+        mgr.setReservationManager(&resMgr);
+        mgr.setLiveDataManager(&liveDataMgr);
+        tgMgr.setTransferManager(&mgr);
+
+        ImportController importer;
+        importer.setReservationManager(&resMgr);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
+        ctrl->commitImport(&importer);
+
+        auto batchId = resMgr.batches().at(0);
+        auto transfer = mgr.transfer(batchId, Transfer::Before);
+        QCOMPARE(transfer.state(), Transfer::Pending);
+        QCOMPARE(transfer.anchorTimeDelta(), 5400);
+        QVERIFY(transfer.from().hasCoordinate());
+        QCOMPARE(transfer.to().name(), "Berlin Tegel"_L1);
+
+        const auto evBefore = MatrixSyncContent::stateEventForTransfer(batchId, Transfer::Before, &mgr);
+        QCOMPARE(evBefore->matrixType(), "org.kde.itinerary.transfer"_L1);
+        QCOMPARE(evBefore->stateKey(), batchId + "-BEFORE"_L1);
+        QVERIFY(!evBefore->contentJson().isEmpty());
+
+        MatrixSyncContent::readTransfer(evBefore.get(), &mgr);
+        transfer = mgr.transfer(batchId, Transfer::Before);
+        QCOMPARE(transfer.state(), Transfer::Pending);
+        QCOMPARE(transfer.anchorTimeDelta(), 5400);
+        QVERIFY(transfer.from().hasCoordinate());
+        QCOMPARE(transfer.to().name(), "Berlin Tegel"_L1);
+
+        mgr.removeTransfer(batchId, Transfer::Before);
+        transfer = mgr.transfer(batchId, Transfer::Before);
+        QCOMPARE(transfer.state(), Transfer::UndefinedState);
+
+        const auto evBeforeEmpty = MatrixSyncContent::stateEventForTransfer(batchId, Transfer::Before, &mgr);
+        QCOMPARE(evBeforeEmpty->matrixType(), evBefore->matrixType());
+        QCOMPARE(evBeforeEmpty->stateKey(), evBefore->stateKey());
+
+        MatrixSyncContent::readTransfer(evBefore.get(), &mgr);
+        transfer = mgr.transfer(batchId, Transfer::Before);
+        QCOMPARE(transfer.state(), Transfer::Pending);
+        QCOMPARE(transfer.anchorTimeDelta(), 5400);
+        QVERIFY(transfer.from().hasCoordinate());
+        QCOMPARE(transfer.to().name(), "Berlin Tegel"_L1);
+
+        MatrixSyncContent::readTransfer(evBeforeEmpty.get(), &mgr);
+        transfer = mgr.transfer(batchId, Transfer::Before);
+        QCOMPARE(transfer.state(), Transfer::UndefinedState);
     }
 };
 
