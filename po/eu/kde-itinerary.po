@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-05 00:43+0000\n"
+"POT-Creation-Date: 2025-07-06 00:43+0000\n"
 "PO-Revision-Date: 2025-06-24 17:56+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -378,80 +378,114 @@ msgstr "Ez dago kamerarik erabilgarri."
 msgid "Light"
 msgstr "Argia"
 
-#: app/BoatDelegate.qml:29 app/BoatPage.qml:28
+#: app/BoatDelegate.qml:29 app/BoatEditor.qml:108 app/BoatPage.qml:32
 #, kde-format
 msgctxt "default transport name for a boat trip"
 msgid "Ferry"
 msgstr "Ferrya"
 
-#: app/BoatEditor.qml:17
+#: app/BoatEditor.qml:18
 #, kde-format
 msgid "New Boat Trip"
 msgstr "Txango berria itsasontzian"
 
-#: app/BoatEditor.qml:17
+#: app/BoatEditor.qml:18
 #, kde-format
 msgid "Edit Boat Trip"
 msgstr "Editatu itsasontzi txangoa"
 
-#: app/BoatEditor.qml:55 app/StatisticsPage.qml:149
-#, kde-format
-msgid "Boat"
-msgstr "Itsasontzia"
+#: app/BoatEditor.qml:69 app/BoatEditor.qml:165
+#, fuzzy, kde-format
+#| msgctxt "train departure"
+#| msgid "Change Departure Station"
+msgctxt "boat departure"
+msgid "Change Departure Terminal"
+msgstr "Aldatu irteera-geltokia"
 
-#: app/BoatEditor.qml:59 app/EventEditor.qml:54 app/FlightEditor.qml:72
+#: app/BoatEditor.qml:75
+#, fuzzy, kde-format
+#| msgctxt "train departure"
+#| msgid "Change departure station"
+msgctxt "boat departure"
+msgid "Change departure terminal"
+msgstr "Aldatu irteera-geltokia"
+
+#: app/BoatEditor.qml:85 app/BoatEditor.qml:227
+#, fuzzy, kde-format
+#| msgctxt "train arrival"
+#| msgid "Change Arrival Station"
+msgctxt "boat arrival"
+msgid "Change Arrival Terminal"
+msgstr "Aldatu iritsiera-geltokia"
+
+#: app/BoatEditor.qml:91
+#, fuzzy, kde-format
+#| msgctxt "train arrival"
+#| msgid "Change arrival station"
+msgctxt "boat arrival"
+msgid "Change arrival terminal"
+msgstr "Aldatu iritsiera-geltokia"
+
+#: app/BoatEditor.qml:112 app/EventEditor.qml:54 app/FlightEditor.qml:72
 #: app/HotelEditor.qml:51 app/ImportPage.qml:21 app/JourneyRequestPage.qml:228
 #: app/RestaurantEditor.qml:53 app/StopoverDetailsPage.qml:127
 #, kde-format
 msgid "Trip"
 msgstr "Txangoa"
 
-#: app/BoatEditor.qml:71 app/BoatPage.qml:54
+#: app/BoatEditor.qml:124 app/BoatPage.qml:58
 #, kde-format
 msgctxt "Boat departure"
 msgid "Departure"
 msgstr "Irteera"
 
-#: app/BoatEditor.qml:77
+#: app/BoatEditor.qml:131
 #, kde-format
 msgctxt "Boat departure"
 msgid "Departure Time"
 msgstr "Irteera-ordua"
 
-#: app/BoatEditor.qml:81
+#: app/BoatEditor.qml:135
 #, kde-format
 msgid "Departure time has to be set."
 msgstr "Irteera-ordua ezarri behar da."
 
-#: app/BoatEditor.qml:86 app/BoatEditor.qml:127
+#: app/BoatEditor.qml:140 app/BoatEditor.qml:198
 #, kde-format
 msgctxt "boat terminal"
 msgid "Terminal Name"
 msgstr "Terminalaren izena"
 
-#: app/BoatEditor.qml:89
+#: app/BoatEditor.qml:143
 #, kde-format
 msgid "Departure terminal must not be empty."
 msgstr "Irteera-terminala ez da hutsik egon behar."
 
-#: app/BoatEditor.qml:103 app/BoatPage.qml:84
+#: app/BoatEditor.qml:158 app/BoatEditor.qml:221
+#, fuzzy, kde-format
+#| msgid "Terminal"
+msgctxt "boat terminal"
+msgid "Terminal"
+msgstr "Terminala"
+
+#: app/BoatEditor.qml:173 app/BoatPage.qml:88
 #, kde-format
 msgctxt "Boat arrival"
 msgid "Arrival"
 msgstr "Iritsiera"
 
-#: app/BoatEditor.qml:109
+#: app/BoatEditor.qml:180
 #, kde-format
 msgctxt "Boat arrival"
 msgid "Arrival Time"
 msgstr "Iritsiera-ordua"
 
-#: app/BoatEditor.qml:120
+#: app/BoatEditor.qml:191
 #, kde-format
 msgid "Arrival time has to be after the departure time."
 msgstr "Iritsiera-ordua irteera-orduaren ondoren izan behar da."
 
-#: app/BoatEditor.qml:130
+#: app/BoatEditor.qml:201
 #, kde-format
 msgid "Arrival terminal must not be empty."
 msgstr "Iritsiera-terminala ez da hutsik egon behar."
@@ -461,29 +495,29 @@ msgstr "Iritsiera-terminala ez da hutsik egon behar."
 msgid "Boat Ticket"
 msgstr "Itsasontzi-txartela"
 
-#: app/BoatPage.qml:59 app/BusPage.qml:69 app/TrainPage.qml:124
+#: app/BoatPage.qml:63 app/BusPage.qml:69 app/TrainPage.qml:124
 #, kde-format
 msgid "Departure time"
 msgstr "Irteera-ordua"
 
-#: app/BoatPage.qml:66 app/BoatPage.qml:96
+#: app/BoatPage.qml:70 app/BoatPage.qml:100
 #, kde-format
 msgctxt "Boat terminal"
 msgid "Terminal"
 msgstr "Terminala"
 
-#: app/BoatPage.qml:89 app/BusPage.qml:134 app/TrainPage.qml:219
+#: app/BoatPage.qml:93 app/BusPage.qml:134 app/TrainPage.qml:219
 #, kde-format
 msgid "Arrival time"
 msgstr "Iritsiera-ordua"
 
-#: app/BoatPage.qml:126 app/BusPage.qml:213 app/FlightPage.qml:218
+#: app/BoatPage.qml:130 app/BusPage.qml:213 app/FlightPage.qml:218
 #: app/TrainPage.qml:362
 #, kde-format
 msgid "Alternatives"
 msgstr "Aukerak"
 
-#: app/BoatPage.qml:134 app/BusPage.qml:218 app/JourneySectionPage.qml:27
+#: app/BoatPage.qml:138 app/BusPage.qml:218 app/JourneySectionPage.qml:27
 #: app/TrainPage.qml:367
 #, kde-format
 msgid "Journey Details"
@@ -3714,6 +3748,11 @@ msgstr "Trena"
 #, kde-format
 msgid "Bus"
 msgstr "Autobusa"
+
+#: app/StatisticsPage.qml:149
+#, kde-format
+msgid "Boat"
+msgstr "Itsasontzia"
 
 #: app/StatisticsPage.qml:163
 #, kde-format

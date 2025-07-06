@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kitinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-05 00:43+0000\n"
+"POT-Creation-Date: 2025-07-06 00:43+0000\n"
 "PO-Revision-Date: 2023-07-14 22:15+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -390,7 +390,7 @@ msgstr "Nenhuma câmara disponível."
 msgid "Light"
 msgstr "Luz"
 
-#: app/BoatDelegate.qml:29 app/BoatPage.qml:28
+#: app/BoatDelegate.qml:29 app/BoatEditor.qml:108 app/BoatPage.qml:32
 #, fuzzy, kde-format
 #| msgctxt "journey query search constraint, title"
 #| msgid "Ferry"
@@ -398,23 +398,46 @@ msgctxt "default transport name for a boat trip"
 msgid "Ferry"
 msgstr "'Ferry'"
 
-#: app/BoatEditor.qml:17
+#: app/BoatEditor.qml:18
 #, fuzzy, kde-format
 #| msgid "Add train trip..."
 msgid "New Boat Trip"
 msgstr "Adicionar uma viagem de comboio..."
 
-#: app/BoatEditor.qml:17
+#: app/BoatEditor.qml:18
 #, kde-format
 msgid "Edit Boat Trip"
 msgstr "Editar a Viagem de Barco"
 
-#: app/BoatEditor.qml:55 app/StatisticsPage.qml:149
-#, kde-format
-msgid "Boat"
-msgstr "Barco"
+#: app/BoatEditor.qml:69 app/BoatEditor.qml:165
+#, fuzzy, kde-format
+#| msgid "Change departure station"
+msgctxt "boat departure"
+msgid "Change Departure Terminal"
+msgstr "Mudar a estação de partida"
 
-#: app/BoatEditor.qml:59 app/EventEditor.qml:54 app/FlightEditor.qml:72
+#: app/BoatEditor.qml:75
+#, fuzzy, kde-format
+#| msgid "Change departure station"
+msgctxt "boat departure"
+msgid "Change departure terminal"
+msgstr "Mudar a estação de partida"
+
+#: app/BoatEditor.qml:85 app/BoatEditor.qml:227
+#, fuzzy, kde-format
+#| msgid "Change arrival station"
+msgctxt "boat arrival"
+msgid "Change Arrival Terminal"
+msgstr "Mudar a estação de chegada"
+
+#: app/BoatEditor.qml:91
+#, fuzzy, kde-format
+#| msgid "Change arrival station"
+msgctxt "boat arrival"
+msgid "Change arrival terminal"
+msgstr "Mudar a estação de chegada"
+
+#: app/BoatEditor.qml:112 app/EventEditor.qml:54 app/FlightEditor.qml:72
 #: app/HotelEditor.qml:51 app/ImportPage.qml:21 app/JourneyRequestPage.qml:228
 #: app/RestaurantEditor.qml:53 app/StopoverDetailsPage.qml:127
 #, fuzzy, kde-format
@@ -422,54 +445,61 @@ msgstr "Barco"
 msgid "Trip"
 msgstr "Viagens"
 
-#: app/BoatEditor.qml:71 app/BoatPage.qml:54
+#: app/BoatEditor.qml:124 app/BoatPage.qml:58
 #, kde-format
 msgctxt "Boat departure"
 msgid "Departure"
 msgstr "Partida"
 
-#: app/BoatEditor.qml:77
+#: app/BoatEditor.qml:131
 #, kde-format
 msgctxt "Boat departure"
 msgid "Departure Time"
 msgstr "Hora de Partida"
 
-#: app/BoatEditor.qml:81
+#: app/BoatEditor.qml:135
 #, fuzzy, kde-format
 #| msgid "Check-out time"
 msgid "Departure time has to be set."
 msgstr "Hora de saída"
 
-#: app/BoatEditor.qml:86 app/BoatEditor.qml:127
+#: app/BoatEditor.qml:140 app/BoatEditor.qml:198
 #, kde-format
 msgctxt "boat terminal"
 msgid "Terminal Name"
 msgstr "Nome do Terminal"
 
-#: app/BoatEditor.qml:89
+#: app/BoatEditor.qml:143
 #, fuzzy, kde-format
 #| msgid "Ticket name must not be empty."
 msgid "Departure terminal must not be empty."
 msgstr "O nome do bilhete não pode estar vazio."
 
-#: app/BoatEditor.qml:103 app/BoatPage.qml:84
+#: app/BoatEditor.qml:158 app/BoatEditor.qml:221
+#, fuzzy, kde-format
+#| msgid "Terminal"
+msgctxt "boat terminal"
+msgid "Terminal"
+msgstr "Terminal"
+
+#: app/BoatEditor.qml:173 app/BoatPage.qml:88
 #, kde-format
 msgctxt "Boat arrival"
 msgid "Arrival"
 msgstr "Chegada"
 
-#: app/BoatEditor.qml:109
+#: app/BoatEditor.qml:180
 #, kde-format
 msgctxt "Boat arrival"
 msgid "Arrival Time"
 msgstr "Hora de Chegada"
 
-#: app/BoatEditor.qml:120
+#: app/BoatEditor.qml:191
 #, kde-format
 msgid "Arrival time has to be after the departure time."
 msgstr ""
 
-#: app/BoatEditor.qml:130
+#: app/BoatEditor.qml:201
 #, fuzzy, kde-format
 #| msgid "Ticket name must not be empty."
 msgid "Arrival terminal must not be empty."
@@ -480,29 +510,29 @@ msgstr "O nome do bilhete não pode estar vazio."
 msgid "Boat Ticket"
 msgstr "Bilhete de Barco"
 
-#: app/BoatPage.qml:59 app/BusPage.qml:69 app/TrainPage.qml:124
+#: app/BoatPage.qml:63 app/BusPage.qml:69 app/TrainPage.qml:124
 #, kde-format
 msgid "Departure time"
 msgstr "Hora de partida"
 
-#: app/BoatPage.qml:66 app/BoatPage.qml:96
+#: app/BoatPage.qml:70 app/BoatPage.qml:100
 #, kde-format
 msgctxt "Boat terminal"
 msgid "Terminal"
 msgstr "Terminal"
 
-#: app/BoatPage.qml:89 app/BusPage.qml:134 app/TrainPage.qml:219
+#: app/BoatPage.qml:93 app/BusPage.qml:134 app/TrainPage.qml:219
 #, kde-format
 msgid "Arrival time"
 msgstr "Hora de chegada"
 
-#: app/BoatPage.qml:126 app/BusPage.qml:213 app/FlightPage.qml:218
+#: app/BoatPage.qml:130 app/BusPage.qml:213 app/FlightPage.qml:218
 #: app/TrainPage.qml:362
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternativas"
 
-#: app/BoatPage.qml:134 app/BusPage.qml:218 app/JourneySectionPage.qml:27
+#: app/BoatPage.qml:138 app/BusPage.qml:218 app/JourneySectionPage.qml:27
 #: app/TrainPage.qml:367
 #, kde-format
 msgid "Journey Details"
@@ -3854,6 +3884,11 @@ msgstr "Comboio"
 #, kde-format
 msgid "Bus"
 msgstr "Autocarro"
+
+#: app/StatisticsPage.qml:149
+#, kde-format
+msgid "Boat"
+msgstr "Barco"
 
 #: app/StatisticsPage.qml:163
 #, kde-format
