@@ -10,6 +10,7 @@
 
 #include <QString>
 
+class LiveDataManager;
 class MatrixSyncStateEvent;
 class ReservationManager;
 
@@ -24,6 +25,12 @@ namespace MatrixSyncContent
 
     /** Read reservation batch state event. */
     [[nodiscard]] QString readBatch(const MatrixSyncStateEvent &event, ReservationManager *resMgr);
+
+    /** Create a state event for live data for a given batch. */
+    [[nodiscard]] MatrixSyncStateEvent stateEventForLiveData(const QString &batchId);
+
+    /** Read live data for a batch from a state event. */
+    void readLiveData(const MatrixSyncStateEvent &event, LiveDataManager *ldm);
 }
 
 #endif
