@@ -196,6 +196,18 @@ FormCard.FormCardPage {
             text: i18nc("@action:button", "Import")
             icon.name: 'document-import-symbolic'
             onClicked: importFileDialog.open();
+
+            readonly property FileDialog importFileDialog: FileDialog {
+                fileMode: FileDialog.OpenFile
+                title: i18n("Import Backup")
+                currentFolder: QtCore.StandardPaths.writableLocation(QtCore.StandardPaths.DocumentsLocation)
+                // Android has no file type selector, we get the superset of all filters there since Qt6 (apart from "all"),
+                // so don't set any filters on Android in order to be able to open everything we can read
+                nameFilters:  Qt.platform.os === "android" ?
+                    [i18n("All Files (*.*)")] :
+                    [i18n("KDE Itinerary files (*.itinerary)")]
+                onAccepted: ImportController.importFromUrl(selectedFile)
+            }
         }
 
         FormCard.FormDelegateSeparator {}
