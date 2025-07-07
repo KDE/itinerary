@@ -9,6 +9,7 @@ import QtQuick.Controls as QQC2
 import org.kde.kitemmodels
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
+import org.kde.kirigamiaddons.components as Addons
 
 import org.kde.itinerary
 
@@ -23,9 +24,29 @@ FormCard.FormCardPage {
 
     FormCard.FormCard {
         FormCard.FormButtonDelegate {
-            text: i18nc("@action:button", "Import From File")
+            text: i18nc("@action:button", "Import")
             icon.name: "document-import-symbolic"
-            onClicked: importFileDialog.open()
+            onClicked: {
+                contextMenu.createObject(root.QQC2.Overlay.overlay).popup()
+            }
+
+            readonly property Component contextMenu: Addons.ConvergentContextMenu {
+                id: contextMenu
+
+                readonly property ImportAction importAction: ImportAction {
+                    pageStack: root.QQC2.ApplicationWindow.window.pageStack
+                }
+
+                actions: importAction.passImportActions
+                parent: root.QQC2.Overlay.overlay
+                headerContentItem: Kirigami.Heading {
+                    text: i18nc("@title:dialog", "Import")
+                }
+
+                Component.onCompleted: if (!Kirigami.Settings.isMobile) {
+                    displayMode = Addons.ConvergentContextMenu.Dialog;
+                }
+            }
         }
 
         FormCard.FormDelegateSeparator {}

@@ -6,6 +6,7 @@ import QtCore as QtCore
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
+import QtQuick.Templates as T
 import QtQuick.Dialogs
 import QtLocation as QtLocation
 import org.kde.kirigami as Kirigami
@@ -17,6 +18,7 @@ Kirigami.Action {
     id: root
 
     required property Kirigami.PageRow pageStack
+    readonly property list<T.Action> passImportActions: [openFileAction, clipboardAction, barcodeAction]
 
     text: i18n("Import")
     icon.name: "document-import-symbolic"
@@ -44,6 +46,8 @@ Kirigami.Action {
     }
 
     Kirigami.Action {
+        id: clipboardAction
+
         text: i18nc("@action:inmenu", "From clipboard")
         icon.name: "edit-paste"
         enabled: Clipboard.hasText || Clipboard.hasUrls || Clipboard.hasBinaryData
@@ -52,6 +56,8 @@ Kirigami.Action {
     }
 
     Kirigami.Action {
+        id: barcodeAction
+
         text: i18nc("@action:inmenu", "From barcode")
         icon.name: "view-barcode-qr"
         onTriggered: {
