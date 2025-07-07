@@ -185,9 +185,9 @@ Kirigami.Page {
             }
         }
 
-        contentItem: Component{
+        contentItem: Component {
             ColumnLayout {
-                spacing:0
+                spacing: 0
                 width: locationInfoDrawer.width
                 FormCard.FormTextDelegate {
                     Layout.fillWidth: true
