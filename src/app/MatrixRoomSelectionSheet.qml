@@ -18,8 +18,8 @@ Kirigami.SearchDialog {
 
     searchFieldPlaceholderText: i18n("Share location…")
 
-    width: Math.min(applicationWindow().width, Kirigami.Units.gridUnit * 24)
-    height: Math.min(applicationWindow().height, Kirigami.Units.gridUnit * 32)
+    width: Math.min(parent.width - Kirigami.Units.gridUnit * 4, Kirigami.Units.gridUnit * 24)
+    height: Math.min(parent.height - Kirigami.Units.gridUnit * 4, Kirigami.Units.gridUnit * 32)
 
     model: KSortFilterProxyModel {
         id: proxyModel
