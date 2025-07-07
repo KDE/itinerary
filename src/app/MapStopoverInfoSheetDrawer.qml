@@ -57,40 +57,49 @@ SheetDrawer {
 
         ColumnLayout {
             id: contentLayout
-            spacing:0
+
+            spacing: 0
             width: scrollView.width - scrollView.effectiveScrollBarWidth
+
             FormCard.FormTextDelegate {
-                Layout.fillWidth: true
                 id: platformDelegate
+
                 text: i18n("Platform:")
                 description: stopInfoDrawer.stop.hasExpectedPlatform ? stopInfoDrawer.stop.expectedPlatform : stopInfoDrawer.stop.scheduledPlatform;
                 visible: description
             }
-            FormCard.AbstractFormDelegate {
-                Layout.fillWidth: true
-                visible: stopInfoDrawer.stop.aggregatedOccupancy.length > 0
-                    contentItem: ColumnLayout {
-                        spacing: Kirigami.Units.mediumSpacing
 
-                        QQC2.Label {
-                            text: i18n("Occupancy:")
-                            elide: Text.ElideRight
-                            Layout.fillWidth: true
-                            Accessible.ignored: true
-                        }
-                        Repeater {
-                            model: stopInfoDrawer.stop.aggregatedOccupancy
-                            delegate: KPublicTransport.OccupancyDelegate {
-                                required property KPublicTransport.loadInfo modelData
-                                occupancyInfo: modelData
-                            }
+            FormCard.FormDelegateSeparator { visible: platformDelegate.visible }
+
+            FormCard.AbstractFormDelegate {
+                id: occupancyDelegate
+
+                visible: stopInfoDrawer.stop.aggregatedOccupancy.length > 0
+                background: null
+                contentItem: ColumnLayout {
+                    spacing: Kirigami.Units.mediumSpacing
+
+                    QQC2.Label {
+                        text: i18n("Occupancy:")
+                        elide: Text.ElideRight
+                        Layout.fillWidth: true
+                        Accessible.ignored: true
+                    }
+                    Repeater {
+                        model: stopInfoDrawer.stop.aggregatedOccupancy
+                        delegate: KPublicTransport.OccupancyDelegate {
+                            required property KPublicTransport.loadInfo modelData
+                            occupancyInfo: modelData
                         }
                     }
-
-                background: Item{}
+                }
             }
-            FormCard.FormDelegateSeparator {}
+
+            FormCard.FormDelegateSeparator { visible: occupancyDelegate.visible }
+
             FormCard.FormTextDelegate {
+                id: informationDelegate
+
                 text: i18n("Information:")
                 description: stopInfoDrawer.stop.notes.join("<br/>")
                 descriptionItem.textFormat: Text.RichText
@@ -99,10 +108,14 @@ SheetDrawer {
                 visible: stopInfoDrawer.stop.notes.length > 0
                 onLinkActivated: (link) => { Qt.openUrlExternally(link); }
             }
-            Item{Layout.fillHeight: true}
-            FormCard.FormDelegateSeparator {}
+
+            Item {
+                Layout.fillHeight: true
+            }
+
+            FormCard.FormDelegateSeparator { visible: informationDelegate.visible }
+
             FormCard.FormButtonDelegate {
-                Layout.fillWidth: true
                 text: i18n("Show indoor map")
                 icon.name: "map-symbolic"
                 onClicked: {
