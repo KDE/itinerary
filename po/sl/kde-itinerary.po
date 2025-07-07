@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-06 00:43+0000\n"
-"PO-Revision-Date: 2025-07-05 06:29+0200\n"
+"PO-Revision-Date: 2025-07-06 12:15+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -392,36 +392,28 @@ msgid "Edit Boat Trip"
 msgstr "Uredi ladijsko potovanje"
 
 #: app/BoatEditor.qml:69 app/BoatEditor.qml:165
-#, fuzzy, kde-format
-#| msgctxt "train departure"
-#| msgid "Change Departure Station"
+#, kde-format
 msgctxt "boat departure"
 msgid "Change Departure Terminal"
-msgstr "Spremeni začetno postajo"
+msgstr "Spremeni odhodni terminal"
 
 #: app/BoatEditor.qml:75
-#, fuzzy, kde-format
-#| msgctxt "train departure"
-#| msgid "Change departure station"
+#, kde-format
 msgctxt "boat departure"
 msgid "Change departure terminal"
-msgstr "Spremeni začetno postajo"
+msgstr "Spremeni odhodni terminal"
 
 #: app/BoatEditor.qml:85 app/BoatEditor.qml:227
-#, fuzzy, kde-format
-#| msgctxt "train arrival"
-#| msgid "Change Arrival Station"
+#, kde-format
 msgctxt "boat arrival"
 msgid "Change Arrival Terminal"
-msgstr "Spremeni ciljno postajo"
+msgstr "Spremeni dohodni terminal"
 
 #: app/BoatEditor.qml:91
-#, fuzzy, kde-format
-#| msgctxt "train arrival"
-#| msgid "Change arrival station"
+#, kde-format
 msgctxt "boat arrival"
 msgid "Change arrival terminal"
-msgstr "Spremeni ciljno postajo"
+msgstr "Spremeni dohodni terminal"
 
 #: app/BoatEditor.qml:112 app/EventEditor.qml:54 app/FlightEditor.qml:72
 #: app/HotelEditor.qml:51 app/ImportPage.qml:21 app/JourneyRequestPage.qml:228
@@ -459,8 +451,7 @@ msgid "Departure terminal must not be empty."
 msgstr "Odhodni terminal odhoda ne sme biti prazen."
 
 #: app/BoatEditor.qml:158 app/BoatEditor.qml:221
-#, fuzzy, kde-format
-#| msgid "Terminal"
+#, kde-format
 msgctxt "boat terminal"
 msgid "Terminal"
 msgstr "Terminal"

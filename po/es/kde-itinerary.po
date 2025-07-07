@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-06 00:43+0000\n"
-"PO-Revision-Date: 2025-07-05 12:42+0100\n"
+"PO-Revision-Date: 2025-07-06 15:24+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -389,36 +389,28 @@ msgid "Edit Boat Trip"
 msgstr "Editar viaje en barco"
 
 #: app/BoatEditor.qml:69 app/BoatEditor.qml:165
-#, fuzzy, kde-format
-#| msgctxt "train departure"
-#| msgid "Change Departure Station"
+#, kde-format
 msgctxt "boat departure"
 msgid "Change Departure Terminal"
-msgstr "Cambiar estación de salida"
+msgstr "Cambiar terminal de salida"
 
 #: app/BoatEditor.qml:75
-#, fuzzy, kde-format
-#| msgctxt "train departure"
-#| msgid "Change departure station"
+#, kde-format
 msgctxt "boat departure"
 msgid "Change departure terminal"
-msgstr "Cambiar estación de salida"
+msgstr "Cambiar terminal de salida"
 
 #: app/BoatEditor.qml:85 app/BoatEditor.qml:227
-#, fuzzy, kde-format
-#| msgctxt "train arrival"
-#| msgid "Change Arrival Station"
+#, kde-format
 msgctxt "boat arrival"
 msgid "Change Arrival Terminal"
-msgstr "Cambiar estación de llegada"
+msgstr "Cambiar terminal de llegada"
 
 #: app/BoatEditor.qml:91
-#, fuzzy, kde-format
-#| msgctxt "train arrival"
-#| msgid "Change arrival station"
+#, kde-format
 msgctxt "boat arrival"
 msgid "Change arrival terminal"
-msgstr "Cambiar estación de llegada"
+msgstr "Cambiar terminal de llegada"
 
 #: app/BoatEditor.qml:112 app/EventEditor.qml:54 app/FlightEditor.qml:72
 #: app/HotelEditor.qml:51 app/ImportPage.qml:21 app/JourneyRequestPage.qml:228
@@ -456,8 +448,7 @@ msgid "Departure terminal must not be empty."
 msgstr "La terminal de salida no puede estar vacía."
 
 #: app/BoatEditor.qml:158 app/BoatEditor.qml:221
-#, fuzzy, kde-format
-#| msgid "Terminal"
+#, kde-format
 msgctxt "boat terminal"
 msgid "Terminal"
 msgstr "Terminal"

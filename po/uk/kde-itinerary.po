@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-06 00:43+0000\n"
-"PO-Revision-Date: 2025-07-05 20:34+0300\n"
+"PO-Revision-Date: 2025-07-06 09:43+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -396,36 +396,28 @@ msgid "Edit Boat Trip"
 msgstr "Редагувати подорожі човном"
 
 #: app/BoatEditor.qml:69 app/BoatEditor.qml:165
-#, fuzzy, kde-format
-#| msgctxt "train departure"
-#| msgid "Change Departure Station"
+#, kde-format
 msgctxt "boat departure"
 msgid "Change Departure Terminal"
-msgstr "Змінити станцію відправлення"
+msgstr "Змінити причал відправлення"
 
 #: app/BoatEditor.qml:75
-#, fuzzy, kde-format
-#| msgctxt "train departure"
-#| msgid "Change departure station"
+#, kde-format
 msgctxt "boat departure"
 msgid "Change departure terminal"
-msgstr "Змінити станцію відправлення"
+msgstr "Змінити причал відправлення"
 
 #: app/BoatEditor.qml:85 app/BoatEditor.qml:227
-#, fuzzy, kde-format
-#| msgctxt "train arrival"
-#| msgid "Change Arrival Station"
+#, kde-format
 msgctxt "boat arrival"
 msgid "Change Arrival Terminal"
-msgstr "Змінити станцію прибуття"
+msgstr "Змінити причал прибуття"
 
 #: app/BoatEditor.qml:91
-#, fuzzy, kde-format
-#| msgctxt "train arrival"
-#| msgid "Change arrival station"
+#, kde-format
 msgctxt "boat arrival"
 msgid "Change arrival terminal"
-msgstr "Змінити станцію прибуття"
+msgstr "Змінити причал прибуття"
 
 #: app/BoatEditor.qml:112 app/EventEditor.qml:54 app/FlightEditor.qml:72
 #: app/HotelEditor.qml:51 app/ImportPage.qml:21 app/JourneyRequestPage.qml:228
@@ -463,11 +455,10 @@ msgid "Departure terminal must not be empty."
 msgstr "Термінал відправлення має бути непорожнім."
 
 #: app/BoatEditor.qml:158 app/BoatEditor.qml:221
-#, fuzzy, kde-format
-#| msgid "Terminal"
+#, kde-format
 msgctxt "boat terminal"
 msgid "Terminal"
-msgstr "Термінал"
+msgstr "Причал"
 
 #: app/BoatEditor.qml:173 app/BoatPage.qml:88
 #, kde-format

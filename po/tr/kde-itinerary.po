@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-06 00:43+0000\n"
-"PO-Revision-Date: 2025-07-05 11:08+0300\n"
+"PO-Revision-Date: 2025-07-06 17:21+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -388,36 +388,28 @@ msgid "Edit Boat Trip"
 msgstr "Bot Gezisini Düzenle"
 
 #: app/BoatEditor.qml:69 app/BoatEditor.qml:165
-#, fuzzy, kde-format
-#| msgctxt "train departure"
-#| msgid "Change Departure Station"
+#, kde-format
 msgctxt "boat departure"
 msgid "Change Departure Terminal"
-msgstr "Kalkış İstasyonunu Değiştir"
+msgstr "Kalkış Terminalini Değiştir"
 
 #: app/BoatEditor.qml:75
-#, fuzzy, kde-format
-#| msgctxt "train departure"
-#| msgid "Change departure station"
+#, kde-format
 msgctxt "boat departure"
 msgid "Change departure terminal"
-msgstr "Kalkış istasyonunu değiştir"
+msgstr "Kalkış terminalini değiştir"
 
 #: app/BoatEditor.qml:85 app/BoatEditor.qml:227
-#, fuzzy, kde-format
-#| msgctxt "train arrival"
-#| msgid "Change Arrival Station"
+#, kde-format
 msgctxt "boat arrival"
 msgid "Change Arrival Terminal"
-msgstr "Varış İstasyonunu Değiştir"
+msgstr "Varış Terminalini Değiştir"
 
 #: app/BoatEditor.qml:91
-#, fuzzy, kde-format
-#| msgctxt "train arrival"
-#| msgid "Change arrival station"
+#, kde-format
 msgctxt "boat arrival"
 msgid "Change arrival terminal"
-msgstr "Varış istasyonunu değiştir"
+msgstr "Varış terminalini değiştir"
 
 #: app/BoatEditor.qml:112 app/EventEditor.qml:54 app/FlightEditor.qml:72
 #: app/HotelEditor.qml:51 app/ImportPage.qml:21 app/JourneyRequestPage.qml:228
@@ -455,8 +447,7 @@ msgid "Departure terminal must not be empty."
 msgstr "Kalkış terminali boş olmamalıdır."
 
 #: app/BoatEditor.qml:158 app/BoatEditor.qml:221
-#, fuzzy, kde-format
-#| msgid "Terminal"
+#, kde-format
 msgctxt "boat terminal"
 msgid "Terminal"
 msgstr "Terminal"

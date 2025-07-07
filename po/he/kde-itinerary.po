@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-06 00:43+0000\n"
-"PO-Revision-Date: 2025-07-04 13:43+0300\n"
+"PO-Revision-Date: 2025-07-06 10:41+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -390,36 +390,28 @@ msgid "Edit Boat Trip"
 msgstr "עריכת שיט בסירה"
 
 #: app/BoatEditor.qml:69 app/BoatEditor.qml:165
-#, fuzzy, kde-format
-#| msgctxt "train departure"
-#| msgid "Change Departure Station"
+#, kde-format
 msgctxt "boat departure"
 msgid "Change Departure Terminal"
-msgstr "החלפת תחנת יציאה"
+msgstr "החלפת מסוף יציאה"
 
 #: app/BoatEditor.qml:75
-#, fuzzy, kde-format
-#| msgctxt "train departure"
-#| msgid "Change departure station"
+#, kde-format
 msgctxt "boat departure"
 msgid "Change departure terminal"
-msgstr "החלפת תחנת יציאה"
+msgstr "החלפת מסוף יציאה"
 
 #: app/BoatEditor.qml:85 app/BoatEditor.qml:227
-#, fuzzy, kde-format
-#| msgctxt "train arrival"
-#| msgid "Change Arrival Station"
+#, kde-format
 msgctxt "boat arrival"
 msgid "Change Arrival Terminal"
-msgstr "החלפת תחנת הגעה"
+msgstr "החלפת מסוף הגעה"
 
 #: app/BoatEditor.qml:91
-#, fuzzy, kde-format
-#| msgctxt "train arrival"
-#| msgid "Change arrival station"
+#, kde-format
 msgctxt "boat arrival"
 msgid "Change arrival terminal"
-msgstr "החלפת תחנת הגעה"
+msgstr "החלפת מסוף הגעה"
 
 #: app/BoatEditor.qml:112 app/EventEditor.qml:54 app/FlightEditor.qml:72
 #: app/HotelEditor.qml:51 app/ImportPage.qml:21 app/JourneyRequestPage.qml:228
@@ -457,8 +449,7 @@ msgid "Departure terminal must not be empty."
 msgstr "מסוף ההגעה לא יכול להיות ריק."
 
 #: app/BoatEditor.qml:158 app/BoatEditor.qml:221
-#, fuzzy, kde-format
-#| msgid "Terminal"
+#, kde-format
 msgctxt "boat terminal"
 msgid "Terminal"
 msgstr "מסוף"
@@ -2048,8 +2039,7 @@ msgid "To:"
 msgstr "אל:"
 
 #: app/JourneyRequestPage.qml:140
-#, fuzzy, kde-format
-#| msgid "Swap departure and arrival"
+#, kde-format
 msgctxt "departure and arrival stops"
 msgid "Swap departure and arrival"
 msgstr "החלפת יציאה והגעה"
