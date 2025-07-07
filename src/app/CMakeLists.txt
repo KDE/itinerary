@@ -348,6 +348,7 @@ if (ANDROID)
         meeting-attending
         merge
         message-rfc822
+        network-disconnect-symbolic
         notifications
         question
         raindrop

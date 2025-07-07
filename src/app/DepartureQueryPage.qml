@@ -157,17 +157,15 @@ Kirigami.ScrollablePage {
             }
         }
 
-        QQC2.BusyIndicator {
-            anchors.centerIn: parent
-            running: departureModel.loading
-        }
+        Kirigami.LoadingPlaceholder {
+            text: departureModel.loading ? i18nc("@info:placeholder", "Loading") : i18nc("@info:status", "Error")
+            visible: departureModel.loading || explanation.length > 0
 
-        QQC2.Label {
+            icon.name: !departureModel.loading ? "network-disconnect-symbolic" : ""
+            explanation: departureModel.errorMessage
+            progressBar.visible: departureModel.loading
             anchors.centerIn: parent
-            width: parent.width
-            text: departureModel.errorMessage
-            color: Kirigami.Theme.negativeTextColor
-            wrapMode: Text.Wrap
+            width: parent.width - Kirigami.Units.gridUnit * 4
         }
     }
 }
