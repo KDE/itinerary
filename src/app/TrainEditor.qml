@@ -15,7 +15,9 @@ import org.kde.itinerary
 
 EditorPage {
     id: root
-    title: i18n("Edit Train Reservation")
+
+    // fully manually edited or backed by KPublicTransport data?
+    readonly property bool isManual: !root.controller || root.controller.trip.mode === JourneySection.Invalid
 
     property var departureStation: reservationFor.departureStation
     property var departureTime: Util.dateTimeStripTimezone(reservationFor, "departureTime")
@@ -23,13 +25,40 @@ EditorPage {
     property var arrivalTime: Util.dateTimeStripTimezone(reservationFor, "arrivalTime")
 
     function apply(reservation) {
-        var trip = reservation.reservationFor;
-        trip.departureStation = root.departureStation;
-        trip = Util.setDateTimePreserveTimezone(trip, "departureTime", root.departureTime);
-        trip.departurePlatform = departurePlatform.text;
-        trip.arrivalStation = root.arrivalStation;
-        trip = Util.setDateTimePreserveTimezone(trip, "arrivalTime", root.arrivalTime);
-        trip.arrivalPlatform = arrivalPlatform.text;
+        let trip = reservation.reservationFor;
+
+        if (root.isManual) {
+            if (departureTimeEdit.isModified) {
+                trip = Util.setDateTimePreserveTimezone(trip, "departureTime", departureTimeEdit.value);
+            }
+            if (arrivalTimeEdit.isModified) {
+                console.log(arrivalTimeEdit.value)
+                trip = Util.setDateTimePreserveTimezone(trip, "arrivalTime", arrivalTimeEdit.value);
+            }
+
+            const departure = trip.departureStation;
+            departure.name = departureStationName.text;
+            departureAddress.save(departure);
+            trip.departureStation = departure;
+            trip.departurePlatform = departurePlatformNew.text
+
+            const arrival = trip.arrivalStation;
+            arrival.name = arrivalStationName.text;
+            arrivalAddress.save(arrival);
+            trip.arrivalStation = arrival;
+            trip.arrivalPlatform = arrivalPlatformNew.text
+
+            trip.trainName = trainName.text;
+            trip.trainNumber = trainNumber.text;
+        } else {
+            trip.departureStation = root.departureStation;
+            trip = Util.setDateTimePreserveTimezone(trip, "departureTime", root.departureTime);
+            trip.departurePlatform = departurePlatform.text;
+
+            trip.arrivalStation = root.arrivalStation;
+            trip = Util.setDateTimePreserveTimezone(trip, "arrivalTime", root.arrivalTime);
+            trip.arrivalPlatform = arrivalPlatform.text;
+        }
 
         let ticket = reservation.reservedTicket ?? Factory.makeTicket();
         ticketTokenEdit.apply(ticket);
@@ -46,6 +75,13 @@ EditorPage {
         bookingEdit.apply(newRes);
         return newRes;
     }
+
+    title: root.isNew ? i18nc("@title", "New Train Reservation") : i18nc("@title", "Edit Train Reservation")
+    isValidInput: !isManual || (departureStationName.text !== "" && arrivalStationName.text !== "" && departureTimeEdit.hasValue
+        && (!arrivalTimeEdit.hasValue || departureTimeEdit.value < arrivalTimeEdit.value))
+
+    tripGroupSelector: tripGroupSelector
+
 
     IntermediateStopSelector {
         id: boardSheet
@@ -96,21 +132,110 @@ EditorPage {
         }
 
         FormCard.FormHeader {
+            title: i18n("Trip")
+            visible: root.isNew
+        }
+
+        TripGroupSelectorCard {
+            id: tripGroupSelector
+
+            visible: root.isNew
+            suggestedName: arrivalStationName.text
+            tripGroupCandidates: TripGroupModel.intersectingXorAdjacentTripGroups(departureTimeEdit.value, arrivalTimeEdit.hasValue ? arrivalTimeEdit.value : departureTimeEdit.value)
+        }
+
+        FormCard.FormHeader {
+            title: i18nc("@title:group", "Train")
+        }
+
+        FormCard.FormCard {
+            visible: root.isManual
+
+            FormCard.FormTextFieldDelegate {
+                id: trainName
+
+                label: i18nc("@label:textfield", "Train name")
+                text: reservationFor.trainName
+            }
+
+            FormCard.FormDelegateSeparator {}
+
+            FormCard.FormTextFieldDelegate {
+                id: trainNumber
+
+                label: i18nc("@label:textfield", "Train number")
+                text: reservationFor.trainNumber
+            }
+        }
+
+        FormCard.FormHeader {
             title: i18nc("train departure", "Departure")
         }
 
         FormCard.FormCard {
+            visible: root.isManual
+
+            FormDateTimeEditDelegate {
+                id: departureTimeEdit
+
+                text: i18nc("Train departure", "Departure Time")
+                obj: reservation.reservationFor
+                propertyName: "departureTime"
+                status: Kirigami.MessageType.Error
+                statusMessage: departureTimeEdit.hasValue ? '' : i18n("Departure time has to be set.")
+            }
+
+            FormCard.FormDelegateSeparator {}
+
+            FormCard.FormTextFieldDelegate {
+                id: departureStationName
+
+                label: i18nc("Train station platform", "Station Name")
+                text: reservation.reservationFor.departureStation.name
+                status: Kirigami.MessageType.Error
+                statusMessage: text === "" ? i18n("Departure station must not be empty.") : ""
+            }
+
+            FormCard.FormDelegateSeparator {}
+
+            FormCard.FormTextFieldDelegate {
+                id: departurePlatformNew
+
+                label: i18nc("Train station platform", "Platform")
+                text: reservation.reservationFor.departurePlatform
+            }
+
+            FormCard.FormDelegateSeparator {}
+
+            FormPlaceEditorDelegate {
+                id: departureAddress
+
+                place: {
+                    if (root.batchId || !root.reservation.reservationFor.departureStation.address.isEmpty || root.reservation.reservationFor.departureStation.geo.isValid)
+                        return reservation.reservationFor.departureStation;
+                    return cityAtTime(root.reservation.reservationFor.departureTime);
+                }
+            }
+        }
+
+        FormCard.FormCard {
+            visible: !root.isManual
+
             FormCard.FormTextDelegate {
                 text: i18nc("train station", "Station")
                 description: root.departureStation.name
             }
+
             FormCard.FormDelegateSeparator {}
+
             FormCard.FormTextFieldDelegate {
                 id: departurePlatform
                 label: i18nc("train platform", "Platform")
                 text: reservationFor.departurePlatform
             }
+
             FormCard.FormDelegateSeparator { above: boardLater }
+
             FormCard.FormButtonDelegate {
                 id: boardLater
 
@@ -126,19 +251,87 @@ EditorPage {
         }
 
         FormCard.FormCard {
+            visible: root.isManual
+
+            FormDateTimeEditDelegate {
+                id: arrivalTimeEdit
+
+                text: i18nc("Train arrival", "Arrival Time")
+                obj: reservation.reservationFor
+                propertyName: "arrivalTime"
+                initialValue: {
+                    let d = new Date(departureTimeEdit.value);
+                    d.setHours(d.getHours() + 8);
+                    return d;
+                }
+                status: Kirigami.MessageType.Error
+                statusMessage: {
+                    if (arrivalTimeEdit.hasValue && arrivalTimeEdit.value < departureTimeEdit.value)
+                        return i18n("Arrival time has to be after the departure time.")
+                    return '';
+                }
+            }
+
+            FormCard.FormDelegateSeparator {}
+
+            FormCard.FormTextFieldDelegate {
+                id: arrivalStationName
+
+                label: i18nc("Train station", "Station Name")
+                text: root.arrivalStation.name
+                status: Kirigami.MessageType.Error
+                statusMessage: text === "" ? i18n("Arrival station must not be empty.") : ""
+            }
+
+            FormCard.FormDelegateSeparator {}
+
+            FormCard.FormTextFieldDelegate {
+                id: arrivalPlatformNew
+
+                label: i18nc("Train station platform", "Platform")
+                text: reservation.reservationFor.arrivalPlatform
+            }
+
+            FormCard.FormDelegateSeparator {}
+
+            FormPlaceEditorDelegate {
+                id: arrivalAddress
+
+                place: {
+                    if (root.batchId || !root.reservation.reservationFor.arrivalStation.address.isEmpty || root.reservation.reservationFor.arrivalStation.geo.isValid)
+                        return reservation.reservationFor.arrivalStation;
+                    let p = cityAtTime(root.reservation.reservationFor.departureTime);
+                    let addr = p.address;
+                    addr.addressLocality = undefined;
+                    addr.addressRegion = undefined;
+                    p.address = addr;
+                    return p;
+                }
+            }
+        }
+
+        FormCard.FormCard {
+            visible: !root.isManual
+
             FormCard.FormTextDelegate {
                 text: i18nc("train station", "Station")
                 description: root.arrivalStation.name
             }
+
             FormCard.FormDelegateSeparator {}
+
             FormCard.FormTextFieldDelegate {
                 id: arrivalPlatform
+
                 label: i18nc("train platform", "Platform")
                 text: reservationFor.arrivalPlatform
             }
+
             FormCard.FormDelegateSeparator { above: alignEarlier }
+
             FormCard.FormButtonDelegate {
                 id: alignEarlier
+
                 text: i18nc("train arrival", "Change Arrival Station")
                 icon.name: "document-edit"
                 visible: root.controller.trip && root.controller.trip.intermediateStops.length > 0 // TODO also check for subsequent layovers
@@ -156,19 +349,19 @@ EditorPage {
             FormCard.FormTextFieldDelegate {
                 id: coachEdit
                 label: i18nc("carriage on a train", "Coach")
-                text: reservation.reservedTicket.ticketedSeat.seatSection
+                text: reservation.reservedTicket?.ticketedSeat?.seatSection
             }
             FormCard.FormDelegateSeparator {}
             FormCard.FormTextFieldDelegate {
                 id: seatEdit
                 label: i18nc("Train seat", "Seat")
-                text: reservation.reservedTicket.ticketedSeat.seatNumber
+                text: reservation.reservedTicket?.ticketedSeat?.seatNumber
             }
             FormCard.FormDelegateSeparator {}
             FormCard.FormTextFieldDelegate {
                 id: classEdit
                 label: i18nc("seating class on a train", "Class")
-                text: reservation.reservedTicket.ticketedSeat.seatingType
+                text: reservation.reservedTicket?.ticketedSeat?.seatingType
             }
         }
 
