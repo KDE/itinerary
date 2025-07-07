@@ -46,44 +46,63 @@ FormCard.FormButtonDelegate {
 
     Component {
         id: departuresPage
+
         DepartureQueryPage {
             stop: place
             dateTime: controller.effectiveEndTime
         }
     }
 
-    MatrixRoomSelectionSheet {
-        parent: applicationWindow().overlay
-        id: matrixRoomSheet
-            onRoomSelected: {
-            console.log(room.id, room.displayName);
-            shareConfirmDialog.room = room;
-            shareConfirmDialog.open();
+    Component {
+        id: matrixRoomDialog
+
+        MatrixRoomSelectionSheet {
+            parent: root.QQC2.Overlay.overlay
+            onRoomSelected: room => {
+                console.log("Sharing with", room.id, room.displayName);
+                const dialog = shareConfirmDialog.createObject(root, {
+                    room: room,
+                });
+                dialog.openDialog();
+             }
          }
     }
 
-    Kirigami.PromptDialog {
+    Component {
         id: shareConfirmDialog
 
-        property var room
+        Addons.MessageDialog {
+            id: dialog
 
-        title: i18n("Share Place")
-        subtitle: room ? i18n("Do you really want to share %1 to the Matrix channel %2?", root.place.name, room.displayName) : ""
+            required property var room
 
-        standardButtons: QQC2.Dialog.Cancel
+            title: i18n("Share Place")
+            dialogType: Addons.MessageDialog.Warning
+            dontShowAgainName: "sharePlaceConfirmation"
 
-        customFooterActions: [
-            Kirigami.Action {
-                text: i18n("Share")
-                icon.name: "emblem-shared-symbolic"
-                onTriggered: {
-                    console.log(shareConfirmDialog.room.id);
-                    MatrixController.manager.postLocation(shareConfirmDialog.room.id, root.place.geo.latitude, root.place.geo.longitude, root.place.name);
-                    shareConfirmDialog.close();
-                }
+            QQC2.Label {
+                Layout.fillWidth: true
+                text: i18n("Do you really want to share %1 to the Matrix channel %2?", root.place.name, room.displayName)
+                wrapMode: Text.WordWrap
             }
-        ]
-        closePolicy: QQC2.Popup.CloseOnEscape
+
+            standardButtons: QQC2.Dialog.Cancel | QQC2.Dialog.Ok
+
+            onAccepted: {
+                console.log(dialog.room.id);
+                MatrixController.manager.postLocation(dialog.room.id, root.place.geo.latitude, root.place.geo.longitude, root.place.name);
+                dialog.close();
+            }
+            onRejected: dialog.close();
+
+            Component.onCompleted: {
+                const shareButton = standardButton(QQC2.Dialog.Ok)
+                shareButton.text = i18nc("@action:button", "Share");
+                shareButton.icon.name = "emblem-shared-symbolic";
+            }
+
+            closePolicy: QQC2.Popup.CloseOnEscape
+        }
     }
 
     Component {
@@ -155,7 +174,11 @@ FormCard.FormButtonDelegate {
                 visible: MatrixController.isAvailable && root.place != undefined && root.place.geo.isValid && root.place.name
                 enabled: MatrixController.manager.connected
                 icon.name: "emblem-shared-symbolic"
-                onTriggered: matrixRoomSheet.open()
+                onTriggered: {
+                    const dialog = matrixRoomDialog.createObject(root);
+                    dialog.open();
+                }
+
                 text: i18nc("@action:button", "Share via Matrix")
             }
         }
