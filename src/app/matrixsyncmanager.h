@@ -8,6 +8,7 @@
 
 #include <config-itinerary.h>
 
+#include "matrixsynclocalstatequeue.h"
 #include "transfer.h"
 
 #include <QHash>
@@ -67,21 +68,24 @@ private:
     void tripGroupChanged(const QString &tgId);
     void tripGroupRemoved(const QString &tgId);
 
-    void liveDataChanged(const QString &batchId);
-
-    void transferChanged(const QString &batchId, Transfer::Alignment alignment);
-
     void pkPassChanged(const QString &passId);
 
     void createTripGroupFromRoom(Quotient::Room *room);
     void readDocumentFromStateEvent(const Quotient::StateEvent *event);
     void readPkPassFromStateEvent(const Quotient::StateEvent *event);
 
-    void writeBatchToRoom(const QString &batchId, Quotient::Room *room);
-    void writeBatchDeletionToRoom(const QString &batchId, Quotient::Room *room);
-    void writeDocumentToRoom(const QString &docId, Quotient::Room *room);
-    void writePkPassToRoom(const QString &passId, Quotient::Room *room);
+    void writeBatchToRoom(const QString &batchId, const QString &tgId);
 
+    [[nodiscard]] Quotient::Room* roomForTripGroup(const QString &tgId) const;
+    [[nodiscard]] Quotient::Room* roomForBatch(const QString &batchId) const;
+    void setState(Quotient::Room *room, const Quotient::StateEvent &state);
+
+    /** Brute force search for the trip group a pkpass belongs into.
+     *  We might want something for efficient than that eventually.
+     */
+    [[nodiscard]] QString tripGroupForPkPass(const QString &pkPassId) const;
+
+    MatrixSyncLocalStateQueue m_stateQueue;
     MatrixManager *m_matrixMgr = nullptr;
     TripGroupManager *m_tripGroupMgr = nullptr;
     DocumentManager *m_docMgr = nullptr;
@@ -90,10 +94,8 @@ private:
     PkPassManager *m_pkPassMgr = nullptr;
     // map Matrix room ids to trip groups
     QHash<QString, QString> m_roomToTripGroupMap;
-    QSet<QString> m_pendingDocumentUploads;
     QSet<QString> m_pendingDocumentDownloads;
     bool m_autoSyncTrips = false;
-    bool m_recursionLock = false;
 #endif
 };
 
