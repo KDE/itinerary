@@ -21,10 +21,10 @@ Kirigami.SearchDialog {
     width: Math.min(parent.width - Kirigami.Units.gridUnit * 4, Kirigami.Units.gridUnit * 24)
     height: Math.min(parent.height - Kirigami.Units.gridUnit * 4, Kirigami.Units.gridUnit * 32)
 
+    onOpened: proxyModel.sourceModel = MatrixController.roomsModel
+
     model: KSortFilterProxyModel {
         id: proxyModel
-        // don't set the model right away, that seems to result in all delegates being instantiated before the sheet is even shown
-        sourceModel: sheet.visible ? MatrixController.roomsModel : null
         filterCaseSensitivity: Qt.CaseInsensitive
     }
 
