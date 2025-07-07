@@ -120,23 +120,21 @@ Kirigami.ScrollablePage {
             }
         }
 
-        QQC2.BusyIndicator {
-            anchors.centerIn: parent
-            running: journeyModel.loading && journeyView.count === 0
-        }
+        Kirigami.LoadingPlaceholder {
+            text: if (journeyModel.loading) {
+                return i18nc("@info:placeholder", "Loading");
+            } else if (journeyModel.errorMessage.length > 0) {
+                return i18nc("@info:status", "Error")
+            } else {
+                return i18nc("@info:placeholder", "No journeys found")
+            }
+            visible: journeyView.count === 0
 
-        QQC2.Label {
+            icon.name: journeyModel.errorMessage.length > 0 ? "network-disconnect-symbolic" : ""
+            explanation: journeyModel.errorMessage
+            progressBar.visible: journeyModel.loading
             anchors.centerIn: parent
             width: parent.width - Kirigami.Units.gridUnit * 4
-            text: journeyModel.errorMessage
-            color: Kirigami.Theme.negativeTextColor
-            wrapMode: Text.Wrap
-        }
-
-        Kirigami.PlaceholderMessage {
-            anchors.fill: parent
-            text: i18n("No journeys found.")
-            visible: journeyView.count === 0 && !journeyModel.loading && journeyModel.errorMessage === ""
         }
     }
 

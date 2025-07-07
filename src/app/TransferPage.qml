@@ -332,17 +332,15 @@ Kirigami.ScrollablePage {
             }
         }
 
-        QQC2.BusyIndicator {
-            anchors.centerIn: parent
-            running: journeyModel.loading
-        }
+        Kirigami.LoadingPlaceholder {
+            text: journeyModel.loading ? i18nc("@info:placeholder", "Loading") : i18nc("@info:status", "Error")
+            visible: journeyModel.loading || explanation.length > 0
 
-        QQC2.Label {
+            icon.name: !journeyModel.loading ? "network-disconnect-symbolic" : ""
+            explanation: journeyModel.errorMessage
+            progressBar.visible: journeyModel.loading
             anchors.centerIn: parent
             width: parent.width - Kirigami.Units.gridUnit * 4
-            text: journeyModel.errorMessage
-            color: Kirigami.Theme.negativeTextColor
-            wrapMode: Text.Wrap
         }
     }
 }
