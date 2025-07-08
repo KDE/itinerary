@@ -14,7 +14,12 @@ import os
 class ItineraryTest(ItineraryTestCase):
     # FIXME currently disabled as the DB API endpoint is no longer responding
     # def test_db(self):
-    #     self.triggerImportAction("Deutsche Bahn Online Ticket…")
+    #     self.createAndEnterTrip("My New Trip")
+    #
+    #     action = self.driver.find_element(by=AppiumBy.NAME, value="From Deutsche Bahn reservation number")
+    #     self.assertTrue(action.is_enabled())
+    #     action.click()
+    #
     #     searchBtn = self.driver.find_element(by=AppiumBy.NAME, value="Search…")
     #     self.assertFalse(searchBtn.is_enabled())
     #     nameInput = self.driver.find_element(by=AppiumBy.NAME, value="Family name")
@@ -29,10 +34,17 @@ class ItineraryTest(ItineraryTestCase):
     #     self.assertFalse(searchBtn.is_enabled())
     #     refInput.send_keys("ABC123")
     #     self.assertTrue(searchBtn.is_enabled())
-    #     self.goBack()
+    #
+    #     self.driver.find_element(by=AppiumBy.NAME, value="Delete trip").click()
+    #     self.driver.find_element(by=AppiumBy.NAME, value="Delete").click()
 
     def test_sncf(self):
-        self.triggerImportAction("SNCF Online Ticket…")
+        self.createAndEnterTrip("My New Trip")
+
+        action = self.driver.find_element(by=AppiumBy.NAME, value="From SNCF reservation number")
+        self.assertTrue(action.is_enabled())
+        action.click()
+
         searchBtn = self.driver.find_element(by=AppiumBy.NAME, value="Search…")
         self.assertFalse(searchBtn.is_enabled())
         nameInput = self.driver.find_element(by=AppiumBy.NAME, value="Family name")
@@ -42,6 +54,9 @@ class ItineraryTest(ItineraryTestCase):
         refInput.send_keys("ABC123")
         self.assertTrue(searchBtn.is_enabled())
         self.goBack()
+
+        self.driver.find_element(by=AppiumBy.NAME, value="Delete trip").click()
+        self.driver.find_element(by=AppiumBy.NAME, value="Delete").click()
 
 if __name__ == '__main__':
     unittest.main()

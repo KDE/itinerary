@@ -68,13 +68,6 @@ class ItineraryTestCase(unittest.TestCase):
     def openContextDrawer(self):
         self.driver.find_elements(by=AppiumBy.NAME, value="Open drawer")[1].click()
 
-    def triggerImportAction(self, name):
-        self.openGlobalDrawer()
-        self.driver.find_element(by=AppiumBy.NAME, value="Import…").click()
-        action = self.driver.find_element(by=AppiumBy.NAME, value=name)
-        self.assertTrue(action.is_enabled())
-        action.click()
-
     def enableDevMode(self):
         self.openGlobalDrawer()
         self.driver.find_element(by=AppiumBy.NAME, value="Development").click()
@@ -84,3 +77,29 @@ class ItineraryTestCase(unittest.TestCase):
         self.openGlobalDrawer()
         self.driver.find_element(by=AppiumBy.NAME, value="Development").click()
         self.driver.find_element(by=AppiumBy.NAME, value="Disable Development Mode").click()
+
+    def createAndEnterTrip(self, name):
+        self.driver.find_element(by=AppiumBy.NAME, value="Itinerary").click()
+
+        self.driver.find_element(by=AppiumBy.NAME, value="Add trip").click()
+        addDialog = self.driver.find_element(by=AppiumBy.NAME, value="Add Trip")
+        self.assertTrue(addDialog.is_displayed())
+        self.driver.find_element(by=AppiumBy.NAME, value="Cancel").click()
+
+        self.driver.find_element(by=AppiumBy.NAME, value="Add trip").click()
+        addDialog = self.driver.find_element(by=AppiumBy.NAME, value="Add Trip")
+        saveBtn = addDialog.find_element(by=AppiumBy.NAME, value="Save")
+        self.assertFalse(saveBtn.is_enabled())
+        self.driver.find_element(by=AppiumBy.NAME, value="Trip name:").send_keys(name)
+        self.assertTrue(saveBtn.is_enabled())
+        saveBtn.click()
+
+        self.driver.find_element(by=AppiumBy.NAME, value=name).click()
+
+    def deleteTrip(self, name):
+        self.driver.find_element(by=AppiumBy.NAME, value=name).click()
+        self.goBack()
+
+        self.driver.find_element(by=AppiumBy.NAME, value="Delete trip").click()
+        self.driver.find_element(by=AppiumBy.NAME, value="Delete").click()
+
