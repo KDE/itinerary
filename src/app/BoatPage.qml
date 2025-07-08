@@ -64,19 +64,13 @@ DetailsPage {
                 description: Localizer.formatDateTime(reservationFor, "departureTime")
             }
 
-            FormCard.FormDelegateSeparator {}
-
-            FormCard.FormTextDelegate {
-                text: i18nc("Boat terminal", "Terminal")
-                description: reservationFor.departureBoatTerminal.name
-            }
-
-            FormCard.FormDelegateSeparator {
-                visible: departurePlace
-            }
+            FormCard.FormDelegateSeparator { visible: departureTerminal.visible }
 
             FormPlaceDelegate {
-                id: departurePlace
+                id: departureTerminal
+
+                text: i18nc("Boat terminal", "Terminal")
+                placeName: reservationFor.departureBoatTerminal.name
                 place: reservationFor.departureBoatTerminal
                 controller: root.controller
                 isRangeBegin: true
@@ -94,22 +88,16 @@ DetailsPage {
                 description: Localizer.formatDateTime(reservationFor, "arrivalTime")
             }
 
-            FormCard.FormDelegateSeparator {}
-
-            FormCard.FormTextDelegate {
-                text: i18nc("Boat terminal", "Terminal")
-                description: reservationFor.arrivalBoatTerminal.name
-            }
-
-            FormCard.FormDelegateSeparator {
-                visible: arrivalPlace
-            }
+            FormCard.FormDelegateSeparator { visible: arrivalTerminal.visible }
 
             FormPlaceDelegate {
-                id: arrivalPlace
+                id: arrivalTerminal
+
                 place: reservationFor.arrivalBoatTerminal
                 controller: root.controller
                 isRangeEnd: true
+                text: i18nc("Boat terminal", "Terminal")
+                placeName: reservationFor.arrivalBoatTerminal.name
             }
         }
 

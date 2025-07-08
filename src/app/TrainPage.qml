@@ -155,15 +155,20 @@ DetailsPage {
                 description: Localizer.formatDate(reservationFor, "departureDay")
             }
 
-            FormCard.FormDelegateSeparator {}
+            FormCard.FormDelegateSeparator { visible: departureStation.visible }
 
-            FormCard.FormTextDelegate {
+            FormPlaceDelegate {
+                id: departureStation
+
                 text: i18nc("train station", "Station")
-                description: reservationFor.departureStation.name
+                placeName: reservationFor.departureStation.name
+                place: reservationFor.departureStation
+                controller: root.controller
+                isRangeBegin: true
                 visible: description
             }
 
-            FormCard.FormDelegateSeparator { visible: reservationFor.departureStation.name }
+            FormCard.FormDelegateSeparator { visible: departurePlatformDelegate.visible }
 
             FormPlatformDelegate {
                 id: departurePlatformDelegate
@@ -172,18 +177,7 @@ DetailsPage {
                 scheduledPlatform: reservationFor.departurePlatform
             }
 
-            FormCard.FormDelegateSeparator { visible: departurePlatformDelegate.visible }
-
-            FormPlaceDelegate {
-                id: departureDelegate
-                place: reservationFor.departureStation
-                controller: root.controller
-                isRangeBegin: true
-            }
-
-            FormCard.FormDelegateSeparator {
-                visible: departureDelegate.visible
-            }
+            FormCard.FormDelegateSeparator { visible: departure.notes.length > 0 && departureLayoutButton.visible }
 
             FormCard.FormTextDelegate {
                 text: i18n("Additional notes")
@@ -195,9 +189,7 @@ DetailsPage {
                 onLinkActivated: Qt.openUrlExternally(link)
             }
 
-            FormCard.FormDelegateSeparator {
-                visible: departure.notes.length > 0 && departureLayoutButton.visible
-            }
+            FormCard.FormDelegateSeparator { visible: departureLayoutButton.visible }
 
             FormCard.FormButtonDelegate {
                 id: departureLayoutButton
@@ -247,14 +239,20 @@ DetailsPage {
                 }
             }
 
-            FormCard.FormDelegateSeparator { visible: arrivalTimeLabel.text.length > 0 }
+            FormCard.FormDelegateSeparator { visible: arrivalTimeLabel.text.length > 0 && arrivalStation.visible }
 
-            FormCard.FormTextDelegate {
+            FormPlaceDelegate {
+                id: arrivalStation
+
                 text: i18nc("train station", "Station")
                 description: reservationFor.arrivalStation.name
+                place: reservationFor.arrivalStation
+                controller: root.controller
+                isRangeEnd: true
+                visible: description
             }
 
-            FormCard.FormDelegateSeparator { visible: reservationFor.arrivalStation.name }
+            FormCard.FormDelegateSeparator { visible: arrivalPlatformDelegate.visible }
 
             FormPlatformDelegate {
                 id: arrivalPlatformDelegate
@@ -263,17 +261,8 @@ DetailsPage {
                 scheduledPlatform: reservationFor.arrivalPlatform
             }
 
-            FormCard.FormDelegateSeparator { visible: arrivalPlatformDelegate.visible }
-
-            FormPlaceDelegate {
-                id: arrivalDelegate
-                place: reservationFor.arrivalStation
-                controller: root.controller
-                isRangeEnd: true
-            }
-
             FormCard.FormDelegateSeparator {
-                visible: arrivalDelegate
+                visible: arrival.notes.length > 0 && arrivalLayoutButton.visible
             }
 
             FormCard.FormTextDelegate {
@@ -286,9 +275,7 @@ DetailsPage {
                 onLinkActivated: Qt.openUrlExternally(link)
             }
 
-            FormCard.FormDelegateSeparator {
-                visible: arrival.notes.length > 0 && arrivalLayoutButton.visible
-            }
+            FormCard.FormDelegateSeparator { visible: arrivalLayoutButton.visible }
 
             FormCard.FormButtonDelegate {
                 id: arrivalLayoutButton

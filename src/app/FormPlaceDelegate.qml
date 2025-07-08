@@ -14,6 +14,8 @@ import org.kde.itinerary
 FormCard.FormButtonDelegate {
     id: root
 
+    property string placeName: ''
+
     property var controller: null
     /** The place to display and to navigate to. */
     property var place
@@ -29,14 +31,17 @@ FormCard.FormButtonDelegate {
     visible: place && !place.address.isEmpty
     text: i18n("Location")
     description: {
-        let result = '';
+        let result = [];
+        if (root.placeName.length > 0) {
+            result.push(root.placeName);
+        }
         if (showLocationName && root.place !== undefined && root.place.name !== undefined) {
-            result += root.place.name + '<br>';
+            result.push(root.place.name);
         }
         if (root.place !== undefined) {
-            result += root.place ? Localizer.formatAddress(root.place.address) : "";
+            result = result.concat(Localizer.formatAddress(root.place.address).split('\n'));
         }
-        return result;
+        return result.join('<br>');
     }
 
     onClicked: {

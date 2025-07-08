@@ -34,15 +34,14 @@ DetailsPage {
             }
 
             FormCard.FormDelegateSeparator {
-                visible: pickupTimeDelegate.description
-            }
-
-            FormCard.FormTextDelegate {
-                text: i18n("Location")
-                description: reservation.pickupLocation.name
+                visible: pickupTimeDelegate.description && departureLocation.visible
             }
 
             FormPlaceDelegate {
+                id: departureLocation
+
+                text: i18n("Location")
+                placeName: reservation.pickupLocation.name
                 place: reservation.pickupLocation
                 controller: root.controller
                 isRangeBegin: true
@@ -64,12 +63,11 @@ DetailsPage {
                 visible: dropoffTimeDelegate.description
             }
 
-            FormCard.FormTextDelegate {
-                text: i18n("Location")
-                description: reservation.dropoffLocation.name
-            }
-
             FormPlaceDelegate {
+                id: arrivalLocation
+
+                text: i18n("Location")
+                placeName: reservation.dropoffLocation.name
                 place: reservation.dropoffLocation
                 controller: root.controller
                 isRangeEnd: true
