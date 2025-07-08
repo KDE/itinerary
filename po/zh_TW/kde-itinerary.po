@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-06 00:43+0000\n"
+"POT-Creation-Date: 2025-07-08 00:42+0000\n"
 "PO-Revision-Date: 2024-11-28 16:26+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -839,6 +839,21 @@ msgstr "載入更晚的轉乘"
 #, kde-format
 msgid "Data providers:"
 msgstr "資料提供者："
+
+#: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:125
+#: app/TransferPage.qml:336
+#, fuzzy, kde-format
+#| msgid "Boarding"
+msgctxt "@info:placeholder"
+msgid "Loading"
+msgstr "登機"
+
+#: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:127
+#: app/TransferPage.qml:336
+#, kde-format
+msgctxt "@info:status"
+msgid "Error"
+msgstr ""
 
 #: app/DocumentsCard.qml:35
 #, kde-format
@@ -2045,13 +2060,14 @@ msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr "載入更早的轉乘"
 
-#: app/JourneyQueryPage.qml:138
+#: app/JourneyQueryPage.qml:129
 #, fuzzy, kde-format
 #| msgid "No locations found"
-msgid "No journeys found."
+msgctxt "@info:placeholder"
+msgid "No journeys found"
 msgstr "找不到位置"
 
-#: app/JourneyQueryPage.qml:165
+#: app/JourneyQueryPage.qml:163
 #, kde-format
 msgid "Still fetching results…"
 msgstr "還在抓取結果…"
@@ -2603,23 +2619,23 @@ msgctxt "@title:window"
 msgid "Matrix Session Verification"
 msgstr "Matrix 整合"
 
-#: app/MapStopoverInfoSheetDrawer.qml:65
+#: app/MapStopoverInfoSheetDrawer.qml:67
 #, kde-format
 msgid "Platform:"
 msgstr "月台："
 
-#: app/MapStopoverInfoSheetDrawer.qml:76
+#: app/MapStopoverInfoSheetDrawer.qml:83
 #, kde-format
 msgid "Occupancy:"
 msgstr ""
 
-#: app/MapStopoverInfoSheetDrawer.qml:94
+#: app/MapStopoverInfoSheetDrawer.qml:103
 #, fuzzy, kde-format
 #| msgid "More information"
 msgid "Information:"
 msgstr "更多資訊"
 
-#: app/MapStopoverInfoSheetDrawer.qml:106
+#: app/MapStopoverInfoSheetDrawer.qml:119
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "View Indoor Map"

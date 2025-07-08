@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-06 00:43+0000\n"
+"POT-Creation-Date: 2025-07-08 00:42+0000\n"
 "PO-Revision-Date: 2025-03-02 14:47+0530\n"
 "Last-Translator: Shreekant Kalwar <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -832,6 +832,21 @@ msgstr "पश्चात् संयोजनानि लोडयन्त�
 #, kde-format
 msgid "Data providers:"
 msgstr "दत्तांशप्रदातारः :"
+
+#: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:125
+#: app/TransferPage.qml:336
+#, fuzzy, kde-format
+#| msgid "Boarding"
+msgctxt "@info:placeholder"
+msgid "Loading"
+msgstr "बोर्डिंग"
+
+#: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:127
+#: app/TransferPage.qml:336
+#, kde-format
+msgctxt "@info:status"
+msgid "Error"
+msgstr ""
 
 #: app/DocumentsCard.qml:35
 #, kde-format
@@ -2024,13 +2039,14 @@ msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr "पूर्वं संयोजनानि लोडयन्तु"
 
-#: app/JourneyQueryPage.qml:138
+#: app/JourneyQueryPage.qml:129
 #, fuzzy, kde-format
 #| msgid "No locations found"
-msgid "No journeys found."
+msgctxt "@info:placeholder"
+msgid "No journeys found"
 msgstr "न स्थानानि प्राप्तानि"
 
-#: app/JourneyQueryPage.qml:165
+#: app/JourneyQueryPage.qml:163
 #, kde-format
 msgid "Still fetching results…"
 msgstr "अद्यापि परिणामान् आनयति…"
@@ -2575,23 +2591,23 @@ msgctxt "@title:window"
 msgid "Matrix Session Verification"
 msgstr "मैट्रिक्स सत्र सत्यापन"
 
-#: app/MapStopoverInfoSheetDrawer.qml:65
+#: app/MapStopoverInfoSheetDrawer.qml:67
 #, kde-format
 msgid "Platform:"
 msgstr "तमङ्गः:"
 
-#: app/MapStopoverInfoSheetDrawer.qml:76
+#: app/MapStopoverInfoSheetDrawer.qml:83
 #, kde-format
 msgid "Occupancy:"
 msgstr "अधिग्रहणम् :"
 
-#: app/MapStopoverInfoSheetDrawer.qml:94
+#: app/MapStopoverInfoSheetDrawer.qml:103
 #, fuzzy, kde-format
 #| msgid "More information"
 msgid "Information:"
 msgstr "अधिक जानकारी"
 
-#: app/MapStopoverInfoSheetDrawer.qml:106
+#: app/MapStopoverInfoSheetDrawer.qml:119
 #, kde-format
 msgid "Show indoor map"
 msgstr "आन्तरिक मानचित्रं दर्शयतु"

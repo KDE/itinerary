@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-06 00:43+0000\n"
+"POT-Creation-Date: 2025-07-08 00:42+0000\n"
 "PO-Revision-Date: 2025-07-06 17:21+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -819,6 +819,21 @@ msgstr "Sonraki bağlantıları yükle"
 #, kde-format
 msgid "Data providers:"
 msgstr "Veri sağlayıcıları:"
+
+#: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:125
+#: app/TransferPage.qml:336
+#, fuzzy, kde-format
+#| msgid "Boarding"
+msgctxt "@info:placeholder"
+msgid "Loading"
+msgstr "Biniş"
+
+#: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:127
+#: app/TransferPage.qml:336
+#, kde-format
+msgctxt "@info:status"
+msgid "Error"
+msgstr ""
 
 #: app/DocumentsCard.qml:35
 #, kde-format
@@ -1993,12 +2008,14 @@ msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr "Önceki bağlantıları yükle"
 
-#: app/JourneyQueryPage.qml:138
-#, kde-format
-msgid "No journeys found."
+#: app/JourneyQueryPage.qml:129
+#, fuzzy, kde-format
+#| msgid "No journeys found."
+msgctxt "@info:placeholder"
+msgid "No journeys found"
 msgstr "Bulunan yolculuk yok."
 
-#: app/JourneyQueryPage.qml:165
+#: app/JourneyQueryPage.qml:163
 #, kde-format
 msgid "Still fetching results…"
 msgstr "Sonuçlar hâlâ getiriliyor…"
@@ -2543,22 +2560,22 @@ msgctxt "@title:window"
 msgid "Matrix Session Verification"
 msgstr "Matrix Oturumu Doğrulaması"
 
-#: app/MapStopoverInfoSheetDrawer.qml:65
+#: app/MapStopoverInfoSheetDrawer.qml:67
 #, kde-format
 msgid "Platform:"
 msgstr "Peron:"
 
-#: app/MapStopoverInfoSheetDrawer.qml:76
+#: app/MapStopoverInfoSheetDrawer.qml:83
 #, kde-format
 msgid "Occupancy:"
 msgstr "Doluluk:"
 
-#: app/MapStopoverInfoSheetDrawer.qml:94
+#: app/MapStopoverInfoSheetDrawer.qml:103
 #, kde-format
 msgid "Information:"
 msgstr "Bilgi:"
 
-#: app/MapStopoverInfoSheetDrawer.qml:106
+#: app/MapStopoverInfoSheetDrawer.qml:119
 #, kde-format
 msgid "Show indoor map"
 msgstr "İç mekan haritasını göster"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-06 00:43+0000\n"
+"POT-Creation-Date: 2025-07-08 00:42+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -812,6 +812,21 @@ msgstr ""
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
+msgstr ""
+
+#: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:125
+#: app/TransferPage.qml:336
+#, fuzzy, kde-format
+#| msgid "Boarding Pass"
+msgctxt "@info:placeholder"
+msgid "Loading"
+msgstr "登机牌"
+
+#: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:127
+#: app/TransferPage.qml:336
+#, kde-format
+msgctxt "@info:status"
+msgid "Error"
 msgstr ""
 
 #: app/DocumentsCard.qml:35
@@ -1981,12 +1996,13 @@ msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr ""
 
-#: app/JourneyQueryPage.qml:138
+#: app/JourneyQueryPage.qml:129
 #, kde-format
-msgid "No journeys found."
+msgctxt "@info:placeholder"
+msgid "No journeys found"
 msgstr ""
 
-#: app/JourneyQueryPage.qml:165
+#: app/JourneyQueryPage.qml:163
 #, kde-format
 msgid "Still fetching results…"
 msgstr "仍在获取结果..."
@@ -2530,22 +2546,22 @@ msgctxt "@title:window"
 msgid "Matrix Session Verification"
 msgstr "Matrix 会话验证"
 
-#: app/MapStopoverInfoSheetDrawer.qml:65
+#: app/MapStopoverInfoSheetDrawer.qml:67
 #, kde-format
 msgid "Platform:"
 msgstr "站台："
 
-#: app/MapStopoverInfoSheetDrawer.qml:76
+#: app/MapStopoverInfoSheetDrawer.qml:83
 #, kde-format
 msgid "Occupancy:"
 msgstr "占有率："
 
-#: app/MapStopoverInfoSheetDrawer.qml:94
+#: app/MapStopoverInfoSheetDrawer.qml:103
 #, kde-format
 msgid "Information:"
 msgstr ""
 
-#: app/MapStopoverInfoSheetDrawer.qml:106
+#: app/MapStopoverInfoSheetDrawer.qml:119
 #, kde-format
 msgid "Show indoor map"
 msgstr "显示室内地图"
