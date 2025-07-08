@@ -125,37 +125,37 @@ DetailsPage {
                 description: Localizer.formatDate(reservationFor, "departureDay")
             }
 
-            FormCard.FormDelegateSeparator {}
+            FormCard.FormDelegateSeparator { visible: departureAirportDelegate.visible }
 
-            FormCard.FormTextDelegate {
+            FormPlaceDelegate {
                 id: departureAirportDelegate
+
                 text: i18n("Airport")
-                description: airportDisplayString(reservationFor.departureAirport)
-                visible: text.length > 0
+                placeName: airportDisplayString(reservationFor.departureAirport)
+                visible: description.length > 0
+                place: reservationFor.departureAirport
+                controller: root.controller
+                isRangeBegin: true
             }
 
-            FormCard.FormDelegateSeparator { visible: departureAirportDelegate.text }
+            FormCard.FormDelegateSeparator { visible: departureTerminal.visible }
 
             FormCard.FormTextDelegate {
+                id: departureTerminal
+
                 text: i18n("Terminal")
                 description: reservationFor.departureTerminal
                 visible: reservationFor.departureTerminal.length > 0
             }
 
-            FormCard.FormDelegateSeparator { visible: reservationFor.departureTerminal.length > 0 }
+            FormCard.FormDelegateSeparator { visible: departureGate.visible }
 
             FormCard.FormTextDelegate {
+                id: departureGate
+
                 text: i18n("Gate")
                 description: reservationFor.departureGate
                 visible: reservationFor.departureGate.length > 0
-            }
-
-            FormCard.FormDelegateSeparator { visible: reservationFor.departureGate.length > 0 }
-
-            FormPlaceDelegate {
-                place: reservationFor.departureAirport
-                controller: root.controller
-                isRangeBegin: true
             }
         }
 
@@ -171,29 +171,29 @@ DetailsPage {
                 visible: reservationFor.arrivalTime > 0
             }
 
-            FormCard.FormDelegateSeparator { visible: reservationFor.arrivalTime > 0 }
-
-            FormCard.FormTextDelegate {
-                id: arrivalAirportDelegate
-                text: i18n("Airport")
-                description: airportDisplayString(reservationFor.arrivalAirport)
-                visible: text.length > 0
+            FormCard.FormDelegateSeparator {
+                visible: reservationFor.arrivalTime > 0 && arrivalAirportDelegate.visible
             }
-
-            FormCard.FormDelegateSeparator { visible: arrivalAirportDelegate.visible }
-
-            FormCard.FormTextDelegate {
-                text: i18n("Terminal")
-                description: reservationFor.arrivalTerminal
-                visible: reservationFor.arrivalTerminal.length > 0
-            }
-
-            FormCard.FormDelegateSeparator { visible: reservationFor.arrivalTerminal.length > 0 }
 
             FormPlaceDelegate {
+                id: arrivalAirportDelegate
+
+                text: i18n("Airport")
+                placeName: airportDisplayString(reservationFor.arrivalAirport)
+                visible: text.length > 0
                 place: reservationFor.arrivalAirport
                 controller: root.controller
                 isRangeEnd: true
+            }
+
+            FormCard.FormDelegateSeparator { visible: arrivalTerminal.visible }
+
+            FormCard.FormTextDelegate {
+                id: arrivalTerminal
+
+                text: i18n("Terminal")
+                description: reservationFor.arrivalTerminal
+                visible: reservationFor.arrivalTerminal.length > 0
             }
         }
 

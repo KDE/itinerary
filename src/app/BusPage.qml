@@ -85,17 +85,24 @@ DetailsPage {
                     }
                 }
             }
+
             FormCard.FormTextDelegate {
                 text: i18n("Departure date")
                 visible: !departureTimeDelegate.visible && text.length > 0
                 description: Localizer.formatDate(reservationFor, "departureDay")
             }
 
-            FormCard.FormDelegateSeparator {}
+            FormCard.FormDelegateSeparator { visible: stationName.visible }
 
-            FormCard.FormTextDelegate {
+            FormPlaceDelegate {
+                id: stationName
+
                 text: i18nc("bus station", "Station")
                 description: reservationFor.departureBusStop.name
+                place: reservationFor.departureBusStop
+                controller: root.controller
+                isRangeBegin: true
+                visible: visible
             }
 
             FormCard.FormDelegateSeparator { visible: departurePlatformDelegate.visible }
@@ -105,15 +112,6 @@ DetailsPage {
                 text: i18nc("bus station platform", "Platform")
                 description: reservationFor.departurePlatform
                 visible: description !== ""
-            }
-
-            FormCard.FormDelegateSeparator { visible: departureDelegate.visible }
-
-            FormPlaceDelegate {
-                id: departureDelegate
-                place: reservationFor.departureBusStop
-                controller: root.controller
-                isRangeBegin: true
             }
         }
 
@@ -152,11 +150,16 @@ DetailsPage {
                 }
             }
 
-            FormCard.FormDelegateSeparator { visible: arrivalTimeLabel.text.length > 0 }
+            FormCard.FormDelegateSeparator { visible: reservationFor.arrivalTime > 0 && arrivalDelegate.visible }
 
-            FormCard.FormTextDelegate {
+            FormPlaceDelegate {
+                id: arrivalDelegate
+
                 text: i18nc("bus station", "Station")
-                description: reservationFor.arrivalBusStop.name
+                place: reservationFor.arrivalBusStop
+                controller: root.controller
+                placeName: reservationFor.arrivalBusStop.name
+                isRangeEnd: true
             }
 
             FormCard.FormDelegateSeparator { visible: arrivalPlatformDelegate.visible }
@@ -166,15 +169,6 @@ DetailsPage {
                 text: i18nc("bus station platform", "Platform")
                 description: reservationFor.arrivalPlatform
                 visible: description !== ""
-            }
-
-            FormCard.FormDelegateSeparator { visible: arrivalDelegate.visible }
-
-            FormPlaceDelegate {
-                id: arrivalDelegate
-                place: reservationFor.arrivalBusStop
-                controller: root.controller
-                isRangeEnd: true
             }
         }
 
