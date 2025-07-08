@@ -21,22 +21,9 @@ class TripGroupTest(ItineraryTestCase):
         self.driver.find_element(by=AppiumBy.NAME, value="Itinerary").click()
 
     def testEmptyGroup(self):
-        self.driver.find_element(by=AppiumBy.NAME, value="Add trip").click()
-        addDialog = self.driver.find_element(by=AppiumBy.NAME, value="Add Trip")
-        self.assertTrue(addDialog.is_displayed())
-        self.driver.find_element(by=AppiumBy.NAME, value="Cancel").click()
+        self.createAndEnterTrip("My New Trip")
 
-        self.driver.find_element(by=AppiumBy.NAME, value="Add trip").click()
-        addDialog = self.driver.find_element(by=AppiumBy.NAME, value="Add Trip")
-        saveBtn = addDialog.find_element(by=AppiumBy.NAME, value="Save")
-        self.assertFalse(saveBtn.is_enabled())
-        self.driver.find_element(by=AppiumBy.NAME, value="Trip name:").send_keys("My New Trip")
-        self.assertTrue(saveBtn.is_enabled())
-        saveBtn.click()
-
-        self.driver.find_element(by=AppiumBy.NAME, value="My New Trip").click()
-
-        self.driver.find_element(by=AppiumBy.NAME, value="Add event…").click()
+        self.driver.find_element(by=AppiumBy.NAME, value="Add event").click()
         # TODO how can we check the A11y check state?
         # self.assertTrue(self.driver.find_element(by=AppiumBy.NAME, value="Add to Trip").is_checked())
         self.assertFalse(self.driver.find_element(by=AppiumBy.NAME, value="Save").is_enabled())
@@ -50,14 +37,12 @@ class TripGroupTest(ItineraryTestCase):
         # self.goBack()
         # self.driver.find_element(by=AppiumBy.NAME, value="My New Trip").click()
 
-        self.driver.find_element(by=AppiumBy.NAME, value="Akademy 2024").click()
-        self.goBack()
-
-        self.driver.find_element(by=AppiumBy.NAME, value="Delete trip").click()
-        self.driver.find_element(by=AppiumBy.NAME, value="Delete").click()
+        self.deleteTrip("Akademy 2024")
 
     def testImportedGroup(self):
-        self.triggerImportAction("Open File…")
+        self.driver.find_element(by=AppiumBy.NAME, value="MyData").click()
+        self.driver.find_element(by=AppiumBy.NAME, value="Import").click()
+
         self.openFile("../tests/randa2017.json")
         self.driver.find_element(by=AppiumBy.NAME, value="Import selection").click()
         self.driver.find_element(by=AppiumBy.NAME, value="Randa (September 2017)").click()

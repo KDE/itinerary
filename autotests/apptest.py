@@ -49,7 +49,11 @@ class ItineraryTest(ItineraryTestCase):
 
 
     def test_import(self):
-        self.triggerImportAction("Scan Barcode…")
+        self.driver.find_element(by=AppiumBy.NAME, value="My Data").click()
+        self.driver.find_element(by=AppiumBy.NAME, value="Manage your Passes").click()
+        self.driver.find_element(by=AppiumBy.NAME, value="Import").click()
+        self.driver.find_element(by=AppiumBy.NAME, value="From barcode").click()
+
         self.assertTrue(self.driver.find_element(by=AppiumBy.NAME, value="No camera available.").is_displayed())
         self.assertFalse(self.driver.find_element(by=AppiumBy.NAME, value="Light").is_enabled())
         self.goBack()
