@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-05 00:43+0000\n"
-"PO-Revision-Date: 2025-07-02 13:07+0200\n"
+"POT-Creation-Date: 2025-07-08 02:39+0000\n"
+"PO-Revision-Date: 2025-07-07 08:43+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.04.2\n"
+"X-Generator: Lokalize 25.04.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -321,15 +321,14 @@ msgid "Pass sent."
 msgstr "Pass inviato."
 
 #: app/applicationcontroller.cpp:625
-#, fuzzy, kde-format
-#| msgid "Download failed: %1"
+#, kde-format
 msgid "Saving failed: %1"
-msgstr "Scaricamento non riuscito: %1"
+msgstr "Salvataggio non riuscito: %1"
 
 #: app/applicationcontroller.cpp:630
 #, kde-format
 msgid "File saved successfully."
-msgstr ""
+msgstr "File salvato correttamente."
 
 #: app/applicationcontroller.cpp:637
 #, kde-format
@@ -794,6 +793,21 @@ msgstr "Carica i collegamenti successivi"
 #, kde-format
 msgid "Data providers:"
 msgstr "Fornitori di dati:"
+
+#: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:125
+#: app/TransferPage.qml:336
+#, fuzzy, kde-format
+#| msgid "Boarding"
+msgctxt "@info:placeholder"
+msgid "Loading"
+msgstr "Imbarco"
+
+#: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:127
+#: app/TransferPage.qml:336
+#, kde-format
+msgctxt "@info:status"
+msgid "Error"
+msgstr ""
 
 #: app/DocumentsCard.qml:35
 #, kde-format
@@ -1402,15 +1416,14 @@ msgid "Not a valid number."
 msgstr "Non è un numero valido."
 
 #: app/GenericPkPassPage.qml:21
-#, fuzzy, kde-format
-#| msgid "Show Pass"
+#, kde-format
 msgid "Save Pass"
-msgstr "Mostra titolo"
+msgstr "Salva pass"
 
 #: app/GenericPkPassPage.qml:22
 #, kde-format
 msgid "Apple Wallet pass (*.pkpass)"
-msgstr ""
+msgstr "Pass Apple Wallet (*.pkpass)"
 
 #: app/GenericPkPassPage.qml:37 app/ProgramMembershipPage.qml:38
 #, kde-format
@@ -1431,7 +1444,7 @@ msgstr "Controlla aggiornamenti"
 #: app/GenericPkPassPage.qml:63
 #, kde-format
 msgid "Save As…"
-msgstr ""
+msgstr "Salva come…"
 
 #: app/gpxexport.cpp:33 app/main.cpp:321 app/Main.qml:21 app/Main.qml:153
 #, kde-format
@@ -1969,12 +1982,14 @@ msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr "Carica i collegamenti alternativi"
 
-#: app/JourneyQueryPage.qml:138
-#, kde-format
-msgid "No journeys found."
+#: app/JourneyQueryPage.qml:129
+#, fuzzy, kde-format
+#| msgid "No journeys found."
+msgctxt "@info:placeholder"
+msgid "No journeys found"
 msgstr "Nessun viaggio trovato."
 
-#: app/JourneyQueryPage.qml:165
+#: app/JourneyQueryPage.qml:163
 #, kde-format
 msgid "Still fetching results…"
 msgstr "Recupero risultati ancora in corso..."
@@ -2009,8 +2024,7 @@ msgid "To:"
 msgstr "A:"
 
 #: app/JourneyRequestPage.qml:140
-#, fuzzy, kde-format
-#| msgid "Swap departure and arrival"
+#, kde-format
 msgctxt "departure and arrival stops"
 msgid "Swap departure and arrival"
 msgstr "Scambia partenza e arrivo"
@@ -2520,22 +2534,22 @@ msgctxt "@title:window"
 msgid "Matrix Session Verification"
 msgstr "Verifica della sessione Matrix"
 
-#: app/MapStopoverInfoSheetDrawer.qml:65
+#: app/MapStopoverInfoSheetDrawer.qml:67
 #, kde-format
 msgid "Platform:"
 msgstr "Binario:"
 
-#: app/MapStopoverInfoSheetDrawer.qml:76
+#: app/MapStopoverInfoSheetDrawer.qml:83
 #, kde-format
 msgid "Occupancy:"
 msgstr "Occupazione:"
 
-#: app/MapStopoverInfoSheetDrawer.qml:94
+#: app/MapStopoverInfoSheetDrawer.qml:103
 #, kde-format
 msgid "Information:"
 msgstr "Informazioni:"
 
-#: app/MapStopoverInfoSheetDrawer.qml:106
+#: app/MapStopoverInfoSheetDrawer.qml:119
 #, kde-format
 msgid "Show indoor map"
 msgstr "Mostra la mappa degli interni"

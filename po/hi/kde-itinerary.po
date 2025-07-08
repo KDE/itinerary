@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-05 00:43+0000\n"
+"POT-Creation-Date: 2025-07-08 02:39+0000\n"
 "PO-Revision-Date: 2024-12-15 19:32+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
@@ -804,6 +804,21 @@ msgstr "बाद के कनेक्शन लोड करें"
 #, kde-format
 msgid "Data providers:"
 msgstr "डेटा प्रदाता:"
+
+#: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:125
+#: app/TransferPage.qml:336
+#, fuzzy, kde-format
+#| msgid "Boarding"
+msgctxt "@info:placeholder"
+msgid "Loading"
+msgstr "बोर्डिंग"
+
+#: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:127
+#: app/TransferPage.qml:336
+#, kde-format
+msgctxt "@info:status"
+msgid "Error"
+msgstr ""
 
 #: app/DocumentsCard.qml:35
 #, kde-format
@@ -2002,13 +2017,14 @@ msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr "पहले के कनेक्शन लोड करें"
 
-#: app/JourneyQueryPage.qml:138
+#: app/JourneyQueryPage.qml:129
 #, fuzzy, kde-format
 #| msgid "No locations found"
-msgid "No journeys found."
+msgctxt "@info:placeholder"
+msgid "No journeys found"
 msgstr "कोई स्थान नहीं मिला"
 
-#: app/JourneyQueryPage.qml:165
+#: app/JourneyQueryPage.qml:163
 #, kde-format
 msgid "Still fetching results…"
 msgstr "अभी भी परिणाम प्राप्त हो रहे हैं…"
@@ -2554,23 +2570,23 @@ msgctxt "@title:window"
 msgid "Matrix Session Verification"
 msgstr "मैट्रिक्स सत्र सत्यापन"
 
-#: app/MapStopoverInfoSheetDrawer.qml:65
+#: app/MapStopoverInfoSheetDrawer.qml:67
 #, kde-format
 msgid "Platform:"
 msgstr "प्लैटफ़ॉर्म:"
 
-#: app/MapStopoverInfoSheetDrawer.qml:76
+#: app/MapStopoverInfoSheetDrawer.qml:83
 #, kde-format
 msgid "Occupancy:"
 msgstr "अधिभोग:"
 
-#: app/MapStopoverInfoSheetDrawer.qml:94
+#: app/MapStopoverInfoSheetDrawer.qml:103
 #, fuzzy, kde-format
 #| msgid "More information"
 msgid "Information:"
 msgstr "अधिक जानकारी"
 
-#: app/MapStopoverInfoSheetDrawer.qml:106
+#: app/MapStopoverInfoSheetDrawer.qml:119
 #, kde-format
 msgid "Show indoor map"
 msgstr "इनडोर मानचित्र दिखाएं"
