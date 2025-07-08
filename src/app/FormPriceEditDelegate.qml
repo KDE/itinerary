@@ -54,6 +54,7 @@ FormCard.AbstractFormDelegate {
         RowLayout {
             // place currency before or after the value depending on the current locale
             layoutDirection: Number(1).toLocaleCurrencyString(Qt.locale(), 'X').startsWith('X') ? Qt.RightToLeft : Qt.LeftToRight
+            spacing: Kirigami.Units.smallSpacing
 
             QQC2.TextField {
                 id: priceEdit
@@ -67,6 +68,8 @@ FormCard.AbstractFormDelegate {
                     decimals: PriceUtil.decimalCount(currencyBox.currentText)
                     notation: DoubleValidator.StandardNotation
                 }
+
+                Layout.fillWidth: true
             }
 
             QQC2.ComboBox {
