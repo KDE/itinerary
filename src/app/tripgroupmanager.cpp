@@ -908,6 +908,12 @@ bool TripGroupManager::recomputeTripGroupTimes(TripGroup &tg) const
 
     res = m_resMgr->reservation(tg.elements().constLast());
     dt = KItinerary::SortUtil::endDateTime(res);
+    if (!dt.isValid() && tg.beginDateTime().isValid() && tg.elements().size() > 1) {
+        dt = KItinerary::SortUtil::startDateTime(res);
+        if (dt.isValid() && dt <= tg.beginDateTime()) {
+            dt = {};
+        }
+    }
 
     transfer = m_transferMgr->transfer(tg.elements().constLast(), Transfer::After);
     if (transfer.state() == Transfer::Selected && transfer.journey().scheduledArrivalTime().isValid()) {
