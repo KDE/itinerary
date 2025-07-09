@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-08 02:39+0000\n"
-"PO-Revision-Date: 2025-06-23 10:02+0200\n"
+"POT-Creation-Date: 2025-07-09 02:40+0000\n"
+"PO-Revision-Date: 2025-07-07 09:10+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Accelerator-Marker: &\n"
 "X-Environment: kde\n"
-"X-Generator: Lokalize 25.04.2\n"
+"X-Generator: Lokalize 25.04.3\n"
 "X-Text-Markup: kde4\n"
 
 #, kde-format
@@ -240,7 +240,7 @@ msgstr "Traversier"
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Aircraft"
-msgstr ""
+msgstr "Avion"
 
 #: app/AlternativeJourneyPage.qml:116
 #, kde-format
@@ -262,11 +262,9 @@ msgid "Replace"
 msgstr "Remplacer"
 
 #: app/AlternativeJourneyPage.qml:139
-#, fuzzy, kde-format
-#| msgctxt "train station"
-#| msgid "Station:"
+#, kde-format
 msgid "Destination:"
-msgstr "Arrêt :"
+msgstr "Destination :"
 
 #: app/applicationcontroller.cpp:188
 #, kde-format
@@ -322,21 +320,19 @@ msgid "Reservation sent."
 msgstr "Réservation envoyée."
 
 #: app/applicationcontroller.cpp:587
-#, fuzzy, kde-format
-#| msgid "Trip sent."
+#, kde-format
 msgid "Pass sent."
-msgstr "Envoi du trajet effectué."
+msgstr "Envoi du ticket effectué."
 
 #: app/applicationcontroller.cpp:625
-#, fuzzy, kde-format
-#| msgid "Download failed: %1"
+#, kde-format
 msgid "Saving failed: %1"
-msgstr "Échec du téléchargement : %1"
+msgstr "Échec de l'enregistrement : %1"
 
 #: app/applicationcontroller.cpp:630
 #, kde-format
 msgid "File saved successfully."
-msgstr ""
+msgstr "Fichier enregistré avec succès."
 
 #: app/applicationcontroller.cpp:637
 #, kde-format
@@ -1423,21 +1419,20 @@ msgstr "%1 (%2)"
 msgid "Price"
 msgstr "Coût"
 
-#: app/FormPriceEditDelegate.qml:91
+#: app/FormPriceEditDelegate.qml:94
 #, kde-format
 msgid "Not a valid number."
 msgstr "Nombre valable attendu."
 
 #: app/GenericPkPassPage.qml:21
-#, fuzzy, kde-format
-#| msgid "Show Pass"
+#, kde-format
 msgid "Save Pass"
-msgstr "Afficher le mot de passe"
+msgstr "Enregistrer le ticket"
 
 #: app/GenericPkPassPage.qml:22
 #, kde-format
 msgid "Apple Wallet pass (*.pkpass)"
-msgstr ""
+msgstr "Apple Wallet Pass (*.pkpass)"
 
 #: app/GenericPkPassPage.qml:37 app/ProgramMembershipPage.qml:38
 #, kde-format
@@ -1459,7 +1454,7 @@ msgstr "Vérifier les mises à jour"
 #: app/GenericPkPassPage.qml:63
 #, kde-format
 msgid "Save As…"
-msgstr ""
+msgstr "Enregistrer sous…"
 
 #: app/gpxexport.cpp:33 app/main.cpp:321 app/Main.qml:21 app/Main.qml:153
 #, kde-format
@@ -2045,11 +2040,10 @@ msgid "To:"
 msgstr "Vers :"
 
 #: app/JourneyRequestPage.qml:140
-#, fuzzy, kde-format
-#| msgid "Swap departure and arrival"
+#, kde-format
 msgctxt "departure and arrival stops"
 msgid "Swap departure and arrival"
-msgstr "Échanger le départ et l'arrivée"
+msgstr "Intervertir le départ et l'arrivée"
 
 #: app/JourneyRequestPage.qml:155
 #, kde-format
@@ -3255,10 +3249,9 @@ msgid "Program Membership"
 msgstr "Adhésion à un programme"
 
 #: app/ProgramMembershipPage.qml:56
-#, fuzzy, kde-format
-#| msgid "Edit Program Membership"
+#, kde-format
 msgid "Export Program Membership"
-msgstr "Modifier une adhésion à un programme"
+msgstr "Exporter une adhésion à un programme"
 
 #: app/ProgramMembershipPage.qml:155
 #, kde-format
@@ -3838,10 +3831,9 @@ msgid "Do you really want to delete this ticket?"
 msgstr "Voulez-vous vraiment supprimer ce billet ?"
 
 #: app/TicketPage.qml:60
-#, fuzzy, kde-format
-#| msgid "Boat Ticket"
+#, kde-format
 msgid "Export Ticket"
-msgstr "Ticket de bateau"
+msgstr "Exporter le ticket"
 
 #: app/TicketPage.qml:121
 #, kde-format
