@@ -46,7 +46,7 @@ EditorPage {
             trip.arrivalBusStop = arrival;
             trip.arrivalPlatform = arrivalPlatformNew.text
 
-            trip.busName = busName.text;
+            trip.busName = '';
             trip.busNumber = busNumber.text;
         } else {
             trip.departureBusStop = root.departureBusStop;
@@ -136,6 +136,7 @@ EditorPage {
         }
 
         FormCard.FormHeader {
+            visible: root.isManual
             title: i18nc("@title:group", "Bus")
         }
 
@@ -143,19 +144,10 @@ EditorPage {
             visible: root.isManual
 
             FormCard.FormTextFieldDelegate {
-                id: busName
-
-                label: i18nc("@label:textfield", "Bus name")
-                text: reservationFor.busName
-            }
-
-            FormCard.FormDelegateSeparator {}
-
-            FormCard.FormTextFieldDelegate {
                 id: busNumber
 
                 label: i18nc("@label:textfield", "Bus number")
-                text: reservationFor.busNumber
+                text: (reservationFor.busName.length > 0 ? reservationFor.busName + ' ' : '') + reservationFor.busNumber
             }
         }
 

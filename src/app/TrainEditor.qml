@@ -48,7 +48,7 @@ EditorPage {
             trip.arrivalStation = arrival;
             trip.arrivalPlatform = arrivalPlatformNew.text
 
-            trip.trainName = trainName.text;
+            trip.trainName = '';
             trip.trainNumber = trainNumber.text;
         } else {
             trip.departureStation = root.departureStation;
@@ -145,6 +145,7 @@ EditorPage {
         }
 
         FormCard.FormHeader {
+            visible: root.isManual
             title: i18nc("@title:group", "Train")
         }
 
@@ -152,19 +153,10 @@ EditorPage {
             visible: root.isManual
 
             FormCard.FormTextFieldDelegate {
-                id: trainName
-
-                label: i18nc("@label:textfield", "Train name")
-                text: reservationFor.trainName
-            }
-
-            FormCard.FormDelegateSeparator {}
-
-            FormCard.FormTextFieldDelegate {
                 id: trainNumber
 
                 label: i18nc("@label:textfield", "Train number")
-                text: reservationFor.trainNumber
+                text: (reservationFor.trainName.length > 0 ? reservationFor.trainName + ' ' : '') + reservationFor.trainNumber
             }
         }
 
