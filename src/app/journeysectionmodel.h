@@ -27,9 +27,9 @@ class JourneySectionModel : public QAbstractListModel
     Q_OBJECT
     Q_PROPERTY(KPublicTransport::JourneySection journeySection READ journeySection WRITE setJourneySection NOTIFY journeySectionChanged)
 
-    Q_PROPERTY(float departureProgress READ departureProgress NOTIFY journeySectionChanged)
-    Q_PROPERTY(bool departed READ departed NOTIFY journeySectionChanged)
-    Q_PROPERTY(bool arrived READ arrived NOTIFY journeySectionChanged)
+    Q_PROPERTY(float departureProgress READ departureProgress NOTIFY progressChanged)
+    Q_PROPERTY(bool departed READ departed NOTIFY progressChanged)
+    Q_PROPERTY(bool arrived READ arrived NOTIFY progressChanged)
 
     // when disabled, progress is always 0 / not passed
     Q_PROPERTY(bool showProgress MEMBER m_showProgress NOTIFY showProgressChanged)
@@ -66,6 +66,7 @@ public:
 Q_SIGNALS:
     void journeySectionChanged();
     void showProgressChanged();
+    void progressChanged();
 
 private:
     KPublicTransport::Stopover stopoverForRow(int row) const;
