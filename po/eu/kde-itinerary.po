@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-08 00:42+0000\n"
+"POT-Creation-Date: 2025-07-09 00:43+0000\n"
 "PO-Revision-Date: 2025-06-24 17:56+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -1452,7 +1452,7 @@ msgstr "%1 (%2)"
 msgid "Price"
 msgstr "Salneurria"
 
-#: app/FormPriceEditDelegate.qml:91
+#: app/FormPriceEditDelegate.qml:94
 #, kde-format
 msgid "Not a valid number."
 msgstr "Ez da zenbaki balioduna."

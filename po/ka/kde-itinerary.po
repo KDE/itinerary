@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-08 00:42+0000\n"
-"PO-Revision-Date: 2025-07-06 04:26+0200\n"
+"POT-Creation-Date: 2025-07-09 00:43+0000\n"
+"PO-Revision-Date: 2025-07-08 04:16+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -819,18 +819,17 @@ msgstr "მონაცემების მომწოდებლები:"
 
 #: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:125
 #: app/TransferPage.qml:336
-#, fuzzy, kde-format
-#| msgid "Boarding"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Loading"
-msgstr "ჩასხდომა"
+msgstr "იტვირთება"
 
 #: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:127
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:status"
 msgid "Error"
-msgstr ""
+msgstr "შეცდომა"
 
 #: app/DocumentsCard.qml:35
 #, kde-format
@@ -1433,7 +1432,7 @@ msgstr "%1 (%2)"
 msgid "Price"
 msgstr "ფასი"
 
-#: app/FormPriceEditDelegate.qml:91
+#: app/FormPriceEditDelegate.qml:94
 #, kde-format
 msgid "Not a valid number."
 msgstr "არ წარმოადგენს სწორ რიცხვს."
@@ -2006,11 +2005,10 @@ msgid "Load earlier connections"
 msgstr "წინა გზების ჩატვირთვა"
 
 #: app/JourneyQueryPage.qml:129
-#, fuzzy, kde-format
-#| msgid "No journeys found."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No journeys found"
-msgstr "მოგზაურობები ვერ მოიძებნა."
+msgstr "მოგზაურობები ვერ მოიძებნა"
 
 #: app/JourneyQueryPage.qml:163
 #, kde-format

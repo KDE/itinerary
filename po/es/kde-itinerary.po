@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-08 00:42+0000\n"
-"PO-Revision-Date: 2025-07-06 15:24+0100\n"
+"POT-Creation-Date: 2025-07-09 00:43+0000\n"
+"PO-Revision-Date: 2025-07-08 03:32+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -823,18 +823,17 @@ msgstr "Proveedores de datos:"
 
 #: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:125
 #: app/TransferPage.qml:336
-#, fuzzy, kde-format
-#| msgid "Boarding"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Loading"
-msgstr "Embarque"
+msgstr "Cargando"
 
 #: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:127
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:status"
 msgid "Error"
-msgstr ""
+msgstr "Error"
 
 #: app/DocumentsCard.qml:35
 #, kde-format
@@ -1437,7 +1436,7 @@ msgstr "%1 (%2)"
 msgid "Price"
 msgstr "Precio"
 
-#: app/FormPriceEditDelegate.qml:91
+#: app/FormPriceEditDelegate.qml:94
 #, kde-format
 msgid "Not a valid number."
 msgstr "No es un número válido."
@@ -2012,11 +2011,10 @@ msgid "Load earlier connections"
 msgstr "Cargar conexiones anteriores"
 
 #: app/JourneyQueryPage.qml:129
-#, fuzzy, kde-format
-#| msgid "No journeys found."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No journeys found"
-msgstr "No se ha encontrado ningún viaje."
+msgstr "No se ha encontrado ningún viaje"
 
 #: app/JourneyQueryPage.qml:163
 #, kde-format

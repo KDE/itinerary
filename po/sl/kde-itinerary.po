@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-08 00:42+0000\n"
-"PO-Revision-Date: 2025-07-06 12:15+0200\n"
+"POT-Creation-Date: 2025-07-09 00:43+0000\n"
+"PO-Revision-Date: 2025-07-08 06:49+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -828,18 +828,17 @@ msgstr "Dobavitelji podatkov:"
 
 #: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:125
 #: app/TransferPage.qml:336
-#, fuzzy, kde-format
-#| msgid "Boarding"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Loading"
-msgstr "Vkrcavanje"
+msgstr "Nalaganje"
 
 #: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:127
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:status"
 msgid "Error"
-msgstr ""
+msgstr "Napaka"
 
 #: app/DocumentsCard.qml:35
 #, kde-format
@@ -1442,7 +1441,7 @@ msgstr "%1 (%2)"
 msgid "Price"
 msgstr "Cena"
 
-#: app/FormPriceEditDelegate.qml:91
+#: app/FormPriceEditDelegate.qml:94
 #, kde-format
 msgid "Not a valid number."
 msgstr "Ni veljavna številka."
@@ -2017,11 +2016,10 @@ msgid "Load earlier connections"
 msgstr "Naloži zgodnejše povezave"
 
 #: app/JourneyQueryPage.qml:129
-#, fuzzy, kde-format
-#| msgid "No journeys found."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No journeys found"
-msgstr "Ni najdenih potovanj."
+msgstr "Ni najdenih potovanj"
 
 #: app/JourneyQueryPage.qml:163
 #, kde-format

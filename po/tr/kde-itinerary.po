@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-08 00:42+0000\n"
-"PO-Revision-Date: 2025-07-06 17:21+0300\n"
+"POT-Creation-Date: 2025-07-09 00:43+0000\n"
+"PO-Revision-Date: 2025-07-08 13:26+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -822,18 +822,17 @@ msgstr "Veri sağlayıcıları:"
 
 #: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:125
 #: app/TransferPage.qml:336
-#, fuzzy, kde-format
-#| msgid "Boarding"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Loading"
-msgstr "Biniş"
+msgstr "Yükleniyor"
 
 #: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:127
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:status"
 msgid "Error"
-msgstr ""
+msgstr "Hata"
 
 #: app/DocumentsCard.qml:35
 #, kde-format
@@ -1436,7 +1435,7 @@ msgstr "%1 (%2)"
 msgid "Price"
 msgstr "Fiyat"
 
-#: app/FormPriceEditDelegate.qml:91
+#: app/FormPriceEditDelegate.qml:94
 #, kde-format
 msgid "Not a valid number."
 msgstr "Geçerli bir sayı değil."
@@ -2009,11 +2008,10 @@ msgid "Load earlier connections"
 msgstr "Önceki bağlantıları yükle"
 
 #: app/JourneyQueryPage.qml:129
-#, fuzzy, kde-format
-#| msgid "No journeys found."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No journeys found"
-msgstr "Bulunan yolculuk yok."
+msgstr "Bulunan yolculuk yok"
 
 #: app/JourneyQueryPage.qml:163
 #, kde-format
