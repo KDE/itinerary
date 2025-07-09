@@ -17,13 +17,14 @@ JourneySectionModel::JourneySectionModel(QObject *parent)
         if (!m_journey.intermediateStops().empty()) {
             Q_EMIT dataChanged(index(0, 0), index(rowCount() - 1, 0));
         }
-        Q_EMIT journeySectionChanged();
+        Q_EMIT progressChanged();
     });
 
     connect(&m_updateTimer, &QTimer::timeout, this, [this]() {
         if (!m_journey.intermediateStops().empty()) {
             Q_EMIT dataChanged(index(0, 0), index(rowCount() - 1, 0));
         }
+        Q_EMIT progressChanged();
     });
     m_updateTimer.setTimerType(Qt::VeryCoarseTimer);
     m_updateTimer.setInterval(std::chrono::minutes(1));
