@@ -15,6 +15,10 @@ DetailsPage {
 
     title: i18n("Boat Ticket")
 
+    editor: BoatEditor {
+        controller: root.controller
+    }
+
     data: BarcodeScanModeButton {
         page: root
         visible: ticketToken.hasBarcode

@@ -48,8 +48,9 @@ public:
     static T placeFromLocation(const KPublicTransport::Location &loc);
 
     /** Same as the above, but usable from QML. */
-    Q_INVOKABLE QVariant trainStationFromLocation(const KPublicTransport::Location &loc) const;
-    Q_INVOKABLE QVariant busStationFromLocation(const KPublicTransport::Location &loc) const;
+    Q_INVOKABLE [[nodiscard]] static QVariant trainStationFromLocation(const KPublicTransport::Location &loc);
+    Q_INVOKABLE [[nodiscard]] static QVariant busStationFromLocation(const KPublicTransport::Location &loc);
+    Q_INVOKABLE [[nodiscard]] static QVariant boatTerminalFromLocation(const KPublicTransport::Location &loc);
 
     /** Applies information from @p location to the given KItinerary place.
      *  Unlike mergeStation(), this does not assume both sides refer to the same location, and @p location has precedence.
