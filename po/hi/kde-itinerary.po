@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-09 02:40+0000\n"
+"POT-Creation-Date: 2025-07-10 02:34+0000\n"
 "PO-Revision-Date: 2024-12-15 19:32+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
@@ -29,7 +29,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "आपके ईमेल"
 
-#: app/AboutPage.qml:18 app/Main.qml:186
+#: app/AboutPage.qml:18 app/Main.qml:96
 #, kde-format
 msgid "About"
 msgstr "के बारे में"
@@ -120,75 +120,75 @@ msgstr "संपादन करना"
 msgid "Add to calendar…"
 msgstr "कैलेंडर में जोड़ें…"
 
-#: app/ActionsCard.qml:74 app/ProgramMembershipPage.qml:182
-#: app/TicketPage.qml:191 app/TripGroupPage.qml:671
+#: app/ActionsCard.qml:75 app/ProgramMembershipPage.qml:182
+#: app/TicketPage.qml:191 app/TripGroupPage.qml:745
 #, kde-format
 msgid "Export…"
 msgstr "निर्यात करना…"
 
-#: app/ActionsCard.qml:79 app/ActionsCard.qml:125 app/DocumentsCard.qml:87
+#: app/ActionsCard.qml:80 app/ActionsCard.qml:121 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:43 app/GenericPkPassPage.qml:71
 #: app/HealthCertificatePage.qml:49 app/HealthCertificatePage.qml:63
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:188
-#: app/TicketPage.qml:48 app/TicketPage.qml:197 app/TripGroupPage.qml:247
+#: app/TicketPage.qml:48 app/TicketPage.qml:197 app/TripGroupPage.qml:308
 #, kde-format
 msgid "Delete"
 msgstr "मिटाना"
 
-#: app/ActionsCard.qml:118
+#: app/ActionsCard.qml:114
 #, kde-format
 msgid "Delete Event"
 msgstr "ईवेंट हटाएं"
 
-#: app/ActionsCard.qml:119
+#: app/ActionsCard.qml:115
 #, kde-format
 msgid "Do you really want to delete this event?"
 msgstr "क्या आप सचमुच इस ईवेंट को हटाना चाहते हैं?"
 
-#: app/ActionsCard.qml:138
+#: app/ActionsCard.qml:134
 #, kde-format
 msgid "Export Reservation"
 msgstr "निर्यात आरक्षण"
 
-#: app/ActionsCard.qml:147 app/ProgramMembershipPage.qml:147
-#: app/TicketPage.qml:141 app/TripGroupPage.qml:621
+#: app/ActionsCard.qml:143 app/ProgramMembershipPage.qml:147
+#: app/TicketPage.qml:141 app/TripGroupPage.qml:695
 #, kde-format
 msgid "Actions"
 msgstr "कार्रवाई"
 
-#: app/ActionsCard.qml:165
+#: app/ActionsCard.qml:161
 #, kde-format
 msgctxt "cancel as in revoking a booking"
 msgid "Cancel Reservation"
 msgstr "आरक्षण रद्द करो"
 
-#: app/ActionsCard.qml:166
+#: app/ActionsCard.qml:162
 #, kde-format
 msgid "Check-in"
 msgstr "चेक इन"
 
-#: app/ActionsCard.qml:167
+#: app/ActionsCard.qml:163
 #, kde-format
 msgid "Download"
 msgstr "डाउनलोड करना"
 
-#: app/ActionsCard.qml:168
+#: app/ActionsCard.qml:164
 #, kde-format
 msgctxt "participate in an event"
 msgid "Join"
 msgstr "जोड़ना"
 
-#: app/ActionsCard.qml:169
+#: app/ActionsCard.qml:165
 #, kde-format
 msgid "Reserve"
 msgstr "संरक्षित"
 
-#: app/ActionsCard.qml:170
+#: app/ActionsCard.qml:166
 #, kde-format
 msgid "Change Reservation"
 msgstr "आरक्षण बदलें"
 
-#: app/ActionsCard.qml:171
+#: app/ActionsCard.qml:167
 #, kde-format
 msgid "View Reservation"
 msgstr "आरक्षण देखें"
@@ -372,80 +372,111 @@ msgstr "कोई कैमरा उपलब्ध नहीं है."
 msgid "Light"
 msgstr "रोशनी"
 
-#: app/BoatDelegate.qml:29 app/BoatPage.qml:28
+#: app/BoatDelegate.qml:29 app/BoatEditor.qml:108 app/BoatPage.qml:32
 #, kde-format
 msgctxt "default transport name for a boat trip"
 msgid "Ferry"
 msgstr "नौका"
 
-#: app/BoatEditor.qml:17
+#: app/BoatEditor.qml:18
 #, kde-format
 msgid "New Boat Trip"
 msgstr "नई नाव यात्रा"
 
-#: app/BoatEditor.qml:17
+#: app/BoatEditor.qml:18
 #, kde-format
 msgid "Edit Boat Trip"
 msgstr "नाव यात्रा संपादित करें"
 
-#: app/BoatEditor.qml:55 app/StatisticsPage.qml:149
-#, kde-format
-msgid "Boat"
-msgstr "नाव"
+#: app/BoatEditor.qml:69 app/BoatEditor.qml:165
+#, fuzzy, kde-format
+#| msgid "Change departure station"
+msgctxt "boat departure"
+msgid "Change Departure Terminal"
+msgstr "प्रस्थान स्टेशन बदलें"
 
-#: app/BoatEditor.qml:59 app/EventEditor.qml:54 app/FlightEditor.qml:72
-#: app/HotelEditor.qml:51 app/ImportPage.qml:21 app/JourneyRequestPage.qml:228
-#: app/RestaurantEditor.qml:53 app/StopoverDetailsPage.qml:127
+#: app/BoatEditor.qml:75
+#, fuzzy, kde-format
+#| msgid "Change departure station"
+msgctxt "boat departure"
+msgid "Change departure terminal"
+msgstr "प्रस्थान स्टेशन बदलें"
+
+#: app/BoatEditor.qml:85 app/BoatEditor.qml:227
+#, fuzzy, kde-format
+#| msgid "Change arrival station"
+msgctxt "boat arrival"
+msgid "Change Arrival Terminal"
+msgstr "आगमन स्टेशन बदलें"
+
+#: app/BoatEditor.qml:91
+#, fuzzy, kde-format
+#| msgid "Change arrival station"
+msgctxt "boat arrival"
+msgid "Change arrival terminal"
+msgstr "आगमन स्टेशन बदलें"
+
+#: app/BoatEditor.qml:112 app/BusEditor.qml:127 app/EventEditor.qml:54
+#: app/FlightEditor.qml:72 app/HotelEditor.qml:51 app/ImportPage.qml:21
+#: app/JourneyRequestPage.qml:228 app/RestaurantEditor.qml:53
+#: app/StopoverDetailsPage.qml:127 app/TrainEditor.qml:135
 #, kde-format
 msgid "Trip"
 msgstr "यात्रा"
 
-#: app/BoatEditor.qml:71 app/BoatPage.qml:54
+#: app/BoatEditor.qml:124 app/BoatPage.qml:58
 #, kde-format
 msgctxt "Boat departure"
 msgid "Departure"
 msgstr "प्रस्थान"
 
-#: app/BoatEditor.qml:77
+#: app/BoatEditor.qml:131
 #, kde-format
 msgctxt "Boat departure"
 msgid "Departure Time"
 msgstr "प्रस्थान समय"
 
-#: app/BoatEditor.qml:81
+#: app/BoatEditor.qml:135 app/BusEditor.qml:168 app/TrainEditor.qml:177
 #, kde-format
 msgid "Departure time has to be set."
 msgstr "प्रस्थान का समय निर्धारित करना होगा."
 
-#: app/BoatEditor.qml:86 app/BoatEditor.qml:127
+#: app/BoatEditor.qml:140 app/BoatEditor.qml:198
 #, kde-format
 msgctxt "boat terminal"
 msgid "Terminal Name"
 msgstr "टर्मिनल नाम"
 
-#: app/BoatEditor.qml:89
+#: app/BoatEditor.qml:143
 #, kde-format
 msgid "Departure terminal must not be empty."
 msgstr "प्रस्थान टर्मिनल खाली नहीं होना चाहिए."
 
-#: app/BoatEditor.qml:103 app/BoatPage.qml:84
+#: app/BoatEditor.qml:158 app/BoatEditor.qml:221
+#, fuzzy, kde-format
+#| msgid "Terminal"
+msgctxt "boat terminal"
+msgid "Terminal"
+msgstr "टर्मिनल"
+
+#: app/BoatEditor.qml:173 app/BoatPage.qml:82
 #, kde-format
 msgctxt "Boat arrival"
 msgid "Arrival"
 msgstr "आगमन"
 
-#: app/BoatEditor.qml:109
+#: app/BoatEditor.qml:180
 #, kde-format
 msgctxt "Boat arrival"
 msgid "Arrival Time"
 msgstr "आगमन समय"
 
-#: app/BoatEditor.qml:120
+#: app/BoatEditor.qml:191 app/BusEditor.qml:253 app/TrainEditor.qml:262
 #, kde-format
 msgid "Arrival time has to be after the departure time."
 msgstr "आगमन का समय प्रस्थान के समय के बाद होना चाहिए।"
 
-#: app/BoatEditor.qml:130
+#: app/BoatEditor.qml:201
 #, kde-format
 msgid "Arrival terminal must not be empty."
 msgstr "आगमन टर्मिनल खाली नहीं होना चाहिए."
@@ -455,30 +486,30 @@ msgstr "आगमन टर्मिनल खाली नहीं होन�
 msgid "Boat Ticket"
 msgstr "नाव टिकट"
 
-#: app/BoatPage.qml:59 app/BusPage.qml:69 app/TrainPage.qml:124
+#: app/BoatPage.qml:63 app/BusPage.qml:69 app/TrainPage.qml:124
 #, kde-format
 msgid "Departure time"
 msgstr "प्रस्थान समय"
 
-#: app/BoatPage.qml:66 app/BoatPage.qml:96
+#: app/BoatPage.qml:72 app/BoatPage.qml:99
 #, kde-format
 msgctxt "Boat terminal"
 msgid "Terminal"
 msgstr "टर्मिनल"
 
-#: app/BoatPage.qml:89 app/BusPage.qml:134 app/TrainPage.qml:219
+#: app/BoatPage.qml:87 app/BusPage.qml:132 app/TrainPage.qml:211
 #, kde-format
 msgid "Arrival time"
 msgstr "आगमन समय"
 
-#: app/BoatPage.qml:126 app/BusPage.qml:213 app/FlightPage.qml:218
-#: app/TrainPage.qml:362
+#: app/BoatPage.qml:118 app/BusPage.qml:207 app/FlightPage.qml:218
+#: app/TrainPage.qml:349
 #, kde-format
 msgid "Alternatives"
 msgstr "वैकल्पिक"
 
-#: app/BoatPage.qml:134 app/BusPage.qml:218 app/JourneySectionPage.qml:27
-#: app/TrainPage.qml:367
+#: app/BoatPage.qml:126 app/BusPage.qml:212 app/JourneySectionPage.qml:27
+#: app/TrainPage.qml:354
 #, kde-format
 msgid "Journey Details"
 msgstr "यात्रा विवरण"
@@ -583,70 +614,150 @@ msgctxt "from location 1 to location 2"
 msgid "%1 to %2"
 msgstr "%1 से %2"
 
-#: app/BusEditor.qml:17
-#, kde-format
+#: app/BusEditor.qml:73
+#, fuzzy, kde-format
+#| msgid "Edit Bus Reservation"
+msgctxt "@title"
+msgid "New Bus Reservation"
+msgstr "बस आरक्षण संपादित करें"
+
+#: app/BusEditor.qml:73
+#, fuzzy, kde-format
+#| msgid "Edit Bus Reservation"
+msgctxt "@title"
 msgid "Edit Bus Reservation"
 msgstr "बस आरक्षण संपादित करें"
 
-#: app/BusEditor.qml:48 app/BusEditor.qml:109
+#: app/BusEditor.qml:80 app/BusEditor.qml:225
 #, fuzzy, kde-format
 #| msgid "Change departure stop"
 msgctxt "bus departure"
 msgid "Change Departure Stop"
 msgstr "प्रस्थान स्टॉप बदलें"
 
-#: app/BusEditor.qml:54
+#: app/BusEditor.qml:86
 #, fuzzy, kde-format
 #| msgid "Change departure stop"
 msgctxt "bus departure"
 msgid "Change departure stop"
 msgstr "प्रस्थान स्टॉप बदलें"
 
-#: app/BusEditor.qml:64 app/BusEditor.qml:131
+#: app/BusEditor.qml:96 app/BusEditor.qml:315
 #, fuzzy, kde-format
 #| msgid "Change arrival stop"
 msgctxt "bus arrival"
 msgid "Change Arrival Stop"
 msgstr "आगमन स्टॉप बदलें"
 
-#: app/BusEditor.qml:70
+#: app/BusEditor.qml:102
 #, fuzzy, kde-format
 #| msgid "Change arrival stop"
 msgctxt "bus arrival"
 msgid "Change arrival stop"
 msgstr "आगमन स्टॉप बदलें"
 
-#: app/BusEditor.qml:90
+#: app/BusEditor.qml:122
 #, kde-format
 msgctxt "@title"
 msgid "Bus"
 msgstr "बस"
 
-#: app/BusEditor.qml:95
+#: app/BusEditor.qml:140
+#, fuzzy, kde-format
+#| msgid "Bus"
+msgctxt "@title:group"
+msgid "Bus"
+msgstr "बस"
+
+#: app/BusEditor.qml:149
+#, fuzzy, kde-format
+#| msgid "Number"
+msgctxt "@label:textfield"
+msgid "Bus number"
+msgstr "संख्या"
+
+#: app/BusEditor.qml:155
 #, kde-format
 msgctxt "bus departure"
 msgid "Departure"
 msgstr "प्रस्थान"
 
-#: app/BusEditor.qml:100 app/BusEditor.qml:122
-#, kde-format
-msgctxt "bus stop"
+#: app/BusEditor.qml:164
+#, fuzzy, kde-format
+#| msgid "Departure Time"
+msgctxt "Bus departure"
+msgid "Departure Time"
+msgstr "प्रस्थान समय"
+
+#: app/BusEditor.qml:176
+#, fuzzy, kde-format
+#| msgctxt "bus stop"
+#| msgid "Stop"
+msgctxt "Bus stop"
 msgid "Stop"
 msgstr "रुकना"
 
-#: app/BusEditor.qml:105 app/BusEditor.qml:127
+#: app/BusEditor.qml:179
+#, fuzzy, kde-format
+#| msgid "Departure terminal must not be empty."
+msgid "Departure bus stop must not be empty."
+msgstr "प्रस्थान टर्मिनल खाली नहीं होना चाहिए."
+
+#: app/BusEditor.qml:187 app/BusEditor.qml:274
+#, fuzzy, kde-format
+#| msgid "Platform"
+msgctxt "Bus stop platform"
+msgid "Platform"
+msgstr "प्लैटफ़ॉर्म"
+
+#: app/BusEditor.qml:208
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Show Map"
+msgctxt "bus stop"
+msgid "Stop Name"
+msgstr "नक्शा दिखाएं"
+
+#: app/BusEditor.qml:216 app/BusEditor.qml:308
 #, kde-format
 msgctxt "bus stop platform"
 msgid "Platform"
 msgstr "प्लैटफ़ॉर्म"
 
-#: app/BusEditor.qml:117
+#: app/BusEditor.qml:233
 #, kde-format
 msgctxt "bus arrival"
 msgid "Arrival"
 msgstr "आगमन"
 
-#: app/BusEditor.qml:140 app/BusEditor.qml:146 app/BusPage.qml:183
+#: app/BusEditor.qml:242 app/TrainEditor.qml:251
+#, fuzzy, kde-format
+#| msgid "Arrival Time"
+msgctxt "Train arrival"
+msgid "Arrival Time"
+msgstr "आगमन समय"
+
+#: app/BusEditor.qml:263
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Show Map"
+msgctxt "Bus stop"
+msgid "Stop Name"
+msgstr "नक्शा दिखाएं"
+
+#: app/BusEditor.qml:266
+#, fuzzy, kde-format
+#| msgid "Arrival terminal must not be empty."
+msgid "Arrival stop must not be empty."
+msgstr "आगमन टर्मिनल खाली नहीं होना चाहिए."
+
+#: app/BusEditor.qml:300
+#, kde-format
+msgctxt "bus stop"
+msgid "Stop"
+msgstr "रुकना"
+
+#: app/BusEditor.qml:324 app/BusEditor.qml:330 app/BusPage.qml:177
 #, kde-format
 msgctxt "Bus seat"
 msgid "Seat"
@@ -663,24 +774,24 @@ msgctxt "Bus departure"
 msgid "Departure"
 msgstr "प्रस्थान"
 
-#: app/BusPage.qml:89 app/TrainPage.qml:153
+#: app/BusPage.qml:90 app/TrainPage.qml:153
 #, kde-format
 msgid "Departure date"
 msgstr "प्रस्थान की तारीख"
 
-#: app/BusPage.qml:97 app/BusPage.qml:158
+#: app/BusPage.qml:100 app/BusPage.qml:158
 #, kde-format
 msgctxt "bus station"
 msgid "Station"
 msgstr "स्टेशन"
 
-#: app/BusPage.qml:105 app/BusPage.qml:166
+#: app/BusPage.qml:112 app/BusPage.qml:169
 #, kde-format
 msgctxt "bus station platform"
 msgid "Platform"
 msgstr "प्लैटफ़ॉर्म"
 
-#: app/BusPage.qml:122
+#: app/BusPage.qml:120
 #, kde-format
 msgctxt "Bus arrival"
 msgid "Arrival"
@@ -691,7 +802,7 @@ msgstr "आगमन"
 msgid "Transfer to %1"
 msgstr "%1 पर स्थानांतरित करें"
 
-#: app/CalendarSelectionSheet.qml:14
+#: app/CalendarSelectionDialog.qml:14
 #, kde-format
 msgctxt "@title"
 msgid "Select Calendar"
@@ -722,39 +833,39 @@ msgstr "किराए की कार"
 msgid "Pick-up"
 msgstr "उठाना"
 
-#: app/CarRentalPage.qml:32 app/CarRentalPage.qml:59
+#: app/CarRentalPage.qml:32 app/CarRentalPage.qml:58
 #, kde-format
 msgid "Time"
 msgstr "समय"
 
-#: app/CarRentalPage.qml:41 app/CarRentalPage.qml:68
-#: app/FormPlaceDelegate.qml:30 app/HotelPage.qml:25
+#: app/CarRentalPage.qml:43 app/CarRentalPage.qml:69
+#: app/FormPlaceDelegate.qml:32 app/HotelPage.qml:25
 #, kde-format
 msgid "Location"
 msgstr "जगह"
 
-#: app/CarRentalPage.qml:53
+#: app/CarRentalPage.qml:52
 #, kde-format
 msgid "Drop-off"
 msgstr "बाहर निकलना"
 
-#: app/CarRentalPage.qml:80 app/StopoverDetailsPage.qml:135
+#: app/CarRentalPage.qml:78 app/StopoverDetailsPage.qml:135
 #, kde-format
 msgid "Vehicle"
 msgstr "वाहन"
 
-#: app/CarRentalPage.qml:85 app/HealthCertificateTest.qml:73
+#: app/CarRentalPage.qml:83 app/HealthCertificateTest.qml:73
 #: app/HealthCertificateVaccination.qml:85
 #, kde-format
 msgid "Type"
 msgstr "प्रकार"
 
-#: app/CarRentalPage.qml:95
+#: app/CarRentalPage.qml:93
 #, kde-format
 msgid "Model"
 msgstr "नमूना"
 
-#: app/CarRentalPage.qml:105
+#: app/CarRentalPage.qml:103
 #, kde-format
 msgid "Brand"
 msgstr "ब्रांड"
@@ -825,7 +936,8 @@ msgstr ""
 msgid "Add Document"
 msgstr "दस्तावेज़ जोड़ें"
 
-#: app/DocumentsCard.qml:37 app/Main.qml:126 app/Main.qml:127
+#: app/DocumentsCard.qml:37 app/ImportAction.qml:42 app/ImportAction.qml:43
+#: app/MyDataPage.qml:207
 #, kde-format
 msgid "All Files (*.*)"
 msgstr "सभी फाइलें (*।*)"
@@ -1136,8 +1248,8 @@ msgctxt "flight departure"
 msgid "Departure - %1"
 msgstr "प्रस्थान - %1"
 
-#: app/FlightEditor.qml:90 app/FlightEditor.qml:150 app/FlightPage.qml:132
-#: app/FlightPage.qml:178
+#: app/FlightEditor.qml:90 app/FlightEditor.qml:150 app/FlightPage.qml:133
+#: app/FlightPage.qml:181
 #, kde-format
 msgid "Airport"
 msgstr "एयरपोर्ट"
@@ -1276,12 +1388,12 @@ msgctxt "flight departure"
 msgid "Departure date"
 msgstr "प्रस्थान की तारीख"
 
-#: app/FlightPage.qml:140 app/FlightPage.qml:186
+#: app/FlightPage.qml:146 app/FlightPage.qml:194
 #, kde-format
 msgid "Terminal"
 msgstr "टर्मिनल"
 
-#: app/FlightPage.qml:148
+#: app/FlightPage.qml:156
 #, kde-format
 msgid "Gate"
 msgstr "दरवाज़ा"
@@ -1298,46 +1410,48 @@ msgctxt "flight arrival"
 msgid "Arrival time"
 msgstr "आगमन समय"
 
-#: app/FormPlaceDelegate.qml:55
+#: app/FormPlaceDelegate.qml:84
 #, kde-format
 msgid "Share Place"
 msgstr "स्थान साझा करें"
 
-#: app/FormPlaceDelegate.qml:56
+#: app/FormPlaceDelegate.qml:90
 #, kde-format
 msgid "Do you really want to share %1 to the Matrix channel %2?"
 msgstr "क्या आप सचमुच %1 को मैट्रिक्स चैनल %2 से साझा करना चाहते हैं?"
 
-#: app/FormPlaceDelegate.qml:62 app/LiveStatusPage.qml:158
-#, kde-format
+#: app/FormPlaceDelegate.qml:105
+#, fuzzy, kde-format
+#| msgid "Share"
+msgctxt "@action:button"
 msgid "Share"
 msgstr "शेयर करना"
 
-#: app/FormPlaceDelegate.qml:123
+#: app/FormPlaceDelegate.qml:144
 #, kde-format
 msgctxt "@action:button"
 msgid "View Indoor Map"
 msgstr "इनडोर मानचित्र देखें"
 
-#: app/FormPlaceDelegate.qml:130
+#: app/FormPlaceDelegate.qml:151
 #, kde-format
 msgctxt "@action:button"
 msgid "View on Map"
 msgstr "मानचित्र पर देखें"
 
-#: app/FormPlaceDelegate.qml:143
+#: app/FormPlaceDelegate.qml:164
 #, kde-format
 msgctxt "@action:button Start route guidance to location"
 msgid "Navigate"
 msgstr "नेविगेट"
 
-#: app/FormPlaceDelegate.qml:153
+#: app/FormPlaceDelegate.qml:174
 #, kde-format
 msgctxt "@action:button"
 msgid "Public Transport Departures"
 msgstr "सार्वजनिक परिवहन प्रस्थान"
 
-#: app/FormPlaceDelegate.qml:162
+#: app/FormPlaceDelegate.qml:187
 #, kde-format
 msgctxt "@action:button"
 msgid "Share via Matrix"
@@ -1449,7 +1563,7 @@ msgid "Do you really want to delete this pass?"
 msgstr "क्या आप सचमुच इस पास को हटाना चाहते हैं?"
 
 #: app/GenericPkPassPage.qml:55 app/TicketPage.qml:165
-#: app/TripGroupPage.qml:627
+#: app/TripGroupPage.qml:701
 #, kde-format
 msgid "Check for Updates"
 msgstr "अद्यतन के लिए जाँच"
@@ -1459,7 +1573,7 @@ msgstr "अद्यतन के लिए जाँच"
 msgid "Save As…"
 msgstr ""
 
-#: app/gpxexport.cpp:33 app/main.cpp:321 app/Main.qml:21 app/Main.qml:153
+#: app/gpxexport.cpp:33 app/main.cpp:321 app/Main.qml:20 app/Main.qml:68
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "केडीई यात्रा कार्यक्रम"
@@ -1868,6 +1982,77 @@ msgstr "समय पर जांचो"
 msgid "Check-out time"
 msgstr "चेक आउट का समय"
 
+#: app/ImportAction.qml:23 app/TripGroupPage.qml:502
+#, kde-format
+msgid "Import"
+msgstr "आयात"
+
+#: app/ImportAction.qml:29
+#, fuzzy, kde-format
+#| msgid "Import from GPX"
+msgctxt "@action:inmenu"
+msgid "From file"
+msgstr "GPX से आयात करें"
+
+#: app/ImportAction.qml:37
+#, kde-format
+msgid "Import Reservation"
+msgstr "आयात आरक्षण"
+
+#: app/ImportAction.qml:43
+#, kde-format
+msgid "PkPass files (*.pkpass)"
+msgstr "PkPass फ़ाइलें (*.pkpass)"
+
+#: app/ImportAction.qml:43
+#, kde-format
+msgid "PDF files (*.pdf)"
+msgstr "पीडीएफ फ़ाइलें (*.pdf)"
+
+#: app/ImportAction.qml:43
+#, kde-format
+msgid "iCal events (*.ics)"
+msgstr "iCal ईवेंट (*.ics)"
+
+#: app/ImportAction.qml:43 app/MyDataPage.qml:208 app/MyDataPage.qml:229
+#, kde-format
+msgid "KDE Itinerary files (*.itinerary)"
+msgstr "KDE यात्रा कार्यक्रम फ़ाइलें (*.itinerary)"
+
+#: app/ImportAction.qml:51
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Copy to Clipboard"
+msgctxt "@action:inmenu"
+msgid "From clipboard"
+msgstr "क्लिपबोर्ड पर कॉपी करें"
+
+#: app/ImportAction.qml:61
+#, fuzzy, kde-format
+#| msgid "Barcode"
+msgctxt "@action:inmenu"
+msgid "From barcode"
+msgstr "बारकोड"
+
+#: app/ImportAction.qml:84
+#, fuzzy, kde-format
+#| msgid "Add from Calendar…"
+msgctxt "@action:inmenu"
+msgid "From calendar"
+msgstr "कैलेंडर से जोड़ें…"
+
+#: app/ImportAction.qml:108
+#, kde-format
+msgctxt "@action:inmenu Name of the train company in Germany"
+msgid "From Deutsche Bahn reservation number"
+msgstr ""
+
+#: app/ImportAction.qml:119
+#, kde-format
+msgctxt "Name of the train company in France"
+msgid "From SNCF reservation number"
+msgstr ""
+
 #: app/importcontroller.cpp:153 app/importcontroller.cpp:475
 #, kde-format
 msgid "Import failed: %1"
@@ -2241,7 +2426,7 @@ msgstr "विस्तार हेतु क्लिक करें"
 msgid "Itinerary change"
 msgstr "यात्रा कार्यक्रम में परिवर्तन"
 
-#: app/LiveStatusPage.qml:20 app/Main.qml:164
+#: app/LiveStatusPage.qml:20 app/Main.qml:74
 #, kde-format
 msgid "Live Status"
 msgstr "लाइव स्थिति"
@@ -2302,6 +2487,11 @@ msgstr "लाइव स्थान साझा करें"
 msgid ""
 "Do you really want to share your current location to the Matrix channel %1?"
 msgstr "क्या आप सचमुच अपना वर्तमान स्थान मैट्रिक्स चैनल %1 के साथ साझा करना चाहते हैं?"
+
+#: app/LiveStatusPage.qml:158
+#, kde-format
+msgid "Share"
+msgstr "शेयर करना"
 
 #: app/LiveStatusPage.qml:290
 #, kde-format
@@ -2482,89 +2672,29 @@ msgctxt "@info:shell"
 msgid "Files or URLs to import."
 msgstr "आयात करने हेतु फ़ाइलें या URL."
 
-#: app/Main.qml:61
-#, kde-format
-msgid "Open File…"
-msgstr "खुली फाइल…"
-
-#: app/Main.qml:69 app/TicketTokenEditorCard.qml:129
-#, kde-format
-msgid "Paste"
-msgstr "पेस्ट करें"
-
-#: app/Main.qml:76
-#, kde-format
-msgid "Scan Barcode…"
-msgstr "बारकोड स्कैन करें…"
-
-#: app/Main.qml:84
-#, kde-format
-msgid "Add from Calendar…"
-msgstr "कैलेंडर से जोड़ें…"
-
-#: app/Main.qml:98
-#, kde-format
-msgid "Deutsche Bahn Online Ticket…"
-msgstr "डॉयचे बान ऑनलाइन टिकट…"
-
-#: app/Main.qml:108
-#, kde-format
-msgid "SNCF Online Ticket…"
-msgstr "एसएनसीएफ ऑनलाइन टिकट…"
-
-#: app/Main.qml:121
-#, kde-format
-msgid "Import Reservation"
-msgstr "आयात आरक्षण"
-
-#: app/Main.qml:127 app/MyDataPage.qml:217
-#, kde-format
-msgid "KDE Itinerary files (*.itinerary)"
-msgstr "KDE यात्रा कार्यक्रम फ़ाइलें (*.itinerary)"
-
-#: app/Main.qml:127
-#, kde-format
-msgid "PkPass files (*.pkpass)"
-msgstr "PkPass फ़ाइलें (*.pkpass)"
-
-#: app/Main.qml:127
-#, kde-format
-msgid "PDF files (*.pdf)"
-msgstr "पीडीएफ फ़ाइलें (*.pdf)"
-
-#: app/Main.qml:127
-#, kde-format
-msgid "iCal events (*.ics)"
-msgstr "iCal ईवेंट (*.ics)"
-
-#: app/Main.qml:158
-#, kde-format
-msgid "Import…"
-msgstr "आयात करना…"
-
-#: app/Main.qml:172 app/WelcomePage.qml:41
+#: app/Main.qml:82 app/WelcomePage.qml:41
 #, kde-format
 msgid "Settings…"
 msgstr "सेटिंग्स…"
 
-#: app/Main.qml:179 app/WelcomePage.qml:16
+#: app/Main.qml:89 app/WelcomePage.qml:16
 #, kde-format
 msgid "Help"
 msgstr "मदद"
 
-#: app/Main.qml:268
+#: app/Main.qml:178
 #, fuzzy, kde-format
 #| msgid "Wi-Fi access for onboard information is available."
 msgctxt "@info:status"
 msgid "No onboard information available."
 msgstr "विमान में जानकारी के लिए वाई-फाई की सुविधा उपलब्ध है।"
 
-#: app/Main.qml:310
+#: app/Main.qml:220
 #, kde-format
 msgid "Map download finished."
 msgstr "मानचित्र डाउनलोड समाप्त."
 
-#: app/Main.qml:387
+#: app/Main.qml:281
 #, kde-format
 msgctxt "@title:window"
 msgid "Matrix Session Verification"
@@ -2934,7 +3064,7 @@ msgstr "पसंदीदा स्थान"
 msgid "Home Country"
 msgstr "स्वदेश"
 
-#: app/MyDataPage.qml:131 app/StatisticsPage.qml:16 app/TripGroupPage.qml:589
+#: app/MyDataPage.qml:131 app/StatisticsPage.qml:16 app/TripGroupPage.qml:663
 #, kde-format
 msgid "Statistics"
 msgstr "आंकड़े"
@@ -2952,21 +3082,27 @@ msgctxt "@title:group"
 msgid "Data Portability"
 msgstr ""
 
-#: app/MyDataPage.qml:196
+#: app/MyDataPage.qml:196 app/PassPage.qml:27
 #, fuzzy, kde-format
 #| msgid "Import"
 msgctxt "@action:button"
 msgid "Import"
 msgstr "आयात"
 
-#: app/MyDataPage.qml:204
+#: app/MyDataPage.qml:202
+#, fuzzy, kde-format
+#| msgid "Backup"
+msgid "Import Backup"
+msgstr "बैकअप"
+
+#: app/MyDataPage.qml:216
 #, fuzzy, kde-format
 #| msgid "Export"
 msgctxt "@action:button"
 msgid "Export"
 msgstr "निर्यात"
 
-#: app/MyDataPage.qml:215
+#: app/MyDataPage.qml:227
 #, kde-format
 msgid "Export Itinerary Data"
 msgstr "यात्रा कार्यक्रम डेटा निर्यात करें"
@@ -3119,49 +3255,49 @@ msgctxt "name - valid time range"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/passmanager.cpp:284 app/TripGroupPage.qml:374
+#: app/passmanager.cpp:284 app/TripGroupPage.qml:435
 #, kde-format
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/PassPage.qml:18
+#: app/PassPage.qml:19
 #, kde-format
 msgid "Passes and Programs"
 msgstr "पास और कार्यक्रम"
 
-#: app/PassPage.qml:21
+#: app/PassPage.qml:22
 #, fuzzy, kde-format
 #| msgid "Add Program Membership…"
 msgctxt "@title"
 msgid "Add Program Membership"
 msgstr "प्रोग्राम सदस्यता जोड़ें…"
 
-#: app/PassPage.qml:26
+#: app/PassPage.qml:43
 #, fuzzy, kde-format
-#| msgid "Import from GPX"
-msgctxt "@action:button"
-msgid "Import From File"
-msgstr "GPX से आयात करें"
+#| msgid "Import"
+msgctxt "@title:dialog"
+msgid "Import"
+msgstr "आयात"
 
-#: app/PassPage.qml:34
+#: app/PassPage.qml:55
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Manually"
 msgstr ""
 
-#: app/PassPage.qml:48
+#: app/PassPage.qml:69
 #, kde-format
 msgctxt "not yet expired tickets"
 msgid "Valid"
 msgstr "वैध"
 
-#: app/PassPage.qml:69
+#: app/PassPage.qml:90
 #, kde-format
 msgctxt "not yet valid tickets"
 msgid "Future"
 msgstr "भविष्य"
 
-#: app/PassPage.qml:91
+#: app/PassPage.qml:112
 #, kde-format
 msgctxt "no longer valid tickets"
 msgid "Expired"
@@ -3669,7 +3805,7 @@ msgstr "ट्रिप्स"
 #: app/statisticsmodel.cpp:107 app/statisticsmodel.cpp:140
 #: app/statisticsmodel.cpp:155 app/statisticsmodel.cpp:170
 #: app/statisticsmodel.cpp:185 app/statisticsmodel.cpp:200
-#: app/TripGroupPage.qml:596
+#: app/TripGroupPage.qml:670
 #, kde-format
 msgid "Distance"
 msgstr "दूरी"
@@ -3682,7 +3818,7 @@ msgstr "होटल की रातें"
 #: app/statisticsmodel.cpp:117 app/statisticsmodel.cpp:145
 #: app/statisticsmodel.cpp:160 app/statisticsmodel.cpp:175
 #: app/statisticsmodel.cpp:190 app/statisticsmodel.cpp:205
-#: app/TripGroupPage.qml:605
+#: app/TripGroupPage.qml:679
 #, kde-format
 msgid "CO₂"
 msgstr "सीओ₂"
@@ -3733,7 +3869,7 @@ msgctxt "@info:placeholder no visited country"
 msgid "None"
 msgstr ""
 
-#: app/StatisticsPage.qml:121 app/TrainEditor.qml:94
+#: app/StatisticsPage.qml:121 app/TrainEditor.qml:130
 #, kde-format
 msgid "Train"
 msgstr "रेलगाड़ी"
@@ -3742,6 +3878,11 @@ msgstr "रेलगाड़ी"
 #, kde-format
 msgid "Bus"
 msgstr "बस"
+
+#: app/StatisticsPage.qml:149
+#, kde-format
+msgid "Boat"
+msgstr "नाव"
 
 #: app/StatisticsPage.qml:163
 #, kde-format
@@ -3846,6 +3987,11 @@ msgstr "टिकट चुनें"
 msgid "Scan barcode…"
 msgstr "बारकोड स्कैन करें…"
 
+#: app/TicketTokenEditorCard.qml:129
+#, kde-format
+msgid "Paste"
+msgstr "पेस्ट करें"
+
 #: app/tickettokenmodel.cpp:74
 #, kde-format
 msgid "Attendee %1"
@@ -3911,95 +4057,160 @@ msgctxt "train station platform"
 msgid "Platform %1"
 msgstr "प्लेटफ़ॉर्म%1"
 
-#: app/TrainDelegate.qml:61 app/TrainPage.qml:314
+#: app/TrainDelegate.qml:61 app/TrainPage.qml:301
 #, kde-format
 msgctxt "train coach"
 msgid "Coach: <b>%1</b>"
 msgstr "कोच: <b>%1</b>"
 
-#: app/TrainDelegate.qml:67 app/TrainPage.qml:321
+#: app/TrainDelegate.qml:67 app/TrainPage.qml:308
 #, kde-format
 msgctxt "train seat"
 msgid "Seat: <b>%1</b>"
 msgstr "सीटः <b>%1</b>"
 
-#: app/TrainDelegate.qml:75 app/TrainPage.qml:329
+#: app/TrainDelegate.qml:75 app/TrainPage.qml:316
 #, kde-format
 msgctxt "train class"
 msgid "Class: <b>%1</b>"
 msgstr "वर्ग <b>%1</b>"
 
-#: app/TrainEditor.qml:18
-#, kde-format
+#: app/TrainEditor.qml:79
+#, fuzzy, kde-format
+#| msgid "Edit Train Reservation"
+msgctxt "@title"
+msgid "New Train Reservation"
+msgstr "ट्रेन आरक्षण संपादित करें"
+
+#: app/TrainEditor.qml:79
+#, fuzzy, kde-format
+#| msgid "Edit Train Reservation"
+msgctxt "@title"
 msgid "Edit Train Reservation"
 msgstr "ट्रेन आरक्षण संपादित करें"
 
-#: app/TrainEditor.qml:52 app/TrainEditor.qml:117
+#: app/TrainEditor.qml:88 app/TrainEditor.qml:234
 #, fuzzy, kde-format
 #| msgid "Change departure station"
 msgctxt "train departure"
 msgid "Change Departure Station"
 msgstr "प्रस्थान स्टेशन बदलें"
 
-#: app/TrainEditor.qml:58
+#: app/TrainEditor.qml:94
 #, fuzzy, kde-format
 #| msgid "Change departure station"
 msgctxt "train departure"
 msgid "Change departure station"
 msgstr "प्रस्थान स्टेशन बदलें"
 
-#: app/TrainEditor.qml:68 app/TrainEditor.qml:142
+#: app/TrainEditor.qml:104 app/TrainEditor.qml:327
 #, fuzzy, kde-format
 #| msgid "Change arrival station"
 msgctxt "train arrival"
 msgid "Change Arrival Station"
 msgstr "आगमन स्टेशन बदलें"
 
-#: app/TrainEditor.qml:74
+#: app/TrainEditor.qml:110
 #, fuzzy, kde-format
 #| msgid "Change arrival station"
 msgctxt "train arrival"
 msgid "Change arrival station"
 msgstr "आगमन स्टेशन बदलें"
 
-#: app/TrainEditor.qml:99
+#: app/TrainEditor.qml:149
+#, fuzzy, kde-format
+#| msgid "Train"
+msgctxt "@title:group"
+msgid "Train"
+msgstr "रेलगाड़ी"
+
+#: app/TrainEditor.qml:158
+#, fuzzy, kde-format
+#| msgid "Ticket number:"
+msgctxt "@label:textfield"
+msgid "Train number"
+msgstr "टिकट संख्या:"
+
+#: app/TrainEditor.qml:164
 #, kde-format
 msgctxt "train departure"
 msgid "Departure"
 msgstr "प्रस्थान"
 
-#: app/TrainEditor.qml:104 app/TrainEditor.qml:130 app/TrainPage.qml:161
-#: app/TrainPage.qml:253
+#: app/TrainEditor.qml:173
+#, fuzzy, kde-format
+#| msgid "Departure Time"
+msgctxt "Train departure"
+msgid "Departure Time"
+msgstr "प्रस्थान समय"
+
+#: app/TrainEditor.qml:185
+#, fuzzy, kde-format
+#| msgctxt "bus station"
+#| msgid "Station"
+msgctxt "Train station platform"
+msgid "Station Name"
+msgstr "स्टेशन"
+
+#: app/TrainEditor.qml:188
+#, fuzzy, kde-format
+#| msgid "Departure terminal must not be empty."
+msgid "Departure station must not be empty."
+msgstr "प्रस्थान टर्मिनल खाली नहीं होना चाहिए."
+
+#: app/TrainEditor.qml:196 app/TrainEditor.qml:283
+#, fuzzy, kde-format
+#| msgid "Platform"
+msgctxt "Train station platform"
+msgid "Platform"
+msgstr "प्लैटफ़ॉर्म"
+
+#: app/TrainEditor.qml:217 app/TrainEditor.qml:309 app/TrainPage.qml:163
+#: app/TrainPage.qml:247
 #, kde-format
 msgctxt "train station"
 msgid "Station"
 msgstr "स्टेशन"
 
-#: app/TrainEditor.qml:110 app/TrainEditor.qml:136
+#: app/TrainEditor.qml:225 app/TrainEditor.qml:318
 #, kde-format
 msgctxt "train platform"
 msgid "Platform"
 msgstr "प्लैटफ़ॉर्म"
 
-#: app/TrainEditor.qml:125
+#: app/TrainEditor.qml:242
 #, kde-format
 msgctxt "train arrival"
 msgid "Arrival"
 msgstr "आगमन"
 
-#: app/TrainEditor.qml:152 app/TrainEditor.qml:164 app/TrainPage.qml:305
+#: app/TrainEditor.qml:272
+#, fuzzy, kde-format
+#| msgctxt "bus station"
+#| msgid "Station"
+msgctxt "Train station"
+msgid "Station Name"
+msgstr "स्टेशन"
+
+#: app/TrainEditor.qml:275
+#, fuzzy, kde-format
+#| msgid "Arrival terminal must not be empty."
+msgid "Arrival station must not be empty."
+msgstr "आगमन टर्मिनल खाली नहीं होना चाहिए."
+
+#: app/TrainEditor.qml:337 app/TrainEditor.qml:349 app/TrainPage.qml:292
 #, kde-format
 msgctxt "Train seat"
 msgid "Seat"
 msgstr "सीट"
 
-#: app/TrainEditor.qml:158
+#: app/TrainEditor.qml:343
 #, kde-format
 msgctxt "carriage on a train"
 msgid "Coach"
 msgstr "प्रशिक्षक"
 
-#: app/TrainEditor.qml:170
+#: app/TrainEditor.qml:355
 #, kde-format
 msgctxt "seating class on a train"
 msgid "Class"
@@ -4021,39 +4232,39 @@ msgctxt "Train departure"
 msgid "Departure"
 msgstr "प्रस्थान"
 
-#: app/TrainPage.qml:189 app/TrainPage.qml:280
+#: app/TrainPage.qml:183 app/TrainPage.qml:269
 #, kde-format
 msgid "Additional notes"
 msgstr "अतिरिक्त टिप्पणी"
 
-#: app/TrainPage.qml:204
+#: app/TrainPage.qml:196
 #, kde-format
 msgid "Departure Vehicle Layout"
 msgstr "प्रस्थान वाहन लेआउट"
 
-#: app/TrainPage.qml:213
+#: app/TrainPage.qml:205
 #, kde-format
 msgctxt "Train arrival"
 msgid "Arrival"
 msgstr "आगमन"
 
-#: app/TrainPage.qml:295
+#: app/TrainPage.qml:282
 #, kde-format
 msgid "Arrival Vehicle Layout"
 msgstr "आगमन वाहन लेआउट"
 
-#: app/TrainPage.qml:354
+#: app/TrainPage.qml:341
 #, kde-format
 msgctxt "@action:button"
 msgid "Add to Traewelling"
 msgstr "Traewelling में जोड़ें"
 
-#: app/TrainPage.qml:398
+#: app/TrainPage.qml:385
 #, kde-format
 msgid "Added to Traewelling"
 msgstr "Traewelling में जोड़ा गया"
 
-#: app/TrainPage.qml:398
+#: app/TrainPage.qml:385
 #, kde-format
 msgid "Failed to add to Traewelling"
 msgstr "Traewelling में जोड़ने में विफल"
@@ -4194,143 +4405,172 @@ msgctxt "@action:button"
 msgid "Merge"
 msgstr "मर्ज"
 
-#: app/TripGroupPage.qml:117
-#, kde-format
-msgid "Add train trip…"
-msgstr "ट्रेन यात्रा जोड़ें…"
+#: app/TripGroupPage.qml:156
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Load earlier connections"
+msgctxt "@action"
+msgid "Search connection"
+msgstr "पहले के कनेक्शन लोड करें"
 
-#: app/TripGroupPage.qml:124
+#: app/TripGroupPage.qml:163
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Load later connections"
+msgctxt "@action"
+msgid "Add connection"
+msgstr "बाद के कनेक्शन लोड करें"
+
+#: app/TripGroupPage.qml:169
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Add trip"
+msgctxt "@action"
+msgid "Add train"
+msgstr "यात्रा जोड़ें"
+
+#: app/TripGroupPage.qml:179
 #, kde-format
-msgid "Add flight…"
+msgctxt "@action"
+msgid "Add bus"
+msgstr ""
+
+#: app/TripGroupPage.qml:189
+#, fuzzy, kde-format
+#| msgid "Add flight…"
+msgctxt "@action"
+msgid "Add flight"
 msgstr "उड़ान जोड़ें…"
 
-#: app/TripGroupPage.qml:136
-#, kde-format
-msgid "Add ferry trip…"
+#: app/TripGroupPage.qml:199
+#, fuzzy, kde-format
+#| msgid "Add ferry trip…"
+msgctxt "@action"
+msgid "Add ferry trip"
 msgstr "नौका यात्रा जोड़ें…"
 
-#: app/TripGroupPage.qml:148
-#, kde-format
-msgid "Add accommodation…"
+#: app/TripGroupPage.qml:209
+#, fuzzy, kde-format
+#| msgid "Add accommodation…"
+msgctxt "@action"
+msgid "Add accommodation"
 msgstr "आवास जोड़ें…"
 
-#: app/TripGroupPage.qml:159
-#, kde-format
-msgid "Add event…"
+#: app/TripGroupPage.qml:224
+#, fuzzy, kde-format
+#| msgid "Add event…"
+msgctxt "@action"
+msgid "Add event"
 msgstr "कार्यक्रम जोड़ें…"
 
-#: app/TripGroupPage.qml:171
-#, kde-format
-msgid "Add restaurant…"
+#: app/TripGroupPage.qml:240
+#, fuzzy, kde-format
+#| msgid "Add restaurant…"
+msgid "Add restaurant"
 msgstr "रेस्तरां जोड़ें…"
 
-#: app/TripGroupPage.qml:187
+#: app/TripGroupPage.qml:257
 #, kde-format
 msgctxt "@title:group"
 msgid "Add to Trip"
 msgstr "ट्रिप में जोड़ें"
 
-#: app/TripGroupPage.qml:229
+#: app/TripGroupPage.qml:290
 #, kde-format
 msgid "Export Trip"
 msgstr "यात्रा निर्यात करें"
 
-#: app/TripGroupPage.qml:240
+#: app/TripGroupPage.qml:301
 #, kde-format
 msgid "Delete Trip"
 msgstr "यात्रा हटाएं"
 
-#: app/TripGroupPage.qml:241
+#: app/TripGroupPage.qml:302
 #, kde-format
 msgid "Do you really want to delete the trip '%1'?"
 msgstr "क्या आप सचमुच यात्रा '%1' को हटाना चाहते हैं?"
 
-#: app/TripGroupPage.qml:375
+#: app/TripGroupPage.qml:436
 #, kde-format
 msgid "One day"
 msgid_plural "%1 days"
 msgstr[0] "%1 दिन"
 msgstr[1] "%1 दिन"
 
-#: app/TripGroupPage.qml:407
+#: app/TripGroupPage.qml:468
 #, kde-format
 msgid "Some incompatible power sockets (%1)"
 msgstr "कुछ असंगत पावर सॉकेट (%1)"
 
-#: app/TripGroupPage.qml:409
+#: app/TripGroupPage.qml:470
 #, kde-format
 msgid "Some incompatible power plugs (%1)"
 msgstr "कुछ असंगत पावर प्लग (%1)"
 
-#: app/TripGroupPage.qml:412
+#: app/TripGroupPage.qml:473
 #, kde-format
 msgid "No compatible power plugs (%1)"
 msgstr "कोई संगत पावर प्लग नहीं (%1)"
 
-#: app/TripGroupPage.qml:424
+#: app/TripGroupPage.qml:485
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
 msgstr[0] "मुद्राएँ: %2"
 msgstr[1] "मुद्राएँ: %2"
 
-#: app/TripGroupPage.qml:434
+#: app/TripGroupPage.qml:495
 #, kde-format
 msgid "Show map…"
 msgstr "नक्शा दिखाएं…"
 
-#: app/TripGroupPage.qml:441
-#, kde-format
-msgid "Import"
-msgstr "आयात"
-
-#: app/TripGroupPage.qml:455
+#: app/TripGroupPage.qml:518
 #, kde-format
 msgid "Add"
 msgstr "जोड़ना"
 
-#: app/TripGroupPage.qml:561
+#: app/TripGroupPage.qml:635
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "आज के यात्रा कार्यक्रम में कुछ भी नहीं है।"
 
-#: app/TripGroupPage.qml:614
+#: app/TripGroupPage.qml:688
 #, kde-format
 msgid "Cost"
 msgstr "लागत"
 
-#: app/TripGroupPage.qml:636
+#: app/TripGroupPage.qml:710
 #, kde-format
 msgid "Rename…"
 msgstr "नाम बदलें…"
 
-#: app/TripGroupPage.qml:645
+#: app/TripGroupPage.qml:719
 #, kde-format
 msgid "Merge trips…"
 msgstr "यात्राएं मर्ज करें…"
 
-#: app/TripGroupPage.qml:656
+#: app/TripGroupPage.qml:730
 #, kde-format
 msgid "Split trip…"
 msgstr "विभाजित यात्रा…"
 
-#: app/TripGroupPage.qml:663
+#: app/TripGroupPage.qml:737
 #, kde-format
 msgid "Download Maps"
 msgstr "मानचित्र डाउनलोड करें"
 
-#: app/TripGroupPage.qml:678
+#: app/TripGroupPage.qml:752
 #, kde-format
 msgid "Delete trip"
 msgstr "यात्रा हटाएं"
 
-#: app/TripGroupPage.qml:703
+#: app/TripGroupPage.qml:777
 #, kde-format
 msgctxt "@action:button"
 msgid "Go To Now"
 msgstr "अभी जाएं"
 
-#: app/TripGroupPage.qml:711 app/TripGroupsPage.qml:118
+#: app/TripGroupPage.qml:785 app/TripGroupsPage.qml:118
 #: app/TripGroupsPage.qml:137
 #, kde-format
 msgctxt "@action:button"
@@ -4564,6 +4804,24 @@ msgstr "बाहर आ गये"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 %3 से %4 तक %5 पर"
+
+#~ msgid "Open File…"
+#~ msgstr "खुली फाइल…"
+
+#~ msgid "Scan Barcode…"
+#~ msgstr "बारकोड स्कैन करें…"
+
+#~ msgid "Deutsche Bahn Online Ticket…"
+#~ msgstr "डॉयचे बान ऑनलाइन टिकट…"
+
+#~ msgid "SNCF Online Ticket…"
+#~ msgstr "एसएनसीएफ ऑनलाइन टिकट…"
+
+#~ msgid "Import…"
+#~ msgstr "आयात करना…"
+
+#~ msgid "Add train trip…"
+#~ msgstr "ट्रेन यात्रा जोड़ें…"
 
 #~ msgid "Flight %1 to %2:"
 #~ msgstr "उड़ान %1 से %2:"
