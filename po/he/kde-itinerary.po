@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-09 00:43+0000\n"
-"PO-Revision-Date: 2025-07-06 10:41+0300\n"
+"POT-Creation-Date: 2025-07-10 00:43+0000\n"
+"PO-Revision-Date: 2025-07-08 11:40+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -28,7 +28,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde-l10n-he@kde.org"
 
-#: app/AboutPage.qml:18 app/Main.qml:186
+#: app/AboutPage.qml:18 app/Main.qml:96
 #, kde-format
 msgid "About"
 msgstr "על אודות"
@@ -118,75 +118,75 @@ msgstr "עריכה"
 msgid "Add to calendar…"
 msgstr "הוספה ללוח השנה…"
 
-#: app/ActionsCard.qml:74 app/ProgramMembershipPage.qml:182
-#: app/TicketPage.qml:191 app/TripGroupPage.qml:671
+#: app/ActionsCard.qml:75 app/ProgramMembershipPage.qml:182
+#: app/TicketPage.qml:191 app/TripGroupPage.qml:745
 #, kde-format
 msgid "Export…"
 msgstr "ייצוא…"
 
-#: app/ActionsCard.qml:79 app/ActionsCard.qml:125 app/DocumentsCard.qml:87
+#: app/ActionsCard.qml:80 app/ActionsCard.qml:121 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:43 app/GenericPkPassPage.qml:71
 #: app/HealthCertificatePage.qml:49 app/HealthCertificatePage.qml:63
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:188
-#: app/TicketPage.qml:48 app/TicketPage.qml:197 app/TripGroupPage.qml:247
+#: app/TicketPage.qml:48 app/TicketPage.qml:197 app/TripGroupPage.qml:308
 #, kde-format
 msgid "Delete"
 msgstr "מחיקה"
 
-#: app/ActionsCard.qml:118
+#: app/ActionsCard.qml:114
 #, kde-format
 msgid "Delete Event"
 msgstr "מחיקת אירוע"
 
-#: app/ActionsCard.qml:119
+#: app/ActionsCard.qml:115
 #, kde-format
 msgid "Do you really want to delete this event?"
 msgstr "למחוק את האירוע הזה?"
 
-#: app/ActionsCard.qml:138
+#: app/ActionsCard.qml:134
 #, kde-format
 msgid "Export Reservation"
 msgstr "ייצוא הזמנה"
 
-#: app/ActionsCard.qml:147 app/ProgramMembershipPage.qml:147
-#: app/TicketPage.qml:141 app/TripGroupPage.qml:621
+#: app/ActionsCard.qml:143 app/ProgramMembershipPage.qml:147
+#: app/TicketPage.qml:141 app/TripGroupPage.qml:695
 #, kde-format
 msgid "Actions"
 msgstr "פעולות"
 
-#: app/ActionsCard.qml:165
+#: app/ActionsCard.qml:161
 #, kde-format
 msgctxt "cancel as in revoking a booking"
 msgid "Cancel Reservation"
 msgstr "ביטול הזמנה"
 
-#: app/ActionsCard.qml:166
+#: app/ActionsCard.qml:162
 #, kde-format
 msgid "Check-in"
 msgstr "קליטה"
 
-#: app/ActionsCard.qml:167
+#: app/ActionsCard.qml:163
 #, kde-format
 msgid "Download"
 msgstr "הורדה"
 
-#: app/ActionsCard.qml:168
+#: app/ActionsCard.qml:164
 #, kde-format
 msgctxt "participate in an event"
 msgid "Join"
 msgstr "הצטרפות"
 
-#: app/ActionsCard.qml:169
+#: app/ActionsCard.qml:165
 #, kde-format
 msgid "Reserve"
 msgstr "הזמנה"
 
-#: app/ActionsCard.qml:170
+#: app/ActionsCard.qml:166
 #, kde-format
 msgid "Change Reservation"
 msgstr "החלפת הזמנה"
 
-#: app/ActionsCard.qml:171
+#: app/ActionsCard.qml:167
 #, kde-format
 msgid "View Reservation"
 msgstr "הצגת הזמנה"
@@ -413,9 +413,10 @@ msgctxt "boat arrival"
 msgid "Change arrival terminal"
 msgstr "החלפת מסוף הגעה"
 
-#: app/BoatEditor.qml:112 app/EventEditor.qml:54 app/FlightEditor.qml:72
-#: app/HotelEditor.qml:51 app/ImportPage.qml:21 app/JourneyRequestPage.qml:228
-#: app/RestaurantEditor.qml:53 app/StopoverDetailsPage.qml:127
+#: app/BoatEditor.qml:112 app/BusEditor.qml:127 app/EventEditor.qml:54
+#: app/FlightEditor.qml:72 app/HotelEditor.qml:51 app/ImportPage.qml:21
+#: app/JourneyRequestPage.qml:228 app/RestaurantEditor.qml:53
+#: app/StopoverDetailsPage.qml:127 app/TrainEditor.qml:135
 #, kde-format
 msgid "Trip"
 msgstr "טיול"
@@ -432,7 +433,7 @@ msgctxt "Boat departure"
 msgid "Departure Time"
 msgstr "זמן היציאה"
 
-#: app/BoatEditor.qml:135
+#: app/BoatEditor.qml:135 app/BusEditor.qml:168 app/TrainEditor.qml:177
 #, kde-format
 msgid "Departure time has to be set."
 msgstr "יש להגדיר את זמן היציאה."
@@ -454,7 +455,7 @@ msgctxt "boat terminal"
 msgid "Terminal"
 msgstr "מסוף"
 
-#: app/BoatEditor.qml:173 app/BoatPage.qml:88
+#: app/BoatEditor.qml:173 app/BoatPage.qml:82
 #, kde-format
 msgctxt "Boat arrival"
 msgid "Arrival"
@@ -466,7 +467,7 @@ msgctxt "Boat arrival"
 msgid "Arrival Time"
 msgstr "זמן ההגעה"
 
-#: app/BoatEditor.qml:191
+#: app/BoatEditor.qml:191 app/BusEditor.qml:253 app/TrainEditor.qml:262
 #, kde-format
 msgid "Arrival time has to be after the departure time."
 msgstr "זמן ההגעה חייב להיות אחרי זמן היציאה."
@@ -486,25 +487,25 @@ msgstr "כרטיס לסירה"
 msgid "Departure time"
 msgstr "זמן היציאה"
 
-#: app/BoatPage.qml:70 app/BoatPage.qml:100
+#: app/BoatPage.qml:72 app/BoatPage.qml:99
 #, kde-format
 msgctxt "Boat terminal"
 msgid "Terminal"
 msgstr "מסוף"
 
-#: app/BoatPage.qml:93 app/BusPage.qml:134 app/TrainPage.qml:219
+#: app/BoatPage.qml:87 app/BusPage.qml:132 app/TrainPage.qml:211
 #, kde-format
 msgid "Arrival time"
 msgstr "זמן ההגעה"
 
-#: app/BoatPage.qml:130 app/BusPage.qml:213 app/FlightPage.qml:218
-#: app/TrainPage.qml:362
+#: app/BoatPage.qml:118 app/BusPage.qml:207 app/FlightPage.qml:218
+#: app/TrainPage.qml:349
 #, kde-format
 msgid "Alternatives"
 msgstr "חלופות"
 
-#: app/BoatPage.qml:138 app/BusPage.qml:218 app/JourneySectionPage.qml:27
-#: app/TrainPage.qml:367
+#: app/BoatPage.qml:126 app/BusPage.qml:212 app/JourneySectionPage.qml:27
+#: app/TrainPage.qml:354
 #, kde-format
 msgid "Journey Details"
 msgstr "פרטי מסע"
@@ -606,66 +607,144 @@ msgctxt "from location 1 to location 2"
 msgid "%1 to %2"
 msgstr "%1 אל %2"
 
-#: app/BusEditor.qml:17
-#, kde-format
+#: app/BusEditor.qml:73
+#, fuzzy, kde-format
+#| msgid "Edit Bus Reservation"
+msgctxt "@title"
+msgid "New Bus Reservation"
+msgstr "עריכת הזמנה לאוטובוס"
+
+#: app/BusEditor.qml:73
+#, fuzzy, kde-format
+#| msgid "Edit Bus Reservation"
+msgctxt "@title"
 msgid "Edit Bus Reservation"
 msgstr "עריכת הזמנה לאוטובוס"
 
-#: app/BusEditor.qml:48 app/BusEditor.qml:109
+#: app/BusEditor.qml:80 app/BusEditor.qml:225
 #, kde-format
 msgctxt "bus departure"
 msgid "Change Departure Stop"
 msgstr "החלפת תחנת יציאה"
 
-#: app/BusEditor.qml:54
+#: app/BusEditor.qml:86
 #, kde-format
 msgctxt "bus departure"
 msgid "Change departure stop"
 msgstr "החלפת תחנת יציאה"
 
-#: app/BusEditor.qml:64 app/BusEditor.qml:131
+#: app/BusEditor.qml:96 app/BusEditor.qml:315
 #, kde-format
 msgctxt "bus arrival"
 msgid "Change Arrival Stop"
 msgstr "החלפת תחנת הגעה"
 
-#: app/BusEditor.qml:70
+#: app/BusEditor.qml:102
 #, kde-format
 msgctxt "bus arrival"
 msgid "Change arrival stop"
 msgstr "החלפת תחנת הגעה"
 
-#: app/BusEditor.qml:90
+#: app/BusEditor.qml:122
 #, kde-format
 msgctxt "@title"
 msgid "Bus"
 msgstr "אוטובוס"
 
-#: app/BusEditor.qml:95
+#: app/BusEditor.qml:140
+#, fuzzy, kde-format
+#| msgid "Bus"
+msgctxt "@title:group"
+msgid "Bus"
+msgstr "אוטובוס"
+
+#: app/BusEditor.qml:149
+#, fuzzy, kde-format
+#| msgid "Number"
+msgctxt "@label:textfield"
+msgid "Bus number"
+msgstr "מספר"
+
+#: app/BusEditor.qml:155
 #, kde-format
 msgctxt "bus departure"
 msgid "Departure"
 msgstr "יציאה"
 
-#: app/BusEditor.qml:100 app/BusEditor.qml:122
-#, kde-format
-msgctxt "bus stop"
+#: app/BusEditor.qml:164
+#, fuzzy, kde-format
+#| msgid "Departure Time"
+msgctxt "Bus departure"
+msgid "Departure Time"
+msgstr "זמן היציאה"
+
+#: app/BusEditor.qml:176
+#, fuzzy, kde-format
+#| msgctxt "bus stop"
+#| msgid "Stop"
+msgctxt "Bus stop"
 msgid "Stop"
 msgstr "עצירה"
 
-#: app/BusEditor.qml:105 app/BusEditor.qml:127
+#: app/BusEditor.qml:179
+#, fuzzy, kde-format
+#| msgid "Departure terminal must not be empty."
+msgid "Departure bus stop must not be empty."
+msgstr "מסוף ההגעה לא יכול להיות ריק."
+
+#: app/BusEditor.qml:187 app/BusEditor.qml:274
+#, fuzzy, kde-format
+#| msgid "Platform"
+msgctxt "Bus stop platform"
+msgid "Platform"
+msgstr "רציף"
+
+#: app/BusEditor.qml:208
+#, fuzzy, kde-format
+#| msgid "Stop Map"
+msgctxt "bus stop"
+msgid "Stop Name"
+msgstr "מפת עצירות"
+
+#: app/BusEditor.qml:216 app/BusEditor.qml:308
 #, kde-format
 msgctxt "bus stop platform"
 msgid "Platform"
 msgstr "רציף"
 
-#: app/BusEditor.qml:117
+#: app/BusEditor.qml:233
 #, kde-format
 msgctxt "bus arrival"
 msgid "Arrival"
 msgstr "הגעה"
 
-#: app/BusEditor.qml:140 app/BusEditor.qml:146 app/BusPage.qml:183
+#: app/BusEditor.qml:242 app/TrainEditor.qml:251
+#, fuzzy, kde-format
+#| msgid "Arrival Time"
+msgctxt "Train arrival"
+msgid "Arrival Time"
+msgstr "זמן ההגעה"
+
+#: app/BusEditor.qml:263
+#, fuzzy, kde-format
+#| msgid "Stop Map"
+msgctxt "Bus stop"
+msgid "Stop Name"
+msgstr "מפת עצירות"
+
+#: app/BusEditor.qml:266
+#, fuzzy, kde-format
+#| msgid "Arrival terminal must not be empty."
+msgid "Arrival stop must not be empty."
+msgstr "מסוף היציאה לא יכול להיות ריק."
+
+#: app/BusEditor.qml:300
+#, kde-format
+msgctxt "bus stop"
+msgid "Stop"
+msgstr "עצירה"
+
+#: app/BusEditor.qml:324 app/BusEditor.qml:330 app/BusPage.qml:177
 #, kde-format
 msgctxt "Bus seat"
 msgid "Seat"
@@ -682,24 +761,24 @@ msgctxt "Bus departure"
 msgid "Departure"
 msgstr "יציאה"
 
-#: app/BusPage.qml:89 app/TrainPage.qml:153
+#: app/BusPage.qml:90 app/TrainPage.qml:153
 #, kde-format
 msgid "Departure date"
 msgstr "תאריך יציאה"
 
-#: app/BusPage.qml:97 app/BusPage.qml:158
+#: app/BusPage.qml:100 app/BusPage.qml:158
 #, kde-format
 msgctxt "bus station"
 msgid "Station"
 msgstr "תחנה"
 
-#: app/BusPage.qml:105 app/BusPage.qml:166
+#: app/BusPage.qml:112 app/BusPage.qml:169
 #, kde-format
 msgctxt "bus station platform"
 msgid "Platform"
 msgstr "רציף"
 
-#: app/BusPage.qml:122
+#: app/BusPage.qml:120
 #, kde-format
 msgctxt "Bus arrival"
 msgid "Arrival"
@@ -710,7 +789,7 @@ msgstr "הגעה"
 msgid "Transfer to %1"
 msgstr "החלפה ל%1"
 
-#: app/CalendarSelectionSheet.qml:14
+#: app/CalendarSelectionDialog.qml:14
 #, kde-format
 msgctxt "@title"
 msgid "Select Calendar"
@@ -741,39 +820,39 @@ msgstr "מכונית להשכרה"
 msgid "Pick-up"
 msgstr "איסוף"
 
-#: app/CarRentalPage.qml:32 app/CarRentalPage.qml:59
+#: app/CarRentalPage.qml:32 app/CarRentalPage.qml:58
 #, kde-format
 msgid "Time"
 msgstr "זמן"
 
-#: app/CarRentalPage.qml:41 app/CarRentalPage.qml:68
-#: app/FormPlaceDelegate.qml:30 app/HotelPage.qml:25
+#: app/CarRentalPage.qml:43 app/CarRentalPage.qml:69
+#: app/FormPlaceDelegate.qml:32 app/HotelPage.qml:25
 #, kde-format
 msgid "Location"
 msgstr "מקום"
 
-#: app/CarRentalPage.qml:53
+#: app/CarRentalPage.qml:52
 #, kde-format
 msgid "Drop-off"
 msgstr "מסירה"
 
-#: app/CarRentalPage.qml:80 app/StopoverDetailsPage.qml:135
+#: app/CarRentalPage.qml:78 app/StopoverDetailsPage.qml:135
 #, kde-format
 msgid "Vehicle"
 msgstr "מכונית"
 
-#: app/CarRentalPage.qml:85 app/HealthCertificateTest.qml:73
+#: app/CarRentalPage.qml:83 app/HealthCertificateTest.qml:73
 #: app/HealthCertificateVaccination.qml:85
 #, kde-format
 msgid "Type"
 msgstr "סוג"
 
-#: app/CarRentalPage.qml:95
+#: app/CarRentalPage.qml:93
 #, kde-format
 msgid "Model"
 msgstr "דגם"
 
-#: app/CarRentalPage.qml:105
+#: app/CarRentalPage.qml:103
 #, kde-format
 msgid "Brand"
 msgstr "מותג"
@@ -826,25 +905,25 @@ msgstr "ספקי נתונים:"
 
 #: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:125
 #: app/TransferPage.qml:336
-#, fuzzy, kde-format
-#| msgid "Boarding"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Loading"
-msgstr "עלייה למטוס"
+msgstr "בטעינה"
 
 #: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:127
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:status"
 msgid "Error"
-msgstr ""
+msgstr "שגיאה"
 
 #: app/DocumentsCard.qml:35
 #, kde-format
 msgid "Add Document"
 msgstr "הוספת מסמך"
 
-#: app/DocumentsCard.qml:37 app/Main.qml:126 app/Main.qml:127
+#: app/DocumentsCard.qml:37 app/ImportAction.qml:42 app/ImportAction.qml:43
+#: app/MyDataPage.qml:207
 #, kde-format
 msgid "All Files (*.*)"
 msgstr "כל הקבצים (*.*)"
@@ -1154,8 +1233,8 @@ msgctxt "flight departure"
 msgid "Departure - %1"
 msgstr "יציאה - %1"
 
-#: app/FlightEditor.qml:90 app/FlightEditor.qml:150 app/FlightPage.qml:132
-#: app/FlightPage.qml:178
+#: app/FlightEditor.qml:90 app/FlightEditor.qml:150 app/FlightPage.qml:133
+#: app/FlightPage.qml:181
 #, kde-format
 msgid "Airport"
 msgstr "נמל תעופה"
@@ -1294,12 +1373,12 @@ msgctxt "flight departure"
 msgid "Departure date"
 msgstr "תאריך יציאה"
 
-#: app/FlightPage.qml:140 app/FlightPage.qml:186
+#: app/FlightPage.qml:146 app/FlightPage.qml:194
 #, kde-format
 msgid "Terminal"
 msgstr "מסוף"
 
-#: app/FlightPage.qml:148
+#: app/FlightPage.qml:156
 #, kde-format
 msgid "Gate"
 msgstr "שער"
@@ -1316,46 +1395,48 @@ msgctxt "flight arrival"
 msgid "Arrival time"
 msgstr "זמן הגעה"
 
-#: app/FormPlaceDelegate.qml:55
+#: app/FormPlaceDelegate.qml:84
 #, kde-format
 msgid "Share Place"
 msgstr "שיתוף מקום"
 
-#: app/FormPlaceDelegate.qml:56
+#: app/FormPlaceDelegate.qml:90
 #, kde-format
 msgid "Do you really want to share %1 to the Matrix channel %2?"
 msgstr "לשתף את %1 עם ערוץ ה־Matrix‏ %2?"
 
-#: app/FormPlaceDelegate.qml:62 app/LiveStatusPage.qml:158
-#, kde-format
+#: app/FormPlaceDelegate.qml:105
+#, fuzzy, kde-format
+#| msgid "Share"
+msgctxt "@action:button"
 msgid "Share"
 msgstr "שיתוף"
 
-#: app/FormPlaceDelegate.qml:123
+#: app/FormPlaceDelegate.qml:144
 #, kde-format
 msgctxt "@action:button"
 msgid "View Indoor Map"
 msgstr "הצגת מפה פנימית"
 
-#: app/FormPlaceDelegate.qml:130
+#: app/FormPlaceDelegate.qml:151
 #, kde-format
 msgctxt "@action:button"
 msgid "View on Map"
 msgstr "הצגה במפה"
 
-#: app/FormPlaceDelegate.qml:143
+#: app/FormPlaceDelegate.qml:164
 #, kde-format
 msgctxt "@action:button Start route guidance to location"
 msgid "Navigate"
 msgstr "ניווט"
 
-#: app/FormPlaceDelegate.qml:153
+#: app/FormPlaceDelegate.qml:174
 #, kde-format
 msgctxt "@action:button"
 msgid "Public Transport Departures"
 msgstr "יציאות של תחבורה ציבורית"
 
-#: app/FormPlaceDelegate.qml:162
+#: app/FormPlaceDelegate.qml:187
 #, kde-format
 msgctxt "@action:button"
 msgid "Share via Matrix"
@@ -1466,7 +1547,7 @@ msgid "Do you really want to delete this pass?"
 msgstr "למחוק את האישור הזה?"
 
 #: app/GenericPkPassPage.qml:55 app/TicketPage.qml:165
-#: app/TripGroupPage.qml:627
+#: app/TripGroupPage.qml:701
 #, kde-format
 msgid "Check for Updates"
 msgstr "איתור עדכונים"
@@ -1476,7 +1557,7 @@ msgstr "איתור עדכונים"
 msgid "Save As…"
 msgstr "שמירה בשם…"
 
-#: app/gpxexport.cpp:33 app/main.cpp:321 app/Main.qml:21 app/Main.qml:153
+#: app/gpxexport.cpp:33 app/main.cpp:321 app/Main.qml:20 app/Main.qml:68
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -1865,6 +1946,78 @@ msgstr "שעת קליטה"
 msgid "Check-out time"
 msgstr "שעת מסירה"
 
+#: app/ImportAction.qml:23 app/TripGroupPage.qml:502
+#, kde-format
+msgid "Import"
+msgstr "ייבוא"
+
+#: app/ImportAction.qml:29
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Import From File"
+msgctxt "@action:inmenu"
+msgid "From file"
+msgstr "ייבוא מקובץ"
+
+#: app/ImportAction.qml:37
+#, kde-format
+msgid "Import Reservation"
+msgstr "ייבוא הזמנה"
+
+#: app/ImportAction.qml:43
+#, kde-format
+msgid "PkPass files (*.pkpass)"
+msgstr "קובצי PkPass‏ (‎*.pkpass)"
+
+#: app/ImportAction.qml:43
+#, kde-format
+msgid "PDF files (*.pdf)"
+msgstr "קובצי PDF‏ (‎*.pdf)"
+
+#: app/ImportAction.qml:43
+#, kde-format
+msgid "iCal events (*.ics)"
+msgstr "אירועי iCal‏ (‎*.ics)"
+
+#: app/ImportAction.qml:43 app/MyDataPage.qml:208 app/MyDataPage.qml:229
+#, kde-format
+msgid "KDE Itinerary files (*.itinerary)"
+msgstr "קובצי KDE Itinerary‏ (‎*.itinerary)"
+
+#: app/ImportAction.qml:51
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Copy to Clipboard"
+msgctxt "@action:inmenu"
+msgid "From clipboard"
+msgstr "העתקה ללוח הגזירים"
+
+#: app/ImportAction.qml:61
+#, fuzzy, kde-format
+#| msgid "Barcode"
+msgctxt "@action:inmenu"
+msgid "From barcode"
+msgstr "ברקוד"
+
+#: app/ImportAction.qml:84
+#, fuzzy, kde-format
+#| msgid "Add from Calendar…"
+msgctxt "@action:inmenu"
+msgid "From calendar"
+msgstr "הוספה מלוח השנה…"
+
+#: app/ImportAction.qml:108
+#, kde-format
+msgctxt "@action:inmenu Name of the train company in Germany"
+msgid "From Deutsche Bahn reservation number"
+msgstr ""
+
+#: app/ImportAction.qml:119
+#, kde-format
+msgctxt "Name of the train company in France"
+msgid "From SNCF reservation number"
+msgstr ""
+
 #: app/importcontroller.cpp:153 app/importcontroller.cpp:475
 #, kde-format
 msgid "Import failed: %1"
@@ -2015,11 +2168,10 @@ msgid "Load earlier connections"
 msgstr "טעינת החלפת טיסות קודמות"
 
 #: app/JourneyQueryPage.qml:129
-#, fuzzy, kde-format
-#| msgid "No journeys found."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No journeys found"
-msgstr "לא נמצאו נסיעות."
+msgstr "לא נמצאו נסיעות"
 
 #: app/JourneyQueryPage.qml:163
 #, kde-format
@@ -2239,7 +2391,7 @@ msgstr "לחיצה על הרחבה"
 msgid "Itinerary change"
 msgstr "שינוי בתוכנית המסע"
 
-#: app/LiveStatusPage.qml:20 app/Main.qml:164
+#: app/LiveStatusPage.qml:20 app/Main.qml:74
 #, kde-format
 msgid "Live Status"
 msgstr "מצב בזמן אמת"
@@ -2300,6 +2452,11 @@ msgstr "שיתוף מיקום בזמן אמת"
 msgid ""
 "Do you really want to share your current location to the Matrix channel %1?"
 msgstr "לשתף את המקום הנוכחי שלך עם ערוץ ה־Matrix‏ %1?"
+
+#: app/LiveStatusPage.qml:158
+#, kde-format
+msgid "Share"
+msgstr "שיתוף"
 
 #: app/LiveStatusPage.qml:290
 #, kde-format
@@ -2480,88 +2637,28 @@ msgctxt "@info:shell"
 msgid "Files or URLs to import."
 msgstr "קבצים או כתובות לייבוא."
 
-#: app/Main.qml:61
-#, kde-format
-msgid "Open File…"
-msgstr "פתיחת קובץ…"
-
-#: app/Main.qml:69 app/TicketTokenEditorCard.qml:129
-#, kde-format
-msgid "Paste"
-msgstr "הדבקה"
-
-#: app/Main.qml:76
-#, kde-format
-msgid "Scan Barcode…"
-msgstr "סריקת ברקוד…"
-
-#: app/Main.qml:84
-#, kde-format
-msgid "Add from Calendar…"
-msgstr "הוספה מלוח השנה…"
-
-#: app/Main.qml:98
-#, kde-format
-msgid "Deutsche Bahn Online Ticket…"
-msgstr "כרטיס מקוון של Deutsche Bahn…"
-
-#: app/Main.qml:108
-#, kde-format
-msgid "SNCF Online Ticket…"
-msgstr "כרטיס מקוון של SNCF…"
-
-#: app/Main.qml:121
-#, kde-format
-msgid "Import Reservation"
-msgstr "ייבוא הזמנה"
-
-#: app/Main.qml:127 app/MyDataPage.qml:217
-#, kde-format
-msgid "KDE Itinerary files (*.itinerary)"
-msgstr "קובצי KDE Itinerary‏ (‎*.itinerary)"
-
-#: app/Main.qml:127
-#, kde-format
-msgid "PkPass files (*.pkpass)"
-msgstr "קובצי PkPass‏ (‎*.pkpass)"
-
-#: app/Main.qml:127
-#, kde-format
-msgid "PDF files (*.pdf)"
-msgstr "קובצי PDF‏ (‎*.pdf)"
-
-#: app/Main.qml:127
-#, kde-format
-msgid "iCal events (*.ics)"
-msgstr "אירועי iCal‏ (‎*.ics)"
-
-#: app/Main.qml:158
-#, kde-format
-msgid "Import…"
-msgstr "ייבוא…"
-
-#: app/Main.qml:172 app/WelcomePage.qml:41
+#: app/Main.qml:82 app/WelcomePage.qml:41
 #, kde-format
 msgid "Settings…"
 msgstr "הגדרות…"
 
-#: app/Main.qml:179 app/WelcomePage.qml:16
+#: app/Main.qml:89 app/WelcomePage.qml:16
 #, kde-format
 msgid "Help"
 msgstr "עזרה"
 
-#: app/Main.qml:268
+#: app/Main.qml:178
 #, kde-format
 msgctxt "@info:status"
 msgid "No onboard information available."
 msgstr "אין פרטי עלייה למטוס."
 
-#: app/Main.qml:310
+#: app/Main.qml:220
 #, kde-format
 msgid "Map download finished."
 msgstr "הורדת המפה הסתיימה."
 
-#: app/Main.qml:387
+#: app/Main.qml:281
 #, kde-format
 msgctxt "@title:window"
 msgid "Matrix Session Verification"
@@ -2916,7 +3013,7 @@ msgstr "מקומות שמורים"
 msgid "Home Country"
 msgstr "מדינת הבית"
 
-#: app/MyDataPage.qml:131 app/StatisticsPage.qml:16 app/TripGroupPage.qml:589
+#: app/MyDataPage.qml:131 app/StatisticsPage.qml:16 app/TripGroupPage.qml:663
 #, kde-format
 msgid "Statistics"
 msgstr "סטטיסטיקה"
@@ -2933,19 +3030,25 @@ msgctxt "@title:group"
 msgid "Data Portability"
 msgstr "ניידות נתונים"
 
-#: app/MyDataPage.qml:196
+#: app/MyDataPage.qml:196 app/PassPage.qml:27
 #, kde-format
 msgctxt "@action:button"
 msgid "Import"
 msgstr "ייבוא"
 
-#: app/MyDataPage.qml:204
+#: app/MyDataPage.qml:202
+#, fuzzy, kde-format
+#| msgid "Backup"
+msgid "Import Backup"
+msgstr "גיבוי"
+
+#: app/MyDataPage.qml:216
 #, kde-format
 msgctxt "@action:button"
 msgid "Export"
 msgstr "ייצוא"
 
-#: app/MyDataPage.qml:215
+#: app/MyDataPage.qml:227
 #, kde-format
 msgid "Export Itinerary Data"
 msgstr "ייצוא נתוני תוכנית מסע…"
@@ -3098,47 +3201,48 @@ msgctxt "name - valid time range"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/passmanager.cpp:284 app/TripGroupPage.qml:374
+#: app/passmanager.cpp:284 app/TripGroupPage.qml:435
 #, kde-format
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/PassPage.qml:18
+#: app/PassPage.qml:19
 #, kde-format
 msgid "Passes and Programs"
 msgstr "אישורים ותוכניות"
 
-#: app/PassPage.qml:21
+#: app/PassPage.qml:22
 #, kde-format
 msgctxt "@title"
 msgid "Add Program Membership"
 msgstr "הוספת חברות בתוכנית"
 
-#: app/PassPage.qml:26
-#, kde-format
-msgctxt "@action:button"
-msgid "Import From File"
-msgstr "ייבוא מקובץ"
+#: app/PassPage.qml:43
+#, fuzzy, kde-format
+#| msgid "Import"
+msgctxt "@title:dialog"
+msgid "Import"
+msgstr "ייבוא"
 
-#: app/PassPage.qml:34
+#: app/PassPage.qml:55
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Manually"
 msgstr "הוספה ידנית"
 
-#: app/PassPage.qml:48
+#: app/PassPage.qml:69
 #, kde-format
 msgctxt "not yet expired tickets"
 msgid "Valid"
 msgstr "תוקף"
 
-#: app/PassPage.qml:69
+#: app/PassPage.qml:90
 #, kde-format
 msgctxt "not yet valid tickets"
 msgid "Future"
 msgstr "עתידי"
 
-#: app/PassPage.qml:91
+#: app/PassPage.qml:112
 #, kde-format
 msgctxt "no longer valid tickets"
 msgid "Expired"
@@ -3644,7 +3748,7 @@ msgstr "טיולים"
 #: app/statisticsmodel.cpp:107 app/statisticsmodel.cpp:140
 #: app/statisticsmodel.cpp:155 app/statisticsmodel.cpp:170
 #: app/statisticsmodel.cpp:185 app/statisticsmodel.cpp:200
-#: app/TripGroupPage.qml:596
+#: app/TripGroupPage.qml:670
 #, kde-format
 msgid "Distance"
 msgstr "מרחק"
@@ -3657,7 +3761,7 @@ msgstr "לילות במלון"
 #: app/statisticsmodel.cpp:117 app/statisticsmodel.cpp:145
 #: app/statisticsmodel.cpp:160 app/statisticsmodel.cpp:175
 #: app/statisticsmodel.cpp:190 app/statisticsmodel.cpp:205
-#: app/TripGroupPage.qml:605
+#: app/TripGroupPage.qml:679
 #, kde-format
 msgid "CO₂"
 msgstr "פחמן דו־חמצני"
@@ -3708,7 +3812,7 @@ msgctxt "@info:placeholder no visited country"
 msgid "None"
 msgstr "אין"
 
-#: app/StatisticsPage.qml:121 app/TrainEditor.qml:94
+#: app/StatisticsPage.qml:121 app/TrainEditor.qml:130
 #, kde-format
 msgid "Train"
 msgstr "רכבת"
@@ -3817,6 +3921,11 @@ msgstr "בחירת כרטיס"
 msgid "Scan barcode…"
 msgstr "סריקת ברקוד…"
 
+#: app/TicketTokenEditorCard.qml:129
+#, kde-format
+msgid "Paste"
+msgstr "הדבקה"
+
 #: app/tickettokenmodel.cpp:74
 #, kde-format
 msgid "Attendee %1"
@@ -3880,91 +3989,156 @@ msgctxt "train station platform"
 msgid "Platform %1"
 msgstr "רציף %1"
 
-#: app/TrainDelegate.qml:61 app/TrainPage.qml:314
+#: app/TrainDelegate.qml:61 app/TrainPage.qml:301
 #, kde-format
 msgctxt "train coach"
 msgid "Coach: <b>%1</b>"
 msgstr "קרון: <b>%1</b>"
 
-#: app/TrainDelegate.qml:67 app/TrainPage.qml:321
+#: app/TrainDelegate.qml:67 app/TrainPage.qml:308
 #, kde-format
 msgctxt "train seat"
 msgid "Seat: <b>%1</b>"
 msgstr "מושב: <b>%1</b>"
 
-#: app/TrainDelegate.qml:75 app/TrainPage.qml:329
+#: app/TrainDelegate.qml:75 app/TrainPage.qml:316
 #, kde-format
 msgctxt "train class"
 msgid "Class: <b>%1</b>"
 msgstr "מחלקה: <b>%1</b>"
 
-#: app/TrainEditor.qml:18
-#, kde-format
+#: app/TrainEditor.qml:79
+#, fuzzy, kde-format
+#| msgid "Edit Train Reservation"
+msgctxt "@title"
+msgid "New Train Reservation"
+msgstr "עריכת המקום השמור ברכבת"
+
+#: app/TrainEditor.qml:79
+#, fuzzy, kde-format
+#| msgid "Edit Train Reservation"
+msgctxt "@title"
 msgid "Edit Train Reservation"
 msgstr "עריכת המקום השמור ברכבת"
 
-#: app/TrainEditor.qml:52 app/TrainEditor.qml:117
+#: app/TrainEditor.qml:88 app/TrainEditor.qml:234
 #, kde-format
 msgctxt "train departure"
 msgid "Change Departure Station"
 msgstr "החלפת תחנת יציאה"
 
-#: app/TrainEditor.qml:58
+#: app/TrainEditor.qml:94
 #, kde-format
 msgctxt "train departure"
 msgid "Change departure station"
 msgstr "החלפת תחנת יציאה"
 
-#: app/TrainEditor.qml:68 app/TrainEditor.qml:142
+#: app/TrainEditor.qml:104 app/TrainEditor.qml:327
 #, kde-format
 msgctxt "train arrival"
 msgid "Change Arrival Station"
 msgstr "החלפת תחנת הגעה"
 
-#: app/TrainEditor.qml:74
+#: app/TrainEditor.qml:110
 #, kde-format
 msgctxt "train arrival"
 msgid "Change arrival station"
 msgstr "החלפת תחנת הגעה"
 
-#: app/TrainEditor.qml:99
+#: app/TrainEditor.qml:149
+#, fuzzy, kde-format
+#| msgid "Train"
+msgctxt "@title:group"
+msgid "Train"
+msgstr "רכבת"
+
+#: app/TrainEditor.qml:158
+#, fuzzy, kde-format
+#| msgid "Ticket number:"
+msgctxt "@label:textfield"
+msgid "Train number"
+msgstr "מספר הכרטיס:"
+
+#: app/TrainEditor.qml:164
 #, kde-format
 msgctxt "train departure"
 msgid "Departure"
 msgstr "יציאה"
 
-#: app/TrainEditor.qml:104 app/TrainEditor.qml:130 app/TrainPage.qml:161
-#: app/TrainPage.qml:253
+#: app/TrainEditor.qml:173
+#, fuzzy, kde-format
+#| msgid "Departure Time"
+msgctxt "Train departure"
+msgid "Departure Time"
+msgstr "זמן היציאה"
+
+#: app/TrainEditor.qml:185
+#, fuzzy, kde-format
+#| msgctxt "bus station"
+#| msgid "Station"
+msgctxt "Train station platform"
+msgid "Station Name"
+msgstr "תחנה"
+
+#: app/TrainEditor.qml:188
+#, fuzzy, kde-format
+#| msgid "Departure terminal must not be empty."
+msgid "Departure station must not be empty."
+msgstr "מסוף ההגעה לא יכול להיות ריק."
+
+#: app/TrainEditor.qml:196 app/TrainEditor.qml:283
+#, fuzzy, kde-format
+#| msgid "Platform"
+msgctxt "Train station platform"
+msgid "Platform"
+msgstr "רציף"
+
+#: app/TrainEditor.qml:217 app/TrainEditor.qml:309 app/TrainPage.qml:163
+#: app/TrainPage.qml:247
 #, kde-format
 msgctxt "train station"
 msgid "Station"
 msgstr "תחנה"
 
-#: app/TrainEditor.qml:110 app/TrainEditor.qml:136
+#: app/TrainEditor.qml:225 app/TrainEditor.qml:318
 #, kde-format
 msgctxt "train platform"
 msgid "Platform"
 msgstr "רציף"
 
-#: app/TrainEditor.qml:125
+#: app/TrainEditor.qml:242
 #, kde-format
 msgctxt "train arrival"
 msgid "Arrival"
 msgstr "הגעה"
 
-#: app/TrainEditor.qml:152 app/TrainEditor.qml:164 app/TrainPage.qml:305
+#: app/TrainEditor.qml:272
+#, fuzzy, kde-format
+#| msgctxt "bus station"
+#| msgid "Station"
+msgctxt "Train station"
+msgid "Station Name"
+msgstr "תחנה"
+
+#: app/TrainEditor.qml:275
+#, fuzzy, kde-format
+#| msgid "Arrival terminal must not be empty."
+msgid "Arrival station must not be empty."
+msgstr "מסוף היציאה לא יכול להיות ריק."
+
+#: app/TrainEditor.qml:337 app/TrainEditor.qml:349 app/TrainPage.qml:292
 #, kde-format
 msgctxt "Train seat"
 msgid "Seat"
 msgstr "מושב"
 
-#: app/TrainEditor.qml:158
+#: app/TrainEditor.qml:343
 #, kde-format
 msgctxt "carriage on a train"
 msgid "Coach"
 msgstr "קרון"
 
-#: app/TrainEditor.qml:170
+#: app/TrainEditor.qml:355
 #, kde-format
 msgctxt "seating class on a train"
 msgid "Class"
@@ -3986,39 +4160,39 @@ msgctxt "Train departure"
 msgid "Departure"
 msgstr "יציאה"
 
-#: app/TrainPage.qml:189 app/TrainPage.qml:280
+#: app/TrainPage.qml:183 app/TrainPage.qml:269
 #, kde-format
 msgid "Additional notes"
 msgstr "הערות נוספות"
 
-#: app/TrainPage.qml:204
+#: app/TrainPage.qml:196
 #, kde-format
 msgid "Departure Vehicle Layout"
 msgstr "פריסת כלי התחבורה היוצא"
 
-#: app/TrainPage.qml:213
+#: app/TrainPage.qml:205
 #, kde-format
 msgctxt "Train arrival"
 msgid "Arrival"
 msgstr "הגעה"
 
-#: app/TrainPage.qml:295
+#: app/TrainPage.qml:282
 #, kde-format
 msgid "Arrival Vehicle Layout"
 msgstr "פריסת כלי התחבורה הנכנס"
 
-#: app/TrainPage.qml:354
+#: app/TrainPage.qml:341
 #, kde-format
 msgctxt "@action:button"
 msgid "Add to Traewelling"
 msgstr "הוספה ל־Traewelling"
 
-#: app/TrainPage.qml:398
+#: app/TrainPage.qml:385
 #, kde-format
 msgid "Added to Traewelling"
 msgstr "נוסף ל־Traewelling"
 
-#: app/TrainPage.qml:398
+#: app/TrainPage.qml:385
 #, kde-format
 msgid "Failed to add to Traewelling"
 msgstr "ההוספה ל־Traewelling נכשלה"
@@ -4159,58 +4333,92 @@ msgctxt "@action:button"
 msgid "Merge"
 msgstr "מיזוג"
 
-#: app/TripGroupPage.qml:117
-#, kde-format
-msgid "Add train trip…"
-msgstr "הוספת טיול ברכבת…"
+#: app/TripGroupPage.qml:156
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Load earlier connections"
+msgctxt "@action"
+msgid "Search connection"
+msgstr "טעינת החלפת טיסות קודמות"
 
-#: app/TripGroupPage.qml:124
+#: app/TripGroupPage.qml:163
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Load later connections"
+msgctxt "@action"
+msgid "Add connection"
+msgstr "טעינת החלפת טיסות קודמות"
+
+#: app/TripGroupPage.qml:169
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Add trip"
+msgctxt "@action"
+msgid "Add train"
+msgstr "הוספת טיול"
+
+#: app/TripGroupPage.qml:179
 #, kde-format
-msgid "Add flight…"
+msgctxt "@action"
+msgid "Add bus"
+msgstr ""
+
+#: app/TripGroupPage.qml:189
+#, fuzzy, kde-format
+#| msgid "Add flight…"
+msgctxt "@action"
+msgid "Add flight"
 msgstr "הוספת טיסה…"
 
-#: app/TripGroupPage.qml:136
-#, kde-format
-msgid "Add ferry trip…"
+#: app/TripGroupPage.qml:199
+#, fuzzy, kde-format
+#| msgid "Add ferry trip…"
+msgctxt "@action"
+msgid "Add ferry trip"
 msgstr "הוספת טיול במעבורת…"
 
-#: app/TripGroupPage.qml:148
-#, kde-format
-msgid "Add accommodation…"
+#: app/TripGroupPage.qml:209
+#, fuzzy, kde-format
+#| msgid "Add accommodation…"
+msgctxt "@action"
+msgid "Add accommodation"
 msgstr "הוספת הסדר לינה…"
 
-#: app/TripGroupPage.qml:159
-#, kde-format
-msgid "Add event…"
+#: app/TripGroupPage.qml:224
+#, fuzzy, kde-format
+#| msgid "Add event…"
+msgctxt "@action"
+msgid "Add event"
 msgstr "הוספת אירוע…"
 
-#: app/TripGroupPage.qml:171
-#, kde-format
-msgid "Add restaurant…"
+#: app/TripGroupPage.qml:240
+#, fuzzy, kde-format
+#| msgid "Add restaurant…"
+msgid "Add restaurant"
 msgstr "הוספת מסעדה…"
 
-#: app/TripGroupPage.qml:187
+#: app/TripGroupPage.qml:257
 #, kde-format
 msgctxt "@title:group"
 msgid "Add to Trip"
 msgstr "הוספה לטיול"
 
-#: app/TripGroupPage.qml:229
+#: app/TripGroupPage.qml:290
 #, kde-format
 msgid "Export Trip"
 msgstr "ייצוא טיול"
 
-#: app/TripGroupPage.qml:240
+#: app/TripGroupPage.qml:301
 #, kde-format
 msgid "Delete Trip"
 msgstr "מחיקת טיול"
 
-#: app/TripGroupPage.qml:241
+#: app/TripGroupPage.qml:302
 #, kde-format
 msgid "Do you really want to delete the trip '%1'?"
 msgstr "למחוק את הטיול ‚%1’?"
 
-#: app/TripGroupPage.qml:375
+#: app/TripGroupPage.qml:436
 #, kde-format
 msgid "One day"
 msgid_plural "%1 days"
@@ -4219,22 +4427,22 @@ msgstr[1] "יומיים"
 msgstr[2] "%1 ימים"
 msgstr[3] "%1 ימים"
 
-#: app/TripGroupPage.qml:407
+#: app/TripGroupPage.qml:468
 #, kde-format
 msgid "Some incompatible power sockets (%1)"
 msgstr "חלק משקעי החשמל לא תואמים (%1)"
 
-#: app/TripGroupPage.qml:409
+#: app/TripGroupPage.qml:470
 #, kde-format
 msgid "Some incompatible power plugs (%1)"
 msgstr "חלק מתקעי החשמל לא תואמים (%1)"
 
-#: app/TripGroupPage.qml:412
+#: app/TripGroupPage.qml:473
 #, kde-format
 msgid "No compatible power plugs (%1)"
 msgstr "אין תקעי חשמל תואמים (%1)"
 
-#: app/TripGroupPage.qml:424
+#: app/TripGroupPage.qml:485
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
@@ -4243,63 +4451,58 @@ msgstr[1] "מטבעות: %2"
 msgstr[2] "מטבעות: %2"
 msgstr[3] "מטבעות: %2"
 
-#: app/TripGroupPage.qml:434
+#: app/TripGroupPage.qml:495
 #, kde-format
 msgid "Show map…"
 msgstr "הצגת מפה…"
 
-#: app/TripGroupPage.qml:441
-#, kde-format
-msgid "Import"
-msgstr "ייבוא"
-
-#: app/TripGroupPage.qml:455
+#: app/TripGroupPage.qml:518
 #, kde-format
 msgid "Add"
 msgstr "הוספה"
 
-#: app/TripGroupPage.qml:561
+#: app/TripGroupPage.qml:635
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "אין שום דבר בתוכנית המסע להיום."
 
-#: app/TripGroupPage.qml:614
+#: app/TripGroupPage.qml:688
 #, kde-format
 msgid "Cost"
 msgstr "עלות"
 
-#: app/TripGroupPage.qml:636
+#: app/TripGroupPage.qml:710
 #, kde-format
 msgid "Rename…"
 msgstr "שינוי שם…"
 
-#: app/TripGroupPage.qml:645
+#: app/TripGroupPage.qml:719
 #, kde-format
 msgid "Merge trips…"
 msgstr "מיזוג טיולים…"
 
-#: app/TripGroupPage.qml:656
+#: app/TripGroupPage.qml:730
 #, kde-format
 msgid "Split trip…"
 msgstr "פיצול טיול…"
 
-#: app/TripGroupPage.qml:663
+#: app/TripGroupPage.qml:737
 #, kde-format
 msgid "Download Maps"
 msgstr "הורדת מפות"
 
-#: app/TripGroupPage.qml:678
+#: app/TripGroupPage.qml:752
 #, kde-format
 msgid "Delete trip"
 msgstr "מחיקת טיול"
 
-#: app/TripGroupPage.qml:703
+#: app/TripGroupPage.qml:777
 #, kde-format
 msgctxt "@action:button"
 msgid "Go To Now"
 msgstr "לקפוץ לעכשיו"
 
-#: app/TripGroupPage.qml:711 app/TripGroupsPage.qml:118
+#: app/TripGroupPage.qml:785 app/TripGroupsPage.qml:118
 #: app/TripGroupsPage.qml:137
 #, kde-format
 msgctxt "@action:button"
@@ -4532,6 +4735,24 @@ msgstr "יצאת"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 מ%3 אל %4 ב־%5"
+
+#~ msgid "Open File…"
+#~ msgstr "פתיחת קובץ…"
+
+#~ msgid "Scan Barcode…"
+#~ msgstr "סריקת ברקוד…"
+
+#~ msgid "Deutsche Bahn Online Ticket…"
+#~ msgstr "כרטיס מקוון של Deutsche Bahn…"
+
+#~ msgid "SNCF Online Ticket…"
+#~ msgstr "כרטיס מקוון של SNCF…"
+
+#~ msgid "Import…"
+#~ msgstr "ייבוא…"
+
+#~ msgid "Add train trip…"
+#~ msgstr "הוספת טיול ברכבת…"
 
 #~ msgid "Flight %1 to %2:"
 #~ msgstr "טיסה %1 אל %2:"
