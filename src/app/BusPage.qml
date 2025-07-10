@@ -175,9 +175,11 @@ DetailsPage {
         // seat reservation
         FormCard.FormHeader {
             title: i18nc("Bus seat", "Seat")
+            visible: seatCard.visible
         }
 
         FormCard.FormCard {
+            id: seatCard
             visible: seatLabel.visible
             FormCard.FormTextDelegate {
                 id: seatLabel
