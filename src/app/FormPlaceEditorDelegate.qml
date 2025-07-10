@@ -55,6 +55,7 @@ ColumnLayout {
         LocationPicker {
             title: i18n("Pick Location")
             coordinate: QtPositioning.coordinate(root.latitude, root.longitude)
+            country: root.currentCountry
             onCoordinateChanged: {
                 root.latitude = coordinate.latitude;
                 root.longitude = coordinate.longitude;
