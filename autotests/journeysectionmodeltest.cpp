@@ -113,6 +113,28 @@ private Q_SLOTS:
         QCOMPARE(idx.data(JourneySectionModel::ProgressRole).toFloat(), 1.0f);
         QCOMPARE(model.arrived(), true);
     }
+
+    void testEmptyModel()
+    {
+        JourneySectionModel model;
+        model.setCurrentDateTime(QDateTime({2021, 12, 21}, {10, 00}, QTimeZone("Europe/Berlin")));
+        QAbstractItemModelTester modelTester(&model);
+
+        model.setJourneySection({});
+        QCOMPARE(model.departed(), false);
+        QCOMPARE(model.arrived(), false);
+        QCOMPARE(model.departureProgress(), 0.0);
+
+        model.setProperty("showProgress", true);
+        QCOMPARE(model.departed(), false);
+        QCOMPARE(model.arrived(), false);
+        QCOMPARE(model.departureProgress(), 0.0);
+
+        model.setJourneySection({});
+        QCOMPARE(model.departed(), false);
+        QCOMPARE(model.arrived(), false);
+        QCOMPARE(model.departureProgress(), 0.0);
+    }
 };
 
 QTEST_GUILESS_MAIN(JourneySectionModelTest)

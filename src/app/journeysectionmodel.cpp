@@ -48,7 +48,9 @@ void JourneySectionModel::setJourneySection(const KPublicTransport::JourneySecti
     // is this an update to the current state? if so, try to avoid resetting the model
     if (KPublicTransport::JourneySection::isSame(m_journey, section) && m_journey.intermediateStops().size() == section.intermediateStops().size()) {
         m_journey = section;
-        Q_EMIT dataChanged(index(0, 0), index(rowCount() - 1, 0));
+        if (!m_journey.intermediateStops().empty()) {
+            Q_EMIT dataChanged(index(0, 0), index(rowCount() - 1, 0));
+        }
         Q_EMIT journeySectionChanged();
         return;
     }
@@ -57,6 +59,7 @@ void JourneySectionModel::setJourneySection(const KPublicTransport::JourneySecti
     m_journey = section;
     endResetModel();
     Q_EMIT journeySectionChanged();
+    Q_EMIT progressChanged();
 
     if (m_journey.intermediateStops().empty()) {
         m_updateTimer.stop();
@@ -160,7 +163,8 @@ float JourneySectionModel::progress(int row) const
 
     const auto now = currentDateTime();
     const auto stop = stopoverForRow(row);
-    if (departureTime(stop) >= now) {
+    const auto depTime = departureTime(stop);
+    if (!depTime.isValid() || departureTime(stop) >= now) {
         qCDebug(Log) << row << stop.stopPoint().name() << "not passed yet";
         return 0.0f;
     }
@@ -171,8 +175,8 @@ float JourneySectionModel::progress(int row) const
         return 1.0f;
     }
 
-    const float totalTime = departureTime(stop).secsTo(arrivalTime(nextStop));
-    const float progressTime = departureTime(stop).secsTo(now);
+    const float totalTime = depTime.secsTo(arrivalTime(nextStop));
+    const float progressTime = depTime.secsTo(now);
 
 
     return std::clamp(progressTime / totalTime, 0.0f, 1.0f);
@@ -186,7 +190,10 @@ bool JourneySectionModel::stopoverPassed(int row) const
 
     const auto now = currentDateTime();
     const auto stop = stopoverForRow(row);
-    return arrivalTime(stop) <= now;
+    if (const auto dt = arrivalTime(stop); dt.isValid()) {
+        return arrivalTime(stop) <= now;
+    }
+    return false;
 }
 
 void JourneySectionModel::setCurrentDateTime(const QDateTime &dt)
