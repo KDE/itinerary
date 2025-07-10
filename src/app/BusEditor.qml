@@ -194,7 +194,7 @@ EditorPage {
                 id: departureAddress
 
                 place: {
-                    if (root.batchId || !root.reservation.reservationFor.departureBusStop.address.isEmpty || root.reservation.reservationFor.departureBuStop.geo.isValid)
+                    if (root.batchId || !root.reservation.reservationFor.departureBusStop.address.isEmpty || root.reservation.reservationFor.departureBusStop.geo.isValid)
                         return reservation.reservationFor.departureBusStop;
                     return cityAtTime(root.reservation.reservationFor.departureTime);
                 }
