@@ -5,17 +5,22 @@
 */
 
 import QtQuick
-import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import QtLocation as QtLocation
 import QtPositioning
 import org.kde.kirigami as Kirigami
+import org.kde.kpublictransport.ui as KPublicTransport
 import org.kde.kirigamiaddons.components
 import org.kde.itinerary
 
 Kirigami.Page {
     id: root
-    property variant coordinate: QtPositioning.coordinate(0, 0)
+
+    /** Initially selected coordinate, if any. */
+    property variant coordinate
+
+    /** Initially shown country, if coorinate is invalid. */
+    property string country
 
     topPadding: 0
     bottomPadding: 0
@@ -28,8 +33,6 @@ Kirigami.Page {
     MapView {
         id: map
         anchors.fill: parent
-        center: root.coordinate
-        zoomLevel: root.coordinate.isValid ? 15 : 8
 
         QtLocation.MapQuickItem {
             coordinate: map.center
@@ -42,7 +45,26 @@ Kirigami.Page {
                 color: Kirigami.Theme.negativeTextColor
             }
         }
+
+        // the zoom level computation only works once we have a proper view size
+        onHeightChanged: initialMapPosition()
+        onWidthChanged: initialMapPosition()
+
+        onZoomLevelChanged: console.log("zoom", map.zoomLevel)
     }
+
+    function initialMapPosition() {
+        if (root.coordinate !== undefined && root.coordinate.isValid) {
+            map.center = root.coordinate
+            map.zoomLevel = 15
+        } else if (root.country.length === 2) {
+            const bbox = KPublicTransport.MapUtils.boundingBoxForCountry(root.country);
+            map.center = KPublicTransport.MapUtils.center(bbox);
+            map.zoomLevel = KPublicTransport.MapUtils.zoomLevel(bbox, map.width, map.height);
+        }
+    }
+
+    Component.onCompleted: initialMapPosition()
 
     FloatingButton {
         anchors {
