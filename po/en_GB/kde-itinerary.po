@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-10 02:34+0000\n"
+"POT-Creation-Date: 2025-07-11 02:36+0000\n"
 "PO-Revision-Date: 2024-11-16 12:52+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -503,13 +503,13 @@ msgstr "Terminal"
 msgid "Arrival time"
 msgstr "Arrival time"
 
-#: app/BoatPage.qml:118 app/BusPage.qml:207 app/FlightPage.qml:218
+#: app/BoatPage.qml:118 app/BusPage.qml:209 app/FlightPage.qml:218
 #: app/TrainPage.qml:349
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternatives"
 
-#: app/BoatPage.qml:126 app/BusPage.qml:212 app/JourneySectionPage.qml:27
+#: app/BoatPage.qml:126 app/BusPage.qml:214 app/JourneySectionPage.qml:27
 #: app/TrainPage.qml:354
 #, kde-format
 msgid "Journey Details"

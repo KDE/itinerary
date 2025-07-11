@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the itinerary package.
 #
-# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023, 2024 Matjaž Jeran <matjaz.jeran@amis.net>
+# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023, 2024, 2025 Matjaž Jeran <matjaz.jeran@amis.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-10 02:34+0000\n"
-"PO-Revision-Date: 2025-07-08 06:57+0200\n"
+"POT-Creation-Date: 2025-07-11 02:36+0000\n"
+"PO-Revision-Date: 2025-07-10 07:54+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Lokalize 25.04.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -392,36 +392,28 @@ msgid "Edit Boat Trip"
 msgstr "Uredi ladijsko potovanje"
 
 #: app/BoatEditor.qml:69 app/BoatEditor.qml:165
-#, fuzzy, kde-format
-#| msgctxt "train departure"
-#| msgid "Change Departure Station"
+#, kde-format
 msgctxt "boat departure"
 msgid "Change Departure Terminal"
-msgstr "Spremeni začetno postajo"
+msgstr "Spremeni odhodni terminal"
 
 #: app/BoatEditor.qml:75
-#, fuzzy, kde-format
-#| msgctxt "train departure"
-#| msgid "Change departure station"
+#, kde-format
 msgctxt "boat departure"
 msgid "Change departure terminal"
-msgstr "Spremeni začetno postajo"
+msgstr "Spremeni odhodni terminal"
 
 #: app/BoatEditor.qml:85 app/BoatEditor.qml:227
-#, fuzzy, kde-format
-#| msgctxt "train arrival"
-#| msgid "Change Arrival Station"
+#, kde-format
 msgctxt "boat arrival"
 msgid "Change Arrival Terminal"
-msgstr "Spremeni ciljno postajo"
+msgstr "Spremeni dohodni terminal"
 
 #: app/BoatEditor.qml:91
-#, fuzzy, kde-format
-#| msgctxt "train arrival"
-#| msgid "Change arrival station"
+#, kde-format
 msgctxt "boat arrival"
 msgid "Change arrival terminal"
-msgstr "Spremeni ciljno postajo"
+msgstr "Spremeni dohodni terminal"
 
 #: app/BoatEditor.qml:112 app/BusEditor.qml:127 app/EventEditor.qml:54
 #: app/FlightEditor.qml:72 app/HotelEditor.qml:51 app/ImportPage.qml:21
@@ -460,8 +452,7 @@ msgid "Departure terminal must not be empty."
 msgstr "Odhodni terminal odhoda ne sme biti prazen."
 
 #: app/BoatEditor.qml:158 app/BoatEditor.qml:221
-#, fuzzy, kde-format
-#| msgid "Terminal"
+#, kde-format
 msgctxt "boat terminal"
 msgid "Terminal"
 msgstr "Terminal"
@@ -509,13 +500,13 @@ msgstr "Terminal"
 msgid "Arrival time"
 msgstr "Čas prihoda"
 
-#: app/BoatPage.qml:118 app/BusPage.qml:207 app/FlightPage.qml:218
+#: app/BoatPage.qml:118 app/BusPage.qml:209 app/FlightPage.qml:218
 #: app/TrainPage.qml:349
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternative"
 
-#: app/BoatPage.qml:126 app/BusPage.qml:212 app/JourneySectionPage.qml:27
+#: app/BoatPage.qml:126 app/BusPage.qml:214 app/JourneySectionPage.qml:27
 #: app/TrainPage.qml:354
 #, kde-format
 msgid "Journey Details"
@@ -619,15 +610,13 @@ msgid "%1 to %2"
 msgstr "%1 do %2"
 
 #: app/BusEditor.qml:73
-#, fuzzy, kde-format
-#| msgid "Edit Bus Reservation"
+#, kde-format
 msgctxt "@title"
 msgid "New Bus Reservation"
-msgstr "Uredi rezervacijo avtobusa"
+msgstr "Nova rezervacija avtobusa"
 
 #: app/BusEditor.qml:73
-#, fuzzy, kde-format
-#| msgid "Edit Bus Reservation"
+#, kde-format
 msgctxt "@title"
 msgid "Edit Bus Reservation"
 msgstr "Uredi rezervacijo avtobusa"
@@ -663,18 +652,16 @@ msgid "Bus"
 msgstr "Avtobus"
 
 #: app/BusEditor.qml:140
-#, fuzzy, kde-format
-#| msgid "Bus"
+#, kde-format
 msgctxt "@title:group"
 msgid "Bus"
 msgstr "Avtobus"
 
 #: app/BusEditor.qml:149
-#, fuzzy, kde-format
-#| msgid "Number"
+#, kde-format
 msgctxt "@label:textfield"
 msgid "Bus number"
-msgstr "Številka"
+msgstr "Številka avtobusa"
 
 #: app/BusEditor.qml:155
 #, kde-format
@@ -683,39 +670,33 @@ msgid "Departure"
 msgstr "Odhod"
 
 #: app/BusEditor.qml:164
-#, fuzzy, kde-format
-#| msgid "Departure Time"
+#, kde-format
 msgctxt "Bus departure"
 msgid "Departure Time"
 msgstr "Čas odhoda"
 
 #: app/BusEditor.qml:176
-#, fuzzy, kde-format
-#| msgctxt "bus stop"
-#| msgid "Stop"
+#, kde-format
 msgctxt "Bus stop"
 msgid "Stop"
 msgstr "Postaja"
 
 #: app/BusEditor.qml:179
-#, fuzzy, kde-format
-#| msgid "Departure terminal must not be empty."
+#, kde-format
 msgid "Departure bus stop must not be empty."
-msgstr "Odhodni terminal odhoda ne sme biti prazen."
+msgstr "Odhodna avtobusna postaja ne sme biti prazna."
 
 #: app/BusEditor.qml:187 app/BusEditor.qml:274
-#, fuzzy, kde-format
-#| msgid "Platform"
+#, kde-format
 msgctxt "Bus stop platform"
 msgid "Platform"
 msgstr "Peron"
 
 #: app/BusEditor.qml:208
-#, fuzzy, kde-format
-#| msgid "Stop Map"
+#, kde-format
 msgctxt "bus stop"
 msgid "Stop Name"
-msgstr "Zemljevid postankov"
+msgstr "Ime postanka"
 
 #: app/BusEditor.qml:216 app/BusEditor.qml:308
 #, kde-format
@@ -730,24 +711,21 @@ msgid "Arrival"
 msgstr "Prihod"
 
 #: app/BusEditor.qml:242 app/TrainEditor.qml:251
-#, fuzzy, kde-format
-#| msgid "Arrival Time"
+#, kde-format
 msgctxt "Train arrival"
 msgid "Arrival Time"
 msgstr "Čas prihoda"
 
 #: app/BusEditor.qml:263
-#, fuzzy, kde-format
-#| msgid "Stop Map"
+#, kde-format
 msgctxt "Bus stop"
 msgid "Stop Name"
-msgstr "Zemljevid postankov"
+msgstr "Ime postanka"
 
 #: app/BusEditor.qml:266
-#, fuzzy, kde-format
-#| msgid "Arrival terminal must not be empty."
+#, kde-format
 msgid "Arrival stop must not be empty."
-msgstr "Dohodni terminal ne sme biti prazen."
+msgstr "Dohodna postaja ne sme biti prazna."
 
 #: app/BusEditor.qml:300
 #, kde-format
@@ -1417,8 +1395,7 @@ msgid "Do you really want to share %1 to the Matrix channel %2?"
 msgstr "Ali zares želite deliti %1 s kanalom Matrixa %2?"
 
 #: app/FormPlaceDelegate.qml:105
-#, fuzzy, kde-format
-#| msgid "Share"
+#, kde-format
 msgctxt "@action:button"
 msgid "Share"
 msgstr "Deli"
@@ -1963,12 +1940,10 @@ msgid "Import"
 msgstr "Uvozi"
 
 #: app/ImportAction.qml:29
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Import From File"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "From file"
-msgstr "Uvozi iz datoteke"
+msgstr "Iz datoteke"
 
 #: app/ImportAction.qml:37
 #, kde-format
@@ -1996,37 +1971,34 @@ msgid "KDE Itinerary files (*.itinerary)"
 msgstr "Datoteke itinerarja KDE (* .itinerary)"
 
 #: app/ImportAction.qml:51
-#, fuzzy, kde-format
-#| msgid "Import from Clipboard"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "From clipboard"
-msgstr "Uvoz iz odložišča"
+msgstr "Iz odložišča"
 
 #: app/ImportAction.qml:61
-#, fuzzy, kde-format
-#| msgid "Barcode"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "From barcode"
-msgstr "Črtna koda"
+msgstr "Iz črtne kode"
 
 #: app/ImportAction.qml:84
-#, fuzzy, kde-format
-#| msgid "Add from Calendar…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "From calendar"
-msgstr "Dodaj iz koledarja…"
+msgstr "Iz koledarja"
 
 #: app/ImportAction.qml:108
 #, kde-format
 msgctxt "@action:inmenu Name of the train company in Germany"
 msgid "From Deutsche Bahn reservation number"
-msgstr ""
+msgstr "Iz rezervacijske številke Deutsche Bahn"
 
 #: app/ImportAction.qml:119
 #, kde-format
 msgctxt "Name of the train company in France"
 msgid "From SNCF reservation number"
-msgstr ""
+msgstr "Iz rezervacijske številke SNCF"
 
 #: app/importcontroller.cpp:153 app/importcontroller.cpp:475
 #, kde-format
@@ -3073,10 +3045,9 @@ msgid "Import"
 msgstr "Uvozi"
 
 #: app/MyDataPage.qml:202
-#, fuzzy, kde-format
-#| msgid "Backup"
+#, kde-format
 msgid "Import Backup"
-msgstr "Varovalna kopija"
+msgstr "Uvozi varovalno kopijo"
 
 #: app/MyDataPage.qml:216
 #, kde-format
@@ -3254,8 +3225,7 @@ msgid "Add Program Membership"
 msgstr "Dodaj članstvo v programu"
 
 #: app/PassPage.qml:43
-#, fuzzy, kde-format
-#| msgid "Import"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Import"
 msgstr "Uvozi"
@@ -4049,15 +4019,13 @@ msgid "Class: <b>%1</b>"
 msgstr "Razred: <b>%1</b>"
 
 #: app/TrainEditor.qml:79
-#, fuzzy, kde-format
-#| msgid "Edit Train Reservation"
+#, kde-format
 msgctxt "@title"
 msgid "New Train Reservation"
-msgstr "Uredi rezervacijo vlaka"
+msgstr "Nova rezervacija vlaka"
 
 #: app/TrainEditor.qml:79
-#, fuzzy, kde-format
-#| msgid "Edit Train Reservation"
+#, kde-format
 msgctxt "@title"
 msgid "Edit Train Reservation"
 msgstr "Uredi rezervacijo vlaka"
@@ -4087,18 +4055,16 @@ msgid "Change arrival station"
 msgstr "Spremeni ciljno postajo"
 
 #: app/TrainEditor.qml:149
-#, fuzzy, kde-format
-#| msgid "Train"
+#, kde-format
 msgctxt "@title:group"
 msgid "Train"
 msgstr "Vlak"
 
 #: app/TrainEditor.qml:158
-#, fuzzy, kde-format
-#| msgid "Ticket number:"
+#, kde-format
 msgctxt "@label:textfield"
 msgid "Train number"
-msgstr "Številka vozovnice:"
+msgstr "Številka vlaka"
 
 #: app/TrainEditor.qml:164
 #, kde-format
@@ -4107,29 +4073,24 @@ msgid "Departure"
 msgstr "Odhod"
 
 #: app/TrainEditor.qml:173
-#, fuzzy, kde-format
-#| msgid "Departure Time"
+#, kde-format
 msgctxt "Train departure"
 msgid "Departure Time"
 msgstr "Čas odhoda"
 
 #: app/TrainEditor.qml:185
-#, fuzzy, kde-format
-#| msgctxt "bus station"
-#| msgid "Station"
+#, kde-format
 msgctxt "Train station platform"
 msgid "Station Name"
-msgstr "Postaja"
+msgstr "Ime postaje"
 
 #: app/TrainEditor.qml:188
-#, fuzzy, kde-format
-#| msgid "Departure terminal must not be empty."
+#, kde-format
 msgid "Departure station must not be empty."
-msgstr "Odhodni terminal odhoda ne sme biti prazen."
+msgstr "Odhodna postaja ne sme biti prazna."
 
 #: app/TrainEditor.qml:196 app/TrainEditor.qml:283
-#, fuzzy, kde-format
-#| msgid "Platform"
+#, kde-format
 msgctxt "Train station platform"
 msgid "Platform"
 msgstr "Peron"
@@ -4154,18 +4115,15 @@ msgid "Arrival"
 msgstr "Prihod"
 
 #: app/TrainEditor.qml:272
-#, fuzzy, kde-format
-#| msgctxt "bus station"
-#| msgid "Station"
+#, kde-format
 msgctxt "Train station"
 msgid "Station Name"
-msgstr "Postaja"
+msgstr "Ime postaje"
 
 #: app/TrainEditor.qml:275
-#, fuzzy, kde-format
-#| msgid "Arrival terminal must not be empty."
+#, kde-format
 msgid "Arrival station must not be empty."
-msgstr "Dohodni terminal ne sme biti prazen."
+msgstr "Dohodna postaja ne sme biti prazna."
 
 #: app/TrainEditor.qml:337 app/TrainEditor.qml:349 app/TrainPage.qml:292
 #, kde-format
@@ -4375,68 +4333,57 @@ msgid "Merge"
 msgstr "Zlij"
 
 #: app/TripGroupPage.qml:156
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Load earlier connections"
+#, kde-format
 msgctxt "@action"
 msgid "Search connection"
-msgstr "Naloži zgodnejše povezave"
+msgstr "Išči povezavo"
 
 #: app/TripGroupPage.qml:163
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Load later connections"
+#, kde-format
 msgctxt "@action"
 msgid "Add connection"
-msgstr "Naloži kasnejše povezave"
+msgstr "Dodaj povezavo"
 
 #: app/TripGroupPage.qml:169
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add trip"
+#, kde-format
 msgctxt "@action"
 msgid "Add train"
-msgstr "Dodaj potovanje"
+msgstr "Dodaj vlak"
 
 #: app/TripGroupPage.qml:179
 #, kde-format
 msgctxt "@action"
 msgid "Add bus"
-msgstr ""
+msgstr "Dodaj avtobus"
 
 #: app/TripGroupPage.qml:189
-#, fuzzy, kde-format
-#| msgid "Add flight…"
+#, kde-format
 msgctxt "@action"
 msgid "Add flight"
-msgstr "Dodaj let…"
+msgstr "Dodaj let"
 
 #: app/TripGroupPage.qml:199
-#, fuzzy, kde-format
-#| msgid "Add ferry trip…"
+#, kde-format
 msgctxt "@action"
 msgid "Add ferry trip"
-msgstr "Dodaj izlet s trajektom…"
+msgstr "Dodaj potovanje s trajektom"
 
 #: app/TripGroupPage.qml:209
-#, fuzzy, kde-format
-#| msgid "Add accommodation…"
+#, kde-format
 msgctxt "@action"
 msgid "Add accommodation"
-msgstr "Dodaj nastanitev…"
+msgstr "Dodaj nastanitev"
 
 #: app/TripGroupPage.qml:224
-#, fuzzy, kde-format
-#| msgid "Add event…"
+#, kde-format
 msgctxt "@action"
 msgid "Add event"
-msgstr "Dodaj dogodek…"
+msgstr "Dodaj dogodek"
 
 #: app/TripGroupPage.qml:240
-#, fuzzy, kde-format
-#| msgid "Add restaurant…"
+#, kde-format
 msgid "Add restaurant"
-msgstr "Dodaj restavracijo…"
+msgstr "Dodaj restavracijo"
 
 #: app/TripGroupPage.qml:257
 #, kde-format

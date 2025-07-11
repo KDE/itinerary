@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-10 02:34+0000\n"
-"PO-Revision-Date: 2025-07-07 08:43+0200\n"
+"POT-Creation-Date: 2025-07-11 02:36+0000\n"
+"PO-Revision-Date: 2025-07-08 16:44+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -387,36 +387,28 @@ msgid "Edit Boat Trip"
 msgstr "Modifica viaggio in nave"
 
 #: app/BoatEditor.qml:69 app/BoatEditor.qml:165
-#, fuzzy, kde-format
-#| msgctxt "train departure"
-#| msgid "Change Departure Station"
+#, kde-format
 msgctxt "boat departure"
 msgid "Change Departure Terminal"
-msgstr "Cambia la stazione di partenza"
+msgstr "Cambia il terminal di partenza"
 
 #: app/BoatEditor.qml:75
-#, fuzzy, kde-format
-#| msgctxt "train departure"
-#| msgid "Change departure station"
+#, kde-format
 msgctxt "boat departure"
 msgid "Change departure terminal"
-msgstr "Cambia la stazione di partenza"
+msgstr "Cambia il terminal di partenza"
 
 #: app/BoatEditor.qml:85 app/BoatEditor.qml:227
-#, fuzzy, kde-format
-#| msgctxt "train arrival"
-#| msgid "Change Arrival Station"
+#, kde-format
 msgctxt "boat arrival"
 msgid "Change Arrival Terminal"
-msgstr "Cambia la stazione di arrivo"
+msgstr "Cambia il terminal di arrivo"
 
 #: app/BoatEditor.qml:91
-#, fuzzy, kde-format
-#| msgctxt "train arrival"
-#| msgid "Change arrival station"
+#, kde-format
 msgctxt "boat arrival"
 msgid "Change arrival terminal"
-msgstr "Cambia la stazione di arrivo"
+msgstr "Cambia il terminal di arrivo"
 
 #: app/BoatEditor.qml:112 app/BusEditor.qml:127 app/EventEditor.qml:54
 #: app/FlightEditor.qml:72 app/HotelEditor.qml:51 app/ImportPage.qml:21
@@ -455,11 +447,10 @@ msgid "Departure terminal must not be empty."
 msgstr "Il terminal di partenza non può essere vuoto."
 
 #: app/BoatEditor.qml:158 app/BoatEditor.qml:221
-#, fuzzy, kde-format
-#| msgid "Terminal"
+#, kde-format
 msgctxt "boat terminal"
 msgid "Terminal"
-msgstr "Terminale"
+msgstr "Terminal"
 
 #: app/BoatEditor.qml:173 app/BoatPage.qml:82
 #, kde-format
@@ -504,13 +495,13 @@ msgstr "Terminale"
 msgid "Arrival time"
 msgstr "Orario di arrivo"
 
-#: app/BoatPage.qml:118 app/BusPage.qml:207 app/FlightPage.qml:218
+#: app/BoatPage.qml:118 app/BusPage.qml:209 app/FlightPage.qml:218
 #: app/TrainPage.qml:349
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternative"
 
-#: app/BoatPage.qml:126 app/BusPage.qml:212 app/JourneySectionPage.qml:27
+#: app/BoatPage.qml:126 app/BusPage.qml:214 app/JourneySectionPage.qml:27
 #: app/TrainPage.qml:354
 #, kde-format
 msgid "Journey Details"
@@ -909,18 +900,17 @@ msgstr "Fornitori di dati:"
 
 #: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:125
 #: app/TransferPage.qml:336
-#, fuzzy, kde-format
-#| msgid "Boarding"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Loading"
-msgstr "Imbarco"
+msgstr "Caricamento"
 
 #: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:127
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:status"
 msgid "Error"
-msgstr ""
+msgstr "Errore"
 
 #: app/DocumentsCard.qml:35
 #, kde-format
@@ -2170,11 +2160,10 @@ msgid "Load earlier connections"
 msgstr "Carica i collegamenti alternativi"
 
 #: app/JourneyQueryPage.qml:129
-#, fuzzy, kde-format
-#| msgid "No journeys found."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No journeys found"
-msgstr "Nessun viaggio trovato."
+msgstr "Nessun viaggio trovato"
 
 #: app/JourneyQueryPage.qml:163
 #, kde-format

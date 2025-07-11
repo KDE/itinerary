@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-10 02:34+0000\n"
+"POT-Creation-Date: 2025-07-11 02:36+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -397,11 +397,10 @@ msgid "Change Arrival Terminal"
 msgstr ""
 
 #: app/BoatEditor.qml:91
-#, fuzzy, kde-format
-#| msgid "Change Reservation"
+#, kde-format
 msgctxt "boat arrival"
 msgid "Change arrival terminal"
-msgstr "修改预约"
+msgstr ""
 
 #: app/BoatEditor.qml:112 app/BusEditor.qml:127 app/EventEditor.qml:54
 #: app/FlightEditor.qml:72 app/HotelEditor.qml:51 app/ImportPage.qml:21
@@ -440,12 +439,10 @@ msgid "Departure terminal must not be empty."
 msgstr ""
 
 #: app/BoatEditor.qml:158 app/BoatEditor.qml:221
-#, fuzzy, kde-format
-#| msgctxt "airport terminal"
-#| msgid "Terminal %1"
+#, kde-format
 msgctxt "boat terminal"
 msgid "Terminal"
-msgstr "%1 站"
+msgstr ""
 
 #: app/BoatEditor.qml:173 app/BoatPage.qml:82
 #, kde-format
@@ -490,13 +487,13 @@ msgstr ""
 msgid "Arrival time"
 msgstr ""
 
-#: app/BoatPage.qml:118 app/BusPage.qml:207 app/FlightPage.qml:218
+#: app/BoatPage.qml:118 app/BusPage.qml:209 app/FlightPage.qml:218
 #: app/TrainPage.qml:349
 #, kde-format
 msgid "Alternatives"
 msgstr "改签"
 
-#: app/BoatPage.qml:126 app/BusPage.qml:212 app/JourneySectionPage.qml:27
+#: app/BoatPage.qml:126 app/BusPage.qml:214 app/JourneySectionPage.qml:27
 #: app/TrainPage.qml:354
 #, kde-format
 msgid "Journey Details"
@@ -597,18 +594,16 @@ msgid "%1 to %2"
 msgstr "%1 到 %2"
 
 #: app/BusEditor.qml:73
-#, fuzzy, kde-format
-#| msgid "New Hotel Reservation"
+#, kde-format
 msgctxt "@title"
 msgid "New Bus Reservation"
-msgstr "新建酒店预订"
+msgstr ""
 
 #: app/BusEditor.qml:73
-#, fuzzy, kde-format
-#| msgid "Edit Hotel Reservation"
+#, kde-format
 msgctxt "@title"
 msgid "Edit Bus Reservation"
-msgstr "修改酒店预订"
+msgstr ""
 
 #: app/BusEditor.qml:80 app/BusEditor.qml:225
 #, kde-format
@@ -641,18 +636,16 @@ msgid "Bus"
 msgstr "公共汽车"
 
 #: app/BusEditor.qml:140
-#, fuzzy, kde-format
-#| msgid "Bus"
+#, kde-format
 msgctxt "@title:group"
 msgid "Bus"
 msgstr "公共汽车"
 
 #: app/BusEditor.qml:149
-#, fuzzy, kde-format
-#| msgid "Flight number"
+#, kde-format
 msgctxt "@label:textfield"
 msgid "Bus number"
-msgstr "航班号"
+msgstr ""
 
 #: app/BusEditor.qml:155
 #, kde-format
@@ -661,11 +654,10 @@ msgid "Departure"
 msgstr ""
 
 #: app/BusEditor.qml:164
-#, fuzzy, kde-format
-#| msgid "Departure"
+#, kde-format
 msgctxt "Bus departure"
 msgid "Departure Time"
-msgstr "出发时间"
+msgstr ""
 
 #: app/BusEditor.qml:176
 #, kde-format
@@ -674,17 +666,15 @@ msgid "Stop"
 msgstr ""
 
 #: app/BusEditor.qml:179
-#, fuzzy, kde-format
-#| msgid "Trip name must not be empty."
+#, kde-format
 msgid "Departure bus stop must not be empty."
-msgstr "行程名称不能为空。"
+msgstr ""
 
 #: app/BusEditor.qml:187 app/BusEditor.qml:274
-#, fuzzy, kde-format
-#| msgid "Platform:"
+#, kde-format
 msgctxt "Bus stop platform"
 msgid "Platform"
-msgstr "站台："
+msgstr ""
 
 #: app/BusEditor.qml:208
 #, kde-format
@@ -705,11 +695,10 @@ msgid "Arrival"
 msgstr ""
 
 #: app/BusEditor.qml:242 app/TrainEditor.qml:251
-#, fuzzy, kde-format
-#| msgid "Arrival"
+#, kde-format
 msgctxt "Train arrival"
 msgid "Arrival Time"
-msgstr "到达信息"
+msgstr ""
 
 #: app/BusEditor.qml:263
 #, kde-format
@@ -718,10 +707,9 @@ msgid "Stop Name"
 msgstr ""
 
 #: app/BusEditor.qml:266
-#, fuzzy, kde-format
-#| msgid "Trip name must not be empty."
+#, kde-format
 msgid "Arrival stop must not be empty."
-msgstr "行程名称不能为空。"
+msgstr ""
 
 #: app/BusEditor.qml:300
 #, kde-format
@@ -1928,12 +1916,10 @@ msgid "Import"
 msgstr "导入"
 
 #: app/ImportAction.qml:29
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Import From File"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "From file"
-msgstr "从文件导入"
+msgstr ""
 
 #: app/ImportAction.qml:37
 #, kde-format
@@ -1961,26 +1947,22 @@ msgid "KDE Itinerary files (*.itinerary)"
 msgstr "KDE Itinerary 文件 (*.itinerary)"
 
 #: app/ImportAction.qml:51
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Copy to Clipboard"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "From clipboard"
-msgstr "复制到剪贴板"
+msgstr ""
 
 #: app/ImportAction.qml:61
-#, fuzzy, kde-format
-#| msgid "Barcode"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "From barcode"
-msgstr "条形码"
+msgstr ""
 
 #: app/ImportAction.qml:84
-#, fuzzy, kde-format
-#| msgid "Add from Calendar…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "From calendar"
-msgstr "从日历添加..."
+msgstr ""
 
 #: app/ImportAction.qml:108
 #, kde-format
@@ -3010,10 +2992,9 @@ msgid "Import"
 msgstr "导入"
 
 #: app/MyDataPage.qml:202
-#, fuzzy, kde-format
-#| msgid "Backup"
+#, kde-format
 msgid "Import Backup"
-msgstr "备份"
+msgstr ""
 
 #: app/MyDataPage.qml:216
 #, kde-format
@@ -3191,8 +3172,7 @@ msgid "Add Program Membership"
 msgstr "添加程序成员资格"
 
 #: app/PassPage.qml:43
-#, fuzzy, kde-format
-#| msgid "Import"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Import"
 msgstr "导入"
@@ -3974,15 +3954,13 @@ msgid "Class: <b>%1</b>"
 msgstr "等级：<b>%1</b>"
 
 #: app/TrainEditor.qml:79
-#, fuzzy, kde-format
-#| msgid "Edit Train Reservation"
+#, kde-format
 msgctxt "@title"
 msgid "New Train Reservation"
-msgstr "编辑火车预订"
+msgstr ""
 
 #: app/TrainEditor.qml:79
-#, fuzzy, kde-format
-#| msgid "Edit Train Reservation"
+#, kde-format
 msgctxt "@title"
 msgid "Edit Train Reservation"
 msgstr "编辑火车预订"
@@ -4012,18 +3990,16 @@ msgid "Change arrival station"
 msgstr ""
 
 #: app/TrainEditor.qml:149
-#, fuzzy, kde-format
-#| msgid "Train rides"
+#, kde-format
 msgctxt "@title:group"
 msgid "Train"
-msgstr "火车搭乘次数"
+msgstr ""
 
 #: app/TrainEditor.qml:158
-#, fuzzy, kde-format
-#| msgid "Flight number"
+#, kde-format
 msgctxt "@label:textfield"
 msgid "Train number"
-msgstr "航班号"
+msgstr ""
 
 #: app/TrainEditor.qml:164
 #, kde-format
@@ -4032,11 +4008,10 @@ msgid "Departure"
 msgstr ""
 
 #: app/TrainEditor.qml:173
-#, fuzzy, kde-format
-#| msgid "Departure"
+#, kde-format
 msgctxt "Train departure"
 msgid "Departure Time"
-msgstr "出发时间"
+msgstr ""
 
 #: app/TrainEditor.qml:185
 #, kde-format
@@ -4045,17 +4020,15 @@ msgid "Station Name"
 msgstr ""
 
 #: app/TrainEditor.qml:188
-#, fuzzy, kde-format
-#| msgid "Trip name must not be empty."
+#, kde-format
 msgid "Departure station must not be empty."
-msgstr "行程名称不能为空。"
+msgstr ""
 
 #: app/TrainEditor.qml:196 app/TrainEditor.qml:283
-#, fuzzy, kde-format
-#| msgid "Platform:"
+#, kde-format
 msgctxt "Train station platform"
 msgid "Platform"
-msgstr "站台："
+msgstr ""
 
 #: app/TrainEditor.qml:217 app/TrainEditor.qml:309 app/TrainPage.qml:163
 #: app/TrainPage.qml:247
@@ -4083,10 +4056,9 @@ msgid "Station Name"
 msgstr ""
 
 #: app/TrainEditor.qml:275
-#, fuzzy, kde-format
-#| msgid "Trip name must not be empty."
+#, kde-format
 msgid "Arrival station must not be empty."
-msgstr "行程名称不能为空。"
+msgstr ""
 
 #: app/TrainEditor.qml:337 app/TrainEditor.qml:349 app/TrainPage.qml:292
 #, kde-format
@@ -4296,26 +4268,22 @@ msgid "Merge"
 msgstr "合并"
 
 #: app/TripGroupPage.qml:156
-#, fuzzy, kde-format
-#| msgid "Alternative Connections"
+#, kde-format
 msgctxt "@action"
 msgid "Search connection"
-msgstr "改签联运交通"
+msgstr ""
 
 #: app/TripGroupPage.qml:163
-#, fuzzy, kde-format
-#| msgid "Add Favorite Location"
+#, kde-format
 msgctxt "@action"
 msgid "Add connection"
-msgstr "添加收藏的地点"
+msgstr ""
 
 #: app/TripGroupPage.qml:169
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add trip"
+#, kde-format
 msgctxt "@action"
 msgid "Add train"
-msgstr "添加行程"
+msgstr ""
 
 #: app/TripGroupPage.qml:179
 #, kde-format
@@ -4324,38 +4292,33 @@ msgid "Add bus"
 msgstr ""
 
 #: app/TripGroupPage.qml:189
-#, fuzzy, kde-format
-#| msgid "Add flight…"
+#, kde-format
 msgctxt "@action"
 msgid "Add flight"
-msgstr "添加航班..."
+msgstr ""
 
 #: app/TripGroupPage.qml:199
-#, fuzzy, kde-format
-#| msgid "Add ferry trip…"
+#, kde-format
 msgctxt "@action"
 msgid "Add ferry trip"
-msgstr "添加船程..."
+msgstr ""
 
 #: app/TripGroupPage.qml:209
-#, fuzzy, kde-format
-#| msgid "Add accommodation…"
+#, kde-format
 msgctxt "@action"
 msgid "Add accommodation"
-msgstr "添加住宿..."
+msgstr ""
 
 #: app/TripGroupPage.qml:224
-#, fuzzy, kde-format
-#| msgid "Add event…"
+#, kde-format
 msgctxt "@action"
 msgid "Add event"
-msgstr "添加事件..."
+msgstr ""
 
 #: app/TripGroupPage.qml:240
-#, fuzzy, kde-format
-#| msgid "Add restaurant…"
+#, kde-format
 msgid "Add restaurant"
-msgstr "添加餐厅..."
+msgstr ""
 
 #: app/TripGroupPage.qml:257
 #, kde-format
@@ -4688,21 +4651,3 @@ msgstr "已登出"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr ""
-
-#~ msgid "Open File…"
-#~ msgstr "打开文件..."
-
-#~ msgid "Scan Barcode…"
-#~ msgstr "扫描条形码..."
-
-#~ msgid "Deutsche Bahn Online Ticket…"
-#~ msgstr "德国铁路在线 (Deutsche Bahn Online) 车票..."
-
-#~ msgid "SNCF Online Ticket…"
-#~ msgstr "法国国家铁路公司在线 (SNCF Online) 车票..."
-
-#~ msgid "Import…"
-#~ msgstr "导入..."
-
-#~ msgid "Add train trip…"
-#~ msgstr "添加火车行程..."
