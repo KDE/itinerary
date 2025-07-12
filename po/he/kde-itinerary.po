@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-11 02:36+0000\n"
-"PO-Revision-Date: 2025-07-06 10:41+0300\n"
+"PO-Revision-Date: 2025-07-11 10:08+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 25.04.2\n"
+"X-Generator: Lokalize 25.04.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -617,15 +617,13 @@ msgid "%1 to %2"
 msgstr "%1 אל %2"
 
 #: app/BusEditor.qml:73
-#, fuzzy, kde-format
-#| msgid "Edit Bus Reservation"
+#, kde-format
 msgctxt "@title"
 msgid "New Bus Reservation"
-msgstr "עריכת הזמנה לאוטובוס"
+msgstr "הזמנה חדשה לאוטובוס"
 
 #: app/BusEditor.qml:73
-#, fuzzy, kde-format
-#| msgid "Edit Bus Reservation"
+#, kde-format
 msgctxt "@title"
 msgid "Edit Bus Reservation"
 msgstr "עריכת הזמנה לאוטובוס"
@@ -661,18 +659,16 @@ msgid "Bus"
 msgstr "אוטובוס"
 
 #: app/BusEditor.qml:140
-#, fuzzy, kde-format
-#| msgid "Bus"
+#, kde-format
 msgctxt "@title:group"
 msgid "Bus"
 msgstr "אוטובוס"
 
 #: app/BusEditor.qml:149
-#, fuzzy, kde-format
-#| msgid "Number"
+#, kde-format
 msgctxt "@label:textfield"
 msgid "Bus number"
-msgstr "מספר"
+msgstr "מספר אוטובוס"
 
 #: app/BusEditor.qml:155
 #, kde-format
@@ -681,39 +677,33 @@ msgid "Departure"
 msgstr "יציאה"
 
 #: app/BusEditor.qml:164
-#, fuzzy, kde-format
-#| msgid "Departure Time"
+#, kde-format
 msgctxt "Bus departure"
 msgid "Departure Time"
 msgstr "זמן היציאה"
 
 #: app/BusEditor.qml:176
-#, fuzzy, kde-format
-#| msgctxt "bus stop"
-#| msgid "Stop"
+#, kde-format
 msgctxt "Bus stop"
 msgid "Stop"
 msgstr "עצירה"
 
 #: app/BusEditor.qml:179
-#, fuzzy, kde-format
-#| msgid "Departure terminal must not be empty."
+#, kde-format
 msgid "Departure bus stop must not be empty."
-msgstr "מסוף ההגעה לא יכול להיות ריק."
+msgstr "תחנת האוטובוס להגעה לא יכולה להיות ריקה."
 
 #: app/BusEditor.qml:187 app/BusEditor.qml:274
-#, fuzzy, kde-format
-#| msgid "Platform"
+#, kde-format
 msgctxt "Bus stop platform"
 msgid "Platform"
 msgstr "רציף"
 
 #: app/BusEditor.qml:208
-#, fuzzy, kde-format
-#| msgid "Stop Map"
+#, kde-format
 msgctxt "bus stop"
 msgid "Stop Name"
-msgstr "מפת עצירות"
+msgstr "שם התחנה"
 
 #: app/BusEditor.qml:216 app/BusEditor.qml:308
 #, kde-format
@@ -728,24 +718,21 @@ msgid "Arrival"
 msgstr "הגעה"
 
 #: app/BusEditor.qml:242 app/TrainEditor.qml:251
-#, fuzzy, kde-format
-#| msgid "Arrival Time"
+#, kde-format
 msgctxt "Train arrival"
 msgid "Arrival Time"
 msgstr "זמן ההגעה"
 
 #: app/BusEditor.qml:263
-#, fuzzy, kde-format
-#| msgid "Stop Map"
+#, kde-format
 msgctxt "Bus stop"
 msgid "Stop Name"
-msgstr "מפת עצירות"
+msgstr "שם התחנה"
 
 #: app/BusEditor.qml:266
-#, fuzzy, kde-format
-#| msgid "Arrival terminal must not be empty."
+#, kde-format
 msgid "Arrival stop must not be empty."
-msgstr "מסוף היציאה לא יכול להיות ריק."
+msgstr "תחנת ההגעה לא יכולה להיות ריקה."
 
 #: app/BusEditor.qml:300
 #, kde-format
@@ -1416,8 +1403,7 @@ msgid "Do you really want to share %1 to the Matrix channel %2?"
 msgstr "לשתף את %1 עם ערוץ ה־Matrix‏ %2?"
 
 #: app/FormPlaceDelegate.qml:105
-#, fuzzy, kde-format
-#| msgid "Share"
+#, kde-format
 msgctxt "@action:button"
 msgid "Share"
 msgstr "שיתוף"
@@ -1962,12 +1948,10 @@ msgid "Import"
 msgstr "ייבוא"
 
 #: app/ImportAction.qml:29
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Import From File"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "From file"
-msgstr "ייבוא מקובץ"
+msgstr "מקובץ"
 
 #: app/ImportAction.qml:37
 #, kde-format
@@ -1995,38 +1979,34 @@ msgid "KDE Itinerary files (*.itinerary)"
 msgstr "קובצי KDE Itinerary‏ (‎*.itinerary)"
 
 #: app/ImportAction.qml:51
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Copy to Clipboard"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "From clipboard"
-msgstr "העתקה ללוח הגזירים"
+msgstr "מלוח הגזירים"
 
 #: app/ImportAction.qml:61
-#, fuzzy, kde-format
-#| msgid "Barcode"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "From barcode"
-msgstr "ברקוד"
+msgstr "מברקוד"
 
 #: app/ImportAction.qml:84
-#, fuzzy, kde-format
-#| msgid "Add from Calendar…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "From calendar"
-msgstr "הוספה מלוח השנה…"
+msgstr "מלוח השנה"
 
 #: app/ImportAction.qml:108
 #, kde-format
 msgctxt "@action:inmenu Name of the train company in Germany"
 msgid "From Deutsche Bahn reservation number"
-msgstr ""
+msgstr "ממספר הזמנה של Deutche Bahn (רשת רכבות גרמנית)"
 
 #: app/ImportAction.qml:119
 #, kde-format
 msgctxt "Name of the train company in France"
 msgid "From SNCF reservation number"
-msgstr ""
+msgstr "ממספר הזמנה של SNCF (רשת רכבות אירופית)"
 
 #: app/importcontroller.cpp:153 app/importcontroller.cpp:475
 #, kde-format
@@ -3048,10 +3028,9 @@ msgid "Import"
 msgstr "ייבוא"
 
 #: app/MyDataPage.qml:202
-#, fuzzy, kde-format
-#| msgid "Backup"
+#, kde-format
 msgid "Import Backup"
-msgstr "גיבוי"
+msgstr "ייבוא גיבוי"
 
 #: app/MyDataPage.qml:216
 #, kde-format
@@ -3229,8 +3208,7 @@ msgid "Add Program Membership"
 msgstr "הוספת חברות בתוכנית"
 
 #: app/PassPage.qml:43
-#, fuzzy, kde-format
-#| msgid "Import"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Import"
 msgstr "ייבוא"
@@ -4019,18 +3997,16 @@ msgid "Class: <b>%1</b>"
 msgstr "מחלקה: <b>%1</b>"
 
 #: app/TrainEditor.qml:79
-#, fuzzy, kde-format
-#| msgid "Edit Train Reservation"
+#, kde-format
 msgctxt "@title"
 msgid "New Train Reservation"
-msgstr "עריכת המקום השמור ברכבת"
+msgstr "הזמנה חדשה לרכבת"
 
 #: app/TrainEditor.qml:79
-#, fuzzy, kde-format
-#| msgid "Edit Train Reservation"
+#, kde-format
 msgctxt "@title"
 msgid "Edit Train Reservation"
-msgstr "עריכת המקום השמור ברכבת"
+msgstr "עריכת הזמנה לרכבת"
 
 #: app/TrainEditor.qml:88 app/TrainEditor.qml:234
 #, kde-format
@@ -4057,18 +4033,16 @@ msgid "Change arrival station"
 msgstr "החלפת תחנת הגעה"
 
 #: app/TrainEditor.qml:149
-#, fuzzy, kde-format
-#| msgid "Train"
+#, kde-format
 msgctxt "@title:group"
 msgid "Train"
 msgstr "רכבת"
 
 #: app/TrainEditor.qml:158
-#, fuzzy, kde-format
-#| msgid "Ticket number:"
+#, kde-format
 msgctxt "@label:textfield"
 msgid "Train number"
-msgstr "מספר הכרטיס:"
+msgstr "מספר רכבת"
 
 #: app/TrainEditor.qml:164
 #, kde-format
@@ -4077,29 +4051,24 @@ msgid "Departure"
 msgstr "יציאה"
 
 #: app/TrainEditor.qml:173
-#, fuzzy, kde-format
-#| msgid "Departure Time"
+#, kde-format
 msgctxt "Train departure"
 msgid "Departure Time"
 msgstr "זמן היציאה"
 
 #: app/TrainEditor.qml:185
-#, fuzzy, kde-format
-#| msgctxt "bus station"
-#| msgid "Station"
+#, kde-format
 msgctxt "Train station platform"
 msgid "Station Name"
-msgstr "תחנה"
+msgstr "שם התחנה"
 
 #: app/TrainEditor.qml:188
-#, fuzzy, kde-format
-#| msgid "Departure terminal must not be empty."
+#, kde-format
 msgid "Departure station must not be empty."
-msgstr "מסוף ההגעה לא יכול להיות ריק."
+msgstr "תחנת ההגעה לא יכולה להיות ריקה."
 
 #: app/TrainEditor.qml:196 app/TrainEditor.qml:283
-#, fuzzy, kde-format
-#| msgid "Platform"
+#, kde-format
 msgctxt "Train station platform"
 msgid "Platform"
 msgstr "רציף"
@@ -4124,18 +4093,15 @@ msgid "Arrival"
 msgstr "הגעה"
 
 #: app/TrainEditor.qml:272
-#, fuzzy, kde-format
-#| msgctxt "bus station"
-#| msgid "Station"
+#, kde-format
 msgctxt "Train station"
 msgid "Station Name"
-msgstr "תחנה"
+msgstr "שם התחנה"
 
 #: app/TrainEditor.qml:275
-#, fuzzy, kde-format
-#| msgid "Arrival terminal must not be empty."
+#, kde-format
 msgid "Arrival station must not be empty."
-msgstr "מסוף היציאה לא יכול להיות ריק."
+msgstr "תחנת היציאה לא יכולה להיות ריקה."
 
 #: app/TrainEditor.qml:337 app/TrainEditor.qml:349 app/TrainPage.qml:292
 #, kde-format
@@ -4345,68 +4311,57 @@ msgid "Merge"
 msgstr "מיזוג"
 
 #: app/TripGroupPage.qml:156
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Load earlier connections"
+#, kde-format
 msgctxt "@action"
 msgid "Search connection"
-msgstr "טעינת החלפת טיסות קודמות"
+msgstr "חיפוש החלפה"
 
 #: app/TripGroupPage.qml:163
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Load later connections"
+#, kde-format
 msgctxt "@action"
 msgid "Add connection"
-msgstr "טעינת החלפת טיסות קודמות"
+msgstr "הוספת החלפה"
 
 #: app/TripGroupPage.qml:169
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add trip"
+#, kde-format
 msgctxt "@action"
 msgid "Add train"
-msgstr "הוספת טיול"
+msgstr "הוספת רכבת"
 
 #: app/TripGroupPage.qml:179
 #, kde-format
 msgctxt "@action"
 msgid "Add bus"
-msgstr ""
+msgstr "הוספת אוטובוס"
 
 #: app/TripGroupPage.qml:189
-#, fuzzy, kde-format
-#| msgid "Add flight…"
+#, kde-format
 msgctxt "@action"
 msgid "Add flight"
-msgstr "הוספת טיסה…"
+msgstr "הוספת טיסה"
 
 #: app/TripGroupPage.qml:199
-#, fuzzy, kde-format
-#| msgid "Add ferry trip…"
+#, kde-format
 msgctxt "@action"
 msgid "Add ferry trip"
-msgstr "הוספת טיול במעבורת…"
+msgstr "הוספת טיול במעבורת"
 
 #: app/TripGroupPage.qml:209
-#, fuzzy, kde-format
-#| msgid "Add accommodation…"
+#, kde-format
 msgctxt "@action"
 msgid "Add accommodation"
-msgstr "הוספת הסדר לינה…"
+msgstr "הוספת הסדר לינה"
 
 #: app/TripGroupPage.qml:224
-#, fuzzy, kde-format
-#| msgid "Add event…"
+#, kde-format
 msgctxt "@action"
 msgid "Add event"
-msgstr "הוספת אירוע…"
+msgstr "הוספת אירוע"
 
 #: app/TripGroupPage.qml:240
-#, fuzzy, kde-format
-#| msgid "Add restaurant…"
+#, kde-format
 msgid "Add restaurant"
-msgstr "הוספת מסעדה…"
+msgstr "הוספת מסעדה"
 
 #: app/TripGroupPage.qml:257
 #, kde-format
