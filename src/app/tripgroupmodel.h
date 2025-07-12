@@ -14,8 +14,6 @@ class TripGroupManager;
 class TripGroupModel : public QAbstractListModel
 {
     Q_OBJECT
-    QML_ELEMENT
-
     Q_PROPERTY(QString currentBatchId READ currentBatchId NOTIFY currentBatchChanged)
     Q_PROPERTY(int currentOrNextRow READ currentOrNextRow NOTIFY currentBatchChanged)
 

@@ -16,6 +16,7 @@
 
 #include <QObject>
 #include <QVariant>
+#include <qqmlintegration.h>
 
 #include <chrono>
 
@@ -33,6 +34,8 @@ class DocumentManager;
 class TimelineDelegateController : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+
     Q_PROPERTY(ReservationManager *reservationManager READ reservationManager WRITE setReservationManager NOTIFY setupChanged)
     Q_PROPERTY(LiveDataManager *liveDataManager READ liveDataManager WRITE setLiveDataManager NOTIFY setupChanged)
     Q_PROPERTY(TransferManager *transferManager READ transferManager WRITE setTransferManager NOTIFY setupChanged)

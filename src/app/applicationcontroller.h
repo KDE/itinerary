@@ -9,6 +9,7 @@
 
 #include <QObject>
 #include <QVariantMap>
+#include <qqmlregistration.h>
 
 #include <memory>
 
@@ -36,6 +37,8 @@ class Intent;
 
 class QNetworkAccessManager;
 class QTemporaryDir;
+class QQmlEngine;
+class QJSEngine;
 
 class ApplicationController : public QObject
 {
@@ -55,6 +58,8 @@ class ApplicationController : public QObject
 public:
     explicit ApplicationController(QObject *parent = nullptr);
     ~ApplicationController() override;
+
+    static ApplicationController *create(QQmlEngine*, QJSEngine*);
 
     void setNetworkAccessManagerFactory(const std::function<QNetworkAccessManager *()> &namFactory);
 
@@ -155,6 +160,16 @@ private:
 
     std::unique_ptr<QTemporaryDir> m_tempDir;
     bool m_importLock = false;
+};
+
+struct ApplicationControllerForeign
+{
+    Q_GADGET
+    QML_FOREIGN(ApplicationController)
+    QML_SINGLETON
+    QML_NAMED_ELEMENT(ApplicationController)
+public:
+    static ApplicationController *create(QQmlEngine*, QJSEngine*);
 };
 
 #endif // APPLICATIONCONTROLLER_H

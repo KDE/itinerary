@@ -10,11 +10,13 @@
 #include <KCountrySubdivision>
 
 #include <QAbstractListModel>
+#include <qqmlregistration.h>
 
 /** Country subdivision model, for a given country. */
 class CountrySubdivisionModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
     Q_PROPERTY(KCountry country READ country WRITE setCountry NOTIFY countryChanged)
 
 public:

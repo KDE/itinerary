@@ -1,5 +1,6 @@
 /*
     SPDX-FileCopyrightText: 2018 Volker Krause <vkrause@kde.org>
+    SPDX-FileCopyrightText: 2025 Carl Schwan <carl@carlschwan.eu>
 
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
@@ -26,7 +27,6 @@
 #include "localizer.h"
 #include "locationinformation.h"
 #include "mapdownloadmanager.h"
-#include "matrixcontroller.h"
 #include "migrator.h"
 #include "navigationcontroller.h"
 #include "notificationconfigcontroller.h"
@@ -36,6 +36,7 @@
 #include "pkpassimageprovider.h"
 #include "pkpassmanager.h"
 #include "publictransport.h"
+#include "qmlsingletons.h"
 #include "reservationhelper.h"
 #include "reservationmanager.h"
 #include "settings.h"
@@ -118,55 +119,6 @@ void registerKItineraryTypes()
     });
 }
 
-void registerApplicationTypes()
-{
-    qmlRegisterUncreatableMetaObject(HealthCertificateManager::staticMetaObject, "org.kde.itinerary", 1, 0, "HealthCertificateManager", {});
-
-    qmlRegisterUncreatableMetaObject(LocationInformation::staticMetaObject, "org.kde.itinerary", 1, 0, "LocationInformation", {});
-    qmlRegisterUncreatableMetaObject(StatisticsItem::staticMetaObject, "org.kde.itinerary", 1, 0, "StatisticsItem", {});
-    qmlRegisterUncreatableMetaObject(TimelineElement::staticMetaObject, "org.kde.itinerary", 1, 0, "TimelineElement", {});
-    qmlRegisterUncreatableMetaObject(Transfer::staticMetaObject, "org.kde.itinerary", 1, 0, "Transfer", {});
-
-    qmlRegisterUncreatableMetaObject(Permission::staticMetaObject, "org.kde.itinerary", 1, 0, "Permission", {});
-
-    qmlRegisterType<CountrySubdivisionModel>("org.kde.itinerary", 1, 0, "CountrySubdivisionModel");
-    qmlRegisterType<DocumentsModel>("org.kde.itinerary", 1, 0, "DocumentsModel");
-    qmlRegisterType<JourneySectionModel>("org.kde.itinerary", 1, 0, "JourneySectionModel");
-    qmlRegisterType<KDEConnectDeviceModel>("org.kde.itinerary", 1, 0, "KDEConnectDeviceModel");
-    qmlRegisterType<StatisticsModel>("org.kde.itinerary", 1, 0, "StatisticsModel");
-    qmlRegisterType<StatisticsTimeRangeModel>("org.kde.itinerary", 1, 0, "StatisticsTimeRangeModel");
-    qmlRegisterType<TicketTokenModel>("org.kde.itinerary", 1, 0, "TicketTokenModel");
-    qmlRegisterType<TimelineDelegateController>("org.kde.itinerary", 1, 0, "TimelineDelegateController");
-    qmlRegisterType<TimelineModel>("org.kde.itinerary", 1, 0, "TimelineModel");
-    qmlRegisterType<TimelineSectionDelegateController>("org.kde.itinerary", 1, 0, "TimelineSectionDelegateController");
-    qmlRegisterType<TransferDelegateController>("org.kde.itinerary", 1, 0, "TransferDelegateController");
-    qmlRegisterType<TripGroupController>("org.kde.itinerary", 1, 0, "TripGroupController");
-    qmlRegisterType<TripGroupFilterProxyModel>("org.kde.itinerary", 1, 0, "TripGroupFilterProxyModel");
-    qmlRegisterType<TripGroupLocationModel>("org.kde.itinerary", 1, 0, "TripGroupLocationModel");
-    qmlRegisterType<TripGroupMapModel>("org.kde.itinerary", 1, 0, "TripGroupMapModel");
-    qmlRegisterType<TripGroupSplitModel>("org.kde.itinerary", 1, 0, "TripGroupSplitModel");
-    qmlRegisterType<WeatherForecastModel>("org.kde.itinerary", 1, 0, "WeatherForecastModel");
-    qmlRegisterType<OnlineTicketImporter>("org.kde.itinerary", 1, 0, "OnlineTicketImporter");
-}
-
-// for registering QML singletons only
-static ReservationManager *s_reservationManager = nullptr;
-static DocumentManager *s_documentManager = nullptr;
-static FavoriteLocationModel *s_favoriteLocationModel = nullptr;
-static PkPassManager *s_pkPassManager = nullptr;
-static Settings *s_settings = nullptr;
-static TransferManager *s_tranferManager = nullptr;
-static TripGroupManager *s_tripGroupManager = nullptr;
-static LiveDataManager *s_liveDataMnager = nullptr;
-static MapDownloadManager *s_mapDownloadManager = nullptr;
-static PassManager *s_passManager = nullptr;
-static MatrixController *s_matrixController = nullptr;
-static ImportController *s_importController = nullptr;
-static TripGroupModel *s_tripGroupModel = nullptr;
-static TraewellingController *s_traewellingController = nullptr;
-
-#define REGISTER_SINGLETON_INSTANCE(Class, Instance) qmlRegisterSingletonInstance<Class>("org.kde.itinerary", 1, 0, #Class, Instance);
-
 #define REGISTER_SINGLETON_GADGET_FACTORY(Class)                                                                                                               \
     qmlRegisterSingletonType("org.kde.itinerary", 1, 0, #Class, [](QQmlEngine *, QJSEngine *engine) -> QJSValue {                                              \
         return engine->toScriptValue(Class());                                                                                                                 \
@@ -174,22 +126,6 @@ static TraewellingController *s_traewellingController = nullptr;
 
 void registerApplicationSingletons()
 {
-    REGISTER_SINGLETON_INSTANCE(ApplicationController, ApplicationController::instance())
-    REGISTER_SINGLETON_INSTANCE(ReservationManager, s_reservationManager)
-    REGISTER_SINGLETON_INSTANCE(DocumentManager, s_documentManager)
-    REGISTER_SINGLETON_INSTANCE(FavoriteLocationModel, s_favoriteLocationModel)
-    REGISTER_SINGLETON_INSTANCE(PkPassManager, s_pkPassManager)
-    REGISTER_SINGLETON_INSTANCE(Settings, s_settings)
-    REGISTER_SINGLETON_INSTANCE(TransferManager, s_tranferManager)
-    REGISTER_SINGLETON_INSTANCE(TripGroupManager, s_tripGroupManager)
-    REGISTER_SINGLETON_INSTANCE(LiveDataManager, s_liveDataMnager)
-    REGISTER_SINGLETON_INSTANCE(MapDownloadManager, s_mapDownloadManager)
-    REGISTER_SINGLETON_INSTANCE(PassManager, s_passManager)
-    REGISTER_SINGLETON_INSTANCE(MatrixController, s_matrixController);
-    REGISTER_SINGLETON_INSTANCE(ImportController, s_importController);
-    REGISTER_SINGLETON_INSTANCE(TripGroupModel, s_tripGroupModel);
-    REGISTER_SINGLETON_INSTANCE(TraewellingController, s_traewellingController);
-
     REGISTER_SINGLETON_GADGET_FACTORY(DevelopmentModeController)
     REGISTER_SINGLETON_GADGET_FACTORY(Factory)
     REGISTER_SINGLETON_GADGET_FACTORY(Localizer)
@@ -200,13 +136,8 @@ void registerApplicationSingletons()
     REGISTER_SINGLETON_GADGET_FACTORY(ReservationHelper)
     REGISTER_SINGLETON_GADGET_FACTORY(UnitConversion)
     REGISTER_SINGLETON_GADGET_FACTORY(Util)
-
-    qmlRegisterSingletonType<Clipboard>("org.kde.itinerary", 1, 0, "Clipboard", [](QQmlEngine *, QJSEngine *) -> QObject * {
-        return new Clipboard;
-    });
 }
 
-#undef REGISTER_SINGLETON_INSTANCE
 #undef REGISTER_SINGLETON_GADGET_FACTORY
 
 static QNetworkAccessManager *namFactory()
@@ -309,24 +240,24 @@ int main(int argc, char **argv)
     IntentHandler intentHandler;
 
     Settings settings;
-    s_settings = &settings;
+    SettingsInstance::instance = &settings;
 
     PkPassManager pkPassMgr;
     pkPassMgr.setNetworkAccessManagerFactory(namFactory);
-    s_pkPassManager = &pkPassMgr;
+    PkPassManagerInstance::instance = &pkPassMgr;
 
     ReservationManager resMgr;
-    s_reservationManager = &resMgr;
+    ReservationManagerInstance::instance = &resMgr;
 
     DocumentManager docMgr;
-    s_documentManager = &docMgr;
+    DocumentManagerInstance::instance = &docMgr;
 
     FavoriteLocationModel favLocModel;
-    s_favoriteLocationModel = &favLocModel;
+    FavoriteLocationModelInstance::instance = &favLocModel;
 
     TripGroupManager tripGroupMgr;
     tripGroupMgr.setReservationManager(&resMgr);
-    s_tripGroupManager = &tripGroupMgr;
+    TripGroupManagerInstance::instance = &tripGroupMgr;
 
     LiveDataManager liveDataMgr;
     liveDataMgr.setPkPassManager(&pkPassMgr);
@@ -335,7 +266,7 @@ int main(int argc, char **argv)
     liveDataMgr.setShowNotificationsOnLockScreen(settings.showNotificationOnLockScreen());
     QObject::connect(&settings, &Settings::queryLiveDataChanged, &liveDataMgr, &LiveDataManager::setPollingEnabled);
     QObject::connect(&settings, &Settings::showNotificationOnLockScreenChanged, &liveDataMgr, &LiveDataManager::setShowNotificationsOnLockScreen);
-    s_liveDataMnager = &liveDataMgr;
+    LiveDataManagerInstance::instance = &liveDataMgr;
 
     WeatherForecastManager::setAllowNetworkAccess(settings.weatherForecastEnabled());
     QObject::connect(&settings, &Settings::weatherForecastEnabledChanged, &WeatherForecastManager::setAllowNetworkAccess);
@@ -348,35 +279,32 @@ int main(int argc, char **argv)
     transferManager.setAutoFillTransfers(settings.autoFillTransfers());
     QObject::connect(&settings, &Settings::autoAddTransfersChanged, &transferManager, &TransferManager::setAutoAddTransfers);
     QObject::connect(&settings, &Settings::autoFillTransfersChanged, &transferManager, &TransferManager::setAutoFillTransfers);
-    s_tranferManager = &transferManager;
+    TransferManagerInstance::instance = &transferManager;
 
     tripGroupMgr.setTransferManager(&transferManager);
 
     TripGroupModel tripGroupModel;
     tripGroupModel.setTripGroupManager(&tripGroupMgr);
-    s_tripGroupModel = &tripGroupModel;
+    TripGroupModelInstance::instance = &tripGroupModel;
 
     MapDownloadManager mapDownloadMgr;
     mapDownloadMgr.setReservationManager(&resMgr);
-    mapDownloadMgr.setAutomaticDownloadEnabled(s_settings->preloadMapData());
-    QObject::connect(s_settings, &Settings::preloadMapDataChanged, &mapDownloadMgr, &MapDownloadManager::setAutomaticDownloadEnabled);
-    s_mapDownloadManager = &mapDownloadMgr;
+    mapDownloadMgr.setAutomaticDownloadEnabled(settings.preloadMapData());
+    QObject::connect(&settings, &Settings::preloadMapDataChanged, &mapDownloadMgr, &MapDownloadManager::setAutomaticDownloadEnabled);
+    MapDownloadManagerInstance::instance = &mapDownloadMgr;
 
     KItinerary::JsonLdDocument::registerType<GenericPkPass>();
     PassManager passMgr;
-    s_passManager = &passMgr;
-
-    MatrixController matrixController;
-    s_matrixController = &matrixController;
+    PassManagerInstance::instance = &passMgr;
 
     ImportController importController;
     importController.setNetworkAccessManagerFactory(namFactory);
     importController.setReservationManager(&resMgr);
     QObject::connect(&intentHandler, &IntentHandler::handleIntent, &importController, &ImportController::importFromIntent);
-    s_importController = &importController;
+    ImportControllerInstance::instance = &importController;
 
     TraewellingController traewellingController(namFactory);
-    s_traewellingController = &traewellingController;
+    TraewellingControllerInstance::instance = &traewellingController;
 
     ApplicationController appController;
     appController.setNetworkAccessManagerFactory(namFactory);
@@ -411,7 +339,6 @@ int main(int argc, char **argv)
     OnlineTicketImporter::setNetworkAccessManagerFactory(namFactory);
 
     registerKItineraryTypes();
-    registerApplicationTypes();
     registerApplicationSingletons();
 
     QQmlApplicationEngine engine;
@@ -430,7 +357,7 @@ int main(int argc, char **argv)
         }
         return nullptr;
     });
-    engine.addImageProvider(QStringLiteral("org.kde.pkpass"), pkPassImageProvider);
+    engine.addImageProvider(u"org.kde.pkpass"_s, pkPassImageProvider);
 
     KLocalization::setupLocalizedContext(&engine);
     engine.loadFromModule("org.kde.itinerary", "Main");

@@ -14,11 +14,14 @@
 
 #include <QObject>
 #include <QTimer>
+#include <qqmlregistration.h>
 
 /** Provides the information and actions shown in the trip group delegate. */
 class TripGroupController : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+
     Q_PROPERTY(QString tripGroupId MEMBER m_tgId NOTIFY tripGroupChanged)
     Q_PROPERTY(TripGroupModel *tripGroupModel MEMBER m_tripGroupModel WRITE setTripGroupModel NOTIFY setupChanged)
     Q_PROPERTY(WeatherForecastManager *weatherForecastManager MEMBER m_weatherMgr WRITE setWeatherForecastManager NOTIFY setupChanged)

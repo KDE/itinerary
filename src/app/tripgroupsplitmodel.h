@@ -8,6 +8,7 @@
 
 #include <QAbstractListModel>
 #include <QStringList>
+#include <qqmlregistration.h>
 
 class ReservationManager;
 
@@ -15,6 +16,8 @@ class ReservationManager;
 class TripGroupSplitModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
+
     Q_PROPERTY(ReservationManager *reservationManager MEMBER m_resMgr NOTIFY reservationManagerChanged REQUIRED)
     Q_PROPERTY(QStringList elements MEMBER m_elements WRITE setElements NOTIFY elementsChanged)
     Q_PROPERTY(QStringList selection READ selection NOTIFY selectionChanged)

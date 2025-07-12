@@ -10,6 +10,7 @@ target_sources(itinerary PRIVATE
     calendarhelper.cpp
     clipboard.cpp
     costaccumulator.cpp
+    countrysubdivisionmodel.cpp
     documentmanager.cpp
     documentsmodel.cpp
     downloadjob.cpp
@@ -30,38 +31,194 @@ target_sources(itinerary PRIVATE
     localizer.cpp
     locationhelper.cpp
     locationinformation.cpp
+    mapdownloadmanager.cpp
+    matrixcontroller.cpp
     navigationcontroller.cpp
     nominatimimportjob.cpp
     notificationhelper.cpp
+    onlineticketimporter.cpp
     onlineticketretrievaljob.cpp
     osmimportjob.cpp
     passmanager.cpp
-    pkpassmanager.cpp
+    permissionmanager.cpp
     pkpassimageprovider.cpp
+    pkpassmanager.cpp
     publictransport.cpp
     publictransportmatcher.cpp
+    qmlsingletons.h
     reservationhelper.cpp
     reservationmanager.cpp
     settings.cpp
     statisticsmodel.cpp
     statisticstimerangemodel.cpp
+    tickettokenmodel.cpp
     timelinedelegatecontroller.cpp
     timelineelement.cpp
     timelinemodel.cpp
     timelinesectiondelegatecontroller.cpp
+    traewellingcontroller.cpp
+    transfer.cpp
+    transferdelegatecontroller.cpp
+    transfermanager.cpp
     tripgroup.cpp
     tripgroupcontroller.cpp
     tripgroupfilterproxymodel.cpp
+    tripgrouplocationmodel.cpp
     tripgroupmanager.cpp
     tripgroupmapmodel.cpp
     tripgroupmodel.cpp
-    tripgrouplocationmodel.cpp
     tripgroupsplitmodel.cpp
-    transfer.cpp
-    transfermanager.cpp
     util.cpp
+    weatherforecastmodel.cpp
     weatherinformation.cpp
 )
+
+ecm_add_qml_module(itinerary GENERATE_PLUGIN_SOURCE
+    URI org.kde.itinerary
+    IMPORTS
+        org.kde.itinerary.weather
+        org.kde.itinerary.matrix
+    QML_FILES
+        Main.qml
+        AboutPage.qml
+        ActionsCard.qml
+        AlternativeJourneyPage.qml
+        BarcodeContainer.qml
+        BarcodeScanModeController.qml
+        BarcodeScanModeButton.qml
+        BarcodeScannerPage.qml
+        BoardingPass.qml
+        BoatDelegate.qml
+        BoatEditor.qml
+        BoatPage.qml
+        BookingCard.qml
+        BookingEditorCard.qml
+        BusDelegate.qml
+        BusEditor.qml
+        BusPage.qml
+        CardPageTitle.qml
+        CalendarSelectionDialog.qml
+        CarRentalDelegate.qml
+        CarRentalPage.qml
+        ContactCard.qml
+        ContactEditorCard.qml
+        CountryComboBoxDelegate.qml
+        DepartureQueryPage.qml
+        DetailsPage.qml
+        DevelopmentModePage.qml
+        DocumentsCard.qml
+        EditorPage.qml
+        EventDelegate.qml
+        EventEditor.qml
+        EventPage.qml
+        EventTicket.qml
+        ExportMenuDialog.qml
+        FavoriteLocationPage.qml
+        FlightDelegate.qml
+        FlightEditor.qml
+        FlightPage.qml
+        FormDateTimeEditDelegate.qml
+        FormPlaceDelegate.qml
+        FormPlaceEditorDelegate.qml
+        FormPlatformDelegate.qml
+        FormPriceDelegate.qml
+        FormPriceEditDelegate.qml
+        GenericPass.qml
+        GenericPkPassPage.qml
+        HealthCertificateBarcode.qml
+        HealthCertificateRecovery.qml
+        HealthCertificatePage.qml
+        HealthCertificateTest.qml
+        HealthCertificateVaccination.qml
+        HotelDelegate.qml
+        HotelEditor.qml
+        HotelPage.qml
+        ImportAction.qml
+        ImportPage.qml
+        IndoorMapGateSheet.qml
+        IndoorMapInfoSheet.qml
+        IndoorMapPage.qml
+        IntermediateStopSelector.qml
+        JourneyDelegateHeader.qml
+        JourneyPathPage.qml
+        JourneyRequestPage.qml
+        JourneyQueryPage.qml
+        JourneySectionDelegate.qml
+        JourneySectionMapView.qml
+        JourneySectionPage.qml
+        JourneySectionStopDelegate.qml
+        JourneySectionStopDelegateLineSegment.qml
+        JourneySummaryDelegate.qml
+        LiveStatusPage.qml
+        LocationInfoDelegate.qml
+        LocationPicker.qml
+        MapCircle.qml
+        MapPin.qml
+        MapStopoverInfoSheetDrawer.qml
+        MapView.qml
+        MatrixRoomSelectionSheet.qml
+        MatrixKeyVerificationPage.qml
+        NavigationBar.qml
+        MyDataPage.qml
+        OnlineImportPage.qml
+        PassPage.qml
+        PassDelegate.qml
+        PkPassBarcode.qml
+        PkPassPage.qml
+        ProgramMembershipCard.qml
+        ProgramMembershipEditorCard.qml
+        ProgramMembershipEditor.qml
+        ProgramMembershipPage.qml
+        ReservationDocumentsCard.qml
+        RestaurantDelegate.qml
+        RestaurantEditor.qml
+        RestaurantPage.qml
+        SeatRowFormCard.qml
+        SettingsPage.qml
+        SheetDrawer.qml
+        StatisticsDelegate.qml
+        StatisticsPage.qml
+        StopoverDetailsPage.qml
+        StopoverInformationSheet.qml
+        StopoverFormDelegate.qml
+        StopPickerPage.qml
+        TicketEditor.qml
+        TicketPage.qml
+        TicketTokenDelegate.qml
+        TicketTokenEditorCard.qml
+        TimelineDelegateArrivalLayout.qml
+        TimelineDelegate.qml
+        TimelineDelegateDepartureLayout.qml
+        TimelineDelegateIntermediateStopsButton.qml
+        TimelineDelegateIntermediateStopsView.qml
+        TimelineDelegateSeatRow.qml
+        TimelineDelegateSeatRowLabel.qml
+        TimelineSectionDelegate.qml
+        TouristAttractionDelegate.qml
+        TouristAttractionPage.qml
+        TrainDelegate.qml
+        TrainEditor.qml
+        TrainPage.qml
+        TransferDelegate.qml
+        TransferPage.qml
+        TripGroupEditorDialog.qml
+        TripGroupMapPage.qml
+        TripGroupMergeDialog.qml
+        TripGroupPage.qml
+        TripGroupSelectorCard.qml
+        TripGroupSplitPage.qml
+        TripGroupsPage.qml
+        VehicleLayoutPage.qml
+        VehicleSectionDialog.qml
+        VerticalNavigationButton.qml
+        WeatherForecastDelegate.qml
+        WeatherForecastPage.qml
+        WelcomePage.qml
+
+        onlineimport/db.qml
+        onlineimport/sncf.qml
+)
+
 ecm_qt_declare_logging_category(itinerary
     HEADER logging.h
     IDENTIFIER Log
@@ -106,167 +263,19 @@ endif()
 add_executable(itinerary-app ${itinerary_app_srcs})
 target_sources(itinerary-app PRIVATE
     main.cpp
-    countrysubdivisionmodel.cpp
     developmentmodecontroller.cpp
     factory.cpp
-    mapdownloadmanager.cpp
-    matrixcontroller.cpp
     migrator.cpp
     notificationconfigcontroller.cpp
     notifyrc.qrc
-    onlineticketimporter.cpp
-    permissionmanager.cpp
-    tickettokenmodel.cpp
-    traewellingcontroller.cpp
-    transferdelegatecontroller.cpp
     unitconversion.cpp
-    weatherforecastmodel.cpp
 
     images/images.qrc
-)
-ecm_add_qml_module(itinerary-app URI org.kde.itinerary NO_PLUGIN QML_FILES
-    Main.qml
-    AboutPage.qml
-    ActionsCard.qml
-    AlternativeJourneyPage.qml
-    BarcodeContainer.qml
-    BarcodeScanModeController.qml
-    BarcodeScanModeButton.qml
-    BarcodeScannerPage.qml
-    BoardingPass.qml
-    BoatDelegate.qml
-    BoatEditor.qml
-    BoatPage.qml
-    BookingCard.qml
-    BookingEditorCard.qml
-    BusDelegate.qml
-    BusEditor.qml
-    BusPage.qml
-    CardPageTitle.qml
-    CalendarSelectionDialog.qml
-    CarRentalDelegate.qml
-    CarRentalPage.qml
-    ContactCard.qml
-    ContactEditorCard.qml
-    CountryComboBoxDelegate.qml
-    DepartureQueryPage.qml
-    DetailsPage.qml
-    DevelopmentModePage.qml
-    DocumentsCard.qml
-    EditorPage.qml
-    EventDelegate.qml
-    EventEditor.qml
-    EventPage.qml
-    EventTicket.qml
-    ExportMenuDialog.qml
-    FavoriteLocationPage.qml
-    FlightDelegate.qml
-    FlightEditor.qml
-    FlightPage.qml
-    FormDateTimeEditDelegate.qml
-    FormPlaceDelegate.qml
-    FormPlaceEditorDelegate.qml
-    FormPlatformDelegate.qml
-    FormPriceDelegate.qml
-    FormPriceEditDelegate.qml
-    GenericPass.qml
-    GenericPkPassPage.qml
-    HealthCertificateBarcode.qml
-    HealthCertificateRecovery.qml
-    HealthCertificatePage.qml
-    HealthCertificateTest.qml
-    HealthCertificateVaccination.qml
-    HotelDelegate.qml
-    HotelEditor.qml
-    HotelPage.qml
-    ImportAction.qml
-    ImportPage.qml
-    IndoorMapGateSheet.qml
-    IndoorMapInfoSheet.qml
-    IndoorMapPage.qml
-    IntermediateStopSelector.qml
-    JourneyDelegateHeader.qml
-    JourneyPathPage.qml
-    JourneyRequestPage.qml
-    JourneyQueryPage.qml
-    JourneySectionDelegate.qml
-    JourneySectionMapView.qml
-    JourneySectionPage.qml
-    JourneySectionStopDelegate.qml
-    JourneySectionStopDelegateLineSegment.qml
-    JourneySummaryDelegate.qml
-    LiveStatusPage.qml
-    LocationInfoDelegate.qml
-    LocationPicker.qml
-    MapCircle.qml
-    MapPin.qml
-    MapStopoverInfoSheetDrawer.qml
-    MapView.qml
-    MatrixRoomSelectionSheet.qml
-    MatrixKeyVerificationPage.qml
-    NavigationBar.qml
-    MyDataPage.qml
-    OnlineImportPage.qml
-    PassPage.qml
-    PassDelegate.qml
-    PkPassBarcode.qml
-    PkPassPage.qml
-    ProgramMembershipCard.qml
-    ProgramMembershipEditorCard.qml
-    ProgramMembershipEditor.qml
-    ProgramMembershipPage.qml
-    ReservationDocumentsCard.qml
-    RestaurantDelegate.qml
-    RestaurantEditor.qml
-    RestaurantPage.qml
-    SeatRowFormCard.qml
-    SettingsPage.qml
-    SheetDrawer.qml
-    StatisticsDelegate.qml
-    StatisticsPage.qml
-    StopoverDetailsPage.qml
-    StopoverInformationSheet.qml
-    StopoverFormDelegate.qml
-    StopPickerPage.qml
-    TicketEditor.qml
-    TicketPage.qml
-    TicketTokenDelegate.qml
-    TicketTokenEditorCard.qml
-    TimelineDelegateArrivalLayout.qml
-    TimelineDelegate.qml
-    TimelineDelegateDepartureLayout.qml
-    TimelineDelegateIntermediateStopsButton.qml
-    TimelineDelegateIntermediateStopsView.qml
-    TimelineDelegateSeatRow.qml
-    TimelineDelegateSeatRowLabel.qml
-    TimelineSectionDelegate.qml
-    TouristAttractionDelegate.qml
-    TouristAttractionPage.qml
-    TrainDelegate.qml
-    TrainEditor.qml
-    TrainPage.qml
-    TransferDelegate.qml
-    TransferPage.qml
-    TripGroupEditorDialog.qml
-    TripGroupMapPage.qml
-    TripGroupMergeDialog.qml
-    TripGroupPage.qml
-    TripGroupSelectorCard.qml
-    TripGroupSplitPage.qml
-    TripGroupsPage.qml
-    VehicleLayoutPage.qml
-    VehicleSectionDialog.qml
-    VerticalNavigationButton.qml
-    WeatherForecastDelegate.qml
-    WeatherForecastPage.qml
-    WelcomePage.qml
-
-    onlineimport/db.qml
-    onlineimport/sncf.qml
 )
 target_include_directories(itinerary-app PRIVATE ${CMAKE_BINARY_DIR})
 target_link_libraries(itinerary-app PRIVATE
     itinerary
+    itineraryplugin
     KF6::I18nQml
     Qt::QuickControls2
     KCalendarCoreExtras

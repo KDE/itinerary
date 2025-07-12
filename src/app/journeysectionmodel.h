@@ -10,6 +10,7 @@
 
 #include <QAbstractItemModel>
 #include <QTimer>
+#include <qqmlregistration.h>
 
 #include <vector>
 
@@ -25,6 +26,7 @@ class Stopover;
 class JourneySectionModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
     Q_PROPERTY(KPublicTransport::JourneySection journeySection READ journeySection WRITE setJourneySection NOTIFY journeySectionChanged)
 
     Q_PROPERTY(float departureProgress READ departureProgress NOTIFY progressChanged)

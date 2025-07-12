@@ -8,6 +8,7 @@
 #define HEALTHCERTIFICATEMANAGER_H
 
 #include <QAbstractListModel>
+#include <qqmlregistration.h>
 
 #include <vector>
 
@@ -17,6 +18,9 @@ class QByteArray;
 class HealthCertificateManager : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_UNCREATABLE("Enum")
+
     Q_PROPERTY(bool isAvailable READ isAvailable CONSTANT)
 public:
     explicit HealthCertificateManager(QObject *parent = nullptr);

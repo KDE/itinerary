@@ -11,6 +11,7 @@
 
 #include <QDate>
 #include <QObject>
+#include <qqmlregistration.h>
 
 class TripGroupModel;
 
@@ -22,6 +23,8 @@ class TripGroupModel;
 class TimelineSectionDelegateController : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+
     Q_PROPERTY(QString date READ dateString WRITE setDateString NOTIFY dateChanged)
     Q_PROPERTY(TripGroupModel *tripGroupModel READ tripGroupModel WRITE setTripGroupModel NOTIFY tripGroupModelChanged)
 

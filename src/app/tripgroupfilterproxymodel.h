@@ -5,6 +5,7 @@
 #define TRIPGROUPFILTERPROXYMODEL_H
 
 #include <QSortFilterProxyModel>
+#include <qqmlregistration.h>
 
 /** Filter proxy model to show only a specified set of trip groups.
  *  Used e.g. for selecting candidates to add to/merge with.
@@ -12,6 +13,8 @@
 class TripGroupFilterProxyModel : public QSortFilterProxyModel
 {
     Q_OBJECT
+    QML_ELEMENT
+
     Q_PROPERTY(QStringList filteredGroupIds READ filteredGroupIds WRITE setFilteredGroupIds NOTIFY filteredGroupIdsChanged)
 public:
     explicit TripGroupFilterProxyModel(QObject *parent = nullptr);

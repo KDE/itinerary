@@ -11,6 +11,7 @@
 
 #include <QDate>
 #include <QObject>
+#include <qqmlintegration.h>
 
 #include <set>
 
@@ -24,6 +25,7 @@ namespace KPublicTransport { class Journey; }
 class StatisticsItem
 {
     Q_GADGET
+    QML_VALUE_TYPE(statisticsItem)
     Q_PROPERTY(bool hasData MEMBER m_hasData CONSTANT)
     Q_PROPERTY(QString label MEMBER m_label CONSTANT)
     Q_PROPERTY(QString value MEMBER m_value CONSTANT)
@@ -49,6 +51,7 @@ Q_DECLARE_METATYPE(StatisticsItem)
 class StatisticsModel : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
     Q_PROPERTY(StatisticsItem totalCount READ totalCount NOTIFY changed)
     Q_PROPERTY(StatisticsItem totalDistance READ totalDistance NOTIFY changed)
     Q_PROPERTY(StatisticsItem totalNights READ totalNights NOTIFY changed)

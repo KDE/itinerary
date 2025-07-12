@@ -49,6 +49,7 @@
 #include <QDesktopServices>
 #include <QFile>
 #include <QGuiApplication>
+#include <QJSEngine>
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -85,12 +86,19 @@ ApplicationController *ApplicationController::s_instance = nullptr;
 ApplicationController::ApplicationController(QObject *parent)
     : QObject(parent)
 {
+    Q_ASSERT(!s_instance);
     s_instance = this;
 }
 
 ApplicationController::~ApplicationController()
 {
     s_instance = nullptr;
+}
+
+ApplicationController *ApplicationControllerForeign::create(QQmlEngine*, QJSEngine*)
+{
+    QJSEngine::setObjectOwnership(ApplicationController::instance(), QJSEngine::CppOwnership);
+    return ApplicationController::instance();
 }
 
 void ApplicationController::setNetworkAccessManagerFactory(const std::function<QNetworkAccessManager *()> &namFactory)

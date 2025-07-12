@@ -10,6 +10,7 @@
 #include "weatherforecast.h"
 
 #include <QAbstractListModel>
+#include <qqmlregistration.h>
 
 class WeatherForecastManager;
 
@@ -17,6 +18,8 @@ class WeatherForecastManager;
 class WeatherForecastModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
+
     Q_PROPERTY(WeatherForecastManager *weatherForecastManager READ weatherForecastManager WRITE setWeatherForecastManager)
     Q_PROPERTY(QVariant weatherForecast READ weatherForecast WRITE setWeatherForecast)
 public:

@@ -8,6 +8,7 @@
 #define TICKETTOKENMODEL_H
 
 #include <QAbstractListModel>
+#include <qqmlintegration.h>
 
 class ReservationManager;
 
@@ -17,6 +18,8 @@ class ReservationManager;
 class TicketTokenModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
+
     Q_PROPERTY(QObject *reservationManager READ reservationManager WRITE setReservationManager)
     Q_PROPERTY(QStringList reservationIds READ reservationIds WRITE setReservationIds)
     Q_PROPERTY(int initialIndex READ initialIndex NOTIFY initialIndexChanged)

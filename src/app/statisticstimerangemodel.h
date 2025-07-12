@@ -8,6 +8,7 @@
 #define STATISTICSTIMERANGEMODEL_H
 
 #include <QAbstractListModel>
+#include <qqmlintegration.h>
 
 class ReservationManager;
 
@@ -15,6 +16,8 @@ class ReservationManager;
 class StatisticsTimeRangeModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
+
     Q_PROPERTY(ReservationManager *reservationManager READ reservationManager WRITE setReservationManager NOTIFY setupChanged)
 
 public:
