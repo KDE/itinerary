@@ -9,6 +9,7 @@
 
 #include <QAbstractListModel>
 #include <QExplicitlySharedDataPointer>
+#include <qqmlregistration.h>
 
 #include <vector>
 
@@ -57,6 +58,9 @@ private:
 class FavoriteLocationModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
+
 public:
     enum Role {
         LatitudeRole = Qt::UserRole,

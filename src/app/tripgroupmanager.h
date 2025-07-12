@@ -11,6 +11,7 @@
 
 #include <QHash>
 #include <QObject>
+#include <qqmlregistration.h>
 
 class ReservationManager;
 class TransferManager;
@@ -22,6 +23,9 @@ class TripGroup;
 class TripGroupManager : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
+
 public:
     explicit TripGroupManager(QObject *parent = nullptr);
     ~TripGroupManager() override;

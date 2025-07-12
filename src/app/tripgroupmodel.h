@@ -7,6 +7,7 @@
 #include <QDateTime>
 #include <QTimer>
 #include <QtQml>
+#include <qqmlregistration.h>
 
 class TripGroupManager;
 
@@ -15,6 +16,7 @@ class TripGroupModel : public QAbstractListModel
 {
     Q_OBJECT
     QML_ELEMENT
+    QML_SINGLETON
 
     Q_PROPERTY(QString currentBatchId READ currentBatchId NOTIFY currentBatchChanged)
     Q_PROPERTY(int currentOrNextRow READ currentOrNextRow NOTIFY currentBatchChanged)

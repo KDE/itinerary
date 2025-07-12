@@ -13,6 +13,7 @@
 
 #include <QColor>
 #include <QObject>
+#include <qqmlregistration.h>
 
 struct MapPathEntry {
     Q_GADGET
@@ -49,6 +50,7 @@ public:
 class TripGroupMapModel : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
 
     Q_PROPERTY(QString tripGroupId MEMBER m_tripGroupId NOTIFY tripGroupIdChanged FINAL)
     Q_PROPERTY(TripGroupManager *tripGroupManager MEMBER m_tripGroupMgr NOTIFY setupChanged FINAL)

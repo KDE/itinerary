@@ -14,6 +14,7 @@
 #include <QAbstractListModel>
 #include <QDateTime>
 #include <QTimer>
+#include <qqmlregistration.h>
 
 class ReservationManager;
 class WeatherForecastManager;
@@ -23,6 +24,8 @@ class TransferManager;
 class TimelineModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
+
     Q_PROPERTY(int todayRow READ todayRow NOTIFY todayRowChanged)
 
     Q_PROPERTY(ReservationManager *reservationManager MEMBER m_resMgr WRITE setReservationManager NOTIFY setupChanged)

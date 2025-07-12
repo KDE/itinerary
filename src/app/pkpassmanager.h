@@ -9,6 +9,7 @@
 
 #include <QHash>
 #include <QObject>
+#include <qqmlregistration.h>
 
 #include <functional>
 
@@ -22,6 +23,9 @@ class Pass;
 class PkPassManager : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
+
 public:
     explicit PkPassManager(QObject *parent = nullptr);
     ~PkPassManager() override;

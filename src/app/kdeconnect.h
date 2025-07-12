@@ -9,10 +9,12 @@
 #include <QAbstractListModel>
 #include <QObject>
 #include <QString>
+#include <qqmlregistration.h>
 
 class KDEConnectDeviceModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
 public:
     explicit KDEConnectDeviceModel(QObject *parent = nullptr);
     ~KDEConnectDeviceModel();

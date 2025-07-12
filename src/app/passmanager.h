@@ -8,6 +8,7 @@
 
 #include <QAbstractListModel>
 #include <QDateTime>
+#include <qqmlregistration.h>
 
 namespace KItinerary
 {
@@ -21,6 +22,8 @@ class ExtractorValidator;
 class PassManager : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
 
 public:
     explicit PassManager(QObject *parent = nullptr);

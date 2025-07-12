@@ -93,7 +93,7 @@ inline void clearAll(PassManager *passMgr)
 /** Fully set up application controller. */
 inline std::unique_ptr<ApplicationController> makeAppController()
 {
-    std::unique_ptr<ApplicationController> ctrl(new ApplicationController);
+    auto ctrl = ApplicationController::makeAppController();
 
     auto passMgr = new PassManager(ctrl.get());
     clearAll(passMgr);

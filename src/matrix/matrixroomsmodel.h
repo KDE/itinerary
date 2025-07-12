@@ -6,6 +6,7 @@
 #include <Quotient/events/roomevent.h>
 
 #include <QAbstractListModel>
+#include <qqmlregistration.h>
 
 namespace Quotient
 {
@@ -16,6 +17,7 @@ class Room;
 class MatrixRoomsModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
     Q_PROPERTY(Quotient::Connection *connection READ connection WRITE setConnection NOTIFY connectionChanged)
 
 public:

@@ -12,6 +12,7 @@
 
 #include <QExplicitlySharedDataPointer>
 #include <QMetaType>
+#include <qqmlregistration.h>
 
 class TransferPrivate;
 
@@ -25,6 +26,7 @@ class QJsonObject;
 class Transfer
 {
     Q_GADGET
+    QML_ELEMENT
     Q_PROPERTY(Alignment alignment READ alignment WRITE setAlignment)
     Q_PROPERTY(State state READ state WRITE setState)
     Q_PROPERTY(FloatingLocationType floatingLocationType READ floatingLocationType WRITE setFloatingLocationType)

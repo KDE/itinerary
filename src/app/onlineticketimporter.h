@@ -9,6 +9,7 @@
 #include "importcontroller.h"
 
 #include <QObject>
+#include <qqmlregistration.h>
 
 class OnlineTicketRetrievalJob;
 
@@ -18,6 +19,7 @@ class QNetworkAccessManager;
 class OnlineTicketImporter : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
     Q_PROPERTY(bool searching READ searching NOTIFY searchingChanged)
     Q_PROPERTY(QString errorMessage READ errorMessage NOTIFY searchingChanged)
     Q_PROPERTY(ImportController *importController MEMBER m_importController NOTIFY importControllerChanged)

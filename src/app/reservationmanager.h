@@ -12,6 +12,7 @@
 #include <QHash>
 #include <QObject>
 #include <QVariant>
+#include <qqmlregistration.h>
 
 /** Manages JSON-LD reservation data.
  *  This is done on two levels:
@@ -28,6 +29,9 @@
 class ReservationManager : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
+
 public:
     explicit ReservationManager(QObject *parent = nullptr);
     ~ReservationManager() override;

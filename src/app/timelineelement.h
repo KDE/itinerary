@@ -10,6 +10,7 @@
 #include <QDateTime>
 #include <QString>
 #include <QVariant>
+#include <qqmlregistration.h>
 
 class TimelineModel;
 class Transfer;
@@ -23,6 +24,8 @@ class GeoCoordinates;
 class TimelineElement
 {
     Q_GADGET
+    QML_ELEMENT
+    QML_VALUE_TYPE(timelineElement)
 
 public:
     // Note: the order in here defines the priority of element if they occur at the same time

@@ -11,11 +11,14 @@
 
 #include <QObject>
 #include <QTimer>
+#include <qqmlregistration.h>
 
 /** Transfer delegate logic. */
 class TransferDelegateController : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+
     Q_PROPERTY(Transfer transfer READ transfer WRITE setTransfer NOTIFY transferChanged)
     Q_PROPERTY(bool isCurrent READ isCurrent NOTIFY updated)
     Q_PROPERTY(float progress READ progress NOTIFY updated)

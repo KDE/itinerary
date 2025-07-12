@@ -7,11 +7,13 @@
 #define PERMISSIONMANAGER_H
 
 #include <QJSValue>
+#include <qqmlregistration.h>
 
 /** Permission enum for use in QML. */
 namespace Permission
 {
 Q_NAMESPACE
+QML_ELEMENT
 enum Permission {
     InvalidPermission, // captures QML errors resultin in "0" enum values
     ReadCalendar,
