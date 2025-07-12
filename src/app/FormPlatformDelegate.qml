@@ -20,6 +20,7 @@ FormCard.AbstractFormDelegate {
 
     visible: platformLabel.text != ""
 
+    background: null
     contentItem: ColumnLayout {
         spacing: Kirigami.Units.smallSpacing
 
@@ -31,6 +32,8 @@ FormCard.AbstractFormDelegate {
         }
 
         RowLayout {
+            spacing: Kirigami.Units.smallSpacing
+
             QQC2.Label {
                 Layout.fillWidth: true
                 id: platformLabel
