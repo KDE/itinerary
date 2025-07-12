@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-11 00:43+0000\n"
-"PO-Revision-Date: 2025-05-28 16:44+0300\n"
+"PO-Revision-Date: 2025-07-10 22:53+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -2685,10 +2685,9 @@ msgid "Occupancy:"
 msgstr "Käyttöaste:"
 
 #: app/MapStopoverInfoSheetDrawer.qml:103
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgid "Information:"
-msgstr "Lisätietoa"
+msgstr "Tietoa:"
 
 #: app/MapStopoverInfoSheetDrawer.qml:119
 #, kde-format
@@ -3873,44 +3872,37 @@ msgid "Car"
 msgstr "Auto"
 
 #: app/StopoverDetailsPage.qml:16
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgctxt "train/bus arrival"
 msgid "Arrival Information"
-msgstr "Lisätietoa"
+msgstr "Saapumistieto"
 
 #: app/StopoverDetailsPage.qml:16
-#, fuzzy, kde-format
-#| msgid "Developer information"
+#, kde-format
 msgctxt "train/bus departure"
 msgid "Departure Information"
-msgstr "Kehitystiedot"
+msgstr "Lähtötieto"
 
 #: app/StopoverDetailsPage.qml:92 app/StopoverFormDelegate.qml:93
-#, fuzzy, kde-format
-#| msgid "From: %1"
+#, kde-format
 msgctxt "departure stop"
 msgid "From %1"
 msgstr "Mistä: %1"
 
 #: app/StopoverDetailsPage.qml:123
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgid "Information"
-msgstr "Lisätietoa"
+msgstr "Tietoa"
 
 #: app/StopoverDetailsPage.qml:131
-#, fuzzy, kde-format
-#| msgid "Trip"
+#, kde-format
 msgid "Trip Map"
-msgstr "Matka"
+msgstr "Reittikartta"
 
 #: app/StopoverDetailsPage.qml:139
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Show Map"
+#, kde-format
 msgid "Stop Map"
-msgstr "Näytä kartta"
+msgstr "Pysäytä kartta"
 
 #: app/TicketEditor.qml:18
 #, kde-format

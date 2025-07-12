@@ -253,11 +253,9 @@ msgid "Replace"
 msgstr "Nahradit"
 
 #: app/AlternativeJourneyPage.qml:139
-#, fuzzy, kde-format
-#| msgctxt "bus station"
-#| msgid "Station"
+#, kde-format
 msgid "Destination:"
-msgstr "Stanice"
+msgstr "Cíl:"
 
 #: app/applicationcontroller.cpp:188
 #, kde-format
@@ -329,7 +327,7 @@ msgstr "Stažení bylo neúspěšné: %1"
 #: app/applicationcontroller.cpp:630
 #, kde-format
 msgid "File saved successfully."
-msgstr ""
+msgstr "Soubor byl úspěšně uložen."
 
 #: app/applicationcontroller.cpp:637
 #, kde-format
@@ -922,7 +920,7 @@ msgstr "Probíhá nástup"
 #, kde-format
 msgctxt "@info:status"
 msgid "Error"
-msgstr ""
+msgstr "Chyba"
 
 #: app/DocumentsCard.qml:35
 #, kde-format
@@ -1415,8 +1413,7 @@ msgid "Do you really want to share %1 to the Matrix channel %2?"
 msgstr ""
 
 #: app/FormPlaceDelegate.qml:105
-#, fuzzy, kde-format
-#| msgid "Share"
+#, kde-format
 msgctxt "@action:button"
 msgid "Share"
 msgstr "Sdílet"
@@ -1565,7 +1562,7 @@ msgstr "Zkontrolovat aktualizace"
 #: app/GenericPkPassPage.qml:63
 #, kde-format
 msgid "Save As…"
-msgstr ""
+msgstr "Uložit jako…"
 
 #: app/gpxexport.cpp:33 app/main.cpp:321 app/Main.qml:20 app/Main.qml:68
 #, kde-format
@@ -2681,10 +2678,9 @@ msgid "Occupancy:"
 msgstr "Obsazenost:"
 
 #: app/MapStopoverInfoSheetDrawer.qml:103
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgid "Information:"
-msgstr "Více informací"
+msgstr "Informace:"
 
 #: app/MapStopoverInfoSheetDrawer.qml:119
 #, kde-format
@@ -3856,10 +3852,9 @@ msgid "From %1"
 msgstr "Z:"
 
 #: app/StopoverDetailsPage.qml:123
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgid "Information"
-msgstr "Více informací"
+msgstr "Informace"
 
 #: app/StopoverDetailsPage.qml:131
 #, fuzzy, kde-format
