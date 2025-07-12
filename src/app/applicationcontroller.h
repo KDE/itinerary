@@ -9,6 +9,7 @@
 
 #include <QObject>
 #include <QVariantMap>
+#include <qqmlregistration.h>
 
 #include <memory>
 
@@ -36,10 +37,15 @@ class Intent;
 
 class QNetworkAccessManager;
 class QTemporaryDir;
+class QQmlEngine;
+class QJSEngine;
 
 class ApplicationController : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
+
     Q_PROPERTY(QString version READ applicationVersion CONSTANT)
     Q_PROPERTY(QString extractorCapabilities READ extractorCapabilities CONSTANT)
     Q_PROPERTY(QVariant aboutData READ aboutData CONSTANT)
@@ -53,8 +59,9 @@ class ApplicationController : public QObject
     Q_PROPERTY(bool hasHealthCertificateSupport READ hasHealthCertificateSupport CONSTANT)
     Q_PROPERTY(HealthCertificateManager *healthCertificateManager READ healthCertificateManager CONSTANT)
 public:
-    explicit ApplicationController(QObject *parent = nullptr);
     ~ApplicationController() override;
+
+    static ApplicationController *create(QQmlEngine *engine, QJSEngine *);
 
     void setNetworkAccessManagerFactory(const std::function<QNetworkAccessManager *()> &namFactory);
 
@@ -112,6 +119,9 @@ public:
 
     void setContextTripGroupId(const QString &contextTripGroupId);
 
+    // only use this in unit tests
+    static std::unique_ptr<ApplicationController> makeAppController();
+
 Q_SIGNALS:
     /** Human readable information message to be shown as passive notification. */
     void infoMessage(const QString &msg);
@@ -129,6 +139,8 @@ Q_SIGNALS:
     void reloadSettings();
 
 private:
+    explicit ApplicationController(QObject *parent = nullptr);
+
     bool importBundle(KItinerary::File *file);
     void pkPassUpdated(const QString &passId);
 
@@ -155,6 +167,7 @@ private:
 
     std::unique_ptr<QTemporaryDir> m_tempDir;
     bool m_importLock = false;
+
 };
 
 #endif // APPLICATIONCONTROLLER_H

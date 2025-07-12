@@ -85,12 +85,21 @@ ApplicationController *ApplicationController::s_instance = nullptr;
 ApplicationController::ApplicationController(QObject *parent)
     : QObject(parent)
 {
-    s_instance = this;
 }
 
 ApplicationController::~ApplicationController()
 {
     s_instance = nullptr;
+}
+
+ApplicationController *ApplicationController::create(QQmlEngine *engine, QJSEngine *)
+{
+    return instance();
+}
+
+std::unique_ptr<ApplicationController> ApplicationController::makeAppController()
+{
+    return std::unique_ptr<ApplicationController>(new ApplicationController);
 }
 
 void ApplicationController::setNetworkAccessManagerFactory(const std::function<QNetworkAccessManager *()> &namFactory)
@@ -100,6 +109,9 @@ void ApplicationController::setNetworkAccessManagerFactory(const std::function<Q
 
 ApplicationController *ApplicationController::instance()
 {
+    if (!s_instance) {
+        s_instance = new ApplicationController;
+    }
     return s_instance;
 }
 

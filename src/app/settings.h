@@ -11,11 +11,15 @@
 
 #include <QObject>
 #include <QUrl>
+#include <qqmlregistration.h>
 
 /** Application settings accessible by QML. */
 class Settings : public QObject
 {
     Q_OBJECT
+    QML_SINGLETON
+    QML_ELEMENT
+
     Q_PROPERTY(bool weatherForecastEnabled READ weatherForecastEnabled WRITE setWeatherForecastEnabled NOTIFY weatherForecastEnabledChanged)
     Q_PROPERTY(QString homeCountryIsoCode READ homeCountryIsoCode WRITE setHomeCountryIsoCode NOTIFY homeCountryIsoCodeChanged)
     Q_PROPERTY(bool forceMetricUnits READ forceMetricUnits WRITE setForceMetricUnits NOTIFY forceMetricUnitsChanged)

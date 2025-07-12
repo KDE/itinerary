@@ -4,6 +4,7 @@
 #pragma once
 
 #include <QObject>
+#include <qqmlregistration.h>
 
 class QClipboard;
 
@@ -13,6 +14,9 @@ class QClipboard;
 class Clipboard : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
+
     /** Clipboard currently holds a text content. */
     Q_PROPERTY(bool hasText READ hasText NOTIFY contentChanged)
     /** Clipboard currently holds URLs. */

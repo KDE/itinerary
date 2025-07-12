@@ -13,6 +13,7 @@
 
 #include <QHash>
 #include <QObject>
+#include <qqmlregistration.h>
 
 #include <cmath>
 
@@ -25,6 +26,8 @@ class ReservationManager;
 class TransferManager : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
 
 public:
     explicit TransferManager(QObject *parent = nullptr);

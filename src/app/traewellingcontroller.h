@@ -6,10 +6,14 @@
 #include <QNetworkReply>
 #include <QObject>
 #include <QQmlEngine>
+#include <qqmlregistration.h>
 
 class TraewellingController : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
+
     Q_PROPERTY(QString username READ username NOTIFY usernameChanged)
     Q_PROPERTY(bool isLoggedIn READ isLoggedIn NOTIFY isLoggedInChanged)
 public:
@@ -18,7 +22,8 @@ public:
         Error,
     };
     Q_ENUM(UploadStatus);
-    explicit TraewellingController(std::function<QNetworkAccessManager *()> namFactory, QObject *parent = nullptr);
+    explicit TraewellingController(QObject *parent = nullptr);
+    void setNamFactory(std::function<QNetworkAccessManager *()> namFactory);
     Q_INVOKABLE void login();
     Q_INVOKABLE void logout(bool server = true);
     [[nodiscard]] QString username() const;

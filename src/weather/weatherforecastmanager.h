@@ -11,6 +11,7 @@
 
 #include <QObject>
 #include <QTimer>
+#include <qqmlregistration.h>
 
 #include <deque>
 #include <unordered_map>
@@ -26,6 +27,9 @@ class QXmlStreamReader;
 class WeatherForecastManager : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
+
 public:
     explicit WeatherForecastManager(QObject *parent = nullptr);
     ~WeatherForecastManager() override;

@@ -14,6 +14,7 @@
 #include <QObject>
 #include <QPointer>
 #include <QTimer>
+#include <qqmlregistration.h>
 
 #include <vector>
 
@@ -34,6 +35,8 @@ class ReservationManager;
 class LiveDataManager : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
     Q_PROPERTY(KPublicTransport::Manager *publicTransportManager READ publicTransportManager CONSTANT)
 public:
     explicit LiveDataManager(QObject *parent = nullptr);

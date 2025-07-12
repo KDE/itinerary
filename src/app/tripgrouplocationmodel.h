@@ -10,6 +10,7 @@
 
 #include <QAbstractListModel>
 #include <QDateTime>
+#include <qqmlintegration.h>
 
 #include <vector>
 
@@ -20,6 +21,8 @@
 class TripGroupLocationModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
+
     Q_PROPERTY(QString tripGroupId MEMBER m_tripGroupId NOTIFY setupChanged)
     Q_PROPERTY(TripGroupManager *tripGroupManager MEMBER m_tripGroupMgr WRITE setTripGroupManager NOTIFY setupChanged)
 

@@ -8,6 +8,8 @@
 
 #include <QAbstractItemModel>
 #include <QObject>
+#include <qqmlregistration.h>
+
 class MatrixManager;
 class MatrixRoomsModel;
 class MatrixRoomsSortProxyModel;
@@ -16,6 +18,9 @@ class MatrixRoomsSortProxyModel;
 class MatrixController : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
+
     /** Matrix support is built in at all? */
     Q_PROPERTY(bool isAvailable READ isAvailable CONSTANT)
     Q_PROPERTY(QObject *manager READ manager CONSTANT)

@@ -8,11 +8,15 @@
 #define DOCUMENTMANAGER_H
 
 #include <QObject>
+#include <qqmlregistration.h>
 
 /** Manages documents attached to reservations. */
 class DocumentManager : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
+
 public:
     explicit DocumentManager(QObject *parent = nullptr);
     ~DocumentManager() override;

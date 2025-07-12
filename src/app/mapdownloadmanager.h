@@ -9,6 +9,7 @@
 
 #include <QDateTime>
 #include <QObject>
+#include <qqmlregistration.h>
 
 #include <vector>
 
@@ -23,6 +24,9 @@ class MapLoader;
 class MapDownloadManager : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
+
 public:
     explicit MapDownloadManager(QObject *parent = nullptr);
     ~MapDownloadManager() override;

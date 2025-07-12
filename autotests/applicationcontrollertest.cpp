@@ -60,39 +60,39 @@ private Q_SLOTS:
         PassManager passMgr;
         Test::clearAll(&passMgr);
 
-        ApplicationController appController;
-        QSignalSpy infoSpy(&appController, &ApplicationController::infoMessage);
-        appController.setPkPassManager(&pkPassMgr);
-        appController.setReservationManager(&resMgr);
-        appController.setDocumentManager(&docMgr);
-        appController.setPassManager(&passMgr);
+        auto appController = ApplicationController::makeAppController();
+        QSignalSpy infoSpy(appController.get(), &ApplicationController::infoMessage);
+        appController->setPkPassManager(&pkPassMgr);
+        appController->setReservationManager(&resMgr);
+        appController->setDocumentManager(&docMgr);
+        appController->setPassManager(&passMgr);
 
         ImportController importer;
         importer.setReservationManager(&resMgr);
 
         importer.importData(Test::readFile(QLatin1StringView(SOURCE_DIR "/data/4U8465-v1.json")));
-        appController.commitImport(&importer);
+        appController->commitImport(&importer);
         QCOMPARE(resSpy.size(), 1);
         QCOMPARE(pkPassSpy.size(), 0);
         QCOMPARE(infoSpy.size(), 1);
         QCOMPARE(importer.rowCount(), 0);
 
         importer.importData(Test::readFile(QLatin1StringView(SOURCE_DIR "/data/boardingpass-v1.pkpass")));
-        appController.commitImport(&importer);
+        appController->commitImport(&importer);
         QCOMPARE(resSpy.size(), 2);
         QCOMPARE(pkPassSpy.size(), 1);
         QCOMPARE(infoSpy.size(), 2);
         QCOMPARE(importer.rowCount(), 0);
 
         importer.importData("M1DOE/JOHN            EXXX007 TXLBRUSN 2592 110Y");
-        appController.commitImport(&importer);
+        appController->commitImport(&importer);
         QCOMPARE(resSpy.size(), 3);
         QCOMPARE(pkPassSpy.size(), 1);
         QCOMPARE(infoSpy.size(), 3);
         QCOMPARE(importer.rowCount(), 0);
 
         importer.importData(Test::readFile(QLatin1StringView(SOURCE_DIR "/data/iata-bcbp-demo.pdf")));
-        appController.commitImport(&importer);
+        appController->commitImport(&importer);
         QCOMPARE(resSpy.size(), 4);
         QCOMPARE(pkPassSpy.size(), 1);
         QCOMPARE(infoSpy.size(), 4);
@@ -101,7 +101,7 @@ private Q_SLOTS:
 
         // combined reservation/ticket data
         importer.importData(Test::readFile(QLatin1StringView(SOURCE_DIR "/data/mixed-reservation-ticket.json")));
-        appController.commitImport(&importer);
+        appController->commitImport(&importer);
         QCOMPARE(resSpy.size(), 5);
         QCOMPARE(passMgr.rowCount(), 1);
         QCOMPARE(infoSpy.size(), 6);
@@ -126,32 +126,32 @@ private Q_SLOTS:
         PassManager passMgr;
         Test::clearAll(&passMgr);
 
-        ApplicationController appController;
-        QSignalSpy infoSpy(&appController, &ApplicationController::infoMessage);
-        appController.setPkPassManager(&pkPassMgr);
-        appController.setReservationManager(&resMgr);
-        appController.setDocumentManager(&docMgr);
-        appController.setPassManager(&passMgr);
+        auto appController = ApplicationController::makeAppController();
+        QSignalSpy infoSpy(appController.get(), &ApplicationController::infoMessage);
+        appController->setPkPassManager(&pkPassMgr);
+        appController->setReservationManager(&resMgr);
+        appController->setDocumentManager(&docMgr);
+        appController->setPassManager(&passMgr);
 
         ImportController importer;
         importer.setReservationManager(&resMgr);
 
         importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/4U8465-v1.json")));
-        appController.commitImport(&importer);
+        appController->commitImport(&importer);
         QCOMPARE(resSpy.size(), 1);
         QCOMPARE(pkPassSpy.size(), 0);
         QCOMPARE(infoSpy.size(), 1);
         QCOMPARE(importer.rowCount(), 0);
 
         importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/boardingpass-v1.pkpass")));
-        appController.commitImport(&importer);
+        appController->commitImport(&importer);
         QCOMPARE(resSpy.size(), 2);
         QCOMPARE(pkPassSpy.size(), 1);
         QCOMPARE(infoSpy.size(), 2);
         QCOMPARE(importer.rowCount(), 0);
 
         importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/iata-bcbp-demo.pdf")));
-        appController.commitImport(&importer);
+        appController->commitImport(&importer);
         QCOMPARE(resSpy.size(), 3);
         QCOMPARE(pkPassSpy.size(), 1);
         QCOMPARE(infoSpy.size(), 3);
@@ -167,8 +167,8 @@ private Q_SLOTS:
         }
 
         importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/health-certificates/negative-pcr-test-fr.pdf")));
-        appController.commitImport(&importer);
-        QCOMPARE(appController.healthCertificateManager()->rowCount(), 1);
+        appController->commitImport(&importer);
+        QCOMPARE(appController->healthCertificateManager()->rowCount(), 1);
 #endif
     }
 
@@ -200,24 +200,24 @@ private Q_SLOTS:
         Settings settings;
         settings.setHomeCountryIsoCode(u"XX"_s);
 
-        ApplicationController appController;
-        QSignalSpy infoSpy(&appController, &ApplicationController::infoMessage);
-        QSignalSpy settingsReloadSpy(&appController, &ApplicationController::reloadSettings);
-        appController.setPkPassManager(&pkPassMgr);
-        appController.setReservationManager(&resMgr);
-        appController.setDocumentManager(&docMgr);
-        appController.setTransferManager(&transferMgr);
-        appController.setFavoriteLocationModel(&favLoc);
-        appController.setPassManager(&passMgr);
-        appController.setLiveDataManager(&liveDataMgr);
-        appController.setTripGroupManager(&tripGroupMgr);
+        auto appController = ApplicationController::makeAppController();
+        QSignalSpy infoSpy(appController.get(), &ApplicationController::infoMessage);
+        QSignalSpy settingsReloadSpy(appController.get(), &ApplicationController::reloadSettings);
+        appController->setPkPassManager(&pkPassMgr);
+        appController->setReservationManager(&resMgr);
+        appController->setDocumentManager(&docMgr);
+        appController->setTransferManager(&transferMgr);
+        appController->setFavoriteLocationModel(&favLoc);
+        appController->setPassManager(&passMgr);
+        appController->setLiveDataManager(&liveDataMgr);
+        appController->setTripGroupManager(&tripGroupMgr);
 
         ImportController importer;
         importer.setReservationManager(&resMgr);
         importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/4U8465-v1.json")));
         importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/boardingpass-v1.pkpass")));
         importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/bahncard.json")));
-        appController.commitImport(&importer);
+        appController->commitImport(&importer);
         QCOMPARE(resMgr.batches().size(), 2);
         QCOMPARE(pkPassMgr.passes().size(), 1);
         QCOMPARE(passMgr.rowCount(), 1);
@@ -227,7 +227,7 @@ private Q_SLOTS:
         QTemporaryFile tmp;
         QVERIFY(tmp.open());
         tmp.close();
-        appController.exportToFile(QUrl::fromLocalFile(tmp.fileName()));
+        appController->exportToFile(QUrl::fromLocalFile(tmp.fileName()));
         QCOMPARE(infoSpy.size(), 1);
 
         KItinerary::File f(tmp.fileName());
@@ -244,7 +244,7 @@ private Q_SLOTS:
         QCOMPARE(pkPassMgr.passes().size(), 0);
 
         importer.importFromUrl(QUrl::fromLocalFile(tmp.fileName()));
-        appController.commitImport(&importer);
+        appController->commitImport(&importer);
         QCOMPARE(resMgr.batches().size(), 2);
         QCOMPARE(pkPassMgr.passes().size(), 1);
         QCOMPARE(passMgr.rowCount(), 1);
@@ -260,7 +260,7 @@ private Q_SLOTS:
         QFile bundle(tmp.fileName());
         QVERIFY(bundle.open(QFile::ReadOnly));
         importer.importData(bundle.readAll());
-        appController.commitImport(&importer);
+        appController->commitImport(&importer);
         QCOMPARE(resMgr.batches().size(), 2);
         QCOMPARE(pkPassMgr.passes().size(), 1);
         QCOMPARE(passMgr.rowCount(), 1);
@@ -294,27 +294,27 @@ private Q_SLOTS:
         PassManager passMgr;
         Test::clearAll(&passMgr);
 
-        ApplicationController appController;
-        appController.setPkPassManager(&pkPassMgr);
-        appController.setReservationManager(&resMgr);
-        appController.setDocumentManager(&docMgr);
-        appController.setTransferManager(&transferMgr);
-        appController.setFavoriteLocationModel(&favLoc);
-        appController.setPassManager(&passMgr);
-        appController.setLiveDataManager(&liveDataMgr);
-        appController.setTripGroupManager(&tripGroupMgr);
+        auto appController = ApplicationController::makeAppController();
+        appController->setPkPassManager(&pkPassMgr);
+        appController->setReservationManager(&resMgr);
+        appController->setDocumentManager(&docMgr);
+        appController->setTransferManager(&transferMgr);
+        appController->setFavoriteLocationModel(&favLoc);
+        appController->setPassManager(&passMgr);
+        appController->setLiveDataManager(&liveDataMgr);
+        appController->setTripGroupManager(&tripGroupMgr);
 
         ImportController importer;
         importer.setReservationManager(&resMgr);
         importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
-        appController.commitImport(&importer);
+        appController->commitImport(&importer);
         QCOMPARE(tripGroupMgr.tripGroups().size(), 1);
         const auto tripId = tripGroupMgr.tripGroups().front();
 
         QTemporaryFile tmp;
         QVERIFY(tmp.open());
         tmp.close();
-        appController.exportTripToFile(tripId, QUrl::fromLocalFile(tmp.fileName()));
+        appController->exportTripToFile(tripId, QUrl::fromLocalFile(tmp.fileName()));
 
         KItinerary::File f(tmp.fileName());
         QVERIFY(f.open(KItinerary::File::Read));

@@ -8,6 +8,7 @@
 #define DOCUMENTSMODEL_H
 
 #include <QAbstractListModel>
+#include <qqmlregistration.h>
 
 #include <vector>
 
@@ -17,6 +18,7 @@ class DocumentManager;
 class DocumentsModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
     Q_PROPERTY(QStringList documentIds MEMBER m_requestedDocIds WRITE setDocumentIds NOTIFY requestedDocumentIdsChanged)
     Q_PROPERTY(DocumentManager *documentManager MEMBER m_docMgr WRITE setDocumentManager NOTIFY setupChanged)
     Q_PROPERTY(bool empty READ isEmpty NOTIFY emptyChanged)

@@ -68,10 +68,14 @@ static void deleteKeychain(const QString &key)
     loop.exec();
 }
 
-TraewellingController::TraewellingController(std::function<QNetworkAccessManager *()> namFactory, QObject *parent)
+TraewellingController::TraewellingController(QObject *parent)
     : QObject(parent)
-    , m_namFactory(std::move(namFactory))
 {
+}
+
+void TraewellingController::setNamFactory(std::function<QNetworkAccessManager *()> namFactory)
+{
+    m_namFactory = std::move(namFactory);
     QSettings settings;
     if (!settings.value(QStringLiteral("TraewellingEnabled"), false).toBool()) {
         return;

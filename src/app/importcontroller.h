@@ -17,6 +17,7 @@
 #include <QAbstractListModel>
 #include <QString>
 #include <QVariant>
+#include <qqmlregistration.h>
 
 #include <functional>
 #include <memory>
@@ -98,6 +99,9 @@ public:
 class ImportController : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
+
     Q_PROPERTY(bool hasSelection READ hasSelection NOTIFY selectionChanged)
     /** At least one trip-associatable element is selected. */
     Q_PROPERTY(bool hasSelectedReservation READ hasSelectedReservation NOTIFY selectionChanged)
