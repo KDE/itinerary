@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-11 00:43+0000\n"
+"POT-Creation-Date: 2025-07-13 00:43+0000\n"
 "PO-Revision-Date: 2025-07-10 16:33+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -1490,7 +1490,7 @@ msgstr "Координати з адреси"
 msgid "Platform"
 msgstr "Платформа"
 
-#: app/FormPlatformDelegate.qml:44
+#: app/FormPlatformDelegate.qml:47
 #, kde-format
 msgctxt "previous platform"
 msgid "(was: %1)"

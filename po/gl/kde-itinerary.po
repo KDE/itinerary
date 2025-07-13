@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-11 00:43+0000\n"
+"POT-Creation-Date: 2025-07-13 00:43+0000\n"
 "PO-Revision-Date: 2025-06-22 11:38+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -1505,7 +1505,7 @@ msgstr "Enderezo dunhas coordenadas"
 msgid "Platform"
 msgstr "Plataforma"
 
-#: app/FormPlatformDelegate.qml:44
+#: app/FormPlatformDelegate.qml:47
 #, kde-format
 msgctxt "previous platform"
 msgid "(was: %1)"
