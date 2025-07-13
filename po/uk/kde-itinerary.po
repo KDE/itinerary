@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-11 02:36+0000\n"
-"PO-Revision-Date: 2025-07-04 12:23+0300\n"
+"POT-Creation-Date: 2025-07-13 02:34+0000\n"
+"PO-Revision-Date: 2025-07-12 20:03+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -396,36 +396,28 @@ msgid "Edit Boat Trip"
 msgstr "Редагувати подорожі човном"
 
 #: app/BoatEditor.qml:69 app/BoatEditor.qml:165
-#, fuzzy, kde-format
-#| msgctxt "train departure"
-#| msgid "Change Departure Station"
+#, kde-format
 msgctxt "boat departure"
 msgid "Change Departure Terminal"
-msgstr "Змінити станцію відправлення"
+msgstr "Змінити причал відправлення"
 
 #: app/BoatEditor.qml:75
-#, fuzzy, kde-format
-#| msgctxt "train departure"
-#| msgid "Change departure station"
+#, kde-format
 msgctxt "boat departure"
 msgid "Change departure terminal"
-msgstr "Змінити станцію відправлення"
+msgstr "Змінити причал відправлення"
 
 #: app/BoatEditor.qml:85 app/BoatEditor.qml:227
-#, fuzzy, kde-format
-#| msgctxt "train arrival"
-#| msgid "Change Arrival Station"
+#, kde-format
 msgctxt "boat arrival"
 msgid "Change Arrival Terminal"
-msgstr "Змінити станцію прибуття"
+msgstr "Змінити причал прибуття"
 
 #: app/BoatEditor.qml:91
-#, fuzzy, kde-format
-#| msgctxt "train arrival"
-#| msgid "Change arrival station"
+#, kde-format
 msgctxt "boat arrival"
 msgid "Change arrival terminal"
-msgstr "Змінити станцію прибуття"
+msgstr "Змінити причал прибуття"
 
 #: app/BoatEditor.qml:112 app/BusEditor.qml:127 app/EventEditor.qml:54
 #: app/FlightEditor.qml:72 app/HotelEditor.qml:51 app/ImportPage.qml:21
@@ -464,11 +456,10 @@ msgid "Departure terminal must not be empty."
 msgstr "Термінал відправлення має бути непорожнім."
 
 #: app/BoatEditor.qml:158 app/BoatEditor.qml:221
-#, fuzzy, kde-format
-#| msgid "Terminal"
+#, kde-format
 msgctxt "boat terminal"
 msgid "Terminal"
-msgstr "Термінал"
+msgstr "Причал"
 
 #: app/BoatEditor.qml:173 app/BoatPage.qml:82
 #, kde-format
@@ -623,15 +614,13 @@ msgid "%1 to %2"
 msgstr "з %1 до %2"
 
 #: app/BusEditor.qml:73
-#, fuzzy, kde-format
-#| msgid "Edit Bus Reservation"
+#, kde-format
 msgctxt "@title"
 msgid "New Bus Reservation"
-msgstr "Редагування резервування місця в автобусі"
+msgstr "Створити резервування місця в автобусі"
 
 #: app/BusEditor.qml:73
-#, fuzzy, kde-format
-#| msgid "Edit Bus Reservation"
+#, kde-format
 msgctxt "@title"
 msgid "Edit Bus Reservation"
 msgstr "Редагування резервування місця в автобусі"
@@ -667,18 +656,16 @@ msgid "Bus"
 msgstr "Автобус"
 
 #: app/BusEditor.qml:140
-#, fuzzy, kde-format
-#| msgid "Bus"
+#, kde-format
 msgctxt "@title:group"
 msgid "Bus"
 msgstr "Автобус"
 
 #: app/BusEditor.qml:149
-#, fuzzy, kde-format
-#| msgid "Number"
+#, kde-format
 msgctxt "@label:textfield"
 msgid "Bus number"
-msgstr "Номер"
+msgstr "Номер автобуса"
 
 #: app/BusEditor.qml:155
 #, kde-format
@@ -687,39 +674,33 @@ msgid "Departure"
 msgstr "Відправлення"
 
 #: app/BusEditor.qml:164
-#, fuzzy, kde-format
-#| msgid "Departure Time"
+#, kde-format
 msgctxt "Bus departure"
 msgid "Departure Time"
 msgstr "Час відправлення"
 
 #: app/BusEditor.qml:176
-#, fuzzy, kde-format
-#| msgctxt "bus stop"
-#| msgid "Stop"
+#, kde-format
 msgctxt "Bus stop"
 msgid "Stop"
 msgstr "Зупинка"
 
 #: app/BusEditor.qml:179
-#, fuzzy, kde-format
-#| msgid "Departure terminal must not be empty."
+#, kde-format
 msgid "Departure bus stop must not be empty."
-msgstr "Термінал відправлення має бути непорожнім."
+msgstr "Зупинка відправлення автобуса має бути непорожньою."
 
 #: app/BusEditor.qml:187 app/BusEditor.qml:274
-#, fuzzy, kde-format
-#| msgid "Platform"
+#, kde-format
 msgctxt "Bus stop platform"
 msgid "Platform"
 msgstr "Платформа"
 
 #: app/BusEditor.qml:208
-#, fuzzy, kde-format
-#| msgid "Stop Map"
+#, kde-format
 msgctxt "bus stop"
 msgid "Stop Name"
-msgstr "Карта зупинок"
+msgstr "Назва зупинки"
 
 #: app/BusEditor.qml:216 app/BusEditor.qml:308
 #, kde-format
@@ -734,24 +715,21 @@ msgid "Arrival"
 msgstr "Прибуття"
 
 #: app/BusEditor.qml:242 app/TrainEditor.qml:251
-#, fuzzy, kde-format
-#| msgid "Arrival Time"
+#, kde-format
 msgctxt "Train arrival"
 msgid "Arrival Time"
 msgstr "Час прибуття"
 
 #: app/BusEditor.qml:263
-#, fuzzy, kde-format
-#| msgid "Stop Map"
+#, kde-format
 msgctxt "Bus stop"
 msgid "Stop Name"
-msgstr "Карта зупинок"
+msgstr "Назва зупинки"
 
 #: app/BusEditor.qml:266
-#, fuzzy, kde-format
-#| msgid "Arrival terminal must not be empty."
+#, kde-format
 msgid "Arrival stop must not be empty."
-msgstr "Термінал прибуття має бути непорожнім."
+msgstr "Зупинка прибуття має бути непорожньою."
 
 #: app/BusEditor.qml:300
 #, kde-format
@@ -920,18 +898,17 @@ msgstr "Надавачі даних:"
 
 #: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:125
 #: app/TransferPage.qml:336
-#, fuzzy, kde-format
-#| msgid "Boarding"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Loading"
-msgstr "Стіл реєстрації"
+msgstr "Завантаження"
 
 #: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:127
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:status"
 msgid "Error"
-msgstr ""
+msgstr "Помилка"
 
 #: app/DocumentsCard.qml:35
 #, kde-format
@@ -1422,8 +1399,7 @@ msgid "Do you really want to share %1 to the Matrix channel %2?"
 msgstr "Ви справді хочете оприлюднити %1 на каналі Matrix %2?"
 
 #: app/FormPlaceDelegate.qml:105
-#, fuzzy, kde-format
-#| msgid "Share"
+#, kde-format
 msgctxt "@action:button"
 msgid "Share"
 msgstr "Оприлюднити"
@@ -1514,7 +1490,7 @@ msgstr "Координати з адреси"
 msgid "Platform"
 msgstr "Платформа"
 
-#: app/FormPlatformDelegate.qml:44
+#: app/FormPlatformDelegate.qml:47
 #, kde-format
 msgctxt "previous platform"
 msgid "(was: %1)"
@@ -1968,12 +1944,10 @@ msgid "Import"
 msgstr "Імпортувати"
 
 #: app/ImportAction.qml:29
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Import From File"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "From file"
-msgstr "Імпортувати з файла"
+msgstr "З файла"
 
 #: app/ImportAction.qml:37
 #, kde-format
@@ -2001,37 +1975,34 @@ msgid "KDE Itinerary files (*.itinerary)"
 msgstr "файли путівних даних KDE (*.itinerary)"
 
 #: app/ImportAction.qml:51
-#, fuzzy, kde-format
-#| msgid "Import from Clipboard"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "From clipboard"
-msgstr "Імпорт з буфера обміну"
+msgstr "На основі буфера обміну даними"
 
 #: app/ImportAction.qml:61
-#, fuzzy, kde-format
-#| msgid "Barcode"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "From barcode"
-msgstr "Штрихкод"
+msgstr "На основі штрихкоду"
 
 #: app/ImportAction.qml:84
-#, fuzzy, kde-format
-#| msgid "Add from Calendar…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "From calendar"
-msgstr "Додати з календаря…"
+msgstr "На основі календаря"
 
 #: app/ImportAction.qml:108
 #, kde-format
 msgctxt "@action:inmenu Name of the train company in Germany"
 msgid "From Deutsche Bahn reservation number"
-msgstr ""
+msgstr "На основі номеру бронювання Deutsche Bahn"
 
 #: app/ImportAction.qml:119
 #, kde-format
 msgctxt "Name of the train company in France"
 msgid "From SNCF reservation number"
-msgstr ""
+msgstr "На основі номеру бронювання SNCF"
 
 #: app/importcontroller.cpp:153 app/importcontroller.cpp:475
 #, kde-format
@@ -2183,11 +2154,10 @@ msgid "Load earlier connections"
 msgstr "Завантажити раніші з'єднання"
 
 #: app/JourneyQueryPage.qml:129
-#, fuzzy, kde-format
-#| msgid "No journeys found."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No journeys found"
-msgstr "Не знайдено жодної подорожі."
+msgstr "Не знайдено жодної подорожі"
 
 #: app/JourneyQueryPage.qml:163
 #, kde-format
@@ -2224,8 +2194,7 @@ msgid "To:"
 msgstr "До:"
 
 #: app/JourneyRequestPage.qml:140
-#, fuzzy, kde-format
-#| msgid "Swap departure and arrival"
+#, kde-format
 msgctxt "departure and arrival stops"
 msgid "Swap departure and arrival"
 msgstr "Поміняти місцями відправлення і прибуття"
@@ -3083,10 +3052,9 @@ msgid "Import"
 msgstr "Імпортувати"
 
 #: app/MyDataPage.qml:202
-#, fuzzy, kde-format
-#| msgid "Backup"
+#, kde-format
 msgid "Import Backup"
-msgstr "Резервна копія"
+msgstr "Імпортувати резервну копію"
 
 #: app/MyDataPage.qml:216
 #, kde-format
@@ -3264,11 +3232,10 @@ msgid "Add Program Membership"
 msgstr "Додавання участі у програмі"
 
 #: app/PassPage.qml:43
-#, fuzzy, kde-format
-#| msgid "Import"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Import"
-msgstr "Імпортувати"
+msgstr "Імпорт"
 
 #: app/PassPage.qml:55
 #, kde-format
@@ -4067,15 +4034,13 @@ msgid "Class: <b>%1</b>"
 msgstr "Клас: <b>%1</b>"
 
 #: app/TrainEditor.qml:79
-#, fuzzy, kde-format
-#| msgid "Edit Train Reservation"
+#, kde-format
 msgctxt "@title"
 msgid "New Train Reservation"
-msgstr "Змінити резервування квитків на потяг"
+msgstr "Створити резервування квитків на потяг"
 
 #: app/TrainEditor.qml:79
-#, fuzzy, kde-format
-#| msgid "Edit Train Reservation"
+#, kde-format
 msgctxt "@title"
 msgid "Edit Train Reservation"
 msgstr "Змінити резервування квитків на потяг"
@@ -4105,18 +4070,16 @@ msgid "Change arrival station"
 msgstr "Змінити станцію прибуття"
 
 #: app/TrainEditor.qml:149
-#, fuzzy, kde-format
-#| msgid "Train"
+#, kde-format
 msgctxt "@title:group"
 msgid "Train"
 msgstr "Залізниця"
 
 #: app/TrainEditor.qml:158
-#, fuzzy, kde-format
-#| msgid "Ticket number:"
+#, kde-format
 msgctxt "@label:textfield"
 msgid "Train number"
-msgstr "Номер квитка:"
+msgstr "Номер потягу"
 
 #: app/TrainEditor.qml:164
 #, kde-format
@@ -4125,29 +4088,24 @@ msgid "Departure"
 msgstr "Відправлення"
 
 #: app/TrainEditor.qml:173
-#, fuzzy, kde-format
-#| msgid "Departure Time"
+#, kde-format
 msgctxt "Train departure"
 msgid "Departure Time"
 msgstr "Час відправлення"
 
 #: app/TrainEditor.qml:185
-#, fuzzy, kde-format
-#| msgctxt "bus station"
-#| msgid "Station"
+#, kde-format
 msgctxt "Train station platform"
 msgid "Station Name"
-msgstr "Станція"
+msgstr "Назва станції"
 
 #: app/TrainEditor.qml:188
-#, fuzzy, kde-format
-#| msgid "Departure terminal must not be empty."
+#, kde-format
 msgid "Departure station must not be empty."
-msgstr "Термінал відправлення має бути непорожнім."
+msgstr "Станція відправлення має бути непорожньою."
 
 #: app/TrainEditor.qml:196 app/TrainEditor.qml:283
-#, fuzzy, kde-format
-#| msgid "Platform"
+#, kde-format
 msgctxt "Train station platform"
 msgid "Platform"
 msgstr "Платформа"
@@ -4172,18 +4130,15 @@ msgid "Arrival"
 msgstr "Прибуття"
 
 #: app/TrainEditor.qml:272
-#, fuzzy, kde-format
-#| msgctxt "bus station"
-#| msgid "Station"
+#, kde-format
 msgctxt "Train station"
 msgid "Station Name"
-msgstr "Станція"
+msgstr "Назва станції"
 
 #: app/TrainEditor.qml:275
-#, fuzzy, kde-format
-#| msgid "Arrival terminal must not be empty."
+#, kde-format
 msgid "Arrival station must not be empty."
-msgstr "Термінал прибуття має бути непорожнім."
+msgstr "Станція прибуття має бути непорожньою."
 
 #: app/TrainEditor.qml:337 app/TrainEditor.qml:349 app/TrainPage.qml:292
 #, kde-format
@@ -4393,68 +4348,57 @@ msgid "Merge"
 msgstr "Об'єднати"
 
 #: app/TripGroupPage.qml:156
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Load earlier connections"
+#, kde-format
 msgctxt "@action"
 msgid "Search connection"
-msgstr "Завантажити раніші з'єднання"
+msgstr "Шукати з'єднання"
 
 #: app/TripGroupPage.qml:163
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Load later connections"
+#, kde-format
 msgctxt "@action"
 msgid "Add connection"
-msgstr "Завантажити пізніші з'єднання"
+msgstr "Додати з'єднання"
 
 #: app/TripGroupPage.qml:169
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add trip"
+#, kde-format
 msgctxt "@action"
 msgid "Add train"
-msgstr "Додати подорож"
+msgstr "Додати потяг"
 
 #: app/TripGroupPage.qml:179
 #, kde-format
 msgctxt "@action"
 msgid "Add bus"
-msgstr ""
+msgstr "Додати автобус"
 
 #: app/TripGroupPage.qml:189
-#, fuzzy, kde-format
-#| msgid "Add flight…"
+#, kde-format
 msgctxt "@action"
 msgid "Add flight"
-msgstr "Додати рейс…"
+msgstr "Додати рейс"
 
 #: app/TripGroupPage.qml:199
-#, fuzzy, kde-format
-#| msgid "Add ferry trip…"
+#, kde-format
 msgctxt "@action"
 msgid "Add ferry trip"
-msgstr "Додати подорож поромом…"
+msgstr "Додати подорож поромом"
 
 #: app/TripGroupPage.qml:209
-#, fuzzy, kde-format
-#| msgid "Add accommodation…"
+#, kde-format
 msgctxt "@action"
 msgid "Add accommodation"
-msgstr "Додати розміщення…"
+msgstr "Додати розміщення"
 
 #: app/TripGroupPage.qml:224
-#, fuzzy, kde-format
-#| msgid "Add event…"
+#, kde-format
 msgctxt "@action"
 msgid "Add event"
 msgstr "Додати подію"
 
 #: app/TripGroupPage.qml:240
-#, fuzzy, kde-format
-#| msgid "Add restaurant…"
+#, kde-format
 msgid "Add restaurant"
-msgstr "Додати ресторан…"
+msgstr "Додати ресторан"
 
 #: app/TripGroupPage.qml:257
 #, kde-format

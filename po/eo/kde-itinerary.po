@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-11 02:36+0000\n"
+"POT-Creation-Date: 2025-07-13 02:34+0000\n"
 "PO-Revision-Date: 2025-03-15 10:38+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -1509,7 +1509,7 @@ msgstr "Koordinate al adreso"
 msgid "Platform"
 msgstr "Platformo"
 
-#: app/FormPlatformDelegate.qml:44
+#: app/FormPlatformDelegate.qml:47
 #, kde-format
 msgctxt "previous platform"
 msgid "(was: %1)"
