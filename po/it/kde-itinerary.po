@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-13 00:43+0000\n"
+"POT-Creation-Date: 2025-07-14 00:43+0000\n"
 "PO-Revision-Date: 2025-07-11 09:04+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -1159,7 +1159,7 @@ msgid "Rename"
 msgstr "Rinomina"
 
 #: app/FavoriteLocationPage.qml:151 app/FormPlaceEditorDelegate.qml:56
-#: app/LocationPicker.qml:56
+#: app/LocationPicker.qml:78
 #, kde-format
 msgid "Pick Location"
 msgstr "Scegli la posizione"
@@ -1423,53 +1423,53 @@ msgctxt "@action:button"
 msgid "Share via Matrix"
 msgstr "Condividi tramite Matrix"
 
-#: app/FormPlaceEditorDelegate.qml:67
+#: app/FormPlaceEditorDelegate.qml:68
 #, kde-format
 msgid "Street"
 msgstr "Via"
 
-#: app/FormPlaceEditorDelegate.qml:79
+#: app/FormPlaceEditorDelegate.qml:80
 #, kde-format
 msgid "Invalid postal code format for this country."
 msgstr "Formato del codice postale non valido per questa nazione."
 
-#: app/FormPlaceEditorDelegate.qml:85
+#: app/FormPlaceEditorDelegate.qml:86
 #, kde-format
 msgid "City"
 msgstr "Città"
 
-#: app/FormPlaceEditorDelegate.qml:103
+#: app/FormPlaceEditorDelegate.qml:104
 #, kde-format
 msgid "Region"
 msgstr "Regione"
 
-#: app/FormPlaceEditorDelegate.qml:129 app/HealthCertificateTest.qml:115
+#: app/FormPlaceEditorDelegate.qml:130 app/HealthCertificateTest.qml:115
 #: app/HealthCertificateVaccination.qml:123
 #, kde-format
 msgid "Country"
 msgstr "Nazione"
 
-#: app/FormPlaceEditorDelegate.qml:200
+#: app/FormPlaceEditorDelegate.qml:201
 #, kde-format
 msgid "Coordinate"
 msgstr "Coordinate"
 
-#: app/FormPlaceEditorDelegate.qml:201
+#: app/FormPlaceEditorDelegate.qml:202
 #, kde-format
 msgid "%1°, %2°"
 msgstr "%1°, %2°"
 
-#: app/FormPlaceEditorDelegate.qml:201
+#: app/FormPlaceEditorDelegate.qml:202
 #, kde-format
 msgid "Pick…"
 msgstr "Scegli…"
 
-#: app/FormPlaceEditorDelegate.qml:219
+#: app/FormPlaceEditorDelegate.qml:220
 #, kde-format
 msgid "Address to coordinate"
 msgstr "Da indirizzo a coordinate"
 
-#: app/FormPlaceEditorDelegate.qml:235
+#: app/FormPlaceEditorDelegate.qml:236
 #, kde-format
 msgid "Coordinate to address"
 msgstr "Da coordinate a indirizzo"

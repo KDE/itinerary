@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-13 00:43+0000\n"
+"POT-Creation-Date: 2025-07-14 00:43+0000\n"
 "PO-Revision-Date: 2025-03-02 14:47+0530\n"
 "Last-Translator: Shreekant Kalwar <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -1189,7 +1189,7 @@ msgid "Rename"
 msgstr "पुनर्नाम"
 
 #: app/FavoriteLocationPage.qml:151 app/FormPlaceEditorDelegate.qml:56
-#: app/LocationPicker.qml:56
+#: app/LocationPicker.qml:78
 #, kde-format
 msgid "Pick Location"
 msgstr "स्थानं चिनुत"
@@ -1454,53 +1454,53 @@ msgctxt "@action:button"
 msgid "Share via Matrix"
 msgstr "Matrix मार्गेण साझां कुर्वन्तु"
 
-#: app/FormPlaceEditorDelegate.qml:67
+#: app/FormPlaceEditorDelegate.qml:68
 #, kde-format
 msgid "Street"
 msgstr "मार्गं"
 
-#: app/FormPlaceEditorDelegate.qml:79
+#: app/FormPlaceEditorDelegate.qml:80
 #, kde-format
 msgid "Invalid postal code format for this country."
 msgstr "अस्य देशस्य कृते अमान्य डाकसङ्केतस्वरूपम् ।"
 
-#: app/FormPlaceEditorDelegate.qml:85
+#: app/FormPlaceEditorDelegate.qml:86
 #, kde-format
 msgid "City"
 msgstr "नगरी"
 
-#: app/FormPlaceEditorDelegate.qml:103
+#: app/FormPlaceEditorDelegate.qml:104
 #, kde-format
 msgid "Region"
 msgstr "क्षेत्र"
 
-#: app/FormPlaceEditorDelegate.qml:129 app/HealthCertificateTest.qml:115
+#: app/FormPlaceEditorDelegate.qml:130 app/HealthCertificateTest.qml:115
 #: app/HealthCertificateVaccination.qml:123
 #, kde-format
 msgid "Country"
 msgstr "देशः"
 
-#: app/FormPlaceEditorDelegate.qml:200
+#: app/FormPlaceEditorDelegate.qml:201
 #, kde-format
 msgid "Coordinate"
 msgstr "समन्वयनम्"
 
-#: app/FormPlaceEditorDelegate.qml:201
+#: app/FormPlaceEditorDelegate.qml:202
 #, kde-format
 msgid "%1°, %2°"
 msgstr "%1°, %2° इति"
 
-#: app/FormPlaceEditorDelegate.qml:201
+#: app/FormPlaceEditorDelegate.qml:202
 #, kde-format
 msgid "Pick…"
 msgstr "चिनूहि…"
 
-#: app/FormPlaceEditorDelegate.qml:219
+#: app/FormPlaceEditorDelegate.qml:220
 #, kde-format
 msgid "Address to coordinate"
 msgstr "समन्वयं कर्तुं पता"
 
-#: app/FormPlaceEditorDelegate.qml:235
+#: app/FormPlaceEditorDelegate.qml:236
 #, kde-format
 msgid "Coordinate to address"
 msgstr "सम्बोधनार्थं समन्वयं कुर्वन्तु"

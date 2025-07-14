@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-13 00:43+0000\n"
+"POT-Creation-Date: 2025-07-14 00:43+0000\n"
 "PO-Revision-Date: 2025-07-10 16:30+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -1164,7 +1164,7 @@ msgid "Rename"
 msgstr "Aldatu izena"
 
 #: app/FavoriteLocationPage.qml:151 app/FormPlaceEditorDelegate.qml:56
-#: app/LocationPicker.qml:56
+#: app/LocationPicker.qml:78
 #, kde-format
 msgid "Pick Location"
 msgstr "Hautatu kokalekua"
@@ -1428,53 +1428,53 @@ msgctxt "@action:button"
 msgid "Share via Matrix"
 msgstr "Partekatu Matrix bidez"
 
-#: app/FormPlaceEditorDelegate.qml:67
+#: app/FormPlaceEditorDelegate.qml:68
 #, kde-format
 msgid "Street"
 msgstr "Kalea"
 
-#: app/FormPlaceEditorDelegate.qml:79
+#: app/FormPlaceEditorDelegate.qml:80
 #, kde-format
 msgid "Invalid postal code format for this country."
 msgstr "Herrialde honetarako posta-kode baliogabea."
 
-#: app/FormPlaceEditorDelegate.qml:85
+#: app/FormPlaceEditorDelegate.qml:86
 #, kde-format
 msgid "City"
 msgstr "Hiria"
 
-#: app/FormPlaceEditorDelegate.qml:103
+#: app/FormPlaceEditorDelegate.qml:104
 #, kde-format
 msgid "Region"
 msgstr "Eskualdea"
 
-#: app/FormPlaceEditorDelegate.qml:129 app/HealthCertificateTest.qml:115
+#: app/FormPlaceEditorDelegate.qml:130 app/HealthCertificateTest.qml:115
 #: app/HealthCertificateVaccination.qml:123
 #, kde-format
 msgid "Country"
 msgstr "Herrialdea"
 
-#: app/FormPlaceEditorDelegate.qml:200
+#: app/FormPlaceEditorDelegate.qml:201
 #, kde-format
 msgid "Coordinate"
 msgstr "Koordenatua"
 
-#: app/FormPlaceEditorDelegate.qml:201
+#: app/FormPlaceEditorDelegate.qml:202
 #, kde-format
 msgid "%1°, %2°"
 msgstr "%1°, %2°"
 
-#: app/FormPlaceEditorDelegate.qml:201
+#: app/FormPlaceEditorDelegate.qml:202
 #, kde-format
 msgid "Pick…"
 msgstr "Aukeratu..."
 
-#: app/FormPlaceEditorDelegate.qml:219
+#: app/FormPlaceEditorDelegate.qml:220
 #, kde-format
 msgid "Address to coordinate"
 msgstr "Helbidetik koordenatura"
 
-#: app/FormPlaceEditorDelegate.qml:235
+#: app/FormPlaceEditorDelegate.qml:236
 #, kde-format
 msgid "Coordinate to address"
 msgstr "Koordenatutik helbidera"

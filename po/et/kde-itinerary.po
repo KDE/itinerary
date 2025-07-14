@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-13 00:43+0000\n"
+"POT-Creation-Date: 2025-07-14 00:43+0000\n"
 "PO-Revision-Date: 2020-05-04 10:51+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -1275,7 +1275,7 @@ msgid "Rename"
 msgstr "Muuda nime"
 
 #: app/FavoriteLocationPage.qml:151 app/FormPlaceEditorDelegate.qml:56
-#: app/LocationPicker.qml:56
+#: app/LocationPicker.qml:78
 #, kde-format
 msgid "Pick Location"
 msgstr "Asukoha valimine"
@@ -1569,58 +1569,58 @@ msgctxt "@action:button"
 msgid "Share via Matrix"
 msgstr ""
 
-#: app/FormPlaceEditorDelegate.qml:67
+#: app/FormPlaceEditorDelegate.qml:68
 #, fuzzy, kde-format
 #| msgid "Street:"
 msgid "Street"
 msgstr "Tänav:"
 
-#: app/FormPlaceEditorDelegate.qml:79
+#: app/FormPlaceEditorDelegate.qml:80
 #, kde-format
 msgid "Invalid postal code format for this country."
 msgstr ""
 
-#: app/FormPlaceEditorDelegate.qml:85
+#: app/FormPlaceEditorDelegate.qml:86
 #, fuzzy, kde-format
 #| msgid "City:"
 msgid "City"
 msgstr "Linn:"
 
-#: app/FormPlaceEditorDelegate.qml:103
+#: app/FormPlaceEditorDelegate.qml:104
 #, fuzzy, kde-format
 #| msgid "Region:"
 msgid "Region"
 msgstr "Maakond/osariik:"
 
-#: app/FormPlaceEditorDelegate.qml:129 app/HealthCertificateTest.qml:115
+#: app/FormPlaceEditorDelegate.qml:130 app/HealthCertificateTest.qml:115
 #: app/HealthCertificateVaccination.qml:123
 #, fuzzy, kde-format
 #| msgid "Country:"
 msgid "Country"
 msgstr "Riik:"
 
-#: app/FormPlaceEditorDelegate.qml:200
+#: app/FormPlaceEditorDelegate.qml:201
 #, fuzzy, kde-format
 #| msgid "Boarding time:"
 msgid "Coordinate"
 msgstr "Pardalemineku aeg:"
 
-#: app/FormPlaceEditorDelegate.qml:201
+#: app/FormPlaceEditorDelegate.qml:202
 #, kde-format
 msgid "%1°, %2°"
 msgstr "%1°, %2°"
 
-#: app/FormPlaceEditorDelegate.qml:201
+#: app/FormPlaceEditorDelegate.qml:202
 #, kde-format
 msgid "Pick…"
 msgstr ""
 
-#: app/FormPlaceEditorDelegate.qml:219
+#: app/FormPlaceEditorDelegate.qml:220
 #, kde-format
 msgid "Address to coordinate"
 msgstr ""
 
-#: app/FormPlaceEditorDelegate.qml:235
+#: app/FormPlaceEditorDelegate.qml:236
 #, fuzzy, kde-format
 #| msgid "Boarding time:"
 msgid "Coordinate to address"
