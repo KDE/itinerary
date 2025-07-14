@@ -235,7 +235,7 @@ msgstr ""
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Aircraft"
-msgstr ""
+msgstr "飞机"
 
 #: app/AlternativeJourneyPage.qml:116
 #, kde-format
@@ -257,7 +257,7 @@ msgstr "替换"
 #: app/AlternativeJourneyPage.qml:139
 #, kde-format
 msgid "Destination:"
-msgstr ""
+msgstr "目的地："
 
 #: app/applicationcontroller.cpp:188
 #, kde-format
@@ -281,7 +281,7 @@ msgstr[0] ""
 #, kde-format
 msgid "One health certificate imported."
 msgid_plural "%1 health certificates imported."
-msgstr[0] "已导入%1个健康证书。"
+msgstr[0] "已导入 %1 个健康证书。"
 
 #: app/applicationcontroller.cpp:337 app/applicationcontroller.cpp:378
 #: app/applicationcontroller.cpp:396 app/applicationcontroller.cpp:443
@@ -312,24 +312,24 @@ msgstr "预订已发送。"
 #: app/applicationcontroller.cpp:587
 #, kde-format
 msgid "Pass sent."
-msgstr ""
+msgstr "通行信息已发送。"
 
 #: app/applicationcontroller.cpp:625
 #, kde-format
 msgid "Saving failed: %1"
-msgstr ""
+msgstr "保存失败：%1"
 
 #: app/applicationcontroller.cpp:630
 #, kde-format
 msgid "File saved successfully."
-msgstr ""
+msgstr "文件已成功保存。"
 
 #: app/applicationcontroller.cpp:637
 #, kde-format
 msgid ""
 "File was imported with a newer version of Itinerary. Some information might "
 "not be imported correctly."
-msgstr ""
+msgstr "该文件是使用较新版本的 Itinerary 导入的。部分信息可能无法正确导入。"
 
 #: app/applicationcontroller.cpp:663
 #, kde-format
@@ -382,25 +382,25 @@ msgstr ""
 #, kde-format
 msgctxt "boat departure"
 msgid "Change Departure Terminal"
-msgstr ""
+msgstr "更改出发航站楼"
 
 #: app/BoatEditor.qml:75
 #, kde-format
 msgctxt "boat departure"
 msgid "Change departure terminal"
-msgstr ""
+msgstr "更改出发航站楼"
 
 #: app/BoatEditor.qml:85 app/BoatEditor.qml:227
 #, kde-format
 msgctxt "boat arrival"
 msgid "Change Arrival Terminal"
-msgstr ""
+msgstr "更改到达航站楼"
 
 #: app/BoatEditor.qml:91
 #, kde-format
 msgctxt "boat arrival"
 msgid "Change arrival terminal"
-msgstr ""
+msgstr "更改到达航站楼"
 
 #: app/BoatEditor.qml:112 app/BusEditor.qml:127 app/EventEditor.qml:54
 #: app/FlightEditor.qml:72 app/HotelEditor.qml:51 app/ImportPage.qml:21
@@ -539,12 +539,12 @@ msgstr "票据号码已复制到剪贴板"
 #: app/BookingCard.qml:86
 #, kde-format
 msgid "Ticket valid from"
-msgstr ""
+msgstr "票有效期自"
 
 #: app/BookingCard.qml:94
 #, kde-format
 msgid "Ticket valid until"
-msgstr ""
+msgstr "票有效期至"
 
 #: app/BookingEditorCard.qml:37
 #, kde-format
@@ -609,7 +609,7 @@ msgstr ""
 #, kde-format
 msgctxt "bus departure"
 msgid "Change Departure Stop"
-msgstr ""
+msgstr "更改出发站点"
 
 #: app/BusEditor.qml:86
 #, kde-format
@@ -621,7 +621,7 @@ msgstr ""
 #, kde-format
 msgctxt "bus arrival"
 msgid "Change Arrival Stop"
-msgstr ""
+msgstr "更改到达站点"
 
 #: app/BusEditor.qml:102
 #, kde-format
@@ -1501,12 +1501,12 @@ msgstr ""
 #: app/GenericPkPassPage.qml:21
 #, kde-format
 msgid "Save Pass"
-msgstr ""
+msgstr "保存通行证"
 
 #: app/GenericPkPassPage.qml:22
 #, kde-format
 msgid "Apple Wallet pass (*.pkpass)"
-msgstr ""
+msgstr "Apple 钱包通行证文件 (*.pkpass)"
 
 #: app/GenericPkPassPage.qml:37 app/ProgramMembershipPage.qml:38
 #, kde-format
@@ -1527,7 +1527,7 @@ msgstr "检查更新"
 #: app/GenericPkPassPage.qml:63
 #, kde-format
 msgid "Save As…"
-msgstr ""
+msgstr "另存为..."
 
 #: app/gpxexport.cpp:33 app/main.cpp:321 app/Main.qml:20 app/Main.qml:68
 #, kde-format
@@ -1698,7 +1698,7 @@ msgstr ""
 #: app/HealthCertificateVaccination.qml:47
 #, kde-format
 msgid "Date of birth"
-msgstr ""
+msgstr "出生日期"
 
 #: app/HealthCertificateRecovery.qml:50
 #, kde-format
@@ -1709,7 +1709,7 @@ msgstr "痊愈状态"
 #: app/HealthCertificateVaccination.qml:77
 #, kde-format
 msgid "Disease"
-msgstr ""
+msgstr "疾病"
 
 #: app/HealthCertificateRecovery.qml:69 app/ProgramMembershipEditor.qml:97
 #: app/ProgramMembershipPage.qml:126 app/TicketPage.qml:103
@@ -1733,31 +1733,31 @@ msgstr "证书信息"
 #: app/HealthCertificateVaccination.qml:134
 #, kde-format
 msgid "Issuer"
-msgstr ""
+msgstr "颁发者"
 
 #: app/HealthCertificateRecovery.qml:95 app/HealthCertificateTest.qml:135
 #: app/HealthCertificateVaccination.qml:142
 #, kde-format
 msgid "Identifier"
-msgstr ""
+msgstr "身份标识"
 
 #: app/HealthCertificateRecovery.qml:104 app/HealthCertificateTest.qml:143
 #: app/HealthCertificateVaccination.qml:150
 #, kde-format
 msgid "Issued"
-msgstr ""
+msgstr "已发放"
 
 #: app/HealthCertificateRecovery.qml:111 app/HealthCertificateTest.qml:151
 #: app/HealthCertificateVaccination.qml:158
 #, kde-format
 msgid "Expires"
-msgstr ""
+msgstr "过期"
 
 #: app/HealthCertificateRecovery.qml:131 app/HealthCertificateTest.qml:169
 #: app/HealthCertificateVaccination.qml:176
 #, kde-format
 msgid "Signature"
-msgstr ""
+msgstr "签名"
 
 #: app/HealthCertificateRecovery.qml:135 app/HealthCertificateTest.qml:173
 #: app/HealthCertificateVaccination.qml:180
@@ -1771,14 +1771,14 @@ msgstr ""
 #, kde-format
 msgctxt "Signature state"
 msgid "Unknown"
-msgstr ""
+msgstr "未知"
 
 #: app/HealthCertificateRecovery.qml:140 app/HealthCertificateTest.qml:178
 #: app/HealthCertificateVaccination.qml:185
 #, kde-format
 msgctxt "Signature state"
 msgid "Invalid"
-msgstr ""
+msgstr "无效"
 
 #: app/HealthCertificateTest.qml:51 app/HealthCertificateTest.qml:79
 #, kde-format
@@ -1788,17 +1788,17 @@ msgstr "检测结果"
 #: app/HealthCertificateTest.qml:56 app/HealthCertificateVaccination.qml:60
 #, kde-format
 msgid "Date"
-msgstr ""
+msgstr "日期"
 
 #: app/HealthCertificateTest.qml:88
 #, kde-format
 msgid "Result"
-msgstr ""
+msgstr "结果"
 
 #: app/HealthCertificateTest.qml:106
 #, kde-format
 msgid "Test Center"
-msgstr ""
+msgstr "检测机构"
 
 #: app/HealthCertificateVaccination.qml:64
 #, kde-format
@@ -1809,17 +1809,17 @@ msgstr[0] ""
 #: app/HealthCertificateVaccination.qml:92
 #, kde-format
 msgid "Vaccine"
-msgstr ""
+msgstr "疫苗"
 
 #: app/HealthCertificateVaccination.qml:101
 #, kde-format
 msgid "Manufacturer"
-msgstr ""
+msgstr "厂商"
 
 #: app/HealthCertificateVaccination.qml:109
 #, kde-format
 msgid "Dose"
-msgstr ""
+msgstr "接种次数"
 
 #: app/HealthCertificateVaccination.qml:110
 #, kde-format
@@ -2169,7 +2169,7 @@ msgstr ""
 #, kde-format
 msgctxt "departure and arrival stops"
 msgid "Swap departure and arrival"
-msgstr ""
+msgstr "交换离开和抵达"
 
 #: app/JourneyRequestPage.qml:155
 #, kde-format
@@ -2365,37 +2365,37 @@ msgstr ""
 #, kde-format
 msgctxt "map style"
 msgid "Normal map"
-msgstr ""
+msgstr "标准地图"
 
 #: app/LiveStatusPage.qml:74
 #, kde-format
 msgctxt "map style"
 msgid "Railway infrastructure map"
-msgstr ""
+msgstr "铁路线路地图"
 
 #: app/LiveStatusPage.qml:83
 #, kde-format
 msgctxt "map style"
 msgid "Railway signalling map"
-msgstr ""
+msgstr "铁路信号系统地图"
 
 #: app/LiveStatusPage.qml:92
 #, kde-format
 msgctxt "map style"
 msgid "Railway speed map"
-msgstr ""
+msgstr "铁路运行速度地图"
 
 #: app/LiveStatusPage.qml:101
 #, kde-format
 msgctxt "map style"
 msgid "Railway electrification map"
-msgstr ""
+msgstr "铁路供电系统地图"
 
 #: app/LiveStatusPage.qml:110
 #, kde-format
 msgctxt "map style"
 msgid "Railway gauge map"
-msgstr ""
+msgstr "铁路轨距分布地图"
 
 #: app/LiveStatusPage.qml:151
 #, kde-format
@@ -2632,7 +2632,7 @@ msgstr "占有率："
 #: app/MapStopoverInfoSheetDrawer.qml:103
 #, kde-format
 msgid "Information:"
-msgstr ""
+msgstr "信息："
 
 #: app/MapStopoverInfoSheetDrawer.qml:119
 #, kde-format
@@ -3287,7 +3287,7 @@ msgstr ""
 #: app/ProgramMembershipPage.qml:56
 #, kde-format
 msgid "Export Program Membership"
-msgstr ""
+msgstr "导出程序成员资格"
 
 #: app/ProgramMembershipPage.qml:155
 #, kde-format
@@ -3756,7 +3756,7 @@ msgstr "合计信息"
 #, kde-format
 msgctxt "@info:placeholder no visited country"
 msgid "None"
-msgstr ""
+msgstr "无"
 
 #: app/StatisticsPage.qml:121 app/TrainEditor.qml:130
 #, kde-format
@@ -3782,34 +3782,34 @@ msgstr "汽车"
 #, kde-format
 msgctxt "train/bus arrival"
 msgid "Arrival Information"
-msgstr ""
+msgstr "到达信息"
 
 #: app/StopoverDetailsPage.qml:16
 #, kde-format
 msgctxt "train/bus departure"
 msgid "Departure Information"
-msgstr ""
+msgstr "出发信息"
 
 #: app/StopoverDetailsPage.qml:92 app/StopoverFormDelegate.qml:93
 #, kde-format
 msgctxt "departure stop"
 msgid "From %1"
-msgstr ""
+msgstr "来自 %1"
 
 #: app/StopoverDetailsPage.qml:123
 #, kde-format
 msgid "Information"
-msgstr ""
+msgstr "信息"
 
 #: app/StopoverDetailsPage.qml:131
 #, kde-format
 msgid "Trip Map"
-msgstr ""
+msgstr "行程地图"
 
 #: app/StopoverDetailsPage.qml:139
 #, kde-format
 msgid "Stop Map"
-msgstr ""
+msgstr "停靠点分布图"
 
 #: app/TicketEditor.qml:18
 #, kde-format
@@ -3844,7 +3844,7 @@ msgstr ""
 #: app/TicketPage.qml:60
 #, kde-format
 msgid "Export Ticket"
-msgstr ""
+msgstr "导出门票凭证"
 
 #: app/TicketPage.qml:121
 #, kde-format
@@ -3969,7 +3969,7 @@ msgstr "编辑火车预订"
 #, kde-format
 msgctxt "train departure"
 msgid "Change Departure Station"
-msgstr ""
+msgstr "更改出发车站"
 
 #: app/TrainEditor.qml:94
 #, kde-format
@@ -3981,7 +3981,7 @@ msgstr ""
 #, kde-format
 msgctxt "train arrival"
 msgid "Change Arrival Station"
-msgstr ""
+msgstr "更改到达车站"
 
 #: app/TrainEditor.qml:110
 #, kde-format
