@@ -9,15 +9,15 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-14 00:43+0000\n"
-"PO-Revision-Date: 2025-07-08 13:26+0300\n"
-"Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
-"Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
+"PO-Revision-Date: 2025-07-14 13:09+0300\n"
+"Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.04.2\n"
+"X-Generator: Lokalize 25.07.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -195,7 +195,7 @@ msgstr "Rezervasyonu Görüntüle"
 #: app/AlternativeJourneyPage.qml:21
 #, kde-format
 msgid "Alternative Connections"
-msgstr "Alternatif Bağlantılar"
+msgstr "Alternatif Aktarmalar"
 
 #: app/AlternativeJourneyPage.qml:64 app/DepartureQueryPage.qml:28
 #: app/JourneyRequestPage.qml:244 app/TransferPage.qml:108
@@ -604,15 +604,13 @@ msgid "%1 to %2"
 msgstr "%1 → %2"
 
 #: app/BusEditor.qml:73
-#, fuzzy, kde-format
-#| msgid "Edit Bus Reservation"
+#, kde-format
 msgctxt "@title"
 msgid "New Bus Reservation"
-msgstr "Otobüs Rezervasyonunu Düzenle"
+msgstr "Yeni Otobüs Rezervasyonu"
 
 #: app/BusEditor.qml:73
-#, fuzzy, kde-format
-#| msgid "Edit Bus Reservation"
+#, kde-format
 msgctxt "@title"
 msgid "Edit Bus Reservation"
 msgstr "Otobüs Rezervasyonunu Düzenle"
@@ -648,18 +646,16 @@ msgid "Bus"
 msgstr "Otobüs"
 
 #: app/BusEditor.qml:140
-#, fuzzy, kde-format
-#| msgid "Bus"
+#, kde-format
 msgctxt "@title:group"
 msgid "Bus"
 msgstr "Otobüs"
 
 #: app/BusEditor.qml:149
-#, fuzzy, kde-format
-#| msgid "Number"
+#, kde-format
 msgctxt "@label:textfield"
 msgid "Bus number"
-msgstr "Numara"
+msgstr "Otobüs Numarası"
 
 #: app/BusEditor.qml:155
 #, kde-format
@@ -668,39 +664,33 @@ msgid "Departure"
 msgstr "Kalkış"
 
 #: app/BusEditor.qml:164
-#, fuzzy, kde-format
-#| msgid "Departure Time"
+#, kde-format
 msgctxt "Bus departure"
 msgid "Departure Time"
 msgstr "Kalkış Zamanı"
 
 #: app/BusEditor.qml:176
-#, fuzzy, kde-format
-#| msgctxt "bus stop"
-#| msgid "Stop"
+#, kde-format
 msgctxt "Bus stop"
 msgid "Stop"
-msgstr "Durdur"
+msgstr "Durak"
 
 #: app/BusEditor.qml:179
-#, fuzzy, kde-format
-#| msgid "Departure terminal must not be empty."
+#, kde-format
 msgid "Departure bus stop must not be empty."
-msgstr "Kalkış terminali boş olmamalıdır."
+msgstr "Otobüs kalkış durağı boş olmamalıdır."
 
 #: app/BusEditor.qml:187 app/BusEditor.qml:274
-#, fuzzy, kde-format
-#| msgid "Platform"
+#, kde-format
 msgctxt "Bus stop platform"
 msgid "Platform"
 msgstr "Peron"
 
 #: app/BusEditor.qml:208
-#, fuzzy, kde-format
-#| msgid "Stop Map"
+#, kde-format
 msgctxt "bus stop"
 msgid "Stop Name"
-msgstr "Durak Haritası"
+msgstr "Durak Adı"
 
 #: app/BusEditor.qml:216 app/BusEditor.qml:308
 #, kde-format
@@ -715,24 +705,21 @@ msgid "Arrival"
 msgstr "Varış"
 
 #: app/BusEditor.qml:242 app/TrainEditor.qml:251
-#, fuzzy, kde-format
-#| msgid "Arrival Time"
+#, kde-format
 msgctxt "Train arrival"
 msgid "Arrival Time"
 msgstr "Varış Zamanı"
 
 #: app/BusEditor.qml:263
-#, fuzzy, kde-format
-#| msgid "Stop Map"
+#, kde-format
 msgctxt "Bus stop"
 msgid "Stop Name"
-msgstr "Durak Haritası"
+msgstr "Durak Adı"
 
 #: app/BusEditor.qml:266
-#, fuzzy, kde-format
-#| msgid "Arrival terminal must not be empty."
+#, kde-format
 msgid "Arrival stop must not be empty."
-msgstr "Varış terminali boş olmamalıdır."
+msgstr "Varış durağı boş olmamalıdır."
 
 #: app/BusEditor.qml:300
 #, kde-format
@@ -891,7 +878,7 @@ msgstr "Erken kalkışları yükle"
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
-msgstr "Sonraki bağlantıları yükle"
+msgstr "Sonraki Aktarmaları Yükle"
 
 #: app/DepartureQueryPage.qml:153 app/JourneyQueryPage.qml:116
 #: app/TransferPage.qml:328
@@ -1402,8 +1389,7 @@ msgid "Do you really want to share %1 to the Matrix channel %2?"
 msgstr "%1 ögesini %2 Matrix kanalına paylaşmayı gerçekten istiyor musunuz?"
 
 #: app/FormPlaceDelegate.qml:105
-#, fuzzy, kde-format
-#| msgid "Share"
+#, kde-format
 msgctxt "@action:button"
 msgid "Share"
 msgstr "Paylaş"
@@ -1946,12 +1932,10 @@ msgid "Import"
 msgstr "İçe Aktar"
 
 #: app/ImportAction.qml:29
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Import From File"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "From file"
-msgstr "Dosyadan İçe Aktar"
+msgstr "Dosyadan"
 
 #: app/ImportAction.qml:37
 #, kde-format
@@ -1979,38 +1963,34 @@ msgid "KDE Itinerary files (*.itinerary)"
 msgstr "KDE Yol Kılavuzu Dosyaları (*.itinerary)"
 
 #: app/ImportAction.qml:51
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Copy to Clipboard"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "From clipboard"
-msgstr "Panoya Kopyala"
+msgstr "Panodan"
 
 #: app/ImportAction.qml:61
-#, fuzzy, kde-format
-#| msgid "Barcode"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "From barcode"
-msgstr "Barkod"
+msgstr "Barkoddan"
 
 #: app/ImportAction.qml:84
-#, fuzzy, kde-format
-#| msgid "Add from Calendar…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "From calendar"
-msgstr "Takvimden Ekle…"
+msgstr "Takvimden"
 
 #: app/ImportAction.qml:108
 #, kde-format
 msgctxt "@action:inmenu Name of the train company in Germany"
 msgid "From Deutsche Bahn reservation number"
-msgstr ""
+msgstr "Deutsche Bahn Rezervasyon Numarasından"
 
 #: app/ImportAction.qml:119
 #, kde-format
 msgctxt "Name of the train company in France"
 msgid "From SNCF reservation number"
-msgstr ""
+msgstr "SNCF Rezervasyon Numarasından"
 
 #: app/importcontroller.cpp:153 app/importcontroller.cpp:475
 #, kde-format
@@ -2159,7 +2139,7 @@ msgstr "Seç"
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier connections"
-msgstr "Önceki bağlantıları yükle"
+msgstr "Önceki Aktarmaları Yükle"
 
 #: app/JourneyQueryPage.qml:129
 #, kde-format
@@ -3053,10 +3033,9 @@ msgid "Import"
 msgstr "İçe Aktar"
 
 #: app/MyDataPage.qml:202
-#, fuzzy, kde-format
-#| msgid "Backup"
+#, kde-format
 msgid "Import Backup"
-msgstr "Yedek"
+msgstr "Yedek İçe Aktar"
 
 #: app/MyDataPage.qml:216
 #, kde-format
@@ -3234,8 +3213,7 @@ msgid "Add Program Membership"
 msgstr "Program Üyeliği Ekle"
 
 #: app/PassPage.qml:43
-#, fuzzy, kde-format
-#| msgid "Import"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Import"
 msgstr "İçe Aktar"
@@ -4029,15 +4007,13 @@ msgid "Class: <b>%1</b>"
 msgstr "Sınıf: <b>%1</b>"
 
 #: app/TrainEditor.qml:79
-#, fuzzy, kde-format
-#| msgid "Edit Train Reservation"
+#, kde-format
 msgctxt "@title"
 msgid "New Train Reservation"
-msgstr "Tren Rezervasyonunu Düzenle"
+msgstr "Yeni Tren Rezervasyonu"
 
 #: app/TrainEditor.qml:79
-#, fuzzy, kde-format
-#| msgid "Edit Train Reservation"
+#, kde-format
 msgctxt "@title"
 msgid "Edit Train Reservation"
 msgstr "Tren Rezervasyonunu Düzenle"
@@ -4067,18 +4043,16 @@ msgid "Change arrival station"
 msgstr "Varış istasyonunu değiştir"
 
 #: app/TrainEditor.qml:149
-#, fuzzy, kde-format
-#| msgid "Train"
+#, kde-format
 msgctxt "@title:group"
 msgid "Train"
 msgstr "Tren"
 
 #: app/TrainEditor.qml:158
-#, fuzzy, kde-format
-#| msgid "Ticket number:"
+#, kde-format
 msgctxt "@label:textfield"
 msgid "Train number"
-msgstr "Bilet numarası:"
+msgstr "Tren numarası"
 
 #: app/TrainEditor.qml:164
 #, kde-format
@@ -4087,29 +4061,24 @@ msgid "Departure"
 msgstr "Kalkış"
 
 #: app/TrainEditor.qml:173
-#, fuzzy, kde-format
-#| msgid "Departure Time"
+#, kde-format
 msgctxt "Train departure"
 msgid "Departure Time"
 msgstr "Kalkış Zamanı"
 
 #: app/TrainEditor.qml:185
-#, fuzzy, kde-format
-#| msgctxt "bus station"
-#| msgid "Station"
+#, kde-format
 msgctxt "Train station platform"
 msgid "Station Name"
-msgstr "İstasyon"
+msgstr "İstasyon Adı"
 
 #: app/TrainEditor.qml:188
-#, fuzzy, kde-format
-#| msgid "Departure terminal must not be empty."
+#, kde-format
 msgid "Departure station must not be empty."
-msgstr "Kalkış terminali boş olmamalıdır."
+msgstr "Kalkış istasyonu boş olmamalıdır."
 
 #: app/TrainEditor.qml:196 app/TrainEditor.qml:283
-#, fuzzy, kde-format
-#| msgid "Platform"
+#, kde-format
 msgctxt "Train station platform"
 msgid "Platform"
 msgstr "Peron"
@@ -4134,18 +4103,15 @@ msgid "Arrival"
 msgstr "Varış"
 
 #: app/TrainEditor.qml:272
-#, fuzzy, kde-format
-#| msgctxt "bus station"
-#| msgid "Station"
+#, kde-format
 msgctxt "Train station"
 msgid "Station Name"
-msgstr "İstasyon"
+msgstr "İstasyon Adı"
 
 #: app/TrainEditor.qml:275
-#, fuzzy, kde-format
-#| msgid "Arrival terminal must not be empty."
+#, kde-format
 msgid "Arrival station must not be empty."
-msgstr "Varış terminali boş olmamalıdır."
+msgstr "Varış durağı boş olmamalıdır."
 
 #: app/TrainEditor.qml:337 app/TrainEditor.qml:349 app/TrainPage.qml:292
 #, kde-format
@@ -4355,68 +4321,57 @@ msgid "Merge"
 msgstr "Birleştir"
 
 #: app/TripGroupPage.qml:156
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Load earlier connections"
+#, kde-format
 msgctxt "@action"
 msgid "Search connection"
-msgstr "Önceki bağlantıları yükle"
+msgstr "Aktarma Ara"
 
 #: app/TripGroupPage.qml:163
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Load later connections"
+#, kde-format
 msgctxt "@action"
 msgid "Add connection"
-msgstr "Sonraki bağlantıları yükle"
+msgstr "Aktarma Ekle"
 
 #: app/TripGroupPage.qml:169
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add trip"
+#, kde-format
 msgctxt "@action"
 msgid "Add train"
-msgstr "Gezi Ekle…"
+msgstr "Tren Ekle"
 
 #: app/TripGroupPage.qml:179
 #, kde-format
 msgctxt "@action"
 msgid "Add bus"
-msgstr ""
+msgstr "Otobüs Ekle"
 
 #: app/TripGroupPage.qml:189
-#, fuzzy, kde-format
-#| msgid "Add flight…"
+#, kde-format
 msgctxt "@action"
 msgid "Add flight"
-msgstr "Uçuş Ekle…"
+msgstr "Uçuş Ekle"
 
 #: app/TripGroupPage.qml:199
-#, fuzzy, kde-format
-#| msgid "Add ferry trip…"
+#, kde-format
 msgctxt "@action"
 msgid "Add ferry trip"
-msgstr "Feribot Gezisi Ekle…"
+msgstr "Feribot Gezisi Ekle"
 
 #: app/TripGroupPage.qml:209
-#, fuzzy, kde-format
-#| msgid "Add accommodation…"
+#, kde-format
 msgctxt "@action"
 msgid "Add accommodation"
-msgstr "Konaklama Ekle…"
+msgstr "Konaklama Ekle"
 
 #: app/TripGroupPage.qml:224
-#, fuzzy, kde-format
-#| msgid "Add event…"
+#, kde-format
 msgctxt "@action"
 msgid "Add event"
-msgstr "Etkinlik Ekle…"
+msgstr "Etkinlik Ekle"
 
 #: app/TripGroupPage.qml:240
-#, fuzzy, kde-format
-#| msgid "Add restaurant…"
+#, kde-format
 msgid "Add restaurant"
-msgstr "Restoran Ekle…"
+msgstr "Restoran Ekle"
 
 #: app/TripGroupPage.qml:257
 #, kde-format
