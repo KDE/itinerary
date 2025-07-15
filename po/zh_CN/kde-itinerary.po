@@ -597,7 +597,7 @@ msgstr "%1 到 %2"
 #, kde-format
 msgctxt "@title"
 msgid "New Bus Reservation"
-msgstr ""
+msgstr "新建公交车预订"
 
 #: app/BusEditor.qml:73
 #, kde-format
@@ -645,7 +645,7 @@ msgstr "公共汽车"
 #, kde-format
 msgctxt "@label:textfield"
 msgid "Bus number"
-msgstr ""
+msgstr "公交车编号"
 
 #: app/BusEditor.qml:155
 #, kde-format
@@ -668,7 +668,7 @@ msgstr ""
 #: app/BusEditor.qml:179
 #, kde-format
 msgid "Departure bus stop must not be empty."
-msgstr ""
+msgstr "出发车站不能为空。"
 
 #: app/BusEditor.qml:187 app/BusEditor.qml:274
 #, kde-format
@@ -680,7 +680,7 @@ msgstr ""
 #, kde-format
 msgctxt "bus stop"
 msgid "Stop Name"
-msgstr ""
+msgstr "车站名称"
 
 #: app/BusEditor.qml:216 app/BusEditor.qml:308
 #, kde-format
@@ -704,7 +704,7 @@ msgstr ""
 #, kde-format
 msgctxt "Bus stop"
 msgid "Stop Name"
-msgstr ""
+msgstr "车站名称"
 
 #: app/BusEditor.qml:266
 #, kde-format
@@ -3647,7 +3647,7 @@ msgstr ""
 #: app/SettingsPage.qml:323
 #, kde-format
 msgid "Traewelling Integration"
-msgstr "Traewelling  集成"
+msgstr "Traewelling 集成"
 
 #: app/SettingsPage.qml:328
 #, kde-format
@@ -4429,7 +4429,7 @@ msgstr "添加行程"
 #: app/TripGroupSelectorCard.qml:63
 #, kde-format
 msgid "New Trip"
-msgstr "新 Trip"
+msgstr "新行程"
 
 #: app/TripGroupSelectorCard.qml:66
 #, kde-format
