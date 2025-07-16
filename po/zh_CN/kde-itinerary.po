@@ -709,7 +709,7 @@ msgstr "车站名称"
 #: app/BusEditor.qml:266
 #, kde-format
 msgid "Arrival stop must not be empty."
-msgstr ""
+msgstr "到达站不能为空。"
 
 #: app/BusEditor.qml:300
 #, kde-format
@@ -881,14 +881,14 @@ msgstr ""
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Loading"
-msgstr ""
+msgstr "正在加载"
 
 #: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:127
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:status"
 msgid "Error"
-msgstr ""
+msgstr "错误"
 
 #: app/DocumentsCard.qml:35
 #, kde-format
@@ -1919,7 +1919,7 @@ msgstr "导入"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "From file"
-msgstr ""
+msgstr "从文件导入"
 
 #: app/ImportAction.qml:37
 #, kde-format
@@ -1950,31 +1950,31 @@ msgstr "KDE Itinerary 文件 (*.itinerary)"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "From clipboard"
-msgstr ""
+msgstr "从剪贴板导入"
 
 #: app/ImportAction.qml:61
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "From barcode"
-msgstr ""
+msgstr "从条形码导入"
 
 #: app/ImportAction.qml:84
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "From calendar"
-msgstr ""
+msgstr "从日历导入"
 
 #: app/ImportAction.qml:108
 #, kde-format
 msgctxt "@action:inmenu Name of the train company in Germany"
 msgid "From Deutsche Bahn reservation number"
-msgstr ""
+msgstr "从德国铁路预订号导入"
 
 #: app/ImportAction.qml:119
 #, kde-format
 msgctxt "Name of the train company in France"
 msgid "From SNCF reservation number"
-msgstr ""
+msgstr "从法国铁路预订号导入"
 
 #: app/importcontroller.cpp:153 app/importcontroller.cpp:475
 #, kde-format
@@ -2129,7 +2129,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No journeys found"
-msgstr ""
+msgstr "未找到旅程"
 
 #: app/JourneyQueryPage.qml:163
 #, kde-format
@@ -2994,7 +2994,7 @@ msgstr "导入"
 #: app/MyDataPage.qml:202
 #, kde-format
 msgid "Import Backup"
-msgstr ""
+msgstr "导入备份"
 
 #: app/MyDataPage.qml:216
 #, kde-format
@@ -3957,7 +3957,7 @@ msgstr "等级：<b>%1</b>"
 #, kde-format
 msgctxt "@title"
 msgid "New Train Reservation"
-msgstr ""
+msgstr "新建火车预订"
 
 #: app/TrainEditor.qml:79
 #, kde-format
@@ -3999,7 +3999,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:textfield"
 msgid "Train number"
-msgstr ""
+msgstr "车次"
 
 #: app/TrainEditor.qml:164
 #, kde-format
@@ -4017,12 +4017,12 @@ msgstr ""
 #, kde-format
 msgctxt "Train station platform"
 msgid "Station Name"
-msgstr ""
+msgstr "车站名称"
 
 #: app/TrainEditor.qml:188
 #, kde-format
 msgid "Departure station must not be empty."
-msgstr ""
+msgstr "出发车站不能为空。"
 
 #: app/TrainEditor.qml:196 app/TrainEditor.qml:283
 #, kde-format
@@ -4053,12 +4053,12 @@ msgstr ""
 #, kde-format
 msgctxt "Train station"
 msgid "Station Name"
-msgstr ""
+msgstr "车站名称"
 
 #: app/TrainEditor.qml:275
 #, kde-format
 msgid "Arrival station must not be empty."
-msgstr ""
+msgstr "到达车站不能为空。"
 
 #: app/TrainEditor.qml:337 app/TrainEditor.qml:349 app/TrainPage.qml:292
 #, kde-format
