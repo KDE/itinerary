@@ -103,6 +103,7 @@ Kirigami.ScrollablePage {
         id: departureModel
         manager: LiveDataManager.publicTransportManager
         request: stopoverRequest();
+        autoUpdate: true
     }
 
     ListView {
