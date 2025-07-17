@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-14 00:43+0000\n"
+"POT-Creation-Date: 2025-07-17 00:42+0000\n"
 "PO-Revision-Date: 2025-03-02 14:47+0530\n"
 "Last-Translator: Shreekant Kalwar <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -895,26 +895,26 @@ msgstr "वेबसाइट्"
 msgid "Departures"
 msgstr "प्रस्थानम्"
 
-#: app/DepartureQueryPage.qml:118
+#: app/DepartureQueryPage.qml:119
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "पूर्वं प्रस्थानानि भारयन्तु"
 
-#: app/DepartureQueryPage.qml:144 app/JourneyQueryPage.qml:109
+#: app/DepartureQueryPage.qml:145 app/JourneyQueryPage.qml:109
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "पश्चात् संयोजनानि लोडयन्तु"
 
-#: app/DepartureQueryPage.qml:153 app/JourneyQueryPage.qml:116
+#: app/DepartureQueryPage.qml:154 app/JourneyQueryPage.qml:116
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
 msgstr "दत्तांशप्रदातारः :"
 
-#: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:125
+#: app/DepartureQueryPage.qml:162 app/JourneyQueryPage.qml:125
 #: app/TransferPage.qml:336
 #, fuzzy, kde-format
 #| msgid "Boarding"
@@ -922,7 +922,7 @@ msgctxt "@info:placeholder"
 msgid "Loading"
 msgstr "बोर्डिंग"
 
-#: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:127
+#: app/DepartureQueryPage.qml:162 app/JourneyQueryPage.qml:127
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:status"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-14 00:43+0000\n"
+"POT-Creation-Date: 2025-07-17 00:42+0000\n"
 "PO-Revision-Date: 2025-02-27 20:24-0300\n"
 "Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -952,14 +952,14 @@ msgstr "Website"
 msgid "Departures"
 msgstr "Partidas"
 
-#: app/DepartureQueryPage.qml:118
+#: app/DepartureQueryPage.qml:119
 #, fuzzy, kde-format
 #| msgid "Earlier departure on %1"
 msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "Partida antecipada em %1"
 
-#: app/DepartureQueryPage.qml:144 app/JourneyQueryPage.qml:109
+#: app/DepartureQueryPage.qml:145 app/JourneyQueryPage.qml:109
 #: app/TransferPage.qml:321
 #, fuzzy, kde-format
 #| msgid "Alternative Connections"
@@ -967,14 +967,14 @@ msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "Conexões alternativas"
 
-#: app/DepartureQueryPage.qml:153 app/JourneyQueryPage.qml:116
+#: app/DepartureQueryPage.qml:154 app/JourneyQueryPage.qml:116
 #: app/TransferPage.qml:328
 #, fuzzy, kde-format
 #| msgid "Data providers: %1"
 msgid "Data providers:"
 msgstr "Fornecedores de dados: %1"
 
-#: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:125
+#: app/DepartureQueryPage.qml:162 app/JourneyQueryPage.qml:125
 #: app/TransferPage.qml:336
 #, fuzzy, kde-format
 #| msgid "Boarding"
@@ -982,7 +982,7 @@ msgctxt "@info:placeholder"
 msgid "Loading"
 msgstr "Embarque"
 
-#: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:127
+#: app/DepartureQueryPage.qml:162 app/JourneyQueryPage.qml:127
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:status"

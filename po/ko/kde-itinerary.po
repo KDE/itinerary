@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-14 00:43+0000\n"
+"POT-Creation-Date: 2025-07-17 00:42+0000\n"
 "PO-Revision-Date: 2025-06-10 23:57+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -887,26 +887,26 @@ msgstr "웹사이트"
 msgid "Departures"
 msgstr "출발"
 
-#: app/DepartureQueryPage.qml:118
+#: app/DepartureQueryPage.qml:119
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "이전 출발 불러오기"
 
-#: app/DepartureQueryPage.qml:144 app/JourneyQueryPage.qml:109
+#: app/DepartureQueryPage.qml:145 app/JourneyQueryPage.qml:109
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "이후 연결 표시"
 
-#: app/DepartureQueryPage.qml:153 app/JourneyQueryPage.qml:116
+#: app/DepartureQueryPage.qml:154 app/JourneyQueryPage.qml:116
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
 msgstr "데이터 공급자:"
 
-#: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:125
+#: app/DepartureQueryPage.qml:162 app/JourneyQueryPage.qml:125
 #: app/TransferPage.qml:336
 #, fuzzy, kde-format
 #| msgid "Boarding"
@@ -914,7 +914,7 @@ msgctxt "@info:placeholder"
 msgid "Loading"
 msgstr "탑승:"
 
-#: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:127
+#: app/DepartureQueryPage.qml:162 app/JourneyQueryPage.qml:127
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:status"

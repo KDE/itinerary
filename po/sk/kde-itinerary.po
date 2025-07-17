@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-14 00:43+0000\n"
+"POT-Creation-Date: 2025-07-17 00:42+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -944,27 +944,27 @@ msgstr ""
 msgid "Departures"
 msgstr "Odchody"
 
-#: app/DepartureQueryPage.qml:118
+#: app/DepartureQueryPage.qml:119
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr ""
 
-#: app/DepartureQueryPage.qml:144 app/JourneyQueryPage.qml:109
+#: app/DepartureQueryPage.qml:145 app/JourneyQueryPage.qml:109
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr ""
 
-#: app/DepartureQueryPage.qml:153 app/JourneyQueryPage.qml:116
+#: app/DepartureQueryPage.qml:154 app/JourneyQueryPage.qml:116
 #: app/TransferPage.qml:328
 #, fuzzy, kde-format
 #| msgid "Data providers: %1"
 msgid "Data providers:"
 msgstr "Poskytovatelia údajov: %1"
 
-#: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:125
+#: app/DepartureQueryPage.qml:162 app/JourneyQueryPage.qml:125
 #: app/TransferPage.qml:336
 #, fuzzy, kde-format
 #| msgid "Boarding Pass"
@@ -972,7 +972,7 @@ msgctxt "@info:placeholder"
 msgid "Loading"
 msgstr "Palubný lístok"
 
-#: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:127
+#: app/DepartureQueryPage.qml:162 app/JourneyQueryPage.qml:127
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:status"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-14 00:43+0000\n"
+"POT-Creation-Date: 2025-07-17 00:42+0000\n"
 "PO-Revision-Date: 2024-11-16 12:52+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -903,26 +903,26 @@ msgstr "Website"
 msgid "Departures"
 msgstr "Departures"
 
-#: app/DepartureQueryPage.qml:118
+#: app/DepartureQueryPage.qml:119
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "Load earlier departures"
 
-#: app/DepartureQueryPage.qml:144 app/JourneyQueryPage.qml:109
+#: app/DepartureQueryPage.qml:145 app/JourneyQueryPage.qml:109
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "Load later connections"
 
-#: app/DepartureQueryPage.qml:153 app/JourneyQueryPage.qml:116
+#: app/DepartureQueryPage.qml:154 app/JourneyQueryPage.qml:116
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
 msgstr "Data providers:"
 
-#: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:125
+#: app/DepartureQueryPage.qml:162 app/JourneyQueryPage.qml:125
 #: app/TransferPage.qml:336
 #, fuzzy, kde-format
 #| msgid "Boarding"
@@ -930,7 +930,7 @@ msgctxt "@info:placeholder"
 msgid "Loading"
 msgstr "Boarding"
 
-#: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:127
+#: app/DepartureQueryPage.qml:162 app/JourneyQueryPage.qml:127
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:status"
