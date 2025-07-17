@@ -93,27 +93,28 @@ Kirigami.ScrollablePage {
             sourceModel: JourneyQueryModel {
                 id: journeyModel
             }
-            sortRole: JourneyQueryModel.ScheduledDepartureTime
+            sortRole: root.isArrival ? JourneyQueryModel.ScheduledArrivalTime : JourneyQueryModel.ScheduledDepartureTime
+            sortColumn: 0
+            sortOrder: root.isArrival ? Qt.DescendingOrder : Qt.AscendingOrder
             dynamicSortFilter: true
-            Component.onCompleted: Util.sortModel(sortedJourneyModel, 0, Qt.Ascending)
         }
 
         spacing: Kirigami.Units.largeSpacing
 
         header: VerticalNavigationButton {
-            visible: journeyModel.canQueryPrevious
+            visible: root.isArrival ? journeyModel.canQueryNext : journeyModel.canQueryPrevious
             width: journeyView.width
-            text: i18nc("@action:button", "Load earlier connections")
+            text: root.isArrival ? i18nc("@action:button", "Load later connections") : i18nc("@action:button", "Load earlier connections")
             iconName: "go-up-symbolic"
-            onClicked: journeyModel.queryPrevious()
+            onClicked: root.isArrival ? journeyModel.queryNext() : journeyModel.queryPrevious()
         }
 
         footer: VerticalNavigationButton {
-            visible: journeyModel.canQueryNext
+            visible: root.isArrival ? journeyModel.canQueryPrevious : journeyModel.canQueryNext
             width: journeyView.width
             iconName: "go-down-symbolic"
-            text: i18nc("@action:button", "Load later connections")
-            onClicked: journeyModel.queryNext()
+            text: root.isArrival ? i18nc("@action:button", "Load earlier connections") : i18nc("@action:button", "Load later connections")
+            onClicked: root.isArrival ? journeyModel.queryPrevious() : journeyModel.queryNext()
 
             FormCard.FormCard {
                 visible: journeyModel.attributions.length > 0
