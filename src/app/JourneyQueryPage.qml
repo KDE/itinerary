@@ -5,6 +5,8 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
@@ -22,6 +24,9 @@ Kirigami.ScrollablePage {
     /** The journey to query for. */
     property alias journeyRequest: journeyModel.request
     property alias publicTransportManager: journeyModel.manager
+
+    /** Showing results for an arrival query. */
+    readonly property bool isArrival: root.journeyRequest.dateTimeMode == JourneyRequest.Arrival
 
     Kirigami.Theme.inherit: false
     Kirigami.Theme.colorSet: Kirigami.Theme.Window
@@ -70,13 +75,14 @@ Kirigami.ScrollablePage {
                 icon.name: "checkmark"
                 visible: journeyView.currentIndex === top.index
                 enabled: top.journey.disruptionEffect !== Disruption.NoService
-                onClicked: root.journey = journey
+                onClicked: root.journey = top.journey
             }
         }
 
         section {
-            property: "scheduledDepartureDate"
+            property: root.isArrival ? "scheduledArrivalDate" : "scheduledDepartureDate"
             delegate: TimelineSectionDelegate {
+                required property string section
                 day: section
             }
         }
@@ -87,27 +93,28 @@ Kirigami.ScrollablePage {
             sourceModel: JourneyQueryModel {
                 id: journeyModel
             }
-            sortRole: JourneyQueryModel.ScheduledDepartureTime
+            sortRole: root.isArrival ? JourneyQueryModel.ScheduledArrivalTime : JourneyQueryModel.ScheduledDepartureTime
+            sortColumn: 0
+            sortOrder: root.isArrival ? Qt.DescendingOrder : Qt.AscendingOrder
             dynamicSortFilter: true
-            Component.onCompleted: Util.sortModel(sortedJourneyModel, 0, Qt.Ascending)
         }
 
         spacing: Kirigami.Units.largeSpacing
 
         header: VerticalNavigationButton {
-            visible: journeyModel.canQueryPrevious
+            visible: root.isArrival ? journeyModel.canQueryNext : journeyModel.canQueryPrevious
             width: journeyView.width
-            text: i18nc("@action:button", "Load earlier connections")
+            text: root.isArrival ? i18nc("@action:button", "Load later connections") : i18nc("@action:button", "Load earlier connections")
             iconName: "go-up-symbolic"
-            onClicked: journeyModel.queryPrevious()
+            onClicked: root.isArrival ? journeyModel.queryNext() : journeyModel.queryPrevious()
         }
 
         footer: VerticalNavigationButton {
-            visible: journeyModel.canQueryNext
+            visible: root.isArrival ? journeyModel.canQueryPrevious : journeyModel.canQueryNext
             width: journeyView.width
             iconName: "go-down-symbolic"
-            text: i18nc("@action:button", "Load later connections")
-            onClicked: journeyModel.queryNext()
+            text: root.isArrival ? i18nc("@action:button", "Load earlier connections") : i18nc("@action:button", "Load later connections")
+            onClicked: root.isArrival ? journeyModel.queryPrevious() : journeyModel.queryNext()
 
             FormCard.FormCard {
                 visible: journeyModel.attributions.length > 0
@@ -115,7 +122,7 @@ Kirigami.ScrollablePage {
                 FormCard.FormTextDelegate {
                     text: i18n("Data providers:")
                     description: PublicTransport.attributionSummary(journeyModel.attributions)
-                    onLinkActivated: Qt.openUrlExternally(link)
+                    onLinkActivated: (link) => { Qt.openUrlExternally(link); }
                 }
             }
         }
