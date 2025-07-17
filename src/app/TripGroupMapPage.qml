@@ -10,6 +10,7 @@ import QtLocation as QtLocation
 import QtPositioning as QtPositioning
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
+import org.kde.kirigamiaddons.components as Addons
 import org.kde.kpublictransport as KPublicTransport
 import org.kde.kpublictransport.ui as KPublicTransport
 import org.kde.itinerary
@@ -66,10 +67,10 @@ Kirigami.Page {
                 size: 15
                 visible: modelData.showStart
                 onClicked: {
-                    stopInfoDrawer.open();
                     stopInfoDrawer.isArrival = false;
                     stopInfoDrawer.isDeparture = true;
                     stopInfoDrawer.stop = modelData.journeySection.departure;
+                    stopInfoDrawer.popup();
                 }
             }
         }
@@ -90,10 +91,10 @@ Kirigami.Page {
                     borderWidth: 1
                     textColor: Qt.alpha(pathEntry.textColor, 0.5)
                     onClicked: {
-                        stopInfoDrawer.open();
                         stopInfoDrawer.isArrival = false;
                         stopInfoDrawer.isDeparture = false;
                         stopInfoDrawer.stop = modelData
+                        stopInfoDrawer.popup();
                     }
                 }
             }
@@ -133,10 +134,10 @@ Kirigami.Page {
                 size: 15
                 visible: modelData.showEnd
                 onClicked: {
-                    stopInfoDrawer.open()
                     stopInfoDrawer.isArrival = true
                     stopInfoDrawer.isDeparture = false
                     stopInfoDrawer.stop = modelData.journeySection.arrival
+                    stopInfoDrawer.popup()
                 }
             }
         }
@@ -153,8 +154,8 @@ Kirigami.Page {
                 textColor: modelData.textColor
                 iconName: modelData.iconName
                 onClicked: {
-                    locationInfoDrawer.open();
                     locationInfoDrawer.location = modelData.location;
+                    locationInfoDrawer.popup();
                 }
             }
         }
@@ -171,32 +172,36 @@ Kirigami.Page {
 
     MapStopoverInfoSheetDrawer {
         id: stopInfoDrawer
-        anchors.fill: parent
+
+        parent: root.QQC2.Overlay.overlay
     }
 
-    SheetDrawer {
+    Addons.ConvergentContextMenu {
         id: locationInfoDrawer
+
         property KPublicTransport.location location
-        anchors.fill: parent
-        headerItem: Component {
-            Kirigami.Heading {
-                text: locationInfoDrawer.location.name
-                elide: Qt.ElideRight
-            }
+
+        parent: root.QQC2.Overlay.overlay
+        Component.onCompleted: if (!Kirigami.Settings.isMobile) {
+            // TODO: make it a binding when Kirigami Addons 1.20 is out
+            displayMode = Addons.ConvergentContextMenu.Dialog;
         }
 
-        contentItem: Component {
-            ColumnLayout {
-                spacing: 0
-                width: locationInfoDrawer.width
-                FormCard.FormTextDelegate {
-                    Layout.fillWidth: true
-                    id: platformDelegate
-                    text: i18n("Address:")
-                    description: Localizer.formatAddress(locationInfoDrawer.location)
-                    visible: description
-                }
+        headerContentItem: Kirigami.Heading {
+            text: locationInfoDrawer.location.name
+            elide: Qt.ElideRight
+            wrapMode: Text.WrapWord
+        }
+
+        Kirigami.Action {
+            id: addressAction
+
+            text: Localizer.formatAddress(locationInfoDrawer.location)
+            displayComponent: FormCard.FormTextDelegate {
+                text: i18n("Address")
+                description: addressAction.text
             }
+            visible: text.length > 0
         }
     }
 }
