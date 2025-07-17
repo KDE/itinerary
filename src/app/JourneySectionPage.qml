@@ -162,7 +162,8 @@ Kirigami.Page {
 
     MapStopoverInfoSheetDrawer {
         id: sheetDrawer
-        anchors.fill: parent
+
+        parent: root.QQC2.Overlay.overlay
     }
 
     contentItem: Item {
@@ -239,7 +240,7 @@ Kirigami.Page {
                         sheetDrawer.isArrival = elem.isArrival;
                         sheetDrawer.isDeparture = elem.isDeparture;
                         sheetDrawer.stop = elem.stopover;
-                        sheetDrawer.open();
+                        sheetDrawer.popup();
                     }
 
                     MapPin {
@@ -249,10 +250,10 @@ Kirigami.Page {
                             longitude: root.journeySection.stopover(root.departureStopIndex).stopPoint.longitude
                         }
                         onClicked: {
-                            sheetDrawer.open()
                             sheetDrawer.isArrival = false
                             sheetDrawer.isDeparture = true
                             sheetDrawer.stop = root.journeySection.stopover(root.departureStopIndex)
+                            sheetDrawer.popup()
                         }
                     }
                     MapPin {
@@ -262,10 +263,10 @@ Kirigami.Page {
                             longitude: root.journeySection.stopover(root.arrivalStopIndex).stopPoint.longitude
                         }
                         onClicked: {
-                            sheetDrawer.open()
                             sheetDrawer.isArrival = true
                             sheetDrawer.isDeparture = false
                             sheetDrawer.stop = root.journeySection.stopover(root.arrivalStopIndex)
+                            sheetDrawer.popup()
                         }
                     }
                 }

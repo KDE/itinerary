@@ -253,7 +253,7 @@ Kirigami.Page {
                             mapStopDrawer.isArrival = false
                             mapStopDrawer.isDeparture = true
                             mapStopDrawer.stop = tripMapView.journeySection.stopover(tripView.stopIndex)
-                            mapStopDrawer.open();
+                            mapStopDrawer.popup();
                         }
                     }
 
@@ -261,7 +261,7 @@ Kirigami.Page {
                         mapStopDrawer.isArrival = elem.isArrival;
                         mapStopDrawer.isDeparture = elem.isDeparture;
                         mapStopDrawer.stop = elem.stopover;
-                        mapStopDrawer.open();
+                        mapStopDrawer.popup();
                     }
                 }
             }
@@ -327,6 +327,8 @@ Kirigami.Page {
 
     MapStopoverInfoSheetDrawer {
         id: mapStopDrawer
+
+        parent: root.QQC2.Overlay.overlay
     }
 
     function updateStopMap() {
