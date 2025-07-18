@@ -76,7 +76,13 @@ KPublicTransport::Location PublicTransport::locationFromPlace(const QVariant &pl
         loc.setType(KPublicTransport::Location::Address);
     }
     if (JsonLd::isA<EventReservation>(reservation)) {
-        loc.setName(reservation.value<EventReservation>().reservationFor().value<Event>().location().value<Place>().name());
+        const auto eventName = reservation.value<EventReservation>().reservationFor().value<Event>().name();
+        if (!eventName.isEmpty()) {
+            loc.setName(eventName);
+        } else {
+            const auto venueName = reservation.value<EventReservation>().reservationFor().value<Event>().location().value<Place>().name();
+            loc.setName(venueName);
+        }
     }
     if (JsonLd::isA<FoodEstablishmentReservation>(reservation)) {
         loc.setName(reservation.value<FoodEstablishmentReservation>().reservationFor().value<FoodEstablishment>().name());
