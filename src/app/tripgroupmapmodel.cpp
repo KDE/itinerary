@@ -120,7 +120,7 @@ void TripGroupMapModel::recompute()
         auto path = m_journeySections[i-1].journeySection.path();
         auto pathSecs = path.takeSections();
         auto pathSecs2 = m_journeySections[i].journeySection.path().takeSections();
-        std::move(pathSecs2.begin(), pathSecs2.end(), std::back_inserter(pathSecs));
+        std::ranges::move(pathSecs2, std::back_inserter(pathSecs));
         path.setSections(std::move(pathSecs));
         m_journeySections[i-1].journeySection.setPath(path);
         m_journeySections[i-1].journeySection.setScheduledArrivalTime(m_journeySections[i].journeySection.scheduledArrivalTime());

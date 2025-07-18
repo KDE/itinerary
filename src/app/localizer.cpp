@@ -49,6 +49,7 @@ static KContacts::Address variantToKContactsAddress(const QVariant &obj)
         address.setLocality(a.addressLocality());
         address.setRegion(a.addressRegion());
         address.setCountry(a.addressCountry());
+        return address;
     }
     if (obj.typeId() == qMetaTypeId<KPublicTransport::Location>()) {
         const auto a = obj.value<KPublicTransport::Location>();
