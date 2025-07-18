@@ -17,6 +17,7 @@
 #include <KUnitConversion/Converter>
 
 #include <KCountry>
+#include <KCountrySubdivision>
 #include <KFormat>
 #include <KLocalizedString>
 
@@ -58,6 +59,12 @@ static KContacts::Address variantToKContactsAddress(const QVariant &obj)
         address.setRegion(a.region());
         address.setCountry(a.country());
     }
+
+    // KContacts does not expand region codes as of KF 6.16
+    if (const auto region = KCountrySubdivision::fromCode(address.region()); region.isValid()) {
+        address.setRegion(region.name());
+    }
+
     return address;
 }
 
