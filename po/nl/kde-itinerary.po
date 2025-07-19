@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-13 02:34+0000\n"
+"POT-Creation-Date: 2025-07-19 07:11+0000\n"
 "PO-Revision-Date: 2025-07-10 12:59+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
@@ -2450,25 +2450,25 @@ msgstr "Positie"
 msgid "Journey"
 msgstr "Reis"
 
-#: app/localizer.cpp:184
+#: app/localizer.cpp:191
 #, kde-format
 msgctxt "day-only date format"
 msgid "dd MMMM"
 msgstr "dd MMMM"
 
-#: app/localizer.cpp:244
+#: app/localizer.cpp:251
 #, kde-format
 msgctxt "weight in gram"
 msgid "%1 g"
 msgstr "%1 g"
 
-#: app/localizer.cpp:247 app/localizer.cpp:249
+#: app/localizer.cpp:254 app/localizer.cpp:256
 #, kde-format
 msgctxt "weight in kilogram"
 msgid "%1 kg"
 msgstr "%1 kg"
 
-#: app/localizer.cpp:264
+#: app/localizer.cpp:271
 #, kde-format
 msgctxt "temperature range"
 msgid "%1 / %2"
