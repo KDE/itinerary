@@ -164,11 +164,9 @@ FormCard.FormButtonDelegate {
                 text: i18nc("@action:button Start route guidance to location", "Navigate")
             }
 
-            // public transport connections are offered:
-            // - at all arrival locations, unless it's a layover to a subsequent transit element TODO
-            // -  when leaving non-transit events
+            // public transport departures
             Kirigami.Action {
-                visible: root.place != undefined && root.place.geo.isValid && !root.isRangeBegin
+                visible: root.place != undefined && root.place.geo.isValid
                 icon.name: "view-calendar-day"
                 onTriggered: applicationWindow().pageStack.push(departuresPage)
                 text: i18nc("@action:button", "Public Transport Departures")
