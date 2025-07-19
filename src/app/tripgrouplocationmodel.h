@@ -13,7 +13,10 @@
 
 #include <vector>
 
-/** All locations visitied during a trip group, for pre-filling the stop picker. */
+/** All locations visitied during a trip group, for pre-filling the stop picker.
+ *  This excludes anything without a geo position, as that can otherwise result in
+ *  leaking out internal information via geocoding.
+ */
 class TripGroupLocationModel : public QAbstractListModel
 {
     Q_OBJECT
