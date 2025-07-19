@@ -249,6 +249,16 @@ void MatrixSyncManager::initConnection(Quotient::Connection *connection)
     connect(connection, &Quotient::Connection::joinedRoom, this, &MatrixSyncManager::joinedRoom);
     connect(connection, &Quotient::Connection::leftRoom, this, &MatrixSyncManager::deleteRoom);
     connect(connection, &Quotient::Connection::aboutToDeleteRoom, this, &MatrixSyncManager::deleteRoom);
+    connect(connection, &Quotient::Connection::isOnlineChanged, this, [this]{
+        if (m_matrixMgr->connection()->isOnline() == m_isOnline) {
+            return;
+        }
+        m_isOnline = m_matrixMgr->connection()->isOnline();
+        if (m_isOnline) {
+            qCDebug(Log) << "Matrix connection online, starting replay";
+            m_stateQueue.retry();
+        }
+    });
 
     if (m_matrixMgr->connected()) {
         reloadRooms();
@@ -297,8 +307,6 @@ void MatrixSyncManager::reloadRooms()
     for (const auto room : rooms) {
         reloadRoom(room);
     }
-
-    m_stateQueue.retry();
 }
 
 void MatrixSyncManager::reloadRoom(Quotient::Room *room)
@@ -438,17 +446,19 @@ void MatrixSyncManager::tripGroupChanged(const QString &tgId)
         room->setTopic(tg.name());
     }
 
-    // TODO update group content
-    // TODO this still needs proper state tracking
-    const auto elems = tg.elements();
-    for (const auto &resId : elems) {
-        writeBatchToRoom(resId, tgId); // TODO this is too aggressive and writes most things again!
-    }
+    // update group content
     const auto states = room->currentState().eventsOfType(MatrixSyncContent::ReservationEventType);
+    auto elems = tg.elements();
     for (auto event : states) {
-        if (!elems.contains(event->stateKey())) {
+        const auto it = std::find(elems.begin(), elems.end(), event->stateKey());
+        if (it == elems.end()) {
             m_stateQueue.append(MatrixSyncLocalStateQueue::BatchRemove, event->stateKey(), tgId);
+        } else {
+            elems.erase(it);
         }
+    }
+    for (const auto &batchId : elems) {
+        writeBatchToRoom(batchId, tgId);
     }
 }
 
@@ -632,6 +642,7 @@ Quotient::Room* MatrixSyncManager::roomForBatch(const QString &batchId) const
 void MatrixSyncManager::setState(Quotient::Room *room, const Quotient::StateEvent &state)
 {
     if (!room) {
+        qCDebug(Log) << "Can't set state event, got no room!" << state.matrixType() << state.stateKey();
         m_stateQueue.replayNext();
         return;
     }
@@ -641,6 +652,11 @@ void MatrixSyncManager::setState(Quotient::Room *room, const Quotient::StateEven
     connect(job, &Quotient::SetRoomStateWithKeyJob::finished, this, [this, job]() {
         if (!job->status().good()) {
             qCWarning(Log) << job->status();
+            // for persistent errors retry wont help
+            if (job->status().code == Quotient::BaseJob::StatusCode::NotFound) { // that's what most 41x errors are mapped to
+                qCWarning(Log) << "considering error as persistent and skipping";
+                m_stateQueue.replayNext();
+            }
         } else {
             m_stateQueue.replayNext();
         }

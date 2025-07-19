@@ -96,6 +96,7 @@ private:
     QHash<QString, QString> m_roomToTripGroupMap;
     QSet<QString> m_pendingDocumentDownloads;
     bool m_autoSyncTrips = false;
+    bool m_isOnline = false;
 #endif
 };
 
