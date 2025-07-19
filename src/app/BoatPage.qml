@@ -75,6 +75,18 @@ DetailsPage {
                 controller: root.controller
                 isRangeBegin: true
             }
+
+            FormCard.FormDelegateSeparator { visible: departureNotes.visible }
+            FormCard.FormTextDelegate {
+                id: departureNotes
+                text: i18n("Additional information")
+                description: root.controller.journey.notes.concat(root.departure.notes).join("<br/>")
+                descriptionItem.textFormat: Text.RichText
+                descriptionItem.wrapMode: Text.Wrap
+                visible: description !== ""
+                font.italic: true
+                onLinkActivated: (link) => { Qt.openUrlExternally(link); }
+            }
         }
 
         // arrival data
@@ -98,6 +110,18 @@ DetailsPage {
                 isRangeEnd: true
                 text: i18nc("Boat terminal", "Terminal")
                 placeName: reservationFor.arrivalBoatTerminal.name
+            }
+
+            FormCard.FormDelegateSeparator { visible: arrivalNotes.visible }
+            FormCard.FormTextDelegate {
+                id: arrivalNotes
+                text: i18n("Additional information")
+                description: root.arrival.notes.join("<br/>")
+                descriptionItem.textFormat: Text.RichText
+                descriptionItem.wrapMode: Text.Wrap
+                visible: description !== ""
+                font.italic: true
+                onLinkActivated: (link) => { Qt.openUrlExternally(link); }
             }
         }
 

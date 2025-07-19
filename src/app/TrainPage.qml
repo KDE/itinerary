@@ -177,16 +177,16 @@ DetailsPage {
                 scheduledPlatform: reservationFor.departurePlatform
             }
 
-            FormCard.FormDelegateSeparator { visible: departure.notes.length > 0 && departureLayoutButton.visible }
-
+            FormCard.FormDelegateSeparator { visible: departureNotes.visible }
             FormCard.FormTextDelegate {
-                text: i18n("Additional notes")
-                description: departure.notes.join("<br/>")
+                id: departureNotes
+                text: i18n("Additional information")
+                description: root.controller.journey.notes.concat(root.departure.notes).join("<br/>")
                 descriptionItem.textFormat: Text.RichText
                 descriptionItem.wrapMode: Text.Wrap
-                visible: departure.notes.length > 0
+                visible: description !== ""
                 font.italic: true
-                onLinkActivated: Qt.openUrlExternally(link)
+                onLinkActivated: (link) => { Qt.openUrlExternally(link); }
             }
 
             FormCard.FormDelegateSeparator { visible: departureLayoutButton.visible }
@@ -261,18 +261,16 @@ DetailsPage {
                 scheduledPlatform: reservationFor.arrivalPlatform
             }
 
-            FormCard.FormDelegateSeparator {
-                visible: arrival.notes.length > 0 && arrivalLayoutButton.visible
-            }
-
+            FormCard.FormDelegateSeparator { visible: arrivalNotes.visible }
             FormCard.FormTextDelegate {
-                text: i18n("Additional notes")
-                description: arrival.notes.join("<br/>")
+                id: arrivalNotes
+                text: i18n("Additional information")
+                description: root.arrival.notes.join("<br/>")
                 descriptionItem.textFormat: Text.RichText
                 descriptionItem.wrapMode: Text.Wrap
-                visible: arrival.notes.length > 0
+                visible: description !== ""
                 font.italic: true
-                onLinkActivated: Qt.openUrlExternally(link)
+                onLinkActivated: (link) => { Qt.openUrlExternally(link); }
             }
 
             FormCard.FormDelegateSeparator { visible: arrivalLayoutButton.visible }

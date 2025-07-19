@@ -157,6 +157,18 @@ DetailsPage {
                 description: reservationFor.departureGate
                 visible: reservationFor.departureGate.length > 0
             }
+
+            FormCard.FormDelegateSeparator { visible: departureNotes.visible }
+            FormCard.FormTextDelegate {
+                id: departureNotes
+                text: i18n("Additional information")
+                description: root.controller.journey.notes.concat(root.departure.notes).join("<br/>")
+                descriptionItem.textFormat: Text.RichText
+                descriptionItem.wrapMode: Text.Wrap
+                visible: description !== ""
+                font.italic: true
+                onLinkActivated: (link) => { Qt.openUrlExternally(link); }
+            }
         }
 
         // arrival data
@@ -194,6 +206,18 @@ DetailsPage {
                 text: i18n("Terminal")
                 description: reservationFor.arrivalTerminal
                 visible: reservationFor.arrivalTerminal.length > 0
+            }
+
+            FormCard.FormDelegateSeparator { visible: arrivalNotes.visible }
+            FormCard.FormTextDelegate {
+                id: arrivalNotes
+                text: i18n("Additional information")
+                description: root.arrival.notes.join("<br/>")
+                descriptionItem.textFormat: Text.RichText
+                descriptionItem.wrapMode: Text.Wrap
+                visible: description !== ""
+                font.italic: true
+                onLinkActivated: (link) => { Qt.openUrlExternally(link); }
             }
         }
 
