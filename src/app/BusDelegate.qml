@@ -143,7 +143,7 @@ TimelineDelegate {
                         id: intermediateStopLine
                         Layout.fillHeight: true
                         lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
-                        hasStop: model.stopover.disruptionEffect !== Disruption.NoService
+                        hasStop: model.stopover.disruptionEffect !== Disruption.NoService && (model.stopover.pickupType !== PickupDropoff.NotAllowed || model.stopover.dropoffType !== PickupDropoff.NotAllowed)
                         progress: model.progress
                     }
                     QQC2.Label{
@@ -151,10 +151,11 @@ TimelineDelegate {
                         Layout.fillWidth: true
                         elide: Text.ElideRight
                         font.strikeout: model.stopover.disruptionEffect === Disruption.NoService
+                        opacity: (model.stopover.pickupType !== PickupDropoff.NotAllowed || model.stopover.dropoffType !== PickupDropoff.NotAllowed) ? 1.0 : 0.5
                     }
                     RowLayout {
                         QQC2.Label {
-                            opacity: 0.8
+                            opacity: (model.stopover.pickupType !== PickupDropoff.NotAllowed || model.stopover.dropoffType !== PickupDropoff.NotAllowed) ? 0.8 : 0.4
                             text: Localizer.formatTime(model.stopover , model.stopover.scheduledDepartureTime > 0 ? "scheduledDepartureTime" : "scheduledArrivalTime")
                             font.strikeout: model.stopover.disruptionEffect === Disruption.NoService
                         }
@@ -164,6 +165,7 @@ TimelineDelegate {
                             text: (stopDelayLabel.delay >= 0 ? "+" : "") + stopDelayLabel.delay
                             color: (stopDelayLabel.delay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
                             visible: model.stopover.hasExpectedArrivalTime && model.stopover.disruptionEffect !== Disruption.NoService
+                            opacity: (model.stopover.pickupType !== PickupDropoff.NotAllowed || model.stopover.dropoffType !== PickupDropoff.NotAllowed) ? 1.0 : 0.5
                             Accessible.ignored: !visible
                         }
                     }
