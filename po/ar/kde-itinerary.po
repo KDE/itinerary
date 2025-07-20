@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-19 07:11+0000\n"
+"POT-Creation-Date: 2025-07-20 02:39+0000\n"
 "PO-Revision-Date: 2025-04-28 18:17+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -585,13 +585,13 @@ msgctxt "@info"
 msgid "Bus"
 msgstr "حافلة"
 
-#: app/BusDelegate.qml:52 app/BusDelegate.qml:190
+#: app/BusDelegate.qml:52 app/BusDelegate.qml:192
 #, fuzzy, kde-format
 msgctxt "bus station platform"
 msgid "Platform changed to %1"
 msgstr "المنصّة"
 
-#: app/BusDelegate.qml:54 app/BusDelegate.qml:192
+#: app/BusDelegate.qml:54 app/BusDelegate.qml:194
 #, kde-format
 msgctxt "bus station platform"
 msgid "Platform %1"
@@ -619,7 +619,7 @@ msgstr[5] ""
 msgid "0 intermediate stop (%1)"
 msgstr ""
 
-#: app/BusDelegate.qml:206 app/TrainDelegate.qml:214
+#: app/BusDelegate.qml:208 app/TrainDelegate.qml:216
 #, kde-format
 msgctxt "from location 1 to location 2"
 msgid "%1 to %2"
@@ -4018,13 +4018,13 @@ msgstr "الوصول"
 msgid "Arrival Time"
 msgstr "وقت الوصول"
 
-#: app/TrainDelegate.qml:45 app/TrainDelegate.qml:199
+#: app/TrainDelegate.qml:45 app/TrainDelegate.qml:201
 #, fuzzy, kde-format
 msgctxt "train station platform"
 msgid "Platform changed to %1"
 msgstr "المنصّة"
 
-#: app/TrainDelegate.qml:47 app/TrainDelegate.qml:201
+#: app/TrainDelegate.qml:47 app/TrainDelegate.qml:203
 #, kde-format
 msgctxt "train station platform"
 msgid "Platform %1"

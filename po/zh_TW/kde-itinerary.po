@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-19 07:11+0000\n"
+"POT-Creation-Date: 2025-07-20 02:39+0000\n"
 "PO-Revision-Date: 2024-11-28 16:26+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -575,14 +575,14 @@ msgctxt "@info"
 msgid "Bus"
 msgstr "公車"
 
-#: app/BusDelegate.qml:52 app/BusDelegate.qml:190
+#: app/BusDelegate.qml:52 app/BusDelegate.qml:192
 #, fuzzy, kde-format
 #| msgid "Platform change on %1"
 msgctxt "bus station platform"
 msgid "Platform changed to %1"
 msgstr "在 %1 月台有變更"
 
-#: app/BusDelegate.qml:54 app/BusDelegate.qml:192
+#: app/BusDelegate.qml:54 app/BusDelegate.qml:194
 #, fuzzy, kde-format
 #| msgid "Platform: %1"
 msgctxt "bus station platform"
@@ -612,7 +612,7 @@ msgstr[0] "經過 %1 個站"
 msgid "0 intermediate stop (%1)"
 msgstr "經過 %1 個站"
 
-#: app/BusDelegate.qml:206 app/TrainDelegate.qml:214
+#: app/BusDelegate.qml:208 app/TrainDelegate.qml:216
 #, fuzzy, kde-format
 #| msgid "%1 to %2"
 msgctxt "from location 1 to location 2"
@@ -4046,14 +4046,14 @@ msgstr "抵達"
 msgid "Arrival Time"
 msgstr "抵達時間"
 
-#: app/TrainDelegate.qml:45 app/TrainDelegate.qml:199
+#: app/TrainDelegate.qml:45 app/TrainDelegate.qml:201
 #, fuzzy, kde-format
 #| msgid "Platform change on %1"
 msgctxt "train station platform"
 msgid "Platform changed to %1"
 msgstr "在 %1 月台有變更"
 
-#: app/TrainDelegate.qml:47 app/TrainDelegate.qml:201
+#: app/TrainDelegate.qml:47 app/TrainDelegate.qml:203
 #, fuzzy, kde-format
 #| msgid "Platform: %1"
 msgctxt "train station platform"

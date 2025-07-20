@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-13 02:34+0000\n"
+"POT-Creation-Date: 2025-07-20 02:39+0000\n"
 "PO-Revision-Date: 2025-06-14 13:58+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -581,13 +581,13 @@ msgctxt "@info"
 msgid "Bus"
 msgstr "Autobus"
 
-#: app/BusDelegate.qml:52 app/BusDelegate.qml:190
+#: app/BusDelegate.qml:52 app/BusDelegate.qml:192
 #, kde-format
 msgctxt "bus station platform"
 msgid "Platform changed to %1"
 msgstr "Zmiana platformy na %1"
 
-#: app/BusDelegate.qml:54 app/BusDelegate.qml:192
+#: app/BusDelegate.qml:54 app/BusDelegate.qml:194
 #, kde-format
 msgctxt "bus station platform"
 msgid "Platform %1"
@@ -612,7 +612,7 @@ msgstr[2] "%1 pośrednich przystanków (%2)"
 msgid "0 intermediate stop (%1)"
 msgstr "0 pośrednich przystanków (%1)"
 
-#: app/BusDelegate.qml:206 app/TrainDelegate.qml:214
+#: app/BusDelegate.qml:208 app/TrainDelegate.qml:216
 #, kde-format
 msgctxt "from location 1 to location 2"
 msgid "%1 to %2"
@@ -2494,25 +2494,25 @@ msgstr "Położenie"
 msgid "Journey"
 msgstr "Podróż"
 
-#: app/localizer.cpp:184
+#: app/localizer.cpp:191
 #, kde-format
 msgctxt "day-only date format"
 msgid "dd MMMM"
 msgstr "dd MMMM"
 
-#: app/localizer.cpp:244
+#: app/localizer.cpp:251
 #, kde-format
 msgctxt "weight in gram"
 msgid "%1 g"
 msgstr "%1 g"
 
-#: app/localizer.cpp:247 app/localizer.cpp:249
+#: app/localizer.cpp:254 app/localizer.cpp:256
 #, kde-format
 msgctxt "weight in kilogram"
 msgid "%1 kg"
 msgstr "%1 kg"
 
-#: app/localizer.cpp:264
+#: app/localizer.cpp:271
 #, kde-format
 msgctxt "temperature range"
 msgid "%1 / %2"
@@ -4040,13 +4040,13 @@ msgstr "Przybycie"
 msgid "Arrival Time"
 msgstr "Czas przybycia"
 
-#: app/TrainDelegate.qml:45 app/TrainDelegate.qml:199
+#: app/TrainDelegate.qml:45 app/TrainDelegate.qml:201
 #, kde-format
 msgctxt "train station platform"
 msgid "Platform changed to %1"
 msgstr "Zmiana platformy na %1"
 
-#: app/TrainDelegate.qml:47 app/TrainDelegate.qml:201
+#: app/TrainDelegate.qml:47 app/TrainDelegate.qml:203
 #, kde-format
 msgctxt "train station platform"
 msgid "Platform %1"
