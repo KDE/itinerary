@@ -70,107 +70,16 @@ TimelineDelegate {
                 }
             }
 
-            RowLayout {
-                Layout.fillWidth: true
-                spacing: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
-                QQC2.ToolButton {
-                    visible: sectionModel.sectionCount !== 0
-                    Layout.fillWidth: true
-                    onClicked: expanded = !expanded
-                    contentItem: RowLayout {
-                        spacing: 0
-                        Kirigami.Icon {
-                            source: expanded? "arrow-up" : "arrow-down"
-                            implicitHeight: Kirigami.Units.largeSpacing*2
-                            color: Kirigami.Theme.disabledTextColor
-                        }
-                        QQC2.Label {
-                            text: i18np("1 intermediate stop (%2)", "%1 intermediate stops (%2)", sectionModel.sectionCount, Localizer.formatDuration(root.journeySection.duration))
-                            elide: Text.ElideRight
-                            color: Kirigami.Theme.disabledTextColor
-                            Layout.rightMargin: Kirigami.Units.largeSpacing
-                            Layout.fillWidth: true
-                        }
-                    }
-                }
-                QQC2.Label {
-                    visible: sectionModel.sectionCount === 0 && root.journeySection.duration > 0
-                    text: i18n("0 intermediate stop (%1)", Localizer.formatDuration(root.journeySection.duration))
-                    elide: Text.ElideRight
-                    color: Kirigami.Theme.disabledTextColor
-                    Layout.fillWidth: true
-                }
+            TimelineDelegateIntermediateStopsButton {
+                sectionModel: sectionModel
+                expanded: root.expanded
+                onToggled: root.expanded = !root.expanded
             }
         }
 
-        Item {
-            implicitHeight: children.filter(item => item !== stopRepeater && item !== bar)
-                .reduce((currentValue, item) => item.implicitHeight + currentValue, 0)
-
-            Layout.fillWidth: true
-
-            Behavior on implicitHeight {
-                NumberAnimation {
-                    duration: Kirigami.Units.shortDuration
-                }
-            }
-
-            Rectangle {
-                id: bar
-                anchors {
-                    top: parent.top
-                    bottom: parent.bottom
-                }
-                width: Kirigami.Units.smallSpacing * 4
-                x: Math.round((Kirigami.Units.iconSizes.smallMedium - width) / 2)
-
-                color: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
-            }
-
-            Repeater {
-                id: stopRepeater
-
-                model: root.expanded ? sectionModel : []
-                delegate: RowLayout {
-                    id: stopDelegate
-
-                    spacing: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
-
-                    width: parent.width
-                    y: index * height
-
-                    JourneySectionStopDelegateLineSegment {
-                        id: intermediateStopLine
-                        Layout.fillHeight: true
-                        lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
-                        hasStop: model.stopover.disruptionEffect !== Disruption.NoService && (model.stopover.pickupType !== PickupDropoff.NotAllowed || model.stopover.dropoffType !== PickupDropoff.NotAllowed)
-                        progress: model.progress
-                    }
-                    QQC2.Label{
-                        text: model.stopover.stopPoint.name
-                        Layout.fillWidth: true
-                        elide: Text.ElideRight
-                        font.strikeout: model.stopover.disruptionEffect === Disruption.NoService
-                        opacity: (model.stopover.pickupType !== PickupDropoff.NotAllowed || model.stopover.dropoffType !== PickupDropoff.NotAllowed) ? 1.0 : 0.5
-                    }
-                    RowLayout {
-                        QQC2.Label {
-                            opacity: (model.stopover.pickupType !== PickupDropoff.NotAllowed || model.stopover.dropoffType !== PickupDropoff.NotAllowed) ? 0.8 : 0.4
-                            text: Localizer.formatTime(model.stopover , model.stopover.scheduledDepartureTime > 0 ? "scheduledDepartureTime" : "scheduledArrivalTime")
-                            font.strikeout: model.stopover.disruptionEffect === Disruption.NoService
-                        }
-                        QQC2.Label {
-                            id: stopDelayLabel
-                            readonly property int delay: model.stopover.scheduledDepartureTime > 0 ? model.stopover.departureDelay : model.stopover.arrivalDelay
-                            text: (stopDelayLabel.delay >= 0 ? "+" : "") + stopDelayLabel.delay
-                            color: (stopDelayLabel.delay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
-                            visible: model.stopover.hasExpectedArrivalTime && model.stopover.disruptionEffect !== Disruption.NoService
-                            opacity: (model.stopover.pickupType !== PickupDropoff.NotAllowed || model.stopover.dropoffType !== PickupDropoff.NotAllowed) ? 1.0 : 0.5
-                            Accessible.ignored: !visible
-                        }
-                    }
-                }
-            }
+        TimelineDelegateIntermediateStopsView {
+            sectionModel: sectionModel
+            expanded: root.expanded
         }
 
         TimelineDelegateArrivalLayout {

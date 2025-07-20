@@ -234,6 +234,8 @@ ecm_add_qml_module(itinerary-app URI org.kde.itinerary NO_PLUGIN QML_FILES
     TimelineDelegateArrivalLayout.qml
     TimelineDelegate.qml
     TimelineDelegateDepartureLayout.qml
+    TimelineDelegateIntermediateStopsButton.qml
+    TimelineDelegateIntermediateStopsView.qml
     TimelineDelegateSeatRow.qml
     TimelineDelegateSeatRowLabel.qml
     TimelineSectionDelegate.qml
