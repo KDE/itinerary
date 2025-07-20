@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-19 05:22+0000\n"
+"POT-Creation-Date: 2025-07-20 00:43+0000\n"
 "PO-Revision-Date: 2025-07-11 10:08+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -455,7 +455,7 @@ msgctxt "boat terminal"
 msgid "Terminal"
 msgstr "מסוף"
 
-#: app/BoatEditor.qml:173 app/BoatPage.qml:82
+#: app/BoatEditor.qml:173 app/BoatPage.qml:94
 #, kde-format
 msgctxt "Boat arrival"
 msgid "Arrival"
@@ -487,25 +487,33 @@ msgstr "כרטיס לסירה"
 msgid "Departure time"
 msgstr "זמן היציאה"
 
-#: app/BoatPage.qml:72 app/BoatPage.qml:99
+#: app/BoatPage.qml:72 app/BoatPage.qml:111
 #, kde-format
 msgctxt "Boat terminal"
 msgid "Terminal"
 msgstr "מסוף"
 
-#: app/BoatPage.qml:87 app/BusPage.qml:132 app/TrainPage.qml:211
+#: app/BoatPage.qml:82 app/BoatPage.qml:118 app/BusPage.qml:120
+#: app/BusPage.qml:189 app/FlightPage.qml:164 app/FlightPage.qml:214
+#: app/TrainPage.qml:183 app/TrainPage.qml:267
+#, fuzzy, kde-format
+#| msgid "Additional notes"
+msgid "Additional information"
+msgstr "הערות נוספות"
+
+#: app/BoatPage.qml:99 app/BusPage.qml:144 app/TrainPage.qml:211
 #, kde-format
 msgid "Arrival time"
 msgstr "זמן ההגעה"
 
-#: app/BoatPage.qml:118 app/BusPage.qml:209 app/FlightPage.qml:218
-#: app/TrainPage.qml:349
+#: app/BoatPage.qml:142 app/BusPage.qml:233 app/FlightPage.qml:242
+#: app/TrainPage.qml:347
 #, kde-format
 msgid "Alternatives"
 msgstr "חלופות"
 
-#: app/BoatPage.qml:126 app/BusPage.qml:214 app/JourneySectionPage.qml:27
-#: app/TrainPage.qml:354
+#: app/BoatPage.qml:150 app/BusPage.qml:238 app/JourneySectionPage.qml:27
+#: app/TrainPage.qml:352
 #, kde-format
 msgid "Journey Details"
 msgstr "פרטי מסע"
@@ -569,13 +577,13 @@ msgctxt "@info"
 msgid "Bus"
 msgstr "אוטובוס"
 
-#: app/BusDelegate.qml:52 app/BusDelegate.qml:190
+#: app/BusDelegate.qml:52 app/BusDelegate.qml:192
 #, kde-format
 msgctxt "bus station platform"
 msgid "Platform changed to %1"
 msgstr "הרציף התחלף ל־%1"
 
-#: app/BusDelegate.qml:54 app/BusDelegate.qml:192
+#: app/BusDelegate.qml:54 app/BusDelegate.qml:194
 #, kde-format
 msgctxt "bus station platform"
 msgid "Platform %1"
@@ -601,7 +609,7 @@ msgstr[3] "%1 תחנות ביניים (%2)"
 msgid "0 intermediate stop (%1)"
 msgstr "0 תחנות ביניים (%1)"
 
-#: app/BusDelegate.qml:206 app/TrainDelegate.qml:214
+#: app/BusDelegate.qml:208 app/TrainDelegate.qml:216
 #, kde-format
 msgctxt "from location 1 to location 2"
 msgid "%1 to %2"
@@ -731,7 +739,7 @@ msgctxt "bus stop"
 msgid "Stop"
 msgstr "עצירה"
 
-#: app/BusEditor.qml:324 app/BusEditor.qml:330 app/BusPage.qml:177
+#: app/BusEditor.qml:324 app/BusEditor.qml:330 app/BusPage.qml:201
 #, kde-format
 msgctxt "Bus seat"
 msgid "Seat"
@@ -753,19 +761,19 @@ msgstr "יציאה"
 msgid "Departure date"
 msgstr "תאריך יציאה"
 
-#: app/BusPage.qml:100 app/BusPage.qml:158
+#: app/BusPage.qml:100 app/BusPage.qml:170
 #, kde-format
 msgctxt "bus station"
 msgid "Station"
 msgstr "תחנה"
 
-#: app/BusPage.qml:112 app/BusPage.qml:169
+#: app/BusPage.qml:112 app/BusPage.qml:181
 #, kde-format
 msgctxt "bus station platform"
 msgid "Platform"
 msgstr "רציף"
 
-#: app/BusPage.qml:120
+#: app/BusPage.qml:132
 #, kde-format
 msgctxt "Bus arrival"
 msgid "Arrival"
@@ -1221,7 +1229,7 @@ msgid "Departure - %1"
 msgstr "יציאה - %1"
 
 #: app/FlightEditor.qml:90 app/FlightEditor.qml:150 app/FlightPage.qml:133
-#: app/FlightPage.qml:181
+#: app/FlightPage.qml:193
 #, kde-format
 msgid "Airport"
 msgstr "נמל תעופה"
@@ -1360,7 +1368,7 @@ msgctxt "flight departure"
 msgid "Departure date"
 msgstr "תאריך יציאה"
 
-#: app/FlightPage.qml:146 app/FlightPage.qml:194
+#: app/FlightPage.qml:146 app/FlightPage.qml:206
 #, kde-format
 msgid "Terminal"
 msgstr "מסוף"
@@ -1370,13 +1378,13 @@ msgstr "מסוף"
 msgid "Gate"
 msgstr "שער"
 
-#: app/FlightPage.qml:164
+#: app/FlightPage.qml:176
 #, kde-format
 msgctxt "Flight arrival"
 msgid "Arrival"
 msgstr "הגעה"
 
-#: app/FlightPage.qml:169
+#: app/FlightPage.qml:181
 #, kde-format
 msgctxt "flight arrival"
 msgid "Arrival time"
@@ -1416,13 +1424,13 @@ msgctxt "@action:button Start route guidance to location"
 msgid "Navigate"
 msgstr "ניווט"
 
-#: app/FormPlaceDelegate.qml:174
+#: app/FormPlaceDelegate.qml:172
 #, kde-format
 msgctxt "@action:button"
 msgid "Public Transport Departures"
 msgstr "יציאות של תחבורה ציבורית"
 
-#: app/FormPlaceDelegate.qml:187
+#: app/FormPlaceDelegate.qml:185
 #, kde-format
 msgctxt "@action:button"
 msgid "Share via Matrix"
@@ -3955,31 +3963,31 @@ msgstr "הגעה"
 msgid "Arrival Time"
 msgstr "זמן ההגעה"
 
-#: app/TrainDelegate.qml:45 app/TrainDelegate.qml:199
+#: app/TrainDelegate.qml:45 app/TrainDelegate.qml:201
 #, kde-format
 msgctxt "train station platform"
 msgid "Platform changed to %1"
 msgstr "הרציף התחלף ל־%1"
 
-#: app/TrainDelegate.qml:47 app/TrainDelegate.qml:201
+#: app/TrainDelegate.qml:47 app/TrainDelegate.qml:203
 #, kde-format
 msgctxt "train station platform"
 msgid "Platform %1"
 msgstr "רציף %1"
 
-#: app/TrainDelegate.qml:61 app/TrainPage.qml:301
+#: app/TrainDelegate.qml:61 app/TrainPage.qml:299
 #, kde-format
 msgctxt "train coach"
 msgid "Coach: <b>%1</b>"
 msgstr "קרון: <b>%1</b>"
 
-#: app/TrainDelegate.qml:67 app/TrainPage.qml:308
+#: app/TrainDelegate.qml:67 app/TrainPage.qml:306
 #, kde-format
 msgctxt "train seat"
 msgid "Seat: <b>%1</b>"
 msgstr "מושב: <b>%1</b>"
 
-#: app/TrainDelegate.qml:75 app/TrainPage.qml:316
+#: app/TrainDelegate.qml:75 app/TrainPage.qml:314
 #, kde-format
 msgctxt "train class"
 msgid "Class: <b>%1</b>"
@@ -4092,7 +4100,7 @@ msgstr "שם התחנה"
 msgid "Arrival station must not be empty."
 msgstr "תחנת היציאה לא יכולה להיות ריקה."
 
-#: app/TrainEditor.qml:337 app/TrainEditor.qml:349 app/TrainPage.qml:292
+#: app/TrainEditor.qml:337 app/TrainEditor.qml:349 app/TrainPage.qml:290
 #, kde-format
 msgctxt "Train seat"
 msgid "Seat"
@@ -4126,11 +4134,6 @@ msgctxt "Train departure"
 msgid "Departure"
 msgstr "יציאה"
 
-#: app/TrainPage.qml:183 app/TrainPage.qml:269
-#, kde-format
-msgid "Additional notes"
-msgstr "הערות נוספות"
-
 #: app/TrainPage.qml:196
 #, kde-format
 msgid "Departure Vehicle Layout"
@@ -4142,23 +4145,23 @@ msgctxt "Train arrival"
 msgid "Arrival"
 msgstr "הגעה"
 
-#: app/TrainPage.qml:282
+#: app/TrainPage.qml:280
 #, kde-format
 msgid "Arrival Vehicle Layout"
 msgstr "פריסת כלי התחבורה הנכנס"
 
-#: app/TrainPage.qml:341
+#: app/TrainPage.qml:339
 #, kde-format
 msgctxt "@action:button"
 msgid "Add to Traewelling"
 msgstr "הוספה ל־Traewelling"
 
-#: app/TrainPage.qml:385
+#: app/TrainPage.qml:383
 #, kde-format
 msgid "Added to Traewelling"
 msgstr "נוסף ל־Traewelling"
 
-#: app/TrainPage.qml:385
+#: app/TrainPage.qml:383
 #, kde-format
 msgid "Failed to add to Traewelling"
 msgstr "ההוספה ל־Traewelling נכשלה"
