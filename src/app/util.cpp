@@ -31,13 +31,21 @@ using namespace KItinerary;
 
 QDateTime Util::dateTimeStripTimezone(const QVariant &obj, const QString &propertyName)
 {
-    auto dt = JsonLdDocument::readProperty(obj, propertyName.toUtf8().constData()).toDateTime();
-    if (!dt.isValid()) {
-        return {};
+    const auto v = JsonLdDocument::readProperty(obj, propertyName.toUtf8().constData());
+    if (v.typeId() == QMetaType::QDateTime) {
+        auto dt = v.toDateTime();
+        if (!dt.isValid()) {
+            return {};
+        }
+
+        dt.setTimeZone(QTimeZone::LocalTime);
+        return dt;
+    }
+    if (v.typeId() == QMetaType::QDate) {
+        return v.toDate().startOfDay();
     }
 
-    dt.setTimeZone(QTimeZone::LocalTime);
-    return dt;
+    return {};
 }
 
 QVariant Util::setDateTimePreserveTimezone(const QVariant &obj, const QString &propertyName, QDateTime value)

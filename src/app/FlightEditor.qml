@@ -104,7 +104,7 @@ EditorPage {
                 text: i18nc("flight departure time", "Time")
                 obj: reservation.reservationFor
                 propertyName: "departureTime"
-                initialValue: reservation.reservationFor.departureDay
+                initialDay: Util.dateTimeStripTimezone(root.reservation.reservationFor, "departureDay")
                 status: Kirigami.MessageType.Error
                 statusMessage: departureTime.hasValue ? '' : i18nc("flight departure", "Departure time has to be set.")
             }
