@@ -480,7 +480,13 @@ KPublicTransport::JourneyRequest TimelineDelegateController::journeyRequest() co
 
     KPublicTransport::JourneyRequest req;
     req.setFrom(PublicTransport::locationFromPlace(LocationUtil::departureLocation(res), res));
-    req.setDateTime(std::max(QDateTime::currentDateTime(), SortUtil::startDateTime(res)));
+    auto depTime = QDateTime::currentDateTime();
+    if (SortUtil::hasStartTime(res)) {
+        depTime = std::max(depTime, SortUtil::startDateTime(res));
+    } else {
+        depTime = std::max(depTime, SortUtil::startDateTime(res).date().startOfDay());
+    }
+    req.setDateTime(depTime);
     req.setDateTimeMode(KPublicTransport::JourneyRequest::Departure);
     req.setDownloadAssets(true);
     req.setIncludeIntermediateStops(true);
