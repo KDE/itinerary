@@ -166,6 +166,7 @@ EditorPage {
                 propertyName: "departureTime"
                 status: Kirigami.MessageType.Error
                 statusMessage: departureTimeEdit.hasValue ? '' : i18n("Departure time has to be set.")
+                initialDay: Util.dateTimeStripTimezone(root.reservation.reservationFor, "departureDay")
             }
 
             FormCard.FormDelegateSeparator {}

@@ -175,6 +175,7 @@ EditorPage {
                 propertyName: "departureTime"
                 status: Kirigami.MessageType.Error
                 statusMessage: departureTimeEdit.hasValue ? '' : i18n("Departure time has to be set.")
+                initialDay: Util.dateTimeStripTimezone(root.reservation.reservationFor, "departureDay")
             }
 
             FormCard.FormDelegateSeparator {}
@@ -253,7 +254,7 @@ EditorPage {
                 propertyName: "arrivalTime"
                 initialValue: {
                     let d = new Date(departureTimeEdit.value);
-                    d.setHours(d.getHours() + 8);
+                    d.setHours(d.getHours() + 4);
                     return d;
                 }
                 status: Kirigami.MessageType.Error
