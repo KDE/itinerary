@@ -30,6 +30,7 @@ target_sources(itinerary PRIVATE
     localizer.cpp
     locationhelper.cpp
     locationinformation.cpp
+    matrixsyncstateevent.cpp
     navigationcontroller.cpp
     nominatimimportjob.cpp
     notificationhelper.cpp
