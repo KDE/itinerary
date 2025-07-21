@@ -48,6 +48,10 @@ ecm_add_test(localizertest.cpp LINK_LIBRARIES Qt::Test itinerary)
 ecm_add_test(weathertest.cpp LINK_LIBRARIES Qt::Test itinerary-weather)
 target_include_directories(weathertest PRIVATE ${CMAKE_BINARY_DIR})
 
+if (HAVE_MATRIX)
+    ecm_add_test(matrixsyncstateeventtest.cpp LINK_LIBRARIES Qt::Test itinerary)
+endif()
+
 # verify QML code
 add_test(NAME itinerary-self-test COMMAND itinerary-app --self-test)
 
