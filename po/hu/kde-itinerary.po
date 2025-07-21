@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-20 00:43+0000\n"
+"POT-Creation-Date: 2025-07-21 00:42+0000\n"
 "PO-Revision-Date: 2024-03-26 16:14+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -378,7 +378,7 @@ msgstr "Nem érhető el kamera."
 msgid "Light"
 msgstr "Lámpa"
 
-#: app/BoatDelegate.qml:29 app/BoatEditor.qml:108 app/BoatPage.qml:32
+#: app/BoatDelegate.qml:38 app/BoatEditor.qml:108 app/BoatPage.qml:32
 #, fuzzy, kde-format
 #| msgctxt "journey query search constraint, title"
 #| msgid "Ferry"
@@ -594,14 +594,14 @@ msgctxt "@info"
 msgid "Bus"
 msgstr "Busz"
 
-#: app/BusDelegate.qml:52 app/BusDelegate.qml:192
+#: app/BusDelegate.qml:52 app/BusDelegate.qml:101
 #, fuzzy, kde-format
 #| msgid "Platform change on %1"
 msgctxt "bus station platform"
 msgid "Platform changed to %1"
 msgstr "Peronváltozás: %1"
 
-#: app/BusDelegate.qml:54 app/BusDelegate.qml:194
+#: app/BusDelegate.qml:54 app/BusDelegate.qml:103
 #, fuzzy, kde-format
 #| msgid "Platform: %1"
 msgctxt "bus station platform"
@@ -615,23 +615,7 @@ msgctxt "bus seat"
 msgid "Seat: <b>%1</b>"
 msgstr "Irány: %1"
 
-#: app/BusDelegate.qml:88 app/TrainDelegate.qml:96
-#, fuzzy, kde-format
-#| msgid "1 intermediate stop"
-#| msgid_plural "%1 intermediate stops"
-msgid "1 intermediate stop (%2)"
-msgid_plural "%1 intermediate stops (%2)"
-msgstr[0] "1 köztes megálló"
-msgstr[1] "%1 köztes megálló"
-
-#: app/BusDelegate.qml:98 app/TrainDelegate.qml:106
-#, fuzzy, kde-format
-#| msgid "1 intermediate stop"
-#| msgid_plural "%1 intermediate stops"
-msgid "0 intermediate stop (%1)"
-msgstr "1 köztes megálló"
-
-#: app/BusDelegate.qml:208 app/TrainDelegate.qml:216
+#: app/BusDelegate.qml:117 app/TrainDelegate.qml:125
 #, fuzzy, kde-format
 #| msgid "%1 to %2"
 msgctxt "from location 1 to location 2"
@@ -4067,6 +4051,22 @@ msgstr ""
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
+#: app/TimelineDelegateIntermediateStopsButton.qml:36
+#, fuzzy, kde-format
+#| msgid "1 intermediate stop"
+#| msgid_plural "%1 intermediate stops"
+msgid "1 intermediate stop (%2)"
+msgid_plural "%1 intermediate stops (%2)"
+msgstr[0] "1 köztes megálló"
+msgstr[1] "%1 köztes megálló"
+
+#: app/TimelineDelegateIntermediateStopsButton.qml:46
+#, fuzzy, kde-format
+#| msgid "1 intermediate stop"
+#| msgid_plural "%1 intermediate stops"
+msgid "0 intermediate stop (%1)"
+msgstr "1 köztes megálló"
+
 #: app/timelinesectiondelegatecontroller.cpp:64
 #, kde-format
 msgid "Today"
@@ -4103,14 +4103,14 @@ msgstr "Érkezés"
 msgid "Arrival Time"
 msgstr "Érkezési idő"
 
-#: app/TrainDelegate.qml:45 app/TrainDelegate.qml:201
+#: app/TrainDelegate.qml:45 app/TrainDelegate.qml:110
 #, fuzzy, kde-format
 #| msgid "Platform change on %1"
 msgctxt "train station platform"
 msgid "Platform changed to %1"
 msgstr "Peronváltozás: %1"
 
-#: app/TrainDelegate.qml:47 app/TrainDelegate.qml:203
+#: app/TrainDelegate.qml:47 app/TrainDelegate.qml:112
 #, fuzzy, kde-format
 #| msgid "Platform: %1"
 msgctxt "train station platform"

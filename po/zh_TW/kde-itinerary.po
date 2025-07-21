@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-20 00:43+0000\n"
+"POT-Creation-Date: 2025-07-21 00:42+0000\n"
 "PO-Revision-Date: 2024-11-28 16:26+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -366,7 +366,7 @@ msgstr "沒有可用的相機。"
 msgid "Light"
 msgstr "手電筒"
 
-#: app/BoatDelegate.qml:29 app/BoatEditor.qml:108 app/BoatPage.qml:32
+#: app/BoatDelegate.qml:38 app/BoatEditor.qml:108 app/BoatPage.qml:32
 #, fuzzy, kde-format
 #| msgctxt "journey query search constraint, title"
 #| msgid "Ferry"
@@ -583,14 +583,14 @@ msgctxt "@info"
 msgid "Bus"
 msgstr "公車"
 
-#: app/BusDelegate.qml:52 app/BusDelegate.qml:192
+#: app/BusDelegate.qml:52 app/BusDelegate.qml:101
 #, fuzzy, kde-format
 #| msgid "Platform change on %1"
 msgctxt "bus station platform"
 msgid "Platform changed to %1"
 msgstr "在 %1 月台有變更"
 
-#: app/BusDelegate.qml:54 app/BusDelegate.qml:194
+#: app/BusDelegate.qml:54 app/BusDelegate.qml:103
 #, fuzzy, kde-format
 #| msgid "Platform: %1"
 msgctxt "bus station platform"
@@ -605,22 +605,7 @@ msgctxt "bus seat"
 msgid "Seat: <b>%1</b>"
 msgstr "座位：<b>%1</b>"
 
-#: app/BusDelegate.qml:88 app/TrainDelegate.qml:96
-#, fuzzy, kde-format
-#| msgid "1 intermediate stop"
-#| msgid_plural "%1 intermediate stops"
-msgid "1 intermediate stop (%2)"
-msgid_plural "%1 intermediate stops (%2)"
-msgstr[0] "經過 %1 個站"
-
-#: app/BusDelegate.qml:98 app/TrainDelegate.qml:106
-#, fuzzy, kde-format
-#| msgid "1 intermediate stop"
-#| msgid_plural "%1 intermediate stops"
-msgid "0 intermediate stop (%1)"
-msgstr "經過 %1 個站"
-
-#: app/BusDelegate.qml:208 app/TrainDelegate.qml:216
+#: app/BusDelegate.qml:117 app/TrainDelegate.qml:125
 #, fuzzy, kde-format
 #| msgid "%1 to %2"
 msgctxt "from location 1 to location 2"
@@ -4018,6 +4003,21 @@ msgstr ""
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
+#: app/TimelineDelegateIntermediateStopsButton.qml:36
+#, fuzzy, kde-format
+#| msgid "1 intermediate stop"
+#| msgid_plural "%1 intermediate stops"
+msgid "1 intermediate stop (%2)"
+msgid_plural "%1 intermediate stops (%2)"
+msgstr[0] "經過 %1 個站"
+
+#: app/TimelineDelegateIntermediateStopsButton.qml:46
+#, fuzzy, kde-format
+#| msgid "1 intermediate stop"
+#| msgid_plural "%1 intermediate stops"
+msgid "0 intermediate stop (%1)"
+msgstr "經過 %1 個站"
+
 #: app/timelinesectiondelegatecontroller.cpp:64
 #, kde-format
 msgid "Today"
@@ -4054,14 +4054,14 @@ msgstr "抵達"
 msgid "Arrival Time"
 msgstr "抵達時間"
 
-#: app/TrainDelegate.qml:45 app/TrainDelegate.qml:201
+#: app/TrainDelegate.qml:45 app/TrainDelegate.qml:110
 #, fuzzy, kde-format
 #| msgid "Platform change on %1"
 msgctxt "train station platform"
 msgid "Platform changed to %1"
 msgstr "在 %1 月台有變更"
 
-#: app/TrainDelegate.qml:47 app/TrainDelegate.qml:203
+#: app/TrainDelegate.qml:47 app/TrainDelegate.qml:112
 #, fuzzy, kde-format
 #| msgid "Platform: %1"
 msgctxt "train station platform"

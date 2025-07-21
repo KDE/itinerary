@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-20 00:43+0000\n"
+"POT-Creation-Date: 2025-07-21 00:42+0000\n"
 "PO-Revision-Date: 2024-12-15 19:32+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
@@ -372,7 +372,7 @@ msgstr "कोई कैमरा उपलब्ध नहीं है."
 msgid "Light"
 msgstr "रोशनी"
 
-#: app/BoatDelegate.qml:29 app/BoatEditor.qml:108 app/BoatPage.qml:32
+#: app/BoatDelegate.qml:38 app/BoatEditor.qml:108 app/BoatPage.qml:32
 #, kde-format
 msgctxt "default transport name for a boat trip"
 msgid "Ferry"
@@ -583,14 +583,14 @@ msgctxt "@info"
 msgid "Bus"
 msgstr "बस"
 
-#: app/BusDelegate.qml:52 app/BusDelegate.qml:192
+#: app/BusDelegate.qml:52 app/BusDelegate.qml:101
 #, fuzzy, kde-format
 #| msgid "Platform change on %1"
 msgctxt "bus station platform"
 msgid "Platform changed to %1"
 msgstr "%1 पर प्लेटफ़ॉर्म परिवर्तन"
 
-#: app/BusDelegate.qml:54 app/BusDelegate.qml:194
+#: app/BusDelegate.qml:54 app/BusDelegate.qml:103
 #, fuzzy, kde-format
 #| msgid "Platform %1"
 msgctxt "bus station platform"
@@ -603,19 +603,7 @@ msgctxt "bus seat"
 msgid "Seat: <b>%1</b>"
 msgstr "सीटः <b>%1</b>"
 
-#: app/BusDelegate.qml:88 app/TrainDelegate.qml:96
-#, kde-format
-msgid "1 intermediate stop (%2)"
-msgid_plural "%1 intermediate stops (%2)"
-msgstr[0] "%1 मध्यवर्ती स्टॉप (%2)"
-msgstr[1] "%1 मध्यवर्ती स्टॉप (%2)"
-
-#: app/BusDelegate.qml:98 app/TrainDelegate.qml:106
-#, kde-format
-msgid "0 intermediate stop (%1)"
-msgstr "0 मध्यवर्ती स्टॉप (%1)"
-
-#: app/BusDelegate.qml:208 app/TrainDelegate.qml:216
+#: app/BusDelegate.qml:117 app/TrainDelegate.qml:125
 #, fuzzy, kde-format
 #| msgid "%1 to %2"
 msgctxt "from location 1 to location 2"
@@ -4015,6 +4003,18 @@ msgstr "यात्री %1"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
+#: app/TimelineDelegateIntermediateStopsButton.qml:36
+#, kde-format
+msgid "1 intermediate stop (%2)"
+msgid_plural "%1 intermediate stops (%2)"
+msgstr[0] "%1 मध्यवर्ती स्टॉप (%2)"
+msgstr[1] "%1 मध्यवर्ती स्टॉप (%2)"
+
+#: app/TimelineDelegateIntermediateStopsButton.qml:46
+#, kde-format
+msgid "0 intermediate stop (%1)"
+msgstr "0 मध्यवर्ती स्टॉप (%1)"
+
 #: app/timelinesectiondelegatecontroller.cpp:64
 #, kde-format
 msgid "Today"
@@ -4051,14 +4051,14 @@ msgstr "आगमन"
 msgid "Arrival Time"
 msgstr "आगमन समय"
 
-#: app/TrainDelegate.qml:45 app/TrainDelegate.qml:201
+#: app/TrainDelegate.qml:45 app/TrainDelegate.qml:110
 #, fuzzy, kde-format
 #| msgid "Platform change on %1"
 msgctxt "train station platform"
 msgid "Platform changed to %1"
 msgstr "%1 पर प्लेटफ़ॉर्म परिवर्तन"
 
-#: app/TrainDelegate.qml:47 app/TrainDelegate.qml:203
+#: app/TrainDelegate.qml:47 app/TrainDelegate.qml:112
 #, fuzzy, kde-format
 #| msgid "Platform %1"
 msgctxt "train station platform"

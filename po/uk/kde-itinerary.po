@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-20 00:43+0000\n"
-"PO-Revision-Date: 2025-07-10 16:33+0300\n"
+"POT-Creation-Date: 2025-07-21 00:42+0000\n"
+"PO-Revision-Date: 2025-07-20 16:40+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -379,7 +379,7 @@ msgstr "Немає доступних камер."
 msgid "Light"
 msgstr "Світло"
 
-#: app/BoatDelegate.qml:29 app/BoatEditor.qml:108 app/BoatPage.qml:32
+#: app/BoatDelegate.qml:38 app/BoatEditor.qml:108 app/BoatPage.qml:32
 #, kde-format
 msgctxt "default transport name for a boat trip"
 msgid "Ferry"
@@ -502,10 +502,9 @@ msgstr "Термінал"
 #: app/BoatPage.qml:82 app/BoatPage.qml:118 app/BusPage.qml:120
 #: app/BusPage.qml:189 app/FlightPage.qml:164 app/FlightPage.qml:214
 #: app/TrainPage.qml:183 app/TrainPage.qml:267
-#, fuzzy, kde-format
-#| msgid "Additional notes"
+#, kde-format
 msgid "Additional information"
-msgstr "Додаткові примітки"
+msgstr "Додаткові відомості"
 
 #: app/BoatPage.qml:99 app/BusPage.qml:144 app/TrainPage.qml:211
 #, kde-format
@@ -583,13 +582,13 @@ msgctxt "@info"
 msgid "Bus"
 msgstr "Автобус"
 
-#: app/BusDelegate.qml:52 app/BusDelegate.qml:192
+#: app/BusDelegate.qml:52 app/BusDelegate.qml:101
 #, kde-format
 msgctxt "bus station platform"
 msgid "Platform changed to %1"
 msgstr "Платформу змінено на %1"
 
-#: app/BusDelegate.qml:54 app/BusDelegate.qml:194
+#: app/BusDelegate.qml:54 app/BusDelegate.qml:103
 #, kde-format
 msgctxt "bus station platform"
 msgid "Platform %1"
@@ -601,21 +600,7 @@ msgctxt "bus seat"
 msgid "Seat: <b>%1</b>"
 msgstr "Сидіння: <b>%1</b>"
 
-#: app/BusDelegate.qml:88 app/TrainDelegate.qml:96
-#, kde-format
-msgid "1 intermediate stop (%2)"
-msgid_plural "%1 intermediate stops (%2)"
-msgstr[0] "%1 проміжна зупинка (%2)"
-msgstr[1] "%1 проміжні зупинки (%2)"
-msgstr[2] "%1 проміжних зупинок (%2)"
-msgstr[3] "1 проміжна зупинка (%2)"
-
-#: app/BusDelegate.qml:98 app/TrainDelegate.qml:106
-#, kde-format
-msgid "0 intermediate stop (%1)"
-msgstr "0 проміжна зупинка (%1)"
-
-#: app/BusDelegate.qml:208 app/TrainDelegate.qml:216
+#: app/BusDelegate.qml:117 app/TrainDelegate.qml:125
 #, kde-format
 msgctxt "from location 1 to location 2"
 msgid "%1 to %2"
@@ -3975,6 +3960,20 @@ msgstr "Мандрівник %1"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
+#: app/TimelineDelegateIntermediateStopsButton.qml:36
+#, kde-format
+msgid "1 intermediate stop (%2)"
+msgid_plural "%1 intermediate stops (%2)"
+msgstr[0] "%1 проміжна зупинка (%2)"
+msgstr[1] "%1 проміжні зупинки (%2)"
+msgstr[2] "%1 проміжних зупинок (%2)"
+msgstr[3] "1 проміжна зупинка (%2)"
+
+#: app/TimelineDelegateIntermediateStopsButton.qml:46
+#, kde-format
+msgid "0 intermediate stop (%1)"
+msgstr "0 проміжна зупинка (%1)"
+
 #: app/timelinesectiondelegatecontroller.cpp:64
 #, kde-format
 msgid "Today"
@@ -4011,13 +4010,13 @@ msgstr "Прибуття"
 msgid "Arrival Time"
 msgstr "Час прибуття"
 
-#: app/TrainDelegate.qml:45 app/TrainDelegate.qml:201
+#: app/TrainDelegate.qml:45 app/TrainDelegate.qml:110
 #, kde-format
 msgctxt "train station platform"
 msgid "Platform changed to %1"
 msgstr "Платформу змінено на %1"
 
-#: app/TrainDelegate.qml:47 app/TrainDelegate.qml:203
+#: app/TrainDelegate.qml:47 app/TrainDelegate.qml:112
 #, kde-format
 msgctxt "train station platform"
 msgid "Platform %1"
