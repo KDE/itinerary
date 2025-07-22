@@ -323,7 +323,7 @@ Kirigami.ScrollablePage {
 
     Component {
         id: flightDetailsPage
-        FlightPage { editor: flightEditorPage }
+        FlightPage {}
     }
     Component {
         id: trainDetailsPage
@@ -360,15 +360,6 @@ Kirigami.ScrollablePage {
     Component {
         id: weatherForecastPage
         WeatherForecastPage {}
-    }
-
-    Component {
-        id: flightEditorPage
-        FlightEditor {}
-    }
-    Component {
-        id: boatEditorPage
-        BoatEditor {}
     }
 
     function detailsComponent(batchId) {

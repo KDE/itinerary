@@ -23,6 +23,10 @@ DetailsPage {
         }
     }
 
+    editor: FlightEditor {
+        controller: root.controller
+    }
+
     data: BarcodeScanModeButton {
         id: scanModeButton
         page: root
