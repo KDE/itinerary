@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-20 02:39+0000\n"
+"POT-Creation-Date: 2025-07-22 02:39+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -497,7 +497,7 @@ msgctxt "Boat arrival"
 msgid "Arrival Time"
 msgstr "Čas príchodu: %1"
 
-#: app/BoatEditor.qml:191 app/BusEditor.qml:253 app/TrainEditor.qml:262
+#: app/BoatEditor.qml:191 app/BusEditor.qml:254 app/TrainEditor.qml:263
 #, kde-format
 msgid "Arrival time has to be after the departure time."
 msgstr ""
@@ -665,7 +665,7 @@ msgctxt "@title"
 msgid "Edit Bus Reservation"
 msgstr "Upraviť rezerváciu hotelu"
 
-#: app/BusEditor.qml:80 app/BusEditor.qml:225
+#: app/BusEditor.qml:80 app/BusEditor.qml:226
 #, fuzzy, kde-format
 #| msgid "Change Reservation"
 msgctxt "bus departure"
@@ -679,7 +679,7 @@ msgctxt "bus departure"
 msgid "Change departure stop"
 msgstr "Zmena rezervácie"
 
-#: app/BusEditor.qml:96 app/BusEditor.qml:315
+#: app/BusEditor.qml:96 app/BusEditor.qml:316
 #, fuzzy, kde-format
 #| msgid "Change Reservation"
 msgctxt "bus arrival"
@@ -727,70 +727,70 @@ msgctxt "Bus departure"
 msgid "Departure Time"
 msgstr "Čas odchodu:"
 
-#: app/BusEditor.qml:176
+#: app/BusEditor.qml:177
 #, fuzzy, kde-format
 msgctxt "Bus stop"
 msgid "Stop"
 msgstr "Zobraziť názvy"
 
-#: app/BusEditor.qml:179
+#: app/BusEditor.qml:180
 #, fuzzy, kde-format
 #| msgid "Departure terminal:"
 msgid "Departure bus stop must not be empty."
 msgstr "Odletový terminál:"
 
-#: app/BusEditor.qml:187 app/BusEditor.qml:274
+#: app/BusEditor.qml:188 app/BusEditor.qml:275
 #, fuzzy, kde-format
 #| msgid "Platform:"
 msgctxt "Bus stop platform"
 msgid "Platform"
 msgstr "Platforma:"
 
-#: app/BusEditor.qml:208
+#: app/BusEditor.qml:209
 #, fuzzy, kde-format
 msgctxt "bus stop"
 msgid "Stop Name"
 msgstr "Zobraziť názvy"
 
-#: app/BusEditor.qml:216 app/BusEditor.qml:308
+#: app/BusEditor.qml:217 app/BusEditor.qml:309
 #, fuzzy, kde-format
 #| msgid "Platform:"
 msgctxt "bus stop platform"
 msgid "Platform"
 msgstr "Platforma:"
 
-#: app/BusEditor.qml:233
+#: app/BusEditor.qml:234
 #, fuzzy, kde-format
 #| msgid "Arrival"
 msgctxt "bus arrival"
 msgid "Arrival"
 msgstr "Príchod"
 
-#: app/BusEditor.qml:242 app/TrainEditor.qml:251
+#: app/BusEditor.qml:243 app/TrainEditor.qml:252
 #, fuzzy, kde-format
 msgctxt "Train arrival"
 msgid "Arrival Time"
 msgstr "Čas príchodu: %1"
 
-#: app/BusEditor.qml:263
+#: app/BusEditor.qml:264
 #, fuzzy, kde-format
 msgctxt "Bus stop"
 msgid "Stop Name"
 msgstr "Zobraziť názvy"
 
-#: app/BusEditor.qml:266
+#: app/BusEditor.qml:267
 #, fuzzy, kde-format
 #| msgid "Departure terminal:"
 msgid "Arrival stop must not be empty."
 msgstr "Odletový terminál:"
 
-#: app/BusEditor.qml:300
+#: app/BusEditor.qml:301
 #, kde-format
 msgctxt "bus stop"
 msgid "Stop"
 msgstr ""
 
-#: app/BusEditor.qml:324 app/BusEditor.qml:330 app/BusPage.qml:177
+#: app/BusEditor.qml:325 app/BusEditor.qml:331 app/BusPage.qml:177
 #, fuzzy, kde-format
 #| msgid "Seat"
 msgctxt "Bus seat"
@@ -4221,7 +4221,7 @@ msgctxt "@title"
 msgid "Edit Train Reservation"
 msgstr "Rezervácia hotela"
 
-#: app/TrainEditor.qml:88 app/TrainEditor.qml:234
+#: app/TrainEditor.qml:88 app/TrainEditor.qml:235
 #, fuzzy, kde-format
 #| msgid "Change Reservation"
 msgctxt "train departure"
@@ -4235,7 +4235,7 @@ msgctxt "train departure"
 msgid "Change departure station"
 msgstr "Zmena rezervácie"
 
-#: app/TrainEditor.qml:104 app/TrainEditor.qml:327
+#: app/TrainEditor.qml:104 app/TrainEditor.qml:328
 #, fuzzy, kde-format
 #| msgid "Change Reservation"
 msgctxt "train arrival"
@@ -4276,27 +4276,27 @@ msgctxt "Train departure"
 msgid "Departure Time"
 msgstr "Čas odchodu:"
 
-#: app/TrainEditor.qml:185
+#: app/TrainEditor.qml:186
 #, fuzzy, kde-format
 #| msgid "Station:"
 msgctxt "Train station platform"
 msgid "Station Name"
 msgstr "Stanica:"
 
-#: app/TrainEditor.qml:188
+#: app/TrainEditor.qml:189
 #, fuzzy, kde-format
 #| msgid "Departure terminal:"
 msgid "Departure station must not be empty."
 msgstr "Odletový terminál:"
 
-#: app/TrainEditor.qml:196 app/TrainEditor.qml:283
+#: app/TrainEditor.qml:197 app/TrainEditor.qml:284
 #, fuzzy, kde-format
 #| msgid "Platform:"
 msgctxt "Train station platform"
 msgid "Platform"
 msgstr "Platforma:"
 
-#: app/TrainEditor.qml:217 app/TrainEditor.qml:309 app/TrainPage.qml:163
+#: app/TrainEditor.qml:218 app/TrainEditor.qml:310 app/TrainPage.qml:163
 #: app/TrainPage.qml:247
 #, fuzzy, kde-format
 #| msgid "Station:"
@@ -4304,48 +4304,48 @@ msgctxt "train station"
 msgid "Station"
 msgstr "Stanica:"
 
-#: app/TrainEditor.qml:225 app/TrainEditor.qml:318
+#: app/TrainEditor.qml:226 app/TrainEditor.qml:319
 #, fuzzy, kde-format
 #| msgid "Platform:"
 msgctxt "train platform"
 msgid "Platform"
 msgstr "Platforma:"
 
-#: app/TrainEditor.qml:242
+#: app/TrainEditor.qml:243
 #, fuzzy, kde-format
 #| msgid "Arrival"
 msgctxt "train arrival"
 msgid "Arrival"
 msgstr "Príchod"
 
-#: app/TrainEditor.qml:272
+#: app/TrainEditor.qml:273
 #, fuzzy, kde-format
 #| msgid "Station:"
 msgctxt "Train station"
 msgid "Station Name"
 msgstr "Stanica:"
 
-#: app/TrainEditor.qml:275
+#: app/TrainEditor.qml:276
 #, fuzzy, kde-format
 #| msgid "Departure terminal:"
 msgid "Arrival station must not be empty."
 msgstr "Odletový terminál:"
 
-#: app/TrainEditor.qml:337 app/TrainEditor.qml:349 app/TrainPage.qml:292
+#: app/TrainEditor.qml:338 app/TrainEditor.qml:350 app/TrainPage.qml:292
 #, fuzzy, kde-format
 #| msgid "Seat"
 msgctxt "Train seat"
 msgid "Seat"
 msgstr "Sedlo"
 
-#: app/TrainEditor.qml:343
+#: app/TrainEditor.qml:344
 #, fuzzy, kde-format
 #| msgid "Coach:"
 msgctxt "carriage on a train"
 msgid "Coach"
 msgstr "Tréner:"
 
-#: app/TrainEditor.qml:355
+#: app/TrainEditor.qml:356
 #, fuzzy, kde-format
 #| msgid "Class:"
 msgctxt "seating class on a train"

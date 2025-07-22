@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-20 02:39+0000\n"
+"POT-Creation-Date: 2025-07-22 02:39+0000\n"
 "PO-Revision-Date: 2024-03-26 16:14+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -481,7 +481,7 @@ msgctxt "Boat arrival"
 msgid "Arrival Time"
 msgstr "Érkezési idő"
 
-#: app/BoatEditor.qml:191 app/BusEditor.qml:253 app/TrainEditor.qml:262
+#: app/BoatEditor.qml:191 app/BusEditor.qml:254 app/TrainEditor.qml:263
 #, kde-format
 msgid "Arrival time has to be after the departure time."
 msgstr "Az érkezési időnek az indulási idő után kell lennie."
@@ -644,7 +644,7 @@ msgctxt "@title"
 msgid "Edit Bus Reservation"
 msgstr "Buszfoglalás szerkesztése"
 
-#: app/BusEditor.qml:80 app/BusEditor.qml:225
+#: app/BusEditor.qml:80 app/BusEditor.qml:226
 #, fuzzy, kde-format
 #| msgid "Change departure stop"
 msgctxt "bus departure"
@@ -658,7 +658,7 @@ msgctxt "bus departure"
 msgid "Change departure stop"
 msgstr "Indulási megálló módosítása"
 
-#: app/BusEditor.qml:96 app/BusEditor.qml:315
+#: app/BusEditor.qml:96 app/BusEditor.qml:316
 #, fuzzy, kde-format
 #| msgid "Change arrival stop"
 msgctxt "bus arrival"
@@ -705,7 +705,7 @@ msgctxt "Bus departure"
 msgid "Departure Time"
 msgstr "Indulási idő"
 
-#: app/BusEditor.qml:176
+#: app/BusEditor.qml:177
 #, fuzzy, kde-format
 #| msgctxt "bus stop"
 #| msgid "Stop"
@@ -713,20 +713,20 @@ msgctxt "Bus stop"
 msgid "Stop"
 msgstr "Megálló"
 
-#: app/BusEditor.qml:179
+#: app/BusEditor.qml:180
 #, fuzzy, kde-format
 #| msgid "Departure terminal must not be empty."
 msgid "Departure bus stop must not be empty."
 msgstr "Az indulási kikötő nem lehet üres."
 
-#: app/BusEditor.qml:187 app/BusEditor.qml:274
+#: app/BusEditor.qml:188 app/BusEditor.qml:275
 #, fuzzy, kde-format
 #| msgid "Platform"
 msgctxt "Bus stop platform"
 msgid "Platform"
 msgstr "Peron"
 
-#: app/BusEditor.qml:208
+#: app/BusEditor.qml:209
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Show Map"
@@ -734,26 +734,26 @@ msgctxt "bus stop"
 msgid "Stop Name"
 msgstr "Térkép megjelenítése"
 
-#: app/BusEditor.qml:216 app/BusEditor.qml:308
+#: app/BusEditor.qml:217 app/BusEditor.qml:309
 #, kde-format
 msgctxt "bus stop platform"
 msgid "Platform"
 msgstr "Peron"
 
-#: app/BusEditor.qml:233
+#: app/BusEditor.qml:234
 #, kde-format
 msgctxt "bus arrival"
 msgid "Arrival"
 msgstr "Érkezés"
 
-#: app/BusEditor.qml:242 app/TrainEditor.qml:251
+#: app/BusEditor.qml:243 app/TrainEditor.qml:252
 #, fuzzy, kde-format
 #| msgid "Arrival Time"
 msgctxt "Train arrival"
 msgid "Arrival Time"
 msgstr "Érkezési idő"
 
-#: app/BusEditor.qml:263
+#: app/BusEditor.qml:264
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Show Map"
@@ -761,19 +761,19 @@ msgctxt "Bus stop"
 msgid "Stop Name"
 msgstr "Térkép megjelenítése"
 
-#: app/BusEditor.qml:266
+#: app/BusEditor.qml:267
 #, fuzzy, kde-format
 #| msgid "Arrival terminal must not be empty."
 msgid "Arrival stop must not be empty."
 msgstr "Az érkezési kikötő nem lehet üres."
 
-#: app/BusEditor.qml:300
+#: app/BusEditor.qml:301
 #, kde-format
 msgctxt "bus stop"
 msgid "Stop"
 msgstr "Megálló"
 
-#: app/BusEditor.qml:324 app/BusEditor.qml:330 app/BusPage.qml:177
+#: app/BusEditor.qml:325 app/BusEditor.qml:331 app/BusPage.qml:177
 #, fuzzy, kde-format
 #| msgid "Seat"
 msgctxt "Bus seat"
@@ -4143,7 +4143,7 @@ msgctxt "@title"
 msgid "Edit Train Reservation"
 msgstr "Buszfoglalás szerkesztése"
 
-#: app/TrainEditor.qml:88 app/TrainEditor.qml:234
+#: app/TrainEditor.qml:88 app/TrainEditor.qml:235
 #, fuzzy, kde-format
 #| msgid "Change departure stop"
 msgctxt "train departure"
@@ -4157,7 +4157,7 @@ msgctxt "train departure"
 msgid "Change departure station"
 msgstr "Indulási megálló módosítása"
 
-#: app/TrainEditor.qml:104 app/TrainEditor.qml:327
+#: app/TrainEditor.qml:104 app/TrainEditor.qml:328
 #, fuzzy, kde-format
 #| msgid "Change arrival stop"
 msgctxt "train arrival"
@@ -4198,7 +4198,7 @@ msgctxt "Train departure"
 msgid "Departure Time"
 msgstr "Indulási idő"
 
-#: app/TrainEditor.qml:185
+#: app/TrainEditor.qml:186
 #, fuzzy, kde-format
 #| msgctxt "bus station"
 #| msgid "Station"
@@ -4206,39 +4206,39 @@ msgctxt "Train station platform"
 msgid "Station Name"
 msgstr "Állomás"
 
-#: app/TrainEditor.qml:188
+#: app/TrainEditor.qml:189
 #, fuzzy, kde-format
 #| msgid "Departure terminal must not be empty."
 msgid "Departure station must not be empty."
 msgstr "Az indulási kikötő nem lehet üres."
 
-#: app/TrainEditor.qml:196 app/TrainEditor.qml:283
+#: app/TrainEditor.qml:197 app/TrainEditor.qml:284
 #, fuzzy, kde-format
 #| msgid "Platform"
 msgctxt "Train station platform"
 msgid "Platform"
 msgstr "Peron"
 
-#: app/TrainEditor.qml:217 app/TrainEditor.qml:309 app/TrainPage.qml:163
+#: app/TrainEditor.qml:218 app/TrainEditor.qml:310 app/TrainPage.qml:163
 #: app/TrainPage.qml:247
 #, kde-format
 msgctxt "train station"
 msgid "Station"
 msgstr "Állomás"
 
-#: app/TrainEditor.qml:225 app/TrainEditor.qml:318
+#: app/TrainEditor.qml:226 app/TrainEditor.qml:319
 #, kde-format
 msgctxt "train platform"
 msgid "Platform"
 msgstr "Peron"
 
-#: app/TrainEditor.qml:242
+#: app/TrainEditor.qml:243
 #, kde-format
 msgctxt "train arrival"
 msgid "Arrival"
 msgstr "Érkezés"
 
-#: app/TrainEditor.qml:272
+#: app/TrainEditor.qml:273
 #, fuzzy, kde-format
 #| msgctxt "bus station"
 #| msgid "Station"
@@ -4246,26 +4246,26 @@ msgctxt "Train station"
 msgid "Station Name"
 msgstr "Állomás"
 
-#: app/TrainEditor.qml:275
+#: app/TrainEditor.qml:276
 #, fuzzy, kde-format
 #| msgid "Arrival terminal must not be empty."
 msgid "Arrival station must not be empty."
 msgstr "Az érkezési kikötő nem lehet üres."
 
-#: app/TrainEditor.qml:337 app/TrainEditor.qml:349 app/TrainPage.qml:292
+#: app/TrainEditor.qml:338 app/TrainEditor.qml:350 app/TrainPage.qml:292
 #, fuzzy, kde-format
 #| msgid "Seat"
 msgctxt "Train seat"
 msgid "Seat"
 msgstr "Ülés"
 
-#: app/TrainEditor.qml:343
+#: app/TrainEditor.qml:344
 #, kde-format
 msgctxt "carriage on a train"
 msgid "Coach"
 msgstr "Kocsi"
 
-#: app/TrainEditor.qml:355
+#: app/TrainEditor.qml:356
 #, kde-format
 msgctxt "seating class on a train"
 msgid "Class"
