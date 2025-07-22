@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-21 00:42+0000\n"
+"POT-Creation-Date: 2025-07-22 00:43+0000\n"
 "PO-Revision-Date: 2025-07-21 00:39+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -458,7 +458,7 @@ msgctxt "Boat arrival"
 msgid "Arrival Time"
 msgstr "도착 시간"
 
-#: app/BoatEditor.qml:191 app/BusEditor.qml:253 app/TrainEditor.qml:262
+#: app/BoatEditor.qml:191 app/BusEditor.qml:254 app/TrainEditor.qml:263
 #, kde-format
 msgid "Arrival time has to be after the departure time."
 msgstr "도착 시간은 출발 시간 이후여야 합니다."
@@ -604,7 +604,7 @@ msgctxt "@title"
 msgid "Edit Bus Reservation"
 msgstr "버스 예약 편집"
 
-#: app/BusEditor.qml:80 app/BusEditor.qml:225
+#: app/BusEditor.qml:80 app/BusEditor.qml:226
 #, kde-format
 msgctxt "bus departure"
 msgid "Change Departure Stop"
@@ -616,7 +616,7 @@ msgctxt "bus departure"
 msgid "Change departure stop"
 msgstr "출발 정류장 변경"
 
-#: app/BusEditor.qml:96 app/BusEditor.qml:315
+#: app/BusEditor.qml:96 app/BusEditor.qml:316
 #, kde-format
 msgctxt "bus arrival"
 msgid "Change Arrival Stop"
@@ -658,65 +658,65 @@ msgctxt "Bus departure"
 msgid "Departure Time"
 msgstr "출발 시간"
 
-#: app/BusEditor.qml:176
+#: app/BusEditor.qml:177
 #, kde-format
 msgctxt "Bus stop"
 msgid "Stop"
 msgstr "정거장"
 
-#: app/BusEditor.qml:179
+#: app/BusEditor.qml:180
 #, kde-format
 msgid "Departure bus stop must not be empty."
 msgstr "출발 버스 정거장이 비어 있으면 안 됩니다."
 
-#: app/BusEditor.qml:187 app/BusEditor.qml:274
+#: app/BusEditor.qml:188 app/BusEditor.qml:275
 #, kde-format
 msgctxt "Bus stop platform"
 msgid "Platform"
 msgstr "승강장"
 
-#: app/BusEditor.qml:208
+#: app/BusEditor.qml:209
 #, kde-format
 msgctxt "bus stop"
 msgid "Stop Name"
 msgstr "정거장 이름"
 
-#: app/BusEditor.qml:216 app/BusEditor.qml:308
+#: app/BusEditor.qml:217 app/BusEditor.qml:309
 #, kde-format
 msgctxt "bus stop platform"
 msgid "Platform"
 msgstr "승강장"
 
-#: app/BusEditor.qml:233
+#: app/BusEditor.qml:234
 #, kde-format
 msgctxt "bus arrival"
 msgid "Arrival"
 msgstr "도착"
 
-#: app/BusEditor.qml:242 app/TrainEditor.qml:251
+#: app/BusEditor.qml:243 app/TrainEditor.qml:252
 #, kde-format
 msgctxt "Train arrival"
 msgid "Arrival Time"
 msgstr "도착 시간"
 
-#: app/BusEditor.qml:263
+#: app/BusEditor.qml:264
 #, kde-format
 msgctxt "Bus stop"
 msgid "Stop Name"
 msgstr "정거장 이름"
 
-#: app/BusEditor.qml:266
+#: app/BusEditor.qml:267
 #, kde-format
 msgid "Arrival stop must not be empty."
 msgstr "도착 정거장이 비어 있으면 안 됩니다."
 
-#: app/BusEditor.qml:300
+#: app/BusEditor.qml:301
 #, kde-format
 msgctxt "bus stop"
 msgid "Stop"
 msgstr "정류정"
 
-#: app/BusEditor.qml:324 app/BusEditor.qml:330 app/BusPage.qml:201
+#: app/BusEditor.qml:325 app/BusEditor.qml:331 app/BusPage.qml:201
 #, kde-format
 msgctxt "Bus seat"
 msgid "Seat"
@@ -3986,7 +3986,7 @@ msgctxt "@title"
 msgid "Edit Train Reservation"
 msgstr "기차 예약 편집"
 
-#: app/TrainEditor.qml:88 app/TrainEditor.qml:234
+#: app/TrainEditor.qml:88 app/TrainEditor.qml:235
 #, kde-format
 msgctxt "train departure"
 msgid "Change Departure Station"
@@ -3998,7 +3998,7 @@ msgctxt "train departure"
 msgid "Change departure station"
 msgstr "출발 역 변경"
 
-#: app/TrainEditor.qml:104 app/TrainEditor.qml:327
+#: app/TrainEditor.qml:104 app/TrainEditor.qml:328
 #, kde-format
 msgctxt "train arrival"
 msgid "Change Arrival Station"
@@ -4034,66 +4034,66 @@ msgctxt "Train departure"
 msgid "Departure Time"
 msgstr "출발 시간"
 
-#: app/TrainEditor.qml:185
+#: app/TrainEditor.qml:186
 #, kde-format
 msgctxt "Train station platform"
 msgid "Station Name"
 msgstr "역 이름"
 
-#: app/TrainEditor.qml:188
+#: app/TrainEditor.qml:189
 #, kde-format
 msgid "Departure station must not be empty."
 msgstr "출발역이 비어 있으면 안 됩니다."
 
-#: app/TrainEditor.qml:196 app/TrainEditor.qml:283
+#: app/TrainEditor.qml:197 app/TrainEditor.qml:284
 #, kde-format
 msgctxt "Train station platform"
 msgid "Platform"
 msgstr "승강장"
 
-#: app/TrainEditor.qml:217 app/TrainEditor.qml:309 app/TrainPage.qml:163
+#: app/TrainEditor.qml:218 app/TrainEditor.qml:310 app/TrainPage.qml:163
 #: app/TrainPage.qml:247
 #, kde-format
 msgctxt "train station"
 msgid "Station"
 msgstr "역"
 
-#: app/TrainEditor.qml:225 app/TrainEditor.qml:318
+#: app/TrainEditor.qml:226 app/TrainEditor.qml:319
 #, kde-format
 msgctxt "train platform"
 msgid "Platform"
 msgstr "승강장"
 
-#: app/TrainEditor.qml:242
+#: app/TrainEditor.qml:243
 #, kde-format
 msgctxt "train arrival"
 msgid "Arrival"
 msgstr "도착"
 
-#: app/TrainEditor.qml:272
+#: app/TrainEditor.qml:273
 #, kde-format
 msgctxt "Train station"
 msgid "Station Name"
 msgstr "정거장 이름"
 
-#: app/TrainEditor.qml:275
+#: app/TrainEditor.qml:276
 #, kde-format
 msgid "Arrival station must not be empty."
 msgstr "도착역이 비어 있으면 안 됩니다."
 
-#: app/TrainEditor.qml:337 app/TrainEditor.qml:349 app/TrainPage.qml:290
+#: app/TrainEditor.qml:338 app/TrainEditor.qml:350 app/TrainPage.qml:290
 #, kde-format
 msgctxt "Train seat"
 msgid "Seat"
 msgstr "좌석"
 
-#: app/TrainEditor.qml:343
+#: app/TrainEditor.qml:344
 #, kde-format
 msgctxt "carriage on a train"
 msgid "Coach"
 msgstr "차량"
 
-#: app/TrainEditor.qml:355
+#: app/TrainEditor.qml:356
 #, kde-format
 msgctxt "seating class on a train"
 msgid "Class"
