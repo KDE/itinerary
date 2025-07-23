@@ -84,7 +84,9 @@ EditorPage {
         }
 
         FormCard.FormHeader {
-            title: i18nc("flight departure", "Departure - %1", reservation.reservationFor.departureAirport.iataCode)
+            title: root.reservation.reservationFor.departureAirport.iataCode !== "" ?
+                i18nc("flight departure", "Departure - %1", root.reservation.reservationFor.departureAirport.iataCode) :
+                i18nc("flight departure", "Departure")
         }
 
         FormCard.FormCard {
@@ -145,7 +147,9 @@ EditorPage {
         }
 
         FormCard.FormHeader {
-            title: i18nc("flight arrival", "Arrival - %1", root.reservation.reservationFor.arrivalAirport.iataCode)
+            title: root.reservation.reservationFor.arrivalAirport.iataCode !== "" ?
+                i18nc("flight arrival", "Arrival - %1", root.reservation.reservationFor.arrivalAirport.iataCode) :
+                i18nc("flight arrival", "Arrival")
         }
 
         FormCard.FormCard {
