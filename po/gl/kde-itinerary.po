@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-22 00:43+0000\n"
+"POT-Creation-Date: 2025-07-23 00:43+0000\n"
 "PO-Revision-Date: 2025-06-22 11:38+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -118,7 +118,7 @@ msgid "Add to calendar…"
 msgstr "Engadir ao calendario…"
 
 #: app/ActionsCard.qml:75 app/ProgramMembershipPage.qml:182
-#: app/TicketPage.qml:191 app/TripGroupPage.qml:745
+#: app/TicketPage.qml:191 app/TripGroupPage.qml:736
 #, kde-format
 msgid "Export…"
 msgstr "Exportar…"
@@ -148,7 +148,7 @@ msgid "Export Reservation"
 msgstr "Exportar a reserva"
 
 #: app/ActionsCard.qml:143 app/ProgramMembershipPage.qml:147
-#: app/TicketPage.qml:141 app/TripGroupPage.qml:695
+#: app/TicketPage.qml:141 app/TripGroupPage.qml:686
 #, kde-format
 msgid "Actions"
 msgstr "Accións"
@@ -421,7 +421,7 @@ msgid "Change arrival terminal"
 msgstr "Cambiar a estación de chegada"
 
 #: app/BoatEditor.qml:112 app/BusEditor.qml:127 app/EventEditor.qml:54
-#: app/FlightEditor.qml:72 app/HotelEditor.qml:51 app/ImportPage.qml:21
+#: app/FlightEditor.qml:75 app/HotelEditor.qml:51 app/ImportPage.qml:21
 #: app/JourneyRequestPage.qml:228 app/RestaurantEditor.qml:53
 #: app/StopoverDetailsPage.qml:127 app/TrainEditor.qml:135
 #, kde-format
@@ -502,7 +502,7 @@ msgid "Terminal"
 msgstr "Estación"
 
 #: app/BoatPage.qml:82 app/BoatPage.qml:118 app/BusPage.qml:120
-#: app/BusPage.qml:189 app/FlightPage.qml:164 app/FlightPage.qml:214
+#: app/BusPage.qml:189 app/FlightPage.qml:168 app/FlightPage.qml:218
 #: app/TrainPage.qml:183 app/TrainPage.qml:267
 #, fuzzy, kde-format
 #| msgid "Additional notes"
@@ -514,7 +514,7 @@ msgstr "Notas adicionais"
 msgid "Arrival time"
 msgstr "Hora de chegada"
 
-#: app/BoatPage.qml:142 app/BusPage.qml:233 app/FlightPage.qml:242
+#: app/BoatPage.qml:142 app/BusPage.qml:233 app/FlightPage.qml:246
 #: app/TrainPage.qml:347
 #, kde-format
 msgid "Alternatives"
@@ -1230,169 +1230,169 @@ msgstr "Novo voo"
 msgid "Edit Flight"
 msgstr "Editar o voo"
 
-#: app/FlightEditor.qml:84
+#: app/FlightEditor.qml:87
 #, kde-format
 msgctxt "flight departure"
 msgid "Departure - %1"
 msgstr "Saída — %1"
 
-#: app/FlightEditor.qml:90 app/FlightEditor.qml:150 app/FlightPage.qml:133
-#: app/FlightPage.qml:193
+#: app/FlightEditor.qml:93 app/FlightEditor.qml:154 app/FlightPage.qml:137
+#: app/FlightPage.qml:197
 #, kde-format
 msgid "Airport"
 msgstr "Aeroporto"
 
-#: app/FlightEditor.qml:93
+#: app/FlightEditor.qml:96
 #, kde-format
 msgid "Departure airport has to be specified."
 msgstr "Debe indicar o aeroporto de saída."
 
-#: app/FlightEditor.qml:99
+#: app/FlightEditor.qml:102
 #, kde-format
 msgctxt "flight departure terminal"
 msgid "Terminal"
 msgstr "Terminal"
 
-#: app/FlightEditor.qml:104
+#: app/FlightEditor.qml:107
 #, kde-format
 msgctxt "flight departure time"
 msgid "Time"
 msgstr "Hora"
 
-#: app/FlightEditor.qml:109
+#: app/FlightEditor.qml:112
 #, kde-format
 msgctxt "flight departure"
 msgid "Departure time has to be set."
 msgstr "Hai que definir a hora de saída."
 
-#: app/FlightEditor.qml:115
+#: app/FlightEditor.qml:119
 #, kde-format
 msgctxt "flight departure gate"
 msgid "Gate"
 msgstr "Porta"
 
-#: app/FlightEditor.qml:120 app/FlightPage.qml:78
+#: app/FlightEditor.qml:124 app/FlightPage.qml:82
 #, kde-format
 msgid "Boarding time"
 msgstr "Hora de embarque"
 
-#: app/FlightEditor.qml:131
+#: app/FlightEditor.qml:135
 #, kde-format
 msgctxt "flight departure"
 msgid "Boarding time has to be before the departure time."
 msgstr "A hora de embarque debe ser anterior á hora de saída."
 
-#: app/FlightEditor.qml:139
+#: app/FlightEditor.qml:143
 #, kde-format
 msgctxt "flight departure boarding group"
 msgid "Boarding group"
 msgstr "Grupo de embarque"
 
-#: app/FlightEditor.qml:144
+#: app/FlightEditor.qml:148
 #, kde-format
 msgctxt "flight arrival"
 msgid "Arrival - %1"
 msgstr "Chegada — %1"
 
-#: app/FlightEditor.qml:153
+#: app/FlightEditor.qml:157
 #, kde-format
 msgid "Arrival airport has to be specified."
 msgstr "Debe indicar o aeroporto de chegada."
 
-#: app/FlightEditor.qml:159
+#: app/FlightEditor.qml:163
 #, kde-format
 msgctxt "flight arrival terminal"
 msgid "Terminal"
 msgstr "Terminal"
 
-#: app/FlightEditor.qml:164
+#: app/FlightEditor.qml:168
 #, kde-format
 msgctxt "flight arrival time"
 msgid "Time"
 msgstr "Hora"
 
-#: app/FlightEditor.qml:175
+#: app/FlightEditor.qml:179
 #, kde-format
 msgctxt "flight arrival"
 msgid "Arrival time has to be after the departure time."
 msgstr "A hora de chegada debe ser posterior á hora de saída."
 
-#: app/FlightEditor.qml:182 app/FlightPage.qml:15 app/StatisticsPage.qml:107
+#: app/FlightEditor.qml:187 app/FlightPage.qml:15 app/StatisticsPage.qml:107
 #, kde-format
 msgid "Flight"
 msgstr "Voo"
 
-#: app/FlightEditor.qml:191
+#: app/FlightEditor.qml:196
 #, kde-format
 msgid "Flight number"
 msgstr "Número do voo"
 
-#: app/FlightEditor.qml:194
+#: app/FlightEditor.qml:199
 #, kde-format
 msgid "Invalid flight number."
 msgstr "O número do voo é incorrecto."
 
-#: app/FlightEditor.qml:199 app/FlightEditor.qml:206 app/FlightPage.qml:95
+#: app/FlightEditor.qml:204 app/FlightEditor.qml:211 app/FlightPage.qml:99
 #, kde-format
 msgctxt "Flight seat"
 msgid "Seat"
 msgstr "Asento"
 
-#: app/FlightPage.qml:60
+#: app/FlightPage.qml:64
 #, kde-format
 msgid "Sequence Number:"
 msgstr "Número de secuencia:"
 
-#: app/FlightPage.qml:69
+#: app/FlightPage.qml:73
 #, kde-format
 msgid "Boarding"
 msgstr "Embarque"
 
-#: app/FlightPage.qml:87
+#: app/FlightPage.qml:91
 #, kde-format
 msgid "Boarding group"
 msgstr "Grupo de embarque"
 
-#: app/FlightPage.qml:104
+#: app/FlightPage.qml:108
 #, kde-format
 msgid "Airline"
 msgstr "Liña aérea"
 
-#: app/FlightPage.qml:112
+#: app/FlightPage.qml:116
 #, kde-format
 msgctxt "Flight departure"
 msgid "Departure"
 msgstr "Saída"
 
-#: app/FlightPage.qml:118
+#: app/FlightPage.qml:122
 #, kde-format
 msgctxt "flight departure"
 msgid "Departure time"
 msgstr "Hora de saída"
 
-#: app/FlightPage.qml:123
+#: app/FlightPage.qml:127
 #, kde-format
 msgctxt "flight departure"
 msgid "Departure date"
 msgstr "Data de saída"
 
-#: app/FlightPage.qml:146 app/FlightPage.qml:206
+#: app/FlightPage.qml:150 app/FlightPage.qml:210
 #, kde-format
 msgid "Terminal"
 msgstr "Terminal"
 
-#: app/FlightPage.qml:156
+#: app/FlightPage.qml:160
 #, kde-format
 msgid "Gate"
 msgstr "Porta"
 
-#: app/FlightPage.qml:176
+#: app/FlightPage.qml:180
 #, kde-format
 msgctxt "Flight arrival"
 msgid "Arrival"
 msgstr "Chegada"
 
-#: app/FlightPage.qml:181
+#: app/FlightPage.qml:185
 #, kde-format
 msgctxt "flight arrival"
 msgid "Arrival time"
@@ -1551,7 +1551,7 @@ msgid "Do you really want to delete this pass?"
 msgstr "Seguro que quere eliminar o pase?"
 
 #: app/GenericPkPassPage.qml:55 app/TicketPage.qml:165
-#: app/TripGroupPage.qml:701
+#: app/TripGroupPage.qml:692
 #, kde-format
 msgid "Check for Updates"
 msgstr "Comprobar se hai novas actualizacións"
@@ -1949,7 +1949,7 @@ msgstr "Hora de entrada"
 msgid "Check-out time"
 msgstr "Hora de saída"
 
-#: app/ImportAction.qml:23 app/TripGroupPage.qml:502
+#: app/ImportAction.qml:23 app/TripGroupPage.qml:493
 #, kde-format
 msgid "Import"
 msgstr "Importar"
@@ -3050,7 +3050,7 @@ msgstr "Localizacións gardadas"
 msgid "Home Country"
 msgstr "País natal"
 
-#: app/MyDataPage.qml:131 app/StatisticsPage.qml:16 app/TripGroupPage.qml:663
+#: app/MyDataPage.qml:131 app/StatisticsPage.qml:16 app/TripGroupPage.qml:654
 #, kde-format
 msgid "Statistics"
 msgstr "Estatísticas"
@@ -3238,7 +3238,7 @@ msgctxt "name - valid time range"
 msgid "%1 - %2"
 msgstr "%1 — %2"
 
-#: app/passmanager.cpp:284 app/TripGroupPage.qml:435
+#: app/passmanager.cpp:284 app/TripGroupPage.qml:426
 #, kde-format
 msgid "%1 - %2"
 msgstr "%1 — %2"
@@ -3795,7 +3795,7 @@ msgstr "Viaxes"
 #: app/statisticsmodel.cpp:107 app/statisticsmodel.cpp:140
 #: app/statisticsmodel.cpp:155 app/statisticsmodel.cpp:170
 #: app/statisticsmodel.cpp:185 app/statisticsmodel.cpp:200
-#: app/TripGroupPage.qml:670
+#: app/TripGroupPage.qml:661
 #, kde-format
 msgid "Distance"
 msgstr "Distancia"
@@ -3808,7 +3808,7 @@ msgstr "Noites de hotel"
 #: app/statisticsmodel.cpp:117 app/statisticsmodel.cpp:145
 #: app/statisticsmodel.cpp:160 app/statisticsmodel.cpp:175
 #: app/statisticsmodel.cpp:190 app/statisticsmodel.cpp:205
-#: app/TripGroupPage.qml:679
+#: app/TripGroupPage.qml:670
 #, kde-format
 msgid "CO₂"
 msgstr "CO₂"
@@ -4473,87 +4473,87 @@ msgstr "Eliminar a viaxe"
 msgid "Do you really want to delete the trip '%1'?"
 msgstr "Seguro que quere eliminar a viaxe «%1»?"
 
-#: app/TripGroupPage.qml:436
+#: app/TripGroupPage.qml:427
 #, kde-format
 msgid "One day"
 msgid_plural "%1 days"
 msgstr[0] "1 día"
 msgstr[1] "%1 días"
 
-#: app/TripGroupPage.qml:468
+#: app/TripGroupPage.qml:459
 #, kde-format
 msgid "Some incompatible power sockets (%1)"
 msgstr "Hai algunhas tomas de corrente incompatíbeis (%1)."
 
-#: app/TripGroupPage.qml:470
+#: app/TripGroupPage.qml:461
 #, kde-format
 msgid "Some incompatible power plugs (%1)"
 msgstr "Algúns enchufes incompatíbeis (%1)."
 
-#: app/TripGroupPage.qml:473
+#: app/TripGroupPage.qml:464
 #, kde-format
 msgid "No compatible power plugs (%1)"
 msgstr "Non hai enchufes compatíbeis (%1)"
 
-#: app/TripGroupPage.qml:485
+#: app/TripGroupPage.qml:476
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
 msgstr[0] "Divisa: %"
 msgstr[1] "Divisas: %2"
 
-#: app/TripGroupPage.qml:495
+#: app/TripGroupPage.qml:486
 #, kde-format
 msgid "Show map…"
 msgstr "Amosar o mapa…"
 
-#: app/TripGroupPage.qml:518
+#: app/TripGroupPage.qml:509
 #, kde-format
 msgid "Add"
 msgstr "Engadir"
 
-#: app/TripGroupPage.qml:635
+#: app/TripGroupPage.qml:626
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Hoxe non consta nada no itinerario"
 
-#: app/TripGroupPage.qml:688
+#: app/TripGroupPage.qml:679
 #, kde-format
 msgid "Cost"
 msgstr "Custo"
 
-#: app/TripGroupPage.qml:710
+#: app/TripGroupPage.qml:701
 #, kde-format
 msgid "Rename…"
 msgstr "Renomear…"
 
-#: app/TripGroupPage.qml:719
+#: app/TripGroupPage.qml:710
 #, kde-format
 msgid "Merge trips…"
 msgstr "Fusionar as viaxes…"
 
-#: app/TripGroupPage.qml:730
+#: app/TripGroupPage.qml:721
 #, kde-format
 msgid "Split trip…"
 msgstr "Dividir a viaxe…"
 
-#: app/TripGroupPage.qml:737
+#: app/TripGroupPage.qml:728
 #, kde-format
 msgid "Download Maps"
 msgstr "Descargar mapas"
 
-#: app/TripGroupPage.qml:752
+#: app/TripGroupPage.qml:743
 #, kde-format
 msgid "Delete trip"
 msgstr "Eliminar a viaxe"
 
-#: app/TripGroupPage.qml:777
+#: app/TripGroupPage.qml:768
 #, kde-format
 msgctxt "@action:button"
 msgid "Go To Now"
 msgstr "Ir a agora"
 
-#: app/TripGroupPage.qml:785 app/TripGroupsPage.qml:118
+#: app/TripGroupPage.qml:776 app/TripGroupsPage.qml:118
 #: app/TripGroupsPage.qml:137
 #, kde-format
 msgctxt "@action:button"
