@@ -1,0 +1,93 @@
+/*
+    SPDX-FileCopyrightText: ⓒ 2025 Volker Krause <vkrause@kde.org>
+    SPDX-License-Identifier: LGPL-2.0-or-later
+*/
+
+#include "matrixsyncremotestatequeue.h"
+
+#include "logging.h"
+#include "matrixsyncstateevent.h"
+
+#include <Quotient/events/stateevent.h>
+
+using namespace Qt::Literals;
+
+MatrixSyncRemoteStateQueue::MatrixSyncRemoteStateQueue(QObject *parent) :
+    QObject(parent)
+{
+}
+
+MatrixSyncRemoteStateQueue::~MatrixSyncRemoteStateQueue() = default;
+
+void MatrixSyncRemoteStateQueue::append(const Quotient::StateEvent &state)
+{
+    auto ev = MatrixSyncStateEvent::fromQuotient(state);
+    if (!ev) {
+        return;
+    }
+
+    qCDebug(Log) << "Got remote state event" << ev->type() << ev->stateKey();
+    m_pendingChanges.push_back(std::move(*ev));
+
+    if (m_pendingChanges.size() == 1) {
+        dispatchNext();
+    }
+}
+
+void MatrixSyncRemoteStateQueue::setFileName(const QString &fileName)
+{
+    if (m_pendingChanges.empty()) {
+        return;
+    }
+
+    auto &ev = m_pendingChanges.front();
+    qCDebug(Log) << "Download complete for state event" << ev.type() << ev.stateKey() << ev.url() << fileName;
+    ev.setFileName(fileName);
+    if (!ev.needsDownload()) {
+        dispatchNext();
+    }
+}
+
+void MatrixSyncRemoteStateQueue::downloadFailed()
+{
+    if (m_pendingChanges.empty()) {
+        return;
+    }
+    qCWarning(Log) << "Discarding remote state change due to failed download" << m_pendingChanges.front().type() << m_pendingChanges.front().stateKey();
+    m_pendingChanges.pop_front();
+    dispatchNext();
+}
+
+void MatrixSyncRemoteStateQueue::dispatchNext()
+{
+    if (m_pendingChanges.empty()) {
+        return;
+    }
+
+    const auto &ev = m_pendingChanges.front();
+    if (ev.needsDownload()) {
+        qCDebug(Log) << "Downloading" << ev.type() << ev.stateKey() << ev.url();
+        Q_EMIT downloadFile(ev);
+        return;
+    }
+
+    qCDebug(Log) << "Dispatching remote state event" << ev.type() << ev.stateKey();
+    if (ev.type() == MatrixSync::ReservationEventType) {
+        Q_EMIT reservationEvent(ev);
+    } else if (ev.type() == MatrixSync::LiveDataEventType) {
+        Q_EMIT liveDataEvent(ev);
+    } else if (ev.type() == MatrixSync::TransferEventType) {
+        Q_EMIT transferEvent(ev);
+    } else if (ev.type() == MatrixSync::DocumentEventType) {
+        Q_EMIT documentEvent(ev);
+    } else if (ev.type() == MatrixSync::PkPassEventType) {
+        Q_EMIT pkPassEvent(ev);
+    } else {
+        qCWarning(Log) << "Unhandled event type:" << ev.type();
+    }
+
+    m_pendingChanges.pop_front();
+    dispatchNext();
+}
+
+#include "moc_matrixsyncremotestatequeue.cpp"

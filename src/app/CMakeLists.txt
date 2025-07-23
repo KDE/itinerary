@@ -32,6 +32,7 @@ target_sources(itinerary PRIVATE
     locationinformation.cpp
     matrixsynccontent.cpp
     matrixsynclocalstatequeue.cpp
+    matrixsyncremotestatequeue.cpp
     matrixsyncstateevent.cpp
     navigationcontroller.cpp
     nominatimimportjob.cpp
