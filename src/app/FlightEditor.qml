@@ -18,8 +18,8 @@ EditorPage {
 
     isValidInput: departureTime.hasValue
         && (!arrivalTime.hasValue || departureTime.value < arrivalTime.value)
-        && (root.reservation.reservationFor.departureAirport.iataCode !== "" || departureAirport.text !== "")
-        && (root.reservation.reservationFor.arrivalAirport.iataCode !== "" || arrivalAirport.text !== "")
+        && (root.reservation.reservationFor.departureAirport.iataCode !== "" || departureAirportName.text !== "")
+        && (root.reservation.reservationFor.arrivalAirport.iataCode !== "" || arrivalAirportName.text !== "")
     tripGroupSelector: tripGroupSelector
 
     function apply(reservation) {
