@@ -35,6 +35,7 @@ public:
      */
     void suspend();
     void resume();
+    [[nodiscard]] bool isSuspended() const { return m_suspended; }
 
     [[nodiscard]] std::vector<QString> tripGroups() const;
     Q_INVOKABLE [[nodiscard]] TripGroup tripGroup(const QString &id) const;
@@ -146,14 +147,14 @@ private:
 class TripGroupingBlocker
 {
 public:
-    explicit inline TripGroupingBlocker(TripGroupManager *tgMgr)
-        : m_tgMgr(tgMgr)
+    explicit TripGroupingBlocker(TripGroupManager *tgMgr)
     {
-        if (tgMgr) {
+        if (tgMgr && !tgMgr->isSuspended()) {
+            m_tgMgr = tgMgr;
             tgMgr->suspend();
         }
     }
-    inline ~TripGroupingBlocker()
+    ~TripGroupingBlocker()
     {
         if (m_tgMgr) {
             m_tgMgr->resume();
@@ -161,7 +162,7 @@ public:
     }
 
 private:
-    TripGroupManager *m_tgMgr;
+    TripGroupManager *m_tgMgr = nullptr;
 };
 
 #endif // TRIPGROUPMANAGER_H
