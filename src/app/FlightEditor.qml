@@ -35,14 +35,14 @@ EditorPage {
         flight.departureAirport = airport;
         flight.departureGate = departureGate.text;
         flight.departureTerminal = departureTerminal.text;
-        if (departureTime.isModified && !root.isManual)
+        if (departureTime.isModified && root.isManual)
             flight = Util.setDateTimePreserveTimezone(flight, "departureTime", departureTime.value);
 
         airport = flight.arrivalAirport;
         airport.name = arrivalAirportName.text;
         flight.arrivalAirport = airport;
         flight.arrivalTerminal = arrivalTerminal.text;
-        if (arrivalTime.isModified && !root.isManual)
+        if (arrivalTime.isModified && root.isManual)
             flight = Util.setDateTimePreserveTimezone(flight, "arrivalTime", arrivalTime.value);
 
         const flightNum = flightNumber.text.match(/^\s*([A-Z0-9]{2})\s*(\d{1,4})\s*$/);
