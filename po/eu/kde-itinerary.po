@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-22 02:39+0000\n"
-"PO-Revision-Date: 2025-07-10 16:32+0200\n"
+"PO-Revision-Date: 2025-07-23 13:58+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -121,13 +121,13 @@ msgstr "Editatu"
 #: app/ActionsCard.qml:63
 #, kde-format
 msgid "Add to calendar…"
-msgstr "Gehitu egutegira..."
+msgstr "Gehitu egutegira…"
 
 #: app/ActionsCard.qml:75 app/ProgramMembershipPage.qml:182
 #: app/TicketPage.qml:191 app/TripGroupPage.qml:745
 #, kde-format
 msgid "Export…"
-msgstr "Esportatu..."
+msgstr "Esportatu…"
 
 #: app/ActionsCard.qml:80 app/ActionsCard.qml:121 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:43 app/GenericPkPassPage.qml:71
@@ -938,7 +938,7 @@ msgstr "Ez dago erantsita dokumenturik erreserba honetan."
 #: app/DocumentsCard.qml:117
 #, kde-format
 msgid "Add Document…"
-msgstr "Gehitu dokumentua..."
+msgstr "Gehitu dokumentua…"
 
 #: app/downloadjob.cpp:162
 #, kde-format
@@ -1074,12 +1074,12 @@ msgstr "Mota: <b>%1</b>"
 #: app/ExportMenuDialog.qml:32
 #, kde-format
 msgid "As Itinerary file…"
-msgstr "«Itinerary» fitxategi gisa..."
+msgstr "«Itinerary» fitxategi gisa…"
 
 #: app/ExportMenuDialog.qml:42
 #, kde-format
 msgid "As GPX file…"
-msgstr "GPX fitxategi gisa..."
+msgstr "GPX fitxategi gisa…"
 
 #: app/ExportMenuDialog.qml:57
 #, kde-format
@@ -1467,7 +1467,7 @@ msgstr "%1°, %2°"
 #: app/FormPlaceEditorDelegate.qml:201
 #, kde-format
 msgid "Pick…"
-msgstr "Aukeratu..."
+msgstr "Aukeratu…"
 
 #: app/FormPlaceEditorDelegate.qml:219
 #, kde-format
@@ -1541,7 +1541,7 @@ msgstr "Egiaztatu eguneratzeak"
 #: app/GenericPkPassPage.qml:63
 #, kde-format
 msgid "Save As…"
-msgstr "Gorde honela..."
+msgstr "Gorde honela…"
 
 #: app/gpxexport.cpp:33 app/main.cpp:321 app/Main.qml:20 app/Main.qml:68
 #, kde-format
@@ -2154,7 +2154,7 @@ msgstr "Ez du bidaiarik aurkitu"
 #: app/JourneyQueryPage.qml:163
 #, kde-format
 msgid "Still fetching results…"
-msgstr "Oraindik emaitzan eskuratzen..."
+msgstr "Oraindik emaitzan eskuratzen…"
 
 #: app/JourneyRequestPage.qml:35 app/JourneyRequestPage.qml:65
 #, kde-format
@@ -2302,7 +2302,7 @@ msgstr "%1. nasa"
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
-msgstr "Erakutsi gehiago..."
+msgstr "Erakutsi gehiago…"
 
 #: app/JourneySectionPage.qml:51 app/TimelineDelegateDepartureLayout.qml:80
 #: app/VehicleLayoutPage.qml:77
@@ -2442,7 +2442,7 @@ msgstr "Mapan automatikoki jarraitzea"
 #: app/LiveStatusPage.qml:310 app/LiveStatusPage.qml:322
 #, kde-format
 msgid "Waiting for data…"
-msgstr "Datuen zain..."
+msgstr "Datuen zain…"
 
 #: app/LiveStatusPage.qml:334
 #, kde-format
@@ -2616,7 +2616,7 @@ msgstr "Inportatu beharreko fitxategiak edo URLak."
 #: app/Main.qml:82 app/WelcomePage.qml:41
 #, kde-format
 msgid "Settings…"
-msgstr "Ezarpenak..."
+msgstr "Ezarpenak…"
 
 #: app/Main.qml:89 app/WelcomePage.qml:16
 #, kde-format
@@ -2929,7 +2929,7 @@ msgstr "Uko egin"
 #: app/MatrixRoomSelectionSheet.qml:19
 #, kde-format
 msgid "Share location…"
-msgstr "Partekatu kokapena..."
+msgstr "Partekatu kokapena…"
 
 #: app/MatrixRoomSelectionSheet.qml:36
 #, kde-format
@@ -3193,7 +3193,7 @@ msgstr "Lerroko txartela"
 #: app/OnlineImportPage.qml:54
 #, kde-format
 msgid "Search…"
-msgstr "Bilatu..."
+msgstr "Bilatu…"
 
 #: app/PassDelegate.qml:36
 #, kde-format
@@ -3483,7 +3483,7 @@ msgstr ""
 #: app/SettingsPage.qml:74
 #, kde-format
 msgid "Public Transport Information Sources…"
-msgstr "Garraio publikoko informazio iturriak..."
+msgstr "Garraio publikoko informazio iturriak…"
 
 #: app/SettingsPage.qml:83 app/WeatherForecastDelegate.qml:80
 #: app/WeatherForecastPage.qml:19
@@ -3577,7 +3577,7 @@ msgstr "Jakinarazpenak"
 #: app/SettingsPage.qml:158
 #, kde-format
 msgid "Configure Notifications…"
-msgstr "Konfiguratu jakinarazpenak..."
+msgstr "Konfiguratu jakinarazpenak…"
 
 #: app/SettingsPage.qml:167
 #, kde-format
@@ -3587,7 +3587,7 @@ msgstr "Erakutsi jakinarazpenak giltzatutako pantailan"
 #: app/SettingsPage.qml:177 app/SettingsPage.qml:206
 #, kde-format
 msgid "Request permissions…"
-msgstr "Eskatu baimenak..."
+msgstr "Eskatu baimenak…"
 
 #: app/SettingsPage.qml:178
 #, kde-format
@@ -3930,7 +3930,7 @@ msgstr "Hautatu txartela"
 #: app/TicketTokenEditorCard.qml:91
 #, kde-format
 msgid "Scan barcode…"
-msgstr "Eskaneatu barra-kodea..."
+msgstr "Eskaneatu barra-kodea…"
 
 #: app/TicketTokenEditorCard.qml:129
 #, kde-format
@@ -4319,7 +4319,7 @@ msgstr "Helbidea:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Merge Trips"
-msgstr "Bidaiak bateratu..."
+msgstr "Bidaiak bateratu…"
 
 #: app/TripGroupMergeDialog.qml:39
 #, kde-format
@@ -4438,7 +4438,7 @@ msgstr[1] "Dibisak: %2"
 #: app/TripGroupPage.qml:495
 #, kde-format
 msgid "Show map…"
-msgstr "Erakutsi mapa..."
+msgstr "Erakutsi mapa…"
 
 #: app/TripGroupPage.qml:518
 #, kde-format
@@ -4463,12 +4463,12 @@ msgstr "Berrizendatu…"
 #: app/TripGroupPage.qml:719
 #, kde-format
 msgid "Merge trips…"
-msgstr "Txangoak bateratu..."
+msgstr "Txangoak bateratu…"
 
 #: app/TripGroupPage.qml:730
 #, kde-format
 msgid "Split trip…"
-msgstr "Txangoa zatitu..."
+msgstr "Txangoa zatitu…"
 
 #: app/TripGroupPage.qml:737
 #, kde-format
@@ -4701,7 +4701,7 @@ msgstr "Ulertuta!"
 #: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:129
 #, kde-format
 msgid "Syncing…"
-msgstr "Sinkronizatzen..."
+msgstr "Sinkronizatzen…"
 
 #: matrix/matrixmanager.cpp:56
 #, kde-format
@@ -4711,7 +4711,7 @@ msgstr "Zerbitzari horrek ez du pasahitz bat erabiliz saio-hastea onartzen"
 #: matrix/matrixmanager.cpp:78
 #, kde-format
 msgid "Logging in…"
-msgstr "Saioan sartzen..."
+msgstr "Saioan sartzen…"
 
 #: matrix/matrixmanager.cpp:114
 #, kde-format
