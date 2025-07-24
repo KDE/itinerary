@@ -31,6 +31,7 @@ EditorPage {
             flight = Util.setDateTimePreserveTimezone(flight, "boardingTime", boardingTime.value);
 
         let airport = flight.departureAirport;
+        departureAddress.save(airport);
         airport.name = departureAirportName.text;
         flight.departureAirport = airport;
         flight.departureGate = departureGate.text;
@@ -39,6 +40,7 @@ EditorPage {
             flight = Util.setDateTimePreserveTimezone(flight, "departureTime", departureTime.value);
 
         airport = flight.arrivalAirport;
+        arrivalAddress.save(airport);
         airport.name = arrivalAirportName.text;
         flight.arrivalAirport = airport;
         flight.arrivalTerminal = arrivalTerminal.text;
@@ -98,6 +100,12 @@ EditorPage {
                 statusMessage: root.reservation.reservationFor.departureAirport.iataCode === "" && departureAirportName.text === "" ? i18n("Departure airport has to be specified.") : ""
             }
             FormCard.FormDelegateSeparator {}
+            FormPlaceEditorDelegate {
+                id: departureAddress
+                visible: root.reservation.reservationFor.departureAirport.iataCode === ""
+                place: root.reservation.reservationFor.departureAirport
+            }
+            FormCard.FormDelegateSeparator { visible: departureAddress.visible }
             FormCard.FormTextFieldDelegate {
                 id: departureTerminal
                 text: root.reservation.reservationFor.departureTerminal
@@ -161,6 +169,12 @@ EditorPage {
                 statusMessage: root.reservation.reservationFor.arrivalAirport.iataCode === "" && arrivalAirportName.text === "" ? i18n("Arrival airport has to be specified.") : ""
             }
             FormCard.FormDelegateSeparator {}
+            FormPlaceEditorDelegate {
+                id: arrivalAddress
+                visible: root.reservation.reservationFor.arrivalAirport.iataCode === ""
+                place: root.reservation.reservationFor.arrivalAirport
+            }
+            FormCard.FormDelegateSeparator { visible: arrivalAddress.visible }
             FormCard.FormTextFieldDelegate {
                 id: arrivalTerminal
                 text: root.reservation.reservationFor.arrivalTerminal
