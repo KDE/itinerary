@@ -29,10 +29,10 @@ EditorPage {
 
         if (root.isManual) {
             if (departureTimeEdit.isModified) {
+                trip.departureDay = undefined;
                 trip = Util.setDateTimePreserveTimezone(trip, "departureTime", departureTimeEdit.value);
             }
             if (arrivalTimeEdit.isModified) {
-                console.log(arrivalTimeEdit.value)
                 trip = Util.setDateTimePreserveTimezone(trip, "arrivalTime", arrivalTimeEdit.value);
             }
 

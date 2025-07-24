@@ -28,6 +28,7 @@ EditorPage {
 
         if (root.isManual) {
             if (departureTimeEdit.isModified) {
+                trip.departureDay = undefined;
                 trip = Util.setDateTimePreserveTimezone(trip, "departureTime", departureTimeEdit.value);
             }
             if (arrivalTimeEdit.isModified) {

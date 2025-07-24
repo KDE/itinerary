@@ -36,8 +36,10 @@ EditorPage {
         flight.departureAirport = airport;
         flight.departureGate = departureGate.text;
         flight.departureTerminal = departureTerminal.text;
-        if (departureTime.isModified && root.isManual)
+        if (departureTime.isModified && root.isManual) {
+            flight.departureDay = undefined;
             flight = Util.setDateTimePreserveTimezone(flight, "departureTime", departureTime.value);
+        }
 
         airport = flight.arrivalAirport;
         arrivalAddress.save(airport);
