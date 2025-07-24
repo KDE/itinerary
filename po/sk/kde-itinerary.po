@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-23 00:43+0000\n"
+"POT-Creation-Date: 2025-07-24 00:43+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -1308,120 +1308,132 @@ msgstr "Let"
 msgid "Edit Flight"
 msgstr "Upraviť let"
 
-#: app/FlightEditor.qml:87
+#: app/FlightEditor.qml:88
 #, fuzzy, kde-format
 #| msgid "Departure"
 msgctxt "flight departure"
 msgid "Departure - %1"
 msgstr "Odchod"
 
-#: app/FlightEditor.qml:93 app/FlightEditor.qml:154 app/FlightPage.qml:137
+#: app/FlightEditor.qml:89
+#, kde-format
+msgctxt "flight departure"
+msgid "Departure"
+msgstr "Odchod"
+
+#: app/FlightEditor.qml:95 app/FlightEditor.qml:158 app/FlightPage.qml:137
 #: app/FlightPage.qml:197
 #, fuzzy, kde-format
 #| msgid "Airport:"
 msgid "Airport"
 msgstr "Letisko:"
 
-#: app/FlightEditor.qml:96
+#: app/FlightEditor.qml:98
 #, fuzzy, kde-format
 #| msgid "Check-out %1"
 msgid "Departure airport has to be specified."
 msgstr "Výstupná kontrola %1"
 
-#: app/FlightEditor.qml:102
+#: app/FlightEditor.qml:104
 #, fuzzy, kde-format
 #| msgid "Terminal:"
 msgctxt "flight departure terminal"
 msgid "Terminal"
 msgstr "Terminál:"
 
-#: app/FlightEditor.qml:107
+#: app/FlightEditor.qml:109
 #, fuzzy, kde-format
 #| msgid "Time:"
 msgctxt "flight departure time"
 msgid "Time"
 msgstr "Čas:"
 
-#: app/FlightEditor.qml:112
+#: app/FlightEditor.qml:114
 #, fuzzy, kde-format
 #| msgid "Check-out %1"
 msgctxt "flight departure"
 msgid "Departure time has to be set."
 msgstr "Výstupná kontrola %1"
 
-#: app/FlightEditor.qml:119
+#: app/FlightEditor.qml:121
 #, fuzzy, kde-format
 #| msgid "Gate:"
 msgctxt "flight departure gate"
 msgid "Gate"
 msgstr "Brána"
 
-#: app/FlightEditor.qml:124 app/FlightPage.qml:82
+#: app/FlightEditor.qml:126 app/FlightPage.qml:82
 #, fuzzy, kde-format
 #| msgid "Boarding time:"
 msgid "Boarding time"
 msgstr "Čas nástupu:"
 
-#: app/FlightEditor.qml:135
+#: app/FlightEditor.qml:137
 #, kde-format
 msgctxt "flight departure"
 msgid "Boarding time has to be before the departure time."
 msgstr ""
 
-#: app/FlightEditor.qml:143
+#: app/FlightEditor.qml:145
 #, fuzzy, kde-format
 msgctxt "flight departure boarding group"
 msgid "Boarding group"
 msgstr "Skupina nástupu: %1"
 
-#: app/FlightEditor.qml:148
+#: app/FlightEditor.qml:151
 #, fuzzy, kde-format
 #| msgid "Arrival time: %1"
 msgctxt "flight arrival"
 msgid "Arrival - %1"
 msgstr "Príchod"
 
-#: app/FlightEditor.qml:157
+#: app/FlightEditor.qml:152
+#, kde-format
+msgctxt "flight arrival"
+msgid "Arrival"
+msgstr "Príchod"
+
+#: app/FlightEditor.qml:161
 #, kde-format
 msgid "Arrival airport has to be specified."
 msgstr ""
 
-#: app/FlightEditor.qml:163
+#: app/FlightEditor.qml:167
 #, fuzzy, kde-format
 #| msgid "Terminal:"
 msgctxt "flight arrival terminal"
 msgid "Terminal"
 msgstr "Terminál:"
 
-#: app/FlightEditor.qml:168
+#: app/FlightEditor.qml:172
 #, fuzzy, kde-format
 #| msgid "Time:"
 msgctxt "flight arrival time"
 msgid "Time"
 msgstr "Čas:"
 
-#: app/FlightEditor.qml:179
+#: app/FlightEditor.qml:183
 #, kde-format
 msgctxt "flight arrival"
 msgid "Arrival time has to be after the departure time."
 msgstr ""
 
-#: app/FlightEditor.qml:187 app/FlightPage.qml:15 app/StatisticsPage.qml:107
+#: app/FlightEditor.qml:191 app/FlightPage.qml:15 app/StatisticsPage.qml:107
 #, kde-format
 msgid "Flight"
 msgstr "Let"
 
-#: app/FlightEditor.qml:196
+#: app/FlightEditor.qml:200
 #, fuzzy, kde-format
 msgid "Flight number"
 msgstr "Poradové číslo:"
 
-#: app/FlightEditor.qml:199
+#: app/FlightEditor.qml:203
 #, kde-format
 msgid "Invalid flight number."
 msgstr ""
 
-#: app/FlightEditor.qml:204 app/FlightEditor.qml:211 app/FlightPage.qml:99
+#: app/FlightEditor.qml:208 app/FlightEditor.qml:215 app/FlightPage.qml:99
 #, fuzzy, kde-format
 #| msgid "Seat"
 msgctxt "Flight seat"
@@ -5408,10 +5420,6 @@ msgstr "Autobus %1 z %2 do %3"
 #~ msgid "%1°C / %2°C"
 #~ msgstr "%1°C / %2°C"
 
-#~ msgctxt "flight departure"
-#~ msgid "Departure"
-#~ msgstr "Odchod"
-
 #~ msgctxt "flight departure time"
 #~ msgid "Departure time:"
 #~ msgstr "Čas odchodu:"
@@ -5472,10 +5480,6 @@ msgstr "Autobus %1 z %2 do %3"
 
 #~ msgid "Open Document"
 #~ msgstr "Otvoriť dokument"
-
-#~ msgctxt "flight arrival"
-#~ msgid "Arrival"
-#~ msgstr "Príchod"
 
 #~ msgctxt "name of a frequent flyer program"
 #~ msgid "Program:"

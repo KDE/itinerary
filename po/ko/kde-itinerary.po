@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-23 00:43+0000\n"
+"POT-Creation-Date: 2025-07-24 00:43+0000\n"
 "PO-Revision-Date: 2025-07-21 00:39+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1199,109 +1199,121 @@ msgstr "새 항공편"
 msgid "Edit Flight"
 msgstr "항공편 편집"
 
-#: app/FlightEditor.qml:87
+#: app/FlightEditor.qml:88
 #, kde-format
 msgctxt "flight departure"
 msgid "Departure - %1"
 msgstr "출발 - %1"
 
-#: app/FlightEditor.qml:93 app/FlightEditor.qml:154 app/FlightPage.qml:137
+#: app/FlightEditor.qml:89
+#, kde-format
+msgctxt "flight departure"
+msgid "Departure"
+msgstr "출발"
+
+#: app/FlightEditor.qml:95 app/FlightEditor.qml:158 app/FlightPage.qml:137
 #: app/FlightPage.qml:197
 #, kde-format
 msgid "Airport"
 msgstr "공항"
 
-#: app/FlightEditor.qml:96
+#: app/FlightEditor.qml:98
 #, kde-format
 msgid "Departure airport has to be specified."
 msgstr "출발 공항을 지정해야 합니다."
 
-#: app/FlightEditor.qml:102
+#: app/FlightEditor.qml:104
 #, kde-format
 msgctxt "flight departure terminal"
 msgid "Terminal"
 msgstr "터미널"
 
-#: app/FlightEditor.qml:107
+#: app/FlightEditor.qml:109
 #, kde-format
 msgctxt "flight departure time"
 msgid "Time"
 msgstr "시간"
 
-#: app/FlightEditor.qml:112
+#: app/FlightEditor.qml:114
 #, kde-format
 msgctxt "flight departure"
 msgid "Departure time has to be set."
 msgstr "출발 시간을 설정해야 합니다."
 
-#: app/FlightEditor.qml:119
+#: app/FlightEditor.qml:121
 #, kde-format
 msgctxt "flight departure gate"
 msgid "Gate"
 msgstr "탑승구"
 
-#: app/FlightEditor.qml:124 app/FlightPage.qml:82
+#: app/FlightEditor.qml:126 app/FlightPage.qml:82
 #, kde-format
 msgid "Boarding time"
 msgstr "탑승 시간"
 
-#: app/FlightEditor.qml:135
+#: app/FlightEditor.qml:137
 #, kde-format
 msgctxt "flight departure"
 msgid "Boarding time has to be before the departure time."
 msgstr "탑승 시간은 출발 시간 이전이어야 합니다."
 
-#: app/FlightEditor.qml:143
+#: app/FlightEditor.qml:145
 #, kde-format
 msgctxt "flight departure boarding group"
 msgid "Boarding group"
 msgstr "탑승 그룹"
 
-#: app/FlightEditor.qml:148
+#: app/FlightEditor.qml:151
 #, kde-format
 msgctxt "flight arrival"
 msgid "Arrival - %1"
 msgstr "도착 - %1"
 
-#: app/FlightEditor.qml:157
+#: app/FlightEditor.qml:152
+#, kde-format
+msgctxt "flight arrival"
+msgid "Arrival"
+msgstr "도착"
+
+#: app/FlightEditor.qml:161
 #, kde-format
 msgid "Arrival airport has to be specified."
 msgstr "도착 공항을 지정해야 합니다."
 
-#: app/FlightEditor.qml:163
+#: app/FlightEditor.qml:167
 #, kde-format
 msgctxt "flight arrival terminal"
 msgid "Terminal"
 msgstr "터미널"
 
-#: app/FlightEditor.qml:168
+#: app/FlightEditor.qml:172
 #, kde-format
 msgctxt "flight arrival time"
 msgid "Time"
 msgstr "시간"
 
-#: app/FlightEditor.qml:179
+#: app/FlightEditor.qml:183
 #, kde-format
 msgctxt "flight arrival"
 msgid "Arrival time has to be after the departure time."
 msgstr "도착 시간은 출발 시간 이후여야 합니다."
 
-#: app/FlightEditor.qml:187 app/FlightPage.qml:15 app/StatisticsPage.qml:107
+#: app/FlightEditor.qml:191 app/FlightPage.qml:15 app/StatisticsPage.qml:107
 #, kde-format
 msgid "Flight"
 msgstr "항공편"
 
-#: app/FlightEditor.qml:196
+#: app/FlightEditor.qml:200
 #, kde-format
 msgid "Flight number"
 msgstr "항공편 번호"
 
-#: app/FlightEditor.qml:199
+#: app/FlightEditor.qml:203
 #, kde-format
 msgid "Invalid flight number."
 msgstr "잘못된 항공편 번호입니다."
 
-#: app/FlightEditor.qml:204 app/FlightEditor.qml:211 app/FlightPage.qml:99
+#: app/FlightEditor.qml:208 app/FlightEditor.qml:215 app/FlightPage.qml:99
 #, kde-format
 msgctxt "Flight seat"
 msgid "Seat"
@@ -5185,10 +5197,6 @@ msgstr "%5에 %3에서 %4(으)로 가는 %1%2|/|%5에 %3에서 %4$[으 %4]로 �
 #~ msgid "%1°C / %2°C"
 #~ msgstr "%1°C / %2°C"
 
-#~ msgctxt "flight departure"
-#~ msgid "Departure"
-#~ msgstr "출발"
-
 #~ msgctxt "flight departure time"
 #~ msgid "Departure time:"
 #~ msgstr "출발 시간:"
@@ -5278,10 +5286,6 @@ msgstr "%5에 %3에서 %4(으)로 가는 %1%2|/|%5에 %3에서 %4$[으 %4]로 �
 
 #~ msgid "Open Document"
 #~ msgstr "문서 열기"
-
-#~ msgctxt "flight arrival"
-#~ msgid "Arrival"
-#~ msgstr "도착"
 
 #~ msgctxt "name of a frequent flyer program"
 #~ msgid "Program:"

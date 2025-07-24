@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-23 00:43+0000\n"
+"POT-Creation-Date: 2025-07-24 00:43+0000\n"
 "PO-Revision-Date: 2025-07-21 14:21+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -1211,109 +1211,121 @@ msgstr "Nouveau vol"
 msgid "Edit Flight"
 msgstr "Modifier le vol"
 
-#: app/FlightEditor.qml:87
+#: app/FlightEditor.qml:88
 #, kde-format
 msgctxt "flight departure"
 msgid "Departure - %1"
 msgstr "Départ - %1"
 
-#: app/FlightEditor.qml:93 app/FlightEditor.qml:154 app/FlightPage.qml:137
+#: app/FlightEditor.qml:89
+#, kde-format
+msgctxt "flight departure"
+msgid "Departure"
+msgstr "Départ"
+
+#: app/FlightEditor.qml:95 app/FlightEditor.qml:158 app/FlightPage.qml:137
 #: app/FlightPage.qml:197
 #, kde-format
 msgid "Airport"
 msgstr "Aéroport"
 
-#: app/FlightEditor.qml:96
+#: app/FlightEditor.qml:98
 #, kde-format
 msgid "Departure airport has to be specified."
 msgstr "L'aéroport de départ doit être spécifié."
 
-#: app/FlightEditor.qml:102
+#: app/FlightEditor.qml:104
 #, kde-format
 msgctxt "flight departure terminal"
 msgid "Terminal"
 msgstr "Terminal"
 
-#: app/FlightEditor.qml:107
+#: app/FlightEditor.qml:109
 #, kde-format
 msgctxt "flight departure time"
 msgid "Time"
 msgstr "Heure"
 
-#: app/FlightEditor.qml:112
+#: app/FlightEditor.qml:114
 #, kde-format
 msgctxt "flight departure"
 msgid "Departure time has to be set."
 msgstr "L'heure de départ doit être définie."
 
-#: app/FlightEditor.qml:119
+#: app/FlightEditor.qml:121
 #, kde-format
 msgctxt "flight departure gate"
 msgid "Gate"
 msgstr "Porte"
 
-#: app/FlightEditor.qml:124 app/FlightPage.qml:82
+#: app/FlightEditor.qml:126 app/FlightPage.qml:82
 #, kde-format
 msgid "Boarding time"
 msgstr "Heure d'embarquement"
 
-#: app/FlightEditor.qml:135
+#: app/FlightEditor.qml:137
 #, kde-format
 msgctxt "flight departure"
 msgid "Boarding time has to be before the departure time."
 msgstr "L'heure d'embarquement doit être postérieure à l'heure de départ."
 
-#: app/FlightEditor.qml:143
+#: app/FlightEditor.qml:145
 #, kde-format
 msgctxt "flight departure boarding group"
 msgid "Boarding group"
 msgstr "Groupe d'embarquement"
 
-#: app/FlightEditor.qml:148
+#: app/FlightEditor.qml:151
 #, kde-format
 msgctxt "flight arrival"
 msgid "Arrival - %1"
 msgstr "Arrivée - %1"
 
-#: app/FlightEditor.qml:157
+#: app/FlightEditor.qml:152
+#, kde-format
+msgctxt "flight arrival"
+msgid "Arrival"
+msgstr "Arrivée"
+
+#: app/FlightEditor.qml:161
 #, kde-format
 msgid "Arrival airport has to be specified."
 msgstr "L'aéroport d'arrivée doit être spécifié."
 
-#: app/FlightEditor.qml:163
+#: app/FlightEditor.qml:167
 #, kde-format
 msgctxt "flight arrival terminal"
 msgid "Terminal"
 msgstr "Terminal"
 
-#: app/FlightEditor.qml:168
+#: app/FlightEditor.qml:172
 #, kde-format
 msgctxt "flight arrival time"
 msgid "Time"
 msgstr "Heure"
 
-#: app/FlightEditor.qml:179
+#: app/FlightEditor.qml:183
 #, kde-format
 msgctxt "flight arrival"
 msgid "Arrival time has to be after the departure time."
 msgstr "L'heure d'arrivée doit être postérieure à l'heure de départ."
 
-#: app/FlightEditor.qml:187 app/FlightPage.qml:15 app/StatisticsPage.qml:107
+#: app/FlightEditor.qml:191 app/FlightPage.qml:15 app/StatisticsPage.qml:107
 #, kde-format
 msgid "Flight"
 msgstr "Vol"
 
-#: app/FlightEditor.qml:196
+#: app/FlightEditor.qml:200
 #, kde-format
 msgid "Flight number"
 msgstr "Numéro de vol"
 
-#: app/FlightEditor.qml:199
+#: app/FlightEditor.qml:203
 #, kde-format
 msgid "Invalid flight number."
 msgstr "Numéro de vol non valable."
 
-#: app/FlightEditor.qml:204 app/FlightEditor.qml:211 app/FlightPage.qml:99
+#: app/FlightEditor.qml:208 app/FlightEditor.qml:215 app/FlightPage.qml:99
 #, kde-format
 msgctxt "Flight seat"
 msgid "Seat"
@@ -5337,10 +5349,6 @@ msgstr "%1 %2 à partir de %3 vers %4 sur %5"
 #~ msgid "%1°C / %2°C"
 #~ msgstr "%1°C / %2°C"
 
-#~ msgctxt "flight departure"
-#~ msgid "Departure"
-#~ msgstr "Départ"
-
 #~ msgctxt "flight departure time"
 #~ msgid "Departure time:"
 #~ msgstr "Heure de départ :"
@@ -5427,10 +5435,6 @@ msgstr "%1 %2 à partir de %3 vers %4 sur %5"
 
 #~ msgid "Open Document"
 #~ msgstr "Ouvrir le document"
-
-#~ msgctxt "flight arrival"
-#~ msgid "Arrival"
-#~ msgstr "Arrivée"
 
 #~ msgctxt "name of a frequent flyer program"
 #~ msgid "Program:"

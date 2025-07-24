@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-23 00:43+0000\n"
+"POT-Creation-Date: 2025-07-24 00:43+0000\n"
 "PO-Revision-Date: 2025-05-28 18:37+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -1234,109 +1234,121 @@ msgstr "Volo Volo"
 msgid "Edit Flight"
 msgstr "Edita volo"
 
-#: app/FlightEditor.qml:87
+#: app/FlightEditor.qml:88
 #, kde-format
 msgctxt "flight departure"
 msgid "Departure - %1"
 msgstr "Partita - %1"
 
-#: app/FlightEditor.qml:93 app/FlightEditor.qml:154 app/FlightPage.qml:137
+#: app/FlightEditor.qml:89
+#, kde-format
+msgctxt "flight departure"
+msgid "Departure"
+msgstr "Partita"
+
+#: app/FlightEditor.qml:95 app/FlightEditor.qml:158 app/FlightPage.qml:137
 #: app/FlightPage.qml:197
 #, kde-format
 msgid "Airport"
 msgstr "Aeroporto"
 
-#: app/FlightEditor.qml:96
+#: app/FlightEditor.qml:98
 #, kde-format
 msgid "Departure airport has to be specified."
 msgstr "Auroporto de partita debe esser specificate."
 
-#: app/FlightEditor.qml:102
+#: app/FlightEditor.qml:104
 #, kde-format
 msgctxt "flight departure terminal"
 msgid "Terminal"
 msgstr "Terminal"
 
-#: app/FlightEditor.qml:107
+#: app/FlightEditor.qml:109
 #, kde-format
 msgctxt "flight departure time"
 msgid "Time"
 msgstr "Tempore"
 
-#: app/FlightEditor.qml:112
+#: app/FlightEditor.qml:114
 #, kde-format
 msgctxt "flight departure"
 msgid "Departure time has to be set."
 msgstr "Tempore de partita debe esser fixate."
 
-#: app/FlightEditor.qml:119
+#: app/FlightEditor.qml:121
 #, kde-format
 msgctxt "flight departure gate"
 msgid "Gate"
 msgstr "Porta"
 
-#: app/FlightEditor.qml:124 app/FlightPage.qml:82
+#: app/FlightEditor.qml:126 app/FlightPage.qml:82
 #, kde-format
 msgid "Boarding time"
 msgstr "Tempore de imbarcar "
 
-#: app/FlightEditor.qml:135
+#: app/FlightEditor.qml:137
 #, kde-format
 msgctxt "flight departure"
 msgid "Boarding time has to be before the departure time."
 msgstr "Tempore de imbarcatorio debe esser ante le tempore de partita."
 
-#: app/FlightEditor.qml:143
+#: app/FlightEditor.qml:145
 #, kde-format
 msgctxt "flight departure boarding group"
 msgid "Boarding group"
 msgstr "Imbarcante gruppo"
 
-#: app/FlightEditor.qml:148
+#: app/FlightEditor.qml:151
 #, kde-format
 msgctxt "flight arrival"
 msgid "Arrival - %1"
 msgstr "Arrivata - %1"
 
-#: app/FlightEditor.qml:157
+#: app/FlightEditor.qml:152
+#, kde-format
+msgctxt "flight arrival"
+msgid "Arrival"
+msgstr "Arrivata"
+
+#: app/FlightEditor.qml:161
 #, kde-format
 msgid "Arrival airport has to be specified."
 msgstr "Aeroporto de Arrivata debe esser specificate."
 
-#: app/FlightEditor.qml:163
+#: app/FlightEditor.qml:167
 #, kde-format
 msgctxt "flight arrival terminal"
 msgid "Terminal"
 msgstr "Terminal"
 
-#: app/FlightEditor.qml:168
+#: app/FlightEditor.qml:172
 #, kde-format
 msgctxt "flight arrival time"
 msgid "Time"
 msgstr "Tempore"
 
-#: app/FlightEditor.qml:179
+#: app/FlightEditor.qml:183
 #, kde-format
 msgctxt "flight arrival"
 msgid "Arrival time has to be after the departure time."
 msgstr "Tempore de arrivata debe esser post le tempore de partita."
 
-#: app/FlightEditor.qml:187 app/FlightPage.qml:15 app/StatisticsPage.qml:107
+#: app/FlightEditor.qml:191 app/FlightPage.qml:15 app/StatisticsPage.qml:107
 #, kde-format
 msgid "Flight"
 msgstr "Volo"
 
-#: app/FlightEditor.qml:196
+#: app/FlightEditor.qml:200
 #, kde-format
 msgid "Flight number"
 msgstr "Numero de volo"
 
-#: app/FlightEditor.qml:199
+#: app/FlightEditor.qml:203
 #, kde-format
 msgid "Invalid flight number."
 msgstr "Numero de volo invalide.."
 
-#: app/FlightEditor.qml:204 app/FlightEditor.qml:211 app/FlightPage.qml:99
+#: app/FlightEditor.qml:208 app/FlightEditor.qml:215 app/FlightPage.qml:99
 #, kde-format
 msgctxt "Flight seat"
 msgid "Seat"
@@ -5372,10 +5384,6 @@ msgstr "%1%2 ex %3 a %4 le %5"
 #~ msgid "%1°C / %2°C"
 #~ msgstr "%1°C / %2°C"
 
-#~ msgctxt "flight departure"
-#~ msgid "Departure"
-#~ msgstr "Partita"
-
 #~ msgctxt "flight departure time"
 #~ msgid "Departure time:"
 #~ msgstr "Tempore de partita:"
@@ -5462,10 +5470,6 @@ msgstr "%1%2 ex %3 a %4 le %5"
 
 #~ msgid "Open Document"
 #~ msgstr "Aperi documento "
-
-#~ msgctxt "flight arrival"
-#~ msgid "Arrival"
-#~ msgstr "Arrivata"
 
 #~ msgctxt "name of a frequent flyer program"
 #~ msgid "Program:"
