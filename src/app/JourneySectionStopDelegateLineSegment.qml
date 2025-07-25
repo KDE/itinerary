@@ -16,7 +16,6 @@ import org.kde.itinerary
  */
 Item {
     id: lineSegment
-    clip: true
     property bool isDeparture: false
     property bool isArrival: false
     property color lineColor: Kirigami.Theme.textColor
@@ -48,7 +47,7 @@ Item {
             if (isArrival) {
                 stopDot.y + stopDot.height + stopDot.x - x
             } else {
-                parent.height
+                parent.height + 1
             }
     }
     Kirigami.ShadowedRectangle {
