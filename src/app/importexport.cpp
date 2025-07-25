@@ -26,11 +26,13 @@
 
 #include <KPublicTransport/Location>
 
+#include <QCoreApplication>
 #include <QFile>
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QSettings>
+#include <QSysInfo>
 #include <QTemporaryFile>
 
 using namespace Qt::Literals::StringLiterals;
@@ -48,7 +50,10 @@ Exporter::Exporter(KItinerary::File *file)
     : m_file(file)
 {
     QJsonObject versionData{
-        {"formatVersion"_L1, BUNDLE_FORMAT_VERSION}
+        {"formatVersion"_L1, BUNDLE_FORMAT_VERSION},
+        {"generator"_L1, QCoreApplication::applicationName()},
+        {"generatorVersion"_L1, QCoreApplication::applicationVersion()},
+        {"generatorPlatform"_L1, QSysInfo::prettyProductName()}
     };
     m_file->addCustomData(BUNDLE_VERSION_DOMAIN, "version"_L1, QJsonDocument(versionData).toJson(QJsonDocument::Compact));
 }
