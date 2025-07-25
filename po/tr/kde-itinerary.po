@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-24 00:43+0000\n"
-"PO-Revision-Date: 2025-07-20 12:44+0300\n"
+"POT-Creation-Date: 2025-07-25 00:43+0000\n"
+"PO-Revision-Date: 2025-07-24 20:14+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -411,8 +411,8 @@ msgctxt "boat arrival"
 msgid "Change arrival terminal"
 msgstr "Varış terminalini değiştir"
 
-#: app/BoatEditor.qml:112 app/BusEditor.qml:127 app/EventEditor.qml:54
-#: app/FlightEditor.qml:75 app/HotelEditor.qml:51 app/ImportPage.qml:21
+#: app/BoatEditor.qml:112 app/BusEditor.qml:128 app/EventEditor.qml:54
+#: app/FlightEditor.qml:79 app/HotelEditor.qml:51 app/ImportPage.qml:21
 #: app/JourneyRequestPage.qml:228 app/RestaurantEditor.qml:53
 #: app/StopoverDetailsPage.qml:127 app/TrainEditor.qml:135
 #, kde-format
@@ -431,7 +431,7 @@ msgctxt "Boat departure"
 msgid "Departure Time"
 msgstr "Kalkış Zamanı"
 
-#: app/BoatEditor.qml:135 app/BusEditor.qml:168 app/TrainEditor.qml:177
+#: app/BoatEditor.qml:135 app/BusEditor.qml:169 app/TrainEditor.qml:177
 #, kde-format
 msgid "Departure time has to be set."
 msgstr "Kalkış zamanının ayarlanması gereklidir."
@@ -465,7 +465,7 @@ msgctxt "Boat arrival"
 msgid "Arrival Time"
 msgstr "Varış Zamanı"
 
-#: app/BoatEditor.qml:191 app/BusEditor.qml:254 app/TrainEditor.qml:263
+#: app/BoatEditor.qml:191 app/BusEditor.qml:255 app/TrainEditor.qml:263
 #, kde-format
 msgid "Arrival time has to be after the departure time."
 msgstr "Varış zamanı, kalkış zamanından sonra olmalıdır."
@@ -598,131 +598,131 @@ msgctxt "from location 1 to location 2"
 msgid "%1 to %2"
 msgstr "%1 → %2"
 
-#: app/BusEditor.qml:73
+#: app/BusEditor.qml:74
 #, kde-format
 msgctxt "@title"
 msgid "New Bus Reservation"
 msgstr "Yeni Otobüs Rezervasyonu"
 
-#: app/BusEditor.qml:73
+#: app/BusEditor.qml:74
 #, kde-format
 msgctxt "@title"
 msgid "Edit Bus Reservation"
 msgstr "Otobüs Rezervasyonunu Düzenle"
 
-#: app/BusEditor.qml:80 app/BusEditor.qml:226
+#: app/BusEditor.qml:81 app/BusEditor.qml:227
 #, kde-format
 msgctxt "bus departure"
 msgid "Change Departure Stop"
 msgstr "Kalkış Durağını Değiştir"
 
-#: app/BusEditor.qml:86
+#: app/BusEditor.qml:87
 #, kde-format
 msgctxt "bus departure"
 msgid "Change departure stop"
 msgstr "Kalkış durağını değiştir"
 
-#: app/BusEditor.qml:96 app/BusEditor.qml:316
+#: app/BusEditor.qml:97 app/BusEditor.qml:317
 #, kde-format
 msgctxt "bus arrival"
 msgid "Change Arrival Stop"
 msgstr "Varış Durağını Değiştir"
 
-#: app/BusEditor.qml:102
+#: app/BusEditor.qml:103
 #, kde-format
 msgctxt "bus arrival"
 msgid "Change arrival stop"
 msgstr "Varış durağını değiştir"
 
-#: app/BusEditor.qml:122
+#: app/BusEditor.qml:123
 #, kde-format
 msgctxt "@title"
 msgid "Bus"
 msgstr "Otobüs"
 
-#: app/BusEditor.qml:140
+#: app/BusEditor.qml:141
 #, kde-format
 msgctxt "@title:group"
 msgid "Bus"
 msgstr "Otobüs"
 
-#: app/BusEditor.qml:149
+#: app/BusEditor.qml:150
 #, kde-format
 msgctxt "@label:textfield"
 msgid "Bus number"
 msgstr "Otobüs Numarası"
 
-#: app/BusEditor.qml:155
+#: app/BusEditor.qml:156
 #, kde-format
 msgctxt "bus departure"
 msgid "Departure"
 msgstr "Kalkış"
 
-#: app/BusEditor.qml:164
+#: app/BusEditor.qml:165
 #, kde-format
 msgctxt "Bus departure"
 msgid "Departure Time"
 msgstr "Kalkış Zamanı"
 
-#: app/BusEditor.qml:177
+#: app/BusEditor.qml:178
 #, kde-format
 msgctxt "Bus stop"
 msgid "Stop"
 msgstr "Durak"
 
-#: app/BusEditor.qml:180
+#: app/BusEditor.qml:181
 #, kde-format
 msgid "Departure bus stop must not be empty."
 msgstr "Otobüs kalkış durağı boş olmamalıdır."
 
-#: app/BusEditor.qml:188 app/BusEditor.qml:275
+#: app/BusEditor.qml:189 app/BusEditor.qml:276
 #, kde-format
 msgctxt "Bus stop platform"
 msgid "Platform"
 msgstr "Peron"
 
-#: app/BusEditor.qml:209
+#: app/BusEditor.qml:210
 #, kde-format
 msgctxt "bus stop"
 msgid "Stop Name"
 msgstr "Durak Adı"
 
-#: app/BusEditor.qml:217 app/BusEditor.qml:309
+#: app/BusEditor.qml:218 app/BusEditor.qml:310
 #, kde-format
 msgctxt "bus stop platform"
 msgid "Platform"
 msgstr "Peron"
 
-#: app/BusEditor.qml:234
+#: app/BusEditor.qml:235
 #, kde-format
 msgctxt "bus arrival"
 msgid "Arrival"
 msgstr "Varış"
 
-#: app/BusEditor.qml:243 app/TrainEditor.qml:252
+#: app/BusEditor.qml:244 app/TrainEditor.qml:252
 #, kde-format
 msgctxt "Train arrival"
 msgid "Arrival Time"
 msgstr "Varış Zamanı"
 
-#: app/BusEditor.qml:264
+#: app/BusEditor.qml:265
 #, kde-format
 msgctxt "Bus stop"
 msgid "Stop Name"
 msgstr "Durak Adı"
 
-#: app/BusEditor.qml:267
+#: app/BusEditor.qml:268
 #, kde-format
 msgid "Arrival stop must not be empty."
 msgstr "Varış durağı boş olmamalıdır."
 
-#: app/BusEditor.qml:301
+#: app/BusEditor.qml:302
 #, kde-format
 msgctxt "bus stop"
 msgid "Stop"
 msgstr "Durdur"
 
-#: app/BusEditor.qml:325 app/BusEditor.qml:331 app/BusPage.qml:201
+#: app/BusEditor.qml:326 app/BusEditor.qml:332 app/BusPage.qml:201
 #, kde-format
 msgctxt "Bus seat"
 msgid "Seat"
@@ -1205,123 +1205,121 @@ msgstr "Yeni Uçuş"
 msgid "Edit Flight"
 msgstr "Uçuşu Düzenle"
 
-#: app/FlightEditor.qml:88
+#: app/FlightEditor.qml:92
 #, kde-format
 msgctxt "flight departure"
 msgid "Departure - %1"
 msgstr "Kalkış — %1"
 
-#: app/FlightEditor.qml:89
-#, fuzzy, kde-format
-#| msgid "Departure"
+#: app/FlightEditor.qml:93
+#, kde-format
 msgctxt "flight departure"
 msgid "Departure"
 msgstr "Kalkış"
 
-#: app/FlightEditor.qml:95 app/FlightEditor.qml:158 app/FlightPage.qml:137
+#: app/FlightEditor.qml:99 app/FlightEditor.qml:168 app/FlightPage.qml:137
 #: app/FlightPage.qml:197
 #, kde-format
 msgid "Airport"
 msgstr "Havaalanı"
 
-#: app/FlightEditor.qml:98
+#: app/FlightEditor.qml:102
 #, kde-format
 msgid "Departure airport has to be specified."
 msgstr "Kalkış havalimanının belirtilmesi gereklidir."
 
-#: app/FlightEditor.qml:104
+#: app/FlightEditor.qml:114
 #, kde-format
 msgctxt "flight departure terminal"
 msgid "Terminal"
 msgstr "Terminal"
 
-#: app/FlightEditor.qml:109
+#: app/FlightEditor.qml:119
 #, kde-format
 msgctxt "flight departure time"
 msgid "Time"
 msgstr "Zaman"
 
-#: app/FlightEditor.qml:114
+#: app/FlightEditor.qml:124
 #, kde-format
 msgctxt "flight departure"
 msgid "Departure time has to be set."
 msgstr "Kalkış zamanının ayarlanması gereklidir."
 
-#: app/FlightEditor.qml:121
+#: app/FlightEditor.qml:131
 #, kde-format
 msgctxt "flight departure gate"
 msgid "Gate"
 msgstr "Kapı"
 
-#: app/FlightEditor.qml:126 app/FlightPage.qml:82
+#: app/FlightEditor.qml:136 app/FlightPage.qml:82
 #, kde-format
 msgid "Boarding time"
 msgstr "Biniş zamanı"
 
-#: app/FlightEditor.qml:137
+#: app/FlightEditor.qml:147
 #, kde-format
 msgctxt "flight departure"
 msgid "Boarding time has to be before the departure time."
 msgstr "Biniş zamanı, kalkış zamanından önce olmalıdır."
 
-#: app/FlightEditor.qml:145
+#: app/FlightEditor.qml:155
 #, kde-format
 msgctxt "flight departure boarding group"
 msgid "Boarding group"
 msgstr "Biniş grubu"
 
-#: app/FlightEditor.qml:151
+#: app/FlightEditor.qml:161
 #, kde-format
 msgctxt "flight arrival"
 msgid "Arrival - %1"
 msgstr "Varış — %1"
 
-#: app/FlightEditor.qml:152
-#, fuzzy, kde-format
-#| msgid "Arrival"
+#: app/FlightEditor.qml:162
+#, kde-format
 msgctxt "flight arrival"
 msgid "Arrival"
 msgstr "Varış"
 
-#: app/FlightEditor.qml:161
+#: app/FlightEditor.qml:171
 #, kde-format
 msgid "Arrival airport has to be specified."
 msgstr "Varış havalimanının belirtilmesi gereklidir."
 
-#: app/FlightEditor.qml:167
+#: app/FlightEditor.qml:183
 #, kde-format
 msgctxt "flight arrival terminal"
 msgid "Terminal"
 msgstr "Terminal"
 
-#: app/FlightEditor.qml:172
+#: app/FlightEditor.qml:188
 #, kde-format
 msgctxt "flight arrival time"
 msgid "Time"
 msgstr "Zaman"
 
-#: app/FlightEditor.qml:183
+#: app/FlightEditor.qml:199
 #, kde-format
 msgctxt "flight arrival"
 msgid "Arrival time has to be after the departure time."
 msgstr "Varış zamanı, kalkış zamanından sonra olmalıdır."
 
-#: app/FlightEditor.qml:191 app/FlightPage.qml:15 app/StatisticsPage.qml:107
+#: app/FlightEditor.qml:207 app/FlightPage.qml:15 app/StatisticsPage.qml:107
 #, kde-format
 msgid "Flight"
 msgstr "Uçuş"
 
-#: app/FlightEditor.qml:200
+#: app/FlightEditor.qml:216
 #, kde-format
 msgid "Flight number"
 msgstr "Uçuş numarası"
 
-#: app/FlightEditor.qml:203
+#: app/FlightEditor.qml:219
 #, kde-format
 msgid "Invalid flight number."
 msgstr "Geçersiz uçuş numarası."
 
-#: app/FlightEditor.qml:208 app/FlightEditor.qml:215 app/FlightPage.qml:99
+#: app/FlightEditor.qml:224 app/FlightEditor.qml:231 app/FlightPage.qml:99
 #, kde-format
 msgctxt "Flight seat"
 msgid "Seat"
