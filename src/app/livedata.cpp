@@ -131,6 +131,13 @@ LiveData LiveData::fromJson(const QJsonObject &obj)
     ld.trip = KPublicTransport::JourneySection::fromJson(obj.value("journey"_L1).toObject());
     ld.journeyTimestamp = QDateTime::fromString(obj.value("journeyTimestamp"_L1).toString(), Qt::ISODate);
 
+    if (auto it = obj.find("departureIndex"_L1); it != obj.end()) {
+        ld.departureIndex = it->toInt(-1);
+    }
+    if (auto it = obj.find("arrivalIndex"_L1); it != obj.end()) {
+        ld.arrivalIndex = it->toInt(-1);
+    }
+
     // backward compatibility for old journey storage format
     if (auto it = obj.find("departure"_L1); it != obj.end()) {
         const auto dep = KPublicTransport::Stopover::fromJson((*it).toObject());
