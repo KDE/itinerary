@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-25 00:43+0000\n"
+"POT-Creation-Date: 2025-07-26 00:43+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -325,9 +325,12 @@ msgid "File saved successfully."
 msgstr "文件已成功保存。"
 
 #: app/applicationcontroller.cpp:637
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "File was imported with a newer version of Itinerary. Some information "
+#| "might not be imported correctly."
 msgid ""
-"File was imported with a newer version of Itinerary. Some information might "
+"File was exported with a newer version of Itinerary. Some information might "
 "not be imported correctly."
 msgstr "该文件是使用较新版本的 Itinerary 导入的。部分信息可能无法正确导入。"
 
