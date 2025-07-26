@@ -13,14 +13,14 @@ import org.kde.prison as Prison
 Rectangle {
     id: root
     property int maximumWidth
-    property QtObject pass
+    property KPkPass.Pass pass
 
     implicitHeight: barcodeLayout.implicitHeight
     implicitWidth: barcodeLayout.implicitWidth
     color: "white"
     radius: 6
     Layout.alignment: Qt.AlignCenter
-    visible: pass && pass.barcodes[0].format !== KPkPass.Barcode.Invalid
+    visible: root.pass && root.pass.barcodes[0].format !== KPkPass.Barcode.Invalid
 
     ColumnLayout {
         id: barcodeLayout

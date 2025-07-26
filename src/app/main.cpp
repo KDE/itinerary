@@ -124,14 +124,6 @@ class MatrixBeaconStub : public QObject
 };
 #endif
 
-void registerKPkPassTypes()
-{
-    qmlRegisterUncreatableMetaObject(KPkPass::Barcode::staticMetaObject, "org.kde.pkpass", 1, 0, "Barcode", {});
-    qmlRegisterUncreatableMetaObject(KPkPass::Field::staticMetaObject, "org.kde.pkpass", 1, 0, "Field", {});
-    qmlRegisterUncreatableType<KPkPass::Pass>("org.kde.pkpass", 1, 0, "Pass", {});
-    qmlRegisterUncreatableType<KPkPass::BoardingPass>("org.kde.pkpass", 1, 0, "BoardingPass", {});
-}
-
 void registerKItineraryTypes()
 {
     qRegisterMetaType<KItinerary::KnowledgeDb::DrivingSide>();
@@ -458,7 +450,6 @@ int main(int argc, char **argv)
 
     OnlineTicketImporter::setNetworkAccessManagerFactory(namFactory);
 
-    registerKPkPassTypes();
     registerKItineraryTypes();
     registerQuotientTypes();
     registerApplicationTypes();

@@ -4,6 +4,8 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
@@ -14,7 +16,7 @@ import org.kde.itinerary
 
 Item {
     id: root
-    property var pass: null
+    property KPkPass.Pass pass: null
     property string passId
     implicitHeight: bodyBackground.implicitHeight
     implicitWidth: 332 //Math.max(topLayout.implicitWidth, 332)
@@ -26,13 +28,13 @@ Item {
 
     Rectangle {
         id: bodyBackground
-        color: Util.isValidColor(pass.backgroundColor) ? pass.backgroundColor : Kirigami.Theme.backgroundColor
+        color: Util.isValidColor(root.pass.backgroundColor) ? root.pass.backgroundColor : Kirigami.Theme.backgroundColor
         //implicitHeight: topLayout.implicitHeight + 2 * topLayout.anchors.margins
         width: parent.width
 
         Image {
             id: backgroundImage
-            source: passId !== "" ? "image://org.kde.pkpass/" + passId + "/background" : ""
+            source: root.passId !== "" ? "image://org.kde.pkpass/" + root.passId + "/background" : ""
             fillMode: backgroundImage.implicitHeight < parent.implicitHeight ? Image.TileVertically : Image.PreserveAspectCrop
             verticalAlignment: Image.AlignTop
             horizontalAlignment: Image.AlignHCenter
@@ -68,7 +70,7 @@ Item {
                 GridLayout {
                     id: headerLayout
                     rows: 2
-                    columns: pass.headerFields.length + 2
+                    columns: root.pass.headerFields.length + 2
                     Layout.fillWidth: true
 
                     Image {
@@ -77,32 +79,36 @@ Item {
                         Layout.maximumWidth: 150
                         Layout.preferredWidth: paintedWidth
                         fillMode: Image.PreserveAspectFit
-                        source: passId !== "" ? "image://org.kde.pkpass/" + passId + "/logo" : ""
+                        source: root.passId !== "" ? "image://org.kde.pkpass/" + root.passId + "/logo" : ""
                         sourceSize.height: 1 // ??? seems necessary to trigger high dpi scaling...
                         mipmap: true
                     }
 
                     QQC2.Label {
                         Layout.rowSpan: 2
-                        Layout.fillWidth: pass ? true : false
-                        text: pass ? pass.logoText : ""
-                        color: Util.isValidColor(pass.foregroundColor) ?  pass.foregroundColor : root.defaultTextColor
+                        Layout.fillWidth: root.pass ? true : false
+                        text: root.pass ? root.pass.logoText : ""
+                        color: Util.isValidColor(root.pass.foregroundColor) ? root.pass.foregroundColor : root.defaultTextColor
                     }
 
                     Repeater {
-                        model: pass.headerFields
+                        model: root.pass.headerFields
                         delegate: QQC2.Label {
+                            required property KPkPass.field modelData
+                            required property int index
                             text: modelData.label
-                            color: Util.isValidColor(pass.labelColor) ?  pass.labelColor : root.defaultTextColor
+                            color: Util.isValidColor(root.pass.labelColor) ? root.pass.labelColor : root.defaultTextColor
                             Layout.row: 0
                             Layout.column: index + 2
                         }
                     }
                     Repeater {
-                        model: pass.headerFields
+                        model: root.pass.headerFields
                         delegate: QQC2.Label {
+                            required property KPkPass.field modelData
+                            required property int index
                             text: modelData.valueDisplayString
-                            color: Util.isValidColor(pass.foregroundColor) ?  pass.foregroundColor : root.defaultTextColor
+                            color: Util.isValidColor(root.pass.foregroundColor) ? root.pass.foregroundColor : root.defaultTextColor
                             Layout.row: 1
                             Layout.column: index + 2
                         }
@@ -112,7 +118,7 @@ Item {
                 // strip image
                 Image {
                     id: stripImage
-                    source: passId !== "" ? "image://org.kde.pkpass/" + passId + "/strip" : ""
+                    source: root.passId !== "" ? "image://org.kde.pkpass/" + root.passId + "/strip" : ""
                     sourceSize.height: 1 // ??? seems necessary to trigger high dpi scaling...
                     Layout.alignment: Qt.AlignCenter
                     Layout.preferredWidth: Math.min(320, stripImage.implicitWidth); // 320 as per spec
@@ -124,23 +130,25 @@ Item {
                  GridLayout {
                     id: primaryFieldLayout
                     rows: 2
-                    columns: pass.primaryFields.length
+                    columns: root.pass.primaryFields.length
                     Layout.fillWidth: true
 
                     Repeater {
-                        model: pass.primaryFields
+                        model: root.pass.primaryFields
                         delegate: QQC2.Label {
+                            required property KPkPass.field modelData
                             Layout.fillWidth: true
-                            color: Util.isValidColor(pass.labelColor) ?  pass.labelColor : root.defaultTextColor
+                            color: Util.isValidColor(root.pass.labelColor) ? root.pass.labelColor : root.defaultTextColor
                             text: modelData.label
                             horizontalAlignment: modelData.textAlignment
                         }
                     }
                     Repeater {
-                        model: pass.primaryFields
+                        model: root.pass.primaryFields
                         delegate: QQC2.Label {
+                            required property KPkPass.field modelData
                             Layout.fillWidth: true
-                            color: Util.isValidColor(pass.foregroundColor) ?  pass.foregroundColor : root.defaultTextColor
+                            color: Util.isValidColor(root.pass.foregroundColor) ? root.pass.foregroundColor : root.defaultTextColor
                             text: modelData.valueDisplayString
                             horizontalAlignment: modelData.textAlignment
                         }
@@ -151,23 +159,25 @@ Item {
                 GridLayout {
                     id: secFieldsLayout
                     rows: 2
-                    columns: pass.secondaryFields.length
+                    columns: root.pass.secondaryFields.length
                     Layout.fillWidth: true
 
                     Repeater {
-                        model: pass.secondaryFields
+                        model: root.pass.secondaryFields
                         delegate: QQC2.Label {
+                            required property KPkPass.field modelData
                             Layout.fillWidth: true
-                            color: Util.isValidColor(pass.labelColor) ?  pass.labelColor : root.defaultTextColor
+                            color: Util.isValidColor(root.pass.labelColor) ? root.pass.labelColor : root.defaultTextColor
                             text: modelData.label
                             horizontalAlignment: modelData.textAlignment
                         }
                     }
                     Repeater {
-                        model: pass.secondaryFields
+                        model: root.pass.secondaryFields
                         delegate: QQC2.Label {
+                            required property KPkPass.field modelData
                             Layout.fillWidth: true
-                            color: Util.isValidColor(pass.foregroundColor) ?  pass.foregroundColor : root.defaultTextColor
+                            color: Util.isValidColor(root.pass.foregroundColor) ? root.pass.foregroundColor : root.defaultTextColor
                             text: modelData.valueDisplayString
                             horizontalAlignment: modelData.textAlignment
                         }
@@ -178,23 +188,25 @@ Item {
                 GridLayout {
                     id: auxFieldsLayout
                     rows: 2
-                    columns: pass.auxiliaryFields.length
+                    columns: root.pass.auxiliaryFields.length
                     Layout.fillWidth: true
 
                     Repeater {
-                        model: pass.auxiliaryFields
+                        model: root.pass.auxiliaryFields
                         delegate: QQC2.Label {
+                            required property KPkPass.field modelData
                             Layout.fillWidth: true
-                            color: Util.isValidColor(pass.labelColor) ?  pass.labelColor : root.defaultTextColor
+                            color: Util.isValidColor(root.pass.labelColor) ? root.pass.labelColor : root.defaultTextColor
                             text: modelData.label
                             horizontalAlignment: modelData.textAlignment
                         }
                     }
                     Repeater {
-                        model: pass.auxiliaryFields
+                        model: root.pass.auxiliaryFields
                         delegate: QQC2.Label {
+                            required property KPkPass.field modelData
                             Layout.fillWidth: true
-                            color: Util.isValidColor(pass.foregroundColor) ?  pass.foregroundColor : root.defaultTextColor
+                            color: Util.isValidColor(root.pass.foregroundColor) ? root.pass.foregroundColor : root.defaultTextColor
                             text: modelData.valueDisplayString
                             horizontalAlignment: modelData.textAlignment
                         }
@@ -207,13 +219,13 @@ Item {
                 maximumWidth: root.implicitWidth * 0.8
                 pass: root.pass
                 TapHandler {
-                    onDoubleTapped: scanModeToggled()
+                    onDoubleTapped: root.scanModeToggled()
                 }
             }
 
             // footer
             Image {
-                source: passId !== "" ? "image://org.kde.pkpass/" + passId + "/footer" : ""
+                source: root.passId !== "" ? "image://org.kde.pkpass/" + root.passId + "/footer" : ""
                 sourceSize.height: 1 // ??? seems necessary to trigger high dpi scaling...
                 Layout.alignment: Qt.AlignCenter
             }
@@ -221,27 +233,29 @@ Item {
             // back fields
             Kirigami.Separator {
                 Layout.fillWidth: true
-                visible: pass.backFields.length > 0
+                visible: root.pass.backFields.length > 0
             }
             Repeater {
-                model: pass.backFields
+                model: root.pass.backFields
                 ColumnLayout {
+                    id: delegateRoot
+                    required property KPkPass.field modelData
                     QQC2.Label {
                         Layout.fillWidth: true
-                        color: Util.isValidColor(pass.labelColor) ?  pass.labelColor : root.defaultTextColor
-                        text: modelData.label
+                        color: Util.isValidColor(root.pass.labelColor) ? root.pass.labelColor : root.defaultTextColor
+                        text: delegateRoot.modelData.label
                         wrapMode: Text.WordWrap
-                        horizontalAlignment: modelData.textAlignment
+                        horizontalAlignment: delegateRoot.modelData.textAlignment
                     }
                     QQC2.Label {
                         Layout.fillWidth: true
-                        color: Util.isValidColor(pass.foregroundColor) ?  pass.foregroundColor : root.defaultTextColor
-                        linkColor: Util.isValidColor(pass.foregroundColor) ? color : Kirigami.Theme.linkColor
-                        text: Util.textToHtml(modelData.valueDisplayString)
-                        textFormat: Util.isRichText(modelData.valueDisplayString) ? Text.StyledText : Text.AutoText
+                        color: Util.isValidColor(root.pass.foregroundColor) ? root.pass.foregroundColor : root.defaultTextColor
+                        linkColor: Util.isValidColor(root.pass.foregroundColor) ? color : Kirigami.Theme.linkColor
+                        text: Util.textToHtml(delegateRoot.modelData.valueDisplayString)
+                        textFormat: Util.isRichText(delegateRoot.modelData.valueDisplayString) ? Text.StyledText : Text.AutoText
                         wrapMode: Text.WordWrap
-                        horizontalAlignment: modelData.textAlignment
-                        onLinkActivated: Qt.openUrlExternally(link)
+                        horizontalAlignment: delegateRoot.modelData.textAlignment
+                        onLinkActivated: (link) => { Qt.openUrlExternally(link); }
                     }
                 }
             }
@@ -261,6 +275,6 @@ Item {
     Component.onCompleted: {
         if (backgroundImage.status !== Image.Ready)
             return;
-        root.defaultTextColor = Util.isDarkImage(pass.background()) ? "#eff0f1" : "#232629";
+        root.defaultTextColor = Util.isDarkImage(root.pass.background()) ? "#eff0f1" : "#232629";
     }
 }

@@ -42,10 +42,6 @@ int main(int argc, char **argv)
         exit(1);
     }
 
-    qmlRegisterUncreatableMetaObject(KPkPass::Barcode::staticMetaObject, "org.kde.pkpass", 1, 0, "Barcode", {});
-    qmlRegisterUncreatableMetaObject(KPkPass::Field::staticMetaObject, "org.kde.pkpass", 1, 0, "Field", {});
-    qmlRegisterUncreatableType<KPkPass::Pass>("org.kde.pkpass", 1, 0, "Pass", {});
-    qmlRegisterUncreatableType<KPkPass::BoardingPass>("org.kde.pkpass", 1, 0, "BoardingPass", {});
     qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "Util", [](QQmlEngine *, QJSEngine *engine) -> QJSValue {
         return engine->toScriptValue(Util());
     });

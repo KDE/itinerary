@@ -11,7 +11,7 @@ import org.kde.pkpass as KPkPass
 Kirigami.ScrollablePage {
     id: root
     property string passId
-    property var pass
+    property KPkPass.Pass pass
     title: {
         switch (pass.type) {
             case KPkPass.Pass.BoardingPass: return i18n("Boarding Pass");
@@ -22,7 +22,7 @@ Kirigami.ScrollablePage {
 
     data: BarcodeScanModeButton {
         page: root
-        visible: pass.barcodes.length > 0
+        visible: root.pass.barcodes.length > 0
     }
 
     Component {
