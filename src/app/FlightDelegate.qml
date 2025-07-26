@@ -21,8 +21,8 @@ TimelineDelegate {
         return airport.iataCode ? airport.iataCode : airport.name;
     }
 
-    function airplaneSeat(): string {
-        var s = new Array();
+    readonly property string airplaneSeat: {
+        let s = new Array();
         for (var i = 0; i < root.resIds.length; ++i) {
             var res = ReservationManager.reservation(root.resIds[i]);
             if (res.airplaneSeat)
@@ -30,7 +30,7 @@ TimelineDelegate {
         }
         if (s.length === 0)
             return "-";
-        return s.join(", ");
+        return s.join(", ") + root.reservation.airplaneSeat.substr(0, 0); // HACK to have bindings update on reservation changes
     }
 
     readonly property bool hasSeat: {
@@ -38,7 +38,7 @@ TimelineDelegate {
             if (ReservationManager.reservation(resId).airplaneSeat)
                 return true;
         }
-        return false;
+        return root.reservation.airplaneSeat.substr(0, 0) !== ""; // HACK always false, but triggering binding updates on reservation changes
     }
 
     contentItem: ColumnLayout {
@@ -79,7 +79,7 @@ TimelineDelegate {
                     Layout.fillHeight: true
                 }
                 TimelineDelegateSeatRowLabel {
-                    text: i18nc("flight seats", "Seat: <b>%1</b>", root.airplaneSeat())
+                    text: i18nc("flight seats", "Seat: <b>%1</b>", root.airplaneSeat)
                 }
             }
         }
