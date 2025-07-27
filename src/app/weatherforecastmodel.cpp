@@ -18,15 +18,18 @@ WeatherForecastModel::WeatherForecastModel(QObject *parent)
 
 WeatherForecastModel::~WeatherForecastModel() = default;
 
-QObject *WeatherForecastModel::weatherForecastManager() const
+WeatherForecastManager* WeatherForecastModel::weatherForecastManager() const
 {
     return m_mgr;
 }
 
-void WeatherForecastModel::setWeatherForecastManager(QObject *mgr)
+void WeatherForecastModel::setWeatherForecastManager(WeatherForecastManager *mgr)
 {
+    if (m_mgr == mgr) {
+        return;
+    }
     beginResetModel();
-    m_mgr = qobject_cast<WeatherForecastManager *>(mgr);
+    m_mgr = mgr;
     endResetModel();
 }
 
@@ -44,15 +47,17 @@ void WeatherForecastModel::setWeatherForecast(const QVariant &fc)
 
 int WeatherForecastModel::rowCount(const QModelIndex &parent) const
 {
-    if (parent.isValid() || !m_mgr)
+    if (parent.isValid() || !m_mgr) {
         return 0;
+    }
     return m_fc.range();
 }
 
 QVariant WeatherForecastModel::data(const QModelIndex &index, int role) const
 {
-    if (!index.isValid() || !m_mgr || !m_fc.isValid())
+    if (!index.isValid() || !m_mgr || !m_fc.isValid()) {
         return {};
+    }
 
     switch (role) {
     case WeatherForecastRole: {

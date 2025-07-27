@@ -23,6 +23,9 @@
 
 #include <cmath>
 
+WeatherForecastManager* WeatherForecastManager::s_instance = nullptr;
+bool WeatherForecastManager::s_allowNetwork = false;
+
 static void alignToHour(QDateTime &dt)
 {
     dt.setTime(QTime(dt.time().hour(), 0, 0, 0));
@@ -49,25 +52,31 @@ WeatherForecastManager::WeatherForecastManager(QObject *parent)
 {
     connect(&m_updateTimer, &QTimer::timeout, this, &WeatherForecastManager::updateAll);
     m_updateTimer.setSingleShot(true);
+    s_instance = this;
 }
 
-WeatherForecastManager::~WeatherForecastManager() = default;
-
-bool WeatherForecastManager::allowNetworkAccess() const
+WeatherForecastManager::~WeatherForecastManager()
 {
-    return m_allowNetwork || m_testMode;
+    s_instance = nullptr;
+}
+
+bool WeatherForecastManager::allowNetworkAccess()
+{
+    return s_allowNetwork || (s_instance && s_instance->m_testMode);
 }
 
 void WeatherForecastManager::setAllowNetworkAccess(bool enabled)
 {
-    m_allowNetwork = enabled;
-    Q_EMIT forecastUpdated();
-    if (enabled) {
-        scheduleUpdate();
-    } else {
-        m_updateTimer.stop();
+    s_allowNetwork = enabled;
+    if (s_instance) {
+        Q_EMIT s_instance->forecastUpdated();
+        if (enabled) {
+            s_instance->scheduleUpdate();
+        } else {
+            s_instance->m_updateTimer.stop();
+        }
+        s_instance->fetchNext();
     }
-    fetchNext();
 }
 
 void WeatherForecastManager::monitorLocation(float latitude, float longitude)
@@ -165,7 +174,7 @@ void WeatherForecastManager::fetchTile(WeatherTile tile)
 
 void WeatherForecastManager::fetchNext()
 {
-    if (!m_allowNetwork || m_pendingReply || m_pendingTiles.empty()) {
+    if (!s_allowNetwork || m_pendingReply || m_pendingTiles.empty()) {
         return;
     }
 

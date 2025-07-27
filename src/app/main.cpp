@@ -194,7 +194,6 @@ static Settings *s_settings = nullptr;
 static TransferManager *s_tranferManager = nullptr;
 static TripGroupManager *s_tripGroupManager = nullptr;
 static LiveDataManager *s_liveDataMnager = nullptr;
-static WeatherForecastManager *s_weatherForecastManager = nullptr;
 static MapDownloadManager *s_mapDownloadManager = nullptr;
 static PassManager *s_passManager = nullptr;
 static MatrixController *s_matrixController = nullptr;
@@ -220,7 +219,6 @@ void registerApplicationSingletons()
     REGISTER_SINGLETON_INSTANCE(TransferManager, s_tranferManager)
     REGISTER_SINGLETON_INSTANCE(TripGroupManager, s_tripGroupManager)
     REGISTER_SINGLETON_INSTANCE(LiveDataManager, s_liveDataMnager)
-    REGISTER_SINGLETON_INSTANCE(WeatherForecastManager, s_weatherForecastManager)
     REGISTER_SINGLETON_INSTANCE(MapDownloadManager, s_mapDownloadManager)
     REGISTER_SINGLETON_INSTANCE(PassManager, s_passManager)
     REGISTER_SINGLETON_INSTANCE(MatrixController, s_matrixController);
@@ -375,10 +373,8 @@ int main(int argc, char **argv)
     QObject::connect(&settings, &Settings::showNotificationOnLockScreenChanged, &liveDataMgr, &LiveDataManager::setShowNotificationsOnLockScreen);
     s_liveDataMnager = &liveDataMgr;
 
-    WeatherForecastManager weatherForecastMgr;
-    weatherForecastMgr.setAllowNetworkAccess(settings.weatherForecastEnabled());
-    QObject::connect(&settings, &Settings::weatherForecastEnabledChanged, &weatherForecastMgr, &WeatherForecastManager::setAllowNetworkAccess);
-    s_weatherForecastManager = &weatherForecastMgr;
+    WeatherForecastManager::setAllowNetworkAccess(settings.weatherForecastEnabled());
+    QObject::connect(&settings, &Settings::weatherForecastEnabledChanged, &WeatherForecastManager::setAllowNetworkAccess);
 
     TransferManager transferManager;
     transferManager.setReservationManager(&resMgr);

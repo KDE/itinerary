@@ -10,6 +10,7 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kitinerary
 import org.kde.itinerary
+import org.kde.itinerary.weather
 
 Kirigami.ScrollablePage {
     id: root
@@ -37,7 +38,7 @@ Kirigami.ScrollablePage {
             font: Kirigami.Theme.smallFont
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
-            onLinkActivated: Qt.openUrlExternally(link)
+            onLinkActivated: (link) => { Qt.openUrlExternally(link); }
         }
     }
 
@@ -52,21 +53,21 @@ Kirigami.ScrollablePage {
         delegate: QQC2.ItemDelegate {
             id: weatherForecastDelegate
 
-            required property var weatherForecast
+            required property weatherForecast weatherForecast
             required property string localizedTime
 
             highlighted: false
             width: ListView.view.width
 
             background: Rectangle {
-                color: weatherForecast.isSevere ? Kirigami.Theme.negativeBackgroundColor : Kirigami.Theme.backgroundColor
+                color: weatherForecastDelegate.weatherForecast.isSevere ? Kirigami.Theme.negativeBackgroundColor : Kirigami.Theme.backgroundColor
             }
 
             contentItem: RowLayout {
                 spacing: 0
 
                 Kirigami.Icon {
-                    source: weatherForecast.symbolIconName
+                    source: weatherForecastDelegate.weatherForecast.symbolIconName
                     Layout.preferredHeight: Kirigami.Units.iconSizes.smallMedium
                     Layout.preferredWidth: Kirigami.Units.iconSizes.smallMedium
                     Layout.rightMargin: Kirigami.Units.largeSpacing

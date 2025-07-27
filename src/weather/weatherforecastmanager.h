@@ -11,6 +11,7 @@
 
 #include <QObject>
 #include <QTimer>
+#include <qqmlregistration.h>
 
 #include <deque>
 #include <unordered_map>
@@ -26,13 +27,16 @@ class QXmlStreamReader;
 class WeatherForecastManager : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
+
 public:
     explicit WeatherForecastManager(QObject *parent = nullptr);
     ~WeatherForecastManager() override;
 
     /** Kill switch for network operations. */
-    bool allowNetworkAccess() const;
-    void setAllowNetworkAccess(bool enabled);
+    static bool allowNetworkAccess();
+    static void setAllowNetworkAccess(bool enabled);
 
     /** Monitor the specified location for weather forecasts. */
     void monitorLocation(float latitude, float longitude);
@@ -79,8 +83,10 @@ private:
     QNetworkAccessManager *m_nam = nullptr;
     QNetworkReply *m_pendingReply = nullptr;
     QTimer m_updateTimer;
-    bool m_allowNetwork = false;
     bool m_testMode = false;
+
+    static WeatherForecastManager *s_instance;
+    static bool s_allowNetwork;
 };
 
 #endif // WEATHERFORECASTMANAGER_H

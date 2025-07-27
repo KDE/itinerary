@@ -16,6 +16,7 @@ import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kirigamiaddons.components as Components
 import org.kde.kpublictransport as KPublicTransport
 import org.kde.itinerary
+import org.kde.itinerary.weather
 
 Kirigami.ScrollablePage {
     id: root

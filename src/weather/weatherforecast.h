@@ -9,6 +9,7 @@
 
 #include <QExplicitlySharedDataPointer>
 #include <QMetaType>
+#include <qqmlregistration.h>
 
 #include <cstdint>
 
@@ -21,6 +22,7 @@ struct WeatherTile;
 class WeatherForecast
 {
     Q_GADGET
+    QML_VALUE_TYPE(weatherForecast)
     Q_PROPERTY(bool valid READ isValid CONSTANT)
     Q_PROPERTY(float minimumTemperature READ minimumTemperature CONSTANT)
     Q_PROPERTY(float maximumTemperature READ maximumTemperature CONSTANT)

@@ -72,6 +72,7 @@ ecm_qt_declare_logging_category(itinerary
 
 target_link_libraries(itinerary PUBLIC
     itinerary-weather
+    itinerary-weatherplugin
     SolidExtras
     GpxIo
     KPublicTransport
