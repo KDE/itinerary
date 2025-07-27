@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-26 00:43+0000\n"
+"POT-Creation-Date: 2025-07-27 00:42+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -325,14 +325,11 @@ msgid "File saved successfully."
 msgstr "文件已成功保存。"
 
 #: app/applicationcontroller.cpp:637
-#, fuzzy, kde-format
-#| msgid ""
-#| "File was imported with a newer version of Itinerary. Some information "
-#| "might not be imported correctly."
+#, kde-format
 msgid ""
 "File was exported with a newer version of Itinerary. Some information might "
 "not be imported correctly."
-msgstr "该文件是使用较新版本的 Itinerary 导入的。部分信息可能无法正确导入。"
+msgstr ""
 
 #: app/applicationcontroller.cpp:663
 #, kde-format
@@ -1540,7 +1537,7 @@ msgstr "检查更新"
 msgid "Save As…"
 msgstr "另存为..."
 
-#: app/gpxexport.cpp:33 app/main.cpp:321 app/Main.qml:20 app/Main.qml:68
+#: app/gpxexport.cpp:33 app/main.cpp:313 app/Main.qml:20 app/Main.qml:68
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -2581,23 +2578,23 @@ msgstr "M 型"
 msgid "Type N"
 msgstr "N 型"
 
-#: app/main.cpp:329
+#: app/main.cpp:321
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "数字旅行助理应用"
 
-#: app/main.cpp:330
+#: app/main.cpp:322
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "Copyright © The KDE Community"
 
-#: app/main.cpp:337
+#: app/main.cpp:329
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr ""
 
-#: app/main.cpp:342
+#: app/main.cpp:334
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."

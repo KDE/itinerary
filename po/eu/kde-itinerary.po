@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-26 00:43+0000\n"
-"PO-Revision-Date: 2025-07-23 13:58+0200\n"
+"POT-Creation-Date: 2025-07-27 00:42+0000\n"
+"PO-Revision-Date: 2025-07-26 11:19+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -336,15 +336,12 @@ msgid "File saved successfully."
 msgstr "Fitxategia ongi gorde da."
 
 #: app/applicationcontroller.cpp:637
-#, fuzzy, kde-format
-#| msgid ""
-#| "File was imported with a newer version of Itinerary. Some information "
-#| "might not be imported correctly."
+#, kde-format
 msgid ""
 "File was exported with a newer version of Itinerary. Some information might "
 "not be imported correctly."
 msgstr ""
-"Fitxategia Itinerary-ren bertsio berriago batekin inportatu da. Baliteke "
+"Fitxategia Itinerary-ren bertsio berriago batekin esportatu da. Baliteke "
 "informazio batzuk behar bezala ez inportatzea."
 
 #: app/applicationcontroller.cpp:663
@@ -1553,7 +1550,7 @@ msgstr "Egiaztatu eguneratzeak"
 msgid "Save As…"
 msgstr "Gorde honela…"
 
-#: app/gpxexport.cpp:33 app/main.cpp:321 app/Main.qml:20 app/Main.qml:68
+#: app/gpxexport.cpp:33 app/main.cpp:313 app/Main.qml:20 app/Main.qml:68
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -2601,23 +2598,23 @@ msgstr "M mota"
 msgid "Type N"
 msgstr "N mota"
 
-#: app/main.cpp:329
+#: app/main.cpp:321
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Bidai-laguntzaile digitala"
 
-#: app/main.cpp:330
+#: app/main.cpp:322
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "Copyright © KDE Komunitatea"
 
-#: app/main.cpp:337
+#: app/main.cpp:329
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Ireki ibilbidea adierazitako orrian"
 
-#: app/main.cpp:342
+#: app/main.cpp:334
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."

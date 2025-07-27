@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-26 00:43+0000\n"
-"PO-Revision-Date: 2025-07-20 14:35+0200\n"
+"POT-Creation-Date: 2025-07-27 00:42+0000\n"
+"PO-Revision-Date: 2025-07-26 10:02+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -332,15 +332,12 @@ msgid "File saved successfully."
 msgstr "Bestand met succes opgeslagen."
 
 #: app/applicationcontroller.cpp:637
-#, fuzzy, kde-format
-#| msgid ""
-#| "File was imported with a newer version of Itinerary. Some information "
-#| "might not be imported correctly."
+#, kde-format
 msgid ""
 "File was exported with a newer version of Itinerary. Some information might "
 "not be imported correctly."
 msgstr ""
-"Bestand was geïmporteerd met een nieuwere versie van Itinerary. Sommige "
+"Bestand was geëxporteerd met een nieuwere versie van Itinerary. Sommige "
 "informatie kan niet juist zijn geïmporteerd."
 
 #: app/applicationcontroller.cpp:663
@@ -1549,7 +1546,7 @@ msgstr "Op bijwerken controleren"
 msgid "Save As…"
 msgstr "Opslaan als…"
 
-#: app/gpxexport.cpp:33 app/main.cpp:321 app/Main.qml:20 app/Main.qml:68
+#: app/gpxexport.cpp:33 app/main.cpp:313 app/Main.qml:20 app/Main.qml:68
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -2597,23 +2594,23 @@ msgstr "Type M"
 msgid "Type N"
 msgstr "Type N"
 
-#: app/main.cpp:329
+#: app/main.cpp:321
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Digitale reisassistent"
 
-#: app/main.cpp:330
+#: app/main.cpp:322
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "Copyright © De KDE-gemeenschap"
 
-#: app/main.cpp:337
+#: app/main.cpp:329
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Itinerary (reisroute) openen op de gegeven pagina"
 
-#: app/main.cpp:342
+#: app/main.cpp:334
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
