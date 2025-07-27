@@ -32,4 +32,13 @@ bool MatrixRoomsSortProxyModel::lessThan(const QModelIndex &source_left, const Q
     return lhsCategory < rhsCategory;
 }
 
+bool MatrixRoomsSortProxyModel::filterAcceptsRow(int source_row, const QModelIndex &source_parent) const
+{
+    const auto category = sourceModel()->data(sourceModel()->index(source_row, 0, source_parent), MatrixRoomsModel::CategoryRole).toInt();
+    if (category == MatrixRoomsModel::Space) {
+        return false;
+    }
+    return QSortFilterProxyModel::filterAcceptsRow(source_row, source_parent);
+}
+
 #include "moc_matrixroomssortproxymodel.cpp"
