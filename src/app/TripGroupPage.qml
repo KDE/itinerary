@@ -740,6 +740,12 @@ Kirigami.ScrollablePage {
                     onClicked: exportTripGroupDialog.open()
                 }
                 FormCard.FormButtonDelegate {
+                    text: i18n("Synchronize via Matrix")
+                    icon.name: "emblem-shared-symbolic"
+                    visible: root.tripGroup.matrixRoomId === "" && Settings.developmentMode
+                    onClicked: MatrixSyncManager.syncTripGroup(root.tripGroupId)
+                }
+                FormCard.FormButtonDelegate {
                     text: i18n("Delete trip")
                     icon.name: "edit-delete"
                     onClicked: deleteTripGroupWarningDialog.open()
