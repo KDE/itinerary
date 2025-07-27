@@ -5,6 +5,7 @@
 
 #include <Quotient/room.h>
 
+using namespace Qt::Literals;
 using namespace Quotient;
 
 Q_DECLARE_METATYPE(Quotient::JoinState)
@@ -81,6 +82,13 @@ void MatrixRoomsModel::doAddRoom(Room *room)
     if (room) {
         if (!room->successorId().isEmpty()) {
             return;
+        }
+        if (const RoomCreateEvent *creationEvent = room->creation(); creationEvent) {
+            const auto roomType = creationEvent->contentJson().value(Quotient::TypeKey);
+            if (roomType.isString() && roomType != "m.space"_L1) {
+                // ignore rooms of types we don't know (and Itinerary's own sync rooms)
+                return;
+            }
         }
         m_rooms.append(room);
         connectRoomSignals(room);
