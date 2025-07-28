@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-27 00:42+0000\n"
+"POT-Creation-Date: 2025-07-28 00:41+0000\n"
 "PO-Revision-Date: 2025-07-21 00:39+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -118,7 +118,7 @@ msgid "Add to calendar…"
 msgstr "캘린더에 추가…"
 
 #: app/ActionsCard.qml:75 app/ProgramMembershipPage.qml:182
-#: app/TicketPage.qml:191 app/TripGroupPage.qml:736
+#: app/TicketPage.qml:191 app/TripGroupPage.qml:737
 #, kde-format
 msgid "Export…"
 msgstr "내보내기…"
@@ -127,7 +127,7 @@ msgstr "내보내기…"
 #: app/GenericPkPassPage.qml:43 app/GenericPkPassPage.qml:71
 #: app/HealthCertificatePage.qml:49 app/HealthCertificatePage.qml:63
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:188
-#: app/TicketPage.qml:48 app/TicketPage.qml:197 app/TripGroupPage.qml:308
+#: app/TicketPage.qml:48 app/TicketPage.qml:197 app/TripGroupPage.qml:309
 #, kde-format
 msgid "Delete"
 msgstr "삭제"
@@ -148,7 +148,7 @@ msgid "Export Reservation"
 msgstr "예약 내보내기"
 
 #: app/ActionsCard.qml:143 app/ProgramMembershipPage.qml:147
-#: app/TicketPage.qml:141 app/TripGroupPage.qml:686
+#: app/TicketPage.qml:141 app/TripGroupPage.qml:687
 #, kde-format
 msgid "Actions"
 msgstr "동작"
@@ -1535,7 +1535,7 @@ msgid "Do you really want to delete this pass?"
 msgstr "이 패스를 삭제하시겠습니까?"
 
 #: app/GenericPkPassPage.qml:55 app/TicketPage.qml:165
-#: app/TripGroupPage.qml:692
+#: app/TripGroupPage.qml:693
 #, kde-format
 msgid "Check for Updates"
 msgstr "업데이트 확인"
@@ -1545,7 +1545,7 @@ msgstr "업데이트 확인"
 msgid "Save As…"
 msgstr "다른 이름으로 저장…"
 
-#: app/gpxexport.cpp:33 app/main.cpp:313 app/Main.qml:20 app/Main.qml:68
+#: app/gpxexport.cpp:33 app/main.cpp:311 app/Main.qml:20 app/Main.qml:68
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE 여행 정보"
@@ -1929,7 +1929,7 @@ msgstr "체크인 시간"
 msgid "Check-out time"
 msgstr "체크아웃 시간"
 
-#: app/ImportAction.qml:23 app/TripGroupPage.qml:493
+#: app/ImportAction.qml:23 app/TripGroupPage.qml:494
 #, kde-format
 msgid "Import"
 msgstr "가져오기"
@@ -2589,23 +2589,23 @@ msgstr "M형"
 msgid "Type N"
 msgstr "N형"
 
-#: app/main.cpp:321
+#: app/main.cpp:319
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "디지털 여행 도우미"
 
-#: app/main.cpp:322
+#: app/main.cpp:320
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "Copyright © The KDE Community"
 
-#: app/main.cpp:329
+#: app/main.cpp:327
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "지정한 페이지의 여행 정보 열기"
 
-#: app/main.cpp:334
+#: app/main.cpp:332
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
@@ -2988,7 +2988,7 @@ msgstr "저장된 위치"
 msgid "Home Country"
 msgstr "거주 국가"
 
-#: app/MyDataPage.qml:131 app/StatisticsPage.qml:16 app/TripGroupPage.qml:654
+#: app/MyDataPage.qml:131 app/StatisticsPage.qml:16 app/TripGroupPage.qml:655
 #, kde-format
 msgid "Statistics"
 msgstr "통계"
@@ -3175,7 +3175,7 @@ msgctxt "name - valid time range"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/passmanager.cpp:284 app/TripGroupPage.qml:426
+#: app/passmanager.cpp:284 app/TripGroupPage.qml:427
 #, kde-format
 msgid "%1 - %2"
 msgstr "%1 - %2"
@@ -3451,8 +3451,8 @@ msgstr ""
 msgid "Public Transport Information Sources…"
 msgstr "대중 교통 정보 원본…"
 
-#: app/SettingsPage.qml:83 app/WeatherForecastDelegate.qml:80
-#: app/WeatherForecastPage.qml:19
+#: app/SettingsPage.qml:83 app/WeatherForecastDelegate.qml:81
+#: app/WeatherForecastPage.qml:20
 #, kde-format
 msgid "Weather Forecast"
 msgstr "일기 예보"
@@ -3462,7 +3462,7 @@ msgstr "일기 예보"
 msgid "Showing weather forecasts will query online services."
 msgstr "일기 예보를 표시하면 온라인 서비스에 조회합니다."
 
-#: app/SettingsPage.qml:91 app/WeatherForecastPage.qml:36
+#: app/SettingsPage.qml:91 app/WeatherForecastPage.qml:37
 #, kde-format
 msgid ""
 "Using data from <a href=\"https://www.met.no/\">The Norwegian Meteorological "
@@ -3719,7 +3719,7 @@ msgstr "여행"
 #: app/statisticsmodel.cpp:107 app/statisticsmodel.cpp:140
 #: app/statisticsmodel.cpp:155 app/statisticsmodel.cpp:170
 #: app/statisticsmodel.cpp:185 app/statisticsmodel.cpp:200
-#: app/TripGroupPage.qml:661
+#: app/TripGroupPage.qml:662
 #, kde-format
 msgid "Distance"
 msgstr "거리"
@@ -3732,7 +3732,7 @@ msgstr "호텔 숙박"
 #: app/statisticsmodel.cpp:117 app/statisticsmodel.cpp:145
 #: app/statisticsmodel.cpp:160 app/statisticsmodel.cpp:175
 #: app/statisticsmodel.cpp:190 app/statisticsmodel.cpp:205
-#: app/TripGroupPage.qml:670
+#: app/TripGroupPage.qml:671
 #, kde-format
 msgid "CO₂"
 msgstr "CO₂"
@@ -4298,159 +4298,159 @@ msgctxt "@action:button"
 msgid "Merge"
 msgstr "합치기"
 
-#: app/TripGroupPage.qml:156
+#: app/TripGroupPage.qml:157
 #, kde-format
 msgctxt "@action"
 msgid "Search connection"
 msgstr "연결 검색"
 
-#: app/TripGroupPage.qml:163
+#: app/TripGroupPage.qml:164
 #, kde-format
 msgctxt "@action"
 msgid "Add connection"
 msgstr "연결 추가"
 
-#: app/TripGroupPage.qml:169
+#: app/TripGroupPage.qml:170
 #, kde-format
 msgctxt "@action"
 msgid "Add train"
 msgstr "열차 추가"
 
-#: app/TripGroupPage.qml:179
+#: app/TripGroupPage.qml:180
 #, kde-format
 msgctxt "@action"
 msgid "Add bus"
 msgstr "버스 추가"
 
-#: app/TripGroupPage.qml:189
+#: app/TripGroupPage.qml:190
 #, kde-format
 msgctxt "@action"
 msgid "Add flight"
 msgstr "항공편 추가"
 
-#: app/TripGroupPage.qml:199
+#: app/TripGroupPage.qml:200
 #, kde-format
 msgctxt "@action"
 msgid "Add ferry trip"
 msgstr "페리 여정 추가"
 
-#: app/TripGroupPage.qml:209
+#: app/TripGroupPage.qml:210
 #, kde-format
 msgctxt "@action"
 msgid "Add accommodation"
 msgstr "숙박 추가"
 
-#: app/TripGroupPage.qml:224
+#: app/TripGroupPage.qml:225
 #, kde-format
 msgctxt "@action"
 msgid "Add event"
 msgstr "행사 추가"
 
-#: app/TripGroupPage.qml:240
+#: app/TripGroupPage.qml:241
 #, kde-format
 msgid "Add restaurant"
 msgstr "음식점 추가"
 
-#: app/TripGroupPage.qml:257
+#: app/TripGroupPage.qml:258
 #, kde-format
 msgctxt "@title:group"
 msgid "Add to Trip"
 msgstr "여정에 추가"
 
-#: app/TripGroupPage.qml:290
+#: app/TripGroupPage.qml:291
 #, kde-format
 msgid "Export Trip"
 msgstr "여행 내보내기"
 
-#: app/TripGroupPage.qml:301
+#: app/TripGroupPage.qml:302
 #, kde-format
 msgid "Delete Trip"
 msgstr "여정 삭제"
 
-#: app/TripGroupPage.qml:302
+#: app/TripGroupPage.qml:303
 #, kde-format
 msgid "Do you really want to delete the trip '%1'?"
 msgstr "'%1' 여행을 삭제하시겠습니까?"
 
-#: app/TripGroupPage.qml:427
+#: app/TripGroupPage.qml:428
 #, kde-format
 msgid "One day"
 msgid_plural "%1 days"
 msgstr[0] "%1일"
 
-#: app/TripGroupPage.qml:459
+#: app/TripGroupPage.qml:460
 #, kde-format
 msgid "Some incompatible power sockets (%1)"
 msgstr "일부 전원 콘센트 호환되지 않음(%1)"
 
-#: app/TripGroupPage.qml:461
+#: app/TripGroupPage.qml:462
 #, kde-format
 msgid "Some incompatible power plugs (%1)"
 msgstr "일부 전원 플러그 호환되지 않음(%1)"
 
-#: app/TripGroupPage.qml:464
+#: app/TripGroupPage.qml:465
 #, kde-format
 msgid "No compatible power plugs (%1)"
 msgstr "호환되는 전원 플러그 없음(%1)"
 
-#: app/TripGroupPage.qml:476
+#: app/TripGroupPage.qml:477
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
 msgstr[0] "통화: %2"
 
-#: app/TripGroupPage.qml:486
+#: app/TripGroupPage.qml:487
 #, kde-format
 msgid "Show map…"
 msgstr "지도 표시…"
 
-#: app/TripGroupPage.qml:509
+#: app/TripGroupPage.qml:510
 #, kde-format
 msgid "Add"
 msgstr "추가"
 
-#: app/TripGroupPage.qml:626
+#: app/TripGroupPage.qml:627
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "오늘의 여정이 없습니다."
 
-#: app/TripGroupPage.qml:679
+#: app/TripGroupPage.qml:680
 #, kde-format
 msgid "Cost"
 msgstr "비용"
 
-#: app/TripGroupPage.qml:701
+#: app/TripGroupPage.qml:702
 #, kde-format
 msgid "Rename…"
 msgstr "이름 바꾸기…"
 
-#: app/TripGroupPage.qml:710
+#: app/TripGroupPage.qml:711
 #, kde-format
 msgid "Merge trips…"
 msgstr "여정 합치기…"
 
-#: app/TripGroupPage.qml:721
+#: app/TripGroupPage.qml:722
 #, kde-format
 msgid "Split trip…"
 msgstr "여정 나누기…"
 
-#: app/TripGroupPage.qml:728
+#: app/TripGroupPage.qml:729
 #, kde-format
 msgid "Download Maps"
 msgstr "지도 다운로드"
 
-#: app/TripGroupPage.qml:743
+#: app/TripGroupPage.qml:744
 #, kde-format
 msgid "Delete trip"
 msgstr "여정 삭제"
 
-#: app/TripGroupPage.qml:768
+#: app/TripGroupPage.qml:769
 #, kde-format
 msgctxt "@action:button"
 msgid "Go To Now"
 msgstr "현재로 이동"
 
-#: app/TripGroupPage.qml:776 app/TripGroupsPage.qml:118
+#: app/TripGroupPage.qml:777 app/TripGroupsPage.qml:118
 #: app/TripGroupsPage.qml:137
 #, kde-format
 msgctxt "@action:button"
@@ -4582,13 +4582,13 @@ msgctxt "train coach"
 msgid "Coach %1"
 msgstr "%1호차"
 
-#: app/WeatherForecastDelegate.qml:58 app/WeatherForecastPage.qml:104
+#: app/WeatherForecastDelegate.qml:59 app/WeatherForecastPage.qml:105
 #, kde-format
 msgctxt "precipitation"
 msgid "%1 mm"
 msgstr "%1 mm"
 
-#: app/WeatherForecastDelegate.qml:71 app/WeatherForecastPage.qml:117
+#: app/WeatherForecastDelegate.qml:72 app/WeatherForecastPage.qml:118
 #, kde-format
 msgctxt "windSpeed"
 msgid "%1 m/s"
