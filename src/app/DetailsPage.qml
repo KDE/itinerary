@@ -24,7 +24,7 @@ Kirigami.ScrollablePage {
     property Component editor
     readonly property var reservationIds: ReservationManager.reservationsForBatch(root.batchId)
 
-    function seatSectionString(): string {
+    readonly property string seatSectionString: {
         let s = []
         for (const reservationId of root.reservationIds) {
             const reservation = ReservationManager.reservation(reservationId);
@@ -37,7 +37,7 @@ Kirigami.ScrollablePage {
         return [...new Set(s)].join(", ");
     }
 
-    function seatString(): string {
+    readonly property string seatString: {
         let s = [];
         for (const reservationId of root.reservationIds) {
             const reservation = ReservationManager.reservation(reservationId);

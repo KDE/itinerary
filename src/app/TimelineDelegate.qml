@@ -64,7 +64,7 @@ FormCard.FormCard {
         return false;
     }
 
-    function seatSectionString(): string {
+    readonly property string seatSectionString: {
         let s = []
         for (const resId of resIds) {
             const res = ReservationManager.reservation(resId);
@@ -77,7 +77,7 @@ FormCard.FormCard {
         return [...new Set(s)].join(", ");
     }
 
-    function seatString(): string {
+    readonly property string seatString: {
         let s = []
         for (const resId of resIds) {
             const res = ReservationManager.reservation(resId);

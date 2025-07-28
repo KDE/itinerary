@@ -58,13 +58,13 @@ TimelineDelegate {
                 hasSeat: root.hasSeat
 
                 TimelineDelegateSeatRowLabel {
-                    text: i18nc("train coach", "Coach: <b>%1</b>", root.seatSectionString())
+                    text: i18nc("train coach", "Coach: <b>%1</b>", root.seatSectionString)
                 }
                 Kirigami.Separator {
                     Layout.fillHeight: true
                 }
                 TimelineDelegateSeatRowLabel {
-                    text: i18nc("train seat", "Seat: <b>%1</b>", root.seatString())
+                    text: i18nc("train seat", "Seat: <b>%1</b>", root.seatString)
                 }
                 Kirigami.Separator {
                     Layout.fillHeight: true

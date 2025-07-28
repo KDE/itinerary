@@ -66,7 +66,7 @@ TimelineDelegate {
                 hasSeat: root.hasSeat
 
                 TimelineDelegateSeatRowLabel {
-                    text: i18nc("bus seat", "Seat: <b>%1</b>", root.seatString())
+                    text: i18nc("bus seat", "Seat: <b>%1</b>", root.seatString)
                 }
             }
 
