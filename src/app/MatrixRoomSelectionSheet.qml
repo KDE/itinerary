@@ -8,6 +8,7 @@ import org.kde.kitemmodels
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.components as AddonComponents
 import org.kde.itinerary
+import org.kde.itinerary.matrix
 
 // TODO sort room list in activity order
 // TODO remember last selected room
@@ -31,8 +32,9 @@ Kirigami.SearchDialog {
     section {
         property: "category"
         delegate: Kirigami.ListSectionHeader {
+            required property int section
             text: {
-                switch (section * 1) {
+                switch (section) {
                     case MatrixRoomsModel.InvitedRoom: return i18nc("matrix room type", "Invited");
                     case MatrixRoomsModel.FavoriteRoom: return i18nc("matrix room type", "Favorite Rooms");
                     case MatrixRoomsModel.DirectChatRoom: return i18nc("matrix room type", "Direct Messages");

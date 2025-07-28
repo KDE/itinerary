@@ -271,6 +271,7 @@ target_link_libraries(itinerary-app PRIVATE
     Qt::QuickControls2
     KCalendarCoreExtras
     Qt6Keychain::Qt6Keychain
+    KMatrixplugin
 )
 if (ANDROID)
     target_link_libraries(itinerary PUBLIC KAndroidExtras PRIVATE Qt::CorePrivate)
