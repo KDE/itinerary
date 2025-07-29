@@ -55,7 +55,7 @@ FormCard.FormCard {
 
     /** @c true if we have at least one seat reserverion in this batch. */
     readonly property bool hasSeat: {
-        for (const resId of resIds) {
+        for (const resId of root.resIds) {
             const res = ReservationManager.reservation(resId);
             const seat = res?.reservedTicket?.ticketedSeat;
             if (seat && seat.seatNumber !== "")
@@ -66,7 +66,7 @@ FormCard.FormCard {
 
     readonly property string seatSectionString: {
         let s = []
-        for (const resId of resIds) {
+        for (const resId of root.resIds) {
             const res = ReservationManager.reservation(resId);
             const seat = res?.reservedTicket?.ticketedSeat;
             if (seat && seat.seatSection)
@@ -79,7 +79,7 @@ FormCard.FormCard {
 
     readonly property string seatString: {
         let s = []
-        for (const resId of resIds) {
+        for (const resId of root.resIds) {
             const res = ReservationManager.reservation(resId);
             const seat = res?.reservedTicket?.ticketedSeat;
             if (seat && seat.seatNumber)
@@ -97,4 +97,13 @@ FormCard.FormCard {
     }
 
     Accessible.onPressAction: root.clicked()
+
+    Connections {
+        target: ReservationManager
+        function onBatchContentChanged(batchId) {
+            if (batchId == root.batchId) {
+                root.resIds = Qt.binding(function() { return ReservationManager.reservationsForBatch(root.batchId); });
+            }
+        }
+    }
 }

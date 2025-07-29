@@ -22,7 +22,7 @@ Kirigami.ScrollablePage {
     /** Reservation::reservationFor, unique for all travelers on a multi-traveler reservation set */
     readonly property var reservationFor: reservation.reservationFor
     property Component editor
-    readonly property var reservationIds: ReservationManager.reservationsForBatch(root.batchId)
+    property var reservationIds: ReservationManager.reservationsForBatch(root.batchId)
 
     readonly property string seatSectionString: {
         let s = []
@@ -55,7 +55,7 @@ Kirigami.ScrollablePage {
 
     /** @c true if we have at least one seat reserverion in this batch. */
     readonly property bool hasSeat: {
-        for (const resId of reservationIds) {
+        for (const resId of root.reservationIds) {
             const res = ReservationManager.reservation(resId);
             const seat = res?.reservedTicket?.ticketedSeat;
             if (seat && seat.seatNumber !== "")
@@ -82,7 +82,8 @@ Kirigami.ScrollablePage {
         target: ReservationManager
         function onBatchContentChanged(batchId) {
             if (batchId == root.batchId) {
-                root.reservation = Qt.binding(function() { return ReservationManager.reservation(root.currentReservationId); })
+                root.reservation = Qt.binding(function() { return ReservationManager.reservation(root.currentReservationId); });
+                root.reservationIds = Qt.binding(function() { return ReservationManager.reservationsForBatch(root.batchId); });
             }
         }
     }

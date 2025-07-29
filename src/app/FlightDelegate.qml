@@ -23,14 +23,14 @@ TimelineDelegate {
 
     readonly property string airplaneSeat: {
         let s = new Array();
-        for (var i = 0; i < root.resIds.length; ++i) {
-            var res = ReservationManager.reservation(root.resIds[i]);
+        for (const resId of resIds) {
+            const res = ReservationManager.reservation(resId);
             if (res.airplaneSeat)
                 s.push(res.airplaneSeat);
         }
         if (s.length === 0)
             return "-";
-        return s.join(", ") + root.reservation.airplaneSeat.substr(0, 0); // HACK to have bindings update on reservation changes
+        return s.join(", ");
     }
 
     readonly property bool hasSeat: {
@@ -38,7 +38,7 @@ TimelineDelegate {
             if (ReservationManager.reservation(resId).airplaneSeat)
                 return true;
         }
-        return root.reservation.airplaneSeat.substr(0, 0) !== ""; // HACK always false, but triggering binding updates on reservation changes
+        return false;
     }
 
     contentItem: ColumnLayout {
