@@ -57,6 +57,8 @@ Kirigami.Page {
             text: matrixBeacon.isActive ? i18n("Stop Location Sharing") : i18n("Share Location via Matrix")
             icon.name: matrixBeacon.isActive ? "dialog-cancel" : "emblem-shared-symbolic"
             onTriggered: matrixBeacon.isActive ? matrixBeacon.stop() : matrixRoomSheet.open()
+            enabled: MatrixController.manager.connected
+            visible: MatrixController.isAvailable
         },
         Kirigami.Action {
             QQC2.ActionGroup.group: mapStyleGroup
