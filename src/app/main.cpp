@@ -59,6 +59,13 @@
 #include "util.h"
 #include "weatherforecastmodel.h"
 
+#if HAVE_MATRIX
+#include "matrix/matrixbeacon.h"
+#include "matrix/matrixroomsmodel.h"
+
+#include <Quotient/keyverificationsession.h>
+#endif
+
 #include "weatherforecastmanager.h"
 
 #include <KItinerary/CountryDb>
@@ -108,6 +115,15 @@
 
 using namespace Qt::Literals::StringLiterals;
 
+#if !HAVE_MATRIX
+class MatrixBeaconStub : public QObject
+{
+    Q_OBJECT
+    Q_PROPERTY(QVariant connection MEMBER m_connection)
+    QVariant m_connection;
+};
+#endif
+
 void registerKItineraryTypes()
 {
     qRegisterMetaType<KItinerary::KnowledgeDb::DrivingSide>();
@@ -116,6 +132,13 @@ void registerKItineraryTypes()
     qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "PriceUtil", [](QQmlEngine *, QJSEngine *engine) -> QJSValue {
         return engine->toScriptValue(KItinerary::PriceUtil());
     });
+}
+
+void registerQuotientTypes()
+{
+#if HAVE_MATRIX
+    qmlRegisterUncreatableType<Quotient::KeyVerificationSession>("org.kde.quotient", 1, 0, "KeyVerificationSession", {});
+#endif
 }
 
 void registerApplicationTypes()
@@ -133,6 +156,9 @@ void registerApplicationTypes()
     qmlRegisterUncreatableMetaObject(Transfer::staticMetaObject, "org.kde.itinerary", 1, 0, "Transfer", {});
 
     qmlRegisterUncreatableMetaObject(Permission::staticMetaObject, "org.kde.itinerary", 1, 0, "Permission", {});
+#if HAVE_MATRIX
+    qmlRegisterUncreatableMetaObject(MatrixRoomsModel::staticMetaObject, "org.kde.itinerary", 1, 0, "MatrixRoomsModel", {});
+#endif
 
     qmlRegisterType<CountrySubdivisionModel>("org.kde.itinerary", 1, 0, "CountrySubdivisionModel");
     qmlRegisterType<DocumentsModel>("org.kde.itinerary", 1, 0, "DocumentsModel");
@@ -151,6 +177,11 @@ void registerApplicationTypes()
     qmlRegisterType<TripGroupMapModel>("org.kde.itinerary", 1, 0, "TripGroupMapModel");
     qmlRegisterType<TripGroupSplitModel>("org.kde.itinerary", 1, 0, "TripGroupSplitModel");
     qmlRegisterType<WeatherForecastModel>("org.kde.itinerary", 1, 0, "WeatherForecastModel");
+#if HAVE_MATRIX
+    qmlRegisterType<MatrixBeacon>("org.kde.itinerary", 1, 0, "MatrixBeacon");
+#else
+    qmlRegisterType<MatrixBeaconStub>("org.kde.itinerary", 1, 0, "MatrixBeacon");
+#endif
     qmlRegisterType<OnlineTicketImporter>("org.kde.itinerary", 1, 0, "OnlineTicketImporter");
 }
 
@@ -416,6 +447,7 @@ int main(int argc, char **argv)
     OnlineTicketImporter::setNetworkAccessManagerFactory(namFactory);
 
     registerKItineraryTypes();
+    registerQuotientTypes();
     registerApplicationTypes();
     registerApplicationSingletons();
 
@@ -458,3 +490,5 @@ int main(int argc, char **argv)
 
     return app.exec();
 }
+
+#include "main.moc"

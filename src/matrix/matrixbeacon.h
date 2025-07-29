@@ -5,7 +5,6 @@
 #define MATRIXBEACON_H
 
 #include <QObject>
-#include <qqmlregistration.h>
 
 #include <Quotient/connection.h>
 
@@ -17,8 +16,6 @@
 class MatrixBeacon : public QObject
 {
     Q_OBJECT
-    QML_ELEMENT
-
     Q_PROPERTY(Quotient::Connection *connection READ connection WRITE setConnection NOTIFY connectionChanged)
     Q_PROPERTY(QString roomId READ roomId WRITE setRoomId NOTIFY roomIdChanged)
     Q_PROPERTY(bool isActive READ isActive NOTIFY activeChanged)

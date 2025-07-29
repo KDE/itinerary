@@ -13,7 +13,6 @@ import org.kde.kirigami as Kirigami
 import org.kde.kpublictransport
 import org.kde.kpublictransport.onboard
 import org.kde.itinerary
-import org.kde.itinerary.matrix
 
 Kirigami.Page {
     id: root
