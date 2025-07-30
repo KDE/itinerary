@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-28 00:41+0000\n"
+"POT-Creation-Date: 2025-07-30 00:43+0000\n"
 "PO-Revision-Date: 2025-07-26 09:37+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -2391,74 +2391,74 @@ msgstr "הפסקת שיתוף מיקום"
 msgid "Share Location via Matrix"
 msgstr "שיתוף המיקום דרך Matrix"
 
-#: app/LiveStatusPage.qml:64
+#: app/LiveStatusPage.qml:66
 #, kde-format
 msgctxt "map style"
 msgid "Normal map"
 msgstr "מפה רגילה"
 
-#: app/LiveStatusPage.qml:74
+#: app/LiveStatusPage.qml:76
 #, kde-format
 msgctxt "map style"
 msgid "Railway infrastructure map"
 msgstr "מפת תשתית מסילות רכבת"
 
-#: app/LiveStatusPage.qml:83
+#: app/LiveStatusPage.qml:85
 #, kde-format
 msgctxt "map style"
 msgid "Railway signalling map"
 msgstr "מפת איתותי רכבת"
 
-#: app/LiveStatusPage.qml:92
+#: app/LiveStatusPage.qml:94
 #, kde-format
 msgctxt "map style"
 msgid "Railway speed map"
 msgstr "מפת מהירויות רכבת"
 
-#: app/LiveStatusPage.qml:101
+#: app/LiveStatusPage.qml:103
 #, kde-format
 msgctxt "map style"
 msgid "Railway electrification map"
 msgstr "מפת חשמול רכבת"
 
-#: app/LiveStatusPage.qml:110
+#: app/LiveStatusPage.qml:112
 #, kde-format
 msgctxt "map style"
 msgid "Railway gauge map"
 msgstr "מפת רוחב מסילות"
 
-#: app/LiveStatusPage.qml:151
+#: app/LiveStatusPage.qml:153
 #, kde-format
 msgid "Share Live Location"
 msgstr "שיתוף מיקום בזמן אמת"
 
-#: app/LiveStatusPage.qml:152
+#: app/LiveStatusPage.qml:154
 #, kde-format
 msgid ""
 "Do you really want to share your current location to the Matrix channel %1?"
 msgstr "לשתף את המקום הנוכחי שלך עם ערוץ ה־Matrix‏ %1?"
 
-#: app/LiveStatusPage.qml:158
+#: app/LiveStatusPage.qml:160
 #, kde-format
 msgid "Share"
 msgstr "שיתוף"
 
-#: app/LiveStatusPage.qml:290
+#: app/LiveStatusPage.qml:292
 #, kde-format
 msgid "Automatically follow on the map"
 msgstr "לעקוב אוטומטית אחרי המפה"
 
-#: app/LiveStatusPage.qml:310 app/LiveStatusPage.qml:322
+#: app/LiveStatusPage.qml:312 app/LiveStatusPage.qml:324
 #, kde-format
 msgid "Waiting for data…"
 msgstr "בהמתנה לנתונים…"
 
-#: app/LiveStatusPage.qml:334
+#: app/LiveStatusPage.qml:336
 #, kde-format
 msgid "Position"
 msgstr "מקום"
 
-#: app/LiveStatusPage.qml:343
+#: app/LiveStatusPage.qml:345
 #, kde-format
 msgid "Journey"
 msgstr "מסע"
