@@ -17,7 +17,7 @@ FormCard.FormCard {
     id: root
     width: ListView.view.width
 
-    property var locationInfo
+    property locationInformation locationInfo
 
     FormCard.AbstractFormDelegate {
         background: Rectangle {
@@ -56,42 +56,42 @@ FormCard.FormCard {
             }
 
             QQC2.Label {
-                text: locationInfo.drivingSideLabel
-                visible: locationInfo.drivingSideDiffers
+                text: root.locationInfo.drivingSideLabel
+                visible: root.locationInfo.drivingSideDiffers
                 wrapMode: Text.WordWrap
                 Accessible.ignored: !visible
                 Layout.fillWidth: true
             }
 
             QQC2.Label {
-                text: visible ? i18n("No compatible power sockets: %1", locationInfo.powerSocketTypes) : ""
+                text: visible ? i18n("No compatible power sockets: %1", root.locationInfo.powerSocketTypes) : ""
                 color: Kirigami.Theme.negativeTextColor
-                visible: locationInfo.powerPlugCompatibility == LocationInformation.Incompatible
+                visible: root.locationInfo.powerPlugCompatibility == LocationInformation.Incompatible
                 wrapMode: Text.WordWrap
                 Accessible.ignored: !visible
                 Layout.fillWidth: true
             }
 
             QQC2.Label {
-                text: visible ? i18n("Some incompatible power sockets: %1", locationInfo.powerSocketTypes) : ""
-                visible: locationInfo.powerPlugCompatibility == LocationInformation.PartiallyCompatible && locationInfo.powerSocketTypes != ""
+                text: visible ? i18n("Some incompatible power sockets: %1", root.locationInfo.powerSocketTypes) : ""
+                visible: root.locationInfo.powerPlugCompatibility == LocationInformation.PartiallyCompatible && root.locationInfo.powerSocketTypes != ""
                 wrapMode: Text.WordWrap
                 Accessible.ignored: !visible
                 Layout.fillWidth: true
             }
 
             QQC2.Label {
-                text: visible ? i18n("Some incompatible power plugs: %1", locationInfo.powerPlugTypes) : ""
-                visible: locationInfo.powerPlugCompatibility == LocationInformation.PartiallyCompatible && locationInfo.powerPlugTypes != ""
+                text: visible ? i18n("Some incompatible power plugs: %1", root.locationInfo.powerPlugTypes) : ""
+                visible: root.locationInfo.powerPlugCompatibility == LocationInformation.PartiallyCompatible && root.locationInfo.powerPlugTypes != ""
                 wrapMode: Text.WordWrap
                 Accessible.ignored: !visible
                 Layout.fillWidth: true
             }
 
             QQC2.Label {
-                text: visible ? i18n("Timezone change: %1 (%2)", locationInfo.timeZoneName,
-                                     Localizer.formatTimeZoneOffset(locationInfo.timeZoneOffsetDelta)) : ""
-                visible: locationInfo.timeZoneDiffers
+                text: visible ? i18n("Timezone change: %1 (%2)", root.locationInfo.timeZoneName,
+                                     Localizer.formatTimeZoneOffset(root.locationInfo.timeZoneOffsetDelta)) : ""
+                visible: root.locationInfo.timeZoneDiffers
                 wrapMode: Text.WordWrap
                 Accessible.ignored: !visible
                 Layout.fillWidth: true
@@ -105,17 +105,17 @@ FormCard.FormCard {
                     let sourceValue = 1.0;
                     const homeCurrency = Country.fromAlpha2(Settings.homeCountryIsoCode).currencyCode;
                     if (Settings.performCurrencyConversion)
-                        rate = UnitConversion.convertCurrency(sourceValue, homeCurrency, locationInfo.currencyCode);
+                        rate = UnitConversion.convertCurrency(sourceValue, homeCurrency, root.locationInfo.currencyCode);
                     while (rate < 1 && rate > 0) { // scale to a useful order of magnitude
                         rate *= 10;
                         sourceValue *= 10;
                     }
                     if (!isNaN(rate))
                         return i18nc("currency conversion rate", "Currency: %1 = %2",
-                                     Localizer.formatCurrency(sourceValue, homeCurrency), Localizer.formatCurrency(rate, locationInfo.currencyCode));
-                    return i18n("Currency: %1", locationInfo.currencyCode);
+                                     Localizer.formatCurrency(sourceValue, homeCurrency), Localizer.formatCurrency(rate, root.locationInfo.currencyCode));
+                    return i18n("Currency: %1", root.locationInfo.currencyCode);
                 }
-                visible: locationInfo.currencyDiffers
+                visible: root.locationInfo.currencyDiffers
                 wrapMode: Text.WordWrap
                 Accessible.ignored: !visible
                 Layout.fillWidth: true

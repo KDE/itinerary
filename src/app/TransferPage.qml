@@ -15,7 +15,7 @@ import org.kde.kirigamiaddons.formcard as FormCard
 
 Kirigami.ScrollablePage {
     id: root
-    property var transfer
+    property transfer transfer
     readonly property var reservation: ReservationManager.reservation(transfer.reservationId)
     title: i18n("Select Transfer")
 
@@ -263,11 +263,11 @@ Kirigami.ScrollablePage {
             QQC2.Label {
                 text: {
                     if (!Util.isLocationChange(root.reservation)) {
-                        return i18n("%1 ends at %2", root.reservation.reservationFor.name, Localizer.formatTime(transfer, "anchorTime"));
+                        return i18n("%1 ends at %2", root.reservation.reservationFor.name, Localizer.formatTime(root.transfer, "anchorTime"));
                     }
-                    return i18n("Preceding arrival %1 at %2", Localizer.formatTime(transfer, "anchorTime"), transfer.fromName);
+                    return i18n("Preceding arrival %1 at %2", Localizer.formatTime(root.transfer, "anchorTime"), root.transfer.fromName);
                 }
-                visible: transfer.alignment === Transfer.After
+                visible: root.transfer.alignment === Transfer.After
                 Layout.fillWidth: true
             }
 
@@ -275,17 +275,17 @@ Kirigami.ScrollablePage {
                 Layout.fillWidth: true
                 text: {
                     if (!Util.isLocationChange(root.reservation)) {
-                        return i18n("%1 starts at %2", root.reservation.reservationFor.name, Localizer.formatTime(transfer, "anchorTime"));
+                        return i18n("%1 starts at %2", root.reservation.reservationFor.name, Localizer.formatTime(root.transfer, "anchorTime"));
                     }
-                    return i18n("Following departure %1 from %2", Localizer.formatTime(transfer, "anchorTime"), transfer.toName);
+                    return i18n("Following departure %1 from %2", Localizer.formatTime(root.transfer, "anchorTime"), root.transfer.toName);
                 }
-                visible: transfer.alignment === Transfer.Before
+                visible: root.transfer.alignment === Transfer.Before
             }
 
             QQC2.ComboBox {
                 id: favLocCombo
                 model: FavoriteLocationModel
-                visible: transfer.floatingLocationType === Transfer.FavoriteLocation
+                visible: root.transfer.floatingLocationType === Transfer.FavoriteLocation
                 textRole: "display"
                 Layout.fillWidth: true
                 onActivated: {
@@ -327,7 +327,7 @@ Kirigami.ScrollablePage {
                 FormCard.FormTextDelegate {
                     text: i18n("Data providers:")
                     description: PublicTransport.attributionSummary(journeyModel.attributions)
-                    onLinkActivated: Qt.openUrlExternally(link)
+                    onLinkActivated: (link) => { Qt.openUrlExternally(link); }
                 }
             }
         }

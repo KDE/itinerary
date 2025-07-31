@@ -7,12 +7,13 @@
 #ifndef TRANSFER_H
 #define TRANSFER_H
 
+#include "qmlregistrationhelper.h"
+
 #include <KPublicTransport/Journey>
 #include <KPublicTransport/Location>
 
 #include <QExplicitlySharedDataPointer>
 #include <QMetaType>
-#include <qqmlregistration.h>
 
 class TransferPrivate;
 
@@ -26,7 +27,8 @@ class QJsonObject;
 class Transfer
 {
     Q_GADGET
-    QML_ELEMENT
+    QML_VALUE_TYPE(transfer)
+
     Q_PROPERTY(Alignment alignment READ alignment WRITE setAlignment)
     Q_PROPERTY(State state READ state WRITE setState)
     Q_PROPERTY(FloatingLocationType floatingLocationType READ floatingLocationType WRITE setFloatingLocationType)
@@ -120,5 +122,7 @@ private:
 };
 
 Q_DECLARE_METATYPE(Transfer)
+
+REGISTER_GADGET_ENUMS(Transfer)
 
 #endif // TRANSFER_H

@@ -23,4 +23,16 @@ public: \
     } \
 };
 
+#define REGISTER_GADGET_ENUMS(Class) \
+class Class##Derived : public Class \
+{ \
+    Q_GADGET \
+}; \
+namespace Class##DerivedForeign \
+{ \
+    Q_NAMESPACE \
+    QML_NAMED_ELEMENT(Class) \
+    QML_FOREIGN_NAMESPACE(Class##Derived) \
+}
+
 #endif

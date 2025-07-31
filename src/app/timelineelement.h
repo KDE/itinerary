@@ -7,10 +7,11 @@
 #ifndef TIMELINEELEMENT_H
 #define TIMELINEELEMENT_H
 
+#include "qmlregistrationhelper.h"
+
 #include <QDateTime>
 #include <QString>
 #include <QVariant>
-#include <qqmlregistration.h>
 
 class TimelineModel;
 class Transfer;
@@ -24,7 +25,6 @@ class GeoCoordinates;
 class TimelineElement
 {
     Q_GADGET
-    QML_ELEMENT
     QML_VALUE_TYPE(timelineElement)
 
 public:
@@ -117,5 +117,6 @@ private:
 };
 
 Q_DECLARE_METATYPE(TimelineElement)
+REGISTER_GADGET_ENUMS(TimelineElement)
 
 #endif // TIMELINEELEMENT_H

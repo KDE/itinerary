@@ -16,7 +16,7 @@ FormCard.FormCard {
     id: root
     width: ListView.view.width
 
-    required property var transfer
+    required property transfer transfer
     property bool journeyDetailsExpanded: false
     property QtObject controller: TransferDelegateController {
         transfer: root.transfer
@@ -27,9 +27,9 @@ FormCard.FormCard {
             Rectangle {
                 id: progressBar
 
-                visible: controller.isCurrent
+                visible: root.controller.isCurrent
                 height: Kirigami.Units.smallSpacing
-                width: controller.progress * headerBackground.width
+                width: root.controller.progress * headerBackground.width
                 color: Kirigami.Theme.visitedLinkColor
                 radius: Kirigami.Units.cornerRadius
 
@@ -40,8 +40,8 @@ FormCard.FormCard {
             }
         }
         onClicked: {
-            if (transfer.state === Transfer.Selected) {
-                journeyDetailsExpanded = !journeyDetailsExpanded;
+            if (root.transfer.state === Transfer.Selected) {
+                root.journeyDetailsExpanded = !root.journeyDetailsExpanded;
             } else {
                 applicationWindow().pageStack.push(detailsComponent);
             }
@@ -61,7 +61,7 @@ FormCard.FormCard {
             }
             QQC2.Label {
                 id: headerLabel
-                text: i18n("%1 to %2", transfer.fromName, transfer.toName)
+                text: i18n("%1 to %2", root.transfer.fromName, root.transfer.toName)
                 color: Kirigami.Theme.textColor
                 Layout.fillWidth: true
                 elide: Text.ElideRight
@@ -70,15 +70,15 @@ FormCard.FormCard {
                 Accessible.ignored: true
             }
             QQC2.Label {
-                text: Localizer.formatTime(transfer.journey, "scheduledDepartureTime")
-                visible: transfer.state === Transfer.Selected && !root.journeyDetailsExpanded
+                text: Localizer.formatTime(root.transfer.journey, "scheduledDepartureTime")
+                visible: root.transfer.state === Transfer.Selected && !root.journeyDetailsExpanded
                 color: Kirigami.Theme.textColor
                 Accessible.ignored: !visible
             }
             QQC2.Label {
-                text: (transfer.journey.departureDelay >= 0 ? "+" : "") + transfer.journey.departureDelay
-                color: (transfer.journey.departureDelay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
-                visible: transfer.state === Transfer.Selected && transfer.journey.hasExpectedDepartureTime && !root.journeyDetailsExpanded
+                text: (root.transfer.journey.departureDelay >= 0 ? "+" : "") + root.transfer.journey.departureDelay
+                color: (root.transfer.journey.departureDelay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
+                visible: root.transfer.state === Transfer.Selected && root.transfer.journey.hasExpectedDepartureTime && !root.journeyDetailsExpanded
                 Accessible.ignored: !visible
             }
 
@@ -97,31 +97,31 @@ FormCard.FormCard {
             modelLength: journeyRepeater.count - 1
 
         }
-        model: (transfer.state == Transfer.Selected && journeyDetailsExpanded) ? transfer.journey.sections : 0
+        model: (root.transfer.state == Transfer.Selected && root.journeyDetailsExpanded) ? root.transfer.journey.sections : 0
     }
 
     JourneySummaryDelegate {
-        journey: transfer.journey
-        visible: transfer.state == Transfer.Selected && !journeyDetailsExpanded
+        journey: root.transfer.journey
+        visible: root.transfer.state == Transfer.Selected && !root.journeyDetailsExpanded
         Layout.fillWidth: true
-        onClicked: journeyDetailsExpanded = true
+        onClicked: root.journeyDetailsExpanded = true
     }
 
     FormCard.FormButtonDelegate {
         icon.name: "checkmark"
         text: i18n("Select transfer")
         onClicked: applicationWindow().pageStack.push(detailsComponent)
-        visible: transfer.state === Transfer.Pending
-            || transfer.state === Transfer.Searching
-            || transfer.state === Transfer.Selected && journeyDetailsExpanded
+        visible: root.transfer.state === Transfer.Pending
+            || root.transfer.state === Transfer.Searching
+            || root.transfer.state === Transfer.Selected && root.journeyDetailsExpanded
         Accessible.ignored: !visible
     }
 
     FormCard.FormButtonDelegate {
         icon.name: "edit-delete"
         text: i18n("Delete transfer")
-        onClicked: TransferManager.discardTransfer(transfer)
-        visible: transfer.state == Transfer.Pending || transfer.state == Transfer.Searching
+        onClicked: TransferManager.discardTransfer(root.transfer)
+        visible: root.transfer.state == Transfer.Pending || root.transfer.state == Transfer.Searching
         Accessible.ignored: !visible
     }
     Item{

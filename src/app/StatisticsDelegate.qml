@@ -4,14 +4,13 @@
 
 import QtQuick
 import QtQuick.Layouts
-import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.itinerary
 import org.kde.kirigamiaddons.formcard as FormCard
 
 FormCard.FormTextDelegate {
     id: root
-    property var statItem
+    property statisticsItem statItem
 
     visible: statItem.hasData
     text: statItem.label

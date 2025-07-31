@@ -7,18 +7,20 @@
 #ifndef LOCATIONINFORMATION_H
 #define LOCATIONINFORMATION_H
 
+#include "qmlregistrationhelper.h"
+
 #include <KItinerary/CountryDb>
 
 #include <QMetaType>
 #include <QString>
 #include <QTimeZone>
-#include <qqmlregistration.h>
 
 /** Data for country information elements in the timeline model. */
 class LocationInformation
 {
     Q_GADGET
-    QML_ELEMENT
+    QML_VALUE_TYPE(locationInformation)
+
     Q_PROPERTY(QString isoCode READ isoCode)
 
     /** @warning Careful with using this in QML, this is an 8bit enum which QML doesn't seem to like
@@ -101,5 +103,6 @@ private:
 };
 
 Q_DECLARE_METATYPE(LocationInformation)
+REGISTER_GADGET_ENUMS(LocationInformation)
 
 #endif // LOCATIONINFORMATION_H

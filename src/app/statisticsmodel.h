@@ -7,11 +7,12 @@
 #ifndef STATISTICSMODEL_H
 #define STATISTICSMODEL_H
 
+#include "qmlregistrationhelper.h"
+
 #include <KFormat>
 
 #include <QDate>
 #include <QObject>
-#include <qqmlintegration.h>
 
 #include <set>
 
@@ -46,6 +47,7 @@ public:
 };
 
 Q_DECLARE_METATYPE(StatisticsItem)
+REGISTER_GADGET_ENUMS(StatisticsItem)
 
 /** Provides the data shown in the statistics page. */
 class StatisticsModel : public QObject
