@@ -120,11 +120,6 @@ void registerKItineraryTypes()
 
 void registerApplicationTypes()
 {
-    qRegisterMetaType<ReservationManager *>();
-    qRegisterMetaType<Transfer::Alignment>();
-    qRegisterMetaType<TripGroupManager *>();
-    qRegisterMetaType<WeatherForecast>();
-    qRegisterMetaType<Permission::Permission>();
     qmlRegisterUncreatableMetaObject(HealthCertificateManager::staticMetaObject, "org.kde.itinerary", 1, 0, "HealthCertificateManager", {});
 
     qmlRegisterUncreatableMetaObject(LocationInformation::staticMetaObject, "org.kde.itinerary", 1, 0, "LocationInformation", {});
