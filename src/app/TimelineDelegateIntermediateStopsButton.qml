@@ -33,7 +33,7 @@ RowLayout {
                 color: Kirigami.Theme.disabledTextColor
             }
             QQC2.Label {
-                text: i18np("1 intermediate stop (%2)", "%1 intermediate stops (%2)", root.sectionModel.sectionCount, Localizer.formatDuration(root.sectionModel.journeySection.duration))
+                text: i18np("1 intermediate stop (%2)", "%1 intermediate stops (%2)", root.sectionModel.effectiveStopCount, Localizer.formatDuration(root.sectionModel.journeySection.duration))
                 elide: Text.ElideRight
                 color: Kirigami.Theme.disabledTextColor
                 Layout.rightMargin: Kirigami.Units.largeSpacing

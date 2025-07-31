@@ -33,7 +33,13 @@ class JourneySectionModel : public QAbstractListModel
 
     // when disabled, progress is always 0 / not passed
     Q_PROPERTY(bool showProgress MEMBER m_showProgress NOTIFY showProgressChanged)
+
+    /** Total amount of intermediate stops regardless of whether they allow boarding/alighting, same as rowCount. */
     Q_PROPERTY(int sectionCount READ sectionCount NOTIFY journeySectionChanged)
+    /** Amount of intermediate stops that are actually stops, ie. allow boarding/alighting. */
+    Q_PROPERTY(int effectiveStopCount READ effectiveStopCount NOTIFY journeySectionChanged)
+
+    // for testing only
     Q_PROPERTY(QDateTime currentDateTime READ currentDateTime WRITE setCurrentDateTime)
 
 public:
@@ -62,6 +68,7 @@ public:
     [[nodiscard]] QDateTime currentDateTime() const;
 
     [[nodiscard]] int sectionCount() const;
+    [[nodiscard]] int effectiveStopCount() const;
 
 Q_SIGNALS:
     void journeySectionChanged();

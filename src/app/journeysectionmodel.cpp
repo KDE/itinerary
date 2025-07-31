@@ -43,6 +43,13 @@ int JourneySectionModel::sectionCount() const
     return rowCount();
 }
 
+int JourneySectionModel::effectiveStopCount() const
+{
+    return (int)std::ranges::count_if(m_journey.intermediateStops(), [](const KPublicTransport::Stopover &s) {
+        return s.pickupType() != KPublicTransport::PickupDropoff::NotAllowed || s.dropoffType() != KPublicTransport::PickupDropoff::NotAllowed;
+    });
+}
+
 void JourneySectionModel::setJourneySection(const KPublicTransport::JourneySection &section)
 {
     // is this an update to the current state? if so, try to avoid resetting the model
