@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-22 02:39+0000\n"
+"POT-Creation-Date: 2025-07-31 02:34+0000\n"
 "PO-Revision-Date: 2025-07-12 20:03+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -2392,48 +2392,48 @@ msgstr "Припинити надання даних щодо місця"
 msgid "Share Location via Matrix"
 msgstr "Оприлюднити місце на Matrix"
 
-#: app/LiveStatusPage.qml:64
+#: app/LiveStatusPage.qml:66
 #, kde-format
 msgctxt "map style"
 msgid "Normal map"
 msgstr "Нормальне картографування"
 
-#: app/LiveStatusPage.qml:74
+#: app/LiveStatusPage.qml:76
 #, kde-format
 msgctxt "map style"
 msgid "Railway infrastructure map"
 msgstr "Карта залізничної інфраструктури"
 
-#: app/LiveStatusPage.qml:83
+#: app/LiveStatusPage.qml:85
 #, kde-format
 msgctxt "map style"
 msgid "Railway signalling map"
 msgstr "Карта залізничних сигналів"
 
-#: app/LiveStatusPage.qml:92
+#: app/LiveStatusPage.qml:94
 #, kde-format
 msgctxt "map style"
 msgid "Railway speed map"
 msgstr "Карта швидкості залізниці"
 
-#: app/LiveStatusPage.qml:101
+#: app/LiveStatusPage.qml:103
 #, kde-format
 msgctxt "map style"
 msgid "Railway electrification map"
 msgstr "Карта електрифікації залізниці"
 
-#: app/LiveStatusPage.qml:110
+#: app/LiveStatusPage.qml:112
 #, kde-format
 msgctxt "map style"
 msgid "Railway gauge map"
 msgstr "Карта ширини колії залізниці"
 
-#: app/LiveStatusPage.qml:151
+#: app/LiveStatusPage.qml:153
 #, kde-format
 msgid "Share Live Location"
 msgstr "Оприлюднити інтерактивне місце"
 
-#: app/LiveStatusPage.qml:152
+#: app/LiveStatusPage.qml:154
 #, kde-format
 msgid ""
 "Do you really want to share your current location to the Matrix channel %1?"
@@ -2441,27 +2441,27 @@ msgstr ""
 "Ви справді хочете оприлюднити дані щодо вашого поточного місця перебування "
 "на каналі Matrix %1?"
 
-#: app/LiveStatusPage.qml:158
+#: app/LiveStatusPage.qml:160
 #, kde-format
 msgid "Share"
 msgstr "Оприлюднити"
 
-#: app/LiveStatusPage.qml:290
+#: app/LiveStatusPage.qml:292
 #, kde-format
 msgid "Automatically follow on the map"
 msgstr "Автоматично стежити на карті"
 
-#: app/LiveStatusPage.qml:310 app/LiveStatusPage.qml:322
+#: app/LiveStatusPage.qml:312 app/LiveStatusPage.qml:324
 #, kde-format
 msgid "Waiting for data…"
 msgstr "Очікуємо на дані…"
 
-#: app/LiveStatusPage.qml:334
+#: app/LiveStatusPage.qml:336
 #, kde-format
 msgid "Position"
 msgstr "Розташування"
 
-#: app/LiveStatusPage.qml:343
+#: app/LiveStatusPage.qml:345
 #, kde-format
 msgid "Journey"
 msgstr "Подорож"
