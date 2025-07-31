@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-30 00:43+0000\n"
+"POT-Creation-Date: 2025-07-31 00:42+0000\n"
 "PO-Revision-Date: 2025-05-06 18:10+0200\n"
 "Last-Translator: Alois Spitzbart <spitz234@hotmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -1580,7 +1580,7 @@ msgstr "Auf Aktualisierungen prüfen"
 msgid "Save As…"
 msgstr ""
 
-#: app/gpxexport.cpp:33 app/main.cpp:311 app/Main.qml:20 app/Main.qml:68
+#: app/gpxexport.cpp:33 app/main.cpp:280 app/Main.qml:20 app/Main.qml:68
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE-Itinerary"
@@ -2431,63 +2431,63 @@ msgstr "Zum Erweitern klicken"
 msgid "Itinerary change"
 msgstr "Reiseplan geändert"
 
-#: app/LiveStatusPage.qml:20 app/Main.qml:74
+#: app/LiveStatusPage.qml:21 app/Main.qml:74
 #, kde-format
 msgid "Live Status"
 msgstr "Live-Status"
 
-#: app/LiveStatusPage.qml:56
+#: app/LiveStatusPage.qml:57
 #, kde-format
 msgid "Stop Location Sharing"
 msgstr "Standortfreigabe anhalten"
 
-#: app/LiveStatusPage.qml:56
+#: app/LiveStatusPage.qml:57
 #, kde-format
 msgid "Share Location via Matrix"
 msgstr "Standort auf Matrix freigeben"
 
-#: app/LiveStatusPage.qml:66
+#: app/LiveStatusPage.qml:67
 #, kde-format
 msgctxt "map style"
 msgid "Normal map"
 msgstr ""
 
-#: app/LiveStatusPage.qml:76
+#: app/LiveStatusPage.qml:77
 #, kde-format
 msgctxt "map style"
 msgid "Railway infrastructure map"
 msgstr ""
 
-#: app/LiveStatusPage.qml:85
+#: app/LiveStatusPage.qml:86
 #, kde-format
 msgctxt "map style"
 msgid "Railway signalling map"
 msgstr ""
 
-#: app/LiveStatusPage.qml:94
+#: app/LiveStatusPage.qml:95
 #, kde-format
 msgctxt "map style"
 msgid "Railway speed map"
 msgstr ""
 
-#: app/LiveStatusPage.qml:103
+#: app/LiveStatusPage.qml:104
 #, kde-format
 msgctxt "map style"
 msgid "Railway electrification map"
 msgstr ""
 
-#: app/LiveStatusPage.qml:112
+#: app/LiveStatusPage.qml:113
 #, kde-format
 msgctxt "map style"
 msgid "Railway gauge map"
 msgstr ""
 
-#: app/LiveStatusPage.qml:153
+#: app/LiveStatusPage.qml:154
 #, kde-format
 msgid "Share Live Location"
 msgstr "Standort live teilen"
 
-#: app/LiveStatusPage.qml:154
+#: app/LiveStatusPage.qml:155
 #, fuzzy, kde-format
 #| msgid ""
 #| "Do you really want to replace your existing reservation with the newly "
@@ -2498,27 +2498,27 @@ msgstr ""
 "Möchten Sie Ihre bestehende Reservierung wirklich durch die neue ausgewählte "
 "Reise ersetzen?"
 
-#: app/LiveStatusPage.qml:160
+#: app/LiveStatusPage.qml:161
 #, kde-format
 msgid "Share"
 msgstr "Teilen"
 
-#: app/LiveStatusPage.qml:292
+#: app/LiveStatusPage.qml:293
 #, kde-format
 msgid "Automatically follow on the map"
 msgstr "Automatisch auf der Karte folgen"
 
-#: app/LiveStatusPage.qml:312 app/LiveStatusPage.qml:324
+#: app/LiveStatusPage.qml:313 app/LiveStatusPage.qml:325
 #, kde-format
 msgid "Waiting for data…"
 msgstr "Warten auf Daten …"
 
-#: app/LiveStatusPage.qml:336
+#: app/LiveStatusPage.qml:337
 #, kde-format
 msgid "Position"
 msgstr "Position"
 
-#: app/LiveStatusPage.qml:345
+#: app/LiveStatusPage.qml:346
 #, kde-format
 msgid "Journey"
 msgstr "Reise"
@@ -2660,23 +2660,23 @@ msgstr "Typ M"
 msgid "Type N"
 msgstr "Typ N"
 
-#: app/main.cpp:319
+#: app/main.cpp:288
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Digitaler Reiseassistent"
 
-#: app/main.cpp:320
+#: app/main.cpp:289
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "Copyright © Die KDE-Gemeinschaft"
 
-#: app/main.cpp:327
+#: app/main.cpp:296
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Reiseplan auf der angegebenen Seite öffnen"
 
-#: app/main.cpp:332
+#: app/main.cpp:301
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
@@ -3001,42 +3001,42 @@ msgstr "Annehmen"
 msgid "Decline"
 msgstr "Ablehnen"
 
-#: app/MatrixRoomSelectionSheet.qml:19
+#: app/MatrixRoomSelectionSheet.qml:20
 #, kde-format
 msgid "Share location…"
 msgstr "Standort teilen …"
 
-#: app/MatrixRoomSelectionSheet.qml:36
+#: app/MatrixRoomSelectionSheet.qml:38
 #, kde-format
 msgctxt "matrix room type"
 msgid "Invited"
 msgstr "Eingeladen"
 
-#: app/MatrixRoomSelectionSheet.qml:37
+#: app/MatrixRoomSelectionSheet.qml:39
 #, kde-format
 msgctxt "matrix room type"
 msgid "Favorite Rooms"
 msgstr "Bevorzugte Räume"
 
-#: app/MatrixRoomSelectionSheet.qml:38
+#: app/MatrixRoomSelectionSheet.qml:40
 #, kde-format
 msgctxt "matrix room type"
 msgid "Direct Messages"
 msgstr "Direktnachrichten"
 
-#: app/MatrixRoomSelectionSheet.qml:39
+#: app/MatrixRoomSelectionSheet.qml:41
 #, kde-format
 msgctxt "matrix room type"
 msgid "Rooms"
 msgstr "Räume"
 
-#: app/MatrixRoomSelectionSheet.qml:40
+#: app/MatrixRoomSelectionSheet.qml:42
 #, kde-format
 msgctxt "matrix room type"
 msgid "Low Priority"
 msgstr "Niedrige Priorität"
 
-#: app/MatrixRoomSelectionSheet.qml:41
+#: app/MatrixRoomSelectionSheet.qml:43
 #, kde-format
 msgctxt "matrix room type"
 msgid "Spaces"
