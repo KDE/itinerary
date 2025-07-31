@@ -40,7 +40,7 @@ public:
     explicit JourneySectionModel(QObject *parent = nullptr);
     ~JourneySectionModel();
 
-    KPublicTransport::JourneySection journeySection() const;
+    [[nodiscard]] KPublicTransport::JourneySection journeySection() const;
     void setJourneySection(const KPublicTransport::JourneySection &section);
 
     enum Role {
@@ -49,19 +49,19 @@ public:
         StopoverPassedRole,
     };
 
-    int rowCount(const QModelIndex &parent = {}) const override;
-    QVariant data(const QModelIndex &index, int role) const override;
-    QHash<int, QByteArray> roleNames() const override;
+    [[nodiscard]] int rowCount(const QModelIndex &parent = {}) const override;
+    [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
+    [[nodiscard]] QHash<int, QByteArray> roleNames() const override;
 
-    float departureProgress() const;
-    bool departed() const;
-    bool arrived() const;
+    [[nodiscard]] float departureProgress() const;
+    [[nodiscard]] bool departed() const;
+    [[nodiscard]] bool arrived() const;
 
     // for unit testing
     void setCurrentDateTime(const QDateTime &dt);
-    QDateTime currentDateTime() const;
+    [[nodiscard]] QDateTime currentDateTime() const;
 
-    int sectionCount() const;
+    [[nodiscard]] int sectionCount() const;
 
 Q_SIGNALS:
     void journeySectionChanged();
@@ -69,7 +69,7 @@ Q_SIGNALS:
     void progressChanged();
 
 private:
-    KPublicTransport::Stopover stopoverForRow(int row) const;
+    [[nodiscard]] KPublicTransport::Stopover stopoverForRow(int row) const;
     [[nodiscard]] float progress(int row) const;
     [[nodiscard]] bool stopoverPassed(int row) const;
 
