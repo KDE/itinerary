@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-31 00:42+0000\n"
-"PO-Revision-Date: 2025-07-10 22:53+0300\n"
+"POT-Creation-Date: 2025-08-01 00:44+0000\n"
+"PO-Revision-Date: 2025-07-14 11:08+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -236,7 +236,7 @@ msgstr "Lautta"
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Aircraft"
-msgstr ""
+msgstr "Lentokone"
 
 #: app/AlternativeJourneyPage.qml:116
 #, kde-format
@@ -256,11 +256,9 @@ msgid "Replace"
 msgstr "Korvaa"
 
 #: app/AlternativeJourneyPage.qml:139
-#, fuzzy, kde-format
-#| msgctxt "train station"
-#| msgid "Station:"
+#, kde-format
 msgid "Destination:"
-msgstr "Asema:"
+msgstr "Määränpää:"
 
 #: app/applicationcontroller.cpp:188
 #, kde-format
@@ -316,21 +314,19 @@ msgid "Reservation sent."
 msgstr "Varaus lähetetty."
 
 #: app/applicationcontroller.cpp:587
-#, fuzzy, kde-format
-#| msgid "Trip sent."
+#, kde-format
 msgid "Pass sent."
-msgstr "Matka lähetetty."
+msgstr "Ohjelmakortti lähetetty."
 
 #: app/applicationcontroller.cpp:625
-#, fuzzy, kde-format
-#| msgid "Download failed: %1"
+#, kde-format
 msgid "Saving failed: %1"
-msgstr "Lataus epäonnistui: %1"
+msgstr "Tallennus epäonnistui: %1"
 
 #: app/applicationcontroller.cpp:630
 #, kde-format
 msgid "File saved successfully."
-msgstr ""
+msgstr "Tiedoston tallennus onnistui."
 
 #: app/applicationcontroller.cpp:637
 #, fuzzy, kde-format
@@ -392,36 +388,28 @@ msgid "Edit Boat Trip"
 msgstr "Muokkaa laivamatkaa"
 
 #: app/BoatEditor.qml:69 app/BoatEditor.qml:165
-#, fuzzy, kde-format
-#| msgctxt "train departure"
-#| msgid "Change Departure Station"
+#, kde-format
 msgctxt "boat departure"
 msgid "Change Departure Terminal"
-msgstr "Vaihda lähtöasema"
+msgstr "Vaihda lähtöterminaali"
 
 #: app/BoatEditor.qml:75
-#, fuzzy, kde-format
-#| msgctxt "train departure"
-#| msgid "Change departure station"
+#, kde-format
 msgctxt "boat departure"
 msgid "Change departure terminal"
-msgstr "Vaihda lähtöasema"
+msgstr "Vaihda lähtöterminaali"
 
 #: app/BoatEditor.qml:85 app/BoatEditor.qml:227
-#, fuzzy, kde-format
-#| msgctxt "train arrival"
-#| msgid "Change Arrival Station"
+#, kde-format
 msgctxt "boat arrival"
 msgid "Change Arrival Terminal"
-msgstr "Vaihda tuloasema"
+msgstr "Vaihda tuloterminaali"
 
 #: app/BoatEditor.qml:91
-#, fuzzy, kde-format
-#| msgctxt "train arrival"
-#| msgid "Change arrival station"
+#, kde-format
 msgctxt "boat arrival"
 msgid "Change arrival terminal"
-msgstr "Vaihda tuloasema"
+msgstr "Vaihda tuloterminaali"
 
 #: app/BoatEditor.qml:112 app/BusEditor.qml:128 app/EventEditor.qml:54
 #: app/FlightEditor.qml:79 app/HotelEditor.qml:51 app/ImportPage.qml:21
@@ -460,8 +448,7 @@ msgid "Departure terminal must not be empty."
 msgstr "Lähtöterminaali ei voi olla tyhjä."
 
 #: app/BoatEditor.qml:158 app/BoatEditor.qml:221
-#, fuzzy, kde-format
-#| msgid "Terminal"
+#, kde-format
 msgctxt "boat terminal"
 msgid "Terminal"
 msgstr "Terminaali"
@@ -613,15 +600,13 @@ msgid "%1 to %2"
 msgstr "%1 – %2"
 
 #: app/BusEditor.qml:74
-#, fuzzy, kde-format
-#| msgid "Edit Bus Reservation"
+#, kde-format
 msgctxt "@title"
 msgid "New Bus Reservation"
-msgstr "Muokkaa bussivarausta"
+msgstr "Uusi bussivaraus"
 
 #: app/BusEditor.qml:74
-#, fuzzy, kde-format
-#| msgid "Edit Bus Reservation"
+#, kde-format
 msgctxt "@title"
 msgid "Edit Bus Reservation"
 msgstr "Muokkaa bussivarausta"
@@ -657,18 +642,16 @@ msgid "Bus"
 msgstr "Bussi"
 
 #: app/BusEditor.qml:141
-#, fuzzy, kde-format
-#| msgid "Bus"
+#, kde-format
 msgctxt "@title:group"
 msgid "Bus"
 msgstr "Bussi"
 
 #: app/BusEditor.qml:150
-#, fuzzy, kde-format
-#| msgid "Number"
+#, kde-format
 msgctxt "@label:textfield"
 msgid "Bus number"
-msgstr "Numero"
+msgstr "Bussin numero"
 
 #: app/BusEditor.qml:156
 #, kde-format
@@ -677,40 +660,33 @@ msgid "Departure"
 msgstr "Lähtö"
 
 #: app/BusEditor.qml:165
-#, fuzzy, kde-format
-#| msgid "Departure Time"
+#, kde-format
 msgctxt "Bus departure"
 msgid "Departure Time"
 msgstr "Lähtöaika"
 
 #: app/BusEditor.qml:178
-#, fuzzy, kde-format
-#| msgctxt "bus stop"
-#| msgid "Stop"
+#, kde-format
 msgctxt "Bus stop"
 msgid "Stop"
 msgstr "Pysäkki"
 
 #: app/BusEditor.qml:181
-#, fuzzy, kde-format
-#| msgid "Departure terminal must not be empty."
+#, kde-format
 msgid "Departure bus stop must not be empty."
-msgstr "Lähtöterminaali ei voi olla tyhjä."
+msgstr "Lähtöbussipysäkki ei voi olla tyhjä."
 
 #: app/BusEditor.qml:189 app/BusEditor.qml:276
-#, fuzzy, kde-format
-#| msgid "Platform"
+#, kde-format
 msgctxt "Bus stop platform"
 msgid "Platform"
 msgstr "Laituri"
 
 #: app/BusEditor.qml:210
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Show Map"
+#, kde-format
 msgctxt "bus stop"
 msgid "Stop Name"
-msgstr "Näytä kartta"
+msgstr "Pysäkin nimi"
 
 #: app/BusEditor.qml:218 app/BusEditor.qml:310
 #, kde-format
@@ -725,25 +701,21 @@ msgid "Arrival"
 msgstr "Saapuminen"
 
 #: app/BusEditor.qml:244 app/TrainEditor.qml:252
-#, fuzzy, kde-format
-#| msgid "Arrival Time"
+#, kde-format
 msgctxt "Train arrival"
 msgid "Arrival Time"
-msgstr "Tuloaika:"
+msgstr "Saapumisaika"
 
 #: app/BusEditor.qml:265
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Show Map"
+#, kde-format
 msgctxt "Bus stop"
 msgid "Stop Name"
-msgstr "Näytä kartta"
+msgstr "Pysäkin nimi"
 
 #: app/BusEditor.qml:268
-#, fuzzy, kde-format
-#| msgid "Arrival terminal must not be empty."
+#, kde-format
 msgid "Arrival stop must not be empty."
-msgstr "Tuloterminaali ei voi olla tyhjä."
+msgstr "Saapumispysäkki ei voi olla tyhjä."
 
 #: app/BusEditor.qml:302
 #, kde-format
@@ -912,18 +884,17 @@ msgstr "Tiedontarjoajat:"
 
 #: app/DepartureQueryPage.qml:162 app/JourneyQueryPage.qml:125
 #: app/TransferPage.qml:336
-#, fuzzy, kde-format
-#| msgid "Boarding"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Loading"
-msgstr "Koneeseen nousu"
+msgstr "Ladataan"
 
 #: app/DepartureQueryPage.qml:162 app/JourneyQueryPage.qml:127
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:status"
 msgid "Error"
-msgstr ""
+msgstr "Virhe"
 
 #: app/DocumentsCard.qml:35
 #, kde-format
@@ -1242,7 +1213,9 @@ msgid "Departure - %1"
 msgstr "Lähtö – %1"
 
 #: app/FlightEditor.qml:93
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "flight departure"
+#| msgid "Departure"
 msgctxt "flight departure"
 msgid "Departure"
 msgstr "Lähtö"
@@ -1306,7 +1279,9 @@ msgid "Arrival - %1"
 msgstr "Saapuminen – %1"
 
 #: app/FlightEditor.qml:162
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "flight arrival"
+#| msgid "Arrival"
 msgctxt "flight arrival"
 msgid "Arrival"
 msgstr "Saapuminen"
@@ -1427,8 +1402,7 @@ msgid "Do you really want to share %1 to the Matrix channel %2?"
 msgstr "Haluatko varmasti jakaa kohteen %1 Matrix-kanavalle %2?"
 
 #: app/FormPlaceDelegate.qml:105
-#, fuzzy, kde-format
-#| msgid "Share"
+#, kde-format
 msgctxt "@action:button"
 msgid "Share"
 msgstr "Jaa"
@@ -1548,15 +1522,14 @@ msgid "Not a valid number."
 msgstr "Ei kelvollinen luku."
 
 #: app/GenericPkPassPage.qml:21
-#, fuzzy, kde-format
-#| msgid "Show Pass"
+#, kde-format
 msgid "Save Pass"
-msgstr "Näytä ohjelmakortti"
+msgstr "Tallenna ohjelmakortti"
 
 #: app/GenericPkPassPage.qml:22
 #, kde-format
 msgid "Apple Wallet pass (*.pkpass)"
-msgstr ""
+msgstr "Apple Wallet -kortti (*.pkpass)"
 
 #: app/GenericPkPassPage.qml:37 app/ProgramMembershipPage.qml:38
 #, kde-format
@@ -1577,9 +1550,9 @@ msgstr "Tarkista päivitykset"
 #: app/GenericPkPassPage.qml:63
 #, kde-format
 msgid "Save As…"
-msgstr ""
+msgstr "Tallenna nimellä…"
 
-#: app/gpxexport.cpp:33 app/main.cpp:280 app/Main.qml:20 app/Main.qml:68
+#: app/gpxexport.cpp:33 app/main.cpp:275 app/Main.qml:20 app/Main.qml:68
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -1972,12 +1945,10 @@ msgid "Import"
 msgstr "Tuo"
 
 #: app/ImportAction.qml:29
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Import From File"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "From file"
-msgstr "Tuo tiedostosta"
+msgstr "tiedostosta"
 
 #: app/ImportAction.qml:37
 #, kde-format
@@ -2005,37 +1976,34 @@ msgid "KDE Itinerary files (*.itinerary)"
 msgstr "KDE Itinerary -tiedostot (*.itinerary)"
 
 #: app/ImportAction.qml:51
-#, fuzzy, kde-format
-#| msgid "Import from Clipboard"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "From clipboard"
-msgstr "Tuo leikepöydältä"
+msgstr "leikepöydältä"
 
 #: app/ImportAction.qml:61
-#, fuzzy, kde-format
-#| msgid "Barcode"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "From barcode"
-msgstr "Viivakoodi"
+msgstr "viivakoodista"
 
 #: app/ImportAction.qml:84
-#, fuzzy, kde-format
-#| msgid "Add from Calendar…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "From calendar"
-msgstr "Lisää kalenterista…"
+msgstr "kalenterista"
 
 #: app/ImportAction.qml:108
 #, kde-format
 msgctxt "@action:inmenu Name of the train company in Germany"
 msgid "From Deutsche Bahn reservation number"
-msgstr ""
+msgstr "Deutsche Bahnin varausnumerosta"
 
 #: app/ImportAction.qml:119
 #, kde-format
 msgctxt "Name of the train company in France"
 msgid "From SNCF reservation number"
-msgstr ""
+msgstr "SNCF:n varausnumerosta"
 
 #: app/importcontroller.cpp:153 app/importcontroller.cpp:475
 #, kde-format
@@ -2188,11 +2156,10 @@ msgid "Load earlier connections"
 msgstr "Lataa aiemmat yhteydet"
 
 #: app/JourneyQueryPage.qml:129
-#, fuzzy, kde-format
-#| msgid "No journeys found."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No journeys found"
-msgstr "Matkoja ei löytynyt."
+msgstr "Matkoja ei löytynyt"
 
 #: app/JourneyQueryPage.qml:163
 #, kde-format
@@ -2229,8 +2196,7 @@ msgid "To:"
 msgstr "Mihin:"
 
 #: app/JourneyRequestPage.qml:140
-#, fuzzy, kde-format
-#| msgid "Swap departure and arrival"
+#, kde-format
 msgctxt "departure and arrival stops"
 msgid "Swap departure and arrival"
 msgstr "Vaihda lähtö ja saapuminen keskenään"
@@ -2636,23 +2602,23 @@ msgstr "Tyyppi M"
 msgid "Type N"
 msgstr "Tyyppi N"
 
-#: app/main.cpp:288
+#: app/main.cpp:283
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Digitaalinen matka-avustaja"
 
-#: app/main.cpp:289
+#: app/main.cpp:284
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "Tekijänoikeudet © KDE-yhteisö"
 
-#: app/main.cpp:296
+#: app/main.cpp:291
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Avaa Itinerary annetulle sivulle"
 
-#: app/main.cpp:301
+#: app/main.cpp:296
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
@@ -3080,10 +3046,9 @@ msgid "Import"
 msgstr "Tuo"
 
 #: app/MyDataPage.qml:202
-#, fuzzy, kde-format
-#| msgid "Backup"
+#, kde-format
 msgid "Import Backup"
-msgstr "Varmuuskopioi"
+msgstr "Tuo varmuuskopio"
 
 #: app/MyDataPage.qml:216
 #, kde-format
@@ -3261,8 +3226,7 @@ msgid "Add Program Membership"
 msgstr "Lisää ohjelman jäsenyys"
 
 #: app/PassPage.qml:43
-#, fuzzy, kde-format
-#| msgid "Import"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Import"
 msgstr "Tuo"
@@ -3375,10 +3339,9 @@ msgid "Program Membership"
 msgstr "Ohjelman jäsenyys"
 
 #: app/ProgramMembershipPage.qml:56
-#, fuzzy, kde-format
-#| msgid "Edit Program Membership"
+#, kde-format
 msgid "Export Program Membership"
-msgstr "Muokkaa ohjelman jäsenyyttä"
+msgstr "Vie ohjelmajäsenyys"
 
 #: app/ProgramMembershipPage.qml:155
 #, kde-format
@@ -3946,10 +3909,9 @@ msgid "Do you really want to delete this ticket?"
 msgstr "Haluatko varmasti poistaa tämän lipun?"
 
 #: app/TicketPage.qml:60
-#, fuzzy, kde-format
-#| msgid "Boat Ticket"
+#, kde-format
 msgid "Export Ticket"
-msgstr "Laivalippu"
+msgstr "Vie lippu"
 
 #: app/TicketPage.qml:121
 #, kde-format
@@ -4071,15 +4033,13 @@ msgid "Class: <b>%1</b>"
 msgstr "Luokka: <b>%1</b>"
 
 #: app/TrainEditor.qml:79
-#, fuzzy, kde-format
-#| msgid "Edit Train Reservation"
+#, kde-format
 msgctxt "@title"
 msgid "New Train Reservation"
-msgstr "Muokkaa junavarausta"
+msgstr "Uusi junavaraus"
 
 #: app/TrainEditor.qml:79
-#, fuzzy, kde-format
-#| msgid "Edit Train Reservation"
+#, kde-format
 msgctxt "@title"
 msgid "Edit Train Reservation"
 msgstr "Muokkaa junavarausta"
@@ -4109,18 +4069,16 @@ msgid "Change arrival station"
 msgstr "Vaihda tuloasema"
 
 #: app/TrainEditor.qml:149
-#, fuzzy, kde-format
-#| msgid "Train"
+#, kde-format
 msgctxt "@title:group"
 msgid "Train"
 msgstr "Juna"
 
 #: app/TrainEditor.qml:158
-#, fuzzy, kde-format
-#| msgid "Ticket number:"
+#, kde-format
 msgctxt "@label:textfield"
 msgid "Train number"
-msgstr "Lipun numero:"
+msgstr "Junan numero"
 
 #: app/TrainEditor.qml:164
 #, kde-format
@@ -4129,29 +4087,24 @@ msgid "Departure"
 msgstr "Lähtö"
 
 #: app/TrainEditor.qml:173
-#, fuzzy, kde-format
-#| msgid "Departure Time"
+#, kde-format
 msgctxt "Train departure"
 msgid "Departure Time"
 msgstr "Lähtöaika"
 
 #: app/TrainEditor.qml:186
-#, fuzzy, kde-format
-#| msgctxt "bus station"
-#| msgid "Station"
+#, kde-format
 msgctxt "Train station platform"
 msgid "Station Name"
-msgstr "Pysäkki"
+msgstr "Aseman nimi"
 
 #: app/TrainEditor.qml:189
-#, fuzzy, kde-format
-#| msgid "Departure terminal must not be empty."
+#, kde-format
 msgid "Departure station must not be empty."
-msgstr "Lähtöterminaali ei voi olla tyhjä."
+msgstr "Lähtöasema ei voi olla tyhjä."
 
 #: app/TrainEditor.qml:197 app/TrainEditor.qml:284
-#, fuzzy, kde-format
-#| msgid "Platform"
+#, kde-format
 msgctxt "Train station platform"
 msgid "Platform"
 msgstr "Laituri"
@@ -4176,18 +4129,15 @@ msgid "Arrival"
 msgstr "Saapuminen"
 
 #: app/TrainEditor.qml:273
-#, fuzzy, kde-format
-#| msgctxt "bus station"
-#| msgid "Station"
+#, kde-format
 msgctxt "Train station"
 msgid "Station Name"
-msgstr "Pysäkki"
+msgstr "Aseman nimi"
 
 #: app/TrainEditor.qml:276
-#, fuzzy, kde-format
-#| msgid "Arrival terminal must not be empty."
+#, kde-format
 msgid "Arrival station must not be empty."
-msgstr "Tuloterminaali ei voi olla tyhjä."
+msgstr "Saapumisasema ei voi olla tyhjä."
 
 #: app/TrainEditor.qml:338 app/TrainEditor.qml:350 app/TrainPage.qml:290
 #, kde-format
@@ -4392,68 +4342,57 @@ msgid "Merge"
 msgstr "Yhdistä"
 
 #: app/TripGroupPage.qml:157
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Load earlier connections"
+#, kde-format
 msgctxt "@action"
 msgid "Search connection"
-msgstr "Lataa aiemmat yhteydet"
+msgstr "Etsi yhteyttä"
 
 #: app/TripGroupPage.qml:164
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Load later connections"
+#, kde-format
 msgctxt "@action"
 msgid "Add connection"
-msgstr "Lataa myöhemmät yhteydet"
+msgstr "Lisää yhteys"
 
 #: app/TripGroupPage.qml:170
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add trip"
+#, kde-format
 msgctxt "@action"
 msgid "Add train"
-msgstr "Lisää matka"
+msgstr "Lisää junamatka"
 
 #: app/TripGroupPage.qml:180
 #, kde-format
 msgctxt "@action"
 msgid "Add bus"
-msgstr ""
+msgstr "Lisää bussi"
 
 #: app/TripGroupPage.qml:190
-#, fuzzy, kde-format
-#| msgid "Add flight…"
+#, kde-format
 msgctxt "@action"
 msgid "Add flight"
-msgstr "Lisää lentomatka…"
+msgstr "Lisää lentomatka"
 
 #: app/TripGroupPage.qml:200
-#, fuzzy, kde-format
-#| msgid "Add ferry trip…"
+#, kde-format
 msgctxt "@action"
 msgid "Add ferry trip"
-msgstr "Lisää lauttamatka…"
+msgstr "Lisää lauttamatka"
 
 #: app/TripGroupPage.qml:210
-#, fuzzy, kde-format
-#| msgid "Add accommodation…"
+#, kde-format
 msgctxt "@action"
 msgid "Add accommodation"
-msgstr "Lisää majoitus…"
+msgstr "Lisää majoitus"
 
 #: app/TripGroupPage.qml:225
-#, fuzzy, kde-format
-#| msgid "Add event…"
+#, kde-format
 msgctxt "@action"
 msgid "Add event"
-msgstr "Lisää tapahtuma…"
+msgstr "Lisää tapahtuma"
 
 #: app/TripGroupPage.qml:241
-#, fuzzy, kde-format
-#| msgid "Add restaurant…"
+#, kde-format
 msgid "Add restaurant"
-msgstr "Lisää ravintola…"
+msgstr "Lisää ravintola"
 
 #: app/TripGroupPage.qml:258
 #, kde-format

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-31 00:42+0000\n"
+"POT-Creation-Date: 2025-08-01 00:44+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -1537,7 +1537,7 @@ msgstr "检查更新"
 msgid "Save As…"
 msgstr "另存为..."
 
-#: app/gpxexport.cpp:33 app/main.cpp:280 app/Main.qml:20 app/Main.qml:68
+#: app/gpxexport.cpp:33 app/main.cpp:275 app/Main.qml:20 app/Main.qml:68
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -2578,23 +2578,23 @@ msgstr "M 型"
 msgid "Type N"
 msgstr "N 型"
 
-#: app/main.cpp:288
+#: app/main.cpp:283
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "数字旅行助理应用"
 
-#: app/main.cpp:289
+#: app/main.cpp:284
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "Copyright © The KDE Community"
 
-#: app/main.cpp:296
+#: app/main.cpp:291
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr ""
 
-#: app/main.cpp:301
+#: app/main.cpp:296
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
@@ -4285,54 +4285,54 @@ msgstr "合并"
 #, kde-format
 msgctxt "@action"
 msgid "Search connection"
-msgstr ""
+msgstr "搜索连接"
 
 #: app/TripGroupPage.qml:164
 #, kde-format
 msgctxt "@action"
 msgid "Add connection"
-msgstr ""
+msgstr "添加连接"
 
 #: app/TripGroupPage.qml:170
 #, kde-format
 msgctxt "@action"
 msgid "Add train"
-msgstr ""
+msgstr "添加列车"
 
 #: app/TripGroupPage.qml:180
 #, kde-format
 msgctxt "@action"
 msgid "Add bus"
-msgstr ""
+msgstr "添加公交车"
 
 #: app/TripGroupPage.qml:190
 #, kde-format
 msgctxt "@action"
 msgid "Add flight"
-msgstr ""
+msgstr "添加航班"
 
 #: app/TripGroupPage.qml:200
 #, kde-format
 msgctxt "@action"
 msgid "Add ferry trip"
-msgstr ""
+msgstr "添加船程"
 
 #: app/TripGroupPage.qml:210
 #, kde-format
 msgctxt "@action"
 msgid "Add accommodation"
-msgstr ""
+msgstr "添加住宿"
 
 #: app/TripGroupPage.qml:225
 #, kde-format
 msgctxt "@action"
 msgid "Add event"
-msgstr ""
+msgstr "添加事件"
 
 #: app/TripGroupPage.qml:241
 #, kde-format
 msgid "Add restaurant"
-msgstr ""
+msgstr "添加餐厅"
 
 #: app/TripGroupPage.qml:258
 #, kde-format

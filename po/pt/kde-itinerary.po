@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kitinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-31 00:42+0000\n"
+"POT-Creation-Date: 2025-08-01 00:44+0000\n"
 "PO-Revision-Date: 2023-07-14 22:15+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -1651,7 +1651,7 @@ msgstr "Verificar Actualizações"
 msgid "Save As…"
 msgstr ""
 
-#: app/gpxexport.cpp:33 app/main.cpp:280 app/Main.qml:20 app/Main.qml:68
+#: app/gpxexport.cpp:33 app/main.cpp:275 app/Main.qml:20 app/Main.qml:68
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -2753,25 +2753,25 @@ msgstr "Tipo M"
 msgid "Type N"
 msgstr "Tipo N"
 
-#: app/main.cpp:288
+#: app/main.cpp:283
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Assistente Digital de Viagens"
 
-#: app/main.cpp:289
+#: app/main.cpp:284
 #, fuzzy, kde-format
 #| msgid "Copyright © 2018-%1 The KDE Community"
 msgid "Copyright © The KDE Community"
 msgstr "Copyright © 2018-%1 da Comunidade do KDE"
 
-#: app/main.cpp:296
+#: app/main.cpp:291
 #, fuzzy, kde-format
 #| msgid "Open Itinerary on the given page"
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Abrir o itinerário na página indicada"
 
-#: app/main.cpp:301
+#: app/main.cpp:296
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
