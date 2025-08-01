@@ -912,7 +912,17 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="25.08.0" date="2025-08-14"/>
+    <release version="25.08.0" date="2025-08-14">
+      <description>
+        <ul>
+          <li>Train and bus trips can now also be added entirely manually.</li>
+          <li>More flexible alternative connection search.</li>
+          <li>New and much more detailed public transport departures view.</li>
+          <li>Improved location search.</li>
+          <li>OpenRailwayMap integration in the live status view.</li>
+        </ul>
+      </description>
+    </release>
     <release version="25.04.3" date="2025-07-03">
       <description>
         <ul>
