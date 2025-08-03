@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-01 00:44+0000\n"
+"POT-Creation-Date: 2025-08-03 00:42+0000\n"
 "PO-Revision-Date: 2025-07-14 11:08+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -260,75 +260,75 @@ msgstr "Korvaa"
 msgid "Destination:"
 msgstr "Määränpää:"
 
-#: app/applicationcontroller.cpp:188
+#: app/applicationcontroller.cpp:196
 #, kde-format
 msgctxt "geo coordinate"
 msgid "%1, %2"
 msgstr "%1, %2"
 
-#: app/applicationcontroller.cpp:309
+#: app/applicationcontroller.cpp:317
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] "Tuotiin yksi varaus."
 msgstr[1] "Tuotiin %1 varausta."
 
-#: app/applicationcontroller.cpp:312
+#: app/applicationcontroller.cpp:320
 #, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
 msgstr[0] "Yksi lippu tuotu."
 msgstr[1] "%1 lippua tuotu."
 
-#: app/applicationcontroller.cpp:315
+#: app/applicationcontroller.cpp:323
 #, kde-format
 msgid "One health certificate imported."
 msgid_plural "%1 health certificates imported."
 msgstr[0] "Tuotiin yksi terveystodistus."
 msgstr[1] "Tuotiin %1 terveystodistusta."
 
-#: app/applicationcontroller.cpp:337 app/applicationcontroller.cpp:378
-#: app/applicationcontroller.cpp:396 app/applicationcontroller.cpp:443
-#: app/applicationcontroller.cpp:482 app/applicationcontroller.cpp:500
-#: app/applicationcontroller.cpp:541 app/applicationcontroller.cpp:577
-#: app/applicationcontroller.cpp:595
+#: app/applicationcontroller.cpp:345 app/applicationcontroller.cpp:386
+#: app/applicationcontroller.cpp:404 app/applicationcontroller.cpp:451
+#: app/applicationcontroller.cpp:490 app/applicationcontroller.cpp:508
+#: app/applicationcontroller.cpp:549 app/applicationcontroller.cpp:585
+#: app/applicationcontroller.cpp:603
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Vienti epäonnistui: %1"
 
-#: app/applicationcontroller.cpp:352 app/applicationcontroller.cpp:361
-#: app/applicationcontroller.cpp:456 app/applicationcontroller.cpp:465
-#: app/applicationcontroller.cpp:551 app/applicationcontroller.cpp:560
+#: app/applicationcontroller.cpp:360 app/applicationcontroller.cpp:369
+#: app/applicationcontroller.cpp:464 app/applicationcontroller.cpp:473
+#: app/applicationcontroller.cpp:559 app/applicationcontroller.cpp:568
 #, kde-format
 msgid "Export completed."
 msgstr "Vienti valmis."
 
-#: app/applicationcontroller.cpp:388
+#: app/applicationcontroller.cpp:396
 #, kde-format
 msgid "Trip sent."
 msgstr "Matka lähetetty."
 
-#: app/applicationcontroller.cpp:492
+#: app/applicationcontroller.cpp:500
 #, kde-format
 msgid "Reservation sent."
 msgstr "Varaus lähetetty."
 
-#: app/applicationcontroller.cpp:587
+#: app/applicationcontroller.cpp:595
 #, kde-format
 msgid "Pass sent."
 msgstr "Ohjelmakortti lähetetty."
 
-#: app/applicationcontroller.cpp:625
+#: app/applicationcontroller.cpp:633
 #, kde-format
 msgid "Saving failed: %1"
 msgstr "Tallennus epäonnistui: %1"
 
-#: app/applicationcontroller.cpp:630
+#: app/applicationcontroller.cpp:638
 #, kde-format
 msgid "File saved successfully."
 msgstr "Tiedoston tallennus onnistui."
 
-#: app/applicationcontroller.cpp:637
+#: app/applicationcontroller.cpp:645
 #, fuzzy, kde-format
 #| msgid ""
 #| "File was imported with a newer version of Itinerary. Some information "
@@ -340,7 +340,7 @@ msgstr ""
 "Tiedosto tuotiin Itineraryn uudemmasta versiosta. Kaikkea ei ehkä tuotu "
 "oikein."
 
-#: app/applicationcontroller.cpp:663
+#: app/applicationcontroller.cpp:671
 #, kde-format
 msgid "Import completed."
 msgstr "Tuonti valmis."
@@ -1552,7 +1552,7 @@ msgstr "Tarkista päivitykset"
 msgid "Save As…"
 msgstr "Tallenna nimellä…"
 
-#: app/gpxexport.cpp:33 app/main.cpp:275 app/Main.qml:20 app/Main.qml:68
+#: app/gpxexport.cpp:33 app/main.cpp:206 app/Main.qml:20 app/Main.qml:68
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -2602,23 +2602,23 @@ msgstr "Tyyppi M"
 msgid "Type N"
 msgstr "Tyyppi N"
 
-#: app/main.cpp:283
+#: app/main.cpp:214
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Digitaalinen matka-avustaja"
 
-#: app/main.cpp:284
+#: app/main.cpp:215
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "Tekijänoikeudet © KDE-yhteisö"
 
-#: app/main.cpp:291
+#: app/main.cpp:222
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Avaa Itinerary annetulle sivulle"
 
-#: app/main.cpp:296
+#: app/main.cpp:227
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-01 00:44+0000\n"
+"POT-Creation-Date: 2025-08-03 00:42+0000\n"
 "PO-Revision-Date: 2025-02-27 20:24-0300\n"
 "Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -274,7 +274,7 @@ msgstr "Substituir"
 msgid "Destination:"
 msgstr "Estação:"
 
-#: app/applicationcontroller.cpp:188
+#: app/applicationcontroller.cpp:196
 #, fuzzy, kde-format
 #| msgctxt "weekday, date"
 #| msgid "%1, %2"
@@ -282,14 +282,14 @@ msgctxt "geo coordinate"
 msgid "%1, %2"
 msgstr "%1, %2"
 
-#: app/applicationcontroller.cpp:309
+#: app/applicationcontroller.cpp:317
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] "Uma reserva importada."
 msgstr[1] "%1 reservas importadas."
 
-#: app/applicationcontroller.cpp:312
+#: app/applicationcontroller.cpp:320
 #, fuzzy, kde-format
 #| msgid "Nothing imported."
 msgid "One pass imported."
@@ -297,7 +297,7 @@ msgid_plural "%1 passes imported."
 msgstr[0] "Nada a importar."
 msgstr[1] "Nada a importar."
 
-#: app/applicationcontroller.cpp:315
+#: app/applicationcontroller.cpp:323
 #, fuzzy, kde-format
 #| msgid "Health certificate imported."
 msgid "One health certificate imported."
@@ -305,59 +305,59 @@ msgid_plural "%1 health certificates imported."
 msgstr[0] "Certificado de saúde importado ."
 msgstr[1] "Certificado de saúde importado ."
 
-#: app/applicationcontroller.cpp:337 app/applicationcontroller.cpp:378
-#: app/applicationcontroller.cpp:396 app/applicationcontroller.cpp:443
-#: app/applicationcontroller.cpp:482 app/applicationcontroller.cpp:500
-#: app/applicationcontroller.cpp:541 app/applicationcontroller.cpp:577
-#: app/applicationcontroller.cpp:595
+#: app/applicationcontroller.cpp:345 app/applicationcontroller.cpp:386
+#: app/applicationcontroller.cpp:404 app/applicationcontroller.cpp:451
+#: app/applicationcontroller.cpp:490 app/applicationcontroller.cpp:508
+#: app/applicationcontroller.cpp:549 app/applicationcontroller.cpp:585
+#: app/applicationcontroller.cpp:603
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Falha na exportação: %1"
 
-#: app/applicationcontroller.cpp:352 app/applicationcontroller.cpp:361
-#: app/applicationcontroller.cpp:456 app/applicationcontroller.cpp:465
-#: app/applicationcontroller.cpp:551 app/applicationcontroller.cpp:560
+#: app/applicationcontroller.cpp:360 app/applicationcontroller.cpp:369
+#: app/applicationcontroller.cpp:464 app/applicationcontroller.cpp:473
+#: app/applicationcontroller.cpp:559 app/applicationcontroller.cpp:568
 #, kde-format
 msgid "Export completed."
 msgstr "Exportação concluída."
 
-#: app/applicationcontroller.cpp:388
+#: app/applicationcontroller.cpp:396
 #, fuzzy, kde-format
 #| msgid "Trips"
 msgid "Trip sent."
 msgstr "Viagens"
 
-#: app/applicationcontroller.cpp:492
+#: app/applicationcontroller.cpp:500
 #, fuzzy, kde-format
 #| msgid "Reservation"
 msgid "Reservation sent."
 msgstr "Reserva"
 
-#: app/applicationcontroller.cpp:587
+#: app/applicationcontroller.cpp:595
 #, fuzzy, kde-format
 #| msgid "Trips"
 msgid "Pass sent."
 msgstr "Viagens"
 
-#: app/applicationcontroller.cpp:625
+#: app/applicationcontroller.cpp:633
 #, fuzzy, kde-format
 #| msgid "Download failed: %1"
 msgid "Saving failed: %1"
 msgstr "Falha ao baixar: %1"
 
-#: app/applicationcontroller.cpp:630
+#: app/applicationcontroller.cpp:638
 #, kde-format
 msgid "File saved successfully."
 msgstr ""
 
-#: app/applicationcontroller.cpp:637
+#: app/applicationcontroller.cpp:645
 #, kde-format
 msgid ""
 "File was exported with a newer version of Itinerary. Some information might "
 "not be imported correctly."
 msgstr ""
 
-#: app/applicationcontroller.cpp:663
+#: app/applicationcontroller.cpp:671
 #, kde-format
 msgid "Import completed."
 msgstr "Importação concluída."
@@ -1691,7 +1691,7 @@ msgstr "Procurar atualizações"
 msgid "Save As…"
 msgstr ""
 
-#: app/gpxexport.cpp:33 app/main.cpp:275 app/Main.qml:20 app/Main.qml:68
+#: app/gpxexport.cpp:33 app/main.cpp:206 app/Main.qml:20 app/Main.qml:68
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -2811,24 +2811,24 @@ msgstr "Tipo M"
 msgid "Type N"
 msgstr "Tipo M"
 
-#: app/main.cpp:283
+#: app/main.cpp:214
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Assistente de viagens digital"
 
-#: app/main.cpp:284
+#: app/main.cpp:215
 #, fuzzy, kde-format
 #| msgid "Copyright © 2018-%1 The KDE Community"
 msgid "Copyright © The KDE Community"
 msgstr "Copyright © 2018-%1 A comunidade KDE"
 
-#: app/main.cpp:291
+#: app/main.cpp:222
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr ""
 
-#: app/main.cpp:296
+#: app/main.cpp:227
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
