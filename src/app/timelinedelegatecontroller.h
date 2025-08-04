@@ -59,6 +59,8 @@ class TimelineDelegateController : public QObject
     Q_PROPERTY(qsizetype tripDepartureIndex READ tripDepartureIndex NOTIFY journeyChanged)
     Q_PROPERTY(qsizetype tripArrivalIndex READ tripArrivalIndex NOTIFY journeyChanged)
 
+    /** Planned start time of this element. */
+    Q_PROPERTY(QDateTime startTime READ startTime NOTIFY journeyChanged)
     /** Effective end time, ie. our best knowledge of arriving at the destination (for transit elements), or
      *  ending of the associated event for non-transit elements.
      */
@@ -125,6 +127,7 @@ public:
     [[nodiscard]] qsizetype tripDepartureIndex() const;
     [[nodiscard]] qsizetype tripArrivalIndex() const;
 
+    [[nodiscard]] QDateTime startTime() const;
     [[nodiscard]] QDateTime effectiveEndTime() const;
 
     [[nodiscard]] bool isLocationChange() const;

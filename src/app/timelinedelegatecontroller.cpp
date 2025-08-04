@@ -400,6 +400,15 @@ QVariant TimelineDelegateController::previousLocation() const
     return LocationUtil::location(res);
 }
 
+QDateTime TimelineDelegateController::startTime() const
+{
+    if (!m_resMgr || m_batchId.isEmpty()) {
+        return {};
+    }
+
+    return SortUtil::startDateTime(m_resMgr->reservation(m_batchId));
+}
+
 QDateTime TimelineDelegateController::effectiveEndTime() const
 {
     if (!m_resMgr || m_batchId.isEmpty()) {

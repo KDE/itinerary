@@ -16,7 +16,7 @@ FormCard.FormButtonDelegate {
 
     property string placeName: ''
 
-    property var controller: null
+    property TimelineDelegateController controller: null
     /** The place to display and to navigate to. */
     property var place
     property bool showLocationName: false
@@ -53,8 +53,8 @@ FormCard.FormButtonDelegate {
         id: departuresPage
 
         DepartureQueryPage {
-            stop: place
-            dateTime: controller.effectiveEndTime
+            stop: root.place
+            dateTime: root.isRangeBegin ? root.controller.startTime : root.controller.effectiveEndTime
         }
     }
 
