@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-03 00:42+0000\n"
-"PO-Revision-Date: 2025-07-21 08:46+0200\n"
+"PO-Revision-Date: 2025-07-27 08:15+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -331,15 +331,12 @@ msgid "File saved successfully."
 msgstr "File salvato correttamente."
 
 #: app/applicationcontroller.cpp:645
-#, fuzzy, kde-format
-#| msgid ""
-#| "File was imported with a newer version of Itinerary. Some information "
-#| "might not be imported correctly."
+#, kde-format
 msgid ""
 "File was exported with a newer version of Itinerary. Some information might "
 "not be imported correctly."
 msgstr ""
-"Il file è stato importato con una versione più recente di Itinerary. Alcune "
+"Il file è stato esportato con una versione più recente di Itinerary. Alcune "
 "informazioni potrebbero non essere importate correttamente."
 
 #: app/applicationcontroller.cpp:671
