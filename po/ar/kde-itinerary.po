@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-31 02:34+0000\n"
-"PO-Revision-Date: 2025-04-28 18:17+0400\n"
+"PO-Revision-Date: 2025-08-04 14:48+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -673,8 +673,7 @@ msgid "Bus"
 msgstr "الحافلة"
 
 #: app/BusEditor.qml:140
-#, fuzzy, kde-format
-#| msgid "Bus"
+#, kde-format
 msgctxt "@title:group"
 msgid "Bus"
 msgstr "حافلة"
@@ -700,9 +699,7 @@ msgid "Departure Time"
 msgstr "وقت المغادرة"
 
 #: app/BusEditor.qml:177
-#, fuzzy, kde-format
-#| msgctxt "bus stop"
-#| msgid "Stop"
+#, kde-format
 msgctxt "Bus stop"
 msgid "Stop"
 msgstr "التوقّف"
@@ -713,8 +710,7 @@ msgid "Departure bus stop must not be empty."
 msgstr ""
 
 #: app/BusEditor.qml:188 app/BusEditor.qml:275
-#, fuzzy, kde-format
-#| msgid "Platform"
+#, kde-format
 msgctxt "Bus stop platform"
 msgid "Platform"
 msgstr "المنصّة"
@@ -2715,10 +2711,9 @@ msgid "Occupancy:"
 msgstr ""
 
 #: app/MapStopoverInfoSheetDrawer.qml:103
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgid "Information:"
-msgstr "معلومات أخرى"
+msgstr "معلومات:"
 
 #: app/MapStopoverInfoSheetDrawer.qml:119
 #, kde-format
@@ -3263,8 +3258,7 @@ msgid "Add Program Membership"
 msgstr "عضو (0)"
 
 #: app/PassPage.qml:43
-#, fuzzy, kde-format
-#| msgid "Import"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Import"
 msgstr "استورد"
