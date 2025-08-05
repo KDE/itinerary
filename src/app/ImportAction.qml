@@ -40,7 +40,7 @@ Kirigami.Action {
             // so don't set any filters on Android in order to be able to open everything we can read
             nameFilters:  Qt.platform.os === "android" ?
                 [i18n("All Files (*.*)")] :
-                [i18n("All Files (*.*)"), i18n("PkPass files (*.pkpass)"), i18n("PDF files (*.pdf)"), i18n("iCal events (*.ics)"), i18n("KDE Itinerary files (*.itinerary)")]
+                [i18n("All Files (*.*)"), i18n("Apple Wallet passes (*.pkpass)"), i18n("Apple Wallet pass bundles (*.pkpasses)"), i18n("PDF files (*.pdf)"), i18n("iCal events (*.ics)"), i18n("KDE Itinerary files (*.itinerary)")]
             onAccepted: ImportController.importFromUrl(selectedFile)
         }
     }
