@@ -25,8 +25,10 @@
 #include <KItinerary/JsonLdDocument>
 
 #include <KPublicTransport/Location>
+#include <KPublicTransport/LocationHistoryModel>
 
 #include <QCoreApplication>
+#include <QDirIterator>
 #include <QFile>
 #include <QJsonArray>
 #include <QJsonDocument>
@@ -211,6 +213,19 @@ void Exporter::exportLiveDataForBatch(const QString &batchId)
     m_file->addCustomData(BUNDLE_LIVE_DATA_DOMAIN, batchId, QJsonDocument(LiveData::toJson(ld)).toJson());
 }
 
+void Exporter::exportLocationSearchHistory()
+{
+    for (QDirIterator it(KPublicTransport::LocationHistoryModel::storagePath(), QDir::Files); it.hasNext();) {
+        it.next();
+        QFile f(it.filePath());
+        if (!f.open(QFile::ReadOnly)) {
+            qCWarning(Log) << f.fileName() << f.errorString();
+            continue;
+        }
+        m_file->addCustomData(BUNDLE_LOCATION_HISTORY_DOMAIN, it.fileName(), f.readAll());
+    }
+}
+
 void Exporter::exportSettings()
 {
     QTemporaryFile tmp;
@@ -339,6 +354,16 @@ int Importer::importLiveData(LiveDataManager *liveDataMgr)
         liveDataMgr->importData(id, std::move(ld));
     }
     return ids.size();
+}
+
+int Importer::importLocationSearchHistory()
+{
+    const auto ids = m_file->listCustomData(BUNDLE_LOCATION_HISTORY_DOMAIN);
+    KPublicTransport::LocationHistoryModel model;
+    for (const auto &id : ids) {
+        model.importEntry(m_file->customData(BUNDLE_LOCATION_HISTORY_DOMAIN, id));
+    }
+    return (int)ids.size();
 }
 
 int Importer::importSettings()

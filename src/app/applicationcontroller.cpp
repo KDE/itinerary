@@ -356,6 +356,7 @@ void ApplicationController::exportToFile(const QUrl &url)
     exporter.exportPasses(m_passMgr);
     exporter.exportHealthCertificates(healthCertificateManager());
     exporter.exportLiveData();
+    exporter.exportLocationSearchHistory();
     exporter.exportSettings();
     Q_EMIT infoMessage(i18n("Export completed."));
 }
@@ -659,6 +660,7 @@ bool ApplicationController::importBundle(KItinerary::File *file)
         count += importer.importPasses(m_passMgr);
         count += importer.importHealthCertificates(healthCertificateManager());
         count += importer.importLiveData(m_liveDataMgr);
+        count += importer.importLocationSearchHistory();
         settingsCount += importer.importSettings();
     }
 

@@ -52,6 +52,7 @@ public:
     void exportHealthCertificates(const HealthCertificateManager *healthCertMgr);
     void exportLiveData();
     void exportLiveDataForBatch(const QString &batchId);
+    void exportLocationSearchHistory();
     void exportSettings();
 
 private:
@@ -74,6 +75,7 @@ public:
     int importPasses(PassManager *passMgr);
     int importHealthCertificates(HealthCertificateManager *healthCertMgr);
     int importLiveData(LiveDataManager *liveDataMgr);
+    int importLocationSearchHistory();
     int importSettings();
 
 private:
