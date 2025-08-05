@@ -419,7 +419,17 @@ QDateTime TimelineDelegateController::effectiveEndTime() const
     if (arr.hasExpectedArrivalTime()) {
         return arr.expectedArrivalTime();
     }
-    return SortUtil::endDateTime(m_resMgr->reservation(m_batchId));
+
+    const auto res = m_resMgr->reservation(m_batchId);
+    if (JsonLd::isA<LodgingReservation>(res)) {
+        auto dt = res.value<LodgingReservation>().checkoutTime();
+        dt.setTime({8, 0});
+        if (dt.isValid()) {
+            return dt;
+        }
+    }
+
+    return SortUtil::endDateTime(res);
 }
 
 bool TimelineDelegateController::isLocationChange() const
