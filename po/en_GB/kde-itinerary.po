@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-03 00:42+0000\n"
+"POT-Creation-Date: 2025-08-06 00:44+0000\n"
 "PO-Revision-Date: 2024-11-16 12:52+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -290,57 +290,57 @@ msgid_plural "%1 health certificates imported."
 msgstr[0] "One health certificate imported."
 msgstr[1] "%1 health certificates imported."
 
-#: app/applicationcontroller.cpp:345 app/applicationcontroller.cpp:386
-#: app/applicationcontroller.cpp:404 app/applicationcontroller.cpp:451
-#: app/applicationcontroller.cpp:490 app/applicationcontroller.cpp:508
-#: app/applicationcontroller.cpp:549 app/applicationcontroller.cpp:585
-#: app/applicationcontroller.cpp:603
+#: app/applicationcontroller.cpp:345 app/applicationcontroller.cpp:387
+#: app/applicationcontroller.cpp:405 app/applicationcontroller.cpp:452
+#: app/applicationcontroller.cpp:491 app/applicationcontroller.cpp:509
+#: app/applicationcontroller.cpp:550 app/applicationcontroller.cpp:586
+#: app/applicationcontroller.cpp:604
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Export failed: %1"
 
-#: app/applicationcontroller.cpp:360 app/applicationcontroller.cpp:369
-#: app/applicationcontroller.cpp:464 app/applicationcontroller.cpp:473
-#: app/applicationcontroller.cpp:559 app/applicationcontroller.cpp:568
+#: app/applicationcontroller.cpp:361 app/applicationcontroller.cpp:370
+#: app/applicationcontroller.cpp:465 app/applicationcontroller.cpp:474
+#: app/applicationcontroller.cpp:560 app/applicationcontroller.cpp:569
 #, kde-format
 msgid "Export completed."
 msgstr "Export completed."
 
-#: app/applicationcontroller.cpp:396
+#: app/applicationcontroller.cpp:397
 #, kde-format
 msgid "Trip sent."
 msgstr "Trip sent."
 
-#: app/applicationcontroller.cpp:500
+#: app/applicationcontroller.cpp:501
 #, kde-format
 msgid "Reservation sent."
 msgstr "Reservation sent."
 
-#: app/applicationcontroller.cpp:595
+#: app/applicationcontroller.cpp:596
 #, fuzzy, kde-format
 #| msgid "Trip sent."
 msgid "Pass sent."
 msgstr "Trip sent."
 
-#: app/applicationcontroller.cpp:633
+#: app/applicationcontroller.cpp:634
 #, fuzzy, kde-format
 #| msgid "Download failed: %1"
 msgid "Saving failed: %1"
 msgstr "Download failed: %1"
 
-#: app/applicationcontroller.cpp:638
+#: app/applicationcontroller.cpp:639
 #, kde-format
 msgid "File saved successfully."
 msgstr ""
 
-#: app/applicationcontroller.cpp:645
+#: app/applicationcontroller.cpp:646
 #, kde-format
 msgid ""
 "File was exported with a newer version of Itinerary. Some information might "
 "not be imported correctly."
 msgstr ""
 
-#: app/applicationcontroller.cpp:671
+#: app/applicationcontroller.cpp:673
 #, kde-format
 msgid "Import completed."
 msgstr "Import completed."
@@ -2012,9 +2012,15 @@ msgid "Import Reservation"
 msgstr "Import Reservation"
 
 #: app/ImportAction.qml:43
-#, kde-format
-msgid "PkPass files (*.pkpass)"
+#, fuzzy, kde-format
+#| msgid "PkPass files (*.pkpass)"
+msgid "Apple Wallet passes (*.pkpass)"
 msgstr "PkPass files (*.pkpass)"
+
+#: app/ImportAction.qml:43
+#, kde-format
+msgid "Apple Wallet pass bundles (*.pkpasses)"
+msgstr ""
 
 #: app/ImportAction.qml:43
 #, kde-format

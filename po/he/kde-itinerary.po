@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-03 00:42+0000\n"
+"POT-Creation-Date: 2025-08-06 00:44+0000\n"
 "PO-Revision-Date: 2025-07-26 09:37+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -293,48 +293,48 @@ msgstr[1] "שני אישורי בריאות יובאו."
 msgstr[2] "%1 אישורי בריאות יובאו."
 msgstr[3] "%1 אישורי בריאות יובאו."
 
-#: app/applicationcontroller.cpp:345 app/applicationcontroller.cpp:386
-#: app/applicationcontroller.cpp:404 app/applicationcontroller.cpp:451
-#: app/applicationcontroller.cpp:490 app/applicationcontroller.cpp:508
-#: app/applicationcontroller.cpp:549 app/applicationcontroller.cpp:585
-#: app/applicationcontroller.cpp:603
+#: app/applicationcontroller.cpp:345 app/applicationcontroller.cpp:387
+#: app/applicationcontroller.cpp:405 app/applicationcontroller.cpp:452
+#: app/applicationcontroller.cpp:491 app/applicationcontroller.cpp:509
+#: app/applicationcontroller.cpp:550 app/applicationcontroller.cpp:586
+#: app/applicationcontroller.cpp:604
 #, kde-format
 msgid "Export failed: %1"
 msgstr "הייצוא נכשל: %1"
 
-#: app/applicationcontroller.cpp:360 app/applicationcontroller.cpp:369
-#: app/applicationcontroller.cpp:464 app/applicationcontroller.cpp:473
-#: app/applicationcontroller.cpp:559 app/applicationcontroller.cpp:568
+#: app/applicationcontroller.cpp:361 app/applicationcontroller.cpp:370
+#: app/applicationcontroller.cpp:465 app/applicationcontroller.cpp:474
+#: app/applicationcontroller.cpp:560 app/applicationcontroller.cpp:569
 #, kde-format
 msgid "Export completed."
 msgstr "הייצוא הושלם."
 
-#: app/applicationcontroller.cpp:396
+#: app/applicationcontroller.cpp:397
 #, kde-format
 msgid "Trip sent."
 msgstr "הטיול נשלח."
 
-#: app/applicationcontroller.cpp:500
+#: app/applicationcontroller.cpp:501
 #, kde-format
 msgid "Reservation sent."
 msgstr "ההזמנה נשלחה."
 
-#: app/applicationcontroller.cpp:595
+#: app/applicationcontroller.cpp:596
 #, kde-format
 msgid "Pass sent."
 msgstr "האישור נשלח."
 
-#: app/applicationcontroller.cpp:633
+#: app/applicationcontroller.cpp:634
 #, kde-format
 msgid "Saving failed: %1"
 msgstr "השמירה נכשלה: %1"
 
-#: app/applicationcontroller.cpp:638
+#: app/applicationcontroller.cpp:639
 #, kde-format
 msgid "File saved successfully."
 msgstr "הקובץ נשמר בהצלחה."
 
-#: app/applicationcontroller.cpp:645
+#: app/applicationcontroller.cpp:646
 #, kde-format
 msgid ""
 "File was exported with a newer version of Itinerary. Some information might "
@@ -342,7 +342,7 @@ msgid ""
 msgstr ""
 "הקובץ יוצא עם גרסה חדשה יותר של Itinerary. כנראה שחלק מהמידע לא ייובא כראוי."
 
-#: app/applicationcontroller.cpp:671
+#: app/applicationcontroller.cpp:673
 #, kde-format
 msgid "Import completed."
 msgstr "הייבוא הושלם."
@@ -1954,9 +1954,16 @@ msgid "Import Reservation"
 msgstr "ייבוא הזמנה"
 
 #: app/ImportAction.qml:43
-#, kde-format
-msgid "PkPass files (*.pkpass)"
-msgstr "קובצי PkPass‏ (‎*.pkpass)"
+#, fuzzy, kde-format
+#| msgid "Apple Wallet pass (*.pkpass)"
+msgid "Apple Wallet passes (*.pkpass)"
+msgstr "אישור ב־Apple Wallet‏ (‎*.pkpass)"
+
+#: app/ImportAction.qml:43
+#, fuzzy, kde-format
+#| msgid "Apple Wallet pass (*.pkpass)"
+msgid "Apple Wallet pass bundles (*.pkpasses)"
+msgstr "אישור ב־Apple Wallet‏ (‎*.pkpass)"
 
 #: app/ImportAction.qml:43
 #, kde-format
@@ -4704,6 +4711,9 @@ msgstr "יצאת"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 מ%3 אל %4 ב־%5"
+
+#~ msgid "PkPass files (*.pkpass)"
+#~ msgstr "קובצי PkPass‏ (‎*.pkpass)"
 
 #~ msgid "Open File…"
 #~ msgstr "פתיחת קובץ…"

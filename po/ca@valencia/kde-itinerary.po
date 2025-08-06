@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-03 00:42+0000\n"
+"POT-Creation-Date: 2025-08-06 00:44+0000\n"
 "PO-Revision-Date: 2025-07-26 11:04+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -290,48 +290,48 @@ msgid_plural "%1 health certificates imported."
 msgstr[0] "S'ha importat un certificat de salut."
 msgstr[1] "S'han importat %1 certificats de salut."
 
-#: app/applicationcontroller.cpp:345 app/applicationcontroller.cpp:386
-#: app/applicationcontroller.cpp:404 app/applicationcontroller.cpp:451
-#: app/applicationcontroller.cpp:490 app/applicationcontroller.cpp:508
-#: app/applicationcontroller.cpp:549 app/applicationcontroller.cpp:585
-#: app/applicationcontroller.cpp:603
+#: app/applicationcontroller.cpp:345 app/applicationcontroller.cpp:387
+#: app/applicationcontroller.cpp:405 app/applicationcontroller.cpp:452
+#: app/applicationcontroller.cpp:491 app/applicationcontroller.cpp:509
+#: app/applicationcontroller.cpp:550 app/applicationcontroller.cpp:586
+#: app/applicationcontroller.cpp:604
 #, kde-format
 msgid "Export failed: %1"
 msgstr "No s'ha pogut fer l'exportació: %1"
 
-#: app/applicationcontroller.cpp:360 app/applicationcontroller.cpp:369
-#: app/applicationcontroller.cpp:464 app/applicationcontroller.cpp:473
-#: app/applicationcontroller.cpp:559 app/applicationcontroller.cpp:568
+#: app/applicationcontroller.cpp:361 app/applicationcontroller.cpp:370
+#: app/applicationcontroller.cpp:465 app/applicationcontroller.cpp:474
+#: app/applicationcontroller.cpp:560 app/applicationcontroller.cpp:569
 #, kde-format
 msgid "Export completed."
 msgstr "S'ha completat l'exportació."
 
-#: app/applicationcontroller.cpp:396
+#: app/applicationcontroller.cpp:397
 #, kde-format
 msgid "Trip sent."
 msgstr "S'ha enviat el viatge."
 
-#: app/applicationcontroller.cpp:500
+#: app/applicationcontroller.cpp:501
 #, kde-format
 msgid "Reservation sent."
 msgstr "La reserva s'ha enviat."
 
-#: app/applicationcontroller.cpp:595
+#: app/applicationcontroller.cpp:596
 #, kde-format
 msgid "Pass sent."
 msgstr "S'ha enviat el passe."
 
-#: app/applicationcontroller.cpp:633
+#: app/applicationcontroller.cpp:634
 #, kde-format
 msgid "Saving failed: %1"
 msgstr "La guardada ha fallat: %1"
 
-#: app/applicationcontroller.cpp:638
+#: app/applicationcontroller.cpp:639
 #, kde-format
 msgid "File saved successfully."
 msgstr "El fitxer s'ha guardat correctament."
 
-#: app/applicationcontroller.cpp:645
+#: app/applicationcontroller.cpp:646
 #, kde-format
 msgid ""
 "File was exported with a newer version of Itinerary. Some information might "
@@ -340,7 +340,7 @@ msgstr ""
 "El fitxer s'ha exportat amb una versió més nova d'Itinerary. És possible que "
 "algunes dades no s'hagen importat correctament."
 
-#: app/applicationcontroller.cpp:671
+#: app/applicationcontroller.cpp:673
 #, kde-format
 msgid "Import completed."
 msgstr "S'ha completat la importació."
@@ -1950,9 +1950,16 @@ msgid "Import Reservation"
 msgstr "Importa la reserva"
 
 #: app/ImportAction.qml:43
-#, kde-format
-msgid "PkPass files (*.pkpass)"
-msgstr "Fitxers PkPass (*.pkpass)"
+#, fuzzy, kde-format
+#| msgid "Apple Wallet pass (*.pkpass)"
+msgid "Apple Wallet passes (*.pkpass)"
+msgstr "Passe d'Apple Wallet (*.pkpass)"
+
+#: app/ImportAction.qml:43
+#, fuzzy, kde-format
+#| msgid "Apple Wallet pass (*.pkpass)"
+msgid "Apple Wallet pass bundles (*.pkpasses)"
+msgstr "Passe d'Apple Wallet (*.pkpass)"
 
 #: app/ImportAction.qml:43
 #, kde-format
@@ -4748,3 +4755,6 @@ msgstr "Ha finalitzat la sessió"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 des de %3 a %4 el %5"
+
+#~ msgid "PkPass files (*.pkpass)"
+#~ msgstr "Fitxers PkPass (*.pkpass)"
