@@ -101,12 +101,12 @@ FormCard.FormCard {
             if (tripGroupSelector.currentIndex >= 0) {
                 return;
             }
-            if (root.tripGroupCandidates.length == 1) {
-                tripGroupSelector.currentIndex = tripGroupSelector.indexOfValue(root.tripGroupCandidates[0]);
-                return;
-            }
             if (ApplicationController.contextTripGroupId !== "" && (root.tripGroupCandidates.length == 0 || root.tripGroupCandidates.includes(ApplicationController.contextTripGroupId) || TripGroupModel.emptyTripGroups().includes(ApplicationController.contextTripGroupId))) {
                 tripGroupSelector.currentIndex = tripGroupSelector.indexOfValue(ApplicationController.contextTripGroupId);
+                return;
+            }
+            if (root.tripGroupCandidates.length == 1) {
+                tripGroupSelector.currentIndex = tripGroupSelector.indexOfValue(root.tripGroupCandidates[0]);
                 return;
             }
         }
