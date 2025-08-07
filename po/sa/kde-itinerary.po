@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-06 00:44+0000\n"
+"POT-Creation-Date: 2025-08-07 18:30+0000\n"
 "PO-Revision-Date: 2025-03-02 14:47+0530\n"
 "Last-Translator: Shreekant Kalwar <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -120,7 +120,7 @@ msgid "Add to calendar…"
 msgstr "पञ्चाङ्गे योजयतु…"
 
 #: app/ActionsCard.qml:75 app/ProgramMembershipPage.qml:182
-#: app/TicketPage.qml:191 app/TripGroupPage.qml:737
+#: app/TicketPage.qml:191 app/TripGroupPage.qml:736
 #, kde-format
 msgid "Export…"
 msgstr "निर्यात…"
@@ -129,7 +129,7 @@ msgstr "निर्यात…"
 #: app/GenericPkPassPage.qml:43 app/GenericPkPassPage.qml:71
 #: app/HealthCertificatePage.qml:49 app/HealthCertificatePage.qml:63
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:188
-#: app/TicketPage.qml:48 app/TicketPage.qml:197 app/TripGroupPage.qml:309
+#: app/TicketPage.qml:48 app/TicketPage.qml:197 app/TripGroupPage.qml:308
 #, kde-format
 msgid "Delete"
 msgstr "लुप्"
@@ -150,7 +150,7 @@ msgid "Export Reservation"
 msgstr "निर्यात आरक्षण"
 
 #: app/ActionsCard.qml:143 app/ProgramMembershipPage.qml:147
-#: app/TicketPage.qml:141 app/TripGroupPage.qml:687
+#: app/TicketPage.qml:141 app/TripGroupPage.qml:686
 #, kde-format
 msgid "Actions"
 msgstr "कर्माणि"
@@ -1570,7 +1570,7 @@ msgid "Do you really want to delete this pass?"
 msgstr "किं भवन्तः वास्तवमेव एतत् पासं विलोपयितुम् इच्छन्ति?"
 
 #: app/GenericPkPassPage.qml:55 app/TicketPage.qml:165
-#: app/TripGroupPage.qml:693
+#: app/TripGroupPage.qml:692
 #, kde-format
 msgid "Check for Updates"
 msgstr "Updates इति पश्यन्तु"
@@ -1984,7 +1984,7 @@ msgstr "चेक-इन समय"
 msgid "Check-out time"
 msgstr "चेक-आउट समय"
 
-#: app/ImportAction.qml:23 app/TripGroupPage.qml:494
+#: app/ImportAction.qml:23 app/TripGroupPage.qml:493
 #, kde-format
 msgid "Import"
 msgstr "आयात"
@@ -3058,7 +3058,7 @@ msgstr "रक्षितानि स्थानानि"
 msgid "Home Country"
 msgstr "गृहदेश"
 
-#: app/MyDataPage.qml:131 app/StatisticsPage.qml:16 app/TripGroupPage.qml:655
+#: app/MyDataPage.qml:131 app/StatisticsPage.qml:16 app/TripGroupPage.qml:654
 #, kde-format
 msgid "Statistics"
 msgstr "सांख्यिकी"
@@ -3246,7 +3246,7 @@ msgctxt "name - valid time range"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/passmanager.cpp:284 app/TripGroupPage.qml:427
+#: app/passmanager.cpp:284 app/TripGroupPage.qml:426
 #, kde-format
 msgid "%1 - %2"
 msgstr "%1 - %2"
@@ -3795,7 +3795,7 @@ msgstr "यात्राः"
 #: app/statisticsmodel.cpp:107 app/statisticsmodel.cpp:140
 #: app/statisticsmodel.cpp:155 app/statisticsmodel.cpp:170
 #: app/statisticsmodel.cpp:185 app/statisticsmodel.cpp:200
-#: app/TripGroupPage.qml:662
+#: app/TripGroupPage.qml:661
 #, kde-format
 msgid "Distance"
 msgstr "दूरी"
@@ -3808,7 +3808,7 @@ msgstr "होटेलरात्रयः"
 #: app/statisticsmodel.cpp:117 app/statisticsmodel.cpp:145
 #: app/statisticsmodel.cpp:160 app/statisticsmodel.cpp:175
 #: app/statisticsmodel.cpp:190 app/statisticsmodel.cpp:205
-#: app/TripGroupPage.qml:671
+#: app/TripGroupPage.qml:670
 #, kde-format
 msgid "CO₂"
 msgstr "CO2"
@@ -4400,7 +4400,7 @@ msgctxt "@action:button"
 msgid "Merge"
 msgstr "विलयः"
 
-#: app/TripGroupPage.qml:157
+#: app/TripGroupPage.qml:156
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Load earlier connections"
@@ -4408,7 +4408,7 @@ msgctxt "@action"
 msgid "Search connection"
 msgstr "पूर्वं संयोजनानि लोडयन्तु"
 
-#: app/TripGroupPage.qml:164
+#: app/TripGroupPage.qml:163
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Load later connections"
@@ -4416,7 +4416,7 @@ msgctxt "@action"
 msgid "Add connection"
 msgstr "पश्चात् संयोजनानि लोडयन्तु"
 
-#: app/TripGroupPage.qml:170
+#: app/TripGroupPage.qml:169
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Add trip"
@@ -4424,148 +4424,148 @@ msgctxt "@action"
 msgid "Add train"
 msgstr "यात्रां योजयन्तु"
 
-#: app/TripGroupPage.qml:180
+#: app/TripGroupPage.qml:179
 #, kde-format
 msgctxt "@action"
 msgid "Add bus"
 msgstr ""
 
-#: app/TripGroupPage.qml:190
+#: app/TripGroupPage.qml:189
 #, fuzzy, kde-format
 #| msgid "Add flight…"
 msgctxt "@action"
 msgid "Add flight"
 msgstr "उड्डयनं योजयन्तु…"
 
-#: app/TripGroupPage.qml:200
+#: app/TripGroupPage.qml:199
 #, fuzzy, kde-format
 #| msgid "Add ferry trip…"
 msgctxt "@action"
 msgid "Add ferry trip"
 msgstr "नौकायात्राम् योजयन्तु…"
 
-#: app/TripGroupPage.qml:210
+#: app/TripGroupPage.qml:209
 #, fuzzy, kde-format
 #| msgid "Add accommodation…"
 msgctxt "@action"
 msgid "Add accommodation"
 msgstr "आवासं योजयन्तु…"
 
-#: app/TripGroupPage.qml:225
+#: app/TripGroupPage.qml:224
 #, fuzzy, kde-format
 #| msgid "Add event…"
 msgctxt "@action"
 msgid "Add event"
 msgstr "इवेण्ट् योजयतु…"
 
-#: app/TripGroupPage.qml:241
+#: app/TripGroupPage.qml:240
 #, fuzzy, kde-format
 #| msgid "Add restaurant…"
 msgid "Add restaurant"
 msgstr "भोजनालयं योजयन्तु…"
 
-#: app/TripGroupPage.qml:258
+#: app/TripGroupPage.qml:257
 #, kde-format
 msgctxt "@title:group"
 msgid "Add to Trip"
 msgstr "ट्रिप् इत्यत्र योजयतु"
 
-#: app/TripGroupPage.qml:291
+#: app/TripGroupPage.qml:290
 #, kde-format
 msgid "Export Trip"
 msgstr "निर्यात यात्रा"
 
-#: app/TripGroupPage.qml:302
+#: app/TripGroupPage.qml:301
 #, kde-format
 msgid "Delete Trip"
 msgstr "यात्रां विलोपयन्तु"
 
-#: app/TripGroupPage.qml:303
+#: app/TripGroupPage.qml:302
 #, kde-format
 msgid "Do you really want to delete the trip '%1'?"
 msgstr "किं भवान् वास्तवमेव '%1' इति यात्रां विलोपयितुम् इच्छति?"
 
-#: app/TripGroupPage.qml:428
+#: app/TripGroupPage.qml:427
 #, kde-format
 msgid "One day"
 msgid_plural "%1 days"
 msgstr[0] "एकस्मिन् दिने"
 msgstr[1] "%1 दिवसाः"
 
-#: app/TripGroupPage.qml:460
+#: app/TripGroupPage.qml:459
 #, kde-format
 msgid "Some incompatible power sockets (%1)"
 msgstr "केचन असङ्गताः विद्युत्-सॉकेट् (%1) ."
 
-#: app/TripGroupPage.qml:462
+#: app/TripGroupPage.qml:461
 #, kde-format
 msgid "Some incompatible power plugs (%1)"
 msgstr "केचन असङ्गताः विद्युत् प्लग् (%1) ."
 
-#: app/TripGroupPage.qml:465
+#: app/TripGroupPage.qml:464
 #, kde-format
 msgid "No compatible power plugs (%1)"
 msgstr "न सङ्गतः विद्युत् प्लगः (%1) ."
 
-#: app/TripGroupPage.qml:477
+#: app/TripGroupPage.qml:476
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
 msgstr[0] "मुद्राः %2"
 msgstr[1] "मुद्राः %2"
 
-#: app/TripGroupPage.qml:487
+#: app/TripGroupPage.qml:486
 #, kde-format
 msgid "Show map…"
 msgstr "नक्शा दर्शयतु…"
 
-#: app/TripGroupPage.qml:510
+#: app/TripGroupPage.qml:509
 #, kde-format
 msgid "Add"
 msgstr "संयोजयति"
 
-#: app/TripGroupPage.qml:627
+#: app/TripGroupPage.qml:626
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "अद्यतनस्य यात्रासूचौ किमपि नास्ति।"
 
-#: app/TripGroupPage.qml:680
+#: app/TripGroupPage.qml:679
 #, kde-format
 msgid "Cost"
 msgstr "मूल्यम्‌"
 
-#: app/TripGroupPage.qml:702
+#: app/TripGroupPage.qml:701
 #, kde-format
 msgid "Rename…"
 msgstr "पुनर्नामकरणं…"
 
-#: app/TripGroupPage.qml:711
+#: app/TripGroupPage.qml:710
 #, kde-format
 msgid "Merge trips…"
 msgstr "यात्राः विलयनं कुर्वन्तु…"
 
-#: app/TripGroupPage.qml:722
+#: app/TripGroupPage.qml:721
 #, kde-format
 msgid "Split trip…"
 msgstr "विभक्त यात्रा…"
 
-#: app/TripGroupPage.qml:729
+#: app/TripGroupPage.qml:728
 #, kde-format
 msgid "Download Maps"
 msgstr "नक्शे डाउनलोड करें"
 
-#: app/TripGroupPage.qml:744
+#: app/TripGroupPage.qml:743
 #, kde-format
 msgid "Delete trip"
 msgstr "यात्रां विलोपयन्तु"
 
-#: app/TripGroupPage.qml:769
+#: app/TripGroupPage.qml:768
 #, kde-format
 msgctxt "@action:button"
 msgid "Go To Now"
 msgstr "अधुना गच्छतु"
 
-#: app/TripGroupPage.qml:777 app/TripGroupsPage.qml:118
+#: app/TripGroupPage.qml:776 app/TripGroupsPage.qml:118
 #: app/TripGroupsPage.qml:137
 #, kde-format
 msgctxt "@action:button"
