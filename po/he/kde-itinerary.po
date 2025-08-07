@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-06 00:44+0000\n"
-"PO-Revision-Date: 2025-07-26 09:37+0300\n"
+"PO-Revision-Date: 2025-08-06 08:17+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -1954,16 +1954,14 @@ msgid "Import Reservation"
 msgstr "ייבוא הזמנה"
 
 #: app/ImportAction.qml:43
-#, fuzzy, kde-format
-#| msgid "Apple Wallet pass (*.pkpass)"
+#, kde-format
 msgid "Apple Wallet passes (*.pkpass)"
-msgstr "אישור ב־Apple Wallet‏ (‎*.pkpass)"
+msgstr "אישורים ב־Apple Wallet‏ (‎*.pkpass)"
 
 #: app/ImportAction.qml:43
-#, fuzzy, kde-format
-#| msgid "Apple Wallet pass (*.pkpass)"
+#, kde-format
 msgid "Apple Wallet pass bundles (*.pkpasses)"
-msgstr "אישור ב־Apple Wallet‏ (‎*.pkpass)"
+msgstr "מאגד אישורים ב־Apple Wallet‏ (‎*.pkpass)"
 
 #: app/ImportAction.qml:43
 #, kde-format

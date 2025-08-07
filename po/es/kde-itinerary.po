@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-06 00:44+0000\n"
-"PO-Revision-Date: 2025-07-26 12:39+0100\n"
+"PO-Revision-Date: 2025-08-07 00:27+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -1952,16 +1952,14 @@ msgid "Import Reservation"
 msgstr "Importar reserva"
 
 #: app/ImportAction.qml:43
-#, fuzzy, kde-format
-#| msgid "Apple Wallet pass (*.pkpass)"
+#, kde-format
 msgid "Apple Wallet passes (*.pkpass)"
-msgstr "Pase de la cartera de Apple (*.pkpass)"
+msgstr "Pases de la cartera de Apple (*.pkpass)"
 
 #: app/ImportAction.qml:43
-#, fuzzy, kde-format
-#| msgid "Apple Wallet pass (*.pkpass)"
+#, kde-format
 msgid "Apple Wallet pass bundles (*.pkpasses)"
-msgstr "Pase de la cartera de Apple (*.pkpass)"
+msgstr "Paquetes de pases de la cartera de Apple (*.pkpasses)"
 
 #: app/ImportAction.qml:43
 #, kde-format
@@ -4754,6 +4752,3 @@ msgstr "Sesión cerrada"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 de %3 a %4 el %5"
-
-#~ msgid "PkPass files (*.pkpass)"
-#~ msgstr "Archivos PkPass (*.pkpass)"
