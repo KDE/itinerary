@@ -331,7 +331,7 @@ TransferManager::CheckTransferResult TransferManager::checkTransferBefore(const 
     } else {
         toLoc = LocationUtil::location(res);
     }
-    transfer.setTo(PublicTransport::locationFromPlace(toLoc, res));
+    transfer.setTo(PublicTransport::locationFromPlace(toLoc));
     transfer.setToName(LocationUtil::name(toLoc));
 
     // pre-transfers should happen in the following cases:
@@ -382,7 +382,7 @@ TransferManager::CheckTransferResult TransferManager::checkTransferBefore(const 
             transfer.setFromName(f.name());
             transfer.setFloatingLocationType(Transfer::FavoriteLocation);
         } else {
-            transfer.setFrom(PublicTransport::locationFromPlace(prevLoc, prevRes));
+            transfer.setFrom(PublicTransport::locationFromPlace(prevLoc));
             transfer.setFromName(LocationUtil::name(prevLoc));
             transfer.setFloatingLocationType(Transfer::Reservation);
         }
@@ -418,7 +418,7 @@ TransferManager::CheckTransferResult TransferManager::checkTransferAfter(const Q
     } else {
         fromLoc = LocationUtil::location(res);
     }
-    transfer.setFrom(PublicTransport::locationFromPlace(fromLoc, res));
+    transfer.setFrom(PublicTransport::locationFromPlace(fromLoc));
     transfer.setFromName(LocationUtil::name(fromLoc));
 
     // post-transfer should happen in the following cases:
@@ -477,7 +477,7 @@ TransferManager::CheckTransferResult TransferManager::checkTransferAfter(const Q
             transfer.setToName(f.name());
             transfer.setFloatingLocationType(Transfer::FavoriteLocation);
         } else {
-            transfer.setTo(PublicTransport::locationFromPlace(nextLoc, nextRes));
+            transfer.setTo(PublicTransport::locationFromPlace(nextLoc));
             transfer.setToName(LocationUtil::name(nextLoc));
             transfer.setFloatingLocationType(Transfer::Reservation);
         }

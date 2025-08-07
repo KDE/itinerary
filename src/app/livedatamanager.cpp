@@ -209,8 +209,8 @@ void LiveDataManager::checkReservation(const QVariant &res, const QString &resId
     auto jny = data(resId).journey();
     if (jny.mode() == JourneySection::Invalid) {
         jny.setMode(JourneySection::PublicTransport);
-        jny.setFrom(PublicTransport::locationFromPlace(LocationUtil::departureLocation(res), res));
-        jny.setTo(PublicTransport::locationFromPlace(LocationUtil::arrivalLocation(res), res));
+        jny.setFrom(PublicTransport::locationFromPlace(LocationUtil::departureLocation(res)));
+        jny.setTo(PublicTransport::locationFromPlace(LocationUtil::arrivalLocation(res)));
         jny.setScheduledDepartureTime(SortUtil::startDateTime(res));
         jny.setRoute(PublicTransport::routeForReservation(res));
     }

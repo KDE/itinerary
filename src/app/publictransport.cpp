@@ -58,29 +58,19 @@ bool PublicTransport::isBoatMode(KPublicTransport::Line::Mode mode)
     }
 }
 
-KPublicTransport::Location PublicTransport::locationFromPlace(const QVariant &place, const QVariant &reservation)
+KPublicTransport::Location PublicTransport::locationFromPlace(const QVariant &place)
 {
     using namespace KItinerary;
 
     KPublicTransport::Location loc;
 
-    if (JsonLd::isA<FlightReservation>(reservation) || JsonLd::isA<TrainReservation>(reservation) || JsonLd::isA<BusReservation>(reservation)
-        || JsonLd::isA<BoatReservation>(reservation)) {
-        loc.setName(KItinerary::LocationUtil::name(place));
-    }
-    if (JsonLd::isA<TrainReservation>(reservation) || JsonLd::isA<BusReservation>(reservation)) {
+    loc.setName(KItinerary::LocationUtil::name(place));
+    if (JsonLd::isA<TrainStation>(place) || JsonLd::isA<BusStation>(place) || JsonLd::isA<BoatTerminal>(place)) {
         loc.setType(KPublicTransport::Location::Stop);
-    }
-    if (JsonLd::isA<LodgingReservation>(reservation)) {
-        loc.setName(reservation.value<LodgingReservation>().reservationFor().value<LodgingBusiness>().name());
+    } else if (!JsonLd::isA<Airport>(place)) {
         loc.setType(KPublicTransport::Location::Address);
     }
-    if (JsonLd::isA<EventReservation>(reservation)) {
-        loc.setName(reservation.value<EventReservation>().reservationFor().value<Event>().location().value<Place>().name());
-    }
-    if (JsonLd::isA<FoodEstablishmentReservation>(reservation)) {
-        loc.setName(reservation.value<FoodEstablishmentReservation>().reservationFor().value<FoodEstablishment>().name());
-    }
+
     const auto addr = KItinerary::LocationUtil::address(place);
     loc.setStreetAddress(addr.streetAddress());
     loc.setPostalCode(addr.postalCode());
@@ -325,7 +315,7 @@ KPublicTransport::StopoverRequest PublicTransport::stopoverRequestForPlace(const
 {
     KPublicTransport::StopoverRequest req;
     req.setDateTime(std::max(dt, QDateTime::currentDateTime()));
-    req.setStop(PublicTransport::locationFromPlace(place, {}));
+    req.setStop(PublicTransport::locationFromPlace(place));
     req.setDownloadAssets(true);
     return req;
 }

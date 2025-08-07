@@ -132,8 +132,7 @@ Kirigami.ScrollablePage {
         var departureLocation;
         if (place) {
             country = place.address.addressCountry;
-            departureLocation = PublicTransport.locationFromPlace(place, undefined);
-            departureLocation.name = place.name;
+            departureLocation = PublicTransport.locationFromPlace(place);
         }
 
         pageStack.clear()

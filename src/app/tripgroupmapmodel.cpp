@@ -8,6 +8,7 @@
 #include "reservationmanager.h"
 #include "tripgroup.h"
 
+#include <KItinerary/Event>
 #include <KItinerary/LocationUtil>
 #include <KItinerary/Reservation>
 #include <KItinerary/SortUtil>
@@ -47,6 +48,17 @@ QRectF TripGroupMapModel::boundingBox() const
     return m_boundingBox;
 }
 
+[[nodiscard]] static KPublicTransport::Location locationFromPlace(const QVariant &place, const QVariant &res)
+{
+    auto loc = PublicTransport::locationFromPlace(place);
+    if (KItinerary::JsonLd::isA<EventReservation>(res)) {
+        if (const auto n = res.value<EventReservation>().reservationFor().value<Event>().name(); !n.isEmpty()) {
+            loc.setName(n);
+        }
+    }
+    return loc;
+}
+
 void TripGroupMapModel::recompute()
 {
     if (!m_tripGroupMgr || m_tripGroupId.isEmpty() || !m_liveDataMgr || !m_transferMgr) {
@@ -72,8 +84,8 @@ void TripGroupMapModel::recompute()
                 expandJourneySection(jny);
             } else {
                 KPublicTransport::JourneySection jnySec;
-                jnySec.setFrom(PublicTransport::locationFromPlace(LocationUtil::departureLocation(res), res));
-                jnySec.setTo(PublicTransport::locationFromPlace(LocationUtil::arrivalLocation(res), res));
+                jnySec.setFrom(PublicTransport::locationFromPlace(LocationUtil::departureLocation(res)));
+                jnySec.setTo(PublicTransport::locationFromPlace(LocationUtil::arrivalLocation(res)));
                 jnySec.setScheduledDepartureTime(SortUtil::startDateTime(res));
                 jnySec.setScheduledArrivalTime(SortUtil::endDateTime(res));
                 jnySec.setMode(JourneySection::PublicTransport);
@@ -88,7 +100,7 @@ void TripGroupMapModel::recompute()
             }
         } else {
             MapPointEntry point;
-            point.location = PublicTransport::locationFromPlace(LocationUtil::location(res), res);
+            point.location = locationFromPlace(LocationUtil::location(res), res);
             if (!point.location.hasCoordinate()) {
                 continue;
             }

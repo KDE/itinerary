@@ -87,17 +87,17 @@ void TripGroupLocationModel::populate()
         const auto res = m_tripGroupMgr->reservationManager()->reservation(resId);
         if (LocationUtil::isLocationChange(res)) {
             Entry dep;
-            dep.location = PublicTransport::locationFromPlace(LocationUtil::departureLocation(res), res);
+            dep.location = PublicTransport::locationFromPlace(LocationUtil::departureLocation(res));
             dep.lastUse = SortUtil::startDateTime(res);
             addEntry(std::move(dep));
 
             Entry arr;
-            arr.location = PublicTransport::locationFromPlace(LocationUtil::arrivalLocation(res), res);
+            arr.location = PublicTransport::locationFromPlace(LocationUtil::arrivalLocation(res));
             arr.lastUse = SortUtil::endDateTime(res);
             addEntry(std::move(arr));
         } else {
             Entry e;
-            e.location = PublicTransport::locationFromPlace(LocationUtil::location(res), res);
+            e.location = PublicTransport::locationFromPlace(LocationUtil::location(res));
             e.lastUse = SortUtil::startDateTime(res);
             addEntry(std::move(e));
         }

@@ -498,7 +498,7 @@ KPublicTransport::JourneyRequest TimelineDelegateController::journeyRequest() co
     }
 
     KPublicTransport::JourneyRequest req;
-    req.setFrom(PublicTransport::locationFromPlace(LocationUtil::departureLocation(res), res));
+    req.setFrom(PublicTransport::locationFromPlace(LocationUtil::departureLocation(res)));
     auto depTime = QDateTime::currentDateTime();
     if (SortUtil::hasStartTime(res)) {
         depTime = std::max(depTime, SortUtil::startDateTime(res));
@@ -527,7 +527,7 @@ QList<KPublicTransport::Location> TimelineDelegateController::journeyDestination
     if (!isJourneyCandidate(prevRes)) {
         return {};
     }
-    dests.push_back(PublicTransport::locationFromPlace(LocationUtil::arrivalLocation(prevRes), prevRes));
+    dests.push_back(PublicTransport::locationFromPlace(LocationUtil::arrivalLocation(prevRes)));
     while (true) {
         auto endBatchId = m_resMgr->nextBatch(prevBatchId);
         auto endRes = m_resMgr->reservation(endBatchId);
@@ -535,7 +535,7 @@ QList<KPublicTransport::Location> TimelineDelegateController::journeyDestination
             break;
         }
 
-        dests.push_back(PublicTransport::locationFromPlace(LocationUtil::arrivalLocation(endRes), endRes));
+        dests.push_back(PublicTransport::locationFromPlace(LocationUtil::arrivalLocation(endRes)));
         prevRes = endRes;
         prevBatchId = endBatchId;
     }

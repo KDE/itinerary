@@ -103,16 +103,16 @@ static bool isSameDateTime(const QDateTime &lhs, const QDateTime &rhs)
     return false;
 }
 
-static bool isSameDeparture(const QVariant &depLoc, const QVariant &res, const QDateTime &depTime, const KPublicTransport::Stopover &stop)
+static bool isSameDeparture(const QVariant &depLoc, const QDateTime &depTime, const KPublicTransport::Stopover &stop)
 {
     return isSameDateTime(depTime, stop.scheduledDepartureTime())
-        && KPublicTransport::Location::isSame(PublicTransport::locationFromPlace(depLoc, res), stop.stopPoint());
+        && KPublicTransport::Location::isSame(PublicTransport::locationFromPlace(depLoc), stop.stopPoint());
 }
 
-static bool isSameArrival(const QVariant &arrLoc, const QVariant &res, const QDateTime &arrTime, const KPublicTransport::Stopover &stop)
+static bool isSameArrival(const QVariant &arrLoc, const QDateTime &arrTime, const KPublicTransport::Stopover &stop)
 {
     return isSameDateTime(arrTime, stop.scheduledArrivalTime())
-        && KPublicTransport::Location::isSame(PublicTransport::locationFromPlace(arrLoc, res), stop.stopPoint());
+        && KPublicTransport::Location::isSame(PublicTransport::locationFromPlace(arrLoc), stop.stopPoint());
 }
 
 KPublicTransport::JourneySection PublicTransportMatcher::subJourneyForReservation(const QVariant &res, const KPublicTransport::JourneySection &journey)
@@ -123,8 +123,8 @@ KPublicTransport::JourneySection PublicTransportMatcher::subJourneyForReservatio
         return {};
     }
 
-    const auto sameDep = isSameDeparture(KItinerary::LocationUtil::departureLocation(res), res, KItinerary::SortUtil::startDateTime(res), journey.departure());
-    const auto sameArr = isSameArrival(KItinerary::LocationUtil::arrivalLocation(res), res, KItinerary::SortUtil::endDateTime(res), journey.arrival());
+    const auto sameDep = isSameDeparture(KItinerary::LocationUtil::departureLocation(res), KItinerary::SortUtil::startDateTime(res), journey.departure());
+    const auto sameArr = isSameArrival(KItinerary::LocationUtil::arrivalLocation(res), KItinerary::SortUtil::endDateTime(res), journey.arrival());
     if (sameDep && sameArr) {
         return journey;
     }
@@ -135,7 +135,7 @@ KPublicTransport::JourneySection PublicTransportMatcher::subJourneyForReservatio
     auto it = stopovers.begin();
     if (!sameDep) {
         for (; it != stopovers.end(); ++it) {
-            if (isSameDeparture(KItinerary::LocationUtil::departureLocation(res), res, KItinerary::SortUtil::startDateTime(res), *it)) {
+            if (isSameDeparture(KItinerary::LocationUtil::departureLocation(res), KItinerary::SortUtil::startDateTime(res), *it)) {
                 result.setDeparture(*it);
                 break;
             }
@@ -147,7 +147,7 @@ KPublicTransport::JourneySection PublicTransportMatcher::subJourneyForReservatio
     ++it;
     auto it2 = it;
     for (; it2 != stopovers.end(); ++it2) {
-        if (isSameArrival(KItinerary::LocationUtil::arrivalLocation(res), res, KItinerary::SortUtil::endDateTime(res), *it2)) {
+        if (isSameArrival(KItinerary::LocationUtil::arrivalLocation(res), KItinerary::SortUtil::endDateTime(res), *it2)) {
             result.setArrival(*it2);
             break;
         }

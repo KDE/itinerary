@@ -38,10 +38,8 @@ class PublicTransport
 public:
     /** Obtain a KPublicTransport location object from a KItinerary place.
      *  @param place The place to convert to a location
-     *  @param reservation The enclosing reservation object of this place.
-     *  This matters to decide how to interpret the name/address/etc of the place.
      */
-    Q_INVOKABLE static KPublicTransport::Location locationFromPlace(const QVariant &place, const QVariant &reservation);
+    Q_INVOKABLE static KPublicTransport::Location locationFromPlace(const QVariant &place);
 
     /** Create a KItinerary place type from the given KPublicTransport::Location. */
     template<typename T>
