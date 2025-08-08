@@ -352,15 +352,17 @@ TransferManager::CheckTransferResult TransferManager::checkTransferBefore(const 
     // check if there is a transfer after prevRes already
     const auto prevTransfer = this->transfer(prevResId, Transfer::After);
     if (prevTransfer.state() != Transfer::UndefinedState && prevTransfer.state() != Transfer::Discarded) {
+        const std::chrono::seconds layoverTime(prevTransfer.anchorTime().secsTo(SortUtil::startDateTime(res)));
         if (prevTransfer.floatingLocationType() == Transfer::FavoriteLocation
             && KPublicTransport::Location::distance(transfer.to(), prevTransfer.to()) < Constants::MaximumFavoriteLocationTransferDistance) {
             transfer.setFrom(prevTransfer.to());
             transfer.setFromName(prevTransfer.toName());
             transfer.setFloatingLocationType(Transfer::FavoriteLocation);
-            const std::chrono::seconds layoverTime(prevTransfer.anchorTime().secsTo(SortUtil::startDateTime(res)));
             return layoverTime < Constants::FavoriteLocationAutoTransferThreshold ? CanAddManually : ShouldAutoAdd;
         }
-        return ShouldRemove;
+        if (layoverTime < Constants::FavoriteLocationAutoTransferThreshold) {
+            return ShouldRemove;
+        }
     }
 
     QVariant prevLoc;
@@ -446,15 +448,17 @@ TransferManager::CheckTransferResult TransferManager::checkTransferAfter(const Q
     // check if there is a transfer before nextRes already
     const auto nextTransfer = this->transfer(nextResId, Transfer::Before);
     if (nextTransfer.state() != Transfer::UndefinedState && nextTransfer.state() != Transfer::Discarded) {
+        const std::chrono::seconds layoverTime(SortUtil::endDateTime(res).secsTo(nextTransfer.anchorTime()));
         if (nextTransfer.floatingLocationType() == Transfer::FavoriteLocation
             && KPublicTransport::Location::distance(transfer.from(), nextTransfer.from()) < Constants::MaximumFavoriteLocationTransferDistance) {
             transfer.setTo(nextTransfer.from());
             transfer.setToName(nextTransfer.fromName());
             transfer.setFloatingLocationType(Transfer::FavoriteLocation);
-            const std::chrono::seconds layoverTime(SortUtil::endDateTime(res).secsTo(nextTransfer.anchorTime()));
             return layoverTime < Constants::FavoriteLocationAutoTransferThreshold ? CanAddManually : ShouldAutoAdd;
         }
-        return ShouldRemove;
+        if (layoverTime < Constants::FavoriteLocationAutoTransferThreshold) {
+            return ShouldRemove;
+        }
     }
 
     QVariant nextLoc;
