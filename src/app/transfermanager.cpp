@@ -371,7 +371,7 @@ TransferManager::CheckTransferResult TransferManager::checkTransferBefore(const 
     } else {
         prevLoc = LocationUtil::location(prevRes);
     }
-    const auto arrivalTime = SortUtil::endDateTime(prevRes);
+    const auto arrivalTime = SortUtil::hasEndTime(prevRes) ? SortUtil::endDateTime(prevRes) : SortUtil::startDateTime(prevRes);
     const auto departureTime = SortUtil::startDateTime(res);
     const std::chrono::seconds layoverTime(arrivalTime.secsTo(departureTime));
     const std::chrono::days layoverDays(arrivalTime.date().daysTo(departureTime.date()));
