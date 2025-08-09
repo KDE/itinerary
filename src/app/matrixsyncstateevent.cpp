@@ -54,7 +54,7 @@ bool MatrixSyncStateEvent::needsDownload() const
 
 bool MatrixSyncStateEvent::needsUpload() const
 {
-    return url().isEmpty() && !fileName().isEmpty();
+    return url().isEmpty() && (!m_fileName.isEmpty() || m_tempFile);
 }
 
 QUrl MatrixSyncStateEvent::url() const
@@ -79,12 +79,39 @@ void MatrixSyncStateEvent::setFileInfo(const Quotient::FileSourceInfo &info)
 
 QString MatrixSyncStateEvent::fileName() const
 {
-    return m_tempFile ? m_tempFile->fileName() : m_fileName;
+    if (m_tempFile) {
+        return m_tempFile->fileName();
+    }
+
+    if (!m_fileName.isEmpty()) {
+        return m_fileName;
+    }
+
+    if (m_content.contains("content"_L1)) { // deal with small file inline storage
+        m_tempFile = std::make_unique<QTemporaryFile>();
+        m_tempFile->open();
+        m_tempFile->write(content());
+        m_tempFile->close();
+        return m_tempFile->fileName();
+    }
+
+    return {};
 }
 
 void MatrixSyncStateEvent::setFileName(const QString &fileName)
 {
-    // TODO we could also store small enough files inline here
+    // download
+    if (!url().isEmpty()) {
+        m_fileName = fileName;
+        return;
+    }
+
+    // upload: store small files inline
+    QFile f(fileName);
+    if (f.open(QFile::ReadOnly) && f.size() < (CONTENT_SIZE_LIMIT * 4 / 3)) {
+        setContent(f.readAll());
+        return;
+    }
     m_fileName = fileName;
 }
 

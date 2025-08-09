@@ -72,6 +72,25 @@ private Q_SLOTS:
             QCOMPARE(state.contentJson().value("file"_L1).toObject().value("url"_L1).toString(), "mxc://foo"_L1);
             QCOMPARE(state.contentJson().value("extra"_L1).toObject(), QJsonObject({{ "metaData"_L1, "BBB"_L1}}));
         }
+
+        // small file inline storage
+        ev = MatrixSyncStateEvent(MatrixSync::ReservationEventType, u"12345"_s);
+        ev.setFileName(SOURCE_DIR "/data/boardingpass-v1.pkpass"_L1);
+        QVERIFY(!ev.needsDownload());
+        QVERIFY(!ev.needsUpload());
+        QVERIFY(!ev.fileName().isEmpty());
+        {
+            auto state = ev.toQuotient();
+            QCOMPARE(state.contentJson().value("contentType"_L1).toString(), "base64"_L1);
+            QCOMPARE(state.contentJson().contains("content"_L1), true);
+        }
+
+        // large file needing upload
+        ev = MatrixSyncStateEvent(MatrixSync::ReservationEventType, u"12345"_s);
+        ev.setFileName(SOURCE_DIR "/data/524-135-forecast.xml"_L1);
+        QVERIFY(!ev.needsDownload());
+        QVERIFY(ev.needsUpload());
+        QVERIFY(ev.fileName().endsWith("524-135-forecast.xml"_L1));
     }
 
     void testStateEventInbound()
@@ -94,6 +113,12 @@ private Q_SLOTS:
         QCOMPARE(ev->stateKey(), "12345"_L1);
         QCOMPARE(ev->content(), "test");
         QCOMPARE(ev->roomId(), "room42"_L1);
+        QVERIFY(!ev->fileName().isEmpty());
+        {
+            QFile f(ev->fileName());
+            QVERIFY(f.open(QFile::ReadOnly));
+            QCOMPARE(f.readAll(), "test");
+        }
 
         ev = MatrixSyncStateEvent::fromQuotient(Quotient::StateEvent(MatrixSync::LiveDataEventType, u"12345"_s, QJsonObject{{
             { "version"_L1, 1},
