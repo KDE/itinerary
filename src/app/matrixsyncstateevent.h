@@ -101,7 +101,7 @@ private:
     QJsonObject m_content;
     QString m_roomId;
     QString m_fileName;
-    std::unique_ptr<QTemporaryFile> m_tempFile;
+    mutable std::unique_ptr<QTemporaryFile> m_tempFile;
 };
 
 #endif
