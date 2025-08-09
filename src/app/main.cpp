@@ -27,6 +27,7 @@
 #include "localizer.h"
 #include "locationinformation.h"
 #include "mapdownloadmanager.h"
+#include "matrixcontroller.h"
 #include "migrator.h"
 #include "navigationcontroller.h"
 #include "notificationconfigcontroller.h"
@@ -337,6 +338,9 @@ int main(int argc, char **argv)
     QObject::connect(&appController, &ApplicationController::reloadSettings, &settings, &Settings::reloadSettings);
 
     OnlineTicketImporter::setNetworkAccessManagerFactory(namFactory);
+
+    MatrixController matrixController;
+    MatrixControllerInstance::instance = &matrixController;
 
     registerKItineraryTypes();
     registerApplicationSingletons();
