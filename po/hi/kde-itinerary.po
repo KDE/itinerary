@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 18:30+0000\n"
+"POT-Creation-Date: 2025-08-10 00:43+0000\n"
 "PO-Revision-Date: 2024-12-15 19:32+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
@@ -1583,7 +1583,7 @@ msgstr "अद्यतन के लिए जाँच"
 msgid "Save As…"
 msgstr ""
 
-#: app/gpxexport.cpp:33 app/main.cpp:206 app/Main.qml:20 app/Main.qml:68
+#: app/gpxexport.cpp:33 app/main.cpp:207 app/Main.qml:20 app/Main.qml:68
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "केडीई यात्रा कार्यक्रम"
@@ -2666,23 +2666,23 @@ msgstr "प्रकार एम"
 msgid "Type N"
 msgstr "प्रकार एन"
 
-#: app/main.cpp:214
+#: app/main.cpp:215
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "डिजिटल यात्रा सहायक"
 
-#: app/main.cpp:215
+#: app/main.cpp:216
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "कॉपीराइट © केडीई समुदाय"
 
-#: app/main.cpp:222
+#: app/main.cpp:223
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "दिए गए पेज पर यात्रा कार्यक्रम खोलें"
 
-#: app/main.cpp:227
+#: app/main.cpp:228
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
