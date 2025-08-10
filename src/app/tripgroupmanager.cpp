@@ -436,7 +436,7 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
         }
 
         // maximum trip duration exceeded?
-        const auto endDt = SortUtil::endDateTime(curRes);
+        const auto endDt = SortUtil::hasEndTime(curRes) ? SortUtil::endDateTime(curRes) : SortUtil::startDateTime(curRes);
         if (explicitSearchDone && beginDt.daysTo(endDt) > MaximumTripDuration) {
             qDebug() << "  aborting search, maximum trip duration reached";
             break;
