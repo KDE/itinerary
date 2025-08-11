@@ -329,7 +329,7 @@ msgstr "文件已成功保存。"
 msgid ""
 "File was exported with a newer version of Itinerary. Some information might "
 "not be imported correctly."
-msgstr ""
+msgstr "该文件是使用较新版本的 Itinerary 导出的。部分信息可能无法正确导入。"
 
 #: app/applicationcontroller.cpp:673
 #, kde-format
@@ -487,7 +487,7 @@ msgstr ""
 #: app/TrainPage.qml:183 app/TrainPage.qml:267
 #, kde-format
 msgid "Additional information"
-msgstr ""
+msgstr "更多信息"
 
 #: app/BoatPage.qml:99 app/BusPage.qml:144 app/TrainPage.qml:211
 #, kde-format
@@ -1935,16 +1935,14 @@ msgid "Import Reservation"
 msgstr "导入预约"
 
 #: app/ImportAction.qml:43
-#, fuzzy, kde-format
-#| msgid "Apple Wallet pass (*.pkpass)"
+#, kde-format
 msgid "Apple Wallet passes (*.pkpass)"
-msgstr "Apple 钱包通行证文件 (*.pkpass)"
+msgstr ""
 
 #: app/ImportAction.qml:43
-#, fuzzy, kde-format
-#| msgid "Apple Wallet pass (*.pkpass)"
+#, kde-format
 msgid "Apple Wallet pass bundles (*.pkpasses)"
-msgstr "Apple 钱包通行证文件 (*.pkpass)"
+msgstr ""
 
 #: app/ImportAction.qml:43
 #, kde-format
@@ -4672,6 +4670,3 @@ msgstr "已登出"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr ""
-
-#~ msgid "PkPass files (*.pkpass)"
-#~ msgstr "PkPass 文件 (*.pkpass)"
