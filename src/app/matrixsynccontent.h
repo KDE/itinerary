@@ -29,8 +29,11 @@ namespace MatrixSyncContent
     [[nodiscard]] MatrixSyncStateEvent stateEventForBatch(const QString &batchId, const ReservationManager *resMgr);
     [[nodiscard]] MatrixSyncStateEvent stateEventForDeletedBatch(const QString &batchId);
 
+    /** Check if the given state event is a deleted batch. */
+    [[nodiscard]] bool isDeletedBatch(const MatrixSyncStateEvent &event);
+
     /** Read reservation batch state event. */
-    [[nodiscard]] QString readBatch(const MatrixSyncStateEvent &event, ReservationManager *resMgr);
+    QString readBatch(const MatrixSyncStateEvent &event, ReservationManager *resMgr);
 
     /** Create a state event for live data for a given batch. */
     [[nodiscard]] MatrixSyncStateEvent stateEventForLiveData(const QString &batchId);

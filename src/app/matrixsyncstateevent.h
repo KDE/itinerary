@@ -71,6 +71,7 @@ public:
 
     // main content, can be stored inline or in an external file
     [[nodiscard]] QByteArray content() const;
+    [[nodiscard]] bool hasContent() const;
     void setContent(const QByteArray &content);
 
     // Id of the room this event came from (for incoming events only)

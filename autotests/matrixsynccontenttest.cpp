@@ -52,6 +52,7 @@ private Q_SLOTS:
         QCOMPARE(ev.type(), "org.kde.itinerary.reservation"_L1);
         QCOMPARE(ev.stateKey(), batchId);
         QVERIFY(!ev.content().isEmpty());
+        QVERIFY(!MatrixSyncContent::isDeletedBatch(ev));
 
         QCOMPARE(MatrixSyncContent::readBatch(ev, &mgr), batchId);
         QCOMPARE(mgr.batches().size(), 2);
@@ -71,6 +72,7 @@ private Q_SLOTS:
         QCOMPARE(ev.type(), "org.kde.itinerary.reservation"_L1);
         QCOMPARE(ev.stateKey(), batchId);
         QVERIFY(ev.content().isEmpty());
+        QVERIFY(MatrixSyncContent::isDeletedBatch(ev));
 
         QCOMPARE(MatrixSyncContent::readBatch(ev, &mgr), QString());
         QCOMPARE(mgr.batches().size(), 1);

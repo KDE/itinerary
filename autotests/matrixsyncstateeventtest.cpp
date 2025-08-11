@@ -28,6 +28,7 @@ private Q_SLOTS:
         auto ev = MatrixSyncStateEvent(MatrixSync::ReservationEventType, u"12345"_s);
         QVERIFY(!ev.needsDownload());
         QVERIFY(!ev.needsUpload());
+        QVERIFY(!ev.hasContent());
         {
             auto state = ev.toQuotient();
             QCOMPARE(state.matrixType(), MatrixSync::ReservationEventType);
@@ -39,6 +40,7 @@ private Q_SLOTS:
         ev.setContent("ABC");
         QVERIFY(!ev.needsDownload());
         QVERIFY(!ev.needsUpload());
+        QVERIFY(ev.hasContent());
         {
             auto state = ev.toQuotient();
             QCOMPARE(state.contentJson().value("contentType"_L1).toString(), "none"_L1);
@@ -65,6 +67,7 @@ private Q_SLOTS:
         md.url = QUrl(u"mxc://foo"_s);
         ev.setFileInfo(md);
         QVERIFY(!ev.needsUpload());
+        QVERIFY(ev.hasContent());
         {
             auto state = ev.toQuotient();
             QCOMPARE(state.contentJson().value("contentType"_L1).toString(), "file"_L1);
@@ -79,6 +82,7 @@ private Q_SLOTS:
         QVERIFY(!ev.needsDownload());
         QVERIFY(!ev.needsUpload());
         QVERIFY(!ev.fileName().isEmpty());
+        QVERIFY(ev.hasContent());
         {
             auto state = ev.toQuotient();
             QCOMPARE(state.contentJson().value("contentType"_L1).toString(), "base64"_L1);
@@ -91,6 +95,7 @@ private Q_SLOTS:
         QVERIFY(!ev.needsDownload());
         QVERIFY(ev.needsUpload());
         QVERIFY(ev.fileName().endsWith("524-135-forecast.xml"_L1));
+        QVERIFY(ev.hasContent());
     }
 
     void testStateEventInbound()
@@ -114,6 +119,7 @@ private Q_SLOTS:
         QCOMPARE(ev->content(), "test");
         QCOMPARE(ev->roomId(), "room42"_L1);
         QVERIFY(!ev->fileName().isEmpty());
+        QVERIFY(ev->hasContent());
         {
             QFile f(ev->fileName());
             QVERIFY(f.open(QFile::ReadOnly));
@@ -133,6 +139,7 @@ private Q_SLOTS:
         QVERIFY(ev);
         QVERIFY(ev->needsDownload());
         QVERIFY(!ev->needsUpload());
+        QVERIFY(ev->hasContent());
 
         QTemporaryFile f;
         QVERIFY(f.open());
@@ -143,6 +150,7 @@ private Q_SLOTS:
         QVERIFY(!ev->needsUpload());
         QCOMPARE(ev->content(), "external content");
         QCOMPARE(ev->extraData("metaData"_L1), "ABC"_L1);
+        QVERIFY(ev->hasContent());
     }
 };
 

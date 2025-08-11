@@ -134,6 +134,11 @@ QByteArray MatrixSyncStateEvent::content() const
     return {};
 }
 
+bool MatrixSyncStateEvent::hasContent() const
+{
+    return m_content.contains("content"_L1) || !m_fileName.isEmpty() || !url().isEmpty();
+}
+
 void MatrixSyncStateEvent::setContent(const QByteArray &content)
 {
     // look for characters that would need some form of quoting in JSON (and thus increase the size)

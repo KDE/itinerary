@@ -39,16 +39,21 @@ MatrixSyncStateEvent MatrixSyncContent::stateEventForDeletedBatch(const QString 
     return MatrixSyncStateEvent(MatrixSync::ReservationEventType, batchId);
 }
 
+bool MatrixSyncContent::isDeletedBatch(const MatrixSyncStateEvent &event)
+{
+    return event.type() == MatrixSync::ReservationEventType && !event.hasContent();
+}
+
 QString MatrixSyncContent::readBatch(const MatrixSyncStateEvent &event, ReservationManager *resMgr)
 {
     auto batchId = event.stateKey();
-    const auto content = QJsonDocument::fromJson(event.content()).object();
-    if (content.isEmpty()) {
+    if (MatrixSyncContent::isDeletedBatch(event)) {
         // deleted
         resMgr->removeBatch(batchId);
         return {};
     }
 
+    const auto content = QJsonDocument::fromJson(event.content()).object();
     std::vector<ReservationManager::ReservationChange> changes;
     changes.reserve(content.size());
     changes.emplace_back(batchId, KItinerary::JsonLdDocument::fromJsonSingular(content.value(batchId).toObject()));
