@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 add_executable(pkpassviewer pkpassviewer.cpp pkpassviewer.qrc)
-target_link_libraries(pkpassviewer PRIVATE itinerary KF6::I18nQml)
+target_link_libraries(pkpassviewer PRIVATE itinerary itineraryplugin KMatrixplugin KF6::I18nQml)
 
 add_executable(journeyquerytest journeyquerytest.cpp journeyquerytest.qrc)
 target_link_libraries(journeyquerytest PRIVATE itinerary KF6::I18nQml)

@@ -5,12 +5,5 @@
 <RCC>
     <qresource prefix="/">
         <file alias="qt/qml/org/kde/itinerary/pkpassviewer.qml">pkpassviewer.qml</file>
-        <file alias="qt/qml/org/kde/itinerary/BarcodeScanModeButton.qml">../src/app/BarcodeScanModeButton.qml</file>
-        <file alias="qt/qml/org/kde/itinerary/BarcodeScanModeController.qml">../src/app/BarcodeScanModeController.qml</file>
-        <file alias="qt/qml/org/kde/itinerary/BoardingPass.qml">../src/app/BoardingPass.qml</file>
-        <file alias="qt/qml/org/kde/itinerary/EventTicket.qml">../src/app/EventTicket.qml</file>
-        <file alias="qt/qml/org/kde/itinerary/GenericPass.qml">../src/app/GenericPass.qml</file>
-        <file alias="qt/qml/org/kde/itinerary/PkPassBarcode.qml">../src/app/PkPassBarcode.qml</file>
-        <file alias="qt/qml/org/kde/itinerary/PkPassPage.qml">../src/app/PkPassPage.qml</file>
     </qresource>
 </RCC>
