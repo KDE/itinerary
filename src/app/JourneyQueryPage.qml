@@ -5,6 +5,8 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
@@ -22,6 +24,9 @@ Kirigami.ScrollablePage {
     /** The journey to query for. */
     property alias journeyRequest: journeyModel.request
     property alias publicTransportManager: journeyModel.manager
+
+    /** Showing results for an arrival query. */
+    readonly property bool isArrival: root.journeyRequest.dateTimeMode == JourneyRequest.Arrival
 
     Kirigami.Theme.inherit: false
     Kirigami.Theme.colorSet: Kirigami.Theme.Window
@@ -70,13 +75,14 @@ Kirigami.ScrollablePage {
                 icon.name: "checkmark"
                 visible: journeyView.currentIndex === top.index
                 enabled: top.journey.disruptionEffect !== Disruption.NoService
-                onClicked: root.journey = journey
+                onClicked: root.journey = top.journey
             }
         }
 
         section {
-            property: "scheduledDepartureDate"
+            property: root.isArrival ? "scheduledArrivalDate" : "scheduledDepartureDate"
             delegate: TimelineSectionDelegate {
+                required property string section
                 day: section
             }
         }
@@ -115,7 +121,7 @@ Kirigami.ScrollablePage {
                 FormCard.FormTextDelegate {
                     text: i18n("Data providers:")
                     description: PublicTransport.attributionSummary(journeyModel.attributions)
-                    onLinkActivated: Qt.openUrlExternally(link)
+                    onLinkActivated: (link) => { Qt.openUrlExternally(link); }
                 }
             }
         }
