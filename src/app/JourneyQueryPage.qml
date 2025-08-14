@@ -142,6 +142,18 @@ Kirigami.ScrollablePage {
             anchors.centerIn: parent
             width: parent.width - Kirigami.Units.gridUnit * 4
         }
+
+        // when searching for arrivals the closest result is at the bottom of the list
+        // so jump there once the first result batch has been added
+        // ideally we'd want to automatically move there also for subsequent batches *unless*
+        // the user has meanwhile altered the scroll position manually, but that's hard to detect reliably
+        property int previousCount: 0
+        onCountChanged: {
+            if (root.isArrival && previousCount === 0) {
+                Qt.callLater(positionViewAtEnd);
+            }
+            previousCount = count;
+        }
     }
 
     footer: ColumnLayout {
