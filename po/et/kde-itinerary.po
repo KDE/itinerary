@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-10 00:43+0000\n"
+"POT-Creation-Date: 2025-08-15 00:46+0000\n"
 "PO-Revision-Date: 2020-05-04 10:51+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -957,7 +957,7 @@ msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "%1 väljub varem"
 
-#: app/DepartureQueryPage.qml:145 app/JourneyQueryPage.qml:109
+#: app/DepartureQueryPage.qml:145 app/JourneyQueryPage.qml:115
 #: app/TransferPage.qml:321
 #, fuzzy, kde-format
 #| msgid "Alternative Connections"
@@ -965,14 +965,14 @@ msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "Alternatiivsed ühendused"
 
-#: app/DepartureQueryPage.qml:154 app/JourneyQueryPage.qml:116
+#: app/DepartureQueryPage.qml:154 app/JourneyQueryPage.qml:122
 #: app/TransferPage.qml:328
 #, fuzzy, kde-format
 #| msgid "Data providers: %1"
 msgid "Data providers:"
 msgstr "Andmepakkujad: %1"
 
-#: app/DepartureQueryPage.qml:162 app/JourneyQueryPage.qml:125
+#: app/DepartureQueryPage.qml:162 app/JourneyQueryPage.qml:131
 #: app/TransferPage.qml:336
 #, fuzzy, kde-format
 #| msgid "Boarding:"
@@ -980,7 +980,7 @@ msgctxt "@info:placeholder"
 msgid "Loading"
 msgstr "Pardaleminek:"
 
-#: app/DepartureQueryPage.qml:162 app/JourneyQueryPage.qml:127
+#: app/DepartureQueryPage.qml:162 app/JourneyQueryPage.qml:133
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:status"
@@ -2342,25 +2342,25 @@ msgctxt "@action:button"
 msgid "Show Map"
 msgstr ""
 
-#: app/JourneyQueryPage.qml:69 app/TransferPage.qml:244
+#: app/JourneyQueryPage.qml:74 app/TransferPage.qml:244
 #, kde-format
 msgid "Select"
 msgstr "Vali"
 
-#: app/JourneyQueryPage.qml:100 app/TransferPage.qml:312
+#: app/JourneyQueryPage.qml:106 app/TransferPage.qml:312
 #, fuzzy, kde-format
 #| msgid "Alternative Connections"
 msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr "Alternatiivsed ühendused"
 
-#: app/JourneyQueryPage.qml:129
+#: app/JourneyQueryPage.qml:135
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No journeys found"
 msgstr ""
 
-#: app/JourneyQueryPage.qml:163
+#: app/JourneyQueryPage.qml:169
 #, kde-format
 msgid "Still fetching results…"
 msgstr ""

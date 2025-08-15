@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-10 00:43+0000\n"
+"POT-Creation-Date: 2025-08-15 00:46+0000\n"
 "PO-Revision-Date: 2025-08-06 09:33+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -872,27 +872,27 @@ msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "Zamatu aurreko irteerak"
 
-#: app/DepartureQueryPage.qml:145 app/JourneyQueryPage.qml:109
+#: app/DepartureQueryPage.qml:145 app/JourneyQueryPage.qml:115
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "Zamatu ondorengo konexioak"
 
-#: app/DepartureQueryPage.qml:154 app/JourneyQueryPage.qml:116
+#: app/DepartureQueryPage.qml:154 app/JourneyQueryPage.qml:122
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
 msgstr "Datu hornitzaileak:"
 
-#: app/DepartureQueryPage.qml:162 app/JourneyQueryPage.qml:125
+#: app/DepartureQueryPage.qml:162 app/JourneyQueryPage.qml:131
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Loading"
 msgstr "Zamatzen"
 
-#: app/DepartureQueryPage.qml:162 app/JourneyQueryPage.qml:127
+#: app/DepartureQueryPage.qml:162 app/JourneyQueryPage.qml:133
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:status"
@@ -2146,24 +2146,24 @@ msgctxt "@action:button"
 msgid "Show Map"
 msgstr "Erakutsi mapa"
 
-#: app/JourneyQueryPage.qml:69 app/TransferPage.qml:244
+#: app/JourneyQueryPage.qml:74 app/TransferPage.qml:244
 #, kde-format
 msgid "Select"
 msgstr "Hautatu"
 
-#: app/JourneyQueryPage.qml:100 app/TransferPage.qml:312
+#: app/JourneyQueryPage.qml:106 app/TransferPage.qml:312
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr "Zamatu aurreko konexioak"
 
-#: app/JourneyQueryPage.qml:129
+#: app/JourneyQueryPage.qml:135
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No journeys found"
 msgstr "Ez du bidaiarik aurkitu"
 
-#: app/JourneyQueryPage.qml:163
+#: app/JourneyQueryPage.qml:169
 #, kde-format
 msgid "Still fetching results…"
 msgstr "Oraindik emaitzan eskuratzen…"

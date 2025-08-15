@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-10 00:43+0000\n"
+"POT-Creation-Date: 2025-08-15 00:46+0000\n"
 "PO-Revision-Date: 2025-08-06 08:17+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -870,27 +870,27 @@ msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "טעינת יציאות מוקדמות יותר"
 
-#: app/DepartureQueryPage.qml:145 app/JourneyQueryPage.qml:109
+#: app/DepartureQueryPage.qml:145 app/JourneyQueryPage.qml:115
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "טעינת החלפת טיסות קודמות"
 
-#: app/DepartureQueryPage.qml:154 app/JourneyQueryPage.qml:116
+#: app/DepartureQueryPage.qml:154 app/JourneyQueryPage.qml:122
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
 msgstr "ספקי נתונים:"
 
-#: app/DepartureQueryPage.qml:162 app/JourneyQueryPage.qml:125
+#: app/DepartureQueryPage.qml:162 app/JourneyQueryPage.qml:131
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Loading"
 msgstr "בטעינה"
 
-#: app/DepartureQueryPage.qml:162 app/JourneyQueryPage.qml:127
+#: app/DepartureQueryPage.qml:162 app/JourneyQueryPage.qml:133
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:status"
@@ -2146,24 +2146,24 @@ msgctxt "@action:button"
 msgid "Show Map"
 msgstr "הצגת מפה"
 
-#: app/JourneyQueryPage.qml:69 app/TransferPage.qml:244
+#: app/JourneyQueryPage.qml:74 app/TransferPage.qml:244
 #, kde-format
 msgid "Select"
 msgstr "בחירה"
 
-#: app/JourneyQueryPage.qml:100 app/TransferPage.qml:312
+#: app/JourneyQueryPage.qml:106 app/TransferPage.qml:312
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr "טעינת החלפת טיסות קודמות"
 
-#: app/JourneyQueryPage.qml:129
+#: app/JourneyQueryPage.qml:135
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No journeys found"
 msgstr "לא נמצאו נסיעות"
 
-#: app/JourneyQueryPage.qml:163
+#: app/JourneyQueryPage.qml:169
 #, kde-format
 msgid "Still fetching results…"
 msgstr "התוצאות עדיין מתקבלות…"
