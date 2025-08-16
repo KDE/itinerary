@@ -29,9 +29,15 @@ Kirigami.ApplicationWindow {
     pageStack {
         columnView.columnResizeMode: Kirigami.ColumnView.SingleColumn
 
+        // HACK with KF 6.17 the below no longer shows title bars in mobile mode, use the settings from KTrip instead,
+        // which do seem to work
+        // globalToolBar {
+            // style: Kirigami.Settings.isMobile ? Kirigami.ApplicationHeaderStyle.Breadcrumb : Kirigami.ApplicationHeaderStyle.Auto
+            // showNavigationButtons: Kirigami.ApplicationHeaderStyle.ShowBackButton
+        // }
         globalToolBar {
-            style: Kirigami.Settings.isMobile ? Kirigami.ApplicationHeaderStyle.Breadcrumb : Kirigami.ApplicationHeaderStyle.Auto
-            showNavigationButtons: Kirigami.ApplicationHeaderStyle.ShowBackButton
+            style: Kirigami.ApplicationHeaderStyle.ToolBar
+            showNavigationButtons: pageStack.currentIndex > 0 || pageStack.layers.depth > 1 ? Kirigami.ApplicationHeaderStyle.ShowBackButton : 0
         }
     }
 
