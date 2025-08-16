@@ -94,7 +94,9 @@ bool MatrixManager::isVerifiedSession() const
         return false;
     }
     const auto c = connection();
-    return c->isVerifiedDevice(c->userId(), c->deviceId());
+    // check for database/olmAccount here as isVerifiedDevice doesn't
+    // which will cause a crash if the account is in a broken state
+    return c && c->database() && c->olmAccount() && c->isVerifiedDevice(c->userId(), c->deviceId());
 }
 
 void MatrixManager::setInfoString(const QString &infoString)
