@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-15 00:46+0000\n"
+"POT-Creation-Date: 2025-08-17 00:42+0000\n"
 "PO-Revision-Date: 2024-11-16 12:52+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -27,7 +27,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "steve.allewell@gmail.com"
 
-#: app/AboutPage.qml:18 app/Main.qml:96
+#: app/AboutPage.qml:18 app/Main.qml:102
 #, kde-format
 msgid "About"
 msgstr "About"
@@ -1584,7 +1584,7 @@ msgstr "Check for Updates"
 msgid "Save As…"
 msgstr ""
 
-#: app/gpxexport.cpp:33 app/main.cpp:207 app/Main.qml:20 app/Main.qml:68
+#: app/gpxexport.cpp:33 app/main.cpp:207 app/Main.qml:20 app/Main.qml:74
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -2448,7 +2448,7 @@ msgstr "Click to extend"
 msgid "Itinerary change"
 msgstr "Itinerary change"
 
-#: app/LiveStatusPage.qml:21 app/Main.qml:74
+#: app/LiveStatusPage.qml:21 app/Main.qml:80
 #, kde-format
 msgid "Live Status"
 msgstr "Live Status"
@@ -2695,29 +2695,29 @@ msgctxt "@info:shell"
 msgid "Files or URLs to import."
 msgstr "Files or URLs to import."
 
-#: app/Main.qml:82 app/WelcomePage.qml:41
+#: app/Main.qml:88 app/WelcomePage.qml:41
 #, kde-format
 msgid "Settings…"
 msgstr "Settings…"
 
-#: app/Main.qml:89 app/WelcomePage.qml:16
+#: app/Main.qml:95 app/WelcomePage.qml:16
 #, kde-format
 msgid "Help"
 msgstr "Help"
 
-#: app/Main.qml:178
+#: app/Main.qml:184
 #, fuzzy, kde-format
 #| msgid "Wi-Fi access for onboard information is available."
 msgctxt "@info:status"
 msgid "No onboard information available."
 msgstr "Wi-Fi access for onboard information is available."
 
-#: app/Main.qml:220
+#: app/Main.qml:226
 #, kde-format
 msgid "Map download finished."
 msgstr "Map download finished."
 
-#: app/Main.qml:281
+#: app/Main.qml:287
 #, kde-format
 msgctxt "@title:window"
 msgid "Matrix Session Verification"
@@ -4835,7 +4835,7 @@ msgstr ""
 msgid "Got it!"
 msgstr "Got it!"
 
-#: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:129
+#: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:131
 #, kde-format
 msgid "Syncing…"
 msgstr "Syncing…"
@@ -4850,7 +4850,7 @@ msgstr "This server does not support logging in using a password"
 msgid "Logging in…"
 msgstr "Logging in…"
 
-#: matrix/matrixmanager.cpp:114
+#: matrix/matrixmanager.cpp:116
 #, kde-format
 msgid "Logged out"
 msgstr "Logged out"
