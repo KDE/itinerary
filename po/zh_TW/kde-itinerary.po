@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-15 03:00+0000\n"
+"POT-Creation-Date: 2025-08-17 02:36+0000\n"
 "PO-Revision-Date: 2024-11-28 16:26+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -27,7 +27,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "mail@kisaragi-hiu.com"
 
-#: app/AboutPage.qml:18 app/Main.qml:96
+#: app/AboutPage.qml:18 app/Main.qml:102
 #, kde-format
 msgid "About"
 msgstr "關於"
@@ -1585,7 +1585,7 @@ msgstr "檢查是否有更新"
 msgid "Save As…"
 msgstr ""
 
-#: app/gpxexport.cpp:33 app/main.cpp:321 app/Main.qml:20 app/Main.qml:68
+#: app/gpxexport.cpp:33 app/main.cpp:321 app/Main.qml:20 app/Main.qml:74
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE 旅行計劃"
@@ -2445,7 +2445,7 @@ msgstr "按一下來展開"
 msgid "Itinerary change"
 msgstr "行程預訂變更"
 
-#: app/LiveStatusPage.qml:20 app/Main.qml:74
+#: app/LiveStatusPage.qml:20 app/Main.qml:80
 #, kde-format
 msgid "Live Status"
 msgstr "實時狀態"
@@ -2691,29 +2691,29 @@ msgctxt "@info:shell"
 msgid "Files or URLs to import."
 msgstr "要匯入的檔案或網址。"
 
-#: app/Main.qml:82 app/WelcomePage.qml:41
+#: app/Main.qml:88 app/WelcomePage.qml:41
 #, kde-format
 msgid "Settings…"
 msgstr "設定…"
 
-#: app/Main.qml:89 app/WelcomePage.qml:16
+#: app/Main.qml:95 app/WelcomePage.qml:16
 #, kde-format
 msgid "Help"
 msgstr "說明"
 
-#: app/Main.qml:178
+#: app/Main.qml:184
 #, fuzzy, kde-format
 #| msgid "No vehicle layout information available."
 msgctxt "@info:status"
 msgid "No onboard information available."
 msgstr "沒有可用的交通工具佈局資訊。"
 
-#: app/Main.qml:220
+#: app/Main.qml:226
 #, kde-format
 msgid "Map download finished."
 msgstr "地圖下載完成。"
 
-#: app/Main.qml:281
+#: app/Main.qml:287
 #, fuzzy, kde-format
 #| msgid "Matrix Integration"
 msgctxt "@title:window"
@@ -4791,7 +4791,7 @@ msgstr ""
 msgid "Got it!"
 msgstr "了解！"
 
-#: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:129
+#: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:131
 #, kde-format
 msgid "Syncing…"
 msgstr "同步中…"
@@ -4807,7 +4807,7 @@ msgstr "這個伺服器不支援透過密碼登入"
 msgid "Logging in…"
 msgstr "登入"
 
-#: matrix/matrixmanager.cpp:114
+#: matrix/matrixmanager.cpp:116
 #, fuzzy, kde-format
 #| msgid "Log out"
 msgid "Logged out"

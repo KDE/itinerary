@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-15 03:00+0000\n"
+"POT-Creation-Date: 2025-08-17 02:36+0000\n"
 "PO-Revision-Date: 2025-03-15 10:38+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -28,7 +28,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "olivermkellogg@gmail.com"
 
-#: app/AboutPage.qml:18 app/Main.qml:96
+#: app/AboutPage.qml:18 app/Main.qml:102
 #, kde-format
 msgid "About"
 msgstr "Pri"
@@ -1569,7 +1569,7 @@ msgstr "Kontroli pri Ĝisdatigoj"
 msgid "Save As…"
 msgstr ""
 
-#: app/gpxexport.cpp:33 app/main.cpp:321 app/Main.qml:20 app/Main.qml:68
+#: app/gpxexport.cpp:33 app/main.cpp:321 app/Main.qml:20 app/Main.qml:74
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE-Itinero"
@@ -2418,7 +2418,7 @@ msgstr "Klaki por etendi"
 msgid "Itinerary change"
 msgstr "Itinera ŝanĝo"
 
-#: app/LiveStatusPage.qml:20 app/Main.qml:74
+#: app/LiveStatusPage.qml:20 app/Main.qml:80
 #, kde-format
 msgid "Live Status"
 msgstr "Viva Statuso"
@@ -2664,28 +2664,28 @@ msgctxt "@info:shell"
 msgid "Files or URLs to import."
 msgstr "Dosieroj aŭ URL-oj por importi."
 
-#: app/Main.qml:82 app/WelcomePage.qml:41
+#: app/Main.qml:88 app/WelcomePage.qml:41
 #, kde-format
 msgid "Settings…"
 msgstr "Agordo…"
 
-#: app/Main.qml:89 app/WelcomePage.qml:16
+#: app/Main.qml:95 app/WelcomePage.qml:16
 #, kde-format
 msgid "Help"
 msgstr "Helpo"
 
-#: app/Main.qml:178
+#: app/Main.qml:184
 #, kde-format
 msgctxt "@info:status"
 msgid "No onboard information available."
 msgstr "Neniu enŝipa informo haveblas."
 
-#: app/Main.qml:220
+#: app/Main.qml:226
 #, kde-format
 msgid "Map download finished."
 msgstr "Elŝuto de mapo finiĝis."
 
-#: app/Main.qml:281
+#: app/Main.qml:287
 #, kde-format
 msgctxt "@title:window"
 msgid "Matrix Session Verification"
@@ -4754,7 +4754,7 @@ msgstr ""
 msgid "Got it!"
 msgstr "Kaptis!"
 
-#: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:129
+#: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:131
 #, kde-format
 msgid "Syncing…"
 msgstr "Sinkronigante…"
@@ -4769,7 +4769,7 @@ msgstr "Ĉi tiu servilo ne subtenas ensaluti per pasvorto"
 msgid "Logging in…"
 msgstr "Ensalutante…"
 
-#: matrix/matrixmanager.cpp:114
+#: matrix/matrixmanager.cpp:116
 #, kde-format
 msgid "Logged out"
 msgstr "Elsalutita"

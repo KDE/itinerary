@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-15 03:00+0000\n"
+"POT-Creation-Date: 2025-08-17 02:36+0000\n"
 "PO-Revision-Date: 2025-07-11 15:43+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -28,7 +28,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde-l10n-he@kde.org"
 
-#: app/AboutPage.qml:18 app/Main.qml:96
+#: app/AboutPage.qml:18 app/Main.qml:102
 #, kde-format
 msgid "About"
 msgstr "על אודות"
@@ -1543,7 +1543,7 @@ msgstr "איתור עדכונים"
 msgid "Save As…"
 msgstr "שמירה בשם…"
 
-#: app/gpxexport.cpp:33 app/main.cpp:321 app/Main.qml:20 app/Main.qml:68
+#: app/gpxexport.cpp:33 app/main.cpp:321 app/Main.qml:20 app/Main.qml:74
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -2371,7 +2371,7 @@ msgstr "לחיצה על הרחבה"
 msgid "Itinerary change"
 msgstr "שינוי בתוכנית המסע"
 
-#: app/LiveStatusPage.qml:20 app/Main.qml:74
+#: app/LiveStatusPage.qml:20 app/Main.qml:80
 #, kde-format
 msgid "Live Status"
 msgstr "מצב בזמן אמת"
@@ -2617,28 +2617,28 @@ msgctxt "@info:shell"
 msgid "Files or URLs to import."
 msgstr "קבצים או כתובות לייבוא."
 
-#: app/Main.qml:82 app/WelcomePage.qml:41
+#: app/Main.qml:88 app/WelcomePage.qml:41
 #, kde-format
 msgid "Settings…"
 msgstr "הגדרות…"
 
-#: app/Main.qml:89 app/WelcomePage.qml:16
+#: app/Main.qml:95 app/WelcomePage.qml:16
 #, kde-format
 msgid "Help"
 msgstr "עזרה"
 
-#: app/Main.qml:178
+#: app/Main.qml:184
 #, kde-format
 msgctxt "@info:status"
 msgid "No onboard information available."
 msgstr "אין פרטי עלייה למטוס."
 
-#: app/Main.qml:220
+#: app/Main.qml:226
 #, kde-format
 msgid "Map download finished."
 msgstr "הורדת המפה הסתיימה."
 
-#: app/Main.qml:281
+#: app/Main.qml:287
 #, kde-format
 msgctxt "@title:window"
 msgid "Matrix Session Verification"
@@ -4665,7 +4665,7 @@ msgstr ""
 msgid "Got it!"
 msgstr "הבנתי!"
 
-#: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:129
+#: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:131
 #, kde-format
 msgid "Syncing…"
 msgstr "מסתנכרן"
@@ -4680,7 +4680,7 @@ msgstr "השרת הזה לא תומך בכניסה לחשבון עם סיסמה"
 msgid "Logging in…"
 msgstr "מתבצעת כניסה…"
 
-#: matrix/matrixmanager.cpp:114
+#: matrix/matrixmanager.cpp:116
 #, kde-format
 msgid "Logged out"
 msgstr "יצאת"

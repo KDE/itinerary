@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-15 03:00+0000\n"
+"POT-Creation-Date: 2025-08-17 02:36+0000\n"
 "PO-Revision-Date: 2025-07-24 18:01+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -27,7 +27,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "stefan.asserhall@gmail.com"
 
-#: app/AboutPage.qml:18 app/Main.qml:96
+#: app/AboutPage.qml:18 app/Main.qml:102
 #, kde-format
 msgid "About"
 msgstr "Om"
@@ -1537,7 +1537,7 @@ msgstr "Titta efter uppdateringar"
 msgid "Save As…"
 msgstr "Spara som…"
 
-#: app/gpxexport.cpp:33 app/main.cpp:321 app/Main.qml:20 app/Main.qml:68
+#: app/gpxexport.cpp:33 app/main.cpp:321 app/Main.qml:20 app/Main.qml:74
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE-resplan"
@@ -2360,7 +2360,7 @@ msgstr "Klicka för att utöka"
 msgid "Itinerary change"
 msgstr "Ändring av resplan"
 
-#: app/LiveStatusPage.qml:20 app/Main.qml:74
+#: app/LiveStatusPage.qml:20 app/Main.qml:80
 #, kde-format
 msgid "Live Status"
 msgstr "Realtidsstatus"
@@ -2606,28 +2606,28 @@ msgctxt "@info:shell"
 msgid "Files or URLs to import."
 msgstr "Filer eller webbadresser att importera."
 
-#: app/Main.qml:82 app/WelcomePage.qml:41
+#: app/Main.qml:88 app/WelcomePage.qml:41
 #, kde-format
 msgid "Settings…"
 msgstr "Inställningar…"
 
-#: app/Main.qml:89 app/WelcomePage.qml:16
+#: app/Main.qml:95 app/WelcomePage.qml:16
 #, kde-format
 msgid "Help"
 msgstr "Hjälp"
 
-#: app/Main.qml:178
+#: app/Main.qml:184
 #, kde-format
 msgctxt "@info:status"
 msgid "No onboard information available."
 msgstr "Ingen ombordinformation tillgänglig."
 
-#: app/Main.qml:220
+#: app/Main.qml:226
 #, kde-format
 msgid "Map download finished."
 msgstr "Nerladdning av kartor klar."
 
-#: app/Main.qml:281
+#: app/Main.qml:287
 #, kde-format
 msgctxt "@title:window"
 msgid "Matrix Session Verification"
@@ -4679,7 +4679,7 @@ msgstr ""
 msgid "Got it!"
 msgstr "Jag förstår!"
 
-#: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:129
+#: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:131
 #, kde-format
 msgid "Syncing…"
 msgstr "Synkroniserar…"
@@ -4694,7 +4694,7 @@ msgstr "Servern stöder inte att logga in med användning av ett lösenord"
 msgid "Logging in…"
 msgstr "Loggar in…"
 
-#: matrix/matrixmanager.cpp:114
+#: matrix/matrixmanager.cpp:116
 #, kde-format
 msgid "Logged out"
 msgstr "Utloggand"

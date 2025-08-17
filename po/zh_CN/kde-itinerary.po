@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-15 03:00+0000\n"
+"POT-Creation-Date: 2025-08-17 02:36+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -29,7 +29,7 @@ msgstr ""
 "kde-china@kde.org, zhouwenqing655@gmail.com, i@guoyunhe.me, wordless@echo."
 "moe, tds00@qq.com"
 
-#: app/AboutPage.qml:18 app/Main.qml:96
+#: app/AboutPage.qml:18 app/Main.qml:102
 #, kde-format
 msgid "About"
 msgstr "关于"
@@ -1529,7 +1529,7 @@ msgstr "检查更新"
 msgid "Save As…"
 msgstr "另存为..."
 
-#: app/gpxexport.cpp:33 app/main.cpp:321 app/Main.qml:20 app/Main.qml:68
+#: app/gpxexport.cpp:33 app/main.cpp:321 app/Main.qml:20 app/Main.qml:74
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -2346,7 +2346,7 @@ msgstr ""
 msgid "Itinerary change"
 msgstr "行程更变"
 
-#: app/LiveStatusPage.qml:20 app/Main.qml:74
+#: app/LiveStatusPage.qml:20 app/Main.qml:80
 #, kde-format
 msgid "Live Status"
 msgstr ""
@@ -2592,28 +2592,28 @@ msgctxt "@info:shell"
 msgid "Files or URLs to import."
 msgstr ""
 
-#: app/Main.qml:82 app/WelcomePage.qml:41
+#: app/Main.qml:88 app/WelcomePage.qml:41
 #, kde-format
 msgid "Settings…"
 msgstr "设置..."
 
-#: app/Main.qml:89 app/WelcomePage.qml:16
+#: app/Main.qml:95 app/WelcomePage.qml:16
 #, kde-format
 msgid "Help"
 msgstr "帮助"
 
-#: app/Main.qml:178
+#: app/Main.qml:184
 #, kde-format
 msgctxt "@info:status"
 msgid "No onboard information available."
 msgstr "没有可用的登机信息。"
 
-#: app/Main.qml:220
+#: app/Main.qml:226
 #, kde-format
 msgid "Map download finished."
 msgstr "地图下载完毕。"
 
-#: app/Main.qml:281
+#: app/Main.qml:287
 #, kde-format
 msgctxt "@title:window"
 msgid "Matrix Session Verification"
@@ -4626,7 +4626,7 @@ msgstr ""
 msgid "Got it!"
 msgstr "知道了！"
 
-#: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:129
+#: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:131
 #, kde-format
 msgid "Syncing…"
 msgstr ""
@@ -4641,7 +4641,7 @@ msgstr ""
 msgid "Logging in…"
 msgstr "正在登录..."
 
-#: matrix/matrixmanager.cpp:114
+#: matrix/matrixmanager.cpp:116
 #, kde-format
 msgid "Logged out"
 msgstr "已登出"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-15 03:00+0000\n"
+"POT-Creation-Date: 2025-08-17 02:36+0000\n"
 "PO-Revision-Date: 2025-07-12 01:51+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -29,7 +29,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "ecuadra@eloihr.net"
 
-#: app/AboutPage.qml:18 app/Main.qml:96
+#: app/AboutPage.qml:18 app/Main.qml:102
 #, kde-format
 msgid "About"
 msgstr "Acerca de"
@@ -1540,7 +1540,7 @@ msgstr "Comprobar actualizaciones"
 msgid "Save As…"
 msgstr "Guardar como…"
 
-#: app/gpxexport.cpp:33 app/main.cpp:321 app/Main.qml:20 app/Main.qml:68
+#: app/gpxexport.cpp:33 app/main.cpp:321 app/Main.qml:20 app/Main.qml:74
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -2366,7 +2366,7 @@ msgstr "Pulse para extender"
 msgid "Itinerary change"
 msgstr "Cambio de itinerario"
 
-#: app/LiveStatusPage.qml:20 app/Main.qml:74
+#: app/LiveStatusPage.qml:20 app/Main.qml:80
 #, kde-format
 msgid "Live Status"
 msgstr "Estado en directo"
@@ -2613,28 +2613,28 @@ msgctxt "@info:shell"
 msgid "Files or URLs to import."
 msgstr "Archivos o URL para importar."
 
-#: app/Main.qml:82 app/WelcomePage.qml:41
+#: app/Main.qml:88 app/WelcomePage.qml:41
 #, kde-format
 msgid "Settings…"
 msgstr "Preferencias…"
 
-#: app/Main.qml:89 app/WelcomePage.qml:16
+#: app/Main.qml:95 app/WelcomePage.qml:16
 #, kde-format
 msgid "Help"
 msgstr "Ayuda"
 
-#: app/Main.qml:178
+#: app/Main.qml:184
 #, kde-format
 msgctxt "@info:status"
 msgid "No onboard information available."
 msgstr "Información de a bordo no disponible."
 
-#: app/Main.qml:220
+#: app/Main.qml:226
 #, kde-format
 msgid "Map download finished."
 msgstr "Descarga de mapas finalizada."
 
-#: app/Main.qml:281
+#: app/Main.qml:287
 #, kde-format
 msgctxt "@title:window"
 msgid "Matrix Session Verification"
@@ -4708,7 +4708,7 @@ msgstr ""
 msgid "Got it!"
 msgstr "¡Entendido!"
 
-#: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:129
+#: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:131
 #, kde-format
 msgid "Syncing…"
 msgstr "Sincronizando…"
@@ -4723,7 +4723,7 @@ msgstr "Este servidor no permite iniciar sesión usando una contraseña"
 msgid "Logging in…"
 msgstr "Iniciando sesión…"
 
-#: matrix/matrixmanager.cpp:114
+#: matrix/matrixmanager.cpp:116
 #, kde-format
 msgid "Logged out"
 msgstr "Sesión cerrada"

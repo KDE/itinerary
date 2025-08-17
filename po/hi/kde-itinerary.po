@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-15 03:00+0000\n"
+"POT-Creation-Date: 2025-08-17 02:36+0000\n"
 "PO-Revision-Date: 2024-12-15 19:32+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
@@ -29,7 +29,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "आपके ईमेल"
 
-#: app/AboutPage.qml:18 app/Main.qml:96
+#: app/AboutPage.qml:18 app/Main.qml:102
 #, kde-format
 msgid "About"
 msgstr "के बारे में"
@@ -1573,7 +1573,7 @@ msgstr "अद्यतन के लिए जाँच"
 msgid "Save As…"
 msgstr ""
 
-#: app/gpxexport.cpp:33 app/main.cpp:321 app/Main.qml:20 app/Main.qml:68
+#: app/gpxexport.cpp:33 app/main.cpp:321 app/Main.qml:20 app/Main.qml:74
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "केडीई यात्रा कार्यक्रम"
@@ -2426,7 +2426,7 @@ msgstr "विस्तार हेतु क्लिक करें"
 msgid "Itinerary change"
 msgstr "यात्रा कार्यक्रम में परिवर्तन"
 
-#: app/LiveStatusPage.qml:20 app/Main.qml:74
+#: app/LiveStatusPage.qml:20 app/Main.qml:80
 #, kde-format
 msgid "Live Status"
 msgstr "लाइव स्थिति"
@@ -2672,29 +2672,29 @@ msgctxt "@info:shell"
 msgid "Files or URLs to import."
 msgstr "आयात करने हेतु फ़ाइलें या URL."
 
-#: app/Main.qml:82 app/WelcomePage.qml:41
+#: app/Main.qml:88 app/WelcomePage.qml:41
 #, kde-format
 msgid "Settings…"
 msgstr "सेटिंग्स…"
 
-#: app/Main.qml:89 app/WelcomePage.qml:16
+#: app/Main.qml:95 app/WelcomePage.qml:16
 #, kde-format
 msgid "Help"
 msgstr "मदद"
 
-#: app/Main.qml:178
+#: app/Main.qml:184
 #, fuzzy, kde-format
 #| msgid "Wi-Fi access for onboard information is available."
 msgctxt "@info:status"
 msgid "No onboard information available."
 msgstr "विमान में जानकारी के लिए वाई-फाई की सुविधा उपलब्ध है।"
 
-#: app/Main.qml:220
+#: app/Main.qml:226
 #, kde-format
 msgid "Map download finished."
 msgstr "मानचित्र डाउनलोड समाप्त."
 
-#: app/Main.qml:281
+#: app/Main.qml:287
 #, kde-format
 msgctxt "@title:window"
 msgid "Matrix Session Verification"
@@ -4779,7 +4779,7 @@ msgstr ""
 msgid "Got it!"
 msgstr "समझ गया!"
 
-#: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:129
+#: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:131
 #, kde-format
 msgid "Syncing…"
 msgstr "समन्वयन हो रहा है…"
@@ -4794,7 +4794,7 @@ msgstr "यह सर्वर पासवर्ड का उपयोग क�
 msgid "Logging in…"
 msgstr "प्रवेश किया…"
 
-#: matrix/matrixmanager.cpp:114
+#: matrix/matrixmanager.cpp:116
 #, kde-format
 msgid "Logged out"
 msgstr "बाहर आ गये"
