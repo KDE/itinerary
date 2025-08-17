@@ -53,6 +53,7 @@ public:
     void resume();
 
     [[nodiscard]] bool isEmpty() const { return m_pendingChanges.empty(); }
+    [[nodiscard]] auto size() const { return m_pendingChanges.size(); }
 
     // for testing only
     [[nodiscard]] static QString path();
@@ -66,6 +67,9 @@ Q_SIGNALS:
     void pkPassChanged(const QString &pkPassId, const QString &tgId);
     void tripGroupAdded(const QString &tgId);
     void tripGroupChanged(const QString &tgId);
+
+    /** Any change to the queue. */
+    void queueChanged();
 
 private:
     void store();

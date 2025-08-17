@@ -34,9 +34,20 @@ class StateEvent;
 class MatrixSyncManager : public QObject
 {
     Q_OBJECT
+    Q_PROPERTY(Status status READ status NOTIFY statusChanged)
+    Q_PROPERTY(QString statusMessage READ statusMessage NOTIFY statusChanged)
+
 public:
     explicit MatrixSyncManager(QObject *parent = nullptr);
     ~MatrixSyncManager();
+
+    enum Status {
+        Offline,
+        Idle,
+        Syncing,
+        Error,
+    };
+    Q_ENUM(Status)
 
 #if HAVE_MATRIX
     void setMatrixManager(MatrixManager *mxMgr);
@@ -50,6 +61,12 @@ public:
 
     /** Trigger manual synchronization. */
     Q_INVOKABLE void syncTripGroup(const QString &tgId);
+
+    [[nodiscard]] Status status() const;
+    [[nodiscard]] QString statusMessage() const;
+
+Q_SIGNALS:
+    void statusChanged();
 
 private:
 #if HAVE_MATRIX
@@ -107,6 +124,7 @@ private:
     QHash<QString, QString> m_roomToTripGroupMap;
     bool m_autoSyncTrips = false;
     bool m_isOnline = false;
+    QString m_lastErrorMsg;
 #endif
 };
 

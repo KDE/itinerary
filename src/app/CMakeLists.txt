@@ -378,6 +378,8 @@ if (ANDROID)
         security-low
         settings-configure
         split
+        state-error-symbolic
+        state-sync-symbolic
         temperature-cold
         temperature-normal
         temperature-warm

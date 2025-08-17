@@ -27,6 +27,7 @@ void MatrixSyncInboundStateQueue::append(const Quotient::StateEvent &state, cons
 
     qCDebug(Log) << "Got remote state event" << ev->type() << ev->stateKey() << ev->roomId();
     m_pendingChanges.push_back(std::move(*ev));
+    Q_EMIT queueChanged();
 
     if (m_pendingChanges.size() == 1) {
         dispatchNext();
@@ -54,6 +55,7 @@ void MatrixSyncInboundStateQueue::downloadFailed()
     }
     qCWarning(Log) << "Discarding remote state change due to failed download" << m_pendingChanges.front().type() << m_pendingChanges.front().stateKey();
     m_pendingChanges.pop_front();
+    Q_EMIT queueChanged();
     dispatchNext();
 }
 
@@ -91,6 +93,7 @@ void MatrixSyncInboundStateQueue::dispatchNext()
     }
 
     m_pendingChanges.pop_front();
+    Q_EMIT queueChanged();
     dispatchNext();
 }
 

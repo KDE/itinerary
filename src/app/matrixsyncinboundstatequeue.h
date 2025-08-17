@@ -41,6 +41,8 @@ public:
     /** Record an event id we already know, typically because we created it ourselves. */
     void addKnownEventId(const QString &eventId);
 
+    [[nodiscard]] auto size() const { return m_pendingChanges.size(); }
+
 Q_SIGNALS:
     /** Next state event needs a download of an external file. */
     void downloadFile(const MatrixSyncStateEvent &state);
@@ -51,6 +53,9 @@ Q_SIGNALS:
     void transferEvent(const MatrixSyncStateEvent &state);
     void documentEvent(const MatrixSyncStateEvent &state);
     void pkPassEvent(const MatrixSyncStateEvent &state);
+
+    /** Queue content changed in any way. */
+    void queueChanged();
 
 private:
     void dispatchNext();

@@ -30,6 +30,8 @@
 #include <KItinerary/DocumentUtil>
 #include <KItinerary/JsonLdDocument>
 
+#include <KLocalizedString>
+
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QScopedValueRollback>
@@ -73,6 +75,7 @@ MatrixSyncManager::MatrixSyncManager(QObject *parent)
     });
     connect(&m_outboundQueue, &MatrixSyncOutboundStateQueue::tripGroupAdded, this, &MatrixSyncManager::createRoomForTripGroup);
     connect(&m_outboundQueue, &MatrixSyncOutboundStateQueue::tripGroupChanged, this, &MatrixSyncManager::writeTripGroupChanges);
+    connect(&m_outboundQueue, &MatrixSyncOutboundStateQueue::queueChanged, this, &MatrixSyncManager::statusChanged);
 
 
     // remote changes coming in
@@ -84,6 +87,7 @@ MatrixSyncManager::MatrixSyncManager(QObject *parent)
         });
         connect(job, &Quotient::DownloadFileJob::failure, this, [this, job]() {
             job->deleteLater();
+            m_lastErrorMsg = job->errorString();
             m_inboundQueue.downloadFailed();
         });
     });
@@ -134,6 +138,7 @@ MatrixSyncManager::MatrixSyncManager(QObject *parent)
         MatrixSyncLocalChangeLock recursionLock(&m_outboundQueue);
         MatrixSyncContent::readPkPass(state, m_pkPassMgr);
     });
+    connect(&m_inboundQueue, &MatrixSyncInboundStateQueue::queueChanged, this, &MatrixSyncManager::statusChanged);
 }
 
 
@@ -200,6 +205,35 @@ void MatrixSyncManager::syncTripGroup(const QString &tgId)
 #if HAVE_MATRIX
     m_outboundQueue.append(MatrixSyncOutboundStateQueue::TripGroupAdded, tgId);
 #endif
+}
+
+MatrixSyncManager::Status MatrixSyncManager::status() const
+{
+#if HAVE_MATRIX
+    if (!m_lastErrorMsg.isEmpty()) {
+        return Error;
+    }
+    if (!m_isOnline) {
+        return Offline;
+    }
+    if (m_inboundQueue.size() > 0 || m_outboundQueue.size() > 0) {
+        return Syncing;
+    }
+#endif
+    return Idle;
+}
+
+QString MatrixSyncManager::statusMessage() const
+{
+#if HAVE_MATRIX
+    if (!m_lastErrorMsg.isEmpty()) {
+        return m_lastErrorMsg;
+    }
+    if (const auto pendingChanges = m_inboundQueue.size() + m_outboundQueue.size(); pendingChanges > 0) {
+        return i18np("One pending change.", "%1 pending changes.", pendingChanges);
+    }
+#endif
+    return {};
 }
 
 #if HAVE_MATRIX
@@ -273,8 +307,10 @@ void MatrixSyncManager::initConnection(Quotient::Connection *connection)
         m_isOnline = m_matrixMgr->connection()->isOnline();
         if (m_isOnline) {
             qCDebug(Log) << "Matrix connection online, starting replay";
+            m_lastErrorMsg.clear();
             m_outboundQueue.retry();
         }
+        Q_EMIT statusChanged();
     });
 
     if (m_matrixMgr->connected()) {
@@ -307,9 +343,10 @@ void MatrixSyncManager::initRoom(Quotient::Room *room)
             qCWarning(Log) << "Something went wrong with upload state tracking" << m_currentUpload->stateKey();
         }
     });
-    connect(room, &Quotient::Room::fileTransferFailed, this, [](const QString &id, const QString &errorMsg) {
-        // TODO error handling
-        qCWarning(Log) << "file transfer failed:" << id <<errorMsg;
+    connect(room, &Quotient::Room::fileTransferFailed, this, [this](const QString &id, const QString &errorMsg) {
+        qCWarning(Log) << "file transfer failed:" << id << errorMsg;
+        m_lastErrorMsg = errorMsg;
+        Q_EMIT statusChanged();
     });
     connect(room, &Quotient::Room::fileTransferProgress, this, [](const QString &id, qint64 progress, qint64 total) {
         qCDebug(Log) << "file transfer progress" << id << progress << total;

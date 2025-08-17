@@ -67,6 +67,7 @@ void MatrixSyncOutboundStateQueue::append(ChangeType type, const QString &id, co
     m_pendingChanges.push_back(std::move(change));
     qCDebug(Log) << "queuing local state change" << type << id << m_pendingChanges.size();
     store();
+    Q_EMIT queueChanged();
     if (m_pendingChanges.size() == 1) {
         doReplayNext();
     }
@@ -79,6 +80,7 @@ void MatrixSyncOutboundStateQueue::replayNext()
 
     m_pendingChanges.pop_front();
     store();
+    Q_EMIT queueChanged();
     if (!m_pendingChanges.empty()) {
         QMetaObject::invokeMethod(this, &MatrixSyncOutboundStateQueue::doReplayNext, Qt::QueuedConnection);
     }

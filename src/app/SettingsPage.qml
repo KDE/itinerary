@@ -330,6 +330,18 @@ FormCard.FormCardPage {
             checked: Settings.matrixAutoSyncTrips
             onToggled: Settings.matrixAutoSyncTrips = matrixAutoSyncTrips.enabled
         }
+        FormCard.FormDelegateSeparator {
+            visible: syncStatus.visible
+            above: syncStatus
+        }
+        FormCard.FormTextDelegate {
+            id: syncStatus
+            text: MatrixSyncManager.status === MatrixSyncManager.Error ?
+                i18n("Error during synchronizing") : i18n("Synchronizing…")
+            description: MatrixSyncManager.statusMessage
+            icon.name: MatrixSyncManager.status === MatrixSyncManager.Error ? "state-error-symbolic" : "state-sync-symbolic"
+            visible: MatrixController.manager.connected && MatrixSyncManager.status !== MatrixSyncManager.Offline && MatrixSyncManager.status !== MatrixSyncManager.Idle
+        }
     }
 
     FormCard.FormHeader {
