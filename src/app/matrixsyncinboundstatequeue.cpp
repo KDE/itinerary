@@ -26,6 +26,20 @@ void MatrixSyncInboundStateQueue::append(const Quotient::StateEvent &state, cons
     }
 
     qCDebug(Log) << "Got remote state event" << ev->type() << ev->stateKey() << ev->roomId();
+    // event compression when we get a larger reply in one go
+    for (auto it = m_pendingChanges.begin(); it != m_pendingChanges.end(); ++it) {
+        if ((*it).type() != ev->type() && (*it).stateKey() == ev->stateKey()) {
+            continue;
+        }
+        if (it == m_pendingChanges.begin() && (*it).needsDownload()) {
+            // currently being downloaded, so don't interfere with that
+            continue;
+        }
+        (*it) = std::move(*ev);
+        qCDebug(Log) << "... replacing already pending state event";
+        return;
+    }
+
     m_pendingChanges.push_back(std::move(*ev));
     Q_EMIT queueChanged();
 

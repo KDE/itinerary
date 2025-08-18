@@ -89,6 +89,47 @@ private Q_SLOTS:
         QCOMPARE(downloadSpy.size(), 0);
         QCOMPARE(reservationSpy.size(), 0);
     }
+
+    void testCompression()
+    {
+        MatrixSyncInboundStateQueue q;
+        QSignalSpy downloadSpy(&q, &MatrixSyncInboundStateQueue::downloadFile);
+        QSignalSpy liveDataSpy(&q, &MatrixSyncInboundStateQueue::liveDataEvent);
+        QSignalSpy pkPassSpy(&q, &MatrixSyncInboundStateQueue::pkPassEvent);
+
+        // download event to stall the queue
+        q.append(Quotient::StateEvent(MatrixSync::PkPassEventType, u"12345"_s, QJsonObject{{
+            {"version"_L1, 1},
+            {"contentType"_L1, "file"_L1},
+            {"file"_L1, QJsonObject{{
+                {"url"_L1, "mxc://bla"_L1}
+            }}}
+        }}), u"room42"_s);
+
+        QCOMPARE(q.size(), 1);
+        QCOMPARE(downloadSpy.size(), 1);
+        QCOMPARE(liveDataSpy.size(), 0);
+        QCOMPARE(pkPassSpy.size(), 0);
+
+        q.append(Quotient::StateEvent(MatrixSync::LiveDataEventType, u"12347"_s, QJsonObject{{
+            {"version"_L1, 1},
+            {"contentType"_L1, "none"_L1},
+            {"content"_L1, "hello"_L1}
+        }}), u"room42"_s);
+        QCOMPARE(q.size(), 2);
+        QCOMPARE(downloadSpy.size(), 1);
+        QCOMPARE(liveDataSpy.size(), 0);
+        QCOMPARE(pkPassSpy.size(), 0);
+        q.append(Quotient::StateEvent(MatrixSync::LiveDataEventType, u"12347"_s, QJsonObject{{
+            {"version"_L1, 1},
+            {"contentType"_L1, "none"_L1},
+            {"content"_L1, "hello"_L1}
+        }}), u"room42"_s);
+        QCOMPARE(q.size(), 2);
+        QCOMPARE(downloadSpy.size(), 1);
+        QCOMPARE(liveDataSpy.size(), 0);
+        QCOMPARE(pkPassSpy.size(), 0);
+    }
 };
 
 QTEST_GUILESS_MAIN(MatrixSyncInboundStateQueueTest)
