@@ -425,11 +425,7 @@ void MatrixSyncManager::joinedRoom(Quotient::Room *room, Quotient::Room *prevRoo
         qCWarning(Log) << "Joined room is already monitored?" << room->id();
         return;
     }
-
-    if (isTripGroupSyncRoom(room)) {
-        createTripGroupFromRoom(room);
-        initRoom(room);
-    }
+    reloadRoom(room);
 }
 
 void MatrixSyncManager::deleteRoom(Quotient::Room *room)
