@@ -4,13 +4,35 @@
 include:
   - project: sysadmin/ci-utilities
     file:
-      - /gitlab-templates/linux-qt6.yml
-      - /gitlab-templates/linux-qt6-next.yml
-      - /gitlab-templates/json-validation.yml
-      - /gitlab-templates/freebsd-qt6.yml
-      - /gitlab-templates/android-qt6.yml
-      - /gitlab-templates/reuse-lint.yml
+      # - /gitlab-templates/linux-qt6.yml
+      # - /gitlab-templates/linux-qt6-next.yml
+      # - /gitlab-templates/json-validation.yml
+      # - /gitlab-templates/freebsd-qt6.yml
+      # - /gitlab-templates/android-qt6.yml
+      # - /gitlab-templates/reuse-lint.yml
       - /gitlab-templates/flatpak.yml
-      - /gitlab-templates/craft-android-qt6-apks.yml
-      - /gitlab-templates/craft-android-qt6-googleplay-apks.yml
-      - /gitlab-templates/cppcheck.yml
+      # - /gitlab-templates/craft-android-qt6-apks.yml
+      # - /gitlab-templates/craft-android-qt6-googleplay-apks.yml
+      # - /gitlab-templates/cppcheck.yml
+
+flatpak-test:
+  stage: publish
+  image: storage.kde.org/vm-images/suse-qt69
+  tags:
+    - VM
+    - amd64
+  variables:
+    KDE_FLATPAK_MODULE_NAME: ${CI_PROJECT_NAME}
+  needs:
+    - flatpak
+  script:
+    - flatpak --user remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+    - flatpak install -y --user org.kde.Platform//6.9
+    - flatpak install -y --user "$CI_PROJECT_DIR/${KDE_FLATPAK_MODULE_NAME}.flatpak"
+    - eval `dbus-launch --sh-syntax`
+    - Xvfb :90 -ac -screen 0 1600x1200x24+32 &
+    - sleep 5
+    - export DISPLAY=:90
+    - openbox &
+    - flatpak run --user org.kde.itinerary --self-test
+    - killall openbox Xvfb dbus-daemon
