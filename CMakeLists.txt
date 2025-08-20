@@ -32,6 +32,7 @@ include(ECMFeatureSummary)
 include(ECMAddAndroidApk)
 
 set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_SCAN_FOR_MODULES OFF)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
