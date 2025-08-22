@@ -35,47 +35,76 @@ Kirigami.ScrollablePage {
         id: journeyView
 
         clip: true
+        reuseItems: false // re-using causes re-layouts which would block
+        cacheBuffer: height
 
         delegate: FormCard.FormCard {
             id: top
 
-            width: ListView.view.width
-
             required property int index
             required property var journey
+            width: ListView.view.width
+            height: loader.status === Loader.Ready ? loader.item.implicitHeight : 100 // TODO can we predict the height accurately?
 
-            Repeater {
-                id: journeyRepeater
-                delegate: JourneySectionDelegate {
-                    Layout.fillWidth: true
-                    modelLength: journeyRepeater.count - 1
-                }
-                model: journeyView.currentIndex === top.index ? top.journey.sections : 0
-            }
-
-            JourneySummaryDelegate {
-                id: summaryButton
-
-                journey: top.journey
-                visible: journeyView.currentIndex !== top.index
-                onClicked: journeyView.currentIndex = top.index
-
+            Loader {
+                id: loader
                 Layout.fillWidth: true
-            }
 
-            FormCard.FormDelegateSeparator {
-                visible: journeyView.currentIndex === top.index
-                above: selectButton
-            }
+                Rectangle {
+                    id: loadingAnimationItem
+                    color: Kirigami.Theme.backgroundColor
+                    anchors.fill: parent
 
-            FormCard.FormButtonDelegate {
-                id: selectButton
+                    z: 1000
 
-                text: i18n("Select")
-                icon.name: "checkmark"
-                visible: journeyView.currentIndex === top.index
-                enabled: top.journey.disruptionEffect !== Disruption.NoService
-                onClicked: root.journey = top.journey
+                    OpacityAnimator {
+                        target: loadingAnimationItem
+                        from: 1
+                        to: 0
+                        duration: Kirigami.Units.shortDuration
+                        running: loader.status === Loader.Ready
+                    }
+                }
+
+                asynchronous: true
+                sourceComponent: ColumnLayout {
+                    visible: loader.status === Loader.Ready
+                    Layout.fillWidth: true
+
+                    Repeater {
+                        id: journeyRepeater
+                        delegate: JourneySectionDelegate {
+                            Layout.fillWidth: true
+                            modelLength: journeyRepeater.count - 1
+                        }
+                        model: journeyView.currentIndex === top.index ? top.journey.sections : 0
+                    }
+
+                    JourneySummaryDelegate {
+                        id: summaryButton
+
+                        journey: top.journey
+                        visible: journeyView.currentIndex !== top.index
+                        onClicked: journeyView.currentIndex = top.index
+
+                        Layout.fillWidth: true
+                    }
+
+                    FormCard.FormDelegateSeparator {
+                        visible: journeyView.currentIndex === top.index
+                        above: selectButton
+                    }
+
+                    FormCard.FormButtonDelegate {
+                        id: selectButton
+
+                        text: i18n("Select")
+                        icon.name: "checkmark"
+                        visible: journeyView.currentIndex === top.index
+                        enabled: top.journey.disruptionEffect !== Disruption.NoService
+                        onClicked: root.journey = top.journey
+                    }
+                }
             }
         }
 
