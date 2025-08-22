@@ -210,6 +210,7 @@ ColumnLayout {
     }
 
     FormCard.AbstractFormDelegate {
+        background: null
         visible: addressToCoordinateAction.visible || coordinateToAddressAction.visible
 
         contentItem: Kirigami.ActionToolBar {
