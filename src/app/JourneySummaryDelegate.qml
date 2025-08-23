@@ -17,7 +17,7 @@ import org.kde.itinerary
 FormCard.AbstractFormDelegate {
     id: root
 
-    required property var journey
+    property var journey
 
     contentItem: ColumnLayout {
         id: mainLayout

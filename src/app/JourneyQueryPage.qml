@@ -66,44 +66,56 @@ Kirigami.ScrollablePage {
                     }
                 }
 
+                visible: loader.status === Loader.Ready
                 asynchronous: true
-                sourceComponent: ColumnLayout {
-                    visible: loader.status === Loader.Ready
+                sourceComponent: Loader {
                     Layout.fillWidth: true
 
-                    Repeater {
-                        id: journeyRepeater
-                        delegate: JourneySectionDelegate {
-                            Layout.fillWidth: true
-                            modelLength: journeyRepeater.count - 1
+                    Component {
+                        id: expanded
+
+                        ColumnLayout {
+                            id: expandedLayout
+                            property var journey
+
+                            Repeater {
+                                id: journeyRepeater
+                                delegate: JourneySectionDelegate {
+                                    Layout.fillWidth: true
+                                    modelLength: journeyRepeater.count - 1
+                                }
+                                model: expandedLayout.journey.sections
+                            }
+
+                            FormCard.FormDelegateSeparator {
+                                above: selectButton
+                            }
+
+                            FormCard.FormButtonDelegate {
+                                id: selectButton
+
+                                text: i18n("Select")
+                                icon.name: "checkmark"
+                                enabled: expandedLayout.journey.disruptionEffect !== Disruption.NoService
+                                onClicked: root.journey = expandedLayout.journey
+                            }
                         }
-                        model: journeyView.currentIndex === top.index ? top.journey.sections : 0
                     }
 
-                    JourneySummaryDelegate {
-                        id: summaryButton
+                    Component {
+                        id: compact
 
-                        journey: top.journey
-                        visible: journeyView.currentIndex !== top.index
-                        onClicked: journeyView.currentIndex = top.index
+                        JourneySummaryDelegate {
+                            id: summaryButton
 
-                        Layout.fillWidth: true
+                            onClicked: journeyView.currentIndex = top.index
+
+                            Layout.fillWidth: true
+                        }
                     }
 
-                    FormCard.FormDelegateSeparator {
-                        visible: journeyView.currentIndex === top.index
-                        above: selectButton
-                    }
-
-                    FormCard.FormButtonDelegate {
-                        id: selectButton
-
-                        text: i18n("Select")
-                        icon.name: "checkmark"
-                        visible: journeyView.currentIndex === top.index
-                        enabled: top.journey.disruptionEffect !== Disruption.NoService
-                        onClicked: root.journey = top.journey
-                    }
+                    onLoaded: item.journey = top.journey
+                    sourceComponent: journeyView.currentIndex == top.index ? expanded : compact
                 }
             }
         }
