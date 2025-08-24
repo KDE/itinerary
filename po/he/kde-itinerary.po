@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-17 02:36+0000\n"
+"POT-Creation-Date: 2025-08-24 02:35+0000\n"
 "PO-Revision-Date: 2025-07-11 15:43+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -1469,12 +1469,12 @@ msgstr "%1°, %2°"
 msgid "Pick…"
 msgstr "בחירה…"
 
-#: app/FormPlaceEditorDelegate.qml:219
+#: app/FormPlaceEditorDelegate.qml:220
 #, kde-format
 msgid "Address to coordinate"
 msgstr "כתובת לנק׳ ציון"
 
-#: app/FormPlaceEditorDelegate.qml:235
+#: app/FormPlaceEditorDelegate.qml:236
 #, kde-format
 msgid "Coordinate to address"
 msgstr "נק׳ ציון לכתובת"
