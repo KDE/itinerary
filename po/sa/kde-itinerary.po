@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-17 00:42+0000\n"
+"POT-Creation-Date: 2025-08-24 00:42+0000\n"
 "PO-Revision-Date: 2025-03-02 14:47+0530\n"
 "Last-Translator: Shreekant Kalwar <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -1505,12 +1505,12 @@ msgstr "%1°, %2° इति"
 msgid "Pick…"
 msgstr "चिनूहि…"
 
-#: app/FormPlaceEditorDelegate.qml:220
+#: app/FormPlaceEditorDelegate.qml:221
 #, kde-format
 msgid "Address to coordinate"
 msgstr "समन्वयं कर्तुं पता"
 
-#: app/FormPlaceEditorDelegate.qml:236
+#: app/FormPlaceEditorDelegate.qml:237
 #, kde-format
 msgid "Coordinate to address"
 msgstr "सम्बोधनार्थं समन्वयं कुर्वन्तु"

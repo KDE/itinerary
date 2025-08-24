@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-17 00:42+0000\n"
+"POT-Creation-Date: 2025-08-24 00:42+0000\n"
 "PO-Revision-Date: 2020-05-04 10:51+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -1623,12 +1623,12 @@ msgstr "%1°, %2°"
 msgid "Pick…"
 msgstr ""
 
-#: app/FormPlaceEditorDelegate.qml:220
+#: app/FormPlaceEditorDelegate.qml:221
 #, kde-format
 msgid "Address to coordinate"
 msgstr ""
 
-#: app/FormPlaceEditorDelegate.qml:236
+#: app/FormPlaceEditorDelegate.qml:237
 #, fuzzy, kde-format
 #| msgid "Boarding time:"
 msgid "Coordinate to address"
