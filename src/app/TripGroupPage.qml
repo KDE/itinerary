@@ -508,8 +508,9 @@ Kirigami.ScrollablePage {
                 Repeater {
                     model: importAction.children
                     FormCard.FormButtonDelegate {
-                        required property QQC2.Action modelData
+                        required property Kirigami.Action modelData
                         action: modelData
+                        visible: modelData.visible
                     }
                 }
             }
