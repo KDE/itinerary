@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-24 00:42+0000\n"
+"POT-Creation-Date: 2025-08-26 00:43+0000\n"
 "PO-Revision-Date: 2025-08-08 10:30-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -123,7 +123,7 @@ msgid "Add to calendar…"
 msgstr "Adicionar ao calendário..."
 
 #: app/ActionsCard.qml:75 app/ProgramMembershipPage.qml:182
-#: app/TicketPage.qml:191 app/TripGroupPage.qml:736
+#: app/TicketPage.qml:191 app/TripGroupPage.qml:737
 #, kde-format
 msgid "Export…"
 msgstr "Exportar..."
@@ -153,7 +153,7 @@ msgid "Export Reservation"
 msgstr "Exportar reserva"
 
 #: app/ActionsCard.qml:143 app/ProgramMembershipPage.qml:147
-#: app/TicketPage.qml:141 app/TripGroupPage.qml:686
+#: app/TicketPage.qml:141 app/TripGroupPage.qml:687
 #, kde-format
 msgid "Actions"
 msgstr "Ações"
@@ -869,27 +869,27 @@ msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "Carregar partidas anteriores"
 
-#: app/DepartureQueryPage.qml:145 app/JourneyQueryPage.qml:115
+#: app/DepartureQueryPage.qml:145 app/JourneyQueryPage.qml:156
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "Carregar conexões posteriores"
 
-#: app/DepartureQueryPage.qml:154 app/JourneyQueryPage.qml:122
+#: app/DepartureQueryPage.qml:154 app/JourneyQueryPage.qml:163
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
 msgstr "Fornecedores de dados:"
 
-#: app/DepartureQueryPage.qml:162 app/JourneyQueryPage.qml:131
+#: app/DepartureQueryPage.qml:162 app/JourneyQueryPage.qml:172
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Loading"
 msgstr "Carregando"
 
-#: app/DepartureQueryPage.qml:162 app/JourneyQueryPage.qml:133
+#: app/DepartureQueryPage.qml:162 app/JourneyQueryPage.qml:174
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:status"
@@ -1537,7 +1537,7 @@ msgid "Do you really want to delete this pass?"
 msgstr "Deseja realmente excluir este passe?"
 
 #: app/GenericPkPassPage.qml:55 app/TicketPage.qml:165
-#: app/TripGroupPage.qml:692
+#: app/TripGroupPage.qml:693
 #, kde-format
 msgid "Check for Updates"
 msgstr "Procurar atualizações"
@@ -2143,24 +2143,24 @@ msgctxt "@action:button"
 msgid "Show Map"
 msgstr "Mostrar mapa"
 
-#: app/JourneyQueryPage.qml:74 app/TransferPage.qml:244
+#: app/JourneyQueryPage.qml:97 app/TransferPage.qml:244
 #, kde-format
 msgid "Select"
 msgstr "Selecionar"
 
-#: app/JourneyQueryPage.qml:106 app/TransferPage.qml:312
+#: app/JourneyQueryPage.qml:147 app/TransferPage.qml:312
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr "Carregar conexões anteriores"
 
-#: app/JourneyQueryPage.qml:135
+#: app/JourneyQueryPage.qml:176
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No journeys found"
 msgstr "Nenhuma viagem encontrada"
 
-#: app/JourneyQueryPage.qml:169
+#: app/JourneyQueryPage.qml:210
 #, kde-format
 msgid "Still fetching results…"
 msgstr "Ainda obtendo os resultados..."
@@ -3029,7 +3029,7 @@ msgstr "Localizações salvas"
 msgid "Home Country"
 msgstr "País natal"
 
-#: app/MyDataPage.qml:131 app/StatisticsPage.qml:16 app/TripGroupPage.qml:654
+#: app/MyDataPage.qml:131 app/StatisticsPage.qml:16 app/TripGroupPage.qml:655
 #, kde-format
 msgid "Statistics"
 msgstr "Estatísticas"
@@ -3769,7 +3769,7 @@ msgstr "Viagens"
 #: app/statisticsmodel.cpp:107 app/statisticsmodel.cpp:140
 #: app/statisticsmodel.cpp:155 app/statisticsmodel.cpp:170
 #: app/statisticsmodel.cpp:185 app/statisticsmodel.cpp:200
-#: app/TripGroupPage.qml:661
+#: app/TripGroupPage.qml:662
 #, kde-format
 msgid "Distance"
 msgstr "Distância"
@@ -3782,7 +3782,7 @@ msgstr "Noites em hotel"
 #: app/statisticsmodel.cpp:117 app/statisticsmodel.cpp:145
 #: app/statisticsmodel.cpp:160 app/statisticsmodel.cpp:175
 #: app/statisticsmodel.cpp:190 app/statisticsmodel.cpp:205
-#: app/TripGroupPage.qml:670
+#: app/TripGroupPage.qml:671
 #, kde-format
 msgid "CO₂"
 msgstr "CO₂"
@@ -4457,53 +4457,53 @@ msgstr[1] "Moedas: %2"
 msgid "Show map…"
 msgstr "Mostrar mapa..."
 
-#: app/TripGroupPage.qml:509
+#: app/TripGroupPage.qml:510
 #, kde-format
 msgid "Add"
 msgstr "Adicionar"
 
-#: app/TripGroupPage.qml:626
+#: app/TripGroupPage.qml:627
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Nada no itinerário para hoje."
 
-#: app/TripGroupPage.qml:679
+#: app/TripGroupPage.qml:680
 #, kde-format
 msgid "Cost"
 msgstr "Custo"
 
-#: app/TripGroupPage.qml:701
+#: app/TripGroupPage.qml:702
 #, kde-format
 msgid "Rename…"
 msgstr "Renomear..."
 
-#: app/TripGroupPage.qml:710
+#: app/TripGroupPage.qml:711
 #, kde-format
 msgid "Merge trips…"
 msgstr "Mesclar viagens..."
 
-#: app/TripGroupPage.qml:721
+#: app/TripGroupPage.qml:722
 #, kde-format
 msgid "Split trip…"
 msgstr "Dividir viagem..."
 
-#: app/TripGroupPage.qml:728
+#: app/TripGroupPage.qml:729
 #, kde-format
 msgid "Download Maps"
 msgstr "Baixar mapas"
 
-#: app/TripGroupPage.qml:743
+#: app/TripGroupPage.qml:744
 #, kde-format
 msgid "Delete trip"
 msgstr "Excluir viagem"
 
-#: app/TripGroupPage.qml:768
+#: app/TripGroupPage.qml:769
 #, kde-format
 msgctxt "@action:button"
 msgid "Go To Now"
 msgstr "Ir para agora"
 
-#: app/TripGroupPage.qml:776 app/TripGroupsPage.qml:118
+#: app/TripGroupPage.qml:777 app/TripGroupsPage.qml:118
 #: app/TripGroupsPage.qml:137
 #, kde-format
 msgctxt "@action:button"
