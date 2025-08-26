@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-24 02:35+0000\n"
+"POT-Creation-Date: 2025-08-26 02:36+0000\n"
 "PO-Revision-Date: 2025-07-14 11:08+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -119,7 +119,7 @@ msgid "Add to calendar…"
 msgstr "Lisää kalenteriin…"
 
 #: app/ActionsCard.qml:75 app/ProgramMembershipPage.qml:182
-#: app/TicketPage.qml:191 app/TripGroupPage.qml:745
+#: app/TicketPage.qml:191 app/TripGroupPage.qml:746
 #, kde-format
 msgid "Export…"
 msgstr "Vie…"
@@ -149,7 +149,7 @@ msgid "Export Reservation"
 msgstr "Vie varaus"
 
 #: app/ActionsCard.qml:143 app/ProgramMembershipPage.qml:147
-#: app/TicketPage.qml:141 app/TripGroupPage.qml:695
+#: app/TicketPage.qml:141 app/TripGroupPage.qml:696
 #, kde-format
 msgid "Actions"
 msgstr "Toiminnot"
@@ -1527,7 +1527,7 @@ msgid "Do you really want to delete this pass?"
 msgstr "Haluatko varmasti poistaa tämän lipun?"
 
 #: app/GenericPkPassPage.qml:55 app/TicketPage.qml:165
-#: app/TripGroupPage.qml:701
+#: app/TripGroupPage.qml:702
 #, kde-format
 msgid "Check for Updates"
 msgstr "Tarkista päivitykset"
@@ -3007,7 +3007,7 @@ msgstr "Tallennetut sijainnit"
 msgid "Home Country"
 msgstr "Kotimaa"
 
-#: app/MyDataPage.qml:131 app/StatisticsPage.qml:16 app/TripGroupPage.qml:663
+#: app/MyDataPage.qml:131 app/StatisticsPage.qml:16 app/TripGroupPage.qml:664
 #, kde-format
 msgid "Statistics"
 msgstr "Tilastot"
@@ -3746,7 +3746,7 @@ msgstr "Matkat"
 #: app/statisticsmodel.cpp:107 app/statisticsmodel.cpp:140
 #: app/statisticsmodel.cpp:155 app/statisticsmodel.cpp:170
 #: app/statisticsmodel.cpp:185 app/statisticsmodel.cpp:200
-#: app/TripGroupPage.qml:670
+#: app/TripGroupPage.qml:671
 #, kde-format
 msgid "Distance"
 msgstr "Etäisyys"
@@ -3759,7 +3759,7 @@ msgstr "Hotelliyöt"
 #: app/statisticsmodel.cpp:117 app/statisticsmodel.cpp:145
 #: app/statisticsmodel.cpp:160 app/statisticsmodel.cpp:175
 #: app/statisticsmodel.cpp:190 app/statisticsmodel.cpp:205
-#: app/TripGroupPage.qml:679
+#: app/TripGroupPage.qml:680
 #, kde-format
 msgid "CO₂"
 msgstr "CO₂"
@@ -4427,53 +4427,53 @@ msgstr[1] "Valuutat: %2"
 msgid "Show map…"
 msgstr "Näytä kartta…"
 
-#: app/TripGroupPage.qml:518
+#: app/TripGroupPage.qml:519
 #, kde-format
 msgid "Add"
 msgstr "Lisää"
 
-#: app/TripGroupPage.qml:635
+#: app/TripGroupPage.qml:636
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Matkasuunnitelmassa ei tänään ole mitään."
 
-#: app/TripGroupPage.qml:688
+#: app/TripGroupPage.qml:689
 #, kde-format
 msgid "Cost"
 msgstr "Kustannus"
 
-#: app/TripGroupPage.qml:710
+#: app/TripGroupPage.qml:711
 #, kde-format
 msgid "Rename…"
 msgstr "Muuta nimeä…"
 
-#: app/TripGroupPage.qml:719
+#: app/TripGroupPage.qml:720
 #, kde-format
 msgid "Merge trips…"
 msgstr "Yhdistä matkat…"
 
-#: app/TripGroupPage.qml:730
+#: app/TripGroupPage.qml:731
 #, kde-format
 msgid "Split trip…"
 msgstr "Jaa matka…"
 
-#: app/TripGroupPage.qml:737
+#: app/TripGroupPage.qml:738
 #, kde-format
 msgid "Download Maps"
 msgstr "Lataa kartat"
 
-#: app/TripGroupPage.qml:752
+#: app/TripGroupPage.qml:753
 #, kde-format
 msgid "Delete trip"
 msgstr "Poista matka"
 
-#: app/TripGroupPage.qml:777
+#: app/TripGroupPage.qml:778
 #, kde-format
 msgctxt "@action:button"
 msgid "Go To Now"
 msgstr "Siirry nyt"
 
-#: app/TripGroupPage.qml:785 app/TripGroupsPage.qml:118
+#: app/TripGroupPage.qml:786 app/TripGroupsPage.qml:118
 #: app/TripGroupsPage.qml:137
 #, kde-format
 msgctxt "@action:button"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-24 02:35+0000\n"
+"POT-Creation-Date: 2025-08-26 02:36+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -118,7 +118,7 @@ msgid "Add to calendar…"
 msgstr "添加到日历..."
 
 #: app/ActionsCard.qml:75 app/ProgramMembershipPage.qml:182
-#: app/TicketPage.qml:191 app/TripGroupPage.qml:745
+#: app/TicketPage.qml:191 app/TripGroupPage.qml:746
 #, kde-format
 msgid "Export…"
 msgstr "导出..."
@@ -148,7 +148,7 @@ msgid "Export Reservation"
 msgstr "导出预约"
 
 #: app/ActionsCard.qml:143 app/ProgramMembershipPage.qml:147
-#: app/TicketPage.qml:141 app/TripGroupPage.qml:695
+#: app/TicketPage.qml:141 app/TripGroupPage.qml:696
 #, kde-format
 msgid "Actions"
 msgstr ""
@@ -1519,7 +1519,7 @@ msgid "Do you really want to delete this pass?"
 msgstr ""
 
 #: app/GenericPkPassPage.qml:55 app/TicketPage.qml:165
-#: app/TripGroupPage.qml:701
+#: app/TripGroupPage.qml:702
 #, kde-format
 msgid "Check for Updates"
 msgstr "检查更新"
@@ -2968,7 +2968,7 @@ msgstr "已保存的位置"
 msgid "Home Country"
 msgstr "居住国家"
 
-#: app/MyDataPage.qml:131 app/StatisticsPage.qml:16 app/TripGroupPage.qml:663
+#: app/MyDataPage.qml:131 app/StatisticsPage.qml:16 app/TripGroupPage.qml:664
 #, kde-format
 msgid "Statistics"
 msgstr "统计数据"
@@ -3694,7 +3694,7 @@ msgstr "行程数"
 #: app/statisticsmodel.cpp:107 app/statisticsmodel.cpp:140
 #: app/statisticsmodel.cpp:155 app/statisticsmodel.cpp:170
 #: app/statisticsmodel.cpp:185 app/statisticsmodel.cpp:200
-#: app/TripGroupPage.qml:670
+#: app/TripGroupPage.qml:671
 #, kde-format
 msgid "Distance"
 msgstr "距离"
@@ -3707,7 +3707,7 @@ msgstr "在酒店度过的夜晚"
 #: app/statisticsmodel.cpp:117 app/statisticsmodel.cpp:145
 #: app/statisticsmodel.cpp:160 app/statisticsmodel.cpp:175
 #: app/statisticsmodel.cpp:190 app/statisticsmodel.cpp:205
-#: app/TripGroupPage.qml:679
+#: app/TripGroupPage.qml:680
 #, kde-format
 msgid "CO₂"
 msgstr "碳排放"
@@ -4373,53 +4373,53 @@ msgstr[0] ""
 msgid "Show map…"
 msgstr "显示地图..."
 
-#: app/TripGroupPage.qml:518
+#: app/TripGroupPage.qml:519
 #, kde-format
 msgid "Add"
 msgstr "添加"
 
-#: app/TripGroupPage.qml:635
+#: app/TripGroupPage.qml:636
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "今日无行程计划。"
 
-#: app/TripGroupPage.qml:688
+#: app/TripGroupPage.qml:689
 #, kde-format
 msgid "Cost"
 msgstr "费用"
 
-#: app/TripGroupPage.qml:710
+#: app/TripGroupPage.qml:711
 #, kde-format
 msgid "Rename…"
 msgstr "重命名..."
 
-#: app/TripGroupPage.qml:719
+#: app/TripGroupPage.qml:720
 #, kde-format
 msgid "Merge trips…"
 msgstr "合并行程..."
 
-#: app/TripGroupPage.qml:730
+#: app/TripGroupPage.qml:731
 #, kde-format
 msgid "Split trip…"
 msgstr "拆分行程..."
 
-#: app/TripGroupPage.qml:737
+#: app/TripGroupPage.qml:738
 #, kde-format
 msgid "Download Maps"
 msgstr "下载地图"
 
-#: app/TripGroupPage.qml:752
+#: app/TripGroupPage.qml:753
 #, kde-format
 msgid "Delete trip"
 msgstr ""
 
-#: app/TripGroupPage.qml:777
+#: app/TripGroupPage.qml:778
 #, kde-format
 msgctxt "@action:button"
 msgid "Go To Now"
 msgstr ""
 
-#: app/TripGroupPage.qml:785 app/TripGroupsPage.qml:118
+#: app/TripGroupPage.qml:786 app/TripGroupsPage.qml:118
 #: app/TripGroupsPage.qml:137
 #, kde-format
 msgctxt "@action:button"

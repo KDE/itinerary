@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kitinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-24 02:35+0000\n"
+"POT-Creation-Date: 2025-08-26 02:36+0000\n"
 "PO-Revision-Date: 2023-07-14 22:15+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -128,7 +128,7 @@ msgid "Add to calendar…"
 msgstr "Adicionar ao calendário..."
 
 #: app/ActionsCard.qml:75 app/ProgramMembershipPage.qml:182
-#: app/TicketPage.qml:191 app/TripGroupPage.qml:745
+#: app/TicketPage.qml:191 app/TripGroupPage.qml:746
 #, fuzzy, kde-format
 #| msgid "Export..."
 msgid "Export…"
@@ -160,7 +160,7 @@ msgid "Export Reservation"
 msgstr "Importar uma Reserva"
 
 #: app/ActionsCard.qml:143 app/ProgramMembershipPage.qml:147
-#: app/TicketPage.qml:141 app/TripGroupPage.qml:695
+#: app/TicketPage.qml:141 app/TripGroupPage.qml:696
 #, kde-format
 msgid "Actions"
 msgstr "Acções"
@@ -1631,7 +1631,7 @@ msgid "Do you really want to delete this pass?"
 msgstr "Deseja realmente remover este passe?"
 
 #: app/GenericPkPassPage.qml:55 app/TicketPage.qml:165
-#: app/TripGroupPage.qml:701
+#: app/TripGroupPage.qml:702
 #, kde-format
 msgid "Check for Updates"
 msgstr "Verificar Actualizações"
@@ -3157,7 +3157,7 @@ msgstr "Localizações Favoritas"
 msgid "Home Country"
 msgstr "País da Residência"
 
-#: app/MyDataPage.qml:131 app/StatisticsPage.qml:16 app/TripGroupPage.qml:663
+#: app/MyDataPage.qml:131 app/StatisticsPage.qml:16 app/TripGroupPage.qml:664
 #, kde-format
 msgid "Statistics"
 msgstr "Estatísticas"
@@ -3928,7 +3928,7 @@ msgstr "Viagens"
 #: app/statisticsmodel.cpp:107 app/statisticsmodel.cpp:140
 #: app/statisticsmodel.cpp:155 app/statisticsmodel.cpp:170
 #: app/statisticsmodel.cpp:185 app/statisticsmodel.cpp:200
-#: app/TripGroupPage.qml:670
+#: app/TripGroupPage.qml:671
 #, kde-format
 msgid "Distance"
 msgstr "Distância"
@@ -3941,7 +3941,7 @@ msgstr "Noites no hotel"
 #: app/statisticsmodel.cpp:117 app/statisticsmodel.cpp:145
 #: app/statisticsmodel.cpp:160 app/statisticsmodel.cpp:175
 #: app/statisticsmodel.cpp:190 app/statisticsmodel.cpp:205
-#: app/TripGroupPage.qml:679
+#: app/TripGroupPage.qml:680
 #, kde-format
 msgid "CO₂"
 msgstr "CO₂"
@@ -4666,58 +4666,58 @@ msgstr[1] "Moedas: %2"
 msgid "Show map…"
 msgstr "Mostrar Mais…"
 
-#: app/TripGroupPage.qml:518
+#: app/TripGroupPage.qml:519
 #, fuzzy, kde-format
 #| msgid "Add train trip..."
 msgid "Add"
 msgstr "Adicionar uma viagem de comboio..."
 
-#: app/TripGroupPage.qml:635
+#: app/TripGroupPage.qml:636
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Não existe nada no itinerário para hoje."
 
-#: app/TripGroupPage.qml:688
+#: app/TripGroupPage.qml:689
 #, kde-format
 msgid "Cost"
 msgstr ""
 
-#: app/TripGroupPage.qml:710
+#: app/TripGroupPage.qml:711
 #, fuzzy, kde-format
 #| msgid "Rename"
 msgid "Rename…"
 msgstr "Mudar o Nome"
 
-#: app/TripGroupPage.qml:719
+#: app/TripGroupPage.qml:720
 #, fuzzy, kde-format
 #| msgid "Add train trip..."
 msgid "Merge trips…"
 msgstr "Adicionar uma viagem de comboio..."
 
-#: app/TripGroupPage.qml:730
+#: app/TripGroupPage.qml:731
 #, fuzzy, kde-format
 #| msgid "Add train trip..."
 msgid "Split trip…"
 msgstr "Adicionar uma viagem de comboio..."
 
-#: app/TripGroupPage.qml:737
+#: app/TripGroupPage.qml:738
 #, kde-format
 msgid "Download Maps"
 msgstr "Obter os Mapas"
 
-#: app/TripGroupPage.qml:752
+#: app/TripGroupPage.qml:753
 #, kde-format
 msgid "Delete trip"
 msgstr "Remover a viagem"
 
-#: app/TripGroupPage.qml:777
+#: app/TripGroupPage.qml:778
 #, fuzzy, kde-format
 #| msgid "Go To Now"
 msgctxt "@action:button"
 msgid "Go To Now"
 msgstr "Ir para Agora"
 
-#: app/TripGroupPage.qml:785 app/TripGroupsPage.qml:118
+#: app/TripGroupPage.qml:786 app/TripGroupsPage.qml:118
 #: app/TripGroupsPage.qml:137
 #, fuzzy, kde-format
 #| msgid "Add train trip..."
