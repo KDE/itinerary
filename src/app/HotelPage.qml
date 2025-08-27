@@ -15,10 +15,33 @@ DetailsPage {
 
     title: i18n("Hotel Reservation")
 
+    data: BarcodeScanModeButton {
+        id: scanModeButton
+        page: root
+        visible: ticketToken.hasBarcode
+    }
+
     ColumnLayout {
         CardPageTitle {
             emojiIcon: "🏨"
-            text: reservationFor.name
+            text: root.reservationFor.name
+        }
+
+        FormCard.FormCard {
+            visible: ticketToken.ticketTokenCount > 0
+            // ticket barcode
+            TicketTokenDelegate {
+                id: ticketToken
+                Layout.fillWidth: true
+                resIds: ReservationManager.reservationsForBatch(root.batchId)
+                onCurrentReservationIdChanged: {
+                    if (!currentReservationId)
+                        return;
+                    root.currentReservationId = currentReservationId;
+                }
+                onScanModeToggled: scanModeButton.toggle()
+                visible: ticketToken.ticketTokenCount > 0
+            }
         }
 
         FormCard.FormHeader {
