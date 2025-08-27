@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-26 00:43+0000\n"
-"PO-Revision-Date: 2025-07-21 14:21+0200\n"
+"PO-Revision-Date: 2025-08-07 08:23+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Accelerator-Marker: &\n"
 "X-Environment: kde\n"
-"X-Generator: Lokalize 25.07.80\n"
+"X-Generator: Lokalize 25.07.90\n"
 "X-Text-Markup: kde4\n"
 
 #, kde-format
@@ -335,15 +335,12 @@ msgid "File saved successfully."
 msgstr "Fichier enregistré avec succès."
 
 #: app/applicationcontroller.cpp:646
-#, fuzzy, kde-format
-#| msgid ""
-#| "File was imported with a newer version of Itinerary. Some information "
-#| "might not be imported correctly."
+#, kde-format
 msgid ""
 "File was exported with a newer version of Itinerary. Some information might "
 "not be imported correctly."
 msgstr ""
-"Le fichier a été importé avec une version plus récente de Itinerary. "
+"Le fichier a été exporté vers une version plus récente de Itinerary. "
 "Certaines informations pourraient ne pas avoir été importées correctement."
 
 #: app/applicationcontroller.cpp:673
@@ -1966,16 +1963,14 @@ msgid "Import Reservation"
 msgstr "Importer une réservation"
 
 #: app/ImportAction.qml:43
-#, fuzzy, kde-format
-#| msgid "Apple Wallet pass (*.pkpass)"
+#, kde-format
 msgid "Apple Wallet passes (*.pkpass)"
-msgstr "Apple Wallet Pass (*.pkpass)"
+msgstr "Apple Wallet passes (*.pkpass)"
 
 #: app/ImportAction.qml:43
-#, fuzzy, kde-format
-#| msgid "Apple Wallet pass (*.pkpass)"
+#, kde-format
 msgid "Apple Wallet pass bundles (*.pkpasses)"
-msgstr "Apple Wallet Pass (*.pkpass)"
+msgstr "Paquets d'Apple Wallet Passes (*.pkpass)"
 
 #: app/ImportAction.qml:43
 #, kde-format
