@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-26 00:43+0000\n"
+"POT-Creation-Date: 2025-08-28 00:43+0000\n"
 "PO-Revision-Date: 2025-06-22 11:38+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -831,7 +831,7 @@ msgid "Time"
 msgstr "Hora"
 
 #: app/CarRentalPage.qml:43 app/CarRentalPage.qml:69
-#: app/FormPlaceDelegate.qml:32 app/HotelPage.qml:25
+#: app/FormPlaceDelegate.qml:32 app/HotelPage.qml:48
 #, kde-format
 msgid "Location"
 msgstr "Localización"
@@ -1956,12 +1956,12 @@ msgstr "A hora de saída debe ser posterior á hora de entrada."
 msgid "Hotel Reservation"
 msgstr "Reserva de hotel"
 
-#: app/HotelPage.qml:42
+#: app/HotelPage.qml:65
 #, kde-format
 msgid "Check-in time"
 msgstr "Hora de entrada"
 
-#: app/HotelPage.qml:49
+#: app/HotelPage.qml:72
 #, kde-format
 msgid "Check-out time"
 msgstr "Hora de saída"

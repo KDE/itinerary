@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-26 00:43+0000\n"
+"POT-Creation-Date: 2025-08-28 00:43+0000\n"
 "PO-Revision-Date: 2025-08-06 05:24+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -801,7 +801,7 @@ msgid "Time"
 msgstr "დრო"
 
 #: app/CarRentalPage.qml:43 app/CarRentalPage.qml:69
-#: app/FormPlaceDelegate.qml:32 app/HotelPage.qml:25
+#: app/FormPlaceDelegate.qml:32 app/HotelPage.qml:48
 #, kde-format
 msgid "Location"
 msgstr "მდებარეობა"
@@ -1920,12 +1920,12 @@ msgstr "ჩეკაუტის დრო ჩეკინის დროის
 msgid "Hotel Reservation"
 msgstr "სასტუმროს ჯავშანი"
 
-#: app/HotelPage.qml:42
+#: app/HotelPage.qml:65
 #, kde-format
 msgid "Check-in time"
 msgstr "ჩეკინის დრო"
 
-#: app/HotelPage.qml:49
+#: app/HotelPage.qml:72
 #, kde-format
 msgid "Check-out time"
 msgstr "გამოსვლის დრო"

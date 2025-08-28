@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-26 00:43+0000\n"
+"POT-Creation-Date: 2025-08-28 00:43+0000\n"
 "PO-Revision-Date: 2025-05-28 18:37+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -835,7 +835,7 @@ msgid "Time"
 msgstr "Tempore"
 
 #: app/CarRentalPage.qml:43 app/CarRentalPage.qml:69
-#: app/FormPlaceDelegate.qml:32 app/HotelPage.qml:25
+#: app/FormPlaceDelegate.qml:32 app/HotelPage.qml:48
 #, kde-format
 msgid "Location"
 msgstr "Location"
@@ -1957,12 +1957,12 @@ msgstr "Tempore de check-out debe esser post le tempore de check-in."
 msgid "Hotel Reservation"
 msgstr "Reservation de Hotel: "
 
-#: app/HotelPage.qml:42
+#: app/HotelPage.qml:65
 #, kde-format
 msgid "Check-in time"
 msgstr "Tempore de Check-in"
 
-#: app/HotelPage.qml:49
+#: app/HotelPage.qml:72
 #, kde-format
 msgid "Check-out time"
 msgstr "Tempore de Check-Out"

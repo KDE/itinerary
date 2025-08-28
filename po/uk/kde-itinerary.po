@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-26 00:43+0000\n"
+"POT-Creation-Date: 2025-08-28 00:43+0000\n"
 "PO-Revision-Date: 2025-08-06 20:37+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -812,7 +812,7 @@ msgid "Time"
 msgstr "Час"
 
 #: app/CarRentalPage.qml:43 app/CarRentalPage.qml:69
-#: app/FormPlaceDelegate.qml:32 app/HotelPage.qml:25
+#: app/FormPlaceDelegate.qml:32 app/HotelPage.qml:48
 #, kde-format
 msgid "Location"
 msgstr "Місце"
@@ -1933,12 +1933,12 @@ msgstr "Час контролю на вході має передувати ча
 msgid "Hotel Reservation"
 msgstr "Резервування готелю"
 
-#: app/HotelPage.qml:42
+#: app/HotelPage.qml:65
 #, kde-format
 msgid "Check-in time"
 msgstr "Час перевірки на вході"
 
-#: app/HotelPage.qml:49
+#: app/HotelPage.qml:72
 #, kde-format
 msgid "Check-out time"
 msgstr "Час перевірки на виході"

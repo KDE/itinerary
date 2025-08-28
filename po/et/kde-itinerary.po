@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-26 00:43+0000\n"
+"POT-Creation-Date: 2025-08-28 00:43+0000\n"
 "PO-Revision-Date: 2020-05-04 10:51+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -886,7 +886,7 @@ msgid "Time"
 msgstr "Kellaaeg:"
 
 #: app/CarRentalPage.qml:43 app/CarRentalPage.qml:69
-#: app/FormPlaceDelegate.qml:32 app/HotelPage.qml:25
+#: app/FormPlaceDelegate.qml:32 app/HotelPage.qml:48
 #, fuzzy, kde-format
 #| msgid "Location:"
 msgid "Location"
@@ -2108,13 +2108,13 @@ msgstr ""
 msgid "Hotel Reservation"
 msgstr "Hotelli reserveering:"
 
-#: app/HotelPage.qml:42
+#: app/HotelPage.qml:65
 #, fuzzy, kde-format
 #| msgid "Check-in time:"
 msgid "Check-in time"
 msgstr "Sisseregistreerimise aeg:"
 
-#: app/HotelPage.qml:49
+#: app/HotelPage.qml:72
 #, fuzzy, kde-format
 #| msgid "Check-out time:"
 msgid "Check-out time"

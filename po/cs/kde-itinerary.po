@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-26 00:43+0000\n"
+"POT-Creation-Date: 2025-08-28 00:43+0000\n"
 "PO-Revision-Date: 2024-10-18 16:02+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -319,10 +319,9 @@ msgid "Pass sent."
 msgstr ""
 
 #: app/applicationcontroller.cpp:634
-#, fuzzy, kde-format
-#| msgid "Download failed: %1"
+#, kde-format
 msgid "Saving failed: %1"
-msgstr "Stažení bylo neúspěšné: %1"
+msgstr ""
 
 #: app/applicationcontroller.cpp:639
 #, kde-format
@@ -384,32 +383,28 @@ msgid "Edit Boat Trip"
 msgstr ""
 
 #: app/BoatEditor.qml:69 app/BoatEditor.qml:165
-#, fuzzy, kde-format
-#| msgid "Change departure stop"
+#, kde-format
 msgctxt "boat departure"
 msgid "Change Departure Terminal"
-msgstr "Změnit odchozí zastávku"
+msgstr ""
 
 #: app/BoatEditor.qml:75
-#, fuzzy, kde-format
-#| msgid "Change departure stop"
+#, kde-format
 msgctxt "boat departure"
 msgid "Change departure terminal"
-msgstr "Změnit odchozí zastávku"
+msgstr ""
 
 #: app/BoatEditor.qml:85 app/BoatEditor.qml:227
-#, fuzzy, kde-format
-#| msgid "Change arrival stop"
+#, kde-format
 msgctxt "boat arrival"
 msgid "Change Arrival Terminal"
-msgstr "Změnit příchozí zastávku"
+msgstr ""
 
 #: app/BoatEditor.qml:91
-#, fuzzy, kde-format
-#| msgid "Change arrival stop"
+#, kde-format
 msgctxt "boat arrival"
 msgid "Change arrival terminal"
-msgstr "Změnit příchozí zastávku"
+msgstr ""
 
 #: app/BoatEditor.qml:112 app/BusEditor.qml:128 app/EventEditor.qml:54
 #: app/FlightEditor.qml:79 app/HotelEditor.qml:51 app/ImportPage.qml:21
@@ -448,11 +443,10 @@ msgid "Departure terminal must not be empty."
 msgstr ""
 
 #: app/BoatEditor.qml:158 app/BoatEditor.qml:221
-#, fuzzy, kde-format
-#| msgid "Terminal"
+#, kde-format
 msgctxt "boat terminal"
 msgid "Terminal"
-msgstr "Terminál"
+msgstr ""
 
 #: app/BoatEditor.qml:173 app/BoatPage.qml:94
 #, kde-format
@@ -600,46 +594,40 @@ msgid "%1 to %2"
 msgstr ""
 
 #: app/BusEditor.qml:74
-#, fuzzy, kde-format
-#| msgid "Edit Bus Reservation"
+#, kde-format
 msgctxt "@title"
 msgid "New Bus Reservation"
-msgstr "Upravit rezervaci autobusu"
+msgstr ""
 
 #: app/BusEditor.qml:74
-#, fuzzy, kde-format
-#| msgid "Edit Bus Reservation"
+#, kde-format
 msgctxt "@title"
 msgid "Edit Bus Reservation"
-msgstr "Upravit rezervaci autobusu"
+msgstr ""
 
 #: app/BusEditor.qml:81 app/BusEditor.qml:227
-#, fuzzy, kde-format
-#| msgid "Change departure stop"
+#, kde-format
 msgctxt "bus departure"
 msgid "Change Departure Stop"
-msgstr "Změnit odchozí zastávku"
+msgstr ""
 
 #: app/BusEditor.qml:87
-#, fuzzy, kde-format
-#| msgid "Change departure stop"
+#, kde-format
 msgctxt "bus departure"
 msgid "Change departure stop"
-msgstr "Změnit odchozí zastávku"
+msgstr ""
 
 #: app/BusEditor.qml:97 app/BusEditor.qml:317
-#, fuzzy, kde-format
-#| msgid "Change arrival stop"
+#, kde-format
 msgctxt "bus arrival"
 msgid "Change Arrival Stop"
-msgstr "Změnit příchozí zastávku"
+msgstr ""
 
 #: app/BusEditor.qml:103
-#, fuzzy, kde-format
-#| msgid "Change arrival stop"
+#, kde-format
 msgctxt "bus arrival"
 msgid "Change arrival stop"
-msgstr "Změnit příchozí zastávku"
+msgstr ""
 
 #: app/BusEditor.qml:123
 #, kde-format
@@ -648,18 +636,16 @@ msgid "Bus"
 msgstr "Autobus"
 
 #: app/BusEditor.qml:141
-#, fuzzy, kde-format
-#| msgid "Bus"
+#, kde-format
 msgctxt "@title:group"
 msgid "Bus"
-msgstr "Autobus"
+msgstr ""
 
 #: app/BusEditor.qml:150
-#, fuzzy, kde-format
-#| msgid "Number"
+#, kde-format
 msgctxt "@label:textfield"
 msgid "Bus number"
-msgstr "Číslo"
+msgstr ""
 
 #: app/BusEditor.qml:156
 #, kde-format
@@ -668,40 +654,33 @@ msgid "Departure"
 msgstr "Odjezd"
 
 #: app/BusEditor.qml:165
-#, fuzzy, kde-format
-#| msgid "Departure Time"
+#, kde-format
 msgctxt "Bus departure"
 msgid "Departure Time"
-msgstr "Čas odjezdu"
+msgstr ""
 
 #: app/BusEditor.qml:178
-#, fuzzy, kde-format
-#| msgctxt "bus stop"
-#| msgid "Stop"
+#, kde-format
 msgctxt "Bus stop"
 msgid "Stop"
-msgstr "Zastávka"
+msgstr ""
 
 #: app/BusEditor.qml:181
-#, fuzzy, kde-format
-#| msgid "Trip name must not be empty."
+#, kde-format
 msgid "Departure bus stop must not be empty."
-msgstr "Název výletu nesmí zůstat nevyplněn."
+msgstr ""
 
 #: app/BusEditor.qml:189 app/BusEditor.qml:276
-#, fuzzy, kde-format
-#| msgid "Platform"
+#, kde-format
 msgctxt "Bus stop platform"
 msgid "Platform"
-msgstr "Platforma"
+msgstr ""
 
 #: app/BusEditor.qml:210
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Show Map"
+#, kde-format
 msgctxt "bus stop"
 msgid "Stop Name"
-msgstr "Zobrazit mapu"
+msgstr ""
 
 #: app/BusEditor.qml:218 app/BusEditor.qml:310
 #, kde-format
@@ -716,25 +695,21 @@ msgid "Arrival"
 msgstr "Příjezd"
 
 #: app/BusEditor.qml:244 app/TrainEditor.qml:252
-#, fuzzy, kde-format
-#| msgid "Arrival Time"
+#, kde-format
 msgctxt "Train arrival"
 msgid "Arrival Time"
-msgstr "Čas příletu"
+msgstr ""
 
 #: app/BusEditor.qml:265
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Show Map"
+#, kde-format
 msgctxt "Bus stop"
 msgid "Stop Name"
-msgstr "Zobrazit mapu"
+msgstr ""
 
 #: app/BusEditor.qml:268
-#, fuzzy, kde-format
-#| msgid "Trip name must not be empty."
+#, kde-format
 msgid "Arrival stop must not be empty."
-msgstr "Název výletu nesmí zůstat nevyplněn."
+msgstr ""
 
 #: app/BusEditor.qml:302
 #, kde-format
@@ -824,7 +799,7 @@ msgid "Time"
 msgstr "Čas"
 
 #: app/CarRentalPage.qml:43 app/CarRentalPage.qml:69
-#: app/FormPlaceDelegate.qml:32 app/HotelPage.qml:25
+#: app/FormPlaceDelegate.qml:32 app/HotelPage.qml:48
 #, kde-format
 msgid "Location"
 msgstr "Umístění"
@@ -903,11 +878,10 @@ msgstr "Poskytovatelé dat:"
 
 #: app/DepartureQueryPage.qml:162 app/JourneyQueryPage.qml:172
 #: app/TransferPage.qml:336
-#, fuzzy, kde-format
-#| msgid "Boarding"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Loading"
-msgstr "Probíhá nástup"
+msgstr ""
 
 #: app/DepartureQueryPage.qml:162 app/JourneyQueryPage.qml:174
 #: app/TransferPage.qml:336
@@ -1235,8 +1209,7 @@ msgid "Departure - %1"
 msgstr "Odlet - %1"
 
 #: app/FlightEditor.qml:93
-#, fuzzy, kde-format
-#| msgid "Departure"
+#, kde-format
 msgctxt "flight departure"
 msgid "Departure"
 msgstr "Odjezd"
@@ -1300,8 +1273,7 @@ msgid "Arrival - %1"
 msgstr "Přílet: %1"
 
 #: app/FlightEditor.qml:162
-#, fuzzy, kde-format
-#| msgid "Arrival"
+#, kde-format
 msgctxt "flight arrival"
 msgid "Arrival"
 msgstr "Příjezd"
@@ -1541,10 +1513,9 @@ msgid "Not a valid number."
 msgstr ""
 
 #: app/GenericPkPassPage.qml:21
-#, fuzzy, kde-format
-#| msgid "Save"
+#, kde-format
 msgid "Save Pass"
-msgstr "Uložit"
+msgstr ""
 
 #: app/GenericPkPassPage.qml:22
 #, kde-format
@@ -1947,12 +1918,12 @@ msgstr ""
 msgid "Hotel Reservation"
 msgstr "Rezervace hotelu"
 
-#: app/HotelPage.qml:42
+#: app/HotelPage.qml:65
 #, kde-format
 msgid "Check-in time"
 msgstr ""
 
-#: app/HotelPage.qml:49
+#: app/HotelPage.qml:72
 #, kde-format
 msgid "Check-out time"
 msgstr ""
@@ -1963,12 +1934,10 @@ msgid "Import"
 msgstr "Importovat"
 
 #: app/ImportAction.qml:29
-#, fuzzy, kde-format
-#| msgctxt "departure train station"
-#| msgid "From:"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "From file"
-msgstr "Z:"
+msgstr ""
 
 #: app/ImportAction.qml:37
 #, kde-format
@@ -1976,10 +1945,9 @@ msgid "Import Reservation"
 msgstr "Importovat rezervaci"
 
 #: app/ImportAction.qml:43
-#, fuzzy, kde-format
-#| msgid "PkPass files (*.pkpass)"
+#, kde-format
 msgid "Apple Wallet passes (*.pkpass)"
-msgstr "Soubory PkPass (*.pkpass)"
+msgstr ""
 
 #: app/ImportAction.qml:43
 #, kde-format
@@ -2002,26 +1970,22 @@ msgid "KDE Itinerary files (*.itinerary)"
 msgstr "Soubory KDE Itinerary (*.itinerary)"
 
 #: app/ImportAction.qml:51
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Copy to Clipboard"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "From clipboard"
-msgstr "Zkopírovat do schránky"
+msgstr ""
 
 #: app/ImportAction.qml:61
-#, fuzzy, kde-format
-#| msgid "Barcode"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "From barcode"
-msgstr "Čárový kód"
+msgstr ""
 
 #: app/ImportAction.qml:84
-#, fuzzy, kde-format
-#| msgid "Add from Calendar…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "From calendar"
-msgstr "Přidat z kalendáře…"
+msgstr ""
 
 #: app/ImportAction.qml:108
 #, kde-format
@@ -3051,10 +3015,9 @@ msgid "Import"
 msgstr "Importovat"
 
 #: app/MyDataPage.qml:202
-#, fuzzy, kde-format
-#| msgid "Backup"
+#, kde-format
 msgid "Import Backup"
-msgstr "Záloha"
+msgstr ""
 
 #: app/MyDataPage.qml:216
 #, kde-format
@@ -3232,11 +3195,10 @@ msgid "Add Program Membership"
 msgstr ""
 
 #: app/PassPage.qml:43
-#, fuzzy, kde-format
-#| msgid "Import"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Import"
-msgstr "Importovat"
+msgstr ""
 
 #: app/PassPage.qml:55
 #, kde-format
@@ -3346,10 +3308,9 @@ msgid "Program Membership"
 msgstr ""
 
 #: app/ProgramMembershipPage.qml:56
-#, fuzzy, kde-format
-#| msgid "Edit Program Membership"
+#, kde-format
 msgid "Export Program Membership"
-msgstr "Upravit členství v programu"
+msgstr ""
 
 #: app/ProgramMembershipPage.qml:155
 #, kde-format
@@ -3844,26 +3805,22 @@ msgid "Car"
 msgstr "Auto"
 
 #: app/StopoverDetailsPage.qml:16
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgctxt "train/bus arrival"
 msgid "Arrival Information"
-msgstr "Více informací"
+msgstr ""
 
 #: app/StopoverDetailsPage.qml:16
-#, fuzzy, kde-format
-#| msgid "Developer information"
+#, kde-format
 msgctxt "train/bus departure"
 msgid "Departure Information"
-msgstr "Informace pro vývojáře"
+msgstr ""
 
 #: app/StopoverDetailsPage.qml:92 app/StopoverFormDelegate.qml:93
-#, fuzzy, kde-format
-#| msgctxt "departure train station"
-#| msgid "From:"
+#, kde-format
 msgctxt "departure stop"
 msgid "From %1"
-msgstr "Z:"
+msgstr ""
 
 #: app/StopoverDetailsPage.qml:123
 #, kde-format
@@ -3871,17 +3828,14 @@ msgid "Information"
 msgstr "Informace"
 
 #: app/StopoverDetailsPage.qml:131
-#, fuzzy, kde-format
-#| msgid "Trip"
+#, kde-format
 msgid "Trip Map"
-msgstr "Výlet"
+msgstr ""
 
 #: app/StopoverDetailsPage.qml:139
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Show Map"
+#, kde-format
 msgid "Stop Map"
-msgstr "Zobrazit mapu"
+msgstr ""
 
 #: app/TicketEditor.qml:18
 #, kde-format
@@ -3914,10 +3868,9 @@ msgid "Do you really want to delete this ticket?"
 msgstr "Opravdu si přejete smazat tento lístek?"
 
 #: app/TicketPage.qml:60
-#, fuzzy, kde-format
-#| msgid "Boat Ticket"
+#, kde-format
 msgid "Export Ticket"
-msgstr "Lístek na loď"
+msgstr ""
 
 #: app/TicketPage.qml:121
 #, kde-format
@@ -4040,60 +3993,52 @@ msgid "Class: <b>%1</b>"
 msgstr "Třída: <b>%1</b>"
 
 #: app/TrainEditor.qml:79
-#, fuzzy, kde-format
-#| msgid "Edit Train Reservation"
+#, kde-format
 msgctxt "@title"
 msgid "New Train Reservation"
-msgstr "Upravit rezervaci vlaku"
+msgstr ""
 
 #: app/TrainEditor.qml:79
-#, fuzzy, kde-format
-#| msgid "Edit Train Reservation"
+#, kde-format
 msgctxt "@title"
 msgid "Edit Train Reservation"
-msgstr "Upravit rezervaci vlaku"
+msgstr ""
 
 #: app/TrainEditor.qml:88 app/TrainEditor.qml:235
-#, fuzzy, kde-format
-#| msgid "Change departure stop"
+#, kde-format
 msgctxt "train departure"
 msgid "Change Departure Station"
-msgstr "Změnit odchozí zastávku"
+msgstr ""
 
 #: app/TrainEditor.qml:94
-#, fuzzy, kde-format
-#| msgid "Change departure stop"
+#, kde-format
 msgctxt "train departure"
 msgid "Change departure station"
-msgstr "Změnit odchozí zastávku"
+msgstr ""
 
 #: app/TrainEditor.qml:104 app/TrainEditor.qml:328
-#, fuzzy, kde-format
-#| msgid "Change arrival stop"
+#, kde-format
 msgctxt "train arrival"
 msgid "Change Arrival Station"
-msgstr "Změnit příchozí zastávku"
+msgstr ""
 
 #: app/TrainEditor.qml:110
-#, fuzzy, kde-format
-#| msgid "Change arrival stop"
+#, kde-format
 msgctxt "train arrival"
 msgid "Change arrival station"
-msgstr "Změnit příchozí zastávku"
+msgstr ""
 
 #: app/TrainEditor.qml:149
-#, fuzzy, kde-format
-#| msgid "Train"
+#, kde-format
 msgctxt "@title:group"
 msgid "Train"
-msgstr "Vlak"
+msgstr ""
 
 #: app/TrainEditor.qml:158
-#, fuzzy, kde-format
-#| msgid "Ticket number:"
+#, kde-format
 msgctxt "@label:textfield"
 msgid "Train number"
-msgstr "Číslo lístku:"
+msgstr ""
 
 #: app/TrainEditor.qml:164
 #, kde-format
@@ -4102,32 +4047,27 @@ msgid "Departure"
 msgstr "Odjezd"
 
 #: app/TrainEditor.qml:173
-#, fuzzy, kde-format
-#| msgid "Departure Time"
+#, kde-format
 msgctxt "Train departure"
 msgid "Departure Time"
-msgstr "Čas odjezdu"
+msgstr ""
 
 #: app/TrainEditor.qml:186
-#, fuzzy, kde-format
-#| msgctxt "bus station"
-#| msgid "Station"
+#, kde-format
 msgctxt "Train station platform"
 msgid "Station Name"
-msgstr "Stanice"
+msgstr ""
 
 #: app/TrainEditor.qml:189
-#, fuzzy, kde-format
-#| msgid "Trip name must not be empty."
+#, kde-format
 msgid "Departure station must not be empty."
-msgstr "Název výletu nesmí zůstat nevyplněn."
+msgstr ""
 
 #: app/TrainEditor.qml:197 app/TrainEditor.qml:284
-#, fuzzy, kde-format
-#| msgid "Platform"
+#, kde-format
 msgctxt "Train station platform"
 msgid "Platform"
-msgstr "Platforma"
+msgstr ""
 
 #: app/TrainEditor.qml:218 app/TrainEditor.qml:310 app/TrainPage.qml:163
 #: app/TrainPage.qml:247
@@ -4149,18 +4089,15 @@ msgid "Arrival"
 msgstr "Příjezd"
 
 #: app/TrainEditor.qml:273
-#, fuzzy, kde-format
-#| msgctxt "bus station"
-#| msgid "Station"
+#, kde-format
 msgctxt "Train station"
 msgid "Station Name"
-msgstr "Stanice"
+msgstr ""
 
 #: app/TrainEditor.qml:276
-#, fuzzy, kde-format
-#| msgid "Trip name must not be empty."
+#, kde-format
 msgid "Arrival station must not be empty."
-msgstr "Název výletu nesmí zůstat nevyplněn."
+msgstr ""
 
 #: app/TrainEditor.qml:338 app/TrainEditor.qml:350 app/TrainPage.qml:290
 #, kde-format
@@ -4365,28 +4302,22 @@ msgid "Merge"
 msgstr "Sloučit"
 
 #: app/TripGroupPage.qml:156
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Load earlier connections"
+#, kde-format
 msgctxt "@action"
 msgid "Search connection"
-msgstr "Načíst dřívější spojení"
+msgstr ""
 
 #: app/TripGroupPage.qml:163
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Load later connections"
+#, kde-format
 msgctxt "@action"
 msgid "Add connection"
-msgstr "Načíst pozdější spojení"
+msgstr ""
 
 #: app/TripGroupPage.qml:169
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add trip"
+#, kde-format
 msgctxt "@action"
 msgid "Add train"
-msgstr "Přidat výlet"
+msgstr ""
 
 #: app/TripGroupPage.qml:179
 #, kde-format
@@ -4395,38 +4326,33 @@ msgid "Add bus"
 msgstr ""
 
 #: app/TripGroupPage.qml:189
-#, fuzzy, kde-format
-#| msgid "Add flight…"
+#, kde-format
 msgctxt "@action"
 msgid "Add flight"
-msgstr "Přidat let…"
+msgstr ""
 
 #: app/TripGroupPage.qml:199
-#, fuzzy, kde-format
-#| msgid "Add ferry trip…"
+#, kde-format
 msgctxt "@action"
 msgid "Add ferry trip"
-msgstr "Přidat výlet přívozem…"
+msgstr ""
 
 #: app/TripGroupPage.qml:209
-#, fuzzy, kde-format
-#| msgid "Add accommodation…"
+#, kde-format
 msgctxt "@action"
 msgid "Add accommodation"
-msgstr "Přidat ubytování…"
+msgstr ""
 
 #: app/TripGroupPage.qml:224
-#, fuzzy, kde-format
-#| msgid "Add event…"
+#, kde-format
 msgctxt "@action"
 msgid "Add event"
-msgstr "Přidat událost…"
+msgstr ""
 
 #: app/TripGroupPage.qml:240
-#, fuzzy, kde-format
-#| msgid "Add restaurant…"
+#, kde-format
 msgid "Add restaurant"
-msgstr "Přidat restauraci…"
+msgstr ""
 
 #: app/TripGroupPage.qml:257
 #, kde-format
@@ -4766,105 +4692,3 @@ msgstr "Odhlášen"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 z %3 do %4 na %5"
-
-#~ msgid "Open File…"
-#~ msgstr "Otevřít soubor…"
-
-#~ msgid "Scan Barcode…"
-#~ msgstr "Číst čarový kód…"
-
-#~ msgid "Deutsche Bahn Online Ticket…"
-#~ msgstr "Online jízdenka Deutsche Bahn…"
-
-#~ msgid "SNCF Online Ticket…"
-#~ msgstr "Online jízdenka SNCF…"
-
-#~ msgid "Import…"
-#~ msgstr "Importovat…"
-
-#~ msgid "Add train trip…"
-#~ msgstr "Přidat cestu vlakem…"
-
-#~ msgid "Flight %1 to %2:"
-#~ msgstr "Let %1 do %2:"
-
-#~ msgid "Export"
-#~ msgstr "Exportovat"
-
-#~ msgctxt "to travel destination"
-#~ msgid "To %1"
-#~ msgstr "Do %1"
-
-#~ msgctxt "@title"
-#~ msgid "Find Platform"
-#~ msgstr "Najít nástupiště"
-
-#~ msgctxt "train arrival/departure platform"
-#~ msgid "%1 (arrival/departure)"
-#~ msgstr "%1 (přílet/odlet)"
-
-#~ msgctxt "train departure platform"
-#~ msgid "%1 (departure)"
-#~ msgstr "%1 (odlet)"
-
-#~ msgctxt "train arrival platform"
-#~ msgid "%1 (arrival)"
-#~ msgstr "%1 (přílet)"
-
-#~ msgid "Railway"
-#~ msgstr "Železniční trať"
-
-#~ msgid "Light Rail"
-#~ msgstr "Light Rail"
-
-#~ msgid "Subway"
-#~ msgstr "Podzemní dráha"
-
-#~ msgid "Tramway"
-#~ msgstr "Tramvaj"
-
-#~ msgctxt "@action:intoolbar Go down one floor"
-#~ msgid "Floor down"
-#~ msgstr "O patro níže"
-
-#~ msgctxt "@action:intoolbar Go up one floor"
-#~ msgid "Floor up"
-#~ msgstr "O patro výš"
-
-#, fuzzy
-#~| msgid "Occupancy:"
-#~ msgid "Occupancy"
-#~ msgstr "Obsazenost:"
-
-#~ msgctxt "a train/bus journey canceled by its operator"
-#~ msgid "Canceled"
-#~ msgstr "Zrušeno"
-
-#~ msgctxt "destination"
-#~ msgid "To:"
-#~ msgstr "Komu:"
-
-#~ msgid "Not available"
-#~ msgstr "Není k dispozici"
-
-#~ msgid "One space"
-#~ msgid_plural "%1 spaces"
-#~ msgstr[0] "Jedna mezera"
-#~ msgstr[1] "%1 mezery"
-#~ msgstr[2] "%1 mezer"
-
-#~ msgid "First class"
-#~ msgstr "První třída"
-
-#~ msgid "Second class"
-#~ msgstr "Druhá třída"
-
-#~ msgid "First/second class"
-#~ msgstr "První/druhá třída"
-
-#~ msgid "Unknown class"
-#~ msgstr "Neznámá třída"
-
-#~ msgctxt "train coach type"
-#~ msgid "Restaurant car"
-#~ msgstr "Restaurační vůz"
