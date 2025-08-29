@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-26 02:36+0000\n"
+"POT-Creation-Date: 2025-08-29 02:37+0000\n"
 "PO-Revision-Date: 2025-07-08 13:26+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -831,7 +831,7 @@ msgid "Time"
 msgstr "Zaman"
 
 #: app/CarRentalPage.qml:43 app/CarRentalPage.qml:69
-#: app/FormPlaceDelegate.qml:32 app/HotelPage.qml:25
+#: app/FormPlaceDelegate.qml:32 app/HotelPage.qml:48
 #, kde-format
 msgid "Location"
 msgstr "Konum"
@@ -1939,12 +1939,12 @@ msgstr "Çıkış zamanı, giriş zamanından sonra olmalıdır."
 msgid "Hotel Reservation"
 msgstr "Otel Rezervasyonu"
 
-#: app/HotelPage.qml:42
+#: app/HotelPage.qml:65
 #, kde-format
 msgid "Check-in time"
 msgstr "Giriş zamanı"
 
-#: app/HotelPage.qml:49
+#: app/HotelPage.qml:72
 #, kde-format
 msgid "Check-out time"
 msgstr "Çıkış zamanı"
