@@ -193,7 +193,7 @@ ColumnLayout {
                 }
             }
         }
-        onErrorStringChanged: showPassiveNotification(geocodeModel.errorString, "short")
+        onErrorStringChanged: showPassiveNotification(reverseGeocodeModel.errorString, "short")
     }
 
     FormCard.FormButtonDelegate {
