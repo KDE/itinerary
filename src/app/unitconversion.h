@@ -14,6 +14,7 @@ class UnitConversion
     Q_GADGET
 public:
     Q_INVOKABLE static double convertCurrency(double value, const QString &fromCurrency, const QString &toCurrency);
+    Q_INVOKABLE static void syncCurrencyConversionTable();
 };
 
 #endif // PERMISSIONMANAGER_H
