@@ -231,6 +231,10 @@ Kirigami.ApplicationWindow {
         if (ReservationManager.isEmpty() && TripGroupManager.isEmpty()) {
             pageStack.push(Qt.createComponent("org.kde.itinerary", "WelcomePage"));
         }
+
+        if (Settings.performCurrencyConversion) {
+            UnitConversion.syncCurrencyConversionTable();
+        }
     }
 
     Component {

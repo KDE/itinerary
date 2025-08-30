@@ -109,7 +109,12 @@ FormCard.FormCardPage {
             id: currencyConversion
             text: i18n("Currency Conversion")
             checked: Settings.performCurrencyConversion
-            onToggled: Settings.performCurrencyConversion = checked
+            onToggled: {
+                Settings.performCurrencyConversion = checked
+                if (checked) {
+                    UnitConversion.syncCurrencyConversionTable();
+                }
+            }
             description: i18n("Enabling this will perform online queries for exchange rates to currencies at travel destinations.")
         }
 
