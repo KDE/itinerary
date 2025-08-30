@@ -107,6 +107,7 @@ ecm_add_qml_module(itinerary GENERATE_PLUGIN_SOURCE
         ContactCard.qml
         ContactEditorCard.qml
         CountryComboBoxDelegate.qml
+        CurrencyConverterDelegate.qml
         DepartureQueryPage.qml
         DetailsPage.qml
         DevelopmentModePage.qml

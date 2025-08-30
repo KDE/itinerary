@@ -471,10 +471,35 @@ Kirigami.ScrollablePage {
                     visible: root.controller.locationInformation.length > 0
                 }
 
+                // Currency converter, if currency conversions are enabled.
+                Repeater {
+                    model: Settings.performCurrencyConversion ? root.controller.currencies : []
+
+                    ColumnLayout {
+                        id: currencyConverterLayout
+
+                        required property string modelData
+                        required property int index
+
+                        spacing: 0
+
+                        FormCard.FormDelegateSeparator {
+                            visible: currencyConverterLayout.index > 0
+                        }
+
+                        CurrencyConverterDelegate {
+                            Layout.fillWidth: true
+                            homeCurrency: controller.homeCurrency
+                            foreignCurrency: currencyConverterLayout.modelData
+                        }
+                    }
+                }
+
+                // Static currency name display if conversion is disabled.
                 FormCard.FormTextDelegate {
                     icon.name: "view-currency-list"
                     text: root.controller.currencies.length > 0 ? i18np("Currency: %2", "Currencies: %2", root.controller.currencies.length, root.controller.currencies.join(", ")) : ""
-                    visible: root.controller.currencies.length > 0
+                    visible: root.controller.currencies.length > 0 && !Settings.performCurrencyConversion
                 }
 
                 FormCard.FormDelegateSeparator {
