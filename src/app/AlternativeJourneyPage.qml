@@ -20,8 +20,6 @@ JourneyQueryPage {
 
     title: i18n("Alternative Connections")
 
-    journeyRequest: controller.journeyRequestFull
-
     function updateRequest() {
         root.journeyRequest = controller.journeyRequest;
         root.journeyRequest.to = controller.journeyDestinations[destinationCombo.currentIndex];
