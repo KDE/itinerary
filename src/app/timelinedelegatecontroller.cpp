@@ -507,7 +507,6 @@ KPublicTransport::JourneyRequest TimelineDelegateController::journeyRequest() co
     }
     req.setDateTime(depTime);
     req.setDateTimeMode(KPublicTransport::JourneyRequest::Departure);
-    req.setDownloadAssets(true);
     req.setIncludeIntermediateStops(true);
     req.setIncludePaths(true);
     PublicTransport::selectBackends(req, m_liveDataMgr->publicTransportManager(), res);

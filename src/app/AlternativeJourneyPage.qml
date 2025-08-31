@@ -22,6 +22,7 @@ JourneyQueryPage {
 
     function updateRequest() {
         root.journeyRequest = controller.journeyRequest;
+        root.journeyRequest.downloadAssets = Settings.wikimediaOnlineContentEnabled;
         root.journeyRequest.to = controller.journeyDestinations[destinationCombo.currentIndex];
 
         let allLineModes = true;

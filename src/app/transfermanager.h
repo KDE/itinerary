@@ -36,6 +36,7 @@ public:
 
     void setAutoAddTransfers(bool enabled);
     void setAutoFillTransfers(bool enabled);
+    void setDownloadAssetsEnabled(bool enabled);
 
     /** Returns the transfer for reservation @p resId with @p alignment. */
     Transfer transfer(const QString &resId, Transfer::Alignment alignment) const;
@@ -120,6 +121,7 @@ private:
     QDateTime m_nowOverride;
     bool m_autoAddTransfers = true;
     bool m_autoFillTransfers = false;
+    bool m_downloadAssets = false;
 };
 
 #endif // TRANSFERMANAGER_H

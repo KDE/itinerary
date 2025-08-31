@@ -23,7 +23,7 @@ class Settings : public QObject
     Q_PROPERTY(bool preloadMapData READ preloadMapData WRITE setPreloadMapData NOTIFY preloadMapDataChanged)
 
     Q_PROPERTY(bool performCurrencyConversion READ performCurrencyConversion WRITE setPerformCurrencyConversion NOTIFY performCurrencyConversionChanged)
-    Q_PROPERTY(bool wikimediaOnlineContentEnabled MEMBER m_wikimediaOnlineContentEnabled WRITE setWikimediaOnlineContentEnabled NOTIFY
+    Q_PROPERTY(bool wikimediaOnlineContentEnabled READ wikimediaOnlineContentEnabled WRITE setWikimediaOnlineContentEnabled NOTIFY
                    wikimediaOnlineContentEnabledChanged)
 
     Q_PROPERTY(bool autoAddTransfers READ autoAddTransfers WRITE setAutoAddTransfers NOTIFY autoAddTransfersChanged)
@@ -67,6 +67,7 @@ public:
     [[nodiscard]] bool performCurrencyConversion() const;
     void setPerformCurrencyConversion(bool enable);
 
+    [[nodiscard]] bool wikimediaOnlineContentEnabled() const;
     void setWikimediaOnlineContentEnabled(bool enable);
 
     [[nodiscard]] bool autoAddTransfers() const;

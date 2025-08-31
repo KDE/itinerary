@@ -316,7 +316,6 @@ KPublicTransport::StopoverRequest PublicTransport::stopoverRequestForPlace(const
     KPublicTransport::StopoverRequest req;
     req.setDateTime(std::max(dt, QDateTime::currentDateTime()));
     req.setStop(PublicTransport::locationFromPlace(place));
-    req.setDownloadAssets(true);
     return req;
 }
 

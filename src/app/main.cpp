@@ -265,8 +265,10 @@ int main(int argc, char **argv)
     liveDataMgr.setReservationManager(&resMgr);
     liveDataMgr.setPollingEnabled(settings.queryLiveData());
     liveDataMgr.setShowNotificationsOnLockScreen(settings.showNotificationOnLockScreen());
+    liveDataMgr.setDownloadAssetsEnabled(settings.wikimediaOnlineContentEnabled());
     QObject::connect(&settings, &Settings::queryLiveDataChanged, &liveDataMgr, &LiveDataManager::setPollingEnabled);
     QObject::connect(&settings, &Settings::showNotificationOnLockScreenChanged, &liveDataMgr, &LiveDataManager::setShowNotificationsOnLockScreen);
+    QObject::connect(&settings, &Settings::wikimediaOnlineContentEnabledChanged, &liveDataMgr, &LiveDataManager::setDownloadAssetsEnabled);
     LiveDataManagerInstance::instance = &liveDataMgr;
 
     WeatherForecastManager::setAllowNetworkAccess(settings.weatherForecastEnabled());
@@ -278,8 +280,10 @@ int main(int argc, char **argv)
     transferManager.setLiveDataManager(&liveDataMgr);
     transferManager.setAutoAddTransfers(settings.autoAddTransfers());
     transferManager.setAutoFillTransfers(settings.autoFillTransfers());
+    transferManager.setDownloadAssetsEnabled(settings.wikimediaOnlineContentEnabled());
     QObject::connect(&settings, &Settings::autoAddTransfersChanged, &transferManager, &TransferManager::setAutoAddTransfers);
     QObject::connect(&settings, &Settings::autoFillTransfersChanged, &transferManager, &TransferManager::setAutoFillTransfers);
+    QObject::connect(&settings, &Settings::wikimediaOnlineContentEnabledChanged, &transferManager, &TransferManager::setDownloadAssetsEnabled);
     TransferManagerInstance::instance = &transferManager;
 
     tripGroupMgr.setTransferManager(&transferManager);

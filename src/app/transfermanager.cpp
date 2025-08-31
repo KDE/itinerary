@@ -107,6 +107,11 @@ void TransferManager::setAutoFillTransfers(bool enable)
     m_autoFillTransfers = enable;
 }
 
+void TransferManager::setDownloadAssetsEnabled(bool enable)
+{
+    m_downloadAssets = enable;
+}
+
 Transfer TransferManager::transfer(const QString &resId, Transfer::Alignment alignment) const
 {
     const auto it = m_transfers[alignment].constFind(resId);
@@ -737,7 +742,7 @@ KPublicTransport::JourneyRequest TransferManager::journeyRequestForTransfer(cons
     req.setTo(transfer.to());
     req.setDateTime(transfer.journeyTime());
     req.setDateTimeMode(transfer.alignment() == Transfer::Before ? JourneyRequest::Arrival : JourneyRequest::Departure);
-    req.setDownloadAssets(true);
+    req.setDownloadAssets(m_downloadAssets);
     req.setIncludeIntermediateStops(true);
     req.setIncludePaths(true);
     req.setMaximumResults(6);

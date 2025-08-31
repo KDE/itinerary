@@ -348,7 +348,11 @@ Kirigami.Page {
     }
 
     Component.onCompleted: {
-        let reply = ptMgr.queryTrip({ stopover: root.stopover, backendIds: root.backendIds, downloadAssets: true })
+        let reply = ptMgr.queryTrip({
+            stopover: root.stopover,
+            backendIds: root.backendIds,
+            downloadAssets: Settings.wikimediaOnlineContentEnabled
+        });
         reply.finished.connect(() => {
             loadingSpinner.running = Qt.binding(() => { return vehicleModel.loading; });
             if (reply.error === KPublicTransport.Reply.NoError) {

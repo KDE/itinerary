@@ -190,7 +190,7 @@ FormCard.FormCardPage {
                 console.log(dateTimeInput.value);
                 req.dateTime = dateTimeInput.value;
                 req.maximumResults = 6;
-                req.downloadAssets = true;
+                req.downloadAssets = Settings.wikimediaOnlineContentEnabled;
                 req.includePaths = true;
                 // TODO rental vehicle support
                 req.modes = JourneySection.PublicTransport | JourneySection.Walking;

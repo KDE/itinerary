@@ -213,6 +213,11 @@ void Settings::setPerformCurrencyConversion(bool enable)
     Q_EMIT performCurrencyConversionChanged(enable);
 }
 
+bool Settings::wikimediaOnlineContentEnabled() const
+{
+    return m_wikimediaOnlineContentEnabled;
+}
+
 void Settings::setWikimediaOnlineContentEnabled(bool enable)
 {
     if (m_wikimediaOnlineContentEnabled == enable) {

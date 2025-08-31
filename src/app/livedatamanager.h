@@ -46,6 +46,7 @@ public:
 
     void setPollingEnabled(bool pollingEnabled);
     void setShowNotificationsOnLockScreen(bool enabled);
+    void setDownloadAssetsEnabled(bool enabled);
 
     KPublicTransport::Stopover arrival(const QString &resId) const;
     KPublicTransport::Stopover departure(const QString &resId) const;
@@ -136,6 +137,7 @@ private:
     QHash<QString, QDateTime> m_lastPollAttempt; // poll cooldown on error
     QHash<QString, QPointer<KNotification>> m_notifications;
     bool m_showNotificationsOnLockScreen = false;
+    bool m_downloadAssets = false;
 
     QTimer m_pollTimer;
     KPublicTransport::OnboardStatus *m_onboardStatus = nullptr;

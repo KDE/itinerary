@@ -80,6 +80,7 @@ Kirigami.ScrollablePage {
     function stopoverRequest()
     {
         let req = PublicTransport.stopoverRequestForPlace(stop, dateTime);
+        req.downloadAssets = Settings.wikimediaOnlineContentEnabled;
         let lineModes = [];
         if (!allLineModes()) {
             if (longDistanceModeAction.checked)

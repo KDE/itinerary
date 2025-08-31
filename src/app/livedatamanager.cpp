@@ -139,6 +139,11 @@ void LiveDataManager::setShowNotificationsOnLockScreen(bool enabled)
     m_showNotificationsOnLockScreen = enabled;
 }
 
+void LiveDataManager::setDownloadAssetsEnabled(bool enabled)
+{
+    m_downloadAssets = enabled;
+}
+
 KPublicTransport::Stopover LiveDataManager::arrival(const QString &resId) const
 {
     return data(resId).arrival();
@@ -216,7 +221,7 @@ void LiveDataManager::checkReservation(const QVariant &res, const QString &resId
     }
 
     TripRequest req(jny);
-    req.setDownloadAssets(true);
+    req.setDownloadAssets(m_downloadAssets);
     PublicTransport::selectBackends(req, m_ptMgr, res);
     if (canSelectBackend(jny.from()) || canSelectBackend(jny.to()) || !req.backendIds().isEmpty() || jny.hasIdentifiers()) {
         auto reply = m_ptMgr->queryTrip(req);
