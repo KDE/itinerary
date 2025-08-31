@@ -357,6 +357,7 @@ void ApplicationController::exportToFile(const QUrl &url)
     exporter.exportHealthCertificates(healthCertificateManager());
     exporter.exportLiveData();
     exporter.exportLocationSearchHistory();
+    exporter.exportPublicTransportAssets();
     exporter.exportSettings();
     Q_EMIT infoMessage(i18n("Export completed."));
 }
@@ -646,8 +647,8 @@ bool ApplicationController::importBundle(KItinerary::File *file)
         Q_EMIT infoMessage(i18n("File was exported with a newer version of Itinerary. Some information might not be imported correctly."));
     }
 
-    int count = 0;
-    int settingsCount = 0;
+    qsizetype count = 0;
+    qsizetype settingsCount = 0;
     {
         TripGroupingBlocker groupingBlocker(m_tripGroupMgr);
         QSignalBlocker blocker(this); // suppress infoMessage()
@@ -661,6 +662,7 @@ bool ApplicationController::importBundle(KItinerary::File *file)
         count += importer.importHealthCertificates(healthCertificateManager());
         count += importer.importLiveData(m_liveDataMgr);
         count += importer.importLocationSearchHistory();
+        count += importer.importPublicTransportAssets();
         settingsCount += importer.importSettings();
     }
 

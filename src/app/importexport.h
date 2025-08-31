@@ -53,6 +53,7 @@ public:
     void exportLiveData();
     void exportLiveDataForBatch(const QString &batchId);
     void exportLocationSearchHistory();
+    void exportPublicTransportAssets();
     void exportSettings();
 
 private:
@@ -64,19 +65,20 @@ class Importer
 {
 public:
     explicit Importer(const KItinerary::File *file);
-    int formatVersion() const;
+    [[nodiscard]] int formatVersion() const;
 
-    int importReservations(ReservationManager *resMgr);
-    int importPasses(PkPassManager *pkPassMgr);
-    int importDocuments(DocumentManager *docMgr);
-    int importTransfers(const ReservationManager *resMgr, TransferManager *transferMgr);
-    int importTripGroups(TripGroupManager *tgMgr);
-    int importFavoriteLocations(FavoriteLocationModel *favLocModel);
-    int importPasses(PassManager *passMgr);
-    int importHealthCertificates(HealthCertificateManager *healthCertMgr);
-    int importLiveData(LiveDataManager *liveDataMgr);
-    int importLocationSearchHistory();
-    int importSettings();
+    qsizetype importReservations(ReservationManager *resMgr);
+    qsizetype importPasses(PkPassManager *pkPassMgr);
+    qsizetype importDocuments(DocumentManager *docMgr);
+    qsizetype importTransfers(const ReservationManager *resMgr, TransferManager *transferMgr);
+    qsizetype importTripGroups(TripGroupManager *tgMgr);
+    qsizetype importFavoriteLocations(FavoriteLocationModel *favLocModel);
+    qsizetype importPasses(PassManager *passMgr);
+    qsizetype importHealthCertificates(HealthCertificateManager *healthCertMgr);
+    qsizetype importLiveData(LiveDataManager *liveDataMgr);
+    qsizetype importLocationSearchHistory();
+    qsizetype importPublicTransportAssets();
+    qsizetype importSettings();
 
 private:
     const KItinerary::File *m_file;

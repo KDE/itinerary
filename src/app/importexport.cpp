@@ -21,6 +21,7 @@
 #include "tripgroup.h"
 #include "tripgroupmanager.h"
 
+#include <kitinerary_version.h>
 #include <KItinerary/File>
 #include <KItinerary/JsonLdDocument>
 
@@ -34,12 +35,13 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QSettings>
+#include <QStandardPaths>
 #include <QSysInfo>
 #include <QTemporaryFile>
 
 using namespace Qt::Literals::StringLiterals;
 
-static int copySettings(const QSettings *from, QSettings *to)
+static qsizetype copySettings(const QSettings *from, QSettings *to)
 {
     const auto keys = from->allKeys();
     for (const auto &key : keys) {
@@ -226,6 +228,24 @@ void Exporter::exportLocationSearchHistory()
     }
 }
 
+void Exporter::exportPublicTransportAssets()
+{
+    const auto assetPath = QStandardPaths::writableLocation(QStandardPaths::GenericCacheLocation) + "/org.kde.kpublictransport/assets/"_L1;
+    for (QDirIterator it(assetPath, QDir::Files); it.hasNext();) {
+        it.next();
+        QFile f(it.filePath());
+        if (!f.open(QFile::ReadOnly)) {
+            qCWarning(Log) << f.fileName() << f.errorString();
+            continue;
+        }
+#if KITINERARY_VERSION >= QT_VERSION_CHECK(6, 5, 41)
+        m_file->addCustomData(BUNDLE_PUBLIC_TRANSPORT_ASSET_DOMAIN, it.fileName(), f.readAll(), it.fileInfo().lastModified());
+#else
+        m_file->addCustomData(BUNDLE_PUBLIC_TRANSPORT_ASSET_DOMAIN, it.fileName(), f.readAll());
+#endif
+    }
+}
+
 void Exporter::exportSettings()
 {
     QTemporaryFile tmp;
@@ -256,7 +276,7 @@ int Importer::formatVersion() const
     return versionData.value("formatVersion"_L1).toInt(0);
 }
 
-int Importer::importReservations(ReservationManager *resMgr)
+qsizetype Importer::importReservations(ReservationManager *resMgr)
 {
     const auto resIds = m_file->reservations();
     for (const auto &resId : resIds) {
@@ -265,7 +285,7 @@ int Importer::importReservations(ReservationManager *resMgr)
     return resIds.size();
 }
 
-int Importer::importPasses(PkPassManager *pkPassMgr)
+qsizetype Importer::importPasses(PkPassManager *pkPassMgr)
 {
     const auto passIds = m_file->passes();
     for (const auto &passId : passIds) {
@@ -274,7 +294,7 @@ int Importer::importPasses(PkPassManager *pkPassMgr)
     return passIds.size();
 }
 
-int Importer::importDocuments(DocumentManager *docMgr)
+qsizetype Importer::importDocuments(DocumentManager *docMgr)
 {
     const auto docIds = m_file->documents();
     for (const auto &docId : docIds) {
@@ -283,7 +303,7 @@ int Importer::importDocuments(DocumentManager *docMgr)
     return docIds.size();
 }
 
-int Importer::importTransfers(const ReservationManager *resMgr, TransferManager *transferMgr)
+qsizetype Importer::importTransfers(const ReservationManager *resMgr, TransferManager *transferMgr)
 {
     int count = 0;
     const auto resIds = m_file->reservations();
@@ -299,7 +319,7 @@ int Importer::importTransfers(const ReservationManager *resMgr, TransferManager 
     return count;
 }
 
-int Importer::importTripGroups(TripGroupManager *tgMgr)
+qsizetype Importer::importTripGroups(TripGroupManager *tgMgr)
 {
     const auto tgIds = m_file->listCustomData(BUNDLE_TRIPGROUP_DOMAIN);
     for (const auto &importId : tgIds) {
@@ -315,16 +335,16 @@ int Importer::importTripGroups(TripGroupManager *tgMgr)
     return tgIds.size();
 }
 
-int Importer::importFavoriteLocations(FavoriteLocationModel *favLocModel)
+qsizetype Importer::importFavoriteLocations(FavoriteLocationModel *favLocModel)
 {
     auto favLocs = FavoriteLocation::fromJson(QJsonDocument::fromJson(m_file->customData(BUNDLE_FAVORITE_LOCATION_DOMAIN, u"locations"_s)).array());
     if (!favLocs.empty()) {
         favLocModel->setFavoriteLocations(std::move(favLocs));
     }
-    return favLocs.size();
+    return (qsizetype)favLocs.size();
 }
 
-int Importer::importPasses(PassManager *passMgr)
+qsizetype Importer::importPasses(PassManager *passMgr)
 {
     const auto ids = m_file->listCustomData(BUNDLE_PASS_DOMAIN);
     for (const auto &id : ids) {
@@ -335,7 +355,7 @@ int Importer::importPasses(PassManager *passMgr)
     return ids.size();
 }
 
-int Importer::importHealthCertificates(HealthCertificateManager *healthCertMgr)
+qsizetype Importer::importHealthCertificates(HealthCertificateManager *healthCertMgr)
 {
     const auto certIds = m_file->listCustomData(BUNDLE_HEALTH_CERTIFICATE_DOMAIN);
     for (const auto &certId : certIds) {
@@ -344,7 +364,7 @@ int Importer::importHealthCertificates(HealthCertificateManager *healthCertMgr)
     return certIds.size();
 }
 
-int Importer::importLiveData(LiveDataManager *liveDataMgr)
+qsizetype Importer::importLiveData(LiveDataManager *liveDataMgr)
 {
     const auto ids = m_file->listCustomData(BUNDLE_LIVE_DATA_DOMAIN);
     for (const auto &id : ids) {
@@ -356,17 +376,43 @@ int Importer::importLiveData(LiveDataManager *liveDataMgr)
     return ids.size();
 }
 
-int Importer::importLocationSearchHistory()
+qsizetype Importer::importLocationSearchHistory()
 {
     const auto ids = m_file->listCustomData(BUNDLE_LOCATION_HISTORY_DOMAIN);
     KPublicTransport::LocationHistoryModel model;
     for (const auto &id : ids) {
         model.importEntry(m_file->customData(BUNDLE_LOCATION_HISTORY_DOMAIN, id));
     }
-    return (int)ids.size();
+    return ids.size();
 }
 
-int Importer::importSettings()
+qsizetype Importer::importPublicTransportAssets()
+{
+    const auto ids = m_file->listCustomData(BUNDLE_PUBLIC_TRANSPORT_ASSET_DOMAIN);
+    const auto assetPath = QStandardPaths::writableLocation(QStandardPaths::GenericCacheLocation) + "/org.kde.kpublictransport/assets/"_L1;
+    QDir().mkpath(assetPath);
+
+    for (const auto &id: ids) {
+        QFile f(assetPath + id);
+        if (!f.open(QFile::WriteOnly|QFile::Truncate)) {
+            qCWarning(Log) << "Failed to write asset file:" << f.errorString() << f.fileName();
+            continue;
+        }
+        f.write(m_file->customData(BUNDLE_PUBLIC_TRANSPORT_ASSET_DOMAIN, id));
+        f.close();
+
+#if KITINERARY_VERSION >= QT_VERSION_CHECK(6, 5, 41)
+        // mtime changes need to be done without content changes to take effect
+        f.open(QFile::WriteOnly|QFile::Append);
+        f.setFileTime(m_file->customDataFileTime(BUNDLE_PUBLIC_TRANSPORT_ASSET_DOMAIN, id), QFile::FileModificationTime);
+        f.close();
+#endif
+    }
+
+    return ids.size();
+}
+
+qsizetype Importer::importSettings()
 {
     const auto iniData = m_file->customData(BUNDLE_SETTINGS_DOMAIN, QStringLiteral("settings.ini"));
     if (iniData.isEmpty()) {
