@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-28 00:43+0000\n"
+"POT-Creation-Date: 2025-08-31 00:43+0000\n"
 "PO-Revision-Date: 2025-07-21 00:39+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -118,7 +118,7 @@ msgid "Add to calendar…"
 msgstr "캘린더에 추가…"
 
 #: app/ActionsCard.qml:75 app/ProgramMembershipPage.qml:182
-#: app/TicketPage.qml:191 app/TripGroupPage.qml:737
+#: app/TicketPage.qml:191 app/TripGroupPage.qml:762
 #, kde-format
 msgid "Export…"
 msgstr "내보내기…"
@@ -148,7 +148,7 @@ msgid "Export Reservation"
 msgstr "예약 내보내기"
 
 #: app/ActionsCard.qml:143 app/ProgramMembershipPage.qml:147
-#: app/TicketPage.qml:141 app/TripGroupPage.qml:687
+#: app/TicketPage.qml:141 app/TripGroupPage.qml:712
 #, kde-format
 msgid "Actions"
 msgstr "동작"
@@ -854,6 +854,11 @@ msgstr "이메일"
 msgid "Website"
 msgstr "웹사이트"
 
+#: app/CurrencyConverterDelegate.qml:32 app/LocationInfoDelegate.qml:116
+#, kde-format
+msgid "Currency: %1"
+msgstr "통화: %1"
+
 #: app/DepartureQueryPage.qml:22
 #, kde-format
 msgid "Departures"
@@ -1535,7 +1540,7 @@ msgid "Do you really want to delete this pass?"
 msgstr "이 패스를 삭제하시겠습니까?"
 
 #: app/GenericPkPassPage.qml:55 app/TicketPage.qml:165
-#: app/TripGroupPage.qml:693
+#: app/TripGroupPage.qml:718
 #, kde-format
 msgid "Check for Updates"
 msgstr "업데이트 확인"
@@ -1929,7 +1934,7 @@ msgstr "체크인 시간"
 msgid "Check-out time"
 msgstr "체크아웃 시간"
 
-#: app/ImportAction.qml:23 app/TripGroupPage.qml:493
+#: app/ImportAction.qml:23 app/TripGroupPage.qml:518
 #, kde-format
 msgid "Import"
 msgstr "가져오기"
@@ -2525,11 +2530,6 @@ msgctxt "currency conversion rate"
 msgid "Currency: %1 = %2"
 msgstr "통화: %1 = %2"
 
-#: app/LocationInfoDelegate.qml:116
-#, kde-format
-msgid "Currency: %1"
-msgstr "통화: %1"
-
 #: app/locationinformation.cpp:87
 #, kde-format
 msgid "People are driving on the right side."
@@ -2639,7 +2639,7 @@ msgstr "차내 정보를 사용할 수 없습니다."
 msgid "Map download finished."
 msgstr "지도를 다운로드했습니다."
 
-#: app/Main.qml:287
+#: app/Main.qml:291
 #, kde-format
 msgctxt "@title:window"
 msgid "Matrix Session Verification"
@@ -2995,7 +2995,7 @@ msgstr "저장된 위치"
 msgid "Home Country"
 msgstr "거주 국가"
 
-#: app/MyDataPage.qml:131 app/StatisticsPage.qml:16 app/TripGroupPage.qml:655
+#: app/MyDataPage.qml:131 app/StatisticsPage.qml:16 app/TripGroupPage.qml:680
 #, kde-format
 msgid "Statistics"
 msgstr "통계"
@@ -3499,39 +3499,39 @@ msgstr ""
 msgid "Currency Conversion"
 msgstr "통화 변환"
 
-#: app/SettingsPage.qml:113
+#: app/SettingsPage.qml:118
 #, kde-format
 msgid ""
 "Enabling this will perform online queries for exchange rates to currencies "
 "at travel destinations."
 msgstr "이 옵션을 사용하면 온라인에서 여행지의 환율 정보를 가져옵니다."
 
-#: app/SettingsPage.qml:119
+#: app/SettingsPage.qml:124
 #, kde-format
 msgid "Wikimedia Online Content"
 msgstr "위키미디어 온라인 콘텐츠"
 
-#: app/SettingsPage.qml:122
+#: app/SettingsPage.qml:127
 #, kde-format
 msgid "Use additional online content from Wikimedia and Wikidata."
 msgstr "위키미디어 및 위키데이터의 추가 온라인 콘텐츠를 사용합니다.\t"
 
-#: app/SettingsPage.qml:129
+#: app/SettingsPage.qml:134
 #, kde-format
 msgid "Transfer Assistant"
 msgstr "환승 도우미"
 
-#: app/SettingsPage.qml:133
+#: app/SettingsPage.qml:138
 #, kde-format
 msgid "Automatically add transfers"
 msgstr "자동으로 환승 추가"
 
-#: app/SettingsPage.qml:141
+#: app/SettingsPage.qml:146
 #, kde-format
 msgid "Automatically fill transfers"
 msgstr "자동으로 환승 채우기"
 
-#: app/SettingsPage.qml:142
+#: app/SettingsPage.qml:147
 #, kde-format
 msgid ""
 "When enabled, this will query transport provider online services "
@@ -3540,148 +3540,148 @@ msgstr ""
 "이 옵션을 사용하면 교통 서비스 사업자 온라인 서비스에 조회하여 환승 정보를 조"
 "회합니다."
 
-#: app/SettingsPage.qml:153
+#: app/SettingsPage.qml:158
 #, kde-format
 msgid "Notifications"
 msgstr "알림"
 
-#: app/SettingsPage.qml:158
+#: app/SettingsPage.qml:163
 #, kde-format
 msgid "Configure Notifications…"
 msgstr "알림 설정…"
 
-#: app/SettingsPage.qml:167
+#: app/SettingsPage.qml:172
 #, kde-format
 msgid "Show notifications on lock screen"
 msgstr "잠금 화면에 알림 표시"
 
-#: app/SettingsPage.qml:177 app/SettingsPage.qml:206
+#: app/SettingsPage.qml:182 app/SettingsPage.qml:211
 #, kde-format
 msgid "Request permissions…"
 msgstr "권한 요청…"
 
-#: app/SettingsPage.qml:178
+#: app/SettingsPage.qml:183
 #, kde-format
 msgid "Additional permissions are required to show notifications."
 msgstr "알림을 표시하려면 추가 권한이 필요합니다."
 
-#: app/SettingsPage.qml:188
+#: app/SettingsPage.qml:193
 #, kde-format
 msgid "Notification permissions are available"
 msgstr "알림 권한을 사용할 수 있음"
 
-#: app/SettingsPage.qml:189 app/SettingsPage.qml:231 app/SettingsPage.qml:309
+#: app/SettingsPage.qml:194 app/SettingsPage.qml:236 app/SettingsPage.qml:314
 #, kde-format
 msgid "No further action required."
 msgstr "더 이상 필요한 동작이 없습니다."
 
-#: app/SettingsPage.qml:202
+#: app/SettingsPage.qml:207
 #, kde-format
 msgid "Onboard Status"
 msgstr "차내 정보"
 
-#: app/SettingsPage.qml:207
+#: app/SettingsPage.qml:212
 #, kde-format
 msgid "Additional permissions are required to access the Wi-Fi status."
 msgstr "Wi-Fi 상태에 접근하려면 추가 권한이 필요합니다."
 
-#: app/SettingsPage.qml:218
+#: app/SettingsPage.qml:223
 #, kde-format
 msgid "Wi-Fi access for onboard information is available."
 msgstr "Wi-Fi를 통한 차내 정보에 접근할 수 있습니다."
 
-#: app/SettingsPage.qml:220
+#: app/SettingsPage.qml:225
 #, kde-format
 msgid "Wi-Fi is not enabled"
 msgstr "Wi-Fi가 비활성화됨"
 
-#: app/SettingsPage.qml:222
+#: app/SettingsPage.qml:227
 #, kde-format
 msgid "Location service is not enabled"
 msgstr "위치 서비스가 비활성화됨"
 
-#: app/SettingsPage.qml:224
+#: app/SettingsPage.qml:229
 #, kde-format
 msgid "Wi-Fi access is not available on this system"
 msgstr "이 시스템에서 Wi-Fi에 접근할 수 없음"
 
-#: app/SettingsPage.qml:233
+#: app/SettingsPage.qml:238
 #, kde-format
 msgid "Enable Wi-Fi on your system to access onboard information."
 msgstr "차내 정보를 확인하려면 시스템의 Wi-Fi를 활성화해야 합니다."
 
-#: app/SettingsPage.qml:235
+#: app/SettingsPage.qml:240
 #, kde-format
 msgid ""
 "Enable the location service on your device to access onboard information."
 msgstr "차내 정보를 확인하려면 시스템의 위치 서비스를 활성화해야 합니다."
 
-#: app/SettingsPage.qml:237
+#: app/SettingsPage.qml:242
 #, kde-format
 msgid ""
 "Onboard information are unfortunately not supported on your device at this "
 "time."
 msgstr "현재 사용 중인 장치에서 차내 정보를 지원하지 않습니다."
 
-#: app/SettingsPage.qml:269
+#: app/SettingsPage.qml:274
 #, kde-format
 msgid "Matrix Integration"
 msgstr "Matrix 통합"
 
-#: app/SettingsPage.qml:276 app/SettingsPage.qml:333
+#: app/SettingsPage.qml:281 app/SettingsPage.qml:338
 #, kde-format
 msgid "Logged in as %1"
 msgstr "%1(으)로 로그인됨"
 
-#: app/SettingsPage.qml:280
+#: app/SettingsPage.qml:285
 #, kde-format
 msgid "Synchronize rooms"
 msgstr "방 동기화"
 
-#: app/SettingsPage.qml:287
+#: app/SettingsPage.qml:292
 #, kde-format
 msgid "Matrix ID"
 msgstr "Matrix ID"
 
-#: app/SettingsPage.qml:296
+#: app/SettingsPage.qml:301
 #, kde-format
 msgid "Password"
 msgstr "암호"
 
-#: app/SettingsPage.qml:308
+#: app/SettingsPage.qml:313
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Session verified"
 msgstr "세션 검증됨"
 
-#: app/SettingsPage.qml:308
+#: app/SettingsPage.qml:313
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Session not verified."
 msgstr "세션이 검증되지 않았습니다."
 
-#: app/SettingsPage.qml:309
+#: app/SettingsPage.qml:314
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Initiate session verification in your Matrix chat client."
 msgstr "Matrix 채팅 클라이언트에서 세션 검증을 시작하십시오."
 
-#: app/SettingsPage.qml:316
+#: app/SettingsPage.qml:321
 #, kde-format
 msgid "Log out"
 msgstr "로그아웃"
 
-#: app/SettingsPage.qml:316
+#: app/SettingsPage.qml:321
 #, kde-format
 msgid "Log in"
 msgstr "로그인"
 
-#: app/SettingsPage.qml:323
+#: app/SettingsPage.qml:328
 #, kde-format
 msgid "Traewelling Integration"
 msgstr "Traewelling 통합"
 
-#: app/SettingsPage.qml:328
+#: app/SettingsPage.qml:333
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -3693,27 +3693,27 @@ msgstr ""
 "수 있습니다. 자세한 정보는 <a href=\"https://traewelling.de\">traewelling."
 "de</a> 사이트를 참조하십시오"
 
-#: app/SettingsPage.qml:336
+#: app/SettingsPage.qml:341
 #, kde-format
 msgid "Login"
 msgstr "로그인"
 
-#: app/SettingsPage.qml:341
+#: app/SettingsPage.qml:346
 #, kde-format
 msgid "Logout"
 msgstr "로그아웃"
 
-#: app/SettingsPage.qml:348
+#: app/SettingsPage.qml:353
 #, kde-format
 msgid "Contributing"
 msgstr "기여"
 
-#: app/SettingsPage.qml:352
+#: app/SettingsPage.qml:357
 #, kde-format
 msgid "I contribute to OpenStreetMap"
 msgstr "저는 OpenStreetMap에 기여합니다"
 
-#: app/SettingsPage.qml:353
+#: app/SettingsPage.qml:358
 #, kde-format
 msgid "Enables OSM editing options."
 msgstr "OSM 편집 옵션을 활성화합니다."
@@ -3726,7 +3726,7 @@ msgstr "여행"
 #: app/statisticsmodel.cpp:107 app/statisticsmodel.cpp:140
 #: app/statisticsmodel.cpp:155 app/statisticsmodel.cpp:170
 #: app/statisticsmodel.cpp:185 app/statisticsmodel.cpp:200
-#: app/TripGroupPage.qml:662
+#: app/TripGroupPage.qml:687
 #, kde-format
 msgid "Distance"
 msgstr "거리"
@@ -3739,7 +3739,7 @@ msgstr "호텔 숙박"
 #: app/statisticsmodel.cpp:117 app/statisticsmodel.cpp:145
 #: app/statisticsmodel.cpp:160 app/statisticsmodel.cpp:175
 #: app/statisticsmodel.cpp:190 app/statisticsmodel.cpp:205
-#: app/TripGroupPage.qml:671
+#: app/TripGroupPage.qml:696
 #, kde-format
 msgid "CO₂"
 msgstr "CO₂"
@@ -4400,64 +4400,64 @@ msgstr "일부 전원 플러그 호환되지 않음(%1)"
 msgid "No compatible power plugs (%1)"
 msgstr "호환되는 전원 플러그 없음(%1)"
 
-#: app/TripGroupPage.qml:476
+#: app/TripGroupPage.qml:501
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
 msgstr[0] "통화: %2"
 
-#: app/TripGroupPage.qml:486
+#: app/TripGroupPage.qml:511
 #, kde-format
 msgid "Show map…"
 msgstr "지도 표시…"
 
-#: app/TripGroupPage.qml:510
+#: app/TripGroupPage.qml:535
 #, kde-format
 msgid "Add"
 msgstr "추가"
 
-#: app/TripGroupPage.qml:627
+#: app/TripGroupPage.qml:652
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "오늘의 여정이 없습니다."
 
-#: app/TripGroupPage.qml:680
+#: app/TripGroupPage.qml:705
 #, kde-format
 msgid "Cost"
 msgstr "비용"
 
-#: app/TripGroupPage.qml:702
+#: app/TripGroupPage.qml:727
 #, kde-format
 msgid "Rename…"
 msgstr "이름 바꾸기…"
 
-#: app/TripGroupPage.qml:711
+#: app/TripGroupPage.qml:736
 #, kde-format
 msgid "Merge trips…"
 msgstr "여정 합치기…"
 
-#: app/TripGroupPage.qml:722
+#: app/TripGroupPage.qml:747
 #, kde-format
 msgid "Split trip…"
 msgstr "여정 나누기…"
 
-#: app/TripGroupPage.qml:729
+#: app/TripGroupPage.qml:754
 #, kde-format
 msgid "Download Maps"
 msgstr "지도 다운로드"
 
-#: app/TripGroupPage.qml:744
+#: app/TripGroupPage.qml:769
 #, kde-format
 msgid "Delete trip"
 msgstr "여정 삭제"
 
-#: app/TripGroupPage.qml:769
+#: app/TripGroupPage.qml:794
 #, kde-format
 msgctxt "@action:button"
 msgid "Go To Now"
 msgstr "현재로 이동"
 
-#: app/TripGroupPage.qml:777 app/TripGroupsPage.qml:118
+#: app/TripGroupPage.qml:802 app/TripGroupsPage.qml:118
 #: app/TripGroupsPage.qml:137
 #, kde-format
 msgctxt "@action:button"

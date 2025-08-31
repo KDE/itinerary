@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-28 00:43+0000\n"
+"POT-Creation-Date: 2025-08-31 00:43+0000\n"
 "PO-Revision-Date: 2025-08-06 12:54+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -119,7 +119,7 @@ msgid "Add to calendar…"
 msgstr "Lägg till i kalender…"
 
 #: app/ActionsCard.qml:75 app/ProgramMembershipPage.qml:182
-#: app/TicketPage.qml:191 app/TripGroupPage.qml:737
+#: app/TicketPage.qml:191 app/TripGroupPage.qml:762
 #, kde-format
 msgid "Export…"
 msgstr "Exportera…"
@@ -149,7 +149,7 @@ msgid "Export Reservation"
 msgstr "Exportera bokning"
 
 #: app/ActionsCard.qml:143 app/ProgramMembershipPage.qml:147
-#: app/TicketPage.qml:141 app/TripGroupPage.qml:687
+#: app/TicketPage.qml:141 app/TripGroupPage.qml:712
 #, kde-format
 msgid "Actions"
 msgstr "Åtgärder"
@@ -855,6 +855,11 @@ msgstr "E-post"
 msgid "Website"
 msgstr "Webbplats"
 
+#: app/CurrencyConverterDelegate.qml:32 app/LocationInfoDelegate.qml:116
+#, kde-format
+msgid "Currency: %1"
+msgstr "Valuta: %1"
+
 #: app/DepartureQueryPage.qml:22
 #, kde-format
 msgid "Departures"
@@ -1534,7 +1539,7 @@ msgid "Do you really want to delete this pass?"
 msgstr "Vill du verkligen ta bort passet?"
 
 #: app/GenericPkPassPage.qml:55 app/TicketPage.qml:165
-#: app/TripGroupPage.qml:693
+#: app/TripGroupPage.qml:718
 #, kde-format
 msgid "Check for Updates"
 msgstr "Titta efter uppdateringar"
@@ -1930,7 +1935,7 @@ msgstr "Incheckningstid"
 msgid "Check-out time"
 msgstr "Utcheckningstid"
 
-#: app/ImportAction.qml:23 app/TripGroupPage.qml:493
+#: app/ImportAction.qml:23 app/TripGroupPage.qml:518
 #, kde-format
 msgid "Import"
 msgstr "Importera"
@@ -2525,11 +2530,6 @@ msgctxt "currency conversion rate"
 msgid "Currency: %1 = %2"
 msgstr "Valuta: %1 = %2"
 
-#: app/LocationInfoDelegate.qml:116
-#, kde-format
-msgid "Currency: %1"
-msgstr "Valuta: %1"
-
 #: app/locationinformation.cpp:87
 #, kde-format
 msgid "People are driving on the right side."
@@ -2639,7 +2639,7 @@ msgstr "Ingen ombordinformation tillgänglig."
 msgid "Map download finished."
 msgstr "Nerladdning av kartor klar."
 
-#: app/Main.qml:287
+#: app/Main.qml:291
 #, kde-format
 msgctxt "@title:window"
 msgid "Matrix Session Verification"
@@ -3017,7 +3017,7 @@ msgstr "Spara platser"
 msgid "Home Country"
 msgstr "Hemland"
 
-#: app/MyDataPage.qml:131 app/StatisticsPage.qml:16 app/TripGroupPage.qml:655
+#: app/MyDataPage.qml:131 app/StatisticsPage.qml:16 app/TripGroupPage.qml:680
 #, kde-format
 msgid "Statistics"
 msgstr "Statistik"
@@ -3523,7 +3523,7 @@ msgstr ""
 msgid "Currency Conversion"
 msgstr "Valutakonvertering"
 
-#: app/SettingsPage.qml:113
+#: app/SettingsPage.qml:118
 #, kde-format
 msgid ""
 "Enabling this will perform online queries for exchange rates to currencies "
@@ -3531,32 +3531,32 @@ msgid ""
 msgstr ""
 "Om det aktiveras utförs sökning på nätet efter växlingskurser på resmålen."
 
-#: app/SettingsPage.qml:119
+#: app/SettingsPage.qml:124
 #, kde-format
 msgid "Wikimedia Online Content"
 msgstr "Wikimedia nätinnehåll"
 
-#: app/SettingsPage.qml:122
+#: app/SettingsPage.qml:127
 #, kde-format
 msgid "Use additional online content from Wikimedia and Wikidata."
 msgstr "Använd ytterligare nätinnehåll från Wikimedia och Wikidata."
 
-#: app/SettingsPage.qml:129
+#: app/SettingsPage.qml:134
 #, kde-format
 msgid "Transfer Assistant"
 msgstr "Bytesguide"
 
-#: app/SettingsPage.qml:133
+#: app/SettingsPage.qml:138
 #, kde-format
 msgid "Automatically add transfers"
 msgstr "Lägg automatiskt till byten"
 
-#: app/SettingsPage.qml:141
+#: app/SettingsPage.qml:146
 #, kde-format
 msgid "Automatically fill transfers"
 msgstr "Fyll automatiskt i byten"
 
-#: app/SettingsPage.qml:142
+#: app/SettingsPage.qml:147
 #, kde-format
 msgid ""
 "When enabled, this will query transport provider online services "
@@ -3565,149 +3565,149 @@ msgstr ""
 "Om aktiverat, används transportföretagets nättjänster automatiskt för att "
 "information om byten."
 
-#: app/SettingsPage.qml:153
+#: app/SettingsPage.qml:158
 #, kde-format
 msgid "Notifications"
 msgstr "Underrättelser"
 
-#: app/SettingsPage.qml:158
+#: app/SettingsPage.qml:163
 #, kde-format
 msgid "Configure Notifications…"
 msgstr "Anpassa underrättelser…"
 
-#: app/SettingsPage.qml:167
+#: app/SettingsPage.qml:172
 #, kde-format
 msgid "Show notifications on lock screen"
 msgstr "Visa underrättelser vid skärmlåsning"
 
-#: app/SettingsPage.qml:177 app/SettingsPage.qml:206
+#: app/SettingsPage.qml:182 app/SettingsPage.qml:211
 #, kde-format
 msgid "Request permissions…"
 msgstr "Begär rättigheter…"
 
-#: app/SettingsPage.qml:178
+#: app/SettingsPage.qml:183
 #, kde-format
 msgid "Additional permissions are required to show notifications."
 msgstr "Ytterligare rättigheter krävs för att visa underrättelser."
 
-#: app/SettingsPage.qml:188
+#: app/SettingsPage.qml:193
 #, kde-format
 msgid "Notification permissions are available"
 msgstr "Underrättelserättigheter är tillgängliga"
 
-#: app/SettingsPage.qml:189 app/SettingsPage.qml:231 app/SettingsPage.qml:309
+#: app/SettingsPage.qml:194 app/SettingsPage.qml:236 app/SettingsPage.qml:314
 #, kde-format
 msgid "No further action required."
 msgstr "Ingen ytterligare åtgärd krävs."
 
-#: app/SettingsPage.qml:202
+#: app/SettingsPage.qml:207
 #, kde-format
 msgid "Onboard Status"
 msgstr "Ombordstatus"
 
-#: app/SettingsPage.qml:207
+#: app/SettingsPage.qml:212
 #, kde-format
 msgid "Additional permissions are required to access the Wi-Fi status."
 msgstr "Ytterligare rättigheter krävs för att komma åt WIFI-status."
 
-#: app/SettingsPage.qml:218
+#: app/SettingsPage.qml:223
 #, kde-format
 msgid "Wi-Fi access for onboard information is available."
 msgstr "WIFI-åtkomst för ombordinformation är tillgänglig."
 
-#: app/SettingsPage.qml:220
+#: app/SettingsPage.qml:225
 #, kde-format
 msgid "Wi-Fi is not enabled"
 msgstr "WIFI är inte aktiverat"
 
-#: app/SettingsPage.qml:222
+#: app/SettingsPage.qml:227
 #, kde-format
 msgid "Location service is not enabled"
 msgstr "Platstjänst är inte aktiverad"
 
-#: app/SettingsPage.qml:224
+#: app/SettingsPage.qml:229
 #, kde-format
 msgid "Wi-Fi access is not available on this system"
 msgstr "WIFI-åtkomst är inte tillgänglig på systemet"
 
-#: app/SettingsPage.qml:233
+#: app/SettingsPage.qml:238
 #, kde-format
 msgid "Enable Wi-Fi on your system to access onboard information."
 msgstr "Aktivera WIFI på systemet för att komma åt ombordinformation."
 
-#: app/SettingsPage.qml:235
+#: app/SettingsPage.qml:240
 #, kde-format
 msgid ""
 "Enable the location service on your device to access onboard information."
 msgstr ""
 "Aktivera platstjänsten på din enhet för att komma åt ombordinformation."
 
-#: app/SettingsPage.qml:237
+#: app/SettingsPage.qml:242
 #, kde-format
 msgid ""
 "Onboard information are unfortunately not supported on your device at this "
 "time."
 msgstr "Ombordinformation stöds tyvärr inte för närvarande på din enhet."
 
-#: app/SettingsPage.qml:269
+#: app/SettingsPage.qml:274
 #, kde-format
 msgid "Matrix Integration"
 msgstr "Integrering med Matrix"
 
-#: app/SettingsPage.qml:276 app/SettingsPage.qml:333
+#: app/SettingsPage.qml:281 app/SettingsPage.qml:338
 #, kde-format
 msgid "Logged in as %1"
 msgstr "Inloggad som %1"
 
-#: app/SettingsPage.qml:280
+#: app/SettingsPage.qml:285
 #, kde-format
 msgid "Synchronize rooms"
 msgstr "Synkronisera rum"
 
-#: app/SettingsPage.qml:287
+#: app/SettingsPage.qml:292
 #, kde-format
 msgid "Matrix ID"
 msgstr "Matrix-id"
 
-#: app/SettingsPage.qml:296
+#: app/SettingsPage.qml:301
 #, kde-format
 msgid "Password"
 msgstr "Lösenord"
 
-#: app/SettingsPage.qml:308
+#: app/SettingsPage.qml:313
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Session verified"
 msgstr "Session verifierad"
 
-#: app/SettingsPage.qml:308
+#: app/SettingsPage.qml:313
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Session not verified."
 msgstr "Session inte verifierad."
 
-#: app/SettingsPage.qml:309
+#: app/SettingsPage.qml:314
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Initiate session verification in your Matrix chat client."
 msgstr "Initiera sessionsverifikation i ditt Matrix chattprogram."
 
-#: app/SettingsPage.qml:316
+#: app/SettingsPage.qml:321
 #, kde-format
 msgid "Log out"
 msgstr "Logga ut"
 
-#: app/SettingsPage.qml:316
+#: app/SettingsPage.qml:321
 #, kde-format
 msgid "Log in"
 msgstr "Logga in"
 
-#: app/SettingsPage.qml:323
+#: app/SettingsPage.qml:328
 #, kde-format
 msgid "Traewelling Integration"
 msgstr "Integrering med Traewelling"
 
-#: app/SettingsPage.qml:328
+#: app/SettingsPage.qml:333
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -3720,27 +3720,27 @@ msgstr ""
 "kollektivtrafikresor. För mer information besök <a href=\"https://"
 "traewelling.de\">traewelling.de</a>."
 
-#: app/SettingsPage.qml:336
+#: app/SettingsPage.qml:341
 #, kde-format
 msgid "Login"
 msgstr "Logga in"
 
-#: app/SettingsPage.qml:341
+#: app/SettingsPage.qml:346
 #, kde-format
 msgid "Logout"
 msgstr "Logga ut"
 
-#: app/SettingsPage.qml:348
+#: app/SettingsPage.qml:353
 #, kde-format
 msgid "Contributing"
 msgstr "Bidra"
 
-#: app/SettingsPage.qml:352
+#: app/SettingsPage.qml:357
 #, kde-format
 msgid "I contribute to OpenStreetMap"
 msgstr "Jag bidrar till OpenStreetMap"
 
-#: app/SettingsPage.qml:353
+#: app/SettingsPage.qml:358
 #, kde-format
 msgid "Enables OSM editing options."
 msgstr "Aktivera OSM redigeringsalternativ"
@@ -3753,7 +3753,7 @@ msgstr "Resor"
 #: app/statisticsmodel.cpp:107 app/statisticsmodel.cpp:140
 #: app/statisticsmodel.cpp:155 app/statisticsmodel.cpp:170
 #: app/statisticsmodel.cpp:185 app/statisticsmodel.cpp:200
-#: app/TripGroupPage.qml:662
+#: app/TripGroupPage.qml:687
 #, kde-format
 msgid "Distance"
 msgstr "Avstånd"
@@ -3766,7 +3766,7 @@ msgstr "Hotellnätter"
 #: app/statisticsmodel.cpp:117 app/statisticsmodel.cpp:145
 #: app/statisticsmodel.cpp:160 app/statisticsmodel.cpp:175
 #: app/statisticsmodel.cpp:190 app/statisticsmodel.cpp:205
-#: app/TripGroupPage.qml:671
+#: app/TripGroupPage.qml:696
 #, kde-format
 msgid "CO₂"
 msgstr "CO₂"
@@ -4429,65 +4429,65 @@ msgstr "Vissa inkompatibla elkontakter (%1)"
 msgid "No compatible power plugs (%1)"
 msgstr "Inga kompatibla elkontakter (%1)"
 
-#: app/TripGroupPage.qml:476
+#: app/TripGroupPage.qml:501
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
 msgstr[0] "Valuta: %2"
 msgstr[1] "Valutor: %2"
 
-#: app/TripGroupPage.qml:486
+#: app/TripGroupPage.qml:511
 #, kde-format
 msgid "Show map…"
 msgstr "Visa karta…"
 
-#: app/TripGroupPage.qml:510
+#: app/TripGroupPage.qml:535
 #, kde-format
 msgid "Add"
 msgstr "Lägg till"
 
-#: app/TripGroupPage.qml:627
+#: app/TripGroupPage.qml:652
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Ingenting i resplanen idag."
 
-#: app/TripGroupPage.qml:680
+#: app/TripGroupPage.qml:705
 #, kde-format
 msgid "Cost"
 msgstr "Kostnad"
 
-#: app/TripGroupPage.qml:702
+#: app/TripGroupPage.qml:727
 #, kde-format
 msgid "Rename…"
 msgstr "Byt namn…"
 
-#: app/TripGroupPage.qml:711
+#: app/TripGroupPage.qml:736
 #, kde-format
 msgid "Merge trips…"
 msgstr "Slå samman resor…"
 
-#: app/TripGroupPage.qml:722
+#: app/TripGroupPage.qml:747
 #, kde-format
 msgid "Split trip…"
 msgstr "Dela resa…"
 
-#: app/TripGroupPage.qml:729
+#: app/TripGroupPage.qml:754
 #, kde-format
 msgid "Download Maps"
 msgstr "Ladda ner kartor"
 
-#: app/TripGroupPage.qml:744
+#: app/TripGroupPage.qml:769
 #, kde-format
 msgid "Delete trip"
 msgstr "Ta bort resa"
 
-#: app/TripGroupPage.qml:769
+#: app/TripGroupPage.qml:794
 #, kde-format
 msgctxt "@action:button"
 msgid "Go To Now"
 msgstr "Gå till aktuell tid"
 
-#: app/TripGroupPage.qml:777 app/TripGroupsPage.qml:118
+#: app/TripGroupPage.qml:802 app/TripGroupsPage.qml:118
 #: app/TripGroupsPage.qml:137
 #, kde-format
 msgctxt "@action:button"
