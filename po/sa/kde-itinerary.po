@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-29 02:37+0000\n"
+"POT-Creation-Date: 2025-08-31 02:44+0000\n"
 "PO-Revision-Date: 2025-03-02 14:47+0530\n"
 "Last-Translator: Shreekant Kalwar <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -2686,7 +2686,7 @@ msgstr "जहाजे सूचना उपलब्धा नास्ति
 msgid "Map download finished."
 msgstr "नक्शा डाउनलोड् समाप्तम्।"
 
-#: app/Main.qml:287
+#: app/Main.qml:291
 #, kde-format
 msgctxt "@title:window"
 msgid "Matrix Session Verification"
@@ -3550,7 +3550,7 @@ msgstr ""
 msgid "Currency Conversion"
 msgstr "मुद्रारूपान्तरणम्"
 
-#: app/SettingsPage.qml:113
+#: app/SettingsPage.qml:118
 #, kde-format
 msgid ""
 "Enabling this will perform online queries for exchange rates to currencies "
@@ -3558,32 +3558,32 @@ msgid ""
 msgstr ""
 "एतत् सक्षमीकरणेन यात्रागन्तव्यस्थानेषु मुद्राणां विनिमयदराणां कृते ऑनलाइन-प्रश्नाः भविष्यन्ति ।"
 
-#: app/SettingsPage.qml:119
+#: app/SettingsPage.qml:124
 #, kde-format
 msgid "Wikimedia Online Content"
 msgstr "विकिमीडिया ऑनलाइन सामग्री"
 
-#: app/SettingsPage.qml:122
+#: app/SettingsPage.qml:127
 #, kde-format
 msgid "Use additional online content from Wikimedia and Wikidata."
 msgstr "विकिमीडिया विकिडाटा च अतिरिक्त-अनलाईन-सामग्रीणां उपयोगं कुर्वन्तु ।"
 
-#: app/SettingsPage.qml:129
+#: app/SettingsPage.qml:134
 #, kde-format
 msgid "Transfer Assistant"
 msgstr "स्थानान्तरण सहायक"
 
-#: app/SettingsPage.qml:133
+#: app/SettingsPage.qml:138
 #, kde-format
 msgid "Automatically add transfers"
 msgstr "स्वयमेव स्थानान्तरणं योजयन्तु"
 
-#: app/SettingsPage.qml:141
+#: app/SettingsPage.qml:146
 #, kde-format
 msgid "Automatically fill transfers"
 msgstr "स्थानान्तरणं स्वयमेव पूरयन्तु"
 
-#: app/SettingsPage.qml:142
+#: app/SettingsPage.qml:147
 #, kde-format
 msgid ""
 "When enabled, this will query transport provider online services "
@@ -3592,148 +3592,148 @@ msgstr ""
 "यदा सक्षमं भवति तदा एतत् स्थानान्तरणसूचनार्थं परिवहनप्रदातृणां ऑनलाइनसेवानां स्वयमेव प्रश्नं "
 "करिष्यति ।"
 
-#: app/SettingsPage.qml:153
+#: app/SettingsPage.qml:158
 #, kde-format
 msgid "Notifications"
 msgstr "अधिसूचना"
 
-#: app/SettingsPage.qml:158
+#: app/SettingsPage.qml:163
 #, kde-format
 msgid "Configure Notifications…"
 msgstr "सूचनाः विन्यस्यताम्…"
 
-#: app/SettingsPage.qml:167
+#: app/SettingsPage.qml:172
 #, kde-format
 msgid "Show notifications on lock screen"
 msgstr "लॉक स्क्रीन इत्यत्र सूचनाः दर्शयन्तु"
 
-#: app/SettingsPage.qml:177 app/SettingsPage.qml:206
+#: app/SettingsPage.qml:182 app/SettingsPage.qml:211
 #, kde-format
 msgid "Request permissions…"
 msgstr "अनुमतिं याचयन्तु…"
 
-#: app/SettingsPage.qml:178
+#: app/SettingsPage.qml:183
 #, kde-format
 msgid "Additional permissions are required to show notifications."
 msgstr "सूचनाः दर्शयितुं अतिरिक्ताः अनुमतिः आवश्यकाः सन्ति ।"
 
-#: app/SettingsPage.qml:188
+#: app/SettingsPage.qml:193
 #, kde-format
 msgid "Notification permissions are available"
 msgstr "सूचनानुमतयः उपलभ्यन्ते"
 
-#: app/SettingsPage.qml:189 app/SettingsPage.qml:231 app/SettingsPage.qml:309
+#: app/SettingsPage.qml:194 app/SettingsPage.qml:236 app/SettingsPage.qml:314
 #, kde-format
 msgid "No further action required."
 msgstr "न पुनः कार्यवाही आवश्यकी।"
 
-#: app/SettingsPage.qml:202
+#: app/SettingsPage.qml:207
 #, kde-format
 msgid "Onboard Status"
 msgstr "जहाजे स्थिता स्थिति"
 
-#: app/SettingsPage.qml:207
+#: app/SettingsPage.qml:212
 #, kde-format
 msgid "Additional permissions are required to access the Wi-Fi status."
 msgstr "Wi-Fi-स्थितिं प्राप्तुं अतिरिक्तानुमतयः आवश्यकाः सन्ति ।"
 
-#: app/SettingsPage.qml:218
+#: app/SettingsPage.qml:223
 #, kde-format
 msgid "Wi-Fi access for onboard information is available."
 msgstr "जहाजे सूचनायै वाई-फाई-प्रवेशः उपलभ्यते ।"
 
-#: app/SettingsPage.qml:220
+#: app/SettingsPage.qml:225
 #, kde-format
 msgid "Wi-Fi is not enabled"
 msgstr "Wi-Fi सक्षमः नास्ति"
 
-#: app/SettingsPage.qml:222
+#: app/SettingsPage.qml:227
 #, kde-format
 msgid "Location service is not enabled"
 msgstr "स्थानसेवा सक्षमा नास्ति"
 
-#: app/SettingsPage.qml:224
+#: app/SettingsPage.qml:229
 #, kde-format
 msgid "Wi-Fi access is not available on this system"
 msgstr "अस्मिन् प्रणाल्यां वाई-फाई-प्रवेशः उपलब्धः नास्ति"
 
-#: app/SettingsPage.qml:233
+#: app/SettingsPage.qml:238
 #, kde-format
 msgid "Enable Wi-Fi on your system to access onboard information."
 msgstr "जहाजे सूचनां प्राप्तुं भवतः प्रणाल्यां Wi-Fi सक्षमं कुर्वन्तु।"
 
-#: app/SettingsPage.qml:235
+#: app/SettingsPage.qml:240
 #, kde-format
 msgid ""
 "Enable the location service on your device to access onboard information."
 msgstr "जहाजे सूचनां प्राप्तुं भवतः उपकरणे स्थानसेवा सक्षमं कुर्वन्तु ।"
 
-#: app/SettingsPage.qml:237
+#: app/SettingsPage.qml:242
 #, kde-format
 msgid ""
 "Onboard information are unfortunately not supported on your device at this "
 "time."
 msgstr "अस्मिन् समये भवतः उपकरणे दुर्भाग्येन जहाजे सूचना समर्थिता नास्ति ।"
 
-#: app/SettingsPage.qml:269
+#: app/SettingsPage.qml:274
 #, kde-format
 msgid "Matrix Integration"
 msgstr "मैट्रिक्स एकीकरण"
 
-#: app/SettingsPage.qml:276 app/SettingsPage.qml:333
+#: app/SettingsPage.qml:281 app/SettingsPage.qml:338
 #, kde-format
 msgid "Logged in as %1"
 msgstr "%1 इति रूपेण प्रवेशः कृतः"
 
-#: app/SettingsPage.qml:280
+#: app/SettingsPage.qml:285
 #, kde-format
 msgid "Synchronize rooms"
 msgstr "कक्षेषु समन्वयं कुर्वन्तु"
 
-#: app/SettingsPage.qml:287
+#: app/SettingsPage.qml:292
 #, kde-format
 msgid "Matrix ID"
 msgstr "मैट्रिक्स आईडी"
 
-#: app/SettingsPage.qml:296
+#: app/SettingsPage.qml:301
 #, kde-format
 msgid "Password"
 msgstr "समाभाष्"
 
-#: app/SettingsPage.qml:308
+#: app/SettingsPage.qml:313
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Session verified"
 msgstr "सत्र सत्यापित"
 
-#: app/SettingsPage.qml:308
+#: app/SettingsPage.qml:313
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Session not verified."
 msgstr "सत्रं सत्यापितं न।"
 
-#: app/SettingsPage.qml:309
+#: app/SettingsPage.qml:314
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Initiate session verification in your Matrix chat client."
 msgstr "स्वस्य Matrix chat client मध्ये सत्रसत्यापनं आरभत।"
 
-#: app/SettingsPage.qml:316
+#: app/SettingsPage.qml:321
 #, kde-format
 msgid "Log out"
 msgstr "निर्गच्छन्तु"
 
-#: app/SettingsPage.qml:316
+#: app/SettingsPage.qml:321
 #, kde-format
 msgid "Log in"
 msgstr "प्रवेशं कुर्वन्तु"
 
-#: app/SettingsPage.qml:323
+#: app/SettingsPage.qml:328
 #, kde-format
 msgid "Traewelling Integration"
 msgstr "Traewelling एकीकरण"
 
-#: app/SettingsPage.qml:328
+#: app/SettingsPage.qml:333
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -3746,27 +3746,27 @@ msgstr ""
 "अधिकविवरणार्थं <a href=\"https://traewelling.de\">traewelling.de इति</a> "
 "सञ्चिकां पश्यन्तु"
 
-#: app/SettingsPage.qml:336
+#: app/SettingsPage.qml:341
 #, kde-format
 msgid "Login"
 msgstr "प्रवेशः"
 
-#: app/SettingsPage.qml:341
+#: app/SettingsPage.qml:346
 #, kde-format
 msgid "Logout"
 msgstr "लॉगआउट्"
 
-#: app/SettingsPage.qml:348
+#: app/SettingsPage.qml:353
 #, kde-format
 msgid "Contributing"
 msgstr "योगदान देते हुए"
 
-#: app/SettingsPage.qml:352
+#: app/SettingsPage.qml:357
 #, kde-format
 msgid "I contribute to OpenStreetMap"
 msgstr "अहं OpenStreetMap इत्यत्र योगदानं ददामि"
 
-#: app/SettingsPage.qml:353
+#: app/SettingsPage.qml:358
 #, kde-format
 msgid "Enables OSM editing options."
 msgstr "OSM सम्पादनविकल्पान् सक्षमं करोति ।"

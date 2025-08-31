@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-29 02:37+0000\n"
+"POT-Creation-Date: 2025-08-31 02:44+0000\n"
 "PO-Revision-Date: 2025-07-14 11:08+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -2630,7 +2630,7 @@ msgstr "Matka-aikaista tietoa ei ole saatavilla."
 msgid "Map download finished."
 msgstr "Kartan lataus valmistui."
 
-#: app/Main.qml:287
+#: app/Main.qml:291
 #, kde-format
 msgctxt "@title:window"
 msgid "Matrix Session Verification"
@@ -3513,7 +3513,7 @@ msgstr ""
 msgid "Currency Conversion"
 msgstr "Valuutanmuunnos"
 
-#: app/SettingsPage.qml:113
+#: app/SettingsPage.qml:118
 #, kde-format
 msgid ""
 "Enabling this will perform online queries for exchange rates to currencies "
@@ -3521,32 +3521,32 @@ msgid ""
 msgstr ""
 "Tämän käyttöönotto kyselee verkosta matkakohteiden valuutanvaihtokursseja."
 
-#: app/SettingsPage.qml:119
+#: app/SettingsPage.qml:124
 #, kde-format
 msgid "Wikimedia Online Content"
 msgstr "Wikimedian verkkosisältö"
 
-#: app/SettingsPage.qml:122
+#: app/SettingsPage.qml:127
 #, kde-format
 msgid "Use additional online content from Wikimedia and Wikidata."
 msgstr "Käytä Wikimedian ja Wikidatan lisäverkkosisältöä."
 
-#: app/SettingsPage.qml:129
+#: app/SettingsPage.qml:134
 #, kde-format
 msgid "Transfer Assistant"
 msgstr "Vaihtoavustaja"
 
-#: app/SettingsPage.qml:133
+#: app/SettingsPage.qml:138
 #, kde-format
 msgid "Automatically add transfers"
 msgstr "Lisää vaihdot automaattisesti"
 
-#: app/SettingsPage.qml:141
+#: app/SettingsPage.qml:146
 #, kde-format
 msgid "Automatically fill transfers"
 msgstr "Täytä vaihdot automaattisesti"
 
-#: app/SettingsPage.qml:142
+#: app/SettingsPage.qml:147
 #, kde-format
 msgid ""
 "When enabled, this will query transport provider online services "
@@ -3555,80 +3555,80 @@ msgstr ""
 "Jos käytössä, vaihtotiedot kysellään verkkopalveluntarjoajilta "
 "automaattisesti."
 
-#: app/SettingsPage.qml:153
+#: app/SettingsPage.qml:158
 #, kde-format
 msgid "Notifications"
 msgstr "Ilmoitukset"
 
-#: app/SettingsPage.qml:158
+#: app/SettingsPage.qml:163
 #, kde-format
 msgid "Configure Notifications…"
 msgstr "Ilmoitusasetukset…"
 
-#: app/SettingsPage.qml:167
+#: app/SettingsPage.qml:172
 #, kde-format
 msgid "Show notifications on lock screen"
 msgstr "Näytä ilmoitukset lukitusnäytöllä"
 
-#: app/SettingsPage.qml:177 app/SettingsPage.qml:206
+#: app/SettingsPage.qml:182 app/SettingsPage.qml:211
 #, kde-format
 msgid "Request permissions…"
 msgstr "Pyydä käyttölupaa…"
 
-#: app/SettingsPage.qml:178
+#: app/SettingsPage.qml:183
 #, kde-format
 msgid "Additional permissions are required to show notifications."
 msgstr "Ilmoituksen näyttämiseksi vaaditaan lisäkäyttöoikeuksia."
 
-#: app/SettingsPage.qml:188
+#: app/SettingsPage.qml:193
 #, kde-format
 msgid "Notification permissions are available"
 msgstr "Ilmoituskäyttöoikeudet ovat käytettävissä"
 
-#: app/SettingsPage.qml:189 app/SettingsPage.qml:231 app/SettingsPage.qml:309
+#: app/SettingsPage.qml:194 app/SettingsPage.qml:236 app/SettingsPage.qml:314
 #, kde-format
 msgid "No further action required."
 msgstr "Lisätoimia ei vaadita."
 
 # Huono. ”Onboard” voi kai tässä koskea muutakin kuin laivaa (?), eikä ole aivan selvää, tarkoittaako ”status” ’tilannetta’ vai jotakin muuta.
-#: app/SettingsPage.qml:202
+#: app/SettingsPage.qml:207
 #, kde-format
 msgid "Onboard Status"
 msgstr "Laivaannousun tilanne"
 
-#: app/SettingsPage.qml:207
+#: app/SettingsPage.qml:212
 #, kde-format
 msgid "Additional permissions are required to access the Wi-Fi status."
 msgstr "Langattoman verkon tilan saamiseksi vaaditaan lisäkäyttöoikeuksia."
 
-#: app/SettingsPage.qml:218
+#: app/SettingsPage.qml:223
 #, kde-format
 msgid "Wi-Fi access for onboard information is available."
 msgstr "Tietoa kulkuvälineen langattomasta verkosta ei ole saatavilla."
 
-#: app/SettingsPage.qml:220
+#: app/SettingsPage.qml:225
 #, kde-format
 msgid "Wi-Fi is not enabled"
 msgstr "Langaton verkko ei ole käytössä"
 
-#: app/SettingsPage.qml:222
+#: app/SettingsPage.qml:227
 #, kde-format
 msgid "Location service is not enabled"
 msgstr "Sijaintipalvelu ei ole käytössä"
 
-#: app/SettingsPage.qml:224
+#: app/SettingsPage.qml:229
 #, kde-format
 msgid "Wi-Fi access is not available on this system"
 msgstr "Pääsy langattomaan verkkoon ei ole käytettävissä"
 
-#: app/SettingsPage.qml:233
+#: app/SettingsPage.qml:238
 #, kde-format
 msgid "Enable Wi-Fi on your system to access onboard information."
 msgstr ""
 "Laivaannousun tilanteen selvittämiseksi salli laitteen käyttää langatonta "
 "verkkoa."
 
-#: app/SettingsPage.qml:235
+#: app/SettingsPage.qml:240
 #, kde-format
 msgid ""
 "Enable the location service on your device to access onboard information."
@@ -3636,72 +3636,72 @@ msgstr ""
 "Laivaannousutietojen selvittämiseksi salli laitteen käyttää "
 "paikannuspalvelua."
 
-#: app/SettingsPage.qml:237
+#: app/SettingsPage.qml:242
 #, kde-format
 msgid ""
 "Onboard information are unfortunately not supported on your device at this "
 "time."
 msgstr "Laite ei valitettavasti toistaiseksi tue laivaannousutietoja."
 
-#: app/SettingsPage.qml:269
+#: app/SettingsPage.qml:274
 #, kde-format
 msgid "Matrix Integration"
 msgstr "Matrix-eheytys"
 
-#: app/SettingsPage.qml:276 app/SettingsPage.qml:333
+#: app/SettingsPage.qml:281 app/SettingsPage.qml:338
 #, kde-format
 msgid "Logged in as %1"
 msgstr "Kirjauduttu tunnuksella %1"
 
-#: app/SettingsPage.qml:280
+#: app/SettingsPage.qml:285
 #, kde-format
 msgid "Synchronize rooms"
 msgstr "Tahdista huoneet"
 
-#: app/SettingsPage.qml:287
+#: app/SettingsPage.qml:292
 #, kde-format
 msgid "Matrix ID"
 msgstr "Matrix-tunniste"
 
-#: app/SettingsPage.qml:296
+#: app/SettingsPage.qml:301
 #, kde-format
 msgid "Password"
 msgstr "Salasana"
 
-#: app/SettingsPage.qml:308
+#: app/SettingsPage.qml:313
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Session verified"
 msgstr "Istunto varmennettu"
 
-#: app/SettingsPage.qml:308
+#: app/SettingsPage.qml:313
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Session not verified."
 msgstr "Istuntoa ei varmennettu."
 
-#: app/SettingsPage.qml:309
+#: app/SettingsPage.qml:314
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Initiate session verification in your Matrix chat client."
 msgstr "Käynnistä istunnon varmennus Matrix-keskusteluasiakkaassa."
 
-#: app/SettingsPage.qml:316
+#: app/SettingsPage.qml:321
 #, kde-format
 msgid "Log out"
 msgstr "Kirjaudu ulos"
 
-#: app/SettingsPage.qml:316
+#: app/SettingsPage.qml:321
 #, kde-format
 msgid "Log in"
 msgstr "Kirjaudu"
 
-#: app/SettingsPage.qml:323
+#: app/SettingsPage.qml:328
 #, kde-format
 msgid "Traewelling Integration"
 msgstr "Traewelling-eheytys"
 
-#: app/SettingsPage.qml:328
+#: app/SettingsPage.qml:333
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -3713,27 +3713,27 @@ msgstr ""
 "missä olet ja missä julkisen liikenteen matkoilla voi kirjautua. Lisätietoa "
 "löytyy sivulta <a href=\"https://traewelling.de/\">traewelling.de</a>"
 
-#: app/SettingsPage.qml:336
+#: app/SettingsPage.qml:341
 #, kde-format
 msgid "Login"
 msgstr "Kirjaudu"
 
-#: app/SettingsPage.qml:341
+#: app/SettingsPage.qml:346
 #, kde-format
 msgid "Logout"
 msgstr "Kirjaudu ulos"
 
-#: app/SettingsPage.qml:348
+#: app/SettingsPage.qml:353
 #, kde-format
 msgid "Contributing"
 msgstr "Avustaminen"
 
-#: app/SettingsPage.qml:352
+#: app/SettingsPage.qml:357
 #, kde-format
 msgid "I contribute to OpenStreetMap"
 msgstr "Avustan OpenStreetMapiä"
 
-#: app/SettingsPage.qml:353
+#: app/SettingsPage.qml:358
 #, kde-format
 msgid "Enables OSM editing options."
 msgstr "Ottaa käyttöön OSM-muokkausvalinnat."
