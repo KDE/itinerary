@@ -776,7 +776,7 @@ msgstr "Transbordament a %1"
 #, kde-format
 msgctxt "@title"
 msgid "Select Calendar"
-msgstr "Seleccioneu un calendari"
+msgstr "Trieu un calendari"
 
 #: app/CarRentalDelegate.qml:30
 #, kde-format
@@ -1163,7 +1163,7 @@ msgstr "Canvia el nom"
 #: app/LocationPicker.qml:56
 #, kde-format
 msgid "Pick Location"
-msgstr "Seleccioneu una ubicació"
+msgstr "Trieu una ubicació"
 
 #: app/FlightDelegate.qml:62
 #, kde-format
@@ -2134,7 +2134,7 @@ msgstr "Mostra el mapa"
 #: app/JourneyQueryPage.qml:74 app/TransferPage.qml:244
 #, kde-format
 msgid "Select"
-msgstr "Selecciona"
+msgstr "Tria"
 
 #: app/JourneyQueryPage.qml:106 app/TransferPage.qml:312
 #, kde-format
@@ -2156,19 +2156,19 @@ msgstr "Encara s'estan recuperant els resultats…"
 #: app/JourneyRequestPage.qml:35 app/JourneyRequestPage.qml:65
 #, kde-format
 msgid "Select Journey"
-msgstr "Selecciona el viatge"
+msgstr "Tria el viatge"
 
 #: app/JourneyRequestPage.qml:41 app/JourneyRequestPage.qml:109
 #, kde-format
 msgctxt "departure train station"
 msgid "Select Departure Stop"
-msgstr "Selecciona la parada d'eixida"
+msgstr "Tria la parada d'eixida"
 
 #: app/JourneyRequestPage.qml:53 app/JourneyRequestPage.qml:123
 #, kde-format
 msgctxt "arrival train station"
 msgid "Select Arrival Stop"
-msgstr "Selecciona la parada d'arribada"
+msgstr "Tria la parada d'arribada"
 
 #: app/JourneyRequestPage.qml:108
 #, kde-format
@@ -4210,7 +4210,7 @@ msgstr "No s'ha pogut afegir a Traewelling"
 #: app/TransferDelegate.qml:112
 #, kde-format
 msgid "Select transfer"
-msgstr "Seleccioneu el transbordament"
+msgstr "Trieu el transbordament"
 
 #: app/TransferDelegate.qml:122
 #, kde-format
@@ -4220,7 +4220,7 @@ msgstr "Suprimix el transbordament"
 #: app/TransferPage.qml:20
 #, kde-format
 msgid "Select Transfer"
-msgstr "Seleccioneu el transbordament"
+msgstr "Trieu el transbordament"
 
 #: app/TransferPage.qml:43
 #, kde-format
