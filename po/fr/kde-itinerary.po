@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-31 00:43+0000\n"
+"POT-Creation-Date: 2025-09-01 00:43+0000\n"
 "PO-Revision-Date: 2025-08-07 08:23+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -200,54 +200,54 @@ msgstr "Afficher la réservation"
 msgid "Alternative Connections"
 msgstr "Correspondances alternatives"
 
-#: app/AlternativeJourneyPage.qml:64 app/DepartureQueryPage.qml:28
+#: app/AlternativeJourneyPage.qml:63 app/DepartureQueryPage.qml:28
 #: app/JourneyRequestPage.qml:244 app/TransferPage.qml:108
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Long distance trains"
 msgstr "Trains à longue distance"
 
-#: app/AlternativeJourneyPage.qml:72 app/DepartureQueryPage.qml:35
+#: app/AlternativeJourneyPage.qml:71 app/DepartureQueryPage.qml:35
 #: app/JourneyRequestPage.qml:254 app/TransferPage.qml:116
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Local trains"
 msgstr "Trains locaux"
 
-#: app/AlternativeJourneyPage.qml:80 app/DepartureQueryPage.qml:42
+#: app/AlternativeJourneyPage.qml:79 app/DepartureQueryPage.qml:42
 #: app/JourneyRequestPage.qml:264 app/TransferPage.qml:124
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Rapid transit"
 msgstr "Correspondance rapide"
 
-#: app/AlternativeJourneyPage.qml:88 app/DepartureQueryPage.qml:49
+#: app/AlternativeJourneyPage.qml:87 app/DepartureQueryPage.qml:49
 #: app/JourneyRequestPage.qml:274 app/TransferPage.qml:132
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Bus"
 msgstr "Bus"
 
-#: app/AlternativeJourneyPage.qml:96 app/DepartureQueryPage.qml:56
+#: app/AlternativeJourneyPage.qml:95 app/DepartureQueryPage.qml:56
 #: app/JourneyRequestPage.qml:284 app/TransferPage.qml:140
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ferry"
 msgstr "Traversier"
 
-#: app/AlternativeJourneyPage.qml:104 app/DepartureQueryPage.qml:63
+#: app/AlternativeJourneyPage.qml:103 app/DepartureQueryPage.qml:63
 #: app/JourneyRequestPage.qml:294
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Aircraft"
 msgstr "Avion"
 
-#: app/AlternativeJourneyPage.qml:116
+#: app/AlternativeJourneyPage.qml:115
 #, kde-format
 msgid "Replace Journey"
 msgstr "Remplacer un voyage"
 
-#: app/AlternativeJourneyPage.qml:117
+#: app/AlternativeJourneyPage.qml:116
 #, kde-format
 msgid ""
 "Do you really want to replace your existing reservation with the newly "
@@ -256,12 +256,12 @@ msgstr ""
 "Voulez-vous vraiment remplacer votre réservation existante par le nouveau "
 "trajet sélectionné ?"
 
-#: app/AlternativeJourneyPage.qml:121
+#: app/AlternativeJourneyPage.qml:120
 #, kde-format
 msgid "Replace"
 msgstr "Remplacer"
 
-#: app/AlternativeJourneyPage.qml:139
+#: app/AlternativeJourneyPage.qml:138
 #, kde-format
 msgid "Destination:"
 msgstr "Destination :"
@@ -293,48 +293,48 @@ msgid_plural "%1 health certificates imported."
 msgstr[0] "Un certificat de santé importé."
 msgstr[1] "%1 certificats de santé importés."
 
-#: app/applicationcontroller.cpp:345 app/applicationcontroller.cpp:387
-#: app/applicationcontroller.cpp:405 app/applicationcontroller.cpp:452
-#: app/applicationcontroller.cpp:491 app/applicationcontroller.cpp:509
-#: app/applicationcontroller.cpp:550 app/applicationcontroller.cpp:586
-#: app/applicationcontroller.cpp:604
+#: app/applicationcontroller.cpp:345 app/applicationcontroller.cpp:388
+#: app/applicationcontroller.cpp:406 app/applicationcontroller.cpp:453
+#: app/applicationcontroller.cpp:492 app/applicationcontroller.cpp:510
+#: app/applicationcontroller.cpp:551 app/applicationcontroller.cpp:587
+#: app/applicationcontroller.cpp:605
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Échec de l'exportation : %1"
 
-#: app/applicationcontroller.cpp:361 app/applicationcontroller.cpp:370
-#: app/applicationcontroller.cpp:465 app/applicationcontroller.cpp:474
-#: app/applicationcontroller.cpp:560 app/applicationcontroller.cpp:569
+#: app/applicationcontroller.cpp:362 app/applicationcontroller.cpp:371
+#: app/applicationcontroller.cpp:466 app/applicationcontroller.cpp:475
+#: app/applicationcontroller.cpp:561 app/applicationcontroller.cpp:570
 #, kde-format
 msgid "Export completed."
 msgstr "Exportation terminée."
 
-#: app/applicationcontroller.cpp:397
+#: app/applicationcontroller.cpp:398
 #, kde-format
 msgid "Trip sent."
 msgstr "Envoi du trajet effectué."
 
-#: app/applicationcontroller.cpp:501
+#: app/applicationcontroller.cpp:502
 #, kde-format
 msgid "Reservation sent."
 msgstr "Réservation envoyée."
 
-#: app/applicationcontroller.cpp:596
+#: app/applicationcontroller.cpp:597
 #, kde-format
 msgid "Pass sent."
 msgstr "Envoi du ticket effectué."
 
-#: app/applicationcontroller.cpp:634
+#: app/applicationcontroller.cpp:635
 #, kde-format
 msgid "Saving failed: %1"
 msgstr "Échec de l'enregistrement : %1"
 
-#: app/applicationcontroller.cpp:639
+#: app/applicationcontroller.cpp:640
 #, kde-format
 msgid "File saved successfully."
 msgstr "Fichier enregistré avec succès."
 
-#: app/applicationcontroller.cpp:646
+#: app/applicationcontroller.cpp:647
 #, kde-format
 msgid ""
 "File was exported with a newer version of Itinerary. Some information might "
@@ -343,7 +343,7 @@ msgstr ""
 "Le fichier a été exporté vers une version plus récente de Itinerary. "
 "Certaines informations pourraient ne pas avoir été importées correctement."
 
-#: app/applicationcontroller.cpp:673
+#: app/applicationcontroller.cpp:675
 #, kde-format
 msgid "Import completed."
 msgstr "Importation terminée."
@@ -870,33 +870,33 @@ msgstr "Devise : %1"
 msgid "Departures"
 msgstr "Départs"
 
-#: app/DepartureQueryPage.qml:119
+#: app/DepartureQueryPage.qml:120
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "Charger les départs anticipés"
 
-#: app/DepartureQueryPage.qml:145 app/JourneyQueryPage.qml:156
+#: app/DepartureQueryPage.qml:146 app/JourneyQueryPage.qml:156
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "Charger les correspondances plus tardives"
 
-#: app/DepartureQueryPage.qml:154 app/JourneyQueryPage.qml:163
+#: app/DepartureQueryPage.qml:155 app/JourneyQueryPage.qml:163
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
 msgstr "Fournisseurs de données :"
 
-#: app/DepartureQueryPage.qml:162 app/JourneyQueryPage.qml:172
+#: app/DepartureQueryPage.qml:163 app/JourneyQueryPage.qml:172
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Loading"
 msgstr "Chargement en cours"
 
-#: app/DepartureQueryPage.qml:162 app/JourneyQueryPage.qml:174
+#: app/DepartureQueryPage.qml:163 app/JourneyQueryPage.qml:174
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:status"
@@ -2390,7 +2390,7 @@ msgstr[1] "%1 modifications"
 msgid "Click to extend"
 msgstr "Cliquer pour développer"
 
-#: app/livedatamanager.cpp:797
+#: app/livedatamanager.cpp:802
 #, kde-format
 msgid "Itinerary change"
 msgstr "Changement d'itinéraire"
