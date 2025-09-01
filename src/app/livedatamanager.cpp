@@ -222,7 +222,10 @@ void LiveDataManager::checkReservation(const QVariant &res, const QString &resId
 
     TripRequest req(jny);
     req.setDownloadAssets(m_downloadAssets);
-    PublicTransport::selectBackends(req, m_ptMgr, res);
+    if (!jny.from().hasCoordinate() || !jny.to().hasCoordinate()) {
+        // only consider ticket issuer codes when we don't have coordinates, those tend to be much more robust
+        PublicTransport::selectBackends(req, m_ptMgr, res);
+    }
     if (canSelectBackend(jny.from()) || canSelectBackend(jny.to()) || !req.backendIds().isEmpty() || jny.hasIdentifiers()) {
         auto reply = m_ptMgr->queryTrip(req);
         connect(reply, &Reply::finished, this, [this, resId, reply]() {

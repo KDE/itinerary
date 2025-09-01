@@ -24,6 +24,10 @@ JourneyQueryPage {
         root.journeyRequest = controller.journeyRequest;
         root.journeyRequest.downloadAssets = Settings.wikimediaOnlineContentEnabled;
         root.journeyRequest.to = controller.journeyDestinations[destinationCombo.currentIndex];
+        if (root.journeyRequest.from.hasCoordinate && root.journeyRequest.to.hasCoordinate) {
+            // remove ticket issuer filters when we have cooridinates on both sides, that is much more robust
+            root.journeyRequest.backends = [];
+        }
 
         let allLineModes = true;
         for (const s of [longDistanceModeAction, localTrainModeAction, rapidTransitModeAction, busModeAction, ferryModeAction, aircraftModeAction]) {
