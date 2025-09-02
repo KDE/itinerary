@@ -39,7 +39,7 @@ Kirigami.ScrollablePage {
         cacheBuffer: height
 
         delegate: FormCard.FormCard {
-            id: top
+            id: topDelegate
 
             required property int index
             required property var journey
@@ -108,14 +108,14 @@ Kirigami.ScrollablePage {
                         JourneySummaryDelegate {
                             id: summaryButton
 
-                            onClicked: journeyView.currentIndex = top.index
+                            onClicked: journeyView.currentIndex = topDelegate.index
 
                             Layout.fillWidth: true
                         }
                     }
 
-                    onLoaded: item.journey = top.journey
-                    sourceComponent: journeyView.currentIndex == top.index ? expanded : compact
+                    onLoaded: item.journey = topDelegate.journey
+                    sourceComponent: journeyView.currentIndex == topDelegate.index ? expanded : compact
                 }
             }
         }
