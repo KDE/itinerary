@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-01 00:43+0000\n"
+"POT-Creation-Date: 2025-09-02 00:44+0000\n"
 "PO-Revision-Date: 2025-08-06 08:39+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -199,66 +199,66 @@ msgstr "Veure la reserva"
 msgid "Alternative Connections"
 msgstr "Connexions alternatives"
 
-#: app/AlternativeJourneyPage.qml:63 app/DepartureQueryPage.qml:28
+#: app/AlternativeJourneyPage.qml:67 app/DepartureQueryPage.qml:28
 #: app/JourneyRequestPage.qml:244 app/TransferPage.qml:108
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Long distance trains"
 msgstr "Trens de llarga distància"
 
-#: app/AlternativeJourneyPage.qml:71 app/DepartureQueryPage.qml:35
+#: app/AlternativeJourneyPage.qml:75 app/DepartureQueryPage.qml:35
 #: app/JourneyRequestPage.qml:254 app/TransferPage.qml:116
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Local trains"
 msgstr "Trens locals"
 
-#: app/AlternativeJourneyPage.qml:79 app/DepartureQueryPage.qml:42
+#: app/AlternativeJourneyPage.qml:83 app/DepartureQueryPage.qml:42
 #: app/JourneyRequestPage.qml:264 app/TransferPage.qml:124
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Rapid transit"
 msgstr "Transport ràpid"
 
-#: app/AlternativeJourneyPage.qml:87 app/DepartureQueryPage.qml:49
+#: app/AlternativeJourneyPage.qml:91 app/DepartureQueryPage.qml:49
 #: app/JourneyRequestPage.qml:274 app/TransferPage.qml:132
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Bus"
 msgstr "Autobús"
 
-#: app/AlternativeJourneyPage.qml:95 app/DepartureQueryPage.qml:56
+#: app/AlternativeJourneyPage.qml:99 app/DepartureQueryPage.qml:56
 #: app/JourneyRequestPage.qml:284 app/TransferPage.qml:140
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ferry"
 msgstr "Transbordador"
 
-#: app/AlternativeJourneyPage.qml:103 app/DepartureQueryPage.qml:63
+#: app/AlternativeJourneyPage.qml:107 app/DepartureQueryPage.qml:63
 #: app/JourneyRequestPage.qml:294
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Aircraft"
 msgstr "Aeronau"
 
-#: app/AlternativeJourneyPage.qml:115
+#: app/AlternativeJourneyPage.qml:119
 #, kde-format
 msgid "Replace Journey"
 msgstr "Substituïx el viatge"
 
-#: app/AlternativeJourneyPage.qml:116
+#: app/AlternativeJourneyPage.qml:120
 #, kde-format
 msgid ""
 "Do you really want to replace your existing reservation with the newly "
 "selected journey?"
 msgstr "Voleu substituir la reserva existent amb el nou viatge seleccionat?"
 
-#: app/AlternativeJourneyPage.qml:120
+#: app/AlternativeJourneyPage.qml:124
 #, kde-format
 msgid "Replace"
 msgstr "Substituïx"
 
-#: app/AlternativeJourneyPage.qml:138
+#: app/AlternativeJourneyPage.qml:142
 #, kde-format
 msgid "Destination:"
 msgstr "Destinació:"
@@ -771,7 +771,7 @@ msgstr "Transbordament a %1"
 #, kde-format
 msgctxt "@title"
 msgid "Select Calendar"
-msgstr "Seleccioneu un calendari"
+msgstr "Trieu un calendari"
 
 #: app/CarRentalDelegate.qml:30
 #, kde-format
@@ -1163,7 +1163,7 @@ msgstr "Canvia el nom"
 #: app/LocationPicker.qml:78
 #, kde-format
 msgid "Pick Location"
-msgstr "Seleccioneu una ubicació"
+msgstr "Trieu una ubicació"
 
 #: app/FlightDelegate.qml:62
 #, kde-format
@@ -2151,7 +2151,7 @@ msgstr "Mostra el mapa"
 #: app/JourneyQueryPage.qml:97 app/TransferPage.qml:244
 #, kde-format
 msgid "Select"
-msgstr "Selecciona"
+msgstr "Tria"
 
 #: app/JourneyQueryPage.qml:147 app/TransferPage.qml:312
 #, kde-format
@@ -2173,19 +2173,19 @@ msgstr "Encara s'estan recuperant els resultats…"
 #: app/JourneyRequestPage.qml:35 app/JourneyRequestPage.qml:65
 #, kde-format
 msgid "Select Journey"
-msgstr "Selecciona el viatge"
+msgstr "Tria el viatge"
 
 #: app/JourneyRequestPage.qml:41 app/JourneyRequestPage.qml:109
 #, kde-format
 msgctxt "departure train station"
 msgid "Select Departure Stop"
-msgstr "Selecciona la parada d'eixida"
+msgstr "Tria la parada d'eixida"
 
 #: app/JourneyRequestPage.qml:53 app/JourneyRequestPage.qml:123
 #, kde-format
 msgctxt "arrival train station"
 msgid "Select Arrival Stop"
-msgstr "Selecciona la parada d'arribada"
+msgstr "Tria la parada d'arribada"
 
 #: app/JourneyRequestPage.qml:108
 #, kde-format
@@ -2377,7 +2377,7 @@ msgstr[1] "%1 canvis"
 msgid "Click to extend"
 msgstr "Cliqueu per a ampliar"
 
-#: app/livedatamanager.cpp:802
+#: app/livedatamanager.cpp:805
 #, kde-format
 msgid "Itinerary change"
 msgstr "Canvi en l'itinerari"
@@ -4229,7 +4229,7 @@ msgstr "No s'ha pogut afegir a Traewelling"
 #: app/TransferDelegate.qml:112
 #, kde-format
 msgid "Select transfer"
-msgstr "Seleccioneu el transbordament"
+msgstr "Trieu el transbordament"
 
 #: app/TransferDelegate.qml:122
 #, kde-format
@@ -4239,7 +4239,7 @@ msgstr "Suprimix el transbordament"
 #: app/TransferPage.qml:20
 #, kde-format
 msgid "Select Transfer"
-msgstr "Seleccioneu el transbordament"
+msgstr "Trieu el transbordament"
 
 #: app/TransferPage.qml:43
 #, kde-format

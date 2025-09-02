@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-01 00:43+0000\n"
+"POT-Creation-Date: 2025-09-02 00:44+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -195,66 +195,66 @@ msgstr "查看预约"
 msgid "Alternative Connections"
 msgstr "改签联运交通"
 
-#: app/AlternativeJourneyPage.qml:63 app/DepartureQueryPage.qml:28
+#: app/AlternativeJourneyPage.qml:67 app/DepartureQueryPage.qml:28
 #: app/JourneyRequestPage.qml:244 app/TransferPage.qml:108
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Long distance trains"
 msgstr ""
 
-#: app/AlternativeJourneyPage.qml:71 app/DepartureQueryPage.qml:35
+#: app/AlternativeJourneyPage.qml:75 app/DepartureQueryPage.qml:35
 #: app/JourneyRequestPage.qml:254 app/TransferPage.qml:116
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Local trains"
 msgstr ""
 
-#: app/AlternativeJourneyPage.qml:79 app/DepartureQueryPage.qml:42
+#: app/AlternativeJourneyPage.qml:83 app/DepartureQueryPage.qml:42
 #: app/JourneyRequestPage.qml:264 app/TransferPage.qml:124
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Rapid transit"
 msgstr ""
 
-#: app/AlternativeJourneyPage.qml:87 app/DepartureQueryPage.qml:49
+#: app/AlternativeJourneyPage.qml:91 app/DepartureQueryPage.qml:49
 #: app/JourneyRequestPage.qml:274 app/TransferPage.qml:132
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Bus"
 msgstr ""
 
-#: app/AlternativeJourneyPage.qml:95 app/DepartureQueryPage.qml:56
+#: app/AlternativeJourneyPage.qml:99 app/DepartureQueryPage.qml:56
 #: app/JourneyRequestPage.qml:284 app/TransferPage.qml:140
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ferry"
 msgstr ""
 
-#: app/AlternativeJourneyPage.qml:103 app/DepartureQueryPage.qml:63
+#: app/AlternativeJourneyPage.qml:107 app/DepartureQueryPage.qml:63
 #: app/JourneyRequestPage.qml:294
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Aircraft"
 msgstr "飞机"
 
-#: app/AlternativeJourneyPage.qml:115
+#: app/AlternativeJourneyPage.qml:119
 #, kde-format
 msgid "Replace Journey"
 msgstr ""
 
-#: app/AlternativeJourneyPage.qml:116
+#: app/AlternativeJourneyPage.qml:120
 #, kde-format
 msgid ""
 "Do you really want to replace your existing reservation with the newly "
 "selected journey?"
 msgstr "您确定要用新选择的行程替换现有预订吗？"
 
-#: app/AlternativeJourneyPage.qml:120
+#: app/AlternativeJourneyPage.qml:124
 #, kde-format
 msgid "Replace"
 msgstr "替换"
 
-#: app/AlternativeJourneyPage.qml:138
+#: app/AlternativeJourneyPage.qml:142
 #, kde-format
 msgid "Destination:"
 msgstr "目的地："
@@ -2359,7 +2359,7 @@ msgstr[0] "%1 次换乘"
 msgid "Click to extend"
 msgstr ""
 
-#: app/livedatamanager.cpp:802
+#: app/livedatamanager.cpp:805
 #, kde-format
 msgid "Itinerary change"
 msgstr "行程更变"
