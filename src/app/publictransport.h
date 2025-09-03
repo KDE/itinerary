@@ -113,7 +113,7 @@ public:
 
 private:
     // for use by the template code
-    static QString idenfitierFromLocation(const KPublicTransport::Location &loc);
+    static QString identifierFromLocation(const KPublicTransport::Location &loc);
     static KItinerary::PostalAddress addressFromLocation(const KPublicTransport::Location &loc);
     static QStringList suitableBackendsForReservation(KPublicTransport::Manager *mgr, const QVariant &res);
 };
@@ -126,7 +126,7 @@ inline T PublicTransport::placeFromLocation(const KPublicTransport::Location &lo
     if (loc.hasCoordinate()) {
         place.setGeo(KItinerary::GeoCoordinates{loc.latitude(), loc.longitude()});
     }
-    place.setIdentifier(idenfitierFromLocation(loc));
+    place.setIdentifier(identifierFromLocation(loc));
     place.setAddress(addressFromLocation(loc));
     return place;
 }
