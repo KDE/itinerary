@@ -338,11 +338,11 @@ QString PublicTransport::attributionSummary(const QVariantList &attributions) co
     return QLocale().createSeparatedList(l);
 }
 
-QString PublicTransport::idenfitierFromLocation(const KPublicTransport::Location &loc)
+QString PublicTransport::identifierFromLocation(const KPublicTransport::Location &loc)
 {
-    for (const auto &type : { "ibnr", "uic", "iata" }) {
-        if (const auto id = loc.identifier(QLatin1StringView(type)); !id.isEmpty()) {
-            return QLatin1StringView(type) + id;
+    for (const auto &type : { "ibnr"_L1, "uic"_L1, "iata"_L1 }) {
+        if (const auto id = loc.identifier(type); !id.isEmpty()) {
+            return type + ':'_L1 + id;
         }
     }
     return {};
