@@ -6,6 +6,8 @@
 
 #include "importexport.h"
 
+#include <itinerary_version_detailed.h>
+
 #include "bundle-constants.h"
 #include "documentmanager.h"
 #include "favoritelocationmodel.h"
@@ -56,7 +58,7 @@ Exporter::Exporter(KItinerary::File *file)
     QJsonObject versionData{
         {"formatVersion"_L1, BUNDLE_FORMAT_VERSION},
         {"generator"_L1, QCoreApplication::applicationName()},
-        {"generatorVersion"_L1, QCoreApplication::applicationVersion()},
+        {"generatorVersion"_L1, QLatin1StringView(ITINERARY_DETAILED_VERSION_STRING)},
         {"generatorPlatform"_L1, QSysInfo::prettyProductName()}
     };
     m_file->addCustomData(BUNDLE_VERSION_DOMAIN, "version"_L1, QJsonDocument(versionData).toJson(QJsonDocument::Compact));
