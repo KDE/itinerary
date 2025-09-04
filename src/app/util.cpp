@@ -72,9 +72,15 @@ bool Util::isStartOfDay(const QVariant &obj, const QString &propertyName)
 
 bool Util::isRichText(const QString &text)
 {
-    auto idx = text.indexOf(QLatin1Char('<'));
+    auto idx = text.indexOf('<'_L1);
     if (idx >= 0 && idx < text.size() - 2) {
-        return text[idx + 1].isLetter() || text[idx + 1] == QLatin1Char('/');
+        return text[idx + 1].isLetter() || text[idx + 1] == '/'_L1;
+    }
+    idx = text.indexOf('&'_L1);
+    for (auto i = idx; idx >= 0 && idx - i < 5; ++i) {
+        if (text[i] == ';'_L1) {
+            return true;
+        }
     }
     return false;
 }
