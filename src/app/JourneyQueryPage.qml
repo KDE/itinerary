@@ -76,7 +76,7 @@ Kirigami.ScrollablePage {
 
                         ColumnLayout {
                             id: expandedLayout
-                            property var journey
+                            property var journey: topDelegate.journey
 
                             Repeater {
                                 id: journeyRepeater
@@ -108,13 +108,14 @@ Kirigami.ScrollablePage {
                         JourneySummaryDelegate {
                             id: summaryButton
 
+                            journey: topDelegate.journey
+
                             onClicked: journeyView.currentIndex = topDelegate.index
 
                             Layout.fillWidth: true
                         }
                     }
 
-                    onLoaded: item.journey = topDelegate.journey
                     sourceComponent: journeyView.currentIndex == topDelegate.index ? expanded : compact
                 }
             }
