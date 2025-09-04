@@ -257,6 +257,9 @@ QVariant PublicTransport::applyJourneySection(const QVariant &res, const KPublic
     if (JsonLd::isA<BoatReservation>(res)) {
         return postProcessOne(::applyJourneySection(res.value<BoatReservation>(), section));
     }
+    if (JsonLd::isA<FlightReservation>(res)) {
+        return postProcessOne(::applyJourneySection(res.value<FlightReservation>(), section));
+    }
 
     qCWarning(Log) << res.typeName() << "Unsupported section type!";
     return res;
