@@ -107,6 +107,8 @@ FormCard.AbstractFormDelegate {
             id: sectionsRow
             Layout.fillWidth: true
             journey: root.journey
+
+            clip: true
         }
 
         QQC2.Label {
