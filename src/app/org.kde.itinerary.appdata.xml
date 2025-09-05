@@ -912,7 +912,16 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="25.08.1" date="2025-09-11"/>
+    <release version="25.08.1" date="2025-09-11">
+      <description>
+        <ul>
+          <li>New or improved travel document extractors for booking.com, Center Parcs, Coloseum, eDreams, Finnair, LTG Link, MÁV, Pretix, RegioJet, Thalys and United Airlines.</li>
+          <li>Correctly update currency exchange rates.</li>
+          <li>Add support for result paging for LTG Link and Srbija Voz.</li>
+          <li>Support hotel reservations with ticket tokens.</li>
+        </ul>
+      </description>
+    </release>
     <release version="25.08.0" date="2025-08-14">
       <description>
         <ul>
