@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-02 00:44+0000\n"
+"POT-Creation-Date: 2025-09-05 00:42+0000\n"
 "PO-Revision-Date: 2025-08-06 08:39+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -873,27 +873,27 @@ msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "Carrega les sortides anteriors"
 
-#: app/DepartureQueryPage.qml:146 app/JourneyQueryPage.qml:156
+#: app/DepartureQueryPage.qml:146 app/JourneyQueryPage.qml:157
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "Carrega les connexions posteriors"
 
-#: app/DepartureQueryPage.qml:155 app/JourneyQueryPage.qml:163
+#: app/DepartureQueryPage.qml:155 app/JourneyQueryPage.qml:164
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
 msgstr "Proveïdors de dades:"
 
-#: app/DepartureQueryPage.qml:163 app/JourneyQueryPage.qml:172
+#: app/DepartureQueryPage.qml:163 app/JourneyQueryPage.qml:173
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Loading"
 msgstr "S'està carregant"
 
-#: app/DepartureQueryPage.qml:163 app/JourneyQueryPage.qml:174
+#: app/DepartureQueryPage.qml:163 app/JourneyQueryPage.qml:175
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:status"
@@ -2153,19 +2153,19 @@ msgstr "Mostra el mapa"
 msgid "Select"
 msgstr "Selecciona"
 
-#: app/JourneyQueryPage.qml:147 app/TransferPage.qml:312
+#: app/JourneyQueryPage.qml:148 app/TransferPage.qml:312
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr "Carrega les connexions anteriors"
 
-#: app/JourneyQueryPage.qml:176
+#: app/JourneyQueryPage.qml:177
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No journeys found"
 msgstr "No s'ha trobat cap viatge"
 
-#: app/JourneyQueryPage.qml:210
+#: app/JourneyQueryPage.qml:211
 #, kde-format
 msgid "Still fetching results…"
 msgstr "Encara s'estan recuperant els resultats…"
@@ -2372,7 +2372,7 @@ msgid_plural "%1 changes"
 msgstr[0] "Un canvi"
 msgstr[1] "%1 canvis"
 
-#: app/JourneySummaryDelegate.qml:113
+#: app/JourneySummaryDelegate.qml:115
 #, kde-format
 msgid "Click to extend"
 msgstr "Cliqueu per a ampliar"

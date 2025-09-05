@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-02 00:44+0000\n"
+"POT-Creation-Date: 2025-09-05 00:42+0000\n"
 "PO-Revision-Date: 2025-08-06 20:37+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -881,27 +881,27 @@ msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "Завантажити раніші відправлення"
 
-#: app/DepartureQueryPage.qml:146 app/JourneyQueryPage.qml:156
+#: app/DepartureQueryPage.qml:146 app/JourneyQueryPage.qml:157
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "Завантажити пізніші з'єднання"
 
-#: app/DepartureQueryPage.qml:155 app/JourneyQueryPage.qml:163
+#: app/DepartureQueryPage.qml:155 app/JourneyQueryPage.qml:164
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
 msgstr "Надавачі даних:"
 
-#: app/DepartureQueryPage.qml:163 app/JourneyQueryPage.qml:172
+#: app/DepartureQueryPage.qml:163 app/JourneyQueryPage.qml:173
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Loading"
 msgstr "Завантаження"
 
-#: app/DepartureQueryPage.qml:163 app/JourneyQueryPage.qml:174
+#: app/DepartureQueryPage.qml:163 app/JourneyQueryPage.qml:175
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:status"
@@ -2162,19 +2162,19 @@ msgstr "Показати мапу"
 msgid "Select"
 msgstr "Вибрати"
 
-#: app/JourneyQueryPage.qml:147 app/TransferPage.qml:312
+#: app/JourneyQueryPage.qml:148 app/TransferPage.qml:312
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr "Завантажити раніші з'єднання"
 
-#: app/JourneyQueryPage.qml:176
+#: app/JourneyQueryPage.qml:177
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No journeys found"
 msgstr "Не знайдено жодної подорожі"
 
-#: app/JourneyQueryPage.qml:210
+#: app/JourneyQueryPage.qml:211
 #, kde-format
 msgid "Still fetching results…"
 msgstr "Продовжуємо отримувати результати…"
@@ -2382,7 +2382,7 @@ msgstr[1] "%1 зміни"
 msgstr[2] "%1 змін"
 msgstr[3] "%1 зміна"
 
-#: app/JourneySummaryDelegate.qml:113
+#: app/JourneySummaryDelegate.qml:115
 #, kde-format
 msgid "Click to extend"
 msgstr "Натисніть, щоб розширити"

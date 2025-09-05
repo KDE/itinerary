@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-02 00:44+0000\n"
+"POT-Creation-Date: 2025-09-05 00:42+0000\n"
 "PO-Revision-Date: 2023-11-07 21:26+0100\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: \n"
@@ -865,27 +865,27 @@ msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr ""
 
-#: app/DepartureQueryPage.qml:146 app/JourneyQueryPage.qml:156
+#: app/DepartureQueryPage.qml:146 app/JourneyQueryPage.qml:157
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr ""
 
-#: app/DepartureQueryPage.qml:155 app/JourneyQueryPage.qml:163
+#: app/DepartureQueryPage.qml:155 app/JourneyQueryPage.qml:164
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
 msgstr ""
 
-#: app/DepartureQueryPage.qml:163 app/JourneyQueryPage.qml:172
+#: app/DepartureQueryPage.qml:163 app/JourneyQueryPage.qml:173
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Loading"
 msgstr ""
 
-#: app/DepartureQueryPage.qml:163 app/JourneyQueryPage.qml:174
+#: app/DepartureQueryPage.qml:163 app/JourneyQueryPage.qml:175
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:status"
@@ -2139,19 +2139,19 @@ msgstr ""
 msgid "Select"
 msgstr ""
 
-#: app/JourneyQueryPage.qml:147 app/TransferPage.qml:312
+#: app/JourneyQueryPage.qml:148 app/TransferPage.qml:312
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr ""
 
-#: app/JourneyQueryPage.qml:176
+#: app/JourneyQueryPage.qml:177
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No journeys found"
 msgstr ""
 
-#: app/JourneyQueryPage.qml:210
+#: app/JourneyQueryPage.qml:211
 #, kde-format
 msgid "Still fetching results…"
 msgstr ""
@@ -2357,7 +2357,7 @@ msgid_plural "%1 changes"
 msgstr[0] ""
 msgstr[1] ""
 
-#: app/JourneySummaryDelegate.qml:113
+#: app/JourneySummaryDelegate.qml:115
 #, kde-format
 msgid "Click to extend"
 msgstr ""

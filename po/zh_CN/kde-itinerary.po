@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-02 00:44+0000\n"
+"POT-Creation-Date: 2025-09-05 00:42+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -864,27 +864,27 @@ msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr ""
 
-#: app/DepartureQueryPage.qml:146 app/JourneyQueryPage.qml:156
+#: app/DepartureQueryPage.qml:146 app/JourneyQueryPage.qml:157
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr ""
 
-#: app/DepartureQueryPage.qml:155 app/JourneyQueryPage.qml:163
+#: app/DepartureQueryPage.qml:155 app/JourneyQueryPage.qml:164
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
 msgstr ""
 
-#: app/DepartureQueryPage.qml:163 app/JourneyQueryPage.qml:172
+#: app/DepartureQueryPage.qml:163 app/JourneyQueryPage.qml:173
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Loading"
 msgstr "正在加载"
 
-#: app/DepartureQueryPage.qml:163 app/JourneyQueryPage.qml:174
+#: app/DepartureQueryPage.qml:163 app/JourneyQueryPage.qml:175
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:status"
@@ -2137,19 +2137,19 @@ msgstr "显示地图"
 msgid "Select"
 msgstr "选择"
 
-#: app/JourneyQueryPage.qml:147 app/TransferPage.qml:312
+#: app/JourneyQueryPage.qml:148 app/TransferPage.qml:312
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr ""
 
-#: app/JourneyQueryPage.qml:176
+#: app/JourneyQueryPage.qml:177
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No journeys found"
 msgstr "未找到旅程"
 
-#: app/JourneyQueryPage.qml:210
+#: app/JourneyQueryPage.qml:211
 #, kde-format
 msgid "Still fetching results…"
 msgstr "仍在获取结果..."
@@ -2354,7 +2354,7 @@ msgid "One change"
 msgid_plural "%1 changes"
 msgstr[0] "%1 次换乘"
 
-#: app/JourneySummaryDelegate.qml:113
+#: app/JourneySummaryDelegate.qml:115
 #, kde-format
 msgid "Click to extend"
 msgstr ""

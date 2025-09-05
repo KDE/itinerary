@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-02 00:44+0000\n"
+"POT-Creation-Date: 2025-09-05 00:42+0000\n"
 "PO-Revision-Date: 2025-08-06 07:14+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -877,27 +877,27 @@ msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "Naloži zgodnejše odhode"
 
-#: app/DepartureQueryPage.qml:146 app/JourneyQueryPage.qml:156
+#: app/DepartureQueryPage.qml:146 app/JourneyQueryPage.qml:157
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "Naloži kasnejše povezave"
 
-#: app/DepartureQueryPage.qml:155 app/JourneyQueryPage.qml:163
+#: app/DepartureQueryPage.qml:155 app/JourneyQueryPage.qml:164
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
 msgstr "Dobavitelji podatkov:"
 
-#: app/DepartureQueryPage.qml:163 app/JourneyQueryPage.qml:172
+#: app/DepartureQueryPage.qml:163 app/JourneyQueryPage.qml:173
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Loading"
 msgstr "Nalaganje"
 
-#: app/DepartureQueryPage.qml:163 app/JourneyQueryPage.qml:174
+#: app/DepartureQueryPage.qml:163 app/JourneyQueryPage.qml:175
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:status"
@@ -2158,19 +2158,19 @@ msgstr "Prikaži zemljevid"
 msgid "Select"
 msgstr "Izberi"
 
-#: app/JourneyQueryPage.qml:147 app/TransferPage.qml:312
+#: app/JourneyQueryPage.qml:148 app/TransferPage.qml:312
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr "Naloži zgodnejše povezave"
 
-#: app/JourneyQueryPage.qml:176
+#: app/JourneyQueryPage.qml:177
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No journeys found"
 msgstr "Ni najdenih potovanj"
 
-#: app/JourneyQueryPage.qml:210
+#: app/JourneyQueryPage.qml:211
 #, kde-format
 msgid "Still fetching results…"
 msgstr "Še vedno pridobivanje rezultatov…"
@@ -2378,7 +2378,7 @@ msgstr[1] "%1 spremembi"
 msgstr[2] "%1 spremembe"
 msgstr[3] "%1 sprememb"
 
-#: app/JourneySummaryDelegate.qml:113
+#: app/JourneySummaryDelegate.qml:115
 #, kde-format
 msgid "Click to extend"
 msgstr "Klikni za razširitev"
