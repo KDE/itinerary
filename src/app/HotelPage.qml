@@ -74,6 +74,14 @@ DetailsPage {
             }
         }
 
+        FormCard.FormCard {
+            visible: reservation.lodgingUnitDescription !== ""
+            FormCard.FormTextDelegate {
+                text: i18n("Description")
+                description: reservation.lodgingUnitDescription
+            }
+        }
+
         ProgramMembershipCard {
             programMembership: root.reservation.programMembershipUsed
         }

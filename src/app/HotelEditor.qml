@@ -35,6 +35,8 @@ EditorPage {
         if (checkoutEdit.isModified)
             newRes = Util.setDateTimePreserveTimezone(newRes, "checkoutTime", checkoutEdit.value);
 
+        newRes.lodgingUnitDescription = descriptionDelegate.text;
+
         bookingEdit.apply(newRes);
         return newRes;
     }
@@ -120,6 +122,16 @@ EditorPage {
                         return i18n("Check-out time has to be after the check-in time.")
                     return '';
                 }
+            }
+        }
+
+        FormCard.FormCard {
+            Layout.topMargin: Kirigami.Units.largeSpacing
+
+            FormCard.FormTextAreaDelegate {
+                id: descriptionDelegate
+                label: i18n("Description")
+                text: root.reservation.lodgingUnitDescription
             }
         }
 
