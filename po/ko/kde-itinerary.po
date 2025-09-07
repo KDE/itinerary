@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-05 00:42+0000\n"
+"POT-Creation-Date: 2025-09-07 00:43+0000\n"
 "PO-Revision-Date: 2025-07-21 00:39+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -408,7 +408,7 @@ msgid "Change arrival terminal"
 msgstr "도착 터미널 변경"
 
 #: app/BoatEditor.qml:112 app/BusEditor.qml:128 app/EventEditor.qml:54
-#: app/FlightEditor.qml:79 app/HotelEditor.qml:51 app/ImportPage.qml:21
+#: app/FlightEditor.qml:79 app/HotelEditor.qml:53 app/ImportPage.qml:21
 #: app/JourneyRequestPage.qml:228 app/RestaurantEditor.qml:53
 #: app/StopoverDetailsPage.qml:127 app/TrainEditor.qml:135
 #, kde-format
@@ -1006,7 +1006,7 @@ msgctxt "event name"
 msgid "Name"
 msgstr "이름"
 
-#: app/EventEditor.qml:75 app/HotelEditor.qml:72 app/RestaurantEditor.qml:75
+#: app/EventEditor.qml:75 app/HotelEditor.qml:74 app/RestaurantEditor.qml:75
 #, kde-format
 msgid "Name must not be empty."
 msgstr "이름이 비어 있으면 안 됩니다."
@@ -1875,49 +1875,55 @@ msgstr "새 호텔 예약"
 msgid "Edit Hotel Reservation"
 msgstr "호텔 예약 편집"
 
-#: app/HotelEditor.qml:47
+#: app/HotelEditor.qml:49
 #, kde-format
 msgid "Hotel"
 msgstr "호텔"
 
-#: app/HotelEditor.qml:63
+#: app/HotelEditor.qml:65
 #, kde-format
 msgctxt "@title:group"
 msgid "Accommodation"
 msgstr "숙박"
 
-#: app/HotelEditor.qml:69
+#: app/HotelEditor.qml:71
 #, kde-format
 msgctxt "hotel name"
 msgid "Name"
 msgstr "이름"
 
-#: app/HotelEditor.qml:97
+#: app/HotelEditor.qml:99
 #, kde-format
 msgctxt "hotel checkin"
 msgid "Check-in"
 msgstr "체크인"
 
-#: app/HotelEditor.qml:101
+#: app/HotelEditor.qml:103
 #, kde-format
 msgid "Check-in time has to be set."
 msgstr "체크인 시간을 설정해야 합니다."
 
-#: app/HotelEditor.qml:106
+#: app/HotelEditor.qml:108
 #, kde-format
 msgctxt "hotel checkout"
 msgid "Check-out"
 msgstr "체크아웃"
 
-#: app/HotelEditor.qml:118
+#: app/HotelEditor.qml:120
 #, kde-format
 msgid "Check-out time has to be set."
 msgstr "체크아웃 시간을 설정해야 합니다."
 
-#: app/HotelEditor.qml:120
+#: app/HotelEditor.qml:122
 #, kde-format
 msgid "Check-out time has to be after the check-in time."
 msgstr "체크아웃 시간은 체크인 시간 이후여야 합니다."
+
+#: app/HotelEditor.qml:133 app/HotelPage.qml:80
+#, fuzzy, kde-format
+#| msgid "Destination:"
+msgid "Description"
+msgstr "대상:"
 
 #: app/HotelPage.qml:16
 #, kde-format

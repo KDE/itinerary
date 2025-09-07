@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-05 00:42+0000\n"
+"POT-Creation-Date: 2025-09-07 00:43+0000\n"
 "PO-Revision-Date: 2025-08-06 05:24+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -409,7 +409,7 @@ msgid "Change arrival terminal"
 msgstr "ჩამოსვლის ტერმინალის შეცვლა"
 
 #: app/BoatEditor.qml:112 app/BusEditor.qml:128 app/EventEditor.qml:54
-#: app/FlightEditor.qml:79 app/HotelEditor.qml:51 app/ImportPage.qml:21
+#: app/FlightEditor.qml:79 app/HotelEditor.qml:53 app/ImportPage.qml:21
 #: app/JourneyRequestPage.qml:228 app/RestaurantEditor.qml:53
 #: app/StopoverDetailsPage.qml:127 app/TrainEditor.qml:135
 #, kde-format
@@ -1006,7 +1006,7 @@ msgctxt "event name"
 msgid "Name"
 msgstr "სახელი"
 
-#: app/EventEditor.qml:75 app/HotelEditor.qml:72 app/RestaurantEditor.qml:75
+#: app/EventEditor.qml:75 app/HotelEditor.qml:74 app/RestaurantEditor.qml:75
 #, kde-format
 msgid "Name must not be empty."
 msgstr "სახელი ცარიელი ვერ იქნება."
@@ -1876,49 +1876,55 @@ msgstr "ახალი სასტუმროს ჯავშანი"
 msgid "Edit Hotel Reservation"
 msgstr "სასტუმროს დაჯავშნის ჩასწორება"
 
-#: app/HotelEditor.qml:47
+#: app/HotelEditor.qml:49
 #, kde-format
 msgid "Hotel"
 msgstr "სასტუმრო"
 
-#: app/HotelEditor.qml:63
+#: app/HotelEditor.qml:65
 #, kde-format
 msgctxt "@title:group"
 msgid "Accommodation"
 msgstr "აკომოდაცია"
 
-#: app/HotelEditor.qml:69
+#: app/HotelEditor.qml:71
 #, kde-format
 msgctxt "hotel name"
 msgid "Name"
 msgstr "სახელი"
 
-#: app/HotelEditor.qml:97
+#: app/HotelEditor.qml:99
 #, kde-format
 msgctxt "hotel checkin"
 msgid "Check-in"
 msgstr "ჩეკინი"
 
-#: app/HotelEditor.qml:101
+#: app/HotelEditor.qml:103
 #, kde-format
 msgid "Check-in time has to be set."
 msgstr "ჩეკინის დროის დაყენება აუცილებელია."
 
-#: app/HotelEditor.qml:106
+#: app/HotelEditor.qml:108
 #, kde-format
 msgctxt "hotel checkout"
 msgid "Check-out"
 msgstr "ჩეკაუტი"
 
-#: app/HotelEditor.qml:118
+#: app/HotelEditor.qml:120
 #, kde-format
 msgid "Check-out time has to be set."
 msgstr "ჩეკაუტის დროის დაყენება აუცილებელია."
 
-#: app/HotelEditor.qml:120
+#: app/HotelEditor.qml:122
 #, kde-format
 msgid "Check-out time has to be after the check-in time."
 msgstr "ჩეკაუტის დრო ჩეკინის დროის შემდეგ უნდა იყოს."
+
+#: app/HotelEditor.qml:133 app/HotelPage.qml:80
+#, fuzzy, kde-format
+#| msgid "Destination:"
+msgid "Description"
+msgstr "დანიშნულება:"
 
 #: app/HotelPage.qml:16
 #, kde-format

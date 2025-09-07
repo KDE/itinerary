@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-05 00:42+0000\n"
+"POT-Creation-Date: 2025-09-07 00:43+0000\n"
 "PO-Revision-Date: 2025-03-02 14:47+0530\n"
 "Last-Translator: Shreekant Kalwar <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -418,7 +418,7 @@ msgid "Change arrival terminal"
 msgstr "आगमनस्थानकं परिवर्तयन्तु"
 
 #: app/BoatEditor.qml:112 app/BusEditor.qml:128 app/EventEditor.qml:54
-#: app/FlightEditor.qml:79 app/HotelEditor.qml:51 app/ImportPage.qml:21
+#: app/FlightEditor.qml:79 app/HotelEditor.qml:53 app/ImportPage.qml:21
 #: app/JourneyRequestPage.qml:228 app/RestaurantEditor.qml:53
 #: app/StopoverDetailsPage.qml:127 app/TrainEditor.qml:135
 #, kde-format
@@ -1039,7 +1039,7 @@ msgctxt "event name"
 msgid "Name"
 msgstr "नामः"
 
-#: app/EventEditor.qml:75 app/HotelEditor.qml:72 app/RestaurantEditor.qml:75
+#: app/EventEditor.qml:75 app/HotelEditor.qml:74 app/RestaurantEditor.qml:75
 #, kde-format
 msgid "Name must not be empty."
 msgstr "नाम शून्यं न भवितुमर्हति।"
@@ -1930,49 +1930,56 @@ msgstr "नवीन होटल आरक्षण"
 msgid "Edit Hotel Reservation"
 msgstr "होटल आरक्षणं सम्पादयतु"
 
-#: app/HotelEditor.qml:47
+#: app/HotelEditor.qml:49
 #, kde-format
 msgid "Hotel"
 msgstr "वसतिगृह"
 
-#: app/HotelEditor.qml:63
+#: app/HotelEditor.qml:65
 #, kde-format
 msgctxt "@title:group"
 msgid "Accommodation"
 msgstr "व्यवस्थापन"
 
-#: app/HotelEditor.qml:69
+#: app/HotelEditor.qml:71
 #, kde-format
 msgctxt "hotel name"
 msgid "Name"
 msgstr "नामः"
 
-#: app/HotelEditor.qml:97
+#: app/HotelEditor.qml:99
 #, kde-format
 msgctxt "hotel checkin"
 msgid "Check-in"
 msgstr "चेक-इन"
 
-#: app/HotelEditor.qml:101
+#: app/HotelEditor.qml:103
 #, kde-format
 msgid "Check-in time has to be set."
 msgstr "चेक-इन-समयः निर्धारितव्यः भवति ।"
 
-#: app/HotelEditor.qml:106
+#: app/HotelEditor.qml:108
 #, kde-format
 msgctxt "hotel checkout"
 msgid "Check-out"
 msgstr "चेक-आउट्"
 
-#: app/HotelEditor.qml:118
+#: app/HotelEditor.qml:120
 #, kde-format
 msgid "Check-out time has to be set."
 msgstr "चेक-आउट् समयः निर्धारितव्यः भवति ।"
 
-#: app/HotelEditor.qml:120
+#: app/HotelEditor.qml:122
 #, kde-format
 msgid "Check-out time has to be after the check-in time."
 msgstr "चेक-आउट् समयः चेक-इन-समयस्य अनन्तरं भवितुम् अर्हति ।"
+
+#: app/HotelEditor.qml:133 app/HotelPage.qml:80
+#, fuzzy, kde-format
+#| msgctxt "bus station"
+#| msgid "Station"
+msgid "Description"
+msgstr "स्थानः"
 
 #: app/HotelPage.qml:16
 #, kde-format

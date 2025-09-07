@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-05 00:42+0000\n"
+"POT-Creation-Date: 2025-09-07 00:43+0000\n"
 "PO-Revision-Date: 2025-08-07 08:23+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -415,7 +415,7 @@ msgid "Change arrival terminal"
 msgstr "Modifier le terminal d'arrivée"
 
 #: app/BoatEditor.qml:112 app/BusEditor.qml:128 app/EventEditor.qml:54
-#: app/FlightEditor.qml:79 app/HotelEditor.qml:51 app/ImportPage.qml:21
+#: app/FlightEditor.qml:79 app/HotelEditor.qml:53 app/ImportPage.qml:21
 #: app/JourneyRequestPage.qml:228 app/RestaurantEditor.qml:53
 #: app/StopoverDetailsPage.qml:127 app/TrainEditor.qml:135
 #, kde-format
@@ -1013,7 +1013,7 @@ msgctxt "event name"
 msgid "Name"
 msgstr "Nom"
 
-#: app/EventEditor.qml:75 app/HotelEditor.qml:72 app/RestaurantEditor.qml:75
+#: app/EventEditor.qml:75 app/HotelEditor.qml:74 app/RestaurantEditor.qml:75
 #, kde-format
 msgid "Name must not be empty."
 msgstr "Il est impossible que le nom soit vide."
@@ -1892,49 +1892,55 @@ msgstr "Nouvelle réservation d'hôtel"
 msgid "Edit Hotel Reservation"
 msgstr "Modifier la réservation d'hôtel"
 
-#: app/HotelEditor.qml:47
+#: app/HotelEditor.qml:49
 #, kde-format
 msgid "Hotel"
 msgstr "Hôtel"
 
-#: app/HotelEditor.qml:63
+#: app/HotelEditor.qml:65
 #, kde-format
 msgctxt "@title:group"
 msgid "Accommodation"
 msgstr "Hébergement"
 
-#: app/HotelEditor.qml:69
+#: app/HotelEditor.qml:71
 #, kde-format
 msgctxt "hotel name"
 msgid "Name"
 msgstr "Nom"
 
-#: app/HotelEditor.qml:97
+#: app/HotelEditor.qml:99
 #, kde-format
 msgctxt "hotel checkin"
 msgid "Check-in"
 msgstr "Enregistrement"
 
-#: app/HotelEditor.qml:101
+#: app/HotelEditor.qml:103
 #, kde-format
 msgid "Check-in time has to be set."
 msgstr "L'heure d'arrivée doit être définie."
 
-#: app/HotelEditor.qml:106
+#: app/HotelEditor.qml:108
 #, kde-format
 msgctxt "hotel checkout"
 msgid "Check-out"
 msgstr "Libération"
 
-#: app/HotelEditor.qml:118
+#: app/HotelEditor.qml:120
 #, kde-format
 msgid "Check-out time has to be set."
 msgstr "L'heure de libération doit être définie."
 
-#: app/HotelEditor.qml:120
+#: app/HotelEditor.qml:122
 #, kde-format
 msgid "Check-out time has to be after the check-in time."
 msgstr "L'heure de départ doit être postérieure à l'heure d'arrivée."
+
+#: app/HotelEditor.qml:133 app/HotelPage.qml:80
+#, fuzzy, kde-format
+#| msgid "Destination:"
+msgid "Description"
+msgstr "Destination :"
 
 #: app/HotelPage.qml:16
 #, kde-format
