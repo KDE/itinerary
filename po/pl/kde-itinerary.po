@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-31 02:44+0000\n"
-"PO-Revision-Date: 2025-08-17 13:01+0200\n"
+"PO-Revision-Date: 2025-09-06 05:40+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
 "Language: pl\n"
@@ -2147,11 +2147,10 @@ msgid "Load earlier connections"
 msgstr "Wczytaj wcześniejsze połączenia"
 
 #: app/JourneyQueryPage.qml:135
-#, fuzzy, kde-format
-#| msgid "No journeys found."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No journeys found"
-msgstr "Nie znaleziono żadnej podróży."
+msgstr "Nie znaleziono żadnej podróży"
 
 #: app/JourneyQueryPage.qml:169
 #, kde-format
@@ -3043,10 +3042,9 @@ msgid "Import"
 msgstr "Zaimportuj"
 
 #: app/MyDataPage.qml:202
-#, fuzzy, kde-format
-#| msgid "Backup"
+#, kde-format
 msgid "Import Backup"
-msgstr "Kopia zapasowa"
+msgstr "Zaimportuj kopię zapasową"
 
 #: app/MyDataPage.qml:216
 #, kde-format
@@ -3224,8 +3222,7 @@ msgid "Add Program Membership"
 msgstr "Dodaj członkostwo w programie"
 
 #: app/PassPage.qml:43
-#, fuzzy, kde-format
-#| msgid "Import"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Import"
 msgstr "Zaimportuj"
@@ -3338,10 +3335,9 @@ msgid "Program Membership"
 msgstr "Członkostwo w programie"
 
 #: app/ProgramMembershipPage.qml:56
-#, fuzzy, kde-format
-#| msgid "Edit Program Membership"
+#, kde-format
 msgid "Export Program Membership"
-msgstr "Edytuj członkostwo w programie"
+msgstr "Wyeksportuj członkostwo w programie"
 
 #: app/ProgramMembershipPage.qml:155
 #, kde-format
@@ -3848,19 +3844,16 @@ msgid "Car"
 msgstr "Samochód"
 
 #: app/StopoverDetailsPage.qml:16
-#, fuzzy, kde-format
-#| msgctxt "train coach feature"
-#| msgid "Information point"
+#, kde-format
 msgctxt "train/bus arrival"
 msgid "Arrival Information"
-msgstr "Punkt informacyjny"
+msgstr "Szczegóły o przyjeździe"
 
 #: app/StopoverDetailsPage.qml:16
-#, fuzzy, kde-format
-#| msgid "Developer information"
+#, kde-format
 msgctxt "train/bus departure"
 msgid "Departure Information"
-msgstr "Szczegóły programisty"
+msgstr "Szczegóły o odjeździe"
 
 #: app/StopoverDetailsPage.qml:92 app/StopoverFormDelegate.qml:93
 #, kde-format
@@ -3869,24 +3862,19 @@ msgid "From %1"
 msgstr "Z %1"
 
 #: app/StopoverDetailsPage.qml:123
-#, fuzzy, kde-format
-#| msgctxt "train coach feature"
-#| msgid "Information point"
+#, kde-format
 msgid "Information"
-msgstr "Punkt informacyjny"
+msgstr "Szczegóły"
 
 #: app/StopoverDetailsPage.qml:131
-#, fuzzy, kde-format
-#| msgid "Trip"
+#, kde-format
 msgid "Trip Map"
-msgstr "Podróż"
+msgstr "Mapa podróży"
 
 #: app/StopoverDetailsPage.qml:139
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Show Map"
+#, kde-format
 msgid "Stop Map"
-msgstr "Pokaż mapę"
+msgstr "Mapa przystanków"
 
 #: app/TicketEditor.qml:18
 #, kde-format
@@ -3919,10 +3907,9 @@ msgid "Do you really want to delete this ticket?"
 msgstr "Czy na pewno usunąć ten bilet?"
 
 #: app/TicketPage.qml:60
-#, fuzzy, kde-format
-#| msgid "Boat Ticket"
+#, kde-format
 msgid "Export Ticket"
-msgstr "Bilet na łódź"
+msgstr "Wyeksportuj bilet"
 
 #: app/TicketPage.qml:121
 #, kde-format
@@ -4032,17 +4019,16 @@ msgid "Class: <b>%1</b>"
 msgstr "Klasa: <b>%1</b>"
 
 #: app/TrainEditor.qml:79
-#, fuzzy, kde-format
-#| msgid "Edit Train Reservation"
+#, kde-format
 msgctxt "@title"
 msgid "New Train Reservation"
-msgstr "Edytuj rezerwację pociągów"
+msgstr "Nowa rezerwacja pociągu"
 
 #: app/TrainEditor.qml:79
 #, kde-format
 msgctxt "@title"
 msgid "Edit Train Reservation"
-msgstr "Edytuj rezerwację pociągów"
+msgstr "Edytuj rezerwację pociągu"
 
 #: app/TrainEditor.qml:88 app/TrainEditor.qml:235
 #, kde-format
@@ -4075,11 +4061,10 @@ msgid "Train"
 msgstr "Pociąg"
 
 #: app/TrainEditor.qml:158
-#, fuzzy, kde-format
-#| msgid "Ticket number:"
+#, kde-format
 msgctxt "@label:textfield"
 msgid "Train number"
-msgstr "Numer biletu:"
+msgstr "Numer pociągu"
 
 #: app/TrainEditor.qml:164
 #, kde-format
@@ -4094,24 +4079,21 @@ msgid "Departure Time"
 msgstr "Czas odjazdu"
 
 #: app/TrainEditor.qml:186
-#, fuzzy, kde-format
-#| msgctxt "bus station"
-#| msgid "Station"
+#, kde-format
 msgctxt "Train station platform"
 msgid "Station Name"
-msgstr "Stacja"
+msgstr "Nazwa stacji"
 
 #: app/TrainEditor.qml:189
-#, fuzzy, kde-format
-#| msgid "Departure terminal must not be empty."
+#, kde-format
 msgid "Departure station must not be empty."
-msgstr "Terminal wylotu nie może być pusty."
+msgstr "Stacja odjazdu nie może być pusta."
 
 #: app/TrainEditor.qml:197 app/TrainEditor.qml:284
 #, kde-format
 msgctxt "Train station platform"
 msgid "Platform"
-msgstr "Platforma"
+msgstr "Peron"
 
 #: app/TrainEditor.qml:218 app/TrainEditor.qml:310 app/TrainPage.qml:163
 #: app/TrainPage.qml:247
@@ -4124,7 +4106,7 @@ msgstr "Stacja"
 #, kde-format
 msgctxt "train platform"
 msgid "Platform"
-msgstr "Platforma"
+msgstr "Peron"
 
 #: app/TrainEditor.qml:243
 #, kde-format
@@ -4133,18 +4115,15 @@ msgid "Arrival"
 msgstr "Przyjazd"
 
 #: app/TrainEditor.qml:273
-#, fuzzy, kde-format
-#| msgctxt "bus station"
-#| msgid "Station"
+#, kde-format
 msgctxt "Train station"
 msgid "Station Name"
-msgstr "Stacja"
+msgstr "Nazwa stacji"
 
 #: app/TrainEditor.qml:276
-#, fuzzy, kde-format
-#| msgid "Arrival terminal must not be empty."
+#, kde-format
 msgid "Arrival station must not be empty."
-msgstr "Terminal przypłynięcia nie może być pusty."
+msgstr "Stacja przyjazdu nie może być pusta."
 
 #: app/TrainEditor.qml:338 app/TrainEditor.qml:350 app/TrainPage.qml:292
 #, kde-format
@@ -4354,74 +4333,63 @@ msgid "Merge"
 msgstr "Scal"
 
 #: app/TripGroupPage.qml:156
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Load earlier connections"
+#, kde-format
 msgctxt "@action"
 msgid "Search connection"
-msgstr "Wczytaj wcześniejsze połączenia"
+msgstr "Poszukaj połączenia"
 
 #: app/TripGroupPage.qml:163
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Load later connections"
+#, kde-format
 msgctxt "@action"
 msgid "Add connection"
-msgstr "Wczytaj późniejsze połączenia"
+msgstr "Dodaj połączenie"
 
 #: app/TripGroupPage.qml:169
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add trip"
+#, kde-format
 msgctxt "@action"
 msgid "Add train"
-msgstr "Dodaj podróż"
+msgstr "Dodaj pociąg"
 
 #: app/TripGroupPage.qml:179
 #, kde-format
 msgctxt "@action"
 msgid "Add bus"
-msgstr ""
+msgstr "Dodaj autobus"
 
 #: app/TripGroupPage.qml:189
-#, fuzzy, kde-format
-#| msgid "Add flight…"
+#, kde-format
 msgctxt "@action"
 msgid "Add flight"
-msgstr "Dodaj lot…"
+msgstr "Dodaj lot"
 
 #: app/TripGroupPage.qml:199
-#, fuzzy, kde-format
-#| msgid "Add ferry trip…"
+#, kde-format
 msgctxt "@action"
 msgid "Add ferry trip"
-msgstr "Dodaj podróż promem…"
+msgstr "Dodaj podróż promem"
 
 #: app/TripGroupPage.qml:209
-#, fuzzy, kde-format
-#| msgid "Add accommodation…"
+#, kde-format
 msgctxt "@action"
 msgid "Add accommodation"
-msgstr "Dodaj nocleg…"
+msgstr "Dodaj nocleg"
 
 #: app/TripGroupPage.qml:224
-#, fuzzy, kde-format
-#| msgid "Add event…"
+#, kde-format
 msgctxt "@action"
 msgid "Add event"
-msgstr "Dodaj wydarzenie…"
+msgstr "Dodaj wydarzenie"
 
 #: app/TripGroupPage.qml:240
-#, fuzzy, kde-format
-#| msgid "Add restaurant…"
+#, kde-format
 msgid "Add restaurant"
-msgstr "Dodaj restaurację…"
+msgstr "Dodaj restaurację"
 
 #: app/TripGroupPage.qml:257
 #, kde-format
 msgctxt "@title:group"
 msgid "Add to Trip"
-msgstr "Dodaj podróż"
+msgstr "Dodaj do podróży"
 
 #: app/TripGroupPage.qml:290
 #, kde-format
@@ -4442,7 +4410,7 @@ msgstr "Czy na pewno usunąć tę podróż '%1'?"
 #, kde-format
 msgid "One day"
 msgid_plural "%1 days"
-msgstr[0] "jeden dzień "
+msgstr[0] "Jeden dzień"
 msgstr[1] "%1 dni"
 msgstr[2] "%1 dni"
 
