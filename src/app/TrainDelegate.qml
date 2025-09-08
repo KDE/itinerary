@@ -72,7 +72,7 @@ TimelineDelegate {
                 TimelineDelegateSeatRowLabel {
                     text: {
                         const s = root.reservation?.reservedTicket?.ticketedSeat?.seatingType;
-                        return i18nc("train class", "Class: <b>%1</b>", s !== "" ? s : "-");
+                        return i18nc("train class", "Class: <b>%1</b>", s || "-");
                     }
                     lowPriority: true
                 }
