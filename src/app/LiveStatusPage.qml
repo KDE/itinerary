@@ -65,6 +65,7 @@ Kirigami.Page {
             checked: root.mapStyle === ""
             text: i18nc("map style", "Normal map")
             icon.name: "map-gnomonic"
+            displayHint: Kirigami.DisplayHint.AlwaysHide
             // TODO only for rail-bound modes
             visible: root.onboardStatus.supportsPosition && root.isRailBound
             onTriggered: root.mapStyle = ""
@@ -75,6 +76,7 @@ Kirigami.Page {
             checked: root.mapStyle === "standard"
             text: i18nc("map style", "Railway infrastructure map")
             icon.name: "map-gnomonic"
+            displayHint: Kirigami.DisplayHint.AlwaysHide
             visible: root.onboardStatus.supportsPosition && root.isRailBound
             onTriggered: root.mapStyle = "standard"
         },
@@ -84,6 +86,7 @@ Kirigami.Page {
             checked: root.mapStyle === "signals"
             text: i18nc("map style", "Railway signalling map")
             icon.name: "map-gnomonic"
+            displayHint: Kirigami.DisplayHint.AlwaysHide
             visible: root.onboardStatus.supportsPosition && root.isRailBound
             onTriggered: root.mapStyle = "signals"
         },
@@ -93,6 +96,7 @@ Kirigami.Page {
             checked: root.mapStyle === "maxspeed"
             text: i18nc("map style", "Railway speed map")
             icon.name: "map-gnomonic"
+            displayHint: Kirigami.DisplayHint.AlwaysHide
             visible: root.onboardStatus.supportsPosition && root.isRailBound
             onTriggered: root.mapStyle = "maxspeed"
         },
@@ -102,6 +106,7 @@ Kirigami.Page {
             checked: root.mapStyle === "electrification"
             text: i18nc("map style", "Railway electrification map")
             icon.name: "map-gnomonic"
+            displayHint: Kirigami.DisplayHint.AlwaysHide
             visible: root.onboardStatus.supportsPosition && root.isRailBound
             onTriggered: root.mapStyle = "electrification"
         },
@@ -111,6 +116,7 @@ Kirigami.Page {
             checked: root.mapStyle === "gauge"
             text: i18nc("map style", "Railway gauge map")
             icon.name: "map-gnomonic"
+            displayHint: Kirigami.DisplayHint.AlwaysHide
             visible: root.onboardStatus.supportsPosition && root.isRailBound
             onTriggered: root.mapStyle = "gauge"
         }
