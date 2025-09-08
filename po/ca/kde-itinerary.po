@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-07 00:43+0000\n"
-"PO-Revision-Date: 2025-08-06 08:39+0200\n"
+"PO-Revision-Date: 2025-09-07 10:03+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.04.3\n"
+"X-Generator: Lokalize 25.08.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1924,10 +1924,9 @@ msgid "Check-out time has to be after the check-in time."
 msgstr "L'hora de sortida cal que sigui posterior a l'hora d'entrada."
 
 #: app/HotelEditor.qml:133 app/HotelPage.qml:80
-#, fuzzy, kde-format
-#| msgid "Destination:"
+#, kde-format
 msgid "Description"
-msgstr "Destinació:"
+msgstr "Descripció"
 
 #: app/HotelPage.qml:16
 #, kde-format

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-07 00:43+0000\n"
-"PO-Revision-Date: 2025-08-06 05:24+0200\n"
+"PO-Revision-Date: 2025-09-07 04:15+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.7\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1921,10 +1921,9 @@ msgid "Check-out time has to be after the check-in time."
 msgstr "ჩეკაუტის დრო ჩეკინის დროის შემდეგ უნდა იყოს."
 
 #: app/HotelEditor.qml:133 app/HotelPage.qml:80
-#, fuzzy, kde-format
-#| msgid "Destination:"
+#, kde-format
 msgid "Description"
-msgstr "დანიშნულება:"
+msgstr "აღწერა"
 
 #: app/HotelPage.qml:16
 #, kde-format
