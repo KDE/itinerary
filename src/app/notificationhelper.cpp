@@ -97,14 +97,14 @@ QString NotificationHelper::message(const LiveData &data)
 
     if (data.departure().departureDelay() > 0) {
         msgs.push_back(
-            i18n("New departure time is: %1 (+%2)", QLocale().toString(data.departure().expectedDepartureTime().time()), data.departure().departureDelay()));
+            i18n("New departure time is: %1 (+%2)", QLocale().toString(data.departure().expectedDepartureTime().time(), QLocale::ShortFormat), data.departure().departureDelay()));
     } else if (data.departure().departureDelay() < 0) {
         msgs.push_back(
-            i18n("New departure time is: %1 (%2)", QLocale().toString(data.departure().expectedDepartureTime().time()), data.departure().departureDelay()));
+            i18n("New departure time is: %1 (%2)", QLocale().toString(data.departure().expectedDepartureTime().time(), QLocale::ShortFormat), data.departure().departureDelay()));
     }
 
     if (data.arrival().arrivalDelay() > 0) {
-        msgs.push_back(i18n("New arrival time is: %1 (+%2)", QLocale().toString(data.arrival().expectedArrivalTime().time()), data.arrival().arrivalDelay()));
+        msgs.push_back(i18n("New arrival time is: %1 (+%2)", QLocale().toString(data.arrival().expectedArrivalTime().time(), QLocale::ShortFormat), data.arrival().arrivalDelay()));
     }
 
     if (data.departure().platformChanged()) {
