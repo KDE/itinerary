@@ -1,23 +1,24 @@
 # SPDX-FileCopyrightText: 2021, 2024, 2025 Alois Spitzbart <spitz234@hotmail.com>
-# Burkhard Lück <lueck@hube-lueck.de>, 2019, 2020, 2021.
-# Frederik Schwarzer <schwarzer@kde.org>, 2021, 2022, 2023.
-# Frank Steinmetzger <dev-kde@felsenfleischer.de>, 2022.
+# SPDX-FileCopyrightText: 2019, 2020, 2021 Burkhard Lück <lueck@hube-lueck.de>
+# SPDX-FileCopyrightText: 2021, 2022, 2023 Frederik Schwarzer <schwarzer@kde.org>
+# SPDX-FileCopyrightText: 2022 Frank Steinmetzger <dev-kde@felsenfleischer.de>
 # SPDX-FileCopyrightText: 2024 cahfofpai <cahfofpai@magenta.de>
 # SPDX-FileCopyrightText: 2024 Flori G <Renner03@protonmail.com>
+# SPDX-FileCopyrightText: 2025 Philipp Kiemle <l10n@prly.mozmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-31 02:44+0000\n"
-"PO-Revision-Date: 2025-08-24 18:21+0200\n"
-"Last-Translator: Alois Spitzbart <spitz234@hotmail.com>\n"
+"PO-Revision-Date: 2025-08-31 14:44+0200\n"
+"Last-Translator: Philipp Kiemle <l10n@prly.mozmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.04.3\n"
+"X-Generator: Lokalize 25.08.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -60,14 +61,14 @@ msgid ""
 "KDE Itinerary is developed by the KDE community as free software and uses "
 "the components listed below."
 msgstr ""
-"KDE-Itinerary wird von der KDE-Gemeinschaft als freie Software entwickelt "
+"KDE Itinerary wird von der KDE-Gemeinschaft als freie Software entwickelt "
 "und nutzt die unten aufgeführten Komponenten."
 
 #: app/AboutPage.qml:196
 #, kde-format
 msgid "KDE Itinerary uses public transport data from the following sources."
 msgstr ""
-"KDE-Itinerary nutzt Daten des öffentlichen Personenverkehrs von den "
+"KDE Itinerary nutzt Daten des öffentlichen Personenverkehrs von den "
 "folgenden Quellen."
 
 #: app/AboutPage.qml:207
@@ -1543,7 +1544,7 @@ msgstr "Speichern unter …"
 #: app/gpxexport.cpp:33 app/main.cpp:321 app/Main.qml:20 app/Main.qml:74
 #, kde-format
 msgid "KDE Itinerary"
-msgstr "KDE-Itinerary"
+msgstr "KDE Itinerary"
 
 #: app/gpxexport.cpp:47
 #, kde-format
@@ -1964,7 +1965,7 @@ msgstr "iCal-Termine (*.ics)"
 #: app/ImportAction.qml:43 app/MyDataPage.qml:208 app/MyDataPage.qml:229
 #, kde-format
 msgid "KDE Itinerary files (*.itinerary)"
-msgstr "KDE-Itinerary-Dateien (*.itinerary)"
+msgstr "„KDE Itinerary“-Dateien (*.itinerary)"
 
 #: app/ImportAction.qml:51
 #, kde-format
@@ -4682,7 +4683,7 @@ msgid ""
 "might want to configure your home location to enable the transfer assistant "
 "to automatically suggests ways to your next departure station or airport."
 msgstr ""
-"In KDE-Itinerary sind standardmäßig alle Funktionen deaktiviert, die einen "
+"In KDE Itinerary sind standardmäßig alle Funktionen deaktiviert, die einen "
 "Online-Zugang erfordern, wie z. B. das Abrufen von Live-Verkehrsdaten oder "
 "Wettervorhersagen. Sie sollten daher diese Einstellungen überprüfen. Wenn "
 "Sie schon dabei sind, sollten Sie Ihren Heimatort so konfigurieren, dass der "
