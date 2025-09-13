@@ -87,15 +87,24 @@
                 "-DUSE_BOOST=OFF",
                 "-DBUILD_TESTING=OFF",
                 "-DREGENERATE_METADATA=OFF",
-                "-DBUILD_STATIC_LIB=OFF",
+                "-DBUILD_STATIC_LIB=ON",
+                "-DBUILD_SHARED_LIBS=OFF",
+                "-DUSE_PROTOBUF_LITE=ON",
                 "-DBUILD_GEOCODER=OFF",
-                "-DFETCHCONTENT_FULLY_DISCONNECTED=ON"
+                "-DFETCHCONTENT_FULLY_DISCONNECTED=ON",
+                "-DCMAKE_POSITION_INDEPENDENT_CODE=ON"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/google/libphonenumber/archive/refs/tags/v8.13.18.tar.gz",
-                    "sha256": "54578d748ce38eea8c3530e49c1adf09272ef4535ed32db2555ab39b0b8851c0"
+                    "url": "https://github.com/google/libphonenumber/archive/refs/tags/v9.0.13.tar.gz",
+                    "sha256": "46400323d2df4fdefd57bc46a34111dc2c4612da62ecd0cedebff5ad94e49b0b",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 89344,
+                        "stable-only": true,
+                        "url-template": "https://github.com/google/libphonenumber/archive/refs/tags/v$version.tar.gz"
+                    }
                 }
             ],
             "cleanup": [
@@ -108,15 +117,21 @@
                     "buildsystem": "cmake-ninja",
                     "config-opts": [
                         "-DCMAKE_BUILD_TYPE=Release",
-                        "-DCMAKE_CXX_STANDARD=17",
                         "-DABSL_PROPAGATE_CXX_STD=ON",
+                        "-DBUILD_SHARED_LIBS=OFF",
                         "-DCMAKE_POSITION_INDEPENDENT_CODE=ON"
                     ],
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://github.com/abseil/abseil-cpp/archive/refs/tags/20230125.1.tar.gz",
-                            "sha256": "81311c17599b3712069ded20cca09a62ab0bf2a89dfa16993786c8782b7ed145"
+                            "url": "https://github.com/abseil/abseil-cpp/archive/refs/tags/20250814.0.tar.gz",
+                            "sha256": "9b2b72d4e8367c0b843fa2bcfa2b08debbe3cee34f7aaa27de55a6cbb3e843db",
+                            "x-checker-data": {
+                                "type": "anitya",
+                                "project-id": 115295,
+                                "stable-only": true,
+                                "url-template": "https://github.com/abseil/abseil-cpp/archive/refs/tags/$version.tar.gz"
+                            }
                         }
                     ],
                     "cleanup": [
@@ -128,12 +143,18 @@
                 },
                 {
                     "name": "protobuf",
-                    "buildsystem": "autotools",
+                    "buildsystem": "cmake-ninja",
+                    "config-opts": [
+                        "-Dprotobuf_BUILD_TESTS=OFF",
+                        "-Dprotobuf_LOCAL_DEPENDENCIES_ONLY=ON",
+                        "-DBUILD_SHARED_LIBS=OFF",
+                        "-DCMAKE_POSITION_INDEPENDENT_CODE=ON"
+                    ],
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://github.com/protocolbuffers/protobuf/archive/refs/tags/v21.12.tar.gz",
-                            "sha256": "22fdaf641b31655d4b2297f9981fa5203b2866f8332d3c6333f6b0107bb320de",
+                            "url": "https://github.com/protocolbuffers/protobuf/archive/refs/tags/v32.1.tar.gz",
+                            "sha256": "d2081ab9528292f7980ef2d88d2be472453eea4222141046ad4f660874d5f24e",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 3715,
