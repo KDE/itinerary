@@ -194,8 +194,7 @@
                 "/include",
                 "/lib/cmake",
                 "/mkspecs",
-                "/etc/xdg/*categories",
-                "/share/qlogging-categories5"
+                "/share/qlogging-categories6"
             ]
         },
         {
@@ -217,8 +216,7 @@
                 "/include",
                 "/lib/cmake",
                 "/mkspecs",
-                "/etc/xdg/*categories",
-                "/share/qlogging-categories5"
+                "/share/qlogging-categories6"
             ]
         },
         {
@@ -266,8 +264,7 @@
                 "/lib/cmake",
                 "/lib/libexec",
                 "/mkspecs",
-                "/etc/xdg/*categories",
-                "/share/qlogging-categories5"
+                "/share/qlogging-categories6"
             ]
         },
         {
@@ -285,7 +282,8 @@
                 }
             ],
             "cleanup": [
-                "/lib/cmake"
+                "/lib/cmake",
+                "/share/kdevappwizard"
             ]
         },
         {
@@ -307,8 +305,7 @@
                 "/include",
                 "/lib/cmake",
                 "/mkspecs",
-                "/etc/xdg/*categories",
-                "/share/qlogging-categories5"
+                "/share/qlogging-categories6"
             ]
         },
         {
@@ -330,8 +327,7 @@
                 "/include",
                 "/lib/cmake",
                 "/mkspecs",
-                "/etc/xdg/*categories",
-                "/share/qlogging-categories5"
+                "/share/qlogging-categories6"
             ]
         },
         {
@@ -352,8 +348,7 @@
                 "/include",
                 "/lib/cmake",
                 "/mkspecs",
-                "/etc/xdg/*categories",
-                "/share/qlogging-categories5"
+                "/share/qlogging-categories6"
             ]
         },
         {
@@ -369,8 +364,7 @@
                 "/include",
                 "/lib/cmake",
                 "/mkspecs",
-                "/etc/xdg/*categories",
-                "/share/qlogging-categories5"
+                "/share/qlogging-categories6"
             ]
         },
         {
@@ -443,8 +437,7 @@
                 "-DFLATPAK_BUILD=ON"
             ],
             "cleanup": [
-                "/etc/xdg/*categories",
-                "/share/qlogging-categories5"
+                "/share/qlogging-categories6"
             ]
         }
     ]
