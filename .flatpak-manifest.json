@@ -77,37 +77,6 @@
                 "/include",
                 "/lib/cmake",
                 "/mkspecs"
-            ],
-            "modules": [
-                {
-                    "name": "libsecret",
-                    "buildsystem": "meson",
-                    "config-opts": [
-                        "-Dmanpage=false",
-                        "-Dvapi=false",
-                        "-Dgtk_doc=false",
-                        "-Dintrospection=false",
-                        "-Dcrypto=disabled"
-                    ],
-                    "sources": [
-                        {
-                            "type": "archive",
-                            "url": "https://download.gnome.org/sources/libsecret/0.21/libsecret-0.21.7.tar.xz",
-                            "sha256": "6b452e4750590a2b5617adc40026f28d2f4903de15f1250e1d1c40bfd68ed55e",
-                            "x-checker-data": {
-                                "type": "anitya",
-                                "project-id": 13150,
-                                "stable-only": true,
-                                "url-template": "https://download.gnome.org/sources/libsecret/${version0}.${version1}/libsecret-$version.tar.xz"
-                            }
-                        }
-                    ],
-                    "cleanup": [
-                        "/bin/secret-tool",
-                        "/include",
-                        "/lib/pkgconfig"
-                    ]
-                }
             ]
         },
         {
@@ -221,10 +190,6 @@
                     "type": "git",
                     "url": "https://invent.kde.org/pim/kmime",
                     "branch": "master"
-                },
-                {
-                    "type": "patch",
-                    "path": "flatpak-kmime-version.patch"
                 }
             ],
             "cleanup": [
