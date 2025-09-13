@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-11 00:42+0000\n"
-"PO-Revision-Date: 2025-07-14 11:08+0300\n"
+"PO-Revision-Date: 2025-09-04 10:32+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -329,10 +329,7 @@ msgid "File saved successfully."
 msgstr "Tiedoston tallennus onnistui."
 
 #: app/applicationcontroller.cpp:647
-#, fuzzy, kde-format
-#| msgid ""
-#| "File was imported with a newer version of Itinerary. Some information "
-#| "might not be imported correctly."
+#, kde-format
 msgid ""
 "File was exported with a newer version of Itinerary. Some information might "
 "not be imported correctly."
@@ -494,10 +491,9 @@ msgstr "Terminaali"
 #: app/BoatPage.qml:82 app/BoatPage.qml:118 app/BusPage.qml:120
 #: app/BusPage.qml:189 app/FlightPage.qml:168 app/FlightPage.qml:218
 #: app/TrainPage.qml:183 app/TrainPage.qml:267
-#, fuzzy, kde-format
-#| msgid "Additional notes"
+#, kde-format
 msgid "Additional information"
-msgstr "Lisähuomiot"
+msgstr "Lisätietoa"
 
 #: app/BoatPage.qml:99 app/BusPage.qml:144 app/TrainPage.qml:211
 #, kde-format
@@ -1218,9 +1214,7 @@ msgid "Departure - %1"
 msgstr "Lähtö – %1"
 
 #: app/FlightEditor.qml:93
-#, fuzzy, kde-format
-#| msgctxt "flight departure"
-#| msgid "Departure"
+#, kde-format
 msgctxt "flight departure"
 msgid "Departure"
 msgstr "Lähtö"
@@ -1284,9 +1278,7 @@ msgid "Arrival - %1"
 msgstr "Saapuminen – %1"
 
 #: app/FlightEditor.qml:162
-#, fuzzy, kde-format
-#| msgctxt "flight arrival"
-#| msgid "Arrival"
+#, kde-format
 msgctxt "flight arrival"
 msgid "Arrival"
 msgstr "Saapuminen"
