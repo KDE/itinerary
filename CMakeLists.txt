@@ -11,7 +11,7 @@ set (RELEASE_SERVICE_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE
 project(itinerary VERSION ${RELEASE_SERVICE_VERSION})
 
 set(QT_MIN_VERSION 6.7)
-set(KF_MIN_VERSION 6.12)
+set(KF_MIN_VERSION 6.15)
 set(GEAR_MIN_VERSION 25.08)
 
 find_package(ECM ${KF_MIN_VERSION} REQUIRED NO_MODULE)
@@ -116,7 +116,7 @@ endif()
 
 ecm_set_disabled_deprecation_versions(
     QT ${QT_MIN_VERSION}
-    KF ${KF_MIN_VERSION}
+    KF 6.12
 )
 
 add_subdirectory(src)

@@ -24,11 +24,11 @@ public:
     Q_INVOKABLE QString formatAddress(const QVariant &obj) const;
     Q_INVOKABLE QString formatAddressWithContext(const QVariant &obj, const QVariant &otherObj, const QString &homeCountryIsoCode);
     Q_INVOKABLE QString formatCountryWithContext(const QVariant &obj, const QVariant &otherObj, const QString &homeCountryIsoCode);
-    Q_INVOKABLE QString formatTime(const QVariant &obj, const QString &propertyName) const;
-    Q_INVOKABLE QString formatDate(const QVariant &obj, const QString &propertyName) const;
-    Q_INVOKABLE QString formatDateTime(const QVariant &obj, const QString &propertyName) const;
+    Q_INVOKABLE [[nodiscard]] static QString formatTime(const QVariant &obj, const QString &propertyName);
+    Q_INVOKABLE [[nodiscard]] static QString formatDate(const QVariant &obj, const QString &propertyName);
+    Q_INVOKABLE [[nodiscard]] static QString formatDateTime(const QVariant &obj, const QString &propertyName);
     /** Auto-detect date or date/time, and convert to local time zone. */
-    Q_INVOKABLE QString formatDateOrDateTimeLocal(const QVariant &obj, const QString &propertyName) const;
+    Q_INVOKABLE static QString formatDateOrDateTimeLocal(const QVariant &obj, const QString &propertyName);
     Q_INVOKABLE [[nodiscard]] static QString formatTimeZoneOffset(qint64 seconds);
     Q_INVOKABLE [[nodiscard]] static QString formatDuration(int seconds);
     /** Format speed value. */

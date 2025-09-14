@@ -9,6 +9,7 @@
 
 #include <KPublicTransport/Stopover>
 
+#include <KFormat>
 #include <KLocalizedString>
 
 using namespace KPublicTransport;
@@ -97,14 +98,14 @@ QString NotificationHelper::message(const LiveData &data)
 
     if (data.departure().departureDelay() > 0) {
         msgs.push_back(
-            i18n("New departure time is: %1 (+%2)", QLocale().toString(data.departure().expectedDepartureTime().time(), QLocale::ShortFormat), data.departure().departureDelay()));
+            i18n("New departure time is: %1 (+%2)", KFormat().formatTime(data.departure().expectedDepartureTime(), QLocale::ShortFormat, KFormat::AddTimezoneAbbreviationIfNeeded), data.departure().departureDelay()));
     } else if (data.departure().departureDelay() < 0) {
         msgs.push_back(
-            i18n("New departure time is: %1 (%2)", QLocale().toString(data.departure().expectedDepartureTime().time(), QLocale::ShortFormat), data.departure().departureDelay()));
+            i18n("New departure time is: %1 (%2)", KFormat().formatTime(data.departure().expectedDepartureTime(), QLocale::ShortFormat, KFormat::AddTimezoneAbbreviationIfNeeded), data.departure().departureDelay()));
     }
 
     if (data.arrival().arrivalDelay() > 0) {
-        msgs.push_back(i18n("New arrival time is: %1 (+%2)", QLocale().toString(data.arrival().expectedArrivalTime().time(), QLocale::ShortFormat), data.arrival().arrivalDelay()));
+        msgs.push_back(i18n("New arrival time is: %1 (+%2)", KFormat().formatTime(data.arrival().expectedArrivalTime(), QLocale::ShortFormat, KFormat::AddTimezoneAbbreviationIfNeeded), data.arrival().arrivalDelay()));
     }
 
     if (data.departure().platformChanged()) {

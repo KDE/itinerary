@@ -161,26 +161,17 @@ static QString tzAbbreviation(const QDateTime &dt)
     return tz.abbreviation(dt);
 }
 
-QString Localizer::formatTime(const QVariant &obj, const QString &propertyName) const
+QString Localizer::formatTime(const QVariant &obj, const QString &propertyName)
 {
     const auto dt = JsonLdDocument::readProperty(obj, propertyName.toUtf8().constData()).toDateTime();
     if (!dt.isValid()) {
         return {};
     }
 
-    QString output;
-    if (QLocale().timeFormat(QLocale::ShortFormat).contains(QStringLiteral("ss"))) {
-        output = QLocale().toString(dt.time(), QStringLiteral("hh:mm"));
-    } else {
-        output = QLocale().toString(dt.time(), QLocale::ShortFormat);
-    }
-    if (needsTimeZone(dt)) {
-        output += QLatin1Char(' ') + tzAbbreviation(dt);
-    }
-    return output;
+    return KFormat().formatTime(dt, QLocale::ShortFormat, KFormat::AddTimezoneAbbreviationIfNeeded);
 }
 
-QString Localizer::formatDate(const QVariant &obj, const QString &propertyName) const
+QString Localizer::formatDate(const QVariant &obj, const QString &propertyName)
 {
     const auto dt = JsonLdDocument::readProperty(obj, propertyName.toUtf8().constData()).toDate();
     if (!dt.isValid()) {
@@ -193,7 +184,7 @@ QString Localizer::formatDate(const QVariant &obj, const QString &propertyName) 
     return QLocale().toString(dt, QLocale::ShortFormat);
 }
 
-QString Localizer::formatDateTime(const QVariant &obj, const QString &propertyName) const
+QString Localizer::formatDateTime(const QVariant &obj, const QString &propertyName)
 {
     const auto dt = JsonLdDocument::readProperty(obj, propertyName.toUtf8().constData()).toDateTime();
     if (!dt.isValid()) {
@@ -207,7 +198,7 @@ QString Localizer::formatDateTime(const QVariant &obj, const QString &propertyNa
     return s;
 }
 
-QString Localizer::formatDateOrDateTimeLocal(const QVariant &obj, const QString &propertyName) const
+QString Localizer::formatDateOrDateTimeLocal(const QVariant &obj, const QString &propertyName)
 {
     const auto dt = JsonLdDocument::readProperty(obj, propertyName.toUtf8().constData()).toDateTime();
     if (!dt.isValid()) {
