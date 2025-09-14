@@ -109,6 +109,7 @@
             ],
             "cleanup": [
                 "/include",
+                "/lib/*.a",
                 "/lib/cmake"
             ],
             "modules": [
@@ -170,6 +171,7 @@
                         "/lib/*.la",
                         "/lib/libprotoc*",
                         "/lib/libprotobuf-lite*",
+                        "/lib/cmake",
                         "/lib/pkgconfig"
                     ]
                 }
@@ -233,8 +235,8 @@
             "cleanup": [
                 "/include",
                 "*.pc",
-                "/lib/*/cmake",
-                "libZXing.so"
+                "/lib/cmake",
+                "libZXing.a"
             ],
             "sources": [
                 {
@@ -282,6 +284,7 @@
                 }
             ],
             "cleanup": [
+                "/include",
                 "/lib/cmake",
                 "/share/kdevappwizard"
             ]
