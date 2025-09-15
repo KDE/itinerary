@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-11 00:42+0000\n"
+"POT-Creation-Date: 2025-09-15 00:42+0000\n"
 "PO-Revision-Date: 2025-09-07 04:15+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -2166,7 +2166,7 @@ msgctxt "@info:placeholder"
 msgid "No journeys found"
 msgstr "მოგზაურობები ვერ მოიძებნა"
 
-#: app/JourneyQueryPage.qml:211
+#: app/JourneyQueryPage.qml:223
 #, kde-format
 msgid "Still fetching results…"
 msgstr "შედეგების გამოთხოვა ჯერ კიდევ…"
@@ -2470,25 +2470,25 @@ msgstr "მდებარეობა"
 msgid "Journey"
 msgstr "მგზავრობა"
 
-#: app/localizer.cpp:191
+#: app/localizer.cpp:182
 #, kde-format
 msgctxt "day-only date format"
 msgid "dd MMMM"
 msgstr "დდ თთთთ"
 
-#: app/localizer.cpp:251
+#: app/localizer.cpp:242
 #, kde-format
 msgctxt "weight in gram"
 msgid "%1 g"
 msgstr "%1 გ"
 
-#: app/localizer.cpp:254 app/localizer.cpp:256
+#: app/localizer.cpp:245 app/localizer.cpp:247
 #, kde-format
 msgctxt "weight in kilogram"
 msgid "%1 kg"
 msgstr "%1 კგ"
 
-#: app/localizer.cpp:271
+#: app/localizer.cpp:262
 #, kde-format
 msgctxt "temperature range"
 msgid "%1 / %2"
@@ -3077,74 +3077,74 @@ msgctxt "@title:tab"
 msgid "Current Ticket"
 msgstr "მიმდინარე ბილეთი"
 
-#: app/notificationhelper.cpp:58
+#: app/notificationhelper.cpp:59
 #, kde-format
 msgid "Disruption on %1"
 msgstr "შეფერხება %1-ზე"
 
-#: app/notificationhelper.cpp:66
+#: app/notificationhelper.cpp:67
 #, kde-format
 msgid "Changes on %1"
 msgstr "ცვლილებები %1-ზე"
 
-#: app/notificationhelper.cpp:70
+#: app/notificationhelper.cpp:71
 #, kde-format
 msgid "Delays on %1"
 msgstr "დაყოვნებები %1-ზე"
 
-#: app/notificationhelper.cpp:73
+#: app/notificationhelper.cpp:74
 #, kde-format
 msgid "Delayed departure on %1"
 msgstr "დაყოვნებული გასვლა %1-ზე"
 
-#: app/notificationhelper.cpp:76
+#: app/notificationhelper.cpp:77
 #, kde-format
 msgid "Earlier departure on %1"
 msgstr "ნაადრევი გასვლა %1-ზე"
 
-#: app/notificationhelper.cpp:79
+#: app/notificationhelper.cpp:80
 #, kde-format
 msgid "Delayed arrival on %1"
 msgstr "დაყოვნებული ჩამოსვლა %1-ზე"
 
-#: app/notificationhelper.cpp:83
+#: app/notificationhelper.cpp:84
 #, kde-format
 msgid "Platform change on %1"
 msgstr "პლატფორმის ცვლილება %1-ზე"
 
-#: app/notificationhelper.cpp:93
+#: app/notificationhelper.cpp:94
 #, kde-format
 msgctxt "a train/bus journey canceled by its operator"
 msgid "Trip has been canceled."
 msgstr "მოგზაურობა გაუქმდა."
 
-#: app/notificationhelper.cpp:95
+#: app/notificationhelper.cpp:96
 #, kde-format
 msgctxt "a train/bus journey canceled by its operator"
 msgid "Arrival has been canceled."
 msgstr "ჩამოსვლა გაუქმდა."
 
-#: app/notificationhelper.cpp:100
+#: app/notificationhelper.cpp:101
 #, kde-format
 msgid "New departure time is: %1 (+%2)"
 msgstr "ახალი გასვლის დრო: %1 (+%2)"
 
-#: app/notificationhelper.cpp:103
+#: app/notificationhelper.cpp:104
 #, kde-format
 msgid "New departure time is: %1 (%2)"
 msgstr "ახალი გასვლის დრო: %1 (%2)"
 
-#: app/notificationhelper.cpp:107
+#: app/notificationhelper.cpp:108
 #, kde-format
 msgid "New arrival time is: %1 (+%2)"
 msgstr "ახალი ჩამოსვლის დრო: %1 (+%2)"
 
-#: app/notificationhelper.cpp:111
+#: app/notificationhelper.cpp:112
 #, kde-format
 msgid "New departure platform is: %1"
 msgstr "ახალი გასვლის პლატფორმა: %1"
 
-#: app/notificationhelper.cpp:114
+#: app/notificationhelper.cpp:115
 #, kde-format
 msgid "New arrival platform is: %1"
 msgstr "ახალი ჩამოსვლის პლატფორმა: %1"

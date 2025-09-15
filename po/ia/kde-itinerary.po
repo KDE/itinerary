@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-11 00:42+0000\n"
+"POT-Creation-Date: 2025-09-15 00:42+0000\n"
 "PO-Revision-Date: 2025-09-02 18:07+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -2175,7 +2175,7 @@ msgctxt "@info:placeholder"
 msgid "No journeys found"
 msgstr "Nulle viages trovate"
 
-#: app/JourneyQueryPage.qml:211
+#: app/JourneyQueryPage.qml:223
 #, kde-format
 msgid "Still fetching results…"
 msgstr "Ancora reportante resultatos..."
@@ -2478,25 +2478,25 @@ msgstr "Position"
 msgid "Journey"
 msgstr "Viage"
 
-#: app/localizer.cpp:191
+#: app/localizer.cpp:182
 #, kde-format
 msgctxt "day-only date format"
 msgid "dd MMMM"
 msgstr "dd MMMM"
 
-#: app/localizer.cpp:251
+#: app/localizer.cpp:242
 #, kde-format
 msgctxt "weight in gram"
 msgid "%1 g"
 msgstr "%1 g"
 
-#: app/localizer.cpp:254 app/localizer.cpp:256
+#: app/localizer.cpp:245 app/localizer.cpp:247
 #, kde-format
 msgctxt "weight in kilogram"
 msgid "%1 kg"
 msgstr "%1 kg"
 
-#: app/localizer.cpp:271
+#: app/localizer.cpp:262
 #, kde-format
 msgctxt "temperature range"
 msgid "%1 / %2"
@@ -3107,74 +3107,74 @@ msgctxt "@title:tab"
 msgid "Current Ticket"
 msgstr "Billet currente"
 
-#: app/notificationhelper.cpp:58
+#: app/notificationhelper.cpp:59
 #, kde-format
 msgid "Disruption on %1"
 msgstr "Ruptura a %1"
 
-#: app/notificationhelper.cpp:66
+#: app/notificationhelper.cpp:67
 #, kde-format
 msgid "Changes on %1"
 msgstr "Modificationes a %1"
 
-#: app/notificationhelper.cpp:70
+#: app/notificationhelper.cpp:71
 #, kde-format
 msgid "Delays on %1"
 msgstr "Retardos sur %1"
 
-#: app/notificationhelper.cpp:73
+#: app/notificationhelper.cpp:74
 #, kde-format
 msgid "Delayed departure on %1"
 msgstr "Partita retardate a %1"
 
-#: app/notificationhelper.cpp:76
+#: app/notificationhelper.cpp:77
 #, kde-format
 msgid "Earlier departure on %1"
 msgstr "Partita anticipate a %1"
 
-#: app/notificationhelper.cpp:79
+#: app/notificationhelper.cpp:80
 #, kde-format
 msgid "Delayed arrival on %1"
 msgstr "Arrivata retardate a %1"
 
-#: app/notificationhelper.cpp:83
+#: app/notificationhelper.cpp:84
 #, kde-format
 msgid "Platform change on %1"
 msgstr "Cambiamento de platteforma a %1"
 
-#: app/notificationhelper.cpp:93
+#: app/notificationhelper.cpp:94
 #, kde-format
 msgctxt "a train/bus journey canceled by its operator"
 msgid "Trip has been canceled."
 msgstr "Viage (trip) ha essite cancellate."
 
-#: app/notificationhelper.cpp:95
+#: app/notificationhelper.cpp:96
 #, kde-format
 msgctxt "a train/bus journey canceled by its operator"
 msgid "Arrival has been canceled."
 msgstr "Arrivata ha essite cancellata."
 
-#: app/notificationhelper.cpp:100
+#: app/notificationhelper.cpp:101
 #, kde-format
 msgid "New departure time is: %1 (+%2)"
 msgstr "Nove tempore de partita es: %1 (+%2) "
 
-#: app/notificationhelper.cpp:103
+#: app/notificationhelper.cpp:104
 #, kde-format
 msgid "New departure time is: %1 (%2)"
 msgstr "Nove tempore de partita es: %1 (%2)"
 
-#: app/notificationhelper.cpp:107
+#: app/notificationhelper.cpp:108
 #, kde-format
 msgid "New arrival time is: %1 (+%2)"
 msgstr "Nove tempore de arrivata es: %1 (+%2)"
 
-#: app/notificationhelper.cpp:111
+#: app/notificationhelper.cpp:112
 #, kde-format
 msgid "New departure platform is: %1"
 msgstr "Nove platteforma de partita es: %1"
 
-#: app/notificationhelper.cpp:114
+#: app/notificationhelper.cpp:115
 #, kde-format
 msgid "New arrival platform is: %1"
 msgstr "Nove platteforma de arrivata es: %1"
