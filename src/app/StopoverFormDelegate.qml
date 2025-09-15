@@ -8,6 +8,7 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kpublictransport.ui as KPublicTransport
+import org.kde.coreaddons as KCoreAddons
 import org.kde.itinerary
 
 /** List view delegate for showing entries in a departure/arrival board.
@@ -61,7 +62,7 @@ FormCard.AbstractFormDelegate {
                     stopover: delegateRoot.stopover
                     delay: delegateRoot.isArrival ? delegateRoot.stopover.arrivalDelay : delegateRoot.stopover.departureDelay
                     // TODO hide scheduledTime when we are not showing relative times on the right and delay is 0
-                    scheduledTime: delay != 0 ? Localizer.formatTime(delegateRoot.stopover, delegateRoot.isArrival ? "scheduledArrivalTime" : "scheduledDepartureTime") : ""
+                    scheduledTime: delay != 0 ? KCoreAddons.Format.formatTime(delegateRoot.stopover, delegateRoot.isArrival ? "scheduledArrivalTime" : "scheduledDepartureTime", Locale.ShortFormat, KCoreAddons.FormatTypes.AddTimezoneAbbreviationIfNeeded) : ""
                     hasExpectedTime: delegateRoot.isArrival ? delegateRoot.stopover.hasExpectedArrivalTime : delegateRoot.stopover.hasExpectedDepartureTime
                     visible: hasExpectedTime || delegateRoot.stopover.disruptionEffect === KPublicTransport.Disruption.NoService // TODO show also when we show relative times, see below
                 }
@@ -113,8 +114,8 @@ FormCard.AbstractFormDelegate {
 
             // TODO once KFormat::formatRelativeDateTime supports narrow formatting, use that instead when within 1h of now
             text: delegateRoot.isArrival ?
-                Localizer.formatTime(delegateRoot.stopover, delegateRoot.stopover.hasExpectedArrivalTime ? "expectedArrivalTime" : "scheduledArrivalTime") :
-                Localizer.formatTime(delegateRoot.stopover, delegateRoot.stopover.hasExpectedDepartureTime ? "expectedDepartureTime" : "scheduledDepartureTime")
+                KCoreAddons.Format.formatTime(delegateRoot.stopover, delegateRoot.stopover.hasExpectedArrivalTime ? "expectedArrivalTime" : "scheduledArrivalTime", Locale.ShortFormat, KCoreAddons.FormatTypes.AddTimezoneAbbreviationIfNeeded) :
+                KCoreAddons.Format.formatTime(delegateRoot.stopover, delegateRoot.stopover.hasExpectedDepartureTime ? "expectedDepartureTime" : "scheduledDepartureTime", Locale.ShortFormat, KCoreAddons.FormatTypes.AddTimezoneAbbreviationIfNeeded)
         }
 
         QQC2.Label {

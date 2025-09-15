@@ -10,6 +10,7 @@ import org.kde.kirigami as Kirigami
 import org.kde.kpublictransport as KPublicTransport
 import org.kde.kpublictransport.ui as KPublicTransport
 import org.kde.kosmindoormap as KOSM
+import org.kde.coreaddons as KCoreAddons
 
 Kirigami.Page {
     id: root
@@ -77,7 +78,7 @@ Kirigami.Page {
                     id: expectedTimeLabel
                     stopover: root.stopover
                     delay: root.isArrival ? root.stopover.arrivalDelay : root.stopover.departureDelay
-                    scheduledTime: delay != 0 ? Localizer.formatTime(root.stopover, root.isArrival ? "scheduledArrivalTime" : "scheduledDepartureTime") : ""
+                    scheduledTime: delay != 0 ? KCoreAddons.Format.formatTime(root.stopover, root.isArrival ? "scheduledArrivalTime" : "scheduledDepartureTime", Locale.ShortFormat, KCoreAddons.FormatTypes.AddTimezoneAbbreviationIfNeeded) : ""
                     hasExpectedTime: root.isArrival ? root.stopover.hasExpectedArrivalTime : root.stopover.hasExpectedDepartureTime
                     visible: hasExpectedTime || root.stopover.disruptionEffect === KPublicTransport.Disruption.NoService
                 }
@@ -111,8 +112,8 @@ Kirigami.Page {
 
                 // TODO once KFormat::formatRelativeDateTime supports narrow formatting, use that instead when within 1h of now
                 text: root.isArrival ?
-                    Localizer.formatTime(root.stopover, root.stopover.hasExpectedArrivalTime ? "expectedArrivalTime" : "scheduledArrivalTime") :
-                    Localizer.formatTime(root.stopover, root.stopover.hasExpectedDepartureTime ? "expectedDepartureTime" : "scheduledDepartureTime")
+                    KCoreAddons.Format.formatTime(root.stopover, root.stopover.hasExpectedArrivalTime ? "expectedArrivalTime" : "scheduledArrivalTime", Locale.ShortFormat, KCoreAddons.FormatTypes.AddTimezoneAbbreviationIfNeeded) :
+                    KCoreAddons.Format.formatTime(root.stopover, root.stopover.hasExpectedDepartureTime ? "expectedDepartureTime" : "scheduledDepartureTime", Locale.ShortFormat, KCoreAddons.FormatTypes.AddTimezoneAbbreviationIfNeeded)
             }
         }
 
