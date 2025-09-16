@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-15 00:42+0000\n"
+"POT-Creation-Date: 2025-09-16 00:42+0000\n"
 "PO-Revision-Date: 2025-09-07 09:48+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -203,35 +203,35 @@ msgctxt "journey query search constraint, title"
 msgid "Long distance trains"
 msgstr "Vlaki na dolge razdalje"
 
-#: app/AlternativeJourneyPage.qml:75 app/DepartureQueryPage.qml:35
+#: app/AlternativeJourneyPage.qml:75 app/DepartureQueryPage.qml:36
 #: app/JourneyRequestPage.qml:254 app/TransferPage.qml:116
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Local trains"
 msgstr "Lokalni vlaki"
 
-#: app/AlternativeJourneyPage.qml:83 app/DepartureQueryPage.qml:42
+#: app/AlternativeJourneyPage.qml:83 app/DepartureQueryPage.qml:44
 #: app/JourneyRequestPage.qml:264 app/TransferPage.qml:124
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Rapid transit"
 msgstr "Hitri tranzit"
 
-#: app/AlternativeJourneyPage.qml:91 app/DepartureQueryPage.qml:49
+#: app/AlternativeJourneyPage.qml:91 app/DepartureQueryPage.qml:52
 #: app/JourneyRequestPage.qml:274 app/TransferPage.qml:132
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Bus"
 msgstr "Avtobus"
 
-#: app/AlternativeJourneyPage.qml:99 app/DepartureQueryPage.qml:56
+#: app/AlternativeJourneyPage.qml:99 app/DepartureQueryPage.qml:60
 #: app/JourneyRequestPage.qml:284 app/TransferPage.qml:140
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ferry"
 msgstr "Trajekt"
 
-#: app/AlternativeJourneyPage.qml:107 app/DepartureQueryPage.qml:63
+#: app/AlternativeJourneyPage.qml:107 app/DepartureQueryPage.qml:68
 #: app/JourneyRequestPage.qml:294
 #, kde-format
 msgctxt "journey query search constraint, title"
@@ -418,7 +418,7 @@ msgstr "Spremeni dohodni terminal"
 #: app/BoatEditor.qml:112 app/BusEditor.qml:128 app/EventEditor.qml:54
 #: app/FlightEditor.qml:79 app/HotelEditor.qml:53 app/ImportPage.qml:21
 #: app/JourneyRequestPage.qml:228 app/RestaurantEditor.qml:53
-#: app/StopoverDetailsPage.qml:127 app/TrainEditor.qml:135
+#: app/StopoverDetailsPage.qml:128 app/TrainEditor.qml:135
 #, kde-format
 msgid "Trip"
 msgstr "Potovanje"
@@ -818,7 +818,7 @@ msgstr "Lokacija"
 msgid "Drop-off"
 msgstr "Oddaja"
 
-#: app/CarRentalPage.qml:78 app/StopoverDetailsPage.qml:135
+#: app/CarRentalPage.qml:78 app/StopoverDetailsPage.qml:136
 #, kde-format
 msgid "Vehicle"
 msgstr "Vozilo"
@@ -871,33 +871,33 @@ msgstr "Valuta: %1"
 msgid "Departures"
 msgstr "Odhodi"
 
-#: app/DepartureQueryPage.qml:120
+#: app/DepartureQueryPage.qml:126
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "Naloži zgodnejše odhode"
 
-#: app/DepartureQueryPage.qml:146 app/JourneyQueryPage.qml:157
+#: app/DepartureQueryPage.qml:152 app/JourneyQueryPage.qml:157
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "Naloži kasnejše povezave"
 
-#: app/DepartureQueryPage.qml:155 app/JourneyQueryPage.qml:164
+#: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:164
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
 msgstr "Dobavitelji podatkov:"
 
-#: app/DepartureQueryPage.qml:163 app/JourneyQueryPage.qml:173
+#: app/DepartureQueryPage.qml:169 app/JourneyQueryPage.qml:173
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Loading"
 msgstr "Nalaganje"
 
-#: app/DepartureQueryPage.qml:163 app/JourneyQueryPage.qml:175
+#: app/DepartureQueryPage.qml:169 app/JourneyQueryPage.qml:175
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:status"
@@ -2315,14 +2315,14 @@ msgid "Drive %1 (%2)"
 msgstr "Vožnja %1 (%2)"
 
 #: app/JourneySectionDelegate.qml:180 app/JourneySectionDelegate.qml:331
-#: app/StopoverDetailsPage.qml:99 app/StopoverFormDelegate.qml:100
+#: app/StopoverDetailsPage.qml:100 app/StopoverFormDelegate.qml:101
 #, kde-format
 msgctxt "@info"
 msgid "Platform %1"
 msgstr "Peron %1"
 
 #: app/JourneySectionDelegate.qml:253 app/JourneySectionPage.qml:136
-#: app/StopoverFormDelegate.qml:143 app/VehicleLayoutPage.qml:175
+#: app/StopoverFormDelegate.qml:144 app/VehicleLayoutPage.qml:175
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
@@ -3858,35 +3858,35 @@ msgstr "Ladja"
 msgid "Car"
 msgstr "Avto"
 
-#: app/StopoverDetailsPage.qml:16
+#: app/StopoverDetailsPage.qml:17
 #, kde-format
 msgctxt "train/bus arrival"
 msgid "Arrival Information"
 msgstr "Informacije o prihodu"
 
-#: app/StopoverDetailsPage.qml:16
+#: app/StopoverDetailsPage.qml:17
 #, kde-format
 msgctxt "train/bus departure"
 msgid "Departure Information"
 msgstr "Informacije o odhodu"
 
-#: app/StopoverDetailsPage.qml:92 app/StopoverFormDelegate.qml:93
+#: app/StopoverDetailsPage.qml:93 app/StopoverFormDelegate.qml:94
 #, kde-format
 msgctxt "departure stop"
 msgid "From %1"
 msgstr "Od %1"
 
-#: app/StopoverDetailsPage.qml:123
+#: app/StopoverDetailsPage.qml:124
 #, kde-format
 msgid "Information"
 msgstr "Informacije"
 
-#: app/StopoverDetailsPage.qml:131
+#: app/StopoverDetailsPage.qml:132
 #, kde-format
 msgid "Trip Map"
 msgstr "Zemljevid potovanja"
 
-#: app/StopoverDetailsPage.qml:139
+#: app/StopoverDetailsPage.qml:140
 #, kde-format
 msgid "Stop Map"
 msgstr "Zemljevid postankov"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kitinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-15 00:42+0000\n"
+"POT-Creation-Date: 2025-09-16 00:42+0000\n"
 "PO-Revision-Date: 2023-07-14 22:15+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -215,35 +215,35 @@ msgctxt "journey query search constraint, title"
 msgid "Long distance trains"
 msgstr "Comboios de longa distância"
 
-#: app/AlternativeJourneyPage.qml:75 app/DepartureQueryPage.qml:35
+#: app/AlternativeJourneyPage.qml:75 app/DepartureQueryPage.qml:36
 #: app/JourneyRequestPage.qml:254 app/TransferPage.qml:116
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Local trains"
 msgstr "Comboios locais"
 
-#: app/AlternativeJourneyPage.qml:83 app/DepartureQueryPage.qml:42
+#: app/AlternativeJourneyPage.qml:83 app/DepartureQueryPage.qml:44
 #: app/JourneyRequestPage.qml:264 app/TransferPage.qml:124
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Rapid transit"
 msgstr "Trânsito rápido"
 
-#: app/AlternativeJourneyPage.qml:91 app/DepartureQueryPage.qml:49
+#: app/AlternativeJourneyPage.qml:91 app/DepartureQueryPage.qml:52
 #: app/JourneyRequestPage.qml:274 app/TransferPage.qml:132
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Bus"
 msgstr "Autocarro"
 
-#: app/AlternativeJourneyPage.qml:99 app/DepartureQueryPage.qml:56
+#: app/AlternativeJourneyPage.qml:99 app/DepartureQueryPage.qml:60
 #: app/JourneyRequestPage.qml:284 app/TransferPage.qml:140
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ferry"
 msgstr "'Ferry'"
 
-#: app/AlternativeJourneyPage.qml:107 app/DepartureQueryPage.qml:63
+#: app/AlternativeJourneyPage.qml:107 app/DepartureQueryPage.qml:68
 #: app/JourneyRequestPage.qml:294
 #, kde-format
 msgctxt "journey query search constraint, title"
@@ -440,7 +440,7 @@ msgstr "Mudar a estação de chegada"
 #: app/BoatEditor.qml:112 app/BusEditor.qml:128 app/EventEditor.qml:54
 #: app/FlightEditor.qml:79 app/HotelEditor.qml:53 app/ImportPage.qml:21
 #: app/JourneyRequestPage.qml:228 app/RestaurantEditor.qml:53
-#: app/StopoverDetailsPage.qml:127 app/TrainEditor.qml:135
+#: app/StopoverDetailsPage.qml:128 app/TrainEditor.qml:135
 #, fuzzy, kde-format
 #| msgid "Trips"
 msgid "Trip"
@@ -881,7 +881,7 @@ msgstr "Localização"
 msgid "Drop-off"
 msgstr "Largada"
 
-#: app/CarRentalPage.qml:78 app/StopoverDetailsPage.qml:135
+#: app/CarRentalPage.qml:78 app/StopoverDetailsPage.qml:136
 #, kde-format
 msgid "Vehicle"
 msgstr "Veículo"
@@ -935,26 +935,26 @@ msgstr "Moeda: %1"
 msgid "Departures"
 msgstr "Partidas"
 
-#: app/DepartureQueryPage.qml:120
+#: app/DepartureQueryPage.qml:126
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "Carregar as partidas antecipadas"
 
-#: app/DepartureQueryPage.qml:146 app/JourneyQueryPage.qml:157
+#: app/DepartureQueryPage.qml:152 app/JourneyQueryPage.qml:157
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "Carregar as ligações posteriores"
 
-#: app/DepartureQueryPage.qml:155 app/JourneyQueryPage.qml:164
+#: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:164
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
 msgstr "Fornecedores de dados:"
 
-#: app/DepartureQueryPage.qml:163 app/JourneyQueryPage.qml:173
+#: app/DepartureQueryPage.qml:169 app/JourneyQueryPage.qml:173
 #: app/TransferPage.qml:336
 #, fuzzy, kde-format
 #| msgid "Boarding"
@@ -962,7 +962,7 @@ msgctxt "@info:placeholder"
 msgid "Loading"
 msgstr "Embarque"
 
-#: app/DepartureQueryPage.qml:163 app/JourneyQueryPage.qml:175
+#: app/DepartureQueryPage.qml:169 app/JourneyQueryPage.qml:175
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:status"
@@ -2464,7 +2464,7 @@ msgid "Drive %1 (%2)"
 msgstr "Condução para %1 (%2)"
 
 #: app/JourneySectionDelegate.qml:180 app/JourneySectionDelegate.qml:331
-#: app/StopoverDetailsPage.qml:99 app/StopoverFormDelegate.qml:100
+#: app/StopoverDetailsPage.qml:100 app/StopoverFormDelegate.qml:101
 #, fuzzy, kde-format
 #| msgid "Platform: %1"
 msgctxt "@info"
@@ -2472,7 +2472,7 @@ msgid "Platform %1"
 msgstr "Plataforma: %1"
 
 #: app/JourneySectionDelegate.qml:253 app/JourneySectionPage.qml:136
-#: app/StopoverFormDelegate.qml:143 app/VehicleLayoutPage.qml:175
+#: app/StopoverFormDelegate.qml:144 app/VehicleLayoutPage.qml:175
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
@@ -4035,40 +4035,40 @@ msgstr "Barco"
 msgid "Car"
 msgstr "Carro"
 
-#: app/StopoverDetailsPage.qml:16
+#: app/StopoverDetailsPage.qml:17
 #, fuzzy, kde-format
 #| msgid "More information"
 msgctxt "train/bus arrival"
 msgid "Arrival Information"
 msgstr "Mais informações"
 
-#: app/StopoverDetailsPage.qml:16
+#: app/StopoverDetailsPage.qml:17
 #, fuzzy, kde-format
 #| msgid "Developer information"
 msgctxt "train/bus departure"
 msgid "Departure Information"
 msgstr "Informação de desenvolvimento"
 
-#: app/StopoverDetailsPage.qml:92 app/StopoverFormDelegate.qml:93
+#: app/StopoverDetailsPage.qml:93 app/StopoverFormDelegate.qml:94
 #, fuzzy, kde-format
 #| msgid "From: %1"
 msgctxt "departure stop"
 msgid "From %1"
 msgstr "De: %1"
 
-#: app/StopoverDetailsPage.qml:123
+#: app/StopoverDetailsPage.qml:124
 #, fuzzy, kde-format
 #| msgid "More information"
 msgid "Information"
 msgstr "Mais informações"
 
-#: app/StopoverDetailsPage.qml:131
+#: app/StopoverDetailsPage.qml:132
 #, fuzzy, kde-format
 #| msgid "Trips"
 msgid "Trip Map"
 msgstr "Viagens"
 
-#: app/StopoverDetailsPage.qml:139
+#: app/StopoverDetailsPage.qml:140
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Show More…"
