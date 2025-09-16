@@ -12,6 +12,7 @@ import QtQuick.Dialogs
 import QtLocation as QtLocation
 import QtPositioning
 import org.kde.kirigami as Kirigami
+import org.kde.kirigami.private.polyfill // remove once >= QT_VERSION_CHECK(6, 9, 0)
 import org.kde.kirigamiaddons.components
 import org.kde.itinerary
 
@@ -142,9 +143,9 @@ Kirigami.Page {
     FloatingButton {
         anchors {
             right: parent.right
-            rightMargin: Kirigami.Units.largeSpacing + (root.contentItem.QQC2.ScrollBar && root.contentItem.QQC2.ScrollBar.vertical ? root.contentItem.QQC2.ScrollBar.vertical.width : 0)
+            rightMargin: Kirigami.Units.largeSpacing + (root.contentItem.QQC2.ScrollBar && root.contentItem.QQC2.ScrollBar.vertical ? root.contentItem.QQC2.ScrollBar.vertical.width : 0) + root.SafeArea.margins.right
             bottom: parent.bottom
-            bottomMargin: Kirigami.Units.largeSpacing
+            bottomMargin: Kirigami.Units.largeSpacing + root.SafeArea.margins.bottom
         }
         action: Kirigami.Action {
             icon.name: "crosshairs"
