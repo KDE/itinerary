@@ -14,13 +14,21 @@ Rectangle {
     id: root
     property int maximumWidth
     property KPkPass.Pass pass
+    readonly property KPkPass.barcode barcode: {
+        for (const bc of root.pass.barcodes) {
+            // prefer 2D codes that work better on mobile phones when available
+            if (bc.format === KPkPass.Barcode.QR || bc.format === KPkPass.Barcode.Aztec)
+                return bc;
+        }
+        return root.pass.barcodes[0];
+    }
 
     implicitHeight: barcodeLayout.implicitHeight
     implicitWidth: barcodeLayout.implicitWidth
     color: "white"
     radius: 6
     Layout.alignment: Qt.AlignCenter
-    visible: root.pass && root.pass.barcodes[0].format !== KPkPass.Barcode.Invalid
+    visible: root.pass && root.pass.barcodes.length > 0 && root.barcode.format !== KPkPass.Barcode.Invalid
 
     ColumnLayout {
         id: barcodeLayout
@@ -32,20 +40,20 @@ Rectangle {
             Layout.preferredWidth: 0.8 * root.maximumWidth
             Layout.preferredHeight: implicitHeight * (Layout.preferredWidth / implicitWidth)
             barcodeType: {
-                switch(root.pass.barcodes[0].format) {
+                switch(root.barcode.format) {
                     case KPkPass.Barcode.QR: return Prison.Barcode.QRCode
                     case KPkPass.Barcode.Aztec: return Prison.Barcode.Aztec
                     case KPkPass.Barcode.PDF417: return Prison.Barcode.PDF417;
                     case KPkPass.Barcode.Code128: return Prison.Barcode.Code128;
                 }
             }
-            content: root.pass.barcodes[0].message
+            content: root.barcode.message
         }
 
         QQC2.Label {
             Layout.fillWidth: true
             Layout.maximumWidth: root.maximumWidth
-            text: root.pass.barcodes[0].alternativeText
+            text: root.barcode.alternativeText
             color: "black"
             visible: text.length > 0
             wrapMode: Text.Wrap
