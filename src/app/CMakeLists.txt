@@ -316,6 +316,7 @@ if (ANDROID)
         documentinfo
         donate-symbolic
         download
+        draw-arrow-back-symbolic
         edit-copy-symbolic
         edit-cut
         edit-delete
