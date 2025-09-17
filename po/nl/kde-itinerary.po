@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-16 00:42+0000\n"
+"POT-Creation-Date: 2025-09-17 00:43+0000\n"
 "PO-Revision-Date: 2025-09-08 22:33+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -356,17 +356,17 @@ msgstr "In modus barcode scannen"
 msgid "In barcode scanning mode"
 msgstr "In modus barcode scannen"
 
-#: app/BarcodeScannerPage.qml:17
+#: app/BarcodeScannerPage.qml:18
 #, kde-format
 msgid "Scan Barcode"
 msgstr "Barcode scannen"
 
-#: app/BarcodeScannerPage.qml:72
+#: app/BarcodeScannerPage.qml:73
 #, kde-format
 msgid "No camera available."
 msgstr "Geen camera beschikbaar."
 
-#: app/BarcodeScannerPage.qml:85
+#: app/BarcodeScannerPage.qml:86
 #, kde-format
 msgid "Light"
 msgstr "Licht"
@@ -1087,8 +1087,8 @@ msgstr "Versturen naar %1"
 msgid "Itinerary file (*.itinerary)"
 msgstr "Reisroutebestand (*.itinerary)"
 
-#: app/ExportMenuDialog.qml:92 app/FavoriteLocationPage.qml:38
-#: app/FavoriteLocationPage.qml:46
+#: app/ExportMenuDialog.qml:92 app/FavoriteLocationPage.qml:39
+#: app/FavoriteLocationPage.qml:47
 #, kde-format
 msgid "GPX Files (*.gpx)"
 msgstr "GPX-bestanden (*.gpx)"
@@ -1108,58 +1108,58 @@ msgstr "Werk"
 msgid "Location %1"
 msgstr "Locatie %1"
 
-#: app/FavoriteLocationPage.qml:20 app/MyDataPage.qml:124
+#: app/FavoriteLocationPage.qml:21 app/MyDataPage.qml:124
 #, kde-format
 msgid "Favorite Locations"
 msgstr "Favoriete locaties"
 
-#: app/FavoriteLocationPage.qml:36
+#: app/FavoriteLocationPage.qml:37
 #, kde-format
 msgid "Export Favorite Locations"
 msgstr "Favoriete locaties exporteren"
 
-#: app/FavoriteLocationPage.qml:44
+#: app/FavoriteLocationPage.qml:45
 #, kde-format
 msgid "Import Favorite Locations"
 msgstr "Favoriete locaties importeren"
 
-#: app/FavoriteLocationPage.qml:52
+#: app/FavoriteLocationPage.qml:53
 #, kde-format
 msgid "Add Favorite Location"
 msgstr "Favoriete locatie toevoegen"
 
-#: app/FavoriteLocationPage.qml:60
+#: app/FavoriteLocationPage.qml:61
 #, kde-format
 msgid "Rename Favorite Location"
 msgstr "Favoriete locatie hernoemen"
 
-#: app/FavoriteLocationPage.qml:65
+#: app/FavoriteLocationPage.qml:66
 #, kde-format
 msgid "Remove Favorite Location"
 msgstr "Favoriete locatie verwijderen"
 
-#: app/FavoriteLocationPage.qml:75
+#: app/FavoriteLocationPage.qml:76
 #, kde-format
 msgid "Export to GPX"
 msgstr "Exporteren naar GPX"
 
-#: app/FavoriteLocationPage.qml:80
+#: app/FavoriteLocationPage.qml:81
 #, kde-format
 msgid "Import from GPX"
 msgstr "Uit GPX importeren"
 
-#: app/FavoriteLocationPage.qml:91
+#: app/FavoriteLocationPage.qml:92
 #, kde-format
 msgctxt "@title"
 msgid "Rename favorite location"
 msgstr "Favoriete locatie hernoemen"
 
-#: app/FavoriteLocationPage.qml:101
+#: app/FavoriteLocationPage.qml:102
 #, kde-format
 msgid "Rename"
 msgstr "Hernoemen"
 
-#: app/FavoriteLocationPage.qml:151 app/FormPlaceEditorDelegate.qml:56
+#: app/FavoriteLocationPage.qml:152 app/FormPlaceEditorDelegate.qml:56
 #: app/LocationPicker.qml:78
 #, kde-format
 msgid "Pick Location"

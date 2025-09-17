@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-16 00:42+0000\n"
+"POT-Creation-Date: 2025-09-17 00:43+0000\n"
 "PO-Revision-Date: 2025-04-01 10:26+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -366,17 +366,17 @@ msgstr "Режим сканирования штрихкода"
 msgid "In barcode scanning mode"
 msgstr "В режиме сканирования штрихкода"
 
-#: app/BarcodeScannerPage.qml:17
+#: app/BarcodeScannerPage.qml:18
 #, kde-format
 msgid "Scan Barcode"
 msgstr "Сканировать штрихкод"
 
-#: app/BarcodeScannerPage.qml:72
+#: app/BarcodeScannerPage.qml:73
 #, kde-format
 msgid "No camera available."
 msgstr "Нет доступных камер."
 
-#: app/BarcodeScannerPage.qml:85
+#: app/BarcodeScannerPage.qml:86
 #, kde-format
 msgid "Light"
 msgstr "Свет"
@@ -1125,8 +1125,8 @@ msgstr "Отправить %1"
 msgid "Itinerary file (*.itinerary)"
 msgstr "Файл программы «Маршруты KDE» (*.itinerary)"
 
-#: app/ExportMenuDialog.qml:92 app/FavoriteLocationPage.qml:38
-#: app/FavoriteLocationPage.qml:46
+#: app/ExportMenuDialog.qml:92 app/FavoriteLocationPage.qml:39
+#: app/FavoriteLocationPage.qml:47
 #, kde-format
 msgid "GPX Files (*.gpx)"
 msgstr "Файлы GPX (*.*)"
@@ -1146,58 +1146,58 @@ msgstr "Работа"
 msgid "Location %1"
 msgstr "Расположение %1"
 
-#: app/FavoriteLocationPage.qml:20 app/MyDataPage.qml:124
+#: app/FavoriteLocationPage.qml:21 app/MyDataPage.qml:124
 #, kde-format
 msgid "Favorite Locations"
 msgstr "Избранные расположения"
 
-#: app/FavoriteLocationPage.qml:36
+#: app/FavoriteLocationPage.qml:37
 #, kde-format
 msgid "Export Favorite Locations"
 msgstr "Экспорт избранных расположений"
 
-#: app/FavoriteLocationPage.qml:44
+#: app/FavoriteLocationPage.qml:45
 #, kde-format
 msgid "Import Favorite Locations"
 msgstr "Импорт избранных расположений"
 
-#: app/FavoriteLocationPage.qml:52
+#: app/FavoriteLocationPage.qml:53
 #, kde-format
 msgid "Add Favorite Location"
 msgstr "Добавить избранное расположение"
 
-#: app/FavoriteLocationPage.qml:60
+#: app/FavoriteLocationPage.qml:61
 #, kde-format
 msgid "Rename Favorite Location"
 msgstr "Переименовать избранное расположение"
 
-#: app/FavoriteLocationPage.qml:65
+#: app/FavoriteLocationPage.qml:66
 #, kde-format
 msgid "Remove Favorite Location"
 msgstr "Удалить избранное расположение"
 
-#: app/FavoriteLocationPage.qml:75
+#: app/FavoriteLocationPage.qml:76
 #, kde-format
 msgid "Export to GPX"
 msgstr "Экспорт в GPX"
 
-#: app/FavoriteLocationPage.qml:80
+#: app/FavoriteLocationPage.qml:81
 #, kde-format
 msgid "Import from GPX"
 msgstr "Импорт из GPX"
 
-#: app/FavoriteLocationPage.qml:91
+#: app/FavoriteLocationPage.qml:92
 #, kde-format
 msgctxt "@title"
 msgid "Rename favorite location"
 msgstr "Переименование избранного расположения"
 
-#: app/FavoriteLocationPage.qml:101
+#: app/FavoriteLocationPage.qml:102
 #, kde-format
 msgid "Rename"
 msgstr "Переименовать"
 
-#: app/FavoriteLocationPage.qml:151 app/FormPlaceEditorDelegate.qml:56
+#: app/FavoriteLocationPage.qml:152 app/FormPlaceEditorDelegate.qml:56
 #: app/LocationPicker.qml:78
 #, kde-format
 msgid "Pick Location"

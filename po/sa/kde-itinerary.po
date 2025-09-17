@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-16 00:42+0000\n"
+"POT-Creation-Date: 2025-09-17 00:43+0000\n"
 "PO-Revision-Date: 2025-03-02 14:47+0530\n"
 "Last-Translator: Shreekant Kalwar <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -358,17 +358,17 @@ msgstr "बारकोड स्कैन मोड"
 msgid "In barcode scanning mode"
 msgstr "बारकोड् स्कैनिङ्ग मोड् मध्ये"
 
-#: app/BarcodeScannerPage.qml:17
+#: app/BarcodeScannerPage.qml:18
 #, kde-format
 msgid "Scan Barcode"
 msgstr "स्कैन बारकोड"
 
-#: app/BarcodeScannerPage.qml:72
+#: app/BarcodeScannerPage.qml:73
 #, kde-format
 msgid "No camera available."
 msgstr "न कॅमेरा उपलब्धः।"
 
-#: app/BarcodeScannerPage.qml:85
+#: app/BarcodeScannerPage.qml:86
 #, kde-format
 msgid "Light"
 msgstr "प्रकाशः"
@@ -1117,8 +1117,8 @@ msgstr "%1 - मध्ये प्रेषयन्तु"
 msgid "Itinerary file (*.itinerary)"
 msgstr "यात्रासूची सञ्चिका (*.itinerary)"
 
-#: app/ExportMenuDialog.qml:92 app/FavoriteLocationPage.qml:38
-#: app/FavoriteLocationPage.qml:46
+#: app/ExportMenuDialog.qml:92 app/FavoriteLocationPage.qml:39
+#: app/FavoriteLocationPage.qml:47
 #, kde-format
 msgid "GPX Files (*.gpx)"
 msgstr "जीपीएक्स सञ्चिकाः (*.gpx)"
@@ -1138,58 +1138,58 @@ msgstr "कार्यम्‌"
 msgid "Location %1"
 msgstr "स्थानम् %1"
 
-#: app/FavoriteLocationPage.qml:20 app/MyDataPage.qml:124
+#: app/FavoriteLocationPage.qml:21 app/MyDataPage.qml:124
 #, kde-format
 msgid "Favorite Locations"
 msgstr "प्रियस्थानानि"
 
-#: app/FavoriteLocationPage.qml:36
+#: app/FavoriteLocationPage.qml:37
 #, kde-format
 msgid "Export Favorite Locations"
 msgstr "प्रियस्थानानि निर्यातयन्तु"
 
-#: app/FavoriteLocationPage.qml:44
+#: app/FavoriteLocationPage.qml:45
 #, kde-format
 msgid "Import Favorite Locations"
 msgstr "प्रियस्थानानि आयातयन्तु"
 
-#: app/FavoriteLocationPage.qml:52
+#: app/FavoriteLocationPage.qml:53
 #, kde-format
 msgid "Add Favorite Location"
 msgstr "प्रियं स्थानं योजयतु"
 
-#: app/FavoriteLocationPage.qml:60
+#: app/FavoriteLocationPage.qml:61
 #, kde-format
 msgid "Rename Favorite Location"
 msgstr "प्रियस्थानस्य नामकरणं कुर्वन्तु"
 
-#: app/FavoriteLocationPage.qml:65
+#: app/FavoriteLocationPage.qml:66
 #, kde-format
 msgid "Remove Favorite Location"
 msgstr "प्रियं स्थानं निष्कासयन्तु"
 
-#: app/FavoriteLocationPage.qml:75
+#: app/FavoriteLocationPage.qml:76
 #, kde-format
 msgid "Export to GPX"
 msgstr "GPX मध्ये निर्यातं कुर्वन्तु"
 
-#: app/FavoriteLocationPage.qml:80
+#: app/FavoriteLocationPage.qml:81
 #, kde-format
 msgid "Import from GPX"
 msgstr "GPX तः आयातम्"
 
-#: app/FavoriteLocationPage.qml:91
+#: app/FavoriteLocationPage.qml:92
 #, kde-format
 msgctxt "@title"
 msgid "Rename favorite location"
 msgstr "प्रियस्थानस्य नाम परिवर्तनं कुर्वन्तु"
 
-#: app/FavoriteLocationPage.qml:101
+#: app/FavoriteLocationPage.qml:102
 #, kde-format
 msgid "Rename"
 msgstr "पुनर्नाम"
 
-#: app/FavoriteLocationPage.qml:151 app/FormPlaceEditorDelegate.qml:56
+#: app/FavoriteLocationPage.qml:152 app/FormPlaceEditorDelegate.qml:56
 #: app/LocationPicker.qml:78
 #, kde-format
 msgid "Pick Location"

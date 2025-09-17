@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-16 00:42+0000\n"
+"POT-Creation-Date: 2025-09-17 00:43+0000\n"
 "PO-Revision-Date: 2025-09-07 10:03+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -356,17 +356,17 @@ msgstr "Mode lectura dels codis de barres"
 msgid "In barcode scanning mode"
 msgstr "En mode lectura dels codis de barres"
 
-#: app/BarcodeScannerPage.qml:17
+#: app/BarcodeScannerPage.qml:18
 #, kde-format
 msgid "Scan Barcode"
 msgstr "Escaneja un codi de barres"
 
-#: app/BarcodeScannerPage.qml:72
+#: app/BarcodeScannerPage.qml:73
 #, kde-format
 msgid "No camera available."
 msgstr "Cap càmera disponible."
 
-#: app/BarcodeScannerPage.qml:85
+#: app/BarcodeScannerPage.qml:86
 #, kde-format
 msgid "Light"
 msgstr "Llum"
@@ -1087,8 +1087,8 @@ msgstr "Envia a %1"
 msgid "Itinerary file (*.itinerary)"
 msgstr "Fitxers d'Itinerary (*.itinerary)"
 
-#: app/ExportMenuDialog.qml:92 app/FavoriteLocationPage.qml:38
-#: app/FavoriteLocationPage.qml:46
+#: app/ExportMenuDialog.qml:92 app/FavoriteLocationPage.qml:39
+#: app/FavoriteLocationPage.qml:47
 #, kde-format
 msgid "GPX Files (*.gpx)"
 msgstr "Fitxers GPX (*.gpx)"
@@ -1108,58 +1108,58 @@ msgstr "Faena"
 msgid "Location %1"
 msgstr "Ubicació %1"
 
-#: app/FavoriteLocationPage.qml:20 app/MyDataPage.qml:124
+#: app/FavoriteLocationPage.qml:21 app/MyDataPage.qml:124
 #, kde-format
 msgid "Favorite Locations"
 msgstr "Ubicacions preferides"
 
-#: app/FavoriteLocationPage.qml:36
+#: app/FavoriteLocationPage.qml:37
 #, kde-format
 msgid "Export Favorite Locations"
 msgstr "Exporta les ubicacions preferides"
 
-#: app/FavoriteLocationPage.qml:44
+#: app/FavoriteLocationPage.qml:45
 #, kde-format
 msgid "Import Favorite Locations"
 msgstr "Importa les ubicacions preferides"
 
-#: app/FavoriteLocationPage.qml:52
+#: app/FavoriteLocationPage.qml:53
 #, kde-format
 msgid "Add Favorite Location"
 msgstr "Afig una ubicació preferida"
 
-#: app/FavoriteLocationPage.qml:60
+#: app/FavoriteLocationPage.qml:61
 #, kde-format
 msgid "Rename Favorite Location"
 msgstr "Canvia el nom d'una ubicació preferida"
 
-#: app/FavoriteLocationPage.qml:65
+#: app/FavoriteLocationPage.qml:66
 #, kde-format
 msgid "Remove Favorite Location"
 msgstr "Elimina una ubicació preferida"
 
-#: app/FavoriteLocationPage.qml:75
+#: app/FavoriteLocationPage.qml:76
 #, kde-format
 msgid "Export to GPX"
 msgstr "Exporta cap a GPX"
 
-#: app/FavoriteLocationPage.qml:80
+#: app/FavoriteLocationPage.qml:81
 #, kde-format
 msgid "Import from GPX"
 msgstr "Importa des de GPX"
 
-#: app/FavoriteLocationPage.qml:91
+#: app/FavoriteLocationPage.qml:92
 #, kde-format
 msgctxt "@title"
 msgid "Rename favorite location"
 msgstr "Canvia el nom d'una ubicació preferida"
 
-#: app/FavoriteLocationPage.qml:101
+#: app/FavoriteLocationPage.qml:102
 #, kde-format
 msgid "Rename"
 msgstr "Canvia el nom"
 
-#: app/FavoriteLocationPage.qml:151 app/FormPlaceEditorDelegate.qml:56
+#: app/FavoriteLocationPage.qml:152 app/FormPlaceEditorDelegate.qml:56
 #: app/LocationPicker.qml:78
 #, kde-format
 msgid "Pick Location"
