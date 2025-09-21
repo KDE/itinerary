@@ -15,7 +15,8 @@
 
 #include <QCoreApplication>
 #include <QDebug>
-#include <QProcess>
+#include <QDesktopServices>
+#include <QUrl>
 
 using namespace Qt::Literals;
 
@@ -24,14 +25,7 @@ bool NotificationConfigController::canConfigureNotification() const
 #ifdef Q_OS_ANDROID
     return true;
 #else
-    static bool s_hasNotificationKCM = []{
-        QProcess proc;
-        proc.start(u"kcmshell6"_s, {u"--list"_s});
-        proc.waitForFinished();
-        return proc.readAllStandardOutput().contains("\nkcm_notifications "_L1);
-    }();
-
-    return s_hasNotificationKCM;
+    return qgetenv("XDG_CURRENT_DESKTOP") == "KDE";
 #endif
 }
 
@@ -54,10 +48,11 @@ void NotificationConfigController::configureNotifications()
     intent.putExtra<java::lang::String>(Settings::EXTRA_APP_PACKAGE, Context::getPackageName());
     Activity::startActivity(intent, 0);
 #else
-    QProcess proc;
-    proc.setProgram(u"kcmshell6"_s);
-    proc.setArguments({u"--args"_s, "--notifyrc %1"_L1.arg(QCoreApplication::applicationName()), u"notifications"_s});
-    proc.startDetached();
+    QUrl url;
+    url.setScheme(u"systemsettings"_s);
+    url.setHost(u"kcm_notifications"_s);
+    url.setPath("/--notifyrc "_L1 + QCoreApplication::applicationName());
+    QDesktopServices::openUrl(url);
 #endif
 }
 
