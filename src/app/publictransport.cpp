@@ -217,7 +217,7 @@ static QVariant postProcessOne(const QVariant &res)
 QVariant PublicTransport::reservationFromJourneySection(const KPublicTransport::JourneySection &section)
 {
     using namespace KItinerary;
-    if (KPublicTransport::Line::modeIsRailBound(section.route().line().mode())) {
+    if (KPublicTransport::Line::modeIsRailBound(section.route().line().mode()) || section.route().line().mode() == KPublicTransport::Line::Mode::AerialLift) {
         return postProcessOne(::applyJourneySection(TrainReservation(), section));
     }
     if (isBusMode(section.route().line().mode())) {
