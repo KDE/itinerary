@@ -1,5 +1,6 @@
 [Desktop Entry]
 Name=KDE Itinerary
+Name[ar]=مُخطِط الرحلة لكيدي
 Name[ca]=KDE Itinerary
 Name[ca@valencia]=KDE Itinerary
 Name[cs]=Itinerář KDE
@@ -33,6 +34,7 @@ Name[uk]=KDE Itinerary
 Name[zh_CN]=KDE Itinerary
 Name[zh_TW]=KDE 旅行計劃
 GenericName=Itinerary management
+GenericName[ar]=إدارة الرحلة
 GenericName[ca]=Gestió de l'itinerari
 GenericName[ca@valencia]=Gestioneu l'itinerari
 GenericName[cs]=Správa itineráře
@@ -69,6 +71,7 @@ Exec=itinerary %U
 Icon=org.kde.itinerary
 Type=Application
 Comment=Travel assistance application.
+Comment[ar]=تطبيق مساعدة السفر.
 Comment[ca]=Aplicació per a l'assistència en viatge.
 Comment[ca@valencia]=Aplicació per a l'assistència en viatge.
 Comment[cs]=Pomocník při cestování.
@@ -109,6 +112,7 @@ Actions=currentTicket;statistics;healthCert;live;
 
 [Desktop Action currentTicket]
 Name=Current Ticket
+Name[ar]=التذكرة الحالية
 Name[ca]=Bitllet actual
 Name[ca@valencia]=Bitllet actual
 Name[cs]=Současný lístek
@@ -144,6 +148,7 @@ Exec=itinerary --page currentTicket
 
 [Desktop Action statistics]
 Name=Statistics
+Name[ar]=الإحصائيّات
 Name[ca]=Estadístiques
 Name[ca@valencia]=Estadístiques
 Name[cs]=Statistika
@@ -179,6 +184,7 @@ Exec=itinerary --page stats
 
 [Desktop Action healthCert]
 Name=Health Certificates
+Name[ar]=الشّهادات الصّحية
 Name[ca]=Certificats de salut
 Name[ca@valencia]=Certificats de salut
 Name[cs]=Zdravotní certifikáty
@@ -214,6 +220,7 @@ Exec=itinerary --page healthCert
 
 [Desktop Action live]
 Name=Live Status
+Name[ar]=حالة الفعلية
 Name[ca]=Estat en directe
 Name[ca@valencia]=Estat en directe
 Name[de]=Live-Status
