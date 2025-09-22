@@ -202,7 +202,7 @@ FormCard.FormCardPage {
                     if (localTrainSwitch.checked)
                         lineModes.push(Line.LocalTrain);
                     if (rapidTransitSwitch.checked)
-                        lineModes.push(Line.RapidTransit, Line.Metro, Line.Tramway, Line.RailShuttle);
+                        lineModes.push(Line.RapidTransit, Line.Metro, Line.Tramway, Line.RailShuttle, Line.Funicular, Line.AerialLift);
                     if (busSwitch.checked)
                         lineModes.push(Line.Bus, Line.Coach);
                     if (ferrySwitch.checked)

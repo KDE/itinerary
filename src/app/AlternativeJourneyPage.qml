@@ -40,7 +40,7 @@ JourneyQueryPage {
             if (localTrainModeAction.checked)
                 lineModes.push(Line.LocalTrain);
             if (rapidTransitModeAction.checked)
-                lineModes.push(Line.RapidTransit, Line.Metro, Line.Tramway, Line.RailShuttle);
+                lineModes.push(Line.RapidTransit, Line.Metro, Line.Tramway, Line.RailShuttle, Line.Funicular, Line.AerialLift);
             if (busModeAction.checked)
                 lineModes.push(Line.Bus, Line.Coach);
             if (ferryModeAction.checked)
