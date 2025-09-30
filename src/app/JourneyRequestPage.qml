@@ -45,6 +45,7 @@ FormCard.FormCardPage {
                 onLocationChanged: root.departureStop = PublicTransport.copyLocation(location);
                 historySortRoleName: Settings.read("StopPicker/historySortMode", "lastUsed")
                 onHistorySortRoleChanged: (sortRoleName) => Settings.write("StopPicker/historySortMode", sortRoleName)
+                showUseCurrentLocationButton: true
             }
         },
         Component {
