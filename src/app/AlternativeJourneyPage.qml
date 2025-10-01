@@ -104,7 +104,7 @@ JourneyQueryPage {
         },
         Kirigami.Action {
             id: aircraftModeAction
-            text: i18nc("journey query search constraint, title", "Aircraft")
+            text: i18nc("journey query search constraint, title", "Airplane")
             icon.source: LineMode.iconName(Line.Air)
             checkable: true
             checked: false

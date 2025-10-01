@@ -65,7 +65,7 @@ Kirigami.ScrollablePage {
         },
         Kirigami.Action {
             id: aircraftModeAction
-            text: i18nc("journey query search constraint, title", "Aircraft")
+            text: i18nc("journey query search constraint, title", "Airplane")
             icon.source: LineMode.iconName(Line.Air)
             displayHint: Kirigami.DisplayHint.AlwaysHide
             checkable: true

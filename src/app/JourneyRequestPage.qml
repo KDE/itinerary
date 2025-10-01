@@ -292,7 +292,7 @@ FormCard.FormCardPage {
         }
         FormCard.FormSwitchDelegate {
             id: aircraftSwitch
-            text: i18nc("journey query search constraint, title", "Aircraft")
+            text: i18nc("journey query search constraint, title", "Airplane")
             checked: false
             leading: Kirigami.Icon {
                 source: LineMode.iconName(Line.Air)
