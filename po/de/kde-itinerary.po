@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-01 00:46+0000\n"
+"POT-Creation-Date: 2025-10-02 00:43+0000\n"
 "PO-Revision-Date: 2025-08-31 14:44+0200\n"
 "Last-Translator: Philipp Kiemle <l10n@prly.mozmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -239,8 +239,8 @@ msgstr "Fähre"
 #: app/JourneyRequestPage.qml:295
 #, kde-format
 msgctxt "journey query search constraint, title"
-msgid "Aircraft"
-msgstr "Flugzeug"
+msgid "Airplane"
+msgstr ""
 
 #: app/AlternativeJourneyPage.qml:119
 #, kde-format
@@ -4760,6 +4760,10 @@ msgstr "Abgemeldet"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 von %3 nach %4 am %5"
+
+#~ msgctxt "journey query search constraint, title"
+#~ msgid "Aircraft"
+#~ msgstr "Flugzeug"
 
 #~ msgid "Open File…"
 #~ msgstr "Datei öffnen …"

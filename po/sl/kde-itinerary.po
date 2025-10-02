@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-01 00:46+0000\n"
+"POT-Creation-Date: 2025-10-02 00:43+0000\n"
 "PO-Revision-Date: 2025-09-07 09:48+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -235,8 +235,8 @@ msgstr "Trajekt"
 #: app/JourneyRequestPage.qml:295
 #, kde-format
 msgctxt "journey query search constraint, title"
-msgid "Aircraft"
-msgstr "Letalo"
+msgid "Airplane"
+msgstr ""
 
 #: app/AlternativeJourneyPage.qml:119
 #, kde-format
@@ -4750,6 +4750,10 @@ msgstr "Odjavljen"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 od %3 do %4 na %5"
+
+#~ msgctxt "journey query search constraint, title"
+#~ msgid "Aircraft"
+#~ msgstr "Letalo"
 
 #~ msgid "PkPass files (*.pkpass)"
 #~ msgstr "Datoteke PkPass (*.pkpass)"

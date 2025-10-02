@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-01 00:46+0000\n"
+"POT-Creation-Date: 2025-10-02 00:43+0000\n"
 "PO-Revision-Date: 2025-09-07 01:03-0300\n"
 "Last-Translator: Geraldo Simiao <geraldosimiao@fedoraproject.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -241,8 +241,8 @@ msgstr "Balsa"
 #: app/JourneyRequestPage.qml:295
 #, kde-format
 msgctxt "journey query search constraint, title"
-msgid "Aircraft"
-msgstr "Avião"
+msgid "Airplane"
+msgstr ""
 
 #: app/AlternativeJourneyPage.qml:119
 #, kde-format
@@ -4746,6 +4746,10 @@ msgstr "Sessão encerrada"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 de %3 para %4 em %5"
+
+#~ msgctxt "journey query search constraint, title"
+#~ msgid "Aircraft"
+#~ msgstr "Avião"
 
 #~ msgid "PkPass files (*.pkpass)"
 #~ msgstr "Arquivos PkPass (*.pkpass)"

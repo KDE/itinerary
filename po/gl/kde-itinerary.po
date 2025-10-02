@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-01 00:46+0000\n"
+"POT-Creation-Date: 2025-10-02 00:43+0000\n"
 "PO-Revision-Date: 2025-06-22 11:38+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -234,7 +234,7 @@ msgstr "Transbordador"
 #: app/JourneyRequestPage.qml:295
 #, kde-format
 msgctxt "journey query search constraint, title"
-msgid "Aircraft"
+msgid "Airplane"
 msgstr ""
 
 #: app/AlternativeJourneyPage.qml:119

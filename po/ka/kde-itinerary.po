@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-01 00:46+0000\n"
+"POT-Creation-Date: 2025-10-02 00:43+0000\n"
 "PO-Revision-Date: 2025-09-07 04:15+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -235,8 +235,8 @@ msgstr "ბორანი"
 #: app/JourneyRequestPage.qml:295
 #, kde-format
 msgctxt "journey query search constraint, title"
-msgid "Aircraft"
-msgstr "თვითმფრინავი"
+msgid "Airplane"
+msgstr ""
 
 #: app/AlternativeJourneyPage.qml:119
 #, kde-format
@@ -4722,6 +4722,10 @@ msgstr "გამოხვედით"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 -ი %3-დან %4-მდე %5-ზე"
+
+#~ msgctxt "journey query search constraint, title"
+#~ msgid "Aircraft"
+#~ msgstr "თვითმფრინავი"
 
 #~ msgid "PkPass files (*.pkpass)"
 #~ msgstr "PkPass ფაილები (*.pkpass)"
