@@ -912,7 +912,17 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="25.08.2" date="2025-10-09"/>
+    <release version="25.08.2" date="2025-10-09">
+      <description>
+        <ul>
+          <li>New or improved travel document extractors for AirAsia, B&amp;B Hotels, Booking.com, Ethiad, Ryanair, SNCF and tixly.</li>
+          <li>Position journey result view at the end when searching by arrival time.</li>
+          <li>Fixed parsing of certain Apple Wallet pass variants.</li>
+          <li>Fixed scaling artifacts in public transport line icons.</li>
+          <li>Fixed parsing intermediate stops from Railteam.</li>
+        </ul>
+      </description>
+    </release>
     <release version="25.08.1" date="2025-09-11">
       <description>
         <ul>
