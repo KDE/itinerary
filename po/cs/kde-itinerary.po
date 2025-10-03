@@ -1919,10 +1919,9 @@ msgid "Check-out time has to be after the check-in time."
 msgstr ""
 
 #: app/HotelEditor.qml:133 app/HotelPage.qml:80
-#, fuzzy, kde-format
-#| msgid "Destination:"
+#, kde-format
 msgid "Description"
-msgstr "Cíl:"
+msgstr "Popis"
 
 #: app/HotelPage.qml:16
 #, kde-format

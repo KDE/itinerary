@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-02 00:43+0000\n"
-"PO-Revision-Date: 2025-09-07 12:29+0100\n"
+"PO-Revision-Date: 2025-10-02 18:51+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.08.0\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -238,7 +238,7 @@ msgstr "Ferry"
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Airplane"
-msgstr ""
+msgstr "Avión"
 
 #: app/AlternativeJourneyPage.qml:119
 #, kde-format
@@ -4757,7 +4757,3 @@ msgstr "Sesión cerrada"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 de %3 a %4 el %5"
-
-#~ msgctxt "journey query search constraint, title"
-#~ msgid "Aircraft"
-#~ msgstr "Avión"
