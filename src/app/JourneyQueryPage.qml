@@ -35,7 +35,7 @@ Kirigami.ScrollablePage {
         id: journeyView
 
         clip: true
-        reuseItems: false // re-using causes re-layouts which would block
+        reuseItems: true
         cacheBuffer: height
 
         delegate: FormCard.FormCard {
