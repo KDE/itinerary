@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-02 00:43+0000\n"
+"POT-Creation-Date: 2025-10-04 00:43+0000\n"
 "PO-Revision-Date: 2025-03-02 14:47+0530\n"
 "Last-Translator: Shreekant Kalwar <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -34,56 +34,27 @@ msgstr "skkalwar999@gmail.com"
 msgid "About"
 msgstr "विषये"
 
-#: app/AboutPage.qml:144
-#, kde-format
-msgid "Copyright: %1"
-msgstr "प्रतिलिपिधर्मः %1"
-
-#: app/AboutPage.qml:150
-#, kde-format
-msgid "Homepage: <a href=\"%1\">%1</a>"
-msgstr "मुखपृष्ठम् : <a href=\"%1\">%1</a>"
-
-#: app/AboutPage.qml:157
-#, kde-format
-msgid "License: <a href=\"https://spdx.org/licenses/%1.html\">%2</a>"
-msgstr "अनुज्ञापत्रम् : <a href=\"https://spdx.org/licenses/%1.html\">%2</a>"
-
-#: app/AboutPage.qml:176
+#: app/AboutPage.qml:31
 #, kde-format
 msgid "License: <a href=\"%2\">%1</a>"
 msgstr "अनुज्ञापत्रम् : <a href=\"%2\">%1</a>"
 
-#: app/AboutPage.qml:185
-#, kde-format
-msgid ""
-"KDE Itinerary is developed by the KDE community as free software and uses "
-"the components listed below."
-msgstr ""
-"KDE यात्रासूची KDE समुदायेन मुक्तसॉफ्टवेयररूपेण विकसिता अस्ति तथा च अधोलिखितानां घटकानां "
-"उपयोगं करोति ।"
-
-#: app/AboutPage.qml:196
-#, kde-format
-msgid "KDE Itinerary uses public transport data from the following sources."
-msgstr "KDE यात्रासूची निम्नलिखितस्रोताभ्यां सार्वजनिकयानदत्तांशस्य उपयोगं करोति ।"
-
-#: app/AboutPage.qml:207
+#: app/AboutPage.qml:40
 #, kde-format
 msgid "Developer information"
 msgstr "विकासकस्य सूचना"
 
-#: app/AboutPage.qml:213
+#: app/AboutPage.qml:46
 #, kde-format
 msgid "Application version: %1"
 msgstr "अनुप्रयोगसंस्करणम् : %1"
 
-#: app/AboutPage.qml:229
+#: app/AboutPage.qml:62
 #, kde-format
 msgid "Extractor capabilities:"
 msgstr "निष्कर्षकक्षमता :"
 
-#: app/AboutPage.qml:234
+#: app/AboutPage.qml:67
 #, kde-format
 msgid "Extractor capabilities copied to clipboard"
 msgstr "क्लिप्बोर्ड् प्रति प्रतिलिपिकृताः निष्कर्षकक्षमता"
@@ -2676,13 +2647,176 @@ msgstr "डिजिटल यात्रा सहायक"
 msgid "Copyright © The KDE Community"
 msgstr "प्रतिलिपिधर्मः © The KDE Community"
 
+#: app/main.cpp:219
+#, kde-format
+msgctxt "@info:credit"
+msgid "Wikidata"
+msgstr ""
+
+#: app/main.cpp:219
+#, kde-format
+msgctxt "@info:credit"
+msgid ""
+"Provides various metadata like train station names, driving side, and power "
+"plug types."
+msgstr ""
+
+#: app/main.cpp:220
+#, fuzzy, kde-format
+#| msgid "Open Map"
+msgctxt "@info:credit"
+msgid "OpenStreetMap"
+msgstr "नक्शा उद्घाटयतु"
+
+#: app/main.cpp:220
+#, kde-format
+msgctxt "@info:credit"
+msgid "Provides both indoor and outdoor maps. ©OpenStreetMap contributors"
+msgstr ""
+
+#: app/main.cpp:221
+#, kde-format
+msgctxt "@info:credit"
+msgid "OpenSSL"
+msgstr ""
+
+#: app/main.cpp:221
+#, kde-format
+msgctxt "@info:credit"
+msgid "Secure network interaction with TLS. © 1998-2018 The OpenSSL Project"
+msgstr ""
+
+#: app/main.cpp:222
+#, kde-format
+msgctxt "@info:credit"
+msgid "ZXing"
+msgstr ""
+
+#: app/main.cpp:222
+#, kde-format
+msgctxt "@info:credit"
+msgid "QR-Code scanning. © 2016 ZXing Authors, © 2016 Nu-book Inc."
+msgstr ""
+
 #: app/main.cpp:223
+#, kde-format
+msgctxt "@info:credit"
+msgid "Poppler"
+msgstr ""
+
+#: app/main.cpp:223
+#, kde-format
+msgctxt "@info:credit"
+msgid "PDF parsing"
+msgstr ""
+
+#: app/main.cpp:226
+#, fuzzy, kde-format
+#| msgid "Type"
+msgctxt "@info:credit"
+msgid "FreeType"
+msgstr "प्रकारः"
+
+#: app/main.cpp:226
+#, kde-format
+msgctxt "@info:credit"
+msgid ""
+"Copyright (C) 2006-2020 by David Turner, Robert Wilhelm, and Werner Lemberg."
+msgstr ""
+
+#: app/main.cpp:227
+#, kde-format
+msgctxt "@info:credit"
+msgid "libintl lite"
+msgstr ""
+
+#: app/main.cpp:227
+#, fuzzy, kde-format
+#| msgid "More information"
+msgctxt "@info:credit"
+msgid "Internalisation"
+msgstr "अधिक जानकारी"
+
+#: app/main.cpp:230
+#, kde-format
+msgctxt "@info:credit"
+msgid "libqrencode"
+msgstr ""
+
+#: app/main.cpp:230
+#, kde-format
+msgctxt "@info:credit"
+msgid "QR-Code Generation. © 2006-2018 Kentaro Fukuchi"
+msgstr ""
+
+#: app/main.cpp:231
+#, kde-format
+msgctxt "@info:credit"
+msgid "libical"
+msgstr ""
+
+#: app/main.cpp:231
+#, kde-format
+msgctxt "@info:credit"
+msgid "© The libical developers"
+msgstr ""
+
+#: app/main.cpp:232
+#, kde-format
+msgctxt "@info:credit"
+msgid "libxml2"
+msgstr ""
+
+#: app/main.cpp:232
+#, kde-format
+msgctxt "@info:credit"
+msgid "Copyright (C) 1998-2012 Daniel Veillard"
+msgstr ""
+
+#: app/main.cpp:235
+#, kde-format
+msgctxt "@info:credit"
+msgid "libQuotient"
+msgstr ""
+
+#: app/main.cpp:235
+#, fuzzy, kde-format
+#| msgid "Matrix Integration"
+msgctxt "@info:credit"
+msgid "Matrix integration."
+msgstr "मैट्रिक्स एकीकरण"
+
+#: app/main.cpp:236
+#, kde-format
+msgctxt "@info:credit"
+msgid "QtKeychain"
+msgstr ""
+
+#: app/main.cpp:236
+#, kde-format
+msgctxt "@info:credit"
+msgid "Secure password storage."
+msgstr ""
+
+#: app/main.cpp:237
+#, kde-format
+msgctxt "@info:credit"
+msgid "Olm"
+msgstr ""
+
+#: app/main.cpp:237
+#, kde-format
+msgctxt "@info:credit"
+msgid "Matrix crypto library."
+msgstr ""
+
+#: app/main.cpp:245
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "दत्तपृष्ठे यात्रासूचीं उद्घाटयन्तु"
 
-#: app/main.cpp:228
+#: app/main.cpp:250
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
@@ -4806,6 +4940,25 @@ msgstr "लॉग आउट् कृतवान्"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 %3 तः %4 पर्यन्तं %5 पर्यन्तम्"
+
+#~ msgid "Copyright: %1"
+#~ msgstr "प्रतिलिपिधर्मः %1"
+
+#~ msgid "Homepage: <a href=\"%1\">%1</a>"
+#~ msgstr "मुखपृष्ठम् : <a href=\"%1\">%1</a>"
+
+#~ msgid "License: <a href=\"https://spdx.org/licenses/%1.html\">%2</a>"
+#~ msgstr "अनुज्ञापत्रम् : <a href=\"https://spdx.org/licenses/%1.html\">%2</a>"
+
+#~ msgid ""
+#~ "KDE Itinerary is developed by the KDE community as free software and uses "
+#~ "the components listed below."
+#~ msgstr ""
+#~ "KDE यात्रासूची KDE समुदायेन मुक्तसॉफ्टवेयररूपेण विकसिता अस्ति तथा च अधोलिखितानां "
+#~ "घटकानां उपयोगं करोति ।"
+
+#~ msgid "KDE Itinerary uses public transport data from the following sources."
+#~ msgstr "KDE यात्रासूची निम्नलिखितस्रोताभ्यां सार्वजनिकयानदत्तांशस्य उपयोगं करोति ।"
 
 #~ msgid "Open File…"
 #~ msgstr "सञ्चिकां उद्घाटयतु…"

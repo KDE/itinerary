@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-02 00:43+0000\n"
-"PO-Revision-Date: 2025-10-02 07:13+0200\n"
+"POT-Creation-Date: 2025-10-04 00:43+0000\n"
+"PO-Revision-Date: 2025-10-04 08:28+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -33,56 +33,27 @@ msgstr "matjaz.jeran@amis.net"
 msgid "About"
 msgstr "O programu"
 
-#: app/AboutPage.qml:144
-#, kde-format
-msgid "Copyright: %1"
-msgstr "Copyright: %1"
-
-#: app/AboutPage.qml:150
-#, kde-format
-msgid "Homepage: <a href=\"%1\">%1</a>"
-msgstr "Domača stran: <a href=\"%1\">%1</a>"
-
-#: app/AboutPage.qml:157
-#, kde-format
-msgid "License: <a href=\"https://spdx.org/licenses/%1.html\">%2</a>"
-msgstr "Licenca: <a href=\"https://spdx.org/licenses/%1.html\">%2</a>"
-
-#: app/AboutPage.qml:176
+#: app/AboutPage.qml:31
 #, kde-format
 msgid "License: <a href=\"%2\">%1</a>"
 msgstr "Licenca: <a href=\"%2\">%1</a>"
 
-#: app/AboutPage.qml:185
-#, kde-format
-msgid ""
-"KDE Itinerary is developed by the KDE community as free software and uses "
-"the components listed below."
-msgstr ""
-"KDE Itinerary razvija skupnost KDE kot prosto programsko opremo in uporablja "
-"spodaj navedene komponente."
-
-#: app/AboutPage.qml:196
-#, kde-format
-msgid "KDE Itinerary uses public transport data from the following sources."
-msgstr "KDE Itinerary uporablja podatke javnega prevoza iz naslednjih virov."
-
-#: app/AboutPage.qml:207
+#: app/AboutPage.qml:40
 #, kde-format
 msgid "Developer information"
 msgstr "Razvojne informacije"
 
-#: app/AboutPage.qml:213
+#: app/AboutPage.qml:46
 #, kde-format
 msgid "Application version: %1"
 msgstr "Različica aplikacije: %1"
 
-#: app/AboutPage.qml:229
+#: app/AboutPage.qml:62
 #, kde-format
 msgid "Extractor capabilities:"
 msgstr "Zmogljivosti ekstraktorja:"
 
-#: app/AboutPage.qml:234
+#: app/AboutPage.qml:67
 #, kde-format
 msgid "Extractor capabilities copied to clipboard"
 msgstr "Zmogljivosti ekstraktorja kopirane na odložišče"
@@ -2622,13 +2593,177 @@ msgstr "Digitalni potovalni pomočnik"
 msgid "Copyright © The KDE Community"
 msgstr "Copyright © Skupnost KDE"
 
+#: app/main.cpp:219
+#, kde-format
+msgctxt "@info:credit"
+msgid "Wikidata"
+msgstr "Wikidata"
+
+#: app/main.cpp:219
+#, kde-format
+msgctxt "@info:credit"
+msgid ""
+"Provides various metadata like train station names, driving side, and power "
+"plug types."
+msgstr ""
+"Zagotavlja različne metapodatke, kot so imena železniških postaj, stran "
+"vožnje in vrste vtičnic."
+
+#: app/main.cpp:220
+#, kde-format
+msgctxt "@info:credit"
+msgid "OpenStreetMap"
+msgstr "OpenStreetMap"
+
+#: app/main.cpp:220
+#, kde-format
+msgctxt "@info:credit"
+msgid "Provides both indoor and outdoor maps. ©OpenStreetMap contributors"
+msgstr ""
+"Zagotavlja zemljevide za notranjo in zunanjo uporabo. ©Sodelavci "
+"OpenStreetMap"
+
+#: app/main.cpp:221
+#, kde-format
+msgctxt "@info:credit"
+msgid "OpenSSL"
+msgstr "OpenSSL"
+
+#: app/main.cpp:221
+#, kde-format
+msgctxt "@info:credit"
+msgid "Secure network interaction with TLS. © 1998-2018 The OpenSSL Project"
+msgstr "Varna omrežna interakcija s TLS. © 1998–2018 Projekt OpenSSL"
+
+#: app/main.cpp:222
+#, kde-format
+msgctxt "@info:credit"
+msgid "ZXing"
+msgstr "ZXing"
+
+#: app/main.cpp:222
+#, kde-format
+msgctxt "@info:credit"
+msgid "QR-Code scanning. © 2016 ZXing Authors, © 2016 Nu-book Inc."
+msgstr "Skeniranje QR-kode. © 2016 avtorji ZXing, © 2016 Nu-book Inc."
+
 #: app/main.cpp:223
+#, kde-format
+msgctxt "@info:credit"
+msgid "Poppler"
+msgstr "Poppler"
+
+#: app/main.cpp:223
+#, kde-format
+msgctxt "@info:credit"
+msgid "PDF parsing"
+msgstr "Razčlenjevanje PDF"
+
+#: app/main.cpp:226
+#, kde-format
+msgctxt "@info:credit"
+msgid "FreeType"
+msgstr "FreeType"
+
+#: app/main.cpp:226
+#, kde-format
+msgctxt "@info:credit"
+msgid ""
+"Copyright (C) 2006-2020 by David Turner, Robert Wilhelm, and Werner Lemberg."
+msgstr ""
+"Copyright (C) 2006-2020 David Turner, Robert Wilhelm in Werner Lemberg."
+
+#: app/main.cpp:227
+#, kde-format
+msgctxt "@info:credit"
+msgid "libintl lite"
+msgstr "libintl lite"
+
+#: app/main.cpp:227
+#, kde-format
+msgctxt "@info:credit"
+msgid "Internalisation"
+msgstr "Internalizacija"
+
+#: app/main.cpp:230
+#, kde-format
+msgctxt "@info:credit"
+msgid "libqrencode"
+msgstr "libqrencode"
+
+#: app/main.cpp:230
+#, kde-format
+msgctxt "@info:credit"
+msgid "QR-Code Generation. © 2006-2018 Kentaro Fukuchi"
+msgstr "Generiranje kode QR. © 2006-2018 Kentaro Fukuchi"
+
+#: app/main.cpp:231
+#, kde-format
+msgctxt "@info:credit"
+msgid "libical"
+msgstr "libical"
+
+#: app/main.cpp:231
+#, kde-format
+msgctxt "@info:credit"
+msgid "© The libical developers"
+msgstr "© Razvijalci libical"
+
+#: app/main.cpp:232
+#, kde-format
+msgctxt "@info:credit"
+msgid "libxml2"
+msgstr "libxml2"
+
+#: app/main.cpp:232
+#, kde-format
+msgctxt "@info:credit"
+msgid "Copyright (C) 1998-2012 Daniel Veillard"
+msgstr "Copyright (C) 1998-2012 Daniel Veillard"
+
+#: app/main.cpp:235
+#, kde-format
+msgctxt "@info:credit"
+msgid "libQuotient"
+msgstr "libQuotient"
+
+#: app/main.cpp:235
+#, kde-format
+msgctxt "@info:credit"
+msgid "Matrix integration."
+msgstr "Integracija z Matrixom."
+
+#: app/main.cpp:236
+#, kde-format
+msgctxt "@info:credit"
+msgid "QtKeychain"
+msgstr "QtKeychain"
+
+#: app/main.cpp:236
+#, kde-format
+msgctxt "@info:credit"
+msgid "Secure password storage."
+msgstr "Varno shranjevanje gesel."
+
+#: app/main.cpp:237
+#, kde-format
+msgctxt "@info:credit"
+msgid "Olm"
+msgstr "Olm"
+
+#: app/main.cpp:237
+#, kde-format
+msgctxt "@info:credit"
+msgid "Matrix crypto library."
+msgstr "Kripto knjižnica za Matrix."
+
+#: app/main.cpp:245
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Odpri itinerar na dani strani"
 
-#: app/main.cpp:228
+#: app/main.cpp:250
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
@@ -4750,6 +4885,26 @@ msgstr "Odjavljen"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 od %3 do %4 na %5"
+
+#~ msgid "Copyright: %1"
+#~ msgstr "Copyright: %1"
+
+#~ msgid "Homepage: <a href=\"%1\">%1</a>"
+#~ msgstr "Domača stran: <a href=\"%1\">%1</a>"
+
+#~ msgid "License: <a href=\"https://spdx.org/licenses/%1.html\">%2</a>"
+#~ msgstr "Licenca: <a href=\"https://spdx.org/licenses/%1.html\">%2</a>"
+
+#~ msgid ""
+#~ "KDE Itinerary is developed by the KDE community as free software and uses "
+#~ "the components listed below."
+#~ msgstr ""
+#~ "KDE Itinerary razvija skupnost KDE kot prosto programsko opremo in "
+#~ "uporablja spodaj navedene komponente."
+
+#~ msgid "KDE Itinerary uses public transport data from the following sources."
+#~ msgstr ""
+#~ "KDE Itinerary uporablja podatke javnega prevoza iz naslednjih virov."
 
 #~ msgctxt "journey query search constraint, title"
 #~ msgid "Aircraft"

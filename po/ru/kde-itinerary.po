@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-02 00:43+0000\n"
+"POT-Creation-Date: 2025-10-04 00:43+0000\n"
 "PO-Revision-Date: 2025-04-01 10:26+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -35,59 +35,27 @@ msgstr "translation-team@basealt.ru"
 msgid "About"
 msgstr "О программе"
 
-#: app/AboutPage.qml:144
-#, kde-format
-msgid "Copyright: %1"
-msgstr "Авторские права: %1"
-
-#: app/AboutPage.qml:150
-#, kde-format
-msgid "Homepage: <a href=\"%1\">%1</a>"
-msgstr "Домашняя страница: <a href=\"%1\">%1</a>"
-
-#: app/AboutPage.qml:157
-#, kde-format
-msgid "License: <a href=\"https://spdx.org/licenses/%1.html\">%2</a>"
-msgstr "Лицензия: <a href=\"https://spdx.org/licenses/%1.html\">%2</a>"
-
-#: app/AboutPage.qml:176
+#: app/AboutPage.qml:31
 #, kde-format
 msgid "License: <a href=\"%2\">%1</a>"
 msgstr "Лицензия: <a href=\"%2\">%1</a>"
 
-#: app/AboutPage.qml:185
-#, kde-format
-msgid ""
-"KDE Itinerary is developed by the KDE community as free software and uses "
-"the components listed below."
-msgstr ""
-"Программа «Маршруты KDE» разрабатывается сообществом KDE как свободное "
-"программное обеспечение. В ней использованы компоненты, список которых "
-"приведён далее."
-
-#: app/AboutPage.qml:196
-#, kde-format
-msgid "KDE Itinerary uses public transport data from the following sources."
-msgstr ""
-"Программа «Маршруты KDE» использует данные об общественном транспорте из "
-"следующих источников."
-
-#: app/AboutPage.qml:207
+#: app/AboutPage.qml:40
 #, kde-format
 msgid "Developer information"
 msgstr "Информация для разработчиков"
 
-#: app/AboutPage.qml:213
+#: app/AboutPage.qml:46
 #, kde-format
 msgid "Application version: %1"
 msgstr "Версия приложения: %1"
 
-#: app/AboutPage.qml:229
+#: app/AboutPage.qml:62
 #, kde-format
 msgid "Extractor capabilities:"
 msgstr "Возможности средства извлечения:"
 
-#: app/AboutPage.qml:234
+#: app/AboutPage.qml:67
 #, kde-format
 msgid "Extractor capabilities copied to clipboard"
 msgstr "Возможности средства извлечения скопированы в буфер обмена"
@@ -2689,13 +2657,175 @@ msgstr "Цифровой помощник в путешествиях"
 msgid "Copyright © The KDE Community"
 msgstr "© Сообщество KDE"
 
+#: app/main.cpp:219
+#, kde-format
+msgctxt "@info:credit"
+msgid "Wikidata"
+msgstr ""
+
+#: app/main.cpp:219
+#, kde-format
+msgctxt "@info:credit"
+msgid ""
+"Provides various metadata like train station names, driving side, and power "
+"plug types."
+msgstr ""
+
+#: app/main.cpp:220
+#, fuzzy, kde-format
+#| msgid "Open Map"
+msgctxt "@info:credit"
+msgid "OpenStreetMap"
+msgstr "Открыть карту"
+
+#: app/main.cpp:220
+#, kde-format
+msgctxt "@info:credit"
+msgid "Provides both indoor and outdoor maps. ©OpenStreetMap contributors"
+msgstr ""
+
+#: app/main.cpp:221
+#, kde-format
+msgctxt "@info:credit"
+msgid "OpenSSL"
+msgstr ""
+
+#: app/main.cpp:221
+#, kde-format
+msgctxt "@info:credit"
+msgid "Secure network interaction with TLS. © 1998-2018 The OpenSSL Project"
+msgstr ""
+
+#: app/main.cpp:222
+#, kde-format
+msgctxt "@info:credit"
+msgid "ZXing"
+msgstr ""
+
+#: app/main.cpp:222
+#, kde-format
+msgctxt "@info:credit"
+msgid "QR-Code scanning. © 2016 ZXing Authors, © 2016 Nu-book Inc."
+msgstr ""
+
 #: app/main.cpp:223
+#, kde-format
+msgctxt "@info:credit"
+msgid "Poppler"
+msgstr ""
+
+#: app/main.cpp:223
+#, kde-format
+msgctxt "@info:credit"
+msgid "PDF parsing"
+msgstr ""
+
+#: app/main.cpp:226
+#, fuzzy, kde-format
+#| msgid "Type"
+msgctxt "@info:credit"
+msgid "FreeType"
+msgstr "Тип"
+
+#: app/main.cpp:226
+#, kde-format
+msgctxt "@info:credit"
+msgid ""
+"Copyright (C) 2006-2020 by David Turner, Robert Wilhelm, and Werner Lemberg."
+msgstr ""
+
+#: app/main.cpp:227
+#, kde-format
+msgctxt "@info:credit"
+msgid "libintl lite"
+msgstr ""
+
+#: app/main.cpp:227
+#, fuzzy, kde-format
+msgctxt "@info:credit"
+msgid "Internalisation"
+msgstr "Дополнительная информация"
+
+#: app/main.cpp:230
+#, kde-format
+msgctxt "@info:credit"
+msgid "libqrencode"
+msgstr ""
+
+#: app/main.cpp:230
+#, kde-format
+msgctxt "@info:credit"
+msgid "QR-Code Generation. © 2006-2018 Kentaro Fukuchi"
+msgstr ""
+
+#: app/main.cpp:231
+#, kde-format
+msgctxt "@info:credit"
+msgid "libical"
+msgstr ""
+
+#: app/main.cpp:231
+#, kde-format
+msgctxt "@info:credit"
+msgid "© The libical developers"
+msgstr ""
+
+#: app/main.cpp:232
+#, kde-format
+msgctxt "@info:credit"
+msgid "libxml2"
+msgstr ""
+
+#: app/main.cpp:232
+#, kde-format
+msgctxt "@info:credit"
+msgid "Copyright (C) 1998-2012 Daniel Veillard"
+msgstr ""
+
+#: app/main.cpp:235
+#, kde-format
+msgctxt "@info:credit"
+msgid "libQuotient"
+msgstr ""
+
+#: app/main.cpp:235
+#, fuzzy, kde-format
+#| msgid "Matrix Integration"
+msgctxt "@info:credit"
+msgid "Matrix integration."
+msgstr "Интеграция с Matrix"
+
+#: app/main.cpp:236
+#, kde-format
+msgctxt "@info:credit"
+msgid "QtKeychain"
+msgstr ""
+
+#: app/main.cpp:236
+#, kde-format
+msgctxt "@info:credit"
+msgid "Secure password storage."
+msgstr ""
+
+#: app/main.cpp:237
+#, kde-format
+msgctxt "@info:credit"
+msgid "Olm"
+msgstr ""
+
+#: app/main.cpp:237
+#, kde-format
+msgctxt "@info:credit"
+msgid "Matrix crypto library."
+msgstr ""
+
+#: app/main.cpp:245
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Открыть программу на указанной странице"
 
-#: app/main.cpp:228
+#: app/main.cpp:250
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
@@ -4849,6 +4979,28 @@ msgstr "Выполнен выход"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 из %3 в %4 %5"
+
+#~ msgid "Copyright: %1"
+#~ msgstr "Авторские права: %1"
+
+#~ msgid "Homepage: <a href=\"%1\">%1</a>"
+#~ msgstr "Домашняя страница: <a href=\"%1\">%1</a>"
+
+#~ msgid "License: <a href=\"https://spdx.org/licenses/%1.html\">%2</a>"
+#~ msgstr "Лицензия: <a href=\"https://spdx.org/licenses/%1.html\">%2</a>"
+
+#~ msgid ""
+#~ "KDE Itinerary is developed by the KDE community as free software and uses "
+#~ "the components listed below."
+#~ msgstr ""
+#~ "Программа «Маршруты KDE» разрабатывается сообществом KDE как свободное "
+#~ "программное обеспечение. В ней использованы компоненты, список которых "
+#~ "приведён далее."
+
+#~ msgid "KDE Itinerary uses public transport data from the following sources."
+#~ msgstr ""
+#~ "Программа «Маршруты KDE» использует данные об общественном транспорте из "
+#~ "следующих источников."
 
 #~ msgid "Open File…"
 #~ msgstr "Открыть файл…"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-02 00:43+0000\n"
+"POT-Creation-Date: 2025-10-04 00:43+0000\n"
 "PO-Revision-Date: 2024-11-28 16:26+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -32,54 +32,27 @@ msgstr "mail@kisaragi-hiu.com"
 msgid "About"
 msgstr "關於"
 
-#: app/AboutPage.qml:144
-#, kde-format
-msgid "Copyright: %1"
-msgstr "版權：%1"
-
-#: app/AboutPage.qml:150
-#, kde-format
-msgid "Homepage: <a href=\"%1\">%1</a>"
-msgstr "首頁：<a href=\"%1\">%1</a>"
-
-#: app/AboutPage.qml:157
-#, kde-format
-msgid "License: <a href=\"https://spdx.org/licenses/%1.html\">%2</a>"
-msgstr "授權條款：<a href=\"https：//spdx.org/licenses/%1.html\">%2</a>"
-
-#: app/AboutPage.qml:176
+#: app/AboutPage.qml:31
 #, kde-format
 msgid "License: <a href=\"%2\">%1</a>"
 msgstr "授權條款：<a href=\"%2\">%1</a>"
 
-#: app/AboutPage.qml:185
-#, kde-format
-msgid ""
-"KDE Itinerary is developed by the KDE community as free software and uses "
-"the components listed below."
-msgstr "「KDE 旅行計劃」是由 KDE 社群所開發的自由軟體，使用以下列出的部件。"
-
-#: app/AboutPage.qml:196
-#, kde-format
-msgid "KDE Itinerary uses public transport data from the following sources."
-msgstr "「KDE 旅行計劃」使用來自以下來源的公告運輸資料。"
-
-#: app/AboutPage.qml:207
+#: app/AboutPage.qml:40
 #, kde-format
 msgid "Developer information"
 msgstr "開發者資訊"
 
-#: app/AboutPage.qml:213
+#: app/AboutPage.qml:46
 #, kde-format
 msgid "Application version: %1"
 msgstr "應用程式版本：%1"
 
-#: app/AboutPage.qml:229
+#: app/AboutPage.qml:62
 #, kde-format
 msgid "Extractor capabilities:"
 msgstr "取出工具功能："
 
-#: app/AboutPage.qml:234
+#: app/AboutPage.qml:67
 #, kde-format
 msgid "Extractor capabilities copied to clipboard"
 msgstr "取出工具功能已複製到剪貼簿"
@@ -2699,13 +2672,176 @@ msgstr "數位旅行助理"
 msgid "Copyright © The KDE Community"
 msgstr "版權所有 © KDE 社群"
 
+#: app/main.cpp:219
+#, kde-format
+msgctxt "@info:credit"
+msgid "Wikidata"
+msgstr ""
+
+#: app/main.cpp:219
+#, kde-format
+msgctxt "@info:credit"
+msgid ""
+"Provides various metadata like train station names, driving side, and power "
+"plug types."
+msgstr ""
+
+#: app/main.cpp:220
+#, fuzzy, kde-format
+#| msgid "Open Map"
+msgctxt "@info:credit"
+msgid "OpenStreetMap"
+msgstr "開啟地圖"
+
+#: app/main.cpp:220
+#, kde-format
+msgctxt "@info:credit"
+msgid "Provides both indoor and outdoor maps. ©OpenStreetMap contributors"
+msgstr ""
+
+#: app/main.cpp:221
+#, kde-format
+msgctxt "@info:credit"
+msgid "OpenSSL"
+msgstr ""
+
+#: app/main.cpp:221
+#, kde-format
+msgctxt "@info:credit"
+msgid "Secure network interaction with TLS. © 1998-2018 The OpenSSL Project"
+msgstr ""
+
+#: app/main.cpp:222
+#, kde-format
+msgctxt "@info:credit"
+msgid "ZXing"
+msgstr ""
+
+#: app/main.cpp:222
+#, kde-format
+msgctxt "@info:credit"
+msgid "QR-Code scanning. © 2016 ZXing Authors, © 2016 Nu-book Inc."
+msgstr ""
+
 #: app/main.cpp:223
+#, kde-format
+msgctxt "@info:credit"
+msgid "Poppler"
+msgstr ""
+
+#: app/main.cpp:223
+#, kde-format
+msgctxt "@info:credit"
+msgid "PDF parsing"
+msgstr ""
+
+#: app/main.cpp:226
+#, fuzzy, kde-format
+#| msgid "Type"
+msgctxt "@info:credit"
+msgid "FreeType"
+msgstr "類型"
+
+#: app/main.cpp:226
+#, kde-format
+msgctxt "@info:credit"
+msgid ""
+"Copyright (C) 2006-2020 by David Turner, Robert Wilhelm, and Werner Lemberg."
+msgstr ""
+
+#: app/main.cpp:227
+#, kde-format
+msgctxt "@info:credit"
+msgid "libintl lite"
+msgstr ""
+
+#: app/main.cpp:227
+#, fuzzy, kde-format
+#| msgid "More information"
+msgctxt "@info:credit"
+msgid "Internalisation"
+msgstr "更多資訊"
+
+#: app/main.cpp:230
+#, kde-format
+msgctxt "@info:credit"
+msgid "libqrencode"
+msgstr ""
+
+#: app/main.cpp:230
+#, kde-format
+msgctxt "@info:credit"
+msgid "QR-Code Generation. © 2006-2018 Kentaro Fukuchi"
+msgstr ""
+
+#: app/main.cpp:231
+#, kde-format
+msgctxt "@info:credit"
+msgid "libical"
+msgstr ""
+
+#: app/main.cpp:231
+#, kde-format
+msgctxt "@info:credit"
+msgid "© The libical developers"
+msgstr ""
+
+#: app/main.cpp:232
+#, kde-format
+msgctxt "@info:credit"
+msgid "libxml2"
+msgstr ""
+
+#: app/main.cpp:232
+#, kde-format
+msgctxt "@info:credit"
+msgid "Copyright (C) 1998-2012 Daniel Veillard"
+msgstr ""
+
+#: app/main.cpp:235
+#, kde-format
+msgctxt "@info:credit"
+msgid "libQuotient"
+msgstr ""
+
+#: app/main.cpp:235
+#, fuzzy, kde-format
+#| msgid "Matrix Integration"
+msgctxt "@info:credit"
+msgid "Matrix integration."
+msgstr "Matrix 整合"
+
+#: app/main.cpp:236
+#, kde-format
+msgctxt "@info:credit"
+msgid "QtKeychain"
+msgstr ""
+
+#: app/main.cpp:236
+#, kde-format
+msgctxt "@info:credit"
+msgid "Secure password storage."
+msgstr ""
+
+#: app/main.cpp:237
+#, kde-format
+msgctxt "@info:credit"
+msgid "Olm"
+msgstr ""
+
+#: app/main.cpp:237
+#, kde-format
+msgctxt "@info:credit"
+msgid "Matrix crypto library."
+msgstr ""
+
+#: app/main.cpp:245
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "在指定頁面開啟旅行計劃"
 
-#: app/main.cpp:228
+#: app/main.cpp:250
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
@@ -4848,6 +4984,23 @@ msgstr "登出"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 從 %3 到 %4 於 %5"
+
+#~ msgid "Copyright: %1"
+#~ msgstr "版權：%1"
+
+#~ msgid "Homepage: <a href=\"%1\">%1</a>"
+#~ msgstr "首頁：<a href=\"%1\">%1</a>"
+
+#~ msgid "License: <a href=\"https://spdx.org/licenses/%1.html\">%2</a>"
+#~ msgstr "授權條款：<a href=\"https：//spdx.org/licenses/%1.html\">%2</a>"
+
+#~ msgid ""
+#~ "KDE Itinerary is developed by the KDE community as free software and uses "
+#~ "the components listed below."
+#~ msgstr "「KDE 旅行計劃」是由 KDE 社群所開發的自由軟體，使用以下列出的部件。"
+
+#~ msgid "KDE Itinerary uses public transport data from the following sources."
+#~ msgstr "「KDE 旅行計劃」使用來自以下來源的公告運輸資料。"
 
 #~ msgid "Open File…"
 #~ msgstr "開啟檔案…"

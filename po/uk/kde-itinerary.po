@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-02 00:43+0000\n"
-"PO-Revision-Date: 2025-09-07 14:59+0300\n"
+"POT-Creation-Date: 2025-10-04 00:43+0000\n"
+"PO-Revision-Date: 2025-10-03 18:08+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -35,59 +35,27 @@ msgstr "yurchor@ukr.net"
 msgid "About"
 msgstr "Про програму"
 
-#: app/AboutPage.qml:144
-#, kde-format
-msgid "Copyright: %1"
-msgstr "Авторські права: %1"
-
-#: app/AboutPage.qml:150
-#, kde-format
-msgid "Homepage: <a href=\"%1\">%1</a>"
-msgstr "Домашня сторінка: <a href=\"%1\">%1</a>"
-
-#: app/AboutPage.qml:157
-#, kde-format
-msgid "License: <a href=\"https://spdx.org/licenses/%1.html\">%2</a>"
-msgstr ""
-"Умови ліцензування: <a href=\"https://spdx.org/licenses/%1.html\">%2</a>"
-
-#: app/AboutPage.qml:176
+#: app/AboutPage.qml:31
 #, kde-format
 msgid "License: <a href=\"%2\">%1</a>"
 msgstr "Умови ліцензування: <a href=\"%2\">%1</a>"
 
-#: app/AboutPage.qml:185
-#, kde-format
-msgid ""
-"KDE Itinerary is developed by the KDE community as free software and uses "
-"the components listed below."
-msgstr ""
-"KDE Itinerary розроблено спільнотою KDE як вільне програмне забезпечення. У "
-"ньому використано компоненти, список яких наведено нижче."
-
-#: app/AboutPage.qml:196
-#, kde-format
-msgid "KDE Itinerary uses public transport data from the following sources."
-msgstr ""
-"KDE Itinerary використовує дані щодо громадського транспорту з наведених "
-"нижче джерел."
-
-#: app/AboutPage.qml:207
+#: app/AboutPage.qml:40
 #, kde-format
 msgid "Developer information"
 msgstr "Відомості для розробника"
 
-#: app/AboutPage.qml:213
+#: app/AboutPage.qml:46
 #, kde-format
 msgid "Application version: %1"
 msgstr "Версія програми: %1"
 
-#: app/AboutPage.qml:229
+#: app/AboutPage.qml:62
 #, kde-format
 msgid "Extractor capabilities:"
 msgstr "Можливості видобування:"
 
-#: app/AboutPage.qml:234
+#: app/AboutPage.qml:67
 #, kde-format
 msgid "Extractor capabilities copied to clipboard"
 msgstr "Можливості видобування скопійовано до буфера обміну даними"
@@ -241,7 +209,7 @@ msgstr "Пором"
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Airplane"
-msgstr ""
+msgstr "Літак"
 
 #: app/AlternativeJourneyPage.qml:119
 #, kde-format
@@ -2628,13 +2596,176 @@ msgstr "Цифровий помічник у подорожах"
 msgid "Copyright © The KDE Community"
 msgstr "© Спільнота KDE"
 
+#: app/main.cpp:219
+#, kde-format
+msgctxt "@info:credit"
+msgid "Wikidata"
+msgstr ""
+
+#: app/main.cpp:219
+#, kde-format
+msgctxt "@info:credit"
+msgid ""
+"Provides various metadata like train station names, driving side, and power "
+"plug types."
+msgstr ""
+
+#: app/main.cpp:220
+#, fuzzy, kde-format
+#| msgid "Open Map"
+msgctxt "@info:credit"
+msgid "OpenStreetMap"
+msgstr "Відкрити карту"
+
+#: app/main.cpp:220
+#, kde-format
+msgctxt "@info:credit"
+msgid "Provides both indoor and outdoor maps. ©OpenStreetMap contributors"
+msgstr ""
+
+#: app/main.cpp:221
+#, kde-format
+msgctxt "@info:credit"
+msgid "OpenSSL"
+msgstr ""
+
+#: app/main.cpp:221
+#, kde-format
+msgctxt "@info:credit"
+msgid "Secure network interaction with TLS. © 1998-2018 The OpenSSL Project"
+msgstr ""
+
+#: app/main.cpp:222
+#, kde-format
+msgctxt "@info:credit"
+msgid "ZXing"
+msgstr ""
+
+#: app/main.cpp:222
+#, kde-format
+msgctxt "@info:credit"
+msgid "QR-Code scanning. © 2016 ZXing Authors, © 2016 Nu-book Inc."
+msgstr ""
+
 #: app/main.cpp:223
+#, kde-format
+msgctxt "@info:credit"
+msgid "Poppler"
+msgstr ""
+
+#: app/main.cpp:223
+#, kde-format
+msgctxt "@info:credit"
+msgid "PDF parsing"
+msgstr ""
+
+#: app/main.cpp:226
+#, fuzzy, kde-format
+#| msgid "Type"
+msgctxt "@info:credit"
+msgid "FreeType"
+msgstr "Тип"
+
+#: app/main.cpp:226
+#, kde-format
+msgctxt "@info:credit"
+msgid ""
+"Copyright (C) 2006-2020 by David Turner, Robert Wilhelm, and Werner Lemberg."
+msgstr ""
+
+#: app/main.cpp:227
+#, kde-format
+msgctxt "@info:credit"
+msgid "libintl lite"
+msgstr ""
+
+#: app/main.cpp:227
+#, fuzzy, kde-format
+#| msgid "Information"
+msgctxt "@info:credit"
+msgid "Internalisation"
+msgstr "Відомості"
+
+#: app/main.cpp:230
+#, kde-format
+msgctxt "@info:credit"
+msgid "libqrencode"
+msgstr ""
+
+#: app/main.cpp:230
+#, kde-format
+msgctxt "@info:credit"
+msgid "QR-Code Generation. © 2006-2018 Kentaro Fukuchi"
+msgstr ""
+
+#: app/main.cpp:231
+#, kde-format
+msgctxt "@info:credit"
+msgid "libical"
+msgstr ""
+
+#: app/main.cpp:231
+#, kde-format
+msgctxt "@info:credit"
+msgid "© The libical developers"
+msgstr ""
+
+#: app/main.cpp:232
+#, kde-format
+msgctxt "@info:credit"
+msgid "libxml2"
+msgstr ""
+
+#: app/main.cpp:232
+#, kde-format
+msgctxt "@info:credit"
+msgid "Copyright (C) 1998-2012 Daniel Veillard"
+msgstr ""
+
+#: app/main.cpp:235
+#, kde-format
+msgctxt "@info:credit"
+msgid "libQuotient"
+msgstr ""
+
+#: app/main.cpp:235
+#, fuzzy, kde-format
+#| msgid "Matrix Integration"
+msgctxt "@info:credit"
+msgid "Matrix integration."
+msgstr "Інтеграція з Matrix"
+
+#: app/main.cpp:236
+#, kde-format
+msgctxt "@info:credit"
+msgid "QtKeychain"
+msgstr ""
+
+#: app/main.cpp:236
+#, kde-format
+msgctxt "@info:credit"
+msgid "Secure password storage."
+msgstr ""
+
+#: app/main.cpp:237
+#, kde-format
+msgctxt "@info:credit"
+msgid "Olm"
+msgstr ""
+
+#: app/main.cpp:237
+#, kde-format
+msgctxt "@info:credit"
+msgid "Matrix crypto library."
+msgstr ""
+
+#: app/main.cpp:245
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Відкрити Itinerary на вказаній сторінці"
 
-#: app/main.cpp:228
+#: app/main.cpp:250
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
@@ -4767,6 +4898,28 @@ msgstr "Вийшли"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 з %3 до %4 %5"
+
+#~ msgid "Copyright: %1"
+#~ msgstr "Авторські права: %1"
+
+#~ msgid "Homepage: <a href=\"%1\">%1</a>"
+#~ msgstr "Домашня сторінка: <a href=\"%1\">%1</a>"
+
+#~ msgid "License: <a href=\"https://spdx.org/licenses/%1.html\">%2</a>"
+#~ msgstr ""
+#~ "Умови ліцензування: <a href=\"https://spdx.org/licenses/%1.html\">%2</a>"
+
+#~ msgid ""
+#~ "KDE Itinerary is developed by the KDE community as free software and uses "
+#~ "the components listed below."
+#~ msgstr ""
+#~ "KDE Itinerary розроблено спільнотою KDE як вільне програмне забезпечення. "
+#~ "У ньому використано компоненти, список яких наведено нижче."
+
+#~ msgid "KDE Itinerary uses public transport data from the following sources."
+#~ msgstr ""
+#~ "KDE Itinerary використовує дані щодо громадського транспорту з наведених "
+#~ "нижче джерел."
 
 #~ msgctxt "journey query search constraint, title"
 #~ msgid "Aircraft"
