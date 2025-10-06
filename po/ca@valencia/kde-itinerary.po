@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-04 00:43+0000\n"
-"PO-Revision-Date: 2025-10-03 10:23+0200\n"
+"PO-Revision-Date: 2025-10-04 11:34+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -2593,7 +2593,7 @@ msgstr "Copyright © La comunitat KDE"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Wikidata"
-msgstr ""
+msgstr "Wikidata"
 
 #: app/main.cpp:219
 #, kde-format
@@ -2602,62 +2602,63 @@ msgid ""
 "Provides various metadata like train station names, driving side, and power "
 "plug types."
 msgstr ""
+"Proporciona diverses metadades com els noms de les estacions de tren, "
+"circulació per l'esquerra i la dreta i els tipus d'endolls elèctrics."
 
 #: app/main.cpp:220
-#, fuzzy, kde-format
-#| msgid "Open Map"
+#, kde-format
 msgctxt "@info:credit"
 msgid "OpenStreetMap"
-msgstr "Obri un mapa"
+msgstr "OpenStreetMap"
 
 #: app/main.cpp:220
 #, kde-format
 msgctxt "@info:credit"
 msgid "Provides both indoor and outdoor maps. ©OpenStreetMap contributors"
 msgstr ""
+"Proporciona mapes d'interiors i exteriors. ©OpenStreetMap col·laboradors"
 
 #: app/main.cpp:221
 #, kde-format
 msgctxt "@info:credit"
 msgid "OpenSSL"
-msgstr ""
+msgstr "OpenSSL"
 
 #: app/main.cpp:221
 #, kde-format
 msgctxt "@info:credit"
 msgid "Secure network interaction with TLS. © 1998-2018 The OpenSSL Project"
-msgstr ""
+msgstr "Interacció segura de xarxes amb TLS. © 1998-2018 The OpenSSL Project"
 
 #: app/main.cpp:222
 #, kde-format
 msgctxt "@info:credit"
 msgid "ZXing"
-msgstr ""
+msgstr "ZXing"
 
 #: app/main.cpp:222
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code scanning. © 2016 ZXing Authors, © 2016 Nu-book Inc."
-msgstr ""
+msgstr "Escaneig de codis QR. © 2016 ZXing Authors, © 2016 Nu-book Inc."
 
 #: app/main.cpp:223
 #, kde-format
 msgctxt "@info:credit"
 msgid "Poppler"
-msgstr ""
+msgstr "Poppler"
 
 #: app/main.cpp:223
 #, kde-format
 msgctxt "@info:credit"
 msgid "PDF parsing"
-msgstr ""
+msgstr "Anàlisi de PDF"
 
 #: app/main.cpp:226
-#, fuzzy, kde-format
-#| msgid "Type"
+#, kde-format
 msgctxt "@info:credit"
 msgid "FreeType"
-msgstr "Tipus"
+msgstr "FreeType"
 
 #: app/main.cpp:226
 #, kde-format
@@ -2665,92 +2666,91 @@ msgctxt "@info:credit"
 msgid ""
 "Copyright (C) 2006-2020 by David Turner, Robert Wilhelm, and Werner Lemberg."
 msgstr ""
+"Copyright (C) 2006-2020 de David Turner, Robert Wilhelm i Werner Lemberg."
 
 #: app/main.cpp:227
 #, kde-format
 msgctxt "@info:credit"
 msgid "libintl lite"
-msgstr ""
+msgstr "libintl lite"
 
 #: app/main.cpp:227
-#, fuzzy, kde-format
-#| msgid "Information"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Internalisation"
-msgstr "Informació"
+msgstr "Internacionalització"
 
 #: app/main.cpp:230
 #, kde-format
 msgctxt "@info:credit"
 msgid "libqrencode"
-msgstr ""
+msgstr "libqrencode"
 
 #: app/main.cpp:230
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code Generation. © 2006-2018 Kentaro Fukuchi"
-msgstr ""
+msgstr "Generació de codis QR. © 2006-2018 Kentaro Fukuchi"
 
 #: app/main.cpp:231
 #, kde-format
 msgctxt "@info:credit"
 msgid "libical"
-msgstr ""
+msgstr "libical"
 
 #: app/main.cpp:231
 #, kde-format
 msgctxt "@info:credit"
 msgid "© The libical developers"
-msgstr ""
+msgstr "© The libical developers"
 
 #: app/main.cpp:232
 #, kde-format
 msgctxt "@info:credit"
 msgid "libxml2"
-msgstr ""
+msgstr "libxml2"
 
 #: app/main.cpp:232
 #, kde-format
 msgctxt "@info:credit"
 msgid "Copyright (C) 1998-2012 Daniel Veillard"
-msgstr ""
+msgstr "Copyright (C) 1998-2012 Daniel Veillard"
 
 #: app/main.cpp:235
 #, kde-format
 msgctxt "@info:credit"
 msgid "libQuotient"
-msgstr ""
+msgstr "libQuotient"
 
 #: app/main.cpp:235
-#, fuzzy, kde-format
-#| msgid "Matrix Integration"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Matrix integration."
-msgstr "Integració de Matrix"
+msgstr "Integració de Matrix."
 
 #: app/main.cpp:236
 #, kde-format
 msgctxt "@info:credit"
 msgid "QtKeychain"
-msgstr ""
+msgstr "QtKeychain"
 
 #: app/main.cpp:236
 #, kde-format
 msgctxt "@info:credit"
 msgid "Secure password storage."
-msgstr ""
+msgstr "Emmagatzematge segur de contrasenyes."
 
 #: app/main.cpp:237
 #, kde-format
 msgctxt "@info:credit"
 msgid "Olm"
-msgstr ""
+msgstr "Olm"
 
 #: app/main.cpp:237
 #, kde-format
 msgctxt "@info:credit"
 msgid "Matrix crypto library."
-msgstr ""
+msgstr "Biblioteca criptogràfica de Matrix."
 
 #: app/main.cpp:245
 #, kde-format
@@ -4891,24 +4891,3 @@ msgstr "Ha finalitzat la sessió"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 des de %3 a %4 el %5"
-
-#~ msgid "Copyright: %1"
-#~ msgstr "Copyright: %1"
-
-#~ msgid "Homepage: <a href=\"%1\">%1</a>"
-#~ msgstr "Pàgina web: <a href=\"%1\">%1</a>"
-
-#~ msgid "License: <a href=\"https://spdx.org/licenses/%1.html\">%2</a>"
-#~ msgstr "Llicència: <a href=\"https://spdx.org/licenses/%1.html\">%2</a>"
-
-#~ msgid ""
-#~ "KDE Itinerary is developed by the KDE community as free software and uses "
-#~ "the components listed below."
-#~ msgstr ""
-#~ "KDE Itinerary és desenvolupat per la comunitat KDE com a programari "
-#~ "lliure i utilitza els components que s'enumeren a continuació."
-
-#~ msgid "KDE Itinerary uses public transport data from the following sources."
-#~ msgstr ""
-#~ "KDE Itinerary utilitza les dades de transport públic de les següents "
-#~ "fonts."

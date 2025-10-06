@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-04 00:43+0000\n"
-"PO-Revision-Date: 2025-09-21 18:59+0400\n"
+"PO-Revision-Date: 2025-10-05 10:14+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -207,7 +207,7 @@ msgstr "عبارة"
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Airplane"
-msgstr ""
+msgstr "الطائرة"
 
 #: app/AlternativeJourneyPage.qml:119
 #, kde-format
@@ -2604,7 +2604,7 @@ msgstr "حقوق النشر © مجتمع كيدي"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Wikidata"
-msgstr ""
+msgstr "ويكي بيانات"
 
 #: app/main.cpp:219
 #, kde-format
@@ -2613,62 +2613,62 @@ msgid ""
 "Provides various metadata like train station names, driving side, and power "
 "plug types."
 msgstr ""
+"يوفر بيانات وصفية متنوعة مثل أسماء محطات القطار، وجهة القيادة، وأنواع مقابس "
+"الكهرباء."
 
 #: app/main.cpp:220
-#, fuzzy, kde-format
-#| msgid "Open Map"
+#, kde-format
 msgctxt "@info:credit"
 msgid "OpenStreetMap"
-msgstr "افتح الخريطة"
+msgstr "خريطة الشّوارع المفتوحة"
 
 #: app/main.cpp:220
 #, kde-format
 msgctxt "@info:credit"
 msgid "Provides both indoor and outdoor maps. ©OpenStreetMap contributors"
-msgstr ""
+msgstr "يوفر خرائط داخلية وخارجية. ©المساهمون في OpenStreetMap"
 
 #: app/main.cpp:221
 #, kde-format
 msgctxt "@info:credit"
 msgid "OpenSSL"
-msgstr ""
+msgstr "أوبن إس إس إل"
 
 #: app/main.cpp:221
 #, kde-format
 msgctxt "@info:credit"
 msgid "Secure network interaction with TLS. © 1998-2018 The OpenSSL Project"
-msgstr ""
+msgstr "تفاعل شبكة آمن مع TLS. © 1998-2018 مشروع OpenSSL"
 
 #: app/main.cpp:222
 #, kde-format
 msgctxt "@info:credit"
 msgid "ZXing"
-msgstr ""
+msgstr "ZXing"
 
 #: app/main.cpp:222
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code scanning. © 2016 ZXing Authors, © 2016 Nu-book Inc."
-msgstr ""
+msgstr "مسح رمز الاستجابة السريعة. © 2016 ZXing للمؤلفين، © 2016 Nu-book Inc."
 
 #: app/main.cpp:223
 #, kde-format
 msgctxt "@info:credit"
 msgid "Poppler"
-msgstr ""
+msgstr "بوبلر"
 
 #: app/main.cpp:223
 #, kde-format
 msgctxt "@info:credit"
 msgid "PDF parsing"
-msgstr ""
+msgstr "تحليل ملفات بي دي إف"
 
 #: app/main.cpp:226
-#, fuzzy, kde-format
-#| msgid "Type"
+#, kde-format
 msgctxt "@info:credit"
 msgid "FreeType"
-msgstr "النوع"
+msgstr "فري تايب"
 
 #: app/main.cpp:226
 #, kde-format
@@ -2676,65 +2676,65 @@ msgctxt "@info:credit"
 msgid ""
 "Copyright (C) 2006-2020 by David Turner, Robert Wilhelm, and Werner Lemberg."
 msgstr ""
+"حقوق الطبع والنشر (C) 2006-2020 محفوظة لديفيد تورنر وروبرت فيلهلم وورنر "
+"ليمبرغ."
 
 #: app/main.cpp:227
 #, kde-format
 msgctxt "@info:credit"
 msgid "libintl lite"
-msgstr ""
+msgstr "libintl lite"
 
 #: app/main.cpp:227
-#, fuzzy, kde-format
-#| msgid "Information"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Internalisation"
-msgstr "المعلومات"
+msgstr "التدويل"
 
 #: app/main.cpp:230
 #, kde-format
 msgctxt "@info:credit"
 msgid "libqrencode"
-msgstr ""
+msgstr "libqrencode"
 
 #: app/main.cpp:230
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code Generation. © 2006-2018 Kentaro Fukuchi"
-msgstr ""
+msgstr "إنشاء رمز الاستجابة السريعة. © 2006-2018 كينتارو فوكوتشي"
 
 #: app/main.cpp:231
 #, kde-format
 msgctxt "@info:credit"
 msgid "libical"
-msgstr ""
+msgstr "libical"
 
 #: app/main.cpp:231
 #, kde-format
 msgctxt "@info:credit"
 msgid "© The libical developers"
-msgstr ""
+msgstr "© مطورو libical"
 
 #: app/main.cpp:232
 #, kde-format
 msgctxt "@info:credit"
 msgid "libxml2"
-msgstr ""
+msgstr "libxml2"
 
 #: app/main.cpp:232
 #, kde-format
 msgctxt "@info:credit"
 msgid "Copyright (C) 1998-2012 Daniel Veillard"
-msgstr ""
+msgstr "حقوق الطبع والنشر (C) 1998-2012 دانيال فييار"
 
 #: app/main.cpp:235
 #, kde-format
 msgctxt "@info:credit"
 msgid "libQuotient"
-msgstr ""
+msgstr "libQuotient"
 
 #: app/main.cpp:235
-#, fuzzy, kde-format
-#| msgid "Matrix Integration"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Matrix integration."
 msgstr "تكامل Matrix"
@@ -2743,25 +2743,25 @@ msgstr "تكامل Matrix"
 #, kde-format
 msgctxt "@info:credit"
 msgid "QtKeychain"
-msgstr ""
+msgstr "QtKeychain"
 
 #: app/main.cpp:236
 #, kde-format
 msgctxt "@info:credit"
 msgid "Secure password storage."
-msgstr ""
+msgstr "تحزين كلمة السر الآمن"
 
 #: app/main.cpp:237
 #, kde-format
 msgctxt "@info:credit"
 msgid "Olm"
-msgstr ""
+msgstr "Olm"
 
 #: app/main.cpp:237
 #, kde-format
 msgctxt "@info:credit"
 msgid "Matrix crypto library."
-msgstr ""
+msgstr "مكتبة تعمية Matrix."
 
 #: app/main.cpp:245
 #, kde-format
