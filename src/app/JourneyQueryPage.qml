@@ -76,7 +76,10 @@ Kirigami.ScrollablePage {
 
                         ColumnLayout {
                             id: expandedLayout
+
                             property var journey: topDelegate.journey
+
+                            spacing: 0
 
                             Repeater {
                                 id: journeyRepeater
