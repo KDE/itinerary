@@ -205,7 +205,7 @@ Kirigami.Page {
                             progress: model.progress
                         }
                         footer: ColumnLayout {
-                            width: ListView.view.width - ListView.view.leftMargin - ListView.view.rightMargin
+                            width: ListView.view && ListView.view.width - ListView.view.leftMargin - ListView.view.rightMargin
                             spacing: Kirigami.Units.smallSpacing
 
                             JourneySectionStopDelegate {
