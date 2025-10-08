@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-04 00:43+0000\n"
+"POT-Creation-Date: 2025-10-08 00:43+0000\n"
 "PO-Revision-Date: 2025-03-02 14:47+0530\n"
 "Last-Translator: Shreekant Kalwar <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -873,20 +873,20 @@ msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "पूर्वं प्रस्थानानि भारयन्तु"
 
-#: app/DepartureQueryPage.qml:152 app/JourneyQueryPage.qml:157
+#: app/DepartureQueryPage.qml:152 app/JourneyQueryPage.qml:160
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "पश्चात् संयोजनानि लोडयन्तु"
 
-#: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:164
+#: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:167
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
 msgstr "दत्तांशप्रदातारः :"
 
-#: app/DepartureQueryPage.qml:169 app/JourneyQueryPage.qml:173
+#: app/DepartureQueryPage.qml:169 app/JourneyQueryPage.qml:176
 #: app/TransferPage.qml:336
 #, fuzzy, kde-format
 #| msgid "Boarding"
@@ -894,7 +894,7 @@ msgctxt "@info:placeholder"
 msgid "Loading"
 msgstr "बोर्डिंग"
 
-#: app/DepartureQueryPage.qml:169 app/JourneyQueryPage.qml:175
+#: app/DepartureQueryPage.qml:169 app/JourneyQueryPage.qml:178
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:status"
@@ -2183,25 +2183,25 @@ msgctxt "@action:button"
 msgid "Show Map"
 msgstr "नक्शा दर्शयतु"
 
-#: app/JourneyQueryPage.qml:97 app/TransferPage.qml:244
+#: app/JourneyQueryPage.qml:100 app/TransferPage.qml:244
 #, kde-format
 msgid "Select"
 msgstr "विचि"
 
-#: app/JourneyQueryPage.qml:148 app/TransferPage.qml:312
+#: app/JourneyQueryPage.qml:151 app/TransferPage.qml:312
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr "पूर्वं संयोजनानि लोडयन्तु"
 
-#: app/JourneyQueryPage.qml:177
+#: app/JourneyQueryPage.qml:180
 #, fuzzy, kde-format
 #| msgid "No locations found"
 msgctxt "@info:placeholder"
 msgid "No journeys found"
 msgstr "न स्थानानि प्राप्तानि"
 
-#: app/JourneyQueryPage.qml:223
+#: app/JourneyQueryPage.qml:226
 #, kde-format
 msgid "Still fetching results…"
 msgstr "अद्यापि परिणामान् आनयति…"

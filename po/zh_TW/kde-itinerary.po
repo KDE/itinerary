@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-04 00:43+0000\n"
+"POT-Creation-Date: 2025-10-08 00:43+0000\n"
 "PO-Revision-Date: 2024-11-28 16:26+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -879,20 +879,20 @@ msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "載入更早的出發"
 
-#: app/DepartureQueryPage.qml:152 app/JourneyQueryPage.qml:157
+#: app/DepartureQueryPage.qml:152 app/JourneyQueryPage.qml:160
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "載入更晚的轉乘"
 
-#: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:164
+#: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:167
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
 msgstr "資料提供者："
 
-#: app/DepartureQueryPage.qml:169 app/JourneyQueryPage.qml:173
+#: app/DepartureQueryPage.qml:169 app/JourneyQueryPage.qml:176
 #: app/TransferPage.qml:336
 #, fuzzy, kde-format
 #| msgid "Boarding"
@@ -900,7 +900,7 @@ msgctxt "@info:placeholder"
 msgid "Loading"
 msgstr "登機"
 
-#: app/DepartureQueryPage.qml:169 app/JourneyQueryPage.qml:175
+#: app/DepartureQueryPage.qml:169 app/JourneyQueryPage.qml:178
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:status"
@@ -2203,25 +2203,25 @@ msgctxt "@action:button"
 msgid "Show Map"
 msgstr "顯示地圖"
 
-#: app/JourneyQueryPage.qml:97 app/TransferPage.qml:244
+#: app/JourneyQueryPage.qml:100 app/TransferPage.qml:244
 #, kde-format
 msgid "Select"
 msgstr "選取"
 
-#: app/JourneyQueryPage.qml:148 app/TransferPage.qml:312
+#: app/JourneyQueryPage.qml:151 app/TransferPage.qml:312
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr "載入更早的轉乘"
 
-#: app/JourneyQueryPage.qml:177
+#: app/JourneyQueryPage.qml:180
 #, fuzzy, kde-format
 #| msgid "No locations found"
 msgctxt "@info:placeholder"
 msgid "No journeys found"
 msgstr "找不到位置"
 
-#: app/JourneyQueryPage.qml:223
+#: app/JourneyQueryPage.qml:226
 #, kde-format
 msgid "Still fetching results…"
 msgstr "還在抓取結果…"

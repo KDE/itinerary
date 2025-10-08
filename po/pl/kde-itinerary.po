@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-04 00:43+0000\n"
+"POT-Creation-Date: 2025-10-08 00:43+0000\n"
 "PO-Revision-Date: 2025-09-06 05:40+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
@@ -844,27 +844,27 @@ msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "Wczytaj wcześniejsze odjazdy"
 
-#: app/DepartureQueryPage.qml:152 app/JourneyQueryPage.qml:157
+#: app/DepartureQueryPage.qml:152 app/JourneyQueryPage.qml:160
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "Wczytaj późniejsze połączenia"
 
-#: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:164
+#: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:167
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
 msgstr "Dostawcy danych:"
 
-#: app/DepartureQueryPage.qml:169 app/JourneyQueryPage.qml:173
+#: app/DepartureQueryPage.qml:169 app/JourneyQueryPage.qml:176
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Loading"
 msgstr "Wczytywanie"
 
-#: app/DepartureQueryPage.qml:169 app/JourneyQueryPage.qml:175
+#: app/DepartureQueryPage.qml:169 app/JourneyQueryPage.qml:178
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:status"
@@ -2127,24 +2127,24 @@ msgctxt "@action:button"
 msgid "Show Map"
 msgstr "Pokaż mapę"
 
-#: app/JourneyQueryPage.qml:97 app/TransferPage.qml:244
+#: app/JourneyQueryPage.qml:100 app/TransferPage.qml:244
 #, kde-format
 msgid "Select"
 msgstr "Wybierz"
 
-#: app/JourneyQueryPage.qml:148 app/TransferPage.qml:312
+#: app/JourneyQueryPage.qml:151 app/TransferPage.qml:312
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr "Wczytaj wcześniejsze połączenia"
 
-#: app/JourneyQueryPage.qml:177
+#: app/JourneyQueryPage.qml:180
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No journeys found"
 msgstr "Nie znaleziono żadnej podróży"
 
-#: app/JourneyQueryPage.qml:223
+#: app/JourneyQueryPage.qml:226
 #, kde-format
 msgid "Still fetching results…"
 msgstr "Nadal pobieram wyniki…"
