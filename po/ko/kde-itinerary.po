@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-08 00:43+0000\n"
-"PO-Revision-Date: 2025-07-21 00:39+0200\n"
+"PO-Revision-Date: 2025-10-12 14:38+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -206,7 +206,7 @@ msgstr "선박"
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Airplane"
-msgstr ""
+msgstr "항공기"
 
 #: app/AlternativeJourneyPage.qml:119
 #, kde-format
@@ -296,15 +296,12 @@ msgid "File saved successfully."
 msgstr "파일을 저장했습니다."
 
 #: app/applicationcontroller.cpp:647
-#, fuzzy, kde-format
-#| msgid ""
-#| "File was imported with a newer version of Itinerary. Some information "
-#| "might not be imported correctly."
+#, kde-format
 msgid ""
 "File was exported with a newer version of Itinerary. Some information might "
 "not be imported correctly."
 msgstr ""
-"새로운 정보의 KDE 여행 정보에서 파일을 가져왔습니다. 일부 정보가 올바르게 표"
+"새로운 정보의 KDE 여행 정보에서 파일을 내보냈습니다. 일부 정보가 올바르게 표"
 "시되지 않을 수도 있습니다."
 
 #: app/applicationcontroller.cpp:675
@@ -461,10 +458,9 @@ msgstr "터미널"
 #: app/BoatPage.qml:82 app/BoatPage.qml:118 app/BusPage.qml:120
 #: app/BusPage.qml:189 app/FlightPage.qml:168 app/FlightPage.qml:218
 #: app/TrainPage.qml:183 app/TrainPage.qml:267
-#, fuzzy, kde-format
-#| msgid "Additional notes"
+#, kde-format
 msgid "Additional information"
-msgstr "추가 메모"
+msgstr "추가 정보"
 
 #: app/BoatPage.qml:99 app/BusPage.qml:144 app/TrainPage.qml:211
 #, kde-format
@@ -1891,10 +1887,9 @@ msgid "Check-out time has to be after the check-in time."
 msgstr "체크아웃 시간은 체크인 시간 이후여야 합니다."
 
 #: app/HotelEditor.qml:133 app/HotelPage.qml:80
-#, fuzzy, kde-format
-#| msgid "Destination:"
+#, kde-format
 msgid "Description"
-msgstr "대상:"
+msgstr "설명"
 
 #: app/HotelPage.qml:16
 #, kde-format
@@ -1928,16 +1923,14 @@ msgid "Import Reservation"
 msgstr "예약 가져오기"
 
 #: app/ImportAction.qml:43
-#, fuzzy, kde-format
-#| msgid "Apple Wallet pass (*.pkpass)"
+#, kde-format
 msgid "Apple Wallet passes (*.pkpass)"
 msgstr "Apple Wallet 패스 (*.pkpass)"
 
 #: app/ImportAction.qml:43
-#, fuzzy, kde-format
-#| msgid "Apple Wallet pass (*.pkpass)"
+#, kde-format
 msgid "Apple Wallet pass bundles (*.pkpasses)"
-msgstr "Apple Wallet 패스 (*.pkpass)"
+msgstr "Apple Wallet 패스 번들 (*.pkpasses)"
 
 #: app/ImportAction.qml:43
 #, kde-format
@@ -2587,7 +2580,7 @@ msgstr "Copyright © The KDE Community"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Wikidata"
-msgstr ""
+msgstr "위키데이터"
 
 #: app/main.cpp:219
 #, kde-format
@@ -2596,62 +2589,61 @@ msgid ""
 "Provides various metadata like train station names, driving side, and power "
 "plug types."
 msgstr ""
+"철도역 이름, 운전 방향, 전원 플러그 종류와 같은 유용한 메타데이터 제공."
 
 #: app/main.cpp:220
-#, fuzzy, kde-format
-#| msgid "Open Map"
+#, kde-format
 msgctxt "@info:credit"
 msgid "OpenStreetMap"
-msgstr "지도 열기"
+msgstr "OpenStreetMap"
 
 #: app/main.cpp:220
 #, kde-format
 msgctxt "@info:credit"
 msgid "Provides both indoor and outdoor maps. ©OpenStreetMap contributors"
-msgstr ""
+msgstr "실내와 실외 지도 제공. ©OpenStreetMap contributors"
 
 #: app/main.cpp:221
 #, kde-format
 msgctxt "@info:credit"
 msgid "OpenSSL"
-msgstr ""
+msgstr "OpenSSL"
 
 #: app/main.cpp:221
 #, kde-format
 msgctxt "@info:credit"
 msgid "Secure network interaction with TLS. © 1998-2018 The OpenSSL Project"
-msgstr ""
+msgstr "TLS를 사용한 보안 네트워크 접근. © 1998-2018 The OpenSSL Project"
 
 #: app/main.cpp:222
 #, kde-format
 msgctxt "@info:credit"
 msgid "ZXing"
-msgstr ""
+msgstr "ZXing"
 
 #: app/main.cpp:222
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code scanning. © 2016 ZXing Authors, © 2016 Nu-book Inc."
-msgstr ""
+msgstr "QR 코드 스캔. © 2016 ZXing Authors, © 2016 Nu-book Inc."
 
 #: app/main.cpp:223
 #, kde-format
 msgctxt "@info:credit"
 msgid "Poppler"
-msgstr ""
+msgstr "Poppler"
 
 #: app/main.cpp:223
 #, kde-format
 msgctxt "@info:credit"
 msgid "PDF parsing"
-msgstr ""
+msgstr "PDF 처리"
 
 #: app/main.cpp:226
-#, fuzzy, kde-format
-#| msgid "Type"
+#, kde-format
 msgctxt "@info:credit"
 msgid "FreeType"
-msgstr "종류"
+msgstr "FreeType"
 
 #: app/main.cpp:226
 #, kde-format
@@ -2659,92 +2651,91 @@ msgctxt "@info:credit"
 msgid ""
 "Copyright (C) 2006-2020 by David Turner, Robert Wilhelm, and Werner Lemberg."
 msgstr ""
+"Copyright (C) 2006-2020 by David Turner, Robert Wilhelm, and Werner Lemberg."
 
 #: app/main.cpp:227
 #, kde-format
 msgctxt "@info:credit"
 msgid "libintl lite"
-msgstr ""
+msgstr "libintl lite"
 
 #: app/main.cpp:227
-#, fuzzy, kde-format
-#| msgid "Information"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Internalisation"
-msgstr "정보"
+msgstr "국제화"
 
 #: app/main.cpp:230
 #, kde-format
 msgctxt "@info:credit"
 msgid "libqrencode"
-msgstr ""
+msgstr "libqrencode"
 
 #: app/main.cpp:230
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code Generation. © 2006-2018 Kentaro Fukuchi"
-msgstr ""
+msgstr "QR 코드 생성. © 2006-2018 Kentaro Fukuchi"
 
 #: app/main.cpp:231
 #, kde-format
 msgctxt "@info:credit"
 msgid "libical"
-msgstr ""
+msgstr "libical"
 
 #: app/main.cpp:231
 #, kde-format
 msgctxt "@info:credit"
 msgid "© The libical developers"
-msgstr ""
+msgstr "© The libical developers"
 
 #: app/main.cpp:232
 #, kde-format
 msgctxt "@info:credit"
 msgid "libxml2"
-msgstr ""
+msgstr "libxml2"
 
 #: app/main.cpp:232
 #, kde-format
 msgctxt "@info:credit"
 msgid "Copyright (C) 1998-2012 Daniel Veillard"
-msgstr ""
+msgstr "Copyright (C) 1998-2012 Daniel Veillard"
 
 #: app/main.cpp:235
 #, kde-format
 msgctxt "@info:credit"
 msgid "libQuotient"
-msgstr ""
+msgstr "libQuotient"
 
 #: app/main.cpp:235
-#, fuzzy, kde-format
-#| msgid "Matrix Integration"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Matrix integration."
-msgstr "Matrix 통합"
+msgstr "Matrix 통합."
 
 #: app/main.cpp:236
 #, kde-format
 msgctxt "@info:credit"
 msgid "QtKeychain"
-msgstr ""
+msgstr "QtKeychain"
 
 #: app/main.cpp:236
 #, kde-format
 msgctxt "@info:credit"
 msgid "Secure password storage."
-msgstr ""
+msgstr "안전한 암호 저장."
 
 #: app/main.cpp:237
 #, kde-format
 msgctxt "@info:credit"
 msgid "Olm"
-msgstr ""
+msgstr "Olm"
 
 #: app/main.cpp:237
 #, kde-format
 msgctxt "@info:credit"
 msgid "Matrix crypto library."
-msgstr ""
+msgstr "Matrix 암호화 라이브러리."
 
 #: app/main.cpp:245
 #, kde-format
