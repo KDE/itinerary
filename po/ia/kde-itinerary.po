@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-08 00:43+0000\n"
-"PO-Revision-Date: 2025-09-02 18:07+0200\n"
+"PO-Revision-Date: 2025-10-14 12:48+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -638,9 +638,7 @@ msgid "Departure Time"
 msgstr "Tempore de partita"
 
 #: app/BusEditor.qml:178
-#, fuzzy, kde-format
-#| msgctxt "bus stop"
-#| msgid "Stop"
+#, kde-format
 msgctxt "Bus stop"
 msgid "Stop"
 msgstr "Station"
@@ -1900,10 +1898,9 @@ msgid "Check-out time has to be after the check-in time."
 msgstr "Tempore de check-out debe esser post le tempore de check-in."
 
 #: app/HotelEditor.qml:133 app/HotelPage.qml:80
-#, fuzzy, kde-format
-#| msgid "Destination:"
+#, kde-format
 msgid "Description"
-msgstr "Destination:"
+msgstr "Description"
 
 #: app/HotelPage.qml:16
 #, kde-format
@@ -2606,11 +2603,10 @@ msgid ""
 msgstr ""
 
 #: app/main.cpp:220
-#, fuzzy, kde-format
-#| msgid "Open Map"
+#, kde-format
 msgctxt "@info:credit"
 msgid "OpenStreetMap"
-msgstr "Aperi mappa"
+msgstr "OpenStreetMap"
 
 #: app/main.cpp:220
 #, kde-format
@@ -2622,7 +2618,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:credit"
 msgid "OpenSSL"
-msgstr ""
+msgstr "OpenSSL"
 
 #: app/main.cpp:221
 #, kde-format
@@ -2646,7 +2642,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:credit"
 msgid "Poppler"
-msgstr ""
+msgstr "Poppler"
 
 #: app/main.cpp:223
 #, kde-format
