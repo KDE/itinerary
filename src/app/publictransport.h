@@ -67,12 +67,9 @@ public:
      */
     static QVariant applyJourneySection(const QVariant &res, const KPublicTransport::JourneySection &section);
 
-    /** Update a reservation from a KPublicTransport::Stopover.
-     *  This assumes the stopover matches the departure/arrival of the reservation, and in case
-     *  of conflict, the reservation is preferred.
+    /** Update a reservation from a KPublicTransport::JounreySection.
+     *  This does not verify both parts actually refer to the same journey.
      */
-    static QVariant mergeDeparture(const QVariant &res, const KPublicTransport::Stopover &dep);
-    static QVariant mergeArrival(const QVariant &res, const KPublicTransport::Stopover &arr);
     static QVariant mergeJourney(const QVariant &res, const KPublicTransport::JourneySection &journey);
 
     /** Checks whether @p mode is a bus or ship mode respectively. */

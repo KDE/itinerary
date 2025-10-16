@@ -255,22 +255,28 @@ QVariant PublicTransport::applyJourneySection(const QVariant &res, const KPublic
     return res;
 }
 
-QVariant PublicTransport::mergeDeparture(const QVariant &res, const KPublicTransport::Stopover &dep)
+template <typename LocT>
+static LocT mergeStopPoint(const KPublicTransport::Location &stopPoint, const LocT &stop)
+{
+    return KItinerary::MergeUtil::merge(PublicTransport::placeFromLocation<LocT>(stopPoint), stop).template value<LocT>();
+}
+
+static QVariant mergeDeparture(const QVariant &res, const KPublicTransport::Stopover &dep)
 {
     using namespace KItinerary;
 
     QVariant newRes;
     if (KPublicTransport::Line::modeIsRailBound(dep.route().line().mode())) {
         TrainTrip trip;
-        trip.setDepartureStation(placeFromLocation<TrainStation>(dep.stopPoint()));
+        trip.setDepartureStation(mergeStopPoint(dep.stopPoint(), res.value<TrainReservation>().reservationFor().value<TrainTrip>().departureStation()));
         trip.setDepartureTime(dep.scheduledDepartureTime());
         trip.setDeparturePlatform(dep.scheduledPlatform());
         TrainReservation trainRes;
         trainRes.setReservationFor(trip);
         newRes = trainRes;
-    } else if (isBusMode(dep.route().line().mode())) {
+    } else if (PublicTransport::isBusMode(dep.route().line().mode())) {
         BusTrip trip;
-        trip.setDepartureBusStop(placeFromLocation<BusStation>(dep.stopPoint()));
+        trip.setDepartureBusStop(mergeStopPoint(dep.stopPoint(), res.value<BusReservation>().reservationFor().value<BusTrip>().departureBusStop()));
         trip.setDepartureTime(dep.scheduledDepartureTime());
         trip.setDeparturePlatform(dep.scheduledPlatform());
         BusReservation busRes;
@@ -278,25 +284,25 @@ QVariant PublicTransport::mergeDeparture(const QVariant &res, const KPublicTrans
         newRes = busRes;
     }
 
-    return MergeUtil::merge(newRes, res);
+    return MergeUtil::merge(res, newRes);
 }
 
-QVariant PublicTransport::mergeArrival(const QVariant &res, const KPublicTransport::Stopover &arr)
+static QVariant mergeArrival(const QVariant &res, const KPublicTransport::Stopover &arr)
 {
     using namespace KItinerary;
 
     QVariant newRes;
     if (KPublicTransport::Line::modeIsRailBound(arr.route().line().mode())) {
         TrainTrip trip;
-        trip.setArrivalStation(placeFromLocation<TrainStation>(arr.stopPoint()));
+        trip.setArrivalStation(mergeStopPoint(arr.stopPoint(), res.value<TrainReservation>().reservationFor().value<TrainTrip>().arrivalStation()));
         trip.setArrivalTime(arr.scheduledArrivalTime());
         trip.setArrivalPlatform(arr.scheduledPlatform());
         TrainReservation trainRes;
         trainRes.setReservationFor(trip);
         newRes = trainRes;
-    } else if (isBusMode(arr.route().line().mode())) {
+    } else if (PublicTransport::isBusMode(arr.route().line().mode())) {
         BusTrip trip;
-        trip.setArrivalBusStop(placeFromLocation<BusStation>(arr.stopPoint()));
+        trip.setArrivalBusStop(mergeStopPoint(arr.stopPoint(), res.value<BusReservation>().reservationFor().value<BusTrip>().arrivalBusStop()));
         trip.setArrivalTime(arr.scheduledArrivalTime());
         trip.setArrivalPlatform(arr.scheduledPlatform());
         BusReservation busRes;
@@ -304,7 +310,7 @@ QVariant PublicTransport::mergeArrival(const QVariant &res, const KPublicTranspo
         newRes = busRes;
     }
 
-    return MergeUtil::merge(newRes, res);
+    return MergeUtil::merge(res, newRes);
 }
 
 QVariant PublicTransport::mergeJourney(const QVariant &res, const KPublicTransport::JourneySection &journey)
