@@ -2599,11 +2599,10 @@ msgid ""
 msgstr ""
 
 #: app/main.cpp:220
-#, fuzzy, kde-format
-#| msgid "Open Map"
+#, kde-format
 msgctxt "@info:credit"
 msgid "OpenStreetMap"
-msgstr "Otevřít mapu"
+msgstr ""
 
 #: app/main.cpp:220
 #, kde-format
@@ -2648,11 +2647,10 @@ msgid "PDF parsing"
 msgstr ""
 
 #: app/main.cpp:226
-#, fuzzy, kde-format
-#| msgid "Type"
+#, kde-format
 msgctxt "@info:credit"
 msgid "FreeType"
-msgstr "Typ"
+msgstr ""
 
 #: app/main.cpp:226
 #, kde-format
@@ -2668,11 +2666,10 @@ msgid "libintl lite"
 msgstr ""
 
 #: app/main.cpp:227
-#, fuzzy, kde-format
-#| msgid "Information"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Internalisation"
-msgstr "Informace"
+msgstr ""
 
 #: app/main.cpp:230
 #, kde-format
@@ -2717,11 +2714,10 @@ msgid "libQuotient"
 msgstr ""
 
 #: app/main.cpp:235
-#, fuzzy, kde-format
-#| msgid "Matrix Integration"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Matrix integration."
-msgstr "Integrace Matrix"
+msgstr ""
 
 #: app/main.cpp:236
 #, kde-format
@@ -4833,15 +4829,3 @@ msgstr "Odhlášen"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 z %3 do %4 na %5"
-
-#~ msgid "Copyright: %1"
-#~ msgstr "Autorská práva: %1"
-
-#~ msgid "Homepage: <a href=\"%1\">%1</a>"
-#~ msgstr "Domovská stránka: <a href=\"%1\">%1</a>"
-
-#~ msgid "License: <a href=\"https://spdx.org/licenses/%1.html\">%2</a>"
-#~ msgstr "Licence: <a href=\"https://spdx.org/licenses/%1.html\">%2</a>"
-
-#~ msgid "KDE Itinerary uses public transport data from the following sources."
-#~ msgstr "Itinerář KDE používá data veřejné dopravy z následujících zdrojů."
