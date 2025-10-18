@@ -7,9 +7,8 @@
 #ifndef BRIGHTNESSMANAGER_H
 #define BRIGHTNESSMANAGER_H
 
-#include "solidextras_export.h"
-
 #include <QObject>
+#include <qqmlregistration.h>
 
 class BrightnessBackend : public QObject
 {
@@ -35,9 +34,11 @@ private:
     int m_previousValue;
 };
 
-class SOLIDEXTRAS_EXPORT BrightnessManager : public QObject
+class BrightnessManager : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
 
 public:
     explicit BrightnessManager(QObject *parent = nullptr);

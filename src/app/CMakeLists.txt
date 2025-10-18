@@ -242,6 +242,7 @@ target_link_libraries(itinerary PUBLIC
     itinerary-weather
     itinerary-weatherplugin
     SolidExtras
+    SolidExtrasplugin
     GpxIo
     KPublicTransport
     KPublicTransportOnboard

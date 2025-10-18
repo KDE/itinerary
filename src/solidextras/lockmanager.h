@@ -7,9 +7,8 @@
 #ifndef LOCKMANAGER_H
 #define LOCKMANAGER_H
 
-#include "solidextras_export.h"
-
 #include <QObject>
+#include <qqmlregistration.h>
 
 class LockBackend : public QObject
 {
@@ -23,9 +22,11 @@ public:
     virtual void setInhibitionOff() = 0;
 };
 
-class SOLIDEXTRAS_EXPORT LockManager : public QObject
+class LockManager : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
 
 public:
     explicit LockManager(QObject *parent = nullptr);
