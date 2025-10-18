@@ -10,6 +10,7 @@
 #include "solidextras_export.h"
 
 #include <QObject>
+#include <qqmlregistration.h>
 
 class LockBackend : public QObject
 {
@@ -26,6 +27,8 @@ public:
 class SOLIDEXTRAS_EXPORT LockManager : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
 
 public:
     explicit LockManager(QObject *parent = nullptr);

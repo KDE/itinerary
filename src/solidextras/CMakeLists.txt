@@ -1,36 +1,34 @@
 # SPDX-FileCopyrightText: 2020 Volker Krause <vkrause@kde.org>
+# SPDX-FileCopyrightText: 2025 Carl Schwan <carl@carlschwan.eu>
 # SPDX-License-Identifier: BSD-3-Clause
 
-add_subdirectory(qml)
-
-set(solidextras_srcs
+add_library(SolidExtras STATIC
     brightnessmanager.cpp
     lockmanager.cpp
 )
 
+ecm_add_qml_module(SolidExtras GENERATE_PLUGIN_SOURCE
+    URI org.kde.solidextras
+)
+
 if (ANDROID)
     add_subdirectory(android)
-    list(APPEND solidextras_srcs
+    target_sources(SolidExtras PRIVATE
         androidbrightnessbackend.cpp
         androidlockbackend.cpp
     )
 else()
-    list(APPEND solidextras_srcs
+    qt_add_dbus_interface(SolidExtras_SRCS org.kde.Solid.PowerManagement.Actions.BrightnessControl.xml brightnesscontroldbusinterface)
+    qt_add_dbus_interface(SolidExtras_SRCS org.freedesktop.ScreenSaver.xml screensaverdbusinterface)
+    target_sources(SolidExtras PRIVATE
         solidbrightnessbackend.cpp
         freedesktoplockbackend.cpp
+        ${SolidExtras_SRCS}
     )
-    qt_add_dbus_interface(solidextras_srcs org.kde.Solid.PowerManagement.Actions.BrightnessControl.xml brightnesscontroldbusinterface)
-    qt_add_dbus_interface(solidextras_srcs org.freedesktop.ScreenSaver.xml screensaverdbusinterface)
 endif()
 
-add_library(SolidExtras ${solidextras_srcs})
-generate_export_header(SolidExtras BASE_NAME SolidExtras)
-
-target_include_directories(SolidExtras PUBLIC "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/..>")
 target_link_libraries(SolidExtras PUBLIC Qt::Core)
 
 if (NOT ANDROID)
     target_link_libraries(SolidExtras PRIVATE Qt::DBus)
 endif()
-
-install(TARGETS SolidExtras ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
