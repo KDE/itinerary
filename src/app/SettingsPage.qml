@@ -4,6 +4,7 @@
 
 import QtQml
 import QtQuick
+import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import QtPositioning
 import org.kde.kirigami as Kirigami
@@ -267,6 +268,68 @@ FormCard.FormCardPage {
                 }
             }
             enabled: onboardStatus.status != OnboardStatus.MissingPermissions
+        }
+    }
+
+    FormCard.FormHeader {
+        title: i18nc("@title:group", "Integrations")
+        actions: QQC2.Action {
+            icon.name: "list-add-symbolic"
+            onTriggered: (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow)
+                .pageStack.pushDialogLayer(Qt.createComponent("org.kde.itinerary", "IntegrationTypesPage"))
+        }
+    }
+
+    FormCard.FormCard {
+        Repeater {
+            id: accountRepeater
+
+            model: AccountModel
+
+            FormCard.FormTextDelegate {
+                id: accoutDelegate
+
+                required property string name
+                required property string accountName
+                required property string iconName
+                required property var account
+
+                text: name
+                description: accountName.length > 0 ? accountName : i18nc("@info:placeholder", "Loading")
+
+                leadingPadding: 0
+                leading: Item {
+                    implicitWidth: Kirigami.Units.iconSizes.smallMedium
+                    implicitHeight: parent.height
+                    Image {
+                        anchors.fill: parent
+                        width: Kirigami.Units.iconSizes.smallMedium
+                        fillMode: Image.PreserveAspectFit
+                        source: accoutDelegate.iconName
+                    }
+                }
+
+                trailing: RowLayout {
+                    Repeater {
+                        model: account.actions
+
+                        delegate: QQC2.Button {
+                            id: actionButton
+
+                            required property var modelData
+
+                            action: Kirigami.Action {
+                                fromQAction: actionButton.modelData
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        FormCard.FormPlaceholderMessageDelegate {
+            visible: accountRepeater.count === 0
+            text: i18nc("@info:placeholder", "No Integrations added.")
         }
     }
 

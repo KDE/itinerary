@@ -20,6 +20,7 @@
 #include "transfermanager.h"
 #include "tripgroupmanager.h"
 #include "tripgroupmodel.h"
+#include "accounts/accountmodel.h"
 
 struct Dummy { // HACK to convince CMake to run moc on this
     Q_GADGET
@@ -39,5 +40,6 @@ REGISTER_SINGLETON_INSTANCE(ImportController)
 REGISTER_SINGLETON_INSTANCE(TripGroupModel)
 REGISTER_SINGLETON_INSTANCE(TraewellingController)
 REGISTER_SINGLETON_INSTANCE(MatrixController)
+REGISTER_SINGLETON_INSTANCE(AccountModel)
 
 #endif

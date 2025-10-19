@@ -77,7 +77,13 @@ target_sources(itinerary PRIVATE
     util.cpp
     weatherforecastmodel.cpp
     weatherinformation.cpp
+
+    accounts/abstractaccount.cpp
+    accounts/accounttypemodel.cpp
+    accounts/accountmodel.cpp
+    accounts/deutschbahn/deutschbahnaccount.cpp
 )
+target_compile_options(itinerary PUBLIC -fexceptions)
 
 ecm_add_qml_module(itinerary GENERATE_PLUGIN_SOURCE
     URI org.kde.itinerary
@@ -146,6 +152,7 @@ ecm_add_qml_module(itinerary GENERATE_PLUGIN_SOURCE
         IndoorMapInfoSheet.qml
         IndoorMapPage.qml
         IntermediateStopSelector.qml
+        IntegrationTypesPage.qml
         JourneyDelegateHeader.qml
         JourneyFilterPage.qml
         JourneyPathPage.qml
@@ -228,6 +235,8 @@ ecm_add_qml_module(itinerary GENERATE_PLUGIN_SOURCE
 
         onlineimport/db.qml
         onlineimport/sncf.qml
+    RESOURCES
+        accounts/deutschbahn/account-deutschbahn.svg
 )
 
 ecm_qt_declare_logging_category(itinerary
@@ -258,7 +267,9 @@ target_link_libraries(itinerary PUBLIC
     KF6::Notifications
     KF6::Holidays
     KF6::UnitConversion
+    KF6::ConfigCore
     Qt::Network
+    Qt::NetworkAuth
     Qt::Quick
     Qt::Positioning
     QCoro6::Core
@@ -266,6 +277,8 @@ target_link_libraries(itinerary PUBLIC
 PRIVATE
     Qt::CorePrivate
     Qt6Keychain::Qt6Keychain
+    KF6::PrisonScanner
+    Qt::Concurrent
 )
 
 if (QMapLibre_FOUND)

@@ -48,11 +48,11 @@ if (EXISTS "${CMAKE_SOURCE_DIR}/.git")
 endif()
 
 # build-time dependencies
-find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS Test Quick Positioning QuickControls2)
+find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS Test Quick Positioning QuickControls2 NetworkAuth Multimedia)
 if(Qt6Core_VERSION VERSION_GREATER_EQUAL "6.9.0")
     find_package(Qt6 ${REQUIRED_QT_VERSION} CONFIG REQUIRED CorePrivate)
 endif()
-find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS I18n CoreAddons Contacts Notifications CalendarCore Holidays UnitConversion)
+find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS I18n CoreAddons Contacts Notifications CalendarCore Holidays UnitConversion Prison)
 find_package(KF6KirigamiAddons 1.9.0 REQUIRED)
 find_package(KPim6PkPass 6.5.41 CONFIG REQUIRED)
 find_package(KPim6Itinerary 6.6.40 CONFIG REQUIRED)

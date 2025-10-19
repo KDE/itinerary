@@ -5,13 +5,12 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+#include "accounts/accountmodel.h"
 #include "config-itinerary.h"
 #include "itinerary_version.h"
 #include "logging.h"
 
 #include "applicationcontroller.h"
-#include "clipboard.h"
-#include "countrysubdivisionmodel.h"
 #include "developmentmodecontroller.h"
 #include "documentmanager.h"
 #include "documentsmodel.h"
@@ -21,11 +20,8 @@
 #include "healthcertificatemanager.h"
 #include "importcontroller.h"
 #include "intenthandler.h"
-#include "journeysectionmodel.h"
-#include "kdeconnect.h"
 #include "livedatamanager.h"
 #include "localizer.h"
-#include "locationinformation.h"
 #include "mapdownloadmanager.h"
 #include "matrixcontroller.h"
 #include "migrator.h"
@@ -49,13 +45,7 @@
 #include "timelinemodel.h"
 #include "timelinesectiondelegatecontroller.h"
 #include "traewellingcontroller.h"
-#include "transferdelegatecontroller.h"
-#include "transfermanager.h"
-#include "tripgroupcontroller.h"
-#include "tripgroupfilterproxymodel.h"
-#include "tripgrouplocationmodel.h"
 #include "tripgroupmanager.h"
-#include "tripgroupmapmodel.h"
 #include "tripgroupmodel.h"
 #include "tripgroupsplitmodel.h"
 #include "unitconversion.h"
@@ -163,10 +153,18 @@ static QNetworkAccessManager *namFactory()
 
 void handleCommandLineArguments(ApplicationController *appController,
                                 ImportController *importController,
+                                AccountModel *accountModel,
                                 const QStringList &args,
                                 bool isTemporary,
                                 const QString &page)
 {
+    if (args.length() > 0 && args.constFirst().startsWith(u"dbnav:"_s)) {
+        if (accountModel->handleCallback(QUrl(args.constFirst()))) {
+            return;
+        }
+        return;
+    }
+
     for (const auto &file : args) {
         const auto localUrl = QUrl::fromLocalFile(file);
         if (QFile::exists(localUrl.toLocalFile())) {
@@ -256,10 +254,13 @@ int main(int argc, char **argv)
     QCommandLineParser parser;
     QCommandLineOption isTemporaryOpt(QStringLiteral("tempfile"), QStringLiteral("Input file is a temporary file and will be deleted after importing."));
     parser.addOption(isTemporaryOpt);
+
     QCommandLineOption pageOpt(QStringLiteral("page"), i18nc("@info:shell", "Open Itinerary on the given page"), QStringLiteral("page"));
     parser.addOption(pageOpt);
+
     QCommandLineOption selfTestOpt(QStringLiteral("self-test"), QStringLiteral("internal, for automated testing"));
     parser.addOption(selfTestOpt);
+
     aboutData.setupCommandLine(&parser);
     parser.addPositionalArgument(QStringLiteral("file"), i18nc("@info:shell", "Files or URLs to import."));
     parser.process(app);
@@ -349,6 +350,10 @@ int main(int argc, char **argv)
     TraewellingController traewellingController(namFactory);
     TraewellingControllerInstance::instance = &traewellingController;
 
+    AccountModel accountModel;
+    accountModel.setNetworkAccessManagerFactory(namFactory);
+    AccountModelInstance::instance = &accountModel;
+
     ApplicationController appController;
     appController.setNetworkAccessManagerFactory(namFactory);
     appController.setReservationManager(&resMgr);
@@ -366,7 +371,7 @@ int main(int argc, char **argv)
         if (!args.isEmpty()) {
             QDir::setCurrent(workingDir);
             parser.parse(args);
-            handleCommandLineArguments(&appController, &importController, parser.positionalArguments(), parser.isSet(isTemporaryOpt), parser.value(pageOpt));
+            handleCommandLineArguments(&appController, &importController, &accountModel, parser.positionalArguments(), parser.isSet(isTemporaryOpt), parser.value(pageOpt));
         }
         if (!QGuiApplication::allWindows().isEmpty()) {
             QWindow *window = QGuiApplication::allWindows().at(0);
@@ -419,7 +424,7 @@ int main(int argc, char **argv)
     engine.rootObjects().front()->setProperty("hasMapLibre", false);
 #endif
 
-    handleCommandLineArguments(&appController, &importController, parser.positionalArguments(), parser.isSet(isTemporaryOpt), parser.value(pageOpt));
+    handleCommandLineArguments(&appController, &importController, &accountModel, parser.positionalArguments(), parser.isSet(isTemporaryOpt), parser.value(pageOpt));
 
 #ifdef Q_OS_ANDROID
     using namespace KAndroidExtras;
