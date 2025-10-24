@@ -277,4 +277,10 @@ QString Localizer::formatCurrency(double value, const QString &isoCode)
     return QLocale().toCurrencyString(value, isoCode, decimalCount);
 }
 
+QString Localizer::formatAltitude(double altitude)
+{
+    // TODO imperial unit support
+    return i18nc("altitude in meter", "%1m").arg((int)altitude);
+}
+
 #include "moc_localizer.cpp"

@@ -268,24 +268,50 @@ Kirigami.Page {
                         }
                         visible: root.onboardStatus.hasPosition
                         sourceItem: Item {
+                            Kirigami.Theme.colorSet: Kirigami.Theme.Selection
+                            Kirigami.Theme.inherit: false
                             Kirigami.Icon {
                                 id: icon
                                 source: root.onboardStatus.hasHeading ? "qrc:///images/arrow.svg" : "map-symbolic"
                                 width: height
                                 height: Kirigami.Units.iconSizes.medium
-                                color: Kirigami.Theme.highlightColor
+                                color: Kirigami.Theme.backgroundColor
                                 isMask: true
                                 rotation: root.onboardStatus.hasHeading ? root.onboardStatus.heading : 0.0
                                 transformOrigin: Item.Center
                                 onTransformOriginChanged: icon.transformOrigin = Item.Center
                             }
-                            QQC2.Label {
-                                Kirigami.Theme.colorSet: Kirigami.Theme.Selection
-                                Kirigami.Theme.inherit: false
+                            Rectangle {
                                 anchors.top: icon.bottom
-                                text: Localizer.formatSpeed(root.onboardStatus.speed, Settings.distanceFormat)
-                                visible: root.onboardStatus.hasSpeed
-                                background: Rectangle { color: Kirigami.Theme.backgroundColor }
+                                anchors.horizontalCenter: icon.horizontalCenter
+                                color: Kirigami.Theme.backgroundColor
+                                width: layout.implicitWidth
+                                height: layout.implicitHeight
+                                RowLayout {
+                                    id: layout
+                                    Kirigami.Icon {
+                                        source: "speedometer"
+                                        isMask: true
+                                        Layout.preferredHeight: Kirigami.Units.gridUnit
+                                        Layout.preferredWidth: Kirigami.Units.gridUnit
+                                        visible: root.onboardStatus.hasSpeed
+                                    }
+                                    QQC2.Label {
+                                        text: Localizer.formatSpeed(root.onboardStatus.speed, Settings.distanceFormat)
+                                        visible: root.onboardStatus.hasSpeed
+                                    }
+                                    Kirigami.Icon {
+                                        source: "arrow-up-symbolic"
+                                        isMask: true
+                                        Layout.preferredHeight: Kirigami.Units.gridUnit
+                                        Layout.preferredWidth: Kirigami.Units.gridUnit
+                                        visible: root.onboardStatus.hasAltitude
+                                    }
+                                    QQC2.Label {
+                                        text: Localizer.formatAltitude(root.onboardStatus.altitude)
+                                        visible: root.onboardStatus.hasAltitude
+                                    }
+                                }
                             }
                         }
                     }

@@ -377,6 +377,7 @@ if (ANDROID)
         security-medium-symbolic
         security-low
         settings-configure
+        speedometer
         split
         temperature-cold
         temperature-normal

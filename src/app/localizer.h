@@ -38,6 +38,11 @@ public:
     /** Format a temperature range, given in degree Celsius. */
     Q_INVOKABLE static QString formatTemperatureRange(double minTemperature, double maxTemperature, bool useFahrenheit);
 
+    /** Format altitude (given in meter).
+     *  TODO imperisal unit support
+     */
+    Q_INVOKABLE static QString formatAltitude(double altitude);
+
     /** Format a currency value using the given currency to select the appropriate amount of decimals. */
     Q_INVOKABLE static QString formatCurrency(double value, const QString &isoCode);
 };
