@@ -80,7 +80,7 @@ private Q_SLOTS:
         QCOMPARE(model.rowCount(), 1);
         QCOMPARE(insertSpy.size(), 1);
         auto idx = model.index(0, 0);
-        QCOMPARE(idx.data(Qt::DisplayRole).toString(), "San Francisco Airport (March 2017)"_L1);
+        QCOMPARE(idx.data(Qt::DisplayRole).toString(), "San Francisco Airport"_L1);
         QCOMPARE(idx.data(TripGroupModel::PositionRole).toInt(), TripGroupModel::Current);
         QCOMPARE(model.currentTripGroupId(), tgMgr.tripGroups().at(0));
         QCOMPARE(model.currentOrNextRow(), 0);
@@ -91,7 +91,7 @@ private Q_SLOTS:
         QCOMPARE(insertSpy.size(), 2);
         QCOMPARE(insertSpy.back().at(1).toInt(), 0);
         idx = model.index(0, 0);
-        QCOMPARE(idx.data(Qt::DisplayRole).toString(), "Randa (September 2017)"_L1);
+        QCOMPARE(idx.data(Qt::DisplayRole).toString(), "Randa"_L1);
         QCOMPARE(idx.data(TripGroupModel::PositionRole).toInt(), TripGroupModel::Future);
         const auto tgId = idx.data(TripGroupModel::TripGroupIdRole).toString();
         QVERIFY(!tgId.isEmpty());
@@ -103,7 +103,7 @@ private Q_SLOTS:
         QCOMPARE(insertSpy.size(), 3);
         QCOMPARE(insertSpy.back().at(1).toInt(), 2);
         idx = model.index(2, 0);
-        QCOMPARE(idx.data(Qt::DisplayRole).toString(), "Peretola (January 2000)"_L1);
+        QCOMPARE(idx.data(Qt::DisplayRole).toString(), "Peretola"_L1);
         QCOMPARE(idx.data(TripGroupModel::PositionRole).toInt(), TripGroupModel::Past);
         QCOMPARE(model.currentOrNextRow(), 1);
 
