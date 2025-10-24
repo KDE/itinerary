@@ -34,6 +34,13 @@ FormCard.FormCardPage {
     property var departureStop
     property var arrivalStop
 
+    property bool longDistance: true
+    property bool localTrain: true
+    property bool rapidTransit: true
+    property bool bus: true
+    property bool ferry: true
+    property bool aircraft: false
+
     title: i18n("Select Journey")
 
     Component {
@@ -99,15 +106,21 @@ FormCard.FormCardPage {
                     tripGroupDialog.open()
                 }
             }
+        },
+        Component {
+            id: journeyFilterPage
+            JourneyFilterPage {}
         }
+
     ]
 
     // either true/false if all mode switches are in that position, undefined otherwise
     function fullModeSwitchState()
     {
-        let state = longDistanceSwitch.checked;
-        for (const s of [localTrainSwitch, rapidTransitSwitch, busSwitch, ferrySwitch, aircraftSwitch]) {
-            if (s.checked != state) {
+        let state = root.longDistance;
+        for (const s of [root.localTrain, root.rapidTransit, root.bus,
+                         root.ferry, root.aircraft]) {
+            if (s != state) {
                 return undefined;
             }
         }
@@ -176,6 +189,17 @@ FormCard.FormCardPage {
             ]
         }
 
+        FormCard.FormButtonDelegate {
+            text: i18nc("filter journeys by mode of transportation etc.", "Filter")
+            icon.name: "filter-symbolic"
+
+            onClicked: {
+                pageStack.push(journeyFilterPage, {
+                    "requestPage": root
+                })
+            }
+        }
+
         FormCard.FormDelegateSeparator {
             below: departureArrivalSelector
             above: dateTimeInput
@@ -213,17 +237,17 @@ FormCard.FormCardPage {
 
                 let lineModes = [];
                 if (root.fullModeSwitchState() == undefined) {
-                    if (longDistanceSwitch.checked)
+                    if (root.longDistance)
                         lineModes.push(Line.LongDistanceTrain, Line.Train);
-                    if (localTrainSwitch.checked)
+                    if (root.localTrain)
                         lineModes.push(Line.LocalTrain);
-                    if (rapidTransitSwitch.checked)
+                    if (root.rapidTransit)
                         lineModes.push(Line.RapidTransit, Line.Metro, Line.Tramway, Line.RailShuttle, Line.Funicular, Line.AerialLift);
-                    if (busSwitch.checked)
+                    if (root.bus)
                         lineModes.push(Line.Bus, Line.Coach);
-                    if (ferrySwitch.checked)
+                    if (root.ferry)
                         lineModes.push(Line.Ferry, Line.Boat);
-                    if (aircraftSwitch.checked)
+                    if (root.aircraft)
                         lineModes.push(Line.Air);
                 }
                 req.lineModes = lineModes;
@@ -236,72 +260,6 @@ FormCard.FormCardPage {
 
                 console.log(req);
                 applicationWindow().pageStack.currentItem.journeyRequest = req;
-            }
-        }
-    }
-
-    FormCard.FormHeader {
-        title: i18n("Mode of transportation")
-    }
-
-    FormCard.FormCard {
-        FormCard.FormSwitchDelegate {
-            id: longDistanceSwitch
-            text: i18nc("journey query search constraint, title", "Long distance trains")
-            description: i18nc("journey query search constraint, description", "High speed or intercity trains")
-            checked: true
-            leading: Kirigami.Icon {
-                source: LineMode.iconName(Line.LongDistanceTrain)
-                isMask: true
-            }
-        }
-        FormCard.FormSwitchDelegate {
-            id: localTrainSwitch
-            text: i18nc("journey query search constraint, title", "Local trains")
-            description: i18nc("journey query search constraint, description", "Regional or local trains")
-            checked: true
-            leading: Kirigami.Icon {
-                source: LineMode.iconName(Line.LocalTrain)
-                isMask: true
-            }
-        }
-        FormCard.FormSwitchDelegate {
-            id: rapidTransitSwitch
-            text: i18nc("journey query search constraint, title", "Rapid transit")
-            description: i18nc("journey query search constraint, description", "Rapid transit, metro, trams")
-            checked: true
-            leading: Kirigami.Icon {
-                source: LineMode.iconName(Line.Tramway)
-                isMask: true
-            }
-        }
-        FormCard.FormSwitchDelegate {
-            id: busSwitch
-            text: i18nc("journey query search constraint, title", "Bus")
-            description: i18nc("journey query search constraint, description", "Local or regional bus services")
-            checked: true
-            leading: Kirigami.Icon {
-                source: LineMode.iconName(Line.Bus)
-                isMask: true
-            }
-        }
-        FormCard.FormSwitchDelegate {
-            id: ferrySwitch
-            text: i18nc("journey query search constraint, title", "Ferry")
-            description: i18nc("journey query search constraint, description", "Boats or ferries")
-            checked: true
-            leading: Kirigami.Icon {
-                source: LineMode.iconName(Line.Ferry)
-                isMask: true
-            }
-        }
-        FormCard.FormSwitchDelegate {
-            id: aircraftSwitch
-            text: i18nc("journey query search constraint, title", "Airplane")
-            checked: false
-            leading: Kirigami.Icon {
-                source: LineMode.iconName(Line.Air)
-                isMask: true
             }
         }
     }
