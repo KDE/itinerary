@@ -14,6 +14,14 @@ Kirigami.ScrollablePage {
 
     title: i18nc("@title:window", "Trips")
 
+    actions: [
+        Kirigami.Action {
+            text: i18nc("@action:button", "Import")
+            icon.name: "document-import"
+            onTriggered: button.contextMenu.createObject(root.QQC2.Overlay.overlay).popup()
+        }
+    ]
+
     TripGroupEditorDialog {
         id: createTripDialog
         onAccepted: {
@@ -98,10 +106,26 @@ Kirigami.ScrollablePage {
             bottomMargin: Kirigami.Units.largeSpacing
         }
 
+        readonly property Component contextMenu: Components.ConvergentContextMenu {
+            readonly property ImportAction importAction: ImportAction {
+                pageStack: root.QQC2.ApplicationWindow.window.pageStack
+            }
+
+            actions: importAction.passImportActions
+            parent: root.QQC2.Overlay.overlay
+            headerContentItem: Kirigami.Heading {
+                text: i18nc("@title:dialog", "Import")
+            }
+
+            Component.onCompleted: if (!Kirigami.Settings.isMobile) {
+                displayMode = Components.ConvergentContextMenu.Dialog;
+            }
+        }
+
         action: Kirigami.Action{
             text: i18nc("@action:button", "Add trip")
             icon.name: "list-add-symbolic"
-            onTriggered: createTripDialog.open();
+            onTriggered: createTripDialog.open()
         }
     }
 
