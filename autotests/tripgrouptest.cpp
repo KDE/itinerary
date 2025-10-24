@@ -164,7 +164,7 @@ private Q_SLOTS:
             QCOMPARE(mgr.tripGroups().size(), 2);
             auto tg1 = mgr.tripGroup(mgr.tripGroups().at(0));
             auto tg2 = mgr.tripGroup(mgr.tripGroups().at(1));
-            if (tg2.name() == "PDL (January 2023)"_L1) {
+            if (tg2.name() == "PDL"_L1) {
                 std::swap(tg1, tg2);
             }
             qDebug() << tg1.name() << tg2.name();
@@ -257,28 +257,43 @@ private Q_SLOTS:
         QTest::addColumn<QString>("fileName");
         QTest::addColumn<QString>("expectedName");
 
-        QTest::newRow("SFO one way") << QStringLiteral(SOURCE_DIR "/data/google-multi-passenger-flight.json")
-                                     << QStringLiteral("San Francisco Airport (March 2017)");
-        QTest::newRow("FLR one way multi traveller") << QStringLiteral(SOURCE_DIR "/data/timeline/multi-traveler-merge-with-countryinfo.json")
-                                                     << QStringLiteral("Peretola (January 2000)");
-        QTest::newRow("Randa") << QStringLiteral(SOURCE_DIR "/../tests/randa2017.json") << QStringLiteral("Randa (September 2017)");
-        QTest::newRow("Almeria") << QStringLiteral(SOURCE_DIR "/../tests/akademy2017.json") << QStringLiteral("Almería (July 2017)");
-        QTest::newRow("Symmetric") << QStringLiteral(SOURCE_DIR "/data/tripgroup/deutschebahn_two-leg-return.txt.json")
-                                   << QStringLiteral("Somewhere(Specific) (November 2027)");
-        QTest::newRow("Symmetric, 2 elements") << QStringLiteral(SOURCE_DIR "/data/tripgroup/flight-direct-return.json")
-                                               << QStringLiteral("Oslo Airport (June 2018)");
-        QTest::newRow("Triangular, different PNR") << QStringLiteral(SOURCE_DIR "/data/tripgroup/train-triangular-different-pnr.json")
-                                                   << QStringLiteral("Nürnberg Hbf (February/March 2018)");
-        QTest::newRow("Imbalanced roundtrip") << QStringLiteral(SOURCE_DIR "/data/tripgroup/imbalanced-return-trip.json")
-                                              << QStringLiteral("Milano Centrale (September 2019)");
-        QTest::newRow("IATA BCBP no times") << QStringLiteral(SOURCE_DIR "/data/tripgroup/iata-bcbp-no-times.json")
-                                            << QStringLiteral("Milan Malpensa (September 2019)");
-        QTest::newRow("Unidirectional") << QStringLiteral(SOURCE_DIR "/data/tripgroup/unidirectional-train-trip.json") << u"Milano Centrale (September 2019)"_s;
-        QTest::newRow("Unidirectional with events") << QStringLiteral(SOURCE_DIR "/data/tripgroup/unidirectional-with-events.json")
-                                                    << u"KDE Akademy 2024 (September 2024)"_s;
-        QTest::newRow("multi-day-event") << QStringLiteral(SOURCE_DIR "/data/timeline/event-multi-day.json") << u"KDE Akademy 2023 (July 2023)"_s;
-        QTest::newRow("flight-cancelation") << QStringLiteral(SOURCE_DIR "/data/timeline/flight-cancelation.json")
-                                            << u"John F. Kennedy International Airport (October 1996)"_s;
+        QTest::newRow("SFO one way")
+            << QStringLiteral(SOURCE_DIR "/data/google-multi-passenger-flight.json")
+            << QStringLiteral("San Francisco Airport");
+        QTest::newRow("FLR one way multi traveller") << QStringLiteral(
+            SOURCE_DIR "/data/timeline/multi-traveler-merge-with-countryinfo.json")
+                                                     << QStringLiteral("Peretola");
+        QTest::newRow("Randa") << QStringLiteral(SOURCE_DIR "/../tests/randa2017.json")
+                               << QStringLiteral("Randa");
+        QTest::newRow("Almeria") << QStringLiteral(SOURCE_DIR "/../tests/akademy2017.json")
+                                 << QStringLiteral("Almería");
+        QTest::newRow("Symmetric")
+            << QStringLiteral(SOURCE_DIR "/data/tripgroup/deutschebahn_two-leg-return.txt.json")
+            << QStringLiteral("Somewhere(Specific)");
+        QTest::newRow("Symmetric, 2 elements")
+            << QStringLiteral(SOURCE_DIR "/data/tripgroup/flight-direct-return.json")
+            << QStringLiteral("Oslo Airport");
+        QTest::newRow("Triangular, different PNR")
+            << QStringLiteral(SOURCE_DIR "/data/tripgroup/train-triangular-different-pnr.json")
+            << QStringLiteral("Nürnberg Hbf");
+        QTest::newRow("Imbalanced roundtrip")
+            << QStringLiteral(SOURCE_DIR "/data/tripgroup/imbalanced-return-trip.json")
+            << QStringLiteral("Milano Centrale");
+        QTest::newRow("IATA BCBP no times")
+            << QStringLiteral(SOURCE_DIR "/data/tripgroup/iata-bcbp-no-times.json")
+            << QStringLiteral("Milan Malpensa");
+        QTest::newRow("Unidirectional")
+            << QStringLiteral(SOURCE_DIR "/data/tripgroup/unidirectional-train-trip.json")
+            << u"Milano Centrale"_s;
+        QTest::newRow("Unidirectional with events")
+            << QStringLiteral(SOURCE_DIR "/data/tripgroup/unidirectional-with-events.json")
+            << u"KDE Akademy 2024"_s;
+        QTest::newRow("multi-day-event")
+            << QStringLiteral(SOURCE_DIR "/data/timeline/event-multi-day.json")
+            << u"KDE Akademy 2023"_s;
+        QTest::newRow("flight-cancelation")
+            << QStringLiteral(SOURCE_DIR "/data/timeline/flight-cancelation.json")
+            << u"John F. Kennedy International Airport"_s;
     }
 
     void testGroupName()
@@ -333,11 +348,11 @@ private Q_SLOTS:
         QCOMPARE(addSpy.size(), 2);
         auto g = mgr.tripGroup(addSpy.at(0).at(0).toString());
         QCOMPARE(g.elements().size(), 1);
-        QCOMPARE(g.name(), "Tegel (May 2000)"_L1);
+        QCOMPARE(g.name(), "Tegel"_L1);
         g = mgr.tripGroup(addSpy.at(1).at(0).toString());
         QCOMPARE(g.elements().size(), resMgr.batches().size() - 1);
-        QCOMPARE(g.name(), "Oslo Airport (June 2000)"_L1);
-        QCOMPARE(g.slugName(), "oslo-airport-june-2000"_L1);
+        QCOMPARE(g.name(), "Oslo Airport"_L1);
+        QCOMPARE(g.slugName(), "oslo-airport"_L1);
     }
 
     void testDeletion()
@@ -510,7 +525,7 @@ private Q_SLOTS:
         tg = tgMgr.tripGroup(tgId2);
         QCOMPARE(tg.isAutomaticallyGrouped(), false);
         QCOMPARE(tg.hasAutomaticName(), true);
-        QCOMPARE(tg.name(), "Randa (September 2017)"_L1);
+        QCOMPARE(tg.name(), "Randa"_L1);
         QCOMPARE(tg.elements().size(), 8);
 
         // manual grouping is persisted and not affected by rescanning
@@ -561,7 +576,7 @@ private Q_SLOTS:
         tg = tgMgr.tripGroup(tgId2);
         QCOMPARE(tg.isAutomaticallyGrouped(), false);
         QCOMPARE(tg.hasAutomaticName(), true);
-        QCOMPARE(tg.name(), "Randa (September 2017)"_L1);
+        QCOMPARE(tg.name(), "Randa"_L1);
         QCOMPARE(tg.elements().size(), 8);
 
         tg.setIsAutomaticallyGrouped(true);

@@ -866,26 +866,7 @@ QString TripGroupManager::guessNameForReservations(const QVariantList &elements)
         }
     }
 
-    // part 2: the time range of the trip
-    // three cases: within 1 month, crossing a month boundary in one year, crossing a year boundary
-    const auto beginDt = SortUtil::startDateTime(elements.at(0));
-    const auto endDt = SortUtil::endDateTime(elements.constLast());
-    if (beginDt.date().year() == endDt.date().year() || !endDt.isValid()) {
-        if (beginDt.date().month() == endDt.date().month() || !endDt.isValid()) {
-            return i18nc("%1 is destination, %2 is the standalone month name, %3 is the year",
-                         "%1 (%2 %3)",
-                         dest,
-                         QLocale().standaloneMonthName(beginDt.date().month(), QLocale::LongFormat),
-                         beginDt.date().toString(u"yyyy"));
-        }
-        return i18nc("%1 is destination, %2 and %3 are the standalone month names and %4 is the year",
-                     "%1 (%2/%3 %4)",
-                     dest,
-                     QLocale().monthName(beginDt.date().month(), QLocale::LongFormat),
-                     QLocale().standaloneMonthName(endDt.date().month(), QLocale::LongFormat),
-                     beginDt.date().toString(u"yyyy"));
-    }
-    return i18nc("%1 is destination, %2 and %3 are years", "%1 (%2/%3)", dest, beginDt.date().toString(u"yyyy"), endDt.date().toString(u"yyyy"));
+    return dest;
 }
 
 bool TripGroupManager::recomputeTripGroupTimes(TripGroup &tg) const

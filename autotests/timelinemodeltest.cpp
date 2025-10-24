@@ -714,7 +714,7 @@ private Q_SLOTS:
 
         auto tgId1 = tgMgr.tripGroups()[0];
         auto tgId2 = tgMgr.tripGroups()[1];
-        if (tgMgr.tripGroup(tgId1).name() == "Randa (September 2017)"_L1) {
+        if (tgMgr.tripGroup(tgId1).name() == "Randa"_L1) {
             std::swap(tgId1, tgId2);
         }
         model.setTripGroupId(tgId1);
