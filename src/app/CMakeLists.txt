@@ -206,11 +206,13 @@ ecm_add_qml_module(itinerary GENERATE_PLUGIN_SOURCE
         TrainPage.qml
         TransferDelegate.qml
         TransferPage.qml
+        TripGroupDelegate.qml
         TripGroupEditorDialog.qml
         TripGroupMapPage.qml
         TripGroupMergeDialog.qml
         TripGroupPage.qml
         TripGroupSelectorCard.qml
+        TripGroupSelectorDialog.qml
         TripGroupSplitPage.qml
         TripGroupsPage.qml
         VehicleLayoutPage.qml

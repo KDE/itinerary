@@ -3,6 +3,8 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
@@ -34,6 +36,30 @@ FormCard.FormCardPage {
 
     title: i18n("Select Journey")
 
+    Component {
+        id: tripGroupDialogComponent
+
+        TripGroupSelectorDialog {
+            id: tripGroupDialog
+            property var journey
+
+            onTripGroupSelected: (tgId) => {
+                for (const section of journey.sections) {
+                    if (section.mode != JourneySection.PublicTransport) {
+                        continue;
+                    }
+                    const res = PublicTransport.reservationFromJourneySection(section);
+                    const resId = ApplicationController.addNewReservation(res, tgId);
+                    LiveDataManager.setJourney(resId, section);
+                }
+                ApplicationController.contextTripGroupId = tgId;
+                tripGroupDialog.close()
+                pageStack.clear()
+                pageStack.push(pagepool.loadPage(Qt.resolvedUrl("TripGroupsPage.qml")))
+            }
+        }
+    }
+
     data: [
         Component {
             id: departurePicker
@@ -62,26 +88,15 @@ FormCard.FormCardPage {
         Component {
             id: journeyQueryPage
             JourneyQueryPage {
+                id: queryPage
+
                 publicTransportManager: root.publicTransportManager
                 title: i18n("Select Journey")
                 onJourneyChanged: {
-                    let tgId = "";
-                    if (tripGroupSelector.mode === TripGroupSelectorCard.Mode.Create) {
-                        tgId = TripGroupManager.createEmptyGroup(tripGroupSelector.name);
-                    } else {
-                        tgId = tripGroupSelector.tripGroupId;
-                    }
-                    for (const section of journey.sections) {
-                        if (section.mode != JourneySection.PublicTransport) {
-                            continue;
-                        }
-                        const res = PublicTransport.reservationFromJourneySection(section);
-                        const resId = ApplicationController.addNewReservation(res, tgId);
-                        LiveDataManager.setJourney(resId, section);
-                    }
-                    ApplicationController.contextTripGroupId = tgId;
-                    pageStack.clear()
-                    pageStack.push(pagepool.loadPage(Qt.resolvedUrl("TripGroupsPage.qml")))
+                    let tripGroupDialog = tripGroupDialogComponent.createObject();
+                    tripGroupDialog.journey = queryPage.journey
+                    tripGroupDialog.suggestedName = arrivalStop ? arrivalStop.name : ""
+                    tripGroupDialog.open()
                 }
             }
         }
@@ -181,7 +196,7 @@ FormCard.FormCardPage {
             id: searchButton
             icon.name: "search"
             text: i18n("Search Journey")
-            enabled: root.departureStop != undefined && root.arrivalStop != undefined && root.fullModeSwitchState() !== false && tripGroupSelector.isValidInput
+            enabled: root.departureStop != undefined && root.arrivalStop != undefined && root.fullModeSwitchState() !== false
             onClicked: {
                 applicationWindow().pageStack.push(journeyQueryPage);
                 const req = applicationWindow().pageStack.currentItem.journeyRequest;
@@ -223,16 +238,6 @@ FormCard.FormCardPage {
                 applicationWindow().pageStack.currentItem.journeyRequest = req;
             }
         }
-    }
-
-    FormCard.FormHeader {
-        title: i18n("Trip")
-    }
-
-    TripGroupSelectorCard {
-        id: tripGroupSelector
-        suggestedName: root.arrivalStop?.name ?? ""
-        tripGroupCandidates: TripGroupModel.intersectingXorAdjacentTripGroups(dateTimeInput.value, dateTimeInput.value)
     }
 
     FormCard.FormHeader {
