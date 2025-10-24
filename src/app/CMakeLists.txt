@@ -258,6 +258,7 @@ target_link_libraries(itinerary PUBLIC
     Qt::Positioning
 PRIVATE
     Qt::CorePrivate
+    Qt6Keychain::Qt6Keychain
 )
 if (HAVE_MATRIX)
     target_link_libraries(itinerary PUBLIC KMatrix)
@@ -286,7 +287,6 @@ target_link_libraries(itinerary-app PRIVATE
     KF6::I18nQml
     Qt::QuickControls2
     KCalendarCoreExtras
-    Qt6Keychain::Qt6Keychain
     KMatrixplugin
 )
 if (ANDROID)
