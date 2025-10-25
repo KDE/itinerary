@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-08 00:43+0000\n"
+"POT-Creation-Date: 2025-10-25 00:42+0000\n"
 "PO-Revision-Date: 2024-12-15 19:32+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
@@ -2491,22 +2491,22 @@ msgstr "क्या आप सचमुच अपना वर्तमान �
 msgid "Share"
 msgstr "शेयर करना"
 
-#: app/LiveStatusPage.qml:299
+#: app/LiveStatusPage.qml:325
 #, kde-format
 msgid "Automatically follow on the map"
 msgstr "मानचित्र पर स्वचालित रूप से अनुसरण करें"
 
-#: app/LiveStatusPage.qml:319 app/LiveStatusPage.qml:331
+#: app/LiveStatusPage.qml:345 app/LiveStatusPage.qml:357
 #, kde-format
 msgid "Waiting for data…"
 msgstr "डेटा की प्रतीक्षा में…"
 
-#: app/LiveStatusPage.qml:343
+#: app/LiveStatusPage.qml:369
 #, kde-format
 msgid "Position"
 msgstr "पद"
 
-#: app/LiveStatusPage.qml:352
+#: app/LiveStatusPage.qml:378
 #, kde-format
 msgid "Journey"
 msgstr "यात्रा"
@@ -2534,6 +2534,14 @@ msgstr "%1 किग्रा"
 msgctxt "temperature range"
 msgid "%1 / %2"
 msgstr "%1 / %2"
+
+#: app/localizer.cpp:283
+#, fuzzy, kde-format
+#| msgctxt "distance in meter"
+#| msgid "%1 m"
+msgctxt "altitude in meter"
+msgid "%1m"
+msgstr "%1 मी"
 
 #: app/LocationInfoDelegate.qml:51
 #, kde-format
@@ -5225,10 +5233,6 @@ msgstr "%1%2 %3 से %4 तक %5 पर"
 #~ msgctxt "Duration in hours and minutes"
 #~ msgid "%1 hr %2 min"
 #~ msgstr "%1 घंटा %2 मिनट"
-
-#~ msgctxt "distance in meter"
-#~ msgid "%1 m"
-#~ msgstr "%1 मी"
 
 #~ msgctxt "distance in kilometer"
 #~ msgid "%1 km"

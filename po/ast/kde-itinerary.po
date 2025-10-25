@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-08 00:43+0000\n"
+"POT-Creation-Date: 2025-10-25 00:42+0000\n"
 "PO-Revision-Date: 2023-11-07 21:26+0100\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: \n"
@@ -2412,22 +2412,22 @@ msgstr ""
 msgid "Share"
 msgstr ""
 
-#: app/LiveStatusPage.qml:299
+#: app/LiveStatusPage.qml:325
 #, kde-format
 msgid "Automatically follow on the map"
 msgstr ""
 
-#: app/LiveStatusPage.qml:319 app/LiveStatusPage.qml:331
+#: app/LiveStatusPage.qml:345 app/LiveStatusPage.qml:357
 #, kde-format
 msgid "Waiting for data…"
 msgstr ""
 
-#: app/LiveStatusPage.qml:343
+#: app/LiveStatusPage.qml:369
 #, kde-format
 msgid "Position"
 msgstr ""
 
-#: app/LiveStatusPage.qml:352
+#: app/LiveStatusPage.qml:378
 #, kde-format
 msgid "Journey"
 msgstr ""
@@ -2454,6 +2454,12 @@ msgstr ""
 #, kde-format
 msgctxt "temperature range"
 msgid "%1 / %2"
+msgstr ""
+
+#: app/localizer.cpp:283
+#, kde-format
+msgctxt "altitude in meter"
+msgid "%1m"
 msgstr ""
 
 #: app/LocationInfoDelegate.qml:51

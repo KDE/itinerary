@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-08 00:43+0000\n"
+"POT-Creation-Date: 2025-10-25 00:42+0000\n"
 "PO-Revision-Date: 2025-08-31 14:44+0200\n"
 "Last-Translator: Philipp Kiemle <l10n@prly.mozmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -2434,22 +2434,22 @@ msgstr ""
 msgid "Share"
 msgstr "Teilen"
 
-#: app/LiveStatusPage.qml:299
+#: app/LiveStatusPage.qml:325
 #, kde-format
 msgid "Automatically follow on the map"
 msgstr "Automatisch auf der Karte folgen"
 
-#: app/LiveStatusPage.qml:319 app/LiveStatusPage.qml:331
+#: app/LiveStatusPage.qml:345 app/LiveStatusPage.qml:357
 #, kde-format
 msgid "Waiting for data…"
 msgstr "Warten auf Daten …"
 
-#: app/LiveStatusPage.qml:343
+#: app/LiveStatusPage.qml:369
 #, kde-format
 msgid "Position"
 msgstr "Position"
 
-#: app/LiveStatusPage.qml:352
+#: app/LiveStatusPage.qml:378
 #, kde-format
 msgid "Journey"
 msgstr "Reise"
@@ -2477,6 +2477,13 @@ msgstr "%1 kg"
 msgctxt "temperature range"
 msgid "%1 / %2"
 msgstr "%1 / %2"
+
+#: app/localizer.cpp:283
+#, fuzzy, kde-format
+#| msgid "%1m"
+msgctxt "altitude in meter"
+msgid "%1m"
+msgstr "%1 m"
 
 #: app/LocationInfoDelegate.qml:51
 #, kde-format
@@ -5474,9 +5481,6 @@ msgstr "%1%2 von %3 nach %4 am %5"
 
 #~ msgid "Precipitation: %1 mm"
 #~ msgstr "Niederschlag: %1 mm"
-
-#~ msgid "%1m"
-#~ msgstr "%1 m"
 
 #~ msgid "%1km"
 #~ msgstr "%1 km"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-08 00:43+0000\n"
+"POT-Creation-Date: 2025-10-25 00:42+0000\n"
 "PO-Revision-Date: 2024-03-26 16:14+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -2542,23 +2542,23 @@ msgstr ""
 msgid "Share"
 msgstr "Megosztás"
 
-#: app/LiveStatusPage.qml:299
+#: app/LiveStatusPage.qml:325
 #, kde-format
 msgid "Automatically follow on the map"
 msgstr "Automatikusan kövessen a térképen"
 
-#: app/LiveStatusPage.qml:319 app/LiveStatusPage.qml:331
+#: app/LiveStatusPage.qml:345 app/LiveStatusPage.qml:357
 #, fuzzy, kde-format
 #| msgid "Waiting for data..."
 msgid "Waiting for data…"
 msgstr "Várakozás adatokra…"
 
-#: app/LiveStatusPage.qml:343
+#: app/LiveStatusPage.qml:369
 #, kde-format
 msgid "Position"
 msgstr "Pozíció"
 
-#: app/LiveStatusPage.qml:352
+#: app/LiveStatusPage.qml:378
 #, kde-format
 msgid "Journey"
 msgstr "Utazás"
@@ -2586,6 +2586,14 @@ msgstr "%1 kg"
 msgctxt "temperature range"
 msgid "%1 / %2"
 msgstr "%1 / %2"
+
+#: app/localizer.cpp:283
+#, fuzzy, kde-format
+#| msgctxt "distance in meter"
+#| msgid "%1 m"
+msgctxt "altitude in meter"
+msgid "%1m"
+msgstr "%1 m"
 
 #: app/LocationInfoDelegate.qml:51
 #, kde-format
@@ -5303,10 +5311,6 @@ msgstr ""
 #~ msgctxt "Duration in hours and minutes"
 #~ msgid "%1 hr"
 #~ msgstr "%1 ó"
-
-#~ msgctxt "distance in meter"
-#~ msgid "%1 m"
-#~ msgstr "%1 m"
 
 #~ msgctxt "distance in kilometer"
 #~ msgid "%1 km"

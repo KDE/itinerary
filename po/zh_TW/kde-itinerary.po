@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-08 00:43+0000\n"
+"POT-Creation-Date: 2025-10-25 00:42+0000\n"
 "PO-Revision-Date: 2024-11-28 16:26+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -2510,22 +2510,22 @@ msgstr "您確定要分享您的目前位置到 Matrix 頻道 %1 嗎？"
 msgid "Share"
 msgstr "分享"
 
-#: app/LiveStatusPage.qml:299
+#: app/LiveStatusPage.qml:325
 #, kde-format
 msgid "Automatically follow on the map"
 msgstr "自動在地圖上跟隨"
 
-#: app/LiveStatusPage.qml:319 app/LiveStatusPage.qml:331
+#: app/LiveStatusPage.qml:345 app/LiveStatusPage.qml:357
 #, kde-format
 msgid "Waiting for data…"
 msgstr "等待資料中…"
 
-#: app/LiveStatusPage.qml:343
+#: app/LiveStatusPage.qml:369
 #, kde-format
 msgid "Position"
 msgstr "位置"
 
-#: app/LiveStatusPage.qml:352
+#: app/LiveStatusPage.qml:378
 #, kde-format
 msgid "Journey"
 msgstr "旅程"
@@ -2553,6 +2553,14 @@ msgstr "%1 公斤"
 msgctxt "temperature range"
 msgid "%1 / %2"
 msgstr "%1 / %2"
+
+#: app/localizer.cpp:283
+#, fuzzy, kde-format
+#| msgctxt "distance in meter"
+#| msgid "%1 m"
+msgctxt "altitude in meter"
+msgid "%1m"
+msgstr "%1 公尺"
 
 #: app/LocationInfoDelegate.qml:51
 #, kde-format
@@ -5255,10 +5263,6 @@ msgstr "%1%2 從 %3 到 %4 於 %5"
 #~ msgctxt "Duration in hours and minutes"
 #~ msgid "%1 hr"
 #~ msgstr "%1 小時"
-
-#~ msgctxt "distance in meter"
-#~ msgid "%1 m"
-#~ msgstr "%1 公尺"
 
 #~ msgctxt "distance in kilometer"
 #~ msgid "%1 km"
