@@ -34,12 +34,13 @@ FormCard.FormCardPage {
     property var departureStop
     property var arrivalStop
 
-    property bool longDistance: true
-    property bool localTrain: true
-    property bool rapidTransit: true
-    property bool bus: true
-    property bool ferry: true
-    property bool aircraft: false
+    property var lineModes: [
+        Line.LongDistanceTrain, Line.Train,
+        Line.LocalTrain,
+        Line.RapidTransit, Line.Metro, Line.Tramway, Line.RailShuttle, Line.Funicular, Line.AerialLift,
+        Line.Bus, Line.Coach,
+        Line.Ferry, Line.Boat,
+    ]
 
     title: i18n("Select Journey")
 
@@ -109,23 +110,12 @@ FormCard.FormCardPage {
         },
         Component {
             id: journeyFilterPage
-            JourneyFilterPage {}
+            JourneyFilterPage {
+                initialLineModes: root.lineModes
+            }
         }
 
     ]
-
-    // either true/false if all mode switches are in that position, undefined otherwise
-    function fullModeSwitchState()
-    {
-        let state = root.longDistance;
-        for (const s of [root.localTrain, root.rapidTransit, root.bus,
-                         root.ferry, root.aircraft]) {
-            if (s != state) {
-                return undefined;
-            }
-        }
-        return state;
-    }
 
     FormCard.FormCard {
         id: requestCard
@@ -194,9 +184,8 @@ FormCard.FormCardPage {
             icon.name: "filter-symbolic"
 
             onClicked: {
-                pageStack.push(journeyFilterPage, {
-                    "requestPage": root
-                })
+                let page = pageStack.push(journeyFilterPage)
+                root.lineModes = Qt.binding(() => page.lineModes)
             }
         }
 
@@ -220,7 +209,7 @@ FormCard.FormCardPage {
             id: searchButton
             icon.name: "search"
             text: i18n("Search Journey")
-            enabled: root.departureStop != undefined && root.arrivalStop != undefined && root.fullModeSwitchState() !== false
+            enabled: root.departureStop != undefined && root.arrivalStop != undefined && lineModes.length != 0
             onClicked: {
                 applicationWindow().pageStack.push(journeyQueryPage);
                 const req = applicationWindow().pageStack.currentItem.journeyRequest;
@@ -235,22 +224,7 @@ FormCard.FormCardPage {
                 // TODO rental vehicle support
                 req.modes = JourneySection.PublicTransport | JourneySection.Walking;
 
-                let lineModes = [];
-                if (root.fullModeSwitchState() == undefined) {
-                    if (root.longDistance)
-                        lineModes.push(Line.LongDistanceTrain, Line.Train);
-                    if (root.localTrain)
-                        lineModes.push(Line.LocalTrain);
-                    if (root.rapidTransit)
-                        lineModes.push(Line.RapidTransit, Line.Metro, Line.Tramway, Line.RailShuttle, Line.Funicular, Line.AerialLift);
-                    if (root.bus)
-                        lineModes.push(Line.Bus, Line.Coach);
-                    if (root.ferry)
-                        lineModes.push(Line.Ferry, Line.Boat);
-                    if (root.aircraft)
-                        lineModes.push(Line.Air);
-                }
-                req.lineModes = lineModes;
+                req.lineModes = root.lineModes;
 
                 if (departureArrivalSelector.selectedIndex === 0) {
                     req.dateTimeMode = JourneyRequest.Departure

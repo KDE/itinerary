@@ -14,19 +14,53 @@ FormCard.FormCardPage {
     id: root
     title: i18nc("@title", "Filter Journeys")
 
-    property Kirigami.Page requestPage
+    property var initialLineModes: []
 
-    Component.onCompleted: {
-        root.requestPage.longDistance = Qt.binding(() => longDistanceSwitch.checked)
-        root.requestPage.localTrain = Qt.binding(() => localTrainSwitch.checked)
-        root.requestPage.rapidTransit = Qt.binding(() => rapidTransitSwitch.checked)
-        root.requestPage.bus = Qt.binding(() => busSwitch.checked)
-        root.requestPage.ferry = Qt.binding(() => ferrySwitch.checked)
-        root.requestPage.aircraft = Qt.binding(() => aircraftSwitch.checked)
+    readonly property var longDistanceModes: [Line.LongDistanceTrain, Line.Train]
+    readonly property var localTrainModes: [Line.LocalTrain]
+    readonly property var rapidTransitModes: [Line.RapidTransit, Line.Metro, Line.Tramway, Line.RailShuttle, Line.Funicular, Line.AerialLift]
+    readonly property var busModes: [Line.Bus, Line.Coach]
+    readonly property var ferryModes: [Line.Ferry, Line.Boat]
+    readonly property var aircraftModes: [Line.Air]
+
+    readonly property var lineModes: {
+        var modes = [];
+        if (root.fullModeSwitchState() == undefined) {
+            if (longDistanceSwitch.checked)
+                modes.push(...root.longDistanceModes);
+            if (localTrainSwitch.checked)
+                modes.push(...root.localTrainModes);
+            if (rapidTransitSwitch.checked)
+                modes.push(...root.rapidTransitModes);
+            if (busSwitch.checked)
+                modes.push(...root.busModes);
+            if (ferrySwitch.checked)
+                modes.push(...root.ferryModes);
+            if (aircraftSwitch.checked)
+                modes.push(...root.aircraftModes);
+        }
+        modes
+    }
+
+    // either true/false if all mode switches are in that position, undefined otherwise
+    function fullModeSwitchState()
+    {
+        let state = root.longDistance;
+        for (const s of [localTrainSwitch, rapidTransitSwitch, busSwitch,
+                         ferrySwitch, aircraftSwitch]) {
+            if (s.checked != state) {
+                return undefined;
+            }
+        }
+        return state;
     }
 
     FormCard.FormHeader {
         title: i18n("Mode of transportation")
+    }
+
+    function checkLineModes(modes: var): bool {
+        return modes.every((mode) => root.initialLineModes.indexOf(mode) != -1)
     }
 
     FormCard.FormCard {
@@ -34,7 +68,7 @@ FormCard.FormCardPage {
             id: longDistanceSwitch
             text: i18nc("journey query search constraint, title", "Long distance trains")
             description: i18nc("journey query search constraint, description", "High speed or intercity trains")
-            checked: root.requestPage.longDistance
+            checked: root.checkLineModes(root.longDistanceModes)
             leading: Kirigami.Icon {
                 source: LineMode.iconName(Line.LongDistanceTrain)
                 isMask: true
@@ -44,7 +78,7 @@ FormCard.FormCardPage {
             id: localTrainSwitch
             text: i18nc("journey query search constraint, title", "Local trains")
             description: i18nc("journey query search constraint, description", "Regional or local trains")
-            checked: root.requestPage.localTrain
+            checked: root.checkLineModes(root.localTrainModes)
             leading: Kirigami.Icon {
                 source: LineMode.iconName(Line.LocalTrain)
                 isMask: true
@@ -54,7 +88,7 @@ FormCard.FormCardPage {
             id: rapidTransitSwitch
             text: i18nc("journey query search constraint, title", "Rapid transit")
             description: i18nc("journey query search constraint, description", "Rapid transit, metro, trams")
-            checked: root.requestPage.rapidTransit
+            checked: root.checkLineModes(root.rapidTransitModes)
             leading: Kirigami.Icon {
                 source: LineMode.iconName(Line.Tramway)
                 isMask: true
@@ -64,7 +98,7 @@ FormCard.FormCardPage {
             id: busSwitch
             text: i18nc("journey query search constraint, title", "Bus")
             description: i18nc("journey query search constraint, description", "Local or regional bus services")
-            checked: root.requestPage.bus
+            checked: root.checkLineModes(root.busModes)
             leading: Kirigami.Icon {
                 source: LineMode.iconName(Line.Bus)
                 isMask: true
@@ -74,7 +108,7 @@ FormCard.FormCardPage {
             id: ferrySwitch
             text: i18nc("journey query search constraint, title", "Ferry")
             description: i18nc("journey query search constraint, description", "Boats or ferries")
-            checked: root.requestPage.ferry
+            checked: root.checkLineModes(root.ferryModes)
             leading: Kirigami.Icon {
                 source: LineMode.iconName(Line.Ferry)
                 isMask: true
@@ -83,7 +117,7 @@ FormCard.FormCardPage {
         FormCard.FormSwitchDelegate {
             id: aircraftSwitch
             text: i18nc("journey query search constraint, title", "Airplane")
-            checked: root.requestPage.aircraft
+            checked: root.checkLineModes(root.aircraftModes)
             leading: Kirigami.Icon {
                 source: LineMode.iconName(Line.Air)
                 isMask: true
