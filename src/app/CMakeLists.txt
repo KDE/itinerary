@@ -345,6 +345,7 @@ if (ANDROID)
         edit-rename
         emblem-important
         emblem-shared-symbolic
+        filter-symbolic
         flag
         flashlight-off
         flashlight-on
