@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-25 00:42+0000\n"
-"PO-Revision-Date: 2025-10-04 19:53+0300\n"
+"POT-Creation-Date: 2025-10-26 00:42+0000\n"
+"PO-Revision-Date: 2025-10-25 21:06+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -169,42 +169,42 @@ msgid "Alternative Connections"
 msgstr "Alternatif Aktarmalar"
 
 #: app/AlternativeJourneyPage.qml:67 app/DepartureQueryPage.qml:28
-#: app/JourneyRequestPage.qml:245 app/TransferPage.qml:108
+#: app/JourneyFilterPage.qml:69 app/TransferPage.qml:108
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Long distance trains"
 msgstr "Uzun mesafe trenleri"
 
 #: app/AlternativeJourneyPage.qml:75 app/DepartureQueryPage.qml:36
-#: app/JourneyRequestPage.qml:255 app/TransferPage.qml:116
+#: app/JourneyFilterPage.qml:79 app/TransferPage.qml:116
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Local trains"
 msgstr "Yerel trenler"
 
 #: app/AlternativeJourneyPage.qml:83 app/DepartureQueryPage.qml:44
-#: app/JourneyRequestPage.qml:265 app/TransferPage.qml:124
+#: app/JourneyFilterPage.qml:89 app/TransferPage.qml:124
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Rapid transit"
 msgstr "Hızlı ulaşım"
 
 #: app/AlternativeJourneyPage.qml:91 app/DepartureQueryPage.qml:52
-#: app/JourneyRequestPage.qml:275 app/TransferPage.qml:132
+#: app/JourneyFilterPage.qml:99 app/TransferPage.qml:132
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Bus"
 msgstr "Otobüs"
 
 #: app/AlternativeJourneyPage.qml:99 app/DepartureQueryPage.qml:60
-#: app/JourneyRequestPage.qml:285 app/TransferPage.qml:140
+#: app/JourneyFilterPage.qml:109 app/TransferPage.qml:140
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ferry"
 msgstr "Feribot"
 
 #: app/AlternativeJourneyPage.qml:107 app/DepartureQueryPage.qml:68
-#: app/JourneyRequestPage.qml:295
+#: app/JourneyFilterPage.qml:119
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Airplane"
@@ -384,8 +384,8 @@ msgstr "Varış terminalini değiştir"
 
 #: app/BoatEditor.qml:112 app/BusEditor.qml:128 app/EventEditor.qml:54
 #: app/FlightEditor.qml:79 app/HotelEditor.qml:53 app/ImportPage.qml:21
-#: app/JourneyRequestPage.qml:229 app/RestaurantEditor.qml:53
-#: app/StopoverDetailsPage.qml:128 app/TrainEditor.qml:135
+#: app/RestaurantEditor.qml:53 app/StopoverDetailsPage.qml:128
+#: app/TrainEditor.qml:135
 #, kde-format
 msgid "Trip"
 msgstr "Gezi"
@@ -2117,6 +2117,48 @@ msgstr "Haritayı Aç"
 msgid "Open wheelmap.org"
 msgstr "wheelmap.org’u Aç"
 
+#: app/JourneyFilterPage.qml:15
+#, fuzzy, kde-format
+#| msgid "Select Journey"
+msgctxt "@title"
+msgid "Filter Journeys"
+msgstr "Yolculuk Seç"
+
+#: app/JourneyFilterPage.qml:59
+#, kde-format
+msgid "Mode of transportation"
+msgstr "Ulaşım biçimi"
+
+#: app/JourneyFilterPage.qml:70
+#, kde-format
+msgctxt "journey query search constraint, description"
+msgid "High speed or intercity trains"
+msgstr "Yüksek hızlı veya şehirlerarası trenler"
+
+#: app/JourneyFilterPage.qml:80
+#, kde-format
+msgctxt "journey query search constraint, description"
+msgid "Regional or local trains"
+msgstr "Bölgesel veya yerel trenler"
+
+#: app/JourneyFilterPage.qml:90
+#, kde-format
+msgctxt "journey query search constraint, description"
+msgid "Rapid transit, metro, trams"
+msgstr "Hızlı ulaşım, metro, tramvay"
+
+#: app/JourneyFilterPage.qml:100
+#, kde-format
+msgctxt "journey query search constraint, description"
+msgid "Local or regional bus services"
+msgstr "Yerel veya bölgesel otobüs hizmetleri"
+
+#: app/JourneyFilterPage.qml:110
+#, kde-format
+msgctxt "journey query search constraint, description"
+msgid "Boats or ferries"
+msgstr "Botlar veya feribotlar"
+
 #: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:277
 #, kde-format
 msgctxt "@action:button"
@@ -2145,104 +2187,75 @@ msgstr "Bulunan yolculuk yok"
 msgid "Still fetching results…"
 msgstr "Sonuçlar hâlâ getiriliyor…"
 
-#: app/JourneyRequestPage.qml:35 app/JourneyRequestPage.qml:66
+#: app/JourneyRequestPage.qml:45 app/JourneyRequestPage.qml:102
 #, kde-format
 msgid "Select Journey"
 msgstr "Yolculuk Seç"
 
-#: app/JourneyRequestPage.qml:41 app/JourneyRequestPage.qml:110
+#: app/JourneyRequestPage.qml:75 app/JourneyRequestPage.qml:128
 #, kde-format
 msgctxt "departure train station"
 msgid "Select Departure Stop"
 msgstr "Kalkış Durağını Seç"
 
-#: app/JourneyRequestPage.qml:54 app/JourneyRequestPage.qml:124
+#: app/JourneyRequestPage.qml:88 app/JourneyRequestPage.qml:142
 #, kde-format
 msgctxt "arrival train station"
 msgid "Select Arrival Stop"
 msgstr "Varış Durağını Seç"
 
-#: app/JourneyRequestPage.qml:109
+#: app/JourneyRequestPage.qml:127
 #, kde-format
 msgctxt "departure train station"
 msgid "From:"
 msgstr "Nereden:"
 
-#: app/JourneyRequestPage.qml:123
+#: app/JourneyRequestPage.qml:141
 #, kde-format
 msgctxt "arrival train station"
 msgid "To:"
 msgstr "Nereye:"
 
-#: app/JourneyRequestPage.qml:141
+#: app/JourneyRequestPage.qml:159
 #, kde-format
 msgctxt "departure and arrival stops"
 msgid "Swap departure and arrival"
 msgstr "Kalkışı ve varışı birbirleriyle değiştir"
 
-#: app/JourneyRequestPage.qml:156
+#: app/JourneyRequestPage.qml:174
 #, kde-format
 msgctxt "train or bus departure"
 msgid "Departure"
 msgstr "Kalkış"
 
-#: app/JourneyRequestPage.qml:159
+#: app/JourneyRequestPage.qml:177
 #, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival"
 msgstr "Varış"
 
-#: app/JourneyRequestPage.qml:172
+#: app/JourneyRequestPage.qml:183
+#, kde-format
+msgctxt "filter journeys by mode of transportation etc."
+msgid "Filter"
+msgstr ""
+
+#: app/JourneyRequestPage.qml:200
 #, kde-format
 msgctxt "train or bus departure"
 msgid "Departure time"
 msgstr "Kalkış zamanı"
 
-#: app/JourneyRequestPage.qml:172
+#: app/JourneyRequestPage.qml:200
 #, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival time"
 msgstr "Varış zamanı"
 
-#: app/JourneyRequestPage.qml:183
+#: app/JourneyRequestPage.qml:211
 #, kde-format
 msgid "Search Journey"
 msgstr "Yolculuk Ara"
-
-#: app/JourneyRequestPage.qml:239
-#, kde-format
-msgid "Mode of transportation"
-msgstr "Ulaşım biçimi"
-
-#: app/JourneyRequestPage.qml:246
-#, kde-format
-msgctxt "journey query search constraint, description"
-msgid "High speed or intercity trains"
-msgstr "Yüksek hızlı veya şehirlerarası trenler"
-
-#: app/JourneyRequestPage.qml:256
-#, kde-format
-msgctxt "journey query search constraint, description"
-msgid "Regional or local trains"
-msgstr "Bölgesel veya yerel trenler"
-
-#: app/JourneyRequestPage.qml:266
-#, kde-format
-msgctxt "journey query search constraint, description"
-msgid "Rapid transit, metro, trams"
-msgstr "Hızlı ulaşım, metro, tramvay"
-
-#: app/JourneyRequestPage.qml:276
-#, kde-format
-msgctxt "journey query search constraint, description"
-msgid "Local or regional bus services"
-msgstr "Yerel veya bölgesel otobüs hizmetleri"
-
-#: app/JourneyRequestPage.qml:286
-#, kde-format
-msgctxt "journey query search constraint, description"
-msgid "Boats or ferries"
-msgstr "Botlar veya feribotlar"
 
 #: app/JourneySectionDelegate.qml:141
 #, kde-format
@@ -2469,9 +2482,7 @@ msgid "%1 / %2"
 msgstr "%1 / %2"
 
 #: app/localizer.cpp:283
-#, fuzzy, kde-format
-#| msgctxt "distance in meter"
-#| msgid "%1 m"
+#, kde-format
 msgctxt "altitude in meter"
 msgid "%1m"
 msgstr "%1 m"
@@ -3183,7 +3194,7 @@ msgctxt "@title:group"
 msgid "Data Portability"
 msgstr "Veri Taşınabilirliği"
 
-#: app/MyDataPage.qml:196 app/PassPage.qml:27
+#: app/MyDataPage.qml:196 app/PassPage.qml:27 app/TripGroupsPage.qml:19
 #, kde-format
 msgctxt "@action:button"
 msgid "Import"
@@ -3369,7 +3380,7 @@ msgctxt "@title"
 msgid "Add Program Membership"
 msgstr "Program Üyeliği Ekle"
 
-#: app/PassPage.qml:43
+#: app/PassPage.qml:43 app/TripGroupsPage.qml:117
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Import"
@@ -4423,6 +4434,17 @@ msgstr "%1 başlangıcı: %2"
 msgid "Following departure %1 from %2"
 msgstr "%2 konumundan %1 kalkışını izler"
 
+#: app/TripGroupDelegate.qml:39
+#, kde-format
+msgctxt "date range"
+msgid "%1 - %2"
+msgstr "%1–%2"
+
+#: app/TripGroupDelegate.qml:40
+#, kde-format
+msgid "Upcoming"
+msgstr "Sıradaki"
+
 #: app/TripGroupEditorDialog.qml:20
 #, kde-format
 msgctxt "@title:window"
@@ -4638,14 +4660,14 @@ msgctxt "@action:button"
 msgid "Go To Now"
 msgstr "Şimdiye Git"
 
-#: app/TripGroupPage.qml:802 app/TripGroupsPage.qml:118
-#: app/TripGroupsPage.qml:137
+#: app/TripGroupPage.qml:802 app/TripGroupsPage.qml:91
+#: app/TripGroupsPage.qml:126
 #, kde-format
 msgctxt "@action:button"
 msgid "Add trip"
 msgstr "Gezi Ekle…"
 
-#: app/TripGroupSelectorCard.qml:63
+#: app/TripGroupSelectorCard.qml:63 app/TripGroupSelectorDialog.qml:51
 #, kde-format
 msgid "New Trip"
 msgstr "Yeni Gezi"
@@ -4670,42 +4692,38 @@ msgstr "Şuraya ekle:"
 msgid "A trip must be selected."
 msgstr "Seçili bir gezi olmalı."
 
+#: app/TripGroupSelectorDialog.qml:14
+#, fuzzy, kde-format
+#| msgid "Add to Trip"
+msgctxt "@title:dialog"
+msgid "Add Journey to Trip"
+msgstr "Geziye Ekle"
+
 #: app/TripGroupsPage.qml:15
 #, kde-format
 msgctxt "@title:window"
 msgid "Trips"
 msgstr "Geziler"
 
-#: app/TripGroupsPage.qml:59
+#: app/TripGroupsPage.qml:67
 #, kde-format
 msgctxt "List section header"
 msgid "Past trips"
 msgstr "Geçmiş Geziler"
 
-#: app/TripGroupsPage.qml:61
+#: app/TripGroupsPage.qml:69
 #, kde-format
 msgctxt "List section header"
 msgid "Future trips"
 msgstr "Gelecek Geziler"
 
-#: app/TripGroupsPage.qml:63
+#: app/TripGroupsPage.qml:71
 #, kde-format
 msgctxt "List section header"
 msgid "Current trip"
 msgstr "Geçerli Gezi"
 
-#: app/TripGroupsPage.qml:99
-#, kde-format
-msgctxt "date range"
-msgid "%1 - %2"
-msgstr "%1–%2"
-
-#: app/TripGroupsPage.qml:100
-#, kde-format
-msgid "Upcoming"
-msgstr "Sıradaki"
-
-#: app/TripGroupsPage.qml:116
+#: app/TripGroupsPage.qml:89
 #, kde-format
 msgid "No trips added yet."
 msgstr "Şu anda eklenmiş bir gezi yok."

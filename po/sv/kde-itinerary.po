@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-25 00:42+0000\n"
+"POT-Creation-Date: 2025-10-26 00:42+0000\n"
 "PO-Revision-Date: 2025-10-05 08:40+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -167,42 +167,42 @@ msgid "Alternative Connections"
 msgstr "Alternativa anslutningar"
 
 #: app/AlternativeJourneyPage.qml:67 app/DepartureQueryPage.qml:28
-#: app/JourneyRequestPage.qml:245 app/TransferPage.qml:108
+#: app/JourneyFilterPage.qml:69 app/TransferPage.qml:108
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Long distance trains"
 msgstr "Fjärrtåg"
 
 #: app/AlternativeJourneyPage.qml:75 app/DepartureQueryPage.qml:36
-#: app/JourneyRequestPage.qml:255 app/TransferPage.qml:116
+#: app/JourneyFilterPage.qml:79 app/TransferPage.qml:116
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Local trains"
 msgstr "Lokaltåg"
 
 #: app/AlternativeJourneyPage.qml:83 app/DepartureQueryPage.qml:44
-#: app/JourneyRequestPage.qml:265 app/TransferPage.qml:124
+#: app/JourneyFilterPage.qml:89 app/TransferPage.qml:124
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Rapid transit"
 msgstr "Stadsbana"
 
 #: app/AlternativeJourneyPage.qml:91 app/DepartureQueryPage.qml:52
-#: app/JourneyRequestPage.qml:275 app/TransferPage.qml:132
+#: app/JourneyFilterPage.qml:99 app/TransferPage.qml:132
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Bus"
 msgstr "Buss"
 
 #: app/AlternativeJourneyPage.qml:99 app/DepartureQueryPage.qml:60
-#: app/JourneyRequestPage.qml:285 app/TransferPage.qml:140
+#: app/JourneyFilterPage.qml:109 app/TransferPage.qml:140
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ferry"
 msgstr "Färja"
 
 #: app/AlternativeJourneyPage.qml:107 app/DepartureQueryPage.qml:68
-#: app/JourneyRequestPage.qml:295
+#: app/JourneyFilterPage.qml:119
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Airplane"
@@ -381,8 +381,8 @@ msgstr "Ändra ankomstterminal"
 
 #: app/BoatEditor.qml:112 app/BusEditor.qml:128 app/EventEditor.qml:54
 #: app/FlightEditor.qml:79 app/HotelEditor.qml:53 app/ImportPage.qml:21
-#: app/JourneyRequestPage.qml:229 app/RestaurantEditor.qml:53
-#: app/StopoverDetailsPage.qml:128 app/TrainEditor.qml:135
+#: app/RestaurantEditor.qml:53 app/StopoverDetailsPage.qml:128
+#: app/TrainEditor.qml:135
 #, kde-format
 msgid "Trip"
 msgstr "Resa"
@@ -2113,6 +2113,48 @@ msgstr "Visa karta"
 msgid "Open wheelmap.org"
 msgstr "Öppna wheelmap.org"
 
+#: app/JourneyFilterPage.qml:15
+#, fuzzy, kde-format
+#| msgid "Select Journey"
+msgctxt "@title"
+msgid "Filter Journeys"
+msgstr "Välj resa"
+
+#: app/JourneyFilterPage.qml:59
+#, kde-format
+msgid "Mode of transportation"
+msgstr "Transportsätt"
+
+#: app/JourneyFilterPage.qml:70
+#, kde-format
+msgctxt "journey query search constraint, description"
+msgid "High speed or intercity trains"
+msgstr "Snabbtåg eller intercitytåg"
+
+#: app/JourneyFilterPage.qml:80
+#, kde-format
+msgctxt "journey query search constraint, description"
+msgid "Regional or local trains"
+msgstr "Regional- eller lokaltåg"
+
+#: app/JourneyFilterPage.qml:90
+#, kde-format
+msgctxt "journey query search constraint, description"
+msgid "Rapid transit, metro, trams"
+msgstr "Stadsbana, tunnelbana, spårvagn"
+
+#: app/JourneyFilterPage.qml:100
+#, kde-format
+msgctxt "journey query search constraint, description"
+msgid "Local or regional bus services"
+msgstr "Lokala eller regionala busslinjer"
+
+#: app/JourneyFilterPage.qml:110
+#, kde-format
+msgctxt "journey query search constraint, description"
+msgid "Boats or ferries"
+msgstr "Båtar eller färjor"
+
 #: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:277
 #, kde-format
 msgctxt "@action:button"
@@ -2141,104 +2183,75 @@ msgstr "Inga resor hittades."
 msgid "Still fetching results…"
 msgstr "Hämtar fortfarande resultat…"
 
-#: app/JourneyRequestPage.qml:35 app/JourneyRequestPage.qml:66
+#: app/JourneyRequestPage.qml:45 app/JourneyRequestPage.qml:102
 #, kde-format
 msgid "Select Journey"
 msgstr "Välj resa"
 
-#: app/JourneyRequestPage.qml:41 app/JourneyRequestPage.qml:110
+#: app/JourneyRequestPage.qml:75 app/JourneyRequestPage.qml:128
 #, kde-format
 msgctxt "departure train station"
 msgid "Select Departure Stop"
 msgstr "Välj avgångshållplats"
 
-#: app/JourneyRequestPage.qml:54 app/JourneyRequestPage.qml:124
+#: app/JourneyRequestPage.qml:88 app/JourneyRequestPage.qml:142
 #, kde-format
 msgctxt "arrival train station"
 msgid "Select Arrival Stop"
 msgstr "Välj ankomsthållplats"
 
-#: app/JourneyRequestPage.qml:109
+#: app/JourneyRequestPage.qml:127
 #, kde-format
 msgctxt "departure train station"
 msgid "From:"
 msgstr "Från:"
 
-#: app/JourneyRequestPage.qml:123
+#: app/JourneyRequestPage.qml:141
 #, kde-format
 msgctxt "arrival train station"
 msgid "To:"
 msgstr "Till:"
 
-#: app/JourneyRequestPage.qml:141
+#: app/JourneyRequestPage.qml:159
 #, kde-format
 msgctxt "departure and arrival stops"
 msgid "Swap departure and arrival"
 msgstr "Byt avgång och ankomst"
 
-#: app/JourneyRequestPage.qml:156
+#: app/JourneyRequestPage.qml:174
 #, kde-format
 msgctxt "train or bus departure"
 msgid "Departure"
 msgstr "Avgång"
 
-#: app/JourneyRequestPage.qml:159
+#: app/JourneyRequestPage.qml:177
 #, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival"
 msgstr "Ankomst"
 
-#: app/JourneyRequestPage.qml:172
+#: app/JourneyRequestPage.qml:183
+#, kde-format
+msgctxt "filter journeys by mode of transportation etc."
+msgid "Filter"
+msgstr ""
+
+#: app/JourneyRequestPage.qml:200
 #, kde-format
 msgctxt "train or bus departure"
 msgid "Departure time"
 msgstr "Avgångstid"
 
-#: app/JourneyRequestPage.qml:172
+#: app/JourneyRequestPage.qml:200
 #, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival time"
 msgstr "Ankomsttid"
 
-#: app/JourneyRequestPage.qml:183
+#: app/JourneyRequestPage.qml:211
 #, kde-format
 msgid "Search Journey"
 msgstr "Sök efter resa"
-
-#: app/JourneyRequestPage.qml:239
-#, kde-format
-msgid "Mode of transportation"
-msgstr "Transportsätt"
-
-#: app/JourneyRequestPage.qml:246
-#, kde-format
-msgctxt "journey query search constraint, description"
-msgid "High speed or intercity trains"
-msgstr "Snabbtåg eller intercitytåg"
-
-#: app/JourneyRequestPage.qml:256
-#, kde-format
-msgctxt "journey query search constraint, description"
-msgid "Regional or local trains"
-msgstr "Regional- eller lokaltåg"
-
-#: app/JourneyRequestPage.qml:266
-#, kde-format
-msgctxt "journey query search constraint, description"
-msgid "Rapid transit, metro, trams"
-msgstr "Stadsbana, tunnelbana, spårvagn"
-
-#: app/JourneyRequestPage.qml:276
-#, kde-format
-msgctxt "journey query search constraint, description"
-msgid "Local or regional bus services"
-msgstr "Lokala eller regionala busslinjer"
-
-#: app/JourneyRequestPage.qml:286
-#, kde-format
-msgctxt "journey query search constraint, description"
-msgid "Boats or ferries"
-msgstr "Båtar eller färjor"
 
 #: app/JourneySectionDelegate.qml:141
 #, kde-format
@@ -3179,7 +3192,7 @@ msgctxt "@title:group"
 msgid "Data Portability"
 msgstr "Dataportabilitet"
 
-#: app/MyDataPage.qml:196 app/PassPage.qml:27
+#: app/MyDataPage.qml:196 app/PassPage.qml:27 app/TripGroupsPage.qml:19
 #, kde-format
 msgctxt "@action:button"
 msgid "Import"
@@ -3365,7 +3378,7 @@ msgctxt "@title"
 msgid "Add Program Membership"
 msgstr "Lägg till programmedlemskap"
 
-#: app/PassPage.qml:43
+#: app/PassPage.qml:43 app/TripGroupsPage.qml:117
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Import"
@@ -4417,6 +4430,17 @@ msgstr "%1 börjar %2"
 msgid "Following departure %1 from %2"
 msgstr "Senare avgång %1 från %2"
 
+#: app/TripGroupDelegate.qml:39
+#, kde-format
+msgctxt "date range"
+msgid "%1 - %2"
+msgstr "%1 - %2"
+
+#: app/TripGroupDelegate.qml:40
+#, kde-format
+msgid "Upcoming"
+msgstr "Kommande"
+
 #: app/TripGroupEditorDialog.qml:20
 #, kde-format
 msgctxt "@title:window"
@@ -4632,14 +4656,14 @@ msgctxt "@action:button"
 msgid "Go To Now"
 msgstr "Gå till aktuell tid"
 
-#: app/TripGroupPage.qml:802 app/TripGroupsPage.qml:118
-#: app/TripGroupsPage.qml:137
+#: app/TripGroupPage.qml:802 app/TripGroupsPage.qml:91
+#: app/TripGroupsPage.qml:126
 #, kde-format
 msgctxt "@action:button"
 msgid "Add trip"
 msgstr "Lägg till resa"
 
-#: app/TripGroupSelectorCard.qml:63
+#: app/TripGroupSelectorCard.qml:63 app/TripGroupSelectorDialog.qml:51
 #, kde-format
 msgid "New Trip"
 msgstr "Ny resa"
@@ -4664,42 +4688,38 @@ msgstr "Lägg till i:"
 msgid "A trip must be selected."
 msgstr "En resa måste vara markerad."
 
+#: app/TripGroupSelectorDialog.qml:14
+#, fuzzy, kde-format
+#| msgid "Add to Trip"
+msgctxt "@title:dialog"
+msgid "Add Journey to Trip"
+msgstr "Lägg till i resa"
+
 #: app/TripGroupsPage.qml:15
 #, kde-format
 msgctxt "@title:window"
 msgid "Trips"
 msgstr "Resor"
 
-#: app/TripGroupsPage.qml:59
+#: app/TripGroupsPage.qml:67
 #, kde-format
 msgctxt "List section header"
 msgid "Past trips"
 msgstr "Tidigare resor"
 
-#: app/TripGroupsPage.qml:61
+#: app/TripGroupsPage.qml:69
 #, kde-format
 msgctxt "List section header"
 msgid "Future trips"
 msgstr "Framtida resor"
 
-#: app/TripGroupsPage.qml:63
+#: app/TripGroupsPage.qml:71
 #, kde-format
 msgctxt "List section header"
 msgid "Current trip"
 msgstr "Pågående resa"
 
-#: app/TripGroupsPage.qml:99
-#, kde-format
-msgctxt "date range"
-msgid "%1 - %2"
-msgstr "%1 - %2"
-
-#: app/TripGroupsPage.qml:100
-#, kde-format
-msgid "Upcoming"
-msgstr "Kommande"
-
-#: app/TripGroupsPage.qml:116
+#: app/TripGroupsPage.qml:89
 #, kde-format
 msgid "No trips added yet."
 msgstr "Inga resor tillagda ännu."
