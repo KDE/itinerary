@@ -242,6 +242,15 @@ ColumnLayout {
                         reverseGeocodeModel.query = QtPositioning.coordinate(root.latitude, root.longitude)
                         reverseGeocodeModel.update();
                     }
+                },
+                Kirigami.Action {
+                    text: i18n("Remove coordinate")
+                    icon.name: "delete-symbolic"
+                    visible: !Number.isNaN(root.latitude) && !Number.isNaN(root.longitude)
+                    onTriggered: {
+                        root.latitude = NaN
+                        root.longitude = NaN
+                    }
                 }
             ]
         }

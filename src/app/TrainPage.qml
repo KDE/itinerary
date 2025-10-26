@@ -347,6 +347,7 @@ DetailsPage {
                     text: i18n("Alternatives")
                     icon.name: "clock"
                     onTriggered: applicationWindow().pageStack.push(alternativePage)
+                    enabled: reservationFor.departureStation.geo.isValid && reservationFor.arrivalStation.geo.isValid
                 },
                 Kirigami.Action {
                     text: i18n("Journey Details")

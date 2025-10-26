@@ -52,6 +52,7 @@ target_sources(itinerary PRIVATE
     qmlsingletons.h
     reservationhelper.cpp
     reservationmanager.cpp
+    reservationonlinepostprocessor.cpp
     settings.cpp
     statisticsmodel.cpp
     statisticstimerangemodel.cpp
@@ -257,6 +258,8 @@ target_link_libraries(itinerary PUBLIC
     Qt::Network
     Qt::Quick
     Qt::Positioning
+    QCoro6::Core
+    QCoro6::Network
 PRIVATE
     Qt::CorePrivate
     Qt6Keychain::Qt6Keychain

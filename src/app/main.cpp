@@ -40,6 +40,7 @@
 #include "qmlsingletons.h"
 #include "reservationhelper.h"
 #include "reservationmanager.h"
+#include "reservationonlinepostprocessor.h"
 #include "settings.h"
 #include "statisticsmodel.h"
 #include "statisticstimerangemodel.h"
@@ -292,6 +293,8 @@ int main(int argc, char **argv)
     QObject::connect(&settings, &Settings::showNotificationOnLockScreenChanged, &liveDataMgr, &LiveDataManager::setShowNotificationsOnLockScreen);
     QObject::connect(&settings, &Settings::wikimediaOnlineContentEnabledChanged, &liveDataMgr, &LiveDataManager::setDownloadAssetsEnabled);
     LiveDataManagerInstance::instance = &liveDataMgr;
+
+    ReservationOnlinePostprocessor resOnlinePostproc(&resMgr, &liveDataMgr, &settings, namFactory);
 
     WeatherForecastManager::setAllowNetworkAccess(settings.weatherForecastEnabled());
     QObject::connect(&settings, &Settings::weatherForecastEnabledChanged, &WeatherForecastManager::setAllowNetworkAccess);

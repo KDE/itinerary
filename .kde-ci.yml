@@ -25,6 +25,7 @@ Dependencies:
     'pim/khealthcertificate': '@same'
     'third-party/libquotient': '@latest'
     'third-party/qtkeychain': '@latest-kf6'
+    'third-party/qcoro': '@latest'
 
 - 'on': ['Linux', 'FreeBSD']
   'require':
