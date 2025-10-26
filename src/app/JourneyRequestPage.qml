@@ -119,7 +119,8 @@ FormCard.FormCardPage {
 
     FormCard.FormCard {
         id: requestCard
-        Layout.topMargin: Kirigami.Units.largeSpacing
+
+        Layout.topMargin: Kirigami.Units.gridUnit
 
         FormCard.FormButtonDelegate {
             id: fromButton
@@ -179,16 +180,6 @@ FormCard.FormCardPage {
             ]
         }
 
-        FormCard.FormButtonDelegate {
-            text: i18nc("filter journeys by mode of transportation etc.", "Filter")
-            icon.name: "filter-symbolic"
-
-            onClicked: {
-                let page = pageStack.push(journeyFilterPage)
-                root.lineModes = Qt.binding(() => page.lineModes)
-            }
-        }
-
         FormCard.FormDelegateSeparator {
             below: departureArrivalSelector
             above: dateTimeInput
@@ -202,6 +193,23 @@ FormCard.FormCardPage {
 
         FormCard.FormDelegateSeparator {
             below: dateTimeInput
+            above: filterButton
+        }
+
+        FormCard.FormButtonDelegate {
+            id: filterButton
+
+            text: i18nc("filter journeys by mode of transportation etc.", "Filter")
+            icon.name: "filter-symbolic"
+
+            onClicked: {
+                let page = pageStack.push(journeyFilterPage)
+                root.lineModes = Qt.binding(() => page.lineModes)
+            }
+        }
+
+        FormCard.FormDelegateSeparator {
+            below: filterButton
             above: searchButton
         }
 
