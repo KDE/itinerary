@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-26 00:42+0000\n"
-"PO-Revision-Date: 2025-10-25 06:32+0200\n"
+"POT-Creation-Date: 2025-10-27 00:43+0000\n"
+"PO-Revision-Date: 2025-10-26 04:21+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -2115,11 +2115,10 @@ msgid "Open wheelmap.org"
 msgstr "Wheelmap.org-ის გახსნა"
 
 #: app/JourneyFilterPage.qml:15
-#, fuzzy, kde-format
-#| msgid "Select Journey"
+#, kde-format
 msgctxt "@title"
 msgid "Filter Journeys"
-msgstr "აირჩიეთ მოგზაურობა"
+msgstr "მოგზაურობების გაფილტვრა"
 
 #: app/JourneyFilterPage.qml:59
 #, kde-format
@@ -2189,67 +2188,67 @@ msgstr "შედეგების გამოთხოვა ჯერ კი
 msgid "Select Journey"
 msgstr "აირჩიეთ მოგზაურობა"
 
-#: app/JourneyRequestPage.qml:75 app/JourneyRequestPage.qml:128
+#: app/JourneyRequestPage.qml:75 app/JourneyRequestPage.qml:129
 #, kde-format
 msgctxt "departure train station"
 msgid "Select Departure Stop"
 msgstr "აირჩიეთ გასასვლელი გაჩერება"
 
-#: app/JourneyRequestPage.qml:88 app/JourneyRequestPage.qml:142
+#: app/JourneyRequestPage.qml:88 app/JourneyRequestPage.qml:143
 #, kde-format
 msgctxt "arrival train station"
 msgid "Select Arrival Stop"
 msgstr "აირჩიეთ ჩამოსასვლელი გაჩერება"
 
-#: app/JourneyRequestPage.qml:127
+#: app/JourneyRequestPage.qml:128
 #, kde-format
 msgctxt "departure train station"
 msgid "From:"
 msgstr "საიდან:"
 
-#: app/JourneyRequestPage.qml:141
+#: app/JourneyRequestPage.qml:142
 #, kde-format
 msgctxt "arrival train station"
 msgid "To:"
 msgstr "სადამდე:"
 
-#: app/JourneyRequestPage.qml:159
+#: app/JourneyRequestPage.qml:160
 #, kde-format
 msgctxt "departure and arrival stops"
 msgid "Swap departure and arrival"
 msgstr "გასვლისა და ჩამოსვლის მიმოცვლა"
 
-#: app/JourneyRequestPage.qml:174
+#: app/JourneyRequestPage.qml:175
 #, kde-format
 msgctxt "train or bus departure"
 msgid "Departure"
 msgstr "გამგზავრება"
 
-#: app/JourneyRequestPage.qml:177
+#: app/JourneyRequestPage.qml:178
 #, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival"
 msgstr "ჩამოსვლა"
 
-#: app/JourneyRequestPage.qml:183
-#, kde-format
-msgctxt "filter journeys by mode of transportation etc."
-msgid "Filter"
-msgstr ""
-
-#: app/JourneyRequestPage.qml:200
+#: app/JourneyRequestPage.qml:191
 #, kde-format
 msgctxt "train or bus departure"
 msgid "Departure time"
 msgstr "გასვლის დრო"
 
-#: app/JourneyRequestPage.qml:200
+#: app/JourneyRequestPage.qml:191
 #, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival time"
 msgstr "ჩამოსვლის დრო"
 
-#: app/JourneyRequestPage.qml:211
+#: app/JourneyRequestPage.qml:202
+#, kde-format
+msgctxt "filter journeys by mode of transportation etc."
+msgid "Filter"
+msgstr "ფილტრი"
+
+#: app/JourneyRequestPage.qml:219
 #, kde-format
 msgid "Search Journey"
 msgstr "მოგზაურობის ძებნა"
@@ -4684,11 +4683,10 @@ msgid "A trip must be selected."
 msgstr "მოგზაურობა არჩეული უნდა იყოს."
 
 #: app/TripGroupSelectorDialog.qml:14
-#, fuzzy, kde-format
-#| msgid "Add to Trip"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Add Journey to Trip"
-msgstr "დამატება მოგზაურობაზე"
+msgstr "მოგზაურობის დამატება მოგზაურობაში"
 
 #: app/TripGroupsPage.qml:15
 #, kde-format

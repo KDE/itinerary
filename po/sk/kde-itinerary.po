@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-26 00:42+0000\n"
+"POT-Creation-Date: 2025-10-27 00:43+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -2368,73 +2368,73 @@ msgstr ""
 msgid "Select Journey"
 msgstr "Vybrať"
 
-#: app/JourneyRequestPage.qml:75 app/JourneyRequestPage.qml:128
+#: app/JourneyRequestPage.qml:75 app/JourneyRequestPage.qml:129
 #, fuzzy, kde-format
 #| msgid "Departure time:"
 msgctxt "departure train station"
 msgid "Select Departure Stop"
 msgstr "Čas odchodu:"
 
-#: app/JourneyRequestPage.qml:88 app/JourneyRequestPage.qml:142
+#: app/JourneyRequestPage.qml:88 app/JourneyRequestPage.qml:143
 #, kde-format
 msgctxt "arrival train station"
 msgid "Select Arrival Stop"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:127
+#: app/JourneyRequestPage.qml:128
 #, fuzzy, kde-format
 #| msgid "From: %1"
 msgctxt "departure train station"
 msgid "From:"
 msgstr "Od: %1"
 
-#: app/JourneyRequestPage.qml:141
+#: app/JourneyRequestPage.qml:142
 #, fuzzy, kde-format
 #| msgid "To:"
 msgctxt "arrival train station"
 msgid "To:"
 msgstr "Pre:"
 
-#: app/JourneyRequestPage.qml:159
+#: app/JourneyRequestPage.qml:160
 #, kde-format
 msgctxt "departure and arrival stops"
 msgid "Swap departure and arrival"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:174
+#: app/JourneyRequestPage.qml:175
 #, fuzzy, kde-format
 #| msgid "Departure"
 msgctxt "train or bus departure"
 msgid "Departure"
 msgstr "Odchod"
 
-#: app/JourneyRequestPage.qml:177
+#: app/JourneyRequestPage.qml:178
 #, fuzzy, kde-format
 #| msgid "Arrival"
 msgctxt "train or bus arrival"
 msgid "Arrival"
 msgstr "Príchod"
 
-#: app/JourneyRequestPage.qml:183
-#, kde-format
-msgctxt "filter journeys by mode of transportation etc."
-msgid "Filter"
-msgstr ""
-
-#: app/JourneyRequestPage.qml:200
+#: app/JourneyRequestPage.qml:191
 #, fuzzy, kde-format
 #| msgid "Departure time:"
 msgctxt "train or bus departure"
 msgid "Departure time"
 msgstr "Čas odchodu:"
 
-#: app/JourneyRequestPage.qml:200
+#: app/JourneyRequestPage.qml:191
 #, fuzzy, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival time"
 msgstr "Čas príchodu: %1"
 
-#: app/JourneyRequestPage.qml:211
+#: app/JourneyRequestPage.qml:202
+#, kde-format
+msgctxt "filter journeys by mode of transportation etc."
+msgid "Filter"
+msgstr ""
+
+#: app/JourneyRequestPage.qml:219
 #, kde-format
 msgid "Search Journey"
 msgstr ""

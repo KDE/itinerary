@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-26 00:42+0000\n"
+"POT-Creation-Date: 2025-10-27 00:43+0000\n"
 "PO-Revision-Date: 2025-09-06 05:40+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
@@ -2196,67 +2196,67 @@ msgstr "Nadal pobieram wyniki…"
 msgid "Select Journey"
 msgstr "Wybierz podróż"
 
-#: app/JourneyRequestPage.qml:75 app/JourneyRequestPage.qml:128
+#: app/JourneyRequestPage.qml:75 app/JourneyRequestPage.qml:129
 #, kde-format
 msgctxt "departure train station"
 msgid "Select Departure Stop"
 msgstr "Wybierz przystanek odjazdu"
 
-#: app/JourneyRequestPage.qml:88 app/JourneyRequestPage.qml:142
+#: app/JourneyRequestPage.qml:88 app/JourneyRequestPage.qml:143
 #, kde-format
 msgctxt "arrival train station"
 msgid "Select Arrival Stop"
 msgstr "Wybierz przystanek przyjazdu"
 
-#: app/JourneyRequestPage.qml:127
+#: app/JourneyRequestPage.qml:128
 #, kde-format
 msgctxt "departure train station"
 msgid "From:"
 msgstr "Z:"
 
-#: app/JourneyRequestPage.qml:141
+#: app/JourneyRequestPage.qml:142
 #, kde-format
 msgctxt "arrival train station"
 msgid "To:"
 msgstr "Do:"
 
-#: app/JourneyRequestPage.qml:159
+#: app/JourneyRequestPage.qml:160
 #, kde-format
 msgctxt "departure and arrival stops"
 msgid "Swap departure and arrival"
 msgstr "Zamień odjazd z przyjazdem"
 
-#: app/JourneyRequestPage.qml:174
+#: app/JourneyRequestPage.qml:175
 #, kde-format
 msgctxt "train or bus departure"
 msgid "Departure"
 msgstr "Odjazd"
 
-#: app/JourneyRequestPage.qml:177
+#: app/JourneyRequestPage.qml:178
 #, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival"
 msgstr "Przyjazd"
 
-#: app/JourneyRequestPage.qml:183
-#, kde-format
-msgctxt "filter journeys by mode of transportation etc."
-msgid "Filter"
-msgstr ""
-
-#: app/JourneyRequestPage.qml:200
+#: app/JourneyRequestPage.qml:191
 #, kde-format
 msgctxt "train or bus departure"
 msgid "Departure time"
 msgstr "Czas wyruszenia"
 
-#: app/JourneyRequestPage.qml:200
+#: app/JourneyRequestPage.qml:191
 #, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival time"
 msgstr "Czas przybycia"
 
-#: app/JourneyRequestPage.qml:211
+#: app/JourneyRequestPage.qml:202
+#, kde-format
+msgctxt "filter journeys by mode of transportation etc."
+msgid "Filter"
+msgstr ""
+
+#: app/JourneyRequestPage.qml:219
 #, kde-format
 msgid "Search Journey"
 msgstr "Szukaj podróży"

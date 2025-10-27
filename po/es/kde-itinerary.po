@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-26 00:42+0000\n"
-"PO-Revision-Date: 2025-10-25 03:54+0100\n"
+"POT-Creation-Date: 2025-10-27 00:43+0000\n"
+"PO-Revision-Date: 2025-10-26 03:46+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -213,7 +213,7 @@ msgstr "Avión"
 #: app/AlternativeJourneyPage.qml:119
 #, kde-format
 msgid "Replace Journey"
-msgstr "Sustituir viaje"
+msgstr "Sustituir trayecto"
 
 #: app/AlternativeJourneyPage.qml:120
 #, kde-format
@@ -221,7 +221,7 @@ msgid ""
 "Do you really want to replace your existing reservation with the newly "
 "selected journey?"
 msgstr ""
-"¿Realmente desea sustituir la reserva existente con el nuevo viaje "
+"¿Realmente desea sustituir la reserva existente con el nuevo trayecto "
 "seleccionado?"
 
 #: app/AlternativeJourneyPage.qml:124
@@ -484,7 +484,7 @@ msgstr "Alternativas"
 #: app/TrainPage.qml:352
 #, kde-format
 msgid "Journey Details"
-msgstr "Detalles del viaje"
+msgstr "Detalles del trayecto"
 
 #: app/BookingCard.qml:24
 #, kde-format
@@ -2120,11 +2120,10 @@ msgid "Open wheelmap.org"
 msgstr "Abrir wheelmap.org"
 
 #: app/JourneyFilterPage.qml:15
-#, fuzzy, kde-format
-#| msgid "Select Journey"
+#, kde-format
 msgctxt "@title"
 msgid "Filter Journeys"
-msgstr "Seleccionar viaje"
+msgstr "Filtrar trayectos"
 
 #: app/JourneyFilterPage.qml:59
 #, kde-format
@@ -2182,7 +2181,7 @@ msgstr "Cargar conexiones anteriores"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No journeys found"
-msgstr "No se ha encontrado ningún viaje"
+msgstr "No se ha encontrado ningún trayecto"
 
 #: app/JourneyQueryPage.qml:226
 #, kde-format
@@ -2192,72 +2191,72 @@ msgstr "Todavía se están obteniendo resultados…"
 #: app/JourneyRequestPage.qml:45 app/JourneyRequestPage.qml:102
 #, kde-format
 msgid "Select Journey"
-msgstr "Seleccionar viaje"
+msgstr "Seleccionar trayecto"
 
-#: app/JourneyRequestPage.qml:75 app/JourneyRequestPage.qml:128
+#: app/JourneyRequestPage.qml:75 app/JourneyRequestPage.qml:129
 #, kde-format
 msgctxt "departure train station"
 msgid "Select Departure Stop"
 msgstr "Seleccionar parada de salida"
 
-#: app/JourneyRequestPage.qml:88 app/JourneyRequestPage.qml:142
+#: app/JourneyRequestPage.qml:88 app/JourneyRequestPage.qml:143
 #, kde-format
 msgctxt "arrival train station"
 msgid "Select Arrival Stop"
 msgstr "Seleccionar parada de llegada"
 
-#: app/JourneyRequestPage.qml:127
+#: app/JourneyRequestPage.qml:128
 #, kde-format
 msgctxt "departure train station"
 msgid "From:"
 msgstr "De:"
 
-#: app/JourneyRequestPage.qml:141
+#: app/JourneyRequestPage.qml:142
 #, kde-format
 msgctxt "arrival train station"
 msgid "To:"
 msgstr "A:"
 
-#: app/JourneyRequestPage.qml:159
+#: app/JourneyRequestPage.qml:160
 #, kde-format
 msgctxt "departure and arrival stops"
 msgid "Swap departure and arrival"
 msgstr "Intercambiar salida y llegada"
 
-#: app/JourneyRequestPage.qml:174
+#: app/JourneyRequestPage.qml:175
 #, kde-format
 msgctxt "train or bus departure"
 msgid "Departure"
 msgstr "Salida"
 
-#: app/JourneyRequestPage.qml:177
+#: app/JourneyRequestPage.qml:178
 #, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival"
 msgstr "Llegada"
 
-#: app/JourneyRequestPage.qml:183
-#, kde-format
-msgctxt "filter journeys by mode of transportation etc."
-msgid "Filter"
-msgstr ""
-
-#: app/JourneyRequestPage.qml:200
+#: app/JourneyRequestPage.qml:191
 #, kde-format
 msgctxt "train or bus departure"
 msgid "Departure time"
 msgstr "Hora de salida"
 
-#: app/JourneyRequestPage.qml:200
+#: app/JourneyRequestPage.qml:191
 #, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival time"
 msgstr "Hora de llegada"
 
-#: app/JourneyRequestPage.qml:211
+#: app/JourneyRequestPage.qml:202
+#, kde-format
+msgctxt "filter journeys by mode of transportation etc."
+msgid "Filter"
+msgstr "Filtrar"
+
+#: app/JourneyRequestPage.qml:219
 #, kde-format
 msgid "Search Journey"
-msgstr "Buscar viaje"
+msgstr "Buscar trayecto"
 
 #: app/JourneySectionDelegate.qml:141
 #, kde-format
@@ -2457,7 +2456,7 @@ msgstr "Posición"
 #: app/LiveStatusPage.qml:378
 #, kde-format
 msgid "Journey"
-msgstr "Viaje"
+msgstr "Trayecto"
 
 #: app/localizer.cpp:182
 #, kde-format
@@ -3901,7 +3900,7 @@ msgid ""
 "information, visit <a href=\"https://traewelling.de\">traewelling.de</a>"
 msgstr ""
 "Traewelling es un servicio de check-in gratuito que te permite decirle a sus "
-"amigos dónde está y en el que puede registrar sus viajes en transporte "
+"amigos dónde está y en el que puede registrar sus trayectos en transporte "
 "público. Para más información, visite <a href=\"https://traewelling.de"
 "\">traewelling.de</a>."
 
@@ -4716,11 +4715,10 @@ msgid "A trip must be selected."
 msgstr "Debe seleccionar un viaje."
 
 #: app/TripGroupSelectorDialog.qml:14
-#, fuzzy, kde-format
-#| msgid "Add to Trip"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Add Journey to Trip"
-msgstr "Añadir a viaje"
+msgstr "Añadir trayecto a viaje"
 
 #: app/TripGroupsPage.qml:15
 #, kde-format

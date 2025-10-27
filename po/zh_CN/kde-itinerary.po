@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-26 00:42+0000\n"
+"POT-Creation-Date: 2025-10-27 00:43+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -2178,67 +2178,67 @@ msgstr "仍在获取结果..."
 msgid "Select Journey"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:75 app/JourneyRequestPage.qml:128
+#: app/JourneyRequestPage.qml:75 app/JourneyRequestPage.qml:129
 #, kde-format
 msgctxt "departure train station"
 msgid "Select Departure Stop"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:88 app/JourneyRequestPage.qml:142
+#: app/JourneyRequestPage.qml:88 app/JourneyRequestPage.qml:143
 #, kde-format
 msgctxt "arrival train station"
 msgid "Select Arrival Stop"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:127
+#: app/JourneyRequestPage.qml:128
 #, kde-format
 msgctxt "departure train station"
 msgid "From:"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:141
+#: app/JourneyRequestPage.qml:142
 #, kde-format
 msgctxt "arrival train station"
 msgid "To:"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:159
+#: app/JourneyRequestPage.qml:160
 #, kde-format
 msgctxt "departure and arrival stops"
 msgid "Swap departure and arrival"
 msgstr "交换离开和抵达"
 
-#: app/JourneyRequestPage.qml:174
+#: app/JourneyRequestPage.qml:175
 #, kde-format
 msgctxt "train or bus departure"
 msgid "Departure"
 msgstr "出发时间"
 
-#: app/JourneyRequestPage.qml:177
+#: app/JourneyRequestPage.qml:178
 #, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival"
 msgstr "到达信息"
 
-#: app/JourneyRequestPage.qml:183
-#, kde-format
-msgctxt "filter journeys by mode of transportation etc."
-msgid "Filter"
-msgstr ""
-
-#: app/JourneyRequestPage.qml:200
+#: app/JourneyRequestPage.qml:191
 #, kde-format
 msgctxt "train or bus departure"
 msgid "Departure time"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:200
+#: app/JourneyRequestPage.qml:191
 #, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival time"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:211
+#: app/JourneyRequestPage.qml:202
+#, kde-format
+msgctxt "filter journeys by mode of transportation etc."
+msgid "Filter"
+msgstr ""
+
+#: app/JourneyRequestPage.qml:219
 #, kde-format
 msgid "Search Journey"
 msgstr ""
