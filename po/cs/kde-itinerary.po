@@ -2116,11 +2116,10 @@ msgid "Open wheelmap.org"
 msgstr "Otevřít wheelmap.org"
 
 #: app/JourneyFilterPage.qml:15
-#, fuzzy, kde-format
-#| msgid "Select Journey"
+#, kde-format
 msgctxt "@title"
 msgid "Filter Journeys"
-msgstr "Vyberte výlet"
+msgstr ""
 
 #: app/JourneyFilterPage.qml:59
 #, kde-format
@@ -2480,12 +2479,10 @@ msgid "%1 / %2"
 msgstr "%1 / %2"
 
 #: app/localizer.cpp:283
-#, fuzzy, kde-format
-#| msgctxt "precipitation"
-#| msgid "%1 mm"
+#, kde-format
 msgctxt "altitude in meter"
 msgid "%1m"
-msgstr "%1 mm"
+msgstr ""
 
 #: app/LocationInfoDelegate.qml:51
 #, kde-format
@@ -4659,11 +4656,10 @@ msgid "A trip must be selected."
 msgstr ""
 
 #: app/TripGroupSelectorDialog.qml:14
-#, fuzzy, kde-format
-#| msgid "Add to Trip"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Add Journey to Trip"
-msgstr "Přidat do výletu"
+msgstr ""
 
 #: app/TripGroupsPage.qml:15
 #, kde-format

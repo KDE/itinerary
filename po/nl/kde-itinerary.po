@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-27 00:43+0000\n"
-"PO-Revision-Date: 2025-10-25 14:29+0200\n"
+"PO-Revision-Date: 2025-10-27 10:38+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -2116,11 +2116,10 @@ msgid "Open wheelmap.org"
 msgstr "wheelmap.org openen"
 
 #: app/JourneyFilterPage.qml:15
-#, fuzzy, kde-format
-#| msgid "Select Journey"
+#, kde-format
 msgctxt "@title"
 msgid "Filter Journeys"
-msgstr "Reis selecteren"
+msgstr "Reizen filteren"
 
 #: app/JourneyFilterPage.qml:59
 #, kde-format
@@ -2248,7 +2247,7 @@ msgstr "Aankomsttijd"
 #, kde-format
 msgctxt "filter journeys by mode of transportation etc."
 msgid "Filter"
-msgstr ""
+msgstr "Filteren"
 
 #: app/JourneyRequestPage.qml:219
 #, kde-format
@@ -4665,7 +4664,7 @@ msgstr "Kaarten downloaden"
 #: app/TripGroupPage.qml:769
 #, kde-format
 msgid "Delete trip"
-msgstr "Reis verwijderen"
+msgstr "Trip verwijderen"
 
 #: app/TripGroupPage.qml:794
 #, kde-format
@@ -4706,17 +4705,16 @@ msgid "A trip must be selected."
 msgstr "Er moet een reis geselecteerd worden."
 
 #: app/TripGroupSelectorDialog.qml:14
-#, fuzzy, kde-format
-#| msgid "Add to Trip"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Add Journey to Trip"
-msgstr "Aan reis toevoegen"
+msgstr "Uitstapje aan reis toevoegen"
 
 #: app/TripGroupsPage.qml:15
 #, kde-format
 msgctxt "@title:window"
 msgid "Trips"
-msgstr "Trips"
+msgstr "Reizen"
 
 #: app/TripGroupsPage.qml:67
 #, kde-format
