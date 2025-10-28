@@ -111,10 +111,14 @@ QVariant TicketTokenModel::data(const QModelIndex &index, int role) const
     switch (role) {
     case Qt::DisplayRole: {
         const auto ticket = JsonLd::convert<Reservation>(res).reservedTicket().value<Ticket>();
-        if (!ticket.name().isEmpty()) {
-            return i18n("%1 (%2)", m_personNames.at(index.row()), ticket.name());
+        if (index.row() < m_personNames.size()) {
+            if (!ticket.name().isEmpty()) {
+                return i18n("%1 (%2)", m_personNames.at(index.row()), ticket.name());
+            }
+            return m_personNames.at(index.row());
+        } else {
+            return ticket.name();
         }
-        return m_personNames.at(index.row());
     }
     case ReservationRole:
         return res;
