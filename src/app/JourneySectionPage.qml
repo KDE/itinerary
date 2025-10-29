@@ -134,7 +134,7 @@ Kirigami.Page {
 
         Kirigami.LinkButton {
             text: i18nc("@action:button", "Show More…")
-            visible: notesLabel.implicitHeight > notesLabel.height
+            visible: notesLabel.implicitHeight > notesLabel.height || moreNotesSheet.hasContent
             onClicked: {
                 moreNotesSheet.open();
             }
