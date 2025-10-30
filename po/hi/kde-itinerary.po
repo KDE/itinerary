@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-27 00:43+0000\n"
+"POT-Creation-Date: 2025-10-30 00:43+0000\n"
 "PO-Revision-Date: 2024-12-15 19:32+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
@@ -441,7 +441,7 @@ msgctxt "Boat arrival"
 msgid "Arrival Time"
 msgstr "आगमन समय"
 
-#: app/BoatEditor.qml:191 app/BusEditor.qml:255 app/TrainEditor.qml:263
+#: app/BoatEditor.qml:191 app/BusEditor.qml:255 app/TrainEditor.qml:273
 #, kde-format
 msgid "Arrival time has to be after the departure time."
 msgstr "आगमन का समय प्रस्थान के समय के बाद होना चाहिए।"
@@ -487,7 +487,7 @@ msgid "Alternatives"
 msgstr "वैकल्पिक"
 
 #: app/BoatPage.qml:150 app/BusPage.qml:238 app/JourneySectionPage.qml:27
-#: app/TrainPage.qml:352
+#: app/TrainPage.qml:353
 #, kde-format
 msgid "Journey Details"
 msgstr "यात्रा विवरण"
@@ -696,7 +696,7 @@ msgctxt "bus arrival"
 msgid "Arrival"
 msgstr "आगमन"
 
-#: app/BusEditor.qml:244 app/TrainEditor.qml:252
+#: app/BusEditor.qml:244 app/TrainEditor.qml:262
 #, fuzzy, kde-format
 #| msgid "Arrival Time"
 msgctxt "Train arrival"
@@ -1493,6 +1493,12 @@ msgstr "समन्वय हेतु पता"
 msgid "Coordinate to address"
 msgstr "संबोधित करने के लिए समन्वय करें"
 
+#: app/FormPlaceEditorDelegate.qml:247
+#, fuzzy, kde-format
+#| msgid "Address to coordinate"
+msgid "Remove coordinate"
+msgstr "समन्वय हेतु पता"
+
 #: app/FormPlatformDelegate.qml:19
 #, kde-format
 msgid "Platform"
@@ -1558,7 +1564,7 @@ msgstr "अद्यतन के लिए जाँच"
 msgid "Save As…"
 msgstr ""
 
-#: app/gpxexport.cpp:33 app/main.cpp:207 app/Main.qml:20 app/Main.qml:74
+#: app/gpxexport.cpp:33 app/main.cpp:208 app/Main.qml:20 app/Main.qml:74
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "केडीई यात्रा कार्यक्रम"
@@ -2664,23 +2670,23 @@ msgstr "प्रकार एम"
 msgid "Type N"
 msgstr "प्रकार एन"
 
-#: app/main.cpp:215
+#: app/main.cpp:216
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "डिजिटल यात्रा सहायक"
 
-#: app/main.cpp:216
+#: app/main.cpp:217
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "कॉपीराइट © केडीई समुदाय"
 
-#: app/main.cpp:219
+#: app/main.cpp:220
 #, kde-format
 msgctxt "@info:credit"
 msgid "Wikidata"
 msgstr ""
 
-#: app/main.cpp:219
+#: app/main.cpp:220
 #, kde-format
 msgctxt "@info:credit"
 msgid ""
@@ -2688,162 +2694,162 @@ msgid ""
 "plug types."
 msgstr ""
 
-#: app/main.cpp:220
+#: app/main.cpp:221
 #, fuzzy, kde-format
 #| msgid "Open Map"
 msgctxt "@info:credit"
 msgid "OpenStreetMap"
 msgstr "मानचित्र खोलें"
 
-#: app/main.cpp:220
+#: app/main.cpp:221
 #, kde-format
 msgctxt "@info:credit"
 msgid "Provides both indoor and outdoor maps. ©OpenStreetMap contributors"
 msgstr ""
 
-#: app/main.cpp:221
+#: app/main.cpp:222
 #, kde-format
 msgctxt "@info:credit"
 msgid "OpenSSL"
 msgstr ""
 
-#: app/main.cpp:221
+#: app/main.cpp:222
 #, kde-format
 msgctxt "@info:credit"
 msgid "Secure network interaction with TLS. © 1998-2018 The OpenSSL Project"
 msgstr ""
 
-#: app/main.cpp:222
+#: app/main.cpp:223
 #, kde-format
 msgctxt "@info:credit"
 msgid "ZXing"
 msgstr ""
 
-#: app/main.cpp:222
+#: app/main.cpp:223
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code scanning. © 2016 ZXing Authors, © 2016 Nu-book Inc."
 msgstr ""
 
-#: app/main.cpp:223
+#: app/main.cpp:224
 #, kde-format
 msgctxt "@info:credit"
 msgid "Poppler"
 msgstr ""
 
-#: app/main.cpp:223
+#: app/main.cpp:224
 #, kde-format
 msgctxt "@info:credit"
 msgid "PDF parsing"
 msgstr ""
 
-#: app/main.cpp:226
+#: app/main.cpp:227
 #, fuzzy, kde-format
 #| msgid "Type"
 msgctxt "@info:credit"
 msgid "FreeType"
 msgstr "प्रकार"
 
-#: app/main.cpp:226
+#: app/main.cpp:227
 #, kde-format
 msgctxt "@info:credit"
 msgid ""
 "Copyright (C) 2006-2020 by David Turner, Robert Wilhelm, and Werner Lemberg."
 msgstr ""
 
-#: app/main.cpp:227
+#: app/main.cpp:228
 #, kde-format
 msgctxt "@info:credit"
 msgid "libintl lite"
 msgstr ""
 
-#: app/main.cpp:227
+#: app/main.cpp:228
 #, fuzzy, kde-format
 #| msgid "More information"
 msgctxt "@info:credit"
 msgid "Internalisation"
 msgstr "अधिक जानकारी"
 
-#: app/main.cpp:230
+#: app/main.cpp:231
 #, kde-format
 msgctxt "@info:credit"
 msgid "libqrencode"
 msgstr ""
 
-#: app/main.cpp:230
+#: app/main.cpp:231
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code Generation. © 2006-2018 Kentaro Fukuchi"
 msgstr ""
 
-#: app/main.cpp:231
+#: app/main.cpp:232
 #, kde-format
 msgctxt "@info:credit"
 msgid "libical"
 msgstr ""
 
-#: app/main.cpp:231
+#: app/main.cpp:232
 #, kde-format
 msgctxt "@info:credit"
 msgid "© The libical developers"
 msgstr ""
 
-#: app/main.cpp:232
+#: app/main.cpp:233
 #, kde-format
 msgctxt "@info:credit"
 msgid "libxml2"
 msgstr ""
 
-#: app/main.cpp:232
+#: app/main.cpp:233
 #, kde-format
 msgctxt "@info:credit"
 msgid "Copyright (C) 1998-2012 Daniel Veillard"
 msgstr ""
 
-#: app/main.cpp:235
+#: app/main.cpp:236
 #, kde-format
 msgctxt "@info:credit"
 msgid "libQuotient"
 msgstr ""
 
-#: app/main.cpp:235
+#: app/main.cpp:236
 #, fuzzy, kde-format
 #| msgid "Matrix Integration"
 msgctxt "@info:credit"
 msgid "Matrix integration."
 msgstr "मैट्रिक्स एकीकरण"
 
-#: app/main.cpp:236
+#: app/main.cpp:237
 #, kde-format
 msgctxt "@info:credit"
 msgid "QtKeychain"
 msgstr ""
 
-#: app/main.cpp:236
+#: app/main.cpp:237
 #, kde-format
 msgctxt "@info:credit"
 msgid "Secure password storage."
 msgstr ""
 
-#: app/main.cpp:237
+#: app/main.cpp:238
 #, kde-format
 msgctxt "@info:credit"
 msgid "Olm"
 msgstr ""
 
-#: app/main.cpp:237
+#: app/main.cpp:238
 #, kde-format
 msgctxt "@info:credit"
 msgid "Matrix crypto library."
 msgstr ""
 
-#: app/main.cpp:245
+#: app/main.cpp:246
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "दिए गए पेज पर यात्रा कार्यक्रम खोलें"
 
-#: app/main.cpp:250
+#: app/main.cpp:251
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
@@ -4179,7 +4185,7 @@ msgstr "उपस्थित व्यक्ति %1"
 msgid "Traveler %1"
 msgstr "यात्री %1"
 
-#: app/tickettokenmodel.cpp:115
+#: app/tickettokenmodel.cpp:116
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
@@ -4278,7 +4284,7 @@ msgctxt "@title"
 msgid "Edit Train Reservation"
 msgstr "ट्रेन आरक्षण संपादित करें"
 
-#: app/TrainEditor.qml:88 app/TrainEditor.qml:235
+#: app/TrainEditor.qml:88 app/TrainEditor.qml:245
 #, fuzzy, kde-format
 #| msgid "Change departure station"
 msgctxt "train departure"
@@ -4292,7 +4298,7 @@ msgctxt "train departure"
 msgid "Change departure station"
 msgstr "प्रस्थान स्टेशन बदलें"
 
-#: app/TrainEditor.qml:104 app/TrainEditor.qml:328
+#: app/TrainEditor.qml:104 app/TrainEditor.qml:348
 #, fuzzy, kde-format
 #| msgid "Change arrival station"
 msgctxt "train arrival"
@@ -4347,33 +4353,40 @@ msgstr "स्टेशन"
 msgid "Departure station must not be empty."
 msgstr "प्रस्थान टर्मिनल खाली नहीं होना चाहिए."
 
-#: app/TrainEditor.qml:197 app/TrainEditor.qml:284
+#: app/TrainEditor.qml:197 app/TrainEditor.qml:294
 #, fuzzy, kde-format
 #| msgid "Platform"
 msgctxt "Train station platform"
 msgid "Platform"
 msgstr "प्लैटफ़ॉर्म"
 
-#: app/TrainEditor.qml:218 app/TrainEditor.qml:310 app/TrainPage.qml:163
+#: app/TrainEditor.qml:208 app/TrainEditor.qml:305
+#, kde-format
+msgid ""
+"Specifying the departure and arrival location helps Itinerary to find "
+"updated information for the train this reservation is valid for."
+msgstr ""
+
+#: app/TrainEditor.qml:228 app/TrainEditor.qml:330 app/TrainPage.qml:163
 #: app/TrainPage.qml:247
 #, kde-format
 msgctxt "train station"
 msgid "Station"
 msgstr "स्टेशन"
 
-#: app/TrainEditor.qml:226 app/TrainEditor.qml:319
+#: app/TrainEditor.qml:236 app/TrainEditor.qml:339
 #, kde-format
 msgctxt "train platform"
 msgid "Platform"
 msgstr "प्लैटफ़ॉर्म"
 
-#: app/TrainEditor.qml:243
+#: app/TrainEditor.qml:253
 #, kde-format
 msgctxt "train arrival"
 msgid "Arrival"
 msgstr "आगमन"
 
-#: app/TrainEditor.qml:273
+#: app/TrainEditor.qml:283
 #, fuzzy, kde-format
 #| msgctxt "bus station"
 #| msgid "Station"
@@ -4381,25 +4394,25 @@ msgctxt "Train station"
 msgid "Station Name"
 msgstr "स्टेशन"
 
-#: app/TrainEditor.qml:276
+#: app/TrainEditor.qml:286
 #, fuzzy, kde-format
 #| msgid "Arrival terminal must not be empty."
 msgid "Arrival station must not be empty."
 msgstr "आगमन टर्मिनल खाली नहीं होना चाहिए."
 
-#: app/TrainEditor.qml:338 app/TrainEditor.qml:350 app/TrainPage.qml:290
+#: app/TrainEditor.qml:358 app/TrainEditor.qml:370 app/TrainPage.qml:290
 #, kde-format
 msgctxt "Train seat"
 msgid "Seat"
 msgstr "सीट"
 
-#: app/TrainEditor.qml:344
+#: app/TrainEditor.qml:364
 #, kde-format
 msgctxt "carriage on a train"
 msgid "Coach"
 msgstr "प्रशिक्षक"
 
-#: app/TrainEditor.qml:356
+#: app/TrainEditor.qml:376
 #, kde-format
 msgctxt "seating class on a train"
 msgid "Class"
@@ -4443,12 +4456,12 @@ msgctxt "@action:button"
 msgid "Add to Traewelling"
 msgstr "Traewelling में जोड़ें"
 
-#: app/TrainPage.qml:383
+#: app/TrainPage.qml:384
 #, kde-format
 msgid "Added to Traewelling"
 msgstr "Traewelling में जोड़ा गया"
 
-#: app/TrainPage.qml:383
+#: app/TrainPage.qml:384
 #, kde-format
 msgid "Failed to add to Traewelling"
 msgstr "Traewelling में जोड़ने में विफल"

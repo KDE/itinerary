@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-27 00:43+0000\n"
+"POT-Creation-Date: 2025-10-30 00:43+0000\n"
 "PO-Revision-Date: 2025-10-13 20:48+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -433,7 +433,7 @@ msgctxt "Boat arrival"
 msgid "Arrival Time"
 msgstr "Tuloaika"
 
-#: app/BoatEditor.qml:191 app/BusEditor.qml:255 app/TrainEditor.qml:263
+#: app/BoatEditor.qml:191 app/BusEditor.qml:255 app/TrainEditor.qml:273
 #, kde-format
 msgid "Arrival time has to be after the departure time."
 msgstr "Tuloajan on oltava lähtöajan jälkeen."
@@ -478,7 +478,7 @@ msgid "Alternatives"
 msgstr "Vaihtoehdot"
 
 #: app/BoatPage.qml:150 app/BusPage.qml:238 app/JourneySectionPage.qml:27
-#: app/TrainPage.qml:352
+#: app/TrainPage.qml:353
 #, kde-format
 msgid "Journey Details"
 msgstr "Matkatiedot"
@@ -667,7 +667,7 @@ msgctxt "bus arrival"
 msgid "Arrival"
 msgstr "Saapuminen"
 
-#: app/BusEditor.qml:244 app/TrainEditor.qml:252
+#: app/BusEditor.qml:244 app/TrainEditor.qml:262
 #, kde-format
 msgctxt "Train arrival"
 msgid "Arrival Time"
@@ -1456,6 +1456,12 @@ msgstr "Osoitteesta koordinaattiin"
 msgid "Coordinate to address"
 msgstr "Koordinaatista osoitteeseen"
 
+#: app/FormPlaceEditorDelegate.qml:247
+#, fuzzy, kde-format
+#| msgid "Pick coordinate"
+msgid "Remove coordinate"
+msgstr "Poimi koordinaatti"
+
 #: app/FormPlatformDelegate.qml:19
 #, kde-format
 msgid "Platform"
@@ -1520,7 +1526,7 @@ msgstr "Tarkista päivitykset"
 msgid "Save As…"
 msgstr "Tallenna nimellä…"
 
-#: app/gpxexport.cpp:33 app/main.cpp:207 app/Main.qml:20 app/Main.qml:74
+#: app/gpxexport.cpp:33 app/main.cpp:208 app/Main.qml:20 app/Main.qml:74
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -2597,23 +2603,23 @@ msgstr "Tyyppi M"
 msgid "Type N"
 msgstr "Tyyppi N"
 
-#: app/main.cpp:215
+#: app/main.cpp:216
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Digitaalinen matka-avustaja"
 
-#: app/main.cpp:216
+#: app/main.cpp:217
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "Tekijänoikeudet © KDE-yhteisö"
 
-#: app/main.cpp:219
+#: app/main.cpp:220
 #, kde-format
 msgctxt "@info:credit"
 msgid "Wikidata"
 msgstr "Wikidata"
 
-#: app/main.cpp:219
+#: app/main.cpp:220
 #, kde-format
 msgctxt "@info:credit"
 msgid ""
@@ -2623,61 +2629,61 @@ msgstr ""
 "Tarjoaa metatietoa kuten rautatieasemien nimet, kummalla puolella ajetaan "
 "tai virtapistokkeen tyypit."
 
-#: app/main.cpp:220
+#: app/main.cpp:221
 #, kde-format
 msgctxt "@info:credit"
 msgid "OpenStreetMap"
 msgstr "OpenStreetMap"
 
-#: app/main.cpp:220
+#: app/main.cpp:221
 #, kde-format
 msgctxt "@info:credit"
 msgid "Provides both indoor and outdoor maps. ©OpenStreetMap contributors"
 msgstr "Tarjoaa sekä sisä- että ulkotilakartat. © OpenStreetMapin avustajat"
 
-#: app/main.cpp:221
+#: app/main.cpp:222
 #, kde-format
 msgctxt "@info:credit"
 msgid "OpenSSL"
 msgstr "OpenSSL"
 
-#: app/main.cpp:221
+#: app/main.cpp:222
 #, kde-format
 msgctxt "@info:credit"
 msgid "Secure network interaction with TLS. © 1998-2018 The OpenSSL Project"
 msgstr "Salattu verkkoviestintä TLS:llä. © 1998–2018 OpenSSL-projekti"
 
-#: app/main.cpp:222
+#: app/main.cpp:223
 #, kde-format
 msgctxt "@info:credit"
 msgid "ZXing"
 msgstr "ZXing"
 
-#: app/main.cpp:222
+#: app/main.cpp:223
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code scanning. © 2016 ZXing Authors, © 2016 Nu-book Inc."
 msgstr "QR-koodinluku. © 2016 ZXingin tekijät, © 2016 Nu-book Inc."
 
-#: app/main.cpp:223
+#: app/main.cpp:224
 #, kde-format
 msgctxt "@info:credit"
 msgid "Poppler"
 msgstr "Poppler"
 
-#: app/main.cpp:223
+#: app/main.cpp:224
 #, kde-format
 msgctxt "@info:credit"
 msgid "PDF parsing"
 msgstr "PDF-jäsennys"
 
-#: app/main.cpp:226
+#: app/main.cpp:227
 #, kde-format
 msgctxt "@info:credit"
 msgid "FreeType"
 msgstr "FreeType"
 
-#: app/main.cpp:226
+#: app/main.cpp:227
 #, kde-format
 msgctxt "@info:credit"
 msgid ""
@@ -2685,97 +2691,97 @@ msgid ""
 msgstr ""
 "Tekijänoikeudet © 2006–2020 David Turner, Robert Wilhelm ja Werner Lemberg."
 
-#: app/main.cpp:227
+#: app/main.cpp:228
 #, kde-format
 msgctxt "@info:credit"
 msgid "libintl lite"
 msgstr "libintl lite"
 
-#: app/main.cpp:227
+#: app/main.cpp:228
 #, kde-format
 msgctxt "@info:credit"
 msgid "Internalisation"
 msgstr "Kansainvälistys"
 
-#: app/main.cpp:230
+#: app/main.cpp:231
 #, kde-format
 msgctxt "@info:credit"
 msgid "libqrencode"
 msgstr "libqrencode"
 
-#: app/main.cpp:230
+#: app/main.cpp:231
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code Generation. © 2006-2018 Kentaro Fukuchi"
 msgstr "QR-koodin luonti. © 2006–2018 Kentaro Fukuchi"
 
-#: app/main.cpp:231
+#: app/main.cpp:232
 #, kde-format
 msgctxt "@info:credit"
 msgid "libical"
 msgstr "libical"
 
-#: app/main.cpp:231
+#: app/main.cpp:232
 #, kde-format
 msgctxt "@info:credit"
 msgid "© The libical developers"
 msgstr "© libicalin kehittäjät"
 
-#: app/main.cpp:232
+#: app/main.cpp:233
 #, kde-format
 msgctxt "@info:credit"
 msgid "libxml2"
 msgstr "libxml2"
 
-#: app/main.cpp:232
+#: app/main.cpp:233
 #, kde-format
 msgctxt "@info:credit"
 msgid "Copyright (C) 1998-2012 Daniel Veillard"
 msgstr "Tekijänoikeudet © 1998–2012 Daniel Veillard"
 
-#: app/main.cpp:235
+#: app/main.cpp:236
 #, kde-format
 msgctxt "@info:credit"
 msgid "libQuotient"
 msgstr "libQuotient"
 
-#: app/main.cpp:235
+#: app/main.cpp:236
 #, kde-format
 msgctxt "@info:credit"
 msgid "Matrix integration."
 msgstr "Matrix-eheytys"
 
-#: app/main.cpp:236
+#: app/main.cpp:237
 #, kde-format
 msgctxt "@info:credit"
 msgid "QtKeychain"
 msgstr "QtKeychain"
 
-#: app/main.cpp:236
+#: app/main.cpp:237
 #, kde-format
 msgctxt "@info:credit"
 msgid "Secure password storage."
 msgstr "Salattu salasanatalletustila."
 
-#: app/main.cpp:237
+#: app/main.cpp:238
 #, kde-format
 msgctxt "@info:credit"
 msgid "Olm"
 msgstr "Olm"
 
-#: app/main.cpp:237
+#: app/main.cpp:238
 #, kde-format
 msgctxt "@info:credit"
 msgid "Matrix crypto library."
 msgstr "Matrixin salauskirjasto."
 
-#: app/main.cpp:245
+#: app/main.cpp:246
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Avaa Itinerary annetulle sivulle"
 
-#: app/main.cpp:250
+#: app/main.cpp:251
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
@@ -4106,7 +4112,7 @@ msgstr "Osallistuja %1"
 msgid "Traveler %1"
 msgstr "Matkustaja %1"
 
-#: app/tickettokenmodel.cpp:115
+#: app/tickettokenmodel.cpp:116
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
@@ -4201,7 +4207,7 @@ msgctxt "@title"
 msgid "Edit Train Reservation"
 msgstr "Muokkaa junavarausta"
 
-#: app/TrainEditor.qml:88 app/TrainEditor.qml:235
+#: app/TrainEditor.qml:88 app/TrainEditor.qml:245
 #, kde-format
 msgctxt "train departure"
 msgid "Change Departure Station"
@@ -4213,7 +4219,7 @@ msgctxt "train departure"
 msgid "Change departure station"
 msgstr "Vaihda lähtöasema"
 
-#: app/TrainEditor.qml:104 app/TrainEditor.qml:328
+#: app/TrainEditor.qml:104 app/TrainEditor.qml:348
 #, kde-format
 msgctxt "train arrival"
 msgid "Change Arrival Station"
@@ -4260,55 +4266,62 @@ msgstr "Aseman nimi"
 msgid "Departure station must not be empty."
 msgstr "Lähtöasema ei voi olla tyhjä."
 
-#: app/TrainEditor.qml:197 app/TrainEditor.qml:284
+#: app/TrainEditor.qml:197 app/TrainEditor.qml:294
 #, kde-format
 msgctxt "Train station platform"
 msgid "Platform"
 msgstr "Laituri"
 
-#: app/TrainEditor.qml:218 app/TrainEditor.qml:310 app/TrainPage.qml:163
+#: app/TrainEditor.qml:208 app/TrainEditor.qml:305
+#, kde-format
+msgid ""
+"Specifying the departure and arrival location helps Itinerary to find "
+"updated information for the train this reservation is valid for."
+msgstr ""
+
+#: app/TrainEditor.qml:228 app/TrainEditor.qml:330 app/TrainPage.qml:163
 #: app/TrainPage.qml:247
 #, kde-format
 msgctxt "train station"
 msgid "Station"
 msgstr "Pysäkki"
 
-#: app/TrainEditor.qml:226 app/TrainEditor.qml:319
+#: app/TrainEditor.qml:236 app/TrainEditor.qml:339
 #, kde-format
 msgctxt "train platform"
 msgid "Platform"
 msgstr "Laituri"
 
-#: app/TrainEditor.qml:243
+#: app/TrainEditor.qml:253
 #, kde-format
 msgctxt "train arrival"
 msgid "Arrival"
 msgstr "Saapuminen"
 
-#: app/TrainEditor.qml:273
+#: app/TrainEditor.qml:283
 #, kde-format
 msgctxt "Train station"
 msgid "Station Name"
 msgstr "Aseman nimi"
 
-#: app/TrainEditor.qml:276
+#: app/TrainEditor.qml:286
 #, kde-format
 msgid "Arrival station must not be empty."
 msgstr "Saapumisasema ei voi olla tyhjä."
 
-#: app/TrainEditor.qml:338 app/TrainEditor.qml:350 app/TrainPage.qml:290
+#: app/TrainEditor.qml:358 app/TrainEditor.qml:370 app/TrainPage.qml:290
 #, kde-format
 msgctxt "Train seat"
 msgid "Seat"
 msgstr "Paikka"
 
-#: app/TrainEditor.qml:344
+#: app/TrainEditor.qml:364
 #, kde-format
 msgctxt "carriage on a train"
 msgid "Coach"
 msgstr "Vaunu"
 
-#: app/TrainEditor.qml:356
+#: app/TrainEditor.qml:376
 #, kde-format
 msgctxt "seating class on a train"
 msgid "Class"
@@ -4352,12 +4365,12 @@ msgctxt "@action:button"
 msgid "Add to Traewelling"
 msgstr "Lisää Traewellingiin"
 
-#: app/TrainPage.qml:383
+#: app/TrainPage.qml:384
 #, kde-format
 msgid "Added to Traewelling"
 msgstr "Lisätty Traewellingiin"
 
-#: app/TrainPage.qml:383
+#: app/TrainPage.qml:384
 #, kde-format
 msgid "Failed to add to Traewelling"
 msgstr "Lisääminen Traewellingiin epäonnistui"
@@ -5457,9 +5470,6 @@ msgstr "%1%2 portilta %3 portille %4 %5"
 
 #~ msgid "Email:"
 #~ msgstr "Sähköposti:"
-
-#~ msgid "Pick coordinate"
-#~ msgstr "Poimi koordinaatti"
 
 #~ msgid "Reference:"
 #~ msgstr "Viite:"
