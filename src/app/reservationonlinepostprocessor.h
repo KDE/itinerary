@@ -26,7 +26,7 @@ public:
     ReservationOnlinePostprocessor(ReservationManager *reservationMgr,
                                    LiveDataManager *liveDataMgr,
                                    Settings *settings,
-                                   const std::function<QNetworkAccessManager *()> &namFactory);
+                                   std::function<QNetworkAccessManager *()> namFactory);
 
 private:
     QCoro::Task<> handleReservationChange(const QString id);
@@ -51,5 +51,5 @@ private:
     ReservationManager *m_resMgr = nullptr;
     LiveDataManager *m_liveDataMgr = nullptr;
     Settings *m_settings = nullptr;
-    const std::function<QNetworkAccessManager *()> &m_namFactory;
+    std::function<QNetworkAccessManager *()> m_namFactory;
 };

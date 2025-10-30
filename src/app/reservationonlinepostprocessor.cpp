@@ -42,12 +42,12 @@ ReservationOnlinePostprocessor::ReservationOnlinePostprocessor(
     ReservationManager *reservationMgr,
     LiveDataManager *liveDataMgr,
     Settings *settings,
-    const std::function<QNetworkAccessManager *()> &namFactory)
+    std::function<QNetworkAccessManager *()> namFactory)
     : QObject()
     , m_resMgr(reservationMgr)
     , m_liveDataMgr(liveDataMgr)
     , m_settings(settings)
-    , m_namFactory(namFactory)
+    , m_namFactory(std::move(namFactory))
 {
     if (QNetworkInformation::loadDefaultBackend()) {
         connect(QNetworkInformation::instance(),
