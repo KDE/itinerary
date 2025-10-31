@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-30 00:43+0000\n"
-"PO-Revision-Date: 2025-10-26 06:57-0300\n"
-"Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
+"PO-Revision-Date: 2025-10-30 01:04-0300\n"
+"Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -1462,10 +1462,9 @@ msgid "Coordinate to address"
 msgstr "Coordenada para endereço"
 
 #: app/FormPlaceEditorDelegate.qml:247
-#, fuzzy, kde-format
-#| msgid "Address to coordinate"
+#, kde-format
 msgid "Remove coordinate"
-msgstr "Endereço para coordenada"
+msgstr "Remover coordenada"
 
 #: app/FormPlatformDelegate.qml:19
 #, kde-format
@@ -4287,6 +4286,8 @@ msgid ""
 "Specifying the departure and arrival location helps Itinerary to find "
 "updated information for the train this reservation is valid for."
 msgstr ""
+"Especificar o local de partida e de chegada ajuda o Itinerary a encontrar "
+"informações atualizadas sobre os trens para os quais essa reserva é válida."
 
 #: app/TrainEditor.qml:228 app/TrainEditor.qml:330 app/TrainPage.qml:163
 #: app/TrainPage.qml:247

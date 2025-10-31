@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-30 00:43+0000\n"
-"PO-Revision-Date: 2025-10-27 10:38+0100\n"
+"PO-Revision-Date: 2025-10-30 13:34+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -1457,10 +1457,9 @@ msgid "Coordinate to address"
 msgstr "Coördinaat naar adres"
 
 #: app/FormPlaceEditorDelegate.qml:247
-#, fuzzy, kde-format
-#| msgid "Pick coordinate"
+#, kde-format
 msgid "Remove coordinate"
-msgstr "Coördinaat kiezen"
+msgstr "Coördinaat verwijderen"
 
 #: app/FormPlatformDelegate.qml:19
 #, kde-format
@@ -4287,6 +4286,8 @@ msgid ""
 "Specifying the departure and arrival location helps Itinerary to find "
 "updated information for the train this reservation is valid for."
 msgstr ""
+"De vertrek en aankomstlocatie specificeren helpt Itinerary om bijgewerkte "
+"informatie te vinden voor de trein waarvoor deze reservering geldig is."
 
 #: app/TrainEditor.qml:228 app/TrainEditor.qml:330 app/TrainPage.qml:163
 #: app/TrainPage.qml:247

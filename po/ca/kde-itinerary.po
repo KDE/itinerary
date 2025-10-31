@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-30 00:43+0000\n"
-"PO-Revision-Date: 2025-10-26 08:47+0100\n"
+"PO-Revision-Date: 2025-10-30 13:21+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.08.2\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1455,13 +1455,12 @@ msgstr "Coordenades de l'adreça"
 #: app/FormPlaceEditorDelegate.qml:237
 #, kde-format
 msgid "Coordinate to address"
-msgstr "Adreça de les coordenades"
+msgstr "Coordenades de l'adreça"
 
 #: app/FormPlaceEditorDelegate.qml:247
-#, fuzzy, kde-format
-#| msgid "Address to coordinate"
+#, kde-format
 msgid "Remove coordinate"
-msgstr "Coordenades de l'adreça"
+msgstr "Elimina les coordenades"
 
 #: app/FormPlatformDelegate.qml:19
 #, kde-format
@@ -4297,6 +4296,8 @@ msgid ""
 "Specifying the departure and arrival location helps Itinerary to find "
 "updated information for the train this reservation is valid for."
 msgstr ""
+"Especificar la ubicació de sortida i arribada ajuda a l'Itinerary a trobar "
+"informació actualitzada del tren per al qual és vàlida aquesta reserva."
 
 #: app/TrainEditor.qml:228 app/TrainEditor.qml:330 app/TrainPage.qml:163
 #: app/TrainPage.qml:247

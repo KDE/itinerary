@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-30 00:43+0000\n"
-"PO-Revision-Date: 2025-10-26 08:43+0200\n"
+"PO-Revision-Date: 2025-10-30 08:41+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1461,10 +1461,9 @@ msgid "Coordinate to address"
 msgstr "נק׳ ציון לכתובת"
 
 #: app/FormPlaceEditorDelegate.qml:247
-#, fuzzy, kde-format
-#| msgid "Address to coordinate"
+#, kde-format
 msgid "Remove coordinate"
-msgstr "כתובת לנק׳ ציון"
+msgstr "הסרת נק׳ ציון"
 
 #: app/FormPlatformDelegate.qml:19
 #, kde-format
@@ -4252,6 +4251,8 @@ msgid ""
 "Specifying the departure and arrival location helps Itinerary to find "
 "updated information for the train this reservation is valid for."
 msgstr ""
+"ציון מקום היציאה וההגעה מסייע ל־Itinerary למצוא פרטים עדכניים על הרכבת "
+"שההזמנה הזאת תקפה עבורה."
 
 #: app/TrainEditor.qml:228 app/TrainEditor.qml:330 app/TrainPage.qml:163
 #: app/TrainPage.qml:247

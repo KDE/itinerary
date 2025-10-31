@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-30 00:43+0000\n"
-"PO-Revision-Date: 2025-10-26 04:21+0100\n"
+"PO-Revision-Date: 2025-10-30 05:27+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -1456,10 +1456,9 @@ msgid "Coordinate to address"
 msgstr "კოორდინატებიდან მისამართის პოვნა"
 
 #: app/FormPlaceEditorDelegate.qml:247
-#, fuzzy, kde-format
-#| msgid "Pick coordinate"
+#, kde-format
 msgid "Remove coordinate"
-msgstr "აირჩიეთ კოორდინატი"
+msgstr "კოორდინატის წაშლა"
 
 #: app/FormPlatformDelegate.qml:19
 #, kde-format
@@ -4265,6 +4264,8 @@ msgid ""
 "Specifying the departure and arrival location helps Itinerary to find "
 "updated information for the train this reservation is valid for."
 msgstr ""
+"გამგზავრებისა და ჩასვლის ადგილების მითითება ეხმარება Itinerary-ს, იპოვოს "
+"განახლებული ინფორმაცია მატარებელზე, რომელსაც ეს ჯავშანი ეკუთვნის."
 
 #: app/TrainEditor.qml:228 app/TrainEditor.qml:330 app/TrainPage.qml:163
 #: app/TrainPage.qml:247

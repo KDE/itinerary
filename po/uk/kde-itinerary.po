@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-30 00:43+0000\n"
-"PO-Revision-Date: 2025-10-26 11:57+0200\n"
+"PO-Revision-Date: 2025-10-30 13:46+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -1464,10 +1464,9 @@ msgid "Coordinate to address"
 msgstr "Координати з адреси"
 
 #: app/FormPlaceEditorDelegate.qml:247
-#, fuzzy, kde-format
-#| msgid "Pick coordinate"
+#, kde-format
 msgid "Remove coordinate"
-msgstr "Вибрати координату"
+msgstr "Вилучити координати"
 
 #: app/FormPlatformDelegate.qml:19
 #, kde-format
@@ -4301,6 +4300,8 @@ msgid ""
 "Specifying the departure and arrival location helps Itinerary to find "
 "updated information for the train this reservation is valid for."
 msgstr ""
+"Визначення місць відправлення і прибуття допомагає Itinerary шукати оновлені "
+"відомості щодо потяга, для якого є чинним це резервування."
 
 #: app/TrainEditor.qml:228 app/TrainEditor.qml:330 app/TrainPage.qml:163
 #: app/TrainPage.qml:247

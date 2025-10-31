@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-30 00:43+0000\n"
-"PO-Revision-Date: 2025-10-25 16:53+0400\n"
+"PO-Revision-Date: 2025-10-30 10:11+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -2135,11 +2135,10 @@ msgid "Open wheelmap.org"
 msgstr "افتح wheelmap.org"
 
 #: app/JourneyFilterPage.qml:15
-#, fuzzy, kde-format
-#| msgid "Select Journey"
+#, kde-format
 msgctxt "@title"
 msgid "Filter Journeys"
-msgstr "اختر رحلة"
+msgstr "رشّح الرحلات"
 
 #: app/JourneyFilterPage.qml:59
 #, kde-format
@@ -2267,7 +2266,7 @@ msgstr "وقت الوصول"
 #, kde-format
 msgctxt "filter journeys by mode of transportation etc."
 msgid "Filter"
-msgstr ""
+msgstr "المرشّح"
 
 #: app/JourneyRequestPage.qml:219
 #, kde-format
@@ -4712,8 +4711,7 @@ msgid "A trip must be selected."
 msgstr "يجب اختيار رحلة."
 
 #: app/TripGroupSelectorDialog.qml:14
-#, fuzzy, kde-format
-#| msgid "Add to Trip"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Add Journey to Trip"
 msgstr "أضف إلى الرحلة"

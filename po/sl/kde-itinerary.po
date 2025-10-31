@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-30 00:43+0000\n"
-"PO-Revision-Date: 2025-10-26 07:14+0100\n"
+"PO-Revision-Date: 2025-10-30 07:37+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -1463,10 +1463,9 @@ msgid "Coordinate to address"
 msgstr "Koordinate v naslov"
 
 #: app/FormPlaceEditorDelegate.qml:247
-#, fuzzy, kde-format
-#| msgid "Pick coordinate"
+#, kde-format
 msgid "Remove coordinate"
-msgstr "Poberi koordinate"
+msgstr "Odstrani koordinate"
 
 #: app/FormPlatformDelegate.qml:19
 #, kde-format
@@ -4289,6 +4288,8 @@ msgid ""
 "Specifying the departure and arrival location helps Itinerary to find "
 "updated information for the train this reservation is valid for."
 msgstr ""
+"Z navedbo lokacije odhoda in prihoda lahko Itinerary najde posodobljene "
+"informacije za vlak za katerega velja ta rezervacija."
 
 #: app/TrainEditor.qml:228 app/TrainEditor.qml:330 app/TrainPage.qml:163
 #: app/TrainPage.qml:247
