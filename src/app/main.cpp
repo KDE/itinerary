@@ -294,7 +294,7 @@ int main(int argc, char **argv)
     QObject::connect(&settings, &Settings::wikimediaOnlineContentEnabledChanged, &liveDataMgr, &LiveDataManager::setDownloadAssetsEnabled);
     LiveDataManagerInstance::instance = &liveDataMgr;
 
-    ReservationOnlinePostprocessor resOnlinePostproc(&resMgr, &liveDataMgr, &settings, namFactory);
+    ReservationOnlinePostprocessor resOnlinePostproc(&resMgr, &settings, namFactory);
 
     WeatherForecastManager::setAllowNetworkAccess(settings.weatherForecastEnabled());
     QObject::connect(&settings, &Settings::weatherForecastEnabledChanged, &WeatherForecastManager::setAllowNetworkAccess);

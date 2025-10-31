@@ -11,7 +11,6 @@
 #include <functional>
 
 class ReservationManager;
-class LiveDataManager;
 class QNetworkAccessManager;
 class Settings;
 
@@ -24,7 +23,6 @@ class ReservationOnlinePostprocessor : public QObject
 
 public:
     ReservationOnlinePostprocessor(ReservationManager *reservationMgr,
-                                   LiveDataManager *liveDataMgr,
                                    Settings *settings,
                                    std::function<QNetworkAccessManager *()> namFactory);
 
@@ -52,7 +50,6 @@ private:
                      const std::vector<QLatin1String> &allowedTags);
 
     ReservationManager *m_resMgr = nullptr;
-    LiveDataManager *m_liveDataMgr = nullptr;
     Settings *m_settings = nullptr;
     std::function<QNetworkAccessManager *()> m_namFactory;
 };

@@ -29,7 +29,6 @@
 #include <ranges>
 
 #include "applicationcontroller.h"
-#include "livedatamanager.h"
 #include "logging.h"
 #include "reservationmanager.h"
 #include "settings.h"
@@ -40,12 +39,10 @@ using namespace Qt::StringLiterals;
 
 ReservationOnlinePostprocessor::ReservationOnlinePostprocessor(
     ReservationManager *reservationMgr,
-    LiveDataManager *liveDataMgr,
     Settings *settings,
     std::function<QNetworkAccessManager *()> namFactory)
     : QObject()
     , m_resMgr(reservationMgr)
-    , m_liveDataMgr(liveDataMgr)
     , m_settings(settings)
     , m_namFactory(std::move(namFactory))
 {
@@ -101,7 +98,6 @@ QCoro::Task<> ReservationOnlinePostprocessor::handleReservationChange(const QStr
     // Don't react to our own changes
     disconnect(m_resMgr, &ReservationManager::reservationChanged, this, nullptr);
     m_resMgr->updateReservation(reservationId, *updatedReservation);
-    m_liveDataMgr->checkForUpdates({reservationId});
 
     connect(m_resMgr,
             &ReservationManager::reservationChanged,
