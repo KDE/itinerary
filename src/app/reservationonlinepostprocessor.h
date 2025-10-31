@@ -29,12 +29,15 @@ public:
                                    std::function<QNetworkAccessManager *()> namFactory);
 
 private:
-    QCoro::Task<> handleReservationChange(const QString id);
+    QCoro::Task<> handleBatchChange(const QString batchId);
+    QCoro::Task<> handleReservationChange(const QString reservationId);
 
-    QCoro::Task<QVariant> processReservation(QVariant reservation);
+    QCoro::Task<std::optional<QVariant> > processReservation(QVariant reservation);
 
-    QCoro::Task<KItinerary::TrainStation> processTrainStation(KItinerary::TrainStation station);
-    QCoro::Task<KItinerary::BusStation> processBusStation(KItinerary::BusStation station);
+    QCoro::Task<std::optional<KItinerary::TrainStation> > processTrainStation(
+        KItinerary::TrainStation station);
+    QCoro::Task<std::optional<KItinerary::BusStation> > processBusStation(
+        KItinerary::BusStation station);
 
     /**
      * @param place
@@ -44,7 +47,7 @@ private:
     QCoro::Task<QJsonArray> queryNominatim(const KItinerary::Place &place,
                                            const QString &amenityType);
 
-    void applyResult(const QJsonArray &results,
+    bool applyResult(const QJsonArray &results,
                      KItinerary::Place &place,
                      const std::vector<QLatin1String> &allowedTags);
 

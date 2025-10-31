@@ -56,10 +56,7 @@ ReservationOnlinePostprocessor::ReservationOnlinePostprocessor(
                 [this](auto reachability) {
                     if (reachability == QNetworkInformation::Reachability::Online) {
                         for (const QString &batchId : m_resMgr->batches()) {
-                            for (const QString &reservationId :
-                                 m_resMgr->reservationsForBatch(batchId)) {
-                                handleReservationChange(reservationId);
-                            }
+                            handleBatchChange(batchId);
                         }
                     }
                 });
@@ -68,30 +65,43 @@ ReservationOnlinePostprocessor::ReservationOnlinePostprocessor(
                           "resolve reservation places when connectivity is restored";
     }
     connect(reservationMgr,
-            &ReservationManager::reservationAdded,
+            &ReservationManager::batchAdded,
             this,
-            &ReservationOnlinePostprocessor::handleReservationChange);
+            &ReservationOnlinePostprocessor::handleBatchChange);
     connect(reservationMgr,
             &ReservationManager::reservationChanged,
             this,
             &ReservationOnlinePostprocessor::handleReservationChange);
 }
 
-QCoro::Task<> ReservationOnlinePostprocessor::handleReservationChange(const QString id)
+QCoro::Task<> ReservationOnlinePostprocessor::handleBatchChange(const QString batchId)
+{
+    const auto reservationIds = m_resMgr->reservationsForBatch(batchId);
+    if (reservationIds.empty()) {
+        co_return;
+    }
+
+    // TODO we might want to apply the result of the nominatim query to all reservations in the batch
+    co_await handleReservationChange(reservationIds.first());
+}
+
+QCoro::Task<> ReservationOnlinePostprocessor::handleReservationChange(const QString reservationId)
 {
     if (!m_settings->queryLiveData()) {
         co_return;
     }
 
-    auto reservation = m_resMgr->reservation(id);
-    reservation = co_await processReservation(reservation);
+    auto reservation = m_resMgr->reservation(reservationId);
+    auto updatedReservation = co_await processReservation(reservation);
+
+    if (!updatedReservation) {
+        co_return;
+    }
 
     // Don't react to our own changes
     disconnect(m_resMgr, &ReservationManager::reservationChanged, this, nullptr);
-    m_resMgr->updateReservation(id, reservation);
-    const auto batchId = m_resMgr->batchForReservation(id);
-
-    m_liveDataMgr->checkForUpdates({batchId});
+    m_resMgr->updateReservation(reservationId, *updatedReservation);
+    m_liveDataMgr->checkForUpdates({reservationId});
 
     connect(m_resMgr,
             &ReservationManager::reservationChanged,
@@ -99,7 +109,8 @@ QCoro::Task<> ReservationOnlinePostprocessor::handleReservationChange(const QStr
             &ReservationOnlinePostprocessor::handleReservationChange);
 }
 
-QCoro::Task<QVariant> ReservationOnlinePostprocessor::processReservation(QVariant reservation)
+QCoro::Task<std::optional<QVariant>> ReservationOnlinePostprocessor::processReservation(
+    QVariant reservation)
 {
     const auto locationsRealistic = [](const KItinerary::Place &departurePlace,
                                        const QDateTime &departureTime,
@@ -150,71 +161,83 @@ QCoro::Task<QVariant> ReservationOnlinePostprocessor::processReservation(QVarian
             reservation);
         auto trip = trainReservation.reservationFor().value<KItinerary::TrainTrip>();
 
-        const auto departure = co_await processTrainStation(trip.departureStation());
-        const auto arrival = co_await processTrainStation(trip.arrivalStation());
+        const auto changedDepartureStation = co_await processTrainStation(trip.departureStation());
+        const auto changedArrivalStation = co_await processTrainStation(trip.arrivalStation());
 
-        if (locationsRealistic(departure,
-                               trip.departureTime(),
-                               arrival,
-                               trip.arrivalTime(),
-                               KPublicTransport::Line::Train)) {
-            trip.setDepartureStation(departure);
-            trip.setArrivalStation(arrival);
+        if (changedDepartureStation || changedArrivalStation) {
+            if (locationsRealistic(changedDepartureStation.value_or(trip.departureStation()),
+                                   trip.departureTime(),
+                                   changedArrivalStation.value_or(trip.arrivalStation()),
+                                   trip.arrivalTime(),
+                                   KPublicTransport::Line::Train)) {
+                if (changedDepartureStation) {
+                    trip.setDepartureStation(*changedDepartureStation);
+                }
+                if (changedArrivalStation) {
+                    trip.setArrivalStation(*changedArrivalStation);
+                }
 
-            trainReservation.setReservationFor(trip);
+                trainReservation.setReservationFor(trip);
+                co_return trainReservation;
+            }
         }
-        co_return trainReservation;
     } else if (KItinerary::JsonLd::isA<KItinerary::BusReservation>(reservation)) {
         auto busReservation = KItinerary::JsonLd::convert<KItinerary::BusReservation>(reservation);
         auto trip = busReservation.reservationFor().value<KItinerary::BusTrip>();
 
-        const auto departure = co_await processBusStation(trip.departureBusStop());
-        const auto arrival = co_await processBusStation(trip.arrivalBusStop());
+        const auto changedDepartureStation = co_await processBusStation(trip.departureBusStop());
+        const auto changedArrivalStation = co_await processBusStation(trip.arrivalBusStop());
 
-        if (locationsRealistic(departure,
-                               trip.departureTime(),
-                               arrival,
-                               trip.arrivalTime(),
-                               KPublicTransport::Line::Bus)) {
-            trip.setDepartureBusStop(departure);
-            trip.setArrivalBusStop(arrival);
+        if (changedDepartureStation || changedArrivalStation) {
+            if (locationsRealistic(changedDepartureStation.value_or(trip.departureBusStop()),
+                                   trip.departureTime(),
+                                   changedArrivalStation.value_or(trip.arrivalBusStop()),
+                                   trip.arrivalTime(),
+                                   KPublicTransport::Line::Train)) {
+                if (changedDepartureStation) {
+                    trip.setDepartureBusStop(*changedDepartureStation);
+                }
+                if (changedArrivalStation) {
+                    trip.setArrivalBusStop(*changedArrivalStation);
+                }
 
-            busReservation.setReservationFor(trip);
+                busReservation.setReservationFor(trip);
+                co_return busReservation;
+            }
         }
-        co_return busReservation;
     }
 
-    co_return reservation;
+    co_return {};
 }
 
-QCoro::Task<KItinerary::TrainStation> ReservationOnlinePostprocessor::processTrainStation(
-    KItinerary::TrainStation station)
+QCoro::Task<std::optional<KItinerary::TrainStation>>
+ReservationOnlinePostprocessor::processTrainStation(KItinerary::TrainStation station)
 {
     if (station.geo().isValid()) {
-        co_return station;
+        co_return {};
     }
 
     const std::vector allowedTags = {"railway:station"_L1, "railway:halt"_L1};
 
     const auto results = co_await queryNominatim(station, u"railway station"_s);
-    applyResult(results, station, allowedTags);
+    bool changed = applyResult(results, station, allowedTags);
 
-    co_return station;
+    co_return changed ? std::optional{station} : std::nullopt;
 }
 
-QCoro::Task<KItinerary::BusStation> ReservationOnlinePostprocessor::processBusStation(
+QCoro::Task<std::optional<KItinerary::BusStation>> ReservationOnlinePostprocessor::processBusStation(
     KItinerary::BusStation station)
 {
     if (station.geo().isValid()) {
-        co_return station;
+        co_return {};
     }
 
     const std::vector allowedTags = {"amenity:bus_station"_L1};
 
     const auto results = co_await queryNominatim(station, u"bus station"_s);
-    applyResult(results, station, allowedTags);
+    bool changed = applyResult(results, station, allowedTags);
 
-    co_return station;
+    co_return changed ? std::optional{station} : std::nullopt;
 }
 
 QCoro::Task<QJsonArray> ReservationOnlinePostprocessor::queryNominatim(
@@ -267,7 +290,7 @@ QCoro::Task<QJsonArray> ReservationOnlinePostprocessor::queryNominatim(
     co_return doc.array();
 }
 
-void ReservationOnlinePostprocessor::applyResult(const QJsonArray &results,
+bool ReservationOnlinePostprocessor::applyResult(const QJsonArray &results,
                                                  KItinerary::Place &place,
                                                  const std::vector<QLatin1String> &allowedTags)
 {
@@ -296,6 +319,7 @@ void ReservationOnlinePostprocessor::applyResult(const QJsonArray &results,
             place.setIdentifier(u"ibnr:" % extratags["ref:ibnr"_L1].toString());
         }
 
-        break;
+        return true;
     }
+    return false;
 }
