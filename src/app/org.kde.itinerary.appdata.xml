@@ -912,7 +912,15 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="25.08.2" date="2025-11-06"/>
+    <release version="25.08.3" date="2025-11-06">
+      <description>
+        <ul>
+          <li>New or improved travel document extractors for Căile Ferate Române, citycity.se, Comboios de Portugal, Flixbus, Müpa Budapest, NH Hotels, Ryanair, United and ZSSK.</li>
+          <li>Fix performance issues and hangs with the journey search result view.</li>
+          <li>Fix parsing of ÖBB onboard speed data.</li>
+        </ul>
+      </description>
+    </release>
     <release version="25.08.2" date="2025-10-09">
       <description>
         <ul>
