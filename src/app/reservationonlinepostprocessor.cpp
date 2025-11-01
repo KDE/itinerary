@@ -66,29 +66,18 @@ ReservationOnlinePostprocessor::ReservationOnlinePostprocessor(
             this,
             &ReservationOnlinePostprocessor::handleBatchChange);
     connect(reservationMgr,
-            &ReservationManager::reservationChanged,
+            &ReservationManager::batchContentChanged,
             this,
-            &ReservationOnlinePostprocessor::handleReservationChange);
+            &ReservationOnlinePostprocessor::handleBatchChange);
 }
 
-QCoro::Task<> ReservationOnlinePostprocessor::handleBatchChange(const QString batchId)
-{
-    const auto reservationIds = m_resMgr->reservationsForBatch(batchId);
-    if (reservationIds.empty()) {
-        co_return;
-    }
-
-    // TODO we might want to apply the result of the nominatim query to all reservations in the batch
-    co_await handleReservationChange(reservationIds.first());
-}
-
-QCoro::Task<> ReservationOnlinePostprocessor::handleReservationChange(const QString reservationId)
+QCoro::Task<> ReservationOnlinePostprocessor::handleBatchChange(const QString &batchId)
 {
     if (!m_settings->queryLiveData()) {
         co_return;
     }
 
-    auto reservation = m_resMgr->reservation(reservationId);
+    auto reservation = m_resMgr->reservation(batchId);
     auto updatedReservation = co_await processReservation(reservation);
 
     if (!updatedReservation) {
@@ -96,13 +85,13 @@ QCoro::Task<> ReservationOnlinePostprocessor::handleReservationChange(const QStr
     }
 
     // Don't react to our own changes
-    disconnect(m_resMgr, &ReservationManager::reservationChanged, this, nullptr);
-    m_resMgr->updateReservation(reservationId, *updatedReservation);
+    disconnect(m_resMgr, &ReservationManager::batchContentChanged, this, nullptr);
+    m_resMgr->updateReservation(batchId, *updatedReservation);
 
     connect(m_resMgr,
-            &ReservationManager::reservationChanged,
+            &ReservationManager::batchContentChanged,
             this,
-            &ReservationOnlinePostprocessor::handleReservationChange);
+            &ReservationOnlinePostprocessor::handleBatchChange);
 }
 
 QCoro::Task<std::optional<QVariant>> ReservationOnlinePostprocessor::processReservation(
