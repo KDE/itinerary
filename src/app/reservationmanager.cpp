@@ -146,7 +146,9 @@ QList<QString> ReservationManager::addReservationsWithPostProcessing(const QList
             res = ev;
         }
 
-        ids.push_back(addReservation(res));
+        if (const auto resId = addReservation(res); !resId.isEmpty()) {
+            ids.push_back(resId);
+        }
     }
 
     return ids;
