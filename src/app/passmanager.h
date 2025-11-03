@@ -9,6 +9,10 @@
 #include <QAbstractListModel>
 #include <QDateTime>
 
+namespace KPkPass {
+class Pass;
+}
+
 namespace KItinerary
 {
 class ExtractorValidator;
@@ -75,6 +79,9 @@ public:
 
     /** Validator accepting all supported pass types. */
     [[nodiscard]] static KItinerary::ExtractorValidator validator();
+
+    /** A pkpass file changed as a result of an online self-update. */
+    void pkPassUpdated(const QString &pkPassId, const KPkPass::Pass *pass);
 
 Q_SIGNALS:
     void passChanged(const QString &passId);

@@ -8,8 +8,10 @@
 #include "genericpkpass.h"
 #include "jsonio.h"
 #include "logging.h"
+#include "pkpassmanager.h"
 
 #include <KItinerary/DocumentUtil>
+#include <KItinerary/ExtractorEngine>
 #include <KItinerary/ExtractorPostprocessor>
 #include <KItinerary/ExtractorValidator>
 #include <KItinerary/JsonLdDocument>
@@ -17,9 +19,12 @@
 #include <KItinerary/ProgramMembership>
 #include <KItinerary/Ticket>
 
+#include <KPkPass/Pass>
+
 #include <KLocalizedString>
 
 #include <QDirIterator>
+#include <QJsonArray>
 #include <QJsonObject>
 #include <QStandardPaths>
 #include <QUuid>
@@ -401,6 +406,32 @@ QVariantList PassManager::documentIds(const QVariant &pass)
 QString PassManager::basePath()
 {
     return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/programs/"_L1;
+}
+
+void PassManager::pkPassUpdated(const QString &pkPassId, const KPkPass::Pass *pass)
+{
+    qCDebug(Log) << pkPassId;
+
+    for (const auto &entry : m_entries) {
+        if (PkPassManager::passId(entry.data) != pkPassId) {
+            continue;
+        }
+
+        if (JsonLd::isA<GenericPkPass>(entry.data)) {
+            update(entry.id, GenericPkPass::fromPass(pass));
+            continue;
+        }
+
+        KItinerary::ExtractorEngine engine;
+        engine.setContent(QVariant::fromValue<const KPkPass::Pass *>(pass), u"application/vnd.apple.pkpass");
+        const auto result = JsonLdDocument::fromJson(engine.extract());
+        if (result.size() != 1 || entry.data.typeId() != result.at(0).typeId()) {
+            qCWarning(Log) << "Pass extraction produced unexpected result" << result << entry.data;
+            continue;
+        }
+
+        update(entry.id, JsonLdDocument::apply(entry.data, result.at(0)));
+    }
 }
 
 #include "moc_passmanager.cpp"

@@ -687,7 +687,10 @@ void ApplicationController::pkPassUpdated(const QString &passId)
     const auto pass = m_pkPassMgr->pass(passId);
     KItinerary::ExtractorEngine engine;
     engine.setContent(QVariant::fromValue<KPkPass::Pass *>(pass), u"application/vnd.apple.pkpass");
-    m_resMgr->addReservationsWithPostProcessing(JsonLdDocument::fromJson(engine.extract()));
+    const auto ids = m_resMgr->addReservationsWithPostProcessing(JsonLdDocument::fromJson(engine.extract()));
+    if (ids.isEmpty()) {
+        m_passMgr->pkPassUpdated(passId, pass);
+    }
 }
 
 QString ApplicationController::addDocumentFromFile(const QUrl &url)
