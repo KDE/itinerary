@@ -561,20 +561,8 @@ void ImportController::importNode(const KItinerary::ExtractorDocumentNode &node)
         if (const auto it = m_stagedPkPasses.find(pkPassId); it != m_stagedPkPasses.end()) {
             (*it).second.data = pass->rawData();
         } else {
-            GenericPkPass wrapper;
-            wrapper.setName(pass->description());
-            if (wrapper.name().isEmpty()) {
-                wrapper.setName(pass->logoText());
-            }
-            if (wrapper.name().isEmpty()) {
-                wrapper.setName(pass->organizationName());
-            }
-            wrapper.setPkpassPassTypeIdentifier(pass->passTypeIdentifier());
-            wrapper.setPkpassSerialNumber(pass->serialNumber());
-            wrapper.setValidUntil(pass->expirationDate());
-            QVariant v(wrapper);
-            KItinerary::DocumentUtil::addDocumentId(v, KItinerary::DocumentUtil::idForPkPass(pass->passTypeIdentifier(), pass->serialNumber()));
-            addElement({.type = ImportElement::Pass, .data = v});
+            auto wrapper = GenericPkPass::fromPass(pass);
+            addElement({.type = ImportElement::Pass, .data = wrapper});
             m_stagedPkPasses[pkPassId] = ImportPkPass{.data = pass->rawData()};
         }
     }

@@ -8,6 +8,10 @@
 
 #include <KItinerary/Datatypes>
 
+namespace KPkPass {
+class Pass;
+}
+
 class GenericPkPassPrivate;
 
 /** Pseudo-schema.org wrapper for generic/uninterpreted pkpass files. */
@@ -19,6 +23,11 @@ class GenericPkPass
     KITINERARY_PROPERTY(QString, pkpassSerialNumber, setPkpassSerialNumber)
     KITINERARY_PROPERTY(QDateTime, validUntil, setValidUntil)
     KITINERARY_PROPERTY(QVariantList, subjectOf, setSubjectOf)
+
+public:
+    /** Factory function to create a new GenericPkPass wrapper for the given pkpass object. */
+    [[nodiscard]] static GenericPkPass fromPass(const KPkPass::Pass *pass);
+
 private:
     QExplicitlySharedDataPointer<GenericPkPassPrivate> d;
 };
