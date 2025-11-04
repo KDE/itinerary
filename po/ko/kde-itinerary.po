@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-30 00:43+0000\n"
+"POT-Creation-Date: 2025-11-04 00:42+0000\n"
 "PO-Revision-Date: 2025-10-12 14:38+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -2003,7 +2003,7 @@ msgstr "가져올 항목을 찾지 못했습니다."
 msgid "No importable events found in this calendar."
 msgstr "이 캘린더에서 가져올 수 있는 이벤트가 없습니다."
 
-#: app/importcontroller.cpp:634
+#: app/importcontroller.cpp:622
 #, kde-format
 msgid "Backup"
 msgstr "백업"
@@ -3339,7 +3339,7 @@ msgctxt "name - valid time range"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/passmanager.cpp:284 app/TripGroupPage.qml:426
+#: app/passmanager.cpp:289 app/TripGroupPage.qml:426
 #, kde-format
 msgid "%1 - %2"
 msgstr "%1 - %2"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-30 00:43+0000\n"
+"POT-Creation-Date: 2025-11-04 00:42+0000\n"
 "PO-Revision-Date: 2025-10-13 20:48+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -2011,7 +2011,7 @@ msgstr "Mitään tuotavaa ei löytynyt."
 msgid "No importable events found in this calendar."
 msgstr "Kalenterista ei löytynyt tuotavissa olevia tapahtumia."
 
-#: app/importcontroller.cpp:634
+#: app/importcontroller.cpp:622
 #, kde-format
 msgid "Backup"
 msgstr "Varmuuskopioi"
@@ -3372,7 +3372,7 @@ msgctxt "name - valid time range"
 msgid "%1 - %2"
 msgstr "%1 – %2"
 
-#: app/passmanager.cpp:284 app/TripGroupPage.qml:426
+#: app/passmanager.cpp:289 app/TripGroupPage.qml:426
 #, kde-format
 msgid "%1 - %2"
 msgstr "%1 – %2"

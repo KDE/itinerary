@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-30 00:43+0000\n"
+"POT-Creation-Date: 2025-11-04 00:42+0000\n"
 "PO-Revision-Date: 2025-09-06 05:40+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
@@ -2015,7 +2015,7 @@ msgstr ""
 "W tym kalendarzu nie znaleziono żadnego wydarzenia możliwego do "
 "zaimportowania."
 
-#: app/importcontroller.cpp:634
+#: app/importcontroller.cpp:622
 #, kde-format
 msgid "Backup"
 msgstr "Kopia zapasowa"
@@ -3381,7 +3381,7 @@ msgctxt "name - valid time range"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/passmanager.cpp:284 app/TripGroupPage.qml:426
+#: app/passmanager.cpp:289 app/TripGroupPage.qml:426
 #, kde-format
 msgid "%1 - %2"
 msgstr "%1 - %2"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-30 00:43+0000\n"
+"POT-Creation-Date: 2025-11-04 00:42+0000\n"
 "PO-Revision-Date: 2025-03-02 14:47+0530\n"
 "Last-Translator: Shreekant Kalwar <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -2071,7 +2071,7 @@ msgstr "आयातार्थं किमपि न लब्धम्।"
 msgid "No importable events found in this calendar."
 msgstr "अस्मिन् पञ्चाङ्गे आयातयोग्याः घटनाः न प्राप्यन्ते ।"
 
-#: app/importcontroller.cpp:634
+#: app/importcontroller.cpp:622
 #, kde-format
 msgid "Backup"
 msgstr "बैकअप"
@@ -3414,7 +3414,7 @@ msgctxt "name - valid time range"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/passmanager.cpp:284 app/TripGroupPage.qml:426
+#: app/passmanager.cpp:289 app/TripGroupPage.qml:426
 #, kde-format
 msgid "%1 - %2"
 msgstr "%1 - %2"

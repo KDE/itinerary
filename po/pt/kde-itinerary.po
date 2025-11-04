@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kitinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-30 00:43+0000\n"
+"POT-Creation-Date: 2025-11-04 00:42+0000\n"
 "PO-Revision-Date: 2023-07-14 22:15+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -2150,7 +2150,7 @@ msgstr "Nada foi importado."
 msgid "No importable events found in this calendar."
 msgstr "Não foram encontrados eventos para importar neste calendário."
 
-#: app/importcontroller.cpp:634
+#: app/importcontroller.cpp:622
 #, kde-format
 msgid "Backup"
 msgstr ""
@@ -3535,7 +3535,7 @@ msgctxt "name - valid time range"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/passmanager.cpp:284 app/TripGroupPage.qml:426
+#: app/passmanager.cpp:289 app/TripGroupPage.qml:426
 #, kde-format
 msgid "%1 - %2"
 msgstr "%1 - %2"
