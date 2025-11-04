@@ -357,12 +357,6 @@ void TripGroupManager::scanAll()
             continue;
         }
 
-        if (groupIt == m_reservationToGroupMap.constEnd()) {
-            prevGroup.clear();
-        } else {
-            prevGroup = groupIt.value();
-        }
-
         scanOne(it);
         prevGroup = m_reservationToGroupMap.value(*it);
     }
