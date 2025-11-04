@@ -379,6 +379,7 @@ private Q_SLOTS:
         groupMgr.setTransferManager(&transferMgr);
         WeatherForecastManager weatherMgr;
         weatherMgr.setTestModeEnabled(true);
+        ctrl->setTripGroupManager(&groupMgr);
 
         TimelineModel model;
         QAbstractItemModelTester tester(&model);

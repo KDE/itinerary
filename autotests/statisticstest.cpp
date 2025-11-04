@@ -56,6 +56,7 @@ private Q_SLOTS:
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&resMgr);
         ctrl->setTransferManager(&transferMgr);
+        ctrl->setTripGroupManager(&tgMgr);
 
         StatisticsModel stats;
         stats.setProperty("distanceFormat", KFormat::MetricDistanceUnits);

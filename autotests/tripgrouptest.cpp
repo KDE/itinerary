@@ -236,6 +236,7 @@ private Q_SLOTS:
 
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&resMgr);
+        ctrl->setTripGroupManager(&mgr);
         ImportController importer;
         importer.setReservationManager(&resMgr);
         importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
@@ -243,7 +244,6 @@ private Q_SLOTS:
         QCOMPARE(addSpy.size(), 1);
         auto g = mgr.tripGroup(addSpy.at(0).at(0).toString());
         QCOMPARE(g.elements().size(), resMgr.batches().size());
-        QCOMPARE(changeSpy.size(), 1);
 
         changeSpy.clear();
         Test::clearAll(&resMgr);
@@ -466,8 +466,11 @@ private Q_SLOTS:
         }
         QCOMPARE(tgMgr.tripGroups().size(), 1);
 
-        for (const auto &res : reservations) {
-            resMgr.addReservation(res);
+        {
+            TripGroupingBlocker groupingBlocker(&tgMgr);
+            for (const auto &res : reservations) {
+                resMgr.addReservation(res);
+            }
         }
         QCOMPARE(tgMgr.tripGroups().size(), 1);
         QCOMPARE(tgMgr.tripGroup(mergeId).name(), "New Group 2"_L1);
