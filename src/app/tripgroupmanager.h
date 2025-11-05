@@ -110,6 +110,7 @@ private:
 
     void transferChanged(const QString &resId, Transfer::Alignment alignment);
 
+    [[nodiscard]] bool hasUngroupedReservations() const;
     void scanAll();
     void scanOne(std::vector<QString>::const_iterator beginIt);
     void createAutomaticGroup(const QStringList &elems);

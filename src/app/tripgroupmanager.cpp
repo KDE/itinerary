@@ -341,10 +341,21 @@ void TripGroupManager::transferChanged(const QString &resId, Transfer::Alignment
     }
 }
 
+bool TripGroupManager::hasUngroupedReservations() const
+{
+    return std::ranges::any_of(m_reservations, [this](const auto &batchId) {
+        return !m_reservationToGroupMap.contains(batchId);
+    });
+}
+
 void TripGroupManager::scanAll()
 {
     if (m_suspended) {
         m_shouldScan = true;
+        return;
+    }
+
+    if (!hasUngroupedReservations()) {
         return;
     }
 
