@@ -87,8 +87,8 @@
                 "-DUSE_BOOST=OFF",
                 "-DBUILD_TESTING=OFF",
                 "-DREGENERATE_METADATA=OFF",
-                "-DBUILD_STATIC_LIB=ON",
-                "-DBUILD_SHARED_LIBS=OFF",
+                "-DBUILD_STATIC_LIB=OFF",
+                "-DBUILD_SHARED_LIBS=ON",
                 "-DUSE_PROTOBUF_LITE=ON",
                 "-DBUILD_GEOCODER=OFF",
                 "-DFETCHCONTENT_FULLY_DISCONNECTED=ON",
@@ -119,8 +119,7 @@
                     "config-opts": [
                         "-DCMAKE_BUILD_TYPE=Release",
                         "-DABSL_PROPAGATE_CXX_STD=ON",
-                        "-DBUILD_SHARED_LIBS=OFF",
-                        "-DCMAKE_POSITION_INDEPENDENT_CODE=ON"
+                        "-DBUILD_SHARED_LIBS=ON"
                     ],
                     "sources": [
                         {
@@ -148,8 +147,7 @@
                     "config-opts": [
                         "-Dprotobuf_BUILD_TESTS=OFF",
                         "-Dprotobuf_LOCAL_DEPENDENCIES_ONLY=ON",
-                        "-DBUILD_SHARED_LIBS=OFF",
-                        "-DCMAKE_POSITION_INDEPENDENT_CODE=ON"
+                        "-DBUILD_SHARED_LIBS=ON"
                     ],
                     "sources": [
                         {
