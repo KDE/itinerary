@@ -36,6 +36,12 @@
 using namespace KItinerary;
 using namespace Qt::Literals;
 
+const QStringList& ReservationBatch::reservationIds() const
+{
+    return m_resIds;
+}
+
+
 ReservationManager::ReservationManager(QObject *parent)
     : QObject(parent)
     , m_validator(ReservationManager::validator())
@@ -193,7 +199,7 @@ QString ReservationManager::addReservation(const QVariant &res, const QString &r
         if (MergeUtil::isSameIncidence(res, otherRes)) {
             // this is a multi-traveler element, check if we have it as one of the batch elements already
             const auto &batch = m_batchToResMap.value(*it);
-            for (const auto &batchedId : batch) {
+            for (const auto &batchedId : batch.m_resIds) {
                 const auto batchedRes = reservation(batchedId);
                 if (MergeUtil::isSame(res, batchedRes)) {
                     // this is actually an update of a batched reservation
@@ -208,7 +214,7 @@ QString ReservationManager::addReservation(const QVariant &res, const QString &r
             storeReservation(resId, res);
             Q_EMIT reservationAdded(resId);
 
-            m_batchToResMap[*it].push_back(resId);
+            m_batchToResMap[*it].m_resIds.push_back(resId);
             m_resToBatchMap.insert(resId, *it);
             Q_EMIT batchChanged(*it);
             storeBatch(*it);
@@ -226,7 +232,9 @@ QString ReservationManager::addReservation(const QVariant &res, const QString &r
         return SortUtil::startDateTime(reservation(lhs)) < rhs;
     });
     m_batches.insert(insertIt, resId);
-    m_batchToResMap.insert(resId, {resId});
+    ReservationBatch batch;
+    batch.m_resIds = {resId};
+    m_batchToResMap.insert(resId, batch);
     m_resToBatchMap.insert(resId, resId);
     Q_EMIT batchAdded(resId);
     storeBatch(resId);
@@ -317,14 +325,14 @@ QString ReservationManager::batchForReservation(const QString &resId) const
 
 QStringList ReservationManager::reservationsForBatch(const QString &batchId) const
 {
-    return m_batchToResMap.value(batchId);
+    return m_batchToResMap.value(batchId).reservationIds();
 }
 
 void ReservationManager::removeBatch(const QString &batchId)
 {
     // TODO make this atomic, ie. don't emit batch range notifications
-    const auto res = m_batchToResMap.value(batchId);
-    for (const auto &id : res) {
+    const auto batch = m_batchToResMap.value(batchId);
+    for (const auto &id : batch.reservationIds()) {
         if (id != batchId) {
             removeReservation(id);
         }
@@ -363,14 +371,14 @@ void ReservationManager::loadBatches()
             continue;
         }
 
-        QStringList l;
-        l.reserve(resArray.size());
+        ReservationBatch batch;
+        batch.m_resIds.reserve(resArray.size());
         for (const auto &v : resArray) {
             const auto resId = v.toString();
-            l.push_back(resId);
+            batch.m_resIds.push_back(resId);
             m_resToBatchMap.insert(resId, batchId);
         }
-        m_batchToResMap.insert(batchId, l);
+        m_batchToResMap.insert(batchId, batch);
     }
 
     std::sort(m_batches.begin(), m_batches.end(), [this](const auto &lhs, const auto &rhs) {
@@ -386,7 +394,7 @@ void ReservationManager::storeBatch(const QString &batchId) const
 {
     QJsonArray elems;
     const auto &batch = m_batchToResMap.value(batchId);
-    std::copy(batch.begin(), batch.end(), std::back_inserter(elems));
+    std::ranges::copy(batch.reservationIds(), std::back_inserter(elems));
 
     QJsonObject top;
     top.insert(QLatin1StringView("elements"), elems);
@@ -437,7 +445,7 @@ void ReservationManager::updateBatch(const QString &resId, const QVariant &newRe
         if (it != m_batches.end() && std::distance(it, m_batches.end()) > 1) {
             sortOrderInvalid |= SortUtil::startDateTime(reservation(*it)) >= SortUtil::startDateTime(reservation(*std::next(it)));
         }
-        if (!sortOrderInvalid && m_batchToResMap.value(resId).size() == 1) {
+        if (!sortOrderInvalid && m_batchToResMap.value(resId).reservationIds().size() == 1) {
             Q_EMIT batchContentChanged(resId);
             return;
         }
@@ -483,12 +491,14 @@ void ReservationManager::updateBatch(const QString &resId, const QVariant &newRe
             return SortUtil::startDateTime(reservation(lhs)) < SortUtil::startDateTime(rhs);
         });
         m_batches.insert(it, QString(resId));
-        m_batchToResMap.insert(resId, {resId});
+        ReservationBatch batch;
+        batch.m_resIds = {resId};
+        m_batchToResMap.insert(resId, batch);
         m_resToBatchMap.insert(resId, resId);
         Q_EMIT batchAdded(resId);
         storeBatch(resId);
     } else {
-        m_batchToResMap[newBatchId].push_back(resId);
+        m_batchToResMap[newBatchId].m_resIds.push_back(resId);
         m_resToBatchMap.insert(resId, newBatchId);
         Q_EMIT batchChanged(newBatchId);
         storeBatch(newBatchId);
@@ -501,9 +511,9 @@ void ReservationManager::removeFromBatch(const QString &resId, const QString &ba
         return;
     }
 
-    auto &batches = m_batchToResMap[batchId];
+    auto &batch = m_batchToResMap[batchId];
     m_resToBatchMap.remove(resId);
-    if (batches.size() == 1) { // we were alone there, remove old batch
+    if (batch.reservationIds().size() == 1) { // we were alone there, remove old batch
         m_batchToResMap.remove(batchId);
         const auto it = std::find(m_batches.begin(), m_batches.end(), batchId);
         m_batches.erase(it);
@@ -511,22 +521,22 @@ void ReservationManager::removeFromBatch(const QString &resId, const QString &ba
         storeRemoveBatch(batchId);
     } else if (resId == batchId) {
         // our id was the batch id, so rename the old batch
-        batches.removeAll(resId);
-        const QString renamedBatchId = batches.first();
+        batch.m_resIds.removeAll(resId);
+        const QString renamedBatchId = batch.reservationIds().first();
         auto it = std::find(m_batches.begin(), m_batches.end(), batchId);
         Q_ASSERT(it != m_batches.end());
         *it = renamedBatchId;
-        for (const auto &id : batches) {
+        for (const auto &id : batch.reservationIds()) {
             m_resToBatchMap[id] = renamedBatchId;
         }
-        m_batchToResMap[renamedBatchId] = batches;
+        m_batchToResMap[renamedBatchId] = batch;
         m_batchToResMap.remove(batchId);
         Q_EMIT batchRenamed(batchId, renamedBatchId);
         storeRemoveBatch(batchId);
         storeBatch(renamedBatchId);
     } else {
         // old batch remains
-        batches.removeAll(resId);
+        batch.m_resIds.removeAll(resId);
         Q_EMIT batchChanged(batchId);
         storeBatch(batchId);
     }
@@ -562,7 +572,7 @@ QVariant ReservationManager::isPartialUpdate(const QVariant &res) const
         if (MergeUtil::isSameIncidence(res, otherRes)) {
             // this is a multi-traveler element, check if we have it as one of the batch elements
             const auto &batch = m_batchToResMap.value(*it);
-            for (const auto &batchedId : batch) {
+            for (const auto &batchedId : batch.reservationIds()) {
                 auto batchedRes = reservation(batchedId);
                 if (MergeUtil::isSame(res, batchedRes)) {
                     return batchedRes;
@@ -610,7 +620,7 @@ QList<QString> ReservationManager::applyPartialUpdate(const QVariant &res)
             // this is a multi-traveler element, check if we have it as one of the
             // batch elements already
             const auto &batch = m_batchToResMap.value(*it);
-            for (const auto &batchedId : batch) {
+            for (const auto &batchedId : batch.reservationIds()) {
                 const auto batchedRes = reservation(batchedId);
                 if (MergeUtil::isSame(res, batchedRes)) {
                     // this is actually an update of a batched reservation

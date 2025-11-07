@@ -13,6 +13,20 @@
 #include <QObject>
 #include <QVariant>
 
+class ReservationManager;
+
+/** Represents a batch of reservations.
+ *  That is, a set of reservations (tickets or people) referring to the same incidence.
+ */
+class ReservationBatch
+{
+public:
+    [[nodiscard]] const QStringList& reservationIds() const;
+private:
+    friend class ReservationManager;
+    QStringList m_resIds; // ### QStringList for direct consumption by QML
+};
+
 /** Manages JSON-LD reservation data.
  *  This is done on two levels:
  *  - the raw individual reservation elements (one per traveler and per trip)
@@ -124,7 +138,7 @@ private:
     KItinerary::ExtractorValidator m_validator;
 
     std::vector<QString> m_batches;
-    QHash<QString, QStringList> m_batchToResMap; // ### QStringList for direct consumption by QML
+    QHash<QString, ReservationBatch> m_batchToResMap;
     QHash<QString, QString> m_resToBatchMap;
 };
 
