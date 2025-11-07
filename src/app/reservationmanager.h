@@ -77,7 +77,7 @@ public:
         QVariant res;
     };
     /** Update an entire batch, without attempting re-batching. */
-    void updateBatch(const std::vector<ReservationChange> &batch);
+    void updateBatch(const std::vector<ReservationChange> &changeset);
 
     const std::vector<QString> &batches() const;
     bool hasBatch(const QString &batchId) const;

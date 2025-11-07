@@ -297,14 +297,14 @@ void ReservationManager::storeReservation(const QString &resId, const QVariant &
     m_reservations.insert(resId, res);
 }
 
-void ReservationManager::updateBatch(const std::vector<ReservationManager::ReservationChange> &batch)
+void ReservationManager::updateBatch(const std::vector<ReservationManager::ReservationChange> &changeset)
 {
-    if (batch.empty()) {
+    if (changeset.empty()) {
         return;
     }
 
     QString batchId;
-    for (const auto &change : batch) {
+    for (const auto &change : changeset) {
         const auto bid = batchForReservation(change.id);
         if (batchId.isEmpty()) {
             batchId = bid;
