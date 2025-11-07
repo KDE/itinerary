@@ -134,23 +134,29 @@ QVariant ReservationManager::reservation(const QString &id) const
         return it.value();
     }
 
-    const QString resPath = reservationsBasePath() + id + QLatin1StringView(".jsonld");
+    loadReservationsInBatch(batchForReservation(id));
+    return m_reservations.value(id);
+}
+
+void ReservationManager::loadReservation(const QString &resId) const
+{
+    const QString resPath = reservationsBasePath() + resId + ".jsonld"_L1;
     QFile f(resPath);
     if (!f.open(QFile::ReadOnly)) {
         qCWarning(Log) << "Failed to open JSON-LD reservation data file:" << resPath << f.errorString();
-        return {};
+        return;
     }
 
     const auto val = JsonIO::read(f.readAll());
     if (!(val.isArray() && val.toArray().size() == 1) && !val.isObject()) {
         qCWarning(Log) << "Invalid JSON-LD reservation data file:" << resPath;
-        return {};
+        return;
     }
 
     const auto resData = JsonLdDocument::fromJson(val.isArray() ? val.toArray() : QJsonArray({val.toObject()}));
     if (resData.size() != 1) {
         qCWarning(Log) << "Unable to parse JSON-LD reservation data file:" << resPath;
-        return {};
+        return;
     }
 
     // re-run post-processing to benefit from newer augmentations
@@ -158,16 +164,38 @@ QVariant ReservationManager::reservation(const QString &id) const
     postproc.process(resData);
     if (postproc.result().size() != 1) {
         qCWarning(Log) << "Post-processing discarded the reservation:" << resPath;
-        return {};
+        return;
     }
 
     const auto res = postproc.result().at(0);
     if (!m_validator.isValidElement(res)) {
         qCWarning(Log) << "Validation discarded the reservation:" << resPath;
-        return {};
+        return;
     }
-    m_reservations.insert(id, res);
-    return res;
+    m_reservations.insert(resId, res);
+    qCDebug(Log) << "reservations loaded:" << m_reservations.size();
+}
+
+void ReservationManager::loadReservationsInBatch(const QString &batchId) const
+{
+    const auto &batch = m_batchToResMap.value(batchId);
+    for (const auto &resId : batch.reservationIds()) {
+        loadReservation(resId);
+    }
+
+    // cross-merge multi-traveler/multi-ticket incidences
+    for (const auto &resId1 : batch.reservationIds()) {
+        for (const auto &resId2 : batch.reservationIds()) {
+            if (resId1 == resId2) {
+                continue;
+            }
+
+            auto &res1 = m_reservations[resId1];
+            auto &res2 = m_reservations[resId2];
+            res1 = MergeUtil::mergeIncidence(res1, res2);
+            res2 = MergeUtil::mergeIncidence(res2, res1);
+        }
+    }
 }
 
 QString ReservationManager::reservationsBasePath()

@@ -140,6 +140,8 @@ Q_SIGNALS:
     void batchRemoved(const QString &batchId);
 
 private:
+    void loadReservation(const QString &resId) const;
+    void loadReservationsInBatch(const QString &batchId) const;
     void storeReservation(const QString &resId, const QVariant &res) const;
 
     struct BatchComparator {
