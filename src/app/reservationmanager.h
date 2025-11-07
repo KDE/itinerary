@@ -127,8 +127,8 @@ private:
 
     void loadBatches();
     void initialBatchCreate();
-    void storeBatch(const QString &batchId) const;
-    void storeRemoveBatch(const QString &batchId) const;
+    static void storeBatch(const QString &batchId, const ReservationBatch &batch);
+    static void storeRemoveBatch(const QString &batchId);
 
     void updateBatch(const QString &resId, const QVariant &newRes, const QVariant &oldRes);
     void removeFromBatch(const QString &resId, const QString &batchId);

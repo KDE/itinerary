@@ -217,7 +217,7 @@ QString ReservationManager::addReservation(const QVariant &res, const QString &r
         }
         if (MergeUtil::isSameIncidence(res, otherRes)) {
             // this is a multi-traveler element, check if we have it as one of the batch elements already
-            const auto &batch = m_batchToResMap.value(*it);
+            auto &batch = m_batchToResMap[*it];
             for (const auto &batchedId : batch.m_resIds) {
                 const auto batchedRes = reservation(batchedId);
                 if (MergeUtil::isSame(res, batchedRes)) {
@@ -233,10 +233,10 @@ QString ReservationManager::addReservation(const QVariant &res, const QString &r
             storeReservation(resId, res);
             Q_EMIT reservationAdded(resId);
 
-            m_batchToResMap[*it].m_resIds.push_back(resId);
+            batch.m_resIds.push_back(resId);
             m_resToBatchMap.insert(resId, *it);
             Q_EMIT batchChanged(*it);
-            storeBatch(*it);
+            storeBatch(*it, batch);
             return resId;
         }
     }
@@ -256,7 +256,7 @@ QString ReservationManager::addReservation(const QVariant &res, const QString &r
     m_batchToResMap.insert(resId, batch);
     m_resToBatchMap.insert(resId, resId);
     Q_EMIT batchAdded(resId);
-    storeBatch(resId);
+    storeBatch(resId, batch);
     return resId;
 }
 
@@ -403,10 +403,8 @@ void ReservationManager::loadBatches()
     }
 }
 
-void ReservationManager::storeBatch(const QString &batchId) const
+void ReservationManager::storeBatch(const QString &batchId, const ReservationBatch &batch)
 {
-    const auto &batch = m_batchToResMap.value(batchId);
-
     const QString path = batchesBasePath() + batchId + ".json"_L1;
     QFile f(path);
     if (!f.open(QFile::WriteOnly | QFile::Truncate)) {
@@ -417,9 +415,9 @@ void ReservationManager::storeBatch(const QString &batchId) const
     f.write(JsonIO::write(batch.toJson()));
 }
 
-void ReservationManager::storeRemoveBatch(const QString &batchId) const
+void ReservationManager::storeRemoveBatch(const QString &batchId)
 {
-    const QString path = batchesBasePath() + batchId + QLatin1StringView(".json");
+    const QString path = batchesBasePath() + batchId + ".json"_L1;
     if (!QFile::remove(path)) {
         qCWarning(Log) << "Failed to remove file:" << path;
     }
@@ -504,12 +502,13 @@ void ReservationManager::updateBatch(const QString &resId, const QVariant &newRe
         m_batchToResMap.insert(resId, batch);
         m_resToBatchMap.insert(resId, resId);
         Q_EMIT batchAdded(resId);
-        storeBatch(resId);
+        storeBatch(resId, batch);
     } else {
-        m_batchToResMap[newBatchId].m_resIds.push_back(resId);
+        auto &batch = m_batchToResMap[newBatchId];
+        batch.m_resIds.push_back(resId);
         m_resToBatchMap.insert(resId, newBatchId);
         Q_EMIT batchChanged(newBatchId);
-        storeBatch(newBatchId);
+        storeBatch(newBatchId, batch);
     }
 }
 
@@ -541,12 +540,12 @@ void ReservationManager::removeFromBatch(const QString &resId, const QString &ba
         m_batchToResMap.remove(batchId);
         Q_EMIT batchRenamed(batchId, renamedBatchId);
         storeRemoveBatch(batchId);
-        storeBatch(renamedBatchId);
+        storeBatch(renamedBatchId, batch);
     } else {
         // old batch remains
         batch.m_resIds.removeAll(resId);
         Q_EMIT batchChanged(batchId);
-        storeBatch(batchId);
+        storeBatch(batchId, batch);
     }
 }
 
