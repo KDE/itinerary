@@ -100,6 +100,8 @@ public:
     Q_INVOKABLE QStringList reservationsForBatch(const QString &batchId) const;
     Q_INVOKABLE void removeBatch(const QString &batchId);
 
+    /** Retursn the batch meta-data for the given batch id. */
+    [[nodiscard]] ReservationBatch batch(const QString &batchId) const;
     /** Returns the batch happening prior to @p batchId, if any. */
     QString previousBatch(const QString &batchId) const;
     /** Returns the batch happening after @p batchId, if any. */

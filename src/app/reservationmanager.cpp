@@ -683,6 +683,11 @@ QList<QString> ReservationManager::applyPartialUpdate(const QVariant &res)
     return updatedIds;
 }
 
+ReservationBatch ReservationManager::batch(const QString &batchId) const
+{
+    return m_batchToResMap.value(batchId);
+}
+
 QString ReservationManager::previousBatch(const QString &batchId) const
 {
     // ### this can be optimized by relying on m_batches being sorted by start date

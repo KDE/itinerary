@@ -107,12 +107,16 @@ void LiveDataManager::setReservationManager(ReservationManager *resMgr)
     connect(resMgr, &ReservationManager::batchRenamed, this, &LiveDataManager::batchRenamed);
     connect(resMgr, &ReservationManager::batchRemoved, this, &LiveDataManager::batchRemoved);
 
-    const auto resIds = resMgr->batches();
-    for (const auto &resId : resIds) {
-        if (!isRelevant(resId)) {
+    const auto n = now();
+    for (const auto &batchId : m_resMgr->batches()) {
+        const auto batch = m_resMgr->batch(batchId);
+        if (batch.endDateTime().isValid() && batch.endDateTime().addDays(1) < n) {
+            continue; // skip most reservations without actually loading them
+        }
+        if (!isRelevant(batchId)) {
             continue;
         }
-        m_reservations.push_back(resId);
+        m_reservations.push_back(batchId);
     }
 
     m_pollTimer.setInterval(nextPollTime());
