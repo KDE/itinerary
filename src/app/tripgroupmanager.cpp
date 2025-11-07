@@ -54,14 +54,6 @@ void TripGroupManager::setReservationManager(ReservationManager *resMgr)
     connect(m_resMgr, &ReservationManager::batchRemoved, this, &TripGroupManager::batchRemoved);
     connect(m_resMgr, &ReservationManager::batchRenamed, this, &TripGroupManager::batchRenamed);
 
-    const auto allReservations = m_resMgr->batches();
-    m_reservations.clear();
-    m_reservations.reserve(allReservations.size());
-    std::copy(allReservations.begin(), allReservations.end(), std::back_inserter(m_reservations));
-    std::sort(m_reservations.begin(), m_reservations.end(), [this](const auto &lhs, const auto &rhs) {
-        return SortUtil::isBefore(m_resMgr->reservation(lhs), m_resMgr->reservation(rhs));
-    });
-
     if (m_resMgr && m_transferMgr) {
         checkConsistency();
         scanAll();
@@ -236,10 +228,6 @@ void TripGroupManager::removeReservationsInGroup(const QString &groupId)
 
 void TripGroupManager::batchAdded(const QString &resId)
 {
-    auto it = std::lower_bound(m_reservations.begin(), m_reservations.end(), resId, [this](const auto &lhs, const auto &rhs) {
-        return SortUtil::isBefore(m_resMgr->reservation(lhs), m_resMgr->reservation(rhs));
-    });
-    m_reservations.insert(it, resId);
     // ### we can optimize this by only scanning it +/- MaximumTripElements
     scanAll();
 }
@@ -313,12 +301,6 @@ void TripGroupManager::batchRemoved(const QString &resId)
             Q_EMIT tripGroupChanged(groupId);
         }
     }
-
-    // remove the reservation
-    const auto resIt = std::find(m_reservations.begin(), m_reservations.end(), resId);
-    if (resIt != m_reservations.end()) {
-        m_reservations.erase(resIt);
-    }
 }
 
 void TripGroupManager::transferChanged(const QString &resId, Transfer::Alignment alignment)
@@ -343,7 +325,7 @@ void TripGroupManager::transferChanged(const QString &resId, Transfer::Alignment
 
 bool TripGroupManager::hasUngroupedReservations() const
 {
-    return std::ranges::any_of(m_reservations, [this](const auto &batchId) {
+    return std::ranges::any_of(m_resMgr->batches(), [this](const auto &batchId) {
         return !m_reservationToGroupMap.contains(batchId);
     });
 }
@@ -361,6 +343,7 @@ void TripGroupManager::scanAll()
 
     qCDebug(Log);
     QString prevGroup;
+    m_reservations = m_resMgr->batches();
     for (auto it = m_reservations.begin(); it != m_reservations.end(); ++it) {
         auto groupIt = m_reservationToGroupMap.constFind(*it);
         if (groupIt != m_reservationToGroupMap.constEnd() && groupIt.value() == prevGroup) {
@@ -371,6 +354,8 @@ void TripGroupManager::scanAll()
         scanOne(it);
         prevGroup = m_reservationToGroupMap.value(*it);
     }
+
+    m_reservations.clear();
 }
 
 static bool isConnectedTransition(const QVariant &fromRes, const QVariant &toRes)
