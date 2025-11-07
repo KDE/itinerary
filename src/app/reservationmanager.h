@@ -140,6 +140,17 @@ Q_SIGNALS:
 private:
     void storeReservation(const QString &resId, const QVariant &res) const;
 
+    struct BatchComparator {
+        BatchComparator(const ReservationManager *resMgr)
+            : m_resMgr(resMgr)
+        {
+        }
+        [[nodiscard]] bool operator()(const QString &lhs, const QString &rhs) const;
+        [[nodiscard]] bool operator()(const QString &lhs, const QDateTime &rhs) const;
+        [[nodiscard]] bool operator()(const QDateTime &lhs, const QString &rhs) const;
+        const ReservationManager *m_resMgr;
+    };
+
     void loadBatches();
     void initialBatchCreate();
     void populateBatchTimes(ReservationBatch &batch) const;

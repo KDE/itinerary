@@ -71,6 +71,22 @@ ReservationBatch ReservationBatch::fromJson(const QJsonObject &obj)
 }
 
 
+bool ReservationManager::BatchComparator::operator()(const QString &lhs, const QString &rhs) const
+{
+    return ReservationBatch::isBefore(m_resMgr->m_batchToResMap.value(lhs), m_resMgr->m_batchToResMap.value(rhs));
+}
+
+bool ReservationManager::BatchComparator::operator()(const QString &lhs, const QDateTime &rhs) const
+{
+    return m_resMgr->m_batchToResMap.value(lhs).startDateTime() < rhs;
+}
+
+bool ReservationManager::BatchComparator::operator()(const QDateTime &lhs, const QString &rhs) const
+{
+    return lhs < m_resMgr->m_batchToResMap.value(rhs).startDateTime();
+}
+
+
 ReservationManager::ReservationManager(QObject *parent)
     : QObject(parent)
     , m_validator(ReservationManager::validator())
@@ -211,9 +227,7 @@ QString ReservationManager::addReservation(const QVariant &res, const QString &r
     const auto rangeBegin = SortUtil::startDateTime(res).addDays(-1);
     const auto rangeEnd = rangeBegin.addDays(2);
 
-    const auto beginIt = std::lower_bound(m_batches.begin(), m_batches.end(), rangeBegin, [this](const auto &lhs, const auto &rhs) {
-        return SortUtil::startDateTime(reservation(lhs)) < rhs;
-    });
+    const auto beginIt = std::lower_bound(m_batches.begin(), m_batches.end(), rangeBegin, BatchComparator(this));
     for (auto it = beginIt; it != m_batches.end(); ++it) {
         const auto otherRes = reservation(*it);
         if (SortUtil::startDateTime(otherRes) > rangeEnd) {
@@ -258,9 +272,7 @@ QString ReservationManager::addReservation(const QVariant &res, const QString &r
     Q_EMIT reservationAdded(resId);
 
     // search for the precise insertion place, beginIt is only the begin of our initial search range
-    const auto insertIt = std::lower_bound(m_batches.begin(), m_batches.end(), SortUtil::startDateTime(res), [this](const auto &lhs, const auto &rhs) {
-        return SortUtil::startDateTime(reservation(lhs)) < rhs;
-    });
+    const auto insertIt = std::lower_bound(m_batches.begin(), m_batches.end(), SortUtil::startDateTime(res), BatchComparator(this));
     m_batches.insert(insertIt, resId);
     ReservationBatch batch;
     batch.m_resIds = {resId};
@@ -330,9 +342,7 @@ void ReservationManager::updateBatch(const std::vector<ReservationManager::Reser
     storeBatch(batchId, batch);
 
     // TODO can probably be done more efficiently by only moving batchId
-    std::sort(m_batches.begin(), m_batches.end(), [this](const auto &lhs, const auto &rhs) {
-        return SortUtil::isBefore(reservation(lhs), reservation(rhs));
-    });
+    std::ranges::sort(m_batches, BatchComparator(this));
     Q_EMIT batchContentChanged(batchId);
 }
 
@@ -419,9 +429,7 @@ void ReservationManager::loadBatches()
         }
     }
 
-    std::sort(m_batches.begin(), m_batches.end(), [this](const auto &lhs, const auto &rhs) {
-        return SortUtil::isBefore(reservation(lhs), reservation(rhs));
-    });
+    std::ranges::sort(m_batches, BatchComparator(this));
 
     for (const auto &batchId : batchesToRemove) {
         storeRemoveBatch(batchId);
@@ -498,9 +506,7 @@ void ReservationManager::updateBatch(const QString &resId, const QVariant &newRe
     QString newBatchId;
 
     // find the destination batch
-    const auto beginIt = std::lower_bound(m_batches.begin(), m_batches.end(), newRes, [this](const auto &lhs, const auto &rhs) {
-        return SortUtil::startDateTime(reservation(lhs)) < SortUtil::startDateTime(rhs);
-    });
+    const auto beginIt = std::lower_bound(m_batches.begin(), m_batches.end(), SortUtil::startDateTime(newRes), BatchComparator(this));
     for (auto it = beginIt; it != m_batches.end(); ++it) {
         const auto otherRes = (resId == (*it)) ? oldRes : reservation(*it);
         if (SortUtil::startDateTime(otherRes) != SortUtil::startDateTime(newRes)) {
@@ -531,9 +537,7 @@ void ReservationManager::updateBatch(const QString &resId, const QVariant &newRe
     if (newBatchId.isEmpty()) {
         // we are starting a new batch
         // re-run search for insertion point, could be invalid due to the above deletions
-        const auto it = std::lower_bound(m_batches.begin(), m_batches.end(), newRes, [this](const auto &lhs, const auto &rhs) {
-            return SortUtil::startDateTime(reservation(lhs)) < SortUtil::startDateTime(rhs);
-        });
+        const auto it = std::lower_bound(m_batches.begin(), m_batches.end(), SortUtil::startDateTime(newRes), BatchComparator(this));
         m_batches.insert(it, QString(resId));
         ReservationBatch batch;
         batch.m_resIds = {resId};
@@ -605,9 +609,7 @@ QVariant ReservationManager::isPartialUpdate(const QVariant &res) const
     const auto rangeBegin = baseRes.modifiedTime();
     const auto rangeEnd = rangeBegin.addDays(6 * 30);
 
-    const auto beginIt = std::lower_bound(m_batches.begin(), m_batches.end(), rangeBegin, [this](const auto &lhs, const auto &rhs) {
-        return SortUtil::startDateTime(reservation(lhs)) < rhs;
-    });
+    const auto beginIt = std::lower_bound(m_batches.begin(), m_batches.end(), rangeBegin, BatchComparator(this));
     for (auto it = beginIt; it != m_batches.end(); ++it) {
         auto otherRes = reservation(*it);
         if (SortUtil::startDateTime(otherRes) > rangeEnd) {
@@ -648,9 +650,7 @@ QList<QString> ReservationManager::applyPartialUpdate(const QVariant &res)
     const auto rangeEnd = rangeBegin.addDays(6 * 30);
 
     QList<QString> updatedIds;
-    const auto beginIt = std::lower_bound(m_batches.begin(), m_batches.end(), rangeBegin, [this](const auto &lhs, const auto &rhs) {
-        return SortUtil::startDateTime(reservation(lhs)) < rhs;
-    });
+    const auto beginIt = std::lower_bound(m_batches.begin(), m_batches.end(), rangeBegin, BatchComparator(this));
     for (auto it = beginIt; it != m_batches.end(); ++it) {
         const auto otherRes = reservation(*it);
         if (SortUtil::startDateTime(otherRes) > rangeEnd) {
