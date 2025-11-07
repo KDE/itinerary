@@ -22,6 +22,10 @@ class ReservationBatch
 {
 public:
     [[nodiscard]] const QStringList& reservationIds() const;
+
+    [[nodiscard]] QJsonObject toJson() const;
+    [[nodiscard]] static ReservationBatch fromJson(const QJsonObject &obj);
+
 private:
     friend class ReservationManager;
     QStringList m_resIds; // ### QStringList for direct consumption by QML

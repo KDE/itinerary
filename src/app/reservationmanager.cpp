@@ -41,6 +41,25 @@ const QStringList& ReservationBatch::reservationIds() const
     return m_resIds;
 }
 
+QJsonObject ReservationBatch::toJson() const
+{
+    QJsonArray elems;
+    std::ranges::copy(m_resIds, std::back_inserter(elems));
+
+    QJsonObject obj;
+    obj.insert("elements"_L1, elems);
+    return obj;
+}
+
+ReservationBatch ReservationBatch::fromJson(const QJsonObject &obj)
+{
+    ReservationBatch batch;
+    const auto resArray = obj.value("elements"_L1).toArray();
+    batch.m_resIds.reserve(resArray.size());
+    std::ranges::transform(resArray, std::back_inserter(batch.m_resIds), [](const auto &v) { return v.toString(); });
+    return batch;
+}
+
 
 ReservationManager::ReservationManager(QObject *parent)
     : QObject(parent)
@@ -363,19 +382,13 @@ void ReservationManager::loadBatches()
         const auto batchId = it.fileInfo().baseName();
         m_batches.push_back(batchId);
 
-        const auto batchVal = JsonIO::read(batchFile.readAll());
-        const auto top = batchVal.toObject();
-        const auto resArray = top.value(QLatin1StringView("elements")).toArray();
-        if (resArray.isEmpty()) {
+        const auto batch = ReservationBatch::fromJson(JsonIO::read(batchFile.readAll()).toObject());
+        if (batch.reservationIds().isEmpty()) {
             batchesToRemove.push_back(batchId);
             continue;
         }
 
-        ReservationBatch batch;
-        batch.m_resIds.reserve(resArray.size());
-        for (const auto &v : resArray) {
-            const auto resId = v.toString();
-            batch.m_resIds.push_back(resId);
+        for (const auto &resId : batch.reservationIds()) {
             m_resToBatchMap.insert(resId, batchId);
         }
         m_batchToResMap.insert(batchId, batch);
@@ -392,21 +405,16 @@ void ReservationManager::loadBatches()
 
 void ReservationManager::storeBatch(const QString &batchId) const
 {
-    QJsonArray elems;
     const auto &batch = m_batchToResMap.value(batchId);
-    std::ranges::copy(batch.reservationIds(), std::back_inserter(elems));
 
-    QJsonObject top;
-    top.insert(QLatin1StringView("elements"), elems);
-
-    const QString path = batchesBasePath() + batchId + QLatin1StringView(".json");
+    const QString path = batchesBasePath() + batchId + ".json"_L1;
     QFile f(path);
     if (!f.open(QFile::WriteOnly | QFile::Truncate)) {
         qCWarning(Log) << "Failed to open batch file!" << path << f.errorString();
         return;
     }
 
-    f.write(JsonIO::write(top));
+    f.write(JsonIO::write(batch.toJson()));
 }
 
 void ReservationManager::storeRemoveBatch(const QString &batchId) const
