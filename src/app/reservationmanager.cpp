@@ -6,6 +6,7 @@
 
 #include "reservationmanager.h"
 
+#include "json.h"
 #include "jsonio.h"
 #include "logging.h"
 #include "reservationhelper.h"
@@ -41,23 +42,32 @@ const QStringList& ReservationBatch::reservationIds() const
     return m_resIds;
 }
 
+QDateTime ReservationBatch::startDateTime() const
+{
+    return m_startDt;
+}
+
+QDateTime ReservationBatch::endDateTime() const
+{
+    return m_endDt;
+}
+
+bool ReservationBatch::isBefore(const ReservationBatch &lhs, const ReservationBatch &rhs)
+{
+    if (lhs.m_startDt == rhs.m_startDt) {
+        return lhs.m_endDt < rhs.m_endDt;
+    }
+    return lhs.m_startDt < rhs.m_startDt;
+}
+
 QJsonObject ReservationBatch::toJson() const
 {
-    QJsonArray elems;
-    std::ranges::copy(m_resIds, std::back_inserter(elems));
-
-    QJsonObject obj;
-    obj.insert("elements"_L1, elems);
-    return obj;
+    return Json::toJson(*this);
 }
 
 ReservationBatch ReservationBatch::fromJson(const QJsonObject &obj)
 {
-    ReservationBatch batch;
-    const auto resArray = obj.value("elements"_L1).toArray();
-    batch.m_resIds.reserve(resArray.size());
-    std::ranges::transform(resArray, std::back_inserter(batch.m_resIds), [](const auto &v) { return v.toString(); });
-    return batch;
+    return Json::fromJson<ReservationBatch>(obj);
 }
 
 
@@ -234,9 +244,10 @@ QString ReservationManager::addReservation(const QVariant &res, const QString &r
             Q_EMIT reservationAdded(resId);
 
             batch.m_resIds.push_back(resId);
+            populateBatchTimes(batch);
             m_resToBatchMap.insert(resId, *it);
-            Q_EMIT batchChanged(*it);
             storeBatch(*it, batch);
+            Q_EMIT batchChanged(*it);
             return resId;
         }
     }
@@ -253,10 +264,11 @@ QString ReservationManager::addReservation(const QVariant &res, const QString &r
     m_batches.insert(insertIt, resId);
     ReservationBatch batch;
     batch.m_resIds = {resId};
+    populateBatchTimes(batch);
     m_batchToResMap.insert(resId, batch);
     m_resToBatchMap.insert(resId, resId);
-    Q_EMIT batchAdded(resId);
     storeBatch(resId, batch);
+    Q_EMIT batchAdded(resId);
     return resId;
 }
 
@@ -312,6 +324,11 @@ void ReservationManager::updateBatch(const std::vector<ReservationManager::Reser
         assert(batchId == bid && !batchId.isEmpty());
         storeReservation(change.id, change.res);
     }
+
+    auto &batch = m_batchToResMap[batchId];
+    populateBatchTimes(m_batchToResMap[batchId]);
+    storeBatch(batchId, batch);
+
     // TODO can probably be done more efficiently by only moving batchId
     std::sort(m_batches.begin(), m_batches.end(), [this](const auto &lhs, const auto &rhs) {
         return SortUtil::isBefore(reservation(lhs), reservation(rhs));
@@ -394,6 +411,14 @@ void ReservationManager::loadBatches()
         m_batchToResMap.insert(batchId, batch);
     }
 
+    // populate batch times where they are missing, e.g. for legacy app data
+    for (auto it = m_batchToResMap.begin(); it != m_batchToResMap.end(); ++it) {
+        if (!it.value().startDateTime().isValid()) {
+            populateBatchTimes(it.value());
+            storeBatch(it.key(), it.value());
+        }
+    }
+
     std::sort(m_batches.begin(), m_batches.end(), [this](const auto &lhs, const auto &rhs) {
         return SortUtil::isBefore(reservation(lhs), reservation(rhs));
     });
@@ -439,6 +464,17 @@ void ReservationManager::initialBatchCreate()
     }
 }
 
+void ReservationManager::populateBatchTimes(ReservationBatch &batch) const
+{
+    for (const auto &resId : batch.reservationIds()) {
+        batch.m_startDt = SortUtil::startDateTime(reservation(resId));
+        batch.m_endDt = SortUtil::startDateTime(reservation(resId));
+        if (batch.m_startDt.isValid() && batch.m_endDt.isValid()) {
+            break;
+        }
+    }
+}
+
 void ReservationManager::updateBatch(const QString &resId, const QVariant &newRes, const QVariant &oldRes)
 {
     bool sortOrderInvalid = false;
@@ -478,8 +514,10 @@ void ReservationManager::updateBatch(const QString &resId, const QVariant &newRe
 
     // still in the same batch?
     if (!oldBatchId.isEmpty() && oldBatchId == newBatchId) {
+        auto &batch = m_batchToResMap[newBatchId];
+        populateBatchTimes(batch);
+        storeBatch(newBatchId, batch);
         Q_EMIT batchContentChanged(oldBatchId);
-        // no need to store here, as batching didn't actually change
         return;
     }
 
@@ -499,6 +537,7 @@ void ReservationManager::updateBatch(const QString &resId, const QVariant &newRe
         m_batches.insert(it, QString(resId));
         ReservationBatch batch;
         batch.m_resIds = {resId};
+        populateBatchTimes(batch);
         m_batchToResMap.insert(resId, batch);
         m_resToBatchMap.insert(resId, resId);
         Q_EMIT batchAdded(resId);
@@ -506,6 +545,7 @@ void ReservationManager::updateBatch(const QString &resId, const QVariant &newRe
     } else {
         auto &batch = m_batchToResMap[newBatchId];
         batch.m_resIds.push_back(resId);
+        populateBatchTimes(batch);
         m_resToBatchMap.insert(resId, newBatchId);
         Q_EMIT batchChanged(newBatchId);
         storeBatch(newBatchId, batch);

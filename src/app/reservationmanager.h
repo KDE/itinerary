@@ -9,6 +9,7 @@
 
 #include <KItinerary/ExtractorValidator>
 
+#include <QDateTime>
 #include <QHash>
 #include <QObject>
 #include <QVariant>
@@ -20,8 +21,20 @@ class ReservationManager;
  */
 class ReservationBatch
 {
+    Q_GADGET // for JSON de/serialization
+    Q_PROPERTY(QStringList elements MEMBER m_resIds)
+    Q_PROPERTY(QDateTime startDateTime MEMBER m_startDt)
+    Q_PROPERTY(QDateTime endDateTime MEMBER m_endDt)
+
 public:
     [[nodiscard]] const QStringList& reservationIds() const;
+
+    /** The equivalent of KItinerary::SortUtil::[start|end]DateTime for the corresponding reservation incidence. */
+    [[nodiscard]] QDateTime startDateTime() const;
+    [[nodiscard]] QDateTime endDateTime() const;
+
+    /** Equivalent to KItinerary::SortUtil::isBefore. */
+    [[nodiscard]] static bool isBefore(const ReservationBatch &lhs, const ReservationBatch &rhs);
 
     [[nodiscard]] QJsonObject toJson() const;
     [[nodiscard]] static ReservationBatch fromJson(const QJsonObject &obj);
@@ -29,6 +42,8 @@ public:
 private:
     friend class ReservationManager;
     QStringList m_resIds; // ### QStringList for direct consumption by QML
+    QDateTime m_startDt;
+    QDateTime m_endDt;
 };
 
 /** Manages JSON-LD reservation data.
@@ -127,6 +142,7 @@ private:
 
     void loadBatches();
     void initialBatchCreate();
+    void populateBatchTimes(ReservationBatch &batch) const;
     static void storeBatch(const QString &batchId, const ReservationBatch &batch);
     static void storeRemoveBatch(const QString &batchId);
 
