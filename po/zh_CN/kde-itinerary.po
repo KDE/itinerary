@@ -14,8 +14,8 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/itinerary/kde-itinerary.pot\n"
-"X-Crowdin-File-ID: 45515\n"
+"X-Crowdin-File: /kf6-stable/messages/itinerary/kde-itinerary.pot\n"
+"X-Crowdin-File-ID: 52104\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -208,7 +208,7 @@ msgstr ""
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Airplane"
-msgstr ""
+msgstr "飞机"
 
 #: app/AlternativeJourneyPage.qml:119
 #, kde-format
@@ -1454,7 +1454,7 @@ msgstr ""
 #: app/FormPlaceEditorDelegate.qml:247
 #, kde-format
 msgid "Remove coordinate"
-msgstr ""
+msgstr "移除坐标"
 
 #: app/FormPlatformDelegate.qml:19
 #, kde-format
@@ -1889,7 +1889,7 @@ msgstr ""
 #: app/HotelEditor.qml:133 app/HotelPage.qml:80
 #, kde-format
 msgid "Description"
-msgstr ""
+msgstr "描述"
 
 #: app/HotelPage.qml:16
 #, kde-format
@@ -1925,12 +1925,12 @@ msgstr "导入预约"
 #: app/ImportAction.qml:43
 #, kde-format
 msgid "Apple Wallet passes (*.pkpass)"
-msgstr ""
+msgstr "Apple 钱包通行证文件 (*.pkpass) "
 
 #: app/ImportAction.qml:43
 #, kde-format
 msgid "Apple Wallet pass bundles (*.pkpasses)"
-msgstr ""
+msgstr "Apple 钱包通行证包 (*.pkpasses) "
 
 #: app/ImportAction.qml:43
 #, kde-format
@@ -2113,7 +2113,7 @@ msgstr "打开 wheelmap.org"
 #, kde-format
 msgctxt "@title"
 msgid "Filter Journeys"
-msgstr ""
+msgstr "筛选旅程"
 
 #: app/JourneyFilterPage.qml:59
 #, kde-format
@@ -2241,7 +2241,7 @@ msgstr ""
 #, kde-format
 msgctxt "filter journeys by mode of transportation etc."
 msgid "Filter"
-msgstr ""
+msgstr "筛选"
 
 #: app/JourneyRequestPage.qml:219
 #, kde-format
@@ -2474,7 +2474,7 @@ msgstr ""
 #, kde-format
 msgctxt "altitude in meter"
 msgid "%1m"
-msgstr ""
+msgstr "%1m"
 
 #: app/LocationInfoDelegate.qml:51
 #, kde-format
@@ -2598,7 +2598,7 @@ msgstr "Copyright © The KDE Community"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Wikidata"
-msgstr ""
+msgstr "Wikidata"
 
 #: app/main.cpp:220
 #, kde-format
@@ -2606,62 +2606,61 @@ msgctxt "@info:credit"
 msgid ""
 "Provides various metadata like train station names, driving side, and power "
 "plug types."
-msgstr ""
+msgstr "提供各类元数据，例如火车站名称、行车方向以及电源插头类型。"
 
 #: app/main.cpp:221
-#, fuzzy, kde-format
-#| msgid "Open Map"
+#, kde-format
 msgctxt "@info:credit"
 msgid "OpenStreetMap"
-msgstr "打开地图"
+msgstr "OpenStreetMap"
 
 #: app/main.cpp:221
 #, kde-format
 msgctxt "@info:credit"
 msgid "Provides both indoor and outdoor maps. ©OpenStreetMap contributors"
-msgstr ""
+msgstr "提供室内和户外地图。©OpenStreetMap contributors"
 
 #: app/main.cpp:222
 #, kde-format
 msgctxt "@info:credit"
 msgid "OpenSSL"
-msgstr ""
+msgstr "OpenSSL"
 
 #: app/main.cpp:222
 #, kde-format
 msgctxt "@info:credit"
 msgid "Secure network interaction with TLS. © 1998-2018 The OpenSSL Project"
-msgstr ""
+msgstr "通过 TLS 实现安全的网络交互。© 1998-2018 The OpenSSL Project"
 
 #: app/main.cpp:223
 #, kde-format
 msgctxt "@info:credit"
 msgid "ZXing"
-msgstr ""
+msgstr "ZXing"
 
 #: app/main.cpp:223
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code scanning. © 2016 ZXing Authors, © 2016 Nu-book Inc."
-msgstr ""
+msgstr "二维码扫描。© 2016 ZXing Authors, © 2016 Nu-book Inc."
 
 #: app/main.cpp:224
 #, kde-format
 msgctxt "@info:credit"
 msgid "Poppler"
-msgstr ""
+msgstr "Poppler"
 
 #: app/main.cpp:224
 #, kde-format
 msgctxt "@info:credit"
 msgid "PDF parsing"
-msgstr ""
+msgstr "PDF 解析"
 
 #: app/main.cpp:227
 #, kde-format
 msgctxt "@info:credit"
 msgid "FreeType"
-msgstr ""
+msgstr "FreeType"
 
 #: app/main.cpp:227
 #, kde-format
@@ -2669,92 +2668,91 @@ msgctxt "@info:credit"
 msgid ""
 "Copyright (C) 2006-2020 by David Turner, Robert Wilhelm, and Werner Lemberg."
 msgstr ""
+"Copyright (C) 2006-2020 by David Turner, Robert Wilhelm, and Werner Lemberg."
 
 #: app/main.cpp:228
 #, kde-format
 msgctxt "@info:credit"
 msgid "libintl lite"
-msgstr ""
+msgstr "libintl lite"
 
 #: app/main.cpp:228
-#, fuzzy, kde-format
-#| msgid "Information"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Internalisation"
-msgstr "信息"
+msgstr "内部化"
 
 #: app/main.cpp:231
 #, kde-format
 msgctxt "@info:credit"
 msgid "libqrencode"
-msgstr ""
+msgstr "libqrencode"
 
 #: app/main.cpp:231
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code Generation. © 2006-2018 Kentaro Fukuchi"
-msgstr ""
+msgstr "生成二维码。© 2006-2018 Kentaro Fukuchi"
 
 #: app/main.cpp:232
 #, kde-format
 msgctxt "@info:credit"
 msgid "libical"
-msgstr ""
+msgstr "libical"
 
 #: app/main.cpp:232
 #, kde-format
 msgctxt "@info:credit"
 msgid "© The libical developers"
-msgstr ""
+msgstr "© The libical developers"
 
 #: app/main.cpp:233
 #, kde-format
 msgctxt "@info:credit"
 msgid "libxml2"
-msgstr ""
+msgstr "libxml2"
 
 #: app/main.cpp:233
 #, kde-format
 msgctxt "@info:credit"
 msgid "Copyright (C) 1998-2012 Daniel Veillard"
-msgstr ""
+msgstr "Copyright (C) 1998-2012 Daniel Veillard"
 
 #: app/main.cpp:236
 #, kde-format
 msgctxt "@info:credit"
 msgid "libQuotient"
-msgstr ""
+msgstr "libQuotient"
 
 #: app/main.cpp:236
-#, fuzzy, kde-format
-#| msgid "Matrix Session Verification"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Matrix integration."
-msgstr "Matrix 会话验证"
+msgstr "Matrix 集成。"
 
 #: app/main.cpp:237
 #, kde-format
 msgctxt "@info:credit"
 msgid "QtKeychain"
-msgstr ""
+msgstr "QtKeychain"
 
 #: app/main.cpp:237
 #, kde-format
 msgctxt "@info:credit"
 msgid "Secure password storage."
-msgstr ""
+msgstr "安全的密码存储。"
 
 #: app/main.cpp:238
 #, kde-format
 msgctxt "@info:credit"
 msgid "Olm"
-msgstr ""
+msgstr "Olm"
 
 #: app/main.cpp:238
 #, kde-format
 msgctxt "@info:credit"
 msgid "Matrix crypto library."
-msgstr ""
+msgstr "Matrix 加密库。"
 
 #: app/main.cpp:246
 #, kde-format
@@ -4222,7 +4220,7 @@ msgstr ""
 msgid ""
 "Specifying the departure and arrival location helps Itinerary to find "
 "updated information for the train this reservation is valid for."
-msgstr ""
+msgstr "指定出发地和目的地有助于行程查找此预订适用的列车的最新信息。"
 
 #: app/TrainEditor.qml:228 app/TrainEditor.qml:330 app/TrainPage.qml:163
 #: app/TrainPage.qml:247
@@ -4652,11 +4650,10 @@ msgid "A trip must be selected."
 msgstr "必须选择一个行程。"
 
 #: app/TripGroupSelectorDialog.qml:14
-#, fuzzy, kde-format
-#| msgid "Add to Trip"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Add Journey to Trip"
-msgstr "添加到行程"
+msgstr "添加旅程到旅行"
 
 #: app/TripGroupsPage.qml:15
 #, kde-format
@@ -4847,24 +4844,3 @@ msgstr "已登出"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr ""
-
-#~ msgid "Copyright: %1"
-#~ msgstr "Copyright：%1"
-
-#~ msgid "Homepage: <a href=\"%1\">%1</a>"
-#~ msgstr "项目主页：<a href=\"%1\">%1</a>"
-
-#~ msgid "License: <a href=\"https://spdx.org/licenses/%1.html\">%2</a>"
-#~ msgstr "许可协议：<a href=\"https://spdx.org/licenses/%1.html\">%2</a>"
-
-#~ msgid ""
-#~ "KDE Itinerary is developed by the KDE community as free software and uses "
-#~ "the components listed below."
-#~ msgstr "KDE Itinerary 是由社区使用如下组件开发的自由软件。"
-
-#~ msgid "KDE Itinerary uses public transport data from the following sources."
-#~ msgstr "KDE Itinerary 使用以下来源的公共交通数据。"
-
-#~ msgctxt "journey query search constraint, title"
-#~ msgid "Aircraft"
-#~ msgstr "飞机"
