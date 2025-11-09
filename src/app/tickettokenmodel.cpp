@@ -46,7 +46,6 @@ void TicketTokenModel::setReservationIds(const QStringList &resIds)
         m_pendingResIds = resIds;
         return;
     }
-    m_pendingResIds.clear();
 
     beginResetModel();
     m_personNames.clear();
@@ -77,8 +76,10 @@ void TicketTokenModel::setReservationIds(const QStringList &resIds)
             }
         }
     }
+
     endResetModel();
     Q_EMIT initialIndexChanged();
+    m_pendingResIds.clear();
 }
 
 QVariant TicketTokenModel::reservationAt(int row) const

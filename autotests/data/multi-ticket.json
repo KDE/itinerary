@@ -1,0 +1,86 @@
+[
+    {
+        "@context": "http://schema.org",
+        "@type": "TrainReservation",
+        "modifiedTime": "2025-10-19T06:09:07Z",
+        "priceCurrency": "EUR",
+        "reservationFor": {
+            "@type": "TrainTrip",
+            "arrivalStation": {
+                "@type": "TrainStation",
+                "name": "Innsbruck Hbf"
+            },
+            "arrivalTime": "2025-10-19T15:44:00",
+            "departureDay": "2025-10-19",
+            "departureStation": {
+                "@type": "TrainStation",
+                "name": "Wien Hbf"
+            },
+            "departureTime": "2025-10-19T11:28:00",
+            "provider": {
+                "@type": "Organization",
+                "identifier": "uic:1181"
+            },
+            "trainNumber": "RJX 766"
+        },
+        "reservationNumber": "2400123456789012",
+        "reservationStatus": "http://schema.org/ReservationConfirmed",
+        "reservedTicket": {
+            "@type": "Ticket",
+            "name": "FAHRSCHEIN",
+            "ticketToken": "azteccode:ticket1",
+            "ticketedSeat": {
+                "@type": "Seat",
+                "seatingType": "2"
+            }
+        },
+        "totalPrice": 42.0,
+        "underName": {
+            "@type": "Person",
+            "name": "Konqi Dragon"
+        }
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "TrainReservation",
+        "modifiedTime": "2025-10-19T06:09:07Z",
+        "priceCurrency": "EUR",
+        "reservationFor": {
+            "@type": "TrainTrip",
+            "arrivalStation": {
+                "@type": "TrainStation",
+                "name": "INNSBRUCK HBF"
+            },
+            "arrivalTime": "2025-10-19T15:44:00",
+            "departureDay": "2025-10-19",
+            "departureStation": {
+                "@type": "TrainStation",
+                "name": "WIEN HBF"
+            },
+            "departureTime": "2025-10-19T11:28:00",
+            "provider": {
+                "@type": "Organization",
+                "identifier": "uic:1181"
+            },
+            "trainNumber": "RJX 766"
+        },
+        "reservationNumber": "2675123456789012",
+        "reservationStatus": "http://schema.org/ReservationConfirmed",
+        "reservedTicket": {
+            "@type": "Ticket",
+            "name": "Reservation",
+            "ticketToken": "azteccode:ticket2",
+            "ticketedSeat": {
+                "@type": "Seat",
+                "seatNumber": "GANG 64",
+                "seatSection": "32",
+                "seatingType": "2"
+            }
+        },
+        "totalPrice": 3,
+        "underName": {
+            "@type": "Person",
+            "name": "Konqi Dragon"
+        }
+    }
+]

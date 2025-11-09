@@ -38,7 +38,7 @@ public:
     Q_INVOKABLE [[nodiscard]] QVariant reservationAt(int row) const;
     Q_INVOKABLE [[nodiscard]] QString reservationIdAt(int row) const;
 
-    [[nodiscard]] int rowCount(const QModelIndex &parent) const override;
+    [[nodiscard]] int rowCount(const QModelIndex &parent = {}) const override;
     [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
     [[nodiscard]] QHash<int, QByteArray> roleNames() const override;
 
