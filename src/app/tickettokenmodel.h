@@ -30,19 +30,19 @@ public:
     explicit TicketTokenModel(QObject *parent = nullptr);
     ~TicketTokenModel() override;
 
-    QObject *reservationManager() const;
+    [[nodiscard]] QObject *reservationManager() const;
     void setReservationManager(QObject *mgr);
-    QStringList reservationIds() const;
+    [[nodiscard]] QStringList reservationIds() const;
     void setReservationIds(const QStringList &resIds);
 
-    Q_INVOKABLE QVariant reservationAt(int row) const;
-    Q_INVOKABLE QString reservationIdAt(int row) const;
+    Q_INVOKABLE [[nodiscard]] QVariant reservationAt(int row) const;
+    Q_INVOKABLE [[nodiscard]] QString reservationIdAt(int row) const;
 
-    int rowCount(const QModelIndex &parent) const override;
-    QVariant data(const QModelIndex &index, int role) const override;
-    QHash<int, QByteArray> roleNames() const override;
+    [[nodiscard]] int rowCount(const QModelIndex &parent) const override;
+    [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
+    [[nodiscard]] QHash<int, QByteArray> roleNames() const override;
 
-    int initialIndex() const;
+    [[nodiscard]] int initialIndex() const;
 
 Q_SIGNALS:
     void initialIndexChanged();

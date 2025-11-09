@@ -45,9 +45,8 @@ void TicketTokenModel::setReservationIds(const QStringList &resIds)
     if (!m_resMgr) {
         m_pendingResIds = resIds;
         return;
-    } else {
-        m_pendingResIds.clear();
     }
+    m_pendingResIds.clear();
 
     beginResetModel();
     m_personNames.clear();
@@ -56,8 +55,9 @@ void TicketTokenModel::setReservationIds(const QStringList &resIds)
 
     for (const auto &resId : resIds) {
         const auto v = m_resMgr->reservation(resId);
-        if (!JsonLd::canConvert<Reservation>(v))
+        if (!JsonLd::canConvert<Reservation>(v)) {
             continue;
+        }
         const auto res = JsonLd::convert<Reservation>(v);
         const auto ticket = res.reservedTicket().value<Ticket>();
         if (ticket.ticketToken().isEmpty() && res.pkpassPassTypeIdentifier().isEmpty()) {
@@ -83,31 +83,35 @@ void TicketTokenModel::setReservationIds(const QStringList &resIds)
 
 QVariant TicketTokenModel::reservationAt(int row) const
 {
-    if (!m_resMgr || row >= m_resIds.size() || row < 0)
+    if (!m_resMgr || row >= m_resIds.size() || row < 0) {
         return {};
+    }
     return m_resMgr->reservation(m_resIds.at(row));
 }
 
 QString TicketTokenModel::reservationIdAt(int row) const
 {
-    if (!m_resMgr || row >= m_resIds.size() || row < 0)
+    if (!m_resMgr || row >= m_resIds.size() || row < 0) {
         return {};
+    }
     return m_resIds.at(row);
 }
 
 int TicketTokenModel::rowCount(const QModelIndex &parent) const
 {
-    if (parent.isValid())
+    if (parent.isValid()) {
         return 0;
-    return m_resIds.size();
+    }
+    return (int)m_resIds.size();
 }
 
 QVariant TicketTokenModel::data(const QModelIndex &index, int role) const
 {
-    if (!index.isValid() || !m_resMgr || index.row() >= m_resIds.size())
+    if (!index.isValid() || !m_resMgr || index.row() >= m_resIds.size()) {
         return {};
+    }
 
-    const auto res = m_resMgr->reservation(m_resIds.at(index.row()));
+    auto res = m_resMgr->reservation(m_resIds.at(index.row()));
     switch (role) {
     case Qt::DisplayRole: {
         const auto ticket = JsonLd::convert<Reservation>(res).reservedTicket().value<Ticket>();
@@ -116,9 +120,8 @@ QVariant TicketTokenModel::data(const QModelIndex &index, int role) const
                 return i18n("%1 (%2)", m_personNames.at(index.row()), ticket.name());
             }
             return m_personNames.at(index.row());
-        } else {
-            return ticket.name();
         }
+        return ticket.name();
     }
     case ReservationRole:
         return res;
@@ -143,6 +146,7 @@ int TicketTokenModel::initialIndex() const
     if (it == m_personNames.end()) {
         return 0;
     }
-    return it - m_personNames.begin();
+    return (int)(it - m_personNames.begin());
 }
+
 #include "moc_tickettokenmodel.cpp"
