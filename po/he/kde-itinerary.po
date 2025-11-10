@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-06 08:06+0000\n"
+"POT-Creation-Date: 2025-11-10 00:43+0000\n"
 "PO-Revision-Date: 2025-10-30 08:41+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -2374,7 +2374,7 @@ msgstr[3] "%1 החלפות"
 msgid "Click to extend"
 msgstr "לחיצה על הרחבה"
 
-#: app/livedatamanager.cpp:805
+#: app/livedatamanager.cpp:809
 #, kde-format
 msgid "Itinerary change"
 msgstr "שינוי בתוכנית המסע"
@@ -4455,13 +4455,13 @@ msgctxt "@label:textbox"
 msgid "Trip name:"
 msgstr "שם הטיול:"
 
-#: app/tripgroupmanager.cpp:876
+#: app/tripgroupmanager.cpp:861
 #, kde-format
 msgctxt "%1 is destination, %2 is the standalone month name, %3 is the year"
 msgid "%1 (%2 %3)"
 msgstr "%1 (%2 %3)"
 
-#: app/tripgroupmanager.cpp:882
+#: app/tripgroupmanager.cpp:867
 #, kde-format
 msgctxt ""
 "%1 is destination, %2 and %3 are the standalone month names and %4 is the "
@@ -4469,7 +4469,7 @@ msgctxt ""
 msgid "%1 (%2/%3 %4)"
 msgstr "%1 (%2/%3 %4)"
 
-#: app/tripgroupmanager.cpp:888
+#: app/tripgroupmanager.cpp:873
 #, kde-format
 msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"
