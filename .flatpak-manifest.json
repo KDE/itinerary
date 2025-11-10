@@ -167,6 +167,7 @@
                         "/include",
                         "/lib/*.a",
                         "/lib/*.la",
+                        "/lib/libprotobuf.*",
                         "/lib/libprotoc*",
                         "/lib/cmake",
                         "/lib/pkgconfig"
