@@ -1458,10 +1458,9 @@ msgid "Coordinate to address"
 msgstr ""
 
 #: app/FormPlaceEditorDelegate.qml:247
-#, fuzzy, kde-format
-#| msgid "Coordinate"
+#, kde-format
 msgid "Remove coordinate"
-msgstr "Souřadnice"
+msgstr ""
 
 #: app/FormPlatformDelegate.qml:19
 #, kde-format
