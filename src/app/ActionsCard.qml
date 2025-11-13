@@ -77,7 +77,7 @@ ColumnLayout {
         },
         Kirigami.Action {
             icon.name: "edit-delete"
-            text: i18n("Delete")
+            text: i18n("Delete…")
             onTriggered: deleteWarningDialog.open()
         }
     ]
@@ -108,25 +108,13 @@ ColumnLayout {
         }
     }
 
-    Kirigami.PromptDialog {
+    ReservationDeletionDialog {
         id: deleteWarningDialog
+        batchId: root.batchId
 
         title: i18n("Delete Event")
-        subtitle: i18n("Do you really want to delete this event?")
-
-        standardButtons: QQC2.Dialog.Cancel
-
-        customFooterActions: [
-            Kirigami.Action {
-                text: i18n("Delete")
-                icon.name: "edit-delete"
-                onTriggered: {
-                    ReservationManager.removeBatch(root.batchId);
-                    deleteWarningDialog.close();
-                    applicationWindow().pageStack.pop();
-                }
-            }
-        ]
+        description: i18n("Do you really want to delete this event?")
+        onBatchDeleted: applicationWindow().pageStack.pop();
     }
 
     ExportMenuDialog {

@@ -176,6 +176,7 @@ ecm_add_qml_module(itinerary GENERATE_PLUGIN_SOURCE
         ProgramMembershipEditorCard.qml
         ProgramMembershipEditor.qml
         ProgramMembershipPage.qml
+        ReservationDeletionDialog.qml
         ReservationDocumentsCard.qml
         RestaurantDelegate.qml
         RestaurantEditor.qml
