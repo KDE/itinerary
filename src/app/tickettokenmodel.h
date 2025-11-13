@@ -20,7 +20,7 @@ class TicketTokenModel : public QAbstractListModel
     Q_OBJECT
     QML_ELEMENT
 
-    Q_PROPERTY(QObject *reservationManager READ reservationManager WRITE setReservationManager)
+    Q_PROPERTY(ReservationManager *reservationManager READ reservationManager WRITE setReservationManager)
     Q_PROPERTY(QStringList reservationIds READ reservationIds WRITE setReservationIds)
     Q_PROPERTY(int initialIndex READ initialIndex NOTIFY initialIndexChanged)
 
@@ -30,8 +30,8 @@ public:
     explicit TicketTokenModel(QObject *parent = nullptr);
     ~TicketTokenModel() override;
 
-    [[nodiscard]] QObject *reservationManager() const;
-    void setReservationManager(QObject *mgr);
+    [[nodiscard]] ReservationManager *reservationManager() const;
+    void setReservationManager(ReservationManager *mgr);
     [[nodiscard]] QStringList reservationIds() const;
     void setReservationIds(const QStringList &resIds);
 

@@ -24,14 +24,14 @@ TicketTokenModel::TicketTokenModel(QObject *parent)
 
 TicketTokenModel::~TicketTokenModel() = default;
 
-QObject *TicketTokenModel::reservationManager() const
+ReservationManager *TicketTokenModel::reservationManager() const
 {
     return m_resMgr;
 }
 
-void TicketTokenModel::setReservationManager(QObject *mgr)
+void TicketTokenModel::setReservationManager(ReservationManager *mgr)
 {
-    m_resMgr = qobject_cast<ReservationManager *>(mgr);
+    m_resMgr = mgr;
     setReservationIds(m_pendingResIds);
 }
 
