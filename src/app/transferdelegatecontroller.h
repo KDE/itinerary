@@ -9,8 +9,8 @@
 
 #include "transfer.h"
 
+#include <QChronoTimer>
 #include <QObject>
-#include <QTimer>
 #include <qqmlregistration.h>
 
 /** Transfer delegate logic. */
@@ -27,11 +27,11 @@ public:
     explicit TransferDelegateController(QObject *parent = nullptr);
     ~TransferDelegateController();
 
-    Transfer transfer() const;
+    [[nodiscard]] Transfer transfer() const;
     void setTransfer(const Transfer &transfer);
 
-    bool isCurrent() const;
-    float progress() const;
+    [[nodiscard]] bool isCurrent() const;
+    [[nodiscard]] float progress() const;
 
 Q_SIGNALS:
     void transferChanged();
@@ -41,7 +41,7 @@ private:
     void scheduleTimer();
 
     Transfer m_transfer;
-    QTimer m_updateTrigger;
+    QChronoTimer m_updateTrigger;
 };
 
 #endif // TRANSFERDELEGATECONTROLLER_H

@@ -12,8 +12,8 @@ TransferDelegateController::TransferDelegateController(QObject *parent)
     : QObject(parent)
 {
     m_updateTrigger.setTimerType(Qt::VeryCoarseTimer);
-    connect(&m_updateTrigger, &QTimer::timeout, this, &TransferDelegateController::updated);
-    connect(&m_updateTrigger, &QTimer::timeout, this, &TransferDelegateController::scheduleTimer);
+    connect(&m_updateTrigger, &QChronoTimer::timeout, this, &TransferDelegateController::updated);
+    connect(&m_updateTrigger, &QChronoTimer::timeout, this, &TransferDelegateController::scheduleTimer);
 }
 
 TransferDelegateController::~TransferDelegateController() = default;
@@ -78,7 +78,7 @@ void TransferDelegateController::scheduleTimer()
     }
     const auto depTime = jny.departureDelay() < 0 ? jny.expectedDepartureTime() : jny.scheduledDepartureTime();
     if (now < depTime) {
-        m_updateTrigger.setInterval(now.secsTo(depTime) * 1000);
+        m_updateTrigger.setInterval(std::chrono::seconds(now.secsTo(depTime)));
         m_updateTrigger.start();
         return;
     }
