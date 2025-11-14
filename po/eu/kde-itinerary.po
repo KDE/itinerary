@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-10 00:43+0000\n"
+"POT-Creation-Date: 2025-11-14 00:43+0000\n"
 "PO-Revision-Date: 2025-10-05 19:53+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -4113,17 +4113,17 @@ msgstr "Eskaneatu barra-kodea…"
 msgid "Paste"
 msgstr "Itsatsi"
 
-#: app/tickettokenmodel.cpp:74
+#: app/tickettokenmodel.cpp:73
 #, kde-format
 msgid "Attendee %1"
 msgstr "Partaidea %1"
 
-#: app/tickettokenmodel.cpp:76
+#: app/tickettokenmodel.cpp:75
 #, kde-format
 msgid "Traveler %1"
 msgstr "Bidaiaria %1"
 
-#: app/tickettokenmodel.cpp:116
+#: app/tickettokenmodel.cpp:121
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"

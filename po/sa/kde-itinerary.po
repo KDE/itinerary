@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-10 00:43+0000\n"
+"POT-Creation-Date: 2025-11-14 00:43+0000\n"
 "PO-Revision-Date: 2025-03-02 14:47+0530\n"
 "Last-Translator: Shreekant Kalwar <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -4150,17 +4150,17 @@ msgstr "बारकोड् स्कैन् कुर्वन्तु…"
 msgid "Paste"
 msgstr "चिनोतु"
 
-#: app/tickettokenmodel.cpp:74
+#: app/tickettokenmodel.cpp:73
 #, kde-format
 msgid "Attendee %1"
 msgstr "उपस्थितः %1"
 
-#: app/tickettokenmodel.cpp:76
+#: app/tickettokenmodel.cpp:75
 #, kde-format
 msgid "Traveler %1"
 msgstr "यात्री %1"
 
-#: app/tickettokenmodel.cpp:116
+#: app/tickettokenmodel.cpp:121
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"

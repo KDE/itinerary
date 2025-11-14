@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-10 00:43+0000\n"
+"POT-Creation-Date: 2025-11-14 00:43+0000\n"
 "PO-Revision-Date: 2025-10-30 08:41+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -4073,17 +4073,17 @@ msgstr "סריקת ברקוד…"
 msgid "Paste"
 msgstr "הדבקה"
 
-#: app/tickettokenmodel.cpp:74
+#: app/tickettokenmodel.cpp:73
 #, kde-format
 msgid "Attendee %1"
 msgstr "משתתף/ת %1"
 
-#: app/tickettokenmodel.cpp:76
+#: app/tickettokenmodel.cpp:75
 #, kde-format
 msgid "Traveler %1"
 msgstr "נוסע/ת %1"
 
-#: app/tickettokenmodel.cpp:116
+#: app/tickettokenmodel.cpp:121
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"

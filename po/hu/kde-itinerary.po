@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-10 00:43+0000\n"
+"POT-Creation-Date: 2025-11-14 00:43+0000\n"
 "PO-Revision-Date: 2024-03-26 16:14+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -4222,17 +4222,17 @@ msgstr "Vonalkód beolvasása"
 msgid "Paste"
 msgstr "Beillesztés"
 
-#: app/tickettokenmodel.cpp:74
+#: app/tickettokenmodel.cpp:73
 #, kde-format
 msgid "Attendee %1"
 msgstr ""
 
-#: app/tickettokenmodel.cpp:76
+#: app/tickettokenmodel.cpp:75
 #, kde-format
 msgid "Traveler %1"
 msgstr ""
 
-#: app/tickettokenmodel.cpp:116
+#: app/tickettokenmodel.cpp:121
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
