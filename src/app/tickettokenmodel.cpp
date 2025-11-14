@@ -32,6 +32,7 @@ ReservationManager *TicketTokenModel::reservationManager() const
 void TicketTokenModel::setReservationManager(ReservationManager *mgr)
 {
     m_resMgr = mgr;
+    connect(m_resMgr, &ReservationManager::reservationRemoved, this, &TicketTokenModel::reservationRemoved);
     setReservationIds(m_pendingResIds);
 }
 
@@ -148,6 +149,19 @@ int TicketTokenModel::initialIndex() const
         return 0;
     }
     return (int)(it - m_personNames.begin());
+}
+
+void TicketTokenModel::reservationRemoved(const QString &resId)
+{
+    const auto idx = (int)m_resIds.indexOf(resId);
+    if (idx < 0) {
+        return;
+    }
+
+    beginRemoveRows({}, idx, idx);
+    m_resIds.remove(idx);
+    m_personNames.remove(idx);
+    endRemoveRows();
 }
 
 #include "moc_tickettokenmodel.cpp"

@@ -48,6 +48,8 @@ Q_SIGNALS:
     void initialIndexChanged();
 
 private:
+    void reservationRemoved(const QString &resId);
+
     ReservationManager *m_resMgr = nullptr;
     QStringList m_pendingResIds;
     QStringList m_resIds;

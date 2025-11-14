@@ -69,6 +69,9 @@ private Q_SLOTS:
         model.setReservationManager(&mgr);
         model.setReservationIds(resIds);
         QCOMPARE(model.rowCount(), 2);
+
+        mgr.removeReservation(resIds[1]);
+        QCOMPARE(model.rowCount(), 1);
     }
 
     void testSingle()
