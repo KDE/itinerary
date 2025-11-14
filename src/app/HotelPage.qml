@@ -28,7 +28,7 @@ DetailsPage {
         }
 
         FormCard.FormCard {
-            visible: ticketToken.ticketTokenCount > 0
+            visible: ticketToken.hasContent
             // ticket barcode
             TicketTokenDelegate {
                 id: ticketToken
@@ -40,7 +40,6 @@ DetailsPage {
                     root.currentReservationId = currentReservationId;
                 }
                 onScanModeToggled: scanModeButton.toggle()
-                visible: ticketToken.ticketTokenCount > 0
             }
         }
 

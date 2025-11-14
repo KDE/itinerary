@@ -42,7 +42,7 @@ DetailsPage {
         }
 
         FormCard.FormCard {
-            visible: ticketToken.ticketTokenCount > 0 || sequenceNumberDelegate.visible
+            visible: ticketToken.hasContent || sequenceNumberDelegate.visible
 
             // ticket barcode
             TicketTokenDelegate {

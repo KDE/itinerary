@@ -15,13 +15,16 @@ import org.kde.itinerary
 Item {
     id: barcodeContainer
     implicitHeight: childrenRect.height
-    visible: barcode.implicitHeight > 0
+    visible: hasContent
     clip: true
 
     /** Barcode format to use, using the KItinerary::Ticket enum. */
     property int barcodeType: Ticket.Unknown
     /** Barcode content, as string or byte array. */
     property var barcodeContent
+
+    /** @c true if this is displaying any kind of barcode. */
+    readonly property bool hasContent: barcode.implicitHeight > 0
 
     /** Emitted when the barcode is double clicked, for toggling scan mode. */
     signal doubleClicked()

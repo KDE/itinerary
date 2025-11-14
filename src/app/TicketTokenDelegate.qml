@@ -20,14 +20,18 @@ ColumnLayout {
     readonly property var currentReservationId: ticketModel.reservationIdAt(travelerBox.currentIndex)
     readonly property var currentTicket: ticketModel.reservationAt(travelerBox.currentIndex) ? ticketModel.reservationAt(travelerBox.currentIndex).reservedTicket : undefined
     readonly property int ticketTokenCount: travelerBox.count
+
+    /** @c true if we have either a barcode or multiple reservations to choose from. */
+    readonly property bool hasContent: travelerBox.count > 1 || barcodeContainer.hasContent
+    /** There is a barcode displayed. */
+    readonly property alias hasBarcode: barcodeContainer.hasContent
+
+    /** Double tap on the barcode to request scan mode. */
+    signal scanModeToggled()
+
     Layout.fillWidth: true
     Layout.topMargin: Kirigami.Units.largeSpacing
     Layout.bottomMargin: Kirigami.Units.largeSpacing
-
-    /** There is a barcode displayed. */
-    readonly property alias hasBarcode: barcodeContainer.visible
-    /** Double tap on the barcode to request scan mode. */
-    signal scanModeToggled()
 
     TicketTokenModel {
         id: ticketModel
@@ -43,10 +47,10 @@ ColumnLayout {
         Layout.fillWidth: true
         Layout.leftMargin: Kirigami.Units.largeSpacing
         Layout.rightMargin: Kirigami.Units.largeSpacing
+        visible: travelerBox.count > 1
 
         // ugly, but rowCount does not trigger binding changes
         Component.onCompleted: {
-            visible = ticketModel.rowCount() >= 1 && root.resIds.length > 1;
             currentIndex = ticketModel.initialIndex;
         }
     }

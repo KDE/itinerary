@@ -98,7 +98,7 @@ DetailsPage {
         }
 
         FormCard.FormCard {
-            visible: ticketToken.ticketTokenCount > 0
+            visible: ticketToken.hasContent
             // ticket barcode
             TicketTokenDelegate {
                 id: ticketToken
