@@ -106,8 +106,15 @@
 #include <QGuiApplication>
 #include <QIcon>
 #include <QNetworkAccessManager>
+#include <QQuickWindow>
 #include <QStandardPaths>
 #include <QWindow>
+
+#ifdef HAS_MAPLIBRE
+#include <QMapLibre/Utils>
+#include <QVulkanInstance>
+#include <QtQuick/QSGRendererInterface>
+#endif
 
 using namespace Qt::Literals::StringLiterals;
 
@@ -188,6 +195,12 @@ Q_DECL_EXPORT
 #endif
 int main(int argc, char **argv)
 {
+#ifdef HAS_MAPLIBRE
+    const QMapLibre::RendererType rendererType = QMapLibre::supportedRendererType();
+    auto graphicsApi = static_cast<QSGRendererInterface::GraphicsApi>(rendererType);
+    QQuickWindow::setGraphicsApi(graphicsApi);
+#endif
+
     QCoreApplication::setApplicationName(QStringLiteral("itinerary"));
     QCoreApplication::setOrganizationName(QStringLiteral("KDE"));
     QCoreApplication::setOrganizationDomain(QStringLiteral("kde.org"));
@@ -399,6 +412,12 @@ int main(int argc, char **argv)
     if (engine.rootObjects().isEmpty()) {
         return 1;
     }
+
+#ifdef HAS_MAPLIBRE
+    engine.rootObjects().front()->setProperty("hasMapLibre", true);
+#else
+    engine.rootObjects().front()->setProperty("hasMapLibre", false);
+#endif
 
     handleCommandLineArguments(&appController, &importController, parser.positionalArguments(), parser.isSet(isTemporaryOpt), parser.value(pageOpt));
 

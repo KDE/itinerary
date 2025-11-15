@@ -266,6 +266,14 @@ PRIVATE
     Qt::CorePrivate
     Qt6Keychain::Qt6Keychain
 )
+
+if (QMapLibre_FOUND)
+    target_link_libraries(itinerary PUBLIC
+        QMapLibre::Core
+        QMapLibre::Location
+)
+endif()
+
 if (HAVE_MATRIX)
     target_link_libraries(itinerary PUBLIC KMatrix)
 endif()
@@ -286,6 +294,11 @@ target_sources(itinerary-app PRIVATE
 
     images/images.qrc
 )
+
+if (QMapLibre_FOUND)
+    target_compile_definitions(itinerary-app PRIVATE -DHAS_MAPLIBRE)
+endif()
+
 target_include_directories(itinerary-app PRIVATE ${CMAKE_BINARY_DIR})
 target_link_libraries(itinerary-app PRIVATE
     itinerary

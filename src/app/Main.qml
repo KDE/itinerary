@@ -23,6 +23,9 @@ Kirigami.ApplicationWindow {
     height: Kirigami.Settings.isMobile ? 720 : 650
     minimumWidth: 300
     minimumHeight: 400
+
+    property bool hasMapLibre: false
+
     Kirigami.PagePool {
         id: pagepool
     }
@@ -267,9 +270,11 @@ Kirigami.ApplicationWindow {
     Component {
         id: __qtLocationOSMPluginComponent
         QtLocation.Plugin {
-            name: "osm"
+            name: root.hasMapLibre ? "maplibre" : "osm" // Use MapLibre plugin
+
             QtLocation.PluginParameter { name: "osm.useragent"; value: ApplicationController.userAgent }
             QtLocation.PluginParameter { name: "osm.mapping.providersrepository.address"; value: "https://autoconfig.kde.org/qtlocation/" }
+            QtLocation.PluginParameter { name: "maplibre.map.styles"; value: "https://tiles.openfreemap.org/styles/liberty" }
         }
     }
 

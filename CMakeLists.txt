@@ -66,6 +66,7 @@ set(QUOTIENT_FORCE_NAMESPACED_INCLUDES ON)
 find_package(QuotientQt6 0.9.0 CONFIG)
 find_package(SeleniumWebDriverATSPI)
 find_package(QCoro6 REQUIRED COMPONENTS Core Network)
+find_package(QMapLibre COMPONENTS Core Location)
 
 set_package_properties("ZLIB" PROPERTIES PURPOSE "Needed for retrieving weather forecast data.")
 set_package_properties(LibIcal PROPERTIES PURPOSE "Needed for Android calendar integration.")

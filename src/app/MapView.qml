@@ -8,12 +8,32 @@ import QtQuick.Layouts
 import QtPositioning
 import QtLocation as QtLocation
 
+import QtQuick.Controls as Controls
+
 
 /** QtLocation map view with standard interaction settings. */
 QtLocation.Map {
     id: map
     plugin: applicationWindow().osmPlugin()
+
+    copyrightsVisible: !applicationWindow().hasMapLibre
     onCopyrightLinkActivated: Qt.openUrlExternally(link)
+
+    Controls.Label {
+        anchors.right: parent.right
+        anchors.bottom: parent.bottom
+        anchors.margins: 2
+
+        visible: applicationWindow().hasMapLibre
+
+        textFormat: Text.RichText
+        wrapMode: Text.WordWrap
+        horizontalAlignment: Text.AlignRight
+
+        width: parent.width
+
+        text: i18n('<a href="https://openfreemap.org" target="_blank">OpenFreeMap</a> <a href="https://www.openmaptiles.org/" target="_blank">© OpenMapTiles</a><br>Data from <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>')
+    }
 
     property geoCoordinate startCentroid
     PinchHandler {
