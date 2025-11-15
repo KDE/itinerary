@@ -267,9 +267,13 @@ Kirigami.ApplicationWindow {
     Component {
         id: __qtLocationOSMPluginComponent
         QtLocation.Plugin {
-            name: "osm"
-            QtLocation.PluginParameter { name: "osm.useragent"; value: ApplicationController.userAgent }
-            QtLocation.PluginParameter { name: "osm.mapping.providersrepository.address"; value: "https://autoconfig.kde.org/qtlocation/" }
+            name: "maplibre"  // Use MapLibre plugin
+
+            // Configure MapLibre plugin to use demo tiles
+            QtLocation.PluginParameter {
+                name: "maplibre.map.styles"
+                value: "https://api.maptiler.com/maps/openstreetmap/style.json?key=eI0svE73Y0FRzPr7tgXR&language=de"
+            }
         }
     }
 

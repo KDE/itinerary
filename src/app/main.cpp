@@ -106,8 +106,13 @@
 #include <QGuiApplication>
 #include <QIcon>
 #include <QNetworkAccessManager>
+#include <QQuickWindow>
 #include <QStandardPaths>
 #include <QWindow>
+
+#include <QMapLibre/Utils>
+#include <QVulkanInstance>
+#include <QtQuick/QSGRendererInterface>
 
 using namespace Qt::Literals::StringLiterals;
 
@@ -188,6 +193,13 @@ Q_DECL_EXPORT
 #endif
 int main(int argc, char **argv)
 {
+    const QMapLibre::RendererType rendererType = QMapLibre::supportedRendererType();
+    auto graphicsApi = static_cast<QSGRendererInterface::GraphicsApi>(rendererType);
+    QQuickWindow::setGraphicsApi(QSGRendererInterface::OpenGL);
+    QSurfaceFormat format;
+    format.setRenderableType(QSurfaceFormat::OpenGL);
+    QSurfaceFormat::setDefaultFormat(format);
+
     QCoreApplication::setApplicationName(QStringLiteral("itinerary"));
     QCoreApplication::setOrganizationName(QStringLiteral("KDE"));
     QCoreApplication::setOrganizationDomain(QStringLiteral("kde.org"));
