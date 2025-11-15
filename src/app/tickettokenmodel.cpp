@@ -93,6 +93,7 @@ void TicketTokenModel::reload()
 
     endResetModel();
     Q_EMIT initialIndexChanged();
+    Q_EMIT selectionChanged();
 }
 
 QVariant TicketTokenModel::reservationAt(int row) const
@@ -137,15 +138,31 @@ QVariant TicketTokenModel::data(const QModelIndex &index, int role) const
     }
     case ReservationRole:
         return res;
+    case SelectedRole:
+        return d.selected;
     }
 
     return {};
+}
+
+bool TicketTokenModel::setData(const QModelIndex &index, const QVariant &data, int role)
+{
+    if (!index.isValid() || index.row() >= (int)m_data.size() || role != SelectedRole) {
+        return false;
+    }
+
+    auto &d = m_data[index.row()];
+    d.selected = data.toBool();
+    Q_EMIT dataChanged(index, index);
+    Q_EMIT selectionChanged();
+    return true;
 }
 
 QHash<int, QByteArray> TicketTokenModel::roleNames() const
 {
     auto names = QAbstractListModel::roleNames();
     names.insert(ReservationRole, "reservation");
+    names.insert(SelectedRole, "selected");
     return names;
 }
 
@@ -177,6 +194,17 @@ int TicketTokenModel::initialIndex() const
         }
     }
     return ticketIdx >= 0 ? ticketIdx : std::max(0, nameIdx);
+}
+
+QStringList TicketTokenModel::selectedReservationIds() const
+{
+    QStringList l;
+    for (const auto &d :m_data) {
+        if (d.selected) {
+            l.push_back(d.resId);
+        }
+    }
+    return l;
 }
 
 void TicketTokenModel::reservationRemoved(const QString &resId)

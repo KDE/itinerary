@@ -23,9 +23,13 @@ class TicketTokenModel : public QAbstractListModel
     Q_PROPERTY(ReservationManager *reservationManager READ reservationManager WRITE setReservationManager)
     Q_PROPERTY(QString batchId READ batchId WRITE setBatchId NOTIFY batchIdChanged)
     Q_PROPERTY(int initialIndex READ initialIndex NOTIFY initialIndexChanged)
+    Q_PROPERTY(QStringList selectedReservationIds READ selectedReservationIds NOTIFY selectionChanged)
 
 public:
-    enum Roles { ReservationRole = Qt::UserRole };
+    enum Roles {
+        ReservationRole = Qt::UserRole,
+        SelectedRole
+    };
 
     explicit TicketTokenModel(QObject *parent = nullptr);
     ~TicketTokenModel() override;
@@ -40,13 +44,16 @@ public:
 
     [[nodiscard]] int rowCount(const QModelIndex &parent = {}) const override;
     [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
+    bool setData(const QModelIndex &index, const QVariant &data, int role) override;
     [[nodiscard]] QHash<int, QByteArray> roleNames() const override;
 
     [[nodiscard]] int initialIndex() const;
+    [[nodiscard]] QStringList selectedReservationIds() const;
 
 Q_SIGNALS:
     void batchIdChanged();
     void initialIndexChanged();
+    void selectionChanged();
 
 private:
     void reload();
@@ -57,6 +64,7 @@ private:
     struct Data {
         QString resId;
         QString personName;
+        bool selected = false;
     };
     std::vector<Data> m_data;
 };
