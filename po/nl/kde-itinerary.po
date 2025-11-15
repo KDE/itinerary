@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-14 00:43+0000\n"
+"POT-Creation-Date: 2025-11-15 00:42+0000\n"
 "PO-Revision-Date: 2025-10-30 13:34+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -4110,17 +4110,17 @@ msgstr "Barcode scannen…"
 msgid "Paste"
 msgstr "Plakken"
 
-#: app/tickettokenmodel.cpp:73
+#: app/tickettokenmodel.cpp:74
 #, kde-format
 msgid "Attendee %1"
 msgstr "Deelnemer %1"
 
-#: app/tickettokenmodel.cpp:75
+#: app/tickettokenmodel.cpp:76
 #, kde-format
 msgid "Traveler %1"
 msgstr "Reiziger %1"
 
-#: app/tickettokenmodel.cpp:121
+#: app/tickettokenmodel.cpp:122
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"

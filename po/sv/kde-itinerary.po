@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-14 00:43+0000\n"
+"POT-Creation-Date: 2025-11-15 00:42+0000\n"
 "PO-Revision-Date: 2025-10-26 20:48+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -4093,17 +4093,17 @@ msgstr "Läs av streckkod…"
 msgid "Paste"
 msgstr "Klistra in"
 
-#: app/tickettokenmodel.cpp:73
+#: app/tickettokenmodel.cpp:74
 #, kde-format
 msgid "Attendee %1"
 msgstr "Deltagare %1"
 
-#: app/tickettokenmodel.cpp:75
+#: app/tickettokenmodel.cpp:76
 #, kde-format
 msgid "Traveler %1"
 msgstr "Resande %1"
 
-#: app/tickettokenmodel.cpp:121
+#: app/tickettokenmodel.cpp:122
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
