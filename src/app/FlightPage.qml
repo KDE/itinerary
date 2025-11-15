@@ -47,7 +47,7 @@ DetailsPage {
             // ticket barcode
             TicketTokenDelegate {
                 id: ticketToken
-                resIds: ReservationManager.reservationsForBatch(root.batchId)
+                batchId: root.batchId
                 onCurrentReservationIdChanged: {
                     if (!currentReservationId)
                         return;

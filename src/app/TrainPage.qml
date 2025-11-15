@@ -103,7 +103,7 @@ DetailsPage {
             TicketTokenDelegate {
                 id: ticketToken
                 Layout.fillWidth: true
-                resIds: root.reservationIds
+                batchId: root.batchId
                 onCurrentReservationIdChanged: {
                     if (!currentReservationId)
                         return;

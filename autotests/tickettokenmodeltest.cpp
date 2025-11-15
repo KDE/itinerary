@@ -39,9 +39,8 @@ private Q_SLOTS:
         QAbstractItemModelTester modelTest(&model);
         QCOMPARE(model.rowCount(), 0);
 
-        const auto resIds = mgr.reservationsForBatch(mgr.batches()[0]);
-        QCOMPARE(resIds.size(), 2);
-        model.setReservationIds(resIds);
+        QCOMPARE(mgr.reservationsForBatch(mgr.batches()[0]).size(), 2);
+        model.setBatchId(mgr.batches()[0]);
         model.setReservationManager(&mgr);
         QCOMPARE(model.rowCount(), 2);
         QCOMPARE(model.initialIndex(), 0);
@@ -67,7 +66,7 @@ private Q_SLOTS:
         const auto resIds = mgr.reservationsForBatch(mgr.batches()[0]);
         QCOMPARE(resIds.size(), 2);
         model.setReservationManager(&mgr);
-        model.setReservationIds(resIds);
+        model.setBatchId(mgr.batches()[0]);
         QCOMPARE(model.rowCount(), 2);
         QCOMPARE(model.initialIndex(), 0);
 
@@ -94,8 +93,9 @@ private Q_SLOTS:
         QCOMPARE(model.rowCount(), 0);
 
         const auto resIds = mgr.reservationsForBatch(mgr.batches()[0]);
+        mgr.removeReservation(resIds[1]);
         model.setReservationManager(&mgr);
-        model.setReservationIds({resIds[0]});
+        model.setBatchId(mgr.batches()[0]);
         QCOMPARE(model.rowCount(), 1);
         QCOMPARE(model.initialIndex(), 0);
     }

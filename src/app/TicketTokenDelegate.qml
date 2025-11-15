@@ -15,7 +15,7 @@ import org.kde.itinerary
 
 ColumnLayout {
     id: root
-    property var resIds
+    property alias batchId: ticketModel.batchId
 
     readonly property var currentReservationId: ticketModel.reservationIdAt(travelerBox.currentIndex)
     readonly property var currentTicket: ticketModel.reservationAt(travelerBox.currentIndex) ? ticketModel.reservationAt(travelerBox.currentIndex).reservedTicket : undefined
@@ -36,7 +36,6 @@ ColumnLayout {
     TicketTokenModel {
         id: ticketModel
         reservationManager: ReservationManager
-        reservationIds: resIds
     }
 
     QQC2.ComboBox {

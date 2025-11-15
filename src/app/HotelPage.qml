@@ -33,7 +33,7 @@ DetailsPage {
             TicketTokenDelegate {
                 id: ticketToken
                 Layout.fillWidth: true
-                resIds: ReservationManager.reservationsForBatch(root.batchId)
+                batchId: root.batchId
                 onCurrentReservationIdChanged: {
                     if (!currentReservationId)
                         return;

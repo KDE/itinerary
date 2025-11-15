@@ -21,7 +21,7 @@ class TicketTokenModel : public QAbstractListModel
     QML_ELEMENT
 
     Q_PROPERTY(ReservationManager *reservationManager READ reservationManager WRITE setReservationManager)
-    Q_PROPERTY(QStringList reservationIds READ reservationIds WRITE setReservationIds)
+    Q_PROPERTY(QString batchId READ batchId WRITE setBatchId NOTIFY batchIdChanged)
     Q_PROPERTY(int initialIndex READ initialIndex NOTIFY initialIndexChanged)
 
 public:
@@ -32,8 +32,8 @@ public:
 
     [[nodiscard]] ReservationManager *reservationManager() const;
     void setReservationManager(ReservationManager *mgr);
-    [[nodiscard]] QStringList reservationIds() const;
-    void setReservationIds(const QStringList &resIds);
+    [[nodiscard]] QString batchId() const;
+    void setBatchId(const QString &batchId);
 
     Q_INVOKABLE [[nodiscard]] QVariant reservationAt(int row) const;
     Q_INVOKABLE [[nodiscard]] QString reservationIdAt(int row) const;
@@ -45,13 +45,15 @@ public:
     [[nodiscard]] int initialIndex() const;
 
 Q_SIGNALS:
+    void batchIdChanged();
     void initialIndexChanged();
 
 private:
+    void reload();
     void reservationRemoved(const QString &resId);
 
     ReservationManager *m_resMgr = nullptr;
-    QStringList m_pendingResIds;
+    QString m_batchId;
     QStringList m_resIds;
     QStringList m_personNames;
 };

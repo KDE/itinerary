@@ -43,7 +43,7 @@ DetailsPage {
             TicketTokenDelegate {
                 id: ticketToken
                 Layout.topMargin: Kirigami.Units.largeSpacing
-                resIds: ReservationManager.reservationsForBatch(root.batchId)
+                batchId: root.batchId
                 onCurrentReservationIdChanged: {
                     if (!currentReservationId)
                         return;

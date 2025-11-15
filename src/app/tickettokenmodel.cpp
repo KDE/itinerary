@@ -31,20 +31,32 @@ ReservationManager *TicketTokenModel::reservationManager() const
 
 void TicketTokenModel::setReservationManager(ReservationManager *mgr)
 {
+    if (mgr == m_resMgr) {
+        return;
+    }
     m_resMgr = mgr;
     connect(m_resMgr, &ReservationManager::reservationRemoved, this, &TicketTokenModel::reservationRemoved);
-    setReservationIds(m_pendingResIds);
+    reload();
 }
 
-QStringList TicketTokenModel::reservationIds() const
+QString TicketTokenModel::batchId() const
 {
-    return m_resIds;
+    return m_batchId;
 }
 
-void TicketTokenModel::setReservationIds(const QStringList &resIds)
+void TicketTokenModel::setBatchId(const QString &batchId)
 {
-    if (!m_resMgr) {
-        m_pendingResIds = resIds;
+    if (m_batchId == batchId) {
+        return;
+    }
+    m_batchId = batchId;
+    Q_EMIT batchIdChanged();
+    reload();
+}
+
+void TicketTokenModel::reload()
+{
+    if (!m_resMgr || m_batchId.isEmpty()) {
         return;
     }
 
@@ -53,6 +65,7 @@ void TicketTokenModel::setReservationIds(const QStringList &resIds)
     m_personNames.reserve(m_resIds.size());
     QHash<QString, int> m_personIdx;
 
+    const auto resIds = m_resMgr->reservationsForBatch(m_batchId);
     for (const auto &resId : resIds) {
         const auto v = m_resMgr->reservation(resId);
         if (!JsonLd::canConvert<Reservation>(v)) {
@@ -80,7 +93,6 @@ void TicketTokenModel::setReservationIds(const QStringList &resIds)
 
     endResetModel();
     Q_EMIT initialIndexChanged();
-    m_pendingResIds.clear();
 }
 
 QVariant TicketTokenModel::reservationAt(int row) const
