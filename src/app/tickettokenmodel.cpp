@@ -61,11 +61,12 @@ void TicketTokenModel::reload()
     }
 
     beginResetModel();
-    m_personNames.clear();
-    m_personNames.reserve(m_resIds.size());
+    const auto resIds = m_resMgr->reservationsForBatch(m_batchId);
+
+    m_data.clear();
+    m_data.reserve(resIds.size());
     QHash<QString, int> m_personIdx;
 
-    const auto resIds = m_resMgr->reservationsForBatch(m_batchId);
     for (const auto &resId : resIds) {
         const auto v = m_resMgr->reservation(resId);
         if (!JsonLd::canConvert<Reservation>(v)) {
@@ -78,17 +79,16 @@ void TicketTokenModel::reload()
             continue;
         }
 
-        m_resIds.push_back(resId);
-        if (!person.name().isEmpty()) {
-            m_personNames.push_back(person.name());
-        } else {
+        Data d{ .resId = resId, .personName = person.name() };
+        if (d.personName.isEmpty()) {
             const auto idx = ++m_personIdx[res.reservedTicket().value<Ticket>().name()];
             if (JsonLd::isA<EventReservation>(v)) {
-                m_personNames.push_back(i18n("Attendee %1", idx));
+                d.personName = i18n("Attendee %1", idx);
             } else {
-                m_personNames.push_back(i18n("Traveler %1", idx));
+                d.personName = i18n("Traveler %1", idx);
             }
         }
+        m_data.push_back(std::move(d));
     }
 
     endResetModel();
@@ -97,18 +97,18 @@ void TicketTokenModel::reload()
 
 QVariant TicketTokenModel::reservationAt(int row) const
 {
-    if (!m_resMgr || row >= m_resIds.size() || row < 0) {
+    if (!m_resMgr || row >= (int)m_data.size() || row < 0) {
         return {};
     }
-    return m_resMgr->reservation(m_resIds.at(row));
+    return m_resMgr->reservation(m_data[row].resId);
 }
 
 QString TicketTokenModel::reservationIdAt(int row) const
 {
-    if (!m_resMgr || row >= m_resIds.size() || row < 0) {
+    if (!m_resMgr || row >= (int)m_data.size() || row < 0) {
         return {};
     }
-    return m_resIds.at(row);
+    return m_data[row].resId;
 }
 
 int TicketTokenModel::rowCount(const QModelIndex &parent) const
@@ -116,26 +116,24 @@ int TicketTokenModel::rowCount(const QModelIndex &parent) const
     if (parent.isValid()) {
         return 0;
     }
-    return (int)m_resIds.size();
+    return (int)m_data.size();
 }
 
 QVariant TicketTokenModel::data(const QModelIndex &index, int role) const
 {
-    if (!index.isValid() || !m_resMgr || index.row() >= m_resIds.size()) {
+    if (!index.isValid() || !m_resMgr || index.row() >= (int)m_data.size()) {
         return {};
     }
 
-    auto res = m_resMgr->reservation(m_resIds.at(index.row()));
+    const auto &d = m_data[index.row()];
+    auto res = m_resMgr->reservation(d.resId);
     switch (role) {
     case Qt::DisplayRole: {
         const auto ticket = JsonLd::convert<Reservation>(res).reservedTicket().value<Ticket>();
-        if (index.row() < m_personNames.size()) {
-            if (!ticket.name().isEmpty()) {
-                return i18n("%1 (%2)", m_personNames.at(index.row()), ticket.name());
-            }
-            return m_personNames.at(index.row());
+        if (!ticket.name().isEmpty() && !d.personName.isEmpty()) {
+            return i18n("%1 (%2)", d.personName, ticket.name());
         }
-        return ticket.name();
+        return d.personName.isEmpty() ? ticket.name() : d.personName;
     }
     case ReservationRole:
         return res;
@@ -158,38 +156,41 @@ int TicketTokenModel::initialIndex() const
     }
 
     const auto fullName = KUser().property(KUser::FullName).toString();
-    qsizetype nameIdx = -1;
-    qsizetype ticketIdx = -1;
-    for (qsizetype i = 0; i < m_personNames.size(); ++i) {
-        const auto nameMatch = m_personNames.at(i).compare(fullName, Qt::CaseInsensitive) == 0;
+    int nameIdx = -1;
+    int ticketIdx = -1;
+    for (int i = 0; i < (int)m_data.size(); ++i) {
+        const auto &d = m_data[i];
+        const auto nameMatch = d.personName.compare(fullName, Qt::CaseInsensitive) == 0;
         if (nameMatch && nameIdx < 0) {
             nameIdx = i;
         }
         bool hasToken = false;
-        const auto res = m_resMgr->reservation(m_resIds.at(i));
+        const auto res = m_resMgr->reservation(d.resId);
         if (JsonLd::canConvert<Reservation>(res)) {
             hasToken = !JsonLd::convert<Reservation>(res).reservedTicket().value<Ticket>().ticketToken().isEmpty();
         }
         if (hasToken && nameMatch) {
-            return (int)i;
+            return i;
         }
         if (hasToken && ticketIdx < 0) {
             ticketIdx = i;
         }
     }
-    return ticketIdx >= 0 ? (int)ticketIdx : std::max(0, (int)nameIdx);
+    return ticketIdx >= 0 ? ticketIdx : std::max(0, nameIdx);
 }
 
 void TicketTokenModel::reservationRemoved(const QString &resId)
 {
-    const auto idx = (int)m_resIds.indexOf(resId);
-    if (idx < 0) {
+    const auto it = std::ranges::find_if(m_data, [&resId](const auto &data) {
+        return data.resId == resId;
+    });
+    if (it == std::end(m_data)) {
         return;
     }
 
+    const auto idx = (int)std::distance(std::begin(m_data), it);
     beginRemoveRows({}, idx, idx);
-    m_resIds.remove(idx);
-    m_personNames.remove(idx);
+    m_data.erase(it);
     endRemoveRows();
 }
 

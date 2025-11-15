@@ -54,8 +54,11 @@ private:
 
     ReservationManager *m_resMgr = nullptr;
     QString m_batchId;
-    QStringList m_resIds;
-    QStringList m_personNames;
+    struct Data {
+        QString resId;
+        QString personName;
+    };
+    std::vector<Data> m_data;
 };
 
 #endif // TICKETTOKENMODEL_H
