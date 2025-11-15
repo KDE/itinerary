@@ -260,6 +260,8 @@ target_link_libraries(itinerary PUBLIC
     Qt::Positioning
     QCoro6::Core
     QCoro6::Network
+    QMapLibre::Core
+    QMapLibre::Location
 PRIVATE
     Qt::CorePrivate
     Qt6Keychain::Qt6Keychain
