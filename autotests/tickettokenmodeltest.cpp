@@ -43,8 +43,8 @@ private Q_SLOTS:
         QCOMPARE(resIds.size(), 2);
         model.setReservationIds(resIds);
         model.setReservationManager(&mgr);
-        QEXPECT_FAIL("", "not implemented correctly yet", Continue);
         QCOMPARE(model.rowCount(), 2);
+        QCOMPARE(model.initialIndex(), 0);
     }
 
     void testMultiTicket()
@@ -69,9 +69,11 @@ private Q_SLOTS:
         model.setReservationManager(&mgr);
         model.setReservationIds(resIds);
         QCOMPARE(model.rowCount(), 2);
+        QCOMPARE(model.initialIndex(), 0);
 
         mgr.removeReservation(resIds[1]);
         QCOMPARE(model.rowCount(), 1);
+        QCOMPARE(model.initialIndex(), 0);
     }
 
     void testSingle()
@@ -95,6 +97,7 @@ private Q_SLOTS:
         model.setReservationManager(&mgr);
         model.setReservationIds({resIds[0]});
         QCOMPARE(model.rowCount(), 1);
+        QCOMPARE(model.initialIndex(), 0);
     }
 };
 

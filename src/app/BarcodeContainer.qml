@@ -24,7 +24,7 @@ Item {
     property var barcodeContent
 
     /** @c true if this is displaying any kind of barcode. */
-    readonly property bool hasContent: barcode.implicitHeight > 0
+    readonly property bool hasContent: barcode.implicitHeight > 0 && barcodeContainer.barcodeType != Ticket.Unknown
 
     /** Emitted when the barcode is double clicked, for toggling scan mode. */
     signal doubleClicked()

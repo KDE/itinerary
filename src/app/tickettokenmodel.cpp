@@ -60,12 +60,12 @@ void TicketTokenModel::setReservationIds(const QStringList &resIds)
         }
         const auto res = JsonLd::convert<Reservation>(v);
         const auto ticket = res.reservedTicket().value<Ticket>();
-        if (ticket.ticketToken().isEmpty() && res.pkpassPassTypeIdentifier().isEmpty()) {
+        const auto person = JsonLd::convert<Reservation>(res).underName().value<Person>();
+        if (ticket.ticketToken().isEmpty() && res.pkpassPassTypeIdentifier().isEmpty() && person.name().isEmpty() && ticket.name().isEmpty()) {
             continue;
         }
 
         m_resIds.push_back(resId);
-        const auto person = JsonLd::convert<Reservation>(res).underName().value<Person>();
         if (!person.name().isEmpty()) {
             m_personNames.push_back(person.name());
         } else {
@@ -141,14 +141,31 @@ QHash<int, QByteArray> TicketTokenModel::roleNames() const
 
 int TicketTokenModel::initialIndex() const
 {
-    auto fullName = KUser().property(KUser::FullName).toString();
-    auto it = std::find_if(m_personNames.begin(), m_personNames.end(), [fullName](const auto &name) {
-        return !name.compare(fullName, Qt::CaseInsensitive);
-    });
-    if (it == m_personNames.end()) {
+    if (!m_resMgr) {
         return 0;
     }
-    return (int)(it - m_personNames.begin());
+
+    const auto fullName = KUser().property(KUser::FullName).toString();
+    qsizetype nameIdx = -1;
+    qsizetype ticketIdx = -1;
+    for (qsizetype i = 0; i < m_personNames.size(); ++i) {
+        const auto nameMatch = m_personNames.at(i).compare(fullName, Qt::CaseInsensitive) == 0;
+        if (nameMatch && nameIdx < 0) {
+            nameIdx = i;
+        }
+        bool hasToken = false;
+        const auto res = m_resMgr->reservation(m_resIds.at(i));
+        if (JsonLd::canConvert<Reservation>(res)) {
+            hasToken = !JsonLd::convert<Reservation>(res).reservedTicket().value<Ticket>().ticketToken().isEmpty();
+        }
+        if (hasToken && nameMatch) {
+            return (int)i;
+        }
+        if (hasToken && ticketIdx < 0) {
+            ticketIdx = i;
+        }
+    }
+    return ticketIdx >= 0 ? (int)ticketIdx : std::max(0, (int)nameIdx);
 }
 
 void TicketTokenModel::reservationRemoved(const QString &resId)
