@@ -379,6 +379,26 @@
             ]
         },
         {
+            "name": "maplibre-native-qt",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DMLN_WITH_OPENGL=ON", "-DMLN_WITH_VULKAN=OFF"
+            ],
+            "post-install": [
+                "mv /app/plugins/ /app/lib/",
+                "mv /app/qml/* /app/lib/qml/",
+                "sed -i 's,/plugins/,/lib/plugins/,g' /app/lib/cmake/QMapLibre/*.cmake",
+                "sed -i 's,/qml/,/lib/qml/,g' /app/lib/cmake/QMapLibre/*.cmake"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/maplibre/maplibre-native-qt/",
+                    "commit": "181f28b8d147d10b9160e106694fbca811c911b9"
+                }
+            ]
+        },
+        {
             "name": "itinerary",
             "buildsystem": "cmake-ninja",
             "builddir": true,
