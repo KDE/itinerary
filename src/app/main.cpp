@@ -195,10 +195,7 @@ int main(int argc, char **argv)
 {
     const QMapLibre::RendererType rendererType = QMapLibre::supportedRendererType();
     auto graphicsApi = static_cast<QSGRendererInterface::GraphicsApi>(rendererType);
-    QQuickWindow::setGraphicsApi(QSGRendererInterface::OpenGL);
-    QSurfaceFormat format;
-    format.setRenderableType(QSurfaceFormat::OpenGL);
-    QSurfaceFormat::setDefaultFormat(format);
+    QQuickWindow::setGraphicsApi(graphicsApi);
 
     QCoreApplication::setApplicationName(QStringLiteral("itinerary"));
     QCoreApplication::setOrganizationName(QStringLiteral("KDE"));
