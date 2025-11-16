@@ -44,27 +44,30 @@ FormCard.FormCardPage {
 
     title: i18n("Select Journey")
 
+    // This is used if we are creating the first trip group
+    Component {
+        id: newTripGroupDialogComponent
+
+        TripGroupEditorDialog {
+            id: createTripDialog
+            tripGroupName: root.arrivalStop ? root.arrivalStop.name : ""
+
+            signal tripGroupSelected(string id)
+
+            onAccepted: {
+                const tgId = TripGroupManager.createEmptyGroup(createTripDialog.tripGroupName);
+                createTripDialog.tripGroupSelected(tgId)
+            }
+        }
+    }
+
     Component {
         id: tripGroupDialogComponent
 
         TripGroupSelectorDialog {
             id: tripGroupDialog
-            property var journey
 
-            onTripGroupSelected: (tgId) => {
-                for (const section of journey.sections) {
-                    if (section.mode != JourneySection.PublicTransport) {
-                        continue;
-                    }
-                    const res = PublicTransport.reservationFromJourneySection(section);
-                    const resId = ApplicationController.addNewReservation(res, tgId);
-                    LiveDataManager.setJourney(resId, section);
-                }
-                ApplicationController.contextTripGroupId = tgId;
-                tripGroupDialog.close()
-                pageStack.clear()
-                pageStack.push(pagepool.loadPage(Qt.resolvedUrl("TripGroupsPage.qml")))
-            }
+            suggestedName: root.arrivalStop ? root.arrivalStop.name : ""
         }
     }
 
@@ -101,9 +104,26 @@ FormCard.FormCardPage {
                 publicTransportManager: root.publicTransportManager
                 title: i18n("Select Journey")
                 onJourneyChanged: {
-                    let tripGroupDialog = tripGroupDialogComponent.createObject();
-                    tripGroupDialog.journey = queryPage.journey
-                    tripGroupDialog.suggestedName = arrivalStop ? arrivalStop.name : ""
+                    let tripGroupDialog = TripGroupModel.rowCount() < 1 ? newTripGroupDialogComponent.createObject() : tripGroupDialogComponent.createObject();
+
+                    tripGroupDialog.tripGroupSelected.connect((tgId) => {
+                        for (const section of queryPage.journey.sections) {
+                            if (section.mode != JourneySection.PublicTransport) {
+                                continue;
+                                }
+                            const res = PublicTransport.reservationFromJourneySection(section);
+                            const resId = ApplicationController.addNewReservation(res, tgId);
+                            LiveDataManager.setJourney(resId, section);
+                        }
+                        ApplicationController.contextTripGroupId = tgId;
+                        tripGroupDialog.close()
+                        pageStack.clear()
+                        pageStack.push(pagepool.loadPage(Qt.resolvedUrl("TripGroupsPage.qml")))
+                    })
+                    tripGroupDialog.closed.connect(() => {
+                        tripGroupDialog.destroy()
+                    })
+
                     tripGroupDialog.open()
                 }
             }
