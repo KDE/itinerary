@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 00:42+0000\n"
-"PO-Revision-Date: 2025-10-30 05:27+0100\n"
+"POT-Creation-Date: 2025-11-17 11:52+0000\n"
+"PO-Revision-Date: 2025-11-17 05:45+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -96,10 +96,9 @@ msgid "Export…"
 msgstr "გატანა…"
 
 #: app/ActionsCard.qml:80
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgid "Delete…"
-msgstr "წაშლა"
+msgstr "წაშლა…"
 
 #: app/ActionsCard.qml:115
 #, kde-format
@@ -3504,16 +3503,14 @@ msgid "Show Pass"
 msgstr "ბილეთის ჩვენება"
 
 #: app/ReservationDeletionDialog.qml:30
-#, fuzzy, kde-format
-#| msgid "Delete Event"
+#, kde-format
 msgid "Delete Selected"
-msgstr "მოვლენის წაშლა"
+msgstr "მონიშნულის წაშლა"
 
 #: app/ReservationDeletionDialog.qml:42
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgid "Delete All"
-msgstr "წაშლა"
+msgstr "ყველას წაშლა"
 
 #: app/ReservationDocumentsCard.qml:19
 #, kde-format
