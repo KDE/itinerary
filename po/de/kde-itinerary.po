@@ -1,6 +1,6 @@
-# SPDX-FileCopyrightText: 2021, 2024, 2025 Alois Spitzbart <spitz234@hotmail.com>
 # SPDX-FileCopyrightText: 2019, 2020, 2021 Burkhard Lück <lueck@hube-lueck.de>
 # SPDX-FileCopyrightText: 2021, 2022, 2023 Frederik Schwarzer <schwarzer@kde.org>
+# SPDX-FileCopyrightText: 2021, 2024, 2025 Alois Spitzbart <spitz234@hotmail.com>
 # SPDX-FileCopyrightText: 2022 Frank Steinmetzger <dev-kde@felsenfleischer.de>
 # SPDX-FileCopyrightText: 2024 cahfofpai <cahfofpai@magenta.de>
 # SPDX-FileCopyrightText: 2024 Flori G <Renner03@protonmail.com>
@@ -10,15 +10,15 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-06 08:06+0000\n"
-"PO-Revision-Date: 2025-08-31 14:44+0200\n"
-"Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
+"PO-Revision-Date: 2025-10-29 23:05+0100\n"
+"Last-Translator: Alois Spitzbart <spitz234@hotmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.08.0\n"
+"X-Generator: Lokalize 25.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -858,11 +858,10 @@ msgstr "Datenanbieter:"
 
 #: app/DepartureQueryPage.qml:169 app/JourneyQueryPage.qml:176
 #: app/TransferPage.qml:336
-#, fuzzy, kde-format
-#| msgid "Boarding"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Loading"
-msgstr "Boarding"
+msgstr "Wird geladen"
 
 #: app/DepartureQueryPage.qml:169 app/JourneyQueryPage.qml:178
 #: app/TransferPage.qml:336
@@ -1904,10 +1903,9 @@ msgid "Check-out time has to be after the check-in time."
 msgstr "Die Check-out-Zeit muss nach der Check-in-Zeit liegen."
 
 #: app/HotelEditor.qml:133 app/HotelPage.qml:80
-#, fuzzy, kde-format
-#| msgid "Destination:"
+#, kde-format
 msgid "Description"
-msgstr "Ziel:"
+msgstr "Beschreibung"
 
 #: app/HotelPage.qml:16
 #, kde-format
@@ -2626,7 +2624,7 @@ msgstr "Copyright © Die KDE-Gemeinschaft"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Wikidata"
-msgstr ""
+msgstr "Wikidata"
 
 #: app/main.cpp:220
 #, kde-format
@@ -2637,11 +2635,10 @@ msgid ""
 msgstr ""
 
 #: app/main.cpp:221
-#, fuzzy, kde-format
-#| msgid "Open Map"
+#, kde-format
 msgctxt "@info:credit"
 msgid "OpenStreetMap"
-msgstr "Karte öffnen"
+msgstr "OpenStreetMap"
 
 #: app/main.cpp:221
 #, kde-format
@@ -2653,7 +2650,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:credit"
 msgid "OpenSSL"
-msgstr ""
+msgstr "OpenSSL"
 
 #: app/main.cpp:222
 #, kde-format
@@ -2665,7 +2662,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:credit"
 msgid "ZXing"
-msgstr ""
+msgstr "ZXing"
 
 #: app/main.cpp:223
 #, kde-format
@@ -2677,7 +2674,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:credit"
 msgid "Poppler"
-msgstr ""
+msgstr "Poppler"
 
 #: app/main.cpp:224
 #, kde-format
@@ -3614,10 +3611,9 @@ msgid "Settings"
 msgstr "Einstellungen"
 
 #: app/SettingsPage.qml:31
-#, fuzzy, kde-format
-#| msgid "Location"
+#, kde-format
 msgid "Localization"
-msgstr "Ort"
+msgstr "Lokalisierung"
 
 #: app/SettingsPage.qml:40
 #, kde-format
