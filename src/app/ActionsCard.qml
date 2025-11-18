@@ -21,6 +21,7 @@ ColumnLayout {
     spacing: 0
 
     property string batchId
+    property string reservationId
     property var editor
     property var reservation
     property list<QQC2.Action> additionalActions
@@ -56,7 +57,7 @@ ColumnLayout {
             icon.name: "document-edit"
             text: i18n("Edit")
             visible: root.editor != undefined
-            onTriggered: applicationWindow().pageStack.push(editor, {batchId: root.batchId});
+            onTriggered: applicationWindow().pageStack.push(editor, {batchId: root.batchId, reservationId: root.reservationId});
         },
         Kirigami.Action {
             icon.name: "view-calendar-day"

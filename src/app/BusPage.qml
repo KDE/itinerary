@@ -225,6 +225,7 @@ DetailsPage {
 
         ActionsCard {
             batchId: root.batchId
+            reservationId: root.currentReservationId
             editor: root.editor
             reservation: root.reservation
             additionalActions: [

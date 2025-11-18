@@ -13,12 +13,17 @@ import org.kde.kirigamiaddons.components
 import org.kde.kitinerary
 import org.kde.itinerary
 
+/** Base class for reservation editor pages. */
 Kirigami.ScrollablePage {
     id: root
 
-    property var batchId: controller ? controller.batchId : undefined
-    property QtObject controller: null
-    property var reservation: ReservationManager.reservation(root.batchId);
+    /** Identifier of the reservation batch being edited. */
+    property string batchId
+    /** Identifier of the reservation being edited. */
+    property string reservationId: batchId
+
+    property TimelineDelegateController controller
+    property var reservation: ReservationManager.reservation(root.reservationId);
 
     /** This is creating a new element, rather than editing an existing one. */
     readonly property bool isNew: batchId ? false : true
@@ -30,7 +35,7 @@ Kirigami.ScrollablePage {
         onTriggered: {
             const newRes = root.apply(root.reservation);
             if (!root.isNew) { // update to an existing element
-                ReservationManager.updateReservation(root.batchId, newRes);
+                ReservationManager.updateReservation(root.reservationId, newRes);
             } else { // newly added element
                 if (!root.tripGroupSelector) {
                     ReservationManager.addReservationWithPostProcessing(newRes);
