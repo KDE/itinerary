@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 00:42+0000\n"
-"PO-Revision-Date: 2025-10-30 13:34+0100\n"
+"POT-Creation-Date: 2025-11-17 11:52+0000\n"
+"PO-Revision-Date: 2025-11-17 12:43+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.08.2\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -95,10 +95,9 @@ msgid "Export…"
 msgstr "Exporteren…"
 
 #: app/ActionsCard.qml:80
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgid "Delete…"
-msgstr "Verwijderen"
+msgstr "Verwijderen…"
 
 #: app/ActionsCard.qml:115
 #, kde-format
@@ -3522,16 +3521,14 @@ msgid "Show Pass"
 msgstr "Pas tonen"
 
 #: app/ReservationDeletionDialog.qml:30
-#, fuzzy, kde-format
-#| msgid "Delete Event"
+#, kde-format
 msgid "Delete Selected"
-msgstr "Evenement wissen"
+msgstr "Selectie verwijderen"
 
 #: app/ReservationDeletionDialog.qml:42
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgid "Delete All"
-msgstr "Verwijderen"
+msgstr "Alles verwijderen"
 
 #: app/ReservationDocumentsCard.qml:19
 #, kde-format
