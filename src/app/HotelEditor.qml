@@ -79,7 +79,7 @@ EditorPage {
             FormPlaceEditorDelegate {
                 id: address
                 place: {
-                    if (root.batchId || !root.reservation.reservationFor.address.isEmpty || root.reservation.reservationFor.geo.isValid)
+                    if (!root.isNew || !root.reservation.reservationFor.address.isEmpty || root.reservation.reservationFor.geo.isValid)
                         return reservation.reservationFor
 
                     const HOUR = 60 * 60 * 1000;

@@ -196,7 +196,7 @@ EditorPage {
                 id: departureAddress
 
                 place: {
-                    if (root.batchId || !root.reservation.reservationFor.departureBusStop.address.isEmpty || root.reservation.reservationFor.departureBusStop.geo.isValid)
+                    if (!root.isNew || !root.reservation.reservationFor.departureBusStop.address.isEmpty || root.reservation.reservationFor.departureBusStop.geo.isValid)
                         return reservation.reservationFor.departureBusStop;
                     return cityAtTime(root.reservation.reservationFor.departureTime);
                 }
@@ -283,7 +283,7 @@ EditorPage {
                 id: arrivalAddress
 
                 place: {
-                    if (root.batchId || !root.reservation.reservationFor.arrivalBusStop.address.isEmpty || root.reservation.reservationFor.arrivalBusStop.geo.isValid)
+                    if (!root.isNew || !root.reservation.reservationFor.arrivalBusStop.address.isEmpty || root.reservation.reservationFor.arrivalBusStop.geo.isValid)
                         return reservation.reservationFor.arrivalBusStop;
                     let p = cityAtTime(root.reservation.reservationFor.departureTime);
                     let addr = p.address;

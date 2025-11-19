@@ -217,7 +217,7 @@ EditorPage {
                 id: departureAddress
 
                 place: {
-                    if (root.batchId || !root.reservation.reservationFor.departureStation.address.isEmpty || root.reservation.reservationFor.departureStation.geo.isValid)
+                    if (!root.isNew || !root.reservation.reservationFor.departureStation.address.isEmpty || root.reservation.reservationFor.departureStation.geo.isValid)
                         return reservation.reservationFor.departureStation;
                     return cityAtTime(root.reservation.reservationFor.departureTime);
                 }
@@ -317,7 +317,7 @@ EditorPage {
                 id: arrivalAddress
 
                 place: {
-                    if (root.batchId || !root.reservation.reservationFor.arrivalStation.address.isEmpty || root.reservation.reservationFor.arrivalStation.geo.isValid)
+                    if (!root.isNew || !root.reservation.reservationFor.arrivalStation.address.isEmpty || root.reservation.reservationFor.arrivalStation.geo.isValid)
                         return reservation.reservationFor.arrivalStation;
                     let p = cityAtTime(root.reservation.reservationFor.departureTime);
                     let addr = p.address;

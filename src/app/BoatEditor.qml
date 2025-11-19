@@ -146,7 +146,7 @@ EditorPage {
             FormPlaceEditorDelegate {
                 id: departureAddress
                 place: {
-                    if (root.batchId || !root.reservation.reservationFor.departureBoatTerminal.address.isEmpty || root.reservation.reservationFor.departureBoatTerminal.geo.isValid)
+                    if (!root.isNew || !root.reservation.reservationFor.departureBoatTerminal.address.isEmpty || root.reservation.reservationFor.departureBoatTerminal.geo.isValid)
                         return reservation.reservationFor.departureBoatTerminal;
                     return cityAtTime(root.reservation.reservationFor.departureTime);
                 }
@@ -204,7 +204,7 @@ EditorPage {
             FormPlaceEditorDelegate {
                 id: arrivalAddress
                 place: {
-                    if (root.batchId || !root.reservation.reservationFor.arrivalBoatTerminal.address.isEmpty || root.reservation.reservationFor.arrivalBoatTerminal.geo.isValid)
+                    if (!root.isNew || !root.reservation.reservationFor.arrivalBoatTerminal.address.isEmpty || root.reservation.reservationFor.arrivalBoatTerminal.geo.isValid)
                         return reservation.reservationFor.arrivalBoatTerminal;
                     let p = cityAtTime(root.reservation.reservationFor.departureTime);
                     let addr = p.address;
