@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:52+0000\n"
-"PO-Revision-Date: 2025-10-30 08:41+0200\n"
+"POT-Creation-Date: 2025-11-19 00:43+0000\n"
+"PO-Revision-Date: 2025-11-17 09:45+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 25.08.2\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -96,10 +96,9 @@ msgid "Export…"
 msgstr "ייצוא…"
 
 #: app/ActionsCard.qml:80
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgid "Delete…"
-msgstr "מחיקה"
+msgstr "מחיקה…"
 
 #: app/ActionsCard.qml:115
 #, kde-format
@@ -435,7 +434,7 @@ msgctxt "Boat arrival"
 msgid "Arrival Time"
 msgstr "זמן ההגעה"
 
-#: app/BoatEditor.qml:191 app/BusEditor.qml:255 app/TrainEditor.qml:273
+#: app/BoatEditor.qml:191 app/BusEditor.qml:255 app/TrainEditor.qml:276
 #, kde-format
 msgid "Arrival time has to be after the departure time."
 msgstr "זמן ההגעה חייב להיות אחרי זמן היציאה."
@@ -669,7 +668,7 @@ msgctxt "bus arrival"
 msgid "Arrival"
 msgstr "הגעה"
 
-#: app/BusEditor.qml:244 app/TrainEditor.qml:262
+#: app/BusEditor.qml:244 app/TrainEditor.qml:265
 #, kde-format
 msgctxt "Train arrival"
 msgid "Arrival Time"
@@ -2201,72 +2200,72 @@ msgstr "לא נמצאו נסיעות"
 msgid "Still fetching results…"
 msgstr "התוצאות עדיין מתקבלות…"
 
-#: app/JourneyRequestPage.qml:45 app/JourneyRequestPage.qml:102
+#: app/JourneyRequestPage.qml:45 app/JourneyRequestPage.qml:105
 #, kde-format
 msgid "Select Journey"
 msgstr "בחירת מסע"
 
-#: app/JourneyRequestPage.qml:75 app/JourneyRequestPage.qml:129
+#: app/JourneyRequestPage.qml:78 app/JourneyRequestPage.qml:149
 #, kde-format
 msgctxt "departure train station"
 msgid "Select Departure Stop"
 msgstr "בחירת תחנת יציאה"
 
-#: app/JourneyRequestPage.qml:88 app/JourneyRequestPage.qml:143
+#: app/JourneyRequestPage.qml:91 app/JourneyRequestPage.qml:163
 #, kde-format
 msgctxt "arrival train station"
 msgid "Select Arrival Stop"
 msgstr "בחירת תחנת הגעה"
 
-#: app/JourneyRequestPage.qml:128
+#: app/JourneyRequestPage.qml:148
 #, kde-format
 msgctxt "departure train station"
 msgid "From:"
 msgstr "מ־:"
 
-#: app/JourneyRequestPage.qml:142
+#: app/JourneyRequestPage.qml:162
 #, kde-format
 msgctxt "arrival train station"
 msgid "To:"
 msgstr "אל:"
 
-#: app/JourneyRequestPage.qml:160
+#: app/JourneyRequestPage.qml:180
 #, kde-format
 msgctxt "departure and arrival stops"
 msgid "Swap departure and arrival"
 msgstr "החלפת יציאה והגעה"
 
-#: app/JourneyRequestPage.qml:175
+#: app/JourneyRequestPage.qml:195
 #, kde-format
 msgctxt "train or bus departure"
 msgid "Departure"
 msgstr "יציאה"
 
-#: app/JourneyRequestPage.qml:178
+#: app/JourneyRequestPage.qml:198
 #, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival"
 msgstr "הגעה"
 
-#: app/JourneyRequestPage.qml:191
+#: app/JourneyRequestPage.qml:211
 #, kde-format
 msgctxt "train or bus departure"
 msgid "Departure time"
 msgstr "זמן היציאה"
 
-#: app/JourneyRequestPage.qml:191
+#: app/JourneyRequestPage.qml:211
 #, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival time"
 msgstr "זמן ההגעה"
 
-#: app/JourneyRequestPage.qml:202
+#: app/JourneyRequestPage.qml:222
 #, kde-format
 msgctxt "filter journeys by mode of transportation etc."
 msgid "Filter"
 msgstr "סינון"
 
-#: app/JourneyRequestPage.qml:219
+#: app/JourneyRequestPage.qml:239
 #, kde-format
 msgid "Search Journey"
 msgstr "חיפוש מסע"
@@ -3495,16 +3494,14 @@ msgid "Show Pass"
 msgstr "הצגת אישור"
 
 #: app/ReservationDeletionDialog.qml:30
-#, fuzzy, kde-format
-#| msgid "Delete Event"
+#, kde-format
 msgid "Delete Selected"
-msgstr "מחיקת אירוע"
+msgstr "מחיקת הנבחר"
 
 #: app/ReservationDeletionDialog.qml:42
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgid "Delete All"
-msgstr "מחיקה"
+msgstr "למחוק הכול"
 
 #: app/ReservationDocumentsCard.qml:19
 #, kde-format
@@ -4198,7 +4195,7 @@ msgctxt "@title"
 msgid "Edit Train Reservation"
 msgstr "עריכת הזמנה לרכבת"
 
-#: app/TrainEditor.qml:88 app/TrainEditor.qml:245
+#: app/TrainEditor.qml:88 app/TrainEditor.qml:248
 #, kde-format
 msgctxt "train departure"
 msgid "Change Departure Station"
@@ -4210,7 +4207,7 @@ msgctxt "train departure"
 msgid "Change departure station"
 msgstr "החלפת תחנת יציאה"
 
-#: app/TrainEditor.qml:104 app/TrainEditor.qml:348
+#: app/TrainEditor.qml:104 app/TrainEditor.qml:354
 #, kde-format
 msgctxt "train arrival"
 msgid "Change Arrival Station"
@@ -4257,13 +4254,13 @@ msgstr "שם התחנה"
 msgid "Departure station must not be empty."
 msgstr "תחנת ההגעה לא יכולה להיות ריקה."
 
-#: app/TrainEditor.qml:197 app/TrainEditor.qml:294
+#: app/TrainEditor.qml:197 app/TrainEditor.qml:297
 #, kde-format
 msgctxt "Train station platform"
 msgid "Platform"
 msgstr "רציף"
 
-#: app/TrainEditor.qml:208 app/TrainEditor.qml:305
+#: app/TrainEditor.qml:210 app/TrainEditor.qml:310
 #, kde-format
 msgid ""
 "Specifying the departure and arrival location helps Itinerary to find "
@@ -4272,49 +4269,49 @@ msgstr ""
 "ציון מקום היציאה וההגעה מסייע ל־Itinerary למצוא פרטים עדכניים על הרכבת "
 "שההזמנה הזאת תקפה עבורה."
 
-#: app/TrainEditor.qml:228 app/TrainEditor.qml:330 app/TrainPage.qml:163
+#: app/TrainEditor.qml:231 app/TrainEditor.qml:336 app/TrainPage.qml:163
 #: app/TrainPage.qml:247
 #, kde-format
 msgctxt "train station"
 msgid "Station"
 msgstr "תחנה"
 
-#: app/TrainEditor.qml:236 app/TrainEditor.qml:339
+#: app/TrainEditor.qml:239 app/TrainEditor.qml:345
 #, kde-format
 msgctxt "train platform"
 msgid "Platform"
 msgstr "רציף"
 
-#: app/TrainEditor.qml:253
+#: app/TrainEditor.qml:256
 #, kde-format
 msgctxt "train arrival"
 msgid "Arrival"
 msgstr "הגעה"
 
-#: app/TrainEditor.qml:283
+#: app/TrainEditor.qml:286
 #, kde-format
 msgctxt "Train station"
 msgid "Station Name"
 msgstr "שם התחנה"
 
-#: app/TrainEditor.qml:286
+#: app/TrainEditor.qml:289
 #, kde-format
 msgid "Arrival station must not be empty."
 msgstr "תחנת היציאה לא יכולה להיות ריקה."
 
-#: app/TrainEditor.qml:358 app/TrainEditor.qml:370 app/TrainPage.qml:290
+#: app/TrainEditor.qml:364 app/TrainEditor.qml:376 app/TrainPage.qml:290
 #, kde-format
 msgctxt "Train seat"
 msgid "Seat"
 msgstr "מושב"
 
-#: app/TrainEditor.qml:364
+#: app/TrainEditor.qml:370
 #, kde-format
 msgctxt "carriage on a train"
 msgid "Coach"
 msgstr "קרון"
 
-#: app/TrainEditor.qml:376
+#: app/TrainEditor.qml:382
 #, kde-format
 msgctxt "seating class on a train"
 msgid "Class"

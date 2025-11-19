@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:52+0000\n"
+"POT-Creation-Date: 2025-11-19 00:43+0000\n"
 "PO-Revision-Date: 2019-03-18 03:34+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: lt\n"
@@ -433,7 +433,7 @@ msgctxt "Boat arrival"
 msgid "Arrival Time"
 msgstr ""
 
-#: app/BoatEditor.qml:191 app/BusEditor.qml:255 app/TrainEditor.qml:273
+#: app/BoatEditor.qml:191 app/BusEditor.qml:255 app/TrainEditor.qml:276
 #, kde-format
 msgid "Arrival time has to be after the departure time."
 msgstr ""
@@ -667,7 +667,7 @@ msgctxt "bus arrival"
 msgid "Arrival"
 msgstr ""
 
-#: app/BusEditor.qml:244 app/TrainEditor.qml:262
+#: app/BusEditor.qml:244 app/TrainEditor.qml:265
 #, kde-format
 msgctxt "Train arrival"
 msgid "Arrival Time"
@@ -2194,72 +2194,72 @@ msgstr ""
 msgid "Still fetching results…"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:45 app/JourneyRequestPage.qml:102
+#: app/JourneyRequestPage.qml:45 app/JourneyRequestPage.qml:105
 #, kde-format
 msgid "Select Journey"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:75 app/JourneyRequestPage.qml:129
+#: app/JourneyRequestPage.qml:78 app/JourneyRequestPage.qml:149
 #, kde-format
 msgctxt "departure train station"
 msgid "Select Departure Stop"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:88 app/JourneyRequestPage.qml:143
+#: app/JourneyRequestPage.qml:91 app/JourneyRequestPage.qml:163
 #, kde-format
 msgctxt "arrival train station"
 msgid "Select Arrival Stop"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:128
+#: app/JourneyRequestPage.qml:148
 #, kde-format
 msgctxt "departure train station"
 msgid "From:"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:142
+#: app/JourneyRequestPage.qml:162
 #, kde-format
 msgctxt "arrival train station"
 msgid "To:"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:160
+#: app/JourneyRequestPage.qml:180
 #, kde-format
 msgctxt "departure and arrival stops"
 msgid "Swap departure and arrival"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:175
+#: app/JourneyRequestPage.qml:195
 #, kde-format
 msgctxt "train or bus departure"
 msgid "Departure"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:178
+#: app/JourneyRequestPage.qml:198
 #, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:191
+#: app/JourneyRequestPage.qml:211
 #, kde-format
 msgctxt "train or bus departure"
 msgid "Departure time"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:191
+#: app/JourneyRequestPage.qml:211
 #, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival time"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:202
+#: app/JourneyRequestPage.qml:222
 #, kde-format
 msgctxt "filter journeys by mode of transportation etc."
 msgid "Filter"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:219
+#: app/JourneyRequestPage.qml:239
 #, kde-format
 msgid "Search Journey"
 msgstr ""
@@ -4168,7 +4168,7 @@ msgctxt "@title"
 msgid "Edit Train Reservation"
 msgstr ""
 
-#: app/TrainEditor.qml:88 app/TrainEditor.qml:245
+#: app/TrainEditor.qml:88 app/TrainEditor.qml:248
 #, kde-format
 msgctxt "train departure"
 msgid "Change Departure Station"
@@ -4180,7 +4180,7 @@ msgctxt "train departure"
 msgid "Change departure station"
 msgstr ""
 
-#: app/TrainEditor.qml:104 app/TrainEditor.qml:348
+#: app/TrainEditor.qml:104 app/TrainEditor.qml:354
 #, kde-format
 msgctxt "train arrival"
 msgid "Change Arrival Station"
@@ -4227,62 +4227,62 @@ msgstr ""
 msgid "Departure station must not be empty."
 msgstr ""
 
-#: app/TrainEditor.qml:197 app/TrainEditor.qml:294
+#: app/TrainEditor.qml:197 app/TrainEditor.qml:297
 #, kde-format
 msgctxt "Train station platform"
 msgid "Platform"
 msgstr ""
 
-#: app/TrainEditor.qml:208 app/TrainEditor.qml:305
+#: app/TrainEditor.qml:210 app/TrainEditor.qml:310
 #, kde-format
 msgid ""
 "Specifying the departure and arrival location helps Itinerary to find "
 "updated information for the train this reservation is valid for."
 msgstr ""
 
-#: app/TrainEditor.qml:228 app/TrainEditor.qml:330 app/TrainPage.qml:163
+#: app/TrainEditor.qml:231 app/TrainEditor.qml:336 app/TrainPage.qml:163
 #: app/TrainPage.qml:247
 #, kde-format
 msgctxt "train station"
 msgid "Station"
 msgstr ""
 
-#: app/TrainEditor.qml:236 app/TrainEditor.qml:339
+#: app/TrainEditor.qml:239 app/TrainEditor.qml:345
 #, kde-format
 msgctxt "train platform"
 msgid "Platform"
 msgstr ""
 
-#: app/TrainEditor.qml:253
+#: app/TrainEditor.qml:256
 #, kde-format
 msgctxt "train arrival"
 msgid "Arrival"
 msgstr ""
 
-#: app/TrainEditor.qml:283
+#: app/TrainEditor.qml:286
 #, kde-format
 msgctxt "Train station"
 msgid "Station Name"
 msgstr ""
 
-#: app/TrainEditor.qml:286
+#: app/TrainEditor.qml:289
 #, kde-format
 msgid "Arrival station must not be empty."
 msgstr ""
 
-#: app/TrainEditor.qml:358 app/TrainEditor.qml:370 app/TrainPage.qml:290
+#: app/TrainEditor.qml:364 app/TrainEditor.qml:376 app/TrainPage.qml:290
 #, kde-format
 msgctxt "Train seat"
 msgid "Seat"
 msgstr ""
 
-#: app/TrainEditor.qml:364
+#: app/TrainEditor.qml:370
 #, kde-format
 msgctxt "carriage on a train"
 msgid "Coach"
 msgstr ""
 
-#: app/TrainEditor.qml:376
+#: app/TrainEditor.qml:382
 #, kde-format
 msgctxt "seating class on a train"
 msgid "Class"
