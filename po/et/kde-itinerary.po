@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 14:41+0000\n"
+"POT-Creation-Date: 2025-11-21 02:38+0000\n"
 "PO-Revision-Date: 2020-05-04 10:51+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -473,7 +473,7 @@ msgctxt "Boat arrival"
 msgid "Arrival Time"
 msgstr "Saabumisaeg:"
 
-#: app/BoatEditor.qml:191 app/BusEditor.qml:255 app/TrainEditor.qml:273
+#: app/BoatEditor.qml:191 app/BusEditor.qml:255 app/TrainEditor.qml:276
 #, kde-format
 msgid "Arrival time has to be after the departure time."
 msgstr ""
@@ -740,7 +740,7 @@ msgctxt "bus arrival"
 msgid "Arrival"
 msgstr "Saabumine"
 
-#: app/BusEditor.qml:244 app/TrainEditor.qml:262
+#: app/BusEditor.qml:244 app/TrainEditor.qml:265
 #, fuzzy, kde-format
 #| msgid "Arrival Time:"
 msgctxt "Train arrival"
@@ -4475,7 +4475,7 @@ msgctxt "@title"
 msgid "Edit Train Reservation"
 msgstr "Rongireserveeringu muutmine"
 
-#: app/TrainEditor.qml:88 app/TrainEditor.qml:245
+#: app/TrainEditor.qml:88 app/TrainEditor.qml:248
 #, fuzzy, kde-format
 #| msgid "Change Reservation"
 msgctxt "train departure"
@@ -4489,7 +4489,7 @@ msgctxt "train departure"
 msgid "Change departure station"
 msgstr "Muuda reserveeringut"
 
-#: app/TrainEditor.qml:104 app/TrainEditor.qml:348
+#: app/TrainEditor.qml:104 app/TrainEditor.qml:354
 #, fuzzy, kde-format
 #| msgid "Change Reservation"
 msgctxt "train arrival"
@@ -4544,21 +4544,21 @@ msgstr "Jaam:"
 msgid "Departure station must not be empty."
 msgstr "Väljumisterminal:"
 
-#: app/TrainEditor.qml:197 app/TrainEditor.qml:294
+#: app/TrainEditor.qml:197 app/TrainEditor.qml:297
 #, fuzzy, kde-format
 #| msgid "Platform:"
 msgctxt "Train station platform"
 msgid "Platform"
 msgstr "Platvorm:"
 
-#: app/TrainEditor.qml:208 app/TrainEditor.qml:305
+#: app/TrainEditor.qml:210 app/TrainEditor.qml:310
 #, kde-format
 msgid ""
 "Specifying the departure and arrival location helps Itinerary to find "
 "updated information for the train this reservation is valid for."
 msgstr ""
 
-#: app/TrainEditor.qml:228 app/TrainEditor.qml:330 app/TrainPage.qml:163
+#: app/TrainEditor.qml:231 app/TrainEditor.qml:336 app/TrainPage.qml:163
 #: app/TrainPage.qml:247
 #, fuzzy, kde-format
 #| msgid "Station:"
@@ -4566,48 +4566,48 @@ msgctxt "train station"
 msgid "Station"
 msgstr "Jaam:"
 
-#: app/TrainEditor.qml:236 app/TrainEditor.qml:339
+#: app/TrainEditor.qml:239 app/TrainEditor.qml:345
 #, fuzzy, kde-format
 #| msgid "Platform:"
 msgctxt "train platform"
 msgid "Platform"
 msgstr "Platvorm:"
 
-#: app/TrainEditor.qml:253
+#: app/TrainEditor.qml:256
 #, fuzzy, kde-format
 #| msgid "Arrival"
 msgctxt "train arrival"
 msgid "Arrival"
 msgstr "Saabumine"
 
-#: app/TrainEditor.qml:283
+#: app/TrainEditor.qml:286
 #, fuzzy, kde-format
 #| msgid "Station:"
 msgctxt "Train station"
 msgid "Station Name"
 msgstr "Jaam:"
 
-#: app/TrainEditor.qml:286
+#: app/TrainEditor.qml:289
 #, fuzzy, kde-format
 #| msgid "Departure terminal:"
 msgid "Arrival station must not be empty."
 msgstr "Väljumisterminal:"
 
-#: app/TrainEditor.qml:358 app/TrainEditor.qml:370 app/TrainPage.qml:290
+#: app/TrainEditor.qml:364 app/TrainEditor.qml:376 app/TrainPage.qml:290
 #, fuzzy, kde-format
 #| msgid "Seat"
 msgctxt "Train seat"
 msgid "Seat"
 msgstr "Koht"
 
-#: app/TrainEditor.qml:364
+#: app/TrainEditor.qml:370
 #, fuzzy, kde-format
 #| msgid "Coach:"
 msgctxt "carriage on a train"
 msgid "Coach"
 msgstr "Vagun:"
 
-#: app/TrainEditor.qml:376
+#: app/TrainEditor.qml:382
 #, fuzzy, kde-format
 #| msgid "Class:"
 msgctxt "seating class on a train"

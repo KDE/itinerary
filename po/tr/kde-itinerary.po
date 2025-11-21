@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 14:41+0000\n"
+"POT-Creation-Date: 2025-11-21 02:38+0000\n"
 "PO-Revision-Date: 2025-10-31 17:21+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -436,7 +436,7 @@ msgctxt "Boat arrival"
 msgid "Arrival Time"
 msgstr "Varış Zamanı"
 
-#: app/BoatEditor.qml:191 app/BusEditor.qml:255 app/TrainEditor.qml:273
+#: app/BoatEditor.qml:191 app/BusEditor.qml:255 app/TrainEditor.qml:276
 #, kde-format
 msgid "Arrival time has to be after the departure time."
 msgstr "Varış zamanı, kalkış zamanından sonra olmalıdır."
@@ -670,7 +670,7 @@ msgctxt "bus arrival"
 msgid "Arrival"
 msgstr "Varış"
 
-#: app/BusEditor.qml:244 app/TrainEditor.qml:262
+#: app/BusEditor.qml:244 app/TrainEditor.qml:265
 #, kde-format
 msgctxt "Train arrival"
 msgid "Arrival Time"
@@ -4202,7 +4202,7 @@ msgctxt "@title"
 msgid "Edit Train Reservation"
 msgstr "Tren Rezervasyonunu Düzenle"
 
-#: app/TrainEditor.qml:88 app/TrainEditor.qml:245
+#: app/TrainEditor.qml:88 app/TrainEditor.qml:248
 #, kde-format
 msgctxt "train departure"
 msgid "Change Departure Station"
@@ -4214,7 +4214,7 @@ msgctxt "train departure"
 msgid "Change departure station"
 msgstr "Kalkış istasyonunu değiştir"
 
-#: app/TrainEditor.qml:104 app/TrainEditor.qml:348
+#: app/TrainEditor.qml:104 app/TrainEditor.qml:354
 #, kde-format
 msgctxt "train arrival"
 msgid "Change Arrival Station"
@@ -4261,13 +4261,13 @@ msgstr "İstasyon Adı"
 msgid "Departure station must not be empty."
 msgstr "Kalkış istasyonu boş olmamalıdır."
 
-#: app/TrainEditor.qml:197 app/TrainEditor.qml:294
+#: app/TrainEditor.qml:197 app/TrainEditor.qml:297
 #, kde-format
 msgctxt "Train station platform"
 msgid "Platform"
 msgstr "Peron"
 
-#: app/TrainEditor.qml:208 app/TrainEditor.qml:305
+#: app/TrainEditor.qml:210 app/TrainEditor.qml:310
 #, kde-format
 msgid ""
 "Specifying the departure and arrival location helps Itinerary to find "
@@ -4276,49 +4276,49 @@ msgstr ""
 "Varış ve kalkış yerinin belirtilmesi, Yol Kılavuzu’nun bu rezervasyonun "
 "geçerli olduğu trene ilişkin güncel bilgileri bulmasına yardımcı olur."
 
-#: app/TrainEditor.qml:228 app/TrainEditor.qml:330 app/TrainPage.qml:163
+#: app/TrainEditor.qml:231 app/TrainEditor.qml:336 app/TrainPage.qml:163
 #: app/TrainPage.qml:247
 #, kde-format
 msgctxt "train station"
 msgid "Station"
 msgstr "İstasyon"
 
-#: app/TrainEditor.qml:236 app/TrainEditor.qml:339
+#: app/TrainEditor.qml:239 app/TrainEditor.qml:345
 #, kde-format
 msgctxt "train platform"
 msgid "Platform"
 msgstr "Peron"
 
-#: app/TrainEditor.qml:253
+#: app/TrainEditor.qml:256
 #, kde-format
 msgctxt "train arrival"
 msgid "Arrival"
 msgstr "Varış"
 
-#: app/TrainEditor.qml:283
+#: app/TrainEditor.qml:286
 #, kde-format
 msgctxt "Train station"
 msgid "Station Name"
 msgstr "İstasyon Adı"
 
-#: app/TrainEditor.qml:286
+#: app/TrainEditor.qml:289
 #, kde-format
 msgid "Arrival station must not be empty."
 msgstr "Varış durağı boş olmamalıdır."
 
-#: app/TrainEditor.qml:358 app/TrainEditor.qml:370 app/TrainPage.qml:290
+#: app/TrainEditor.qml:364 app/TrainEditor.qml:376 app/TrainPage.qml:290
 #, kde-format
 msgctxt "Train seat"
 msgid "Seat"
 msgstr "Koltuk"
 
-#: app/TrainEditor.qml:364
+#: app/TrainEditor.qml:370
 #, kde-format
 msgctxt "carriage on a train"
 msgid "Coach"
 msgstr "Otobüs"
 
-#: app/TrainEditor.qml:376
+#: app/TrainEditor.qml:382
 #, kde-format
 msgctxt "seating class on a train"
 msgid "Class"
