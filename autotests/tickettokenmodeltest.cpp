@@ -9,9 +9,13 @@
 #include "reservationmanager.h"
 #include "tickettokenmodel.h"
 
+#include <KItinerary/Reservation>
+
 #include <QAbstractItemModelTester>
 #include <QStandardPaths>
 #include <QtTest/qtest.h>
+
+using namespace Qt::Literals;
 
 class TicketTokenModelTest : public QObject
 {
@@ -39,11 +43,22 @@ private Q_SLOTS:
         QAbstractItemModelTester modelTest(&model);
         QCOMPARE(model.rowCount(), 0);
 
-        QCOMPARE(mgr.reservationsForBatch(mgr.batches()[0]).size(), 2);
+        const auto resIds = mgr.reservationsForBatch(mgr.batches()[0]);
+        QCOMPARE(resIds.size(), 2);
         model.setBatchId(mgr.batches()[0]);
         model.setReservationManager(&mgr);
         QCOMPARE(model.rowCount(), 2);
         QCOMPARE(model.initialIndex(), 0);
+        QVERIFY(model.data(model.index(0, 0), Qt::DisplayRole).toString().contains("Eva Green"_L1));
+        QVERIFY(model.data(model.index(1, 0), Qt::DisplayRole).toString().contains("John Green"_L1));
+
+        auto res = mgr.reservation(resIds[1]).value<KItinerary::FlightReservation>();
+        auto person = res.underName().value<KItinerary::Person>();
+        person.setName(u"Changed Name"_s);
+        res.setUnderName(person);
+        mgr.updateReservation(resIds[1], res);
+        QVERIFY(model.data(model.index(0, 0), Qt::DisplayRole).toString().contains("Eva Green"_L1));
+        QVERIFY(model.data(model.index(1, 0), Qt::DisplayRole).toString().contains("Changed Name"_L1));
     }
 
     void testMultiTicket()

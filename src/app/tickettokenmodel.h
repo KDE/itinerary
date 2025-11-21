@@ -57,6 +57,7 @@ Q_SIGNALS:
 
 private:
     void reload();
+    void batchChanged(const QString &batchId);
     void reservationRemoved(const QString &resId);
 
     ReservationManager *m_resMgr = nullptr;

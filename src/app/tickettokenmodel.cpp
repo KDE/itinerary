@@ -35,6 +35,8 @@ void TicketTokenModel::setReservationManager(ReservationManager *mgr)
         return;
     }
     m_resMgr = mgr;
+    connect(m_resMgr, &ReservationManager::batchChanged, this, &TicketTokenModel::batchChanged);
+    connect(m_resMgr, &ReservationManager::batchContentChanged, this, &TicketTokenModel::batchChanged);
     connect(m_resMgr, &ReservationManager::reservationRemoved, this, &TicketTokenModel::reservationRemoved);
     reload();
 }
@@ -205,6 +207,15 @@ QStringList TicketTokenModel::selectedReservationIds() const
         }
     }
     return l;
+}
+
+void TicketTokenModel::batchChanged(const QString &batchId)
+{
+    if (m_batchId != batchId) {
+        return;
+    }
+
+    reload(); // could probably be done incrementally and with preserving selection
 }
 
 void TicketTokenModel::reservationRemoved(const QString &resId)
