@@ -97,10 +97,9 @@ msgid "Export…"
 msgstr "导出..."
 
 #: app/ActionsCard.qml:80
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgid "Delete…"
-msgstr "删除"
+msgstr ""
 
 #: app/ActionsCard.qml:115
 #, kde-format
@@ -3475,16 +3474,14 @@ msgid "Show Pass"
 msgstr "显示通行证"
 
 #: app/ReservationDeletionDialog.qml:30
-#, fuzzy, kde-format
-#| msgid "Delete Document"
+#, kde-format
 msgid "Delete Selected"
-msgstr "删除证件"
+msgstr ""
 
 #: app/ReservationDeletionDialog.qml:42
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgid "Delete All"
-msgstr "删除"
+msgstr ""
 
 #: app/ReservationDocumentsCard.qml:19
 #, kde-format
