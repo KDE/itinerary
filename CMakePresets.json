@@ -16,12 +16,10 @@
             "name": "dev-mold",
             "displayName": "Build as debug + using mold linker",
             "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Debug",
-                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
                 "CMAKE_SHARED_LINKER_FLAGS": "-fuse-ld=mold"
             },
             "inherits": [
-                "base"
+                "dev"
             ]
         },
         {
@@ -40,7 +38,7 @@
             "displayName": "Build with Asan support.",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
-                "ECM_ENABLE_SANITIZERS" : "'address;undefined'"
+                "ECM_ENABLE_SANITIZERS": "'address;undefined'"
             },
             "inherits": [
                 "base"
@@ -49,27 +47,19 @@
         {
             "name": "dev-clang",
             "displayName": "dev-clang",
-            "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Debug",
-                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
-            },
             "environment": {
                 "CXX": "clang++",
                 "CCACHE_DISABLE": "ON"
             },
             "inherits": [
-                "base"
+                "dev"
             ]
         },
         {
             "name": "unity",
             "displayName": "Build with CMake unity support.",
-            "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Debug",
-                "USE_UNITY_CMAKE_SUPPORT": "ON"
-            },
             "inherits": [
-                "base"
+                "dev"
             ]
         },
         {
@@ -123,8 +113,6 @@
             "name": "ftime-trace",
             "displayName": "ftime-trace",
             "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Debug",
-                "USE_DEVELOPER_MODE": "ON",
                 "CMAKE_C_FLAGS_INIT": "-ftime-trace",
                 "CMAKE_CXX_FLAGS_INIT": "-ftime-trace"
             },
@@ -134,7 +122,7 @@
                 "CCACHE_DISABLE": "ON"
             },
             "inherits": [
-                "base"
+                "dev"
             ]
         }
     ],
@@ -146,7 +134,7 @@
         {
             "name": "ftime-trace",
             "configurePreset": "ftime-trace"
-        },	
+        },
         {
             "name": "dev-mold",
             "configurePreset": "dev-mold"
@@ -175,35 +163,55 @@
             "name": "clazy",
             "configurePreset": "clazy",
             "environment": {
-                "CLAZY_CHECKS" : "level0,level1,detaching-member,ifndef-define-typo,isempty-vs-count,qrequiredresult-candidates,reserve-candidates,signal-with-return-value,unneeded-cast,function-args-by-ref,function-args-by-value,returning-void-expression,no-ctor-missing-parent-argument,isempty-vs-count,qhash-with-char-pointer-key,raw-environment-function,qproperty-type-mismatch,old-style-connect,qstring-allocations,container-inside-loop,heap-allocated-small-trivial-type,inefficient-qlist,qstring-varargs,level2,detaching-member,heap-allocated-small-trivial-type,isempty-vs-count,qstring-varargs,qvariant-template-instantiation,raw-environment-function,reserve-candidates,signal-with-return-value,thread-with-slots,no-ctor-missing-parent-argument,no-missing-typeinfo",
-                "CCACHE_DISABLE" : "ON"
+                "CLAZY_CHECKS": "level0,level1,detaching-member,ifndef-define-typo,isempty-vs-count,qrequiredresult-candidates,reserve-candidates,signal-with-return-value,unneeded-cast,function-args-by-ref,function-args-by-value,returning-void-expression,no-ctor-missing-parent-argument,isempty-vs-count,qhash-with-char-pointer-key,raw-environment-function,qproperty-type-mismatch,old-style-connect,qstring-allocations,container-inside-loop,heap-allocated-small-trivial-type,inefficient-qlist,qstring-varargs,level2,detaching-member,heap-allocated-small-trivial-type,isempty-vs-count,qstring-varargs,qvariant-template-instantiation,raw-environment-function,reserve-candidates,signal-with-return-value,thread-with-slots,no-ctor-missing-parent-argument,no-missing-typeinfo",
+                "CCACHE_DISABLE": "ON"
             }
         }
     ],
     "testPresets": [
-    {
-      "name": "dev",
-      "configurePreset": "dev",
-      "output": {"outputOnFailure": true},
-      "execution": {"noTestsAction": "error", "stopOnFailure": false}
-    },
-    {
-      "name": "asan",
-      "configurePreset": "asan",
-      "output": {"outputOnFailure": true},
-      "execution": {"noTestsAction": "error", "stopOnFailure": true}
-    },
-    {
-      "name": "unity",
-      "configurePreset": "unity",
-      "output": {"outputOnFailure": true},
-      "execution": {"noTestsAction": "error", "stopOnFailure": true}
-    },
-    {
-      "name": "coverage",
-      "configurePreset": "coverage",
-      "output": {"outputOnFailure": true},
-      "execution": {"noTestsAction": "error", "stopOnFailure": true}
-    }
-  ]
+        {
+            "name": "dev",
+            "configurePreset": "dev",
+            "output": {
+                "outputOnFailure": true
+            },
+            "execution": {
+                "noTestsAction": "error",
+                "stopOnFailure": false
+            }
+        },
+        {
+            "name": "asan",
+            "configurePreset": "asan",
+            "output": {
+                "outputOnFailure": true
+            },
+            "execution": {
+                "noTestsAction": "error",
+                "stopOnFailure": true
+            }
+        },
+        {
+            "name": "unity",
+            "configurePreset": "unity",
+            "output": {
+                "outputOnFailure": true
+            },
+            "execution": {
+                "noTestsAction": "error",
+                "stopOnFailure": true
+            }
+        },
+        {
+            "name": "coverage",
+            "configurePreset": "coverage",
+            "output": {
+                "outputOnFailure": true
+            },
+            "execution": {
+                "noTestsAction": "error",
+                "stopOnFailure": true
+            }
+        }
+    ]
 }
