@@ -37,6 +37,17 @@ FormCard.AboutPage {
     }
 
     FormCard.FormHeader {
+        title: i18n("KDE Itinerary uses public transport data from the following sources.")
+    }
+
+    FormCard.FormCard {
+        Repeater {
+            model: LiveDataManager.publicTransportManager.attributions
+            delegate: transportDataDelegate
+        }
+    }
+
+    FormCard.FormHeader {
         title: i18n("Developer information")
     }
 
