@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-19 00:43+0000\n"
+"POT-Creation-Date: 2025-11-27 00:44+0000\n"
 "PO-Revision-Date: 2025-11-17 09:45+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -40,20 +40,25 @@ msgstr "רישיון: <a href=\"%2\">%1</a>"
 
 #: app/AboutPage.qml:40
 #, kde-format
+msgid "KDE Itinerary uses public transport data from the following sources."
+msgstr "KDE Itinerary משתמש בנתוני תחבורה ציבורית מהמקורות הבאים."
+
+#: app/AboutPage.qml:51
+#, kde-format
 msgid "Developer information"
 msgstr "מידע למפתחים"
 
-#: app/AboutPage.qml:46
+#: app/AboutPage.qml:57
 #, kde-format
 msgid "Application version: %1"
 msgstr "גרסת יישום: %1"
 
-#: app/AboutPage.qml:62
+#: app/AboutPage.qml:73
 #, kde-format
 msgid "Extractor capabilities:"
 msgstr "יכולות מחלץ:"
 
-#: app/AboutPage.qml:67
+#: app/AboutPage.qml:78
 #, kde-format
 msgid "Extractor capabilities copied to clipboard"
 msgstr "יכולות המחלץ הועתקו ללוח הגזירים"
@@ -4088,17 +4093,17 @@ msgstr "סריקת ברקוד…"
 msgid "Paste"
 msgstr "הדבקה"
 
-#: app/tickettokenmodel.cpp:86
+#: app/tickettokenmodel.cpp:88
 #, kde-format
 msgid "Attendee %1"
 msgstr "משתתף/ת %1"
 
-#: app/tickettokenmodel.cpp:88
+#: app/tickettokenmodel.cpp:90
 #, kde-format
 msgid "Traveler %1"
 msgstr "נוסע/ת %1"
 
-#: app/tickettokenmodel.cpp:135
+#: app/tickettokenmodel.cpp:137
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
@@ -4914,9 +4919,6 @@ msgstr "%1%2 מ%3 אל %4 ב־%5"
 #~ msgstr ""
 #~ "KDE Itinerary מפותח על ידי קהילת KDE כתוכנה חופשית ומשתמש ברכיבים "
 #~ "שמופיעים להלן."
-
-#~ msgid "KDE Itinerary uses public transport data from the following sources."
-#~ msgstr "KDE Itinerary משתמש בנתוני תחבורה ציבורית מהמקורות הבאים."
 
 #~ msgctxt "journey query search constraint, title"
 #~ msgid "Aircraft"

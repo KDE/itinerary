@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-19 00:43+0000\n"
+"POT-Creation-Date: 2025-11-27 00:44+0000\n"
 "PO-Revision-Date: 2025-11-17 12:43+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -39,20 +39,27 @@ msgstr "Licentie: <a href=\"%2\">%1</a>"
 
 #: app/AboutPage.qml:40
 #, kde-format
+msgid "KDE Itinerary uses public transport data from the following sources."
+msgstr ""
+"KDE Itinerary gebruikt transportgegevens voor openbaar vervoer uit de "
+"volgende bronnen."
+
+#: app/AboutPage.qml:51
+#, kde-format
 msgid "Developer information"
 msgstr "Informatie voor ontwikkelaar"
 
-#: app/AboutPage.qml:46
+#: app/AboutPage.qml:57
 #, kde-format
 msgid "Application version: %1"
 msgstr "Versie van toepassing: %1"
 
-#: app/AboutPage.qml:62
+#: app/AboutPage.qml:73
 #, kde-format
 msgid "Extractor capabilities:"
 msgstr "Functies van extractor:"
 
-#: app/AboutPage.qml:67
+#: app/AboutPage.qml:78
 #, kde-format
 msgid "Extractor capabilities copied to clipboard"
 msgstr "Mogelijkheden van extractor gekopieerd naar klembord"
@@ -4125,17 +4132,17 @@ msgstr "Barcode scannen…"
 msgid "Paste"
 msgstr "Plakken"
 
-#: app/tickettokenmodel.cpp:86
+#: app/tickettokenmodel.cpp:88
 #, kde-format
 msgid "Attendee %1"
 msgstr "Deelnemer %1"
 
-#: app/tickettokenmodel.cpp:88
+#: app/tickettokenmodel.cpp:90
 #, kde-format
 msgid "Traveler %1"
 msgstr "Reiziger %1"
 
-#: app/tickettokenmodel.cpp:135
+#: app/tickettokenmodel.cpp:137
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
@@ -4948,11 +4955,6 @@ msgstr "%1%2 van %3 naar %4 op %5"
 #~ msgstr ""
 #~ "KDE Itinerary is ontwikkeld door de KDE gemeenschap als vrije software en "
 #~ "gebruikt de onderstaande componenten."
-
-#~ msgid "KDE Itinerary uses public transport data from the following sources."
-#~ msgstr ""
-#~ "KDE Itinerary gebruikt transportgegevens voor openbaar vervoer uit de "
-#~ "volgende bronnen."
 
 #~ msgctxt "journey query search constraint, title"
 #~ msgid "Aircraft"

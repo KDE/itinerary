@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-19 00:43+0000\n"
+"POT-Creation-Date: 2025-11-27 00:44+0000\n"
 "PO-Revision-Date: 2024-11-16 12:52+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -39,20 +39,25 @@ msgstr "Licence: <a href=\"%2\">%1</a>"
 
 #: app/AboutPage.qml:40
 #, kde-format
+msgid "KDE Itinerary uses public transport data from the following sources."
+msgstr "KDE Itinerary uses public transport data from the following sources."
+
+#: app/AboutPage.qml:51
+#, kde-format
 msgid "Developer information"
 msgstr "Developer information"
 
-#: app/AboutPage.qml:46
+#: app/AboutPage.qml:57
 #, kde-format
 msgid "Application version: %1"
 msgstr "Application version: %1"
 
-#: app/AboutPage.qml:62
+#: app/AboutPage.qml:73
 #, kde-format
 msgid "Extractor capabilities:"
 msgstr "Extractor capabilities:"
 
-#: app/AboutPage.qml:67
+#: app/AboutPage.qml:78
 #, kde-format
 msgid "Extractor capabilities copied to clipboard"
 msgstr "Extractor capabilities copied to clipboard"
@@ -4221,17 +4226,17 @@ msgstr "Scan barcode…"
 msgid "Paste"
 msgstr "Paste"
 
-#: app/tickettokenmodel.cpp:86
+#: app/tickettokenmodel.cpp:88
 #, kde-format
 msgid "Attendee %1"
 msgstr "Attendee %1"
 
-#: app/tickettokenmodel.cpp:88
+#: app/tickettokenmodel.cpp:90
 #, kde-format
 msgid "Traveler %1"
 msgstr "Traveller %1"
 
-#: app/tickettokenmodel.cpp:135
+#: app/tickettokenmodel.cpp:137
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
@@ -5075,10 +5080,6 @@ msgstr "%1%2 from %3 to %4 on %5"
 #~ msgstr ""
 #~ "KDE Itinerary is developed by the KDE community as free software and uses "
 #~ "the components listed below."
-
-#~ msgid "KDE Itinerary uses public transport data from the following sources."
-#~ msgstr ""
-#~ "KDE Itinerary uses public transport data from the following sources."
 
 #~ msgid "Open File…"
 #~ msgstr "Open File…"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-19 00:43+0000\n"
+"POT-Creation-Date: 2025-11-27 00:44+0000\n"
 "PO-Revision-Date: 2025-11-17 13:50+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -42,20 +42,27 @@ msgstr "Умови ліцензування: <a href=\"%2\">%1</a>"
 
 #: app/AboutPage.qml:40
 #, kde-format
+msgid "KDE Itinerary uses public transport data from the following sources."
+msgstr ""
+"KDE Itinerary використовує дані щодо громадського транспорту з наведених "
+"нижче джерел."
+
+#: app/AboutPage.qml:51
+#, kde-format
 msgid "Developer information"
 msgstr "Відомості для розробника"
 
-#: app/AboutPage.qml:46
+#: app/AboutPage.qml:57
 #, kde-format
 msgid "Application version: %1"
 msgstr "Версія програми: %1"
 
-#: app/AboutPage.qml:62
+#: app/AboutPage.qml:73
 #, kde-format
 msgid "Extractor capabilities:"
 msgstr "Можливості видобування:"
 
-#: app/AboutPage.qml:67
+#: app/AboutPage.qml:78
 #, kde-format
 msgid "Extractor capabilities copied to clipboard"
 msgstr "Можливості видобування скопійовано до буфера обміну даними"
@@ -4137,17 +4144,17 @@ msgstr "Сканувати штрихкод…"
 msgid "Paste"
 msgstr "Вставити"
 
-#: app/tickettokenmodel.cpp:86
+#: app/tickettokenmodel.cpp:88
 #, kde-format
 msgid "Attendee %1"
 msgstr "Учасник %1"
 
-#: app/tickettokenmodel.cpp:88
+#: app/tickettokenmodel.cpp:90
 #, kde-format
 msgid "Traveler %1"
 msgstr "Мандрівник %1"
 
-#: app/tickettokenmodel.cpp:135
+#: app/tickettokenmodel.cpp:137
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
@@ -4969,11 +4976,6 @@ msgstr "%1%2 з %3 до %4 %5"
 #~ msgstr ""
 #~ "KDE Itinerary розроблено спільнотою KDE як вільне програмне забезпечення. "
 #~ "У ньому використано компоненти, список яких наведено нижче."
-
-#~ msgid "KDE Itinerary uses public transport data from the following sources."
-#~ msgstr ""
-#~ "KDE Itinerary використовує дані щодо громадського транспорту з наведених "
-#~ "нижче джерел."
 
 #~ msgctxt "journey query search constraint, title"
 #~ msgid "Aircraft"

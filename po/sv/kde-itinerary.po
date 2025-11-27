@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-19 00:43+0000\n"
+"POT-Creation-Date: 2025-11-27 00:44+0000\n"
 "PO-Revision-Date: 2025-10-26 20:48+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -39,20 +39,26 @@ msgstr "Licens: <a href=\"%2\">%1</a>"
 
 #: app/AboutPage.qml:40
 #, kde-format
+msgid "KDE Itinerary uses public transport data from the following sources."
+msgstr ""
+"KDE-resplan använder information om kollektivtrafik från följande källor."
+
+#: app/AboutPage.qml:51
+#, kde-format
 msgid "Developer information"
 msgstr "Utvecklarinformation"
 
-#: app/AboutPage.qml:46
+#: app/AboutPage.qml:57
 #, kde-format
 msgid "Application version: %1"
 msgstr "Programversion: %1"
 
-#: app/AboutPage.qml:62
+#: app/AboutPage.qml:73
 #, kde-format
 msgid "Extractor capabilities:"
 msgstr "Extraktionsmöjligheter:"
 
-#: app/AboutPage.qml:67
+#: app/AboutPage.qml:78
 #, kde-format
 msgid "Extractor capabilities copied to clipboard"
 msgstr "Extraktionsmöjligheter kopierade till klippbordet"
@@ -4111,17 +4117,17 @@ msgstr "Läs av streckkod…"
 msgid "Paste"
 msgstr "Klistra in"
 
-#: app/tickettokenmodel.cpp:86
+#: app/tickettokenmodel.cpp:88
 #, kde-format
 msgid "Attendee %1"
 msgstr "Deltagare %1"
 
-#: app/tickettokenmodel.cpp:88
+#: app/tickettokenmodel.cpp:90
 #, kde-format
 msgid "Traveler %1"
 msgstr "Resande %1"
 
-#: app/tickettokenmodel.cpp:135
+#: app/tickettokenmodel.cpp:137
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
@@ -4932,10 +4938,6 @@ msgstr "%1%2 från %3 till %4 %5"
 #~ msgstr ""
 #~ "KDE-resplan utvecklas av KDE-gemenskapen som fri programvara och använder "
 #~ "komponenterna som listas nedan."
-
-#~ msgid "KDE Itinerary uses public transport data from the following sources."
-#~ msgstr ""
-#~ "KDE-resplan använder information om kollektivtrafik från följande källor."
 
 #~ msgctxt "journey query search constraint, title"
 #~ msgid "Aircraft"

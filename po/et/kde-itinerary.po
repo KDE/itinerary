@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-19 00:43+0000\n"
+"POT-Creation-Date: 2025-11-27 00:44+0000\n"
 "PO-Revision-Date: 2020-05-04 10:51+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -39,22 +39,27 @@ msgid "License: <a href=\"%2\">%1</a>"
 msgstr "Litsents: <a href=\"%2\">%1</a>"
 
 #: app/AboutPage.qml:40
+#, kde-format
+msgid "KDE Itinerary uses public transport data from the following sources."
+msgstr "KDE itineraar kasutab ühistranspordi andmeid järgmistest allikatest."
+
+#: app/AboutPage.qml:51
 #, fuzzy, kde-format
 #| msgid "More information"
 msgid "Developer information"
 msgstr "Rohkem teavet"
 
-#: app/AboutPage.qml:46
+#: app/AboutPage.qml:57
 #, kde-format
 msgid "Application version: %1"
 msgstr "Rakenduse versioon: %1"
 
-#: app/AboutPage.qml:62
+#: app/AboutPage.qml:73
 #, kde-format
 msgid "Extractor capabilities:"
 msgstr "Ekstraktori võimed:"
 
-#: app/AboutPage.qml:67
+#: app/AboutPage.qml:78
 #, fuzzy, kde-format
 #| msgid "Extractor capabilities:"
 msgid "Extractor capabilities copied to clipboard"
@@ -4381,17 +4386,17 @@ msgstr ""
 msgid "Paste"
 msgstr "Aseta"
 
-#: app/tickettokenmodel.cpp:86
+#: app/tickettokenmodel.cpp:88
 #, kde-format
 msgid "Attendee %1"
 msgstr "Osaleja %1"
 
-#: app/tickettokenmodel.cpp:88
+#: app/tickettokenmodel.cpp:90
 #, kde-format
 msgid "Traveler %1"
 msgstr "Reisija %1"
 
-#: app/tickettokenmodel.cpp:135
+#: app/tickettokenmodel.cpp:137
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
@@ -5278,10 +5283,6 @@ msgstr "Asukohast %1 asukohta %2 (%3)"
 #~ msgstr ""
 #~ "KDE itineraari arendab KDE kogukond vaba tarkvarana ja see tarvitab "
 #~ "allpool esitatud komponente."
-
-#~ msgid "KDE Itinerary uses public transport data from the following sources."
-#~ msgstr ""
-#~ "KDE itineraar kasutab ühistranspordi andmeid järgmistest allikatest."
 
 #, fuzzy
 #~| msgid "Sequence Number:"

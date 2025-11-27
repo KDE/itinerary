@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-19 00:43+0000\n"
+"POT-Creation-Date: 2025-11-27 00:44+0000\n"
 "PO-Revision-Date: 2024-12-15 19:32+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
@@ -41,20 +41,26 @@ msgstr "लाइसेंस: <a href=\"%2\">%1</a>"
 
 #: app/AboutPage.qml:40
 #, kde-format
+msgid "KDE Itinerary uses public transport data from the following sources."
+msgstr ""
+"केडीई यात्रा कार्यक्रम निम्नलिखित स्रोतों से सार्वजनिक परिवहन डेटा का उपयोग करता है।"
+
+#: app/AboutPage.qml:51
+#, kde-format
 msgid "Developer information"
 msgstr "डेवलपर जानकारी"
 
-#: app/AboutPage.qml:46
+#: app/AboutPage.qml:57
 #, kde-format
 msgid "Application version: %1"
 msgstr "एप्लिकेशन संस्करण: %1"
 
-#: app/AboutPage.qml:62
+#: app/AboutPage.qml:73
 #, kde-format
 msgid "Extractor capabilities:"
 msgstr "एक्सट्रैक्टर क्षमताएं:"
 
-#: app/AboutPage.qml:67
+#: app/AboutPage.qml:78
 #, kde-format
 msgid "Extractor capabilities copied to clipboard"
 msgstr "एक्सट्रैक्टर क्षमताओं को क्लिपबोर्ड पर कॉपी किया गया"
@@ -4193,17 +4199,17 @@ msgstr "बारकोड स्कैन करें…"
 msgid "Paste"
 msgstr "पेस्ट करें"
 
-#: app/tickettokenmodel.cpp:86
+#: app/tickettokenmodel.cpp:88
 #, kde-format
 msgid "Attendee %1"
 msgstr "उपस्थित व्यक्ति %1"
 
-#: app/tickettokenmodel.cpp:88
+#: app/tickettokenmodel.cpp:90
 #, kde-format
 msgid "Traveler %1"
 msgstr "यात्री %1"
 
-#: app/tickettokenmodel.cpp:135
+#: app/tickettokenmodel.cpp:137
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
@@ -5042,10 +5048,6 @@ msgstr "%1%2 %3 से %4 तक %5 पर"
 #~ msgstr ""
 #~ "केडीई यात्रा कार्यक्रम केडीई समुदाय द्वारा मुफ्त सॉफ्टवेयर के रूप में विकसित किया गया है "
 #~ "और नीचे सूचीबद्ध घटकों का उपयोग करता है।"
-
-#~ msgid "KDE Itinerary uses public transport data from the following sources."
-#~ msgstr ""
-#~ "केडीई यात्रा कार्यक्रम निम्नलिखित स्रोतों से सार्वजनिक परिवहन डेटा का उपयोग करता है।"
 
 #~ msgid "Open File…"
 #~ msgstr "खुली फाइल…"

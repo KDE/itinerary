@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-19 00:43+0000\n"
+"POT-Creation-Date: 2025-11-27 00:44+0000\n"
 "PO-Revision-Date: 2025-10-05 19:53+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -43,20 +43,27 @@ msgstr "Lizentzia: <a href=\"%2\">%1</a>"
 
 #: app/AboutPage.qml:40
 #, kde-format
+msgid "KDE Itinerary uses public transport data from the following sources."
+msgstr ""
+"«KDE Itinerary»k garraio publikoaren datuak erabiltzen ditu ondorengo "
+"jatorrietatik."
+
+#: app/AboutPage.qml:51
+#, kde-format
 msgid "Developer information"
 msgstr "Garatzaileentzako informazioa"
 
-#: app/AboutPage.qml:46
+#: app/AboutPage.qml:57
 #, kde-format
 msgid "Application version: %1"
 msgstr "Aplikazio bertsioa %1"
 
-#: app/AboutPage.qml:62
+#: app/AboutPage.qml:73
 #, kde-format
 msgid "Extractor capabilities:"
 msgstr "Erauzlearen gaitasunak:"
 
-#: app/AboutPage.qml:67
+#: app/AboutPage.qml:78
 #, kde-format
 msgid "Extractor capabilities copied to clipboard"
 msgstr "Erauzlearen gaitasunak arbelera kopiatu dira"
@@ -4131,17 +4138,17 @@ msgstr "Eskaneatu barra-kodea…"
 msgid "Paste"
 msgstr "Itsatsi"
 
-#: app/tickettokenmodel.cpp:86
+#: app/tickettokenmodel.cpp:88
 #, kde-format
 msgid "Attendee %1"
 msgstr "Partaidea %1"
 
-#: app/tickettokenmodel.cpp:88
+#: app/tickettokenmodel.cpp:90
 #, kde-format
 msgid "Traveler %1"
 msgstr "Bidaiaria %1"
 
-#: app/tickettokenmodel.cpp:135
+#: app/tickettokenmodel.cpp:137
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
@@ -4954,11 +4961,6 @@ msgstr "%1%2 %3(e)tik %4(e)ra %5(e)an"
 #~ msgstr ""
 #~ "«KDE Itinerary» KDE komunitateak garatzen du software libre bezala eta "
 #~ "azpian zerrendatutako osagaiak erabiltzen ditu."
-
-#~ msgid "KDE Itinerary uses public transport data from the following sources."
-#~ msgstr ""
-#~ "«KDE Itinerary»k garraio publikoaren datuak erabiltzen ditu ondorengo "
-#~ "jatorrietatik."
 
 #~ msgctxt "journey query search constraint, title"
 #~ msgid "Aircraft"

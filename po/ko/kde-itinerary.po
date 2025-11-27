@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-19 00:43+0000\n"
+"POT-Creation-Date: 2025-11-27 00:44+0000\n"
 "PO-Revision-Date: 2025-10-12 14:38+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -39,20 +39,25 @@ msgstr "라이선스: <a href=\"%2\">%1</a>"
 
 #: app/AboutPage.qml:40
 #, kde-format
+msgid "KDE Itinerary uses public transport data from the following sources."
+msgstr "KDE 여행 정보는 다음에서 제공하는 대중 교통 데이터를 사용합니다."
+
+#: app/AboutPage.qml:51
+#, kde-format
 msgid "Developer information"
 msgstr "개발자 정보"
 
-#: app/AboutPage.qml:46
+#: app/AboutPage.qml:57
 #, kde-format
 msgid "Application version: %1"
 msgstr "앱 버전: %1"
 
-#: app/AboutPage.qml:62
+#: app/AboutPage.qml:73
 #, kde-format
 msgid "Extractor capabilities:"
 msgstr "추출기 기능:"
 
-#: app/AboutPage.qml:67
+#: app/AboutPage.qml:78
 #, kde-format
 msgid "Extractor capabilities copied to clipboard"
 msgstr "클립보드에 추출기 기능 복사됨"
@@ -4079,17 +4084,17 @@ msgstr "바코드 스캔…"
 msgid "Paste"
 msgstr "붙여넣기"
 
-#: app/tickettokenmodel.cpp:86
+#: app/tickettokenmodel.cpp:88
 #, kde-format
 msgid "Attendee %1"
 msgstr "참석자 %1"
 
-#: app/tickettokenmodel.cpp:88
+#: app/tickettokenmodel.cpp:90
 #, kde-format
 msgid "Traveler %1"
 msgstr "여행자 %1"
 
-#: app/tickettokenmodel.cpp:135
+#: app/tickettokenmodel.cpp:137
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1(%2)"
@@ -4895,9 +4900,6 @@ msgstr "%5에 %3에서 %4(으)로 가는 %1%2|/|%5에 %3에서 %4$[으 %4]로 �
 #~ msgstr ""
 #~ "KDE 여행 정보는 KDE 커뮤니티에서 개발되는 자유 소프트웨어입니다. 다음 구"
 #~ "성 요소를 사용합니다."
-
-#~ msgid "KDE Itinerary uses public transport data from the following sources."
-#~ msgstr "KDE 여행 정보는 다음에서 제공하는 대중 교통 데이터를 사용합니다."
 
 #~ msgctxt "journey query search constraint, title"
 #~ msgid "Aircraft"

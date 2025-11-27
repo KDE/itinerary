@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-19 00:43+0000\n"
+"POT-Creation-Date: 2025-11-27 00:44+0000\n"
 "PO-Revision-Date: 2025-03-02 14:47+0530\n"
 "Last-Translator: Shreekant Kalwar <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -41,20 +41,25 @@ msgstr "अनुज्ञापत्रम् : <a href=\"%2\">%1</a>"
 
 #: app/AboutPage.qml:40
 #, kde-format
+msgid "KDE Itinerary uses public transport data from the following sources."
+msgstr "KDE यात्रासूची निम्नलिखितस्रोताभ्यां सार्वजनिकयानदत्तांशस्य उपयोगं करोति ।"
+
+#: app/AboutPage.qml:51
+#, kde-format
 msgid "Developer information"
 msgstr "विकासकस्य सूचना"
 
-#: app/AboutPage.qml:46
+#: app/AboutPage.qml:57
 #, kde-format
 msgid "Application version: %1"
 msgstr "अनुप्रयोगसंस्करणम् : %1"
 
-#: app/AboutPage.qml:62
+#: app/AboutPage.qml:73
 #, kde-format
 msgid "Extractor capabilities:"
 msgstr "निष्कर्षकक्षमता :"
 
-#: app/AboutPage.qml:67
+#: app/AboutPage.qml:78
 #, kde-format
 msgid "Extractor capabilities copied to clipboard"
 msgstr "क्लिप्बोर्ड् प्रति प्रतिलिपिकृताः निष्कर्षकक्षमता"
@@ -4168,17 +4173,17 @@ msgstr "बारकोड् स्कैन् कुर्वन्तु…"
 msgid "Paste"
 msgstr "चिनोतु"
 
-#: app/tickettokenmodel.cpp:86
+#: app/tickettokenmodel.cpp:88
 #, kde-format
 msgid "Attendee %1"
 msgstr "उपस्थितः %1"
 
-#: app/tickettokenmodel.cpp:88
+#: app/tickettokenmodel.cpp:90
 #, kde-format
 msgid "Traveler %1"
 msgstr "यात्री %1"
 
-#: app/tickettokenmodel.cpp:135
+#: app/tickettokenmodel.cpp:137
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
@@ -5015,9 +5020,6 @@ msgstr "%1%2 %3 तः %4 पर्यन्तं %5 पर्यन्तम�
 #~ msgstr ""
 #~ "KDE यात्रासूची KDE समुदायेन मुक्तसॉफ्टवेयररूपेण विकसिता अस्ति तथा च अधोलिखितानां "
 #~ "घटकानां उपयोगं करोति ।"
-
-#~ msgid "KDE Itinerary uses public transport data from the following sources."
-#~ msgstr "KDE यात्रासूची निम्नलिखितस्रोताभ्यां सार्वजनिकयानदत्तांशस्य उपयोगं करोति ।"
 
 #~ msgid "Open File…"
 #~ msgstr "सञ्चिकां उद्घाटयतु…"
