@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-27 00:44+0000\n"
+"POT-Creation-Date: 2025-11-28 00:43+0000\n"
 "PO-Revision-Date: 2025-10-05 19:53+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -68,103 +68,103 @@ msgstr "Erauzlearen gaitasunak:"
 msgid "Extractor capabilities copied to clipboard"
 msgstr "Erauzlearen gaitasunak arbelera kopiatu dira"
 
-#: app/ActionsCard.qml:33
+#: app/ActionsCard.qml:34
 #, kde-format
 msgid "Show Boarding Pass"
 msgstr "Erakutsi ontziratze-pasea"
 
-#: app/ActionsCard.qml:33 app/TicketPage.qml:149
+#: app/ActionsCard.qml:34 app/TicketPage.qml:149
 #, kde-format
 msgid "Show Ticket"
 msgstr "Erakutsi txartela"
 
-#: app/ActionsCard.qml:39
+#: app/ActionsCard.qml:40
 #, kde-format
 msgid "Add transfer before"
 msgstr "Gehitu ibilgailu-aldaketa aurretik"
 
-#: app/ActionsCard.qml:48
+#: app/ActionsCard.qml:49
 #, kde-format
 msgid "Add transfer after"
 msgstr "Gehitu ibilgailu-aldaketa ondoren"
 
-#: app/ActionsCard.qml:57 app/ProgramMembershipPage.qml:169
+#: app/ActionsCard.qml:58 app/ProgramMembershipPage.qml:169
 #: app/TicketPage.qml:176
 #, kde-format
 msgid "Edit"
 msgstr "Editatu"
 
-#: app/ActionsCard.qml:63
+#: app/ActionsCard.qml:64
 #, kde-format
 msgid "Add to calendar…"
 msgstr "Gehitu egutegira…"
 
-#: app/ActionsCard.qml:75 app/ProgramMembershipPage.qml:182
+#: app/ActionsCard.qml:76 app/ProgramMembershipPage.qml:182
 #: app/TicketPage.qml:191 app/TripGroupPage.qml:762
 #, kde-format
 msgid "Export…"
 msgstr "Esportatu…"
 
-#: app/ActionsCard.qml:80
+#: app/ActionsCard.qml:81
 #, fuzzy, kde-format
 #| msgid "Delete"
 msgid "Delete…"
 msgstr "Ezabatu"
 
-#: app/ActionsCard.qml:115
+#: app/ActionsCard.qml:116
 #, kde-format
 msgid "Delete Event"
 msgstr "Ezabatu ekitaldia"
 
-#: app/ActionsCard.qml:116
+#: app/ActionsCard.qml:117
 #, kde-format
 msgid "Do you really want to delete this event?"
 msgstr "Benetan ezabatu nahi duzu ekitaldi hori?"
 
-#: app/ActionsCard.qml:122
+#: app/ActionsCard.qml:123
 #, kde-format
 msgid "Export Reservation"
 msgstr "Esportatu erreserba"
 
-#: app/ActionsCard.qml:131 app/ProgramMembershipPage.qml:147
+#: app/ActionsCard.qml:132 app/ProgramMembershipPage.qml:147
 #: app/TicketPage.qml:141 app/TripGroupPage.qml:712
 #, kde-format
 msgid "Actions"
 msgstr "Ekintzak"
 
-#: app/ActionsCard.qml:149
+#: app/ActionsCard.qml:150
 #, kde-format
 msgctxt "cancel as in revoking a booking"
 msgid "Cancel Reservation"
 msgstr "Erreserba bertan behera utzi"
 
-#: app/ActionsCard.qml:150
+#: app/ActionsCard.qml:151
 #, kde-format
 msgid "Check-in"
 msgstr "Izen ematea"
 
-#: app/ActionsCard.qml:151
+#: app/ActionsCard.qml:152
 #, kde-format
 msgid "Download"
 msgstr "Zama-jaitsi"
 
-#: app/ActionsCard.qml:152
+#: app/ActionsCard.qml:153
 #, kde-format
 msgctxt "participate in an event"
 msgid "Join"
 msgstr "Elkartu"
 
-#: app/ActionsCard.qml:153
+#: app/ActionsCard.qml:154
 #, kde-format
 msgid "Reserve"
 msgstr "Erreserbatu"
 
-#: app/ActionsCard.qml:154
+#: app/ActionsCard.qml:155
 #, kde-format
 msgid "Change Reservation"
 msgstr "Aldatu erreserba"
 
-#: app/ActionsCard.qml:155
+#: app/ActionsCard.qml:156
 #, kde-format
 msgid "View Reservation"
 msgstr "Ikusi erreserba"
@@ -480,14 +480,14 @@ msgstr "Informazio gehigarria"
 msgid "Arrival time"
 msgstr "Iritsiera-ordua"
 
-#: app/BoatPage.qml:142 app/BusPage.qml:232 app/FlightPage.qml:246
-#: app/TrainPage.qml:347
+#: app/BoatPage.qml:143 app/BusPage.qml:233 app/FlightPage.qml:247
+#: app/TrainPage.qml:348
 #, kde-format
 msgid "Alternatives"
 msgstr "Aukerak"
 
-#: app/BoatPage.qml:150 app/BusPage.qml:237 app/JourneySectionPage.qml:27
-#: app/TrainPage.qml:353
+#: app/BoatPage.qml:151 app/BusPage.qml:238 app/JourneySectionPage.qml:27
+#: app/TrainPage.qml:354
 #, kde-format
 msgid "Journey Details"
 msgstr "Bidaiaren xehetasunak"
@@ -932,7 +932,7 @@ msgstr "Sareko errorea: %1"
 msgid "Download failed: %1"
 msgstr "Zama-jaistea huts egin du: %1"
 
-#: app/EditorPage.qml:27
+#: app/EditorPage.qml:32
 #, kde-format
 msgctxt "@action:button"
 msgid "Save"
@@ -4395,18 +4395,18 @@ msgstr "Iritsiera"
 msgid "Arrival Vehicle Layout"
 msgstr "Iritsiera ibilgailuaren antolamendua"
 
-#: app/TrainPage.qml:339
+#: app/TrainPage.qml:340
 #, kde-format
 msgctxt "@action:button"
 msgid "Add to Traewelling"
 msgstr "Gehitu «Träewelling»era"
 
-#: app/TrainPage.qml:384
+#: app/TrainPage.qml:385
 #, kde-format
 msgid "Added to Traewelling"
 msgstr "«Träewelling»era gehitu da"
 
-#: app/TrainPage.qml:384
+#: app/TrainPage.qml:385
 #, kde-format
 msgid "Failed to add to Traewelling"
 msgstr "«Träewelling»era gehitzea huts egin du"

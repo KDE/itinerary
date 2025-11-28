@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-27 00:44+0000\n"
+"POT-Creation-Date: 2025-11-28 00:43+0000\n"
 "PO-Revision-Date: 2025-03-15 10:38+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -63,103 +63,103 @@ msgstr "Kapabloj de eltiraĵo:"
 msgid "Extractor capabilities copied to clipboard"
 msgstr "Eltiraj kapabloj kopiitaj al tondujo"
 
-#: app/ActionsCard.qml:33
+#: app/ActionsCard.qml:34
 #, kde-format
 msgid "Show Boarding Pass"
 msgstr "Montri Enirpermesilon"
 
-#: app/ActionsCard.qml:33 app/TicketPage.qml:149
+#: app/ActionsCard.qml:34 app/TicketPage.qml:149
 #, kde-format
 msgid "Show Ticket"
 msgstr "Montri Bileton"
 
-#: app/ActionsCard.qml:39
+#: app/ActionsCard.qml:40
 #, kde-format
 msgid "Add transfer before"
 msgstr "Aldoni translokiĝon antaŭ"
 
-#: app/ActionsCard.qml:48
+#: app/ActionsCard.qml:49
 #, kde-format
 msgid "Add transfer after"
 msgstr "Aldoni translokiĝon post"
 
-#: app/ActionsCard.qml:57 app/ProgramMembershipPage.qml:169
+#: app/ActionsCard.qml:58 app/ProgramMembershipPage.qml:169
 #: app/TicketPage.qml:176
 #, kde-format
 msgid "Edit"
 msgstr "Redakti"
 
-#: app/ActionsCard.qml:63
+#: app/ActionsCard.qml:64
 #, kde-format
 msgid "Add to calendar…"
 msgstr "Aldoni al kalendaro…"
 
-#: app/ActionsCard.qml:75 app/ProgramMembershipPage.qml:182
+#: app/ActionsCard.qml:76 app/ProgramMembershipPage.qml:182
 #: app/TicketPage.qml:191 app/TripGroupPage.qml:762
 #, kde-format
 msgid "Export…"
 msgstr "Elporti…"
 
-#: app/ActionsCard.qml:80
+#: app/ActionsCard.qml:81
 #, fuzzy, kde-format
 #| msgid "Delete"
 msgid "Delete…"
 msgstr "Forigi"
 
-#: app/ActionsCard.qml:115
+#: app/ActionsCard.qml:116
 #, kde-format
 msgid "Delete Event"
 msgstr "Forigi Eventon"
 
-#: app/ActionsCard.qml:116
+#: app/ActionsCard.qml:117
 #, kde-format
 msgid "Do you really want to delete this event?"
 msgstr "Ĉu vi vere volas forigi ĉi tiun eventon?"
 
-#: app/ActionsCard.qml:122
+#: app/ActionsCard.qml:123
 #, kde-format
 msgid "Export Reservation"
 msgstr "Elporti Rezervadon"
 
-#: app/ActionsCard.qml:131 app/ProgramMembershipPage.qml:147
+#: app/ActionsCard.qml:132 app/ProgramMembershipPage.qml:147
 #: app/TicketPage.qml:141 app/TripGroupPage.qml:712
 #, kde-format
 msgid "Actions"
 msgstr "Agoj"
 
-#: app/ActionsCard.qml:149
+#: app/ActionsCard.qml:150
 #, kde-format
 msgctxt "cancel as in revoking a booking"
 msgid "Cancel Reservation"
 msgstr "Nuligi Rezervon"
 
-#: app/ActionsCard.qml:150
+#: app/ActionsCard.qml:151
 #, kde-format
 msgid "Check-in"
 msgstr "Enregistriĝo"
 
-#: app/ActionsCard.qml:151
+#: app/ActionsCard.qml:152
 #, kde-format
 msgid "Download"
 msgstr "Elŝuti"
 
-#: app/ActionsCard.qml:152
+#: app/ActionsCard.qml:153
 #, kde-format
 msgctxt "participate in an event"
 msgid "Join"
 msgstr "Partopreni"
 
-#: app/ActionsCard.qml:153
+#: app/ActionsCard.qml:154
 #, kde-format
 msgid "Reserve"
 msgstr "Rezervi"
 
-#: app/ActionsCard.qml:154
+#: app/ActionsCard.qml:155
 #, kde-format
 msgid "Change Reservation"
 msgstr "Ŝanĝi Rezervon"
 
-#: app/ActionsCard.qml:155
+#: app/ActionsCard.qml:156
 #, kde-format
 msgid "View Reservation"
 msgstr "Vidi Rezervon"
@@ -483,14 +483,14 @@ msgstr "Pliaj notoj"
 msgid "Arrival time"
 msgstr "Alvena horo"
 
-#: app/BoatPage.qml:142 app/BusPage.qml:232 app/FlightPage.qml:246
-#: app/TrainPage.qml:347
+#: app/BoatPage.qml:143 app/BusPage.qml:233 app/FlightPage.qml:247
+#: app/TrainPage.qml:348
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternativoj"
 
-#: app/BoatPage.qml:150 app/BusPage.qml:237 app/JourneySectionPage.qml:27
-#: app/TrainPage.qml:353
+#: app/BoatPage.qml:151 app/BusPage.qml:238 app/JourneySectionPage.qml:27
+#: app/TrainPage.qml:354
 #, kde-format
 msgid "Journey Details"
 msgstr "Vojaĝaj Detaloj"
@@ -957,7 +957,7 @@ msgstr "Reta eraro: %1"
 msgid "Download failed: %1"
 msgstr "Elŝuto malsukcesis: %1"
 
-#: app/EditorPage.qml:27
+#: app/EditorPage.qml:32
 #, kde-format
 msgctxt "@action:button"
 msgid "Save"
@@ -4448,18 +4448,18 @@ msgstr "Alveno"
 msgid "Arrival Vehicle Layout"
 msgstr "Alvena Veturila Aranĝo"
 
-#: app/TrainPage.qml:339
+#: app/TrainPage.qml:340
 #, kde-format
 msgctxt "@action:button"
 msgid "Add to Traewelling"
 msgstr "Aldoni al Traewelling"
 
-#: app/TrainPage.qml:384
+#: app/TrainPage.qml:385
 #, kde-format
 msgid "Added to Traewelling"
 msgstr "Aldoniĝis al Traewelling"
 
-#: app/TrainPage.qml:384
+#: app/TrainPage.qml:385
 #, kde-format
 msgid "Failed to add to Traewelling"
 msgstr "Malsukcesis aldoni al Traewelling"
