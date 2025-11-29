@@ -162,15 +162,9 @@
             "builddir": true,
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://download.kde.org/stable/release-service/25.08.3/src/kpkpass-25.08.3.tar.xz",
-                    "sha256": "3802a6f23edd901be975c03b3eb63e478e9384386d883b2289fb598edf3e758b",
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 8763,
-                        "stable-only": true,
-                        "url-template": "https://download.kde.org/stable/release-service/$version/src/kpkpass-$version.tar.xz"
-                    }
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/kmime",
+                    "branch": "release/25.12"
                 }
             ],
             "cleanup": [
