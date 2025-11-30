@@ -240,26 +240,6 @@
             ]
         },
         {
-            "name": "kirigami-addons",
-            "config-opts": [
-                "-DBUILD_TESTING=OFF"
-            ],
-            "buildsystem": "cmake-ninja",
-            "builddir": true,
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://invent.kde.org/libraries/kirigami-addons",
-                    "branch": "master"
-                }
-            ],
-            "cleanup": [
-                "/include",
-                "/lib/cmake",
-                "/share/kdevappwizard"
-            ]
-        },
-        {
             "name": "kpublictransport",
             "config-opts": [
                 "-DBUILD_TESTING=OFF"
