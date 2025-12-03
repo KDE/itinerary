@@ -4394,7 +4394,7 @@ msgstr "Afegit a Traewelling"
 #: app/TrainPage.qml:384
 #, kde-format
 msgid "Failed to add to Traewelling"
-msgstr "No s'ha pogut afegir a Traewelling"
+msgstr "Ha fallat mentre s'afegia a Traewelling"
 
 #: app/TransferDelegate.qml:112
 #, kde-format
