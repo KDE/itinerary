@@ -150,7 +150,7 @@ void ImportController::importLocalFile(const QUrl &url)
     QFile f(FileHelper::toLocalFile(url));
     if (!f.open(QFile::ReadOnly)) {
         qCWarning(Log) << "Failed to open" << f.fileName() << f.errorString();
-        Q_EMIT infoMessage(i18n("Import failed: %1", f.errorString()));
+        Q_EMIT infoMessage(i18nc("%1 is an error message", "Import failed: %1", f.errorString()));
         return;
     }
     const auto isItineraryFile = FileHelper::fileName(url).endsWith(".itinerary"_L1, Qt::CaseInsensitive);
@@ -472,7 +472,7 @@ bool ImportController::importBundle(ImportBundle &&bundle)
 {
     if (!bundle.data->open(KItinerary::File::Read)) {
         qCWarning(Log) << "Failed to open bundle file:" << bundle.data->errorString();
-        Q_EMIT infoMessage(i18n("Import failed: %1", bundle.data->errorString()));
+        Q_EMIT infoMessage(i18nc("%1 is an error message", "Import failed: %1", bundle.data->errorString()));
         return false;
     }
 

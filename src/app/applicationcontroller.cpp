@@ -342,7 +342,7 @@ void ApplicationController::exportToFile(const QUrl &url)
     File f(FileHelper::toLocalFile(url));
     if (!f.open(File::Write)) {
         qCWarning(Log) << f.errorString();
-        Q_EMIT infoMessage(i18n("Export failed: %1", f.errorString()));
+        Q_EMIT infoMessage(i18nc("%1 is an error message", "Export failed: %1", f.errorString()));
         return;
     }
 
@@ -385,7 +385,7 @@ void ApplicationController::exportTripToKDEConnect(const QString &tripGroupId, c
     QTemporaryFile f(m_tempDir->path() + QStringLiteral("/XXXXXX.itinerary"));
     if (!f.open()) {
         qCWarning(Log) << "Failed to open temporary file:" << f.errorString();
-        Q_EMIT infoMessage(i18n("Export failed: %1", f.errorString()));
+        Q_EMIT infoMessage(i18nc("%1 is an error message", "Export failed: %1", f.errorString()));
         return;
     }
 
@@ -403,7 +403,7 @@ bool ApplicationController::exportTripToFile(const QString &tripGroupId, const Q
     File f(fileName);
     if (!f.open(File::Write)) {
         qCWarning(Log) << f.errorString() << fileName;
-        Q_EMIT infoMessage(i18n("Export failed: %1", f.errorString()));
+        Q_EMIT infoMessage(i18nc("%1 is an error message", "Export failed: %1", f.errorString()));
         return false;
     }
 
@@ -450,7 +450,7 @@ void ApplicationController::exportTripToGpx(const QString &tripGroupId, const QU
     QFile f(FileHelper::toLocalFile(url));
     if (!f.open(QFile::WriteOnly)) {
         qCWarning(Log) << f.errorString() << f.fileName();
-        Q_EMIT infoMessage(i18n("Export failed: %1", f.errorString()));
+        Q_EMIT infoMessage(i18nc("%1 is an error message", "Export failed: %1", f.errorString()));
         return;
     }
     GpxExport exporter(&f);
@@ -489,7 +489,7 @@ void ApplicationController::exportBatchToKDEConnect(const QString &batchId, cons
     QTemporaryFile f(m_tempDir->path() + QStringLiteral("/XXXXXX.itinerary"));
     if (!f.open()) {
         qCWarning(Log) << "Failed to open temporary file:" << f.errorString();
-        Q_EMIT infoMessage(i18n("Export failed: %1", f.errorString()));
+        Q_EMIT infoMessage(i18nc("%1 is an error message", "Export failed: %1", f.errorString()));
         return;
     }
 
@@ -507,7 +507,7 @@ bool ApplicationController::exportBatchToFile(const QString &batchId, const QStr
     File f(fileName);
     if (!f.open(File::Write)) {
         qCWarning(Log) << f.errorString() << fileName;
-        Q_EMIT infoMessage(i18n("Export failed: %1", f.errorString()));
+        Q_EMIT infoMessage(i18nc("%1 is an error message", "Export failed: %1", f.errorString()));
         return false;
     }
 
@@ -548,7 +548,7 @@ void ApplicationController::exportBatchToGpx(const QString &batchId, const QUrl 
     QFile f(FileHelper::toLocalFile(url));
     if (!f.open(QFile::WriteOnly)) {
         qCWarning(Log) << f.errorString() << f.fileName();
-        Q_EMIT infoMessage(i18n("Export failed: %1", f.errorString()));
+        Q_EMIT infoMessage(i18nc("%1 is an error message", "Export failed: %1", f.errorString()));
         return;
     }
     GpxExport exporter(&f);
@@ -584,7 +584,7 @@ void ApplicationController::exportPassToKDEConnect(const QString &passId, const 
     QTemporaryFile f(m_tempDir->path() + QStringLiteral("/XXXXXX.itinerary"));
     if (!f.open()) {
         qCWarning(Log) << "Failed to open temporary file:" << f.errorString();
-        Q_EMIT infoMessage(i18n("Export failed: %1", f.errorString()));
+        Q_EMIT infoMessage(i18nc("%1 is an error message", "Export failed: %1", f.errorString()));
         return;
     }
 
@@ -602,7 +602,7 @@ bool ApplicationController::exportPassToFile(const QString &passId, const QStrin
     File f(fileName);
     if (!f.open(File::Write)) {
         qCWarning(Log) << f.errorString() << fileName;
-        Q_EMIT infoMessage(i18n("Export failed: %1", f.errorString()));
+        Q_EMIT infoMessage(i18nc("%1 is an error message", "Export failed: %1", f.errorString()));
         return false;
     }
 
@@ -632,7 +632,7 @@ void ApplicationController::exportPkPassToFile(const QString &passId, const QUrl
     }
     QFile f(FileHelper::toLocalFile(url));
     if (!f.open(QFile::WriteOnly | QFile::Truncate)) {
-        Q_EMIT infoMessage(i18n("Saving failed: %1", f.errorString()));
+        Q_EMIT infoMessage(i18nc("%1 is an error message", "Saving failed: %1", f.errorString()));
         return;
     }
     f.write(PkPassManager::rawData(passId));

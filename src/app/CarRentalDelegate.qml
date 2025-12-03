@@ -54,7 +54,7 @@ TimelineDelegate {
         }
         QQC2.Label {
             Layout.fillWidth: true
-            text: i18n("Drop-off: %1", Localizer.formatDateTime(reservation, "dropoffTime"))
+            text: i18nc("%1 is a date/time", "Drop-off: %1", Localizer.formatDateTime(reservation, "dropoffTime"))
             visible: root.rangeType != TimelineElement.RangeEnd
         }
         QQC2.Label {

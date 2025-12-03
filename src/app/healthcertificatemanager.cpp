@@ -151,22 +151,22 @@ QString HealthCertificateManager::certificateName(const QVariant &certificate)
     if (certificate.userType() == qMetaTypeId<KVaccinationCertificate>()) {
         const auto cert = certificate.value<KVaccinationCertificate>();
         if (cert.dose() > 0 && cert.totalDoses() > 0) {
-            return i18n("Vaccination for %1 (%2/%3)", cert.disease(), cert.dose(), cert.totalDoses());
+            return i18nc("%1 is a disease, %2 the amount of applied doses, %3 the amount of total doses", "Vaccination for %1 (%2/%3)", cert.disease(), cert.dose(), cert.totalDoses());
         }
         if (!cert.disease().isEmpty()) {
-            return i18n("Vaccination for %1", cert.disease());
+            return i18nc("%1 is a disease", "Vaccination for %1", cert.disease());
         }
         return i18n("Vaccination");
     }
     if (certificate.userType() == qMetaTypeId<KTestCertificate>()) {
         const auto cert = certificate.value<KTestCertificate>();
-        return i18n("Test %1 for %2",
+        return i18nc("%1 is a date, %2 is a disease", "Test %1 for %2",
                     QLocale().toString(cert.date().isValid() ? cert.date() : cert.certificateIssueDate().date(), QLocale::NarrowFormat),
                     cert.disease());
     }
     if (certificate.userType() == qMetaTypeId<KRecoveryCertificate>()) {
         const auto cert = certificate.value<KRecoveryCertificate>();
-        return i18n("Recovery %1 for %2", QLocale().toString(cert.certificateIssueDate().date(), QLocale::NarrowFormat), cert.disease());
+        return i18nc("%1 is a date, %2 is a disease", "Recovery %1 for %2", QLocale().toString(cert.certificateIssueDate().date(), QLocale::NarrowFormat), cert.disease());
     }
 #endif
     return {};

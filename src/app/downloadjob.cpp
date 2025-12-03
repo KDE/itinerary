@@ -159,11 +159,11 @@ bool DownloadJob::handleActivityPubReply(QNetworkReply *reply)
     reply->deleteLater();
     if (reply->error() == QNetworkReply::NetworkSessionFailedError) {
         // assumed persistent network error, not worth trying a regular download either
-        m_errorMessage = i18n("Network error: %1", reply->errorString());
+        m_errorMessage = i18nc("%1 is an error message", "Network error: %1", reply->errorString());
         Q_EMIT finished();
         return true;
     }
-    if (reply->error() != QNetworkReply::NoError) {
+        if (reply->error() != QNetworkReply::NoError) {
         // ActivityPub not available, try regular download
         qCDebug(Log) << reply->url() << reply->errorString();
         return false;
@@ -190,7 +190,7 @@ void DownloadJob::handleDownloadReply(QNetworkReply *reply)
     reply->deleteLater();
     if (reply->error() != QNetworkReply::NoError) {
         qCDebug(Log) << reply->url() << reply->errorString();
-        m_errorMessage = i18n("Download failed: %1", reply->errorString());
+        m_errorMessage = i18nc("%1 is an error message", "Download failed: %1", reply->errorString());
     } else {
         m_data = reply->readAll();
     }

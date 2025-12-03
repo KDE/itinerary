@@ -31,11 +31,11 @@ QQC2.Page {
                 const name = certificate.name.toLowerCase().replace(/(^|\s)\S/g, (t) => { return t.toUpperCase() });
                 switch (certificate.type) {
                 case KHC.HealthCertificate.Vaccination:
-                    return i18n("Vaccination certificate of %1", name);
+                    return i18nc("%1 is a person name", "Vaccination certificate of %1", name);
                 case KHC.HealthCertificate.Test:
-                    return i18n("Test certificate of %1", name);
+                    return i18nc("%1 is a person name, 'Test certificate' is a compound noun", "Test certificate of %1", name);
                 case KHC.HealthCertificate.Recovery:
-                    return i18n("Recovery certificate of %1", name);
+                    return i18nc("%1 is a person name", "Recovery certificate of %1", name);
                 default:
                     return '';
                 }

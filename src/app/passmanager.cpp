@@ -286,7 +286,7 @@ QVariant PassManager::data(const QModelIndex &index, int role) const
         if (days >= 365 && days <= 366) {
             return QLocale().toString(from, u"yyyy");
         }
-        return i18n("%1 - %2", QLocale().toString(from.date(), QLocale::ShortFormat), QLocale().toString(to.date(), QLocale::ShortFormat));
+        return i18nc("%1 and %2 are dates", "%1 - %2", QLocale().toString(from.date(), QLocale::ShortFormat), QLocale().toString(to.date(), QLocale::ShortFormat));
     }
     }
 

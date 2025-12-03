@@ -85,9 +85,9 @@ void TicketTokenModel::reload()
         if (d.personName.isEmpty()) {
             const auto idx = ++m_personIdx[res.reservedTicket().value<Ticket>().name()];
             if (JsonLd::isA<EventReservation>(v)) {
-                d.personName = i18n("Attendee %1", idx);
+                d.personName = i18nc("%1 is a number", "Attendee %1", idx);
             } else {
-                d.personName = i18n("Traveler %1", idx);
+                d.personName = i18nc("%1 is a number", "Traveler %1", idx);
             }
         }
         m_data.push_back(std::move(d));
@@ -133,8 +133,8 @@ QVariant TicketTokenModel::data(const QModelIndex &index, int role) const
     switch (role) {
     case Qt::DisplayRole: {
         const auto ticket = JsonLd::convert<Reservation>(res).reservedTicket().value<Ticket>();
-        if (!ticket.name().isEmpty() && !d.personName.isEmpty()) {
-            return i18n("%1 (%2)", d.personName, ticket.name());
+            if (!ticket.name().isEmpty() && !d.personName.isEmpty()) {
+            return i18nc("%1 is a person name, %2 is a ticket name", "%1 (%2)", d.personName, ticket.name());
         }
         return d.personName.isEmpty() ? ticket.name() : d.personName;
     }

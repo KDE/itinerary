@@ -90,9 +90,9 @@ Kirigami.ScrollablePage {
 
             wrapMode: Text.Wrap
             text: if (vehicleModel.stopover.scheduledDepartureTime > 0) {
-                i18n("Departure: %1", Localizer.formatDateTime(vehicleModel.stopover, "scheduledDepartureTime"))
+                i18nc("%1 is a date/time", "Departure: %1", Localizer.formatDateTime(vehicleModel.stopover, "scheduledDepartureTime"))
             } else if (vehicleModel.stopover.scheduledArrivalTime > 0) {
-                i18n("Arrival: %1", Localizer.formatDateTime(vehicleModel.stopover, "scheduledArrivalTime"))
+                i18nc("%1 is a date/time", "Arrival: %1", Localizer.formatDateTime(vehicleModel.stopover, "scheduledArrivalTime"))
             }
 
             Layout.leftMargin: Kirigami.Units.largeSpacing

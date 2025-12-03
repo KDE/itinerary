@@ -158,7 +158,7 @@ void FavoriteLocationModel::appendNewLocation()
         loc.setName(i18n("Work"));
         break;
     default:
-        loc.setName(i18n("Location %1", rowCount() + 1));
+        loc.setName(i18nc("%1 is a number", "Location %1", rowCount() + 1));
         break;
     }
     m_locations.push_back(loc);

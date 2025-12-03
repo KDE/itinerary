@@ -25,7 +25,7 @@ void CalendarHelper::fillPreTransfer(const KCalendarCore::Event::Ptr &event, con
         KCalendarCore::Alarm::Ptr alarm(new KCalendarCore::Alarm(event.data()));
         KCalendarCore::Duration alarmDur(-depDt.secsTo(event->dtStart()) - 5 * 60);
         alarm->setStartOffset(alarmDur);
-        alarm->setDisplayAlarm(i18n("Transfer to %1", transfer.toName()));
+        alarm->setDisplayAlarm(i18nc("%1 is the transfer destination", "Transfer to %1", transfer.toName()));
         alarm->setEnabled(true);
         event->addAlarm(alarm);
     }
