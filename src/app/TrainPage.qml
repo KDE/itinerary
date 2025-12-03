@@ -337,7 +337,7 @@ DetailsPage {
             additionalActions: [
                 QQC2.Action {
                     enabled: TraewellingController.isLoggedIn
-                    text: i18nc("@action:button", "Add to Traewelling")
+                    text: i18nc("@action:button", "Add to Träwelling")
                     icon.name: "cloud-upload"
                     onTriggered: {
                         banner.visible = false;
@@ -382,7 +382,7 @@ DetailsPage {
             target: TraewellingController
             function onUploadStatus(status): void {
                 banner.visible = true;
-                banner.text = status === TraewellingController.Success ? i18n("Added to Traewelling") : i18n("Failed to add to Traewelling");
+                banner.text = status === TraewellingController.Success ? i18n("Added to Träwelling") : i18n("Failed to add to Träwelling");
                 banner.type = status === TraewellingController.Success ? Kirigami.MessageType.Positive : Kirigami.MessageType.Error;
             }
         }

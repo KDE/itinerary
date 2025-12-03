@@ -325,12 +325,12 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormHeader {
-        title: i18n("Traewelling Integration")
+        title: i18n("Träwelling Integration")
     }
 
     FormCard.FormCard {
         FormCard.FormTextDelegate {
-            description: i18nc("@info", "Traewelling is a free check-in service that lets you tell your friends where you are and where you can log your public transit journeys. For more information, visit <a href=\"https://traewelling.de\">traewelling.de</a>");
+            description: i18nc("@info", "Träwelling is a free check-in service that lets you tell your friends where you are and where you can log your public transit journeys. For more information, visit <a href=\"https://traewelling.de\">traewelling.de</a>");
             onLinkActivated: link => Qt.openUrlExternally(link)
         }
         FormCard.FormTextDelegate {
