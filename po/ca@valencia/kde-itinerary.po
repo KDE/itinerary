@@ -44,6 +44,7 @@ msgstr "Llicència: <a href=\"%2\">%1</a>"
 #, kde-format
 msgid "KDE Itinerary uses public transport data from the following sources."
 msgstr ""
+"KDE Itinerary utilitza les dades de transport públic de les següents fonts."
 
 #: app/AboutPage.qml:51
 #, kde-format
@@ -4414,7 +4415,7 @@ msgstr "Afegit a Traewelling"
 #: app/TrainPage.qml:385
 #, kde-format
 msgid "Failed to add to Traewelling"
-msgstr "No s'ha pogut afegir a Traewelling"
+msgstr "Ha fallat mentre s'afegia a Traewelling"
 
 #: app/TransferDelegate.qml:112
 #, kde-format
