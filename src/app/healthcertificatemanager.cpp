@@ -160,13 +160,13 @@ QString HealthCertificateManager::certificateName(const QVariant &certificate)
     }
     if (certificate.userType() == qMetaTypeId<KTestCertificate>()) {
         const auto cert = certificate.value<KTestCertificate>();
-        return i18nc("%1 is a date, %2 is a disease", "Test %1 for %2",
-                    QLocale().toString(cert.date().isValid() ? cert.date() : cert.certificateIssueDate().date(), QLocale::NarrowFormat),
-                    cert.disease());
+        return i18nc("%1 is a disease, %2 is a date", "Test for %1 – %2",
+                    cert.disease(), QLocale().toString(cert.date().isValid() ? cert.date() : cert.certificateIssueDate().date(), QLocale::NarrowFormat));
     }
     if (certificate.userType() == qMetaTypeId<KRecoveryCertificate>()) {
         const auto cert = certificate.value<KRecoveryCertificate>();
-        return i18nc("%1 is a date, %2 is a disease", "Recovery %1 for %2", QLocale().toString(cert.certificateIssueDate().date(), QLocale::NarrowFormat), cert.disease());
+        return i18nc("%1 is a disease, %2 is a date", "Recovery from %1 – %2",
+                    cert.disease(), QLocale().toString(cert.certificateIssueDate().date(), QLocale::NarrowFormat));
     }
 #endif
     return {};
