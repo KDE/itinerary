@@ -912,7 +912,16 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="25.12.0" date="2025-12-11"/>
+    <release version="25.12.0" date="2025-12-11">
+      <description>
+        <ul>
+          <li>Built-in currency converter.</li>
+          <li>Journey searches starting from the current location.</li>
+          <li>Simplified journey search UI.</li>
+          <li>Displaying altitude information in live status view.</li>
+        </ul>
+      </description>
+    </release>
     <release version="25.08.3" date="2025-11-06">
       <description>
         <ul>
