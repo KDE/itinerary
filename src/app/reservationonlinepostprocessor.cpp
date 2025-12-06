@@ -195,10 +195,20 @@ QCoro::Task<std::optional<QVariant>> ReservationOnlinePostprocessor::processRese
     co_return {};
 }
 
+/** Checks for fallback place names based on location identifiers we might
+ *  get from some barcode imports.
+ *  Those cannot be queried via Nominatim for example.
+ */
+[[nodiscard]] static bool hasIdentifierName(const KItinerary::Place &place)
+{
+    const auto idx = place.identifier().indexOf(':'_L1);
+    return idx > 0 && place.identifier().endsWith(place.name()) && (idx + 1 + place.name().size()) == place.identifier().size();
+}
+
 QCoro::Task<std::optional<KItinerary::TrainStation>>
 ReservationOnlinePostprocessor::processTrainStation(KItinerary::TrainStation station)
 {
-    if (station.geo().isValid()) {
+    if (station.geo().isValid() || hasIdentifierName(station)) {
         co_return {};
     }
 
@@ -213,7 +223,7 @@ ReservationOnlinePostprocessor::processTrainStation(KItinerary::TrainStation sta
 QCoro::Task<std::optional<KItinerary::BusStation>> ReservationOnlinePostprocessor::processBusStation(
     KItinerary::BusStation station)
 {
-    if (station.geo().isValid()) {
+    if (station.geo().isValid() || hasIdentifierName(station)) {
         co_return {};
     }
 
