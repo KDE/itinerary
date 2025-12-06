@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-28 00:43+0000\n"
+"POT-Creation-Date: 2025-12-06 00:43+0000\n"
 "PO-Revision-Date: 2025-11-17 06:11-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -270,7 +270,9 @@ msgstr[1] "%1 certificados de saúde importados."
 #: app/applicationcontroller.cpp:492 app/applicationcontroller.cpp:510
 #: app/applicationcontroller.cpp:551 app/applicationcontroller.cpp:587
 #: app/applicationcontroller.cpp:605
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export failed: %1"
+msgctxt "%1 is an error message"
 msgid "Export failed: %1"
 msgstr "Falha na exportação: %1"
 
@@ -297,7 +299,9 @@ msgid "Pass sent."
 msgstr "Passe enviado."
 
 #: app/applicationcontroller.cpp:635
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Saving failed: %1"
+msgctxt "%1 is an error message"
 msgid "Saving failed: %1"
 msgstr "Falhou ao salvar: %1"
 
@@ -738,7 +742,9 @@ msgid "Arrival"
 msgstr "Chegada"
 
 #: app/calendarhelper.cpp:28
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Transfer to %1"
+msgctxt "%1 is the transfer destination"
 msgid "Transfer to %1"
 msgstr "Translado para %1"
 
@@ -759,7 +765,9 @@ msgid "Rental Car Pick-up"
 msgstr "Apanha do carro alugado"
 
 #: app/CarRentalDelegate.qml:57
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Drop-off: %1"
+msgctxt "%1 is a date/time"
 msgid "Drop-off: %1"
 msgstr "Devolução: %1"
 
@@ -921,12 +929,16 @@ msgid "Add Document…"
 msgstr "Adicionar documento…"
 
 #: app/downloadjob.cpp:162
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Network error: %1"
+msgctxt "%1 is an error message"
 msgid "Network error: %1"
 msgstr "Erro de rede: %1"
 
 #: app/downloadjob.cpp:193
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Download failed: %1"
+msgctxt "%1 is an error message"
 msgid "Download failed: %1"
 msgstr "Falha ao baixar: %1"
 
@@ -1088,7 +1100,9 @@ msgid "Work"
 msgstr "Trabalho"
 
 #: app/favoritelocationmodel.cpp:161
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Location %1"
+msgctxt "%1 is a number"
 msgid "Location %1"
 msgstr "Localização %1"
 
@@ -1566,17 +1580,23 @@ msgid "Ferry from %1 to %2"
 msgstr "Balsa de %1 para %2"
 
 #: app/HealthCertificateBarcode.qml:34
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Vaccination certificate of %1"
+msgctxt "%1 is a person name"
 msgid "Vaccination certificate of %1"
 msgstr "Certificado de vacinação de %1"
 
 #: app/HealthCertificateBarcode.qml:36
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Test certificate of %1"
+msgctxt "%1 is a person name, 'Test certificate' is a compound noun"
 msgid "Test certificate of %1"
 msgstr "Testar certificado de %1"
 
 #: app/HealthCertificateBarcode.qml:38
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Recovery certificate of %1"
+msgctxt "%1 is a person name"
 msgid "Recovery certificate of %1"
 msgstr "Recuperar certificado de %1"
 
@@ -1642,12 +1662,17 @@ msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: app/healthcertificatemanager.cpp:154
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Vaccination for %1 (%2/%3)"
+msgctxt ""
+"%1 is a disease, %2 the amount of applied doses, %3 the amount of total doses"
 msgid "Vaccination for %1 (%2/%3)"
 msgstr "Vacinação para %1 (%2/%3)"
 
 #: app/healthcertificatemanager.cpp:157
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Vaccination for %1"
+msgctxt "%1 is a disease"
 msgid "Vaccination for %1"
 msgstr "Vacinação para %1"
 
@@ -1657,13 +1682,17 @@ msgid "Vaccination"
 msgstr "Vacinação"
 
 #: app/healthcertificatemanager.cpp:163
-#, kde-format
-msgid "Test %1 for %2"
+#, fuzzy, kde-format
+#| msgid "Test %1 for %2"
+msgctxt "%1 is a disease, %2 is a date"
+msgid "Test for %1 – %2"
 msgstr "Teste %1 para %2"
 
-#: app/healthcertificatemanager.cpp:169
-#, kde-format
-msgid "Recovery %1 for %2"
+#: app/healthcertificatemanager.cpp:168
+#, fuzzy, kde-format
+#| msgid "Recovery %1 for %2"
+msgctxt "%1 is a disease, %2 is a date"
+msgid "Recovery from %1 – %2"
 msgstr "Recuperação %1 para %2"
 
 #: app/HealthCertificatePage.qml:19
@@ -2004,7 +2033,9 @@ msgid "From SNCF reservation number"
 msgstr "Do número de reserva SNCF"
 
 #: app/importcontroller.cpp:153 app/importcontroller.cpp:475
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Import failed: %1"
+msgctxt "%1 is an error message"
 msgid "Import failed: %1"
 msgstr "Falha ao importar: %1"
 
@@ -3389,8 +3420,10 @@ msgctxt "name - valid time range"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/passmanager.cpp:289 app/TripGroupPage.qml:426
-#, kde-format
+#: app/passmanager.cpp:289
+#, fuzzy, kde-format
+#| msgid "%1 - %2"
+msgctxt "%1 and %2 are dates"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
@@ -3902,15 +3935,22 @@ msgid "Log in"
 msgstr "Entrar"
 
 #: app/SettingsPage.qml:328
-#, kde-format
-msgid "Traewelling Integration"
+#, fuzzy, kde-format
+#| msgid "Traewelling Integration"
+msgid "Träwelling Integration"
 msgstr "Integração Traewelling"
 
 #: app/SettingsPage.qml:333
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "Traewelling is a free check-in service that lets you tell your friends "
+#| "where you are and where you can log your public transit journeys. For "
+#| "more information, visit <a href=\"https://traewelling.de\">traewelling."
+#| "de</a>"
 msgctxt "@info"
 msgid ""
-"Traewelling is a free check-in service that lets you tell your friends where "
+"Träwelling is a free check-in service that lets you tell your friends where "
 "you are and where you can log your public transit journeys. For more "
 "information, visit <a href=\"https://traewelling.de\">traewelling.de</a>"
 msgstr ""
@@ -4131,17 +4171,23 @@ msgid "Paste"
 msgstr "Colar"
 
 #: app/tickettokenmodel.cpp:88
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Attendee %1"
+msgctxt "%1 is a number"
 msgid "Attendee %1"
 msgstr "Participante %1"
 
 #: app/tickettokenmodel.cpp:90
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Traveler %1"
+msgctxt "%1 is a number"
 msgid "Traveler %1"
 msgstr "Viajante %1"
 
 #: app/tickettokenmodel.cpp:137
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "%1 (%2)"
+msgctxt "%1 is a person name, %2 is a ticket name"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
@@ -4390,19 +4436,23 @@ msgid "Arrival Vehicle Layout"
 msgstr "Layout do veículo de chegada"
 
 #: app/TrainPage.qml:340
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Add to Traewelling"
 msgctxt "@action:button"
-msgid "Add to Traewelling"
+msgid "Add to Träwelling"
 msgstr "Adicionar ao Traewelling"
 
 #: app/TrainPage.qml:385
-#, kde-format
-msgid "Added to Traewelling"
+#, fuzzy, kde-format
+#| msgid "Added to Traewelling"
+msgid "Added to Träwelling"
 msgstr "Adicionado ao Traewelling"
 
 #: app/TrainPage.qml:385
-#, kde-format
-msgid "Failed to add to Traewelling"
+#, fuzzy, kde-format
+#| msgid "Failed to add to Traewelling"
+msgid "Failed to add to Träwelling"
 msgstr "Falha ao adicionar ao Traewelling"
 
 #: app/TransferDelegate.qml:112
@@ -4626,6 +4676,11 @@ msgstr "Excluir viagem"
 msgid "Do you really want to delete the trip '%1'?"
 msgstr "Deseja realmente excluir a viagem '%1'?"
 
+#: app/TripGroupPage.qml:426
+#, kde-format
+msgid "%1 - %2"
+msgstr "%1 - %2"
+
 #: app/TripGroupPage.qml:427
 #, kde-format
 msgid "One day"
@@ -4803,12 +4858,16 @@ msgid "Vehicle Layout"
 msgstr "Layout do veículo"
 
 #: app/VehicleLayoutPage.qml:93
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Departure: %1"
+msgctxt "%1 is a date/time"
 msgid "Departure: %1"
 msgstr "Partida: %1"
 
 #: app/VehicleLayoutPage.qml:95
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Arrival: %1"
+msgctxt "%1 is a date/time"
 msgid "Arrival: %1"
 msgstr "Chegada: %1"
 

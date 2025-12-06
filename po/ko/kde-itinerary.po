@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-28 00:43+0000\n"
+"POT-Creation-Date: 2025-12-06 00:43+0000\n"
 "PO-Revision-Date: 2025-10-12 14:38+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -261,7 +261,9 @@ msgstr[0] "건강 증명서 %1개를 가져왔습니다."
 #: app/applicationcontroller.cpp:492 app/applicationcontroller.cpp:510
 #: app/applicationcontroller.cpp:551 app/applicationcontroller.cpp:587
 #: app/applicationcontroller.cpp:605
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export failed: %1"
+msgctxt "%1 is an error message"
 msgid "Export failed: %1"
 msgstr "내보내기 실패: %1"
 
@@ -288,7 +290,9 @@ msgid "Pass sent."
 msgstr "패스를 전송했습니다."
 
 #: app/applicationcontroller.cpp:635
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Saving failed: %1"
+msgctxt "%1 is an error message"
 msgid "Saving failed: %1"
 msgstr "저장 실패: %1"
 
@@ -729,7 +733,9 @@ msgid "Arrival"
 msgstr "도착"
 
 #: app/calendarhelper.cpp:28
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Transfer to %1"
+msgctxt "%1 is the transfer destination"
 msgid "Transfer to %1"
 msgstr "%1(으)로 환승|/|%1$[으 %1]로 환승"
 
@@ -750,7 +756,9 @@ msgid "Rental Car Pick-up"
 msgstr "렌터카 픽업"
 
 #: app/CarRentalDelegate.qml:57
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Drop-off: %1"
+msgctxt "%1 is a date/time"
 msgid "Drop-off: %1"
 msgstr "반납: %1"
 
@@ -912,12 +920,16 @@ msgid "Add Document…"
 msgstr "문서 추가…"
 
 #: app/downloadjob.cpp:162
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Network error: %1"
+msgctxt "%1 is an error message"
 msgid "Network error: %1"
 msgstr "네트워크 오류: %1"
 
 #: app/downloadjob.cpp:193
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Download failed: %1"
+msgctxt "%1 is an error message"
 msgid "Download failed: %1"
 msgstr "다운로드 실패: %1"
 
@@ -1079,7 +1091,9 @@ msgid "Work"
 msgstr "직장"
 
 #: app/favoritelocationmodel.cpp:161
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Location %1"
+msgctxt "%1 is a number"
 msgid "Location %1"
 msgstr "위치 %1"
 
@@ -1560,17 +1574,23 @@ msgid "Ferry from %1 to %2"
 msgstr "%1에서 %2(으)로 가는 선박|/|%1에서 %2$[으 %2]로 가는 선박"
 
 #: app/HealthCertificateBarcode.qml:34
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Vaccination certificate of %1"
+msgctxt "%1 is a person name"
 msgid "Vaccination certificate of %1"
 msgstr "%1의 예방 접종"
 
 #: app/HealthCertificateBarcode.qml:36
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Test certificate of %1"
+msgctxt "%1 is a person name, 'Test certificate' is a compound noun"
 msgid "Test certificate of %1"
 msgstr "%1의 검사 증명서"
 
 #: app/HealthCertificateBarcode.qml:38
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Recovery certificate of %1"
+msgctxt "%1 is a person name"
 msgid "Recovery certificate of %1"
 msgstr "%1의 완치 증명서"
 
@@ -1636,12 +1656,17 @@ msgid "%1 (%2)"
 msgstr "%1(%2)"
 
 #: app/healthcertificatemanager.cpp:154
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Vaccination for %1 (%2/%3)"
+msgctxt ""
+"%1 is a disease, %2 the amount of applied doses, %3 the amount of total doses"
 msgid "Vaccination for %1 (%2/%3)"
 msgstr "%1 예방 접종(%2/%3)"
 
 #: app/healthcertificatemanager.cpp:157
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Vaccination for %1"
+msgctxt "%1 is a disease"
 msgid "Vaccination for %1"
 msgstr "%1 예방 접종"
 
@@ -1651,13 +1676,17 @@ msgid "Vaccination"
 msgstr "예방 접종"
 
 #: app/healthcertificatemanager.cpp:163
-#, kde-format
-msgid "Test %1 for %2"
+#, fuzzy, kde-format
+#| msgid "Test %1 for %2"
+msgctxt "%1 is a disease, %2 is a date"
+msgid "Test for %1 – %2"
 msgstr "검사 %1(%2)"
 
-#: app/healthcertificatemanager.cpp:169
-#, kde-format
-msgid "Recovery %1 for %2"
+#: app/healthcertificatemanager.cpp:168
+#, fuzzy, kde-format
+#| msgid "Recovery %1 for %2"
+msgctxt "%1 is a disease, %2 is a date"
+msgid "Recovery from %1 – %2"
 msgstr "완치 %1(%2)"
 
 #: app/HealthCertificatePage.qml:19
@@ -1995,7 +2024,9 @@ msgid "From SNCF reservation number"
 msgstr "SNCF 예약 번호에서"
 
 #: app/importcontroller.cpp:153 app/importcontroller.cpp:475
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Import failed: %1"
+msgctxt "%1 is an error message"
 msgid "Import failed: %1"
 msgstr "가져오기 실패: %1"
 
@@ -3350,8 +3381,10 @@ msgctxt "name - valid time range"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/passmanager.cpp:289 app/TripGroupPage.qml:426
-#, kde-format
+#: app/passmanager.cpp:289
+#, fuzzy, kde-format
+#| msgid "%1 - %2"
+msgctxt "%1 and %2 are dates"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
@@ -3857,15 +3890,22 @@ msgid "Log in"
 msgstr "로그인"
 
 #: app/SettingsPage.qml:328
-#, kde-format
-msgid "Traewelling Integration"
+#, fuzzy, kde-format
+#| msgid "Traewelling Integration"
+msgid "Träwelling Integration"
 msgstr "Traewelling 통합"
 
 #: app/SettingsPage.qml:333
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "Traewelling is a free check-in service that lets you tell your friends "
+#| "where you are and where you can log your public transit journeys. For "
+#| "more information, visit <a href=\"https://traewelling.de\">traewelling."
+#| "de</a>"
 msgctxt "@info"
 msgid ""
-"Traewelling is a free check-in service that lets you tell your friends where "
+"Träwelling is a free check-in service that lets you tell your friends where "
 "you are and where you can log your public transit journeys. For more "
 "information, visit <a href=\"https://traewelling.de\">traewelling.de</a>"
 msgstr ""
@@ -4085,17 +4125,23 @@ msgid "Paste"
 msgstr "붙여넣기"
 
 #: app/tickettokenmodel.cpp:88
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Attendee %1"
+msgctxt "%1 is a number"
 msgid "Attendee %1"
 msgstr "참석자 %1"
 
 #: app/tickettokenmodel.cpp:90
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Traveler %1"
+msgctxt "%1 is a number"
 msgid "Traveler %1"
 msgstr "여행자 %1"
 
 #: app/tickettokenmodel.cpp:137
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "%1 (%2)"
+msgctxt "%1 is a person name, %2 is a ticket name"
 msgid "%1 (%2)"
 msgstr "%1(%2)"
 
@@ -4341,19 +4387,23 @@ msgid "Arrival Vehicle Layout"
 msgstr "도착하는 차량 구성"
 
 #: app/TrainPage.qml:340
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Add to Traewelling"
 msgctxt "@action:button"
-msgid "Add to Traewelling"
+msgid "Add to Träwelling"
 msgstr "Traewelling에 추가"
 
 #: app/TrainPage.qml:385
-#, kde-format
-msgid "Added to Traewelling"
+#, fuzzy, kde-format
+#| msgid "Added to Traewelling"
+msgid "Added to Träwelling"
 msgstr "Traewelling에 추가됨"
 
 #: app/TrainPage.qml:385
-#, kde-format
-msgid "Failed to add to Traewelling"
+#, fuzzy, kde-format
+#| msgid "Failed to add to Traewelling"
+msgid "Failed to add to Träwelling"
 msgstr "Traewelling에 추가할 수 없음"
 
 #: app/TransferDelegate.qml:112
@@ -4577,6 +4627,11 @@ msgstr "여정 삭제"
 msgid "Do you really want to delete the trip '%1'?"
 msgstr "'%1' 여행을 삭제하시겠습니까?"
 
+#: app/TripGroupPage.qml:426
+#, kde-format
+msgid "%1 - %2"
+msgstr "%1 - %2"
+
 #: app/TripGroupPage.qml:427
 #, kde-format
 msgid "One day"
@@ -4753,12 +4808,16 @@ msgid "Vehicle Layout"
 msgstr "차량 구성"
 
 #: app/VehicleLayoutPage.qml:93
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Departure: %1"
+msgctxt "%1 is a date/time"
 msgid "Departure: %1"
 msgstr "출발: %1"
 
 #: app/VehicleLayoutPage.qml:95
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Arrival: %1"
+msgctxt "%1 is a date/time"
 msgid "Arrival: %1"
 msgstr "도착: %1"
 

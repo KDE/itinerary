@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-28 00:43+0000\n"
+"POT-Creation-Date: 2025-12-06 00:43+0000\n"
 "PO-Revision-Date: 2024-03-26 16:14+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -275,7 +275,9 @@ msgstr[1] "Egészségügyi igazolás importálva."
 #: app/applicationcontroller.cpp:492 app/applicationcontroller.cpp:510
 #: app/applicationcontroller.cpp:551 app/applicationcontroller.cpp:587
 #: app/applicationcontroller.cpp:605
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export failed: %1"
+msgctxt "%1 is an error message"
 msgid "Export failed: %1"
 msgstr "Exportálás sikertelen: %1"
 
@@ -305,6 +307,7 @@ msgstr "Kirándulás elküldve."
 #: app/applicationcontroller.cpp:635
 #, fuzzy, kde-format
 #| msgid "Download failed: %1"
+msgctxt "%1 is an error message"
 msgid "Saving failed: %1"
 msgstr "Letöltés sikertelen: %1"
 
@@ -780,7 +783,9 @@ msgid "Arrival"
 msgstr "Érkezés"
 
 #: app/calendarhelper.cpp:28
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Transfer to %1"
+msgctxt "%1 is the transfer destination"
 msgid "Transfer to %1"
 msgstr "Átszállás erre: %1"
 
@@ -802,7 +807,9 @@ msgid "Rental Car Pick-up"
 msgstr "Bérautó átvétele "
 
 #: app/CarRentalDelegate.qml:57
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Drop-off: %1"
+msgctxt "%1 is a date/time"
 msgid "Drop-off: %1"
 msgstr "Leadás: %1"
 
@@ -966,12 +973,16 @@ msgid "Add Document…"
 msgstr "Dokumentum hozzáadása"
 
 #: app/downloadjob.cpp:162
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Network error: %1"
+msgctxt "%1 is an error message"
 msgid "Network error: %1"
 msgstr "Hálózati hiba: %1"
 
 #: app/downloadjob.cpp:193
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Download failed: %1"
+msgctxt "%1 is an error message"
 msgid "Download failed: %1"
 msgstr "Letöltés sikertelen: %1"
 
@@ -1143,7 +1154,9 @@ msgid "Work"
 msgstr "Munkahely"
 
 #: app/favoritelocationmodel.cpp:161
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Location %1"
+msgctxt "%1 is a number"
 msgid "Location %1"
 msgstr "Hely: %1"
 
@@ -1641,17 +1654,23 @@ msgid "Ferry from %1 to %2"
 msgstr "%1 → %2 komp"
 
 #: app/HealthCertificateBarcode.qml:34
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Vaccination certificate of %1"
+msgctxt "%1 is a person name"
 msgid "Vaccination certificate of %1"
 msgstr "%1 oltási igazolása"
 
 #: app/HealthCertificateBarcode.qml:36
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Test certificate of %1"
+msgctxt "%1 is a person name, 'Test certificate' is a compound noun"
 msgid "Test certificate of %1"
 msgstr "%1 tesztigazolása"
 
 #: app/HealthCertificateBarcode.qml:38
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Recovery certificate of %1"
+msgctxt "%1 is a person name"
 msgid "Recovery certificate of %1"
 msgstr "%1 felépülési igazolása"
 
@@ -1720,12 +1739,15 @@ msgstr "%1 (%2)"
 #: app/healthcertificatemanager.cpp:154
 #, fuzzy, kde-format
 #| msgid "Vaccination %1/%2 (%3)"
+msgctxt ""
+"%1 is a disease, %2 the amount of applied doses, %3 the amount of total doses"
 msgid "Vaccination for %1 (%2/%3)"
 msgstr "%1/%2. oltás (%3)"
 
 #: app/healthcertificatemanager.cpp:157
 #, fuzzy, kde-format
 #| msgid "Vaccination (%1)"
+msgctxt "%1 is a disease"
 msgid "Vaccination for %1"
 msgstr "Oltás (%1)"
 
@@ -1737,13 +1759,15 @@ msgstr "Oltás"
 #: app/healthcertificatemanager.cpp:163
 #, fuzzy, kde-format
 #| msgid "Test %1 (%2)"
-msgid "Test %1 for %2"
+msgctxt "%1 is a disease, %2 is a date"
+msgid "Test for %1 – %2"
 msgstr "%1. teszt ( %2)"
 
-#: app/healthcertificatemanager.cpp:169
+#: app/healthcertificatemanager.cpp:168
 #, fuzzy, kde-format
 #| msgid "Recovery (%1)"
-msgid "Recovery %1 for %2"
+msgctxt "%1 is a disease, %2 is a date"
+msgid "Recovery from %1 – %2"
 msgstr "Felépülés (%1)"
 
 #: app/HealthCertificatePage.qml:19
@@ -2111,7 +2135,9 @@ msgid "From SNCF reservation number"
 msgstr ""
 
 #: app/importcontroller.cpp:153 app/importcontroller.cpp:475
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Import failed: %1"
+msgctxt "%1 is an error message"
 msgid "Import failed: %1"
 msgstr "Sikertelen importálás: %1"
 
@@ -3503,8 +3529,10 @@ msgctxt "name - valid time range"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/passmanager.cpp:289 app/TripGroupPage.qml:426
-#, kde-format
+#: app/passmanager.cpp:289
+#, fuzzy, kde-format
+#| msgid "%1 - %2"
+msgctxt "%1 and %2 are dates"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
@@ -4013,14 +4041,14 @@ msgstr "Bejelentkezés"
 #: app/SettingsPage.qml:328
 #, fuzzy, kde-format
 #| msgid "Matrix Integration"
-msgid "Traewelling Integration"
+msgid "Träwelling Integration"
 msgstr "Matrix integráció"
 
 #: app/SettingsPage.qml:333
 #, kde-format
 msgctxt "@info"
 msgid ""
-"Traewelling is a free check-in service that lets you tell your friends where "
+"Träwelling is a free check-in service that lets you tell your friends where "
 "you are and where you can log your public transit journeys. For more "
 "information, visit <a href=\"https://traewelling.de\">traewelling.de</a>"
 msgstr ""
@@ -4249,16 +4277,20 @@ msgstr "Beillesztés"
 
 #: app/tickettokenmodel.cpp:88
 #, kde-format
+msgctxt "%1 is a number"
 msgid "Attendee %1"
 msgstr ""
 
 #: app/tickettokenmodel.cpp:90
 #, kde-format
+msgctxt "%1 is a number"
 msgid "Traveler %1"
 msgstr ""
 
 #: app/tickettokenmodel.cpp:137
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "%1 (%2)"
+msgctxt "%1 is a person name, %2 is a ticket name"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
@@ -4530,19 +4562,21 @@ msgid "Arrival Vehicle Layout"
 msgstr ""
 
 #: app/TrainPage.qml:340
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Edit Boat Trip"
 msgctxt "@action:button"
-msgid "Add to Traewelling"
-msgstr ""
+msgid "Add to Träwelling"
+msgstr "Hajókirándulás szerkesztése"
+
+#: app/TrainPage.qml:385
+#, fuzzy, kde-format
+#| msgid "Edit Boat Trip"
+msgid "Added to Träwelling"
+msgstr "Hajókirándulás szerkesztése"
 
 #: app/TrainPage.qml:385
 #, kde-format
-msgid "Added to Traewelling"
-msgstr ""
-
-#: app/TrainPage.qml:385
-#, kde-format
-msgid "Failed to add to Traewelling"
+msgid "Failed to add to Träwelling"
 msgstr ""
 
 #: app/TransferDelegate.qml:112
@@ -4784,6 +4818,11 @@ msgstr "Kirándulás törlése"
 msgid "Do you really want to delete the trip '%1'?"
 msgstr "Biztosan törölni szeretné ezt a kirándulást?"
 
+#: app/TripGroupPage.qml:426
+#, kde-format
+msgid "%1 - %2"
+msgstr "%1 - %2"
+
 #: app/TripGroupPage.qml:427
 #, kde-format
 msgid "One day"
@@ -4983,14 +5022,20 @@ msgid "Vehicle Layout"
 msgstr ""
 
 #: app/VehicleLayoutPage.qml:93
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "flight departure"
+#| msgid "Departure - %1"
+msgctxt "%1 is a date/time"
 msgid "Departure: %1"
-msgstr ""
+msgstr "Indulás - %1"
 
 #: app/VehicleLayoutPage.qml:95
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "flight arrival"
+#| msgid "Arrival - %1"
+msgctxt "%1 is a date/time"
 msgid "Arrival: %1"
-msgstr ""
+msgstr "Érkezés - %1"
 
 #: app/VehicleLayoutPage.qml:115
 #, kde-format
