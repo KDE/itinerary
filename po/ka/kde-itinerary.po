@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-06 00:43+0000\n"
-"PO-Revision-Date: 2025-11-17 05:45+0100\n"
+"PO-Revision-Date: 2025-12-06 15:05+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -264,8 +264,7 @@ msgstr[1] "%1 ჯანმრთელობის სერტიფიკა�
 #: app/applicationcontroller.cpp:492 app/applicationcontroller.cpp:510
 #: app/applicationcontroller.cpp:551 app/applicationcontroller.cpp:587
 #: app/applicationcontroller.cpp:605
-#, fuzzy, kde-format
-#| msgid "Export failed: %1"
+#, kde-format
 msgctxt "%1 is an error message"
 msgid "Export failed: %1"
 msgstr "გატანის შეცდომა: %1"
@@ -293,8 +292,7 @@ msgid "Pass sent."
 msgstr "ბილეთი გაგზავნილია."
 
 #: app/applicationcontroller.cpp:635
-#, fuzzy, kde-format
-#| msgid "Saving failed: %1"
+#, kde-format
 msgctxt "%1 is an error message"
 msgid "Saving failed: %1"
 msgstr "შენახვის შეცდომა: %1"
@@ -736,11 +734,10 @@ msgid "Arrival"
 msgstr "ჩამოსვლა"
 
 #: app/calendarhelper.cpp:28
-#, fuzzy, kde-format
-#| msgid "Transfer to %1"
+#, kde-format
 msgctxt "%1 is the transfer destination"
 msgid "Transfer to %1"
-msgstr "%1-ზე ტრანსფერი"
+msgstr "გადაყვანა %1-ში"
 
 #: app/CalendarSelectionDialog.qml:14
 #, kde-format
@@ -759,8 +756,7 @@ msgid "Rental Car Pick-up"
 msgstr "ნაქირავები მანქანის აყვანა"
 
 #: app/CarRentalDelegate.qml:57
-#, fuzzy, kde-format
-#| msgid "Drop-off: %1"
+#, kde-format
 msgctxt "%1 is a date/time"
 msgid "Drop-off: %1"
 msgstr "ნაქირავები მანქანის დატოვება: %1"
@@ -923,15 +919,13 @@ msgid "Add Document…"
 msgstr "დოკუმენტის დამატება…"
 
 #: app/downloadjob.cpp:162
-#, fuzzy, kde-format
-#| msgid "Network error: %1"
+#, kde-format
 msgctxt "%1 is an error message"
 msgid "Network error: %1"
 msgstr "ქსელის შეცდომა: %1"
 
 #: app/downloadjob.cpp:193
-#, fuzzy, kde-format
-#| msgid "Download failed: %1"
+#, kde-format
 msgctxt "%1 is an error message"
 msgid "Download failed: %1"
 msgstr "გადმოწერის შეცდომა: %1"
@@ -1094,8 +1088,7 @@ msgid "Work"
 msgstr "სამუშაო"
 
 #: app/favoritelocationmodel.cpp:161
-#, fuzzy, kde-format
-#| msgid "Location %1"
+#, kde-format
 msgctxt "%1 is a number"
 msgid "Location %1"
 msgstr "მდებარეობა %1"
@@ -1574,22 +1567,19 @@ msgid "Ferry from %1 to %2"
 msgstr "ბორანი %1-დან %2-მდე"
 
 #: app/HealthCertificateBarcode.qml:34
-#, fuzzy, kde-format
-#| msgid "Vaccination certificate of %1"
+#, kde-format
 msgctxt "%1 is a person name"
 msgid "Vaccination certificate of %1"
 msgstr "%1-ის ვაქცინაციის სერტიფიკატი"
 
 #: app/HealthCertificateBarcode.qml:36
-#, fuzzy, kde-format
-#| msgid "Test certificate of %1"
+#, kde-format
 msgctxt "%1 is a person name, 'Test certificate' is a compound noun"
 msgid "Test certificate of %1"
 msgstr "%1-ის ტესტის სერტიფიკატი"
 
 #: app/HealthCertificateBarcode.qml:38
-#, fuzzy, kde-format
-#| msgid "Recovery certificate of %1"
+#, kde-format
 msgctxt "%1 is a person name"
 msgid "Recovery certificate of %1"
 msgstr "%1-ის გამოკეთების სერტიფიკატი"
@@ -1656,19 +1646,17 @@ msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: app/healthcertificatemanager.cpp:154
-#, fuzzy, kde-format
-#| msgid "Vaccination for %1 (%2/%3)"
+#, kde-format
 msgctxt ""
 "%1 is a disease, %2 the amount of applied doses, %3 the amount of total doses"
 msgid "Vaccination for %1 (%2/%3)"
-msgstr "ვაქცინაცია %1-სთვის (%2/%3)"
+msgstr "ვაქცინაცია %1-ისთვის (%2/%3)"
 
 #: app/healthcertificatemanager.cpp:157
-#, fuzzy, kde-format
-#| msgid "Vaccination for %1"
+#, kde-format
 msgctxt "%1 is a disease"
 msgid "Vaccination for %1"
-msgstr "ვაქცინაცია %1-სთვის"
+msgstr "ვაქცინაცია %1-ისთვის"
 
 #: app/healthcertificatemanager.cpp:159 app/HealthCertificateVaccination.qml:54
 #, kde-format
@@ -1676,18 +1664,16 @@ msgid "Vaccination"
 msgstr "ვაქცინაცია"
 
 #: app/healthcertificatemanager.cpp:163
-#, fuzzy, kde-format
-#| msgid "Test %1 for %2"
+#, kde-format
 msgctxt "%1 is a disease, %2 is a date"
 msgid "Test for %1 – %2"
-msgstr "%1-ის შემოწმება %2-ზე"
+msgstr "%1-ის შემოწმება – %2"
 
 #: app/healthcertificatemanager.cpp:168
-#, fuzzy, kde-format
-#| msgid "Recovery %1 for %2"
+#, kde-format
 msgctxt "%1 is a disease, %2 is a date"
 msgid "Recovery from %1 – %2"
-msgstr "%1-ის აღდგენა %2-სთვის"
+msgstr "გამოკეთება %1-ისგან – %2"
 
 #: app/HealthCertificatePage.qml:19
 #, kde-format
@@ -2027,8 +2013,7 @@ msgid "From SNCF reservation number"
 msgstr "SNCF-ის დაჯავშნის ნომრიდან"
 
 #: app/importcontroller.cpp:153 app/importcontroller.cpp:475
-#, fuzzy, kde-format
-#| msgid "Import failed: %1"
+#, kde-format
 msgctxt "%1 is an error message"
 msgid "Import failed: %1"
 msgstr "შემოტანის შეცდომა: %1"
@@ -3400,8 +3385,7 @@ msgid "%1 - %2"
 msgstr "%1 - %2"
 
 #: app/passmanager.cpp:289
-#, fuzzy, kde-format
-#| msgid "%1 - %2"
+#, kde-format
 msgctxt "%1 and %2 are dates"
 msgid "%1 - %2"
 msgstr "%1 - %2"
@@ -3913,29 +3897,22 @@ msgid "Log in"
 msgstr "შესვლა"
 
 #: app/SettingsPage.qml:328
-#, fuzzy, kde-format
-#| msgid "Traewelling Integration"
+#, kde-format
 msgid "Träwelling Integration"
-msgstr "Traewelling-სთან ინტეგრაცია"
+msgstr "Träwelling-სთან ინტეგრაცია"
 
 #: app/SettingsPage.qml:333
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Traewelling is a free check-in service that lets you tell your friends "
-#| "where you are and where you can log your public transit journeys. For "
-#| "more information, visit <a href=\"https://traewelling.de\">traewelling."
-#| "de</a>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Träwelling is a free check-in service that lets you tell your friends where "
 "you are and where you can log your public transit journeys. For more "
 "information, visit <a href=\"https://traewelling.de\">traewelling.de</a>"
 msgstr ""
-"Traewelling ინტერნეტ-რეგისტრაციის სერვერია, რომელიც საშუალებას გაძლევთ, "
+"Träwelling ინტერნეტ-რეგისტრაციის სერვერია, რომელიც საშუალებას გაძლევთ, "
 "უთხრათ თქვენს მეგობრებს, სად ბრძანდებით და საიდან შეგიძლიათ, საჯარო "
-"მოგზაურობები ჟურნალში ჩაიწეროთ.მეტი ინფორმაციისთვი ეწვიეთ ვებგვერდს <a href="
-"\"https://traewelling.de\">traewelling.de</a>"
+"მოგზაურობები ჟურნალში ჩაიწეროთ. მეტი ინფორმაციისთვის ეწვიეთ ვებგვერდს <a "
+"href=\"https://traewelling.de\">traewelling.de</a>"
 
 #: app/SettingsPage.qml:341
 #, kde-format
@@ -4149,22 +4126,19 @@ msgid "Paste"
 msgstr "ჩასმა"
 
 #: app/tickettokenmodel.cpp:88
-#, fuzzy, kde-format
-#| msgid "Attendee %1"
+#, kde-format
 msgctxt "%1 is a number"
 msgid "Attendee %1"
 msgstr "დამსწრე %1"
 
 #: app/tickettokenmodel.cpp:90
-#, fuzzy, kde-format
-#| msgid "Traveler %1"
+#, kde-format
 msgctxt "%1 is a number"
 msgid "Traveler %1"
 msgstr "მოგზაური %1"
 
 #: app/tickettokenmodel.cpp:137
-#, fuzzy, kde-format
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "%1 is a person name, %2 is a ticket name"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
@@ -4414,24 +4388,20 @@ msgid "Arrival Vehicle Layout"
 msgstr "ჩამოსვლის მანქანის განლაგება"
 
 #: app/TrainPage.qml:340
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add to Traewelling"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add to Träwelling"
-msgstr "დამატება Traewelling-ზე"
+msgstr "დამატება Träwelling-ზე"
 
 #: app/TrainPage.qml:385
-#, fuzzy, kde-format
-#| msgid "Added to Traewelling"
+#, kde-format
 msgid "Added to Träwelling"
-msgstr "დამატებულია Traewelling-ზე"
+msgstr "დამატებულია Träwelling-ზე"
 
 #: app/TrainPage.qml:385
-#, fuzzy, kde-format
-#| msgid "Failed to add to Traewelling"
+#, kde-format
 msgid "Failed to add to Träwelling"
-msgstr "Traewelling-ზე დამატება ჩავარდა"
+msgstr "Träwelling-ზე დამატება ჩავარდა"
 
 #: app/TransferDelegate.qml:112
 #, kde-format
@@ -4836,15 +4806,13 @@ msgid "Vehicle Layout"
 msgstr "მანქანის განლაგება"
 
 #: app/VehicleLayoutPage.qml:93
-#, fuzzy, kde-format
-#| msgid "Departure: %1"
+#, kde-format
 msgctxt "%1 is a date/time"
 msgid "Departure: %1"
-msgstr "გაფრენა: %1"
+msgstr "გამგზავრება: %1"
 
 #: app/VehicleLayoutPage.qml:95
-#, fuzzy, kde-format
-#| msgid "Arrival: %1"
+#, kde-format
 msgctxt "%1 is a date/time"
 msgid "Arrival: %1"
 msgstr "ჩამოსვლა: %1"
