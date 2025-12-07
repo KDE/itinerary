@@ -263,7 +263,7 @@ msgstr[0] "已导入 %1 个健康证书。"
 #: app/applicationcontroller.cpp:605
 #, kde-format
 msgid "Export failed: %1"
-msgstr "导出失败：%1"
+msgstr ""
 
 #: app/applicationcontroller.cpp:362 app/applicationcontroller.cpp:371
 #: app/applicationcontroller.cpp:466 app/applicationcontroller.cpp:475
@@ -290,7 +290,7 @@ msgstr "通行信息已发送。"
 #: app/applicationcontroller.cpp:635
 #, kde-format
 msgid "Saving failed: %1"
-msgstr "保存失败：%1"
+msgstr ""
 
 #: app/applicationcontroller.cpp:640
 #, kde-format
@@ -750,7 +750,7 @@ msgstr "出租车上车信息"
 #: app/CarRentalDelegate.qml:57
 #, kde-format
 msgid "Drop-off: %1"
-msgstr "下车时间：%1"
+msgstr ""
 
 #: app/CarRentalPage.qml:15 app/CarRentalPage.qml:22
 #, kde-format
@@ -908,7 +908,7 @@ msgstr ""
 #: app/downloadjob.cpp:193
 #, kde-format
 msgid "Download failed: %1"
-msgstr "下载失败：%1"
+msgstr ""
 
 #: app/EditorPage.qml:27
 #, kde-format
@@ -1070,7 +1070,7 @@ msgstr "单位"
 #: app/favoritelocationmodel.cpp:161
 #, kde-format
 msgid "Location %1"
-msgstr "地点 %1"
+msgstr ""
 
 #: app/FavoriteLocationPage.qml:21 app/MyDataPage.qml:124
 #, kde-format
@@ -1624,12 +1624,12 @@ msgstr "%1 (%2)"
 #: app/healthcertificatemanager.cpp:154
 #, kde-format
 msgid "Vaccination for %1 (%2/%3)"
-msgstr "已接种疫苗：%1/%1 (%2/%3)"
+msgstr ""
 
 #: app/healthcertificatemanager.cpp:157
 #, kde-format
 msgid "Vaccination for %1"
-msgstr "已接种疫苗：%1/%1"
+msgstr ""
 
 #: app/healthcertificatemanager.cpp:159 app/HealthCertificateVaccination.qml:54
 #, kde-format
@@ -1980,7 +1980,7 @@ msgstr "从法国铁路预订号导入"
 #: app/importcontroller.cpp:153 app/importcontroller.cpp:475
 #, kde-format
 msgid "Import failed: %1"
-msgstr "导入失败：%1"
+msgstr ""
 
 #: app/importcontroller.cpp:159
 #, kde-format
@@ -4049,17 +4049,17 @@ msgstr "粘贴"
 #: app/tickettokenmodel.cpp:74
 #, kde-format
 msgid "Attendee %1"
-msgstr "同行人员 %1"
+msgstr ""
 
 #: app/tickettokenmodel.cpp:76
 #, kde-format
 msgid "Traveler %1"
-msgstr "旅客 %1"
+msgstr ""
 
 #: app/tickettokenmodel.cpp:116
 #, kde-format
 msgid "%1 (%2)"
-msgstr "%1 (%2)"
+msgstr ""
 
 #: app/TimelineDelegateIntermediateStopsButton.qml:36
 #, kde-format
@@ -4716,12 +4716,12 @@ msgstr "列车编组"
 #: app/VehicleLayoutPage.qml:93
 #, kde-format
 msgid "Departure: %1"
-msgstr "出发：%1"
+msgstr ""
 
 #: app/VehicleLayoutPage.qml:95
 #, kde-format
 msgid "Arrival: %1"
-msgstr "到达：%1"
+msgstr ""
 
 #: app/VehicleLayoutPage.qml:115
 #, kde-format
