@@ -1,0 +1,39 @@
+{
+    "@context": "http://schema.org",
+    "@type": "TrainReservation",
+    "reservationFor": {
+        "@type": "TrainTrip",
+        "arrivalStation": {
+            "@type": "TrainStation",
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 50.942501068115234,
+                "longitude": 6.958059787750244
+            },
+            "identifier": "benerail:DEKOH",
+            "name": "DEKOH"
+        },
+        "departureDay": "2025-12-13",
+        "departureStation": {
+            "@type": "TrainStation",
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 48.881099700927734,
+                "longitude": 2.3552799224853516
+            },
+            "identifier": "benerail:FRPNO",
+            "name": "FRPNO"
+        },
+        "provider": {
+            "@type": "Organization",
+            "identifier": "uic:3018"
+        },
+        "trainNumber": "9459"
+    },
+    "reservationStatus": "http://schema.org/ReservationConfirmed",
+    "reservedTicket": {
+        "@type": "Ticket",
+        "ticketNumber": "123456789",
+        "ticketToken": "aztecbcode:dummy"
+    }
+}

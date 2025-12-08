@@ -10,11 +10,15 @@
 #include <KItinerary/Reservation>
 #include <KItinerary/TrainTrip>
 
+#include <KOSMIndoorMap/ReverseGeocodingJob>
+#include <KOSM/Element>
+
 #include <KPublicTransport/Line>
 
 #include <KCountry>
 
 #include <QCoroNetwork>
+#include <QCoroSignal>
 
 #include <QJsonArray>
 #include <QJsonDocument>
@@ -146,11 +150,12 @@ QCoro::Task<std::optional<QVariant>> ReservationOnlinePostprocessor::processRese
             reservation);
         auto trip = trainReservation.reservationFor().value<KItinerary::TrainTrip>();
 
+        const auto hadCoordinates = trip.departureStation().geo().isValid() && trip.arrivalStation().geo().isValid();
         const auto changedDepartureStation = co_await processTrainStation(trip.departureStation());
         const auto changedArrivalStation = co_await processTrainStation(trip.arrivalStation());
 
         if (changedDepartureStation || changedArrivalStation) {
-            if (locationsRealistic(changedDepartureStation.value_or(trip.departureStation()),
+            if (hadCoordinates || locationsRealistic(changedDepartureStation.value_or(trip.departureStation()),
                                    trip.departureTime(),
                                    changedArrivalStation.value_or(trip.arrivalStation()),
                                    trip.arrivalTime(),
@@ -208,16 +213,46 @@ QCoro::Task<std::optional<QVariant>> ReservationOnlinePostprocessor::processRese
 QCoro::Task<std::optional<KItinerary::TrainStation>>
 ReservationOnlinePostprocessor::processTrainStation(KItinerary::TrainStation station)
 {
-    if (station.geo().isValid() || hasIdentifierName(station)) {
-        co_return {};
+    if (!station.geo().isValid() && !hasIdentifierName(station)) {
+        const std::vector allowedTags = {"railway:station"_L1, "railway:halt"_L1};
+
+        const auto results = co_await queryNominatim(station, u"railway station"_s);
+        bool changed = applyResult(results, station, allowedTags);
+
+        co_return changed ? std::optional{station} : std::nullopt;
     }
 
-    const std::vector allowedTags = {"railway:station"_L1, "railway:halt"_L1};
+    if (station.geo().isValid() && hasIdentifierName(station)) {
+        KOSMIndoorMap::ReverseGeocodingJob job;
+        job.setCoordinate(station.geo().latitude(), station.geo().longitude());
+        job.setRadius(100);
+        job.start();
+        co_await qCoro(&job, &KOSMIndoorMap::ReverseGeocodingJob::finished);
 
-    const auto results = co_await queryNominatim(station, u"railway station"_s);
-    bool changed = applyResult(results, station, allowedTags);
+        const auto langs = OSM::Languages::fromQLocale(QLocale());
+        for (const auto &elem : job.result()) {
+            if (elem.tagValue("railway") == "station") {
+                station.setName(QString::fromUtf8(elem.tagValue(langs, "name")));
+                auto addr = station.address();
+                if (addr.addressCountry().isEmpty()) {
+                    addr.setAddressCountry(QString::fromUtf8(elem.tagValue("addr:country")));
+                }
+                if (addr.addressLocality().isEmpty()) {
+                    addr.setAddressLocality(QString::fromUtf8(elem.tagValue("addr:city")));
+                }
+                if (addr.postalCode().isEmpty()) {
+                    addr.setPostalCode(QString::fromUtf8(elem.tagValue("addr:postcode")));
+                }
+                if (addr.streetAddress().isEmpty()) {
+                    addr.setStreetAddress(QString::fromUtf8(elem.tagValue("addr:street")));
+                }
+                station.setAddress(addr);
+                co_return station;
+            }
+        }
+    }
 
-    co_return changed ? std::optional{station} : std::nullopt;
+    co_return {};
 }
 
 QCoro::Task<std::optional<KItinerary::BusStation>> ReservationOnlinePostprocessor::processBusStation(

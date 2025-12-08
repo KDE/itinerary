@@ -64,6 +64,44 @@ private Q_SLOTS:
         QVERIFY(trip.arrivalStation().geo().isValid());
     }
 
+    void testReverseGeocode()
+    {
+        ReservationManager mgr;
+        Test::clearAll(&mgr);
+        QSignalSpy batchChangeSpy(&mgr, &ReservationManager::batchContentChanged);
+
+        QNetworkAccessManager nam;
+
+        Settings settings;
+        settings.setQueryLiveData(true);
+        ReservationOnlinePostprocessor postProc(&mgr, &settings, [&nam]() { return &nam; });
+
+        auto ctrl = Test::makeAppController();
+        ctrl->setReservationManager(&mgr);
+        ImportController importer;
+        importer.setReservationManager(&mgr);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/eurostar-identifier-only.json")));
+        ctrl->commitImport(&importer);
+        QCOMPARE(mgr.batches().size(), 1);
+
+        QVERIFY(batchChangeSpy.wait());
+        QCOMPARE(batchChangeSpy.size(), 1);
+        QCOMPARE(batchChangeSpy[0][0].toString(), mgr.batches()[0]);
+
+        const auto trip = mgr.reservation(batchChangeSpy[0][0].toString()).value<KItinerary::TrainReservation>().reservationFor().value<KItinerary::TrainTrip>();
+        qDebug() << trip.departureStation().name() << trip.arrivalStation().name();
+
+        QVERIFY(!trip.departureStation().name().isEmpty());
+        QCOMPARE_NE(trip.departureStation().name(), "FRPNO"_L1);
+        QCOMPARE(trip.departureStation().address().addressCountry(), u"FR");
+        QCOMPARE(trip.departureStation().address().addressLocality(), "Paris"_L1);
+
+        QVERIFY(!trip.arrivalStation().name().isEmpty());
+        QCOMPARE_NE(trip.arrivalStation().name(), "DEKOH"_L1);
+        QCOMPARE(trip.arrivalStation().address().addressCountry(), u"DE");
+        QCOMPARE(trip.arrivalStation().address().addressLocality(), u"Köln");
+    }
+
 private:
     MockNetworkAccessManager m_nam;
 };
