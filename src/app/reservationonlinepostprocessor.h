@@ -27,7 +27,7 @@ public:
                                    std::function<QNetworkAccessManager *()> namFactory);
 
 private:
-    QCoro::Task<> handleBatchChange(const QString &batchId);
+    QCoro::Task<> handleBatchChange(QString batchId);
 
     QCoro::Task<std::optional<QVariant> > processReservation(QVariant reservation);
 

@@ -71,7 +71,7 @@ ReservationOnlinePostprocessor::ReservationOnlinePostprocessor(
             &ReservationOnlinePostprocessor::handleBatchChange);
 }
 
-QCoro::Task<> ReservationOnlinePostprocessor::handleBatchChange(const QString &batchId)
+QCoro::Task<> ReservationOnlinePostprocessor::handleBatchChange(QString batchId)
 {
     if (!m_settings->queryLiveData()) {
         co_return;
