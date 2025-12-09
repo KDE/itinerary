@@ -28,6 +28,7 @@ SheetDrawer {
                 Layout.fillWidth: true
                 Layout.leftMargin: Kirigami.Units.largeSpacing
                 elide: Qt.ElideRight
+                font.strikeout: stopInfoDrawer.stop.disruptionEffect === KPublicTransport.Disruption.NoService
             }
 
             readonly property bool showDepartureTime: (stopInfoDrawer.isDeparture && !isNaN(stopInfoDrawer.stop.scheduledDepartureTime.getTime())) || !stopInfoDrawer.stop.scheduledArrivalTime
