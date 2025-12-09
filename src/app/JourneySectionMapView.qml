@@ -7,6 +7,7 @@
 import QtQuick
 import QtLocation as QtLocation
 import QtPositioning as QtPositioning
+import org.kde.kirigami as Kirigami
 import org.kde.kpublictransport as KPublicTransport
 import org.kde.kpublictransport.ui as KPublicTransport
 import org.kde.itinerary
@@ -66,7 +67,7 @@ MapView {
             size: 6
             borderWidth: 1
             color: line.line.color
-            textColor: Qt.alpha("#eff0f1", 0.5)
+            textColor: Qt.alpha(modelData.disruptionEffect === KPublicTransport.Disruption.NoService ? Kirigami.Theme.negativeTextColor : "#eff0f1", 0.5)
             onClicked: root.stopoverClicked({ stopover: modelData, isArrival: false, isDeparture: false })
         }
     }
