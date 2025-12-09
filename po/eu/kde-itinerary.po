@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-21 02:38+0000\n"
-"PO-Revision-Date: 2025-10-05 19:53+0200\n"
+"PO-Revision-Date: 2025-12-08 18:47+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1461,10 +1461,9 @@ msgid "Coordinate to address"
 msgstr "Koordenatutik helbidera"
 
 #: app/FormPlaceEditorDelegate.qml:247
-#, fuzzy, kde-format
-#| msgid "Address to coordinate"
+#, kde-format
 msgid "Remove coordinate"
-msgstr "Helbidetik koordenatura"
+msgstr "Kendu koordenatua"
 
 #: app/FormPlatformDelegate.qml:19
 #, kde-format
@@ -2126,11 +2125,10 @@ msgid "Open wheelmap.org"
 msgstr "Ireki wheelmap.org"
 
 #: app/JourneyFilterPage.qml:15
-#, fuzzy, kde-format
-#| msgid "Select Journey"
+#, kde-format
 msgctxt "@title"
 msgid "Filter Journeys"
-msgstr "Hautatu bidaia"
+msgstr "Iragazi bidaiak"
 
 #: app/JourneyFilterPage.qml:59
 #, kde-format
@@ -2258,7 +2256,7 @@ msgstr "Iritsiera-ordua"
 #, kde-format
 msgctxt "filter journeys by mode of transportation etc."
 msgid "Filter"
-msgstr ""
+msgstr "Iragazi"
 
 #: app/JourneyRequestPage.qml:219
 #, kde-format
@@ -2489,8 +2487,7 @@ msgid "%1 / %2"
 msgstr "%1 / %2"
 
 #: app/localizer.cpp:283
-#, fuzzy, kde-format
-#| msgid "%1m"
+#, kde-format
 msgctxt "altitude in meter"
 msgid "%1m"
 msgstr "%1m"
@@ -4289,6 +4286,8 @@ msgid ""
 "Specifying the departure and arrival location helps Itinerary to find "
 "updated information for the train this reservation is valid for."
 msgstr ""
+"Irteera eta helmuga kokapenak zehazteak Itinerary-ri erreserba honen trenari "
+"buruzko informazio eguneratua aurkitzen laguntzen dio."
 
 #: app/TrainEditor.qml:231 app/TrainEditor.qml:336 app/TrainPage.qml:163
 #: app/TrainPage.qml:247
@@ -4720,11 +4719,10 @@ msgid "A trip must be selected."
 msgstr "Txango bat hautatu behar da."
 
 #: app/TripGroupSelectorDialog.qml:14
-#, fuzzy, kde-format
-#| msgid "Add to Trip"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Add Journey to Trip"
-msgstr "Gehitu txangoan"
+msgstr "Bidaian txango bat gehitu"
 
 #: app/TripGroupsPage.qml:15
 #, kde-format
