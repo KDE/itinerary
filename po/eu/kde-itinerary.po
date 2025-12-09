@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-06 00:43+0000\n"
-"PO-Revision-Date: 2025-10-05 19:53+0200\n"
+"PO-Revision-Date: 2025-12-08 18:48+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -106,10 +106,9 @@ msgid "Export…"
 msgstr "Esportatu…"
 
 #: app/ActionsCard.qml:81
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgid "Delete…"
-msgstr "Ezabatu"
+msgstr "Ezabatu…"
 
 #: app/ActionsCard.qml:116
 #, kde-format
@@ -272,8 +271,7 @@ msgstr[1] "%1 osasun ziurtagiri inportatu dira."
 #: app/applicationcontroller.cpp:492 app/applicationcontroller.cpp:510
 #: app/applicationcontroller.cpp:551 app/applicationcontroller.cpp:587
 #: app/applicationcontroller.cpp:605
-#, fuzzy, kde-format
-#| msgid "Export failed: %1"
+#, kde-format
 msgctxt "%1 is an error message"
 msgid "Export failed: %1"
 msgstr "Esportatzea huts egin du: %1"
@@ -301,8 +299,7 @@ msgid "Pass sent."
 msgstr "Pasea bidali da."
 
 #: app/applicationcontroller.cpp:635
-#, fuzzy, kde-format
-#| msgid "Saving failed: %1"
+#, kde-format
 msgctxt "%1 is an error message"
 msgid "Saving failed: %1"
 msgstr "Gordetzea huts egin du: %1"
@@ -744,8 +741,7 @@ msgid "Arrival"
 msgstr "Iritsiera"
 
 #: app/calendarhelper.cpp:28
-#, fuzzy, kde-format
-#| msgid "Transfer to %1"
+#, kde-format
 msgctxt "%1 is the transfer destination"
 msgid "Transfer to %1"
 msgstr "Ibilgailu-aldaketa %1(e)ra"
@@ -767,8 +763,7 @@ msgid "Rental Car Pick-up"
 msgstr "Alokairu-autoa jasotzea"
 
 #: app/CarRentalDelegate.qml:57
-#, fuzzy, kde-format
-#| msgid "Drop-off: %1"
+#, kde-format
 msgctxt "%1 is a date/time"
 msgid "Drop-off: %1"
 msgstr "Itzultzea: %1"
@@ -931,15 +926,13 @@ msgid "Add Document…"
 msgstr "Gehitu dokumentua…"
 
 #: app/downloadjob.cpp:162
-#, fuzzy, kde-format
-#| msgid "Network error: %1"
+#, kde-format
 msgctxt "%1 is an error message"
 msgid "Network error: %1"
 msgstr "Sareko errorea: %1"
 
 #: app/downloadjob.cpp:193
-#, fuzzy, kde-format
-#| msgid "Download failed: %1"
+#, kde-format
 msgctxt "%1 is an error message"
 msgid "Download failed: %1"
 msgstr "Zama-jaistea huts egin du: %1"
@@ -1102,8 +1095,7 @@ msgid "Work"
 msgstr "Lana"
 
 #: app/favoritelocationmodel.cpp:161
-#, fuzzy, kde-format
-#| msgid "Location %1"
+#, kde-format
 msgctxt "%1 is a number"
 msgid "Location %1"
 msgstr "%1 kokalekua"
@@ -1488,10 +1480,9 @@ msgid "Coordinate to address"
 msgstr "Koordenatutik helbidera"
 
 #: app/FormPlaceEditorDelegate.qml:247
-#, fuzzy, kde-format
-#| msgid "Address to coordinate"
+#, kde-format
 msgid "Remove coordinate"
-msgstr "Helbidetik koordenatura"
+msgstr "Kendu koordenatua"
 
 #: app/FormPlatformDelegate.qml:19
 #, kde-format
@@ -1583,22 +1574,19 @@ msgid "Ferry from %1 to %2"
 msgstr "Ferrya, %1(e)tik %2(e)ra"
 
 #: app/HealthCertificateBarcode.qml:34
-#, fuzzy, kde-format
-#| msgid "Vaccination certificate of %1"
+#, kde-format
 msgctxt "%1 is a person name"
 msgid "Vaccination certificate of %1"
 msgstr "%1(e)ren txertatze ziurtagiria"
 
 #: app/HealthCertificateBarcode.qml:36
-#, fuzzy, kde-format
-#| msgid "Test certificate of %1"
+#, kde-format
 msgctxt "%1 is a person name, 'Test certificate' is a compound noun"
 msgid "Test certificate of %1"
 msgstr "%1(e)ren proba ziurtagiria"
 
 #: app/HealthCertificateBarcode.qml:38
-#, fuzzy, kde-format
-#| msgid "Recovery certificate of %1"
+#, kde-format
 msgctxt "%1 is a person name"
 msgid "Recovery certificate of %1"
 msgstr "%1(e)ren sendatze ziurtagiria"
@@ -1665,16 +1653,14 @@ msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: app/healthcertificatemanager.cpp:154
-#, fuzzy, kde-format
-#| msgid "Vaccination for %1 (%2/%3)"
+#, kde-format
 msgctxt ""
 "%1 is a disease, %2 the amount of applied doses, %3 the amount of total doses"
 msgid "Vaccination for %1 (%2/%3)"
 msgstr "%1(e)ren txertaketa (%2/%3)"
 
 #: app/healthcertificatemanager.cpp:157
-#, fuzzy, kde-format
-#| msgid "Vaccination for %1"
+#, kde-format
 msgctxt "%1 is a disease"
 msgid "Vaccination for %1"
 msgstr "%1(e)ren txertaketa"
@@ -1685,18 +1671,16 @@ msgid "Vaccination"
 msgstr "Txertaketa"
 
 #: app/healthcertificatemanager.cpp:163
-#, fuzzy, kde-format
-#| msgid "Test %1 for %2"
+#, kde-format
 msgctxt "%1 is a disease, %2 is a date"
 msgid "Test for %1 – %2"
-msgstr "Probatu %1 %2(e)rako"
+msgstr "%1(e)ren proba - %2"
 
 #: app/healthcertificatemanager.cpp:168
-#, fuzzy, kde-format
-#| msgid "Recovery %1 for %2"
+#, kde-format
 msgctxt "%1 is a disease, %2 is a date"
 msgid "Recovery from %1 – %2"
-msgstr "%2(e)rako %1 osatzea"
+msgstr "%1(e)ren sendatze ziurtagiria - %2"
 
 #: app/HealthCertificatePage.qml:19
 #, kde-format
@@ -2036,8 +2020,7 @@ msgid "From SNCF reservation number"
 msgstr "SNCF erreserba zenbakitik"
 
 #: app/importcontroller.cpp:153 app/importcontroller.cpp:475
-#, fuzzy, kde-format
-#| msgid "Import failed: %1"
+#, kde-format
 msgctxt "%1 is an error message"
 msgid "Import failed: %1"
 msgstr "Inportatzea huts egin du: %1"
@@ -2170,11 +2153,10 @@ msgid "Open wheelmap.org"
 msgstr "Ireki wheelmap.org"
 
 #: app/JourneyFilterPage.qml:15
-#, fuzzy, kde-format
-#| msgid "Select Journey"
+#, kde-format
 msgctxt "@title"
 msgid "Filter Journeys"
-msgstr "Hautatu bidaia"
+msgstr "Iragazi bidaiak"
 
 #: app/JourneyFilterPage.qml:59
 #, kde-format
@@ -2302,7 +2284,7 @@ msgstr "Iritsiera-ordua"
 #, kde-format
 msgctxt "filter journeys by mode of transportation etc."
 msgid "Filter"
-msgstr ""
+msgstr "Iragazi"
 
 #: app/JourneyRequestPage.qml:239
 #, kde-format
@@ -2533,8 +2515,7 @@ msgid "%1 / %2"
 msgstr "%1 / %2"
 
 #: app/localizer.cpp:283
-#, fuzzy, kde-format
-#| msgid "%1m"
+#, kde-format
 msgctxt "altitude in meter"
 msgid "%1m"
 msgstr "%1m"
@@ -3428,8 +3409,7 @@ msgid "%1 - %2"
 msgstr "%1 - %2"
 
 #: app/passmanager.cpp:289
-#, fuzzy, kde-format
-#| msgid "%1 - %2"
+#, kde-format
 msgctxt "%1 and %2 are dates"
 msgid "%1 - %2"
 msgstr "%1 - %2"
@@ -3569,16 +3549,14 @@ msgid "Show Pass"
 msgstr "Erakutsi pasea"
 
 #: app/ReservationDeletionDialog.qml:30
-#, fuzzy, kde-format
-#| msgid "Delete Event"
+#, kde-format
 msgid "Delete Selected"
-msgstr "Ezabatu ekitaldia"
+msgstr "Ezabatu hautatutakoa"
 
 #: app/ReservationDeletionDialog.qml:42
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgid "Delete All"
-msgstr "Ezabatu"
+msgstr "Ezabatuta dena"
 
 #: app/ReservationDocumentsCard.qml:19
 #, kde-format
@@ -3943,19 +3921,12 @@ msgid "Log in"
 msgstr "Hasi saioa"
 
 #: app/SettingsPage.qml:328
-#, fuzzy, kde-format
-#| msgid "Traewelling Integration"
+#, kde-format
 msgid "Träwelling Integration"
-msgstr "«Träwelling»ekin bateratzea"
+msgstr "«Träwelling» bateratzea"
 
 #: app/SettingsPage.qml:333
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Traewelling is a free check-in service that lets you tell your friends "
-#| "where you are and where you can log your public transit journeys. For "
-#| "more information, visit <a href=\"https://traewelling.de\">traewelling."
-#| "de</a>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Träwelling is a free check-in service that lets you tell your friends where "
@@ -4179,22 +4150,19 @@ msgid "Paste"
 msgstr "Itsatsi"
 
 #: app/tickettokenmodel.cpp:88
-#, fuzzy, kde-format
-#| msgid "Attendee %1"
+#, kde-format
 msgctxt "%1 is a number"
 msgid "Attendee %1"
-msgstr "Partaidea %1"
+msgstr "%1. partaidea"
 
 #: app/tickettokenmodel.cpp:90
-#, fuzzy, kde-format
-#| msgid "Traveler %1"
+#, kde-format
 msgctxt "%1 is a number"
 msgid "Traveler %1"
-msgstr "Bidaiaria %1"
+msgstr "%1. bidaiaria"
 
 #: app/tickettokenmodel.cpp:137
-#, fuzzy, kde-format
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "%1 is a person name, %2 is a ticket name"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
@@ -4360,6 +4328,8 @@ msgid ""
 "Specifying the departure and arrival location helps Itinerary to find "
 "updated information for the train this reservation is valid for."
 msgstr ""
+"Irteera eta helmuga kokapenak zehazteak Itinerary-ri erreserba honen trenari "
+"buruzko informazio eguneratua aurkitzen laguntzen dio."
 
 #: app/TrainEditor.qml:231 app/TrainEditor.qml:336 app/TrainPage.qml:163
 #: app/TrainPage.qml:247
@@ -4442,22 +4412,18 @@ msgid "Arrival Vehicle Layout"
 msgstr "Iritsiera ibilgailuaren antolamendua"
 
 #: app/TrainPage.qml:340
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add to Traewelling"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add to Träwelling"
 msgstr "Gehitu «Träewelling»era"
 
 #: app/TrainPage.qml:385
-#, fuzzy, kde-format
-#| msgid "Added to Traewelling"
+#, kde-format
 msgid "Added to Träwelling"
 msgstr "«Träewelling»era gehitu da"
 
 #: app/TrainPage.qml:385
-#, fuzzy, kde-format
-#| msgid "Failed to add to Traewelling"
+#, kde-format
 msgid "Failed to add to Träwelling"
 msgstr "«Träewelling»era gehitzea huts egin du"
 
@@ -4800,11 +4766,10 @@ msgid "A trip must be selected."
 msgstr "Txango bat hautatu behar da."
 
 #: app/TripGroupSelectorDialog.qml:14
-#, fuzzy, kde-format
-#| msgid "Add to Trip"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Add Journey to Trip"
-msgstr "Gehitu txangoan"
+msgstr "Bidaian txango bat gehitu"
 
 #: app/TripGroupsPage.qml:15
 #, kde-format
@@ -4865,15 +4830,13 @@ msgid "Vehicle Layout"
 msgstr "Ibilgailu antolamendua"
 
 #: app/VehicleLayoutPage.qml:93
-#, fuzzy, kde-format
-#| msgid "Departure: %1"
+#, kde-format
 msgctxt "%1 is a date/time"
 msgid "Departure: %1"
 msgstr "Irteera: %1"
 
 #: app/VehicleLayoutPage.qml:95
-#, fuzzy, kde-format
-#| msgid "Arrival: %1"
+#, kde-format
 msgctxt "%1 is a date/time"
 msgid "Arrival: %1"
 msgstr "Iritsiera: %1"
