@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-06 00:43+0000\n"
+"POT-Creation-Date: 2025-12-10 00:44+0000\n"
 "PO-Revision-Date: 2025-09-06 05:40+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
@@ -2861,22 +2861,22 @@ msgctxt "@title:window"
 msgid "Matrix Session Verification"
 msgstr "Sprawdzenie posiedzenia Matriksa"
 
-#: app/MapStopoverInfoSheetDrawer.qml:67
+#: app/MapStopoverInfoSheetDrawer.qml:68
 #, kde-format
 msgid "Platform:"
 msgstr "Peron:"
 
-#: app/MapStopoverInfoSheetDrawer.qml:83
+#: app/MapStopoverInfoSheetDrawer.qml:84
 #, kde-format
 msgid "Occupancy:"
 msgstr "Zapełnienie:"
 
-#: app/MapStopoverInfoSheetDrawer.qml:103
+#: app/MapStopoverInfoSheetDrawer.qml:104
 #, kde-format
 msgid "Information:"
 msgstr "Szczegółowość:"
 
-#: app/MapStopoverInfoSheetDrawer.qml:119
+#: app/MapStopoverInfoSheetDrawer.qml:120
 #, kde-format
 msgid "Show indoor map"
 msgstr "Pokaż mapę wnętrz"

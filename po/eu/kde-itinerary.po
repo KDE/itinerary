@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-06 00:43+0000\n"
+"POT-Creation-Date: 2025-12-10 00:44+0000\n"
 "PO-Revision-Date: 2025-12-08 18:48+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -2841,22 +2841,22 @@ msgctxt "@title:window"
 msgid "Matrix Session Verification"
 msgstr "«Matrix»eko saioaren egiaztapena"
 
-#: app/MapStopoverInfoSheetDrawer.qml:67
+#: app/MapStopoverInfoSheetDrawer.qml:68
 #, kde-format
 msgid "Platform:"
 msgstr "Nasa:"
 
-#: app/MapStopoverInfoSheetDrawer.qml:83
+#: app/MapStopoverInfoSheetDrawer.qml:84
 #, kde-format
 msgid "Occupancy:"
 msgstr "Okupazioa:"
 
-#: app/MapStopoverInfoSheetDrawer.qml:103
+#: app/MapStopoverInfoSheetDrawer.qml:104
 #, kde-format
 msgid "Information:"
 msgstr "Informazioa:"
 
-#: app/MapStopoverInfoSheetDrawer.qml:119
+#: app/MapStopoverInfoSheetDrawer.qml:120
 #, kde-format
 msgid "Show indoor map"
 msgstr "Erakutsi barnealdeko mapa"

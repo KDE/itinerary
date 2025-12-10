@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-06 00:43+0000\n"
+"POT-Creation-Date: 2025-12-10 00:44+0000\n"
 "PO-Revision-Date: 2024-10-18 16:02+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -40,7 +40,7 @@ msgstr "Licence: <a href=\"%2\">%1</a>"
 #: app/AboutPage.qml:40
 #, kde-format
 msgid "KDE Itinerary uses public transport data from the following sources."
-msgstr ""
+msgstr "Itinerář KDE používá data veřejné dopravy z následujících zdrojů."
 
 #: app/AboutPage.qml:51
 #, kde-format
@@ -2847,22 +2847,22 @@ msgctxt "@title:window"
 msgid "Matrix Session Verification"
 msgstr ""
 
-#: app/MapStopoverInfoSheetDrawer.qml:67
+#: app/MapStopoverInfoSheetDrawer.qml:68
 #, kde-format
 msgid "Platform:"
 msgstr "Nástupiště:"
 
-#: app/MapStopoverInfoSheetDrawer.qml:83
+#: app/MapStopoverInfoSheetDrawer.qml:84
 #, kde-format
 msgid "Occupancy:"
 msgstr "Obsazenost:"
 
-#: app/MapStopoverInfoSheetDrawer.qml:103
+#: app/MapStopoverInfoSheetDrawer.qml:104
 #, kde-format
 msgid "Information:"
 msgstr "Informace:"
 
-#: app/MapStopoverInfoSheetDrawer.qml:119
+#: app/MapStopoverInfoSheetDrawer.qml:120
 #, kde-format
 msgid "Show indoor map"
 msgstr ""
@@ -3522,16 +3522,14 @@ msgid "Show Pass"
 msgstr ""
 
 #: app/ReservationDeletionDialog.qml:30
-#, fuzzy, kde-format
-#| msgid "Delete Event"
+#, kde-format
 msgid "Delete Selected"
-msgstr "Smazat událost"
+msgstr "Smazat vybrané"
 
 #: app/ReservationDeletionDialog.qml:42
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgid "Delete All"
-msgstr "Smazat"
+msgstr "Smazat vše"
 
 #: app/ReservationDocumentsCard.qml:19
 #, kde-format
