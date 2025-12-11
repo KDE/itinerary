@@ -64,7 +64,7 @@ Kirigami.ScrollablePage {
         return false;
     }
 
-    property QtObject controller: TimelineDelegateController {
+    property TimelineDelegateController controller: TimelineDelegateController {
         id: _controller
         reservationManager: ReservationManager
         liveDataManager: LiveDataManager

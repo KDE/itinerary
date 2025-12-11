@@ -112,7 +112,7 @@ Kirigami.ScrollablePage {
             }
 
             wrapMode: Text.Wrap
-            text: i18n("Platform: %1", platformName)
+            text: i18nc("train station platform", "Platform: %1", platformName)
 
             Layout.leftMargin: Kirigami.Units.largeSpacing
             Layout.rightMargin: Kirigami.Units.largeSpacing

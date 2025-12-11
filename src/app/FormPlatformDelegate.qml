@@ -7,16 +7,15 @@ import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
+import org.kde.kpublictransport as KPublicTransport
 import org.kde.itinerary
 
 FormCard.AbstractFormDelegate {
     id: root
 
-    property var stopover
+    property KPublicTransport.stopover stopover
     property string sections
     property string scheduledPlatform
-
-    text: i18n("Platform")
 
     visible: platformLabel.text != ""
 
@@ -38,7 +37,7 @@ FormCard.AbstractFormDelegate {
                 Layout.fillWidth: true
                 id: platformLabel
                 text: (root.stopover.hasExpectedPlatform ? root.stopover.expectedPlatform : root.scheduledPlatform) + (root.sections ? " " + root.sections: "")
-                color: root.platformChanged ? Kirigami.Theme.negativeTextColor :
+                color: root.stopover.platformChanged ? Kirigami.Theme.negativeTextColor :
                     root.stopover.hasExpectedPlatform ? Kirigami.Theme.positiveTextColor :
                     Kirigami.Theme.disabledTextColor
             }

@@ -172,9 +172,10 @@ DetailsPage {
 
             FormPlatformDelegate {
                 id: departurePlatformDelegate
-                stopover: departure
+                text: i18nc("train station platform", "Platform")
+                stopover: root.departure
                 sections: root.controller.departurePlatformSections
-                scheduledPlatform: reservationFor.departurePlatform
+                scheduledPlatform: root.reservationFor.departurePlatform
             }
 
             FormCard.FormDelegateSeparator { visible: departureNotes.visible }
@@ -256,9 +257,10 @@ DetailsPage {
 
             FormPlatformDelegate {
                 id: arrivalPlatformDelegate
-                stopover: arrival
+                text: i18nc("train station platform", "Platform")
+                stopover: root.arrival
                 sections: root.controller.arrivalPlatformSections
-                scheduledPlatform: reservationFor.arrivalPlatform
+                scheduledPlatform: root.reservationFor.arrivalPlatform
             }
 
             FormCard.FormDelegateSeparator { visible: arrivalNotes.visible }
