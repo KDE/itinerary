@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-21 02:38+0000\n"
+"POT-Creation-Date: 2025-12-11 02:38+0000\n"
 "PO-Revision-Date: 2024-12-15 19:32+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
@@ -2883,23 +2883,23 @@ msgctxt "@title:window"
 msgid "Matrix Session Verification"
 msgstr "मैट्रिक्स सत्र सत्यापन"
 
-#: app/MapStopoverInfoSheetDrawer.qml:67
+#: app/MapStopoverInfoSheetDrawer.qml:68
 #, kde-format
 msgid "Platform:"
 msgstr "प्लैटफ़ॉर्म:"
 
-#: app/MapStopoverInfoSheetDrawer.qml:83
+#: app/MapStopoverInfoSheetDrawer.qml:84
 #, kde-format
 msgid "Occupancy:"
 msgstr "अधिभोग:"
 
-#: app/MapStopoverInfoSheetDrawer.qml:103
+#: app/MapStopoverInfoSheetDrawer.qml:104
 #, fuzzy, kde-format
 #| msgid "More information"
 msgid "Information:"
 msgstr "अधिक जानकारी"
 
-#: app/MapStopoverInfoSheetDrawer.qml:119
+#: app/MapStopoverInfoSheetDrawer.qml:120
 #, kde-format
 msgid "Show indoor map"
 msgstr "इनडोर मानचित्र दिखाएं"

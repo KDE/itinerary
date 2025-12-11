@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-21 02:38+0000\n"
+"POT-Creation-Date: 2025-12-11 02:38+0000\n"
 "PO-Revision-Date: 2025-03-15 10:38+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -2875,23 +2875,23 @@ msgctxt "@title:window"
 msgid "Matrix Session Verification"
 msgstr "Matricosesia Konfirmo"
 
-#: app/MapStopoverInfoSheetDrawer.qml:67
+#: app/MapStopoverInfoSheetDrawer.qml:68
 #, kde-format
 msgid "Platform:"
 msgstr "Platformo:"
 
-#: app/MapStopoverInfoSheetDrawer.qml:83
+#: app/MapStopoverInfoSheetDrawer.qml:84
 #, kde-format
 msgid "Occupancy:"
 msgstr "Okupiteco:"
 
-#: app/MapStopoverInfoSheetDrawer.qml:103
+#: app/MapStopoverInfoSheetDrawer.qml:104
 #, fuzzy, kde-format
 #| msgid "More information"
 msgid "Information:"
 msgstr "Pliaj informoj"
 
-#: app/MapStopoverInfoSheetDrawer.qml:119
+#: app/MapStopoverInfoSheetDrawer.qml:120
 #, kde-format
 msgid "Show indoor map"
 msgstr "Rigardi endoman mapon"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kitinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-21 02:38+0000\n"
+"POT-Creation-Date: 2025-12-11 02:38+0000\n"
 "PO-Revision-Date: 2023-07-14 22:15+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -2979,24 +2979,24 @@ msgctxt "@title:window"
 msgid "Matrix Session Verification"
 msgstr "Integração no Matrix"
 
-#: app/MapStopoverInfoSheetDrawer.qml:67
+#: app/MapStopoverInfoSheetDrawer.qml:68
 #, fuzzy, kde-format
 #| msgid "Platform"
 msgid "Platform:"
 msgstr "Plataforma"
 
-#: app/MapStopoverInfoSheetDrawer.qml:83
+#: app/MapStopoverInfoSheetDrawer.qml:84
 #, kde-format
 msgid "Occupancy:"
 msgstr ""
 
-#: app/MapStopoverInfoSheetDrawer.qml:103
+#: app/MapStopoverInfoSheetDrawer.qml:104
 #, fuzzy, kde-format
 #| msgid "More information"
 msgid "Information:"
 msgstr "Mais informações"
 
-#: app/MapStopoverInfoSheetDrawer.qml:119
+#: app/MapStopoverInfoSheetDrawer.qml:120
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "View Indoor Map"
