@@ -198,7 +198,7 @@ ColumnLayout {
     }
 
     FormCard.FormButtonDelegate {
-        text: i18n("Coordinate")
+        text: i18n("Coordinates")
         description: !Number.isNaN(root.latitude) && !Number.isNaN(root.longitude) ? i18n("%1°, %2°", root.latitude.toFixed(2), root.longitude.toFixed(2)) : i18n("Pick…");
         icon.name: "crosshairs"
         onClicked: applicationWindow().pageStack.push(locationPickerPage)
@@ -218,7 +218,7 @@ ColumnLayout {
                 Kirigami.Action {
                     id: addressToCoordinateAction
 
-                    text: i18n("Address to coordinate")
+                    text: i18n("Address to coordinates")
                     icon.name: "go-down-symbolic"
                     enabled: geocodeModel.status !== QtLocation.GeocodeModel.Loading
                     visible: addressLocality.text
@@ -234,7 +234,7 @@ ColumnLayout {
                 Kirigami.Action {
                     id: coordinateToAddressAction
 
-                    text: i18n("Coordinate to address")
+                    text: i18n("Coordinates to address")
                     icon.name: "go-up-symbolic"
                     enabled: reverseGeocodeModel.status !== QtLocation.GeocodeModel.Loading
                     visible: !Number.isNaN(root.latitude) && !Number.isNaN(root.longitude)
@@ -244,7 +244,7 @@ ColumnLayout {
                     }
                 },
                 Kirigami.Action {
-                    text: i18n("Remove coordinate")
+                    text: i18n("Remove coordinates")
                     icon.name: "delete-symbolic"
                     visible: !Number.isNaN(root.latitude) && !Number.isNaN(root.longitude)
                     onTriggered: {
