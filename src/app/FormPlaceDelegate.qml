@@ -44,7 +44,11 @@ FormCard.FormButtonDelegate {
         return result.join('<br>');
     }
 
+    readonly property bool hasContextMenuActions: root.place != undefined && (root.place.geo.isValid || !root.place.address.isEmpty)
+    background.visible: root.hasContextMenuActions
     onClicked: {
+        if (!root.hasContextMenuActions)
+            return;
         const menu = contextMenu.createObject(root);
         menu.popup();
     }
