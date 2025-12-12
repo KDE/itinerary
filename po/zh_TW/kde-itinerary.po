@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-10 00:44+0000\n"
+"POT-Creation-Date: 2025-12-12 00:43+0000\n"
 "PO-Revision-Date: 2024-11-28 16:26+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -476,25 +476,25 @@ msgstr "旅運中心"
 
 #: app/BoatPage.qml:82 app/BoatPage.qml:118 app/BusPage.qml:119
 #: app/BusPage.qml:188 app/FlightPage.qml:168 app/FlightPage.qml:218
-#: app/TrainPage.qml:183 app/TrainPage.qml:267
+#: app/TrainPage.qml:184 app/TrainPage.qml:269
 #, fuzzy, kde-format
 #| msgid "Additional notes"
 msgid "Additional information"
 msgstr "額外備註"
 
-#: app/BoatPage.qml:99 app/BusPage.qml:143 app/TrainPage.qml:211
+#: app/BoatPage.qml:99 app/BusPage.qml:143 app/TrainPage.qml:212
 #, kde-format
 msgid "Arrival time"
 msgstr "抵達時間"
 
 #: app/BoatPage.qml:143 app/BusPage.qml:233 app/FlightPage.qml:247
-#: app/TrainPage.qml:348
+#: app/TrainPage.qml:350
 #, kde-format
 msgid "Alternatives"
 msgstr "替代選擇"
 
 #: app/BoatPage.qml:151 app/BusPage.qml:238 app/JourneySectionPage.qml:27
-#: app/TrainPage.qml:354
+#: app/TrainPage.qml:356
 #, kde-format
 msgid "Journey Details"
 msgstr "旅程詳細資料"
@@ -1535,12 +1535,7 @@ msgstr "座標到地址"
 msgid "Remove coordinate"
 msgstr "地址到座標"
 
-#: app/FormPlatformDelegate.qml:19
-#, kde-format
-msgid "Platform"
-msgstr "月台"
-
-#: app/FormPlatformDelegate.qml:47
+#: app/FormPlatformDelegate.qml:46
 #, kde-format
 msgctxt "previous platform"
 msgid "(was: %1)"
@@ -4315,19 +4310,19 @@ msgctxt "train station platform"
 msgid "Platform %1"
 msgstr "月台：%1"
 
-#: app/TrainDelegate.qml:61 app/TrainPage.qml:299
+#: app/TrainDelegate.qml:61 app/TrainPage.qml:301
 #, kde-format
 msgctxt "train coach"
 msgid "Coach: <b>%1</b>"
 msgstr "車廂：<b>%1</b>"
 
-#: app/TrainDelegate.qml:67 app/TrainPage.qml:306
+#: app/TrainDelegate.qml:67 app/TrainPage.qml:308
 #, kde-format
 msgctxt "train seat"
 msgid "Seat: <b>%1</b>"
 msgstr "座位：<b>%1</b>"
 
-#: app/TrainDelegate.qml:75 app/TrainPage.qml:314
+#: app/TrainDelegate.qml:75 app/TrainPage.qml:316
 #, kde-format
 msgctxt "train class"
 msgid "Class: <b>%1</b>"
@@ -4431,7 +4426,7 @@ msgid ""
 msgstr ""
 
 #: app/TrainEditor.qml:231 app/TrainEditor.qml:336 app/TrainPage.qml:163
-#: app/TrainPage.qml:247
+#: app/TrainPage.qml:248
 #, kde-format
 msgctxt "train station"
 msgid "Station"
@@ -4463,7 +4458,7 @@ msgstr "公車站"
 msgid "Arrival station must not be empty."
 msgstr "目的地港口旅運中心不能是空的。"
 
-#: app/TrainEditor.qml:364 app/TrainEditor.qml:376 app/TrainPage.qml:290
+#: app/TrainEditor.qml:364 app/TrainEditor.qml:376 app/TrainPage.qml:292
 #, kde-format
 msgctxt "Train seat"
 msgid "Seat"
@@ -4497,23 +4492,30 @@ msgctxt "Train departure"
 msgid "Departure"
 msgstr "出發"
 
-#: app/TrainPage.qml:196
+#: app/TrainPage.qml:175 app/TrainPage.qml:260
+#, fuzzy, kde-format
+#| msgid "Platform"
+msgctxt "train station platform"
+msgid "Platform"
+msgstr "月台"
+
+#: app/TrainPage.qml:197
 #, kde-format
 msgid "Departure Vehicle Layout"
 msgstr "出發交通工具內部佈局"
 
-#: app/TrainPage.qml:205
+#: app/TrainPage.qml:206
 #, kde-format
 msgctxt "Train arrival"
 msgid "Arrival"
 msgstr "抵達"
 
-#: app/TrainPage.qml:280
+#: app/TrainPage.qml:282
 #, kde-format
 msgid "Arrival Vehicle Layout"
 msgstr "抵達交通工具內部佈局"
 
-#: app/TrainPage.qml:340
+#: app/TrainPage.qml:342
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Add Trip"
@@ -4521,14 +4523,14 @@ msgctxt "@action:button"
 msgid "Add to Träwelling"
 msgstr "新增旅程"
 
-#: app/TrainPage.qml:385
+#: app/TrainPage.qml:387
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Add Trip"
 msgid "Added to Träwelling"
 msgstr "新增旅程"
 
-#: app/TrainPage.qml:385
+#: app/TrainPage.qml:387
 #, kde-format
 msgid "Failed to add to Träwelling"
 msgstr ""
@@ -4975,7 +4977,9 @@ msgid "Arrival: %1"
 msgstr "抵達：%1"
 
 #: app/VehicleLayoutPage.qml:115
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Platform: %1"
+msgctxt "train station platform"
 msgid "Platform: %1"
 msgstr "月台：%1"
 

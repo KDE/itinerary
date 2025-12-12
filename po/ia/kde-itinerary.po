@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-10 00:44+0000\n"
+"POT-Creation-Date: 2025-12-12 00:43+0000\n"
 "PO-Revision-Date: 2025-10-14 12:48+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -472,24 +472,24 @@ msgstr "Terminal"
 
 #: app/BoatPage.qml:82 app/BoatPage.qml:118 app/BusPage.qml:119
 #: app/BusPage.qml:188 app/FlightPage.qml:168 app/FlightPage.qml:218
-#: app/TrainPage.qml:183 app/TrainPage.qml:267
+#: app/TrainPage.qml:184 app/TrainPage.qml:269
 #, kde-format
 msgid "Additional information"
 msgstr "Information Additional"
 
-#: app/BoatPage.qml:99 app/BusPage.qml:143 app/TrainPage.qml:211
+#: app/BoatPage.qml:99 app/BusPage.qml:143 app/TrainPage.qml:212
 #, kde-format
 msgid "Arrival time"
 msgstr "Tempore de arrivata"
 
 #: app/BoatPage.qml:143 app/BusPage.qml:233 app/FlightPage.qml:247
-#: app/TrainPage.qml:348
+#: app/TrainPage.qml:350
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternativas"
 
 #: app/BoatPage.qml:151 app/BusPage.qml:238 app/JourneySectionPage.qml:27
-#: app/TrainPage.qml:354
+#: app/TrainPage.qml:356
 #, kde-format
 msgid "Journey Details"
 msgstr "Detalios de viage"
@@ -1492,12 +1492,7 @@ msgstr "Coordinata a adresse"
 msgid "Remove coordinate"
 msgstr "Collige coordinata"
 
-#: app/FormPlatformDelegate.qml:19
-#, kde-format
-msgid "Platform"
-msgstr "Platteforma"
-
-#: app/FormPlatformDelegate.qml:47
+#: app/FormPlatformDelegate.qml:46
 #, kde-format
 msgctxt "previous platform"
 msgid "(was: %1)"
@@ -4265,19 +4260,19 @@ msgctxt "train station platform"
 msgid "Platform %1"
 msgstr "Platteforma %1"
 
-#: app/TrainDelegate.qml:61 app/TrainPage.qml:299
+#: app/TrainDelegate.qml:61 app/TrainPage.qml:301
 #, kde-format
 msgctxt "train coach"
 msgid "Coach: <b>%1</b>"
 msgstr "Autocar: <b>%1</b>"
 
-#: app/TrainDelegate.qml:67 app/TrainPage.qml:306
+#: app/TrainDelegate.qml:67 app/TrainPage.qml:308
 #, kde-format
 msgctxt "train seat"
 msgid "Seat: <b>%1</b>"
 msgstr "Sede: <b>%1</b>"
 
-#: app/TrainDelegate.qml:75 app/TrainPage.qml:314
+#: app/TrainDelegate.qml:75 app/TrainPage.qml:316
 #, kde-format
 msgctxt "train class"
 msgid "Class: <b>%1</b>"
@@ -4368,7 +4363,7 @@ msgid ""
 msgstr ""
 
 #: app/TrainEditor.qml:231 app/TrainEditor.qml:336 app/TrainPage.qml:163
-#: app/TrainPage.qml:247
+#: app/TrainPage.qml:248
 #, kde-format
 msgctxt "train station"
 msgid "Station"
@@ -4397,7 +4392,7 @@ msgstr "Nomine de Station"
 msgid "Arrival station must not be empty."
 msgstr "Station de arrivata non debe esser vacue."
 
-#: app/TrainEditor.qml:364 app/TrainEditor.qml:376 app/TrainPage.qml:290
+#: app/TrainEditor.qml:364 app/TrainEditor.qml:376 app/TrainPage.qml:292
 #, kde-format
 msgctxt "Train seat"
 msgid "Seat"
@@ -4431,23 +4426,30 @@ msgctxt "Train departure"
 msgid "Departure"
 msgstr "Partita"
 
-#: app/TrainPage.qml:196
+#: app/TrainPage.qml:175 app/TrainPage.qml:260
+#, fuzzy, kde-format
+#| msgid "Platform"
+msgctxt "train station platform"
+msgid "Platform"
+msgstr "Platteforma"
+
+#: app/TrainPage.qml:197
 #, kde-format
 msgid "Departure Vehicle Layout"
 msgstr "Disposition de Vehiculo de partita:"
 
-#: app/TrainPage.qml:205
+#: app/TrainPage.qml:206
 #, kde-format
 msgctxt "Train arrival"
 msgid "Arrival"
 msgstr "Arrivata"
 
-#: app/TrainPage.qml:280
+#: app/TrainPage.qml:282
 #, kde-format
 msgid "Arrival Vehicle Layout"
 msgstr "Disposition de Vehiculo de arrivata"
 
-#: app/TrainPage.qml:340
+#: app/TrainPage.qml:342
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Add to Traewelling"
@@ -4455,13 +4457,13 @@ msgctxt "@action:button"
 msgid "Add to Träwelling"
 msgstr "Adde a Traewelling"
 
-#: app/TrainPage.qml:385
+#: app/TrainPage.qml:387
 #, fuzzy, kde-format
 #| msgid "Added to Traewelling"
 msgid "Added to Träwelling"
 msgstr "Addite a Traewelling"
 
-#: app/TrainPage.qml:385
+#: app/TrainPage.qml:387
 #, fuzzy, kde-format
 #| msgid "Failed to add to Traewelling"
 msgid "Failed to add to Träwelling"
@@ -4885,7 +4887,9 @@ msgid "Arrival: %1"
 msgstr "Arrivata: %1"
 
 #: app/VehicleLayoutPage.qml:115
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Platform: %1"
+msgctxt "train station platform"
 msgid "Platform: %1"
 msgstr "Platteforma: %1"
 
