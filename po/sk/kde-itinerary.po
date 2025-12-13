@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-12 00:43+0000\n"
+"POT-Creation-Date: 2025-12-13 00:44+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -1503,49 +1503,49 @@ msgctxt "flight arrival"
 msgid "Arrival time"
 msgstr "Čas príchodu: %1"
 
-#: app/FormPlaceDelegate.qml:84
+#: app/FormPlaceDelegate.qml:88
 #, kde-format
 msgid "Share Place"
 msgstr ""
 
-#: app/FormPlaceDelegate.qml:90
+#: app/FormPlaceDelegate.qml:94
 #, fuzzy, kde-format
 #| msgid "Do you really want to delete this event?"
 msgid "Do you really want to share %1 to the Matrix channel %2?"
 msgstr "Naozaj chcete odstrániť túto udalosť?"
 
-#: app/FormPlaceDelegate.qml:105
+#: app/FormPlaceDelegate.qml:109
 #, kde-format
 msgctxt "@action:button"
 msgid "Share"
 msgstr ""
 
-#: app/FormPlaceDelegate.qml:144
+#: app/FormPlaceDelegate.qml:148
 #, kde-format
 msgctxt "@action:button"
 msgid "View Indoor Map"
 msgstr ""
 
-#: app/FormPlaceDelegate.qml:151
+#: app/FormPlaceDelegate.qml:155
 #, kde-format
 msgctxt "@action:button"
 msgid "View on Map"
 msgstr ""
 
-#: app/FormPlaceDelegate.qml:164
+#: app/FormPlaceDelegate.qml:168
 #, fuzzy, kde-format
 msgctxt "@action:button Start route guidance to location"
 msgid "Navigate"
 msgstr "Prejsť"
 
-#: app/FormPlaceDelegate.qml:172
+#: app/FormPlaceDelegate.qml:176
 #, fuzzy, kde-format
 #| msgid "Transport Data"
 msgctxt "@action:button"
 msgid "Public Transport Departures"
 msgstr "Údaje o doprave"
 
-#: app/FormPlaceDelegate.qml:185
+#: app/FormPlaceDelegate.qml:189
 #, kde-format
 msgctxt "@action:button"
 msgid "Share via Matrix"
@@ -1584,7 +1584,7 @@ msgstr "Krajina:"
 #: app/FormPlaceEditorDelegate.qml:201
 #, fuzzy, kde-format
 #| msgid "Boarding time:"
-msgid "Coordinate"
+msgid "Coordinates"
 msgstr "Čas nástupu:"
 
 #: app/FormPlaceEditorDelegate.qml:202
@@ -1598,20 +1598,21 @@ msgid "Pick…"
 msgstr ""
 
 #: app/FormPlaceEditorDelegate.qml:221
-#, kde-format
-msgid "Address to coordinate"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Boarding time:"
+msgid "Address to coordinates"
+msgstr "Čas nástupu:"
 
 #: app/FormPlaceEditorDelegate.qml:237
 #, fuzzy, kde-format
 #| msgid "Boarding time:"
-msgid "Coordinate to address"
+msgid "Coordinates to address"
 msgstr "Čas nástupu:"
 
 #: app/FormPlaceEditorDelegate.qml:247
 #, fuzzy, kde-format
 #| msgid "Boarding time:"
-msgid "Remove coordinate"
+msgid "Remove coordinates"
 msgstr "Čas nástupu:"
 
 #: app/FormPlatformDelegate.qml:46

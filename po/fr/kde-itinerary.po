@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-12 00:43+0000\n"
+"POT-Creation-Date: 2025-12-13 00:44+0000\n"
 "PO-Revision-Date: 2025-12-07 11:21+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -1384,48 +1384,48 @@ msgctxt "flight arrival"
 msgid "Arrival time"
 msgstr "Heure d'arrivée"
 
-#: app/FormPlaceDelegate.qml:84
+#: app/FormPlaceDelegate.qml:88
 #, kde-format
 msgid "Share Place"
 msgstr "Partager un emplacement"
 
 # unreviewed-context
-#: app/FormPlaceDelegate.qml:90
+#: app/FormPlaceDelegate.qml:94
 #, kde-format
 msgid "Do you really want to share %1 to the Matrix channel %2?"
 msgstr "Voulez-vous vraiment partager %1 sur le canal Matrix %2 ?"
 
-#: app/FormPlaceDelegate.qml:105
+#: app/FormPlaceDelegate.qml:109
 #, kde-format
 msgctxt "@action:button"
 msgid "Share"
 msgstr "Partage"
 
-#: app/FormPlaceDelegate.qml:144
+#: app/FormPlaceDelegate.qml:148
 #, kde-format
 msgctxt "@action:button"
 msgid "View Indoor Map"
 msgstr "Afficher la carte intérieure"
 
-#: app/FormPlaceDelegate.qml:151
+#: app/FormPlaceDelegate.qml:155
 #, kde-format
 msgctxt "@action:button"
 msgid "View on Map"
 msgstr "Afficher sur la carte"
 
-#: app/FormPlaceDelegate.qml:164
+#: app/FormPlaceDelegate.qml:168
 #, kde-format
 msgctxt "@action:button Start route guidance to location"
 msgid "Navigate"
 msgstr "Naviguer"
 
-#: app/FormPlaceDelegate.qml:172
+#: app/FormPlaceDelegate.qml:176
 #, kde-format
 msgctxt "@action:button"
 msgid "Public Transport Departures"
 msgstr "Départs des transports publics"
 
-#: app/FormPlaceDelegate.qml:185
+#: app/FormPlaceDelegate.qml:189
 #, kde-format
 msgctxt "@action:button"
 msgid "Share via Matrix"
@@ -1458,8 +1458,9 @@ msgid "Country"
 msgstr "Pays"
 
 #: app/FormPlaceEditorDelegate.qml:201
-#, kde-format
-msgid "Coordinate"
+#, fuzzy, kde-format
+#| msgid "Coordinate"
+msgid "Coordinates"
 msgstr "Coordonnée"
 
 #: app/FormPlaceEditorDelegate.qml:202
@@ -1473,18 +1474,21 @@ msgid "Pick…"
 msgstr "Sélectionner…"
 
 #: app/FormPlaceEditorDelegate.qml:221
-#, kde-format
-msgid "Address to coordinate"
+#, fuzzy, kde-format
+#| msgid "Address to coordinate"
+msgid "Address to coordinates"
 msgstr "Adresse vers coordonnée"
 
 #: app/FormPlaceEditorDelegate.qml:237
-#, kde-format
-msgid "Coordinate to address"
+#, fuzzy, kde-format
+#| msgid "Coordinate to address"
+msgid "Coordinates to address"
 msgstr "Coordonnée vers adresse "
 
 #: app/FormPlaceEditorDelegate.qml:247
-#, kde-format
-msgid "Remove coordinate"
+#, fuzzy, kde-format
+#| msgid "Remove coordinate"
+msgid "Remove coordinates"
 msgstr "Supprimer les coordonnées"
 
 #: app/FormPlatformDelegate.qml:46

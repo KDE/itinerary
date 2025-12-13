@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-12 00:43+0000\n"
-"PO-Revision-Date: 2025-12-06 11:34+0100\n"
+"POT-Creation-Date: 2025-12-13 00:44+0000\n"
+"PO-Revision-Date: 2025-12-12 09:10+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -1378,47 +1378,47 @@ msgctxt "flight arrival"
 msgid "Arrival time"
 msgstr "Hora d'arribada"
 
-#: app/FormPlaceDelegate.qml:84
+#: app/FormPlaceDelegate.qml:88
 #, kde-format
 msgid "Share Place"
 msgstr "Compartix el lloc"
 
-#: app/FormPlaceDelegate.qml:90
+#: app/FormPlaceDelegate.qml:94
 #, kde-format
 msgid "Do you really want to share %1 to the Matrix channel %2?"
 msgstr "Segur que voleu compartir %1 amb el canal de Matrix %2?"
 
-#: app/FormPlaceDelegate.qml:105
+#: app/FormPlaceDelegate.qml:109
 #, kde-format
 msgctxt "@action:button"
 msgid "Share"
 msgstr "Compartix"
 
-#: app/FormPlaceDelegate.qml:144
+#: app/FormPlaceDelegate.qml:148
 #, kde-format
 msgctxt "@action:button"
 msgid "View Indoor Map"
 msgstr "Visualitza el mapa d'interiors"
 
-#: app/FormPlaceDelegate.qml:151
+#: app/FormPlaceDelegate.qml:155
 #, kde-format
 msgctxt "@action:button"
 msgid "View on Map"
 msgstr "Visualitza en el mapa"
 
-#: app/FormPlaceDelegate.qml:164
+#: app/FormPlaceDelegate.qml:168
 #, kde-format
 msgctxt "@action:button Start route guidance to location"
 msgid "Navigate"
 msgstr "Navega"
 
-#: app/FormPlaceDelegate.qml:172
+#: app/FormPlaceDelegate.qml:176
 #, kde-format
 msgctxt "@action:button"
 msgid "Public Transport Departures"
 msgstr "Eixides del transport públic"
 
-#: app/FormPlaceDelegate.qml:185
+#: app/FormPlaceDelegate.qml:189
 #, kde-format
 msgctxt "@action:button"
 msgid "Share via Matrix"
@@ -1451,8 +1451,9 @@ msgid "Country"
 msgstr "País"
 
 #: app/FormPlaceEditorDelegate.qml:201
-#, kde-format
-msgid "Coordinate"
+#, fuzzy, kde-format
+#| msgid "Coordinate"
+msgid "Coordinates"
 msgstr "Coordenades"
 
 #: app/FormPlaceEditorDelegate.qml:202
@@ -1466,18 +1467,21 @@ msgid "Pick…"
 msgstr "Selecció…"
 
 #: app/FormPlaceEditorDelegate.qml:221
-#, kde-format
-msgid "Address to coordinate"
+#, fuzzy, kde-format
+#| msgid "Address to coordinate"
+msgid "Address to coordinates"
 msgstr "Coordenades de l'adreça"
 
 #: app/FormPlaceEditorDelegate.qml:237
-#, kde-format
-msgid "Coordinate to address"
+#, fuzzy, kde-format
+#| msgid "Coordinate to address"
+msgid "Coordinates to address"
 msgstr "Coordenades de l'adreça"
 
 #: app/FormPlaceEditorDelegate.qml:247
-#, kde-format
-msgid "Remove coordinate"
+#, fuzzy, kde-format
+#| msgid "Remove coordinate"
+msgid "Remove coordinates"
 msgstr "Elimina les coordenades"
 
 #: app/FormPlatformDelegate.qml:46
@@ -4401,8 +4405,7 @@ msgid "Departure"
 msgstr "Eixida"
 
 #: app/TrainPage.qml:175 app/TrainPage.qml:260
-#, fuzzy, kde-format
-#| msgid "Platform"
+#, kde-format
 msgctxt "train station platform"
 msgid "Platform"
 msgstr "Andana"
@@ -4854,8 +4857,7 @@ msgid "Arrival: %1"
 msgstr "Arribada: %1"
 
 #: app/VehicleLayoutPage.qml:115
-#, fuzzy, kde-format
-#| msgid "Platform: %1"
+#, kde-format
 msgctxt "train station platform"
 msgid "Platform: %1"
 msgstr "Andana: %1"

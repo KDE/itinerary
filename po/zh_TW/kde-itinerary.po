@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-12 00:43+0000\n"
+"POT-Creation-Date: 2025-12-13 00:44+0000\n"
 "PO-Revision-Date: 2024-11-28 16:26+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -1431,48 +1431,48 @@ msgctxt "flight arrival"
 msgid "Arrival time"
 msgstr "抵達時間"
 
-#: app/FormPlaceDelegate.qml:84
+#: app/FormPlaceDelegate.qml:88
 #, kde-format
 msgid "Share Place"
 msgstr "分享地點"
 
-#: app/FormPlaceDelegate.qml:90
+#: app/FormPlaceDelegate.qml:94
 #, kde-format
 msgid "Do you really want to share %1 to the Matrix channel %2?"
 msgstr "您確定要分享 %1 到 Matrix 頻道 %2 嗎？"
 
-#: app/FormPlaceDelegate.qml:105
+#: app/FormPlaceDelegate.qml:109
 #, fuzzy, kde-format
 #| msgid "Share"
 msgctxt "@action:button"
 msgid "Share"
 msgstr "分享"
 
-#: app/FormPlaceDelegate.qml:144
+#: app/FormPlaceDelegate.qml:148
 #, kde-format
 msgctxt "@action:button"
 msgid "View Indoor Map"
 msgstr "檢視室內地圖"
 
-#: app/FormPlaceDelegate.qml:151
+#: app/FormPlaceDelegate.qml:155
 #, kde-format
 msgctxt "@action:button"
 msgid "View on Map"
 msgstr "在地圖上檢視"
 
-#: app/FormPlaceDelegate.qml:164
+#: app/FormPlaceDelegate.qml:168
 #, kde-format
 msgctxt "@action:button Start route guidance to location"
 msgid "Navigate"
 msgstr "導航"
 
-#: app/FormPlaceDelegate.qml:172
+#: app/FormPlaceDelegate.qml:176
 #, kde-format
 msgctxt "@action:button"
 msgid "Public Transport Departures"
 msgstr "公共運輸出發"
 
-#: app/FormPlaceDelegate.qml:185
+#: app/FormPlaceDelegate.qml:189
 #, kde-format
 msgctxt "@action:button"
 msgid "Share via Matrix"
@@ -1505,8 +1505,9 @@ msgid "Country"
 msgstr "國家"
 
 #: app/FormPlaceEditorDelegate.qml:201
-#, kde-format
-msgid "Coordinate"
+#, fuzzy, kde-format
+#| msgid "Coordinate"
+msgid "Coordinates"
 msgstr "座標"
 
 #: app/FormPlaceEditorDelegate.qml:202
@@ -1520,19 +1521,21 @@ msgid "Pick…"
 msgstr ""
 
 #: app/FormPlaceEditorDelegate.qml:221
-#, kde-format
-msgid "Address to coordinate"
+#, fuzzy, kde-format
+#| msgid "Address to coordinate"
+msgid "Address to coordinates"
 msgstr "地址到座標"
 
 #: app/FormPlaceEditorDelegate.qml:237
-#, kde-format
-msgid "Coordinate to address"
+#, fuzzy, kde-format
+#| msgid "Coordinate to address"
+msgid "Coordinates to address"
 msgstr "座標到地址"
 
 #: app/FormPlaceEditorDelegate.qml:247
 #, fuzzy, kde-format
 #| msgid "Address to coordinate"
-msgid "Remove coordinate"
+msgid "Remove coordinates"
 msgstr "地址到座標"
 
 #: app/FormPlatformDelegate.qml:46

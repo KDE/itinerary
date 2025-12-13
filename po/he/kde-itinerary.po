@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-12 00:43+0000\n"
+"POT-Creation-Date: 2025-12-13 00:44+0000\n"
 "PO-Revision-Date: 2025-12-06 08:18+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -1380,47 +1380,47 @@ msgctxt "flight arrival"
 msgid "Arrival time"
 msgstr "זמן הגעה"
 
-#: app/FormPlaceDelegate.qml:84
+#: app/FormPlaceDelegate.qml:88
 #, kde-format
 msgid "Share Place"
 msgstr "שיתוף מקום"
 
-#: app/FormPlaceDelegate.qml:90
+#: app/FormPlaceDelegate.qml:94
 #, kde-format
 msgid "Do you really want to share %1 to the Matrix channel %2?"
 msgstr "לשתף את %1 עם ערוץ ה־Matrix‏ %2?"
 
-#: app/FormPlaceDelegate.qml:105
+#: app/FormPlaceDelegate.qml:109
 #, kde-format
 msgctxt "@action:button"
 msgid "Share"
 msgstr "שיתוף"
 
-#: app/FormPlaceDelegate.qml:144
+#: app/FormPlaceDelegate.qml:148
 #, kde-format
 msgctxt "@action:button"
 msgid "View Indoor Map"
 msgstr "הצגת מפה פנימית"
 
-#: app/FormPlaceDelegate.qml:151
+#: app/FormPlaceDelegate.qml:155
 #, kde-format
 msgctxt "@action:button"
 msgid "View on Map"
 msgstr "הצגה במפה"
 
-#: app/FormPlaceDelegate.qml:164
+#: app/FormPlaceDelegate.qml:168
 #, kde-format
 msgctxt "@action:button Start route guidance to location"
 msgid "Navigate"
 msgstr "ניווט"
 
-#: app/FormPlaceDelegate.qml:172
+#: app/FormPlaceDelegate.qml:176
 #, kde-format
 msgctxt "@action:button"
 msgid "Public Transport Departures"
 msgstr "יציאות של תחבורה ציבורית"
 
-#: app/FormPlaceDelegate.qml:185
+#: app/FormPlaceDelegate.qml:189
 #, kde-format
 msgctxt "@action:button"
 msgid "Share via Matrix"
@@ -1453,8 +1453,9 @@ msgid "Country"
 msgstr "מדינה"
 
 #: app/FormPlaceEditorDelegate.qml:201
-#, kde-format
-msgid "Coordinate"
+#, fuzzy, kde-format
+#| msgid "Coordinate"
+msgid "Coordinates"
 msgstr "נקודת ציון"
 
 #: app/FormPlaceEditorDelegate.qml:202
@@ -1468,18 +1469,21 @@ msgid "Pick…"
 msgstr "בחירה…"
 
 #: app/FormPlaceEditorDelegate.qml:221
-#, kde-format
-msgid "Address to coordinate"
+#, fuzzy, kde-format
+#| msgid "Address to coordinate"
+msgid "Address to coordinates"
 msgstr "כתובת לנק׳ ציון"
 
 #: app/FormPlaceEditorDelegate.qml:237
-#, kde-format
-msgid "Coordinate to address"
+#, fuzzy, kde-format
+#| msgid "Coordinate to address"
+msgid "Coordinates to address"
 msgstr "נק׳ ציון לכתובת"
 
 #: app/FormPlaceEditorDelegate.qml:247
-#, kde-format
-msgid "Remove coordinate"
+#, fuzzy, kde-format
+#| msgid "Remove coordinate"
+msgid "Remove coordinates"
 msgstr "הסרת נק׳ ציון"
 
 #: app/FormPlatformDelegate.qml:46
