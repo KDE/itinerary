@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-13 00:44+0000\n"
-"PO-Revision-Date: 2025-12-12 05:42+0100\n"
+"PO-Revision-Date: 2025-12-13 05:05+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -1448,10 +1448,9 @@ msgid "Country"
 msgstr "ქვეყანა"
 
 #: app/FormPlaceEditorDelegate.qml:201
-#, fuzzy, kde-format
-#| msgid "Coordinate"
+#, kde-format
 msgid "Coordinates"
-msgstr "კოორდინატი"
+msgstr "კოორდინატები"
 
 #: app/FormPlaceEditorDelegate.qml:202
 #, kde-format
@@ -1464,22 +1463,19 @@ msgid "Pick…"
 msgstr "აირჩიეთ…"
 
 #: app/FormPlaceEditorDelegate.qml:221
-#, fuzzy, kde-format
-#| msgid "Address to coordinate"
+#, kde-format
 msgid "Address to coordinates"
 msgstr "მისამართის კოორდინატებიდან პოვნა"
 
 #: app/FormPlaceEditorDelegate.qml:237
-#, fuzzy, kde-format
-#| msgid "Coordinate to address"
+#, kde-format
 msgid "Coordinates to address"
 msgstr "კოორდინატებიდან მისამართის პოვნა"
 
 #: app/FormPlaceEditorDelegate.qml:247
-#, fuzzy, kde-format
-#| msgid "Remove coordinate"
+#, kde-format
 msgid "Remove coordinates"
-msgstr "კოორდინატის წაშლა"
+msgstr "კოორდინატების წაშლა"
 
 #: app/FormPlatformDelegate.qml:46
 #, kde-format

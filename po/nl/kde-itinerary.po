@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-13 00:44+0000\n"
-"PO-Revision-Date: 2025-12-12 12:02+0100\n"
+"PO-Revision-Date: 2025-12-13 13:17+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -1451,10 +1451,9 @@ msgid "Country"
 msgstr "Land"
 
 #: app/FormPlaceEditorDelegate.qml:201
-#, fuzzy, kde-format
-#| msgid "Coordinate"
+#, kde-format
 msgid "Coordinates"
-msgstr "Coördinaat"
+msgstr "Coördinaten"
 
 #: app/FormPlaceEditorDelegate.qml:202
 #, kde-format
@@ -1467,22 +1466,19 @@ msgid "Pick…"
 msgstr "Kiezen…"
 
 #: app/FormPlaceEditorDelegate.qml:221
-#, fuzzy, kde-format
-#| msgid "Address to coordinate"
+#, kde-format
 msgid "Address to coordinates"
 msgstr "Adres naar coördinaat"
 
 #: app/FormPlaceEditorDelegate.qml:237
-#, fuzzy, kde-format
-#| msgid "Coordinate to address"
+#, kde-format
 msgid "Coordinates to address"
-msgstr "Coördinaat naar adres"
+msgstr "Coördinaten naar adres"
 
 #: app/FormPlaceEditorDelegate.qml:247
-#, fuzzy, kde-format
-#| msgid "Remove coordinate"
+#, kde-format
 msgid "Remove coordinates"
-msgstr "Coördinaat verwijderen"
+msgstr "Coördinaten verwijderen"
 
 #: app/FormPlatformDelegate.qml:46
 #, kde-format
