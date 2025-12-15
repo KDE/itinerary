@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-13 00:44+0000\n"
-"PO-Revision-Date: 2025-12-12 09:10+0100\n"
+"PO-Revision-Date: 2025-12-14 12:23+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -1451,8 +1451,7 @@ msgid "Country"
 msgstr "País"
 
 #: app/FormPlaceEditorDelegate.qml:201
-#, fuzzy, kde-format
-#| msgid "Coordinate"
+#, kde-format
 msgid "Coordinates"
 msgstr "Coordenades"
 
@@ -1467,20 +1466,17 @@ msgid "Pick…"
 msgstr "Selecció…"
 
 #: app/FormPlaceEditorDelegate.qml:221
-#, fuzzy, kde-format
-#| msgid "Address to coordinate"
+#, kde-format
 msgid "Address to coordinates"
-msgstr "Coordenades de l'adreça"
+msgstr "Adreça a coordenades"
 
 #: app/FormPlaceEditorDelegate.qml:237
-#, fuzzy, kde-format
-#| msgid "Coordinate to address"
+#, kde-format
 msgid "Coordinates to address"
-msgstr "Coordenades de l'adreça"
+msgstr "Coordenades a adreça"
 
 #: app/FormPlaceEditorDelegate.qml:247
-#, fuzzy, kde-format
-#| msgid "Remove coordinate"
+#, kde-format
 msgid "Remove coordinates"
 msgstr "Elimina les coordenades"
 
