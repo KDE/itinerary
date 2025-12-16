@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-13 00:44+0000\n"
-"PO-Revision-Date: 2025-12-06 08:18+0200\n"
+"PO-Revision-Date: 2025-12-14 10:13+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -1453,8 +1453,7 @@ msgid "Country"
 msgstr "מדינה"
 
 #: app/FormPlaceEditorDelegate.qml:201
-#, fuzzy, kde-format
-#| msgid "Coordinate"
+#, kde-format
 msgid "Coordinates"
 msgstr "נקודת ציון"
 
@@ -1469,20 +1468,17 @@ msgid "Pick…"
 msgstr "בחירה…"
 
 #: app/FormPlaceEditorDelegate.qml:221
-#, fuzzy, kde-format
-#| msgid "Address to coordinate"
+#, kde-format
 msgid "Address to coordinates"
 msgstr "כתובת לנק׳ ציון"
 
 #: app/FormPlaceEditorDelegate.qml:237
-#, fuzzy, kde-format
-#| msgid "Coordinate to address"
+#, kde-format
 msgid "Coordinates to address"
 msgstr "נק׳ ציון לכתובת"
 
 #: app/FormPlaceEditorDelegate.qml:247
-#, fuzzy, kde-format
-#| msgid "Remove coordinate"
+#, kde-format
 msgid "Remove coordinates"
 msgstr "הסרת נק׳ ציון"
 
@@ -4358,8 +4354,7 @@ msgid "Departure"
 msgstr "יציאה"
 
 #: app/TrainPage.qml:175 app/TrainPage.qml:260
-#, fuzzy, kde-format
-#| msgid "Platform"
+#, kde-format
 msgctxt "train station platform"
 msgid "Platform"
 msgstr "רציף"
@@ -4815,8 +4810,7 @@ msgid "Arrival: %1"
 msgstr "הגעה: %1"
 
 #: app/VehicleLayoutPage.qml:115
-#, fuzzy, kde-format
-#| msgid "Platform: %1"
+#, kde-format
 msgctxt "train station platform"
 msgid "Platform: %1"
 msgstr "רציף: %1"

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-13 00:44+0000\n"
-"PO-Revision-Date: 2025-12-07 11:21+0100\n"
+"PO-Revision-Date: 2025-12-15 09:32+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Accelerator-Marker: &\n"
 "X-Environment: kde\n"
-"X-Generator: Lokalize 25.11.90\n"
+"X-Generator: Lokalize 25.12.0\n"
 "X-Text-Markup: kde4\n"
 
 #, kde-format
@@ -1458,10 +1458,9 @@ msgid "Country"
 msgstr "Pays"
 
 #: app/FormPlaceEditorDelegate.qml:201
-#, fuzzy, kde-format
-#| msgid "Coordinate"
+#, kde-format
 msgid "Coordinates"
-msgstr "Coordonnée"
+msgstr "Coordonnées"
 
 #: app/FormPlaceEditorDelegate.qml:202
 #, kde-format
@@ -1474,20 +1473,17 @@ msgid "Pick…"
 msgstr "Sélectionner…"
 
 #: app/FormPlaceEditorDelegate.qml:221
-#, fuzzy, kde-format
-#| msgid "Address to coordinate"
+#, kde-format
 msgid "Address to coordinates"
-msgstr "Adresse vers coordonnée"
+msgstr "Adresse à transformer en coordonnées"
 
 #: app/FormPlaceEditorDelegate.qml:237
-#, fuzzy, kde-format
-#| msgid "Coordinate to address"
+#, kde-format
 msgid "Coordinates to address"
-msgstr "Coordonnée vers adresse "
+msgstr "Coordonnées à transformer en adresse"
 
 #: app/FormPlaceEditorDelegate.qml:247
-#, fuzzy, kde-format
-#| msgid "Remove coordinate"
+#, kde-format
 msgid "Remove coordinates"
 msgstr "Supprimer les coordonnées"
 
@@ -4434,8 +4430,7 @@ msgid "Departure"
 msgstr "Départ"
 
 #: app/TrainPage.qml:175 app/TrainPage.qml:260
-#, fuzzy, kde-format
-#| msgid "Platform"
+#, kde-format
 msgctxt "train station platform"
 msgid "Platform"
 msgstr "Quai"
@@ -4890,8 +4885,7 @@ msgid "Arrival: %1"
 msgstr "Arrivée : %1"
 
 #: app/VehicleLayoutPage.qml:115
-#, fuzzy, kde-format
-#| msgid "Platform: %1"
+#, kde-format
 msgctxt "train station platform"
 msgid "Platform: %1"
 msgstr "Quai : %1"
