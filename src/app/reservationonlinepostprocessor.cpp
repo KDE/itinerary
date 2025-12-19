@@ -232,7 +232,7 @@ ReservationOnlinePostprocessor::processTrainStation(KItinerary::TrainStation sta
         const auto langs = OSM::Languages::fromQLocale(QLocale());
         for (const auto &elem : job.result()) {
             if (elem.tagValue("railway") == "station") {
-                station.setName(QString::fromUtf8(elem.tagValue(langs, "name")));
+                station.setName(QString::fromUtf8(elem.tagValue(langs, "official_name", "uic_name", "name")));
                 auto addr = station.address();
                 if (addr.addressCountry().isEmpty()) {
                     addr.setAddressCountry(QString::fromUtf8(elem.tagValue("addr:country")));
