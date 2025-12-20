@@ -1455,8 +1455,7 @@ msgid "Country"
 msgstr "Země"
 
 #: app/FormPlaceEditorDelegate.qml:201
-#, fuzzy, kde-format
-#| msgid "Coordinate"
+#, kde-format
 msgid "Coordinates"
 msgstr "Souřadnice"
 
@@ -1477,15 +1476,14 @@ msgstr ""
 
 #: app/FormPlaceEditorDelegate.qml:237
 #, fuzzy, kde-format
-#| msgid "Coordinate"
+#| msgid "Coordinates"
 msgid "Coordinates to address"
 msgstr "Souřadnice"
 
 #: app/FormPlaceEditorDelegate.qml:247
-#, fuzzy, kde-format
-#| msgid "Coordinate"
+#, kde-format
 msgid "Remove coordinates"
-msgstr "Souřadnice"
+msgstr "Odstranit souřadnice"
 
 #: app/FormPlatformDelegate.qml:46
 #, kde-format
@@ -4355,10 +4353,11 @@ msgstr "Odjezd"
 
 #: app/TrainPage.qml:175 app/TrainPage.qml:260
 #, fuzzy, kde-format
+#| msgctxt "bus stop platform"
 #| msgid "Platform"
 msgctxt "train station platform"
 msgid "Platform"
-msgstr "Platforma"
+msgstr "Nástupiště"
 
 #: app/TrainPage.qml:197
 #, kde-format
@@ -4816,10 +4815,10 @@ msgstr "Přílet: %1"
 
 #: app/VehicleLayoutPage.qml:115
 #, fuzzy, kde-format
-#| msgid "Platform: %1"
+#| msgid "Platform:"
 msgctxt "train station platform"
 msgid "Platform: %1"
-msgstr "Nástupiště: %1"
+msgstr "Nástupiště:"
 
 #: app/VehicleLayoutPage.qml:124
 #, kde-format
