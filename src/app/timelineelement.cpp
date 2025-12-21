@@ -92,6 +92,9 @@ static bool operator<(TimelineElement::RangeType lhs, TimelineElement::RangeType
 bool TimelineElement::operator<(const TimelineElement &other) const
 {
     if (dt == other.dt) {
+        if (rangeType == other.rangeType && elementType == other.elementType) {
+            return endDateTime().isValid() && endDateTime() > other.endDateTime();
+        }
         if (rangeType == RangeEnd || other.rangeType == RangeEnd) {
             if (rangeType == RangeBegin || other.rangeType == RangeBegin) {
                 return rangeType < other.rangeType;
