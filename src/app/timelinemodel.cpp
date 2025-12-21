@@ -98,7 +98,7 @@ void TimelineModel::setReservationManager(ReservationManager *mgr)
     assert(mgr);
 
     m_resMgr = mgr;
-    connect(mgr, &ReservationManager::batchAdded, this, &TimelineModel::batchAdded);
+    // no need to monitor addtions, those come in via trip group changes anyway
     connect(mgr, &ReservationManager::batchChanged, this, &TimelineModel::batchChanged);
     connect(mgr, &ReservationManager::batchContentChanged, this, &TimelineModel::batchChanged);
     connect(mgr, &ReservationManager::batchRemoved, this, &TimelineModel::batchRemoved);
