@@ -11,6 +11,7 @@ target_sources(itinerary PRIVATE
     clipboard.cpp
     costaccumulator.cpp
     countrysubdivisionmodel.cpp
+    datetimehelper.cpp
     documentmanager.cpp
     documentsmodel.cpp
     downloadjob.cpp
