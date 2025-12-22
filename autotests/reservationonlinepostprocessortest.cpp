@@ -52,6 +52,7 @@ private Q_SLOTS:
         ctrl->commitImport(&importer);
         QCOMPARE(mgr.batches().size(), 1);
 
+        QVERIFY(batchChangeSpy.wait());
         QCOMPARE(batchChangeSpy.size(), 1);
         QCOMPARE(batchChangeSpy[0][0].toString(), mgr.batches()[0]);
 

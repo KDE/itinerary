@@ -19,6 +19,7 @@
 
 #include <QCoroNetwork>
 #include <QCoroSignal>
+#include <QCoroTimer>
 
 #include <QJsonArray>
 #include <QJsonDocument>
@@ -40,6 +41,8 @@
 namespace ranges = std::ranges;
 
 using namespace Qt::StringLiterals;
+
+constexpr inline auto NOMINATIM_RATE_LIMIT = std::chrono::milliseconds(500);
 
 ReservationOnlinePostprocessor::ReservationOnlinePostprocessor(
     ReservationManager *reservationMgr,
@@ -308,7 +311,15 @@ QCoro::Task<QJsonArray> ReservationOnlinePostprocessor::queryNominatim(
     QNetworkRequest req(url);
     req.setHeader(QNetworkRequest::KnownHeaders::UserAgentHeader,
                   ApplicationController::userAgent());
+    // ensure we don't exceed the Nominatim rate limit
+    const auto now = QDateTime::currentDateTimeUtc();
+    const auto queryTime = m_nextNominatimQuery;
+    m_nextNominatimQuery = std::max(now.addDuration(NOMINATIM_RATE_LIMIT), m_nextNominatimQuery.addDuration(NOMINATIM_RATE_LIMIT));
+    if (queryTime > now) {
+        co_await QCoro::sleepFor(std::chrono::milliseconds(now.msecsTo(queryTime)));
+    }
 
+    qCDebug(Log) << req.url();
     auto reply = co_await m_namFactory()->get(req);
     reply->deleteLater();
 

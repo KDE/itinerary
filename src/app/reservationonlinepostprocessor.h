@@ -8,6 +8,8 @@
 #include <KItinerary/Reservation>
 #include <KItinerary/TrainTrip>
 
+#include <QDateTime>
+
 #include <functional>
 
 class ReservationManager;
@@ -51,4 +53,5 @@ private:
     ReservationManager *m_resMgr = nullptr;
     Settings *m_settings = nullptr;
     std::function<QNetworkAccessManager *()> m_namFactory;
+    QDateTime m_nextNominatimQuery = QDateTime::currentDateTimeUtc();
 };
