@@ -275,10 +275,10 @@ private Q_SLOTS:
             QJsonDocument::fromJson(readFile(QLatin1StringView(SOURCE_DIR "/data/publictransport/randa-zrh-2-sections.json"))).object());
         controller.applyJourney(QVariant::fromValue(jny2), 2);
         QCOMPARE(mgr.batches().size(), batchCount);
-        QCOMPARE(addSpy.size(), 0);
+        QCOMPARE(addSpy.size(), 2);
         QCOMPARE(updateSpy.size(), 0);
-        QCOMPARE(contentSpy.size(), 2);
-        QCOMPARE(rmSpy.size(), 1);
+        QCOMPARE(contentSpy.size(), 0);
+        QCOMPARE(rmSpy.size(), 3);
         QCOMPARE(LiveData::listAll().size(), 2);
         QCOMPARE(tgMgr.tripGroups().size(), 1);
 

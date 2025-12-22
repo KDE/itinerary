@@ -518,14 +518,10 @@ void ReservationManager::updateBatch(const QString &resId, const QVariant &newRe
     if (oldBatchId == resId) {
         const auto it = std::find(m_batches.begin(), m_batches.end(), resId);
         if (it != m_batches.begin() && it != m_batches.end()) {
-            sortOrderInvalid |= SortUtil::startDateTime(reservation(*std::prev(it))) >= SortUtil::startDateTime(reservation(*it));
+            sortOrderInvalid |= ReservationBatch::isBefore(batch(*it), batch(*std::prev(it)));
         }
         if (it != m_batches.end() && std::distance(it, m_batches.end()) > 1) {
-            sortOrderInvalid |= SortUtil::startDateTime(reservation(*it)) >= SortUtil::startDateTime(reservation(*std::next(it)));
-        }
-        if (!sortOrderInvalid && m_batchToResMap.value(resId).reservationIds().size() == 1) {
-            Q_EMIT batchContentChanged(resId);
-            return;
+            sortOrderInvalid |= ReservationBatch::isBefore(batch(*std::next(it)), batch(*it));
         }
         if (sortOrderInvalid) { // otherwise the lower_bound search below doesn't work!
             removeFromBatch(resId, oldBatchId);
