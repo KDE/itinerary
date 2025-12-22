@@ -275,6 +275,7 @@ QCoro::Task<QJsonArray> ReservationOnlinePostprocessor::queryNominatim(
                   ApplicationController::userAgent());
 
     auto reply = co_await m_namFactory()->get(req);
+    reply->deleteLater();
 
     if (reply->error() != QNetworkReply::NoError) {
         qCWarning(Log) << "Error while resolving station using Nominatim:" << reply->errorString();
