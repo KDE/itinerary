@@ -309,8 +309,13 @@ QCoro::Task<QJsonArray> ReservationOnlinePostprocessor::queryNominatim(
     url.setQuery(query);
 
     QNetworkRequest req(url);
-    req.setHeader(QNetworkRequest::KnownHeaders::UserAgentHeader,
-                  ApplicationController::userAgent());
+#if QT_VERSION < QT_VERSION_CHECK(6, 10, 1)
+    // Qt's HTTP2 implementation is broken in older versions with multiple
+    // concurrent requests, those can get stuck indefinitely
+    req.setAttribute(QNetworkRequest::Http2AllowedAttribute, false);
+#endif
+    req.setHeader(QNetworkRequest::KnownHeaders::UserAgentHeader, ApplicationController::userAgent());
+
     // ensure we don't exceed the Nominatim rate limit
     const auto now = QDateTime::currentDateTimeUtc();
     const auto queryTime = m_nextNominatimQuery;
