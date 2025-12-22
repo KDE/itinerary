@@ -6,6 +6,7 @@
 
 #include "reservationmanager.h"
 
+#include "datetimehelper.h"
 #include "json.h"
 #include "jsonio.h"
 #include "logging.h"
@@ -533,7 +534,7 @@ void ReservationManager::updateBatch(const QString &resId, const QVariant &newRe
     const auto beginIt = std::lower_bound(m_batches.begin(), m_batches.end(), SortUtil::startDateTime(newRes), BatchComparator(this));
     for (auto it = beginIt; it != m_batches.end(); ++it) {
         const auto otherRes = (resId == (*it)) ? oldRes : reservation(*it);
-        if (SortUtil::startDateTime(otherRes) != SortUtil::startDateTime(newRes)) {
+        if (!DateTimeHelper::isSameDateTime(SortUtil::startDateTime(otherRes), SortUtil::startDateTime(newRes))) {
             break; // no hit
         }
         if (MergeUtil::isSameIncidence(newRes, otherRes)) {

@@ -4,6 +4,7 @@
 */
 
 #include "publictransportmatcher.h"
+#include "datetimehelper.h"
 #include "logging.h"
 #include "publictransport.h"
 #include "reservationhelper.h"
@@ -82,36 +83,15 @@ bool PublicTransportMatcher::isJourneyForReservation(const QVariant &res, const 
         && PublicTransportMatcher::isSameRoute(journey.route(), lineData.first, lineData.second);
 }
 
-/* Compare times without assuming times without a timezone are in the current time zone
- * (they might be local to the destination instead).
- */
-static bool isSameDateTime(const QDateTime &lhs, const QDateTime &rhs)
-{
-    if (lhs == rhs) {
-        return true;
-    }
-    if (lhs.timeSpec() == Qt::LocalTime && rhs.timeSpec() != Qt::LocalTime) {
-        QDateTime dt(rhs);
-        dt.setTimeZone(QTimeZone::LocalTime);
-        return lhs == dt;
-    }
-    if (lhs.timeSpec() != Qt::LocalTime && rhs.timeSpec() == Qt::LocalTime) {
-        QDateTime dt(lhs);
-        dt.setTimeZone(QTimeZone::LocalTime);
-        return dt == rhs;
-    }
-    return false;
-}
-
 static bool isSameDeparture(const QVariant &depLoc, const QDateTime &depTime, const KPublicTransport::Stopover &stop)
 {
-    return isSameDateTime(depTime, stop.scheduledDepartureTime())
+    return DateTimeHelper::isSameDateTime(depTime, stop.scheduledDepartureTime())
         && KPublicTransport::Location::isSame(PublicTransport::locationFromPlace(depLoc), stop.stopPoint());
 }
 
 static bool isSameArrival(const QVariant &arrLoc, const QDateTime &arrTime, const KPublicTransport::Stopover &stop)
 {
-    return isSameDateTime(arrTime, stop.scheduledArrivalTime())
+    return DateTimeHelper::isSameDateTime(arrTime, stop.scheduledArrivalTime())
         && KPublicTransport::Location::isSame(PublicTransport::locationFromPlace(arrLoc), stop.stopPoint());
 }
 
