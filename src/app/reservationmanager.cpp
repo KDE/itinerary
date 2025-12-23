@@ -56,7 +56,7 @@ QDateTime ReservationBatch::endDateTime() const
 bool ReservationBatch::isBefore(const ReservationBatch &lhs, const ReservationBatch &rhs)
 {
     if (lhs.m_startDt == rhs.m_startDt) {
-        return lhs.m_endDt < rhs.m_endDt;
+        return lhs.m_endDt > rhs.m_endDt;
     }
     return lhs.m_startDt < rhs.m_startDt;
 }
