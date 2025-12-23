@@ -28,6 +28,7 @@ TimelineDelegate {
             id: departureLayout
 
             progress: root.expanded ? sectionModel.departureProgress : root.controller.progress
+            isCanceled: root.controller.isCanceled
             reservationFor: root.reservationFor
             transportName: root.reservationFor.trainName + " " + root.reservationFor.trainNumber
             transportIcon: departure.route.line.mode == Line.Unknown ? ReservationHelper.defaultIconName(root.reservation) : departure.route.line.iconName
@@ -88,6 +89,7 @@ TimelineDelegate {
         TimelineDelegateIntermediateStopsView {
             sectionModel: sectionModel
             expanded: root.expanded
+            isCanceled: root.controller.isCanceled
         }
 
         TimelineDelegateArrivalLayout {
@@ -95,6 +97,7 @@ TimelineDelegate {
             arrival: root.arrival
             departure: root.departure
             arrivalName: reservationFor.arrivalStation.name
+            isCanceled: root.controller.isCanceled
             arrivalCountry: Localizer.formatCountryWithContext(reservationFor.arrivalStation.address,
                                                          reservationFor.departureStation.address,
                                                          Settings.homeCountryIsoCode)

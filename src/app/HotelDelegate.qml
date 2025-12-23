@@ -15,6 +15,7 @@ TimelineDelegate {
 
     contentItem: ColumnLayout {
         spacing: Kirigami.Units.smallSpacing
+        enabled: !root.controller.isCanceled
 
         RowLayout {
             spacing: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing

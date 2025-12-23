@@ -50,6 +50,7 @@ TimelineDelegate {
             reservationFor: root.reservationFor
             departure: root.departure
             progress: root.controller.progress
+            isCanceled: root.controller.isCanceled
             departureName: root.airportDisplayString(root.reservationFor.departureAirport)
             departureCountry: Localizer.formatCountryWithContext(root.reservationFor.departureAirport.address,
                                                      root.reservationFor.arrivalAirport.address,
@@ -89,6 +90,7 @@ TimelineDelegate {
             progress: root.controller.progress
             reservationFor: root.reservationFor
             arrivalName: root.airportDisplayString(root.reservationFor.arrivalAirport)
+            isCanceled: root.controller.isCanceled
             arrivalCountry: Localizer.formatCountryWithContext(root.reservationFor.arrivalAirport.address,
                                                      root.reservationFor.departureAirport.address,
                                                      Settings.homeCountryIsoCode)
