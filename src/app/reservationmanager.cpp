@@ -512,6 +512,17 @@ void ReservationManager::populateBatchTimes(ReservationBatch &batch) const
     }
 }
 
+// same as ReservationBatch::isBefore, but for use before batch times have been updated
+[[nodiscard]] static bool reservationIsBefore(const QVariant &lhs, const QVariant &rhs)
+{
+    const auto lhsStart = SortUtil::startDateTime(lhs);
+    const auto rhsStart = SortUtil::startDateTime(rhs);
+    if (lhsStart == rhsStart) {
+        return SortUtil::endDateTime(lhs) > SortUtil::endDateTime(rhs);
+    }
+    return lhsStart < rhsStart;
+}
+
 void ReservationManager::updateBatch(const QString &resId, const QVariant &newRes, const QVariant &oldRes)
 {
     bool sortOrderInvalid = false;
@@ -519,10 +530,10 @@ void ReservationManager::updateBatch(const QString &resId, const QVariant &newRe
     if (oldBatchId == resId) {
         const auto it = std::find(m_batches.begin(), m_batches.end(), resId);
         if (it != m_batches.begin() && it != m_batches.end()) {
-            sortOrderInvalid |= ReservationBatch::isBefore(batch(*it), batch(*std::prev(it)));
+            sortOrderInvalid |= reservationIsBefore(reservation(*it), reservation(*std::prev(it)));
         }
         if (it != m_batches.end() && std::distance(it, m_batches.end()) > 1) {
-            sortOrderInvalid |= ReservationBatch::isBefore(batch(*std::next(it)), batch(*it));
+            sortOrderInvalid |= reservationIsBefore(reservation(*std::next(it)), reservation(*it));
         }
         if (sortOrderInvalid) { // otherwise the lower_bound search below doesn't work!
             removeFromBatch(resId, oldBatchId);
