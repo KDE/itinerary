@@ -71,13 +71,18 @@ void TripGroupMapModel::recompute()
 
     const auto elems = m_tripGroupMgr->tripGroup(m_tripGroupId).elements();
     for (const auto &resId : elems) {
+        const auto res = m_tripGroupMgr->reservationManager()->reservation(resId);
+        if (ReservationHelper::isCancelled(res)) {
+            continue;
+
+        }
+
         // pre transfer
         if (const auto transfer = m_transferMgr->transfer(resId, Transfer::Before); transfer.state() == Transfer::Selected) {
             expandJourney(transfer.journey());
         }
 
         // reservation
-        const auto res = m_tripGroupMgr->reservationManager()->reservation(resId);
         if (LocationUtil::isLocationChange(res)) {
             const auto jny = m_liveDataMgr->journey(resId);
             if (jny.mode() != JourneySection::Invalid) {
