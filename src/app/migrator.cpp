@@ -35,6 +35,10 @@ void Migrator::run()
         case 1:
             moveLiveData();
             ++version;
+            [[fallthrough]];
+        case 2:
+            recomputeBatchTimes();
+            ++version;
             // add future updates here with [[fallthrough]]
             break;
         default:
@@ -115,4 +119,24 @@ void Migrator::moveLiveData()
 
     // delete all old files
     QDir(legacyBasePath).removeRecursively();
+}
+
+// force a batch time recompuation, as we used the wrong end time initially
+void Migrator::recomputeBatchTimes()
+{
+    ReservationManager resMgr;
+
+    for (QDirIterator it(ReservationManager::batchesBasePath(), QDir::NoDotAndDotDot | QDir::Files); it.hasNext();) {
+        it.next();
+        QFile batchFile(it.filePath());
+        if (!batchFile.open(QFile::ReadOnly)) {
+            qCWarning(Log) << "Failed to open batch file" << it.filePath() << batchFile.errorString();
+            continue;
+        }
+
+        const auto batchId = it.fileInfo().baseName();
+        auto batch = ReservationBatch::fromJson(JsonIO::read(batchFile.readAll()).toObject());
+        resMgr.populateBatchTimes(batch);
+        ReservationManager::storeBatch(batchId, batch);
+    }
 }

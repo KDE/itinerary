@@ -118,6 +118,12 @@ public:
      */
     static QString reservationsBasePath();
     static QString batchesBasePath();
+    static void storeBatch(const QString &batchId, const ReservationBatch &batch);
+
+    /** Recompute batch times.
+     *  For internal use only, do not use directly, apart from special cases like Migrator.
+     */
+    void populateBatchTimes(ReservationBatch &batch) const;
 
 Q_SIGNALS:
     void reservationAdded(const QString &id);
@@ -157,8 +163,6 @@ private:
 
     void loadBatches();
     void initialBatchCreate();
-    void populateBatchTimes(ReservationBatch &batch) const;
-    static void storeBatch(const QString &batchId, const ReservationBatch &batch);
     static void storeRemoveBatch(const QString &batchId);
 
     void updateBatch(const QString &resId, const QVariant &newRes, const QVariant &oldRes);

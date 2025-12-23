@@ -505,7 +505,7 @@ void ReservationManager::populateBatchTimes(ReservationBatch &batch) const
 {
     for (const auto &resId : batch.reservationIds()) {
         batch.m_startDt = SortUtil::startDateTime(reservation(resId));
-        batch.m_endDt = SortUtil::startDateTime(reservation(resId));
+        batch.m_endDt = SortUtil::endDateTime(reservation(resId));
         if (batch.m_startDt.isValid() && batch.m_endDt.isValid()) {
             break;
         }
