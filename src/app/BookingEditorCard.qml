@@ -27,8 +27,8 @@ ColumnLayout {
             underName = Factory.makePerson();
         underName.name = underNameEdit.text;
         item.underName = underName;
-        console.log(item.underName, item.underName.name);
-        priceEdit.apply(item)
+        priceEdit.apply(item);
+        item.reservationStatus = canceledEdit.checked ? 1 : 0; // ReservationCancelled vs ReservationConfirmed, we just can't get to the enums here...'
     }
 
     spacing: 0
@@ -57,6 +57,15 @@ ColumnLayout {
         FormPriceEditDelegate {
             id: priceEdit
             item: root.item
+        }
+
+        FormCard.FormDelegateSeparator {}
+
+        FormCard.FormCheckDelegate {
+            id: canceledEdit
+            text: i18nc("canceled reservation", "Canceled")
+            description: i18nc("cancled reservation", "Booking has been canceled.")
+            checked: root.item.reservationStatus === 1 // ReservationCancelled
         }
     }
 }
