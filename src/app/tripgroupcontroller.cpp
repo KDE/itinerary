@@ -8,6 +8,7 @@
 #include "livedatamanager.h"
 #include "locationhelper.h"
 #include "locationinformation.h"
+#include "reservationhelper.h"
 #include "reservationmanager.h"
 #include "statisticsmodel.h"
 #include "tripgroup.h"
@@ -252,6 +253,10 @@ double TripGroupController::totalDistance() const
     const auto elems = m_tripGroupModel->tripGroupManager()->tripGroup(m_tgId).elements();
     for (const auto &resId : elems) {
         const auto res = m_tripGroupModel->tripGroupManager()->reservationManager()->reservation(resId);
+        if (ReservationHelper::isCancelled(res)) {
+            continue;
+        }
+
         if (LocationUtil::isLocationChange(res)) {
             if (const auto jny = m_tranferMgr->liveDataManager()->journey(resId); jny.mode() != KPublicTransport::JourneySection::Invalid) {
                 dist += jny.distance();
@@ -280,6 +285,10 @@ double TripGroupController::totalCO2Emission() const
     const auto elems = m_tripGroupModel->tripGroupManager()->tripGroup(m_tgId).elements();
     for (const auto &resId : elems) {
         const auto res = m_tripGroupModel->tripGroupManager()->reservationManager()->reservation(resId);
+        if (ReservationHelper::isCancelled(res)) {
+            continue;
+        }
+
         if (LocationUtil::isLocationChange(res)) {
             if (const auto jny = m_tranferMgr->liveDataManager()->journey(resId); jny.mode() != KPublicTransport::JourneySection::Invalid) {
                 co2 += std::max(0, jny.co2Emission());
