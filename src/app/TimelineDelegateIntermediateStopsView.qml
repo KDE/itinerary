@@ -17,6 +17,8 @@ Item {
 
     /** The JourneySection displayed here. */
     property JourneySectionModel sectionModel
+    /** Whether the overall reservation is canceled and shoould be rendered accordingly. */
+    property bool isCanceled: false
     /** Whether intermediate stops are expanded. */
     property bool expanded: false
 
@@ -40,7 +42,7 @@ Item {
         width: Kirigami.Units.smallSpacing * 4
         x: Math.round((Kirigami.Units.iconSizes.smallMedium - width) / 2)
 
-        color: root.sectionModel.journeySection.route.line.hasColor ? root.sectionModel.journeySection.route.line.color : Kirigami.Theme.textColor
+        color: root.isCanceled ? Kirigami.Theme.disabledTextColor : root.sectionModel.journeySection.route.line.hasColor ? root.sectionModel.journeySection.route.line.color : Kirigami.Theme.textColor
     }
 
     Repeater {
@@ -49,6 +51,7 @@ Item {
         model: root.expanded ? root.sectionModel : []
         delegate: RowLayout {
             id: stopDelegate
+            enabled: !root.isCanceled
 
             required property KPublicTransport.stopover stopover
             required property real progress

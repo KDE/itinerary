@@ -20,18 +20,20 @@ RowLayout {
     property string transportName
     property string transportIcon
     property real progress
+    property bool isCanceled: false
     required property var reservationFor
 
     default property alias _content: innerLayout.children
 
     spacing: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
+    enabled: !root.isCanceled
 
     Layout.fillWidth: true
 
     JourneySectionStopDelegateLineSegment {
         Layout.minimumHeight: implicitWidth
         Layout.fillHeight: true
-        lineColor: root.departure.route.line.hasColor ? root.departure.route.line.color : Kirigami.Theme.textColor
+        lineColor: root.isCanceled ? Kirigami.Theme.disabledTextColor : root.departure.route.line.hasColor ? root.departure.route.line.color : Kirigami.Theme.textColor
         isDeparture: true
         progress: root.progress
     }

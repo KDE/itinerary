@@ -30,6 +30,7 @@ TimelineDelegate {
             reservationFor: root.reservationFor
             departure: root.departure
             progress: root.controller.progress
+            isCanceled: root.controller.isCanceled
             departureName: reservationFor.departureBoatTerminal.name
             departureCountry: Localizer.formatCountryWithContext(reservationFor.departureBoatTerminal.address,
 
@@ -48,6 +49,7 @@ TimelineDelegate {
         TimelineDelegateIntermediateStopsView {
             sectionModel: sectionModel
             expanded: root.expanded
+            isCanceled: root.controller.isCanceled
         }
 
         TimelineDelegateArrivalLayout {
@@ -55,6 +57,7 @@ TimelineDelegate {
             progress: root.controller.progress
             reservationFor: root.reservationFor
             arrivalName: reservationFor.arrivalBoatTerminal.name
+            isCanceled: root.controller.isCanceled
             arrivalCountry: Localizer.formatCountryWithContext(reservationFor.arrivalBoatTerminal.address,
                                                      reservationFor.departureBoatTerminal.address,
                                                      Settings.homeCountryIsoCode)

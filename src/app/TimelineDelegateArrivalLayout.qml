@@ -19,16 +19,18 @@ RowLayout {
     property bool arrivalPlatformChanged
     required property string arrivalCountry
     property real progress
+    property bool isCanceled: false
     required property var reservationFor
 
     spacing: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
+    enabled: !root.isCanceled
 
     Layout.fillWidth: true
 
     JourneySectionStopDelegateLineSegment {
         Layout.alignment: Qt.AlignTop
         implicitHeight: arrivalRow.height + Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
-        lineColor: root.departure.route.line.hasColor ? root.departure.route.line.color : Kirigami.Theme.textColor
+        lineColor: root.isCanceled ? Kirigami.Theme.disabledTextColor : root.departure.route.line.hasColor ? root.departure.route.line.color : Kirigami.Theme.textColor
         progress: root.progress
         isArrival: true
     }

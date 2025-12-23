@@ -30,6 +30,7 @@ TimelineDelegate {
             id: departureLayout
 
             progress: root.expanded ? sectionModel.departureProgress : root.controller.progress
+            isCanceled: root.controller.isCanceled
             reservationFor: root.reservationFor
             transportName: if (reservationFor.busName || reservationFor.busNumber ) {
                 return reservationFor.busName + " " + reservationFor.busNumber
@@ -80,12 +81,14 @@ TimelineDelegate {
         TimelineDelegateIntermediateStopsView {
             sectionModel: sectionModel
             expanded: root.expanded
+            isCanceled: root.controller.isCanceled
         }
 
         TimelineDelegateArrivalLayout {
             reservationFor: root.reservationFor
             arrival: root.arrival
             arrivalName: reservationFor.arrivalBusStop.name
+            isCanceled: root.controller.isCanceled
             arrivalCountry: Localizer.formatCountryWithContext(reservationFor.arrivalBusStop.address,
                                                                  reservationFor.departureBusStop.address,
                                                                  Settings.homeCountryIsoCode)
