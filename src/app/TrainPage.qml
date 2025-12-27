@@ -62,18 +62,21 @@ DetailsPage {
         KPublicTransport.TransportIcon {
             id: transportIcon
             Layout.alignment: Qt.AlignHCenter
+            Layout.fillWidth: true
             // A bit of extra spacing since the logos often have no padding.
             Layout.bottomMargin: root.departure.route.line.hasLogo || root.departure.route.line.hasModeLogo ? Kirigami.Units.largeSpacing : 0
             iconHeight: Kirigami.Units.iconSizes.medium
-            source: root.departure.route.line.mode === KPublicTransport.Line.Unknown ? ReservationHelper.defaultIconName(root.reservation) : departure.route.line.iconName
+            source: root.departure.route.line.mode === KPublicTransport.Line.Unknown ? ReservationHelper.defaultIconName(root.reservation) : root.departure.route.line.iconName
+            enabled: !root.controller.isCanceled
         }
 
         Kirigami.Heading {
-            text: reservationFor.trainName + " " + reservationFor.trainNumber
+            text: root.reservationFor.trainName + " " + root.reservationFor.trainNumber
             wrapMode: Text.WordWrap
             horizontalAlignment: Text.AlignHCenter
             textFormat: Text.PlainText
-            visible: !departure.route.line.hasLogo && (reservationFor.trainName || reservationFor.trainNumber)
+            visible: !root.departure.route.line.hasLogo && (root.reservationFor.trainName || root.reservationFor.trainNumber)
+            enabled: !root.controller.isCanceled
 
             leftPadding: Kirigami.Units.smallSpacing
             rightPadding: Kirigami.Units.smallSpacing
@@ -83,12 +86,13 @@ DetailsPage {
         }
 
         Kirigami.Heading {
-            text: i18n("%1 to %2", reservationFor.departureStation.name, reservationFor.arrivalStation.name)
+            text: i18n("%1 to %2", root.reservationFor.departureStation.name, root.reservationFor.arrivalStation.name)
 
             level: 2
             wrapMode: Text.WordWrap
             horizontalAlignment: Text.AlignHCenter
             textFormat: Text.PlainText
+            enabled: !root.controller.isCanceled
 
             leftPadding: Kirigami.Units.smallSpacing
             rightPadding: Kirigami.Units.smallSpacing
