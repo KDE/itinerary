@@ -7,6 +7,8 @@ import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
+import org.kde.kpublictransport as KPublicTransport
+import org.kde.kpublictransport.ui as KPublicTransport
 import org.kde.kitinerary
 import org.kde.itinerary
 
@@ -15,7 +17,7 @@ DetailsPage {
     title: i18n("Flight")
     property var resIds: ReservationManager.reservationsForBatch(root.batchId)
 
-    function airportDisplayString(airport) {
+    function airportDisplayString(airport): string {
         if (airport.name && airport.iataCode) {
             return airport.name + " (" + airport.iataCode + ")";
         } else {
@@ -36,9 +38,47 @@ DetailsPage {
     ColumnLayout {
         spacing: 0
 
-        CardPageTitle {
-            emojiIcon: "✈️"
-            text: reservationFor.airline.iataCode + " " + reservationFor.flightNumber
+        KPublicTransport.TransportIcon {
+            id: transportIcon
+            Layout.alignment: Qt.AlignHCenter
+            Layout.fillWidth: true
+            // A bit of extra spacing since the logos often have no padding.
+            Layout.bottomMargin: root.departure.route.line.hasLogo || root.departure.route.line.hasModeLogo ? Kirigami.Units.largeSpacing : 0
+            iconHeight: Kirigami.Units.iconSizes.medium
+            source: root.departure.route.line.mode === KPublicTransport.Line.Unknown ? ReservationHelper.defaultIconName(root.reservation) : root.departure.route.line.iconName
+            enabled: !root.controller.isCanceled
+        }
+
+        Kirigami.Heading {
+            text: root.reservationFor.airline.iataCode + " " + root.reservationFor.flightNumber
+
+            wrapMode: Text.WordWrap
+            horizontalAlignment: Text.AlignHCenter
+            textFormat: Text.PlainText
+            visible: !root.departure.route.line.hasLogo && (root.reservationFor.airline.iataCode|| root.reservationFor.flightNumber)
+            enabled: !root.controller.isCanceled
+
+            leftPadding: Kirigami.Units.smallSpacing
+            rightPadding: Kirigami.Units.smallSpacing
+            bottomPadding: Kirigami.Units.smallSpacing
+
+            Layout.fillWidth: true
+        }
+
+        Kirigami.Heading {
+            text: i18n("%1 to %2", root.airportDisplayString(root.reservationFor.departureAirport), root.airportDisplayString(root.reservationFor.arrivalAirport))
+
+            level: 2
+            wrapMode: Text.WordWrap
+            horizontalAlignment: Text.AlignHCenter
+            textFormat: Text.PlainText
+            enabled: !root.controller.isCanceled
+
+            leftPadding: Kirigami.Units.smallSpacing
+            rightPadding: Kirigami.Units.smallSpacing
+            bottomPadding: Kirigami.Units.smallSpacing
+
+            Layout.fillWidth: true
         }
 
         FormCard.FormCard {
