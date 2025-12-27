@@ -20,7 +20,8 @@ DetailsPage {
 
         CardPageTitle {
             emojiIcon: "🍽️"
-            text: reservationFor.name
+            text: root.reservationFor.name
+            enabled: !root.controller.isCanceled
 
             Layout.fillWidth: true
         }
