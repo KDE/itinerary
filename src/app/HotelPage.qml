@@ -25,6 +25,7 @@ DetailsPage {
         CardPageTitle {
             emojiIcon: "🏨"
             text: root.reservationFor.name
+            enabled: !root.controller.isCanceled
         }
 
         FormCard.FormCard {
