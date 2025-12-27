@@ -13,7 +13,7 @@
 #include <QHash>
 #include <QObject>
 #include <QPointer>
-#include <QTimer>
+#include <QChronoTimer>
 
 #include <vector>
 
@@ -117,11 +117,11 @@ private:
     void pollForUpdates(bool force);
     void pollBatchForUpdates(const QString &batchId, bool force);
     void clearArrived();
-    int nextPollTime() const;
-    int nextPollTimeForReservation(const QString &resId) const;
+    std::chrono::seconds nextPollTime() const;
+    std::chrono::seconds nextPollTimeForReservation(const QString &resId) const;
 
     /** Poll cooldown in msecs (ie. delay the next poll on errors). */
-    int pollCooldown(const QString &redId) const;
+    std::chrono::seconds pollCooldown(const QString &redId) const;
 
     /** Last time we queried any kind of departure information for this reservation batch. */
     [[nodiscard]] QDateTime lastPollTime(const QString &batchId, const QVariant &res) const;
@@ -139,7 +139,7 @@ private:
     bool m_showNotificationsOnLockScreen = false;
     bool m_downloadAssets = false;
 
-    QTimer m_pollTimer;
+    QChronoTimer m_pollTimer;
     KPublicTransport::OnboardStatus *m_onboardStatus = nullptr;
 
     // date/time overrides for unit testing
