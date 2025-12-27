@@ -67,7 +67,7 @@ LiveDataManager::LiveDataManager(QObject *parent)
     });
 
     m_pollTimer.setSingleShot(true);
-    connect(&m_pollTimer, &QTimer::timeout, this, &LiveDataManager::poll);
+    connect(&m_pollTimer, &QChronoTimer::timeout, this, &LiveDataManager::poll);
 
     connect(m_onboardStatus, &KPublicTransport::OnboardStatus::journeyChanged, [this]() {
         if (!m_onboardStatus->hasJourney()) {
@@ -638,7 +638,7 @@ void LiveDataManager::poll()
     qCDebug(Log);
     pollForUpdates(false);
 
-    m_pollTimer.setInterval(std::max(nextPollTime(), 60 * 1000)); // we pool everything that happens within a minute here
+    m_pollTimer.setInterval(std::max(nextPollTime(), std::chrono::seconds(60))); // we pool everything that happens within a minute here
     m_pollTimer.start();
 }
 
@@ -653,7 +653,7 @@ void LiveDataManager::pollForUpdates(bool force)
 
 void LiveDataManager::pollBatchForUpdates(const QString &batchId, bool force)
 {
-    if (!force && nextPollTimeForReservation(batchId) > 60 * 1000) {
+    if (!force && nextPollTimeForReservation(batchId) > std::chrono::seconds(60)) {
         // data is still "fresh" according to the poll policy
         return;
     }
@@ -701,13 +701,13 @@ void LiveDataManager::clearArrived()
     }
 }
 
-int LiveDataManager::nextPollTime() const
+std::chrono::seconds LiveDataManager::nextPollTime() const
 {
-    int t = std::numeric_limits<int>::max();
+    auto t = std::chrono::seconds(std::numeric_limits<int>::max());
     for (const auto &resId : m_reservations) {
         t = std::min(t, nextPollTimeForReservation(resId));
     }
-    qCDebug(Log) << "next auto-update in" << (t / 1000) << "secs";
+    qCDebug(Log) << "next auto-update in" << t << "secs";
     return t;
 }
 
@@ -723,7 +723,7 @@ struct {
     {std::numeric_limits<int>::max(), MAX_POLL_INTERVAL}, // anything before we should at least do one poll to get full details right away
 };
 
-int LiveDataManager::nextPollTimeForReservation(const QString &resId) const
+std::chrono::seconds LiveDataManager::nextPollTimeForReservation(const QString &resId) const
 {
     const auto res = m_resMgr->reservation(resId);
 
@@ -733,14 +733,14 @@ int LiveDataManager::nextPollTimeForReservation(const QString &resId) const
         dist = now.secsTo(arrivalTime(resId, res));
     }
     if (dist < 0) {
-        return std::numeric_limits<int>::max();
+        return std::chrono::seconds(std::numeric_limits<int>::max());
     }
 
     const auto it = std::lower_bound(std::begin(pollIntervalTable), std::end(pollIntervalTable), dist, [](const auto &lhs, const auto rhs) {
         return lhs.distance < rhs;
     });
     if (it == std::end(pollIntervalTable)) {
-        return std::numeric_limits<int>::max();
+        return std::chrono::seconds(std::numeric_limits<int>::max());
     }
 
     // check last poll time for this reservation
@@ -748,7 +748,7 @@ int LiveDataManager::nextPollTimeForReservation(const QString &resId) const
     const auto lastRelevantPoll = lastPollTime(resId, res);
     const int lastPollDist = (!lastRelevantPoll.isValid() || lastRelevantPoll > now) ? MAX_POLL_INTERVAL // no poll yet == long time ago
                                                                                      : lastRelevantPoll.secsTo(now);
-    return std::max((it->pollInterval - lastPollDist) * 1000, pollCooldown(resId)); // we need msecs
+    return std::max(std::chrono::seconds(it->pollInterval - lastPollDist), pollCooldown(resId)); // we need msecs
 }
 
 QDateTime LiveDataManager::lastPollTime(const QString &batchId, const QVariant &res) const
@@ -774,13 +774,13 @@ QDateTime LiveDataManager::lastPollTime(const QString &batchId, const QVariant &
     return dt;
 }
 
-int LiveDataManager::pollCooldown(const QString &resId) const
+std::chrono::seconds LiveDataManager::pollCooldown(const QString &resId) const
 {
     const auto lastPollTime = m_lastPollAttempt.value(resId);
     if (!lastPollTime.isValid()) {
-        return 0;
+        return std::chrono::seconds(0);
     }
-    return std::clamp<int>(POLL_COOLDOWN_ON_ERROR - lastPollTime.secsTo(now()), 0, POLL_COOLDOWN_ON_ERROR) * 1000;
+    return std::chrono::seconds(std::clamp<int>(POLL_COOLDOWN_ON_ERROR - lastPollTime.secsTo(now()), 0, POLL_COOLDOWN_ON_ERROR));
 }
 
 void LiveDataManager::pkPassUpdated(const QString &passId, const QStringList &changes)

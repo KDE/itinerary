@@ -106,11 +106,11 @@ private Q_SLOTS:
         QVERIFY(!ldm.hasDeparted(trainLeg2, resMgr.reservation(trainLeg2)));
         QVERIFY(!ldm.hasArrived(trainLeg2, resMgr.reservation(trainLeg2)));
 
-        QCOMPARE(ldm.nextPollTimeForReservation(flight), std::numeric_limits<int>::max());
-        QCOMPARE(ldm.nextPollTimeForReservation(trainLeg1), 0); // no current data available, so we want to poll ASAP
-        QCOMPARE(ldm.nextPollTimeForReservation(trainLeg2), 0);
+        QCOMPARE(ldm.nextPollTimeForReservation(flight), std::chrono::seconds(std::numeric_limits<int>::max()));
+        QCOMPARE(ldm.nextPollTimeForReservation(trainLeg1), std::chrono::seconds(0)); // no current data available, so we want to poll ASAP
+        QCOMPARE(ldm.nextPollTimeForReservation(trainLeg2), std::chrono::seconds(0));
         QTest::qWait(0);
-        QCOMPARE(ldm.nextPollTime(), 0);
+        QCOMPARE(ldm.nextPollTime(), std::chrono::seconds(0));
         QCOMPARE(resMgr.reservation(trainLeg1).value<TrainReservation>().reservationFor().value<TrainTrip>().arrivalStation().address().addressLocality(), QString());
 
         const auto leg1Jny = KPublicTransport::JourneySection::fromJson(QJsonDocument::fromJson(Test::readFile(s(SOURCE_DIR "/data/livedata/randa2017-leg1-journey.json"))).object());
@@ -118,7 +118,7 @@ private Q_SLOTS:
         QCOMPARE(journeyUpdateSpy.size(), 1);
         QCOMPARE(journeyUpdateSpy.at(0).at(0).toString(), trainLeg1);
         QCOMPARE(ldm.arrival(trainLeg1).arrivalDelay(), 2);
-        QCOMPARE(ldm.nextPollTimeForReservation(trainLeg1), 15 * 60 * 1000); // 15 min in msecs
+        QCOMPARE(ldm.nextPollTimeForReservation(trainLeg1), std::chrono::minutes(15)); // 15 min in msecs
         // reservation was updated with additional location data
         QCOMPARE(resChangeSpy.size(), 1);
         QCOMPARE(resChangeSpy.at(0).at(0).toString(), trainLeg1);
@@ -227,7 +227,7 @@ private Q_SLOTS:
         // failed lookups are recorded to avoid a polling loop
         ldm.tripQueryFailed(trainLeg2);
         QCOMPARE(ldm.departure(trainLeg2).stopPoint().isEmpty(), true);
-        QCOMPARE(ldm.nextPollTimeForReservation(trainLeg2), 15 * 60 * 1000);
+        QCOMPARE(ldm.nextPollTimeForReservation(trainLeg2), std::chrono::minutes(15));
     }
 
     void testPkPassUpdate()
@@ -259,7 +259,7 @@ private Q_SLOTS:
         QCOMPARE(resMgr.batches().size(), 1);
         const auto resId = resMgr.batches()[0];
         QCOMPARE(ldm.isRelevant(resId), true);
-        QCOMPARE(ldm.nextPollTimeForReservation(resId), 0);
+        QCOMPARE(ldm.nextPollTimeForReservation(resId), std::chrono::seconds(0));
         QTest::qWait(1);
 
         QCOMPARE(pkPassMgr.passes().size(), 1);
@@ -270,17 +270,17 @@ private Q_SLOTS:
         QCOMPARE(m_nam.requests.size(), 1);
         QTest::qWait(0); // download failed
         QCOMPARE(passUpdateSpy.size(), 0);
-        QVERIFY(ldm.nextPollTimeForReservation(resId) > 0);
-        QVERIFY(ldm.nextPollTimeForReservation(resId) <= 30000);
-        QVERIFY(ldm.pollCooldown(resId) > 0);
-        QVERIFY(ldm.pollCooldown(resId) <= 30000);
-        QVERIFY(ldm.nextPollTime() > 0);
-        QVERIFY(ldm.nextPollTime() <= 30000);
+        QCOMPARE_GT(ldm.nextPollTimeForReservation(resId), std::chrono::seconds(0));
+        QCOMPARE_LE(ldm.nextPollTimeForReservation(resId), std::chrono::seconds(30));
+        QCOMPARE_GT(ldm.pollCooldown(resId), std::chrono::seconds(0));
+        QCOMPARE_LE(ldm.pollCooldown(resId), std::chrono::seconds(30));
+        QCOMPARE_GT(ldm.nextPollTime(), std::chrono::seconds(0));
+        QCOMPARE_LE(ldm.nextPollTime(), std::chrono::seconds(30));
 
         ldm.m_unitTestTime = QDateTime({2023, 7, 14}, {15, 5, 0}, QTimeZone("Europe/Berlin"));
-        QCOMPARE(ldm.nextPollTimeForReservation(resId), 0);
-        QCOMPARE(ldm.pollCooldown(resId), 0);
-        QCOMPARE(ldm.nextPollTime(), 0);
+        QCOMPARE(ldm.nextPollTimeForReservation(resId), std::chrono::seconds(0));
+        QCOMPARE(ldm.pollCooldown(resId), std::chrono::seconds(0));
+        QCOMPARE(ldm.nextPollTime(), std::chrono::seconds(0));
     }
 
 private:
