@@ -23,6 +23,9 @@ public:
     [[nodiscard]]
     QString accountName() const override;
 
+    [[nodiscard]]
+    QString accountId() const override;
+
     bool handleCallback(const QUrl &url) override;
 
     void startOAuth() override;

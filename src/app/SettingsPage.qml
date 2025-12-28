@@ -287,7 +287,7 @@ FormCard.FormCardPage {
             model: AccountModel
 
             FormCard.FormTextDelegate {
-                id: accoutDelegate
+                id: accountDelegate
 
                 required property string name
                 required property string accountName
@@ -298,9 +298,11 @@ FormCard.FormCardPage {
                 description: accountName.length > 0 ? accountName : i18nc("@info:placeholder", "Loading")
 
                 leadingPadding: 0
-		icon.name: Qt.resolvedUrl(iconName)
+                icon.name: Qt.resolvedUrl(iconName)
 
                 trailing: RowLayout {
+                    spacing: Kirigami.Units.smallSpacing
+		
                     Repeater {
                         model: account.actions
 
@@ -313,6 +315,13 @@ FormCard.FormCardPage {
                                 fromQAction: actionButton.modelData
                             }
                         }
+                    }
+
+                    QQC2.Button {
+                        icon.name: "list-remove-symbolic"
+                        text: i18nc("@action:button", "Remove")
+                        display: QQC2.Button.IconOnly
+                        onClicked: AccountModel.remove(accountDelegate.account)
                     }
                 }
             }

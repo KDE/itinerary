@@ -19,6 +19,12 @@ SPDX-FileCopyrightText = "none"
 SPDX-License-Identifier = "CC0-1.0"
 
 [[annotations]]
+path = "src/app/accounts/deutschbahn/account-deutschbahn.svg"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "none"
+SPDX-License-Identifier = "CC0-1.0"
+
+[[annotations]]
 path = ["src/app/android/res/drawable/splash_logo.png", "src/app/android/res/mipmap-**/ic_launcher.png", "src/app/android/ic_launcher-playstore.png"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "Mathis Brüchert <mbb-mail@gmx.de>"

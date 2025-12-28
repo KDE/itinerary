@@ -17,6 +17,7 @@ public:
         NameRole,
         IconNameRole,
         DescriptionRole,
+        ProtocolRole,
     };
 
     explicit AccountTypeModel(const std::vector<AccountType> &m_accountTypes, QObject *parent = nullptr);

@@ -43,6 +43,11 @@ QString DeutschBahnAccount::accountName() const
     return m_accountName;
 }
 
+QString DeutschBahnAccount::accountId() const
+{
+    return m_accountId;
+}
+
 void DeutschBahnAccount::saveAccount(KConfigGroup &configGroup) const
 {
     configGroup.writeEntry("accountName", m_accountName);
@@ -73,7 +78,7 @@ void DeutschBahnAccount::loadAccount(const KConfigGroup &configGroup)
             setupOauth();
             m_oauth->setRefreshToken(obj["refresh_token"_L1].toString());
             m_oauth->refreshTokens();
-			return;
+            return;
         }
 
         m_api.setBearerToken(obj["token"_L1].toString().toUtf8());
@@ -99,14 +104,14 @@ void DeutschBahnAccount::setupOauth()
 
     m_handler.setRedirectUrl(QUrl{redirectUrl});
     m_oauth->setReplyHandler(&m_handler);
-
-    connect(m_oauth, &QAbstractOAuth::authorizeWithBrowser, this, [](const QUrl &url) {
-        QDesktopServices::openUrl(url);
+    connect(m_oauth, &QAbstractOAuth::statusChanged, this, [this](QAbstractOAuth::Status status) {
+        m_syncAction->setEnabled(status == QAbstractOAuth::Status::Granted);
     });
+
+    connect(m_oauth, &QAbstractOAuth::authorizeWithBrowser, this, &DeutschBahnAccount::openUrl);
     connect(m_oauth, &QAbstractOAuth::granted, this, [this]() {
         const auto token = m_oauth->token();
 
-        std::error_code error;
         const auto jwt = token.split(u'.');
         auto doc = QJsonDocument::fromJson(QByteArray::fromBase64(jwt[1].toUtf8()));
 
@@ -189,8 +194,6 @@ void DeutschBahnAccount::downloadTickets()
 
         auto doc = QJsonDocument::fromJson(reply->readAll());
 
-        qWarning() << doc;
-
         const auto object = doc.object();
         const auto kundenprofils = object["kundenprofile"_L1].toArray();
 
@@ -234,33 +237,38 @@ void DeutschBahnAccount::downloadTickets()
 
                             const auto object = QJsonDocument::fromJson(reply->readAll()).object();
 
-							const auto reise = object["reise"_L1].toObject();
-							const auto reiseInfos = reise["reiseInfos"_L1].toObject();
-							const auto ticket1 = reiseInfos["ticket"_L1].toObject();
-							const auto anzeige = ticket1["anzeige"_L1].toObject();
-							const auto gueltigkeitAb = QDateTime::fromString(anzeige["gueltigkeitAb"_L1].toString());
+                            const auto reise = object["reise"_L1].toObject();
+                            const auto reiseInfos = reise["reiseInfos"_L1].toObject();
+                            const auto ticket1 = reiseInfos["ticket"_L1].toObject();
+                            const auto anzeige = ticket1["anzeige"_L1].toObject();
+                            const auto gueltigkeitAb = QDateTime::fromString(anzeige["gueltigkeitAb"_L1].toString(), Qt::ISODate);
 
-							const auto ticket2 = ticket1["ticket"_L1].toString();
-							const auto html = QByteArray::fromBase64(ticket2.toUtf8());
+                            const auto lastWeek = QDate::currentDate().addDays(-7).startOfDay({QTimeZone::LocalTime});
+                            if (gueltigkeitAb < lastWeek) {
+                                return;
+                            }
 
-							// HTML parsing to extract img data with a regex :)
-							QRegularExpression re(u"data:image/png;base64,([^\"]*)\""_s);
-							auto matchIterator = re.globalMatch(QString::fromUtf8(html));
-							while (matchIterator.hasNext()) {
-								auto match = matchIterator.next();
+                            const auto ticket2 = ticket1["ticket"_L1].toString();
+                            const auto html = QByteArray::fromBase64(ticket2.toUtf8());
 
-								QByteArray imageData = QByteArray::fromBase64(match.capturedView(1).toUtf8());
-								QImage img;
-								img.loadFromData(imageData, "PNG");
+                            // HTML parsing to extract img data with a regex :)
+                            QRegularExpression re(u"data:image/png;base64,([^\"]*)\""_s);
+                            auto matchIterator = re.globalMatch(QString::fromUtf8(html));
+                            while (matchIterator.hasNext()) {
+                                auto match = matchIterator.next();
 
-								QtConcurrent::run([&img]() {
-									return Prison::ImageScanner::scan(img, Prison::Format::Aztec);
-								}).then([img](const Prison::ScanResult &result) {
-									if (result.hasBinaryData()) {
-										ImportControllerInstance::instance->importData(result.binaryData());
-									}
-								});
-							}
+                                QByteArray imageData = QByteArray::fromBase64(match.capturedView(1).toUtf8());
+                                QImage img;
+                                img.loadFromData(imageData, "PNG");
+
+                                QtConcurrent::run([img]() {
+                                    return Prison::ImageScanner::scan(img, Prison::Format::Aztec);
+                                }).then([img](const Prison::ScanResult &result) {
+                                    if (result.hasBinaryData()) {
+                                        ImportControllerInstance::instance->importData(result.binaryData());
+                                    }
+                                });
+                            }
                         });
                     }
                 }

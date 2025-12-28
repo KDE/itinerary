@@ -272,6 +272,7 @@ target_link_libraries(itinerary PUBLIC
     Qt::NetworkAuth
     Qt::Quick
     Qt::Positioning
+    Qt::WebView
     QCoro6::Core
     QCoro6::Network
 PRIVATE

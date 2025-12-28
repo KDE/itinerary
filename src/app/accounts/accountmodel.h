@@ -35,7 +35,8 @@ public:
     [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
     [[nodiscard]] QHash<int, QByteArray> roleNames() const override;
 
-    Q_INVOKABLE void create(const QString &identifier);
+    Q_INVOKABLE AbstractAccount *create(const QString &identifier);
+    Q_INVOKABLE void remove(AbstractAccount *account);
 
     bool handleCallback(const QUrl &url);
 

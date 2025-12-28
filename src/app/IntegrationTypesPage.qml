@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
 import QtQuick
+import QtWebView
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.itinerary as Itinerary
@@ -23,6 +24,7 @@ Kirigami.ScrollablePage {
             required property string name
             required property string description
             required property string iconName
+            required property string protocol
 
             text: name
             icon.name: Qt.resolvedUrl(iconName)
@@ -33,7 +35,45 @@ Kirigami.ScrollablePage {
             }
 
             onClicked: {
-                Itinerary.AccountModel.create(identifier);
+                const account = Itinerary.AccountModel.create(identifier);
+                account.openUrl.connect((url) => {
+                    root.Kirigami.PageStack.push(webViewPage, {
+                        url,
+                        protocol: integrationDelegate.protocol,
+                        account,
+                    })
+                })
+            }
+        }
+    }
+
+    Component {
+        id: webViewPage
+
+
+        Kirigami.Page {
+            id: page
+
+            property alias url: webview.url
+            property string protocol
+            property var account
+
+            title: i18nc("@title", "Login")
+
+            leftPadding: 0
+            rightPadding: 0
+            topPadding: 0
+            bottomPadding: 0
+
+            contentItem: WebView {
+                id: webview
+
+                onLoadingChanged: (request) => {
+                    if (request.url.toString().startsWith(page.protocol)) { 
+                        account.handleCallback(request.url)
+                        root.Kirigami.PageStack.closeDialog();
+                    }
+                }
             }
         }
     }

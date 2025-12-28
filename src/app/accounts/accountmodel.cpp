@@ -8,6 +8,7 @@
 #include "accounts/deutschbahn/deutschbahnaccount.h"
 
 #include <QUrl>
+#include <QTimer>
 #include <KLocalizedString>
 
 using namespace Qt::StringLiterals;
@@ -103,7 +104,7 @@ void AccountModel::setNetworkAccessManagerFactory(const std::function<QNetworkAc
     endResetModel();
 }
 
-void AccountModel::create(const QString &identifier)
+AbstractAccount *AccountModel::create(const QString &identifier)
 {
     auto account = accountFromIdentifier(identifier);
 
@@ -115,7 +116,23 @@ void AccountModel::create(const QString &identifier)
 
     initAccount(account);
 
-    account->startOAuth();
+    QTimer::singleShot(0, account, [account]() {
+        account->startOAuth();
+    });
+    return account;
+}
+
+void AccountModel::remove(AbstractAccount *account)
+{
+    const auto it = std::ranges::find(std::as_const(m_accounts), account);
+    if (it != m_accounts.cend()) {
+        const auto index = std::distance(m_accounts.cbegin(), it);
+        beginRemoveRows({}, index, index);
+        m_config->deleteGroup(u"account-"_s + account->identifier() + u'/' + account->accountId());
+        m_config->sync();
+        m_accounts.erase(it);
+        endRemoveRows();
+    }
 }
 
 void AccountModel::initAccount(AbstractAccount *account)

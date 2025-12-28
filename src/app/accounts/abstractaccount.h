@@ -20,12 +20,13 @@ public:
     void init(const QString &identifier, const std::function<QNetworkAccessManager *()> &namFactory);
 
     [[nodiscard]] virtual QString accountName() const = 0;
+    [[nodiscard]] virtual QString accountId() const = 0;
     [[nodiscard]] QString identifier() const;
 
     virtual void loadAccount(const KConfigGroup &configGroup) = 0;
     virtual void saveAccount(KConfigGroup &configGroup) const = 0;
 
-    virtual bool handleCallback(const QUrl &url);
+    Q_INVOKABLE virtual bool handleCallback(const QUrl &url);
 
     virtual void startOAuth() = 0;
 
@@ -34,6 +35,7 @@ public:
 Q_SIGNALS:
     void changed(const QString &accountId);
     void accountNameChanged();
+    void openUrl(const QUrl &url);
 
 protected:
     std::function<QNetworkAccessManager *()> m_namFactory;

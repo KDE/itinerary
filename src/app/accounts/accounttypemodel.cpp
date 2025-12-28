@@ -35,6 +35,8 @@ QVariant AccountTypeModel::data(const QModelIndex &index, int role) const
         return accountType.iconName;
     case DescriptionRole:
         return accountType.description;
+    case ProtocolRole:
+        return accountType.protocolOAuthCallback;
     default:
         return {};
     }
@@ -47,5 +49,6 @@ QHash<int, QByteArray> AccountTypeModel::roleNames() const
         { NameRole, "name" },
         { IconNameRole, "iconName" },
         { DescriptionRole, "description" },
+        { ProtocolRole, "protocol" },
     };
 }

@@ -48,7 +48,7 @@ if (EXISTS "${CMAKE_SOURCE_DIR}/.git")
 endif()
 
 # build-time dependencies
-find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS Test Quick Positioning QuickControls2 NetworkAuth Multimedia)
+find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS Test Quick Positioning QuickControls2 NetworkAuth Multimedia WebView)
 if(Qt6Core_VERSION VERSION_GREATER_EQUAL "6.9.0")
     find_package(Qt6 ${REQUIRED_QT_VERSION} CONFIG REQUIRED CorePrivate)
 endif()
