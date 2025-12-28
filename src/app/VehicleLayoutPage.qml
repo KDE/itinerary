@@ -61,6 +61,8 @@ Kirigami.ScrollablePage {
 
     VehicleSectionDialog {
         id: coachDrawer
+
+        parent: root.QQC2.Overlay.overlay
     }
 
     header: ColumnLayout {
@@ -201,7 +203,7 @@ Kirigami.ScrollablePage {
 
         onVehicleSectionTapped: (section) => {
             coachDrawer.coach = section;
-            coachDrawer.open();
+            coachDrawer.popup();
         }
     }
 

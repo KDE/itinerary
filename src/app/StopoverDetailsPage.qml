@@ -275,7 +275,7 @@ Kirigami.Page {
                     width: vehicleLayout.width - vehicleLayout.effectiveScrollBarWidth
                     onVehicleSectionTapped: (section) => {
                         coachDrawer.coach = section;
-                        coachDrawer.open();
+                        coachDrawer.popup();
                     }
                 }
             }
@@ -323,6 +323,8 @@ Kirigami.Page {
 
     VehicleSectionDialog {
         id: coachDrawer
+
+        parent: root.QQC2.Overlay.overlay
     }
 
     MapStopoverInfoSheetDrawer {
