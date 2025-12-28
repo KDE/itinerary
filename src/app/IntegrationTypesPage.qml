@@ -25,7 +25,7 @@ Kirigami.ScrollablePage {
             required property string iconName
 
             text: name
-            icon.name: "qrc:/" + iconName
+            icon.name: Qt.resolvedUrl(iconName)
 
             contentItem: Delegates.SubtitleContentItem {
                 itemDelegate: integrationDelegate

@@ -298,16 +298,7 @@ FormCard.FormCardPage {
                 description: accountName.length > 0 ? accountName : i18nc("@info:placeholder", "Loading")
 
                 leadingPadding: 0
-                leading: Item {
-                    implicitWidth: Kirigami.Units.iconSizes.smallMedium
-                    implicitHeight: parent.height
-                    Image {
-                        anchors.fill: parent
-                        width: Kirigami.Units.iconSizes.smallMedium
-                        fillMode: Image.PreserveAspectFit
-                        source: accoutDelegate.iconName
-                    }
-                }
+		icon.name: Qt.resolvedUrl(iconName)
 
                 trailing: RowLayout {
                     Repeater {
