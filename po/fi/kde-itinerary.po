@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-13 00:44+0000\n"
+"POT-Creation-Date: 2025-12-29 00:44+0000\n"
 "PO-Revision-Date: 2025-10-13 20:48+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -28,7 +28,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "translator@legisign.org"
 
-#: app/AboutPage.qml:18 app/Main.qml:102
+#: app/AboutPage.qml:18 app/Main.qml:105
 #, kde-format
 msgid "About"
 msgstr "Tietoa"
@@ -1549,7 +1549,7 @@ msgstr "Tarkista päivitykset"
 msgid "Save As…"
 msgstr "Tallenna nimellä…"
 
-#: app/gpxexport.cpp:33 app/main.cpp:208 app/Main.qml:20 app/Main.qml:74
+#: app/gpxexport.cpp:33 app/main.cpp:221 app/Main.qml:20 app/Main.qml:77
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -2206,7 +2206,7 @@ msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
 msgstr "Laivat tai lautat"
 
-#: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:277
+#: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:278
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2348,14 +2348,14 @@ msgid "Platform %1"
 msgstr "Laituri %1"
 
 #: app/JourneySectionDelegate.qml:253 app/JourneySectionPage.qml:136
-#: app/StopoverFormDelegate.qml:144 app/VehicleLayoutPage.qml:175
+#: app/StopoverFormDelegate.qml:144 app/VehicleLayoutPage.qml:177
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr "Näytä lisää…"
 
 #: app/JourneySectionPage.qml:51 app/TimelineDelegateDepartureLayout.qml:80
-#: app/VehicleLayoutPage.qml:77
+#: app/VehicleLayoutPage.qml:79
 #, kde-format
 msgctxt "Direction of the transport mode"
 msgid "To %1"
@@ -2417,7 +2417,7 @@ msgstr "Laajenna napsauttamalla"
 msgid "Itinerary change"
 msgstr "Matkasuunnitelman muutos"
 
-#: app/LiveStatusPage.qml:21 app/Main.qml:80
+#: app/LiveStatusPage.qml:21 app/Main.qml:83
 #, kde-format
 msgid "Live Status"
 msgstr "Elävä tilanne"
@@ -2643,23 +2643,23 @@ msgstr "Tyyppi M"
 msgid "Type N"
 msgstr "Tyyppi N"
 
-#: app/main.cpp:216
+#: app/main.cpp:229
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Digitaalinen matka-avustaja"
 
-#: app/main.cpp:217
+#: app/main.cpp:230
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "Tekijänoikeudet © KDE-yhteisö"
 
-#: app/main.cpp:220
+#: app/main.cpp:233
 #, kde-format
 msgctxt "@info:credit"
 msgid "Wikidata"
 msgstr "Wikidata"
 
-#: app/main.cpp:220
+#: app/main.cpp:233
 #, kde-format
 msgctxt "@info:credit"
 msgid ""
@@ -2669,61 +2669,61 @@ msgstr ""
 "Tarjoaa metatietoa kuten rautatieasemien nimet, kummalla puolella ajetaan "
 "tai virtapistokkeen tyypit."
 
-#: app/main.cpp:221
+#: app/main.cpp:234
 #, kde-format
 msgctxt "@info:credit"
 msgid "OpenStreetMap"
 msgstr "OpenStreetMap"
 
-#: app/main.cpp:221
+#: app/main.cpp:234
 #, kde-format
 msgctxt "@info:credit"
 msgid "Provides both indoor and outdoor maps. ©OpenStreetMap contributors"
 msgstr "Tarjoaa sekä sisä- että ulkotilakartat. © OpenStreetMapin avustajat"
 
-#: app/main.cpp:222
+#: app/main.cpp:235
 #, kde-format
 msgctxt "@info:credit"
 msgid "OpenSSL"
 msgstr "OpenSSL"
 
-#: app/main.cpp:222
+#: app/main.cpp:235
 #, kde-format
 msgctxt "@info:credit"
 msgid "Secure network interaction with TLS. © 1998-2018 The OpenSSL Project"
 msgstr "Salattu verkkoviestintä TLS:llä. © 1998–2018 OpenSSL-projekti"
 
-#: app/main.cpp:223
+#: app/main.cpp:236
 #, kde-format
 msgctxt "@info:credit"
 msgid "ZXing"
 msgstr "ZXing"
 
-#: app/main.cpp:223
+#: app/main.cpp:236
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code scanning. © 2016 ZXing Authors, © 2016 Nu-book Inc."
 msgstr "QR-koodinluku. © 2016 ZXingin tekijät, © 2016 Nu-book Inc."
 
-#: app/main.cpp:224
+#: app/main.cpp:237
 #, kde-format
 msgctxt "@info:credit"
 msgid "Poppler"
 msgstr "Poppler"
 
-#: app/main.cpp:224
+#: app/main.cpp:237
 #, kde-format
 msgctxt "@info:credit"
 msgid "PDF parsing"
 msgstr "PDF-jäsennys"
 
-#: app/main.cpp:227
+#: app/main.cpp:240
 #, kde-format
 msgctxt "@info:credit"
 msgid "FreeType"
 msgstr "FreeType"
 
-#: app/main.cpp:227
+#: app/main.cpp:240
 #, kde-format
 msgctxt "@info:credit"
 msgid ""
@@ -2731,145 +2731,145 @@ msgid ""
 msgstr ""
 "Tekijänoikeudet © 2006–2020 David Turner, Robert Wilhelm ja Werner Lemberg."
 
-#: app/main.cpp:228
+#: app/main.cpp:241
 #, kde-format
 msgctxt "@info:credit"
 msgid "libintl lite"
 msgstr "libintl lite"
 
-#: app/main.cpp:228
+#: app/main.cpp:241
 #, kde-format
 msgctxt "@info:credit"
 msgid "Internalisation"
 msgstr "Kansainvälistys"
 
-#: app/main.cpp:231
+#: app/main.cpp:244
 #, kde-format
 msgctxt "@info:credit"
 msgid "libqrencode"
 msgstr "libqrencode"
 
-#: app/main.cpp:231
+#: app/main.cpp:244
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code Generation. © 2006-2018 Kentaro Fukuchi"
 msgstr "QR-koodin luonti. © 2006–2018 Kentaro Fukuchi"
 
-#: app/main.cpp:232
+#: app/main.cpp:245
 #, kde-format
 msgctxt "@info:credit"
 msgid "libical"
 msgstr "libical"
 
-#: app/main.cpp:232
+#: app/main.cpp:245
 #, kde-format
 msgctxt "@info:credit"
 msgid "© The libical developers"
 msgstr "© libicalin kehittäjät"
 
-#: app/main.cpp:233
+#: app/main.cpp:246
 #, kde-format
 msgctxt "@info:credit"
 msgid "libxml2"
 msgstr "libxml2"
 
-#: app/main.cpp:233
+#: app/main.cpp:246
 #, kde-format
 msgctxt "@info:credit"
 msgid "Copyright (C) 1998-2012 Daniel Veillard"
 msgstr "Tekijänoikeudet © 1998–2012 Daniel Veillard"
 
-#: app/main.cpp:236
+#: app/main.cpp:249
 #, kde-format
 msgctxt "@info:credit"
 msgid "libQuotient"
 msgstr "libQuotient"
 
-#: app/main.cpp:236
+#: app/main.cpp:249
 #, kde-format
 msgctxt "@info:credit"
 msgid "Matrix integration."
 msgstr "Matrix-eheytys"
 
-#: app/main.cpp:237
+#: app/main.cpp:250
 #, kde-format
 msgctxt "@info:credit"
 msgid "QtKeychain"
 msgstr "QtKeychain"
 
-#: app/main.cpp:237
+#: app/main.cpp:250
 #, kde-format
 msgctxt "@info:credit"
 msgid "Secure password storage."
 msgstr "Salattu salasanatalletustila."
 
-#: app/main.cpp:238
+#: app/main.cpp:251
 #, kde-format
 msgctxt "@info:credit"
 msgid "Olm"
 msgstr "Olm"
 
-#: app/main.cpp:238
+#: app/main.cpp:251
 #, kde-format
 msgctxt "@info:credit"
 msgid "Matrix crypto library."
 msgstr "Matrixin salauskirjasto."
 
-#: app/main.cpp:246
+#: app/main.cpp:259
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Avaa Itinerary annetulle sivulle"
 
-#: app/main.cpp:251
+#: app/main.cpp:264
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
 msgstr "Tuotavat tiedostot tai verkko-osoitteet."
 
-#: app/Main.qml:88 app/WelcomePage.qml:41
+#: app/Main.qml:91 app/WelcomePage.qml:41
 #, kde-format
 msgid "Settings…"
 msgstr "Asetukset…"
 
-#: app/Main.qml:95 app/WelcomePage.qml:16
+#: app/Main.qml:98 app/WelcomePage.qml:16
 #, kde-format
 msgid "Help"
 msgstr "Ohje"
 
-#: app/Main.qml:184
+#: app/Main.qml:187
 #, kde-format
 msgctxt "@info:status"
 msgid "No onboard information available."
 msgstr "Matka-aikaista tietoa ei ole saatavilla."
 
-#: app/Main.qml:226
+#: app/Main.qml:229
 #, kde-format
 msgid "Map download finished."
 msgstr "Kartan lataus valmistui."
 
-#: app/Main.qml:291
+#: app/Main.qml:296
 #, kde-format
 msgctxt "@title:window"
 msgid "Matrix Session Verification"
 msgstr "Matrix-istunnon varmennus"
 
-#: app/MapStopoverInfoSheetDrawer.qml:68
+#: app/MapStopoverInfoSheetDrawer.qml:64
 #, kde-format
 msgid "Platform:"
 msgstr "Laituri:"
 
-#: app/MapStopoverInfoSheetDrawer.qml:84
+#: app/MapStopoverInfoSheetDrawer.qml:85
 #, kde-format
 msgid "Occupancy:"
 msgstr "Käyttöaste:"
 
-#: app/MapStopoverInfoSheetDrawer.qml:104
+#: app/MapStopoverInfoSheetDrawer.qml:112
 #, kde-format
 msgid "Information:"
 msgstr "Tietoa:"
 
-#: app/MapStopoverInfoSheetDrawer.qml:120
+#: app/MapStopoverInfoSheetDrawer.qml:131
 #, kde-format
 msgid "Show indoor map"
 msgstr "Näytä sisäkartta"
@@ -4578,9 +4578,10 @@ msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"
 msgstr "%1 (%2/%3)"
 
-#: app/TripGroupMapPage.qml:195
-#, kde-format
-msgid "Address:"
+#: app/TripGroupMapPage.qml:201
+#, fuzzy, kde-format
+#| msgid "Address:"
+msgid "Address"
 msgstr "Osoite:"
 
 #: app/TripGroupMergeDialog.qml:17
@@ -4856,38 +4857,38 @@ msgstr "Jaa matka"
 msgid "Vehicle Layout"
 msgstr "Vaunukartta"
 
-#: app/VehicleLayoutPage.qml:93
+#: app/VehicleLayoutPage.qml:95
 #, fuzzy, kde-format
 #| msgid "Departure: %1"
 msgctxt "%1 is a date/time"
 msgid "Departure: %1"
 msgstr "Lähtö: %1"
 
-#: app/VehicleLayoutPage.qml:95
+#: app/VehicleLayoutPage.qml:97
 #, fuzzy, kde-format
 #| msgid "Arrival: %1"
 msgctxt "%1 is a date/time"
 msgid "Arrival: %1"
 msgstr "Saapuminen: %1"
 
-#: app/VehicleLayoutPage.qml:115
+#: app/VehicleLayoutPage.qml:117
 #, fuzzy, kde-format
 #| msgid "Platform: %1"
 msgctxt "train station platform"
 msgid "Platform: %1"
 msgstr "Laituri: %1"
 
-#: app/VehicleLayoutPage.qml:124
+#: app/VehicleLayoutPage.qml:126
 #, kde-format
 msgid "Coach: %1 Seat: %2"
 msgstr "Vaunu %1, paikka %2"
 
-#: app/VehicleLayoutPage.qml:229
+#: app/VehicleLayoutPage.qml:231
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "Kulkuvälineen paikkatietoa ei ole saatavilla."
 
-#: app/VehicleSectionDialog.qml:27
+#: app/VehicleSectionDialog.qml:29
 #, kde-format
 msgctxt "train coach"
 msgid "Coach %1"

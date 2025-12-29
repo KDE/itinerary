@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-13 00:44+0000\n"
+"POT-Creation-Date: 2025-12-29 00:44+0000\n"
 "PO-Revision-Date: 2025-10-14 12:48+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -28,7 +28,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "g.sora@tiscali.it"
 
-#: app/AboutPage.qml:18 app/Main.qml:102
+#: app/AboutPage.qml:18 app/Main.qml:105
 #, kde-format
 msgid "About"
 msgstr "A proposito"
@@ -1554,7 +1554,7 @@ msgstr "Marcar per actualisationes"
 msgid "Save As…"
 msgstr "Salveguarda como…"
 
-#: app/gpxexport.cpp:33 app/main.cpp:208 app/Main.qml:20 app/Main.qml:74
+#: app/gpxexport.cpp:33 app/main.cpp:221 app/Main.qml:20 app/Main.qml:77
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -2208,7 +2208,7 @@ msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
 msgstr "Barcas o ferries"
 
-#: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:277
+#: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:278
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2349,14 +2349,14 @@ msgid "Platform %1"
 msgstr "Platteforma %1"
 
 #: app/JourneySectionDelegate.qml:253 app/JourneySectionPage.qml:136
-#: app/StopoverFormDelegate.qml:144 app/VehicleLayoutPage.qml:175
+#: app/StopoverFormDelegate.qml:144 app/VehicleLayoutPage.qml:177
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr "Monstra  plus…"
 
 #: app/JourneySectionPage.qml:51 app/TimelineDelegateDepartureLayout.qml:80
-#: app/VehicleLayoutPage.qml:77
+#: app/VehicleLayoutPage.qml:79
 #, kde-format
 msgctxt "Direction of the transport mode"
 msgid "To %1"
@@ -2418,7 +2418,7 @@ msgstr "Pulsa pro extender"
 msgid "Itinerary change"
 msgstr "Cambio de itinerario"
 
-#: app/LiveStatusPage.qml:21 app/Main.qml:80
+#: app/LiveStatusPage.qml:21 app/Main.qml:83
 #, kde-format
 msgid "Live Status"
 msgstr "Stato de Vita"
@@ -2644,23 +2644,23 @@ msgstr "Typo M"
 msgid "Type N"
 msgstr "Typo N"
 
-#: app/main.cpp:216
+#: app/main.cpp:229
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Assistente de Viages Digital"
 
-#: app/main.cpp:217
+#: app/main.cpp:230
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "Copyright © The KDE Community (Le communitate de KDE)"
 
-#: app/main.cpp:220
+#: app/main.cpp:233
 #, kde-format
 msgctxt "@info:credit"
 msgid "Wikidata"
 msgstr ""
 
-#: app/main.cpp:220
+#: app/main.cpp:233
 #, kde-format
 msgctxt "@info:credit"
 msgid ""
@@ -2668,209 +2668,209 @@ msgid ""
 "plug types."
 msgstr ""
 
-#: app/main.cpp:221
+#: app/main.cpp:234
 #, kde-format
 msgctxt "@info:credit"
 msgid "OpenStreetMap"
 msgstr "OpenStreetMap"
 
-#: app/main.cpp:221
+#: app/main.cpp:234
 #, kde-format
 msgctxt "@info:credit"
 msgid "Provides both indoor and outdoor maps. ©OpenStreetMap contributors"
 msgstr ""
 
-#: app/main.cpp:222
+#: app/main.cpp:235
 #, kde-format
 msgctxt "@info:credit"
 msgid "OpenSSL"
 msgstr "OpenSSL"
 
-#: app/main.cpp:222
+#: app/main.cpp:235
 #, kde-format
 msgctxt "@info:credit"
 msgid "Secure network interaction with TLS. © 1998-2018 The OpenSSL Project"
 msgstr ""
 
-#: app/main.cpp:223
+#: app/main.cpp:236
 #, kde-format
 msgctxt "@info:credit"
 msgid "ZXing"
 msgstr ""
 
-#: app/main.cpp:223
+#: app/main.cpp:236
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code scanning. © 2016 ZXing Authors, © 2016 Nu-book Inc."
 msgstr ""
 
-#: app/main.cpp:224
+#: app/main.cpp:237
 #, kde-format
 msgctxt "@info:credit"
 msgid "Poppler"
 msgstr "Poppler"
 
-#: app/main.cpp:224
+#: app/main.cpp:237
 #, kde-format
 msgctxt "@info:credit"
 msgid "PDF parsing"
 msgstr ""
 
-#: app/main.cpp:227
+#: app/main.cpp:240
 #, fuzzy, kde-format
 #| msgid "Type"
 msgctxt "@info:credit"
 msgid "FreeType"
 msgstr "Typo"
 
-#: app/main.cpp:227
+#: app/main.cpp:240
 #, kde-format
 msgctxt "@info:credit"
 msgid ""
 "Copyright (C) 2006-2020 by David Turner, Robert Wilhelm, and Werner Lemberg."
 msgstr ""
 
-#: app/main.cpp:228
+#: app/main.cpp:241
 #, kde-format
 msgctxt "@info:credit"
 msgid "libintl lite"
 msgstr ""
 
-#: app/main.cpp:228
+#: app/main.cpp:241
 #, fuzzy, kde-format
 #| msgid "Information"
 msgctxt "@info:credit"
 msgid "Internalisation"
 msgstr "Information"
 
-#: app/main.cpp:231
+#: app/main.cpp:244
 #, kde-format
 msgctxt "@info:credit"
 msgid "libqrencode"
 msgstr ""
 
-#: app/main.cpp:231
+#: app/main.cpp:244
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code Generation. © 2006-2018 Kentaro Fukuchi"
 msgstr ""
 
-#: app/main.cpp:232
+#: app/main.cpp:245
 #, kde-format
 msgctxt "@info:credit"
 msgid "libical"
 msgstr ""
 
-#: app/main.cpp:232
+#: app/main.cpp:245
 #, kde-format
 msgctxt "@info:credit"
 msgid "© The libical developers"
 msgstr ""
 
-#: app/main.cpp:233
+#: app/main.cpp:246
 #, kde-format
 msgctxt "@info:credit"
 msgid "libxml2"
 msgstr ""
 
-#: app/main.cpp:233
+#: app/main.cpp:246
 #, kde-format
 msgctxt "@info:credit"
 msgid "Copyright (C) 1998-2012 Daniel Veillard"
 msgstr ""
 
-#: app/main.cpp:236
+#: app/main.cpp:249
 #, kde-format
 msgctxt "@info:credit"
 msgid "libQuotient"
 msgstr ""
 
-#: app/main.cpp:236
+#: app/main.cpp:249
 #, fuzzy, kde-format
 #| msgid "Matrix Integration"
 msgctxt "@info:credit"
 msgid "Matrix integration."
 msgstr "Integration de Matrix"
 
-#: app/main.cpp:237
+#: app/main.cpp:250
 #, kde-format
 msgctxt "@info:credit"
 msgid "QtKeychain"
 msgstr ""
 
-#: app/main.cpp:237
+#: app/main.cpp:250
 #, kde-format
 msgctxt "@info:credit"
 msgid "Secure password storage."
 msgstr ""
 
-#: app/main.cpp:238
+#: app/main.cpp:251
 #, kde-format
 msgctxt "@info:credit"
 msgid "Olm"
 msgstr ""
 
-#: app/main.cpp:238
+#: app/main.cpp:251
 #, kde-format
 msgctxt "@info:credit"
 msgid "Matrix crypto library."
 msgstr ""
 
-#: app/main.cpp:246
+#: app/main.cpp:259
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Aperi Itinerary sur le pagina date"
 
-#: app/main.cpp:251
+#: app/main.cpp:264
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
 msgstr "Files o URLs a importar."
 
-#: app/Main.qml:88 app/WelcomePage.qml:41
+#: app/Main.qml:91 app/WelcomePage.qml:41
 #, kde-format
 msgid "Settings…"
 msgstr "Preferentias…"
 
-#: app/Main.qml:95 app/WelcomePage.qml:16
+#: app/Main.qml:98 app/WelcomePage.qml:16
 #, kde-format
 msgid "Help"
 msgstr "Adjuta"
 
-#: app/Main.qml:184
+#: app/Main.qml:187
 #, kde-format
 msgctxt "@info:status"
 msgid "No onboard information available."
 msgstr "Information de a bordo disponibile."
 
-#: app/Main.qml:226
+#: app/Main.qml:229
 #, kde-format
 msgid "Map download finished."
 msgstr "Discargamento de mappa terminate."
 
-#: app/Main.qml:291
+#: app/Main.qml:296
 #, kde-format
 msgctxt "@title:window"
 msgid "Matrix Session Verification"
 msgstr "Verification de session de Matrix"
 
-#: app/MapStopoverInfoSheetDrawer.qml:68
+#: app/MapStopoverInfoSheetDrawer.qml:64
 #, kde-format
 msgid "Platform:"
 msgstr "Platteforma:"
 
-#: app/MapStopoverInfoSheetDrawer.qml:84
+#: app/MapStopoverInfoSheetDrawer.qml:85
 #, kde-format
 msgid "Occupancy:"
 msgstr "Occupation :"
 
-#: app/MapStopoverInfoSheetDrawer.qml:104
+#: app/MapStopoverInfoSheetDrawer.qml:112
 #, kde-format
 msgid "Information:"
 msgstr "Information"
 
-#: app/MapStopoverInfoSheetDrawer.qml:120
+#: app/MapStopoverInfoSheetDrawer.qml:131
 #, kde-format
 msgid "Show indoor map"
 msgstr "Monstra mappa interior"
@@ -4597,9 +4597,10 @@ msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"
 msgstr "%1 (%2/%3)"
 
-#: app/TripGroupMapPage.qml:195
-#, kde-format
-msgid "Address:"
+#: app/TripGroupMapPage.qml:201
+#, fuzzy, kde-format
+#| msgid "Address:"
+msgid "Address"
 msgstr "Adresse:"
 
 #: app/TripGroupMergeDialog.qml:17
@@ -4875,38 +4876,38 @@ msgstr "Scinde Viage"
 msgid "Vehicle Layout"
 msgstr "Disposition de Vehiculo"
 
-#: app/VehicleLayoutPage.qml:93
+#: app/VehicleLayoutPage.qml:95
 #, fuzzy, kde-format
 #| msgid "Departure: %1"
 msgctxt "%1 is a date/time"
 msgid "Departure: %1"
 msgstr "Partita: %1"
 
-#: app/VehicleLayoutPage.qml:95
+#: app/VehicleLayoutPage.qml:97
 #, fuzzy, kde-format
 #| msgid "Arrival: %1"
 msgctxt "%1 is a date/time"
 msgid "Arrival: %1"
 msgstr "Arrivata: %1"
 
-#: app/VehicleLayoutPage.qml:115
+#: app/VehicleLayoutPage.qml:117
 #, fuzzy, kde-format
 #| msgid "Platform: %1"
 msgctxt "train station platform"
 msgid "Platform: %1"
 msgstr "Platteforma: %1"
 
-#: app/VehicleLayoutPage.qml:124
+#: app/VehicleLayoutPage.qml:126
 #, kde-format
 msgid "Coach: %1 Seat: %2"
 msgstr "Autocar: %1 Placia: %2"
 
-#: app/VehicleLayoutPage.qml:229
+#: app/VehicleLayoutPage.qml:231
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "Nulle information de disposition de vehiculo disponibile."
 
-#: app/VehicleSectionDialog.qml:27
+#: app/VehicleSectionDialog.qml:29
 #, kde-format
 msgctxt "train coach"
 msgid "Coach %1"

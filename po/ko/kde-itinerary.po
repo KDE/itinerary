@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-13 00:44+0000\n"
+"POT-Creation-Date: 2025-12-29 00:44+0000\n"
 "PO-Revision-Date: 2025-10-12 14:38+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -27,7 +27,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde@peremen.name"
 
-#: app/AboutPage.qml:18 app/Main.qml:102
+#: app/AboutPage.qml:18 app/Main.qml:105
 #, kde-format
 msgid "About"
 msgstr "정보"
@@ -1546,7 +1546,7 @@ msgstr "업데이트 확인"
 msgid "Save As…"
 msgstr "다른 이름으로 저장…"
 
-#: app/gpxexport.cpp:33 app/main.cpp:208 app/Main.qml:20 app/Main.qml:74
+#: app/gpxexport.cpp:33 app/main.cpp:221 app/Main.qml:20 app/Main.qml:77
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE 여행 정보"
@@ -2197,7 +2197,7 @@ msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
 msgstr "선박 및 페리"
 
-#: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:277
+#: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:278
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2338,14 +2338,14 @@ msgid "Platform %1"
 msgstr "승강장 %1"
 
 #: app/JourneySectionDelegate.qml:253 app/JourneySectionPage.qml:136
-#: app/StopoverFormDelegate.qml:144 app/VehicleLayoutPage.qml:175
+#: app/StopoverFormDelegate.qml:144 app/VehicleLayoutPage.qml:177
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr "더 보기…"
 
 #: app/JourneySectionPage.qml:51 app/TimelineDelegateDepartureLayout.qml:80
-#: app/VehicleLayoutPage.qml:77
+#: app/VehicleLayoutPage.qml:79
 #, kde-format
 msgctxt "Direction of the transport mode"
 msgid "To %1"
@@ -2406,7 +2406,7 @@ msgstr "클릭하여 확장"
 msgid "Itinerary change"
 msgstr "여정 변경"
 
-#: app/LiveStatusPage.qml:21 app/Main.qml:80
+#: app/LiveStatusPage.qml:21 app/Main.qml:83
 #, kde-format
 msgid "Live Status"
 msgstr "실시간 상태"
@@ -2632,23 +2632,23 @@ msgstr "M형"
 msgid "Type N"
 msgstr "N형"
 
-#: app/main.cpp:216
+#: app/main.cpp:229
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "디지털 여행 도우미"
 
-#: app/main.cpp:217
+#: app/main.cpp:230
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "Copyright © The KDE Community"
 
-#: app/main.cpp:220
+#: app/main.cpp:233
 #, kde-format
 msgctxt "@info:credit"
 msgid "Wikidata"
 msgstr "위키데이터"
 
-#: app/main.cpp:220
+#: app/main.cpp:233
 #, kde-format
 msgctxt "@info:credit"
 msgid ""
@@ -2657,61 +2657,61 @@ msgid ""
 msgstr ""
 "철도역 이름, 운전 방향, 전원 플러그 종류와 같은 유용한 메타데이터 제공."
 
-#: app/main.cpp:221
+#: app/main.cpp:234
 #, kde-format
 msgctxt "@info:credit"
 msgid "OpenStreetMap"
 msgstr "OpenStreetMap"
 
-#: app/main.cpp:221
+#: app/main.cpp:234
 #, kde-format
 msgctxt "@info:credit"
 msgid "Provides both indoor and outdoor maps. ©OpenStreetMap contributors"
 msgstr "실내와 실외 지도 제공. ©OpenStreetMap contributors"
 
-#: app/main.cpp:222
+#: app/main.cpp:235
 #, kde-format
 msgctxt "@info:credit"
 msgid "OpenSSL"
 msgstr "OpenSSL"
 
-#: app/main.cpp:222
+#: app/main.cpp:235
 #, kde-format
 msgctxt "@info:credit"
 msgid "Secure network interaction with TLS. © 1998-2018 The OpenSSL Project"
 msgstr "TLS를 사용한 보안 네트워크 접근. © 1998-2018 The OpenSSL Project"
 
-#: app/main.cpp:223
+#: app/main.cpp:236
 #, kde-format
 msgctxt "@info:credit"
 msgid "ZXing"
 msgstr "ZXing"
 
-#: app/main.cpp:223
+#: app/main.cpp:236
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code scanning. © 2016 ZXing Authors, © 2016 Nu-book Inc."
 msgstr "QR 코드 스캔. © 2016 ZXing Authors, © 2016 Nu-book Inc."
 
-#: app/main.cpp:224
+#: app/main.cpp:237
 #, kde-format
 msgctxt "@info:credit"
 msgid "Poppler"
 msgstr "Poppler"
 
-#: app/main.cpp:224
+#: app/main.cpp:237
 #, kde-format
 msgctxt "@info:credit"
 msgid "PDF parsing"
 msgstr "PDF 처리"
 
-#: app/main.cpp:227
+#: app/main.cpp:240
 #, kde-format
 msgctxt "@info:credit"
 msgid "FreeType"
 msgstr "FreeType"
 
-#: app/main.cpp:227
+#: app/main.cpp:240
 #, kde-format
 msgctxt "@info:credit"
 msgid ""
@@ -2719,145 +2719,145 @@ msgid ""
 msgstr ""
 "Copyright (C) 2006-2020 by David Turner, Robert Wilhelm, and Werner Lemberg."
 
-#: app/main.cpp:228
+#: app/main.cpp:241
 #, kde-format
 msgctxt "@info:credit"
 msgid "libintl lite"
 msgstr "libintl lite"
 
-#: app/main.cpp:228
+#: app/main.cpp:241
 #, kde-format
 msgctxt "@info:credit"
 msgid "Internalisation"
 msgstr "국제화"
 
-#: app/main.cpp:231
+#: app/main.cpp:244
 #, kde-format
 msgctxt "@info:credit"
 msgid "libqrencode"
 msgstr "libqrencode"
 
-#: app/main.cpp:231
+#: app/main.cpp:244
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code Generation. © 2006-2018 Kentaro Fukuchi"
 msgstr "QR 코드 생성. © 2006-2018 Kentaro Fukuchi"
 
-#: app/main.cpp:232
+#: app/main.cpp:245
 #, kde-format
 msgctxt "@info:credit"
 msgid "libical"
 msgstr "libical"
 
-#: app/main.cpp:232
+#: app/main.cpp:245
 #, kde-format
 msgctxt "@info:credit"
 msgid "© The libical developers"
 msgstr "© The libical developers"
 
-#: app/main.cpp:233
+#: app/main.cpp:246
 #, kde-format
 msgctxt "@info:credit"
 msgid "libxml2"
 msgstr "libxml2"
 
-#: app/main.cpp:233
+#: app/main.cpp:246
 #, kde-format
 msgctxt "@info:credit"
 msgid "Copyright (C) 1998-2012 Daniel Veillard"
 msgstr "Copyright (C) 1998-2012 Daniel Veillard"
 
-#: app/main.cpp:236
+#: app/main.cpp:249
 #, kde-format
 msgctxt "@info:credit"
 msgid "libQuotient"
 msgstr "libQuotient"
 
-#: app/main.cpp:236
+#: app/main.cpp:249
 #, kde-format
 msgctxt "@info:credit"
 msgid "Matrix integration."
 msgstr "Matrix 통합."
 
-#: app/main.cpp:237
+#: app/main.cpp:250
 #, kde-format
 msgctxt "@info:credit"
 msgid "QtKeychain"
 msgstr "QtKeychain"
 
-#: app/main.cpp:237
+#: app/main.cpp:250
 #, kde-format
 msgctxt "@info:credit"
 msgid "Secure password storage."
 msgstr "안전한 암호 저장."
 
-#: app/main.cpp:238
+#: app/main.cpp:251
 #, kde-format
 msgctxt "@info:credit"
 msgid "Olm"
 msgstr "Olm"
 
-#: app/main.cpp:238
+#: app/main.cpp:251
 #, kde-format
 msgctxt "@info:credit"
 msgid "Matrix crypto library."
 msgstr "Matrix 암호화 라이브러리."
 
-#: app/main.cpp:246
+#: app/main.cpp:259
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "지정한 페이지의 여행 정보 열기"
 
-#: app/main.cpp:251
+#: app/main.cpp:264
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
 msgstr "가져올 파일이나 URL입니다."
 
-#: app/Main.qml:88 app/WelcomePage.qml:41
+#: app/Main.qml:91 app/WelcomePage.qml:41
 #, kde-format
 msgid "Settings…"
 msgstr "설정…"
 
-#: app/Main.qml:95 app/WelcomePage.qml:16
+#: app/Main.qml:98 app/WelcomePage.qml:16
 #, kde-format
 msgid "Help"
 msgstr "도움말"
 
-#: app/Main.qml:184
+#: app/Main.qml:187
 #, kde-format
 msgctxt "@info:status"
 msgid "No onboard information available."
 msgstr "차내 정보를 사용할 수 없습니다."
 
-#: app/Main.qml:226
+#: app/Main.qml:229
 #, kde-format
 msgid "Map download finished."
 msgstr "지도를 다운로드했습니다."
 
-#: app/Main.qml:291
+#: app/Main.qml:296
 #, kde-format
 msgctxt "@title:window"
 msgid "Matrix Session Verification"
 msgstr "Matrix 세션 검증"
 
-#: app/MapStopoverInfoSheetDrawer.qml:68
+#: app/MapStopoverInfoSheetDrawer.qml:64
 #, kde-format
 msgid "Platform:"
 msgstr "승강장:"
 
-#: app/MapStopoverInfoSheetDrawer.qml:84
+#: app/MapStopoverInfoSheetDrawer.qml:85
 #, kde-format
 msgid "Occupancy:"
 msgstr "혼잡도:"
 
-#: app/MapStopoverInfoSheetDrawer.qml:104
+#: app/MapStopoverInfoSheetDrawer.qml:112
 #, kde-format
 msgid "Information:"
 msgstr "정보:"
 
-#: app/MapStopoverInfoSheetDrawer.qml:120
+#: app/MapStopoverInfoSheetDrawer.qml:131
 #, kde-format
 msgid "Show indoor map"
 msgstr "실내 지도 표시"
@@ -4536,9 +4536,10 @@ msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"
 msgstr "%1(%2년/%3년)"
 
-#: app/TripGroupMapPage.qml:195
-#, kde-format
-msgid "Address:"
+#: app/TripGroupMapPage.qml:201
+#, fuzzy, kde-format
+#| msgid "Address:"
+msgid "Address"
 msgstr "주소:"
 
 #: app/TripGroupMergeDialog.qml:17
@@ -4812,38 +4813,38 @@ msgstr "여정 분할"
 msgid "Vehicle Layout"
 msgstr "차량 구성"
 
-#: app/VehicleLayoutPage.qml:93
+#: app/VehicleLayoutPage.qml:95
 #, fuzzy, kde-format
 #| msgid "Departure: %1"
 msgctxt "%1 is a date/time"
 msgid "Departure: %1"
 msgstr "출발: %1"
 
-#: app/VehicleLayoutPage.qml:95
+#: app/VehicleLayoutPage.qml:97
 #, fuzzy, kde-format
 #| msgid "Arrival: %1"
 msgctxt "%1 is a date/time"
 msgid "Arrival: %1"
 msgstr "도착: %1"
 
-#: app/VehicleLayoutPage.qml:115
+#: app/VehicleLayoutPage.qml:117
 #, fuzzy, kde-format
 #| msgid "Platform: %1"
 msgctxt "train station platform"
 msgid "Platform: %1"
 msgstr "승강장: %1"
 
-#: app/VehicleLayoutPage.qml:124
+#: app/VehicleLayoutPage.qml:126
 #, kde-format
 msgid "Coach: %1 Seat: %2"
 msgstr "차량: %1 좌석: %2"
 
-#: app/VehicleLayoutPage.qml:229
+#: app/VehicleLayoutPage.qml:231
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "차량 구성 정보를 알 수 없습니다."
 
-#: app/VehicleSectionDialog.qml:27
+#: app/VehicleSectionDialog.qml:29
 #, kde-format
 msgctxt "train coach"
 msgid "Coach %1"

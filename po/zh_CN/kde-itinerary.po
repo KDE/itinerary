@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-13 00:44+0000\n"
+"POT-Creation-Date: 2025-12-29 00:44+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -29,7 +29,7 @@ msgstr ""
 "kde-china@kde.org, zhouwenqing655@gmail.com, i@guoyunhe.me, wordless@echo."
 "moe, tds00@qq.com"
 
-#: app/AboutPage.qml:18 app/Main.qml:102
+#: app/AboutPage.qml:18 app/Main.qml:105
 #, kde-format
 msgid "About"
 msgstr "关于"
@@ -1532,7 +1532,7 @@ msgstr "检查更新"
 msgid "Save As…"
 msgstr "另存为..."
 
-#: app/gpxexport.cpp:33 app/main.cpp:208 app/Main.qml:20 app/Main.qml:74
+#: app/gpxexport.cpp:33 app/main.cpp:221 app/Main.qml:20 app/Main.qml:77
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -2171,7 +2171,7 @@ msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
 msgstr ""
 
-#: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:277
+#: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:278
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2312,14 +2312,14 @@ msgid "Platform %1"
 msgstr "站台 %1"
 
 #: app/JourneySectionDelegate.qml:253 app/JourneySectionPage.qml:136
-#: app/StopoverFormDelegate.qml:144 app/VehicleLayoutPage.qml:175
+#: app/StopoverFormDelegate.qml:144 app/VehicleLayoutPage.qml:177
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr ""
 
 #: app/JourneySectionPage.qml:51 app/TimelineDelegateDepartureLayout.qml:80
-#: app/VehicleLayoutPage.qml:77
+#: app/VehicleLayoutPage.qml:79
 #, kde-format
 msgctxt "Direction of the transport mode"
 msgid "To %1"
@@ -2380,7 +2380,7 @@ msgstr ""
 msgid "Itinerary change"
 msgstr "行程更变"
 
-#: app/LiveStatusPage.qml:21 app/Main.qml:80
+#: app/LiveStatusPage.qml:21 app/Main.qml:83
 #, kde-format
 msgid "Live Status"
 msgstr ""
@@ -2605,23 +2605,23 @@ msgstr "M 型"
 msgid "Type N"
 msgstr "N 型"
 
-#: app/main.cpp:216
+#: app/main.cpp:229
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "数字旅行助理应用"
 
-#: app/main.cpp:217
+#: app/main.cpp:230
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "Copyright © The KDE Community"
 
-#: app/main.cpp:220
+#: app/main.cpp:233
 #, kde-format
 msgctxt "@info:credit"
 msgid "Wikidata"
 msgstr "Wikidata"
 
-#: app/main.cpp:220
+#: app/main.cpp:233
 #, kde-format
 msgctxt "@info:credit"
 msgid ""
@@ -2629,61 +2629,61 @@ msgid ""
 "plug types."
 msgstr "提供各类元数据，例如火车站名称、行车方向以及电源插头类型。"
 
-#: app/main.cpp:221
+#: app/main.cpp:234
 #, kde-format
 msgctxt "@info:credit"
 msgid "OpenStreetMap"
 msgstr "OpenStreetMap"
 
-#: app/main.cpp:221
+#: app/main.cpp:234
 #, kde-format
 msgctxt "@info:credit"
 msgid "Provides both indoor and outdoor maps. ©OpenStreetMap contributors"
 msgstr "提供室内和户外地图。©OpenStreetMap contributors"
 
-#: app/main.cpp:222
+#: app/main.cpp:235
 #, kde-format
 msgctxt "@info:credit"
 msgid "OpenSSL"
 msgstr "OpenSSL"
 
-#: app/main.cpp:222
+#: app/main.cpp:235
 #, kde-format
 msgctxt "@info:credit"
 msgid "Secure network interaction with TLS. © 1998-2018 The OpenSSL Project"
 msgstr "通过 TLS 实现安全的网络交互。© 1998-2018 The OpenSSL Project"
 
-#: app/main.cpp:223
+#: app/main.cpp:236
 #, kde-format
 msgctxt "@info:credit"
 msgid "ZXing"
 msgstr "ZXing"
 
-#: app/main.cpp:223
+#: app/main.cpp:236
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code scanning. © 2016 ZXing Authors, © 2016 Nu-book Inc."
 msgstr "二维码扫描。© 2016 ZXing Authors, © 2016 Nu-book Inc."
 
-#: app/main.cpp:224
+#: app/main.cpp:237
 #, kde-format
 msgctxt "@info:credit"
 msgid "Poppler"
 msgstr "Poppler"
 
-#: app/main.cpp:224
+#: app/main.cpp:237
 #, kde-format
 msgctxt "@info:credit"
 msgid "PDF parsing"
 msgstr "PDF 解析"
 
-#: app/main.cpp:227
+#: app/main.cpp:240
 #, kde-format
 msgctxt "@info:credit"
 msgid "FreeType"
 msgstr "FreeType"
 
-#: app/main.cpp:227
+#: app/main.cpp:240
 #, kde-format
 msgctxt "@info:credit"
 msgid ""
@@ -2691,145 +2691,145 @@ msgid ""
 msgstr ""
 "Copyright (C) 2006-2020 by David Turner, Robert Wilhelm, and Werner Lemberg."
 
-#: app/main.cpp:228
+#: app/main.cpp:241
 #, kde-format
 msgctxt "@info:credit"
 msgid "libintl lite"
 msgstr "libintl lite"
 
-#: app/main.cpp:228
+#: app/main.cpp:241
 #, kde-format
 msgctxt "@info:credit"
 msgid "Internalisation"
 msgstr "内部化"
 
-#: app/main.cpp:231
+#: app/main.cpp:244
 #, kde-format
 msgctxt "@info:credit"
 msgid "libqrencode"
 msgstr "libqrencode"
 
-#: app/main.cpp:231
+#: app/main.cpp:244
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code Generation. © 2006-2018 Kentaro Fukuchi"
 msgstr "生成二维码。© 2006-2018 Kentaro Fukuchi"
 
-#: app/main.cpp:232
+#: app/main.cpp:245
 #, kde-format
 msgctxt "@info:credit"
 msgid "libical"
 msgstr "libical"
 
-#: app/main.cpp:232
+#: app/main.cpp:245
 #, kde-format
 msgctxt "@info:credit"
 msgid "© The libical developers"
 msgstr "© The libical developers"
 
-#: app/main.cpp:233
+#: app/main.cpp:246
 #, kde-format
 msgctxt "@info:credit"
 msgid "libxml2"
 msgstr "libxml2"
 
-#: app/main.cpp:233
+#: app/main.cpp:246
 #, kde-format
 msgctxt "@info:credit"
 msgid "Copyright (C) 1998-2012 Daniel Veillard"
 msgstr "Copyright (C) 1998-2012 Daniel Veillard"
 
-#: app/main.cpp:236
+#: app/main.cpp:249
 #, kde-format
 msgctxt "@info:credit"
 msgid "libQuotient"
 msgstr "libQuotient"
 
-#: app/main.cpp:236
+#: app/main.cpp:249
 #, kde-format
 msgctxt "@info:credit"
 msgid "Matrix integration."
 msgstr "Matrix 集成。"
 
-#: app/main.cpp:237
+#: app/main.cpp:250
 #, kde-format
 msgctxt "@info:credit"
 msgid "QtKeychain"
 msgstr "QtKeychain"
 
-#: app/main.cpp:237
+#: app/main.cpp:250
 #, kde-format
 msgctxt "@info:credit"
 msgid "Secure password storage."
 msgstr "安全的密码存储。"
 
-#: app/main.cpp:238
+#: app/main.cpp:251
 #, kde-format
 msgctxt "@info:credit"
 msgid "Olm"
 msgstr "Olm"
 
-#: app/main.cpp:238
+#: app/main.cpp:251
 #, kde-format
 msgctxt "@info:credit"
 msgid "Matrix crypto library."
 msgstr "Matrix 加密库。"
 
-#: app/main.cpp:246
+#: app/main.cpp:259
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr ""
 
-#: app/main.cpp:251
+#: app/main.cpp:264
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
 msgstr ""
 
-#: app/Main.qml:88 app/WelcomePage.qml:41
+#: app/Main.qml:91 app/WelcomePage.qml:41
 #, kde-format
 msgid "Settings…"
 msgstr "设置..."
 
-#: app/Main.qml:95 app/WelcomePage.qml:16
+#: app/Main.qml:98 app/WelcomePage.qml:16
 #, kde-format
 msgid "Help"
 msgstr "帮助"
 
-#: app/Main.qml:184
+#: app/Main.qml:187
 #, kde-format
 msgctxt "@info:status"
 msgid "No onboard information available."
 msgstr "没有可用的登机信息。"
 
-#: app/Main.qml:226
+#: app/Main.qml:229
 #, kde-format
 msgid "Map download finished."
 msgstr "地图下载完毕。"
 
-#: app/Main.qml:291
+#: app/Main.qml:296
 #, kde-format
 msgctxt "@title:window"
 msgid "Matrix Session Verification"
 msgstr "Matrix 会话验证"
 
-#: app/MapStopoverInfoSheetDrawer.qml:68
+#: app/MapStopoverInfoSheetDrawer.qml:64
 #, kde-format
 msgid "Platform:"
 msgstr "站台："
 
-#: app/MapStopoverInfoSheetDrawer.qml:84
+#: app/MapStopoverInfoSheetDrawer.qml:85
 #, kde-format
 msgid "Occupancy:"
 msgstr "占有率："
 
-#: app/MapStopoverInfoSheetDrawer.qml:104
+#: app/MapStopoverInfoSheetDrawer.qml:112
 #, kde-format
 msgid "Information:"
 msgstr "信息："
 
-#: app/MapStopoverInfoSheetDrawer.qml:120
+#: app/MapStopoverInfoSheetDrawer.qml:131
 #, kde-format
 msgid "Show indoor map"
 msgstr "显示室内地图"
@@ -4481,9 +4481,10 @@ msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"
 msgstr ""
 
-#: app/TripGroupMapPage.qml:195
-#, kde-format
-msgid "Address:"
+#: app/TripGroupMapPage.qml:201
+#, fuzzy, kde-format
+#| msgid "Address:"
+msgid "Address"
 msgstr "地址："
 
 #: app/TripGroupMergeDialog.qml:17
@@ -4756,35 +4757,35 @@ msgstr "拆分行程"
 msgid "Vehicle Layout"
 msgstr "列车编组"
 
-#: app/VehicleLayoutPage.qml:93
+#: app/VehicleLayoutPage.qml:95
 #, kde-format
 msgctxt "%1 is a date/time"
 msgid "Departure: %1"
 msgstr ""
 
-#: app/VehicleLayoutPage.qml:95
+#: app/VehicleLayoutPage.qml:97
 #, kde-format
 msgctxt "%1 is a date/time"
 msgid "Arrival: %1"
 msgstr ""
 
-#: app/VehicleLayoutPage.qml:115
+#: app/VehicleLayoutPage.qml:117
 #, kde-format
 msgctxt "train station platform"
 msgid "Platform: %1"
 msgstr ""
 
-#: app/VehicleLayoutPage.qml:124
+#: app/VehicleLayoutPage.qml:126
 #, kde-format
 msgid "Coach: %1 Seat: %2"
 msgstr "车厢：%1 座位：%2"
 
-#: app/VehicleLayoutPage.qml:229
+#: app/VehicleLayoutPage.qml:231
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "没有列车编组的相关信息。"
 
-#: app/VehicleSectionDialog.qml:27
+#: app/VehicleSectionDialog.qml:29
 #, kde-format
 msgctxt "train coach"
 msgid "Coach %1"
