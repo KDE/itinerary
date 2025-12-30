@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-19 02:43+0000\n"
-"PO-Revision-Date: 2025-10-14 12:48+0200\n"
+"PO-Revision-Date: 2025-12-29 17:24+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -207,7 +207,7 @@ msgstr "Ferry"
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Airplane"
-msgstr ""
+msgstr "Aaeroplano"
 
 #: app/AlternativeJourneyPage.qml:119
 #, kde-format
@@ -302,10 +302,7 @@ msgid "File saved successfully."
 msgstr "File salveguardate con successo."
 
 #: app/applicationcontroller.cpp:647
-#, fuzzy, kde-format
-#| msgid ""
-#| "File was imported with a newer version of Itinerary. Some information "
-#| "might not be imported correctly."
+#, kde-format
 msgid ""
 "File was exported with a newer version of Itinerary. Some information might "
 "not be imported correctly."
@@ -673,8 +670,7 @@ msgid "Arrival"
 msgstr "Arrivata"
 
 #: app/BusEditor.qml:244 app/TrainEditor.qml:265
-#, fuzzy, kde-format
-#| msgid "Arrival Time"
+#, kde-format
 msgctxt "Train arrival"
 msgid "Arrival Time"
 msgstr "Tempore de arrivata:"
@@ -1462,10 +1458,9 @@ msgid "Coordinate to address"
 msgstr "Coordinata a adresse"
 
 #: app/FormPlaceEditorDelegate.qml:247
-#, fuzzy, kde-format
-#| msgid "Pick coordinate"
+#, kde-format
 msgid "Remove coordinate"
-msgstr "Collige coordinata"
+msgstr "Remove coordinata"
 
 #: app/FormPlatformDelegate.qml:19
 #, kde-format
@@ -1527,7 +1522,7 @@ msgid "Check for Updates"
 msgstr "Marcar per actualisationes"
 
 #: app/GenericPkPassPage.qml:63
-#, fuzzy, kde-format
+#, kde-format
 msgid "Save As…"
 msgstr "Salveguarda como…"
 
@@ -2127,11 +2122,10 @@ msgid "Open wheelmap.org"
 msgstr "Aperi wheelmap.org"
 
 #: app/JourneyFilterPage.qml:15
-#, fuzzy, kde-format
-#| msgid "Select Journey"
+#, kde-format
 msgctxt "@title"
 msgid "Filter Journeys"
-msgstr "Selige Viage"
+msgstr "Filtra Viages"
 
 #: app/JourneyFilterPage.qml:59
 #, kde-format
@@ -2259,7 +2253,7 @@ msgstr "Tempore de arrivata"
 #, kde-format
 msgctxt "filter journeys by mode of transportation etc."
 msgid "Filter"
-msgstr ""
+msgstr "Filtro"
 
 #: app/JourneyRequestPage.qml:219
 #, kde-format
@@ -2490,8 +2484,7 @@ msgid "%1 / %2"
 msgstr "%1 / %2"
 
 #: app/localizer.cpp:283
-#, fuzzy, kde-format
-#| msgid "%1m"
+#, kde-format
 msgctxt "altitude in meter"
 msgid "%1m"
 msgstr "%1m"
@@ -2677,11 +2670,10 @@ msgid "PDF parsing"
 msgstr ""
 
 #: app/main.cpp:227
-#, fuzzy, kde-format
-#| msgid "Type"
+#, kde-format
 msgctxt "@info:credit"
 msgid "FreeType"
-msgstr "Typo"
+msgstr "Typo Libere"
 
 #: app/main.cpp:227
 #, kde-format
@@ -2697,11 +2689,10 @@ msgid "libintl lite"
 msgstr ""
 
 #: app/main.cpp:228
-#, fuzzy, kde-format
-#| msgid "Information"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Internalisation"
-msgstr "Information"
+msgstr "Internalisation"
 
 #: app/main.cpp:231
 #, kde-format
@@ -2725,38 +2716,37 @@ msgstr ""
 #, kde-format
 msgctxt "@info:credit"
 msgid "© The libical developers"
-msgstr ""
+msgstr "© Le disveloppatores de libical"
 
 #: app/main.cpp:233
 #, kde-format
 msgctxt "@info:credit"
 msgid "libxml2"
-msgstr ""
+msgstr "libxml2"
 
 #: app/main.cpp:233
 #, kde-format
 msgctxt "@info:credit"
 msgid "Copyright (C) 1998-2012 Daniel Veillard"
-msgstr ""
+msgstr "Copyright (C) 1998-2012 Daniel Veillard"
 
 #: app/main.cpp:236
 #, kde-format
 msgctxt "@info:credit"
 msgid "libQuotient"
-msgstr ""
+msgstr "libQuotient"
 
 #: app/main.cpp:236
-#, fuzzy, kde-format
-#| msgid "Matrix Integration"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Matrix integration."
-msgstr "Integration de Matrix"
+msgstr "Integration de Matrix."
 
 #: app/main.cpp:237
 #, kde-format
 msgctxt "@info:credit"
 msgid "QtKeychain"
-msgstr ""
+msgstr "QtKeychain"
 
 #: app/main.cpp:237
 #, kde-format
@@ -2768,7 +2758,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:credit"
 msgid "Olm"
-msgstr ""
+msgstr "Olm"
 
 #: app/main.cpp:238
 #, kde-format
@@ -4728,11 +4718,10 @@ msgid "A trip must be selected."
 msgstr "Unviage debe esser selectionate."
 
 #: app/TripGroupSelectorDialog.qml:14
-#, fuzzy, kde-format
-#| msgid "Add to Trip"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Add Journey to Trip"
-msgstr "Adde a viage "
+msgstr "Adde a viage  a excursion"
 
 #: app/TripGroupsPage.qml:15
 #, kde-format
