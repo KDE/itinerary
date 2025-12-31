@@ -136,7 +136,7 @@ ColumnLayout {
 
     QtLocation.GeocodeModel {
         id: geocodeModel
-        plugin: applicationWindow().osmPlugin()
+        plugin: applicationWindow().geocodingPlugin()
         autoUpdate: false
         limit: 1
 
@@ -174,7 +174,7 @@ ColumnLayout {
     }
     QtLocation.GeocodeModel {
         id: reverseGeocodeModel
-        plugin: applicationWindow().osmPlugin()
+        plugin: applicationWindow().geocodingPlugin()
         autoUpdate: false
         limit: 1
         onLocationsChanged: {

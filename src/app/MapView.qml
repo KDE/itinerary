@@ -14,7 +14,7 @@ import QtQuick.Controls as Controls
 /** QtLocation map view with standard interaction settings. */
 QtLocation.Map {
     id: map
-    plugin: applicationWindow().osmPlugin()
+    plugin: applicationWindow().mapPlugin()
 
     copyrightsVisible: !applicationWindow().hasMapLibre
     onCopyrightLinkActivated: Qt.openUrlExternally(link)

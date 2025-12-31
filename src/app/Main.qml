@@ -257,10 +257,19 @@ Kirigami.ApplicationWindow {
         IndoorMapPage {}
     }
 
-    // "singleton" OSM QtLocation plugin
+    // "singleton" QtLocation plugins
     // we only want one of these, and created only when absolutely necessary
     // as this triggers network operations on creation already
-    function osmPlugin(): QtLocation.Plugin {
+    function mapPlugin(): QtLocation.Plugin {
+        if (root.hasMapLibre) {
+            if (!__qtLocationMaplibrePlugin) {
+                __qtLocationMaplibrePlugin = __qtLocationMaplibrePluginComponent.createObject();
+            }
+            return __qtLocationMaplibrePlugin;
+        }
+        return root.geocodingPlugin();
+    }
+    function geocodingPlugin(): QtLocation.Plugin {
         if (!__qtLocationOSMPlugin) {
             __qtLocationOSMPlugin = __qtLocationOSMPluginComponent.createObject();
         }
@@ -270,10 +279,20 @@ Kirigami.ApplicationWindow {
     Component {
         id: __qtLocationOSMPluginComponent
         QtLocation.Plugin {
-            name: root.hasMapLibre ? "maplibre" : "osm" // Use MapLibre plugin
+            name: "osm"
 
             QtLocation.PluginParameter { name: "osm.useragent"; value: ApplicationController.userAgent }
             QtLocation.PluginParameter { name: "osm.mapping.providersrepository.address"; value: "https://autoconfig.kde.org/qtlocation/" }
+        }
+    }
+    property QtLocation.Plugin __qtLocationMaplibrePlugin: null
+    Component {
+        id: __qtLocationMaplibrePluginComponent
+        QtLocation.Plugin {
+            name: "maplibre"
+
+            QtLocation.PluginParameter { name: "maplibre.client.name"; value: "org.kde.itinerary" }
+            QtLocation.PluginParameter { name: "maplibre.client.version"; value: ApplicationController.version }
             QtLocation.PluginParameter { name: "maplibre.map.styles"; value: "https://tiles.openfreemap.org/styles/liberty" }
         }
     }
