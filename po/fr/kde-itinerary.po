@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-29 00:44+0000\n"
-"PO-Revision-Date: 2025-12-15 09:32+0100\n"
+"PO-Revision-Date: 2025-12-30 11:38+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -4595,10 +4595,9 @@ msgid "%1 (%2/%3)"
 msgstr "%1 (%2 / %3)"
 
 #: app/TripGroupMapPage.qml:201
-#, fuzzy, kde-format
-#| msgid "Address:"
+#, kde-format
 msgid "Address"
-msgstr "Adresse :"
+msgstr "Adresse"
 
 #: app/TripGroupMergeDialog.qml:17
 #, kde-format
