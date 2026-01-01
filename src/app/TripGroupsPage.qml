@@ -59,19 +59,11 @@ Kirigami.ScrollablePage {
 
         section {
             delegate: Kirigami.ListSectionHeader {
-                required property int section
+                required property string section
                 width: tripsView.width
-
-                text: switch (section) {
-                case TripGroupModel.Past:
-                    return i18nc("List section header", "Past trips");
-                case TripGroupModel.Future:
-                    return i18nc("List section header", "Future trips");
-                case TripGroupModel.Current:
-                    return i18nc("List section header", "Current trip");
-                }
+                text: section
             }
-            property: "position"
+            property: "section"
         }
 
         model: TripGroupModel

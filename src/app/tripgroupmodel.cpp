@@ -16,6 +16,10 @@
 #include <KItinerary/Reservation>
 #include <KItinerary/SortUtil>
 
+#include <KLocalizedString>
+
+using namespace Qt::Literals;
+
 TripGroupModel::TripGroupModel(QObject *parent)
     : QAbstractListModel(parent)
 {
@@ -109,9 +113,34 @@ QVariant TripGroupModel::data(const QModelIndex &index, int role) const
     case IsSingleDayRole:
         return tripGroup.beginDateTime().isValid()
             && (!tripGroup.endDateTime().isValid() || tripGroup.beginDateTime().date() == tripGroup.endDateTime().date());
-    default:
-        return {};
+    case SectionRole:
+    {
+        const auto pos = data(index, PositionRole).toInt();
+        switch (pos) {
+        case Past:
+        {
+            if (index.row() > 0 && tripGroup.beginDateTime().date().year() != today().year()) {
+                for (std::size_t i = index.row() - 1; i > 0; --i) {
+                    const auto tg = m_tripGroupManager->tripGroup(m_tripGroups[i]);
+                    if (!tg.hasEnded(now()) || !tg.beginDateTime().isValid()) {
+                        break;
+                    }
+                    if (tg.beginDateTime().date().year() != tripGroup.beginDateTime().date().year()) {
+                        return QLocale().toString(tripGroup.beginDateTime(), u"yyyy"_s);
+                    }
+                }
+            }
+            return i18nc("List section header", "Past trips");
+        }
+        case Future:
+            return i18nc("List section header", "Future trips");
+        case Current:
+            return i18nc("List section header", "Current trip");
+        }
+        break;
     }
+    }
+    return {};
 }
 
 QHash<int, QByteArray> TripGroupModel::roleNames() const
@@ -124,6 +153,7 @@ QHash<int, QByteArray> TripGroupModel::roleNames() const
         {TripGroupRole, "tripGroup"},
         {TripGroupIdRole, "tripGroupId"},
         {IsSingleDayRole, "isSingleDay"},
+        {SectionRole, "section"},
     };
 }
 
