@@ -915,7 +915,7 @@
     <release version="25.12.1" date="2026-01-08">
       <description>
         <ul>
-          <li>New or improved travel document extractors for booking.com, České dráhy, DB and MÁV.</li>
+          <li>New or improved travel document extractors for booking.com, České dráhy, DB, gomus, KLM and MÁV.</li>
           <li>Fix crash on referenced but non-existent PDF masks (bug 513945).</li>
           <li>Fixes for online post-processing reservations without geographic coordinates.</li>
           <li>Fixes for sort order corner cases in the timeline view.</li>
