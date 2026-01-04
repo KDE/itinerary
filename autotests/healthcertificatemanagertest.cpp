@@ -82,7 +82,6 @@ private Q_SLOTS:
             QAbstractItemModelTester modelTester(mgr);
 #if HAVE_KHEALTHCERTIFICATE
             QCOMPARE(mgr->rowCount(), 1);
-            const auto rawData = readFile(QLatin1StringView(SOURCE_DIR "/data/health-certificates/full-vaccination.txt"));
             // no duplicates
             ImportController importer;
             importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/health-certificates/full-vaccination.txt")));
