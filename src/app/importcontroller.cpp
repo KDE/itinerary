@@ -364,13 +364,13 @@ void ImportController::importFromIntent(const KAndroidExtras::Intent &intent)
             msg.setBody(text.toUtf8());
         } else {
             msg.contentType()->setMimeType("multipart/mixed");
-            auto body = new KMime::Content;
+            auto body = std::make_unique<KMime::Content>();
             body->contentType()->setMimeType(type.toUtf8());
             body->setBody(text.toUtf8());
-            msg.appendContent(body);
+            msg.appendContent(std::move(body));
             for (const auto &a : attachments) {
                 QUrl attUrl(a);
-                auto att = new KMime::Content;
+                auto att = std::make_unique<KMime::Content>();
                 att->contentType()->setMimeType(ContentResolver::mimeType(attUrl).toUtf8());
                 att->contentTransferEncoding()->setEncoding(KMime::Headers::CEbase64);
                 att->contentType()->setName(attUrl.fileName());
@@ -380,7 +380,7 @@ void ImportController::importFromIntent(const KAndroidExtras::Intent &intent)
                     continue;
                 }
                 att->setBody(f.readAll());
-                msg.appendContent(att);
+                msg.appendContent(std::move(att));
             }
         }
 
