@@ -194,11 +194,10 @@
         {
             "name": "zxing",
             "config-opts": [
-                "-DBUILD_DEPENDENCIES=LOCAL",
+                "-DZXING_DEPENDENCIES=LOCAL",
                 "-DBUILD_SHARED_LIBS=OFF",
-                "-DBUILD_UNIT_TESTS=OFF",
-                "-DBUILD_BLACKBOX_TESTS=OFF",
-                "-DBUILD_EXAMPLES=OFF"
+                "-DZXING_UNIT_TESTS=OFF",
+                "-DZXING_EXAMPLES=OFF"
             ],
             "buildsystem": "cmake-ninja",
             "builddir": true,
