@@ -207,7 +207,7 @@ EditorPage {
 
                     width: parent.width
 
-                    text: i18n("Specifying the departure and arrival location helps Itinerary to find updated information for the train this reservation is valid for.")
+                    text: i18n("Specifying the departure and arrival location helps Itinerary to find up-to-date information for the train this reservation is valid for.")
 
                     visible: !departureAddress.place.geo.isValid
                 }
@@ -307,7 +307,7 @@ EditorPage {
 
                     width: parent.width
 
-                    text: i18n("Specifying the departure and arrival location helps Itinerary to find updated information for the train this reservation is valid for.")
+                    text: i18n("Specifying the departure and arrival location helps Itinerary to find up-to-date information for the train this reservation is valid for.")
 
                     visible: !arrivalAddress.place.geo.isValid
                 }
