@@ -239,7 +239,7 @@ FormCard.FormCardPage {
                     case OnboardStatus.LocationServiceNotEnabled:
                         return i18n("Enable the location service on your device to access onboard information.");
                     case OnboardStatus.NotAvailable:
-                        return i18n("Onboard information are unfortunately not supported on your device at this time.");
+                        return i18n("Unfortunately, retrieving onboard information is not supported on your device at this time.");
                 }
             }
             icon.name: {
