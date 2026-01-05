@@ -1,7 +1,7 @@
 # Translation for kde-itinerary.po to Euskara/Basque (eu).
 # Copyright (C) 2020-2025 This file is copyright:
 # This file is distributed under the same license as the itinerary package.
-# SPDX-FileCopyrightText: 2023, 2024, 2025 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2023, 2024, 2025, 2026 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
 #
 # Translators:
 # Ander Elortondo <ander.elor@gmail.com>, 2020.
@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-19 02:43+0000\n"
-"PO-Revision-Date: 2025-12-08 18:47+0100\n"
+"PO-Revision-Date: 2026-01-04 10:58+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 25.12.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1257,12 +1257,12 @@ msgstr "Iritsiera - %1"
 #, kde-format
 msgctxt "flight arrival"
 msgid "Arrival"
-msgstr "Helduera"
+msgstr "Iritsiera"
 
 #: app/FlightEditor.qml:171
 #, kde-format
 msgid "Arrival airport has to be specified."
-msgstr "Helduerako aireportua zehaztu da."
+msgstr "Iritsierako aireportua zehaztu da."
 
 #: app/FlightEditor.qml:183
 #, kde-format
@@ -3284,7 +3284,7 @@ msgstr "Irteera aurreratua %1(e)n"
 #: app/notificationhelper.cpp:80
 #, kde-format
 msgid "Delayed arrival on %1"
-msgstr "Helduera atzeratua %1(e)n"
+msgstr "Iritsiera atzeratua %1(e)n"
 
 #: app/notificationhelper.cpp:84
 #, kde-format
@@ -3295,13 +3295,13 @@ msgstr "Nasa aldaketa %1(e)n"
 #, kde-format
 msgctxt "a train/bus journey canceled by its operator"
 msgid "Trip has been canceled."
-msgstr "Txangoa bertan behera gelditu da."
+msgstr "Txangoa ezeztatu egin da."
 
 #: app/notificationhelper.cpp:96
 #, kde-format
 msgctxt "a train/bus journey canceled by its operator"
 msgid "Arrival has been canceled."
-msgstr "Helduera bertan behera gelditu da."
+msgstr "Iritsiera ezeztatu egin da."
 
 #: app/notificationhelper.cpp:101
 #, kde-format
