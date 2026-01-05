@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-02 00:44+0000\n"
-"PO-Revision-Date: 2025-12-15 00:29+0100\n"
+"PO-Revision-Date: 2026-01-02 14:56+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -548,20 +548,16 @@ msgid "Booking"
 msgstr "Prenotazione"
 
 #: app/BookingEditorCard.qml:66
-#, fuzzy, kde-format
-#| msgctxt "a train/bus journey canceled by its operator"
-#| msgid "Canceled"
+#, kde-format
 msgctxt "canceled reservation"
 msgid "Canceled"
-msgstr "Annullato"
+msgstr "Annullata"
 
 #: app/BookingEditorCard.qml:67
-#, fuzzy, kde-format
-#| msgctxt "a train/bus journey canceled by its operator"
-#| msgid "Trip has been canceled."
+#, kde-format
 msgctxt "cancled reservation"
 msgid "Booking has been canceled."
-msgstr "Il viaggio è stato annullato."
+msgstr "La prenotazione è stata annullata."
 
 #: app/BusDelegate.qml:38
 #, kde-format
@@ -4579,10 +4575,9 @@ msgid "%1 (%2/%3)"
 msgstr "%1 (%2/%3)"
 
 #: app/TripGroupMapPage.qml:201
-#, fuzzy, kde-format
-#| msgid "Address:"
+#, kde-format
 msgid "Address"
-msgstr "Indirizzo:"
+msgstr "Indirizzo"
 
 #: app/TripGroupMergeDialog.qml:17
 #, kde-format

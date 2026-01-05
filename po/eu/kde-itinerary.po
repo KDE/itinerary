@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-02 00:44+0000\n"
-"PO-Revision-Date: 2026-01-01 20:52+0100\n"
+"PO-Revision-Date: 2026-01-04 10:58+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -553,20 +553,16 @@ msgid "Booking"
 msgstr "Erreserba"
 
 #: app/BookingEditorCard.qml:66
-#, fuzzy, kde-format
-#| msgctxt "a train/bus journey canceled by its operator"
-#| msgid "Canceled"
+#, kde-format
 msgctxt "canceled reservation"
 msgid "Canceled"
-msgstr "Bertan behera utzita"
+msgstr "Ezeztatuta"
 
 #: app/BookingEditorCard.qml:67
-#, fuzzy, kde-format
-#| msgctxt "a train/bus journey canceled by its operator"
-#| msgid "Trip has been canceled."
+#, kde-format
 msgctxt "cancled reservation"
 msgid "Booking has been canceled."
-msgstr "Txangoa bertan behera gelditu da."
+msgstr "Erreserba ezeztatu egin da."
 
 #: app/BusDelegate.qml:38
 #, kde-format
@@ -1298,12 +1294,12 @@ msgstr "Iritsiera - %1"
 #, kde-format
 msgctxt "flight arrival"
 msgid "Arrival"
-msgstr "Helduera"
+msgstr "Iritsiera"
 
 #: app/FlightEditor.qml:171
 #, kde-format
 msgid "Arrival airport has to be specified."
-msgstr "Helduerako aireportua zehaztu da."
+msgstr "Iritsierako aireportua zehaztu da."
 
 #: app/FlightEditor.qml:183
 #, kde-format
@@ -3329,7 +3325,7 @@ msgstr "Irteera aurreratua %1(e)n"
 #: app/notificationhelper.cpp:80
 #, kde-format
 msgid "Delayed arrival on %1"
-msgstr "Helduera atzeratua %1(e)n"
+msgstr "Iritsiera atzeratua %1(e)n"
 
 #: app/notificationhelper.cpp:84
 #, kde-format
@@ -3340,13 +3336,13 @@ msgstr "Nasa aldaketa %1(e)n"
 #, kde-format
 msgctxt "a train/bus journey canceled by its operator"
 msgid "Trip has been canceled."
-msgstr "Txangoa bertan behera gelditu da."
+msgstr "Txangoa ezeztatu egin da."
 
 #: app/notificationhelper.cpp:96
 #, kde-format
 msgctxt "a train/bus journey canceled by its operator"
 msgid "Arrival has been canceled."
-msgstr "Helduera bertan behera gelditu da."
+msgstr "Iritsiera ezeztatu egin da."
 
 #: app/notificationhelper.cpp:101
 #, kde-format
