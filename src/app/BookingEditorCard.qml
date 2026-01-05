@@ -64,7 +64,7 @@ ColumnLayout {
         FormCard.FormCheckDelegate {
             id: canceledEdit
             text: i18nc("canceled reservation", "Canceled")
-            description: i18nc("cancled reservation", "Booking has been canceled.")
+            description: i18nc("canceled reservation", "Booking has been canceled.")
             checked: root.item.reservationStatus === 1 // ReservationCancelled
         }
     }

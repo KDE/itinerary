@@ -17,7 +17,7 @@ Item {
 
     /** The JourneySection displayed here. */
     property JourneySectionModel sectionModel
-    /** Whether the overall reservation is canceled and shoould be rendered accordingly. */
+    /** Whether the overall reservation is canceled and should be rendered accordingly. */
     property bool isCanceled: false
     /** Whether intermediate stops are expanded. */
     property bool expanded: false

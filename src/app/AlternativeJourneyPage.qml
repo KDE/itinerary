@@ -25,7 +25,7 @@ JourneyQueryPage {
         root.journeyRequest.downloadAssets = Settings.wikimediaOnlineContentEnabled;
         root.journeyRequest.to = controller.journeyDestinations[destinationCombo.currentIndex];
         if (root.journeyRequest.from.hasCoordinate && root.journeyRequest.to.hasCoordinate) {
-            // remove ticket issuer filters when we have cooridinates on both sides, that is much more robust
+            // remove ticket issuer filters when we have coordinates on both sides, that's much more robust
             root.journeyRequest.backends = [];
         }
 

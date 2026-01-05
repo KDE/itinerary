@@ -19,7 +19,7 @@ Kirigami.Page {
     /** Initially selected coordinate, if any. */
     property variant coordinate
 
-    /** Initially shown country, if coorinate is invalid. */
+    /** Initially shown country, if coordinate is invalid. */
     property string country
 
     topPadding: 0

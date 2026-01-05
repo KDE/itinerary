@@ -42,7 +42,7 @@ public:
     /** Default icon name for the given element. */
     Q_INVOKABLE [[nodiscard]] static QString defaultIconName(const QVariant &res);
 
-    /** Batch defining the location preceeding to @p resId.
+    /** Batch defining the location preceding to @p resId.
      *  That's usually ReservationManager::previousBatch, apart from nested
      *  non-location change elements.
      */

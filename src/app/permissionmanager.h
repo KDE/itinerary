@@ -15,7 +15,7 @@ namespace Permission
 Q_NAMESPACE
 QML_ELEMENT
 enum Permission {
-    InvalidPermission, // captures QML errors resultin in "0" enum values
+    InvalidPermission, // captures QML errors resulting in "0" enum values
     ReadCalendar,
     WriteCalendar,
     Camera,

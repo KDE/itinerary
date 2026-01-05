@@ -21,11 +21,11 @@ FormCard.FormCardPage {
     property KPublicTransport.Manager publicTransportManager
 
     /**
-     * Pre-selected country in the location pickers.
+     * Preselected country in the location pickers.
      * If not specified the country from the current locale is used.
      */
     property string initialCountry
-    /** Pre-selected departure time. */
+    /** Preselected departure time. */
     property date initialDateTime: new Date()
 
     Kirigami.Theme.inherit: false

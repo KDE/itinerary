@@ -43,7 +43,7 @@ void Migrator::run()
             break;
         default:
             // already up to date
-            qCDebug(Log) << "Aleady on current version, nothing to do.";
+            qCDebug(Log) << "Already on current version, nothing to do.";
             return;
     }
 

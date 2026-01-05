@@ -142,11 +142,11 @@ Item {
                     case KPublicTransport.Line.RailShuttle:
                     case KPublicTransport.Line.RapidTransit:
                     case KPublicTransport.Line.Tramway:
-                        return i18nc("Abreviation of train platform", "Pl. %1", platform)
+                        return i18nc("Abbreviation of train platform", "Pl. %1", platform)
                     case KPublicTransport.Line.Ferry:
-                        return i18nc("Ferry dock, if possible use an abreviation", "Dock %1", platform)
+                        return i18nc("Ferry dock, if possible use an abbreviation", "Dock %1", platform)
                     default:
-                        return i18nc("Generic abreviation of platform", "Pl. %1", platform)
+                        return i18nc("Generic abbreviation of platform", "Pl. %1", platform)
                 }
             }
             visible: root.stop.disruptionEffect !== KPublicTransport.Disruption.NoService

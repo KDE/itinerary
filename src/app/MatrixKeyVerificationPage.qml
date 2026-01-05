@@ -111,7 +111,7 @@ Kirigami.ScrollablePage {
         id: methodSelector
         QQC2.ItemDelegate {
             id: delegateRoot
-            text: i18nc("Matrix session verfication", "Emoji Verification")
+            text: i18nc("Matrix session verification", "Emoji Verification")
             contentItem: Kirigami.TitleSubtitle {
                 title: delegateRoot.text
                 subtitle: i18nc("Matrix session verification", "Compare a set of emoji on both devices.")
