@@ -548,12 +548,10 @@ msgid "Canceled"
 msgstr ""
 
 #: app/BookingEditorCard.qml:67
-#, fuzzy, kde-format
-#| msgctxt "a train/bus journey canceled by its operator"
-#| msgid "Trip has been canceled."
+#, kde-format
 msgctxt "cancled reservation"
 msgid "Booking has been canceled."
-msgstr "班次已取消。"
+msgstr ""
 
 #: app/BusDelegate.qml:38
 #, kde-format
