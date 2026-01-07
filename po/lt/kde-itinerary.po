@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-02 00:44+0000\n"
+"POT-Creation-Date: 2026-01-07 00:44+0000\n"
 "PO-Revision-Date: 2019-03-18 03:34+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: lt\n"
@@ -557,7 +557,7 @@ msgstr ""
 
 #: app/BookingEditorCard.qml:67
 #, kde-format
-msgctxt "cancled reservation"
+msgctxt "canceled reservation"
 msgid "Booking has been canceled."
 msgstr ""
 
@@ -2371,19 +2371,19 @@ msgstr ""
 
 #: app/JourneySectionStopDelegate.qml:145
 #, kde-format
-msgctxt "Abreviation of train platform"
+msgctxt "Abbreviation of train platform"
 msgid "Pl. %1"
 msgstr ""
 
 #: app/JourneySectionStopDelegate.qml:147
 #, kde-format
-msgctxt "Ferry dock, if possible use an abreviation"
+msgctxt "Ferry dock, if possible use an abbreviation"
 msgid "Dock %1"
 msgstr ""
 
 #: app/JourneySectionStopDelegate.qml:149
 #, kde-format
-msgctxt "Generic abreviation of platform"
+msgctxt "Generic abbreviation of platform"
 msgid "Pl. %1"
 msgstr ""
 
@@ -3060,7 +3060,7 @@ msgstr ""
 
 #: app/MatrixKeyVerificationPage.qml:114
 #, kde-format
-msgctxt "Matrix session verfication"
+msgctxt "Matrix session verification"
 msgid "Emoji Verification"
 msgstr ""
 
@@ -3814,8 +3814,8 @@ msgstr ""
 #: app/SettingsPage.qml:242
 #, kde-format
 msgid ""
-"Onboard information are unfortunately not supported on your device at this "
-"time."
+"Unfortunately, retrieving onboard information is not supported on your "
+"device at this time."
 msgstr ""
 
 #: app/SettingsPage.qml:274
@@ -4274,8 +4274,8 @@ msgstr ""
 #: app/TrainEditor.qml:210 app/TrainEditor.qml:310
 #, kde-format
 msgid ""
-"Specifying the departure and arrival location helps Itinerary to find "
-"updated information for the train this reservation is valid for."
+"Specifying the departure and arrival location helps Itinerary to find up-to-"
+"date information for the train this reservation is valid for."
 msgstr ""
 
 #: app/TrainEditor.qml:231 app/TrainEditor.qml:336 app/TrainPage.qml:167

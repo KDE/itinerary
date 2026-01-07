@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-02 00:44+0000\n"
+"POT-Creation-Date: 2026-01-07 00:44+0000\n"
 "PO-Revision-Date: 2026-01-02 15:18+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -555,8 +555,10 @@ msgid "Canceled"
 msgstr "Geannuleerd"
 
 #: app/BookingEditorCard.qml:67
-#, kde-format
-msgctxt "cancled reservation"
+#, fuzzy, kde-format
+#| msgctxt "cancled reservation"
+#| msgid "Booking has been canceled."
+msgctxt "canceled reservation"
 msgid "Booking has been canceled."
 msgstr "Boeking is geannuleerd."
 
@@ -2372,20 +2374,24 @@ msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
 #: app/JourneySectionStopDelegate.qml:145
-#, kde-format
-msgctxt "Abreviation of train platform"
+#, fuzzy, kde-format
+#| msgid "Pl. %1"
+msgctxt "Abbreviation of train platform"
 msgid "Pl. %1"
 msgstr "Pl. %1"
 
 #: app/JourneySectionStopDelegate.qml:147
-#, kde-format
-msgctxt "Ferry dock, if possible use an abreviation"
+#, fuzzy, kde-format
+#| msgctxt "Ferry dock, if possible use an abreviation"
+#| msgid "Dock %1"
+msgctxt "Ferry dock, if possible use an abbreviation"
 msgid "Dock %1"
 msgstr "Afmeerlocatie %1"
 
 #: app/JourneySectionStopDelegate.qml:149
-#, kde-format
-msgctxt "Generic abreviation of platform"
+#, fuzzy, kde-format
+#| msgid "Pl. %1"
+msgctxt "Generic abbreviation of platform"
 msgid "Pl. %1"
 msgstr "Pl. %1"
 
@@ -3095,8 +3101,10 @@ msgid "The session verification was canceled due to an unknown error."
 msgstr "Verificatie van de sessie is geannuleerd vanwege een onbekende fout."
 
 #: app/MatrixKeyVerificationPage.qml:114
-#, kde-format
-msgctxt "Matrix session verfication"
+#, fuzzy, kde-format
+#| msgctxt "Matrix session verfication"
+#| msgid "Emoji Verification"
+msgctxt "Matrix session verification"
 msgid "Emoji Verification"
 msgstr "Verificatie van emoji"
 
@@ -3873,10 +3881,13 @@ msgstr ""
 "boord."
 
 #: app/SettingsPage.qml:242
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Onboard information are unfortunately not supported on your device at "
+#| "this time."
 msgid ""
-"Onboard information are unfortunately not supported on your device at this "
-"time."
+"Unfortunately, retrieving onboard information is not supported on your "
+"device at this time."
 msgstr ""
 "Informatie aan boord wordt op dit moment helaas niet ondersteund op uw "
 "apparaat."
@@ -4336,10 +4347,13 @@ msgid "Platform"
 msgstr "Perron"
 
 #: app/TrainEditor.qml:210 app/TrainEditor.qml:310
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Specifying the departure and arrival location helps Itinerary to find "
+#| "updated information for the train this reservation is valid for."
 msgid ""
-"Specifying the departure and arrival location helps Itinerary to find "
-"updated information for the train this reservation is valid for."
+"Specifying the departure and arrival location helps Itinerary to find up-to-"
+"date information for the train this reservation is valid for."
 msgstr ""
 "De vertrek en aankomstlocatie specificeren helpt Itinerary om bijgewerkte "
 "informatie te vinden voor de trein waarvoor deze reservering geldig is."
@@ -4982,6 +4996,14 @@ msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 van %3 naar %4 op %5"
 
+#~ msgctxt "Abreviation of train platform"
+#~ msgid "Pl. %1"
+#~ msgstr "Pl. %1"
+
+#~ msgctxt "Generic abreviation of platform"
+#~ msgid "Pl. %1"
+#~ msgstr "Pl. %1"
+
 #~ msgid "Copyright: %1"
 #~ msgstr "Copyright: %1"
 
@@ -5338,9 +5360,6 @@ msgstr "%1%2 van %3 naar %4 op %5"
 
 #~ msgid "%1 to %2 (%3)"
 #~ msgstr "%1 naar %2 (%3)"
-
-#~ msgid "Pl. %1"
-#~ msgstr "Pl. %1"
 
 #~ msgctxt "seat section, e.g. block in a stadium"
 #~ msgid "Section:"

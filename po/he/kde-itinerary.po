@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-02 00:44+0000\n"
+"POT-Creation-Date: 2026-01-07 00:44+0000\n"
 "PO-Revision-Date: 2026-01-02 08:44+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -557,8 +557,10 @@ msgid "Canceled"
 msgstr "בוטל"
 
 #: app/BookingEditorCard.qml:67
-#, kde-format
-msgctxt "cancled reservation"
+#, fuzzy, kde-format
+#| msgctxt "cancled reservation"
+#| msgid "Booking has been canceled."
+msgctxt "canceled reservation"
 msgid "Booking has been canceled."
 msgstr "הזימון בוטל."
 
@@ -2376,20 +2378,24 @@ msgid "CO₂: %1"
 msgstr "פחמן דו־חמצני: %1"
 
 #: app/JourneySectionStopDelegate.qml:145
-#, kde-format
-msgctxt "Abreviation of train platform"
+#, fuzzy, kde-format
+#| msgid "Pl. %1"
+msgctxt "Abbreviation of train platform"
 msgid "Pl. %1"
 msgstr "רציף %1"
 
 #: app/JourneySectionStopDelegate.qml:147
-#, kde-format
-msgctxt "Ferry dock, if possible use an abreviation"
+#, fuzzy, kde-format
+#| msgctxt "Ferry dock, if possible use an abreviation"
+#| msgid "Dock %1"
+msgctxt "Ferry dock, if possible use an abbreviation"
 msgid "Dock %1"
 msgstr "מעגן %1"
 
 #: app/JourneySectionStopDelegate.qml:149
-#, kde-format
-msgctxt "Generic abreviation of platform"
+#, fuzzy, kde-format
+#| msgid "Pl. %1"
+msgctxt "Generic abbreviation of platform"
 msgid "Pl. %1"
 msgstr "רציף %1"
 
@@ -3069,8 +3075,10 @@ msgid "The session verification was canceled due to an unknown error."
 msgstr "אימות הפגישה בוטל עקב שגיאה לא ידועה."
 
 #: app/MatrixKeyVerificationPage.qml:114
-#, kde-format
-msgctxt "Matrix session verfication"
+#, fuzzy, kde-format
+#| msgctxt "Matrix session verfication"
+#| msgid "Emoji Verification"
+msgctxt "Matrix session verification"
 msgid "Emoji Verification"
 msgstr "אימות דוא״ל"
 
@@ -3836,10 +3844,13 @@ msgid ""
 msgstr "יש להפעיל את שירות המיקום במכשיר שלך כדי לגשת למידע בזמן הנסיעה."
 
 #: app/SettingsPage.qml:242
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Onboard information are unfortunately not supported on your device at "
+#| "this time."
 msgid ""
-"Onboard information are unfortunately not supported on your device at this "
-"time."
+"Unfortunately, retrieving onboard information is not supported on your "
+"device at this time."
 msgstr "מידע בזמן הנסיעה לא נתמך על ידי המכשיר שלך נכון לעכשיו."
 
 #: app/SettingsPage.qml:274
@@ -4299,10 +4310,13 @@ msgid "Platform"
 msgstr "רציף"
 
 #: app/TrainEditor.qml:210 app/TrainEditor.qml:310
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Specifying the departure and arrival location helps Itinerary to find "
+#| "updated information for the train this reservation is valid for."
 msgid ""
-"Specifying the departure and arrival location helps Itinerary to find "
-"updated information for the train this reservation is valid for."
+"Specifying the departure and arrival location helps Itinerary to find up-to-"
+"date information for the train this reservation is valid for."
 msgstr ""
 "ציון מקום היציאה וההגעה מסייע ל־Itinerary למצוא פרטים עדכניים על הרכבת "
 "שההזמנה הזאת תקפה עבורה."
@@ -4946,6 +4960,14 @@ msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 מ%3 אל %4 ב־%5"
 
+#~ msgctxt "Abreviation of train platform"
+#~ msgid "Pl. %1"
+#~ msgstr "רציף %1"
+
+#~ msgctxt "Generic abreviation of platform"
+#~ msgid "Pl. %1"
+#~ msgstr "רציף %1"
+
 #~ msgid "Copyright: %1"
 #~ msgstr "זכויות יוצרים: %1"
 
@@ -5302,9 +5324,6 @@ msgstr "%1%2 מ%3 אל %4 ב־%5"
 
 #~ msgid "%1 to %2 (%3)"
 #~ msgstr "%1 אל %2 (%3)"
-
-#~ msgid "Pl. %1"
-#~ msgstr "רציף %1"
 
 #~ msgctxt "seat section, e.g. block in a stadium"
 #~ msgid "Section:"

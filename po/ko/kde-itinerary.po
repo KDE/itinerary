@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-02 00:44+0000\n"
+"POT-Creation-Date: 2026-01-07 00:44+0000\n"
 "PO-Revision-Date: 2025-10-12 14:38+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -556,7 +556,7 @@ msgstr "취소됨"
 #, fuzzy, kde-format
 #| msgctxt "a train/bus journey canceled by its operator"
 #| msgid "Trip has been canceled."
-msgctxt "cancled reservation"
+msgctxt "canceled reservation"
 msgid "Booking has been canceled."
 msgstr "여행이 취소되었습니다."
 
@@ -2389,20 +2389,24 @@ msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
 #: app/JourneySectionStopDelegate.qml:145
-#, kde-format
-msgctxt "Abreviation of train platform"
+#, fuzzy, kde-format
+#| msgid "Pl. %1"
+msgctxt "Abbreviation of train platform"
 msgid "Pl. %1"
 msgstr "%1번"
 
 #: app/JourneySectionStopDelegate.qml:147
-#, kde-format
-msgctxt "Ferry dock, if possible use an abreviation"
+#, fuzzy, kde-format
+#| msgctxt "Ferry dock, if possible use an abreviation"
+#| msgid "Dock %1"
+msgctxt "Ferry dock, if possible use an abbreviation"
 msgid "Dock %1"
 msgstr "%1번"
 
 #: app/JourneySectionStopDelegate.qml:149
-#, kde-format
-msgctxt "Generic abreviation of platform"
+#, fuzzy, kde-format
+#| msgid "Pl. %1"
+msgctxt "Generic abbreviation of platform"
 msgid "Pl. %1"
 msgstr "%1번"
 
@@ -3082,8 +3086,10 @@ msgid "The session verification was canceled due to an unknown error."
 msgstr "알 수 없는 이유로 세션 확인이 취소되었습니다."
 
 #: app/MatrixKeyVerificationPage.qml:114
-#, kde-format
-msgctxt "Matrix session verfication"
+#, fuzzy, kde-format
+#| msgctxt "Matrix session verfication"
+#| msgid "Emoji Verification"
+msgctxt "Matrix session verification"
 msgid "Emoji Verification"
 msgstr "이모지 확인"
 
@@ -3850,10 +3856,13 @@ msgid ""
 msgstr "차내 정보를 확인하려면 시스템의 위치 서비스를 활성화해야 합니다."
 
 #: app/SettingsPage.qml:242
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Onboard information are unfortunately not supported on your device at "
+#| "this time."
 msgid ""
-"Onboard information are unfortunately not supported on your device at this "
-"time."
+"Unfortunately, retrieving onboard information is not supported on your "
+"device at this time."
 msgstr "현재 사용 중인 장치에서 차내 정보를 지원하지 않습니다."
 
 #: app/SettingsPage.qml:274
@@ -4322,8 +4331,8 @@ msgstr "승강장"
 #: app/TrainEditor.qml:210 app/TrainEditor.qml:310
 #, kde-format
 msgid ""
-"Specifying the departure and arrival location helps Itinerary to find "
-"updated information for the train this reservation is valid for."
+"Specifying the departure and arrival location helps Itinerary to find up-to-"
+"date information for the train this reservation is valid for."
 msgstr ""
 
 #: app/TrainEditor.qml:231 app/TrainEditor.qml:336 app/TrainPage.qml:167
@@ -4969,6 +4978,14 @@ msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%5에 %3에서 %4(으)로 가는 %1%2|/|%5에 %3에서 %4$[으 %4]로 가는 %1%2"
 
+#~ msgctxt "Abreviation of train platform"
+#~ msgid "Pl. %1"
+#~ msgstr "%1번"
+
+#~ msgctxt "Generic abreviation of platform"
+#~ msgid "Pl. %1"
+#~ msgstr "%1번"
+
 #~ msgid "Copyright: %1"
 #~ msgstr "저작권: %1"
 
@@ -5326,9 +5343,6 @@ msgstr "%5에 %3에서 %4(으)로 가는 %1%2|/|%5에 %3에서 %4$[으 %4]로 �
 
 #~ msgid "%1 to %2 (%3)"
 #~ msgstr "%1에서 %2(으)로(%3)|/|%1에서 %2$[으 %2]로(%3)"
-
-#~ msgid "Pl. %1"
-#~ msgstr "%1번"
 
 #~ msgctxt "seat section, e.g. block in a stadium"
 #~ msgid "Section:"

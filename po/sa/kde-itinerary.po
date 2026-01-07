@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-02 00:44+0000\n"
+"POT-Creation-Date: 2026-01-07 00:44+0000\n"
 "PO-Revision-Date: 2025-03-02 14:47+0530\n"
 "Last-Translator: Shreekant Kalwar <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -572,7 +572,7 @@ msgstr "रद्दं कृतम्"
 #, fuzzy, kde-format
 #| msgctxt "a train/bus journey canceled by its operator"
 #| msgid "Trip has been canceled."
-msgctxt "cancled reservation"
+msgctxt "canceled reservation"
 msgid "Booking has been canceled."
 msgstr "यात्रा रद्दीकृता अस्ति।"
 
@@ -2458,20 +2458,26 @@ msgid "CO₂: %1"
 msgstr "CO2: %1"
 
 #: app/JourneySectionStopDelegate.qml:145
-#, kde-format
-msgctxt "Abreviation of train platform"
+#, fuzzy, kde-format
+#| msgctxt "Abreviation of train platform"
+#| msgid "Pl. %1"
+msgctxt "Abbreviation of train platform"
 msgid "Pl. %1"
 msgstr "प्ल. %1"
 
 #: app/JourneySectionStopDelegate.qml:147
-#, kde-format
-msgctxt "Ferry dock, if possible use an abreviation"
+#, fuzzy, kde-format
+#| msgctxt "Ferry dock, if possible use an abreviation"
+#| msgid "Dock %1"
+msgctxt "Ferry dock, if possible use an abbreviation"
 msgid "Dock %1"
 msgstr "डॉक %1"
 
 #: app/JourneySectionStopDelegate.qml:149
-#, kde-format
-msgctxt "Generic abreviation of platform"
+#, fuzzy, kde-format
+#| msgctxt "Abreviation of train platform"
+#| msgid "Pl. %1"
+msgctxt "Generic abbreviation of platform"
 msgid "Pl. %1"
 msgstr "प्ल. %1"
 
@@ -3155,8 +3161,10 @@ msgid "The session verification was canceled due to an unknown error."
 msgstr "अज्ञातदोषस्य कारणेन सत्रसत्यापनं रद्दं कृतम् ।"
 
 #: app/MatrixKeyVerificationPage.qml:114
-#, kde-format
-msgctxt "Matrix session verfication"
+#, fuzzy, kde-format
+#| msgctxt "Matrix session verfication"
+#| msgid "Emoji Verification"
+msgctxt "Matrix session verification"
 msgid "Emoji Verification"
 msgstr "इमोजी सत्यापन"
 
@@ -3928,10 +3936,13 @@ msgid ""
 msgstr "जहाजे सूचनां प्राप्तुं भवतः उपकरणे स्थानसेवा सक्षमं कुर्वन्तु ।"
 
 #: app/SettingsPage.qml:242
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Onboard information are unfortunately not supported on your device at "
+#| "this time."
 msgid ""
-"Onboard information are unfortunately not supported on your device at this "
-"time."
+"Unfortunately, retrieving onboard information is not supported on your "
+"device at this time."
 msgstr "अस्मिन् समये भवतः उपकरणे दुर्भाग्येन जहाजे सूचना समर्थिता नास्ति ।"
 
 #: app/SettingsPage.qml:274
@@ -4424,8 +4435,8 @@ msgstr "तमङ्गः"
 #: app/TrainEditor.qml:210 app/TrainEditor.qml:310
 #, kde-format
 msgid ""
-"Specifying the departure and arrival location helps Itinerary to find "
-"updated information for the train this reservation is valid for."
+"Specifying the departure and arrival location helps Itinerary to find up-to-"
+"date information for the train this reservation is valid for."
 msgstr ""
 
 #: app/TrainEditor.qml:231 app/TrainEditor.qml:336 app/TrainPage.qml:167
@@ -5087,6 +5098,10 @@ msgstr "लॉग आउट् कृतवान्"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 %3 तः %4 पर्यन्तं %5 पर्यन्तम्"
+
+#~ msgctxt "Generic abreviation of platform"
+#~ msgid "Pl. %1"
+#~ msgstr "प्ल. %1"
 
 #~ msgid "Copyright: %1"
 #~ msgstr "प्रतिलिपिधर्मः %1"

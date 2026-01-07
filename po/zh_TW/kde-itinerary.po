@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-02 00:44+0000\n"
+"POT-Creation-Date: 2026-01-07 00:44+0000\n"
 "PO-Revision-Date: 2024-11-28 16:26+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -572,7 +572,7 @@ msgstr "已取消"
 #, fuzzy, kde-format
 #| msgctxt "a train/bus journey canceled by its operator"
 #| msgid "Trip has been canceled."
-msgctxt "cancled reservation"
+msgctxt "canceled reservation"
 msgid "Booking has been canceled."
 msgstr "旅程已取消。"
 
@@ -2480,20 +2480,24 @@ msgid "CO₂: %1"
 msgstr "CO₂：%1"
 
 #: app/JourneySectionStopDelegate.qml:145
-#, kde-format
-msgctxt "Abreviation of train platform"
+#, fuzzy, kde-format
+#| msgid "Pl. %1"
+msgctxt "Abbreviation of train platform"
 msgid "Pl. %1"
 msgstr "第 %1 月台"
 
 #: app/JourneySectionStopDelegate.qml:147
-#, kde-format
-msgctxt "Ferry dock, if possible use an abreviation"
+#, fuzzy, kde-format
+#| msgctxt "Ferry dock, if possible use an abreviation"
+#| msgid "Dock %1"
+msgctxt "Ferry dock, if possible use an abbreviation"
 msgid "Dock %1"
 msgstr "碼頭 %1"
 
 #: app/JourneySectionStopDelegate.qml:149
-#, kde-format
-msgctxt "Generic abreviation of platform"
+#, fuzzy, kde-format
+#| msgid "Pl. %1"
+msgctxt "Generic abbreviation of platform"
 msgid "Pl. %1"
 msgstr "第 %1 月台"
 
@@ -3180,7 +3184,7 @@ msgstr ""
 #: app/MatrixKeyVerificationPage.qml:114
 #, fuzzy, kde-format
 #| msgid "Notifications"
-msgctxt "Matrix session verfication"
+msgctxt "Matrix session verification"
 msgid "Emoji Verification"
 msgstr "通知"
 
@@ -3959,8 +3963,8 @@ msgstr ""
 #: app/SettingsPage.qml:242
 #, kde-format
 msgid ""
-"Onboard information are unfortunately not supported on your device at this "
-"time."
+"Unfortunately, retrieving onboard information is not supported on your "
+"device at this time."
 msgstr ""
 
 #: app/SettingsPage.qml:274
@@ -4446,8 +4450,8 @@ msgstr "月台"
 #: app/TrainEditor.qml:210 app/TrainEditor.qml:310
 #, kde-format
 msgid ""
-"Specifying the departure and arrival location helps Itinerary to find "
-"updated information for the train this reservation is valid for."
+"Specifying the departure and arrival location helps Itinerary to find up-to-"
+"date information for the train this reservation is valid for."
 msgstr ""
 
 #: app/TrainEditor.qml:231 app/TrainEditor.qml:336 app/TrainPage.qml:167
@@ -5121,6 +5125,14 @@ msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 從 %3 到 %4 於 %5"
 
+#~ msgctxt "Abreviation of train platform"
+#~ msgid "Pl. %1"
+#~ msgstr "第 %1 月台"
+
+#~ msgctxt "Generic abreviation of platform"
+#~ msgid "Pl. %1"
+#~ msgstr "第 %1 月台"
+
 #~ msgid "Copyright: %1"
 #~ msgstr "版權：%1"
 
@@ -5467,9 +5479,6 @@ msgstr "%1%2 從 %3 到 %4 於 %5"
 
 #~ msgid "%1 to %2 (%3)"
 #~ msgstr "%1 到 %2 (%3)"
-
-#~ msgid "Pl. %1"
-#~ msgstr "第 %1 月台"
 
 #~ msgctxt "seat section, e.g. block in a stadium"
 #~ msgid "Section:"

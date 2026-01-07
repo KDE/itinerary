@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-02 00:44+0000\n"
+"POT-Creation-Date: 2026-01-07 00:44+0000\n"
 "PO-Revision-Date: 2025-12-29 11:08+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -560,7 +560,7 @@ msgstr "İptal Edildi"
 #, fuzzy, kde-format
 #| msgctxt "a train/bus journey canceled by its operator"
 #| msgid "Trip has been canceled."
-msgctxt "cancled reservation"
+msgctxt "canceled reservation"
 msgid "Booking has been canceled."
 msgstr "Gezi iptal edildi."
 
@@ -2376,22 +2376,26 @@ msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
 #: app/JourneySectionStopDelegate.qml:145
-#, kde-format
-msgctxt "Abreviation of train platform"
+#, fuzzy, kde-format
+#| msgid "Pl. %1"
+msgctxt "Abbreviation of train platform"
 msgid "Pl. %1"
-msgstr "Pe. %1"
+msgstr "Pl. %1"
 
 #: app/JourneySectionStopDelegate.qml:147
-#, kde-format
-msgctxt "Ferry dock, if possible use an abreviation"
+#, fuzzy, kde-format
+#| msgctxt "Ferry dock, if possible use an abreviation"
+#| msgid "Dock %1"
+msgctxt "Ferry dock, if possible use an abbreviation"
 msgid "Dock %1"
 msgstr "Rıht. %1"
 
 #: app/JourneySectionStopDelegate.qml:149
-#, kde-format
-msgctxt "Generic abreviation of platform"
+#, fuzzy, kde-format
+#| msgid "Pl. %1"
+msgctxt "Generic abbreviation of platform"
 msgid "Pl. %1"
-msgstr "Pe. %1"
+msgstr "Pl. %1"
 
 #: app/JourneySectionStopDelegate.qml:164
 #, kde-format
@@ -3090,8 +3094,10 @@ msgid "The session verification was canceled due to an unknown error."
 msgstr "Oturum doğrulaması iptal edildi; bilinmeyen bir hata oluştu."
 
 #: app/MatrixKeyVerificationPage.qml:114
-#, kde-format
-msgctxt "Matrix session verfication"
+#, fuzzy, kde-format
+#| msgctxt "Matrix session verfication"
+#| msgid "Emoji Verification"
+msgctxt "Matrix session verification"
 msgid "Emoji Verification"
 msgstr "Emoji Doğrulaması"
 
@@ -3863,10 +3869,13 @@ msgid ""
 msgstr "Biniş durumuna erişmek için aygıtınızda konum hizmetini etkinleştirin."
 
 #: app/SettingsPage.qml:242
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Onboard information are unfortunately not supported on your device at "
+#| "this time."
 msgid ""
-"Onboard information are unfortunately not supported on your device at this "
-"time."
+"Unfortunately, retrieving onboard information is not supported on your "
+"device at this time."
 msgstr "Biniş durumu, şu anda aygıtınızda ne yazık ki şu anda desteklenmiyor."
 
 #: app/SettingsPage.qml:274
@@ -4325,10 +4334,13 @@ msgid "Platform"
 msgstr "Peron"
 
 #: app/TrainEditor.qml:210 app/TrainEditor.qml:310
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Specifying the departure and arrival location helps Itinerary to find "
+#| "updated information for the train this reservation is valid for."
 msgid ""
-"Specifying the departure and arrival location helps Itinerary to find "
-"updated information for the train this reservation is valid for."
+"Specifying the departure and arrival location helps Itinerary to find up-to-"
+"date information for the train this reservation is valid for."
 msgstr ""
 "Varış ve kalkış yerinin belirtilmesi, Yol Kılavuzu’nun bu rezervasyonun "
 "geçerli olduğu trene ilişkin güncel bilgileri bulmasına yardımcı olur."
@@ -4970,6 +4982,14 @@ msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%5 tarihinde %3 havaalanından %4 havaalanına %1%2"
 
+#~ msgctxt "Abreviation of train platform"
+#~ msgid "Pl. %1"
+#~ msgstr "Pe. %1"
+
+#~ msgctxt "Generic abreviation of platform"
+#~ msgid "Pl. %1"
+#~ msgstr "Pe. %1"
+
 #~ msgid "Copyright: %1"
 #~ msgstr "Telif hakkı: %1"
 
@@ -5323,6 +5343,3 @@ msgstr "%5 tarihinde %3 havaalanından %4 havaalanına %1%2"
 
 #~ msgid "%1 to %2 (%3)"
 #~ msgstr "%1 → %2 (%3)"
-
-#~ msgid "Pl. %1"
-#~ msgstr "Pl. %1"

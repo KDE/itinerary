@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-02 00:44+0000\n"
+"POT-Creation-Date: 2026-01-07 00:44+0000\n"
 "PO-Revision-Date: 2026-01-02 08:51+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -555,8 +555,10 @@ msgid "Canceled"
 msgstr "Cancel·lada"
 
 #: app/BookingEditorCard.qml:67
-#, kde-format
-msgctxt "cancled reservation"
+#, fuzzy, kde-format
+#| msgctxt "cancled reservation"
+#| msgid "Booking has been canceled."
+msgctxt "canceled reservation"
 msgid "Booking has been canceled."
 msgstr "S'ha cancel·lat la reserva."
 
@@ -2373,21 +2375,27 @@ msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
 #: app/JourneySectionStopDelegate.qml:145
-#, kde-format
-msgctxt "Abreviation of train platform"
+#, fuzzy, kde-format
+#| msgctxt "Abreviation of train platform"
+#| msgid "Pl. %1"
+msgctxt "Abbreviation of train platform"
 msgid "Pl. %1"
 msgstr "An. %1"
 
 # skip-rule: kct-dock
 #: app/JourneySectionStopDelegate.qml:147
-#, kde-format
-msgctxt "Ferry dock, if possible use an abreviation"
+#, fuzzy, kde-format
+#| msgctxt "Ferry dock, if possible use an abreviation"
+#| msgid "Dock %1"
+msgctxt "Ferry dock, if possible use an abbreviation"
 msgid "Dock %1"
 msgstr "Moll %1"
 
 #: app/JourneySectionStopDelegate.qml:149
-#, kde-format
-msgctxt "Generic abreviation of platform"
+#, fuzzy, kde-format
+#| msgctxt "Abreviation of train platform"
+#| msgid "Pl. %1"
+msgctxt "Generic abbreviation of platform"
 msgid "Pl. %1"
 msgstr "An. %1"
 
@@ -3102,8 +3110,10 @@ msgstr ""
 "La verificació de la sessió s'ha cancel·lat a causa d'un error desconegut."
 
 #: app/MatrixKeyVerificationPage.qml:114
-#, kde-format
-msgctxt "Matrix session verfication"
+#, fuzzy, kde-format
+#| msgctxt "Matrix session verfication"
+#| msgid "Emoji Verification"
+msgctxt "Matrix session verification"
 msgid "Emoji Verification"
 msgstr "Verificació dels emojis"
 
@@ -3882,10 +3892,13 @@ msgstr ""
 "informació d'incorporació."
 
 #: app/SettingsPage.qml:242
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Onboard information are unfortunately not supported on your device at "
+#| "this time."
 msgid ""
-"Onboard information are unfortunately not supported on your device at this "
-"time."
+"Unfortunately, retrieving onboard information is not supported on your "
+"device at this time."
 msgstr ""
 "La informació d'incorporació no està implementada en el vostre dispositiu en "
 "aquest moment."
@@ -4345,10 +4358,13 @@ msgid "Platform"
 msgstr "Andana"
 
 #: app/TrainEditor.qml:210 app/TrainEditor.qml:310
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Specifying the departure and arrival location helps Itinerary to find "
+#| "updated information for the train this reservation is valid for."
 msgid ""
-"Specifying the departure and arrival location helps Itinerary to find "
-"updated information for the train this reservation is valid for."
+"Specifying the departure and arrival location helps Itinerary to find up-to-"
+"date information for the train this reservation is valid for."
 msgstr ""
 "Especificar la ubicació de sortida i arribada ajuda a l'Itinerary a trobar "
 "informació actualitzada del tren per al qual és vàlida aquesta reserva."
@@ -4992,6 +5008,10 @@ msgstr "Ha finalitzat la sessió"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 des de %3 a %4 el %5"
+
+#~ msgctxt "Generic abreviation of platform"
+#~ msgid "Pl. %1"
+#~ msgstr "An. %1"
 
 #~ msgid "Copyright: %1"
 #~ msgstr "Copyright: %1"
