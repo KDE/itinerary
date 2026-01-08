@@ -381,7 +381,11 @@
             "name": "maplibre-native-qt",
             "buildsystem": "cmake-ninja",
             "config-opts": [
-                "-DMLN_WITH_OPENGL=ON", "-DMLN_WITH_VULKAN=OFF"
+                "-DBUILD_TESTING=OFF",
+                "-DMLN_QT_WITH_WIDGETS=OFF",
+                "-DMLN_WITH_OPENGL=ON",
+                "-DMLN_WITH_VULKAN=OFF",
+                "-DMLN_WITH_WERROR=OFF"
             ],
             "post-install": [
                 "mv /app/plugins/ /app/lib/",
