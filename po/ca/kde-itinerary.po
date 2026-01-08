@@ -1,16 +1,16 @@
 # Translation of kde-itinerary.po to Catalan
-# Copyright (C) 2019-2025 This_file_is_part_of_KDE
+# Copyright (C) 2019-2026 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
 # SPDX-FileCopyrightText: 2019, 2020, 2021, 2022, 2023, 2024 Antoni Bella Pérez <antonibella5@yahoo.com>
-# SPDX-FileCopyrightText: 2019, 2020, 2021, 2022, 2023, 2024, 2025 Josep M. Ferrer <txemaq@gmail.com>
+# SPDX-FileCopyrightText: 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026 Josep M. Ferrer <txemaq@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-19 02:43+0000\n"
-"PO-Revision-Date: 2025-10-30 13:21+0100\n"
+"PO-Revision-Date: 2026-01-07 09:55+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -2801,7 +2801,7 @@ msgstr "Ajuda"
 #, kde-format
 msgctxt "@info:status"
 msgid "No onboard information available."
-msgstr "No hi ha informació disponible a bord."
+msgstr "No hi ha informació disponible d'embarcament."
 
 #: app/Main.qml:226
 #, kde-format
@@ -3828,7 +3828,7 @@ msgid ""
 "Enable the location service on your device to access onboard information."
 msgstr ""
 "Activeu el servei d'ubicació del vostre dispositiu per a accedir a la "
-"informació d'incorporació."
+"informació d'embarcament."
 
 #: app/SettingsPage.qml:242
 #, kde-format
