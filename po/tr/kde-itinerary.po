@@ -1,7 +1,7 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the itinerary package.
 #
-# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025 Emir SARI <emir_sari@icloud.com>
+# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025, 2026 Emir SARI <emir_sari@icloud.com>
 # Volkan Gezer <volkangezer@gmail.com>, 2021.
 # Emir SARI <emir_sari@icloud.com>, 2023.
 msgid ""
@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-07 00:44+0000\n"
-"PO-Revision-Date: 2025-12-29 11:08+0300\n"
-"Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
+"PO-Revision-Date: 2026-01-07 20:31+0300\n"
+"Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
@@ -549,20 +549,16 @@ msgid "Booking"
 msgstr "Rezervasyon"
 
 #: app/BookingEditorCard.qml:66
-#, fuzzy, kde-format
-#| msgctxt "a train/bus journey canceled by its operator"
-#| msgid "Canceled"
+#, kde-format
 msgctxt "canceled reservation"
 msgid "Canceled"
 msgstr "İptal Edildi"
 
 #: app/BookingEditorCard.qml:67
-#, fuzzy, kde-format
-#| msgctxt "a train/bus journey canceled by its operator"
-#| msgid "Trip has been canceled."
+#, kde-format
 msgctxt "canceled reservation"
 msgid "Booking has been canceled."
-msgstr "Gezi iptal edildi."
+msgstr "Rezervasyon iptal edildi."
 
 #: app/BusDelegate.qml:38
 #, kde-format
@@ -2376,26 +2372,22 @@ msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
 #: app/JourneySectionStopDelegate.qml:145
-#, fuzzy, kde-format
-#| msgid "Pl. %1"
+#, kde-format
 msgctxt "Abbreviation of train platform"
 msgid "Pl. %1"
-msgstr "Pl. %1"
+msgstr "P %1"
 
 #: app/JourneySectionStopDelegate.qml:147
-#, fuzzy, kde-format
-#| msgctxt "Ferry dock, if possible use an abreviation"
-#| msgid "Dock %1"
+#, kde-format
 msgctxt "Ferry dock, if possible use an abbreviation"
 msgid "Dock %1"
-msgstr "Rıht. %1"
+msgstr "R %1"
 
 #: app/JourneySectionStopDelegate.qml:149
-#, fuzzy, kde-format
-#| msgid "Pl. %1"
+#, kde-format
 msgctxt "Generic abbreviation of platform"
 msgid "Pl. %1"
-msgstr "Pl. %1"
+msgstr "P %1"
 
 #: app/JourneySectionStopDelegate.qml:164
 #, kde-format
@@ -3094,9 +3086,7 @@ msgid "The session verification was canceled due to an unknown error."
 msgstr "Oturum doğrulaması iptal edildi; bilinmeyen bir hata oluştu."
 
 #: app/MatrixKeyVerificationPage.qml:114
-#, fuzzy, kde-format
-#| msgctxt "Matrix session verfication"
-#| msgid "Emoji Verification"
+#, kde-format
 msgctxt "Matrix session verification"
 msgid "Emoji Verification"
 msgstr "Emoji Doğrulaması"
@@ -3869,14 +3859,11 @@ msgid ""
 msgstr "Biniş durumuna erişmek için aygıtınızda konum hizmetini etkinleştirin."
 
 #: app/SettingsPage.qml:242
-#, fuzzy, kde-format
-#| msgid ""
-#| "Onboard information are unfortunately not supported on your device at "
-#| "this time."
+#, kde-format
 msgid ""
 "Unfortunately, retrieving onboard information is not supported on your "
 "device at this time."
-msgstr "Biniş durumu, şu anda aygıtınızda ne yazık ki şu anda desteklenmiyor."
+msgstr "Ne yazık ki biniş durumunu alma, şu anda aygıtınızda desteklenmiyor."
 
 #: app/SettingsPage.qml:274
 #, kde-format
@@ -4334,10 +4321,7 @@ msgid "Platform"
 msgstr "Peron"
 
 #: app/TrainEditor.qml:210 app/TrainEditor.qml:310
-#, fuzzy, kde-format
-#| msgid ""
-#| "Specifying the departure and arrival location helps Itinerary to find "
-#| "updated information for the train this reservation is valid for."
+#, kde-format
 msgid ""
 "Specifying the departure and arrival location helps Itinerary to find up-to-"
 "date information for the train this reservation is valid for."
