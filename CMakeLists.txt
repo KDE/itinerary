@@ -114,6 +114,9 @@ if (TARGET QuotientQt6)
 else()
     set(HAVE_MATRIX FALSE)
 endif()
+if (QMapLibre_FOUND)
+    set(HAVE_MAPLIBRE TRUE)
+endif()
 
 if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
     # Not setting for GNU due to too many warnings related to private members of base classes or around lambdas

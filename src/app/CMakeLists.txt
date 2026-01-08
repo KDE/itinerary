@@ -296,10 +296,6 @@ target_sources(itinerary-app PRIVATE
     images/images.qrc
 )
 
-if (QMapLibre_FOUND)
-    target_compile_definitions(itinerary-app PRIVATE -DHAS_MAPLIBRE)
-endif()
-
 target_include_directories(itinerary-app PRIVATE ${CMAKE_BINARY_DIR})
 target_link_libraries(itinerary-app PRIVATE
     itinerary

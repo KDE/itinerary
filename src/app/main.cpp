@@ -100,7 +100,7 @@
 #include <QStandardPaths>
 #include <QWindow>
 
-#ifdef HAS_MAPLIBRE
+#if HAVE_MAPLIBRE
 #include <QMapLibre/Utils>
 #include <QVulkanInstance>
 #include <QtQuick/QSGRendererInterface>
@@ -108,7 +108,7 @@
 
 using namespace Qt::Literals::StringLiterals;
 
-void registerKItineraryTypes()
+static void registerKItineraryTypes()
 {
     qRegisterMetaType<KItinerary::KnowledgeDb::DrivingSide>();
     qmlRegisterUncreatableMetaObject(KItinerary::Ticket::staticMetaObject, "org.kde.kitinerary", 1, 0, "Ticket", {});
@@ -123,7 +123,7 @@ void registerKItineraryTypes()
         return engine->toScriptValue(Class());                                                                                                                 \
     });
 
-void registerApplicationSingletons()
+static void registerApplicationSingletons()
 {
     REGISTER_SINGLETON_GADGET_FACTORY(DevelopmentModeController)
     REGISTER_SINGLETON_GADGET_FACTORY(Factory)
@@ -151,7 +151,7 @@ static QNetworkAccessManager *namFactory()
     return s_nam;
 }
 
-void handleCommandLineArguments(ApplicationController *appController,
+static void handleCommandLineArguments(ApplicationController *appController,
                                 ImportController *importController,
                                 const QStringList &args,
                                 bool isTemporary,
@@ -185,7 +185,7 @@ Q_DECL_EXPORT
 #endif
 int main(int argc, char **argv)
 {
-#ifdef HAS_MAPLIBRE
+#if HAVE_MAPLIBRE
     const QMapLibre::RendererType rendererType = QMapLibre::supportedRendererType();
     auto graphicsApi = static_cast<QSGRendererInterface::GraphicsApi>(rendererType);
     QQuickWindow::setGraphicsApi(graphicsApi);
@@ -403,7 +403,7 @@ int main(int argc, char **argv)
         return 1;
     }
 
-#ifdef HAS_MAPLIBRE
+#if HAVE_MAPLIBRE
     engine.rootObjects().front()->setProperty("hasMapLibre", true);
 #else
     engine.rootObjects().front()->setProperty("hasMapLibre", false);
