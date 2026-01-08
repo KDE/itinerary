@@ -9,6 +9,7 @@ import QtPositioning
 import QtLocation as QtLocation
 
 import QtQuick.Controls as Controls
+import org.kde.kirigami as Kirigami
 
 
 /** QtLocation map view with standard interaction settings. */
@@ -33,6 +34,7 @@ QtLocation.Map {
         width: parent.width
 
         text: i18n('<a href="https://openfreemap.org" target="_blank">OpenFreeMap</a> <a href="https://www.openmaptiles.org/" target="_blank">© OpenMapTiles</a><br>Data from <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>')
+        onLinkActivated: (link) => { Qt.openUrlExternally(link); }
     }
 
     property geoCoordinate startCentroid
