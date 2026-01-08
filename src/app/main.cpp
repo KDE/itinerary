@@ -226,6 +226,11 @@ int main(int argc, char **argv)
     aboutData.addComponent(i18nc("@info:credit", "ZXing"), i18nc("@info:credit", "QR-Code scanning. © 2016 ZXing Authors, © 2016 Nu-book Inc."), {}, u"https://github.com/nu-book/zxing-cpp"_s, KAboutLicense::Apache_V2);
     aboutData.addComponent(i18nc("@info:credit", "Poppler"), i18nc("@info:credit", "PDF parsing"), {}, u"https://poppler.freedesktop.org/"_s, KAboutLicense::GPL_V2);
 
+#if HAVE_MAPLIBRE
+    aboutData.addComponent(i18nc("@info:credit", "MapLibre Native Qt"), i18nc("@info:credit", "Copyright © MapLibre contributors."), {}, u"https://github.com/maplibre/maplibre-native-qt"_s, KAboutLicense::LGPL_V3);
+    aboutData.addComponent(i18nc("@info:credit", "MapLibre Native"), i18nc("@info:credit", "Copyright © MapLibre contributors."), {}, u"https://www.maplibre.org/"_s, KAboutLicense::BSD_2_Clause);
+#endif
+
 #ifdef Q_OS_ANDROID
     aboutData.addComponent(i18nc("@info:credit", "FreeType"), i18nc("@info:credit", "Copyright (C) 2006-2020 by David Turner, Robert Wilhelm, and Werner Lemberg."), {}, u"https://www.freetype.org/"_s, KAboutLicense::FTL);
     aboutData.addComponent(i18nc("@info:credit", "libintl lite"), i18nc("@info:credit", "Internalisation"), {}, u"https://github.com/j-jorge/libintl-lite"_s, KAboutLicense::BSL_V1);
