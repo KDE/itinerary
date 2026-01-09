@@ -4,13 +4,13 @@
 # SPDX-FileCopyrightText: 2022 Frank Steinmetzger <dev-kde@felsenfleischer.de>
 # SPDX-FileCopyrightText: 2024 cahfofpai <cahfofpai@magenta.de>
 # SPDX-FileCopyrightText: 2024 Flori G <Renner03@protonmail.com>
-# SPDX-FileCopyrightText: 2025 Philipp Kiemle <l10n.daphipz@fastmail.de>
+# SPDX-FileCopyrightText: 2025, 2026 Philipp Kiemle <l10n.daphipz@fastmail.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-19 02:43+0000\n"
-"PO-Revision-Date: 2025-12-15 23:00+0100\n"
+"PO-Revision-Date: 2026-01-05 19:07+0100\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -1645,16 +1645,14 @@ msgid "Vaccination"
 msgstr "Impfung"
 
 #: app/healthcertificatemanager.cpp:163
-#, fuzzy, kde-format
-#| msgid "Test %1 (%2)"
+#, kde-format
 msgid "Test %1 for %2"
-msgstr "Test %1 (%2)"
+msgstr "Test %1 für %2"
 
 #: app/healthcertificatemanager.cpp:169
-#, fuzzy, kde-format
-#| msgid "Recovery (%1)"
+#, kde-format
 msgid "Recovery %1 for %2"
-msgstr "Genesen (%1)"
+msgstr "Genesen von %1 für %2"
 
 #: app/HealthCertificatePage.qml:19
 #, kde-format
@@ -2626,6 +2624,8 @@ msgid ""
 "Provides various metadata like train station names, driving side, and power "
 "plug types."
 msgstr ""
+"Stellt verschiedene Metadaten wie Bahnhofsnamen, Fahrseite und "
+"Steckdosentypen bereit."
 
 #: app/main.cpp:221
 #, kde-format
@@ -2638,6 +2638,8 @@ msgstr "OpenStreetMap"
 msgctxt "@info:credit"
 msgid "Provides both indoor and outdoor maps. ©OpenStreetMap contributors"
 msgstr ""
+"Stellt Karten sowohl für den Innen- als auch für den Außenbereich bereit. © "
+"OpenStreetMap-Mitwirkende"
 
 #: app/main.cpp:222
 #, kde-format
@@ -2649,7 +2651,7 @@ msgstr "OpenSSL"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Secure network interaction with TLS. © 1998-2018 The OpenSSL Project"
-msgstr ""
+msgstr "Sichere Netzwerkkommunikation mit TLS. © 1998–2018 Das OpenSSL-Projekt"
 
 #: app/main.cpp:223
 #, kde-format
@@ -2661,7 +2663,7 @@ msgstr "ZXing"
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code scanning. © 2016 ZXing Authors, © 2016 Nu-book Inc."
-msgstr ""
+msgstr "Scannen von QR-Codes. © 2016 ZXing-Autoren, © 2016 Nu-book Inc."
 
 #: app/main.cpp:224
 #, kde-format
@@ -2692,7 +2694,7 @@ msgstr "© 2006–2020 David Turner, Robert Wilhelm und Werner Lemberg."
 #, kde-format
 msgctxt "@info:credit"
 msgid "libintl lite"
-msgstr ""
+msgstr "libintl lite"
 
 #: app/main.cpp:228
 #, kde-format
@@ -2704,7 +2706,7 @@ msgstr "Internalisierung"
 #, kde-format
 msgctxt "@info:credit"
 msgid "libqrencode"
-msgstr ""
+msgstr "libqrencode"
 
 #: app/main.cpp:231
 #, kde-format
@@ -2758,7 +2760,7 @@ msgstr "QtKeychain"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Secure password storage."
-msgstr ""
+msgstr "Sicherer Passwortspeicher."
 
 #: app/main.cpp:238
 #, kde-format
@@ -2770,7 +2772,7 @@ msgstr "Olm"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Matrix crypto library."
-msgstr ""
+msgstr "Matrix-Crypto-Bibliothek."
 
 #: app/main.cpp:246
 #, kde-format
@@ -2798,7 +2800,7 @@ msgstr "Hilfe"
 #, kde-format
 msgctxt "@info:status"
 msgid "No onboard information available."
-msgstr "Keine Bordinformationen verfügbar."
+msgstr "Keine Onboard-Informationen verfügbar."
 
 #: app/Main.qml:226
 #, kde-format
@@ -2970,6 +2972,10 @@ msgid ""
 "\n"
 "<b>Please log out and log back in, your session is broken/corrupt.</b>"
 msgstr ""
+"Die entfernte Partei hat die Sitzungsverifizierung abgebrochen, da die "
+"Schlüssel nicht korrekt sind.\n"
+"\n"
+"<b>Bitte melden Sie sich ab und wieder an, Ihre Sitzung ist fehlerhaft.</b>"
 
 #: app/MatrixKeyVerificationPage.qml:78
 #, kde-format
@@ -3497,7 +3503,7 @@ msgstr "Mitglied"
 #: app/ProgramMembershipEditor.qml:124
 #, kde-format
 msgid "Valid until time has to be after the valid from time."
-msgstr ""
+msgstr "Der „Gültig bis“-Zeitpunkt muss nach dem „Gültig ab“-Zeitpunkt liegen."
 
 #: app/ProgramMembershipEditor.qml:134
 #, kde-format
@@ -3785,7 +3791,7 @@ msgstr "Keine weitere Aktion erforderlich."
 #: app/SettingsPage.qml:207
 #, kde-format
 msgid "Onboard Status"
-msgstr ""
+msgstr "Onboard-Status"
 
 #: app/SettingsPage.qml:212
 #, kde-format
@@ -3797,7 +3803,7 @@ msgstr ""
 #: app/SettingsPage.qml:223
 #, kde-format
 msgid "Wi-Fi access for onboard information is available."
-msgstr "WLAN-Zugang für Bordinformationen ist verfügbar."
+msgstr "WLAN-Zugang für Onboard-Informationen ist verfügbar."
 
 #: app/SettingsPage.qml:225
 #, kde-format
@@ -3818,13 +3824,15 @@ msgstr "Auf diesem System ist der Zugriff auf das WLAN nicht verfügbar"
 #, kde-format
 msgid "Enable Wi-Fi on your system to access onboard information."
 msgstr ""
-"Aktivieren Sie WLAN in Ihrem System, um die Informationen an Bord abzurufen."
+"Aktivieren Sie WLAN in Ihrem System, um die Onboard-Informationen abzurufen."
 
 #: app/SettingsPage.qml:240
 #, kde-format
 msgid ""
 "Enable the location service on your device to access onboard information."
 msgstr ""
+"Aktivieren Sie die Ortungsdienste Ihres Geräts, um auf Onboard-Informationen "
+"zuzugreifen."
 
 #: app/SettingsPage.qml:242
 #, kde-format
@@ -3832,6 +3840,8 @@ msgid ""
 "Onboard information are unfortunately not supported on your device at this "
 "time."
 msgstr ""
+"Im Moment werden Onboard-Informationen auf Ihrem Gerät leider nicht "
+"unterstützt."
 
 #: app/SettingsPage.qml:274
 #, kde-format
@@ -3874,7 +3884,7 @@ msgstr "Sitzung nicht verifiziert."
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Initiate session verification in your Matrix chat client."
-msgstr ""
+msgstr "Starten Sie die Sitzungsverifizierung in Ihrem Matrix-Chat-Client."
 
 #: app/SettingsPage.qml:321
 #, kde-format
@@ -3900,10 +3910,10 @@ msgid ""
 "you are and where you can log your public transit journeys. For more "
 "information, visit <a href=\"https://traewelling.de\">traewelling.de</a>"
 msgstr ""
-"Träwelling ist ein kostenloser Check-in-Dienst, mit dem Sie Ihren Freunden "
-"mitteilen können, wo Sie sich befinden. Außerdem lassen sich damit Ihre "
-"Fahrten mit öffentlichen Verkehrsmitteln dokumentieren. Besuchen Sie <a href="
-"\"https://traewelling.de\">traewelling.de</a>, um mehr zu erfahren."
+"Träwelling ist ein freier und kostenloser Check-in-Dienst, mit dem Sie Ihren "
+"Freunden mitteilen können, wo Sie sich befinden. Außerdem lassen sich damit "
+"Ihre Fahrten mit öffentlichen Verkehrsmitteln dokumentieren. Besuchen Sie <a "
+"href=\"https://traewelling.de\">traewelling.de</a>, um mehr zu erfahren."
 
 #: app/SettingsPage.qml:341
 #, kde-format
@@ -4292,6 +4302,8 @@ msgid ""
 "Specifying the departure and arrival location helps Itinerary to find "
 "updated information for the train this reservation is valid for."
 msgstr ""
+"Den Abfahrts- und Ankunftsort anzugeben, hilft Itinerary, aktuelle "
+"Informationen über den Zug zu finden, für den diese Reservierung gilt."
 
 #: app/TrainEditor.qml:231 app/TrainEditor.qml:336 app/TrainPage.qml:163
 #: app/TrainPage.qml:247
@@ -4723,11 +4735,10 @@ msgid "A trip must be selected."
 msgstr "Eine Reise muss ausgewählt sein."
 
 #: app/TripGroupSelectorDialog.qml:14
-#, fuzzy, kde-format
-#| msgid "Add to Trip"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Add Journey to Trip"
-msgstr "Zu Reise hinzufügen"
+msgstr "Fahrt zu Reise hinzufügen"
 
 #: app/TripGroupsPage.qml:15
 #, kde-format
