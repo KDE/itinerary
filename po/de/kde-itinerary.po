@@ -4,13 +4,13 @@
 # SPDX-FileCopyrightText: 2022 Frank Steinmetzger <dev-kde@felsenfleischer.de>
 # SPDX-FileCopyrightText: 2024 cahfofpai <cahfofpai@magenta.de>
 # SPDX-FileCopyrightText: 2024 Flori G <Renner03@protonmail.com>
-# SPDX-FileCopyrightText: 2025 Philipp Kiemle <l10n.daphipz@fastmail.de>
+# SPDX-FileCopyrightText: 2025, 2026 Philipp Kiemle <l10n.daphipz@fastmail.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-07 00:44+0000\n"
-"PO-Revision-Date: 2025-12-15 23:00+0100\n"
+"POT-Creation-Date: 2026-01-09 00:43+0000\n"
+"PO-Revision-Date: 2026-01-05 19:07+0100\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -270,8 +270,7 @@ msgstr[1] "%1 Gesundheitsnachweise wurden importiert."
 #: app/applicationcontroller.cpp:492 app/applicationcontroller.cpp:510
 #: app/applicationcontroller.cpp:551 app/applicationcontroller.cpp:587
 #: app/applicationcontroller.cpp:605
-#, fuzzy, kde-format
-#| msgid "Export failed: %1"
+#, kde-format
 msgctxt "%1 is an error message"
 msgid "Export failed: %1"
 msgstr "Export fehlgeschlagen: %1"
@@ -299,8 +298,7 @@ msgid "Pass sent."
 msgstr "Pass gesendet."
 
 #: app/applicationcontroller.cpp:635
-#, fuzzy, kde-format
-#| msgid "Saving failed: %1"
+#, kde-format
 msgctxt "%1 is an error message"
 msgid "Saving failed: %1"
 msgstr "Speichern fehlgeschlagen: %1"
@@ -554,12 +552,10 @@ msgid "Booking"
 msgstr "Buchung"
 
 #: app/BookingEditorCard.qml:66
-#, fuzzy, kde-format
-#| msgctxt "a train/bus journey canceled by its operator"
-#| msgid "Canceled"
+#, kde-format
 msgctxt "canceled reservation"
 msgid "Canceled"
-msgstr "Gestrichen"
+msgstr "Storniert"
 
 #: app/BookingEditorCard.qml:67
 #, fuzzy, kde-format
@@ -764,8 +760,7 @@ msgid "Arrival"
 msgstr "Ankunft"
 
 #: app/calendarhelper.cpp:28
-#, fuzzy, kde-format
-#| msgid "Transfer to %1"
+#, kde-format
 msgctxt "%1 is the transfer destination"
 msgid "Transfer to %1"
 msgstr "Umsteigen in %1"
@@ -787,8 +782,7 @@ msgid "Rental Car Pick-up"
 msgstr "Mietwagen-Abholung"
 
 #: app/CarRentalDelegate.qml:57
-#, fuzzy, kde-format
-#| msgid "Drop-off: %1"
+#, kde-format
 msgctxt "%1 is a date/time"
 msgid "Drop-off: %1"
 msgstr "Rückgabe: %1"
@@ -951,18 +945,16 @@ msgid "Add Document…"
 msgstr "Dokument hinzufügen …"
 
 #: app/downloadjob.cpp:162
-#, fuzzy, kde-format
-#| msgid "Network error: %1"
+#, kde-format
 msgctxt "%1 is an error message"
 msgid "Network error: %1"
 msgstr "Netzwerkfehler: %1"
 
 #: app/downloadjob.cpp:193
-#, fuzzy, kde-format
-#| msgid "Download failed: %1"
+#, kde-format
 msgctxt "%1 is an error message"
 msgid "Download failed: %1"
-msgstr "Download fehlgeschlagen: %1"
+msgstr "Herunterladen fehlgeschlagen: %1"
 
 #: app/EditorPage.qml:32
 #, kde-format
@@ -1122,8 +1114,7 @@ msgid "Work"
 msgstr "Arbeit"
 
 #: app/favoritelocationmodel.cpp:161
-#, fuzzy, kde-format
-#| msgid "Location %1"
+#, kde-format
 msgctxt "%1 is a number"
 msgid "Location %1"
 msgstr "Ort %1"
@@ -1483,10 +1474,9 @@ msgid "Country"
 msgstr "Land"
 
 #: app/FormPlaceEditorDelegate.qml:201
-#, fuzzy, kde-format
-#| msgid "Coordinate"
+#, kde-format
 msgid "Coordinates"
-msgstr "Koordinate"
+msgstr "Koordinaten"
 
 #: app/FormPlaceEditorDelegate.qml:202
 #, kde-format
@@ -1499,22 +1489,19 @@ msgid "Pick…"
 msgstr "Auswählen …"
 
 #: app/FormPlaceEditorDelegate.qml:221
-#, fuzzy, kde-format
-#| msgid "Address to coordinate"
+#, kde-format
 msgid "Address to coordinates"
 msgstr "Adresse zu Koordinaten"
 
 #: app/FormPlaceEditorDelegate.qml:237
-#, fuzzy, kde-format
-#| msgid "Coordinate to address"
+#, kde-format
 msgid "Coordinates to address"
 msgstr "Koordinaten zu Adresse"
 
 #: app/FormPlaceEditorDelegate.qml:247
-#, fuzzy, kde-format
-#| msgid "Address to coordinate"
+#, kde-format
 msgid "Remove coordinates"
-msgstr "Adresse zu Koordinaten"
+msgstr "Koordinaten entfernen"
 
 #: app/FormPlatformDelegate.qml:46
 #, kde-format
@@ -1575,7 +1562,7 @@ msgstr "Auf Aktualisierungen prüfen"
 msgid "Save As…"
 msgstr "Speichern unter …"
 
-#: app/gpxexport.cpp:33 app/main.cpp:221 app/Main.qml:20 app/Main.qml:77
+#: app/gpxexport.cpp:33 app/main.cpp:211 app/Main.qml:20 app/Main.qml:77
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -1601,22 +1588,19 @@ msgid "Ferry from %1 to %2"
 msgstr "Fähre von %1 nach %2"
 
 #: app/HealthCertificateBarcode.qml:34
-#, fuzzy, kde-format
-#| msgid "Vaccination certificate of %1"
+#, kde-format
 msgctxt "%1 is a person name"
 msgid "Vaccination certificate of %1"
 msgstr "Impfnachweis von %1"
 
 #: app/HealthCertificateBarcode.qml:36
-#, fuzzy, kde-format
-#| msgid "Test certificate of %1"
+#, kde-format
 msgctxt "%1 is a person name, 'Test certificate' is a compound noun"
 msgid "Test certificate of %1"
 msgstr "Testnachweis von %1"
 
 #: app/HealthCertificateBarcode.qml:38
-#, fuzzy, kde-format
-#| msgid "Recovery certificate of %1"
+#, kde-format
 msgctxt "%1 is a person name"
 msgid "Recovery certificate of %1"
 msgstr "Genesungsnachweis von %1"
@@ -1683,19 +1667,17 @@ msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: app/healthcertificatemanager.cpp:154
-#, fuzzy, kde-format
-#| msgid "Vaccination %1/%2 (%3)"
+#, kde-format
 msgctxt ""
 "%1 is a disease, %2 the amount of applied doses, %3 the amount of total doses"
 msgid "Vaccination for %1 (%2/%3)"
-msgstr "Impfung %1/%2 (%3)"
+msgstr "Impfung gegen %1 (%2/%3)"
 
 #: app/healthcertificatemanager.cpp:157
-#, fuzzy, kde-format
-#| msgid "Vaccination (%1)"
+#, kde-format
 msgctxt "%1 is a disease"
 msgid "Vaccination for %1"
-msgstr "Impfung (%1)"
+msgstr "Impfung gegen %1"
 
 #: app/healthcertificatemanager.cpp:159 app/HealthCertificateVaccination.qml:54
 #, kde-format
@@ -1703,18 +1685,16 @@ msgid "Vaccination"
 msgstr "Impfung"
 
 #: app/healthcertificatemanager.cpp:163
-#, fuzzy, kde-format
-#| msgid "Test %1 (%2)"
+#, kde-format
 msgctxt "%1 is a disease, %2 is a date"
 msgid "Test for %1 – %2"
-msgstr "Test %1 (%2)"
+msgstr "Test auf %1 – %2"
 
 #: app/healthcertificatemanager.cpp:168
-#, fuzzy, kde-format
-#| msgid "Recovery (%1)"
+#, kde-format
 msgctxt "%1 is a disease, %2 is a date"
 msgid "Recovery from %1 – %2"
-msgstr "Genesen (%1)"
+msgstr "Genesen von %1 – %2"
 
 #: app/HealthCertificatePage.qml:19
 #, kde-format
@@ -2053,8 +2033,7 @@ msgid "From SNCF reservation number"
 msgstr "Aus SNCF-Reservierungsnummer"
 
 #: app/importcontroller.cpp:153 app/importcontroller.cpp:475
-#, fuzzy, kde-format
-#| msgid "Import failed: %1"
+#, kde-format
 msgctxt "%1 is an error message"
 msgid "Import failed: %1"
 msgstr "Import fehlgeschlagen: %1"
@@ -2669,182 +2648,204 @@ msgstr "Typ M"
 msgid "Type N"
 msgstr "Typ N"
 
-#: app/main.cpp:229
+#: app/main.cpp:219
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Digitaler Reiseassistent"
 
-#: app/main.cpp:230
+#: app/main.cpp:220
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "© Die KDE-Gemeinschaft"
 
-#: app/main.cpp:233
+#: app/main.cpp:223
 #, kde-format
 msgctxt "@info:credit"
 msgid "Wikidata"
 msgstr "Wikidata"
 
-#: app/main.cpp:233
+#: app/main.cpp:223
 #, kde-format
 msgctxt "@info:credit"
 msgid ""
 "Provides various metadata like train station names, driving side, and power "
 "plug types."
 msgstr ""
+"Stellt verschiedene Metadaten wie Bahnhofsnamen, Fahrseite und "
+"Steckdosentypen bereit."
 
-#: app/main.cpp:234
+#: app/main.cpp:224
 #, kde-format
 msgctxt "@info:credit"
 msgid "OpenStreetMap"
 msgstr "OpenStreetMap"
 
-#: app/main.cpp:234
+#: app/main.cpp:224
 #, kde-format
 msgctxt "@info:credit"
 msgid "Provides both indoor and outdoor maps. ©OpenStreetMap contributors"
 msgstr ""
+"Stellt Karten sowohl für den Innen- als auch für den Außenbereich bereit. © "
+"OpenStreetMap-Mitwirkende"
 
-#: app/main.cpp:235
+#: app/main.cpp:225
 #, kde-format
 msgctxt "@info:credit"
 msgid "OpenSSL"
 msgstr "OpenSSL"
 
-#: app/main.cpp:235
+#: app/main.cpp:225
 #, kde-format
 msgctxt "@info:credit"
 msgid "Secure network interaction with TLS. © 1998-2018 The OpenSSL Project"
-msgstr ""
+msgstr "Sichere Netzwerkkommunikation mit TLS. © 1998–2018 Das OpenSSL-Projekt"
 
-#: app/main.cpp:236
+#: app/main.cpp:226
 #, kde-format
 msgctxt "@info:credit"
 msgid "ZXing"
 msgstr "ZXing"
 
-#: app/main.cpp:236
+#: app/main.cpp:226
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code scanning. © 2016 ZXing Authors, © 2016 Nu-book Inc."
-msgstr ""
+msgstr "Scannen von QR-Codes. © 2016 ZXing-Autoren, © 2016 Nu-book Inc."
 
-#: app/main.cpp:237
+#: app/main.cpp:227
 #, kde-format
 msgctxt "@info:credit"
 msgid "Poppler"
 msgstr "Poppler"
 
-#: app/main.cpp:237
+#: app/main.cpp:227
 #, kde-format
 msgctxt "@info:credit"
 msgid "PDF parsing"
 msgstr "PDF-Verarbeitung"
 
-#: app/main.cpp:240
+#: app/main.cpp:230
+#, kde-format
+msgctxt "@info:credit"
+msgid "MapLibre Native Qt"
+msgstr ""
+
+#: app/main.cpp:230 app/main.cpp:231
+#, kde-format
+msgctxt "@info:credit"
+msgid "Copyright © MapLibre contributors."
+msgstr ""
+
+#: app/main.cpp:231
+#, kde-format
+msgctxt "@info:credit"
+msgid "MapLibre Native"
+msgstr ""
+
+#: app/main.cpp:235
 #, kde-format
 msgctxt "@info:credit"
 msgid "FreeType"
 msgstr "FreeType"
 
-#: app/main.cpp:240
+#: app/main.cpp:235
 #, kde-format
 msgctxt "@info:credit"
 msgid ""
 "Copyright (C) 2006-2020 by David Turner, Robert Wilhelm, and Werner Lemberg."
 msgstr "© 2006–2020 David Turner, Robert Wilhelm und Werner Lemberg."
 
-#: app/main.cpp:241
+#: app/main.cpp:236
 #, kde-format
 msgctxt "@info:credit"
 msgid "libintl lite"
-msgstr ""
+msgstr "libintl lite"
 
-#: app/main.cpp:241
+#: app/main.cpp:236
 #, kde-format
 msgctxt "@info:credit"
 msgid "Internalisation"
 msgstr "Internalisierung"
 
-#: app/main.cpp:244
+#: app/main.cpp:239
 #, kde-format
 msgctxt "@info:credit"
 msgid "libqrencode"
-msgstr ""
+msgstr "libqrencode"
 
-#: app/main.cpp:244
+#: app/main.cpp:239
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code Generation. © 2006-2018 Kentaro Fukuchi"
 msgstr "QR-Code-Erstellung. © 2006–2018 Kentaro Fukuchi"
 
-#: app/main.cpp:245
+#: app/main.cpp:240
 #, kde-format
 msgctxt "@info:credit"
 msgid "libical"
 msgstr "libical"
 
-#: app/main.cpp:245
+#: app/main.cpp:240
 #, kde-format
 msgctxt "@info:credit"
 msgid "© The libical developers"
 msgstr "© Die Entwickler von libical"
 
-#: app/main.cpp:246
+#: app/main.cpp:241
 #, kde-format
 msgctxt "@info:credit"
 msgid "libxml2"
 msgstr "libxml2"
 
-#: app/main.cpp:246
+#: app/main.cpp:241
 #, kde-format
 msgctxt "@info:credit"
 msgid "Copyright (C) 1998-2012 Daniel Veillard"
 msgstr "© 1998–2012 Daniel Veillard"
 
-#: app/main.cpp:249
+#: app/main.cpp:244
 #, kde-format
 msgctxt "@info:credit"
 msgid "libQuotient"
 msgstr "libQuotient"
 
-#: app/main.cpp:249
+#: app/main.cpp:244
 #, kde-format
 msgctxt "@info:credit"
 msgid "Matrix integration."
 msgstr "Matrix-Integration."
 
-#: app/main.cpp:250
+#: app/main.cpp:245
 #, kde-format
 msgctxt "@info:credit"
 msgid "QtKeychain"
 msgstr "QtKeychain"
 
-#: app/main.cpp:250
+#: app/main.cpp:245
 #, kde-format
 msgctxt "@info:credit"
 msgid "Secure password storage."
-msgstr ""
+msgstr "Sicherer Passwortspeicher."
 
-#: app/main.cpp:251
+#: app/main.cpp:246
 #, kde-format
 msgctxt "@info:credit"
 msgid "Olm"
 msgstr "Olm"
 
-#: app/main.cpp:251
+#: app/main.cpp:246
 #, kde-format
 msgctxt "@info:credit"
 msgid "Matrix crypto library."
-msgstr ""
+msgstr "Matrix-Crypto-Bibliothek."
 
-#: app/main.cpp:259
+#: app/main.cpp:254
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Reiseplan auf der angegebenen Seite öffnen"
 
-#: app/main.cpp:264
+#: app/main.cpp:259
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
@@ -2864,7 +2865,7 @@ msgstr "Hilfe"
 #, kde-format
 msgctxt "@info:status"
 msgid "No onboard information available."
-msgstr "Keine Bordinformationen verfügbar."
+msgstr "Keine Onboard-Informationen verfügbar."
 
 #: app/Main.qml:229
 #, kde-format
@@ -3036,6 +3037,10 @@ msgid ""
 "\n"
 "<b>Please log out and log back in, your session is broken/corrupt.</b>"
 msgstr ""
+"Die entfernte Partei hat die Sitzungsverifizierung abgebrochen, da die "
+"Schlüssel nicht korrekt sind.\n"
+"\n"
+"<b>Bitte melden Sie sich ab und wieder an, Ihre Sitzung ist fehlerhaft.</b>"
 
 #: app/MatrixKeyVerificationPage.qml:78
 #, kde-format
@@ -3449,11 +3454,10 @@ msgid "%1 - %2"
 msgstr "%1 - %2"
 
 #: app/passmanager.cpp:289
-#, fuzzy, kde-format
-#| msgid "%1 - %2"
+#, kde-format
 msgctxt "%1 and %2 are dates"
 msgid "%1 - %2"
-msgstr "%1 - %2"
+msgstr "%1 – %2"
 
 #: app/PassPage.qml:19
 #, kde-format
@@ -3567,7 +3571,7 @@ msgstr "Mitglied"
 #: app/ProgramMembershipEditor.qml:124
 #, kde-format
 msgid "Valid until time has to be after the valid from time."
-msgstr ""
+msgstr "Der „Gültig bis“-Zeitpunkt muss nach dem „Gültig ab“-Zeitpunkt liegen."
 
 #: app/ProgramMembershipEditor.qml:134
 #, kde-format
@@ -3865,7 +3869,7 @@ msgstr "Keine weitere Aktion erforderlich."
 #: app/SettingsPage.qml:207
 #, kde-format
 msgid "Onboard Status"
-msgstr ""
+msgstr "Onboard-Status"
 
 #: app/SettingsPage.qml:212
 #, kde-format
@@ -3877,7 +3881,7 @@ msgstr ""
 #: app/SettingsPage.qml:223
 #, kde-format
 msgid "Wi-Fi access for onboard information is available."
-msgstr "WLAN-Zugang für Bordinformationen ist verfügbar."
+msgstr "WLAN-Zugang für Onboard-Informationen ist verfügbar."
 
 #: app/SettingsPage.qml:225
 #, kde-format
@@ -3898,13 +3902,15 @@ msgstr "Auf diesem System ist der Zugriff auf das WLAN nicht verfügbar"
 #, kde-format
 msgid "Enable Wi-Fi on your system to access onboard information."
 msgstr ""
-"Aktivieren Sie WLAN in Ihrem System, um die Informationen an Bord abzurufen."
+"Aktivieren Sie WLAN in Ihrem System, um die Onboard-Informationen abzurufen."
 
 #: app/SettingsPage.qml:240
 #, kde-format
 msgid ""
 "Enable the location service on your device to access onboard information."
 msgstr ""
+"Aktivieren Sie die Ortungsdienste Ihres Geräts, um auf Onboard-Informationen "
+"zuzugreifen."
 
 #: app/SettingsPage.qml:242
 #, kde-format
@@ -3954,7 +3960,7 @@ msgstr "Sitzung nicht verifiziert."
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Initiate session verification in your Matrix chat client."
-msgstr ""
+msgstr "Starten Sie die Sitzungsverifizierung in Ihrem Matrix-Chat-Client."
 
 #: app/SettingsPage.qml:321
 #, kde-format
@@ -3967,11 +3973,11 @@ msgid "Log in"
 msgstr "Anmelden"
 
 #: app/SettingsPage.qml:328
-#, fuzzy, kde-format
-#| msgid "Traewelling Integration"
+#, kde-format
 msgid "Träwelling Integration"
-msgstr "Traewelling-Integration"
+msgstr "Träwelling-Integration"
 
+# Übernommen aus https://help.traewelling.de/faq/ → "Was ist Träwelling?"
 #: app/SettingsPage.qml:333
 #, kde-format
 msgctxt "@info"
@@ -3980,6 +3986,10 @@ msgid ""
 "you are and where you can log your public transit journeys. For more "
 "information, visit <a href=\"https://traewelling.de\">traewelling.de</a>"
 msgstr ""
+"Träwelling ist ein freier und kostenloser Check-in-Dienst, mit dem Sie Ihren "
+"Freunden mitteilen können, wo Sie sich befinden. Außerdem lassen sich damit "
+"Ihre Fahrten mit öffentlichen Verkehrsmitteln dokumentieren. Besuchen Sie <a "
+"href=\"https://traewelling.de\">traewelling.de</a>, um mehr zu erfahren."
 
 #: app/SettingsPage.qml:341
 #, kde-format
@@ -4193,22 +4203,19 @@ msgid "Paste"
 msgstr "Einfügen"
 
 #: app/tickettokenmodel.cpp:88
-#, fuzzy, kde-format
-#| msgid "Attendee %1"
+#, kde-format
 msgctxt "%1 is a number"
 msgid "Attendee %1"
 msgstr "Teilnehmer %1"
 
 #: app/tickettokenmodel.cpp:90
-#, fuzzy, kde-format
-#| msgid "Traveler %1"
+#, kde-format
 msgctxt "%1 is a number"
 msgid "Traveler %1"
 msgstr "Reisende(r) %1"
 
 #: app/tickettokenmodel.cpp:137
-#, fuzzy, kde-format
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "%1 is a person name, %2 is a ticket name"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
@@ -4435,8 +4442,7 @@ msgid "Departure"
 msgstr "Abfahrt"
 
 #: app/TrainPage.qml:179 app/TrainPage.qml:264
-#, fuzzy, kde-format
-#| msgid "Platform"
+#, kde-format
 msgctxt "train station platform"
 msgid "Platform"
 msgstr "Bahnsteig"
@@ -4458,24 +4464,20 @@ msgid "Arrival Vehicle Layout"
 msgstr "Wagenreihung (Ankunft)"
 
 #: app/TrainPage.qml:346
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add to Traewelling"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add to Träwelling"
-msgstr "Zu Traewelling hinzufügen"
+msgstr "Zu Träwelling hinzufügen"
 
 #: app/TrainPage.qml:391
-#, fuzzy, kde-format
-#| msgid "Added to Traewelling"
+#, kde-format
 msgid "Added to Träwelling"
-msgstr "Zu Traewelling hinzugefügt"
+msgstr "Zu Träwelling hinzugefügt"
 
 #: app/TrainPage.qml:391
-#, fuzzy, kde-format
-#| msgid "Failed to add to Traewelling"
+#, kde-format
 msgid "Failed to add to Träwelling"
-msgstr "Hinzufügen zu Traewelling fehlgeschlagen"
+msgstr "Hinzufügen zu Träwelling fehlgeschlagen"
 
 #: app/TransferDelegate.qml:112
 #, kde-format
@@ -4603,10 +4605,9 @@ msgid "%1 (%2/%3)"
 msgstr "%1 (%2/%3)"
 
 #: app/TripGroupMapPage.qml:201
-#, fuzzy, kde-format
-#| msgid "Address:"
+#, kde-format
 msgid "Address"
-msgstr "Adresse:"
+msgstr "Adresse"
 
 #: app/TripGroupMergeDialog.qml:17
 #, kde-format
@@ -4835,11 +4836,10 @@ msgid "A trip must be selected."
 msgstr "Eine Reise muss ausgewählt sein."
 
 #: app/TripGroupSelectorDialog.qml:14
-#, fuzzy, kde-format
-#| msgid "Add to Trip"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Add Journey to Trip"
-msgstr "Zu Reise hinzufügen"
+msgstr "Fahrt zu Reise hinzufügen"
 
 #: app/TripGroupsPage.qml:15
 #, kde-format
@@ -4882,22 +4882,19 @@ msgid "Vehicle Layout"
 msgstr "Wagenreihung"
 
 #: app/VehicleLayoutPage.qml:95
-#, fuzzy, kde-format
-#| msgid "Departure: %1"
+#, kde-format
 msgctxt "%1 is a date/time"
 msgid "Departure: %1"
 msgstr "Abfahrt: %1"
 
 #: app/VehicleLayoutPage.qml:97
-#, fuzzy, kde-format
-#| msgid "Arrival: %1"
+#, kde-format
 msgctxt "%1 is a date/time"
 msgid "Arrival: %1"
 msgstr "Ankunft: %1"
 
 #: app/VehicleLayoutPage.qml:117
-#, fuzzy, kde-format
-#| msgid "Platform: %1"
+#, kde-format
 msgctxt "train station platform"
 msgid "Platform: %1"
 msgstr "Bahnsteig: %1"

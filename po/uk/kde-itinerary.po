@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-07 00:44+0000\n"
+"POT-Creation-Date: 2026-01-09 00:43+0000\n"
 "PO-Revision-Date: 2026-01-07 18:19+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -1564,7 +1564,7 @@ msgstr "Перевірити наявність оновлень"
 msgid "Save As…"
 msgstr "Зберегти як…"
 
-#: app/gpxexport.cpp:33 app/main.cpp:221 app/Main.qml:20 app/Main.qml:77
+#: app/gpxexport.cpp:33 app/main.cpp:211 app/Main.qml:20 app/Main.qml:77
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -2650,23 +2650,23 @@ msgstr "Тип M"
 msgid "Type N"
 msgstr "Тип N"
 
-#: app/main.cpp:229
+#: app/main.cpp:219
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Цифровий помічник у подорожах"
 
-#: app/main.cpp:230
+#: app/main.cpp:220
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "© Спільнота KDE"
 
-#: app/main.cpp:233
+#: app/main.cpp:223
 #, kde-format
 msgctxt "@info:credit"
 msgid "Wikidata"
 msgstr "Вікідані"
 
-#: app/main.cpp:233
+#: app/main.cpp:223
 #, kde-format
 msgctxt "@info:credit"
 msgid ""
@@ -2676,13 +2676,13 @@ msgstr ""
 "Надає різноманітні дані, зокрема назви станцій залізниці, бік руху та типи "
 "зарядних станцій."
 
-#: app/main.cpp:234
+#: app/main.cpp:224
 #, kde-format
 msgctxt "@info:credit"
 msgid "OpenStreetMap"
 msgstr "OpenStreetMap"
 
-#: app/main.cpp:234
+#: app/main.cpp:224
 #, kde-format
 msgctxt "@info:credit"
 msgid "Provides both indoor and outdoor maps. ©OpenStreetMap contributors"
@@ -2690,147 +2690,165 @@ msgstr ""
 "Надає дані карт приміщень та карт поза приміщеннями. ©Розробники "
 "OpenStreetMap"
 
-#: app/main.cpp:235
+#: app/main.cpp:225
 #, kde-format
 msgctxt "@info:credit"
 msgid "OpenSSL"
 msgstr "OpenSSL"
 
-#: app/main.cpp:235
+#: app/main.cpp:225
 #, kde-format
 msgctxt "@info:credit"
 msgid "Secure network interaction with TLS. © 1998-2018 The OpenSSL Project"
 msgstr ""
 "Захищена взаємодія із мережею за допомогою TLS. ©Проєкт OpenSSL, 1998–2018"
 
-#: app/main.cpp:236
+#: app/main.cpp:226
 #, kde-format
 msgctxt "@info:credit"
 msgid "ZXing"
 msgstr "ZXing"
 
-#: app/main.cpp:236
+#: app/main.cpp:226
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code scanning. © 2016 ZXing Authors, © 2016 Nu-book Inc."
 msgstr "Сканування QR-кодів. ©Автор ZXing, 2016, ©Nu-book Inc., 2016"
 
-#: app/main.cpp:237
+#: app/main.cpp:227
 #, kde-format
 msgctxt "@info:credit"
 msgid "Poppler"
 msgstr "Poppler"
 
-#: app/main.cpp:237
+#: app/main.cpp:227
 #, kde-format
 msgctxt "@info:credit"
 msgid "PDF parsing"
 msgstr "Обробка PDF"
 
-#: app/main.cpp:240
+#: app/main.cpp:230
+#, kde-format
+msgctxt "@info:credit"
+msgid "MapLibre Native Qt"
+msgstr ""
+
+#: app/main.cpp:230 app/main.cpp:231
+#, kde-format
+msgctxt "@info:credit"
+msgid "Copyright © MapLibre contributors."
+msgstr ""
+
+#: app/main.cpp:231
+#, kde-format
+msgctxt "@info:credit"
+msgid "MapLibre Native"
+msgstr ""
+
+#: app/main.cpp:235
 #, kde-format
 msgctxt "@info:credit"
 msgid "FreeType"
 msgstr "FreeType"
 
-#: app/main.cpp:240
+#: app/main.cpp:235
 #, kde-format
 msgctxt "@info:credit"
 msgid ""
 "Copyright (C) 2006-2020 by David Turner, Robert Wilhelm, and Werner Lemberg."
 msgstr "©David Turner, Robert Wilhelm і Werner Lemberg, 2006–2020"
 
-#: app/main.cpp:241
+#: app/main.cpp:236
 #, kde-format
 msgctxt "@info:credit"
 msgid "libintl lite"
 msgstr "libintl lite"
 
-#: app/main.cpp:241
+#: app/main.cpp:236
 #, kde-format
 msgctxt "@info:credit"
 msgid "Internalisation"
 msgstr "Переклад"
 
-#: app/main.cpp:244
+#: app/main.cpp:239
 #, kde-format
 msgctxt "@info:credit"
 msgid "libqrencode"
 msgstr "libqrencode"
 
-#: app/main.cpp:244
+#: app/main.cpp:239
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code Generation. © 2006-2018 Kentaro Fukuchi"
 msgstr "Створення QR-кодів. ©Kentaro Fukuchi, 2006–2018"
 
-#: app/main.cpp:245
+#: app/main.cpp:240
 #, kde-format
 msgctxt "@info:credit"
 msgid "libical"
 msgstr "libical"
 
-#: app/main.cpp:245
+#: app/main.cpp:240
 #, kde-format
 msgctxt "@info:credit"
 msgid "© The libical developers"
 msgstr "©Розробники libical"
 
-#: app/main.cpp:246
+#: app/main.cpp:241
 #, kde-format
 msgctxt "@info:credit"
 msgid "libxml2"
 msgstr "libxml2"
 
-#: app/main.cpp:246
+#: app/main.cpp:241
 #, kde-format
 msgctxt "@info:credit"
 msgid "Copyright (C) 1998-2012 Daniel Veillard"
 msgstr "©Daniel Veillard, 1998–2012"
 
-#: app/main.cpp:249
+#: app/main.cpp:244
 #, kde-format
 msgctxt "@info:credit"
 msgid "libQuotient"
 msgstr "libQuotient"
 
-#: app/main.cpp:249
+#: app/main.cpp:244
 #, kde-format
 msgctxt "@info:credit"
 msgid "Matrix integration."
 msgstr "Інтеграція з Matrix."
 
-#: app/main.cpp:250
+#: app/main.cpp:245
 #, kde-format
 msgctxt "@info:credit"
 msgid "QtKeychain"
 msgstr "QtKeychain"
 
-#: app/main.cpp:250
+#: app/main.cpp:245
 #, kde-format
 msgctxt "@info:credit"
 msgid "Secure password storage."
 msgstr "Захищене сховище паролів."
 
-#: app/main.cpp:251
+#: app/main.cpp:246
 #, kde-format
 msgctxt "@info:credit"
 msgid "Olm"
 msgstr "Olm"
 
-#: app/main.cpp:251
+#: app/main.cpp:246
 #, kde-format
 msgctxt "@info:credit"
 msgid "Matrix crypto library."
 msgstr "Бібліотека шифрування у Matrix."
 
-#: app/main.cpp:259
+#: app/main.cpp:254
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Відкрити Itinerary на вказаній сторінці"
 
-#: app/main.cpp:264
+#: app/main.cpp:259
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."

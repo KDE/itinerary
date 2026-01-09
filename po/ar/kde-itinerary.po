@@ -1,13 +1,13 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the itinerary package.
-# SPDX-FileCopyrightText: 2023, 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+# SPDX-FileCopyrightText: 2023, 2025, 2026 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-07 00:44+0000\n"
-"PO-Revision-Date: 2025-12-18 10:15+0400\n"
+"POT-Creation-Date: 2026-01-09 00:43+0000\n"
+"PO-Revision-Date: 2026-01-08 12:16+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -557,20 +557,16 @@ msgid "Booking"
 msgstr "الحجز"
 
 #: app/BookingEditorCard.qml:66
-#, fuzzy, kde-format
-#| msgctxt "a train/bus journey canceled by its operator"
-#| msgid "Canceled"
+#, kde-format
 msgctxt "canceled reservation"
 msgid "Canceled"
-msgstr "أُلغي"
+msgstr "مُلغى"
 
 #: app/BookingEditorCard.qml:67
-#, fuzzy, kde-format
-#| msgctxt "a train/bus journey canceled by its operator"
-#| msgid "Trip has been canceled."
+#, kde-format
 msgctxt "canceled reservation"
 msgid "Booking has been canceled."
-msgstr "ألغيت الرحلة."
+msgstr "ألغي الحجز."
 
 #: app/BusDelegate.qml:38
 #, kde-format
@@ -1569,7 +1565,7 @@ msgstr "التمس التحديثات"
 msgid "Save As…"
 msgstr "احفظ باسم…"
 
-#: app/gpxexport.cpp:33 app/main.cpp:221 app/Main.qml:20 app/Main.qml:77
+#: app/gpxexport.cpp:33 app/main.cpp:211 app/Main.qml:20 app/Main.qml:77
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "خط سير رحلة كِيدِي"
@@ -2387,25 +2383,19 @@ msgid "CO₂: %1"
 msgstr "ثاني أكسيد الكربون: %1"
 
 #: app/JourneySectionStopDelegate.qml:145
-#, fuzzy, kde-format
-#| msgctxt "Abreviation of train platform"
-#| msgid "Pl. %1"
+#, kde-format
 msgctxt "Abbreviation of train platform"
 msgid "Pl. %1"
 msgstr "المنصة %1"
 
 #: app/JourneySectionStopDelegate.qml:147
-#, fuzzy, kde-format
-#| msgctxt "Ferry dock, if possible use an abreviation"
-#| msgid "Dock %1"
+#, kde-format
 msgctxt "Ferry dock, if possible use an abbreviation"
 msgid "Dock %1"
 msgstr "المرسى %1"
 
 #: app/JourneySectionStopDelegate.qml:149
-#, fuzzy, kde-format
-#| msgctxt "Abreviation of train platform"
-#| msgid "Pl. %1"
+#, kde-format
 msgctxt "Generic abbreviation of platform"
 msgid "Pl. %1"
 msgstr "المنصة %1"
@@ -2662,23 +2652,23 @@ msgstr "النوع M"
 msgid "Type N"
 msgstr "النوع N"
 
-#: app/main.cpp:229
+#: app/main.cpp:219
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "مُخطِط الرحلة مساعد سفر رقمي"
 
-#: app/main.cpp:230
+#: app/main.cpp:220
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "حقوق النشر © مجتمع كيدي"
 
-#: app/main.cpp:233
+#: app/main.cpp:223
 #, kde-format
 msgctxt "@info:credit"
 msgid "Wikidata"
 msgstr "ويكي بيانات"
 
-#: app/main.cpp:233
+#: app/main.cpp:223
 #, kde-format
 msgctxt "@info:credit"
 msgid ""
@@ -2688,61 +2678,79 @@ msgstr ""
 "يوفر بيانات وصفية متنوعة مثل أسماء محطات القطار، وجهة القيادة، وأنواع مقابس "
 "الكهرباء."
 
-#: app/main.cpp:234
+#: app/main.cpp:224
 #, kde-format
 msgctxt "@info:credit"
 msgid "OpenStreetMap"
 msgstr "خريطة الشّوارع المفتوحة"
 
-#: app/main.cpp:234
+#: app/main.cpp:224
 #, kde-format
 msgctxt "@info:credit"
 msgid "Provides both indoor and outdoor maps. ©OpenStreetMap contributors"
 msgstr "يوفر خرائط داخلية وخارجية. ©المساهمون في OpenStreetMap"
 
-#: app/main.cpp:235
+#: app/main.cpp:225
 #, kde-format
 msgctxt "@info:credit"
 msgid "OpenSSL"
 msgstr "أوبن إس إس إل"
 
-#: app/main.cpp:235
+#: app/main.cpp:225
 #, kde-format
 msgctxt "@info:credit"
 msgid "Secure network interaction with TLS. © 1998-2018 The OpenSSL Project"
 msgstr "تفاعل شبكة آمن مع TLS. © 1998-2018 مشروع OpenSSL"
 
-#: app/main.cpp:236
+#: app/main.cpp:226
 #, kde-format
 msgctxt "@info:credit"
 msgid "ZXing"
 msgstr "ZXing"
 
-#: app/main.cpp:236
+#: app/main.cpp:226
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code scanning. © 2016 ZXing Authors, © 2016 Nu-book Inc."
 msgstr "مسح رمز الاستجابة السريعة. © 2016 ZXing للمؤلفين، © 2016 Nu-book Inc."
 
-#: app/main.cpp:237
+#: app/main.cpp:227
 #, kde-format
 msgctxt "@info:credit"
 msgid "Poppler"
 msgstr "بوبلر"
 
-#: app/main.cpp:237
+#: app/main.cpp:227
 #, kde-format
 msgctxt "@info:credit"
 msgid "PDF parsing"
 msgstr "تحليل ملفات بي دي إف"
 
-#: app/main.cpp:240
+#: app/main.cpp:230
+#, kde-format
+msgctxt "@info:credit"
+msgid "MapLibre Native Qt"
+msgstr ""
+
+#: app/main.cpp:230 app/main.cpp:231
+#, kde-format
+msgctxt "@info:credit"
+msgid "Copyright © MapLibre contributors."
+msgstr ""
+
+#: app/main.cpp:231
+#, kde-format
+msgctxt "@info:credit"
+msgid "MapLibre Native"
+msgstr ""
+
+#: app/main.cpp:235
 #, kde-format
 msgctxt "@info:credit"
 msgid "FreeType"
 msgstr "فري تايب"
 
-#: app/main.cpp:240
+#: app/main.cpp:235
 #, kde-format
 msgctxt "@info:credit"
 msgid ""
@@ -2751,97 +2759,97 @@ msgstr ""
 "حقوق الطبع والنشر (C) 2006-2020 محفوظة لديفيد تورنر وروبرت فيلهلم وورنر "
 "ليمبرغ."
 
-#: app/main.cpp:241
+#: app/main.cpp:236
 #, kde-format
 msgctxt "@info:credit"
 msgid "libintl lite"
 msgstr "libintl lite"
 
-#: app/main.cpp:241
+#: app/main.cpp:236
 #, kde-format
 msgctxt "@info:credit"
 msgid "Internalisation"
 msgstr "التدويل"
 
-#: app/main.cpp:244
+#: app/main.cpp:239
 #, kde-format
 msgctxt "@info:credit"
 msgid "libqrencode"
 msgstr "libqrencode"
 
-#: app/main.cpp:244
+#: app/main.cpp:239
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code Generation. © 2006-2018 Kentaro Fukuchi"
 msgstr "إنشاء رمز الاستجابة السريعة. © 2006-2018 كينتارو فوكوتشي"
 
-#: app/main.cpp:245
+#: app/main.cpp:240
 #, kde-format
 msgctxt "@info:credit"
 msgid "libical"
 msgstr "libical"
 
-#: app/main.cpp:245
+#: app/main.cpp:240
 #, kde-format
 msgctxt "@info:credit"
 msgid "© The libical developers"
 msgstr "© مطورو libical"
 
-#: app/main.cpp:246
+#: app/main.cpp:241
 #, kde-format
 msgctxt "@info:credit"
 msgid "libxml2"
 msgstr "libxml2"
 
-#: app/main.cpp:246
+#: app/main.cpp:241
 #, kde-format
 msgctxt "@info:credit"
 msgid "Copyright (C) 1998-2012 Daniel Veillard"
 msgstr "حقوق الطبع والنشر (C) 1998-2012 دانيال فييار"
 
-#: app/main.cpp:249
+#: app/main.cpp:244
 #, kde-format
 msgctxt "@info:credit"
 msgid "libQuotient"
 msgstr "libQuotient"
 
-#: app/main.cpp:249
+#: app/main.cpp:244
 #, kde-format
 msgctxt "@info:credit"
 msgid "Matrix integration."
 msgstr "تكامل Matrix"
 
-#: app/main.cpp:250
+#: app/main.cpp:245
 #, kde-format
 msgctxt "@info:credit"
 msgid "QtKeychain"
 msgstr "QtKeychain"
 
-#: app/main.cpp:250
+#: app/main.cpp:245
 #, kde-format
 msgctxt "@info:credit"
 msgid "Secure password storage."
 msgstr "تحزين كلمة السر الآمن"
 
-#: app/main.cpp:251
+#: app/main.cpp:246
 #, kde-format
 msgctxt "@info:credit"
 msgid "Olm"
 msgstr "Olm"
 
-#: app/main.cpp:251
+#: app/main.cpp:246
 #, kde-format
 msgctxt "@info:credit"
 msgid "Matrix crypto library."
 msgstr "مكتبة تعمية Matrix."
 
-#: app/main.cpp:259
+#: app/main.cpp:254
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "افتح مُخطِط الرحلة على الصفحة المعطاة"
 
-#: app/main.cpp:264
+#: app/main.cpp:259
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
@@ -3093,9 +3101,7 @@ msgid "The session verification was canceled due to an unknown error."
 msgstr "جلسة التَثَبّت ألغيت لخطأ مجهول."
 
 #: app/MatrixKeyVerificationPage.qml:114
-#, fuzzy, kde-format
-#| msgctxt "Matrix session verfication"
-#| msgid "Emoji Verification"
+#, kde-format
 msgctxt "Matrix session verification"
 msgid "Emoji Verification"
 msgstr "تَثَبّت من الصور التعبيرية"
@@ -3866,14 +3872,11 @@ msgid ""
 msgstr "فعل خدمة الموقع على جهازك للوصول إلى معلومات على متن الطائرة."
 
 #: app/SettingsPage.qml:242
-#, fuzzy, kde-format
-#| msgid ""
-#| "Onboard information are unfortunately not supported on your device at "
-#| "this time."
+#, kde-format
 msgid ""
 "Unfortunately, retrieving onboard information is not supported on your "
 "device at this time."
-msgstr "معلومات على متن الطائرة للأسف غير مدعومة على جهازك في هذا الوقت."
+msgstr "للأسف، لا يتيح جهازك في الوقت الحالي إمكانية جلب بيانات الرحلة."
 
 #: app/SettingsPage.qml:274
 #, kde-format
@@ -4334,16 +4337,13 @@ msgid "Platform"
 msgstr "المنصة"
 
 #: app/TrainEditor.qml:210 app/TrainEditor.qml:310
-#, fuzzy, kde-format
-#| msgid ""
-#| "Specifying the departure and arrival location helps Itinerary to find "
-#| "updated information for the train this reservation is valid for."
+#, kde-format
 msgid ""
 "Specifying the departure and arrival location helps Itinerary to find up-to-"
 "date information for the train this reservation is valid for."
 msgstr ""
-"يساعد تحديد موقع المغادرة والوصول في العثور على معلومات محدثة عن القطار الذي "
-"يكون هذا الحجز صالحًا له."
+"تحديد مكان المغادرة والوصول يساعد تطبيق مسار الرحلة في العثور على أحدث "
+"المعلومات عن القطار الذي يسري عليه هذا الحجز."
 
 #: app/TrainEditor.qml:231 app/TrainEditor.qml:336 app/TrainPage.qml:167
 #: app/TrainPage.qml:252
@@ -4568,10 +4568,9 @@ msgid "%1 (%2/%3)"
 msgstr "%1 (%2/%3)"
 
 #: app/TripGroupMapPage.qml:201
-#, fuzzy, kde-format
-#| msgid "Address:"
+#, kde-format
 msgid "Address"
-msgstr "العنوان:"
+msgstr "العنوان"
 
 #: app/TripGroupMergeDialog.qml:17
 #, kde-format
