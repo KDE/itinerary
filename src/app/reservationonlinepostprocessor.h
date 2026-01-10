@@ -31,24 +31,20 @@ public:
 private:
     QCoro::Task<> handleBatchChange(QString batchId);
 
-    QCoro::Task<std::optional<QVariant> > processReservation(QVariant reservation);
+    [[nodiscard]] QCoro::Task<std::optional<QVariant>> processReservation(QVariant reservation);
 
-    QCoro::Task<std::optional<KItinerary::TrainStation> > processTrainStation(
-        KItinerary::TrainStation station);
-    QCoro::Task<std::optional<KItinerary::BusStation> > processBusStation(
-        KItinerary::BusStation station);
+    [[nodiscard]] QCoro::Task<std::optional<KItinerary::TrainStation>> processTrainStation(KItinerary::TrainStation station);
+    [[nodiscard]] QCoro::Task<std::optional<KItinerary::BusStation>> processBusStation(KItinerary::BusStation station);
+    [[nodiscard]] QCoro::Task<std::optional<KItinerary::Airport>> processAirport(KItinerary::Airport airport) const;
 
     /**
      * @param place
      * @param amenity query phrase for nominatim, e.g "railway station"
      * @return nominatim response
      */
-    QCoro::Task<QJsonArray> queryNominatim(const KItinerary::Place &place,
-                                           const QString &amenityType);
+    [[nodiscard]] QCoro::Task<QJsonArray> queryNominatim(const KItinerary::Place &place, const QString &amenityType);
 
-    bool applyResult(const QJsonArray &results,
-                     KItinerary::Place &place,
-                     const std::vector<QLatin1String> &allowedTags);
+    bool applyResult(const QJsonArray &results, KItinerary::Place &place, const std::vector<QLatin1String> &allowedTags) const;
 
     ReservationManager *m_resMgr = nullptr;
     Settings *m_settings = nullptr;

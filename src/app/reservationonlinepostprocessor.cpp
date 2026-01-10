@@ -5,6 +5,7 @@
 
 #include <KItinerary/BusTrip>
 #include <KItinerary/Datatypes>
+#include <KItinerary/Flight>
 #include <KItinerary/JsonLdDocument>
 #include <KItinerary/LocationUtil>
 #include <KItinerary/Reservation>
@@ -101,8 +102,7 @@ QCoro::Task<> ReservationOnlinePostprocessor::handleBatchChange(QString batchId)
             &ReservationOnlinePostprocessor::handleBatchChange);
 }
 
-QCoro::Task<std::optional<QVariant>> ReservationOnlinePostprocessor::processReservation(
-    QVariant reservation)
+QCoro::Task<std::optional<QVariant>> ReservationOnlinePostprocessor::processReservation(QVariant reservation)
 {
     const auto locationsRealistic = [](const KItinerary::Place &departurePlace,
                                        const QDateTime &departureTime,
@@ -198,6 +198,19 @@ QCoro::Task<std::optional<QVariant>> ReservationOnlinePostprocessor::processRese
                 co_return busReservation;
             }
         }
+    } else if (KItinerary::JsonLd::isA<KItinerary::FlightReservation>(reservation)) {
+        auto flightRes = KItinerary::JsonLd::convert<KItinerary::FlightReservation>(reservation);
+        auto flight = flightRes.reservationFor().value<KItinerary::Flight>();
+
+        const auto changedDepAirport = co_await processAirport(flight.departureAirport());
+        const auto changedArrAirport = co_await processAirport(flight.arrivalAirport());
+
+        if (changedDepAirport || changedArrAirport) {
+            flight.setDepartureAirport(*changedDepAirport);
+            flight.setArrivalAirport(*changedArrAirport);
+            flightRes.setReservationFor(flight);
+            co_return flightRes;
+        }
     }
 
     co_return {};
@@ -213,8 +226,24 @@ QCoro::Task<std::optional<QVariant>> ReservationOnlinePostprocessor::processRese
     return idx > 0 && place.identifier().endsWith(place.name()) && (idx + 1 + place.name().size()) == place.identifier().size();
 }
 
-QCoro::Task<std::optional<KItinerary::TrainStation>>
-ReservationOnlinePostprocessor::processTrainStation(KItinerary::TrainStation station)
+static KItinerary::PostalAddress applyAddress(KItinerary::PostalAddress addr, const OSM::Element &elem)
+{
+    if (addr.addressCountry().isEmpty()) {
+        addr.setAddressCountry(QString::fromUtf8(elem.tagValue("addr:country")));
+    }
+    if (addr.addressLocality().isEmpty()) {
+        addr.setAddressLocality(QString::fromUtf8(elem.tagValue("addr:city")));
+    }
+    if (addr.postalCode().isEmpty()) {
+        addr.setPostalCode(QString::fromUtf8(elem.tagValue("addr:postcode")));
+    }
+    if (addr.streetAddress().isEmpty()) {
+        addr.setStreetAddress(QString::fromUtf8(elem.tagValue("addr:street")));
+    }
+    return addr;
+}
+
+QCoro::Task<std::optional<KItinerary::TrainStation>> ReservationOnlinePostprocessor::processTrainStation(KItinerary::TrainStation station)
 {
     if (!station.geo().isValid() && !hasIdentifierName(station)) {
         const std::vector allowedTags = {"railway:station"_L1, "railway:halt"_L1};
@@ -236,20 +265,7 @@ ReservationOnlinePostprocessor::processTrainStation(KItinerary::TrainStation sta
         for (const auto &elem : job.result()) {
             if (elem.tagValue("railway") == "station") {
                 station.setName(QString::fromUtf8(elem.tagValue(langs, "official_name", "uic_name", "name")));
-                auto addr = station.address();
-                if (addr.addressCountry().isEmpty()) {
-                    addr.setAddressCountry(QString::fromUtf8(elem.tagValue("addr:country")));
-                }
-                if (addr.addressLocality().isEmpty()) {
-                    addr.setAddressLocality(QString::fromUtf8(elem.tagValue("addr:city")));
-                }
-                if (addr.postalCode().isEmpty()) {
-                    addr.setPostalCode(QString::fromUtf8(elem.tagValue("addr:postcode")));
-                }
-                if (addr.streetAddress().isEmpty()) {
-                    addr.setStreetAddress(QString::fromUtf8(elem.tagValue("addr:street")));
-                }
-                station.setAddress(addr);
+                station.setAddress(applyAddress(station.address(), elem));
                 co_return station;
             }
         }
@@ -258,8 +274,7 @@ ReservationOnlinePostprocessor::processTrainStation(KItinerary::TrainStation sta
     co_return {};
 }
 
-QCoro::Task<std::optional<KItinerary::BusStation>> ReservationOnlinePostprocessor::processBusStation(
-    KItinerary::BusStation station)
+QCoro::Task<std::optional<KItinerary::BusStation>> ReservationOnlinePostprocessor::processBusStation(KItinerary::BusStation station)
 {
     if (station.geo().isValid() || hasIdentifierName(station)) {
         co_return {};
@@ -273,8 +288,31 @@ QCoro::Task<std::optional<KItinerary::BusStation>> ReservationOnlinePostprocesso
     co_return changed ? std::optional{station} : std::nullopt;
 }
 
-QCoro::Task<QJsonArray> ReservationOnlinePostprocessor::queryNominatim(
-    const KItinerary::Place &place, const QString &amenityType)
+QCoro::Task<std::optional<KItinerary::Airport>> ReservationOnlinePostprocessor::processAirport(KItinerary::Airport airport) const
+{
+    if (!airport.geo().isValid() || !airport.name().isEmpty()) {
+        co_return {};
+    }
+
+    KOSMIndoorMap::ReverseGeocodingJob job;
+    job.setCoordinate(airport.geo().latitude(), airport.geo().longitude());
+    job.setRadius(100);
+    job.start();
+    co_await qCoro(&job, &KOSMIndoorMap::ReverseGeocodingJob::finished);
+
+    const auto langs = OSM::Languages::fromQLocale(QLocale());
+    for (const auto &elem : job.result()) {
+        if (elem.tagValue("aeroway") == "aerodrome") {
+            airport.setName(QString::fromUtf8(elem.tagValue(langs, "name")));
+            airport.setAddress(applyAddress(airport.address(), elem));
+            co_return airport;
+        }
+    }
+
+    co_return {};
+}
+
+QCoro::Task<QJsonArray> ReservationOnlinePostprocessor::queryNominatim(const KItinerary::Place &place, const QString &amenityType)
 {
     const QString amenityQuery = amenityType % u" " % place.name();
 
@@ -339,7 +377,7 @@ QCoro::Task<QJsonArray> ReservationOnlinePostprocessor::queryNominatim(
 
 bool ReservationOnlinePostprocessor::applyResult(const QJsonArray &results,
                                                  KItinerary::Place &place,
-                                                 const std::vector<QLatin1String> &allowedTags)
+                                                 const std::vector<QLatin1String> &allowedTags) const
 {
     for (const auto result : results) {
         const auto object = result.toObject();
