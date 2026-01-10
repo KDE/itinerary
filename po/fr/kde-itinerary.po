@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-09 00:43+0000\n"
-"PO-Revision-Date: 2026-01-06 15:48+0100\n"
+"PO-Revision-Date: 2026-01-08 09:41+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -558,9 +558,7 @@ msgid "Canceled"
 msgstr "Annulé"
 
 #: app/BookingEditorCard.qml:67
-#, fuzzy, kde-format
-#| msgctxt "cancled reservation"
-#| msgid "Booking has been canceled."
+#, kde-format
 msgctxt "canceled reservation"
 msgid "Booking has been canceled."
 msgstr "La réservation a été annulée."
@@ -2389,23 +2387,19 @@ msgid "CO₂: %1"
 msgstr "CO₂ : %1"
 
 #: app/JourneySectionStopDelegate.qml:145
-#, fuzzy, kde-format
-#| msgid "Pl. %1"
+#, kde-format
 msgctxt "Abbreviation of train platform"
 msgid "Pl. %1"
 msgstr "Pl. %1"
 
 #: app/JourneySectionStopDelegate.qml:147
-#, fuzzy, kde-format
-#| msgctxt "Ferry dock, if possible use an abreviation"
-#| msgid "Dock %1"
+#, kde-format
 msgctxt "Ferry dock, if possible use an abbreviation"
 msgid "Dock %1"
 msgstr "Panneau %1"
 
 #: app/JourneySectionStopDelegate.qml:149
-#, fuzzy, kde-format
-#| msgid "Pl. %1"
+#, kde-format
 msgctxt "Generic abbreviation of platform"
 msgid "Pl. %1"
 msgstr "Pl. %1"
@@ -3143,9 +3137,7 @@ msgstr ""
 "La vérification de la session a été annulée en raison d'une erreur inconnue."
 
 #: app/MatrixKeyVerificationPage.qml:114
-#, fuzzy, kde-format
-#| msgctxt "Matrix session verfication"
-#| msgid "Emoji Verification"
+#, kde-format
 msgctxt "Matrix session verification"
 msgid "Emoji Verification"
 msgstr "Vérification des émoticônes"
@@ -3933,16 +3925,13 @@ msgstr ""
 "informations d'état à bord"
 
 #: app/SettingsPage.qml:242
-#, fuzzy, kde-format
-#| msgid ""
-#| "Onboard information are unfortunately not supported on your device at "
-#| "this time."
+#, kde-format
 msgid ""
 "Unfortunately, retrieving onboard information is not supported on your "
 "device at this time."
 msgstr ""
-"Les informations d'état à bord ne sont malheureusement pas prises en charge "
-"par votre périphérique pour le moment."
+"Malheureusement, le chargement d'informations d'état à bord n'est pas pris "
+"en charge par votre périphérique pour le moment."
 
 #: app/SettingsPage.qml:274
 #, kde-format
@@ -4404,10 +4393,7 @@ msgid "Platform"
 msgstr "Quai"
 
 #: app/TrainEditor.qml:210 app/TrainEditor.qml:310
-#, fuzzy, kde-format
-#| msgid ""
-#| "Specifying the departure and arrival location helps Itinerary to find "
-#| "updated information for the train this reservation is valid for."
+#, kde-format
 msgid ""
 "Specifying the departure and arrival location helps Itinerary to find up-to-"
 "date information for the train this reservation is valid for."

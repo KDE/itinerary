@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-09 00:43+0000\n"
-"PO-Revision-Date: 2026-01-07 10:00+0100\n"
+"PO-Revision-Date: 2026-01-09 09:14+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -2721,19 +2721,19 @@ msgstr "Anàlisi de PDF"
 #, kde-format
 msgctxt "@info:credit"
 msgid "MapLibre Native Qt"
-msgstr ""
+msgstr "MapLibre Native Qt"
 
 #: app/main.cpp:230 app/main.cpp:231
 #, kde-format
 msgctxt "@info:credit"
 msgid "Copyright © MapLibre contributors."
-msgstr ""
+msgstr "Copyright © MapLibre contributors."
 
 #: app/main.cpp:231
 #, kde-format
 msgctxt "@info:credit"
 msgid "MapLibre Native"
-msgstr ""
+msgstr "MapLibre Native"
 
 #: app/main.cpp:235
 #, kde-format

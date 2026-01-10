@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-09 00:43+0000\n"
-"PO-Revision-Date: 2026-01-07 09:20+0100\n"
+"PO-Revision-Date: 2026-01-09 06:54+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -2725,19 +2725,19 @@ msgstr "Razčlenjevanje PDF"
 #, kde-format
 msgctxt "@info:credit"
 msgid "MapLibre Native Qt"
-msgstr ""
+msgstr "MapLibre Native Qt"
 
 #: app/main.cpp:230 app/main.cpp:231
 #, kde-format
 msgctxt "@info:credit"
 msgid "Copyright © MapLibre contributors."
-msgstr ""
+msgstr "Copyright © sodelavci MapLibre."
 
 #: app/main.cpp:231
 #, kde-format
 msgctxt "@info:credit"
 msgid "MapLibre Native"
-msgstr ""
+msgstr "MapLibre Native"
 
 #: app/main.cpp:235
 #, kde-format
