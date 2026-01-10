@@ -37,6 +37,8 @@ FormCard.FormCardDialog {
         root.close();
     }
 
+    onClosed: nameEdit.clear()
+
     onTripGroupChanged: {
         // needs to be done explicitly as editing the text breaks the binding
         // and thus doesn't work when reusing the dialog a second time
