@@ -4553,10 +4553,9 @@ msgid "%1 (%2/%3)"
 msgstr "%1 (%2/%3)"
 
 #: app/TripGroupMapPage.qml:201
-#, fuzzy, kde-format
-#| msgid "Address:"
+#, kde-format
 msgid "Address"
-msgstr "Adresa:"
+msgstr "Adresa"
 
 #: app/TripGroupMergeDialog.qml:17
 #, kde-format
