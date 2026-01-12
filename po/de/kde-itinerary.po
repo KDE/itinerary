@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-09 00:43+0000\n"
-"PO-Revision-Date: 2026-01-05 19:07+0100\n"
+"PO-Revision-Date: 2026-01-08 21:16+0100\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -558,12 +558,10 @@ msgid "Canceled"
 msgstr "Storniert"
 
 #: app/BookingEditorCard.qml:67
-#, fuzzy, kde-format
-#| msgctxt "a train/bus journey canceled by its operator"
-#| msgid "Trip has been canceled."
+#, kde-format
 msgctxt "canceled reservation"
 msgid "Booking has been canceled."
-msgstr "Die Fahrt fällt aus."
+msgstr "Buchung wurde storniert."
 
 #: app/BusDelegate.qml:38
 #, kde-format
@@ -2377,23 +2375,19 @@ msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
 #: app/JourneySectionStopDelegate.qml:145
-#, fuzzy, kde-format
-#| msgid "Pl. %1"
+#, kde-format
 msgctxt "Abbreviation of train platform"
 msgid "Pl. %1"
 msgstr "Bstg. %1"
 
 #: app/JourneySectionStopDelegate.qml:147
-#, fuzzy, kde-format
-#| msgctxt "Ferry dock, if possible use an abreviation"
-#| msgid "Dock %1"
+#, kde-format
 msgctxt "Ferry dock, if possible use an abbreviation"
 msgid "Dock %1"
 msgstr "Anl.-St. %1"
 
 #: app/JourneySectionStopDelegate.qml:149
-#, fuzzy, kde-format
-#| msgid "Pl. %1"
+#, kde-format
 msgctxt "Generic abbreviation of platform"
 msgid "Pl. %1"
 msgstr "Bstg. %1"
@@ -3129,9 +3123,7 @@ msgstr ""
 "Die Sitzungsverifizierung wurde wegen eines unbekannten Fehlers abgebrochen."
 
 #: app/MatrixKeyVerificationPage.qml:114
-#, fuzzy, kde-format
-#| msgctxt "Matrix session verfication"
-#| msgid "Emoji Verification"
+#, kde-format
 msgctxt "Matrix session verification"
 msgid "Emoji Verification"
 msgstr "Emoji-Verifizierung"
@@ -3918,6 +3910,8 @@ msgid ""
 "Unfortunately, retrieving onboard information is not supported on your "
 "device at this time."
 msgstr ""
+"Im Moment wird das Abrufen von Onboard-Informationen auf Ihrem Gerät leider "
+"nicht unterstützt."
 
 #: app/SettingsPage.qml:274
 #, kde-format
@@ -4381,6 +4375,8 @@ msgid ""
 "Specifying the departure and arrival location helps Itinerary to find up-to-"
 "date information for the train this reservation is valid for."
 msgstr ""
+"Den Abfahrts- und Ankunftsort anzugeben, hilft Itinerary, aktuelle "
+"Informationen über den Zug zu finden, für den diese Reservierung gilt."
 
 #: app/TrainEditor.qml:231 app/TrainEditor.qml:336 app/TrainPage.qml:167
 #: app/TrainPage.qml:252
