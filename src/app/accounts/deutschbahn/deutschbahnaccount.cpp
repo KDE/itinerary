@@ -57,7 +57,7 @@ void DeutschBahnAccount::saveAccount(KConfigGroup &configGroup) const
 void DeutschBahnAccount::loadAccount(const KConfigGroup &configGroup)
 {
     m_accountName = configGroup.readEntry("accountName");
-    Q_EMIT void accountNameChanged();
+    Q_EMIT accountNameChanged();
 
     m_accountId = configGroup.readEntry("accountId");
 
