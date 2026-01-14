@@ -26,9 +26,11 @@ class ReservationOnlinePostprocessor : public QObject
 public:
     ReservationOnlinePostprocessor(ReservationManager *reservationMgr,
                                    Settings *settings,
-                                   std::function<QNetworkAccessManager *()> namFactory);
+                                   std::function<QNetworkAccessManager *()> namFactory,
+                                   QObject *parent = nullptr);
 
 private:
+    void handlePendingBatches();
     QCoro::Task<> handleBatchChange(QString batchId);
 
     [[nodiscard]] QCoro::Task<std::optional<QVariant>> processReservation(QVariant reservation);

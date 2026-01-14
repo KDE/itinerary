@@ -48,23 +48,19 @@ constexpr inline auto NOMINATIM_RATE_LIMIT = std::chrono::milliseconds(500);
 ReservationOnlinePostprocessor::ReservationOnlinePostprocessor(
     ReservationManager *reservationMgr,
     Settings *settings,
-    std::function<QNetworkAccessManager *()> namFactory)
-    : QObject()
+    std::function<QNetworkAccessManager *()> namFactory,
+    QObject *parent)
+    : QObject(parent)
     , m_resMgr(reservationMgr)
     , m_settings(settings)
     , m_namFactory(std::move(namFactory))
 {
     if (QNetworkInformation::loadDefaultBackend()) {
-        connect(QNetworkInformation::instance(),
-                &QNetworkInformation::reachabilityChanged,
-                this,
-                [this](auto reachability) {
-                    if (reachability == QNetworkInformation::Reachability::Online) {
-                        for (const QString &batchId : m_resMgr->batches()) {
-                            handleBatchChange(batchId);
-                        }
-                    }
-                });
+        connect(QNetworkInformation::instance(), &QNetworkInformation::reachabilityChanged, this, [this](auto reachability) {
+            if (reachability == QNetworkInformation::Reachability::Online) {
+                handlePendingBatches();
+            }
+        });
     } else {
         qCWarning(Log) << "Failed to load any QNetworkInformation backend. Will not be able to "
                           "resolve reservation places when connectivity is restored";
@@ -77,6 +73,20 @@ ReservationOnlinePostprocessor::ReservationOnlinePostprocessor(
             &ReservationManager::batchContentChanged,
             this,
             &ReservationOnlinePostprocessor::handleBatchChange);
+}
+
+void ReservationOnlinePostprocessor::handlePendingBatches()
+{
+    const auto cutoffTime = QDateTime::currentDateTimeUtc().addDuration(std::chrono::days(-90));
+    const auto &batchIds = m_resMgr->batches();
+    for (auto it = batchIds.rbegin(); it != batchIds.rend(); ++it) {
+        const auto batch = m_resMgr->batch(*it);
+        const auto dt = batch.endDateTime().isValid() ? batch.endDateTime() : batch.startDateTime();
+        if (dt < cutoffTime) {
+            break;
+        }
+        handleBatchChange(*it);
+    }
 }
 
 QCoro::Task<> ReservationOnlinePostprocessor::handleBatchChange(QString batchId)
