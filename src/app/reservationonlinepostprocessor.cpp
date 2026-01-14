@@ -206,8 +206,12 @@ QCoro::Task<std::optional<QVariant>> ReservationOnlinePostprocessor::processRese
         const auto changedArrAirport = co_await processAirport(flight.arrivalAirport());
 
         if (changedDepAirport || changedArrAirport) {
-            flight.setDepartureAirport(*changedDepAirport);
-            flight.setArrivalAirport(*changedArrAirport);
+            if (changedDepAirport) {
+                flight.setDepartureAirport(*changedDepAirport);
+            }
+            if (changedArrAirport) {
+                flight.setArrivalAirport(*changedArrAirport);
+            }
             flightRes.setReservationFor(flight);
             co_return flightRes;
         }
