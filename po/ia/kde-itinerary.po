@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-09 00:43+0000\n"
-"PO-Revision-Date: 2026-01-09 15:43+0100\n"
+"PO-Revision-Date: 2026-01-14 11:27+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -1980,7 +1980,7 @@ msgstr "Apple Wallet passes (*.pkpass)"
 #: app/ImportAction.qml:43
 #, kde-format
 msgid "Apple Wallet pass bundles (*.pkpasses)"
-msgstr ""
+msgstr "Pacchetto de passar de Apple Wallet  (*.pkpasses)"
 
 #: app/ImportAction.qml:43
 #, kde-format
@@ -2659,6 +2659,8 @@ msgid ""
 "Provides various metadata like train station names, driving side, and power "
 "plug types."
 msgstr ""
+"Forni varie metadatos como nomine de station de traino, latere de guidar, e "
+"typos de prisa de energia."
 
 #: app/main.cpp:224
 #, kde-format
@@ -2670,7 +2672,7 @@ msgstr "OpenStreetMap"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Provides both indoor and outdoor maps. ©OpenStreetMap contributors"
-msgstr ""
+msgstr "Forni ambe mappas interior e exterior. Contrubutores de ©OpenStreetMap"
 
 #: app/main.cpp:225
 #, kde-format
@@ -2682,19 +2684,20 @@ msgstr "OpenSSL"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Secure network interaction with TLS. © 1998-2018 The OpenSSL Project"
-msgstr ""
+msgstr "Interaction de rete secur con TLS. © 1998-2018 The OpenSSL Project"
 
 #: app/main.cpp:226
 #, kde-format
 msgctxt "@info:credit"
 msgid "ZXing"
-msgstr ""
+msgstr "ZXing"
 
 #: app/main.cpp:226
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code scanning. © 2016 ZXing Authors, © 2016 Nu-book Inc."
 msgstr ""
+"Scander de QR-Code scanning. Autores de © 2016 ZXing, © 2016 Nu-book Inc."
 
 #: app/main.cpp:227
 #, kde-format
@@ -2706,25 +2709,25 @@ msgstr "Poppler"
 #, kde-format
 msgctxt "@info:credit"
 msgid "PDF parsing"
-msgstr ""
+msgstr "Analysante (Parsing) de PDF"
 
 #: app/main.cpp:230
 #, kde-format
 msgctxt "@info:credit"
 msgid "MapLibre Native Qt"
-msgstr ""
+msgstr "MapLibre Native Qt"
 
 #: app/main.cpp:230 app/main.cpp:231
 #, kde-format
 msgctxt "@info:credit"
 msgid "Copyright © MapLibre contributors."
-msgstr ""
+msgstr "Copyright © MapLibre contributores."
 
 #: app/main.cpp:231
 #, kde-format
 msgctxt "@info:credit"
 msgid "MapLibre Native"
-msgstr ""
+msgstr "MapLibre Native"
 
 #: app/main.cpp:235
 #, kde-format
@@ -2744,7 +2747,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:credit"
 msgid "libintl lite"
-msgstr ""
+msgstr "libintl lite"
 
 #: app/main.cpp:236
 #, kde-format
@@ -2756,19 +2759,19 @@ msgstr "Internalisation"
 #, kde-format
 msgctxt "@info:credit"
 msgid "libqrencode"
-msgstr ""
+msgstr "libqrencode"
 
 #: app/main.cpp:239
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code Generation. © 2006-2018 Kentaro Fukuchi"
-msgstr ""
+msgstr "Generation de QR-Code. © 2006-2018 Kentaro Fukuchi"
 
 #: app/main.cpp:240
 #, kde-format
 msgctxt "@info:credit"
 msgid "libical"
-msgstr ""
+msgstr "libical"
 
 #: app/main.cpp:240
 #, kde-format
@@ -2810,7 +2813,7 @@ msgstr "QtKeychain"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Secure password storage."
-msgstr ""
+msgstr "Immagazinage de contrasigno secur."
 
 #: app/main.cpp:246
 #, kde-format
@@ -2822,7 +2825,7 @@ msgstr "Olm"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Matrix crypto library."
-msgstr ""
+msgstr "Bibliotheca Crypto de Matrix"
 
 #: app/main.cpp:254
 #, kde-format
@@ -3888,16 +3891,13 @@ msgstr ""
 "information de a bordo."
 
 #: app/SettingsPage.qml:242
-#, fuzzy, kde-format
-#| msgid ""
-#| "Onboard information are unfortunately not supported on your device at "
-#| "this time."
+#, kde-format
 msgid ""
 "Unfortunately, retrieving onboard information is not supported on your "
 "device at this time."
 msgstr ""
-"Information de a bordo infortunatemente non es supportate sur tu dispositivo "
-"nunc."
+"Infortunatemente, recuperar information de a bordo non es supportate sur tu "
+"dispositivo in iste tempore."
 
 #: app/SettingsPage.qml:274
 #, kde-format
@@ -3955,26 +3955,19 @@ msgid "Log in"
 msgstr "Accede"
 
 #: app/SettingsPage.qml:328
-#, fuzzy, kde-format
-#| msgid "Traewelling Integration"
+#, kde-format
 msgid "Träwelling Integration"
-msgstr "Integration de Traewelling"
+msgstr "Integration de Träwelling "
 
 #: app/SettingsPage.qml:333
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Traewelling is a free check-in service that lets you tell your friends "
-#| "where you are and where you can log your public transit journeys. For "
-#| "more information, visit <a href=\"https://traewelling.de\">traewelling."
-#| "de</a>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Träwelling is a free check-in service that lets you tell your friends where "
 "you are and where you can log your public transit journeys. For more "
 "information, visit <a href=\"https://traewelling.de\">traewelling.de</a>"
 msgstr ""
-"Traewelling es un servicio de check-in gratuite que te permitte dir a tu "
+"Träwelling  es un servicio de check-in gratuite que te permitte dir a tu "
 "amicos ubi tu e ubi tu pote registrar to viages de transito public. Per plus "
 "information , tu visita <a href=\"https://traewelling.de\">traewelling.de</"
 "a> "
@@ -4369,6 +4362,8 @@ msgid ""
 "Specifying the departure and arrival location helps Itinerary to find up-to-"
 "date information for the train this reservation is valid for."
 msgstr ""
+"Specificar le location de partita e arrivata adjuta Itinerary a trovar "
+"information actualisate per le traino per le qual iste reservation es valide."
 
 #: app/TrainEditor.qml:231 app/TrainEditor.qml:336 app/TrainPage.qml:167
 #: app/TrainPage.qml:252
@@ -4452,24 +4447,20 @@ msgid "Arrival Vehicle Layout"
 msgstr "Disposition de Vehiculo de arrivata"
 
 #: app/TrainPage.qml:346
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add to Traewelling"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add to Träwelling"
-msgstr "Adde a Traewelling"
+msgstr "Adde a Träwelling"
 
 #: app/TrainPage.qml:391
-#, fuzzy, kde-format
-#| msgid "Added to Traewelling"
+#, kde-format
 msgid "Added to Träwelling"
-msgstr "Addite a Traewelling"
+msgstr "Addite a Träwelling"
 
 #: app/TrainPage.qml:391
-#, fuzzy, kde-format
-#| msgid "Failed to add to Traewelling"
+#, kde-format
 msgid "Failed to add to Träwelling"
-msgstr "Falleva a adder a Traewelling"
+msgstr "Falleva a adder a Träwelling"
 
 #: app/TransferDelegate.qml:112
 #, kde-format
