@@ -225,6 +225,14 @@ QCoro::Task<std::optional<QVariant>> ReservationOnlinePostprocessor::processRese
             flightRes.setReservationFor(flight);
             co_return flightRes;
         }
+    } else if (KItinerary::JsonLd::isA<KItinerary::LodgingReservation>(reservation)) {
+        auto hotelRes = reservation.value<KItinerary::LodgingReservation>();
+        auto hotel = hotelRes.reservationFor().value<KItinerary::LodgingBusiness>();
+        const auto changedHotel = co_await processHotel(hotel);
+        if (changedHotel) {
+            hotelRes.setReservationFor(*changedHotel);
+            co_return hotelRes;
+        }
     }
 
     co_return {};
@@ -326,14 +334,28 @@ QCoro::Task<std::optional<KItinerary::Airport>> ReservationOnlinePostprocessor::
     co_return {};
 }
 
-QCoro::Task<QJsonArray> ReservationOnlinePostprocessor::queryNominatim(const KItinerary::Place &place, const QString &amenityType)
+QCoro::Task<std::optional<KItinerary::LodgingBusiness>> ReservationOnlinePostprocessor::processHotel(KItinerary::LodgingBusiness hotel)
 {
-    const QString amenityQuery = amenityType % u" " % place.name();
+    if (hotel.geo().isValid() || hotel.address().addressCountry().isEmpty() || hotel.address().addressLocality().isEmpty() || hotel.address().streetAddress().isEmpty()) {
+        co_return {};
+    }
 
+    const auto results = co_await queryNominatim(hotel, {}, {}); // amenity=hotel isn't supported by Nominatim it seems? also, hotels are not in the poi layer?
+    bool changed = applyResult(results, hotel, {"tourism:hotel"_L1, "tourism:hostel"_L1});
+    co_return changed ? std::optional{hotel} : std::nullopt;
+}
+
+template <typename T>
+QCoro::Task<QJsonArray> ReservationOnlinePostprocessor::queryNominatim(const T &place, const QString &amenityType, const QString &layer)
+{
     QUrl url = QUrl(u"https://nominatim.openstreetmap.org/search"_s);
     QUrlQuery query;
-    query.addQueryItem(u"amenity"_s, amenityQuery);
-    query.addQueryItem(u"layer"_s, u"poi,railway"_s);
+    if (!amenityType.isEmpty()) {
+        query.addQueryItem(u"amenity"_s, amenityType + ' '_L1 + place.name());
+    }
+    if (!layer.isEmpty()) {
+        query.addQueryItem(u"layer"_s, layer);
+    }
     query.addQueryItem(u"extratags"_s, u"1"_s);
     query.addQueryItem(u"format"_s, u"jsonv2"_s);
 
@@ -389,9 +411,8 @@ QCoro::Task<QJsonArray> ReservationOnlinePostprocessor::queryNominatim(const KIt
     co_return doc.array();
 }
 
-bool ReservationOnlinePostprocessor::applyResult(const QJsonArray &results,
-                                                 KItinerary::Place &place,
-                                                 const std::vector<QLatin1String> &allowedTags) const
+template <typename T>
+bool ReservationOnlinePostprocessor::applyResult(const QJsonArray &results, T &place, const std::vector<QLatin1String> &allowedTags) const
 {
     for (const auto result : results) {
         const auto object = result.toObject();
