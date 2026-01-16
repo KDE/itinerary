@@ -16,8 +16,10 @@ Checks: >
     modernize-*,
     -modernize-avoid-c-arrays,
     -modernize-concat-nested-namespaces,
+    -modernize-use-designated-initializers,
     -modernize-use-trailing-return-type,
     performance-*,
+    -performance-enum-size,
     readability-*,
     -readability-function-cognitive-complexity,
     -readability-identifier-length,
@@ -26,6 +28,7 @@ Checks: >
     -readability-magic-numbers,
     -readability-named-parameter,
     -readability-qualified-auto,
+    -readability-redundant-access-specifiers,
     -readability-suspicious-call-argument,
     -readability-uppercase-literal-suffix
 
