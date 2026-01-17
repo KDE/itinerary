@@ -16,8 +16,6 @@
 
 #include <KPublicTransport/Line>
 
-#include <KCountry>
-
 #include <QCoroNetwork>
 #include <QCoroSignal>
 #include <QCoroTimer>
@@ -364,9 +362,6 @@ QCoro::Task<QJsonArray> ReservationOnlinePostprocessor::queryNominatim(const T &
     }
 
     if (!place.address().isEmpty()) {
-        const QString countryCode = place.address().addressCountry();
-        const QString countryName = KCountry::fromAlpha2(countryCode).name();
-
         const auto addQueryParam = [&](const QString &param, const QString &value) {
             if (value.isEmpty()) {
                 return;
@@ -377,7 +372,7 @@ QCoro::Task<QJsonArray> ReservationOnlinePostprocessor::queryNominatim(const T &
         addQueryParam(u"street"_s, place.address().streetAddress());
         addQueryParam(u"city"_s, place.address().addressLocality());
         addQueryParam(u"state"_s, place.address().addressRegion());
-        addQueryParam(u"country"_s, countryName);
+        addQueryParam(u"country"_s,  place.address().addressCountry());
         addQueryParam(u"postalcode"_s, place.address().postalCode());
     }
     url.setQuery(query);
