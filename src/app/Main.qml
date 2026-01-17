@@ -101,6 +101,11 @@ Kirigami.ApplicationWindow {
                 onTriggered: pageStack.layers.push(Qt.createComponent("org.kde.itinerary", "WelcomePage"))
             },
             Kirigami.Action {
+                text: i18n("What's new")
+                icon.name: "view-pim-news-symbolic"
+                onTriggered: whatsNewDialog.open()
+            },
+            Kirigami.Action {
                 id: aboutAction
                 text: i18n("About")
                 icon.name: "help-about-symbolic"
@@ -255,6 +260,10 @@ Kirigami.ApplicationWindow {
     Component {
         id: indoorMapPage
         IndoorMapPage {}
+    }
+
+    WhatsNewDialog {
+        id: whatsNewDialog
     }
 
     // "singleton" QtLocation plugins

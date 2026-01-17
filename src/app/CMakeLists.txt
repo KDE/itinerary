@@ -225,6 +225,7 @@ ecm_add_qml_module(itinerary GENERATE_PLUGIN_SOURCE
         WeatherForecastDelegate.qml
         WeatherForecastPage.qml
         WelcomePage.qml
+        WhatsNewDialog.qml
 
         onlineimport/db.qml
         onlineimport/sncf.qml
@@ -407,6 +408,7 @@ if (ANDROID)
         view-calendar-day
         view-currency-list
         view-list-details
+        view-pim-news-symbolic
         view-refresh
         view-statistics-symbolic
         wallet-open

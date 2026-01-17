@@ -194,7 +194,6 @@ int main(int argc, char **argv)
     QCoreApplication::setApplicationName(QStringLiteral("itinerary"));
     QCoreApplication::setOrganizationName(QStringLiteral("KDE"));
     QCoreApplication::setOrganizationDomain(QStringLiteral("kde.org"));
-    QCoreApplication::setApplicationVersion(QStringLiteral(ITINERARY_VERSION_STRING));
 #ifdef Q_OS_ANDROID
     QGuiApplication app(argc, argv);
     QQuickStyle::setStyle(QStringLiteral("org.kde.breeze"));
@@ -208,17 +207,13 @@ int main(int argc, char **argv)
         QQuickStyle::setStyle(QStringLiteral("org.kde.desktop"));
     }
 #endif
-    QGuiApplication::setApplicationDisplayName(i18n("KDE Itinerary"));
     QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.itinerary")));
 
-    auto aboutData = KAboutData::applicationData();
+    auto aboutData = KAboutData::fromAppStream(u"org.kde.itinerary"_s);
+    aboutData.setVersion(ITINERARY_VERSION_STRING);
     aboutData.setBugAddress("submit@bugs.kde.org");
     aboutData.setProductName("KDE Itinerary/general"); // Bugzilla product/component name
-    aboutData.setLicense(KAboutLicense::LGPL_V2, KAboutLicense::OrLaterVersions);
-    aboutData.setHomepage(QStringLiteral("https://apps.kde.org/itinerary"));
-    aboutData.setShortDescription(i18n("Digital Travel Assistant"));
     aboutData.setCopyrightStatement(i18n("Copyright © The KDE Community"));
-    aboutData.setDesktopFileName(QStringLiteral("org.kde.itinerary"));
 
     aboutData.addComponent(i18nc("@info:credit", "Wikidata"), i18nc("@info:credit", "Provides various metadata like train station names, driving side, and power plug types."), {}, u"https://www.wikidata.org/"_s, KAboutLicense::CC0_V1);
     aboutData.addComponent(i18nc("@info:credit", "OpenStreetMap"), i18nc("@info:credit", "Provides both indoor and outdoor maps. ©OpenStreetMap contributors"), {}, u"https://www.openstreetmap.org/"_s, KAboutLicense::ODbL_V1);
