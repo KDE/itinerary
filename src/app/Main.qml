@@ -10,6 +10,7 @@ import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import QtQuick.Dialogs
 import QtLocation as QtLocation
+import org.kde.coreaddons as CoreAddons
 import org.kde.kirigami as Kirigami
 import org.kde.solidextras as Solid
 import org.kde.kpublictransport.onboard
@@ -83,6 +84,13 @@ Kirigami.ApplicationWindow {
                 icon.name: "help-contents"
                 enabled: pageStack.layers.depth < 2
                 onTriggered: Qt.openUrlExternally("https://community.kde.org/KDE_PIM/KDE_Itinerary")
+            },
+            Kirigami.Action {
+                text: i18n("What's new")
+                icon.name: "view-pim-news-symbolic"
+                icon.color: whatsNewDialog.hasNewReleases ? Kirigami.Theme.positiveTextColor : Kirigami.Theme.textColor
+                onTriggered: whatsNewDialog.open()
+                visible: whatsNewDialog.hasReleases
             },
             Kirigami.Action {
                 id: aboutAction
@@ -238,6 +246,10 @@ Kirigami.ApplicationWindow {
     Component {
         id: indoorMapPage
         IndoorMapPage {}
+    }
+
+    WhatsNewDialog {
+        id: whatsNewDialog
     }
 
     // "singleton" QtLocation plugins

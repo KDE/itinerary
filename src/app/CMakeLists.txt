@@ -77,6 +77,7 @@ target_sources(itinerary PRIVATE
     util.cpp
     weatherforecastmodel.cpp
     weatherinformation.cpp
+    whatsnewcontroller.cpp
 )
 
 ecm_add_qml_module(itinerary GENERATE_PLUGIN_SOURCE
@@ -225,6 +226,7 @@ ecm_add_qml_module(itinerary GENERATE_PLUGIN_SOURCE
         WeatherForecastDelegate.qml
         WeatherForecastPage.qml
         WelcomePage.qml
+        WhatsNewDialog.qml
 
         onlineimport/db.qml
         onlineimport/sncf.qml
@@ -430,6 +432,7 @@ if (ANDROID)
         view-currency-list
         view-financial-account-cash-symbolic
         view-list-details
+        view-pim-news-symbolic
         view-refresh
         view-statistics-symbolic
         wallet-open
@@ -485,8 +488,8 @@ if (TARGET KF6::Crash)
 endif()
 
 install(TARGETS itinerary-app ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+install(FILES org.kde.itinerary.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 if (NOT ANDROID)
     install(PROGRAMS org.kde.itinerary.desktop DESTINATION ${KDE_INSTALL_APPDIR})
-    install(FILES org.kde.itinerary.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
     install(FILES itinerary.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFYRCDIR})
 endif()
