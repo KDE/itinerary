@@ -226,10 +226,18 @@ QCoro::Task<std::optional<QVariant>> ReservationOnlinePostprocessor::processRese
     } else if (KItinerary::JsonLd::isA<KItinerary::LodgingReservation>(reservation)) {
         auto hotelRes = reservation.value<KItinerary::LodgingReservation>();
         auto hotel = hotelRes.reservationFor().value<KItinerary::LodgingBusiness>();
-        const auto changedHotel = co_await processHotel(hotel);
+        const auto changedHotel = co_await processPlace(hotel, {"tourism:hotel"_L1, "tourism:hostel"_L1});
         if (changedHotel) {
             hotelRes.setReservationFor(*changedHotel);
             co_return hotelRes;
+        }
+    } else if (KItinerary::JsonLd::isA<KItinerary::FoodEstablishmentReservation>(reservation)) {
+        auto foodRes = reservation.value<KItinerary::FoodEstablishmentReservation>();
+        auto restaurant = foodRes.reservationFor().value<KItinerary::FoodEstablishment>();
+        const auto changedRestaurant = co_await processPlace(restaurant, {"amenity:restaurant"_L1});
+        if (changedRestaurant) {
+            foodRes.setReservationFor(*changedRestaurant);
+            co_return foodRes;
         }
     }
 
@@ -332,15 +340,16 @@ QCoro::Task<std::optional<KItinerary::Airport>> ReservationOnlinePostprocessor::
     co_return {};
 }
 
-QCoro::Task<std::optional<KItinerary::LodgingBusiness>> ReservationOnlinePostprocessor::processHotel(KItinerary::LodgingBusiness hotel)
+template <typename T>
+QCoro::Task<std::optional<T>> ReservationOnlinePostprocessor::processPlace(T place, const std::vector<QLatin1StringView> &allowedTags)
 {
-    if (hotel.geo().isValid() || hotel.address().addressCountry().isEmpty() || hotel.address().addressLocality().isEmpty() || hotel.address().streetAddress().isEmpty()) {
+    if (place.geo().isValid() || place.address().addressCountry().isEmpty() || place.address().addressLocality().isEmpty() || place.address().streetAddress().isEmpty()) {
         co_return {};
     }
 
-    const auto results = co_await queryNominatim(hotel, {}, {}); // amenity=hotel isn't supported by Nominatim it seems? also, hotels are not in the poi layer?
-    bool changed = applyResult(results, hotel, {"tourism:hotel"_L1, "tourism:hostel"_L1});
-    co_return changed ? std::optional{hotel} : std::nullopt;
+    const auto results = co_await queryNominatim(place, {}, {}); // amenity=hotel isn't supported by Nominatim it seems? also, hotels are not in the poi layer?
+    bool changed = applyResult(results, place, allowedTags);
+    co_return changed ? std::optional{place} : std::nullopt;
 }
 
 template <typename T>
@@ -407,7 +416,7 @@ QCoro::Task<QJsonArray> ReservationOnlinePostprocessor::queryNominatim(const T &
 }
 
 template <typename T>
-bool ReservationOnlinePostprocessor::applyResult(const QJsonArray &results, T &place, const std::vector<QLatin1String> &allowedTags) const
+bool ReservationOnlinePostprocessor::applyResult(const QJsonArray &results, T &place, const std::vector<QLatin1StringView> &allowedTags) const
 {
     for (const auto result : results) {
         const auto object = result.toObject();

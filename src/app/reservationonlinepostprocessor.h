@@ -38,7 +38,8 @@ private:
     [[nodiscard]] QCoro::Task<std::optional<KItinerary::TrainStation>> processTrainStation(KItinerary::TrainStation station);
     [[nodiscard]] QCoro::Task<std::optional<KItinerary::BusStation>> processBusStation(KItinerary::BusStation station);
     [[nodiscard]] QCoro::Task<std::optional<KItinerary::Airport>> processAirport(KItinerary::Airport airport) const;
-    [[nodiscard]] QCoro::Task<std::optional<KItinerary::LodgingBusiness>> processHotel(KItinerary::LodgingBusiness hotel);
+    template <typename T>
+    [[nodiscard]] QCoro::Task<std::optional<T>> processPlace(T place, const std::vector<QLatin1StringView> &allowedTags);
 
     /**
      * @param place
@@ -49,7 +50,7 @@ private:
     [[nodiscard]] QCoro::Task<QJsonArray> queryNominatim(const T &place, const QString &amenityType, const QString &layer = QStringLiteral("poi,railway"));
 
     template <typename T>
-    bool applyResult(const QJsonArray &results, T &place, const std::vector<QLatin1String> &allowedTags) const;
+    bool applyResult(const QJsonArray &results, T &place, const std::vector<QLatin1StringView> &allowedTags) const;
 
     ReservationManager *m_resMgr = nullptr;
     Settings *m_settings = nullptr;
