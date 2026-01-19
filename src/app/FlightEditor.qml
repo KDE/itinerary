@@ -49,7 +49,7 @@ EditorPage {
         if (arrivalTime.isModified && root.isManual)
             flight = Util.setDateTimePreserveTimezone(flight, "arrivalTime", arrivalTime.value);
 
-        const flightNum = flightNumber.text.match(/^\s*([A-Z0-9]{2})\s*(\d{1,4})\s*$/);
+        const flightNum = flightNumber.text.match(/^\s*([A-Z0-9]{2,3})\s*(\d{1,5})\s*$/);
         if (flightNum) {
             let airline = flight.airline;
             airline.iataCode = flightNum[1];
@@ -216,7 +216,7 @@ EditorPage {
                 label: i18n("Flight number")
                 text: root.reservation.reservationFor.airline.iataCode + " " + root.reservation.reservationFor.flightNumber
                 status: Kirigami.MessageType.Warning
-                statusMessage: flightNumber.text.match(/^\s*[A-Z0-9]{2}\s*\d{1,4}\s*$/) ? "" : i18n("Invalid flight number.")
+                statusMessage: flightNumber.text.match(/^\s*[A-Z0-9]{2,3}\s*\d{1,5}\s*$/) ? "" : i18n("Invalid flight number.")
             }
         }
 
