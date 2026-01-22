@@ -11,6 +11,7 @@ include:
       - /gitlab-templates/android-qt6.yml
       - /gitlab-templates/reuse-lint.yml
       - /gitlab-templates/flatpak.yml
+      - /gitlab-templates/flatpak-arm64.yml
       - /gitlab-templates/craft-android-qt6-apks.yml
       - /gitlab-templates/craft-android-qt6-googleplay-apks.yml
       - /gitlab-templates/cppcheck.yml
