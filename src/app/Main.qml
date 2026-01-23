@@ -76,7 +76,7 @@ Kirigami.ApplicationWindow {
     globalDrawer: Kirigami.GlobalDrawer {
         title: i18n("KDE Itinerary")
         titleIcon: "map-symbolic"
-        isMenu: true
+        isMenu: !Kirigami.Settings.isMobile
         actions: [
             Kirigami.Action {
                 id: liveAction
