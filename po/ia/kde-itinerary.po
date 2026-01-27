@@ -1,14 +1,14 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the itinerary package.
 #
-# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023, 2024, 2025 Giovanni Sora <g.sora@tiscali.it>
+# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023, 2024, 2025, 2026 Giovanni Sora <g.sora@tiscali.it>
 # giovanni <g.sora@tiscali.it>, 2023, 2024, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-19 02:43+0000\n"
-"PO-Revision-Date: 2025-12-29 17:24+0100\n"
+"PO-Revision-Date: 2026-01-26 18:53+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -1942,7 +1942,7 @@ msgstr "Apple Wallet passes (*.pkpass)"
 #: app/ImportAction.qml:43
 #, kde-format
 msgid "Apple Wallet pass bundles (*.pkpasses)"
-msgstr ""
+msgstr "Pacchetto de passar de Apple Wallet  (*.pkpasses)"
 
 #: app/ImportAction.qml:43
 #, kde-format
@@ -2611,7 +2611,7 @@ msgstr "Copyright © The KDE Community (Le communitate de KDE)"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Wikidata"
-msgstr ""
+msgstr "Wikidata"
 
 #: app/main.cpp:220
 #, kde-format
@@ -2620,6 +2620,8 @@ msgid ""
 "Provides various metadata like train station names, driving side, and power "
 "plug types."
 msgstr ""
+"Forni varie metadatos como nomine de station de traino, latere de guidar, e "
+"typos de prisa de energia."
 
 #: app/main.cpp:221
 #, kde-format
@@ -2631,7 +2633,7 @@ msgstr "OpenStreetMap"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Provides both indoor and outdoor maps. ©OpenStreetMap contributors"
-msgstr ""
+msgstr "Forni ambe mappas interior e exterior. Contrubutores de ©OpenStreetMap"
 
 #: app/main.cpp:222
 #, kde-format
@@ -2643,19 +2645,20 @@ msgstr "OpenSSL"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Secure network interaction with TLS. © 1998-2018 The OpenSSL Project"
-msgstr ""
+msgstr "Interaction de rete secur con TLS. © 1998-2018 The OpenSSL Project"
 
 #: app/main.cpp:223
 #, kde-format
 msgctxt "@info:credit"
 msgid "ZXing"
-msgstr ""
+msgstr "ZXing"
 
 #: app/main.cpp:223
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code scanning. © 2016 ZXing Authors, © 2016 Nu-book Inc."
 msgstr ""
+"Scander de QR-Code scanning. Autores de © 2016 ZXing, © 2016 Nu-book Inc."
 
 #: app/main.cpp:224
 #, kde-format
@@ -2667,7 +2670,7 @@ msgstr "Poppler"
 #, kde-format
 msgctxt "@info:credit"
 msgid "PDF parsing"
-msgstr ""
+msgstr "Analysante (Parsing) de PDF"
 
 #: app/main.cpp:227
 #, kde-format
@@ -2681,12 +2684,13 @@ msgctxt "@info:credit"
 msgid ""
 "Copyright (C) 2006-2020 by David Turner, Robert Wilhelm, and Werner Lemberg."
 msgstr ""
+"Copyright (C) 2006-2020 per David Turner, Robert Wilhelm, e Werner Lemberg."
 
 #: app/main.cpp:228
 #, kde-format
 msgctxt "@info:credit"
 msgid "libintl lite"
-msgstr ""
+msgstr "libintl lite"
 
 #: app/main.cpp:228
 #, kde-format
@@ -2698,19 +2702,19 @@ msgstr "Internalisation"
 #, kde-format
 msgctxt "@info:credit"
 msgid "libqrencode"
-msgstr ""
+msgstr "libqrencode"
 
 #: app/main.cpp:231
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code Generation. © 2006-2018 Kentaro Fukuchi"
-msgstr ""
+msgstr "Generation de QR-Code. © 2006-2018 Kentaro Fukuchi"
 
 #: app/main.cpp:232
 #, kde-format
 msgctxt "@info:credit"
 msgid "libical"
-msgstr ""
+msgstr "libical"
 
 #: app/main.cpp:232
 #, kde-format
@@ -2752,7 +2756,7 @@ msgstr "QtKeychain"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Secure password storage."
-msgstr ""
+msgstr "Immagazinage de contrasigno secur."
 
 #: app/main.cpp:238
 #, kde-format
@@ -2764,7 +2768,7 @@ msgstr "Olm"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Matrix crypto library."
-msgstr ""
+msgstr "Bibliotheca Crypto de Matrix"
 
 #: app/main.cpp:246
 #, kde-format
@@ -4287,6 +4291,8 @@ msgid ""
 "Specifying the departure and arrival location helps Itinerary to find "
 "updated information for the train this reservation is valid for."
 msgstr ""
+"Specificar le location de partita e arrivata adjuta Itinerary a trovar "
+"information actualisate per le traino per le qual iste reservation es valide."
 
 #: app/TrainEditor.qml:231 app/TrainEditor.qml:336 app/TrainPage.qml:163
 #: app/TrainPage.qml:247
