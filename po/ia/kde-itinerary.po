@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-19 02:43+0000\n"
-"PO-Revision-Date: 2026-01-26 18:53+0100\n"
+"PO-Revision-Date: 2026-01-30 16:45+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -207,7 +207,7 @@ msgstr "Ferry"
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Airplane"
-msgstr "Aaeroplano"
+msgstr "Aeroplano"
 
 #: app/AlternativeJourneyPage.qml:119
 #, kde-format
