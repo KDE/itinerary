@@ -20,8 +20,8 @@ Item {
     /** Highlight this entry, e.g. because it's the next stop or the departure/arrival. */
     property bool highlight: root.isDeparture || root.isArrival
 
-    readonly property bool isSameTime: stop.scheduledDepartureTime.getTime() == stop.scheduledArrivalTime.getTime()
-    readonly property bool isSingleTime: !(stop.scheduledDepartureTime > 0 && stop.scheduledArrivalTime > 0)  || isSameTime
+    readonly property bool isSameTime: stop.expectedDepartureTime.getTime() == stop.expectedArrivalTime.getTime()
+    readonly property bool isSingleTime: !(stop.expectedDepartureTime > 0 && stop.expectedArrivalTime > 0)  || isSameTime
 
 
     property real progress
@@ -62,8 +62,8 @@ Item {
             Layout.column: 1
             Layout.row: 0
             Layout.alignment: Qt.AlignTop
-            text: Localizer.formatTime(stop, "scheduledArrivalTime")
-            visible: root.stop.scheduledArrivalTime > 0 && !root.isSameTime
+            text: Localizer.formatTime(stop, "expectedArrivalTime")
+            visible: root.stop.expectedArrivalTime > 0 && !root.isSameTime
             font.strikeout: root.stop.disruptionEffect === KPublicTransport.Disruption.NoService
             opacity: root.stop.pickupType === KPublicTransport.PickupDropoff.NotAllowed && root.stop.dropoffType === KPublicTransport.PickupDropoff.NotAllowed ? 0.5 : 1.0
         }
@@ -71,7 +71,7 @@ Item {
             Layout.column: 2
             Layout.row: 0
             Layout.alignment:  Qt.AlignTop
-            text: (root.stop.arrivalDelay >= 0 ? "+" : "") + root.stop.arrivalDelay
+            text: "(" + (root.stop.arrivalDelay >= 0 ? "+" : "") + root.stop.arrivalDelay + ")"
             color: root.stop.arrivalDelay > 1 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
             visible: arrivalTime.visible && root.stop.hasExpectedArrivalTime && !root.isSameTime && root.stop.disruptionEffect !== KPublicTransport.Disruption.NoService
             opacity: root.stop.pickupType === KPublicTransport.PickupDropoff.NotAllowed && root.stop.dropoffType === KPublicTransport.PickupDropoff.NotAllowed ? 0.5 : 1.0
@@ -94,8 +94,8 @@ Item {
             Layout.column: 1
             Layout.row: root.isSingleTime ? 0 : 1
             Layout.alignment:  Qt.AlignTop
-            text: Localizer.formatTime(stop, "scheduledDepartureTime")
-            visible: root.stop.scheduledDepartureTime > 0
+            text: Localizer.formatTime(stop, "expectedDepartureTime")
+            visible: root.stop.expectedDepartureTime > 0
             font.strikeout: root.stop.disruptionEffect === KPublicTransport.Disruption.NoService
             opacity: root.stop.pickupType === KPublicTransport.PickupDropoff.NotAllowed && root.stop.dropoffType === KPublicTransport.PickupDropoff.NotAllowed ? 0.5 : 1.0
         }
@@ -104,7 +104,7 @@ Item {
             Layout.column: 2
             Layout.row: departureTime.Layout.row
             Layout.alignment:  Qt.AlignTop
-            text: (root.stop.departureDelay >= 0 ? "+" : "") + root.stop.departureDelay
+            text: "(" + (root.stop.departureDelay >= 0 ? "+" : "") + root.stop.departureDelay + ")"
             color: root.stop.departureDelay > 1 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
             visible: departureTime.visible && root.stop.hasExpectedDepartureTime && root.stop.disruptionEffect !== KPublicTransport.Disruption.NoService
             opacity: root.stop.pickupType === KPublicTransport.PickupDropoff.NotAllowed && root.stop.dropoffType === KPublicTransport.PickupDropoff.NotAllowed ? 0.5 : 1.0
