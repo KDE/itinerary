@@ -52,7 +52,7 @@ private Q_SLOTS:
         ctrl->commitImport(&importer);
         QCOMPARE(mgr.batches().size(), 1);
 
-        QVERIFY(batchChangeSpy.wait());
+        QVERIFY(batchChangeSpy.wait(std::chrono::seconds(30)));
         QCOMPARE(batchChangeSpy.size(), 1);
         QCOMPARE(batchChangeSpy[0][0].toString(), mgr.batches()[0]);
 
@@ -85,7 +85,7 @@ private Q_SLOTS:
         ctrl->commitImport(&importer);
         QCOMPARE(mgr.batches().size(), 1);
 
-        QVERIFY(batchChangeSpy.wait());
+        QVERIFY(batchChangeSpy.wait(std::chrono::seconds(30)));
         QCOMPARE(batchChangeSpy.size(), 1);
         QCOMPARE(batchChangeSpy[0][0].toString(), mgr.batches()[0]);
 

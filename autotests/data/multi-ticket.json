@@ -2,7 +2,7 @@
     {
         "@context": "http://schema.org",
         "@type": "TrainReservation",
-        "modifiedTime": "2025-10-19T06:09:07Z",
+        "modifiedTime": "3025-10-19T06:09:07Z",
         "priceCurrency": "EUR",
         "reservationFor": {
             "@type": "TrainTrip",
@@ -10,13 +10,13 @@
                 "@type": "TrainStation",
                 "name": "Innsbruck Hbf"
             },
-            "arrivalTime": "2025-10-19T15:44:00",
-            "departureDay": "2025-10-19",
+            "arrivalTime": "3025-10-19T15:44:00",
+            "departureDay": "3025-10-19",
             "departureStation": {
                 "@type": "TrainStation",
                 "name": "Wien Hbf"
             },
-            "departureTime": "2025-10-19T11:28:00",
+            "departureTime": "3025-10-19T11:28:00",
             "provider": {
                 "@type": "Organization",
                 "identifier": "uic:1181"
@@ -43,7 +43,7 @@
     {
         "@context": "http://schema.org",
         "@type": "TrainReservation",
-        "modifiedTime": "2025-10-19T06:09:07Z",
+        "modifiedTime": "3025-10-19T06:09:07Z",
         "priceCurrency": "EUR",
         "reservationFor": {
             "@type": "TrainTrip",
@@ -51,13 +51,13 @@
                 "@type": "TrainStation",
                 "name": "INNSBRUCK HBF"
             },
-            "arrivalTime": "2025-10-19T15:44:00",
-            "departureDay": "2025-10-19",
+            "arrivalTime": "3025-10-19T15:44:00",
+            "departureDay": "3025-10-19",
             "departureStation": {
                 "@type": "TrainStation",
                 "name": "WIEN HBF"
             },
-            "departureTime": "2025-10-19T11:28:00",
+            "departureTime": "3025-10-19T11:28:00",
             "provider": {
                 "@type": "Organization",
                 "identifier": "uic:1181"
