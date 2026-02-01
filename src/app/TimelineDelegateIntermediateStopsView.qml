@@ -79,13 +79,13 @@ Item {
             RowLayout {
                 QQC2.Label {
                     opacity: (stopDelegate.stopover.pickupType !== KPublicTransport.PickupDropoff.NotAllowed || stopDelegate.stopover.dropoffType !== KPublicTransport.PickupDropoff.NotAllowed) ? 0.8 : 0.4
-                    text: Localizer.formatTime(stopDelegate.stopover, stopDelegate.stopover.scheduledDepartureTime > 0 ? "scheduledDepartureTime" : "scheduledArrivalTime")
+                    text: Localizer.formatTime(stopDelegate.stopover, stopDelegate.stopover.expectedDepartureTime > 0 ? "expectedDepartureTime" : "expectedDepartureTime")
                     font.strikeout: stopDelegate.stopover.disruptionEffect === KPublicTransport.Disruption.NoService
                 }
                 QQC2.Label {
                     id: stopDelayLabel
                     readonly property int delay: stopDelegate.stopover.scheduledDepartureTime > 0 ? stopDelegate.stopover.departureDelay : stopDelegate.stopover.arrivalDelay
-                    text: (stopDelayLabel.delay >= 0 ? "+" : "") + stopDelayLabel.delay
+                    text: "(" + (stopDelayLabel.delay >= 0 ? "+" : "") + stopDelayLabel.delay + ")"
                     color: (stopDelayLabel.delay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
                     visible: stopDelegate.stopover.hasExpectedArrivalTime && stopDelegate.stopover.disruptionEffect !== KPublicTransport.Disruption.NoService
                     opacity: (stopDelegate.stopover.pickupType !== KPublicTransport.PickupDropoff.NotAllowed || stopDelegate.stopover.dropoffType !== KPublicTransport.PickupDropoff.NotAllowed) ? 1.0 : 0.5
