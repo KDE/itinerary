@@ -197,7 +197,8 @@
                 "-DZXING_DEPENDENCIES=LOCAL",
                 "-DBUILD_SHARED_LIBS=OFF",
                 "-DZXING_UNIT_TESTS=OFF",
-                "-DZXING_EXAMPLES=OFF"
+                "-DZXING_EXAMPLES=OFF",
+                "-DZXING_C_API=OFF"
             ],
             "buildsystem": "cmake-ninja",
             "builddir": true,
