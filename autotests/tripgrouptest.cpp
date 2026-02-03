@@ -803,6 +803,35 @@ private Q_SLOTS:
         QCOMPARE(tg.elements().size(), 1);
         QVERIFY(!tg.name().isEmpty());
     }
+
+    void testNestedEvents()
+    {
+        ReservationManager resMgr;
+        TransferManager transferMgr;
+        Test::clearAll(&resMgr);
+        TripGroupManager mgr;
+        mgr.setReservationManager(&resMgr);
+        mgr.setTransferManager(&transferMgr);
+        auto ctrl = Test::makeAppController();
+        ctrl->setReservationManager(&resMgr);
+        ctrl->setTripGroupManager(&mgr);
+
+        ImportController importer;
+        importer.setReservationManager(&resMgr);
+        importer.setTripGroupName(u"Test Trip"_s);
+        importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/tripgroup/nested-events.json")));
+        QCOMPARE(importer.rowCount(), 2);
+        ctrl->commitImport(&importer);
+
+        QCOMPARE(resMgr.batches().size(), 2);
+        QCOMPARE(mgr.tripGroups().size(), 1);
+        const auto tg = mgr.tripGroup(mgr.tripGroups()[0]);
+        QCOMPARE(tg.elements().size(), 2);
+        QVERIFY(!tg.name().isEmpty());
+
+        QCOMPARE(tg.beginDateTime(), QDateTime({2026, 1, 30}, {15, 0}, QTimeZone("Europe/Brussels")));
+        QCOMPARE(tg.endDateTime(), QDateTime({2026, 2, 1}, {10, 0}, QTimeZone("Europe/Brussels")));
+    }
 };
 QTEST_GUILESS_MAIN(TripGroupTest)
 
