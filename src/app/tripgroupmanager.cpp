@@ -890,19 +890,21 @@ QString TripGroupManager::guessNameForReservations(const QVariantList &elements)
 
 bool TripGroupManager::recomputeTripGroupTimes(TripGroup &tg) const
 {
-    if (tg.elements().isEmpty() && (tg.beginDateTime().isValid() || tg.endDateTime().isValid())) {
+    const auto elems = tg.elements();
+
+    if (elems.isEmpty() && (tg.beginDateTime().isValid() || tg.endDateTime().isValid())) {
         tg.setBeginDateTime({});
         tg.setEndDateTime({});
         return true;
     }
-    if (tg.elements().isEmpty()) {
+    if (elems.isEmpty()) {
         return false;
     }
 
-    auto res = m_resMgr->reservation(tg.elements().constFirst());
-    auto dt = KItinerary::SortUtil::startDateTime(res);
+    const auto firstRes = m_resMgr->reservation(elems.constFirst());
+    auto dt = KItinerary::SortUtil::startDateTime(firstRes);
 
-    auto transfer = m_transferMgr->transfer(tg.elements().constFirst(), Transfer::Before);
+    auto transfer = m_transferMgr->transfer(elems.constFirst(), Transfer::Before);
     if (transfer.state() == Transfer::Selected && transfer.journey().scheduledDepartureTime().isValid()) {
         dt = std::min(dt, transfer.journey().scheduledDepartureTime());
     } else if (transfer.state() == Transfer::Pending && transfer.anchorTime().isValid()) {
@@ -911,16 +913,22 @@ bool TripGroupManager::recomputeTripGroupTimes(TripGroup &tg) const
     auto change = dt != tg.beginDateTime();
     tg.setBeginDateTime(dt);
 
-    res = m_resMgr->reservation(tg.elements().constLast());
-    dt = KItinerary::SortUtil::endDateTime(res);
-    if (!dt.isValid() && tg.beginDateTime().isValid() && tg.elements().size() > 1) {
-        dt = KItinerary::SortUtil::startDateTime(res);
+    // in order to correctly handle nested events we need to check all elements
+    dt = {};
+    for (const auto &resId : elems) {
+        if (const auto dt2 = KItinerary::SortUtil::endDateTime(m_resMgr->reservation(resId)); dt2.isValid()) {
+            dt = dt.isValid() ? std::max(dt, dt2) : dt2;
+        }
+    }
+    if (!dt.isValid() && tg.beginDateTime().isValid() && elems.size() > 1) {
+        const auto lastRes = m_resMgr->reservation(elems.constLast());
+        dt = KItinerary::SortUtil::startDateTime(lastRes);
         if (dt.isValid() && dt <= tg.beginDateTime()) {
             dt = {};
         }
     }
 
-    transfer = m_transferMgr->transfer(tg.elements().constLast(), Transfer::After);
+    transfer = m_transferMgr->transfer(elems.constLast(), Transfer::After);
     if (transfer.state() == Transfer::Selected && transfer.journey().scheduledArrivalTime().isValid()) {
         dt = std::max(dt, transfer.journey().scheduledArrivalTime());
     } else if (transfer.state() == Transfer::Pending && transfer.anchorTime().isValid()) {

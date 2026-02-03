@@ -1,0 +1,41 @@
+[{
+    "@context": "http://schema.org",
+    "@type": "EventReservation",
+    "reservationFor": {
+        "@type": "Event",
+        "endDate": {
+            "@type": "QDateTime",
+            "@value": "2026-02-01T10:00:00+01:00",
+            "timezone": "Europe/Brussels"
+        },
+        "name": "Hotel misclassified as Event",
+        "startDate": {
+            "@type": "QDateTime",
+            "@value": "2026-01-30T15:00:00+01:00",
+            "timezone": "Europe/Brussels"
+        }
+    }
+},
+{
+    "@context": "http://schema.org",
+    "@type": "EventReservation",
+    "reservationFor": {
+        "@type": "Event",
+        "doorTime": {
+            "@type": "QDateTime",
+            "@value": "2026-01-30T19:50:00+01:00",
+            "timezone": "Europe/Brussels"
+        },
+        "endDate": {
+            "@type": "QDateTime",
+            "@value": "2026-01-30T23:00:00+01:00",
+            "timezone": "Europe/Brussels"
+        },
+        "name": "A much shorter event",
+        "startDate": {
+            "@type": "QDateTime",
+            "@value": "2026-01-30T20:00:00+01:00",
+            "timezone": "Europe/Brussels"
+        }
+    }
+}]
