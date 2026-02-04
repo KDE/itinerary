@@ -20,8 +20,11 @@ Item {
     /** Highlight this entry, e.g. because it's the next stop or the departure/arrival. */
     property bool highlight: root.isDeparture || root.isArrival
 
-    readonly property bool isSameTime: stop.expectedDepartureTime.getTime() == stop.expectedArrivalTime.getTime()
-    readonly property bool isSingleTime: !(stop.expectedDepartureTime > 0 && stop.expectedArrivalTime > 0)  || isSameTime
+    property date departureTime: root.stop.hasExpectedDepartureTime ? root.stop.expectedDepartureTime : root.stop.scheduledDepartureTime
+    property date arrivalTime: root.stop.hasExpectedArrivalTime ? root.stop.expectedArrivalTime : root.stop.scheduledArrivalTime
+
+    readonly property bool isSameTime: root.departureTime.getTime() == root.arrivalTime.getTime()
+    readonly property bool isSingleTime: !(root.departureTime > 0 && root.arrivalTime > 0)  || isSameTime
 
 
     property real progress
@@ -62,8 +65,8 @@ Item {
             Layout.column: 1
             Layout.row: 0
             Layout.alignment: Qt.AlignTop
-            text: Localizer.formatTime(stop, "expectedArrivalTime")
-            visible: root.stop.expectedArrivalTime > 0 && !root.isSameTime
+            text: stop.hasExpectedArrivalTime ? Localizer.formatTime(stop, "expectedArrivalTime") : Localizer.formatTime(stop, "scheduledArrivalTime")
+            visible: root.arrivalTime > 0 && !root.isSameTime
             font.strikeout: root.stop.disruptionEffect === KPublicTransport.Disruption.NoService
             opacity: root.stop.pickupType === KPublicTransport.PickupDropoff.NotAllowed && root.stop.dropoffType === KPublicTransport.PickupDropoff.NotAllowed ? 0.5 : 1.0
         }
@@ -94,8 +97,8 @@ Item {
             Layout.column: 1
             Layout.row: root.isSingleTime ? 0 : 1
             Layout.alignment:  Qt.AlignTop
-            text: Localizer.formatTime(stop, "expectedDepartureTime")
-            visible: root.stop.expectedDepartureTime > 0
+            text: stop.hasExpectedDepartureTime ? Localizer.formatTime(stop, "expectedDepartureTime") : Localizer.formatTime(stop, "scheduledDepartureTime")
+            visible: root.departureTime > 0
             font.strikeout: root.stop.disruptionEffect === KPublicTransport.Disruption.NoService
             opacity: root.stop.pickupType === KPublicTransport.PickupDropoff.NotAllowed && root.stop.dropoffType === KPublicTransport.PickupDropoff.NotAllowed ? 0.5 : 1.0
         }

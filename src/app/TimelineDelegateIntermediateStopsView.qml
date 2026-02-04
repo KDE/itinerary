@@ -79,7 +79,13 @@ Item {
             RowLayout {
                 QQC2.Label {
                     opacity: (stopDelegate.stopover.pickupType !== KPublicTransport.PickupDropoff.NotAllowed || stopDelegate.stopover.dropoffType !== KPublicTransport.PickupDropoff.NotAllowed) ? 0.8 : 0.4
-                    text: Localizer.formatTime(stopDelegate.stopover, stopDelegate.stopover.expectedDepartureTime > 0 ? "expectedDepartureTime" : "expectedDepartureTime")
+                    text: Localizer.formatTime(stopDelegate.stopover, stopDelegate.stopover.expectedDepartureTime > 0
+                                               ? "expectedDepartureTime"
+                                               : stopDelegate.stopover.scheduledDepartureTime > 0
+                                                    ? "scheduledDepartureTime"
+                                                    : stopDelegate.stopover.expectedArrivalTime > 0
+                                                        ? "expectedArrivalTime"
+                                                        : "scheduledArrivalTime")
                     font.strikeout: stopDelegate.stopover.disruptionEffect === KPublicTransport.Disruption.NoService
                 }
                 QQC2.Label {
