@@ -912,7 +912,15 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="25.12.2" date="2026-02-05"/>
+    <release version="25.12.2" date="2026-02-05">
+      <description>
+        <ul>
+          <li>Restore global menu drawer in mobile mode.</li>
+          <li>Fix manual entrance of certain flight numbers.</li>
+          <li>Support SNCF TER passes.</li>
+        </ul>
+      </description>
+    </release>
     <release version="25.12.1" date="2026-01-08">
       <description>
         <ul>
