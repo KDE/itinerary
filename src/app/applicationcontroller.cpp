@@ -252,8 +252,7 @@ void ApplicationController::commitImport(ImportController *importController)
             ++healthCertCount;
             break;
         case ImportElement::Template:
-            if (JsonLd::isA<LodgingBusiness>(
-                    elem.data)) { // TODO can't we do the reservation promotion in ImportController and share the model representation with reservations?
+            if (JsonLd::isA<LodgingBusiness>(elem.data)) { // TODO can't we do the reservation promotion in ImportController and share the model representation with reservations?
                 LodgingReservation res;
                 res.setReservationFor(elem.data);
                 res.setPotentialAction(elem.data.value<LodgingBusiness>().potentialAction());
@@ -266,6 +265,7 @@ void ApplicationController::commitImport(ImportController *importController)
                 Q_EMIT editNewRestaurantReservation(res);
             } else if (JsonLd::isA<EventReservation>(elem.data)) {
                 Q_EMIT editNewEventReservation(elem.data);
+                docIds += DocumentUtil::documentIds(elem.data);
             }
             break;
         case ImportElement::Backup:
