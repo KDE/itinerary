@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-09 00:43+0000\n"
+"POT-Creation-Date: 2026-02-06 00:45+0000\n"
 "PO-Revision-Date: 2025-03-02 14:47+0530\n"
 "Last-Translator: Shreekant Kalwar <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -2457,7 +2457,7 @@ msgstr "औसतवेगः %1"
 msgid "CO₂: %1"
 msgstr "CO2: %1"
 
-#: app/JourneySectionStopDelegate.qml:145
+#: app/JourneySectionStopDelegate.qml:148
 #, fuzzy, kde-format
 #| msgctxt "Abreviation of train platform"
 #| msgid "Pl. %1"
@@ -2465,7 +2465,7 @@ msgctxt "Abbreviation of train platform"
 msgid "Pl. %1"
 msgstr "प्ल. %1"
 
-#: app/JourneySectionStopDelegate.qml:147
+#: app/JourneySectionStopDelegate.qml:150
 #, fuzzy, kde-format
 #| msgctxt "Ferry dock, if possible use an abreviation"
 #| msgid "Dock %1"
@@ -2473,7 +2473,7 @@ msgctxt "Ferry dock, if possible use an abbreviation"
 msgid "Dock %1"
 msgstr "डॉक %1"
 
-#: app/JourneySectionStopDelegate.qml:149
+#: app/JourneySectionStopDelegate.qml:152
 #, fuzzy, kde-format
 #| msgctxt "Abreviation of train platform"
 #| msgid "Pl. %1"
@@ -2481,7 +2481,7 @@ msgctxt "Generic abbreviation of platform"
 msgid "Pl. %1"
 msgstr "प्ल. %1"
 
-#: app/JourneySectionStopDelegate.qml:164
+#: app/JourneySectionStopDelegate.qml:167
 #, kde-format
 msgid "Show location"
 msgstr "स्थानं दर्शयतु"

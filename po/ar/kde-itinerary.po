@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-09 00:43+0000\n"
+"POT-Creation-Date: 2026-02-06 00:45+0000\n"
 "PO-Revision-Date: 2026-01-10 10:28+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -2382,25 +2382,25 @@ msgstr "السرعة المتوسطة: %1"
 msgid "CO₂: %1"
 msgstr "ثاني أكسيد الكربون: %1"
 
-#: app/JourneySectionStopDelegate.qml:145
+#: app/JourneySectionStopDelegate.qml:148
 #, kde-format
 msgctxt "Abbreviation of train platform"
 msgid "Pl. %1"
 msgstr "المنصة %1"
 
-#: app/JourneySectionStopDelegate.qml:147
+#: app/JourneySectionStopDelegate.qml:150
 #, kde-format
 msgctxt "Ferry dock, if possible use an abbreviation"
 msgid "Dock %1"
 msgstr "المرسى %1"
 
-#: app/JourneySectionStopDelegate.qml:149
+#: app/JourneySectionStopDelegate.qml:152
 #, kde-format
 msgctxt "Generic abbreviation of platform"
 msgid "Pl. %1"
 msgstr "المنصة %1"
 
-#: app/JourneySectionStopDelegate.qml:164
+#: app/JourneySectionStopDelegate.qml:167
 #, kde-format
 msgid "Show location"
 msgstr "اعرض الموقع"
