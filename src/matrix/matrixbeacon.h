@@ -7,9 +7,11 @@
 #include <QObject>
 #include <qqmlregistration.h>
 
-#include <Quotient/connection.h>
-
 #include <cmath>
+
+namespace Quotient {
+    class Connection;
+}
 
 /** Live location sharing.
  *  @see https://github.com/matrix-org/matrix-spec-proposals/pull/3489
