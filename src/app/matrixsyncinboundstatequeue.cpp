@@ -3,10 +3,13 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+#include <config-itinerary.h>
+
 #include "matrixsyncinboundstatequeue.h"
 
 #include "logging.h"
 
+#if HAVE_MATRIX
 #include <Quotient/events/stateevent.h>
 
 using namespace Qt::Literals;
@@ -95,3 +98,4 @@ void MatrixSyncInboundStateQueue::dispatchNext()
 }
 
 #include "moc_matrixsyncinboundstatequeue.cpp"
+#endif

@@ -4,6 +4,7 @@
 #include "matrixbeacon.h"
 #include "matrixmanager.h"
 
+#include <Quotient/connection.h>
 #include <Quotient/csapi/room_state.h>
 #include <Quotient/events/stateevent.h>
 #include <Quotient/room.h>
