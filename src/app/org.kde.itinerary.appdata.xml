@@ -916,8 +916,17 @@
       <description>
         <ul>
           <li>Restore global menu drawer in mobile mode.</li>
+          <li xml:lang="es">Restauración del cajón de menú global en modo móvil.</li>
+          <li xml:lang="pt-BR">Restaura a gaveta do menu global no modo móvel.</li>
+          <li xml:lang="ru">Восстановлена поддержка глобального меню в мобильном режиме;</li>
           <li>Fix manual entrance of certain flight numbers.</li>
+          <li xml:lang="es">Se ha corregido la entrada manual de ciertos números de vuelo.</li>
+          <li xml:lang="pt-BR">Corrigida a entrada manual de determinados números de voo.</li>
+          <li xml:lang="ru">Исправлен ручной ввод некоторых номеров рейсов;</li>
           <li>Support SNCF TER passes.</li>
+          <li xml:lang="es">Compatibilidad con pases TER de la SNCF.</li>
+          <li xml:lang="pt-BR">Suporte a passes SNCF TER.</li>
+          <li xml:lang="ru">Поддержка проездных SNCF TER;</li>
         </ul>
       </description>
     </release>
@@ -925,9 +934,18 @@
       <description>
         <ul>
           <li>New or improved travel document extractors for booking.com, České dráhy, DB, gomus, KLM and MÁV.</li>
+          <li xml:lang="es">Nuevos o mejorados extractores de documentos de viaje para booking.com, České dráhy, DB, gomus, KLM y MÁV.</li>
+          <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para booking.com, České dráhy, DB, gomus, KLM e MÁV.</li>
+          <li xml:lang="ru">Новые или улучшенные модули получения информации о документах о путешествиях для booking.com, České dráhy, DB, gomus, KLM и MÁV;</li>
           <li>Fix crash on referenced but non-existent PDF masks (bug 513945).</li>
+          <li xml:lang="pt-BR">Corrigido o problema que causava o fechamento inesperado do programa em máscaras de PDF referenciadas, mas inexistentes (bug 513945).</li>
+          <li xml:lang="ru">Исправлено аварийное завершение при ссылках на несуществующие маски PDF (ошибка 513945);</li>
           <li>Fixes for online post-processing reservations without geographic coordinates.</li>
+          <li xml:lang="pt-BR">Correções para reservas online pós-processadas sem coordenadas geográficas.</li>
+          <li xml:lang="ru">Исправления для онлайн-постобработки бронирований без географических координат;</li>
           <li>Fixes for sort order corner cases in the timeline view.</li>
+          <li xml:lang="pt-BR">Correções para casos extremos de ordenação na visualização da linha do tempo.</li>
+          <li xml:lang="ru">Исправления крайних случаев порядка сортировки в представлении временной шкалы;</li>
         </ul>
       </description>
     </release>
@@ -935,9 +953,17 @@
       <description>
         <ul>
           <li>Built-in currency converter.</li>
+          <li xml:lang="pt-BR">Conversor de moedas integrado.</li>
+          <li xml:lang="ru">Встроенный конвертер валют;</li>
           <li>Journey searches starting from the current location.</li>
+          <li xml:lang="pt-BR">Pesquisas de trechos a partir da localização atual.</li>
+          <li xml:lang="ru">Поиск маршрутов от текущего местоположения;</li>
           <li>Simplified journey search UI.</li>
+          <li xml:lang="pt-BR">Interface de busca de trechos simplificada.</li>
+          <li xml:lang="ru">Упрощённый интерфейс поиска маршрутов;</li>
           <li>Displaying altitude information in live status view.</li>
+          <li xml:lang="pt-BR">Exibição de informações de altitude na visualização de status em tempo real.</li>
+          <li xml:lang="ru">Отображение информации о высоте в режиме реального времени;</li>
         </ul>
       </description>
     </release>
@@ -945,8 +971,14 @@
       <description>
         <ul>
           <li>New or improved travel document extractors for Căile Ferate Române, citycity.se, Comboios de Portugal, Flixbus, Müpa Budapest, NH Hotels, Ryanair, United and ZSSK.</li>
+          <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou melhorados para Căile Ferate Române, citycity.se, Comboios de Portugal, Flixbus, Müpa Budapest, NH Hotels, Ryanair, United e ZSSK.</li>
+          <li xml:lang="ru">Новые или улучшенные модули извлечения проездных документов для Căile Ferate Române, citycity.se, Comboios de Portugal, Flixbus, Müpa Budapest, NH Hotels, Ryanair, United и ZSSK;</li>
           <li>Fix performance issues and hangs with the journey search result view.</li>
+          <li xml:lang="pt-BR">Correção de problemas de desempenho e travamentos na visualização dos resultados da pesquisa de viagens.</li>
+          <li xml:lang="ru">Исправлены проблемы с производительностью и зависания в представлении результатов поиска маршрутов;</li>
           <li>Fix parsing of ÖBB onboard speed data.</li>
+          <li xml:lang="pt-BR">Correção da análise dos dados de velocidade a bordo da ÖBB.</li>
+          <li xml:lang="ru">Исправлен анализ данных скорости ÖBB на борту;</li>
         </ul>
       </description>
     </release>
@@ -954,10 +986,23 @@
       <description>
         <ul>
           <li>New or improved travel document extractors for AirAsia, B&amp;B Hotels, Booking.com, Ethiad, Ryanair, SNCF and tixly.</li>
+          <li xml:lang="es">Nuevos o mejorados extractores de documentos de viaje para AirAsia, hoteles B&amp;B, Booking.com, Ethiad, Ryanair, SNCF y tixly.</li>
+          <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para AirAsia, B&amp;B Hotels, Booking.com, Etihad, Ryanair, SNCF e Tixly.</li>
+          <li xml:lang="ru">Новые или улучшенные средства извлечения документов о поездках для AirAsia, B&amp;B Hotels, Booking.com, Ethiad, Ryanair, SNCF и tixly;</li>
           <li>Position journey result view at the end when searching by arrival time.</li>
+          <li xml:lang="pt-BR">A visualização dos resultados da viagem é exibida ao final da pesquisa por horário de chegada.</li>
+          <li xml:lang="ru">Позиционирование представления результатов маршрута в конце при поиске по времени прибытия;</li>
           <li>Fixed parsing of certain Apple Wallet pass variants.</li>
+          <li xml:lang="es">Se ha corregido el análisis de ciertas variantes de pases de Apple Wallet.</li>
+          <li xml:lang="pt-BR">Correção na análise de determinadas variantes dos passes do Apple Wallet.</li>
+          <li xml:lang="ru">Исправлен анализ синтаксиса некоторых вариантов пропусков Apple Wallet;</li>
           <li>Fixed scaling artifacts in public transport line icons.</li>
+          <li xml:lang="pt-BR">Corrigidos problemas de escala nos ícones das linhas de transporte público.</li>
+          <li xml:lang="ru">Исправлены артефакты масштабирования в значках линий общественного транспорта;</li>
           <li>Fixed parsing intermediate stops from Railteam.</li>
+          <li xml:lang="es">Se ha corregido el análisis de paradas intermedias de Railteam.</li>
+          <li xml:lang="pt-BR">Correção na análise de paradas intermediárias do Railteam.</li>
+          <li xml:lang="ru">Исправлен анализ промежуточных остановок от Railteam;</li>
         </ul>
       </description>
     </release>
@@ -965,9 +1010,17 @@
       <description>
         <ul>
           <li>New or improved travel document extractors for booking.com, Center Parcs, Coloseum, eDreams, Finnair, LTG Link, MÁV, Pretix, RegioJet, Thalys and United Airlines.</li>
+          <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para booking.com, Center Parcs, Coloseum, eDreams, Finnair, LTG Link, MÁV, Pretix, RegioJet, Thalys e United Airlines.</li>
+          <li xml:lang="ru">Новые или улучшенные анализаторы документов поездок для booking.com, Center Parcs, Coloseum, eDreams, Finnair, LTG Link, MÁV, Pretix, RegioJet, Thalys и United Airlines;</li>
           <li>Correctly update currency exchange rates.</li>
+          <li xml:lang="pt-BR">Atualizar corretamente as taxas de câmbio.</li>
+          <li xml:lang="ru">Корректное обновление курсов валют;</li>
           <li>Add support for result paging for LTG Link and Srbija Voz.</li>
+          <li xml:lang="pt-BR">Adicionado suporte para paginação de resultados para LTG Link e Srbija Voz.</li>
+          <li xml:lang="ru">Добавлена поддержка постраничного просмотра результатов для LTG Link и Srbija Voz;</li>
           <li>Support hotel reservations with ticket tokens.</li>
+          <li xml:lang="pt-BR">Suporte para reservas de hotéis com vouchers de ingressos.</li>
+          <li xml:lang="ru">Поддержка бронирования отелей с билетными токенами;</li>
         </ul>
       </description>
     </release>
@@ -975,10 +1028,20 @@
       <description>
         <ul>
           <li>Train and bus trips can now also be added entirely manually.</li>
+          <li xml:lang="pt-BR">Agora também é possível adicionar viagens de trem e ônibus de forma totalmente manual.</li>
+          <li xml:lang="ru">Поездки на поезде и автобусе теперь можно добавлять полностью вручную;</li>
           <li>More flexible alternative connection search.</li>
+          <li xml:lang="pt-BR">Busca de conexões alternativas mais flexível.</li>
+          <li xml:lang="ru">Более гибкий поиск альтернативных соединений;</li>
           <li>New and much more detailed public transport departures view.</li>
+          <li xml:lang="pt-BR">Nova visualização das partidas de transporte público, muito mais detalhada.</li>
+          <li xml:lang="ru">Новый и гораздо более подробный просмотр отправлений общественного транспорта;</li>
           <li>Improved location search.</li>
+          <li xml:lang="pt-BR">Busca de localização aprimorada.</li>
+          <li xml:lang="ru">Улучшенный поиск местоположений;</li>
           <li>OpenRailwayMap integration in the live status view.</li>
+          <li xml:lang="pt-BR">Integração do OpenRailwayMap na visualização de status em tempo real.</li>
+          <li xml:lang="ru">Интеграция с OpenRailwayMap в представлении текущего статуса;</li>
         </ul>
       </description>
     </release>
@@ -986,8 +1049,14 @@
       <description>
         <ul>
           <li>New or improved travel document extractors for Amadeus, booking.com, Deutsche Bahn, Deutscher Alpenverein, DJH, Easyjet, Eurostar, Eurowings, Hostelling Scotland, Leo Express, LeShuttle, MÁV, Ouigo ES, Reenio, SNCB, SNCF, Tickets.ua and Tito.</li>
+          <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para Amadeus, booking.com, Deutsche Bahn, Deutscher Alpenverein, DJH, Easyjet, Eurostar, Eurowings, Hostelling Scotland, Leo Express, LeShuttle, MÁV, Ouigo ES, Reenio, SNCB, SNCF, Tickets.ua e Tito.</li>
+          <li xml:lang="ru">Новые или улучшенные модули для извлечения данных о путешествиях для Amadeus, booking.com, Deutsche Bahn, Deutscher Alpenverein, DJH, Easyjet, Eurostar, Eurowings, Hostelling Scotland, Leo Express, LeShuttle, MÁV, Ouigo ES, Reenio, SNCB, SNCF, Tickets.ua и Tito;</li>
           <li>Expanded public transport coverage via Transitous in India, Israel, Korea, Kosovo, Monaco, Macedonia, Moldova and Romania.</li>
+          <li xml:lang="pt-BR">Ampliação da cobertura de transporte público via Transitous na Índia, Israel, Coreia, Kosovo, Mônaco, Macedônia, Moldávia e Romênia.</li>
+          <li xml:lang="ru">Расширено покрытие общественного транспорта через Transitous в Индии, Израиле, Корее, Косово, Монако, Македонии, Молдове и Румынии;</li>
           <li>Fixed importing and displaying certain types of Apple Wallet passes.</li>
+          <li xml:lang="pt-BR">Correção na importação e exibição de certos tipos de passes do Apple Wallet.</li>
+          <li xml:lang="ru">Исправлено импортирование и отображение определённых типов пропусков Apple Wallet;</li>
         </ul>
       </description>
     </release>
@@ -995,10 +1064,20 @@
       <description>
         <ul>
           <li>New or improved travel document extractors for booking.com, Eurostar, Flixbus, IHG, Stena Line, Tallink and Viking Line.</li>
+          <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para booking.com, Eurostar, Flixbus, IHG, Stena Line, Tallink e Viking Line.</li>
+          <li xml:lang="ru">Новые и улучшенные модули для извлечения документов о путешествиях для booking.com, Eurostar, Flixbus, IHG, Stena Line, Tallink и Viking Line;</li>
           <li>Improved automatic public transport backend selection when crossing coverage borders.</li>
+          <li xml:lang="pt-BR">Melhoria na seleção automática do sistema de transporte público ao cruzar fronteiras de cobertura.</li>
+          <li xml:lang="ru">Улучшен автоматический выбор источника данных общественного транспорта при пересечении границ покрытия;</li>
           <li>Added onboard API support for Ouigo ES.</li>
+          <li xml:lang="pt-BR">Adicionada compatibilidade com a API integrada do Ouigo ES.</li>
+          <li xml:lang="ru">Добавлена поддержка бортового API для Ouigo ES;</li>
           <li>Fixed arrival platform parsing from OpenTripPlanner backends.</li>
+          <li xml:lang="pt-BR">Correção na análise da plataforma de chegada a partir dos sistemas internos do OpenTripPlanner.</li>
+          <li xml:lang="ru">Исправлен анализ платформы прибытия из серверов OpenTripPlanner;</li>
           <li>Fixed train direction display on vehicle layout page.</li>
+          <li xml:lang="pt-BR">Correção da direção do trem na página de layout do veículo.</li>
+          <li xml:lang="ru">Исправлено отображение направления поезда на странице схемы вагонов;</li>
         </ul>
       </description>
     </release>
@@ -1006,10 +1085,20 @@
       <description>
         <ul>
           <li>New or improved travel document extractors for a&amp;o hostels, Gastronovi and ÖBB.</li>
+          <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para a&amp;o hostels, Gastronovi e ÖBB.</li>
+          <li xml:lang="ru">Новые или улучшенные анализаторы документов путешествий для a&amp;o hostels, Gastronovi и ÖBB;</li>
           <li>Improved geocoding in the address editor.</li>
+          <li xml:lang="pt-BR">Geocodificação aprimorada no editor de endereços.</li>
+          <li xml:lang="ru">Улучшено геокодирование в редакторе адресов;</li>
           <li>Fix trip groups getting split up when updating multi-ticket reservations.</li>
+          <li xml:lang="pt-BR">Correção do problema que fazia com que os grupos de viagem fossem divididos ao atualizar reservas com vários bilhetes.</li>
+          <li xml:lang="ru">Исправлена проблема разделения групп поездок при обновлении бронирований с несколькими билетами;</li>
           <li>Fix displaying city names in Transitous stop search results.</li>
+          <li xml:lang="pt-BR">Correção do problema de exibição dos nomes das cidades nos resultados de pesquisa de paradas de trânsito.</li>
+          <li xml:lang="ru">Исправлено отображение названий городов в результатах поиска остановок Transitous;</li>
           <li>Fix ÖBB onboard API support.</li>
+          <li xml:lang="pt-BR">Correção do suporte à API integrada da ÖBB.</li>
+          <li xml:lang="ru">Исправлена поддержка бортового API ÖBB;</li>
         </ul>
       </description>
     </release>
@@ -1017,9 +1106,17 @@
       <description>
         <ul>
           <li>New timeline layout and new public transport search result view.</li>
+          <li xml:lang="pt-BR">Novo layout de linha do tempo e nova visualização dos resultados de busca em transporte público.</li>
+          <li xml:lang="ru">Новое оформление временной шкалы и новый вид результатов поиска общественного транспорта;</li>
           <li>New "My Data" page.</li>
+          <li xml:lang="pt-BR">Nova página "Meus Dados".</li>
+          <li xml:lang="ru">Новая страница «Мои данные»;</li>
           <li>Support imperial distance and temperature units.</li>
+          <li xml:lang="pt-BR">Suporte a unidades imperiais de distância e temperatura.</li>
+          <li xml:lang="ru">Поддержка имперских единиц расстояния и температуры;</li>
           <li>New or improved travel document extractor for Amtrak, Booking.com, Color Line, Eventbrite, Eventlook, Kolumbus ferries, Preemly, SNCF, Tootoot, UIC FCB v3, UK rail, Universe and VDV eTickets.</li>
+          <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para Amtrak, Booking.com, Color Line, Eventbrite, Eventlook, Kolumbus Ferries, Preemly, SNCF, Tootoot, UIC FCB v3, UK Rail, Universe e VDV eTickets.</li>
+          <li xml:lang="ru">Новые или улучшенные модули для извлечения данных для документов путешествий Amtrak, Booking.com, Color Line, Eventbrite, Eventlook, паромов Kolumbus, Preemly, SNCF, Tootoot, UIC FCB v3, железных дорог Великобритании, Universe и электронных билетов VDV;</li>
         </ul>
       </description>
     </release>
@@ -1027,9 +1124,17 @@
       <description>
         <ul>
           <li>New or improved travel document extractors for Eventyay, Flixbus, Ghotel, SBB, SNCF and VR.</li>
+          <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para Eventyay, Flixbus, Ghotel, SBB, SNCF e VR.</li>
+          <li xml:lang="ru">Новые и улучшенные модули извлечения данных из документов для Eventyay, Flixbus, Ghotel, SBB, SNCF и VR;</li>
           <li>Don't hide essential trip group map elements on low zoom levels.</li>
+          <li xml:lang="pt-BR">Não ocultar elementos essenciais do mapa do grupo de viagem em níveis de zoom baixos.</li>
+          <li xml:lang="ru">Основные элементы карты группы поездок не скрываются при малых масштабах;</li>
           <li>Fix data corruption when live data updates would change the type of a reservation.</li>
+          <li xml:lang="pt-BR">Correção da corrupção de dados quando atualizações de dados em tempo real alterarem o tipo de reserva.</li>
+          <li xml:lang="ru">Исправлена ошибка повреждения данных при изменении типа бронирования в результате обновления актуальных данных;</li>
           <li>Disable no longer available DB online import.</li>
+          <li xml:lang="pt-BR">Desativar a importação online de banco de dados que não está mais disponível.</li>
+          <li xml:lang="ru">Отключён более недоступный онлайн-импорт DB;</li>
         </ul>
       </description>
     </release>
@@ -1037,10 +1142,20 @@
       <description>
         <ul>
           <li>New and improved travel document extractors for American Airlines, Bilkom, Booking.com, CitizenM, Deutsche Bahn, Eurostar, Flixbus, KD, Koleo, Lufthansa, PKP, Polregio, SBB, Southwest, Universe.</li>
+          <li xml:lang="pt-BR">Extratores de documentos de viagem novos e aprimorados para American Airlines, Bilkom, Booking.com, CitizenM, Deutsche Bahn, Eurostar, Flixbus, KD, Koleo, Lufthansa, PKP, Polregio, SBB, Southwest e Universe.</li>
+          <li xml:lang="ru">Новые и улучшенные модули для извлечения данных из документов American Airlines, Bilkom, Booking.com, CitizenM, Deutsche Bahn, Eurostar, Flixbus, KD, Koleo, Lufthansa, PKP, Polregio, SBB, Southwest, Universe;</li>
           <li>Fix public transport access for Deutsche Bahn (Germany), Digitransit (Finnland), Entur (Norway) and Rolph (Germany).</li>
+          <li xml:lang="pt-BR">Correção do acesso ao transporte público para Deutsche Bahn (Alemanha), Digitransit (Finlândia), Entur (Noruega) e Rolph (Alemanha).</li>
+          <li xml:lang="ru">Исправлен доступ к общественному транспорту для Deutsche Bahn (Германия), Digitransit (Финляндия), Entur (Норвегия) и Rolph (Германия);</li>
           <li>Allow transfers to favorite location independent of the next reservation.</li>
+          <li xml:lang="pt-BR">Permitir traslados para locais favoritos independentemente da próxima reserva.</li>
+          <li xml:lang="ru">Разрешены трансферы в избранное место независимо от следующего бронирования;</li>
           <li>Fix importing passes or other things without an attached trip group.</li>
+          <li xml:lang="pt-BR">Correção do problema na importação de passes ou outros itens sem um grupo de viagem associado.</li>
+          <li xml:lang="ru">Исправлено импортирование пропусков и других элементов без привязанной группы поездки;</li>
           <li>Fix deleting generic pkpass passes.</li>
+          <li xml:lang="pt-BR">Correção do problema de exclusão de passes PKPass genéricos.</li>
+          <li xml:lang="ru">Исправлено удаление обычных билетов pkpass;</li>
         </ul>
       </description>
     </release>
@@ -1048,10 +1163,20 @@
       <description>
         <ul>
           <li>Allow to add transfers in more cases.</li>
+          <li xml:lang="pt-BR">Permitir a adição de transferências em mais casos.</li>
+          <li xml:lang="ru">Возможность добавления пересадок в большем количестве случаев;</li>
           <li>Fix adding daylight saving time info elements in single trip group mode.</li>
+          <li xml:lang="pt-BR">Correção do problema que adiciona elementos de informação sobre o horário de verão no modo de grupo de viagens individuais.</li>
+          <li xml:lang="ru">Исправлено добавление элементов информации о летнем времени в режиме одной группы поездок;</li>
           <li>Ignore cancelled elements when determining weather forecast length.</li>
+          <li xml:lang="pt-BR">Ignorar os elementos cancelados ao determinar a duração da previsão do tempo.</li>
+          <li xml:lang="ru">Игнорирование отменённых элементов при определении длительности прогноза погоды;</li>
           <li>Override instead of merge destination names when applying new journeys.</li>
+          <li xml:lang="pt-BR">Ao aplicar novas viagens, substitui os nomes de destino em vez de os mesclar.</li>
+          <li xml:lang="ru">Переопределение имён пунктов назначения вместо объединения при применении новых маршрутов;</li>
           <li>Fix crash on importing health certificates.</li>
+          <li xml:lang="pt-BR">Corrigido o problema que causava falha na importação de certificados de saúde.</li>
+          <li xml:lang="ru">Исправлено падение при импорте справок о здоровье;</li>
         </ul>
       </description>
     </release>
@@ -1059,10 +1184,21 @@
       <description>
         <ul>
           <li>New per-trip timeline view.</li>
+          <li xml:lang="pt-BR">Nova visualização da linha do tempo por viagem.</li>
+          <li xml:lang="ru">Новое представление временной шкалы для каждой поездки;</li>
+          <li xml:lang="uk">Новий режим перегляд розкладу для кожної з подорожей</li>
           <li>New trip map view.</li>
+          <li xml:lang="pt-BR">Nova visualização do mapa da viagem.</li>
+          <li xml:lang="ru">Новый вид карты маршрута;</li>
           <li>New per-trip statistics.</li>
+          <li xml:lang="pt-BR">Novas estatísticas por viagem.</li>
+          <li xml:lang="ru">Новая статистика по поездкам;</li>
           <li>New or improved travel document extractor for Coloseum, Dimedis Fairmate, Droplabs, European Sleeper, Flixbus, Leo Express, SNCF.</li>
+          <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para Coloseum, Dimedis Fairmate, Droplabs, European Sleeper, Flixbus, Leo Express e SNCF.</li>
+          <li xml:lang="ru">Новый или улучшенный модуль извлечения данных из билетов для Coloseum, Dimedis Fairmate, Droplabs, European Sleeper, Flixbus, Leo Express, SNCF;</li>
           <li>Improved location search for public transport searches.</li>
+          <li xml:lang="pt-BR">Busca de localização aprimorada para transporte público.</li>
+          <li xml:lang="ru">Улучшен поиск местоположений для поиска общественного транспорта;</li>
         </ul>
       </description>
     </release>
@@ -1070,8 +1206,14 @@
       <description>
         <ul>
           <li>New or improved travel document extractor for Agoda, Booking.com, NS, planway.com, Renfe, VietJet Air and Thai state railways.</li>
+          <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para Agoda, Booking.com, NS, planway.com, Renfe, VietJet Air e ferrovias estatais tailandesas.</li>
+          <li xml:lang="ru">Новый или улучшенный модуль для извлечения данных о путешествиях для Agoda, Booking.com, NS, planway.com, Renfe, VietJet Air и Государственных железных дорог Таиланда;</li>
           <li>Added support for NS onboard API.</li>
+          <li xml:lang="pt-BR">Adicionado suporte para a API integrada do NS.</li>
+          <li xml:lang="ru">Добавлена поддержка бортового API NS;</li>
           <li>Fixed display of disrupted/canceled journeys.</li>
+          <li xml:lang="pt-BR">Correção da exibição de trechos interrompidos/cancelados.</li>
+          <li xml:lang="ru">Исправлено отображение нарушенных и отменённых поездок;</li>
         </ul>
       </description>
     </release>
@@ -1079,9 +1221,17 @@
       <description>
         <ul>
           <li>Fixed mixed up translations on Android with a multi-language configuration.</li>
+          <li xml:lang="pt-BR">Correções de traduções misturadas no Android com configuração multilíngue.</li>
+          <li xml:lang="ru">Исправлена путаница с переводами на Android при многоязычной конфигурации;</li>
           <li>New or improved travel document extractors for Eurostar, Eventim, Koleo, NH Hotels, Trenitalia and SBB.</li>
+          <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para Eurostar, Eventim, Koleo, NH Hotels, Trenitalia e SBB.</li>
+          <li xml:lang="ru">Новые или улучшенные процедуры извлечения данных из документов для Eurostar, Eventim, Koleo, NH Hotels, Trenitalia и SBB;</li>
           <li>Extended public transport coverage via Transitous.</li>
+          <li xml:lang="pt-BR">Ampliação da cobertura de transporte público via Transitous.</li>
+          <li xml:lang="ru">Расширенное покрытие общественного транспорта через Transitous;</li>
           <li>Fix importing from overly long URLs.</li>
+          <li xml:lang="pt-BR">Correção do problema na importação de URLs excessivamente longas.</li>
+          <li xml:lang="ru">Исправлен импорт из слишком длинных URL;</li>
         </ul>
       </description>
     </release>
@@ -1089,9 +1239,17 @@
       <description>
         <ul>
           <li>New or improved travel document extractors for BlablaBus, Deutsche Bahn, Eurostar, Italo, MAV, Reisnordland ferries, Reservix, Sunnycars, United Airlines and VDV e-tickets.</li>
+          <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para BlablaBus, Deutsche Bahn, Eurostar, Italo, MAV, balsas Reisnordland, Reservix, Sunnycars, United Airlines e bilhetes eletrônicos VDV.</li>
+          <li xml:lang="ru">Новые или улучшенные модули для извлечения данных о путешествиях для BlablaBus, Deutsche Bahn, Eurostar, Italo, MAV, паромов Reisnordland, Reservix, Sunnycars, United Airlines и электронных билетов VDV;</li>
           <li>Fix access to public transport data in Zurich, Switzerland.</li>
+          <li xml:lang="pt-BR">Correção do acesso aos dados de transporte público em Zurique, Suíça.</li>
+          <li xml:lang="ru">Исправлен доступ к данным общественного транспорта в Цюрихе, Швейцария;</li>
           <li>Fix country combo box not opening correctly on phones.</li>
+          <li xml:lang="pt-BR">Correção do problema com a abertura incorreta da caixa de combinação de países em celulares.</li>
+          <li xml:lang="ru">Исправлено некорректное открытие списка стран на телефонах;</li>
           <li>Dark mode support on Android.</li>
+          <li xml:lang="pt-BR">Suporte ao modo escuro no Android.</li>
+          <li xml:lang="ru">Поддержка тёмного режима в Android;</li>
         </ul>
       </description>
     </release>
@@ -1099,11 +1257,23 @@
       <description>
         <ul>
           <li>New or improved travel document extractors for Booking.com, direct-book.com, Entur, Flixbus, MAV, Scandlines, SNCB and SNCF.</li>
+          <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para Booking.com, direct-book.com, Entur, Flixbus, MAV, Scandlines, SNCB e SNCF.</li>
+          <li xml:lang="ru">Новые и улучшенные способы извлечения данных из документов для Booking.com, direct-book.com, Entur, Flixbus, MAV, Scandlines, SNCB и SNCF;</li>
           <li>New display for seat reservation information in the timeline.</li>
+          <li xml:lang="pt-BR">Nova exibição das informações de reserva de assentos na linha do tempo.</li>
+          <li xml:lang="ru">Новое отображение информации о бронировании мест в хронологии;</li>
           <li>Support for the Träwelling check-in service.</li>
+          <li xml:lang="pt-BR">Suporte para o serviço de check-in do Träwelling.</li>
+          <li xml:lang="ru">Поддержка сервиса регистрации Träwelling;</li>
           <li>Allow to create events or hotel reservations from OSM element URLs.</li>
+          <li xml:lang="pt-BR">Permitir a criação de eventos ou reservas de hotel a partir de URLs de elementos do OSM.</li>
+          <li xml:lang="ru">Возможность создавать события или бронирования отелей из URL-адресов элементов OSM;</li>
           <li>Allow to show additional Wikimedia online content in the indoor map.</li>
+          <li xml:lang="pt-BR">Permitir a exibição de conteúdo online adicional da Wikimedia no mapa interno.</li>
+          <li xml:lang="ru">Возможность отображения дополнительного онлайн-контента Wikimedia на планах помещений;</li>
           <li>Trips can now be renamed.</li>
+          <li xml:lang="pt-BR">Agora é possível renomear as viagens.</li>
+          <li xml:lang="ru">Поездки теперь можно переименовывать;</li>
         </ul>
       </description>
     </release>
@@ -1111,9 +1281,17 @@
       <description>
         <ul>
           <li>New or improved travel document extractors for 12go, Eurowings, hotels.com, Iberia, Georgian Railway, RegioJet, Snälltåget, TCDD and tobilet.pl.</li>
+          <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para 12go, Eurowings, hotels.com, Iberia, Georgian Railway, RegioJet, Snälltåget, TCDD e tobilet.pl.</li>
+          <li xml:lang="ru">Новые и улучшенные модули извлечения данных для 12go, Eurowings, hotels.com, Iberia, Georgian Railway, RegioJet, Snälltåget, TCDD и tobilet.pl;</li>
           <li>Fix reading/writing of all-day events to/from the Android system calendar.</li>
+          <li xml:lang="pt-BR">Correção do problema de leitura/gravação de eventos de dia inteiro no/do calendário do sistema Android.</li>
+          <li xml:lang="ru">Исправлено чтение и запись событий на весь день в системный календарь Android;</li>
           <li>Fix permission issues when exporting to the Android calendar.</li>
+          <li xml:lang="pt-BR">Correção de problemas de permissão ao exportar para o calendário do Android.</li>
+          <li xml:lang="ru">Исправлены проблемы с разрешениями при экспорте в календарь Android;</li>
           <li>Fix rendering of Apples Wallet passes without a barcode.</li>
+          <li xml:lang="pt-BR">Correção do problema na renderização de passes do Apple Wallet sem código de barras.</li>
+          <li xml:lang="ru">Исправлено отображение пропусков Apple Wallet без штрихкода;</li>
         </ul>
       </description>
     </release>
@@ -1121,10 +1299,20 @@
       <description>
         <ul>
           <li>New or improved travel document extractors for Air Asia, Amadeus, Deutsche Bahn, Eurostar, Flixbus, Trenitalia.</li>
+          <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para Air Asia, Amadeus, Deutsche Bahn, Eurostar, Flixbus e Trenitalia.</li>
+          <li xml:lang="ru">Новые или улучшенные модули извлечения данных из документов для путешествий Air Asia, Amadeus, Deutsche Bahn, Eurostar, Flixbus, Trenitalia;</li>
           <li>Fixed storing the arrival time when editing a ferry reservation.</li>
+          <li xml:lang="pt-BR">Correção do problema que impedia o armazenamento do horário de chegada ao editar uma reserva de balsa.</li>
+          <li xml:lang="ru">Исправлено сохранение времени прибытия при редактировании бронирования парома;</li>
           <li>Fixed notifications on Android.</li>
+          <li xml:lang="pt-BR">Notificações corrigidas no Android.</li>
+          <li xml:lang="ru">Исправлены уведомления в Android;</li>
           <li>Improved automatic trip grouping.</li>
+          <li xml:lang="pt-BR">Agrupamento automático de viagens aprimorado.</li>
+          <li xml:lang="ru">Улучшена автоматическая группировка поездок;</li>
           <li>Fixed emojis not showing up in Flatpaks.</li>
+          <li xml:lang="pt-BR">Correção do problema que impedia a exibição de emojis em arquivos Flatpak.</li>
+          <li xml:lang="ru">Исправлено отображение эмодзи в Flatpak;</li>
         </ul>
       </description>
     </release>
@@ -1132,10 +1320,20 @@
       <description>
         <ul>
           <li>New or improved travel document extractors for CFR, Eurostar, Indico, IRCTC, Lufthansa, Motel One, SNCB, SNCF, Ticketportal, Trenitalia and VDV eTickets. Added support for public transport data from Serbijavoz and Transitous.</li>
+          <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para CFR, Eurostar, Indico, IRCTC, Lufthansa, Motel One, SNCB, SNCF, Ticketportal, Trenitalia e VDV eTickets. Adicionado suporte para dados de transporte público da Serbijavoz e Transitous.</li>
+          <li xml:lang="ru">Новые и улучшенные модули извлечения данных из документов для CFR, Eurostar, Indico, IRCTC, Lufthansa, Motel One, SNCB, SNCF, Ticketportal, Trenitalia и VDV eTickets. Добавлена поддержка данных общественного транспорта от Serbijavoz и Transitous;</li>
           <li>Show more detailed train coach or vehicle feature information.</li>
+          <li xml:lang="pt-BR">Exibir informações mais detalhadas sobre as características dos vagões ou veículos do trem.</li>
+          <li xml:lang="ru">Показать подробную информацию о вагоне поезда или характеристиках транспортного средства.</li>
           <li>Show per-coach occupancy information when available.</li>
+          <li xml:lang="pt-BR">Exibir informações sobre a ocupação por vagão, quando disponíveis.</li>
+          <li xml:lang="ru">Показывать информацию о заполненности по вагонам при её наличии;</li>
           <li>Allow to manually add ticket barcodes to existing reservations.</li>
+          <li xml:lang="pt-BR">Permitir a adição manual de códigos de barras de bilhetes a reservas existentes.</li>
+          <li xml:lang="ru">Возможность вручную добавлять штрихкоды билетов к существующим бронированиям;</li>
           <li>Show DST transition information in the timeline.</li>
+          <li xml:lang="pt-BR">Exibir informações sobre a transição para o horário de verão na linha do tempo.</li>
+          <li xml:lang="ru">Показывать информацию о переходе на летнее время в ленте событий;</li>
         </ul>
       </description>
     </release>
@@ -1143,8 +1341,14 @@
       <description>
         <ul>
           <li>New or improved travel document extractors for Amsbus.cz, Eurostar, Finnair, Moongate, UK national railway and VR.</li>
+          <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para Amsbus.cz, Eurostar, Finnair, Moongate, ferrovias nacionais do Reino Unido e VR.</li>
+          <li xml:lang="ru">Новые или улучшенные процедуры извлечения данных о проездных документах для Amsbus.cz, Eurostar, Finnair, Moongate, UK national railway и VR;</li>
           <li>Fix displaying public transport departure disruptions.</li>
+          <li xml:lang="pt-BR">Correção do problema na exibição de interrupções nos horários de partida do transporte público.</li>
+          <li xml:lang="ru">Исправлено отображение сбоев в отправлении общественного транспорта;</li>
           <li>Fix Apple Wallet pass rendering issues.</li>
+          <li xml:lang="pt-BR">Correção dos problemas de renderização de passes do Apple Wallet.</li>
+          <li xml:lang="ru">Исправлены проблемы с отображением пропусков Apple Wallet;</li>
         </ul>
       </description>
     </release>
@@ -1152,10 +1356,20 @@
       <description>
         <ul>
           <li>New or improved travel document extractors for Deutsche Bahn, Eckerö Line, European Sleeper, Eventim, Flibco, Leo Express, National Express, ÖBB, osmcal.org, Salzbergwerk, SNCF and ti.to.</li>
+          <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para Deutsche Bahn, Eckerö Line, European Sleeper, Eventim, Flibco, Leo Express, National Express, ÖBB, osmcal.org, Salzbergwerk, SNCF e ti.to.</li>
+          <li xml:lang="ru">Новые или улучшенные процедуры извлечения данных из проездных документов для Deutsche Bahn, Eckerö Line, European Sleeper, Eventim, Flibco, Leo Express, National Express, ÖBB, osmcal.org, Salzbergwerk, SNCF и ti.to.</li>
           <li>Filter implausible geo coder results on address editing.</li>
+          <li xml:lang="pt-BR">Filtrar resultados implausíveis do geocodificador na edição de endereços.</li>
+          <li xml:lang="ru">Фильтрация неправдоподобных результатов геокодирования при редактировании адреса;</li>
           <li>Fix overlap between floating map button and arrival details on the journey details page.</li>
+          <li xml:lang="pt-BR">Correção da sobreposição entre o botão flutuante do mapa e os detalhes de chegada na página de detalhes da viagem.</li>
+          <li xml:lang="ru">Исправлено наложение плавающей кнопки карты и данных о прибытии на странице сведений о поездке;</li>
           <li>Improve Deutsche Bahn realtime information when facing cancelled or replacement trains.</li>
+          <li xml:lang="pt-BR">Melhorar as informações em tempo real da Deutsche Bahn em caso de cancelamento ou substituição de trens.</li>
+          <li xml:lang="ru">Улучшена информация Deutsche Bahn в реальном времени при отменённых или заменяющих поездах;</li>
           <li>Improve train coach type detection in the coach layout view.</li>
+          <li xml:lang="pt-BR">Melhoria da detecção do tipo de vagão de trem na visualização do layout dos vagões.</li>
+          <li xml:lang="ru">Улучшено определение типа вагона в представлении схемы вагонов.</li>
         </ul>
       </description>
     </release>
@@ -1163,9 +1377,17 @@
       <url>https://kde.org/announcements/megarelease/6/#itinerary</url>
       <description>
         <p>We improved the usability of Itinerary on phones by making common actions available on a bottom navigation bar which makes it easy to switch to your passes and your current trip.</p>
+        <p xml:lang="pt-BR">Melhoramos a usabilidade do Itinerary em celulares, disponibilizando ações comuns em uma barra de navegação inferior, o que facilita a alternância entre seus passes e sua viagem atual.</p>
+        <p xml:lang="ru">Улучшена удобство использования Itinerary на телефонах: часто используемые действия вынесены на нижнюю панель навигации, что упрощает переключение между проездными документами и текущей поездкой.</p>
         <p>The main timeline was redesigned and now entries can be expanded inline to show the intermediate stops and ongoing delays and disruptions. Speaking of events, it is now possible to manually add and edit entries and to share entire trips or single reservations to your phone via KDE Connect.</p>
+        <p xml:lang="pt-BR">A linha do tempo principal foi redesenhada e agora as entradas podem ser expandidas diretamente na página para mostrar as paradas intermediárias, atrasos e interrupções em andamento. Falando em eventos, agora é possível adicionar e editar entradas manualmente, além de compartilhar viagens inteiras ou reservas individuais com seu celular através do KDE Connect.</p>
+        <p xml:lang="ru">Главная временная шкала была переработана: теперь записи можно разворачивать для отображения промежуточных остановок, текущих задержек и сбоев. Также появилась возможность добавлять и редактировать записи вручную, а также передавать целые поездки или отдельные бронирования на телефон через KDE Connect.</p>
         <p>The indoor map in Itinerary now lists all amenities in the building or area you are currently looking at. This helps with things like finding a place to grab a coffee in a big train station, or searching for a place to get food in the vicinity of your hotel. This feature is powered by OpenStreetMap, works without the need to connect to the internet and no search terms ever leave your device.</p>
+        <p xml:lang="pt-BR">O mapa interno do Itinerary agora lista todas as comodidades do edifício ou área que você está visualizando. Isso ajuda a encontrar, por exemplo, um lugar para tomar um café em uma grande estação de trem ou um restaurante perto do seu hotel. Esse recurso é fornecido pelo OpenStreetMap, funciona sem a necessidade de conexão com a internet e nenhum termo de pesquisa sai do seu dispositivo.</p>
+        <p xml:lang="ru">На карте помещений в Itinerary теперь отображаются все удобства в здании или районе, который вы сейчас просматриваете. Это помогает, например, найти место, где можно взять кофе на большой железнодорожной станции, или найти место, где можно поесть рядом с вашим отелем. Эта функция работает на основе данных OpenStreetMap, не требует подключения к интернету, и никакие поисковые запросы никогда не покидают ваше устройство.</p>
         <p>When viewing a trip details, in addition to being able to consult the list of stops, it can look at a map of the trip.</p>
+        <p xml:lang="pt-BR">Ao visualizar os detalhes de uma viagem, além de poder consultar a lista de paradas, também é possível ver um mapa da viagem.</p>
+        <p xml:lang="ru">При просмотре деталей поездки, помимо возможности просмотра списка остановок, доступен просмотр карты маршрута</p>
       </description>
     </release>
     <release version="23.08.5" date="2024-02-15"/>
@@ -1173,8 +1395,14 @@
       <description>
         <ul>
           <li>New or improved travel document extractors for 12go, Eurostar, Flixbus, Motel One, SAS and Thalys.</li>
+          <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para 12go, Eurostar, Flixbus, Motel One, SAS e Thalys.</li>
+          <li xml:lang="ru">Новые или улучшенные модули извлечения данных для 12go, Eurostar, Flixbus, Motel One, SAS и Thalys;</li>
           <li>Improved support for European FCB railway ticket barcodes.</li>
+          <li xml:lang="pt-BR">Melhoria no suporte para códigos de barras de bilhetes ferroviários FCB europeus.</li>
+          <li xml:lang="ru">Улучшена поддержка штрихкодов на железнодорожных билетах FCB в Европе;</li>
           <li>Support for Eurostar onboard API.</li>
+          <li xml:lang="pt-BR">Suporte para a API de bordo do Eurostar.</li>
+          <li xml:lang="ru">Поддержка бортового API Eurostar;</li>
         </ul>
       </description>
     </release>
@@ -1182,9 +1410,17 @@
       <description>
         <ul>
           <li>Fix handling of canceled intermediate stops on board of DB ICEs.</li>
+          <li xml:lang="pt-BR">Correção do tratamento de paradas intermediárias canceladas a bordo de trens de passageiros de grande porte da DB.</li>
+          <li xml:lang="ru">Исправлена обработка отменённых промежуточных остановок в поездах DB ICE;</li>
           <li>New or improved travel document extractors for booking.com, DB, European Sleeper, Iberia, PKP, Pretix, Qatar Airways.</li>
+          <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para booking.com, DB, European Sleeper, Iberia, PKP, Pretix e Qatar Airways.</li>
+          <li xml:lang="ru">Новые или улучшенные модули извлечения данных о проездных документах для booking.com, DB, European Sleeper, Iberia, PKP, Pretix, Qatar Airways;</li>
           <li>Fix parsing certain invalid Apple Wallet message catalogs.</li>
+          <li xml:lang="pt-BR">Correção do problema na análise de determinados catálogos de mensagens inválidos do Apple Wallet.</li>
+          <li xml:lang="ru">Исправлен анализ синтаксиса некоторых некорректных каталогов сообщений Apple Wallet;</li>
           <li>Remove unnecessary PDF fonts to reduce the APK size.</li>
+          <li xml:lang="pt-BR">Remoção das fontes PDF desnecessárias para reduzir o tamanho do APK.</li>
+          <li xml:lang="ru">Удаление ненужных шрифтов PDF для уменьшения размера APK;</li>
         </ul>
       </description>
     </release>
@@ -1192,8 +1428,14 @@
       <description>
         <ul>
           <li>Allow to enable notifications on Android 13.</li>
+          <li xml:lang="pt-BR">Permitir a ativação de notificações no Android 13.</li>
+          <li xml:lang="ru">Возможность включения уведомлений в Android 13;</li>
           <li>New or improved travel document extractors for Aegean, Amadeus, bookingkit, GWR, Pretix, Renfe, ÖBB and UK railway tickets.</li>
+          <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para bilhetes ferroviários da Aegean, Amadeus, BookingKit, GWR, Pretix, Renfe, ÖBB e do Reino Unido.</li>
+          <li xml:lang="ru">Новые или улучшенные модули извлечения данных для проездных документов Aegean, Amadeus, bookingkit, GWR, Pretix, Renfe, ÖBB и железнодорожных билетов Великобритании;</li>
           <li>Render more amenity details on the train station map.</li>
+          <li xml:lang="pt-BR">Exibir mais detalhes sobre as comodidades no mapa da estação de trem.</li>
+          <li xml:lang="ru">Отображение дополнительных сведений об удобствах на карте вокзала;</li>
         </ul>
       </description>
     </release>
@@ -1201,11 +1443,23 @@
       <description>
         <ul>
           <li>New or improved travel document extractors for Aer Lingus, Amtrak, British Airways, Deutsche Bahn, GVH, premiumkino, Slovak Lines and ZSSK.</li>
+          <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para Aer Lingus, Amtrak, British Airways, Deutsche Bahn, GVH, premiumkino, Slovak Lines e ZSSK.</li>
+          <li xml:lang="ru">Новые или улучшенные модули извлечения данных для проездных документов Aer Lingus, Amtrak, British Airways, Deutsche Bahn, GVH, premiumkino, Slovak Lines и ZSSK;</li>
           <li>Fix editing bus and train elements without an associated ticket.</li>
+          <li xml:lang="pt-BR">Correção do problema na edição de elementos de ônibus e trem sem um bilhete associado.</li>
+          <li xml:lang="ru">Исправлено редактирование элементов автобусов и поездов без связанного билета;</li>
           <li>Fix unnecessarily broad permissions on Android.</li>
+          <li xml:lang="pt-BR">Correção das permissões excessivamente amplas no Android.</li>
+          <li xml:lang="ru">Исправлены излишне широкие разрешения в Android;</li>
           <li>Fix rendering of Apple Wallet generic pass thumbnail images.</li>
+          <li xml:lang="pt-BR">Correção do problema na renderização das miniaturas genéricas de passes do Apple Wallet.</li>
+          <li xml:lang="ru">Исправлено отображение миниатюрных изображений универсальных пропусков Apple Wallet;</li>
           <li>Fix progress display on the initial journey stopover in the live status view.</li>
+          <li xml:lang="pt-BR">Correção da exibição do progresso na parada inicial da viagem na visualização de status ao vivo.</li>
+          <li xml:lang="ru">Исправлено отображение прогресса на начальной остановке маршрута в представлении текущего статуса;</li>
           <li>Display luggage lockers, lost &amp; found offices and ariport baggage claim belts on the indoor map.</li>
+          <li xml:lang="pt-BR">Exibir no mapa interno os guarda-volumes, os serviços de achados &amp; perdidos e as esteiras de bagagem dos aeroportos.</li>
+          <li xml:lang="ru">Отображение камер хранения, бюро находок и лент выдачи багажа в аэропортах на схеме помещений;</li>
         </ul>
       </description>
     </release>
@@ -1213,26 +1467,68 @@
       <description>
         <ul>
           <li>Preferred transport modes can now selected for all public transport searches.</li>
+          <li xml:lang="pt-BR">Agora é possível selecionar os meios de transporte preferenciais para todas as buscas por transporte público.</li>
+          <li xml:lang="ru">Возможно выбрать предпочитаемые виды транспорта для всех поисков общественного транспорта.</li>
           <li>Public transport line logos are now also available for some regional and long distance rail services.</li>
+          <li xml:lang="pt-BR">Os logotipos das linhas de transporte público agora também estão disponíveis para alguns serviços ferroviários regionais e de longa distância.</li>
+          <li xml:lang="ru">Логотипы линий общественного транспорта теперь также доступны для некоторых региональных и междугородных железнодорожных перевозок;</li>
           <li>Added support for railway coach layouts for more types of trains.</li>
+          <li xml:lang="pt-BR">Adicionado suporte para layouts de vagões ferroviários para mais tipos de trens.</li>
+          <li xml:lang="ru">Добавлена поддержка схем вагонов для большего числа типов поездов;</li>
           <li>Added support for importing Deutsche Bahn and SNCF online tickets.</li>
+          <li xml:lang="pt-BR">Adicionada a possibilidade de importar bilhetes online da Deutsche Bahn e da SNCF.</li>
+          <li xml:lang="ru">Добавлена поддержка импорта электронных билетов Deutsche Bahn и SNCF;</li>
           <li>Added location sharing via Matrix.</li>
+          <li xml:lang="pt-BR">Adicionado o compartilhamento de localização através do Matrix.</li>
+          <li xml:lang="ru">Добавлен обмен местоположением через Matrix;</li>
           <li>Consider coach layout and seat reservation data to highlight the departure/arrival spot on a platform.</li>
+          <li xml:lang="pt-BR">Considera o layout do vagão e os dados de reserva de assentos para destacar o local de partida/chegada em uma plataforma.</li>
+          <li xml:lang="ru">Теперь учитывается расположение вагонов и данные о бронировании мест для выделения места отправления/прибытия на платформе;</li>
           <li>New look for the timeline entries and the editing pages.</li>
+          <li xml:lang="pt-BR">Novo visual para as entradas da linha do tempo e para as páginas de edição.</li>
+          <li xml:lang="ru">Новое оформление записей на временной шкале и страниц редактирования.</li>
           <li>New or improved onboard API support for Aegean Air, Deutsche Bahn and ÖBB.</li>
+          <li xml:lang="pt-BR">Novo suporte ou melhorias na API de bordo para Aegean Air, Deutsche Bahn e ÖBB.</li>
+          <li xml:lang="ru">Добавлена или улучшена поддержка бортового API для Aegean Air, Deutsche Bahn и ÖBB;</li>
           <li>New or improved travel document extractors for Aegean Air, Aer Lingus, Air Asia, Air France, Atlatos, Bäder Suite, BlaBlaCar, bookingkit, CD, Cinemaxx, Cooltix, DSB, Eventbrite, FerriesInGreece, Grimaldi Lines, Iberia, KLM, Koleje Malopolskie, KTEL Thesprotias, Lufthansa, Ouigo Spain, PKP, UK railways, SAS, SBB, Slovak Lines, SNCB, spiritec, Spring Airlines, Sunny Cars, Thalys, Trenitalia, York Kino and ZSSK.</li>
+          <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para Aegean Air, Aer Lingus, Air Asia, Air France, Atlatos, Bäder Suite, BlaBlaCar, bookingkit, CD, Cinemaxx, Cooltix, DSB, Eventbrite, FerriesInGreece, Grimaldi Lines, Iberia, KLM, Koleje Malopolskie, KTEL Thesprotias, Lufthansa, Ouigo Spain, PKP, UK railways, SAS, SBB, Slovak Lines, SNCB, spiritec, Spring Airlines, Sunny Cars, Thalys, Trenitalia, York Kino e ZSSK.</li>
+          <li xml:lang="ru">Новые или улучшенные модули извлечения данных о проездных документах для Aegean Air, Aer Lingus, Air Asia, Air France, Atlatos, Bäder Suite, BlaBlaCar, bookingkit, CD, Cinemaxx, Cooltix, DSB, Eventbrite, FerriesInGreece, Grimaldi Lines, Iberia, KLM, Koleje Malopolskie, KTEL Thesprotias, Lufthansa, Ouigo Spain, PKP, UK railways, SAS, SBB, Slovak Lines, SNCB, spiritec, Spring Airlines, Sunny Cars, Thalys, Trenitalia, York Kino и ZSSK.</li>
           <li>Added support for importing ActivityPub events.</li>
+          <li xml:lang="pt-BR">Adicionada a possibilidade de importar eventos do ActivityPub.</li>
+          <li xml:lang="ru">Добавлена поддержка импорта событий ActivityPub;</li>
           <li>Added support for editing many more reservation and ticket details.</li>
+          <li xml:lang="pt-BR">Adicionada a possibilidade de editar muito mais detalhes de reservas e bilhetes.</li>
+          <li xml:lang="ru">Добавлена возможность редактирования многих других деталей бронирования и билетов;</li>
           <li>Documents can now be attached to all tickets and reservations, and are automatically attached in more cases.</li>
+          <li xml:lang="pt-BR">Agora é possível anexar documentos a todos os bilhetes e reservas, e eles são anexados automaticamente em mais casos.</li>
+          <li xml:lang="ru">К билетам и бронированиям теперь возможно прикреплять документы; в большинстве случаев они прикрепляются автоматически;</li>
           <li>New hotel, event and restaurant reservation can be created by adding a URL to their schema.org annotated website.</li>
+          <li xml:lang="pt-BR">É possível criar novas reservas de hotel, eventos e restaurantes adicionando uma URL ao site anotado com schema.org.</li>
+          <li xml:lang="ru">Новые бронирования отелей, мероприятий и ресторанов создаются добавлением URL-адреса их веб-сайта с аннотациями schema.org;</li>
           <li>Added support for extracting travel data in Apple iCal events.</li>
+          <li xml:lang="pt-BR">Adicionada a possibilidade de extrair dados de viagens em eventos do Apple iCal.</li>
+          <li xml:lang="ru">Добавлена поддержка извлечения данных о поездках из событий Apple iCal;</li>
           <li>Improved notifications in case of Apple Wallet pass updates.</li>
+          <li xml:lang="pt-BR">Notificações aprimoradas em caso de atualizações de passe do Apple Wallet.</li>
+          <li xml:lang="ru">Улучшены уведомления при обновлении пропусков Apple Wallet;</li>
           <li>Improved display of ticket validity times in the passes and programs view.</li>
+          <li xml:lang="pt-BR">Melhoria na exibição dos horários de validade dos ingressos na visualização de passes e programas.</li>
+          <li xml:lang="ru">Улучшено отображение времени действия билетов в представлении пропусков и программ;</li>
           <li>Improved display of public transport cancellations and long disruption notes.</li>
+          <li xml:lang="pt-BR">Melhoria na visualização de cancelamentos e avisos de interrupções prolongadas no transporte público.</li>
+          <li xml:lang="ru">Улучшено отображение отмен рейсов общественного транспорта и длинных уведомлений о сбоях;</li>
           <li>Fixed searching for international railway connections sometimes not finding any result.</li>
+          <li xml:lang="pt-BR">Correção do problema em que a busca por conexões ferroviárias internacionais às vezes não retornava nenhum resultado.</li>
+          <li xml:lang="ru">Исправлен поиск международных железнодорожных соединений, который иногда не находил результатов;</li>
           <li>Fixed weather icons sometimes wrongly using the night variants during the day.</li>
+          <li xml:lang="pt-BR">Correção do problema em que os ícones meteorológicos, por vezes, utilizavam incorretamente as variantes noturnas durante o dia.</li>
+          <li xml:lang="ru">Исправлены значки погоды, иногда неправильно использующие ночные варианты в течение дня;</li>
           <li>Fixed too rapid realtime data update queries in case of network errors.</li>
+          <li xml:lang="pt-BR">Correção da rapidez excessiva das consultas de atualização de dados em tempo real em caso de erros de rede.</li>
+          <li xml:lang="ru">Исправлены слишком частые запросы на обновление данных в реальном времени при сетевых ошибках;</li>
           <li>Fixed exported events not being editable by other calendaring apps on Android.</li>
+          <li xml:lang="pt-BR">Correção do problema que impedia a edição de eventos exportados por outros aplicativos de calendário no Android.</li>
+          <li xml:lang="ru">Исправлена невозможность редактирования экспортированных событий другими приложениями календаря в Android;</li>
         </ul>
       </description>
     </release>
@@ -1240,12 +1536,26 @@
       <description>
         <ul>
           <li>New or improved travel document extractors for Color Line, DJH, Fjord Line, Flixbus, Grimladi Lines, onepagebooking, SNCB, Thalys and Trenitalia.</li>
+          <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para Color Line, DJH, Fjord Line, Flixbus, Grimaldi Lines, onepagebooking, SNCF, Thalys e Trenitalia.</li>
+          <li xml:lang="ru">Новые или улучшенные модули извлечения данных для Color Line, DJH, Fjord Line, Flixbus, Grimladi Lines, onepagebooking, SNCB, Thalys и Trenitalia;</li>
           <li>Fixed a crash on Android when importing a file with a space in its path.</li>
+          <li xml:lang="pt-BR">Corrigido um erro que causava o fechamento inesperado do aplicativo no Android ao importar um arquivo com um espaço no caminho.</li>
+          <li xml:lang="ru">Исправлено аварийное завершение на Android при импорте файла с пробелом в пути;</li>
           <li>Fixed public transport queries for VRS.</li>
+          <li xml:lang="pt-BR">Consultas sobre transporte público corrigidas para VRS.</li>
+          <li xml:lang="ru">Исправлены запросы к общественному транспорту для VRS;</li>
           <li>Fixed missing transport mode information for some OpenTripPlanner results.</li>
+          <li xml:lang="pt-BR">Corrigida a falta de informações sobre o modo de transporte em alguns resultados do OpenTripPlanner.</li>
+          <li xml:lang="ru">Исправлено отсутствие информации о виде транспорта для некоторых результатов OpenTripPlanner;</li>
           <li>Filter implausible walking paths from public transport routers.</li>
+          <li xml:lang="pt-BR">Filtra trajetos a pé implausíveis a partir de rotas de transporte público.</li>
+          <li xml:lang="ru">Исключение неправдоподобных пешеходных маршрутов из результатов маршрутизации общественного транспорта;</li>
           <li>Fixed importing boat or ferry reservations from the calendar.</li>
+          <li xml:lang="pt-BR">Correção na importação de reservas de barcos ou balsas a partir do calendário.</li>
+          <li xml:lang="ru">Исправлен импорт бронирования лодок или паромов из календаря.</li>
           <li>Fixed an infinite loop when computing indoor map arguments.</li>
+          <li xml:lang="pt-BR">Corrigido um loop infinito no cálculo dos argumentos do mapa interno.</li>
+          <li xml:lang="ru">Исправлен бесконечный цикл при вычислении аргументов для карт помещений.</li>
         </ul>
       </description>
     </release>
@@ -1253,14 +1563,32 @@
       <description>
         <ul>
           <li>Fixed automatic transfer selection producing nonsense when geo coordinates are missing.</li>
+          <li xml:lang="pt-BR">Corrigido o problema na seleção automática de transferência que gerava erros quando faltavam coordenadas geográficas.</li>
+          <li xml:lang="ru">Исправлен выбор автоматической пересадки, который приводил к бессмыслице при отсутствии географических координат.</li>
           <li>Fixed showing of attached Appled Wallet passes for trains, hotels, busses and car rental reservations.</li>
+          <li xml:lang="pt-BR">Correção na exibição dos passes da Apple Wallet anexados a reservas de trem, hotel, ônibus e aluguel de carros.</li>
+          <li xml:lang="ru">Исправлено отображение прикреплённых пропусков Apple Wallet для поездов, отелей, автобусов и бронирований проката автомобилей.</li>
           <li>Fixed a potential deadlock on updating currency conversion rates.</li>
+          <li xml:lang="pt-BR">Corrigido um possível impasse na atualização das taxas de conversão de moeda.</li>
+          <li xml:lang="ru">Исправлена возможная взаимная блокировка при обновлении курсов валют.</li>
           <li>Fixed attaching documents to multi-traveler reservations.</li>
+          <li xml:lang="pt-BR">Correção no problema de anexação de documentos a reservas com múltiplos viajantes.</li>
+          <li xml:lang="ru">Исправлено присоединение документов к бронированиям для нескольких путешественников.</li>
           <li>Improved scrolling speed of the timeline view.</li>
+          <li xml:lang="pt-BR">Velocidade de rolagem da visualização da linha do tempo aprimorada.</li>
+          <li xml:lang="ru">Улучшена скорость прокрутки представления временной шкалы.</li>
           <li>New or improved travel document extractors for European Sleeper, IndiGo, PKP, Qatar Airways, SBB, SNCB, Thalys as well as for Latvian and Lithuanian railway tickets.</li>
+          <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para European Sleeper, IndiGo, PKP, Qatar Airways, SBB, SNCB, Thalys, bem como para bilhetes ferroviários da Letônia e da Lituânia.</li>
+          <li xml:lang="ru">Новые или улучшенные процедуры извлечения данных из проездных документов для European Sleeper, IndiGo, PKP, Qatar Airways, SBB, SNCB, Thalys, а также для латвийских и литовских железнодорожных билетов.</li>
           <li>New generic ERA FCB ticket barcode extractor.</li>
+          <li xml:lang="pt-BR">Novo extrator genérico de código de barras para ingressos ERA FCB.</li>
+          <li xml:lang="ru">Новый универсальный модуль для извлечения данных из штрихкодов билетов ERA FCB.</li>
           <li>Improved extractor for restaurant data in websites.</li>
+          <li xml:lang="pt-BR">Extrator aprimorado para dados de restaurantes em sites.</li>
+          <li xml:lang="ru">Улучшен модуль извлечения данных о ресторанах с веб-сайтов.</li>
           <li>Fixed merging of public transport disruption notes from different sources.</li>
+          <li xml:lang="pt-BR">Correção da mesclagem das informações sobre interrupções no transporte público provenientes de diferentes fontes.</li>
+          <li xml:lang="ru">Исправлено объединение уведомлений о сбоях в работе общественного транспорта из разных источников.</li>
         </ul>
       </description>
     </release>
@@ -1268,13 +1596,29 @@
       <description>
         <ul>
           <li>Improved travel document extractors for Air Asia, ATPI, B&amp;B Hotels, Best Western, CD, FlixBus, Gepard Express, Grimaldi Lines, MAV, SNCB and Vueling.</li>
+          <li xml:lang="pt-BR">Extratores de documentos de viagem aprimorados para Air Asia, ATPI, B&amp;B Hotels, Best Western, CD, FlixBus, Gepard Express, Grimaldi Lines, MAV, SNCB e Vueling.</li>
+          <li xml:lang="ru">Улучшены модули извлечения данных из проездных документов для Air Asia, ATPI, B&amp;B Hotels, Best Western, CD, FlixBus, Gepard Express, Grimaldi Lines, MAV, SNCB и Vueling.</li>
           <li>Support importing various variants of the Deutschlandticket.</li>
+          <li xml:lang="pt-BR">Suporte para importação de diversas variantes do Deutschlandticket.</li>
+          <li xml:lang="ru">Поддержка импорта различных вариантов Deutschlandticket;</li>
           <li>Fixed rendering of MAV ticket barcodes.</li>
+          <li xml:lang="pt-BR">Correção na renderização dos códigos de barras dos bilhetes MAV.</li>
+          <li xml:lang="ru">Исправлен вывод штрихкодов билетов MAV.</li>
           <li>Fixed public transport queries in the Czech Republic and the UK.</li>
+          <li xml:lang="pt-BR">Correção da consultas sobre transporte público na República Tcheca e no Reino Unido.</li>
+          <li xml:lang="ru">Исправлены запросы к расписанию общественного транспорта в Чехии и Великобритании;</li>
           <li>Fixed imported PDFs losing their file name on Android.</li>
+          <li xml:lang="pt-BR">Corrigido o problema em que PDFs importados perdiam o nome do arquivo no Android.</li>
+          <li xml:lang="ru">Исправлена потеря имени файла импортированных PDF-файлов в Android.</li>
           <li>Improved Apple Wallet boarding pass layout for overflowing labels.</li>
+          <li xml:lang="pt-BR">Layout aprimorado do cartão de embarque do Apple Wallet para etiquetas que excedem o tamanho permitido.</li>
+          <li xml:lang="ru">Улучшено оформление посадочных талонов Apple Wallet для переполненных меток.</li>
           <li>Improved handling of canceled elements in the timeline.</li>
+          <li xml:lang="pt-BR">Melhoria no tratamento de elementos cancelados na linha do tempo.</li>
+          <li xml:lang="ru">Улучшена обработка отменённых элементов на временной шкале;</li>
           <li>Improved rendering of barrier elements in the train station map.</li>
+          <li xml:lang="pt-BR">Melhoria na renderização dos elementos de barreira no mapa da estação de trem.</li>
+          <li xml:lang="ru">Улучшено отображение элементов барьеров на карте вокзала;</li>
         </ul>
       </description>
     </release>
@@ -1282,15 +1626,35 @@
       <description>
         <ul>
           <li>New or improved travel document extractors for Aegean Air, Amadeus, availpro, BlaBlaCar, Deutsche Bahn, Kinoheld, Meetup, National Express, ÖBB, Octorate, Ouigo, Premier Inn, SNCF, Taiwan Highspeed Rail and whyline.</li>
+          <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para Aegean Air, Amadeus, availpro, BlaBlaCar, Deutsche Bahn, Kinoheld, Meetup, National Express, ÖBB, Octorate, Ouigo, Premier Inn, SNCF, Taiwan Highspeed Rail e whyline.</li>
+          <li xml:lang="ru">Новые или улучшенные модули извлечения данных о проездных документах для Aegean Air, Amadeus, availpro, BlaBlaCar, Deutsche Bahn, Kinoheld, Meetup, National Express, ÖBB, Octorate, Ouigo, Premier Inn, SNCF, Taiwan Highspeed Rail и whyline;</li>
           <li>Support for Eurostar, SBB and UK railway ticket barcodes.</li>
+          <li xml:lang="pt-BR">Suporte para códigos de barras de bilhetes da Eurostar, SBB e ferrovias do Reino Unido.</li>
+          <li xml:lang="ru">Поддержка штрихкодов на билетах Eurostar, SBB и железных дорог Великобритании;</li>
           <li>New live status page using onboard vehicle API.</li>
+          <li xml:lang="pt-BR">Nova página de status em tempo real usando a API integrada do veículo.</li>
+          <li xml:lang="ru">Новая страница текущего состояния с использованием бортового API транспортного средства;</li>
           <li>New UI for reservation details pages.</li>
+          <li xml:lang="pt-BR">Nova interface de usuário para páginas de detalhes de reservas.</li>
+          <li xml:lang="ru">Новый интерфейс для страниц сведений о бронировании;</li>
           <li>Faster loading of train station and airport maps.</li>
+          <li xml:lang="pt-BR">Carregamento mais rápido de mapas de estações de trem e aeroportos.</li>
+          <li xml:lang="ru">Ускорена загрузка карт вокзалов и аэропортов;</li>
           <li>Improved display of doors, trees, barrier blocks, platform section markers and accessibility information on train station maps.</li>
+          <li xml:lang="pt-BR">Melhoria na visualização de portas, árvores, cancelas, marcadores de seção da plataforma e informações de acessibilidade nos mapas da estação de trem.</li>
+          <li xml:lang="ru">Улучшено отображение дверей, деревьев, блоков ограждений, маркеров секций платформ и информации о доступности на картах вокзалов;</li>
           <li>Allow to enable LED light for barcode scanning.</li>
+          <li xml:lang="pt-BR">Permitir a ativação da luz LED para leitura de código de barras.</li>
+          <li xml:lang="ru">Возможность включить светодиодную подсветку для сканирования штрихкода;</li>
           <li>Fix wrong public transport service being used in France.</li>
+          <li xml:lang="pt-BR">Correção do serviço de transporte público incorreto que está sendo utilizado na França.</li>
+          <li xml:lang="ru">Исправлен неправильный выбор общественного транспорта во Франции;</li>
           <li>Fix public transport data access in Switzerland.</li>
+          <li xml:lang="pt-BR">Correção do acesso a dados de transporte público na Suíça.</li>
+          <li xml:lang="ru">Исправлен доступ к данным общественного транспорта в Швейцарии;</li>
           <li>Fix handling of pasted URLs.</li>
+          <li xml:lang="pt-BR">Correção do tratamento de URLs coladas.</li>
+          <li xml:lang="ru">Исправлена обработка вставленных URL-адресов;</li>
         </ul>
       </description>
     </release>
@@ -1298,9 +1662,17 @@
       <description>
         <ul>
           <li>Improved data extraction for Flixbus and UK railway tickets.</li>
+          <li xml:lang="pt-BR">Extração de dados aprimorada para bilhetes da Flixbus e de trens do Reino Unido.</li>
+          <li xml:lang="ru">Улучшено извлечение данных для билетов Flixbus и железных дорог Великобритании;</li>
           <li>Fixed eliding of stop names in the journey view.</li>
+          <li xml:lang="pt-BR">Corrigido o problema de omissão dos nomes das paradas na visualização da viagem.</li>
+          <li xml:lang="ru">Исправлено обрезание названий остановок в представлении поездки;</li>
           <li>Fixed missing timezone display for times in UTC.</li>
+          <li xml:lang="pt-BR">Corrigido o problema de ausência na exibição do fuso horário para horários em UTC.</li>
+          <li xml:lang="ru">Исправлено отсутствие отображения часового пояса для времени в формате UTC;</li>
           <li>Fixed train station map stacking order for layered building parts.</li>
+          <li xml:lang="pt-BR">Correção da ordem de empilhamento do mapa da estação de trem para partes de edifícios em camadas.</li>
+          <li xml:lang="ru">Исправлен порядок наложения карт железнодорожных станций для многоуровневых частей зданий;</li>
         </ul>
       </description>
     </release>
@@ -1308,9 +1680,17 @@
       <description>
         <ul>
           <li>Improved data extraction for booking.com, Deutsche Bahn, Indico, MÁV, onepagebooking and Pretix.</li>
+          <li xml:lang="pt-BR">Extração de dados aprimorada para booking.com, Deutsche Bahn, Indico, MÁV, onepagebooking e Pretix.</li>
+          <li xml:lang="ru">Улучшено извлечение данных для booking.com, Deutsche Bahn, Indico, MÁV, onepagebooking и Pretix;</li>
           <li>Improved merging of separate train ticket and seat reservation data.</li>
+          <li xml:lang="pt-BR">Melhoria na integração de dados separados de bilhetes de trem e reservas de assentos.</li>
+          <li xml:lang="ru">Улучшено объединение данных отдельных билетов на поезд и бронирования мест;</li>
           <li>Fixed rendering of certain Apple Wallet event tickets.</li>
+          <li xml:lang="pt-BR">Correção na renderização de alguns ingressos de eventos do Apple Wallet.</li>
+          <li xml:lang="ru">Исправлено отображение некоторых билетов на мероприятия из Apple Wallet;</li>
           <li>Fixed importing multiple generic Apple Wallet passes.</li>
+          <li xml:lang="pt-BR">Corrigido o problema na importação de vários passes genéricos do Apple Wallet.</li>
+          <li xml:lang="ru">Исправлен импорт нескольких общих пропусков Apple Wallet;</li>
         </ul>
       </description>
     </release>
@@ -1318,12 +1698,26 @@
       <description>
         <ul>
           <li>Support importing of Mobilizon events.</li>
+          <li xml:lang="pt-BR">Suporte à importação de eventos do Mobilizon.</li>
+          <li xml:lang="ru">Поддержка импорта событий Mobilizon;</li>
           <li>Improved travel data extraction for Eventim, MÁV, NH Hotels, Trenitalia.</li>
+          <li xml:lang="pt-BR">Extração de dados de viagens aprimorada para Eventim, MÁV, NH Hotels, Trenitalia.</li>
+          <li xml:lang="ru">Улучшено извлечение данных о поездках для Eventim, MÁV, NH Hotels, Trenitalia;</li>
           <li>Fix display of floating rental vehicles.</li>
+          <li xml:lang="pt-BR">Correção da exibição de veículos de aluguel flutuantes.</li>
+          <li xml:lang="ru">Исправлено отображение арендованных транспортных средств;</li>
           <li>Fix rendering of Apple Wallet event passes with background images.</li>
+          <li xml:lang="pt-BR">Corrigido o problema na renderização dos passes de evento do Apple Wallet com imagens de fundo.</li>
+          <li xml:lang="ru">Исправлено отображение пропусков на мероприятия Apple Wallet с фоновыми изображениями;</li>
           <li>Improve map gesture interaction on favorite location picker.</li>
+          <li xml:lang="pt-BR">Melhoria da interação por gestos no seletor de locais favoritos do mapa.</li>
+          <li xml:lang="ru">Улучшено взаимодействие с картой с помощью жестов при выборе избранных мест;</li>
           <li>Fix interaction with near-horizontal or near-vertical stairs on the train station map.</li>
+          <li xml:lang="pt-BR">Correção da interação com escadas quase horizontais ou quase verticais no mapa da estação de trem.</li>
+          <li xml:lang="ru">Исправлено взаимодействие с почти горизонтальными или почти вертикальными лестницами на схеме вокзала;</li>
           <li>Fix handling of always closed opening hours.</li>
+          <li xml:lang="pt-BR">Correção do tratamento dos horários de funcionamento sempre fechados.</li>
+          <li xml:lang="ru">Исправлена обработка постоянно закрытых часов работы;</li>
         </ul>
       </description>
     </release>
@@ -1331,14 +1725,32 @@
       <description>
         <ul>
           <li>Support for boat/ferry reservations.</li>
+          <li xml:lang="pt-BR">Suporte para reservas de barcos/ferries.</li>
+          <li xml:lang="ru">Поддержка бронирования паромов и лодок;</li>
           <li>Support for ICAO VDS vaccination certificates.</li>
+          <li xml:lang="pt-BR">Suporte para certificados de vacinação VDS da ICAO.</li>
+          <li xml:lang="ru">Поддержка сертификатов вакцинации ICAO VDS;</li>
           <li>Improved floor level switching for staircases in station/airport maps.</li>
+          <li xml:lang="pt-BR">Melhoria na alternância de níveis de piso para escadas em mapas de estações/aeroportos.</li>
+          <li xml:lang="ru">Улучшено переключение уровней этажей для лестниц на картах вокзалов и аэропортов;</li>
           <li>Stacking order and hit detection fixes for the station/airport maps.</li>
+          <li xml:lang="pt-BR">Correções na ordem de empilhamento e na detecção de colisões nos mapas de estações/aeroportos.</li>
+          <li xml:lang="ru">Исправления порядка наложения и обнаружения касаний для карт станций и аэропортов;</li>
           <li>Fix driving side informations for people living in left-driving countries.</li>
+          <li xml:lang="pt-BR">Correção das informações sobre a direção para pessoas que vivem em países onde se dirige pela esquerda.</li>
+          <li xml:lang="ru">Исправлена информация о стороне движения для жителей стран с левосторонним движением;</li>
           <li>Fix date/time input for manual train/bus journey searches.</li>
+          <li xml:lang="pt-BR">Correção da entrada de data/hora para buscas manuais de viagens de trem/ônibus.</li>
+          <li xml:lang="ru">Исправлен ввод даты и времени для ручного поиска поездов и автобусов;</li>
           <li>Fix Railjet trains having no coach layout inside Germany.</li>
+          <li xml:lang="pt-BR">Correção do problema com trens Railjet que não possuem configuração de vagões dentro da Alemanha.</li>
+          <li xml:lang="ru">Исправлено отсутствие схемы вагонов у поездов Railjet в Германии;</li>
           <li>Support for ERA FCB ticket barcodes.</li>
+          <li xml:lang="pt-BR">Suporte para códigos de barras de ingressos ERA FCB.</li>
+          <li xml:lang="ru">Поддержка штрихкодов билетов ERA FCB;</li>
           <li>Various travel document extractor additions and improvements.</li>
+          <li xml:lang="pt-BR">Diversas adições e melhorias ao extrator de documentos de viagem.</li>
+          <li xml:lang="ru">Добавлены и улучшены различные модули для извлечения данных из проездных документов;</li>
         </ul>
       </description>
     </release>
@@ -1346,6 +1758,8 @@
       <description>
         <ul>
           <li>New travel data extractor for Italo train tickets.</li>
+          <li xml:lang="pt-BR">Novo extrator de dados de viagem para bilhetes de trem da Italo.</li>
+          <li xml:lang="ru">Новый модуль извлечения данных для билетов на поезда Italo;</li>
         </ul>
       </description>
     </release>
@@ -1353,10 +1767,20 @@
       <description>
         <ul>
           <li>Improved travel data extraction for Airbnb, Amadeus, BlaBlaCar, Eventim, Ryanair, SNCF, Thalys, Vueling.</li>
+          <li xml:lang="pt-BR">Extração de dados de viagens aprimorada para Airbnb, Amadeus, BlaBlaCar, Eventim, Ryanair, SNCF, Thalys e Vueling.</li>
+          <li xml:lang="ru">Улучшено извлечение данных о поездках для Airbnb, Amadeus, BlaBlaCar, Eventim, Ryanair, SNCF, Thalys, Vueling;</li>
           <li>Handle transliteration when comparing traveler names.</li>
+          <li xml:lang="pt-BR">Lidar com a transliteração ao comparar nomes de viajantes.</li>
+          <li xml:lang="ru">Обработка транслитерации при сравнении имён путешественников;</li>
           <li>Fix trip grouping when connecting journey is part of a different reservation.</li>
+          <li xml:lang="pt-BR">Correção do agrupamento de viagens quando a conexão entre as viagens faz parte de uma reserva diferente.</li>
+          <li xml:lang="ru">Исправлено группирование поездок, когда соединяющий маршрут является частью другой брони;</li>
           <li>Fix selecting the right Apple Wallet event ticket for multi-attendee events.</li>
+          <li xml:lang="pt-BR">Correção da seleção do ingresso correto do Apple Wallet para eventos com vários participantes.</li>
+          <li xml:lang="ru">Исправлен выбор правильного билета на мероприятие в Apple Wallet для событий с несколькими участниками;</li>
           <li>Fix rendering of Apple Wallet event tickets.</li>
+          <li xml:lang="pt-BR">Corrigido o problema na renderização dos ingressos para eventos da Apple Wallet.</li>
+          <li xml:lang="ru">Исправлено отображение билетов на мероприятия Apple Wallet;</li>
         </ul>
       </description>
     </release>
@@ -1364,8 +1788,14 @@
       <description>
         <ul>
           <li>Improve size and positioning of map overlays.</li>
+          <li xml:lang="pt-BR">Melhoria do tamanho e o posicionamento das sobreposições de mapa.</li>
+          <li xml:lang="ru">Улучшены размер и расположение наложений карты;</li>
           <li>Improved travel data extractors for Amtrak, Flixbus and Vistara.</li>
+          <li xml:lang="pt-BR">Extratores de dados de viagem aprimorados para Amtrak, Flixbus e Vistara.</li>
+          <li xml:lang="ru">Улучшены модули извлечения данных о поездках для Amtrak, Flixbus и Vistara;</li>
           <li>Improved airport terminal and gate detection.</li>
+          <li xml:lang="pt-BR">Detecção aprimorada de terminais e portões de embarque em aeroportos.</li>
+          <li xml:lang="ru">Улучшено определение терминала аэропорта и выхода на посадку;</li>
         </ul>
       </description>
     </release>
@@ -1373,10 +1803,20 @@
       <description>
         <ul>
           <li>Improved calendar import, allowing more fine-grained selection and supporting Linux too.</li>
+          <li xml:lang="pt-BR">Importação de calendário aprimorada, permitindo uma seleção mais detalhada e também compatível com Linux.</li>
+          <li xml:lang="ru">Улучшен импорт календаря: добавлена возможность более точного выбора и поддержка Linux;</li>
           <li>Support for exporting reservations to the calendar.</li>
+          <li xml:lang="pt-BR">Suporte para exportação de reservas para o calendário.</li>
+          <li xml:lang="ru">Поддержка экспорта бронирований в календарь;</li>
           <li>Support for passes and program cards that aren't tied to a specific trip, such as flat-rate or time interval tickets or discount program memberships.</li>
+          <li xml:lang="pt-BR">Suporte para passes e cartões de programas que não estão vinculados a uma viagem específica, como bilhetes com tarifa fixa ou com intervalo de tempo, ou ainda adesões a programas de desconto.</li>
+          <li xml:lang="ru">Поддержка пропусков и карт программ, не привязанных к конкретной поездке, например, билетов с фиксированной ставкой или интервальных билетов, а также членства в дисконтных программах;</li>
           <li>Support for adding train and bus trips from online journey searches.</li>
+          <li xml:lang="pt-BR">Suporte para adicionar viagens de trem e ônibus a partir de buscas online.</li>
+          <li xml:lang="ru">Возможность добавления поездок на поезде и автобусе из результатов онлайн-поиска маршрутов;</li>
           <li>Integrated barcode scanner.</li>
+          <li xml:lang="pt-BR">Leitor de código de barras integrado.</li>
+          <li xml:lang="ru">Встроенный сканер штрихкодов;</li>
         </ul>
       </description>
     </release>
@@ -1384,6 +1824,8 @@
       <description>
         <ul>
           <li>Fix monorail platforms being misdetected as regular railway.</li>
+          <li xml:lang="pt-BR">Corrigido o problema das plataformas de monotrilho serem erroneamente identificadas como linhas férreas convencionais.</li>
+          <li xml:lang="ru">Исправлено ошибочное определение платформ монорельса как обычных железнодорожных;</li>
         </ul>
       </description>
     </release>
@@ -1391,7 +1833,11 @@
       <description>
         <ul>
           <li>Improved travel data extraction for Thalys, UK national rail, Eurowings and Eventbrite.</li>
+          <li xml:lang="pt-BR">Extração de dados de viagens aprimorada para Thalys, National Rail do Reino Unido, Eurowings e Eventbrite.</li>
+          <li xml:lang="ru">Улучшено извлечение данных о поездках для Thalys, UK national rail, Eurowings и Eventbrite;</li>
           <li>Fixed train load information parsing for German public transport operators.</li>
+          <li xml:lang="pt-BR">Correção da análise de informações sobre a carga dos trens para operadores de transporte público alemães.</li>
+          <li xml:lang="ru">Исправлен анализ информации о загрузке поездов для немецких операторов общественного транспорта;</li>
         </ul>
       </description>
     </release>
@@ -1399,8 +1845,14 @@
       <description>
         <ul>
           <li>Fix the wrong country being displayed in formatted addresses.</li>
+          <li xml:lang="pt-BR">Correção do problema que exibe o país errado nos endereços formatados.</li>
+          <li xml:lang="ru">Исправлено отображение неверной страны в форматированных адресах;</li>
           <li>Display all supported barcode types in Apple Wallet passes.</li>
+          <li xml:lang="pt-BR">Exibir todos os tipos de código de barras compatíveis nos passes do Apple Wallet.</li>
+          <li xml:lang="ru">Отображение всех поддерживаемых типов штрихкодов в пропусках Apple Wallet;</li>
           <li>Improved travel document extractors for booking.com, Eurowings, onepagebooking.com and SNCF.</li>
+          <li xml:lang="pt-BR">Extratores de documentos de viagem aprimorados para booking.com, Eurowings, onepagebooking.com e SNCF.</li>
+          <li xml:lang="ru">Улучшены модули извлечения данных о проездных документах для booking.com, Eurowings, onepagebooking.com и SNCF;</li>
         </ul>
       </description>
     </release>
@@ -1408,17 +1860,41 @@
       <description>
         <ul>
           <li>Support for overnight train coaches in the train coach layout view.</li>
+          <li xml:lang="pt-BR">Suporte para vagões de trem noturnos na visualização do layout dos vagões.</li>
+          <li xml:lang="ru">Поддержка спальных вагонов в представлении схемы вагонов поезда;</li>
           <li>Show currencies and optionally current conversion rates when entering a different country.</li>
+          <li xml:lang="pt-BR">Exibir as moedas e, opcionalmente, as taxas de conversão atuais ao inserir um país diferente.</li>
+          <li xml:lang="ru">Отображение валют и, возможно, текущих курсов обмена при въезде в другую страну;</li>
           <li>Allow to add train trips from an online journey query to the timeline.</li>
+          <li xml:lang="pt-BR">Permitir adicionar viagens de trem a partir de uma consulta de viagens online à linha do tempo.</li>
+          <li xml:lang="ru">Возможность добавления поездок на поезде из онлайн-запроса маршрута на временную шкалу;</li>
           <li>New or improved extractors for Renfe, SNCF, ÖBB, Spring Airlines, Peach Aviation.</li>
+          <li xml:lang="pt-BR">Extratores novos ou aprimorados para Renfe, SNCF, ÖBB, Spring Airlines e Peach Aviation.</li>
+          <li xml:lang="ru">Новые или улучшенные модули для извлечения данных из Renfe, SNCF, ÖBB, Spring Airlines, Peach Aviation;</li>
           <li>Highlight severe weather conditions in the weather forecast.</li>
+          <li xml:lang="pt-BR">Destaca as condições climáticas severas na previsão do tempo.</li>
+          <li xml:lang="ru">Выделение неблагоприятных погодных условий в прогнозе погоды;</li>
           <li>Show public holidays in the timeline.</li>
+          <li xml:lang="pt-BR">Exibir feriados nacionais na linha do tempo.</li>
+          <li xml:lang="ru">Вывод государственных праздников на временной шкале;</li>
           <li>Fixed high DPI scaling issues in the train coach view.</li>
+          <li xml:lang="pt-BR">Corrigidos problemas de dimensionamento em alta resolução (DPI) na visualização da cabine do trem.</li>
+          <li xml:lang="ru">Исправлены проблемы с масштабированием на экранах с высоким DPI в представлении вагона поезда;</li>
           <li>Support for Amtrak and IATA train station identifiers.</li>
+          <li xml:lang="pt-BR">Suporte para identificadores de estações ferroviárias da Amtrak e da IATA.</li>
+          <li xml:lang="ru">Поддержка идентификаторов станций Amtrak и IATA;</li>
           <li>Support for importing Danish COVID certificates.</li>
+          <li xml:lang="pt-BR">Suporte para importação de certificados dinamarqueses de COVID.</li>
+          <li xml:lang="ru">Поддержка импорта датских сертификатов о вакцинации от COVID-19;</li>
           <li>Follow system settings on Linux for which external map application to use.</li>
+          <li xml:lang="pt-BR">Siga as configurações do sistema Linux para determinar qual aplicativo de mapas externo usar.</li>
+          <li xml:lang="ru">При работе в Linux, теперь используется внешнее картографическое приложение в соответствии с системными настройками;</li>
           <li>Add jump list action to directly open the current ticket.</li>
+          <li xml:lang="pt-BR">Adicionar ação à lista de atalhos para abrir diretamente o tíquete atual.</li>
+          <li xml:lang="ru">Добавить действие в список переходов для прямого открытия текущего билета;</li>
           <li>Fixed geometry reassembly issues in the train station map.</li>
+          <li xml:lang="pt-BR">Corrigidos problemas de remontagem geométrica no mapa da estação de trem.</li>
+          <li xml:lang="ru">Исправлены проблемы со сборкой геометрии на карте железнодорожной станции;</li>
         </ul>
       </description>
     </release>
@@ -1426,7 +1902,11 @@
       <description>
         <ul>
           <li>Add travel data extraction from Air France ticket PDF documents.</li>
+          <li xml:lang="pt-BR">Adicionada extração de dados de viagem a partir de documentos PDF de bilhetes da Air France.</li>
+          <li xml:lang="ru">Добавлено извлечение данных о поездках из PDF-документов с билетами Air France;</li>
           <li>Fix locale-aware formatting of numbers.</li>
+          <li xml:lang="pt-BR">Corrigida a formatação de números de acordo com a localização.</li>
+          <li xml:lang="ru">Исправлено форматирование чисел с учётом локали;</li>
         </ul>
       </description>
     </release>
@@ -1434,7 +1914,10 @@
       <description>
         <ul>
           <li>Fix trip grouping producing wrong results in densely populated areas.</li>
+          <li xml:lang="pt-BR">Corrigido o agrupamento de viagens que estava gerando resultados incorretos em áreas densamente povoadas.</li>
+          <li xml:lang="ru">Исправлена группировка поездок, дававшая неверные результаты в густонаселённых районах;</li>
           <li>Improve vector barcode detection in PDF documents.</li>
+          <li xml:lang="pt-BR">Melhoria da detecção de códigos de barras vetoriais em documentos PDF.</li>
         </ul>
       </description>
     </release>
@@ -1442,9 +1925,13 @@
       <description>
         <ul>
           <li>Fix station map positioning for elements without live data.</li>
+          <li xml:lang="pt-BR">Corrigido o posicionamento no mapa da estação para elementos sem dados em tempo real.</li>
           <li>Improved travel document extraction for Amtrak and VIA Rail.</li>
+          <li xml:lang="pt-BR">Extração aprimorada de documentos de viagem para Amtrak e VIA Rail.</li>
           <li>Support for alternative Hafas platform formats.</li>
+          <li xml:lang="pt-BR">Suporte para formatos alternativos da plataforma Hafas.</li>
           <li>Improved opening hours evaluation in the station maps.</li>
+          <li xml:lang="pt-BR">Melhoria na avaliação dos horários de funcionamento nos mapas das estações.</li>
         </ul>
       </description>
     </release>
@@ -1452,18 +1939,31 @@
       <description>
         <ul>
           <li>New health certificate user interface.</li>
+          <li xml:lang="pt-BR">Nova interface de usuário para certificado de saúde.</li>
           <li>New navigation maneuver details page for individual transport or walking journey sections.</li>
+          <li xml:lang="pt-BR">Nova página com detalhes das manobras de navegação para trechos individuais de transporte ou deslocamento a pé.</li>
           <li>Smarter transfer auto-selection.</li>
+          <li xml:lang="pt-BR">Seleção automática de transferências mais inteligente.</li>
           <li>Live disruption information and journey details for bus trips.</li>
+          <li xml:lang="pt-BR">Informações em tempo real sobre interrupções e detalhes de viagens de ônibus.</li>
           <li>Ability to shorten train and bus trips.</li>
+          <li xml:lang="pt-BR">Possibilidade de encurtar viagens de trem e ônibus.</li>
           <li>Additional individual transport modes for transfers.</li>
+          <li xml:lang="pt-BR">Modalidades adicionais de transporte individual para traslados.</li>
           <li>Improved platform identification for trams and subways.</li>
+          <li xml:lang="pt-BR">Melhoria na identificação das plataformas de bondes e metrôs.</li>
           <li>Easier accessible barcode scan mode, and support for PDF417 ticket barcodes.</li>
+          <li xml:lang="pt-BR">Modo de leitura de código de barras mais acessível e suporte para códigos de barras de bilhetes PDF417.</li>
           <li>Improved data import feedback.</li>
+          <li xml:lang="pt-BR">Melhoria no feedback da importação de dados.</li>
           <li>Fixed pinch zoom on station maps.</li>
+          <li xml:lang="pt-BR">Correção do zoom com gestos de pinça nos mapas das estações.</li>
           <li>Improved Apple Wallet pass rendering.</li>
+          <li xml:lang="pt-BR">Melhoria na renderização do passe do Apple Wallet.</li>
           <li>Warn about rental vehicles with limited remaining range.</li>
+          <li xml:lang="pt-BR">Alerta sobre veículos de aluguel com autonomia limitada.</li>
           <li>Numerous improvements to travel document data extraction.</li>
+          <li xml:lang="pt-BR">Inúmeras melhorias na extração de dados de documentos de viagem.</li>
         </ul>
       </description>
     </release>
@@ -1471,12 +1971,19 @@
       <description>
         <ul>
           <li>Fix icon size issues on high DPI screens.</li>
+          <li xml:lang="pt-BR">Correção de problemas de tamanho de ícones em telas de alto DPI.</li>
           <li>Fix map panning leaving the favorite location selector page.</li>
+          <li xml:lang="pt-BR">Corrigido o problema de deslocamento do mapa ao sair da página de seleção de locais favoritos.</li>
           <li>Fix determining departure country for location changes.</li>
+          <li xml:lang="pt-BR">Correção da determinação do país de partida para alterações de localização.</li>
           <li>Fix erroneous merging of train trips with the same line on the same day.</li>
+          <li xml:lang="pt-BR">Correção da mesclagem incorreta de viagens de trem da mesma linha no mesmo dia.</li>
           <li>Fix parsing of OTP rental vehicle information.</li>
+          <li xml:lang="pt-BR">Correção da análise das informações de aluguel de veículos com código OTP.</li>
           <li>Apply timezone information correctly to flight reservations with incomplete time information.</li>
+          <li xml:lang="pt-BR">Aplicar corretamente as informações de fuso horário às reservas de voo com informações de horário incompletas.</li>
           <li>Improved data extraction for various providers.</li>
+          <li xml:lang="pt-BR">Extração de dados aprimorada para diversos fornecedores.</li>
         </ul>
       </description>
     </release>
@@ -1484,11 +1991,17 @@
       <description>
         <ul>
           <li>Add support for SMART Health Card (SHC) vaccination certificates.</li>
+          <li xml:lang="pt-BR">Adicionado suporte para certificados de vacinação do SMART Health Card (SHC).</li>
           <li>Don't trigger the connection warning when there is no previous arrival time.</li>
+          <li xml:lang="pt-BR">Não aciona o aviso de conexão quando não houver um horário de chegada anterior.</li>
           <li>Show correct number of attached documents for multi-traveller trips.</li>
+          <li xml:lang="pt-BR">Apresenta o número correto de documentos anexados para viagens com vários viajantes.</li>
           <li>Show escalators to/from intermediate floor levels correctly in the indoor map. </li>
+          <li xml:lang="pt-BR">Exibir corretamente as escadas rolantes de/para os andares intermediários no mapa interno.</li>
           <li>Fix rendering of Apple Wallet pass rich-text back fields.</li>
+          <li xml:lang="pt-BR">Corrigido o problema na renderização dos campos de texto formatado do Apple Wallet.</li>
           <li>Improved data extraction for SNCF, Accor, Feratel and onepagebooking.</li>
+          <li xml:lang="pt-BR">Extração de dados aprimorada para SNCF, Accor, Feratel e onepagebooking.</li>
         </ul>
       </description>
     </release>
@@ -1496,7 +2009,9 @@
       <description>
         <ul>
           <li>Properly import mail attachments shared from FairEmail.</li>
+          <li xml:lang="pt-BR">Importa corretamente os anexos de e-mail compartilhados do FairEmail.</li>
           <li>Improvements for importing data from Airdo, MÁV, Regionado, Ryanair and SNCF.</li>
+          <li xml:lang="pt-BR">Melhorias na importação de dados da Airdo, MÁV, Regionado, Ryanair e SNCF.</li>
         </ul>
       </description>
     </release>
@@ -1504,11 +2019,17 @@
       <description>
         <ul>
           <li>Health certificate manager for DIVOC and EU DGC vaccination, test and recovery certificates.</li>
+          <li xml:lang="pt-BR">Gestor de certificados de saúde para os certificados de vacinação, teste e recuperação DIVOC e DGC da UE.</li>
           <li>GPX import and export of favorite locations and GPX export of trips for Nextcloud Maps interoperability.</li>
+          <li xml:lang="pt-BR">Importação e exportação de GPX de locais favoritos e exportação de GPX de viagens para interoperabilidade com o Nextcloud Maps.</li>
           <li>Support for local German public transport operators INVG, RSAG, VRT and VSN.</li>
+          <li xml:lang="pt-BR">Suporte às empresas de transporte público locais alemãs INVG, RSAG, VRT e VSN.</li>
           <li>Improved travel document extractor.</li>
+          <li xml:lang="pt-BR">Extrator de documentos de viagem aprimorado.</li>
           <li>Various fixes to the page flow.</li>
+          <li xml:lang="pt-BR">Diversas correções no fluxo da página.</li>
           <li>Entire trip groups can now be deleted.</li>
+          <li xml:lang="pt-BR">Agora é possível excluir grupos de viagens inteiros.</li>
         </ul>
       </description>
     </release>
