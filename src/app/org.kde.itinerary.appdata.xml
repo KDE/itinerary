@@ -920,6 +920,7 @@
           <li xml:lang="ca">Restaura el calaix del menú global en el mode mòbil.</li>
           <li xml:lang="ca-valencia">Restaura el calaix del menú global en el mode mòbil.</li>
           <li xml:lang="es">Restauración del cajón de menú global en modo móvil.</li>
+          <li xml:lang="ka">მენიუს გლობალური პანელის აღდგენა მობილურ რეჟიმში.</li>
           <li xml:lang="pt-BR">Restaura a gaveta do menu global no modo móvel.</li>
           <li xml:lang="ru">Восстановлена поддержка глобального меню в мобильном режиме;</li>
           <li>Fix manual entrance of certain flight numbers.</li>
@@ -927,6 +928,7 @@
           <li xml:lang="ca">Corregeix l'entrada manual de determinats números de vol.</li>
           <li xml:lang="ca-valencia">Corregix l'entrada manual de determinats números de vol.</li>
           <li xml:lang="es">Se ha corregido la entrada manual de ciertos números de vuelo.</li>
+          <li xml:lang="ka">გასწორდა ფრენის გარკვეული ნომრების ხელით შეყვანა.</li>
           <li xml:lang="pt-BR">Corrigida a entrada manual de determinados números de voo.</li>
           <li xml:lang="ru">Исправлен ручной ввод некоторых номеров рейсов;</li>
           <li>Support SNCF TER passes.</li>
@@ -954,6 +956,7 @@
           <li xml:lang="ca">Corregeix una fallada en les màscares PDF referenciades però no existents (error 513945).</li>
           <li xml:lang="ca-valencia">Corregix una fallada en les màscares PDF referenciades però no existents (error 513945).</li>
           <li xml:lang="es">Se soluciona el fallo en las máscaras PDF referenciadas pero inexistentes (error 513945).</li>
+          <li xml:lang="ka">გასწორდა პროგრამის გათიშვა მითითებულ, მაგრამ არარსებულ PDF ნიღბებზე (bug 513945)</li>
           <li xml:lang="pt-BR">Corrigido o problema que causava o fechamento inesperado do programa em máscaras de PDF referenciadas, mas inexistentes (bug 513945).</li>
           <li xml:lang="ru">Исправлено аварийное завершение при ссылках на несуществующие маски PDF (ошибка 513945);</li>
           <li>Fixes for online post-processing reservations without geographic coordinates.</li>
@@ -961,6 +964,7 @@
           <li xml:lang="ca">Correccions per a reserves de postprocessament en línia sense coordenades geogràfiques.</li>
           <li xml:lang="ca-valencia">Correccions per a reserves de postprocessament en línia sense coordenades geogràfiques.</li>
           <li xml:lang="es">Correcciones para reservas de posprocesamiento en línea sin coordenadas geográficas.</li>
+          <li xml:lang="ka">გასწორდა ონლაინ პოსტ-პროცესინგის რეზერვაციები გეოგრაფიული კოორდინატების გარეშე.</li>
           <li xml:lang="pt-BR">Correções para reservas online pós-processadas sem coordenadas geográficas.</li>
           <li xml:lang="ru">Исправления для онлайн-постобработки бронирований без географических координат;</li>
           <li>Fixes for sort order corner cases in the timeline view.</li>
@@ -968,6 +972,7 @@
           <li xml:lang="ca">Corregeix els casos extrems d'ordenació a la vista de la línia de temps.</li>
           <li xml:lang="ca-valencia">Corregix els casos extrems d'ordenació a la vista de la línia de temps.</li>
           <li xml:lang="es">Se corrigen casos extremos de orden de clasificación en la vista de la línea de tiempo.</li>
+          <li xml:lang="ka">გასწორდა დალაგების მიმდევრობის იშვიათი შემთხვევები ქრონოლოგიურ ხედში.</li>
           <li xml:lang="pt-BR">Correções para casos extremos de ordenação na visualização da linha do tempo.</li>
           <li xml:lang="ru">Исправления крайних случаев порядка сортировки в представлении временной шкалы;</li>
         </ul>
@@ -981,6 +986,7 @@
           <li xml:lang="ca">Convertidor de divises integrat.</li>
           <li xml:lang="ca-valencia">Convertidor de divises integrat.</li>
           <li xml:lang="es">Conversor de divisas integrado.</li>
+          <li xml:lang="ka">ჩაშენებული ვალუტის გადამყვანი.</li>
           <li xml:lang="pt-BR">Conversor de moedas integrado.</li>
           <li xml:lang="ru">Встроенный конвертер валют;</li>
           <li>Journey searches starting from the current location.</li>
@@ -995,6 +1001,7 @@
           <li xml:lang="ca">IU de cerca de viatges simplificada.</li>
           <li xml:lang="ca-valencia">IU de busca de viatges simplificada.</li>
           <li xml:lang="es">Interfaz simplificada de búsqueda de viajes.</li>
+          <li xml:lang="ka">გამარტივდა მოგზაურობის ძებნის ინტერფეისი.</li>
           <li xml:lang="pt-BR">Interface de busca de trechos simplificada.</li>
           <li xml:lang="ru">Упрощённый интерфейс поиска маршрутов;</li>
           <li>Displaying altitude information in live status view.</li>
@@ -1021,12 +1028,14 @@
           <li xml:lang="ar">إصلاح مشكلات الأداء والتعليق في عرض نتائج البحث عن الرحلات.</li>
           <li xml:lang="ca">Corregeix problemes de rendiment i penjades amb la vista de resultats de cerca de viatges.</li>
           <li xml:lang="ca-valencia">Corregix problemes de rendiment i penjades amb la vista de resultats de busca de viatges.</li>
+          <li xml:lang="ka">გასწორდა წარმადობის პრობლემები და გაჭედვები მგზავრობის ძიების შედეგების ხედში.</li>
           <li xml:lang="pt-BR">Correção de problemas de desempenho e travamentos na visualização dos resultados da pesquisa de viagens.</li>
           <li xml:lang="ru">Исправлены проблемы с производительностью и зависания в представлении результатов поиска маршрутов;</li>
           <li>Fix parsing of ÖBB onboard speed data.</li>
           <li xml:lang="ar">إصلاح تحليل بيانات السرعة على متن قطارات ÖBB.</li>
           <li xml:lang="ca">Corregeix l'anàlisi de les dades de velocitat a bord de ÖBB.</li>
           <li xml:lang="ca-valencia">Corregix l'anàlisi de les dades de velocitat a bord de ÖBB.</li>
+          <li xml:lang="ka">გასწორდა ÖBB-ის ბორტზე არსებული სიჩქარის მონაცემების დამუშავება.</li>
           <li xml:lang="pt-BR">Correção da análise dos dados de velocidade a bordo da ÖBB.</li>
           <li xml:lang="ru">Исправлен анализ данных скорости ÖBB на борту;</li>
         </ul>
@@ -1053,12 +1062,14 @@
           <li xml:lang="ca">S'ha corregit l'anàlisi de certes variants de passis de l'Apple Wallet.</li>
           <li xml:lang="ca-valencia">S'ha corregit l'anàlisi de certes variants de passes d'Apple Wallet.</li>
           <li xml:lang="es">Se ha corregido el análisis de ciertas variantes de pases de Apple Wallet.</li>
+          <li xml:lang="ka">გასწორდა Apple Wallet-ის საშვების გარკვეული ვარიანტების დამუშავება.</li>
           <li xml:lang="pt-BR">Correção na análise de determinadas variantes dos passes do Apple Wallet.</li>
           <li xml:lang="ru">Исправлен анализ синтаксиса некоторых вариантов пропусков Apple Wallet;</li>
           <li>Fixed scaling artifacts in public transport line icons.</li>
           <li xml:lang="ar">أُصلحت عيوب التحجيم في أيقونات خطوط النقل العام.</li>
           <li xml:lang="ca">S'han corregit defectes d'escalat en les icones de línies de transport públic.</li>
           <li xml:lang="ca-valencia">S'han corregit defectes d'escalat en les icones de línies de transport públic.</li>
+          <li xml:lang="ka">გასწორდა მასშტაბირების არტეფაქტები საზოგადოებრივი ტრანსპორტის ხაზების ხატულებში.</li>
           <li xml:lang="pt-BR">Corrigidos problemas de escala nos ícones das linhas de transporte público.</li>
           <li xml:lang="ru">Исправлены артефакты масштабирования в значках линий общественного транспорта;</li>
           <li>Fixed parsing intermediate stops from Railteam.</li>
@@ -1066,6 +1077,7 @@
           <li xml:lang="ca">S'ha corregit l'anàlisi de les parades intermèdies de Railteam.</li>
           <li xml:lang="ca-valencia">S'ha corregit l'anàlisi de les parades intermèdies de Railteam.</li>
           <li xml:lang="es">Se ha corregido el análisis de paradas intermedias de Railteam.</li>
+          <li xml:lang="ka">გასწორდა Railteam-ის შუალედური გაჩერებების დამუშავება.</li>
           <li xml:lang="pt-BR">Correção na análise de paradas intermediárias do Railteam.</li>
           <li xml:lang="ru">Исправлен анализ промежуточных остановок от Railteam;</li>
         </ul>
@@ -1085,6 +1097,7 @@
           <li xml:lang="ar">تحديث أسعار صرف العملات بشكل صحيح.</li>
           <li xml:lang="ca">Actualitza correctament els tipus de canvi de divisa.</li>
           <li xml:lang="ca-valencia">Actualitza correctament els tipus de canvi de divisa.</li>
+          <li xml:lang="ka">ვალუტის გაცვლის კურსების სწორი განახლება.</li>
           <li xml:lang="pt-BR">Atualizar corretamente as taxas de câmbio.</li>
           <li xml:lang="ru">Корректное обновление курсов валют;</li>
           <li>Add support for result paging for LTG Link and Srbija Voz.</li>
@@ -1127,12 +1140,14 @@
           <li xml:lang="ar">بحث محسّن عن المواقع.</li>
           <li xml:lang="ca">Cerca d'ubicació millorada.</li>
           <li xml:lang="ca-valencia">Busca d'ubicació millorada.</li>
+          <li xml:lang="ka">გაუმჯობესდა მდებარეობის ძებნა.</li>
           <li xml:lang="pt-BR">Busca de localização aprimorada.</li>
           <li xml:lang="ru">Улучшенный поиск местоположений;</li>
           <li>OpenRailwayMap integration in the live status view.</li>
           <li xml:lang="ar">تكامل OpenRailwayMap في عرض الحالة المباشرة.</li>
           <li xml:lang="ca">Integració d'OpenRailwayMap a la vista d'estat en viu.</li>
           <li xml:lang="ca-valencia">Integració d'OpenRailwayMap a la vista d'estat en viu.</li>
+          <li xml:lang="ka">OpenRailwayMap-ის ინტეგრაცია ცოცხალი სტატუსის ხედში.</li>
           <li xml:lang="pt-BR">Integração do OpenRailwayMap na visualização de status em tempo real.</li>
           <li xml:lang="ru">Интеграция с OpenRailwayMap в представлении текущего статуса;</li>
         </ul>
@@ -1232,6 +1247,7 @@
           <li xml:lang="ar">إصلاح دعم واجهة برمجة تطبيقات ÖBB على المتن.</li>
           <li xml:lang="ca">Corregeix la implementació de l'API a bord de ÖBB.</li>
           <li xml:lang="ca-valencia">Corregix la implementació de l'API a bord de ÖBB.</li>
+          <li xml:lang="ka">გასწორდა ÖBB ბორტის API-ის მხარდაჭერა.</li>
           <li xml:lang="pt-BR">Correção do suporte à API integrada da ÖBB.</li>
           <li xml:lang="ru">Исправлена поддержка бортового API ÖBB;</li>
         </ul>
@@ -1250,12 +1266,14 @@
           <li xml:lang="ar">صفحة "بياناتي" جديدة.</li>
           <li xml:lang="ca">Pàgina nova «Les meves dades».</li>
           <li xml:lang="ca-valencia">Pàgina nova «Les meues dades».</li>
+          <li xml:lang="ka">ახალი გვერდი "ჩემი მონაცემები".</li>
           <li xml:lang="pt-BR">Nova página "Meus Dados".</li>
           <li xml:lang="ru">Новая страница «Мои данные»;</li>
           <li>Support imperial distance and temperature units.</li>
           <li xml:lang="ar">دعم وحدات المسافة ودرجة الحرارة الإمبراطورية.</li>
           <li xml:lang="ca">Implementa unitats imperials de distància i temperatura.</li>
           <li xml:lang="ca-valencia">Implementa unitats imperials de distància i temperatura.</li>
+          <li xml:lang="ka">იმპერიული მანძილისა და ტემპერატურის ერთეულების მხარდაჭერა.</li>
           <li xml:lang="pt-BR">Suporte a unidades imperiais de distância e temperatura.</li>
           <li xml:lang="ru">Поддержка имперских единиц расстояния и температуры;</li>
           <li>New or improved travel document extractor for Amtrak, Booking.com, Color Line, Eventbrite, Eventlook, Kolumbus ferries, Preemly, SNCF, Tootoot, UIC FCB v3, UK rail, Universe and VDV eTickets.</li>
@@ -1378,6 +1396,7 @@
           <li xml:lang="ar">عرض الخط الزمني الجديد لكل رحلة.</li>
           <li xml:lang="ca">Vista nova de la línia de temps per viatge.</li>
           <li xml:lang="ca-valencia">Vista nova de la línia de temps per viatge.</li>
+          <li xml:lang="ia">Nove vista de chronologia per-viage.</li>
           <li xml:lang="ka">ახალი დროის ხაზის ხედი თითოეული მოგზაურობისთვის.</li>
           <li xml:lang="nl">Nieuwe per reis tijdlijnweergave.</li>
           <li xml:lang="pt-BR">Nova visualização da linha do tempo por viagem.</li>
@@ -1387,12 +1406,14 @@
           <li xml:lang="ar">عرض خريطة الرحلة الجديد.</li>
           <li xml:lang="ca">Vista nova del mapa de viatge.</li>
           <li xml:lang="ca-valencia">Vista nova del mapa de viatge.</li>
+          <li xml:lang="ka">ახალი მოგზაურობის რუკის ხედი.</li>
           <li xml:lang="pt-BR">Nova visualização do mapa da viagem.</li>
           <li xml:lang="ru">Новый вид карты маршрута;</li>
           <li>New per-trip statistics.</li>
           <li xml:lang="ar">إحصاءات جديدة لكل رحلة.</li>
           <li xml:lang="ca">Estadístiques noves per viatge.</li>
           <li xml:lang="ca-valencia">Estadístiques noves per viatge.</li>
+          <li xml:lang="ka">ახალი სტატისტიკა თითოეული მოგზაურობისთვის.</li>
           <li xml:lang="pt-BR">Novas estatísticas por viagem.</li>
           <li xml:lang="ru">Новая статистика по поездкам;</li>
           <li>New or improved travel document extractor for Coloseum, Dimedis Fairmate, Droplabs, European Sleeper, Flixbus, Leo Express, SNCF.</li>
@@ -1814,6 +1835,7 @@
           <li xml:lang="ar">رندرة المزيد من تفاصيل المرافق على خريطة محطة القطار.</li>
           <li xml:lang="ca">Representa més detalls de serveis al mapa d'estació de tren.</li>
           <li xml:lang="ca-valencia">Representa més detalls de serveis al mapa d'estació de tren.</li>
+          <li xml:lang="ia">Render plus detalios sur servicios sur le mappa de station de traino</li>
           <li xml:lang="ka">მეტი კეთილმოწყობის დეტალების რენდერი რკინიგზის სადგურის რუკაზე.</li>
           <li xml:lang="nl">Toon meer details over de voorzieningen op de plattegrond van het treinstation.</li>
           <li xml:lang="pt-BR">Exibir mais detalhes sobre as comodidades no mapa da estação de trem.</li>
@@ -2156,6 +2178,7 @@
           <li xml:lang="ar">تحسين رندرة عناصر العوائق في خريطة محطة القطار.</li>
           <li xml:lang="ca">S'ha millora la representació d'obstacles en el mapa d'estació de tren.</li>
           <li xml:lang="ca-valencia">S'ha millora la representació d'obstacles en el mapa d'estació de tren.</li>
+          <li xml:lang="ia">Rendition meliorate de elementos de barriera sur le mappa de station de traino</li>
           <li xml:lang="ka">გაუმჯობესდა ბარიერის ელემენტების რენდერი რკინიგზის სადგურის რუკაზე.</li>
           <li xml:lang="nl">Verbeterde weergave van afscheidingselementen op de plattegrond van het treinstation.</li>
           <li xml:lang="pt-BR">Melhoria na renderização dos elementos de barreira no mapa da estação de trem.</li>
@@ -2330,6 +2353,7 @@
           <li xml:lang="ar">إصلاح التفاعل مع السلالم شبه الأفقية أو شبه العمودية على خريطة محطة القطار.</li>
           <li xml:lang="ca">Corregeix la interacció amb escales quasi horitzontals o quasi verticals en el mapa d'estació de tren.</li>
           <li xml:lang="ca-valencia">Corregix la interacció amb escales quasi horitzontals o quasi verticals en el mapa d'estació de tren.</li>
+          <li xml:lang="ia">Corrige interaction con scala quasi-horizontal o quasi-vertical  sur le mappa de station de traino</li>
           <li xml:lang="ka">გასწორდა ურთიერთქმედება თითქმის ჰორიზონტალურ, ან თითქმის ვერტიკალურ კიბეებთან რკინიგზის სადგურის რუკაზე.</li>
           <li xml:lang="nl">Corrigeer de interactie met bijna horizontale of bijna verticale trappen op de plattegrond van het treinstation.</li>
           <li xml:lang="pt-BR">Correção da interação com escadas quase horizontais ou quase verticais no mapa da estação de trem.</li>
@@ -2638,6 +2662,7 @@
           <li xml:lang="ar">أُصلحت مشكلات إعادة تجميع الهندسة في خريطة محطة القطار.</li>
           <li xml:lang="ca">Corregeix els problemes de reassemblatge de geometria en el mapa d'estació de tren.</li>
           <li xml:lang="ca-valencia">Corregix els problemes de reassemblatge de geometria en el mapa d'estació de tren.</li>
+          <li xml:lang="ia">Corrigite problemas de riassemblar de geometria in le mappa de station de traino.</li>
           <li xml:lang="ka">გასწორდა გეომეტრიის თავიდან აწყობის პრობლემები რკინიგზის სადგურის რუკაზე.</li>
           <li xml:lang="nl">Problemen met de geometrie in de plattegrond van het treinstation zijn opgelost.</li>
           <li xml:lang="pt-BR">Corrigidos problemas de remontagem geométrica no mapa da estação de trem.</li>
@@ -2910,6 +2935,7 @@
           <li xml:lang="ar">مدير الشهادات الصحية لشهادات التطعيم والاختبار والتعافي DIVOC و EU DGC.</li>
           <li xml:lang="ca">Gestor de certificats sanitaris per a certificats de vacunació, proves i recuperació de DIVOC i DGC de la UE.</li>
           <li xml:lang="ca-valencia">Gestor de certificats sanitaris per a certificats de vacunació, proves i recuperació de DIVOC i DGC de la UE.</li>
+          <li xml:lang="ia">Gestion de certificato de sanitate digital per vaccination de DIVOC e EU DGC, certificatos de test e recuperation.</li>
           <li xml:lang="ka">ციფრული ჯანმრთელობის სერტიფიკატის მართვა DIVOC-ის და EU DGC-ის ვაქცინაციისთვის, გამოკეთებისა და ტესტირების სერტიფიკატებისთვის.</li>
           <li xml:lang="nl">Beheerder van gezondheidscertificaten voor DIVOC- en EU DGC-vaccinatie-, test- en herstelcertificaten.</li>
           <li xml:lang="pt-BR">Gestor de certificados de saúde para os certificados de vacinação, teste e recuperação DIVOC e DGC da UE.</li>
