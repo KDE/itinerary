@@ -923,6 +923,7 @@
           <li xml:lang="pt-BR">Restaura a gaveta do menu global no modo móvel.</li>
           <li xml:lang="ru">Восстановлена поддержка глобального меню в мобильном режиме;</li>
           <li xml:lang="sl">Obnovi predal globalnega menija v mobilnem načinu.</li>
+          <li xml:lang="uk">Відновлено загальну ковзну панель меню у мобільному режимі.</li>
           <li>Fix manual entrance of certain flight numbers.</li>
           <li xml:lang="ar">إصلاح الإدخال اليدوي لبعض أرقام الرحلات الجوية.</li>
           <li xml:lang="ca">Corregeix l'entrada manual de determinats números de vol.</li>
@@ -931,6 +932,7 @@
           <li xml:lang="pt-BR">Corrigida a entrada manual de determinados números de voo.</li>
           <li xml:lang="ru">Исправлен ручной ввод некоторых номеров рейсов;</li>
           <li xml:lang="sl">Popravi ročni vnos nekaterih številk letov.</li>
+          <li xml:lang="uk">Виправлено введення вручну певних числових параметрів авіарейсів.</li>
           <li>Support SNCF TER passes.</li>
           <li xml:lang="ar">دعم تصاريح SNCF TER.</li>
           <li xml:lang="ca">Implementa els passis TER de SNCF.</li>
@@ -939,6 +941,7 @@
           <li xml:lang="pt-BR">Suporte a passes SNCF TER.</li>
           <li xml:lang="ru">Поддержка проездных SNCF TER;</li>
           <li xml:lang="sl">Podpora za vozovnice SNCF TER.</li>
+          <li xml:lang="uk">Підтримка пропусків SNCF TER.</li>
         </ul>
       </description>
     </release>
