@@ -29,6 +29,8 @@ FormCard.FormCardPage {
         suggestedName: root.controller.tripGroupName === "" ?
             TripGroupManager.guessNameForReservations(root.controller.selectedReservations) :
             root.controller.tripGroupName
+        suggestedNameIsAutomatic: root.controller.tripGroupName === ""
+            || TripGroupModel.intersectingTripGroups(root.controller.selectionBeginDateTime, root.controller.selectionEndDateTime).length > 0
     }
 
     FormCard.FormHeader {

@@ -26,6 +26,8 @@ FormCard.FormCard {
         if (!nameEdit.nameEdited)
             nameEdit.text = root.suggestedName;
     }
+    /** User-provided names have priority. */
+    property bool suggestedNameIsAutomatic: true
 
     /** Chosen name for a new trip group. */
     readonly property alias name: nameEdit.text
@@ -45,6 +47,7 @@ FormCard.FormCard {
         tripGroupSelector.setDefaultSelection();
     }
 
+
     /** @c false if this has invalid input the user still has to fix. */
     readonly property bool isValidInput: (root.mode === TripGroupSelectorCard.Mode.Create && root.name !== "")
         || (root.mode === TripGroupSelectorCard.Mode.Add && tripGroupSelector.currentIndex >= 0)
@@ -52,9 +55,13 @@ FormCard.FormCard {
     FormCard.FormRadioSelectorDelegate {
         id: newOrAddSelector
 
-        selectedIndex: root.tripGroupCandidates.length === 1
-            || TripGroupModel.emptyTripGroups().length > 0
-            || ApplicationController.contextTripGroupId !== "" ? 1 : 0
+        selectedIndex: {
+            if (root.suggestedName.length > 0 && !root.suggestedNameIsAutomatic)
+                return 0;
+            return root.tripGroupCandidates.length === 1
+                || TripGroupModel.emptyTripGroups().length > 0
+                || ApplicationController.contextTripGroupId !== "" ? 1 : 0
+        }
 
         consistentWidth: true
 
