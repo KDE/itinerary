@@ -68,7 +68,7 @@ QString DownloadJob::errorMessage() const
 
 bool DownloadJob::handleOsmUrl(const QUrl &url, QNetworkAccessManager *nam)
 {
-    if (url.host() != "www.openstreetmap.org"_L1) {
+    if (url.host() != "www.openstreetmap.org"_L1 && url.host() != "osm.org"_L1) {
         return false;
     }
 
