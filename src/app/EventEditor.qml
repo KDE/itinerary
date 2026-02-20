@@ -81,7 +81,15 @@ EditorPage {
                 obj: reservation.reservationFor
                 propertyName: "doorTime"
                 initialValue: {
-                    let d = isNaN(startDateEdit.value) ? new Date() : new Date(startDateEdit.value);
+                    if (isNaN(startDateEdit.value)) {
+                        let d = new Date();
+                        d.setMilliseconds(0);
+                        d.setSeconds(0);
+                        d.setMinutes(0);
+                        d.setHours(d.getHours() + 1);
+                        return d;
+                    }
+                    let d = new Date(startDateEdit.value);
                     d.setHours(d.getHours() - 2);
                     return d;
                 }
