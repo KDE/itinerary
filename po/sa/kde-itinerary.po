@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-06 00:45+0000\n"
+"POT-Creation-Date: 2026-02-21 00:45+0000\n"
 "PO-Revision-Date: 2025-03-02 14:47+0530\n"
 "Last-Translator: Shreekant Kalwar <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -882,7 +882,7 @@ msgstr "दूरभाषः"
 msgid "Email"
 msgstr "ईमेल"
 
-#: app/ContactCard.qml:47 app/ContactEditorCard.qml:51 app/EventEditor.qml:125
+#: app/ContactCard.qml:47 app/ContactEditorCard.qml:51 app/EventEditor.qml:133
 #: app/EventPage.qml:91
 #, kde-format
 msgid "Website"
@@ -1065,37 +1065,37 @@ msgctxt "time of entrance"
 msgid "Entrance"
 msgstr "प्रवेश"
 
-#: app/EventEditor.qml:91
+#: app/EventEditor.qml:99
 #, kde-format
 msgid "Entrance time has to be before the start time."
 msgstr "प्रवेशसमयः आरम्भसमयात् पूर्वं भवितुमर्हति।"
 
-#: app/EventEditor.qml:98 app/EventPage.qml:76 app/RestaurantEditor.qml:97
+#: app/EventEditor.qml:106 app/EventPage.qml:76 app/RestaurantEditor.qml:97
 #, kde-format
 msgid "Start Time"
 msgstr "प्रारम्भ समय"
 
-#: app/EventEditor.qml:102 app/RestaurantEditor.qml:101
+#: app/EventEditor.qml:110 app/RestaurantEditor.qml:101
 #, kde-format
 msgid "Start time has to be set."
 msgstr "आरम्भसमयः निर्धारितव्यः भवति।"
 
-#: app/EventEditor.qml:107 app/EventPage.qml:84 app/RestaurantEditor.qml:108
+#: app/EventEditor.qml:115 app/EventPage.qml:84 app/RestaurantEditor.qml:108
 #, kde-format
 msgid "End Time"
 msgstr "समाप्तिकालः"
 
-#: app/EventEditor.qml:118 app/RestaurantEditor.qml:119
+#: app/EventEditor.qml:126 app/RestaurantEditor.qml:119
 #, kde-format
 msgid "End time has to be after the start time."
 msgstr "अन्त्यसमयः आरम्भसमयस्य अनन्तरं भवितुम् अर्हति ।"
 
-#: app/EventEditor.qml:132
+#: app/EventEditor.qml:140
 #, kde-format
 msgid "Venue"
 msgstr "स्थान"
 
-#: app/EventEditor.qml:138
+#: app/EventEditor.qml:146
 #, kde-format
 msgctxt "venue name"
 msgid "Name"
@@ -2143,13 +2143,13 @@ msgctxt "@title"
 msgid "Import"
 msgstr "आयात"
 
-#: app/ImportPage.qml:35
+#: app/ImportPage.qml:37
 #, kde-format
 msgctxt "@title:group"
 msgid "Items to Import"
 msgstr "आयातार्थं वस्तूनि"
 
-#: app/ImportPage.qml:74
+#: app/ImportPage.qml:76
 #, kde-format
 msgctxt "@action:button"
 msgid "Import selection"
@@ -4661,7 +4661,7 @@ msgid "Edit Trip"
 msgstr "यात्रा सम्पादयतु"
 
 #: app/TripGroupEditorDialog.qml:24 app/TripGroupMergeDialog.qml:56
-#: app/TripGroupSelectorCard.qml:77
+#: app/TripGroupSelectorCard.qml:84
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Trip name:"
@@ -4905,27 +4905,27 @@ msgctxt "@action:button"
 msgid "Add trip"
 msgstr "यात्रां योजयन्तु"
 
-#: app/TripGroupSelectorCard.qml:63 app/TripGroupSelectorDialog.qml:51
+#: app/TripGroupSelectorCard.qml:70 app/TripGroupSelectorDialog.qml:51
 #, kde-format
 msgid "New Trip"
 msgstr "नवीन यात्रा"
 
-#: app/TripGroupSelectorCard.qml:66
+#: app/TripGroupSelectorCard.qml:73
 #, kde-format
 msgid "Add to Trip"
 msgstr "ट्रिप् इत्यत्र योजयतु"
 
-#: app/TripGroupSelectorCard.qml:83
+#: app/TripGroupSelectorCard.qml:90
 #, kde-format
 msgid "Trip name must not be empty."
 msgstr "यात्रानाम रिक्तं न भवितुमर्हति।"
 
-#: app/TripGroupSelectorCard.qml:88
+#: app/TripGroupSelectorCard.qml:95
 #, kde-format
 msgid "Add to:"
 msgstr "योजयतु :"
 
-#: app/TripGroupSelectorCard.qml:115
+#: app/TripGroupSelectorCard.qml:122
 #, kde-format
 msgid "A trip must be selected."
 msgstr "यात्रायाः चयनं करणीयम्।"

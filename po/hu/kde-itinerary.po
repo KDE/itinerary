@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-06 00:45+0000\n"
+"POT-Creation-Date: 2026-02-21 00:45+0000\n"
 "PO-Revision-Date: 2024-03-26 16:14+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -898,7 +898,7 @@ msgstr "Telfonszám"
 msgid "Email"
 msgstr "E-mail"
 
-#: app/ContactCard.qml:47 app/ContactEditorCard.qml:51 app/EventEditor.qml:125
+#: app/ContactCard.qml:47 app/ContactEditorCard.qml:51 app/EventEditor.qml:133
 #: app/EventPage.qml:91
 #, kde-format
 msgid "Website"
@@ -1088,37 +1088,37 @@ msgctxt "time of entrance"
 msgid "Entrance"
 msgstr "Belépés"
 
-#: app/EventEditor.qml:91
+#: app/EventEditor.qml:99
 #, kde-format
 msgid "Entrance time has to be before the start time."
 msgstr "A belépési időnek a kezdési idő előtt kell lennie."
 
-#: app/EventEditor.qml:98 app/EventPage.qml:76 app/RestaurantEditor.qml:97
+#: app/EventEditor.qml:106 app/EventPage.qml:76 app/RestaurantEditor.qml:97
 #, kde-format
 msgid "Start Time"
 msgstr "Kezdési idő"
 
-#: app/EventEditor.qml:102 app/RestaurantEditor.qml:101
+#: app/EventEditor.qml:110 app/RestaurantEditor.qml:101
 #, kde-format
 msgid "Start time has to be set."
 msgstr "A kezdési időt be kell állítani."
 
-#: app/EventEditor.qml:107 app/EventPage.qml:84 app/RestaurantEditor.qml:108
+#: app/EventEditor.qml:115 app/EventPage.qml:84 app/RestaurantEditor.qml:108
 #, kde-format
 msgid "End Time"
 msgstr "Befejezési idő"
 
-#: app/EventEditor.qml:118 app/RestaurantEditor.qml:119
+#: app/EventEditor.qml:126 app/RestaurantEditor.qml:119
 #, kde-format
 msgid "End time has to be after the start time."
 msgstr "A befejezési időnek a kezdési idő után kell lennie."
 
-#: app/EventEditor.qml:132
+#: app/EventEditor.qml:140
 #, kde-format
 msgid "Venue"
 msgstr "Helyszín"
 
-#: app/EventEditor.qml:138
+#: app/EventEditor.qml:146
 #, kde-format
 msgctxt "venue name"
 msgid "Name"
@@ -2189,14 +2189,14 @@ msgctxt "@title"
 msgid "Import"
 msgstr "Importálás…"
 
-#: app/ImportPage.qml:35
+#: app/ImportPage.qml:37
 #, fuzzy, kde-format
 #| msgid "Files or URLs to import."
 msgctxt "@title:group"
 msgid "Items to Import"
 msgstr "Importálandó fájlok vagy URL-ek."
 
-#: app/ImportPage.qml:74
+#: app/ImportPage.qml:76
 #, fuzzy, kde-format
 #| msgid "Import Reservation"
 msgctxt "@action:button"
@@ -4726,7 +4726,7 @@ msgid "Edit Trip"
 msgstr "Hajókirándulás szerkesztése"
 
 #: app/TripGroupEditorDialog.qml:24 app/TripGroupMergeDialog.qml:56
-#: app/TripGroupSelectorCard.qml:77
+#: app/TripGroupSelectorCard.qml:84
 #, fuzzy, kde-format
 #| msgid "Ticket name"
 msgctxt "@label:textbox"
@@ -4986,30 +4986,30 @@ msgctxt "@action:button"
 msgid "Add trip"
 msgstr ""
 
-#: app/TripGroupSelectorCard.qml:63 app/TripGroupSelectorDialog.qml:51
+#: app/TripGroupSelectorCard.qml:70 app/TripGroupSelectorDialog.qml:51
 #, fuzzy, kde-format
 #| msgid "Delete Trip"
 msgid "New Trip"
 msgstr "Kirándulás törlése"
 
-#: app/TripGroupSelectorCard.qml:66
+#: app/TripGroupSelectorCard.qml:73
 #, fuzzy, kde-format
 #| msgid "Edit Boat Trip"
 msgid "Add to Trip"
 msgstr "Hajókirándulás szerkesztése"
 
-#: app/TripGroupSelectorCard.qml:83
+#: app/TripGroupSelectorCard.qml:90
 #, fuzzy, kde-format
 #| msgid "Ticket name must not be empty."
 msgid "Trip name must not be empty."
 msgstr "A jegy neve nem lehet üres."
 
-#: app/TripGroupSelectorCard.qml:88
+#: app/TripGroupSelectorCard.qml:95
 #, kde-format
 msgid "Add to:"
 msgstr ""
 
-#: app/TripGroupSelectorCard.qml:115
+#: app/TripGroupSelectorCard.qml:122
 #, kde-format
 msgid "A trip must be selected."
 msgstr ""

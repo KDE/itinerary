@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-06 00:45+0000\n"
+"POT-Creation-Date: 2026-02-21 00:45+0000\n"
 "PO-Revision-Date: 2026-02-04 00:38+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -844,7 +844,7 @@ msgstr "전화"
 msgid "Email"
 msgstr "이메일"
 
-#: app/ContactCard.qml:47 app/ContactEditorCard.qml:51 app/EventEditor.qml:125
+#: app/ContactCard.qml:47 app/ContactEditorCard.qml:51 app/EventEditor.qml:133
 #: app/EventPage.qml:91
 #, kde-format
 msgid "Website"
@@ -1024,37 +1024,37 @@ msgctxt "time of entrance"
 msgid "Entrance"
 msgstr "입장"
 
-#: app/EventEditor.qml:91
+#: app/EventEditor.qml:99
 #, kde-format
 msgid "Entrance time has to be before the start time."
 msgstr "입장 시간은 시작 시간 이전이어야 합니다."
 
-#: app/EventEditor.qml:98 app/EventPage.qml:76 app/RestaurantEditor.qml:97
+#: app/EventEditor.qml:106 app/EventPage.qml:76 app/RestaurantEditor.qml:97
 #, kde-format
 msgid "Start Time"
 msgstr "시작 시간"
 
-#: app/EventEditor.qml:102 app/RestaurantEditor.qml:101
+#: app/EventEditor.qml:110 app/RestaurantEditor.qml:101
 #, kde-format
 msgid "Start time has to be set."
 msgstr "시작 시간을 설정해야 합니다."
 
-#: app/EventEditor.qml:107 app/EventPage.qml:84 app/RestaurantEditor.qml:108
+#: app/EventEditor.qml:115 app/EventPage.qml:84 app/RestaurantEditor.qml:108
 #, kde-format
 msgid "End Time"
 msgstr "종료 시간"
 
-#: app/EventEditor.qml:118 app/RestaurantEditor.qml:119
+#: app/EventEditor.qml:126 app/RestaurantEditor.qml:119
 #, kde-format
 msgid "End time has to be after the start time."
 msgstr "종료 시간은 시작 시간 이후여야 합니다."
 
-#: app/EventEditor.qml:132
+#: app/EventEditor.qml:140
 #, kde-format
 msgid "Venue"
 msgstr "장소"
 
-#: app/EventEditor.qml:138
+#: app/EventEditor.qml:146
 #, kde-format
 msgctxt "venue name"
 msgid "Name"
@@ -2063,13 +2063,13 @@ msgctxt "@title"
 msgid "Import"
 msgstr "가져오기"
 
-#: app/ImportPage.qml:35
+#: app/ImportPage.qml:37
 #, kde-format
 msgctxt "@title:group"
 msgid "Items to Import"
 msgstr "가져올 항목"
 
-#: app/ImportPage.qml:74
+#: app/ImportPage.qml:76
 #, kde-format
 msgctxt "@action:button"
 msgid "Import selection"
@@ -4531,7 +4531,7 @@ msgid "Edit Trip"
 msgstr "여정 편집"
 
 #: app/TripGroupEditorDialog.qml:24 app/TripGroupMergeDialog.qml:56
-#: app/TripGroupSelectorCard.qml:77
+#: app/TripGroupSelectorCard.qml:84
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Trip name:"
@@ -4761,27 +4761,27 @@ msgctxt "@action:button"
 msgid "Add trip"
 msgstr "여정 추가"
 
-#: app/TripGroupSelectorCard.qml:63 app/TripGroupSelectorDialog.qml:51
+#: app/TripGroupSelectorCard.qml:70 app/TripGroupSelectorDialog.qml:51
 #, kde-format
 msgid "New Trip"
 msgstr "새 여정"
 
-#: app/TripGroupSelectorCard.qml:66
+#: app/TripGroupSelectorCard.qml:73
 #, kde-format
 msgid "Add to Trip"
 msgstr "여정에 추가"
 
-#: app/TripGroupSelectorCard.qml:83
+#: app/TripGroupSelectorCard.qml:90
 #, kde-format
 msgid "Trip name must not be empty."
 msgstr "여정 이름이 비어 있으면 안 됩니다."
 
-#: app/TripGroupSelectorCard.qml:88
+#: app/TripGroupSelectorCard.qml:95
 #, kde-format
 msgid "Add to:"
 msgstr "다음에 추가:"
 
-#: app/TripGroupSelectorCard.qml:115
+#: app/TripGroupSelectorCard.qml:122
 #, kde-format
 msgid "A trip must be selected."
 msgstr "여정을 선택해야 합니다."

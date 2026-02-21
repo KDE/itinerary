@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-06 00:45+0000\n"
+"POT-Creation-Date: 2026-02-21 00:45+0000\n"
 "PO-Revision-Date: 2024-11-28 16:26+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -888,7 +888,7 @@ msgstr "電話"
 msgid "Email"
 msgstr "電子郵件"
 
-#: app/ContactCard.qml:47 app/ContactEditorCard.qml:51 app/EventEditor.qml:125
+#: app/ContactCard.qml:47 app/ContactEditorCard.qml:51 app/EventEditor.qml:133
 #: app/EventPage.qml:91
 #, kde-format
 msgid "Website"
@@ -1073,37 +1073,37 @@ msgctxt "time of entrance"
 msgid "Entrance"
 msgstr "入場"
 
-#: app/EventEditor.qml:91
+#: app/EventEditor.qml:99
 #, kde-format
 msgid "Entrance time has to be before the start time."
 msgstr "入場時間必須在開始時間之前。"
 
-#: app/EventEditor.qml:98 app/EventPage.qml:76 app/RestaurantEditor.qml:97
+#: app/EventEditor.qml:106 app/EventPage.qml:76 app/RestaurantEditor.qml:97
 #, kde-format
 msgid "Start Time"
 msgstr "開始時間"
 
-#: app/EventEditor.qml:102 app/RestaurantEditor.qml:101
+#: app/EventEditor.qml:110 app/RestaurantEditor.qml:101
 #, kde-format
 msgid "Start time has to be set."
 msgstr "必須設定開始時間。"
 
-#: app/EventEditor.qml:107 app/EventPage.qml:84 app/RestaurantEditor.qml:108
+#: app/EventEditor.qml:115 app/EventPage.qml:84 app/RestaurantEditor.qml:108
 #, kde-format
 msgid "End Time"
 msgstr "結束時間"
 
-#: app/EventEditor.qml:118 app/RestaurantEditor.qml:119
+#: app/EventEditor.qml:126 app/RestaurantEditor.qml:119
 #, kde-format
 msgid "End time has to be after the start time."
 msgstr "結束時間必須在開始時間之後。"
 
-#: app/EventEditor.qml:132
+#: app/EventEditor.qml:140
 #, kde-format
 msgid "Venue"
 msgstr "場地"
 
-#: app/EventEditor.qml:138
+#: app/EventEditor.qml:146
 #, kde-format
 msgctxt "venue name"
 msgid "Name"
@@ -2158,14 +2158,14 @@ msgctxt "@title"
 msgid "Import"
 msgstr "匯入"
 
-#: app/ImportPage.qml:35
+#: app/ImportPage.qml:37
 #, fuzzy, kde-format
 #| msgid "Files or URLs to import."
 msgctxt "@title:group"
 msgid "Items to Import"
 msgstr "要匯入的檔案或網址。"
 
-#: app/ImportPage.qml:74
+#: app/ImportPage.qml:76
 #, kde-format
 msgctxt "@action:button"
 msgid "Import selection"
@@ -4677,7 +4677,7 @@ msgid "Edit Trip"
 msgstr "編輯旅程"
 
 #: app/TripGroupEditorDialog.qml:24 app/TripGroupMergeDialog.qml:56
-#: app/TripGroupSelectorCard.qml:77
+#: app/TripGroupSelectorCard.qml:84
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Trip name:"
@@ -4924,34 +4924,34 @@ msgctxt "@action:button"
 msgid "Add trip"
 msgstr "新增旅程"
 
-#: app/TripGroupSelectorCard.qml:63 app/TripGroupSelectorDialog.qml:51
+#: app/TripGroupSelectorCard.qml:70 app/TripGroupSelectorDialog.qml:51
 #, fuzzy, kde-format
 #| msgctxt "@title:group"
 #| msgid "Add New Trip"
 msgid "New Trip"
 msgstr "新增旅程"
 
-#: app/TripGroupSelectorCard.qml:66
+#: app/TripGroupSelectorCard.qml:73
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Add Trip"
 msgid "Add to Trip"
 msgstr "新增旅程"
 
-#: app/TripGroupSelectorCard.qml:83
+#: app/TripGroupSelectorCard.qml:90
 #, fuzzy, kde-format
 #| msgid "Ticket name must not be empty."
 msgid "Trip name must not be empty."
 msgstr "票券名稱不能是空白的。"
 
-#: app/TripGroupSelectorCard.qml:88
+#: app/TripGroupSelectorCard.qml:95
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Add trip"
 msgid "Add to:"
 msgstr "新增旅程"
 
-#: app/TripGroupSelectorCard.qml:115
+#: app/TripGroupSelectorCard.qml:122
 #, kde-format
 msgid "A trip must be selected."
 msgstr ""
