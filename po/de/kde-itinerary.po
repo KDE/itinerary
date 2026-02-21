@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-19 02:43+0000\n"
-"PO-Revision-Date: 2026-01-05 19:07+0100\n"
+"PO-Revision-Date: 2026-02-17 18:51+0100\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 25.12.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1186,7 +1186,7 @@ msgstr "Flug bearbeiten"
 #, kde-format
 msgctxt "flight departure"
 msgid "Departure - %1"
-msgstr "Abflug - %1"
+msgstr "Abflug – %1"
 
 #: app/FlightEditor.qml:93
 #, kde-format
@@ -1250,7 +1250,7 @@ msgstr "Boarding-Gruppe"
 #, kde-format
 msgctxt "flight arrival"
 msgid "Arrival - %1"
-msgstr "Ankunft - %1"
+msgstr "Ankunft – %1"
 
 #: app/FlightEditor.qml:162
 #, kde-format
@@ -3378,18 +3378,18 @@ msgstr "Suchen …"
 #, kde-format
 msgctxt "name - number"
 msgid "%1 - %2"
-msgstr "%1 - %2"
+msgstr "%1 – %2"
 
 #: app/PassDelegate.qml:44
 #, kde-format
 msgctxt "name - valid time range"
 msgid "%1 - %2"
-msgstr "%1 - %2"
+msgstr "%1 – %2"
 
 #: app/passmanager.cpp:289 app/TripGroupPage.qml:426
 #, kde-format
 msgid "%1 - %2"
-msgstr "%1 - %2"
+msgstr "%1 – %2"
 
 #: app/PassPage.qml:19
 #, kde-format
@@ -4480,7 +4480,7 @@ msgstr "Folgende Abfahrt um %1 von %2"
 #, kde-format
 msgctxt "date range"
 msgid "%1 - %2"
-msgstr "%1 - %2"
+msgstr "%1 – %2"
 
 #: app/TripGroupDelegate.qml:40
 #, kde-format
