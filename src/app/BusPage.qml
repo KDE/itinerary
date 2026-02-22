@@ -102,7 +102,7 @@ DetailsPage {
                 place: reservationFor.departureBusStop
                 controller: root.controller
                 isRangeBegin: true
-                visible: visible
+                visible: description
             }
 
             FormCard.FormDelegateSeparator { visible: departurePlatformDelegate.visible }
@@ -169,9 +169,10 @@ DetailsPage {
 
                 text: i18nc("bus station", "Station")
                 place: reservationFor.arrivalBusStop
+                description: reservationFor.arrivalBusStop.name
                 controller: root.controller
-                placeName: reservationFor.arrivalBusStop.name
                 isRangeEnd: true
+                visible: description
             }
 
             FormCard.FormDelegateSeparator { visible: arrivalPlatformDelegate.visible }
