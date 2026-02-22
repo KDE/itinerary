@@ -50,7 +50,7 @@ Kirigami.Page {
                 line.color: modelData.color
                 autoFadeIn: false
                 path: KPublicTransport.MapUtils.polyline(modelData.journeySection);
-                referenceSurface: modelData.journeySection.route.line.mode == KPublicTransport.Line.Air ? QtLocation.QtLocation.ReferenceSurface.Globe : QtLocation.QtLocation.ReferenceSurface.Map
+                referenceSurface: modelData.journeySection.route.line.mode == KPublicTransport.Line.Air && !applicationWindow().hasMapLibre ? QtLocation.QtLocation.ReferenceSurface.Globe : QtLocation.QtLocation.ReferenceSurface.Map
             }
         }
 
