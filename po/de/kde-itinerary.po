@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-21 00:45+0000\n"
+"POT-Creation-Date: 2026-02-24 00:45+0000\n"
 "PO-Revision-Date: 2026-02-17 18:51+0100\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -475,7 +475,7 @@ msgid "Terminal"
 msgstr "Terminal"
 
 #: app/BoatPage.qml:121 app/BoatPage.qml:157 app/BusPage.qml:158
-#: app/BusPage.qml:227 app/FlightPage.qml:208 app/FlightPage.qml:258
+#: app/BusPage.qml:228 app/FlightPage.qml:208 app/FlightPage.qml:258
 #: app/TrainPage.qml:188 app/TrainPage.qml:273
 #, kde-format
 msgid "Additional information"
@@ -486,13 +486,13 @@ msgstr "Zusätzliche Informationen"
 msgid "Arrival time"
 msgstr "Ankunftszeit"
 
-#: app/BoatPage.qml:182 app/BusPage.qml:272 app/FlightPage.qml:287
+#: app/BoatPage.qml:182 app/BusPage.qml:273 app/FlightPage.qml:287
 #: app/TrainPage.qml:354
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternativen"
 
-#: app/BoatPage.qml:190 app/BusPage.qml:277 app/JourneySectionPage.qml:27
+#: app/BoatPage.qml:190 app/BusPage.qml:278 app/JourneySectionPage.qml:27
 #: app/TrainPage.qml:360
 #, kde-format
 msgid "Journey Details"
@@ -717,7 +717,7 @@ msgctxt "bus stop"
 msgid "Stop"
 msgstr "Haltestelle"
 
-#: app/BusEditor.qml:326 app/BusEditor.qml:332 app/BusPage.qml:239
+#: app/BusEditor.qml:326 app/BusEditor.qml:332 app/BusPage.qml:240
 #, kde-format
 msgctxt "Bus seat"
 msgid "Seat"
@@ -745,7 +745,7 @@ msgctxt "bus station"
 msgid "Station"
 msgstr "Station"
 
-#: app/BusPage.qml:150 app/BusPage.qml:219
+#: app/BusPage.qml:150 app/BusPage.qml:220
 #, kde-format
 msgctxt "bus station platform"
 msgid "Platform"
