@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-19 02:43+0000\n"
+"POT-Creation-Date: 2026-02-28 02:45+0000\n"
 "PO-Revision-Date: 2025-11-13 13:46+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -460,7 +460,7 @@ msgid "Terminal"
 msgstr "Terminaali"
 
 #: app/BoatPage.qml:82 app/BoatPage.qml:118 app/BusPage.qml:120
-#: app/BusPage.qml:189 app/FlightPage.qml:168 app/FlightPage.qml:218
+#: app/BusPage.qml:190 app/FlightPage.qml:168 app/FlightPage.qml:218
 #: app/TrainPage.qml:183 app/TrainPage.qml:267
 #, kde-format
 msgid "Additional information"
@@ -471,13 +471,13 @@ msgstr "Lisätietoa"
 msgid "Arrival time"
 msgstr "Tuloaika:"
 
-#: app/BoatPage.qml:142 app/BusPage.qml:233 app/FlightPage.qml:246
+#: app/BoatPage.qml:142 app/BusPage.qml:234 app/FlightPage.qml:246
 #: app/TrainPage.qml:347
 #, kde-format
 msgid "Alternatives"
 msgstr "Vaihtoehdot"
 
-#: app/BoatPage.qml:150 app/BusPage.qml:238 app/JourneySectionPage.qml:27
+#: app/BoatPage.qml:150 app/BusPage.qml:239 app/JourneySectionPage.qml:27
 #: app/TrainPage.qml:353
 #, kde-format
 msgid "Journey Details"
@@ -690,7 +690,7 @@ msgctxt "bus stop"
 msgid "Stop"
 msgstr "Pysäkki"
 
-#: app/BusEditor.qml:326 app/BusEditor.qml:332 app/BusPage.qml:201
+#: app/BusEditor.qml:326 app/BusEditor.qml:332 app/BusPage.qml:202
 #, kde-format
 msgctxt "Bus seat"
 msgid "Seat"
@@ -718,7 +718,7 @@ msgctxt "bus station"
 msgid "Station"
 msgstr "Pysäkki"
 
-#: app/BusPage.qml:112 app/BusPage.qml:181
+#: app/BusPage.qml:112 app/BusPage.qml:182
 #, kde-format
 msgctxt "bus station platform"
 msgid "Platform"
@@ -819,7 +819,7 @@ msgstr "Puhelin"
 msgid "Email"
 msgstr "Sähköposti"
 
-#: app/ContactCard.qml:47 app/ContactEditorCard.qml:51 app/EventEditor.qml:125
+#: app/ContactCard.qml:47 app/ContactEditorCard.qml:51 app/EventEditor.qml:133
 #: app/EventPage.qml:91
 #, kde-format
 msgid "Website"
@@ -988,37 +988,37 @@ msgctxt "time of entrance"
 msgid "Entrance"
 msgstr "Sisääntulo"
 
-#: app/EventEditor.qml:91
+#: app/EventEditor.qml:99
 #, kde-format
 msgid "Entrance time has to be before the start time."
 msgstr "Sisäänpääsyajan on oltava ennen aloitusaikaa."
 
-#: app/EventEditor.qml:98 app/EventPage.qml:76 app/RestaurantEditor.qml:97
+#: app/EventEditor.qml:106 app/EventPage.qml:76 app/RestaurantEditor.qml:97
 #, kde-format
 msgid "Start Time"
 msgstr "Aloitusaika"
 
-#: app/EventEditor.qml:102 app/RestaurantEditor.qml:101
+#: app/EventEditor.qml:110 app/RestaurantEditor.qml:101
 #, kde-format
 msgid "Start time has to be set."
 msgstr "Aloitusaika on asetettava."
 
-#: app/EventEditor.qml:107 app/EventPage.qml:84 app/RestaurantEditor.qml:108
+#: app/EventEditor.qml:115 app/EventPage.qml:84 app/RestaurantEditor.qml:108
 #, kde-format
 msgid "End Time"
 msgstr "Päättymisaika"
 
-#: app/EventEditor.qml:118 app/RestaurantEditor.qml:119
+#: app/EventEditor.qml:126 app/RestaurantEditor.qml:119
 #, kde-format
 msgid "End time has to be after the start time."
 msgstr "Päättymisajan tulee olla aloitusajan jälkeen."
 
-#: app/EventEditor.qml:132
+#: app/EventEditor.qml:140
 #, kde-format
 msgid "Venue"
 msgstr "Tapahtumapaikka"
 
-#: app/EventEditor.qml:138
+#: app/EventEditor.qml:146
 #, kde-format
 msgctxt "venue name"
 msgid "Name"
@@ -2019,13 +2019,13 @@ msgctxt "@title"
 msgid "Import"
 msgstr "Tuo"
 
-#: app/ImportPage.qml:35
+#: app/ImportPage.qml:37
 #, kde-format
 msgctxt "@title:group"
 msgid "Items to Import"
 msgstr "Mitä tuodaan"
 
-#: app/ImportPage.qml:74
+#: app/ImportPage.qml:76
 #, kde-format
 msgctxt "@action:button"
 msgid "Import selection"
@@ -4471,7 +4471,7 @@ msgid "Edit Trip"
 msgstr "Muokkaa matkaa"
 
 #: app/TripGroupEditorDialog.qml:24 app/TripGroupMergeDialog.qml:56
-#: app/TripGroupSelectorCard.qml:77
+#: app/TripGroupSelectorCard.qml:84
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Trip name:"
@@ -4680,27 +4680,27 @@ msgctxt "@action:button"
 msgid "Add trip"
 msgstr "Lisää matka"
 
-#: app/TripGroupSelectorCard.qml:63 app/TripGroupSelectorDialog.qml:51
+#: app/TripGroupSelectorCard.qml:70 app/TripGroupSelectorDialog.qml:51
 #, kde-format
 msgid "New Trip"
 msgstr "Uusi matka"
 
-#: app/TripGroupSelectorCard.qml:66
+#: app/TripGroupSelectorCard.qml:73
 #, kde-format
 msgid "Add to Trip"
 msgstr "Lisää matkaan"
 
-#: app/TripGroupSelectorCard.qml:83
+#: app/TripGroupSelectorCard.qml:90
 #, kde-format
 msgid "Trip name must not be empty."
 msgstr "Matkan nimi ei voi olla tyhjä."
 
-#: app/TripGroupSelectorCard.qml:88
+#: app/TripGroupSelectorCard.qml:95
 #, kde-format
 msgid "Add to:"
 msgstr "Lisää:"
 
-#: app/TripGroupSelectorCard.qml:115
+#: app/TripGroupSelectorCard.qml:122
 #, kde-format
 msgid "A trip must be selected."
 msgstr "Matka on valittava."
