@@ -1492,6 +1492,7 @@
           <li xml:lang="ar">السماح بإضافة انتقالات في حالات أكثر.</li>
           <li xml:lang="ca">Permet afegir transferències en més casos.</li>
           <li xml:lang="ca-valencia">Permet afegir transferències en més casos.</li>
+          <li xml:lang="fr">Permet d'ajouter des transferts dans davantage de cas.</li>
           <li xml:lang="it">Consente di aggiungere trasferimenti in più casi.</li>
           <li xml:lang="pt-BR">Permitir a adição de transferências em mais casos.</li>
           <li xml:lang="ru">Возможность добавления пересадок в большем количестве случаев;</li>
@@ -2133,6 +2134,7 @@
           <li xml:lang="ar">إصلاح الأذونات الواسعة بشكل غير ضروري على أندرويد.</li>
           <li xml:lang="ca">Corregeix els permisos innecessàriament amplis a l'Android.</li>
           <li xml:lang="ca-valencia">Corregix els permisos innecessàriament amplis a Android.</li>
+          <li xml:lang="es">Se han corregido los permisos innecesariamente amplios en Android.</li>
           <li xml:lang="it">Corregge autorizzazioni inutilmente ampie su Android.</li>
           <li xml:lang="pt-BR">Correção das permissões excessivamente amplas no Android.</li>
           <li xml:lang="ru">Исправлены излишне широкие разрешения в Android;</li>
@@ -2203,6 +2205,7 @@
           <li xml:lang="ar">أُضيفت مشاركة الموقع عبر Matrix.</li>
           <li xml:lang="ca">S'ha afegit la compartició d'ubicació a través de Matrix.</li>
           <li xml:lang="ca-valencia">S'ha afegit la compartició d'ubicació a través de Matrix.</li>
+          <li xml:lang="es">Se ha añadido la posibilidad de compartir la ubicación a través de Matrix.</li>
           <li xml:lang="fr">Ajout du partage d'emplacement grâce au réseau Matrix.</li>
           <li xml:lang="it">Aggiunta la condivisione della posizione tramite Matrix.</li>
           <li xml:lang="pt-BR">Adicionado o compartilhamento de localização através do Matrix.</li>
@@ -2228,6 +2231,7 @@
           <li xml:lang="ar">دعم واجهة برمجة تطبيقات جديد أو محسّن على المتن لـ Aegean Air و Deutsche Bahn و ÖBB.</li>
           <li xml:lang="ca">Implementació nova o millorada de l'API a bord per a Aegean Air, Deutsche Bahn i ÖBB.</li>
           <li xml:lang="ca-valencia">Implementació nova o millorada de l'API a bord per a Aegean Air, Deutsche Bahn i ÖBB.</li>
+          <li xml:lang="es">Compatibilidad con API de a bordo nueva o mejorada para Aegean Air, Deutsche Bahn y ÖBB.</li>
           <li xml:lang="it">Supporto API di imbarco nuovo o migliorato per Aegean Air, Deutsche Bahn e ÖBB.</li>
           <li xml:lang="pt-BR">Novo suporte ou melhorias na API de bordo para Aegean Air, Deutsche Bahn e ÖBB.</li>
           <li xml:lang="ru">Добавлена или улучшена поддержка бортового API для Aegean Air, Deutsche Bahn и ÖBB;</li>
@@ -2245,6 +2249,7 @@
           <li xml:lang="ar">أُضيف دعم لاستيراد فعاليات ActivityPub.</li>
           <li xml:lang="ca">S'ha afegit la implementació per importar esdeveniments d'ActivityPub.</li>
           <li xml:lang="ca-valencia">S'ha afegit la implementació per a importar esdeveniments d'ActivityPub.</li>
+          <li xml:lang="es">Compatibilidad para importar eventos de ActivityPub.</li>
           <li xml:lang="it">Aggiunto supporto per l'importazione di eventi ActivityPub.</li>
           <li xml:lang="pt-BR">Adicionada a possibilidade de importar eventos do ActivityPub.</li>
           <li xml:lang="ru">Добавлена поддержка импорта событий ActivityPub;</li>
@@ -2253,6 +2258,7 @@
           <li xml:lang="ar">أُضيف دعم لتحرير المزيد من تفاصيل الحجوزات والتذاكر.</li>
           <li xml:lang="ca">S'ha afegit la implementació per a editar molts més detalls de les reserves i bitllets.</li>
           <li xml:lang="ca-valencia">S'ha afegit la implementació per a editar molts més detalls de les reserves i bitllets.</li>
+          <li xml:lang="es">Compatibilidad para editar muchos más detalles de reservas y de billetes.</li>
           <li xml:lang="it">Aggiunto supporto per la modifica di molti più dettagli di prenotazione e biglietto.</li>
           <li xml:lang="pt-BR">Adicionada a possibilidade de editar muito mais detalhes de reservas e bilhetes.</li>
           <li xml:lang="ru">Добавлена возможность редактирования многих других деталей бронирования и билетов;</li>
@@ -2261,6 +2267,7 @@
           <li xml:lang="ar">يمكن الآن إرفاق المستندات بجميع التذاكر والحجوزات، وتُرفق آليًا في حالات أكثر.</li>
           <li xml:lang="ca">Els documents ara es poden adjuntar a tots els bitllets i reserves, i s'adjunten automàticament en més casos.</li>
           <li xml:lang="ca-valencia">Els documents ara es poden adjuntar a tots els bitllets i reserves, i s'adjunten automàticament en més casos.</li>
+          <li xml:lang="es">Ahora se pueden adjuntar documentos a todos los billetes y reservas, y muchos se adjuntan de forma automática.</li>
           <li xml:lang="it">Ora è possibile allegare documenti a tutti i biglietti e prenotazioni e in molti casi vengono allegati automaticamente.</li>
           <li xml:lang="pt-BR">Agora é possível anexar documentos a todos os bilhetes e reservas, e eles são anexados automaticamente em mais casos.</li>
           <li xml:lang="ru">К билетам и бронированиям теперь возможно прикреплять документы; в большинстве случаев они прикрепляются автоматически;</li>
@@ -2586,6 +2593,7 @@
           <li xml:lang="ar">واجهة مستخدم جديدة لصفحات تفاصيل الحجز.</li>
           <li xml:lang="ca">Nova interfície d'usuari per a les pàgines de detalls de reserves.</li>
           <li xml:lang="ca-valencia">Nova interfície d'usuari per a les pàgines de detalls de reserves.</li>
+          <li xml:lang="fr">Nouvelle interface utilisateur pour les pages de détails des réservations.</li>
           <li xml:lang="it">Nuova interfaccia utente per le pagine dei dettagli della prenotazione.</li>
           <li xml:lang="pt-BR">Nova interface de usuário para páginas de detalhes de reservas.</li>
           <li xml:lang="ru">Новый интерфейс для страниц сведений о бронировании;</li>
@@ -3099,6 +3107,7 @@
           <li xml:lang="ar">مستخرجات جديدة أو محسّنة لـ Renfe و SNCF و ÖBB و Spring Airlines و Peach Aviation.</li>
           <li xml:lang="ca">Extractors nous o millorats per a Renfe, SNCF, ÖBB, Spring Airlines, Peach Aviation.</li>
           <li xml:lang="ca-valencia">Extractors nous o millorats per a Renfe, SNCF, ÖBB, Spring Airlines, Peach Aviation.</li>
+          <li xml:lang="es">Extractores nuevos o mejorados para Renfe, SNCF, ÖBB, Spring Airlines, Peach Aviation.</li>
           <li xml:lang="it">Estrattori nuovi o migliorati per Renfe, SNCF, ÖBB, Spring Airlines, Peach Aviation.</li>
           <li xml:lang="pt-BR">Extratores novos ou aprimorados para Renfe, SNCF, ÖBB, Spring Airlines e Peach Aviation.</li>
           <li xml:lang="ru">Новые или улучшенные модули для извлечения данных из Renfe, SNCF, ÖBB, Spring Airlines, Peach Aviation;</li>
@@ -3115,6 +3124,8 @@
           <li xml:lang="ar">عرض العطلات الرسمية في الخط الزمني.</li>
           <li xml:lang="ca">Mostra els dies festius oficials a la línia de temps.</li>
           <li xml:lang="ca-valencia">Mostra els dies festius oficials en la línia de temps.</li>
+          <li xml:lang="es">Mostrar días festivos en la línea de tiempo.</li>
+          <li xml:lang="fr">Afficher les jours fériés dans la chronologie.</li>
           <li xml:lang="it">Mostra i giorni festivi nella linea temporale.</li>
           <li xml:lang="pt-BR">Exibir feriados nacionais na linha do tempo.</li>
           <li xml:lang="ru">Вывод государственных праздников на временной шкале;</li>
@@ -3123,6 +3134,7 @@
           <li xml:lang="ar">أُصلحت مشكلات تحجيم DPI العالي في عرض عربة القطار.</li>
           <li xml:lang="ca">Corregeix els problemes d'escalat amb PPP alt a la vista del vagó de tren.</li>
           <li xml:lang="ca-valencia">Corregix els problemes d'escalat amb PPP alt a la vista del vagó de tren.</li>
+          <li xml:lang="es">Se han corregido los problemas de escalado de alta DPI en la vista del coche del tren.</li>
           <li xml:lang="it">Risolti problemi di ridimensionamento DPI elevati nella visualizzazione della carrozza del treno.</li>
           <li xml:lang="pt-BR">Corrigidos problemas de dimensionamento em alta resolução (DPI) na visualização da cabine do trem.</li>
           <li xml:lang="ru">Исправлены проблемы с масштабированием на экранах с высоким DPI в представлении вагона поезда;</li>
@@ -3224,6 +3236,7 @@
           <li xml:lang="ar">إصلاح تموضع خريطة المحطة للعناصر التي لا تحتوي على بيانات مباشرة.</li>
           <li xml:lang="ca">Corregeix el posicionament del mapa d'estació per a elements sense dades en viu.</li>
           <li xml:lang="ca-valencia">Corregix el posicionament del mapa d'estació per a elements sense dades en viu.</li>
+          <li xml:lang="es">Corregir la posición en el mapa de la estación de elementos sin datos en vivo.</li>
           <li xml:lang="it">Corregge il posizionamento sulla mappa della stazione per gli elementi senza dati in tempo reale.</li>
           <li xml:lang="pt-BR">Corrigido o posicionamento no mapa da estação para elementos sem dados em tempo real.</li>
           <li xml:lang="ru">Исправлено позиционирование карты станции для элементов без текущих данных;</li>
@@ -3232,6 +3245,7 @@
           <li xml:lang="ar">تحسين استخراج مستندات السفر لـ Amtrak و VIA Rail.</li>
           <li xml:lang="ca">Millora de l'extracció de documents de viatge per a Amtrak i VIA Rail.</li>
           <li xml:lang="ca-valencia">Millora de l'extracció de documents de viatge per a Amtrak i VIA Rail.</li>
+          <li xml:lang="es">Extracción mejorada de documentos de viaje de Amtrak y VIA Rail.</li>
           <li xml:lang="it">Migliorata l'estrazione dei documenti di viaggio per Amtrak e VIA Rail.</li>
           <li xml:lang="pt-BR">Extração aprimorada de documentos de viagem para Amtrak e VIA Rail.</li>
           <li xml:lang="ru">Улучшено извлечение данных проездных документов для Amtrak и VIA Rail;</li>
@@ -3240,6 +3254,7 @@
           <li xml:lang="ar">دعم تنسيقات منصات Hafas البديلة.</li>
           <li xml:lang="ca">Implementa formats alternatius de la plataforma Hafas.</li>
           <li xml:lang="ca-valencia">Implementa formats alternatius de la plataforma Hafas.</li>
+          <li xml:lang="es">Compatibilidad con formatos alternativos de la plataforma Hafas.</li>
           <li xml:lang="it">Supporto per formati alternativi della piattaforma Hafas.</li>
           <li xml:lang="pt-BR">Suporte para formatos alternativos da plataforma Hafas.</li>
           <li xml:lang="ru">Поддержка альтернативных форматов платформы Hafas;</li>
@@ -3248,6 +3263,7 @@
           <li xml:lang="ar">تحسين تقييم ساعات العمل في خرائط المحطات.</li>
           <li xml:lang="ca">Millora de l'avaluació d'horaris d'obertura als mapes d'estacions.</li>
           <li xml:lang="ca-valencia">Millora de l'avaluació d'horaris d'obertura als mapes d'estacions.</li>
+          <li xml:lang="es">Mejora en la evaluación del horario de apertura en los mapas de estaciones.</li>
           <li xml:lang="it">Migliorata la valutazione degli orari di apertura nelle mappe delle stazioni.</li>
           <li xml:lang="pt-BR">Melhoria na avaliação dos horários de funcionamento nos mapas das estações.</li>
           <li xml:lang="ru">Улучшена оценка времени работы на картах станций;</li>
@@ -3262,6 +3278,7 @@
           <li xml:lang="ar">واجهة مستخدم جديدة للشهادات الصحية.</li>
           <li xml:lang="ca">Interfície d'usuari nova de certificat de salut.</li>
           <li xml:lang="ca-valencia">Interfície d'usuari nova de certificat de salut.</li>
+          <li xml:lang="es">Nueva interfaz para certificados sanitarios.</li>
           <li xml:lang="it">Nuova interfaccia utente del certificato sanitario.</li>
           <li xml:lang="pt-BR">Nova interface de usuário para certificado de saúde.</li>
           <li xml:lang="ru">Новый интерфейс пользователя для медицинских сертификатов;</li>
@@ -3278,6 +3295,7 @@
           <li xml:lang="ar">اختيار آلي أذكى للانتقالات.</li>
           <li xml:lang="ca">Selecció automàtica de transferència més intel·ligent.</li>
           <li xml:lang="ca-valencia">Selecció automàtica de transferència més intel·ligent.</li>
+          <li xml:lang="es">Selección automática de transferencia más inteligente.</li>
           <li xml:lang="fr">Sélection automatique de transfert plus intelligente.</li>
           <li xml:lang="it">Selezione automatica del trasferimento più intelligente.</li>
           <li xml:lang="pt-BR">Seleção automática de transferências mais inteligente.</li>
@@ -3295,6 +3313,7 @@
           <li xml:lang="ar">القدرة على تقصير رحلات القطار والحافلة.</li>
           <li xml:lang="ca">Capacitat per a escurçar els viatges en tren i autobús.</li>
           <li xml:lang="ca-valencia">Capacitat per a escurçar els viatges en tren i autobús.</li>
+          <li xml:lang="es">Capacidad de acortar los viajes en tren y autobús.</li>
           <li xml:lang="it">Possibilità di abbreviare i viaggi in treno e autobus.</li>
           <li xml:lang="pt-BR">Possibilidade de encurtar viagens de trem e ônibus.</li>
           <li xml:lang="ru">Возможность сокращать поездки на поезде и автобусе;</li>
@@ -3337,6 +3356,7 @@
           <li xml:lang="ar">أُصلح التكبير بالقرص في خرائط المحطات.</li>
           <li xml:lang="ca">S'ha corregit el zoom en pessigar als mapes d'estacions.</li>
           <li xml:lang="ca-valencia">S'ha corregit el zoom en pessigar als mapes d'estacions.</li>
+          <li xml:lang="es">Se ha corregido el problema de ampliación al pellizcar en los mapas de las estaciones.</li>
           <li xml:lang="fr">Correction du zoom par pincement sur les cartes des gares.</li>
           <li xml:lang="he">תקריב בצביטה על מפות התחנות השתפר.</li>
           <li xml:lang="it">Risolto il problema con lo zoom con pizzico sulle mappe delle stazioni.</li>
@@ -3347,6 +3367,8 @@
           <li xml:lang="ar">تحسين رندرة تصاريح Apple Wallet.</li>
           <li xml:lang="ca">S'ha millorat la renderització de passis d'Apple Wallet.</li>
           <li xml:lang="ca-valencia">S'ha millorat la renderització de passes d'Apple Wallet.</li>
+          <li xml:lang="es">Visualización mejorada de pases de Apple Wallet.</li>
+          <li xml:lang="fr">Rendu amélioré des abonnements dans Apple Wallet.</li>
           <li xml:lang="he">עיבוד אישורי מעבר מסוג Apple Wallet השתפר.</li>
           <li xml:lang="it">Miglioramento del rendering dei passaggi Apple Wallet.</li>
           <li xml:lang="pt-BR">Melhoria na renderização do passe do Apple Wallet.</li>
@@ -3356,6 +3378,7 @@
           <li xml:lang="ar">التحذير من مركبات التأجير ذات المدى المتبقي المحدود.</li>
           <li xml:lang="ca">Avisa sobre els vehicles de lloguer amb una autonomia restant limitada.</li>
           <li xml:lang="ca-valencia">Avisa sobre els vehicles de lloguer amb una autonomia restant limitada.</li>
+          <li xml:lang="es">Mostrar advertencia sobre vehículos de alquiler con autonomía restante limitada.</li>
           <li xml:lang="he">להזהיר בנוגע למכוניות שכורות עם טווח נותר מוגבל.</li>
           <li xml:lang="it">Avvisa sui veicoli a noleggio con autonomia rimanente limitata.</li>
           <li xml:lang="pt-BR">Alerta sobre veículos de aluguel com autonomia limitada.</li>
@@ -3365,6 +3388,7 @@
           <li xml:lang="ar">تحسينات عديدة على استخراج بيانات مستندات السفر.</li>
           <li xml:lang="ca">Nombroses millores en l'extracció de dades de documents de viatge.</li>
           <li xml:lang="ca-valencia">Nombroses millores en l'extracció de dades de documents de viatge.</li>
+          <li xml:lang="es">Numerosas mejoras en la extracción de datos de documentos de viaje.</li>
           <li xml:lang="he">מגוון שיפורים בחילוץ נתוני ממסמכי נסיעות.</li>
           <li xml:lang="it">Numerosi miglioramenti all'estrazione dei dati dei documenti di viaggio.</li>
           <li xml:lang="pt-BR">Inúmeras melhorias na extração de dados de documentos de viagem.</li>
@@ -3380,6 +3404,7 @@
           <li xml:lang="ar">إصلاح مشكلات حجم الأيقونات على شاشات DPI العالي.</li>
           <li xml:lang="ca">Corregeix els problemes de mida de les icones a les pantalles amb PPP alts.</li>
           <li xml:lang="ca-valencia">Corregix els problemes de mida de les icones a les pantalles amb PPP alts.</li>
+          <li xml:lang="es">Se han corregido los problemas del tamaño de los iconos en pantallas de alta densidad de puntos.</li>
           <li xml:lang="it">Risolve i problemi relativi alle dimensioni delle icone sugli schermi DPI elevati.</li>
           <li xml:lang="pt-BR">Correção de problemas de tamanho de ícones em telas de alto DPI.</li>
           <li xml:lang="ru">Исправлены проблемы с размером значков на экранах с высоким разрешением;</li>
@@ -3388,6 +3413,7 @@
           <li xml:lang="ar">إصلاح تحريك الخريطة الذي كان يؤدي لمغادرة صفحة منتقي الموقع المفضل.</li>
           <li xml:lang="ca">Corregeix la panoràmica de mapes deixant la pàgina preferida del selector d'ubicació.</li>
           <li xml:lang="ca-valencia">Corregix la panoràmica de mapes deixant la pàgina preferida del selector d'ubicació.</li>
+          <li xml:lang="es">Se ha corregido el problema de desplazamiento panorámico del mapa que sale de la página de selección de ubicación favorita.</li>
           <li xml:lang="it">Risolto il problema con la panoramica della mappa che lasciava la pagina di selezione della posizione preferita.</li>
           <li xml:lang="pt-BR">Corrigido o problema de deslocamento do mapa ao sair da página de seleção de locais favoritos.</li>
           <li xml:lang="ru">Исправлено перемещение карты, приводящее к выходу со страницы выбора избранного расположения;</li>
@@ -3396,6 +3422,7 @@
           <li xml:lang="ar">إصلاح تحديد بلد المغادرة لتغييرات المواقع.</li>
           <li xml:lang="ca">Corregeix la determinació del país de sortida per als canvis d'ubicació.</li>
           <li xml:lang="ca-valencia">Corregix la determinació del país d'eixida per als canvis d'ubicació.</li>
+          <li xml:lang="es">Se ha corregido la determinación del país de salida para los cambios de ubicación.</li>
           <li xml:lang="it">Corretta la determinazione del paese di partenza per i cambiamenti di posizione.</li>
           <li xml:lang="pt-BR">Correção da determinação do país de partida para alterações de localização.</li>
           <li xml:lang="ru">Исправлено определение страны отправления для изменений местоположения;</li>
@@ -3404,6 +3431,7 @@
           <li xml:lang="ar">إصلاح دمج رحلات القطار الخاطئ لنفس الخط في نفس اليوم.</li>
           <li xml:lang="ca">Corregeix la fusió errònia de viatges en tren amb la mateixa línia el mateix dia.</li>
           <li xml:lang="ca-valencia">Corregix la fusió errònia de viatges en tren amb la mateixa línia el mateix dia.</li>
+          <li xml:lang="es">Se ha corregido la fusión errónea de viajes de trenes con la misma línea en el mismo día.</li>
           <li xml:lang="it">Corretta l'errata fusione di viaggi in treno con la stessa linea nello stesso giorno.</li>
           <li xml:lang="pt-BR">Correção da mesclagem incorreta de viagens de trem da mesma linha no mesmo dia.</li>
           <li xml:lang="ru">Исправлено ошибочное объединение поездок на одном маршруте в один день;</li>
@@ -3412,6 +3440,7 @@
           <li xml:lang="ar">إصلاح تحليل معلومات مركبة تأجير OTP.</li>
           <li xml:lang="ca">Corregeix l'anàlisi de la informació OTP del vehicle de lloguer.</li>
           <li xml:lang="ca-valencia">Corregix l'anàlisi de la informació OTP del vehicle de lloguer.</li>
+          <li xml:lang="es">Se ha corregido el análisis de la información de vehículos de alquiler OTP.</li>
           <li xml:lang="it">Corretta l'analisi delle informazioni sul veicolo a noleggio OTP.</li>
           <li xml:lang="pt-BR">Correção da análise das informações de aluguel de veículos com código OTP.</li>
           <li xml:lang="ru">Исправлен анализ синтаксиса информации об аренде транспортных средств в OTP;</li>
@@ -3420,6 +3449,7 @@
           <li xml:lang="ar">تطبيق معلومات المنطقة الزمنية بشكل صحيح لحجوزات الطيران ذات معلومات الوقت غير المكتملة.</li>
           <li xml:lang="ca">Aplica correctament la informació del fus horari a les reserves de vol amb informació de temps incompleta.</li>
           <li xml:lang="ca-valencia">Aplica correctament la informació del fus horari a les reserves de vol amb informació de temps incompleta.</li>
+          <li xml:lang="es">Aplicar correctamente la información de zona horaria a las reservas de vuelos con información horaria incompleta.</li>
           <li xml:lang="it">Applica correttamente le informazioni sul fuso orario alle prenotazioni di voli con informazioni sull'orario incomplete.</li>
           <li xml:lang="pt-BR">Aplicar corretamente as informações de fuso horário às reservas de voo com informações de horário incompletas.</li>
           <li xml:lang="ru">Корректное применение информации о часовом поясе к бронированиям авиабилетов с неполными данными о времени;</li>
@@ -3428,6 +3458,7 @@
           <li xml:lang="ar">تحسين استخراج البيانات لمختلف المزودين.</li>
           <li xml:lang="ca">Millora de l'extracció de dades per a diversos proveïdors.</li>
           <li xml:lang="ca-valencia">Millora de l'extracció de dades per a diversos proveïdors.</li>
+          <li xml:lang="es">Se ha mejorado la extracción de datos para varios proveedores.</li>
           <li xml:lang="it">Estrazione dei dati migliorata per vari fornitori.</li>
           <li xml:lang="pt-BR">Extração de dados aprimorada para diversos fornecedores.</li>
           <li xml:lang="ru">Улучшено извлечение данных для различных поставщиков;</li>
@@ -3442,6 +3473,7 @@
           <li xml:lang="ar">إضافة دعم لشهادات تطعيم بطاقة الصحة الذكية (SHC).</li>
           <li xml:lang="ca">Afegeix el suport dels certificats de vacunació amb targeta sanitària intel·ligent (SHC).</li>
           <li xml:lang="ca-valencia">Afig el suport dels certificats de vacunació amb targeta sanitària intel·ligent (SHC).</li>
+          <li xml:lang="es">Compatibilidad con certificados de vacunación SMART Health Card (SHC).</li>
           <li xml:lang="it">Aggiunto il supporto per i certificati di vaccinazione SMART Health Card (SHC).</li>
           <li xml:lang="pt-BR">Adicionado suporte para certificados de vacinação do SMART Health Card (SHC).</li>
           <li xml:lang="ru">Добавлена поддержка сертификатов вакцинации SMART Health Card (SHC);</li>
@@ -3450,6 +3482,7 @@
           <li xml:lang="ar">عدم إطلاق تحذير الوصلة عندما لا يوجد وقت وصول سابق.</li>
           <li xml:lang="ca">No activa l'avís de connexió quan no hi ha una hora d'arribada anterior.</li>
           <li xml:lang="ca-valencia">No activa l'avís de connexió quan no hi ha una hora d'arribada anterior.</li>
+          <li xml:lang="es">No activar la advertencia de conexión cuando no haya una hora de llegada previa.</li>
           <li xml:lang="it">Non attiva l'avviso di connessione quando non è presente un orario di arrivo precedente.</li>
           <li xml:lang="pt-BR">Não aciona o aviso de conexão quando não houver um horário de chegada anterior.</li>
           <li xml:lang="ru">Не выводится предупреждение о соединении при отсутствии времени предыдущего прибытия;</li>
@@ -3458,6 +3491,7 @@
           <li xml:lang="ar">عرض العدد الصحيح للمستندات المرفقة للرحلات متعددة المسافرين.</li>
           <li xml:lang="ca">Mostra el nombre correcte de documents adjunts per a viatges multiviatger.</li>
           <li xml:lang="ca-valencia">Mostra el nombre correcte de documents adjunts per a viatges multiviatger.</li>
+          <li xml:lang="es">Mostrar el número correcto de documentos adjuntos para viajes multiviajero.</li>
           <li xml:lang="it">Mostra il numero corretto di documenti allegati per i viaggi con più viaggiatori.</li>
           <li xml:lang="pt-BR">Apresenta o número correto de documentos anexados para viagens com vários viajantes.</li>
           <li xml:lang="ru">Выводится верное количество прикреплённых документов для поездок с несколькими путешественниками;</li>
@@ -3466,6 +3500,7 @@
           <li xml:lang="ar">عرض السلالم المتحركة من وإلى مستويات الطوابق المتوسطة بشكل صحيح في الخريطة الداخلية.</li>
           <li xml:lang="ca">Mostra correctament les escales mecàniques a/des dels nivells de plantes intermèdies al mapa d'interior.</li>
           <li xml:lang="ca-valencia">Mostra correctament les escales mecàniques a/des dels nivells de plantes intermèdies al mapa d'interior.</li>
+          <li xml:lang="es">Mostrar correctamente las escaleras mecánicas hacia/desde niveles intermedios en el mapa de interiores.</li>
           <li xml:lang="it">Mostra correttamente le scale mobili da/verso i piani intermedi nella mappa degli interni.</li>
           <li xml:lang="pt-BR">Exibir corretamente as escadas rolantes de/para os andares intermediários no mapa interno.</li>
           <li xml:lang="ru">Правильное отображение эскалаторов промежуточных этажей на схеме помещений;</li>
@@ -3482,6 +3517,7 @@
           <li xml:lang="ar">تحسين استخراج البيانات لـ SNCF و Accor و Feratel و onepagebooking.</li>
           <li xml:lang="ca">Millora de l'extracció de dades per a SNCF, Accor, Feratel i onepagebooking.</li>
           <li xml:lang="ca-valencia">Millora de l'extracció de dades per a SNCF, Accor, Feratel i onepagebooking.</li>
+          <li xml:lang="es">Se ha mejorado la extracción de datos de SNCF, Accor, Feratel y onepagebooking.</li>
           <li xml:lang="it">Estrazione dei dati migliorata per SNCF, Accor, Feratel e onepagebooking.</li>
           <li xml:lang="pt-BR">Extração de dados aprimorada para SNCF, Accor, Feratel e onepagebooking.</li>
           <li xml:lang="ru">Улучшено извлечение данных для SNCF, Accor, Feratel и onepagebooking;</li>
@@ -3496,6 +3532,7 @@
           <li xml:lang="ar">استيراد مرفقات البريد المشتركة من FairEmail بشكل صحيح.</li>
           <li xml:lang="ca">Importa adequadament els adjunts de correu compartits des de FairEmail.</li>
           <li xml:lang="ca-valencia">Importa adequadament els adjunts de correu compartits des de FairEmail.</li>
+          <li xml:lang="es">Importación correcta de adjuntos de correo electrónico compartidos desde FairEmail.</li>
           <li xml:lang="it">Importa correttamente gli allegati di posta condivisi da FairEmail.</li>
           <li xml:lang="pt-BR">Importa corretamente os anexos de e-mail compartilhados do FairEmail.</li>
           <li xml:lang="ru">Правильный импорт вложений электронной почты, отправленных из FairEmail;</li>
@@ -3504,6 +3541,7 @@
           <li xml:lang="ar">تحسينات لاستيراد البيانات من Airdo و MÁV و Regionado و Ryanair و SNCF.</li>
           <li xml:lang="ca">Millores per a importar dades d'Airdo, MÁV, Regionado, Ryanair i SNCF.</li>
           <li xml:lang="ca-valencia">Millores per a importar dades d'Airdo, MÁV, Regionado, Ryanair i SNCF.</li>
+          <li xml:lang="es">Mejoras para la importación de datos de Airdo, MÁV, Regionado, Ryanair y SNCF.</li>
           <li xml:lang="it">Miglioramenti nell'importazione dei dati da Airdo, MÁV, Regionado, Ryanair e SNCF.</li>
           <li xml:lang="pt-BR">Melhorias na importação de dados da Airdo, MÁV, Regionado, Ryanair e SNCF.</li>
           <li xml:lang="ru">Улучшения импорта данных из Airdo, MÁV, Regionado, Ryanair и SNCF;</li>
@@ -3518,6 +3556,7 @@
           <li xml:lang="ar">مدير الشهادات الصحية لشهادات التطعيم والاختبار والتعافي DIVOC و EU DGC.</li>
           <li xml:lang="ca">Gestor de certificats sanitaris per a certificats de vacunació, proves i recuperació de DIVOC i DGC de la UE.</li>
           <li xml:lang="ca-valencia">Gestor de certificats sanitaris per a certificats de vacunació, proves i recuperació de DIVOC i DGC de la UE.</li>
+          <li xml:lang="es">Gestor de certificados sanitarios para DIVOC y vacunación EU DGC, pruebas y certificados de recuperación.</li>
           <li xml:lang="ia">Gestion de certificato de sanitate digital per vaccination de DIVOC e EU DGC, certificatos de test e recuperation.</li>
           <li xml:lang="it">Gestore dei certificati sanitari per i certificati di vaccinazione, test e recupero DIVOC e DGC UE.</li>
           <li xml:lang="nl">Beheerder van gezondheidscertificaten voor DIVOC- en EU DGC-vaccinatie-, test- en herstelcertificaten.</li>
@@ -3528,6 +3567,7 @@
           <li xml:lang="ar">استيراد وتصدير GPX للمواقع المفضلة وتصدير GPX للرحلات من أجل التوافق مع خرائط Nextcloud.</li>
           <li xml:lang="ca">Importació i exportació GPX d'ubicacions preferides i exportació GPX de viatges per a la interoperabilitat amb Nextcloud Maps.</li>
           <li xml:lang="ca-valencia">Importació i exportació GPX d'ubicacions preferides i exportació GPX de viatges per a la interoperabilitat amb Nextcloud Maps.</li>
+          <li xml:lang="es">Importación y exportación GPX de ubicaciones favoritas y exportación GPX de viajes para interoperabilidad con Nextcloud Maps.</li>
           <li xml:lang="it">Importazione ed esportazione GPX delle posizioni preferite ed esportazione GPX dei viaggi per l'interoperabilità di Nextcloud Maps.</li>
           <li xml:lang="pt-BR">Importação e exportação de GPX de locais favoritos e exportação de GPX de viagens para interoperabilidade com o Nextcloud Maps.</li>
           <li xml:lang="ru">Импорт и экспорт избранных мест в формате GPX, а также экспорт поездок в формате GPX для совместимости с Nextcloud Maps;</li>
@@ -3536,6 +3576,7 @@
           <li xml:lang="ar">دعم لمشغلي النقل العام المحليين في ألمانيا INVG و RSAG و VRT و VSN.</li>
           <li xml:lang="ca">Suport als operadors locals alemanys de transport públic INVG, RSAG, VRT i VSN.</li>
           <li xml:lang="ca-valencia">Suport als operadors locals alemanys de transport públic INVG, RSAG, VRT i VSN.</li>
+          <li xml:lang="es">Compatibilidad con los operadores de transporte público INVG, RSAG, VRT y VSN.</li>
           <li xml:lang="it">Supporto per gli operatori di trasporto pubblico locale tedesco INVG, RSAG, VRT e VSN.</li>
           <li xml:lang="pt-BR">Suporte às empresas de transporte público locais alemãs INVG, RSAG, VRT e VSN.</li>
           <li xml:lang="ru">Поддержка местных немецких операторов общественного транспорта INVG, RSAG, VRT и VSN;</li>
@@ -3544,6 +3585,7 @@
           <li xml:lang="ar">مستخرج مستندات سفر محسّن.</li>
           <li xml:lang="ca">Extractor millorat de documents de viatge.</li>
           <li xml:lang="ca-valencia">Extractor millorat de documents de viatge.</li>
+          <li xml:lang="es">Se ha mejorado el extractor de documentos de viaje.</li>
           <li xml:lang="fr">Amélioration de l'extracteur de documents de voyage.</li>
           <li xml:lang="it">Estrattore di documenti di viaggio migliorato.</li>
           <li xml:lang="pt-BR">Extrator de documentos de viagem aprimorado.</li>
@@ -3553,6 +3595,7 @@
           <li xml:lang="ar">إصلاحات متنوعة لتدفق الصفحات.</li>
           <li xml:lang="ca">Diverses correccions al flux de pàgines.</li>
           <li xml:lang="ca-valencia">Diverses correccions al flux de pàgines.</li>
+          <li xml:lang="es">Diversas correcciones para el flujo de la página.</li>
           <li xml:lang="fr">Différentes corrections sur le flux de la page.</li>
           <li xml:lang="it">Varie correzioni al flusso della pagina.</li>
           <li xml:lang="pt-BR">Diversas correções no fluxo da página.</li>
@@ -3562,6 +3605,7 @@
           <li xml:lang="ar">يمكن الآن حذف مجموعات الرحلات بالكامل.</li>
           <li xml:lang="ca">Els grups de viatge sencers ara es poden suprimir.</li>
           <li xml:lang="ca-valencia">Els grups de viatge sencers ara es poden suprimir.</li>
+          <li xml:lang="es">Ahora se pueden borrar grupos de viaje enteros.</li>
           <li xml:lang="it">Ora è possibile eliminare interi gruppi di viaggio.</li>
           <li xml:lang="pt-BR">Agora é possível excluir grupos de viagens inteiros.</li>
           <li xml:lang="ru">Теперь можно удалять целые группы поездок;</li>
