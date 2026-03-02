@@ -931,7 +931,16 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="25.12.3" date="2026-03-05"/>
+    <release version="25.12.3" date="2026-03-05">
+      <description>
+        <ul>
+          <li>Added or improved travel document extractors for booking.com FCM, FRS, Get Your Guide and Hotelworld.</li>
+          <li>Better default selection when importing entire trips.</li>
+          <li>Fixed computing end times for trips with nested events.</li>
+          <li>Improved routing results with Deutsche Bahn when starting from a favorite location.</li>
+        </ul>
+      </description>
+    </release>
     <release version="25.12.2" date="2026-02-05">
       <description>
         <ul>
