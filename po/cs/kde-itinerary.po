@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-24 00:45+0000\n"
-"PO-Revision-Date: 2026-02-27 22:29+0100\n"
+"PO-Revision-Date: 2026-02-27 22:30+0100\n"
 "Last-Translator:  Vít Pelčák <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -101,10 +101,9 @@ msgid "Export…"
 msgstr "Exportovat…"
 
 #: app/ActionsCard.qml:81
-#, fuzzy, kde-format
-#| msgid "Delete…"
+#, kde-format
 msgid "Delete…"
-msgstr "Smazat…"
+msgstr "Smazat..."
 
 #: app/ActionsCard.qml:116
 #, kde-format
@@ -553,15 +552,13 @@ msgstr "Rezervace"
 #, kde-format
 msgctxt "canceled reservation"
 msgid "Canceled"
-msgstr ""
+msgstr "Zrušeno"
 
 #: app/BookingEditorCard.qml:67
-#, fuzzy, kde-format
-#| msgctxt "a train/bus journey canceled by its operator"
-#| msgid "Trip has been canceled."
+#, kde-format
 msgctxt "canceled reservation"
 msgid "Booking has been canceled."
-msgstr "Výlet byl zrušen."
+msgstr "Rezervace byla zrušena."
 
 #: app/BusDelegate.qml:38
 #, kde-format
@@ -1114,9 +1111,7 @@ msgid "Work"
 msgstr "Práce"
 
 #: app/favoritelocationmodel.cpp:161
-#, fuzzy, kde-format
-#| msgctxt "%1 is a number"
-#| msgid "Location %1"
+#, kde-format
 msgctxt "%1 is a number"
 msgid "Location %1"
 msgstr "Umístění %1"
@@ -1493,13 +1488,12 @@ msgstr "Výběr…"
 #: app/FormPlaceEditorDelegate.qml:221
 #, kde-format
 msgid "Address to coordinates"
-msgstr ""
+msgstr "Adresa na souřadnice"
 
 #: app/FormPlaceEditorDelegate.qml:237
-#, fuzzy, kde-format
-#| msgid "Coordinates"
+#, kde-format
 msgid "Coordinates to address"
-msgstr "Souřadnice"
+msgstr "Souřadnice na adresu"
 
 #: app/FormPlaceEditorDelegate.qml:247
 #, kde-format
@@ -1688,17 +1682,13 @@ msgid "Vaccination"
 msgstr "Očkování"
 
 #: app/healthcertificatemanager.cpp:163
-#, fuzzy, kde-format
-#| msgctxt "%1 is a disease, %2 is a date"
-#| msgid "Test for %1 – %2"
+#, kde-format
 msgctxt "%1 is a disease, %2 is a date"
 msgid "Test for %1 – %2"
 msgstr "Testy pro %1 – %2"
 
 #: app/healthcertificatemanager.cpp:168
-#, fuzzy, kde-format
-#| msgctxt "%1 is a disease, %2 is a date"
-#| msgid "Recovery from %1 – %2"
+#, kde-format
 msgctxt "%1 is a disease, %2 is a date"
 msgid "Recovery from %1 – %2"
 msgstr "Zotavení z %1 – %2"
@@ -2735,9 +2725,7 @@ msgid "MapLibre Native Qt"
 msgstr ""
 
 #: app/main.cpp:230 app/main.cpp:231
-#, fuzzy, kde-format
-#| msgctxt "@info:credit"
-#| msgid "Copyright © MapLibre contributors."
+#, kde-format
 msgctxt "@info:credit"
 msgid "Copyright © MapLibre contributors."
 msgstr "Autorská práva © Přispěvatelé do MapLibre."
@@ -3950,8 +3938,7 @@ msgid "Log in"
 msgstr "Přihlásit"
 
 #: app/SettingsPage.qml:328
-#, fuzzy, kde-format
-#| msgid "Träwelling Integration"
+#, kde-format
 msgid "Träwelling Integration"
 msgstr "Integrace Traewelling"
 
@@ -4440,22 +4427,18 @@ msgid "Arrival Vehicle Layout"
 msgstr "Řazení na příjezdu"
 
 #: app/TrainPage.qml:346
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add to Träwelling"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add to Träwelling"
 msgstr "Přidat do Traewelling"
 
 #: app/TrainPage.qml:391
-#, fuzzy, kde-format
-#| msgid "Added to Träwelling"
+#, kde-format
 msgid "Added to Träwelling"
 msgstr "Přidáno do Traewelling"
 
 #: app/TrainPage.qml:391
-#, fuzzy, kde-format
-#| msgid "Failed to add to Träwelling"
+#, kde-format
 msgid "Failed to add to Träwelling"
 msgstr "Přidání Traewelling selhalo"
 
