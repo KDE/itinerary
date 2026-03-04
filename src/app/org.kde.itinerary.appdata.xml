@@ -1106,6 +1106,7 @@
           <li xml:lang="ru">Отображение информации о высоте в режиме реального времени;</li>
           <li xml:lang="sl">Prikaz informacij o nadmorski višini v pogledu stanja v živo.</li>
           <li xml:lang="tr">Displaying altitude information in live status view.</li>
+          <li xml:lang="uk">Показ даних щодо висоти на панелі перегляду інтерактивного стану.</li>
         </ul>
       </description>
     </release>
@@ -1124,6 +1125,7 @@
           <li xml:lang="ru">Новые или улучшенные модули извлечения проездных документов для Căile Ferate Române, citycity.se, Comboios de Portugal, Flixbus, Müpa Budapest, NH Hotels, Ryanair, United и ZSSK;</li>
           <li xml:lang="sl">Novi ali izboljšani izvlečki potovalnih dokumentov za Căile Ferate Române, citycity.se, Comboios de Portugal, Flixbus, Müpa Budapest, NH Hotels, Ryanair, United in ZSSK.</li>
           <li xml:lang="tr">New or improved travel document extractors for Căile Ferate Române, citycity.se, Comboios de Portugal, Flixbus, Müpa Budapest, NH Hotels, Ryanair, United and ZSSK.</li>
+          <li xml:lang="uk">Нові або удосконалені засоби видобування даних з дорожніх документів для Căile Ferate Române, citycity.se, Comboios de Portugal, Flixbus, Müpa Budapest, NH Hotels, Ryanair, United та ZSSK.</li>
           <li>Fix performance issues and hangs with the journey search result view.</li>
           <li xml:lang="ar">إصلاح مشكلات الأداء والتعليق في عرض نتائج البحث عن الرحلات.</li>
           <li xml:lang="ca">Corregeix problemes de rendiment i penjades amb la vista de resultats de cerca de viatges.</li>
@@ -1136,6 +1138,7 @@
           <li xml:lang="ru">Исправлены проблемы с производительностью и зависания в представлении результатов поиска маршрутов;</li>
           <li xml:lang="sl">Popravi težave z delovanjem in obešanje pri pogledu rezultatov iskanja potovanj.</li>
           <li xml:lang="tr">Fix performance issues and hangs with the journey search result view.</li>
+          <li xml:lang="uk">Виправлено проблеми із швидкодією та повисання на панелі результатів пошуку маршрутів.</li>
           <li>Fix parsing of ÖBB onboard speed data.</li>
           <li xml:lang="ar">إصلاح تحليل بيانات السرعة على متن قطارات ÖBB.</li>
           <li xml:lang="ca">Corregeix l'anàlisi de les dades de velocitat a bord de ÖBB.</li>
@@ -1149,6 +1152,7 @@
           <li xml:lang="ru">Исправлен анализ данных скорости ÖBB на борту;</li>
           <li xml:lang="sl">Popravljeno razčlenjevanje podatkov o hitrosti na krovu ÖBB.</li>
           <li xml:lang="tr">Fix parsing of ÖBB onboard speed data.</li>
+          <li xml:lang="uk">Виправлено обробку даних швидкості рейсу ÖBB.</li>
         </ul>
       </description>
     </release>
@@ -1166,6 +1170,7 @@
           <li xml:lang="ru">Новые или улучшенные средства извлечения документов о поездках для AirAsia, B&amp;B Hotels, Booking.com, Ethiad, Ryanair, SNCF и tixly;</li>
           <li xml:lang="sl">Novi ali izboljšani izvlečki potovalnih dokumentov za AirAsia, B&amp;B Hotels, Booking.com, Ethiad, Ryanair, SNCF in tixly.</li>
           <li xml:lang="tr">New or improved travel document extractors for AirAsia, B&amp;B Hotels, Booking.com, Ethiad, Ryanair, SNCF and tixly.</li>
+          <li xml:lang="uk">Нові або удосконалені засоби видобування даних з документів для AirAsia, B&amp;B Hotels, Booking.com, Ethiad, Ryanair, SNCF і tixly.</li>
           <li>Position journey result view at the end when searching by arrival time.</li>
           <li xml:lang="ar">وضع عرض نتائج الرحلة في النهاية عند البحث بحسب وقت الوصول.</li>
           <li xml:lang="ca">Posiciona la vista del resultat de viatge al final quan es busca per l'hora d'arribada.</li>
@@ -1191,6 +1196,7 @@
           <li xml:lang="ru">Исправлен анализ синтаксиса некоторых вариантов пропусков Apple Wallet;</li>
           <li xml:lang="sl">Popravljeno razčlenjevanje nekaterih različic vozovnic Apple Wallet.</li>
           <li xml:lang="tr">Fixed parsing of certain Apple Wallet pass variants.</li>
+          <li xml:lang="uk">Виправлено обробку певних варіантів квитків Apple Wallet.</li>
           <li>Fixed scaling artifacts in public transport line icons.</li>
           <li xml:lang="ar">أُصلحت عيوب التحجيم في أيقونات خطوط النقل العام.</li>
           <li xml:lang="ca">S'han corregit defectes d'escalat en les icones de línies de transport públic.</li>
@@ -1204,6 +1210,7 @@
           <li xml:lang="ru">Исправлены артефакты масштабирования в значках линий общественного транспорта;</li>
           <li xml:lang="sl">Popravljene artefakte skaliranja v ikonah linij javnega prevoza.</li>
           <li xml:lang="tr">Fixed scaling artifacts in public transport line icons.</li>
+          <li xml:lang="uk">Виправлено дефекти масштабування для піктограм громадських транспортних ліній.</li>
           <li>Fixed parsing intermediate stops from Railteam.</li>
           <li xml:lang="ar">أُصلح تحليل التوقفات المتوسطة من Railteam.</li>
           <li xml:lang="ca">S'ha corregit l'anàlisi de les parades intermèdies de Railteam.</li>
