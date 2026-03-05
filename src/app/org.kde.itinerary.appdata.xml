@@ -935,9 +935,37 @@
       <description>
         <ul>
           <li>Added or improved travel document extractors for booking.com FCM, FRS, Get Your Guide and Hotelworld.</li>
+          <li xml:lang="ca">S'han millorat o corregit els extractors de documents de viatge de booking.com, FCM, FRS, Get Your Guide i Hotelworld.</li>
+          <li xml:lang="ca-valencia">S'han millorat o corregit els extractors de documents de viatge de booking.com, FCM, FRS, Get Your Guide i Hotelworld.</li>
+          <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para booking.com, FCM, FRS, Get Your Guide y Hotelworld.</li>
+          <li xml:lang="nl">Er zijn nieuwe of verbeterde extractors voor reisdocumenten toegevoegd voor booking.com FCM, FRS, Get Your Guide en Hotelworld.</li>
+          <li xml:lang="pt-BR">Adicionadas ou aprimoradas ferramentas de extração de documentos de viagem para Booking.com FCM, FRS, Get Your Guide e Hotelworld.</li>
+          <li xml:lang="sl">Novi ali izboljšani izvlečki potovalnih dokumentov za booking.com FCM, FRS, Get Your Guide in Hotelworld.</li>
+          <li xml:lang="tr">FCM, FRS, Get Your Guide ve Hotelworld için belge çıkarıcıları eklendi veya iyileştirildi.</li>
           <li>Better default selection when importing entire trips.</li>
+          <li xml:lang="ca">Millor selecció predeterminada en importar viatges sencers.</li>
+          <li xml:lang="ca-valencia">Millor selecció predeterminada en importar viatges sencers.</li>
+          <li xml:lang="es">Mejor selección predeterminada al importar viajes completos.</li>
+          <li xml:lang="nl">Betere standaardselectie bij het importeren van complete reizen.</li>
+          <li xml:lang="pt-BR">Melhor seleção padrão ao importar viagens inteiras.</li>
+          <li xml:lang="sl">Boljša privzeta izbira pri uvozu celotnih potovanj.</li>
+          <li xml:lang="tr">Bütün yolculukları içe aktarırken daha iyi öntanımlı seçim</li>
           <li>Fixed computing end times for trips with nested events.</li>
+          <li xml:lang="ca">S'ha corregit el càlcul de les hores finals dels viatges amb esdeveniments imbricats.</li>
+          <li xml:lang="ca-valencia">S'ha corregit el càlcul de les hores finals dels viatges amb esdeveniments imbricats.</li>
+          <li xml:lang="es">Se han corregido los tiempos de finalización del cálculo para viajes con eventos anidados.</li>
+          <li xml:lang="nl">Vaste eindtijden voor het berekenen van reizen met geneste gebeurtenissen.</li>
+          <li xml:lang="pt-BR">Correção de horários de término de computação para viagens com eventos aninhados.</li>
+          <li xml:lang="sl">Popravljeno računanje končnih časov za potovanja z vgnezdenimi dogodki.</li>
+          <li xml:lang="tr">İç içe geçmiş etkinlikler bulunan yolculukların bitiş zamanları artık düzgünce hesaplanıyor.</li>
           <li>Improved routing results with Deutsche Bahn when starting from a favorite location.</li>
+          <li xml:lang="ca">S'han millorat els resultats de l'encaminament amb Deutsche Bahn quan es comença des d'una ubicació preferida.</li>
+          <li xml:lang="ca-valencia">S'han millorat els resultats de l'encaminament amb Deutsche Bahn quan es comença des d'una ubicació preferida.</li>
+          <li xml:lang="es">Resultados de ruta mejorados con Deutsche Bahn al comenzar desde una ubicación favorita.</li>
+          <li xml:lang="nl">Verbeterde routeplanning met Deutsche Bahn bij vertrek vanaf een favoriete locatie.</li>
+          <li xml:lang="pt-BR">Resultados de roteamento aprimorados com a Deutsche Bahn ao partir de um local preferido.</li>
+          <li xml:lang="sl">Izboljšani rezultati načrtovanja poti z Deutsche Bahn pri izhodišču z najljubše lokacije.</li>
+          <li xml:lang="tr">Favori bir konumdan başlanırken Deutsche Bahn için rotalama sonuçları iyileştirildi.</li>
         </ul>
       </description>
     </release>
@@ -995,6 +1023,7 @@
           <li xml:lang="ca-valencia">Extractors nous o millorats de documents de viatge per a booking.com, České dráhy, DB, gomus, KLM i MÁV.</li>
           <li xml:lang="cs">Nové nebo vylepšené extraktory cestovních dokladů pro booking.com, České dráhy, DB, gomus, KLM a MÁV.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para booking.com, České dráhy, DB, gomus, KLM y MÁV.</li>
+          <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour booking.com, České dráhy, DB, gomus, KLM et MÁV.</li>
           <li xml:lang="it">Nuovi o migliorati estrattori di documenti di viaggio per booking.com, ferrovie ceche, DB, gomus, KLM e MÁV.</li>
           <li xml:lang="ka">ახალი, ან გაუმჯობესებული სამგზავრო დოკუმენტების ამომკრებები booking.com, České dráhy, DB, gomus, KLM და MÁV სისტემებისთვის.</li>
           <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para booking.com, České dráhy, DB, gomus, KLM e MÁV.</li>
@@ -1108,6 +1137,7 @@
           <li xml:lang="ca-valencia">Extractors nous o millorats de documents de viatge per a Căile Ferate Române, citycity.se, Comboios de Portugal, Flixbus, Müpa Budapest, NH Hotels, Ryanair, United i ZSSK.</li>
           <li xml:lang="cs">Nové nebo vylepšené nástroje pro extrahování cestovních dokladů pro Căile Ferate Române, citycity.se, Comboios de Portugal, Flixbus, Müpa Budapest, NH Hotels, Ryanair, United a ZSSK.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para Căile Ferate Române, citycity.se, Comboios de Portugal, Flixbus, Müpa Budapest, NH Hotels, Ryanair, United y ZSSK.</li>
+          <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour Căile Ferate Române, citycity.se, Comboios du Portugal, Flixbus, Müpa Budapest, NH Hotels, Ryanair, United et ZSSK.</li>
           <li xml:lang="it">Nuovi o migliorati estrattori di documenti di viaggio per Căile Ferate Române, citycity.se, Comboios de Portugal, Flixbus, Müpa Budapest, NH Hotels, Ryanair, United e ZSSK.</li>
           <li xml:lang="ka">ახალი ან გაუმჯობესებული სამგზავრო დოკუმენტების ამომკრებები Căile Ferate Române, citycity.se, Comboios de Portugal, Flixbus, Müpa Budapest, NH Hotels, Ryanair, United და ZSSK სისტემებისთვის.</li>
           <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou melhorados para Căile Ferate Române, citycity.se, Comboios de Portugal, Flixbus, Müpa Budapest, NH Hotels, Ryanair, United e ZSSK.</li>
@@ -1150,9 +1180,11 @@
           <li xml:lang="ca-valencia">Extractors nous o millorats de documents de viatge per a AirAsia, B&amp;B Hotels, Booking.com, Ethiad, Ryanair, SNCF i tixly.</li>
           <li xml:lang="cs">Nové nebo vylepšené nástroje pro extrahování cestovních dokladů pro AirAsia, B&amp;B Hotels, Booking.com, Ethiad, Ryanair, SNCF a tixly.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para AirAsia, hoteles B&amp;B, Booking.com, Ethiad, Ryanair, SNCF y tixly.</li>
+          <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour AirAsia, B&amp;B Hotels, Booking.com, Etihad, Ryanair, SNCF et tixly.</li>
           <li xml:lang="it">Nuovi o migliorati estrattori di documenti di viaggio per AirAsia, B&amp;B Hotels, Booking.com, Ethiad, Ryanair, SNCF e tixly.</li>
           <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para AirAsia, B&amp;B Hotels, Booking.com, Etihad, Ryanair, SNCF e Tixly.</li>
           <li xml:lang="ru">Новые или улучшенные средства извлечения документов о поездках для AirAsia, B&amp;B Hotels, Booking.com, Ethiad, Ryanair, SNCF и tixly;</li>
+          <li xml:lang="sl">Novi ali izboljšani izvlečki potovalnih dokumentov za AirAsia, B&amp;B Hotels, "Booking.com, Ethiad, Ryanair, SNCF in tixly.</li>
           <li>Position journey result view at the end when searching by arrival time.</li>
           <li xml:lang="ar">وضع عرض نتائج الرحلة في النهاية عند البحث بحسب وقت الوصول.</li>
           <li xml:lang="ca">Posiciona la vista del resultat de viatge al final quan es busca per l'hora d'arribada.</li>
@@ -1212,6 +1244,7 @@
           <li xml:lang="ca-valencia">Extractors nous o millorats de documents de viatge per a booking.com, Center Parcs, Coloseum, eDreams, Finnair, LTG Link, MÁV, Pretix, RegioJet, Thalys i United Airlines.</li>
           <li xml:lang="cs">Nové nebo vylepšené nástroje pro extrahování cestovních dokladů pro booking.com, Center Parcs, Coloseum, eDreams, Finnair, LTG Link, MÁV, Pretix, RegioJet, Thalys a United Airlines.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para booking.com, Center Parcs, Coloseum, eDreams, Finnair, LTG Link, MÁV, Pretix, RegioJet, Thalys y United Airlines.</li>
+          <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour booking.com, Center Parcs, Coloseum, eDreams, Finnair, LTG Link, MÁV, Pretix, RegioJet, Thalys et United Airlines.</li>
           <li xml:lang="it">Nuovi o migliorati estrattori di documenti di viaggio per booking.com, Center Parcs, Coloseum, eDreams, Finnair, LTG Link, MÁV, Pretix, RegioJet, Thalys e United Airlines.</li>
           <li xml:lang="ka">ახალი ან გაუმჯობესებული სამგზავრო დოკუმენტების ამომკრებები booking.com, Center Parcs, Coloseum, eDreams, Finnair, LTG Link, MÁV, Pretix, RegioJet, Thalys და United Airlines სისტემებისთვის.</li>
           <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para booking.com, Center Parcs, Coloseum, eDreams, Finnair, LTG Link, MÁV, Pretix, RegioJet, Thalys e United Airlines.</li>
@@ -1330,6 +1363,7 @@
           <li xml:lang="ca-valencia">Extractors nous o millorats de documents de viatge per a Amadeus, booking.com, Deutsche Bahn, Deutscher Alpenverein, DJH, Easyjet, Eurostar, Eurowings, Hostelling Scotland, Leo Express, LeShuttle, MÁV, Ouigo ES, Reenio, SNCB, SNCF, Tickets.ua i Tito.</li>
           <li xml:lang="cs">Nové nebo vylepšené nástroje pro extrahování cestovních dokladů pro Amadeus, booking.com, Deutsche Bahn, Deutscher Alpenverein, DJH, Easyjet, Eurostar, Eurowings, Hostelling Scotland, Leo Express, LeShuttle, MÁV, Ouigo ES, Reenio, SNCB, SNCF, Tickets.ua a Tito.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para Amadeus, booking.com, Deutsche Bahn, Deutscher Alpenverein, DJH, Easyjet, Eurostar, Eurowings, Hostelling Scotland, Leo Express, LeShuttle, MÁV, Ouigo ES, Reenio, SNCB, SNCF, Tickets.ua y Tito.</li>
+          <li xml:lang="fr">Nouveaux extracteurs ou améliorations d'extracteurs de documents de voyage pour Amadeus, booking.com, Deutsche Bahn, Deutscher Alpenverein, DJH, Easyjet, Eurostar, Eurowings, Hostelling Scotland, Leo Express, LeShuttle, MÁV, Ouigo ES, Reenio, SNCB, SNCF, Tickets.ua et Tito.</li>
           <li xml:lang="he">מחלצי מסמכי נסיעה חדשים ומשופרים עבור Amadeus,‏ booking.com,‏ Deutsche Bahn,‏ Deutscher Alpenverein,‏ DJH,‏ Easyjet,‏ Eurostar,‏ Eurowings,‏ Hostelling Scotland,‏ Leo Express,‏ LeShuttle,‏ MÁV,‏ Ouigo ES,‏ Reenio,‏ SNCB,‏ SNCF,‏ Tickets.ua ו־Tito.</li>
           <li xml:lang="it">Estrattori di documenti di viaggio nuovi o migliorati per Amadeus, booking.com, Deutsche Bahn, Deutscher Alpenverein, DJH, Easyjet, Eurostar, Eurowings, Hostelling Scotland, Leo Express, LeShuttle, MÁV, Ouigo ES, Reenio, SNCB, SNCF, Tickets.ua e Tito.</li>
           <li xml:lang="ka">ახალი ან გაუმჯობესებული სამგზავრო დოკუმენტების ამომკრებები Amadeus, booking.com, Deutsche Bahn, Deutscher Alpenverein, DJH, Easyjet, Eurostar, Eurowings, Hostelling Scotland, Leo Express, LeShuttle, MÁV, Ouigo ES, Reenio, SNCB, SNCF, Tickets.ua და Tito სისტემებისთვის.</li>
@@ -1371,6 +1405,7 @@
           <li xml:lang="ca-valencia">Extractors nous o millorats de documents de viatge per a booking.com, Eurostar, Flixbus, IHG, Stena Line, Tallink i Viking Line.</li>
           <li xml:lang="cs">Nové nebo vylepšené nástroje pro extrahování cestovních dokladů pro booking.com, Eurostar, Flixbus, IHG, Stena Line, Tallink a Viking Line.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para booking.com, Eurostar, Flixbus, IHG, Stena Line, Tallink y Viking Line.</li>
+          <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour booking.com, Eurostar, Flixbus, IHG, Stena Line, Tallink et Viking Line.</li>
           <li xml:lang="it">Estrattori di documenti di viaggio nuovi o migliorati per booking.com, Eurostar, Flixbus, IHG, Stena Line, Tallink e Viking Line.</li>
           <li xml:lang="ka">ახალი ან გაუმჯობესებული სამგზავრო დოკუმენტების ამომკრებები booking.com, Eurostar, Flixbus, IHG, Stena Line, Tallink და Viking Line სისტემებისთვის.</li>
           <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para booking.com, Eurostar, Flixbus, IHG, Stena Line, Tallink e Viking Line.</li>
@@ -1532,6 +1567,7 @@
           <li xml:lang="ca-valencia">Extractors nous o millorats de documents de viatge per a Amtrak, Booking.com, Color Line, Eventbrite, Eventlook, Kolumbus ferries, Preemly, SNCF, Tootoot, UIC FCB v3, UK rail, Universe i VDV eTickets.</li>
           <li xml:lang="cs">Nový nebo vylepšený extraktor cestovních dokladů pro Amtrak, Booking.com, Color Line, Eventbrite, Eventlook, trajekty Kolumbus, Preemly, SNCF, Tootoot, UIC FCB v3, UK rail, Universe a VDV eTickets.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para Amtrak, Booking.com, Color Line, Eventbrite, Eventlook, Kolumbus ferries, Preemly, SNCF, Tootoot, UIC FCB v3, UK rail, Universe y VDV eTickets.</li>
+          <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour Amtrak, Booking.com, Color Line, Eventbrite, Eventlook, ferries Kolumbus, Preemly, SNCF, Tootoot, UIC FCB v3, Trains britanniques, Universe et eTickets VDV.</li>
           <li xml:lang="it">Estrattore di documenti di viaggio nuovo o migliorato per Amtrak, Booking.com, Color Line, Eventbrite, Eventlook, traghetti Kolumbus, Preemly, SNCF, Tootoot, UIC FCB v3, UK rail, Universe e VDV eTickets.</li>
           <li xml:lang="ka">ახალი ან გაუმჯობესებული სამგზავრო დოკუმენტების ამომკრები Amtrak, Booking.com, Color Line, Eventbrite, Eventlook, Kolumbus ferries, Preemly, SNCF, Tootoot, UIC FCB v3, UK rail, Universe და VDV eTickets სისტემებისთვის.</li>
           <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para Amtrak, Booking.com, Color Line, Eventbrite, Eventlook, Kolumbus Ferries, Preemly, SNCF, Tootoot, UIC FCB v3, UK Rail, Universe e VDV eTickets.</li>
@@ -1549,6 +1585,7 @@
           <li xml:lang="ca-valencia">Extractors nous o millorats de documents de viatge per a Eventyay, Flixbus, Ghotel, SBB, SNCF i VR.</li>
           <li xml:lang="cs">Nové nebo vylepšené nástroje pro extrahování cestovních dokladů pro Eventyay, Flixbus, Ghotel, SBB, SNCF a VR.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para Eventyay, Flixbus, Ghotel, SBB, SNCF y VR.</li>
+          <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour Eventyay, Flixbus, Ghotel, SBB, SNCF et VR.</li>
           <li xml:lang="it">Estrattori di documenti di viaggio nuovi o migliorati per Eventyay, Flixbus, Ghotel, SBB, SNCF e VR.</li>
           <li xml:lang="ka">ახალი ან გაუმჯობესებული სამგზავრო დოკუმენტების ამომკრებები Eventyay, Flixbus, Ghotel, SBB, SNCF და VR სისტემებისთვის.</li>
           <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para Eventyay, Flixbus, Ghotel, SBB, SNCF e VR.</li>
@@ -1600,6 +1637,7 @@
           <li xml:lang="ca-valencia">Extractors nous i millorats de documents de viatge per a American Airlines, Bilkom, Booking.com, CitizenM, Deutsche Bahn, Eurostar, Flixbus, KD, Koleo, Lufthansa, PKP, Polregio, SBB, Southwest, Universe.</li>
           <li xml:lang="cs">Nové a vylepšené nástroje pro extrahování cestovních dokladů pro American Airlines, Bilkom, Booking.com, CitizenM, Deutsche Bahn, Eurostar, Flixbus, KD, Koleo, Lufthansa, PKP, Polregio, SBB, Southwest, Universe.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos y mejorados para American Airlines, Bilkom, Booking.com, CitizenM, Deutsche Bahn, Eurostar, Flixbus, KD, Koleo, Lufthansa, PKP, Polregio, SBB, Southwest y Universe.</li>
+          <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour American Airlines, Bilkom, Booking.com, CitizenM, Deutsche Bahn, Eurostar, Flixbus, KD, Koleo, Lufthansa, PKP, Polregio, SBB, Southwest, Universe.</li>
           <li xml:lang="it">Estrattori di documenti di viaggio nuovi e migliorati per American Airlines, Bilkom, Booking.com, CitizenM, Deutsche Bahn, Eurostar, Flixbus, KD, Koleo, Lufthansa, PKP, Polregio, SBB, Southwest, Universe.</li>
           <li xml:lang="ka">ახალი და გაუმჯობესებული სამგზავრო დოკუმენტების ამომკრებები American Airlines, Bilkom, Booking.com, CitizenM, Deutsche Bahn, Eurostar, Flixbus, KD, Koleo, Lufthansa, PKP, Polregio, SBB, Southwest და Universe სისტემებისთვის.</li>
           <li xml:lang="pt-BR">Extratores de documentos de viagem novos e aprimorados para American Airlines, Bilkom, Booking.com, CitizenM, Deutsche Bahn, Eurostar, Flixbus, KD, Koleo, Lufthansa, PKP, Polregio, SBB, Southwest e Universe.</li>
@@ -1610,6 +1648,7 @@
           <li xml:lang="ca">Corregeix l'accés al transport públic per a Deutsche Bahn (Alemanya), Digitransit (Finlàndia), Entur (Noruega) i Rolph (Alemanya).</li>
           <li xml:lang="ca-valencia">Corregix l'accés al transport públic per a Deutsche Bahn (Alemanya), Digitransit (Finlàndia), Entur (Noruega) i Rolph (Alemanya).</li>
           <li xml:lang="cs">Opraven přístup k veřejné dopravě pro Deutsche Bahn (Německo), Digitransit (Finsko), Entur (Norsko) a Rolph (Německo).</li>
+          <li xml:lang="es">Se ha corregido el acceso al transporte público para Deutsche Bahn (Alemania), Digitransit (Finlandia), Entur (Noruega) y Rolph (Alemania).</li>
           <li xml:lang="it">Corregge l'accesso ai trasporti pubblici per Deutsche Bahn (Germania), Digitransit (Finlandia), Entur (Norvegia) e Rolph (Germania).</li>
           <li xml:lang="pt-BR">Correção do acesso ao transporte público para Deutsche Bahn (Alemanha), Digitransit (Finlândia), Entur (Noruega) e Rolph (Alemanha).</li>
           <li xml:lang="ru">Исправлен доступ к общественному транспорту для Deutsche Bahn (Германия), Digitransit (Финляндия), Entur (Норвегия) и Rolph (Германия);</li>
@@ -1619,6 +1658,7 @@
           <li xml:lang="ca">Permet transferències a la ubicació preferida independentment de la reserva següent.</li>
           <li xml:lang="ca-valencia">Permet transferències cap a la ubicació preferida independentment de la reserva següent.</li>
           <li xml:lang="cs">Povoleny přesuny na oblíbené místo nezávisle na další rezervaci.</li>
+          <li xml:lang="es">Permitir transbordos a la ubicación favorita independientemente de la próxima reserva.</li>
           <li xml:lang="it">Consente trasferimenti alla località preferita indipendentemente dalla prenotazione successiva.</li>
           <li xml:lang="pt-BR">Permitir traslados para locais favoritos independentemente da próxima reserva.</li>
           <li xml:lang="ru">Разрешены трансферы в избранное место независимо от следующего бронирования;</li>
@@ -1628,6 +1668,7 @@
           <li xml:lang="ca">Corregeix la importació de passis o altres coses sense un grup de viatge adjunt.</li>
           <li xml:lang="ca-valencia">Corregix la importació de passes o altres coses sense un grup de viatge adjunt.</li>
           <li xml:lang="cs">Opraveno importování průkazů nebo jiných věcí bez připojené skupiny výletů.</li>
+          <li xml:lang="es">Se ha corregido la importación de pases y otras cosas sin un grupo de viaje adjunto.</li>
           <li xml:lang="it">Risolto il problema con l'importazione di pass o altre cose senza un gruppo di viaggio allegato.</li>
           <li xml:lang="ka">გასწორდა ბარათების ან სხვა ნივთების შემოტანა მიბმული მგზავრობის ჯგუფის გარეშე.</li>
           <li xml:lang="pt-BR">Correção do problema na importação de passes ou outros itens sem um grupo de viagem associado.</li>
@@ -1638,6 +1679,7 @@
           <li xml:lang="ca">Corregeix la supressió de passis «pkpass» genèrics.</li>
           <li xml:lang="ca-valencia">Corregix la supressió de passes «pkpass» genèrics.</li>
           <li xml:lang="cs">Oprava mazání obecných průkazů pkpass.</li>
+          <li xml:lang="es">Se ha corregido el borrado de pases pkpass genéricos.</li>
           <li xml:lang="fr">Correction de la suppression des abonnements « pkpass » génériques.</li>
           <li xml:lang="it">Corretta l'eliminazione dei pass pkpass generici.</li>
           <li xml:lang="pt-BR">Correção do problema de exclusão de passes PKPass genéricos.</li>
@@ -1654,6 +1696,7 @@
           <li xml:lang="ca">Permet afegir transferències en més casos.</li>
           <li xml:lang="ca-valencia">Permet afegir transferències en més casos.</li>
           <li xml:lang="cs">Umožněno přidávání převodů ve více případech.</li>
+          <li xml:lang="es">Permitir añadir transbordos en más casos.</li>
           <li xml:lang="fr">Permet d'ajouter des transferts dans davantage de cas.</li>
           <li xml:lang="it">Consente di aggiungere trasferimenti in più casi.</li>
           <li xml:lang="pt-BR">Permitir a adição de transferências em mais casos.</li>
@@ -1745,6 +1788,7 @@
           <li xml:lang="ca-valencia">Extractors nous o millorats de documents de viatge per a Coloseum, Dimedis Fairmate, Droplabs, European Sleeper, Flixbus, Leo Express, SNCF.</li>
           <li xml:lang="cs">Nový nebo vylepšený extraktor cestovních dokladů pro Coloseum, Dimedis Fairmate, Droplabs, European Sleeper, Flixbus, Leo Express, SNCF.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para Coloseum, Dimedis Fairmate, Droplabs, European Sleeper, Flixbus, Leo Express y SNCF.</li>
+          <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour Coloseum, Dimedis Fairmate, Droplabs, European Sleeper, Flixbus, Leo Express, SNCF.</li>
           <li xml:lang="it">Estrattore di documenti di viaggio nuovo o migliorato per Coloseum, Dimedis Fairmate, Droplabs, European Sleeper, Flixbus, Leo Express, SNCF.</li>
           <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para Coloseum, Dimedis Fairmate, Droplabs, European Sleeper, Flixbus, Leo Express e SNCF.</li>
           <li xml:lang="ru">Новый или улучшенный модуль извлечения данных из билетов для Coloseum, Dimedis Fairmate, Droplabs, European Sleeper, Flixbus, Leo Express, SNCF;</li>
@@ -1771,6 +1815,7 @@
           <li xml:lang="ca-valencia">Extractors nous o millorats de documents de viatge per a Agoda, Booking.com, NS, planway.com, Renfe, VietJet Air i ferrocarrils estatals tailandesos.</li>
           <li xml:lang="cs">Nový nebo vylepšený extraktor cestovních dokladů pro Agoda, Booking.com, NS, planway.com, Renfe, VietJet Air a thajské státní železnice.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para Agoda, Booking.com, NS, planway.com, Renfe, VietJet Air y ferrocarriles del estado de Tailandia.</li>
+          <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour Agoda, Booking.com, NS, planway.com, Renfe, VietJet Air et les chemins de fer de Thaïlande.</li>
           <li xml:lang="it">Estrattore di documenti di viaggio nuovo o migliorato per Agoda, Booking.com, NS, planway.com, Renfe, VietJet Air e ferrovie statali tailandesi.</li>
           <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para Agoda, Booking.com, NS, planway.com, Renfe, VietJet Air e ferrovias estatais tailandesas.</li>
           <li xml:lang="ru">Новый или улучшенный модуль для извлечения данных о путешествиях для Agoda, Booking.com, NS, planway.com, Renfe, VietJet Air и Государственных железных дорог Таиланда;</li>
@@ -1816,6 +1861,7 @@
           <li xml:lang="ca-valencia">Extractors nous o millorats de documents de viatge per a Eurostar, Eventim, Koleo, NH Hotels, Trenitalia i SBB.</li>
           <li xml:lang="cs">Nové nebo vylepšené nástroje pro extrahování cestovních dokladů pro Eurostar, Eventim, Koleo, NH Hotels, Trenitalia a SBB.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para Eurostar, Eventim, Koleo, NH Hotels, Trenitalia y SBB.</li>
+          <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour Eurostar, Eventim, Koleo, NH Hotels, Trenitalia et SBB.</li>
           <li xml:lang="it">Estrattori di documenti di viaggio nuovi o migliorati per Eurostar, Eventim, Koleo, NH Hotels, Trenitalia e SBB.</li>
           <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para Eurostar, Eventim, Koleo, NH Hotels, Trenitalia e SBB.</li>
           <li xml:lang="ru">Новые или улучшенные процедуры извлечения данных из документов для Eurostar, Eventim, Koleo, NH Hotels, Trenitalia и SBB;</li>
@@ -1852,6 +1898,7 @@
           <li xml:lang="ca-valencia">Extractors nous o millorats de documents de viatge per a BlablaBus, Deutsche Bahn, Eurostar, Italo, MAV, Reisnordland ferries, Reservix, Sunnycars, United Airlines i VDV e-tickets.</li>
           <li xml:lang="cs">Nové nebo vylepšené nástroje pro extrahování cestovních dokladů pro BlablaBus, Deutsche Bahn, Eurostar, Italo, MAV, trajekty Reisnordland, Reservix, Sunnycars, United Airlines a elektronické jízdenky VDV.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para BlablaBus, Deutsche Bahn, Eurostar, Italo, MAV, ferris de Reisnordland, Reservix, Sunnycars, United Airlines y VDV e-tickets.</li>
+          <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour BlablaBus, Deutsche Bahn, Eurostar, Italo, MAV, traversiers Reisnordland, Reservix, Sunnycars, United Airlines et billets électroniques VDV.</li>
           <li xml:lang="it">Estrattori di documenti di viaggio nuovi o migliorati per BlablaBus, Deutsche Bahn, Eurostar, Italo, MAV, traghetti Reisnordland, Reservix, Sunnycars, United Airlines e biglietti elettronici VDV.</li>
           <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para BlablaBus, Deutsche Bahn, Eurostar, Italo, MAV, balsas Reisnordland, Reservix, Sunnycars, United Airlines e bilhetes eletrônicos VDV.</li>
           <li xml:lang="ru">Новые или улучшенные модули для извлечения данных о путешествиях для BlablaBus, Deutsche Bahn, Eurostar, Italo, MAV, паромов Reisnordland, Reservix, Sunnycars, United Airlines и электронных билетов VDV;</li>
@@ -1897,6 +1944,7 @@
           <li xml:lang="ca-valencia">Extractors nous o millorats de documents de viatge per a Booking.com, direct-book.com, Entur, Flixbus, MAV, Scandlines, SNCB i SNCF.</li>
           <li xml:lang="cs">Nové nebo vylepšené nástroje pro extrahování cestovních dokladů pro Booking.com, direct-book.com, Entur, Flixbus, MAV, Scandlines, SNCB a SNCF.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para Booking.com, direct-book.com, Entur, Flixbus, MAV, Scandlines, SNCB y SNCF.</li>
+          <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour Booking.com, direct-book.com, Entur, Flixbus, MAV, Scandlines, SNCB et SNCF.</li>
           <li xml:lang="it">Estrattori di documenti di viaggio nuovi o migliorati per Booking.com, direct-book.com, Entur, Flixbus, MAV, Scandlines, SNCB e SNCF.</li>
           <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para Booking.com, direct-book.com, Entur, Flixbus, MAV, Scandlines, SNCB e SNCF.</li>
           <li xml:lang="ru">Новые и улучшенные способы извлечения данных из документов для Booking.com, direct-book.com, Entur, Flixbus, MAV, Scandlines, SNCB и SNCF;</li>
@@ -1960,6 +2008,7 @@
           <li xml:lang="ca-valencia">Extractors nous o millorats de documents de viatge per a 12go, Eurowings, hotels.com, Iberia, Georgian Railway, RegioJet, Snälltåget, TCDD i tobilet.pl.</li>
           <li xml:lang="cs">Nové nebo vylepšené nástroje pro získávání cestovních dokladů pro 12go, Eurowings, hotels.com, Iberia, Georgian Railway, RegioJet, Snälltåget, TCDD a tobilet.pl.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para 12go, Eurowings, hotels.com, Iberia, Georgian Railway, RegioJet, Snälltåget, TCDD y tobilet.pl.</li>
+          <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour 12go, Eurowings, hotels.com, Iberia, Georgian Railway, RegioJet, Snälltåget, TCDD et tobilet.pl.</li>
           <li xml:lang="it">Estrattori di documenti di viaggio nuovi o migliorati per 12go, Eurowings, hotels.com, Iberia, Georgian Railway, RegioJet, Snälltåget, TCDD e tobilet.pl.</li>
           <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para 12go, Eurowings, hotels.com, Iberia, Georgian Railway, RegioJet, Snälltåget, TCDD e tobilet.pl.</li>
           <li xml:lang="ru">Новые и улучшенные модули извлечения данных для 12go, Eurowings, hotels.com, Iberia, Georgian Railway, RegioJet, Snälltåget, TCDD и tobilet.pl;</li>
@@ -2003,6 +2052,7 @@
           <li xml:lang="ca-valencia">Extractors nous o millorats de documents de viatge per a Air Asia, Amadeus, Deutsche Bahn, Eurostar, Flixbus, Trenitalia.</li>
           <li xml:lang="cs">Nové nebo vylepšené nástroje pro extrahování cestovních dokladů pro Air Asia, Amadeus, Deutsche Bahn, Eurostar, Flixbus, Trenitalia.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para Air Asia, Amadeus, Deutsche Bahn, Eurostar, Flixbus y Trenitalia.</li>
+          <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour Air Asia, Amadeus, Deutsche Bahn, Eurostar, Flixbus et Trenitalia.</li>
           <li xml:lang="it">Estrattori di documenti di viaggio nuovi o migliorati per Air Asia, Amadeus, Deutsche Bahn, Eurostar, Flixbus, Trenitalia.</li>
           <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para Air Asia, Amadeus, Deutsche Bahn, Eurostar, Flixbus e Trenitalia.</li>
           <li xml:lang="ru">Новые или улучшенные модули извлечения данных из документов для путешествий Air Asia, Amadeus, Deutsche Bahn, Eurostar, Flixbus, Trenitalia;</li>
@@ -2058,6 +2108,7 @@
           <li xml:lang="ca-valencia">Extractors nous o millorats de documents de viatge per a CFR, Eurostar, Indique, IRCTC, Lufthansa, Motel One, SNCB, SNCF, Ticketportal, Trenitalia i VDV eTickets. S'ha afegit la implementació de les dades de transport públic de Serbijavoz i Transitous.</li>
           <li xml:lang="cs">Nové nebo vylepšené extraktory cestovních dokladů pro CFR, Eurostar, Indico, IRCTC, Lufthansa, Motel One, SNCB, SNCF, Ticketportal, Trenitalia a VDV eTickets. Přidána podpora pro data veřejné dopravy od Serbijavoz a Transitous.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para CFR, Eurostar, Indico, IRCTC, Lufthansa, Motel One, SNCB, SNCF, Ticketportal, billetes electrónicos de Trenitalia y VDV. Se ha añadido compatibilidad con los datos de transporte público de Serbijavoz y Transitous.</li>
+          <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour CFR, Eurostar, Indico, IRCTC, Lufthansa, Motel One, SNCB, SNCF, Ticketportal, Trenitalia et VDV eTickets. Ajout de la prise en charge pour les données de transports publics de Serbijavoz et Transitous.</li>
           <li xml:lang="it">Estrattori di documenti di viaggio nuovi o migliorati per CFR, Eurostar, Indico, IRCTC, Lufthansa, Motel One, SNCB, SNCF, Ticketportal, Trenitalia e VDV eTickets. Aggiunto supporto per i dati del trasporto pubblico da Serbijavoz e Transitous.</li>
           <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para CFR, Eurostar, Indico, IRCTC, Lufthansa, Motel One, SNCB, SNCF, Ticketportal, Trenitalia e VDV eTickets. Adicionado suporte para dados de transporte público da Serbijavoz e Transitous.</li>
           <li xml:lang="ru">Новые и улучшенные модули извлечения данных из документов для CFR, Eurostar, Indico, IRCTC, Lufthansa, Motel One, SNCB, SNCF, Ticketportal, Trenitalia и VDV eTickets. Добавлена поддержка данных общественного транспорта от Serbijavoz и Transitous;</li>
@@ -2112,6 +2163,7 @@
           <li xml:lang="ca-valencia">Extractors nous o millorats de documents de viatge per a Amsbus.cz, Eurostar, Finnair, Moongate, ferrocarril nacional del Regne Unit i VR.</li>
           <li xml:lang="cs">Nové nebo vylepšené extraktory cestovních dokladů pro Amsbus.cz, Eurostar, Finnair, Moongate, britské národní železnice a VR.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para Amsbus.cz, Eurostar, Finnair, Moongate, ferrocarriles nacionales británicos y VR.</li>
+          <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour Amsbus.cz, Eurostar, Finnair, Moongate, chemins de fer national britannique et VR.</li>
           <li xml:lang="it">Estrattori di documenti di viaggio nuovi o migliorati per Amsbus.cz, Eurostar, Finnair, Moongate, ferrovie nazionali del Regno Unito e VR.</li>
           <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para Amsbus.cz, Eurostar, Finnair, Moongate, ferrovias nacionais do Reino Unido e VR.</li>
           <li xml:lang="ru">Новые или улучшенные процедуры извлечения данных о проездных документах для Amsbus.cz, Eurostar, Finnair, Moongate, UK national railway и VR;</li>
@@ -2148,6 +2200,7 @@
           <li xml:lang="ca-valencia">Extractors nous o millorats de documents de viatge per a Deutsche Bahn, Eckerö Line, European Sleeper, Eventim, Flibco, Leo Express, National Express, ÖBB, osmcal.org, Salzbergwerk, SNCF i ti.to.</li>
           <li xml:lang="cs">Nové nebo vylepšené nástroje pro extrahování cestovních dokladů pro Deutsche Bahn, Eckerö Line, European Sleeper, Eventim, Flibco, Leo Express, National Express, ÖBB, osmcal.org, Salzbergwerk, SNCF a ti.to.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para Deutsche Bahn, Eckerö Line, European Sleeper, Eventim, Flibco, Leo Express, National Express, ÖBB, osmcal.org, Salzbergwerk, SNCF y ti.to.</li>
+          <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour Deutsche Bahn, Eckerö Line, European Sleeper, Eventim, Flibco, Leo Express, National Express, ÖBB, osmcal.org, Salzbergwerk, SNCF et ti.to.</li>
           <li xml:lang="it">Estrattori di documenti di viaggio nuovi o migliorati per Deutsche Bahn, Eckerö Line, European Sleeper, Eventim, Flibco, Leo Express, National Express, ÖBB, osmcal.org, Salzbergwerk, SNCF e ti.to.</li>
           <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para Deutsche Bahn, Eckerö Line, European Sleeper, Eventim, Flibco, Leo Express, National Express, ÖBB, osmcal.org, Salzbergwerk, SNCF e ti.to.</li>
           <li xml:lang="ru">Новые или улучшенные процедуры извлечения данных из проездных документов для Deutsche Bahn, Eckerö Line, European Sleeper, Eventim, Flibco, Leo Express, National Express, ÖBB, osmcal.org, Salzbergwerk, SNCF и ti.to.</li>
@@ -2199,6 +2252,7 @@
         <p xml:lang="ca">Hem millorat la usabilitat de l'Itinerary en els telèfons fent que les accions habituals estiguessin disponibles en una barra de navegació a sota que fa que sigui fàcil canviar als passis i al viatge actual.</p>
         <p xml:lang="ca-valencia">Hem millorat la usabilitat d'Itinerary en els telèfons fent que les accions habituals estigueren disponibles en una barra de navegació davall que fa que siga fàcil canviar als passes i al viatge actual.</p>
         <p xml:lang="cs">Zlepšena použitelnost Itineráře na telefonech tím, že jsou běžné akce umístěny do spodní navigační lišty, což usnadňuje přepínání mezi jízdenkami a aktuální cestou.</p>
+        <p xml:lang="fr">Nous avons amélioré l'ergonomie de Itinerary sur les téléphones en rendant les actions courantes accessibles grâce à une barre de navigation sur le bord inférieur. Cela facilite le basculement vers vos billets et vers votre voyage en cours.</p>
         <p xml:lang="it">Abbiamo migliorato l'usabilità di Itinerary sui telefoni rendendo disponibili le azioni comuni su una barra di navigazione inferiore che semplifica il passaggio ai tuoi pass e al tuo viaggio corrente.</p>
         <p xml:lang="pt-BR">Melhoramos a usabilidade do Itinerary em celulares, disponibilizando ações comuns em uma barra de navegação inferior, o que facilita a alternância entre seus passes e sua viagem atual.</p>
         <p xml:lang="ru">Улучшена удобство использования Itinerary на телефонах: часто используемые действия вынесены на нижнюю панель навигации, что упрощает переключение между проездными документами и текущей поездкой.</p>
@@ -2208,6 +2262,7 @@
         <p xml:lang="ca">La línia de temps principal s'ha redissenyat i ara les entrades es poden ampliar en línia per a mostrar les parades intermèdies i els retards i les interrupcions en curs. Parlant d'esdeveniments, ara és possible afegir i editar entrades manualment i compartir viatges sencers o reserves individuals al telèfon a través del KDE Connect.</p>
         <p xml:lang="ca-valencia">La línia de temps principal s'ha redissenyat i ara les entrades es poden ampliar en línia per a mostrar les parades intermèdies i els retards i les interrupcions en curs. Parlant d'esdeveniments, ara és possible afegir i editar entrades manualment i compartir viatges sencers o reserves individuals al telèfon a través de KDE Connect.</p>
         <p xml:lang="cs">Hlavní časová osa byla přepracována a nyní lze položky rozbalit a zobrazit mezilehlé zastávky a aktuální zpoždění a výluky. Pokud jde o události, nyní je možné ručně přidávat a upravovat položky a sdílet celé cesty nebo jednotlivé rezervace do telefonu přes KDE Connect.</p>
+        <p xml:lang="fr">La chronologie principale a été repensée. Il est maintenant possible d'étendre les entrées directement pour afficher les arrêts intermédiaires ainsi que les retards et perturbations en cours. En parlant d'évènements, il est désormais possible d'ajouter et de modifier manuellement des entrées et de partager des voyages complets ou des réservations individuelles sur votre téléphone grâce à KDEConnect.</p>
         <p xml:lang="it">La linea temporale principale è stata ridisegnata e ora le voci possono essere espanse in linea per mostrare le fermate intermedie, i ritardi e le interruzioni in corso. A proposito di eventi, ora è possibile aggiungere e modificare manualmente le voci e condividere interi viaggi o singole prenotazioni sul telefono tramite KDE Connect.</p>
         <p xml:lang="pt-BR">A linha do tempo principal foi redesenhada e agora as entradas podem ser expandidas diretamente na página para mostrar as paradas intermediárias, atrasos e interrupções em andamento. Falando em eventos, agora é possível adicionar e editar entradas manualmente, além de compartilhar viagens inteiras ou reservas individuais com seu celular através do KDE Connect.</p>
         <p xml:lang="ru">Главная временная шкала была переработана: теперь записи можно разворачивать для отображения промежуточных остановок, текущих задержек и сбоев. Также появилась возможность добавлять и редактировать записи вручную, а также передавать целые поездки или отдельные бронирования на телефон через KDE Connect.</p>
@@ -2217,6 +2272,7 @@
         <p xml:lang="ca">El mapa d'interiors de l'Itinerary ara llista tots els serveis de l'edifici o zona que esteu mirant actualment. Això ajuda amb coses com trobar un lloc per a prendre un cafè en una estació gran de tren, o la recerca d'un lloc per trobar menjar als voltants de l'hotel. Aquesta funció està alimentada per l'OpenStreetMap, funciona sense necessitat de connectar-se a Internet i mai no hi ha termes de cerca que surtin del vostre dispositiu.</p>
         <p xml:lang="ca-valencia">El mapa d'interiors d'Itinerary ara llista tots els serveis de l'edifici o zona que esteu mirant actualment. Açò ajuda amb coses com trobar un lloc per a prendre un cafè en una estació gran de tren, o la recerca d'un lloc per a trobar menjar als voltants de l'hotel. Esta funció està alimentada per OpenStreetMap, funciona sense necessitat de connectar-se a Internet i mai no hi ha termes de busca que isquen del vostre dispositiu.</p>
         <p xml:lang="cs">Vnitřní mapa v Itineráři nyní zobrazuje všechny služby v budově nebo oblasti, kterou právě prohlížíte. To vám pomůže například najít místo, kde si můžete dát kávu na velkém nádraží, nebo najít místo, kde se najíst v okolí vašeho hotelu. Tato funkce je založena na OpenStreetMap, funguje bez nutnosti připojení k internetu a žádné vyhledávací termíny neopouštějí vaše zařízení.</p>
+        <p xml:lang="fr">La carte intérieure de Itinerary répertorie désormais toutes les commodités du bâtiment ou de la zone que vous consultez actuellement. Cela aide, par exemple, à trouver un endroit pour prendre un café dans une grande gare, ou à chercher un endroit pour se restaurer à proximité de votre hôtel. Cette fonctionnalité est alimentée par OpenStreetMap, fonctionne sans connexion Internet et aucune information de recherche n'est jamais transmise à partir de votre périphérique.</p>
         <p xml:lang="it">La mappa degli interni in Itinerary ora elenca tutti i servizi nell'edificio o nell'area che stai attualmente guardando. Ciò è utile per cose come trovare un posto dove prendere un caffè in una grande stazione ferroviaria o cercare un posto dove mangiare nelle vicinanze del tuo hotel. Questa funzionalità è supportata da OpenStreetMap, funziona senza la necessità di connettersi a Internet e nessun termine di ricerca lascia mai il tuo dispositivo.</p>
         <p xml:lang="pt-BR">O mapa interno do Itinerary agora lista todas as comodidades do edifício ou área que você está visualizando. Isso ajuda a encontrar, por exemplo, um lugar para tomar um café em uma grande estação de trem ou um restaurante perto do seu hotel. Esse recurso é fornecido pelo OpenStreetMap, funciona sem a necessidade de conexão com a internet e nenhum termo de pesquisa sai do seu dispositivo.</p>
         <p xml:lang="ru">На карте помещений в Itinerary теперь отображаются все удобства в здании или районе, который вы сейчас просматриваете. Это помогает, например, найти место, где можно взять кофе на большой железнодорожной станции, или найти место, где можно поесть рядом с вашим отелем. Эта функция работает на основе данных OpenStreetMap, не требует подключения к интернету, и никакие поисковые запросы никогда не покидают ваше устройство.</p>
@@ -2242,6 +2298,7 @@
           <li xml:lang="ca-valencia">Extractors nous o millorats de documents de viatge per a 12go, Eurostar, Flixbus, Motel One, SAS i Thalys.</li>
           <li xml:lang="cs">Nové nebo vylepšené nástroje pro extrahování cestovních dokladů pro 12go, Eurostar, Flixbus, Motel One, SAS a Thalys.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para 12go, Eurostar, Flixbus, Motel One, SAS y Thalys.</li>
+          <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour 12go, Eurostar, Flixbus, Motel One, SAS et Thalys.</li>
           <li xml:lang="it">Estrattori di documenti di viaggio nuovi o migliorati per 12go, Eurostar, Flixbus, Motel One, SAS e Thalys.</li>
           <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para 12go, Eurostar, Flixbus, Motel One, SAS e Thalys.</li>
           <li xml:lang="ru">Новые или улучшенные модули извлечения данных для 12go, Eurostar, Flixbus, Motel One, SAS и Thalys;</li>
@@ -2286,6 +2343,7 @@
           <li xml:lang="ca-valencia">Extractors nous o millorats de documents de viatge per a booking.com, DB, European Sleeper, Iberia, PKP, Pretix, Qatar Airways.</li>
           <li xml:lang="cs">Nové nebo vylepšené nástroje pro získávání cestovních dokladů pro booking.com, DB, European Sleeper, Iberia, PKP, Pretix, Qatar Airways.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para booking.com, DB, European Sleeper, Iberia, PKP, Pretix y Qatar Airways.</li>
+          <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour booking.com, DB, European Sleeper, Iberia, PKP, Pretix, Qatar Airways.</li>
           <li xml:lang="it">Estrattori di documenti di viaggio nuovi o migliorati per booking.com, DB, European Sleeper, Iberia, PKP, Pretix, Qatar Airways.</li>
           <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para booking.com, DB, European Sleeper, Iberia, PKP, Pretix e Qatar Airways.</li>
           <li xml:lang="ru">Новые или улучшенные модули извлечения данных о проездных документах для booking.com, DB, European Sleeper, Iberia, PKP, Pretix, Qatar Airways;</li>
@@ -2331,6 +2389,7 @@
           <li xml:lang="ca-valencia">Extractors nous o millorats de documents de viatge per a Aegean, Amadeus, bookingkit, GWR, Pretix, Renfe, ÖBB i bitllets de tren del Regne Unit.</li>
           <li xml:lang="cs">Nové nebo vylepšené nástroje pro extrahování cestovních dokladů pro jízdenky společností Aegean, Amadeus, bookingkit, GWR, Pretix, Renfe, ÖBB a britské železniční jízdenky.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para Aegean, Amadeus, bookingkit, GWR, Pretix, Renfe, ÖBB y billetes de los ferrocarriles británicos.</li>
+          <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour Aegean, Amadeus, bookingkit, GWR, Pretix, Renfe, ÖBB et les billets de train britanniques.</li>
           <li xml:lang="it">Estrattori di documenti di viaggio nuovi o migliorati per biglietti ferroviari Aegean, Amadeus, bookingkit, GWR, Pretix, Renfe, ÖBB e del Regno Unito.</li>
           <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para bilhetes ferroviários da Aegean, Amadeus, BookingKit, GWR, Pretix, Renfe, ÖBB e do Reino Unido.</li>
           <li xml:lang="ru">Новые или улучшенные модули извлечения данных для проездных документов Aegean, Amadeus, bookingkit, GWR, Pretix, Renfe, ÖBB и железнодорожных билетов Великобритании;</li>
@@ -2361,6 +2420,7 @@
           <li xml:lang="ca-valencia">Extractors nous o millorats de documents de viatge per a Aer Lingus, Amtrak, British Airways, Deutsche Bahn, GVH, premiumkino, Slovak Lines i ZSSK.</li>
           <li xml:lang="cs">Nové nebo vylepšené extraktory cestovních dokladů pro společnosti Aer Lingus, Amtrak, British Airways, Deutsche Bahn, GVH, premiumkino, Slovak Lines a ZSSK.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para Aer Lingus, Amtrak, British Airways, Deutsche Bahn, GVH, premiumkino, Slovak Lines y ZSSK.</li>
+          <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour Aer Lingus, Amtrak, British Airways, Deutsche Bahn, GVH, premiumkino, Slovak Lines et ZSSK.</li>
           <li xml:lang="it">Estrattori di documenti di viaggio nuovi o migliorati per Aer Lingus, Amtrak, British Airways, Deutsche Bahn, GVH, premiumkino, Slovak Lines e ZSSK.</li>
           <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para Aer Lingus, Amtrak, British Airways, Deutsche Bahn, GVH, premiumkino, Slovak Lines e ZSSK.</li>
           <li xml:lang="ru">Новые или улучшенные модули извлечения данных для проездных документов Aer Lingus, Amtrak, British Airways, Deutsche Bahn, GVH, premiumkino, Slovak Lines и ZSSK;</li>
@@ -2499,6 +2559,7 @@
           <li xml:lang="ca-valencia">Extractors nous o millorats de documents de viatge per a Aegean Air, Aer Lingus, Air Asia, Air France, Atlatos, Bäder Suite, BlaBlaCar, bookingkit, CD, Cinemaxx, Cooltix, DSB, Eventbrite, FerriesInGreece, Grimaldi Lines, Iberia, KLM, Koleje Malopolskie, KTEL Thesprotias, Lufthansa, Ouigo Spain, PKP, UK railways, SAS, SBB, Slovak Lines, SNCB, spiritec, Spring Airlines, Sunny Cars, Thalys, Trenitalia, York Kino i ZSSK.</li>
           <li xml:lang="cs">Nové nebo vylepšené nástroje pro extrahování cestovních dokladů pro společnosti Aegean Air, Aer Lingus, Air Asia, Air France, Atlatos, Bäder Suite, BlaBlaCar, bookingkit, CD, Cinemaxx, Cooltix, DSB, Eventbrite, FerriesInGreece, Grimaldi Lines, Iberia, KLM, Koleje Malopolskie, KTEL Thesprotias, Lufthansa, Ouigo Spain, PKP, UK railways, SAS, SBB, Slovak Lines, SNCB, spiritec, Spring Airlines, Sunny Cars, Thalys, Trenitalia, York Kino a ZSSK.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para Aegean Air, Aer Lingus, Air Asia, Air France, Atlatos, Bäder Suite, BlaBlaCar, bookingkit, CD, Cinemaxx, Cooltix, DSB, Eventbrite, FerriesInGreece, Grimaldi Lines, Iberia, KLM, Koleje Malopolskie, KTEL Thesprotias, Lufthansa, Ouigo Spain, PKP, ferrocarriles británicos, SAS, SBB, Slovak Lines, SNCB, spiritec, Spring Airlines, Sunny Cars, Thalys, Trenitalia, York Kino y ZSSK.</li>
+          <li xml:lang="fr">Nouveaux extracteurs ou extracteurs améliorés de documents de voyage ou améliorés pour Aegean Air, Aer Lingus, Air Asia, Air France, Atlatos, Bäder Suite, BlaBlaCar, bookingkit, CD, Cinemaxx, Cooltix, DSB, Eventbrite, FerriesInGreece, Grimaldi Lines, Iberia, KLM, Koleje Malopolskie, KTEL Thesprotias, Lufthansa, Ouigo Espagne, PKP, Chemins de fer britanniques, SAS, SBB, Slovak Lines, SNCB, spiritec, Spring Airlines, Sunny Cars, Thalys, Trenitalia, York Kino et ZSSK.</li>
           <li xml:lang="it">Estrattori di documenti di viaggio nuovi o migliorati per Aegean Air, Aer Lingus, Air Asia, Air France, Atlatos, Bäder Suite, BlaBlaCar, bookingkit, CD, Cinemaxx, Cooltix, DSB, Eventbrite, FerriesInGreece, Grimaldi Lines, Iberia, KLM, Koleje Malopolskie, KTEL Thesprotias, Lufthansa, Ouigo Spain, PKP, UK railways, SAS, SBB, Slovak Lines, SNCB, spiritec, Spring Airlines, Sunny Cars, Thalys, Trenitalia, York Kino e ZSSK.</li>
           <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para Aegean Air, Aer Lingus, Air Asia, Air France, Atlatos, Bäder Suite, BlaBlaCar, bookingkit, CD, Cinemaxx, Cooltix, DSB, Eventbrite, FerriesInGreece, Grimaldi Lines, Iberia, KLM, Koleje Malopolskie, KTEL Thesprotias, Lufthansa, Ouigo Spain, PKP, UK railways, SAS, SBB, Slovak Lines, SNCB, spiritec, Spring Airlines, Sunny Cars, Thalys, Trenitalia, York Kino e ZSSK.</li>
           <li xml:lang="ru">Новые или улучшенные модули извлечения данных о проездных документах для Aegean Air, Aer Lingus, Air Asia, Air France, Atlatos, Bäder Suite, BlaBlaCar, bookingkit, CD, Cinemaxx, Cooltix, DSB, Eventbrite, FerriesInGreece, Grimaldi Lines, Iberia, KLM, Koleje Malopolskie, KTEL Thesprotias, Lufthansa, Ouigo Spain, PKP, UK railways, SAS, SBB, Slovak Lines, SNCB, spiritec, Spring Airlines, Sunny Cars, Thalys, Trenitalia, York Kino и ZSSK.</li>
@@ -2627,6 +2688,7 @@
           <li xml:lang="ca-valencia">Extractors nous o millorats de documents de viatge per a Color Line, DJH, Fjord Line, Flixbus, Grimladi Lines, onepagebooking, SNCB, Thalys i Trenitalia.</li>
           <li xml:lang="cs">Nové nebo vylepšené nástroje pro extrahování cestovních dokladů pro Color Line, DJH, Fjord Line, Flixbus, Grimladi Lines, onepagebooking, SNCB, Thalys a Trenitalia.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para Color Line, DJH, Fjord Line, Flixbus, Grimladi Lines, onepagebooking, SNCB, Thalys y Trenitalia.</li>
+          <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour Color Line, DJH, Fjord Line, Flixbus, Grimladi Lines, onepagebooking, SNCB, Thalys et Trenitalia.</li>
           <li xml:lang="it">Estrattori di documenti di viaggio nuovi o migliorati per Color Line, DJH, Fjord Line, Flixbus, Grimladi Lines, onepagebooking, SNCB, Thalys e Trenitalia.</li>
           <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para Color Line, DJH, Fjord Line, Flixbus, Grimaldi Lines, onepagebooking, SNCF, Thalys e Trenitalia.</li>
           <li xml:lang="ru">Новые или улучшенные модули извлечения данных для Color Line, DJH, Fjord Line, Flixbus, Grimladi Lines, onepagebooking, SNCB, Thalys и Trenitalia;</li>
@@ -2697,6 +2759,7 @@
           <li xml:lang="ca">S'ha corregit la selecció de transferència automàtica que produeix un contrasentit quan falten les coordenades geo.</li>
           <li xml:lang="ca-valencia">S'ha corregit la selecció de transferència automàtica que produïx un contrasentit quan falten les coordenades geo.</li>
           <li xml:lang="cs">Opraven výběr automatického přenosu, který produkoval nesmysly, když chyběly zeměpisné souřadnice.</li>
+          <li xml:lang="es">Se ha corregido que la selección automática de transbordo genere sinsentidos cuando faltan coordenadas geográficas.</li>
           <li xml:lang="it">Risolto il problema con la selezione automatica del trasferimento che produceva risultati insensati quando mancano le coordinate geografiche.</li>
           <li xml:lang="pt-BR">Corrigido o problema na seleção automática de transferência que gerava erros quando faltavam coordenadas geográficas.</li>
           <li xml:lang="ru">Исправлен выбор автоматической пересадки, который приводил к бессмыслице при отсутствии географических координат.</li>
@@ -2744,6 +2807,7 @@
           <li xml:lang="ca-valencia">Extractors nous o millorats de documents de viatge per a European Sleeper, IndiGo, PKP, Qatar Airways, SBB, SNCB, Thalys així com per a bitllets de trens letons i lituans.</li>
           <li xml:lang="cs">Nové nebo vylepšené extraktory cestovních dokladů pro European Sleeper, IndiGo, PKP, Qatar Airways, SBB, SNCB, Thalys a také pro lotyšské a litevské železniční jízdenky.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para European Sleeper, IndiGo, PKP, Qatar Airways, SBB, SNCB y Thalys, así como para billetes de los ferrocarriles de Letonia y Lituania.</li>
+          <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour European Sleeper, IndiGo, PKP, Qatar Airways, SBB, SNCB, Thalys ainsi que pour les billets de train de Lettonie et de Lituanie.</li>
           <li xml:lang="it">Estrattori di documenti di viaggio nuovi o migliorati per European Sleeper, IndiGo, PKP, Qatar Airways, SBB, SNCB, Thalys e per biglietti ferroviari lettoni e lituani.</li>
           <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para European Sleeper, IndiGo, PKP, Qatar Airways, SBB, SNCB, Thalys, bem como para bilhetes ferroviários da Letônia e da Lituânia.</li>
           <li xml:lang="ru">Новые или улучшенные процедуры извлечения данных из проездных документов для European Sleeper, IndiGo, PKP, Qatar Airways, SBB, SNCB, Thalys, а также для латвийских и литовских железнодорожных билетов.</li>
@@ -2873,6 +2937,7 @@
           <li xml:lang="ca-valencia">Extractors nous o millorats de documents de viatge per a Aegean Air, Amadeus, availpro, BlaBlaCar, Deutsche Bahn, Kinoheld, Meetup, National Express, ÖBB, Octorate, Ouigo, Premier Inn, SNCF, Taiwan Highspeed Rail i whyline.</li>
           <li xml:lang="cs">Nové nebo vylepšené nástroje pro extrahování cestovních dokladů pro společnosti Aegean Air, Amadeus, availpro, BlaBlaCar, Deutsche Bahn,  Kinoheld, Meetup, National Express, ÖBB, Octorate, Ouigo, Premier Inn, SNCF, Taiwan Highspeed Rail a whyline.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para Aegean Air, Amadeus, availpro, BlaBlaCar, Deutsche Bahn, Kinoheld, Meetup, National Express, ÖBB, Octorate, Ouigo, Premier Inn, SNCF, Taiwan Highspeed Rail y whyline.</li>
+          <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour Aegean Air, Amadeus, availpro, BlaBlaCar, Deutsche Bahn, Kinoheld, Meetup, National Express, ÖBB, Octorate, Ouigo, Premier Inn, SNCF, Taiwan Highspeed Rail et whyline.</li>
           <li xml:lang="it">Estrattori di documenti di viaggio nuovi o migliorati per Aegean Air, Amadeus, availpro, BlaBlaCar, Deutsche Bahn, Kinoheld, Meetup, National Express, ÖBB, Octorate, Ouigo, Premier Inn, SNCF, Taiwan Highspeed Rail e whyline.</li>
           <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para Aegean Air, Amadeus, availpro, BlaBlaCar, Deutsche Bahn, Kinoheld, Meetup, National Express, ÖBB, Octorate, Ouigo, Premier Inn, SNCF, Taiwan Highspeed Rail e whyline.</li>
           <li xml:lang="ru">Новые или улучшенные модули извлечения данных о проездных документах для Aegean Air, Amadeus, availpro, BlaBlaCar, Deutsche Bahn, Kinoheld, Meetup, National Express, ÖBB, Octorate, Ouigo, Premier Inn, SNCF, Taiwan Highspeed Rail и whyline;</li>
@@ -3355,6 +3420,7 @@
           <li xml:lang="ca">Suport per a passis i targetes de programes que no estan lligats a un viatge específic, com ara bitllets de tarifa plana o intervals de temps o pertinences de programes d'afiliació.</li>
           <li xml:lang="ca-valencia">Suport per a passes i targetes de programes que no estan lligats a un viatge específic, com ara bitllets de tarifa plana o intervals de temps o pertinences de programes d'afiliació.</li>
           <li xml:lang="cs">Podpora pro jízdenky a programové karty, které nejsou vázány na konkrétní cestu, například jízdenky s paušální sazbou nebo časovým intervalem nebo členství v programu slev.</li>
+          <li xml:lang="fr">Prise en charge pour les abonnements et cartes de programme qui ne sont pas liés à un voyage spécifique, tels que les billets à tarif forfaitaire ou à intervalle de temps ou les adhésions à des programmes de réduction.</li>
           <li xml:lang="it">Supporto per abbonamenti e carte di programma non legati a un viaggio specifico, come biglietti a tariffa fissa o a intervallo di tempo o abbonamenti a programmi scontati.</li>
           <li xml:lang="pt-BR">Suporte para passes e cartões de programas que não estão vinculados a uma viagem específica, como bilhetes com tarifa fixa ou com intervalo de tempo, ou ainda adesões a programas de desconto.</li>
           <li xml:lang="ru">Поддержка пропусков и карт программ, не привязанных к конкретной поездке, например, билетов с фиксированной ставкой или интервальных билетов, а также членства в дисконтных программах;</li>
@@ -3489,6 +3555,7 @@
           <li xml:lang="ca-valencia">Extractors nous o millorats per a Renfe, SNCF, ÖBB, Spring Airlines, Peach Aviation.</li>
           <li xml:lang="cs">Nové nebo vylepšené extraktory pro Renfe, SNCF, ÖBB, Spring Airlines, Peach Aviation.</li>
           <li xml:lang="es">Extractores nuevos o mejorados para Renfe, SNCF, ÖBB, Spring Airlines, Peach Aviation.</li>
+          <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour Renfe, SNCF, ÖBB, Spring Airlines et Peach Aviation.</li>
           <li xml:lang="it">Estrattori nuovi o migliorati per Renfe, SNCF, ÖBB, Spring Airlines, Peach Aviation.</li>
           <li xml:lang="pt-BR">Extratores novos ou aprimorados para Renfe, SNCF, ÖBB, Spring Airlines e Peach Aviation.</li>
           <li xml:lang="ru">Новые или улучшенные модули для извлечения данных из Renfe, SNCF, ÖBB, Spring Airlines, Peach Aviation;</li>
@@ -3529,6 +3596,7 @@
           <li xml:lang="ca">Suport per als identificadors de l'estació de tren Amtrak i IATA.</li>
           <li xml:lang="ca-valencia">Suport per als identificadors de l'estació de tren Amtrak i IATA.</li>
           <li xml:lang="cs">Podpora identifikátorů vlakových stanic Amtrak a IATA.</li>
+          <li xml:lang="es">Compatibilidad con identificadores de estaciones de trenes de Amtrak e IATA.</li>
           <li xml:lang="fr">Prise en charge des identifiants de gare pour Amtrak et IATA.</li>
           <li xml:lang="it">Supporto per identificatori di stazioni ferroviarie Amtrak e IATA.</li>
           <li xml:lang="pt-BR">Suporte para identificadores de estações ferroviárias da Amtrak e da IATA.</li>
@@ -3539,6 +3607,7 @@
           <li xml:lang="ca">Suport a la importació de certificats COVID danesos.</li>
           <li xml:lang="ca-valencia">Suport a la importació de certificats COVID danesos.</li>
           <li xml:lang="cs">Podpora importu dánských COVID certifikátů.</li>
+          <li xml:lang="es">Compatibilidad para importar certificados de COVID daneses.</li>
           <li xml:lang="fr">Prise en charge de l'importation des certificats COVID du Danemark.</li>
           <li xml:lang="it">Supporto per l'importazione di certificati COVID danesi.</li>
           <li xml:lang="pt-BR">Suporte para importação de certificados dinamarqueses de COVID.</li>
@@ -3549,6 +3618,7 @@
           <li xml:lang="ca">Segueix la configuració del sistema al Linux per a quina aplicació de mapa extern s'ha d'utilitzar.</li>
           <li xml:lang="ca-valencia">Seguix la Configuració del sistema a Linux per a quina aplicació de mapa extern s'ha d'utilitzar.</li>
           <li xml:lang="cs">Dodržuje se nastavení systému Linux, které určuje, která externí mapová aplikace se má použít.</li>
+          <li xml:lang="es">Seguir la configuración del sistema en Linux para saber qué aplicación de mapas externa se debe usar.</li>
           <li xml:lang="it">Segue le impostazioni di sistema su Linux per quale applicazione di mappa esterna utilizzare.</li>
           <li xml:lang="pt-BR">Siga as configurações do sistema Linux para determinar qual aplicativo de mapas externo usar.</li>
           <li xml:lang="ru">При работе в Linux, теперь используется внешнее картографическое приложение в соответствии с системными настройками;</li>
@@ -3558,6 +3628,7 @@
           <li xml:lang="ca">Afegeix una acció de salt de llista per a obrir directament el tiquet actual.</li>
           <li xml:lang="ca-valencia">Afig una acció de salt de llista per a obrir directament el tiquet actual.</li>
           <li xml:lang="cs">Přidána akce v seznamu pro přímé otevření aktuálního lístku.</li>
+          <li xml:lang="es">Se ha añadido la acción de salto de lista para abrir directamente el billete actual.</li>
           <li xml:lang="it">Aggiunge un'azione Jump List per aprire direttamente il ticket corrente.</li>
           <li xml:lang="pt-BR">Adicionar ação à lista de atalhos para abrir diretamente o tíquete atual.</li>
           <li xml:lang="ru">Добавить действие в список переходов для прямого открытия текущего билета;</li>
@@ -3586,6 +3657,7 @@
           <li xml:lang="ca">Afegeix l'extracció de dades de viatge dels documents PDF de bitllets d'Air France.</li>
           <li xml:lang="ca-valencia">Afig l'extracció de dades de viatge dels documents PDF de bitllets d'Air France.</li>
           <li xml:lang="cs">Přidána funkce extrakce cestovních údajů z PDF dokumentů letenek Air France.</li>
+          <li xml:lang="es">Se ha añadido extracción de datos de viaje de los documentos de billetes PDF de Air France.</li>
           <li xml:lang="it">Aggiunge l'estrazione dei dati di viaggio dai documenti PDF dei biglietti Air France.</li>
           <li xml:lang="pt-BR">Adicionada extração de dados de viagem a partir de documentos PDF de bilhetes da Air France.</li>
           <li xml:lang="ru">Добавлено извлечение данных о поездках из PDF-документов с билетами Air France;</li>
@@ -3595,6 +3667,7 @@
           <li xml:lang="ca">Corregeix el format de nombres segons la configuració regional.</li>
           <li xml:lang="ca-valencia">Corregix el format de nombres segons la configuració regional.</li>
           <li xml:lang="cs">Opraveno formátování čísel podle místního nastavení.</li>
+          <li xml:lang="es">Se ha corregido el formato de los números para tener en cuenta la configuración regional.</li>
           <li xml:lang="fr">Correction du formatage des nombres en fonction des paramètres régionaux.</li>
           <li xml:lang="it">Corregge la formattazione dei numeri compatibile con le impostazioni locali.</li>
           <li xml:lang="pt-BR">Corrigida a formatação de números de acordo com a localização.</li>
@@ -3611,6 +3684,7 @@
           <li xml:lang="ca">Corregeix l'agrupació de viatges que produeixen resultats erronis en zones densament poblades.</li>
           <li xml:lang="ca-valencia">Corregix l'agrupació de viatges que produïxen resultats erronis en zones densament poblades.</li>
           <li xml:lang="cs">Oprava seskupování cest, které vedlo k nesprávným výsledkům v hustě osídlených oblastech.</li>
+          <li xml:lang="es">Se ha corregido el problema de agrupación de viajes que producía resultados erróneos en áreas densamente pobladas.</li>
           <li xml:lang="it">Risolto il problema con il raggruppamento dei viaggi che produceva risultati errati in aree densamente popolate.</li>
           <li xml:lang="pt-BR">Corrigido o agrupamento de viagens que estava gerando resultados incorretos em áreas densamente povoadas.</li>
           <li xml:lang="ru">Исправлена группировка поездок, дававшая неверные результаты в густонаселённых районах;</li>
@@ -3620,6 +3694,7 @@
           <li xml:lang="ca">Millorar la detecció de codis de barres vectorials en documents PDF.</li>
           <li xml:lang="ca-valencia">Millorar la detecció de codis de barres vectorials en documents PDF.</li>
           <li xml:lang="cs">Vylepšena detekce vektorových čárových kódů v dokumentech PDF.</li>
+          <li xml:lang="es">Se ha mejorado la detección de códigos de barras vectoriales en documentos PDF.</li>
           <li xml:lang="fr">Amélioration de la détection des codes-barres vectoriels dans les documents de format « PDF ».</li>
           <li xml:lang="it">Migliora il rilevamento dei codici a barre vettoriali nei documenti PDF.</li>
           <li xml:lang="pt-BR">Melhoria da detecção de códigos de barras vetoriais em documentos PDF.</li>
@@ -3695,6 +3770,7 @@
           <li xml:lang="ca">Pàgina nova de detalls de maniobra de navegació per al transport individual o seccions de viatge a peu.</li>
           <li xml:lang="ca-valencia">Pàgina nova de detalls de maniobra de navegació per al transport individual o seccions de viatge a peu.</li>
           <li xml:lang="cs">Nová stránka s podrobnostmi o navigačních manévrech pro jednotlivé úseky cesty dopravou nebo pěšky.</li>
+          <li xml:lang="es">Nueva página de detalles de maniobras de navegación para secciones individuales de transporte o recorrido a pie.</li>
           <li xml:lang="it">Nuova pagina dei dettagli delle manovre di navigazione per le singole sezioni di trasporto o viaggio a piedi.</li>
           <li xml:lang="pt-BR">Nova página com detalhes das manobras de navegação para trechos individuais de transporte ou deslocamento a pé.</li>
           <li xml:lang="ru">Новая страница с подробными данными о манёврах навигации для отдельных участков пути на транспорте или пешком;</li>
@@ -3704,7 +3780,7 @@
           <li xml:lang="ca">Selecció automàtica de transferència més intel·ligent.</li>
           <li xml:lang="ca-valencia">Selecció automàtica de transferència més intel·ligent.</li>
           <li xml:lang="cs">Chytřejší automatický výběr přepravy.</li>
-          <li xml:lang="es">Selección automática de transferencia más inteligente.</li>
+          <li xml:lang="es">Selección automática de transbordo más inteligente.</li>
           <li xml:lang="fr">Sélection automatique de transfert plus intelligente.</li>
           <li xml:lang="it">Selezione automatica del trasferimento più intelligente.</li>
           <li xml:lang="pt-BR">Seleção automática de transferências mais inteligente.</li>
@@ -3715,6 +3791,7 @@
           <li xml:lang="ca">Informació de disrupció en directe i detalls de viatge per als viatges en autobús.</li>
           <li xml:lang="ca-valencia">Informació de disrupció en directe i detalls de viatge per als viatges en autobús.</li>
           <li xml:lang="cs">Aktuální informace o dopravních omezeních a podrobnosti o cestách autobusem.</li>
+          <li xml:lang="es">Información en vivo sobre interrupciones y detalles del viaje en autobús.</li>
           <li xml:lang="it">Informazioni in tempo reale sui disagi e dettagli sul viaggio per i viaggi in autobus.</li>
           <li xml:lang="pt-BR">Informações em tempo real sobre interrupções e detalhes de viagens de ônibus.</li>
           <li xml:lang="ru">Информация о перебоях в движении и детали маршрута для поездок на автобусе;</li>
@@ -3735,6 +3812,7 @@
           <li xml:lang="ca">Modes de transport individuals addicionals per a les transferències.</li>
           <li xml:lang="ca-valencia">Modes de transport individuals addicionals per a les transferències.</li>
           <li xml:lang="cs">Další individuální druhy dopravy pro přesuny.</li>
+          <li xml:lang="es">Modos de transporte individual adicionales para transbordos.</li>
           <li xml:lang="fr">Modes de transport individuels supplémentaires pour les transferts.</li>
           <li xml:lang="it">Ulteriori modalità di trasporto individuali per i trasferimenti.</li>
           <li xml:lang="pt-BR">Modalidades adicionais de transporte individual para traslados.</li>
@@ -3745,6 +3823,7 @@
           <li xml:lang="ca">Millora de la identificació d'andanes per a tramvies i metros.</li>
           <li xml:lang="ca-valencia">Millora de la identificació d'andanes per a tramvies i metros.</li>
           <li xml:lang="cs">Vylepšená identifikace nástupišť pro tramvaje a metro.</li>
+          <li xml:lang="es">Identificación mejorada de andenes de tranvías y metros.</li>
           <li xml:lang="fr">Amélioration de l'identification des quais pour les tramways et les métros.</li>
           <li xml:lang="it">Migliorata l'identificazione della piattaforma per tram e metropolitane.</li>
           <li xml:lang="pt-BR">Melhoria na identificação das plataformas de bondes e metrôs.</li>
@@ -3755,6 +3834,7 @@
           <li xml:lang="ca">Mode d'escaneig de codis de barres accessible més fàcil i suport per als codis de barres PDF417.</li>
           <li xml:lang="ca-valencia">Mode d'escaneig de codis de barres accessible més fàcil i suport per als codis de barres PDF417.</li>
           <li xml:lang="cs">Snadněji přístupný režim skenování čárových kódů a podpora čárových kódů PDF417 na vstupenkách.</li>
+          <li xml:lang="es">Modo de escaneo de código de barras más accesible y compatibilidad con códigos de barras de billetes PDF417.</li>
           <li xml:lang="it">Modalità di scansione dei codici a barre più accessibile e supporto per i codici a barre dei biglietti PDF417.</li>
           <li xml:lang="pt-BR">Modo de leitura de código de barras mais acessível e suporte para códigos de barras de bilhetes PDF417.</li>
           <li xml:lang="ru">Упрощён режим сканирования штрихкодов; добавлена поддержка штрихкодов PDF417 для билетов;</li>
@@ -3764,6 +3844,7 @@
           <li xml:lang="ca">S'ha millorat la retroalimentació de la importació de dades.</li>
           <li xml:lang="ca-valencia">S'ha millorat la retroalimentació de la importació de dades.</li>
           <li xml:lang="cs">Vylepšená zpětná vazba při importu dat.</li>
+          <li xml:lang="es">Se ha mejorado la respuesta de la importación de datos.</li>
           <li xml:lang="fr">Amélioration du retour après importation des données.</li>
           <li xml:lang="he">המשוב על ייבוא נתונים השתפר.</li>
           <li xml:lang="it">Riscontro sull'importazione dei dati migliorato.</li>
@@ -3947,6 +4028,7 @@
           <li xml:lang="ca">Corregeix la renderització dels camps posteriors de text enriquit de passis d'Apple Wallet.</li>
           <li xml:lang="ca-valencia">Corregix la renderització dels camps posteriors de text enriquit de passes d'Apple Wallet.</li>
           <li xml:lang="cs">Oprava vykreslování textových polí Apple Wallet pass.</li>
+          <li xml:lang="es">Se ha corregido la visualización del fondo de los campos de texto enriquecido de las contraseñas de Apple Wallet.</li>
           <li xml:lang="it">Correzione del rendering dei campi posteriori in formato rich text del passaggio di Apple Wallet.</li>
           <li xml:lang="pt-BR">Corrigido o problema na renderização dos campos de texto formatado do Apple Wallet.</li>
           <li xml:lang="ru">Исправлено отображение полей с форматированным текстом на обороте пропуска Apple Wallet;</li>
