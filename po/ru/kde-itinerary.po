@@ -3,22 +3,22 @@
 #
 # Alexander Potashev <aspotashev@gmail.com>, 2019.
 # SPDX-FileCopyrightText: 2021, 2024, 2025, 2026 Alexander Yavorsky <kekcuha@gmail.com>
-# SPDX-FileCopyrightText: 2022, 2024, 2025 Olesya Gerasimenko <translation-team@basealt.ru>
+# SPDX-FileCopyrightText: 2022, 2024, 2025, 2026 Olesya Gerasimenko <translation-team@basealt.ru>
 msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-28 02:45+0000\n"
-"PO-Revision-Date: 2026-02-10 20:01+0200\n"
-"Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
-"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
+"PO-Revision-Date: 2026-03-06 16:31+0300\n"
+"Last-Translator: Olesya Gerasimenko <goa@altlinux.org>\n"
+"Language-Team: Basealt Translation Team\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1046,7 +1046,7 @@ msgstr "Тип: <b>%1</b>"
 #: app/ExportMenuDialog.qml:32
 #, kde-format
 msgid "As Itinerary file…"
-msgstr "Как файл Itinerary…"
+msgstr "Как файл программы «Маршруты KDE»…"
 
 #: app/ExportMenuDialog.qml:42
 #, kde-format
@@ -4854,10 +4854,10 @@ msgstr ""
 "<p>Существует несколько способов импорта данных в программу «Маршруты KDE»:"
 "<ul><li>Непосредственное открытие билетов в формате PDF или талонов Apple "
 "Wallet.</li><li>Открытие из календаря Android для записей, которые были "
-"созданы с помощью модулей Itinerary KMail или Nextcloud и синхронизированы с "
-"помощью DAVx⁵.</li><li>Открытие с помощью KDE Connect из модуля Itinerary "
-"KMail.</li><li>Сканирование штрихкодов посадочных талонов и вставка их "
-"содержимого.</li></p>"
+"созданы с помощью модулей программы для KMail или Nextcloud и "
+"синхронизированы с помощью DAVx⁵.</li><li>Открытие с помощью KDE Connect из "
+"модуля Itinerary KMail.</li><li>Сканирование штрихкодов посадочных талонов и "
+"вставка их содержимого.</li></p>"
 
 #: app/WelcomePage.qml:31
 #, kde-format
@@ -4873,11 +4873,11 @@ msgid ""
 "might want to configure your home location to enable the transfer assistant "
 "to automatically suggests ways to your next departure station or airport."
 msgstr ""
-"В KDE Itinerary по умолчанию отключены возможности, для работы с которыми "
-"требуется доступ к Интернету (например, интерактивное получение данных "
-"трафика и прогнозов погоды). Поэтому, вероятно, следует просмотреть "
+"В программе «Маршруты KDE» по умолчанию отключены возможности, для работы с "
+"которыми требуется доступ к Интернету (например, интерактивное получение "
+"данных трафика и прогнозов погоды). Поэтому, вероятно, следует просмотреть "
 "соответствующие параметры. Кроме того, возможно указать своё местоположение, "
-"чтобы включить автоматические предложения поближайшим станциям и аэропортам "
+"чтобы включить автоматические предложения по ближайшим станциям и аэропортам "
 "отправления со стороны помощника по планированию маршрутов с пересадками."
 
 #: app/WelcomePage.qml:48
