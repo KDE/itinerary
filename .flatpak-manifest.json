@@ -198,7 +198,8 @@
                 "-DBUILD_SHARED_LIBS=OFF",
                 "-DZXING_UNIT_TESTS=OFF",
                 "-DZXING_EXAMPLES=OFF",
-                "-DZXING_C_API=OFF"
+                "-DZXING_C_API=OFF",
+                "-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=TRUE"
             ],
             "buildsystem": "cmake-ninja",
             "builddir": true,
