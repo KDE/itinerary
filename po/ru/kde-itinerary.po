@@ -9,16 +9,16 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-24 00:45+0000\n"
-"PO-Revision-Date: 2026-03-06 16:31+0300\n"
-"Last-Translator: Olesya Gerasimenko <goa@altlinux.org>\n"
-"Language-Team: Basealt Translation Team\n"
+"PO-Revision-Date: 2026-03-08 08:50+0200\n"
+"Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
+"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.12.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -105,9 +105,9 @@ msgid "Export…"
 msgstr "Экспорт…"
 
 #: app/ActionsCard.qml:81
-#, fuzzy, kde-format
+#, kde-format
 msgid "Delete…"
-msgstr "Удалить"
+msgstr "Удалить…"
 
 #: app/ActionsCard.qml:116
 #, kde-format
@@ -274,7 +274,7 @@ msgstr[3] "Импортирован один сертификат здоровь
 #: app/applicationcontroller.cpp:492 app/applicationcontroller.cpp:510
 #: app/applicationcontroller.cpp:551 app/applicationcontroller.cpp:587
 #: app/applicationcontroller.cpp:605
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "%1 is an error message"
 msgid "Export failed: %1"
 msgstr "Ошибка экспорта: %1"
@@ -302,7 +302,7 @@ msgid "Pass sent."
 msgstr "Пропуск отправлен."
 
 #: app/applicationcontroller.cpp:635
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "%1 is an error message"
 msgid "Saving failed: %1"
 msgstr "Ошибка сохранения: %1"
@@ -556,16 +556,16 @@ msgid "Booking"
 msgstr "Бронирование"
 
 #: app/BookingEditorCard.qml:66
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "canceled reservation"
 msgid "Canceled"
 msgstr "Отменено"
 
 #: app/BookingEditorCard.qml:67
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "canceled reservation"
 msgid "Booking has been canceled."
-msgstr "Поездка была отменена."
+msgstr "Бронирование отменено."
 
 #: app/BusDelegate.qml:38
 #, kde-format
@@ -762,7 +762,7 @@ msgid "Arrival"
 msgstr "Прибытие"
 
 #: app/calendarhelper.cpp:28
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "%1 is the transfer destination"
 msgid "Transfer to %1"
 msgstr "Пересадка на %1"
@@ -784,7 +784,7 @@ msgid "Rental Car Pick-up"
 msgstr "Взятие прокатного автомобиля"
 
 #: app/CarRentalDelegate.qml:57
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "%1 is a date/time"
 msgid "Drop-off: %1"
 msgstr "Оставление: %1"
@@ -947,13 +947,13 @@ msgid "Add Document…"
 msgstr "Добавить документ…"
 
 #: app/downloadjob.cpp:162
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "%1 is an error message"
 msgid "Network error: %1"
 msgstr "Ошибка сети: %1"
 
 #: app/downloadjob.cpp:193
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "%1 is an error message"
 msgid "Download failed: %1"
 msgstr "Ошибка загрузки: %1"
@@ -1116,7 +1116,7 @@ msgid "Work"
 msgstr "Работа"
 
 #: app/favoritelocationmodel.cpp:161
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "%1 is a number"
 msgid "Location %1"
 msgstr "Расположение %1"
@@ -1476,9 +1476,9 @@ msgid "Country"
 msgstr "Страна"
 
 #: app/FormPlaceEditorDelegate.qml:201
-#, fuzzy, kde-format
+#, kde-format
 msgid "Coordinates"
-msgstr "Координата"
+msgstr "Координаты"
 
 #: app/FormPlaceEditorDelegate.qml:202
 #, kde-format
@@ -1491,17 +1491,17 @@ msgid "Pick…"
 msgstr "Выбрать…"
 
 #: app/FormPlaceEditorDelegate.qml:221
-#, fuzzy, kde-format
+#, kde-format
 msgid "Address to coordinates"
-msgstr "Определить адрес по координате"
+msgstr "Определить координаты по адресу"
 
 #: app/FormPlaceEditorDelegate.qml:237
-#, fuzzy, kde-format
+#, kde-format
 msgid "Coordinates to address"
-msgstr "Определить координату по адресу"
+msgstr "Определить адрес по координатам"
 
 #: app/FormPlaceEditorDelegate.qml:247
-#, fuzzy, kde-format
+#, kde-format
 msgid "Remove coordinates"
 msgstr "Удалить координаты"
 
@@ -1590,19 +1590,19 @@ msgid "Ferry from %1 to %2"
 msgstr "Отправление из %1 в %2"
 
 #: app/HealthCertificateBarcode.qml:34
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "%1 is a person name"
 msgid "Vaccination certificate of %1"
 msgstr "Прививочный сертификат %1"
 
 #: app/HealthCertificateBarcode.qml:36
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "%1 is a person name, 'Test certificate' is a compound noun"
 msgid "Test certificate of %1"
 msgstr "Сертификат теста %1"
 
 #: app/HealthCertificateBarcode.qml:38
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "%1 is a person name"
 msgid "Recovery certificate of %1"
 msgstr "Сертификат выздоровления %1"
@@ -1669,17 +1669,17 @@ msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: app/healthcertificatemanager.cpp:154
-#, fuzzy, kde-format
+#, kde-format
 msgctxt ""
 "%1 is a disease, %2 the amount of applied doses, %3 the amount of total doses"
 msgid "Vaccination for %1 (%2/%3)"
-msgstr "Вакцинация: %1 (%2/%3)"
+msgstr "Вакцинация против %1 (%2/%3)"
 
 #: app/healthcertificatemanager.cpp:157
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "%1 is a disease"
 msgid "Vaccination for %1"
-msgstr "Вакцинация: %1"
+msgstr "Вакцинация против %1"
 
 #: app/healthcertificatemanager.cpp:159 app/HealthCertificateVaccination.qml:54
 #, kde-format
@@ -1687,16 +1687,16 @@ msgid "Vaccination"
 msgstr "Вакцинация"
 
 #: app/healthcertificatemanager.cpp:163
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "%1 is a disease, %2 is a date"
 msgid "Test for %1 – %2"
-msgstr "Тестирование %1 на %2"
+msgstr "Тестирование на %1 — %2"
 
 #: app/healthcertificatemanager.cpp:168
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "%1 is a disease, %2 is a date"
 msgid "Recovery from %1 – %2"
-msgstr "Выздоровление %1 (перенесённое заболевание: %2)"
+msgstr "Выздоровление от %1 – %2"
 
 #: app/HealthCertificatePage.qml:19
 #, kde-format
@@ -2038,7 +2038,7 @@ msgid "From SNCF reservation number"
 msgstr "Из номера бронирования SNCF"
 
 #: app/importcontroller.cpp:153 app/importcontroller.cpp:475
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "%1 is an error message"
 msgid "Import failed: %1"
 msgstr "Ошибка импорта: %1"
@@ -2381,19 +2381,19 @@ msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
 #: app/JourneySectionStopDelegate.qml:148
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Abbreviation of train platform"
 msgid "Pl. %1"
 msgstr "Пл. %1"
 
 #: app/JourneySectionStopDelegate.qml:150
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Ferry dock, if possible use an abbreviation"
 msgid "Dock %1"
 msgstr "Причал %1"
 
 #: app/JourneySectionStopDelegate.qml:152
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Generic abbreviation of platform"
 msgid "Pl. %1"
 msgstr "Пл. %1"
@@ -3110,7 +3110,7 @@ msgid "The session verification was canceled due to an unknown error."
 msgstr "Проверка сеанса отменена: произошла неизвестная ошибка."
 
 #: app/MatrixKeyVerificationPage.qml:114
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Matrix session verification"
 msgid "Emoji Verification"
 msgstr "Проверка эмодзи"
@@ -3434,7 +3434,7 @@ msgid "%1 - %2"
 msgstr "%1 — %2"
 
 #: app/passmanager.cpp:289
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "%1 and %2 are dates"
 msgid "%1 - %2"
 msgstr "%1 — %2"
@@ -3574,14 +3574,14 @@ msgid "Show Pass"
 msgstr "Показать пропуск"
 
 #: app/ReservationDeletionDialog.qml:30
-#, fuzzy, kde-format
+#, kde-format
 msgid "Delete Selected"
-msgstr "Удалить событие"
+msgstr "Удалить выбранное"
 
 #: app/ReservationDeletionDialog.qml:42
-#, fuzzy, kde-format
+#, kde-format
 msgid "Delete All"
-msgstr "Удалить"
+msgstr "Удалить все"
 
 #: app/ReservationDocumentsCard.qml:19
 #, kde-format
@@ -3890,13 +3890,13 @@ msgstr ""
 "доступ к информации о посадке."
 
 #: app/SettingsPage.qml:242
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Unfortunately, retrieving onboard information is not supported on your "
 "device at this time."
 msgstr ""
-"В настоящий момент информация о посадке не поддерживается на данном "
-"устройстве."
+"Получение информации о бортовом обслуживании на данном устройстве в "
+"настоящий момент не поддерживается."
 
 #: app/SettingsPage.qml:274
 #, kde-format
@@ -3952,19 +3952,19 @@ msgid "Log in"
 msgstr "Войти"
 
 #: app/SettingsPage.qml:328
-#, fuzzy, kde-format
+#, kde-format
 msgid "Träwelling Integration"
 msgstr "Интеграция с Traewelling"
 
 #: app/SettingsPage.qml:333
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Träwelling is a free check-in service that lets you tell your friends where "
 "you are and where you can log your public transit journeys. For more "
 "information, visit <a href=\"https://traewelling.de\">traewelling.de</a>"
 msgstr ""
-"Traewelling — бесплатная служба регистрации, позволяющая сообщать друзьям о "
+"Träwelling — бесплатная служба регистрации, позволяющая сообщать друзьям о "
 "своём местонахождении и вести журнал поездок на общественном транспорте. "
 "Дополнительные сведения доступны на веб-сайте <a href=\"https://traewelling."
 "de\">traewelling.de</a>"
