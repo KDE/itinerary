@@ -935,7 +935,7 @@
       <description>
         <ul>
           <li>Added or improved travel document extractors for booking.com FCM, FRS, Get Your Guide and Hotelworld.</li>
-          <li xml:lang="ar">إضافة أو تحسين مستخرجات وثائق السفر لـ booking.com FCM و FRS والحصول على دليلك وعالم الفنادق.</li>
+          <li xml:lang="ar">إضافة أو تحسين أدوات استخراج وثائق السفر لـ booking.com FCM و FRS و Get Your Guide و Hotelworld.</li>
           <li xml:lang="ca">S'han millorat o corregit els extractors de documents de viatge de booking.com, FCM, FRS, Get Your Guide i Hotelworld.</li>
           <li xml:lang="ca-valencia">S'han millorat o corregit els extractors de documents de viatge de booking.com, FCM, FRS, Get Your Guide i Hotelworld.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para booking.com, FCM, FRS, Get Your Guide y Hotelworld.</li>
@@ -949,7 +949,7 @@
           <li xml:lang="tr">FCM, FRS, Get Your Guide ve Hotelworld için belge çıkarıcıları eklendi veya iyileştirildi.</li>
           <li xml:lang="uk">Додано або удосконалено засоби видобування даних з документів щодо подорожей для booking.com FCM, FRS, Get Your Guide і Hotelworld.</li>
           <li>Better default selection when importing entire trips.</li>
-          <li xml:lang="ar">اختيار مبدئي أفضل عند استيراد رحلات كاملة.</li>
+          <li xml:lang="ar">اختيار افتراضي أفضل عند استيراد الرحلات بالكامل.</li>
           <li xml:lang="ca">Millor selecció predeterminada en importar viatges sencers.</li>
           <li xml:lang="ca-valencia">Millor selecció predeterminada en importar viatges sencers.</li>
           <li xml:lang="es">Mejor selección predeterminada al importar viajes completos.</li>
@@ -964,7 +964,7 @@
           <li xml:lang="tr">Bütün yolculukları içe aktarırken daha iyi öntanımlı seçim</li>
           <li xml:lang="uk">Покращено типове позначення при імпортуванні усіх маршрутів.</li>
           <li>Fixed computing end times for trips with nested events.</li>
-          <li xml:lang="ar">حساب أوقات نهاية للرحلات مع الأحداث المتداخلة.</li>
+          <li xml:lang="ar">تصحيح حساب أوقات انتهاء الرحلات التي تتضمن أحداثًا متداخلة.</li>
           <li xml:lang="ca">S'ha corregit el càlcul de les hores finals dels viatges amb esdeveniments imbricats.</li>
           <li xml:lang="ca-valencia">S'ha corregit el càlcul de les hores finals dels viatges amb esdeveniments imbricats.</li>
           <li xml:lang="es">Se han corregido los tiempos de finalización del cálculo para viajes con eventos anidados.</li>
@@ -979,7 +979,7 @@
           <li xml:lang="tr">İç içe geçmiş etkinlikler bulunan yolculukların bitiş zamanları artık düzgünce hesaplanıyor.</li>
           <li xml:lang="uk">Виправлено обчислення кінцевих часів для подорожей з вкладеними подіями.</li>
           <li>Improved routing results with Deutsche Bahn when starting from a favorite location.</li>
-          <li xml:lang="ar">تحسين نتائج التوجيه مع دويتشه بان عند البدء من موقع مفضل.</li>
+          <li xml:lang="ar">تحسين نتائج التوجيه مع الشركة الألمانية للسكك الحديدية عند الانطلاق من موقع مفضل.</li>
           <li xml:lang="ca">S'han millorat els resultats de l'encaminament amb Deutsche Bahn quan es comença des d'una ubicació preferida.</li>
           <li xml:lang="ca-valencia">S'han millorat els resultats de l'encaminament amb Deutsche Bahn quan es comença des d'una ubicació preferida.</li>
           <li xml:lang="es">Resultados de ruta mejorados con Deutsche Bahn al comenzar desde una ubicación favorita.</li>
@@ -1250,6 +1250,7 @@
           <li xml:lang="ru">Позиционирование представления результатов маршрута в конце при поиске по времени прибытия.</li>
           <li xml:lang="sl">Prikaz rezultatov potovanja se pri iskanju po času prihoda postavi na konec.</li>
           <li xml:lang="tr">Position journey result view at the end when searching by arrival time.</li>
+          <li xml:lang="uk">Реалізовано розташовування панелі результату подорожі у кінці при пошуку за часом прибуття.</li>
           <li>Fixed parsing of certain Apple Wallet pass variants.</li>
           <li xml:lang="ar">أُصلح تحليل بعض أنواع تصاريح Apple Wallet.</li>
           <li xml:lang="ca">S'ha corregit l'anàlisi de certes variants de passis de l'Apple Wallet.</li>
@@ -1291,6 +1292,7 @@
           <li xml:lang="ru">Исправлен анализ промежуточных остановок от Railteam.</li>
           <li xml:lang="sl">Popravljeno razčlenjevanje vmesnih postankov iz Railteama.</li>
           <li xml:lang="tr">Fixed parsing intermediate stops from Railteam.</li>
+          <li xml:lang="uk">Виправлено обробку проміжних зупинок від Railteam.</li>
         </ul>
       </description>
     </release>
@@ -1310,6 +1312,7 @@
           <li xml:lang="ru">Новые или улучшенные модули извлечения данных из проездных документов для booking.com, Center Parcs, Coloseum, eDreams, Finnair, LTG Link, MÁV, Pretix, RegioJet, Thalys и United Airlines.</li>
           <li xml:lang="sl">Novi ali izboljšani izvlečki potovalnih dokumentov za booking.com, Center Parcs, Coloseum, eDreams, Finnair, LTG Link, MÁV, Pretix, RegioJet, Thalys in United Airlines.</li>
           <li xml:lang="tr">New or improved travel document extractors for booking.com, Center Parcs, Coloseum, eDreams, Finnair, LTG Link, MÁV, Pretix, RegioJet, Thalys and United Airlines.</li>
+          <li xml:lang="uk">Нові або удосконалені засоби видобування даних з документів про подорожі для booking.com, Center Parcs, Coloseum, eDreams, Finnair, LTG Link, MÁV, Pretix, RegioJet, Thalys і United Airlines.</li>
           <li>Correctly update currency exchange rates.</li>
           <li xml:lang="ar">تحديث أسعار صرف العملات بشكل صحيح.</li>
           <li xml:lang="ca">Actualitza correctament els tipus de canvi de divisa.</li>
@@ -1324,6 +1327,7 @@
           <li xml:lang="ru">Корректное обновление курсов валют.</li>
           <li xml:lang="sl">Pravilno posodabljanje menjalnih tečajev.</li>
           <li xml:lang="tr">Correctly update currency exchange rates.</li>
+          <li xml:lang="uk">Реалізовано правильне оновлення курсів валют.</li>
           <li>Add support for result paging for LTG Link and Srbija Voz.</li>
           <li xml:lang="ar">إضافة دعم لترقيم نتائج LTG Link و Srbija Voz.</li>
           <li xml:lang="ca">Afegeix la implementació per a la paginació de resultats per a LTG Link i Srbija Voz.</li>
@@ -1337,6 +1341,7 @@
           <li xml:lang="ru">Добавлена поддержка постраничного просмотра результатов для LTG Link и Srbija Voz.</li>
           <li xml:lang="sl">Dodana podpora za straničenje rezultatov za LTG Link in Srbija Voz.</li>
           <li xml:lang="tr">Add support for result paging for LTG Link and Srbija Voz.</li>
+          <li xml:lang="uk">Додано підтримку поділу на сторінки для LTG Link і Srbija Voz.</li>
           <li>Support hotel reservations with ticket tokens.</li>
           <li xml:lang="ar">دعم حجوزات الفنادق باستخدام رموز التذاكر.</li>
           <li xml:lang="ca">Permet reserves d'hotel amb testimonis de tiquets.</li>
@@ -1351,6 +1356,7 @@
           <li xml:lang="ru">Поддержка бронирования отелей с билетными токенами.</li>
           <li xml:lang="sl">Podpora za rezervacije hotelov z žetoni za vozovnice.</li>
           <li xml:lang="tr">Support hotel reservations with ticket tokens.</li>
+          <li xml:lang="uk">Реалізовано підтримку резервування готелів за допомогою жетонів квитків.</li>
         </ul>
       </description>
     </release>
@@ -1371,6 +1377,7 @@
           <li xml:lang="ru">Поездки на поезде и автобусе теперь можно добавлять полностью вручную.</li>
           <li xml:lang="sl">Potovanja z vlakom in avtobusom je zdaj mogoče dodati tudi v celoti ročno.</li>
           <li xml:lang="tr">Train and bus trips can now also be added entirely manually.</li>
+          <li xml:lang="uk">У новій версії можна повністю вручну додавати подорожі потягами та автобусами.</li>
           <li>More flexible alternative connection search.</li>
           <li xml:lang="ar">بحث أكثر مرونة عن الوصلات البديلة.</li>
           <li xml:lang="ca">Cerca connexions alternatives més flexibles.</li>
@@ -1384,6 +1391,7 @@
           <li xml:lang="ru">Более гибкий поиск альтернативных соединений.</li>
           <li xml:lang="sl">Prilagodljivejše iskanje alternativnih povezav.</li>
           <li xml:lang="tr">More flexible alternative connection search.</li>
+          <li xml:lang="uk">Гнучкіший пошук альтернативних пересадок.</li>
           <li>New and much more detailed public transport departures view.</li>
           <li xml:lang="ar">عرض جديد وأكثر تفصيلًا لمغادرات النقل العام.</li>
           <li xml:lang="ca">Vista de sortides de transport públic noves i molt més detallades.</li>
@@ -4295,6 +4303,7 @@
           <li xml:lang="cs">Vylepšena detekce vektorových čárových kódů v dokumentech PDF.</li>
           <li xml:lang="es">Se ha mejorado la detección de códigos de barras vectoriales en documentos PDF.</li>
           <li xml:lang="fr">Amélioration de la détection des codes-barres vectoriels dans les documents de format « PDF ».</li>
+          <li xml:lang="he">זיהוי ברקוד וקטור במסמכי PDF השתפר.</li>
           <li xml:lang="it">Migliora il rilevamento dei codici a barre vettoriali nei documenti PDF.</li>
           <li xml:lang="ka">ვექტორული შტრიხკოდების ამოცნობის გაუმჯობესება PDF დოკუმენტებში.</li>
           <li xml:lang="pt-BR">Melhoria da detecção de códigos de barras vetoriais em documentos PDF.</li>
@@ -4314,6 +4323,7 @@
           <li xml:lang="cs">Opraveno umístění stanic na mapě pro prvky bez živých dat.</li>
           <li xml:lang="es">Corregir la posición en el mapa de la estación de elementos sin datos en vivo.</li>
           <li xml:lang="fr">Correction du positionnement de la carte de la station pour les éléments sans données en temps réel.</li>
+          <li xml:lang="he">תוקנה הצבת מפת תחנות לרכיבים בלי נתונים חיים.</li>
           <li xml:lang="it">Corregge il posizionamento sulla mappa della stazione per gli elementi senza dati in tempo reale.</li>
           <li xml:lang="ka">გასწორდა სადგურის რუკის პოზიციონირება ელემენტებისთვის რეალური მონაცემების გარეშე.</li>
           <li xml:lang="pt-BR">Corrigido o posicionamento no mapa da estação para elementos sem dados em tempo real.</li>
@@ -4327,6 +4337,7 @@
           <li xml:lang="cs">Vylepšené extrahování cestovních dokladů pro společnosti Amtrak a VIA Rail.</li>
           <li xml:lang="es">Extracción mejorada de documentos de viaje de Amtrak y VIA Rail.</li>
           <li xml:lang="fr">Amélioration de l'extraction des documents de voyage pour Amtrak et VIA Rail.</li>
+          <li xml:lang="he">חילוץ מסמכי נסיעה ל־Amtrak ול־VIA Rail השתפר.</li>
           <li xml:lang="it">Migliorata l'estrazione dei documenti di viaggio per Amtrak e VIA Rail.</li>
           <li xml:lang="ka">გაუმჯობესებული სამგზავრო მონაცემების ამოღება Amtrak და VIA Rail სისტემებისთვის.</li>
           <li xml:lang="pt-BR">Extração aprimorada de documentos de viagem para Amtrak e VIA Rail.</li>
@@ -4353,6 +4364,7 @@
           <li xml:lang="cs">Vylepšené zobrazení otevírací doby v mapách stanic.</li>
           <li xml:lang="es">Mejora en la evaluación del horario de apertura en los mapas de estaciones.</li>
           <li xml:lang="fr">Améliorations de l'évaluation des horaires d'ouverture sur les plans des stations.</li>
+          <li xml:lang="he">שיערוך שעות הפתיחה במפות התחנות השתפר.</li>
           <li xml:lang="it">Migliorata la valutazione degli orari di apertura nelle mappe delle stazioni.</li>
           <li xml:lang="ka">სამუშაო საათების შეფასების გაუმჯობესება სადგურის რუკებზე.</li>
           <li xml:lang="pt-BR">Melhoria na avaliação dos horários de funcionamento nos mapas das estações.</li>
@@ -4372,6 +4384,7 @@
           <li xml:lang="cs">Nové uživatelské rozhraní pro zdravotní certifikáty.</li>
           <li xml:lang="es">Nueva interfaz para certificados sanitarios.</li>
           <li xml:lang="fr">Nouvelle interface utilisateur pour les certificats de santé.</li>
+          <li xml:lang="he">ממשק משתמש חדש לתעודות הבריאות.</li>
           <li xml:lang="it">Nuova interfaccia utente del certificato sanitario.</li>
           <li xml:lang="ka">ჯანმრთელობის სერტიფიკატების ახალი ინტერფეისი.</li>
           <li xml:lang="pt-BR">Nova interface de usuário para certificado de saúde.</li>
@@ -4398,6 +4411,7 @@
           <li xml:lang="cs">Chytřejší automatický výběr přepravy.</li>
           <li xml:lang="es">Selección automática de transbordo más inteligente.</li>
           <li xml:lang="fr">Sélection automatique de transfert plus intelligente.</li>
+          <li xml:lang="he">בחירה אוטומטית של העברות נהייתה חכמה יותר.</li>
           <li xml:lang="it">Selezione automatica del trasferimento più intelligente.</li>
           <li xml:lang="ka">გადაჯდომის უფრო ჭკვიანი ავტომატური შერჩევა.</li>
           <li xml:lang="pt-BR">Seleção automática de transferências mais inteligente.</li>
@@ -4424,6 +4438,7 @@
           <li xml:lang="cs">Možnost zkrátit cesty vlakem a autobusem.</li>
           <li xml:lang="es">Capacidad de acortar los viajes en tren y autobús.</li>
           <li xml:lang="fr">Capacité à raccourcir les voyages en train et en bus.</li>
+          <li xml:lang="he">היכולת לקצר נסיעות ברכבת ובאוטובוס.</li>
           <li xml:lang="it">Possibilità di abbreviare i viaggi in treno e autobus.</li>
           <li xml:lang="ka">მატარებლისა და ავტობუსის მგზავრობების შემოკლების შესაძლებლობა.</li>
           <li xml:lang="pt-BR">Possibilidade de encurtar viagens de trem e ônibus.</li>
