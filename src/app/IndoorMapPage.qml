@@ -11,6 +11,7 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kpublictransport as PT
 import org.kde.kosmindoormap
+import org.kde.kosmindoorrouting
 import org.kde.itinerary
 import org.kde.kosmindoormap.kpublictransport
 import org.kde.osm.editorcontroller
@@ -95,7 +96,7 @@ Kirigami.Page {
             checkable: true
             enabled: !map.mapLoader.isLoading && (QtNetwork.NetworkInformation.reachability === QtNetwork.NetworkInformation.Reachability.Online || QtNetwork.NetworkInformation.reachability === QtNetwork.NetworkInformation.Reachability.Unknown)
             icon.color: QtNetwork.NetworkInformation.isMetered ? Kirigami.Theme.neutralTextColor : Kirigami.Theme.textColor
-            onTriggered: queryLiveLocationData();
+            onTriggered: root.queryLiveLocationData();
         },
         Kirigami.Action {
             id: rentalVehicleAction
@@ -104,7 +105,7 @@ Kirigami.Page {
             checkable: true
             enabled: !map.mapLoader.isLoading && (QtNetwork.NetworkInformation.reachability === QtNetwork.NetworkInformation.Reachability.Online || QtNetwork.NetworkInformation.reachability === QtNetwork.NetworkInformation.Reachability.Unknown)
             icon.color: QtNetwork.NetworkInformation.isMetered ? Kirigami.Theme.neutralTextColor : Kirigami.Theme.textColor
-            onTriggered: queryLiveLocationData();
+            onTriggered: root.queryLiveLocationData();
         },
         Kirigami.Action { separator: true },
         Kirigami.Action {
@@ -243,6 +244,12 @@ Kirigami.Page {
         }
     }
 
+    RoutingController {
+        id: routingController
+        mapData: map.mapData
+        elevatorModel: map.equipmentModel
+    }
+
     IndoorMapView {
         id: map
         anchors.fill: parent
@@ -250,9 +257,10 @@ Kirigami.Page {
         equipmentModel: RealtimeEquipmentModel {
             mapData: map.mapData
             realtimeModel: locationModel.sourceModel
+            onUpdate: routingController.searchRoute()
         }
 
-        overlaySources: [ gateModel, platformModel, locationModel, map.equipmentModel ]
+        overlaySources: [ gateModel, platformModel, locationModel, map.equipmentModel, routingController.routeOverlay ]
 
         elementInfoModel {
             allowOnlineContent: Settings.wikimediaOnlineContentEnabled
@@ -264,6 +272,49 @@ Kirigami.Page {
             regionCode: root.map.mapData.regionCode
             timeZone: root.map.mapData.timeZone
         }
+
+        QQC2.Menu {
+            id: contextMenu
+            property mapPointerEvent ev
+            QQC2.MenuItem {
+                text: i18n("Navigate from here")
+                icon.name: "go-next-symbolic"
+                visible: routingController.available
+                onTriggered: {
+                    routingController.setStartPosition(contextMenu.ev.geoPosition.y, contextMenu.ev.geoPosition.x, map.view.floorLevel);
+                    routingController.searchRoute();
+                }
+            }
+            QQC2.MenuItem {
+                text: i18n("Navigate to here")
+                icon.name: "map-symbolic"
+                visible: routingController.available
+                onTriggered: {
+                    routingController.setEndPosition(contextMenu.ev.geoPosition.y, contextMenu.ev.geoPosition.x, map.view.floorLevel);
+                    routingController.searchRoute();
+                }
+            }
+            QQC2.MenuItem {
+                id: contextMenuInfoAction
+                enabled: !contextMenu.ev.element.isNull && (map.elementInfoModel.name !== "" || map.elementInfoModel.debug)
+                text: i18n("Show information")
+                icon.name: "documentinfo"
+                onTriggered: map.elementInfoDialog.open()
+            }
+        }
+
+        function showContextMenu(ev) {
+            map.elementInfoModel.element = ev.element;
+            contextMenuInfoAction.enabled = !ev.element.isNull && (map.elementInfoModel.name !== "" || map.elementInfoModel.debug);
+            contextMenu.ev = ev;
+            contextMenu.popup(map, ev.screenPosition);
+        }
+    }
+
+    QQC2.BusyIndicator {
+        anchors.top: parent.top
+        anchors.right: parent.right
+        running: routingController.inProgress
     }
 
     onCoordinateChanged: map.mapLoader.loadForCoordinate(coordinate.y, coordinate.x);
@@ -277,7 +328,7 @@ Kirigami.Page {
             map.timeZone = root.timeZone;
             map.view.beginTime = root.beginTime;
             map.view.endTime = root.endTime;
-            queryLiveLocationData();
+            root.queryLiveLocationData();
         }
     }
 
