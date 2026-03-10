@@ -935,7 +935,7 @@
       <description>
         <ul>
           <li>Added or improved travel document extractors for booking.com FCM, FRS, Get Your Guide and Hotelworld.</li>
-          <li xml:lang="ar">إضافة أو تحسين مستخرجات وثائق السفر لـ booking.com FCM و FRS والحصول على دليلك وعالم الفنادق.</li>
+          <li xml:lang="ar">إضافة أو تحسين أدوات استخراج وثائق السفر لـ booking.com FCM و FRS و Get Your Guide و Hotelworld.</li>
           <li xml:lang="ca">S'han millorat o corregit els extractors de documents de viatge de booking.com, FCM, FRS, Get Your Guide i Hotelworld.</li>
           <li xml:lang="ca-valencia">S'han millorat o corregit els extractors de documents de viatge de booking.com, FCM, FRS, Get Your Guide i Hotelworld.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para booking.com, FCM, FRS, Get Your Guide y Hotelworld.</li>
@@ -949,7 +949,7 @@
           <li xml:lang="tr">FCM, FRS, Get Your Guide ve Hotelworld için belge çıkarıcıları eklendi veya iyileştirildi.</li>
           <li xml:lang="uk">Додано або удосконалено засоби видобування даних з документів щодо подорожей для booking.com FCM, FRS, Get Your Guide і Hotelworld.</li>
           <li>Better default selection when importing entire trips.</li>
-          <li xml:lang="ar">اختيار مبدئي أفضل عند استيراد رحلات كاملة.</li>
+          <li xml:lang="ar">اختيار افتراضي أفضل عند استيراد الرحلات بالكامل.</li>
           <li xml:lang="ca">Millor selecció predeterminada en importar viatges sencers.</li>
           <li xml:lang="ca-valencia">Millor selecció predeterminada en importar viatges sencers.</li>
           <li xml:lang="es">Mejor selección predeterminada al importar viajes completos.</li>
@@ -964,7 +964,7 @@
           <li xml:lang="tr">Bütün yolculukları içe aktarırken daha iyi öntanımlı seçim</li>
           <li xml:lang="uk">Покращено типове позначення при імпортуванні усіх маршрутів.</li>
           <li>Fixed computing end times for trips with nested events.</li>
-          <li xml:lang="ar">حساب أوقات نهاية للرحلات مع الأحداث المتداخلة.</li>
+          <li xml:lang="ar">تصحيح حساب أوقات انتهاء الرحلات التي تتضمن أحداثًا متداخلة.</li>
           <li xml:lang="ca">S'ha corregit el càlcul de les hores finals dels viatges amb esdeveniments imbricats.</li>
           <li xml:lang="ca-valencia">S'ha corregit el càlcul de les hores finals dels viatges amb esdeveniments imbricats.</li>
           <li xml:lang="es">Se han corregido los tiempos de finalización del cálculo para viajes con eventos anidados.</li>
@@ -979,7 +979,7 @@
           <li xml:lang="tr">İç içe geçmiş etkinlikler bulunan yolculukların bitiş zamanları artık düzgünce hesaplanıyor.</li>
           <li xml:lang="uk">Виправлено обчислення кінцевих часів для подорожей з вкладеними подіями.</li>
           <li>Improved routing results with Deutsche Bahn when starting from a favorite location.</li>
-          <li xml:lang="ar">تحسين نتائج التوجيه مع دويتشه بان عند البدء من موقع مفضل.</li>
+          <li xml:lang="ar">تحسين نتائج التوجيه مع الشركة الألمانية للسكك الحديدية عند الانطلاق من موقع مفضل.</li>
           <li xml:lang="ca">S'han millorat els resultats de l'encaminament amb Deutsche Bahn quan es comença des d'una ubicació preferida.</li>
           <li xml:lang="ca-valencia">S'han millorat els resultats de l'encaminament amb Deutsche Bahn quan es comença des d'una ubicació preferida.</li>
           <li xml:lang="es">Resultados de ruta mejorados con Deutsche Bahn al comenzar desde una ubicación favorita.</li>
@@ -4295,6 +4295,7 @@
           <li xml:lang="cs">Vylepšena detekce vektorových čárových kódů v dokumentech PDF.</li>
           <li xml:lang="es">Se ha mejorado la detección de códigos de barras vectoriales en documentos PDF.</li>
           <li xml:lang="fr">Amélioration de la détection des codes-barres vectoriels dans les documents de format « PDF ».</li>
+          <li xml:lang="he">זיהוי ברקוד וקטור במסמכי PDF השתפר.</li>
           <li xml:lang="it">Migliora il rilevamento dei codici a barre vettoriali nei documenti PDF.</li>
           <li xml:lang="ka">ვექტორული შტრიხკოდების ამოცნობის გაუმჯობესება PDF დოკუმენტებში.</li>
           <li xml:lang="pt-BR">Melhoria da detecção de códigos de barras vetoriais em documentos PDF.</li>
@@ -4314,6 +4315,7 @@
           <li xml:lang="cs">Opraveno umístění stanic na mapě pro prvky bez živých dat.</li>
           <li xml:lang="es">Corregir la posición en el mapa de la estación de elementos sin datos en vivo.</li>
           <li xml:lang="fr">Correction du positionnement de la carte de la station pour les éléments sans données en temps réel.</li>
+          <li xml:lang="he">תוקנה הצבת מפת תחנות לרכיבים בלי נתונים חיים.</li>
           <li xml:lang="it">Corregge il posizionamento sulla mappa della stazione per gli elementi senza dati in tempo reale.</li>
           <li xml:lang="ka">გასწორდა სადგურის რუკის პოზიციონირება ელემენტებისთვის რეალური მონაცემების გარეშე.</li>
           <li xml:lang="pt-BR">Corrigido o posicionamento no mapa da estação para elementos sem dados em tempo real.</li>
@@ -4327,6 +4329,7 @@
           <li xml:lang="cs">Vylepšené extrahování cestovních dokladů pro společnosti Amtrak a VIA Rail.</li>
           <li xml:lang="es">Extracción mejorada de documentos de viaje de Amtrak y VIA Rail.</li>
           <li xml:lang="fr">Amélioration de l'extraction des documents de voyage pour Amtrak et VIA Rail.</li>
+          <li xml:lang="he">חילוץ מסמכי נסיעה ל־Amtrak ול־VIA Rail השתפר.</li>
           <li xml:lang="it">Migliorata l'estrazione dei documenti di viaggio per Amtrak e VIA Rail.</li>
           <li xml:lang="ka">გაუმჯობესებული სამგზავრო მონაცემების ამოღება Amtrak და VIA Rail სისტემებისთვის.</li>
           <li xml:lang="pt-BR">Extração aprimorada de documentos de viagem para Amtrak e VIA Rail.</li>
@@ -4353,6 +4356,7 @@
           <li xml:lang="cs">Vylepšené zobrazení otevírací doby v mapách stanic.</li>
           <li xml:lang="es">Mejora en la evaluación del horario de apertura en los mapas de estaciones.</li>
           <li xml:lang="fr">Améliorations de l'évaluation des horaires d'ouverture sur les plans des stations.</li>
+          <li xml:lang="he">שיערוך שעות הפתיחה במפות התחנות השתפר.</li>
           <li xml:lang="it">Migliorata la valutazione degli orari di apertura nelle mappe delle stazioni.</li>
           <li xml:lang="ka">სამუშაო საათების შეფასების გაუმჯობესება სადგურის რუკებზე.</li>
           <li xml:lang="pt-BR">Melhoria na avaliação dos horários de funcionamento nos mapas das estações.</li>
@@ -4372,6 +4376,7 @@
           <li xml:lang="cs">Nové uživatelské rozhraní pro zdravotní certifikáty.</li>
           <li xml:lang="es">Nueva interfaz para certificados sanitarios.</li>
           <li xml:lang="fr">Nouvelle interface utilisateur pour les certificats de santé.</li>
+          <li xml:lang="he">ממשק משתמש חדש לתעודות הבריאות.</li>
           <li xml:lang="it">Nuova interfaccia utente del certificato sanitario.</li>
           <li xml:lang="ka">ჯანმრთელობის სერტიფიკატების ახალი ინტერფეისი.</li>
           <li xml:lang="pt-BR">Nova interface de usuário para certificado de saúde.</li>
@@ -4398,6 +4403,7 @@
           <li xml:lang="cs">Chytřejší automatický výběr přepravy.</li>
           <li xml:lang="es">Selección automática de transbordo más inteligente.</li>
           <li xml:lang="fr">Sélection automatique de transfert plus intelligente.</li>
+          <li xml:lang="he">בחירה אוטומטית של העברות נהייתה חכמה יותר.</li>
           <li xml:lang="it">Selezione automatica del trasferimento più intelligente.</li>
           <li xml:lang="ka">გადაჯდომის უფრო ჭკვიანი ავტომატური შერჩევა.</li>
           <li xml:lang="pt-BR">Seleção automática de transferências mais inteligente.</li>
@@ -4424,6 +4430,7 @@
           <li xml:lang="cs">Možnost zkrátit cesty vlakem a autobusem.</li>
           <li xml:lang="es">Capacidad de acortar los viajes en tren y autobús.</li>
           <li xml:lang="fr">Capacité à raccourcir les voyages en train et en bus.</li>
+          <li xml:lang="he">היכולת לקצר נסיעות ברכבת ובאוטובוס.</li>
           <li xml:lang="it">Possibilità di abbreviare i viaggi in treno e autobus.</li>
           <li xml:lang="ka">მატარებლისა და ავტობუსის მგზავრობების შემოკლების შესაძლებლობა.</li>
           <li xml:lang="pt-BR">Possibilidade de encurtar viagens de trem e ônibus.</li>
