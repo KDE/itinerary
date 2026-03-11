@@ -422,7 +422,7 @@
       <li xml:lang="sa">सर्वेषां ऑनलाइन-प्रवेशस्य पूर्णं नियन्त्रणम्।</li>
       <li xml:lang="sl">Popoln nadzor nad vsemi spletnimi dostopi.</li>
       <li xml:lang="sv">Fullständig kontroll över alla nätåtkomster.</li>
-      <li xml:lang="tr">Tüm çevrimiçi erişim üzerinde tam denetim.</li>
+      <li xml:lang="tr">Tüm çevrim içi erişim üzerinde tam denetim.</li>
       <li xml:lang="uk">Повне керування усіма параметрами доступу до інтернету.</li>
       <li xml:lang="zh-CN">完全掌控所有在线功能。</li>
       <li xml:lang="zh-TW">對於所有線上存取的完整控制。</li>
@@ -1405,6 +1405,7 @@
           <li xml:lang="ru">Новый и гораздо более подробный просмотр отправлений общественного транспорта.</li>
           <li xml:lang="sl">Nov in veliko podrobnejši prikaz odhodov javnega prevoza.</li>
           <li xml:lang="tr">New and much more detailed public transport departures view.</li>
+          <li xml:lang="uk">Нова і набагато докладніша панель відправлень маршрутів громадського транспорту.</li>
           <li>Improved location search.</li>
           <li xml:lang="ar">بحث محسّن عن المواقع.</li>
           <li xml:lang="ca">Cerca d'ubicació millorada.</li>
@@ -1419,6 +1420,7 @@
           <li xml:lang="ru">Улучшенный поиск местоположений.</li>
           <li xml:lang="sl">Izboljšano iskanje lokacij.</li>
           <li xml:lang="tr">Improved location search.</li>
+          <li xml:lang="uk">Удосконалено пошук місць.</li>
           <li>OpenRailwayMap integration in the live status view.</li>
           <li xml:lang="ar">تكامل OpenRailwayMap في عرض الحالة المباشرة.</li>
           <li xml:lang="ca">Integració d'OpenRailwayMap a la vista d'estat en viu.</li>
@@ -1433,6 +1435,7 @@
           <li xml:lang="ru">Интеграция с OpenRailwayMap в представлении текущего статуса.</li>
           <li xml:lang="sl">Integracija OpenRailwayMap v prikaz stanja v živo.</li>
           <li xml:lang="tr">OpenRailwayMap integration in the live status view.</li>
+          <li xml:lang="uk">OpenRailwayMap інтегровано до панелі перегляду інтерактивного стану.</li>
         </ul>
       </description>
     </release>
@@ -1563,6 +1566,7 @@
           <li xml:lang="ca-valencia">Extractors nous o millorats de documents de viatge per a a&amp;o hostels, Gastronovi i ÖBB.</li>
           <li xml:lang="cs">Nové nebo vylepšené zařízení pro čtení cestovních dokladů pro ubytovny a&amp;o, Gastronovi a ÖBB.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para a&amp;o hostels, Gastronovi y ÖBB.</li>
+          <li xml:lang="fr">Nouveaux extracteurs et amélioration des extracteurs existants pour les documents de voyage pour les auberges de jeunesse a&amp;o, Gastronovi et ÖBB.</li>
           <li xml:lang="it">Estrattori di documenti di viaggio nuovi o migliorati per ostelli a&amp;o, Gastronovi e ÖBB.</li>
           <li xml:lang="ka">ახალი ან გაუმჯობესებული სამგზავრო დოკუმენტების ამომკრებები a&amp;o hostels, Gastronovi და ÖBB სისტემებისთვის.</li>
           <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para a&amp;o hostels, Gastronovi e ÖBB.</li>
@@ -2195,6 +2199,7 @@
           <li xml:lang="ca">Ara els viatges es poden canviar de nom.</li>
           <li xml:lang="ca-valencia">Ara els viatges es poden canviar de nom.</li>
           <li xml:lang="cs">Výlety lze nyní přejmenovat.</li>
+          <li xml:lang="es">Ahora se puede cambiar el nombre de los viajes.</li>
           <li xml:lang="fr">Les voyages peuvent maintenant être renommés.</li>
           <li xml:lang="it">I viaggi ora possono essere rinominati.</li>
           <li xml:lang="ka">ახლა უკვე შესაძლებელია მგზავრობების სახელის შეცვლა.</li>
@@ -2226,6 +2231,7 @@
           <li xml:lang="ca">Corregeix la lectura/escriptura d'esdeveniments de tot el dia a/des del calendari del sistema d'Android.</li>
           <li xml:lang="ca-valencia">Corregix la lectura/escriptura d'esdeveniments de tot el dia a/des del calendari del sistema d'Android.</li>
           <li xml:lang="cs">Oprava čtení/zápisu celodenních událostí do/z kalendáře systému Android.</li>
+          <li xml:lang="es">Se ha corregido la lectura/escritura de eventos que duran todo el día del sistema de calendario de Android.</li>
           <li xml:lang="fr">Correction de la lecture / l'écriture des évènements sur toute la journée depuis / vers le système de calendrier de Android.</li>
           <li xml:lang="it">Corretta la lettura/scrittura degli eventi dell'intera giornata nel/dal calendario del sistema Android.</li>
           <li xml:lang="ka">გასწორდა მთლიანი დღის მოვლენების კითხვა/ჩაწერა Android-ის სისტემურ კალენდარში.</li>
@@ -2238,6 +2244,7 @@
           <li xml:lang="ca">Corregeix els problemes de permisos en exportar al calendari d'Android.</li>
           <li xml:lang="ca-valencia">Corregix els problemes de permisos en exportar cap al calendari d'Android.</li>
           <li xml:lang="cs">Oprava problémů s oprávněními při exportu do kalendáře Android.</li>
+          <li xml:lang="es">Se han corregido los problemas de permisos cuando se exporta al calendario de Android.</li>
           <li xml:lang="fr">Correction des problèmes d'autorisation lors de l'exportation vers le calendrier Android.</li>
           <li xml:lang="it">Risolve i problemi di autorizzazione durante l'esportazione nel calendario Android.</li>
           <li xml:lang="ka">გასწორდა წვდომის პრობლემები Android-ის კალენდარში ექსპორტისას.</li>
@@ -2250,6 +2257,7 @@
           <li xml:lang="ca">Corregeix la renderització dels passis d'Apple Wallet sense codi de barres.</li>
           <li xml:lang="ca-valencia">Corregix la renderització dels passes d'Apple Wallet sense codi de barres.</li>
           <li xml:lang="cs">Oprava vykreslování Apple Wallet pass bez čárového kódu.</li>
+          <li xml:lang="es">Se ha corregido la visualización de pases de Apple Wallet sin un código de barras.</li>
           <li xml:lang="fr">Correction de l'affichage des abonnements de Apple Wallet sans code-barres.</li>
           <li xml:lang="it">Risolto il problema con il rendering dei pass Apple Wallet senza codice a barre.</li>
           <li xml:lang="ka">გასწორდა Apple Wallet-ის ბარათების რენდერი შტრიხკოდის გარეშე.</li>
@@ -2281,6 +2289,7 @@
           <li xml:lang="ca">S'ha corregit l'emmagatzematge de l'hora d'arribada en editar una reserva de ferri.</li>
           <li xml:lang="ca-valencia">S'ha corregit l'emmagatzematge de l'hora d'arribada en editar una reserva de transbordador.</li>
           <li xml:lang="cs">Opraveno ukládání času příjezdu při úpravách rezervace trajektu.</li>
+          <li xml:lang="es">Se ha corregido el almacenamiento de la hora de llegada cuando se edita una reserva de ferry.</li>
           <li xml:lang="fr">Correction de l'enregistrement de l'heure d'arrivée lors de la modification d'une réservation de traversiers.</li>
           <li xml:lang="it">Risolto il problema con la memorizzazione dell'orario di arrivo durante la modifica di una prenotazione del traghetto.</li>
           <li xml:lang="ka">გასწორდა ჩამოსვლის დროის შენახვა ბორნის ჯავშნის რედაქტირებისას.</li>
@@ -2293,6 +2302,7 @@
           <li xml:lang="ca">S'han corregit les notificacions a l'Android.</li>
           <li xml:lang="ca-valencia">S'han corregit les notificacions a Android.</li>
           <li xml:lang="cs">Opraveny oznámení v systému Android.</li>
+          <li xml:lang="es">Se han corregido las notificaciones en Android.</li>
           <li xml:lang="fr">Correction des notifications sous Android.</li>
           <li xml:lang="it">Risolte le notifiche su Android.</li>
           <li xml:lang="ka">გასწორდა შეტყობინებები Android-ზე.</li>
@@ -2305,6 +2315,7 @@
           <li xml:lang="ca">Millora de l'agrupació automàtica de viatges.</li>
           <li xml:lang="ca-valencia">Millora de l'agrupació automàtica de viatges.</li>
           <li xml:lang="cs">Vylepšené automatické seskupování výletů.</li>
+          <li xml:lang="es">Se ha mejorado el agrupamiento de viajes automático.</li>
           <li xml:lang="fr">Amélioration du regroupement automatique des trajets.</li>
           <li xml:lang="it">Raggruppamento automatico dei viaggi migliorato.</li>
           <li xml:lang="ka">გაუმჯობესებული მგზავრობების ავტომატური დაჯგუფება.</li>
@@ -2317,6 +2328,7 @@
           <li xml:lang="ca">S'han corregit els emojis que no apareixen en els Flatpaks.</li>
           <li xml:lang="ca-valencia">S'han corregit els emoji que no apareixen en els Flatpak.</li>
           <li xml:lang="cs">Opraveny emotikony, které se nezobrazovaly ve Flatpaku.</li>
+          <li xml:lang="es">Se ha solucionado la visualización de emojis en Flatpaks.</li>
           <li xml:lang="fr">Correction des émoticônes ne s'affichant pas dans les Flatpaks.</li>
           <li xml:lang="it">Corregge le emoji che non venivano visualizzati in Flatpaks.</li>
           <li xml:lang="ka">გასწორდა ემოჯიების არჩვენება Flatpak-ებში.</li>
@@ -2348,6 +2360,7 @@
           <li xml:lang="ca">Mostra informació més detallada sobre les característiques del vagó de tren o del vehicle.</li>
           <li xml:lang="ca-valencia">Mostra informació més detallada sobre les característiques del vagó de tren o del vehicle.</li>
           <li xml:lang="cs">Zobrazení podrobnější informace o vlastnostech vlakového vozu nebo vozidla.</li>
+          <li xml:lang="es">Mostrar información más detallada sobre funcionalidades de vehículos o coches de tren.</li>
           <li xml:lang="fr">Affichage d'informations plus détaillées sur les caractéristiques des wagons ou des véhicules.</li>
           <li xml:lang="it">Mostra informazioni più dettagliate sulle caratteristiche del vagone o del veicolo.</li>
           <li xml:lang="ka">მატარებლის ვაგონის ან ტრანსპორტის მახასიათებლების უფრო დეტალური ინფორმაციის ჩვენება.</li>
@@ -2360,6 +2373,7 @@
           <li xml:lang="ca">Mostra la informació d'ocupació per cotxe quan estigui disponible.</li>
           <li xml:lang="ca-valencia">Mostra la informació d'ocupació per cotxe quan estiga disponible.</li>
           <li xml:lang="cs">Zobrazení informace o obsazenosti jednotlivých autobusů, jsou-li k dispozici.</li>
+          <li xml:lang="es">Mostrar información sobre ocupación por coche cuando esté disponible.</li>
           <li xml:lang="fr">Afficher les informations d'occupation par voiture lorsque disponible.</li>
           <li xml:lang="it">Mostra le informazioni sull'occupazione dei pullman, quando disponibili.</li>
           <li xml:lang="ka">თითოეული ვაგონის დატვირთვის ინფორმაციის ჩვენება, როცა ხელმისაწვდომია.</li>
@@ -2372,6 +2386,7 @@
           <li xml:lang="ca">Permet afegir manualment codis de barres de tiquets a les reserves existents.</li>
           <li xml:lang="ca-valencia">Permet afegir manualment codis de barres de tiquets a les reserves existents.</li>
           <li xml:lang="cs">Umožňěno ručně přidávat čárové kódy vstupenek k existujícím rezervacím.</li>
+          <li xml:lang="es">Permitir que se puedan añadir códigos de barras de billetes a las reservas existentes.</li>
           <li xml:lang="fr">Autorisation pour ajouter manuellement des codes barres de billets aux réservations existantes.</li>
           <li xml:lang="it">Consente di aggiungere manualmente i codici a barre dei biglietti alle prenotazioni esistenti.</li>
           <li xml:lang="ka">არსებულ ჯავშნებზე ბილეთის შტრიხკოდების ხელით დამატების ნებართვა.</li>
@@ -2384,6 +2399,7 @@
           <li xml:lang="ca">Mostra la informació de transició DST a la línia de temps.</li>
           <li xml:lang="ca-valencia">Mostra la informació de transició DST en la línia de temps.</li>
           <li xml:lang="cs">Zobrazit informace o přechodu na letní čas v časové ose.</li>
+          <li xml:lang="es">Mostrar información de transición DST en la línea de tiempo.</li>
           <li xml:lang="fr">Afficher les informations sur le passage à l'heure d'été dans la chronologie.</li>
           <li xml:lang="it">Mostra le informazioni sulla transizione dell'ora legale nella linea temporale.</li>
           <li xml:lang="ka">ზაფხულის დროზე გადასვლის ინფორმაციის ჩვენება ქრონოლოგიაში.</li>
@@ -2415,6 +2431,7 @@
           <li xml:lang="ca">Corregeix la visualització de les interrupcions de sortides de transport públic.</li>
           <li xml:lang="ca-valencia">Corregix la visualització de les interrupcions d'eixides de transport públic.</li>
           <li xml:lang="cs">Oprava zobrazení narušení odjezdů veřejné dopravy.</li>
+          <li xml:lang="es">Se ha corregido la visualización de alteraciones de salidas del transporte público.</li>
           <li xml:lang="fr">Correction de l'affichage des perturbations des départs des transports en commun.</li>
           <li xml:lang="it">Corretta la visualizzazione delle interruzioni delle partenze dei trasporti pubblici.</li>
           <li xml:lang="ka">გასწორდა საზოგადოებრივი ტრანსპორტის გამგზავრების შეფერხებების ჩვენება.</li>
@@ -2427,6 +2444,7 @@
           <li xml:lang="ca">Corregeix els problemes de renderització dels passis d'Apple Wallet.</li>
           <li xml:lang="ca-valencia">Corregix els problemes de renderització dels passes d'Apple Wallet.</li>
           <li xml:lang="cs">Oprava problémů se zobrazením Apple Wallet pass.</li>
+          <li xml:lang="es">Se han solucionado los problemas de visualización de pases de Apple Wallet.</li>
           <li xml:lang="fr">Correction des problèmes d'affichage des abonnements sous Apple Wallet.</li>
           <li xml:lang="it">Risolve i problemi di rendering dei pass di Apple Wallet.</li>
           <li xml:lang="ka">გასწორდა Apple Wallet-ის ბარათების რენდერის პრობლემები.</li>
@@ -2470,6 +2488,7 @@
           <li xml:lang="ca">Corregeix la superposició entre el botó flotant del mapa i els detalls d'arribada a la pàgina de detalls de viatge.</li>
           <li xml:lang="ca-valencia">Corregix la superposició entre el botó flotant del mapa i els detalls d'arribada a la pàgina de detalls de viatge.</li>
           <li xml:lang="cs">Oprava překrývání mezi tlačítkem plovoucí mapy a podrobnostmi o příjezdu na stránce s podrobnostmi o cestě.</li>
+          <li xml:lang="es">Se ha corregido el solapamiento entre el botón de mapas flotantes y los detalles de la llegada en la página de detalles del viaje.</li>
           <li xml:lang="fr">Correction du chevauchement entre le bouton flottant de la carte et les détails d'arrivée sur la page des détails du trajet.</li>
           <li xml:lang="it">Corregge la sovrapposizione tra il pulsante della mappa mobile e i dettagli di arrivo nella pagina dei dettagli del viaggio.</li>
           <li xml:lang="ka">გასწორდა რუკის მცურავ ღილაკსა და ჩამოსვლის დეტალებს შორის გადაფარვა მგზავრობის დეტალების გვერდზე.</li>
@@ -2482,6 +2501,7 @@
           <li xml:lang="ca">Millorar la informació en temps real de Deutsche Bahn quan hi ha trens cancel·lats o substituïts.</li>
           <li xml:lang="ca-valencia">Millorar la informació en temps real de Deutsche Bahn quan hi ha trens cancel·lats o substituïts.</li>
           <li xml:lang="cs">Zlepšeny informace Deutsche Bahn v reálném čase v případě zrušených nebo náhradních vlaků.</li>
+          <li xml:lang="es">Se ha mejorado la información en tiempo real de Deutsche Bahn cuando existe cancelación o sustitución de trenes.</li>
           <li xml:lang="fr">Amélioration des informations en temps réel de la Deutsche Bahn en cas d'annulation ou de remplacement de trains.</li>
           <li xml:lang="it">Migliora le informazioni in tempo reale della Deutsche Bahn in caso di treni annullati o sostitutivi.</li>
           <li xml:lang="ka">Deutsche Bahn-ის რეალურ დროში ინფორმაციის გაუმჯობესება გაუქმებული ან შემცვლელი მატარებლების შემთხვევაში.</li>
@@ -2494,6 +2514,7 @@
           <li xml:lang="ca">Millora la detecció del tipus de vagó de tren a la vista de disposició de vagó.</li>
           <li xml:lang="ca-valencia">Millora la detecció del tipus de vagó de tren a la vista de disposició de vagó.</li>
           <li xml:lang="cs">Vylepšena detekce typu vagónu v zobrazení řazení vagónů.</li>
+          <li xml:lang="es">Se ha mejorado la detección del tipo de coche en la vista del esquema de coches.</li>
           <li xml:lang="fr">Amélioration de la détection du type de wagon dans la vue de disposition des wagons.</li>
           <li xml:lang="it">Migliora il rilevamento del tipo di carrozza ferroviaria nella visualizzazione della disposizione della carrozza.</li>
           <li xml:lang="ka">მატარებლის ვაგონის ტიპის ამოცნობის გაუმჯობესება ვაგონის განლაგების ხედში.</li>
@@ -2512,6 +2533,7 @@
         <p xml:lang="ca">Hem millorat la usabilitat de l'Itinerary en els telèfons fent que les accions habituals estiguessin disponibles en una barra de navegació a sota que fa que sigui fàcil canviar als passis i al viatge actual.</p>
         <p xml:lang="ca-valencia">Hem millorat la usabilitat d'Itinerary en els telèfons fent que les accions habituals estigueren disponibles en una barra de navegació davall que fa que siga fàcil canviar als passes i al viatge actual.</p>
         <p xml:lang="cs">Zlepšena použitelnost Itineráře na telefonech tím, že jsou běžné akce umístěny do spodní navigační lišty, což usnadňuje přepínání mezi jízdenkami a aktuální cestou.</p>
+        <p xml:lang="es">Se ha mejorado la usabilidad de Itinerary en teléfonos haciendo que las acciones comunes están disponibles en la barra de navegación inferior, lo que facilita el cambio a los pases y al viaje actual.</p>
         <p xml:lang="fr">Nous avons amélioré l'ergonomie de Itinerary sur les téléphones en rendant les actions courantes accessibles grâce à une barre de navigation sur le bord inférieur. Cela facilite le basculement vers vos billets et vers votre voyage en cours.</p>
         <p xml:lang="it">Abbiamo migliorato l'usabilità di Itinerary sui telefoni rendendo disponibili le azioni comuni su una barra di navigazione inferiore che semplifica il passaggio ai tuoi pass e al tuo viaggio corrente.</p>
         <p xml:lang="ka">ჩვენ გავაუმჯობესეთ Itinerary-ის გამოყენებადობა ტელეფონებზე ხშირი მოქმედებების ქვედა ნავიგაციის ზოლზე განთავსებით, რაც აადვილებს ბარათებსა და მიმდინარე მგზავრობას შორის გადართვას.</p>
@@ -2579,6 +2601,7 @@
           <li xml:lang="ca">Implementació millorada dels codis de barres de bitllets ferroviaris europeus de FCB.</li>
           <li xml:lang="ca-valencia">Implementació millorada dels codis de barres de bitllets ferroviaris europeus de FCB.</li>
           <li xml:lang="cs">Vylepšená podpora pro evropské čárové kódy železničních jízdenek FCB.</li>
+          <li xml:lang="es">Se ha mejorado la compatibilidad con los códigos de barras de los billetes de ferrocarril de los FCB europeos.</li>
           <li xml:lang="fr">Prise en charge améliorée pour les codes barres des billets de train européens de FCB.</li>
           <li xml:lang="it">Supporto migliorato per i codici a barre dei biglietti ferroviari europei FCB.</li>
           <li xml:lang="ka">გაუმჯობესებული მხარდაჭერა ევროპული FCB სარკინიგზო ბილეთების შტრიხკოდებისთვის.</li>
@@ -2591,6 +2614,7 @@
           <li xml:lang="ca">Implementació de l'API a bord d'Eurostar.</li>
           <li xml:lang="ca-valencia">Implementació de l'API a bord d'Eurostar.</li>
           <li xml:lang="cs">Podpora pro palubní API Eurostar.</li>
+          <li xml:lang="es">Compatibilidad con la API de a bordo de Eurostar.</li>
           <li xml:lang="fr">Prise en charge de l'API intégrée de Eurostar.</li>
           <li xml:lang="it">Supporto per API di imbarco Eurostar.</li>
           <li xml:lang="ka">Eurostar ბორტის API-ის მხარდაჭერა.</li>
@@ -2609,6 +2633,7 @@
           <li xml:lang="ca">Corregeix la gestió de les parades intermèdies cancel·lades a bord dels ICE de DB.</li>
           <li xml:lang="ca-valencia">Corregix la gestió de les parades intermèdies cancel·lades a bord dels ICE de DB.</li>
           <li xml:lang="cs">Oprava zpracování zrušených mezizastávek na palubě vlaků DB ICE.</li>
+          <li xml:lang="es">Se ha corregido el manejo de paradas intermedias canceladas a bordo de los ICE de la DB.</li>
           <li xml:lang="fr">Correction de la gestion des arrêts intermédiaires annulés à bord des ICE de la Deutch Bahn.</li>
           <li xml:lang="it">Corretta la gestione delle fermate intermedie annullate a bordo degli ICE DB.</li>
           <li xml:lang="ka">გასწორდა გაუქმებული შუალედური გაჩერებების დამუშავება DB ICE მატარებლებში.</li>
@@ -2634,6 +2659,7 @@
           <li xml:lang="ca">Corregeix l'anàlisi de certs catàlegs de missatges d'Apple Wallet no vàlids.</li>
           <li xml:lang="ca-valencia">Corregix l'anàlisi de certs catàlegs de missatges d'Apple Wallet no vàlids.</li>
           <li xml:lang="cs">Oprava zpracování některých neplatných katalogů zpráv Apple Wallet.</li>
+          <li xml:lang="es">Se ha corregido el análisis de ciertos catálogos de mensaje no válidos de Apple Wallet.</li>
           <li xml:lang="fr">Correction de l'analyse de certains catalogues de messages non valables de Apple Wallet.</li>
           <li xml:lang="it">Corretta l'analisi di alcuni cataloghi di messaggi di Apple Wallet non validi.</li>
           <li xml:lang="ka">გასწორდა Apple Wallet-ის ზოგიერთი არასწორი შეტყობინების კატალოგის დამუშავება.</li>
@@ -2646,6 +2672,7 @@
           <li xml:lang="ca">Elimina les lletres PDF no necessàries per a reduir la mida de l'APK.</li>
           <li xml:lang="ca-valencia">Elimina les lletres PDF no necessàries per a reduir la mida de l'APK.</li>
           <li xml:lang="cs">Odstraněna nepotřebná písma PDF, aby byla zmenšena velikost souboru APK.</li>
+          <li xml:lang="es">Eliminar fuentes PDF innecesarias para reducir el tamaño de la APK.</li>
           <li xml:lang="fr">Suppression des fontes « PDF » inutiles pour réduire la taille du paquet « APK ».</li>
           <li xml:lang="it">Rimuove i caratteri PDF non necessari per ridurre le dimensioni dell'APK.</li>
           <li xml:lang="ka">ზედმეტი PDF შრიფტების ამოღება APK ფაილის ზომის შესამცირებლად.</li>
@@ -2664,6 +2691,7 @@
           <li xml:lang="ca">Permet activar les notificacions a l'Android 13.</li>
           <li xml:lang="ca-valencia">Permet activar les notificacions a Android 13.</li>
           <li xml:lang="cs">Povoleno oznámení v systému Android 13.</li>
+          <li xml:lang="es">Permitir la activación de notificaciones en Android 13.</li>
           <li xml:lang="fr">Autoriser l’activation des notifications sous Android 13.</li>
           <li xml:lang="it">Consente di abilitare le notifiche su Android 13.</li>
           <li xml:lang="ka">შეტყობინებების ჩართვის ნებართვა Android 13-ზე.</li>
