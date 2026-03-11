@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-24 00:45+0000\n"
+"POT-Creation-Date: 2026-03-11 00:47+0000\n"
 "PO-Revision-Date: 2025-06-22 11:38+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -2159,70 +2159,90 @@ msgctxt "flight arrival gate"
 msgid "%1 (arrival)"
 msgstr "%1 (chegada)"
 
-#: app/IndoorMapInfoSheet.qml:21 app/IndoorMapPage.qml:126
+#: app/IndoorMapInfoSheet.qml:21 app/IndoorMapPage.qml:127
 #, kde-format
 msgid "Edit with iD"
 msgstr "Editar con iD"
 
-#: app/IndoorMapInfoSheet.qml:27 app/IndoorMapPage.qml:132
+#: app/IndoorMapInfoSheet.qml:27 app/IndoorMapPage.qml:133
 #, kde-format
 msgid "Edit with JOSM"
 msgstr "Editar con JOSM"
 
-#: app/IndoorMapInfoSheet.qml:33 app/IndoorMapPage.qml:138
+#: app/IndoorMapInfoSheet.qml:33 app/IndoorMapPage.qml:139
 #, kde-format
 msgid "Edit with Vespucci"
 msgstr "Editar con Vespucci"
 
-#: app/IndoorMapPage.qml:25
+#: app/IndoorMapPage.qml:26
 #, kde-format
 msgid "Floor %1"
 msgstr "Planta %1"
 
-#: app/IndoorMapPage.qml:59
+#: app/IndoorMapPage.qml:60
 #, kde-format
 msgid "Zoom In"
 msgstr "Achegar"
 
-#: app/IndoorMapPage.qml:66
+#: app/IndoorMapPage.qml:67
 #, kde-format
 msgid "Zoom Out"
 msgstr "Afastar"
 
-#: app/IndoorMapPage.qml:74
+#: app/IndoorMapPage.qml:75
 #, kde-format
 msgid "Find Platform"
 msgstr "Atopar unha plataforma"
 
-#: app/IndoorMapPage.qml:81
+#: app/IndoorMapPage.qml:82
 #, kde-format
 msgid "Find Gate"
 msgstr "Atopar unha porta"
 
-#: app/IndoorMapPage.qml:88
+#: app/IndoorMapPage.qml:89
 #, kde-format
 msgid "Find Amenity"
 msgstr "Atopar un servizo"
 
-#: app/IndoorMapPage.qml:94
+#: app/IndoorMapPage.qml:95
 #, kde-format
 msgid "Show Elevator Status"
 msgstr "Amosar o estado do ascensor"
 
-#: app/IndoorMapPage.qml:103
+#: app/IndoorMapPage.qml:104
 #, kde-format
 msgid "Show Rental Vehicles"
 msgstr "Amosar os vehículos de alugamento"
 
-#: app/IndoorMapPage.qml:111
+#: app/IndoorMapPage.qml:112
 #, kde-format
 msgid "Open Map"
 msgstr "Abrir o mapa"
 
-#: app/IndoorMapPage.qml:117
+#: app/IndoorMapPage.qml:118
 #, kde-format
 msgid "Open wheelmap.org"
 msgstr "Abrir wheelmap.org"
+
+#: app/IndoorMapPage.qml:280
+#, fuzzy, kde-format
+#| msgctxt "@action:button Start route guidance to location"
+#| msgid "Navigate"
+msgid "Navigate from here"
+msgstr "Navegar"
+
+#: app/IndoorMapPage.qml:289
+#, fuzzy, kde-format
+#| msgctxt "@action:button Start route guidance to location"
+#| msgid "Navigate"
+msgid "Navigate to here"
+msgstr "Navegar"
+
+#: app/IndoorMapPage.qml:300
+#, fuzzy, kde-format
+#| msgid "More information"
+msgid "Show information"
+msgstr "Máis información"
 
 #: app/JourneyFilterPage.qml:15
 #, fuzzy, kde-format

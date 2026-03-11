@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-24 00:45+0000\n"
+"POT-Creation-Date: 2026-03-11 00:47+0000\n"
 "PO-Revision-Date: 2026-01-09 23:16+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -2105,70 +2105,90 @@ msgctxt "flight arrival gate"
 msgid "%1 (arrival)"
 msgstr "%1 (прибуття)"
 
-#: app/IndoorMapInfoSheet.qml:21 app/IndoorMapPage.qml:126
+#: app/IndoorMapInfoSheet.qml:21 app/IndoorMapPage.qml:127
 #, kde-format
 msgid "Edit with iD"
 msgstr "Редагувати за допомогою iD"
 
-#: app/IndoorMapInfoSheet.qml:27 app/IndoorMapPage.qml:132
+#: app/IndoorMapInfoSheet.qml:27 app/IndoorMapPage.qml:133
 #, kde-format
 msgid "Edit with JOSM"
 msgstr "Редагувати за допомогою JOSM"
 
-#: app/IndoorMapInfoSheet.qml:33 app/IndoorMapPage.qml:138
+#: app/IndoorMapInfoSheet.qml:33 app/IndoorMapPage.qml:139
 #, kde-format
 msgid "Edit with Vespucci"
 msgstr "Редагувати за допомогою Vespucci"
 
-#: app/IndoorMapPage.qml:25
+#: app/IndoorMapPage.qml:26
 #, kde-format
 msgid "Floor %1"
 msgstr "Поверх %1"
 
-#: app/IndoorMapPage.qml:59
+#: app/IndoorMapPage.qml:60
 #, kde-format
 msgid "Zoom In"
 msgstr "Збільшити"
 
-#: app/IndoorMapPage.qml:66
+#: app/IndoorMapPage.qml:67
 #, kde-format
 msgid "Zoom Out"
 msgstr "Зменшити"
 
-#: app/IndoorMapPage.qml:74
+#: app/IndoorMapPage.qml:75
 #, kde-format
 msgid "Find Platform"
 msgstr "Знайти платформу"
 
-#: app/IndoorMapPage.qml:81
+#: app/IndoorMapPage.qml:82
 #, kde-format
 msgid "Find Gate"
 msgstr "Знайти вихід"
 
-#: app/IndoorMapPage.qml:88
+#: app/IndoorMapPage.qml:89
 #, kde-format
 msgid "Find Amenity"
 msgstr "Пошук зручностей"
 
-#: app/IndoorMapPage.qml:94
+#: app/IndoorMapPage.qml:95
 #, kde-format
 msgid "Show Elevator Status"
 msgstr "Показувати стан ліфта"
 
-#: app/IndoorMapPage.qml:103
+#: app/IndoorMapPage.qml:104
 #, kde-format
 msgid "Show Rental Vehicles"
 msgstr "Показувати оренду транспорту"
 
-#: app/IndoorMapPage.qml:111
+#: app/IndoorMapPage.qml:112
 #, kde-format
 msgid "Open Map"
 msgstr "Відкрити карту"
 
-#: app/IndoorMapPage.qml:117
+#: app/IndoorMapPage.qml:118
 #, kde-format
 msgid "Open wheelmap.org"
 msgstr "Відкрити wheelmap.org"
+
+#: app/IndoorMapPage.qml:280
+#, fuzzy, kde-format
+#| msgctxt "@action:button Start route guidance to location"
+#| msgid "Navigate"
+msgid "Navigate from here"
+msgstr "Навігація"
+
+#: app/IndoorMapPage.qml:289
+#, fuzzy, kde-format
+#| msgctxt "@action:button Start route guidance to location"
+#| msgid "Navigate"
+msgid "Navigate to here"
+msgstr "Навігація"
+
+#: app/IndoorMapPage.qml:300
+#, fuzzy, kde-format
+#| msgid "More information"
+msgid "Show information"
+msgstr "Докладніше"
 
 #: app/JourneyFilterPage.qml:15
 #, kde-format
