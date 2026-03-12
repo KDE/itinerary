@@ -1250,6 +1250,7 @@
           <li xml:lang="ru">Позиционирование представления результатов маршрута в конце при поиске по времени прибытия.</li>
           <li xml:lang="sl">Prikaz rezultatov potovanja se pri iskanju po času prihoda postavi na konec.</li>
           <li xml:lang="tr">Position journey result view at the end when searching by arrival time.</li>
+          <li xml:lang="uk">Реалізовано розташовування панелі результату подорожі у кінці при пошуку за часом прибуття.</li>
           <li>Fixed parsing of certain Apple Wallet pass variants.</li>
           <li xml:lang="ar">أُصلح تحليل بعض أنواع تصاريح Apple Wallet.</li>
           <li xml:lang="ca">S'ha corregit l'anàlisi de certes variants de passis de l'Apple Wallet.</li>
@@ -1291,6 +1292,7 @@
           <li xml:lang="ru">Исправлен анализ промежуточных остановок от Railteam.</li>
           <li xml:lang="sl">Popravljeno razčlenjevanje vmesnih postankov iz Railteama.</li>
           <li xml:lang="tr">Fixed parsing intermediate stops from Railteam.</li>
+          <li xml:lang="uk">Виправлено обробку проміжних зупинок від Railteam.</li>
         </ul>
       </description>
     </release>
@@ -1310,6 +1312,7 @@
           <li xml:lang="ru">Новые или улучшенные модули извлечения данных из проездных документов для booking.com, Center Parcs, Coloseum, eDreams, Finnair, LTG Link, MÁV, Pretix, RegioJet, Thalys и United Airlines.</li>
           <li xml:lang="sl">Novi ali izboljšani izvlečki potovalnih dokumentov za booking.com, Center Parcs, Coloseum, eDreams, Finnair, LTG Link, MÁV, Pretix, RegioJet, Thalys in United Airlines.</li>
           <li xml:lang="tr">New or improved travel document extractors for booking.com, Center Parcs, Coloseum, eDreams, Finnair, LTG Link, MÁV, Pretix, RegioJet, Thalys and United Airlines.</li>
+          <li xml:lang="uk">Нові або удосконалені засоби видобування даних з документів про подорожі для booking.com, Center Parcs, Coloseum, eDreams, Finnair, LTG Link, MÁV, Pretix, RegioJet, Thalys і United Airlines.</li>
           <li>Correctly update currency exchange rates.</li>
           <li xml:lang="ar">تحديث أسعار صرف العملات بشكل صحيح.</li>
           <li xml:lang="ca">Actualitza correctament els tipus de canvi de divisa.</li>
@@ -1324,6 +1327,7 @@
           <li xml:lang="ru">Корректное обновление курсов валют.</li>
           <li xml:lang="sl">Pravilno posodabljanje menjalnih tečajev.</li>
           <li xml:lang="tr">Correctly update currency exchange rates.</li>
+          <li xml:lang="uk">Реалізовано правильне оновлення курсів валют.</li>
           <li>Add support for result paging for LTG Link and Srbija Voz.</li>
           <li xml:lang="ar">إضافة دعم لترقيم نتائج LTG Link و Srbija Voz.</li>
           <li xml:lang="ca">Afegeix la implementació per a la paginació de resultats per a LTG Link i Srbija Voz.</li>
@@ -1337,6 +1341,7 @@
           <li xml:lang="ru">Добавлена поддержка постраничного просмотра результатов для LTG Link и Srbija Voz.</li>
           <li xml:lang="sl">Dodana podpora za straničenje rezultatov za LTG Link in Srbija Voz.</li>
           <li xml:lang="tr">Add support for result paging for LTG Link and Srbija Voz.</li>
+          <li xml:lang="uk">Додано підтримку поділу на сторінки для LTG Link і Srbija Voz.</li>
           <li>Support hotel reservations with ticket tokens.</li>
           <li xml:lang="ar">دعم حجوزات الفنادق باستخدام رموز التذاكر.</li>
           <li xml:lang="ca">Permet reserves d'hotel amb testimonis de tiquets.</li>
@@ -1351,6 +1356,7 @@
           <li xml:lang="ru">Поддержка бронирования отелей с билетными токенами.</li>
           <li xml:lang="sl">Podpora za rezervacije hotelov z žetoni za vozovnice.</li>
           <li xml:lang="tr">Support hotel reservations with ticket tokens.</li>
+          <li xml:lang="uk">Реалізовано підтримку резервування готелів за допомогою жетонів квитків.</li>
         </ul>
       </description>
     </release>
@@ -1371,6 +1377,7 @@
           <li xml:lang="ru">Поездки на поезде и автобусе теперь можно добавлять полностью вручную.</li>
           <li xml:lang="sl">Potovanja z vlakom in avtobusom je zdaj mogoče dodati tudi v celoti ročno.</li>
           <li xml:lang="tr">Train and bus trips can now also be added entirely manually.</li>
+          <li xml:lang="uk">У новій версії можна повністю вручну додавати подорожі потягами та автобусами.</li>
           <li>More flexible alternative connection search.</li>
           <li xml:lang="ar">بحث أكثر مرونة عن الوصلات البديلة.</li>
           <li xml:lang="ca">Cerca connexions alternatives més flexibles.</li>
@@ -1384,6 +1391,7 @@
           <li xml:lang="ru">Более гибкий поиск альтернативных соединений.</li>
           <li xml:lang="sl">Prilagodljivejše iskanje alternativnih povezav.</li>
           <li xml:lang="tr">More flexible alternative connection search.</li>
+          <li xml:lang="uk">Гнучкіший пошук альтернативних пересадок.</li>
           <li>New and much more detailed public transport departures view.</li>
           <li xml:lang="ar">عرض جديد وأكثر تفصيلًا لمغادرات النقل العام.</li>
           <li xml:lang="ca">Vista de sortides de transport públic noves i molt més detallades.</li>
@@ -1397,6 +1405,7 @@
           <li xml:lang="ru">Новый и гораздо более подробный просмотр отправлений общественного транспорта.</li>
           <li xml:lang="sl">Nov in veliko podrobnejši prikaz odhodov javnega prevoza.</li>
           <li xml:lang="tr">New and much more detailed public transport departures view.</li>
+          <li xml:lang="uk">Нова і набагато докладніша панель відправлень маршрутів громадського транспорту.</li>
           <li>Improved location search.</li>
           <li xml:lang="ar">بحث محسّن عن المواقع.</li>
           <li xml:lang="ca">Cerca d'ubicació millorada.</li>
@@ -1411,6 +1420,7 @@
           <li xml:lang="ru">Улучшенный поиск местоположений.</li>
           <li xml:lang="sl">Izboljšano iskanje lokacij.</li>
           <li xml:lang="tr">Improved location search.</li>
+          <li xml:lang="uk">Удосконалено пошук місць.</li>
           <li>OpenRailwayMap integration in the live status view.</li>
           <li xml:lang="ar">تكامل OpenRailwayMap في عرض الحالة المباشرة.</li>
           <li xml:lang="ca">Integració d'OpenRailwayMap a la vista d'estat en viu.</li>
@@ -1425,6 +1435,7 @@
           <li xml:lang="ru">Интеграция с OpenRailwayMap в представлении текущего статуса.</li>
           <li xml:lang="sl">Integracija OpenRailwayMap v prikaz stanja v živo.</li>
           <li xml:lang="tr">OpenRailwayMap integration in the live status view.</li>
+          <li xml:lang="uk">OpenRailwayMap інтегровано до панелі перегляду інтерактивного стану.</li>
         </ul>
       </description>
     </release>
