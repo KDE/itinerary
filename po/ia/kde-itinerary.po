@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-11 00:47+0000\n"
-"PO-Revision-Date: 2026-01-22 14:10+0100\n"
+"PO-Revision-Date: 2026-03-11 12:47+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -2161,24 +2161,19 @@ msgid "Open wheelmap.org"
 msgstr "Aperi wheelmap.org"
 
 #: app/IndoorMapPage.qml:280
-#, fuzzy, kde-format
-#| msgctxt "@action:button Start route guidance to location"
-#| msgid "Navigate"
+#, kde-format
 msgid "Navigate from here"
-msgstr "Naviga"
+msgstr "Naviga ex hic"
 
 #: app/IndoorMapPage.qml:289
-#, fuzzy, kde-format
-#| msgctxt "@action:button Start route guidance to location"
-#| msgid "Navigate"
+#, kde-format
 msgid "Navigate to here"
-msgstr "Naviga"
+msgstr "Naviga a hic"
 
 #: app/IndoorMapPage.qml:300
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgid "Show information"
-msgstr "Altere information"
+msgstr "Monstra information "
 
 #: app/JourneyFilterPage.qml:15
 #, kde-format

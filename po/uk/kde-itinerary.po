@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-11 00:47+0000\n"
-"PO-Revision-Date: 2026-01-09 23:16+0200\n"
+"PO-Revision-Date: 2026-03-11 12:44+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -2171,24 +2171,19 @@ msgid "Open wheelmap.org"
 msgstr "Відкрити wheelmap.org"
 
 #: app/IndoorMapPage.qml:280
-#, fuzzy, kde-format
-#| msgctxt "@action:button Start route guidance to location"
-#| msgid "Navigate"
+#, kde-format
 msgid "Navigate from here"
-msgstr "Навігація"
+msgstr "Навігація звідси"
 
 #: app/IndoorMapPage.qml:289
-#, fuzzy, kde-format
-#| msgctxt "@action:button Start route guidance to location"
-#| msgid "Navigate"
+#, kde-format
 msgid "Navigate to here"
-msgstr "Навігація"
+msgstr "Навігація сюди"
 
 #: app/IndoorMapPage.qml:300
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgid "Show information"
-msgstr "Докладніше"
+msgstr "Показати відомості"
 
 #: app/JourneyFilterPage.qml:15
 #, kde-format

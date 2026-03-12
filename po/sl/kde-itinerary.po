@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-11 00:47+0000\n"
-"PO-Revision-Date: 2026-01-09 06:54+0100\n"
+"PO-Revision-Date: 2026-03-11 06:42+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -2168,24 +2168,19 @@ msgid "Open wheelmap.org"
 msgstr "Odpri wheelmap.org"
 
 #: app/IndoorMapPage.qml:280
-#, fuzzy, kde-format
-#| msgctxt "@action:button Start route guidance to location"
-#| msgid "Navigate"
+#, kde-format
 msgid "Navigate from here"
-msgstr "Krmari"
+msgstr "Krmari od tu"
 
 #: app/IndoorMapPage.qml:289
-#, fuzzy, kde-format
-#| msgctxt "@action:button Start route guidance to location"
-#| msgid "Navigate"
+#, kde-format
 msgid "Navigate to here"
-msgstr "Krmari"
+msgstr "Krmari sem"
 
 #: app/IndoorMapPage.qml:300
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgid "Show information"
-msgstr "Več informacij"
+msgstr "Prikaži informacije"
 
 #: app/JourneyFilterPage.qml:15
 #, kde-format

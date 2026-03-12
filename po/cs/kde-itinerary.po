@@ -2168,24 +2168,19 @@ msgid "Open wheelmap.org"
 msgstr "Otevřít wheelmap.org"
 
 #: app/IndoorMapPage.qml:280
-#, fuzzy, kde-format
-#| msgctxt "@action:button Start route guidance to location"
-#| msgid "Navigate"
+#, kde-format
 msgid "Navigate from here"
-msgstr "Přejít"
+msgstr "Navigovat odsud"
 
 #: app/IndoorMapPage.qml:289
-#, fuzzy, kde-format
-#| msgctxt "@action:button Start route guidance to location"
-#| msgid "Navigate"
+#, kde-format
 msgid "Navigate to here"
-msgstr "Přejít"
+msgstr "Navigovat sem"
 
 #: app/IndoorMapPage.qml:300
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgid "Show information"
-msgstr "Více informací"
+msgstr "Zobrazit Informace"
 
 #: app/JourneyFilterPage.qml:15
 #, kde-format

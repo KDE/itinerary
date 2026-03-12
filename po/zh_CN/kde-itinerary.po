@@ -2159,10 +2159,9 @@ msgid "Navigate to here"
 msgstr ""
 
 #: app/IndoorMapPage.qml:300
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgid "Show information"
-msgstr "更多信息"
+msgstr ""
 
 #: app/JourneyFilterPage.qml:15
 #, kde-format
