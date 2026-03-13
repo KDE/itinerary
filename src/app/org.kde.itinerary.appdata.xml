@@ -1456,6 +1456,7 @@
           <li xml:lang="ru">Новые или улучшенные модули извлечения данных из проездных документов для Amadeus, booking.com, Deutsche Bahn, Deutscher Alpenverein, DJH, Easyjet, Eurostar, Eurowings, Hostelling Scotland, Leo Express, LeShuttle, MÁV, Ouigo ES, Reenio, SNCB, SNCF, Tickets.ua и Tito.</li>
           <li xml:lang="sl">Novi ali izboljšani programi za ekstrakcijo potovalnih dokumentov za Amadeus, booking.com, Deutsche Bahn, Deutscher Alpenverein, DJH, Easyjet, Eurostar, Eurowings, Hostelling Scotland, Leo Express, LeShuttle, MÁV, Ouigo ES, Reenio, SNCB, SNCF, Tickets.ua in Tito.</li>
           <li xml:lang="tr">New or improved travel document extractors for Amadeus, booking.com, Deutsche Bahn, Deutscher Alpenverein, DJH, Easyjet, Eurostar, Eurowings, Hostelling Scotland, Leo Express, LeShuttle, MÁV, Ouigo ES, Reenio, SNCB, SNCF, Tickets.ua and Tito.</li>
+          <li xml:lang="uk">Нові або удосконалені засоби видобування даних із документів про подорожі для Amadeus, booking.com, Deutsche Bahn, Deutscher Alpenverein, DJH, Easyjet, Eurostar, Eurowings, Hostelling Scotland, Leo Express, LeShuttle, MÁV, Ouigo ES, Reenio, SNCB, SNCF, Tickets.ua і Tito.</li>
           <li>Expanded public transport coverage via Transitous in India, Israel, Korea, Kosovo, Monaco, Macedonia, Moldova and Romania.</li>
           <li xml:lang="ar">توسيع تغطية النقل العام عبر Transitous في الهند وإسرائيل وكوريا وكوسوفو وموناكو ومقدونيا ومولدوفا ورومانيا.</li>
           <li xml:lang="ca">Ampliació de la cobertura de transport públic a través de Transitous a l'Índia, Israel, Corea, Kosovo, Mònaco, Macedònia, Moldàvia i Romania.</li>
@@ -1470,6 +1471,7 @@
           <li xml:lang="ru">Расширено покрытие общественного транспорта через Transitous в Индии, Израиле, Корее, Косово, Монако, Македонии, Молдове и Румынии.</li>
           <li xml:lang="sl">Razširjena pokritost javnega prevoza prek Transitousa v Indiji, Izraelu, Koreji, na Kosovu, v Monaku, Makedoniji, Moldaviji in Romuniji.</li>
           <li xml:lang="tr">Expanded public transport coverage via Transitous in India, Israel, Korea, Kosovo, Monaco, Macedonia, Moldova and Romania.</li>
+          <li xml:lang="uk">Розширене покриття для громадського транспорту для Transitous в Індії, Ізраїлі, Кореї, Косово, Монако, Македонії, Молдові та Румунії.</li>
           <li>Fixed importing and displaying certain types of Apple Wallet passes.</li>
           <li xml:lang="ar">أُصلح استيراد وعرض أنواع معينة من تصاريح Apple Wallet.</li>
           <li xml:lang="ca">S'ha corregit la importació i la visualització de certs tipus de passis de l'Apple Wallet.</li>
@@ -1483,6 +1485,7 @@
           <li xml:lang="ru">Исправлено импортирование и отображение определённых типов пропусков Apple Wallet.</li>
           <li xml:lang="sl">Popravljen uvoz in prikaz nekaterih vrst vozovnic Apple Wallet.</li>
           <li xml:lang="tr">Fixed importing and displaying certain types of Apple Wallet passes.</li>
+          <li xml:lang="uk">Виправлено імпортування та показу деяких типів даних для квитків Apple Wallet.</li>
         </ul>
       </description>
     </release>
@@ -1502,6 +1505,7 @@
           <li xml:lang="ru">Новые или улучшенные модули извлечения данных из проездных документов для booking.com, Eurostar, Flixbus, IHG, Stena Line, Tallink и Viking Line.</li>
           <li xml:lang="sl">Novi ali izboljšani programi za ekstrakcijo potovalnih dokumentov za booking.com, Eurostar, Flixbus, IHG, Stena Line, Tallink in Viking Line.</li>
           <li xml:lang="tr">New or improved travel document extractors for booking.com, Eurostar, Flixbus, IHG, Stena Line, Tallink and Viking Line.</li>
+          <li xml:lang="uk">Нові або удосконалені засоби видобування даних з документів для booking.com, Eurostar, Flixbus, IHG, Stena Line, Tallink і Viking Line.</li>
           <li>Improved automatic public transport backend selection when crossing coverage borders.</li>
           <li xml:lang="ar">تحسين الاختيار الآلي للخلفية البرمجية للنقل العام عند عبور حدود التغطية.</li>
           <li xml:lang="ca">Millora de la selecció automàtica de dorsals de transport públic en travessar les fronteres de cobertura.</li>
@@ -1515,6 +1519,7 @@
           <li xml:lang="ru">Улучшен автоматический выбор источника данных общественного транспорта при пересечении границ покрытия.</li>
           <li xml:lang="sl">Izboljšana samodejna izbira javnega prevoza pri prečkanju meja pokritosti.</li>
           <li xml:lang="tr">Improved automatic public transport backend selection when crossing coverage borders.</li>
+          <li xml:lang="uk">Удосконалено автоматичний вибір модуля громадського транспорту при перетині меж покриття операторів.</li>
           <li>Added onboard API support for Ouigo ES.</li>
           <li xml:lang="ar">أُضيف دعم واجهة برمجة التطبيقات على المتن لـ Ouigo ES.</li>
           <li xml:lang="ca">S'ha afegit la implementació de l'API a bord d'Ouigo ES.</li>
@@ -1528,6 +1533,7 @@
           <li xml:lang="ru">Добавлена поддержка бортового API для Ouigo ES.</li>
           <li xml:lang="sl">Dodana podpora za API na vozilu za Ouigo ES.</li>
           <li xml:lang="tr">Added onboard API support for Ouigo ES.</li>
+          <li xml:lang="uk">Додано підтримку посадкового програмного інтерфейсу для Ouigo ES.</li>
           <li>Fixed arrival platform parsing from OpenTripPlanner backends.</li>
           <li xml:lang="ar">أُصلح تحليل منصة الوصول من خلفيات OpenTripPlanner.</li>
           <li xml:lang="ca">S'ha corregit l'anàlisi de l'andana d'arribada dels dorsals d'OpenTripPlanner.</li>
