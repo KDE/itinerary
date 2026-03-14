@@ -29,6 +29,11 @@ FormCard.AbstractFormDelegate {
         rows: 3
         columns: 2
 
+        readonly property date effectiveTime: delegateRoot.isArrival ?
+            delegateRoot.stopover.hasExpectedArrivalTime ? delegateRoot.stopover.expectedArrivalTime : delegateRoot.stopover.scheduledArrivalTime :
+            delegateRoot.stopover.hasExpectedDepartureTime ? delegateRoot.stopover.expectedDepartureTime : delegateRoot.stopover.scheduledDepartureTime
+        readonly property bool isWithinOneHour: Math.abs(effectiveTime - Date.now()) < 60*60*1000
+
         ColumnLayout {
             spacing: Kirigami.Units.smallSpacing
 
@@ -61,10 +66,9 @@ FormCard.AbstractFormDelegate {
                     id: expectedTimeLabel
                     stopover: delegateRoot.stopover
                     delay: delegateRoot.isArrival ? delegateRoot.stopover.arrivalDelay : delegateRoot.stopover.departureDelay
-                    // TODO hide scheduledTime when we are not showing relative times on the right and delay is 0
-                    scheduledTime: delay != 0 ? KCoreAddons.Format.formatTime(delegateRoot.stopover, delegateRoot.isArrival ? "scheduledArrivalTime" : "scheduledDepartureTime", Locale.ShortFormat, KCoreAddons.FormatTypes.AddTimezoneAbbreviationIfNeeded) : ""
+                    scheduledTime: (delay != 0 || topLayout.isWithinOneHour) ? KCoreAddons.Format.formatTime(delegateRoot.stopover, delegateRoot.isArrival ? "scheduledArrivalTime" : "scheduledDepartureTime", Locale.ShortFormat, KCoreAddons.FormatTypes.AddTimezoneAbbreviationIfNeeded) : ""
                     hasExpectedTime: delegateRoot.isArrival ? delegateRoot.stopover.hasExpectedArrivalTime : delegateRoot.stopover.hasExpectedDepartureTime
-                    visible: hasExpectedTime || delegateRoot.stopover.disruptionEffect === KPublicTransport.Disruption.NoService // TODO show also when we show relative times, see below
+                    visible: hasExpectedTime || delegateRoot.stopover.disruptionEffect === KPublicTransport.Disruption.NoService || topLayout.isWithinOneHour
                 }
 
                 KPublicTransport.OccupancyIndicator {
@@ -112,10 +116,13 @@ FormCard.AbstractFormDelegate {
 
             font.strikeout: delegateRoot.stopover.disruptionEffect === KPublicTransport.Disruption.NoService
 
-            // TODO once KFormat::formatRelativeDateTime supports narrow formatting, use that instead when within 1h of now
-            text: delegateRoot.isArrival ?
+            text: {
+                if (topLayout.isWithinOneHour)
+                    return KCoreAddons.Format.formatRelativeDateTime(topLayout.effectiveTime, Locale.NarrowFormat);
+                return delegateRoot.isArrival ?
                 KCoreAddons.Format.formatTime(delegateRoot.stopover, delegateRoot.stopover.hasExpectedArrivalTime ? "expectedArrivalTime" : "scheduledArrivalTime", Locale.ShortFormat, KCoreAddons.FormatTypes.AddTimezoneAbbreviationIfNeeded) :
                 KCoreAddons.Format.formatTime(delegateRoot.stopover, delegateRoot.stopover.hasExpectedDepartureTime ? "expectedDepartureTime" : "scheduledDepartureTime", Locale.ShortFormat, KCoreAddons.FormatTypes.AddTimezoneAbbreviationIfNeeded)
+            }
         }
 
         QQC2.Label {
