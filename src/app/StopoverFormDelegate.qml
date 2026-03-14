@@ -94,7 +94,7 @@ FormCard.AbstractFormDelegate {
                     text: i18nc("departure stop", "From %1", delegateRoot.stopover.stopPoint.name)
                     visible: delegateRoot.stopover.stopPoint.name !== ""
                     elide: Text.ElideMiddle
-                    Layout.maximumWidth: delegateRoot.width - relativeTimeLabel.implicitWidth - platformLabel.implicitWidth - topLayout.columnSpacing - delegateRoot.leftPadding - delegateRoot.rightPadding
+                    Layout.maximumWidth: delegateRoot.width - relativeTimeLabel.implicitWidth - (platformLabel.visible ? platformLabel.implicitWidth : 0) - topLayout.columnSpacing - delegateRoot.leftPadding - delegateRoot.rightPadding
                 }
                 QQC2.Label {
                     id: platformLabel
