@@ -186,8 +186,8 @@ EditorPage {
             FormCard.FormTextFieldDelegate {
                 id: departurePlatformNew
 
-                label: i18nc("Bus stop platform", "Platform")
-                text: reservation.reservationFor.departurePlatform
+                label: Platform.displayString(Line.Bus)
+                text: root.reservation.reservationFor.departurePlatform
             }
 
             FormCard.FormDelegateSeparator {}
@@ -215,8 +215,8 @@ EditorPage {
 
             FormCard.FormTextFieldDelegate {
                 id: departurePlatform
-                label: i18nc("bus stop platform", "Platform")
-                text: reservationFor.departurePlatform
+                label: Platform.displayString(Line.Bus)
+                text: root.reservation.reservationFor.departurePlatform
             }
 
             FormCard.FormDelegateSeparator { above: boardLater }
@@ -273,8 +273,8 @@ EditorPage {
             FormCard.FormTextFieldDelegate {
                 id: arrivalPlatformNew
 
-                label: i18nc("Bus stop platform", "Platform")
-                text: reservation.reservationFor.arrivalPlatform
+                label: Platform.displayString(Line.Bus)
+                text: root.reservation.reservationFor.arrivalPlatform
             }
 
             FormCard.FormDelegateSeparator {}
@@ -307,8 +307,8 @@ EditorPage {
 
             FormCard.FormTextFieldDelegate {
                 id: arrivalPlatform
-                label: i18nc("bus stop platform", "Platform")
-                text: reservationFor.arrivalPlatform
+                label: Platform.displayString(Line.Bus)
+                text: root.reservation.reservationFor.arrivalPlatform
             }
 
             FormCard.FormDelegateSeparator {}

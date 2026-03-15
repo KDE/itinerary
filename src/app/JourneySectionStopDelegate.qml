@@ -129,29 +129,7 @@ Item {
             Layout.alignment:  Qt.AlignTop
 
             color: root.stop.hasExpectedPlatform ? (root.stop.platformChanged ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor) : Kirigami.Theme.textColor
-            text: {
-                const platform = root.stop.hasExpectedPlatform ? root.stop.expectedPlatform : root.stop.scheduledPlatform;
-
-                if (platform.length === 0) {
-                    return '';
-                }
-
-                switch (root.stop.route.line.mode) {
-                    case KPublicTransport.Line.Train:
-                    case KPublicTransport.Line.Funicular:
-                    case KPublicTransport.Line.LocalTrain:
-                    case KPublicTransport.Line.LongDistanceTrain:
-                    case KPublicTransport.Line.Metro:
-                    case KPublicTransport.Line.RailShuttle:
-                    case KPublicTransport.Line.RapidTransit:
-                    case KPublicTransport.Line.Tramway:
-                        return i18nc("Abbreviation of train platform", "Pl. %1", platform)
-                    case KPublicTransport.Line.Ferry:
-                        return i18nc("Ferry dock, if possible use an abbreviation", "Dock %1", platform)
-                    default:
-                        return i18nc("Generic abbreviation of platform", "Pl. %1", platform)
-                }
-            }
+            text: KPublicTransport.Platform.displayString(root.stop.route.line.mode, root.stop.hasExpectedPlatform ? root.stop.expectedPlatform : root.stop.scheduledPlatform, Locale.ShortFormat)
             visible: root.stop.disruptionEffect !== KPublicTransport.Disruption.NoService
             opacity: root.stop.pickupType === KPublicTransport.PickupDropoff.NotAllowed && root.stop.dropoffType === KPublicTransport.PickupDropoff.NotAllowed ? 0.5 : 1.0
         }

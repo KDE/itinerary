@@ -176,7 +176,7 @@ DetailsPage {
 
             FormPlatformDelegate {
                 id: departurePlatformDelegate
-                text: i18nc("train station platform", "Platform")
+                text: KPublicTransport.Platform.displayString(KPublicTransport.Line.Train)
                 stopover: root.departure
                 sections: root.controller.departurePlatformSections
                 scheduledPlatform: root.reservationFor.departurePlatform
@@ -261,7 +261,7 @@ DetailsPage {
 
             FormPlatformDelegate {
                 id: arrivalPlatformDelegate
-                text: i18nc("train station platform", "Platform")
+                text: KPublicTransport.Platform.displayString(KPublicTransport.Line.Train)
                 stopover: root.arrival
                 sections: root.controller.arrivalPlatformSections
                 scheduledPlatform: root.reservationFor.arrivalPlatform

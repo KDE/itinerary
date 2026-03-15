@@ -114,7 +114,7 @@ Kirigami.ScrollablePage {
             }
 
             wrapMode: Text.Wrap
-            text: i18nc("train station platform", "Platform: %1", platformName)
+            text: KPublicTransport.Platform.displayString(vehicleModel.stopover.route.line.mode, platformName)
 
             Layout.leftMargin: Kirigami.Units.largeSpacing
             Layout.rightMargin: Kirigami.Units.largeSpacing

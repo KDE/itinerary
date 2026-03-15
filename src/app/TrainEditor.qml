@@ -183,7 +183,7 @@ EditorPage {
             FormCard.FormTextFieldDelegate {
                 id: departureStationName
 
-                label: i18nc("Train station platform", "Station Name")
+                label: i18nc("Train station", "Station Name")
                 text: reservation.reservationFor.departureStation.name
                 status: Kirigami.MessageType.Error
                 statusMessage: text === "" ? i18n("Departure station must not be empty.") : ""
@@ -194,8 +194,8 @@ EditorPage {
             FormCard.FormTextFieldDelegate {
                 id: departurePlatformNew
 
-                label: i18nc("Train station platform", "Platform")
-                text: reservation.reservationFor.departurePlatform
+                label: Platform.displayString(Line.Train)
+                text: root.reservation.reservationFor.departurePlatform
             }
 
             FormCard.FormDelegateSeparator {}
@@ -236,8 +236,8 @@ EditorPage {
 
             FormCard.FormTextFieldDelegate {
                 id: departurePlatform
-                label: i18nc("train platform", "Platform")
-                text: reservationFor.departurePlatform
+                label: Platform.displayString(Line.Train)
+                text: root.reservation.reservationFor.departurePlatform
             }
 
             FormCard.FormDelegateSeparator { above: boardLater }
@@ -294,8 +294,8 @@ EditorPage {
             FormCard.FormTextFieldDelegate {
                 id: arrivalPlatformNew
 
-                label: i18nc("Train station platform", "Platform")
-                text: reservation.reservationFor.arrivalPlatform
+                label: Platform.displayString(Line.Train)
+                text: root.reservation.reservationFor.arrivalPlatform
             }
 
             FormCard.FormDelegateSeparator {}
@@ -342,8 +342,8 @@ EditorPage {
             FormCard.FormTextFieldDelegate {
                 id: arrivalPlatform
 
-                label: i18nc("train platform", "Platform")
-                text: reservationFor.arrivalPlatform
+                label: Platform.displayString(Line.Train)
+                text: root.reservation.reservationFor.arrivalPlatform
             }
 
             FormCard.FormDelegateSeparator { above: alignEarlier }

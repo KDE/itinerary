@@ -61,7 +61,7 @@ Addons.ConvergentContextMenu {
         text: stopInfoDrawer.stop.hasExpectedPlatform ? stopInfoDrawer.stop.expectedPlatform : stopInfoDrawer.stop.scheduledPlatform;
         visible: text.length > 0
         displayComponent: FormCard.FormTextDelegate {
-            text: i18n("Platform:")
+            text: KPublicTransport.Platform.displayString(stopInfoDrawer.stop.route.line.mode)
             description: platformDelegate.text
         }
     }
@@ -82,7 +82,7 @@ Addons.ConvergentContextMenu {
                 spacing: Kirigami.Units.mediumSpacing
 
                 QQC2.Label {
-                    text: i18n("Occupancy:")
+                    text: i18n("Occupancy")
                     elide: Text.ElideRight
                     Layout.fillWidth: true
                     Accessible.ignored: true
@@ -109,7 +109,7 @@ Addons.ConvergentContextMenu {
         visible: stopInfoDrawer.stop.notes.length > 0
 
         displayComponent: FormCard.FormTextDelegate {
-            text: i18n("Information:")
+            text: i18n("Information")
             description: stopInfoDrawer.stop.notes.join("<br/>")
             descriptionItem {
                 textFormat: Text.RichText

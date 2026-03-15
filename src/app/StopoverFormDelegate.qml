@@ -7,9 +7,9 @@ import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
+import org.kde.kpublictransport as KPublicTransport
 import org.kde.kpublictransport.ui as KPublicTransport
 import org.kde.coreaddons as KCoreAddons
-import org.kde.itinerary
 
 /** List view delegate for showing entries in a departure/arrival board.
  *  TODO move to KPublicTransport once KCoreAddon's formatRelativeDateTime's narrow format support is upstream
@@ -102,7 +102,7 @@ FormCard.AbstractFormDelegate {
                 }
                 QQC2.Label {
                     id: platformLabel
-                    text: (stopNameLabel.visible ? ' · ' : '') + i18nc("@info", "Platform %1", delegateRoot.stopover.hasExpectedPlatform ? delegateRoot.stopover.expectedPlatform : delegateRoot.stopover.scheduledPlatform)
+                    text: (stopNameLabel.visible ? ' · ' : '') + KPublicTransport.Platform.displayString(delegateRoot.stopover.route.line.mode, delegateRoot.stopover.hasExpectedPlatform ? delegateRoot.stopover.expectedPlatform : delegateRoot.stopover.scheduledPlatform)
                     color: delegateRoot.stopover.platformChanged ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
                     visible: delegateRoot.stopover.hasExpectedPlatform || delegateRoot.stopover.scheduledPlatform !== ""
                 }

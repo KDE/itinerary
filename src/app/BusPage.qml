@@ -147,8 +147,8 @@ DetailsPage {
 
             FormCard.FormTextDelegate {
                 id: departurePlatformDelegate
-                text: i18nc("bus station platform", "Platform")
-                description: reservationFor.departurePlatform
+                text: KPublicTransport.Platform.displayString(KPublicTransport.Line.Bus)
+                description: root.reservation.reservationFor.departurePlatform
                 visible: description !== ""
             }
 
@@ -217,8 +217,8 @@ DetailsPage {
 
             FormCard.FormTextDelegate {
                 id: arrivalPlatformDelegate
-                text: i18nc("bus station platform", "Platform")
-                description: reservationFor.arrivalPlatform
+                text: KPublicTransport.Platform.displayString(KPublicTransport.Line.Bus)
+                description: root.reservation.reservationFor.arrivalPlatform
                 visible: description !== ""
             }
 

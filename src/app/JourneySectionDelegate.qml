@@ -177,7 +177,7 @@ anchors.centerIn: parent
                 }
 
                 QQC2.Label {
-                    text: i18nc("@info", "Platform %1", root.modelData.hasExpectedDeparturePlatform ? root.modelData.expectedDeparturePlatform : root.modelData.scheduledDeparturePlatform)
+                    text: Platform.displayString(root.modelData.route.line.mode, root.modelData.hasExpectedDeparturePlatform ? root.modelData.expectedDeparturePlatform : root.modelData.scheduledDeparturePlatform)
                     color: root.modelData.departurePlatformChanged ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
                     visible: root.modelData.scheduledDeparturePlatform.length > 0
                 }
@@ -328,7 +328,7 @@ anchors.centerIn: parent
 
                 QQC2.Label {
                     readonly property string platform: root.modelData.hasExpectedArrivalPlatform ? root.modelData.expectedArrivalPlatform : root.modelData.scheduledArrivalPlatform
-                    text: i18nc("@info", "Platform %1", platform)
+                    text: Plaform.displayString(root.modelData.route.line.mode, platform)
                     visible: platform.length > 0
 
                     Layout.fillWidth: true

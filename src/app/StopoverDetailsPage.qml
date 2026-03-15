@@ -97,7 +97,7 @@ Kirigami.Page {
                     }
                     QQC2.Label {
                         id: platformLabel
-                        text: (stopNameLabel.visible ? ' · ' : '') + i18nc("@info", "Platform %1", root.stopover.hasExpectedPlatform ? root.stopover.expectedPlatform : root.stopover.scheduledPlatform)
+                        text: (stopNameLabel.visible ? ' · ' : '') + KPublicTransport.Platform.displayString(root.stopover.route.line.mode, root.stopover.hasExpectedPlatform ? root.stopover.expectedPlatform : root.stopover.scheduledPlatform)
                         color: root.stopover.platformChanged ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
                         visible: root.stopover.hasExpectedPlatform || root.stopover.scheduledPlatform !== ""
                     }
