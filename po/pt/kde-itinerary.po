@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kitinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-11 00:47+0000\n"
+"POT-Creation-Date: 2026-03-15 00:45+0000\n"
 "PO-Revision-Date: 2023-07-14 22:15+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -2531,7 +2531,7 @@ msgid "Drive %1 (%2)"
 msgstr "Condução para %1 (%2)"
 
 #: app/JourneySectionDelegate.qml:180 app/JourneySectionDelegate.qml:331
-#: app/StopoverDetailsPage.qml:100 app/StopoverFormDelegate.qml:101
+#: app/StopoverDetailsPage.qml:100 app/StopoverFormDelegate.qml:105
 #, fuzzy, kde-format
 #| msgid "Platform: %1"
 msgctxt "@info"
@@ -2539,7 +2539,7 @@ msgid "Platform %1"
 msgstr "Plataforma: %1"
 
 #: app/JourneySectionDelegate.qml:253 app/JourneySectionPage.qml:136
-#: app/StopoverFormDelegate.qml:144 app/VehicleLayoutPage.qml:177
+#: app/StopoverFormDelegate.qml:151 app/VehicleLayoutPage.qml:177
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
@@ -4328,7 +4328,7 @@ msgctxt "train/bus departure"
 msgid "Departure Information"
 msgstr "Informação de desenvolvimento"
 
-#: app/StopoverDetailsPage.qml:93 app/StopoverFormDelegate.qml:94
+#: app/StopoverDetailsPage.qml:93 app/StopoverFormDelegate.qml:98
 #, fuzzy, kde-format
 #| msgid "From: %1"
 msgctxt "departure stop"
