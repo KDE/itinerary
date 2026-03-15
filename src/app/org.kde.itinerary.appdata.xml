@@ -1547,6 +1547,7 @@
           <li xml:lang="ru">Исправлен анализ платформы прибытия из серверов OpenTripPlanner.</li>
           <li xml:lang="sl">Popravljeno razčlenjevanje peronov prihoda iz zalednih sistemov OpenTripPlanner.</li>
           <li xml:lang="tr">Fixed arrival platform parsing from OpenTripPlanner backends.</li>
+          <li xml:lang="uk">Виправлено обробку платформи прибуття на основі даних OpenTripPlanner.</li>
           <li>Fixed train direction display on vehicle layout page.</li>
           <li xml:lang="ar">أُصلح عرض اتجاه القطار في صفحة تخطيط المركبة.</li>
           <li xml:lang="ca">S'ha corregit la visualització de la direcció del tren a la pàgina de disposició dels vehicles.</li>
@@ -1560,6 +1561,7 @@
           <li xml:lang="ru">Исправлено отображение направления поезда на странице схемы вагонов.</li>
           <li xml:lang="sl">Popravljen prikaz smeri vlaka na strani s postavitvijo vozila.</li>
           <li xml:lang="tr">Fixed train direction display on vehicle layout page.</li>
+          <li xml:lang="uk">Виправлено показ напрямків потягів на сторінці розкладки засобів пересування.</li>
         </ul>
       </description>
     </release>
@@ -2482,6 +2484,7 @@
           <li xml:lang="ca">Filtra els resultats del codificador geo inversemblants a l'edició d'adreces.</li>
           <li xml:lang="ca-valencia">Filtra els resultats del codificador geo inversemblants a l'edició d'adreces.</li>
           <li xml:lang="cs">Filtrace nepravděpodobných výsledků geokodéru při úpravě adres.</li>
+          <li xml:lang="es">Filtrar los resultados inverosímiles del geocodificador al editar direcciones.</li>
           <li xml:lang="fr">Filtration des résultats de géocodage peu plausibles lors de la modification d'adresse.</li>
           <li xml:lang="it">Filtra i risultati non plausibili del geo-codificatore durante la modifica dell'indirizzo.</li>
           <li xml:lang="ka">გეოკოდერის დაუჯერებელი შედეგების გაფილტვრა მისამართის რედაქტირებისას.</li>
@@ -2552,6 +2555,7 @@
         <p xml:lang="ca">La línia de temps principal s'ha redissenyat i ara les entrades es poden ampliar en línia per a mostrar les parades intermèdies i els retards i les interrupcions en curs. Parlant d'esdeveniments, ara és possible afegir i editar entrades manualment i compartir viatges sencers o reserves individuals al telèfon a través del KDE Connect.</p>
         <p xml:lang="ca-valencia">La línia de temps principal s'ha redissenyat i ara les entrades es poden ampliar en línia per a mostrar les parades intermèdies i els retards i les interrupcions en curs. Parlant d'esdeveniments, ara és possible afegir i editar entrades manualment i compartir viatges sencers o reserves individuals al telèfon a través de KDE Connect.</p>
         <p xml:lang="cs">Hlavní časová osa byla přepracována a nyní lze položky rozbalit a zobrazit mezilehlé zastávky a aktuální zpoždění a výluky. Pokud jde o události, nyní je možné ručně přidávat a upravovat položky a sdílet celé cesty nebo jednotlivé rezervace do telefonu přes KDE Connect.</p>
+        <p xml:lang="es">Se ha rediseñado la línea de tiempo principal para que las entradas se puedan expandir para mostrar las paradas intermedias y los retrasos e interrupciones en curso. Hablando de eventos, ahora se pueden añadir y editar entradas manualmente y compartir viajes completos o reservas individuales con el teléfono mediante KDE Connect.</p>
         <p xml:lang="fr">La chronologie principale a été repensée. Il est maintenant possible d'étendre les entrées directement pour afficher les arrêts intermédiaires ainsi que les retards et perturbations en cours. En parlant d'évènements, il est désormais possible d'ajouter et de modifier manuellement des entrées et de partager des voyages complets ou des réservations individuelles sur votre téléphone grâce à KDEConnect.</p>
         <p xml:lang="it">La linea temporale principale è stata ridisegnata e ora le voci possono essere espanse in linea per mostrare le fermate intermedie, i ritardi e le interruzioni in corso. A proposito di eventi, ora è possibile aggiungere e modificare manualmente le voci e condividere interi viaggi o singole prenotazioni sul telefono tramite KDE Connect.</p>
         <p xml:lang="ka">მთავარი ქრონოლოგია განახლდა და ახლა ჩანაწერების გაშლა შესაძლებელია შუალედური გაჩერებების, დაგვიანებებისა და შეფერხებების სანახავად. რაც შეეხება მოვლენებს, ახლა უკვე შესაძლებელია ჩანაწერების ხელით დამატება და რედაქტირება, ასევე მთლიანი მგზავრობების ან ცალკეული ჯავშნების გაზიარება ტელეფონზე KDE Connect-ის საშუალებით.</p>
@@ -2564,6 +2568,7 @@
         <p xml:lang="ca">El mapa d'interiors de l'Itinerary ara llista tots els serveis de l'edifici o zona que esteu mirant actualment. Això ajuda amb coses com trobar un lloc per a prendre un cafè en una estació gran de tren, o la recerca d'un lloc per trobar menjar als voltants de l'hotel. Aquesta funció està alimentada per l'OpenStreetMap, funciona sense necessitat de connectar-se a Internet i mai no hi ha termes de cerca que surtin del vostre dispositiu.</p>
         <p xml:lang="ca-valencia">El mapa d'interiors d'Itinerary ara llista tots els serveis de l'edifici o zona que esteu mirant actualment. Açò ajuda amb coses com trobar un lloc per a prendre un cafè en una estació gran de tren, o la recerca d'un lloc per a trobar menjar als voltants de l'hotel. Esta funció està alimentada per OpenStreetMap, funciona sense necessitat de connectar-se a Internet i mai no hi ha termes de busca que isquen del vostre dispositiu.</p>
         <p xml:lang="cs">Vnitřní mapa v Itineráři nyní zobrazuje všechny služby v budově nebo oblasti, kterou právě prohlížíte. To vám pomůže například najít místo, kde si můžete dát kávu na velkém nádraží, nebo najít místo, kde se najíst v okolí vašeho hotelu. Tato funkce je založena na OpenStreetMap, funguje bez nutnosti připojení k internetu a žádné vyhledávací termíny neopouštějí vaše zařízení.</p>
+        <p xml:lang="es">El mapa de interiores de Itinerary ahora muestra todos los servicios del edificio o la zona que se visualiza. Esto ayuda, por ejemplo, a encontrar un lugar para tomar un café en una gran estación de tren o a buscar un restaurante cerca de un hotel. Esta función, basada en OpenStreetMap, funciona sin conexión a internet y los términos de búsqueda se guardan en el dispositivo.</p>
         <p xml:lang="fr">La carte intérieure de Itinerary répertorie désormais toutes les commodités du bâtiment ou de la zone que vous consultez actuellement. Cela aide, par exemple, à trouver un endroit pour prendre un café dans une grande gare, ou à chercher un endroit pour se restaurer à proximité de votre hôtel. Cette fonctionnalité est alimentée par OpenStreetMap, fonctionne sans connexion Internet et aucune information de recherche n'est jamais transmise à partir de votre périphérique.</p>
         <p xml:lang="it">La mappa degli interni in Itinerary ora elenca tutti i servizi nell'edificio o nell'area che stai attualmente guardando. Ciò è utile per cose come trovare un posto dove prendere un caffè in una grande stazione ferroviaria o cercare un posto dove mangiare nelle vicinanze del tuo hotel. Questa funzionalità è supportata da OpenStreetMap, funziona senza la necessità di connettersi a Internet e nessun termine di ricerca lascia mai il tuo dispositivo.</p>
         <p xml:lang="ka">Itinerary-ის შიდა რუკა ახლა აჩვენებს ყველა კეთილმოწყობას შენობაში ან არეალში, რომელსაც უყურებთ. ეს გეხმარებათ დიდი რკინიგზის სადგურზე ყავის ადგილის პოვნაში ან სასტუმროს სიახლოვეს საკვები ობიექტის ძებნაში. ეს ფუნქცია ეყრდნობა OpenStreetMap-ს, მუშაობს ინტერნეტის გარეშე და ძიების სიტყვები არასოდეს ტოვებს თქვენს მოწყობილობას.</p>
@@ -2576,6 +2581,7 @@
         <p xml:lang="ca">A l'hora de visualitzar els detalls d'un viatge, a més de poder consultar la llista de parades, es pot consultar un mapa del viatge.</p>
         <p xml:lang="ca-valencia">A l'hora de visualitzar els detalls d'un viatge, a més de poder consultar la llista de parades, es pot consultar un mapa del viatge.</p>
         <p xml:lang="cs">Při prohlížení podrobností o cestě lze kromě seznamu zastávek zobrazit také mapu cesty.</p>
+        <p xml:lang="es">Al consultar los detalles de un viaje, además de poder ver la lista de paradas, también se puede mostrar un mapa del trayecto.</p>
         <p xml:lang="fr">Lors de la consultation des détails d'un voyage, en plus de pouvoir consulter la liste des arrêts, il est possible de regarder une carte du trajet.</p>
         <p xml:lang="it">Visualizzando i dettagli di un viaggio, oltre a poter consultare l'elenco delle fermate, è possibile visionare la mappa del viaggio.</p>
         <p xml:lang="ka">მგზავრობის დეტალების ნახვისას, გაჩერებების სიის გარდა, ასევე შეგიძლიათ ნახოთ მგზავრობის რუკა.</p>
@@ -2757,6 +2763,7 @@
           <li xml:lang="ca">Corregeix l'edició d'elements d'autobús i tren sense un bitllet associat.</li>
           <li xml:lang="ca-valencia">Corregix l'edició d'elements d'autobús i tren sense un bitllet associat.</li>
           <li xml:lang="cs">Opraveny úpravy prvků autobusů a vlaků bez přidružené jízdenky.</li>
+          <li xml:lang="es">Se ha corregido la edición de elementos de autobús y tren sin billete asociado.</li>
           <li xml:lang="fr">Correction de la modification des éléments de bus et de train sans billet associé.</li>
           <li xml:lang="it">Corretta la modifica degli elementi di autobus e treni senza un biglietto associato.</li>
           <li xml:lang="ka">გასწორდა ავტობუსისა და მატარებლის ელემენტების რედაქტირება მიბმული ბილეთის გარეშე.</li>
@@ -2782,6 +2789,7 @@
           <li xml:lang="ca">Corregeix la renderització de les imatges de miniatures dels passis genèrics d'Apple Wallet.</li>
           <li xml:lang="ca-valencia">Corregix la renderització de les imatges de miniatures dels passes genèrics d'Apple Wallet.</li>
           <li xml:lang="cs">Oprava vykreslování miniatur obrázků generických Apple Wallet pass.</li>
+          <li xml:lang="es">Se ha corregido la representación de las imágenes en miniatura de las contraseñas genéricas de Apple Wallet.</li>
           <li xml:lang="fr">Correction du rendu des images de vignettes pour les abonnements génériques dans Apple Wallet.</li>
           <li xml:lang="it">Correzione del rendering delle immagini in miniatura del passaggio generico di Apple Wallet.</li>
           <li xml:lang="ka">გასწორდა Apple Wallet-ის ზოგადი ბარათების ესკიზების რენდერი.</li>
@@ -2794,6 +2802,7 @@
           <li xml:lang="ca">Corregeix la visualització del progrés de l'escala inicial del viatge a la vista d'estat en viu.</li>
           <li xml:lang="ca-valencia">Corregix la visualització del progrés de l'escala inicial del viatge a la vista d'estat en viu.</li>
           <li xml:lang="cs">Opraveno zobrazení průběhu na počáteční zastávce cesty v živém zobrazení stavu.</li>
+          <li xml:lang="es">Se ha corregido la visualización del avance en la escala del viaje inicial en la vista de estado en vivo.</li>
           <li xml:lang="fr">Correction de l'affichage de la progression lors de l'escale initiale d'un trajet dans la vue d'état en temps réel en direct.</li>
           <li xml:lang="it">Correzione della visualizzazione dell'avanzamento nella tappa iniziale del viaggio nella visualizzazione dello stato in tempo reale.</li>
           <li xml:lang="ka">გასწორდა პროგრესის ჩვენება მგზავრობის საწყის გაჩერებაზე რეალური სტატუსის ხედში.</li>
@@ -2806,6 +2815,7 @@
           <li xml:lang="ca">Mostra les taquilles d'equipatge, oficines d'objectes perduts i cintes de recollida d'equipatges d'aeroport en el mapa d'interior.</li>
           <li xml:lang="ca-valencia">Mostra les taquilles d'equipatge, oficines d'objectes perduts i cintes d'arreplegada d'equipatges d'aeroport en el mapa d'interior.</li>
           <li xml:lang="cs">Zobrazení úschovny zavazadel, kanceláře ztrát a nálezů a pásů pro výdej zavazadel na letišti na mapě interiéru.</li>
+          <li xml:lang="es">Mostrar en el mapa de interior la ubicación de las consignas para equipaje, las oficinas de objetos perdidos y las cintas transportadoras de equipaje en aeropuertos.</li>
           <li xml:lang="fr">Afficher les consignes à bagages, les bureaux des objets trouvés et les tapis de récupération des bagages sur la carte intérieure.</li>
           <li xml:lang="it">Visualizza sulla mappa interna gli armadietti per i bagagli, gli uffici oggetti smarriti e i nastri trasportatori per il ritiro dei bagagli in aeroporto.</li>
           <li xml:lang="ka">ბარგის შესანახი საკნების, დაკარგული ნივთების ოფისებისა და აეროპორტის ბარგის მისაღები ზოლების ჩვენება შიდა რუკაზე.</li>
@@ -2824,6 +2834,7 @@
           <li xml:lang="ca">Els modes de transport preferits ara es poden seleccionar a totes les cerques de transport públic.</li>
           <li xml:lang="ca-valencia">Els modes de transport preferits ara es poden seleccionar a totes les busques de transport públic.</li>
           <li xml:lang="cs">Nyní lze u všech vyhledávání veřejné dopravy vybrat preferované druhy dopravy.</li>
+          <li xml:lang="es">Los medios de transporte preferidos se pueden seleccionar ahora en todas las búsquedas de transporte público.</li>
           <li xml:lang="fr">Les modes de transport préférés peuvent désormais être sélectionnés pour toutes les recherches de transports publics.</li>
           <li xml:lang="it">Ora è possibile selezionare le modalità di trasporto preferite per tutte le ricerche sui trasporti pubblici.</li>
           <li xml:lang="ka">ახლა უკვე შესაძლებელია სასურველი ტრანსპორტის სახეობების არჩევა საზოგადოებრივი ტრანსპორტის ყველა ძიებისთვის.</li>
@@ -2836,6 +2847,7 @@
           <li xml:lang="ca">Els logotips de les línies de transport públic ara també estan disponibles per a alguns serveis regionals i de ferrocarril de llarga distància.</li>
           <li xml:lang="ca-valencia">Els logotips de les línies de transport públic ara també estan disponibles per a alguns serveis regionals i de ferrocarril de llarga distància.</li>
           <li xml:lang="cs">Loga linek veřejné dopravy jsou nyní k dispozici také pro některé regionální a dálkové železniční služby.</li>
+          <li xml:lang="es">Los logotipos de las líneas de transporte público ya están disponibles también para algunos servicios ferroviarios regionales y de larga distancia.</li>
           <li xml:lang="fr">Les logos des lignes de transport public sont désormais également disponibles pour certains services régionaux et de trains longue distance.</li>
           <li xml:lang="it">I loghi delle linee di trasporto pubblico sono ora disponibili anche per alcuni servizi ferroviari regionali e di lunga percorrenza.</li>
           <li xml:lang="ka">საზოგადოებრივი ტრანსპორტის ხაზების ლოგოები ახლა უკვე ხელმისაწვდომია ზოგიერთი რეგიონული და შორი მანძილის სარკინიგზო სერვისებისთვის.</li>
@@ -2848,6 +2860,7 @@
           <li xml:lang="ca">S'ha afegit el suport per a les disposicions de vagons ferroviaris per a més tipus de trens.</li>
           <li xml:lang="ca-valencia">S'ha afegit el suport per a les disposicions de vagons ferroviaris per a més tipus de trens.</li>
           <li xml:lang="cs">Přidána podpora pro řazení železničních vagónů pro více typů vlaků.</li>
+          <li xml:lang="es">Se ha añadido compatibilidad con esquemas de coches de ferrocarril para más tipos de trenes.</li>
           <li xml:lang="fr">Ajout de la prise en charge des configurations de wagons pour plus de types de trains.</li>
           <li xml:lang="it">Aggiunto supporto per la disposizione dei vagoni ferroviari per più tipi di treni.</li>
           <li xml:lang="ka">დაემატა ვაგონების განლაგების მხარდაჭერა მეტი ტიპის მატარებლისთვის.</li>
@@ -2860,6 +2873,7 @@
           <li xml:lang="ca">S'ha afegit el suport per importar bitllets en línia de Deutsche Bahn i SNCF.</li>
           <li xml:lang="ca-valencia">S'ha afegit el suport per a importar bitllets en línia de Deutsche Bahn i SNCF.</li>
           <li xml:lang="cs">Přidána podpora pro import online jízdenek Deutsche Bahn a SNCF.</li>
+          <li xml:lang="es">Se ha añadido compatibilidad con la importación de billetes en línea de la Deutsche Bahn y de la SNCF.</li>
           <li xml:lang="fr">Ajout de la prise en charge de l'importation de billets en ligne de Deutsche Bahn et de la SNCF.</li>
           <li xml:lang="it">Aggiunto il supporto per l'importazione di biglietti online Deutsche Bahn e SNCF.</li>
           <li xml:lang="ka">დაემატა Deutsche Bahn-ისა და SNCF-ის ონლაინ ბილეთების შემოტანას მხარდაჭერა.</li>
@@ -2885,6 +2899,7 @@
           <li xml:lang="ca">Considera la disposició del vagó i les dades de reserva de seient per a ressaltar el punt de sortida/arribada en una andana.</li>
           <li xml:lang="ca-valencia">Considera la disposició del vagó i les dades de reserva de seient per a ressaltar el punt d'eixida/arribada en una andana.</li>
           <li xml:lang="cs">Zohlednit řazení vagónů a údaje o rezervaci míst k sezení, aby bylo možné zvýraznit místo odjezdu/příjezdu na nástupišti.</li>
+          <li xml:lang="es">Se tienen en cuenta la distribución del coche y los datos de reserva de asientos para resaltar el punto de salida/llegada en un andén.</li>
           <li xml:lang="fr">Veuillez prendre en compte la disposition des voitures et les données de réservation des sièges pour mettre en évidence le point de départ / d'arrivée sur un quai.</li>
           <li xml:lang="it">Considera la disposizione del pullman e i dati di prenotazione del posto per evidenziare il punto di partenza/arrivo su una piattaforma.</li>
           <li xml:lang="ka">ვაგონის განლაგებისა და ადგილების ჯავშნის გათვალისწინება ბაქანზე გამგზავრების/ჩამოსვლის ადგილის გამოსაკვეთად.</li>
@@ -2897,6 +2912,7 @@
           <li xml:lang="ca">Aspecte nou de les entrades de la línia de temps i les pàgines d'edició.</li>
           <li xml:lang="ca-valencia">Aspecte nou de les entrades de la línia de temps i les pàgines d'edició.</li>
           <li xml:lang="cs">Nový vzhled záznamů na časové ose a stránek pro úpravy.</li>
+          <li xml:lang="es">Nuevo diseño para las entradas de la cronología y las páginas de edición.</li>
           <li xml:lang="fr">Nouvelle apparence pour les entrées de la chronologie et les pages de modification.</li>
           <li xml:lang="it">Nuovo aspetto per le voci della linea temporale e le pagine di modifica.</li>
           <li xml:lang="ka">ახალი იერსახე ქრონოლოგიის ჩანაწერებისა და რედაქტირების გვერდებისთვის.</li>
@@ -2974,6 +2990,7 @@
           <li xml:lang="ca">Es pot crear una nova reserva d'hotel, esdeveniment o restaurant afegint un URL al seu lloc web anotat schema.org.</li>
           <li xml:lang="ca-valencia">Es pot crear una nova reserva d'hotel, esdeveniment o restaurant afegint un URL cap al seu lloc web anotat schema.org.</li>
           <li xml:lang="cs">Nové rezervace hotelů, akcí a restaurací lze vytvořit přidáním URL adresy na jejich webové stránky s anotacemi schema.org.</li>
+          <li xml:lang="es">Se pueden crear nuevas reservas de hotel, eventos y restaurantes añadiendo una URL a al sitio web anotado en schema.org.</li>
           <li xml:lang="fr">Une nouvelle réservation d'hôtel, d'évènement ou de restaurant peut être créée en ajoutant une URL à leur site Internet annoté avec schema.org.</li>
           <li xml:lang="it">È possibile creare nuove prenotazioni per hotel, eventi e ristoranti aggiungendo un URL al sito web con annotazioni schema.org.</li>
           <li xml:lang="ka">ახალი სასტუმროს, მოვლენისა და რესტორნის ჯავშნის შექმნა შესაძლებელია მათი schema.org-ით მონიშნული ვებგვერდის ბმულის დამატებით.</li>
@@ -2986,6 +3003,7 @@
           <li xml:lang="ca">S'ha afegit la implementació per a extreure dades de viatge en esdeveniments d'Apple iCal.</li>
           <li xml:lang="ca-valencia">S'ha afegit la implementació per a extraure dades de viatge en esdeveniments d'Apple iCal.</li>
           <li xml:lang="cs">Přidána podpora pro extrahování cestovních údajů v událostech Apple iCal.</li>
+          <li xml:lang="es">Se ha añadido compatibilidad para extraer datos de viaje de los eventos de Apple iCal.</li>
           <li xml:lang="fr">Ajout de la prise en charge de l'extraction des données de voyage dans les évènements « iCal » de Apple.</li>
           <li xml:lang="it">Aggiunto supporto per l'estrazione dei dati di viaggio negli eventi Apple iCal.</li>
           <li xml:lang="ka">დაემატა სამგზავრო მონაცემების ამოღება Apple iCal მოვლენებიდან.</li>
@@ -2998,6 +3016,7 @@
           <li xml:lang="ca">Notificacions millorades en cas d'actualitzacions de passis d'Apple Wallet.</li>
           <li xml:lang="ca-valencia">Notificacions millorades en cas d'actualitzacions de passes d'Apple Wallet.</li>
           <li xml:lang="cs">Vylepšená oznámení v případě aktualizací Apple Wallet Pass.</li>
+          <li xml:lang="es">Notificaciones mejoradas en caso de actualizaciones de Apple Wallet Pass.</li>
           <li xml:lang="fr">Notifications améliorées en cas de mise à jour des abonnements de Apple Wallet.</li>
           <li xml:lang="it">Notifiche migliorate in caso di aggiornamenti del pass Apple Wallet.</li>
           <li xml:lang="ka">გაუმჯობესებული შეტყობინებები Apple Wallet-ის ბარათების განახლებისას.</li>
@@ -3010,6 +3029,7 @@
           <li xml:lang="ca">Millora de la visualització del temps de validesa dels bitllets a la vista de passis i programes.</li>
           <li xml:lang="ca-valencia">Millora de la visualització del temps de validesa dels bitllets a la vista de passes i programes.</li>
           <li xml:lang="cs">Vylepšené zobrazení doby platnosti jízdenek v přehledu jízdenek a programů.</li>
+          <li xml:lang="es">Se ha mejorado la visualización de los periodos de validez de los billetes en la vista de pases y programas.</li>
           <li xml:lang="fr">Amélioration de l'affichage des horaires de validité des billets dans la vue des abonnements et des programmes.</li>
           <li xml:lang="it">Migliorata la visualizzazione dei tempi di validità dei biglietti nella visualizzazione abbonamenti e programmi.</li>
           <li xml:lang="ka">ბილეთის მოქმედების ვადების გაუმჯობესებული ჩვენება ბარათებისა და პროგრამების ხედში.</li>
@@ -3022,6 +3042,7 @@
           <li xml:lang="ca">Millora de la visualització de les cancel·lacions de transport públic i de les notes d'interrupció llarga.</li>
           <li xml:lang="ca-valencia">Millora de la visualització de les cancel·lacions de transport públic i de les notes d'interrupció llarga.</li>
           <li xml:lang="cs">Vylepšené zobrazení zrušených spojů veřejné dopravy a informací o dlouhodobých výlukách.</li>
+          <li xml:lang="es">Se ha mejorado la visualización de las cancelaciones de transporte público y de los avisos de interrupciones prolongadas.</li>
           <li xml:lang="fr">Amélioration de l'affichage des annulations de transports public et des signalement de perturbation prolongée.</li>
           <li xml:lang="it">Migliorata la visualizzazione delle cancellazioni dei trasporti pubblici e delle note lunghe di interruzione.</li>
           <li xml:lang="ka">საზოგადოებრივი ტრანსპორტის გაუქმებებისა და გრძელი შეფერხების შენიშვნების გაუმჯობესებული ჩვენება.</li>
@@ -3034,6 +3055,7 @@
           <li xml:lang="ca">S'ha corregit la cerca de connexions ferroviàries internacionals que a vegades no trobava cap resultat.</li>
           <li xml:lang="ca-valencia">S'ha corregit la busca de connexions ferroviàries internacionals que a vegades no trobava cap resultat.</li>
           <li xml:lang="cs">Opraveno vyhledávání mezinárodních železničních spojení, které někdy nenalezlo žádný výsledek.</li>
+          <li xml:lang="es">Se ha corregido el problema de que, en ocasiones, la búsqueda de conexiones ferroviarias internacionales no produce ningún resultado.</li>
           <li xml:lang="fr">Correction de la recherche de connexions ferroviaires internationales qui ne renvoyait parfois aucun résultat.</li>
           <li xml:lang="it">Risolto il problema con la ricerca di collegamenti ferroviari internazionali che a volte non trovava alcun risultato.</li>
           <li xml:lang="ka">გასწორდა საერთაშორისო სარკინიგზო კავშირების ძებნა, რომელიც ზოგჯერ შედეგს ვერ პოულობდა.</li>
@@ -3046,6 +3068,7 @@
           <li xml:lang="ca">S'han corregit les icones meteorològiques que a vegades utilitzaven erròniament les variants nocturnes durant el dia.</li>
           <li xml:lang="ca-valencia">S'han corregit les icones meteorològiques que a vegades utilitzaven erròniament les variants nocturnes durant el dia.</li>
           <li xml:lang="cs">Opraveny ikony počasí, kdy někdy byla nesprávně použita noční varianta během dne.</li>
+          <li xml:lang="es">Se ha corregido que los iconos de información meteorológica usaran a veces incorrectamente las variantes nocturnas durante el día.</li>
           <li xml:lang="fr">Correction des icônes météo utilisant parfois à tort les variantes de nuit pendant la journée.</li>
           <li xml:lang="it">Risolte le icone meteo che a volte utilizzavano erroneamente le varianti notturne durante il giorno.</li>
           <li xml:lang="ka">გასწორდა ამინდის ხატულები, რომლებიც ზოგჯერ შეცდომით ღამის ვარიანტს იყენებდნენ დღის განმავლობაში.</li>
