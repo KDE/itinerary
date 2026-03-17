@@ -50,6 +50,9 @@ class LocationInformation
     /** Is the DST change a change to DST (@c true), or to standard time (@c false). */
     Q_PROPERTY(bool isDst READ isDst)
 
+    /** Leaving the EU roaming regulation area. */
+    Q_PROPERTY(bool leavingEURoaming READ leavingEURoaming)
+
 public:
     LocationInformation();
     ~LocationInformation();
@@ -84,6 +87,8 @@ public:
     [[nodiscard]] bool dstDiffers() const;
     [[nodiscard]] bool isDst() const;
 
+    [[nodiscard]] bool leavingEURoaming() const;
+
 private:
     void setDrivingSide(KItinerary::KnowledgeDb::DrivingSide drivingSide);
     void setPowerPlugTypes(KItinerary::KnowledgeDb::PowerPlugTypes powerPlugs);
@@ -100,6 +105,7 @@ private:
     PowerPlugCompatibility m_powerPlugCompat = FullyCompatible;
     int m_timeZoneOffsetDelta = 0;
     bool m_currencyDiffers = false;
+    bool m_leavingEURoaming = false;
 };
 
 Q_DECLARE_METATYPE(LocationInformation)

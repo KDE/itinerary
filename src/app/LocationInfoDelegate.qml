@@ -120,6 +120,14 @@ FormCard.FormCard {
                 Accessible.ignored: !visible
                 Layout.fillWidth: true
             }
+
+            QQC2.Label {
+                text: i18n("Leaving the EU roaming regulation area. Check your mobile data settings.")
+                visible: root.locationInfo.leavingEURoaming
+                wrapMode: Text.WordWrap
+                Accessible.ignored: !visible
+                Layout.fillWidth: true
+            }
         }
     }
 

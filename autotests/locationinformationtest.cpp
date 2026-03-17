@@ -8,6 +8,8 @@
 
 #include <QtTest/qtest.h>
 
+using namespace Qt::Literals;
+
 class LocationInformationTest : public QObject
 {
     Q_OBJECT
@@ -73,6 +75,29 @@ private Q_SLOTS:
         QCOMPARE(l.dstDiffers(), true);
         QCOMPARE(l.isDst(), false);
         QCOMPARE(l.timeZoneOffsetDelta(), -3600);
+    }
+
+    void testEURoaming_data()
+    {
+        QTest::addColumn<QString>("home");
+        QTest::addColumn<QString>("destination");
+        QTest::addColumn<bool>("shouldWarn");
+
+        QTest::newRow("same") << u"BE"_s << u"BE"_s << false;
+        QTest::newRow("DE2BE") << u"DE"_s << u"BE"_s << false;
+        QTest::newRow("DE2CH") << u"DE"_s << u"CH"_s << true;
+        QTest::newRow("CH2DE") << u"CH"_s << u"DE"_s << false;
+        QTest::newRow("CH2CA") << u"CH"_s << u"CA"_s << false;
+    }
+    void testEURoaming()
+    {
+        QFETCH(QString, home);
+        QFETCH(QString, destination);
+        QFETCH(bool, shouldWarn);
+        LocationInformation info;
+        info.setIsoCode(home);
+        info.setIsoCode(destination);
+        QCOMPARE(info.leavingEURoaming(), shouldWarn);
     }
 };
 

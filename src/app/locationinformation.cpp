@@ -12,6 +12,7 @@
 
 #include <QDebug>
 
+using namespace Qt::Literals;
 using namespace KItinerary;
 
 LocationInformation::LocationInformation() = default;
@@ -33,11 +34,50 @@ QString LocationInformation::isoCode() const
     return m_isoCode;
 }
 
+// see https://en.wikipedia.org/wiki/European_Union_roaming_regulations
+static constexpr const QLatin1StringView eu_roaming_map[] = {
+    "AT"_L1,
+    "BE"_L1,
+    "BG"_L1,
+    "CY"_L1,
+    "DE"_L1,
+    "DK"_L1,
+    "EE"_L1,
+    "ES"_L1,
+    "FI"_L1,
+    "GR"_L1,
+    "HR"_L1,
+    "HU"_L1,
+    "IE"_L1,
+    "IS"_L1,
+    "IT"_L1,
+    "LI"_L1,
+    "LT"_L1,
+    "LU"_L1,
+    "LV"_L1,
+    "MD"_L1,
+    "MT"_L1,
+    "NL"_L1,
+    "NO"_L1,
+    "PL"_L1,
+    "PT"_L1,
+    "RO"_L1,
+    "SE"_L1,
+    "SI"_L1,
+    "SK"_L1,
+    "UA"_L1,
+};
+
 void LocationInformation::setIsoCode(const QString &isoCode)
 {
     if (m_isoCode == isoCode) {
         return;
     }
+
+    if (!m_isoCode.isEmpty() && !isoCode.isEmpty()) {
+        m_leavingEURoaming = std::binary_search(std::begin(eu_roaming_map), std::end(eu_roaming_map), m_isoCode) && !std::binary_search(std::begin(eu_roaming_map), std::end(eu_roaming_map), isoCode);
+    }
+
     m_isoCode = isoCode;
 
     const auto id = KnowledgeDb::CountryId{isoCode};
@@ -229,6 +269,11 @@ bool LocationInformation::dstDiffers() const
 bool LocationInformation::isDst() const
 {
     return m_timeZone.isDaylightTime(m_transitionTime.addSecs(3601));
+}
+
+bool LocationInformation::leavingEURoaming() const
+{
+    return m_leavingEURoaming;
 }
 
 #include "moc_locationinformation.cpp"

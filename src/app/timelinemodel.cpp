@@ -533,7 +533,7 @@ void TimelineModel::updateInformationElements()
             ++it;
             continue;
         }
-        if (!(newCountry == homeCountry) || newCountry.hasRelevantTimeZoneChange(previousCountry)) {
+        if (!(newCountry == homeCountry) || newCountry.hasRelevantTimeZoneChange(previousCountry) || newCountry.leavingEURoaming()) {
             // for location changes, we want this after the corresponding element
             auto dt = (*it).isLocationChange() ? (*it).endDateTime() : (*it).dt;
             if ((*it).isReservation()) {
