@@ -3095,6 +3095,7 @@
           <li xml:lang="ca">S'han corregit els esdeveniments exportats que no són editables per altres aplicacions de calendari a l'Android.</li>
           <li xml:lang="ca-valencia">S'han corregit els esdeveniments exportats que no són editables per altres aplicacions de calendari a Android.</li>
           <li xml:lang="cs">Opravena chyba, kvůli které nebylo možné upravovat exportované události v jiných kalendářových aplikacích pro Android.</li>
+          <li xml:lang="es">Se ha corregido que los eventos exportados no se puedan editar con otras aplicaciones de calendario en Android.</li>
           <li xml:lang="fr">Correction des évènements exportés qui ne pouvaient pas être modifiés par d'autres applications d'agenda sous Android.</li>
           <li xml:lang="it">Risolto il problema per cui gli eventi esportati non erano modificabili da altre applicazioni di calendario su Android.</li>
           <li xml:lang="ka">გასწორდა ექსპორტირებული მოვლენები, რომლებიც სხვა კალენდრის აპებით არ რედაქტირდებოდა Android-ზე.</li>
@@ -3126,6 +3127,7 @@
           <li xml:lang="ca">S'ha corregit una fallada a l'Android en importar un fitxer amb un espai al seu camí.</li>
           <li xml:lang="ca-valencia">S'ha corregit una fallada a Android en importar un fitxer amb un espai al seu camí.</li>
           <li xml:lang="cs">Opravena chyba v systému Android při importu souboru s mezerou v cestě.</li>
+          <li xml:lang="es">Se ha corregido un fallo de la aplicación en Android al importar un archivo con un espacio en su ruta.</li>
           <li xml:lang="fr">Correction d'un plantage sous Android lors de l'importation d'un fichier dont l'emplacement contient un caractère d'espace.</li>
           <li xml:lang="it">Risolto un arresto anomalo su Android durante l'importazione di un file con uno spazio nel suo percorso.</li>
           <li xml:lang="ka">გასწორდა პროგრამის გათიშვა Android-ზე ფაილის შემოტანასას, რომლის მისამართიც შეიცავდა ჰარეს.</li>
@@ -3138,6 +3140,7 @@
           <li xml:lang="ca">S'han corregit les consultes de transport públic per a VRS.</li>
           <li xml:lang="ca-valencia">S'han corregit les consultes de transport públic per a VRS.</li>
           <li xml:lang="cs">Opraveny dotazy týkající se veřejné dopravy pro VRS.</li>
+          <li xml:lang="es">Se han corregido las consultas de transporte público para VRS.</li>
           <li xml:lang="fr">Correction des demandes pour des transports publics pour le VRS.</li>
           <li xml:lang="it">Risolte le query sui trasporti pubblici per VRS.</li>
           <li xml:lang="ka">გასწორდა საზოგადოებრივი ტრანსპორტის მოთხოვნები VRS-ისთვის.</li>
@@ -3174,6 +3177,7 @@
           <li xml:lang="ca">S'ha corregit la importació de reserves d'embarcacions o ferris des del calendari.</li>
           <li xml:lang="ca-valencia">S'ha corregit la importació de reserves d'embarcacions o transbordadors des del calendari.</li>
           <li xml:lang="cs">Opraveno importování rezervací lodí nebo trajektů z kalendáře.</li>
+          <li xml:lang="es">Se ha corregido la importación de reservas de barco y ferry desde el calendario.</li>
           <li xml:lang="fr">Correction de l'importation des réservations de bateaux ou de traversiers depuis le calendrier.</li>
           <li xml:lang="it">Risolto il problema con l'importazione delle prenotazioni di barche o traghetti dal calendario.</li>
           <li xml:lang="ka">გასწორდა გემისა და ბორნის ჯავშნების შემოტანა კალენდრიდან.</li>
@@ -3186,6 +3190,7 @@
           <li xml:lang="ca">S'ha corregit un bucle infinit en calcular els arguments del mapa d'interior.</li>
           <li xml:lang="ca-valencia">S'ha corregit un bucle infinit en calcular els arguments del mapa d'interior.</li>
           <li xml:lang="cs">Opravena nekonečná smyčka při výpočtu argumentů vnitřní mapy.</li>
+          <li xml:lang="es">Se ha corregido un bucle infinito cuando se calculaban los argumentos del mapa de interior.</li>
           <li xml:lang="fr">Correction d'une boucle infinie lors du calcul des arguments de la carte intérieure.</li>
           <li xml:lang="it">Risolto un ciclo infinito durante il calcolo degli argomenti della mappa interna.</li>
           <li xml:lang="ka">გასწორდა უსასრულო ციკლი შიდა რუკის არგუმენტების გამოთვლისას.</li>
@@ -3253,6 +3258,7 @@
           <li xml:lang="ca">Millora de la velocitat de desplaçament de la vista de la línia de temps.</li>
           <li xml:lang="ca-valencia">Millora de la velocitat de desplaçament de la vista de la línia de temps.</li>
           <li xml:lang="cs">Vylepšená rychlost posouvání v zobrazení časové osy.</li>
+          <li xml:lang="es">Se ha mejorado la velocidad de desplazamiento de la vista de la línea cronológica.</li>
           <li xml:lang="fr">Amélioration de la vitesse de défilement de la vue chronologique.</li>
           <li xml:lang="it">Migliorata la velocità di scorrimento della visualizzazione della linea temporale.</li>
           <li xml:lang="ka">გაუმჯობესდა ქრონოლოგიის ხედის გადაადგილების (სქროლვის) სიჩქარე.</li>
@@ -3278,6 +3284,7 @@
           <li xml:lang="ca">Nou extractor genèric de codis de barres de bitllets FCB ERA.</li>
           <li xml:lang="ca-valencia">Nou extractor genèric de codis de barres de bitllets FCB ERA.</li>
           <li xml:lang="cs">Nový generický extraktor čárových kódů ERA FCB.</li>
+          <li xml:lang="es">Nuevo extractor genérico de códigos de barras de billetes de ERA FCB.</li>
           <li xml:lang="fr">Nouvel extracteur générique de code-barres pour les tickets de ERA FCB.</li>
           <li xml:lang="it">Nuovo estrattore di codici a barre per biglietti generici ERA FCB.</li>
           <li xml:lang="ka">ახალი ზოგადი ERA FCB ბილეთის შტრიხკოდის ამომკრები.</li>
@@ -3290,6 +3297,7 @@
           <li xml:lang="ca">Extractor millorat per a dades de restaurants en llocs web.</li>
           <li xml:lang="ca-valencia">Extractor millorat per a dades de restaurants en llocs web.</li>
           <li xml:lang="cs">Vylepšený extraktor pro data restaurací na webových stránkách.</li>
+          <li xml:lang="es">Se ha mejorado el extractor de datos de restaurantes en sitios web.</li>
           <li xml:lang="fr">Amélioration de l'extracteur pour les données des restaurants sur les sites Internet.</li>
           <li xml:lang="it">Estrattore migliorato per i dati dei ristoranti nei siti web.</li>
           <li xml:lang="ka">გაუმჯობესებული რესტორნის მონაცემების ამომკრები ვებგვერდებიდან.</li>
@@ -3320,6 +3328,7 @@
           <li xml:lang="ca">Extractors millorats de documents de viatge per a Air Asia, ATPI, B&amp;B Hotels, Best Western, CD, FlixBus, Gepard Express, Grimaldi Lines, MAV, SNCB i Vueling.</li>
           <li xml:lang="ca-valencia">Extractors millorats de documents de viatge per a Air Asia, ATPI, B&amp;B Hotels, Best Western, CD, FlixBus, Gepard Express, Grimaldi Lines, MAV, SNCB i Vueling.</li>
           <li xml:lang="cs">Vylepšené nástroje pro extrahování cestovních dokladů pro Air Asia, ATPI, B&amp;B Hotels, Best Western, CD, FlixBus, Gepard Express, Grimaldi Lines, MAV, SNCB a Vueling.</li>
+          <li xml:lang="es">Se han mejorado los extractores de documentos de viaje para Air Asia, ATPI, B&amp;B Hotels, Best Western, CD, FlixBus, Gepard Express, Grimaldi Lines, MAV, SNCB y Vueling.</li>
           <li xml:lang="fr">Amélioration des extracteurs de documents de voyage pour Air Asia, ATPI, B&amp;B Hotels, Best Western, CD, FlixBus, Gepard Express, Grimaldi Lines, MAV, SNCB et Vueling.</li>
           <li xml:lang="it">Estrattori di documenti di viaggio migliorati per Air Asia, ATPI, B&amp;B Hotels, Best Western, CD, FlixBus, Gepard Express, Grimaldi Lines, MAV, SNCB e Vueling.</li>
           <li xml:lang="ka">გაუმჯობესებული სამგზავრო დოკუმენტების ამომკრებები Air Asia, ATPI, B&amp;B Hotels, Best Western, CD, FlixBus, Gepard Express, Grimaldi Lines, MAV, SNCB და Vueling სისტემებისთვის.</li>
@@ -3332,6 +3341,7 @@
           <li xml:lang="ca">Permet importar variants diverses del Deutschlandticket.</li>
           <li xml:lang="ca-valencia">Permet importar variants diverses del Deutschlandticket.</li>
           <li xml:lang="cs">Podpora importu různých variant Deutschlandticket.</li>
+          <li xml:lang="es">Compatibilidad con la importación de diversas variantes del Deutschlandticket.</li>
           <li xml:lang="fr">Prise en charge de l'importation de différentes variantes du Deutschlandticket.</li>
           <li xml:lang="it">Supporta l'importazione di varie varianti del Deutschlandticket.</li>
           <li xml:lang="ka">Deutschlandticket-ის სხვადასხვა ვარიანტის შემოტანას მხარდაჭერა.</li>
@@ -4204,6 +4214,7 @@
           <li xml:lang="ca">Ressalta les condicions meteorològiques severes en la previsió meteorològica.</li>
           <li xml:lang="ca-valencia">Ressalta les condicions meteorològiques severes en la previsió meteorològica.</li>
           <li xml:lang="cs">V předpovědi počasí zdůrazněny nepříznivé povětrnostní podmínky.</li>
+          <li xml:lang="es">Resaltar las condiciones meteorológicas adversas en la previsión meteorológica.</li>
           <li xml:lang="fr">Mise en évidence des conditions météorologiques sévères dans les prévisions.</li>
           <li xml:lang="it">Evidenzia le condizioni meteorologiche avverse nelle previsioni del tempo.</li>
           <li xml:lang="ka">რთული მეტეოროლოგიური პირობების გამოკვეთა ამინდის პროგნოზში.</li>
