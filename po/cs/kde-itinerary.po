@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-24 00:45+0000\n"
-"PO-Revision-Date: 2026-02-27 22:30+0100\n"
+"PO-Revision-Date: 2026-03-16 11:40+0100\n"
 "Last-Translator:  Vít Pelčák <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -2722,7 +2722,7 @@ msgstr "Zpracování PDF"
 #, kde-format
 msgctxt "@info:credit"
 msgid "MapLibre Native Qt"
-msgstr ""
+msgstr "Nativní MapLibre Qt"
 
 #: app/main.cpp:230 app/main.cpp:231
 #, kde-format
@@ -2734,7 +2734,7 @@ msgstr "Autorská práva © Přispěvatelé do MapLibre."
 #, kde-format
 msgctxt "@info:credit"
 msgid "MapLibre Native"
-msgstr ""
+msgstr "Nativní MapLibre"
 
 #: app/main.cpp:235
 #, kde-format
@@ -3883,6 +3883,8 @@ msgid ""
 "Unfortunately, retrieving onboard information is not supported on your "
 "device at this time."
 msgstr ""
+"Na vašem zařízení bohužel v tuto chvíli není podporováno načítání informací "
+"z palubního systému."
 
 #: app/SettingsPage.qml:274
 #, kde-format
@@ -3950,6 +3952,10 @@ msgid ""
 "you are and where you can log your public transit journeys. For more "
 "information, visit <a href=\"https://traewelling.de\">traewelling.de</a>"
 msgstr ""
+"Träwelling je bezplatná služba pro sdílení polohy, díky níž můžete svým "
+"přátelům sdělit, kde se právě nacházíte, a zaznamenávat své cesty veřejnou "
+"dopravou. Další informace najdete na <a href=\"https://traewelling.de"
+"\">traewelling.de</a>"
 
 #: app/SettingsPage.qml:341
 #, kde-format
@@ -4175,9 +4181,7 @@ msgid "Traveler %1"
 msgstr "Cestovatel %1"
 
 #: app/tickettokenmodel.cpp:137
-#, fuzzy, kde-format
-#| msgctxt "%1 is a person name, %2 is a ticket name"
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "%1 is a person name, %2 is a ticket name"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
@@ -4344,6 +4348,8 @@ msgid ""
 "Specifying the departure and arrival location helps Itinerary to find up-to-"
 "date information for the train this reservation is valid for."
 msgstr ""
+"Zadání místa odjezdu a příjezdu pomůže aplikaci Itinerář najít aktuální "
+"informace o vlaku, pro který platí tato rezervace."
 
 #: app/TrainEditor.qml:231 app/TrainEditor.qml:336 app/TrainPage.qml:167
 #: app/TrainPage.qml:252
