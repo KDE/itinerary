@@ -132,7 +132,7 @@ Kirigami.ScrollablePage {
             id: delegateRoot
             required property stopover stopover
             width: ListView.view.width
-            StopoverFormDelegate {
+            KPublicTransport.StopoverFormDelegate {
                 stopover: delegateRoot.stopover
                 onClicked: {
                     if (delegateRoot.stopover.stopPoint.hasCoordinate || delegateRoot.stopover.hasTripIdentifiers) {

@@ -189,7 +189,6 @@ ecm_add_qml_module(itinerary GENERATE_PLUGIN_SOURCE
         StatisticsPage.qml
         StopoverDetailsPage.qml
         StopoverInformationSheet.qml
-        StopoverFormDelegate.qml
         StopPickerPage.qml
         TicketEditor.qml
         TicketPage.qml
