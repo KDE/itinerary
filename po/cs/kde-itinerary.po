@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-15 00:45+0000\n"
-"PO-Revision-Date: 2026-02-27 22:30+0100\n"
+"POT-Creation-Date: 2026-03-18 00:45+0000\n"
+"PO-Revision-Date: 2026-03-16 11:40+0100\n"
 "Last-Translator:  Vít Pelčák <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -667,23 +667,11 @@ msgstr "Zastávka"
 msgid "Departure bus stop must not be empty."
 msgstr "Odjezdová autobusová zastávka nesmí být prázdná."
 
-#: app/BusEditor.qml:189 app/BusEditor.qml:276
-#, kde-format
-msgctxt "Bus stop platform"
-msgid "Platform"
-msgstr "Nástupiště"
-
 #: app/BusEditor.qml:210
 #, kde-format
 msgctxt "bus stop"
 msgid "Stop Name"
 msgstr "Název zastávky"
-
-#: app/BusEditor.qml:218 app/BusEditor.qml:310
-#, kde-format
-msgctxt "bus stop platform"
-msgid "Platform"
-msgstr "Nástupiště"
 
 #: app/BusEditor.qml:235
 #, kde-format
@@ -741,12 +729,6 @@ msgstr "Datum odjezdu"
 msgctxt "bus station"
 msgid "Station"
 msgstr "Stanice"
-
-#: app/BusPage.qml:150 app/BusPage.qml:220
-#, kde-format
-msgctxt "bus station platform"
-msgid "Platform"
-msgstr "Nástupiště"
 
 #: app/BusPage.qml:170
 #, kde-format
@@ -2356,13 +2338,6 @@ msgstr "%1 %2 (%3)"
 msgid "Drive %1 (%2)"
 msgstr "Jízda %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:180 app/JourneySectionDelegate.qml:331
-#: app/StopoverDetailsPage.qml:100 app/StopoverFormDelegate.qml:105
-#, kde-format
-msgctxt "@info"
-msgid "Platform %1"
-msgstr "Nástupiště %1"
-
 #: app/JourneySectionDelegate.qml:253 app/JourneySectionPage.qml:136
 #: app/StopoverFormDelegate.qml:151 app/VehicleLayoutPage.qml:177
 #, kde-format
@@ -2392,25 +2367,7 @@ msgstr "Průměrná rychlost: %1"
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionStopDelegate.qml:148
-#, kde-format
-msgctxt "Abbreviation of train platform"
-msgid "Pl. %1"
-msgstr "Nást. %1"
-
-#: app/JourneySectionStopDelegate.qml:150
-#, kde-format
-msgctxt "Ferry dock, if possible use an abbreviation"
-msgid "Dock %1"
-msgstr "Kotviště %1"
-
-#: app/JourneySectionStopDelegate.qml:152
-#, kde-format
-msgctxt "Generic abbreviation of platform"
-msgid "Pl. %1"
-msgstr "Nást. %1"
-
-#: app/JourneySectionStopDelegate.qml:167
+#: app/JourneySectionStopDelegate.qml:145
 #, kde-format
 msgid "Show location"
 msgstr "Zobrazit umístění"
@@ -2593,69 +2550,75 @@ msgctxt "currency conversion rate"
 msgid "Currency: %1 = %2"
 msgstr "Měna: %1 = %2"
 
-#: app/locationinformation.cpp:87
+#: app/LocationInfoDelegate.qml:125
+#, kde-format
+msgid ""
+"Leaving the EU roaming regulation area. Check your mobile data settings."
+msgstr ""
+
+#: app/locationinformation.cpp:127
 #, kde-format
 msgid "People are driving on the right side."
 msgstr "Lidé jezdí vpravo."
 
-#: app/locationinformation.cpp:89
+#: app/locationinformation.cpp:129
 #, kde-format
 msgid "People are driving on the left side."
 msgstr "Lidé jezdí vlevo."
 
-#: app/locationinformation.cpp:107
+#: app/locationinformation.cpp:147
 msgid "Type A"
 msgstr "Typ A"
 
-#: app/locationinformation.cpp:108
+#: app/locationinformation.cpp:148
 msgid "Type B"
 msgstr "Typ B"
 
-#: app/locationinformation.cpp:109
+#: app/locationinformation.cpp:149
 msgid "Europlug"
 msgstr "Eurozásuvka"
 
-#: app/locationinformation.cpp:110
+#: app/locationinformation.cpp:150
 msgid "Type D"
 msgstr "Typ D"
 
-#: app/locationinformation.cpp:111
+#: app/locationinformation.cpp:151
 msgid "Type E"
 msgstr "Typ E"
 
-#: app/locationinformation.cpp:112
+#: app/locationinformation.cpp:152
 msgid "Schuko"
 msgstr "Schuko"
 
-#: app/locationinformation.cpp:113
+#: app/locationinformation.cpp:153
 msgid "Type G"
 msgstr "Typ G"
 
-#: app/locationinformation.cpp:114
+#: app/locationinformation.cpp:154
 msgid "Type H"
 msgstr "Typ H"
 
-#: app/locationinformation.cpp:115
+#: app/locationinformation.cpp:155
 msgid "Type I"
 msgstr "Typ I"
 
-#: app/locationinformation.cpp:116
+#: app/locationinformation.cpp:156
 msgid "Type J"
 msgstr "Typ J"
 
-#: app/locationinformation.cpp:117
+#: app/locationinformation.cpp:157
 msgid "Type K"
 msgstr "Typ K"
 
-#: app/locationinformation.cpp:118
+#: app/locationinformation.cpp:158
 msgid "Type L"
 msgstr "Typ L"
 
-#: app/locationinformation.cpp:119
+#: app/locationinformation.cpp:159
 msgid "Type M"
 msgstr "Typ M"
 
-#: app/locationinformation.cpp:120
+#: app/locationinformation.cpp:160
 msgid "Type N"
 msgstr "Typ N"
 
@@ -2737,7 +2700,7 @@ msgstr "Zpracování PDF"
 #, kde-format
 msgctxt "@info:credit"
 msgid "MapLibre Native Qt"
-msgstr ""
+msgstr "Nativní MapLibre Qt"
 
 #: app/main.cpp:230 app/main.cpp:231
 #, kde-format
@@ -2749,7 +2712,7 @@ msgstr "Autorská práva © Přispěvatelé do MapLibre."
 #, kde-format
 msgctxt "@info:credit"
 msgid "MapLibre Native"
-msgstr ""
+msgstr "Nativní MapLibre"
 
 #: app/main.cpp:235
 #, kde-format
@@ -2888,20 +2851,16 @@ msgctxt "@title:window"
 msgid "Matrix Session Verification"
 msgstr "Ověření relace Matrix"
 
-#: app/MapStopoverInfoSheetDrawer.qml:64
-#, kde-format
-msgid "Platform:"
-msgstr "Nástupiště:"
-
 #: app/MapStopoverInfoSheetDrawer.qml:85
-#, kde-format
-msgid "Occupancy:"
+#, fuzzy, kde-format
+#| msgid "Occupancy:"
+msgid "Occupancy"
 msgstr "Obsazenost:"
 
-#: app/MapStopoverInfoSheetDrawer.qml:112
+#: app/MapStopoverInfoSheetDrawer.qml:112 app/StopoverDetailsPage.qml:124
 #, kde-format
-msgid "Information:"
-msgstr "Informace:"
+msgid "Information"
+msgstr "Informace"
 
 #: app/MapStopoverInfoSheetDrawer.qml:131
 #, kde-format
@@ -3898,6 +3857,8 @@ msgid ""
 "Unfortunately, retrieving onboard information is not supported on your "
 "device at this time."
 msgstr ""
+"Na vašem zařízení bohužel v tuto chvíli není podporováno načítání informací "
+"z palubního systému."
 
 #: app/SettingsPage.qml:274
 #, kde-format
@@ -3965,6 +3926,10 @@ msgid ""
 "you are and where you can log your public transit journeys. For more "
 "information, visit <a href=\"https://traewelling.de\">traewelling.de</a>"
 msgstr ""
+"Träwelling je bezplatná služba pro sdílení polohy, díky níž můžete svým "
+"přátelům sdělit, kde se právě nacházíte, a zaznamenávat své cesty veřejnou "
+"dopravou. Další informace najdete na <a href=\"https://traewelling.de"
+"\">traewelling.de</a>"
 
 #: app/SettingsPage.qml:341
 #, kde-format
@@ -4101,11 +4066,6 @@ msgctxt "departure stop"
 msgid "From %1"
 msgstr "Z %1"
 
-#: app/StopoverDetailsPage.qml:124
-#, kde-format
-msgid "Information"
-msgstr "Informace"
-
 #: app/StopoverDetailsPage.qml:132
 #, kde-format
 msgid "Trip Map"
@@ -4190,9 +4150,7 @@ msgid "Traveler %1"
 msgstr "Cestovatel %1"
 
 #: app/tickettokenmodel.cpp:137
-#, fuzzy, kde-format
-#| msgctxt "%1 is a person name, %2 is a ticket name"
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "%1 is a person name, %2 is a ticket name"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
@@ -4336,9 +4294,9 @@ msgctxt "Train departure"
 msgid "Departure Time"
 msgstr "Čas odjezdu"
 
-#: app/TrainEditor.qml:186
+#: app/TrainEditor.qml:186 app/TrainEditor.qml:286
 #, kde-format
-msgctxt "Train station platform"
+msgctxt "Train station"
 msgid "Station Name"
 msgstr "Název stanice"
 
@@ -4347,18 +4305,14 @@ msgstr "Název stanice"
 msgid "Departure station must not be empty."
 msgstr "Odjezdová stanice nesmí být prázdná."
 
-#: app/TrainEditor.qml:197 app/TrainEditor.qml:297
-#, kde-format
-msgctxt "Train station platform"
-msgid "Platform"
-msgstr "Nástupiště"
-
 #: app/TrainEditor.qml:210 app/TrainEditor.qml:310
 #, kde-format
 msgid ""
 "Specifying the departure and arrival location helps Itinerary to find up-to-"
 "date information for the train this reservation is valid for."
 msgstr ""
+"Zadání místa odjezdu a příjezdu pomůže aplikaci Itinerář najít aktuální "
+"informace o vlaku, pro který platí tato rezervace."
 
 #: app/TrainEditor.qml:231 app/TrainEditor.qml:336 app/TrainPage.qml:167
 #: app/TrainPage.qml:252
@@ -4367,23 +4321,11 @@ msgctxt "train station"
 msgid "Station"
 msgstr "Zastávka"
 
-#: app/TrainEditor.qml:239 app/TrainEditor.qml:345
-#, kde-format
-msgctxt "train platform"
-msgid "Platform"
-msgstr "Nástupiště"
-
 #: app/TrainEditor.qml:256
 #, kde-format
 msgctxt "train arrival"
 msgid "Arrival"
 msgstr "Příjezd"
-
-#: app/TrainEditor.qml:286
-#, kde-format
-msgctxt "Train station"
-msgid "Station Name"
-msgstr "Název stanice"
 
 #: app/TrainEditor.qml:289
 #, kde-format
@@ -4418,12 +4360,6 @@ msgstr "Vlaková jízdenka"
 msgctxt "Train departure"
 msgid "Departure"
 msgstr "Odjezd"
-
-#: app/TrainPage.qml:179 app/TrainPage.qml:264
-#, kde-format
-msgctxt "train station platform"
-msgid "Platform"
-msgstr "Nástupiště"
 
 #: app/TrainPage.qml:201
 #, kde-format
@@ -4873,12 +4809,6 @@ msgctxt "%1 is a date/time"
 msgid "Arrival: %1"
 msgstr "Přílet: %1"
 
-#: app/VehicleLayoutPage.qml:117
-#, kde-format
-msgctxt "train station platform"
-msgid "Platform: %1"
-msgstr "Nástupiště: %1"
-
 #: app/VehicleLayoutPage.qml:126
 #, kde-format
 msgid "Coach: %1 Seat: %2"
@@ -4998,3 +4928,57 @@ msgstr "Odhlášen"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 z %3 do %4 na %5"
+
+#~ msgctxt "Bus stop platform"
+#~ msgid "Platform"
+#~ msgstr "Nástupiště"
+
+#~ msgctxt "bus stop platform"
+#~ msgid "Platform"
+#~ msgstr "Nástupiště"
+
+#~ msgctxt "bus station platform"
+#~ msgid "Platform"
+#~ msgstr "Nástupiště"
+
+#~ msgctxt "@info"
+#~ msgid "Platform %1"
+#~ msgstr "Nástupiště %1"
+
+#~ msgctxt "Abbreviation of train platform"
+#~ msgid "Pl. %1"
+#~ msgstr "Nást. %1"
+
+#~ msgctxt "Ferry dock, if possible use an abbreviation"
+#~ msgid "Dock %1"
+#~ msgstr "Kotviště %1"
+
+#~ msgctxt "Generic abbreviation of platform"
+#~ msgid "Pl. %1"
+#~ msgstr "Nást. %1"
+
+#~ msgid "Platform:"
+#~ msgstr "Nástupiště:"
+
+#~ msgid "Information:"
+#~ msgstr "Informace:"
+
+#~ msgctxt "Train station platform"
+#~ msgid "Station Name"
+#~ msgstr "Název stanice"
+
+#~ msgctxt "Train station platform"
+#~ msgid "Platform"
+#~ msgstr "Nástupiště"
+
+#~ msgctxt "train platform"
+#~ msgid "Platform"
+#~ msgstr "Nástupiště"
+
+#~ msgctxt "train station platform"
+#~ msgid "Platform"
+#~ msgstr "Nástupiště"
+
+#~ msgctxt "train station platform"
+#~ msgid "Platform: %1"
+#~ msgstr "Nástupiště: %1"

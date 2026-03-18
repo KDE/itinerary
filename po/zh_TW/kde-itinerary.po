@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-15 00:45+0000\n"
+"POT-Creation-Date: 2026-03-18 00:45+0000\n"
 "PO-Revision-Date: 2024-11-28 16:26+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -701,13 +701,6 @@ msgstr "公車站"
 msgid "Departure bus stop must not be empty."
 msgstr "出發港口旅運中心不能是空的。"
 
-#: app/BusEditor.qml:189 app/BusEditor.qml:276
-#, fuzzy, kde-format
-#| msgid "Platform"
-msgctxt "Bus stop platform"
-msgid "Platform"
-msgstr "月台"
-
 #: app/BusEditor.qml:210
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
@@ -715,12 +708,6 @@ msgstr "月台"
 msgctxt "bus stop"
 msgid "Stop Name"
 msgstr "顯示地圖"
-
-#: app/BusEditor.qml:218 app/BusEditor.qml:310
-#, kde-format
-msgctxt "bus stop platform"
-msgid "Platform"
-msgstr "月台"
 
 #: app/BusEditor.qml:235
 #, kde-format
@@ -782,12 +769,6 @@ msgstr "出發日期"
 msgctxt "bus station"
 msgid "Station"
 msgstr "公車站"
-
-#: app/BusPage.qml:150 app/BusPage.qml:220
-#, kde-format
-msgctxt "bus station platform"
-msgid "Platform"
-msgstr "月台"
 
 #: app/BusPage.qml:170
 #, kde-format
@@ -2460,14 +2441,6 @@ msgstr "%1 %2 (%3)"
 msgid "Drive %1 (%2)"
 msgstr ""
 
-#: app/JourneySectionDelegate.qml:180 app/JourneySectionDelegate.qml:331
-#: app/StopoverDetailsPage.qml:100 app/StopoverFormDelegate.qml:105
-#, fuzzy, kde-format
-#| msgid "Platform: %1"
-msgctxt "@info"
-msgid "Platform %1"
-msgstr "月台：%1"
-
 #: app/JourneySectionDelegate.qml:253 app/JourneySectionPage.qml:136
 #: app/StopoverFormDelegate.qml:151 app/VehicleLayoutPage.qml:177
 #, kde-format
@@ -2499,29 +2472,7 @@ msgstr "平均速度：%1"
 msgid "CO₂: %1"
 msgstr "CO₂：%1"
 
-#: app/JourneySectionStopDelegate.qml:148
-#, fuzzy, kde-format
-#| msgid "Pl. %1"
-msgctxt "Abbreviation of train platform"
-msgid "Pl. %1"
-msgstr "第 %1 月台"
-
-#: app/JourneySectionStopDelegate.qml:150
-#, fuzzy, kde-format
-#| msgctxt "Ferry dock, if possible use an abreviation"
-#| msgid "Dock %1"
-msgctxt "Ferry dock, if possible use an abbreviation"
-msgid "Dock %1"
-msgstr "碼頭 %1"
-
-#: app/JourneySectionStopDelegate.qml:152
-#, fuzzy, kde-format
-#| msgid "Pl. %1"
-msgctxt "Generic abbreviation of platform"
-msgid "Pl. %1"
-msgstr "第 %1 月台"
-
-#: app/JourneySectionStopDelegate.qml:167
+#: app/JourneySectionStopDelegate.qml:145
 #, kde-format
 msgid "Show location"
 msgstr "顯示位置"
@@ -2704,69 +2655,75 @@ msgctxt "currency conversion rate"
 msgid "Currency: %1 = %2"
 msgstr "貨幣：%1 = %2"
 
-#: app/locationinformation.cpp:87
+#: app/LocationInfoDelegate.qml:125
+#, kde-format
+msgid ""
+"Leaving the EU roaming regulation area. Check your mobile data settings."
+msgstr ""
+
+#: app/locationinformation.cpp:127
 #, kde-format
 msgid "People are driving on the right side."
 msgstr "人們開車靠右。"
 
-#: app/locationinformation.cpp:89
+#: app/locationinformation.cpp:129
 #, kde-format
 msgid "People are driving on the left side."
 msgstr "人們開車靠左。"
 
-#: app/locationinformation.cpp:107
+#: app/locationinformation.cpp:147
 msgid "Type A"
 msgstr ""
 
-#: app/locationinformation.cpp:108
+#: app/locationinformation.cpp:148
 msgid "Type B"
 msgstr ""
 
-#: app/locationinformation.cpp:109
+#: app/locationinformation.cpp:149
 msgid "Europlug"
 msgstr ""
 
-#: app/locationinformation.cpp:110
+#: app/locationinformation.cpp:150
 msgid "Type D"
 msgstr ""
 
-#: app/locationinformation.cpp:111
+#: app/locationinformation.cpp:151
 msgid "Type E"
 msgstr ""
 
-#: app/locationinformation.cpp:112
+#: app/locationinformation.cpp:152
 msgid "Schuko"
 msgstr ""
 
-#: app/locationinformation.cpp:113
+#: app/locationinformation.cpp:153
 msgid "Type G"
 msgstr ""
 
-#: app/locationinformation.cpp:114
+#: app/locationinformation.cpp:154
 msgid "Type H"
 msgstr ""
 
-#: app/locationinformation.cpp:115
+#: app/locationinformation.cpp:155
 msgid "Type I"
 msgstr ""
 
-#: app/locationinformation.cpp:116
+#: app/locationinformation.cpp:156
 msgid "Type J"
 msgstr ""
 
-#: app/locationinformation.cpp:117
+#: app/locationinformation.cpp:157
 msgid "Type K"
 msgstr ""
 
-#: app/locationinformation.cpp:118
+#: app/locationinformation.cpp:158
 msgid "Type L"
 msgstr ""
 
-#: app/locationinformation.cpp:119
+#: app/locationinformation.cpp:159
 msgid "Type M"
 msgstr ""
 
-#: app/locationinformation.cpp:120
+#: app/locationinformation.cpp:160
 msgid "Type N"
 msgstr ""
 
@@ -3002,20 +2959,15 @@ msgctxt "@title:window"
 msgid "Matrix Session Verification"
 msgstr "Matrix 整合"
 
-#: app/MapStopoverInfoSheetDrawer.qml:64
-#, kde-format
-msgid "Platform:"
-msgstr "月台："
-
 #: app/MapStopoverInfoSheetDrawer.qml:85
 #, kde-format
-msgid "Occupancy:"
+msgid "Occupancy"
 msgstr ""
 
-#: app/MapStopoverInfoSheetDrawer.qml:112
+#: app/MapStopoverInfoSheetDrawer.qml:112 app/StopoverDetailsPage.qml:124
 #, fuzzy, kde-format
 #| msgid "More information"
-msgid "Information:"
+msgid "Information"
 msgstr "更多資訊"
 
 #: app/MapStopoverInfoSheetDrawer.qml:131
@@ -4211,12 +4163,6 @@ msgctxt "departure stop"
 msgid "From %1"
 msgstr "從：%1"
 
-#: app/StopoverDetailsPage.qml:124
-#, fuzzy, kde-format
-#| msgid "More information"
-msgid "Information"
-msgstr "更多資訊"
-
 #: app/StopoverDetailsPage.qml:132
 #, fuzzy, kde-format
 #| msgid "Trips"
@@ -4464,11 +4410,11 @@ msgctxt "Train departure"
 msgid "Departure Time"
 msgstr "出發時間"
 
-#: app/TrainEditor.qml:186
+#: app/TrainEditor.qml:186 app/TrainEditor.qml:286
 #, fuzzy, kde-format
 #| msgctxt "bus station"
 #| msgid "Station"
-msgctxt "Train station platform"
+msgctxt "Train station"
 msgid "Station Name"
 msgstr "公車站"
 
@@ -4477,13 +4423,6 @@ msgstr "公車站"
 #| msgid "Departure terminal must not be empty."
 msgid "Departure station must not be empty."
 msgstr "出發港口旅運中心不能是空的。"
-
-#: app/TrainEditor.qml:197 app/TrainEditor.qml:297
-#, fuzzy, kde-format
-#| msgid "Platform"
-msgctxt "Train station platform"
-msgid "Platform"
-msgstr "月台"
 
 #: app/TrainEditor.qml:210 app/TrainEditor.qml:310
 #, kde-format
@@ -4499,25 +4438,11 @@ msgctxt "train station"
 msgid "Station"
 msgstr "車站"
 
-#: app/TrainEditor.qml:239 app/TrainEditor.qml:345
-#, kde-format
-msgctxt "train platform"
-msgid "Platform"
-msgstr "月台"
-
 #: app/TrainEditor.qml:256
 #, kde-format
 msgctxt "train arrival"
 msgid "Arrival"
 msgstr "抵達"
-
-#: app/TrainEditor.qml:286
-#, fuzzy, kde-format
-#| msgctxt "bus station"
-#| msgid "Station"
-msgctxt "Train station"
-msgid "Station Name"
-msgstr "公車站"
 
 #: app/TrainEditor.qml:289
 #, fuzzy, kde-format
@@ -4553,13 +4478,6 @@ msgstr "公車票"
 msgctxt "Train departure"
 msgid "Departure"
 msgstr "出發"
-
-#: app/TrainPage.qml:179 app/TrainPage.qml:264
-#, fuzzy, kde-format
-#| msgid "Platform"
-msgctxt "train station platform"
-msgid "Platform"
-msgstr "月台"
 
 #: app/TrainPage.qml:201
 #, kde-format
@@ -5038,13 +4956,6 @@ msgctxt "%1 is a date/time"
 msgid "Arrival: %1"
 msgstr "抵達：%1"
 
-#: app/VehicleLayoutPage.qml:117
-#, fuzzy, kde-format
-#| msgid "Platform: %1"
-msgctxt "train station platform"
-msgid "Platform: %1"
-msgstr "月台：%1"
-
 #: app/VehicleLayoutPage.qml:126
 #, kde-format
 msgid "Coach: %1 Seat: %2"
@@ -5162,6 +5073,82 @@ msgstr "登出"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 從 %3 到 %4 於 %5"
+
+#, fuzzy
+#~| msgid "Platform"
+#~ msgctxt "Bus stop platform"
+#~ msgid "Platform"
+#~ msgstr "月台"
+
+#~ msgctxt "bus stop platform"
+#~ msgid "Platform"
+#~ msgstr "月台"
+
+#~ msgctxt "bus station platform"
+#~ msgid "Platform"
+#~ msgstr "月台"
+
+#, fuzzy
+#~| msgid "Platform: %1"
+#~ msgctxt "@info"
+#~ msgid "Platform %1"
+#~ msgstr "月台：%1"
+
+#, fuzzy
+#~| msgid "Pl. %1"
+#~ msgctxt "Abbreviation of train platform"
+#~ msgid "Pl. %1"
+#~ msgstr "第 %1 月台"
+
+#, fuzzy
+#~| msgctxt "Ferry dock, if possible use an abreviation"
+#~| msgid "Dock %1"
+#~ msgctxt "Ferry dock, if possible use an abbreviation"
+#~ msgid "Dock %1"
+#~ msgstr "碼頭 %1"
+
+#, fuzzy
+#~| msgid "Pl. %1"
+#~ msgctxt "Generic abbreviation of platform"
+#~ msgid "Pl. %1"
+#~ msgstr "第 %1 月台"
+
+#~ msgid "Platform:"
+#~ msgstr "月台："
+
+#, fuzzy
+#~| msgid "More information"
+#~ msgid "Information:"
+#~ msgstr "更多資訊"
+
+#, fuzzy
+#~| msgctxt "bus station"
+#~| msgid "Station"
+#~ msgctxt "Train station platform"
+#~ msgid "Station Name"
+#~ msgstr "公車站"
+
+#, fuzzy
+#~| msgid "Platform"
+#~ msgctxt "Train station platform"
+#~ msgid "Platform"
+#~ msgstr "月台"
+
+#~ msgctxt "train platform"
+#~ msgid "Platform"
+#~ msgstr "月台"
+
+#, fuzzy
+#~| msgid "Platform"
+#~ msgctxt "train station platform"
+#~ msgid "Platform"
+#~ msgstr "月台"
+
+#, fuzzy
+#~| msgid "Platform: %1"
+#~ msgctxt "train station platform"
+#~ msgid "Platform: %1"
+#~ msgstr "月台：%1"
 
 #~ msgctxt "Abreviation of train platform"
 #~ msgid "Pl. %1"

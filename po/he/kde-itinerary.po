@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-15 00:45+0000\n"
+"POT-Creation-Date: 2026-03-18 00:45+0000\n"
 "PO-Revision-Date: 2026-03-11 22:38+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -669,23 +669,11 @@ msgstr "עצירה"
 msgid "Departure bus stop must not be empty."
 msgstr "תחנת האוטובוס להגעה לא יכולה להיות ריקה."
 
-#: app/BusEditor.qml:189 app/BusEditor.qml:276
-#, kde-format
-msgctxt "Bus stop platform"
-msgid "Platform"
-msgstr "רציף"
-
 #: app/BusEditor.qml:210
 #, kde-format
 msgctxt "bus stop"
 msgid "Stop Name"
 msgstr "שם התחנה"
-
-#: app/BusEditor.qml:218 app/BusEditor.qml:310
-#, kde-format
-msgctxt "bus stop platform"
-msgid "Platform"
-msgstr "רציף"
 
 #: app/BusEditor.qml:235
 #, kde-format
@@ -743,12 +731,6 @@ msgstr "תאריך יציאה"
 msgctxt "bus station"
 msgid "Station"
 msgstr "תחנה"
-
-#: app/BusPage.qml:150 app/BusPage.qml:220
-#, kde-format
-msgctxt "bus station platform"
-msgid "Platform"
-msgstr "רציף"
 
 #: app/BusPage.qml:170
 #, kde-format
@@ -2354,13 +2336,6 @@ msgstr "%1 %2 (%3)"
 msgid "Drive %1 (%2)"
 msgstr "לנהוג %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:180 app/JourneySectionDelegate.qml:331
-#: app/StopoverDetailsPage.qml:100 app/StopoverFormDelegate.qml:105
-#, kde-format
-msgctxt "@info"
-msgid "Platform %1"
-msgstr "רציף %1"
-
 #: app/JourneySectionDelegate.qml:253 app/JourneySectionPage.qml:136
 #: app/StopoverFormDelegate.qml:151 app/VehicleLayoutPage.qml:177
 #, kde-format
@@ -2390,25 +2365,7 @@ msgstr "מהירות ממוצעת: %1"
 msgid "CO₂: %1"
 msgstr "פחמן דו־חמצני: %1"
 
-#: app/JourneySectionStopDelegate.qml:148
-#, kde-format
-msgctxt "Abbreviation of train platform"
-msgid "Pl. %1"
-msgstr "רציף %1"
-
-#: app/JourneySectionStopDelegate.qml:150
-#, kde-format
-msgctxt "Ferry dock, if possible use an abbreviation"
-msgid "Dock %1"
-msgstr "מעגן %1"
-
-#: app/JourneySectionStopDelegate.qml:152
-#, kde-format
-msgctxt "Generic abbreviation of platform"
-msgid "Pl. %1"
-msgstr "רציף %1"
-
-#: app/JourneySectionStopDelegate.qml:167
+#: app/JourneySectionStopDelegate.qml:145
 #, kde-format
 msgid "Show location"
 msgstr "הצגת מקום"
@@ -2592,69 +2549,75 @@ msgctxt "currency conversion rate"
 msgid "Currency: %1 = %2"
 msgstr "מטבע: %1 = %2"
 
-#: app/locationinformation.cpp:87
+#: app/LocationInfoDelegate.qml:125
+#, kde-format
+msgid ""
+"Leaving the EU roaming regulation area. Check your mobile data settings."
+msgstr ""
+
+#: app/locationinformation.cpp:127
 #, kde-format
 msgid "People are driving on the right side."
 msgstr "הנהיגה היא מצד ימין (כמו בישראל)."
 
-#: app/locationinformation.cpp:89
+#: app/locationinformation.cpp:129
 #, kde-format
 msgid "People are driving on the left side."
 msgstr "הנהיגה היא מצד שמאל."
 
-#: app/locationinformation.cpp:107
+#: app/locationinformation.cpp:147
 msgid "Type A"
 msgstr "סוג A"
 
-#: app/locationinformation.cpp:108
+#: app/locationinformation.cpp:148
 msgid "Type B"
 msgstr "סוג B"
 
-#: app/locationinformation.cpp:109
+#: app/locationinformation.cpp:149
 msgid "Europlug"
 msgstr "תקע אירופי"
 
-#: app/locationinformation.cpp:110
+#: app/locationinformation.cpp:150
 msgid "Type D"
 msgstr "סוג D"
 
-#: app/locationinformation.cpp:111
+#: app/locationinformation.cpp:151
 msgid "Type E"
 msgstr "סוג E"
 
-#: app/locationinformation.cpp:112
+#: app/locationinformation.cpp:152
 msgid "Schuko"
 msgstr "שוקו"
 
-#: app/locationinformation.cpp:113
+#: app/locationinformation.cpp:153
 msgid "Type G"
 msgstr "סוג G"
 
-#: app/locationinformation.cpp:114
+#: app/locationinformation.cpp:154
 msgid "Type H"
 msgstr "סוג H"
 
-#: app/locationinformation.cpp:115
+#: app/locationinformation.cpp:155
 msgid "Type I"
 msgstr "סוג I"
 
-#: app/locationinformation.cpp:116
+#: app/locationinformation.cpp:156
 msgid "Type J"
 msgstr "סוג J"
 
-#: app/locationinformation.cpp:117
+#: app/locationinformation.cpp:157
 msgid "Type K"
 msgstr "סוג K"
 
-#: app/locationinformation.cpp:118
+#: app/locationinformation.cpp:158
 msgid "Type L"
 msgstr "סוג L"
 
-#: app/locationinformation.cpp:119
+#: app/locationinformation.cpp:159
 msgid "Type M"
 msgstr "סוג M"
 
-#: app/locationinformation.cpp:120
+#: app/locationinformation.cpp:160
 msgid "Type N"
 msgstr "סוג N"
 
@@ -2885,20 +2848,15 @@ msgctxt "@title:window"
 msgid "Matrix Session Verification"
 msgstr "אימות פגישה ב־Matrix"
 
-#: app/MapStopoverInfoSheetDrawer.qml:64
-#, kde-format
-msgid "Platform:"
-msgstr "רציף:"
-
 #: app/MapStopoverInfoSheetDrawer.qml:85
 #, kde-format
-msgid "Occupancy:"
-msgstr "תפוסה:"
+msgid "Occupancy"
+msgstr "תפוסה"
 
-#: app/MapStopoverInfoSheetDrawer.qml:112
+#: app/MapStopoverInfoSheetDrawer.qml:112 app/StopoverDetailsPage.qml:124
 #, kde-format
-msgid "Information:"
-msgstr "פרטים:"
+msgid "Information"
+msgstr "פרטים"
 
 #: app/MapStopoverInfoSheetDrawer.qml:131
 #, kde-format
@@ -4080,11 +4038,6 @@ msgctxt "departure stop"
 msgid "From %1"
 msgstr "מ־%1"
 
-#: app/StopoverDetailsPage.qml:124
-#, kde-format
-msgid "Information"
-msgstr "פרטים"
-
 #: app/StopoverDetailsPage.qml:132
 #, kde-format
 msgid "Trip Map"
@@ -4314,9 +4267,9 @@ msgctxt "Train departure"
 msgid "Departure Time"
 msgstr "זמן היציאה"
 
-#: app/TrainEditor.qml:186
+#: app/TrainEditor.qml:186 app/TrainEditor.qml:286
 #, kde-format
-msgctxt "Train station platform"
+msgctxt "Train station"
 msgid "Station Name"
 msgstr "שם התחנה"
 
@@ -4324,12 +4277,6 @@ msgstr "שם התחנה"
 #, kde-format
 msgid "Departure station must not be empty."
 msgstr "תחנת ההגעה לא יכולה להיות ריקה."
-
-#: app/TrainEditor.qml:197 app/TrainEditor.qml:297
-#, kde-format
-msgctxt "Train station platform"
-msgid "Platform"
-msgstr "רציף"
 
 #: app/TrainEditor.qml:210 app/TrainEditor.qml:310
 #, kde-format
@@ -4347,23 +4294,11 @@ msgctxt "train station"
 msgid "Station"
 msgstr "תחנה"
 
-#: app/TrainEditor.qml:239 app/TrainEditor.qml:345
-#, kde-format
-msgctxt "train platform"
-msgid "Platform"
-msgstr "רציף"
-
 #: app/TrainEditor.qml:256
 #, kde-format
 msgctxt "train arrival"
 msgid "Arrival"
 msgstr "הגעה"
-
-#: app/TrainEditor.qml:286
-#, kde-format
-msgctxt "Train station"
-msgid "Station Name"
-msgstr "שם התחנה"
 
 #: app/TrainEditor.qml:289
 #, kde-format
@@ -4398,12 +4333,6 @@ msgstr "כרטיס רכבת"
 msgctxt "Train departure"
 msgid "Departure"
 msgstr "יציאה"
-
-#: app/TrainPage.qml:179 app/TrainPage.qml:264
-#, kde-format
-msgctxt "train station platform"
-msgid "Platform"
-msgstr "רציף"
 
 #: app/TrainPage.qml:201
 #, kde-format
@@ -4855,12 +4784,6 @@ msgctxt "%1 is a date/time"
 msgid "Arrival: %1"
 msgstr "הגעה: %1"
 
-#: app/VehicleLayoutPage.qml:117
-#, kde-format
-msgctxt "train station platform"
-msgid "Platform: %1"
-msgstr "רציף: %1"
-
 #: app/VehicleLayoutPage.qml:126
 #, kde-format
 msgid "Coach: %1 Seat: %2"
@@ -4979,6 +4902,63 @@ msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 מ%3 אל %4 ב־%5"
 
+#~ msgctxt "Bus stop platform"
+#~ msgid "Platform"
+#~ msgstr "רציף"
+
+#~ msgctxt "bus stop platform"
+#~ msgid "Platform"
+#~ msgstr "רציף"
+
+#~ msgctxt "bus station platform"
+#~ msgid "Platform"
+#~ msgstr "רציף"
+
+#~ msgctxt "@info"
+#~ msgid "Platform %1"
+#~ msgstr "רציף %1"
+
+#~ msgctxt "Abbreviation of train platform"
+#~ msgid "Pl. %1"
+#~ msgstr "רציף %1"
+
+#~ msgctxt "Ferry dock, if possible use an abbreviation"
+#~ msgid "Dock %1"
+#~ msgstr "מעגן %1"
+
+#~ msgctxt "Generic abbreviation of platform"
+#~ msgid "Pl. %1"
+#~ msgstr "רציף %1"
+
+#~ msgid "Platform:"
+#~ msgstr "רציף:"
+
+#~ msgid "Occupancy:"
+#~ msgstr "תפוסה:"
+
+#~ msgid "Information:"
+#~ msgstr "פרטים:"
+
+#~ msgctxt "Train station platform"
+#~ msgid "Station Name"
+#~ msgstr "שם התחנה"
+
+#~ msgctxt "Train station platform"
+#~ msgid "Platform"
+#~ msgstr "רציף"
+
+#~ msgctxt "train platform"
+#~ msgid "Platform"
+#~ msgstr "רציף"
+
+#~ msgctxt "train station platform"
+#~ msgid "Platform"
+#~ msgstr "רציף"
+
+#~ msgctxt "train station platform"
+#~ msgid "Platform: %1"
+#~ msgstr "רציף: %1"
+
 #~ msgctxt "Abreviation of train platform"
 #~ msgid "Pl. %1"
 #~ msgstr "רציף %1"
@@ -5076,9 +5056,6 @@ msgstr "%1%2 מ%3 אל %4 ב־%5"
 #~ msgctxt "@action:intoolbar Go up one floor"
 #~ msgid "Floor up"
 #~ msgstr "קומה למעלה"
-
-#~ msgid "Occupancy"
-#~ msgstr "תפוסה"
 
 #~ msgid "Amenities"
 #~ msgstr "שירותי נוחות"

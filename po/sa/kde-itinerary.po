@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-15 00:45+0000\n"
+"POT-Creation-Date: 2026-03-18 00:45+0000\n"
 "PO-Revision-Date: 2025-03-02 14:47+0530\n"
 "Last-Translator: Shreekant Kalwar <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -695,13 +695,6 @@ msgstr "विरमतु"
 msgid "Departure bus stop must not be empty."
 msgstr "प्रस्थानस्थानकं रिक्तं न भवितुमर्हति।"
 
-#: app/BusEditor.qml:189 app/BusEditor.qml:276
-#, fuzzy, kde-format
-#| msgid "Platform"
-msgctxt "Bus stop platform"
-msgid "Platform"
-msgstr "तमङ्गः"
-
 #: app/BusEditor.qml:210
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
@@ -709,12 +702,6 @@ msgstr "तमङ्गः"
 msgctxt "bus stop"
 msgid "Stop Name"
 msgstr "नक्शा दर्शयतु"
-
-#: app/BusEditor.qml:218 app/BusEditor.qml:310
-#, kde-format
-msgctxt "bus stop platform"
-msgid "Platform"
-msgstr "तमङ्गः"
 
 #: app/BusEditor.qml:235
 #, kde-format
@@ -776,12 +763,6 @@ msgstr "प्रस्थान तिथि"
 msgctxt "bus station"
 msgid "Station"
 msgstr "स्थानः"
-
-#: app/BusPage.qml:150 app/BusPage.qml:220
-#, kde-format
-msgctxt "bus station platform"
-msgid "Platform"
-msgstr "तमङ्गः"
 
 #: app/BusPage.qml:170
 #, kde-format
@@ -2441,13 +2422,6 @@ msgstr "%1 %2 (%3)"
 msgid "Drive %1 (%2)"
 msgstr "ड्राइव %1 (%2) 1.1."
 
-#: app/JourneySectionDelegate.qml:180 app/JourneySectionDelegate.qml:331
-#: app/StopoverDetailsPage.qml:100 app/StopoverFormDelegate.qml:105
-#, kde-format
-msgctxt "@info"
-msgid "Platform %1"
-msgstr "मञ्चः %1"
-
 #: app/JourneySectionDelegate.qml:253 app/JourneySectionPage.qml:136
 #: app/StopoverFormDelegate.qml:151 app/VehicleLayoutPage.qml:177
 #, kde-format
@@ -2477,31 +2451,7 @@ msgstr "औसतवेगः %1"
 msgid "CO₂: %1"
 msgstr "CO2: %1"
 
-#: app/JourneySectionStopDelegate.qml:148
-#, fuzzy, kde-format
-#| msgctxt "Abreviation of train platform"
-#| msgid "Pl. %1"
-msgctxt "Abbreviation of train platform"
-msgid "Pl. %1"
-msgstr "प्ल. %1"
-
-#: app/JourneySectionStopDelegate.qml:150
-#, fuzzy, kde-format
-#| msgctxt "Ferry dock, if possible use an abreviation"
-#| msgid "Dock %1"
-msgctxt "Ferry dock, if possible use an abbreviation"
-msgid "Dock %1"
-msgstr "डॉक %1"
-
-#: app/JourneySectionStopDelegate.qml:152
-#, fuzzy, kde-format
-#| msgctxt "Abreviation of train platform"
-#| msgid "Pl. %1"
-msgctxt "Generic abbreviation of platform"
-msgid "Pl. %1"
-msgstr "प्ल. %1"
-
-#: app/JourneySectionStopDelegate.qml:167
+#: app/JourneySectionStopDelegate.qml:145
 #, kde-format
 msgid "Show location"
 msgstr "स्थानं दर्शयतु"
@@ -2685,69 +2635,75 @@ msgctxt "currency conversion rate"
 msgid "Currency: %1 = %2"
 msgstr "मुद्रा: %1 = %2"
 
-#: app/locationinformation.cpp:87
+#: app/LocationInfoDelegate.qml:125
+#, kde-format
+msgid ""
+"Leaving the EU roaming regulation area. Check your mobile data settings."
+msgstr ""
+
+#: app/locationinformation.cpp:127
 #, kde-format
 msgid "People are driving on the right side."
 msgstr "जनाः दक्षिणपार्श्वे वाहनचालनं कुर्वन्ति।"
 
-#: app/locationinformation.cpp:89
+#: app/locationinformation.cpp:129
 #, kde-format
 msgid "People are driving on the left side."
 msgstr "जनाः वामभागे वाहनचालनं कुर्वन्ति।"
 
-#: app/locationinformation.cpp:107
+#: app/locationinformation.cpp:147
 msgid "Type A"
 msgstr "प्रकार A"
 
-#: app/locationinformation.cpp:108
+#: app/locationinformation.cpp:148
 msgid "Type B"
 msgstr "प्रकार B"
 
-#: app/locationinformation.cpp:109
+#: app/locationinformation.cpp:149
 msgid "Europlug"
 msgstr "यूरोप्लग"
 
-#: app/locationinformation.cpp:110
+#: app/locationinformation.cpp:150
 msgid "Type D"
 msgstr "प्रकार D"
 
-#: app/locationinformation.cpp:111
+#: app/locationinformation.cpp:151
 msgid "Type E"
 msgstr "E प्रकारः"
 
-#: app/locationinformation.cpp:112
+#: app/locationinformation.cpp:152
 msgid "Schuko"
 msgstr "शुको"
 
-#: app/locationinformation.cpp:113
+#: app/locationinformation.cpp:153
 msgid "Type G"
 msgstr "प्रकार G"
 
-#: app/locationinformation.cpp:114
+#: app/locationinformation.cpp:154
 msgid "Type H"
 msgstr "H इति प्रकारः"
 
-#: app/locationinformation.cpp:115
+#: app/locationinformation.cpp:155
 msgid "Type I"
 msgstr "प्रथमप्रकारः"
 
-#: app/locationinformation.cpp:116
+#: app/locationinformation.cpp:156
 msgid "Type J"
 msgstr "J इति प्रकारः"
 
-#: app/locationinformation.cpp:117
+#: app/locationinformation.cpp:157
 msgid "Type K"
 msgstr "K इति प्रकारः"
 
-#: app/locationinformation.cpp:118
+#: app/locationinformation.cpp:158
 msgid "Type L"
 msgstr "L इति प्रकारः"
 
-#: app/locationinformation.cpp:119
+#: app/locationinformation.cpp:159
 msgid "Type M"
 msgstr "प्रकार M"
 
-#: app/locationinformation.cpp:120
+#: app/locationinformation.cpp:160
 msgid "Type N"
 msgstr "प्रकार N"
 
@@ -2981,20 +2937,16 @@ msgctxt "@title:window"
 msgid "Matrix Session Verification"
 msgstr "मैट्रिक्स सत्र सत्यापन"
 
-#: app/MapStopoverInfoSheetDrawer.qml:64
-#, kde-format
-msgid "Platform:"
-msgstr "तमङ्गः:"
-
 #: app/MapStopoverInfoSheetDrawer.qml:85
-#, kde-format
-msgid "Occupancy:"
+#, fuzzy, kde-format
+#| msgid "Occupancy:"
+msgid "Occupancy"
 msgstr "अधिग्रहणम् :"
 
-#: app/MapStopoverInfoSheetDrawer.qml:112
+#: app/MapStopoverInfoSheetDrawer.qml:112 app/StopoverDetailsPage.qml:124
 #, fuzzy, kde-format
 #| msgid "More information"
-msgid "Information:"
+msgid "Information"
 msgstr "अधिक जानकारी"
 
 #: app/MapStopoverInfoSheetDrawer.qml:131
@@ -4200,12 +4152,6 @@ msgctxt "departure stop"
 msgid "From %1"
 msgstr "इत्यस्मात्‌:"
 
-#: app/StopoverDetailsPage.qml:124
-#, fuzzy, kde-format
-#| msgid "More information"
-msgid "Information"
-msgstr "अधिक जानकारी"
-
 #: app/StopoverDetailsPage.qml:132
 #, fuzzy, kde-format
 #| msgid "Trip"
@@ -4449,11 +4395,11 @@ msgctxt "Train departure"
 msgid "Departure Time"
 msgstr "प्रस्थान समय"
 
-#: app/TrainEditor.qml:186
+#: app/TrainEditor.qml:186 app/TrainEditor.qml:286
 #, fuzzy, kde-format
 #| msgctxt "bus station"
 #| msgid "Station"
-msgctxt "Train station platform"
+msgctxt "Train station"
 msgid "Station Name"
 msgstr "स्थानः"
 
@@ -4462,13 +4408,6 @@ msgstr "स्थानः"
 #| msgid "Departure terminal must not be empty."
 msgid "Departure station must not be empty."
 msgstr "प्रस्थानस्थानकं रिक्तं न भवितुमर्हति।"
-
-#: app/TrainEditor.qml:197 app/TrainEditor.qml:297
-#, fuzzy, kde-format
-#| msgid "Platform"
-msgctxt "Train station platform"
-msgid "Platform"
-msgstr "तमङ्गः"
 
 #: app/TrainEditor.qml:210 app/TrainEditor.qml:310
 #, kde-format
@@ -4484,25 +4423,11 @@ msgctxt "train station"
 msgid "Station"
 msgstr "स्थानः"
 
-#: app/TrainEditor.qml:239 app/TrainEditor.qml:345
-#, kde-format
-msgctxt "train platform"
-msgid "Platform"
-msgstr "तमङ्गः"
-
 #: app/TrainEditor.qml:256
 #, kde-format
 msgctxt "train arrival"
 msgid "Arrival"
 msgstr "आगमन"
-
-#: app/TrainEditor.qml:286
-#, fuzzy, kde-format
-#| msgctxt "bus station"
-#| msgid "Station"
-msgctxt "Train station"
-msgid "Station Name"
-msgstr "स्थानः"
 
 #: app/TrainEditor.qml:289
 #, fuzzy, kde-format
@@ -4538,13 +4463,6 @@ msgstr "रेल टिकट"
 msgctxt "Train departure"
 msgid "Departure"
 msgstr "प्रस्थानं"
-
-#: app/TrainPage.qml:179 app/TrainPage.qml:264
-#, fuzzy, kde-format
-#| msgid "Platform"
-msgctxt "train station platform"
-msgid "Platform"
-msgstr "तमङ्गः"
 
 #: app/TrainPage.qml:201
 #, kde-format
@@ -5011,13 +4929,6 @@ msgctxt "%1 is a date/time"
 msgid "Arrival: %1"
 msgstr "आगमनम् : %1"
 
-#: app/VehicleLayoutPage.qml:117
-#, fuzzy, kde-format
-#| msgid "Platform: %1"
-msgctxt "train station platform"
-msgid "Platform: %1"
-msgstr "मञ्चः %1"
-
 #: app/VehicleLayoutPage.qml:126
 #, kde-format
 msgid "Coach: %1 Seat: %2"
@@ -5137,6 +5048,85 @@ msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 %3 तः %4 पर्यन्तं %5 पर्यन्तम्"
 
+#, fuzzy
+#~| msgid "Platform"
+#~ msgctxt "Bus stop platform"
+#~ msgid "Platform"
+#~ msgstr "तमङ्गः"
+
+#~ msgctxt "bus stop platform"
+#~ msgid "Platform"
+#~ msgstr "तमङ्गः"
+
+#~ msgctxt "bus station platform"
+#~ msgid "Platform"
+#~ msgstr "तमङ्गः"
+
+#~ msgctxt "@info"
+#~ msgid "Platform %1"
+#~ msgstr "मञ्चः %1"
+
+#, fuzzy
+#~| msgctxt "Abreviation of train platform"
+#~| msgid "Pl. %1"
+#~ msgctxt "Abbreviation of train platform"
+#~ msgid "Pl. %1"
+#~ msgstr "प्ल. %1"
+
+#, fuzzy
+#~| msgctxt "Ferry dock, if possible use an abreviation"
+#~| msgid "Dock %1"
+#~ msgctxt "Ferry dock, if possible use an abbreviation"
+#~ msgid "Dock %1"
+#~ msgstr "डॉक %1"
+
+#, fuzzy
+#~| msgctxt "Abreviation of train platform"
+#~| msgid "Pl. %1"
+#~ msgctxt "Generic abbreviation of platform"
+#~ msgid "Pl. %1"
+#~ msgstr "प्ल. %1"
+
+#~ msgid "Platform:"
+#~ msgstr "तमङ्गः:"
+
+#~ msgid "Occupancy:"
+#~ msgstr "अधिग्रहणम् :"
+
+#, fuzzy
+#~| msgid "More information"
+#~ msgid "Information:"
+#~ msgstr "अधिक जानकारी"
+
+#, fuzzy
+#~| msgctxt "bus station"
+#~| msgid "Station"
+#~ msgctxt "Train station platform"
+#~ msgid "Station Name"
+#~ msgstr "स्थानः"
+
+#, fuzzy
+#~| msgid "Platform"
+#~ msgctxt "Train station platform"
+#~ msgid "Platform"
+#~ msgstr "तमङ्गः"
+
+#~ msgctxt "train platform"
+#~ msgid "Platform"
+#~ msgstr "तमङ्गः"
+
+#, fuzzy
+#~| msgid "Platform"
+#~ msgctxt "train station platform"
+#~ msgid "Platform"
+#~ msgstr "तमङ्गः"
+
+#, fuzzy
+#~| msgid "Platform: %1"
+#~ msgctxt "train station platform"
+#~ msgid "Platform: %1"
+#~ msgstr "मञ्चः %1"
+
 #~ msgctxt "Generic abreviation of platform"
 #~ msgid "Pl. %1"
 #~ msgstr "प्ल. %1"
@@ -5223,11 +5213,6 @@ msgstr "%1%2 %3 तः %4 पर्यन्तं %5 पर्यन्तम�
 #~ msgctxt "@action:intoolbar Go up one floor"
 #~ msgid "Floor up"
 #~ msgstr "तलम् उपरि"
-
-#, fuzzy
-#~| msgid "Occupancy:"
-#~ msgid "Occupancy"
-#~ msgstr "अधिग्रहणम् :"
 
 #~ msgctxt "destination"
 #~ msgid "To:"

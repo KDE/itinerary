@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-15 00:45+0000\n"
+"POT-Creation-Date: 2026-03-18 00:45+0000\n"
 "PO-Revision-Date: 2024-03-26 16:14+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -709,13 +709,6 @@ msgstr "Megálló"
 msgid "Departure bus stop must not be empty."
 msgstr "Az indulási kikötő nem lehet üres."
 
-#: app/BusEditor.qml:189 app/BusEditor.qml:276
-#, fuzzy, kde-format
-#| msgid "Platform"
-msgctxt "Bus stop platform"
-msgid "Platform"
-msgstr "Peron"
-
 #: app/BusEditor.qml:210
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
@@ -723,12 +716,6 @@ msgstr "Peron"
 msgctxt "bus stop"
 msgid "Stop Name"
 msgstr "Térkép megjelenítése"
-
-#: app/BusEditor.qml:218 app/BusEditor.qml:310
-#, kde-format
-msgctxt "bus stop platform"
-msgid "Platform"
-msgstr "Peron"
 
 #: app/BusEditor.qml:235
 #, kde-format
@@ -791,12 +778,6 @@ msgstr "Indulás dátuma"
 msgctxt "bus station"
 msgid "Station"
 msgstr "Állomás"
-
-#: app/BusPage.qml:150 app/BusPage.qml:220
-#, kde-format
-msgctxt "bus station platform"
-msgid "Platform"
-msgstr "Peron"
 
 #: app/BusPage.qml:170
 #, kde-format
@@ -2492,14 +2473,6 @@ msgstr "%1 %2 (%3)"
 msgid "Drive %1 (%2)"
 msgstr "%1 vezetés (%2)"
 
-#: app/JourneySectionDelegate.qml:180 app/JourneySectionDelegate.qml:331
-#: app/StopoverDetailsPage.qml:100 app/StopoverFormDelegate.qml:105
-#, fuzzy, kde-format
-#| msgid "Platform: %1"
-msgctxt "@info"
-msgid "Platform %1"
-msgstr "Peron: %1"
-
 #: app/JourneySectionDelegate.qml:253 app/JourneySectionPage.qml:136
 #: app/StopoverFormDelegate.qml:151 app/VehicleLayoutPage.qml:177
 #, kde-format
@@ -2531,31 +2504,7 @@ msgstr "Átlagos sebesség: %1"
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionStopDelegate.qml:148
-#, fuzzy, kde-format
-#| msgctxt "Abreviation of train platform"
-#| msgid "Pl. %1"
-msgctxt "Abbreviation of train platform"
-msgid "Pl. %1"
-msgstr "%1. vágány"
-
-#: app/JourneySectionStopDelegate.qml:150
-#, fuzzy, kde-format
-#| msgctxt "Ferry dock, if possible use an abreviation"
-#| msgid "Dock %1"
-msgctxt "Ferry dock, if possible use an abbreviation"
-msgid "Dock %1"
-msgstr "%1. dokk"
-
-#: app/JourneySectionStopDelegate.qml:152
-#, fuzzy, kde-format
-#| msgctxt "Abreviation of train platform"
-#| msgid "Pl. %1"
-msgctxt "Generic abbreviation of platform"
-msgid "Pl. %1"
-msgstr "%1. vágány"
-
-#: app/JourneySectionStopDelegate.qml:167
+#: app/JourneySectionStopDelegate.qml:145
 #, kde-format
 msgid "Show location"
 msgstr "Hely megjelenítése"
@@ -2742,69 +2691,75 @@ msgctxt "currency conversion rate"
 msgid "Currency: %1 = %2"
 msgstr "Pénznem: %1 = %2"
 
-#: app/locationinformation.cpp:87
+#: app/LocationInfoDelegate.qml:125
+#, kde-format
+msgid ""
+"Leaving the EU roaming regulation area. Check your mobile data settings."
+msgstr ""
+
+#: app/locationinformation.cpp:127
 #, kde-format
 msgid "People are driving on the right side."
 msgstr "Jobb oldali közlekedési rend van érvényben."
 
-#: app/locationinformation.cpp:89
+#: app/locationinformation.cpp:129
 #, kde-format
 msgid "People are driving on the left side."
 msgstr "Bal oldali közlekedési rend van érvényben."
 
-#: app/locationinformation.cpp:107
+#: app/locationinformation.cpp:147
 msgid "Type A"
 msgstr "A -típusú"
 
-#: app/locationinformation.cpp:108
+#: app/locationinformation.cpp:148
 msgid "Type B"
 msgstr "B-típusú"
 
-#: app/locationinformation.cpp:109
+#: app/locationinformation.cpp:149
 msgid "Europlug"
 msgstr "Europlug"
 
-#: app/locationinformation.cpp:110
+#: app/locationinformation.cpp:150
 msgid "Type D"
 msgstr "D-típusú"
 
-#: app/locationinformation.cpp:111
+#: app/locationinformation.cpp:151
 msgid "Type E"
 msgstr "E-típusú"
 
-#: app/locationinformation.cpp:112
+#: app/locationinformation.cpp:152
 msgid "Schuko"
 msgstr "Schuko"
 
-#: app/locationinformation.cpp:113
+#: app/locationinformation.cpp:153
 msgid "Type G"
 msgstr "G-típusú"
 
-#: app/locationinformation.cpp:114
+#: app/locationinformation.cpp:154
 msgid "Type H"
 msgstr "H-típusú"
 
-#: app/locationinformation.cpp:115
+#: app/locationinformation.cpp:155
 msgid "Type I"
 msgstr "I-típusú"
 
-#: app/locationinformation.cpp:116
+#: app/locationinformation.cpp:156
 msgid "Type J"
 msgstr "J-típusú"
 
-#: app/locationinformation.cpp:117
+#: app/locationinformation.cpp:157
 msgid "Type K"
 msgstr "K-típusú"
 
-#: app/locationinformation.cpp:118
+#: app/locationinformation.cpp:158
 msgid "Type L"
 msgstr "L-típusú"
 
-#: app/locationinformation.cpp:119
+#: app/locationinformation.cpp:159
 msgid "Type M"
 msgstr "M-típusú"
 
-#: app/locationinformation.cpp:120
+#: app/locationinformation.cpp:160
 msgid "Type N"
 msgstr "N-típusú"
 
@@ -3043,20 +2998,15 @@ msgctxt "@title:window"
 msgid "Matrix Session Verification"
 msgstr "Matrix integráció"
 
-#: app/MapStopoverInfoSheetDrawer.qml:64
-#, kde-format
-msgid "Platform:"
-msgstr ""
-
 #: app/MapStopoverInfoSheetDrawer.qml:85
 #, kde-format
-msgid "Occupancy:"
+msgid "Occupancy"
 msgstr ""
 
-#: app/MapStopoverInfoSheetDrawer.qml:112
+#: app/MapStopoverInfoSheetDrawer.qml:112 app/StopoverDetailsPage.qml:124
 #, fuzzy, kde-format
 #| msgid "More information"
-msgid "Information:"
+msgid "Information"
 msgstr "További információk"
 
 #: app/MapStopoverInfoSheetDrawer.qml:131
@@ -4255,12 +4205,6 @@ msgctxt "departure stop"
 msgid "From %1"
 msgstr "Innen: %1"
 
-#: app/StopoverDetailsPage.qml:124
-#, fuzzy, kde-format
-#| msgid "More information"
-msgid "Information"
-msgstr "További információk"
-
 #: app/StopoverDetailsPage.qml:132
 #, fuzzy, kde-format
 #| msgid "Trip sent."
@@ -4513,11 +4457,11 @@ msgctxt "Train departure"
 msgid "Departure Time"
 msgstr "Indulási idő"
 
-#: app/TrainEditor.qml:186
+#: app/TrainEditor.qml:186 app/TrainEditor.qml:286
 #, fuzzy, kde-format
 #| msgctxt "bus station"
 #| msgid "Station"
-msgctxt "Train station platform"
+msgctxt "Train station"
 msgid "Station Name"
 msgstr "Állomás"
 
@@ -4526,13 +4470,6 @@ msgstr "Állomás"
 #| msgid "Departure terminal must not be empty."
 msgid "Departure station must not be empty."
 msgstr "Az indulási kikötő nem lehet üres."
-
-#: app/TrainEditor.qml:197 app/TrainEditor.qml:297
-#, fuzzy, kde-format
-#| msgid "Platform"
-msgctxt "Train station platform"
-msgid "Platform"
-msgstr "Peron"
 
 #: app/TrainEditor.qml:210 app/TrainEditor.qml:310
 #, kde-format
@@ -4548,25 +4485,11 @@ msgctxt "train station"
 msgid "Station"
 msgstr "Állomás"
 
-#: app/TrainEditor.qml:239 app/TrainEditor.qml:345
-#, kde-format
-msgctxt "train platform"
-msgid "Platform"
-msgstr "Peron"
-
 #: app/TrainEditor.qml:256
 #, kde-format
 msgctxt "train arrival"
 msgid "Arrival"
 msgstr "Érkezés"
-
-#: app/TrainEditor.qml:286
-#, fuzzy, kde-format
-#| msgctxt "bus station"
-#| msgid "Station"
-msgctxt "Train station"
-msgid "Station Name"
-msgstr "Állomás"
 
 #: app/TrainEditor.qml:289
 #, fuzzy, kde-format
@@ -4603,13 +4526,6 @@ msgstr "Vonatjegy"
 msgctxt "Train departure"
 msgid "Departure"
 msgstr "Indulás"
-
-#: app/TrainPage.qml:179 app/TrainPage.qml:264
-#, fuzzy, kde-format
-#| msgid "Platform"
-msgctxt "train station platform"
-msgid "Platform"
-msgstr "Peron"
 
 #: app/TrainPage.qml:201
 #, kde-format
@@ -5103,13 +5019,6 @@ msgctxt "%1 is a date/time"
 msgid "Arrival: %1"
 msgstr "Érkezés - %1"
 
-#: app/VehicleLayoutPage.qml:117
-#, fuzzy, kde-format
-#| msgid "Platform: %1"
-msgctxt "train station platform"
-msgid "Platform: %1"
-msgstr "Peron: %1"
-
 #: app/VehicleLayoutPage.qml:126
 #, kde-format
 msgid "Coach: %1 Seat: %2"
@@ -5220,6 +5129,81 @@ msgstr "Kijelentkezés"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr ""
+
+#, fuzzy
+#~| msgid "Platform"
+#~ msgctxt "Bus stop platform"
+#~ msgid "Platform"
+#~ msgstr "Peron"
+
+#~ msgctxt "bus stop platform"
+#~ msgid "Platform"
+#~ msgstr "Peron"
+
+#~ msgctxt "bus station platform"
+#~ msgid "Platform"
+#~ msgstr "Peron"
+
+#, fuzzy
+#~| msgid "Platform: %1"
+#~ msgctxt "@info"
+#~ msgid "Platform %1"
+#~ msgstr "Peron: %1"
+
+#, fuzzy
+#~| msgctxt "Abreviation of train platform"
+#~| msgid "Pl. %1"
+#~ msgctxt "Abbreviation of train platform"
+#~ msgid "Pl. %1"
+#~ msgstr "%1. vágány"
+
+#, fuzzy
+#~| msgctxt "Ferry dock, if possible use an abreviation"
+#~| msgid "Dock %1"
+#~ msgctxt "Ferry dock, if possible use an abbreviation"
+#~ msgid "Dock %1"
+#~ msgstr "%1. dokk"
+
+#, fuzzy
+#~| msgctxt "Abreviation of train platform"
+#~| msgid "Pl. %1"
+#~ msgctxt "Generic abbreviation of platform"
+#~ msgid "Pl. %1"
+#~ msgstr "%1. vágány"
+
+#, fuzzy
+#~| msgid "More information"
+#~ msgid "Information:"
+#~ msgstr "További információk"
+
+#, fuzzy
+#~| msgctxt "bus station"
+#~| msgid "Station"
+#~ msgctxt "Train station platform"
+#~ msgid "Station Name"
+#~ msgstr "Állomás"
+
+#, fuzzy
+#~| msgid "Platform"
+#~ msgctxt "Train station platform"
+#~ msgid "Platform"
+#~ msgstr "Peron"
+
+#~ msgctxt "train platform"
+#~ msgid "Platform"
+#~ msgstr "Peron"
+
+#, fuzzy
+#~| msgid "Platform"
+#~ msgctxt "train station platform"
+#~ msgid "Platform"
+#~ msgstr "Peron"
+
+#, fuzzy
+#~| msgid "Platform: %1"
+#~ msgctxt "train station platform"
+#~ msgid "Platform: %1"
+#~ msgstr "Peron: %1"
 
 #~ msgctxt "Generic abreviation of platform"
 #~ msgid "Pl. %1"

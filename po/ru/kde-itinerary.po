@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-15 00:45+0000\n"
+"POT-Creation-Date: 2026-03-18 00:45+0000\n"
 "PO-Revision-Date: 2026-03-10 10:00+0300\n"
 "Last-Translator: Olesya Gerasimenko <goa@altlinux.org>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -674,23 +674,11 @@ msgstr "Остановка"
 msgid "Departure bus stop must not be empty."
 msgstr "Необходимо указать остановку отправления."
 
-#: app/BusEditor.qml:189 app/BusEditor.qml:276
-#, kde-format
-msgctxt "Bus stop platform"
-msgid "Platform"
-msgstr "Платформа"
-
 #: app/BusEditor.qml:210
 #, kde-format
 msgctxt "bus stop"
 msgid "Stop Name"
 msgstr "Название остановки"
-
-#: app/BusEditor.qml:218 app/BusEditor.qml:310
-#, kde-format
-msgctxt "bus stop platform"
-msgid "Platform"
-msgstr "Платформа"
 
 #: app/BusEditor.qml:235
 #, kde-format
@@ -748,12 +736,6 @@ msgstr "Дата отправления"
 msgctxt "bus station"
 msgid "Station"
 msgstr "Станция"
-
-#: app/BusPage.qml:150 app/BusPage.qml:220
-#, kde-format
-msgctxt "bus station platform"
-msgid "Platform"
-msgstr "Платформа"
 
 #: app/BusPage.qml:170
 #, kde-format
@@ -2364,13 +2346,6 @@ msgstr "%1 %2 (%3)"
 msgid "Drive %1 (%2)"
 msgstr "Проезд %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:180 app/JourneySectionDelegate.qml:331
-#: app/StopoverDetailsPage.qml:100 app/StopoverFormDelegate.qml:105
-#, kde-format
-msgctxt "@info"
-msgid "Platform %1"
-msgstr "Платформа %1"
-
 #: app/JourneySectionDelegate.qml:253 app/JourneySectionPage.qml:136
 #: app/StopoverFormDelegate.qml:151 app/VehicleLayoutPage.qml:177
 #, kde-format
@@ -2400,25 +2375,7 @@ msgstr "Средняя скорость: %1"
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionStopDelegate.qml:148
-#, kde-format
-msgctxt "Abbreviation of train platform"
-msgid "Pl. %1"
-msgstr "Пл. %1"
-
-#: app/JourneySectionStopDelegate.qml:150
-#, kde-format
-msgctxt "Ferry dock, if possible use an abbreviation"
-msgid "Dock %1"
-msgstr "Причал %1"
-
-#: app/JourneySectionStopDelegate.qml:152
-#, kde-format
-msgctxt "Generic abbreviation of platform"
-msgid "Pl. %1"
-msgstr "Пл. %1"
-
-#: app/JourneySectionStopDelegate.qml:167
+#: app/JourneySectionStopDelegate.qml:145
 #, kde-format
 msgid "Show location"
 msgstr "Показать местоположение"
@@ -2602,72 +2559,78 @@ msgctxt "currency conversion rate"
 msgid "Currency: %1 = %2"
 msgstr "Валюта: %1 = %2"
 
-#: app/locationinformation.cpp:87
+#: app/LocationInfoDelegate.qml:125
+#, kde-format
+msgid ""
+"Leaving the EU roaming regulation area. Check your mobile data settings."
+msgstr ""
+
+#: app/locationinformation.cpp:127
 #, kde-format
 msgid "People are driving on the right side."
 msgstr "Автомобили едут по правой стороне."
 
-#: app/locationinformation.cpp:89
+#: app/locationinformation.cpp:129
 #, kde-format
 msgid "People are driving on the left side."
 msgstr "Автомобили едут по левой стороне."
 
-#: app/locationinformation.cpp:107
+#: app/locationinformation.cpp:147
 msgid "Type A"
 msgstr "Тип A"
 
-#: app/locationinformation.cpp:108
+#: app/locationinformation.cpp:148
 msgid "Type B"
 msgstr "Тип B"
 
 # Не «Евровилка» (https://ru.wikipedia.org/wiki/Europlug), лучше оставить без перевода, как и Schuko.
 #
 # --translation-team@basealt.ru
-#: app/locationinformation.cpp:109
+#: app/locationinformation.cpp:149
 msgid "Europlug"
 msgstr "Europlug"
 
-#: app/locationinformation.cpp:110
+#: app/locationinformation.cpp:150
 msgid "Type D"
 msgstr "Тип D"
 
-#: app/locationinformation.cpp:111
+#: app/locationinformation.cpp:151
 msgid "Type E"
 msgstr "Тип E"
 
-#: app/locationinformation.cpp:112
+#: app/locationinformation.cpp:152
 msgid "Schuko"
 msgstr "Schuko"
 
-#: app/locationinformation.cpp:113
+#: app/locationinformation.cpp:153
 msgid "Type G"
 msgstr "Тип G"
 
-#: app/locationinformation.cpp:114
+#: app/locationinformation.cpp:154
 msgid "Type H"
 msgstr "Тип H"
 
-#: app/locationinformation.cpp:115
+#: app/locationinformation.cpp:155
 msgid "Type I"
 msgstr "Тип I"
 
-#: app/locationinformation.cpp:116
+#: app/locationinformation.cpp:156
 msgid "Type J"
 msgstr "Тип J"
 
-#: app/locationinformation.cpp:117
+#: app/locationinformation.cpp:157
 msgid "Type K"
 msgstr "Тип K"
 
-#: app/locationinformation.cpp:118
+#: app/locationinformation.cpp:158
 msgid "Type L"
 msgstr "Тип L"
 
-#: app/locationinformation.cpp:119
+#: app/locationinformation.cpp:159
 msgid "Type M"
 msgstr "Тип M"
 
-#: app/locationinformation.cpp:120
+#: app/locationinformation.cpp:160
 msgid "Type N"
 msgstr "Тип N"
 
@@ -2903,20 +2866,15 @@ msgctxt "@title:window"
 msgid "Matrix Session Verification"
 msgstr "Проверка сеанса Matrix"
 
-#: app/MapStopoverInfoSheetDrawer.qml:64
-#, kde-format
-msgid "Platform:"
-msgstr "Платформа:"
-
 #: app/MapStopoverInfoSheetDrawer.qml:85
-#, kde-format
-msgid "Occupancy:"
+#, fuzzy, kde-format
+msgid "Occupancy"
 msgstr "Занятость:"
 
-#: app/MapStopoverInfoSheetDrawer.qml:112
+#: app/MapStopoverInfoSheetDrawer.qml:112 app/StopoverDetailsPage.qml:124
 #, kde-format
-msgid "Information:"
-msgstr "Сведения:"
+msgid "Information"
+msgstr "Сведения"
 
 #: app/MapStopoverInfoSheetDrawer.qml:131
 #, kde-format
@@ -4124,11 +4082,6 @@ msgctxt "departure stop"
 msgid "From %1"
 msgstr "Из: %1"
 
-#: app/StopoverDetailsPage.qml:124
-#, kde-format
-msgid "Information"
-msgstr "Сведения"
-
 #: app/StopoverDetailsPage.qml:132
 #, kde-format
 msgid "Trip Map"
@@ -4358,9 +4311,9 @@ msgctxt "Train departure"
 msgid "Departure Time"
 msgstr "Время отправления"
 
-#: app/TrainEditor.qml:186
+#: app/TrainEditor.qml:186 app/TrainEditor.qml:286
 #, kde-format
-msgctxt "Train station platform"
+msgctxt "Train station"
 msgid "Station Name"
 msgstr "Название станции"
 
@@ -4368,12 +4321,6 @@ msgstr "Название станции"
 #, kde-format
 msgid "Departure station must not be empty."
 msgstr "Необходимо указать станцию отправления."
-
-#: app/TrainEditor.qml:197 app/TrainEditor.qml:297
-#, kde-format
-msgctxt "Train station platform"
-msgid "Platform"
-msgstr "Платформа"
 
 #: app/TrainEditor.qml:210 app/TrainEditor.qml:310
 #, kde-format
@@ -4391,23 +4338,11 @@ msgctxt "train station"
 msgid "Station"
 msgstr "Станция"
 
-#: app/TrainEditor.qml:239 app/TrainEditor.qml:345
-#, kde-format
-msgctxt "train platform"
-msgid "Platform"
-msgstr "Платформа"
-
 #: app/TrainEditor.qml:256
 #, kde-format
 msgctxt "train arrival"
 msgid "Arrival"
 msgstr "Прибытие"
-
-#: app/TrainEditor.qml:286
-#, kde-format
-msgctxt "Train station"
-msgid "Station Name"
-msgstr "Название станции"
 
 #: app/TrainEditor.qml:289
 #, kde-format
@@ -4442,12 +4377,6 @@ msgstr "Билет на поезд"
 msgctxt "Train departure"
 msgid "Departure"
 msgstr "Отправление"
-
-#: app/TrainPage.qml:179 app/TrainPage.qml:264
-#, kde-format
-msgctxt "train station platform"
-msgid "Platform"
-msgstr "Платформа"
 
 #: app/TrainPage.qml:201
 #, kde-format
@@ -4899,12 +4828,6 @@ msgctxt "%1 is a date/time"
 msgid "Arrival: %1"
 msgstr "Прибытие: %1"
 
-#: app/VehicleLayoutPage.qml:117
-#, kde-format
-msgctxt "train station platform"
-msgid "Platform: %1"
-msgstr "Платформа: %1"
-
 #: app/VehicleLayoutPage.qml:126
 #, kde-format
 msgid "Coach: %1 Seat: %2"
@@ -5027,6 +4950,63 @@ msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 из %3 в %4 %5"
 
+#~ msgctxt "Bus stop platform"
+#~ msgid "Platform"
+#~ msgstr "Платформа"
+
+#~ msgctxt "bus stop platform"
+#~ msgid "Platform"
+#~ msgstr "Платформа"
+
+#~ msgctxt "bus station platform"
+#~ msgid "Platform"
+#~ msgstr "Платформа"
+
+#~ msgctxt "@info"
+#~ msgid "Platform %1"
+#~ msgstr "Платформа %1"
+
+#~ msgctxt "Abbreviation of train platform"
+#~ msgid "Pl. %1"
+#~ msgstr "Пл. %1"
+
+#~ msgctxt "Ferry dock, if possible use an abbreviation"
+#~ msgid "Dock %1"
+#~ msgstr "Причал %1"
+
+#~ msgctxt "Generic abbreviation of platform"
+#~ msgid "Pl. %1"
+#~ msgstr "Пл. %1"
+
+#~ msgid "Platform:"
+#~ msgstr "Платформа:"
+
+#~ msgid "Occupancy:"
+#~ msgstr "Занятость:"
+
+#~ msgid "Information:"
+#~ msgstr "Сведения:"
+
+#~ msgctxt "Train station platform"
+#~ msgid "Station Name"
+#~ msgstr "Название станции"
+
+#~ msgctxt "Train station platform"
+#~ msgid "Platform"
+#~ msgstr "Платформа"
+
+#~ msgctxt "train platform"
+#~ msgid "Platform"
+#~ msgstr "Платформа"
+
+#~ msgctxt "train station platform"
+#~ msgid "Platform"
+#~ msgstr "Платформа"
+
+#~ msgctxt "train station platform"
+#~ msgid "Platform: %1"
+#~ msgstr "Платформа: %1"
+
 #~ msgctxt "Abreviation of train platform"
 #~ msgid "Pl. %1"
 #~ msgstr "Пл. %1"
@@ -5118,10 +5098,6 @@ msgstr "%1%2 из %3 в %4 %5"
 #~ msgctxt "@action:intoolbar Go up one floor"
 #~ msgid "Floor up"
 #~ msgstr "Этаж выше"
-
-#, fuzzy
-#~ msgid "Occupancy"
-#~ msgstr "Занятость:"
 
 #, fuzzy
 #~ msgctxt "operator/provider of a rail/bus service"
