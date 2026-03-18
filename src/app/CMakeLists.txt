@@ -235,7 +235,7 @@ ecm_qt_declare_logging_category(itinerary
     IDENTIFIER Log
     CATEGORY_NAME org.kde.itinerary
     DESCRIPTION "KDE Itinerary app"
-    EXPORT ITINERARY 
+    EXPORT ITINERARY
 )
 
 target_link_libraries(itinerary PUBLIC
@@ -283,7 +283,7 @@ if (TARGET KHealthCertificate)
     target_link_libraries(itinerary PRIVATE KHealthCertificate)
 endif()
 
-add_executable(itinerary-app ${itinerary_app_srcs})
+add_executable(itinerary-app)
 target_sources(itinerary-app PRIVATE
     main.cpp
     developmentmodecontroller.cpp
