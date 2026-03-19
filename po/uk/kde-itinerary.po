@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-18 00:45+0000\n"
-"PO-Revision-Date: 2026-03-11 12:44+0200\n"
+"PO-Revision-Date: 2026-03-18 13:10+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -2561,6 +2561,8 @@ msgstr "Валюта: %1 = %2"
 msgid ""
 "Leaving the EU roaming regulation area. Check your mobile data settings."
 msgstr ""
+"Полишаємо область чинності правил роумінгу ЄС. Перевірте параметри "
+"користування мобільним інтернетом."
 
 #: app/locationinformation.cpp:127
 #, kde-format

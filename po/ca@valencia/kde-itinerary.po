@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-18 00:45+0000\n"
-"PO-Revision-Date: 2026-03-11 11:14+0100\n"
+"PO-Revision-Date: 2026-03-18 11:04+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -2551,6 +2551,8 @@ msgstr "Divisa: %1 = %2"
 msgid ""
 "Leaving the EU roaming regulation area. Check your mobile data settings."
 msgstr ""
+"Esteu eixint de l'àrea de regulació d'itinerància de la UE. Consulteu la "
+"configuració de les dades mòbils."
 
 #: app/locationinformation.cpp:127
 #, kde-format
@@ -2850,10 +2852,9 @@ msgid "Matrix Session Verification"
 msgstr "Verificació de la sessió de Matrix"
 
 #: app/MapStopoverInfoSheetDrawer.qml:85
-#, fuzzy, kde-format
-#| msgid "Occupancy:"
+#, kde-format
 msgid "Occupancy"
-msgstr "Ocupació:"
+msgstr "Ocupació"
 
 #: app/MapStopoverInfoSheetDrawer.qml:112 app/StopoverDetailsPage.qml:124
 #, kde-format
@@ -4948,58 +4949,3 @@ msgstr "Ha finalitzat la sessió"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 des de %3 a %4 el %5"
-
-#~ msgctxt "Bus stop platform"
-#~ msgid "Platform"
-#~ msgstr "Andana"
-
-#~ msgctxt "bus stop platform"
-#~ msgid "Platform"
-#~ msgstr "Andana"
-
-#~ msgctxt "bus station platform"
-#~ msgid "Platform"
-#~ msgstr "Andana"
-
-#~ msgctxt "@info"
-#~ msgid "Platform %1"
-#~ msgstr "Andana %1"
-
-#~ msgctxt "Abbreviation of train platform"
-#~ msgid "Pl. %1"
-#~ msgstr "An. %1"
-
-# skip-rule: kct-dock
-#~ msgctxt "Ferry dock, if possible use an abbreviation"
-#~ msgid "Dock %1"
-#~ msgstr "Moll %1"
-
-#~ msgctxt "Generic abbreviation of platform"
-#~ msgid "Pl. %1"
-#~ msgstr "An. %1"
-
-#~ msgid "Platform:"
-#~ msgstr "Andana:"
-
-#~ msgid "Information:"
-#~ msgstr "Informació:"
-
-#~ msgctxt "Train station platform"
-#~ msgid "Station Name"
-#~ msgstr "Nom d'estació"
-
-#~ msgctxt "Train station platform"
-#~ msgid "Platform"
-#~ msgstr "Andana"
-
-#~ msgctxt "train platform"
-#~ msgid "Platform"
-#~ msgstr "Andana"
-
-#~ msgctxt "train station platform"
-#~ msgid "Platform"
-#~ msgstr "Andana"
-
-#~ msgctxt "train station platform"
-#~ msgid "Platform: %1"
-#~ msgstr "Andana: %1"

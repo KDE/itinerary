@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-18 00:45+0000\n"
-"PO-Revision-Date: 2026-03-11 13:06+0300\n"
+"PO-Revision-Date: 2026-03-18 13:10+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1968,17 +1968,17 @@ msgstr "Apple Cüzdan kartı demetleri (*.pkpasses)"
 #: app/ImportAction.qml:43
 #, kde-format
 msgid "PDF files (*.pdf)"
-msgstr "PDF Dosyaları (*.pdf)"
+msgstr "PDF dosyaları (*.pdf)"
 
 #: app/ImportAction.qml:43
 #, kde-format
 msgid "iCal events (*.ics)"
-msgstr "iCal Etkinlikleri (*.ics)"
+msgstr "iCal etkinlikleri (*.ics)"
 
 #: app/ImportAction.qml:43 app/MyDataPage.qml:208 app/MyDataPage.qml:229
 #, kde-format
 msgid "KDE Itinerary files (*.itinerary)"
-msgstr "KDE Yol Kılavuzu Dosyaları (*.itinerary)"
+msgstr "KDE Yol Kılavuzu dosyaları (*.itinerary)"
 
 #: app/ImportAction.qml:51
 #, kde-format
@@ -2476,7 +2476,7 @@ msgstr "Yolculuk"
 #, kde-format
 msgctxt "day-only date format"
 msgid "dd MMMM"
-msgstr "gg AAAA"
+msgstr "dd MMMM"
 
 #: app/localizer.cpp:242
 #, kde-format
@@ -2549,16 +2549,18 @@ msgstr "Para birimi: %1 = %2"
 msgid ""
 "Leaving the EU roaming regulation area. Check your mobile data settings."
 msgstr ""
+"AB ortak dolaşım bölgesinden ayrılıyorsunuz. Hücresel veri ayarlarınızı "
+"denetleyin."
 
 #: app/locationinformation.cpp:127
 #, kde-format
 msgid "People are driving on the right side."
-msgstr "İnsanlar, sağ şeritten sürüyorlar."
+msgstr "Burada arabalar sağdan gider."
 
 #: app/locationinformation.cpp:129
 #, kde-format
 msgid "People are driving on the left side."
-msgstr "İnsanlar, sol şeritten sürüyorlar."
+msgstr "Burada arabalar soldan gider."
 
 #: app/locationinformation.cpp:147
 msgid "Type A"
@@ -2624,7 +2626,7 @@ msgstr "Sayısal Yolculuk Asistanı"
 #: app/main.cpp:220
 #, kde-format
 msgid "Copyright © The KDE Community"
-msgstr "Telif hakkı © KDE Topluluğu"
+msgstr "© KDE Topluluğu"
 
 #: app/main.cpp:223
 #, kde-format

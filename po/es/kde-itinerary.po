@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-18 00:45+0000\n"
-"PO-Revision-Date: 2026-03-12 00:10+0100\n"
+"PO-Revision-Date: 2026-03-18 10:09+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -2552,6 +2552,8 @@ msgstr "Divisa: %1 = %2"
 msgid ""
 "Leaving the EU roaming regulation area. Check your mobile data settings."
 msgstr ""
+"Saliendo del área de regulación de itinerancia de la UE. Compruebe los "
+"ajustes de los datos móviles."
 
 #: app/locationinformation.cpp:127
 #, kde-format
@@ -2850,10 +2852,9 @@ msgid "Matrix Session Verification"
 msgstr "Verificación de sesión Matrix"
 
 #: app/MapStopoverInfoSheetDrawer.qml:85
-#, fuzzy, kde-format
-#| msgid "Occupancy:"
+#, kde-format
 msgid "Occupancy"
-msgstr "Ocupación:"
+msgstr "Ocupación"
 
 #: app/MapStopoverInfoSheetDrawer.qml:112 app/StopoverDetailsPage.qml:124
 #, kde-format
@@ -4948,57 +4949,3 @@ msgstr "Sesión cerrada"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 de %3 a %4 el %5"
-
-#~ msgctxt "Bus stop platform"
-#~ msgid "Platform"
-#~ msgstr "Andén"
-
-#~ msgctxt "bus stop platform"
-#~ msgid "Platform"
-#~ msgstr "Andén"
-
-#~ msgctxt "bus station platform"
-#~ msgid "Platform"
-#~ msgstr "Andén"
-
-#~ msgctxt "@info"
-#~ msgid "Platform %1"
-#~ msgstr "Andén %1"
-
-#~ msgctxt "Abbreviation of train platform"
-#~ msgid "Pl. %1"
-#~ msgstr "An. %1"
-
-#~ msgctxt "Ferry dock, if possible use an abbreviation"
-#~ msgid "Dock %1"
-#~ msgstr "Muelle %1"
-
-#~ msgctxt "Generic abbreviation of platform"
-#~ msgid "Pl. %1"
-#~ msgstr "An. %1"
-
-#~ msgid "Platform:"
-#~ msgstr "Andén:"
-
-#~ msgid "Information:"
-#~ msgstr "Información:"
-
-#~ msgctxt "Train station platform"
-#~ msgid "Station Name"
-#~ msgstr "Nombre de la estación"
-
-#~ msgctxt "Train station platform"
-#~ msgid "Platform"
-#~ msgstr "Andén"
-
-#~ msgctxt "train platform"
-#~ msgid "Platform"
-#~ msgstr "Andén"
-
-#~ msgctxt "train station platform"
-#~ msgid "Platform"
-#~ msgstr "Andén"
-
-#~ msgctxt "train station platform"
-#~ msgid "Platform: %1"
-#~ msgstr "Andén: %1"

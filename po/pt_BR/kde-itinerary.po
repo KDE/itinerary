@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-18 00:45+0000\n"
-"PO-Revision-Date: 2026-03-11 08:49-0300\n"
+"PO-Revision-Date: 2026-03-18 08:54-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -2553,6 +2553,8 @@ msgstr "Moeda: %1 = %2"
 msgid ""
 "Leaving the EU roaming regulation area. Check your mobile data settings."
 msgstr ""
+"Você está saindo da área de roaming da UE. Verifique suas configurações de "
+"dados móveis."
 
 #: app/locationinformation.cpp:127
 #, kde-format
@@ -2850,10 +2852,9 @@ msgid "Matrix Session Verification"
 msgstr "Verificação de Sessão Matrix"
 
 #: app/MapStopoverInfoSheetDrawer.qml:85
-#, fuzzy, kde-format
-#| msgid "Occupancy:"
+#, kde-format
 msgid "Occupancy"
-msgstr "Ocupação:"
+msgstr "Ocupação"
 
 #: app/MapStopoverInfoSheetDrawer.qml:112 app/StopoverDetailsPage.qml:124
 #, kde-format
