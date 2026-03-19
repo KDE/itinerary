@@ -46,7 +46,7 @@ class ItineraryTestCase(unittest.TestCase):
         self.driver.implicitly_wait = 10
 
         # skip the welcome screen
-        welcomeBtn = self.driver.find_element(by=AppiumBy.NAME, value="Got it!")
+        welcomeBtn = self.driver.find_element(by=AppiumBy.NAME, value="Done!")
         welcomeBtn.click()
 
     @classmethod

@@ -5,63 +5,91 @@
 */
 
 import QtQuick
-import QtQuick.Layouts
-import QtQuick.Controls as QQC2
-import QtPositioning
 import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.formcard as FormCard
+import org.kde.i18n.localeData
+import org.kde.notification as KNotification
 import org.kde.itinerary
 
-Kirigami.ScrollablePage {
+FormCard.FormCardPage {
     id: root
-    title: ReservationManager.isEmpty() ? i18n("Welcome!") : i18n("Help")
+    title: i18n("Welcome!")
 
-    ColumnLayout {
-        Kirigami.Heading {
-            text: i18n("How to import data?")
-            Layout.fillWidth: true
-            wrapMode: Text.WordWrap
-        }
-        QQC2.Label {
-            Layout.fillWidth: true
-            text: i18n("<p>There's a number of ways to import data into KDE Itinerary:<ul><li>Directly opening PDF tickets or Apple Wallet passes.</li><li>From the Android calendar, for entries made via the KMail or Nextcloud Itinerary plugins, and synced using DAVx⁵.</li><li>Via KDE Connect from the KMail Itinerary plugin.</li><li>By scanning boarding pass barcodes and pasting their content.</li></p>")
-            wrapMode: Text.WordWrap
-        }
+    FormCard.FormHeader {
+        title: i18nc("@title:group", "Setup")
+    }
 
-        Kirigami.Heading {
-            text: i18n("Check the settings!")
-            Layout.fillWidth: true
-            wrapMode: Text.WordWrap
+    FormCard.FormCard {
+        CountryComboBoxDelegate {
+            text: i18n("Home Country")
+            model: Country.allCountries.map(c => c.alpha2).sort((lhs, rhs) => {
+                return Country.fromAlpha2(lhs).name.localeCompare(Country.fromAlpha2(rhs).name);
+            })
+            initialCountry: Settings.homeCountryIsoCode
+            onActivated: Settings.homeCountryIsoCode = currentValue
+            icon.name: "go-home-symbolic"
+            description: i18n("Select your home country for currency conversions and power plug compatibility warnings to work.")
         }
-        QQC2.Label {
-            Layout.fillWidth: true
-            text: i18n("KDE Itinerary has all features disabled by default that require online access, such as retrieving live traffic data or weather forecasts. You therefore might want to review these settings. While you are at it, you might want to configure your home location to enable the transfer assistant to automatically suggests ways to your next departure station or airport.")
-            wrapMode: Text.WordWrap
+        FormCard.FormDelegateSeparator {}
+        FormCard.FormSwitchDelegate {
+            text: i18n("Use online services")
+            description: i18n("KDE Itinerary has all features disabled by default that require online access, such as retrieving live traffic data or weather forecasts. You can enable all this here, or check the settings for much more finegrained control over which services to use.")
+            icon.name: "globe-symbolic"
+            onToggled: {
+                Settings.queryLiveData = checked;
+                Settings.weatherForecastEnabled = checked;
+                Settings.performCurrencyConversion = checked;
+                Settings.wikimediaOnlineContentEnabled = checked;
+                Settings.autoAddTransfers = checked;
+                Settings.autoFillTransfers = checked;
+
+                if (checked) {
+                    UnitConversion.syncCurrencyConversionTable();
+                }
+            }
         }
-        QQC2.Button {
+        FormCard.FormDelegateSeparator {}
+        FormCard.FormButtonDelegate {
             text: i18n("Settings…")
-            onClicked: applicationWindow().pageStack.layers.push(Qt.createComponent("org.kde.itinerary", "SettingsPage"))
+            description: i18n("Review the settings for more finegrained control over which online services to use.")
             icon.name: "settings-configure"
-            Layout.alignment: Qt.AlignCenter
+            onClicked: applicationWindow().pageStack.layers.push(Qt.createComponent("org.kde.itinerary", "SettingsPage"))
         }
+    }
 
-        Kirigami.Heading {
-            text: i18n("More information")
-            Layout.fillWidth: true
-            wrapMode: Text.WordWrap
+    FormCard.FormHeader {
+        title: i18nc("@title:group", "Permissions")
+    }
+    FormCard.FormCard {
+        id: permissionCard
+        property bool hasNotificationPermission: KNotification.NotificationPermission.checkPermission()
+        FormCard.FormButtonDelegate {
+            text: i18n("Request permissions…")
+            description: i18n("Additional permissions are required to show notifications.")
+            icon.name: "documentinfo"
+            icon.color: Kirigami.Theme.neutralTextColor
+            visible: !permissionCard.hasNotificationPermission
+            function permissionCallback(success) {
+                permissionCard.hasNotificationPermission = success;
+            }
+            onClicked: KNotification.NotificationPermission.requestPermission(permissionCallback)
         }
-        QQC2.Label {
-            Layout.fillWidth: true
-            text: i18n("For more information about KDE Itinerary check out the <a href=\"https://community.kde.org/KDE_PIM/KDE_Itinerary\">wiki page</a>.")
-            wrapMode: Text.WordWrap
-            onLinkActivated: Qt.openUrlExternally(link)
+        FormCard.FormTextDelegate {
+            text: i18n("Notification permissions are available")
+            description: i18n("No further action required.");
+            icon.name: "checkmark"
+            icon.color: Kirigami.Theme.positiveTextColor
+            visible: permissionCard.hasNotificationPermission
         }
+    }
 
+    FormCard.FormHeader {}
 
-        QQC2.Button {
-            text: i18n("Got it!")
+    FormCard.FormCard {
+        FormCard.FormButtonDelegate {
+            text: i18n("Done!")
+            icon.name: "dialog-ok"
             onClicked: applicationWindow().pageStack.goBack();
-            Layout.alignment: Qt.AlignRight
-            visible: ReservationManager.isEmpty()
         }
     }
 }

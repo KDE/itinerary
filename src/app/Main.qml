@@ -98,7 +98,7 @@ Kirigami.ApplicationWindow {
                 text: i18n("Help")
                 icon.name: "help-contents"
                 enabled: pageStack.layers.depth < 2
-                onTriggered: pageStack.layers.push(Qt.createComponent("org.kde.itinerary", "WelcomePage"))
+                onTriggered: Qt.openUrlExternally("https://community.kde.org/KDE_PIM/KDE_Itinerary")
             },
             Kirigami.Action {
                 id: aboutAction
@@ -232,7 +232,7 @@ Kirigami.ApplicationWindow {
 
     Component.onCompleted: {
         if (ReservationManager.isEmpty() && TripGroupManager.isEmpty()) {
-            pageStack.push(Qt.createComponent("org.kde.itinerary", "WelcomePage"));
+            pageStack.layers.push(Qt.createComponent("org.kde.itinerary", "WelcomePage"));
         }
 
         if (Settings.performCurrencyConversion) {
