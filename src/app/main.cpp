@@ -36,6 +36,7 @@
 #include "reservationhelper.h"
 #include "reservationmanager.h"
 #include "reservationonlinepostprocessor.h"
+#include "scamwarningmanager.h"
 #include "settings.h"
 #include "statisticsmodel.h"
 #include "statisticstimerangemodel.h"
@@ -133,6 +134,7 @@ static void registerApplicationSingletons()
     REGISTER_SINGLETON_GADGET_FACTORY(PermissionManager)
     REGISTER_SINGLETON_GADGET_FACTORY(PublicTransport)
     REGISTER_SINGLETON_GADGET_FACTORY(ReservationHelper)
+    REGISTER_SINGLETON_GADGET_FACTORY(ScamWarningManager)
     REGISTER_SINGLETON_GADGET_FACTORY(UnitConversion)
     REGISTER_SINGLETON_GADGET_FACTORY(Util)
 }
@@ -290,6 +292,7 @@ int main(int argc, char **argv)
     TripGroupManager tripGroupMgr;
     tripGroupMgr.setReservationManager(&resMgr);
     TripGroupManagerInstance::instance = &tripGroupMgr;
+    QObject::connect(&tripGroupMgr, &TripGroupManager::tripGroupRemoved, &ScamWarningManager::tripRemoved);
 
     LiveDataManager liveDataMgr;
     liveDataMgr.setPkPassManager(&pkPassMgr);

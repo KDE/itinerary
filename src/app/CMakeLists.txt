@@ -54,6 +54,7 @@ target_sources(itinerary PRIVATE
     reservationhelper.cpp
     reservationmanager.cpp
     reservationonlinepostprocessor.cpp
+    scamwarningmanager.cpp
     settings.cpp
     statisticsmodel.cpp
     statisticstimerangemodel.cpp
@@ -182,6 +183,7 @@ ecm_add_qml_module(itinerary GENERATE_PLUGIN_SOURCE
         RestaurantDelegate.qml
         RestaurantEditor.qml
         RestaurantPage.qml
+        ScamWarningFormDelegate.qml
         SeatRowFormCard.qml
         SettingsPage.qml
         SheetDrawer.qml

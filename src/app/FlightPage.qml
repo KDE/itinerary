@@ -161,12 +161,12 @@ DetailsPage {
                 id: departureTimeDelegate
                 text: i18nc("flight departure", "Departure time")
                 description: Localizer.formatDateTime(reservationFor, "departureTime")
-                visible: reservationFor.departureTime > 0
+                visible: root.reservation.reservationFor.departureTime > 0
             }
             FormCard.FormTextDelegate {
                 text: i18nc("flight departure", "Departure date")
                 visible: !departureTimeDelegate.visible && text.length > 0
-                description: Localizer.formatDate(reservationFor, "departureDay")
+                description: Localizer.formatDate(root.reservation.reservationFor, "departureDay")
             }
 
             FormCard.FormDelegateSeparator { visible: departureAirportDelegate.visible }
@@ -175,11 +175,15 @@ DetailsPage {
                 id: departureAirportDelegate
 
                 text: i18n("Airport")
-                placeName: airportDisplayString(reservationFor.departureAirport)
+                placeName: airportDisplayString(root.reservation.reservationFor.departureAirport)
                 visible: description.length > 0
-                place: reservationFor.departureAirport
+                place: root.reservation.reservationFor.departureAirport
                 controller: root.controller
                 isRangeBegin: true
+            }
+            ScamWarningFormDelegate {
+                place: root.reservation.reservationFor.departureAirport
+                tripId: ApplicationController.contextTripGroupId
             }
 
             FormCard.FormDelegateSeparator { visible: departureTerminal.visible }
@@ -188,8 +192,8 @@ DetailsPage {
                 id: departureTerminal
 
                 text: i18n("Terminal")
-                description: reservationFor.departureTerminal
-                visible: reservationFor.departureTerminal.length > 0
+                description: root.reservation.reservationFor.departureTerminal
+                visible: root.reservation.reservationFor.departureTerminal.length > 0
             }
 
             FormCard.FormDelegateSeparator { visible: departureGate.visible }
@@ -198,8 +202,8 @@ DetailsPage {
                 id: departureGate
 
                 text: i18n("Gate")
-                description: reservationFor.departureGate
-                visible: reservationFor.departureGate.length > 0
+                description: root.reservation.reservationFor.departureGate
+                visible: root.reservation.reservationFor.departureGate.length > 0
             }
 
             FormCard.FormDelegateSeparator { visible: departureNotes.visible }
@@ -223,23 +227,27 @@ DetailsPage {
         FormCard.FormCard {
             FormCard.FormTextDelegate {
                 text: i18nc("flight arrival", "Arrival time")
-                description: Localizer.formatDateTime(reservationFor, "arrivalTime")
-                visible: reservationFor.arrivalTime > 0
+                description: Localizer.formatDateTime(root.reservation.reservationFor, "arrivalTime")
+                visible: root.reservation.reservationFor.arrivalTime > 0
             }
 
             FormCard.FormDelegateSeparator {
-                visible: reservationFor.arrivalTime > 0 && arrivalAirportDelegate.visible
+                visible: root.reservation.reservationFor.arrivalTime > 0 && arrivalAirportDelegate.visible
             }
 
             FormPlaceDelegate {
                 id: arrivalAirportDelegate
 
                 text: i18n("Airport")
-                placeName: airportDisplayString(reservationFor.arrivalAirport)
+                placeName: airportDisplayString(root.reservation.reservationFor.arrivalAirport)
                 visible: text.length > 0
-                place: reservationFor.arrivalAirport
+                place: root.reservation.reservationFor.arrivalAirport
                 controller: root.controller
                 isRangeEnd: true
+            }
+            ScamWarningFormDelegate {
+                place: root.reservation.reservationFor.arrivalAirport
+                tripId: ApplicationController.contextTripGroupId
             }
 
             FormCard.FormDelegateSeparator { visible: arrivalTerminal.visible }
@@ -248,8 +256,8 @@ DetailsPage {
                 id: arrivalTerminal
 
                 text: i18n("Terminal")
-                description: reservationFor.arrivalTerminal
-                visible: reservationFor.arrivalTerminal.length > 0
+                description: root.reservation.reservationFor.arrivalTerminal
+                visible: root.reservation.reservationFor.arrivalTerminal.length > 0
             }
 
             FormCard.FormDelegateSeparator { visible: arrivalNotes.visible }
