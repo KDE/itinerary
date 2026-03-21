@@ -1757,6 +1757,7 @@
           <li xml:lang="ru">Основные элементы карты группы поездок не скрываются при малых масштабах.</li>
           <li xml:lang="sl">Ne skrivajte bistvenih elementov zemljevida skupin potovanj pri nizkih stopnjah povečave.</li>
           <li xml:lang="tr">Don't hide essential trip group map elements on low zoom levels.</li>
+          <li xml:lang="uk">Усунено приховування суттєвих елементів карти групової подорожі при низьких рівнях масштабування.</li>
           <li>Fix data corruption when live data updates would change the type of a reservation.</li>
           <li xml:lang="ar">إصلاح فساد البيانات عندما تؤدي تحديثات البيانات المباشرة إلى تغيير نوع الحجز.</li>
           <li xml:lang="ca">Corregeix la corrupció de dades quan les actualitzacions de dades en viu canviarien el tipus d'una reserva.</li>
@@ -1770,6 +1771,7 @@
           <li xml:lang="ru">Исправлена ошибка повреждения данных при изменении типа бронирования в результате обновления актуальных данных.</li>
           <li xml:lang="sl">Popravljena je bila poškodba podatkov, ko so posodobitve podatkov v živo spremenile vrsto rezervacije.</li>
           <li xml:lang="tr">Fix data corruption when live data updates would change the type of a reservation.</li>
+          <li xml:lang="uk">Виправлено пошкодження даних в умовах, коли інтерактивні оновлення змінюють тип бронювання.</li>
           <li>Disable no longer available DB online import.</li>
           <li xml:lang="ar">تعطيل استيراد DB عبر الإنترنت الذي لم يعد متاحًا.</li>
           <li xml:lang="ca">Desactiva la importació en línia de DB que ja no està disponible.</li>
