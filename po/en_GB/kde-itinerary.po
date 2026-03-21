@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-18 00:45+0000\n"
+"POT-Creation-Date: 2026-03-21 00:45+0000\n"
 "PO-Revision-Date: 2024-11-16 12:52+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -2429,7 +2429,7 @@ msgid "Drive %1 (%2)"
 msgstr "Drive %1 (%2)"
 
 #: app/JourneySectionDelegate.qml:253 app/JourneySectionPage.qml:136
-#: app/StopoverFormDelegate.qml:151 app/VehicleLayoutPage.qml:177
+#: app/VehicleLayoutPage.qml:177
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
@@ -4193,7 +4193,7 @@ msgctxt "train/bus departure"
 msgid "Departure Information"
 msgstr "Developer information"
 
-#: app/StopoverDetailsPage.qml:93 app/StopoverFormDelegate.qml:98
+#: app/StopoverDetailsPage.qml:93
 #, fuzzy, kde-format
 #| msgid "From: %1"
 msgctxt "departure stop"

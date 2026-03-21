@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-18 00:45+0000\n"
+"POT-Creation-Date: 2026-03-21 00:45+0000\n"
 "PO-Revision-Date: 2025-06-22 11:38+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -2403,7 +2403,7 @@ msgid "Drive %1 (%2)"
 msgstr "Conducir %1 (%2)"
 
 #: app/JourneySectionDelegate.qml:253 app/JourneySectionPage.qml:136
-#: app/StopoverFormDelegate.qml:151 app/VehicleLayoutPage.qml:177
+#: app/VehicleLayoutPage.qml:177
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
@@ -4160,7 +4160,7 @@ msgctxt "train/bus departure"
 msgid "Departure Information"
 msgstr "Información de saída"
 
-#: app/StopoverDetailsPage.qml:93 app/StopoverFormDelegate.qml:98
+#: app/StopoverDetailsPage.qml:93
 #, kde-format
 msgctxt "departure stop"
 msgid "From %1"

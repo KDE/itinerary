@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-18 00:45+0000\n"
-"PO-Revision-Date: 2026-03-12 12:22+0100\n"
+"POT-Creation-Date: 2026-03-21 00:45+0000\n"
+"PO-Revision-Date: 2026-03-19 09:41+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -2348,7 +2348,7 @@ msgid "Drive %1 (%2)"
 msgstr "Trajet %1 (%2)"
 
 #: app/JourneySectionDelegate.qml:253 app/JourneySectionPage.qml:136
-#: app/StopoverFormDelegate.qml:151 app/VehicleLayoutPage.qml:177
+#: app/VehicleLayoutPage.qml:177
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
@@ -2565,6 +2565,8 @@ msgstr "Devise : %1 = %2"
 msgid ""
 "Leaving the EU roaming regulation area. Check your mobile data settings."
 msgstr ""
+"Vous êtes sur le point de quitter la zone de régulation de l'itinérance dans "
+"l'UE. Veuillez vérifier votre configuration concernant les données mobiles."
 
 #: app/locationinformation.cpp:127
 #, kde-format
@@ -4108,7 +4110,7 @@ msgctxt "train/bus departure"
 msgid "Departure Information"
 msgstr "Informations de départ"
 
-#: app/StopoverDetailsPage.qml:93 app/StopoverFormDelegate.qml:98
+#: app/StopoverDetailsPage.qml:93
 #, kde-format
 msgctxt "departure stop"
 msgid "From %1"
