@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-18 00:45+0000\n"
+"POT-Creation-Date: 2026-03-22 00:44+0000\n"
 "PO-Revision-Date: 2026-01-04 10:58+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -2344,7 +2344,7 @@ msgid "Drive %1 (%2)"
 msgstr "Gidatu %1 (%2)"
 
 #: app/JourneySectionDelegate.qml:253 app/JourneySectionPage.qml:136
-#: app/StopoverFormDelegate.qml:151 app/VehicleLayoutPage.qml:177
+#: app/VehicleLayoutPage.qml:177
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
@@ -2830,12 +2830,12 @@ msgctxt "@info:shell"
 msgid "Files or URLs to import."
 msgstr "Inportatu beharreko fitxategiak edo URLak."
 
-#: app/Main.qml:91 app/WelcomePage.qml:41
+#: app/Main.qml:91 app/WelcomePage.qml:53
 #, kde-format
 msgid "Settings…"
 msgstr "Ezarpenak…"
 
-#: app/Main.qml:98 app/WelcomePage.qml:16
+#: app/Main.qml:98
 #, kde-format
 msgid "Help"
 msgstr "Laguntza"
@@ -3230,7 +3230,7 @@ msgctxt "@title:group"
 msgid "Saved Locations"
 msgstr "Gordetako kokalekuak"
 
-#: app/MyDataPage.qml:113
+#: app/MyDataPage.qml:113 app/WelcomePage.qml:24
 #, kde-format
 msgid "Home Country"
 msgstr "Etxeko herrialdea"
@@ -3810,22 +3810,23 @@ msgstr "Konfiguratu jakinarazpenak…"
 msgid "Show notifications on lock screen"
 msgstr "Erakutsi jakinarazpenak giltzatutako pantailan"
 
-#: app/SettingsPage.qml:182 app/SettingsPage.qml:211
+#: app/SettingsPage.qml:182 app/SettingsPage.qml:211 app/WelcomePage.qml:67
 #, kde-format
 msgid "Request permissions…"
 msgstr "Eskatu baimenak…"
 
-#: app/SettingsPage.qml:183
+#: app/SettingsPage.qml:183 app/WelcomePage.qml:68
 #, kde-format
 msgid "Additional permissions are required to show notifications."
 msgstr "Baimen osagarriak behar dira jakinarazpenak erakusteko."
 
-#: app/SettingsPage.qml:193
+#: app/SettingsPage.qml:193 app/WelcomePage.qml:78
 #, kde-format
 msgid "Notification permissions are available"
 msgstr "Jakinarazpenen baimenak erabilgarri daude"
 
 #: app/SettingsPage.qml:194 app/SettingsPage.qml:236 app/SettingsPage.qml:314
+#: app/WelcomePage.qml:79
 #, kde-format
 msgid "No further action required."
 msgstr "Ez da beste ekintzarik behar."
@@ -4084,7 +4085,7 @@ msgctxt "train/bus departure"
 msgid "Departure Information"
 msgstr "Irteera informazioa"
 
-#: app/StopoverDetailsPage.qml:93 app/StopoverFormDelegate.qml:98
+#: app/StopoverDetailsPage.qml:93
 #, kde-format
 msgctxt "departure stop"
 msgid "From %1"
@@ -4866,41 +4867,39 @@ msgstr "%1 m/s"
 msgid "Welcome!"
 msgstr "Ongietorri!"
 
-#: app/WelcomePage.qml:20
+#: app/WelcomePage.qml:19
 #, kde-format
-msgid "How to import data?"
-msgstr "Datuak nola inportatu?"
-
-#: app/WelcomePage.qml:26
-#, kde-format
-msgid ""
-"<p>There's a number of ways to import data into KDE Itinerary:"
-"<ul><li>Directly opening PDF tickets or Apple Wallet passes.</li><li>From "
-"the Android calendar, for entries made via the KMail or Nextcloud Itinerary "
-"plugins, and synced using DAVx⁵.</li><li>Via KDE Connect from the KMail "
-"Itinerary plugin.</li><li>By scanning boarding pass barcodes and pasting "
-"their content.</li></p>"
+msgctxt "@title:group"
+msgid "Setup"
 msgstr ""
-"<p>KDE Itinerary-n datuak inportatzeko era ezberdinak daude: "
-"<ul><li>Zuzenean PDF txartelak edo Apple Wallet paseak irekiz.</"
-"li><li>Android-eko egutegitik, KMail edo Nextcloud-eko Itinerary pluginen "
-"bidez eginiko, eta DAVx⁵ bidez sinkronizatutako sarrerak.</li><li>KDE "
-"Connect bidez, KMail-eko Itinerary pluginetik.</li><li>Ontziratze-paseen "
-"barra-kodeak eskaneatu eta haien edukia itsatsiz.</li></p>"
 
 #: app/WelcomePage.qml:31
 #, kde-format
-msgid "Check the settings!"
-msgstr "Egiaztatu ezarpenak!"
+msgid ""
+"Select your home country for currency conversions and power plug "
+"compatibility warnings to work."
+msgstr ""
 
-#: app/WelcomePage.qml:37
-#, kde-format
+#: app/WelcomePage.qml:35
+#, fuzzy, kde-format
+#| msgid "Use insecure services"
+msgid "Use online services"
+msgstr "Erabili zerbitzu ez-seguruak"
+
+#: app/WelcomePage.qml:36
+#, fuzzy, kde-format
+#| msgid ""
+#| "KDE Itinerary has all features disabled by default that require online "
+#| "access, such as retrieving live traffic data or weather forecasts. You "
+#| "therefore might want to review these settings. While you are at it, you "
+#| "might want to configure your home location to enable the transfer "
+#| "assistant to automatically suggests ways to your next departure station "
+#| "or airport."
 msgid ""
 "KDE Itinerary has all features disabled by default that require online "
-"access, such as retrieving live traffic data or weather forecasts. You "
-"therefore might want to review these settings. While you are at it, you "
-"might want to configure your home location to enable the transfer assistant "
-"to automatically suggests ways to your next departure station or airport."
+"access, such as retrieving live traffic data or weather forecasts. You can "
+"enable all this here, or check the settings for much more finegrained "
+"control over which services to use."
 msgstr ""
 "«KDE Itinerary»k lerroko sarbidea behar duten eginbide guztiak era "
 "lehenetsian ezgaituta ditu, hala nola, trafikoaren zuzeneko datuak edo "
@@ -4910,24 +4909,24 @@ msgstr ""
 "zure hurrengo irteerako geltoki edo aireportura iristeko erak automatikoki "
 "gomendatu ditzan."
 
-#: app/WelcomePage.qml:48
-#, kde-format
-msgid "More information"
-msgstr "Informazio gehiago"
-
 #: app/WelcomePage.qml:54
 #, kde-format
 msgid ""
-"For more information about KDE Itinerary check out the <a href=\"https://"
-"community.kde.org/KDE_PIM/KDE_Itinerary\">wiki page</a>."
+"Review the settings for more finegrained control over which online services "
+"to use."
 msgstr ""
-"«KDE Itinerary»ri buruz informazio gehiago izateko begiratu <a href="
-"\"https://community.kde.org/KDE_PIM/KDE_Itinerary\">wiki orria</a>."
 
 #: app/WelcomePage.qml:61
+#, fuzzy, kde-format
+#| msgid "Version"
+msgctxt "@title:group"
+msgid "Permissions"
+msgstr "Bertsioa"
+
+#: app/WelcomePage.qml:90
 #, kde-format
-msgid "Got it!"
-msgstr "Ulertuta!"
+msgid "Done!"
+msgstr ""
 
 #: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:131
 #, kde-format
@@ -4954,6 +4953,40 @@ msgstr "Saiotik aterata"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 %3(e)tik %4(e)ra %5(e)an"
+
+#~ msgid "How to import data?"
+#~ msgstr "Datuak nola inportatu?"
+
+#~ msgid ""
+#~ "<p>There's a number of ways to import data into KDE Itinerary:"
+#~ "<ul><li>Directly opening PDF tickets or Apple Wallet passes.</li><li>From "
+#~ "the Android calendar, for entries made via the KMail or Nextcloud "
+#~ "Itinerary plugins, and synced using DAVx⁵.</li><li>Via KDE Connect from "
+#~ "the KMail Itinerary plugin.</li><li>By scanning boarding pass barcodes "
+#~ "and pasting their content.</li></p>"
+#~ msgstr ""
+#~ "<p>KDE Itinerary-n datuak inportatzeko era ezberdinak daude: "
+#~ "<ul><li>Zuzenean PDF txartelak edo Apple Wallet paseak irekiz.</"
+#~ "li><li>Android-eko egutegitik, KMail edo Nextcloud-eko Itinerary pluginen "
+#~ "bidez eginiko, eta DAVx⁵ bidez sinkronizatutako sarrerak.</li><li>KDE "
+#~ "Connect bidez, KMail-eko Itinerary pluginetik.</li><li>Ontziratze-paseen "
+#~ "barra-kodeak eskaneatu eta haien edukia itsatsiz.</li></p>"
+
+#~ msgid "Check the settings!"
+#~ msgstr "Egiaztatu ezarpenak!"
+
+#~ msgid "More information"
+#~ msgstr "Informazio gehiago"
+
+#~ msgid ""
+#~ "For more information about KDE Itinerary check out the <a href=\"https://"
+#~ "community.kde.org/KDE_PIM/KDE_Itinerary\">wiki page</a>."
+#~ msgstr ""
+#~ "«KDE Itinerary»ri buruz informazio gehiago izateko begiratu <a href="
+#~ "\"https://community.kde.org/KDE_PIM/KDE_Itinerary\">wiki orria</a>."
+
+#~ msgid "Got it!"
+#~ msgstr "Ulertuta!"
 
 #~ msgctxt "Bus stop platform"
 #~ msgid "Platform"
@@ -5576,9 +5609,6 @@ msgstr "%1%2 %3(e)tik %4(e)ra %5(e)an"
 
 #~ msgid "Application"
 #~ msgstr "Aplikazioa"
-
-#~ msgid "Version"
-#~ msgstr "Bertsioa"
 
 #~ msgid "Data providers: %1"
 #~ msgstr "Datu hornitzaileak: %1"

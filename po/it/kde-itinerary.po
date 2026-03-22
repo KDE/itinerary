@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-21 00:45+0000\n"
+"POT-Creation-Date: 2026-03-22 00:44+0000\n"
 "PO-Revision-Date: 2026-03-11 15:58+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -2819,12 +2819,12 @@ msgctxt "@info:shell"
 msgid "Files or URLs to import."
 msgstr "File o URL da importare."
 
-#: app/Main.qml:91 app/WelcomePage.qml:41
+#: app/Main.qml:91 app/WelcomePage.qml:53
 #, kde-format
 msgid "Settings…"
 msgstr "Impostazioni…"
 
-#: app/Main.qml:98 app/WelcomePage.qml:16
+#: app/Main.qml:98
 #, kde-format
 msgid "Help"
 msgstr "Aiuto"
@@ -3222,7 +3222,7 @@ msgctxt "@title:group"
 msgid "Saved Locations"
 msgstr "Posizioni salvate"
 
-#: app/MyDataPage.qml:113
+#: app/MyDataPage.qml:113 app/WelcomePage.qml:24
 #, kde-format
 msgid "Home Country"
 msgstr "Nazioni di origine"
@@ -3807,22 +3807,23 @@ msgstr "Configura le notifiche..."
 msgid "Show notifications on lock screen"
 msgstr "Mostra nelle notifiche sulla schermata di blocco"
 
-#: app/SettingsPage.qml:182 app/SettingsPage.qml:211
+#: app/SettingsPage.qml:182 app/SettingsPage.qml:211 app/WelcomePage.qml:67
 #, kde-format
 msgid "Request permissions…"
 msgstr "Richiedi i permessi…"
 
-#: app/SettingsPage.qml:183
+#: app/SettingsPage.qml:183 app/WelcomePage.qml:68
 #, kde-format
 msgid "Additional permissions are required to show notifications."
 msgstr "Per mostrare le notifiche sono necessari permessi aggiuntivi."
 
-#: app/SettingsPage.qml:193
+#: app/SettingsPage.qml:193 app/WelcomePage.qml:78
 #, kde-format
 msgid "Notification permissions are available"
 msgstr "Sono disponibili i permessi di notifica"
 
 #: app/SettingsPage.qml:194 app/SettingsPage.qml:236 app/SettingsPage.qml:314
+#: app/WelcomePage.qml:79
 #, kde-format
 msgid "No further action required."
 msgstr "Non sono necessarie ulteriori azioni."
@@ -4859,42 +4860,39 @@ msgstr "%1 m/s"
 msgid "Welcome!"
 msgstr "Benvenuto!"
 
-#: app/WelcomePage.qml:20
+#: app/WelcomePage.qml:19
 #, kde-format
-msgid "How to import data?"
-msgstr "Come importare i dati?"
-
-#: app/WelcomePage.qml:26
-#, kde-format
-msgid ""
-"<p>There's a number of ways to import data into KDE Itinerary:"
-"<ul><li>Directly opening PDF tickets or Apple Wallet passes.</li><li>From "
-"the Android calendar, for entries made via the KMail or Nextcloud Itinerary "
-"plugins, and synced using DAVx⁵.</li><li>Via KDE Connect from the KMail "
-"Itinerary plugin.</li><li>By scanning boarding pass barcodes and pasting "
-"their content.</li></p>"
+msgctxt "@title:group"
+msgid "Setup"
 msgstr ""
-"<p>Esistono diversi modi per importare i dati in KDE Itinerary:"
-"<ul><li>Apertura diretta di biglietti PDF o pass Apple Wallet.</li><li>Dal "
-"calendario Android, per voci create tramite le estensioni di KMail o "
-"Nextcloud Itinerary e sincronizzate utilizzando DAVx⁵.</li><li>Tramite KDE "
-"Connect dall'estensione Itinerary di KMail.</li><li>Eseguendo la scansione "
-"dei codici a barre della carta d'imbarco e incollandone il contenuto.</li></"
-"p>"
 
 #: app/WelcomePage.qml:31
 #, kde-format
-msgid "Check the settings!"
-msgstr "Controlla le impostazioni!"
+msgid ""
+"Select your home country for currency conversions and power plug "
+"compatibility warnings to work."
+msgstr ""
 
-#: app/WelcomePage.qml:37
-#, kde-format
+#: app/WelcomePage.qml:35
+#, fuzzy, kde-format
+#| msgid "Use insecure services"
+msgid "Use online services"
+msgstr "Utilizza servizi non sicuri"
+
+#: app/WelcomePage.qml:36
+#, fuzzy, kde-format
+#| msgid ""
+#| "KDE Itinerary has all features disabled by default that require online "
+#| "access, such as retrieving live traffic data or weather forecasts. You "
+#| "therefore might want to review these settings. While you are at it, you "
+#| "might want to configure your home location to enable the transfer "
+#| "assistant to automatically suggests ways to your next departure station "
+#| "or airport."
 msgid ""
 "KDE Itinerary has all features disabled by default that require online "
-"access, such as retrieving live traffic data or weather forecasts. You "
-"therefore might want to review these settings. While you are at it, you "
-"might want to configure your home location to enable the transfer assistant "
-"to automatically suggests ways to your next departure station or airport."
+"access, such as retrieving live traffic data or weather forecasts. You can "
+"enable all this here, or check the settings for much more finegrained "
+"control over which services to use."
 msgstr ""
 "KDE Itinerary ha tutte le funzionalità che richiedono accesso in linea "
 "disabilitate in modo predefinito, come il recupero dei dati di traffico in "
@@ -4903,24 +4901,24 @@ msgstr ""
 "casa per consentire all'assistente di trasferimento di suggerire "
 "automaticamente le strade per la prossima stazione o aeroporto di partenza."
 
-#: app/WelcomePage.qml:48
-#, kde-format
-msgid "More information"
-msgstr "Altre informazioni"
-
 #: app/WelcomePage.qml:54
 #, kde-format
 msgid ""
-"For more information about KDE Itinerary check out the <a href=\"https://"
-"community.kde.org/KDE_PIM/KDE_Itinerary\">wiki page</a>."
+"Review the settings for more finegrained control over which online services "
+"to use."
 msgstr ""
-"Per ulteriori informazioni su KDE Itinerary, visita la <a href=\"https://"
-"community.kde.org/KDE_PIM/KDE_Itinerary\">pagina del wiki</a>."
 
 #: app/WelcomePage.qml:61
+#, fuzzy, kde-format
+#| msgid "Version"
+msgctxt "@title:group"
+msgid "Permissions"
+msgstr "Versione"
+
+#: app/WelcomePage.qml:90
 #, kde-format
-msgid "Got it!"
-msgstr "Ricevuto!"
+msgid "Done!"
+msgstr ""
 
 #: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:131
 #, kde-format
@@ -4947,6 +4945,41 @@ msgstr "Sessione terminata"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 da %3 a %4 il %5"
+
+#~ msgid "How to import data?"
+#~ msgstr "Come importare i dati?"
+
+#~ msgid ""
+#~ "<p>There's a number of ways to import data into KDE Itinerary:"
+#~ "<ul><li>Directly opening PDF tickets or Apple Wallet passes.</li><li>From "
+#~ "the Android calendar, for entries made via the KMail or Nextcloud "
+#~ "Itinerary plugins, and synced using DAVx⁵.</li><li>Via KDE Connect from "
+#~ "the KMail Itinerary plugin.</li><li>By scanning boarding pass barcodes "
+#~ "and pasting their content.</li></p>"
+#~ msgstr ""
+#~ "<p>Esistono diversi modi per importare i dati in KDE Itinerary:"
+#~ "<ul><li>Apertura diretta di biglietti PDF o pass Apple Wallet.</"
+#~ "li><li>Dal calendario Android, per voci create tramite le estensioni di "
+#~ "KMail o Nextcloud Itinerary e sincronizzate utilizzando DAVx⁵.</"
+#~ "li><li>Tramite KDE Connect dall'estensione Itinerary di KMail.</"
+#~ "li><li>Eseguendo la scansione dei codici a barre della carta d'imbarco e "
+#~ "incollandone il contenuto.</li></p>"
+
+#~ msgid "Check the settings!"
+#~ msgstr "Controlla le impostazioni!"
+
+#~ msgid "More information"
+#~ msgstr "Altre informazioni"
+
+#~ msgid ""
+#~ "For more information about KDE Itinerary check out the <a href=\"https://"
+#~ "community.kde.org/KDE_PIM/KDE_Itinerary\">wiki page</a>."
+#~ msgstr ""
+#~ "Per ulteriori informazioni su KDE Itinerary, visita la <a href=\"https://"
+#~ "community.kde.org/KDE_PIM/KDE_Itinerary\">pagina del wiki</a>."
+
+#~ msgid "Got it!"
+#~ msgstr "Ricevuto!"
 
 #~ msgctxt "Bus stop platform"
 #~ msgid "Platform"
@@ -5557,9 +5590,6 @@ msgstr "%1%2 da %3 a %4 il %5"
 
 #~ msgid "Application"
 #~ msgstr "Applicazione"
-
-#~ msgid "Version"
-#~ msgstr "Versione"
 
 #~ msgid "Data providers: %1"
 #~ msgstr "Fornitori di dati: %1"

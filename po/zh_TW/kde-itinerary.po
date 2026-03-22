@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-21 00:45+0000\n"
+"POT-Creation-Date: 2026-03-22 00:44+0000\n"
 "PO-Revision-Date: 2024-11-28 16:26+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -2930,12 +2930,12 @@ msgctxt "@info:shell"
 msgid "Files or URLs to import."
 msgstr "要匯入的檔案或網址。"
 
-#: app/Main.qml:91 app/WelcomePage.qml:41
+#: app/Main.qml:91 app/WelcomePage.qml:53
 #, kde-format
 msgid "Settings…"
 msgstr "設定…"
 
-#: app/Main.qml:98 app/WelcomePage.qml:16
+#: app/Main.qml:98
 #, kde-format
 msgid "Help"
 msgstr "說明"
@@ -3306,7 +3306,7 @@ msgctxt "@title:group"
 msgid "Saved Locations"
 msgstr "最愛位置"
 
-#: app/MyDataPage.qml:113
+#: app/MyDataPage.qml:113 app/WelcomePage.qml:24
 #, kde-format
 msgid "Home Country"
 msgstr "母國"
@@ -3889,22 +3889,23 @@ msgstr "設定通知…"
 msgid "Show notifications on lock screen"
 msgstr "在鎖定螢幕上顯示通知"
 
-#: app/SettingsPage.qml:182 app/SettingsPage.qml:211
+#: app/SettingsPage.qml:182 app/SettingsPage.qml:211 app/WelcomePage.qml:67
 #, kde-format
 msgid "Request permissions…"
 msgstr "請求權限…"
 
-#: app/SettingsPage.qml:183
+#: app/SettingsPage.qml:183 app/WelcomePage.qml:68
 #, kde-format
 msgid "Additional permissions are required to show notifications."
 msgstr "需要額外權限才能顯示通知。"
 
-#: app/SettingsPage.qml:193
+#: app/SettingsPage.qml:193 app/WelcomePage.qml:78
 #, kde-format
 msgid "Notification permissions are available"
 msgstr "通知權限可用"
 
 #: app/SettingsPage.qml:194 app/SettingsPage.qml:236 app/SettingsPage.qml:314
+#: app/WelcomePage.qml:79
 #, kde-format
 msgid "No further action required."
 msgstr "不需要其他動作。"
@@ -4989,62 +4990,62 @@ msgstr "%1 m/s"
 msgid "Welcome!"
 msgstr "歡迎！"
 
-#: app/WelcomePage.qml:20
+#: app/WelcomePage.qml:19
 #, kde-format
-msgid "How to import data?"
-msgstr "如何匯入資料？"
-
-#: app/WelcomePage.qml:26
-#, kde-format
-msgid ""
-"<p>There's a number of ways to import data into KDE Itinerary:"
-"<ul><li>Directly opening PDF tickets or Apple Wallet passes.</li><li>From "
-"the Android calendar, for entries made via the KMail or Nextcloud Itinerary "
-"plugins, and synced using DAVx⁵.</li><li>Via KDE Connect from the KMail "
-"Itinerary plugin.</li><li>By scanning boarding pass barcodes and pasting "
-"their content.</li></p>"
+msgctxt "@title:group"
+msgid "Setup"
 msgstr ""
-"<p>有幾種方式可以匯入資料到 KDE 旅行計劃當中：<ul><li>直接開啟 PDF 票券或是 "
-"Apple 錢包的票卡。</li><li>從 Android 行事曆匯入透過 KMail 或是 Nextcloud 的"
-"行程外掛程式建立後用 DAVx⁵ 同步的項目。</li><li>透過 KDE Connect，從 KMail 的"
-"行程外掛程式匯入。</li><li>掃描登機證/登船證的條碼後貼上它們的內容。</li></p>"
 
 #: app/WelcomePage.qml:31
 #, kde-format
-msgid "Check the settings!"
-msgstr "查看設定！"
+msgid ""
+"Select your home country for currency conversions and power plug "
+"compatibility warnings to work."
+msgstr ""
 
-#: app/WelcomePage.qml:37
-#, kde-format
+#: app/WelcomePage.qml:35
+#, fuzzy, kde-format
+#| msgid "Use insecure services"
+msgid "Use online services"
+msgstr "使用不安全的服務"
+
+#: app/WelcomePage.qml:36
+#, fuzzy, kde-format
+#| msgid ""
+#| "KDE Itinerary has all features disabled by default that require online "
+#| "access, such as retrieving live traffic data or weather forecasts. You "
+#| "therefore might want to review these settings. While you are at it, you "
+#| "might want to configure your home location to enable the transfer "
+#| "assistant to automatically suggests ways to your next departure station "
+#| "or airport."
 msgid ""
 "KDE Itinerary has all features disabled by default that require online "
-"access, such as retrieving live traffic data or weather forecasts. You "
-"therefore might want to review these settings. While you are at it, you "
-"might want to configure your home location to enable the transfer assistant "
-"to automatically suggests ways to your next departure station or airport."
+"access, such as retrieving live traffic data or weather forecasts. You can "
+"enable all this here, or check the settings for much more finegrained "
+"control over which services to use."
 msgstr ""
 "《KDE 旅行計劃》預設停用所有需要線上存取的功能，例如即時的交通狀況資料或是天"
 "氣預報。您可能會想要審閱這些設定，看要啟用哪些。在設定的時候您也可以考慮設定"
 "家的位置來讓轉乘主力能自動建議到下一個出發車站或機場的路線。"
 
-#: app/WelcomePage.qml:48
-#, kde-format
-msgid "More information"
-msgstr "更多資訊"
-
 #: app/WelcomePage.qml:54
 #, kde-format
 msgid ""
-"For more information about KDE Itinerary check out the <a href=\"https://"
-"community.kde.org/KDE_PIM/KDE_Itinerary\">wiki page</a>."
+"Review the settings for more finegrained control over which online services "
+"to use."
 msgstr ""
-"更多關於《KDE 旅行計劃》的資訊請見<a href=\"https://community.kde.org/"
-"KDE_PIM/KDE_Itinerary\">維基頁面</a>。"
 
 #: app/WelcomePage.qml:61
+#, fuzzy, kde-format
+#| msgid "Request permissions…"
+msgctxt "@title:group"
+msgid "Permissions"
+msgstr "請求權限…"
+
+#: app/WelcomePage.qml:90
 #, kde-format
-msgid "Got it!"
-msgstr "了解！"
+msgid "Done!"
+msgstr ""
 
 #: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:131
 #, kde-format
@@ -5073,6 +5074,39 @@ msgstr "登出"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 從 %3 到 %4 於 %5"
+
+#~ msgid "How to import data?"
+#~ msgstr "如何匯入資料？"
+
+#~ msgid ""
+#~ "<p>There's a number of ways to import data into KDE Itinerary:"
+#~ "<ul><li>Directly opening PDF tickets or Apple Wallet passes.</li><li>From "
+#~ "the Android calendar, for entries made via the KMail or Nextcloud "
+#~ "Itinerary plugins, and synced using DAVx⁵.</li><li>Via KDE Connect from "
+#~ "the KMail Itinerary plugin.</li><li>By scanning boarding pass barcodes "
+#~ "and pasting their content.</li></p>"
+#~ msgstr ""
+#~ "<p>有幾種方式可以匯入資料到 KDE 旅行計劃當中：<ul><li>直接開啟 PDF 票券或"
+#~ "是 Apple 錢包的票卡。</li><li>從 Android 行事曆匯入透過 KMail 或是 "
+#~ "Nextcloud 的行程外掛程式建立後用 DAVx⁵ 同步的項目。</li><li>透過 KDE "
+#~ "Connect，從 KMail 的行程外掛程式匯入。</li><li>掃描登機證/登船證的條碼後貼"
+#~ "上它們的內容。</li></p>"
+
+#~ msgid "Check the settings!"
+#~ msgstr "查看設定！"
+
+#~ msgid "More information"
+#~ msgstr "更多資訊"
+
+#~ msgid ""
+#~ "For more information about KDE Itinerary check out the <a href=\"https://"
+#~ "community.kde.org/KDE_PIM/KDE_Itinerary\">wiki page</a>."
+#~ msgstr ""
+#~ "更多關於《KDE 旅行計劃》的資訊請見<a href=\"https://community.kde.org/"
+#~ "KDE_PIM/KDE_Itinerary\">維基頁面</a>。"
+
+#~ msgid "Got it!"
+#~ msgstr "了解！"
 
 #, fuzzy
 #~| msgid "Platform"
