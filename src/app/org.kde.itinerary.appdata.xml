@@ -2253,6 +2253,7 @@
           <li xml:lang="ru">Возможность создавать события или бронирования отелей из URL-адресов элементов OSM.</li>
           <li xml:lang="sl">Omogoča ustvarjanje dogodkov ali rezervacij hotelov iz URL-jev elementov OSM.</li>
           <li xml:lang="tr">Allow to create events or hotel reservations from OSM element URLs.</li>
+          <li xml:lang="uk">Уможливлено створення записів подій або бронювання готелів на основі адрес елементів OSM.</li>
           <li>Allow to show additional Wikimedia online content in the indoor map.</li>
           <li xml:lang="ar">السماح بعرض محتوى ويكيميديا إضافي عبر الإنترنت في الخريطة الداخلية.</li>
           <li xml:lang="ca">Permet mostrar contingut addicional de Wikimedia en línia al mapa d'interior.</li>
@@ -2266,6 +2267,7 @@
           <li xml:lang="ru">Возможность отображения дополнительного онлайн-контента Wikimedia на планах помещений.</li>
           <li xml:lang="sl">Omogoča prikaz dodatne spletne vsebine Wikimedia na notranjem zemljevidu.</li>
           <li xml:lang="tr">Allow to show additional Wikimedia online content in the indoor map.</li>
+          <li xml:lang="uk">Уможливлено показ додаткових інтернет-даних Wikimedia на карті приміщення.</li>
           <li>Trips can now be renamed.</li>
           <li xml:lang="ar">يمكن الآن إعادة تسمية الرحلات.</li>
           <li xml:lang="ca">Ara els viatges es poden canviar de nom.</li>
@@ -2279,6 +2281,7 @@
           <li xml:lang="ru">Поездки теперь можно переименовывать.</li>
           <li xml:lang="sl">Potovanja je zdaj mogoče preimenovati.</li>
           <li xml:lang="tr">Trips can now be renamed.</li>
+          <li xml:lang="uk">Уможливлено перейменування подорожей.</li>
         </ul>
       </description>
     </release>
@@ -2298,6 +2301,7 @@
           <li xml:lang="ru">Новые или улучшенные модули извлечения данных из проездных документов для 12go, Eurowings, hotels.com, Iberia, Georgian Railway, RegioJet, Snälltåget, TCDD и tobilet.pl.</li>
           <li xml:lang="sl">Novi ali izboljšani izvlečki potovalnih dokumentov za 12go, Eurowings, hotels.com, Iberia, Georgian Railway, RegioJet, Snälltåget, TCDD in tobilet.pl.</li>
           <li xml:lang="tr">New or improved travel document extractors for 12go, Eurowings, hotels.com, Iberia, Georgian Railway, RegioJet, Snälltåget, TCDD and tobilet.pl.</li>
+          <li xml:lang="uk">Нові або удосконалені засоби видобування даних з документів для 12go, Eurowings, hotels.com, Iberia, Georgian Railway, RegioJet, Snälltåget, TCDD і tobilet.pl.</li>
           <li>Fix reading/writing of all-day events to/from the Android system calendar.</li>
           <li xml:lang="ar">إصلاح قراءة/كتابة الفعاليات طوال اليوم من وإلى تقويم نظام أندرويد.</li>
           <li xml:lang="ca">Corregeix la lectura/escriptura d'esdeveniments de tot el dia a/des del calendari del sistema d'Android.</li>
@@ -2356,6 +2360,7 @@
           <li xml:lang="ru">Новые или улучшенные модули извлечения данных из проездных документов для Air Asia, Amadeus, Deutsche Bahn, Eurostar, Flixbus, Trenitalia.</li>
           <li xml:lang="sl">Novi ali izboljšani izvlečki potovalnih dokumentov za Air Asia, Amadeus, Deutsche Bahn, Eurostar, Flixbus, Trenitalia.</li>
           <li xml:lang="tr">New or improved travel document extractors for Air Asia, Amadeus, Deutsche Bahn, Eurostar, Flixbus, Trenitalia.</li>
+          <li xml:lang="uk">Нові або удосконалені засоби видобування даних з документів для Air Asia, Amadeus, Deutsche Bahn, Eurostar, Flixbus, Trenitalia.</li>
           <li>Fixed storing the arrival time when editing a ferry reservation.</li>
           <li xml:lang="ar">أُصلح تخزين وقت الوصول عند تحرير حجز عبارة.</li>
           <li xml:lang="ca">S'ha corregit l'emmagatzematge de l'hora d'arribada en editar una reserva de ferri.</li>
@@ -2427,6 +2432,7 @@
           <li xml:lang="ru">Новые или улучшенные модули извлечения данных из проездных документов для CFR, Eurostar, Indico, IRCTC, Lufthansa, Motel One, SNCB, SNCF, Ticketportal, Trenitalia и VDV eTickets. Добавлена поддержка данных общественного транспорта от Serbijavoz и Transitous.</li>
           <li xml:lang="sl">Novi ali izboljšani programi za ekstrakcijo potovalnih dokumentov za CFR, Eurostar, Indico, IRCTC, Lufthansa, Motel One, SNCB, SNCF, Ticketportal, Trenitalia in VDV eTickets. Dodana podpora za podatke o javnem prevozu od Serbijavoz in Transitous.</li>
           <li xml:lang="tr">New or improved travel document extractors for CFR, Eurostar, Indico, IRCTC, Lufthansa, Motel One, SNCB, SNCF, Ticketportal, Trenitalia and VDV eTickets. Added support for public transport data from Serbijavoz and Transitous.</li>
+          <li xml:lang="uk">Нові або удосконалені засоби видобування даних з документів для CFR, Eurostar, Indico, IRCTC, Lufthansa, Motel One, SNCB, SNCF, Ticketportal, Trenitalia і VDV eTickets. Додано підтримку даних щодо громадського транспорту від Serbijavoz і Transitous.</li>
           <li>Show more detailed train coach or vehicle feature information.</li>
           <li xml:lang="ar">عرض معلومات أكثر تفصيلًا عن ميزات عربة القطار أو المركبة.</li>
           <li xml:lang="ca">Mostra informació més detallada sobre les característiques del vagó de tren o del vehicle.</li>
@@ -2498,6 +2504,7 @@
           <li xml:lang="ru">Новые или улучшенные модули извлечения данных из проездных документов для Amsbus.cz, Eurostar, Finnair, Moongate, UK national railway и VR.</li>
           <li xml:lang="sl">Novi ali izboljšani programi za ekstrakcijo potovalnih dokumentov za Amsbus.cz, Eurostar, Finnair, Moongate, UK National Railway in VR.</li>
           <li xml:lang="tr">New or improved travel document extractors for Amsbus.cz, Eurostar, Finnair, Moongate, UK national railway and VR.</li>
+          <li xml:lang="uk">Нові або удосконалені засоби видобування даних з документів для Amsbus.cz, Eurostar, Finnair, Moongate, UK national railway і VR.</li>
           <li>Fix displaying public transport departure disruptions.</li>
           <li xml:lang="ar">إصلاح عرض تعطلات مغادرة النقل العام.</li>
           <li xml:lang="ca">Corregeix la visualització de les interrupcions de sortides de transport públic.</li>
@@ -2543,6 +2550,7 @@
           <li xml:lang="ru">Новые или улучшенные модули извлечения данных из проездных документов для Deutsche Bahn, Eckerö Line, European Sleeper, Eventim, Flibco, Leo Express, National Express, ÖBB, osmcal.org, Salzbergwerk, SNCF и ti.to.</li>
           <li xml:lang="sl">Novi ali izboljšani programi za ekstrakcijo potovalnih dokumentov za Deutsche Bahn, Eckerö Line, European Sleeper, Eventim, Flibco, Leo Express, National Express, ÖBB, osmcal.org, Salzbergwerk, SNCF in ti.to.</li>
           <li xml:lang="tr">New or improved travel document extractors for Deutsche Bahn, Eckerö Line, European Sleeper, Eventim, Flibco, Leo Express, National Express, ÖBB, osmcal.org, Salzbergwerk, SNCF and ti.to.</li>
+          <li xml:lang="uk">Нові або удосконалені засоби видобування даних з документів для Deutsche Bahn, Eckerö Line, European Sleeper, Eventim, Flibco, Leo Express, National Express, ÖBB, osmcal.org, Salzbergwerk, SNCF і ti.to.</li>
           <li>Filter implausible geo coder results on address editing.</li>
           <li xml:lang="ar">تصفية نتائج المرمز الجغرافي غير المنطقية عند تحرير العنوان.</li>
           <li xml:lang="ca">Filtra els resultats del codificador geo inversemblants a l'edició d'adreces.</li>
