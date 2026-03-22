@@ -49,6 +49,28 @@ private Q_SLOTS:
         QCOMPARE(ScamWarningManager::warnForPlace(HHN, u"trip-id-1"_s), true);
         QCOMPARE(ScamWarningManager::warnForPlace(NRN, u"trip-id-2"_s), false);
     }
+
+    void testPorts()
+    {
+        KItinerary::BoatTerminal tangerMed, algeciras;
+        tangerMed.setName(u"TANGER MED"_s);
+        algeciras.setName(u"Algeciras"_s);
+
+        QCOMPARE(ScamWarningManager::warnForPlace(algeciras, u"trip-id-1"_s), false);
+        QCOMPARE(ScamWarningManager::warnForPlace(tangerMed, u"trip-id-1"_s), true);
+
+        ScamWarningManager::ignorePlaceForTrip(tangerMed, u"trip-id-1"_s);
+        QCOMPARE(ScamWarningManager::warnForPlace(algeciras, u"trip-id-1"_s), false);
+        QCOMPARE(ScamWarningManager::warnForPlace(tangerMed, u"trip-id-1"_s), false);
+        QCOMPARE(ScamWarningManager::warnForPlace(tangerMed, u"trip-id-2"_s), true);
+
+        ScamWarningManager::tripRemoved(u"trip-id-1"_s);
+        QCOMPARE(ScamWarningManager::warnForPlace(tangerMed, u"trip-id-1"_s), true);
+
+        ScamWarningManager::ignorePlacePermanently(tangerMed);
+        QCOMPARE(ScamWarningManager::warnForPlace(tangerMed, u"trip-id-1"_s), false);
+        QCOMPARE(ScamWarningManager::warnForPlace(tangerMed, u"trip-id-2"_s), false);
+    }
 };
 
 QTEST_GUILESS_MAIN(ScamWarningTest)

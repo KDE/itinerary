@@ -100,7 +100,7 @@ DetailsPage {
         FormCard.FormCard {
             FormCard.FormTextDelegate {
                 text: i18n("Departure time")
-                description: Localizer.formatDateTime(reservationFor, "departureTime")
+                description: Localizer.formatDateTime(root.reservation.reservationFor, "departureTime")
             }
 
             FormCard.FormDelegateSeparator { visible: departureTerminal.visible }
@@ -109,10 +109,14 @@ DetailsPage {
                 id: departureTerminal
 
                 text: i18nc("Boat terminal", "Terminal")
-                placeName: reservationFor.departureBoatTerminal.name
-                place: reservationFor.departureBoatTerminal
+                placeName: root.reservation.reservationFor.departureBoatTerminal.name
+                place: root.reservation.reservationFor.departureBoatTerminal
                 controller: root.controller
                 isRangeBegin: true
+            }
+            ScamWarningFormDelegate {
+                place: root.reservation.reservationFor.departureBoatTerminal
+                tripId: ApplicationController.contextTripGroupId
             }
 
             FormCard.FormDelegateSeparator { visible: departureNotes.visible }
@@ -145,11 +149,15 @@ DetailsPage {
             FormPlaceDelegate {
                 id: arrivalTerminal
 
-                place: reservationFor.arrivalBoatTerminal
+                place: root.reservation.reservationFor.arrivalBoatTerminal
                 controller: root.controller
                 isRangeEnd: true
                 text: i18nc("Boat terminal", "Terminal")
-                placeName: reservationFor.arrivalBoatTerminal.name
+                placeName: root.reservation.reservationFor.arrivalBoatTerminal.name
+            }
+            ScamWarningFormDelegate {
+                place: root.reservation.reservationFor.arrivalBoatTerminal
+                tripId: ApplicationController.contextTripGroupId
             }
 
             FormCard.FormDelegateSeparator { visible: arrivalNotes.visible }

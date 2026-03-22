@@ -16,7 +16,12 @@ FormCard.FormTextDelegate {
     /** The current trip id. */
     property string tripId
 
-    text: i18n("This airport might not be quite where its name suggests it is.")
+    text: {
+        if (place.className === "Airport")
+            return i18n("This airport might not be quite where its name suggests it is.");
+        if (place.className === "BoatTerminal")
+            return i18n("This port might not be quite where its name suggests it is.");
+    }
 
     icon.name: "dialog-warning"
     background: FormCard.FormDelegateBackground {

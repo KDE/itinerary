@@ -33,6 +33,10 @@ static constexpr const QLatin1StringView scam_airports[] = {
     "NRN"_L1, // pretends to be in Düsseldorf
 };
 
+static constexpr const QLatin1StringView scam_ports[] = {
+    "Tanger Med"_L1, // pretends to be Tanger
+};
+
 bool ScamWarningManager::warnForPlace(const QVariant &place, const QString &tripId)
 {
     if (tripId.isEmpty()) {
@@ -48,6 +52,19 @@ bool ScamWarningManager::warnForPlace(const QVariant &place, const QString &trip
         return settings.value("ScamWarnings/Trips/"_L1 + tripId + "/Airports/IATA/"_L1 + iataCode, true).toBool()
             && settings.value("ScamWarnings/Airports/IATA/"_L1 + iataCode, true).toBool();
     }
+
+    if (JsonLd::isA<BoatTerminal>(place)) {
+        const auto name = place.value<BoatTerminal>().name();
+        if (name.isEmpty() || !std::binary_search(std::begin(scam_ports), std::end(scam_ports), name, [](auto &&lhs, auto &&rhs) {
+            return QString::compare(lhs, rhs, Qt::CaseInsensitive) < 0;
+        })) {
+            return false;
+        }
+        QSettings settings;
+        return settings.value("ScamWarnings/Trips/"_L1 + tripId + "/Port/Name/"_L1 + name, true).toBool()
+            && settings.value("ScamWarnings/Port/Name/"_L1 + name, true).toBool();
+    }
+
     return false;
 }
 
@@ -58,6 +75,10 @@ void ScamWarningManager::ignorePlaceForTrip(const QVariant &place, const QString
         const auto iataCode = place.value<Airport>().iataCode();
         settings.setValue("ScamWarnings/Trips/"_L1 + tripId + "/Airports/IATA/"_L1 + iataCode, false);
     }
+    else if (JsonLd::isA<BoatTerminal>(place)) {
+        const auto name = place.value<BoatTerminal>().name();
+        settings.setValue("ScamWarnings/Trips/"_L1 + tripId + "/Port/Name/"_L1 + name, false);
+    }
 }
 
 void ScamWarningManager::ignorePlacePermanently(const QVariant &place)
@@ -66,6 +87,10 @@ void ScamWarningManager::ignorePlacePermanently(const QVariant &place)
     if (JsonLd::isA<Airport>(place)) {
         const auto iataCode = place.value<Airport>().iataCode();
         settings.setValue("ScamWarnings/Airports/IATA/"_L1 + iataCode, false);
+    }
+    else if (JsonLd::isA<BoatTerminal>(place)) {
+        const auto name = place.value<BoatTerminal>().name();
+        settings.setValue("ScamWarnings/Port/Name/"_L1 + name, false);
     }
 }
 
