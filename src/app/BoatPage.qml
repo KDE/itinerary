@@ -136,7 +136,8 @@ DetailsPage {
         FormCard.FormCard {
             FormCard.FormTextDelegate {
                 text: i18n("Arrival time")
-                description: Localizer.formatDateTime(reservationFor, "arrivalTime")
+                description: Localizer.formatDateTime(root.reservation.reservationFor, "arrivalTime")
+                visible: root.reservation.reservationFor.arrivalTime > 0
             }
 
             FormCard.FormDelegateSeparator { visible: arrivalTerminal.visible }
