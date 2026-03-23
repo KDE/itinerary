@@ -2315,6 +2315,7 @@
           <li xml:lang="ru">Исправлено чтение и запись событий на весь день в системный календарь Android.</li>
           <li xml:lang="sl">Popravljeno branje/pisanje celodnevnih dogodkov v/iz sistemskega koledarja Android.</li>
           <li xml:lang="tr">Fix reading/writing of all-day events to/from the Android system calendar.</li>
+          <li xml:lang="uk">Виправлено читання/записування цілодобових подій до/з загальносистемного календаря Android.</li>
           <li>Fix permission issues when exporting to the Android calendar.</li>
           <li xml:lang="ar">إصلاح مشكلات الأذونات عند التصدير إلى تقويم أندرويد.</li>
           <li xml:lang="ca">Corregeix els problemes de permisos en exportar al calendari d'Android.</li>
@@ -2328,6 +2329,7 @@
           <li xml:lang="ru">Исправлены проблемы с разрешениями при экспорте в календарь Android.</li>
           <li xml:lang="sl">Popravljene težave z dovoljenji pri izvozu v koledar Android.</li>
           <li xml:lang="tr">Fix permission issues when exporting to the Android calendar.</li>
+          <li xml:lang="uk">Виправлено проблеми із правами доступу при експортуванні до календаря Android.</li>
           <li>Fix rendering of Apples Wallet passes without a barcode.</li>
           <li xml:lang="ar">إصلاح رندرة تصاريح Apple Wallet التي لا تحتوي على رمز شريطي.</li>
           <li xml:lang="ca">Corregeix la renderització dels passis d'Apple Wallet sense codi de barres.</li>
@@ -2341,6 +2343,7 @@
           <li xml:lang="ru">Исправлено отображение пропусков Apple Wallet без штрихкода.</li>
           <li xml:lang="sl">Popravljeno upodabljanje vozovnic Apple Wallet brez črtne kode.</li>
           <li xml:lang="tr">Fix rendering of Apples Wallet passes without a barcode.</li>
+          <li xml:lang="uk">Виправлено обробку паролів Apple Wallet без штрих-коду.</li>
         </ul>
       </description>
     </release>
@@ -2374,6 +2377,7 @@
           <li xml:lang="ru">Исправлено сохранение времени прибытия при редактировании бронирования парома.</li>
           <li xml:lang="sl">Popravljeno shranjevanje časa prihoda pri urejanju rezervacije trajekta.</li>
           <li xml:lang="tr">Fixed storing the arrival time when editing a ferry reservation.</li>
+          <li xml:lang="uk">Виправлено збереження часу прибуття при редагуванні резервувань квитків на поромах.</li>
           <li>Fixed notifications on Android.</li>
           <li xml:lang="ar">أُصلحت التنبيهات على أندرويد.</li>
           <li xml:lang="ca">S'han corregit les notificacions a l'Android.</li>
@@ -2387,6 +2391,7 @@
           <li xml:lang="ru">Исправлены уведомления в Android.</li>
           <li xml:lang="sl">Popravljena obvestila v sistemu Android.</li>
           <li xml:lang="tr">Fixed notifications on Android.</li>
+          <li xml:lang="uk">Виправлено сповіщення в Android.</li>
           <li>Improved automatic trip grouping.</li>
           <li xml:lang="ar">تحسين التجميع الآلي للرحلات.</li>
           <li xml:lang="ca">Millora de l'agrupació automàtica de viatges.</li>
@@ -2400,6 +2405,7 @@
           <li xml:lang="ru">Улучшена автоматическая группировка поездок.</li>
           <li xml:lang="sl">Izboljšano samodejno združevanje potovanj.</li>
           <li xml:lang="tr">Improved automatic trip grouping.</li>
+          <li xml:lang="uk">Удосконалено автоматичне групування подорожей.</li>
           <li>Fixed emojis not showing up in Flatpaks.</li>
           <li xml:lang="ar">أُصلح عدم ظهور الرموز التعبيرية في حزم Flatpak.</li>
           <li xml:lang="ca">S'han corregit els emojis que no apareixen en els Flatpaks.</li>
@@ -2413,6 +2419,7 @@
           <li xml:lang="ru">Исправлено отображение эмодзи в Flatpak.</li>
           <li xml:lang="sl">Popravljena napaka, da se čustvenčki niso prikazovali v Flatpaksih.</li>
           <li xml:lang="tr">Fixed emojis not showing up in Flatpaks.</li>
+          <li xml:lang="uk">Виправлено показ емоційок у Flatpak.</li>
         </ul>
       </description>
     </release>
@@ -2446,6 +2453,7 @@
           <li xml:lang="ru">Отображение более подробной информации о вагоне поезда или характеристиках транспортного средства.</li>
           <li xml:lang="sl">Prikažite podrobnejše informacije o lastnostih vagona ali vozila.</li>
           <li xml:lang="tr">Show more detailed train coach or vehicle feature information.</li>
+          <li xml:lang="uk">Реалізовано показ докладніших відомостей щодо місця у потягах та можливостей засобу пересування.</li>
           <li>Show per-coach occupancy information when available.</li>
           <li xml:lang="ar">عرض معلومات الإشغال لكل عربة عند توفرها.</li>
           <li xml:lang="ca">Mostra la informació d'ocupació per cotxe quan estigui disponible.</li>
