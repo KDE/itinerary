@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-22 00:44+0000\n"
-"PO-Revision-Date: 2026-03-18 11:04+0100\n"
+"POT-Creation-Date: 2026-03-23 00:44+0000\n"
+"PO-Revision-Date: 2026-03-22 09:26+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -427,7 +427,7 @@ msgctxt "boat terminal"
 msgid "Terminal"
 msgstr "Terminal"
 
-#: app/BoatEditor.qml:173 app/BoatPage.qml:133
+#: app/BoatEditor.qml:173 app/BoatPage.qml:137
 #, kde-format
 msgctxt "Boat arrival"
 msgid "Arrival"
@@ -465,31 +465,31 @@ msgstr "%1 a %2"
 msgid "Departure time"
 msgstr "Hora de sortida"
 
-#: app/BoatPage.qml:111 app/BoatPage.qml:150
+#: app/BoatPage.qml:111 app/BoatPage.qml:155
 #, kde-format
 msgctxt "Boat terminal"
 msgid "Terminal"
 msgstr "Terminal"
 
-#: app/BoatPage.qml:121 app/BoatPage.qml:157 app/BusPage.qml:158
-#: app/BusPage.qml:228 app/FlightPage.qml:208 app/FlightPage.qml:258
+#: app/BoatPage.qml:125 app/BoatPage.qml:166 app/BusPage.qml:158
+#: app/BusPage.qml:228 app/FlightPage.qml:212 app/FlightPage.qml:266
 #: app/TrainPage.qml:188 app/TrainPage.qml:273
 #, kde-format
 msgid "Additional information"
 msgstr "Informació addicional"
 
-#: app/BoatPage.qml:138 app/BusPage.qml:182 app/TrainPage.qml:216
+#: app/BoatPage.qml:142 app/BusPage.qml:182 app/TrainPage.qml:216
 #, kde-format
 msgid "Arrival time"
 msgstr "Hora d'arribada"
 
-#: app/BoatPage.qml:182 app/BusPage.qml:273 app/FlightPage.qml:287
+#: app/BoatPage.qml:191 app/BusPage.qml:273 app/FlightPage.qml:295
 #: app/TrainPage.qml:354
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternatives"
 
-#: app/BoatPage.qml:190 app/BusPage.qml:278 app/JourneySectionPage.qml:27
+#: app/BoatPage.qml:199 app/BusPage.qml:278 app/JourneySectionPage.qml:27
 #: app/TrainPage.qml:360
 #, kde-format
 msgid "Journey Details"
@@ -1211,7 +1211,7 @@ msgid "Departure"
 msgstr "Sortida"
 
 #: app/FlightEditor.qml:99 app/FlightEditor.qml:168 app/FlightPage.qml:177
-#: app/FlightPage.qml:237
+#: app/FlightPage.qml:241
 #, kde-format
 msgid "Airport"
 msgstr "Aeroport"
@@ -1356,23 +1356,23 @@ msgctxt "flight departure"
 msgid "Departure date"
 msgstr "Data de sortida"
 
-#: app/FlightPage.qml:190 app/FlightPage.qml:250
+#: app/FlightPage.qml:194 app/FlightPage.qml:258
 #, kde-format
 msgid "Terminal"
 msgstr "Terminal"
 
-#: app/FlightPage.qml:200
+#: app/FlightPage.qml:204
 #, kde-format
 msgid "Gate"
 msgstr "Porta"
 
-#: app/FlightPage.qml:220
+#: app/FlightPage.qml:224
 #, kde-format
 msgctxt "Flight arrival"
 msgid "Arrival"
 msgstr "Arribada"
 
-#: app/FlightPage.qml:225
+#: app/FlightPage.qml:229
 #, kde-format
 msgctxt "flight arrival"
 msgid "Arrival time"
@@ -1539,7 +1539,7 @@ msgstr "Comprova si hi ha actualitzacions"
 msgid "Save As…"
 msgstr "Desa com a…"
 
-#: app/gpxexport.cpp:33 app/main.cpp:211 app/Main.qml:20 app/Main.qml:77
+#: app/gpxexport.cpp:33 app/main.cpp:213 app/Main.qml:20 app/Main.qml:77
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -2621,23 +2621,23 @@ msgstr "Tipus M"
 msgid "Type N"
 msgstr "Tipus N"
 
-#: app/main.cpp:219
+#: app/main.cpp:221
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Assistent digital de viatges"
 
-#: app/main.cpp:220
+#: app/main.cpp:222
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "Copyright © La comunitat KDE"
 
-#: app/main.cpp:223
+#: app/main.cpp:225
 #, kde-format
 msgctxt "@info:credit"
 msgid "Wikidata"
 msgstr "Wikidata"
 
-#: app/main.cpp:223
+#: app/main.cpp:225
 #, kde-format
 msgctxt "@info:credit"
 msgid ""
@@ -2647,80 +2647,80 @@ msgstr ""
 "Proporciona diverses metadades com els noms de les estacions de tren, "
 "circulació per l'esquerra i la dreta i els tipus d'endolls elèctrics."
 
-#: app/main.cpp:224
+#: app/main.cpp:226
 #, kde-format
 msgctxt "@info:credit"
 msgid "OpenStreetMap"
 msgstr "OpenStreetMap"
 
-#: app/main.cpp:224
+#: app/main.cpp:226
 #, kde-format
 msgctxt "@info:credit"
 msgid "Provides both indoor and outdoor maps. ©OpenStreetMap contributors"
 msgstr ""
 "Proporciona mapes d'interiors i exteriors. ©OpenStreetMap col·laboradors"
 
-#: app/main.cpp:225
+#: app/main.cpp:227
 #, kde-format
 msgctxt "@info:credit"
 msgid "OpenSSL"
 msgstr "OpenSSL"
 
-#: app/main.cpp:225
+#: app/main.cpp:227
 #, kde-format
 msgctxt "@info:credit"
 msgid "Secure network interaction with TLS. © 1998-2018 The OpenSSL Project"
 msgstr "Interacció segura de xarxes amb TLS. © 1998-2018 The OpenSSL Project"
 
-#: app/main.cpp:226
+#: app/main.cpp:228
 #, kde-format
 msgctxt "@info:credit"
 msgid "ZXing"
 msgstr "ZXing"
 
-#: app/main.cpp:226
+#: app/main.cpp:228
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code scanning. © 2016 ZXing Authors, © 2016 Nu-book Inc."
 msgstr "Escaneig de codis QR. © 2016 ZXing Authors, © 2016 Nu-book Inc."
 
-#: app/main.cpp:227
+#: app/main.cpp:229
 #, kde-format
 msgctxt "@info:credit"
 msgid "Poppler"
 msgstr "Poppler"
 
-#: app/main.cpp:227
+#: app/main.cpp:229
 #, kde-format
 msgctxt "@info:credit"
 msgid "PDF parsing"
 msgstr "Anàlisi de PDF"
 
-#: app/main.cpp:230
+#: app/main.cpp:232
 #, kde-format
 msgctxt "@info:credit"
 msgid "MapLibre Native Qt"
 msgstr "MapLibre Native Qt"
 
-#: app/main.cpp:230 app/main.cpp:231
+#: app/main.cpp:232 app/main.cpp:233
 #, kde-format
 msgctxt "@info:credit"
 msgid "Copyright © MapLibre contributors."
 msgstr "Copyright © MapLibre contributors."
 
-#: app/main.cpp:231
+#: app/main.cpp:233
 #, kde-format
 msgctxt "@info:credit"
 msgid "MapLibre Native"
 msgstr "MapLibre Native"
 
-#: app/main.cpp:235
+#: app/main.cpp:237
 #, kde-format
 msgctxt "@info:credit"
 msgid "FreeType"
 msgstr "FreeType"
 
-#: app/main.cpp:235
+#: app/main.cpp:237
 #, kde-format
 msgctxt "@info:credit"
 msgid ""
@@ -2728,97 +2728,97 @@ msgid ""
 msgstr ""
 "Copyright (C) 2006-2020 de David Turner, Robert Wilhelm i Werner Lemberg."
 
-#: app/main.cpp:236
+#: app/main.cpp:238
 #, kde-format
 msgctxt "@info:credit"
 msgid "libintl lite"
 msgstr "libintl lite"
 
-#: app/main.cpp:236
+#: app/main.cpp:238
 #, kde-format
 msgctxt "@info:credit"
 msgid "Internalisation"
 msgstr "Internacionalització"
 
-#: app/main.cpp:239
+#: app/main.cpp:241
 #, kde-format
 msgctxt "@info:credit"
 msgid "libqrencode"
 msgstr "libqrencode"
 
-#: app/main.cpp:239
+#: app/main.cpp:241
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code Generation. © 2006-2018 Kentaro Fukuchi"
 msgstr "Generació de codis QR. © 2006-2018 Kentaro Fukuchi"
 
-#: app/main.cpp:240
+#: app/main.cpp:242
 #, kde-format
 msgctxt "@info:credit"
 msgid "libical"
 msgstr "libical"
 
-#: app/main.cpp:240
+#: app/main.cpp:242
 #, kde-format
 msgctxt "@info:credit"
 msgid "© The libical developers"
 msgstr "© The libical developers"
 
-#: app/main.cpp:241
+#: app/main.cpp:243
 #, kde-format
 msgctxt "@info:credit"
 msgid "libxml2"
 msgstr "libxml2"
 
-#: app/main.cpp:241
+#: app/main.cpp:243
 #, kde-format
 msgctxt "@info:credit"
 msgid "Copyright (C) 1998-2012 Daniel Veillard"
 msgstr "Copyright (C) 1998-2012 Daniel Veillard"
 
-#: app/main.cpp:244
+#: app/main.cpp:246
 #, kde-format
 msgctxt "@info:credit"
 msgid "libQuotient"
 msgstr "libQuotient"
 
-#: app/main.cpp:244
+#: app/main.cpp:246
 #, kde-format
 msgctxt "@info:credit"
 msgid "Matrix integration."
 msgstr "Integració de Matrix."
 
-#: app/main.cpp:245
+#: app/main.cpp:247
 #, kde-format
 msgctxt "@info:credit"
 msgid "QtKeychain"
 msgstr "QtKeychain"
 
-#: app/main.cpp:245
+#: app/main.cpp:247
 #, kde-format
 msgctxt "@info:credit"
 msgid "Secure password storage."
 msgstr "Emmagatzematge segur de contrasenyes."
 
-#: app/main.cpp:246
+#: app/main.cpp:248
 #, kde-format
 msgctxt "@info:credit"
 msgid "Olm"
 msgstr "Olm"
 
-#: app/main.cpp:246
+#: app/main.cpp:248
 #, kde-format
 msgctxt "@info:credit"
 msgid "Matrix crypto library."
 msgstr "Biblioteca criptogràfica de Matrix."
 
-#: app/main.cpp:254
+#: app/main.cpp:256
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Obre l'itinerari a la pàgina indicada"
 
-#: app/main.cpp:259
+#: app/main.cpp:261
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
@@ -3641,6 +3641,42 @@ msgstr "Hora final"
 #, kde-format
 msgid "Party size"
 msgstr "Mida del grup"
+
+#: app/ScamWarningFormDelegate.qml:21
+#, kde-format
+msgid "This airport might not be quite where its name suggests it is."
+msgstr ""
+
+#: app/ScamWarningFormDelegate.qml:23
+#, kde-format
+msgid "This port might not be quite where its name suggests it is."
+msgstr ""
+
+#: app/ScamWarningFormDelegate.qml:37
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Ignore warning"
+msgstr ""
+
+#: app/ScamWarningFormDelegate.qml:50
+#, kde-format
+msgid "Ignore Warning"
+msgstr ""
+
+#: app/ScamWarningFormDelegate.qml:51
+#, kde-format
+msgid "Do you want to ignore the warning permanently or for this trip only?"
+msgstr ""
+
+#: app/ScamWarningFormDelegate.qml:54
+#, kde-format
+msgid "Ignore permanently"
+msgstr ""
+
+#: app/ScamWarningFormDelegate.qml:63
+#, kde-format
+msgid "Ignore for this trip"
+msgstr ""
 
 #: app/SettingsPage.qml:20
 #, kde-format
@@ -4865,7 +4901,7 @@ msgstr "Us donem la benvinguda!"
 #, kde-format
 msgctxt "@title:group"
 msgid "Setup"
-msgstr ""
+msgstr "Configuració"
 
 #: app/WelcomePage.qml:31
 #, kde-format
@@ -4873,22 +4909,16 @@ msgid ""
 "Select your home country for currency conversions and power plug "
 "compatibility warnings to work."
 msgstr ""
+"Seleccioneu el vostre país d'origen per a les conversions de divises i els "
+"avisos de compatibilitat de funcionament dels endolls elèctrics."
 
 #: app/WelcomePage.qml:35
-#, fuzzy, kde-format
-#| msgid "Use insecure services"
+#, kde-format
 msgid "Use online services"
-msgstr "Usa serveis insegurs"
+msgstr "Usa serveis en línia"
 
 #: app/WelcomePage.qml:36
-#, fuzzy, kde-format
-#| msgid ""
-#| "KDE Itinerary has all features disabled by default that require online "
-#| "access, such as retrieving live traffic data or weather forecasts. You "
-#| "therefore might want to review these settings. While you are at it, you "
-#| "might want to configure your home location to enable the transfer "
-#| "assistant to automatically suggests ways to your next departure station "
-#| "or airport."
+#, kde-format
 msgid ""
 "KDE Itinerary has all features disabled by default that require online "
 "access, such as retrieving live traffic data or weather forecasts. You can "
@@ -4897,11 +4927,9 @@ msgid ""
 msgstr ""
 "De manera predeterminada, el KDE Itinerary té desactivades totes les "
 "funcionalitats que requereixen accés en línia, com la recuperació de dades "
-"de trànsit en línia o les previsions meteorològiques. Per tant, segurament "
-"voldreu revisar aquests paràmetres. Quan ho feu, podreu configurar la "
-"ubicació de la vostra llar per a activar l'assistent de transbords i que "
-"suggereixi automàticament els camins a la pròxima estació de sortida o a "
-"l'aeroport."
+"de trànsit en línia o les previsions meteorològiques. Podeu activar tot això "
+"aquí, o verificar els paràmetres per a un control molt més fi sobre quins "
+"serveis utilitzar."
 
 #: app/WelcomePage.qml:54
 #, kde-format
@@ -4909,18 +4937,19 @@ msgid ""
 "Review the settings for more finegrained control over which online services "
 "to use."
 msgstr ""
+"Reviseu els paràmetres per a un control molt més fi sobre quins serveis en "
+"línia utilitzar."
 
 #: app/WelcomePage.qml:61
-#, fuzzy, kde-format
-#| msgid "Request permissions…"
+#, kde-format
 msgctxt "@title:group"
 msgid "Permissions"
-msgstr "Sol·licita els permisos…"
+msgstr "Permisos"
 
 #: app/WelcomePage.qml:90
 #, kde-format
 msgid "Done!"
-msgstr ""
+msgstr "Fet!"
 
 #: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:131
 #, kde-format

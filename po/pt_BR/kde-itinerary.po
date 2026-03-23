@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-22 00:44+0000\n"
-"PO-Revision-Date: 2026-03-18 08:54-0300\n"
+"POT-Creation-Date: 2026-03-23 00:44+0000\n"
+"PO-Revision-Date: 2026-03-22 07:01-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -430,7 +430,7 @@ msgctxt "boat terminal"
 msgid "Terminal"
 msgstr "Terminal"
 
-#: app/BoatEditor.qml:173 app/BoatPage.qml:133
+#: app/BoatEditor.qml:173 app/BoatPage.qml:137
 #, kde-format
 msgctxt "Boat arrival"
 msgid "Arrival"
@@ -468,31 +468,31 @@ msgstr "%1 a %2"
 msgid "Departure time"
 msgstr "Hora de partida"
 
-#: app/BoatPage.qml:111 app/BoatPage.qml:150
+#: app/BoatPage.qml:111 app/BoatPage.qml:155
 #, kde-format
 msgctxt "Boat terminal"
 msgid "Terminal"
 msgstr "Terminal"
 
-#: app/BoatPage.qml:121 app/BoatPage.qml:157 app/BusPage.qml:158
-#: app/BusPage.qml:228 app/FlightPage.qml:208 app/FlightPage.qml:258
+#: app/BoatPage.qml:125 app/BoatPage.qml:166 app/BusPage.qml:158
+#: app/BusPage.qml:228 app/FlightPage.qml:212 app/FlightPage.qml:266
 #: app/TrainPage.qml:188 app/TrainPage.qml:273
 #, kde-format
 msgid "Additional information"
 msgstr "Informações adicionais"
 
-#: app/BoatPage.qml:138 app/BusPage.qml:182 app/TrainPage.qml:216
+#: app/BoatPage.qml:142 app/BusPage.qml:182 app/TrainPage.qml:216
 #, kde-format
 msgid "Arrival time"
 msgstr "Hora de chegada"
 
-#: app/BoatPage.qml:182 app/BusPage.qml:273 app/FlightPage.qml:287
+#: app/BoatPage.qml:191 app/BusPage.qml:273 app/FlightPage.qml:295
 #: app/TrainPage.qml:354
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternativas"
 
-#: app/BoatPage.qml:190 app/BusPage.qml:278 app/JourneySectionPage.qml:27
+#: app/BoatPage.qml:199 app/BusPage.qml:278 app/JourneySectionPage.qml:27
 #: app/TrainPage.qml:360
 #, kde-format
 msgid "Journey Details"
@@ -1214,7 +1214,7 @@ msgid "Departure"
 msgstr "Partida"
 
 #: app/FlightEditor.qml:99 app/FlightEditor.qml:168 app/FlightPage.qml:177
-#: app/FlightPage.qml:237
+#: app/FlightPage.qml:241
 #, kde-format
 msgid "Airport"
 msgstr "Aeroporto"
@@ -1359,23 +1359,23 @@ msgctxt "flight departure"
 msgid "Departure date"
 msgstr "Data de partida"
 
-#: app/FlightPage.qml:190 app/FlightPage.qml:250
+#: app/FlightPage.qml:194 app/FlightPage.qml:258
 #, kde-format
 msgid "Terminal"
 msgstr "Terminal"
 
-#: app/FlightPage.qml:200
+#: app/FlightPage.qml:204
 #, kde-format
 msgid "Gate"
 msgstr "Portão"
 
-#: app/FlightPage.qml:220
+#: app/FlightPage.qml:224
 #, kde-format
 msgctxt "Flight arrival"
 msgid "Arrival"
 msgstr "Chegada"
 
-#: app/FlightPage.qml:225
+#: app/FlightPage.qml:229
 #, kde-format
 msgctxt "flight arrival"
 msgid "Arrival time"
@@ -1542,7 +1542,7 @@ msgstr "Procurar atualizações"
 msgid "Save As…"
 msgstr "Salvar como…"
 
-#: app/gpxexport.cpp:33 app/main.cpp:211 app/Main.qml:20 app/Main.qml:77
+#: app/gpxexport.cpp:33 app/main.cpp:213 app/Main.qml:20 app/Main.qml:77
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -2622,23 +2622,23 @@ msgstr "Tipo M"
 msgid "Type N"
 msgstr "Tipo M"
 
-#: app/main.cpp:219
+#: app/main.cpp:221
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Assistente de viagens digital"
 
-#: app/main.cpp:220
+#: app/main.cpp:222
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "Copyright © A Comunidade KDE"
 
-#: app/main.cpp:223
+#: app/main.cpp:225
 #, kde-format
 msgctxt "@info:credit"
 msgid "Wikidata"
 msgstr "Wikidata"
 
-#: app/main.cpp:223
+#: app/main.cpp:225
 #, kde-format
 msgctxt "@info:credit"
 msgid ""
@@ -2648,79 +2648,79 @@ msgstr ""
 "Fornece vários metadados, como nomes de estações de trem, lado de condução e "
 "tipos de plugues de energia."
 
-#: app/main.cpp:224
+#: app/main.cpp:226
 #, kde-format
 msgctxt "@info:credit"
 msgid "OpenStreetMap"
 msgstr "OpenStreetMap"
 
-#: app/main.cpp:224
+#: app/main.cpp:226
 #, kde-format
 msgctxt "@info:credit"
 msgid "Provides both indoor and outdoor maps. ©OpenStreetMap contributors"
 msgstr "Fornece mapas internos e externos. Colaboradores do ©OpenStreetMap"
 
-#: app/main.cpp:225
+#: app/main.cpp:227
 #, kde-format
 msgctxt "@info:credit"
 msgid "OpenSSL"
 msgstr "OpenSSL"
 
-#: app/main.cpp:225
+#: app/main.cpp:227
 #, kde-format
 msgctxt "@info:credit"
 msgid "Secure network interaction with TLS. © 1998-2018 The OpenSSL Project"
 msgstr "Interação de rede segura com TLS. © 1998-2018 O Projeto OpenSSL"
 
-#: app/main.cpp:226
+#: app/main.cpp:228
 #, kde-format
 msgctxt "@info:credit"
 msgid "ZXing"
 msgstr "ZXing"
 
-#: app/main.cpp:226
+#: app/main.cpp:228
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code scanning. © 2016 ZXing Authors, © 2016 Nu-book Inc."
 msgstr "Leitura de código QR. © 2016 Autores do ZXing, © 2016 Nu-book Inc."
 
-#: app/main.cpp:227
+#: app/main.cpp:229
 #, kde-format
 msgctxt "@info:credit"
 msgid "Poppler"
 msgstr "Poppler"
 
-#: app/main.cpp:227
+#: app/main.cpp:229
 #, kde-format
 msgctxt "@info:credit"
 msgid "PDF parsing"
 msgstr "Análise de PDF"
 
-#: app/main.cpp:230
+#: app/main.cpp:232
 #, kde-format
 msgctxt "@info:credit"
 msgid "MapLibre Native Qt"
 msgstr "MapLibre Native Qt"
 
-#: app/main.cpp:230 app/main.cpp:231
+#: app/main.cpp:232 app/main.cpp:233
 #, kde-format
 msgctxt "@info:credit"
 msgid "Copyright © MapLibre contributors."
 msgstr "Direitos autorais © contribuidores do MapLibre."
 
-#: app/main.cpp:231
+#: app/main.cpp:233
 #, kde-format
 msgctxt "@info:credit"
 msgid "MapLibre Native"
 msgstr "MapLibre Native"
 
-#: app/main.cpp:235
+#: app/main.cpp:237
 #, kde-format
 msgctxt "@info:credit"
 msgid "FreeType"
 msgstr "FreeType"
 
-#: app/main.cpp:235
+#: app/main.cpp:237
 #, kde-format
 msgctxt "@info:credit"
 msgid ""
@@ -2728,97 +2728,97 @@ msgid ""
 msgstr ""
 "Copyright (C) 2006-2020 por David Turner, Robert Wilhelm e Werner Lemberg."
 
-#: app/main.cpp:236
+#: app/main.cpp:238
 #, kde-format
 msgctxt "@info:credit"
 msgid "libintl lite"
 msgstr "libintl lite"
 
-#: app/main.cpp:236
+#: app/main.cpp:238
 #, kde-format
 msgctxt "@info:credit"
 msgid "Internalisation"
 msgstr "Internalização"
 
-#: app/main.cpp:239
+#: app/main.cpp:241
 #, kde-format
 msgctxt "@info:credit"
 msgid "libqrencode"
 msgstr "libqrencode"
 
-#: app/main.cpp:239
+#: app/main.cpp:241
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code Generation. © 2006-2018 Kentaro Fukuchi"
 msgstr "Geração de código QR. © 2006-2018 Kentaro Fukuchi"
 
-#: app/main.cpp:240
+#: app/main.cpp:242
 #, kde-format
 msgctxt "@info:credit"
 msgid "libical"
 msgstr "libical"
 
-#: app/main.cpp:240
+#: app/main.cpp:242
 #, kde-format
 msgctxt "@info:credit"
 msgid "© The libical developers"
 msgstr "© Os desenvolvedores do libical"
 
-#: app/main.cpp:241
+#: app/main.cpp:243
 #, kde-format
 msgctxt "@info:credit"
 msgid "libxml2"
 msgstr "libxml2"
 
-#: app/main.cpp:241
+#: app/main.cpp:243
 #, kde-format
 msgctxt "@info:credit"
 msgid "Copyright (C) 1998-2012 Daniel Veillard"
 msgstr "Copyright (C) 1998-2012 Daniel Veillard"
 
-#: app/main.cpp:244
+#: app/main.cpp:246
 #, kde-format
 msgctxt "@info:credit"
 msgid "libQuotient"
 msgstr "libQuotient"
 
-#: app/main.cpp:244
+#: app/main.cpp:246
 #, kde-format
 msgctxt "@info:credit"
 msgid "Matrix integration."
 msgstr "Integração com a Matrix."
 
-#: app/main.cpp:245
+#: app/main.cpp:247
 #, kde-format
 msgctxt "@info:credit"
 msgid "QtKeychain"
 msgstr "QtKeychain"
 
-#: app/main.cpp:245
+#: app/main.cpp:247
 #, kde-format
 msgctxt "@info:credit"
 msgid "Secure password storage."
 msgstr "Armazenamento seguro de senhas."
 
-#: app/main.cpp:246
+#: app/main.cpp:248
 #, kde-format
 msgctxt "@info:credit"
 msgid "Olm"
 msgstr "Olm"
 
-#: app/main.cpp:246
+#: app/main.cpp:248
 #, kde-format
 msgctxt "@info:credit"
 msgid "Matrix crypto library."
 msgstr "Biblioteca de criptografia da Matrix."
 
-#: app/main.cpp:254
+#: app/main.cpp:256
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Abrir Itinerary na página fornecida"
 
-#: app/main.cpp:259
+#: app/main.cpp:261
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
@@ -3635,6 +3635,42 @@ msgstr "Hora final"
 #, kde-format
 msgid "Party size"
 msgstr "Quantidade de pessoas"
+
+#: app/ScamWarningFormDelegate.qml:21
+#, kde-format
+msgid "This airport might not be quite where its name suggests it is."
+msgstr ""
+
+#: app/ScamWarningFormDelegate.qml:23
+#, kde-format
+msgid "This port might not be quite where its name suggests it is."
+msgstr ""
+
+#: app/ScamWarningFormDelegate.qml:37
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Ignore warning"
+msgstr ""
+
+#: app/ScamWarningFormDelegate.qml:50
+#, kde-format
+msgid "Ignore Warning"
+msgstr ""
+
+#: app/ScamWarningFormDelegate.qml:51
+#, kde-format
+msgid "Do you want to ignore the warning permanently or for this trip only?"
+msgstr ""
+
+#: app/ScamWarningFormDelegate.qml:54
+#, kde-format
+msgid "Ignore permanently"
+msgstr ""
+
+#: app/ScamWarningFormDelegate.qml:63
+#, kde-format
+msgid "Ignore for this trip"
+msgstr ""
 
 #: app/SettingsPage.qml:20
 #, kde-format
@@ -4855,7 +4891,7 @@ msgstr "Bem-vindo!"
 #, kde-format
 msgctxt "@title:group"
 msgid "Setup"
-msgstr ""
+msgstr "Configurar"
 
 #: app/WelcomePage.qml:31
 #, kde-format
@@ -4863,34 +4899,26 @@ msgid ""
 "Select your home country for currency conversions and power plug "
 "compatibility warnings to work."
 msgstr ""
+"Selecione seu país de origem para conversões de moeda e avisos de "
+"compatibilidade de tomadas elétricas."
 
 #: app/WelcomePage.qml:35
-#, fuzzy, kde-format
-#| msgid "Use insecure services"
+#, kde-format
 msgid "Use online services"
-msgstr "Usar serviços inseguros"
+msgstr "Usar serviços online"
 
 #: app/WelcomePage.qml:36
-#, fuzzy, kde-format
-#| msgid ""
-#| "KDE Itinerary has all features disabled by default that require online "
-#| "access, such as retrieving live traffic data or weather forecasts. You "
-#| "therefore might want to review these settings. While you are at it, you "
-#| "might want to configure your home location to enable the transfer "
-#| "assistant to automatically suggests ways to your next departure station "
-#| "or airport."
+#, kde-format
 msgid ""
 "KDE Itinerary has all features disabled by default that require online "
 "access, such as retrieving live traffic data or weather forecasts. You can "
 "enable all this here, or check the settings for much more finegrained "
 "control over which services to use."
 msgstr ""
-"O KDE Itinerary tem todos os recursos que necessitam acesso online "
-"desabilitados por padrão, como obter dados de tráfego ao vivo ou previsão "
-"meteorológica. Portanto, você pode querer revisar essas configurações. "
-"Enquanto estiver nisso, talvez você queira configurar o local de sua casa "
-"para permitir que o assistente de translado sugira automaticamente caminhos "
-"para sua próxima estação de partida ou aeroporto."
+"O KDE Itinerary tem todos os recursos que exigem acesso online desativados "
+"por padrão, como a obtenção de dados de tráfego em tempo real ou previsões "
+"meteorológicas. Você pode ativar tudo isso aqui ou verificar as "
+"configurações para um controle muito mais preciso sobre quais serviços usar."
 
 #: app/WelcomePage.qml:54
 #, kde-format
@@ -4898,18 +4926,19 @@ msgid ""
 "Review the settings for more finegrained control over which online services "
 "to use."
 msgstr ""
+"Analise as configurações para um controle mais preciso sobre quais serviços "
+"online utilizar."
 
 #: app/WelcomePage.qml:61
-#, fuzzy, kde-format
-#| msgid "Version"
+#, kde-format
 msgctxt "@title:group"
 msgid "Permissions"
-msgstr "Versão"
+msgstr "Permissões"
 
 #: app/WelcomePage.qml:90
 #, kde-format
 msgid "Done!"
-msgstr ""
+msgstr "Pronto!"
 
 #: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:131
 #, kde-format
