@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-24 00:45+0000\n"
+"POT-Creation-Date: 2026-03-23 02:34+0000\n"
 "PO-Revision-Date: 2026-01-09 17:13+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -467,13 +467,13 @@ msgstr "%1 אל %2"
 msgid "Departure time"
 msgstr "זמן היציאה"
 
-#: app/BoatPage.qml:111 app/BoatPage.qml:150
+#: app/BoatPage.qml:111 app/BoatPage.qml:151
 #, kde-format
 msgctxt "Boat terminal"
 msgid "Terminal"
 msgstr "מסוף"
 
-#: app/BoatPage.qml:121 app/BoatPage.qml:157 app/BusPage.qml:158
+#: app/BoatPage.qml:121 app/BoatPage.qml:158 app/BusPage.qml:158
 #: app/BusPage.qml:228 app/FlightPage.qml:208 app/FlightPage.qml:258
 #: app/TrainPage.qml:188 app/TrainPage.qml:273
 #, kde-format
@@ -485,13 +485,13 @@ msgstr "פרטים נוספים"
 msgid "Arrival time"
 msgstr "זמן ההגעה"
 
-#: app/BoatPage.qml:182 app/BusPage.qml:273 app/FlightPage.qml:287
+#: app/BoatPage.qml:183 app/BusPage.qml:273 app/FlightPage.qml:287
 #: app/TrainPage.qml:354
 #, kde-format
 msgid "Alternatives"
 msgstr "חלופות"
 
-#: app/BoatPage.qml:190 app/BusPage.qml:278 app/JourneySectionPage.qml:27
+#: app/BoatPage.qml:191 app/BusPage.qml:278 app/JourneySectionPage.qml:27
 #: app/TrainPage.qml:360
 #, kde-format
 msgid "Journey Details"
