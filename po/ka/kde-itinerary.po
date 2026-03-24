@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-23 00:44+0000\n"
-"PO-Revision-Date: 2026-03-18 03:13+0100\n"
+"PO-Revision-Date: 2026-03-23 03:16+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -3618,38 +3618,39 @@ msgstr "წვეულების ზომა"
 #: app/ScamWarningFormDelegate.qml:21
 #, kde-format
 msgid "This airport might not be quite where its name suggests it is."
-msgstr ""
+msgstr "ეს აეროპორტი, შეიძლება, სულაც არ იყოს იქ, სადაც მისი სახელი მიუთითებს."
 
 #: app/ScamWarningFormDelegate.qml:23
 #, kde-format
 msgid "This port might not be quite where its name suggests it is."
-msgstr ""
+msgstr "ეს პორტი, შეიძლება, სულაც არ იყოს იქ, სადაც მისი სახელი მიუთითებს."
 
 #: app/ScamWarningFormDelegate.qml:37
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Ignore warning"
-msgstr ""
+msgstr "გაფრთხილების უგულებელყოფა"
 
 #: app/ScamWarningFormDelegate.qml:50
 #, kde-format
 msgid "Ignore Warning"
-msgstr ""
+msgstr "გაფრთხილების უგულებელყოფა"
 
 #: app/ScamWarningFormDelegate.qml:51
 #, kde-format
 msgid "Do you want to ignore the warning permanently or for this trip only?"
 msgstr ""
+"გნებავთ ამ გაფრთხილების სამუდამოდ იგნორი, თუ, მხოლოდ, ამ მოგზაურობისთვის?"
 
 #: app/ScamWarningFormDelegate.qml:54
 #, kde-format
 msgid "Ignore permanently"
-msgstr ""
+msgstr "სამუდამოდ იგნორი"
 
 #: app/ScamWarningFormDelegate.qml:63
 #, kde-format
 msgid "Ignore for this trip"
-msgstr ""
+msgstr "იგნორი ამ მოგზაურობისთვის"
 
 #: app/SettingsPage.qml:20
 #, kde-format
@@ -4869,7 +4870,7 @@ msgstr "მოგესალმებით!"
 #, kde-format
 msgctxt "@title:group"
 msgid "Setup"
-msgstr ""
+msgstr "მორგება"
 
 #: app/WelcomePage.qml:31
 #, kde-format
@@ -4877,22 +4878,16 @@ msgid ""
 "Select your home country for currency conversions and power plug "
 "compatibility warnings to work."
 msgstr ""
+"აირჩიეთ თქვენი მშობლიური ქვეყანა, რომ ვალუტის გადაყვანამ და დამტენის ჩანგლის "
+"თავსებადობის შემოწმებამ იმუშაოს."
 
 #: app/WelcomePage.qml:35
-#, fuzzy, kde-format
-#| msgid "Use insecure services"
+#, kde-format
 msgid "Use online services"
-msgstr "დაუცველი სერვისების გამოყენება"
+msgstr "ინტერნეტსერვისების გამოყენება"
 
 #: app/WelcomePage.qml:36
-#, fuzzy, kde-format
-#| msgid ""
-#| "KDE Itinerary has all features disabled by default that require online "
-#| "access, such as retrieving live traffic data or weather forecasts. You "
-#| "therefore might want to review these settings. While you are at it, you "
-#| "might want to configure your home location to enable the transfer "
-#| "assistant to automatically suggests ways to your next departure station "
-#| "or airport."
+#, kde-format
 msgid ""
 "KDE Itinerary has all features disabled by default that require online "
 "access, such as retrieving live traffic data or weather forecasts. You can "
@@ -4911,18 +4906,19 @@ msgid ""
 "Review the settings for more finegrained control over which online services "
 "to use."
 msgstr ""
+"გადახედეთ პარამეტრებს უფრო ზუსტი კონტროლისთვის, რომელ ინტერნეტსერვისები "
+"გამოიყენება."
 
 #: app/WelcomePage.qml:61
-#, fuzzy, kde-format
-#| msgid "Version"
+#, kde-format
 msgctxt "@title:group"
 msgid "Permissions"
-msgstr "ვერსია"
+msgstr "წვდომები"
 
 #: app/WelcomePage.qml:90
 #, kde-format
 msgid "Done!"
-msgstr ""
+msgstr "მზადაა!"
 
 #: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:131
 #, kde-format

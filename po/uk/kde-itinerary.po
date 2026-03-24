@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-23 00:44+0000\n"
-"PO-Revision-Date: 2026-03-22 23:09+0200\n"
+"PO-Revision-Date: 2026-03-23 21:49+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -3648,37 +3648,41 @@ msgstr "Кількість учасників"
 #, kde-format
 msgid "This airport might not be quite where its name suggests it is."
 msgstr ""
+"Цей аеропорт може бути розташовано не зовсім там, де можна припускати за "
+"його назвою."
 
 #: app/ScamWarningFormDelegate.qml:23
 #, kde-format
 msgid "This port might not be quite where its name suggests it is."
 msgstr ""
+"Цей порт може бути розташовано не зовсім там, де можна припускати за його "
+"назвою."
 
 #: app/ScamWarningFormDelegate.qml:37
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Ignore warning"
-msgstr ""
+msgstr "Ігнорувати попередження"
 
 #: app/ScamWarningFormDelegate.qml:50
 #, kde-format
 msgid "Ignore Warning"
-msgstr ""
+msgstr "Ігнорувати попередження"
 
 #: app/ScamWarningFormDelegate.qml:51
 #, kde-format
 msgid "Do you want to ignore the warning permanently or for this trip only?"
-msgstr ""
+msgstr "Хочете ігнорувати це попередження завжди чи лише для цієї подорожі?"
 
 #: app/ScamWarningFormDelegate.qml:54
 #, kde-format
 msgid "Ignore permanently"
-msgstr ""
+msgstr "Нехтувати постійно"
 
 #: app/ScamWarningFormDelegate.qml:63
 #, kde-format
 msgid "Ignore for this trip"
-msgstr ""
+msgstr "Ігнорувати для цієї подорожі"
 
 #: app/SettingsPage.qml:20
 #, kde-format

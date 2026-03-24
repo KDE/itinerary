@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-23 00:44+0000\n"
-"PO-Revision-Date: 2026-03-22 15:53+0100\n"
+"PO-Revision-Date: 2026-03-23 16:25+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -3639,37 +3639,40 @@ msgstr "Grootte van gezelschap"
 #, kde-format
 msgid "This airport might not be quite where its name suggests it is."
 msgstr ""
+"Deze luchthaven zou niet niet kunnen zijn waar zijn naam suggereert dat het "
+"is."
 
 #: app/ScamWarningFormDelegate.qml:23
 #, kde-format
 msgid "This port might not be quite where its name suggests it is."
 msgstr ""
+"Deze haven zou niet niet kunnen zijn waar zijn naam suggereert dat het is."
 
 #: app/ScamWarningFormDelegate.qml:37
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Ignore warning"
-msgstr ""
+msgstr "Waarschuwing negeren"
 
 #: app/ScamWarningFormDelegate.qml:50
 #, kde-format
 msgid "Ignore Warning"
-msgstr ""
+msgstr "Waarschuwing negeren"
 
 #: app/ScamWarningFormDelegate.qml:51
 #, kde-format
 msgid "Do you want to ignore the warning permanently or for this trip only?"
-msgstr ""
+msgstr "Wilt u de waarschuwing permanent negeren of allen voor deze reis?"
 
 #: app/ScamWarningFormDelegate.qml:54
 #, kde-format
 msgid "Ignore permanently"
-msgstr ""
+msgstr "Permanent negeren"
 
 #: app/ScamWarningFormDelegate.qml:63
 #, kde-format
 msgid "Ignore for this trip"
-msgstr ""
+msgstr "Voor deze reis negeren"
 
 #: app/SettingsPage.qml:20
 #, kde-format

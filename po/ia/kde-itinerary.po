@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-23 00:44+0000\n"
-"PO-Revision-Date: 2026-03-18 10:41+0100\n"
+"PO-Revision-Date: 2026-03-23 17:00+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -4896,7 +4896,7 @@ msgstr "Benvenite!"
 #, kde-format
 msgctxt "@title:group"
 msgid "Setup"
-msgstr ""
+msgstr "Configura"
 
 #: app/WelcomePage.qml:31
 #, kde-format
@@ -4906,20 +4906,12 @@ msgid ""
 msgstr ""
 
 #: app/WelcomePage.qml:35
-#, fuzzy, kde-format
-#| msgid "Use insecure services"
+#, kde-format
 msgid "Use online services"
-msgstr "Usa servicios insecure"
+msgstr "Usa servicios in linea"
 
 #: app/WelcomePage.qml:36
-#, fuzzy, kde-format
-#| msgid ""
-#| "KDE Itinerary has all features disabled by default that require online "
-#| "access, such as retrieving live traffic data or weather forecasts. You "
-#| "therefore might want to review these settings. While you are at it, you "
-#| "might want to configure your home location to enable the transfer "
-#| "assistant to automatically suggests ways to your next departure station "
-#| "or airport."
+#, kde-format
 msgid ""
 "KDE Itinerary has all features disabled by default that require online "
 "access, such as retrieving live traffic data or weather forecasts. You can "
@@ -4928,10 +4920,8 @@ msgid ""
 msgstr ""
 "KDE Itinerary ha tote le characteristicas dishabilitate per definition que "
 "require accesso in linea, tal como recuperar datos de traffico actual o "
-"previsiones meteorologic. Tu ergo poterea voler revider iste preferentias. "
-"Durante que tu es a illo, tu poterea voler configurar tu location initial o "
-"de domo  per habilitar le assistente de transferentia a suggerer stratas a "
-"tu proxime station o aeroporto de partita."
+"previsiones meteorologic. Tu  pote habilitar toto isto hic, o verificar le "
+"preferentias per un controlo molto plus detaliate sur qual servicio usar. "
 
 #: app/WelcomePage.qml:54
 #, kde-format
@@ -4941,16 +4931,15 @@ msgid ""
 msgstr ""
 
 #: app/WelcomePage.qml:61
-#, fuzzy, kde-format
-#| msgid "Version"
+#, kde-format
 msgctxt "@title:group"
 msgid "Permissions"
-msgstr "Version"
+msgstr "Permissiones"
 
 #: app/WelcomePage.qml:90
 #, kde-format
 msgid "Done!"
-msgstr ""
+msgstr "Facite!"
 
 #: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:131
 #, kde-format
