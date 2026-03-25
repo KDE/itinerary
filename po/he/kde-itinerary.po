@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-23 00:44+0000\n"
-"PO-Revision-Date: 2026-03-20 08:13+0200\n"
+"PO-Revision-Date: 2026-03-24 21:00+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -2554,6 +2554,8 @@ msgstr "מטבע: %1 = %2"
 msgid ""
 "Leaving the EU roaming regulation area. Check your mobile data settings."
 msgstr ""
+"יצאת מאזור פיקוח נדידה באירופה. נא לבדוק שהגדרות תקשורת הנתונים הסלולרית "
+"תקינות."
 
 #: app/locationinformation.cpp:127
 #, kde-format
@@ -3607,38 +3609,38 @@ msgstr "כמות מוזמנים"
 #: app/ScamWarningFormDelegate.qml:21
 #, kde-format
 msgid "This airport might not be quite where its name suggests it is."
-msgstr ""
+msgstr "יכול להיות ששדה התעופה לא נמצא בדיוק איפה שהשם שלו מציע שהוא נמצא."
 
 #: app/ScamWarningFormDelegate.qml:23
 #, kde-format
 msgid "This port might not be quite where its name suggests it is."
-msgstr ""
+msgstr "יכול להיות שהנמל לא נמצא בדיוק איפה שהשם שלו מציע שהוא נמצא."
 
 #: app/ScamWarningFormDelegate.qml:37
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Ignore warning"
-msgstr ""
+msgstr "התעלמות מאזהרה"
 
 #: app/ScamWarningFormDelegate.qml:50
 #, kde-format
 msgid "Ignore Warning"
-msgstr ""
+msgstr "התעלמות מאזהרה"
 
 #: app/ScamWarningFormDelegate.qml:51
 #, kde-format
 msgid "Do you want to ignore the warning permanently or for this trip only?"
-msgstr ""
+msgstr "להתעלם מהאזהרה לצמיתות או לנסיעה הזאת בלבד?"
 
 #: app/ScamWarningFormDelegate.qml:54
 #, kde-format
 msgid "Ignore permanently"
-msgstr ""
+msgstr "להתעלם לצמיתות"
 
 #: app/ScamWarningFormDelegate.qml:63
 #, kde-format
 msgid "Ignore for this trip"
-msgstr ""
+msgstr "להתעלם לנסיעה הזאת"
 
 #: app/SettingsPage.qml:20
 #, kde-format
@@ -4858,7 +4860,7 @@ msgstr "ברוך בואך!"
 #, kde-format
 msgctxt "@title:group"
 msgid "Setup"
-msgstr ""
+msgstr "הגדרה"
 
 #: app/WelcomePage.qml:31
 #, kde-format
@@ -4866,22 +4868,15 @@ msgid ""
 "Select your home country for currency conversions and power plug "
 "compatibility warnings to work."
 msgstr ""
+"יש לבחור את מדינת הבית שלך כדי שהמרת מטבעות ואזהרות תאימות שקעים יעבדו."
 
 #: app/WelcomePage.qml:35
-#, fuzzy, kde-format
-#| msgid "Use insecure services"
+#, kde-format
 msgid "Use online services"
-msgstr "להשתמש בשירותים מפוקפקים"
+msgstr "להשתמש בשירותים מקוונים"
 
 #: app/WelcomePage.qml:36
-#, fuzzy, kde-format
-#| msgid ""
-#| "KDE Itinerary has all features disabled by default that require online "
-#| "access, such as retrieving live traffic data or weather forecasts. You "
-#| "therefore might want to review these settings. While you are at it, you "
-#| "might want to configure your home location to enable the transfer "
-#| "assistant to automatically suggests ways to your next departure station "
-#| "or airport."
+#, kde-format
 msgid ""
 "KDE Itinerary has all features disabled by default that require online "
 "access, such as retrieving live traffic data or weather forecasts. You can "
@@ -4889,9 +4884,8 @@ msgid ""
 "control over which services to use."
 msgstr ""
 "ב־KDE Itinerary כל היכולות שדורשות גישה לאינטרנט כבויות כברירת מחדל, למשל, "
-"משיכת נתוני תנועה או תשקיפי מזג אוויר בזמן אמת. לכן, כדאי לסקור את ההגדרות "
-"האלו. תוך כדי, כדאי גם להגדיר את מקום הבית שלך כדי להפעיל מסייע החלפות כדי "
-"להציע דרכים לתחנת היציאה או נמל התעופה הבאים שלך אוטומטית."
+"משיכת נתוני תנועה או תשקיפי מזג אוויר בזמן אמת. אפשר להפעיל את כולם דרך כאן "
+"או לבחון את ההגדרות כדי לכוון אותן באופן מדויק יותר."
 
 #: app/WelcomePage.qml:54
 #, kde-format
@@ -4899,18 +4893,18 @@ msgid ""
 "Review the settings for more finegrained control over which online services "
 "to use."
 msgstr ""
+"יש לבדוק את ההגדרות כדי לשלוט בצורה מדויקת יותר באילו שירותים מקוונים להשתמש."
 
 #: app/WelcomePage.qml:61
-#, fuzzy, kde-format
-#| msgid "Request permissions…"
+#, kde-format
 msgctxt "@title:group"
 msgid "Permissions"
-msgstr "בקשת הרשאות…"
+msgstr "הרשאות"
 
 #: app/WelcomePage.qml:90
 #, kde-format
 msgid "Done!"
-msgstr ""
+msgstr "בוצע!"
 
 #: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:131
 #, kde-format
