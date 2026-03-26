@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-23 00:44+0000\n"
-"PO-Revision-Date: 2026-03-11 15:58+0100\n"
+"PO-Revision-Date: 2026-03-24 07:47+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -2548,6 +2548,8 @@ msgstr "Valuta: %1 = %2"
 msgid ""
 "Leaving the EU roaming regulation area. Check your mobile data settings."
 msgstr ""
+"Stai uscendo dall'area di roaming dell'UE. Verifica le impostazioni dei tuoi "
+"dati mobili."
 
 #: app/locationinformation.cpp:127
 #, kde-format
@@ -2847,10 +2849,9 @@ msgid "Matrix Session Verification"
 msgstr "Verifica della sessione Matrix"
 
 #: app/MapStopoverInfoSheetDrawer.qml:85
-#, fuzzy, kde-format
-#| msgid "Occupancy:"
+#, kde-format
 msgid "Occupancy"
-msgstr "Occupazione:"
+msgstr "Occupazione"
 
 #: app/MapStopoverInfoSheetDrawer.qml:112 app/StopoverDetailsPage.qml:124
 #, kde-format
@@ -3645,37 +3646,41 @@ msgstr "Dimensione del gruppo"
 #, kde-format
 msgid "This airport might not be quite where its name suggests it is."
 msgstr ""
+"Questo aeroporto potrebbe non trovarsi esattamente dove il suo nome "
+"suggerisce."
 
 #: app/ScamWarningFormDelegate.qml:23
 #, kde-format
 msgid "This port might not be quite where its name suggests it is."
 msgstr ""
+"Questo porto potrebbe non trovarsi esattamente dove il suo nome suggerisce."
 
 #: app/ScamWarningFormDelegate.qml:37
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Ignore warning"
-msgstr ""
+msgstr "Ignora l'avviso"
 
 #: app/ScamWarningFormDelegate.qml:50
 #, kde-format
 msgid "Ignore Warning"
-msgstr ""
+msgstr "Ignora avviso"
 
 #: app/ScamWarningFormDelegate.qml:51
 #, kde-format
 msgid "Do you want to ignore the warning permanently or for this trip only?"
 msgstr ""
+"Desideri ignorare l'avviso in modo permanente o solo per questo viaggio?"
 
 #: app/ScamWarningFormDelegate.qml:54
 #, kde-format
 msgid "Ignore permanently"
-msgstr ""
+msgstr "Ignora definitivamente"
 
 #: app/ScamWarningFormDelegate.qml:63
 #, kde-format
 msgid "Ignore for this trip"
-msgstr ""
+msgstr "Ignora per questo viaggio"
 
 #: app/SettingsPage.qml:20
 #, kde-format
@@ -4900,7 +4905,7 @@ msgstr "Benvenuto!"
 #, kde-format
 msgctxt "@title:group"
 msgid "Setup"
-msgstr ""
+msgstr "Configurazione"
 
 #: app/WelcomePage.qml:31
 #, kde-format
@@ -4908,22 +4913,16 @@ msgid ""
 "Select your home country for currency conversions and power plug "
 "compatibility warnings to work."
 msgstr ""
+"Seleziona il tuo paese di residenza per visualizzare le conversioni di "
+"valuta e gli avvisi di compatibilità della spina elettrica."
 
 #: app/WelcomePage.qml:35
-#, fuzzy, kde-format
-#| msgid "Use insecure services"
+#, kde-format
 msgid "Use online services"
-msgstr "Utilizza servizi non sicuri"
+msgstr "Utilizza i servizi in linea"
 
 #: app/WelcomePage.qml:36
-#, fuzzy, kde-format
-#| msgid ""
-#| "KDE Itinerary has all features disabled by default that require online "
-#| "access, such as retrieving live traffic data or weather forecasts. You "
-#| "therefore might want to review these settings. While you are at it, you "
-#| "might want to configure your home location to enable the transfer "
-#| "assistant to automatically suggests ways to your next departure station "
-#| "or airport."
+#, kde-format
 msgid ""
 "KDE Itinerary has all features disabled by default that require online "
 "access, such as retrieving live traffic data or weather forecasts. You can "
@@ -4932,10 +4931,9 @@ msgid ""
 msgstr ""
 "KDE Itinerary ha tutte le funzionalità che richiedono accesso in linea "
 "disabilitate in modo predefinito, come il recupero dei dati di traffico in "
-"tempo reale o le previsioni meteo. Potresti quindi voler rivedere queste "
-"impostazioni. Nel frattempo, potresti voler configurare la tua posizione di "
-"casa per consentire all'assistente di trasferimento di suggerire "
-"automaticamente le strade per la prossima stazione o aeroporto di partenza."
+"tempo reale o le previsioni meteo. Qui puoi abilitare tutto questo, oppure "
+"puoi consultare le impostazioni per un controllo molto più preciso sui "
+"servizi da utilizzare."
 
 #: app/WelcomePage.qml:54
 #, kde-format
@@ -4943,18 +4941,19 @@ msgid ""
 "Review the settings for more finegrained control over which online services "
 "to use."
 msgstr ""
+"Esamina le impostazioni per un controllo più preciso sui servizi in linea da "
+"utilizzare."
 
 #: app/WelcomePage.qml:61
-#, fuzzy, kde-format
-#| msgid "Version"
+#, kde-format
 msgctxt "@title:group"
 msgid "Permissions"
-msgstr "Versione"
+msgstr "Permessi"
 
 #: app/WelcomePage.qml:90
 #, kde-format
 msgid "Done!"
-msgstr ""
+msgstr "Fatto!"
 
 #: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:131
 #, kde-format

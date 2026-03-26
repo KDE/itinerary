@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-23 00:44+0000\n"
-"PO-Revision-Date: 2026-03-19 09:41+0100\n"
+"PO-Revision-Date: 2026-03-24 12:51+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -3664,37 +3664,40 @@ msgstr "Taille du groupe"
 #, kde-format
 msgid "This airport might not be quite where its name suggests it is."
 msgstr ""
+"Cet aéroport pourrait ne pas être exactement là comme son nom le suggère."
 
 #: app/ScamWarningFormDelegate.qml:23
 #, kde-format
 msgid "This port might not be quite where its name suggests it is."
-msgstr ""
+msgstr "Ce port pourrait ne pas être tout à fait là comme son nom le suggère."
 
 #: app/ScamWarningFormDelegate.qml:37
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Ignore warning"
-msgstr ""
+msgstr "Ignorer l'avertissement"
 
 #: app/ScamWarningFormDelegate.qml:50
 #, kde-format
 msgid "Ignore Warning"
-msgstr ""
+msgstr "Ignorer l'avertissement"
 
 #: app/ScamWarningFormDelegate.qml:51
 #, kde-format
 msgid "Do you want to ignore the warning permanently or for this trip only?"
 msgstr ""
+"Voulez-vous ignorer l'avertissement définitivement ou seulement pour ce "
+"voyage ?"
 
 #: app/ScamWarningFormDelegate.qml:54
 #, kde-format
 msgid "Ignore permanently"
-msgstr ""
+msgstr "Ignorer définitivement"
 
 #: app/ScamWarningFormDelegate.qml:63
 #, kde-format
 msgid "Ignore for this trip"
-msgstr ""
+msgstr "Ignorer pour ce voyage"
 
 #: app/SettingsPage.qml:20
 #, kde-format
@@ -4935,7 +4938,7 @@ msgstr "Bienvenue !"
 #, kde-format
 msgctxt "@title:group"
 msgid "Setup"
-msgstr ""
+msgstr "Configuration"
 
 #: app/WelcomePage.qml:31
 #, kde-format
@@ -4943,22 +4946,17 @@ msgid ""
 "Select your home country for currency conversions and power plug "
 "compatibility warnings to work."
 msgstr ""
+"Veuillez sélectionner votre pays d'origine pour que les conversions de "
+"devises et les avertissements sur la compatibilité des prises électriques "
+"fonctionnent."
 
 #: app/WelcomePage.qml:35
-#, fuzzy, kde-format
-#| msgid "Use insecure services"
+#, kde-format
 msgid "Use online services"
-msgstr "Utiliser des services non sécurisés"
+msgstr "Utiliser des services en ligne"
 
 #: app/WelcomePage.qml:36
-#, fuzzy, kde-format
-#| msgid ""
-#| "KDE Itinerary has all features disabled by default that require online "
-#| "access, such as retrieving live traffic data or weather forecasts. You "
-#| "therefore might want to review these settings. While you are at it, you "
-#| "might want to configure your home location to enable the transfer "
-#| "assistant to automatically suggests ways to your next departure station "
-#| "or airport."
+#, kde-format
 msgid ""
 "KDE Itinerary has all features disabled by default that require online "
 "access, such as retrieving live traffic data or weather forecasts. You can "
@@ -4966,12 +4964,10 @@ msgid ""
 "control over which services to use."
 msgstr ""
 "Par défaut, toutes les fonctionnalités de KDE Itinerary nécessitant un accès "
-"en ligne sont désactivées : données de trafic en temps réel ou prévisions "
-"météorologiques. Vous souhaiterez éventuellement vérifier ces paramètres. "
-"Vous pourrez également configurer l'emplacement de votre domicile afin de "
-"permettre à l'assistant de correspondances de vous suggérer automatiquement "
-"le meilleur moyen de vous rendre à la prochaine gare ou au prochain aéroport "
-"de départ."
+"en ligne sont désactivées, comme le chargement des données de trafic en "
+"temps réel ou prévisions météorologiques. Vous pouvez éventuellement toutes "
+"les activées ici ou vérifier la configuration pour un contrôle plus fin des "
+"services à utiliser."
 
 #: app/WelcomePage.qml:54
 #, kde-format
@@ -4979,18 +4975,19 @@ msgid ""
 "Review the settings for more finegrained control over which online services "
 "to use."
 msgstr ""
+"Veuillez vérifier la configuration pour un contrôle plus précis sur les "
+"services en ligne à utiliser."
 
 #: app/WelcomePage.qml:61
-#, fuzzy, kde-format
-#| msgid "Version"
+#, kde-format
 msgctxt "@title:group"
 msgid "Permissions"
-msgstr "Version"
+msgstr "Permissions"
 
 #: app/WelcomePage.qml:90
 #, kde-format
 msgid "Done!"
-msgstr ""
+msgstr "Terminé !"
 
 #: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:131
 #, kde-format
