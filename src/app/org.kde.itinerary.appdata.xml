@@ -1810,6 +1810,7 @@
           <li xml:lang="ru">Отключён более недоступный онлайн-импорт DB.</li>
           <li xml:lang="sl">Onemogočen je bil spletni uvoz podatkovne zbirke, ki ni več na voljo.</li>
           <li xml:lang="tr">Disable no longer available DB online import.</li>
+          <li xml:lang="uk">Вимкнено недоступне імпортування бази даних в інтернеті.</li>
         </ul>
       </description>
     </release>
@@ -1829,6 +1830,7 @@
           <li xml:lang="ru">Новые или улучшенные модули извлечения данных из проездных документов для American Airlines, Bilkom, Booking.com, CitizenM, Deutsche Bahn, Eurostar, Flixbus, KD, Koleo, Lufthansa, PKP, Polregio, SBB, Southwest, Universe.</li>
           <li xml:lang="sl">Novi in ​​izboljšani programi za izvlečenje potovalnih dokumentov za American Airlines, Bilkom, Booking.com, CitizenM, Deutsche Bahn, Eurostar, Flixbus, KD, Koleo, Lufthansa, PKP, Polregio, SBB, Southwest, Universe.</li>
           <li xml:lang="tr">New and improved travel document extractors for American Airlines, Bilkom, Booking.com, CitizenM, Deutsche Bahn, Eurostar, Flixbus, KD, Koleo, Lufthansa, PKP, Polregio, SBB, Southwest, Universe.</li>
+          <li xml:lang="uk">Нові або удосконалені засоби видобування даних з документів для American Airlines, Bilkom, Booking.com, CitizenM, Deutsche Bahn, Eurostar, Flixbus, KD, Koleo, Lufthansa, PKP, Polregio, SBB, Southwest, Universe.</li>
           <li>Fix public transport access for Deutsche Bahn (Germany), Digitransit (Finnland), Entur (Norway) and Rolph (Germany).</li>
           <li xml:lang="ar">إصلاح الوصول إلى النقل العام لكل من Deutsche Bahn (ألمانيا) و Digitransit (فنلندا) و Entur (النرويج) و Rolph (ألمانيا).</li>
           <li xml:lang="ca">Corregeix l'accés al transport públic per a Deutsche Bahn (Alemanya), Digitransit (Finlàndia), Entur (Noruega) i Rolph (Alemanya).</li>
@@ -1842,6 +1844,7 @@
           <li xml:lang="ru">Исправлен доступ к общественному транспорту для Deutsche Bahn (Германия), Digitransit (Финляндия), Entur (Норвегия) и Rolph (Германия).</li>
           <li xml:lang="sl">Popravljen dostop do javnega prevoza za Deutsche Bahn (Nemčija), Digitransit (Finska), Entur (Norveška) in Rolph (Nemčija).</li>
           <li xml:lang="tr">Fix public transport access for Deutsche Bahn (Germany), Digitransit (Finnland), Entur (Norway) and Rolph (Germany).</li>
+          <li xml:lang="uk">Виправлено доступ до даних громадського транспорту для Deutsche Bahn (Німеччина), Digitransit (Фінляндія), Entur (Норвегія) і Rolph (Німеччина).</li>
           <li>Allow transfers to favorite location independent of the next reservation.</li>
           <li xml:lang="ar">السماح بالانتقالات إلى الموقع المفضل بشكل مستقل عن الحجز التالي.</li>
           <li xml:lang="ca">Permet transferències a la ubicació preferida independentment de la reserva següent.</li>
@@ -1855,6 +1858,7 @@
           <li xml:lang="ru">Разрешены трансферы в избранное место независимо от следующего бронирования.</li>
           <li xml:lang="sl">Omogočen prevoz do priljubljene lokacije neodvisno od naslednje rezervacije.</li>
           <li xml:lang="tr">Allow transfers to favorite location independent of the next reservation.</li>
+          <li xml:lang="uk">Уможливлено переходи до бажаного місця незалежно від наступного бронювання.</li>
           <li>Fix importing passes or other things without an attached trip group.</li>
           <li xml:lang="ar">إصلاح استيراد التصاريح أو الأشياء الأخرى بدون مجموعة رحلات مرفقة.</li>
           <li xml:lang="ca">Corregeix la importació de passis o altres coses sense un grup de viatge adjunt.</li>
@@ -1868,6 +1872,7 @@
           <li xml:lang="ru">Исправлено импортирование пропусков и других элементов без привязанной группы поездки.</li>
           <li xml:lang="sl">Popravljen uvoz vozovnic ali drugih stvari brez priložene skupine potovanj.</li>
           <li xml:lang="tr">Fix importing passes or other things without an attached trip group.</li>
+          <li xml:lang="uk">Виправлено імпортування пропусків та інших речей без долучених даних групової подорожі.</li>
           <li>Fix deleting generic pkpass passes.</li>
           <li xml:lang="ar">إصلاح حذف تصاريح pkpass العامة.</li>
           <li xml:lang="ca">Corregeix la supressió de passis «pkpass» genèrics.</li>
@@ -1881,6 +1886,7 @@
           <li xml:lang="ru">Исправлено удаление обычных билетов pkpass.</li>
           <li xml:lang="sl">Popravljeno brisanje generičnih vozovnic pkpass.</li>
           <li xml:lang="tr">Fix deleting generic pkpass passes.</li>
+          <li xml:lang="uk">Виправлено вилучення загальних пропусків pkpass.</li>
         </ul>
       </description>
     </release>
@@ -1901,6 +1907,7 @@
           <li xml:lang="ru">Возможность добавления пересадок в большем количестве случаев.</li>
           <li xml:lang="sl">Omogočeno dodajanje prevozov v več primerih.</li>
           <li xml:lang="tr">Allow to add transfers in more cases.</li>
+          <li xml:lang="uk">Уможливлено додавання пересадок у більшій кількості випадків.</li>
           <li>Fix adding daylight saving time info elements in single trip group mode.</li>
           <li xml:lang="ar">إصلاح إضافة عناصر معلومات التوقيت الصيفي في وضع مجموعة الرحلة الواحدة.</li>
           <li xml:lang="ca">Corregeix l'addició d'elements d'informació d'hora d'estiu en el mode de grup de viatge individual.</li>
@@ -1914,6 +1921,7 @@
           <li xml:lang="ru">Исправлено добавление элементов информации о летнем времени в режиме одной группы поездок.</li>
           <li xml:lang="sl">Popravljeno dodajanje elementov informacij o poletnem času v načinu posamezne skupine potovanj.</li>
           <li xml:lang="tr">Fix adding daylight saving time info elements in single trip group mode.</li>
+          <li xml:lang="uk">Виправлено додавання елементів відомостей щодо літнього часу у режимі єдиної групової подорожі.</li>
           <li>Ignore cancelled elements when determining weather forecast length.</li>
           <li xml:lang="ar">تجاهل العناصر الملغاة عند تحديد طول توقعات الطقس.</li>
           <li xml:lang="ca">Ignora els elements cancel·lats en determinar la longitud de la previsió meteorològica.</li>
@@ -1927,6 +1935,7 @@
           <li xml:lang="ru">Игнорирование отменённых элементов при определении длительности прогноза погоды.</li>
           <li xml:lang="sl">Prezri preklicane elemente pri določanju dolžine vremenske napovedi.</li>
           <li xml:lang="tr">Ignore cancelled elements when determining weather forecast length.</li>
+          <li xml:lang="uk">Реалізовано ігнорування скасованих елементів при визначенні довжини прогнозу погоди.</li>
           <li>Override instead of merge destination names when applying new journeys.</li>
           <li xml:lang="ar">استبدال أسماء الوجهات بدلًا من دمجها عند تطبيق رحلات جديدة.</li>
           <li xml:lang="ca">Sobreescriu en lloc de fusionar els noms de destinació quan s'apliquen viatges nous.</li>
@@ -1940,6 +1949,7 @@
           <li xml:lang="ru">Переопределение имён пунктов назначения вместо объединения при применении новых маршрутов.</li>
           <li xml:lang="sl">Preglasi namesto združi imena ciljev pri uporabi novih potovanj.</li>
           <li xml:lang="tr">Override instead of merge destination names when applying new journeys.</li>
+          <li xml:lang="uk">Реалізовано перевизначення замість злиття назв пунктів призначення при застосуванні нових подорожей.</li>
           <li>Fix crash on importing health certificates.</li>
           <li xml:lang="ar">إصلاح انهيار عند استيراد الشهادات الصحية.</li>
           <li xml:lang="ca">Corregeix una fallada en importar certificats de salut.</li>
@@ -1953,6 +1963,7 @@
           <li xml:lang="ru">Исправлено падение при импорте справок о здоровье.</li>
           <li xml:lang="sl">Popravljen zrušitev pri uvozu zdravstvenih potrdil.</li>
           <li xml:lang="tr">Fix crash on importing health certificates.</li>
+          <li xml:lang="uk">Усунено аварійне завершення роботи при імпортування сертифікатів здоров'я.</li>
         </ul>
       </description>
     </release>
@@ -1990,6 +2001,7 @@
           <li xml:lang="ru">Новый вид карты маршрута.</li>
           <li xml:lang="sl">Nov pogled zemljevida potovanja.</li>
           <li xml:lang="tr">New trip map view.</li>
+          <li xml:lang="uk">Нова панель перегляду карти подорожі.</li>
           <li>New per-trip statistics.</li>
           <li xml:lang="ar">إحصاءات جديدة لكل رحلة.</li>
           <li xml:lang="ca">Estadístiques noves per viatge.</li>
@@ -2004,6 +2016,7 @@
           <li xml:lang="ru">Новая статистика по поездкам.</li>
           <li xml:lang="sl">Nova statistika na potovanje.</li>
           <li xml:lang="tr">New per-trip statistics.</li>
+          <li xml:lang="uk">Нова статистика для кожної подорожі.</li>
           <li>New or improved travel document extractor for Coloseum, Dimedis Fairmate, Droplabs, European Sleeper, Flixbus, Leo Express, SNCF.</li>
           <li xml:lang="ar">مستخرج مستندات سفر جديد أو محسّن لـ Coloseum و Dimedis Fairmate و Droplabs و European Sleeper و Flixbus و Leo Express و SNCF.</li>
           <li xml:lang="ca">Extractors nous o millorats de documents de viatge per a Coloseum, Dimedis Fairmate, Droplabs, European Sleeper, Flixbus, Leo Express, SNCF.</li>
@@ -2017,6 +2030,7 @@
           <li xml:lang="ru">Новые или улучшенные модули извлечения данных из проездных документов для Coloseum, Dimedis Fairmate, Droplabs, European Sleeper, Flixbus, Leo Express, SNCF.</li>
           <li xml:lang="sl">Nov ali izboljšan program za ekstrakcijo potovalnih dokumentov za Coloseum, Dimedis Fairmate, Droplabs, European Sleeper, Flixbus, Leo Express, SNCF.</li>
           <li xml:lang="tr">New or improved travel document extractor for Coloseum, Dimedis Fairmate, Droplabs, European Sleeper, Flixbus, Leo Express, SNCF.</li>
+          <li xml:lang="uk">Нові або удосконалені засоби видобування даних з документів для Coloseum, Dimedis Fairmate, Droplabs, European Sleeper, Flixbus, Leo Express, SNCF.</li>
           <li>Improved location search for public transport searches.</li>
           <li xml:lang="ar">تحسين البحث عن الموقع لعمليات البحث عن النقل العام.</li>
           <li xml:lang="ca">Millora de la cerca d'ubicació per a les cerques de transport públic.</li>
@@ -2030,6 +2044,7 @@
           <li xml:lang="ru">Улучшен поиск местоположений для поиска общественного транспорта.</li>
           <li xml:lang="sl">Izboljšano iskanje lokacije za iskanje javnega prevoza.</li>
           <li xml:lang="tr">Improved location search for public transport searches.</li>
+          <li xml:lang="uk">Удосконалено пошук місць для пошуків маршрутів громадського транспорту.</li>
         </ul>
       </description>
     </release>
@@ -2049,6 +2064,7 @@
           <li xml:lang="ru">Новые или улучшенные модули извлечения данных из проездных документов для Agoda, Booking.com, NS, planway.com, Renfe, VietJet Air и Государственных железных дорог Таиланда.</li>
           <li xml:lang="sl">Nov ali izboljšan program za ekstrakcijo potovalnih dokumentov za Agoda, Booking.com, NS, planway.com, Renfe, VietJet Air in tajske državne železnice.</li>
           <li xml:lang="tr">New or improved travel document extractor for Agoda, Booking.com, NS, planway.com, Renfe, VietJet Air and Thai state railways.</li>
+          <li xml:lang="uk">Нові або удосконалені засоби видобування даних з документів для Agoda, Booking.com, NS, planway.com, Renfe, VietJet Air і Державних тайських залізниць.</li>
           <li>Added support for NS onboard API.</li>
           <li xml:lang="ar">أُضيف دعم واجهة برمجة تطبيقات NS على المتن.</li>
           <li xml:lang="ca">S'ha afegit la implementació per a l'API a bord de NS.</li>
@@ -2062,6 +2078,7 @@
           <li xml:lang="ru">Добавлена поддержка бортового API NS.</li>
           <li xml:lang="sl">Dodana podpora za API na vozilu NS.</li>
           <li xml:lang="tr">Added support for NS onboard API.</li>
+          <li xml:lang="uk">Додано підтримку NS до посадкового програмного інтерфейсу.</li>
           <li>Fixed display of disrupted/canceled journeys.</li>
           <li xml:lang="ar">أُصلح عرض الرحلات المتعطلة أو الملغاة.</li>
           <li xml:lang="ca">S'ha corregit la visualització de viatges interromputs/cancel·lats.</li>
@@ -2075,6 +2092,7 @@
           <li xml:lang="ru">Исправлено отображение нарушенных и отменённых поездок.</li>
           <li xml:lang="sl">Popravljen prikaz prekinjenih/odpovedanih potovanj.</li>
           <li xml:lang="tr">Fixed display of disrupted/canceled journeys.</li>
+          <li xml:lang="uk">Виправлено показу перерваних або скасованих подорожей.</li>
         </ul>
       </description>
     </release>
@@ -2094,6 +2112,7 @@
           <li xml:lang="ru">Исправлена путаница с переводами на Android при многоязычной конфигурации.</li>
           <li xml:lang="sl">Popravljeni pomešani prevodi v sistemu Android z večjezično konfiguracijo.</li>
           <li xml:lang="tr">Fixed mixed up translations on Android with a multi-language configuration.</li>
+          <li xml:lang="uk">Виправлено перемішування перекладів в Android з багатомовним налаштуванням.</li>
           <li>New or improved travel document extractors for Eurostar, Eventim, Koleo, NH Hotels, Trenitalia and SBB.</li>
           <li xml:lang="ar">مستخرجات مستندات سفر جديدة أو محسّنة لـ Eurostar و Eventim و Koleo و NH Hotels و Trenitalia و SBB.</li>
           <li xml:lang="ca">Extractors nous o millorats de documents de viatge per a Eurostar, Eventim, Koleo, NH Hotels, Trenitalia i SBB.</li>
@@ -2107,6 +2126,7 @@
           <li xml:lang="ru">Новые или улучшенные модули извлечения данных из проездных документов для Eurostar, Eventim, Koleo, NH Hotels, Trenitalia и SBB.</li>
           <li xml:lang="sl">Novi ali izboljšani programi za ekstrakcijo potovalnih dokumentov za Eurostar, Eventim, Koleo, NH Hotels, Trenitalia in SBB.</li>
           <li xml:lang="tr">New or improved travel document extractors for Eurostar, Eventim, Koleo, NH Hotels, Trenitalia and SBB.</li>
+          <li xml:lang="uk">Нові або удосконалені засоби видобування даних з документів для Eurostar, Eventim, Koleo, NH Hotels, Trenitalia і SBB.</li>
           <li>Extended public transport coverage via Transitous.</li>
           <li xml:lang="ar">توسيع تغطية النقل العام عبر Transitous.</li>
           <li xml:lang="ca">Amplia la cobertura del transport públic mitjançant Transitous.</li>
@@ -2120,6 +2140,7 @@
           <li xml:lang="ru">Расширенное покрытие общественного транспорта через Transitous.</li>
           <li xml:lang="sl">Razširjena pokritost javnega prevoza prek Transitousa.</li>
           <li xml:lang="tr">Extended public transport coverage via Transitous.</li>
+          <li xml:lang="uk">Розширено покриття даних громадського транспорту для Transitous.</li>
           <li>Fix importing from overly long URLs.</li>
           <li xml:lang="ar">إصلاح الاستيراد من روابط URL الطويلة جدًا.</li>
           <li xml:lang="ca">Corregeix la importació des d'URL massa llargs.</li>
@@ -2133,6 +2154,7 @@
           <li xml:lang="ru">Исправлен импорт из слишком длинных URL.</li>
           <li xml:lang="sl">Popravljen uvoz iz predolgih URL-jev.</li>
           <li xml:lang="tr">Fix importing from overly long URLs.</li>
+          <li xml:lang="uk">Виправлено імпортування з надто довгих адрес.</li>
         </ul>
       </description>
     </release>
@@ -2152,6 +2174,7 @@
           <li xml:lang="ru">Новые или улучшенные модули извлечения данных из проездных документов для BlablaBus, Deutsche Bahn, Eurostar, Italo, MAV, паромов Reisnordland, Reservix, Sunnycars, United Airlines и электронных билетов VDV.</li>
           <li xml:lang="sl">Novi ali izboljšani programi za ekstrakcijo potovalnih dokumentov za BlablaBus, Deutsche Bahn, Eurostar, Italo, MAV, trajekte Reisnordland, Reservix, Sunnycars, United Airlines in e-vozovnice VDV.</li>
           <li xml:lang="tr">New or improved travel document extractors for BlablaBus, Deutsche Bahn, Eurostar, Italo, MAV, Reisnordland ferries, Reservix, Sunnycars, United Airlines and VDV e-tickets.</li>
+          <li xml:lang="uk">Нові або удосконалені засоби видобування даних з документів для BlablaBus, Deutsche Bahn, Eurostar, Italo, MAV, Reisnordland ferries, Reservix, Sunnycars, United Airlines і електронних квитків VDV.</li>
           <li>Fix access to public transport data in Zurich, Switzerland.</li>
           <li xml:lang="ar">إصلاح الوصول إلى بيانات النقل العام في زيورخ، سويسرا.</li>
           <li xml:lang="ca">Corregeix l'accés a les dades de transport públic de Zuric, Suïssa.</li>
@@ -2165,6 +2188,7 @@
           <li xml:lang="ru">Исправлен доступ к данным общественного транспорта в Цюрихе, Швейцария.</li>
           <li xml:lang="sl">Popravljen dostop do podatkov o javnem prevozu v Zürichu v Švici.</li>
           <li xml:lang="tr">Fix access to public transport data in Zurich, Switzerland.</li>
+          <li xml:lang="uk">Виправлено доступ до даних громадського транспорту у Цюріху, Швейцарія.</li>
           <li>Fix country combo box not opening correctly on phones.</li>
           <li xml:lang="ar">إصلاح عدم انفتاح مربع اختيار الدولة بشكل صحيح على الهواتف.</li>
           <li xml:lang="ca">Corregeix el quadre combinat de país que no s'obre correctament als telèfons.</li>
@@ -2178,6 +2202,7 @@
           <li xml:lang="ru">Исправлено некорректное открытие списка стран на телефонах.</li>
           <li xml:lang="sl">Popravljena napaka, zaradi katere se kombinirano polje za države ni pravilno odprlo na telefonih.</li>
           <li xml:lang="tr">Fix country combo box not opening correctly on phones.</li>
+          <li xml:lang="uk">Виправлено помилку, пов'язану із тим, що спадний список краї не відкривався на телефонах.</li>
           <li>Dark mode support on Android.</li>
           <li xml:lang="ar">دعم الوضع المظلم على أندرويد.</li>
           <li xml:lang="ca">Implementació del mode fosc a l'Android.</li>
@@ -2191,6 +2216,7 @@
           <li xml:lang="ru">Поддержка тёмного режима в Android.</li>
           <li xml:lang="sl">Podpora za temni način v sistemu Android.</li>
           <li xml:lang="tr">Dark mode support on Android.</li>
+          <li xml:lang="uk">Підтримка темного режиму в Android.</li>
         </ul>
       </description>
     </release>
@@ -2210,6 +2236,7 @@
           <li xml:lang="ru">Новые или улучшенные модули извлечения данных из проездных документов для Booking.com, direct-book.com, Entur, Flixbus, MAV, Scandlines, SNCB и SNCF.</li>
           <li xml:lang="sl">Novi ali izboljšani izvlečki potovalnih dokumentov za Booking.com, direct-book.com, Entur, Flixbus, MAV, Scandlines, SNCB in SNCF.</li>
           <li xml:lang="tr">New or improved travel document extractors for Booking.com, direct-book.com, Entur, Flixbus, MAV, Scandlines, SNCB and SNCF.</li>
+          <li xml:lang="uk">Нові або удосконалені засоби видобування даних з документів для Booking.com, direct-book.com, Entur, Flixbus, MAV, Scandlines, SNCB і SNCF.</li>
           <li>New display for seat reservation information in the timeline.</li>
           <li xml:lang="ar">عرض جديد لمعلومات حجز المقاعد في الخط الزمني.</li>
           <li xml:lang="ca">Visualització nova de la informació de la reserva de seients a la línia de temps.</li>
@@ -2223,6 +2250,7 @@
           <li xml:lang="ru">Новое отображение информации о бронировании мест в хронологии.</li>
           <li xml:lang="sl">Nov prikaz informacij o rezervaciji sedežev na časovnici.</li>
           <li xml:lang="tr">New display for seat reservation information in the timeline.</li>
+          <li xml:lang="uk">Нова панель для даних бронювання місць у розкладі.</li>
           <li>Support for the Träwelling check-in service.</li>
           <li xml:lang="ar">دعم خدمة تسجيل الوصول Träwelling.</li>
           <li xml:lang="ca">Implementació del servei de facturació de Träwelling.</li>
@@ -2236,6 +2264,7 @@
           <li xml:lang="ru">Поддержка сервиса регистрации Träwelling.</li>
           <li xml:lang="sl">Podpora za storitev prijave Träwelling.</li>
           <li xml:lang="tr">Support for the Träwelling check-in service.</li>
+          <li xml:lang="uk">Підтримка служби реєстрації Träwelling.</li>
           <li>Allow to create events or hotel reservations from OSM element URLs.</li>
           <li xml:lang="ar">السماح بإنشاء فعاليات أو حجوزات فنادق من روابط عناصر OSM.</li>
           <li xml:lang="ca">Permet crear esdeveniments o reserves d'hotel a partir d'URL d'elements OSM.</li>
@@ -2249,6 +2278,7 @@
           <li xml:lang="ru">Возможность создавать события или бронирования отелей из URL-адресов элементов OSM.</li>
           <li xml:lang="sl">Omogoča ustvarjanje dogodkov ali rezervacij hotelov iz URL-jev elementov OSM.</li>
           <li xml:lang="tr">Allow to create events or hotel reservations from OSM element URLs.</li>
+          <li xml:lang="uk">Уможливлено створення записів подій або бронювання готелів на основі адрес елементів OSM.</li>
           <li>Allow to show additional Wikimedia online content in the indoor map.</li>
           <li xml:lang="ar">السماح بعرض محتوى ويكيميديا إضافي عبر الإنترنت في الخريطة الداخلية.</li>
           <li xml:lang="ca">Permet mostrar contingut addicional de Wikimedia en línia al mapa d'interior.</li>
@@ -2262,6 +2292,7 @@
           <li xml:lang="ru">Возможность отображения дополнительного онлайн-контента Wikimedia на планах помещений.</li>
           <li xml:lang="sl">Omogoča prikaz dodatne spletne vsebine Wikimedia na notranjem zemljevidu.</li>
           <li xml:lang="tr">Allow to show additional Wikimedia online content in the indoor map.</li>
+          <li xml:lang="uk">Уможливлено показ додаткових інтернет-даних Wikimedia на карті приміщення.</li>
           <li>Trips can now be renamed.</li>
           <li xml:lang="ar">يمكن الآن إعادة تسمية الرحلات.</li>
           <li xml:lang="ca">Ara els viatges es poden canviar de nom.</li>
@@ -2275,6 +2306,7 @@
           <li xml:lang="ru">Поездки теперь можно переименовывать.</li>
           <li xml:lang="sl">Potovanja je zdaj mogoče preimenovati.</li>
           <li xml:lang="tr">Trips can now be renamed.</li>
+          <li xml:lang="uk">Уможливлено перейменування подорожей.</li>
         </ul>
       </description>
     </release>
@@ -2294,6 +2326,7 @@
           <li xml:lang="ru">Новые или улучшенные модули извлечения данных из проездных документов для 12go, Eurowings, hotels.com, Iberia, Georgian Railway, RegioJet, Snälltåget, TCDD и tobilet.pl.</li>
           <li xml:lang="sl">Novi ali izboljšani izvlečki potovalnih dokumentov za 12go, Eurowings, hotels.com, Iberia, Georgian Railway, RegioJet, Snälltåget, TCDD in tobilet.pl.</li>
           <li xml:lang="tr">New or improved travel document extractors for 12go, Eurowings, hotels.com, Iberia, Georgian Railway, RegioJet, Snälltåget, TCDD and tobilet.pl.</li>
+          <li xml:lang="uk">Нові або удосконалені засоби видобування даних з документів для 12go, Eurowings, hotels.com, Iberia, Georgian Railway, RegioJet, Snälltåget, TCDD і tobilet.pl.</li>
           <li>Fix reading/writing of all-day events to/from the Android system calendar.</li>
           <li xml:lang="ar">إصلاح قراءة/كتابة الفعاليات طوال اليوم من وإلى تقويم نظام أندرويد.</li>
           <li xml:lang="ca">Corregeix la lectura/escriptura d'esdeveniments de tot el dia a/des del calendari del sistema d'Android.</li>
@@ -2307,6 +2340,7 @@
           <li xml:lang="ru">Исправлено чтение и запись событий на весь день в системный календарь Android.</li>
           <li xml:lang="sl">Popravljeno branje/pisanje celodnevnih dogodkov v/iz sistemskega koledarja Android.</li>
           <li xml:lang="tr">Fix reading/writing of all-day events to/from the Android system calendar.</li>
+          <li xml:lang="uk">Виправлено читання/записування цілодобових подій до/з загальносистемного календаря Android.</li>
           <li>Fix permission issues when exporting to the Android calendar.</li>
           <li xml:lang="ar">إصلاح مشكلات الأذونات عند التصدير إلى تقويم أندرويد.</li>
           <li xml:lang="ca">Corregeix els problemes de permisos en exportar al calendari d'Android.</li>
@@ -2320,6 +2354,7 @@
           <li xml:lang="ru">Исправлены проблемы с разрешениями при экспорте в календарь Android.</li>
           <li xml:lang="sl">Popravljene težave z dovoljenji pri izvozu v koledar Android.</li>
           <li xml:lang="tr">Fix permission issues when exporting to the Android calendar.</li>
+          <li xml:lang="uk">Виправлено проблеми із правами доступу при експортуванні до календаря Android.</li>
           <li>Fix rendering of Apples Wallet passes without a barcode.</li>
           <li xml:lang="ar">إصلاح رندرة تصاريح Apple Wallet التي لا تحتوي على رمز شريطي.</li>
           <li xml:lang="ca">Corregeix la renderització dels passis d'Apple Wallet sense codi de barres.</li>
@@ -2333,6 +2368,7 @@
           <li xml:lang="ru">Исправлено отображение пропусков Apple Wallet без штрихкода.</li>
           <li xml:lang="sl">Popravljeno upodabljanje vozovnic Apple Wallet brez črtne kode.</li>
           <li xml:lang="tr">Fix rendering of Apples Wallet passes without a barcode.</li>
+          <li xml:lang="uk">Виправлено обробку паролів Apple Wallet без штрих-коду.</li>
         </ul>
       </description>
     </release>
@@ -2352,6 +2388,7 @@
           <li xml:lang="ru">Новые или улучшенные модули извлечения данных из проездных документов для Air Asia, Amadeus, Deutsche Bahn, Eurostar, Flixbus, Trenitalia.</li>
           <li xml:lang="sl">Novi ali izboljšani izvlečki potovalnih dokumentov za Air Asia, Amadeus, Deutsche Bahn, Eurostar, Flixbus, Trenitalia.</li>
           <li xml:lang="tr">New or improved travel document extractors for Air Asia, Amadeus, Deutsche Bahn, Eurostar, Flixbus, Trenitalia.</li>
+          <li xml:lang="uk">Нові або удосконалені засоби видобування даних з документів для Air Asia, Amadeus, Deutsche Bahn, Eurostar, Flixbus, Trenitalia.</li>
           <li>Fixed storing the arrival time when editing a ferry reservation.</li>
           <li xml:lang="ar">أُصلح تخزين وقت الوصول عند تحرير حجز عبارة.</li>
           <li xml:lang="ca">S'ha corregit l'emmagatzematge de l'hora d'arribada en editar una reserva de ferri.</li>
@@ -2365,6 +2402,7 @@
           <li xml:lang="ru">Исправлено сохранение времени прибытия при редактировании бронирования парома.</li>
           <li xml:lang="sl">Popravljeno shranjevanje časa prihoda pri urejanju rezervacije trajekta.</li>
           <li xml:lang="tr">Fixed storing the arrival time when editing a ferry reservation.</li>
+          <li xml:lang="uk">Виправлено збереження часу прибуття при редагуванні резервувань квитків на поромах.</li>
           <li>Fixed notifications on Android.</li>
           <li xml:lang="ar">أُصلحت التنبيهات على أندرويد.</li>
           <li xml:lang="ca">S'han corregit les notificacions a l'Android.</li>
@@ -2378,6 +2416,7 @@
           <li xml:lang="ru">Исправлены уведомления в Android.</li>
           <li xml:lang="sl">Popravljena obvestila v sistemu Android.</li>
           <li xml:lang="tr">Fixed notifications on Android.</li>
+          <li xml:lang="uk">Виправлено сповіщення в Android.</li>
           <li>Improved automatic trip grouping.</li>
           <li xml:lang="ar">تحسين التجميع الآلي للرحلات.</li>
           <li xml:lang="ca">Millora de l'agrupació automàtica de viatges.</li>
@@ -2391,6 +2430,7 @@
           <li xml:lang="ru">Улучшена автоматическая группировка поездок.</li>
           <li xml:lang="sl">Izboljšano samodejno združevanje potovanj.</li>
           <li xml:lang="tr">Improved automatic trip grouping.</li>
+          <li xml:lang="uk">Удосконалено автоматичне групування подорожей.</li>
           <li>Fixed emojis not showing up in Flatpaks.</li>
           <li xml:lang="ar">أُصلح عدم ظهور الرموز التعبيرية في حزم Flatpak.</li>
           <li xml:lang="ca">S'han corregit els emojis que no apareixen en els Flatpaks.</li>
@@ -2404,6 +2444,7 @@
           <li xml:lang="ru">Исправлено отображение эмодзи в Flatpak.</li>
           <li xml:lang="sl">Popravljena napaka, da se čustvenčki niso prikazovali v Flatpaksih.</li>
           <li xml:lang="tr">Fixed emojis not showing up in Flatpaks.</li>
+          <li xml:lang="uk">Виправлено показ емоційок у Flatpak.</li>
         </ul>
       </description>
     </release>
@@ -2423,6 +2464,7 @@
           <li xml:lang="ru">Новые или улучшенные модули извлечения данных из проездных документов для CFR, Eurostar, Indico, IRCTC, Lufthansa, Motel One, SNCB, SNCF, Ticketportal, Trenitalia и VDV eTickets. Добавлена поддержка данных общественного транспорта от Serbijavoz и Transitous.</li>
           <li xml:lang="sl">Novi ali izboljšani programi za ekstrakcijo potovalnih dokumentov za CFR, Eurostar, Indico, IRCTC, Lufthansa, Motel One, SNCB, SNCF, Ticketportal, Trenitalia in VDV eTickets. Dodana podpora za podatke o javnem prevozu od Serbijavoz in Transitous.</li>
           <li xml:lang="tr">New or improved travel document extractors for CFR, Eurostar, Indico, IRCTC, Lufthansa, Motel One, SNCB, SNCF, Ticketportal, Trenitalia and VDV eTickets. Added support for public transport data from Serbijavoz and Transitous.</li>
+          <li xml:lang="uk">Нові або удосконалені засоби видобування даних з документів для CFR, Eurostar, Indico, IRCTC, Lufthansa, Motel One, SNCB, SNCF, Ticketportal, Trenitalia і VDV eTickets. Додано підтримку даних щодо громадського транспорту від Serbijavoz і Transitous.</li>
           <li>Show more detailed train coach or vehicle feature information.</li>
           <li xml:lang="ar">عرض معلومات أكثر تفصيلًا عن ميزات عربة القطار أو المركبة.</li>
           <li xml:lang="ca">Mostra informació més detallada sobre les característiques del vagó de tren o del vehicle.</li>
@@ -2436,6 +2478,7 @@
           <li xml:lang="ru">Отображение более подробной информации о вагоне поезда или характеристиках транспортного средства.</li>
           <li xml:lang="sl">Prikažite podrobnejše informacije o lastnostih vagona ali vozila.</li>
           <li xml:lang="tr">Show more detailed train coach or vehicle feature information.</li>
+          <li xml:lang="uk">Реалізовано показ докладніших відомостей щодо місця у потягах та можливостей засобу пересування.</li>
           <li>Show per-coach occupancy information when available.</li>
           <li xml:lang="ar">عرض معلومات الإشغال لكل عربة عند توفرها.</li>
           <li xml:lang="ca">Mostra la informació d'ocupació per cotxe quan estigui disponible.</li>
@@ -2494,6 +2537,7 @@
           <li xml:lang="ru">Новые или улучшенные модули извлечения данных из проездных документов для Amsbus.cz, Eurostar, Finnair, Moongate, UK national railway и VR.</li>
           <li xml:lang="sl">Novi ali izboljšani programi za ekstrakcijo potovalnih dokumentov za Amsbus.cz, Eurostar, Finnair, Moongate, UK National Railway in VR.</li>
           <li xml:lang="tr">New or improved travel document extractors for Amsbus.cz, Eurostar, Finnair, Moongate, UK national railway and VR.</li>
+          <li xml:lang="uk">Нові або удосконалені засоби видобування даних з документів для Amsbus.cz, Eurostar, Finnair, Moongate, UK national railway і VR.</li>
           <li>Fix displaying public transport departure disruptions.</li>
           <li xml:lang="ar">إصلاح عرض تعطلات مغادرة النقل العام.</li>
           <li xml:lang="ca">Corregeix la visualització de les interrupcions de sortides de transport públic.</li>
@@ -2539,6 +2583,7 @@
           <li xml:lang="ru">Новые или улучшенные модули извлечения данных из проездных документов для Deutsche Bahn, Eckerö Line, European Sleeper, Eventim, Flibco, Leo Express, National Express, ÖBB, osmcal.org, Salzbergwerk, SNCF и ti.to.</li>
           <li xml:lang="sl">Novi ali izboljšani programi za ekstrakcijo potovalnih dokumentov za Deutsche Bahn, Eckerö Line, European Sleeper, Eventim, Flibco, Leo Express, National Express, ÖBB, osmcal.org, Salzbergwerk, SNCF in ti.to.</li>
           <li xml:lang="tr">New or improved travel document extractors for Deutsche Bahn, Eckerö Line, European Sleeper, Eventim, Flibco, Leo Express, National Express, ÖBB, osmcal.org, Salzbergwerk, SNCF and ti.to.</li>
+          <li xml:lang="uk">Нові або удосконалені засоби видобування даних з документів для Deutsche Bahn, Eckerö Line, European Sleeper, Eventim, Flibco, Leo Express, National Express, ÖBB, osmcal.org, Salzbergwerk, SNCF і ti.to.</li>
           <li>Filter implausible geo coder results on address editing.</li>
           <li xml:lang="ar">تصفية نتائج المرمز الجغرافي غير المنطقية عند تحرير العنوان.</li>
           <li xml:lang="ca">Filtra els resultats del codificador geo inversemblants a l'edició d'adreces.</li>
@@ -3949,6 +3994,7 @@
           <li xml:lang="cs">Podpora čárových kódů vstupenek ERA FCB.</li>
           <li xml:lang="es">Compatibilidad con códigos de barras de billetes de ERA FCB.</li>
           <li xml:lang="fr">Prise en charge des codes-barres des tickets de ERA FCB.</li>
+          <li xml:lang="he">תמיכה בברקודים של כרטיסי ERA FCB.</li>
           <li xml:lang="it">Supporto per i codici a barre dei biglietti ERA FCB.</li>
           <li xml:lang="ka">ERA FCB ბილეთის შტრიხკოდების მხარდაჭერა.</li>
           <li xml:lang="pt-BR">Suporte para códigos de barras de ingressos ERA FCB.</li>
@@ -4267,6 +4313,7 @@
           <li xml:lang="cs">Vylepšené extraktory cestovních dokladů pro booking.com, Eurowings, onepagebooking.com a SNCF.</li>
           <li xml:lang="es">Se han mejorado los extractores de documentos de viaje para booking.com, Eurowings, onepagebooking.com y SNCF.</li>
           <li xml:lang="fr">Améliorations des extracteurs de documents de voyage pour booking.com, Eurowings, onepagebooking.com et SNCF.</li>
+          <li xml:lang="he">מחלצי מסמכי נסיעות משופרים ל־booking.com,‏ Eurowings,‏ onepagebooking.com ו־SNCF.</li>
           <li xml:lang="it">Estrattori di documenti di viaggio migliorati per booking.com, Eurowings, onepagebooking.com e SNCF.</li>
           <li xml:lang="ka">გაუმჯობესებული სამგზავრო დოკუმენტების ამომკრებები booking.com, Eurowings, onepagebooking.com და SNCF სისტემებისთვის.</li>
           <li xml:lang="pt-BR">Extratores de documentos de viagem aprimorados para booking.com, Eurowings, onepagebooking.com e SNCF.</li>
@@ -4286,6 +4333,7 @@
           <li xml:lang="cs">Podpora pro noční vozy v zobrazení řazení vagónů.</li>
           <li xml:lang="es">Compatibilidad con coches de tren nocturnos en la vista de distribución de coches.</li>
           <li xml:lang="fr">Prise en charge des voitures de train de nuit dans la vue de disposition des voitures de train.</li>
+          <li xml:lang="he">תמיכה בקרונות שינה ברכבת בתצוגת פריסת קרונות הרכבת.</li>
           <li xml:lang="it">Supporto per le carrozze ferroviarie notturne nella visualizzazione della disposizione delle carrozze ferroviarie.</li>
           <li xml:lang="ka">ღამის მატარებლის ვაგონების მხარდაჭერა ვაგონების განლაგების ხედში.</li>
           <li xml:lang="pt-BR">Suporte para vagões de trem noturnos na visualização do layout dos vagões.</li>
@@ -4299,6 +4347,7 @@
           <li xml:lang="cs">Při vstupu do jiné země se zobrazují měny a volitelně aktuální směnné kurzy.</li>
           <li xml:lang="es">Mostrar divisas y, opcionalmente, los tipos de cambio actuales al entrar a un país distinto.</li>
           <li xml:lang="fr">Affichage des devises et éventuellement les taux de conversion actuels lors de l'entrée dans un  pays différent.</li>
+          <li xml:lang="he">הצגת מטבעות ושערי המרת מט״ח כרשות כשמגיעים למדינה אחרת.</li>
           <li xml:lang="it">Mostra le valute e, facoltativamente, i tassi di conversione attuali quando si accede a un paese diverso.</li>
           <li xml:lang="ka">ვალუტებისა და სურვილის შემთხვევაში კურსების ჩვენება სხვა ქვეყანაში შესვლისას.</li>
           <li xml:lang="pt-BR">Exibir as moedas e, opcionalmente, as taxas de conversão atuais ao inserir um país diferente.</li>
@@ -4312,6 +4361,7 @@
           <li xml:lang="cs">Povoleno přidání vlakových spojů z online vyhledávání cest do časové osy.</li>
           <li xml:lang="es">Permitir que se puedan añadir trayectos en tren desde una consulta de viaje en línea a la línea cronológica.</li>
           <li xml:lang="fr">Autorisation d'ajouter à la chronologie des trajets en train issus d'une recherche de voyage en ligne.</li>
+          <li xml:lang="he">מתן אפשרות להוסיף נסיעות רכבת משאילתת מסע מקוון לציר הזמן.</li>
           <li xml:lang="it">Consente di aggiungere viaggi in treno da una query di viaggio online alla linea temporale.</li>
           <li xml:lang="ka">ონლაინ ძიებიდან მატარებლის მგზავრობების ქრონოლოგიაში დამატების ნებართვა.</li>
           <li xml:lang="pt-BR">Permitir adicionar viagens de trem a partir de uma consulta de viagens online à linha do tempo.</li>
@@ -4325,6 +4375,7 @@
           <li xml:lang="cs">Nové nebo vylepšené extraktory pro Renfe, SNCF, ÖBB, Spring Airlines, Peach Aviation.</li>
           <li xml:lang="es">Extractores nuevos o mejorados para Renfe, SNCF, ÖBB, Spring Airlines, Peach Aviation.</li>
           <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour Renfe, SNCF, ÖBB, Spring Airlines et Peach Aviation.</li>
+          <li xml:lang="he">מחלצים חדשים או משופרים ל־Renfe,‏ SNCF,‏ ÖBB,‏ Spring Airlines,‏ Peach Aviation.</li>
           <li xml:lang="it">Estrattori nuovi o migliorati per Renfe, SNCF, ÖBB, Spring Airlines, Peach Aviation.</li>
           <li xml:lang="ka">ახალი ან გაუმჯობესებული ამომკრებები Renfe, SNCF, ÖBB, Spring Airlines, Peach Aviation სისტემებისთვის.</li>
           <li xml:lang="pt-BR">Extratores novos ou aprimorados para Renfe, SNCF, ÖBB, Spring Airlines e Peach Aviation.</li>
@@ -4338,6 +4389,7 @@
           <li xml:lang="cs">V předpovědi počasí zdůrazněny nepříznivé povětrnostní podmínky.</li>
           <li xml:lang="es">Resaltar las condiciones meteorológicas adversas en la previsión meteorológica.</li>
           <li xml:lang="fr">Mise en évidence des conditions météorologiques sévères dans les prévisions.</li>
+          <li xml:lang="he">הדגשת תנאי מזג אוויר קשים בדיווחי מזג האוויר.</li>
           <li xml:lang="it">Evidenzia le condizioni meteorologiche avverse nelle previsioni del tempo.</li>
           <li xml:lang="ka">რთული მეტეოროლოგიური პირობების გამოკვეთა ამინდის პროგნოზში.</li>
           <li xml:lang="pt-BR">Destaca as condições climáticas severas na previsão do tempo.</li>
@@ -4378,6 +4430,7 @@
           <li xml:lang="cs">Podpora identifikátorů vlakových stanic Amtrak a IATA.</li>
           <li xml:lang="es">Compatibilidad con identificadores de estaciones de trenes de Amtrak e IATA.</li>
           <li xml:lang="fr">Prise en charge des identifiants de gare pour Amtrak et IATA.</li>
+          <li xml:lang="he">תמיכה במספרי זיהוי של תחנות רכבת של Amtrak ו־IATA.</li>
           <li xml:lang="it">Supporto per identificatori di stazioni ferroviarie Amtrak e IATA.</li>
           <li xml:lang="ka">Amtrak-ისა და IATA-ს სადგურის იდენტიფიკატორების მხარდაჭერა.</li>
           <li xml:lang="pt-BR">Suporte para identificadores de estações ferroviárias da Amtrak e da IATA.</li>
@@ -4391,6 +4444,7 @@
           <li xml:lang="cs">Podpora importu dánských COVID certifikátů.</li>
           <li xml:lang="es">Compatibilidad para importar certificados de COVID daneses.</li>
           <li xml:lang="fr">Prise en charge de l'importation des certificats COVID du Danemark.</li>
+          <li xml:lang="he">תמיכה בייבוא תעודות קורונה דניות.</li>
           <li xml:lang="it">Supporto per l'importazione di certificati COVID danesi.</li>
           <li xml:lang="ka">დანიური COVID სერტიფიკატების შემოტანას მხარდაჭერა.</li>
           <li xml:lang="pt-BR">Suporte para importação de certificados dinamarqueses de COVID.</li>
@@ -4404,6 +4458,7 @@
           <li xml:lang="cs">Dodržuje se nastavení systému Linux, které určuje, která externí mapová aplikace se má použít.</li>
           <li xml:lang="es">Seguir la configuración del sistema en Linux para saber qué aplicación de mapas externa se debe usar.</li>
           <li xml:lang="fr">Suivre la configurations du système de Linux pour sélectionner quelle application de cartographie externe utiliser.</li>
+          <li xml:lang="he">היצמדות להגדרות המערכת בלינוקס בנוגע ליישום המפות החיצוני לשימוש.</li>
           <li xml:lang="it">Segue le impostazioni di sistema su Linux per quale applicazione di mappa esterna utilizzare.</li>
           <li xml:lang="ka">სისტემური პარამეტრების გათვალისწინება Linux-ზე გარე რუკის აპლიკაციის არჩევისას.</li>
           <li xml:lang="pt-BR">Siga as configurações do sistema Linux para determinar qual aplicativo de mapas externo usar.</li>
@@ -4417,6 +4472,7 @@
           <li xml:lang="cs">Přidána akce v seznamu pro přímé otevření aktuálního lístku.</li>
           <li xml:lang="es">Se ha añadido la acción de salto de lista para abrir directamente el billete actual.</li>
           <li xml:lang="fr">Ajout d'une action de saut dans la liste pour l'ouverture directe du ticket en cours.</li>
+          <li xml:lang="he">הוספת פעולת קפיצת רשימה כדי לפתוח את הכרטיס הנוכחי ישירות.</li>
           <li xml:lang="it">Aggiunge un'azione Jump List per aprire direttamente il ticket corrente.</li>
           <li xml:lang="ka">სწრაფი მოქმედების დამატება მიმდინარე ბილეთის პირდაპირ გასახსნელად.</li>
           <li xml:lang="pt-BR">Adicionar ação à lista de atalhos para abrir diretamente o tíquete atual.</li>
@@ -4451,6 +4507,7 @@
           <li xml:lang="cs">Přidána funkce extrakce cestovních údajů z PDF dokumentů letenek Air France.</li>
           <li xml:lang="es">Se ha añadido extracción de datos de viaje de los documentos de billetes PDF de Air France.</li>
           <li xml:lang="fr">Ajout de l'extraction des données de voyage à partir des documents « PDF » des billets Air France.</li>
+          <li xml:lang="he">נוסף חילוץ נתוני נסיעה ממסמכי PDF של כרטיסים של Air France.</li>
           <li xml:lang="it">Aggiunge l'estrazione dei dati di viaggio dai documenti PDF dei biglietti Air France.</li>
           <li xml:lang="ka">დაემატა სამგზავრო მონაცემების ამოღება Air France-ის PDF ბილეთებიდან.</li>
           <li xml:lang="pt-BR">Adicionada extração de dados de viagem a partir de documentos PDF de bilhetes da Air France.</li>
@@ -4464,6 +4521,7 @@
           <li xml:lang="cs">Opraveno formátování čísel podle místního nastavení.</li>
           <li xml:lang="es">Se ha corregido el formato de los números para tener en cuenta la configuración regional.</li>
           <li xml:lang="fr">Correction du formatage des nombres en fonction des paramètres régionaux.</li>
+          <li xml:lang="he">תוקנה תבנית מספרים תלויית הגדרות אזוריות.</li>
           <li xml:lang="it">Corregge la formattazione dei numeri compatibile con le impostazioni locali.</li>
           <li xml:lang="ka">გასწორდა რიცხვების ფორმატირება ლოკალის გათვალისწინებით.</li>
           <li xml:lang="pt-BR">Corrigida a formatação de números de acordo com a localização.</li>
@@ -4483,6 +4541,7 @@
           <li xml:lang="cs">Oprava seskupování cest, které vedlo k nesprávným výsledkům v hustě osídlených oblastech.</li>
           <li xml:lang="es">Se ha corregido el problema de agrupación de viajes que producía resultados erróneos en áreas densamente pobladas.</li>
           <li xml:lang="fr">Correction du regroupement de trajets produisant des résultats incorrects dans les zones densément peuplées.</li>
+          <li xml:lang="he">תוקן קיבוץ נסיעות שהפסיק תוצאות שגויות באזורים צפופים.</li>
           <li xml:lang="it">Risolto il problema con il raggruppamento dei viaggi che produceva risultati errati in aree densamente popolate.</li>
           <li xml:lang="ka">გასწორდა მგზავრობების დაჯგუფება, რომელიც მჭიდროდ დასახლებულ ადგილებში არასწორ შედეგს იძლეოდა.</li>
           <li xml:lang="pt-BR">Corrigido o agrupamento de viagens que estava gerando resultados incorretos em áreas densamente povoadas.</li>
