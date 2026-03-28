@@ -3591,6 +3591,7 @@
           <li xml:lang="cs">Nové uživatelské rozhraní pro stránky s podrobnostmi rezervace.</li>
           <li xml:lang="es">Nueva interfaz de usuario para las páginas de detalles de las reservas.</li>
           <li xml:lang="fr">Nouvelle interface utilisateur pour les pages de détails des réservations.</li>
+          <li xml:lang="he">ממשק משתמש חדש לעמודי פרטי הזמנה.</li>
           <li xml:lang="it">Nuova interfaccia utente per le pagine dei dettagli della prenotazione.</li>
           <li xml:lang="ka">ახალი ინტერფეისი ჯავშნის დეტალების გვერდებისთვის.</li>
           <li xml:lang="pt-BR">Nova interface de usuário para páginas de detalhes de reservas.</li>
@@ -3604,6 +3605,7 @@
           <li xml:lang="cs">Rychlejší načítání map vlakových nádraží a letišť.</li>
           <li xml:lang="es">Carga más rápida de los mapas de estaciones de tren y de aeropuertos.</li>
           <li xml:lang="fr">Chargement plus rapide des cartes des gares et des aéroports.</li>
+          <li xml:lang="he">טעינה מהירה יותר של מפות תחנות רכבת ונמלי תעופה.</li>
           <li xml:lang="it">Caricamento più rapido delle mappe delle stazioni ferroviarie e degli aeroporti.</li>
           <li xml:lang="ka">რკინიგზის სადგურებისა და აეროპორტების რუკების უფრო სწრაფი ჩატვირთვა.</li>
           <li xml:lang="pt-BR">Carregamento mais rápido de mapas de estações de trem e aeroportos.</li>
@@ -3617,6 +3619,7 @@
           <li xml:lang="cs">Vylepšené zobrazení dveří, stromů, bariérových bloků, značek úseků nástupišť a informací o přístupnosti na mapách vlakových nádraží.</li>
           <li xml:lang="es">Se ha mejorado la visualización de puertas, árboles, barreras, marcas de secciones de andenes e información de accesibilidad en los mapas de estaciones de trenes.</li>
           <li xml:lang="fr">Amélioration de l'affichage des portes, des arbres, des blocs de barrières, des marqueurs de sections de quais et des informations d'accessibilité sur les plans des gares.</li>
+          <li xml:lang="he">הצגת דלתות, עצים, מחסומי גבול, סמני אזורי רציפים ופרטי נגישות במפות תחנות רכבות.</li>
           <li xml:lang="it">Visualizzazione migliorata di porte, alberi, blocchi barriera, indicatori di sezione dei binari e informazioni sull'accessibilità sulle mappe delle stazioni ferroviarie.</li>
           <li xml:lang="ka">კარების, ხეების, ბარიერების, ბაქნის სექციების ნიშნულებისა და ხელმისაწვდომობის ინფორმაციის გაუმჯობესებული ჩვენება რკინიგზის სადგურის რუკებზე.</li>
           <li xml:lang="pt-BR">Melhoria na visualização de portas, árvores, cancelas, marcadores de seção da plataforma e informações de acessibilidade nos mapas da estação de trem.</li>
@@ -3630,6 +3633,7 @@
           <li xml:lang="cs">Povoleno LED světlo při skenování čárových kódů.</li>
           <li xml:lang="es">Permitir que se puedan activar luces LED para el escaneo de códigos de barras.</li>
           <li xml:lang="fr">Permettre d'activer la lumière LED pour la lecture des codes-barres.</li>
+          <li xml:lang="he">לאפשר הפעלת נורית המבזק לסריקת ברקודים.</li>
           <li xml:lang="it">Consente di abilitare la luce LED per la scansione dei codici a barre.</li>
           <li xml:lang="ka">LED განათების ჩართვის ნებართვა შტრიხკოდის სკანირებისთვის.</li>
           <li xml:lang="pt-BR">Permitir a ativação da luz LED para leitura de código de barras.</li>
@@ -3643,6 +3647,7 @@
           <li xml:lang="cs">Opraveno nesprávné používání veřejné dopravy ve Francii.</li>
           <li xml:lang="es">Se ha corregido el uso de transporte público incorrecto en Francia.</li>
           <li xml:lang="fr">Correction du service de transport public incorrect utilisé en France.</li>
+          <li xml:lang="he">תוקנה בעיה שנעשה שימוש בשירות התחבורה הציבורית השגוי בצרפת.</li>
           <li xml:lang="it">Correzione del servizio di trasporto pubblico errato utilizzato in Francia.</li>
           <li xml:lang="ka">გასწორდა საფრანგეთში საზოგადოებრივი ტრანსპორტის არასწორი სერვისის გამოყენება.</li>
           <li xml:lang="pt-BR">Correção do serviço de transporte público incorreto que está sendo utilizado na França.</li>
@@ -3656,6 +3661,7 @@
           <li xml:lang="cs">Opraven přístup k údajům o veřejné dopravě ve Švýcarsku.</li>
           <li xml:lang="es">Se ha corregido el acceso a datos de transporte público en Suiza.</li>
           <li xml:lang="fr">Correction de l'accès aux données des transports publics en Suisse.</li>
+          <li xml:lang="he">תוקנה גישה לנתוני תחבורה ציבורית בשווייץ.</li>
           <li xml:lang="it">Corregge l'accesso ai dati dei trasporti pubblici in Svizzera.</li>
           <li xml:lang="ka">გასწორდა საზოგადოებრივი ტრანსპორტის მონაცემებზე წვდომა შვეიცარიაში.</li>
           <li xml:lang="pt-BR">Correção do acesso a dados de transporte público na Suíça.</li>
@@ -3669,6 +3675,7 @@
           <li xml:lang="cs">Oprava zpracování vložených URL adres.</li>
           <li xml:lang="es">Se ha corregido el manejo de URL pegadas.</li>
           <li xml:lang="fr">Correction de la gestion des URL collées.</li>
+          <li xml:lang="he">תוקן טיפול בכתובות מודבקות.</li>
           <li xml:lang="it">Corretta la gestione degli URL incollati.</li>
           <li xml:lang="ka">გასწორდა ჩასმული ბმულების დამუშავება.</li>
           <li xml:lang="pt-BR">Correção do tratamento de URLs coladas.</li>
@@ -3804,6 +3811,7 @@
           <li xml:lang="cs">Podpora importu událostí Mobilizon.</li>
           <li xml:lang="es">Compatibilidad con la importación de eventos de Mobilizon.</li>
           <li xml:lang="fr">Prise en charge de l'importation des évènements de Mobilizon.</li>
+          <li xml:lang="he">תמיכה בייבוא אירועי Mobilizon.</li>
           <li xml:lang="it">Supporta l'importazione di eventi Mobilizon.</li>
           <li xml:lang="ka">Mobilizon მოვლენების შემოტანას მხარდაჭერა.</li>
           <li xml:lang="pt-BR">Suporte à importação de eventos do Mobilizon.</li>
@@ -3817,6 +3825,7 @@
           <li xml:lang="cs">Vylepšené získávání cestovních dat pro Eventim, MÁV, NH Hotels, Trenitalia.</li>
           <li xml:lang="es">Se ha mejorado la extracción de datos de viaje para Eventim, MÁV, Hoteles NH y Trenitalia.</li>
           <li xml:lang="fr">Amélioration de l'extraction des données de voyage pour Eventim, MÁV, NH Hotels, Trenitalia.</li>
+          <li xml:lang="he">חילוץ נתוני נסיעה מ־Eventim,‏ MÁV,‏ NH Hotels,‏ Trenitalia השתפר.</li>
           <li xml:lang="it">Migliorata l'estrazione dei dati di viaggio per Eventim, MÁV, NH Hotels, Trenitalia.</li>
           <li xml:lang="ka">გაუმჯობესებული სამგზავრო მონაცემების ამოღება Eventim, MÁV, NH Hotels, Trenitalia სისტემებისთვის.</li>
           <li xml:lang="pt-BR">Extração de dados de viagens aprimorada para Eventim, MÁV, NH Hotels, Trenitalia.</li>
@@ -3830,6 +3839,7 @@
           <li xml:lang="cs">Oprava zobrazení dostupných vozidel k pronájmu.</li>
           <li xml:lang="es">Se ha corregido la visualización de vehículos de alquiler disponibles.</li>
           <li xml:lang="fr">Correction de l'affichage des véhicules de location flottante.</li>
+          <li xml:lang="he">תוקנה תצוגת מכוניות צפות להשכרה.</li>
           <li xml:lang="it">Corretta la visualizzazione dei veicoli a noleggio galleggianti.</li>
           <li xml:lang="ka">გასწორდა მცურავი გასაქირავებელი ტრანსპორტის ჩვენება.</li>
           <li xml:lang="pt-BR">Correção da exibição de veículos de aluguel flutuantes.</li>
@@ -3843,6 +3853,7 @@
           <li xml:lang="cs">Oprava vykreslování událostí Apple Wallet s obrázky na pozadí.</li>
           <li xml:lang="es">Se ha corregido la visualización de pases de eventos de Apple Wallet con imágenes de fondo.</li>
           <li xml:lang="fr">Correction de l'affichage des abonnements d'évènements de Apple Wallet avec des images d'arrière-plan.</li>
+          <li xml:lang="he">תוקן תיצוג של אישורי מעבר לאירועים ב־Apple Wallet עם תמונות רקע..</li>
           <li xml:lang="it">Correzione del rendering dei passaggi evento di Apple Wallet con immagini di sfondo.</li>
           <li xml:lang="ka">გასწორდა Apple Wallet მოვლენის ბარათების რენდერი ფონის სურათებით.</li>
           <li xml:lang="pt-BR">Corrigido o problema na renderização dos passes de evento do Apple Wallet com imagens de fundo.</li>
@@ -3856,6 +3867,7 @@
           <li xml:lang="cs">Vylepšena interakce s mapou pomocí gest v nástroji pro výběr oblíbených míst.</li>
           <li xml:lang="es">Se ha mejorado la interacción con gestos en el mapa sobre el selector de ubicación favorita.</li>
           <li xml:lang="fr">Amélioration de l'interaction par gestes sur la carte pour la sélection de lieux favoris.</li>
+          <li xml:lang="he">הפעלת המפה במחוות בעת בחירת מקום מועדף השתפרה.</li>
           <li xml:lang="it">Migliora l'interazione dei gesti sulla mappa sul selettore della posizione preferita.</li>
           <li xml:lang="ka">რუკის ჟესტებით ურთიერთქმედების გაუმჯობესება რჩეული მდებარეობის ამრჩევში.</li>
           <li xml:lang="pt-BR">Melhoria da interação por gestos no seletor de locais favoritos do mapa.</li>
@@ -3884,6 +3896,7 @@
           <li xml:lang="cs">Oprava zpracování otevíracích hodin, kde je stále zavřeno.</li>
           <li xml:lang="es">Se ha corregido el manejo del horario de apertura cerrado permanentemente.</li>
           <li xml:lang="fr">Correction de la gestion des plages d'ouverture toujours indisponibles.</li>
+          <li xml:lang="he">תוקן טיפול בשעות פתיחה שתמיד סגור.</li>
           <li xml:lang="it">Corretta la gestione degli orari di apertura sempre chiusi.</li>
           <li xml:lang="ka">გასწორდა მუდამ დაკეტილი სამუშაო საათების დამუშავება.</li>
           <li xml:lang="pt-BR">Correção do tratamento dos horários de funcionamento sempre fechados.</li>
@@ -3903,6 +3916,7 @@
           <li xml:lang="cs">Podpora pro rezervace lodí/trajektů.</li>
           <li xml:lang="es">Compatibilidad con reservas de barco/ferry.</li>
           <li xml:lang="fr">Prise en charge des réservations de bateaux / traversiers.</li>
+          <li xml:lang="he">תמיכה בהזמנות ספינה/מעבורת.</li>
           <li xml:lang="it">Supporto per prenotazione barche/traghetti.</li>
           <li xml:lang="ka">გემის/ბორნის ჯავშნების მხარდაჭერა.</li>
           <li xml:lang="pt-BR">Suporte para reservas de barcos/ferries.</li>
@@ -3916,6 +3930,7 @@
           <li xml:lang="cs">Podpora očkovacích certifikátů ICAO VDS.</li>
           <li xml:lang="es">Compatibilidad con certificados de vacunación ICAO VDS.</li>
           <li xml:lang="fr">Prise en charge des certificats de vaccination de ICAO VDS.</li>
+          <li xml:lang="he">תמיכה בתעודות התחסנות מסוג ICAO VDS.</li>
           <li xml:lang="it">Supporto per i certificati di vaccinazione ICAO VDS.</li>
           <li xml:lang="ka">ICAO VDS ვაქცინაციის სერტიფიკატების მხარდაჭერა.</li>
           <li xml:lang="pt-BR">Suporte para certificados de vacinação VDS da ICAO.</li>
@@ -3955,6 +3970,7 @@
           <li xml:lang="cs">Opravena informace o straně řízení pro osoby žijící v zemích s levostranným provozem.</li>
           <li xml:lang="es">Se ha corregido la información sobre el lado de conducción para las personas que viven en países donde se conduce por la izquierda.</li>
           <li xml:lang="fr">Correction des informations sur le côté de conduite pour les personnes vivant dans des pays avec conduite à gauche.</li>
+          <li xml:lang="he">תוקנו פרטי צד נהיגה לאנשים שחיים במדינות שבהן נוהגים בצד שמאל.</li>
           <li xml:lang="it">Corregge le informazioni sul lato di guida per le persone che vivono nei paesi con guida a sinistra.</li>
           <li xml:lang="ka">გასწორდა მოძრაობის მხარის ინფორმაცია მარცხენამხრივი მოძრაობის ქვეყნებში მცხოვრებთათვის.</li>
           <li xml:lang="pt-BR">Correção das informações sobre a direção para pessoas que vivem em países onde se dirige pela esquerda.</li>
@@ -3968,6 +3984,7 @@
           <li xml:lang="cs">Oprava zadávání data a času pro ruční vyhledávání cest vlakem/autobusem.</li>
           <li xml:lang="es">Se ha corregido la introducción de fechas y horas en las búsquedas manuales de viajes en tren o autobús.</li>
           <li xml:lang="fr">Correction de la saisie de la date / heure pour les recherches manuelles de trajets en train / bus.</li>
+          <li xml:lang="he">תוקן קלט תאריך/שעה לחיפוש מסעות רכבת/אוטובוס ידני.</li>
           <li xml:lang="it">Corregge l'inserimento di data/ora per le ricerche manuali di viaggi in treno/autobus.</li>
           <li xml:lang="ka">გასწორდა თარიღის/დროის შეყვანა მატარებლის/ავტობუსის მგზავრობის ხელით ძიებისას.</li>
           <li xml:lang="pt-BR">Correção da entrada de data/hora para buscas manuais de viagens de trem/ônibus.</li>
@@ -3981,6 +3998,7 @@
           <li xml:lang="cs">Opraveny vlaky Railjet, které nemají řazení vagónů uvnitř Německa.</li>
           <li xml:lang="es">Se ha corregido el problema de los trenes Railjet que no tenían distribución de coches dentro de Alemania.</li>
           <li xml:lang="fr">Correction pour les trains de Railjet n'ayant aucun plan des wagons en Allemagne.</li>
+          <li xml:lang="he">תוקנה בעיה שלרכבות Railjet לא הייתה פריסת קרונות בתוך גרמניה.</li>
           <li xml:lang="it">Risolti i problemi con i treni Railjet che non avevano disposizioni di carrozza all'interno della Germania.</li>
           <li xml:lang="ka">გასწორდა Railjet მატარებლები, რომლებსაც არ ჰქონდათ ვაგონის განლაგება გერმანიის ტერიტორიაზე.</li>
           <li xml:lang="pt-BR">Correção do problema com trens Railjet que não possuem configuração de vagões dentro da Alemanha.</li>
@@ -4027,6 +4045,7 @@
           <li xml:lang="cs">Nový extraktor cestovních údajů pro jízdenky vlaků Italo.</li>
           <li xml:lang="es">Nuevo extractor de datos de viaje para los billetes de tren de Italo.</li>
           <li xml:lang="fr">Nouveau extracteur de données de voyage pour les billets de train de Italo.</li>
+          <li xml:lang="he">מחלץ נתוני נסיעה חדש מכרטיסי רכבת של Italo.</li>
           <li xml:lang="it">Nuovo estrattore dati di viaggio per i biglietti ferroviari Italo.</li>
           <li xml:lang="ka">ახალი სამგზავრო მონაცემების ამომკრები Italo-ს მატარებლის ბილეთებისთვის.</li>
           <li xml:lang="pt-BR">Novo extrator de dados de viagem para bilhetes de trem da Italo.</li>
@@ -4046,6 +4065,7 @@
           <li xml:lang="cs">Vylepšené získávání dat o cestování pro Airbnb, Amadeus, BlaBlaCar, Eventim, Ryanair, SNCF, Thalys, Vueling.</li>
           <li xml:lang="es">Se ha mejorado la extracción de datos de viaje para Airbnb, Amadeus, BlaBlaCar, Eventim, Ryanair, SNCF, Thalys y Vueling.</li>
           <li xml:lang="fr">Amélioration de l'extraction des données de voyage pour Airbnb, Amadeus, BlaBlaCar, Eventim, Ryanair, SNCF, Thalys, Vueling.</li>
+          <li xml:lang="he">חילוץ נתוני נסיעה מ־Airbnb,‏ Amadeus,‏ BlaBlaCar,‏ Eventim,‏ Ryanair,‏ SNCF,‏ Thalys ו־Vueling השתפר.</li>
           <li xml:lang="it">Migliorata l'estrazione dei dati di viaggio per Airbnb, Amadeus, BlaBlaCar, Eventim, Ryanair, SNCF, Thalys, Vueling.</li>
           <li xml:lang="ka">გაუმჯობესებული სამგზავრო მონაცემების ამოღება Airbnb, Amadeus, BlaBlaCar, Eventim, Ryanair, SNCF, Thalys, Vueling სისტემებისთვის.</li>
           <li xml:lang="pt-BR">Extração de dados de viagens aprimorada para Airbnb, Amadeus, BlaBlaCar, Eventim, Ryanair, SNCF, Thalys e Vueling.</li>
@@ -4059,6 +4079,7 @@
           <li xml:lang="cs">Při porovnávání jmen cestujících zohledněny přepisy.</li>
           <li xml:lang="es">Gestionar la transliteración al comparar nombres de viajeros.</li>
           <li xml:lang="fr">Gérer la translittération lors de la comparaison des noms de voyageurs.</li>
+          <li xml:lang="he">טיפול בתעתיק בעת השוואת שמות מטיילים.</li>
           <li xml:lang="it">Gestisce la traslitterazione quando confronti i nomi dei viaggiatori.</li>
           <li xml:lang="ka">ტრანსლიტერაციის დამუშავება მოგზაურთა სახელების შედარებისას.</li>
           <li xml:lang="pt-BR">Lidar com a transliteração ao comparar nomes de viajantes.</li>
@@ -4072,6 +4093,7 @@
           <li xml:lang="cs">Opraveno seskupení cest, pokud je spojovací cesta součástí jiné rezervace.</li>
           <li xml:lang="es">Se ha corregido la agrupación de viajes cuando el trayecto de conexión forma parte de una reserva diferente.</li>
           <li xml:lang="fr">Correction du regroupement des trajets lorsque le voyage de correspondance fait partie d'une réservation différente.</li>
+          <li xml:lang="he">תוקן קיבוץ נסיעות כשהמסע המחבר הוא חלק מהזמנה אחרת.</li>
           <li xml:lang="it">Corregge il raggruppamento dei viaggi quando il viaggio in coincidenza fa parte di una prenotazione diversa.</li>
           <li xml:lang="ka">გასწორდა მგზავრობების დაჯგუფება, როდესაც გადაჯდომა სხვა ჯავშნის ნაწილია.</li>
           <li xml:lang="pt-BR">Correção do agrupamento de viagens quando a conexão entre as viagens faz parte de uma reserva diferente.</li>
@@ -4085,6 +4107,7 @@
           <li xml:lang="cs">Oprava výběru správné vstupenky na akci v Apple Wallet pro akce s více účastníky.</li>
           <li xml:lang="es">Se ha corregido la selección de la entrada correcta de Apple Wallet para eventos con varios asistentes.</li>
           <li xml:lang="fr">Correction de la sélection du bon billet d'événement de Apple Wallet pour les évènements avec plusieurs personnes participantes.</li>
+          <li xml:lang="he">תוקנה בחירת כרטיס האירוע הנכון מ־Apple Wallet לאירוע עם כמה משתתפים.</li>
           <li xml:lang="it">Correzione della selezione del biglietto evento Apple Wallet corretto per eventi con più partecipanti.</li>
           <li xml:lang="ka">გასწორდა Apple Wallet-ის სწორი ბილეთის შერჩევა მრავალ-მონაწილიანი მოვლენებისთვის.</li>
           <li xml:lang="pt-BR">Correção da seleção do ingresso correto do Apple Wallet para eventos com vários participantes.</li>
@@ -4098,6 +4121,7 @@
           <li xml:lang="cs">Oprava vykreslování vstupenek na události v Apple Wallet.</li>
           <li xml:lang="es">Se ha corregido la visualización de entradas a eventos de Apple Wallet.</li>
           <li xml:lang="fr">Correction de l'affichage des billets d'évènements dans Apple Wallet.</li>
+          <li xml:lang="he">תוקן תיצוג של כרטיסי אירועים ב־Apple Wallet.</li>
           <li xml:lang="it">Correzione del rendering dei biglietti degli eventi di Apple Wallet.</li>
           <li xml:lang="ka">გასწორდა Apple Wallet მოვლენის ბილეთების რენდერი.</li>
           <li xml:lang="pt-BR">Corrigido o problema na renderização dos ingressos para eventos da Apple Wallet.</li>
@@ -4117,6 +4141,7 @@
           <li xml:lang="cs">Vylepšena velikost a umístění mapových překryvů.</li>
           <li xml:lang="es">Se ha mejorado el tamaño y la posición de capas de mapas.</li>
           <li xml:lang="fr">Amélioration de la taille et du positionnement des superpositions sur la carte.</li>
+          <li xml:lang="he">שיפור הגודל ומקום ההצגה של שכבות מעל המפה.</li>
           <li xml:lang="it">Migliora le dimensioni e il posizionamento delle sovrapposizioni di mappe.</li>
           <li xml:lang="ka">რუკის ზედა ფენების ზომისა და პოზიციონირების გაუმჯობესება.</li>
           <li xml:lang="pt-BR">Melhoria do tamanho e o posicionamento das sobreposições de mapa.</li>
@@ -4130,6 +4155,7 @@
           <li xml:lang="cs">Vylepšené nástroje pro extrakci cestovních dat pro Amtrak, Flixbus a Vistara.</li>
           <li xml:lang="es">Se han mejorado los extractores de datos de viaje para Amtrak, Flixbus y Vistara.</li>
           <li xml:lang="fr">Amélioration de l'extracteur de données de voyage améliorés pour Amtrak, Flixbus et Vistara.</li>
+          <li xml:lang="he">מחלצי נתוני נסיעות מ־Amtrak,‏ Flixbus ו־Vistara.</li>
           <li xml:lang="it">Estrattori dati di viaggio migliorati per Amtrak, Flixbus e Vistara.</li>
           <li xml:lang="ka">გაუმჯობესებული სამგზავრო მონაცემების ამომკრებები Amtrak, Flixbus და Vistara სისტემებისთვის.</li>
           <li xml:lang="pt-BR">Extratores de dados de viagem aprimorados para Amtrak, Flixbus e Vistara.</li>
@@ -4143,6 +4169,7 @@
           <li xml:lang="cs">Vylepšené rozpoznávání letištních terminálů a bran.</li>
           <li xml:lang="es">Se ha mejorado la detección de terminales y puertas en aeropuertos.</li>
           <li xml:lang="fr">Amélioration de la détection des terminaux et des portes d'aéroport.</li>
+          <li xml:lang="he">זיהוי מסוף/טרמינל ושער בנמלי תעופה השתפר.</li>
           <li xml:lang="it">Miglioramento del rilevamento del terminal e del gate dell'aeroporto.</li>
           <li xml:lang="ka">აეროპორტის ტერმინალისა და გასასვლელის (gate) ამოცნობის გაუმჯობესება.</li>
           <li xml:lang="pt-BR">Detecção aprimorada de terminais e portões de embarque em aeroportos.</li>
@@ -4162,6 +4189,7 @@
           <li xml:lang="cs">Vylepšený import kalendáře, umožňující jemnější výběr a podporující také Linux.</li>
           <li xml:lang="es">Se ha mejorado la importación de calendarios, permitiendo una selección más precisa y compatibilidad con Linux.</li>
           <li xml:lang="fr">Amélioration de l'importation de calendrier, permettant une sélection plus précise et prenant également en charge Linux.</li>
+          <li xml:lang="he">התמיכה בלוח שנה השתפרה, מה שמאפשר בחירה יותר מדויקת לרבות תמיכה בלינוקס.</li>
           <li xml:lang="it">Importazione del calendario migliorata, che consente una selezione più dettagliata e supporta anche Linux.</li>
           <li xml:lang="ka">გაუმჯობესებული კალენდრის შემოტანა, რაც საშუალებას იძლევა უფრო ზუსტი შერჩევის და ასევე მხარდაჭერილია Linux-ზეც.</li>
           <li xml:lang="pt-BR">Importação de calendário aprimorada, permitindo uma seleção mais detalhada e também compatível com Linux.</li>
@@ -4189,6 +4217,7 @@
           <li xml:lang="cs">Podpora pro jízdenky a programové karty, které nejsou vázány na konkrétní cestu, například jízdenky s paušální sazbou nebo časovým intervalem nebo členství v programu slev.</li>
           <li xml:lang="es">Compatibilidad con pases y tarjetas de programas que no estén vinculados a un determinado viaje, como billetes de tarifa plana o por intervalos de tiempo, o membresías de programas de descuento.</li>
           <li xml:lang="fr">Prise en charge pour les abonnements et cartes de programme qui ne sont pas liés à un voyage spécifique, tels que les billets à tarif forfaitaire ou à intervalle de temps ou les adhésions à des programmes de réduction.</li>
+          <li xml:lang="he">תמיכה באישורי מעבר וכרטיסי מועדון שלא קשורים לנסיעה מסוימת, כגון הנחה או כרטיסים לפרקי זמן קבועים או חברויות בתוכניות הנחות.</li>
           <li xml:lang="it">Supporto per abbonamenti e carte di programma non legati a un viaggio specifico, come biglietti a tariffa fissa o a intervallo di tempo o abbonamenti a programmi scontati.</li>
           <li xml:lang="ka">ბარათებისა და პროგრამების მხარდაჭერა, რომლებიც არ არის მიბმული კონკრეტულ მგზავრობასთან, როგორიცაა ფიქსირებული ტარიფის ან დროის ინტერვალის ბილეთები და ფასდაკლების პროგრამები.</li>
           <li xml:lang="pt-BR">Suporte para passes e cartões de programas que não estão vinculados a uma viagem específica, como bilhetes com tarifa fixa ou com intervalo de tempo, ou ainda adesões a programas de desconto.</li>
@@ -4236,6 +4265,7 @@
           <li xml:lang="cs">Oprava nesprávného rozpoznávání monorailových nástupišť jako běžných železničních nástupišť.</li>
           <li xml:lang="es">Se ha corregido el fallo que detectaba de forma errónea los andenes de monorraíl.</li>
           <li xml:lang="fr">Correction des quais de monorail détectées à tort comme des voies ferrées classiques.</li>
+          <li xml:lang="he">תוקנה בעיה שרציפים של מונורייל (חד־מסילה) זוהו בטעות כתחנות רכבת רגילה.</li>
           <li xml:lang="it">Risolto il problema per cui le piattaforme della monorotaia venivano erroneamente rilevate come ferrovia normale.</li>
           <li xml:lang="ka">გასწორდა მონორელსის ბაქნების არასწორი ამოცნობა, როგორც ჩვეულებრივი რკინიგზა.</li>
           <li xml:lang="pt-BR">Corrigido o problema das plataformas de monotrilho serem erroneamente identificadas como linhas férreas convencionais.</li>
@@ -4255,6 +4285,7 @@
           <li xml:lang="cs">Vylepšené získávání cestovních dat pro Thalys, britské národní železnice, Eurowings a Eventbrite.</li>
           <li xml:lang="es">Se ha mejorado la extracción de datos de viaje para Thalys, los ferrocarriles nacionales de Reino Unido, Eurowings y Eventbrite.</li>
           <li xml:lang="fr">Amélioration de l'extraction de données de voyage pour Thalys, le réseau ferroviaire national britannique, Eurowings et Eventbrite.</li>
+          <li xml:lang="he">חילוץ נתוני הנסיעות מ־Thalys, שירות הרכבות הלאומי של הממלכה המאוחדת, Eurowings ו־Eventbrite השתפר.</li>
           <li xml:lang="it">Migliorata l'estrazione dei dati di viaggio per Thalys, ferrovie nazionali del Regno Unito, Eurowings ed Eventbrite.</li>
           <li xml:lang="ka">გაუმჯობესებული სამგზავრო მონაცემების ამოღება Thalys, ბრიტანეთის ეროვნული რკინიგზა, Eurowings და Eventbrite სისტემებისთვის.</li>
           <li xml:lang="pt-BR">Extração de dados de viagens aprimorada para Thalys, National Rail do Reino Unido, Eurowings e Eventbrite.</li>
@@ -4268,6 +4299,7 @@
           <li xml:lang="cs">Opraveno zpracování informací o obsazení vlaků pro německé provozovatele veřejné dopravy.</li>
           <li xml:lang="es">Se ha corregido el análisis de información de carga del tren para los operadores de transporte público alemanes.</li>
           <li xml:lang="fr">Correction de l'analyse des informations de charge des trains pour les opérateurs de transport public allemands.</li>
+          <li xml:lang="he">תוקן פיענוח פרטי עומס רכבות למפעילים התחבורה הציבורית בגרמניה.</li>
           <li xml:lang="it">Risolto il problema relativo all'analisi delle informazioni sul carico dei treni per gli operatori di trasporto pubblico tedeschi.</li>
           <li xml:lang="ka">გასწორდა მატარებლის დატვირთვის ინფორმაციის დამუშავება გერმანული ოპერატორებისთვის.</li>
           <li xml:lang="pt-BR">Correção da análise de informações sobre a carga dos trens para operadores de transporte público alemães.</li>
@@ -4287,6 +4319,7 @@
           <li xml:lang="cs">Opravena nesprávná země zobrazená ve formátovaných adresách.</li>
           <li xml:lang="es">Se ha corregido el fallo que mostraba el país incorrecto en las direcciones formateadas.</li>
           <li xml:lang="fr">Correction du pays incorrect affiché dans les adresses formatées.</li>
+          <li xml:lang="he">תוקנה בעיה שהמדינה הלא נכונה מוצגת בכתובות מסודרות בתבנית.</li>
           <li xml:lang="it">Corregge il paese sbagliato visualizzato negli indirizzi formattati.</li>
           <li xml:lang="ka">გასწორდა არასწორი ქვეყნის ჩვენება ფორმატირებულ მისამართებში.</li>
           <li xml:lang="pt-BR">Correção do problema que exibe o país errado nos endereços formatados.</li>
@@ -4300,6 +4333,7 @@
           <li xml:lang="cs">Zobrazení všech podporovaných typů čárových kódů v Apple Wallet pass.</li>
           <li xml:lang="es">Mostrar todos los tipos de códigos de barras permitidos en los pases de Apple Wallet.</li>
           <li xml:lang="fr">Afficher tous les types de codes barres pris en charge dans les abonnements de Apple Wallet.</li>
+          <li xml:lang="he">הצגת כל סוגי הברקודים הנתמכים באישורי Apple Wallet.</li>
           <li xml:lang="it">Visualizza tutti i tipi di codici a barre supportati nei pass Apple Wallet.</li>
           <li xml:lang="ka">ყველა მხარდაჭერილი შტრიხკოდის ტიპის ჩვენება Apple Wallet-ის ბარათებში.</li>
           <li xml:lang="pt-BR">Exibir todos os tipos de código de barras compatíveis nos passes do Apple Wallet.</li>
