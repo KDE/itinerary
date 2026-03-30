@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-23 00:44+0000\n"
-"PO-Revision-Date: 2026-03-23 10:43+0100\n"
+"PO-Revision-Date: 2026-03-29 13:47+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1202,7 +1202,7 @@ msgstr "Edita el vol"
 #, kde-format
 msgctxt "flight departure"
 msgid "Departure - %1"
-msgstr "Eixida - %1"
+msgstr "Eixida – %1"
 
 #: app/FlightEditor.qml:93
 #, kde-format
@@ -1266,7 +1266,7 @@ msgstr "Grup d'embarcament"
 #, kde-format
 msgctxt "flight arrival"
 msgid "Arrival - %1"
-msgstr "Arribada - %1"
+msgstr "Arribada – %1"
 
 #: app/FlightEditor.qml:162
 #, kde-format
@@ -2065,7 +2065,7 @@ msgstr "Busca de la porta"
 #, kde-format
 msgctxt "flight departure/arrival gate"
 msgid "%1 (arrival + departure)"
-msgstr "%1 (arribada - eixida)"
+msgstr "%1 (arribada – eixida)"
 
 #: app/IndoorMapGateSheet.qml:35
 #, kde-format
@@ -2538,7 +2538,7 @@ msgstr "Alguns endolls són incompatibles: %1"
 #: app/LocationInfoDelegate.qml:92
 #, kde-format
 msgid "Timezone change: %1 (%2)"
-msgstr "Canvi de la zona horària: %1 (%2)"
+msgstr "Canvi del fus horari: %1 (%2)"
 
 #: app/LocationInfoDelegate.qml:114
 #, kde-format
@@ -3409,19 +3409,19 @@ msgstr "Busca…"
 #, kde-format
 msgctxt "name - number"
 msgid "%1 - %2"
-msgstr "%1 - %2"
+msgstr "%1 – %2"
 
 #: app/PassDelegate.qml:44
 #, kde-format
 msgctxt "name - valid time range"
 msgid "%1 - %2"
-msgstr "%1 - %2"
+msgstr "%1 – %2"
 
 #: app/passmanager.cpp:289
 #, kde-format
 msgctxt "%1 and %2 are dates"
 msgid "%1 - %2"
-msgstr "%1 - %2"
+msgstr "%1 – %2"
 
 #: app/PassPage.qml:19
 #, kde-format
@@ -4531,7 +4531,7 @@ msgstr "Següent eixida %1 des de %2"
 #, kde-format
 msgctxt "date range"
 msgid "%1 - %2"
-msgstr "%1 - %2"
+msgstr "%1 – %2"
 
 #: app/TripGroupDelegate.qml:40
 #, kde-format
@@ -4694,7 +4694,7 @@ msgstr "Segur que voleu suprimir el viatge «%1»?"
 #: app/TripGroupPage.qml:426
 #, kde-format
 msgid "%1 - %2"
-msgstr "%1 - %2"
+msgstr "%1 – %2"
 
 #: app/TripGroupPage.qml:427
 #, kde-format
