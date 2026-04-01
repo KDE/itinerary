@@ -2492,6 +2492,7 @@
           <li xml:lang="ru">Отображение информации о заполненности по вагонам при её наличии.</li>
           <li xml:lang="sl">Prikažite informacije o zasedenosti vagona, ko so na voljo.</li>
           <li xml:lang="tr">Show per-coach occupancy information when available.</li>
+          <li xml:lang="uk">Реалізовано показ даних щодо зайнятості місць, якщо такі доступні.</li>
           <li>Allow to manually add ticket barcodes to existing reservations.</li>
           <li xml:lang="ar">السماح بإضافة الرموز الشريطية للتذاكر يدويًا إلى الحجوزات الحالية.</li>
           <li xml:lang="ca">Permet afegir manualment codis de barres de tiquets a les reserves existents.</li>
@@ -2505,6 +2506,7 @@
           <li xml:lang="ru">Возможность вручную добавлять штрихкоды билетов к существующим бронированиям.</li>
           <li xml:lang="sl">Omogoči ročno dodajanje črtnih kod vozovnic obstoječim rezervacijam.</li>
           <li xml:lang="tr">Allow to manually add ticket barcodes to existing reservations.</li>
+          <li xml:lang="uk">Уможливлено додавання штрих-кодів квитків вручну до наявних резервувань.</li>
           <li>Show DST transition information in the timeline.</li>
           <li xml:lang="ar">عرض معلومات انتقال التوقيت الصيفي في الخط الزمني.</li>
           <li xml:lang="ca">Mostra la informació de transició DST a la línia de temps.</li>
@@ -2518,6 +2520,7 @@
           <li xml:lang="ru">Отображение информации о переходе на летнее время в ленте событий.</li>
           <li xml:lang="sl">Prikažite informacije o prehodu na poletni čas na časovnici.</li>
           <li xml:lang="tr">Show DST transition information in the timeline.</li>
+          <li xml:lang="uk">Реалізовано показ відомостей щодо пересадок DST на панелі розкладу.</li>
         </ul>
       </description>
     </release>
@@ -2551,6 +2554,7 @@
           <li xml:lang="ru">Исправлено отображение сбоев в отправлении общественного транспорта.</li>
           <li xml:lang="sl">Popravi prikaz motenj odhodov javnega prevoza.</li>
           <li xml:lang="tr">Fix displaying public transport departure disruptions.</li>
+          <li xml:lang="uk">Виправлено показ відхилень у відправленнях громадського транспорту.</li>
           <li>Fix Apple Wallet pass rendering issues.</li>
           <li xml:lang="ar">إصلاح مشكلات رندرة تصاريح Apple Wallet.</li>
           <li xml:lang="ca">Corregeix els problemes de renderització dels passis d'Apple Wallet.</li>
@@ -2564,6 +2568,7 @@
           <li xml:lang="ru">Исправлены проблемы с отображением пропусков Apple Wallet.</li>
           <li xml:lang="sl">Popravi težave z upodabljanjem vozovnic Apple Wallet.</li>
           <li xml:lang="tr">Fix Apple Wallet pass rendering issues.</li>
+          <li xml:lang="uk">Виправлено проблеми із обробкою пропусків Apple Wallet.</li>
         </ul>
       </description>
     </release>
@@ -2597,6 +2602,7 @@
           <li xml:lang="ru">Фильтрация неправдоподобных результатов геокодирования при редактировании адреса.</li>
           <li xml:lang="sl">Filtrirajte neverjetne rezultate geokoderja pri urejanju naslovov.</li>
           <li xml:lang="tr">Filter implausible geo coder results on address editing.</li>
+          <li xml:lang="uk">Реалізовано фільтрування неправдоподібних результатів засобу геокодування під час редагування адреси.</li>
           <li>Fix overlap between floating map button and arrival details on the journey details page.</li>
           <li xml:lang="ar">إصلاح التداخل بين زر الخريطة العائم وتفاصيل الوصول في صفحة تفاصيل الرحلة.</li>
           <li xml:lang="ca">Corregeix la superposició entre el botó flotant del mapa i els detalls d'arribada a la pàgina de detalls de viatge.</li>
@@ -2610,6 +2616,7 @@
           <li xml:lang="ru">Исправлено наложение плавающей кнопки карты и данных о прибытии на странице сведений о поездке.</li>
           <li xml:lang="sl">Popravi prekrivanje med plavajočim gumbom zemljevida in podrobnostmi o prihodu na strani s podrobnostmi o potovanju.</li>
           <li xml:lang="tr">Fix overlap between floating map button and arrival details on the journey details page.</li>
+          <li xml:lang="uk">Виправлено перекриття рухомої кнопки карти та деталей прибуття на сторінці подробиць подорожі.</li>
           <li>Improve Deutsche Bahn realtime information when facing cancelled or replacement trains.</li>
           <li xml:lang="ar">تحسين معلومات Deutsche Bahn في الوقت الفعلي عند مواجهة قطارات ملغاة أو بديلة.</li>
           <li xml:lang="ca">Millorar la informació en temps real de Deutsche Bahn quan hi ha trens cancel·lats o substituïts.</li>
