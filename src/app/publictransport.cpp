@@ -119,6 +119,12 @@ static KItinerary::Ticket clearSeat(KItinerary::Ticket ticket)
     return ticket;
 }
 
+[[nodiscard]] static bool isSameLine(QStringView lhs, QStringView rhs)
+{
+    // TODO use the proper KPublicTransport comparison function for this
+    return lhs.compare(rhs, Qt::CaseInsensitive) == 0;
+}
+
 static KItinerary::TrainReservation applyJourneySection(KItinerary::TrainReservation res, const KPublicTransport::JourneySection &section)
 {
     using namespace KItinerary;
@@ -126,6 +132,9 @@ static KItinerary::TrainReservation applyJourneySection(KItinerary::TrainReserva
     auto trip = res.reservationFor().value<TrainTrip>();
     trip.setDepartureTime(section.scheduledDepartureTime());
     trip.setArrivalTime(section.scheduledArrivalTime());
+    if (!isSameLine(trip.trainNumber(), section.route().line().name())) {
+        res.setReservedTicket(clearSeat(res.reservedTicket().value<Ticket>()));
+    }
     trip.setTrainNumber(section.route().line().name());
     trip.setTrainName(section.route().line().modeString());
     trip.setDeparturePlatform(section.scheduledDeparturePlatform());
@@ -135,7 +144,6 @@ static KItinerary::TrainReservation applyJourneySection(KItinerary::TrainReserva
     trip.setArrivalStation(PublicTransport::updateToLocation(trip.arrivalStation(), section.to()));
 
     res.setReservationFor(trip);
-    res.setReservedTicket(clearSeat(res.reservedTicket().value<Ticket>()));
     return res;
 }
 
@@ -146,6 +154,9 @@ static KItinerary::BusReservation applyJourneySection(KItinerary::BusReservation
     auto trip = res.reservationFor().value<BusTrip>();
     trip.setDepartureTime(section.scheduledDepartureTime());
     trip.setArrivalTime(section.scheduledArrivalTime());
+    if (!isSameLine(trip.busNumber(), section.route().line().name())) {
+        res.setReservedTicket(clearSeat(res.reservedTicket().value<Ticket>()));
+    }
     trip.setBusNumber(section.route().line().name());
     trip.setBusName(section.route().line().modeString());
     trip.setDeparturePlatform(section.scheduledDeparturePlatform());
@@ -155,7 +166,6 @@ static KItinerary::BusReservation applyJourneySection(KItinerary::BusReservation
     trip.setArrivalBusStop(PublicTransport::updateToLocation(trip.arrivalBusStop(), section.to()));
 
     res.setReservationFor(trip);
-    res.setReservedTicket(clearSeat(res.reservedTicket().value<Ticket>()));
     return res;
 }
 
