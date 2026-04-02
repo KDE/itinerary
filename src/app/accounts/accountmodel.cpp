@@ -18,10 +18,10 @@ AccountModel::AccountModel(QObject *parent)
     , m_config(KSharedConfig::openStateConfig())
     , m_accountTypes{
         {
-            .identifier = u"deutschbahn"_s,
-            .name = i18nc("@label", "Deutsch Bahn"),
-            .iconName = u"accounts/deutschbahn/account-deutschbahn.svg"_s,
-            .description = i18nc("@info", "Sync your tickets from your Deutsch Bahn account"),
+            .identifier = u"deutschebahn"_s,
+            .name = i18nc("@label", "Deutsche Bahn"),
+            .iconName = u"accounts/deutschebahn/account-deutschbahn.svg"_s,
+            .description = i18nc("@info", "Sync your tickets from your Deutsche Bahn account"),
             .protocolOAuthCallback = u"dbnav"_s,
         },
     }
@@ -153,8 +153,8 @@ void AccountModel::initAccount(AbstractAccount *account)
 AbstractAccount *AccountModel::accountFromIdentifier(const QString &identifier)
 {
     AbstractAccount *account = nullptr;
-    if (identifier == "deutschbahn"_L1) {
-        account = new DeutschBahnAccount(this);
+    if (identifier == "deutschebahn"_L1) {
+        account = new DeutscheBahnAccount(this);
     }
     Q_ASSERT(account);
     return account;
