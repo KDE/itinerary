@@ -3253,6 +3253,7 @@
           <li xml:lang="cs">Opravena chyba v systému Android při importu souboru s mezerou v cestě.</li>
           <li xml:lang="es">Se ha corregido un fallo de la aplicación en Android al importar un archivo con un espacio en su ruta.</li>
           <li xml:lang="fr">Correction d'un plantage sous Android lors de l'importation d'un fichier dont l'emplacement contient un caractère d'espace.</li>
+          <li xml:lang="he">תוקנה קריסה ב־Android בעת ייבוא קובץ עם רחב בנתיב שלו.</li>
           <li xml:lang="it">Risolto un arresto anomalo su Android durante l'importazione di un file con uno spazio nel suo percorso.</li>
           <li xml:lang="ka">გასწორდა პროგრამის გათიშვა Android-ზე ფაილის შემოტანასას, რომლის მისამართიც შეიცავდა ჰარეს.</li>
           <li xml:lang="pt-BR">Corrigido um erro que causava o fechamento inesperado do aplicativo no Android ao importar um arquivo com um espaço no caminho.</li>
@@ -3266,6 +3267,7 @@
           <li xml:lang="cs">Opraveny dotazy týkající se veřejné dopravy pro VRS.</li>
           <li xml:lang="es">Se han corregido las consultas de transporte público para VRS.</li>
           <li xml:lang="fr">Correction des demandes pour des transports publics pour le VRS.</li>
+          <li xml:lang="he">תוקנו שאילתות תחבורה ציבורית ל־VRS.</li>
           <li xml:lang="it">Risolte le query sui trasporti pubblici per VRS.</li>
           <li xml:lang="ka">გასწორდა საზოგადოებრივი ტრანსპორტის მოთხოვნები VRS-ისთვის.</li>
           <li xml:lang="pt-BR">Consultas sobre transporte público corrigidas para VRS.</li>
@@ -3593,6 +3595,7 @@
           <li xml:lang="ru">Поддержка штрихкодов на билетах Eurostar, SBB и железных дорог Великобритании.</li>
           <li xml:lang="sl">Podpora za črtne kode železniških vozovnic Eurostar, SBB in Združenega kraljestva.</li>
           <li xml:lang="tr">Support for Eurostar, SBB and UK railway ticket barcodes.</li>
+          <li xml:lang="uk">Підтримка штрихкодів квитків Eurostar, SBB та залізниць Великої Британії.</li>
           <li>New live status page using onboard vehicle API.</li>
           <li xml:lang="ar">صفحة حالة مباشرة جديدة تستخدم واجهة برمجة تطبيقات المركبة على المتن.</li>
           <li xml:lang="ca">Nova pàgina d'estat en viu utilitzant l'API a bord del vehicle.</li>
@@ -3606,6 +3609,7 @@
           <li xml:lang="ru">Новая страница текущего состояния с использованием бортового API транспортного средства.</li>
           <li xml:lang="sl">Nova stran s stanjem v živo z uporabo API-ja v vozilu.</li>
           <li xml:lang="tr">New live status page using onboard vehicle API.</li>
+          <li xml:lang="uk">Нова сторінка інтерактивного стан з використанням програмного інтерфейсу даних щодо посадки засобу пересування.</li>
           <li>New UI for reservation details pages.</li>
           <li xml:lang="ar">واجهة مستخدم جديدة لصفحات تفاصيل الحجز.</li>
           <li xml:lang="ca">Nova interfície d'usuari per a les pàgines de detalls de reserves.</li>
@@ -3620,6 +3624,7 @@
           <li xml:lang="ru">Новый интерфейс для страниц сведений о бронировании.</li>
           <li xml:lang="sl">Nov uporabniški vmesnik za strani s podrobnostmi rezervacije.</li>
           <li xml:lang="tr">New UI for reservation details pages.</li>
+          <li xml:lang="uk">Новий інтерфейс для сторінок подробиць щодо бронювання.</li>
           <li>Faster loading of train station and airport maps.</li>
           <li xml:lang="ar">تحميل أسرع لخرائط محطات القطار والمطارات.</li>
           <li xml:lang="ca">Càrrega més ràpida dels mapes d'estacions de tren i d'aeroports.</li>
@@ -3634,6 +3639,7 @@
           <li xml:lang="ru">Ускорена загрузка карт вокзалов и аэропортов.</li>
           <li xml:lang="sl">Hitrejše nalaganje zemljevidov železniških postaj in letališč.</li>
           <li xml:lang="tr">Faster loading of train station and airport maps.</li>
+          <li xml:lang="uk">Швидше завантаження карт залізничних станцій та аеропортів.</li>
           <li>Improved display of doors, trees, barrier blocks, platform section markers and accessibility information on train station maps.</li>
           <li xml:lang="ar">تحسين عرض الأبواب والأشجار وكتل الحواجز وعلامات أقسام المنصات ومعلومات إمكانية الوصول على خرائط محطة القطار.</li>
           <li xml:lang="ca">Millora de la visualització de portes, arbres, blocs d'obstacles, marcadors de secció d'andanes i informació d'accessibilitat en els mapes d'estacions de trens.</li>
@@ -3648,6 +3654,7 @@
           <li xml:lang="ru">Улучшено отображение дверей, деревьев, блоков ограждений, маркеров секций платформ и информации о доступности на картах вокзалов.</li>
           <li xml:lang="sl">Izboljšan prikaz vrat, dreves, zapornic, oznak odsekov peronov in informacij o dostopnosti na zemljevidih ​​železniških postaj.</li>
           <li xml:lang="tr">Improved display of doors, trees, barrier blocks, platform section markers and accessibility information on train station maps.</li>
+          <li xml:lang="uk">Удосконалено показ дверей, дерев, шлагбаумів, позначок поділу платформ та даних щодо доступності на картах залізничних станцій.</li>
           <li>Allow to enable LED light for barcode scanning.</li>
           <li xml:lang="ar">السماح بتمكين ضوء LED لمسح الرموز الشريطية.</li>
           <li xml:lang="ca">Permet activar la llum LED per a l'escaneig de codis de barres.</li>
@@ -3662,6 +3669,7 @@
           <li xml:lang="ru">Возможность включить светодиодную подсветку для сканирования штрихкода.</li>
           <li xml:lang="sl">Omogočena je LED-lučka za skeniranje črtne kode.</li>
           <li xml:lang="tr">Allow to enable LED light for barcode scanning.</li>
+          <li xml:lang="uk">Уможливлено використання підсвічування для сканування штрихкодів.</li>
           <li>Fix wrong public transport service being used in France.</li>
           <li xml:lang="ar">إصلاح استخدام خدمة نقل عام خاطئة في فرنسا.</li>
           <li xml:lang="ca">Corregeix un servei de transport públic equivocat que s'utilitza a França.</li>
@@ -3676,6 +3684,7 @@
           <li xml:lang="ru">Исправлен неправильный выбор общественного транспорта во Франции.</li>
           <li xml:lang="sl">Popravljena je napačna uporaba storitve javnega prevoza v Franciji.</li>
           <li xml:lang="tr">Fix wrong public transport service being used in France.</li>
+          <li xml:lang="uk">Виправлено використання помилкової служби громадського транспорту для Франції.</li>
           <li>Fix public transport data access in Switzerland.</li>
           <li xml:lang="ar">إصلاح الوصول إلى بيانات النقل العام في سويسرا.</li>
           <li xml:lang="ca">Corregeix l'accés a les dades de transport públic a Suïssa.</li>
@@ -3690,6 +3699,7 @@
           <li xml:lang="ru">Исправлен доступ к данным общественного транспорта в Швейцарии.</li>
           <li xml:lang="sl">Popravljen je dostop do podatkov o javnem prevozu v Švici.</li>
           <li xml:lang="tr">Fix public transport data access in Switzerland.</li>
+          <li xml:lang="uk">Виправлено доступ до даних громадського транспорту у Швейцарії.</li>
           <li>Fix handling of pasted URLs.</li>
           <li xml:lang="ar">إصلاح التعامل مع روابط URL الملصقة.</li>
           <li xml:lang="ca">Corregeix la gestió dels URL enganxats.</li>
@@ -3704,6 +3714,7 @@
           <li xml:lang="ru">Исправлена обработка вставленных URL-адресов.</li>
           <li xml:lang="sl">Popravljeno je ravnanje z prilepljenimi URL-ji.</li>
           <li xml:lang="tr">Fix handling of pasted URLs.</li>
+          <li xml:lang="uk">Виправлено обробку вставлених адрес.</li>
         </ul>
       </description>
     </release>
@@ -3723,6 +3734,7 @@
           <li xml:lang="ru">Улучшено извлечение данных для билетов Flixbus и железных дорог Великобритании.</li>
           <li xml:lang="sl">Izboljšano pridobivanje podatkov za železniške vozovnice Flixbus in Združenega kraljestva.</li>
           <li xml:lang="tr">Improved data extraction for Flixbus and UK railway tickets.</li>
+          <li xml:lang="uk">Удосконалено видобування даних з квитків Flixbus та залізниць Великої Британії.</li>
           <li>Fixed eliding of stop names in the journey view.</li>
           <li xml:lang="ar">أُصلح حذف أسماء التوقفات في عرض الرحلة.</li>
           <li xml:lang="ca">Corregeix l'elisió de noms de parades a la vista del viatge.</li>
@@ -3730,6 +3742,7 @@
           <li xml:lang="cs">Opraveno vynechávání názvů zastávek v zobrazení cesty.</li>
           <li xml:lang="es">Se ha corregido la omisión de nombres de paradas en la vista del viaje.</li>
           <li xml:lang="fr">Correction de l'omission des noms d'arrêts dans la vue du trajet.</li>
+          <li xml:lang="he">קיצור שמות התחנות בתצוגת המסע תוקן.</li>
           <li xml:lang="it">Risolto il problema con l'eliminazione dei nomi delle fermate nella visualizzazione del viaggio.</li>
           <li xml:lang="ka">გასწორდა გაჩერებების სახელების შემოკლება მგზავრობის ხედში.</li>
           <li xml:lang="pt-BR">Corrigido o problema de omissão dos nomes das paradas na visualização da viagem.</li>
@@ -3743,6 +3756,7 @@
           <li xml:lang="cs">Opraveno chybějící zobrazení časového pásma pro časy v UTC.</li>
           <li xml:lang="es">Se ha corregido la visualización de zonas horarias para las horas en UTC.</li>
           <li xml:lang="fr">Correction de l’affichage manquant du fuseau horaire pour les heures en UTC.</li>
+          <li xml:lang="he">תוקנה תצוגת אזור זמן חסרה ב־UTC.</li>
           <li xml:lang="it">Risolto il problema con la visualizzazione del fuso orario mancante per gli orari in UTC.</li>
           <li xml:lang="ka">გასწორდა გამოტოვებული დროის სარტყლის ჩვენება UTC დროისთვის.</li>
           <li xml:lang="pt-BR">Corrigido o problema de ausência na exibição do fuso horário para horários em UTC.</li>
@@ -3966,6 +3980,7 @@
           <li xml:lang="cs">Vylepšené přepínání podlaží pro schodiště na mapách nádraží/letišť.</li>
           <li xml:lang="es">Se ha mejorado el cambo de piso en las escaleras de los mapas de estaciones/aeropuertos.</li>
           <li xml:lang="fr">Amélioration du basculement de niveau des étages pour les escaliers sur les plans de stations / aéroports.</li>
+          <li xml:lang="he">החלפה ברמת קומה השתפרה לגרמי מדרגות במפות תחנות/נמלי תעופה.</li>
           <li xml:lang="it">Miglioramento del cambio di livello del piano per le scale nelle mappe di stazioni/aeroporti.</li>
           <li xml:lang="ka">სართულებს შორის გადართვის გაუმჯობესება კიბეებისთვის სადგურის/აეროპორტის რუკებზე.</li>
           <li xml:lang="pt-BR">Melhoria na alternância de níveis de piso para escadas em mapas de estações/aeroportos.</li>
@@ -3979,6 +3994,7 @@
           <li xml:lang="cs">Oprava pořadí vrstev a detekce zásahů pro mapy stanic/letišť.</li>
           <li xml:lang="es">Se ha corregido en el orden de apilado y la detección de resultados en los mapas de estaciones/aeropuertos.</li>
           <li xml:lang="fr">Correction de l'ordre d'empilement et de la détection des clics pour les cartes des gares /aéroports.</li>
+          <li xml:lang="he">תיקוני סידור בערמה וזיהוי פגיעה למפות תחנות/נמלי תעופה.</li>
           <li xml:lang="it">Correzioni dell'ordine di impilamento e del rilevamento dei colpi per le mappe della stazione/aeroporto.</li>
           <li xml:lang="ka">შრეების რიგითობისა და ელემენტებზე შეხების ამოცნობის გასწორება სადგურის/აეროპორტის რუკებზე.</li>
           <li xml:lang="pt-BR">Correções na ordem de empilhamento e na detecção de colisões nos mapas de estações/aeroportos.</li>
@@ -4048,6 +4064,7 @@
           <li xml:lang="cs">Různá vylepšení a doplnění nástroje pro extrahování cestovních dokladů.</li>
           <li xml:lang="es">Diversas mejoras y complementos del extractor de documentos de viaje.</li>
           <li xml:lang="fr">Divers ajouts et améliorations de l’extracteur de documents de voyage.</li>
+          <li xml:lang="he">מגוון תוספות ושיפורים למחלצי מסמכי נסיעה.</li>
           <li xml:lang="it">Varie aggiunte e miglioramenti all'estrattore di documenti di viaggio.</li>
           <li xml:lang="ka">სამგზავრო დოკუმენტების ამომკრებების სხვადასხვა დამატებები და გაუმჯობესებები.</li>
           <li xml:lang="pt-BR">Diversas adições e melhorias ao extrator de documentos de viagem.</li>
@@ -4473,6 +4490,7 @@
           <li xml:lang="cs">Opraveny problémy s vysokým rozlišením DPI v zobrazení vagónu.</li>
           <li xml:lang="es">Se han corregido los problemas de escalado de alta DPI en la vista del coche del tren.</li>
           <li xml:lang="fr">Correction des problèmes de mise à l'échelle avec des résolutions très élevées dans la vue du wagon de train.</li>
+          <li xml:lang="he">תוקנו בעיות קנה מידה באיכות תצוגה גבוהה בתצוגת קרונות רכבת.</li>
           <li xml:lang="it">Risolti problemi di ridimensionamento DPI elevati nella visualizzazione della carrozza del treno.</li>
           <li xml:lang="ka">გასწორდა მაღალი DPI მასშტაბირების პრობლემები ვაგონის ხედში.</li>
           <li xml:lang="pt-BR">Corrigidos problemas de dimensionamento em alta resolução (DPI) na visualização da cabine do trem.</li>
@@ -4542,6 +4560,7 @@
           <li xml:lang="cs">Opraveny problémy s opětovným sestavením geometrie na mapě vlakového nádraží.</li>
           <li xml:lang="es">Se han solucionado problemas de reensamblaje de geometría en los mapas de estaciones de tren.</li>
           <li xml:lang="fr">Correction des problèmes de ré-assemblage de géométrie dans la carte de la gare.</li>
+          <li xml:lang="he">תוקנו בעיות חיבור גאומטריה מחדש במפת תחנות הרכבות.</li>
           <li xml:lang="ia">Corrigite problemas de riassemblar de geometria in le mappa de station de traino.</li>
           <li xml:lang="it">Corregge i problemi di ri-assemblaggio della geometria nella mappa della stazione ferroviaria.</li>
           <li xml:lang="ka">გასწორდა გეომეტრიის თავიდან აწყობის პრობლემები რკინიგზის სადგურის რუკაზე.</li>
@@ -4659,6 +4678,7 @@
           <li xml:lang="cs">Podpora alternativních formátů platformy Hafas.</li>
           <li xml:lang="es">Compatibilidad con formatos alternativos de la plataforma Hafas.</li>
           <li xml:lang="fr">Prise en charge des formats de plateforme alternatifs pour Hafas.</li>
+          <li xml:lang="he">תמיכה בתסדירי רציפי Hafas חלופיים.</li>
           <li xml:lang="it">Supporto per formati alternativi della piattaforma Hafas.</li>
           <li xml:lang="ka">Hafas-ის ბაქნების ალტერნატიული ფორმატების მხარდაჭერა.</li>
           <li xml:lang="pt-BR">Suporte para formatos alternativos da plataforma Hafas.</li>
