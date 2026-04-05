@@ -3749,6 +3749,7 @@
           <li xml:lang="ru">Исправлено обрезание названий остановок в представлении поездки.</li>
           <li xml:lang="sl">Popravljeno je brisanje imen postajališč v pogledu potovanja.</li>
           <li xml:lang="tr">Fixed eliding of stop names in the journey view.</li>
+          <li xml:lang="uk">Виправлено ігнорування назв зупинок на панелі подорожі.</li>
           <li>Fixed missing timezone display for times in UTC.</li>
           <li xml:lang="ar">أُصلح عرض المنطقة الزمنية المفقود للأوقات بتنسيق UTC.</li>
           <li xml:lang="ca">S'ha corregit la visualització del fus horari que manca per a les hores en UTC.</li>
@@ -3763,6 +3764,7 @@
           <li xml:lang="ru">Исправлено отсутствие отображения часового пояса для времени в формате UTC.</li>
           <li xml:lang="sl">Popravljen je manjkajoč prikaz časovnih pasov za čase v UTC.</li>
           <li xml:lang="tr">Fixed missing timezone display for times in UTC.</li>
+          <li xml:lang="uk">Виправлено пропускання показу часових поясів для всесвітнього часу.</li>
           <li>Fixed train station map stacking order for layered building parts.</li>
           <li xml:lang="ar">أُصلح ترتيب تكديس خريطة محطة القطار لأجزاء المبنى المتعددة الطبقات.</li>
           <li xml:lang="ca">Corregeix l'ordre d'apilament dels mapes d'estació de tren de les parts de capes de l'edifici.</li>
@@ -3776,6 +3778,7 @@
           <li xml:lang="ru">Исправлен порядок наложения карт железнодорожных станций для многоуровневых частей зданий.</li>
           <li xml:lang="sl">Popravljen je vrstni red zlaganja zemljevida železniških postaj za plastovite dele stavb.</li>
           <li xml:lang="tr">Fixed train station map stacking order for layered building parts.</li>
+          <li xml:lang="uk">Виправлено порядок у стосі на карті залізничних станцій для побудови зображення із шарами.</li>
         </ul>
       </description>
     </release>
@@ -3795,6 +3798,7 @@
           <li xml:lang="ru">Улучшено извлечение данных для booking.com, Deutsche Bahn, Indico, MÁV, onepagebooking и Pretix.</li>
           <li xml:lang="sl">Izboljšano pridobivanje podatkov za booking.com, Deutsche Bahn, Indico, MÁV, onepagebooking in Pretix.</li>
           <li xml:lang="tr">Improved data extraction for booking.com, Deutsche Bahn, Indico, MÁV, onepagebooking and Pretix.</li>
+          <li xml:lang="uk">Удосконалено видобування даних для booking.com, Deutsche Bahn, Indico, MÁV, onepagebooking і Pretix.</li>
           <li>Improved merging of separate train ticket and seat reservation data.</li>
           <li xml:lang="ar">تحسين دمج بيانات تذكرة القطار وحجز المقعد المنفصلة.</li>
           <li xml:lang="ca">Millora de la fusió de bitllets de tren separats i dades de reserva de seients.</li>
@@ -3808,6 +3812,7 @@
           <li xml:lang="ru">Улучшено объединение данных отдельных билетов на поезд и бронирования мест.</li>
           <li xml:lang="sl">Izboljšano združevanje ločenih podatkov o železniških vozovnicah in rezervacijah sedežev.</li>
           <li xml:lang="tr">Improved merging of separate train ticket and seat reservation data.</li>
+          <li xml:lang="uk">Удосконалено об'єднання даних окремих квитків на потяг та бронювання місць.</li>
           <li>Fixed rendering of certain Apple Wallet event tickets.</li>
           <li xml:lang="ar">أُصلحت رندرة بعض تذاكر فعاليات Apple Wallet.</li>
           <li xml:lang="ca">S'ha corregit la renderització de determinats bitllets d'esdeveniments d'Apple Wallet.</li>
@@ -3821,6 +3826,7 @@
           <li xml:lang="ru">Исправлено отображение некоторых билетов на мероприятия из Apple Wallet.</li>
           <li xml:lang="sl">Popravljeno je upodabljanje nekaterih vstopnic za dogodke Apple Wallet.</li>
           <li xml:lang="tr">Fixed rendering of certain Apple Wallet event tickets.</li>
+          <li xml:lang="uk">Виправлено показ певних квитків на події Apple Wallet.</li>
           <li>Fixed importing multiple generic Apple Wallet passes.</li>
           <li xml:lang="ar">أُصلح استيراد عدة تصاريح Apple Wallet عامة.</li>
           <li xml:lang="ca">S'ha corregit la importació de passis genèrics múltiples d'Apple Wallet.</li>
@@ -3834,6 +3840,7 @@
           <li xml:lang="ru">Исправлен импорт нескольких общих пропусков Apple Wallet.</li>
           <li xml:lang="sl">Popravljen je uvoz več generičnih vstopnic Apple Wallet.</li>
           <li xml:lang="tr">Fixed importing multiple generic Apple Wallet passes.</li>
+          <li xml:lang="uk">Виправлено імпортування декількох загальних проїзних Apple Wallet.</li>
         </ul>
       </description>
     </release>
@@ -3854,6 +3861,7 @@
           <li xml:lang="ru">Поддержка импорта событий Mobilizon.</li>
           <li xml:lang="sl">Podpora za uvoz dogodkov Mobilizon.</li>
           <li xml:lang="tr">Support importing of Mobilizon events.</li>
+          <li xml:lang="uk">Підтримка імпортування подій Mobilizon.</li>
           <li>Improved travel data extraction for Eventim, MÁV, NH Hotels, Trenitalia.</li>
           <li xml:lang="ar">تحسين استخراج بيانات السفر لـ Eventim و MÁV و NH Hotels و Trenitalia.</li>
           <li xml:lang="ca">Millora de l'extracció de dades de viatges per a Eventim, MÁV, NH Hotels, Trenitalia.</li>
@@ -4988,6 +4996,7 @@
           <li xml:lang="ru">Улучшено извлечение данных для различных поставщиков.</li>
           <li xml:lang="sl">Izboljšano pridobivanje podatkov za različne ponudnike.</li>
           <li xml:lang="tr">Improved data extraction for various providers.</li>
+          <li xml:lang="uk">Удосконалено видобування даних для різних надавачів даних.</li>
         </ul>
       </description>
     </release>
@@ -5078,6 +5087,7 @@
           <li xml:lang="ru">Улучшено извлечение данных для SNCF, Accor, Feratel и onepagebooking.</li>
           <li xml:lang="sl">Izboljšano pridobivanje podatkov za SNCF, Accor, Feratel in onepagebooking.</li>
           <li xml:lang="tr">Improved data extraction for SNCF, Accor, Feratel and onepagebooking.</li>
+          <li xml:lang="uk">Удосконалено видобування даних для SNCF, Accor, Feratel і onepagebooking.</li>
         </ul>
       </description>
     </release>
