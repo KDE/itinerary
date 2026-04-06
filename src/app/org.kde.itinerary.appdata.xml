@@ -3876,6 +3876,7 @@
           <li xml:lang="ru">Улучшено извлечение данных о поездках для Eventim, MÁV, NH Hotels, Trenitalia.</li>
           <li xml:lang="sl">Izboljšano pridobivanje podatkov o potovanjih za Eventim, MÁV, NH Hotels in Trenitalia.</li>
           <li xml:lang="tr">Improved travel data extraction for Eventim, MÁV, NH Hotels, Trenitalia.</li>
+          <li xml:lang="uk">Удосконалено видобування даних подорожі для Eventim, MÁV, NH Hotels, Trenitalia.</li>
           <li>Fix display of floating rental vehicles.</li>
           <li xml:lang="ar">إصلاح عرض مركبات التأجير الحرة.</li>
           <li xml:lang="ca">Fixar la visualització de vehicles de lloguer flotants.</li>
@@ -3890,6 +3891,7 @@
           <li xml:lang="ru">Исправлено отображение арендованных транспортных средств.</li>
           <li xml:lang="sl">Popravljen prikaz plavajočih vozil za najem.</li>
           <li xml:lang="tr">Fix display of floating rental vehicles.</li>
+          <li xml:lang="uk">Виправлено показ оренди водних засобів пересування.</li>
           <li>Fix rendering of Apple Wallet event passes with background images.</li>
           <li xml:lang="ar">إصلاح رندرة تصاريح فعاليات Apple Wallet التي تحتوي على صور خلفية.</li>
           <li xml:lang="ca">Corregeix la renderització de passis d'esdeveniments de l'Apple Wallet amb imatges de fons.</li>
@@ -3904,6 +3906,7 @@
           <li xml:lang="ru">Исправлено отображение пропусков на мероприятия Apple Wallet с фоновыми изображениями.</li>
           <li xml:lang="sl">Popravljeno upodabljanje vstopnic za dogodke Apple Wallet s slikami v ozadju.</li>
           <li xml:lang="tr">Fix rendering of Apple Wallet event passes with background images.</li>
+          <li xml:lang="uk">Виправлено показ пропусків на події Apple Wallet із фоновими зображеннями.</li>
           <li>Improve map gesture interaction on favorite location picker.</li>
           <li xml:lang="ar">تحسين التفاعل بإيماءات الخريطة في منتقي الموقع المفضل.</li>
           <li xml:lang="ca">Millora la interacció de gestos de mapa en el selector d'ubicació preferida.</li>
@@ -4119,6 +4122,7 @@
           <li xml:lang="ru">Улучшено извлечение данных о поездках для Airbnb, Amadeus, BlaBlaCar, Eventim, Ryanair, SNCF, Thalys, Vueling.</li>
           <li xml:lang="sl">Izboljšano ekstrahiranje podatkov o potovanjih za Airbnb, Amadeus, BlaBlaCar, Eventim, Ryanair, SNCF, Thalys, Vueling.</li>
           <li xml:lang="tr">Improved travel data extraction for Airbnb, Amadeus, BlaBlaCar, Eventim, Ryanair, SNCF, Thalys, Vueling.</li>
+          <li xml:lang="uk">Удосконалено видобування даних подорожі для Airbnb, Amadeus, BlaBlaCar, Eventim, Ryanair, SNCF, Thalys, Vueling.</li>
           <li>Handle transliteration when comparing traveler names.</li>
           <li xml:lang="ar">التعامل مع النقحرة عند مقارنة أسماء المسافرين.</li>
           <li xml:lang="ca">Gestiona la transliteració quan es comparen els noms dels viatgers.</li>
@@ -4339,6 +4343,7 @@
           <li xml:lang="ru">Улучшено извлечение данных о поездках для Thalys, UK national rail, Eurowings и Eventbrite.</li>
           <li xml:lang="sl">Izboljšano pridobivanje podatkov o potovanjih za Thalys, UK National Rail, Eurowings in Eventbrite.</li>
           <li xml:lang="tr">Improved travel data extraction for Thalys, UK national rail, Eurowings and Eventbrite.</li>
+          <li xml:lang="uk">Удосконалено видобування даних подорожі для Thalys, Національної залізниці Великої Британії, Eurowings та Eventbrite.</li>
           <li>Fixed train load information parsing for German public transport operators.</li>
           <li xml:lang="ar">أُصلح تحليل معلومات حمولة القطار لمشغلي النقل العام في ألمانيا.</li>
           <li xml:lang="ca">S'ha corregit l'anàlisi de la informació de càrrega del tren per als operadors de transport públic alemanys.</li>
