@@ -42,8 +42,8 @@ void StatisticsTimeRangeModel::setReservationManager(ReservationManager *resMgr)
 
     const auto &batches = m_resMgr->batches();
     for (const auto &batchId : batches) {
-        const auto res = m_resMgr->reservation(batchId);
-        const auto dt = SortUtil::startDateTime(res);
+        const auto batch = m_resMgr->batch(batchId);
+        const auto dt = batch.startDateTime();
         if (dt.date().year() != y) {
             m_years.push_back(dt.date().year());
             y = dt.date().year();
