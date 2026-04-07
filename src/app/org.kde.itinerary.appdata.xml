@@ -2740,6 +2740,7 @@
           <li xml:lang="ru">Улучшена поддержка штрихкодов на железнодорожных билетах FCB в Европе.</li>
           <li xml:lang="sl">Izboljšana podpora za črtne kode železniških vozovnic European FCB.</li>
           <li xml:lang="tr">Improved support for European FCB railway ticket barcodes.</li>
+          <li xml:lang="uk">Удосконалено підтримку штрихкодів квитків європейської залізниці FCB.</li>
           <li>Support for Eurostar onboard API.</li>
           <li xml:lang="ar">دعم واجهة برمجة تطبيقات Eurostar على المتن.</li>
           <li xml:lang="ca">Implementació de l'API a bord d'Eurostar.</li>
@@ -2753,6 +2754,7 @@
           <li xml:lang="ru">Поддержка бортового API Eurostar.</li>
           <li xml:lang="sl">Podpora za API na vozilu Eurostar.</li>
           <li xml:lang="tr">Support for Eurostar onboard API.</li>
+          <li xml:lang="uk">Реалізовано підтримку посадкового програмного інтерфейсу Eurostar.</li>
         </ul>
       </description>
     </release>
@@ -2772,6 +2774,7 @@
           <li xml:lang="ru">Исправлена обработка отменённых промежуточных остановок в поездах DB ICE.</li>
           <li xml:lang="sl">Popravljeno ravnanje z odpovedanimi vmesnimi postanki na vlakih DB ICE.</li>
           <li xml:lang="tr">Fix handling of canceled intermediate stops on board of DB ICEs.</li>
+          <li xml:lang="uk">Виправлено обробку скасованих проміжних зупинок на борту ICE DB.</li>
           <li>New or improved travel document extractors for booking.com, DB, European Sleeper, Iberia, PKP, Pretix, Qatar Airways.</li>
           <li xml:lang="ar">مستخرجات مستندات سفر جديدة أو محسّنة لـ booking.com و DB و European Sleeper و Iberia و PKP و Pretix و Qatar Airways.</li>
           <li xml:lang="ca">Extractors nous o millorats de documents de viatge per a booking.com, DB, European Sleeper, Iberia, PKP, Pretix, Qatar Airways.</li>
@@ -2799,6 +2802,7 @@
           <li xml:lang="ru">Исправлен анализ синтаксиса некоторых некорректных каталогов сообщений Apple Wallet.</li>
           <li xml:lang="sl">Popravljeno razčlenjevanje nekaterih neveljavnih katalogov sporočil Apple Wallet.</li>
           <li xml:lang="tr">Fix parsing certain invalid Apple Wallet message catalogs.</li>
+          <li xml:lang="uk">Виправлено обробку певних некоректних каталогів повідомлень Apple Wallet.</li>
           <li>Remove unnecessary PDF fonts to reduce the APK size.</li>
           <li xml:lang="ar">إزالة خطوط PDF غير الضرورية لتقليل حجم ملف APK.</li>
           <li xml:lang="ca">Elimina les lletres PDF no necessàries per a reduir la mida de l'APK.</li>
@@ -2812,6 +2816,7 @@
           <li xml:lang="ru">Удаление ненужных шрифтов PDF для уменьшения размера APK.</li>
           <li xml:lang="sl">Odstranite nepotrebne pisave PDF za zmanjšanje velikosti APK-ja.</li>
           <li xml:lang="tr">Remove unnecessary PDF fonts to reduce the APK size.</li>
+          <li xml:lang="uk">Вилучено непотрібні шрифти PDF для зменшення розміру APK.</li>
         </ul>
       </description>
     </release>
