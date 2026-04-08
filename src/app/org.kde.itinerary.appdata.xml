@@ -2836,6 +2836,7 @@
           <li xml:lang="ru">Возможность включения уведомлений в Android 13.</li>
           <li xml:lang="sl">Omogočeno omogočanje obvestil v sistemu Android 13.</li>
           <li xml:lang="tr">Allow to enable notifications on Android 13.</li>
+          <li xml:lang="uk">Уможливлено вмикання сповіщень в Android 13.</li>
           <li>New or improved travel document extractors for Aegean, Amadeus, bookingkit, GWR, Pretix, Renfe, ÖBB and UK railway tickets.</li>
           <li xml:lang="ar">مستخرجات مستندات سفر جديدة أو محسّنة لـ Aegean و Amadeus و bookingkit و GWR و Pretix و Renfe و ÖBB وتذاكر السكك الحديدية البريطانية.</li>
           <li xml:lang="ca">Extractors nous o millorats de documents de viatge per a Aegean, Amadeus, bookingkit, GWR, Pretix, Renfe, ÖBB i bitllets de tren del Regne Unit.</li>
@@ -2899,6 +2900,7 @@
           <li xml:lang="ru">Исправлено редактирование элементов автобусов и поездов без связанного билета.</li>
           <li xml:lang="sl">Popravljeno urejanje elementov avtobusov in vlakov brez povezane vozovnice.</li>
           <li xml:lang="tr">Fix editing bus and train elements without an associated ticket.</li>
+          <li xml:lang="uk">Виправлено редагування записів автобусів і потягів без пов'язаного квитка.</li>
           <li>Fix unnecessarily broad permissions on Android.</li>
           <li xml:lang="ar">إصلاح الأذونات الواسعة بشكل غير ضروري على أندرويد.</li>
           <li xml:lang="ca">Corregeix els permisos innecessàriament amplis a l'Android.</li>
@@ -2912,6 +2914,7 @@
           <li xml:lang="ru">Исправлены излишне широкие разрешения в Android.</li>
           <li xml:lang="sl">Popravljena nepotrebno široka dovoljenja v sistemu Android.</li>
           <li xml:lang="tr">Fix unnecessarily broad permissions on Android.</li>
+          <li xml:lang="uk">Виправлено надмірні права доступу в Android.</li>
           <li>Fix rendering of Apple Wallet generic pass thumbnail images.</li>
           <li xml:lang="ar">إصلاح رندرة الصور المصغرة لتصاريح Apple Wallet العامة.</li>
           <li xml:lang="ca">Corregeix la renderització de les imatges de miniatures dels passis genèrics d'Apple Wallet.</li>
@@ -2925,6 +2928,7 @@
           <li xml:lang="ru">Исправлено отображение миниатюрных изображений универсальных пропусков Apple Wallet.</li>
           <li xml:lang="sl">Popravljeno upodabljanje sličic generičnih vozovnic Apple Wallet.</li>
           <li xml:lang="tr">Fix rendering of Apple Wallet generic pass thumbnail images.</li>
+          <li xml:lang="uk">Виправлено обробку зображень мініатюр загальних проїзних Apple Wallet.</li>
           <li>Fix progress display on the initial journey stopover in the live status view.</li>
           <li xml:lang="ar">إصلاح عرض التقدم في التوقف الأول للرحلة في عرض الحالة المباشرة.</li>
           <li xml:lang="ca">Corregeix la visualització del progrés de l'escala inicial del viatge a la vista d'estat en viu.</li>
@@ -2938,6 +2942,7 @@
           <li xml:lang="ru">Исправлено отображение прогресса на начальной остановке маршрута в представлении текущего статуса.</li>
           <li xml:lang="sl">Popravljen prikaz napredka na začetnem postanku potovanja v pogledu stanja v živo.</li>
           <li xml:lang="tr">Fix progress display on the initial journey stopover in the live status view.</li>
+          <li xml:lang="uk">Виправлено показ поступу на початковому розкладі зупинок подорожі на панелі інтерактивного стану.</li>
           <li>Display luggage lockers, lost &amp; found offices and ariport baggage claim belts on the indoor map.</li>
           <li xml:lang="ar">عرض خزائن الأمتعة، ومكاتب المفقودات، وسيور استلام الأمتعة في المطار على الخريطة الداخلية.</li>
           <li xml:lang="ca">Mostra les taquilles d'equipatge, oficines d'objectes perduts i cintes de recollida d'equipatges d'aeroport en el mapa d'interior.</li>
@@ -2951,6 +2956,7 @@
           <li xml:lang="ru">Отображение камер хранения, бюро находок и лент выдачи багажа в аэропортах на схеме помещений.</li>
           <li xml:lang="sl">Prikaz omaric za prtljago, izgubljenih in najdenih knjig ter trakov za prevzem prtljage na letališču na notranjem zemljevidu.</li>
           <li xml:lang="tr">Display luggage lockers, lost &amp; found offices and ariport baggage claim belts on the indoor map.</li>
+          <li xml:lang="uk">Реалізовано показ камери схову багажу, бюро знахідок та стрічки видачі багажу в аеропорту на карті приміщення.</li>
         </ul>
       </description>
     </release>
@@ -2970,6 +2976,7 @@
           <li xml:lang="ru">Возможно выбрать предпочитаемые виды транспорта для всех поисков общественного транспорта.</li>
           <li xml:lang="sl">Zdaj je mogoče izbrati želene načine prevoza za vsa iskanja javnega prevoza.</li>
           <li xml:lang="tr">Preferred transport modes can now selected for all public transport searches.</li>
+          <li xml:lang="uk">Бажані режими транспорту у новій версії можна вибирати для усіх пошуків громадського транспорту.</li>
           <li>Public transport line logos are now also available for some regional and long distance rail services.</li>
           <li xml:lang="ar">أصبحت شعارات خطوط النقل العام متاحة الآن لبعض خدمات السكك الحديدية الإقليمية وبعيدة المدى.</li>
           <li xml:lang="ca">Els logotips de les línies de transport públic ara també estan disponibles per a alguns serveis regionals i de ferrocarril de llarga distància.</li>
@@ -2983,6 +2990,7 @@
           <li xml:lang="ru">Логотипы линий общественного транспорта теперь также доступны для некоторых региональных и междугородных железнодорожных перевозок.</li>
           <li xml:lang="sl">Logotipi linij javnega prevoza so zdaj na voljo tudi za nekatere regionalne in medkrajevne železniške storitve.</li>
           <li xml:lang="tr">Public transport line logos are now also available for some regional and long distance rail services.</li>
+          <li xml:lang="uk">Логотипи ліній громадського транспорту тепер також доступні для деяких регіональних та далеких залізничних маршрутів.</li>
           <li>Added support for railway coach layouts for more types of trains.</li>
           <li xml:lang="ar">أُضيف دعم لتخطيطات عربات السكك الحديدية لمزيد من أنواع القطارات.</li>
           <li xml:lang="ca">S'ha afegit el suport per a les disposicions de vagons ferroviaris per a més tipus de trens.</li>
@@ -2996,6 +3004,7 @@
           <li xml:lang="ru">Добавлена поддержка схем вагонов для большего числа типов поездов.</li>
           <li xml:lang="sl">Dodana podpora za postavitve železniških vagonov za več vrst vlakov.</li>
           <li xml:lang="tr">Added support for railway coach layouts for more types of trains.</li>
+          <li xml:lang="uk">Додано підтримку компонувань залізничних вагонів для більшої кількості типів поїздів.</li>
           <li>Added support for importing Deutsche Bahn and SNCF online tickets.</li>
           <li xml:lang="ar">أُضيف دعم لاستيراد تذاكر Deutsche Bahn و SNCF عبر الإنترنت.</li>
           <li xml:lang="ca">S'ha afegit el suport per importar bitllets en línia de Deutsche Bahn i SNCF.</li>
@@ -3009,6 +3018,7 @@
           <li xml:lang="ru">Добавлена поддержка импорта электронных билетов Deutsche Bahn и SNCF.</li>
           <li xml:lang="sl">Dodana podpora za uvoz spletnih vozovnic Deutsche Bahn in SNCF.</li>
           <li xml:lang="tr">Added support for importing Deutsche Bahn and SNCF online tickets.</li>
+          <li xml:lang="uk">Додано підтримку імпорту онлайн-квитків Deutsche Bahn та SNCF.</li>
           <li>Added location sharing via Matrix.</li>
           <li xml:lang="ar">أُضيفت مشاركة الموقع عبر Matrix.</li>
           <li xml:lang="ca">S'ha afegit la compartició d'ubicació a través de Matrix.</li>
@@ -3797,6 +3807,7 @@
           <li xml:lang="cs">Vylepšené získávání dat pro booking.com, Deutsche Bahn, Indico, MÁV, onepagebooking a Pretix.</li>
           <li xml:lang="es">Se ha mejorado la extracción de datos para booking.com, Deutsche Bahn, Indico, MÁV, onepagebooking y Pretix.</li>
           <li xml:lang="fr">Amélioration de l'extraction de données pour booking.com, Deutsche Bahn, Indico, MÁV, onepagebooking et Pretix.</li>
+          <li xml:lang="he">חילוץ נתונים מ־booking.com,‏ Deutsche Bahn,‏ Indico,‏ MÁV,‏ onepagebooking ו־Pretix השתפר.</li>
           <li xml:lang="it">Estrazione dei dati migliorata per booking.com, Deutsche Bahn, Indico, MÁV, onepagebooking e Pretix.</li>
           <li xml:lang="ka">გაუმჯობესებული მონაცემების ამოღება booking.com, Deutsche Bahn, Indico, MÁV, onepagebooking და Pretix სისტემებისთვის.</li>
           <li xml:lang="pt-BR">Extração de dados aprimorada para booking.com, Deutsche Bahn, Indico, MÁV, onepagebooking e Pretix.</li>
@@ -3811,6 +3822,7 @@
           <li xml:lang="cs">Vylepšené slučování údajů o samostatných jízdenkách a rezervacích míst ve vlaku.</li>
           <li xml:lang="es">Se ha mejorado la fusión de datos separados de billetes de tren y de reservas de asientos.</li>
           <li xml:lang="fr">Amélioration de la fusion de données séparées entre un billet de train et des données de réservations de siège.</li>
+          <li xml:lang="he">מיזוג כרטיסי רכבת נפרדים ונתוני שמירת מקומות השתפרו.</li>
           <li xml:lang="it">Migliorata l'unione dei dati separati del biglietto ferroviario e della prenotazione del posto.</li>
           <li xml:lang="ka">ცალკეული მატარებლის ბილეთისა და ადგილის ჯავშნის მონაცემების გაუმჯობესებული შერწყმა.</li>
           <li xml:lang="pt-BR">Melhoria na integração de dados separados de bilhetes de trem e reservas de assentos.</li>
@@ -3839,6 +3851,7 @@
           <li xml:lang="cs">Opraveno importování vícenásobných generických Apple Wallet pass.</li>
           <li xml:lang="es">Se ha corregido la importación de varios pases genéricos de Apple Wallet.</li>
           <li xml:lang="fr">Correction de l'importation de plusieurs abonnements génériques de Apple Wallet.</li>
+          <li xml:lang="he">תוקנה בעיית ייבוא של מגוון אישורים גנריים מ־Apple Wallet.</li>
           <li xml:lang="it">Risolto il problema relativo all'importazione di più abbonamenti Apple Wallet generici.</li>
           <li xml:lang="ka">გასწორდა რამდენიმე ზოგადი Apple Wallet ბარათის შემოტანა.</li>
           <li xml:lang="pt-BR">Corrigido o problema na importação de vários passes genéricos do Apple Wallet.</li>
@@ -4799,6 +4812,7 @@
           <li xml:lang="cs">Další individuální druhy dopravy pro přesuny.</li>
           <li xml:lang="es">Modos de transporte individual adicionales para transbordos.</li>
           <li xml:lang="fr">Modes de transport individuels supplémentaires pour les transferts.</li>
+          <li xml:lang="he">נוספו מצבי תעבורה פרטניים נוספים להעברות.</li>
           <li xml:lang="it">Ulteriori modalità di trasporto individuali per i trasferimenti.</li>
           <li xml:lang="ka">ტრანსპორტის დამატებითი ინდივიდუალური სახეობები გადაჯდომებისთვის.</li>
           <li xml:lang="pt-BR">Modalidades adicionais de transporte individual para traslados.</li>
