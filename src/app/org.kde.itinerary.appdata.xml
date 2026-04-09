@@ -953,7 +953,16 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="26.04.0" date="2026-04-16"/>
+    <release version="26.04.0" date="2026-04-16">
+      <description>
+        <ul>
+          <li>New vector-graphics based map view.</li>
+          <li>Automatic lookup of location information.</li>
+          <li>More fine-grained control over deleting entries on reservations with multiple tickets or multiple travelers.</li>
+          <li>Improved handling of canceled reservations.</li>
+        </ul>
+      </description>
+    </release>
     <release version="25.12.3" date="2026-03-05">
       <description>
         <ul>
