@@ -3033,6 +3033,7 @@
           <li xml:lang="ru">Добавлен обмен местоположением через Matrix.</li>
           <li xml:lang="sl">Dodana skupna raba lokacije prek sistema Matrix.</li>
           <li xml:lang="tr">Added location sharing via Matrix.</li>
+          <li xml:lang="uk">Додано оприлюднення місця перебування у Matrix.</li>
           <li>Consider coach layout and seat reservation data to highlight the departure/arrival spot on a platform.</li>
           <li xml:lang="ar">مراعاة تخطيط العربة وبيانات حجز المقاعد لإبراز نقطة المغادرة/الوصول على المنصة.</li>
           <li xml:lang="ca">Considera la disposició del vagó i les dades de reserva de seient per a ressaltar el punt de sortida/arribada en una andana.</li>
@@ -3046,6 +3047,7 @@
           <li xml:lang="ru">Теперь учитывается расположение вагонов и данные о бронировании мест для выделения места отправления/прибытия на платформе.</li>
           <li xml:lang="sl">Upoštevajte razporeditev vagona in podatke o rezervaciji sedežev, da označite mesto odhoda/prihoda na peronu.</li>
           <li xml:lang="tr">Consider coach layout and seat reservation data to highlight the departure/arrival spot on a platform.</li>
+          <li xml:lang="uk">Враховано планування вагонів та дані бронювання місць, щоб виділити місце відправлення/прибуття на платформі.</li>
           <li>New look for the timeline entries and the editing pages.</li>
           <li xml:lang="ar">مظهر جديد لمدخلات الخط الزمني وصفحات التحرير.</li>
           <li xml:lang="ca">Aspecte nou de les entrades de la línia de temps i les pàgines d'edició.</li>
@@ -3059,6 +3061,7 @@
           <li xml:lang="ru">Новое оформление записей на временной шкале и страниц редактирования.</li>
           <li xml:lang="sl">Nov videz vnosov na časovnici in strani za urejanje.</li>
           <li xml:lang="tr">New look for the timeline entries and the editing pages.</li>
+          <li xml:lang="uk">Новий вигляд записів у розкладі та на сторінках редагування.</li>
           <li>New or improved onboard API support for Aegean Air, Deutsche Bahn and ÖBB.</li>
           <li xml:lang="ar">دعم واجهة برمجة تطبيقات جديد أو محسّن على المتن لـ Aegean Air و Deutsche Bahn و ÖBB.</li>
           <li xml:lang="ca">Implementació nova o millorada de l'API a bord per a Aegean Air, Deutsche Bahn i ÖBB.</li>
@@ -3072,6 +3075,7 @@
           <li xml:lang="ru">Добавлена или улучшена поддержка бортового API для Aegean Air, Deutsche Bahn и ÖBB.</li>
           <li xml:lang="sl">Nova ali izboljšana podpora za API na vozilu za Aegean Air, Deutsche Bahn in ÖBB.</li>
           <li xml:lang="tr">New or improved onboard API support for Aegean Air, Deutsche Bahn and ÖBB.</li>
+          <li xml:lang="uk">Нова або удосконалена підтримка посадкового програмного інтерфейсу для Aegean Air, Deutsche Bahn і ÖBB.</li>
           <li>New or improved travel document extractors for Aegean Air, Aer Lingus, Air Asia, Air France, Atlatos, Bäder Suite, BlaBlaCar, bookingkit, CD, Cinemaxx, Cooltix, DSB, Eventbrite, FerriesInGreece, Grimaldi Lines, Iberia, KLM, Koleje Malopolskie, KTEL Thesprotias, Lufthansa, Ouigo Spain, PKP, UK railways, SAS, SBB, Slovak Lines, SNCB, spiritec, Spring Airlines, Sunny Cars, Thalys, Trenitalia, York Kino and ZSSK.</li>
           <li xml:lang="ar">مستخرجات مستندات سفر جديدة أو محسّنة لكل من Aegean Air و Aer Lingus و Air Asia و Air France و Atlatos و Bäder Suite و BlaBlaCar و bookingkit و CD و Cinemaxx و Cooltix و DSB و Eventbrite و FerriesInGreece و Grimaldi Lines و Iberia و KLM و Koleje Malopolskie و KTEL Thesprotias و Lufthansa و Ouigo Spain و PKP والسكك الحديدية البريطانية و SAS و SBB و Slovak Lines و SNCB و spiritec و Spring Airlines و Sunny Cars و Thalys و Trenitalia و York Kino و ZSSK.</li>
           <li xml:lang="ca">Extractors nous o millorats de documents de viatge per a Aegean Air, Aer Lingus, Air Asia, Air France, Atlatos, Bäder Suite, BlaBlaCar, bookingkit, CD, Cinemaxx, Cooltix, DSB, Eventbrite, FerriesInGreece, Grimaldi Lines, Iberia, KLM, Koleje Malopolskie, KTEL Thesprotias, Lufthansa, Ouigo Spain, PKP, UK railways, SAS, SBB, Slovak Lines, SNCB, spiritec, Spring Airlines, Sunny Cars, Thalys, Trenitalia, York Kino i ZSSK.</li>
@@ -3099,6 +3103,7 @@
           <li xml:lang="ru">Добавлена поддержка импорта событий ActivityPub.</li>
           <li xml:lang="sl">Dodana podpora za uvoz dogodkov ActivityPub.</li>
           <li xml:lang="tr">Added support for importing ActivityPub events.</li>
+          <li xml:lang="uk">Додано підтримку імпортування записів подій ActivityPub.</li>
           <li>Added support for editing many more reservation and ticket details.</li>
           <li xml:lang="ar">أُضيف دعم لتحرير المزيد من تفاصيل الحجوزات والتذاكر.</li>
           <li xml:lang="ca">S'ha afegit la implementació per a editar molts més detalls de les reserves i bitllets.</li>
@@ -3112,6 +3117,7 @@
           <li xml:lang="ru">Добавлена возможность редактирования многих других деталей бронирования и билетов.</li>
           <li xml:lang="sl">Dodana podpora za urejanje številnih drugih podrobnosti o rezervacijah in vozovnicah.</li>
           <li xml:lang="tr">Added support for editing many more reservation and ticket details.</li>
+          <li xml:lang="uk">Додано підтримку редагування багатьох інших параметрів бронювання та квитків.</li>
           <li>Documents can now be attached to all tickets and reservations, and are automatically attached in more cases.</li>
           <li xml:lang="ar">يمكن الآن إرفاق المستندات بجميع التذاكر والحجوزات، وتُرفق آليًا في حالات أكثر.</li>
           <li xml:lang="ca">Els documents ara es poden adjuntar a tots els bitllets i reserves, i s'adjunten automàticament en més casos.</li>
@@ -3125,6 +3131,7 @@
           <li xml:lang="ru">К билетам и бронированиям теперь возможно прикреплять документы; в большинстве случаев они прикрепляются автоматически.</li>
           <li xml:lang="sl">Dokumente je zdaj mogoče priložiti vsem vozovnicam in rezervacijam, v več primerih pa so priloženi samodejno.</li>
           <li xml:lang="tr">Documents can now be attached to all tickets and reservations, and are automatically attached in more cases.</li>
+          <li xml:lang="uk">Тепер документи можна додавати до всіх квитків та бронювань, а в більшій кількості випадків вони додаються автоматично.</li>
           <li>New hotel, event and restaurant reservation can be created by adding a URL to their schema.org annotated website.</li>
           <li xml:lang="ar">يمكن إنشاء حجوزات فنادق وفعاليات ومطاعم جديدة عبر إضافة رابط لمواقعهم الموسومة بـ schema.org.</li>
           <li xml:lang="ca">Es pot crear una nova reserva d'hotel, esdeveniment o restaurant afegint un URL al seu lloc web anotat schema.org.</li>
@@ -3138,6 +3145,7 @@
           <li xml:lang="ru">Новые бронирования отелей, мероприятий и ресторанов создаются добавлением URL-адреса их веб-сайта с аннотациями schema.org.</li>
           <li xml:lang="sl">Novo rezervacijo hotela, dogodka in restavracije je mogoče ustvariti z dodajanjem URL-ja na njihovo spletno mesto z opombami schema.org.</li>
           <li xml:lang="tr">New hotel, event and restaurant reservation can be created by adding a URL to their schema.org annotated website.</li>
+          <li xml:lang="uk">Нове бронювання готелів, місць проведення подій та ресторанів можна створити, додавши адресу до їхнього анотованого сайта schema.org.</li>
           <li>Added support for extracting travel data in Apple iCal events.</li>
           <li xml:lang="ar">أُضيف دعم لاستخراج بيانات السفر في فعاليات Apple iCal.</li>
           <li xml:lang="ca">S'ha afegit la implementació per a extreure dades de viatge en esdeveniments d'Apple iCal.</li>
@@ -3151,6 +3159,7 @@
           <li xml:lang="ru">Добавлена поддержка извлечения данных о поездках из событий Apple iCal.</li>
           <li xml:lang="sl">Dodana podpora za pridobivanje potovalnih podatkov v dogodkih Apple iCal.</li>
           <li xml:lang="tr">Added support for extracting travel data in Apple iCal events.</li>
+          <li xml:lang="uk">Додано підтримку вилучення даних про подорожі в подіях Apple iCal.</li>
           <li>Improved notifications in case of Apple Wallet pass updates.</li>
           <li xml:lang="ar">تحسين التنبيهات في حال تحديث تصاريح Apple Wallet.</li>
           <li xml:lang="ca">Notificacions millorades en cas d'actualitzacions de passis d'Apple Wallet.</li>
@@ -3164,6 +3173,7 @@
           <li xml:lang="ru">Улучшены уведомления при обновлении пропусков Apple Wallet.</li>
           <li xml:lang="sl">Izboljšana obvestila v primeru posodobitev vozovnic Apple Wallet.</li>
           <li xml:lang="tr">Improved notifications in case of Apple Wallet pass updates.</li>
+          <li xml:lang="uk">Удосконалено сповіщення при оновленні проїздного Apple Wallet.</li>
           <li>Improved display of ticket validity times in the passes and programs view.</li>
           <li xml:lang="ar">تحسين عرض أوقات صلاحية التذاكر في عرض التصاريح والبرامج.</li>
           <li xml:lang="ca">Millora de la visualització del temps de validesa dels bitllets a la vista de passis i programes.</li>
@@ -4758,6 +4768,7 @@
           <li xml:lang="cs">Nová stránka s podrobnostmi o navigačních manévrech pro jednotlivé úseky cesty dopravou nebo pěšky.</li>
           <li xml:lang="es">Nueva página de detalles de maniobras de navegación para secciones individuales de transporte o recorrido a pie.</li>
           <li xml:lang="fr">Nouvelle page de détails sur les manœuvres de navigation pour les sections de trajets en transport individuel ou à pied.</li>
+          <li xml:lang="he">עמוד פרטי תמרון ניווט לנסיעה מסוימת או למקטעי הליכה במסע.</li>
           <li xml:lang="it">Nuova pagina dei dettagli delle manovre di navigazione per le singole sezioni di trasporto o viaggio a piedi.</li>
           <li xml:lang="ka">ნავიგაციის მანევრების ახალი გვერდი ინდივიდუალური ტრანსპორტის ან ფეხით მგზავრობის სექციებისთვის.</li>
           <li xml:lang="pt-BR">Nova página com detalhes das manobras de navegação para trechos individuais de transporte ou deslocamento a pé.</li>
@@ -4841,6 +4852,7 @@
           <li xml:lang="cs">Snadněji přístupný režim skenování čárových kódů a podpora čárových kódů PDF417 na vstupenkách.</li>
           <li xml:lang="es">Modo de escaneo de código de barras más accesible y compatibilidad con códigos de barras de billetes PDF417.</li>
           <li xml:lang="fr">Mode de numérisation de codes barres plus facile d'accès et prise en charge des codes barres de billets au format « PDF417 ».</li>
+          <li xml:lang="he">מצב סריקת ברקודים קל ונגיש יותר, עם תמיכה בברקודים של כרטיסי PDF417.</li>
           <li xml:lang="it">Modalità di scansione dei codici a barre più accessibile e supporto per i codici a barre dei biglietti PDF417.</li>
           <li xml:lang="ka">უფრო ხელმისაწვდომი შტრიხკოდის სკანირების რეჟიმი და PDF417 ბილეთების შტრიხკოდების მხარდაჭერა.</li>
           <li xml:lang="pt-BR">Modo de leitura de código de barras mais acessível e suporte para códigos de barras de bilhetes PDF417.</li>
