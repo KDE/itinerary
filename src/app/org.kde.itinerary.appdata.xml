@@ -3361,6 +3361,7 @@
           <li xml:lang="sk">Improved zobrazenie of lístok validity times in the passes and programs view.</li>
           <li xml:lang="sl">Izboljšan prikaz časov veljavnosti vozovnic v pogledu vozovnic in programov.</li>
           <li xml:lang="tr">Improved display of ticket validity times in the passes and programs view.</li>
+          <li xml:lang="uk">Удосконалено показ термінів дії квитків у вікні перегляду проїзних документів та програм.</li>
           <li>Improved display of public transport cancellations and long disruption notes.</li>
           <li xml:lang="ar">تحسين عرض إلغاءات النقل العام وملاحظات التعطل الطويلة.</li>
           <li xml:lang="ca">Millora de la visualització de les cancel·lacions de transport públic i de les notes d'interrupció llarga.</li>
@@ -3375,6 +3376,7 @@
           <li xml:lang="sk">Improved zobrazenie of public transport cancellations and long disruption notes.</li>
           <li xml:lang="sl">Izboljšan prikaz odpovedi javnega prevoza in dolgih obvestil o motnjah.</li>
           <li xml:lang="tr">Improved display of public transport cancellations and long disruption notes.</li>
+          <li xml:lang="uk">Удосконалено показ скасованих громадських перевезень та приміток про тривалі перебої в русі.</li>
           <li>Fixed searching for international railway connections sometimes not finding any result.</li>
           <li xml:lang="ar">أُصلح البحث عن وصلات السكك الحديدية الدولية الذي كان لا يجد نتائج أحيانًا.</li>
           <li xml:lang="ca">S'ha corregit la cerca de connexions ferroviàries internacionals que a vegades no trobava cap resultat.</li>
@@ -3389,6 +3391,7 @@
           <li xml:lang="sk">Fixed searching for international railway connections sometimes not finding any result.</li>
           <li xml:lang="sl">Popravljeno iskanje mednarodnih železniških povezav, ki včasih ni dalo nobenega rezultata.</li>
           <li xml:lang="tr">Fixed searching for international railway connections sometimes not finding any result.</li>
+          <li xml:lang="uk">Виправлено помилку, через яку пошук міжнародних залізничних сполучень іноді не давав результатів.</li>
           <li>Fixed weather icons sometimes wrongly using the night variants during the day.</li>
           <li xml:lang="ar">أُصلحت أيقونات الطقس التي كانت تستخدم أحيانًا المتغيرات الليلية أثناء النهار بالخطأ.</li>
           <li xml:lang="ca">S'han corregit les icones meteorològiques que a vegades utilitzaven erròniament les variants nocturnes durant el dia.</li>
@@ -3403,6 +3406,7 @@
           <li xml:lang="sk">Fixed weather icons sometimes wrongly using the night variants during the day.</li>
           <li xml:lang="sl">Popravljene vremenske ikone, ki so včasih napačno uporabljale nočne različice čez dan.</li>
           <li xml:lang="tr">Fixed weather icons sometimes wrongly using the night variants during the day.</li>
+          <li xml:lang="uk">Виправлено помилку, через яку іноді помилково використовувалися нічні варіанти позначок погоди замість денних.</li>
           <li>Fixed too rapid realtime data update queries in case of network errors.</li>
           <li xml:lang="ar">أُصلح التكرار السريع لاستعلامات تحديث البيانات في الوقت الفعلي في حال حدوث أخطاء بالشبكة.</li>
           <li xml:lang="ca">S'han corregit les consultes d'actualització de dades en temps real massa ràpides en cas d'errors de xarxa.</li>
@@ -3417,6 +3421,7 @@
           <li xml:lang="sk">Fixed too rapid realtime data update queries in case of network errors.</li>
           <li xml:lang="sl">Popravljene prehitre poizvedbe za posodabljanje podatkov v realnem času v primeru omrežnih napak.</li>
           <li xml:lang="tr">Fixed too rapid realtime data update queries in case of network errors.</li>
+          <li xml:lang="uk">Виправлено занадто швидкі запити на оновлення даних у реальному часі у разі помилок мережі.</li>
           <li>Fixed exported events not being editable by other calendaring apps on Android.</li>
           <li xml:lang="ar">أُصلحت الفعاليات المصدرة التي لم تكن قابلة للتحرير بواسطة تطبيقات التقويم الأخرى على أندرويد.</li>
           <li xml:lang="ca">S'han corregit els esdeveniments exportats que no són editables per altres aplicacions de calendari a l'Android.</li>
@@ -3431,6 +3436,7 @@
           <li xml:lang="sk">Fixed exported events not being editable by other calendaring apps on Android.</li>
           <li xml:lang="sl">Popravljena izvožena dogodka, ki ga druge aplikacije za koledar v sistemu Android niso mogle urejati.</li>
           <li xml:lang="tr">Fixed exported events not being editable by other calendaring apps on Android.</li>
+          <li xml:lang="uk">Виправлено помилку, через яку експортовані події не можна було редагувати іншими програмами календаря на Android.</li>
         </ul>
       </description>
     </release>
@@ -3467,6 +3473,7 @@
           <li xml:lang="sk">Fixed a crash on Android when importing a file with a space in its path.</li>
           <li xml:lang="sl">Popravljeno sesutje v sistemu Android pri uvozu datoteke s presledkom na poti.</li>
           <li xml:lang="tr">Fixed a crash on Android when importing a file with a space in its path.</li>
+          <li xml:lang="uk">Виправлено збій на Android під час імпортування файлів з пробілом у шляху.</li>
           <li>Fixed public transport queries for VRS.</li>
           <li xml:lang="ar">أُصلحت استعلامات النقل العام لـ VRS.</li>
           <li xml:lang="ca">S'han corregit les consultes de transport públic per a VRS.</li>
@@ -3482,6 +3489,7 @@
           <li xml:lang="sk">Fixed public transport queries for VRS.</li>
           <li xml:lang="sl">Popravljene poizvedbe o javnem prevozu za VRS.</li>
           <li xml:lang="tr">Fixed public transport queries for VRS.</li>
+          <li xml:lang="uk">Виправлено запити щодо даних громадського транспорту до VRS.</li>
           <li>Fixed missing transport mode information for some OpenTripPlanner results.</li>
           <li xml:lang="ar">أُصلحت معلومات وسيلة النقل المفقودة لبعض نتائج OpenTripPlanner.</li>
           <li xml:lang="ca">S'ha corregit la informació del mode de transport que manca per a alguns resultats de l'OpenTripPlanner.</li>
@@ -3496,6 +3504,7 @@
           <li xml:lang="sk">Fixed missing transport mode information for some OpenTripPlanner results.</li>
           <li xml:lang="sl">Popravljene manjkajoče informacije o načinu prevoza za nekatere rezultate OpenTripPlanner.</li>
           <li xml:lang="tr">Fixed missing transport mode information for some OpenTripPlanner results.</li>
+          <li xml:lang="uk">Виправлено пропуск відомостей щодо типу транспорту для деяких результатів OpenTripPlanner.</li>
           <li>Filter implausible walking paths from public transport routers.</li>
           <li xml:lang="ar">تصفية مسارات المشي غير المنطقية من موجهات النقل العام.</li>
           <li xml:lang="ca">Filtra itineraris a peu inversemblants dels encaminadors de transport públic.</li>
@@ -3510,6 +3519,7 @@
           <li xml:lang="sk">Filter implausible walking paths from public transport routers.</li>
           <li xml:lang="sl">Filtriranje neverjetnih pešpoti iz usmerjevalnikov javnega prevoza.</li>
           <li xml:lang="tr">Filter implausible walking paths from public transport routers.</li>
+          <li xml:lang="uk">Реалізовано фільтрування неправдоподібних пішохідних маршрутів від маршрутизаторів громадського транспорту.</li>
           <li>Fixed importing boat or ferry reservations from the calendar.</li>
           <li xml:lang="ar">أُصلح استيراد حجوزات القوارب أو العبارات من التقويم.</li>
           <li xml:lang="ca">S'ha corregit la importació de reserves d'embarcacions o ferris des del calendari.</li>
@@ -3524,6 +3534,7 @@
           <li xml:lang="sk">Fixed importing boat or ferry rezervácias from the calendar.</li>
           <li xml:lang="sl">Popravljen uvoz rezervacij za čolne ali trajekte iz koledarja.</li>
           <li xml:lang="tr">Fixed importing boat or ferry reservations from the calendar.</li>
+          <li xml:lang="uk">Виправлено імпортування бронювань кораблів або поромів з календаря.</li>
           <li>Fixed an infinite loop when computing indoor map arguments.</li>
           <li xml:lang="ar">أُصلحت حلقة مفرغة عند حساب وسائط الخريطة الداخلية.</li>
           <li xml:lang="ca">S'ha corregit un bucle infinit en calcular els arguments del mapa d'interior.</li>
@@ -3538,6 +3549,7 @@
           <li xml:lang="sk">Fixed an infinite loop when computing indoor map arguments.</li>
           <li xml:lang="sl">Popravljena neskončna zanka pri izračunu argumentov notranjega zemljevida.</li>
           <li xml:lang="tr">Fixed an infinite loop when computing indoor map arguments.</li>
+          <li xml:lang="uk">Виправлено нескінченний цикл під час обчислення аргументів карти приміщень.</li>
         </ul>
       </description>
     </release>
@@ -3558,6 +3570,7 @@
           <li xml:lang="sk">Fixed automatic prestup selection producing nonsense when geo coordinates are missing.</li>
           <li xml:lang="sl">Popravljena samodejna izbira prestopov, ki je povzročala nesmiselne podatke, ko manjkajo geografske koordinate.</li>
           <li xml:lang="tr">Fixed automatic transfer selection producing nonsense when geo coordinates are missing.</li>
+          <li xml:lang="uk">Виправлено автоматичний вибір пересадок, який спричиняв нереалістичні результати, якщо не було геокоординат.</li>
           <li>Fixed showing of attached Appled Wallet passes for trains, hotels, busses and car rental reservations.</li>
           <li xml:lang="ar">أُصلح عرض تصاريح Apple Wallet المرفقة للقطارات والفنادق والحافلات وحجوزات تأجير السيارات.</li>
           <li xml:lang="ca">S'ha corregit la visualització de passis d'Apple Wallet adjunts per a trens, hotels, autobusos i reserves de lloguer de cotxes.</li>
@@ -3572,6 +3585,7 @@
           <li xml:lang="sk">Fixed showing of attached Appled Wallet passes pre vlaks, hotels, busses and car rental rezervácias.</li>
           <li xml:lang="sl">Popravljen prikaz priloženih vozovnic Appled Wallet za vlake, hotele, avtobuse in rezervacije najema avtomobilov.</li>
           <li xml:lang="tr">Fixed showing of attached Appled Wallet passes for trains, hotels, busses and car rental reservations.</li>
+          <li xml:lang="uk">Виправлено показ пов'язаних із Apple Wallet проїзних документів для бронювання поїздів, готелів, автобусів та оренди автомобілів.</li>
           <li>Fixed a potential deadlock on updating currency conversion rates.</li>
           <li xml:lang="ar">أُصلح تعليق محتمل عند تحديث أسعار تحويل العملات.</li>
           <li xml:lang="ca">S'ha corregit un bloqueig potencial en actualitzar els tipus de conversió de les divises.</li>
@@ -3586,6 +3600,7 @@
           <li xml:lang="sk">Fixed a potential deadlock on updating currency conversion rates.</li>
           <li xml:lang="sl">Popravljen morebitni zastoj pri posodabljanju menjalnih tečajev.</li>
           <li xml:lang="tr">Fixed a potential deadlock on updating currency conversion rates.</li>
+          <li xml:lang="uk">Виправлено потенційну помилку при оновленні курсів валют.</li>
           <li>Fixed attaching documents to multi-traveler reservations.</li>
           <li xml:lang="ar">أُصلح إرفاق المستندات بالحجوزات متعددة المسافرين.</li>
           <li xml:lang="ca">S'ha corregit l'adjunció de documents a les reserves multiviatger.</li>
