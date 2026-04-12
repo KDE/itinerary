@@ -42,7 +42,7 @@
   <name xml:lang="sk">KDE Itinerár</name>
   <name xml:lang="sl">KDE Itinerary</name>
   <name xml:lang="sv">KDE-resplan</name>
-  <name xml:lang="tr">KDE Yol Kılavuzu</name>
+  <name xml:lang="tr">gKDE Yol Kılavuzu</name>
   <name xml:lang="uk">KDE Itinerary</name>
   <name xml:lang="zh-CN">KDE Itinerary</name>
   <name xml:lang="zh-TW">KDE 旅行計劃</name>
@@ -957,9 +957,49 @@
       <description>
         <ul>
           <li>New vector-graphics based map view.</li>
+          <li xml:lang="ca">Vista nova del mapa basada en gràfics vectorials.</li>
+          <li xml:lang="ca-valencia">Vista nova del mapa basada en gràfics vectorials.</li>
+          <li xml:lang="es">Nueva vista de mapa basada en gráficos vectoriales.</li>
+          <li xml:lang="ka">ახალი ვექტორულ გრაფიკაზე დაფუძნებული რუქის ხედი.</li>
+          <li xml:lang="nl">Nieuwe op vectorgrafiek gebaseerde kaartweergave.</li>
+          <li xml:lang="pt-BR">Nova visualização de mapa baseada em gráficos vetoriais.</li>
+          <li xml:lang="sk">Nové zobrazenie mapy založené na vektorovej grafike.</li>
+          <li xml:lang="sl">Nov pogled zemljevida, ki temelji na vektorski grafiki.</li>
+          <li xml:lang="tr">Yeni vektör grafik tabanlı harita görünümü</li>
+          <li xml:lang="uk">Нова панель карти на основі векторної графіки.</li>
           <li>Automatic lookup of location information.</li>
+          <li xml:lang="ca">Cerca automàtica d'informació de la localització.</li>
+          <li xml:lang="ca-valencia">Busca automàtica d'informació de la ubicació.</li>
+          <li xml:lang="es">Búsqueda automática de información sobre ubicación.</li>
+          <li xml:lang="ka">მდებარეობის ინფორმაციის ავტომატური ძებნა.</li>
+          <li xml:lang="nl">Automatisch opzoeken van locatiegegevens.</li>
+          <li xml:lang="pt-BR">Busca automática de informações de localização.</li>
+          <li xml:lang="sk">Automatické vyhľadávanie informácií o polohe.</li>
+          <li xml:lang="sl">Samodejno iskanje podatkov o lokaciji.</li>
+          <li xml:lang="tr">Konum bilgisinin kendiliğinden aranması</li>
+          <li xml:lang="uk">Автоматичний пошук відомостей щодо місця.</li>
           <li>More fine-grained control over deleting entries on reservations with multiple tickets or multiple travelers.</li>
+          <li xml:lang="ca">Control més fi sobre la supressió d'entrades en reserves amb bitllets múltiples o viatgers múltiples.</li>
+          <li xml:lang="ca-valencia">Control més fi sobre la supressió d'entrades en reserves amb bitllets múltiples o viatgers múltiples.</li>
+          <li xml:lang="es">Control más detallado sobre el borrado de entradas en las reservas con múltiples billetes o múltiples viajeros.</li>
+          <li xml:lang="ka">უფრო ზუსტი კონტროლი ჩანაწერების წაშლისას რეზერვაციებში ერთზე მეტი ბილეთით, ან მოგზაურით.</li>
+          <li xml:lang="nl">Meer gedetailleerde controle over het verwijderen van vermeldingen in reserveringen met meerdere tickets of meerdere reizigers.</li>
+          <li xml:lang="pt-BR">Controle mais preciso sobre a exclusão de entradas em reservas com vários bilhetes ou vários viajantes.</li>
+          <li xml:lang="sk">Podrobnejšie ovládanie mazania položiek v rezerváciách s viacerými lístkami alebo viacerými cestujúcimi.</li>
+          <li xml:lang="sl">Natančnejši nadzor nad brisanjem vnosov pri rezervacijah z več vozovnicami ali več potniki.</li>
+          <li xml:lang="tr">Birden çok bilet veya yolcu içeren rezervasyonlardaki girdileri silerken daha ince denetim olanağı</li>
+          <li xml:lang="uk">Точніше керування вилученням записів у бронюваннях з кількома квитками або кількома подорожніми.</li>
           <li>Improved handling of canceled reservations.</li>
+          <li xml:lang="ca">Millora de la gestió de les reserves cancel·lades.</li>
+          <li xml:lang="ca-valencia">Millora de la gestió de les reserves cancel·lades.</li>
+          <li xml:lang="es">Se ha mejorado el manejo de reservas canceladas.</li>
+          <li xml:lang="ka">გაუქმებული ჯავშნების გაუმჯობესებული დამუშავება.</li>
+          <li xml:lang="nl">Verbeterde afhandeling van geannuleerde reserveringen.</li>
+          <li xml:lang="pt-BR">Melhoria no tratamento de reservas canceladas.</li>
+          <li xml:lang="sk">Vylepšené spracovanie zrušených rezervácií.</li>
+          <li xml:lang="sl">Izboljšano ravnanje s preklicanimi rezervacijami.</li>
+          <li xml:lang="tr">İptal edilmiş rezervasyonların daha iyi yönetimi</li>
+          <li xml:lang="uk">Удосконалено обробку скасованих бронювань.</li>
         </ul>
       </description>
     </release>
@@ -3461,7 +3501,7 @@
           <li>Fixed a crash on Android when importing a file with a space in its path.</li>
           <li xml:lang="ar">أُصلح انهيار على أندرويد عند استيراد ملف يحتوي مساره على مسافة.</li>
           <li xml:lang="ca">S'ha corregit una fallada a l'Android en importar un fitxer amb un espai al seu camí.</li>
-          <li xml:lang="ca-valencia">S'ha corregit una fallada a Android en importar un fitxer amb un espai al seu camí.</li>
+          <li xml:lang="ca-valencia">S'ha esmenat una fallada en Android en importar un fitxer amb un espai al seu camí.</li>
           <li xml:lang="cs">Opravena chyba v systému Android při importu souboru s mezerou v cestě.</li>
           <li xml:lang="es">Se ha corregido un fallo de la aplicación en Android al importar un archivo con un espacio en su ruta.</li>
           <li xml:lang="fr">Correction d'un plantage sous Android lors de l'importation d'un fichier dont l'emplacement contient un caractère d'espace.</li>
@@ -3615,6 +3655,7 @@
           <li xml:lang="sk">Fixed attaching documents to multi-traveler rezervácias.</li>
           <li xml:lang="sl">Popravljeno pripenjanje dokumentov rezervacijam za več potnikov.</li>
           <li xml:lang="tr">Fixed attaching documents to multi-traveler reservations.</li>
+          <li xml:lang="uk">Виправлено долучення документів у подорожах із декількома учасниками.</li>
           <li>Improved scrolling speed of the timeline view.</li>
           <li xml:lang="ar">تحسين سرعة التمرير في عرض الخط الزمني.</li>
           <li xml:lang="ca">Millora de la velocitat de desplaçament de la vista de la línia de temps.</li>
@@ -3629,6 +3670,7 @@
           <li xml:lang="sk">Improved scrolling speed of the timeline view.</li>
           <li xml:lang="sl">Izboljšana hitrost pomikanja časovnice.</li>
           <li xml:lang="tr">Improved scrolling speed of the timeline view.</li>
+          <li xml:lang="uk">Пришвидшено гортання на панелі перегляду розкладу.</li>
           <li>New or improved travel document extractors for European Sleeper, IndiGo, PKP, Qatar Airways, SBB, SNCB, Thalys as well as for Latvian and Lithuanian railway tickets.</li>
           <li xml:lang="ar">مستخرجات مستندات سفر جديدة أو محسّنة لـ European Sleeper و IndiGo و PKP و Qatar Airways و SBB و SNCB و Thalys بالإضافة إلى تذاكر السكك الحديدية اللاتفية والليتوانية.</li>
           <li xml:lang="ca">Extractors nous o millorats de documents de viatge per a European Sleeper, IndiGo, PKP, Qatar Airways, SBB, SNCB, Thalys així com per a bitllets de trens letons i lituans.</li>
@@ -3658,6 +3700,7 @@
           <li xml:lang="sk">New generic ERA FCB lístok barcode extractor.</li>
           <li xml:lang="sl">Nov generični izvleček črtne kode vozovnic ERA FCB.</li>
           <li xml:lang="tr">New generic ERA FCB ticket barcode extractor.</li>
+          <li xml:lang="uk">Новий загальний засіб видобування штрихкодів з квитків FCB ERA.</li>
           <li>Improved extractor for restaurant data in websites.</li>
           <li xml:lang="ar">تحسين مستخرج بيانات المطاعم في المواقع الإلكترونية.</li>
           <li xml:lang="ca">Extractor millorat per a dades de restaurants en llocs web.</li>
@@ -3672,6 +3715,7 @@
           <li xml:lang="sk">Improved extractor for restaurant data in websites.</li>
           <li xml:lang="sl">Izboljšan izvleček za podatke restavracij na spletnih mestih.</li>
           <li xml:lang="tr">Improved extractor for restaurant data in websites.</li>
+          <li xml:lang="uk">Удосконалено засіб видобування даних ресторанів на сайтах.</li>
           <li>Fixed merging of public transport disruption notes from different sources.</li>
           <li xml:lang="ar">أُصلح دمج ملاحظات تعطل النقل العام من مصادر مختلفة.</li>
           <li xml:lang="ca">S'ha corregit la fusió de les notes d'interrupció del transport públic de fonts diferents.</li>
@@ -3686,6 +3730,7 @@
           <li xml:lang="sk">Fixed merging of public transport disruption notes from different sources.</li>
           <li xml:lang="sl">Popravljeno združevanje obvestil o motnjah javnega prevoza iz različnih virov.</li>
           <li xml:lang="tr">Fixed merging of public transport disruption notes from different sources.</li>
+          <li xml:lang="uk">Виправлено об'єднання повідомлень з різних джерел про перебоях у роботі громадського транспорту.</li>
         </ul>
       </description>
     </release>
@@ -3819,6 +3864,7 @@
           <li xml:lang="cs">Nové nebo vylepšené nástroje pro extrahování cestovních dokladů pro společnosti Aegean Air, Amadeus, availpro, BlaBlaCar, Deutsche Bahn,  Kinoheld, Meetup, National Express, ÖBB, Octorate, Ouigo, Premier Inn, SNCF, Taiwan Highspeed Rail a whyline.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para Aegean Air, Amadeus, availpro, BlaBlaCar, Deutsche Bahn, Kinoheld, Meetup, National Express, ÖBB, Octorate, Ouigo, Premier Inn, SNCF, Taiwan Highspeed Rail y whyline.</li>
           <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour Aegean Air, Amadeus, availpro, BlaBlaCar, Deutsche Bahn, Kinoheld, Meetup, National Express, ÖBB, Octorate, Ouigo, Premier Inn, SNCF, Taiwan Highspeed Rail et whyline.</li>
+          <li xml:lang="he">מחלצי מסמכים חדשים או משופרים ל־Aegean Air,‏ Amadeus,‏ availpro,‏ BlaBlaCar,‏ Deutsche Bahn,‏ Kinoheld,‏ Meetup,‏ National Express,‏ ÖBB,‏ Octorate,‏ Ouigo,‏ Premier Inn,‏ SNCF,‏ Taiwan Highspeed Rail ו־whyline.</li>
           <li xml:lang="it">Estrattori di documenti di viaggio nuovi o migliorati per Aegean Air, Amadeus, availpro, BlaBlaCar, Deutsche Bahn, Kinoheld, Meetup, National Express, ÖBB, Octorate, Ouigo, Premier Inn, SNCF, Taiwan Highspeed Rail e whyline.</li>
           <li xml:lang="ka">ახალი ან გაუმჯობესებული სამგზავრო დოკუმენტების ამომკრებები Aegean Air, Amadeus, availpro, BlaBlaCar, Deutsche Bahn, Kinoheld, Meetup, National Express, ÖBB, Octorate, Ouigo, Premier Inn, SNCF, ტაივანის მაღალსიჩქარიანი რკინიგზა და whyline სისტემებისთვის.</li>
           <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para Aegean Air, Amadeus, availpro, BlaBlaCar, Deutsche Bahn, Kinoheld, Meetup, National Express, ÖBB, Octorate, Ouigo, Premier Inn, SNCF, Taiwan Highspeed Rail e whyline.</li>
@@ -3834,6 +3880,7 @@
           <li xml:lang="cs">Podpora čárových kódů jízdenek Eurostar, SBB a britských železnic.</li>
           <li xml:lang="es">Compatibilidad con códigos de barras de billetes de ferrocarril de Eurostar, SBB y Reino Unido.</li>
           <li xml:lang="fr">Prise en charge des codes barres des billets Eurostar, SBB et des chemins de fer britanniques.</li>
+          <li xml:lang="he">תמיכה בברקודים של כרטיסי רכבות Eurostar,‏ SBB והממלכה המאוחדת (בריטניה)</li>
           <li xml:lang="it">Supporto per codici a barre dei biglietti ferroviari Eurostar, SBB e Regno Unito.</li>
           <li xml:lang="ka">Eurostar, SBB და ბრიტანეთის რკინიგზის ბილეთების შტრიხკოდების მხარდაჭერა.</li>
           <li xml:lang="pt-BR">Suporte para códigos de barras de bilhetes da Eurostar, SBB e ferrovias do Reino Unido.</li>
