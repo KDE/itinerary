@@ -957,6 +957,7 @@
       <description>
         <ul>
           <li>New vector-graphics based map view.</li>
+          <li xml:lang="ar">طريقة عرض خرائط جديدة تعتمد على الرسومات المتجهة.</li>
           <li xml:lang="ca">Vista nova del mapa basada en gràfics vectorials.</li>
           <li xml:lang="ca-valencia">Vista nova del mapa basada en gràfics vectorials.</li>
           <li xml:lang="es">Nueva vista de mapa basada en gráficos vectoriales.</li>
@@ -968,6 +969,7 @@
           <li xml:lang="tr">Yeni vektör grafik tabanlı harita görünümü</li>
           <li xml:lang="uk">Нова панель карти на основі векторної графіки.</li>
           <li>Automatic lookup of location information.</li>
+          <li xml:lang="ar">البحث الآلي عن معلومات الموقع.</li>
           <li xml:lang="ca">Cerca automàtica d'informació de la localització.</li>
           <li xml:lang="ca-valencia">Busca automàtica d'informació de la ubicació.</li>
           <li xml:lang="es">Búsqueda automática de información sobre ubicación.</li>
@@ -979,6 +981,7 @@
           <li xml:lang="tr">Konum bilgisinin kendiliğinden aranması</li>
           <li xml:lang="uk">Автоматичний пошук відомостей щодо місця.</li>
           <li>More fine-grained control over deleting entries on reservations with multiple tickets or multiple travelers.</li>
+          <li xml:lang="ar">تحكم أكثر دقة في حذف الإدخالات الخاصة بالحجوزات التي تتضمن تذاكر متعددة أو مسافرين متعددين.</li>
           <li xml:lang="ca">Control més fi sobre la supressió d'entrades en reserves amb bitllets múltiples o viatgers múltiples.</li>
           <li xml:lang="ca-valencia">Control més fi sobre la supressió d'entrades en reserves amb bitllets múltiples o viatgers múltiples.</li>
           <li xml:lang="es">Control más detallado sobre el borrado de entradas en las reservas con múltiples billetes o múltiples viajeros.</li>
@@ -990,6 +993,7 @@
           <li xml:lang="tr">Birden çok bilet veya yolcu içeren rezervasyonlardaki girdileri silerken daha ince denetim olanağı</li>
           <li xml:lang="uk">Точніше керування вилученням записів у бронюваннях з кількома квитками або кількома подорожніми.</li>
           <li>Improved handling of canceled reservations.</li>
+          <li xml:lang="ar">تحسين التعامل مع الحجوزات الملغاة.</li>
           <li xml:lang="ca">Millora de la gestió de les reserves cancel·lades.</li>
           <li xml:lang="ca-valencia">Millora de la gestió de les reserves cancel·lades.</li>
           <li xml:lang="es">Se ha mejorado el manejo de reservas canceladas.</li>
@@ -3751,6 +3755,7 @@
           <li xml:lang="sk">Improved travel document extractors for Air Asia, ATPI, B&amp;B Hotels, Best Western, CD, FlixBus, Gepard Express, Grimaldi Lines, MAV, SNCB and Vueling.</li>
           <li xml:lang="sl">Izboljšani izvlečki potovalnih dokumentov za Air Asia, ATPI, B&amp;B Hotels, Best Western, CD, FlixBus, Gepard Express, Grimaldi Lines, MAV, SNCB in Vueling.</li>
           <li xml:lang="tr">Improved travel document extractors for Air Asia, ATPI, B&amp;B Hotels, Best Western, CD, FlixBus, Gepard Express, Grimaldi Lines, MAV, SNCB and Vueling.</li>
+          <li xml:lang="uk">Удосконалено засоби видобування даних з документів для Air Asia, ATPI, B&amp;B Hotels, Best Western, CD, FlixBus, Gepard Express, Grimaldi Lines, MAV, SNCB і Vueling.</li>
           <li>Support importing various variants of the Deutschlandticket.</li>
           <li xml:lang="ar">دعم استيراد أنواع مختلفة من Deutschlandticket.</li>
           <li xml:lang="ca">Permet importar variants diverses del Deutschlandticket.</li>
@@ -3765,6 +3770,7 @@
           <li xml:lang="sk">Podpora importing various variants of the Deutschlandlístok.</li>
           <li xml:lang="sl">Podpora za uvoz različnih različic vozovnic Deutschlandticket.</li>
           <li xml:lang="tr">Support importing various variants of the Deutschlandticket.</li>
+          <li xml:lang="uk">Реалізовано підтримку імпортування різноманітних варіантів Deutschlandticket.</li>
           <li>Fixed rendering of MAV ticket barcodes.</li>
           <li xml:lang="ar">أُصلحت رندرة الرموز الشريطية لتذاكر MAV.</li>
           <li xml:lang="ca">S'ha corregit la renderització de codis de barres de bitllets MAV.</li>
@@ -3779,6 +3785,7 @@
           <li xml:lang="sk">Fixed rendering of MAV lístok barcodes.</li>
           <li xml:lang="sl">Popravljeno upodabljanje črtnih kod vozovnic MAV.</li>
           <li xml:lang="tr">Fixed rendering of MAV ticket barcodes.</li>
+          <li xml:lang="uk">Виправлено обробку штрихкодів квитків MAV.</li>
           <li>Fixed public transport queries in the Czech Republic and the UK.</li>
           <li xml:lang="ar">أُصلحت استعلامات النقل العام في جمهورية التشيك والمملكة المتحدة.</li>
           <li xml:lang="ca">S'han corregit les consultes de transport públic a la República Txeca i el Regne Unit.</li>
@@ -3793,6 +3800,7 @@
           <li xml:lang="sk">Fixed public transport queries in the Czech Republic and the UK.</li>
           <li xml:lang="sl">Popravljena vprašanja v zvezi z javnim prevozom na Češkem in v Združenem kraljestvu.</li>
           <li xml:lang="tr">Fixed public transport queries in the Czech Republic and the UK.</li>
+          <li xml:lang="uk">Виправлено запити щодо даних громадського транспорту у Чеській Республіці та Сполученому Королівстві.</li>
           <li>Fixed imported PDFs losing their file name on Android.</li>
           <li xml:lang="ar">أُصلحت ملفات PDF المستوردة التي كانت تفقد أسماءها على أندرويد.</li>
           <li xml:lang="ca">S'ha corregit que els PDF importats perdin el seu nom de fitxer a l'Android.</li>
@@ -3807,6 +3815,7 @@
           <li xml:lang="sk">Fixed imported PDFs losing their file name on Android.</li>
           <li xml:lang="sl">Popravljena napaka, zaradi katere so uvoženi PDF-ji izgubili ime datoteke v sistemu Android.</li>
           <li xml:lang="tr">Fixed imported PDFs losing their file name on Android.</li>
+          <li xml:lang="uk">Виправлено втрату назв файлів імпортованих PDF в Android.</li>
           <li>Improved Apple Wallet boarding pass layout for overflowing labels.</li>
           <li xml:lang="ar">تحسين تخطيط بطاقة صعود Apple Wallet للصائق الفائضة.</li>
           <li xml:lang="ca">S'ha millorat la disposició dels passis d'embarcament d'Apple Wallet per a etiquetes desbordades.</li>
@@ -4754,6 +4763,7 @@
           <li xml:lang="sk">Improved travel document extractors for booking.com, Eurowings, onepagebooking.com and SNCF.</li>
           <li xml:lang="sl">Izboljšani ekstraktorji potovalnih dokumentov za booking.com, Eurowings, onepagebooking.com in SNCF.</li>
           <li xml:lang="tr">Improved travel document extractors for booking.com, Eurowings, onepagebooking.com and SNCF.</li>
+          <li xml:lang="uk">Удосконалено засоби видобування даних з документів для booking.com, Eurowings, onepagebooking.com і SNCF.</li>
         </ul>
       </description>
     </release>
