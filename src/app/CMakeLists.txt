@@ -250,7 +250,7 @@ target_link_libraries(itinerary PUBLIC
     KOSMIndoorMap
     KPim6::Itinerary
     KPim6::PkPass
-    KPim6::Mime
+    KF6::Mime
     KF6::CalendarCore
     KF6::I18n
     KF6::I18nLocaleData
