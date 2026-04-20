@@ -963,10 +963,13 @@
           <li xml:lang="cs">Nové zobrazení mapy založené na vektorové grafice.</li>
           <li xml:lang="es">Nueva vista de mapa basada en gráficos vectoriales.</li>
           <li xml:lang="fr">Nouvelle vue pour la carte avec une image vectorielle.</li>
+          <li xml:lang="he">תצוגת מפה חדש שמבוססת על גרפיקת וקטורים</li>
+          <li xml:lang="ka">ახალი ვექტორულ გრაფიკაზე დაფუძნებული რუქის ხედი.</li>
           <li xml:lang="nl">Nieuwe op vectorgrafiek gebaseerde kaartweergave.</li>
           <li xml:lang="pt-BR">Nova visualização de mapa baseada em gráficos vetoriais.</li>
           <li xml:lang="sk">Nové zobrazenie mapy založené na vektorovej grafike.</li>
           <li xml:lang="sl">Nov pogled zemljevida, ki temelji na vektorski grafiki.</li>
+          <li xml:lang="tr">Yeni vektör grafik tabanlı harita görünümü</li>
           <li xml:lang="uk">Нова панель карти на основі векторної графіки.</li>
           <li>Automatic lookup of location information.</li>
           <li xml:lang="ar">البحث الآلي عن معلومات الموقع.</li>
@@ -975,10 +978,12 @@
           <li xml:lang="cs">Automatické vyhledávání informací o poloze.</li>
           <li xml:lang="es">Búsqueda automática de información sobre ubicación.</li>
           <li xml:lang="fr">Recherche automatique des informations de localisation.</li>
+          <li xml:lang="ka">მდებარეობის ინფორმაციის ავტომატური ძებნა.</li>
           <li xml:lang="nl">Automatisch opzoeken van locatiegegevens.</li>
           <li xml:lang="pt-BR">Busca automática de informações de localização.</li>
           <li xml:lang="sk">Automatické vyhľadávanie informácií o polohe.</li>
           <li xml:lang="sl">Samodejno iskanje podatkov o lokaciji.</li>
+          <li xml:lang="tr">Konum bilgisinin kendiliğinden aranması</li>
           <li xml:lang="uk">Автоматичний пошук відомостей щодо місця.</li>
           <li>More fine-grained control over deleting entries on reservations with multiple tickets or multiple travelers.</li>
           <li xml:lang="ar">تحكم أكثر دقة في حذف الإدخالات الخاصة بالحجوزات التي تتضمن تذاكر متعددة أو مسافرين متعددين.</li>
@@ -987,10 +992,12 @@
           <li xml:lang="cs">Podrobnější nastavení mazání záznamů u rezervací s více letenkami nebo více cestujícími.</li>
           <li xml:lang="es">Control más detallado sobre el borrado de entradas en las reservas con múltiples billetes o múltiples viajeros.</li>
           <li xml:lang="fr">Un contrôle plus précis sur la suppression des entrées des réservations avec plusieurs billets ou plusieurs personnes voyageant.</li>
+          <li xml:lang="ka">უფრო ზუსტი კონტროლი ჩანაწერების წაშლისას რეზერვაციებში ერთზე მეტი ბილეთით, ან მოგზაურით.</li>
           <li xml:lang="nl">Meer gedetailleerde controle over het verwijderen van vermeldingen in reserveringen met meerdere tickets of meerdere reizigers.</li>
           <li xml:lang="pt-BR">Controle mais preciso sobre a exclusão de entradas em reservas com vários bilhetes ou vários viajantes.</li>
           <li xml:lang="sk">Jemnejšia kontrola nad mazaním záznamov v rezerváciách s viacerými lístkami alebo viacerými cestujúcimi.</li>
           <li xml:lang="sl">Natančnejši nadzor nad brisanjem vnosov pri rezervacijah z več vozovnicami ali več potniki.</li>
+          <li xml:lang="tr">Birden çok bilet veya yolcu içeren rezervasyonlardaki girdileri silerken daha ince denetim olanağı</li>
           <li xml:lang="uk">Точніше керування вилученням записів у бронюваннях з кількома квитками або кількома подорожніми.</li>
           <li>Improved handling of canceled reservations.</li>
           <li xml:lang="ar">تحسين التعامل مع الحجوزات الملغاة.</li>
@@ -999,10 +1006,13 @@
           <li xml:lang="cs">Vylepšené zpracování zrušených rezervací.</li>
           <li xml:lang="es">Se ha mejorado el manejo de reservas canceladas.</li>
           <li xml:lang="fr">Amélioration de la gestion des réservations annulées.</li>
+          <li xml:lang="he">הטיפול בהזמנות שבוטלו השתפר.</li>
+          <li xml:lang="ka">გაუმჯობესდა გაუქმებული ჯავშნების დამუშავება.</li>
           <li xml:lang="nl">Verbeterde afhandeling van geannuleerde reserveringen.</li>
           <li xml:lang="pt-BR">Melhoria no tratamento de reservas canceladas.</li>
           <li xml:lang="sk">Vylepšené spracovanie zrušených rezervácií.</li>
           <li xml:lang="sl">Izboljšano ravnanje s preklicanimi rezervacijami.</li>
+          <li xml:lang="tr">İptal edilmiş rezervasyonların daha iyi yönetimi</li>
           <li xml:lang="uk">Удосконалено обробку скасованих бронювань.</li>
         </ul>
       </description>
@@ -1887,6 +1897,7 @@
           <li xml:lang="cs">Nové nebo vylepšené nástroje pro extrahování cestovních dokladů pro Eventyay, Flixbus, Ghotel, SBB, SNCF a VR.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para Eventyay, Flixbus, Ghotel, SBB, SNCF y VR.</li>
           <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour Eventyay, Flixbus, Ghotel, SBB, SNCF et VR.</li>
+          <li xml:lang="he">מחלצי מסמכים חדשים או עדניים ל־Eventyay,‏ Flixbus,‏ Ghotel,‏ SBB,‏ SNCF ו־VR.</li>
           <li xml:lang="it">Estrattori di documenti di viaggio nuovi o migliorati per Eventyay, Flixbus, Ghotel, SBB, SNCF e VR.</li>
           <li xml:lang="ka">ახალი ან გაუმჯობესებული სამგზავრო დოკუმენტების ამომკრებები Eventyay, Flixbus, Ghotel, SBB, SNCF და VR სისტემებისთვის.</li>
           <li xml:lang="nl">Nieuwe of verbeterde extractors voor reisdocumenten voor Eventyay, Flixbus, Ghotel,SBB, SNCF en VR.</li>
@@ -1903,6 +1914,7 @@
           <li xml:lang="cs">Důležité prvky na mapě skupiny výletů se při nízkém přiblížení neskrývají.</li>
           <li xml:lang="es">No ocultar elementos esenciales del mapa del grupo de viaje en bajos niveles de ampliación.</li>
           <li xml:lang="fr">Aucun masque pour les éléments essentiels de la carte du groupe de voyage à des niveaux de zoom faibles.</li>
+          <li xml:lang="he">לא להסתיר רכיבי מפה לטיולים קבוצתיים ברמות תקריב מרוחקות.</li>
           <li xml:lang="it">Non nascondere gli elementi essenziali della mappa del gruppo di viaggio a bassi livelli di zoom.</li>
           <li xml:lang="ka">მგზავრობის ჯგუფის რუკის აუცილებელი ელემენტების ჩვენება დაბალი მასშტაბის დროს.</li>
           <li xml:lang="nl">Verberg geen essentiële elementen van de reisgroepkaart bij lage zoomniveaus.</li>
@@ -1919,6 +1931,7 @@
           <li xml:lang="cs">Oprava poškození dat, kdy živé aktualizace dat měnily typ rezervace.</li>
           <li xml:lang="es">Se ha corregido el deterioro de datos cuando las actualizaciones de datos en vivo cambiaban el tipo de reserva.</li>
           <li xml:lang="fr">Correction de la corruption des données lorsque les mises à jour des données en temps réel changeraient le type d'une réservation.</li>
+          <li xml:lang="he">תוקן פגם בנתונים כשעדכוני נתונים בזמן אמת משנים את סוג ההזמנה.</li>
           <li xml:lang="it">Corregge il danneggiamento dei dati quando gli aggiornamenti dei dati in tempo reale cambiano il tipo di prenotazione.</li>
           <li xml:lang="ka">გასწორდა მონაცემების დაზიანება, როდესაც რეალურ დროში მონაცემთა განახლება ცვლიდა ჯავშნის ტიპს.</li>
           <li xml:lang="nl">Corrigeer gegevenscorruptie wanneer live-gegevensupdates het type van een reservering zouden wijzigen.</li>
@@ -1935,6 +1948,7 @@
           <li xml:lang="cs">Zakázán již nedostupný online import databáze.</li>
           <li xml:lang="es">Desactivar la importación en línea de DB, que ya no está disponible.</li>
           <li xml:lang="fr">Désactiver l'importation en ligne de bases de données devenues indisponibles.</li>
+          <li xml:lang="he">השבתת מצב שייבוא מסד הנתונים המקוון לא זמין עוד.</li>
           <li xml:lang="it">Disabilita l'importazione in linea di DB non più disponibili.</li>
           <li xml:lang="ka">გაუქმდა DB-ის ონლაინ შემოტანას მხარდაჭერა, რომელიც აღარ არის ხელმისაწვდომი.</li>
           <li xml:lang="nl">Schakel de niet langer beschikbare DB-online importfunctie uit.</li>
@@ -2108,6 +2122,7 @@
           <li xml:lang="cs">Nové zobrazení časové osy pro jednotlivé cesty.</li>
           <li xml:lang="es">Se ha corregido un fallo de la aplicación al importar certificados sanitarios.</li>
           <li xml:lang="fr">Correction d'un plantage lors de l'importation des certificats de santé.</li>
+          <li xml:lang="he">תוקנה קריסה בייבוא אישורי בריאות.</li>
           <li xml:lang="it">Risolto l'arresto anomalo durante l'importazione di certificati sanitari.</li>
           <li xml:lang="ka">გასწორდა პროგრამის გათიშვა ჯანმრთელობის სერტიფიკატების შემოტანასას.</li>
           <li xml:lang="nl">Verhelp de crash bij het importeren van gezondheidscertificaten.</li>
@@ -2290,6 +2305,7 @@
           <li xml:lang="cs">Nové nebo vylepšené nástroje pro extrahování cestovních dokladů pro Eurostar, Eventim, Koleo, NH Hotels, Trenitalia a SBB.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para Eurostar, Eventim, Koleo, NH Hotels, Trenitalia y SBB.</li>
           <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour Eurostar, Eventim, Koleo, NH Hotels, Trenitalia et SBB.</li>
+          <li xml:lang="he">מחלצי מסמכי נסיעות חדשים או משופרים עבור Eurostar,‏ Eventim,‏ Koleo,‏ NH Hotels,‏ Trenitalia ו־SBB.</li>
           <li xml:lang="it">Estrattori di documenti di viaggio nuovi o migliorati per Eurostar, Eventim, Koleo, NH Hotels, Trenitalia e SBB.</li>
           <li xml:lang="ka">ახალი ან გაუმჯობესებული სამგზავრო დოკუმენტების ამომკრებები Eurostar, Eventim, Koleo, NH Hotels, Trenitalia და SBB სისტემებისთვის.</li>
           <li xml:lang="nl">Nieuwe of verbeterde extractors voor reisdocumenten voor Eurostar, Eventim, Koleo, NH Hotels, Trenitalia en SBB.</li>
@@ -2306,6 +2322,7 @@
           <li xml:lang="cs">Rozšířené pokrytí veřejné dopravy prostřednictvím Transitous.</li>
           <li xml:lang="es">Se ha extendido la cobertura de transporte público mediante Transitous.</li>
           <li xml:lang="fr">Couverture étendue des transports publics grâce à Transitous.</li>
+          <li xml:lang="he">כיסוי תחבורה ציבורית נרחב דרך Transitous.</li>
           <li xml:lang="it">Copertura estesa del trasporto pubblico tramite Transitous.</li>
           <li xml:lang="ka">საზოგადოებრივი ტრანსპორტის გაფართოებული დაფარვა Transitous-ის მეშვეობით.</li>
           <li xml:lang="nl">Uitgebreidere dekking van het openbaar vervoer via Transitous.</li>
@@ -2392,6 +2409,7 @@
           <li xml:lang="cs">Podpora tmavého režimu v systému Android.</li>
           <li xml:lang="es">Compatibilidad con el modo oscuro en Android.</li>
           <li xml:lang="fr">Prise en charge du mode sombre sous Android.</li>
+          <li xml:lang="he">תמיכה במצב כהה ב־Android.</li>
           <li xml:lang="it">Supporto della modalità scura su Android.</li>
           <li xml:lang="ka">ბნელი რეჟიმის მხარდაჭერა Android-ზე.</li>
           <li xml:lang="nl">Ondersteuning voor modus Donker op Android.</li>
@@ -3041,7 +3059,7 @@
           <li xml:lang="es">Eliminar fuentes PDF innecesarias para reducir el tamaño de la APK.</li>
           <li xml:lang="fr">Suppression des fontes « PDF » inutiles pour réduire la taille du paquet « APK ».</li>
           <li xml:lang="it">Rimuove i caratteri PDF non necessari per ridurre le dimensioni dell'APK.</li>
-          <li xml:lang="ka">ზედმეტი PDF შრიფტების ამოღება APK ფაილის ზომის შესამცირებლად.</li>
+          <li xml:lang="ka">ზედმეტი PDF ფონტების ამოღება APK ფაილის ზომის შესამცირებლად.</li>
           <li xml:lang="pt-BR">Remoção das fontes PDF desnecessárias para reduzir o tamanho do APK.</li>
           <li xml:lang="ru">Удаление ненужных шрифтов PDF для уменьшения размера APK.</li>
           <li xml:lang="sk">Odstránenie unnecessary PDF fonts to reduce the APK size.</li>
@@ -3749,6 +3767,7 @@
           <li xml:lang="cs">Vylepšený extraktor pro data restaurací na webových stránkách.</li>
           <li xml:lang="es">Se ha mejorado el extractor de datos de restaurantes en sitios web.</li>
           <li xml:lang="fr">Amélioration de l'extracteur pour les données des restaurants sur les sites Internet.</li>
+          <li xml:lang="he">חילוץ נתוני מסעדות מאתרים השתפר.</li>
           <li xml:lang="it">Estrattore migliorato per i dati dei ristoranti nei siti web.</li>
           <li xml:lang="ka">გაუმჯობესებული რესტორნის მონაცემების ამომკრები ვებგვერდებიდან.</li>
           <li xml:lang="pt-BR">Extrator aprimorado para dados de restaurantes em sites.</li>
@@ -3800,6 +3819,7 @@
           <li xml:lang="cs">Podpora importu různých variant Deutschlandticket.</li>
           <li xml:lang="es">Compatibilidad con la importación de diversas variantes del Deutschlandticket.</li>
           <li xml:lang="fr">Prise en charge de l'importation de différentes variantes du Deutschlandticket.</li>
+          <li xml:lang="he">תמיכה בייבוא של מספר הגוונים של Deutschlandticket.</li>
           <li xml:lang="it">Supporta l'importazione di varie varianti del Deutschlandticket.</li>
           <li xml:lang="ka">Deutschlandticket-ის სხვადასხვა ვარიანტის შემოტანას მხარდაჭერა.</li>
           <li xml:lang="pt-BR">Suporte para importação de diversas variantes do Deutschlandticket.</li>
@@ -3815,6 +3835,7 @@
           <li xml:lang="cs">Opraveno vykreslování čárových kódů na jízdenkách MAV.</li>
           <li xml:lang="es">Se ha corregido la representación de códigos de barras de billetes MAV.</li>
           <li xml:lang="fr">Correction de l'affichage des codes-barres des billets de MAV.</li>
+          <li xml:lang="he">תוקן תיצור של ברקודים של כרטיסי MAV.</li>
           <li xml:lang="it">Risolto il problema con il rendering dei codici a barre dei biglietti MAV.</li>
           <li xml:lang="ka">გასწორდა MAV ბილეთის შტრიხკოდების რენდერი.</li>
           <li xml:lang="pt-BR">Correção na renderização dos códigos de barras dos bilhetes MAV.</li>
@@ -3830,6 +3851,7 @@
           <li xml:lang="cs">Opraveny dotazy týkající se veřejné dopravy v České republice a Velké Británii.</li>
           <li xml:lang="es">Se han corregido las consultas de transporte público en la República Checa y en Reino Unido.</li>
           <li xml:lang="fr">Correction des problèmes de transport public en République Tchèque et au Royaume-Uni.</li>
+          <li xml:lang="he">תוקנו שאילתות תחבורה ציבורית ברפובליקה הצ׳כית ובאנגליה.</li>
           <li xml:lang="it">Risolte le domande sui trasporti pubblici nella Repubblica Ceca e nel Regno Unito.</li>
           <li xml:lang="ka">გასწორდა საზოგადოებრივი ტრანსპორტის მოთხოვნები ჩეხეთსა და ბრიტანეთში.</li>
           <li xml:lang="pt-BR">Correção da consultas sobre transporte público na República Tcheca e no Reino Unido.</li>
@@ -3845,6 +3867,7 @@
           <li xml:lang="cs">Opravena chyba, kdy importované soubory PDF ztrácely své názvy v systému Android.</li>
           <li xml:lang="es">Se ha corregido el problema que hacía que se perdiese el nombre de archivo al importar PDF en Android.</li>
           <li xml:lang="fr">Correction des fichiers « PDF » importés perdant leur nom de fichier sous Android.</li>
+          <li xml:lang="he">תוקנה בעיה שקובצי PDF שיובאו איבדו את שם הקובץ שלהם ב־Android.</li>
           <li xml:lang="it">Risolto il problema per cui i PDF importati perdevano il nome del file su Android.</li>
           <li xml:lang="ka">გასწორდა შემოტანარებული PDF-ები, რომლებიც კარგავდნენ ფაილის სახელს Android-ზე.</li>
           <li xml:lang="pt-BR">Corrigido o problema em que PDFs importados perdiam o nome do arquivo no Android.</li>
@@ -3875,6 +3898,7 @@
           <li xml:lang="cs">Vylepšené zpracování zrušených prvků v časové ose.</li>
           <li xml:lang="es">Se ha mejorado el manejo de elementos cancelados en la línea cronológica.</li>
           <li xml:lang="fr">Amélioration de la gestion des éléments annulés dans la chronologie.</li>
+          <li xml:lang="he">הטיפול ברכיבים שבוטלו בציר הזמן השתפר.</li>
           <li xml:lang="it">Gestione migliorata degli elementi annullati nella linea temporale.</li>
           <li xml:lang="ka">გაუმჯობესებული გაუქმებული ელემენტების დამუშავება ქრონოლოგიაში.</li>
           <li xml:lang="pt-BR">Melhoria no tratamento de elementos cancelados na linha do tempo.</li>
@@ -3890,6 +3914,7 @@
           <li xml:lang="cs">Vylepšené vykreslování bariérových prvků na mapě vlakového nádraží.</li>
           <li xml:lang="es">Se ha mejorado la representación de los elementos de barrera en los mapas de estaciones de tren.</li>
           <li xml:lang="fr">Amélioration du rendu des éléments de barrière dans la carte de la gare.</li>
+          <li xml:lang="he">השתפר תיצוג של רכיבי גבול במפות תחנות הרכבת.</li>
           <li xml:lang="ia">Rendition meliorate de elementos de barriera sur le mappa de station de traino</li>
           <li xml:lang="it">Miglioramento del rendering degli elementi barriera nella mappa della stazione ferroviaria.</li>
           <li xml:lang="ka">გაუმჯობესდა ბარიერის ელემენტების რენდერი რკინიგზის სადგურის რუკაზე.</li>
@@ -3945,6 +3970,7 @@
           <li xml:lang="cs">Nová stránka se stavem v reálném čase využívající palubní API vozidla.</li>
           <li xml:lang="es">Nueva página de estado en directo que usa la API de a bordo de vehículos.</li>
           <li xml:lang="fr">Nouvelle page d'état en direct utilisant l'API embarquée du véhicule.</li>
+          <li xml:lang="he">עמוד מצב חי חדש באמצעות ה־API הפנימי של כלי הרכב.</li>
           <li xml:lang="it">Nuova pagina di stato in tempo reale utilizzando l'API di imbarco del veicolo.</li>
           <li xml:lang="ka">ახალი რეალური სტატუსის გვერდი ბორტის API-ის გამოყენებით.</li>
           <li xml:lang="pt-BR">Nova página de status em tempo real usando a API integrada do veículo.</li>
@@ -4078,6 +4104,7 @@
           <li xml:lang="cs">Vylepšené získávání dat pro jízdenky Flixbus a britské železnice.</li>
           <li xml:lang="es">Se ha mejorado la extracción de datos para billetes de Flixbus y de los ferrocarriles británicos.</li>
           <li xml:lang="fr">Amélioration de l'extraction de données pour les billets Flixbus et de chemin de fer au Royaume-Uni.</li>
+          <li xml:lang="he">חילוץ הנתונים לכרטיסי רכבת של Flixbus ובאנגליה השתפר.</li>
           <li xml:lang="it">Migliorata l'estrazione dei dati per i biglietti Flixbus e ferroviari del Regno Unito.</li>
           <li xml:lang="ka">გაუმჯობესებული მონაცემების ამოღება Flixbus-ისა და ბრიტანეთის რკინიგზის ბილეთებისთვის.</li>
           <li xml:lang="pt-BR">Extração de dados aprimorada para bilhetes da Flixbus e de trens do Reino Unido.</li>
@@ -4125,6 +4152,7 @@
           <li xml:lang="cs">Opraveno pořadí vrstev mapy vlakového nádraží pro vrstvené části budov.</li>
           <li xml:lang="es">Se ha corregido el orden de apilado en los mapas de estaciones de tren para las partes del edificio con varios pisos.</li>
           <li xml:lang="fr">Correction de l'ordre d'empilement pour la carte de la gare pour les parties de bâtiments superposées.</li>
+          <li xml:lang="he">תוקן סדר ערימת מפת התחנות לחלקי בניין בשכבות.</li>
           <li xml:lang="it">Risolto il problema con l'ordine di impilamento della mappa della stazione ferroviaria per le parti dell'edificio a più livelli.</li>
           <li xml:lang="ka">გასწორდა რკინიგზის სადგურის რუკის შრეების რიგითობა შენობის მრავალდონიანი ნაწილებისთვის.</li>
           <li xml:lang="pt-BR">Correção da ordem de empilhamento do mapa da estação de trem para partes de edifícios em camadas.</li>
@@ -4178,6 +4206,7 @@
           <li xml:lang="cs">Opraveno vykreslování některých vstupenek na události v Apple Wallet.</li>
           <li xml:lang="es">Se ha corregido la visualización de ciertas entradas para eventos de Apple Wallet.</li>
           <li xml:lang="fr">Correction du rendu de certains billets d'évènements de Apple Wallet.</li>
+          <li xml:lang="he">תוקן תיצוג של כרטיסים אירועים מסוימים של Apple Wallet.</li>
           <li xml:lang="it">Risolto il problema con il rendering di alcuni biglietti per eventi Apple Wallet.</li>
           <li xml:lang="ka">გასწორდა ზოგიერთი Apple Wallet მოვლენის ბილეთის რენდერი.</li>
           <li xml:lang="pt-BR">Correção na renderização de alguns ingressos de eventos do Apple Wallet.</li>
