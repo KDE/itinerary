@@ -3659,6 +3659,7 @@
           <li xml:lang="cs">Opraveno importování rezervací lodí nebo trajektů z kalendáře.</li>
           <li xml:lang="es">Se ha corregido la importación de reservas de barco y ferry desde el calendario.</li>
           <li xml:lang="fr">Correction de l'importation des réservations de bateaux ou de traversiers depuis le calendrier.</li>
+          <li xml:lang="he">תוקן ייבוא הזמנת סירה או מעבורת מהיומן.</li>
           <li xml:lang="it">Risolto il problema con l'importazione delle prenotazioni di barche o traghetti dal calendario.</li>
           <li xml:lang="ka">გასწორდა გემისა და ბორნის ჯავშნების შემოტანა კალენდრიდან.</li>
           <li xml:lang="pt-BR">Correção na importação de reservas de barcos ou balsas a partir do calendário.</li>
@@ -3674,6 +3675,7 @@
           <li xml:lang="cs">Opravena nekonečná smyčka při výpočtu argumentů vnitřní mapy.</li>
           <li xml:lang="es">Se ha corregido un bucle infinito cuando se calculaban los argumentos del mapa de interior.</li>
           <li xml:lang="fr">Correction d'une boucle infinie lors du calcul des arguments de la carte intérieure.</li>
+          <li xml:lang="he">תוקנה לולאה אינסופית בעת חישוב ארגומנטים של מפת ניווט פנים.</li>
           <li xml:lang="it">Risolto un ciclo infinito durante il calcolo degli argomenti della mappa interna.</li>
           <li xml:lang="ka">გასწორდა უსასრულო ციკლი შიდა რუკის არგუმენტების გამოთვლისას.</li>
           <li xml:lang="pt-BR">Corrigido um loop infinito no cálculo dos argumentos do mapa interno.</li>
@@ -3695,6 +3697,7 @@
           <li xml:lang="cs">Opraven výběr automatického přenosu, který produkoval nesmysly, když chyběly zeměpisné souřadnice.</li>
           <li xml:lang="es">Se ha corregido que la selección automática de transbordo genere sinsentidos cuando faltan coordenadas geográficas.</li>
           <li xml:lang="fr">Correction de la sélection automatique de transfert produisant des résultats incohérents lors de l'absence de coordonnées géographiques.</li>
+          <li xml:lang="he">תוקנה בחירת העברה אוטומטית שמפיקה שטויות כשנקודות ציון גאוגרפיות חסרות.</li>
           <li xml:lang="it">Risolto il problema con la selezione automatica del trasferimento che produceva risultati insensati quando mancano le coordinate geografiche.</li>
           <li xml:lang="ka">გასწორდა გადაჯდომის ავტომატური შერჩევა, რომელიც არასწორ შედეგს იძლეოდა გეო-კოორდინატების არქონისას.</li>
           <li xml:lang="pt-BR">Corrigido o problema na seleção automática de transferência que gerava erros quando faltavam coordenadas geográficas.</li>
@@ -3710,6 +3713,7 @@
           <li xml:lang="cs">Opraveno zobrazování přiložených Apple Wallet pass pro vlaky, hotely, autobusy a rezervace pronájmu automobilů.</li>
           <li xml:lang="es">Se ha corregido la visualización de pases adjuntos de Apple Wallet para reservas de trenes, hoteles, autobuses y alquiler de automóviles.</li>
           <li xml:lang="fr">Correction de l'affichage des abonnements de Apple Wallet attachés aux trains, hôtels, bus et réservations de location de voiture.</li>
+          <li xml:lang="he">תוקנה הצגת אישורי מעבר מצורפים מ־Apple Wallet להזמנות של רכבות ,מלונות, אוטובוסים והשכרת רכבים.</li>
           <li xml:lang="it">Corretta la visualizzazione dei pass Appled Wallet allegati per prenotazioni di treni, hotel, autobus e noleggio auto.</li>
           <li xml:lang="ka">გასწორდა მიბმული Apple Wallet-ის ბარათების ჩვენება მატარებლის, სასტუმროს, ავტობუსისა და მანქანის ქირაობის ჯავშნებისთვის.</li>
           <li xml:lang="pt-BR">Correção na exibição dos passes da Apple Wallet anexados a reservas de trem, hotel, ônibus e aluguel de carros.</li>
@@ -3725,6 +3729,7 @@
           <li xml:lang="cs">Opraveno potenciální zablokování při aktualizaci směnných kurzů.</li>
           <li xml:lang="es">Se ha corregido un potencial bloqueo al actualizar los tipos de cambio de divisas.</li>
           <li xml:lang="fr">Correction d'un blocage potentiel lors de la mise à jour des taux de conversion des devises.</li>
+          <li xml:lang="he">תוקנה לולאה סתומה שלעתים קרתה בעת עדכון שערי המרת מטבעות.</li>
           <li xml:lang="it">Risolto un potenziale stallo nell'aggiornamento dei tassi di conversione delle valute.</li>
           <li xml:lang="ka">გასწორდა პოტენციური გაჭედვა ვალუტის კურსების განახლებისას.</li>
           <li xml:lang="pt-BR">Corrigido um possível impasse na atualização das taxas de conversão de moeda.</li>
