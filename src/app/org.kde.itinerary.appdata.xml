@@ -2814,6 +2814,7 @@
           <li xml:lang="fr">Correction de l'affichage des perturbations des départs des transports en commun.</li>
           <li xml:lang="it">Corretta la visualizzazione delle interruzioni delle partenze dei trasporti pubblici.</li>
           <li xml:lang="ka">გასწორდა საზოგადოებრივი ტრანსპორტის გამგზავრების შეფერხებების ჩვენება.</li>
+          <li xml:lang="nl">Corrigeer de weergave van verstoringen in het openbaar vervoer.</li>
           <li xml:lang="pt-BR">Correção do problema na exibição de interrupções nos horários de partida do transporte público.</li>
           <li xml:lang="ru">Исправлено отображение сбоев в отправлении общественного транспорта.</li>
           <li xml:lang="sk">Oprava zobrazenieing public transport odchod disruptions.</li>
@@ -2829,6 +2830,7 @@
           <li xml:lang="fr">Correction des problèmes d'affichage des abonnements sous Apple Wallet.</li>
           <li xml:lang="it">Risolve i problemi di rendering dei pass di Apple Wallet.</li>
           <li xml:lang="ka">გასწორდა Apple Wallet-ის ბარათების რენდერის პრობლემები.</li>
+          <li xml:lang="nl">Los problemen op met het weergeven van Apple Wallet-passen.</li>
           <li xml:lang="pt-BR">Correção dos problemas de renderização de passes do Apple Wallet.</li>
           <li xml:lang="ru">Исправлены проблемы с отображением пропусков Apple Wallet.</li>
           <li xml:lang="sk">Oprava Apple Wallet pass rendering issues.</li>
@@ -2850,6 +2852,7 @@
           <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour Deutsche Bahn, Eckerö Line, European Sleeper, Eventim, Flibco, Leo Express, National Express, ÖBB, osmcal.org, Salzbergwerk, SNCF et ti.to.</li>
           <li xml:lang="it">Estrattori di documenti di viaggio nuovi o migliorati per Deutsche Bahn, Eckerö Line, European Sleeper, Eventim, Flibco, Leo Express, National Express, ÖBB, osmcal.org, Salzbergwerk, SNCF e ti.to.</li>
           <li xml:lang="ka">ახალი ან გაუმჯობესებული სამგზავრო დოკუმენტების ამომკრებები Deutsche Bahn, Eckerö Line, European Sleeper, Eventim, Flibco, Leo Express, National Express, ÖBB, osmcal.org, Salzbergwerk, SNCF და ti.to სისტემებისთვის.</li>
+          <li xml:lang="nl">Nieuwe of verbeterde extractors voor reisdocumenten van Deutsche Bahn, Eckerö Line, European Sleeper, Eventim, Flibco, Leo Express, National Express, ÖBB, osmcal.org, Salzbergwerk, SNCF en ti.to.</li>
           <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para Deutsche Bahn, Eckerö Line, European Sleeper, Eventim, Flibco, Leo Express, National Express, ÖBB, osmcal.org, Salzbergwerk, SNCF e ti.to.</li>
           <li xml:lang="ru">Новые или улучшенные модули извлечения данных из проездных документов для Deutsche Bahn, Eckerö Line, European Sleeper, Eventim, Flibco, Leo Express, National Express, ÖBB, osmcal.org, Salzbergwerk, SNCF и ti.to.</li>
           <li xml:lang="sk">New or improved travel document extractors for Deutsche Bahn, Eckerö Line, European Sleeper, Eventim, Flibco, Leo Express, National Express, ÖBB, osmcal.org, Salzbergwerk, SNCF and ti.to.</li>
@@ -2865,6 +2868,7 @@
           <li xml:lang="fr">Filtration des résultats de géocodage peu plausibles lors de la modification d'adresse.</li>
           <li xml:lang="it">Filtra i risultati non plausibili del geo-codificatore durante la modifica dell'indirizzo.</li>
           <li xml:lang="ka">გეოკოდერის დაუჯერებელი შედეგების გაფილტვრა მისამართის რედაქტირებისას.</li>
+          <li xml:lang="nl">Filter onwaarschijnlijke geo-coderingresultaten bij het bewerken van adressen.</li>
           <li xml:lang="pt-BR">Filtrar resultados implausíveis do geocodificador na edição de endereços.</li>
           <li xml:lang="ru">Фильтрация неправдоподобных результатов геокодирования при редактировании адреса.</li>
           <li xml:lang="sk">Filter implausible geo coder results on address editing.</li>
@@ -2880,6 +2884,7 @@
           <li xml:lang="fr">Correction du chevauchement entre le bouton flottant de la carte et les détails d'arrivée sur la page des détails du trajet.</li>
           <li xml:lang="it">Corregge la sovrapposizione tra il pulsante della mappa mobile e i dettagli di arrivo nella pagina dei dettagli del viaggio.</li>
           <li xml:lang="ka">გასწორდა რუკის მცურავ ღილაკსა და ჩამოსვლის დეტალებს შორის გადაფარვა მგზავრობის დეტალების გვერდზე.</li>
+          <li xml:lang="nl">Los de overlapping op tussen de zwevende kaartknop en de aankomstdetails op de reisdetails-pagina.</li>
           <li xml:lang="pt-BR">Correção da sobreposição entre o botão flutuante do mapa e os detalhes de chegada na página de detalhes da viagem.</li>
           <li xml:lang="ru">Исправлено наложение плавающей кнопки карты и данных о прибытии на странице сведений о поездке.</li>
           <li xml:lang="sk">Oprava overlap between floating map button and príchod details on the journey details page.</li>
@@ -2895,6 +2900,7 @@
           <li xml:lang="fr">Amélioration des informations en temps réel de la Deutsche Bahn en cas d'annulation ou de remplacement de trains.</li>
           <li xml:lang="it">Migliora le informazioni in tempo reale della Deutsche Bahn in caso di treni annullati o sostitutivi.</li>
           <li xml:lang="ka">Deutsche Bahn-ის რეალურ დროში ინფორმაციის გაუმჯობესება გაუქმებული ან შემცვლელი მატარებლების შემთხვევაში.</li>
+          <li xml:lang="nl">Verbeter de realtime-informatie van Deutsche Bahn bij geannuleerde of vervangende treinen.</li>
           <li xml:lang="pt-BR">Melhorar as informações em tempo real da Deutsche Bahn em caso de cancelamento ou substituição de trens.</li>
           <li xml:lang="ru">Улучшена информация Deutsche Bahn в реальном времени при отменённых или заменяющих поездах.</li>
           <li xml:lang="sk">Vylepšenie Deutsche Bahn realtime information when facing cancelled or replacement trains.</li>
@@ -2910,6 +2916,7 @@
           <li xml:lang="fr">Amélioration de la détection du type de wagon dans la vue de disposition des wagons.</li>
           <li xml:lang="it">Migliora il rilevamento del tipo di carrozza ferroviaria nella visualizzazione della disposizione della carrozza.</li>
           <li xml:lang="ka">მატარებლის ვაგონის ტიპის ამოცნობის გაუმჯობესება ვაგონის განლაგების ხედში.</li>
+          <li xml:lang="nl">Verbeter de detectie van het type treinstel in de weergave van de treinstelindeling.</li>
           <li xml:lang="pt-BR">Melhoria da detecção do tipo de vagão de trem na visualização do layout dos vagões.</li>
           <li xml:lang="ru">Улучшено определение типа вагона в представлении схемы вагонов.</li>
           <li xml:lang="sk">Vylepšenie train coach type detection in the coach layout view.</li>
@@ -2931,6 +2938,7 @@
         <p xml:lang="fr">Nous avons amélioré l'ergonomie de Itinerary sur les téléphones en rendant les actions courantes accessibles grâce à une barre de navigation sur le bord inférieur. Cela facilite le basculement vers vos billets et vers votre voyage en cours.</p>
         <p xml:lang="it">Abbiamo migliorato l'usabilità di Itinerary sui telefoni rendendo disponibili le azioni comuni su una barra di navigazione inferiore che semplifica il passaggio ai tuoi pass e al tuo viaggio corrente.</p>
         <p xml:lang="ka">ჩვენ გავაუმჯობესეთ Itinerary-ის გამოყენებადობა ტელეფონებზე ხშირი მოქმედებების ქვედა ნავიგაციის ზოლზე განთავსებით, რაც აადვილებს ბარათებსა და მიმდინარე მგზავრობას შორის გადართვას.</p>
+        <p xml:lang="nl">We hebben de gebruiksvriendelijkheid van Itinerary op telefoons verbeterd door veelgebruikte acties beschikbaar te maken in een navigatiebalk onderaan, waardoor u gemakkelijk kunt schakelen tussen uw passen en uw huidige reis.</p>
         <p xml:lang="pt-BR">Melhoramos a usabilidade do Itinerary em celulares, disponibilizando ações comuns em uma barra de navegação inferior, o que facilita a alternância entre seus passes e sua viagem atual.</p>
         <p xml:lang="ru">Использовать «Маршруты» на телефонах стало удобнее: часто используемые действия вынесены на нижнюю панель навигации, что упрощает переключение между проездными документами и текущей поездкой.</p>
         <p xml:lang="sk">We improved the usability of Itinerary on phones by making common actions available on a bottom navigation bar which makes it easy to switch to your passes and your current výlet.</p>
@@ -2946,6 +2954,7 @@
         <p xml:lang="fr">La chronologie principale a été repensée. Il est maintenant possible d'étendre les entrées directement pour afficher les arrêts intermédiaires ainsi que les retards et perturbations en cours. En parlant d'évènements, il est désormais possible d'ajouter et de modifier manuellement des entrées et de partager des voyages complets ou des réservations individuelles sur votre téléphone grâce à KDEConnect.</p>
         <p xml:lang="it">La linea temporale principale è stata ridisegnata e ora le voci possono essere espanse in linea per mostrare le fermate intermedie, i ritardi e le interruzioni in corso. A proposito di eventi, ora è possibile aggiungere e modificare manualmente le voci e condividere interi viaggi o singole prenotazioni sul telefono tramite KDE Connect.</p>
         <p xml:lang="ka">მთავარი ქრონოლოგია განახლდა და ახლა ჩანაწერების გაშლა შესაძლებელია შუალედური გაჩერებების, დაგვიანებებისა და შეფერხებების სანახავად. რაც შეეხება მოვლენებს, ახლა უკვე შესაძლებელია ჩანაწერების ხელით დამატება და რედაქტირება, ასევე მთლიანი მგზავრობების ან ცალკეული ჯავშნების გაზიარება ტელეფონზე KDE Connect-ის საშუალებით.</p>
+        <p xml:lang="nl">De hoofdtijdlijn is opnieuw ontworpen en items kunnen nu inline worden uitgevouwen om tussenstops en lopende vertragingen en verstoringen weer te geven. Over evenementen gesproken: het is nu mogelijk om handmatig items toe te voegen en te bewerken en om hele reizen of individuele reserveringen te delen met uw telefoon via KDE Connect.</p>
         <p xml:lang="pt-BR">A linha do tempo principal foi redesenhada e agora as entradas podem ser expandidas diretamente na página para mostrar as paradas intermediárias, atrasos e interrupções em andamento. Falando em eventos, agora é possível adicionar e editar entradas manualmente, além de compartilhar viagens inteiras ou reservas individuais com seu celular através do KDE Connect.</p>
         <p xml:lang="ru">Главная временная шкала была переработана: теперь записи можно разворачивать для отображения промежуточных остановок, текущих задержек и сбоев. Также появилась возможность добавлять и редактировать записи вручную, а также передавать целые поездки или отдельные бронирования на телефон через KDE Connect.</p>
         <p xml:lang="sk">The main timeline was redesigned and now entries can be expanded inline to show the intermediate stops and ongoing delays and disruptions. Speaking of events, it is now possible to manually add and edit entries and to share entire výlets or single rezervácias to your phone via KDE Connect.</p>
@@ -2961,6 +2970,7 @@
         <p xml:lang="fr">La carte intérieure de Itinerary répertorie désormais toutes les commodités du bâtiment ou de la zone que vous consultez actuellement. Cela aide, par exemple, à trouver un endroit pour prendre un café dans une grande gare, ou à chercher un endroit pour se restaurer à proximité de votre hôtel. Cette fonctionnalité est alimentée par OpenStreetMap, fonctionne sans connexion Internet et aucune information de recherche n'est jamais transmise à partir de votre périphérique.</p>
         <p xml:lang="it">La mappa degli interni in Itinerary ora elenca tutti i servizi nell'edificio o nell'area che stai attualmente guardando. Ciò è utile per cose come trovare un posto dove prendere un caffè in una grande stazione ferroviaria o cercare un posto dove mangiare nelle vicinanze del tuo hotel. Questa funzionalità è supportata da OpenStreetMap, funziona senza la necessità di connettersi a Internet e nessun termine di ricerca lascia mai il tuo dispositivo.</p>
         <p xml:lang="ka">Itinerary-ის შიდა რუკა ახლა აჩვენებს ყველა კეთილმოწყობას შენობაში ან არეალში, რომელსაც უყურებთ. ეს გეხმარებათ დიდი რკინიგზის სადგურზე ყავის ადგილის პოვნაში ან სასტუმროს სიახლოვეს საკვები ობიექტის ძებნაში. ეს ფუნქცია ეყრდნობა OpenStreetMap-ს, მუშაობს ინტერნეტის გარეშე და ძიების სიტყვები არასოდეს ტოვებს თქვენს მოწყობილობას.</p>
+        <p xml:lang="nl">De plattegrond in Itinerary toont nu alle voorzieningen in het gebouw of gebied dat u momenteel bekijkt. Dit is handig voor zaken als het vinden van een plek om koffie te halen in een groot treinstation, of het zoeken naar een restaurant in de buurt van uw hotel. Deze functie wordt mogelijk gemaakt door OpenStreetMap, werkt zonder internetverbinding en uw zoektermen verlaten uw apparaat niet.</p>
         <p xml:lang="pt-BR">O mapa interno do Itinerary agora lista todas as comodidades do edifício ou área que você está visualizando. Isso ajuda a encontrar, por exemplo, um lugar para tomar um café em uma grande estação de trem ou um restaurante perto do seu hotel. Esse recurso é fornecido pelo OpenStreetMap, funciona sem a necessidade de conexão com a internet e nenhum termo de pesquisa sai do seu dispositivo.</p>
         <p xml:lang="ru">На карте помещений в программе «Маршруты» теперь отображаются все удобства в здании или районе, который вы сейчас просматриваете. Это помогает, например, найти место, где можно взять кофе на большой железнодорожной станции, или найти место, где можно поесть рядом с вашим отелем. Эта функция работает на основе данных OpenStreetMap, не требует подключения к интернету, и никакие поисковые запросы никогда не покидают ваше устройство.</p>
         <p xml:lang="sk">The indoor map in Itinerary now lists all amenities in the building or area you are currently looking at. This helps with things like finding a place to grab a coffee in a big train stanica, or searching for a place to get food in the vicinity of your hotel. This feature is powered by OpenStreetMap, works without the need to connect to the internet and no search terms ever leave your device.</p>
@@ -2976,6 +2986,7 @@
         <p xml:lang="fr">Lors de la consultation des détails d'un voyage, en plus de pouvoir consulter la liste des arrêts, il est possible de regarder une carte du trajet.</p>
         <p xml:lang="it">Visualizzando i dettagli di un viaggio, oltre a poter consultare l'elenco delle fermate, è possibile visionare la mappa del viaggio.</p>
         <p xml:lang="ka">მგზავრობის დეტალების ნახვისას, გაჩერებების სიის გარდა, ასევე შეგიძლიათ ნახოთ მგზავრობის რუკა.</p>
+        <p xml:lang="nl">Bij het bekijken van reisdetails kan men, naast de lijst met tussenstops, ook een kaart van de route bekijken.</p>
         <p xml:lang="pt-BR">Ao visualizar os detalhes de uma viagem, além de poder consultar a lista de paradas, também é possível ver um mapa da viagem.</p>
         <p xml:lang="ru">При просмотре деталей поездки, помимо возможности просмотра списка остановок, доступен просмотр карты маршрута</p>
         <p xml:lang="sk">When viewing a výlet details, in addition to being able to consult the list of stops, it can look at a map of the výlet.</p>
@@ -2997,6 +3008,7 @@
           <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour 12go, Eurostar, Flixbus, Motel One, SAS et Thalys.</li>
           <li xml:lang="it">Estrattori di documenti di viaggio nuovi o migliorati per 12go, Eurostar, Flixbus, Motel One, SAS e Thalys.</li>
           <li xml:lang="ka">ახალი ან გაუმჯობესებული სამგზავრო დოკუმენტების ამომკრებები 12go, Eurostar, Flixbus, Motel One, SAS და Thalys სისტემებისთვის.</li>
+          <li xml:lang="nl">Nieuwe of verbeterde extractors voor reisdocumenten van 12go, Eurostar, Flixbus, Motel One, SAS en Thalys.</li>
           <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para 12go, Eurostar, Flixbus, Motel One, SAS e Thalys.</li>
           <li xml:lang="ru">Новые или улучшенные модули извлечения данных из проездных документов для 12go, Eurostar, Flixbus, Motel One, SAS и Thalys.</li>
           <li xml:lang="sk">New or improved travel document extractors for 12go, Eurostar, Flixbus, Motel One, SAS and Thalys.</li>
@@ -3012,6 +3024,7 @@
           <li xml:lang="fr">Prise en charge améliorée pour les codes barres des billets de train européens de FCB.</li>
           <li xml:lang="it">Supporto migliorato per i codici a barre dei biglietti ferroviari europei FCB.</li>
           <li xml:lang="ka">გაუმჯობესებული მხარდაჭერა ევროპული FCB სარკინიგზო ბილეთების შტრიხკოდებისთვის.</li>
+          <li xml:lang="nl">Verbeterde ondersteuning voor Europese FCB-treinkaartjesbarcodes.</li>
           <li xml:lang="pt-BR">Melhoria no suporte para códigos de barras de bilhetes ferroviários FCB europeus.</li>
           <li xml:lang="ru">Улучшена поддержка штрихкодов на железнодорожных билетах FCB в Европе.</li>
           <li xml:lang="sk">Improved support for European FCB railway lístok barcodes.</li>
@@ -3027,6 +3040,7 @@
           <li xml:lang="fr">Prise en charge de l'API intégrée de Eurostar.</li>
           <li xml:lang="it">Supporto per API di imbarco Eurostar.</li>
           <li xml:lang="ka">Eurostar ბორტის API-ის მხარდაჭერა.</li>
+          <li xml:lang="nl">Ondersteuning voor de Eurostar API aan boord.</li>
           <li xml:lang="pt-BR">Suporte para a API de bordo do Eurostar.</li>
           <li xml:lang="ru">Поддержка бортового API Eurostar.</li>
           <li xml:lang="sk">Podpora for Eurostar onboard API.</li>
@@ -3048,6 +3062,7 @@
           <li xml:lang="fr">Correction de la gestion des arrêts intermédiaires annulés à bord des ICE de la Deutch Bahn.</li>
           <li xml:lang="it">Corretta la gestione delle fermate intermedie annullate a bordo degli ICE DB.</li>
           <li xml:lang="ka">გასწორდა გაუქმებული შუალედური გაჩერებების დამუშავება DB ICE მატარებლებში.</li>
+          <li xml:lang="nl">Corrigeer de afhandeling van geannuleerde tussenstops aan boord van DB ICE-treinen.</li>
           <li xml:lang="pt-BR">Correção do tratamento de paradas intermediárias canceladas a bordo de trens de passageiros de grande porte da DB.</li>
           <li xml:lang="ru">Исправлена обработка отменённых промежуточных остановок в поездах DB ICE.</li>
           <li xml:lang="sk">Oprava handling of canceled intermediate stops on board of DB ICEs.</li>
@@ -3063,6 +3078,7 @@
           <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour booking.com, DB, European Sleeper, Iberia, PKP, Pretix, Qatar Airways.</li>
           <li xml:lang="it">Estrattori di documenti di viaggio nuovi o migliorati per booking.com, DB, European Sleeper, Iberia, PKP, Pretix, Qatar Airways.</li>
           <li xml:lang="ka">ახალი ან გაუმჯობესებული სამგზავრო დოკუმენტების ამომკრებები booking.com, DB, European Sleeper, Iberia, PKP, Pretix და Qatar Airways სისტემებისთვის.</li>
+          <li xml:lang="nl">Nieuwe of verbeterde hulpmiddelen voor het extraheren van reisdocumenten voor booking.com, DB, European Sleeper, Iberia, PKP, Pretix, Qatar Airways.</li>
           <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para booking.com, DB, European Sleeper, Iberia, PKP, Pretix e Qatar Airways.</li>
           <li xml:lang="ru">Новые или улучшенные модули извлечения данных из проездных документов для booking.com, DB, European Sleeper, Iberia, PKP, Pretix, Qatar Airways.</li>
           <li xml:lang="sk">New or improved travel document extractors for booking.com, DB, European Sleeper, Iberia, PKP, Pretix, Qatar Airways.</li>
@@ -3078,6 +3094,7 @@
           <li xml:lang="fr">Correction de l'analyse de certains catalogues de messages non valables de Apple Wallet.</li>
           <li xml:lang="it">Corretta l'analisi di alcuni cataloghi di messaggi di Apple Wallet non validi.</li>
           <li xml:lang="ka">გასწორდა Apple Wallet-ის ზოგიერთი არასწორი შეტყობინების კატალოგის დამუშავება.</li>
+          <li xml:lang="nl">Het probleem met het ontleden van bepaalde ongeldige Apple Wallet-berichtcatalogi is verholpen.</li>
           <li xml:lang="pt-BR">Correção do problema na análise de determinados catálogos de mensagens inválidos do Apple Wallet.</li>
           <li xml:lang="ru">Исправлен анализ синтаксиса некоторых некорректных каталогов сообщений Apple Wallet.</li>
           <li xml:lang="sk">Oprava parsing certain invalid Apple Wallet message catalogs.</li>
@@ -3093,6 +3110,7 @@
           <li xml:lang="fr">Suppression des fontes « PDF » inutiles pour réduire la taille du paquet « APK ».</li>
           <li xml:lang="it">Rimuove i caratteri PDF non necessari per ridurre le dimensioni dell'APK.</li>
           <li xml:lang="ka">ზედმეტი PDF ფონტების ამოღება APK ფაილის ზომის შესამცირებლად.</li>
+          <li xml:lang="nl">Verwijder onnodige PDF-lettertypen om de APK-grootte te verkleinen.</li>
           <li xml:lang="pt-BR">Remoção das fontes PDF desnecessárias para reduzir o tamanho do APK.</li>
           <li xml:lang="ru">Удаление ненужных шрифтов PDF для уменьшения размера APK.</li>
           <li xml:lang="sk">Odstránenie unnecessary PDF fonts to reduce the APK size.</li>
@@ -3114,6 +3132,7 @@
           <li xml:lang="fr">Autoriser l’activation des notifications sous Android 13.</li>
           <li xml:lang="it">Consente di abilitare le notifiche su Android 13.</li>
           <li xml:lang="ka">შეტყობინებების ჩართვის ნებართვა Android 13-ზე.</li>
+          <li xml:lang="nl">Toestaan meldingen in te schakelen op Android 13.</li>
           <li xml:lang="pt-BR">Permitir a ativação de notificações no Android 13.</li>
           <li xml:lang="ru">Возможность включения уведомлений в Android 13.</li>
           <li xml:lang="sk">Povolenie to enable notifications on Android 13.</li>
@@ -3129,6 +3148,7 @@
           <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour Aegean, Amadeus, bookingkit, GWR, Pretix, Renfe, ÖBB et les billets de train britanniques.</li>
           <li xml:lang="it">Estrattori di documenti di viaggio nuovi o migliorati per biglietti ferroviari Aegean, Amadeus, bookingkit, GWR, Pretix, Renfe, ÖBB e del Regno Unito.</li>
           <li xml:lang="ka">ახალი ან გაუმჯობესებული სამგზავრო დოკუმენტების ამომკრებები Aegean, Amadeus, bookingkit, GWR, Pretix, Renfe, ÖBB და ბრიტანეთის რკინიგზის ბილეთებისთვის.</li>
+          <li xml:lang="nl">Nieuwe of verbeterde extractors voor reisdocumenten van Aegean, Amadeus, BookingKit, GWR, Pretix, Renfe, ÖBB en Britse treinkaarten.</li>
           <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para bilhetes ferroviários da Aegean, Amadeus, BookingKit, GWR, Pretix, Renfe, ÖBB e do Reino Unido.</li>
           <li xml:lang="ru">Новые или улучшенные модули извлечения данных из проездных документов для Aegean, Amadeus, bookingkit, GWR, Pretix, Renfe, ÖBB и железнодорожных билетов Великобритании.</li>
           <li xml:lang="sk">New or improved travel document extractors for Aegean, Amadeus, bookingkit, GWR, Pretix, Renfe, ÖBB and UK railway lístoks.</li>
@@ -3167,6 +3187,7 @@
           <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour Aer Lingus, Amtrak, British Airways, Deutsche Bahn, GVH, premiumkino, Slovak Lines et ZSSK.</li>
           <li xml:lang="it">Estrattori di documenti di viaggio nuovi o migliorati per Aer Lingus, Amtrak, British Airways, Deutsche Bahn, GVH, premiumkino, Slovak Lines e ZSSK.</li>
           <li xml:lang="ka">ახალი ან გაუმჯობესებული სამგზავრო დოკუმენტების ამომკრებები Aer Lingus, Amtrak, British Airways, Deutsche Bahn, GVH, premiumkino, Slovak Lines და ZSSK სისტემებისთვის.</li>
+          <li xml:lang="nl">Nieuwe of verbeterde extractors voor reisdocumenten van Aer Lingus, Amtrak, British Airways, Deutsche Bahn, GVH, premiumkino, Slovak Lines en ZSSK.</li>
           <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para Aer Lingus, Amtrak, British Airways, Deutsche Bahn, GVH, premiumkino, Slovak Lines e ZSSK.</li>
           <li xml:lang="ru">Новые или улучшенные модули извлечения данных из проездных документов для Aer Lingus, Amtrak, British Airways, Deutsche Bahn, GVH, premiumkino, Slovak Lines и ZSSK.</li>
           <li xml:lang="sk">New or improved travel document extractors for Aer Lingus, Amtrak, British Airways, Deutsche Bahn, GVH, premiumkino, Slovak Lines and ZSSK.</li>
@@ -3182,6 +3203,7 @@
           <li xml:lang="fr">Correction de la modification des éléments de bus et de train sans billet associé.</li>
           <li xml:lang="it">Corretta la modifica degli elementi di autobus e treni senza un biglietto associato.</li>
           <li xml:lang="ka">გასწორდა ავტობუსისა და მატარებლის ელემენტების რედაქტირება მიბმული ბილეთის გარეშე.</li>
+          <li xml:lang="nl">Repareer de bewerkingsopties voor bus- en treinelementen zonder bijbehorend ticket.</li>
           <li xml:lang="pt-BR">Correção do problema na edição de elementos de ônibus e trem sem um bilhete associado.</li>
           <li xml:lang="ru">Исправлено редактирование элементов автобусов и поездов без связанного билета.</li>
           <li xml:lang="sk">Oprava editing bus and train elements without an associated lístok.</li>
@@ -3197,6 +3219,7 @@
           <li xml:lang="fr">Correction des autorisations excessivement étendues sous Android.</li>
           <li xml:lang="it">Corregge autorizzazioni inutilmente ampie su Android.</li>
           <li xml:lang="ka">გასწორდა ზედმეტად ფართო ნებართვები Android-ზე.</li>
+          <li xml:lang="nl">Corrigeer onnodig ruime machtigingen op Android.</li>
           <li xml:lang="pt-BR">Correção das permissões excessivamente amplas no Android.</li>
           <li xml:lang="ru">Исправлены излишне широкие разрешения в Android.</li>
           <li xml:lang="sk">Oprava unnecessarily broad permissions on Android.</li>
@@ -3212,6 +3235,7 @@
           <li xml:lang="fr">Correction du rendu des images de vignettes pour les abonnements génériques dans Apple Wallet.</li>
           <li xml:lang="it">Correzione del rendering delle immagini in miniatura del passaggio generico di Apple Wallet.</li>
           <li xml:lang="ka">გასწორდა Apple Wallet-ის ზოგადი ბარათების ესკიზების რენდერი.</li>
+          <li xml:lang="nl">Correctie van de weergave van de miniatuurafbeeldingen voor het generieke Apple Wallet-pasje.</li>
           <li xml:lang="pt-BR">Correção do problema na renderização das miniaturas genéricas de passes do Apple Wallet.</li>
           <li xml:lang="ru">Исправлено отображение миниатюрных изображений универсальных пропусков Apple Wallet.</li>
           <li xml:lang="sk">Oprava rendering of Apple Wallet generic pass thumbnail images.</li>
@@ -3227,6 +3251,7 @@
           <li xml:lang="fr">Correction de l'affichage de la progression lors de l'escale initiale d'un trajet dans la vue d'état en temps réel en direct.</li>
           <li xml:lang="it">Correzione della visualizzazione dell'avanzamento nella tappa iniziale del viaggio nella visualizzazione dello stato in tempo reale.</li>
           <li xml:lang="ka">გასწორდა პროგრესის ჩვენება მგზავრობის საწყის გაჩერებაზე რეალური სტატუსის ხედში.</li>
+          <li xml:lang="nl">Corrigeer de voortgangsweergave bij de eerste tussenstop in het live statusoverzicht.</li>
           <li xml:lang="pt-BR">Correção da exibição do progresso na parada inicial da viagem na visualização de status ao vivo.</li>
           <li xml:lang="ru">Исправлено отображение прогресса на начальной остановке маршрута в представлении текущего статуса.</li>
           <li xml:lang="sk">Oprava progress zobrazenie on the initial journey stopover in the live status view.</li>
