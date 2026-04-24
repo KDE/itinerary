@@ -41,9 +41,15 @@
             "builddir": true,
             "sources": [
                 {
-                    "type": "git",
-                    "url": "https://invent.kde.org/mirrors/poppler.git",
-                    "branch": "master"
+                    "type": "archive",
+                    "url": "https://poppler.freedesktop.org/poppler-26.04.0.tar.xz",
+                    "sha256": "b0955163114af96bc0106f68cb24daf973a629462453d8b82775f81b0d4e0693",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 3686,
+                        "stable-only": true,
+                        "url-template": "https://poppler.freedesktop.org/poppler-$version.tar.xz"
+                    }
                 }
             ],
             "cleanup": [
@@ -159,7 +165,7 @@
                 {
                     "type": "git",
                     "url": "https://invent.kde.org/pim/kpkpass",
-                    "branch": "master"
+                    "branch": "release/26.04"
                 }
             ],
             "cleanup": [
@@ -181,7 +187,7 @@
                 {
                     "type": "git",
                     "url": "https://invent.kde.org/pim/kmime",
-                    "branch": "master"
+                    "branch": "release/26.04"
                 }
             ],
             "cleanup": [
@@ -198,6 +204,7 @@
                 "-DBUILD_SHARED_LIBS=OFF",
                 "-DZXING_UNIT_TESTS=OFF",
                 "-DZXING_EXAMPLES=OFF",
+                "-DBUILD_BLACKBOX_TESTS=OFF",
                 "-DZXING_C_API=OFF",
                 "-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=TRUE"
             ],
@@ -211,9 +218,15 @@
             ],
             "sources": [
                 {
-                    "type": "git",
-                    "url": "https://github.com/zxing-cpp/zxing-cpp.git",
-                    "branch": "master"
+                    "type": "archive",
+                    "url": "https://github.com/zxing-cpp/zxing-cpp/archive/v2.3.0.tar.gz",
+                    "sha256": "64e4139103fdbc57752698ee15b5f0b0f7af9a0331ecbdc492047e0772c417ba",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 376699,
+                        "stable-only": true,
+                        "url-template": "https://github.com/zxing-cpp/zxing-cpp/archive/v$version.tar.gz"
+                    }
                 }
             ]
         },
@@ -229,7 +242,7 @@
                 {
                     "type": "git",
                     "url": "https://invent.kde.org/pim/kitinerary",
-                    "branch": "master"
+                    "branch": "release/26.04"
                 }
             ],
             "cleanup": [
@@ -251,7 +264,7 @@
                 {
                     "type": "git",
                     "url": "https://invent.kde.org/libraries/kpublictransport",
-                    "branch": "master"
+                    "branch": "release/26.04"
                 }
             ],
             "cleanup": [
@@ -273,7 +286,7 @@
                 {
                     "type": "git",
                     "url": "https://invent.kde.org/libraries/kopeninghours",
-                    "branch": "master"
+                    "branch": "release/26.04"
                 }
             ],
             "cleanup": [
@@ -294,7 +307,7 @@
                 {
                     "type": "git",
                     "url": "https://invent.kde.org/libraries/kosmindoormap",
-                    "branch": "master"
+                    "branch": "release/26.04"
                 }
             ],
             "cleanup": [
@@ -315,7 +328,7 @@
                 {
                     "type": "git",
                     "url": "https://invent.kde.org/pim/khealthcertificate.git",
-                    "branch": "master"
+                    "branch": "release/26.04"
                 }
             ],
             "cleanup": [
@@ -330,10 +343,15 @@
             "buildsystem": "cmake-ninja",
             "sources": [
                 {
-                    "type": "git",
-                    "url": "https://github.com/quotient-im/libQuotient.git",
-                    "branch": "0.9.x",
-                    "disable-submodules": true
+                    "type": "archive",
+                    "url": "https://github.com/quotient-im/libQuotient/archive/0.9.6.1.tar.gz",
+                    "sha256": "ac0fe5df480fa893d3e16da626bf5028c944e9b41f504f6fe0fe49273247d636",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 89357,
+                        "stable-only": true,
+                        "url-template": "https://github.com/quotient-im/libQuotient/archive/$version.tar.gz"
+                    }
                 }
             ],
             "config-opts": [
