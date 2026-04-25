@@ -2352,6 +2352,7 @@
           <li xml:lang="cs">Oprava importu z příliš dlouhých URL adres.</li>
           <li xml:lang="es">Se ha corregido la importación desde URL demasiado largas.</li>
           <li xml:lang="fr">Correction de l'importation à partir d'URL excessivement longues.</li>
+          <li xml:lang="he">תוקן ייבוא מכתובות ארוכות במיוחד.</li>
           <li xml:lang="it">Corretta l'importazione da URL troppo lunghi.</li>
           <li xml:lang="ka">გასწორდა შემოტანა ზედმეტად გრძელი ბმულებიდან.</li>
           <li xml:lang="nl">Los het probleem op met importeren vanuit te lange URL's.</li>
@@ -3466,6 +3467,7 @@
           <li xml:lang="cs">Nové rezervace hotelů, akcí a restaurací lze vytvořit přidáním URL adresy na jejich webové stránky s anotacemi schema.org.</li>
           <li xml:lang="es">Se pueden crear nuevas reservas de hotel, eventos y restaurantes añadiendo una URL a al sitio web anotado en schema.org.</li>
           <li xml:lang="fr">Une nouvelle réservation d'hôtel, d'évènement ou de restaurant peut être créée en ajoutant une URL à leur site Internet annoté avec schema.org.</li>
+          <li xml:lang="he">אפשר להוסיף הזמנות חדשות למלונות, אירועים ומסעדות על ידי הוספת כתובת לאתר שלהם שמפורש עם schema.org.</li>
           <li xml:lang="it">È possibile creare nuove prenotazioni per hotel, eventi e ristoranti aggiungendo un URL al sito web con annotazioni schema.org.</li>
           <li xml:lang="ka">ახალი სასტუმროს, მოვლენისა და რესტორნის ჯავშნის შექმნა შესაძლებელია მათი schema.org-ით მონიშნული ვებგვერდის ბმულის დამატებით.</li>
           <li xml:lang="pt-BR">É possível criar novas reservas de hotel, eventos e restaurantes adicionando uma URL ao site anotado com schema.org.</li>
@@ -3481,6 +3483,7 @@
           <li xml:lang="cs">Přidána podpora pro extrahování cestovních údajů v událostech Apple iCal.</li>
           <li xml:lang="es">Se ha añadido compatibilidad para extraer datos de viaje de los eventos de Apple iCal.</li>
           <li xml:lang="fr">Ajout de la prise en charge de l'extraction des données de voyage dans les évènements « iCal » de Apple.</li>
+          <li xml:lang="he">נוספה תמיכה בחילוץ נתוני נסיעה באירועי iCal של Apple.</li>
           <li xml:lang="it">Aggiunto supporto per l'estrazione dei dati di viaggio negli eventi Apple iCal.</li>
           <li xml:lang="ka">დაემატა სამგზავრო მონაცემების ამოღება Apple iCal მოვლენებიდან.</li>
           <li xml:lang="pt-BR">Adicionada a possibilidade de extrair dados de viagens em eventos do Apple iCal.</li>
@@ -3496,6 +3499,7 @@
           <li xml:lang="cs">Vylepšená oznámení v případě aktualizací Apple Wallet Pass.</li>
           <li xml:lang="es">Notificaciones mejoradas en caso de actualizaciones de Apple Wallet Pass.</li>
           <li xml:lang="fr">Notifications améliorées en cas de mise à jour des abonnements de Apple Wallet.</li>
+          <li xml:lang="he">ההתראות במקרה של עדכוני אישורי מעבר ב־Apple Wallet השתפרו.</li>
           <li xml:lang="it">Notifiche migliorate in caso di aggiornamenti del pass Apple Wallet.</li>
           <li xml:lang="ka">გაუმჯობესებული შეტყობინებები Apple Wallet-ის ბარათების განახლებისას.</li>
           <li xml:lang="pt-BR">Notificações aprimoradas em caso de atualizações de passe do Apple Wallet.</li>
@@ -3511,6 +3515,7 @@
           <li xml:lang="cs">Vylepšené zobrazení doby platnosti jízdenek v přehledu jízdenek a programů.</li>
           <li xml:lang="es">Se ha mejorado la visualización de los periodos de validez de los billetes en la vista de pases y programas.</li>
           <li xml:lang="fr">Amélioration de l'affichage des horaires de validité des billets dans la vue des abonnements et des programmes.</li>
+          <li xml:lang="he">תצוגת זמני תוקף הכרטיסים בתצוגות אישורי המעבר והתוכניות השתפרה.</li>
           <li xml:lang="it">Migliorata la visualizzazione dei tempi di validità dei biglietti nella visualizzazione abbonamenti e programmi.</li>
           <li xml:lang="ka">ბილეთის მოქმედების ვადების გაუმჯობესებული ჩვენება ბარათებისა და პროგრამების ხედში.</li>
           <li xml:lang="pt-BR">Melhoria na exibição dos horários de validade dos ingressos na visualização de passes e programas.</li>
@@ -3526,6 +3531,7 @@
           <li xml:lang="cs">Vylepšené zobrazení zrušených spojů veřejné dopravy a informací o dlouhodobých výlukách.</li>
           <li xml:lang="es">Se ha mejorado la visualización de las cancelaciones de transporte público y de los avisos de interrupciones prolongadas.</li>
           <li xml:lang="fr">Amélioration de l'affichage des annulations de transports public et des signalement de perturbation prolongée.</li>
+          <li xml:lang="he">הצגת הערות ביטולי תחבורה ציבורית והפרעות ארוכות טווח השתפרה.</li>
           <li xml:lang="it">Migliorata la visualizzazione delle cancellazioni dei trasporti pubblici e delle note lunghe di interruzione.</li>
           <li xml:lang="ka">საზოგადოებრივი ტრანსპორტის გაუქმებებისა და გრძელი შეფერხების შენიშვნების გაუმჯობესებული ჩვენება.</li>
           <li xml:lang="pt-BR">Melhoria na visualização de cancelamentos e avisos de interrupções prolongadas no transporte público.</li>
@@ -3541,6 +3547,7 @@
           <li xml:lang="cs">Opraveno vyhledávání mezinárodních železničních spojení, které někdy nenalezlo žádný výsledek.</li>
           <li xml:lang="es">Se ha corregido el problema de que, en ocasiones, la búsqueda de conexiones ferroviarias internacionales no produce ningún resultado.</li>
           <li xml:lang="fr">Correction de la recherche de connexions ferroviaires internationales qui ne renvoyait parfois aucun résultat.</li>
+          <li xml:lang="he">תוקנה בעיה שחיפוש העברות בין רכבות בינלאומיות לפעמים לא מצא אף תוצאה.</li>
           <li xml:lang="it">Risolto il problema con la ricerca di collegamenti ferroviari internazionali che a volte non trovava alcun risultato.</li>
           <li xml:lang="ka">გასწორდა საერთაშორისო სარკინიგზო კავშირების ძებნა, რომელიც ზოგჯერ შედეგს ვერ პოულობდა.</li>
           <li xml:lang="pt-BR">Correção do problema em que a busca por conexões ferroviárias internacionais às vezes não retornava nenhum resultado.</li>
@@ -3556,6 +3563,7 @@
           <li xml:lang="cs">Opraveny ikony počasí, kdy někdy byla nesprávně použita noční varianta během dne.</li>
           <li xml:lang="es">Se ha corregido que los iconos de información meteorológica usaran a veces incorrectamente las variantes nocturnas durante el día.</li>
           <li xml:lang="fr">Correction des icônes météo utilisant parfois à tort les variantes de nuit pendant la journée.</li>
+          <li xml:lang="he">תוקנה בעיה שסמלי מזג אוויר לפעמים השתמשו בטעות בגרסה הלילית שלהם במהלך שעות היום.</li>
           <li xml:lang="it">Risolte le icone meteo che a volte utilizzavano erroneamente le varianti notturne durante il giorno.</li>
           <li xml:lang="ka">გასწორდა ამინდის ხატულები, რომლებიც ზოგჯერ შეცდომით ღამის ვარიანტს იყენებდნენ დღის განმავლობაში.</li>
           <li xml:lang="pt-BR">Correção do problema em que os ícones meteorológicos, por vezes, utilizavam incorretamente as variantes noturnas durante o dia.</li>
