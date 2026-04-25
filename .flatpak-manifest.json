@@ -20,6 +20,15 @@
         "--talk-name=org.kde.kwalletd5",
         "--talk-name=org.kde.kwalletd6"
     ],
+    "cleanup": [
+        "/include",
+        "/lib/cmake",
+        "/lib/pkgconfig",
+        "/mkspecs",
+        "/share/qlogging-categories6",
+        "*.la",
+        "*.a"
+    ],
     "modules": [
         {
             "name": "poppler",
@@ -45,10 +54,6 @@
                     "url": "https://invent.kde.org/mirrors/poppler.git",
                     "branch": "master"
                 }
-            ],
-            "cleanup": [
-                "/include",
-                "/lib/pkgconfig"
             ]
         },
         {
@@ -79,11 +84,6 @@
                     }
                 }
             ],
-            "cleanup": [
-                "/include",
-                "/lib/*.a",
-                "/lib/cmake"
-            ],
             "modules": [
                 {
                     "name": "protobuf",
@@ -108,13 +108,8 @@
                     ],
                     "cleanup": [
                         "/bin",
-                        "/include",
-                        "/lib/*.a",
-                        "/lib/*.la",
                         "/lib/libprotobuf.*",
-                        "/lib/libprotoc*",
-                        "/lib/cmake",
-                        "/lib/pkgconfig"
+                        "/lib/libprotoc*"
                     ]
                 }
             ]
@@ -140,11 +135,6 @@
                 "-DLIB_INSTALL_DIR=/app/lib",
                 "-DBUILD_TRANSLATIONS=NO",
                 "-DBUILD_WITH_QT6=ON"
-            ],
-            "cleanup": [
-                "/include",
-                "/lib/cmake",
-                "/mkspecs"
             ]
         },
         {
@@ -161,12 +151,6 @@
                     "url": "https://invent.kde.org/pim/kpkpass",
                     "branch": "master"
                 }
-            ],
-            "cleanup": [
-                "/include",
-                "/lib/cmake",
-                "/mkspecs",
-                "/share/qlogging-categories6"
             ]
         },
         {
@@ -183,12 +167,6 @@
                     "url": "https://invent.kde.org/pim/kmime",
                     "branch": "master"
                 }
-            ],
-            "cleanup": [
-                "/include",
-                "/lib/cmake",
-                "/mkspecs",
-                "/share/qlogging-categories6"
             ]
         },
         {
@@ -203,12 +181,6 @@
             ],
             "buildsystem": "cmake-ninja",
             "builddir": true,
-            "cleanup": [
-                "/include",
-                "*.pc",
-                "/lib/cmake",
-                "libZXing.a"
-            ],
             "sources": [
                 {
                     "type": "git",
@@ -233,11 +205,7 @@
                 }
             ],
             "cleanup": [
-                "/include",
-                "/lib/cmake",
-                "/lib/libexec",
-                "/mkspecs",
-                "/share/qlogging-categories6"
+                "/lib/libexec"
             ]
         },
         {
@@ -253,12 +221,6 @@
                     "url": "https://invent.kde.org/libraries/kpublictransport",
                     "branch": "master"
                 }
-            ],
-            "cleanup": [
-                "/include",
-                "/lib/cmake",
-                "/mkspecs",
-                "/share/qlogging-categories6"
             ]
         },
         {
@@ -275,12 +237,6 @@
                     "url": "https://invent.kde.org/libraries/kopeninghours",
                     "branch": "master"
                 }
-            ],
-            "cleanup": [
-                "/include",
-                "/lib/cmake",
-                "/mkspecs",
-                "/share/qlogging-categories6"
             ]
         },
         {
@@ -296,12 +252,6 @@
                     "url": "https://invent.kde.org/libraries/kosmindoormap",
                     "branch": "master"
                 }
-            ],
-            "cleanup": [
-                "/include",
-                "/lib/cmake",
-                "/mkspecs",
-                "/share/qlogging-categories6"
             ]
         },
         {
@@ -317,12 +267,6 @@
                     "url": "https://invent.kde.org/pim/khealthcertificate.git",
                     "branch": "master"
                 }
-            ],
-            "cleanup": [
-                "/include",
-                "/lib/cmake",
-                "/mkspecs",
-                "/share/qlogging-categories6"
             ]
         },
         {
@@ -343,10 +287,6 @@
                 "-DBUILD_WITH_QT6=ON"
             ],
             "cleanup": [
-                "/include",
-                "/lib/*.a",
-                "/lib/cmake",
-                "/lib/pkgconfig",
                 "/share/ndk-modules"
             ],
             "modules": [
@@ -370,11 +310,6 @@
                                 "url-template": "https://gitlab.matrix.org/matrix-org/olm/-/archive/$version/olm-$version.tar.gz"
                             }
                         }
-                    ],
-                    "cleanup": [
-                        "/include",
-                        "/lib/cmake",
-                        "/lib/pkgconfig"
                     ]
                 }
             ]
@@ -418,9 +353,6 @@
                 "-DCMAKE_DISABLE_FIND_PACKAGE_KF6KIO=ON",
                 "-DCMAKE_DISABLE_FIND_PACKAGE_KF6FileMetaData=ON",
                 "-DFLATPAK_BUILD=ON"
-            ],
-            "cleanup": [
-                "/share/qlogging-categories6"
             ]
         }
     ]
