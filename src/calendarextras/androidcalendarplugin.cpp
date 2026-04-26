@@ -11,6 +11,7 @@
 #include "kandroidextras/calendarcontract.h"
 #include <KAndroidExtras/JniObject>
 
+#include <QColor>
 #include <QCoreApplication>
 #include <QDebug>
 
@@ -50,7 +51,11 @@ void AndroidCalendarPlugin::loadCalendars() const
             cal->setAccessMode(KCalendarCore::ReadOnly);
         }
 
-        // TODO calendar color
+#if KCALENDARCORE_VERSION >= QT_VERSION_CHECK(6, 26, 0)
+        if (QRgb c = calData.color; c) {
+            cal->setColor(QColor::fromRgba(c).name());
+        }
+#endif
 
         m_calendars.push_back(KCalendarCore::Calendar::Ptr(cal));
     }
