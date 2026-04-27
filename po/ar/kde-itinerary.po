@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-23 00:44+0000\n"
+"POT-Creation-Date: 2026-04-27 00:44+0000\n"
 "PO-Revision-Date: 2026-03-24 11:38+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -750,7 +750,7 @@ msgctxt "%1 is the transfer destination"
 msgid "Transfer to %1"
 msgstr "حوّالة إلى %1"
 
-#: app/CalendarSelectionDialog.qml:14
+#: app/CalendarSelectionDialog.qml:16
 #, kde-format
 msgctxt "@title"
 msgid "Select Calendar"

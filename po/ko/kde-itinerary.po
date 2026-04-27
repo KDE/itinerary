@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-23 00:44+0000\n"
-"PO-Revision-Date: 2026-02-04 00:38+0100\n"
+"POT-Creation-Date: 2026-04-27 00:44+0000\n"
+"PO-Revision-Date: 2026-04-26 22:11+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -100,10 +100,9 @@ msgid "Export…"
 msgstr "내보내기…"
 
 #: app/ActionsCard.qml:81
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgid "Delete…"
-msgstr "삭제"
+msgstr "삭제…"
 
 #: app/ActionsCard.qml:116
 #, kde-format
@@ -543,20 +542,16 @@ msgid "Booking"
 msgstr "예약"
 
 #: app/BookingEditorCard.qml:66
-#, fuzzy, kde-format
-#| msgctxt "a train/bus journey canceled by its operator"
-#| msgid "Canceled"
+#, kde-format
 msgctxt "canceled reservation"
 msgid "Canceled"
 msgstr "취소됨"
 
 #: app/BookingEditorCard.qml:67
-#, fuzzy, kde-format
-#| msgctxt "a train/bus journey canceled by its operator"
-#| msgid "Trip has been canceled."
+#, kde-format
 msgctxt "canceled reservation"
 msgid "Booking has been canceled."
-msgstr "여행이 취소되었습니다."
+msgstr "예약이 취소되었습니다."
 
 #: app/BusDelegate.qml:38
 #, kde-format
@@ -735,13 +730,12 @@ msgid "Arrival"
 msgstr "도착"
 
 #: app/calendarhelper.cpp:28
-#, fuzzy, kde-format
-#| msgid "Transfer to %1"
+#, kde-format
 msgctxt "%1 is the transfer destination"
 msgid "Transfer to %1"
 msgstr "%1(으)로 환승|/|%1$[으 %1]로 환승"
 
-#: app/CalendarSelectionDialog.qml:14
+#: app/CalendarSelectionDialog.qml:16
 #, kde-format
 msgctxt "@title"
 msgid "Select Calendar"
@@ -1090,8 +1084,7 @@ msgid "Work"
 msgstr "직장"
 
 #: app/favoritelocationmodel.cpp:161
-#, fuzzy, kde-format
-#| msgid "Location %1"
+#, kde-format
 msgctxt "%1 is a number"
 msgid "Location %1"
 msgstr "위치 %1"
@@ -1468,14 +1461,12 @@ msgid "Pick…"
 msgstr "선택…"
 
 #: app/FormPlaceEditorDelegate.qml:221
-#, fuzzy, kde-format
-#| msgid "Address to coordinate"
+#, kde-format
 msgid "Address to coordinates"
 msgstr "좌표에 해당하는 주소"
 
 #: app/FormPlaceEditorDelegate.qml:237
-#, fuzzy, kde-format
-#| msgid "Coordinate to address"
+#, kde-format
 msgid "Coordinates to address"
 msgstr "주소에 해당하는 좌표"
 
@@ -1666,18 +1657,16 @@ msgid "Vaccination"
 msgstr "예방 접종"
 
 #: app/healthcertificatemanager.cpp:163
-#, fuzzy, kde-format
-#| msgid "Test %1 for %2"
+#, kde-format
 msgctxt "%1 is a disease, %2 is a date"
 msgid "Test for %1 – %2"
-msgstr "검사 %1(%2)"
+msgstr "%1 검사 – %2"
 
 #: app/healthcertificatemanager.cpp:168
-#, fuzzy, kde-format
-#| msgid "Recovery %1 for %2"
+#, kde-format
 msgctxt "%1 is a disease, %2 is a date"
 msgid "Recovery from %1 – %2"
-msgstr "완치 %1(%2)"
+msgstr "%1 완치 – %2"
 
 #: app/HealthCertificatePage.qml:19
 #, kde-format
@@ -2147,31 +2136,25 @@ msgid "Open wheelmap.org"
 msgstr "wheelmap.org 열기"
 
 #: app/IndoorMapPage.qml:280
-#, fuzzy, kde-format
-#| msgctxt "@action:button Start route guidance to location"
-#| msgid "Navigate"
+#, kde-format
 msgid "Navigate from here"
-msgstr "탐색"
+msgstr "여기에서 길 찾기"
 
 #: app/IndoorMapPage.qml:289
-#, fuzzy, kde-format
-#| msgctxt "@action:button Start route guidance to location"
-#| msgid "Navigate"
+#, kde-format
 msgid "Navigate to here"
-msgstr "탐색"
+msgstr "여기로 길 찾기"
 
 #: app/IndoorMapPage.qml:300
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgid "Show information"
-msgstr "더 많은 정보"
+msgstr "정보 보기"
 
 #: app/JourneyFilterPage.qml:15
-#, fuzzy, kde-format
-#| msgid "Select Journey"
+#, kde-format
 msgctxt "@title"
 msgid "Filter Journeys"
-msgstr "여정 선택"
+msgstr "여정 필터"
 
 #: app/JourneyFilterPage.qml:59
 #, kde-format
@@ -2299,7 +2282,7 @@ msgstr "도착 시간"
 #, kde-format
 msgctxt "filter journeys by mode of transportation etc."
 msgid "Filter"
-msgstr ""
+msgstr "필터"
 
 #: app/JourneyRequestPage.qml:239
 #, kde-format
@@ -2504,11 +2487,10 @@ msgid "%1 / %2"
 msgstr "%1 / %2"
 
 #: app/localizer.cpp:283
-#, fuzzy, kde-format
-#| msgid "%1m"
+#, kde-format
 msgctxt "altitude in meter"
 msgid "%1m"
-msgstr "%1m"
+msgstr "%1 m"
 
 #: app/LocationInfoDelegate.qml:51
 #, kde-format
@@ -2557,6 +2539,7 @@ msgstr "통화: %1 = %2"
 msgid ""
 "Leaving the EU roaming regulation area. Check your mobile data settings."
 msgstr ""
+"EU 로밍 협약 적용 지역에서 벗어납니다. 모바일 데이터 설정을 확인하십시오."
 
 #: app/locationinformation.cpp:127
 #, kde-format
@@ -2701,19 +2684,19 @@ msgstr "PDF 처리"
 #, kde-format
 msgctxt "@info:credit"
 msgid "MapLibre Native Qt"
-msgstr ""
+msgstr "MapLibre 네이티브 Qt"
 
 #: app/main.cpp:232 app/main.cpp:233
 #, kde-format
 msgctxt "@info:credit"
 msgid "Copyright © MapLibre contributors."
-msgstr ""
+msgstr "Copyright © MapLibre contributors."
 
 #: app/main.cpp:233
 #, kde-format
 msgctxt "@info:credit"
 msgid "MapLibre Native"
-msgstr ""
+msgstr "MapLibre 네이티브"
 
 #: app/main.cpp:237
 #, kde-format
@@ -2853,10 +2836,9 @@ msgid "Matrix Session Verification"
 msgstr "Matrix 세션 검증"
 
 #: app/MapStopoverInfoSheetDrawer.qml:85
-#, fuzzy, kde-format
-#| msgid "Occupancy:"
+#, kde-format
 msgid "Occupancy"
-msgstr "혼잡도:"
+msgstr "혼잡도"
 
 #: app/MapStopoverInfoSheetDrawer.qml:112 app/StopoverDetailsPage.qml:124
 #, kde-format
@@ -3386,8 +3368,7 @@ msgid "%1 - %2"
 msgstr "%1 - %2"
 
 #: app/passmanager.cpp:289
-#, fuzzy, kde-format
-#| msgid "%1 - %2"
+#, kde-format
 msgctxt "%1 and %2 are dates"
 msgid "%1 - %2"
 msgstr "%1 - %2"
@@ -3614,38 +3595,39 @@ msgstr "인원 수"
 #: app/ScamWarningFormDelegate.qml:21
 #, kde-format
 msgid "This airport might not be quite where its name suggests it is."
-msgstr ""
+msgstr "이 공항은 이름이 가리키는 곳과 멀리 떨어져 있을 수도 있습니다."
 
 #: app/ScamWarningFormDelegate.qml:23
 #, kde-format
 msgid "This port might not be quite where its name suggests it is."
-msgstr ""
+msgstr "이 항구는 이름이 가리키는 곳과 멀리 떨어져 있을 수도 있습니다."
 
 #: app/ScamWarningFormDelegate.qml:37
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Ignore warning"
-msgstr ""
+msgstr "경고 무시"
 
 #: app/ScamWarningFormDelegate.qml:50
 #, kde-format
 msgid "Ignore Warning"
-msgstr ""
+msgstr "경고 무시"
 
 #: app/ScamWarningFormDelegate.qml:51
 #, kde-format
 msgid "Do you want to ignore the warning permanently or for this trip only?"
 msgstr ""
+"이 경고를 영원히 무시하시겠습니까, 아니면 이 여행에서만 무시하시겠습니까?"
 
 #: app/ScamWarningFormDelegate.qml:54
 #, kde-format
 msgid "Ignore permanently"
-msgstr ""
+msgstr "영구히 무시"
 
 #: app/ScamWarningFormDelegate.qml:63
 #, kde-format
 msgid "Ignore for this trip"
-msgstr ""
+msgstr "이 여행에서 무시"
 
 #: app/SettingsPage.qml:20
 #, kde-format
@@ -3869,10 +3851,7 @@ msgid ""
 msgstr "차내 정보를 확인하려면 시스템의 위치 서비스를 활성화해야 합니다."
 
 #: app/SettingsPage.qml:242
-#, fuzzy, kde-format
-#| msgid ""
-#| "Onboard information are unfortunately not supported on your device at "
-#| "this time."
+#, kde-format
 msgid ""
 "Unfortunately, retrieving onboard information is not supported on your "
 "device at this time."
@@ -3932,28 +3911,21 @@ msgid "Log in"
 msgstr "로그인"
 
 #: app/SettingsPage.qml:328
-#, fuzzy, kde-format
-#| msgid "Traewelling Integration"
+#, kde-format
 msgid "Träwelling Integration"
-msgstr "Traewelling 통합"
+msgstr "Träwelling 통합"
 
 #: app/SettingsPage.qml:333
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Traewelling is a free check-in service that lets you tell your friends "
-#| "where you are and where you can log your public transit journeys. For "
-#| "more information, visit <a href=\"https://traewelling.de\">traewelling."
-#| "de</a>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Träwelling is a free check-in service that lets you tell your friends where "
 "you are and where you can log your public transit journeys. For more "
 "information, visit <a href=\"https://traewelling.de\">traewelling.de</a>"
 msgstr ""
-"Traewelling은 무료 체크인 서비스입니다. 현재 위치와 대중교통 여정을 게시할 "
-"수 있습니다. 자세한 정보는 <a href=\"https://traewelling.de\">traewelling."
-"de</a> 사이트를 참조하십시오"
+"Träwelling은 무료 체크인 서비스입니다. 현재 위치와 대중교통 여정을 게시할 수 "
+"있습니다. 자세한 정보는 <a href=\"https://traewelling.de\">traewelling.de</"
+"a> 사이트를 참조하십시오"
 
 #: app/SettingsPage.qml:341
 #, kde-format
@@ -4174,8 +4146,7 @@ msgid "Traveler %1"
 msgstr "여행자 %1"
 
 #: app/tickettokenmodel.cpp:137
-#, fuzzy, kde-format
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "%1 is a person name, %2 is a ticket name"
 msgid "%1 (%2)"
 msgstr "%1(%2)"
@@ -4334,6 +4305,8 @@ msgid ""
 "Specifying the departure and arrival location helps Itinerary to find up-to-"
 "date information for the train this reservation is valid for."
 msgstr ""
+"출발과 도착 위치를 지정하면 여행 정보에서 기차 예약에 포함된 열차에 대한 최"
+"신 정보를 가져올 수 있습니다."
 
 #: app/TrainEditor.qml:231 app/TrainEditor.qml:336 app/TrainPage.qml:167
 #: app/TrainPage.qml:252
@@ -4399,24 +4372,20 @@ msgid "Arrival Vehicle Layout"
 msgstr "도착하는 차량 구성"
 
 #: app/TrainPage.qml:346
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add to Traewelling"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add to Träwelling"
-msgstr "Traewelling에 추가"
+msgstr "Träwelling에 추가"
 
 #: app/TrainPage.qml:391
-#, fuzzy, kde-format
-#| msgid "Added to Traewelling"
+#, kde-format
 msgid "Added to Träwelling"
-msgstr "Traewelling에 추가됨"
+msgstr "Träwelling에 추가됨"
 
 #: app/TrainPage.qml:391
-#, fuzzy, kde-format
-#| msgid "Failed to add to Traewelling"
+#, kde-format
 msgid "Failed to add to Träwelling"
-msgstr "Traewelling에 추가할 수 없음"
+msgstr "Träwelling에 추가할 수 없음"
 
 #: app/TransferDelegate.qml:112
 #, kde-format
@@ -4773,11 +4742,10 @@ msgid "A trip must be selected."
 msgstr "여정을 선택해야 합니다."
 
 #: app/TripGroupSelectorDialog.qml:14
-#, fuzzy, kde-format
-#| msgid "Add to Trip"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Add Journey to Trip"
-msgstr "여정에 추가"
+msgstr "여정을 여행에 추가"
 
 #: app/TripGroupsPage.qml:15
 #, kde-format
@@ -4868,59 +4836,49 @@ msgstr "환영합니다!"
 #, kde-format
 msgctxt "@title:group"
 msgid "Setup"
-msgstr ""
+msgstr "설정"
 
 #: app/WelcomePage.qml:31
 #, kde-format
 msgid ""
 "Select your home country for currency conversions and power plug "
 "compatibility warnings to work."
-msgstr ""
+msgstr "통화 환전과 전원 플러그 호환성 경고를 보려면 홈 국가를 설정하십시오."
 
 #: app/WelcomePage.qml:35
-#, fuzzy, kde-format
-#| msgid "Use insecure services"
+#, kde-format
 msgid "Use online services"
-msgstr "비보안 서비스 사용"
+msgstr "온라인 서비스 사용"
 
 #: app/WelcomePage.qml:36
-#, fuzzy, kde-format
-#| msgid ""
-#| "KDE Itinerary has all features disabled by default that require online "
-#| "access, such as retrieving live traffic data or weather forecasts. You "
-#| "therefore might want to review these settings. While you are at it, you "
-#| "might want to configure your home location to enable the transfer "
-#| "assistant to automatically suggests ways to your next departure station "
-#| "or airport."
+#, kde-format
 msgid ""
 "KDE Itinerary has all features disabled by default that require online "
 "access, such as retrieving live traffic data or weather forecasts. You can "
 "enable all this here, or check the settings for much more finegrained "
 "control over which services to use."
 msgstr ""
-"KDE 여행 정보는 실시간 교통량 데이터나 일기 예보 등 온라인 데이터가 필요한 기"
-"능을 기본적으로 비활성화합니다. 필요에 따라서 활성화할 수 있습니다. 활성화 설"
-"정 화면에서 집 주소를 설정하면 다음 출발 기차역, 버스 터미널, 공항까지 가는 "
-"길을 자동으로 안내합니다."
+"KDE 여행 정보는 실시간 교통량 데이터나 일기 예보 등 온라인 데이터가 필요한 모"
+"든 기능을 기본적으로 비활성화합니다. 온라인 데이터가 필요한 기능을 여기에서 "
+"모두 활성화하거나, 설정에서 개별 서비스를 직접 제어할 수 있습니다."
 
 #: app/WelcomePage.qml:54
 #, kde-format
 msgid ""
 "Review the settings for more finegrained control over which online services "
 "to use."
-msgstr ""
+msgstr "사용할 온라인 서비스를 직접 제어하려면 설정을 확인하십시오."
 
 #: app/WelcomePage.qml:61
-#, fuzzy, kde-format
-#| msgid "Version"
+#, kde-format
 msgctxt "@title:group"
 msgid "Permissions"
-msgstr "버전"
+msgstr "권한"
 
 #: app/WelcomePage.qml:90
 #, kde-format
 msgid "Done!"
-msgstr ""
+msgstr "완료!"
 
 #: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:131
 #, kde-format
