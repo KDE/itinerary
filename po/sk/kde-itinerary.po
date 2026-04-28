@@ -1715,11 +1715,11 @@ msgid ""
 "li><li>SMART Health Cards (SHC) as used in parts of Canada and the US.</li></"
 "p>"
 msgstr ""
-"<p>Môžete import nasledujúce health certificates by scanning them with a "
-"barcode scanner app:<ul><li>European \"Digital Green Certificates\" for "
-"vaccinations, tests or recovery.</li><li>Indian vaccination certificates.</"
-"li><li>SMART Health Cards (SHC) as used in parts of Canada and the US.</li></"
-"p>"
+"<p>Nasledujúce zdravotné certifikáty môžete importovať ich naskenovaním "
+"aplikáciou na čítanie čiarových kódov:<ul><li>Európske „Digitálne zelené "
+"certifikáty” pre očkovanie, testy alebo zotavenie.</li><li>Indické očkovacie "
+"certifikáty.</li><li>Karty zdravotného stavu SMART (SHC) používané v "
+"častiach Kanady a USA.</li></ul></p>"
 
 #: app/HealthCertificateRecovery.qml:29 app/HealthCertificateTest.qml:30
 #: app/HealthCertificateVaccination.qml:33
@@ -2995,8 +2995,8 @@ msgid ""
 "The session verification was canceled because NeoChat is unable to handle "
 "this verification method."
 msgstr ""
-"The session verification was canceled because NeoChat is unschopný handle "
-"this verification method."
+"Overenie relácie bolo zrušené, pretože NeoChat nedokáže spracovať túto "
+"metódu overenia."
 
 #: app/MatrixKeyVerificationPage.qml:72
 #, kde-format
@@ -3005,8 +3005,8 @@ msgid ""
 "The remote party canceled the session verification because it is unable to "
 "handle this verification method."
 msgstr ""
-"The remote party canceled the session verification because it is unschopný "
-"handle this verification method."
+"Vzdialená strana zrušila overenie relácie, pretože nedokáže spracovať túto "
+"metódu overenia."
 
 #: app/MatrixKeyVerificationPage.qml:74
 #, kde-format
@@ -3126,7 +3126,8 @@ msgctxt "Matrix session verification"
 msgid ""
 "Confirm the emoji below are displayed on both devices, in the same order."
 msgstr ""
-"Confirm the emoji below are displayed on both devices, in rovnaký order."
+"Potvrďte, že nižšie uvedené emoji sú zobrazené na oboch zariadeniach v "
+"rovnakom poradí."
 
 #: app/MatrixKeyVerificationPage.qml:165
 #, kde-format
@@ -3675,8 +3676,8 @@ msgid ""
 "Use metric units for distance and temperature values regardless of the "
 "platform region settings."
 msgstr ""
-"Use metric units for distance and temperature values bez ohľadu na the "
-"platform region settings."
+"Používajte metrické jednotky pre hodnoty vzdialenosti a teploty bez ohľadu "
+"na nastavenia regiónu platformy."
 
 #: app/SettingsPage.qml:50
 #, kde-format
@@ -3694,8 +3695,8 @@ msgid ""
 "When enabled, this will query transport provider online services for changes "
 "such as delays or gate and platform changes."
 msgstr ""
-"When enabled, this will query transport provider online services for changes "
-"ako napríklad delays or gate and platform changes."
+"Keď je povolené, bude sa dopytovať online služieb dopravcu na zmeny, ako sú "
+"meškania alebo zmeny východa a nástupišťa."
 
 #: app/SettingsPage.qml:63
 #, kde-format
@@ -3954,9 +3955,10 @@ msgid ""
 "you are and where you can log your public transit journeys. For more "
 "information, visit <a href=\"https://traewelling.de\">traewelling.de</a>"
 msgstr ""
-"Träwelling is a free check-in service that lets you tell your friends where "
-"you are and wtu môžete log your public transit journeys. For more "
-"information, visit <a href=\"https://traewelling.de\">traewelling.de</a>"
+"Träwelling je bezplatná služba odbavenia, ktorá vám umožňuje povedať "
+"priateľom, kde sa nachádzate, a kde môžete zaznamenávať vaše cesty verejnou "
+"dopravou. Ďalšie informácie nájdete na <a href=\\\"https://traewelling.de\\"
+"\">traewelling.de</a>"
 
 #: app/SettingsPage.qml:341
 #, kde-format
@@ -4919,12 +4921,12 @@ msgid ""
 "Itinerary plugin.</li><li>By scanning boarding pass barcodes and pasting "
 "their content.</li></p>"
 msgstr ""
-"<p>There's a počet ways to import data into KDE Itinerary:<ul><li>Directly "
-"opening PDF tickets or Apple Wallet passes.</li><li>From the Android "
-"calendar, for entries made via the KMail or Nextcloud Itinerary plugins, and "
-"synced using DAVx⁵.</li><li>Via KDE Connect from the KMail Itinerary plugin."
-"</li><li>By scanning boarding pass barcodes and pasting their content.</li></"
-"p>"
+"<p>Existuje niekoľko spôsobov importu dát do KDE Itinerary:<ul><li>Priame "
+"otvorenie PDF lístkov alebo Apple Wallet preukazov.</li><li>Z kalendára "
+"Android, pre záznamy vytvorené cez zásuvné moduly KMail alebo Nextcloud "
+"Itinerary, a synchronizované pomocou DAVx⁵.</li><li>Cez KDE Connect zo "
+"zásuvného modulu KMail Itinerary.</li><li>Naskenovaním čiarových kódov "
+"palubných lístkov a vložením ich obsahu.</li></ul></p>"
 
 #: app/WelcomePage.qml:31
 #, kde-format
@@ -4940,11 +4942,12 @@ msgid ""
 "might want to configure your home location to enable the transfer assistant "
 "to automatically suggests ways to your next departure station or airport."
 msgstr ""
-"KDE Itinerary has all features disabled predvolene that require online "
-"access, ako napríklad retrieving live traffic data or weather forecasts. You "
-"therefore might want to review these settings. While you are at it, you "
-"might want to configure your home location to enable the transfer assistant "
-"to automatically suggests ways to your next departure station or airport."
+"KDE Itinerary má predvolene vypnuté všetky funkcie vyžadujúce online "
+"prístup, ako napríklad načítavanie živých dopravných dát alebo predpovedí "
+"počasia. Preto si možno budete chcieť tieto nastavenia skontrolovať. Zároveň "
+"si možno budete chcieť nakonfigurovať svoju domovskú polohu, aby asistent "
+"prestupov mohol automaticky navrhovať trasy na vaše ďalšie odchodové stanice "
+"alebo letisko."
 
 #: app/WelcomePage.qml:48
 #, kde-format
