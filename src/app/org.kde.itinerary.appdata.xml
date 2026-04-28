@@ -3317,6 +3317,7 @@
           <li xml:lang="fr">Afficher les consignes à bagages, les bureaux des objets trouvés et les tapis de récupération des bagages sur la carte intérieure.</li>
           <li xml:lang="it">Visualizza sulla mappa interna gli armadietti per i bagagli, gli uffici oggetti smarriti e i nastri trasportatori per il ritiro dei bagagli in aeroporto.</li>
           <li xml:lang="ka">ბარგის შესანახი საკნების, დაკარგული ნივთების ოფისებისა და აეროპორტის ბარგის მისაღები ზოლების ჩვენება შიდა რუკაზე.</li>
+          <li xml:lang="nl">Toon de locaties van bagagekluizen, de balie voor gevonden voorwerpen en de bagagebanden op de luchthaven op de plattegrond binnen.</li>
           <li xml:lang="pt-BR">Exibir no mapa interno os guarda-volumes, os serviços de achados &amp; perdidos e as esteiras de bagagem dos aeroportos.</li>
           <li xml:lang="ru">Отображение камер хранения, бюро находок и лент выдачи багажа в аэропортах на схеме помещений.</li>
           <li xml:lang="sk">Display luggage lockers, lost &amp; found offices and ariport baggage claim belts on the indoor map.</li>
@@ -3338,6 +3339,7 @@
           <li xml:lang="fr">Les modes de transport préférés peuvent désormais être sélectionnés pour toutes les recherches de transports publics.</li>
           <li xml:lang="it">Ora è possibile selezionare le modalità di trasporto preferite per tutte le ricerche sui trasporti pubblici.</li>
           <li xml:lang="ka">ახლა უკვე შესაძლებელია სასურველი ტრანსპორტის სახეობების არჩევა საზოგადოებრივი ტრანსპორტის ყველა ძიებისთვის.</li>
+          <li xml:lang="nl">Voor alle zoekopdrachten naar openbaar vervoer kan nu de gewenste vervoerswijze worden geselecteerd.</li>
           <li xml:lang="pt-BR">Agora é possível selecionar os meios de transporte preferenciais para todas as buscas por transporte público.</li>
           <li xml:lang="ru">Возможно выбрать предпочитаемые виды транспорта для всех поисков общественного транспорта.</li>
           <li xml:lang="sk">Preferred transport modes can now selected for all public transport searches.</li>
@@ -3353,6 +3355,7 @@
           <li xml:lang="fr">Les logos des lignes de transport public sont désormais également disponibles pour certains services régionaux et de trains longue distance.</li>
           <li xml:lang="it">I loghi delle linee di trasporto pubblico sono ora disponibili anche per alcuni servizi ferroviari regionali e di lunga percorrenza.</li>
           <li xml:lang="ka">საზოგადოებრივი ტრანსპორტის ხაზების ლოგოები ახლა უკვე ხელმისაწვდომია ზოგიერთი რეგიონული და შორი მანძილის სარკინიგზო სერვისებისთვის.</li>
+          <li xml:lang="nl">Logo's van openbaarvervoerlijnen zijn nu ook beschikbaar voor sommige regionale en langeafstandsspoorlijnen.</li>
           <li xml:lang="pt-BR">Os logotipos das linhas de transporte público agora também estão disponíveis para alguns serviços ferroviários regionais e de longa distância.</li>
           <li xml:lang="ru">Логотипы линий общественного транспорта теперь также доступны для некоторых региональных и междугородных железнодорожных перевозок.</li>
           <li xml:lang="sk">Public transport line logos are now also available for some regional and long distance rail services.</li>
@@ -3368,6 +3371,7 @@
           <li xml:lang="fr">Ajout de la prise en charge des configurations de wagons pour plus de types de trains.</li>
           <li xml:lang="it">Aggiunto supporto per la disposizione dei vagoni ferroviari per più tipi di treni.</li>
           <li xml:lang="ka">დაემატა ვაგონების განლაგების მხარდაჭერა მეტი ტიპის მატარებლისთვის.</li>
+          <li xml:lang="nl">Er is ondersteuning toegevoegd voor treinstelindelingen voor meer soorten treinen.</li>
           <li xml:lang="pt-BR">Adicionado suporte para layouts de vagões ferroviários para mais tipos de trens.</li>
           <li xml:lang="ru">Добавлена поддержка схем вагонов для большего числа типов поездов.</li>
           <li xml:lang="sk">Added support for railway coach layouts for more types of trains.</li>
@@ -3383,6 +3387,7 @@
           <li xml:lang="fr">Ajout de la prise en charge de l'importation de billets en ligne de Deutsche Bahn et de la SNCF.</li>
           <li xml:lang="it">Aggiunto il supporto per l'importazione di biglietti online Deutsche Bahn e SNCF.</li>
           <li xml:lang="ka">დაემატა Deutsche Bahn-ისა და SNCF-ის ონლაინ ბილეთების შემოტანას მხარდაჭერა.</li>
+          <li xml:lang="nl">Ondersteuning toegevoegd voor het importeren van online tickets van Deutsche Bahn en SNCF.</li>
           <li xml:lang="pt-BR">Adicionada a possibilidade de importar bilhetes online da Deutsche Bahn e da SNCF.</li>
           <li xml:lang="ru">Добавлена поддержка импорта электронных билетов Deutsche Bahn и SNCF.</li>
           <li xml:lang="sk">Added support for importing Deutsche Bahn and SNCF online lístoks.</li>
@@ -3398,6 +3403,7 @@
           <li xml:lang="fr">Ajout du partage d'emplacement grâce au réseau Matrix.</li>
           <li xml:lang="it">Aggiunta la condivisione della posizione tramite Matrix.</li>
           <li xml:lang="ka">დაემატა მდებარეობის გაზიარება Matrix-ის საშუალებით.</li>
+          <li xml:lang="nl">Locatiedeling via Matrix is ​​toegevoegd.</li>
           <li xml:lang="pt-BR">Adicionado o compartilhamento de localização através do Matrix.</li>
           <li xml:lang="ru">Добавлен обмен местоположением через Matrix.</li>
           <li xml:lang="sk">Added location sharing via Matrix.</li>
@@ -3413,6 +3419,7 @@
           <li xml:lang="fr">Veuillez prendre en compte la disposition des voitures et les données de réservation des sièges pour mettre en évidence le point de départ / d'arrivée sur un quai.</li>
           <li xml:lang="it">Considera la disposizione del pullman e i dati di prenotazione del posto per evidenziare il punto di partenza/arrivo su una piattaforma.</li>
           <li xml:lang="ka">ვაგონის განლაგებისა და ადგილების ჯავშნის გათვალისწინება ბაქანზე გამგზავრების/ჩამოსვლის ადგილის გამოსაკვეთად.</li>
+          <li xml:lang="nl">Houd rekening met de indeling van de treinwagon en de gegevens over stoelreserveringen om de vertrek-/aankomstplek op het perron te markeren.</li>
           <li xml:lang="pt-BR">Considera o layout do vagão e os dados de reserva de assentos para destacar o local de partida/chegada em uma plataforma.</li>
           <li xml:lang="ru">Теперь учитывается расположение вагонов и данные о бронировании мест для выделения места отправления/прибытия на платформе.</li>
           <li xml:lang="sk">Consider coach layout and seat rezervácia data to highlight the odchod/príchod spot on a nástupište.</li>
@@ -3428,6 +3435,7 @@
           <li xml:lang="fr">Nouvelle apparence pour les entrées de la chronologie et les pages de modification.</li>
           <li xml:lang="it">Nuovo aspetto per le voci della linea temporale e le pagine di modifica.</li>
           <li xml:lang="ka">ახალი იერსახე ქრონოლოგიის ჩანაწერებისა და რედაქტირების გვერდებისთვის.</li>
+          <li xml:lang="nl">Nieuw uiterlijk voor de tijdlijnitems en de bewerkingspagina's.</li>
           <li xml:lang="pt-BR">Novo visual para as entradas da linha do tempo e para as páginas de edição.</li>
           <li xml:lang="ru">Новое оформление записей на временной шкале и страниц редактирования.</li>
           <li xml:lang="sk">New look for the timeline entries and the editing pages.</li>
@@ -3443,6 +3451,7 @@
           <li xml:lang="fr">Nouvelle prise en charge ou améliorations de l'API embarqué pour Aegean Air, Deutsche Bahn et ÖBB.</li>
           <li xml:lang="it">Supporto API di imbarco nuovo o migliorato per Aegean Air, Deutsche Bahn e ÖBB.</li>
           <li xml:lang="ka">ახალი ან გაუმჯობესებული ბორტის API მხარდაჭერა Aegean Air, Deutsche Bahn და ÖBB სისტემებისთვის.</li>
+          <li xml:lang="nl">Nieuwe of verbeterde API-ondersteuning aan boord voor Aegean Air, Deutsche Bahn en ÖBB.</li>
           <li xml:lang="pt-BR">Novo suporte ou melhorias na API de bordo para Aegean Air, Deutsche Bahn e ÖBB.</li>
           <li xml:lang="ru">Добавлена или улучшена поддержка бортового API для Aegean Air, Deutsche Bahn и ÖBB.</li>
           <li xml:lang="sk">New or improved onboard API support for Aegean Air, Deutsche Bahn and ÖBB.</li>
@@ -3458,6 +3467,7 @@
           <li xml:lang="fr">Nouveaux extracteurs ou extracteurs améliorés de documents de voyage ou améliorés pour Aegean Air, Aer Lingus, Air Asia, Air France, Atlatos, Bäder Suite, BlaBlaCar, bookingkit, CD, Cinemaxx, Cooltix, DSB, Eventbrite, FerriesInGreece, Grimaldi Lines, Iberia, KLM, Koleje Malopolskie, KTEL Thesprotias, Lufthansa, Ouigo Espagne, PKP, Chemins de fer britanniques, SAS, SBB, Slovak Lines, SNCB, spiritec, Spring Airlines, Sunny Cars, Thalys, Trenitalia, York Kino et ZSSK.</li>
           <li xml:lang="it">Estrattori di documenti di viaggio nuovi o migliorati per Aegean Air, Aer Lingus, Air Asia, Air France, Atlatos, Bäder Suite, BlaBlaCar, bookingkit, CD, Cinemaxx, Cooltix, DSB, Eventbrite, FerriesInGreece, Grimaldi Lines, Iberia, KLM, Koleje Malopolskie, KTEL Thesprotias, Lufthansa, Ouigo Spain, PKP, UK railways, SAS, SBB, Slovak Lines, SNCB, spiritec, Spring Airlines, Sunny Cars, Thalys, Trenitalia, York Kino e ZSSK.</li>
           <li xml:lang="ka">ახალი ან გაუმჯობესებული სამგზავრო დოკუმენტების ამომკრებები Aegean Air, Aer Lingus, Air Asia, Air France, Atlatos, Bäder Suite, BlaBlaCar, bookingkit, CD, Cinemaxx, Cooltix, DSB, Eventbrite, FerriesInGreece, Grimaldi Lines, Iberia, KLM, Koleje Malopolskie, KTEL Thesprotias, Lufthansa, Ouigo Spain, PKP, ბრიტანეთის რკინიგზა, SAS, SBB, Slovak Lines, SNCB, spiritec, Spring Airlines, Sunny Cars, Thalys, Trenitalia, York Kino და ZSSK სისტემებისთვის.</li>
+          <li xml:lang="nl">Nieuwe of verbeterde extractors voor reisdocumenten voor Aegean Air, Aer Lingus, Air Asia, Air France, Atlatos, Bäder Suite, BlaBlaCar, bookingkit, CD, Cinemaxx, Cooltix, DSB, Eventbrite, FerriesInGreece, Grimaldi Lines, Iberia, KLM, Koleje Malopolskie, KTEL Thesprotias, Lufthansa, Ouigo Spain, PKP, UK railways, SAS, SBB, Slovak Lines, SNCB, spiritec, Spring Airlines, Sunny Cars, Thalys, Trenitalia, York Kino en ZSSK.</li>
           <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para Aegean Air, Aer Lingus, Air Asia, Air France, Atlatos, Bäder Suite, BlaBlaCar, bookingkit, CD, Cinemaxx, Cooltix, DSB, Eventbrite, FerriesInGreece, Grimaldi Lines, Iberia, KLM, Koleje Malopolskie, KTEL Thesprotias, Lufthansa, Ouigo Spain, PKP, UK railways, SAS, SBB, Slovak Lines, SNCB, spiritec, Spring Airlines, Sunny Cars, Thalys, Trenitalia, York Kino e ZSSK.</li>
           <li xml:lang="ru">Новые или улучшенные модули извлечения данных из проездных документов для Aegean Air, Aer Lingus, Air Asia, Air France, Atlatos, Bäder Suite, BlaBlaCar, bookingkit, CD, Cinemaxx, Cooltix, DSB, Eventbrite, FerriesInGreece, Grimaldi Lines, Iberia, KLM, Koleje Malopolskie, KTEL Thesprotias, Lufthansa, Ouigo Spain, PKP, UK railways, SAS, SBB, Slovak Lines, SNCB, spiritec, Spring Airlines, Sunny Cars, Thalys, Trenitalia, York Kino и ZSSK.</li>
           <li xml:lang="sk">New or improved travel document extractors for Aegean Air, Aer Lingus, Air Asia, Air France, Atlatos, Bäder Suite, BlaBlaCar, bookingkit, CD, Cinemaxx, Cooltix, DSB, Eventbrite, FerriesInGreece, Grimaldi Lines, Iberia, KLM, Koleje Malopolskie, KTEL Thesprotias, Lufthansa, Ouigo Spain, PKP, UK railways, SAS, SBB, Slovak Lines, SNCB, spiritec, Spring Airlines, Sunny Cars, Thalys, Trenitalia, York Kino and ZSSK.</li>
@@ -3473,6 +3483,7 @@
           <li xml:lang="fr">Ajout de la prise en charge de l'importation des évènements de ActivityPub.</li>
           <li xml:lang="it">Aggiunto supporto per l'importazione di eventi ActivityPub.</li>
           <li xml:lang="ka">დაემატა ActivityPub მოვლენების შემოტანას მხარდაჭერა.</li>
+          <li xml:lang="nl">Ondersteuning toegevoegd voor het importeren van ActivityPub-gebeurtenissen.</li>
           <li xml:lang="pt-BR">Adicionada a possibilidade de importar eventos do ActivityPub.</li>
           <li xml:lang="ru">Добавлена поддержка импорта событий ActivityPub.</li>
           <li xml:lang="sk">Added support for importing ActivityPub events.</li>
@@ -3488,6 +3499,7 @@
           <li xml:lang="fr">Ajout de la prise en charge de la modification de nombreux autres détails sur les réservations et les billets.</li>
           <li xml:lang="it">Aggiunto supporto per la modifica di molti più dettagli di prenotazione e biglietto.</li>
           <li xml:lang="ka">დაემატა ჯავშნისა და ბილეთის ბევრად მეტი დეტალის რედაქტირების მხარდაჭერა.</li>
+          <li xml:lang="nl">Er is nu ondersteuning toegevoegd voor het bewerken van veel meer reserverings- en ticketgegevens.</li>
           <li xml:lang="pt-BR">Adicionada a possibilidade de editar muito mais detalhes de reservas e bilhetes.</li>
           <li xml:lang="ru">Добавлена возможность редактирования многих других деталей бронирования и билетов.</li>
           <li xml:lang="sk">Added support for editing many more rezervácia and lístok details.</li>
@@ -3503,6 +3515,7 @@
           <li xml:lang="fr">Les documents peuvent désormais être joints à tous les billets et réservations. Ils sont automatiquement attachés dans davantage de situations.</li>
           <li xml:lang="it">Ora è possibile allegare documenti a tutti i biglietti e prenotazioni e in molti casi vengono allegati automaticamente.</li>
           <li xml:lang="ka">ახლა უკვე შესაძლებელია დოკუმენტების მიბმა ყველა ბილეთსა და ჯავშანზე, რაც ბევრ შემთხვევაში ავტომატურად ხდება.</li>
+          <li xml:lang="nl">Documenten kunnen nu aan alle tickets en reserveringen worden toegevoegd en worden in meer gevallen automatisch toegevoegd.</li>
           <li xml:lang="pt-BR">Agora é possível anexar documentos a todos os bilhetes e reservas, e eles são anexados automaticamente em mais casos.</li>
           <li xml:lang="ru">К билетам и бронированиям теперь возможно прикреплять документы; в большинстве случаев они прикрепляются автоматически.</li>
           <li xml:lang="sk">Documents can now be attached to all lístoks and rezervácias, and are automatically attached in more cases.</li>
@@ -3519,6 +3532,7 @@
           <li xml:lang="he">אפשר להוסיף הזמנות חדשות למלונות, אירועים ומסעדות על ידי הוספת כתובת לאתר שלהם שמפורש עם schema.org.</li>
           <li xml:lang="it">È possibile creare nuove prenotazioni per hotel, eventi e ristoranti aggiungendo un URL al sito web con annotazioni schema.org.</li>
           <li xml:lang="ka">ახალი სასტუმროს, მოვლენისა და რესტორნის ჯავშნის შექმნა შესაძლებელია მათი schema.org-ით მონიშნული ვებგვერდის ბმულის დამატებით.</li>
+          <li xml:lang="nl">Nieuwe hotel-, evenement- en restaurantreserveringen kunnen worden aangemaakt door een URL toe te voegen aan hun schema.org-geannoteerde website.</li>
           <li xml:lang="pt-BR">É possível criar novas reservas de hotel, eventos e restaurantes adicionando uma URL ao site anotado com schema.org.</li>
           <li xml:lang="ru">Новые бронирования отелей, мероприятий и ресторанов создаются добавлением URL-адреса их веб-сайта с аннотациями schema.org.</li>
           <li xml:lang="sk">New hotel, event and restaurant rezervácia can be created by adding a URL to their schema.org annotated website.</li>
@@ -3535,6 +3549,7 @@
           <li xml:lang="he">נוספה תמיכה בחילוץ נתוני נסיעה באירועי iCal של Apple.</li>
           <li xml:lang="it">Aggiunto supporto per l'estrazione dei dati di viaggio negli eventi Apple iCal.</li>
           <li xml:lang="ka">დაემატა სამგზავრო მონაცემების ამოღება Apple iCal მოვლენებიდან.</li>
+          <li xml:lang="nl">Er is ondersteuning toegevoegd voor het extraheren van reisgegevens uit Apple iCal-evenementen.</li>
           <li xml:lang="pt-BR">Adicionada a possibilidade de extrair dados de viagens em eventos do Apple iCal.</li>
           <li xml:lang="ru">Добавлена поддержка извлечения данных о поездках из событий Apple iCal.</li>
           <li xml:lang="sk">Added support for extracting travel data in Apple iCal events.</li>
@@ -3551,6 +3566,7 @@
           <li xml:lang="he">ההתראות במקרה של עדכוני אישורי מעבר ב־Apple Wallet השתפרו.</li>
           <li xml:lang="it">Notifiche migliorate in caso di aggiornamenti del pass Apple Wallet.</li>
           <li xml:lang="ka">გაუმჯობესებული შეტყობინებები Apple Wallet-ის ბარათების განახლებისას.</li>
+          <li xml:lang="nl">Verbeterde meldingen bij updates van Apple Wallet pas.</li>
           <li xml:lang="pt-BR">Notificações aprimoradas em caso de atualizações de passe do Apple Wallet.</li>
           <li xml:lang="ru">Улучшены уведомления при обновлении пропусков Apple Wallet.</li>
           <li xml:lang="sk">Improved notifications in case of Apple Wallet pass updates.</li>
@@ -3567,6 +3583,7 @@
           <li xml:lang="he">תצוגת זמני תוקף הכרטיסים בתצוגות אישורי המעבר והתוכניות השתפרה.</li>
           <li xml:lang="it">Migliorata la visualizzazione dei tempi di validità dei biglietti nella visualizzazione abbonamenti e programmi.</li>
           <li xml:lang="ka">ბილეთის მოქმედების ვადების გაუმჯობესებული ჩვენება ბარათებისა და პროგრამების ხედში.</li>
+          <li xml:lang="nl">Verbeterde weergave van de geldigheidsduur van tickets in het overzicht van passen en programma's.</li>
           <li xml:lang="pt-BR">Melhoria na exibição dos horários de validade dos ingressos na visualização de passes e programas.</li>
           <li xml:lang="ru">Улучшено отображение времени действия билетов в представлении пропусков и программ.</li>
           <li xml:lang="sk">Improved zobrazenie of lístok validity times in the passes and programs view.</li>
@@ -3583,6 +3600,7 @@
           <li xml:lang="he">הצגת הערות ביטולי תחבורה ציבורית והפרעות ארוכות טווח השתפרה.</li>
           <li xml:lang="it">Migliorata la visualizzazione delle cancellazioni dei trasporti pubblici e delle note lunghe di interruzione.</li>
           <li xml:lang="ka">საზოგადოებრივი ტრანსპორტის გაუქმებებისა და გრძელი შეფერხების შენიშვნების გაუმჯობესებული ჩვენება.</li>
+          <li xml:lang="nl">Verbeterde weergave van annuleringen van het openbaar vervoer en meldingen van langdurige verstoringen.</li>
           <li xml:lang="pt-BR">Melhoria na visualização de cancelamentos e avisos de interrupções prolongadas no transporte público.</li>
           <li xml:lang="ru">Улучшено отображение отмен рейсов общественного транспорта и длинных уведомлений о сбоях.</li>
           <li xml:lang="sk">Improved zobrazenie of public transport cancellations and long disruption notes.</li>
@@ -3599,6 +3617,7 @@
           <li xml:lang="he">תוקנה בעיה שחיפוש העברות בין רכבות בינלאומיות לפעמים לא מצא אף תוצאה.</li>
           <li xml:lang="it">Risolto il problema con la ricerca di collegamenti ferroviari internazionali che a volte non trovava alcun risultato.</li>
           <li xml:lang="ka">გასწორდა საერთაშორისო სარკინიგზო კავშირების ძებნა, რომელიც ზოგჯერ შედეგს ვერ პოულობდა.</li>
+          <li xml:lang="nl">Het zoeken naar internationale spoorverbindingen levert soms geen resultaten op.</li>
           <li xml:lang="pt-BR">Correção do problema em que a busca por conexões ferroviárias internacionais às vezes não retornava nenhum resultado.</li>
           <li xml:lang="ru">Исправлен поиск международных железнодорожных соединений, который иногда не находил результатов.</li>
           <li xml:lang="sk">Fixed searching for international railway connections sometimes not finding any result.</li>
@@ -3615,6 +3634,7 @@
           <li xml:lang="he">תוקנה בעיה שסמלי מזג אוויר לפעמים השתמשו בטעות בגרסה הלילית שלהם במהלך שעות היום.</li>
           <li xml:lang="it">Risolte le icone meteo che a volte utilizzavano erroneamente le varianti notturne durante il giorno.</li>
           <li xml:lang="ka">გასწორდა ამინდის ხატულები, რომლებიც ზოგჯერ შეცდომით ღამის ვარიანტს იყენებდნენ დღის განმავლობაში.</li>
+          <li xml:lang="nl">De weerpictogrammen gebruiken soms ten onrechte de nachtvariant overdag.</li>
           <li xml:lang="pt-BR">Correção do problema em que os ícones meteorológicos, por vezes, utilizavam incorretamente as variantes noturnas durante o dia.</li>
           <li xml:lang="ru">Исправлены значки погоды, иногда неправильно использующие ночные варианты в течение дня.</li>
           <li xml:lang="sk">Fixed weather icons sometimes wrongly using the night variants during the day.</li>
@@ -3630,6 +3650,7 @@
           <li xml:lang="fr">Correction des requêtes de mise à jour des données en temps réel trop rapides en cas d'erreurs de réseau.</li>
           <li xml:lang="it">Risolte le query di aggiornamento dei dati in tempo reale troppo rapide in caso di errori di rete.</li>
           <li xml:lang="ka">გასწორდა რეალური მონაცემების ზედმეტად ხშირი განახლების მოთხოვნები ქსელის შეცდომისას.</li>
+          <li xml:lang="nl">Te snelle realtime gegevens bijwerk verzoeken in geval van netwerkfouten zijn verholpen.</li>
           <li xml:lang="pt-BR">Correção da rapidez excessiva das consultas de atualização de dados em tempo real em caso de erros de rede.</li>
           <li xml:lang="ru">Исправлены слишком частые запросы на обновление данных в реальном времени при сетевых ошибках.</li>
           <li xml:lang="sk">Fixed too rapid realtime data update queries in case of network errors.</li>
@@ -3645,6 +3666,7 @@
           <li xml:lang="fr">Correction des évènements exportés qui ne pouvaient pas être modifiés par d'autres applications d'agenda sous Android.</li>
           <li xml:lang="it">Risolto il problema per cui gli eventi esportati non erano modificabili da altre applicazioni di calendario su Android.</li>
           <li xml:lang="ka">გასწორდა ექსპორტირებული მოვლენები, რომლებიც სხვა კალენდრის აპებით არ რედაქტირდებოდა Android-ზე.</li>
+          <li xml:lang="nl">Opgelost probleem waarbij geëxporteerde evenementen niet bewerkbaar waren door andere agenda-apps op Android.</li>
           <li xml:lang="pt-BR">Correção do problema que impedia a edição de eventos exportados por outros aplicativos de calendário no Android.</li>
           <li xml:lang="ru">Исправлена невозможность редактирования экспортированных событий другими приложениями календаря в Android.</li>
           <li xml:lang="sk">Fixed exported events not being editable by other calendaring apps on Android.</li>
@@ -3666,6 +3688,7 @@
           <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour Color Line, DJH, Fjord Line, Flixbus, Grimladi Lines, onepagebooking, SNCB, Thalys et Trenitalia.</li>
           <li xml:lang="it">Estrattori di documenti di viaggio nuovi o migliorati per Color Line, DJH, Fjord Line, Flixbus, Grimladi Lines, onepagebooking, SNCB, Thalys e Trenitalia.</li>
           <li xml:lang="ka">ახალი ან გაუმჯობესებული სამგზავრო დოკუმენტების ამომკრებები Color Line, DJH, Fjord Line, Flixbus, Grimladi Lines, onepagebooking, SNCB, Thalys და Trenitalia სისტემებისთვის.</li>
+          <li xml:lang="nl">Nieuwe of verbeterde extractors voor reisdocumenten van Color Line, DJH, Fjord Line, Flixbus, Grimladi Lines, onepagebooking, SNCB, Thalys en Trenitalia.</li>
           <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para Color Line, DJH, Fjord Line, Flixbus, Grimaldi Lines, onepagebooking, SNCF, Thalys e Trenitalia.</li>
           <li xml:lang="ru">Новые или улучшенные модули извлечения данных из проездных документов для Color Line, DJH, Fjord Line, Flixbus, Grimladi Lines, onepagebooking, SNCB, Thalys и Trenitalia.</li>
           <li xml:lang="sk">New or improved travel document extractors for Color Line, DJH, Fjord Line, Flixbus, Grimladi Lines, onepagebooking, SNCB, Thalys and Trenitalia.</li>
@@ -3682,6 +3705,7 @@
           <li xml:lang="he">תוקנה קריסה ב־Android בעת ייבוא קובץ עם רחב בנתיב שלו.</li>
           <li xml:lang="it">Risolto un arresto anomalo su Android durante l'importazione di un file con uno spazio nel suo percorso.</li>
           <li xml:lang="ka">გასწორდა პროგრამის გათიშვა Android-ზე ფაილის შემოტანასას, რომლის მისამართიც შეიცავდა ჰარეს.</li>
+          <li xml:lang="nl">Een crash op Android die optrad bij het importeren van een bestand met een spatie in het pad, is verholpen.</li>
           <li xml:lang="pt-BR">Corrigido um erro que causava o fechamento inesperado do aplicativo no Android ao importar um arquivo com um espaço no caminho.</li>
           <li xml:lang="ru">Исправлено аварийное завершение на Android при импорте файла с пробелом в пути.</li>
           <li xml:lang="sk">Fixed a crash on Android when importing a file with a space in its path.</li>
@@ -3698,6 +3722,7 @@
           <li xml:lang="he">תוקנו שאילתות תחבורה ציבורית ל־VRS.</li>
           <li xml:lang="it">Risolte le query sui trasporti pubblici per VRS.</li>
           <li xml:lang="ka">გასწორდა საზოგადოებრივი ტრანსპორტის მოთხოვნები VRS-ისთვის.</li>
+          <li xml:lang="nl">De zoekopdrachten naar openbaar vervoer voor VRS zijn gecorrigeerd.</li>
           <li xml:lang="pt-BR">Consultas sobre transporte público corrigidas para VRS.</li>
           <li xml:lang="ru">Исправлены запросы к общественному транспорту для VRS.</li>
           <li xml:lang="sk">Fixed public transport queries for VRS.</li>
