@@ -328,7 +328,7 @@ anchors.centerIn: parent
 
                 QQC2.Label {
                     readonly property string platform: root.modelData.hasExpectedArrivalPlatform ? root.modelData.expectedArrivalPlatform : root.modelData.scheduledArrivalPlatform
-                    text: Plaform.displayString(root.modelData.route.line.mode, platform)
+                    text: Platform.displayString(root.modelData.route.line.mode, platform)
                     visible: platform.length > 0
 
                     Layout.fillWidth: true
