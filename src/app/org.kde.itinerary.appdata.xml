@@ -1068,7 +1068,7 @@
           <li xml:lang="nl">Vaste eindtijden voor het berekenen van reizen met geneste gebeurtenissen.</li>
           <li xml:lang="pt-BR">Correção de horários de término de computação para viagens com eventos aninhados.</li>
           <li xml:lang="ru">Исправлен расчёт времени завершения поездок с вложенными событиями.</li>
-          <li xml:lang="sk">Opravený výpočet časov ukončenia pre výlety s vnorenimi udalosťami.</li>
+          <li xml:lang="sk">Opravený výpočet časov ukončenia pre výlety s vnorenosťami udalostí.</li>
           <li xml:lang="sl">Popravljeno računanje končnih časov za potovanja z vgnezdenimi dogodki.</li>
           <li xml:lang="tr">İç içe geçmiş etkinlikler bulunan yolculukların bitiş zamanları artık düzgünce hesaplanıyor.</li>
           <li xml:lang="uk">Виправлено обчислення кінцевих часів для подорожей з вкладеними подіями.</li>
@@ -3738,6 +3738,7 @@
           <li xml:lang="fr">Correction des informations manquantes sur le mode de transport pour certains résultats de OpenTripPlanner.</li>
           <li xml:lang="it">Risolte le informazioni mancanti sulla modalità di trasporto per alcuni risultati di OpenTripPlanner.</li>
           <li xml:lang="ka">გასწორდა ტრანსპორტის სახეობის გამოტოვებული ინფორმაცია ზოგიერთი OpenTripPlanner შედეგისთვის.</li>
+          <li xml:lang="nl">Ontbrekende informatie over de vervoerswijze is gecorrigeerd voor sommige resultaten van OpenTripPlanner.</li>
           <li xml:lang="pt-BR">Corrigida a falta de informações sobre o modo de transporte em alguns resultados do OpenTripPlanner.</li>
           <li xml:lang="ru">Исправлено отсутствие информации о виде транспорта для некоторых результатов OpenTripPlanner.</li>
           <li xml:lang="sk">Fixed missing transport mode information for some OpenTripPlanner results.</li>
@@ -3753,6 +3754,7 @@
           <li xml:lang="fr">Filtrage des trajets à pied peu plausibles fournis par les planificateurs de transport public.</li>
           <li xml:lang="it">Filtra i percorsi pedonali non plausibili dai router dei trasporti pubblici.</li>
           <li xml:lang="ka">დაუჯერებელი საფეხმავლო გზების გაფილტვრა საზოგადოებრივი ტრანსპორტის მარშრუტიზატორებიდან.</li>
+          <li xml:lang="nl">Filter onwaarschijnlijke wandelroutes uit openbaarvervoerroutes.</li>
           <li xml:lang="pt-BR">Filtra trajetos a pé implausíveis a partir de rotas de transporte público.</li>
           <li xml:lang="ru">Исключение неправдоподобных пешеходных маршрутов из результатов маршрутизации общественного транспорта.</li>
           <li xml:lang="sk">Filter implausible walking paths from public transport routers.</li>
@@ -3769,6 +3771,7 @@
           <li xml:lang="he">תוקן ייבוא הזמנת סירה או מעבורת מהיומן.</li>
           <li xml:lang="it">Risolto il problema con l'importazione delle prenotazioni di barche o traghetti dal calendario.</li>
           <li xml:lang="ka">გასწორდა გემისა და ბორნის ჯავშნების შემოტანა კალენდრიდან.</li>
+          <li xml:lang="nl">Het importeren van boot- of veerbootreserveringen is nu mogelijk via de agenda.</li>
           <li xml:lang="pt-BR">Correção na importação de reservas de barcos ou balsas a partir do calendário.</li>
           <li xml:lang="ru">Исправлен импорт бронирования лодок или паромов из календаря.</li>
           <li xml:lang="sk">Opravený import rezervácií lodí alebo trajektov z kalendára.</li>
@@ -3785,6 +3788,7 @@
           <li xml:lang="he">תוקנה לולאה אינסופית בעת חישוב ארגומנטים של מפת ניווט פנים.</li>
           <li xml:lang="it">Risolto un ciclo infinito durante il calcolo degli argomenti della mappa interna.</li>
           <li xml:lang="ka">გასწორდა უსასრულო ციკლი შიდა რუკის არგუმენტების გამოთვლისას.</li>
+          <li xml:lang="nl">Een oneindige lus bij het berekenen van argumenten voor binnenplattegronden is verholpen.</li>
           <li xml:lang="pt-BR">Corrigido um loop infinito no cálculo dos argumentos do mapa interno.</li>
           <li xml:lang="ru">Исправлен бесконечный цикл при вычислении аргументов для карт помещений.</li>
           <li xml:lang="sk">Fixed an infinite loop when computing indoor map arguments.</li>
@@ -3807,6 +3811,7 @@
           <li xml:lang="he">תוקנה בחירת העברה אוטומטית שמפיקה שטויות כשנקודות ציון גאוגרפיות חסרות.</li>
           <li xml:lang="it">Risolto il problema con la selezione automatica del trasferimento che produceva risultati insensati quando mancano le coordinate geografiche.</li>
           <li xml:lang="ka">გასწორდა გადაჯდომის ავტომატური შერჩევა, რომელიც არასწორ შედეგს იძლეოდა გეო-კოორდინატების არქონისას.</li>
+          <li xml:lang="nl">Automatische selectie van transfers die onzin produceert wanneer geografische coördinaten ontbreken is verholpen.</li>
           <li xml:lang="pt-BR">Corrigido o problema na seleção automática de transferência que gerava erros quando faltavam coordenadas geográficas.</li>
           <li xml:lang="ru">Исправлен выбор автоматической пересадки, который приводил к бессмыслице при отсутствии географических координат.</li>
           <li xml:lang="sk">Fixed automatic prestup selection producing nonsense when geo coordinates are missing.</li>
@@ -3823,6 +3828,7 @@
           <li xml:lang="he">תוקנה הצגת אישורי מעבר מצורפים מ־Apple Wallet להזמנות של רכבות ,מלונות, אוטובוסים והשכרת רכבים.</li>
           <li xml:lang="it">Corretta la visualizzazione dei pass Appled Wallet allegati per prenotazioni di treni, hotel, autobus e noleggio auto.</li>
           <li xml:lang="ka">გასწორდა მიბმული Apple Wallet-ის ბარათების ჩვენება მატარებლის, სასტუმროს, ავტობუსისა და მანქანის ქირაობის ჯავშნებისთვის.</li>
+          <li xml:lang="nl">Opgelost weergave van gekoppelde Apple Wallet-passen voor treinen, hotels, bussen en autoverhuurreserveringen.</li>
           <li xml:lang="pt-BR">Correção na exibição dos passes da Apple Wallet anexados a reservas de trem, hotel, ônibus e aluguel de carros.</li>
           <li xml:lang="ru">Исправлено отображение прикреплённых пропусков Apple Wallet для поездов, отелей, автобусов и бронирований проката автомобилей.</li>
           <li xml:lang="sk">Opravené zobrazovanie pripojených Apple Wallet preukazov pre vlaky, hotely, autobusy a rezervácie prenájmu auta.</li>
@@ -3839,6 +3845,7 @@
           <li xml:lang="he">תוקנה לולאה סתומה שלעתים קרתה בעת עדכון שערי המרת מטבעות.</li>
           <li xml:lang="it">Risolto un potenziale stallo nell'aggiornamento dei tassi di conversione delle valute.</li>
           <li xml:lang="ka">გასწორდა პოტენციური გაჭედვა ვალუტის კურსების განახლებისას.</li>
+          <li xml:lang="nl">Een potentieel probleem bij het bijwerken van wisselkoersen is opgelost.</li>
           <li xml:lang="pt-BR">Corrigido um possível impasse na atualização das taxas de conversão de moeda.</li>
           <li xml:lang="ru">Исправлена возможная взаимная блокировка при обновлении курсов валют.</li>
           <li xml:lang="sk">Fixed a potential deadlock on updating currency conversion rates.</li>
@@ -3855,6 +3862,7 @@
           <li xml:lang="he">תוקנה בעיית צירוף מסמכים להזמנות לכמה נוסעים.</li>
           <li xml:lang="it">Risolto il problema relativo all'allegato di documenti alle prenotazioni multi-viaggiatore.</li>
           <li xml:lang="ka">გასწორდა დოკუმენტების მიბმა მრავალ-მოგზაურიან ჯავშნებზე.</li>
+          <li xml:lang="nl">Probleem opgelost waarbij documenten aan reserveringen voor meerdere reizigers werden toegevoegd.</li>
           <li xml:lang="pt-BR">Correção no problema de anexação de documentos a reservas com múltiplos viajantes.</li>
           <li xml:lang="ru">Исправлено присоединение документов к бронированиям для нескольких путешественников.</li>
           <li xml:lang="sk">Fixed attaching documents to multi-traveler rezervácias.</li>
@@ -3871,6 +3879,7 @@
           <li xml:lang="he">מהירות הגלילה של תצוגת ציר הזמן השתפרה.</li>
           <li xml:lang="it">Migliorata la velocità di scorrimento della visualizzazione della linea temporale.</li>
           <li xml:lang="ka">გაუმჯობესდა ქრონოლოგიის ხედის გადაადგილების (სქროლვის) სიჩქარე.</li>
+          <li xml:lang="nl">De schuifsnelheid van de tijdlijnweergave is verbeterd.</li>
           <li xml:lang="pt-BR">Velocidade de rolagem da visualização da linha do tempo aprimorada.</li>
           <li xml:lang="ru">Улучшена скорость прокрутки представления временной шкалы.</li>
           <li xml:lang="sk">Improved scrolling speed of the timeline view.</li>
@@ -3886,6 +3895,7 @@
           <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour European Sleeper, IndiGo, PKP, Qatar Airways, SBB, SNCB, Thalys ainsi que pour les billets de train de Lettonie et de Lituanie.</li>
           <li xml:lang="it">Estrattori di documenti di viaggio nuovi o migliorati per European Sleeper, IndiGo, PKP, Qatar Airways, SBB, SNCB, Thalys e per biglietti ferroviari lettoni e lituani.</li>
           <li xml:lang="ka">ახალი ან გაუმჯობესებული სამგზავრო დოკუმენტების ამომკრებები European Sleeper, IndiGo, PKP, Qatar Airways, SBB, SNCB, Thalys, ასევე ლატვიისა და ლიეტუვის სარკინიგზო ბილეთებისთვის.</li>
+          <li xml:lang="nl">Nieuwe of verbeterde extractors voor reisdocumenten van European Sleeper, IndiGo, PKP, Qatar Airways, SBB, SNCB, Thalys, en ook voor Letse en Litouwse treintickets.</li>
           <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para European Sleeper, IndiGo, PKP, Qatar Airways, SBB, SNCB, Thalys, bem como para bilhetes ferroviários da Letônia e da Lituânia.</li>
           <li xml:lang="ru">Новые или улучшенные модули извлечения данных из проездных документов для European Sleeper, IndiGo, PKP, Qatar Airways, SBB, SNCB, Thalys, а также для латвийских и литовских железнодорожных билетов.</li>
           <li xml:lang="sk">Nové alebo vylepšené extraktory cestovných dokladov pre European Sleeper, IndiGo, PKP, Qatar Airways, SBB, SNCB, Thalys, ako aj pre lotyšské a litovské železničné lístky.</li>
@@ -3901,6 +3911,7 @@
           <li xml:lang="fr">Nouvel extracteur générique de code-barres pour les tickets de ERA FCB.</li>
           <li xml:lang="it">Nuovo estrattore di codici a barre per biglietti generici ERA FCB.</li>
           <li xml:lang="ka">ახალი ზოგადი ERA FCB ბილეთის შტრიხკოდის ამომკრები.</li>
+          <li xml:lang="nl">Nieuwe generieke ERA FCB-ticketbarcode-extractor.</li>
           <li xml:lang="pt-BR">Novo extrator genérico de código de barras para ingressos ERA FCB.</li>
           <li xml:lang="ru">Новый универсальный модуль для извлечения данных из штрихкодов билетов ERA FCB.</li>
           <li xml:lang="sk">New generic ERA FCB lístok barcode extractor.</li>
@@ -3917,6 +3928,7 @@
           <li xml:lang="he">חילוץ נתוני מסעדות מאתרים השתפר.</li>
           <li xml:lang="it">Estrattore migliorato per i dati dei ristoranti nei siti web.</li>
           <li xml:lang="ka">გაუმჯობესებული რესტორნის მონაცემების ამომკრები ვებგვერდებიდან.</li>
+          <li xml:lang="nl">Verbeterde extractor voor restaurantgegevens op websites.</li>
           <li xml:lang="pt-BR">Extrator aprimorado para dados de restaurantes em sites.</li>
           <li xml:lang="ru">Улучшенный модуль извлечения данных о ресторанах с веб-сайтов.</li>
           <li xml:lang="sk">Improved extractor for restaurant data in websites.</li>
@@ -3933,6 +3945,7 @@
           <li xml:lang="he">תוקן מיזוג הערות הפרעות תחבורה ציבורית ממקורות שונים.</li>
           <li xml:lang="it">Risolto il problema con l'unione delle note di interruzione del trasporto pubblico provenienti da fonti diverse.</li>
           <li xml:lang="ka">გასწორდა საზოგადოებრივი ტრანსპორტის შეფერხების შენიშვნების შერწყმა სხვადასხვა წყაროდან.</li>
+          <li xml:lang="nl">Het samenvoegen van meldingen over verstoringen in het openbaar vervoer uit verschillende bronnen is nu correct.</li>
           <li xml:lang="pt-BR">Correção da mesclagem das informações sobre interrupções no transporte público provenientes de diferentes fontes.</li>
           <li xml:lang="ru">Исправлено объединение уведомлений о сбоях в работе общественного транспорта из разных источников.</li>
           <li xml:lang="sk">Fixed merging of public transport disruption notes from different sources.</li>
@@ -3970,6 +3983,7 @@
           <li xml:lang="he">תמיכה בייבוא של מספר הגוונים של Deutschlandticket.</li>
           <li xml:lang="it">Supporta l'importazione di varie varianti del Deutschlandticket.</li>
           <li xml:lang="ka">Deutschlandticket-ის სხვადასხვა ვარიანტის შემოტანას მხარდაჭერა.</li>
+          <li xml:lang="nl">Ondersteuning voor het importeren van verschillende varianten van het Deutschlandticket.</li>
           <li xml:lang="pt-BR">Suporte para importação de diversas variantes do Deutschlandticket.</li>
           <li xml:lang="ru">Поддержка импорта различных вариантов Deutschlandticket.</li>
           <li xml:lang="sk">Podpora importu rôznych variantov Deutschlandticket.</li>
@@ -3986,6 +4000,7 @@
           <li xml:lang="he">תוקן תיצור של ברקודים של כרטיסי MAV.</li>
           <li xml:lang="it">Risolto il problema con il rendering dei codici a barre dei biglietti MAV.</li>
           <li xml:lang="ka">გასწორდა MAV ბილეთის შტრიხკოდების რენდერი.</li>
+          <li xml:lang="nl">De weergave van barcodes op MAV-tickets is gecorrigeerd.</li>
           <li xml:lang="pt-BR">Correção na renderização dos códigos de barras dos bilhetes MAV.</li>
           <li xml:lang="ru">Исправлен вывод штрихкодов билетов MAV.</li>
           <li xml:lang="sk">Fixed rendering of MAV lístok barcodes.</li>
@@ -4002,6 +4017,7 @@
           <li xml:lang="he">תוקנו שאילתות תחבורה ציבורית ברפובליקה הצ׳כית ובאנגליה.</li>
           <li xml:lang="it">Risolte le domande sui trasporti pubblici nella Repubblica Ceca e nel Regno Unito.</li>
           <li xml:lang="ka">გასწორდა საზოგადოებრივი ტრანსპორტის მოთხოვნები ჩეხეთსა და ბრიტანეთში.</li>
+          <li xml:lang="nl">Opgelost vragen in het openbaar vervoer in Tsjechië en het Verenigd Koninkrijk.</li>
           <li xml:lang="pt-BR">Correção da consultas sobre transporte público na República Tcheca e no Reino Unido.</li>
           <li xml:lang="ru">Исправлены запросы к расписанию общественного транспорта в Чехии и Великобритании.</li>
           <li xml:lang="sk">Fixed public transport queries in the Czech Republic and the UK.</li>
@@ -4018,6 +4034,7 @@
           <li xml:lang="he">תוקנה בעיה שקובצי PDF שיובאו איבדו את שם הקובץ שלהם ב־Android.</li>
           <li xml:lang="it">Risolto il problema per cui i PDF importati perdevano il nome del file su Android.</li>
           <li xml:lang="ka">გასწორდა შემოტანარებული PDF-ები, რომლებიც კარგავდნენ ფაილის სახელს Android-ზე.</li>
+          <li xml:lang="nl">Opgelost probleem waarbij geïmporteerde PDF's hun bestandsnaam verloren op Android.</li>
           <li xml:lang="pt-BR">Corrigido o problema em que PDFs importados perdiam o nome do arquivo no Android.</li>
           <li xml:lang="ru">Исправлена потеря имени файла импортированных PDF-файлов в Android.</li>
           <li xml:lang="sk">Fixed imported PDFs losing their file name on Android.</li>
@@ -4033,6 +4050,7 @@
           <li xml:lang="fr">Amélioration de la disposition des cartes d'embarquement dans Apple Wallet pour les étiquettes débordantes.</li>
           <li xml:lang="it">Struttura della carta d'imbarco Apple Wallet migliorato per etichette in eccesso.</li>
           <li xml:lang="ka">გაუმჯობესებული Apple Wallet ჩასაჯდომი ბილეთის განლაგება გრძელი წარწერებისთვის.</li>
+          <li xml:lang="nl">Verbeterde indeling voor instapkaarten in Apple Wallet voor labels die overlopen.</li>
           <li xml:lang="pt-BR">Layout aprimorado do cartão de embarque do Apple Wallet para etiquetas que excedem o tamanho permitido.</li>
           <li xml:lang="ru">Улучшено оформление посадочных талонов Apple Wallet для переполненных меток.</li>
           <li xml:lang="sk">Improved Apple Wallet palubný lístok layout for overflowing labels.</li>
@@ -4049,6 +4067,7 @@
           <li xml:lang="he">הטיפול ברכיבים שבוטלו בציר הזמן השתפר.</li>
           <li xml:lang="it">Gestione migliorata degli elementi annullati nella linea temporale.</li>
           <li xml:lang="ka">გაუმჯობესებული გაუქმებული ელემენტების დამუშავება ქრონოლოგიაში.</li>
+          <li xml:lang="nl">Verbeterde afhandeling van geannuleerde elementen in de tijdlijn.</li>
           <li xml:lang="pt-BR">Melhoria no tratamento de elementos cancelados na linha do tempo.</li>
           <li xml:lang="ru">Улучшена обработка отменённых элементов на временной шкале.</li>
           <li xml:lang="sk">Improved handling of canceled elements in the timeline.</li>
@@ -4089,6 +4108,7 @@
           <li xml:lang="he">מחלצי מסמכים חדשים או משופרים ל־Aegean Air,‏ Amadeus,‏ availpro,‏ BlaBlaCar,‏ Deutsche Bahn,‏ Kinoheld,‏ Meetup,‏ National Express,‏ ÖBB,‏ Octorate,‏ Ouigo,‏ Premier Inn,‏ SNCF,‏ Taiwan Highspeed Rail ו־whyline.</li>
           <li xml:lang="it">Estrattori di documenti di viaggio nuovi o migliorati per Aegean Air, Amadeus, availpro, BlaBlaCar, Deutsche Bahn, Kinoheld, Meetup, National Express, ÖBB, Octorate, Ouigo, Premier Inn, SNCF, Taiwan Highspeed Rail e whyline.</li>
           <li xml:lang="ka">ახალი ან გაუმჯობესებული სამგზავრო დოკუმენტების ამომკრებები Aegean Air, Amadeus, availpro, BlaBlaCar, Deutsche Bahn, Kinoheld, Meetup, National Express, ÖBB, Octorate, Ouigo, Premier Inn, SNCF, ტაივანის მაღალსიჩქარიანი რკინიგზა და whyline სისტემებისთვის.</li>
+          <li xml:lang="nl">Nieuwe of verbeterde extractors voor reisdocumenten van Aegean Air, Amadeus, availpro, BlaBlaCar, Deutsche Bahn, Kinoheld, Meetup, National Express, ÖBB, Octorate, Ouigo, Premier Inn, SNCF, Taiwan Highspeed Rail en whyline.</li>
           <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para Aegean Air, Amadeus, availpro, BlaBlaCar, Deutsche Bahn, Kinoheld, Meetup, National Express, ÖBB, Octorate, Ouigo, Premier Inn, SNCF, Taiwan Highspeed Rail e whyline.</li>
           <li xml:lang="ru">Новые или улучшенные модули извлечения данных из проездных документов для Aegean Air, Amadeus, availpro, BlaBlaCar, Deutsche Bahn, Kinoheld, Meetup, National Express, ÖBB, Octorate, Ouigo, Premier Inn, SNCF, Taiwan Highspeed Rail и whyline.</li>
           <li xml:lang="sk">New or improved travel document extractors for Aegean Air, Amadeus, availpro, BlaBlaCar, Deutsche Bahn, Kinoheld, Meetup, National Express, ÖBB, Octorate, Ouigo, Premier Inn, SNCF, Taiwan Highspeed Rail and whyline.</li>
@@ -4105,6 +4125,7 @@
           <li xml:lang="he">תמיכה בברקודים של כרטיסי רכבות Eurostar,‏ SBB והממלכה המאוחדת (בריטניה)</li>
           <li xml:lang="it">Supporto per codici a barre dei biglietti ferroviari Eurostar, SBB e Regno Unito.</li>
           <li xml:lang="ka">Eurostar, SBB და ბრიტანეთის რკინიგზის ბილეთების შტრიხკოდების მხარდაჭერა.</li>
+          <li xml:lang="nl">Ondersteuning voor barcodes van Eurostar-, SBB- en Britse treinkaartjes.</li>
           <li xml:lang="pt-BR">Suporte para códigos de barras de bilhetes da Eurostar, SBB e ferrovias do Reino Unido.</li>
           <li xml:lang="ru">Поддержка штрихкодов на билетах Eurostar, SBB и железных дорог Великобритании.</li>
           <li xml:lang="sk">Podpora čiarových kódov lístkov Eurostar, SBB a britskej železnice.</li>
@@ -4121,6 +4142,7 @@
           <li xml:lang="he">עמוד מצב חי חדש באמצעות ה־API הפנימי של כלי הרכב.</li>
           <li xml:lang="it">Nuova pagina di stato in tempo reale utilizzando l'API di imbarco del veicolo.</li>
           <li xml:lang="ka">ახალი რეალური სტატუსის გვერდი ბორტის API-ის გამოყენებით.</li>
+          <li xml:lang="nl">Nieuwe live statuspagina die gebruikmaakt van de API aan boord van het voertuig.</li>
           <li xml:lang="pt-BR">Nova página de status em tempo real usando a API integrada do veículo.</li>
           <li xml:lang="ru">Новая страница текущего состояния с использованием бортового API транспортного средства.</li>
           <li xml:lang="sk">New live status page using onboard vehicle API.</li>
@@ -4137,6 +4159,7 @@
           <li xml:lang="he">ממשק משתמש חדש לעמודי פרטי הזמנה.</li>
           <li xml:lang="it">Nuova interfaccia utente per le pagine dei dettagli della prenotazione.</li>
           <li xml:lang="ka">ახალი ინტერფეისი ჯავშნის დეტალების გვერდებისთვის.</li>
+          <li xml:lang="nl">Nieuw gebruikersinterface voor pagina's met reserveringsdetails.</li>
           <li xml:lang="pt-BR">Nova interface de usuário para páginas de detalhes de reservas.</li>
           <li xml:lang="ru">Новый интерфейс для страниц сведений о бронировании.</li>
           <li xml:lang="sk">New UI for rezervácia details pages.</li>
@@ -4153,6 +4176,7 @@
           <li xml:lang="he">טעינה מהירה יותר של מפות תחנות רכבת ונמלי תעופה.</li>
           <li xml:lang="it">Caricamento più rapido delle mappe delle stazioni ferroviarie e degli aeroporti.</li>
           <li xml:lang="ka">რკინიგზის სადგურებისა და აეროპორტების რუკების უფრო სწრაფი ჩატვირთვა.</li>
+          <li xml:lang="nl">Snellere laadtijden voor plattegronden van treinstations en luchthavens.</li>
           <li xml:lang="pt-BR">Carregamento mais rápido de mapas de estações de trem e aeroportos.</li>
           <li xml:lang="ru">Ускорена загрузка карт вокзалов и аэропортов.</li>
           <li xml:lang="sk">Faster loading of train stanica and letisko maps.</li>
