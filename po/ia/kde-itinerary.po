@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-27 00:44+0000\n"
-"PO-Revision-Date: 2026-03-23 17:00+0100\n"
+"PO-Revision-Date: 2026-04-29 12:24+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -3642,37 +3642,41 @@ msgstr "Grandor de festa (Party)"
 #, kde-format
 msgid "This airport might not be quite where its name suggests it is."
 msgstr ""
+"Iste aeroporto poterea non esser exactemente ubi su nomine suggere que illo "
+"es."
 
 #: app/ScamWarningFormDelegate.qml:23
 #, kde-format
 msgid "This port might not be quite where its name suggests it is."
 msgstr ""
+"Iste porto poterea non esser exactemente ubi su nomine suggere que illo es."
 
 #: app/ScamWarningFormDelegate.qml:37
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Ignore warning"
-msgstr ""
+msgstr "Ignora aviso"
 
 #: app/ScamWarningFormDelegate.qml:50
 #, kde-format
 msgid "Ignore Warning"
-msgstr ""
+msgstr "Ignora aviso"
 
 #: app/ScamWarningFormDelegate.qml:51
 #, kde-format
 msgid "Do you want to ignore the warning permanently or for this trip only?"
 msgstr ""
+"Vole tu ignorar le advertimento permanentemente o solmente per iste viage?"
 
 #: app/ScamWarningFormDelegate.qml:54
 #, kde-format
 msgid "Ignore permanently"
-msgstr ""
+msgstr "Ignora permanentemente..."
 
 #: app/ScamWarningFormDelegate.qml:63
 #, kde-format
 msgid "Ignore for this trip"
-msgstr ""
+msgstr "Ignora per iste viage"
 
 #: app/SettingsPage.qml:20
 #, kde-format
@@ -4904,6 +4908,8 @@ msgid ""
 "Select your home country for currency conversions and power plug "
 "compatibility warnings to work."
 msgstr ""
+"Selige vostre pais de origine pro que le conversiones de moneta e le avisos "
+"de compatibilitate de spinas electric per functionar."
 
 #: app/WelcomePage.qml:35
 #, kde-format
@@ -4929,6 +4935,8 @@ msgid ""
 "Review the settings for more finegrained control over which online services "
 "to use."
 msgstr ""
+"Revide le preferentias pro un controlo plus detaliate sur qual servicios in "
+"linea usar."
 
 #: app/WelcomePage.qml:61
 #, kde-format
