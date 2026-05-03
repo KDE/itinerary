@@ -1,0 +1,22 @@
+# SPDX-FileCopyrightText: 2025 Volker Krause <vkrause@kde.org>
+# SPDX-License-Identifier: BSD-3-Clause
+
+diff --git i/CMakeLists.txt w/CMakeLists.txt
+index bd17df9..87c11eb 100644
+--- i/CMakeLists.txt
++++ w/CMakeLists.txt
+@@ -1,12 +1,12 @@
+ cmake_minimum_required(VERSION 3.29)
+ 
+ set(KF_VERSION "6.27.0") # handled by release scripts
+-set(KF_DEP_VERSION "6.25.0") # handled by release scripts
++set(KF_DEP_VERSION "6.24.0") # handled by release scripts
+ 
+ project(KMime VERSION ${KF_VERSION})
+ 
+ include(FeatureSummary)
+-find_package(ECM 6.25.0 NO_MODULE)
++find_package(ECM 6.24.0 NO_MODULE)
+ set_package_properties(ECM PROPERTIES TYPE REQUIRED DESCRIPTION "Extra CMake Modules." URL "https://commits.kde.org/extra-cmake-modules")
+ feature_summary(WHAT REQUIRED_PACKAGES_NOT_FOUND FATAL_ON_MISSING_REQUIRED_PACKAGES)
+ 
