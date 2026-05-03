@@ -1159,7 +1159,7 @@
           <li xml:lang="ca-valencia">Extractors nous o millorats de documents de viatge per a booking.com, České dráhy, DB, gomus, KLM i MÁV.</li>
           <li xml:lang="cs">Nové nebo vylepšené extraktory cestovních dokladů pro booking.com, České dráhy, DB, gomus, KLM a MÁV.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para booking.com, České dráhy, DB, gomus, KLM y MÁV.</li>
-          <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour booking.com, České dráhy, DB, gomus, KLM et MÁV.</li>
+          <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour booking.com, České Dráhy, DB, Gomus, KLM et MÁV.</li>
           <li xml:lang="he">מחלצי מסמכים חדשים או עדכניים ל־booking.com,‏ České dráhy,‏ DB,‏ gomus,‏ KLM ו־MÁV.</li>
           <li xml:lang="it">Nuovi o migliorati estrattori di documenti di viaggio per booking.com, ferrovie ceche, DB, gomus, KLM e MÁV.</li>
           <li xml:lang="ka">ახალი, ან გაუმჯობესებული სამგზავრო დოკუმენტების ამომკრებები booking.com, České dráhy, DB, gomus, KLM და MÁV სისტემებისთვის.</li>
@@ -1364,7 +1364,7 @@
           <li xml:lang="ca-valencia">Extractors nous o millorats de documents de viatge per a AirAsia, B&amp;B Hotels, Booking.com, Ethiad, Ryanair, SNCF i tixly.</li>
           <li xml:lang="cs">Nové nebo vylepšené nástroje pro extrahování cestovních dokladů pro AirAsia, B&amp;B Hotels, Booking.com, Ethiad, Ryanair, SNCF a tixly.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para AirAsia, hoteles B&amp;B, Booking.com, Ethiad, Ryanair, SNCF y tixly.</li>
-          <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour AirAsia, B&amp;B Hotels, Booking.com, Etihad, Ryanair, SNCF et tixly.</li>
+          <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour AirAsia, B&amp;B Hotels, Booking.com, Etihad, Ryanair, SNCF et Tixly.</li>
           <li xml:lang="he">מחלצי מסמכים חדשים או עדכניים ל־AirAsia,‏ B&amp;B Hotels,‏ Booking.com, אתיחד, Ryanair,‏ SNCF ו־tixly.</li>
           <li xml:lang="it">Nuovi o migliorati estrattori di documenti di viaggio per AirAsia, B&amp;B Hotels, Booking.com, Ethiad, Ryanair, SNCF e tixly.</li>
           <li xml:lang="ka">ახალი ან გაუმჯობესებული სამგზავრო დოკუმენტების ამომკრებები AirAsia, B&amp;B Hotels, Booking.com, Ethiad, Ryanair, SNCF და tixly სისტემებისთვის.</li>
@@ -1836,6 +1836,7 @@
           <li xml:lang="cs">Oprava podpory palubního API ÖBB.</li>
           <li xml:lang="es">Se ha corregido la compatibilidad de la API de a bordo de ÖBB.</li>
           <li xml:lang="fr">Correction de la prise en charge de l'API embarquée de ÖBB.</li>
+          <li xml:lang="he">תוקנה התמיכה ב־API של ÖBB מתוך כלי התחבורה.</li>
           <li xml:lang="it">Correzione del supporto API di imbarco ÖBB.</li>
           <li xml:lang="ka">გასწორდა ÖBB ბორტის API-ის მხარდაჭერა.</li>
           <li xml:lang="nl">Opgelost de ondersteuning voor de ÖBB onboard API.</li>
@@ -2297,6 +2298,7 @@
           <li xml:lang="cs">Přidána podpora pro integrované API NS.</li>
           <li xml:lang="es">Se ha añadido compatibilidad con la API de a bordo de NS.</li>
           <li xml:lang="fr">Ajout de la prise en charge pour l'API intégrée « NS ».</li>
+          <li xml:lang="he">נוספה תמיכה ב־API של NS מתוך כלי התחבורה.</li>
           <li xml:lang="it">Aggiunto il supporto per l'API di imbarco NS.</li>
           <li xml:lang="ka">დაემატა NS ბორტის API-ის მხარდაჭერა.</li>
           <li xml:lang="nl">Ondersteuning voor NS onboard API toegevoegd.</li>
@@ -2733,7 +2735,7 @@
           <li xml:lang="ca-valencia">S'han corregit els emoji que no apareixen en els Flatpak.</li>
           <li xml:lang="cs">Opraveny emotikony, které se nezobrazovaly ve Flatpaku.</li>
           <li xml:lang="es">Se ha solucionado la visualización de emojis en Flatpaks.</li>
-          <li xml:lang="fr">Correction des émoticônes ne s'affichant pas dans les Flatpaks.</li>
+          <li xml:lang="fr">Correction des émoticônes ne s'affichant pas dans les Flatpak.</li>
           <li xml:lang="he">תוקנה בעיה שאמוג׳ים לא הופיע כשהיישום הופעל כ־Flatpak.</li>
           <li xml:lang="it">Corregge le emoji che non venivano visualizzati in Flatpaks.</li>
           <li xml:lang="ka">გასწორდა ემოჯიების არჩვენება Flatpak-ებში.</li>
@@ -2995,6 +2997,7 @@
         <p xml:lang="cs">Zlepšena použitelnost Itineráře na telefonech tím, že jsou běžné akce umístěny do spodní navigační lišty, což usnadňuje přepínání mezi jízdenkami a aktuální cestou.</p>
         <p xml:lang="es">Se ha mejorado la usabilidad de Itinerary en teléfonos haciendo que las acciones comunes están disponibles en la barra de navegación inferior, lo que facilita el cambio a los pases y al viaje actual.</p>
         <p xml:lang="fr">Nous avons amélioré l'ergonomie de Itinerary sur les téléphones en rendant les actions courantes accessibles grâce à une barre de navigation sur le bord inférieur. Cela facilite le basculement vers vos billets et vers votre voyage en cours.</p>
+        <p xml:lang="he">שיפרנו את השימושיות של Itinerary בטלפונים על ידי הנגשת פעולות נפוצות בקלות על גבי סרגל ניווט תחתון שמאפשר לעבור בין אישורי המעבר והטיול הנוכחי שלך.</p>
         <p xml:lang="it">Abbiamo migliorato l'usabilità di Itinerary sui telefoni rendendo disponibili le azioni comuni su una barra di navigazione inferiore che semplifica il passaggio ai tuoi pass e al tuo viaggio corrente.</p>
         <p xml:lang="ka">ჩვენ გავაუმჯობესეთ Itinerary-ის გამოყენებადობა ტელეფონებზე ხშირი მოქმედებების ქვედა ნავიგაციის ზოლზე განთავსებით, რაც აადვილებს ბარათებსა და მიმდინარე მგზავრობას შორის გადართვას.</p>
         <p xml:lang="nl">We hebben de gebruiksvriendelijkheid van Itinerary op telefoons verbeterd door veelgebruikte acties beschikbaar te maken in een navigatiebalk onderaan, waardoor u gemakkelijk kunt schakelen tussen uw passen en uw huidige reis.</p>
@@ -3100,6 +3103,7 @@
           <li xml:lang="cs">Podpora pro palubní API Eurostar.</li>
           <li xml:lang="es">Compatibilidad con la API de a bordo de Eurostar.</li>
           <li xml:lang="fr">Prise en charge de l'API intégrée de Eurostar.</li>
+          <li xml:lang="he">תמיכה ב־API של Eurostar מתוך כלי התחבורה.</li>
           <li xml:lang="it">Supporto per API di imbarco Eurostar.</li>
           <li xml:lang="ka">Eurostar ბორტის API-ის მხარდაჭერა.</li>
           <li xml:lang="nl">Ondersteuning voor de Eurostar API aan boord.</li>
@@ -3210,7 +3214,7 @@
           <li xml:lang="ca-valencia">Extractors nous o millorats de documents de viatge per a Aegean, Amadeus, bookingkit, GWR, Pretix, Renfe, ÖBB i bitllets de tren del Regne Unit.</li>
           <li xml:lang="cs">Nové nebo vylepšené nástroje pro extrahování cestovních dokladů pro jízdenky společností Aegean, Amadeus, bookingkit, GWR, Pretix, Renfe, ÖBB a britské železniční jízdenky.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para Aegean, Amadeus, bookingkit, GWR, Pretix, Renfe, ÖBB y billetes de los ferrocarriles británicos.</li>
-          <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour Aegean, Amadeus, bookingkit, GWR, Pretix, Renfe, ÖBB et les billets de train britanniques.</li>
+          <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour Aegean, Amadeus, Bookingkit, GWR, Pretix, Renfe, ÖBB et les billets de train britanniques.</li>
           <li xml:lang="he">מחלצי מסמכים נסיעה חדשים או משופרים עבור Aegean,‏ Amadeus,‏ bookingkit,‏ GWR,‏ Pretix,‏ Renfe,‏ ÖBB וכרטיסים של רכבות בממלכה המאוחדת (בריטניה)..</li>
           <li xml:lang="it">Estrattori di documenti di viaggio nuovi o migliorati per biglietti ferroviari Aegean, Amadeus, bookingkit, GWR, Pretix, Renfe, ÖBB e del Regno Unito.</li>
           <li xml:lang="ka">ახალი ან გაუმჯობესებული სამგზავრო დოკუმენტების ამომკრებები Aegean, Amadeus, bookingkit, GWR, Pretix, Renfe, ÖBB და ბრიტანეთის რკინიგზის ბილეთებისთვის.</li>
@@ -3250,7 +3254,7 @@
           <li xml:lang="ca-valencia">Extractors nous o millorats de documents de viatge per a Aer Lingus, Amtrak, British Airways, Deutsche Bahn, GVH, premiumkino, Slovak Lines i ZSSK.</li>
           <li xml:lang="cs">Nové nebo vylepšené extraktory cestovních dokladů pro společnosti Aer Lingus, Amtrak, British Airways, Deutsche Bahn, GVH, premiumkino, Slovak Lines a ZSSK.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para Aer Lingus, Amtrak, British Airways, Deutsche Bahn, GVH, premiumkino, Slovak Lines y ZSSK.</li>
-          <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour Aer Lingus, Amtrak, British Airways, Deutsche Bahn, GVH, premiumkino, Slovak Lines et ZSSK.</li>
+          <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour Aer Lingus, Amtrak, British Airways, Deutsche Bahn, GVH, Premiumkino, Slovak Lines et ZSSK.</li>
           <li xml:lang="he">מחלצי מסמכים חדשים או משופרים עבור Aer Lingus,‏ Amtrak,‏ British Airways,‏ Deutsche Bahn,‏ GVH,‏ premiumkino,‏ Slovak Lines ו־ZSSK.</li>
           <li xml:lang="it">Estrattori di documenti di viaggio nuovi o migliorati per Aer Lingus, Amtrak, British Airways, Deutsche Bahn, GVH, premiumkino, Slovak Lines e ZSSK.</li>
           <li xml:lang="ka">ახალი ან გაუმჯობესებული სამგზავრო დოკუმენტების ამომკრებები Aer Lingus, Amtrak, British Airways, Deutsche Bahn, GVH, premiumkino, Slovak Lines და ZSSK სისტემებისთვის.</li>
@@ -3475,6 +3479,7 @@
           <li xml:lang="cs">Nová nebo vylepšená podpora palubního API pro společnosti Aegean Air, Deutsche Bahn a ÖBB.</li>
           <li xml:lang="es">Compatibilidad con API de a bordo nueva o mejorada para Aegean Air, Deutsche Bahn y ÖBB.</li>
           <li xml:lang="fr">Nouvelle prise en charge ou améliorations de l'API embarqué pour Aegean Air, Deutsche Bahn et ÖBB.</li>
+          <li xml:lang="he">תמיכה חדשה או משופרת ב־API מתוך כלי התחבורה עבור Aegean Air,‏ Deutsche Bahn ו־ÖBB.</li>
           <li xml:lang="it">Supporto API di imbarco nuovo o migliorato per Aegean Air, Deutsche Bahn e ÖBB.</li>
           <li xml:lang="ka">ახალი ან გაუმჯობესებული ბორტის API მხარდაჭერა Aegean Air, Deutsche Bahn და ÖBB სისტემებისთვის.</li>
           <li xml:lang="nl">Nieuwe of verbeterde API-ondersteuning aan boord voor Aegean Air, Deutsche Bahn en ÖBB.</li>
@@ -3490,7 +3495,7 @@
           <li xml:lang="ca-valencia">Extractors nous o millorats de documents de viatge per a Aegean Air, Aer Lingus, Air Asia, Air France, Atlatos, Bäder Suite, BlaBlaCar, bookingkit, CD, Cinemaxx, Cooltix, DSB, Eventbrite, FerriesInGreece, Grimaldi Lines, Iberia, KLM, Koleje Malopolskie, KTEL Thesprotias, Lufthansa, Ouigo Spain, PKP, UK railways, SAS, SBB, Slovak Lines, SNCB, spiritec, Spring Airlines, Sunny Cars, Thalys, Trenitalia, York Kino i ZSSK.</li>
           <li xml:lang="cs">Nové nebo vylepšené nástroje pro extrahování cestovních dokladů pro společnosti Aegean Air, Aer Lingus, Air Asia, Air France, Atlatos, Bäder Suite, BlaBlaCar, bookingkit, CD, Cinemaxx, Cooltix, DSB, Eventbrite, FerriesInGreece, Grimaldi Lines, Iberia, KLM, Koleje Malopolskie, KTEL Thesprotias, Lufthansa, Ouigo Spain, PKP, UK railways, SAS, SBB, Slovak Lines, SNCB, spiritec, Spring Airlines, Sunny Cars, Thalys, Trenitalia, York Kino a ZSSK.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para Aegean Air, Aer Lingus, Air Asia, Air France, Atlatos, Bäder Suite, BlaBlaCar, bookingkit, CD, Cinemaxx, Cooltix, DSB, Eventbrite, FerriesInGreece, Grimaldi Lines, Iberia, KLM, Koleje Malopolskie, KTEL Thesprotias, Lufthansa, Ouigo Spain, PKP, ferrocarriles británicos, SAS, SBB, Slovak Lines, SNCB, spiritec, Spring Airlines, Sunny Cars, Thalys, Trenitalia, York Kino y ZSSK.</li>
-          <li xml:lang="fr">Nouveaux extracteurs ou extracteurs améliorés de documents de voyage ou améliorés pour Aegean Air, Aer Lingus, Air Asia, Air France, Atlatos, Bäder Suite, BlaBlaCar, bookingkit, CD, Cinemaxx, Cooltix, DSB, Eventbrite, FerriesInGreece, Grimaldi Lines, Iberia, KLM, Koleje Malopolskie, KTEL Thesprotias, Lufthansa, Ouigo Espagne, PKP, Chemins de fer britanniques, SAS, SBB, Slovak Lines, SNCB, spiritec, Spring Airlines, Sunny Cars, Thalys, Trenitalia, York Kino et ZSSK.</li>
+          <li xml:lang="fr">Nouveaux extracteurs ou extracteurs améliorés de documents de voyage ou améliorés pour Aegean Air, Aer Lingus, Air Asia, Air France, Atlatos, Bäder Suite, BlaBlaCar, Bookingkit, CD, Cinemaxx, Cooltix, DSB, Eventbrite, FerriesInGreece, Grimaldi Lines, Iberia, KLM, Koleje Malopolskie, KTEL Thesprotias, Lufthansa, Ouigo Espagne, PKP, Chemins de fer britanniques, SAS, SBB, Slovak Lines, SNCB, Spiritec, Spring Airlines, Sunny Cars, Thalys, Trenitalia, York Kino et ZSSK.</li>
           <li xml:lang="he">מחלצי מסמכי נסיעה חדשים או משופרים עבור Aegean Air,‏ Aer Lingus,‏ Air Asia,‏ Air France,‏ Atlatos,‏ Bäder Suite,‏ BlaBlaCar,‏ bookingkit,‏ CD,‏ Cinemaxx,‏ Cooltix,‏ DSB,‏ Eventbrite,‏ FerriesInGreece,‏ Grimaldi Lines,‏ Iberia,‏ KLM,‏ Koleje Malopolskie,‏ KTEL Thesprotias,‏ Lufthansa,‏ Ouigo Spain,‏ PKP,‏ UK railways,‏ SAS,‏ SBB,‏ Slovak Lines,‏ SNCB,‏ spiritec,‏ Spring Airlines,‏ Sunny Cars,‏ Thalys,‏ Trenitalia,‏ York Kino ו־ZSSK.</li>
           <li xml:lang="it">Estrattori di documenti di viaggio nuovi o migliorati per Aegean Air, Aer Lingus, Air Asia, Air France, Atlatos, Bäder Suite, BlaBlaCar, bookingkit, CD, Cinemaxx, Cooltix, DSB, Eventbrite, FerriesInGreece, Grimaldi Lines, Iberia, KLM, Koleje Malopolskie, KTEL Thesprotias, Lufthansa, Ouigo Spain, PKP, UK railways, SAS, SBB, Slovak Lines, SNCB, spiritec, Spring Airlines, Sunny Cars, Thalys, Trenitalia, York Kino e ZSSK.</li>
           <li xml:lang="ka">ახალი ან გაუმჯობესებული სამგზავრო დოკუმენტების ამომკრებები Aegean Air, Aer Lingus, Air Asia, Air France, Atlatos, Bäder Suite, BlaBlaCar, bookingkit, CD, Cinemaxx, Cooltix, DSB, Eventbrite, FerriesInGreece, Grimaldi Lines, Iberia, KLM, Koleje Malopolskie, KTEL Thesprotias, Lufthansa, Ouigo Spain, PKP, ბრიტანეთის რკინიგზა, SAS, SBB, Slovak Lines, SNCB, spiritec, Spring Airlines, Sunny Cars, Thalys, Trenitalia, York Kino და ZSSK სისტემებისთვის.</li>
@@ -3717,7 +3722,7 @@
           <li xml:lang="ca-valencia">Extractors nous o millorats de documents de viatge per a Color Line, DJH, Fjord Line, Flixbus, Grimladi Lines, onepagebooking, SNCB, Thalys i Trenitalia.</li>
           <li xml:lang="cs">Nové nebo vylepšené nástroje pro extrahování cestovních dokladů pro Color Line, DJH, Fjord Line, Flixbus, Grimladi Lines, onepagebooking, SNCB, Thalys a Trenitalia.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para Color Line, DJH, Fjord Line, Flixbus, Grimladi Lines, onepagebooking, SNCB, Thalys y Trenitalia.</li>
-          <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour Color Line, DJH, Fjord Line, Flixbus, Grimladi Lines, onepagebooking, SNCB, Thalys et Trenitalia.</li>
+          <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour Color Line, DJH, Fjord Line, Flixbus, Grimladi Lines, Onepagebooking, SNCB, Thalys et Trenitalia.</li>
           <li xml:lang="he">מחלצי מסמכי נסיעות משופרים עבור Color Line,‏ DJH,‏ Fjord Line,‏ Flixbus,‏ Grimladi Lines,‏ onepagebooking,‏ SNCB,‏ Thalys ו־Trenitalia.</li>
           <li xml:lang="it">Estrattori di documenti di viaggio nuovi o migliorati per Color Line, DJH, Fjord Line, Flixbus, Grimladi Lines, onepagebooking, SNCB, Thalys e Trenitalia.</li>
           <li xml:lang="ka">ახალი ან გაუმჯობესებული სამგზავრო დოკუმენტების ამომკრებები Color Line, DJH, Fjord Line, Flixbus, Grimladi Lines, onepagebooking, SNCB, Thalys და Trenitalia სისტემებისთვის.</li>
@@ -3928,6 +3933,7 @@
           <li xml:lang="cs">Nové nebo vylepšené extraktory cestovních dokladů pro European Sleeper, IndiGo, PKP, Qatar Airways, SBB, SNCB, Thalys a také pro lotyšské a litevské železniční jízdenky.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para European Sleeper, IndiGo, PKP, Qatar Airways, SBB, SNCB y Thalys, así como para billetes de los ferrocarriles de Letonia y Lituania.</li>
           <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour European Sleeper, IndiGo, PKP, Qatar Airways, SBB, SNCB, Thalys ainsi que pour les billets de train de Lettonie et de Lituanie.</li>
+          <li xml:lang="he">מחלצי מסמכי נסיעות חדשים או משופרים עבור European Sleeper,‏ IndiGo,‏ PKP,‏ Qatar Airways,‏ SBB,‏ SNCB,‏ Thalys לרבות כרטיסי רכבות לטביות וליטאיות.</li>
           <li xml:lang="it">Estrattori di documenti di viaggio nuovi o migliorati per European Sleeper, IndiGo, PKP, Qatar Airways, SBB, SNCB, Thalys e per biglietti ferroviari lettoni e lituani.</li>
           <li xml:lang="ka">ახალი ან გაუმჯობესებული სამგზავრო დოკუმენტების ამომკრებები European Sleeper, IndiGo, PKP, Qatar Airways, SBB, SNCB, Thalys, ასევე ლატვიისა და ლიეტუვის სარკინიგზო ბილეთებისთვის.</li>
           <li xml:lang="nl">Nieuwe of verbeterde extractors voor reisdocumenten van European Sleeper, IndiGo, PKP, Qatar Airways, SBB, SNCB, Thalys, en ook voor Letse en Litouwse treintickets.</li>
@@ -4140,7 +4146,7 @@
           <li xml:lang="ca-valencia">Extractors nous o millorats de documents de viatge per a Aegean Air, Amadeus, availpro, BlaBlaCar, Deutsche Bahn, Kinoheld, Meetup, National Express, ÖBB, Octorate, Ouigo, Premier Inn, SNCF, Taiwan Highspeed Rail i whyline.</li>
           <li xml:lang="cs">Nové nebo vylepšené nástroje pro extrahování cestovních dokladů pro společnosti Aegean Air, Amadeus, availpro, BlaBlaCar, Deutsche Bahn,  Kinoheld, Meetup, National Express, ÖBB, Octorate, Ouigo, Premier Inn, SNCF, Taiwan Highspeed Rail a whyline.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para Aegean Air, Amadeus, availpro, BlaBlaCar, Deutsche Bahn, Kinoheld, Meetup, National Express, ÖBB, Octorate, Ouigo, Premier Inn, SNCF, Taiwan Highspeed Rail y whyline.</li>
-          <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour Aegean Air, Amadeus, availpro, BlaBlaCar, Deutsche Bahn, Kinoheld, Meetup, National Express, ÖBB, Octorate, Ouigo, Premier Inn, SNCF, Taiwan Highspeed Rail et whyline.</li>
+          <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour Aegean Air, Amadeus, availpro, BlaBlaCar, Deutsche Bahn, Kinoheld, Meetup, National Express, ÖBB, Octorate, Ouigo, Premier Inn, SNCF, Taïwan Highspeed Rail et whyline.</li>
           <li xml:lang="he">מחלצי מסמכים חדשים או משופרים ל־Aegean Air,‏ Amadeus,‏ availpro,‏ BlaBlaCar,‏ Deutsche Bahn,‏ Kinoheld,‏ Meetup,‏ National Express,‏ ÖBB,‏ Octorate,‏ Ouigo,‏ Premier Inn,‏ SNCF,‏ Taiwan Highspeed Rail ו־whyline.</li>
           <li xml:lang="it">Estrattori di documenti di viaggio nuovi o migliorati per Aegean Air, Amadeus, availpro, BlaBlaCar, Deutsche Bahn, Kinoheld, Meetup, National Express, ÖBB, Octorate, Ouigo, Premier Inn, SNCF, Taiwan Highspeed Rail e whyline.</li>
           <li xml:lang="ka">ახალი ან გაუმჯობესებული სამგზავრო დოკუმენტების ამომკრებები Aegean Air, Amadeus, availpro, BlaBlaCar, Deutsche Bahn, Kinoheld, Meetup, National Express, ÖBB, Octorate, Ouigo, Premier Inn, SNCF, ტაივანის მაღალსიჩქარიანი რკინიგზა და whyline სისტემებისთვის.</li>
@@ -4381,7 +4387,7 @@
           <li xml:lang="ca-valencia">Millora de l'extracció de dades per a booking.com, Deutsche Bahn, Indique, M,V, onepagebooking i Pretix.</li>
           <li xml:lang="cs">Vylepšené získávání dat pro booking.com, Deutsche Bahn, Indico, MÁV, onepagebooking a Pretix.</li>
           <li xml:lang="es">Se ha mejorado la extracción de datos para booking.com, Deutsche Bahn, Indico, MÁV, onepagebooking y Pretix.</li>
-          <li xml:lang="fr">Amélioration de l'extraction de données pour booking.com, Deutsche Bahn, Indico, MÁV, onepagebooking et Pretix.</li>
+          <li xml:lang="fr">Amélioration de l'extraction de données pour booking.com, Deutsche Bahn, Indico, MÁV, Onepagebooking et Pretix.</li>
           <li xml:lang="he">חילוץ נתונים מ־booking.com,‏ Deutsche Bahn,‏ Indico,‏ MÁV,‏ onepagebooking ו־Pretix השתפר.</li>
           <li xml:lang="it">Estrazione dei dati migliorata per booking.com, Deutsche Bahn, Indico, MÁV, onepagebooking e Pretix.</li>
           <li xml:lang="ka">გაუმჯობესებული მონაცემების ამოღება booking.com, Deutsche Bahn, Indico, MÁV, onepagebooking და Pretix სისტემებისთვის.</li>
@@ -5840,7 +5846,7 @@
           <li xml:lang="ca-valencia">Millora de l'extracció de dades per a SNCF, Accor, Feratel i onepagebooking.</li>
           <li xml:lang="cs">Vylepšené extrahování dat pro SNCF, Accor, Feratel a onepagebooking.</li>
           <li xml:lang="es">Se ha mejorado la extracción de datos de SNCF, Accor, Feratel y onepagebooking.</li>
-          <li xml:lang="fr">Amélioration de l'extraction de données pour SNCF, Accor, Feratel et onepagebooking.</li>
+          <li xml:lang="fr">Amélioration de l'extraction de données pour SNCF, Accor, Feratel et Onepagebooking.</li>
           <li xml:lang="he">חילוץ נתונים מ־SNCF,‏ Accor,‏ Feratel ו־onepagebooking השתפר.</li>
           <li xml:lang="it">Estrazione dei dati migliorata per SNCF, Accor, Feratel e onepagebooking.</li>
           <li xml:lang="ka">გაუმჯობესებული მონაცემების ამოღება SNCF, Accor, Feratel და onepagebooking სისტემებისთვის.</li>
