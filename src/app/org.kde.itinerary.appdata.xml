@@ -2924,6 +2924,7 @@
           <li xml:lang="cs">Filtrace nepravděpodobných výsledků geokodéru při úpravě adres.</li>
           <li xml:lang="es">Filtrar los resultados inverosímiles del geocodificador al editar direcciones.</li>
           <li xml:lang="fr">Filtration des résultats de géocodage peu plausibles lors de la modification d'adresse.</li>
+          <li xml:lang="he">סינון של תוצאות קודים גאוגרפיים לא הגיונים בעת עריכת כתובת.</li>
           <li xml:lang="it">Filtra i risultati non plausibili del geo-codificatore durante la modifica dell'indirizzo.</li>
           <li xml:lang="ka">გეოკოდერის დაუჯერებელი შედეგების გაფილტვრა მისამართის რედაქტირებისას.</li>
           <li xml:lang="nl">Filter onwaarschijnlijke geo-coderingresultaten bij het bewerken van adressen.</li>
@@ -3014,6 +3015,7 @@
         <p xml:lang="cs">Hlavní časová osa byla přepracována a nyní lze položky rozbalit a zobrazit mezilehlé zastávky a aktuální zpoždění a výluky. Pokud jde o události, nyní je možné ručně přidávat a upravovat položky a sdílet celé cesty nebo jednotlivé rezervace do telefonu přes KDE Connect.</p>
         <p xml:lang="es">Se ha rediseñado la línea de tiempo principal para que las entradas se puedan expandir para mostrar las paradas intermedias y los retrasos e interrupciones en curso. Hablando de eventos, ahora se pueden añadir y editar entradas manualmente y compartir viajes completos o reservas individuales con el teléfono mediante KDE Connect.</p>
         <p xml:lang="fr">La chronologie principale a été repensée. Il est maintenant possible d'étendre les entrées directement pour afficher les arrêts intermédiaires ainsi que les retards et perturbations en cours. En parlant d'évènements, il est désormais possible d'ajouter et de modifier manuellement des entrées et de partager des voyages complets ou des réservations individuelles sur votre téléphone grâce à KDEConnect.</p>
+        <p xml:lang="he">ציר הזמן הראשי עוצב מחדש ומעתה ניתן להרחיב רשומות במקום שלהן כדי להציג את תחנות הביניים והשהיות והפרעות מתפתחות. בנוגע לאירועים, מעתה ניתן להוסיף ולערוך רשומות ידנית כדי לשתף את נסיעות שלמות או הזמנות נקודתיות עם הטלפון שלך דרך KDE Connect.</p>
         <p xml:lang="it">La linea temporale principale è stata ridisegnata e ora le voci possono essere espanse in linea per mostrare le fermate intermedie, i ritardi e le interruzioni in corso. A proposito di eventi, ora è possibile aggiungere e modificare manualmente le voci e condividere interi viaggi o singole prenotazioni sul telefono tramite KDE Connect.</p>
         <p xml:lang="ka">მთავარი ქრონოლოგია განახლდა და ახლა ჩანაწერების გაშლა შესაძლებელია შუალედური გაჩერებების, დაგვიანებებისა და შეფერხებების სანახავად. რაც შეეხება მოვლენებს, ახლა უკვე შესაძლებელია ჩანაწერების ხელით დამატება და რედაქტირება, ასევე მთლიანი მგზავრობების ან ცალკეული ჯავშნების გაზიარება ტელეფონზე KDE Connect-ის საშუალებით.</p>
         <p xml:lang="nl">De hoofdtijdlijn is opnieuw ontworpen en items kunnen nu inline worden uitgevouwen om tussenstops en lopende vertragingen en verstoringen weer te geven. Over evenementen gesproken: het is nu mogelijk om handmatig items toe te voegen en te bewerken en om hele reizen of individuele reserveringen te delen met uw telefoon via KDE Connect.</p>
@@ -3030,6 +3032,7 @@
         <p xml:lang="cs">Vnitřní mapa v Itineráři nyní zobrazuje všechny služby v budově nebo oblasti, kterou právě prohlížíte. To vám pomůže například najít místo, kde si můžete dát kávu na velkém nádraží, nebo najít místo, kde se najíst v okolí vašeho hotelu. Tato funkce je založena na OpenStreetMap, funguje bez nutnosti připojení k internetu a žádné vyhledávací termíny neopouštějí vaše zařízení.</p>
         <p xml:lang="es">El mapa de interiores de Itinerary ahora muestra todos los servicios del edificio o la zona que se visualiza. Esto ayuda, por ejemplo, a encontrar un lugar para tomar un café en una gran estación de tren o a buscar un restaurante cerca de un hotel. Esta función, basada en OpenStreetMap, funciona sin conexión a internet y los términos de búsqueda se guardan en el dispositivo.</p>
         <p xml:lang="fr">La carte intérieure de Itinerary répertorie désormais toutes les commodités du bâtiment ou de la zone que vous consultez actuellement. Cela aide, par exemple, à trouver un endroit pour prendre un café dans une grande gare, ou à chercher un endroit pour se restaurer à proximité de votre hôtel. Cette fonctionnalité est alimentée par OpenStreetMap, fonctionne sans connexion Internet et aucune information de recherche n'est jamais transmise à partir de votre périphérique.</p>
+        <p xml:lang="he">מפת הניווט הפנימי ב־Itinerary מציגה מעתה את כל אמצעי הנוחות בבניין או באזור שמוצג. מסייע עם דברים כמו איתור מקום לכוס קפה בתחנת רכבת גדולה או חיפוש אחר מקום למצוא בו אוכל ליד המלון. היכולת הזאת פועלת דרך OpenStreetMap, עובדת ללא צורך בגישה לאינטרנט וביטויי החיפוש אף פעם לא יוצאים מהמכשיר שלך.</p>
         <p xml:lang="it">La mappa degli interni in Itinerary ora elenca tutti i servizi nell'edificio o nell'area che stai attualmente guardando. Ciò è utile per cose come trovare un posto dove prendere un caffè in una grande stazione ferroviaria o cercare un posto dove mangiare nelle vicinanze del tuo hotel. Questa funzionalità è supportata da OpenStreetMap, funziona senza la necessità di connettersi a Internet e nessun termine di ricerca lascia mai il tuo dispositivo.</p>
         <p xml:lang="ka">Itinerary-ის შიდა რუკა ახლა აჩვენებს ყველა კეთილმოწყობას შენობაში ან არეალში, რომელსაც უყურებთ. ეს გეხმარებათ დიდი რკინიგზის სადგურზე ყავის ადგილის პოვნაში ან სასტუმროს სიახლოვეს საკვები ობიექტის ძებნაში. ეს ფუნქცია ეყრდნობა OpenStreetMap-ს, მუშაობს ინტერნეტის გარეშე და ძიების სიტყვები არასოდეს ტოვებს თქვენს მოწყობილობას.</p>
         <p xml:lang="nl">De plattegrond in Itinerary toont nu alle voorzieningen in het gebouw of gebied dat u momenteel bekijkt. Dit is handig voor zaken als het vinden van een plek om koffie te halen in een groot treinstation, of het zoeken naar een restaurant in de buurt van uw hotel. Deze functie wordt mogelijk gemaakt door OpenStreetMap, werkt zonder internetverbinding en uw zoektermen verlaten uw apparaat niet.</p>
@@ -3126,6 +3129,7 @@
           <li xml:lang="cs">Oprava zpracování zrušených mezizastávek na palubě vlaků DB ICE.</li>
           <li xml:lang="es">Se ha corregido el manejo de paradas intermedias canceladas a bordo de los ICE de la DB.</li>
           <li xml:lang="fr">Correction de la gestion des arrêts intermédiaires annulés à bord des ICE de la Deutch Bahn.</li>
+          <li xml:lang="he">תוקן טיפול בתחנות ביניים מבוטלות תוך כדי נסיעה של DB ICEs.</li>
           <li xml:lang="it">Corretta la gestione delle fermate intermedie annullate a bordo degli ICE DB.</li>
           <li xml:lang="ka">გასწორდა გაუქმებული შუალედური გაჩერებების დამუშავება DB ICE მატარებლებში.</li>
           <li xml:lang="nl">Corrigeer de afhandeling van geannuleerde tussenstops aan boord van DB ICE-treinen.</li>
@@ -3159,6 +3163,7 @@
           <li xml:lang="cs">Oprava zpracování některých neplatných katalogů zpráv Apple Wallet.</li>
           <li xml:lang="es">Se ha corregido el análisis de ciertos catálogos de mensaje no válidos de Apple Wallet.</li>
           <li xml:lang="fr">Correction de l'analyse de certains catalogues de messages non valables de Apple Wallet.</li>
+          <li xml:lang="he">תוקן פיענוח של קטלוגים מסוימים שגויים של הודעות ב־Apple Wallet.</li>
           <li xml:lang="it">Corretta l'analisi di alcuni cataloghi di messaggi di Apple Wallet non validi.</li>
           <li xml:lang="ka">გასწორდა Apple Wallet-ის ზოგიერთი არასწორი შეტყობინების კატალოგის დამუშავება.</li>
           <li xml:lang="nl">Het probleem met het ontleden van bepaalde ongeldige Apple Wallet-berichtcatalogi is verholpen.</li>
@@ -3232,6 +3237,7 @@
           <li xml:lang="cs">Zobrazeno více podrobností o vybavení na mapě vlakového nádraží.</li>
           <li xml:lang="es">Mostrar más detalles sobre facilidades en los mapas de estaciones de tren.</li>
           <li xml:lang="fr">Afficher plus d'informations détaillées sur les commodités sur la carte de la gare.</li>
+          <li xml:lang="he">יש תיצוג של פרטי אמצעי נוחות נוספים במפות תחנות הרכבת.</li>
           <li xml:lang="ia">Render plus detalios sur servicios sur le mappa de station de traino</li>
           <li xml:lang="it">Visualizza maggiori dettagli sui servizi sulla mappa della stazione ferroviaria.</li>
           <li xml:lang="ka">მეტი კეთილმოწყობის დეტალების რენდერი რკინიგზის სადგურის რუკაზე.</li>
@@ -3306,6 +3312,7 @@
           <li xml:lang="cs">Oprava vykreslování miniatur obrázků generických Apple Wallet pass.</li>
           <li xml:lang="es">Se ha corregido la representación de las imágenes en miniatura de las contraseñas genéricas de Apple Wallet.</li>
           <li xml:lang="fr">Correction du rendu des images de vignettes pour les abonnements génériques dans Apple Wallet.</li>
+          <li xml:lang="he">תוקן תיצוג של תמונות ממוזערות של אישורים כלליים ב־Apple Wallet.</li>
           <li xml:lang="it">Correzione del rendering delle immagini in miniatura del passaggio generico di Apple Wallet.</li>
           <li xml:lang="ka">გასწორდა Apple Wallet-ის ზოგადი ბარათების ესკიზების რენდერი.</li>
           <li xml:lang="nl">Correctie van de weergave van de miniatuurafbeeldingen voor het generieke Apple Wallet-pasje.</li>
@@ -3339,6 +3346,7 @@
           <li xml:lang="cs">Zobrazení úschovny zavazadel, kanceláře ztrát a nálezů a pásů pro výdej zavazadel na letišti na mapě interiéru.</li>
           <li xml:lang="es">Mostrar en el mapa de interior la ubicación de las consignas para equipaje, las oficinas de objetos perdidos y las cintas transportadoras de equipaje en aeropuertos.</li>
           <li xml:lang="fr">Afficher les consignes à bagages, les bureaux des objets trouvés et les tapis de récupération des bagages sur la carte intérieure.</li>
+          <li xml:lang="he">הצגת תאי מטען, משרדי אבידות ומציאות ומסועי כבודה שלא הגיעה במפת הניווט הפנימי.</li>
           <li xml:lang="it">Visualizza sulla mappa interna gli armadietti per i bagagli, gli uffici oggetti smarriti e i nastri trasportatori per il ritiro dei bagagli in aeroporto.</li>
           <li xml:lang="ka">ბარგის შესანახი საკნების, დაკარგული ნივთების ოფისებისა და აეროპორტის ბარგის მისაღები ზოლების ჩვენება შიდა რუკაზე.</li>
           <li xml:lang="nl">Toon de locaties van bagagekluizen, de balie voor gevonden voorwerpen en de bagagebanden op de luchthaven op de plattegrond binnen.</li>
@@ -3446,6 +3454,7 @@
           <li xml:lang="cs">Zohlednit řazení vagónů a údaje o rezervaci míst k sezení, aby bylo možné zvýraznit místo odjezdu/příjezdu na nástupišti.</li>
           <li xml:lang="es">Se tienen en cuenta la distribución del coche y los datos de reserva de asientos para resaltar el punto de salida/llegada en un andén.</li>
           <li xml:lang="fr">Veuillez prendre en compte la disposition des voitures et les données de réservation des sièges pour mettre en évidence le point de départ / d'arrivée sur un quai.</li>
+          <li xml:lang="he">יש התייחסות לנתוני פריסת קרון והזמנת מקומות לצורך הדגשת נקודת היציאה/הגעה ברציף.</li>
           <li xml:lang="it">Considera la disposizione del pullman e i dati di prenotazione del posto per evidenziare il punto di partenza/arrivo su una piattaforma.</li>
           <li xml:lang="ka">ვაგონის განლაგებისა და ადგილების ჯავშნის გათვალისწინება ბაქანზე გამგზავრების/ჩამოსვლის ადგილის გამოსაკვეთად.</li>
           <li xml:lang="nl">Houd rekening met de indeling van de treinwagon en de gegevens over stoelreserveringen om de vertrek-/aankomstplek op het perron te markeren.</li>
@@ -3950,6 +3959,7 @@
           <li xml:lang="cs">Nový generický extraktor čárových kódů ERA FCB.</li>
           <li xml:lang="es">Nuevo extractor genérico de códigos de barras de billetes de ERA FCB.</li>
           <li xml:lang="fr">Nouvel extracteur générique de code-barres pour les tickets de ERA FCB.</li>
+          <li xml:lang="he">מחלץ ברקודים כללי חדש מכרטיסים של ERA FCB.</li>
           <li xml:lang="it">Nuovo estrattore di codici a barre per biglietti generici ERA FCB.</li>
           <li xml:lang="ka">ახალი ზოგადი ERA FCB ბილეთის შტრიხკოდის ამომკრები.</li>
           <li xml:lang="nl">Nieuwe generieke ERA FCB-ticketbarcode-extractor.</li>
@@ -4090,6 +4100,7 @@
           <li xml:lang="cs">Vylepšený vzhled palubní vstupenky v Apple Wallet pro přetékající štítky.</li>
           <li xml:lang="es">Se ha mejorado el diseño de tarjetas de embarque de Apple Wallet para etiquetas que se desbordan.</li>
           <li xml:lang="fr">Amélioration de la disposition des cartes d'embarquement dans Apple Wallet pour les étiquettes débordantes.</li>
+          <li xml:lang="he">פריסת אישורי העלייה לכלי התחבורה ב־Apple Wallet במקרים של תוויות חורגות השתפרה.</li>
           <li xml:lang="it">Struttura della carta d'imbarco Apple Wallet migliorato per etichette in eccesso.</li>
           <li xml:lang="ka">გაუმჯობესებული Apple Wallet ჩასაჯდომი ბილეთის განლაგება გრძელი წარწერებისთვის.</li>
           <li xml:lang="nl">Verbeterde indeling voor instapkaarten in Apple Wallet voor labels die overlopen.</li>
@@ -4538,6 +4549,7 @@
           <li xml:lang="cs">Oprava interakce s téměř vodorovnými nebo téměř svislými schody na mapě vlakového nádraží.</li>
           <li xml:lang="es">Se ha corregido la interacción con escaleras casi horizontales o casi verticales en los mapas de estaciones de tren.</li>
           <li xml:lang="fr">Correction de l'interaction avec les escaliers presque horizontaux ou presque verticaux sur la carte de la gare.</li>
+          <li xml:lang="he">תוקנה האינטראקציה עם מדרגות ליד אופקיות או ליד אנכיות במפות תחנות הרכבת.</li>
           <li xml:lang="ia">Corrige interaction con scala quasi-horizontal o quasi-vertical  sur le mappa de station de traino</li>
           <li xml:lang="it">Corregge l'interazione con scale quasi orizzontali o quasi verticali sulla mappa della stazione ferroviaria.</li>
           <li xml:lang="ka">გასწორდა ურთიერთქმედება თითქმის ჰორიზონტალურ, ან თითქმის ვერტიკალურ კიბეებთან რკინიგზის სადგურის რუკაზე.</li>
