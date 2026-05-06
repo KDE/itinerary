@@ -593,7 +593,7 @@ msgstr "新建公交车预订"
 #, kde-format
 msgctxt "@title"
 msgid "Edit Bus Reservation"
-msgstr ""
+msgstr "编辑公交车预订"
 
 #: app/BusEditor.qml:81 app/BusEditor.qml:227
 #, kde-format
@@ -664,7 +664,7 @@ msgstr "出发车站不能为空。"
 #, kde-format
 msgctxt "Bus stop platform"
 msgid "Platform"
-msgstr ""
+msgstr "站台"
 
 #: app/BusEditor.qml:210
 #, kde-format
@@ -676,7 +676,7 @@ msgstr "车站名称"
 #, kde-format
 msgctxt "bus stop platform"
 msgid "Platform"
-msgstr ""
+msgstr "站台"
 
 #: app/BusEditor.qml:235
 #, kde-format
@@ -739,7 +739,7 @@ msgstr ""
 #, kde-format
 msgctxt "bus station platform"
 msgid "Platform"
-msgstr ""
+msgstr "站台"
 
 #: app/BusPage.qml:170
 #, kde-format
@@ -2362,19 +2362,19 @@ msgstr ""
 #, kde-format
 msgctxt "Abbreviation of train platform"
 msgid "Pl. %1"
-msgstr ""
+msgstr "站台 %1"
 
 #: app/JourneySectionStopDelegate.qml:150
 #, kde-format
 msgctxt "Ferry dock, if possible use an abbreviation"
 msgid "Dock %1"
-msgstr ""
+msgstr "码头 %1"
 
 #: app/JourneySectionStopDelegate.qml:152
 #, kde-format
 msgctxt "Generic abbreviation of platform"
 msgid "Pl. %1"
-msgstr ""
+msgstr "站台 %1"
 
 #: app/JourneySectionStopDelegate.qml:167
 #, kde-format
@@ -4281,7 +4281,7 @@ msgstr "出发车站不能为空。"
 #, kde-format
 msgctxt "Train station platform"
 msgid "Platform"
-msgstr ""
+msgstr "站台"
 
 #: app/TrainEditor.qml:210 app/TrainEditor.qml:310
 #, kde-format
@@ -4301,7 +4301,7 @@ msgstr ""
 #, kde-format
 msgctxt "train platform"
 msgid "Platform"
-msgstr ""
+msgstr "站台"
 
 #: app/TrainEditor.qml:256
 #, kde-format
@@ -4353,7 +4353,7 @@ msgstr ""
 #, kde-format
 msgctxt "train station platform"
 msgid "Platform"
-msgstr ""
+msgstr "平台"
 
 #: app/TrainPage.qml:201
 #, kde-format
@@ -4803,7 +4803,7 @@ msgstr ""
 #, kde-format
 msgctxt "train station platform"
 msgid "Platform: %1"
-msgstr ""
+msgstr "站台：%1"
 
 #: app/VehicleLayoutPage.qml:126
 #, kde-format
