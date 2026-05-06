@@ -953,7 +953,15 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="26.04.1" date="2026-05-07"/>
+    <release version="26.04.1" date="2026-05-07">
+      <description>
+        <ul>
+          <li>New or improved travel document extractors for Condor and Monbus.</li>
+          <li>Adapted to Deutsche Bahn API changes.</li>
+          <li>Fixed flag display in country combo box.</li>
+        </ul>
+      </description>
+    </release>
     <release version="26.04.0" date="2026-04-16">
       <description>
         <ul>
