@@ -407,6 +407,7 @@ if (ANDROID)
         view-calendar
         view-calendar-day
         view-currency-list
+        view-financial-account-cash-symbolic
         view-list-details
         view-refresh
         view-statistics-symbolic

@@ -91,6 +91,18 @@ Kirigami.ScrollablePage {
                             }
 
                             FormCard.FormDelegateSeparator {
+                                above: bookButton
+                                visible: bookButton.visible
+                            }
+                            FormCard.FormButtonDelegate {
+                                id: bookButton
+                                text: i18nc("purchase a ticket", "Book")
+                                icon.name: "view-financial-account-cash-symbolic"
+                                visible: expandedLayout.journey.bookingUrl != "" && expandedLayout.journey.disruptionEffect !== Disruption.NoService
+                                onClicked: Qt.openUrlExternally(expandedLayout.journey.bookingUrl)
+                            }
+
+                            FormCard.FormDelegateSeparator {
                                 above: selectButton
                             }
 

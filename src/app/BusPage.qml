@@ -269,6 +269,12 @@ DetailsPage {
             editor: root.editor
             reservation: root.reservation
             additionalActions: [
+                Kirigami.Action {
+                    text: i18nc("purchase a ticket", "Book")
+                    icon.name: "view-financial-account-cash-symbolic"
+                    visible: !root.reservation.reservedTicket?.ticketToken && root.controller.journey.bookingUrl != ""
+                    onTriggered: Qt.openUrlExternally(LiveDataManager.journey(root.batchId).bookingUrl)
+                },
                 QQC2.Action {
                     text: i18n("Alternatives")
                     icon.name: "clock"
