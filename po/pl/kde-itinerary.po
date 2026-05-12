@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-27 00:44+0000\n"
+"POT-Creation-Date: 2026-05-12 00:45+0000\n"
 "PO-Revision-Date: 2025-09-06 05:40+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
@@ -488,13 +488,21 @@ msgid "Arrival time"
 msgstr "Czas przybycia"
 
 #: app/BoatPage.qml:191 app/BusPage.qml:273 app/FlightPage.qml:295
-#: app/TrainPage.qml:354
+#: app/JourneyQueryPage.qml:99 app/TrainPage.qml:345
+#, fuzzy, kde-format
+#| msgid "Booking"
+msgctxt "purchase a ticket"
+msgid "Book"
+msgstr "Rezerwacja"
+
+#: app/BoatPage.qml:197 app/BusPage.qml:279 app/FlightPage.qml:301
+#: app/TrainPage.qml:360
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternatywy"
 
-#: app/BoatPage.qml:199 app/BusPage.qml:278 app/JourneySectionPage.qml:27
-#: app/TrainPage.qml:360
+#: app/BoatPage.qml:205 app/BusPage.qml:284 app/JourneySectionPage.qml:27
+#: app/TrainPage.qml:366
 #, kde-format
 msgid "Journey Details"
 msgstr "Szczegóły podróży"
@@ -859,27 +867,27 @@ msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "Wczytaj wcześniejsze odjazdy"
 
-#: app/DepartureQueryPage.qml:152 app/JourneyQueryPage.qml:160
+#: app/DepartureQueryPage.qml:152 app/JourneyQueryPage.qml:172
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "Wczytaj późniejsze połączenia"
 
-#: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:167
+#: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:179
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
 msgstr "Dostawcy danych:"
 
-#: app/DepartureQueryPage.qml:169 app/JourneyQueryPage.qml:176
+#: app/DepartureQueryPage.qml:169 app/JourneyQueryPage.qml:188
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Loading"
 msgstr "Wczytywanie"
 
-#: app/DepartureQueryPage.qml:169 app/JourneyQueryPage.qml:178
+#: app/DepartureQueryPage.qml:169 app/JourneyQueryPage.qml:190
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:status"
@@ -2240,24 +2248,24 @@ msgctxt "@action:button"
 msgid "Show Map"
 msgstr "Pokaż mapę"
 
-#: app/JourneyQueryPage.qml:100 app/TransferPage.qml:244
+#: app/JourneyQueryPage.qml:112 app/TransferPage.qml:244
 #, kde-format
 msgid "Select"
 msgstr "Wybierz"
 
-#: app/JourneyQueryPage.qml:151 app/TransferPage.qml:312
+#: app/JourneyQueryPage.qml:163 app/TransferPage.qml:312
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr "Wczytaj wcześniejsze połączenia"
 
-#: app/JourneyQueryPage.qml:180
+#: app/JourneyQueryPage.qml:192
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No journeys found"
 msgstr "Nie znaleziono żadnej podróży"
 
-#: app/JourneyQueryPage.qml:226
+#: app/JourneyQueryPage.qml:238
 #, kde-format
 msgid "Still fetching results…"
 msgstr "Nadal pobieram wyniki…"
@@ -4472,7 +4480,7 @@ msgstr "Przyjazd"
 msgid "Arrival Vehicle Layout"
 msgstr "Układ pojazdu przyjeżdżającego"
 
-#: app/TrainPage.qml:346
+#: app/TrainPage.qml:352
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Add to Traewelling"
@@ -4480,13 +4488,13 @@ msgctxt "@action:button"
 msgid "Add to Träwelling"
 msgstr "Dodaje Traewelling"
 
-#: app/TrainPage.qml:391
+#: app/TrainPage.qml:397
 #, fuzzy, kde-format
 #| msgid "Added to Traewelling"
 msgid "Added to Träwelling"
 msgstr "Dodano do Traewelling"
 
-#: app/TrainPage.qml:391
+#: app/TrainPage.qml:397
 #, fuzzy, kde-format
 #| msgid "Failed to add to Traewelling"
 msgid "Failed to add to Träwelling"

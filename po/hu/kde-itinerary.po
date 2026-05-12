@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-27 00:44+0000\n"
+"POT-Creation-Date: 2026-05-12 00:45+0000\n"
 "PO-Revision-Date: 2024-03-26 16:14+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -503,13 +503,21 @@ msgid "Arrival time"
 msgstr "Érkezési idő"
 
 #: app/BoatPage.qml:191 app/BusPage.qml:273 app/FlightPage.qml:295
-#: app/TrainPage.qml:354
+#: app/JourneyQueryPage.qml:99 app/TrainPage.qml:345
+#, fuzzy, kde-format
+#| msgid "Booking"
+msgctxt "purchase a ticket"
+msgid "Book"
+msgstr "Foglalás"
+
+#: app/BoatPage.qml:197 app/BusPage.qml:279 app/FlightPage.qml:301
+#: app/TrainPage.qml:360
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternatívák"
 
-#: app/BoatPage.qml:199 app/BusPage.qml:278 app/JourneySectionPage.qml:27
-#: app/TrainPage.qml:360
+#: app/BoatPage.qml:205 app/BusPage.qml:284 app/JourneySectionPage.qml:27
+#: app/TrainPage.qml:366
 #, kde-format
 msgid "Journey Details"
 msgstr "Utazás részletei"
@@ -901,20 +909,20 @@ msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "Korábbi indulások betöltése"
 
-#: app/DepartureQueryPage.qml:152 app/JourneyQueryPage.qml:160
+#: app/DepartureQueryPage.qml:152 app/JourneyQueryPage.qml:172
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "Későbbi csatlakozások betöltése"
 
-#: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:167
+#: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:179
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
 msgstr "Adatszolgáltatók:"
 
-#: app/DepartureQueryPage.qml:169 app/JourneyQueryPage.qml:176
+#: app/DepartureQueryPage.qml:169 app/JourneyQueryPage.qml:188
 #: app/TransferPage.qml:336
 #, fuzzy, kde-format
 #| msgid "Boarding"
@@ -922,7 +930,7 @@ msgctxt "@info:placeholder"
 msgid "Loading"
 msgstr "Beszállás"
 
-#: app/DepartureQueryPage.qml:169 app/JourneyQueryPage.qml:178
+#: app/DepartureQueryPage.qml:169 app/JourneyQueryPage.qml:190
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:status"
@@ -2343,25 +2351,25 @@ msgctxt "@action:button"
 msgid "Show Map"
 msgstr "Térkép megjelenítése"
 
-#: app/JourneyQueryPage.qml:100 app/TransferPage.qml:244
+#: app/JourneyQueryPage.qml:112 app/TransferPage.qml:244
 #, kde-format
 msgid "Select"
 msgstr "Kiválasztás"
 
-#: app/JourneyQueryPage.qml:151 app/TransferPage.qml:312
+#: app/JourneyQueryPage.qml:163 app/TransferPage.qml:312
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr "Korábbi csatlakozások betöltése"
 
-#: app/JourneyQueryPage.qml:180
+#: app/JourneyQueryPage.qml:192
 #, fuzzy, kde-format
 #| msgid "No ticket found"
 msgctxt "@info:placeholder"
 msgid "No journeys found"
 msgstr "Nem található jegy"
 
-#: app/JourneyQueryPage.qml:226
+#: app/JourneyQueryPage.qml:238
 #, kde-format
 msgid "Still fetching results…"
 msgstr ""
@@ -4580,20 +4588,20 @@ msgstr "Érkezés"
 msgid "Arrival Vehicle Layout"
 msgstr ""
 
-#: app/TrainPage.qml:346
+#: app/TrainPage.qml:352
 #, fuzzy, kde-format
 #| msgid "Edit Boat Trip"
 msgctxt "@action:button"
 msgid "Add to Träwelling"
 msgstr "Hajókirándulás szerkesztése"
 
-#: app/TrainPage.qml:391
+#: app/TrainPage.qml:397
 #, fuzzy, kde-format
 #| msgid "Edit Boat Trip"
 msgid "Added to Träwelling"
 msgstr "Hajókirándulás szerkesztése"
 
-#: app/TrainPage.qml:391
+#: app/TrainPage.qml:397
 #, kde-format
 msgid "Failed to add to Träwelling"
 msgstr ""

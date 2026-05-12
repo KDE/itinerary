@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-27 00:44+0000\n"
+"POT-Creation-Date: 2026-05-12 00:45+0000\n"
 "PO-Revision-Date: 2026-04-26 22:11+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -477,13 +477,21 @@ msgid "Arrival time"
 msgstr "도착 시간"
 
 #: app/BoatPage.qml:191 app/BusPage.qml:273 app/FlightPage.qml:295
-#: app/TrainPage.qml:354
+#: app/JourneyQueryPage.qml:99 app/TrainPage.qml:345
+#, fuzzy, kde-format
+#| msgid "Booking"
+msgctxt "purchase a ticket"
+msgid "Book"
+msgstr "예약"
+
+#: app/BoatPage.qml:197 app/BusPage.qml:279 app/FlightPage.qml:301
+#: app/TrainPage.qml:360
 #, kde-format
 msgid "Alternatives"
 msgstr "대안"
 
-#: app/BoatPage.qml:199 app/BusPage.qml:278 app/JourneySectionPage.qml:27
-#: app/TrainPage.qml:360
+#: app/BoatPage.qml:205 app/BusPage.qml:284 app/JourneySectionPage.qml:27
+#: app/TrainPage.qml:366
 #, kde-format
 msgid "Journey Details"
 msgstr "여정 정보"
@@ -842,27 +850,27 @@ msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "이전 출발 불러오기"
 
-#: app/DepartureQueryPage.qml:152 app/JourneyQueryPage.qml:160
+#: app/DepartureQueryPage.qml:152 app/JourneyQueryPage.qml:172
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "이후 연결 표시"
 
-#: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:167
+#: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:179
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
 msgstr "데이터 공급자:"
 
-#: app/DepartureQueryPage.qml:169 app/JourneyQueryPage.qml:176
+#: app/DepartureQueryPage.qml:169 app/JourneyQueryPage.qml:188
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Loading"
 msgstr "불러오는 중"
 
-#: app/DepartureQueryPage.qml:169 app/JourneyQueryPage.qml:178
+#: app/DepartureQueryPage.qml:169 app/JourneyQueryPage.qml:190
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:status"
@@ -2197,24 +2205,24 @@ msgctxt "@action:button"
 msgid "Show Map"
 msgstr "지도 표시"
 
-#: app/JourneyQueryPage.qml:100 app/TransferPage.qml:244
+#: app/JourneyQueryPage.qml:112 app/TransferPage.qml:244
 #, kde-format
 msgid "Select"
 msgstr "선택"
 
-#: app/JourneyQueryPage.qml:151 app/TransferPage.qml:312
+#: app/JourneyQueryPage.qml:163 app/TransferPage.qml:312
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr "이전 연결 불러오기"
 
-#: app/JourneyQueryPage.qml:180
+#: app/JourneyQueryPage.qml:192
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No journeys found"
 msgstr "여정을 찾을 수 없음"
 
-#: app/JourneyQueryPage.qml:226
+#: app/JourneyQueryPage.qml:238
 #, kde-format
 msgid "Still fetching results…"
 msgstr "결과를 계속 가져오고 있습니다…"
@@ -4371,18 +4379,18 @@ msgstr "도착"
 msgid "Arrival Vehicle Layout"
 msgstr "도착하는 차량 구성"
 
-#: app/TrainPage.qml:346
+#: app/TrainPage.qml:352
 #, kde-format
 msgctxt "@action:button"
 msgid "Add to Träwelling"
 msgstr "Träwelling에 추가"
 
-#: app/TrainPage.qml:391
+#: app/TrainPage.qml:397
 #, kde-format
 msgid "Added to Träwelling"
 msgstr "Träwelling에 추가됨"
 
-#: app/TrainPage.qml:391
+#: app/TrainPage.qml:397
 #, kde-format
 msgid "Failed to add to Träwelling"
 msgstr "Träwelling에 추가할 수 없음"

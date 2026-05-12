@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-27 00:44+0000\n"
+"POT-Creation-Date: 2026-05-12 00:45+0000\n"
 "PO-Revision-Date: 2026-04-03 16:14+0200\n"
 "Last-Translator: Libor Filípek <filipek.libor@protonmail.com>\n"
 "Language-Team: \n"
@@ -484,13 +484,21 @@ msgid "Arrival time"
 msgstr "Čas příletu/příjezdu"
 
 #: app/BoatPage.qml:191 app/BusPage.qml:273 app/FlightPage.qml:295
-#: app/TrainPage.qml:354
+#: app/JourneyQueryPage.qml:99 app/TrainPage.qml:345
+#, fuzzy, kde-format
+#| msgid "Booking"
+msgctxt "purchase a ticket"
+msgid "Book"
+msgstr "Rezervace"
+
+#: app/BoatPage.qml:197 app/BusPage.qml:279 app/FlightPage.qml:301
+#: app/TrainPage.qml:360
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternativy"
 
-#: app/BoatPage.qml:199 app/BusPage.qml:278 app/JourneySectionPage.qml:27
-#: app/TrainPage.qml:360
+#: app/BoatPage.qml:205 app/BusPage.qml:284 app/JourneySectionPage.qml:27
+#: app/TrainPage.qml:366
 #, kde-format
 msgid "Journey Details"
 msgstr "Podrobnosti výletu"
@@ -849,27 +857,27 @@ msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "Načíst dřívější odjezdy"
 
-#: app/DepartureQueryPage.qml:152 app/JourneyQueryPage.qml:160
+#: app/DepartureQueryPage.qml:152 app/JourneyQueryPage.qml:172
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "Načíst pozdější spojení"
 
-#: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:167
+#: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:179
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
 msgstr "Poskytovatelé dat:"
 
-#: app/DepartureQueryPage.qml:169 app/JourneyQueryPage.qml:176
+#: app/DepartureQueryPage.qml:169 app/JourneyQueryPage.qml:188
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Loading"
 msgstr "Načítání"
 
-#: app/DepartureQueryPage.qml:169 app/JourneyQueryPage.qml:178
+#: app/DepartureQueryPage.qml:169 app/JourneyQueryPage.qml:190
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:status"
@@ -2211,24 +2219,24 @@ msgctxt "@action:button"
 msgid "Show Map"
 msgstr "Zobrazit mapu"
 
-#: app/JourneyQueryPage.qml:100 app/TransferPage.qml:244
+#: app/JourneyQueryPage.qml:112 app/TransferPage.qml:244
 #, kde-format
 msgid "Select"
 msgstr "Vybrat"
 
-#: app/JourneyQueryPage.qml:151 app/TransferPage.qml:312
+#: app/JourneyQueryPage.qml:163 app/TransferPage.qml:312
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr "Načíst dřívější spojení"
 
-#: app/JourneyQueryPage.qml:180
+#: app/JourneyQueryPage.qml:192
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No journeys found"
 msgstr "Nebyly nalezeny žádné cesty"
 
-#: app/JourneyQueryPage.qml:226
+#: app/JourneyQueryPage.qml:238
 #, kde-format
 msgid "Still fetching results…"
 msgstr "Stále se načítají výsledky…"
@@ -4417,18 +4425,18 @@ msgstr "Příjezd"
 msgid "Arrival Vehicle Layout"
 msgstr "Řazení na příjezdu"
 
-#: app/TrainPage.qml:346
+#: app/TrainPage.qml:352
 #, kde-format
 msgctxt "@action:button"
 msgid "Add to Träwelling"
 msgstr "Přidat do Traewelling"
 
-#: app/TrainPage.qml:391
+#: app/TrainPage.qml:397
 #, kde-format
 msgid "Added to Träwelling"
 msgstr "Přidáno do Traewelling"
 
-#: app/TrainPage.qml:391
+#: app/TrainPage.qml:397
 #, kde-format
 msgid "Failed to add to Träwelling"
 msgstr "Přidání Traewelling selhalo"

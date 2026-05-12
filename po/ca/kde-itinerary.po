@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-27 00:44+0000\n"
-"PO-Revision-Date: 2026-03-29 13:47+0200\n"
+"POT-Creation-Date: 2026-05-12 00:45+0000\n"
+"PO-Revision-Date: 2026-05-11 09:22+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -484,13 +484,21 @@ msgid "Arrival time"
 msgstr "Hora d'arribada"
 
 #: app/BoatPage.qml:191 app/BusPage.qml:273 app/FlightPage.qml:295
-#: app/TrainPage.qml:354
+#: app/JourneyQueryPage.qml:99 app/TrainPage.qml:345
+#, fuzzy, kde-format
+#| msgid "Booking"
+msgctxt "purchase a ticket"
+msgid "Book"
+msgstr "Reserva"
+
+#: app/BoatPage.qml:197 app/BusPage.qml:279 app/FlightPage.qml:301
+#: app/TrainPage.qml:360
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternatives"
 
-#: app/BoatPage.qml:199 app/BusPage.qml:278 app/JourneySectionPage.qml:27
-#: app/TrainPage.qml:360
+#: app/BoatPage.qml:205 app/BusPage.qml:284 app/JourneySectionPage.qml:27
+#: app/TrainPage.qml:366
 #, kde-format
 msgid "Journey Details"
 msgstr "Detalls del viatge"
@@ -849,27 +857,27 @@ msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "Carrega les sortides anteriors"
 
-#: app/DepartureQueryPage.qml:152 app/JourneyQueryPage.qml:160
+#: app/DepartureQueryPage.qml:152 app/JourneyQueryPage.qml:172
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "Carrega les connexions posteriors"
 
-#: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:167
+#: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:179
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
 msgstr "Proveïdors de dades:"
 
-#: app/DepartureQueryPage.qml:169 app/JourneyQueryPage.qml:176
+#: app/DepartureQueryPage.qml:169 app/JourneyQueryPage.qml:188
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Loading"
 msgstr "S'està carregant"
 
-#: app/DepartureQueryPage.qml:169 app/JourneyQueryPage.qml:178
+#: app/DepartureQueryPage.qml:169 app/JourneyQueryPage.qml:190
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:status"
@@ -1858,12 +1866,12 @@ msgstr "Sortida %1"
 #: app/HotelDelegate.qml:49
 #, kde-format
 msgid "Check-in time: %1"
-msgstr "Hora de la facturació: %1"
+msgstr "Hora d'entrada: %1"
 
 #: app/HotelDelegate.qml:55 app/HotelDelegate.qml:56
 #, kde-format
 msgid "Check-out time: %1"
-msgstr "Hora de la sortida: %1"
+msgstr "Hora de sortida: %1"
 
 #: app/HotelEditor.qml:19
 #, kde-format
@@ -1932,12 +1940,12 @@ msgstr "Reserva d'hotel"
 #: app/HotelPage.qml:65
 #, kde-format
 msgid "Check-in time"
-msgstr "Hora de la facturació"
+msgstr "Hora d'entrada"
 
 #: app/HotelPage.qml:72
 #, kde-format
 msgid "Check-out time"
-msgstr "Hora de la sortida"
+msgstr "Hora de sortida"
 
 #: app/ImportAction.qml:23 app/TripGroupPage.qml:518
 #, kde-format
@@ -2206,24 +2214,24 @@ msgctxt "@action:button"
 msgid "Show Map"
 msgstr "Mostra el mapa"
 
-#: app/JourneyQueryPage.qml:100 app/TransferPage.qml:244
+#: app/JourneyQueryPage.qml:112 app/TransferPage.qml:244
 #, kde-format
 msgid "Select"
 msgstr "Selecciona"
 
-#: app/JourneyQueryPage.qml:151 app/TransferPage.qml:312
+#: app/JourneyQueryPage.qml:163 app/TransferPage.qml:312
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr "Carrega les connexions anteriors"
 
-#: app/JourneyQueryPage.qml:180
+#: app/JourneyQueryPage.qml:192
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No journeys found"
 msgstr "No s'ha trobat cap viatge"
 
-#: app/JourneyQueryPage.qml:226
+#: app/JourneyQueryPage.qml:238
 #, kde-format
 msgid "Still fetching results…"
 msgstr "Encara s'estan recuperant els resultats…"
@@ -4434,18 +4442,18 @@ msgstr "Arribada"
 msgid "Arrival Vehicle Layout"
 msgstr "Disposició del vehicle d'arribada"
 
-#: app/TrainPage.qml:346
+#: app/TrainPage.qml:352
 #, kde-format
 msgctxt "@action:button"
 msgid "Add to Träwelling"
 msgstr "Afegeix a Träwelling"
 
-#: app/TrainPage.qml:391
+#: app/TrainPage.qml:397
 #, kde-format
 msgid "Added to Träwelling"
 msgstr "Afegit a Träwelling"
 
-#: app/TrainPage.qml:391
+#: app/TrainPage.qml:397
 #, kde-format
 msgid "Failed to add to Träwelling"
 msgstr "Ha fallat en afegir a Träwelling"
