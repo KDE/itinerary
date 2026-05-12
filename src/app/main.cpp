@@ -256,6 +256,7 @@ int main(int argc, char **argv)
     QCommandLineOption pageOpt(QStringLiteral("page"), i18nc("@info:shell", "Open Itinerary on the given page"), QStringLiteral("page"));
     parser.addOption(pageOpt);
     QCommandLineOption selfTestOpt(QStringLiteral("self-test"), QStringLiteral("internal, for automated testing"));
+    selfTestOpt.setFlags(QCommandLineOption::HiddenFromHelp);
     parser.addOption(selfTestOpt);
     aboutData.setupCommandLine(&parser);
     parser.addPositionalArgument(QStringLiteral("file"), i18nc("@info:shell", "Files or URLs to import."));
