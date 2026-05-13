@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-23 02:34+0000\n"
-"PO-Revision-Date: 2026-03-29 13:47+0200\n"
+"PO-Revision-Date: 2026-05-11 09:22+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -1876,12 +1876,12 @@ msgstr "Eixida %1"
 #: app/HotelDelegate.qml:49
 #, kde-format
 msgid "Check-in time: %1"
-msgstr "Hora de la facturació: %1"
+msgstr "Hora d'entrada: %1"
 
 #: app/HotelDelegate.qml:55 app/HotelDelegate.qml:56
 #, kde-format
 msgid "Check-out time: %1"
-msgstr "Hora de l'eixida: %1"
+msgstr "Hora d'eixida: %1"
 
 #: app/HotelEditor.qml:19
 #, kde-format
@@ -1950,12 +1950,12 @@ msgstr "Reserva d'hotel"
 #: app/HotelPage.qml:65
 #, kde-format
 msgid "Check-in time"
-msgstr "Hora de la facturació"
+msgstr "Hora d'entrada"
 
 #: app/HotelPage.qml:72
 #, kde-format
 msgid "Check-out time"
-msgstr "Hora de l'eixida"
+msgstr "Hora d'eixida"
 
 #: app/ImportAction.qml:23 app/TripGroupPage.qml:518
 #, kde-format
