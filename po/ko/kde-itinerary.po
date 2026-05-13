@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-12 00:45+0000\n"
+"POT-Creation-Date: 2026-05-13 00:46+0000\n"
 "PO-Revision-Date: 2026-04-26 22:11+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -2810,7 +2810,7 @@ msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "지정한 페이지의 여행 정보 열기"
 
-#: app/main.cpp:261
+#: app/main.cpp:262
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."

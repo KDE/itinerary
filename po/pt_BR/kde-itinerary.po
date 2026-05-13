@@ -6,13 +6,13 @@
 # Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2019, 2020, 2021, 2022, 2023.
 # SPDX-FileCopyrightText: 2023, 2025 Geraldo Simiao <geraldosimiao@fedoraproject.org>
 # SPDX-FileCopyrightText: 2025, 2026 Guilherme Marçal Silva <guimarcalsilva@gmail.com>
-# SPDX-FileCopyrightText: 2025, 2026 Marcus Gama <marcus.gama@gmail.com>
+# SPDX-FileCopyrightText: 2025-2026 Marcus Gama <marcus.gama@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-12 00:45+0000\n"
-"PO-Revision-Date: 2026-03-23 09:39-0300\n"
+"POT-Creation-Date: 2026-05-13 00:46+0000\n"
+"PO-Revision-Date: 2026-05-12 06:41-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.04.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -488,11 +488,10 @@ msgstr "Hora de chegada"
 
 #: app/BoatPage.qml:191 app/BusPage.qml:273 app/FlightPage.qml:295
 #: app/JourneyQueryPage.qml:99 app/TrainPage.qml:345
-#, fuzzy, kde-format
-#| msgid "Booking"
+#, kde-format
 msgctxt "purchase a ticket"
 msgid "Book"
-msgstr "Reserva"
+msgstr "Reservar"
 
 #: app/BoatPage.qml:197 app/BusPage.qml:279 app/FlightPage.qml:301
 #: app/TrainPage.qml:360
@@ -2826,7 +2825,7 @@ msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Abrir Itinerary na página fornecida"
 
-#: app/main.cpp:261
+#: app/main.cpp:262
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."

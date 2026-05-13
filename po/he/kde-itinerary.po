@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the itinerary package.
 #
-# SPDX-FileCopyrightText: 2024, 2025, 2026 Yaron Shahrabani <sh.yaron@gmail.com>
+# SPDX-FileCopyrightText: 2024-2026 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-12 00:45+0000\n"
-"PO-Revision-Date: 2026-03-24 21:00+0200\n"
+"POT-Creation-Date: 2026-05-13 00:46+0000\n"
+"PO-Revision-Date: 2026-05-12 08:23+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -487,8 +487,7 @@ msgstr "זמן ההגעה"
 
 #: app/BoatPage.qml:191 app/BusPage.qml:273 app/FlightPage.qml:295
 #: app/JourneyQueryPage.qml:99 app/TrainPage.qml:345
-#, fuzzy, kde-format
-#| msgid "Booking"
+#, kde-format
 msgctxt "purchase a ticket"
 msgid "Book"
 msgstr "הזמנה"
@@ -2825,7 +2824,7 @@ msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "פתיחת תוכנית המסע בעמוד הנבחר"
 
-#: app/main.cpp:261
+#: app/main.cpp:262
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."

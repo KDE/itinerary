@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-12 00:45+0000\n"
-"PO-Revision-Date: 2026-04-29 12:24+0200\n"
+"POT-Creation-Date: 2026-05-13 00:46+0000\n"
+"PO-Revision-Date: 2026-05-12 12:19+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -484,11 +484,10 @@ msgstr "Tempore de arrivata"
 
 #: app/BoatPage.qml:191 app/BusPage.qml:273 app/FlightPage.qml:295
 #: app/JourneyQueryPage.qml:99 app/TrainPage.qml:345
-#, fuzzy, kde-format
-#| msgid "Booking"
+#, kde-format
 msgctxt "purchase a ticket"
 msgid "Book"
-msgstr "Reservation (Booking)"
+msgstr "Reserva"
 
 #: app/BoatPage.qml:197 app/BusPage.qml:279 app/FlightPage.qml:301
 #: app/TrainPage.qml:360
@@ -2821,7 +2820,7 @@ msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Aperi Itinerary sur le pagina date"
 
-#: app/main.cpp:261
+#: app/main.cpp:262
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."

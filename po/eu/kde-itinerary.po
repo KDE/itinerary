@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-12 00:45+0000\n"
+"POT-Creation-Date: 2026-05-13 00:46+0000\n"
 "PO-Revision-Date: 2026-01-04 10:58+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -2832,7 +2832,7 @@ msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Ireki ibilbidea adierazitako orrian"
 
-#: app/main.cpp:261
+#: app/main.cpp:262
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."

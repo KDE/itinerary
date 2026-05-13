@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-12 00:45+0000\n"
-"PO-Revision-Date: 2026-03-29 13:47+0200\n"
+"POT-Creation-Date: 2026-05-13 00:46+0000\n"
+"PO-Revision-Date: 2026-05-12 08:24+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -485,8 +485,7 @@ msgstr "Hora d'arribada"
 
 #: app/BoatPage.qml:191 app/BusPage.qml:273 app/FlightPage.qml:295
 #: app/JourneyQueryPage.qml:99 app/TrainPage.qml:345
-#, fuzzy, kde-format
-#| msgid "Booking"
+#, kde-format
 msgctxt "purchase a ticket"
 msgid "Book"
 msgstr "Reserva"
@@ -1866,12 +1865,12 @@ msgstr "Eixida %1"
 #: app/HotelDelegate.qml:49
 #, kde-format
 msgid "Check-in time: %1"
-msgstr "Hora de la facturació: %1"
+msgstr "Hora d'entrada: %1"
 
 #: app/HotelDelegate.qml:55 app/HotelDelegate.qml:56
 #, kde-format
 msgid "Check-out time: %1"
-msgstr "Hora de l'eixida: %1"
+msgstr "Hora d'eixida: %1"
 
 #: app/HotelEditor.qml:19
 #, kde-format
@@ -1940,12 +1939,12 @@ msgstr "Reserva d'hotel"
 #: app/HotelPage.qml:65
 #, kde-format
 msgid "Check-in time"
-msgstr "Hora de la facturació"
+msgstr "Hora d'entrada"
 
 #: app/HotelPage.qml:72
 #, kde-format
 msgid "Check-out time"
-msgstr "Hora de l'eixida"
+msgstr "Hora d'eixida"
 
 #: app/ImportAction.qml:23 app/TripGroupPage.qml:518
 #, kde-format
@@ -2826,7 +2825,7 @@ msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Obri l'itinerari a la pàgina indicada"
 
-#: app/main.cpp:261
+#: app/main.cpp:262
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
