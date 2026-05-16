@@ -293,9 +293,6 @@ FormCard.FormCardPage {
             visible: !MatrixController.manager.connected
             text: MatrixController.manager.userId
         }
-        FormCard.FormDelegateSeparator {
-            visible: matrixId.visible
-        }
         FormCard.FormTextFieldDelegate {
             id: matrixPassword
             label: i18n("Password")
@@ -304,6 +301,30 @@ FormCard.FormCardPage {
             onAccepted: {
                 MatrixController.manager.login(matrixId.text, matrixPassword.text);
             }
+        }
+        FormCard.FormButtonDelegate {
+            id: loginButton
+            text: MatrixController.manager.connected ? i18n("Log out") : i18n("Log in")
+            onClicked: MatrixController.manager.connected ? MatrixController.manager.logout() : MatrixController.manager.login(matrixId.text, matrixPassword.text)
+            enabled: MatrixController.manager.connected || (matrixId.text.length > 0 && matrixPassword.text.length > 0)
+        }
+        FormCard.FormDelegateSeparator {
+            visible: matrixId.visible
+        }
+        FormCard.FormTextFieldDelegate {
+            id: matrixOidcServer
+            label: i18nc("@label", "Homeserver url")
+            visible: !MatrixController.manager.connected
+        }
+        FormCard.FormLinkDelegate {
+            text: MatrixController.manager.ssoUrl
+            visible: MatrixController.manager.ssoUrl.length > 0
+        }
+        FormCard.FormButtonDelegate {
+            text: i18nc("@action:button", "Login with OIDC")
+            enabled: matrixOidcServer.text.length  > 0
+            visible: !MatrixController.manager.connected
+            onClicked: MatrixController.manager.loginWithOidc(matrixOidcServer.text)
         }
         FormCard.FormDelegateSeparator {
             visible: matrixSessionVerified.visible
@@ -316,12 +337,6 @@ FormCard.FormCardPage {
             visible: MatrixController.manager.connected
         }
         FormCard.FormDelegateSeparator { above: loginButton }
-        FormCard.FormButtonDelegate {
-            id: loginButton
-            text: MatrixController.manager.connected ? i18n("Log out") : i18n("Log in")
-            onClicked: MatrixController.manager.connected ? MatrixController.manager.logout() : MatrixController.manager.login(matrixId.text, matrixPassword.text)
-            enabled: MatrixController.manager.connected || (matrixId.text.length > 0 && matrixPassword.text.length > 0)
-        }
     }
 
     FormCard.FormHeader {

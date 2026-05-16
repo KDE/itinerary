@@ -8,6 +8,7 @@
 
 #include <KLocalizedString>
 #include <QCoreApplication>
+#include <QDesktopServices>
 
 using namespace Quotient;
 
@@ -59,23 +60,7 @@ void MatrixManager::login(const QString &matrixId, const QString &password)
         connection->loginWithPassword(username, password, m_deviceName, {});
     }, Qt::SingleShotConnection);
 
-    connect(connection, &Connection::connected, this, [this, connection] {
-        AccountSettings account(connection->userId());
-        account.setKeepLoggedIn(true);
-        account.setHomeserver(connection->homeserver());
-        account.setDeviceId(connection->deviceId());
-        account.setDeviceName(m_deviceName);
-        account.sync();
-        m_accountRegistry.add(connection);
-        connection->setLazyLoading(true);
-        connection->syncLoop();
-    }, Qt::SingleShotConnection);
-
-    connect(connection, &Connection::loginError, this, [this](const QString &message) {
-        setInfoString(message);
-    });
-
-    setInfoString(i18n("Logging in…"));
+    initializeConnection(connection);
 }
 
 QString MatrixManager::infoString() const
@@ -165,6 +150,55 @@ void MatrixManager::postLocation(const QString &roomId, float latitude, float lo
                                      {QLatin1StringView("description"), description}}}};
 
     postEvent(roomId, QLatin1StringView("m.room.message"), content);
+}
+
+void MatrixManager::initializeConnection(Connection *connection)
+{
+    connect(connection, &Connection::connected, this, [this, connection] {
+        m_ssoUrl.clear();
+        Q_EMIT ssoUrlChanged();
+        AccountSettings account(connection->userId());
+        account.setKeepLoggedIn(true);
+        account.setHomeserver(connection->homeserver());
+        account.setDeviceId(connection->deviceId());
+        account.setDeviceName(m_deviceName);
+        account.sync();
+        m_accountRegistry.add(connection);
+        connection->setLazyLoading(true);
+        connection->syncLoop();
+    }, Qt::SingleShotConnection);
+    connect(connection, &Connection::loginError, this, [this](const QString &message) {
+        setInfoString(message);
+    });
+    setInfoString(i18n("Logging in…"));
+}
+
+void MatrixManager::loginWithOidc(const QString &server)
+{
+    if (connected()) {
+        qWarning() << "Triggering login while already connected!?";
+        return;
+    }
+    if (m_deviceName.isEmpty()) {
+        m_deviceName = qAppName();
+    }
+
+    auto connection = new Connection(this);
+    initializeConnection(connection);
+
+    connection->resolveServer(u"@foo:" + server);
+    connect(connection, &Connection::loginFlowsChanged, this, [this, connection]() {
+        auto session = connection->prepareForSso(m_deviceName);
+        QDesktopServices::openUrl(session->ssoUrl());
+        m_ssoUrl = session->ssoUrl().toString();
+        Q_EMIT ssoUrlChanged();
+    },
+    Qt::SingleShotConnection);
+}
+
+QString MatrixManager::ssoUrl() const
+{
+    return m_ssoUrl;
 }
 
 #include "moc_matrixmanager.cpp"

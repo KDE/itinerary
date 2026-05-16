@@ -17,6 +17,7 @@ class MatrixManager : public QObject
     Q_PROPERTY(QString userId READ userId NOTIFY userIdChanged)
     Q_PROPERTY(bool isVerifiedSession READ isVerifiedSession NOTIFY sessionVerifiedChanged)
     Q_PROPERTY(Quotient::Connection *connection READ connection NOTIFY connectionChanged)
+    Q_PROPERTY(QString ssoUrl READ ssoUrl NOTIFY ssoUrlChanged)
 
 public:
     explicit MatrixManager(QObject *parent = nullptr);
@@ -30,6 +31,8 @@ public:
      * @param password
      */
     Q_INVOKABLE void login(const QString &matrixId, const QString &password);
+
+    Q_INVOKABLE void loginWithOidc(const QString &server);
 
     /**
      * Log out of the connection
@@ -50,17 +53,22 @@ public:
     Q_INVOKABLE void postLocation(const QString &roomId, float latitude, float longitude, const QString &description);
     void postEvent(const QString &roomId, const QString &type, const QJsonObject &content);
 
+    QString ssoUrl() const;
+
 Q_SIGNALS:
     void connectedChanged();
     void infoStringChanged();
     void userIdChanged();
     void sessionVerifiedChanged();
     void connectionChanged();
+    void ssoUrlChanged();
 
 private:
     QString m_infoString;
     QString m_deviceName;
     Quotient::AccountRegistry m_accountRegistry;
+    void initializeConnection(Quotient::Connection *connection);
+    QString m_ssoUrl;
 
     void setInfoString(const QString &infoString);
 };
