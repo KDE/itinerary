@@ -8,7 +8,13 @@ ecm_add_qml_module(KMatrix
     DEPENDENCIES "QtCore"
 )
 
+
 if (HAVE_MATRIX)
+    if(NOT TARGET Olm::Olm)
+        target_compile_definitions(KMatrix PRIVATE -DRUST_CRYPTO=1)
+    else()
+        target_compile_definitions(KMatrix PRIVATE -DRUST_CRYPTO=0)
+    endif()
     target_sources(KMatrix PRIVATE
         matrixbeacon.cpp
         matrixmanager.cpp

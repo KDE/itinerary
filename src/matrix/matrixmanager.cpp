@@ -96,7 +96,11 @@ bool MatrixManager::isVerifiedSession() const
     const auto c = connection();
     // check for database/olmAccount here as isVerifiedDevice doesn't
     // which will cause a crash if the account is in a broken state
+#if RUST_CRYPTO
+    return c && c->isVerifiedDevice(c->userId(), c->deviceId());
+#else
     return c && c->database() && c->olmAccount() && c->isVerifiedDevice(c->userId(), c->deviceId());
+#endif
 }
 
 void MatrixManager::setInfoString(const QString &infoString)
