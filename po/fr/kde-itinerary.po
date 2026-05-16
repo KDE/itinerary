@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023, 2024, 2025, 2026 Xavier Besnard <xavier.besnard@kde.org>
+# SPDX-FileCopyrightText: 2020-2026 Xavier Besnard <xavier.besnard@kde.org>
 # Simon Depiets <sdepiets@gmail.com>, 2019, 2020.
 # Xavier Besnard <xavier.besnard@kde.org>, 2023.
 # Thomas Vergnaud <thomas.vergnaud@mailo.eu>, 2023.
@@ -7,9 +7,9 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-13 00:46+0000\n"
-"PO-Revision-Date: 2026-03-24 12:51+0100\n"
+"PO-Revision-Date: 2026-05-14 21:30+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
-"Language-Team: \n"
+"Language-Team: fr\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Accelerator-Marker: &\n"
 "X-Environment: kde\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.04.1\n"
 "X-Text-Markup: kde4\n"
 
 #, kde-format
@@ -488,11 +488,10 @@ msgstr "Heure d'arrivée"
 
 #: app/BoatPage.qml:191 app/BusPage.qml:273 app/FlightPage.qml:295
 #: app/JourneyQueryPage.qml:99 app/TrainPage.qml:345
-#, fuzzy, kde-format
-#| msgid "Booking"
+#, kde-format
 msgctxt "purchase a ticket"
 msgid "Book"
-msgstr "Réservations"
+msgstr "Réserver"
 
 #: app/BoatPage.qml:197 app/BusPage.qml:279 app/FlightPage.qml:301
 #: app/TrainPage.qml:360
