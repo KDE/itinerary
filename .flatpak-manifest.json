@@ -4,6 +4,9 @@
     "runtime": "org.kde.Platform",
     "runtime-version": "6.10",
     "sdk": "org.kde.Sdk",
+    "sdk-extensions" : [
+        "org.freedesktop.Sdk.Extension.rust-stable"
+    ],
     "command": "itinerary",
     "tags": [
         "nightly"
@@ -29,6 +32,13 @@
         "*.la",
         "*.a"
     ],
+    "build-options": {
+        "append-path": "/usr/lib/sdk/rust-stable/bin",
+        "env": {
+            "CARGO_NET_OFFLINE": "true",
+            "RUSTFLAGS": "--remap-path-prefix =../"
+        }
+    },
     "modules": [
         {
             "name": "poppler",
@@ -277,11 +287,16 @@
             "name": "libQuotient",
             "buildsystem": "cmake-ninja",
             "sources": [
+                "flatpak/generated-sources.json",
                 {
                     "type": "git",
                     "url": "https://github.com/quotient-im/libQuotient.git",
-                    "branch": "0.9.x",
+                    "branch": "dev",
                     "disable-submodules": true
+                },
+                {
+                    "type": "patch",
+                    "path": "flatpak/libquotient-cmake.patch"
                 }
             ],
             "config-opts": [
@@ -293,26 +308,20 @@
             "cleanup": [
                 "/share/ndk-modules"
             ],
+            "build-options": {
+                "env": {
+                    "CARGO_HOME": "/run/build/libQuotient/cargo"
+                }
+            },
             "modules": [
                 {
-                    "name": "olm",
+                    "name": "corrosion",
                     "buildsystem": "cmake-ninja",
-                    "builddir": true,
-                    "config-opts": [
-                        "-DOLM_TESTS=OFF",
-                        "-DCMAKE_BUILD_TYPE=Release",
-                        "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
-                    ],
                     "sources": [
                         {
-                            "type": "archive",
-                            "url": "https://gitlab.matrix.org/matrix-org/olm/-/archive/3.2.16/olm-3.2.16.tar.gz",
-                            "sha256": "1e90f9891009965fd064be747616da46b232086fe270b77605ec9bda34272a68",
-                            "x-checker-data": {
-                                "type": "anitya",
-                                "project-id": 29706,
-                                "url-template": "https://gitlab.matrix.org/matrix-org/olm/-/archive/$version/olm-$version.tar.gz"
-                            }
+                            "type": "git",
+                            "url": "https://github.com/corrosion-rs/corrosion",
+                            "tag": "v0.6.0"
                         }
                     ]
                 }
