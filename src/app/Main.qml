@@ -42,27 +42,8 @@ Kirigami.ApplicationWindow {
             style: Kirigami.ApplicationHeaderStyle.ToolBar
             showNavigationButtons: pageStack.currentIndex > 0 || pageStack.layers.depth > 1 ? Kirigami.ApplicationHeaderStyle.ShowBackButton : 0
         }
-    }
 
-    // pop pages when not in use
-    Connections {
-        target: applicationWindow().pageStack
-
-        function onCurrentIndexChanged(): void {
-            // wait for animation to finish before popping pages
-            timer.restart();
-        }
-    }
-
-    Timer {
-        id: timer
-        interval: 300
-        onTriggered: {
-            let currentIndex = applicationWindow().pageStack.currentIndex;
-            while (applicationWindow().pageStack.depth > (currentIndex + 1) && currentIndex >= 0) {
-                applicationWindow().pageStack.pop();
-            }
-        }
+        popHiddenPages: true
     }
 
     footer: NavigationBar {
