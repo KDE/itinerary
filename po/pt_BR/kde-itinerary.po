@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-13 00:46+0000\n"
+"POT-Creation-Date: 2026-05-18 00:45+0000\n"
 "PO-Revision-Date: 2026-05-12 06:41-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -3857,7 +3857,7 @@ msgstr "Permissões adicionais são necessárias para mostrar notificações."
 msgid "Notification permissions are available"
 msgstr "Permissões de notificação estão disponíveis"
 
-#: app/SettingsPage.qml:194 app/SettingsPage.qml:236 app/SettingsPage.qml:314
+#: app/SettingsPage.qml:194 app/SettingsPage.qml:236 app/SettingsPage.qml:335
 #: app/WelcomePage.qml:79
 #, kde-format
 msgid "No further action required."
@@ -3920,7 +3920,7 @@ msgstr ""
 msgid "Matrix Integration"
 msgstr "Integração com Matrix"
 
-#: app/SettingsPage.qml:281 app/SettingsPage.qml:338
+#: app/SettingsPage.qml:281 app/SettingsPage.qml:353
 #, kde-format
 msgid "Logged in as %1"
 msgstr "Logado como %1"
@@ -3935,45 +3935,57 @@ msgstr "Sincronizar salas"
 msgid "Matrix ID"
 msgstr "ID Matrix"
 
-#: app/SettingsPage.qml:301
+#: app/SettingsPage.qml:298
 #, kde-format
 msgid "Password"
 msgstr "Senha"
 
-#: app/SettingsPage.qml:313
+#: app/SettingsPage.qml:307
+#, kde-format
+msgid "Log out"
+msgstr "Sair"
+
+#: app/SettingsPage.qml:307
+#, kde-format
+msgid "Log in"
+msgstr "Entrar"
+
+#: app/SettingsPage.qml:316
+#, kde-format
+msgctxt "@label"
+msgid "Homeserver url"
+msgstr ""
+
+#: app/SettingsPage.qml:324
+#, kde-format
+msgctxt "@action:button"
+msgid "Login with OIDC"
+msgstr ""
+
+#: app/SettingsPage.qml:334
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Session verified"
 msgstr "Sessão verificada"
 
-#: app/SettingsPage.qml:313
+#: app/SettingsPage.qml:334
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Session not verified."
 msgstr "Sessão não verificada."
 
-#: app/SettingsPage.qml:314
+#: app/SettingsPage.qml:335
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Initiate session verification in your Matrix chat client."
 msgstr "Inicie a verificação da sessão no seu cliente de bate-papo Matrix."
 
-#: app/SettingsPage.qml:321
-#, kde-format
-msgid "Log out"
-msgstr "Sair"
-
-#: app/SettingsPage.qml:321
-#, kde-format
-msgid "Log in"
-msgstr "Entrar"
-
-#: app/SettingsPage.qml:328
+#: app/SettingsPage.qml:343
 #, kde-format
 msgid "Träwelling Integration"
 msgstr "Integração Träwelling"
 
-#: app/SettingsPage.qml:333
+#: app/SettingsPage.qml:348
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -3986,27 +3998,27 @@ msgstr ""
 "transporte público. Para mais informações, visite <a href=\"https://"
 "traewelling.de\">traewelling.de</a>"
 
-#: app/SettingsPage.qml:341
+#: app/SettingsPage.qml:356
 #, kde-format
 msgid "Login"
 msgstr "Login"
 
-#: app/SettingsPage.qml:346
+#: app/SettingsPage.qml:361
 #, kde-format
 msgid "Logout"
 msgstr "Encerrar sessão"
 
-#: app/SettingsPage.qml:353
+#: app/SettingsPage.qml:368
 #, kde-format
 msgid "Contributing"
 msgstr "Contribuindo"
 
-#: app/SettingsPage.qml:357
+#: app/SettingsPage.qml:372
 #, kde-format
 msgid "I contribute to OpenStreetMap"
 msgstr "Eu contribuo com o OpenStreetMap"
 
-#: app/SettingsPage.qml:358
+#: app/SettingsPage.qml:373
 #, kde-format
 msgid "Enables OSM editing options."
 msgstr "Habilitar opções de edição OSM."
@@ -4947,25 +4959,25 @@ msgstr "Permissões"
 msgid "Done!"
 msgstr "Pronto!"
 
-#: matrix/matrixmanager.cpp:22 matrix/matrixmanager.cpp:131
+#: matrix/matrixmanager.cpp:23 matrix/matrixmanager.cpp:120
 #, kde-format
 msgid "Syncing…"
 msgstr "Sincronizando…"
 
-#: matrix/matrixmanager.cpp:56
+#: matrix/matrixmanager.cpp:57
 #, kde-format
 msgid "This server does not support logging in using a password"
 msgstr "Este servidor não suporta login usando uma senha"
 
-#: matrix/matrixmanager.cpp:78
-#, kde-format
-msgid "Logging in…"
-msgstr "Entrando…"
-
-#: matrix/matrixmanager.cpp:116
+#: matrix/matrixmanager.cpp:105
 #, kde-format
 msgid "Logged out"
 msgstr "Sessão encerrada"
+
+#: matrix/matrixmanager.cpp:173
+#, kde-format
+msgid "Logging in…"
+msgstr "Entrando…"
 
 #: metadataextractor/itineraryextractor.cpp:118
 #, kde-format
