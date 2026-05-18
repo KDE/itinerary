@@ -5284,6 +5284,7 @@
           <li xml:lang="he">מתן אפשרות להוסיף נסיעות רכבת משאילתת מסע מקוון לציר הזמן.</li>
           <li xml:lang="it">Consente di aggiungere viaggi in treno da una query di viaggio online alla linea temporale.</li>
           <li xml:lang="ka">ონლაინ ძიებიდან მატარებლის მგზავრობების ქრონოლოგიაში დამატების ნებართვა.</li>
+          <li xml:lang="nl">Hiermee kunnen treinreizen uit een online reisaanvraag aan de tijdlijn worden toegevoegd.</li>
           <li xml:lang="pt-BR">Permitir adicionar viagens de trem a partir de uma consulta de viagens online à linha do tempo.</li>
           <li xml:lang="ru">Возможность добавления поездок на поезде из онлайн-запроса маршрута на временную шкалу.</li>
           <li xml:lang="sk">Umožniť pridať vlakové výlety z online dotazu na cestu na časovú os.</li>
@@ -5300,6 +5301,7 @@
           <li xml:lang="he">מחלצים חדשים או משופרים ל־Renfe,‏ SNCF,‏ ÖBB,‏ Spring Airlines,‏ Peach Aviation.</li>
           <li xml:lang="it">Estrattori nuovi o migliorati per Renfe, SNCF, ÖBB, Spring Airlines, Peach Aviation.</li>
           <li xml:lang="ka">ახალი ან გაუმჯობესებული ამომკრებები Renfe, SNCF, ÖBB, Spring Airlines, Peach Aviation სისტემებისთვის.</li>
+          <li xml:lang="nl">Nieuwe of verbeterde extractors voor Renfe, SNCF, ÖBB, Spring Airlines, Peach Aviation.</li>
           <li xml:lang="pt-BR">Extratores novos ou aprimorados para Renfe, SNCF, ÖBB, Spring Airlines e Peach Aviation.</li>
           <li xml:lang="ru">Новые или улучшенные модули извлечения данных из проездных документов для Renfe, SNCF, ÖBB, Spring Airlines, Peach Aviation.</li>
           <li xml:lang="sk">New or improved extractors for Renfe, SNCF, ÖBB, Spring Airlines, Peach Aviation.</li>
@@ -5316,6 +5318,7 @@
           <li xml:lang="he">הדגשת תנאי מזג אוויר קשים בדיווחי מזג האוויר.</li>
           <li xml:lang="it">Evidenzia le condizioni meteorologiche avverse nelle previsioni del tempo.</li>
           <li xml:lang="ka">რთული მეტეოროლოგიური პირობების გამოკვეთა ამინდის პროგნოზში.</li>
+          <li xml:lang="nl">Accentueer extreme weersomstandigheden in de weersvoorspelling.</li>
           <li xml:lang="pt-BR">Destaca as condições climáticas severas na previsão do tempo.</li>
           <li xml:lang="ru">Выделение неблагоприятных погодных условий в прогнозе погоды.</li>
           <li xml:lang="sk">Highlight severe weather conditions in the weather forecast.</li>
@@ -5332,6 +5335,7 @@
           <li xml:lang="he">הצגת חגים ציבוריים בציר הזמן.</li>
           <li xml:lang="it">Mostra i giorni festivi nella linea temporale.</li>
           <li xml:lang="ka">სახალხო დღესასწაულების ჩვენება ქრონოლოგიაში.</li>
+          <li xml:lang="nl">Toon publieke feestdagen in de tijdlijn.</li>
           <li xml:lang="pt-BR">Exibir feriados nacionais na linha do tempo.</li>
           <li xml:lang="ru">Вывод государственных праздников на временной шкале.</li>
           <li xml:lang="sk">Zobrazenie public holidays in the timeline.</li>
@@ -5348,6 +5352,7 @@
           <li xml:lang="he">תוקנו בעיות קנה מידה באיכות תצוגה גבוהה בתצוגת קרונות רכבת.</li>
           <li xml:lang="it">Risolti problemi di ridimensionamento DPI elevati nella visualizzazione della carrozza del treno.</li>
           <li xml:lang="ka">გასწორდა მაღალი DPI მასშტაბირების პრობლემები ვაგონის ხედში.</li>
+          <li xml:lang="nl">Problemen met schaling bij hoge DPI in de treincoupéweergave zijn opgelost.</li>
           <li xml:lang="pt-BR">Corrigidos problemas de dimensionamento em alta resolução (DPI) na visualização da cabine do trem.</li>
           <li xml:lang="ru">Исправлены проблемы с масштабированием на экранах с высоким DPI в представлении вагона поезда.</li>
           <li xml:lang="sk">Fixed high DPI scaling issues in the train coach view.</li>
@@ -5364,6 +5369,7 @@
           <li xml:lang="he">תמיכה במספרי זיהוי של תחנות רכבת של Amtrak ו־IATA.</li>
           <li xml:lang="it">Supporto per identificatori di stazioni ferroviarie Amtrak e IATA.</li>
           <li xml:lang="ka">Amtrak-ისა და IATA-ს სადგურის იდენტიფიკატორების მხარდაჭერა.</li>
+          <li xml:lang="nl">Ondersteuning voor Amtrak- en IATA-treinstation-identificaties.</li>
           <li xml:lang="pt-BR">Suporte para identificadores de estações ferroviárias da Amtrak e da IATA.</li>
           <li xml:lang="ru">Поддержка идентификаторов станций Amtrak и IATA.</li>
           <li xml:lang="sk">Podpora for Amtrak and IATA train stanica identifiers.</li>
@@ -5380,6 +5386,7 @@
           <li xml:lang="he">תמיכה בייבוא תעודות קורונה דניות.</li>
           <li xml:lang="it">Supporto per l'importazione di certificati COVID danesi.</li>
           <li xml:lang="ka">დანიური COVID სერტიფიკატების შემოტანას მხარდაჭერა.</li>
+          <li xml:lang="nl">Ondersteuning bij het importeren van Deense COVID-certificaten.</li>
           <li xml:lang="pt-BR">Suporte para importação de certificados dinamarqueses de COVID.</li>
           <li xml:lang="ru">Поддержка импорта датских сертификатов о вакцинации от COVID-19.</li>
           <li xml:lang="sk">Podpora for importing Danish COVID certificates.</li>
@@ -5396,6 +5403,7 @@
           <li xml:lang="he">היצמדות להגדרות המערכת בלינוקס בנוגע ליישום המפות החיצוני לשימוש.</li>
           <li xml:lang="it">Segue le impostazioni di sistema su Linux per quale applicazione di mappa esterna utilizzare.</li>
           <li xml:lang="ka">სისტემური პარამეტრების გათვალისწინება Linux-ზე გარე რუკის აპლიკაციის არჩევისას.</li>
+          <li xml:lang="nl">Raadpleeg de systeeminstellingen van Linux om te bepalen welke externe kaartapplicatie u wilt gebruiken.</li>
           <li xml:lang="pt-BR">Siga as configurações do sistema Linux para determinar qual aplicativo de mapas externo usar.</li>
           <li xml:lang="ru">При работе в Linux, теперь используется внешнее картографическое приложение в соответствии с системными настройками.</li>
           <li xml:lang="sk">Follow system settings on Linux for which external map application to use.</li>
@@ -5412,6 +5420,7 @@
           <li xml:lang="he">הוספת פעולת קפיצת רשימה כדי לפתוח את הכרטיס הנוכחי ישירות.</li>
           <li xml:lang="it">Aggiunge un'azione Jump List per aprire direttamente il ticket corrente.</li>
           <li xml:lang="ka">სწრაფი მოქმედების დამატება მიმდინარე ბილეთის პირდაპირ გასახსნელად.</li>
+          <li xml:lang="nl">Voeg een spronglist-actie toe om het huidige ticket direct te openen.</li>
           <li xml:lang="pt-BR">Adicionar ação à lista de atalhos para abrir diretamente o tíquete atual.</li>
           <li xml:lang="ru">Добавить действие в список переходов для прямого открытия текущего билета.</li>
           <li xml:lang="sk">Pridanie akcie do zoznamu skratiek na priame otvorenie aktuálneho lístka.</li>
@@ -5452,6 +5461,7 @@
           <li xml:lang="he">נוסף חילוץ נתוני נסיעה ממסמכי PDF של כרטיסים של Air France.</li>
           <li xml:lang="it">Aggiunge l'estrazione dei dati di viaggio dai documenti PDF dei biglietti Air France.</li>
           <li xml:lang="ka">დაემატა სამგზავრო მონაცემების ამოღება Air France-ის PDF ბილეთებიდან.</li>
+          <li xml:lang="nl">Voeg de mogelijkheid toe om reisgegevens te extraheren uit PDF-documenten van Air France-tickets.</li>
           <li xml:lang="pt-BR">Adicionada extração de dados de viagem a partir de documentos PDF de bilhetes da Air France.</li>
           <li xml:lang="ru">Добавлено извлечение данных о поездках из PDF-документов с билетами Air France.</li>
           <li xml:lang="sk">Pridanie travel data extrakcia from Air France lístok PDF documents.</li>
@@ -5468,6 +5478,7 @@
           <li xml:lang="he">תוקנה תבנית מספרים תלויית הגדרות אזוריות.</li>
           <li xml:lang="it">Corregge la formattazione dei numeri compatibile con le impostazioni locali.</li>
           <li xml:lang="ka">გასწორდა რიცხვების ფორმატირება ლოკალის გათვალისწინებით.</li>
+          <li xml:lang="nl">Corrigeer de regio-instellingsafhankelijke opmaak van getallen.</li>
           <li xml:lang="pt-BR">Corrigida a formatação de números de acordo com a localização.</li>
           <li xml:lang="ru">Исправлено форматирование чисел с учётом локали.</li>
           <li xml:lang="sk">Oprava locale-aware formatting of numbers.</li>
@@ -5490,6 +5501,7 @@
           <li xml:lang="he">תוקן קיבוץ נסיעות שהפסיק תוצאות שגויות באזורים צפופים.</li>
           <li xml:lang="it">Risolto il problema con il raggruppamento dei viaggi che produceva risultati errati in aree densamente popolate.</li>
           <li xml:lang="ka">გასწორდა მგზავრობების დაჯგუფება, რომელიც მჭიდროდ დასახლებულ ადგილებში არასწორ შედეგს იძლეოდა.</li>
+          <li xml:lang="nl">Corrigeer de foutieve resultaten van de reisgroepering in dichtbevolkte gebieden.</li>
           <li xml:lang="pt-BR">Corrigido o agrupamento de viagens que estava gerando resultados incorretos em áreas densamente povoadas.</li>
           <li xml:lang="ru">Исправлена группировка поездок, дававшая неверные результаты в густонаселённых районах.</li>
           <li xml:lang="sk">Oprava výlet grouping producing wrong results in densely populated areas.</li>
@@ -5506,6 +5518,7 @@
           <li xml:lang="he">זיהוי ברקוד וקטור במסמכי PDF השתפר.</li>
           <li xml:lang="it">Migliora il rilevamento dei codici a barre vettoriali nei documenti PDF.</li>
           <li xml:lang="ka">ვექტორული შტრიხკოდების ამოცნობის გაუმჯობესება PDF დოკუმენტებში.</li>
+          <li xml:lang="nl">Verbeter de detectie van vectorbarcodes in PDF-documenten.</li>
           <li xml:lang="pt-BR">Melhoria da detecção de códigos de barras vetoriais em documentos PDF.</li>
           <li xml:lang="ru">Улучшено распознавание векторных штрихкодов в документах PDF.</li>
           <li xml:lang="sk">Vylepšenie vector barcode detection in PDF documents.</li>
@@ -5528,6 +5541,7 @@
           <li xml:lang="he">תוקנה הצבת מפת תחנות לרכיבים בלי נתונים חיים.</li>
           <li xml:lang="it">Corregge il posizionamento sulla mappa della stazione per gli elementi senza dati in tempo reale.</li>
           <li xml:lang="ka">გასწორდა სადგურის რუკის პოზიციონირება ელემენტებისთვის რეალური მონაცემების გარეშე.</li>
+          <li xml:lang="nl">Corrigeer de positionering van stations op de kaart voor elementen zonder live data.</li>
           <li xml:lang="pt-BR">Corrigido o posicionamento no mapa da estação para elementos sem dados em tempo real.</li>
           <li xml:lang="ru">Исправлено позиционирование карты станции для элементов без текущих данных.</li>
           <li xml:lang="sk">Oprava stanica map positioning for elements without live data.</li>
@@ -5544,6 +5558,7 @@
           <li xml:lang="he">חילוץ מסמכי נסיעה ל־Amtrak ול־VIA Rail השתפר.</li>
           <li xml:lang="it">Migliorata l'estrazione dei documenti di viaggio per Amtrak e VIA Rail.</li>
           <li xml:lang="ka">გაუმჯობესებული სამგზავრო მონაცემების ამოღება Amtrak და VIA Rail სისტემებისთვის.</li>
+          <li xml:lang="nl">Verbeterde extractie van reisdocumenten voor Amtrak en VIA Rail.</li>
           <li xml:lang="pt-BR">Extração aprimorada de documentos de viagem para Amtrak e VIA Rail.</li>
           <li xml:lang="ru">Улучшено извлечение данных из проездных документов для Amtrak и VIA Rail.</li>
           <li xml:lang="sk">Improved travel document extrakcia for Amtrak and VIA Rail.</li>
@@ -5560,6 +5575,7 @@
           <li xml:lang="he">תמיכה בתסדירי רציפי Hafas חלופיים.</li>
           <li xml:lang="it">Supporto per formati alternativi della piattaforma Hafas.</li>
           <li xml:lang="ka">Hafas-ის ბაქნების ალტერნატიული ფორმატების მხარდაჭერა.</li>
+          <li xml:lang="nl">Ondersteuning voor alternatieve Hafas-platformformaten.</li>
           <li xml:lang="pt-BR">Suporte para formatos alternativos da plataforma Hafas.</li>
           <li xml:lang="ru">Поддержка альтернативных форматов платформы Hafas.</li>
           <li xml:lang="sk">Podpora for alternative Hafas nástupište formats.</li>
@@ -5576,6 +5592,7 @@
           <li xml:lang="he">שיערוך שעות הפתיחה במפות התחנות השתפר.</li>
           <li xml:lang="it">Migliorata la valutazione degli orari di apertura nelle mappe delle stazioni.</li>
           <li xml:lang="ka">სამუშაო საათების შეფასების გაუმჯობესება სადგურის რუკებზე.</li>
+          <li xml:lang="nl">Verbeterde weergave van de openingstijden op de stationsplattegronden.</li>
           <li xml:lang="pt-BR">Melhoria na avaliação dos horários de funcionamento nos mapas das estações.</li>
           <li xml:lang="ru">Улучшена оценка времени работы на картах станций.</li>
           <li xml:lang="sk">Improved opening hours evaluation in the stanica maps.</li>
@@ -5598,6 +5615,7 @@
           <li xml:lang="he">ממשק משתמש חדש לתעודות הבריאות.</li>
           <li xml:lang="it">Nuova interfaccia utente del certificato sanitario.</li>
           <li xml:lang="ka">ჯანმრთელობის სერტიფიკატების ახალი ინტერფეისი.</li>
+          <li xml:lang="nl">Nieuw gebruikersinterface voor gezondheidscertificaten.</li>
           <li xml:lang="pt-BR">Nova interface de usuário para certificado de saúde.</li>
           <li xml:lang="ru">Новый интерфейс пользователя для медицинских сертификатов.</li>
           <li xml:lang="sk">New health certificate user interface.</li>
@@ -5614,6 +5632,7 @@
           <li xml:lang="he">עמוד פרטי תמרון ניווט לנסיעה מסוימת או למקטעי הליכה במסע.</li>
           <li xml:lang="it">Nuova pagina dei dettagli delle manovre di navigazione per le singole sezioni di trasporto o viaggio a piedi.</li>
           <li xml:lang="ka">ნავიგაციის მანევრების ახალი გვერდი ინდივიდუალური ტრანსპორტის ან ფეხით მგზავრობის სექციებისთვის.</li>
+          <li xml:lang="nl">Nieuwe pagina met details over navigatiemanoeuvres voor individuele trajecten met vervoer of wandelen.</li>
           <li xml:lang="pt-BR">Nova página com detalhes das manobras de navegação para trechos individuais de transporte ou deslocamento a pé.</li>
           <li xml:lang="ru">Новая страница с подробными данными о манёврах навигации для отдельных участков пути на транспорте или пешком.</li>
           <li xml:lang="sk">New navigation maneuver details page for individual transport or walking journey sections.</li>
@@ -5630,6 +5649,7 @@
           <li xml:lang="he">בחירה אוטומטית של העברות נהייתה חכמה יותר.</li>
           <li xml:lang="it">Selezione automatica del trasferimento più intelligente.</li>
           <li xml:lang="ka">გადაჯდომის უფრო ჭკვიანი ავტომატური შერჩევა.</li>
+          <li xml:lang="nl">Slimmere automatische selectie voor overstappen.</li>
           <li xml:lang="pt-BR">Seleção automática de transferências mais inteligente.</li>
           <li xml:lang="ru">Автоматический выбор более удобной пересадки.</li>
           <li xml:lang="sk">Smarter prestup auto-selection.</li>
@@ -5646,6 +5666,7 @@
           <li xml:lang="he">פרטי הפרעות בזמן אמת ופרטי מסע לנסיעות אוטובוס.</li>
           <li xml:lang="it">Informazioni in tempo reale sui disagi e dettagli sul viaggio per i viaggi in autobus.</li>
           <li xml:lang="ka">ინფორმაცია შეფერხებების შესახებ და მგზავრობის დეტალები ავტობუსებისთვის რეალურ დროში.</li>
+          <li xml:lang="nl">Live informatie over verstoringen en reisdetails voor busreizen.</li>
           <li xml:lang="pt-BR">Informações em tempo real sobre interrupções e detalhes de viagens de ônibus.</li>
           <li xml:lang="ru">Информация о перебоях в движении и детали маршрута для поездок на автобусе.</li>
           <li xml:lang="sk">Live disruption information and journey details pre autobus výlets.</li>
@@ -5662,6 +5683,7 @@
           <li xml:lang="he">היכולת לקצר נסיעות ברכבת ובאוטובוס.</li>
           <li xml:lang="it">Possibilità di abbreviare i viaggi in treno e autobus.</li>
           <li xml:lang="ka">მატარებლისა და ავტობუსის მგზავრობების შემოკლების შესაძლებლობა.</li>
+          <li xml:lang="nl">Mogelijkheid om trein- en busreizen te verkorten.</li>
           <li xml:lang="pt-BR">Possibilidade de encurtar viagens de trem e ônibus.</li>
           <li xml:lang="ru">Возможность сокращать поездки на поезде и автобусе.</li>
           <li xml:lang="sk">Možnosť skrátenia vlakových a autobusových výletov.</li>
@@ -5678,6 +5700,7 @@
           <li xml:lang="he">נוספו מצבי תעבורה פרטניים נוספים להעברות.</li>
           <li xml:lang="it">Ulteriori modalità di trasporto individuali per i trasferimenti.</li>
           <li xml:lang="ka">ტრანსპორტის დამატებითი ინდივიდუალური სახეობები გადაჯდომებისთვის.</li>
+          <li xml:lang="nl">Aanvullende individuele vervoersmiddelen voor transfers.</li>
           <li xml:lang="pt-BR">Modalidades adicionais de transporte individual para traslados.</li>
           <li xml:lang="ru">Дополнительные индивидуальные виды транспорта для пересадок.</li>
           <li xml:lang="sk">Additional individual transport modes for prestups.</li>
@@ -5694,6 +5717,7 @@
           <li xml:lang="he">זיהוי רציפים משופר לרכבות חשמליות ותחתיות.</li>
           <li xml:lang="it">Migliorata l'identificazione della piattaforma per tram e metropolitane.</li>
           <li xml:lang="ka">ბაქნების იდენტიფიკაციის გაუმჯობესება ტრამვაისა და მეტროსთვის.</li>
+          <li xml:lang="nl">Verbeterde perronaanduiding voor trams en metro's.</li>
           <li xml:lang="pt-BR">Melhoria na identificação das plataformas de bondes e metrôs.</li>
           <li xml:lang="ru">Улучшена идентификация платформы для трамваев и метро.</li>
           <li xml:lang="sk">Vylepšená identifikácia nástupišťa pre električky a metro.</li>
@@ -5710,6 +5734,7 @@
           <li xml:lang="he">מצב סריקת ברקודים קל ונגיש יותר, עם תמיכה בברקודים של כרטיסי PDF417.</li>
           <li xml:lang="it">Modalità di scansione dei codici a barre più accessibile e supporto per i codici a barre dei biglietti PDF417.</li>
           <li xml:lang="ka">უფრო ხელმისაწვდომი შტრიხკოდის სკანირების რეჟიმი და PDF417 ბილეთების შტრიხკოდების მხარდაჭერა.</li>
+          <li xml:lang="nl">Gemakkelijker toegankelijke barcodescanmodus en ondersteuning voor PDF417-ticketbarcodes.</li>
           <li xml:lang="pt-BR">Modo de leitura de código de barras mais acessível e suporte para códigos de barras de bilhetes PDF417.</li>
           <li xml:lang="ru">Упрощён режим сканирования штрихкодов; добавлена поддержка штрихкодов PDF417 для билетов.</li>
           <li xml:lang="sk">Ľahšie dostupný režim skenovania čiarových kódov a podpora čiarových kódov lístkov PDF417.</li>
