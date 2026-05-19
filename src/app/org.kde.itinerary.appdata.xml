@@ -5751,6 +5751,7 @@
           <li xml:lang="he">המשוב על ייבוא נתונים השתפר.</li>
           <li xml:lang="it">Riscontro sull'importazione dei dati migliorato.</li>
           <li xml:lang="ka">გაუმჯობესებული უკუკავშირი მონაცემების შემოტანასას.</li>
+          <li xml:lang="nl">Verbeterde terugkoppeling bij het importeren van gegevens.</li>
           <li xml:lang="pt-BR">Melhoria no feedback da importação de dados.</li>
           <li xml:lang="ru">Улучшена обратная связь при импорте данных.</li>
           <li xml:lang="sk">Improved data import feedback.</li>
@@ -5767,6 +5768,7 @@
           <li xml:lang="he">תקריב בצביטה על מפות התחנות השתפר.</li>
           <li xml:lang="it">Risolto il problema con lo zoom con pizzico sulle mappe delle stazioni.</li>
           <li xml:lang="ka">გასწორდა ორი თითით მასშტაბირება (pinch zoom) სადგურის რუკებზე.</li>
+          <li xml:lang="nl">De pinch-zoomfunctie op stationsplattegronden is gecorrigeerd.</li>
           <li xml:lang="pt-BR">Correção do zoom com gestos de pinça nos mapas das estações.</li>
           <li xml:lang="ru">Исправлено масштабирование щипком на картах станций.</li>
           <li xml:lang="sk">Fixed pinch zoom on stanica maps.</li>
@@ -5783,6 +5785,7 @@
           <li xml:lang="he">עיבוד אישורי מעבר מסוג Apple Wallet השתפר.</li>
           <li xml:lang="it">Miglioramento del rendering dei passaggi Apple Wallet.</li>
           <li xml:lang="ka">გაუმჯობესებული Apple Wallet-ის ბარათების რენდერი.</li>
+          <li xml:lang="nl">Verbeterde weergave van Apple Wallet-passen.</li>
           <li xml:lang="pt-BR">Melhoria na renderização do passe do Apple Wallet.</li>
           <li xml:lang="ru">Улучшена отрисовка пропусков Apple Wallet.</li>
           <li xml:lang="sk">Improved Apple Wallet pass rendering.</li>
@@ -5799,6 +5802,7 @@
           <li xml:lang="he">להזהיר בנוגע למכוניות שכורות עם טווח נותר מוגבל.</li>
           <li xml:lang="it">Avvisa sui veicoli a noleggio con autonomia rimanente limitata.</li>
           <li xml:lang="ka">გაფრთხილება გასაქირავებელ ტრანსპორტზე მცირე დარჩენილი სავალი მანძილით.</li>
+          <li xml:lang="nl">Waarschuw voor huurauto's met een beperkte resterende actieradius.</li>
           <li xml:lang="pt-BR">Alerta sobre veículos de aluguel com autonomia limitada.</li>
           <li xml:lang="ru">Предупреждения об арендованных транспортных средствах с ограниченным запасом хода.</li>
           <li xml:lang="sk">Warn about rental vehicles with limited remaining range.</li>
@@ -5815,6 +5819,7 @@
           <li xml:lang="he">מגוון שיפורים בחילוץ נתוני ממסמכי נסיעות.</li>
           <li xml:lang="it">Numerosi miglioramenti all'estrazione dei dati dei documenti di viaggio.</li>
           <li xml:lang="ka">სამგზავრო დოკუმენტებიდან მონაცემების ამოღების მრავალი გაუმჯობესება.</li>
+          <li xml:lang="nl">Talrijke verbeteringen in de extractie van reisdocumentgegevens.</li>
           <li xml:lang="pt-BR">Inúmeras melhorias na extração de dados de documentos de viagem.</li>
           <li xml:lang="ru">Многочисленные улучшения в извлечении данных из проездных документов.</li>
           <li xml:lang="sk">Numerous improvements to travel document data extrakcia.</li>
@@ -5837,6 +5842,7 @@
           <li xml:lang="he">תוקנו בעיות גודלי סמלים במסכים עם צפיפות פיקסלים גבוהה.</li>
           <li xml:lang="it">Risolve i problemi relativi alle dimensioni delle icone sugli schermi DPI elevati.</li>
           <li xml:lang="ka">გასწორდა ხატულების ზომის პრობლემები მაღალი DPI ეკრანებზე.</li>
+          <li xml:lang="nl">Los problemen met de pictogramgrootte op schermen met een hoge DPI op.</li>
           <li xml:lang="pt-BR">Correção de problemas de tamanho de ícones em telas de alto DPI.</li>
           <li xml:lang="ru">Исправлены проблемы с размером значков на экранах с высоким разрешением.</li>
           <li xml:lang="sk">Oprava icon size issues on high DPI screens.</li>
@@ -5853,6 +5859,7 @@
           <li xml:lang="he">תוקנה הזזת המפה ויציאה מעמוד בורר המקומות המועדפים.</li>
           <li xml:lang="it">Risolto il problema con la panoramica della mappa che lasciava la pagina di selezione della posizione preferita.</li>
           <li xml:lang="ka">გასწორდა რუკის გადაადგილება, რომელიც რჩეული მდებარეობის ამრჩევი გვერდიდან გამოდიოდა.</li>
+          <li xml:lang="nl">Los het probleem op met het zwenken van de kaart wanneer u de pagina voor het selecteren van uw favoriete locatie verlaat.</li>
           <li xml:lang="pt-BR">Corrigido o problema de deslocamento do mapa ao sair da página de seleção de locais favoritos.</li>
           <li xml:lang="ru">Исправлено перемещение карты, приводящее к выходу со страницы выбора избранного расположения.</li>
           <li xml:lang="sk">Oprava map panning leaving the favorite location selector page.</li>
@@ -5869,6 +5876,7 @@
           <li xml:lang="he">תוקנה קביעת מדינת ההגעה לשינויי מקום.</li>
           <li xml:lang="it">Corretta la determinazione del paese di partenza per i cambiamenti di posizione.</li>
           <li xml:lang="ka">გასწორდა გამგზავრების ქვეყნის განსაზღვრა მდებარეობის ცვლილებისას.</li>
+          <li xml:lang="nl">Correctie van de bepaling van het vertrekland bij locatiewijzigingen.</li>
           <li xml:lang="pt-BR">Correção da determinação do país de partida para alterações de localização.</li>
           <li xml:lang="ru">Исправлено определение страны отправления для изменений местоположения.</li>
           <li xml:lang="sk">Oprava determining odchod country for location changes.</li>
@@ -5885,6 +5893,7 @@
           <li xml:lang="he">תוקן מיזוג שגוי של נסיעות רכבת באותו הקו באותו היום.</li>
           <li xml:lang="it">Corretta l'errata fusione di viaggi in treno con la stessa linea nello stesso giorno.</li>
           <li xml:lang="ka">გასწორდა მატარებლის მგზავრობების შეცდომით შერწყმა ერთი და იმავე ხაზისთვის იმავე დღეს.</li>
+          <li xml:lang="nl">Corrigeer de foutieve samenvoeging van treinreizen met dezelfde lijn op dezelfde dag.</li>
           <li xml:lang="pt-BR">Correção da mesclagem incorreta de viagens de trem da mesma linha no mesmo dia.</li>
           <li xml:lang="ru">Исправлено ошибочное объединение поездок на одном маршруте в один день.</li>
           <li xml:lang="sk">Oprava chybného zlučovania vlakových výletov s rovnakou linkou v rovnaký deň.</li>
@@ -5901,6 +5910,7 @@
           <li xml:lang="he">תוקן פיענוח של פרטי השכרת רכב מ־OTP.</li>
           <li xml:lang="it">Corretta l'analisi delle informazioni sul veicolo a noleggio OTP.</li>
           <li xml:lang="ka">გასწორდა OTP გასაქირავებელი ტრანსპორტის ინფორმაციის დამუშავება.</li>
+          <li xml:lang="nl">Corrigeer de foutieve samenvoeging van treinreizen met dezelfde lijn op dezelfde dag.</li>
           <li xml:lang="pt-BR">Correção da análise das informações de aluguel de veículos com código OTP.</li>
           <li xml:lang="ru">Исправлен анализ синтаксиса информации об аренде транспортных средств в OTP.</li>
           <li xml:lang="sk">Oprava parsing of OTP rental vehicle information.</li>
@@ -5917,6 +5927,7 @@
           <li xml:lang="he">החלת פרטי אזור זמן כראוי להזמנות טיסה כשפרטי הזמן חלקיים.</li>
           <li xml:lang="it">Applica correttamente le informazioni sul fuso orario alle prenotazioni di voli con informazioni sull'orario incomplete.</li>
           <li xml:lang="ka">დროის სარტყლის ინფორმაციის სწორად გამოყენება ფრენის ჯავშნებისთვის არასრული დროის მონაცემებით.</li>
+          <li xml:lang="nl">Pas de tijdzone-informatie correct toe op vluchtreserveringen met onvolledige tijdsinformatie.</li>
           <li xml:lang="pt-BR">Aplicar corretamente as informações de fuso horário às reservas de voo com informações de horário incompletas.</li>
           <li xml:lang="ru">Корректное применение информации о часовом поясе к бронированиям авиабилетов с неполными данными о времени.</li>
           <li xml:lang="sk">Správne použitie informácií o časovom pásme na rezervácie letov s neúplnými časovými informáciami.</li>
@@ -5933,6 +5944,7 @@
           <li xml:lang="he">חילוץ הנתונים ממגוון ספקים השתפר.</li>
           <li xml:lang="it">Estrazione dei dati migliorata per vari fornitori.</li>
           <li xml:lang="ka">გაუმჯობესებული მონაცემების ამოღება სხვადასხვა პროვაიდერისთვის.</li>
+          <li xml:lang="nl">Verbeterde extractie van gegevens voor diverse aanbieders.</li>
           <li xml:lang="pt-BR">Extração de dados aprimorada para diversos fornecedores.</li>
           <li xml:lang="ru">Улучшено извлечение данных для различных поставщиков.</li>
           <li xml:lang="sk">Improved data extrakcia for various providers.</li>
@@ -5955,6 +5967,7 @@
           <li xml:lang="he">נוספה תמיכה בתעודות חיסון מסוג SMART Health Card (SHC).</li>
           <li xml:lang="it">Aggiunto il supporto per i certificati di vaccinazione SMART Health Card (SHC).</li>
           <li xml:lang="ka">დაემატა SMART Health Card (SHC) ვაქცინაციის სერტიფიკატების მხარდაჭერა.</li>
+          <li xml:lang="nl">Voeg ondersteuning toe voor SMART Health Card (SHC) vaccinatiecertificaten.</li>
           <li xml:lang="pt-BR">Adicionado suporte para certificados de vacinação do SMART Health Card (SHC).</li>
           <li xml:lang="ru">Добавлена поддержка сертификатов вакцинации SMART Health Card (SHC).</li>
           <li xml:lang="sk">Pridanie support for SMART Health Card (SHC) vaccination certificates.</li>
@@ -5971,6 +5984,7 @@
           <li xml:lang="he">לא להזניק את אזהרת החיבור כשאין זמן הגעה קודם.</li>
           <li xml:lang="it">Non attiva l'avviso di connessione quando non è presente un orario di arrivo precedente.</li>
           <li xml:lang="ka">გადასჯდომის გაფრთხილების არჩვენება, როდესაც წინა ჩამოსვლის დრო არ არსებობს.</li>
+          <li xml:lang="nl">Activeer de verbindingswaarschuwing niet als er geen eerdere aankomsttijd is.</li>
           <li xml:lang="pt-BR">Não aciona o aviso de conexão quando não houver um horário de chegada anterior.</li>
           <li xml:lang="ru">Не выводится предупреждение о соединении при отсутствии времени предыдущего прибытия.</li>
           <li xml:lang="sk">Nespúšťajte varovanie o spojení, keď neexistuje predchádzajúci čas príchodu.</li>
@@ -5987,6 +6001,7 @@
           <li xml:lang="he">להציג את המספר הנכון של מסמכים מצורפים בנסיעות עם מספר נוסעים.</li>
           <li xml:lang="it">Mostra il numero corretto di documenti allegati per i viaggi con più viaggiatori.</li>
           <li xml:lang="ka">მიბმული დოკუმენტების სწორი რაოდენობის ჩვენება მრავალ-მოგზაურიანი მგზავრობებისთვის.</li>
+          <li xml:lang="nl">Geef het juiste aantal bijgevoegde documenten weer voor reizen met meerdere reizigers.</li>
           <li xml:lang="pt-BR">Apresenta o número correto de documentos anexados para viagens com vários viajantes.</li>
           <li xml:lang="ru">Отображение верного количества прикреплённых документов для поездок с несколькими путешественниками.</li>
           <li xml:lang="sk">Zobrazenie správneho počtu priložených dokumentov pre výlety s viacerými cestujúcimi.</li>
@@ -6003,6 +6018,7 @@
           <li xml:lang="he">הצגת דרגנועים מ/אל קומות ביניים בצורה נכונה במפות הפנים.</li>
           <li xml:lang="it">Mostra correttamente le scale mobili da/verso i piani intermedi nella mappa degli interni.</li>
           <li xml:lang="ka">ესკალატორების სწორი ჩვენება შუალედურ სართულებზე შიდა რუკაზე.</li>
+          <li xml:lang="nl">Geef de roltrappen naar/van tussenliggende verdiepingen correct weer op de plattegrond.</li>
           <li xml:lang="pt-BR">Exibir corretamente as escadas rolantes de/para os andares intermediários no mapa interno.</li>
           <li xml:lang="ru">Правильное отображение эскалаторов промежуточных этажей на схеме помещений.</li>
           <li xml:lang="sk">Zobrazenie escalators to/from intermediate floor levels correctly in the indoor map.</li>
@@ -6019,6 +6035,7 @@
           <li xml:lang="he">תוקן עיבוד של שדות טקסט עשיר שחזרו מ־Apple Wallet.</li>
           <li xml:lang="it">Correzione del rendering dei campi posteriori in formato rich text del passaggio di Apple Wallet.</li>
           <li xml:lang="ka">გასწორდა Apple Wallet-ის ბარათების უკანა მხარის ფორმატირებული ტექსტის რენდერი.</li>
+          <li xml:lang="nl">Correctie van de weergave van de opgemaakte tekst retourvelden in Apple Wallet.</li>
           <li xml:lang="pt-BR">Corrigido o problema na renderização dos campos de texto formatado do Apple Wallet.</li>
           <li xml:lang="ru">Исправлено отображение полей с форматированным текстом на обороте пропуска Apple Wallet.</li>
           <li xml:lang="sk">Oprava rendering of Apple Wallet pass rich-text back fields.</li>
@@ -6035,6 +6052,7 @@
           <li xml:lang="he">חילוץ נתונים מ־SNCF,‏ Accor,‏ Feratel ו־onepagebooking השתפר.</li>
           <li xml:lang="it">Estrazione dei dati migliorata per SNCF, Accor, Feratel e onepagebooking.</li>
           <li xml:lang="ka">გაუმჯობესებული მონაცემების ამოღება SNCF, Accor, Feratel და onepagebooking სისტემებისთვის.</li>
+          <li xml:lang="nl">Verbeterde gegevens-extractie voor SNCF, Accor, Feratel en onepagebooking.</li>
           <li xml:lang="pt-BR">Extração de dados aprimorada para SNCF, Accor, Feratel e onepagebooking.</li>
           <li xml:lang="ru">Улучшено извлечение данных для SNCF, Accor, Feratel и onepagebooking.</li>
           <li xml:lang="sk">Improved data extrakcia for SNCF, Accor, Feratel and onepagebooking.</li>
@@ -6057,6 +6075,7 @@
           <li xml:lang="he">ייבוא צרופות דוא״ל ששותפו מתוך FairEmail כראוי.</li>
           <li xml:lang="it">Importa correttamente gli allegati di posta condivisi da FairEmail.</li>
           <li xml:lang="ka">FairEmail-იდან გაზიარებული წერილის მიმაგრებული ფაილების სწორი შემოტანა.</li>
+          <li xml:lang="nl">Importeer e-mailbijlagen die via FairEmail zijn gedeeld op de juiste manier.</li>
           <li xml:lang="pt-BR">Importa corretamente os anexos de e-mail compartilhados do FairEmail.</li>
           <li xml:lang="ru">Правильный импорт вложений электронной почты, отправленных из FairEmail.</li>
           <li xml:lang="sk">Properly import mail attachments shared from FairEmail.</li>
@@ -6073,6 +6092,7 @@
           <li xml:lang="he">שיפורים בייבוא נתונים מ־Airdo,‏ MÁV,‏ Regionado,‏ Ryanair ו־SNCF</li>
           <li xml:lang="it">Miglioramenti nell'importazione dei dati da Airdo, MÁV, Regionado, Ryanair e SNCF.</li>
           <li xml:lang="ka">გაუმჯობესებები მონაცემების შემოტანასთვის Airdo, MÁV, Regionado, Ryanair და SNCF სისტემებიდან.</li>
+          <li xml:lang="nl">Verbeteringen voor het importeren van gegevens van Airdo, MÁV, Regionado, Ryanair en SNCF.</li>
           <li xml:lang="pt-BR">Melhorias na importação de dados da Airdo, MÁV, Regionado, Ryanair e SNCF.</li>
           <li xml:lang="ru">Улучшения импорта данных из Airdo, MÁV, Regionado, Ryanair и SNCF.</li>
           <li xml:lang="sk">Vylepšenia importu údajov z Airdo, MÁV, Regionado, Ryanair a SNCF.</li>
@@ -6113,6 +6133,7 @@
           <li xml:lang="he">ייבוא וייצוא GPX של מקומות מועדפים וייצוא GPX של טיולים לתאימות צולבת מול Nextcloud Maps.</li>
           <li xml:lang="it">Importazione ed esportazione GPX delle posizioni preferite ed esportazione GPX dei viaggi per l'interoperabilità di Nextcloud Maps.</li>
           <li xml:lang="ka">რჩეული მდებარეობების GPX შემოტანა და ექსპორტი და მგზავრობების GPX ექსპორტი Nextcloud Maps-თან თავსებადობისთვის.</li>
+          <li xml:lang="nl">GPX-import en -export van favoriete locaties en GPX-export van ritten voor interoperabiliteit met Nextcloud kaarten.</li>
           <li xml:lang="pt-BR">Importação e exportação de GPX de locais favoritos e exportação de GPX de viagens para interoperabilidade com o Nextcloud Maps.</li>
           <li xml:lang="ru">Импорт и экспорт избранных мест в формате GPX, а также экспорт поездок в формате GPX для совместимости с Nextcloud Maps.</li>
           <li xml:lang="sk">Import a export GPX obľúbených miest a export GPX výletov pre interoperabilitu s Nextcloud Maps.</li>
@@ -6129,6 +6150,7 @@
           <li xml:lang="he">נוספה תמיכה במפעילות התחבורה הציבורית הגרמניות המקומיות INVG,‏ RSAG,‏ VRT ו־VSN.</li>
           <li xml:lang="it">Supporto per gli operatori di trasporto pubblico locale tedesco INVG, RSAG, VRT e VSN.</li>
           <li xml:lang="ka">გერმანიის ადგილობრივი საზოგადოებრივი ტრანსპორტის ოპერატორების (INVG, RSAG, VRT და VSN) მხარდაჭერა.</li>
+          <li xml:lang="nl">Ondersteuning voor de lokale Duitse openbaarvervoerbedrijven INVG, RSAG, VRT en VSN.</li>
           <li xml:lang="pt-BR">Suporte às empresas de transporte público locais alemãs INVG, RSAG, VRT e VSN.</li>
           <li xml:lang="ru">Поддержка местных немецких операторов общественного транспорта INVG, RSAG, VRT и VSN.</li>
           <li xml:lang="sk">Podpora for local German public transport operators INVG, RSAG, VRT and VSN.</li>
@@ -6145,6 +6167,7 @@
           <li xml:lang="he">מחלץ מסמכי הנסיעה השתפר.</li>
           <li xml:lang="it">Estrattore di documenti di viaggio migliorato.</li>
           <li xml:lang="ka">გაუმჯობესებული სამგზავრო დოკუმენტების ამომკრები.</li>
+          <li xml:lang="nl">Verbeterde extractor voor reisdocumenten.</li>
           <li xml:lang="pt-BR">Extrator de documentos de viagem aprimorado.</li>
           <li xml:lang="ru">Улучшенный модуль извлечения данных из проездных документов.</li>
           <li xml:lang="sk">Improved travel document extractor.</li>
@@ -6161,6 +6184,7 @@
           <li xml:lang="he">מספר תיקונים בזרימת העמודים.</li>
           <li xml:lang="it">Varie correzioni al flusso della pagina.</li>
           <li xml:lang="ka">სხვადასხვა გასწორებები გვერდების თანმიმდევრობაში.</li>
+          <li xml:lang="nl">Diverse verbeteringen aan de paginastroom.</li>
           <li xml:lang="pt-BR">Diversas correções no fluxo da página.</li>
           <li xml:lang="ru">Различные исправления в потоке страниц.</li>
           <li xml:lang="sk">Various fixes to the page flow.</li>
@@ -6177,6 +6201,7 @@
           <li xml:lang="he">ניתן למחוק קבוצות נסיעה שלמות מעתה.</li>
           <li xml:lang="it">Ora è possibile eliminare interi gruppi di viaggio.</li>
           <li xml:lang="ka">ახლა უკვე შესაძლებელია მგზავრობის მთლიანი ჯგუფების წაშლა.</li>
+          <li xml:lang="nl">Het is nu mogelijk om complete reisgroepen te verwijderen.</li>
           <li xml:lang="pt-BR">Agora é possível excluir grupos de viagens inteiros.</li>
           <li xml:lang="ru">Теперь можно удалять целые группы поездок.</li>
           <li xml:lang="sk">Entire výlet groups can now be deleted.</li>
