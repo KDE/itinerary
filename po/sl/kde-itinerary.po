@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-18 00:45+0000\n"
-"PO-Revision-Date: 2026-05-12 06:59+0200\n"
+"POT-Creation-Date: 2026-05-19 00:45+0000\n"
+"PO-Revision-Date: 2026-05-18 07:32+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -28,7 +28,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "matjaz.jeran@amis.net"
 
-#: app/AboutPage.qml:18 app/Main.qml:105
+#: app/AboutPage.qml:18 app/Main.qml:86
 #, kde-format
 msgid "About"
 msgstr "O programu"
@@ -1550,7 +1550,7 @@ msgstr "Preveri za posodobitvami"
 msgid "Save As…"
 msgstr "Shrani kot…"
 
-#: app/gpxexport.cpp:33 app/main.cpp:213 app/Main.qml:20 app/Main.qml:77
+#: app/gpxexport.cpp:33 app/main.cpp:213 app/Main.qml:20 app/Main.qml:58
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -2399,7 +2399,7 @@ msgstr "Klikni za razširitev"
 msgid "Itinerary change"
 msgstr "Sprememba itinerarja"
 
-#: app/LiveStatusPage.qml:21 app/Main.qml:83
+#: app/LiveStatusPage.qml:21 app/Main.qml:64
 #, kde-format
 msgid "Live Status"
 msgstr "Stanje v živo"
@@ -2836,28 +2836,28 @@ msgctxt "@info:shell"
 msgid "Files or URLs to import."
 msgstr "Datoteke ali URL-ji za uvoz."
 
-#: app/Main.qml:91 app/WelcomePage.qml:53
+#: app/Main.qml:72 app/WelcomePage.qml:53
 #, kde-format
 msgid "Settings…"
 msgstr "Nastavitve…"
 
-#: app/Main.qml:98
+#: app/Main.qml:79
 #, kde-format
 msgid "Help"
 msgstr "Pomoč"
 
-#: app/Main.qml:187
+#: app/Main.qml:168
 #, kde-format
 msgctxt "@info:status"
 msgid "No onboard information available."
 msgstr "Podatki o vozilu niso na voljo."
 
-#: app/Main.qml:229
+#: app/Main.qml:210
 #, kde-format
 msgid "Map download finished."
 msgstr "Prenos zemljevidov končan."
 
-#: app/Main.qml:315
+#: app/Main.qml:296
 #, kde-format
 msgctxt "@title:window"
 msgid "Matrix Session Verification"
@@ -3956,13 +3956,13 @@ msgstr "Prijavi se"
 #, kde-format
 msgctxt "@label"
 msgid "Homeserver url"
-msgstr ""
+msgstr "Url domačega strežnika"
 
 #: app/SettingsPage.qml:324
 #, kde-format
 msgctxt "@action:button"
 msgid "Login with OIDC"
-msgstr ""
+msgstr "Prijava z OIDC"
 
 #: app/SettingsPage.qml:334
 #, kde-format

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kitinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-18 00:45+0000\n"
+"POT-Creation-Date: 2026-05-19 00:45+0000\n"
 "PO-Revision-Date: 2023-07-14 22:15+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -33,7 +33,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "zepires@gmail.com"
 
-#: app/AboutPage.qml:18 app/Main.qml:105
+#: app/AboutPage.qml:18 app/Main.qml:86
 #, kde-format
 msgid "About"
 msgstr "Acerca"
@@ -1666,7 +1666,7 @@ msgstr "Verificar Actualizações"
 msgid "Save As…"
 msgstr ""
 
-#: app/gpxexport.cpp:33 app/main.cpp:213 app/Main.qml:20 app/Main.qml:77
+#: app/gpxexport.cpp:33 app/main.cpp:213 app/Main.qml:20 app/Main.qml:58
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -2573,7 +2573,7 @@ msgstr "Carregue para estender"
 msgid "Itinerary change"
 msgstr "Mudança de itinerário"
 
-#: app/LiveStatusPage.qml:21 app/Main.qml:83
+#: app/LiveStatusPage.qml:21 app/Main.qml:64
 #, kde-format
 msgid "Live Status"
 msgstr "Estado em Directo"
@@ -3015,30 +3015,30 @@ msgctxt "@info:shell"
 msgid "Files or URLs to import."
 msgstr ""
 
-#: app/Main.qml:91 app/WelcomePage.qml:53
+#: app/Main.qml:72 app/WelcomePage.qml:53
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgid "Settings…"
 msgstr "Configuração"
 
-#: app/Main.qml:98
+#: app/Main.qml:79
 #, kde-format
 msgid "Help"
 msgstr "Ajuda"
 
-#: app/Main.qml:187
+#: app/Main.qml:168
 #, fuzzy, kde-format
 #| msgid "Wi-Fi access for onboard information is available."
 msgctxt "@info:status"
 msgid "No onboard information available."
 msgstr "Está disponível o acesso por Wi-Fi à informação de embarque."
 
-#: app/Main.qml:229
+#: app/Main.qml:210
 #, kde-format
 msgid "Map download finished."
 msgstr "Terminou a transferência do mapa."
 
-#: app/Main.qml:315
+#: app/Main.qml:296
 #, fuzzy, kde-format
 #| msgid "Matrix Integration"
 msgctxt "@title:window"
