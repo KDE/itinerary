@@ -2,7 +2,13 @@
 # SPDX-FileCopyrightText: 2025 Carl Schwan <carl@carlschwan.eu>
 # SPDX-License-Identifier: BSD-3-Clause
 
-add_library(SolidExtras STATIC
+if(ANDROID)
+    add_library(SolidExtras)
+else()
+    add_library(SolidExtras STATIC)
+endif()
+
+target_sources(SolidExtras PRIVATE
     brightnessmanager.cpp
     lockmanager.cpp
 )
@@ -31,4 +37,6 @@ target_link_libraries(SolidExtras PUBLIC Qt::Core)
 
 if (NOT ANDROID)
     target_link_libraries(SolidExtras PRIVATE Qt::DBus)
+else()
+    install(TARGETS SolidExtras ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
 endif()

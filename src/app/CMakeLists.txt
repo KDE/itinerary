@@ -85,6 +85,7 @@ ecm_add_qml_module(itinerary GENERATE_PLUGIN_SOURCE
     IMPORTS
         org.kde.itinerary.weather
         org.kde.itinerary.matrix
+        org.kde.solidextras
     QML_FILES
         Main.qml
         AboutPage.qml
@@ -243,7 +244,6 @@ target_link_libraries(itinerary PUBLIC
     itinerary-weather
     itinerary-weatherplugin
     SolidExtras
-    SolidExtrasplugin
     GpxIo
     KPublicTransport
     KPublicTransportOnboard
