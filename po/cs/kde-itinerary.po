@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-19 00:45+0000\n"
-"PO-Revision-Date: 2026-05-12 11:34+0200\n"
+"PO-Revision-Date: 2026-05-19 21:29+0200\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -3946,13 +3946,13 @@ msgstr "Přihlásit"
 #, kde-format
 msgctxt "@label"
 msgid "Homeserver url"
-msgstr ""
+msgstr "URL domácího serveru"
 
 #: app/SettingsPage.qml:324
 #, kde-format
 msgctxt "@action:button"
 msgid "Login with OIDC"
-msgstr ""
+msgstr "Přihlásit s OIDC"
 
 #: app/SettingsPage.qml:334
 #, kde-format
