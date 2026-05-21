@@ -447,11 +447,40 @@ void LiveDataManager::showNotification(const QString &resId, const LiveData &ld)
     }
 }
 
+static void fillNotificationIcon(KNotification *n, [[maybe_unused]] QString iconName)
+{
+#if KNOTIFICATIONS_VERSION >= QT_VERSION_CHECK(6, 27, 0)
+    n->setHint(u"x-kde-symbolic-app-icon"_s, u"clock"_s);
+    if (iconName.startsWith("file:"_L1)) {
+        n->setPixmap(QIcon::fromTheme(QUrl(iconName).toLocalFile()).pixmap(64, 64));
+        return;
+    }
+    if (iconName.startsWith("qrc:///"_L1)) {
+        // this doesn't work as-is as qrc icons need SVG coloring
+        // n->setPixmap(QIcon::fromTheme(':'_L1 + QStringView(iconName).mid(6)).pixmap(64, 64));
+#ifndef Q_OS_ANDROID
+        n->setIconName(u"clock"_s);
+#endif
+        return;
+    }
+    if (!iconName.isEmpty()) {
+        n->setIconName(iconName);
+        return;
+    }
+#ifndef Q_OS_ANDROID
+    n->setIconName(u"clock"_s);
+#endif
+#else
+    n->setIconName(u"clock"_s);
+#endif
+}
+
 void LiveDataManager::fillNotification(KNotification *n, const LiveData &ld) const
 {
     n->setTitle(NotificationHelper::title(ld));
     n->setText(NotificationHelper::message(ld));
-    n->setIconName(QLatin1StringView("clock"));
+    fillNotificationIcon(n, ld.journey().iconName());
+
     if (m_showNotificationsOnLockScreen) {
         n->setHint(QStringLiteral("x-kde-visibility"), QStringLiteral("public"));
     }
