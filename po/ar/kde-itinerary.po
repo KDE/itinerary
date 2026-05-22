@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-19 00:45+0000\n"
-"PO-Revision-Date: 2026-03-24 11:38+0400\n"
+"PO-Revision-Date: 2026-05-21 12:07+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -493,11 +493,10 @@ msgstr "وقت الوصول"
 
 #: app/BoatPage.qml:191 app/BusPage.qml:273 app/FlightPage.qml:295
 #: app/JourneyQueryPage.qml:99 app/TrainPage.qml:345
-#, fuzzy, kde-format
-#| msgid "Booking"
+#, kde-format
 msgctxt "purchase a ticket"
 msgid "Book"
-msgstr "الحجز"
+msgstr "احجز"
 
 #: app/BoatPage.qml:197 app/BusPage.qml:279 app/FlightPage.qml:301
 #: app/TrainPage.qml:360
@@ -3937,13 +3936,13 @@ msgstr "لِج"
 #, kde-format
 msgctxt "@label"
 msgid "Homeserver url"
-msgstr ""
+msgstr "رابط خادم المنزل"
 
 #: app/SettingsPage.qml:324
 #, kde-format
 msgctxt "@action:button"
 msgid "Login with OIDC"
-msgstr ""
+msgstr "لج باستخدام OIDC"
 
 #: app/SettingsPage.qml:334
 #, kde-format
