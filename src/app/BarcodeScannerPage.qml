@@ -8,7 +8,6 @@ import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import QtMultimedia
 import org.kde.kirigami as Kirigami
-import org.kde.kirigami.private.polyfill // remove once >= QT_VERSION_CHECK(6, 9, 0)
 import org.kde.kirigamiaddons.components
 import org.kde.prison.scanner as Prison
 import org.kde.itinerary

@@ -12,7 +12,6 @@ import QtQuick.Dialogs
 import QtLocation as QtLocation
 import QtPositioning
 import org.kde.kirigami as Kirigami
-import org.kde.kirigami.private.polyfill // remove once >= QT_VERSION_CHECK(6, 9, 0)
 import org.kde.kirigamiaddons.components
 import org.kde.itinerary
 
