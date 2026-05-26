@@ -309,7 +309,7 @@ void StatisticsModel::computeStats(const KPublicTransport::Journey &journey, int
                 }
                 break;
             case KPublicTransport::JourneySection::RentedVehicle:
-                if (jny.rentalVehicle().type() == KPublicTransport::RentalVehicle::Car) {
+                if (jny.rentalVehicle().vehicleType().formFactor() == KPublicTransport::RentalVehicleType::FormFactor::Car) {
                     type = StatisticsModel::Car;
                 }
                 break;
