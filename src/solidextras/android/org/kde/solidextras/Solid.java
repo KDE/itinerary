@@ -22,12 +22,4 @@ public class Solid
             activity.getWindow().setAttributes(layout);
         });
     }
-
-    public static void setLockInhibitionOn(Activity activity) {
-        activity.runOnUiThread(() -> activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON));
-    }
-
-    public static void setLockInhibitionOff(Activity activity) {
-        activity.runOnUiThread(() -> activity.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON));
-    }
 }

@@ -10,7 +10,6 @@ endif()
 
 target_sources(SolidExtras PRIVATE
     brightnessmanager.cpp
-    lockmanager.cpp
 )
 
 ecm_add_qml_module(SolidExtras GENERATE_PLUGIN_SOURCE
@@ -21,14 +20,11 @@ if (ANDROID)
     add_subdirectory(android)
     target_sources(SolidExtras PRIVATE
         androidbrightnessbackend.cpp
-        androidlockbackend.cpp
     )
 else()
     qt_add_dbus_interface(SolidExtras_SRCS org.kde.Solid.PowerManagement.Actions.BrightnessControl.xml brightnesscontroldbusinterface)
-    qt_add_dbus_interface(SolidExtras_SRCS org.freedesktop.ScreenSaver.xml screensaverdbusinterface)
     target_sources(SolidExtras PRIVATE
         solidbrightnessbackend.cpp
-        freedesktoplockbackend.cpp
         ${SolidExtras_SRCS}
     )
 endif()
