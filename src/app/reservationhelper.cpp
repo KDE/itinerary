@@ -175,7 +175,7 @@ QString ReservationHelper::defaultIconName(const QVariant &res)
         return KPublicTransport::Feature::typeIconName(KPublicTransport::Feature::Restaurant);
     }
     if (JsonLd::isA<RentalCarReservation>(res)) {
-        return KPublicTransport::RentalVehicle::vehicleTypeIconName(KPublicTransport::RentalVehicle::Car);
+        return KPublicTransport::RentalVehicleType::typeIconName(KPublicTransport::RentalVehicleType::FormFactor::Car, KPublicTransport::RentalVehicleType::PropulsionType::Undefined);
     }
 
     if (JsonLd::isA<ProgramMembership>(res)) {
