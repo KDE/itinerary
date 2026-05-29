@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-28 00:44+0000\n"
+"POT-Creation-Date: 2026-05-29 00:44+0000\n"
 "PO-Revision-Date: 2026-01-04 10:58+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -2398,7 +2398,7 @@ msgstr[1] "%1 aldaketa"
 msgid "Click to extend"
 msgstr "Egin klik zabaltzeko"
 
-#: app/livedatamanager.cpp:809
+#: app/livedatamanager.cpp:838
 #, kde-format
 msgid "Itinerary change"
 msgstr "Ibilbide aldaketa"
