@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-23 02:34+0000\n"
+"POT-Creation-Date: 2026-05-29 02:42+0000\n"
 "PO-Revision-Date: 2026-03-16 11:40+0100\n"
 "Last-Translator:  Vít Pelčák <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -2414,7 +2414,7 @@ msgstr[2] "%1 přestupů"
 msgid "Click to extend"
 msgstr "Klikněte pro rozbalení"
 
-#: app/livedatamanager.cpp:809
+#: app/livedatamanager.cpp:838
 #, kde-format
 msgid "Itinerary change"
 msgstr "Změna itineráře"
