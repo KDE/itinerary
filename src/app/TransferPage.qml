@@ -88,14 +88,14 @@ Kirigami.ScrollablePage {
         Kirigami.Action {
             id: bikeSharingAction
             text: i18n("Shared Bikes")
-            icon.source: RentalVehicleType.vehicleTypeIconName(RentalVehicle.Bicycle)
+            icon.source: RentalVehicleTypeData.typeIconName(RentalVehicleType.FormFactor.Bicycle, RentalVehicleType.PropulsionType.Human)
             checkable: true
             onCheckedChanged: queryJourney()
         },
         Kirigami.Action {
             id: parkRideAction
             text: i18n("Park & Ride")
-            icon.source: RentalVehicleType.vehicleTypeIconName(RentalVehicle.Car)
+            icon.source: RentalVehicleTypeData.typeIconName(RentalVehicleType.FormFactor.Car, RentalVehicleType.PropulsionType.Combustion)
             checkable: true
             visible: root.transfer.alignment == Transfer.Before && root.transfer.floatingLocationType == Transfer.FavoriteLocation
             onCheckedChanged: queryJourney()
