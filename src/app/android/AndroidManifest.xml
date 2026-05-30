@@ -145,8 +145,10 @@
             <!-- auto screen scale factor -->
             <meta-data android:name="android.app.auto_screen_scale_factor" android:value="true"/>
 
-             <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
         </activity>
+
+        <meta-data android:name="io.sentry.dsn" android:value="https://1b5a60c6a27f42e581b4d8a698494979@crash-reports.kde.org/497"/>
 
         <provider
             android:name="androidx.core.content.FileProvider"
