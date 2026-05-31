@@ -49,7 +49,7 @@
 
 using namespace Qt::Literals;
 
-QTimer *TimelineDelegateController::s_currentTimer = nullptr;
+QChronoTimer *TimelineDelegateController::s_currentTimer = nullptr;
 int TimelineDelegateController::s_progressRefCount = 0;
 QTimer *TimelineDelegateController::s_progressTimer = nullptr;
 
@@ -59,11 +59,11 @@ TimelineDelegateController::TimelineDelegateController(QObject *parent)
     : QObject(parent)
 {
     if (!s_currentTimer) {
-        s_currentTimer = new QTimer(QCoreApplication::instance());
+        s_currentTimer = new QChronoTimer(QCoreApplication::instance());
         s_currentTimer->setSingleShot(true);
         s_currentTimer->setTimerType(Qt::VeryCoarseTimer);
     }
-    connect(s_currentTimer, &QTimer::timeout, this, [this]() {
+    connect(s_currentTimer, &QChronoTimer::timeout, this, [this]() {
         checkForUpdate(m_batchId);
     });
 
@@ -352,10 +352,11 @@ QDateTime TimelineDelegateController::liveEndDateTime(const QVariant &res) const
 
 void TimelineDelegateController::scheduleNextUpdate(std::chrono::milliseconds ms)
 {
-    if (s_currentTimer->isActive() && s_currentTimer->remainingTimeAsDuration() < ms) {
+    if (s_currentTimer->isActive() && s_currentTimer->remainingTime() < ms) {
         return;
     }
-    s_currentTimer->start(ms);
+    s_currentTimer->setInterval(ms);
+    s_currentTimer->start();
 }
 
 void TimelineDelegateController::batchChanged(const QString &batchId)
