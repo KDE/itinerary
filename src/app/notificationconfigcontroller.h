@@ -17,12 +17,12 @@ class NotificationConfigController
     Q_PROPERTY(bool canShowOnLockScreen READ canShowOnLockScreen)
 public:
     /** Notification configuration dialog is available on this platform. */
-    [[nodiscard]] bool canConfigureNotification() const;
+    [[nodiscard]] static bool canConfigureNotification();
     /** Platform supports lock-screen visibility. */
-    [[nodiscard]] bool canShowOnLockScreen() const;
+    [[nodiscard]] static bool canShowOnLockScreen();
 
     /** Show notification config dialog. */
-    Q_INVOKABLE void configureNotifications();
+    Q_INVOKABLE static void configureNotifications();
 };
 
 Q_DECLARE_METATYPE(NotificationConfigController)
