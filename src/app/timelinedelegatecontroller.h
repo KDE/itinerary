@@ -23,6 +23,7 @@
 class QDateTime;
 class QJSValue;
 class QTimer;
+class QChronoTimer;
 
 class LiveDataManager;
 class ReservationManager;
@@ -193,7 +194,7 @@ private:
     bool m_isCurrent = false;
 
     static void scheduleNextUpdate(std::chrono::milliseconds ms);
-    static QTimer *s_currentTimer;
+    static QChronoTimer *s_currentTimer;
     static int s_progressRefCount;
     static QTimer *s_progressTimer;
 };
