@@ -953,7 +953,14 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="26.04.2" date="2026-06-04"/>
+    <release version="26.04.2" date="2026-06-04">
+      <description>
+        <ul>
+          <li>New travel document extractors for BDŽ.</li>
+          <li>Improved route names for OpenTripPlanner journey searches.</li>
+        </ul>
+      </description>
+    </release>
     <release version="26.04.1" date="2026-05-07">
       <description>
         <ul>
