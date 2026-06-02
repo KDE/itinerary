@@ -109,22 +109,9 @@ Kirigami.Page {
         ]
     }
 
-
-    QQC2.ComboBox {
-        id: combo
-        anchors { top: parent.top; left: parent.left; right: parent.right; margins: Kirigami.Units.largeSpacing }
-        model: FavoriteLocationModel
-        textRole: "display"
-        onCurrentIndexChanged: {
-            var favLoc = delegateModel.items.get(currentIndex)
-            map.center = QtPositioning.coordinate(favLoc.model.latitude, favLoc.model.longitude)
-            map.zoomLevel = 16;
-        }
-    }
-
     MapView {
         id: map
-        anchors { top: combo.bottom; left: parent.left; right: parent.right; bottom: parent.bottom; topMargin: Kirigami.Units.largeSpacing }
+        anchors { top: parent.top; left: parent.left; right: parent.right; bottom: parent.bottom }
 
         QtLocation.MapQuickItem {
             coordinate: map.center
@@ -135,6 +122,18 @@ Kirigami.Page {
                 width: height
                 height: Kirigami.Units.iconSizes.large
                 color: Kirigami.Theme.negativeTextColor
+            }
+        }
+
+        QQC2.ComboBox {
+            id: combo
+            anchors { top: parent.top; left: parent.left; right: parent.right; margins: Kirigami.Units.largeSpacing }
+            model: FavoriteLocationModel
+            textRole: "display"
+            onCurrentIndexChanged: {
+                var favLoc = delegateModel.items.get(currentIndex)
+                map.center = QtPositioning.coordinate(favLoc.model.latitude, favLoc.model.longitude)
+                map.zoomLevel = 16;
             }
         }
     }
