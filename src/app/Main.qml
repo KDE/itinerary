@@ -173,7 +173,6 @@ Kirigami.ApplicationWindow {
                 break;
             case "journeyRequest":
                 properties["publicTransportManager"] = LiveDataManager.publicTransportManager;
-                properties["initialCountry"] = Settings.homeCountryIsoCode
                 pageStack.push(pagepool.loadPage(Qt.resolvedUrl("JourneyRequestPage.qml")), properties);
                 break;
             default:

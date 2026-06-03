@@ -20,11 +20,6 @@ FormCard.FormCardPage {
 
     property KPublicTransport.Manager publicTransportManager
 
-    /**
-     * Preselected country in the location pickers.
-     * If not specified the country from the current locale is used.
-     */
-    property string initialCountry
     /** Preselected departure time. */
     property date initialDateTime: new Date()
 
@@ -77,7 +72,6 @@ FormCard.FormCardPage {
             StopPickerPage {
                 title: i18nc("departure train station", "Select Departure Stop")
                 publicTransportManager: root.publicTransportManager
-                initialCountry: root.initialCountry
                 // force a deep copy, otherwise this breaks as soon as the other stop picker page is shown...
                 onLocationChanged: root.departureStop = PublicTransport.copyLocation(location);
                 historySortRoleName: Settings.read("StopPicker/historySortMode", "lastUsed")
@@ -90,7 +84,6 @@ FormCard.FormCardPage {
             StopPickerPage {
                 title: i18nc("arrival train station", "Select Arrival Stop")
                 publicTransportManager: root.publicTransportManager
-                initialCountry: root.initialCountry
                 onLocationChanged: root.arrivalStop = PublicTransport.copyLocation(location)
                 historySortRoleName: Settings.read("StopPicker/historySortMode", "lastUsed")
                 onHistorySortRoleChanged: (sortRoleName) => Settings.write("StopPicker/historySortMode", sortRoleName)
