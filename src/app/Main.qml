@@ -77,6 +77,9 @@ Kirigami.ApplicationWindow {
         title: i18n("KDE Itinerary")
         titleIcon: "map-symbolic"
         isMenu: !Kirigami.Settings.isMobile
+
+        width: Math.min(Kirigami.Units.gridUnit * 15, root.width - Kirigami.Units.gridUnit * 3)
+
         actions: [
             Kirigami.Action {
                 id: liveAction
