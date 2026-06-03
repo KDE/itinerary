@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-29 00:44+0000\n"
+"POT-Creation-Date: 2026-06-03 01:03+0000\n"
 "PO-Revision-Date: 2026-05-18 09:09+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -1154,7 +1154,7 @@ msgstr "Reanomena una ubicació preferida"
 msgid "Rename"
 msgstr "Reanomena"
 
-#: app/FavoriteLocationPage.qml:151 app/FormPlaceEditorDelegate.qml:56
+#: app/FavoriteLocationPage.qml:150 app/FormPlaceEditorDelegate.qml:56
 #: app/LocationPicker.qml:78
 #, kde-format
 msgid "Pick Location"
