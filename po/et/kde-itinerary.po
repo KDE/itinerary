@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-03 01:03+0000\n"
+"POT-Creation-Date: 2026-06-04 00:45+0000\n"
 "PO-Revision-Date: 2020-05-04 10:51+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -28,7 +28,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Teekonna üksikasjad"
 
-#: app/AboutPage.qml:18 app/Main.qml:86
+#: app/AboutPage.qml:18 app/Main.qml:89
 #, kde-format
 msgid "About"
 msgstr "Teave"
@@ -2619,7 +2619,7 @@ msgstr ""
 msgid "Itinerary change"
 msgstr "Itineraari muutus"
 
-#: app/LiveStatusPage.qml:21 app/Main.qml:64
+#: app/LiveStatusPage.qml:21 app/Main.qml:67
 #, kde-format
 msgid "Live Status"
 msgstr ""
@@ -3066,30 +3066,30 @@ msgctxt "@info:shell"
 msgid "Files or URLs to import."
 msgstr ""
 
-#: app/Main.qml:72 app/WelcomePage.qml:53
+#: app/Main.qml:75 app/WelcomePage.qml:53
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgid "Settings…"
 msgstr "Seadistused"
 
-#: app/Main.qml:79
+#: app/Main.qml:82
 #, kde-format
 msgid "Help"
 msgstr "Abi"
 
-#: app/Main.qml:168
+#: app/Main.qml:171
 #, fuzzy, kde-format
 #| msgid "No vehicle layout information available."
 msgctxt "@info:status"
 msgid "No onboard information available."
 msgstr "Sõiduki struktuuriteavet ei ole saada."
 
-#: app/Main.qml:210
+#: app/Main.qml:213
 #, kde-format
 msgid "Map download finished."
 msgstr ""
 
-#: app/Main.qml:296
+#: app/Main.qml:299
 #, kde-format
 msgctxt "@title:window"
 msgid "Matrix Session Verification"
