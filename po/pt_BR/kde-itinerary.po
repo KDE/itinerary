@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-29 02:42+0000\n"
+"POT-Creation-Date: 2026-06-05 02:42+0000\n"
 "PO-Revision-Date: 2026-01-09 01:29-0300\n"
 "Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -34,7 +34,7 @@ msgstr ""
 "elchevive@opensuse.org, marcus.gama@gmail.com, geraldosimiao@fedoraproject."
 "org"
 
-#: app/AboutPage.qml:18 app/Main.qml:105
+#: app/AboutPage.qml:18 app/Main.qml:108
 #, kde-format
 msgid "About"
 msgstr "Sobre"
@@ -2415,7 +2415,7 @@ msgstr "Clicar para estender"
 msgid "Itinerary change"
 msgstr "Alteração no itinerário"
 
-#: app/LiveStatusPage.qml:21 app/Main.qml:83
+#: app/LiveStatusPage.qml:21 app/Main.qml:86
 #, kde-format
 msgid "Live Status"
 msgstr "Status ao vivo"
@@ -2844,28 +2844,28 @@ msgctxt "@info:shell"
 msgid "Files or URLs to import."
 msgstr "Arquivos ou URLs a importar."
 
-#: app/Main.qml:91 app/WelcomePage.qml:41
+#: app/Main.qml:94 app/WelcomePage.qml:41
 #, kde-format
 msgid "Settings…"
 msgstr "Configurações…"
 
-#: app/Main.qml:98 app/WelcomePage.qml:16
+#: app/Main.qml:101 app/WelcomePage.qml:16
 #, kde-format
 msgid "Help"
 msgstr "Ajuda"
 
-#: app/Main.qml:187
+#: app/Main.qml:190
 #, kde-format
 msgctxt "@info:status"
 msgid "No onboard information available."
 msgstr "Nenhuma informação de bordo disponível."
 
-#: app/Main.qml:229
+#: app/Main.qml:232
 #, kde-format
 msgid "Map download finished."
 msgstr "Download do mapa concluído."
 
-#: app/Main.qml:315
+#: app/Main.qml:318
 #, kde-format
 msgctxt "@title:window"
 msgid "Matrix Session Verification"

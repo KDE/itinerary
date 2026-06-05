@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-29 02:42+0000\n"
+"POT-Creation-Date: 2026-06-05 02:42+0000\n"
 "PO-Revision-Date: 2026-04-22 23:15+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -27,7 +27,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "mail@kisaragi-hiu.com"
 
-#: app/AboutPage.qml:18 app/Main.qml:105
+#: app/AboutPage.qml:18 app/Main.qml:108
 #, kde-format
 msgid "About"
 msgstr "關於"
@@ -2409,7 +2409,7 @@ msgstr "按一下來展開"
 msgid "Itinerary change"
 msgstr "行程預訂變更"
 
-#: app/LiveStatusPage.qml:21 app/Main.qml:83
+#: app/LiveStatusPage.qml:21 app/Main.qml:86
 #, kde-format
 msgid "Live Status"
 msgstr "實時狀態"
@@ -2835,29 +2835,29 @@ msgctxt "@info:shell"
 msgid "Files or URLs to import."
 msgstr "要匯入的檔案或網址。"
 
-#: app/Main.qml:91 app/WelcomePage.qml:41
+#: app/Main.qml:94 app/WelcomePage.qml:41
 #, kde-format
 msgid "Settings…"
 msgstr "設定…"
 
-#: app/Main.qml:98 app/WelcomePage.qml:16
+#: app/Main.qml:101 app/WelcomePage.qml:16
 #, kde-format
 msgid "Help"
 msgstr "說明"
 
-#: app/Main.qml:187
+#: app/Main.qml:190
 #, fuzzy, kde-format
 #| msgid "No vehicle layout information available."
 msgctxt "@info:status"
 msgid "No onboard information available."
 msgstr "沒有可用的交通工具佈局資訊。"
 
-#: app/Main.qml:229
+#: app/Main.qml:232
 #, kde-format
 msgid "Map download finished."
 msgstr "地圖下載完成。"
 
-#: app/Main.qml:315
+#: app/Main.qml:318
 #, kde-format
 msgctxt "@title:window"
 msgid "Matrix Session Verification"

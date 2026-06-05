@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-29 02:42+0000\n"
+"POT-Creation-Date: 2026-06-05 02:42+0000\n"
 "PO-Revision-Date: 2026-03-10 10:00+0300\n"
 "Last-Translator: Olesya Gerasimenko <goa@altlinux.org>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -30,7 +30,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "translation-team@basealt.ru, kekcuha@gmail.com"
 
-#: app/AboutPage.qml:18 app/Main.qml:105
+#: app/AboutPage.qml:18 app/Main.qml:108
 #, kde-format
 msgid "About"
 msgstr "О программе"
@@ -2423,7 +2423,7 @@ msgstr "Нажмите для расширения"
 msgid "Itinerary change"
 msgstr "Изменение маршрута"
 
-#: app/LiveStatusPage.qml:21 app/Main.qml:83
+#: app/LiveStatusPage.qml:21 app/Main.qml:86
 #, kde-format
 msgid "Live Status"
 msgstr "Состояние в реальном времени"
@@ -2856,28 +2856,28 @@ msgctxt "@info:shell"
 msgid "Files or URLs to import."
 msgstr "Файлы или URL-адреса для импорта."
 
-#: app/Main.qml:91 app/WelcomePage.qml:41
+#: app/Main.qml:94 app/WelcomePage.qml:41
 #, kde-format
 msgid "Settings…"
 msgstr "Параметры…"
 
-#: app/Main.qml:98 app/WelcomePage.qml:16
+#: app/Main.qml:101 app/WelcomePage.qml:16
 #, kde-format
 msgid "Help"
 msgstr "Справка"
 
-#: app/Main.qml:187
+#: app/Main.qml:190
 #, kde-format
 msgctxt "@info:status"
 msgid "No onboard information available."
 msgstr "Информация о посадке недоступна."
 
-#: app/Main.qml:229
+#: app/Main.qml:232
 #, kde-format
 msgid "Map download finished."
 msgstr "Загрузка карты завершена."
 
-#: app/Main.qml:315
+#: app/Main.qml:318
 #, kde-format
 msgctxt "@title:window"
 msgid "Matrix Session Verification"

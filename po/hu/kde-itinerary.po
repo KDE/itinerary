@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-29 02:42+0000\n"
+"POT-Creation-Date: 2026-06-05 02:42+0000\n"
 "PO-Revision-Date: 2024-03-26 16:14+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -27,7 +27,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "ulysses@fsf.hu"
 
-#: app/AboutPage.qml:18 app/Main.qml:105
+#: app/AboutPage.qml:18 app/Main.qml:108
 #, kde-format
 msgid "About"
 msgstr "Névjegy"
@@ -2558,7 +2558,7 @@ msgstr "Kattintson a kibontáshoz"
 msgid "Itinerary change"
 msgstr "Itinermódosítás"
 
-#: app/LiveStatusPage.qml:21 app/Main.qml:83
+#: app/LiveStatusPage.qml:21 app/Main.qml:86
 #, kde-format
 msgid "Live Status"
 msgstr "Helymegosztás"
@@ -2993,30 +2993,30 @@ msgctxt "@info:shell"
 msgid "Files or URLs to import."
 msgstr "Importálandó fájlok vagy URL-ek."
 
-#: app/Main.qml:91 app/WelcomePage.qml:41
+#: app/Main.qml:94 app/WelcomePage.qml:41
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgid "Settings…"
 msgstr "Beállítások"
 
-#: app/Main.qml:98 app/WelcomePage.qml:16
+#: app/Main.qml:101 app/WelcomePage.qml:16
 #, kde-format
 msgid "Help"
 msgstr "Súgó"
 
-#: app/Main.qml:187
+#: app/Main.qml:190
 #, fuzzy, kde-format
 #| msgid "No camera available."
 msgctxt "@info:status"
 msgid "No onboard information available."
 msgstr "Nem érhető el kamera."
 
-#: app/Main.qml:229
+#: app/Main.qml:232
 #, kde-format
 msgid "Map download finished."
 msgstr "Térképletöltés befejezve."
 
-#: app/Main.qml:315
+#: app/Main.qml:318
 #, fuzzy, kde-format
 #| msgid "Matrix Integration"
 msgctxt "@title:window"
