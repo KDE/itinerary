@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-04 00:45+0000\n"
+"POT-Creation-Date: 2026-06-06 00:44+0000\n"
 "PO-Revision-Date: 2020-05-04 10:51+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -2447,81 +2447,81 @@ msgstr ""
 msgid "Still fetching results…"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:45 app/JourneyRequestPage.qml:105
+#: app/JourneyRequestPage.qml:40 app/JourneyRequestPage.qml:98
 #, fuzzy, kde-format
 #| msgid "Select Transfer"
 msgid "Select Journey"
 msgstr "Transfeeri valimine"
 
-#: app/JourneyRequestPage.qml:78 app/JourneyRequestPage.qml:149
+#: app/JourneyRequestPage.qml:73 app/JourneyRequestPage.qml:142
 #, fuzzy, kde-format
 #| msgid "Delayed departure on %1"
 msgctxt "departure train station"
 msgid "Select Departure Stop"
 msgstr "%1 väljumine hilineb"
 
-#: app/JourneyRequestPage.qml:91 app/JourneyRequestPage.qml:163
+#: app/JourneyRequestPage.qml:85 app/JourneyRequestPage.qml:156
 #, fuzzy, kde-format
 #| msgid "Delayed arrival on %1"
 msgctxt "arrival train station"
 msgid "Select Arrival Stop"
 msgstr "%1 saabumine hilineb"
 
-#: app/JourneyRequestPage.qml:148
+#: app/JourneyRequestPage.qml:141
 #, fuzzy, kde-format
 #| msgid "From: %1"
 msgctxt "departure train station"
 msgid "From:"
 msgstr "Asukohast: %1"
 
-#: app/JourneyRequestPage.qml:162
+#: app/JourneyRequestPage.qml:155
 #, fuzzy, kde-format
 #| msgid "To:"
 msgctxt "arrival train station"
 msgid "To:"
 msgstr "Sihtkohta:"
 
-#: app/JourneyRequestPage.qml:180
+#: app/JourneyRequestPage.qml:173
 #, kde-format
 msgctxt "departure and arrival stops"
 msgid "Swap departure and arrival"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:195
+#: app/JourneyRequestPage.qml:188
 #, fuzzy, kde-format
 #| msgid "Departure"
 msgctxt "train or bus departure"
 msgid "Departure"
 msgstr "Väljumine"
 
-#: app/JourneyRequestPage.qml:198
+#: app/JourneyRequestPage.qml:191
 #, fuzzy, kde-format
 #| msgid "Arrival"
 msgctxt "train or bus arrival"
 msgid "Arrival"
 msgstr "Saabumine"
 
-#: app/JourneyRequestPage.qml:211
+#: app/JourneyRequestPage.qml:204
 #, fuzzy, kde-format
 #| msgid "Departure time:"
 msgctxt "train or bus departure"
 msgid "Departure time"
 msgstr "Väljumisaeg:"
 
-#: app/JourneyRequestPage.qml:211
+#: app/JourneyRequestPage.qml:204
 #, fuzzy, kde-format
 #| msgid "Arrival time:"
 msgctxt "train or bus arrival"
 msgid "Arrival time"
 msgstr "Saabumisaeg:"
 
-#: app/JourneyRequestPage.qml:222
+#: app/JourneyRequestPage.qml:215
 #, kde-format
 msgctxt "filter journeys by mode of transportation etc."
 msgid "Filter"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:239
+#: app/JourneyRequestPage.qml:232
 #, kde-format
 msgid "Search Journey"
 msgstr ""
@@ -3084,12 +3084,12 @@ msgctxt "@info:status"
 msgid "No onboard information available."
 msgstr "Sõiduki struktuuriteavet ei ole saada."
 
-#: app/Main.qml:213
+#: app/Main.qml:212
 #, kde-format
 msgid "Map download finished."
 msgstr ""
 
-#: app/Main.qml:299
+#: app/Main.qml:298
 #, kde-format
 msgctxt "@title:window"
 msgid "Matrix Session Verification"

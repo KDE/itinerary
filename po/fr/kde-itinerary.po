@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-04 00:45+0000\n"
+"POT-Creation-Date: 2026-06-06 00:44+0000\n"
 "PO-Revision-Date: 2026-05-20 12:18+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
@@ -2247,24 +2247,24 @@ msgstr "Aucun voyage trouvé."
 msgid "Still fetching results…"
 msgstr "Toujours en recherche de résultats..."
 
-#: app/JourneyRequestPage.qml:45 app/JourneyRequestPage.qml:105
+#: app/JourneyRequestPage.qml:40 app/JourneyRequestPage.qml:98
 #, kde-format
 msgid "Select Journey"
 msgstr "Sélectionner un voyage"
 
-#: app/JourneyRequestPage.qml:78 app/JourneyRequestPage.qml:149
+#: app/JourneyRequestPage.qml:73 app/JourneyRequestPage.qml:142
 #, kde-format
 msgctxt "departure train station"
 msgid "Select Departure Stop"
 msgstr "Sélectionner un point de départ"
 
-#: app/JourneyRequestPage.qml:91 app/JourneyRequestPage.qml:163
+#: app/JourneyRequestPage.qml:85 app/JourneyRequestPage.qml:156
 #, kde-format
 msgctxt "arrival train station"
 msgid "Select Arrival Stop"
 msgstr "Sélectionner un point d'arrivée"
 
-#: app/JourneyRequestPage.qml:148
+#: app/JourneyRequestPage.qml:141
 #, kde-format
 msgctxt "departure train station"
 msgid "From:"
@@ -2272,49 +2272,49 @@ msgstr "De :"
 
 # unreviewed-context
 # unreviewed-context
-#: app/JourneyRequestPage.qml:162
+#: app/JourneyRequestPage.qml:155
 #, kde-format
 msgctxt "arrival train station"
 msgid "To:"
 msgstr "Vers :"
 
-#: app/JourneyRequestPage.qml:180
+#: app/JourneyRequestPage.qml:173
 #, kde-format
 msgctxt "departure and arrival stops"
 msgid "Swap departure and arrival"
 msgstr "Intervertir le départ et l'arrivée"
 
-#: app/JourneyRequestPage.qml:195
+#: app/JourneyRequestPage.qml:188
 #, kde-format
 msgctxt "train or bus departure"
 msgid "Departure"
 msgstr "Départ"
 
-#: app/JourneyRequestPage.qml:198
+#: app/JourneyRequestPage.qml:191
 #, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival"
 msgstr "Arrivée"
 
-#: app/JourneyRequestPage.qml:211
+#: app/JourneyRequestPage.qml:204
 #, kde-format
 msgctxt "train or bus departure"
 msgid "Departure time"
 msgstr "Heure de départ"
 
-#: app/JourneyRequestPage.qml:211
+#: app/JourneyRequestPage.qml:204
 #, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival time"
 msgstr "Heure d'arrivée"
 
-#: app/JourneyRequestPage.qml:222
+#: app/JourneyRequestPage.qml:215
 #, kde-format
 msgctxt "filter journeys by mode of transportation etc."
 msgid "Filter"
 msgstr "Filtrer"
 
-#: app/JourneyRequestPage.qml:239
+#: app/JourneyRequestPage.qml:232
 #, kde-format
 msgid "Search Journey"
 msgstr "Rechercher un voyage"
@@ -2863,12 +2863,12 @@ msgctxt "@info:status"
 msgid "No onboard information available."
 msgstr "Aucune information à bord disponible."
 
-#: app/Main.qml:213
+#: app/Main.qml:212
 #, kde-format
 msgid "Map download finished."
 msgstr "Chargement de la carte terminé."
 
-#: app/Main.qml:299
+#: app/Main.qml:298
 #, kde-format
 msgctxt "@title:window"
 msgid "Matrix Session Verification"
