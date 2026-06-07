@@ -8,21 +8,17 @@
 
 #include "calendardata.h"
 
-#include "kandroidextras/androidtypes.h"
-#include "kandroidextras/javatypes.h"
-#include "kandroidextras/jnimethod.h"
-#include "kandroidextras/jniproperty.h"
-#include "kandroidextras/jnitypes.h"
+#include "../kjniextras/kjnimethod.h"
 
-JNI_TYPE(org, kde, kcalendarcore, CalendarPlugin)
 
 /** JNI wrapper for the CalendarPlugin class. */
-class JniCalendarPlugin
+class JniCalendarPlugin : public QtJniTypes::JObject<JniCalendarPlugin>
 {
-    JNI_OBJECT(JniCalendarPlugin, org::kde::kcalendarcore::CalendarPlugin)
 public:
-    JNI_CONSTRUCTOR(JniCalendarPlugin, KAndroidExtras::android::content::Context)
-    JNI_METHOD(KAndroidExtras::Jni::Array<JniCalendarData>, getCalendars)
+    KJNI_CONSTRUCTOR(JniCalendarPlugin, QtJniTypes::Context)
+    KJNI_METHOD(QJniArray<JniCalendarData>, getCalendars)
 };
+
+KJNI_DECLARE_CLASS(org, kde, kcalendarcore, CalendarPlugin, JniCalendarPlugin)
 
 #endif

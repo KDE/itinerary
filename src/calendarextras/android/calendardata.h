@@ -6,24 +6,22 @@
 #ifndef KCALENDARCORE_JNI_CALENDARDATA_H
 #define KCALENDARCORE_JNI_CALENDARDATA_H
 
-#include "kandroidextras/javatypes.h"
-#include "kandroidextras/jniobject.h"
-#include "kandroidextras/jniproperty.h"
-#include "kandroidextras/jnitypes.h"
-
-JNI_TYPE(org, kde, kcalendarcore, CalendarData)
+#include "../kjniextras/kjnimethod.h"
+#include "../kjniextras/kjniproperty.h"
 
 /** JNI wrapper for the CalendarPlugin class. */
-class JniCalendarData
+class JniCalendarData : public QtJniTypes::JObject<JniCalendarData>
 {
-    JNI_OBJECT(JniCalendarData, org::kde::kcalendarcore::CalendarData)
+    KJNI_OBJECT(JniCalendarData)
 public:
-    JNI_PROPERTY(jlong, id)
-    JNI_PROPERTY(KAndroidExtras::java::lang::String, displayName)
-    JNI_PROPERTY(jint, accessLevel)
-    JNI_PROPERTY(jint, color)
-    JNI_PROPERTY(KAndroidExtras::java::lang::String, timezone)
-    JNI_PROPERTY(KAndroidExtras::java::lang::String, owner)
+    KJNI_PROPERTY(jlong, id)
+    KJNI_PROPERTY(QString, displayName)
+    KJNI_PROPERTY(jint, accessLevel)
+    KJNI_PROPERTY(jint, color)
+    KJNI_PROPERTY(QString, timezone)
+    KJNI_PROPERTY(QString, owner)
 };
+
+KJNI_DECLARE_CLASS(org, kde, kcalendarcore, CalendarData, JniCalendarData)
 
 #endif

@@ -5,6 +5,7 @@ add_definitions(-DTRANSLATION_DOMAIN=\"kde-itinerary\")
 
 add_subdirectory(solidextras)
 add_subdirectory(weather)
+add_subdirectory(kjniextras)
 add_subdirectory(kandroidextras)
 add_subdirectory(gpx)
 add_subdirectory(calendarextras)

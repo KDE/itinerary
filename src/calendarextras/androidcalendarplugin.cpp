@@ -6,21 +6,18 @@
 #include "androidcalendarplugin.h"
 #include "androidcalendar.h"
 
+#include "android/calendarcontract.h"
 #include "android/calendardata.h"
-
-#include "kandroidextras/calendarcontract.h"
-#include <KAndroidExtras/JniObject>
 
 #include <QColor>
 #include <QCoreApplication>
 #include <QDebug>
 
 using namespace KCalendarCore;
-using namespace KAndroidExtras;
 
 AndroidCalendarPlugin::AndroidCalendarPlugin(QObject *parent, const QVariantList &args)
     : CalendarPlugin(parent, args)
-    , m_jni(Jni::fromHandle<android::content::Context>(QJniObject(QNativeInterface::QAndroidApplication::context())))
+    , m_jni(QNativeInterface::QAndroidApplication::context())
 {
 }
 
@@ -37,15 +34,15 @@ QList<KCalendarCore::Calendar::Ptr> AndroidCalendarPlugin::calendars() const
 
 void AndroidCalendarPlugin::loadCalendars() const
 {
-    const Jni::Array<JniCalendarData> cals = m_jni.getCalendars();
+    const QJniArray<JniCalendarData> cals = m_jni.getCalendars();
     for (const JniCalendarData &calData : cals) {
         auto *cal = new AndroidCalendar(QTimeZone(QString(calData.timezone).toUtf8()), calData.owner, calData.id);
         cal->setId(QString::number(calData.id));
         cal->setName(calData.displayName);
 
         const int accessLevel = calData.accessLevel;
-        if (accessLevel == CalendarColumns::CAL_ACCESS_ROOT || accessLevel == CalendarColumns::CAL_ACCESS_OWNER
-            || accessLevel == CalendarColumns::CAL_ACCESS_EDITOR || accessLevel == CalendarColumns::CAL_ACCESS_CONTRIBUTOR) {
+        if (accessLevel == CalendarContract::CalendarColumns::CAL_ACCESS_ROOT || accessLevel == CalendarContract::CalendarColumns::CAL_ACCESS_OWNER
+            || accessLevel == CalendarContract::CalendarColumns::CAL_ACCESS_EDITOR || accessLevel == CalendarContract::CalendarColumns::CAL_ACCESS_CONTRIBUTOR) {
             cal->setAccessMode(KCalendarCore::ReadWrite);
         } else {
             cal->setAccessMode(KCalendarCore::ReadOnly);

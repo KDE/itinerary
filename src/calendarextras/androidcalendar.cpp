@@ -11,11 +11,9 @@
 #include <QCoreApplication>
 #include <QDebug>
 
-using namespace KAndroidExtras;
-
 AndroidCalendar::AndroidCalendar(const QTimeZone &tz, const QString &owner, jlong id)
     : KCalendarCore::Calendar(tz)
-    , m_calendar(Jni::fromHandle<android::content::Context>(QJniObject(QNativeInterface::QAndroidApplication::context())), id)
+    , m_calendar(QNativeInterface::QAndroidApplication::context(), id)
     , m_owner(owner)
 {
 }

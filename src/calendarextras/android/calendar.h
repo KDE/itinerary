@@ -6,33 +6,31 @@
 #ifndef KCALENDARCORE_JNI_CALENDAR_H
 #define KCALENDARCORE_JNI_CALENDAR_H
 
+#include "calendardata.h"
 #include "eventdata.h"
 
-#include "kandroidextras/androidtypes.h"
-#include "kandroidextras/javatypes.h"
-#include "kandroidextras/jnimethod.h"
-#include "kandroidextras/jniobject.h"
-#include "kandroidextras/jniproperty.h"
-#include "kandroidextras/jnitypes.h"
+#include "../kjniextras/kjnimethod.h"
+#include "../kjniextras/kjniproperty.h"
 
-JNI_TYPE(org, kde, kcalendarcore, Calendar)
 
 /** JNI wrapper for the CalendarPlugin class. */
-class JniCalendar
+class JniCalendar : public QtJniTypes::JObject<JniCalendar>
 {
-    JNI_OBJECT(JniCalendar, org::kde::kcalendarcore::Calendar)
+    KJNI_OBJECT(JniCalendar)
 public:
-    JNI_CONSTRUCTOR(JniCalendar, KAndroidExtras::android::content::Context, jlong)
-    JNI_METHOD(Jni::Array<JniEventData>, rawEvents)
-    JNI_METHOD(Jni::Array<JniEventData>, rawEvents, jlong, jlong, bool)
-    JNI_METHOD(bool, addEvent, JniEventData)
-    JNI_METHOD(JniEventData, event, KAndroidExtras::java::lang::String)
-    JNI_METHOD(JniEventData, event, KAndroidExtras::java::lang::String, jlong)
-    JNI_METHOD(bool, deleteEvent, KAndroidExtras::java::lang::String)
-    JNI_METHOD(bool, deleteEvent, KAndroidExtras::java::lang::String, jlong)
-    JNI_METHOD(bool, deleteEventInstances, KAndroidExtras::java::lang::String)
-    JNI_METHOD(Jni::Array<JniEventData>, eventInstances, KAndroidExtras::java::lang::String)
-    JNI_METHOD(bool, updateEvent, JniEventData, bool, bool)
+    KJNI_CONSTRUCTOR(JniCalendar, QtJniTypes::Context, jlong)
+    KJNI_METHOD(QJniArray<JniEventData>, rawEvents)
+    KJNI_METHOD(QJniArray<JniEventData>, rawEvents, jlong, jlong, bool)
+    KJNI_METHOD(bool, addEvent, JniEventData)
+    KJNI_METHOD(JniEventData, event, QString)
+    KJNI_METHOD(JniEventData, event, QString, jlong)
+    KJNI_METHOD(bool, deleteEvent, QString)
+    KJNI_METHOD(bool, deleteEvent, QString, jlong)
+    KJNI_METHOD(bool, deleteEventInstances, QString)
+    KJNI_METHOD(QJniArray<JniEventData>, eventInstances, QString)
+    KJNI_METHOD(bool, updateEvent, JniEventData, bool, bool)
 };
+
+KJNI_DECLARE_CLASS(org, kde, kcalendarcore, Calendar, JniCalendar)
 
 #endif

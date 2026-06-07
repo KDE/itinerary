@@ -20,7 +20,7 @@ if (ANDROID)
         androidicalconverter.cpp
     )
     target_compile_definitions(KCalendarCoreExtras PRIVATE -DQT_STATICPLUGIN)
-    target_link_libraries(KCalendarCoreExtras PRIVATE KAndroidExtras LibIcal)
+    target_link_libraries(KCalendarCoreExtras PRIVATE LibIcal)
 endif()
 
 target_link_libraries(KCalendarCoreExtras PUBLIC KF6::CalendarCore)

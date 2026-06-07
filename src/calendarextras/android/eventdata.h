@@ -6,80 +6,81 @@
 #ifndef KCALENDARCORE_JNI_EVENTDATA_H
 #define KCALENDARCORE_JNI_EVENTDATA_H
 
-#include "kandroidextras/javatypes.h"
-#include "kandroidextras/jnimethod.h"
-#include "kandroidextras/jniobject.h"
-#include "kandroidextras/jniproperty.h"
-#include "kandroidextras/jnitypes.h"
-
-JNI_TYPE(org, kde, kcalendarcore, EventData)
-JNI_TYPE(org, kde, kcalendarcore, AttendeeData)
-JNI_TYPE(org, kde, kcalendarcore, ExtendedPropertyData)
-JNI_TYPE(org, kde, kcalendarcore, ReminderData)
+#include "../kjniextras/kjnimethod.h"
+#include "../kjniextras/kjniobject.h"
+#include "../kjniextras/kjniproperty.h"
 
 /** JNI wrapper for the event reminder data class. */
-class JniReminderData
+class JniReminderData : public QtJniTypes::JObject<JniReminderData>
 {
-    JNI_OBJECT(JniReminderData, org::kde::kcalendarcore::ReminderData)
+    KJNI_OBJECT(JniReminderData)
 public:
-    JNI_CONSTRUCTOR(JniReminderData)
-    JNI_PROPERTY(int, minutes)
-    JNI_PROPERTY(int, method)
+    KJNI_CONSTRUCTOR(JniReminderData)
+    KJNI_PROPERTY(int, minutes)
+    KJNI_PROPERTY(int, method)
 };
+
+KJNI_DECLARE_CLASS(org, kde, kcalendarcore, ReminderData, JniReminderData)
 
 /** JNI wrapper for the event extended property data class. */
-class JniExtendedPropertyData
+class JniExtendedPropertyData : public QtJniTypes::JObject<JniExtendedPropertyData>
 {
-    JNI_OBJECT(JniExtendedPropertyData, org::kde::kcalendarcore::ExtendedPropertyData)
+    KJNI_OBJECT(JniExtendedPropertyData)
 public:
-    JNI_CONSTRUCTOR(JniExtendedPropertyData)
-    JNI_PROPERTY(KAndroidExtras::java::lang::String, name)
-    JNI_PROPERTY(KAndroidExtras::java::lang::String, value)
+    KJNI_CONSTRUCTOR(JniExtendedPropertyData)
+    KJNI_PROPERTY(QString, name)
+    KJNI_PROPERTY(QString, value)
 };
+
+KJNI_DECLARE_CLASS(org, kde, kcalendarcore, ExtendedPropertyData, JniExtendedPropertyData)
 
 /** JNI wrapper for the event reminder data class. */
-class JniAttendeeData
+class JniAttendeeData : public QtJniTypes::JObject<JniAttendeeData>
 {
-    JNI_OBJECT(JniAttendeeData, org::kde::kcalendarcore::AttendeeData)
+    KJNI_OBJECT(JniAttendeeData)
 public:
-    JNI_CONSTRUCTOR(JniAttendeeData)
-    JNI_PROPERTY(KAndroidExtras::java::lang::String, name)
-    JNI_PROPERTY(KAndroidExtras::java::lang::String, email)
-    JNI_PROPERTY(int, relationship)
-    JNI_PROPERTY(int, type)
-    JNI_PROPERTY(int, status)
+    KJNI_CONSTRUCTOR(JniAttendeeData)
+    KJNI_PROPERTY(QString, name)
+    KJNI_PROPERTY(QString, email)
+    KJNI_PROPERTY(int, relationship)
+    KJNI_PROPERTY(int, type)
+    KJNI_PROPERTY(int, status)
 };
+
+KJNI_DECLARE_CLASS(org, kde, kcalendarcore, AttendeeData, JniAttendeeData)
 
 /** JNI wrapper for the event data class. */
-class JniEventData
+class JniEventData : public QtJniTypes::JObject<JniEventData>
 {
-    JNI_OBJECT(JniEventData, org::kde::kcalendarcore::EventData)
+    KJNI_OBJECT(JniEventData)
 public:
-    JNI_CONSTRUCTOR(JniEventData)
-    JNI_PROPERTY(jlong, id)
-    JNI_PROPERTY(KAndroidExtras::java::lang::String, organizer)
-    JNI_PROPERTY(KAndroidExtras::java::lang::String, title)
-    JNI_PROPERTY(KAndroidExtras::java::lang::String, location)
-    JNI_PROPERTY(KAndroidExtras::java::lang::String, description)
-    JNI_PROPERTY(jlong, dtStart)
-    JNI_PROPERTY(jlong, dtEnd)
-    JNI_PROPERTY(KAndroidExtras::java::lang::String, startTimezone)
-    JNI_PROPERTY(KAndroidExtras::java::lang::String, endTimezone)
-    JNI_PROPERTY(KAndroidExtras::java::lang::String, duration)
-    JNI_PROPERTY(bool, allDay)
-    JNI_PROPERTY(KAndroidExtras::java::lang::String, rrule)
-    JNI_PROPERTY(KAndroidExtras::java::lang::String, rdate)
-    JNI_PROPERTY(KAndroidExtras::java::lang::String, exrule)
-    JNI_PROPERTY(KAndroidExtras::java::lang::String, exdate)
-    JNI_PROPERTY(KAndroidExtras::java::lang::String, originalId)
-    JNI_PROPERTY(jlong, instanceId)
-    JNI_PROPERTY(jint, accessLevel)
-    JNI_PROPERTY(jint, availability)
-    JNI_PROPERTY(KAndroidExtras::java::lang::String, uid2445)
+    KJNI_CONSTRUCTOR(JniEventData)
+    KJNI_PROPERTY(jlong, id)
+    KJNI_PROPERTY(QString, organizer)
+    KJNI_PROPERTY(QString, title)
+    KJNI_PROPERTY(QString, location)
+    KJNI_PROPERTY(QString, description)
+    KJNI_PROPERTY(jlong, dtStart)
+    KJNI_PROPERTY(jlong, dtEnd)
+    KJNI_PROPERTY(QString, startTimezone)
+    KJNI_PROPERTY(QString, endTimezone)
+    KJNI_PROPERTY(QString, duration)
+    KJNI_PROPERTY(bool, allDay)
+    KJNI_PROPERTY(QString, rrule)
+    KJNI_PROPERTY(QString, rdate)
+    KJNI_PROPERTY(QString, exrule)
+    KJNI_PROPERTY(QString, exdate)
+    KJNI_PROPERTY(QString, originalId)
+    KJNI_PROPERTY(jlong, instanceId)
+    KJNI_PROPERTY(jint, accessLevel)
+    KJNI_PROPERTY(jint, availability)
+    KJNI_PROPERTY(QString, uid2445)
 
-    JNI_PROPERTY(KAndroidExtras::Jni::Array<JniAttendeeData>, attendees)
-    JNI_PROPERTY(KAndroidExtras::Jni::Array<JniExtendedPropertyData>, extendedProperties)
-    JNI_PROPERTY(KAndroidExtras::Jni::Array<JniReminderData>, reminders)
+    KJNI_PROPERTY(QJniArray<JniAttendeeData>, attendees)
+    KJNI_PROPERTY(QJniArray<JniExtendedPropertyData>, extendedProperties)
+    KJNI_PROPERTY(QJniArray<JniReminderData>, reminders)
 };
+
+KJNI_DECLARE_CLASS(org, kde, kcalendarcore, EventData, JniEventData)
 
 #endif

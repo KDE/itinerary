@@ -6,9 +6,7 @@
 #include "androidicalconverter.h"
 
 #include "android/eventdata.h"
-
-#include <KAndroidExtras/CalendarContract>
-#include <KAndroidExtras/JniArray>
+#include "android/calendarcontract.h"
 
 #include <KCalendarCore/ICalFormat>
 
@@ -28,7 +26,7 @@ using property_ptr = std::unique_ptr<icalproperty, decltype(&icalproperty_free)>
 
 KCalendarCore::Event::Ptr AndroidIcalConverter::readEvent(const JniEventData &data)
 {
-    if (!KAndroidExtras::Jni::handle(data).isValid()) {
+    if (!data.isValid()) {
         return nullptr;
     }
 
@@ -59,14 +57,14 @@ KCalendarCore::Event::Ptr AndroidIcalConverter::readEvent(const JniEventData &da
     }
 
     const jint accessLevel = data.accessLevel;
-    if (accessLevel == KAndroidExtras::EventsColumns::ACCESS_PRIVATE) { // ### we probably want to cache the constants?
+    if (accessLevel == CalendarContract::EventsColumns::ACCESS_PRIVATE) { // ### we probably want to cache the constants?
         ev->setSecrecy(KCalendarCore::Event::SecrecyPrivate);
-    } else if (accessLevel == KAndroidExtras::EventsColumns::ACCESS_CONFIDENTIAL) {
+    } else if (accessLevel == CalendarContract::EventsColumns::ACCESS_CONFIDENTIAL) {
         ev->setSecrecy(KCalendarCore::Event::SecrecyConfidential);
     }
 
     const jint availability = data.availability;
-    if (availability == KAndroidExtras::EventsColumns::AVAILABILITY_FREE) {
+    if (availability == CalendarContract::EventsColumns::AVAILABILITY_FREE) {
         ev->setTransparency(KCalendarCore::Event::Transparent);
     }
 
@@ -99,19 +97,19 @@ KCalendarCore::Event::Ptr AndroidIcalConverter::readEvent(const JniEventData &da
     }
 
     // attendees
-    const KAndroidExtras::Jni::Array<JniAttendeeData> attendeesData = data.attendees;
+    const QJniArray<JniAttendeeData> attendeesData = data.attendees;
     for (const JniAttendeeData &attendeeData : attendeesData) {
         ev->addAttendee(AndroidIcalConverter::readAttendee(attendeeData));
     }
 
     // alarms
-    const KAndroidExtras::Jni::Array<JniReminderData> remindersData = data.reminders;
+    const QJniArray<JniReminderData> remindersData = data.reminders;
     for (const JniReminderData &reminderData : remindersData) {
         ev->addAlarm(AndroidIcalConverter::readAlarm(reminderData, ev.data()));
     }
 
     // extended properties
-    const KAndroidExtras::Jni::Array<JniExtendedPropertyData> extProperties = data.extendedProperties;
+    const QJniArray<JniExtendedPropertyData> extProperties = data.extendedProperties;
     for (const JniExtendedPropertyData &extProperty : extProperties) {
         if (QString(extProperty.name) == QLatin1StringView("vnd.android.cursor.item/vnd.ical4android.unknown-property")) {
             // DAVx⁵ extended properties: the actual name/value pair is a JSON array in the property value
@@ -166,22 +164,22 @@ JniEventData AndroidIcalConverter::writeEvent(const KCalendarCore::Event::Ptr &e
 
     switch (event->secrecy()) {
     case KCalendarCore::Event::SecrecyPrivate:
-        data.accessLevel = KAndroidExtras::EventsColumns::ACCESS_PRIVATE;
+        data.accessLevel = CalendarContract::EventsColumns::ACCESS_PRIVATE;
         break;
     case KCalendarCore::Event::SecrecyConfidential:
-        data.accessLevel = KAndroidExtras::EventsColumns::ACCESS_CONFIDENTIAL;
+        data.accessLevel = CalendarContract::EventsColumns::ACCESS_CONFIDENTIAL;
         break;
     case KCalendarCore::Event::SecrecyPublic:
-        data.accessLevel = KAndroidExtras::EventsColumns::ACCESS_PUBLIC;
+        data.accessLevel = CalendarContract::EventsColumns::ACCESS_PUBLIC;
         break;
     }
 
     switch (event->transparency()) {
     case KCalendarCore::Event::Transparent:
-        data.availability = KAndroidExtras::EventsColumns::AVAILABILITY_FREE;
+        data.availability = CalendarContract::EventsColumns::AVAILABILITY_FREE;
         break;
     case KCalendarCore::Event::Opaque:
-        data.availability = KAndroidExtras::EventsColumns::AVAILABILITY_BUSY;
+        data.availability = CalendarContract::EventsColumns::AVAILABILITY_BUSY;
         break;
     }
 
@@ -208,7 +206,7 @@ JniEventData AndroidIcalConverter::writeEvent(const KCalendarCore::Event::Ptr &e
     // attendees
     if (!event->attendees().isEmpty()) {
         const auto attendees = event->attendees();
-        KAndroidExtras::Jni::Array<JniAttendeeData> attendeeData(attendees.size());
+        QJniArray<JniAttendeeData> attendeeData(attendees.size());
         for (int i = 0; i < attendees.size(); ++i) {
             attendeeData[i] = writeAttendee(attendees.at(i));
         }
@@ -218,7 +216,7 @@ JniEventData AndroidIcalConverter::writeEvent(const KCalendarCore::Event::Ptr &e
     // alarms
     if (!event->alarms().isEmpty()) {
         const auto alarms = event->alarms();
-        KAndroidExtras::Jni::Array<JniReminderData> reminders(alarms.size());
+        QJniArray<JniReminderData> reminders(alarms.size());
         for (int i = 0; i < alarms.size(); ++i) {
             reminders[i] = writeAlarm(alarms.at(i));
         }
@@ -228,7 +226,7 @@ JniEventData AndroidIcalConverter::writeEvent(const KCalendarCore::Event::Ptr &e
     // extended properties
     const auto properties = writeExtendedProperties(event.data());
     if (!properties.empty()) {
-        KAndroidExtras::Jni::Array<JniExtendedPropertyData> propData(properties.size());
+        QJniArray<JniExtendedPropertyData> propData(properties.size());
         for (std::size_t i = 0; i < properties.size(); ++i) {
             propData[i] = properties[i];
         }
@@ -242,7 +240,7 @@ KCalendarCore::Alarm::Ptr AndroidIcalConverter::readAlarm(const JniReminderData 
 {
     KCalendarCore::Alarm::Ptr alarm(new KCalendarCore::Alarm(parent));
     alarm->setStartOffset(KCalendarCore::Duration(-data.minutes * 60, KCalendarCore::Duration::Seconds));
-    if (data.method == KAndroidExtras::RemindersColumns::METHOD_EMAIL || data.method == KAndroidExtras::RemindersColumns::METHOD_SMS) {
+    if (data.method == CalendarContract::RemindersColumns::METHOD_EMAIL || data.method == CalendarContract::RemindersColumns::METHOD_SMS) {
         alarm->setType(KCalendarCore::Alarm::Email);
     } else {
         alarm->setType(KCalendarCore::Alarm::Display);
@@ -259,10 +257,10 @@ JniReminderData AndroidIcalConverter::writeAlarm(const KCalendarCore::Alarm::Ptr
     case KCalendarCore::Alarm::Display:
     case KCalendarCore::Alarm::Procedure:
     case KCalendarCore::Alarm::Invalid:
-        data.method = KAndroidExtras::RemindersColumns::METHOD_ALERT;
+        data.method = CalendarContract::RemindersColumns::METHOD_ALERT;
         break;
     case KCalendarCore::Alarm::Email:
-        data.method = KAndroidExtras::RemindersColumns::METHOD_EMAIL;
+        data.method = CalendarContract::RemindersColumns::METHOD_EMAIL;
         break;
     }
     return data;
@@ -274,35 +272,35 @@ KCalendarCore::Attendee AndroidIcalConverter::readAttendee(const JniAttendeeData
 
     // attendee role (### doesn't map properly, what to do about the remaining values?)
     const jint relationship = data.relationship;
-    if (relationship == KAndroidExtras::AttendeesColumns::RELATIONSHIP_NONE) {
+    if (relationship == CalendarContract::AttendeesColumns::RELATIONSHIP_NONE) {
         attendee.setRole(KCalendarCore::Attendee::NonParticipant);
-    } else if (relationship == KAndroidExtras::AttendeesColumns::RELATIONSHIP_ORGANIZER) {
+    } else if (relationship == CalendarContract::AttendeesColumns::RELATIONSHIP_ORGANIZER) {
         attendee.setRole(KCalendarCore::Attendee::Chair);
     }
 
     // attendee status
     const jint status = data.status;
-    if (status == KAndroidExtras::AttendeesColumns::ATTENDEE_STATUS_ACCEPTED) {
+    if (status == CalendarContract::AttendeesColumns::ATTENDEE_STATUS_ACCEPTED) {
         attendee.setStatus(KCalendarCore::Attendee::Accepted);
-    } else if (status == KAndroidExtras::AttendeesColumns::ATTENDEE_STATUS_DECLINED) {
+    } else if (status == CalendarContract::AttendeesColumns::ATTENDEE_STATUS_DECLINED) {
         attendee.setStatus(KCalendarCore::Attendee::Declined);
-    } else if (status == KAndroidExtras::AttendeesColumns::ATTENDEE_STATUS_INVITED) {
+    } else if (status == CalendarContract::AttendeesColumns::ATTENDEE_STATUS_INVITED) {
         attendee.setStatus(KCalendarCore::Attendee::NeedsAction);
-    } else if (status == KAndroidExtras::AttendeesColumns::ATTENDEE_STATUS_NONE) {
+    } else if (status == CalendarContract::AttendeesColumns::ATTENDEE_STATUS_NONE) {
         attendee.setStatus(KCalendarCore::Attendee::None);
-    } else if (status == KAndroidExtras::AttendeesColumns::ATTENDEE_STATUS_TENTATIVE) {
+    } else if (status == CalendarContract::AttendeesColumns::ATTENDEE_STATUS_TENTATIVE) {
         attendee.setStatus(KCalendarCore::Attendee::Tentative);
     }
 
     // attendee type (### doesn't perfectly map either, and partly maps to role?)
     const jint type = data.type;
-    if (type == KAndroidExtras::AttendeesColumns::TYPE_REQUIRED) {
+    if (type == CalendarContract::AttendeesColumns::TYPE_REQUIRED) {
         attendee.setRole(KCalendarCore::Attendee::ReqParticipant);
-    } else if (type == KAndroidExtras::AttendeesColumns::TYPE_OPTIONAL) {
+    } else if (type == CalendarContract::AttendeesColumns::TYPE_OPTIONAL) {
         attendee.setRole(KCalendarCore::Attendee::OptParticipant);
-    } else if (type == KAndroidExtras::AttendeesColumns::TYPE_NONE) {
+    } else if (type == CalendarContract::AttendeesColumns::TYPE_NONE) {
         attendee.setRole(KCalendarCore::Attendee::NonParticipant);
-    } else if (type == KAndroidExtras::AttendeesColumns::TYPE_RESOURCE) {
+    } else if (type == CalendarContract::AttendeesColumns::TYPE_RESOURCE) {
         attendee.setCuType(KCalendarCore::Attendee::Resource);
     }
 
@@ -319,23 +317,23 @@ JniAttendeeData AndroidIcalConverter::writeAttendee(const KCalendarCore::Attende
     case KCalendarCore::Attendee::Individual:
     case KCalendarCore::Attendee::Group:
     case KCalendarCore::Attendee::Unknown:
-        data.relationship = KAndroidExtras::AttendeesColumns::RELATIONSHIP_ATTENDEE;
+        data.relationship = CalendarContract::AttendeesColumns::RELATIONSHIP_ATTENDEE;
         break;
     case KCalendarCore::Attendee::Room:
     case KCalendarCore::Attendee::Resource:
-        data.type = KAndroidExtras::AttendeesColumns::TYPE_RESOURCE;
+        data.type = CalendarContract::AttendeesColumns::TYPE_RESOURCE;
         break;
     }
 
     switch (attendee.role()) {
     case KCalendarCore::Attendee::ReqParticipant:
-        data.type = KAndroidExtras::AttendeesColumns::TYPE_REQUIRED;
+        data.type = CalendarContract::AttendeesColumns::TYPE_REQUIRED;
         break;
     case KCalendarCore::Attendee::OptParticipant:
-        data.type = KAndroidExtras::AttendeesColumns::TYPE_OPTIONAL;
+        data.type = CalendarContract::AttendeesColumns::TYPE_OPTIONAL;
         break;
     case KCalendarCore::Attendee::NonParticipant:
-        data.type = KAndroidExtras::AttendeesColumns::TYPE_NONE;
+        data.type = CalendarContract::AttendeesColumns::TYPE_NONE;
         break;
     case KCalendarCore::Attendee::Chair:
         // TODO?
@@ -344,22 +342,22 @@ JniAttendeeData AndroidIcalConverter::writeAttendee(const KCalendarCore::Attende
 
     switch (attendee.status()) {
     case KCalendarCore::Attendee::NeedsAction:
-        data.status = KAndroidExtras::AttendeesColumns::ATTENDEE_STATUS_INVITED;
+        data.status = CalendarContract::AttendeesColumns::ATTENDEE_STATUS_INVITED;
         break;
     case KCalendarCore::Attendee::Accepted:
-        data.status = KAndroidExtras::AttendeesColumns::ATTENDEE_STATUS_ACCEPTED;
+        data.status = CalendarContract::AttendeesColumns::ATTENDEE_STATUS_ACCEPTED;
         break;
     case KCalendarCore::Attendee::Declined:
-        data.status = KAndroidExtras::AttendeesColumns::ATTENDEE_STATUS_DECLINED;
+        data.status = CalendarContract::AttendeesColumns::ATTENDEE_STATUS_DECLINED;
         break;
     case KCalendarCore::Attendee::Tentative:
-        data.status = KAndroidExtras::AttendeesColumns::ATTENDEE_STATUS_TENTATIVE;
+        data.status = CalendarContract::AttendeesColumns::ATTENDEE_STATUS_TENTATIVE;
         break;
     case KCalendarCore::Attendee::Delegated:
     case KCalendarCore::Attendee::InProcess:
     case KCalendarCore::Attendee::Completed:
     case KCalendarCore::Attendee::None:
-        data.status = KAndroidExtras::AttendeesColumns::ATTENDEE_STATUS_NONE;
+        data.status = CalendarContract::AttendeesColumns::ATTENDEE_STATUS_NONE;
         break;
     }
 
