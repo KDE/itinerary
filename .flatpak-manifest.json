@@ -4,7 +4,7 @@
     "runtime": "org.kde.Platform",
     "runtime-version": "6.10",
     "sdk": "org.kde.Sdk",
-    "sdk-extensions" : [
+    "sdk-extensions": [
         "org.freedesktop.Sdk.Extension.rust-stable"
     ],
     "command": "itinerary",
@@ -84,8 +84,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/google/libphonenumber/archive/refs/tags/v9.0.20.tar.gz",
-                    "sha256": "5de298e4a8c72564ac9cdae415f6cc9ea2952e9f1f9e71dd6d1c70755c92bf2f",
+                    "url": "https://github.com/google/libphonenumber/archive/refs/tags/v9.0.32.tar.gz",
+                    "sha256": "fef1a587ff4793d02cf10dc87d083e7a230e0caf56e8dfdf0da6a15f78420ed8",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 89344,
@@ -106,8 +106,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://github.com/protocolbuffers/protobuf/archive/refs/tags/v33.2.tar.gz",
-                            "sha256": "eb671d900b05d8e17f4cd6ca61bfcc60770d209af1a289cb1a200815d6b621ae",
+                            "url": "https://github.com/protocolbuffers/protobuf/archive/refs/tags/v35.1.tar.gz",
+                            "sha256": "22775f9376938295efa2d59a59bde4cd075a42df5a9b4d27aa9b99fa6a413bd2",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 3715,
