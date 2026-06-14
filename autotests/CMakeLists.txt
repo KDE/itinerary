@@ -9,7 +9,7 @@ ecm_add_test(jniarraytest.cpp LINK_LIBRARIES Qt::Test KAndroidExtras)
 ecm_add_test(jnimethodtest.cpp LINK_LIBRARIES Qt::Test KAndroidExtras)
 ecm_add_test(androidwrappertest.cpp LINK_LIBRARIES Qt::Test KAndroidExtras)
 
-if (TARGET LibIcal)
+if (TARGET LibIcal AND TARGET KCalendarCoreExtras)
     ecm_add_test(androidicalconvertertest.cpp LINK_LIBRARIES Qt::Test KAndroidExtras KCalendarCoreExtras LibIcal)
 endif()
 
