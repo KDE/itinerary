@@ -19,7 +19,7 @@ Rectangle {
     implicitHeight: bodyBackground.implicitHeight
     implicitWidth: 332 //Math.max(topLayout.implicitWidth, 332)
 
-    color: Util.isValidColor(pass.backgroundColor) ? pass.backgroundColor : Kirigami.Theme.backgroundColor
+    color: pass.hasBackgroundColor ? pass.backgroundColor : Kirigami.Theme.backgroundColor
     radius: 10
 
     /** Double tap on the barcode to request scan mode. */
@@ -55,7 +55,7 @@ Rectangle {
                 Layout.rowSpan: 2
                 Layout.fillWidth: root.pass ? true : false
                 text: root.pass ? root.pass.logoText : ""
-                color: Util.isValidColor(root.pass.foregroundColor) ? root.pass.foregroundColor : Kirigami.Theme.textColor
+                color: root.pass.hasForegroundColor ? root.pass.foregroundColor : Kirigami.Theme.textColor
             }
 
             Repeater {
@@ -63,7 +63,7 @@ Rectangle {
                 delegate: QQC2.Label {
                     required property KPkPass.field modelData
                     text: modelData.label
-                    color: Util.isValidColor(root.pass.labelColor) ? root.pass.labelColor : Kirigami.Theme.textColor
+                    color: root.pass.hasLabelColor ? root.pass.labelColor : Kirigami.Theme.textColor
                     elide: Text.ElideRight
                     Layout.fillWidth: true
                 }
@@ -73,7 +73,7 @@ Rectangle {
                 delegate: QQC2.Label {
                     required property KPkPass.field modelData
                     text: modelData.valueDisplayString
-                    color: Util.isValidColor(root.pass.foregroundColor) ? pass.foregroundColor : Kirigami.Theme.textColor
+                    color: root.pass.hasForegroundColor ? root.pass.foregroundColor : Kirigami.Theme.textColor
                     elide: Text.ElideRight
                     Layout.fillWidth: true
                 }
@@ -95,7 +95,7 @@ Rectangle {
                 delegate: QQC2.Label {
                     required property KPkPass.field modelData
                     Layout.fillWidth: true
-                    color: Util.isValidColor(root.pass.labelColor) ? root.pass.labelColor : Kirigami.Theme.textColor
+                    color: root.pass.hasLabelColor ? root.pass.labelColor : Kirigami.Theme.textColor
                     text: modelData.label
                     horizontalAlignment: modelData.textAlignment
                 }
@@ -115,7 +115,7 @@ Rectangle {
                 delegate: QQC2.Label {
                     required property KPkPass.field modelData
                     Layout.fillWidth: true
-                    color: Util.isValidColor(root.pass.foregroundColor) ? root.pass.foregroundColor : Kirigami.Theme.textColor
+                    color: root.pass.hasForegroundColor ? root.pass.foregroundColor : Kirigami.Theme.textColor
                     text: modelData.valueDisplayString
                     horizontalAlignment: modelData.textAlignment
                 }
@@ -134,7 +134,7 @@ Rectangle {
                 delegate: QQC2.Label {
                     required property KPkPass.field modelData
                     Layout.fillWidth: true
-                    color: Util.isValidColor(root.pass.labelColor) ? root.pass.labelColor : Kirigami.Theme.textColor
+                    color: root.pass.hasLabelColor ? root.pass.labelColor : Kirigami.Theme.textColor
                     text: modelData.label
                     horizontalAlignment: modelData.textAlignment
                 }
@@ -144,7 +144,7 @@ Rectangle {
                 delegate: QQC2.Label {
                     required property KPkPass.field modelData
                     Layout.fillWidth: true
-                    color: Util.isValidColor(root.pass.foregroundColor) ? root.pass.foregroundColor : Kirigami.Theme.textColor
+                    color: root.pass.hasForegroundColor ? root.pass.foregroundColor : Kirigami.Theme.textColor
                     text: modelData.valueDisplayString
                     horizontalAlignment: modelData.textAlignment
                 }
@@ -163,7 +163,7 @@ Rectangle {
                 delegate: QQC2.Label {
                     required property KPkPass.field modelData
                     Layout.fillWidth: true
-                    color: Util.isValidColor(root.pass.labelColor) ? root.pass.labelColor : Kirigami.Theme.textColor
+                    color: root.pass.hasLabelColor ? root.pass.labelColor : Kirigami.Theme.textColor
                     text: modelData.label
                     horizontalAlignment: modelData.textAlignment
                 }
@@ -173,7 +173,7 @@ Rectangle {
                 delegate: QQC2.Label {
                     required property KPkPass.field modelData
                     Layout.fillWidth: true
-                    color: Util.isValidColor(root.pass.foregroundColor) ? root.pass.foregroundColor : Kirigami.Theme.textColor
+                    color: root.pass.hasForegroundColor ? root.pass.foregroundColor : Kirigami.Theme.textColor
                     text: modelData.valueDisplayString
                     horizontalAlignment: modelData.textAlignment
                 }
@@ -200,14 +200,14 @@ Rectangle {
                 required property KPkPass.field modelData
                 QQC2.Label {
                     Layout.fillWidth: true
-                    color: Util.isValidColor(root.pass.labelColor) ? root.pass.labelColor : Kirigami.Theme.textColor
+                    color: root.pass.hasLabelColor ? root.pass.labelColor : Kirigami.Theme.textColor
                     text: delegateRoot.modelData.label
                     wrapMode: Text.WordWrap
                     horizontalAlignment: delegateRoot.modelData.textAlignment
                 }
                 QQC2.Label {
                     Layout.fillWidth: true
-                    color: Util.isValidColor(root.pass.foregroundColor) ? root.pass.foregroundColor : Kirigami.Theme.textColor
+                    color: root.pass.hasForegroundColor ? root.pass.foregroundColor : Kirigami.Theme.textColor
                     linkColor: color
                     text: Util.textToHtml(delegateRoot.modelData.valueDisplayString)
                     textFormat: Util.isRichText(delegateRoot.modelData.valueDisplayString) ? Text.StyledText : Text.AutoText

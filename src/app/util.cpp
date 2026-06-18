@@ -110,11 +110,6 @@ void Util::sortModel(QObject *model, int column, Qt::SortOrder sortOrder)
     }
 }
 
-bool Util::isValidColor(const QColor &color)
-{
-    return color.isValid();
-}
-
 bool Util::isLocationChange(const QVariant &res)
 {
     return LocationUtil::isLocationChange(res);

@@ -28,7 +28,7 @@ Item {
 
     Rectangle {
         id: bodyBackground
-        color: Util.isValidColor(root.pass.backgroundColor) ? root.pass.backgroundColor : Kirigami.Theme.backgroundColor
+        color: root.pass.hasBackgroundColor ? root.pass.backgroundColor : Kirigami.Theme.backgroundColor
         //implicitHeight: topLayout.implicitHeight + 2 * topLayout.anchors.margins
         width: parent.width
 
@@ -88,7 +88,7 @@ Item {
                         Layout.rowSpan: 2
                         Layout.fillWidth: root.pass ? true : false
                         text: root.pass ? root.pass.logoText : ""
-                        color: Util.isValidColor(root.pass.foregroundColor) ? root.pass.foregroundColor : root.defaultTextColor
+                        color: root.pass.hasForegroundColor ? root.pass.foregroundColor : root.defaultTextColor
                     }
 
                     Repeater {
@@ -97,7 +97,7 @@ Item {
                             required property KPkPass.field modelData
                             required property int index
                             text: modelData.label
-                            color: Util.isValidColor(root.pass.labelColor) ? root.pass.labelColor : root.defaultTextColor
+                            color: root.pass.hasLabelColor ? root.pass.labelColor : root.defaultTextColor
                             Layout.row: 0
                             Layout.column: index + 2
                         }
@@ -108,7 +108,7 @@ Item {
                             required property KPkPass.field modelData
                             required property int index
                             text: modelData.valueDisplayString
-                            color: Util.isValidColor(root.pass.foregroundColor) ? root.pass.foregroundColor : root.defaultTextColor
+                            color: root.pass.hasForegroundColor ? root.pass.foregroundColor : root.defaultTextColor
                             Layout.row: 1
                             Layout.column: index + 2
                         }
@@ -138,7 +138,7 @@ Item {
                         delegate: QQC2.Label {
                             required property KPkPass.field modelData
                             Layout.fillWidth: true
-                            color: Util.isValidColor(root.pass.labelColor) ? root.pass.labelColor : root.defaultTextColor
+                            color: root.pass.hasLabelColor ? root.pass.labelColor : root.defaultTextColor
                             text: modelData.label
                             horizontalAlignment: modelData.textAlignment
                         }
@@ -148,7 +148,7 @@ Item {
                         delegate: QQC2.Label {
                             required property KPkPass.field modelData
                             Layout.fillWidth: true
-                            color: Util.isValidColor(root.pass.foregroundColor) ? root.pass.foregroundColor : root.defaultTextColor
+                            color: root.pass.hasForegroundColor ? root.pass.foregroundColor : root.defaultTextColor
                             text: modelData.valueDisplayString
                             horizontalAlignment: modelData.textAlignment
                         }
@@ -167,7 +167,7 @@ Item {
                         delegate: QQC2.Label {
                             required property KPkPass.field modelData
                             Layout.fillWidth: true
-                            color: Util.isValidColor(root.pass.labelColor) ? root.pass.labelColor : root.defaultTextColor
+                            color: root.pass.hasLabelColor ? root.pass.labelColor : root.defaultTextColor
                             text: modelData.label
                             horizontalAlignment: modelData.textAlignment
                         }
@@ -177,7 +177,7 @@ Item {
                         delegate: QQC2.Label {
                             required property KPkPass.field modelData
                             Layout.fillWidth: true
-                            color: Util.isValidColor(root.pass.foregroundColor) ? root.pass.foregroundColor : root.defaultTextColor
+                            color: root.pass.hasForegroundColor ? root.pass.foregroundColor : root.defaultTextColor
                             text: modelData.valueDisplayString
                             horizontalAlignment: modelData.textAlignment
                         }
@@ -196,7 +196,7 @@ Item {
                         delegate: QQC2.Label {
                             required property KPkPass.field modelData
                             Layout.fillWidth: true
-                            color: Util.isValidColor(root.pass.labelColor) ? root.pass.labelColor : root.defaultTextColor
+                            color: root.pass.hasLabelColor ? root.pass.labelColor : root.defaultTextColor
                             text: modelData.label
                             horizontalAlignment: modelData.textAlignment
                         }
@@ -206,7 +206,7 @@ Item {
                         delegate: QQC2.Label {
                             required property KPkPass.field modelData
                             Layout.fillWidth: true
-                            color: Util.isValidColor(root.pass.foregroundColor) ? root.pass.foregroundColor : root.defaultTextColor
+                            color: root.pass.hasForegroundColor ? root.pass.foregroundColor : root.defaultTextColor
                             text: modelData.valueDisplayString
                             horizontalAlignment: modelData.textAlignment
                         }
@@ -242,15 +242,15 @@ Item {
                     required property KPkPass.field modelData
                     QQC2.Label {
                         Layout.fillWidth: true
-                        color: Util.isValidColor(root.pass.labelColor) ? root.pass.labelColor : root.defaultTextColor
+                        color: root.pass.hasLabelColor ? root.pass.labelColor : root.defaultTextColor
                         text: delegateRoot.modelData.label
                         wrapMode: Text.WordWrap
                         horizontalAlignment: delegateRoot.modelData.textAlignment
                     }
                     QQC2.Label {
                         Layout.fillWidth: true
-                        color: Util.isValidColor(root.pass.foregroundColor) ? root.pass.foregroundColor : root.defaultTextColor
-                        linkColor: Util.isValidColor(root.pass.foregroundColor) ? color : Kirigami.Theme.linkColor
+                        color: root.pass.hasForegroundColor ? root.pass.foregroundColor : root.defaultTextColor
+                        linkColor: root.pass.hasForegroundColor ? color : Kirigami.Theme.linkColor
                         text: Util.textToHtml(delegateRoot.modelData.valueDisplayString)
                         textFormat: Util.isRichText(delegateRoot.modelData.valueDisplayString) ? Text.StyledText : Text.AutoText
                         wrapMode: Text.WordWrap

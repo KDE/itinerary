@@ -40,9 +40,6 @@ public:
     /** Execute the non-exported sort() method on a QAbstractItemModel. */
     Q_INVOKABLE static void sortModel(QObject *model, int column, Qt::SortOrder sortOrder);
 
-    /** QColor::isValid for QML. */
-    Q_INVOKABLE static bool isValidColor(const QColor &color);
-
     /** Expose LocationUtil::isLocationCahnge to QML. */
     Q_INVOKABLE static bool isLocationChange(const QVariant &res);
 
