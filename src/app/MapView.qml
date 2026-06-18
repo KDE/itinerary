@@ -20,8 +20,17 @@ QtLocation.Map {
     copyrightsVisible: !applicationWindow().hasMapLibre
     onCopyrightLinkActivated: Qt.openUrlExternally(link)
 
+    Rectangle {
+        color: "#B0ffffff"
+        anchors.fill: attributionLabel
+        radius: Kirigami.Units.cornerRadius
+
+        z: 100
+    }
+
     Controls.Label {
-        anchors.right: parent.right
+        id: attributionLabel
+        anchors.left: parent.left
         anchors.bottom: parent.bottom
         anchors.margins: 2
 
@@ -29,12 +38,14 @@ QtLocation.Map {
 
         textFormat: Text.RichText
         wrapMode: Text.WordWrap
-        horizontalAlignment: Text.AlignRight
+        horizontalAlignment: Text.AlignLeft
 
-        width: parent.width
+        width: Kirigami.Units.gridUnit * 11
 
         text: i18n('<a href="https://openfreemap.org" target="_blank">OpenFreeMap</a> <a href="https://www.openmaptiles.org/" target="_blank">© OpenMapTiles</a><br>Data from <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>')
         onLinkActivated: (link) => { Qt.openUrlExternally(link); }
+
+        z: 101
     }
 
     property geoCoordinate startCentroid
