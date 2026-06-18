@@ -35,7 +35,7 @@ Item {
 
         Image {
             id: backgroundImage
-            source: root.passId !== "" ? "image://org.kde.pkpass/" + root.passId + "/background" : ""
+            source: root.passId !== "" ? (root.pass.hasArtwork ? "image://org.kde.pkpass/" + root.passId + "/artwork" : "image://org.kde.pkpass/" + root.passId + "/background") : ""
             fillMode: backgroundImage.implicitHeight < parent.implicitHeight ? Image.TileVertically : Image.PreserveAspectCrop
             verticalAlignment: Image.AlignTop
             horizontalAlignment: Image.AlignHCenter
@@ -49,7 +49,7 @@ Item {
             anchors.fill: backgroundImage
             source: backgroundImage
             autoPaddingEnabled: false
-            blurEnabled: true
+            blurEnabled: root.pass.preferredStyleSchemes[0] !== "posterEventTicket" ?? true
             blur: 1.0
             blurMax: 32
         }
