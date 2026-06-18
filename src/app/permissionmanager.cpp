@@ -23,8 +23,6 @@ static QString permissionName(Permission::Permission p)
         return ManifestPermission::READ_CALENDAR;
     case Permission::WriteCalendar:
         return ManifestPermission::WRITE_CALENDAR;
-    case Permission::Camera:
-        return ManifestPermission::CAMERA;
     }
 }
 #endif

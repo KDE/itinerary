@@ -3,6 +3,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+import QtCore
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
@@ -47,6 +48,14 @@ Kirigami.Page {
         videoOutput: viewFinder
     }
 
+    CameraPermission {
+        id: permission
+        onStatusChanged: {
+            if (status === Qt.PermissionStatus.Granted)
+                camera.start();
+        }
+    }
+
     Rectangle {
         border {
             color: Kirigami.Theme.focusColor
@@ -70,7 +79,7 @@ Kirigami.Page {
     Kirigami.PlaceholderMessage {
         anchors.fill: parent
         text: i18n("No camera available.")
-        visible: camera.error != Camera.NoError
+        visible: camera.error != Camera.NoError && !camera.active
     }
 
     FloatingButton {
@@ -91,5 +100,8 @@ Kirigami.Page {
         }
     }
 
-    Component.onCompleted: PermissionManager.requestPermission(Permission.Camera, function() { camera.start(); })
+    Component.onCompleted: {
+        if (permission.status == Qt.PermissionStatus.Undetermined)
+            permission.request();
+    }
 }

@@ -18,7 +18,6 @@ enum Permission {
     InvalidPermission, // captures QML errors resulting in "0" enum values
     ReadCalendar,
     WriteCalendar,
-    Camera,
 };
 Q_ENUM_NS(Permission)
 }
