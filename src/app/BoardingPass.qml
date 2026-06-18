@@ -12,6 +12,7 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.pkpass as KPkPass
 import org.kde.kpublictransport as KPublicTransport
+import './pkpass' as PkPass
 import org.kde.itinerary
 
 Item {
@@ -137,32 +138,9 @@ Item {
             }
 
             // auxiliary fields
-            GridLayout {
-                id: auxFieldsLayout
-                rows: 2
-                columns: root.pass.auxiliaryFields.length
-                Layout.fillWidth: true
-
-                Repeater {
-                    model: root.pass.auxiliaryFields
-                    delegate: QQC2.Label {
-                        required property KPkPass.field modelData
-                        Layout.fillWidth: true
-                        color: root.pass.labelColor
-                        text: modelData.label
-                        horizontalAlignment: modelData.textAlignment
-                    }
-                }
-                Repeater {
-                    model: root.pass.auxiliaryFields
-                    delegate: QQC2.Label {
-                        required property KPkPass.field modelData
-                        Layout.fillWidth: true
-                        color: root.pass.foregroundColor
-                        text: modelData.valueDisplayString
-                        horizontalAlignment: modelData.textAlignment
-                    }
-                }
+            PkPass.AuxiliaryFieldsGrid {
+                pass: root.pass
+                defaultTextColor: Kirigami.Theme.textColor
             }
 
             // secondary fields
