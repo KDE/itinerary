@@ -233,6 +233,14 @@ ecm_add_qml_module(itinerary GENERATE_PLUGIN_SOURCE
         onlineimport/db.qml
         onlineimport/sncf.qml
 )
+ecm_target_qml_sources(itinerary
+    PRIVATE
+    PATH pkpass
+    SOURCES
+        pkpass/AuxiliaryFieldsGrid.qml
+        pkpass/FieldLabel.qml
+        pkpass/FieldValue.qml
+)
 
 ecm_qt_declare_logging_category(itinerary
     HEADER logging.h
