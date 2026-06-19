@@ -80,24 +80,43 @@ Kirigami.Action {
     }
 
     Kirigami.Action {
+        id: calendarAction
         icon.name: "view-calendar-day"
         text: i18nc("@action:inmenu", "From calendar")
         onTriggered: {
-            PermissionManager.requestPermission(Permission.ReadCalendar, function() {
-                if (!calendarSelector.model) {
-                    // needs to be created on demand, after we have calendar access permissions
-                    calendarSelector.model = Qt.createComponent("org.kde.calendarcore", "CalendarListModel").createObject(root);
-                }
-                calendarSelector.open();
-            })
+            if (calendarPermission.status === Qt.PermissionStatus.Granted) {
+                calendarSelector.initAndOpen();
+            } else {
+                calendarPermission.request();
+            }
         }
+        enabled: calendarPermission.status !== Qt.PermissionStatus.Denied
         visible: KCalendarCore.CalendarPluginLoader.hasPlugin
 
         readonly property CalendarSelectionDialog calendarSelector: CalendarSelectionDialog {
+            id: calSelectionDialog
             // parent: root.Overlay.overlay
             onCalendarSelected: (calendar) => {
                 ImportController.enableAutoCommit = false;
                 ImportController.importFromCalendar(calendar);
+            }
+
+            function initAndOpen()
+            {
+                if (!model) {
+                    // needs to be created on demand, after we have calendar access permissions
+                    model = Qt.createComponent("org.kde.calendarcore", "CalendarListModel").createObject(root);
+                }
+                open();
+            }
+        }
+
+        readonly property QtCore.CalendarPermission calendarPermission: QtCore.CalendarPermission {
+            accessMode: QtCore.CalendarPermission.ReadOnly
+            onStatusChanged: {
+                if (status === Qt.PermissionStatus.Granted) {
+                    calendarAction.calendarSelector.initAndOpen();
+                }
             }
         }
     }

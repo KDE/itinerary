@@ -45,7 +45,6 @@ target_sources(itinerary PRIVATE
     onlineticketretrievaljob.cpp
     osmimportjob.cpp
     passmanager.cpp
-    permissionmanager.cpp
     pkpassimageprovider.cpp
     pkpassmanager.cpp
     publictransport.cpp

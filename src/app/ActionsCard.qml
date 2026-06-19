@@ -62,14 +62,15 @@ ColumnLayout {
         Kirigami.Action {
             icon.name: "view-calendar-day"
             text: i18n("Add to calendar…")
-            onTriggered: PermissionManager.requestPermission(Permission.WriteCalendar, function() {
-                if (!writableCalendars.sourceModel) {
-                    // needs to be created on demand, after we have calendar access permissions
-                    writableCalendars.sourceModel = Qt.createComponent("org.kde.calendarcore", "CalendarListModel").createObject(root);
+            onTriggered: {
+                if (calendarPermission.status === Qt.PermissionStatus.Granted) {
+                    calendarSelector.initAndOpen();
+                } else {
+                    calendarPermission.request();
                 }
-                calendarSelector.open();
-            })
+            }
             visible: KCalendarCore.CalendarPluginLoader.hasPlugin
+            enabled: calendarPermission.status !== Qt.PermissionStatus.Denied
         },
         Kirigami.Action {
             icon.name: "document-export-symbolic"
@@ -88,6 +89,15 @@ ColumnLayout {
         TransferPage {}
     }
 
+    CalendarPermission {
+        id: calendarPermission
+        accessMode: QtCore.CalendarPermission.ReadWrite
+        onStatusChanged: {
+            if (status === Qt.PermissionStatus.Granted) {
+                    calendarSelector.initAndOpen();
+            }
+        }
+    }
     KSortFilterProxyModel {
         id: writableCalendars
         filterRoleName: "accessMode"
@@ -100,6 +110,13 @@ ColumnLayout {
 
         model: writableCalendars
         onCalendarSelected: (calendar) => { controller.addToCalendar(calendar); }
+        function initAndOpen() {
+            if (!writableCalendars.sourceModel) {
+                // needs to be created on demand, after we have calendar access permissions
+                writableCalendars.sourceModel = Qt.createComponent("org.kde.calendarcore", "CalendarListModel").createObject(root);
+            }
+            open();
+        }
     }
 
     Component {

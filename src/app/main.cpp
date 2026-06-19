@@ -28,7 +28,6 @@
 #include "notificationconfigcontroller.h"
 #include "onlineticketimporter.h"
 #include "passmanager.h"
-#include "permissionmanager.h"
 #include "pkpassimageprovider.h"
 #include "pkpassmanager.h"
 #include "publictransport.h"
@@ -131,7 +130,6 @@ static void registerApplicationSingletons()
     REGISTER_SINGLETON_GADGET_FACTORY(Localizer)
     REGISTER_SINGLETON_GADGET_FACTORY(NavigationController)
     REGISTER_SINGLETON_GADGET_FACTORY(NotificationConfigController)
-    REGISTER_SINGLETON_GADGET_FACTORY(PermissionManager)
     REGISTER_SINGLETON_GADGET_FACTORY(PublicTransport)
     REGISTER_SINGLETON_GADGET_FACTORY(ReservationHelper)
     REGISTER_SINGLETON_GADGET_FACTORY(ScamWarningManager)

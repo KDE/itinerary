@@ -17,4 +17,4 @@ public:
     Q_INVOKABLE static void syncCurrencyConversionTable();
 };
 
-#endif // PERMISSIONMANAGER_H
+#endif
