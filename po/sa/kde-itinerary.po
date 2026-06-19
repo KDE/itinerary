@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-06 00:44+0000\n"
+"POT-Creation-Date: 2026-06-19 00:44+0000\n"
 "PO-Revision-Date: 2025-03-02 14:47+0530\n"
 "Last-Translator: Shreekant Kalwar <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -334,17 +334,17 @@ msgstr "बारकोड स्कैन मोड"
 msgid "In barcode scanning mode"
 msgstr "बारकोड् स्कैनिङ्ग मोड् मध्ये"
 
-#: app/BarcodeScannerPage.qml:17
+#: app/BarcodeScannerPage.qml:18
 #, kde-format
 msgid "Scan Barcode"
 msgstr "स्कैन बारकोड"
 
-#: app/BarcodeScannerPage.qml:72
+#: app/BarcodeScannerPage.qml:81
 #, kde-format
 msgid "No camera available."
 msgstr "न कॅमेरा उपलब्धः।"
 
-#: app/BarcodeScannerPage.qml:85
+#: app/BarcodeScannerPage.qml:94
 #, kde-format
 msgid "Light"
 msgstr "प्रकाशः"

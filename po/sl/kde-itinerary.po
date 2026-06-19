@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-06 00:44+0000\n"
+"POT-Creation-Date: 2026-06-19 00:44+0000\n"
 "PO-Revision-Date: 2026-05-18 07:32+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -334,17 +334,17 @@ msgstr "Način optičnega branja črtne kode"
 msgid "In barcode scanning mode"
 msgstr "V načinu optičnega branja črtne kode"
 
-#: app/BarcodeScannerPage.qml:17
+#: app/BarcodeScannerPage.qml:18
 #, kde-format
 msgid "Scan Barcode"
 msgstr "Preberi črtno kodo"
 
-#: app/BarcodeScannerPage.qml:72
+#: app/BarcodeScannerPage.qml:81
 #, kde-format
 msgid "No camera available."
 msgstr "Kamere ni na voljo."
 
-#: app/BarcodeScannerPage.qml:85
+#: app/BarcodeScannerPage.qml:94
 #, kde-format
 msgid "Light"
 msgstr "Luč"

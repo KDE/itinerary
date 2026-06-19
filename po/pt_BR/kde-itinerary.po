@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-06 00:44+0000\n"
+"POT-Creation-Date: 2026-06-19 00:44+0000\n"
 "PO-Revision-Date: 2026-05-18 06:48-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -333,17 +333,17 @@ msgstr "Modo de escaneamento de código de barras"
 msgid "In barcode scanning mode"
 msgstr "No modo de escaneamento de código de barras"
 
-#: app/BarcodeScannerPage.qml:17
+#: app/BarcodeScannerPage.qml:18
 #, kde-format
 msgid "Scan Barcode"
 msgstr "Escanear código de barras"
 
-#: app/BarcodeScannerPage.qml:72
+#: app/BarcodeScannerPage.qml:81
 #, kde-format
 msgid "No camera available."
 msgstr "Nenhuma câmera disponível."
 
-#: app/BarcodeScannerPage.qml:85
+#: app/BarcodeScannerPage.qml:94
 #, kde-format
 msgid "Light"
 msgstr "Luz"
