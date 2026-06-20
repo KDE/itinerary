@@ -970,6 +970,7 @@
           <li xml:lang="ka">გაუმჯობესებული სამგზავრო დოკუმენტების ამომკრები BDŽ-ისთვის.</li>
           <li xml:lang="nl">Nieuwe extractor voor reisdocumenten voor BDŽ.</li>
           <li xml:lang="pt-BR">Novo extrator de documentos de viagem para BDŽ.</li>
+          <li xml:lang="ru">Новые модули извлечения данных из проездных документов для BDŽ.</li>
           <li xml:lang="sk">Nové extraktory cestovných dokladov pre BDŽ.</li>
           <li xml:lang="sl">Izboljšan ekstraktor potovalnih dokumentov za BDŽ.</li>
           <li xml:lang="tr">BDŽ için yeni yolculuk belgesi çıkarımı</li>
@@ -986,6 +987,7 @@
           <li xml:lang="ka">გაუმჯობესდა გზის სახელები OpenTripPlanner-ის მოგზაურობის ძებნებისას.</li>
           <li xml:lang="nl">Verbeterde routenamen voor reiszoekopdrachten van OpenTripPlanner.</li>
           <li xml:lang="pt-BR">Nomes de rotas aprimorados para buscas de viagens no OpenTripPlanner.</li>
+          <li xml:lang="ru">Улучшены названия маршрутов для поиска маршрутов OpenTripPlanner.</li>
           <li xml:lang="sk">Vylepšené názvy trás pri hľadaní spojení cez OpenTripPlanner.</li>
           <li xml:lang="sl">Izboljšana imena poti za iskanja potovanj OpenTripPlanner.</li>
           <li xml:lang="tr">OpenTripPlanner yolculuk aramalarında iyileştirilmiş rota adları</li>
@@ -1009,6 +1011,7 @@
           <li xml:lang="ka">ახალი ან გაუმჯობესებული სამგზავრო დოკუმენტების ამომკრებები Condor-ისთვის და Monbus-ისთვის.</li>
           <li xml:lang="nl">Nieuwe of verbeterde extractors voor reisdocumenten voor Condor en Monbus.</li>
           <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para o Condor e o Monbus.</li>
+          <li xml:lang="ru">Новые или улучшенные модули извлечения данных из проездных документов для Condor и Monbus.</li>
           <li xml:lang="sk">Nové alebo vylepšené extraktory cestovných dokumentov pre Condor a Monbus.</li>
           <li xml:lang="sl">Novi ali izboljšani programi za ekstrakcijo potovalnih dokumentov za Condor in Monbus.</li>
           <li xml:lang="tr">Condor ve Monbus için yeni veya iyileştirilmiş belge çıkarıcıları</li>
@@ -1026,6 +1029,7 @@
           <li xml:lang="ka">ადაპტაცია Deutsche Bahn-ის API-ის ცვლილებებთან.</li>
           <li xml:lang="nl">Aangepast aan Deutsche Bahn API wijzigingen.</li>
           <li xml:lang="pt-BR">Adaptação às alterações da API da Deutsche Bahn.</li>
+          <li xml:lang="ru">Выполнена адаптация к изменениям API Deutsche Bahn.</li>
           <li xml:lang="sk">Prispôsobené zmenám rozhrania API Deutsche Bahn.</li>
           <li xml:lang="sl">Prilagojeno spremembam API-ja Deutsche Bahn.</li>
           <li xml:lang="tr">Deutsche Bahn API değişikliklerine uyum</li>
@@ -1043,6 +1047,7 @@
           <li xml:lang="ka">გასწორდა ალმის ჩვენება ქვეყნის ჩამოსაშლელ სიაში.</li>
           <li xml:lang="nl">Opgelost vlag tonen in keuzelijst met landen.</li>
           <li xml:lang="pt-BR">Exibição fixa da bandeira na caixa de combinação de países.</li>
+          <li xml:lang="ru">Исправлено отображение флагов в списке стран.</li>
           <li xml:lang="sk">Opravené zobrazenie vlajky v rozbaľovacom zozname krajín.</li>
           <li xml:lang="sl">Popravljen prikaz zastave v kombiniranem polju države.</li>
           <li xml:lang="tr">Ülke açılır menüsünde bayrak görüntüleri onarıldı.</li>
@@ -1066,6 +1071,7 @@
           <li xml:lang="ka">ახალი ვექტორულ გრაფიკაზე დაფუძნებული რუქის ხედი.</li>
           <li xml:lang="nl">Nieuwe op vectorgrafiek gebaseerde kaartweergave.</li>
           <li xml:lang="pt-BR">Nova visualização de mapa baseada em gráficos vetoriais.</li>
+          <li xml:lang="ru">Новый вид карты на основе векторной графики;</li>
           <li xml:lang="sk">Nové zobrazenie mapy založené na vektorovej grafike.</li>
           <li xml:lang="sl">Nov pogled zemljevida, ki temelji na vektorski grafiki.</li>
           <li xml:lang="tr">Yeni vektör grafik tabanlı harita görünümü</li>
@@ -1084,6 +1090,7 @@
           <li xml:lang="ka">მდებარეობის ინფორმაციის ავტომატური ძებნა.</li>
           <li xml:lang="nl">Automatisch opzoeken van locatiegegevens.</li>
           <li xml:lang="pt-BR">Busca automática de informações de localização.</li>
+          <li xml:lang="ru">Автоматическое определение информации о местоположении.</li>
           <li xml:lang="sk">Automatické vyhľadávanie informácií o polohe.</li>
           <li xml:lang="sl">Samodejno iskanje podatkov o lokaciji.</li>
           <li xml:lang="tr">Konum bilgisinin kendiliğinden aranması</li>
@@ -1102,6 +1109,7 @@
           <li xml:lang="ka">უფრო ზუსტი კონტროლი ჩანაწერების წაშლისას რეზერვაციებში ერთზე მეტი ბილეთით, ან მოგზაურით.</li>
           <li xml:lang="nl">Meer gedetailleerde controle over het verwijderen van vermeldingen in reserveringen met meerdere tickets of meerdere reizigers.</li>
           <li xml:lang="pt-BR">Controle mais preciso sobre a exclusão de entradas em reservas com vários bilhetes ou vários viajantes.</li>
+          <li xml:lang="ru">Более точное управление удалением записей в бронированиях с несколькими билетами или пассажирами.</li>
           <li xml:lang="sk">Podrobnejšie ovládanie mazania položiek v rezerváciách s viacerými lístkami alebo viacerými cestujúcimi.</li>
           <li xml:lang="sl">Natančnejši nadzor nad brisanjem vnosov pri rezervacijah z več vozovnicami ali več potniki.</li>
           <li xml:lang="tr">Birden çok bilet veya yolcu içeren rezervasyonlardaki girdileri silerken daha ince denetim olanağı</li>
@@ -1120,6 +1128,7 @@
           <li xml:lang="ka">გაუქმებული ჯავშნების გაუმჯობესებული დამუშავება.</li>
           <li xml:lang="nl">Verbeterde afhandeling van geannuleerde reserveringen.</li>
           <li xml:lang="pt-BR">Melhoria no tratamento de reservas canceladas.</li>
+          <li xml:lang="ru">Улучшена обработка отменённых бронирований.</li>
           <li xml:lang="sk">Vylepšené spracovanie zrušených rezervácií.</li>
           <li xml:lang="sl">Izboljšano ravnanje s preklicanimi rezervacijami.</li>
           <li xml:lang="tr">İptal edilmiş rezervasyonların daha iyi yönetimi</li>
