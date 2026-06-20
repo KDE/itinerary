@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-19 00:44+0000\n"
+"POT-Creation-Date: 2026-06-20 00:44+0000\n"
 "PO-Revision-Date: 2026-05-18 11:49+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -95,71 +95,71 @@ msgstr "Düzenle"
 msgid "Add to calendar…"
 msgstr "Takvime Ekle…"
 
-#: app/ActionsCard.qml:76 app/ProgramMembershipPage.qml:182
+#: app/ActionsCard.qml:77 app/ProgramMembershipPage.qml:182
 #: app/TicketPage.qml:191 app/TripGroupPage.qml:762
 #, kde-format
 msgid "Export…"
 msgstr "Dışa Aktar…"
 
-#: app/ActionsCard.qml:81
+#: app/ActionsCard.qml:82
 #, kde-format
 msgid "Delete…"
 msgstr "Sil…"
 
-#: app/ActionsCard.qml:116
+#: app/ActionsCard.qml:133
 #, kde-format
 msgid "Delete Event"
 msgstr "Etkinliği Sil"
 
-#: app/ActionsCard.qml:117
+#: app/ActionsCard.qml:134
 #, kde-format
 msgid "Do you really want to delete this event?"
 msgstr "Bu etkinliği silmeyi gerçekten istiyor musunuz?"
 
-#: app/ActionsCard.qml:123
+#: app/ActionsCard.qml:140
 #, kde-format
 msgid "Export Reservation"
 msgstr "Rezervasyonu Dışa Aktar"
 
-#: app/ActionsCard.qml:132 app/ProgramMembershipPage.qml:147
+#: app/ActionsCard.qml:149 app/ProgramMembershipPage.qml:147
 #: app/TicketPage.qml:141 app/TripGroupPage.qml:712
 #, kde-format
 msgid "Actions"
 msgstr "Eylemler"
 
-#: app/ActionsCard.qml:150
+#: app/ActionsCard.qml:167
 #, kde-format
 msgctxt "cancel as in revoking a booking"
 msgid "Cancel Reservation"
 msgstr "Rezervasyonu İptal Et"
 
-#: app/ActionsCard.qml:151
+#: app/ActionsCard.qml:168
 #, kde-format
 msgid "Check-in"
 msgstr "Giriş"
 
-#: app/ActionsCard.qml:152
+#: app/ActionsCard.qml:169
 #, kde-format
 msgid "Download"
 msgstr "İndir"
 
-#: app/ActionsCard.qml:153
+#: app/ActionsCard.qml:170
 #, kde-format
 msgctxt "participate in an event"
 msgid "Join"
 msgstr "Katıl"
 
-#: app/ActionsCard.qml:154
+#: app/ActionsCard.qml:171
 #, kde-format
 msgid "Reserve"
 msgstr "Rezerve"
 
-#: app/ActionsCard.qml:155
+#: app/ActionsCard.qml:172
 #, kde-format
 msgid "Change Reservation"
 msgstr "Rezervasyonu Değiştir"
 
-#: app/ActionsCard.qml:156
+#: app/ActionsCard.qml:173
 #, kde-format
 msgid "View Reservation"
 msgstr "Rezervasyonu Görüntüle"
@@ -1546,7 +1546,7 @@ msgstr "Güncellemeleri Denetle"
 msgid "Save As…"
 msgstr "Farklı Kaydet…"
 
-#: app/gpxexport.cpp:33 app/main.cpp:213 app/Main.qml:20 app/Main.qml:58
+#: app/gpxexport.cpp:33 app/main.cpp:211 app/Main.qml:20 app/Main.qml:58
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Yol Kılavuzu"
@@ -1999,19 +1999,19 @@ msgctxt "@action:inmenu"
 msgid "From barcode"
 msgstr "Barkoddan"
 
-#: app/ImportAction.qml:84
+#: app/ImportAction.qml:85
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "From calendar"
 msgstr "Takvimden"
 
-#: app/ImportAction.qml:108
+#: app/ImportAction.qml:127
 #, kde-format
 msgctxt "@action:inmenu Name of the train company in Germany"
 msgid "From Deutsche Bahn reservation number"
 msgstr "Deutsche Bahn Rezervasyon Numarasından"
 
-#: app/ImportAction.qml:119
+#: app/ImportAction.qml:138
 #, kde-format
 msgctxt "Name of the train company in France"
 msgid "From SNCF reservation number"
@@ -2625,23 +2625,23 @@ msgstr "Tür M"
 msgid "Type N"
 msgstr "Tür N"
 
-#: app/main.cpp:221
+#: app/main.cpp:219
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Sayısal Yolculuk Asistanı"
 
-#: app/main.cpp:222
+#: app/main.cpp:220
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "© KDE Topluluğu"
 
-#: app/main.cpp:225
+#: app/main.cpp:223
 #, kde-format
 msgctxt "@info:credit"
 msgid "Wikidata"
 msgstr "Wikidata"
 
-#: app/main.cpp:225
+#: app/main.cpp:223
 #, kde-format
 msgctxt "@info:credit"
 msgid ""
@@ -2650,177 +2650,177 @@ msgid ""
 msgstr ""
 "Tren garı adları, sürüş yönü ve priz türleri gibi birçok üst veriyi sağlar."
 
-#: app/main.cpp:226
+#: app/main.cpp:224
 #, kde-format
 msgctxt "@info:credit"
 msgid "OpenStreetMap"
 msgstr "OpenStreetMap"
 
-#: app/main.cpp:226
+#: app/main.cpp:224
 #, kde-format
 msgctxt "@info:credit"
 msgid "Provides both indoor and outdoor maps. ©OpenStreetMap contributors"
 msgstr ""
 "Hem iç hem de dış mekân haritalarını sağlar. © OpenStreetMap katkıcıları"
 
-#: app/main.cpp:227
+#: app/main.cpp:225
 #, kde-format
 msgctxt "@info:credit"
 msgid "OpenSSL"
 msgstr "OpenSSL"
 
-#: app/main.cpp:227
+#: app/main.cpp:225
 #, kde-format
 msgctxt "@info:credit"
 msgid "Secure network interaction with TLS. © 1998-2018 The OpenSSL Project"
 msgstr "TLS ile güvenli ağ etkileşimi. © 1998–2018 OpenSSL Projesi"
 
-#: app/main.cpp:228
+#: app/main.cpp:226
 #, kde-format
 msgctxt "@info:credit"
 msgid "ZXing"
 msgstr "ZXing"
 
-#: app/main.cpp:228
+#: app/main.cpp:226
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code scanning. © 2016 ZXing Authors, © 2016 Nu-book Inc."
 msgstr "Kare kod tarama. © 2016 ZXing Yazarları, © 2016 Nu-book Inc."
 
-#: app/main.cpp:229
+#: app/main.cpp:227
 #, kde-format
 msgctxt "@info:credit"
 msgid "Poppler"
 msgstr "Poppler"
 
-#: app/main.cpp:229
+#: app/main.cpp:227
 #, kde-format
 msgctxt "@info:credit"
 msgid "PDF parsing"
 msgstr "PDF ayrıştırma"
 
-#: app/main.cpp:232
+#: app/main.cpp:230
 #, kde-format
 msgctxt "@info:credit"
 msgid "MapLibre Native Qt"
 msgstr "MapLibre Native Qt"
 
-#: app/main.cpp:232 app/main.cpp:233
+#: app/main.cpp:230 app/main.cpp:231
 #, kde-format
 msgctxt "@info:credit"
 msgid "Copyright © MapLibre contributors."
 msgstr "© MapLibre katkıcıları"
 
-#: app/main.cpp:233
+#: app/main.cpp:231
 #, kde-format
 msgctxt "@info:credit"
 msgid "MapLibre Native"
 msgstr "MapLibre Native"
 
-#: app/main.cpp:237
+#: app/main.cpp:235
 #, kde-format
 msgctxt "@info:credit"
 msgid "FreeType"
 msgstr "FreeType"
 
-#: app/main.cpp:237
+#: app/main.cpp:235
 #, kde-format
 msgctxt "@info:credit"
 msgid ""
 "Copyright (C) 2006-2020 by David Turner, Robert Wilhelm, and Werner Lemberg."
 msgstr "© 2006–2020 David Turner, Robert Wilhelm ve Werner Lemberg"
 
-#: app/main.cpp:238
+#: app/main.cpp:236
 #, kde-format
 msgctxt "@info:credit"
 msgid "libintl lite"
 msgstr "libintl lite"
 
-#: app/main.cpp:238
+#: app/main.cpp:236
 #, kde-format
 msgctxt "@info:credit"
 msgid "Internalisation"
 msgstr "Internalisation"
 
-#: app/main.cpp:241
+#: app/main.cpp:239
 #, kde-format
 msgctxt "@info:credit"
 msgid "libqrencode"
 msgstr "libgrencode"
 
-#: app/main.cpp:241
+#: app/main.cpp:239
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code Generation. © 2006-2018 Kentaro Fukuchi"
 msgstr "Kare kod üretimi. © 2006–2018 Kentaro Fukuçi"
 
-#: app/main.cpp:242
+#: app/main.cpp:240
 #, kde-format
 msgctxt "@info:credit"
 msgid "libical"
 msgstr "libical"
 
-#: app/main.cpp:242
+#: app/main.cpp:240
 #, kde-format
 msgctxt "@info:credit"
 msgid "© The libical developers"
 msgstr "© libical geliştiricileri"
 
-#: app/main.cpp:243
+#: app/main.cpp:241
 #, kde-format
 msgctxt "@info:credit"
 msgid "libxml2"
 msgstr "libxml2"
 
-#: app/main.cpp:243
+#: app/main.cpp:241
 #, kde-format
 msgctxt "@info:credit"
 msgid "Copyright (C) 1998-2012 Daniel Veillard"
 msgstr "© 1998–2012 Daniel Veillard"
 
-#: app/main.cpp:246
+#: app/main.cpp:244
 #, kde-format
 msgctxt "@info:credit"
 msgid "libQuotient"
 msgstr "libQuotient"
 
-#: app/main.cpp:246
+#: app/main.cpp:244
 #, kde-format
 msgctxt "@info:credit"
 msgid "Matrix integration."
 msgstr "Matrix tümleştirmesi."
 
-#: app/main.cpp:247
+#: app/main.cpp:245
 #, kde-format
 msgctxt "@info:credit"
 msgid "QtKeychain"
 msgstr "QtKeychain"
 
-#: app/main.cpp:247
+#: app/main.cpp:245
 #, kde-format
 msgctxt "@info:credit"
 msgid "Secure password storage."
 msgstr "Güvenli parola deposu."
 
-#: app/main.cpp:248
+#: app/main.cpp:246
 #, kde-format
 msgctxt "@info:credit"
 msgid "Olm"
 msgstr "Olm"
 
-#: app/main.cpp:248
+#: app/main.cpp:246
 #, kde-format
 msgctxt "@info:credit"
 msgid "Matrix crypto library."
 msgstr "Matrix kripto kitaplığı"
 
-#: app/main.cpp:256
+#: app/main.cpp:254
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Yol Kılavuzu’nu verilen sayfada aç"
 
-#: app/main.cpp:262
+#: app/main.cpp:260
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."

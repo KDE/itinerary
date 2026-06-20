@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-19 00:44+0000\n"
+"POT-Creation-Date: 2026-06-20 00:44+0000\n"
 "PO-Revision-Date: 2023-11-07 21:26+0100\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: \n"
@@ -93,71 +93,71 @@ msgstr ""
 msgid "Add to calendar…"
 msgstr ""
 
-#: app/ActionsCard.qml:76 app/ProgramMembershipPage.qml:182
+#: app/ActionsCard.qml:77 app/ProgramMembershipPage.qml:182
 #: app/TicketPage.qml:191 app/TripGroupPage.qml:762
 #, kde-format
 msgid "Export…"
 msgstr ""
 
-#: app/ActionsCard.qml:81
+#: app/ActionsCard.qml:82
 #, kde-format
 msgid "Delete…"
 msgstr ""
 
-#: app/ActionsCard.qml:116
+#: app/ActionsCard.qml:133
 #, kde-format
 msgid "Delete Event"
 msgstr ""
 
-#: app/ActionsCard.qml:117
+#: app/ActionsCard.qml:134
 #, kde-format
 msgid "Do you really want to delete this event?"
 msgstr ""
 
-#: app/ActionsCard.qml:123
+#: app/ActionsCard.qml:140
 #, kde-format
 msgid "Export Reservation"
 msgstr ""
 
-#: app/ActionsCard.qml:132 app/ProgramMembershipPage.qml:147
+#: app/ActionsCard.qml:149 app/ProgramMembershipPage.qml:147
 #: app/TicketPage.qml:141 app/TripGroupPage.qml:712
 #, kde-format
 msgid "Actions"
 msgstr ""
 
-#: app/ActionsCard.qml:150
+#: app/ActionsCard.qml:167
 #, kde-format
 msgctxt "cancel as in revoking a booking"
 msgid "Cancel Reservation"
 msgstr ""
 
-#: app/ActionsCard.qml:151
+#: app/ActionsCard.qml:168
 #, kde-format
 msgid "Check-in"
 msgstr ""
 
-#: app/ActionsCard.qml:152
+#: app/ActionsCard.qml:169
 #, kde-format
 msgid "Download"
 msgstr ""
 
-#: app/ActionsCard.qml:153
+#: app/ActionsCard.qml:170
 #, kde-format
 msgctxt "participate in an event"
 msgid "Join"
 msgstr ""
 
-#: app/ActionsCard.qml:154
+#: app/ActionsCard.qml:171
 #, kde-format
 msgid "Reserve"
 msgstr ""
 
-#: app/ActionsCard.qml:155
+#: app/ActionsCard.qml:172
 #, kde-format
 msgid "Change Reservation"
 msgstr ""
 
-#: app/ActionsCard.qml:156
+#: app/ActionsCard.qml:173
 #, kde-format
 msgid "View Reservation"
 msgstr ""
@@ -1540,7 +1540,7 @@ msgstr ""
 msgid "Save As…"
 msgstr ""
 
-#: app/gpxexport.cpp:33 app/main.cpp:213 app/Main.qml:20 app/Main.qml:58
+#: app/gpxexport.cpp:33 app/main.cpp:211 app/Main.qml:20 app/Main.qml:58
 #, kde-format
 msgid "KDE Itinerary"
 msgstr ""
@@ -1988,19 +1988,19 @@ msgctxt "@action:inmenu"
 msgid "From barcode"
 msgstr ""
 
-#: app/ImportAction.qml:84
+#: app/ImportAction.qml:85
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "From calendar"
 msgstr ""
 
-#: app/ImportAction.qml:108
+#: app/ImportAction.qml:127
 #, kde-format
 msgctxt "@action:inmenu Name of the train company in Germany"
 msgid "From Deutsche Bahn reservation number"
 msgstr ""
 
-#: app/ImportAction.qml:119
+#: app/ImportAction.qml:138
 #, kde-format
 msgctxt "Name of the train company in France"
 msgid "From SNCF reservation number"
@@ -2611,23 +2611,23 @@ msgstr ""
 msgid "Type N"
 msgstr ""
 
-#: app/main.cpp:221
+#: app/main.cpp:219
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr ""
 
-#: app/main.cpp:222
+#: app/main.cpp:220
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr ""
 
-#: app/main.cpp:225
+#: app/main.cpp:223
 #, kde-format
 msgctxt "@info:credit"
 msgid "Wikidata"
 msgstr ""
 
-#: app/main.cpp:225
+#: app/main.cpp:223
 #, kde-format
 msgctxt "@info:credit"
 msgid ""
@@ -2635,176 +2635,176 @@ msgid ""
 "plug types."
 msgstr ""
 
-#: app/main.cpp:226
+#: app/main.cpp:224
 #, kde-format
 msgctxt "@info:credit"
 msgid "OpenStreetMap"
 msgstr ""
 
-#: app/main.cpp:226
+#: app/main.cpp:224
 #, kde-format
 msgctxt "@info:credit"
 msgid "Provides both indoor and outdoor maps. ©OpenStreetMap contributors"
 msgstr ""
 
-#: app/main.cpp:227
+#: app/main.cpp:225
 #, kde-format
 msgctxt "@info:credit"
 msgid "OpenSSL"
 msgstr ""
 
-#: app/main.cpp:227
+#: app/main.cpp:225
 #, kde-format
 msgctxt "@info:credit"
 msgid "Secure network interaction with TLS. © 1998-2018 The OpenSSL Project"
 msgstr ""
 
-#: app/main.cpp:228
+#: app/main.cpp:226
 #, kde-format
 msgctxt "@info:credit"
 msgid "ZXing"
 msgstr ""
 
-#: app/main.cpp:228
+#: app/main.cpp:226
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code scanning. © 2016 ZXing Authors, © 2016 Nu-book Inc."
 msgstr ""
 
-#: app/main.cpp:229
+#: app/main.cpp:227
 #, kde-format
 msgctxt "@info:credit"
 msgid "Poppler"
 msgstr ""
 
-#: app/main.cpp:229
+#: app/main.cpp:227
 #, kde-format
 msgctxt "@info:credit"
 msgid "PDF parsing"
 msgstr ""
 
-#: app/main.cpp:232
+#: app/main.cpp:230
 #, kde-format
 msgctxt "@info:credit"
 msgid "MapLibre Native Qt"
 msgstr ""
 
-#: app/main.cpp:232 app/main.cpp:233
+#: app/main.cpp:230 app/main.cpp:231
 #, kde-format
 msgctxt "@info:credit"
 msgid "Copyright © MapLibre contributors."
 msgstr ""
 
-#: app/main.cpp:233
+#: app/main.cpp:231
 #, kde-format
 msgctxt "@info:credit"
 msgid "MapLibre Native"
 msgstr ""
 
-#: app/main.cpp:237
+#: app/main.cpp:235
 #, kde-format
 msgctxt "@info:credit"
 msgid "FreeType"
 msgstr ""
 
-#: app/main.cpp:237
+#: app/main.cpp:235
 #, kde-format
 msgctxt "@info:credit"
 msgid ""
 "Copyright (C) 2006-2020 by David Turner, Robert Wilhelm, and Werner Lemberg."
 msgstr ""
 
-#: app/main.cpp:238
+#: app/main.cpp:236
 #, kde-format
 msgctxt "@info:credit"
 msgid "libintl lite"
 msgstr ""
 
-#: app/main.cpp:238
+#: app/main.cpp:236
 #, kde-format
 msgctxt "@info:credit"
 msgid "Internalisation"
 msgstr ""
 
-#: app/main.cpp:241
+#: app/main.cpp:239
 #, kde-format
 msgctxt "@info:credit"
 msgid "libqrencode"
 msgstr ""
 
-#: app/main.cpp:241
+#: app/main.cpp:239
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code Generation. © 2006-2018 Kentaro Fukuchi"
 msgstr ""
 
-#: app/main.cpp:242
+#: app/main.cpp:240
 #, kde-format
 msgctxt "@info:credit"
 msgid "libical"
 msgstr ""
 
-#: app/main.cpp:242
+#: app/main.cpp:240
 #, kde-format
 msgctxt "@info:credit"
 msgid "© The libical developers"
 msgstr ""
 
-#: app/main.cpp:243
+#: app/main.cpp:241
 #, kde-format
 msgctxt "@info:credit"
 msgid "libxml2"
 msgstr ""
 
-#: app/main.cpp:243
+#: app/main.cpp:241
 #, kde-format
 msgctxt "@info:credit"
 msgid "Copyright (C) 1998-2012 Daniel Veillard"
 msgstr ""
 
-#: app/main.cpp:246
+#: app/main.cpp:244
 #, kde-format
 msgctxt "@info:credit"
 msgid "libQuotient"
 msgstr ""
 
-#: app/main.cpp:246
+#: app/main.cpp:244
 #, kde-format
 msgctxt "@info:credit"
 msgid "Matrix integration."
 msgstr ""
 
-#: app/main.cpp:247
+#: app/main.cpp:245
 #, kde-format
 msgctxt "@info:credit"
 msgid "QtKeychain"
 msgstr ""
 
-#: app/main.cpp:247
+#: app/main.cpp:245
 #, kde-format
 msgctxt "@info:credit"
 msgid "Secure password storage."
 msgstr ""
 
-#: app/main.cpp:248
+#: app/main.cpp:246
 #, kde-format
 msgctxt "@info:credit"
 msgid "Olm"
 msgstr ""
 
-#: app/main.cpp:248
+#: app/main.cpp:246
 #, kde-format
 msgctxt "@info:credit"
 msgid "Matrix crypto library."
 msgstr ""
 
-#: app/main.cpp:256
+#: app/main.cpp:254
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr ""
 
-#: app/main.cpp:262
+#: app/main.cpp:260
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
