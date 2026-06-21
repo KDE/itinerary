@@ -124,32 +124,9 @@ Rectangle {
         }
 
         // secondary fields
-        GridLayout {
-            id: secFieldsLayout
-            rows: 2
-            columns: root.pass.secondaryFields.length
-            Layout.fillWidth: true
-
-            Repeater {
-                model: root.pass.secondaryFields
-                delegate: QQC2.Label {
-                    required property KPkPass.field modelData
-                    Layout.fillWidth: true
-                    color: root.pass.hasLabelColor ? root.pass.labelColor : Kirigami.Theme.textColor
-                    text: modelData.label
-                    horizontalAlignment: modelData.textAlignment
-                }
-            }
-            Repeater {
-                model: root.pass.secondaryFields
-                delegate: QQC2.Label {
-                    required property KPkPass.field modelData
-                    Layout.fillWidth: true
-                    color: root.pass.hasForegroundColor ? root.pass.foregroundColor : Kirigami.Theme.textColor
-                    text: modelData.valueDisplayString
-                    horizontalAlignment: modelData.textAlignment
-                }
-            }
+        PkPass.SecondaryFieldsRow {
+            pass: root.pass
+            defaultTextColor: Kirigami.Theme.textColor
         }
 
         // auxiliary fields

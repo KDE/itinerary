@@ -241,6 +241,7 @@ ecm_target_qml_sources(itinerary
         pkpass/BackFields.qml
         pkpass/FieldLabel.qml
         pkpass/FieldValue.qml
+        pkpass/SecondaryFieldsRow.qml
 )
 
 ecm_qt_declare_logging_category(itinerary

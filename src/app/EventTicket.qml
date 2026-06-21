@@ -157,32 +157,9 @@ Item {
                 }
 
                 // secondary fields
-                GridLayout {
-                    id: secFieldsLayout
-                    rows: 2
-                    columns: root.pass.secondaryFields.length
-                    Layout.fillWidth: true
-
-                    Repeater {
-                        model: root.pass.secondaryFields
-                        delegate: QQC2.Label {
-                            required property KPkPass.field modelData
-                            Layout.fillWidth: true
-                            color: root.pass.hasLabelColor ? root.pass.labelColor : root.defaultTextColor
-                            text: modelData.label
-                            horizontalAlignment: modelData.textAlignment
-                        }
-                    }
-                    Repeater {
-                        model: root.pass.secondaryFields
-                        delegate: QQC2.Label {
-                            required property KPkPass.field modelData
-                            Layout.fillWidth: true
-                            color: root.pass.hasForegroundColor ? root.pass.foregroundColor : root.defaultTextColor
-                            text: modelData.valueDisplayString
-                            horizontalAlignment: modelData.textAlignment
-                        }
-                    }
+                PkPass.SecondaryFieldsRow {
+                    pass: root.pass
+                    defaultTextColor: root.defaultTextColor
                 }
 
                 // auxiliary fields
