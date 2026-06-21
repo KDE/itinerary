@@ -238,6 +238,7 @@ ecm_target_qml_sources(itinerary
     PATH pkpass
     SOURCES
         pkpass/AuxiliaryFieldsGrid.qml
+        pkpass/BackFields.qml
         pkpass/FieldLabel.qml
         pkpass/FieldValue.qml
 )

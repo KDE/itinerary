@@ -199,29 +199,9 @@ Item {
                 visible: root.pass.backFields.length > 0
                 Layout.fillWidth: true
             }
-            Repeater {
-                model: root.pass.backFields
-                ColumnLayout {
-                    id: delegateRoot
-                    required property KPkPass.field modelData
-                    QQC2.Label {
-                        Layout.fillWidth: true
-                        color: root.pass.labelColor
-                        text: delegateRoot.modelData.label
-                        wrapMode: Text.WordWrap
-                        horizontalAlignment: delegateRoot.modelData.textAlignment
-                    }
-                    QQC2.Label {
-                        Layout.fillWidth: true
-                        color: root.pass.foregroundColor
-                        linkColor: color
-                        text: Util.textToHtml(delegateRoot.modelData.valueDisplayString)
-                        textFormat: Util.isRichText(delegateRoot.modelData.valueDisplayString) ? Text.StyledText : Text.AutoText
-                        wrapMode: Text.WordWrap
-                        horizontalAlignment: delegateRoot.modelData.textAlignment
-                        onLinkActivated: (link) =>  { Qt.openUrlExternally(link); }
-                    }
-                }
+            PkPass.BackFields {
+                pass: root.pass
+                defaultTextColor: Kirigami.Theme.textColor
             }
         }
     }
