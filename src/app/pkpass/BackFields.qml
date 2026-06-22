@@ -7,7 +7,7 @@ import QtQuick
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 import org.kde.pkpass as KPkPass
-import org.kde.itinerary
+import org.kde.coreaddons
 
 /*! Back fields. */
 ColumnLayout {
@@ -34,8 +34,9 @@ ColumnLayout {
                 field: delegateRoot.modelData
                 color: root.pass.hasForegroundColor ? root.pass.foregroundColor : root.defaultTextColor
                 linkColor: root.pass.hasForegroundColor ? color : Kirigami.Theme.linkColor
-                text: Util.textToHtml(delegateRoot.modelData.valueDisplayString)
-                textFormat: Util.isRichText(delegateRoot.modelData.valueDisplayString) ? Text.StyledText : Text.AutoText
+                // don't try to make URLs/emails/phone numbers links if the input is already rich text
+                text: field.isRichText ? field.valueDisplayString : KTextToHTML.convertToHtml(field.valueDisplayString,  KTextToHTMLOptions.ConvertPhoneNumbers|KTextToHTMLOptions.PreserveSpaces)
+                textFormat: field.isRichText ? Text.StyledText : Text.AutoText
                 wrapMode: Text.WordWrap
                 onLinkActivated: (link) =>  { Qt.openUrlExternally(link); }
             }
