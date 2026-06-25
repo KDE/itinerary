@@ -45,6 +45,11 @@ Rectangle {
                     case KPkPass.Barcode.Aztec: return Prison.Barcode.Aztec
                     case KPkPass.Barcode.PDF417: return Prison.Barcode.PDF417;
                     case KPkPass.Barcode.Code128: return Prison.Barcode.Code128;
+                    case KPkPass.Barcode.Code39: return Prison.Barcode.Code39;
+                    case KPkPass.Barcode.EAN13: return Prison.Barcode.EAN13;
+                    // TODO needs KF 6.28
+                    // case KPkPass.Barcode.Codabar: return Prison.Barcode.Codabar;
+                    // case KPkPass.Barcode.I2of5: return Prison.Barcode.ITF;
                 }
             }
             content: root.barcode.message
