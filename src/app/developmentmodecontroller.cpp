@@ -5,6 +5,7 @@
 */
 
 #include "developmentmodecontroller.h"
+#include "filehelper.h"
 
 #include <QByteArray>
 #include <QDebug>
@@ -16,7 +17,6 @@
 #include <QStandardPaths>
 
 #ifdef Q_OS_ANDROID
-#include "kandroidextras/contentresolver.h"
 #include "kandroidextras/javatypes.h"
 #include "kandroidextras/jnisignature.h"
 #include "kandroidextras/manifestpermission.h"
@@ -51,13 +51,11 @@ void DevelopmentModeController::enablePublicTransportLogging()
 
 void DevelopmentModeController::importMapCSS(const QUrl &url)
 {
-    const auto src = url.isLocalFile() ? url.toLocalFile() : url.toString();
-
+    const auto src = FileHelper::toLocalFile(url);
+    const auto fileName = FileHelper::fileName(url);
 #ifndef Q_OS_ANDROID
-    const auto fileName = QFileInfo(src).fileName();
     auto dest = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation);
 #else
-    const auto fileName = KAndroidExtras::ContentResolver::fileName(url);
     auto dest = QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation);
 #endif
     dest += QLatin1StringView("/org.kde.kosmindoormap/assets/css/");

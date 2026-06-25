@@ -704,12 +704,11 @@ QString ApplicationController::addDocumentFromFile(const QUrl &url)
     DigitalDocument docInfo;
 #ifdef Q_OS_ANDROID
     docInfo.setEncodingFormat(KAndroidExtras::ContentResolver::mimeType(url));
-    docInfo.setName(KAndroidExtras::ContentResolver::fileName(url));
 #else
     QMimeDatabase db;
     docInfo.setEncodingFormat(db.mimeTypeForFile(FileHelper::toLocalFile(url)).name());
-    docInfo.setName(url.fileName());
 #endif
+    docInfo.setName(FileHelper::fileName(url));
 
     m_docMgr->addDocument(docId, docInfo, FileHelper::toLocalFile(url));
     return docId;
