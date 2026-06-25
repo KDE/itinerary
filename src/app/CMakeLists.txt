@@ -173,7 +173,6 @@ ecm_add_qml_module(itinerary GENERATE_PLUGIN_SOURCE
         OnlineImportPage.qml
         PassPage.qml
         PassDelegate.qml
-        PkPassBarcode.qml
         PkPassPage.qml
         ProgramMembershipCard.qml
         ProgramMembershipEditorCard.qml
@@ -239,6 +238,7 @@ ecm_target_qml_sources(itinerary
     SOURCES
         pkpass/AuxiliaryFieldsGrid.qml
         pkpass/BackFields.qml
+        pkpass/Barcode.qml
         pkpass/FieldLabel.qml
         pkpass/FieldValue.qml
         pkpass/SecondaryFieldsRow.qml

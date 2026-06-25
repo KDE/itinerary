@@ -136,7 +136,7 @@ Rectangle {
         }
 
         // barcode
-        PkPassBarcode {
+        PkPass.Barcode {
             maximumWidth: root.implicitWidth * 0.8
             pass: root.pass
             TapHandler {
