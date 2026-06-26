@@ -154,6 +154,7 @@ ecm_add_qml_module(itinerary GENERATE_PLUGIN_SOURCE
         JourneyQueryPage.qml
         JourneySectionDelegate.qml
         JourneySectionMapView.qml
+        JourneySectionView.qml
         JourneySectionPage.qml
         JourneySectionStopDelegate.qml
         JourneySectionStopDelegateLineSegment.qml
@@ -178,12 +179,14 @@ ecm_add_qml_module(itinerary GENERATE_PLUGIN_SOURCE
         ProgramMembershipEditorCard.qml
         ProgramMembershipEditor.qml
         ProgramMembershipPage.qml
+        PublicTransportPage.qml
         ReservationDeletionDialog.qml
         ReservationDocumentsCard.qml
         RestaurantDelegate.qml
         RestaurantEditor.qml
         RestaurantPage.qml
         ScamWarningFormDelegate.qml
+        ScrollableDetailsPage.qml
         SeatRowFormCard.qml
         SettingsPage.qml
         SheetDrawer.qml

@@ -12,7 +12,7 @@ import org.kde.kpublictransport.ui as KPublicTransport
 import org.kde.kitinerary
 import org.kde.itinerary
 
-DetailsPage {
+PublicTransportPage {
     id: root
     title: i18n("Flight")
     property var resIds: ReservationManager.reservationsForBatch(root.batchId)
@@ -29,13 +29,7 @@ DetailsPage {
         controller: root.controller
     }
 
-    data: BarcodeScanModeButton {
-        id: scanModeButton
-        page: root
-        visible: ticketToken.hasBarcode
-    }
-
-    ColumnLayout {
+    ticketView: ColumnLayout {
         spacing: 0
 
         KPublicTransport.TransportIcon {
@@ -94,6 +88,9 @@ DetailsPage {
                     root.currentReservationId = currentReservationId;
                 }
                 onScanModeToggled: scanModeController.toggle()
+                Component.onCompleted: {
+                    root.showBarcodeScanButton = Qt.binding(() => ticketToken.hasBarcode && root.swipeView.currentIndex === 0)
+                }
             }
 
             FormCard.FormDelegateSeparator {}
@@ -308,10 +305,9 @@ DetailsPage {
             ]
         }
 
-        // spacer for the floating buttons
+        // spacer
         Item {
-            visible: scanModeButton.visible
-            implicitHeight: root.width < Kirigami.Units.gridUnit * 30 + scanModeButton.width * 2 ? scanModeButton.height : 0
+            implicitHeight: 20
         }
     }
 }

@@ -14,7 +14,7 @@ import org.kde.kitinerary
 import org.kde.itinerary
 import org.kde.kirigamiaddons.formcard as FormCard
 
-DetailsPage {
+PublicTransportPage {
     id: root
 
     title: i18n("Bus Ticket")
@@ -23,13 +23,7 @@ DetailsPage {
         controller: root.controller
     }
 
-    data: BarcodeScanModeButton {
-        id: scanModeButton
-        page: root
-        visible: ticketToken.hasBarcode
-    }
-
-    ColumnLayout {
+    ticketView: ColumnLayout {
         spacing: 0
 
         KPublicTransport.TransportIcon {
@@ -86,6 +80,9 @@ DetailsPage {
                     root.currentReservationId = currentReservationId;
                 }
                 onScanModeToggled: scanModeController.toggle()
+                Component.onCompleted: {
+                    root.showBarcodeScanButton = Qt.binding(() => ticketToken.hasBarcode && root.swipeView.currentIndex === 0)
+                }
             }
         }
 
@@ -279,19 +276,6 @@ DetailsPage {
                     text: i18n("Alternatives")
                     icon.name: "clock"
                     onTriggered: applicationWindow().pageStack.push(alternativePage)
-                },
-                Kirigami.Action {
-                    text: i18n("Journey Details")
-                    icon.name: "view-calendar-day"
-                    onTriggered: applicationWindow().pageStack.push(journeySectionPage, {
-                        journeySection: root.controller.trip,
-                        departureStopIndex: root.controller.tripDepartureIndex,
-                        arrivalStopIndex: root.controller.tripArrivalIndex,
-                        showProgress: root.controller.isCurrent
-                    });
-                    Component.onCompleted: {
-                        visible = Qt.binding(function() { return root.controller.journey && (root.controller.journey.intermediateStops.length > 0 || !root.controller.journey.path.isEmpty); });
-                    }
                 }
             ]
 
@@ -304,10 +288,8 @@ DetailsPage {
             }
         }
 
-        // spacer for the floating buttons
         Item {
-            visible: scanModeButton.visible
-            implicitHeight: root.width < Kirigami.Units.gridUnit * 30 + scanModeButton.width * 2 ? scanModeButton.height : 0
+            implicitHeight: 20
         }
     }
 }

@@ -10,7 +10,7 @@ import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kitinerary
 import org.kde.itinerary
 
-DetailsPage {
+ScrollableDetailsPage {
     id: root
 
     title: i18n("Restaurant Reservation")

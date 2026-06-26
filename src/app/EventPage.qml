@@ -10,7 +10,7 @@ import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kitinerary
 import org.kde.itinerary
 
-DetailsPage {
+ScrollableDetailsPage {
     id: root
     title: i18nc("event as in concert/conference/show, not as in appointment", "Event")
 

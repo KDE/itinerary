@@ -13,18 +13,14 @@ import org.kde.kpublictransport.ui as KPublicTransport
 import org.kde.kitinerary
 import org.kde.itinerary
 
-DetailsPage {
+PublicTransportPage {
     id: root
+
+    padding: 0
 
     title: i18n("Train Ticket")
     editor: TrainEditor {
         controller: root.controller
-    }
-
-    data: BarcodeScanModeButton {
-        id: scanModeButton
-        page: root
-        visible: ticketToken.hasBarcode
     }
 
     Component {
@@ -45,18 +41,11 @@ DetailsPage {
 
             property bool arrival
 
-            onLayoutUpdated: root.controller.setVehicleLayout(vehicleLayout, arrival);
+            onLayoutUpdated: root.controller.setVehicleLayout(vehicleLayout, arrival)
         }
     }
 
-    header: KirigamiComponents.Banner {
-        id: banner
-
-        showCloseButton: true
-        visible: false
-    }
-
-    ColumnLayout {
+    ticketView: ColumnLayout {
         spacing: 0
 
         KPublicTransport.TransportIcon {
@@ -114,6 +103,9 @@ DetailsPage {
                     root.currentReservationId = currentReservationId;
                 }
                 onScanModeToggled: scanModeController.toggle()
+                Component.onCompleted: {
+                    root.showBarcodeScanButton = Qt.binding(() => ticketToken.hasBarcode && root.swipeView.currentIndex === 0)
+                }
             }
         }
 
@@ -244,7 +236,9 @@ DetailsPage {
                 }
             }
 
-            FormCard.FormDelegateSeparator { visible: arrivalTimeLabel.text.length > 0 && arrivalStation.visible }
+            FormCard.FormDelegateSeparator {
+                visible: arrivalTimeLabel.text.length > 0 && arrivalStation.visible
+            }
 
             FormPlaceDelegate {
                 id: arrivalStation
@@ -276,7 +270,9 @@ DetailsPage {
                 descriptionItem.wrapMode: Text.Wrap
                 visible: description !== ""
                 font.italic: true
-                onLinkActivated: (link) => { Qt.openUrlExternally(link); }
+                onLinkActivated: link => {
+                    Qt.openUrlExternally(link);
+                }
             }
 
             FormCard.FormDelegateSeparator { visible: arrivalLayoutButton.visible }
@@ -363,19 +359,6 @@ DetailsPage {
                     enabled: reservationFor.departureStation.geo.isValid && reservationFor.arrivalStation.geo.isValid
                 },
                 Kirigami.Action {
-                    text: i18n("Journey Details")
-                    icon.name: "view-calendar-day"
-                    onTriggered: applicationWindow().pageStack.push(journeySectionPage, {
-                        journeySection: root.controller.trip,
-                        departureStopIndex: root.controller.tripDepartureIndex,
-                        arrivalStopIndex: root.controller.tripArrivalIndex,
-                        showProgress: root.controller.isCurrent
-                    });
-                    Component.onCompleted: {
-                        visible = Qt.binding(function() { return root.controller.journey && (root.controller.journey.intermediateStops.length > 0 || !root.controller.journey.path.isEmpty); });
-                    }
-                },
-                Kirigami.Action {
                     text: "Test Notification"
                     icon.name: "notifications"
                     visible: Settings.developmentMode
@@ -384,10 +367,8 @@ DetailsPage {
             ]
         }
 
-        // spacer for the floating buttons
         Item {
-            visible: scanModeButton.visible
-            implicitHeight: root.width < Kirigami.Units.gridUnit * 30 + scanModeButton.width * 2 ? scanModeButton.height : 0
+            implicitHeight: 20
         }
 
         Connections {

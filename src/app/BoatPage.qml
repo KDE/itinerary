@@ -12,7 +12,7 @@ import org.kde.kpublictransport.ui as KPublicTransport
 import org.kde.kitinerary
 import org.kde.itinerary
 
-DetailsPage {
+PublicTransportPage {
     id: root
 
     title: i18n("Boat Ticket")
@@ -21,12 +21,7 @@ DetailsPage {
         controller: root.controller
     }
 
-    data: BarcodeScanModeButton {
-        page: root
-        visible: ticketToken.hasBarcode
-    }
-
-    ColumnLayout {
+    ticketView: ColumnLayout {
         spacing: 0
 
         KPublicTransport.TransportIcon {
@@ -89,6 +84,9 @@ DetailsPage {
                     root.currentReservationId = currentReservationId;
                 }
                 onScanModeToggled: scanModeController.toggle()
+                Component.onCompleted: {
+                    root.showBarcodeScanButton = Qt.binding(() => ticketToken.hasBarcode && root.swipeView.currentIndex === 0)
+                }
             }
         }
 
@@ -200,21 +198,13 @@ DetailsPage {
                         controller: root.controller,
                         publicTransportManager: LiveDataManager.publicTransportManager
                     });
-                },
-                Kirigami.Action {
-                    text: i18n("Journey Details")
-                    icon.name: "view-calendar-day"
-                    onTriggered: applicationWindow().pageStack.push(journeySectionPage, {
-                        journeySection: root.controller.trip,
-                        departureStopIndex: root.controller.tripDepartureIndex,
-                        arrivalStopIndex: root.controller.tripArrivalIndex,
-                        showProgress: root.controller.isCurrent
-                    });
-                    Component.onCompleted: {
-                        visible = Qt.binding(function() { return root.controller.journey && (root.controller.journey.intermediateStops.length > 0 || !root.controller.journey.path.isEmpty); });
-                    }
                 }
             ]
+        }
+
+        // Spacer
+        Item {
+            implicitHeight: 20
         }
     }
 }

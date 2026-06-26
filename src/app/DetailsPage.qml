@@ -11,7 +11,7 @@ import org.kde.kirigami as Kirigami
 import org.kde.kitinerary
 import org.kde.itinerary
 
-Kirigami.ScrollablePage {
+Kirigami.Page {
     id: root
     /** The reservation batch identifier (@see ReservationManager). */
     property alias batchId: _controller.batchId

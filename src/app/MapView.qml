@@ -17,8 +17,9 @@ QtLocation.Map {
     id: map
     plugin: applicationWindow().mapPlugin()
 
-    copyrightsVisible: !applicationWindow().hasMapLibre
-    onCopyrightLinkActivated: Qt.openUrlExternally(link)
+    copyrightsVisible: false
+
+    property alias attribution: attributionLabel
 
     Rectangle {
         color: "#B0ffffff"
@@ -30,11 +31,9 @@ QtLocation.Map {
 
     Controls.Label {
         id: attributionLabel
-        anchors.left: parent.left
+        anchors.right: parent.right
         anchors.bottom: parent.bottom
-        anchors.margins: 2
-
-        visible: applicationWindow().hasMapLibre
+        anchors.margins: Kirigami.Units.largeSpacing
 
         textFormat: Text.RichText
         wrapMode: Text.WordWrap
@@ -42,7 +41,14 @@ QtLocation.Map {
 
         width: Kirigami.Units.gridUnit * 11
 
-        text: i18n('<a href="https://openfreemap.org" target="_blank">OpenFreeMap</a> <a href="https://www.openmaptiles.org/" target="_blank">© OpenMapTiles</a><br>Data from <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>')
+        text: {
+            if (applicationWindow().hasMapLibre) {
+                i18n('Data from <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> <a href="https://openfreemap.org" target="_blank">OpenFreeMap</a> <a href="https://www.openmaptiles.org/" target="_blank">© OpenMapTiles</a> ')
+            } else {
+                i18n('Data from <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>')
+            }
+        }
+
         onLinkActivated: (link) => { Qt.openUrlExternally(link); }
 
         z: 101
