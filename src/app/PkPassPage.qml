@@ -7,6 +7,7 @@
 import QtQuick
 import org.kde.kirigami as Kirigami
 import org.kde.pkpass as KPkPass
+import './pkpass' as PkPass
 
 Kirigami.ScrollablePage {
     id: root
@@ -40,6 +41,13 @@ Kirigami.ScrollablePage {
             pass: root.pass
         }
     }
+    Component {
+        id: posterEventTicket
+        PkPass.PosterEventTicket {
+            passId: root.passId
+            pass: root.pass
+        }
+    }
 
     Component {
         id: genericPass
@@ -60,7 +68,7 @@ Kirigami.ScrollablePage {
             sourceComponent: {
                 switch (root.pass.type) {
                     case KPkPass.Pass.BoardingPass: return boardingPass;
-                    case KPkPass.Pass.EventTicket: return eventTicket;
+                    case KPkPass.Pass.EventTicket: return root.pass.preferredStyleSchemes.length > 0 && root.pass.preferredStyleSchemes[0] === "posterEventTicket" ? posterEventTicket : eventTicket;
                     case KPkPass.Pass.Generic: return genericPass;
                 }
             }

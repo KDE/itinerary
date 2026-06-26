@@ -243,6 +243,10 @@ ecm_target_qml_sources(itinerary
         pkpass/FieldLabel.qml
         pkpass/FieldValue.qml
         pkpass/GenericPassBackground.qml
+        pkpass/PosterEventTicket.qml
+        pkpass/PosterEventTicketHeader.qml
+        pkpass/PosterEventTicketFooter.qml
+        pkpass/PosterEventTicketSeatRow.qml
         pkpass/SecondaryFieldsRow.qml
 )
 
