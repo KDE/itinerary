@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-20 00:44+0000\n"
+"POT-Creation-Date: 2026-06-26 00:46+0000\n"
 "PO-Revision-Date: 2026-05-20 12:18+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
@@ -2030,7 +2030,7 @@ msgctxt "Name of the train company in France"
 msgid "From SNCF reservation number"
 msgstr "À partir du numéro de réservation de la SNCF"
 
-#: app/importcontroller.cpp:153 app/importcontroller.cpp:475
+#: app/importcontroller.cpp:153 app/importcontroller.cpp:465
 #, kde-format
 msgctxt "%1 is an error message"
 msgid "Import failed: %1"
@@ -2041,17 +2041,17 @@ msgstr "Échec de l'importation : %1"
 msgid "Import failed: File too large."
 msgstr "Échec de l'importation : fichier trop volumineux."
 
-#: app/importcontroller.cpp:218 app/importcontroller.cpp:315
+#: app/importcontroller.cpp:208 app/importcontroller.cpp:305
 #, kde-format
 msgid "Found nothing to import."
 msgstr "Aucun élément à importer n'a été trouvé."
 
-#: app/importcontroller.cpp:447
+#: app/importcontroller.cpp:437
 #, kde-format
 msgid "No importable events found in this calendar."
 msgstr "Aucun élément pouvant être importé n'a été trouvé dans cet agenda."
 
-#: app/importcontroller.cpp:622
+#: app/importcontroller.cpp:612
 #, kde-format
 msgid "Backup"
 msgstr "Archiver"

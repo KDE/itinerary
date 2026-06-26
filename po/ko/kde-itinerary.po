@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-20 00:44+0000\n"
+"POT-Creation-Date: 2026-06-26 00:46+0000\n"
 "PO-Revision-Date: 2026-05-25 19:00+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -2009,7 +2009,7 @@ msgctxt "Name of the train company in France"
 msgid "From SNCF reservation number"
 msgstr "SNCF 예약 번호에서"
 
-#: app/importcontroller.cpp:153 app/importcontroller.cpp:475
+#: app/importcontroller.cpp:153 app/importcontroller.cpp:465
 #, kde-format
 msgctxt "%1 is an error message"
 msgid "Import failed: %1"
@@ -2020,17 +2020,17 @@ msgstr "가져오기 실패: %1"
 msgid "Import failed: File too large."
 msgstr "가져오기 실패: 파일이 너무 큽니다."
 
-#: app/importcontroller.cpp:218 app/importcontroller.cpp:315
+#: app/importcontroller.cpp:208 app/importcontroller.cpp:305
 #, kde-format
 msgid "Found nothing to import."
 msgstr "가져올 항목을 찾지 못했습니다."
 
-#: app/importcontroller.cpp:447
+#: app/importcontroller.cpp:437
 #, kde-format
 msgid "No importable events found in this calendar."
 msgstr "이 캘린더에서 가져올 수 있는 이벤트가 없습니다."
 
-#: app/importcontroller.cpp:622
+#: app/importcontroller.cpp:612
 #, kde-format
 msgid "Backup"
 msgstr "백업"
