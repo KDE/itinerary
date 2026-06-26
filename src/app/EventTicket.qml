@@ -68,52 +68,10 @@ Item {
                 spacing: 10
 
                 // header
-                GridLayout {
-                    id: headerLayout
-                    rows: 2
-                    columns: root.pass.headerFields.length + 2
-                    Layout.fillWidth: true
-
-                    Image {
-                        Layout.rowSpan: 2
-                        Layout.maximumHeight: 60
-                        Layout.maximumWidth: 150
-                        Layout.preferredWidth: paintedWidth
-                        fillMode: Image.PreserveAspectFit
-                        source: root.passId !== "" ? "image://org.kde.pkpass/" + root.passId + "/logo" : ""
-                        sourceSize.height: 1 // ??? seems necessary to trigger high dpi scaling...
-                        mipmap: true
-                    }
-
-                    QQC2.Label {
-                        Layout.rowSpan: 2
-                        Layout.fillWidth: root.pass ? true : false
-                        text: root.pass ? root.pass.logoText : ""
-                        color: root.pass.hasForegroundColor ? root.pass.foregroundColor : root.defaultTextColor
-                    }
-
-                    Repeater {
-                        model: root.pass.headerFields
-                        delegate: QQC2.Label {
-                            required property KPkPass.field modelData
-                            required property int index
-                            text: modelData.label
-                            color: root.pass.hasLabelColor ? root.pass.labelColor : root.defaultTextColor
-                            Layout.row: 0
-                            Layout.column: index + 2
-                        }
-                    }
-                    Repeater {
-                        model: root.pass.headerFields
-                        delegate: QQC2.Label {
-                            required property KPkPass.field modelData
-                            required property int index
-                            text: modelData.valueDisplayString
-                            color: root.pass.hasForegroundColor ? root.pass.foregroundColor : root.defaultTextColor
-                            Layout.row: 1
-                            Layout.column: index + 2
-                        }
-                    }
+                PkPass.EventTicketHeader {
+                    pass: root.pass
+                    passId: root.passId
+                    defaultTextColor: root.defaultTextColor
                 }
 
                 // strip image
