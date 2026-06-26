@@ -239,6 +239,7 @@ ecm_target_qml_sources(itinerary
         pkpass/AuxiliaryFieldsGrid.qml
         pkpass/BackFields.qml
         pkpass/Barcode.qml
+        pkpass/EventTicketHeader.qml
         pkpass/FieldLabel.qml
         pkpass/FieldValue.qml
         pkpass/SecondaryFieldsRow.qml
