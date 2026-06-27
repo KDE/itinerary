@@ -81,15 +81,33 @@ Item {
         }
 
         QQC2.Label {
+            id: stopNameLabel
             Layout.column: 3
             Layout.row: 0
             Layout.fillWidth: true
-            Layout.alignment:  Qt.AlignTop
+            Layout.alignment: Qt.AlignTop
             text: root.stop.stopPoint.name
             elide: Text.ElideRight
             font.bold: root.highlight
             font.strikeout: root.stop.disruptionEffect === KPublicTransport.Disruption.NoService
             opacity: root.stop.pickupType === KPublicTransport.PickupDropoff.NotAllowed && root.stop.dropoffType === KPublicTransport.PickupDropoff.NotAllowed ? 0.5 : 1.0
+
+            QQC2.ItemDelegate {
+                anchors.fill: stopNameLabel
+                z: -1
+                anchors.margins: -8
+
+                onClicked: applicationWindow().pageStack.push(Qt.resolvedUrl("DepartureQueryPage.qml"), {
+                    "stop": PublicTransport.trainStationFromLocation(root.stop.stopPoint),
+                    "dateTime": stop.hasExpectedArrivalTime
+                                ? stop.expectedArrivalTime
+                                : stop.hasExpectedDepartureTime
+                                   ? stop.expectedDepartureTime
+                                   : stop.hasScheduledArrivalTime
+                                       ? stop.scheduledArrivalTime
+                                       : stop.scheduledDepartureTime
+                })
+            }
         }
 
         QQC2.Label {
