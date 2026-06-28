@@ -164,26 +164,6 @@
             ]
         },
         {
-            "name": "kmime",
-            "config-opts": [
-                "-DBUILD_TESTING=OFF",
-                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
-            ],
-            "buildsystem": "cmake-ninja",
-            "builddir": true,
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://invent.kde.org/pim/kmime",
-                    "branch": "master"
-                },
-                {
-                    "type": "patch",
-                    "path": "flatpak-kmime-version.patch"
-                }
-            ]
-        },
-        {
             "name": "zxing",
             "config-opts": [
                 "-DZXING_DEPENDENCIES=LOCAL",
