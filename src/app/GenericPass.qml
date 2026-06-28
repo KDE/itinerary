@@ -13,18 +13,22 @@ import org.kde.pkpass as KPkPass
 import './pkpass' as PkPass
 import org.kde.itinerary
 
-Rectangle {
+Item {
     id: root
     property KPkPass.Pass pass: null
     property string passId
-    implicitHeight: bodyBackground.implicitHeight
+    implicitHeight: topLayout.implicitHeight
     implicitWidth: 332 //Math.max(topLayout.implicitWidth, 332)
 
-    color: pass.hasBackgroundColor ? pass.backgroundColor : Kirigami.Theme.backgroundColor
-    radius: 10
 
     /** Double tap on the barcode to request scan mode. */
     signal scanModeToggled()
+
+    PkPass.GenericPassBackground {
+        pass: root.pass
+        passId: root.passId
+        anchors.fill: parent
+    }
 
     ColumnLayout {
         id: topLayout
