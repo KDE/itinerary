@@ -98,14 +98,14 @@ Item {
                 anchors.margins: -8
 
                 onClicked: applicationWindow().pageStack.push(Qt.resolvedUrl("DepartureQueryPage.qml"), {
-                    "stop": PublicTransport.trainStationFromLocation(root.stop.stopPoint),
-                    "dateTime": stop.hasExpectedArrivalTime
-                                ? stop.expectedArrivalTime
-                                : stop.hasExpectedDepartureTime
-                                   ? stop.expectedDepartureTime
-                                   : stop.hasScheduledArrivalTime
-                                       ? stop.scheduledArrivalTime
-                                       : stop.scheduledDepartureTime
+                    stop: root.stop.stopPoint,
+                    dateTime: root.stop.hasExpectedArrivalTime
+                                ? root.stop.expectedArrivalTime
+                                : root.stop.hasExpectedDepartureTime
+                                   ? root.stop.expectedDepartureTime
+                                   : isNaN(root.stop.scheduledArrivalTime.getTime())
+                                       ? root.stop.scheduledDepartureTime
+                                       : root.stop.scheduledArrivalTime
                 })
             }
         }

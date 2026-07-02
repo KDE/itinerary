@@ -330,14 +330,6 @@ QVariant PublicTransport::mergeJourney(const QVariant &res, const KPublicTranspo
     return newRes;
 }
 
-KPublicTransport::StopoverRequest PublicTransport::stopoverRequestForPlace(const QVariant &place, const QDateTime &dt) const
-{
-    KPublicTransport::StopoverRequest req;
-    req.setDateTime(std::max(dt, QDateTime::currentDateTime()));
-    req.setStop(PublicTransport::locationFromPlace(place));
-    return req;
-}
-
 QString PublicTransport::attributionSummary(const QVariantList &attributions) const
 {
     QStringList l;

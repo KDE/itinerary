@@ -57,7 +57,7 @@ FormCard.FormButtonDelegate {
         id: departuresPage
 
         DepartureQueryPage {
-            stop: root.place
+            stop: PublicTransport.locationFromPlace(root.place)
             dateTime: root.isRangeBegin ? root.controller.startTime : root.controller.effectiveEndTime
         }
     }

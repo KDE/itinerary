@@ -76,9 +76,6 @@ public:
     static bool isBusMode(KPublicTransport::Line::Mode mode);
     static bool isBoatMode(KPublicTransport::Line::Mode mode);
 
-    /** Create a KPublicTransport::StopoverRequest for the given KItinerary place. */
-    Q_INVOKABLE KPublicTransport::StopoverRequest stopoverRequestForPlace(const QVariant &place, const QDateTime &dt) const;
-
     /** Produces a short summary of the given attribution information. */
     Q_INVOKABLE QString attributionSummary(const QVariantList &attributions) const;
 

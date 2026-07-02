@@ -16,8 +16,8 @@ import org.kde.itinerary
 Kirigami.ScrollablePage {
     id: root
 
-    property var stop
-    property var dateTime
+    property KPublicTransport.location stop
+    property date dateTime
 
     title: i18n("Departures")
     Kirigami.Theme.colorSet: Kirigami.Theme.Window
@@ -83,9 +83,10 @@ Kirigami.ScrollablePage {
         return true;
     }
 
-    function stopoverRequest()
+    function stopoverRequest() : KPublicTransport.stopoverRequest
     {
-        let req = PublicTransport.stopoverRequestForPlace(stop, dateTime);
+        const now = new Date();
+        let req = { stop: root.stop, dateTime: root.dateTime < now ? now : root.dateTime };
         req.downloadAssets = Settings.wikimediaOnlineContentEnabled;
         let lineModes = [];
         if (!allLineModes()) {
@@ -109,7 +110,7 @@ Kirigami.ScrollablePage {
     StopoverQueryModel {
         id: departureModel
         manager: LiveDataManager.publicTransportManager
-        request: stopoverRequest();
+        request: root.stopoverRequest();
         autoUpdate: true
     }
 
