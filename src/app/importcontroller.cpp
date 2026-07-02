@@ -21,7 +21,6 @@
 #include "android/itineraryactivity.h"
 
 #include "kandroidextras/activity.h"
-#include "kandroidextras/contentresolver.h"
 #include "kandroidextras/intent.h"
 #include "kandroidextras/jniarray.h"
 #include "kandroidextras/jnisignature.h"
@@ -361,7 +360,7 @@ void ImportController::importFromIntent(const KAndroidExtras::Intent &intent)
             for (const auto &a : attachments) {
                 QUrl attUrl(a);
                 auto att = std::make_unique<KMime::Content>();
-                att->contentType()->setMimeType(ContentResolver::mimeType(attUrl).toUtf8());
+                att->contentType()->setMimeType(FileHelper::mimeType(attUrl).toUtf8());
                 att->contentTransferEncoding()->setEncoding(KMime::Headers::CEbase64);
                 att->contentType()->setName(attUrl.fileName());
                 QFile f(a);

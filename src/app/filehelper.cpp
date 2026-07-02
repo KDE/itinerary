@@ -6,6 +6,7 @@
 
 #include "filehelper.h"
 
+#include <QMimeDatabase>
 #include <QString>
 #include <QUrl>
 
@@ -40,4 +41,14 @@ QString FileHelper::fileName(const QUrl &url)
 bool FileHelper::hasZipHeader(const QByteArray &data)
 {
     return data.size() >= 4 && std::strncmp(data.constData(), "PK\x03\x04", 4) == 0;
+}
+
+QString FileHelper::mimeType(const QUrl &url)
+{
+#ifdef Q_OS_ANDROID
+    return KAndroidExtras::ContentResolver::mimeType(url);
+#else
+    QMimeDatabase db;
+    return db.mimeTypeForFile(FileHelper::toLocalFile(url)).name();
+#endif
 }

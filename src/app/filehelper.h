@@ -31,6 +31,9 @@ QString fileName(const QUrl &url);
 /** Checks whether @p data starts with the magic header of a ZIP file. */
 bool hasZipHeader(const QByteArray &data);
 
+/** File MIME type, using ContentResolver on Android. */
+[[nodiscard]] QString mimeType(const QUrl &url);
+
 }
 
 #endif // FILEHELPER_H

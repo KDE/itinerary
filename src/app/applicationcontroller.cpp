@@ -54,7 +54,6 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QMimeData>
-#include <QMimeDatabase>
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 #include <QNetworkRequest>
@@ -70,7 +69,6 @@
 #include "android/itineraryactivity.h"
 
 #include "kandroidextras/activity.h"
-#include "kandroidextras/contentresolver.h"
 #include "kandroidextras/intent.h"
 #include "kandroidextras/jniarray.h"
 #include "kandroidextras/jnisignature.h"
@@ -702,12 +700,7 @@ QString ApplicationController::addDocumentFromFile(const QUrl &url)
     const auto docId = QUuid::createUuid().toString(QUuid::WithoutBraces);
 
     DigitalDocument docInfo;
-#ifdef Q_OS_ANDROID
-    docInfo.setEncodingFormat(KAndroidExtras::ContentResolver::mimeType(url));
-#else
-    QMimeDatabase db;
-    docInfo.setEncodingFormat(db.mimeTypeForFile(FileHelper::toLocalFile(url)).name());
-#endif
+    docInfo.setEncodingFormat(FileHelper::mimeType(url));
     docInfo.setName(FileHelper::fileName(url));
 
     m_docMgr->addDocument(docId, docInfo, FileHelper::toLocalFile(url));
