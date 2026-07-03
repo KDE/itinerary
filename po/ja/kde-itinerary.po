@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-28 00:44+0000\n"
+"POT-Creation-Date: 2026-07-03 00:46+0000\n"
 "PO-Revision-Date: 2019-01-23 21:00-0800\n"
 "Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -228,81 +228,81 @@ msgstr ""
 msgid "Destination:"
 msgstr ""
 
-#: app/applicationcontroller.cpp:196
+#: app/applicationcontroller.cpp:194
 #, kde-format
 msgctxt "geo coordinate"
 msgid "%1, %2"
 msgstr ""
 
-#: app/applicationcontroller.cpp:317
+#: app/applicationcontroller.cpp:315
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] ""
 
-#: app/applicationcontroller.cpp:320
+#: app/applicationcontroller.cpp:318
 #, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
 msgstr[0] ""
 
-#: app/applicationcontroller.cpp:323
+#: app/applicationcontroller.cpp:321
 #, kde-format
 msgid "One health certificate imported."
 msgid_plural "%1 health certificates imported."
 msgstr[0] ""
 
-#: app/applicationcontroller.cpp:345 app/applicationcontroller.cpp:388
-#: app/applicationcontroller.cpp:406 app/applicationcontroller.cpp:453
-#: app/applicationcontroller.cpp:492 app/applicationcontroller.cpp:510
-#: app/applicationcontroller.cpp:551 app/applicationcontroller.cpp:587
-#: app/applicationcontroller.cpp:605
+#: app/applicationcontroller.cpp:343 app/applicationcontroller.cpp:386
+#: app/applicationcontroller.cpp:404 app/applicationcontroller.cpp:451
+#: app/applicationcontroller.cpp:490 app/applicationcontroller.cpp:508
+#: app/applicationcontroller.cpp:549 app/applicationcontroller.cpp:585
+#: app/applicationcontroller.cpp:603
 #, kde-format
 msgctxt "%1 is an error message"
 msgid "Export failed: %1"
 msgstr ""
 
-#: app/applicationcontroller.cpp:362 app/applicationcontroller.cpp:371
-#: app/applicationcontroller.cpp:466 app/applicationcontroller.cpp:475
-#: app/applicationcontroller.cpp:561 app/applicationcontroller.cpp:570
+#: app/applicationcontroller.cpp:360 app/applicationcontroller.cpp:369
+#: app/applicationcontroller.cpp:464 app/applicationcontroller.cpp:473
+#: app/applicationcontroller.cpp:559 app/applicationcontroller.cpp:568
 #, kde-format
 msgid "Export completed."
 msgstr ""
 
-#: app/applicationcontroller.cpp:398
+#: app/applicationcontroller.cpp:396
 #, kde-format
 msgid "Trip sent."
 msgstr ""
 
-#: app/applicationcontroller.cpp:502
+#: app/applicationcontroller.cpp:500
 #, kde-format
 msgid "Reservation sent."
 msgstr ""
 
-#: app/applicationcontroller.cpp:597
+#: app/applicationcontroller.cpp:595
 #, kde-format
 msgid "Pass sent."
 msgstr ""
 
-#: app/applicationcontroller.cpp:635
+#: app/applicationcontroller.cpp:633
 #, kde-format
 msgctxt "%1 is an error message"
 msgid "Saving failed: %1"
 msgstr ""
 
-#: app/applicationcontroller.cpp:640
+#: app/applicationcontroller.cpp:638
 #, kde-format
 msgid "File saved successfully."
 msgstr ""
 
-#: app/applicationcontroller.cpp:647
+#: app/applicationcontroller.cpp:645
 #, kde-format
 msgid ""
 "File was exported with a newer version of Itinerary. Some information might "
 "not be imported correctly."
 msgstr ""
 
-#: app/applicationcontroller.cpp:675
+#: app/applicationcontroller.cpp:673
 #, kde-format
 msgid "Import completed."
 msgstr ""
@@ -832,33 +832,33 @@ msgstr ""
 msgid "Departures"
 msgstr ""
 
-#: app/DepartureQueryPage.qml:126
+#: app/DepartureQueryPage.qml:127
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr ""
 
-#: app/DepartureQueryPage.qml:152 app/JourneyQueryPage.qml:172
+#: app/DepartureQueryPage.qml:153 app/JourneyQueryPage.qml:172
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr ""
 
-#: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:179
+#: app/DepartureQueryPage.qml:162 app/JourneyQueryPage.qml:179
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
 msgstr ""
 
-#: app/DepartureQueryPage.qml:169 app/JourneyQueryPage.qml:188
+#: app/DepartureQueryPage.qml:170 app/JourneyQueryPage.qml:188
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Loading"
 msgstr ""
 
-#: app/DepartureQueryPage.qml:169 app/JourneyQueryPage.qml:190
+#: app/DepartureQueryPage.qml:170 app/JourneyQueryPage.qml:190
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:status"
@@ -1993,28 +1993,28 @@ msgctxt "Name of the train company in France"
 msgid "From SNCF reservation number"
 msgstr ""
 
-#: app/importcontroller.cpp:153 app/importcontroller.cpp:465
+#: app/importcontroller.cpp:152 app/importcontroller.cpp:464
 #, kde-format
 msgctxt "%1 is an error message"
 msgid "Import failed: %1"
 msgstr ""
 
-#: app/importcontroller.cpp:159
+#: app/importcontroller.cpp:158
 #, kde-format
 msgid "Import failed: File too large."
 msgstr ""
 
-#: app/importcontroller.cpp:208 app/importcontroller.cpp:305
+#: app/importcontroller.cpp:207 app/importcontroller.cpp:304
 #, kde-format
 msgid "Found nothing to import."
 msgstr ""
 
-#: app/importcontroller.cpp:437
+#: app/importcontroller.cpp:436
 #, kde-format
 msgid "No importable events found in this calendar."
 msgstr ""
 
-#: app/importcontroller.cpp:612
+#: app/importcontroller.cpp:611
 #, kde-format
 msgid "Backup"
 msgstr ""

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-28 00:44+0000\n"
+"POT-Creation-Date: 2026-07-03 00:46+0000\n"
 "PO-Revision-Date: 2026-05-25 19:00+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -231,74 +231,74 @@ msgstr "바꾸기"
 msgid "Destination:"
 msgstr "대상:"
 
-#: app/applicationcontroller.cpp:196
+#: app/applicationcontroller.cpp:194
 #, kde-format
 msgctxt "geo coordinate"
 msgid "%1, %2"
 msgstr "%1, %2"
 
-#: app/applicationcontroller.cpp:317
+#: app/applicationcontroller.cpp:315
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] "예약 %1건을 가져왔습니다."
 
-#: app/applicationcontroller.cpp:320
+#: app/applicationcontroller.cpp:318
 #, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
 msgstr[0] "패스 %1개를 가져왔습니다."
 
-#: app/applicationcontroller.cpp:323
+#: app/applicationcontroller.cpp:321
 #, kde-format
 msgid "One health certificate imported."
 msgid_plural "%1 health certificates imported."
 msgstr[0] "건강 증명서 %1개를 가져왔습니다."
 
-#: app/applicationcontroller.cpp:345 app/applicationcontroller.cpp:388
-#: app/applicationcontroller.cpp:406 app/applicationcontroller.cpp:453
-#: app/applicationcontroller.cpp:492 app/applicationcontroller.cpp:510
-#: app/applicationcontroller.cpp:551 app/applicationcontroller.cpp:587
-#: app/applicationcontroller.cpp:605
+#: app/applicationcontroller.cpp:343 app/applicationcontroller.cpp:386
+#: app/applicationcontroller.cpp:404 app/applicationcontroller.cpp:451
+#: app/applicationcontroller.cpp:490 app/applicationcontroller.cpp:508
+#: app/applicationcontroller.cpp:549 app/applicationcontroller.cpp:585
+#: app/applicationcontroller.cpp:603
 #, kde-format
 msgctxt "%1 is an error message"
 msgid "Export failed: %1"
 msgstr "내보내기 실패: %1"
 
-#: app/applicationcontroller.cpp:362 app/applicationcontroller.cpp:371
-#: app/applicationcontroller.cpp:466 app/applicationcontroller.cpp:475
-#: app/applicationcontroller.cpp:561 app/applicationcontroller.cpp:570
+#: app/applicationcontroller.cpp:360 app/applicationcontroller.cpp:369
+#: app/applicationcontroller.cpp:464 app/applicationcontroller.cpp:473
+#: app/applicationcontroller.cpp:559 app/applicationcontroller.cpp:568
 #, kde-format
 msgid "Export completed."
 msgstr "내보내기가 완료되었습니다."
 
-#: app/applicationcontroller.cpp:398
+#: app/applicationcontroller.cpp:396
 #, kde-format
 msgid "Trip sent."
 msgstr "여행을 전송했습니다."
 
-#: app/applicationcontroller.cpp:502
+#: app/applicationcontroller.cpp:500
 #, kde-format
 msgid "Reservation sent."
 msgstr "예약을 전송했습니다."
 
-#: app/applicationcontroller.cpp:597
+#: app/applicationcontroller.cpp:595
 #, kde-format
 msgid "Pass sent."
 msgstr "패스를 전송했습니다."
 
-#: app/applicationcontroller.cpp:635
+#: app/applicationcontroller.cpp:633
 #, kde-format
 msgctxt "%1 is an error message"
 msgid "Saving failed: %1"
 msgstr "저장 실패: %1"
 
-#: app/applicationcontroller.cpp:640
+#: app/applicationcontroller.cpp:638
 #, kde-format
 msgid "File saved successfully."
 msgstr "파일을 저장했습니다."
 
-#: app/applicationcontroller.cpp:647
+#: app/applicationcontroller.cpp:645
 #, kde-format
 msgid ""
 "File was exported with a newer version of Itinerary. Some information might "
@@ -307,7 +307,7 @@ msgstr ""
 "새로운 정보의 KDE 여행 정보에서 파일을 내보냈습니다. 일부 정보가 올바르게 표"
 "시되지 않을 수도 있습니다."
 
-#: app/applicationcontroller.cpp:675
+#: app/applicationcontroller.cpp:673
 #, kde-format
 msgid "Import completed."
 msgstr "가져오기가 완료되었습니다."
@@ -837,33 +837,33 @@ msgstr "통화: %1"
 msgid "Departures"
 msgstr "출발"
 
-#: app/DepartureQueryPage.qml:126
+#: app/DepartureQueryPage.qml:127
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "이전 출발 불러오기"
 
-#: app/DepartureQueryPage.qml:152 app/JourneyQueryPage.qml:172
+#: app/DepartureQueryPage.qml:153 app/JourneyQueryPage.qml:172
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "이후 연결 표시"
 
-#: app/DepartureQueryPage.qml:161 app/JourneyQueryPage.qml:179
+#: app/DepartureQueryPage.qml:162 app/JourneyQueryPage.qml:179
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
 msgstr "데이터 공급자:"
 
-#: app/DepartureQueryPage.qml:169 app/JourneyQueryPage.qml:188
+#: app/DepartureQueryPage.qml:170 app/JourneyQueryPage.qml:188
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Loading"
 msgstr "불러오는 중"
 
-#: app/DepartureQueryPage.qml:169 app/JourneyQueryPage.qml:190
+#: app/DepartureQueryPage.qml:170 app/JourneyQueryPage.qml:190
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:status"
@@ -2003,28 +2003,28 @@ msgctxt "Name of the train company in France"
 msgid "From SNCF reservation number"
 msgstr "SNCF 예약 번호에서"
 
-#: app/importcontroller.cpp:153 app/importcontroller.cpp:465
+#: app/importcontroller.cpp:152 app/importcontroller.cpp:464
 #, kde-format
 msgctxt "%1 is an error message"
 msgid "Import failed: %1"
 msgstr "가져오기 실패: %1"
 
-#: app/importcontroller.cpp:159
+#: app/importcontroller.cpp:158
 #, kde-format
 msgid "Import failed: File too large."
 msgstr "가져오기 실패: 파일이 너무 큽니다."
 
-#: app/importcontroller.cpp:208 app/importcontroller.cpp:305
+#: app/importcontroller.cpp:207 app/importcontroller.cpp:304
 #, kde-format
 msgid "Found nothing to import."
 msgstr "가져올 항목을 찾지 못했습니다."
 
-#: app/importcontroller.cpp:437
+#: app/importcontroller.cpp:436
 #, kde-format
 msgid "No importable events found in this calendar."
 msgstr "이 캘린더에서 가져올 수 있는 이벤트가 없습니다."
 
-#: app/importcontroller.cpp:612
+#: app/importcontroller.cpp:611
 #, kde-format
 msgid "Backup"
 msgstr "백업"
