@@ -285,7 +285,7 @@ QCoro::Task<std::optional<KItinerary::TrainStation>> ReservationOnlinePostproces
     if (station.geo().isValid() && hasIdentifierName(station)) {
         KOSMIndoorMap::ReverseGeocodingJob job;
         job.setCoordinate(station.geo().latitude(), station.geo().longitude());
-        job.setRadius(100);
+        job.setRadius(150);
         job.start();
         co_await qCoro(&job, &KOSMIndoorMap::ReverseGeocodingJob::finished);
 
