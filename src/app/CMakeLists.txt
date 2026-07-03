@@ -119,7 +119,6 @@ ecm_add_qml_module(itinerary GENERATE_PLUGIN_SOURCE
         EventDelegate.qml
         EventEditor.qml
         EventPage.qml
-        EventTicket.qml
         ExportMenuDialog.qml
         FavoriteLocationPage.qml
         FlightDelegate.qml
@@ -239,6 +238,7 @@ ecm_target_qml_sources(itinerary
         pkpass/AuxiliaryFieldsGrid.qml
         pkpass/BackFields.qml
         pkpass/Barcode.qml
+        pkpass/EventTicket.qml
         pkpass/EventTicketHeader.qml
         pkpass/FieldLabel.qml
         pkpass/FieldValue.qml

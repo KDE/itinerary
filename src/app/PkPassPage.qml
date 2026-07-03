@@ -36,7 +36,7 @@ Kirigami.ScrollablePage {
 
     Component {
         id: eventTicket
-        EventTicket {
+        PkPass.EventTicket {
             passId: root.passId
             pass: root.pass
         }
