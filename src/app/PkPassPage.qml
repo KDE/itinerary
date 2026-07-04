@@ -4,6 +4,8 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import org.kde.kirigami as Kirigami
 import org.kde.pkpass as KPkPass
@@ -22,6 +24,7 @@ Kirigami.ScrollablePage {
     }
 
     data: BarcodeScanModeButton {
+        id: scanModeButton
         page: root
         visible: root.pass.barcodes.length > 0
     }
@@ -77,7 +80,7 @@ Kirigami.ScrollablePage {
         Connections {
             target: loader.item
             function onScanModeToggled() {
-                scanModeController.toggle();
+                scanModeButton.click();
             }
         }
     }
