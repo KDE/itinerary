@@ -149,6 +149,7 @@ Item {
         // back fields
         Kirigami.Separator {
             Layout.fillWidth: true
+            visible: root.pass.backFields.length > 0
         }
         BackFields {
             pass: root.pass
