@@ -28,9 +28,9 @@ Kirigami.ScrollablePage {
 
     Component {
         id: boardingPass
-        BoardingPass {
+        PkPass.BoardingPass {
             passId: root.passId
-            pass: root.pass
+            pass: root.pass as KPkPass.BoardingPass
         }
     }
 
@@ -51,7 +51,7 @@ Kirigami.ScrollablePage {
 
     Component {
         id: genericPass
-        GenericPass {
+        PkPass.GenericPass {
             passId: root.passId
             pass: root.pass
         }

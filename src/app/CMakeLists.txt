@@ -94,7 +94,6 @@ ecm_add_qml_module(itinerary GENERATE_PLUGIN_SOURCE
         BarcodeScanModeController.qml
         BarcodeScanModeButton.qml
         BarcodeScannerPage.qml
-        BoardingPass.qml
         BoatDelegate.qml
         BoatEditor.qml
         BoatPage.qml
@@ -130,7 +129,6 @@ ecm_add_qml_module(itinerary GENERATE_PLUGIN_SOURCE
         FormPlatformDelegate.qml
         FormPriceDelegate.qml
         FormPriceEditDelegate.qml
-        GenericPass.qml
         GenericPkPassPage.qml
         HealthCertificateBarcode.qml
         HealthCertificateRecovery.qml
@@ -238,10 +236,12 @@ ecm_target_qml_sources(itinerary
         pkpass/AuxiliaryFieldsGrid.qml
         pkpass/BackFields.qml
         pkpass/Barcode.qml
+        pkpass/BoardingPass.qml
         pkpass/EventTicket.qml
         pkpass/EventTicketHeader.qml
         pkpass/FieldLabel.qml
         pkpass/FieldValue.qml
+        pkpass/GenericPass.qml
         pkpass/GenericPassBackground.qml
         pkpass/PosterEventTicket.qml
         pkpass/PosterEventTicketHeader.qml

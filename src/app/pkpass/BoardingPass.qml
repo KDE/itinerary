@@ -12,8 +12,6 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.pkpass as KPkPass
 import org.kde.kpublictransport as KPublicTransport
-import './pkpass' as PkPass
-import org.kde.itinerary
 
 Item {
     id: root
@@ -138,13 +136,13 @@ Item {
             }
 
             // auxiliary fields
-            PkPass.AuxiliaryFieldsGrid {
+            AuxiliaryFieldsGrid {
                 pass: root.pass
                 defaultTextColor: Kirigami.Theme.textColor
             }
 
             // secondary fields
-            PkPass.SecondaryFieldsRow {
+            SecondaryFieldsRow {
                 pass: root.pass
                 defaultTextColor: Kirigami.Theme.textColor
             }
@@ -160,7 +158,7 @@ Item {
         }
 
         // barcode
-        PkPass.Barcode {
+        Barcode {
             maximumWidth: root.implicitWidth * 0.8
             pass: root.pass
             TapHandler {
@@ -176,7 +174,7 @@ Item {
                 visible: root.pass.backFields.length > 0
                 Layout.fillWidth: true
             }
-            PkPass.BackFields {
+            BackFields {
                 pass: root.pass
                 defaultTextColor: Kirigami.Theme.textColor
             }

@@ -10,8 +10,6 @@ import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.pkpass as KPkPass
-import './pkpass' as PkPass
-import org.kde.itinerary
 
 Item {
     id: root
@@ -24,7 +22,7 @@ Item {
     /** Double tap on the barcode to request scan mode. */
     signal scanModeToggled()
 
-    PkPass.GenericPassBackground {
+    GenericPassBackground {
         pass: root.pass
         passId: root.passId
         anchors.fill: parent
@@ -128,19 +126,19 @@ Item {
         }
 
         // secondary fields
-        PkPass.SecondaryFieldsRow {
+        SecondaryFieldsRow {
             pass: root.pass
             defaultTextColor: Kirigami.Theme.textColor
         }
 
         // auxiliary fields
-        PkPass.AuxiliaryFieldsGrid {
+        AuxiliaryFieldsGrid {
             pass: root.pass
             defaultTextColor: Kirigami.Theme.textColor
         }
 
         // barcode
-        PkPass.Barcode {
+        Barcode {
             maximumWidth: root.implicitWidth * 0.8
             pass: root.pass
             TapHandler {
@@ -152,7 +150,7 @@ Item {
         Kirigami.Separator {
             Layout.fillWidth: true
         }
-        PkPass.BackFields {
+        BackFields {
             pass: root.pass
             defaultTextColor: Kirigami.Theme.textColor
         }
