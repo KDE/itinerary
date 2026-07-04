@@ -4,6 +4,7 @@
 */
 
 import QtQuick
+import org.kde.kirigami as Kirigami
 import org.kde.pkpass as KPkPass
 
 /*! Background for regular generic passes. */

@@ -37,50 +37,12 @@ Item {
         onImplicitHeightChanged: root.implicitHeight = Math.max(implicitHeight + 2 * topLayout.anchors.margins, 448)
 
         // header
-        GridLayout {
+        GenericPassHeader {
             id: headerLayout
-            rows: 2
-            columns: root.pass.headerFields.length + 2
-            Layout.fillWidth: true
+            pass: root.pass
+            passId: root.passId
+            defaultTextColor: Kirigami.Theme.textColor
             Layout.maximumWidth: root.implicitWidth - 2 * topLayout.anchors.margins
-
-            Image {
-                Layout.rowSpan: 2
-                Layout.maximumHeight: 50
-                Layout.maximumWidth: 160
-                Layout.preferredWidth: paintedWidth
-                fillMode: Image.PreserveAspectFit
-                source: root.passId !== "" ? "image://org.kde.pkpass/" + root.passId + "/logo" : ""
-                sourceSize.height: 1 // ??? seems necessary to trigger high dpi scaling...
-            }
-
-            QQC2.Label {
-                Layout.rowSpan: 2
-                Layout.fillWidth: root.pass ? true : false
-                text: root.pass ? root.pass.logoText : ""
-                color: root.pass.hasForegroundColor ? root.pass.foregroundColor : Kirigami.Theme.textColor
-            }
-
-            Repeater {
-                model: root.pass.headerFields
-                delegate: QQC2.Label {
-                    required property KPkPass.field modelData
-                    text: modelData.label
-                    color: root.pass.hasLabelColor ? root.pass.labelColor : Kirigami.Theme.textColor
-                    elide: Text.ElideRight
-                    Layout.fillWidth: true
-                }
-            }
-            Repeater {
-                model: root.pass.headerFields
-                delegate: QQC2.Label {
-                    required property KPkPass.field modelData
-                    text: modelData.valueDisplayString
-                    color: root.pass.hasForegroundColor ? root.pass.foregroundColor : Kirigami.Theme.textColor
-                    elide: Text.ElideRight
-                    Layout.fillWidth: true
-                }
-            }
         }
 
         // primary fields
