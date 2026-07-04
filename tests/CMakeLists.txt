@@ -1,6 +1,8 @@
 # SPDX-FileCopyrightText: 2018 Volker Krause <vkrause@kde.org>
 # SPDX-License-Identifier: BSD-3-Clause
 
+add_definitions(-DTRANSLATION_DOMAIN=\"kde-itinerary\")
+
 add_executable(pkpassviewer pkpassviewer.cpp pkpassviewer.qrc)
 target_link_libraries(pkpassviewer PRIVATE itinerary itineraryplugin KMatrixplugin KF6::I18nQml)
 
