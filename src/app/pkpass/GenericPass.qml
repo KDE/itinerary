@@ -15,7 +15,7 @@ Item {
     id: root
     property KPkPass.Pass pass: null
     property string passId
-    implicitHeight: topLayout.implicitHeight
+    implicitHeight: Math.max(implicitHeight + 2 * topLayout.anchors.margins, 448)
     implicitWidth: 332 //Math.max(topLayout.implicitWidth, 332)
 
 
@@ -34,7 +34,7 @@ Item {
         anchors.fill: parent
         anchors.margins: 6
         // HACK to break binding loop on implicitHeight
-        onImplicitHeightChanged: root.implicitHeight = implicitHeight + 2 * topLayout.anchors.margins
+        onImplicitHeightChanged: root.implicitHeight = Math.max(implicitHeight + 2 * topLayout.anchors.margins, 448)
 
         // header
         GridLayout {
