@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-03 00:46+0000\n"
+"POT-Creation-Date: 2026-07-05 00:44+0000\n"
 "PO-Revision-Date: 2026-06-27 05:58+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -3458,17 +3458,46 @@ msgctxt "no longer valid tickets"
 msgid "Expired"
 msgstr "Pretečeno"
 
-#: app/PkPassPage.qml:17
+#: app/pkpass/PosterEventTicketSeatRow.qml:29
+#, kde-format
+msgctxt "seat reservation"
+msgid "Aisle"
+msgstr ""
+
+#: app/pkpass/PosterEventTicketSeatRow.qml:37
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "Sections"
+msgctxt "seat reservation"
+msgid "Section"
+msgstr "Razdelki"
+
+#: app/pkpass/PosterEventTicketSeatRow.qml:45
+#, fuzzy, kde-format
+#| msgctxt "seat row"
+#| msgid "Row:"
+msgctxt "seat reservation"
+msgid "Row"
+msgstr "Vrsta:"
+
+#: app/pkpass/PosterEventTicketSeatRow.qml:53
+#, fuzzy, kde-format
+#| msgid "Seat"
+msgctxt "seat reservation"
+msgid "Seat"
+msgstr "Sedež"
+
+#: app/PkPassPage.qml:20
 #, kde-format
 msgid "Boarding Pass"
 msgstr "Vstopni kupon"
 
-#: app/PkPassPage.qml:18
+#: app/PkPassPage.qml:21
 #, kde-format
 msgid "Event Ticket"
 msgstr "Vstopnica za dogodek"
 
-#: app/PkPassPage.qml:19
+#: app/PkPassPage.qml:22
 #, kde-format
 msgid "Pass"
 msgstr "Vozovnica"
@@ -5460,10 +5489,6 @@ msgstr "%1%2 od %3 do %4 na %5"
 #~ msgctxt "seat section, e.g. block in a stadium"
 #~ msgid "Section:"
 #~ msgstr "Razdelek:"
-
-#~ msgctxt "seat row"
-#~ msgid "Row:"
-#~ msgstr "Vrsta:"
 
 #~ msgctxt "seat number"
 #~ msgid "Number:"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-03 00:46+0000\n"
+"POT-Creation-Date: 2026-07-05 00:44+0000\n"
 "PO-Revision-Date: 2026-06-30 16:29+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -3458,17 +3458,46 @@ msgctxt "no longer valid tickets"
 msgid "Expired"
 msgstr "Expirate"
 
-#: app/PkPassPage.qml:17
+#: app/pkpass/PosterEventTicketSeatRow.qml:29
+#, kde-format
+msgctxt "seat reservation"
+msgid "Aisle"
+msgstr ""
+
+#: app/pkpass/PosterEventTicketSeatRow.qml:37
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "Sections"
+msgctxt "seat reservation"
+msgid "Section"
+msgstr "Sectiones"
+
+#: app/pkpass/PosterEventTicketSeatRow.qml:45
+#, fuzzy, kde-format
+#| msgctxt "seat row"
+#| msgid "Row:"
+msgctxt "seat reservation"
+msgid "Row"
+msgstr "Rango:"
+
+#: app/pkpass/PosterEventTicketSeatRow.qml:53
+#, fuzzy, kde-format
+#| msgid "Seat"
+msgctxt "seat reservation"
+msgid "Seat"
+msgstr "Sede"
+
+#: app/PkPassPage.qml:20
 #, kde-format
 msgid "Boarding Pass"
 msgstr "Carta de imbarcar"
 
-#: app/PkPassPage.qml:18
+#: app/PkPassPage.qml:21
 #, kde-format
 msgid "Event Ticket"
 msgstr "Billet de Evento"
 
-#: app/PkPassPage.qml:19
+#: app/PkPassPage.qml:22
 #, kde-format
 msgid "Pass"
 msgstr "Pass:"
@@ -5449,10 +5478,6 @@ msgstr "%1%2 ex %3 a %4 le %5"
 #~ msgctxt "seat section, e.g. block in a stadium"
 #~ msgid "Section:"
 #~ msgstr "Section :"
-
-#~ msgctxt "seat row"
-#~ msgid "Row:"
-#~ msgstr "Rango:"
 
 #~ msgctxt "seat number"
 #~ msgid "Number:"

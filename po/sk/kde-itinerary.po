@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-03 00:46+0000\n"
+"POT-Creation-Date: 2026-07-05 00:44+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -3449,17 +3449,44 @@ msgctxt "no longer valid tickets"
 msgid "Expired"
 msgstr "Vyprší:"
 
-#: app/PkPassPage.qml:17
+#: app/pkpass/PosterEventTicketSeatRow.qml:29
+#, kde-format
+msgctxt "seat reservation"
+msgid "Aisle"
+msgstr ""
+
+#: app/pkpass/PosterEventTicketSeatRow.qml:37
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "Sections"
+msgctxt "seat reservation"
+msgid "Section"
+msgstr "Sekcie"
+
+#: app/pkpass/PosterEventTicketSeatRow.qml:45
+#, kde-format
+msgctxt "seat reservation"
+msgid "Row"
+msgstr ""
+
+#: app/pkpass/PosterEventTicketSeatRow.qml:53
+#, fuzzy, kde-format
+#| msgid "Seat"
+msgctxt "seat reservation"
+msgid "Seat"
+msgstr "Sedlo"
+
+#: app/PkPassPage.qml:20
 #, kde-format
 msgid "Boarding Pass"
 msgstr "Palubný lístok"
 
-#: app/PkPassPage.qml:18
+#: app/PkPassPage.qml:21
 #, kde-format
 msgid "Event Ticket"
 msgstr "Event Ticket"
 
-#: app/PkPassPage.qml:19
+#: app/PkPassPage.qml:22
 #, kde-format
 msgid "Pass"
 msgstr "Pass"
