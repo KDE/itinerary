@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-05 00:44+0000\n"
-"PO-Revision-Date: 2026-06-27 12:18+0100\n"
+"PO-Revision-Date: 2026-07-06 00:38+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.04.2\n"
+"X-Generator: Lokalize 26.04.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -3467,25 +3467,22 @@ msgstr "Expirado"
 #, kde-format
 msgctxt "seat reservation"
 msgid "Aisle"
-msgstr ""
+msgstr "Pasillo"
 
 #: app/pkpass/PosterEventTicketSeatRow.qml:37
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Sections"
+#, kde-format
 msgctxt "seat reservation"
 msgid "Section"
-msgstr "Secciones"
+msgstr "Sección"
 
 #: app/pkpass/PosterEventTicketSeatRow.qml:45
 #, kde-format
 msgctxt "seat reservation"
 msgid "Row"
-msgstr ""
+msgstr "Fila"
 
 #: app/pkpass/PosterEventTicketSeatRow.qml:53
-#, fuzzy, kde-format
-#| msgid "Seat"
+#, kde-format
 msgctxt "seat reservation"
 msgid "Seat"
 msgstr "Asiento"

@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-05 00:44+0000\n"
-"PO-Revision-Date: 2026-04-21 20:54+0200\n"
+"PO-Revision-Date: 2026-06-30 21:34+0200\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.04.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -488,11 +488,10 @@ msgstr "Ankunftszeit"
 
 #: app/BoatPage.qml:189 app/BusPage.qml:270 app/FlightPage.qml:292
 #: app/JourneyQueryPage.qml:99 app/TrainPage.qml:341
-#, fuzzy, kde-format
-#| msgid "Booking"
+#, kde-format
 msgctxt "purchase a ticket"
 msgid "Book"
-msgstr "Buchung"
+msgstr "Buchen"
 
 #: app/BoatPage.qml:195 app/BusPage.qml:276 app/FlightPage.qml:298
 #: app/TrainPage.qml:356
@@ -2551,6 +2550,8 @@ msgstr "Währung: %1 = %2"
 msgid ""
 "Leaving the EU roaming regulation area. Check your mobile data settings."
 msgstr ""
+"Der EU-Roaming-Raum wird verlassen. Überprüfen Sie Ihre Einstellungen zu "
+"mobilen Daten."
 
 #: app/locationinformation.cpp:127
 #, kde-format
@@ -2849,10 +2850,9 @@ msgid "Matrix Session Verification"
 msgstr "Matrix-Sitzungsverifizierung"
 
 #: app/MapStopoverInfoSheetDrawer.qml:85
-#, fuzzy, kde-format
-#| msgid "Occupancy:"
+#, kde-format
 msgid "Occupancy"
-msgstr "Auslastung:"
+msgstr "Auslastung"
 
 #: app/MapStopoverInfoSheetDrawer.qml:112 app/StopoverDetailsPage.qml:124
 #, kde-format
@@ -3682,37 +3682,41 @@ msgstr "Gruppengröße"
 #, kde-format
 msgid "This airport might not be quite where its name suggests it is."
 msgstr ""
+"Dieser Flughafen liegt vielleicht nicht ganz dort, wo sein Name vermuten "
+"lässt."
 
 #: app/ScamWarningFormDelegate.qml:23
 #, kde-format
 msgid "This port might not be quite where its name suggests it is."
 msgstr ""
+"Dieser Hafen liegt vielleicht nicht ganz dort, wo sein Name vermuten lässt."
 
 #: app/ScamWarningFormDelegate.qml:37
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Ignore warning"
-msgstr ""
+msgstr "Warnung ignorieren"
 
 #: app/ScamWarningFormDelegate.qml:50
 #, kde-format
 msgid "Ignore Warning"
-msgstr ""
+msgstr "Warnung ignorieren"
 
 #: app/ScamWarningFormDelegate.qml:51
 #, kde-format
 msgid "Do you want to ignore the warning permanently or for this trip only?"
 msgstr ""
+"Möchten Sie diese Warnung dauerhaft ignorieren oder nur für diese Reise?"
 
 #: app/ScamWarningFormDelegate.qml:54
 #, kde-format
 msgid "Ignore permanently"
-msgstr ""
+msgstr "Dauerhaft ignorieren"
 
 #: app/ScamWarningFormDelegate.qml:63
 #, kde-format
 msgid "Ignore for this trip"
-msgstr ""
+msgstr "Für diese Reise ignorieren"
 
 #: app/SettingsPage.qml:20
 #, kde-format
@@ -3997,13 +4001,13 @@ msgstr "Anmelden"
 #, kde-format
 msgctxt "@label"
 msgid "Homeserver url"
-msgstr ""
+msgstr "Adresse des Heimservers"
 
 #: app/SettingsPage.qml:324
 #, kde-format
 msgctxt "@action:button"
 msgid "Login with OIDC"
-msgstr ""
+msgstr "Mit OIDC anmelden"
 
 #: app/SettingsPage.qml:334
 #, kde-format
@@ -4964,7 +4968,7 @@ msgstr "Willkommen"
 #, kde-format
 msgctxt "@title:group"
 msgid "Setup"
-msgstr ""
+msgstr "Einrichtung"
 
 #: app/WelcomePage.qml:31
 #, kde-format
@@ -4972,22 +4976,16 @@ msgid ""
 "Select your home country for currency conversions and power plug "
 "compatibility warnings to work."
 msgstr ""
+"Wählen Sie Ihr Heimatland aus, damit die Währungsumrechnung und die Hinweise "
+"zur Kompatibilität von Steckern erscheinen."
 
 #: app/WelcomePage.qml:35
-#, fuzzy, kde-format
-#| msgid "Use insecure services"
+#, kde-format
 msgid "Use online services"
-msgstr "Unsichere Dienste nutzen"
+msgstr "Online-Dienste nutzen"
 
 #: app/WelcomePage.qml:36
-#, fuzzy, kde-format
-#| msgid ""
-#| "KDE Itinerary has all features disabled by default that require online "
-#| "access, such as retrieving live traffic data or weather forecasts. You "
-#| "therefore might want to review these settings. While you are at it, you "
-#| "might want to configure your home location to enable the transfer "
-#| "assistant to automatically suggests ways to your next departure station "
-#| "or airport."
+#, kde-format
 msgid ""
 "KDE Itinerary has all features disabled by default that require online "
 "access, such as retrieving live traffic data or weather forecasts. You can "
@@ -4995,11 +4993,9 @@ msgid ""
 "control over which services to use."
 msgstr ""
 "In KDE Itinerary sind standardmäßig alle Funktionen deaktiviert, die einen "
-"Online-Zugang erfordern, wie z. B. das Abrufen von Live-Verkehrsdaten oder "
-"Wettervorhersagen. Sie sollten daher diese Einstellungen überprüfen. Wenn "
-"Sie schon dabei sind, sollten Sie Ihren Heimatort so konfigurieren, dass der "
-"Umsteigeassistent automatisch Wege zu Ihrem nächsten Abfahrtsbahnhof oder "
-"Flughafen vorschlagen kann."
+"Online-Zugang erfordern, wie z. B. das Abrufen von Live-Verkehrsdaten oder "
+"Wettervorhersagen. Sie können all diese Funktionen hier aktivieren, oder in "
+"den Einstellungen genau auswählen, welche Dienste Sie nutzen möchten."
 
 #: app/WelcomePage.qml:54
 #, kde-format
@@ -5007,18 +5003,19 @@ msgid ""
 "Review the settings for more finegrained control over which online services "
 "to use."
 msgstr ""
+"Überprüfen Sie die Einstellungen, um genauer festzulegen, welche Online-"
+"Dienste genutzt werden sollen."
 
 #: app/WelcomePage.qml:61
-#, fuzzy, kde-format
-#| msgid "Version"
+#, kde-format
 msgctxt "@title:group"
 msgid "Permissions"
-msgstr "Version"
+msgstr "Berechtigungen"
 
 #: app/WelcomePage.qml:90
 #, kde-format
 msgid "Done!"
-msgstr ""
+msgstr "Fertig!"
 
 #: matrix/matrixmanager.cpp:23 matrix/matrixmanager.cpp:120
 #, kde-format
