@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-05 00:44+0000\n"
-"PO-Revision-Date: 2026-06-27 10:17+0300\n"
+"PO-Revision-Date: 2026-07-06 18:11+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -3468,27 +3468,22 @@ msgstr "Прострочені"
 #, kde-format
 msgctxt "seat reservation"
 msgid "Aisle"
-msgstr ""
+msgstr "Прохід"
 
 #: app/pkpass/PosterEventTicketSeatRow.qml:37
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Sections"
+#, kde-format
 msgctxt "seat reservation"
 msgid "Section"
-msgstr "Секції"
+msgstr "Секція"
 
 #: app/pkpass/PosterEventTicketSeatRow.qml:45
-#, fuzzy, kde-format
-#| msgctxt "seat row"
-#| msgid "Row:"
+#, kde-format
 msgctxt "seat reservation"
 msgid "Row"
-msgstr "Ряд:"
+msgstr "Ряд"
 
 #: app/pkpass/PosterEventTicketSeatRow.qml:53
-#, fuzzy, kde-format
-#| msgid "Seat"
+#, kde-format
 msgctxt "seat reservation"
 msgid "Seat"
 msgstr "Місце"

@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the itinerary package.
 #
-# SPDX-FileCopyrightText: 2019, 2020, 2021, 2022, 2023, 2024, 2025 Stefan Asserhäll <stefan.asserhall@gmail.com>
+# SPDX-FileCopyrightText: 2019-2026 Stefan Asserhäll <stefan.asserhall@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-05 00:44+0000\n"
-"PO-Revision-Date: 2025-10-26 20:48+0100\n"
+"PO-Revision-Date: 2026-07-06 19:05+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.08.2\n"
+"X-Generator: Lokalize 26.04.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -101,10 +101,9 @@ msgid "Export…"
 msgstr "Exportera…"
 
 #: app/ActionsCard.qml:82
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgid "Delete…"
-msgstr "Ta bort"
+msgstr "Ta bort…"
 
 #: app/ActionsCard.qml:133
 #, kde-format
@@ -266,8 +265,7 @@ msgstr[1] "%1 hälsointyg importerade."
 #: app/applicationcontroller.cpp:490 app/applicationcontroller.cpp:508
 #: app/applicationcontroller.cpp:549 app/applicationcontroller.cpp:585
 #: app/applicationcontroller.cpp:603
-#, fuzzy, kde-format
-#| msgid "Export failed: %1"
+#, kde-format
 msgctxt "%1 is an error message"
 msgid "Export failed: %1"
 msgstr "Export misslyckades: %1"
@@ -295,8 +293,7 @@ msgid "Pass sent."
 msgstr "Pass skickat."
 
 #: app/applicationcontroller.cpp:633
-#, fuzzy, kde-format
-#| msgid "Saving failed: %1"
+#, kde-format
 msgctxt "%1 is an error message"
 msgid "Saving failed: %1"
 msgstr "Misslyckades spara: %1"
@@ -486,11 +483,10 @@ msgstr "Ankomsttid"
 
 #: app/BoatPage.qml:189 app/BusPage.qml:270 app/FlightPage.qml:292
 #: app/JourneyQueryPage.qml:99 app/TrainPage.qml:341
-#, fuzzy, kde-format
-#| msgid "Booking"
+#, kde-format
 msgctxt "purchase a ticket"
 msgid "Book"
-msgstr "Bokning"
+msgstr "Boka"
 
 #: app/BoatPage.qml:195 app/BusPage.qml:276 app/FlightPage.qml:298
 #: app/TrainPage.qml:356
@@ -552,20 +548,16 @@ msgid "Booking"
 msgstr "Bokning"
 
 #: app/BookingEditorCard.qml:66
-#, fuzzy, kde-format
-#| msgctxt "a train/bus journey canceled by its operator"
-#| msgid "Canceled"
+#, kde-format
 msgctxt "canceled reservation"
 msgid "Canceled"
-msgstr "Avbruten"
+msgstr "Avbokad"
 
 #: app/BookingEditorCard.qml:67
-#, fuzzy, kde-format
-#| msgctxt "a train/bus journey canceled by its operator"
-#| msgid "Trip has been canceled."
+#, kde-format
 msgctxt "canceled reservation"
 msgid "Booking has been canceled."
-msgstr "Resan har ställts in."
+msgstr "Bokningen har avbokats."
 
 #: app/BusDelegate.qml:38
 #, kde-format
@@ -744,8 +736,7 @@ msgid "Arrival"
 msgstr "Ankomst"
 
 #: app/calendarhelper.cpp:28
-#, fuzzy, kde-format
-#| msgid "Transfer to %1"
+#, kde-format
 msgctxt "%1 is the transfer destination"
 msgid "Transfer to %1"
 msgstr "Byt till %1"
@@ -767,11 +758,10 @@ msgid "Rental Car Pick-up"
 msgstr "Hyrbilsutlämning"
 
 #: app/CarRentalDelegate.qml:57
-#, fuzzy, kde-format
-#| msgid "Drop-off: %1"
+#, kde-format
 msgctxt "%1 is a date/time"
 msgid "Drop-off: %1"
-msgstr "Inlämning: %1"
+msgstr "Avlämning: %1"
 
 #: app/CarRentalPage.qml:15 app/CarRentalPage.qml:22
 #, kde-format
@@ -931,15 +921,13 @@ msgid "Add Document…"
 msgstr "Lägg till dokument…"
 
 #: app/downloadjob.cpp:162
-#, fuzzy, kde-format
-#| msgid "Network error: %1"
+#, kde-format
 msgctxt "%1 is an error message"
 msgid "Network error: %1"
 msgstr "Nätverksfel: %1"
 
 #: app/downloadjob.cpp:193
-#, fuzzy, kde-format
-#| msgid "Download failed: %1"
+#, kde-format
 msgctxt "%1 is an error message"
 msgid "Download failed: %1"
 msgstr "Nerladdning misslyckades: %1"
@@ -1102,8 +1090,7 @@ msgid "Work"
 msgstr "Arbete"
 
 #: app/favoritelocationmodel.cpp:161
-#, fuzzy, kde-format
-#| msgid "Location %1"
+#, kde-format
 msgctxt "%1 is a number"
 msgid "Location %1"
 msgstr "Plats %1"
@@ -1463,10 +1450,9 @@ msgid "Country"
 msgstr "Land"
 
 #: app/FormPlaceEditorDelegate.qml:201
-#, fuzzy, kde-format
-#| msgid "Coordinate"
+#, kde-format
 msgid "Coordinates"
-msgstr "Koordinat"
+msgstr "Koordinater"
 
 #: app/FormPlaceEditorDelegate.qml:202
 #, kde-format
@@ -1479,22 +1465,19 @@ msgid "Pick…"
 msgstr "Välj…"
 
 #: app/FormPlaceEditorDelegate.qml:221
-#, fuzzy, kde-format
-#| msgid "Address to coordinate"
+#, kde-format
 msgid "Address to coordinates"
-msgstr "Adress till koordinat"
+msgstr "Adress till koordinater"
 
 #: app/FormPlaceEditorDelegate.qml:237
-#, fuzzy, kde-format
-#| msgid "Coordinate to address"
+#, kde-format
 msgid "Coordinates to address"
-msgstr "Koordinat till adress"
+msgstr "Koordinater till adress"
 
 #: app/FormPlaceEditorDelegate.qml:247
-#, fuzzy, kde-format
-#| msgid "Address to coordinate"
+#, kde-format
 msgid "Remove coordinates"
-msgstr "Adress till koordinat"
+msgstr "Ta bort koordinater"
 
 #: app/FormPlatformDelegate.qml:46
 #, kde-format
@@ -1581,22 +1564,19 @@ msgid "Ferry from %1 to %2"
 msgstr "Färja från %1 till %2"
 
 #: app/HealthCertificateBarcode.qml:34
-#, fuzzy, kde-format
-#| msgid "Vaccination certificate of %1"
+#, kde-format
 msgctxt "%1 is a person name"
 msgid "Vaccination certificate of %1"
 msgstr "Vaccinationsintyg för %1"
 
 #: app/HealthCertificateBarcode.qml:36
-#, fuzzy, kde-format
-#| msgid "Test certificate of %1"
+#, kde-format
 msgctxt "%1 is a person name, 'Test certificate' is a compound noun"
 msgid "Test certificate of %1"
 msgstr "Testintyg för %1"
 
 #: app/HealthCertificateBarcode.qml:38
-#, fuzzy, kde-format
-#| msgid "Recovery certificate of %1"
+#, kde-format
 msgctxt "%1 is a person name"
 msgid "Recovery certificate of %1"
 msgstr "Friskintyg för %1"
@@ -1663,16 +1643,14 @@ msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: app/healthcertificatemanager.cpp:154
-#, fuzzy, kde-format
-#| msgid "Vaccination for %1 (%2/%3)"
+#, kde-format
 msgctxt ""
 "%1 is a disease, %2 the amount of applied doses, %3 the amount of total doses"
 msgid "Vaccination for %1 (%2/%3)"
 msgstr "Vaccination för %1 (%2/%3)"
 
 #: app/healthcertificatemanager.cpp:157
-#, fuzzy, kde-format
-#| msgid "Vaccination for %1"
+#, kde-format
 msgctxt "%1 is a disease"
 msgid "Vaccination for %1"
 msgstr "Vaccination för %1"
@@ -1683,18 +1661,16 @@ msgid "Vaccination"
 msgstr "Vaccination"
 
 #: app/healthcertificatemanager.cpp:163
-#, fuzzy, kde-format
-#| msgid "Test %1 for %2"
+#, kde-format
 msgctxt "%1 is a disease, %2 is a date"
 msgid "Test for %1 – %2"
-msgstr "Test %1 för %2"
+msgstr "Test för %1 - %2"
 
 #: app/healthcertificatemanager.cpp:168
-#, fuzzy, kde-format
-#| msgid "Recovery %1 for %2"
+#, kde-format
 msgctxt "%1 is a disease, %2 is a date"
 msgid "Recovery from %1 – %2"
-msgstr "Friskintyg %1 för %2"
+msgstr "Frisk från %1 - %2"
 
 #: app/HealthCertificatePage.qml:19
 #, kde-format
@@ -2033,8 +2009,7 @@ msgid "From SNCF reservation number"
 msgstr "Från SNCF bokningsnummer"
 
 #: app/importcontroller.cpp:152 app/importcontroller.cpp:464
-#, fuzzy, kde-format
-#| msgid "Import failed: %1"
+#, kde-format
 msgctxt "%1 is an error message"
 msgid "Import failed: %1"
 msgstr "Import misslyckades: %1"
@@ -2167,24 +2142,19 @@ msgid "Open wheelmap.org"
 msgstr "Öppna wheelmap.org"
 
 #: app/IndoorMapPage.qml:280
-#, fuzzy, kde-format
-#| msgctxt "@action:button Start route guidance to location"
-#| msgid "Navigate"
+#, kde-format
 msgid "Navigate from here"
-msgstr "Navigera"
+msgstr "Navigera härifrån"
 
 #: app/IndoorMapPage.qml:289
-#, fuzzy, kde-format
-#| msgctxt "@action:button Start route guidance to location"
-#| msgid "Navigate"
+#, kde-format
 msgid "Navigate to here"
-msgstr "Navigera"
+msgstr "Navigera hit"
 
 #: app/IndoorMapPage.qml:300
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgid "Show information"
-msgstr "Mer information"
+msgstr "Visa information"
 
 #: app/JourneyFilterPage.qml:15
 #, kde-format
@@ -2381,7 +2351,7 @@ msgstr "Resa"
 #: app/JourneySectionPage.qml:124 app/PublicTransportPage.qml:203
 #, kde-format
 msgid "Map"
-msgstr ""
+msgstr "Karta"
 
 #: app/JourneySectionStopDelegate.qml:163
 #, kde-format
@@ -2572,6 +2542,7 @@ msgstr "Valuta: %1 = %2"
 msgid ""
 "Leaving the EU roaming regulation area. Check your mobile data settings."
 msgstr ""
+"Lämnar EU:s roamingregleringsområde. Kontrollera dina mobildatainställningar."
 
 #: app/locationinformation.cpp:127
 #, kde-format
@@ -2718,19 +2689,19 @@ msgstr "PDF-tolkning"
 #, kde-format
 msgctxt "@info:credit"
 msgid "MapLibre Native Qt"
-msgstr ""
+msgstr "MapLibre inbyggd Qt"
 
 #: app/main.cpp:230 app/main.cpp:231
 #, kde-format
 msgctxt "@info:credit"
 msgid "Copyright © MapLibre contributors."
-msgstr ""
+msgstr "Copyright © MapLibre-bidragsgivare."
 
 #: app/main.cpp:231
 #, kde-format
 msgctxt "@info:credit"
 msgid "MapLibre Native"
-msgstr ""
+msgstr "MapLibre inbyggd"
 
 #: app/main.cpp:235
 #, kde-format
@@ -3102,9 +3073,7 @@ msgid "The session verification was canceled due to an unknown error."
 msgstr "Sessionsverifikationen avbröts på grund av ett okänt fel."
 
 #: app/MatrixKeyVerificationPage.qml:114
-#, fuzzy, kde-format
-#| msgctxt "Matrix session verfication"
-#| msgid "Emoji Verification"
+#, kde-format
 msgctxt "Matrix session verification"
 msgid "Emoji Verification"
 msgstr "Verifikation av emoji"
@@ -3427,8 +3396,7 @@ msgid "%1 - %2"
 msgstr "%1 - %2"
 
 #: app/passmanager.cpp:289
-#, fuzzy, kde-format
-#| msgid "%1 - %2"
+#, kde-format
 msgctxt "%1 and %2 are dates"
 msgid "%1 - %2"
 msgstr "%1 - %2"
@@ -3478,27 +3446,22 @@ msgstr "Utgångna"
 #, kde-format
 msgctxt "seat reservation"
 msgid "Aisle"
-msgstr ""
+msgstr "Gång"
 
 #: app/pkpass/PosterEventTicketSeatRow.qml:37
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Sections"
+#, kde-format
 msgctxt "seat reservation"
 msgid "Section"
-msgstr "Sektioner"
+msgstr "Sektion"
 
 #: app/pkpass/PosterEventTicketSeatRow.qml:45
-#, fuzzy, kde-format
-#| msgctxt "seat row"
-#| msgid "Row:"
+#, kde-format
 msgctxt "seat reservation"
 msgid "Row"
-msgstr "Rad:"
+msgstr "Rad"
 
 #: app/pkpass/PosterEventTicketSeatRow.qml:53
-#, fuzzy, kde-format
-#| msgid "Seat"
+#, kde-format
 msgctxt "seat reservation"
 msgid "Seat"
 msgstr "Plats"
@@ -3603,16 +3566,14 @@ msgid "Ticket"
 msgstr "Biljett"
 
 #: app/ReservationDeletionDialog.qml:30
-#, fuzzy, kde-format
-#| msgid "Delete Event"
+#, kde-format
 msgid "Delete Selected"
-msgstr "Ta bort händelse"
+msgstr "Ta bort markerade"
 
 #: app/ReservationDeletionDialog.qml:42
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgid "Delete All"
-msgstr "Ta bort"
+msgstr "Ta bort alla"
 
 #: app/ReservationDocumentsCard.qml:19
 #, kde-format
@@ -3692,38 +3653,38 @@ msgstr "Gruppstorlek"
 #: app/ScamWarningFormDelegate.qml:21
 #, kde-format
 msgid "This airport might not be quite where its name suggests it is."
-msgstr ""
+msgstr "Den här flygplatsen kanske inte är riktigt där namnet antyder."
 
 #: app/ScamWarningFormDelegate.qml:23
 #, kde-format
 msgid "This port might not be quite where its name suggests it is."
-msgstr ""
+msgstr "Den här hamnen kanske inte är riktigt där namnet antyder."
 
 #: app/ScamWarningFormDelegate.qml:37
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Ignore warning"
-msgstr ""
+msgstr "Ignorera varning"
 
 #: app/ScamWarningFormDelegate.qml:50
 #, kde-format
 msgid "Ignore Warning"
-msgstr ""
+msgstr "Ignorera varning"
 
 #: app/ScamWarningFormDelegate.qml:51
 #, kde-format
 msgid "Do you want to ignore the warning permanently or for this trip only?"
-msgstr ""
+msgstr "Vill du ignorera varningen permanent eller bara för den här resan?"
 
 #: app/ScamWarningFormDelegate.qml:54
 #, kde-format
 msgid "Ignore permanently"
-msgstr ""
+msgstr "Ignorera permanent"
 
 #: app/ScamWarningFormDelegate.qml:63
 #, kde-format
 msgid "Ignore for this trip"
-msgstr ""
+msgstr "Ignorera för den här resan"
 
 #: app/SettingsPage.qml:20
 #, kde-format
@@ -3951,14 +3912,12 @@ msgstr ""
 "Aktivera platstjänsten på din enhet för att komma åt ombordinformation."
 
 #: app/SettingsPage.qml:242
-#, fuzzy, kde-format
-#| msgid ""
-#| "Onboard information are unfortunately not supported on your device at "
-#| "this time."
+#, kde-format
 msgid ""
 "Unfortunately, retrieving onboard information is not supported on your "
 "device at this time."
-msgstr "Ombordinformation stöds tyvärr inte för närvarande på din enhet."
+msgstr ""
+"Hämtning av ombordinformation stöds tyvärr för närvarande inte på din enhet."
 
 #: app/SettingsPage.qml:274
 #, kde-format
@@ -3999,13 +3958,13 @@ msgstr "Logga in"
 #, kde-format
 msgctxt "@label"
 msgid "Homeserver url"
-msgstr ""
+msgstr "Webbadress för hemserver"
 
 #: app/SettingsPage.qml:324
 #, kde-format
 msgctxt "@action:button"
 msgid "Login with OIDC"
-msgstr ""
+msgstr "Logga in med OIDC"
 
 #: app/SettingsPage.qml:334
 #, kde-format
@@ -4026,26 +3985,19 @@ msgid "Initiate session verification in your Matrix chat client."
 msgstr "Initiera sessionsverifikation i ditt Matrix chattprogram."
 
 #: app/SettingsPage.qml:343
-#, fuzzy, kde-format
-#| msgid "Traewelling Integration"
+#, kde-format
 msgid "Träwelling Integration"
-msgstr "Integrering med Traewelling"
+msgstr "Integrering med Träwelling"
 
 #: app/SettingsPage.qml:348
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Traewelling is a free check-in service that lets you tell your friends "
-#| "where you are and where you can log your public transit journeys. For "
-#| "more information, visit <a href=\"https://traewelling.de\">traewelling."
-#| "de</a>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Träwelling is a free check-in service that lets you tell your friends where "
 "you are and where you can log your public transit journeys. For more "
 "information, visit <a href=\"https://traewelling.de\">traewelling.de</a>"
 msgstr ""
-"Traewelling är en gratis incheckningstjänst som låter dig tala om för dina "
+"Träwelling är en gratis incheckningstjänst som låter dig tala om för dina "
 "vänner var du befinner dig och där du kan registrera dina "
 "kollektivtrafikresor. För mer information besök <a href=\"https://"
 "traewelling.de\">traewelling.de</a>."
@@ -4267,22 +4219,19 @@ msgid "Paste"
 msgstr "Klistra in"
 
 #: app/tickettokenmodel.cpp:88
-#, fuzzy, kde-format
-#| msgid "Attendee %1"
+#, kde-format
 msgctxt "%1 is a number"
 msgid "Attendee %1"
 msgstr "Deltagare %1"
 
 #: app/tickettokenmodel.cpp:90
-#, fuzzy, kde-format
-#| msgid "Traveler %1"
+#, kde-format
 msgctxt "%1 is a number"
 msgid "Traveler %1"
 msgstr "Resande %1"
 
 #: app/tickettokenmodel.cpp:137
-#, fuzzy, kde-format
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "%1 is a person name, %2 is a ticket name"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
@@ -4442,6 +4391,8 @@ msgid ""
 "Specifying the departure and arrival location helps Itinerary to find up-to-"
 "date information for the train this reservation is valid for."
 msgstr ""
+"Att ange avgångs- och ankomstplats hjälper Resplan att hitta uppdaterad "
+"information för tåget som reservationen gäller för."
 
 #: app/TrainEditor.qml:231 app/TrainEditor.qml:336 app/TrainPage.qml:159
 #: app/TrainPage.qml:246
@@ -4507,24 +4458,20 @@ msgid "Arrival Vehicle Layout"
 msgstr "Ankommande fordonsklass"
 
 #: app/TrainPage.qml:348
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add to Traewelling"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add to Träwelling"
-msgstr "Lägg till i Traewelling"
+msgstr "Lägg till i Träwelling"
 
 #: app/TrainPage.qml:378
-#, fuzzy, kde-format
-#| msgid "Added to Traewelling"
+#, kde-format
 msgid "Added to Träwelling"
-msgstr "Tillagd i Traewelling"
+msgstr "Tillagd i Träwelling"
 
 #: app/TrainPage.qml:378
-#, fuzzy, kde-format
-#| msgid "Failed to add to Traewelling"
+#, kde-format
 msgid "Failed to add to Träwelling"
-msgstr "Misslyckades lägga till i Traewelling"
+msgstr "Misslyckades lägga till i Träwelling"
 
 #: app/TransferDelegate.qml:112
 #, kde-format
@@ -4652,10 +4599,9 @@ msgid "%1 (%2/%3)"
 msgstr "%1 (%2 - %3)"
 
 #: app/TripGroupMapPage.qml:201
-#, fuzzy, kde-format
-#| msgid "Address:"
+#, kde-format
 msgid "Address"
-msgstr "Adress:"
+msgstr "Adress"
 
 #: app/TripGroupMergeDialog.qml:17
 #, kde-format
@@ -4930,15 +4876,13 @@ msgid "Vehicle Layout"
 msgstr "Fordonsklasser"
 
 #: app/VehicleLayoutPage.qml:95
-#, fuzzy, kde-format
-#| msgid "Departure: %1"
+#, kde-format
 msgctxt "%1 is a date/time"
 msgid "Departure: %1"
 msgstr "Avgång: %1"
 
 #: app/VehicleLayoutPage.qml:97
-#, fuzzy, kde-format
-#| msgid "Arrival: %1"
+#, kde-format
 msgctxt "%1 is a date/time"
 msgid "Arrival: %1"
 msgstr "Ankomst: %1"
@@ -4980,7 +4924,7 @@ msgstr "Välkommen!"
 #, kde-format
 msgctxt "@title:group"
 msgid "Setup"
-msgstr ""
+msgstr "Inställning"
 
 #: app/WelcomePage.qml:31
 #, kde-format
@@ -4988,33 +4932,26 @@ msgid ""
 "Select your home country for currency conversions and power plug "
 "compatibility warnings to work."
 msgstr ""
+"Välj ditt hemland för att valutaomvandlingar och varningar om "
+"strömkontaktkompatibilitet ska fungera."
 
 #: app/WelcomePage.qml:35
-#, fuzzy, kde-format
-#| msgid "Use insecure services"
+#, kde-format
 msgid "Use online services"
-msgstr "Använd tjänster utan säkerhet"
+msgstr "Använd nättjänster"
 
 #: app/WelcomePage.qml:36
-#, fuzzy, kde-format
-#| msgid ""
-#| "KDE Itinerary has all features disabled by default that require online "
-#| "access, such as retrieving live traffic data or weather forecasts. You "
-#| "therefore might want to review these settings. While you are at it, you "
-#| "might want to configure your home location to enable the transfer "
-#| "assistant to automatically suggests ways to your next departure station "
-#| "or airport."
+#, kde-format
 msgid ""
 "KDE Itinerary has all features disabled by default that require online "
 "access, such as retrieving live traffic data or weather forecasts. You can "
 "enable all this here, or check the settings for much more finegrained "
 "control over which services to use."
 msgstr ""
-"KDE-resplan har normalt alla funktioner som kräver nätåtkomst inaktiverade, "
-"såsom att hämta aktuell trafikdata eller väderprognoser. Därför bör du "
-"kontrollera inställningarna. När du ändå håller på, kan du också ställa in "
-"din hemort för att göra det möjligt för transferguiden att automatiskt "
-"föreslå vägen till nästa avresestation eller flygplats."
+"KDE-resplan har normalt alla funktioner inaktiverade som kräver nätåtkomst, "
+"till exempel att hämta trafikdata i realtid eller väderprognoser. Alla kan "
+"aktiveras här, eller så kan inställningarna bestämmas för mycket mer "
+"detaljerad kontroll över vilka tjänster som ska användas."
 
 #: app/WelcomePage.qml:54
 #, kde-format
@@ -5022,18 +4959,19 @@ msgid ""
 "Review the settings for more finegrained control over which online services "
 "to use."
 msgstr ""
+"Granska inställningarna för att bestämma mer detaljerat över vilka "
+"nättjänster som ska användas."
 
 #: app/WelcomePage.qml:61
-#, fuzzy, kde-format
-#| msgid "Version"
+#, kde-format
 msgctxt "@title:group"
 msgid "Permissions"
-msgstr "Version"
+msgstr "Rättigheter"
 
 #: app/WelcomePage.qml:90
 #, kde-format
 msgid "Done!"
-msgstr ""
+msgstr "Klar."
 
 #: matrix/matrixmanager.cpp:23 matrix/matrixmanager.cpp:120
 #, kde-format
