@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-05 00:44+0000\n"
-"PO-Revision-Date: 2026-06-30 09:09+0300\n"
+"POT-Creation-Date: 2026-07-08 00:45+0000\n"
+"PO-Revision-Date: 2026-07-07 09:05+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -28,7 +28,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde-l10n-he@kde.org"
 
-#: app/AboutPage.qml:18 app/Main.qml:89
+#: app/AboutPage.qml:18 app/Main.qml:97
 #, kde-format
 msgid "About"
 msgstr "על אודות"
@@ -1542,7 +1542,7 @@ msgstr "איתור עדכונים"
 msgid "Save As…"
 msgstr "שמירה בשם…"
 
-#: app/gpxexport.cpp:33 app/main.cpp:211 app/Main.qml:20 app/Main.qml:58
+#: app/gpxexport.cpp:33 app/main.cpp:212 app/Main.qml:21 app/Main.qml:59
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -2392,7 +2392,7 @@ msgstr "לחיצה על הרחבה"
 msgid "Itinerary change"
 msgstr "שינוי בתוכנית המסע"
 
-#: app/LiveStatusPage.qml:21 app/Main.qml:67
+#: app/LiveStatusPage.qml:21 app/Main.qml:68
 #, kde-format
 msgid "Live Status"
 msgstr "מצב בזמן אמת"
@@ -2620,23 +2620,23 @@ msgstr "סוג M"
 msgid "Type N"
 msgstr "סוג N"
 
-#: app/main.cpp:219
+#: app/main.cpp:221
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "מסייע דיגיטלי לנסיעות"
 
-#: app/main.cpp:220
+#: app/main.cpp:222
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "כל הזכויות שמורות © לקהילת KDE"
 
-#: app/main.cpp:223
+#: app/main.cpp:224
 #, kde-format
 msgctxt "@info:credit"
 msgid "Wikidata"
 msgstr "ויקינתונים"
 
-#: app/main.cpp:223
+#: app/main.cpp:224
 #, kde-format
 msgctxt "@info:credit"
 msgid ""
@@ -2644,79 +2644,79 @@ msgid ""
 "plug types."
 msgstr "מספק מגוון נתוני על כגון שמות תחנות רכבת, צד הנהיגה וסוגי שקעי חשמל."
 
-#: app/main.cpp:224
+#: app/main.cpp:225
 #, kde-format
 msgctxt "@info:credit"
 msgid "OpenStreetMap"
 msgstr "OpenStreetMap"
 
-#: app/main.cpp:224
+#: app/main.cpp:225
 #, kde-format
 msgctxt "@info:credit"
 msgid "Provides both indoor and outdoor maps. ©OpenStreetMap contributors"
 msgstr "אספקת מפות לניווט פנים וחוץ. מתנדבי ‎©OpenStreetMap"
 
-#: app/main.cpp:225
+#: app/main.cpp:226
 #, kde-format
 msgctxt "@info:credit"
 msgid "OpenSSL"
 msgstr "OpenSSL"
 
-#: app/main.cpp:225
+#: app/main.cpp:226
 #, kde-format
 msgctxt "@info:credit"
 msgid "Secure network interaction with TLS. © 1998-2018 The OpenSSL Project"
 msgstr "תקשורת רשת מאובטחת עם TLS.‏ © 1998‏-2018 מיזם OpenSSL."
 
-#: app/main.cpp:226
+#: app/main.cpp:227
 #, kde-format
 msgctxt "@info:credit"
 msgid "ZXing"
 msgstr "ZXing"
 
-#: app/main.cpp:226
+#: app/main.cpp:227
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code scanning. © 2016 ZXing Authors, © 2016 Nu-book Inc."
 msgstr "סריקת קודים מסוג QR.‏ © 2016 יוצרי ZXing,‏ © 2016 Nu-book Inc.‎"
 
-#: app/main.cpp:227
+#: app/main.cpp:228
 #, kde-format
 msgctxt "@info:credit"
 msgid "Poppler"
 msgstr "Poppler"
 
-#: app/main.cpp:227
+#: app/main.cpp:228
 #, kde-format
 msgctxt "@info:credit"
 msgid "PDF parsing"
 msgstr "פיענוח PDF"
 
-#: app/main.cpp:230
+#: app/main.cpp:231
 #, kde-format
 msgctxt "@info:credit"
 msgid "MapLibre Native Qt"
 msgstr "MapLibre Native Qt"
 
-#: app/main.cpp:230 app/main.cpp:231
+#: app/main.cpp:231 app/main.cpp:232
 #, kde-format
 msgctxt "@info:credit"
 msgid "Copyright © MapLibre contributors."
 msgstr "כל הזכויות שמורות © למתנדבי MapLibre."
 
-#: app/main.cpp:231
+#: app/main.cpp:232
 #, kde-format
 msgctxt "@info:credit"
 msgid "MapLibre Native"
 msgstr "MapLibre Native"
 
-#: app/main.cpp:235
+#: app/main.cpp:236
 #, kde-format
 msgctxt "@info:credit"
 msgid "FreeType"
 msgstr "FreeType"
 
-#: app/main.cpp:235
+#: app/main.cpp:236
 #, kde-format
 msgctxt "@info:credit"
 msgid ""
@@ -2724,124 +2724,129 @@ msgid ""
 msgstr ""
 "כל הזכויות שמורות (C) 2006‏-2020 לדייויד טרנר, ורנר למברג ורוברט וילהלם."
 
-#: app/main.cpp:236
+#: app/main.cpp:237
 #, kde-format
 msgctxt "@info:credit"
 msgid "libintl lite"
 msgstr "libintl lite"
 
-#: app/main.cpp:236
+#: app/main.cpp:237
 #, kde-format
 msgctxt "@info:credit"
 msgid "Internalisation"
 msgstr "בינאום"
 
-#: app/main.cpp:239
+#: app/main.cpp:240
 #, kde-format
 msgctxt "@info:credit"
 msgid "libqrencode"
 msgstr "libqrencode"
 
-#: app/main.cpp:239
+#: app/main.cpp:240
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code Generation. © 2006-2018 Kentaro Fukuchi"
 msgstr "יצירת קודים מסוג QR.‏ © 2006‏-2018 קנטארו פוקוצ׳י"
 
-#: app/main.cpp:240
+#: app/main.cpp:241
 #, kde-format
 msgctxt "@info:credit"
 msgid "libical"
 msgstr "libical"
 
-#: app/main.cpp:240
+#: app/main.cpp:241
 #, kde-format
 msgctxt "@info:credit"
 msgid "© The libical developers"
 msgstr "© מתכנתי libical"
 
-#: app/main.cpp:241
+#: app/main.cpp:242
 #, kde-format
 msgctxt "@info:credit"
 msgid "libxml2"
 msgstr "libxml2"
 
-#: app/main.cpp:241
+#: app/main.cpp:242
 #, kde-format
 msgctxt "@info:credit"
 msgid "Copyright (C) 1998-2012 Daniel Veillard"
 msgstr "כל הזכויות שמורות (C) 1998-2012 לדניאל ויילארד"
 
-#: app/main.cpp:244
+#: app/main.cpp:245
 #, kde-format
 msgctxt "@info:credit"
 msgid "libQuotient"
 msgstr "libQuotient"
 
-#: app/main.cpp:244
+#: app/main.cpp:245
 #, kde-format
 msgctxt "@info:credit"
 msgid "Matrix integration."
 msgstr "שילוב מול Matrix."
 
-#: app/main.cpp:245
+#: app/main.cpp:246
 #, kde-format
 msgctxt "@info:credit"
 msgid "QtKeychain"
 msgstr "QtKeychain"
 
-#: app/main.cpp:245
+#: app/main.cpp:246
 #, kde-format
 msgctxt "@info:credit"
 msgid "Secure password storage."
 msgstr "אחסון סיסמאות מאובטח."
 
-#: app/main.cpp:246
+#: app/main.cpp:247
 #, kde-format
 msgctxt "@info:credit"
 msgid "Olm"
 msgstr "Olm"
 
-#: app/main.cpp:246
+#: app/main.cpp:247
 #, kde-format
 msgctxt "@info:credit"
 msgid "Matrix crypto library."
 msgstr "ספריית הצפנה ל־Matrix."
 
-#: app/main.cpp:254
+#: app/main.cpp:255
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "פתיחת תוכנית המסע בעמוד הנבחר"
 
-#: app/main.cpp:260
+#: app/main.cpp:261
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
 msgstr "קבצים או כתובות לייבוא."
 
-#: app/Main.qml:75 app/WelcomePage.qml:53
+#: app/Main.qml:76 app/WelcomePage.qml:53
 #, kde-format
 msgid "Settings…"
 msgstr "הגדרות…"
 
-#: app/Main.qml:82
+#: app/Main.qml:83
 #, kde-format
 msgid "Help"
 msgstr "עזרה"
 
-#: app/Main.qml:171
+#: app/Main.qml:89 app/WhatsNewDialog.qml:16
+#, kde-format
+msgid "What's new"
+msgstr ""
+
+#: app/Main.qml:179
 #, kde-format
 msgctxt "@info:status"
 msgid "No onboard information available."
 msgstr "אין פרטי עלייה למטוס."
 
-#: app/Main.qml:212
+#: app/Main.qml:220
 #, kde-format
 msgid "Map download finished."
 msgstr "הורדת המפה הסתיימה."
 
-#: app/Main.qml:298
+#: app/Main.qml:310
 #, kde-format
 msgctxt "@title:window"
 msgid "Matrix Session Verification"
@@ -3430,27 +3435,22 @@ msgstr "פג תוקף"
 #, kde-format
 msgctxt "seat reservation"
 msgid "Aisle"
-msgstr ""
+msgstr "מעבר"
 
 #: app/pkpass/PosterEventTicketSeatRow.qml:37
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Sections"
+#, kde-format
 msgctxt "seat reservation"
 msgid "Section"
-msgstr "מקטעים"
+msgstr "אזור"
 
 #: app/pkpass/PosterEventTicketSeatRow.qml:45
-#, fuzzy, kde-format
-#| msgctxt "seat row"
-#| msgid "Row:"
+#, kde-format
 msgctxt "seat reservation"
 msgid "Row"
-msgstr "שורה:"
+msgstr "שורה"
 
 #: app/pkpass/PosterEventTicketSeatRow.qml:53
-#, fuzzy, kde-format
-#| msgid "Seat"
+#, kde-format
 msgctxt "seat reservation"
 msgid "Seat"
 msgstr "מושב"
@@ -4960,6 +4960,13 @@ msgstr "הרשאות"
 #, kde-format
 msgid "Done!"
 msgstr "בוצע!"
+
+#: app/WhatsNewDialog.qml:77
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Show More…"
+msgid "Show older changes…"
+msgstr "להציג עוד…"
 
 #: matrix/matrixmanager.cpp:23 matrix/matrixmanager.cpp:120
 #, kde-format

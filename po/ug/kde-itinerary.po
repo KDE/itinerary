@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-05 00:44+0000\n"
+"POT-Creation-Date: 2026-07-08 00:45+0000\n"
 "PO-Revision-Date: 2026-05-30 16:35-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
@@ -28,7 +28,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "sahranbay@gmail.com, gheyret@gmail.com"
 
-#: app/AboutPage.qml:18 app/Main.qml:89
+#: app/AboutPage.qml:18 app/Main.qml:97
 #, kde-format
 msgid "About"
 msgstr "ھەققىدە"
@@ -1532,7 +1532,7 @@ msgstr ""
 msgid "Save As…"
 msgstr ""
 
-#: app/gpxexport.cpp:33 app/main.cpp:211 app/Main.qml:20 app/Main.qml:58
+#: app/gpxexport.cpp:33 app/main.cpp:212 app/Main.qml:21 app/Main.qml:59
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE ساياھەت پىلانى"
@@ -2371,7 +2371,7 @@ msgstr ""
 msgid "Itinerary change"
 msgstr ""
 
-#: app/LiveStatusPage.qml:21 app/Main.qml:67
+#: app/LiveStatusPage.qml:21 app/Main.qml:68
 #, kde-format
 msgid "Live Status"
 msgstr "شۇئان ھالىتى"
@@ -2597,23 +2597,23 @@ msgstr ""
 msgid "Type N"
 msgstr ""
 
-#: app/main.cpp:219
+#: app/main.cpp:221
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr ""
 
-#: app/main.cpp:220
+#: app/main.cpp:222
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr ""
 
-#: app/main.cpp:223
+#: app/main.cpp:224
 #, kde-format
 msgctxt "@info:credit"
 msgid "Wikidata"
 msgstr ""
 
-#: app/main.cpp:223
+#: app/main.cpp:224
 #, kde-format
 msgctxt "@info:credit"
 msgid ""
@@ -2621,203 +2621,208 @@ msgid ""
 "plug types."
 msgstr ""
 
-#: app/main.cpp:224
+#: app/main.cpp:225
 #, kde-format
 msgctxt "@info:credit"
 msgid "OpenStreetMap"
 msgstr "OpenStreetMap ئوچۇق كوچا خەرىتىسى"
 
-#: app/main.cpp:224
+#: app/main.cpp:225
 #, kde-format
 msgctxt "@info:credit"
 msgid "Provides both indoor and outdoor maps. ©OpenStreetMap contributors"
 msgstr ""
 
-#: app/main.cpp:225
+#: app/main.cpp:226
 #, kde-format
 msgctxt "@info:credit"
 msgid "OpenSSL"
 msgstr ""
 
-#: app/main.cpp:225
+#: app/main.cpp:226
 #, kde-format
 msgctxt "@info:credit"
 msgid "Secure network interaction with TLS. © 1998-2018 The OpenSSL Project"
 msgstr ""
 
-#: app/main.cpp:226
+#: app/main.cpp:227
 #, kde-format
 msgctxt "@info:credit"
 msgid "ZXing"
 msgstr ""
 
-#: app/main.cpp:226
+#: app/main.cpp:227
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code scanning. © 2016 ZXing Authors, © 2016 Nu-book Inc."
 msgstr ""
 
-#: app/main.cpp:227
+#: app/main.cpp:228
 #, kde-format
 msgctxt "@info:credit"
 msgid "Poppler"
 msgstr ""
 
-#: app/main.cpp:227
+#: app/main.cpp:228
 #, kde-format
 msgctxt "@info:credit"
 msgid "PDF parsing"
 msgstr ""
 
-#: app/main.cpp:230
+#: app/main.cpp:231
 #, kde-format
 msgctxt "@info:credit"
 msgid "MapLibre Native Qt"
 msgstr ""
 
-#: app/main.cpp:230 app/main.cpp:231
+#: app/main.cpp:231 app/main.cpp:232
 #, kde-format
 msgctxt "@info:credit"
 msgid "Copyright © MapLibre contributors."
 msgstr ""
 
-#: app/main.cpp:231
+#: app/main.cpp:232
 #, kde-format
 msgctxt "@info:credit"
 msgid "MapLibre Native"
 msgstr ""
 
-#: app/main.cpp:235
+#: app/main.cpp:236
 #, kde-format
 msgctxt "@info:credit"
 msgid "FreeType"
 msgstr ""
 
-#: app/main.cpp:235
+#: app/main.cpp:236
 #, kde-format
 msgctxt "@info:credit"
 msgid ""
 "Copyright (C) 2006-2020 by David Turner, Robert Wilhelm, and Werner Lemberg."
 msgstr ""
 
-#: app/main.cpp:236
+#: app/main.cpp:237
 #, kde-format
 msgctxt "@info:credit"
 msgid "libintl lite"
 msgstr ""
 
-#: app/main.cpp:236
+#: app/main.cpp:237
 #, kde-format
 msgctxt "@info:credit"
 msgid "Internalisation"
 msgstr ""
 
-#: app/main.cpp:239
+#: app/main.cpp:240
 #, kde-format
 msgctxt "@info:credit"
 msgid "libqrencode"
 msgstr ""
 
-#: app/main.cpp:239
+#: app/main.cpp:240
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code Generation. © 2006-2018 Kentaro Fukuchi"
 msgstr ""
 
-#: app/main.cpp:240
+#: app/main.cpp:241
 #, kde-format
 msgctxt "@info:credit"
 msgid "libical"
 msgstr ""
 
-#: app/main.cpp:240
+#: app/main.cpp:241
 #, kde-format
 msgctxt "@info:credit"
 msgid "© The libical developers"
 msgstr ""
 
-#: app/main.cpp:241
+#: app/main.cpp:242
 #, kde-format
 msgctxt "@info:credit"
 msgid "libxml2"
 msgstr ""
 
-#: app/main.cpp:241
+#: app/main.cpp:242
 #, kde-format
 msgctxt "@info:credit"
 msgid "Copyright (C) 1998-2012 Daniel Veillard"
 msgstr ""
 
-#: app/main.cpp:244
+#: app/main.cpp:245
 #, kde-format
 msgctxt "@info:credit"
 msgid "libQuotient"
 msgstr ""
 
-#: app/main.cpp:244
+#: app/main.cpp:245
 #, kde-format
 msgctxt "@info:credit"
 msgid "Matrix integration."
 msgstr ""
 
-#: app/main.cpp:245
+#: app/main.cpp:246
 #, kde-format
 msgctxt "@info:credit"
 msgid "QtKeychain"
 msgstr ""
 
-#: app/main.cpp:245
+#: app/main.cpp:246
 #, kde-format
 msgctxt "@info:credit"
 msgid "Secure password storage."
 msgstr ""
 
-#: app/main.cpp:246
+#: app/main.cpp:247
 #, kde-format
 msgctxt "@info:credit"
 msgid "Olm"
 msgstr ""
 
-#: app/main.cpp:246
+#: app/main.cpp:247
 #, kde-format
 msgctxt "@info:credit"
 msgid "Matrix crypto library."
 msgstr ""
 
-#: app/main.cpp:254
+#: app/main.cpp:255
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr ""
 
-#: app/main.cpp:260
+#: app/main.cpp:261
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
 msgstr ""
 
-#: app/Main.qml:75 app/WelcomePage.qml:53
+#: app/Main.qml:76 app/WelcomePage.qml:53
 #, kde-format
 msgid "Settings…"
 msgstr ""
 
-#: app/Main.qml:82
+#: app/Main.qml:83
 #, kde-format
 msgid "Help"
 msgstr "ياردەم"
 
-#: app/Main.qml:171
+#: app/Main.qml:89 app/WhatsNewDialog.qml:16
+#, kde-format
+msgid "What's new"
+msgstr ""
+
+#: app/Main.qml:179
 #, kde-format
 msgctxt "@info:status"
 msgid "No onboard information available."
 msgstr ""
 
-#: app/Main.qml:212
+#: app/Main.qml:220
 #, kde-format
 msgid "Map download finished."
 msgstr ""
 
-#: app/Main.qml:298
+#: app/Main.qml:310
 #, kde-format
 msgctxt "@title:window"
 msgid "Matrix Session Verification"
@@ -4896,6 +4901,11 @@ msgstr "ئىجازەت"
 #, kde-format
 msgid "Done!"
 msgstr "تامام!"
+
+#: app/WhatsNewDialog.qml:77
+#, kde-format
+msgid "Show older changes…"
+msgstr ""
 
 #: matrix/matrixmanager.cpp:23 matrix/matrixmanager.cpp:120
 #, kde-format
