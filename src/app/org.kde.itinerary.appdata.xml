@@ -2435,6 +2435,7 @@
           <li xml:lang="ru">Новое представление временной шкалы для каждой поездки.</li>
           <li xml:lang="sk">New per-výlet timeline view.</li>
           <li xml:lang="sl">Nov pogled časovnice na potovanje.</li>
+          <li xml:lang="sv">Ny tidslinjevisning per resa.</li>
           <li xml:lang="tr">Yeni yolculuk başına zaman akışı görünümü</li>
           <li xml:lang="uk">Новий режим перегляд розкладу для кожної з подорожей</li>
           <li>New trip map view.</li>
@@ -3483,6 +3484,7 @@
           <li xml:lang="ru">Отображение дополнительных сведений об удобствах на карте вокзала.</li>
           <li xml:lang="sk">Render more amenity details on the train stanica map.</li>
           <li xml:lang="sl">Prikaz več podrobnosti o ugodnostih na zemljevidu železniške postaje.</li>
+          <li xml:lang="sv">Återge mer detaljerad information om bekvämlighetsinrättningar på tågstationskartan.</li>
           <li xml:lang="tr">Render more amenity details on the train station map.</li>
           <li xml:lang="uk">Реалізовано показ ширшого кола зручностей на карті залізничного вокзалу.</li>
         </ul>
@@ -4380,6 +4382,7 @@
           <li xml:lang="ru">Улучшено отображение элементов барьеров на карте вокзала.</li>
           <li xml:lang="sk">Improved rendering of barrier elements in the train stanica map.</li>
           <li xml:lang="sl">Izboljšano upodabljanje elementov zapornice na zemljevidu železniške postaje.</li>
+          <li xml:lang="sv">Förbättrad återgivning av barriärelement på tågstationskartan.</li>
           <li xml:lang="tr">Improved rendering of barrier elements in the train station map.</li>
           <li xml:lang="uk">Удосконалено показ перешкод на карті залізничної станції.</li>
         </ul>
@@ -4813,6 +4816,7 @@
           <li xml:lang="ru">Исправлено взаимодействие с почти горизонтальными или почти вертикальными лестницами на схеме вокзала.</li>
           <li xml:lang="sk">Oprava interaction with near-horizontal or near-vertical stairs on the train stanica map.</li>
           <li xml:lang="sl">Popravljena interakcija s skoraj vodoravnimi ali skoraj navpičnimi stopnicami na zemljevidu železniške postaje.</li>
+          <li xml:lang="sv">Rätta interaktion med nästan horisontella eller vertikala trappor på tågstationskartan.</li>
           <li xml:lang="tr">Fix interaction with near-horizontal or near-vertical stairs on the train station map.</li>
           <li xml:lang="uk">Виправлено взаємодію з майже горизонтальними або майже вертикальними сходами на карті залізничного вокзалу.</li>
           <li>Fix handling of always closed opening hours.</li>
@@ -5582,6 +5586,7 @@
           <li xml:lang="ru">Исправлены проблемы со сборкой геометрии на карте железнодорожной станции.</li>
           <li xml:lang="sk">Fixed geometry reassembly issues in the train stanica map.</li>
           <li xml:lang="sl">Popravljene težave s ponovnim sestavljanjem geometrije na zemljevidu železniške postaje.</li>
+          <li xml:lang="sv">Rättade problem med geometrisk återställelse på tågstationskartan.</li>
           <li xml:lang="tr">Fixed geometry reassembly issues in the train station map.</li>
           <li xml:lang="uk">Виправлено проблеми з перескладанням геометрії на карті залізничної станції.</li>
         </ul>
@@ -6260,6 +6265,7 @@
           <li xml:lang="ru">Менеджер медицинских сертификатов для вакцинации, тестирования и выздоровления по стандартам DIVOC и EU DGC.</li>
           <li xml:lang="sk">Health certificate manager for DIVOC and EU DGC vaccination, test and recovery certificates.</li>
           <li xml:lang="sl">Upravitelj zdravstvenih potrdil za potrdila o cepljenju, testiranju in okrevanju DIVOC in EU DGC.</li>
+          <li xml:lang="sv">Hantering av digitala hälsointyg för DIVOC- and EU DGC-vaccinering, test och friskintyg.</li>
           <li xml:lang="tr">Health certificate manager for DIVOC and EU DGC vaccination, test and recovery certificates.</li>
           <li xml:lang="uk">Реалізовано засіб керування медичними сертифікатами для сертифікатів про вакцинацію, тестування та одужання DIVOC та EU DGC.</li>
           <li>GPX import and export of favorite locations and GPX export of trips for Nextcloud Maps interoperability.</li>
