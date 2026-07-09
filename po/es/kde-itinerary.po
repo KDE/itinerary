@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-08 00:45+0000\n"
-"PO-Revision-Date: 2026-07-06 00:38+0100\n"
+"PO-Revision-Date: 2026-07-08 21:33+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -2834,7 +2834,7 @@ msgstr "Ayuda"
 #: app/Main.qml:89 app/WhatsNewDialog.qml:16
 #, kde-format
 msgid "What's new"
-msgstr ""
+msgstr "Novedades"
 
 #: app/Main.qml:179
 #, kde-format
@@ -5009,11 +5009,9 @@ msgid "Done!"
 msgstr "Terminado"
 
 #: app/WhatsNewDialog.qml:77
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Show More…"
+#, kde-format
 msgid "Show older changes…"
-msgstr "Mostrar más…"
+msgstr "Mostrar los cambios anteriores…"
 
 #: matrix/matrixmanager.cpp:23 matrix/matrixmanager.cpp:120
 #, kde-format

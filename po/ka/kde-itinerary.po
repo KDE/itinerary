@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-08 00:45+0000\n"
-"PO-Revision-Date: 2026-07-05 06:38+0200\n"
+"PO-Revision-Date: 2026-07-08 05:34+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -2828,7 +2828,7 @@ msgstr "დახმარება"
 #: app/Main.qml:89 app/WhatsNewDialog.qml:16
 #, kde-format
 msgid "What's new"
-msgstr ""
+msgstr "რა არის ახალი"
 
 #: app/Main.qml:179
 #, kde-format
@@ -4976,11 +4976,9 @@ msgid "Done!"
 msgstr "მზადაა!"
 
 #: app/WhatsNewDialog.qml:77
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Show More…"
+#, kde-format
 msgid "Show older changes…"
-msgstr "მეტის ჩვენება…"
+msgstr "ძველი ცვლილებების ჩვენება…"
 
 #: matrix/matrixmanager.cpp:23 matrix/matrixmanager.cpp:120
 #, kde-format
