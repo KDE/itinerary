@@ -358,6 +358,7 @@ TransferManager::CheckTransferResult TransferManager::checkTransferBefore(const 
     const auto prevTransfer = this->transfer(prevResId, Transfer::After);
     if (prevTransfer.state() != Transfer::UndefinedState && prevTransfer.state() != Transfer::Discarded) {
         const std::chrono::seconds layoverTime(prevTransfer.anchorTime().secsTo(SortUtil::startDateTime(res)));
+        const bool overNight = prevTransfer.anchorTime().date() != SortUtil::startDateTime(res).date();
         if (prevTransfer.floatingLocationType() == Transfer::FavoriteLocation
             && KPublicTransport::Location::distance(transfer.to(), prevTransfer.to()) < Constants::MaximumFavoriteLocationTransferDistance) {
             transfer.setFrom(prevTransfer.to());
@@ -365,7 +366,7 @@ TransferManager::CheckTransferResult TransferManager::checkTransferBefore(const 
             transfer.setFloatingLocationType(Transfer::FavoriteLocation);
             return layoverTime < Constants::FavoriteLocationAutoTransferThreshold ? CanAddManually : ShouldAutoAdd;
         }
-        if (layoverTime < Constants::FavoriteLocationAutoTransferThreshold) {
+        if (layoverTime < Constants::FavoriteLocationAutoTransferThreshold && !overNight) {
             return ShouldRemove;
         }
     }
@@ -406,6 +407,15 @@ TransferManager::CheckTransferResult TransferManager::checkTransferBefore(const 
         return layoverTime < Constants::MaximumLayoverTime                   ? ShouldRemove
             : layoverTime < Constants::FavoriteLocationAutoTransferThreshold || !LocationUtil::isLocationChange(res) ? CanAddManually
                                                                              : ShouldAutoAdd;
+    }
+
+    // multi-day event with a favorite location in range
+    if (layoverDays == std::chrono::days(1) && !LocationUtil::isLocationChange(prevRes) && !LocationUtil::isLocationChange(res)) {
+        const auto f = pickFavorite(toLoc, resId, Transfer::Before);
+        transfer.setFrom(locationFromFavorite(f));
+        transfer.setFromName(f.name());
+        transfer.setFloatingLocationType(Transfer::FavoriteLocation);
+        return CanAddManually;
     }
 
     return ShouldRemove;
@@ -454,6 +464,7 @@ TransferManager::CheckTransferResult TransferManager::checkTransferAfter(const Q
     const auto nextTransfer = this->transfer(nextResId, Transfer::Before);
     if (nextTransfer.state() != Transfer::UndefinedState && nextTransfer.state() != Transfer::Discarded) {
         const std::chrono::seconds layoverTime(SortUtil::endDateTime(res).secsTo(nextTransfer.anchorTime()));
+        const bool overNight = nextTransfer.anchorTime().date() != SortUtil::endDateTime(res).date();
         if (nextTransfer.floatingLocationType() == Transfer::FavoriteLocation
             && KPublicTransport::Location::distance(transfer.from(), nextTransfer.from()) < Constants::MaximumFavoriteLocationTransferDistance) {
             transfer.setTo(nextTransfer.from());
@@ -461,7 +472,7 @@ TransferManager::CheckTransferResult TransferManager::checkTransferAfter(const Q
             transfer.setFloatingLocationType(Transfer::FavoriteLocation);
             return layoverTime < Constants::FavoriteLocationAutoTransferThreshold ? CanAddManually : ShouldAutoAdd;
         }
-        if (layoverTime < Constants::FavoriteLocationAutoTransferThreshold) {
+        if (layoverTime < Constants::FavoriteLocationAutoTransferThreshold && !overNight) {
             return ShouldRemove;
         }
     }
@@ -479,7 +490,6 @@ TransferManager::CheckTransferResult TransferManager::checkTransferAfter(const Q
 
     if (!fromLoc.isNull() && !nextLoc.isNull() && isLikelyNotSameLocation(fromLoc, nextLoc) && isPlausibleDistance(fromLoc, nextLoc)
         && layoverTime < Constants::FavoriteLocationAutoTransferThreshold) {
-        qDebug() << "AFTER" << res << nextRes << LocationUtil::name(fromLoc) << LocationUtil::name(nextLoc) << transfer.anchorTime() << isLocationChange;
         const auto f = pickFavorite(fromLoc, resId, Transfer::After);
         if (f.isValid() && layoverDays >= Constants::FavoriteLocationAutoTransferThreshold && layoverTime >= Constants::MaximumLayoverTime) {
             transfer.setTo(locationFromFavorite(f));
@@ -503,6 +513,15 @@ TransferManager::CheckTransferResult TransferManager::checkTransferAfter(const Q
         return layoverTime < Constants::MaximumLayoverTime                   ? ShouldRemove
             : layoverTime < Constants::FavoriteLocationAutoTransferThreshold || !LocationUtil::isLocationChange(res) ? CanAddManually
                                                                              : ShouldAutoAdd;
+    }
+
+    // multi-day event with a favorite location in range
+    if (layoverDays == std::chrono::days(1) && !LocationUtil::isLocationChange(nextRes) && !LocationUtil::isLocationChange(res)) {
+         const auto f = pickFavorite(fromLoc, resId, Transfer::After);
+        transfer.setTo(locationFromFavorite(f));
+        transfer.setToName(f.name());
+        transfer.setFloatingLocationType(Transfer::FavoriteLocation);
+        return CanAddManually;
     }
 
     return ShouldRemove;
