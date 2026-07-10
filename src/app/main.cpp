@@ -213,7 +213,9 @@ int main(int argc, char **argv)
     QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.itinerary")));
 
     auto aboutData = KAboutData::applicationData(); // see https://invent.kde.org/frameworks/kcoreaddons/-/merge_requests/586
+#if !defined(Q_OS_ANDROID) || KCOREADDONS_VERSION >= QT_VERSION_CHECK(6, 28, 0)
     aboutData = KAboutData::fromAppStreamForApplication();
+#endif
     aboutData.setBugAddress("submit@bugs.kde.org");
     aboutData.setProductName("KDE Itinerary/general"); // Bugzilla product/component name
     aboutData.setLicense(KAboutLicense::LGPL_V2, KAboutLicense::OrLaterVersions);
