@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-08 00:45+0000\n"
+"POT-Creation-Date: 2026-07-11 00:44+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -2598,23 +2598,23 @@ msgstr "M 型"
 msgid "Type N"
 msgstr "N 型"
 
-#: app/main.cpp:221
+#: app/main.cpp:223
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "数字旅行助理应用"
 
-#: app/main.cpp:222
+#: app/main.cpp:224
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "Copyright © The KDE Community"
 
-#: app/main.cpp:224
+#: app/main.cpp:226
 #, kde-format
 msgctxt "@info:credit"
 msgid "Wikidata"
 msgstr "Wikidata"
 
-#: app/main.cpp:224
+#: app/main.cpp:226
 #, kde-format
 msgctxt "@info:credit"
 msgid ""
@@ -2622,79 +2622,79 @@ msgid ""
 "plug types."
 msgstr "提供各类元数据，例如火车站名称、行车方向以及电源插头类型。"
 
-#: app/main.cpp:225
+#: app/main.cpp:227
 #, kde-format
 msgctxt "@info:credit"
 msgid "OpenStreetMap"
 msgstr "OpenStreetMap"
 
-#: app/main.cpp:225
+#: app/main.cpp:227
 #, kde-format
 msgctxt "@info:credit"
 msgid "Provides both indoor and outdoor maps. ©OpenStreetMap contributors"
 msgstr "提供室内和户外地图。©OpenStreetMap contributors"
 
-#: app/main.cpp:226
+#: app/main.cpp:228
 #, kde-format
 msgctxt "@info:credit"
 msgid "OpenSSL"
 msgstr "OpenSSL"
 
-#: app/main.cpp:226
+#: app/main.cpp:228
 #, kde-format
 msgctxt "@info:credit"
 msgid "Secure network interaction with TLS. © 1998-2018 The OpenSSL Project"
 msgstr "通过 TLS 实现安全的网络交互。© 1998-2018 The OpenSSL Project"
 
-#: app/main.cpp:227
+#: app/main.cpp:229
 #, kde-format
 msgctxt "@info:credit"
 msgid "ZXing"
 msgstr "ZXing"
 
-#: app/main.cpp:227
+#: app/main.cpp:229
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code scanning. © 2016 ZXing Authors, © 2016 Nu-book Inc."
 msgstr "二维码扫描。© 2016 ZXing Authors, © 2016 Nu-book Inc."
 
-#: app/main.cpp:228
+#: app/main.cpp:230
 #, kde-format
 msgctxt "@info:credit"
 msgid "Poppler"
 msgstr "Poppler"
 
-#: app/main.cpp:228
+#: app/main.cpp:230
 #, kde-format
 msgctxt "@info:credit"
 msgid "PDF parsing"
 msgstr "PDF 解析"
 
-#: app/main.cpp:231
+#: app/main.cpp:233
 #, kde-format
 msgctxt "@info:credit"
 msgid "MapLibre Native Qt"
 msgstr ""
 
-#: app/main.cpp:231 app/main.cpp:232
+#: app/main.cpp:233 app/main.cpp:234
 #, kde-format
 msgctxt "@info:credit"
 msgid "Copyright © MapLibre contributors."
 msgstr ""
 
-#: app/main.cpp:232
+#: app/main.cpp:234
 #, kde-format
 msgctxt "@info:credit"
 msgid "MapLibre Native"
 msgstr ""
 
-#: app/main.cpp:236
+#: app/main.cpp:238
 #, kde-format
 msgctxt "@info:credit"
 msgid "FreeType"
 msgstr "FreeType"
 
-#: app/main.cpp:236
+#: app/main.cpp:238
 #, kde-format
 msgctxt "@info:credit"
 msgid ""
@@ -2702,97 +2702,97 @@ msgid ""
 msgstr ""
 "Copyright (C) 2006-2020 by David Turner, Robert Wilhelm, and Werner Lemberg."
 
-#: app/main.cpp:237
+#: app/main.cpp:239
 #, kde-format
 msgctxt "@info:credit"
 msgid "libintl lite"
 msgstr "libintl lite"
 
-#: app/main.cpp:237
+#: app/main.cpp:239
 #, kde-format
 msgctxt "@info:credit"
 msgid "Internalisation"
 msgstr "内部化"
 
-#: app/main.cpp:240
+#: app/main.cpp:242
 #, kde-format
 msgctxt "@info:credit"
 msgid "libqrencode"
 msgstr "libqrencode"
 
-#: app/main.cpp:240
+#: app/main.cpp:242
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code Generation. © 2006-2018 Kentaro Fukuchi"
 msgstr "生成二维码。© 2006-2018 Kentaro Fukuchi"
 
-#: app/main.cpp:241
+#: app/main.cpp:243
 #, kde-format
 msgctxt "@info:credit"
 msgid "libical"
 msgstr "libical"
 
-#: app/main.cpp:241
+#: app/main.cpp:243
 #, kde-format
 msgctxt "@info:credit"
 msgid "© The libical developers"
 msgstr "© The libical developers"
 
-#: app/main.cpp:242
+#: app/main.cpp:244
 #, kde-format
 msgctxt "@info:credit"
 msgid "libxml2"
 msgstr "libxml2"
 
-#: app/main.cpp:242
+#: app/main.cpp:244
 #, kde-format
 msgctxt "@info:credit"
 msgid "Copyright (C) 1998-2012 Daniel Veillard"
 msgstr "Copyright (C) 1998-2012 Daniel Veillard"
 
-#: app/main.cpp:245
+#: app/main.cpp:247
 #, kde-format
 msgctxt "@info:credit"
 msgid "libQuotient"
 msgstr "libQuotient"
 
-#: app/main.cpp:245
+#: app/main.cpp:247
 #, kde-format
 msgctxt "@info:credit"
 msgid "Matrix integration."
 msgstr "Matrix 集成。"
 
-#: app/main.cpp:246
+#: app/main.cpp:248
 #, kde-format
 msgctxt "@info:credit"
 msgid "QtKeychain"
 msgstr "QtKeychain"
 
-#: app/main.cpp:246
+#: app/main.cpp:248
 #, kde-format
 msgctxt "@info:credit"
 msgid "Secure password storage."
 msgstr "安全的密码存储。"
 
-#: app/main.cpp:247
+#: app/main.cpp:249
 #, kde-format
 msgctxt "@info:credit"
 msgid "Olm"
 msgstr "Olm"
 
-#: app/main.cpp:247
+#: app/main.cpp:249
 #, kde-format
 msgctxt "@info:credit"
 msgid "Matrix crypto library."
 msgstr "Matrix 加密库。"
 
-#: app/main.cpp:255
+#: app/main.cpp:257
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr ""
 
-#: app/main.cpp:261
+#: app/main.cpp:263
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
@@ -3416,12 +3416,10 @@ msgid "Aisle"
 msgstr ""
 
 #: app/pkpass/PosterEventTicketSeatRow.qml:37
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Sections"
+#, kde-format
 msgctxt "seat reservation"
 msgid "Section"
-msgstr "节"
+msgstr ""
 
 #: app/pkpass/PosterEventTicketSeatRow.qml:45
 #, kde-format
@@ -3430,11 +3428,10 @@ msgid "Row"
 msgstr ""
 
 #: app/pkpass/PosterEventTicketSeatRow.qml:53
-#, fuzzy, kde-format
-#| msgid "Seat"
+#, kde-format
 msgctxt "seat reservation"
 msgid "Seat"
-msgstr "座位信息"
+msgstr ""
 
 #: app/PkPassPage.qml:20
 #, kde-format

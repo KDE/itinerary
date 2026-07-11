@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-08 00:45+0000\n"
+"POT-Creation-Date: 2026-07-11 00:44+0000\n"
 "PO-Revision-Date: 2026-06-30 21:34+0200\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -2619,23 +2619,23 @@ msgstr "Typ M"
 msgid "Type N"
 msgstr "Typ N"
 
-#: app/main.cpp:221
+#: app/main.cpp:223
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Digitaler Reiseassistent"
 
-#: app/main.cpp:222
+#: app/main.cpp:224
 #, kde-format
 msgid "Copyright © The KDE Community"
 msgstr "© Die KDE-Gemeinschaft"
 
-#: app/main.cpp:224
+#: app/main.cpp:226
 #, kde-format
 msgctxt "@info:credit"
 msgid "Wikidata"
 msgstr "Wikidata"
 
-#: app/main.cpp:224
+#: app/main.cpp:226
 #, kde-format
 msgctxt "@info:credit"
 msgid ""
@@ -2645,13 +2645,13 @@ msgstr ""
 "Stellt verschiedene Metadaten wie Bahnhofsnamen, Fahrseite und "
 "Steckdosentypen bereit."
 
-#: app/main.cpp:225
+#: app/main.cpp:227
 #, kde-format
 msgctxt "@info:credit"
 msgid "OpenStreetMap"
 msgstr "OpenStreetMap"
 
-#: app/main.cpp:225
+#: app/main.cpp:227
 #, kde-format
 msgctxt "@info:credit"
 msgid "Provides both indoor and outdoor maps. ©OpenStreetMap contributors"
@@ -2659,164 +2659,164 @@ msgstr ""
 "Stellt Karten sowohl für den Innen- als auch für den Außenbereich bereit. © "
 "OpenStreetMap-Mitwirkende"
 
-#: app/main.cpp:226
+#: app/main.cpp:228
 #, kde-format
 msgctxt "@info:credit"
 msgid "OpenSSL"
 msgstr "OpenSSL"
 
-#: app/main.cpp:226
+#: app/main.cpp:228
 #, kde-format
 msgctxt "@info:credit"
 msgid "Secure network interaction with TLS. © 1998-2018 The OpenSSL Project"
 msgstr "Sichere Netzwerkkommunikation mit TLS. © 1998–2018 Das OpenSSL-Projekt"
 
-#: app/main.cpp:227
+#: app/main.cpp:229
 #, kde-format
 msgctxt "@info:credit"
 msgid "ZXing"
 msgstr "ZXing"
 
-#: app/main.cpp:227
+#: app/main.cpp:229
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code scanning. © 2016 ZXing Authors, © 2016 Nu-book Inc."
 msgstr "Scannen von QR-Codes. © 2016 ZXing-Autoren, © 2016 Nu-book Inc."
 
-#: app/main.cpp:228
+#: app/main.cpp:230
 #, kde-format
 msgctxt "@info:credit"
 msgid "Poppler"
 msgstr "Poppler"
 
-#: app/main.cpp:228
+#: app/main.cpp:230
 #, kde-format
 msgctxt "@info:credit"
 msgid "PDF parsing"
 msgstr "PDF-Verarbeitung"
 
-#: app/main.cpp:231
+#: app/main.cpp:233
 #, kde-format
 msgctxt "@info:credit"
 msgid "MapLibre Native Qt"
 msgstr "MapLibre Native Qt"
 
-#: app/main.cpp:231 app/main.cpp:232
+#: app/main.cpp:233 app/main.cpp:234
 #, kde-format
 msgctxt "@info:credit"
 msgid "Copyright © MapLibre contributors."
 msgstr "© MapLibre-Mitwirkende."
 
-#: app/main.cpp:232
+#: app/main.cpp:234
 #, kde-format
 msgctxt "@info:credit"
 msgid "MapLibre Native"
 msgstr "MapLibre Native"
 
-#: app/main.cpp:236
+#: app/main.cpp:238
 #, kde-format
 msgctxt "@info:credit"
 msgid "FreeType"
 msgstr "FreeType"
 
-#: app/main.cpp:236
+#: app/main.cpp:238
 #, kde-format
 msgctxt "@info:credit"
 msgid ""
 "Copyright (C) 2006-2020 by David Turner, Robert Wilhelm, and Werner Lemberg."
 msgstr "© 2006–2020 David Turner, Robert Wilhelm und Werner Lemberg."
 
-#: app/main.cpp:237
+#: app/main.cpp:239
 #, kde-format
 msgctxt "@info:credit"
 msgid "libintl lite"
 msgstr "libintl lite"
 
-#: app/main.cpp:237
+#: app/main.cpp:239
 #, kde-format
 msgctxt "@info:credit"
 msgid "Internalisation"
 msgstr "Internalisierung"
 
-#: app/main.cpp:240
+#: app/main.cpp:242
 #, kde-format
 msgctxt "@info:credit"
 msgid "libqrencode"
 msgstr "libqrencode"
 
-#: app/main.cpp:240
+#: app/main.cpp:242
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code Generation. © 2006-2018 Kentaro Fukuchi"
 msgstr "QR-Code-Erstellung. © 2006–2018 Kentaro Fukuchi"
 
-#: app/main.cpp:241
+#: app/main.cpp:243
 #, kde-format
 msgctxt "@info:credit"
 msgid "libical"
 msgstr "libical"
 
-#: app/main.cpp:241
+#: app/main.cpp:243
 #, kde-format
 msgctxt "@info:credit"
 msgid "© The libical developers"
 msgstr "© Die Entwickler von libical"
 
-#: app/main.cpp:242
+#: app/main.cpp:244
 #, kde-format
 msgctxt "@info:credit"
 msgid "libxml2"
 msgstr "libxml2"
 
-#: app/main.cpp:242
+#: app/main.cpp:244
 #, kde-format
 msgctxt "@info:credit"
 msgid "Copyright (C) 1998-2012 Daniel Veillard"
 msgstr "© 1998–2012 Daniel Veillard"
 
-#: app/main.cpp:245
+#: app/main.cpp:247
 #, kde-format
 msgctxt "@info:credit"
 msgid "libQuotient"
 msgstr "libQuotient"
 
-#: app/main.cpp:245
+#: app/main.cpp:247
 #, kde-format
 msgctxt "@info:credit"
 msgid "Matrix integration."
 msgstr "Matrix-Integration."
 
-#: app/main.cpp:246
+#: app/main.cpp:248
 #, kde-format
 msgctxt "@info:credit"
 msgid "QtKeychain"
 msgstr "QtKeychain"
 
-#: app/main.cpp:246
+#: app/main.cpp:248
 #, kde-format
 msgctxt "@info:credit"
 msgid "Secure password storage."
 msgstr "Sicherer Passwortspeicher."
 
-#: app/main.cpp:247
+#: app/main.cpp:249
 #, kde-format
 msgctxt "@info:credit"
 msgid "Olm"
 msgstr "Olm"
 
-#: app/main.cpp:247
+#: app/main.cpp:249
 #, kde-format
 msgctxt "@info:credit"
 msgid "Matrix crypto library."
 msgstr "Matrix-Crypto-Bibliothek."
 
-#: app/main.cpp:255
+#: app/main.cpp:257
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
 msgstr "Reiseplan auf der angegebenen Seite öffnen"
 
-#: app/main.cpp:261
+#: app/main.cpp:263
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or URLs to import."
