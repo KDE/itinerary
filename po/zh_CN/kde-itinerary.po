@@ -14,8 +14,8 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/itinerary/kde-itinerary.pot\n"
-"X-Crowdin-File-ID: 45515\n"
+"X-Crowdin-File: /kf6-stable/messages/itinerary/kde-itinerary.pot\n"
+"X-Crowdin-File-ID: 52104\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -3411,12 +3411,10 @@ msgid "Aisle"
 msgstr ""
 
 #: app/pkpass/PosterEventTicketSeatRow.qml:37
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Sections"
+#, kde-format
 msgctxt "seat reservation"
 msgid "Section"
-msgstr "节"
+msgstr ""
 
 #: app/pkpass/PosterEventTicketSeatRow.qml:45
 #, kde-format
@@ -3425,8 +3423,7 @@ msgid "Row"
 msgstr ""
 
 #: app/pkpass/PosterEventTicketSeatRow.qml:53
-#, fuzzy, kde-format
-#| msgid "Seat"
+#, kde-format
 msgctxt "seat reservation"
 msgid "Seat"
 msgstr "座位信息"
