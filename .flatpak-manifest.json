@@ -60,9 +60,15 @@
             "builddir": true,
             "sources": [
                 {
-                    "type": "git",
-                    "url": "https://invent.kde.org/mirrors/poppler.git",
-                    "branch": "master"
+                    "type": "archive",
+                    "url": "https://poppler.freedesktop.org/poppler-26.07.0.tar.xz",
+                    "sha256": "304832f48f8a47fdca90c6b6d1f684e68f37c10c9a0726f345f4ca9df4ca01e2",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 3686,
+                        "stable-only": true,
+                        "url-template": "https://poppler.freedesktop.org/poppler-$version.tar.xz"
+                    }
                 }
             ]
         },
@@ -159,27 +165,32 @@
                 {
                     "type": "git",
                     "url": "https://invent.kde.org/pim/kpkpass",
-                    "branch": "master"
+                    "branch": "release/26.08"
                 }
             ]
         },
         {
             "name": "zxing",
             "config-opts": [
-                "-DZXING_DEPENDENCIES=LOCAL",
+                "-DBUILD_DEPENDENCIES=LOCAL",
                 "-DBUILD_SHARED_LIBS=OFF",
-                "-DZXING_UNIT_TESTS=OFF",
-                "-DZXING_EXAMPLES=OFF",
-                "-DZXING_C_API=OFF",
-                "-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=TRUE"
+                "-DBUILD_UNIT_TESTS=OFF",
+                "-DBUILD_BLACKBOX_TESTS=OFF",
+                "-DBUILD_EXAMPLES=OFF"
             ],
             "buildsystem": "cmake-ninja",
             "builddir": true,
             "sources": [
                 {
-                    "type": "git",
-                    "url": "https://github.com/zxing-cpp/zxing-cpp.git",
-                    "branch": "master"
+                    "type": "archive",
+                    "url": "https://github.com/zxing-cpp/zxing-cpp/archive/v2.3.0.tar.gz",
+                    "sha256": "64e4139103fdbc57752698ee15b5f0b0f7af9a0331ecbdc492047e0772c417ba",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 376699,
+                        "stable-only": true,
+                        "url-template": "https://github.com/zxing-cpp/zxing-cpp/archive/v$version.tar.gz"
+                    }
                 }
             ]
         },
@@ -195,7 +206,7 @@
                 {
                     "type": "git",
                     "url": "https://invent.kde.org/pim/kitinerary",
-                    "branch": "master"
+                    "branch": "release/26.08"
                 }
             ],
             "cleanup": [
@@ -213,7 +224,7 @@
                 {
                     "type": "git",
                     "url": "https://invent.kde.org/libraries/kpublictransport",
-                    "branch": "master"
+                    "branch": "release/26.08"
                 }
             ]
         },
@@ -229,7 +240,7 @@
                 {
                     "type": "git",
                     "url": "https://invent.kde.org/libraries/kopeninghours",
-                    "branch": "master"
+                    "branch": "release/26.08"
                 }
             ]
         },
@@ -244,7 +255,7 @@
                 {
                     "type": "git",
                     "url": "https://invent.kde.org/libraries/kosmindoormap",
-                    "branch": "master"
+                    "branch": "release/26.08"
                 }
             ]
         },
@@ -259,20 +270,24 @@
                 {
                     "type": "git",
                     "url": "https://invent.kde.org/pim/khealthcertificate.git",
-                    "branch": "master"
+                    "branch": "release/26.08"
                 }
             ]
         },
-        {
+         {
             "name": "libQuotient",
             "buildsystem": "cmake-ninja",
             "sources": [
-                "flatpak/generated-sources.json",
                 {
-                    "type": "git",
-                    "url": "https://github.com/quotient-im/libQuotient.git",
-                    "branch": "dev",
-                    "disable-submodules": true
+                    "type": "archive",
+                    "url": "https://github.com/quotient-im/libQuotient/archive/0.9.6.1.tar.gz",
+                    "sha256": "ac0fe5df480fa893d3e16da626bf5028c944e9b41f504f6fe0fe49273247d636",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 89357,
+                        "stable-only": true,
+                        "url-template": "https://github.com/quotient-im/libQuotient/archive/$version.tar.gz"
+                    }
                 }
             ],
             "config-opts": [
@@ -284,20 +299,26 @@
             "cleanup": [
                 "/share/ndk-modules"
             ],
-            "build-options": {
-                "env": {
-                    "CARGO_HOME": "/run/build/libQuotient/cargo"
-                }
-            },
             "modules": [
                 {
-                    "name": "corrosion",
+                    "name": "olm",
                     "buildsystem": "cmake-ninja",
+                    "builddir": true,
+                    "config-opts": [
+                        "-DOLM_TESTS=OFF",
+                        "-DCMAKE_BUILD_TYPE=Release",
+                        "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+                    ],
                     "sources": [
                         {
-                            "type": "git",
-                            "url": "https://github.com/corrosion-rs/corrosion",
-                            "tag": "v0.6.0"
+                            "type": "archive",
+                            "url": "https://gitlab.matrix.org/matrix-org/olm/-/archive/3.2.16/olm-3.2.16.tar.gz",
+                            "sha256": "1e90f9891009965fd064be747616da46b232086fe270b77605ec9bda34272a68",
+                            "x-checker-data": {
+                                "type": "anitya",
+                                "project-id": 29706,
+                                "url-template": "https://gitlab.matrix.org/matrix-org/olm/-/archive/$version/olm-$version.tar.gz"
+                            }
                         }
                     ]
                 }
