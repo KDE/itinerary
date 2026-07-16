@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-11 00:44+0000\n"
-"PO-Revision-Date: 2026-03-10 10:00+0300\n"
+"PO-Revision-Date: 2026-07-15 13:31+0300\n"
 "Last-Translator: Olesya Gerasimenko <goa@altlinux.org>\n"
 "Language-Team: Basealt Translation Team\n"
 "Language: ru\n"
@@ -492,11 +492,10 @@ msgstr "Время прибытия"
 
 #: app/BoatPage.qml:189 app/BusPage.qml:270 app/FlightPage.qml:292
 #: app/JourneyQueryPage.qml:99 app/TrainPage.qml:341
-#, fuzzy, kde-format
-#| msgid "Booking"
+#, kde-format
 msgctxt "purchase a ticket"
 msgid "Book"
-msgstr "Бронирование"
+msgstr "Забронировать"
 
 #: app/BoatPage.qml:195 app/BusPage.qml:276 app/FlightPage.qml:298
 #: app/TrainPage.qml:356
@@ -2155,24 +2154,19 @@ msgid "Open wheelmap.org"
 msgstr "Открыть wheelmap.org"
 
 #: app/IndoorMapPage.qml:280
-#, fuzzy, kde-format
-#| msgctxt "@action:button Start route guidance to location"
-#| msgid "Navigate"
+#, kde-format
 msgid "Navigate from here"
-msgstr "Навигация"
+msgstr "Начало маршрута"
 
 #: app/IndoorMapPage.qml:289
-#, fuzzy, kde-format
-#| msgctxt "@action:button Start route guidance to location"
-#| msgid "Navigate"
+#, kde-format
 msgid "Navigate to here"
-msgstr "Навигация"
+msgstr "Конец маршрута"
 
 #: app/IndoorMapPage.qml:300
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgid "Show information"
-msgstr "Дополнительная информация"
+msgstr "Показать информацию"
 
 #: app/JourneyFilterPage.qml:15
 #, kde-format
@@ -2369,7 +2363,7 @@ msgstr "Путешествие"
 #: app/JourneySectionPage.qml:124 app/PublicTransportPage.qml:203
 #, kde-format
 msgid "Map"
-msgstr ""
+msgstr "Карта"
 
 #: app/JourneySectionStopDelegate.qml:163
 #, kde-format
@@ -2562,6 +2556,8 @@ msgstr "Валюта: %1 = %2"
 msgid ""
 "Leaving the EU roaming regulation area. Check your mobile data settings."
 msgstr ""
+"Выполняется выход из области действия правил роуминга ЕС. Проверьте "
+"параметры использования мобильного Интернета."
 
 #: app/locationinformation.cpp:127
 #, kde-format
@@ -2870,9 +2866,9 @@ msgid "Matrix Session Verification"
 msgstr "Проверка сеанса Matrix"
 
 #: app/MapStopoverInfoSheetDrawer.qml:85
-#, fuzzy, kde-format
+#, kde-format
 msgid "Occupancy"
-msgstr "Занятость:"
+msgstr "Занятость"
 
 #: app/MapStopoverInfoSheetDrawer.qml:112 app/StopoverDetailsPage.qml:124
 #, kde-format
@@ -3466,27 +3462,22 @@ msgstr "Недействительные"
 #, kde-format
 msgctxt "seat reservation"
 msgid "Aisle"
-msgstr ""
+msgstr "Крыло"
 
 #: app/pkpass/PosterEventTicketSeatRow.qml:37
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Sections"
+#, kde-format
 msgctxt "seat reservation"
 msgid "Section"
-msgstr "Секции"
+msgstr "Секция"
 
 #: app/pkpass/PosterEventTicketSeatRow.qml:45
-#, fuzzy, kde-format
-#| msgctxt "seat row"
-#| msgid "Row:"
+#, kde-format
 msgctxt "seat reservation"
 msgid "Row"
-msgstr "Ряд:"
+msgstr "Ряд"
 
 #: app/pkpass/PosterEventTicketSeatRow.qml:53
-#, fuzzy, kde-format
-#| msgid "Seat"
+#, kde-format
 msgctxt "seat reservation"
 msgid "Seat"
 msgstr "Место"
@@ -3678,38 +3669,38 @@ msgstr "Количество гостей"
 #: app/ScamWarningFormDelegate.qml:21
 #, kde-format
 msgid "This airport might not be quite where its name suggests it is."
-msgstr ""
+msgstr "Местоположение этого аэропорта может не соответствовать его названию."
 
 #: app/ScamWarningFormDelegate.qml:23
 #, kde-format
 msgid "This port might not be quite where its name suggests it is."
-msgstr ""
+msgstr "Местоположение этого порта может не соответствовать его названию."
 
 #: app/ScamWarningFormDelegate.qml:37
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Ignore warning"
-msgstr ""
+msgstr "Проигнорировать предупреждение"
 
 #: app/ScamWarningFormDelegate.qml:50
 #, kde-format
 msgid "Ignore Warning"
-msgstr ""
+msgstr "Проигнорировать предупреждение"
 
 #: app/ScamWarningFormDelegate.qml:51
 #, kde-format
 msgid "Do you want to ignore the warning permanently or for this trip only?"
-msgstr ""
+msgstr "Игнорировать данное предупреждение всегда или только для этой поездки?"
 
 #: app/ScamWarningFormDelegate.qml:54
 #, kde-format
 msgid "Ignore permanently"
-msgstr ""
+msgstr "Игнорировать всегда"
 
 #: app/ScamWarningFormDelegate.qml:63
 #, kde-format
 msgid "Ignore for this trip"
-msgstr ""
+msgstr "Игнорировать для этой поездки"
 
 #: app/SettingsPage.qml:20
 #, kde-format
@@ -3991,13 +3982,13 @@ msgstr "Войти"
 #, kde-format
 msgctxt "@label"
 msgid "Homeserver url"
-msgstr ""
+msgstr "Адрес домашнего сервера"
 
 #: app/SettingsPage.qml:324
 #, kde-format
 msgctxt "@action:button"
 msgid "Login with OIDC"
-msgstr ""
+msgstr "Войти с помощью OIDC"
 
 #: app/SettingsPage.qml:334
 #, kde-format
@@ -4963,7 +4954,7 @@ msgstr "Добро пожаловать!"
 #, kde-format
 msgctxt "@title:group"
 msgid "Setup"
-msgstr ""
+msgstr "Настройка"
 
 #: app/WelcomePage.qml:31
 #, kde-format
@@ -4971,34 +4962,27 @@ msgid ""
 "Select your home country for currency conversions and power plug "
 "compatibility warnings to work."
 msgstr ""
+"Выберите свою страну, чтобы обеспечить работу функции конвертации валюты и "
+"предупреждений о совместимости вилок."
 
 #: app/WelcomePage.qml:35
-#, fuzzy, kde-format
-#| msgid "Use insecure services"
+#, kde-format
 msgid "Use online services"
-msgstr "Использовать незащищённые службы"
+msgstr "Использовать интернет-службы"
 
 #: app/WelcomePage.qml:36
-#, fuzzy, kde-format
-#| msgid ""
-#| "KDE Itinerary has all features disabled by default that require online "
-#| "access, such as retrieving live traffic data or weather forecasts. You "
-#| "therefore might want to review these settings. While you are at it, you "
-#| "might want to configure your home location to enable the transfer "
-#| "assistant to automatically suggests ways to your next departure station "
-#| "or airport."
+#, kde-format
 msgid ""
 "KDE Itinerary has all features disabled by default that require online "
 "access, such as retrieving live traffic data or weather forecasts. You can "
 "enable all this here, or check the settings for much more finegrained "
 "control over which services to use."
 msgstr ""
-"В программе «Маршруты KDE» по умолчанию отключены возможности, для работы с "
-"которыми требуется доступ к Интернету (например, интерактивное получение "
-"данных трафика и прогнозов погоды). Поэтому, вероятно, следует просмотреть "
-"соответствующие параметры. Кроме того, возможно указать своё местоположение, "
-"чтобы включить автоматические предложения по ближайшим станциям и аэропортам "
-"отправления со стороны помощника по планированию маршрутов с пересадками."
+"В программе «Маршруты KDE» по умолчанию отключены все возможности, для "
+"работы с которыми требуется доступ к Интернету (например, интерактивное "
+"получение данных трафика и прогнозов погоды). Здесь можно включить все эти "
+"возможности или проверить параметры, позволяющие выполнить более тонкую "
+"настройку использования служб."
 
 #: app/WelcomePage.qml:54
 #, kde-format
@@ -5006,23 +4990,22 @@ msgid ""
 "Review the settings for more finegrained control over which online services "
 "to use."
 msgstr ""
+"Просмотрите параметры, чтобы выполнить более тонкую настройку использования "
+"интернет-служб."
 
 #: app/WelcomePage.qml:61
-#, fuzzy, kde-format
-#| msgid "Version"
+#, kde-format
 msgctxt "@title:group"
 msgid "Permissions"
-msgstr "Версия"
+msgstr "Права доступа"
 
 #: app/WelcomePage.qml:90
 #, kde-format
 msgid "Done!"
-msgstr ""
+msgstr "Готово!"
 
 #: app/WhatsNewDialog.qml:77
 #, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Show More…"
 msgid "Show older changes…"
 msgstr "Показать больше…"
 
