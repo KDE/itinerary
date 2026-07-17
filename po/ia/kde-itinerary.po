@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-11 00:44+0000\n"
-"PO-Revision-Date: 2026-06-30 16:29+0200\n"
+"PO-Revision-Date: 2026-07-16 16:33+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -2829,7 +2829,7 @@ msgstr "Adjuta"
 #: app/Main.qml:89 app/WhatsNewDialog.qml:16
 #, kde-format
 msgid "What's new"
-msgstr ""
+msgstr "Que es de novo"
 
 #: app/Main.qml:179
 #, kde-format
@@ -3467,27 +3467,22 @@ msgstr "Expirate"
 #, kde-format
 msgctxt "seat reservation"
 msgid "Aisle"
-msgstr ""
+msgstr "Passage"
 
 #: app/pkpass/PosterEventTicketSeatRow.qml:37
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Sections"
+#, kde-format
 msgctxt "seat reservation"
 msgid "Section"
-msgstr "Sectiones"
+msgstr "Section"
 
 #: app/pkpass/PosterEventTicketSeatRow.qml:45
-#, fuzzy, kde-format
-#| msgctxt "seat row"
-#| msgid "Row:"
+#, kde-format
 msgctxt "seat reservation"
 msgid "Row"
-msgstr "Rango:"
+msgstr "Rango"
 
 #: app/pkpass/PosterEventTicketSeatRow.qml:53
-#, fuzzy, kde-format
-#| msgid "Seat"
+#, kde-format
 msgctxt "seat reservation"
 msgid "Seat"
 msgstr "Sede"
@@ -5010,11 +5005,9 @@ msgid "Done!"
 msgstr "Facite!"
 
 #: app/WhatsNewDialog.qml:77
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Show More…"
+#, kde-format
 msgid "Show older changes…"
-msgstr "Monstra  plus…"
+msgstr "Monstra cambios plus vetere…"
 
 #: matrix/matrixmanager.cpp:23 matrix/matrixmanager.cpp:120
 #, kde-format
