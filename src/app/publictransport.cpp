@@ -40,6 +40,8 @@ bool PublicTransport::isBusMode(KPublicTransport::Line::Mode mode)
     case Line::Bus:
     case Line::Coach:
     case Line::Shuttle:
+    case Line::RideShare:
+    case Line::Taxi:
         return true;
     default:
         return false;
