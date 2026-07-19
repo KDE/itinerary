@@ -21,6 +21,7 @@ FormCard.FormCardPage {
     readonly property var rapidTransitModes: [Line.RapidTransit, Line.Metro, Line.Tramway, Line.RailShuttle, Line.Funicular, Line.AerialLift]
     readonly property var busModes: [Line.Bus, Line.Coach]
     readonly property var ferryModes: [Line.Ferry, Line.Boat]
+    readonly property var rideshareModes: [Line.RideShare]
     readonly property var aircraftModes: [Line.Air]
 
     readonly property var lineModes: {
@@ -36,6 +37,8 @@ FormCard.FormCardPage {
                 modes.push(...root.busModes);
             if (ferrySwitch.checked)
                 modes.push(...root.ferryModes);
+            if (rideshareSwitch.checked)
+                modes.push(...root.rideshareModes);
             if (aircraftSwitch.checked)
                 modes.push(...root.aircraftModes);
         }
@@ -111,6 +114,16 @@ FormCard.FormCardPage {
             checked: root.checkLineModes(root.ferryModes)
             leading: Kirigami.Icon {
                 source: LineMode.iconName(Line.Ferry)
+                isMask: true
+            }
+        }
+        FormCard.FormSwitchDelegate {
+            id: rideshareSwitch
+            text: i18nc("journey query search constraint, title", "Ride sharing")
+            description: i18nc("journey query search constraint, description", "Hitch a ride")
+            checked: root.checkLineModes(root.rideshareModes)
+            leading: Kirigami.Icon {
+                source: LineMode.iconName(Line.RideShare)
                 isMask: true
             }
         }

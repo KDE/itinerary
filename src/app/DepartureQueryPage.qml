@@ -64,6 +64,14 @@ Kirigami.ScrollablePage {
             checked: true
         },
         Kirigami.Action {
+            id: rideshareModeAction
+            text: i18nc("journey query search constraint, title", "Ride sharing")
+            icon.source: LineMode.iconName(Line.RideShare)
+            displayHint: Kirigami.DisplayHint.AlwaysHide
+            checkable: true
+            checked: true
+        },
+        Kirigami.Action {
             id: aircraftModeAction
             text: i18nc("journey query search constraint, title", "Airplane")
             icon.source: LineMode.iconName(Line.Air)
@@ -100,6 +108,8 @@ Kirigami.ScrollablePage {
                 lineModes.push(Line.Bus, Line.Coach);
             if (ferryModeAction.checked)
                 lineModes.push(Line.Ferry, Line.Boat);
+            if (rideshareModeAction.checked)
+                lineModes.push(Line.RideShare);
             if (aircraftModeAction.checked)
                 lineModes.push(Line.Air);
         }

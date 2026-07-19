@@ -48,6 +48,8 @@ JourneyQueryPage {
                 lineModes.push(Line.Bus, Line.Coach);
             if (ferryModeAction.checked)
                 lineModes.push(Line.Ferry, Line.Boat);
+            if (rideshareModeAction.checked)
+                lineModes.push(Line.RideShare)
             if (aircraftModeAction.checked)
                 lineModes.push(Line.Air)
         }
@@ -100,6 +102,14 @@ JourneyQueryPage {
             icon.source: LineMode.iconName(Line.Ferry)
             checkable: true
             checked: true
+            onTriggered: root.updateRequest()
+        },
+        Kirigami.Action {
+            id: rideshareModeAction
+            text: i18nc("journey query search constraint, title", "Ride sharing")
+            icon.source: LineMode.iconName(Line.RideShare)
+            checkable: true
+            checked: false
             onTriggered: root.updateRequest()
         },
         Kirigami.Action {
