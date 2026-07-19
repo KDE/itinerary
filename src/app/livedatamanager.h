@@ -50,7 +50,7 @@ public:
 
     KPublicTransport::Stopover arrival(const QString &resId) const;
     KPublicTransport::Stopover departure(const QString &resId) const;
-    KPublicTransport::JourneySection journey(const QString &resId) const;
+    Q_INVOKABLE KPublicTransport::JourneySection journey(const QString &resId) const;
 
     [[nodiscard]] KPublicTransport::JourneySection trip(const QString &resId) const;
     [[nodiscard]] qsizetype tripDepartureIndex(const QString &resId) const;
