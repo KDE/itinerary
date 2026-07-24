@@ -90,6 +90,19 @@ FormCard.FormCard {
         return [...new Set(s)].join(", ");
     }
 
+    readonly property string seatingType: {
+        let s = []
+        for (const resId of root.resIds) {
+            const res = ReservationManager.reservation(resId);
+            const seat = res?.reservedTicket?.ticketedSeat;
+            if (seat && seat.seatingType)
+                s.push(seat.seatingType);
+        }
+        if (s.length === 0)
+            return "-";
+        return [...new Set(s)].join(", ");
+    }
+
     FormCard.AbstractFormDelegate {
         id: content
         onClicked: root.clicked()
