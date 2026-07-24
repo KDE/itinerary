@@ -91,7 +91,7 @@ ColumnLayout {
 
     CalendarPermission {
         id: calendarPermission
-        accessMode: QtCore.CalendarPermission.ReadWrite
+        accessMode: CalendarPermission.ReadWrite
         onStatusChanged: {
             if (status === Qt.PermissionStatus.Granted) {
                     calendarSelector.initAndOpen();
