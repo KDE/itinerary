@@ -198,7 +198,7 @@ Kirigami.ScrollablePage {
         width: parent.width
 
         model: vehicleModel
-        highlightedVehicleSection: root.selectedVehicleSection
+        highlightedVehicleSection: root.selectedVehicleSection.split(/,\s/)
         higlightedClassTypes: root.selectedClassTypes
 
         onVehicleSectionTapped: (section) => {

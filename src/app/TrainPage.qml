@@ -37,7 +37,7 @@ PublicTransportPage {
         id: vehicleLayoutPage
         VehicleLayoutPage {
             publicTransportManager: root.controller.liveDataManager.publicTransportManager
-            selectedVehicleSection: root.reservation.reservedTicket.ticketedSeat.seatSection
+            selectedVehicleSection: root.seatSectionString
             selectedClasses: root.reservation.reservedTicket.ticketedSeat.seatingType
             seat: root.seatString
 
