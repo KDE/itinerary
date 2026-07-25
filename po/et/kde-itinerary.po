@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-11 00:44+0000\n"
+"POT-Creation-Date: 2026-07-25 00:45+0000\n"
 "PO-Revision-Date: 2020-05-04 10:51+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -495,12 +495,12 @@ msgid "Boat Ticket"
 msgstr "Bussipilet"
 
 #: app/BoatPage.qml:57 app/BusPage.qml:56 app/FlightPage.qml:63
-#: app/TrainPage.qml:78 app/TransferDelegate.qml:64
+#: app/TrainPage.qml:80 app/TransferDelegate.qml:64
 #, kde-format
 msgid "%1 to %2"
 msgstr "Asukohast %1 asukohta %2"
 
-#: app/BoatPage.qml:100 app/BusPage.qml:104 app/TrainPage.qml:120
+#: app/BoatPage.qml:100 app/BusPage.qml:104 app/TrainPage.qml:122
 #, fuzzy, kde-format
 #| msgid "Departure time:"
 msgid "Departure time"
@@ -515,20 +515,20 @@ msgstr "Terminal:"
 
 #: app/BoatPage.qml:123 app/BoatPage.qml:164 app/BusPage.qml:155
 #: app/BusPage.qml:225 app/FlightPage.qml:209 app/FlightPage.qml:263
-#: app/TrainPage.qml:180 app/TrainPage.qml:267
+#: app/TrainPage.qml:182 app/TrainPage.qml:269
 #, fuzzy, kde-format
 #| msgid "More information"
 msgid "Additional information"
 msgstr "Rohkem teavet"
 
-#: app/BoatPage.qml:140 app/BusPage.qml:179 app/TrainPage.qml:208
+#: app/BoatPage.qml:140 app/BusPage.qml:179 app/TrainPage.qml:210
 #, fuzzy, kde-format
 #| msgid "Arrival time:"
 msgid "Arrival time"
 msgstr "Saabumisaeg:"
 
 #: app/BoatPage.qml:189 app/BusPage.qml:270 app/FlightPage.qml:292
-#: app/JourneyQueryPage.qml:99 app/TrainPage.qml:341
+#: app/JourneyQueryPage.qml:99 app/TrainPage.qml:343
 #, fuzzy, kde-format
 #| msgid "Booking"
 msgctxt "purchase a ticket"
@@ -536,7 +536,7 @@ msgid "Book"
 msgstr "Reserveerimine"
 
 #: app/BoatPage.qml:195 app/BusPage.qml:276 app/FlightPage.qml:298
-#: app/TrainPage.qml:356
+#: app/TrainPage.qml:358
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternatiivid"
@@ -798,7 +798,7 @@ msgctxt "Bus departure"
 msgid "Departure"
 msgstr "Väljumine"
 
-#: app/BusPage.qml:125 app/TrainPage.qml:149
+#: app/BusPage.qml:125 app/TrainPage.qml:151
 #, fuzzy, kde-format
 #| msgid "Departure gate:"
 msgid "Departure date"
@@ -4586,20 +4586,20 @@ msgctxt "train station platform"
 msgid "Platform %1"
 msgstr "Platvorm: %1"
 
-#: app/TrainDelegate.qml:62 app/TrainPage.qml:301
+#: app/TrainDelegate.qml:62 app/TrainPage.qml:303
 #, fuzzy, kde-format
 #| msgid "Coach:"
 msgctxt "train coach"
 msgid "Coach: <b>%1</b>"
 msgstr "Vagun:"
 
-#: app/TrainDelegate.qml:68 app/TrainPage.qml:308
+#: app/TrainDelegate.qml:68 app/TrainPage.qml:310
 #, kde-format
 msgctxt "train seat"
 msgid "Seat: <b>%1</b>"
 msgstr ""
 
-#: app/TrainDelegate.qml:76 app/TrainPage.qml:316
+#: app/TrainDelegate.qml:76 app/TrainPage.qml:318
 #, kde-format
 msgctxt "train class"
 msgid "Class: <b>%1</b>"
@@ -4695,8 +4695,8 @@ msgid ""
 "date information for the train this reservation is valid for."
 msgstr ""
 
-#: app/TrainEditor.qml:231 app/TrainEditor.qml:336 app/TrainPage.qml:159
-#: app/TrainPage.qml:246
+#: app/TrainEditor.qml:231 app/TrainEditor.qml:336 app/TrainPage.qml:161
+#: app/TrainPage.qml:248
 #, fuzzy, kde-format
 #| msgid "Station:"
 msgctxt "train station"
@@ -4716,7 +4716,7 @@ msgstr "Saabumine"
 msgid "Arrival station must not be empty."
 msgstr "Väljumisterminal:"
 
-#: app/TrainEditor.qml:364 app/TrainEditor.qml:376 app/TrainPage.qml:292
+#: app/TrainEditor.qml:364 app/TrainEditor.qml:376 app/TrainPage.qml:294
 #, fuzzy, kde-format
 #| msgid "Seat"
 msgctxt "Train seat"
@@ -4737,51 +4737,51 @@ msgctxt "seating class on a train"
 msgid "Class"
 msgstr "Klass:"
 
-#: app/TrainPage.qml:21
+#: app/TrainPage.qml:23
 #, kde-format
 msgid "Train Ticket"
 msgstr "Rongipilet"
 
-#: app/TrainPage.qml:114
+#: app/TrainPage.qml:116
 #, fuzzy, kde-format
 #| msgid "Departure"
 msgctxt "Train departure"
 msgid "Departure"
 msgstr "Väljumine"
 
-#: app/TrainPage.qml:193
+#: app/TrainPage.qml:195
 #, fuzzy, kde-format
 #| msgid "Vehicle Layout"
 msgid "Departure Vehicle Layout"
 msgstr "Sõiduki struktuur"
 
-#: app/TrainPage.qml:202
+#: app/TrainPage.qml:204
 #, fuzzy, kde-format
 #| msgid "Arrival"
 msgctxt "Train arrival"
 msgid "Arrival"
 msgstr "Saabumine"
 
-#: app/TrainPage.qml:282
+#: app/TrainPage.qml:284
 #, fuzzy, kde-format
 #| msgid "Vehicle Layout"
 msgid "Arrival Vehicle Layout"
 msgstr "Sõiduki struktuur"
 
-#: app/TrainPage.qml:348
+#: app/TrainPage.qml:350
 #, fuzzy, kde-format
 #| msgid "Add transfer after"
 msgctxt "@action:button"
 msgid "Add to Träwelling"
 msgstr "Lisa järgnev transfeer"
 
-#: app/TrainPage.qml:378
+#: app/TrainPage.qml:380
 #, fuzzy, kde-format
 #| msgid "Add transfer after"
 msgid "Added to Träwelling"
 msgstr "Lisa järgnev transfeer"
 
-#: app/TrainPage.qml:378
+#: app/TrainPage.qml:380
 #, kde-format
 msgid "Failed to add to Träwelling"
 msgstr ""
