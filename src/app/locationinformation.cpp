@@ -45,6 +45,7 @@ static constexpr const QLatin1StringView eu_roaming_map[] = {
     "EE"_L1,
     "ES"_L1,
     "FI"_L1,
+    "FR"_L1,
     "GR"_L1,
     "HR"_L1,
     "HU"_L1,
