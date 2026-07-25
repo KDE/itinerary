@@ -88,6 +88,8 @@ private Q_SLOTS:
         QTest::newRow("DE2CH") << u"DE"_s << u"CH"_s << true;
         QTest::newRow("CH2DE") << u"CH"_s << u"DE"_s << false;
         QTest::newRow("CH2CA") << u"CH"_s << u"CA"_s << false;
+        QTest::newRow("HU2FR") << u"HU"_s << u"FR"_s << false;
+        QTest::newRow("DE2FR") << u"DE"_s << u"FR"_s << false;
     }
     void testEURoaming()
     {
