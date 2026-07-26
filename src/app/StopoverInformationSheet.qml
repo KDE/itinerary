@@ -46,49 +46,47 @@ SheetDrawer {
         contentWidth: width - effectiveScrollBarWidth
         QQC2.ScrollBar.horizontal.policy: QQC2.ScrollBar.AlwaysOff
 
-        ColumnLayout {
-            KPublicTransport.StopoverInformationView {
-                width: infoPage.width - infoPage.effectiveScrollBarWidth
-                stopover: root.stopover
-                notes: root.notes
+        KPublicTransport.StopoverInformationView {
+            width: infoPage.width - infoPage.effectiveScrollBarWidth
+            stopover: root.stopover
+            notes: root.notes
 
-                Kirigami.Heading {
-                    level: 4
-                    text: i18n("Statistics")
+            Kirigami.Heading {
+                level: 4
+                text: i18n("Statistics")
 
-                    Layout.leftMargin: Kirigami.Units.largeSpacing
-                }
+                Layout.leftMargin: Kirigami.Units.largeSpacing
+            }
 
-                QQC2.Label {
-                    text: i18n("Distance: %1", CoreAddons.Format.formatDistance(journeySection.distance, Settings.distanceFormat))
-                    visible: root.journeySection.distance > 0
-                    wrapMode: Text.Wrap
+            QQC2.Label {
+                text: i18n("Distance: %1", CoreAddons.Format.formatDistance(journeySection.distance, Settings.distanceFormat))
+                visible: root.journeySection.distance > 0
+                wrapMode: Text.Wrap
 
-                    Layout.topMargin: Kirigami.Units.largeSpacing
-                    Layout.leftMargin: Kirigami.Units.largeSpacing
-                    Layout.rightMargin: Kirigami.Units.largeSpacing
-                    Layout.fillWidth: true
-                }
+                Layout.topMargin: Kirigami.Units.largeSpacing
+                Layout.leftMargin: Kirigami.Units.largeSpacing
+                Layout.rightMargin: Kirigami.Units.largeSpacing
+                Layout.fillWidth: true
+            }
 
-                QQC2.Label {
-                    text: i18n("Average Speed: %1", Localizer.formatSpeed(journeySection.distance / journeySection.duration * 3.6, Settings.distanceFormat))
-                    visible: journeySection.distance > 0 && journeySection.duration > 0
-                    wrapMode: Text.Wrap
+            QQC2.Label {
+                text: i18n("Average Speed: %1", Localizer.formatSpeed(journeySection.distance / journeySection.duration * 3.6, Settings.distanceFormat))
+                visible: journeySection.distance > 0 && journeySection.duration > 0
+                wrapMode: Text.Wrap
 
-                    Layout.leftMargin: Kirigami.Units.largeSpacing
-                    Layout.rightMargin: Kirigami.Units.largeSpacing
-                    Layout.fillWidth: true
-                }
+                Layout.leftMargin: Kirigami.Units.largeSpacing
+                Layout.rightMargin: Kirigami.Units.largeSpacing
+                Layout.fillWidth: true
+            }
 
-                QQC2.Label {
-                    text: i18n("CO₂: %1", Localizer.formatWeight(journeySection.co2Emission))
-                    visible: journeySection.co2Emission > 0
-                    wrapMode: Text.Wrap
+            QQC2.Label {
+                text: i18n("CO₂: %1", Localizer.formatWeight(journeySection.co2Emission))
+                visible: journeySection.co2Emission > 0
+                wrapMode: Text.Wrap
 
-                    Layout.leftMargin: Kirigami.Units.largeSpacing
-                    Layout.rightMargin: Kirigami.Units.largeSpacing
-                    Layout.fillWidth: true
-                }
+                Layout.leftMargin: Kirigami.Units.largeSpacing
+                Layout.rightMargin: Kirigami.Units.largeSpacing
+                Layout.fillWidth: true
             }
         }
     }
