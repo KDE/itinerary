@@ -151,7 +151,7 @@ DetailsPage {
                 onClicked: {
                     sheetDrawer.isArrival = false;
                     sheetDrawer.isDeparture = true;
-                    sheetDrawer.stop = root.journeySection.stopover(root.departureStopIndex);
+                    sheetDrawer.stop = root.controller.journey.stopover(root.departureStopIndex);
                     sheetDrawer.popup();
                 }
             }
