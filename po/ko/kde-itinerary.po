@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-25 00:45+0000\n"
+"POT-Creation-Date: 2026-07-26 00:44+0000\n"
 "PO-Revision-Date: 2026-05-25 19:00+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -2538,69 +2538,69 @@ msgid ""
 msgstr ""
 "EU 로밍 협약 적용 지역에서 벗어납니다. 모바일 데이터 설정을 확인하십시오."
 
-#: app/locationinformation.cpp:127
+#: app/locationinformation.cpp:128
 #, kde-format
 msgid "People are driving on the right side."
 msgstr "우측 통행입니다."
 
-#: app/locationinformation.cpp:129
+#: app/locationinformation.cpp:130
 #, kde-format
 msgid "People are driving on the left side."
 msgstr "좌측 통행입니다."
 
-#: app/locationinformation.cpp:147
+#: app/locationinformation.cpp:148
 msgid "Type A"
 msgstr "A형"
 
-#: app/locationinformation.cpp:148
+#: app/locationinformation.cpp:149
 msgid "Type B"
 msgstr "B형"
 
-#: app/locationinformation.cpp:149
+#: app/locationinformation.cpp:150
 msgid "Europlug"
 msgstr "유로플러그"
 
-#: app/locationinformation.cpp:150
+#: app/locationinformation.cpp:151
 msgid "Type D"
 msgstr "D형"
 
-#: app/locationinformation.cpp:151
+#: app/locationinformation.cpp:152
 msgid "Type E"
 msgstr "E형"
 
-#: app/locationinformation.cpp:152
+#: app/locationinformation.cpp:153
 msgid "Schuko"
 msgstr "슈코"
 
-#: app/locationinformation.cpp:153
+#: app/locationinformation.cpp:154
 msgid "Type G"
 msgstr "G형"
 
-#: app/locationinformation.cpp:154
+#: app/locationinformation.cpp:155
 msgid "Type H"
 msgstr "H형"
 
-#: app/locationinformation.cpp:155
+#: app/locationinformation.cpp:156
 msgid "Type I"
 msgstr "I형"
 
-#: app/locationinformation.cpp:156
+#: app/locationinformation.cpp:157
 msgid "Type J"
 msgstr "J형"
 
-#: app/locationinformation.cpp:157
+#: app/locationinformation.cpp:158
 msgid "Type K"
 msgstr "K형"
 
-#: app/locationinformation.cpp:158
+#: app/locationinformation.cpp:159
 msgid "Type L"
 msgstr "L형"
 
-#: app/locationinformation.cpp:159
+#: app/locationinformation.cpp:160
 msgid "Type M"
 msgstr "M형"
 
-#: app/locationinformation.cpp:160
+#: app/locationinformation.cpp:161
 msgid "Type N"
 msgstr "N형"
 

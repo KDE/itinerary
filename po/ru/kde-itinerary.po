@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-25 00:45+0000\n"
+"POT-Creation-Date: 2026-07-26 00:44+0000\n"
 "PO-Revision-Date: 2026-07-15 13:31+0300\n"
 "Last-Translator: Olesya Gerasimenko <goa@altlinux.org>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -2559,72 +2559,72 @@ msgstr ""
 "Выполняется выход из области действия правил роуминга ЕС. Проверьте "
 "параметры использования мобильного Интернета."
 
-#: app/locationinformation.cpp:127
+#: app/locationinformation.cpp:128
 #, kde-format
 msgid "People are driving on the right side."
 msgstr "Автомобили едут по правой стороне."
 
-#: app/locationinformation.cpp:129
+#: app/locationinformation.cpp:130
 #, kde-format
 msgid "People are driving on the left side."
 msgstr "Автомобили едут по левой стороне."
 
-#: app/locationinformation.cpp:147
+#: app/locationinformation.cpp:148
 msgid "Type A"
 msgstr "Тип A"
 
-#: app/locationinformation.cpp:148
+#: app/locationinformation.cpp:149
 msgid "Type B"
 msgstr "Тип B"
 
 # Не «Евровилка» (https://ru.wikipedia.org/wiki/Europlug), лучше оставить без перевода, как и Schuko.
 #
 # --translation-team@basealt.ru
-#: app/locationinformation.cpp:149
+#: app/locationinformation.cpp:150
 msgid "Europlug"
 msgstr "Europlug"
 
-#: app/locationinformation.cpp:150
+#: app/locationinformation.cpp:151
 msgid "Type D"
 msgstr "Тип D"
 
-#: app/locationinformation.cpp:151
+#: app/locationinformation.cpp:152
 msgid "Type E"
 msgstr "Тип E"
 
-#: app/locationinformation.cpp:152
+#: app/locationinformation.cpp:153
 msgid "Schuko"
 msgstr "Schuko"
 
-#: app/locationinformation.cpp:153
+#: app/locationinformation.cpp:154
 msgid "Type G"
 msgstr "Тип G"
 
-#: app/locationinformation.cpp:154
+#: app/locationinformation.cpp:155
 msgid "Type H"
 msgstr "Тип H"
 
-#: app/locationinformation.cpp:155
+#: app/locationinformation.cpp:156
 msgid "Type I"
 msgstr "Тип I"
 
-#: app/locationinformation.cpp:156
+#: app/locationinformation.cpp:157
 msgid "Type J"
 msgstr "Тип J"
 
-#: app/locationinformation.cpp:157
+#: app/locationinformation.cpp:158
 msgid "Type K"
 msgstr "Тип K"
 
-#: app/locationinformation.cpp:158
+#: app/locationinformation.cpp:159
 msgid "Type L"
 msgstr "Тип L"
 
-#: app/locationinformation.cpp:159
+#: app/locationinformation.cpp:160
 msgid "Type M"
 msgstr "Тип M"
 
-#: app/locationinformation.cpp:160
+#: app/locationinformation.cpp:161
 msgid "Type N"
 msgstr "Тип N"
 
