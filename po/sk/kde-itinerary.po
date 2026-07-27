@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-26 00:44+0000\n"
+"POT-Creation-Date: 2026-07-27 00:45+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -166,54 +166,61 @@ msgstr "Zobraziť rezerváciu"
 msgid "Alternative Connections"
 msgstr "Alternative Connections"
 
-#: app/AlternativeJourneyPage.qml:67 app/DepartureQueryPage.qml:28
-#: app/JourneyFilterPage.qml:69 app/TransferPage.qml:108
+#: app/AlternativeJourneyPage.qml:69 app/DepartureQueryPage.qml:28
+#: app/JourneyFilterPage.qml:72 app/TransferPage.qml:108
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Long distance trains"
 msgstr "Vlaky na dlhé vzdialenosti"
 
-#: app/AlternativeJourneyPage.qml:75 app/DepartureQueryPage.qml:36
-#: app/JourneyFilterPage.qml:79 app/TransferPage.qml:116
+#: app/AlternativeJourneyPage.qml:77 app/DepartureQueryPage.qml:36
+#: app/JourneyFilterPage.qml:82 app/TransferPage.qml:116
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Local trains"
 msgstr "Miestne vlaky"
 
-#: app/AlternativeJourneyPage.qml:83 app/DepartureQueryPage.qml:44
-#: app/JourneyFilterPage.qml:89 app/TransferPage.qml:124
+#: app/AlternativeJourneyPage.qml:85 app/DepartureQueryPage.qml:44
+#: app/JourneyFilterPage.qml:92 app/TransferPage.qml:124
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Rapid transit"
 msgstr "Rýchla preprava"
 
-#: app/AlternativeJourneyPage.qml:91 app/DepartureQueryPage.qml:52
-#: app/JourneyFilterPage.qml:99 app/TransferPage.qml:132
+#: app/AlternativeJourneyPage.qml:93 app/DepartureQueryPage.qml:52
+#: app/JourneyFilterPage.qml:102 app/TransferPage.qml:132
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Bus"
 msgstr "Autobus"
 
-#: app/AlternativeJourneyPage.qml:99 app/DepartureQueryPage.qml:60
-#: app/JourneyFilterPage.qml:109 app/TransferPage.qml:140
+#: app/AlternativeJourneyPage.qml:101 app/DepartureQueryPage.qml:60
+#: app/JourneyFilterPage.qml:112 app/TransferPage.qml:140
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ferry"
 msgstr "Trajekt"
 
-#: app/AlternativeJourneyPage.qml:107 app/DepartureQueryPage.qml:68
-#: app/JourneyFilterPage.qml:119
+#: app/AlternativeJourneyPage.qml:109 app/DepartureQueryPage.qml:68
+#: app/JourneyFilterPage.qml:122
+#, kde-format
+msgctxt "journey query search constraint, title"
+msgid "Ride sharing"
+msgstr ""
+
+#: app/AlternativeJourneyPage.qml:117 app/DepartureQueryPage.qml:76
+#: app/JourneyFilterPage.qml:132
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Airplane"
 msgstr "Lietadlo"
 
-#: app/AlternativeJourneyPage.qml:119
+#: app/AlternativeJourneyPage.qml:129
 #, kde-format
 msgid "Replace Journey"
 msgstr "Nahradiť cestu"
 
-#: app/AlternativeJourneyPage.qml:120
+#: app/AlternativeJourneyPage.qml:130
 #, kde-format
 msgid ""
 "Do you really want to replace your existing reservation with the newly "
@@ -222,12 +229,12 @@ msgstr ""
 "Do you really want to replace your existing reservation with the newly "
 "selected journey?"
 
-#: app/AlternativeJourneyPage.qml:124
+#: app/AlternativeJourneyPage.qml:134
 #, kde-format
 msgid "Replace"
 msgstr "Nahradiť"
 
-#: app/AlternativeJourneyPage.qml:142
+#: app/AlternativeJourneyPage.qml:152
 #, kde-format
 msgid "Destination:"
 msgstr "Cieľ:"
@@ -844,33 +851,33 @@ msgstr "Currency: %1"
 msgid "Departures"
 msgstr "Odchody"
 
-#: app/DepartureQueryPage.qml:127
+#: app/DepartureQueryPage.qml:137
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "Load earlier departures"
 
-#: app/DepartureQueryPage.qml:153 app/JourneyQueryPage.qml:172
+#: app/DepartureQueryPage.qml:163 app/JourneyQueryPage.qml:172
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "Load later connections"
 
-#: app/DepartureQueryPage.qml:162 app/JourneyQueryPage.qml:179
+#: app/DepartureQueryPage.qml:172 app/JourneyQueryPage.qml:179
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
 msgstr "Data providers:"
 
-#: app/DepartureQueryPage.qml:170 app/JourneyQueryPage.qml:188
+#: app/DepartureQueryPage.qml:180 app/JourneyQueryPage.qml:188
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Loading"
 msgstr "Načítavam"
 
-#: app/DepartureQueryPage.qml:170 app/JourneyQueryPage.qml:190
+#: app/DepartureQueryPage.qml:180 app/JourneyQueryPage.qml:190
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:status"
@@ -2166,40 +2173,46 @@ msgctxt "@title"
 msgid "Filter Journeys"
 msgstr "Filtrovať cesty"
 
-#: app/JourneyFilterPage.qml:59
+#: app/JourneyFilterPage.qml:62
 #, kde-format
 msgid "Mode of transportation"
 msgstr "Spôsob dopravy"
 
-#: app/JourneyFilterPage.qml:70
+#: app/JourneyFilterPage.qml:73
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "High speed or intercity trains"
 msgstr "Vysokorýchlostné alebo medzimestské vlaky"
 
-#: app/JourneyFilterPage.qml:80
+#: app/JourneyFilterPage.qml:83
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Regional or local trains"
 msgstr "Regionálne alebo miestne vlaky"
 
-#: app/JourneyFilterPage.qml:90
+#: app/JourneyFilterPage.qml:93
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Rapid transit, metro, trams"
 msgstr "Rýchla preprava, metro, električky"
 
-#: app/JourneyFilterPage.qml:100
+#: app/JourneyFilterPage.qml:103
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Local or regional bus services"
 msgstr "Miestne alebo regionálne autobusové linky"
 
-#: app/JourneyFilterPage.qml:110
+#: app/JourneyFilterPage.qml:113
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
 msgstr "Lode alebo trajekty"
+
+#: app/JourneyFilterPage.qml:123
+#, kde-format
+msgctxt "journey query search constraint, description"
+msgid "Hitch a ride"
+msgstr ""
 
 #: app/JourneyPathPage.qml:176
 #, kde-format
@@ -3220,7 +3233,7 @@ msgid "Home Country"
 msgstr "Domáca krajina"
 
 #: app/MyDataPage.qml:131 app/StatisticsPage.qml:16
-#: app/StopoverInformationSheet.qml:57 app/TripGroupPage.qml:680
+#: app/StopoverInformationSheet.qml:56 app/TripGroupPage.qml:680
 #, kde-format
 msgid "Statistics"
 msgstr "Štatistika"
@@ -4164,17 +4177,17 @@ msgstr "Trip Map"
 msgid "Stop Map"
 msgstr "Zastaviť mapu"
 
-#: app/StopoverInformationSheet.qml:63
+#: app/StopoverInformationSheet.qml:62
 #, kde-format
 msgid "Distance: %1"
 msgstr "Vzdialenosť: %1"
 
-#: app/StopoverInformationSheet.qml:74
+#: app/StopoverInformationSheet.qml:73
 #, kde-format
 msgid "Average Speed: %1"
 msgstr "Average Speed: %1"
 
-#: app/StopoverInformationSheet.qml:84
+#: app/StopoverInformationSheet.qml:83
 #, kde-format
 msgid "CO₂: %1"
 msgstr "CO₂: %1g"

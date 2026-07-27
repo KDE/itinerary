@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-26 00:44+0000\n"
+"POT-Creation-Date: 2026-07-27 00:45+0000\n"
 "PO-Revision-Date: 2026-04-22 23:15+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -167,66 +167,73 @@ msgstr "檢視預約"
 msgid "Alternative Connections"
 msgstr "替代轉乘"
 
-#: app/AlternativeJourneyPage.qml:67 app/DepartureQueryPage.qml:28
-#: app/JourneyFilterPage.qml:69 app/TransferPage.qml:108
+#: app/AlternativeJourneyPage.qml:69 app/DepartureQueryPage.qml:28
+#: app/JourneyFilterPage.qml:72 app/TransferPage.qml:108
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Long distance trains"
 msgstr "長途列車"
 
-#: app/AlternativeJourneyPage.qml:75 app/DepartureQueryPage.qml:36
-#: app/JourneyFilterPage.qml:79 app/TransferPage.qml:116
+#: app/AlternativeJourneyPage.qml:77 app/DepartureQueryPage.qml:36
+#: app/JourneyFilterPage.qml:82 app/TransferPage.qml:116
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Local trains"
 msgstr "區域鐵路"
 
-#: app/AlternativeJourneyPage.qml:83 app/DepartureQueryPage.qml:44
-#: app/JourneyFilterPage.qml:89 app/TransferPage.qml:124
+#: app/AlternativeJourneyPage.qml:85 app/DepartureQueryPage.qml:44
+#: app/JourneyFilterPage.qml:92 app/TransferPage.qml:124
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Rapid transit"
 msgstr "捷運"
 
-#: app/AlternativeJourneyPage.qml:91 app/DepartureQueryPage.qml:52
-#: app/JourneyFilterPage.qml:99 app/TransferPage.qml:132
+#: app/AlternativeJourneyPage.qml:93 app/DepartureQueryPage.qml:52
+#: app/JourneyFilterPage.qml:102 app/TransferPage.qml:132
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Bus"
 msgstr "公車"
 
-#: app/AlternativeJourneyPage.qml:99 app/DepartureQueryPage.qml:60
-#: app/JourneyFilterPage.qml:109 app/TransferPage.qml:140
+#: app/AlternativeJourneyPage.qml:101 app/DepartureQueryPage.qml:60
+#: app/JourneyFilterPage.qml:112 app/TransferPage.qml:140
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ferry"
 msgstr "渡輪"
 
-#: app/AlternativeJourneyPage.qml:107 app/DepartureQueryPage.qml:68
-#: app/JourneyFilterPage.qml:119
+#: app/AlternativeJourneyPage.qml:109 app/DepartureQueryPage.qml:68
+#: app/JourneyFilterPage.qml:122
+#, kde-format
+msgctxt "journey query search constraint, title"
+msgid "Ride sharing"
+msgstr ""
+
+#: app/AlternativeJourneyPage.qml:117 app/DepartureQueryPage.qml:76
+#: app/JourneyFilterPage.qml:132
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Airplane"
 msgstr "飛機"
 
-#: app/AlternativeJourneyPage.qml:119
+#: app/AlternativeJourneyPage.qml:129
 #, kde-format
 msgid "Replace Journey"
 msgstr "取代行程"
 
-#: app/AlternativeJourneyPage.qml:120
+#: app/AlternativeJourneyPage.qml:130
 #, kde-format
 msgid ""
 "Do you really want to replace your existing reservation with the newly "
 "selected journey?"
 msgstr "您確定要將您現有的預約替代為新選取的行程嗎？"
 
-#: app/AlternativeJourneyPage.qml:124
+#: app/AlternativeJourneyPage.qml:134
 #, kde-format
 msgid "Replace"
 msgstr "取代"
 
-#: app/AlternativeJourneyPage.qml:142
+#: app/AlternativeJourneyPage.qml:152
 #, kde-format
 msgid "Destination:"
 msgstr "目的地："
@@ -837,33 +844,33 @@ msgstr "貨幣：%1"
 msgid "Departures"
 msgstr "出發"
 
-#: app/DepartureQueryPage.qml:127
+#: app/DepartureQueryPage.qml:137
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "載入更早的出發"
 
-#: app/DepartureQueryPage.qml:153 app/JourneyQueryPage.qml:172
+#: app/DepartureQueryPage.qml:163 app/JourneyQueryPage.qml:172
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "載入更晚的轉乘"
 
-#: app/DepartureQueryPage.qml:162 app/JourneyQueryPage.qml:179
+#: app/DepartureQueryPage.qml:172 app/JourneyQueryPage.qml:179
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
 msgstr "資料提供者："
 
-#: app/DepartureQueryPage.qml:170 app/JourneyQueryPage.qml:188
+#: app/DepartureQueryPage.qml:180 app/JourneyQueryPage.qml:188
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Loading"
 msgstr "載入中"
 
-#: app/DepartureQueryPage.qml:170 app/JourneyQueryPage.qml:190
+#: app/DepartureQueryPage.qml:180 app/JourneyQueryPage.qml:190
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:status"
@@ -2158,40 +2165,46 @@ msgctxt "@title"
 msgid "Filter Journeys"
 msgstr "過濾行程"
 
-#: app/JourneyFilterPage.qml:59
+#: app/JourneyFilterPage.qml:62
 #, kde-format
 msgid "Mode of transportation"
 msgstr "交通方式"
 
-#: app/JourneyFilterPage.qml:70
+#: app/JourneyFilterPage.qml:73
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "High speed or intercity trains"
 msgstr "高鐵或城際列車"
 
-#: app/JourneyFilterPage.qml:80
+#: app/JourneyFilterPage.qml:83
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Regional or local trains"
 msgstr "區域或當地鐵路"
 
-#: app/JourneyFilterPage.qml:90
+#: app/JourneyFilterPage.qml:93
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Rapid transit, metro, trams"
 msgstr "捷運、地鐵、輕軌"
 
-#: app/JourneyFilterPage.qml:100
+#: app/JourneyFilterPage.qml:103
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Local or regional bus services"
 msgstr "本地或區域公車服務"
 
-#: app/JourneyFilterPage.qml:110
+#: app/JourneyFilterPage.qml:113
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
 msgstr "船班或渡輪"
+
+#: app/JourneyFilterPage.qml:123
+#, kde-format
+msgctxt "journey query search constraint, description"
+msgid "Hitch a ride"
+msgstr ""
 
 #: app/JourneyPathPage.qml:176
 #, kde-format
@@ -3183,7 +3196,7 @@ msgid "Home Country"
 msgstr "母國"
 
 #: app/MyDataPage.qml:131 app/StatisticsPage.qml:16
-#: app/StopoverInformationSheet.qml:57 app/TripGroupPage.qml:680
+#: app/StopoverInformationSheet.qml:56 app/TripGroupPage.qml:680
 #, kde-format
 msgid "Statistics"
 msgstr "統計資料"
@@ -4111,17 +4124,17 @@ msgstr "旅行地圖"
 msgid "Stop Map"
 msgstr "停靠站地圖"
 
-#: app/StopoverInformationSheet.qml:63
+#: app/StopoverInformationSheet.qml:62
 #, kde-format
 msgid "Distance: %1"
 msgstr "距離：%1"
 
-#: app/StopoverInformationSheet.qml:74
+#: app/StopoverInformationSheet.qml:73
 #, kde-format
 msgid "Average Speed: %1"
 msgstr "平均速度：%1"
 
-#: app/StopoverInformationSheet.qml:84
+#: app/StopoverInformationSheet.qml:83
 #, kde-format
 msgid "CO₂: %1"
 msgstr "CO₂：%1"
