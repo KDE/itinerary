@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-05 00:44+0000\n"
+"POT-Creation-Date: 2026-07-27 03:17+0000\n"
 "PO-Revision-Date: 2026-07-06 18:11+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -462,12 +462,12 @@ msgid "Boat Ticket"
 msgstr "Квиток на човен"
 
 #: app/BoatPage.qml:57 app/BusPage.qml:56 app/FlightPage.qml:63
-#: app/TrainPage.qml:78 app/TransferDelegate.qml:64
+#: app/TrainPage.qml:80 app/TransferDelegate.qml:64
 #, kde-format
 msgid "%1 to %2"
 msgstr "з %1 до %2"
 
-#: app/BoatPage.qml:100 app/BusPage.qml:104 app/TrainPage.qml:120
+#: app/BoatPage.qml:100 app/BusPage.qml:104 app/TrainPage.qml:122
 #, kde-format
 msgid "Departure time"
 msgstr "Час відправлення"
@@ -480,25 +480,25 @@ msgstr "Термінал"
 
 #: app/BoatPage.qml:123 app/BoatPage.qml:164 app/BusPage.qml:155
 #: app/BusPage.qml:225 app/FlightPage.qml:209 app/FlightPage.qml:263
-#: app/TrainPage.qml:180 app/TrainPage.qml:267
+#: app/TrainPage.qml:182 app/TrainPage.qml:269
 #, kde-format
 msgid "Additional information"
 msgstr "Додаткові відомості"
 
-#: app/BoatPage.qml:140 app/BusPage.qml:179 app/TrainPage.qml:208
+#: app/BoatPage.qml:140 app/BusPage.qml:179 app/TrainPage.qml:210
 #, kde-format
 msgid "Arrival time"
 msgstr "Час прибуття"
 
 #: app/BoatPage.qml:189 app/BusPage.qml:270 app/FlightPage.qml:292
-#: app/JourneyQueryPage.qml:99 app/TrainPage.qml:341
+#: app/JourneyQueryPage.qml:99 app/TrainPage.qml:343
 #, kde-format
 msgctxt "purchase a ticket"
 msgid "Book"
 msgstr "Забронювати"
 
 #: app/BoatPage.qml:195 app/BusPage.qml:276 app/FlightPage.qml:298
-#: app/TrainPage.qml:356
+#: app/TrainPage.qml:358
 #, kde-format
 msgid "Alternatives"
 msgstr "Альтернативи"
@@ -727,7 +727,7 @@ msgctxt "Bus departure"
 msgid "Departure"
 msgstr "Відправлення"
 
-#: app/BusPage.qml:125 app/TrainPage.qml:149
+#: app/BusPage.qml:125 app/TrainPage.qml:151
 #, kde-format
 msgid "Departure date"
 msgstr "Дата відправлення"
@@ -2561,69 +2561,69 @@ msgstr ""
 "Полишаємо область чинності правил роумінгу ЄС. Перевірте параметри "
 "користування мобільним інтернетом."
 
-#: app/locationinformation.cpp:127
+#: app/locationinformation.cpp:128
 #, kde-format
 msgid "People are driving on the right side."
 msgstr "Автомобілі рухаються правим боком дороги."
 
-#: app/locationinformation.cpp:129
+#: app/locationinformation.cpp:130
 #, kde-format
 msgid "People are driving on the left side."
 msgstr "Автомобілі рухаються лівим боком дороги."
 
-#: app/locationinformation.cpp:147
+#: app/locationinformation.cpp:148
 msgid "Type A"
 msgstr "Тип A"
 
-#: app/locationinformation.cpp:148
+#: app/locationinformation.cpp:149
 msgid "Type B"
 msgstr "Тип B"
 
-#: app/locationinformation.cpp:149
+#: app/locationinformation.cpp:150
 msgid "Europlug"
 msgstr "Europlug"
 
-#: app/locationinformation.cpp:150
+#: app/locationinformation.cpp:151
 msgid "Type D"
 msgstr "Тип D"
 
-#: app/locationinformation.cpp:151
+#: app/locationinformation.cpp:152
 msgid "Type E"
 msgstr "Тип E"
 
-#: app/locationinformation.cpp:152
+#: app/locationinformation.cpp:153
 msgid "Schuko"
 msgstr "Schuko"
 
-#: app/locationinformation.cpp:153
+#: app/locationinformation.cpp:154
 msgid "Type G"
 msgstr "Тип G"
 
-#: app/locationinformation.cpp:154
+#: app/locationinformation.cpp:155
 msgid "Type H"
 msgstr "Тип H"
 
-#: app/locationinformation.cpp:155
+#: app/locationinformation.cpp:156
 msgid "Type I"
 msgstr "Тип I"
 
-#: app/locationinformation.cpp:156
+#: app/locationinformation.cpp:157
 msgid "Type J"
 msgstr "Тип J"
 
-#: app/locationinformation.cpp:157
+#: app/locationinformation.cpp:158
 msgid "Type K"
 msgstr "Тип K"
 
-#: app/locationinformation.cpp:158
+#: app/locationinformation.cpp:159
 msgid "Type L"
 msgstr "Тип L"
 
-#: app/locationinformation.cpp:159
+#: app/locationinformation.cpp:160
 msgid "Type M"
 msgstr "Тип M"
 
-#: app/locationinformation.cpp:160
+#: app/locationinformation.cpp:161
 msgid "Type N"
 msgstr "Тип N"
 
@@ -4333,19 +4333,19 @@ msgctxt "train station platform"
 msgid "Platform %1"
 msgstr "Платформа %1"
 
-#: app/TrainDelegate.qml:62 app/TrainPage.qml:301
+#: app/TrainDelegate.qml:62 app/TrainPage.qml:303
 #, kde-format
 msgctxt "train coach"
 msgid "Coach: <b>%1</b>"
 msgstr "Місце: <b>%1</b>"
 
-#: app/TrainDelegate.qml:68 app/TrainPage.qml:308
+#: app/TrainDelegate.qml:68 app/TrainPage.qml:310
 #, kde-format
 msgctxt "train seat"
 msgid "Seat: <b>%1</b>"
 msgstr "Сидіння: <b>%1</b>"
 
-#: app/TrainDelegate.qml:76 app/TrainPage.qml:316
+#: app/TrainDelegate.qml:76 app/TrainPage.qml:318
 #, kde-format
 msgctxt "train class"
 msgid "Class: <b>%1</b>"
@@ -4431,8 +4431,8 @@ msgstr ""
 "Визначення місць відправлення і прибуття допомагає Itinerary шукати оновлені "
 "відомості щодо потяга, для якого є чинним це резервування."
 
-#: app/TrainEditor.qml:231 app/TrainEditor.qml:336 app/TrainPage.qml:159
-#: app/TrainPage.qml:246
+#: app/TrainEditor.qml:231 app/TrainEditor.qml:336 app/TrainPage.qml:161
+#: app/TrainPage.qml:248
 #, kde-format
 msgctxt "train station"
 msgid "Station"
@@ -4449,7 +4449,7 @@ msgstr "Прибуття"
 msgid "Arrival station must not be empty."
 msgstr "Станція прибуття має бути непорожньою."
 
-#: app/TrainEditor.qml:364 app/TrainEditor.qml:376 app/TrainPage.qml:292
+#: app/TrainEditor.qml:364 app/TrainEditor.qml:376 app/TrainPage.qml:294
 #, kde-format
 msgctxt "Train seat"
 msgid "Seat"
@@ -4467,45 +4467,45 @@ msgctxt "seating class on a train"
 msgid "Class"
 msgstr "Клас"
 
-#: app/TrainPage.qml:21
+#: app/TrainPage.qml:23
 #, kde-format
 msgid "Train Ticket"
 msgstr "Квиток на потяг"
 
-#: app/TrainPage.qml:114
+#: app/TrainPage.qml:116
 #, kde-format
 msgctxt "Train departure"
 msgid "Departure"
 msgstr "Відправлення"
 
-#: app/TrainPage.qml:193
+#: app/TrainPage.qml:195
 #, kde-format
 msgid "Departure Vehicle Layout"
 msgstr "Компонування засобу пересування відправлення"
 
-#: app/TrainPage.qml:202
+#: app/TrainPage.qml:204
 #, kde-format
 msgctxt "Train arrival"
 msgid "Arrival"
 msgstr "Прибуття"
 
-#: app/TrainPage.qml:282
+#: app/TrainPage.qml:284
 #, kde-format
 msgid "Arrival Vehicle Layout"
 msgstr "Компонування засобу пересування прибуття"
 
-#: app/TrainPage.qml:348
+#: app/TrainPage.qml:350
 #, kde-format
 msgctxt "@action:button"
 msgid "Add to Träwelling"
 msgstr "Додати до Träwelling"
 
-#: app/TrainPage.qml:378
+#: app/TrainPage.qml:380
 #, kde-format
 msgid "Added to Träwelling"
 msgstr "Додано до Träwelling"
 
-#: app/TrainPage.qml:378
+#: app/TrainPage.qml:380
 #, kde-format
 msgid "Failed to add to Träwelling"
 msgstr "Не вдалося додати до Träwelling"
