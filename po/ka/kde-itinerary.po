@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-27 00:45+0000\n"
-"PO-Revision-Date: 2026-07-08 05:34+0200\n"
+"PO-Revision-Date: 2026-07-27 07:47+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -208,7 +208,7 @@ msgstr "ბორანი"
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ride sharing"
-msgstr ""
+msgstr "მგზავრობის გაზიარება"
 
 #: app/AlternativeJourneyPage.qml:117 app/DepartureQueryPage.qml:76
 #: app/JourneyFilterPage.qml:132
@@ -2208,7 +2208,7 @@ msgstr "ნავები ან ბორნები"
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Hitch a ride"
-msgstr ""
+msgstr "გასეირნება"
 
 #: app/JourneyPathPage.qml:176
 #, kde-format

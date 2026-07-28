@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-27 00:45+0000\n"
-"PO-Revision-Date: 2026-07-08 15:57+0200\n"
+"PO-Revision-Date: 2026-07-27 09:40+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -208,7 +208,7 @@ msgstr "Färja"
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ride sharing"
-msgstr ""
+msgstr "Samåkning"
 
 #: app/AlternativeJourneyPage.qml:117 app/DepartureQueryPage.qml:76
 #: app/JourneyFilterPage.qml:132
@@ -2208,7 +2208,7 @@ msgstr "Båtar eller färjor"
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Hitch a ride"
-msgstr ""
+msgstr "Åk med"
 
 #: app/JourneyPathPage.qml:176
 #, kde-format

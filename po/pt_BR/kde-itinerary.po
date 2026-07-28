@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-27 00:45+0000\n"
-"PO-Revision-Date: 2026-07-08 07:49-0300\n"
+"PO-Revision-Date: 2026-07-27 06:57-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -214,7 +214,7 @@ msgstr "Balsa"
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ride sharing"
-msgstr ""
+msgstr "Compartilhamento de viagens"
 
 #: app/AlternativeJourneyPage.qml:117 app/DepartureQueryPage.qml:76
 #: app/JourneyFilterPage.qml:132
@@ -2214,7 +2214,7 @@ msgstr "Barcos ou balsas"
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Hitch a ride"
-msgstr ""
+msgstr "Pegar uma carona"
 
 #: app/JourneyPathPage.qml:176
 #, kde-format
