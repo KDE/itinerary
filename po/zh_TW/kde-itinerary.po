@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-27 03:17+0000\n"
+"POT-Creation-Date: 2026-07-28 02:44+0000\n"
 "PO-Revision-Date: 2026-04-22 23:15+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -3178,7 +3178,7 @@ msgid "Home Country"
 msgstr "母國"
 
 #: app/MyDataPage.qml:131 app/StatisticsPage.qml:16
-#: app/StopoverInformationSheet.qml:57 app/TripGroupPage.qml:680
+#: app/StopoverInformationSheet.qml:56 app/TripGroupPage.qml:680
 #, kde-format
 msgid "Statistics"
 msgstr "統計資料"
@@ -4106,17 +4106,17 @@ msgstr "旅行地圖"
 msgid "Stop Map"
 msgstr "停靠站地圖"
 
-#: app/StopoverInformationSheet.qml:63
+#: app/StopoverInformationSheet.qml:62
 #, kde-format
 msgid "Distance: %1"
 msgstr "距離：%1"
 
-#: app/StopoverInformationSheet.qml:74
+#: app/StopoverInformationSheet.qml:73
 #, kde-format
 msgid "Average Speed: %1"
 msgstr "平均速度：%1"
 
-#: app/StopoverInformationSheet.qml:84
+#: app/StopoverInformationSheet.qml:83
 #, kde-format
 msgid "CO₂: %1"
 msgstr "CO₂：%1"

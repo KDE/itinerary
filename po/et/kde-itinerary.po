@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-27 03:17+0000\n"
+"POT-Creation-Date: 2026-07-28 02:44+0000\n"
 "PO-Revision-Date: 2020-05-04 10:51+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -3435,7 +3435,7 @@ msgid "Home Country"
 msgstr "Kodu riik"
 
 #: app/MyDataPage.qml:131 app/StatisticsPage.qml:16
-#: app/StopoverInformationSheet.qml:57 app/TripGroupPage.qml:680
+#: app/StopoverInformationSheet.qml:56 app/TripGroupPage.qml:680
 #, kde-format
 msgid "Statistics"
 msgstr "Statistika"
@@ -4416,17 +4416,17 @@ msgstr "Reisid"
 msgid "Stop Map"
 msgstr ""
 
-#: app/StopoverInformationSheet.qml:63
+#: app/StopoverInformationSheet.qml:62
 #, kde-format
 msgid "Distance: %1"
 msgstr "Vahemaa: %1"
 
-#: app/StopoverInformationSheet.qml:74
+#: app/StopoverInformationSheet.qml:73
 #, kde-format
 msgid "Average Speed: %1"
 msgstr ""
 
-#: app/StopoverInformationSheet.qml:84
+#: app/StopoverInformationSheet.qml:83
 #, fuzzy, kde-format
 #| msgid "CO₂: %1g"
 msgid "CO₂: %1"

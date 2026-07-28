@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-27 03:17+0000\n"
+"POT-Creation-Date: 2026-07-28 02:44+0000\n"
 "PO-Revision-Date: 2026-07-05 23:12+0200\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -3210,7 +3210,7 @@ msgid "Home Country"
 msgstr "Země (doma)"
 
 #: app/MyDataPage.qml:131 app/StatisticsPage.qml:16
-#: app/StopoverInformationSheet.qml:57 app/TripGroupPage.qml:680
+#: app/StopoverInformationSheet.qml:56 app/TripGroupPage.qml:680
 #, kde-format
 msgid "Statistics"
 msgstr "Statistika"
@@ -4156,17 +4156,17 @@ msgstr "Mapa výletu"
 msgid "Stop Map"
 msgstr "Mapa zastávky"
 
-#: app/StopoverInformationSheet.qml:63
+#: app/StopoverInformationSheet.qml:62
 #, kde-format
 msgid "Distance: %1"
 msgstr "Vzdálenost: %1"
 
-#: app/StopoverInformationSheet.qml:74
+#: app/StopoverInformationSheet.qml:73
 #, kde-format
 msgid "Average Speed: %1"
 msgstr "Průměrná rychlost: %1"
 
-#: app/StopoverInformationSheet.qml:84
+#: app/StopoverInformationSheet.qml:83
 #, kde-format
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
