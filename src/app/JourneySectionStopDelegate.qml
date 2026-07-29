@@ -91,6 +91,7 @@ Item {
             font.bold: root.highlight
             font.strikeout: root.stop.disruptionEffect === KPublicTransport.Disruption.NoService
             opacity: root.stop.pickupType === KPublicTransport.PickupDropoff.NotAllowed && root.stop.dropoffType === KPublicTransport.PickupDropoff.NotAllowed ? 0.5 : 1.0
+            z: -1 // stack below adjacent labels, so the background of the below item delegate doesn't overdraw them
 
             QQC2.ItemDelegate {
                 anchors.fill: stopNameLabel
