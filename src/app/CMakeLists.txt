@@ -324,6 +324,7 @@ target_link_libraries(itinerary-app PRIVATE
     itineraryplugin
     KF6::I18nQml
     Qt::QuickControls2
+    KirigamiApp
     KMatrixplugin
 )
 if(TARGET KCalendarCoreExtras)

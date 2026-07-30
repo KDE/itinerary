@@ -71,13 +71,10 @@
 #include <KColorSchemeManager>
 #endif
 
+#include <KAboutData>
 #include <KLocalizedQmlContext>
 #include <KLocalizedString>
-
-#include <KAboutData>
-#if HAVE_KCRASH
-#include <KCrash>
-#endif
+#include <KirigamiAddons/App/KirigamiAppDefaults>
 
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
@@ -198,19 +195,14 @@ int main(int argc, char **argv)
     QGuiApplication::setDesktopFileName(u"org.kde.itinerary"_s);
 #ifdef Q_OS_ANDROID
     QGuiApplication app(argc, argv);
-    QQuickStyle::setStyle(QStringLiteral("org.kde.breeze"));
     KColorSchemeManager::instance(); // enables automatic dark mode handling
 #else
-    QIcon::setFallbackThemeName(QStringLiteral("breeze"));
     QApplication app(argc, argv); // for native file dialogs
-
-    // Default to org.kde.desktop style unless the user forces another style
-    if (qEnvironmentVariableIsEmpty("QT_QUICK_CONTROLS_STYLE")) {
-        QQuickStyle::setStyle(QStringLiteral("org.kde.desktop"));
-    }
 #endif
     QGuiApplication::setApplicationDisplayName(i18n("KDE Itinerary"));
     QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.itinerary")));
+
+    KirigamiAppDefaults::apply(&app);
 
     auto aboutData = KAboutData::applicationData(); // see https://invent.kde.org/frameworks/kcoreaddons/-/merge_requests/586
 #if !defined(Q_OS_ANDROID) || KCOREADDONS_VERSION >= QT_VERSION_CHECK(6, 28, 0)
@@ -263,9 +255,6 @@ int main(int argc, char **argv)
     parser.addPositionalArgument(QStringLiteral("file"), i18nc("@info:shell", "Files or URLs to import."));
     parser.process(app);
     aboutData.processCommandLine(&parser);
-#if HAVE_KCRASH
-    KCrash::initialize();
-#endif
 
 #if !defined(Q_OS_ANDROID) && !defined(Q_OS_HAIKU)
     KDBusService service(KDBusService::Unique);
