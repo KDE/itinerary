@@ -201,7 +201,7 @@
       <li xml:lang="eo">Subtenas rezervojn de trajno, buso kaj flugo kaj ankaŭ rezervojn de hotelo, restoracio, evento kaj luaŭto.</li>
       <li xml:lang="es">Permite el uso de reservas de trenes, autobuses y vuelos, así como de hoteles, restaurantes, eventos y alquiler de automóviles.</li>
       <li xml:lang="et">Rongide, busside ja lennukite ning hotellide, restoranide, sündmuste ja rendiautode broneeringud ja reserveeringud.</li>
-      <li xml:lang="eu">Tren-, autobus- eta hegaldi-erreserbak onartzen ditu, baita hotel-, jatetxe-, gertaera- eta alokairuko autoen erreserbak ere.</li>
+      <li xml:lang="eu">Tren-, autobus- eta hegaldi-erreserbak onartzen ditu, baita hotel-, jatetxe-, ekitaldi- eta alokairuko autoen erreserbak ere.</li>
       <li xml:lang="fi">Tukee juna-, bussi- ja lentolippujen samoin kuin hotellien, ravintoloiden, tapahtumien ja vuokra-autojen varauksia.</li>
       <li xml:lang="fr">Prise en charge des réservations de trains, de bus, de vols, d'hôtels, de restaurants, d'évènements et de véhicules.</li>
       <li xml:lang="gl">Permite billetes de tren, bus e voo, así como reservas de hotel, restaurante, eventos e alugamento de coche.</li>
@@ -481,7 +481,7 @@
       <li xml:lang="eo">Loka surtera transporta navigado inter elementoj de via itinero.</li>
       <li xml:lang="es">Exploración de transporte terrestre local entre elementos de su itinerario.</li>
       <li xml:lang="et">Kohaliku maismaatranspordi kasutamise võimalus reisi etappide vahel.</li>
-      <li xml:lang="eu">Bidaia-planeko elementuen arteko tokiko lurreko garraio bidezko nabigazioa.</li>
+      <li xml:lang="eu">Bidaia-planeko elementuen artean tokiko lurreko garraioz nabigatzea arinagoa da.</li>
       <li xml:lang="fi">Paikallinen maaliikennenavigointi matkasuunnitelmasi osien välillä.</li>
       <li xml:lang="fr">Navigation à l'aide des transports en commun régionaux entre deux éléments de votre itinéraire.</li>
       <li xml:lang="gl">Navegación de transporte terrestre local entre puntos do itinerario.</li>
@@ -549,7 +549,7 @@
       <li xml:lang="en-GB">Train station and airport per-floor maps based on OpenStreetMap data.</li>
       <li xml:lang="eo">Trajna stacidomo kaj flughaveno po-etaĝaj mapoj bazitaj sur OpenStreetMap-datenoj.</li>
       <li xml:lang="es">Planos de las plantas de estaciones de tren y de aeropuertos basados en datos de OpenStreetMap.</li>
-      <li xml:lang="eu">Tren-geltokien eta aireportuen solairuz solairuko mapak, OpenStreetMap-eko datuetan oinarrituak.</li>
+      <li xml:lang="eu">Tren-geltokietako eta aireportuetako solairuz solairuko mapak, OpenStreetMap-eko datuetan oinarrituak.</li>
       <li xml:lang="fi">OpenStreetMapin tietoon perustuvat rautatie- ja lentoasemien kerroskartat.</li>
       <li xml:lang="fr">Les cartes de gares et d'aéroports s'appuyant sur les données de OpenStreetMap.</li>
       <li xml:lang="gl">Mapas das plantas de estacións de tren e de aeroportos baseados en datos de OpenStreetMap.</li>
@@ -1268,7 +1268,7 @@
           <li xml:lang="ca-valencia">S'ha esmenat el càlcul de les hores finals dels viatges amb esdeveniments imbricats.</li>
           <li xml:lang="cs">Byly opraveny časy ukončení výpočtu pro cesty s vnořenými událostmi.</li>
           <li xml:lang="es">Se han corregido los tiempos de finalización del cálculo para viajes con eventos anidados.</li>
-          <li xml:lang="eu">Habiaratutako gertaerak dituzten bidaien amaiera-orduen kalkulua konpondu da.</li>
+          <li xml:lang="eu">Habiaratutako gertaerak dituzten bidaien amaiera-orduak kalkulatzeko arazoak konpondu dira.</li>
           <li xml:lang="fr">Correction du calcul des heures de fin des trajets avec des évènements imbriqués.</li>
           <li xml:lang="he">תוקן חישוב של זמני סיום לטיולים עם אירועים מקוננים.</li>
           <li xml:lang="ia">Fixate le horas final de computo pro viages con eventos nidificate.</li>
@@ -1607,7 +1607,7 @@
           <li xml:lang="ca-valencia">Corregix l'anàlisi de les dades de velocitat a bord de ÖBB.</li>
           <li xml:lang="cs">Oprava analýzy údajů o rychlosti ÖBB na palubě.</li>
           <li xml:lang="es">Se ha corregido el análisis de los datos de velocidad a bordo del ÖBB.</li>
-          <li xml:lang="eu">ÖBBren ontzi barruko abiadura-datuen analisia konpondu da.</li>
+          <li xml:lang="eu">ÖBBren ibilgailu barruko abiadura-datuen analisia konpondu da.</li>
           <li xml:lang="fr">Correction de l'analyse des données de vitesse à bord de l'ÖBB.</li>
           <li xml:lang="he">תוקן פיענוח של נתוני מהירות של ÖBB מכלי התחבורה פנימית.</li>
           <li xml:lang="ia">Corrige analysar de datos de velocitate de imbarcatos (onboard) de ÖBB.</li>
@@ -1765,7 +1765,7 @@
           <li xml:lang="ca-valencia">Actualitza correctament els tipus de canvi de divisa.</li>
           <li xml:lang="cs">Správná aktualizace směnných kurzů měn.</li>
           <li xml:lang="es">Actualizar correctamente los tipos de cambio de divisas.</li>
-          <li xml:lang="eu">Moneta-trukeen tasak behar bezala eguneratzen dira.</li>
+          <li xml:lang="eu">Moneta-truke tasak behar bezala eguneratzen dira.</li>
           <li xml:lang="fr">Mettre à jour correctement les taux de change.</li>
           <li xml:lang="he">שערי המטבעות מתעדכנים כראוי.</li>
           <li xml:lang="ia">Actualisar correctemente le taxas de cambio de valuta.</li>
@@ -1851,7 +1851,7 @@
           <li xml:lang="ca-valencia">Busca connexions alternatives més flexibles.</li>
           <li xml:lang="cs">Flexibilnější vyhledávání alternativních připojení.</li>
           <li xml:lang="es">Búsqueda más flexible de conexiones alternativas.</li>
-          <li xml:lang="eu">Konexio alternatiboen bilaketa malguagoa.</li>
+          <li xml:lang="eu">Ordezko loturen bilaketa malguagoa.</li>
           <li xml:lang="fr">Recherche de connexion alternative plus flexible.</li>
           <li xml:lang="he">חיפוש חיבורים חלופיים גמיש יותר.</li>
           <li xml:lang="ia">Cerca de connexion alternative plus flexibile.</li>
@@ -1911,7 +1911,7 @@
           <li xml:lang="ca-valencia">Integració d'OpenRailwayMap a la vista d'estat en viu.</li>
           <li xml:lang="cs">Integrace OpenRailwayMap do živého zobrazení stavu.</li>
           <li xml:lang="es">Integración de OpenRailwayMap en la vista de estado en vivo.</li>
-          <li xml:lang="eu">OpenRailwayMap zuzeneko egoeraren ikuspegian bateratu da.</li>
+          <li xml:lang="eu">OpenRailwayMap zuzeneko egoeraren ikuspegian integratu da.</li>
           <li xml:lang="fr">Intégration avec OpenRailwayMap dans la vue d'état en temps réel.</li>
           <li xml:lang="he">OpenRailwayMap שולב בתצוגת המצב החי.</li>
           <li xml:lang="ia">Integration de OpenRailwayMap in le vista de stato in tempore real.</li>
@@ -1957,6 +1957,7 @@
           <li xml:lang="ca-valencia">Ampliació de la cobertura de transport públic a través de Transitous en l'Índia, Israel, Corea, Kosovo, Mònaco, Macedònia, Moldàvia i Romania.</li>
           <li xml:lang="cs">Rozšíření pokrytí veřejné dopravy prostřednictvím Transitous v Indii, Izraeli, Koreji, Kosovu, Monaku, Makedonii, Moldavsku a Rumunsku.</li>
           <li xml:lang="es">Cobertura ampliada de transporte público a través de Transitous en India, Israel, Corea, Kosovo, Mónaco, Macedonia, Moldavia y Rumanía.</li>
+          <li xml:lang="eu">Garraio publikoaren estaldura handitu da Transitous bidez Indian, Israelen, Korean, Kosovon, Monakon, Mazedonian, Moldavian eta Errumanian.</li>
           <li xml:lang="fr">Extension de la couverture des transports publics grâce à Transitous en Inde, Israël, Corée, Kosovo, Monaco, Macédoine, Moldavie et Roumanie.</li>
           <li xml:lang="he">כיסוי התחבורה הציבורית הורחב דרך Transitous להודו, ישראל, קוריאה, קוסובו, מונאקו, מקדוניה מולדובה ורומניה.</li>
           <li xml:lang="ia">Expansion del copertura de transporto public via Transitous in India, Israel, Corea, Kosovo, Monaco, Macedonia, Moldavia e Romania.</li>
@@ -2022,6 +2023,7 @@
           <li xml:lang="ca-valencia">Millora de la selecció automàtica de dorsals de transport públic en travessar les fronteres de cobertura.</li>
           <li xml:lang="cs">Vylepšený automatický výběr podpůrné vrstvy veřejné dopravy při překročení hranic pokrytí.</li>
           <li xml:lang="es">Se ha mejorado la selección automática del motor de transporte público al cruzar fronteras de cobertura.</li>
+          <li xml:lang="eu">Garraio publikoaren bizkarraldekoa automatikoki hautatzea hobetu da estaldura-mugak zeharkatzean.</li>
           <li xml:lang="fr">Amélioration du moteur de sélection automatique du réseau de transport public lors du franchissement des frontières de couverture.</li>
           <li xml:lang="he">השתפרה הבחירה האוטומטית של מנגנון התחבורה הציבורית בעת מעבר גבולות כיסוי.</li>
           <li xml:lang="ia">Selection meliorate del backend de transporto public automatic quando on  transversa frontieras de copertura.</li>
@@ -2041,7 +2043,7 @@
           <li xml:lang="ca-valencia">S'ha afegit la implementació de l'API a bord d'Ouigo ES.</li>
           <li xml:lang="cs">Přidána podpora API pro Ouigo ES.</li>
           <li xml:lang="es">Se ha añadido compatibilidad con la API integrada para Ouigo ES.</li>
-          <li xml:lang="eu">Ouigo ES-ren bidaiako APIaren euskarria gehitu da.</li>
+          <li xml:lang="eu">Ouigo ESeren ibilgailu barruko APIaren euskarria gehitu da.</li>
           <li xml:lang="fr">Ajout de la prise en charge de l'API embarqué pour Ouigo ES.</li>
           <li xml:lang="he">נוספה תמיכה ב־API בזמן נסיעה עבור Ouigo ES.</li>
           <li xml:lang="ia">Addition de supporto pro le API de bordo pro Ouigo ES.</li>
@@ -2080,6 +2082,7 @@
           <li xml:lang="ca-valencia">S'ha corregit la visualització de la direcció del tren a la pàgina de disposició dels vehicles.</li>
           <li xml:lang="cs">Opraveno zobrazení směru jízdy vlaku na stránce s řazením vagónů.</li>
           <li xml:lang="es">Se ha corregido la visualización de la dirección del tren en la página de diseño del vehículo.</li>
+          <li xml:lang="eu">Ibilgailuaren antolaera-orrian trenaren noranzkoa bistaratzea konpondu da.</li>
           <li xml:lang="fr">Correction de l'affichage de la direction du train sur la page de la disposition du véhicule.</li>
           <li xml:lang="he">תוקנה תצוגת כיוון הרכבת בעמוד פריסת כלי התחבורה.</li>
           <li xml:lang="it">Corretta la visualizzazione della direzione del treno nella pagina del disposizione del veicolo.</li>
@@ -2123,6 +2126,7 @@
           <li xml:lang="ca-valencia">S'ha millorat la geocodificació a l'editor d'adreces.</li>
           <li xml:lang="cs">Vylepšené geokódování v editoru adres.</li>
           <li xml:lang="es">Geocodificación mejorada en el editor de direcciones.</li>
+          <li xml:lang="eu">Helbide-editoreko geokodetzea hobetu da.</li>
           <li xml:lang="fr">Amélioration du géocodage dans l'éditeur d'adresses.</li>
           <li xml:lang="he">קידוד גאוגרפי משופר בעורך הכתובות.</li>
           <li xml:lang="it">Geocodifica migliorata nell'editor degli indirizzi.</li>
@@ -2141,6 +2145,7 @@
           <li xml:lang="ca-valencia">Corregix que els grups de viatges es dividisquen en actualitzar les reserves de tiquets múltiples.</li>
           <li xml:lang="cs">Opraveno rozdělení skupin cestujících při aktualizaci rezervací více jízdenek.</li>
           <li xml:lang="es">Se ha corregido el problema de que los grupos de viajes se dividen al actualizar reservas de billetes múltiples.</li>
+          <li xml:lang="eu">Hainbat txarteleko erreserbak eguneratzean bidaia-taldeak zatitzea konpondu da.</li>
           <li xml:lang="fr">Correction de la séparation des groupes de voyage lors de la mise à jour des réservations multi-billets.</li>
           <li xml:lang="he">תוקנה בעיה שקבוצות טיולים פוצלו בעת עדכון הזמנה רבת כרטיסים.</li>
           <li xml:lang="it">Risolto il problema con la suddivisione dei gruppi di viaggio durante l'aggiornamento delle prenotazioni di biglietti multipli.</li>
@@ -2159,6 +2164,7 @@
           <li xml:lang="ca-valencia">Corregix la visualització dels noms de les ciutats en els resultats de la busca de parades de Transitous.</li>
           <li xml:lang="cs">Oprava zobrazení názvů měst ve výsledcích vyhledávání zastávek Transitous.</li>
           <li xml:lang="es">Se ha corregido la visualización de los nombres de las ciudades en los resultados de búsqueda de paradas de Transitous.</li>
+          <li xml:lang="eu">Transitous-eko geralekuen bilaketa-emaitzetan hiri-izenak bistaratzea konpondu da.</li>
           <li xml:lang="fr">Correction de l'affichage des noms de villes dans les résultats de recherche d'arrêts de Transitous.</li>
           <li xml:lang="he">תוקנה בעיה שהצגת שמות הערים ב־Transitous עצרה את תוצאות החיפוש.</li>
           <li xml:lang="it">Corretta la visualizzazione dei nomi delle città nei risultati di ricerca delle fermate transitorie.</li>
@@ -2177,7 +2183,7 @@
           <li xml:lang="ca-valencia">Corregix la implementació de l'API a bord de ÖBB.</li>
           <li xml:lang="cs">Oprava podpory palubního API ÖBB.</li>
           <li xml:lang="es">Se ha corregido la compatibilidad de la API de a bordo de ÖBB.</li>
-          <li xml:lang="eu">ÖBBren bidaiako APIaren euskarria konpondu da.</li>
+          <li xml:lang="eu">ÖBBren ibilgailu barruko APIaren euskarria konpondu da.</li>
           <li xml:lang="fr">Correction de la prise en charge de l'API embarquée de ÖBB.</li>
           <li xml:lang="he">תוקנה התמיכה ב־API של ÖBB מתוך כלי התחבורה.</li>
           <li xml:lang="it">Correzione del supporto API di imbarco ÖBB.</li>
@@ -2202,6 +2208,7 @@
           <li xml:lang="ca-valencia">Disposició nova de la línia de temps i vista nova de resultats de la busca de transport públic.</li>
           <li xml:lang="cs">Nové rozložení časové osy a nový vzhled výsledků vyhledávání veřejné dopravy.</li>
           <li xml:lang="es">Nuevo diseño de línea de tiempo y nueva vista de resultados de búsqueda de transporte público.</li>
+          <li xml:lang="eu">Denbora-lerroaren antolaera berria eta garraio publikoaren bilaketa-emaitzen ikuspegi berria.</li>
           <li xml:lang="fr">Nouvelle disposition de la chronologie et nouvelle vue des résultats de recherche de transports publics.</li>
           <li xml:lang="he">פריסת ציר זמן חדש ותצוגת תוצאות חיפוש תחבורה ציבורית חדשה.</li>
           <li xml:lang="it">Nuova disposizione della linea temporale e nuova visualizzazione dei risultati della ricerca sui trasporti pubblici.</li>
@@ -2220,6 +2227,7 @@
           <li xml:lang="ca-valencia">Pàgina nova «Les meues dades».</li>
           <li xml:lang="cs">Nová stránka „Moje data“.</li>
           <li xml:lang="es">Nueva página «Mis datos».</li>
+          <li xml:lang="eu">"Nire datuak" orri berria.</li>
           <li xml:lang="fr">Nouvelle page « Mes données ».</li>
           <li xml:lang="he">עמוד „הנתונים שלי” חדש.</li>
           <li xml:lang="ia">Nove pagina de "Mi Datos".</li>
@@ -2239,6 +2247,7 @@
           <li xml:lang="ca-valencia">Implementa unitats imperials de distància i temperatura.</li>
           <li xml:lang="cs">Podpora imperiálních jednotek vzdálenosti a teploty.</li>
           <li xml:lang="es">Compatibilidad con unidades de distancia y temperatura del sistema imperial.</li>
+          <li xml:lang="eu">Distantzia- eta tenperatura-unitate inperialak onartzen dira.</li>
           <li xml:lang="fr">Prise en charge des unités de distance et de température impériales.</li>
           <li xml:lang="he">תמיכה ביחידות במרחק וטמפרטורה איפריאליות.</li>
           <li xml:lang="ia">Supporta unitates imperialde distantia e temperatura.</li>
@@ -2302,6 +2311,7 @@
           <li xml:lang="ca-valencia">No oculta els elements essencials del mapa de grup de viatges en nivells de zoom baixos.</li>
           <li xml:lang="cs">Důležité prvky na mapě skupiny výletů se při nízkém přiblížení neskrývají.</li>
           <li xml:lang="es">No ocultar elementos esenciales del mapa del grupo de viaje en bajos niveles de ampliación.</li>
+          <li xml:lang="eu">Bidaia-taldearen mapako funtsezko elementuak ez dira ezkutatzen zoom maila txikietan.</li>
           <li xml:lang="fr">Aucun masque pour les éléments essentiels de la carte du groupe de voyage à des niveaux de zoom faibles.</li>
           <li xml:lang="he">לא להסתיר רכיבי מפה לטיולים קבוצתיים ברמות תקריב מרוחקות.</li>
           <li xml:lang="ia">Non cela le elementos essential del mappa de gruppo de viage  a nivellos de zoom basse.</li>
@@ -2321,6 +2331,7 @@
           <li xml:lang="ca-valencia">Corregix la corrupció de dades quan les actualitzacions de dades en viu canviarien el tipus d'una reserva.</li>
           <li xml:lang="cs">Oprava poškození dat, kdy živé aktualizace dat měnily typ rezervace.</li>
           <li xml:lang="es">Se ha corregido el deterioro de datos cuando las actualizaciones de datos en vivo cambiaban el tipo de reserva.</li>
+          <li xml:lang="eu">Zuzeneko datuen eguneratze batek erreserba mota aldatuko lukeenean gertatzen zen datu-hondatzea konpondu da.</li>
           <li xml:lang="fr">Correction de la corruption des données lorsque les mises à jour des données en temps réel changeraient le type d'une réservation.</li>
           <li xml:lang="he">תוקן פגם בנתונים כשעדכוני נתונים בזמן אמת משנים את סוג ההזמנה.</li>
           <li xml:lang="it">Corregge il danneggiamento dei dati quando gli aggiornamenti dei dati in tempo reale cambiano il tipo di prenotazione.</li>
@@ -2339,6 +2350,7 @@
           <li xml:lang="ca-valencia">Desactiva la importació en línia de DB que ja no es troba disponible.</li>
           <li xml:lang="cs">Zakázán již nedostupný online import databáze.</li>
           <li xml:lang="es">Desactivar la importación en línea de DB, que ya no está disponible.</li>
+          <li xml:lang="eu">Jada erabilgarri ez dagoen DBaren lerroko inportazioa desgaitu da.</li>
           <li xml:lang="fr">Désactiver l'importation en ligne de bases de données devenues indisponibles.</li>
           <li xml:lang="he">השבתת מצב שייבוא מסד הנתונים המקוון לא זמין עוד.</li>
           <li xml:lang="ia">Disactiva le importation in linea (online) de base de datos non plus disponibile.</li>
@@ -2364,6 +2376,7 @@
           <li xml:lang="ca-valencia">Extractors nous i millorats de documents de viatge per a American Airlines, Bilkom, Booking.com, CitizenM, Deutsche Bahn, Eurostar, Flixbus, KD, Koleo, Lufthansa, PKP, Polregio, SBB, Southwest, Universe.</li>
           <li xml:lang="cs">Nové a vylepšené nástroje pro extrahování cestovních dokladů pro American Airlines, Bilkom, Booking.com, CitizenM, Deutsche Bahn, Eurostar, Flixbus, KD, Koleo, Lufthansa, PKP, Polregio, SBB, Southwest, Universe.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos y mejorados para American Airlines, Bilkom, Booking.com, CitizenM, Deutsche Bahn, Eurostar, Flixbus, KD, Koleo, Lufthansa, PKP, Polregio, SBB, Southwest y Universe.</li>
+          <li xml:lang="eu">Bidaia-dokumentuen erauzle berri eta hobetuak: American Airlines, Bilkom, Booking.com, CitizenM, Deutsche Bahn, Eurostar, Flixbus, KD, Koleo, Lufthansa, PKP, Polregio, SBB, Southwest, Universe.</li>
           <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour American Airlines, Bilkom, Booking.com, CitizenM, Deutsche Bahn, Eurostar, Flixbus, KD, Koleo, Lufthansa, PKP, Polregio, SBB, Southwest, Universe.</li>
           <li xml:lang="he">מחלצי מסמכים חדשים ומשופרים עבור American Airlines,‏ Bilkom,‏ Booking.com,‏ CitizenM,‏ Deutsche Bahn,‏ Eurostar,‏ Flixbus,‏ KD,‏ Koleo,‏ Lufthansa,‏ PKP,‏ Polregio,‏ SBB,‏ Southwest,‏ Universe.</li>
           <li xml:lang="it">Estrattori di documenti di viaggio nuovi e migliorati per American Airlines, Bilkom, Booking.com, CitizenM, Deutsche Bahn, Eurostar, Flixbus, KD, Koleo, Lufthansa, PKP, Polregio, SBB, Southwest, Universe.</li>
@@ -2382,6 +2395,7 @@
           <li xml:lang="ca-valencia">Corregix l'accés al transport públic per a Deutsche Bahn (Alemanya), Digitransit (Finlàndia), Entur (Noruega) i Rolph (Alemanya).</li>
           <li xml:lang="cs">Opraven přístup k veřejné dopravě pro Deutsche Bahn (Německo), Digitransit (Finsko), Entur (Norsko) a Rolph (Německo).</li>
           <li xml:lang="es">Se ha corregido el acceso al transporte público para Deutsche Bahn (Alemania), Digitransit (Finlandia), Entur (Noruega) y Rolph (Alemania).</li>
+          <li xml:lang="eu">Deutsche Bahn (Alemania), Digitransit (Finlandia), Entur (Norvegia) eta Rolph (Alemania) bidezko garraio publikorako sarbidea konpondu da.</li>
           <li xml:lang="fr">Correction de l'accès aux transports publics pour Deutsche Bahn (Allemagne), Digitransit (Finlande), Entur (Norvège) et Rolph (Allemagne).</li>
           <li xml:lang="he">תוקנה גישת תחבורה ציבורית ל־Deutsche Bahn (גרמניה), Digitransit (פינחנד), Entur (נורבגיה) ו־Rolph (גרמניה).</li>
           <li xml:lang="it">Corregge l'accesso ai trasporti pubblici per Deutsche Bahn (Germania), Digitransit (Finlandia), Entur (Norvegia) e Rolph (Germania).</li>
@@ -2420,6 +2434,7 @@
           <li xml:lang="ca-valencia">Corregix la importació de passes o altres coses sense un grup de viatge adjunt.</li>
           <li xml:lang="cs">Opraveno importování průkazů nebo jiných věcí bez připojené skupiny výletů.</li>
           <li xml:lang="es">Se ha corregido la importación de pases y otras cosas sin un grupo de viaje adjunto.</li>
+          <li xml:lang="eu">Bidaia-talderik erantsita ez duten txartelak edo bestelako elementuak inportatzea konpondu da.</li>
           <li xml:lang="fr">Correction de l'importation des abonnements ou d'autres éléments sans groupe de voyage associé.</li>
           <li xml:lang="he">תוקן ייבוא אישורי מעבר או דברים אחרים שלא מוצרפת להם קבוצת טיול.</li>
           <li xml:lang="it">Risolto il problema con l'importazione di pass o altre cose senza un gruppo di viaggio allegato.</li>
@@ -2438,6 +2453,7 @@
           <li xml:lang="ca-valencia">Corregix la supressió de passes «pkpass» genèrics.</li>
           <li xml:lang="cs">Oprava mazání obecných průkazů pkpass.</li>
           <li xml:lang="es">Se ha corregido el borrado de pases pkpass genéricos.</li>
+          <li xml:lang="eu">pkpass txartel generikoak ezabatzea konpondu da.</li>
           <li xml:lang="fr">Correction de la suppression des abonnements « pkpass » génériques.</li>
           <li xml:lang="he">תוקנה מחיקת אישורי מעבר pkpass כלליים.</li>
           <li xml:lang="it">Corretta l'eliminazione dei pass pkpass generici.</li>
@@ -2481,6 +2497,7 @@
           <li xml:lang="ca-valencia">Corregix l'addició d'elements d'informació prompte d'estiu en el mode de grup de viatge individual.</li>
           <li xml:lang="cs">Oprava přidávání informací o letním čase v režimu jedné skupiny cest.</li>
           <li xml:lang="es">Se ha corregido la adición de elementos de información del horario de verano en el modo de grupo de viaje único.</li>
+          <li xml:lang="eu">Bidaia-talde bakarreko moduan udako orduari buruzko informazio-elementuak gehitzea konpondu da.</li>
           <li xml:lang="fr">Correction de l'ajout des éléments d'information sur l'heure d'été en mode de groupe de voyage unique.</li>
           <li xml:lang="he">תוקנה הוספת רכיבי פרטי שעון קיץ במצב קבוצת טיול בודדים.</li>
           <li xml:lang="it">Risolto il problema con l'aggiunta di elementi informativi sull'ora legale nella modalità gruppo di viaggio singolo.</li>
@@ -2499,6 +2516,7 @@
           <li xml:lang="ca-valencia">Ignora els elements cancel·lats en determinar la llargària de la previsió meteorològica.</li>
           <li xml:lang="cs">Při určování délky předpovědi počasí ignorovány zrušené prvky.</li>
           <li xml:lang="es">Ignorar los elementos cancelados cuando se determina el tamaño de la previsión meteorológica.</li>
+          <li xml:lang="eu">Bertan behera utzitako elementuak ez dira kontuan hartzen eguraldi-iragarpenaren iraupena zehaztean.</li>
           <li xml:lang="fr">Ignorer les éléments annulés lors de la détermination de la durée des prévisions météorologiques.</li>
           <li xml:lang="he">התעלמות מרכיבים שבוטלו בעת קביעת משך תשקיף מזג האוויר.</li>
           <li xml:lang="it">Ignora gli elementi annullati quando determini la durata delle previsioni del tempo.</li>
@@ -2581,6 +2599,7 @@
           <li xml:lang="ca-valencia">Vista nova del mapa de viatge.</li>
           <li xml:lang="cs">Nové zobrazení mapy cesty.</li>
           <li xml:lang="es">Nueva vista de mapa del viaje.</li>
+          <li xml:lang="eu">Bidaien mapa-ikuspegi berria.</li>
           <li xml:lang="fr">Nouvelle vue pour la carte du voyage.</li>
           <li xml:lang="he">תצוגת מפת נסיעה חדשה.</li>
           <li xml:lang="it">Nuova visualizzazione della mappa del viaggio.</li>
@@ -2599,6 +2618,7 @@
           <li xml:lang="ca-valencia">Estadístiques noves per viatge.</li>
           <li xml:lang="cs">Nové statistiky za jednotlivé cesty.</li>
           <li xml:lang="es">Nuevas estadísticas por viaje.</li>
+          <li xml:lang="eu">Bidaia bakoitzeko estatistika berriak.</li>
           <li xml:lang="fr">Nouvelles statistiques par trajet.</li>
           <li xml:lang="he">סטטיסטיקה חדשה לפי נסיעה.</li>
           <li xml:lang="it">Nuove statistiche per viaggio.</li>
@@ -2636,6 +2656,7 @@
           <li xml:lang="ca-valencia">Millora de la busca d'ubicació per a les busques de transport públic.</li>
           <li xml:lang="cs">Vylepšené vyhledávání lokalit veřejné dopravy.</li>
           <li xml:lang="es">Se ha mejorado la búsqueda de ubicaciones en las búsquedas de transporte público.</li>
+          <li xml:lang="eu">Garraio publikoaren bilaketetarako kokapen-bilaketa hobetu da.</li>
           <li xml:lang="fr">Amélioration de la recherche de la localisation pour les recherches de transports publics.</li>
           <li xml:lang="he">איתור מקום לחיפושי תחבורה ציבורית השתפר.</li>
           <li xml:lang="it">Ricerca della posizione migliorata per le ricerche sui trasporti pubblici.</li>
@@ -2679,7 +2700,7 @@
           <li xml:lang="ca-valencia">S'ha afegit la implementació per a l'API a bord de NS.</li>
           <li xml:lang="cs">Přidána podpora pro integrované API NS.</li>
           <li xml:lang="es">Se ha añadido compatibilidad con la API de a bordo de NS.</li>
-          <li xml:lang="eu">NSren bidaiako APIaren euskarria gehitu da.</li>
+          <li xml:lang="eu">NSren ibilgailu barruko APIaren euskarria gehitu da.</li>
           <li xml:lang="fr">Ajout de la prise en charge pour l'API intégrée « NS ».</li>
           <li xml:lang="he">נוספה תמיכה ב־API של NS מתוך כלי התחבורה.</li>
           <li xml:lang="it">Aggiunto il supporto per l'API di imbarco NS.</li>
@@ -2698,6 +2719,7 @@
           <li xml:lang="ca-valencia">S'ha corregit la visualització de viatges interromputs/cancel·lats.</li>
           <li xml:lang="cs">Opraveno zobrazení přerušených/zrušených cest.</li>
           <li xml:lang="es">Se ha corregido la visualización de recorridos interrumpidos o cancelados.</li>
+          <li xml:lang="eu">Etenak dituzten edo bertan behera utzitako bidaiak bistaratzea konpondu da.</li>
           <li xml:lang="fr">Correction de l'affichage des trajets interrompus / annulés.</li>
           <li xml:lang="he">תוקנה תצוגת מסעות עם הפרעות/ביטולים.</li>
           <li xml:lang="it">Corretta la visualizzazione delle corse interrotte/annullate.</li>
@@ -2760,6 +2782,7 @@
           <li xml:lang="ca-valencia">Amplia la cobertura del transport públic mitjançant Transitous.</li>
           <li xml:lang="cs">Rozšířené pokrytí veřejné dopravy prostřednictvím Transitous.</li>
           <li xml:lang="es">Se ha extendido la cobertura de transporte público mediante Transitous.</li>
+          <li xml:lang="eu">Garraio publikoaren estaldura handitu da Transitous bidez.</li>
           <li xml:lang="fr">Couverture étendue des transports publics grâce à Transitous.</li>
           <li xml:lang="he">כיסוי תחבורה ציבורית נרחב דרך Transitous.</li>
           <li xml:lang="it">Copertura estesa del trasporto pubblico tramite Transitous.</li>
@@ -2778,6 +2801,7 @@
           <li xml:lang="ca-valencia">Corregix la importació des d'URL massa llargs.</li>
           <li xml:lang="cs">Oprava importu z příliš dlouhých URL adres.</li>
           <li xml:lang="es">Se ha corregido la importación desde URL demasiado largas.</li>
+          <li xml:lang="eu">URL luzeegietatik inportatzea konpondu da.</li>
           <li xml:lang="fr">Correction de l'importation à partir d'URL excessivement longues.</li>
           <li xml:lang="he">תוקן ייבוא מכתובות ארוכות במיוחד.</li>
           <li xml:lang="it">Corretta l'importazione da URL troppo lunghi.</li>
@@ -2821,6 +2845,7 @@
           <li xml:lang="ca-valencia">Corregix l'accés a les dades de transport públic de Zuric, Suïssa.</li>
           <li xml:lang="cs">Opraven přístup k údajům o veřejné dopravě v Curychu ve Švýcarsku.</li>
           <li xml:lang="es">Se ha corregido el acceso a datos de transporte público en Zúrich, Suiza.</li>
+          <li xml:lang="eu">Zuricheko (Suitza) garraio publikoaren datuetarako sarbidea konpondu da.</li>
           <li xml:lang="fr">Correction de l'accès aux données des transports publics à Zurich, en Suisse.</li>
           <li xml:lang="he">תוקנה גישה לנתוני תחבורה ציבורית בציריך, שווייץ.</li>
           <li xml:lang="it">Risolto il problema con l'accesso ai dati sui trasporti pubblici a Zurigo, Svizzera.</li>
@@ -2902,6 +2927,7 @@
           <li xml:lang="ca-valencia">Visualització nova de la informació de la reserva de seients en la línia de temps.</li>
           <li xml:lang="cs">Nové zobrazení informací o rezervaci sedadel v časové ose.</li>
           <li xml:lang="es">Nueva visualización de la información de reserva de asientos en la línea cronológica.</li>
+          <li xml:lang="eu">Denbora-lerroan eserleku-erreserbei buruzko informazioaren bistaratze berria.</li>
           <li xml:lang="fr">Nouvel affichage des informations de réservation de siège dans la chronologie.</li>
           <li xml:lang="he">תצוגה חדשה לפרטי הזמנת מושבים בציר הזמן.</li>
           <li xml:lang="it">Nuova visualizzazione delle informazioni sulla prenotazione dei posti nella linea temporale.</li>
@@ -2939,6 +2965,7 @@
           <li xml:lang="ca-valencia">Permet crear esdeveniments o reserves d'hotel a partir d'URL d'elements OSM.</li>
           <li xml:lang="cs">Možnost vytvářet události nebo hotelové rezervace z URL adres OSM prvků.</li>
           <li xml:lang="es">Permitir la creación de eventos o de reservas de hotel a partir de URL de elementos de OSM.</li>
+          <li xml:lang="eu">OSM elementuen URLetatik ekitaldiak edo hotel-erreserbak sor daitezke.</li>
           <li xml:lang="fr">Autorisation de la création des évènements ou des réservations d'hôtel à partir des URL des éléments de OSM.</li>
           <li xml:lang="he">אפשרות ליצור אירועים או הזמנות למלונות מכתובות של רכיבי OSM.</li>
           <li xml:lang="it">Consenti di creare eventi o prenotazioni di hotel dagli URL degli elementi OSM.</li>
@@ -2957,6 +2984,7 @@
           <li xml:lang="ca-valencia">Permet mostrar contingut addicional de Wikimedia en línia al mapa d'interior.</li>
           <li xml:lang="cs">Povoleno zobrazení dalšího online obsahu Wikimedia na mapě interiéru.</li>
           <li xml:lang="es">Permitir la visualización de contenido en línea adicional de Wikimedia en los mapas de interiores.</li>
+          <li xml:lang="eu">Barrualdeko mapan Wikimediako lerroko eduki gehigarria erakuts daiteke.</li>
           <li xml:lang="fr">Autorisation de l'affichage de contenu supplémentaire de Wikimedia en ligne dans la carte intérieure.</li>
           <li xml:lang="he">אפשר להציג פרטים נוספים מתוכן מקוון מוויקימדיה במפת הניווט בתוך מבנים.</li>
           <li xml:lang="it">Consente di mostrare ulteriori contenuti online di Wikimedia nella mappa degli interni.</li>
@@ -2975,6 +3003,7 @@
           <li xml:lang="ca-valencia">Ara els viatges es poden canviar de nom.</li>
           <li xml:lang="cs">Výlety lze nyní přejmenovat.</li>
           <li xml:lang="es">Ahora se puede cambiar el nombre de los viajes.</li>
+          <li xml:lang="eu">Orain bidaiak berrizenda daitezke.</li>
           <li xml:lang="fr">Les voyages peuvent maintenant être renommés.</li>
           <li xml:lang="he">מעתה ניתן לשנות שמות של נסיעות.</li>
           <li xml:lang="it">I viaggi ora possono essere rinominati.</li>
@@ -3056,6 +3085,7 @@
           <li xml:lang="ca-valencia">Corregix la renderització dels passes d'Apple Wallet sense codi de barres.</li>
           <li xml:lang="cs">Oprava vykreslování Apple Wallet pass bez čárového kódu.</li>
           <li xml:lang="es">Se ha corregido la visualización de pases de Apple Wallet sin un código de barras.</li>
+          <li xml:lang="eu">Barra-koderik gabeko Apple Wallet txartelak bistaratzeko arazoak konpondu dira.</li>
           <li xml:lang="fr">Correction de l'affichage des abonnements de Apple Wallet sans code-barres.</li>
           <li xml:lang="he">תוקנו תיצוגים של אישורי מעבר ללא ברקוד ב־Apple Wallet.</li>
           <li xml:lang="it">Risolto il problema con il rendering dei pass Apple Wallet senza codice a barre.</li>
@@ -3099,6 +3129,7 @@
           <li xml:lang="ca-valencia">S'ha corregit l'emmagatzematge de l'hora d'arribada en editar una reserva de transbordador.</li>
           <li xml:lang="cs">Opraveno ukládání času příjezdu při úpravách rezervace trajektu.</li>
           <li xml:lang="es">Se ha corregido el almacenamiento de la hora de llegada cuando se edita una reserva de ferry.</li>
+          <li xml:lang="eu">Ferry-erreserba bat editatzean iritsiera-ordua gordetzea konpondu da.</li>
           <li xml:lang="fr">Correction de l'enregistrement de l'heure d'arrivée lors de la modification d'une réservation de traversiers.</li>
           <li xml:lang="he">תוקן אחסון שעת ההגעה בעת עריכת הזמנה למעבורת.</li>
           <li xml:lang="it">Risolto il problema con la memorizzazione dell'orario di arrivo durante la modifica di una prenotazione del traghetto.</li>
@@ -3136,6 +3167,7 @@
           <li xml:lang="ca-valencia">Millora de l'agrupació automàtica de viatges.</li>
           <li xml:lang="cs">Vylepšené automatické seskupování výletů.</li>
           <li xml:lang="es">Se ha mejorado el agrupamiento de viajes automático.</li>
+          <li xml:lang="eu">Bidaiak automatikoki taldekatzea hobetu da.</li>
           <li xml:lang="fr">Amélioration du regroupement automatique des trajets.</li>
           <li xml:lang="he">קיבוץ נסיעות אוטומטית השתפר.</li>
           <li xml:lang="it">Raggruppamento automatico dei viaggi migliorato.</li>
@@ -3154,6 +3186,7 @@
           <li xml:lang="ca-valencia">S'han esmenat els emoji que no apareixen en els Flatpak.</li>
           <li xml:lang="cs">Opraveny emotikony, které se nezobrazovaly ve Flatpaku.</li>
           <li xml:lang="es">Se ha solucionado la visualización de emojis en Flatpaks.</li>
+          <li xml:lang="eu">Flatpak-etan emojiak ez erakusteko arazoak konpondu dira.</li>
           <li xml:lang="fr">Correction des émoticônes ne s'affichant pas dans les Flatpak.</li>
           <li xml:lang="he">תוקנה בעיה שאמוג׳ים לא הופיע כשהיישום הופעל כ־Flatpak.</li>
           <li xml:lang="it">Corregge le emoji che non venivano visualizzati in Flatpaks.</li>
@@ -3178,7 +3211,7 @@
           <li xml:lang="ca-valencia">Extractors nous o millorats de documents de viatge per a CFR, Eurostar, Indique, IRCTC, Lufthansa, Motel One, SNCB, SNCF, Ticketportal, Trenitalia i VDV eTickets. S'ha afegit la implementació de les dades de transport públic de Serbijavoz i Transitous.</li>
           <li xml:lang="cs">Nové nebo vylepšené extraktory cestovních dokladů pro CFR, Eurostar, Indico, IRCTC, Lufthansa, Motel One, SNCB, SNCF, Ticketportal, Trenitalia a VDV eTickets. Přidána podpora pro data veřejné dopravy od Serbijavoz a Transitous.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para CFR, Eurostar, Indico, IRCTC, Lufthansa, Motel One, SNCB, SNCF, Ticketportal, billetes electrónicos de Trenitalia y VDV. Se ha añadido compatibilidad con los datos de transporte público de Serbijavoz y Transitous.</li>
-          <li xml:lang="eu">Bidaia-dokumentuen erauzle berriak edo hobetuak: CFR, Eurostar, Indico, IRCTC, Lufthansa, Motel One, SNCB, SNCF, Ticketportal, Trenitalia and VDV eTickets. Added support for public transport data from Serbijavoz eta Transitous.</li>
+          <li xml:lang="eu">CFR, Eurostar, Indico, IRCTC, Lufthansa, Motel One, SNCB, SNCF, Ticketportal, Trenitalia eta VDV eTickets-erako bidaia-dokumentuen erauzle berriak edo hobetuak. Serbijavoz eta Transitous zerbitzuetako garraio publikoko datuen euskarria gehitu da.</li>
           <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour CFR, Eurostar, Indico, IRCTC, Lufthansa, Motel One, SNCB, SNCF, Ticketportal, Trenitalia et VDV eTickets. Ajout de la prise en charge pour les données de transports publics de Serbijavoz et Transitous.</li>
           <li xml:lang="he">מחלצי מסמכים חדשים או משורפים עבור CFR,‏ Eurostar,‏ Indico,‏ IRCTC,‏ Lufthansa,‏ Motel One,‏ SNCB,‏ SNCF,‏ Ticketportal,‏ Trenitalia ו־VDV eTickets. נוספה תמיכה בנתוני תחבורה ציבורית מ־Serbijavoz ומ־Transitous.</li>
           <li xml:lang="it">Estrattori di documenti di viaggio nuovi o migliorati per CFR, Eurostar, Indico, IRCTC, Lufthansa, Motel One, SNCB, SNCF, Ticketportal, Trenitalia e VDV eTickets. Aggiunto supporto per i dati del trasporto pubblico da Serbijavoz e Transitous.</li>
@@ -3197,6 +3230,7 @@
           <li xml:lang="ca-valencia">Mostra informació més detallada sobre les característiques del vagó de tren o del vehicle.</li>
           <li xml:lang="cs">Zobrazení podrobnější informace o vlastnostech vlakového vozu nebo vozidla.</li>
           <li xml:lang="es">Mostrar información más detallada sobre funcionalidades de vehículos o coches de tren.</li>
+          <li xml:lang="eu">Tren-bagoien edo ibilgailuen ezaugarriei buruzko informazio xehatuagoa erakusten da.</li>
           <li xml:lang="fr">Affichage d'informations plus détaillées sur les caractéristiques des wagons ou des véhicules.</li>
           <li xml:lang="he">מוצג פירוט נרחב יותר על קרון הרכבת או תכונה בכלי התחבורה.</li>
           <li xml:lang="it">Mostra informazioni più dettagliate sulle caratteristiche del vagone o del veicolo.</li>
@@ -3215,6 +3249,7 @@
           <li xml:lang="ca-valencia">Mostra la informació d'ocupació per cotxe quan estiga disponible.</li>
           <li xml:lang="cs">Zobrazení informace o obsazenosti jednotlivých autobusů, jsou-li k dispozici.</li>
           <li xml:lang="es">Mostrar información sobre ocupación por coche cuando esté disponible.</li>
+          <li xml:lang="eu">Eskuragarri dagoenean, bagoi bakoitzaren okupazioari buruzko informazioa erakusten da.</li>
           <li xml:lang="fr">Afficher les informations d'occupation par voiture lorsque disponible.</li>
           <li xml:lang="he">הצגת פרטי תפוסה לפי קרון כשניתן.</li>
           <li xml:lang="it">Mostra le informazioni sull'occupazione dei pullman, quando disponibili.</li>
@@ -3233,6 +3268,7 @@
           <li xml:lang="ca-valencia">Permet afegir manualment codis de barres de tiquets a les reserves existents.</li>
           <li xml:lang="cs">Umožňěno ručně přidávat čárové kódy vstupenek k existujícím rezervacím.</li>
           <li xml:lang="es">Permitir que se puedan añadir códigos de barras de billetes a las reservas existentes.</li>
+          <li xml:lang="eu">Lehendik dauden erreserbetan txartelen barra-kodeak eskuz gehi daitezke.</li>
           <li xml:lang="fr">Autorisation pour ajouter manuellement des codes barres de billets aux réservations existantes.</li>
           <li xml:lang="he">אפשרות להוסיף ברקודים של כרטיסים ידנית להזמנות קיימות.</li>
           <li xml:lang="it">Consente di aggiungere manualmente i codici a barre dei biglietti alle prenotazioni esistenti.</li>
@@ -3251,6 +3287,7 @@
           <li xml:lang="ca-valencia">Mostra la informació de transició DST en la línia de temps.</li>
           <li xml:lang="cs">Zobrazit informace o přechodu na letní čas v časové ose.</li>
           <li xml:lang="es">Mostrar información de transición DST en la línea de tiempo.</li>
+          <li xml:lang="eu">Udako eta neguko ordu-aldaketei buruzko informazioa denbora-lerroan erakusten da.</li>
           <li xml:lang="fr">Afficher les informations sur le passage à l'heure d'été dans la chronologie.</li>
           <li xml:lang="he">הצגת פרטי העברת DST בציר הזמן.</li>
           <li xml:lang="it">Mostra le informazioni sulla transizione dell'ora legale nella linea temporale.</li>
@@ -3294,6 +3331,7 @@
           <li xml:lang="ca-valencia">Corregix la visualització de les interrupcions d'eixides de transport públic.</li>
           <li xml:lang="cs">Oprava zobrazení narušení odjezdů veřejné dopravy.</li>
           <li xml:lang="es">Se ha corregido la visualización de alteraciones de salidas del transporte público.</li>
+          <li xml:lang="eu">Garraio publikoko irteeretako gorabeherak bistaratzeko arazoa konpondu da.</li>
           <li xml:lang="fr">Correction de l'affichage des perturbations des départs des transports en commun.</li>
           <li xml:lang="he">תוקנה הצגת הפרעות ליציאה מהתחנה של תחבורה ציבורית.</li>
           <li xml:lang="it">Corretta la visualizzazione delle interruzioni delle partenze dei trasporti pubblici.</li>
@@ -3312,7 +3350,7 @@
           <li xml:lang="ca-valencia">Corregix els problemes de renderització dels passes d'Apple Wallet.</li>
           <li xml:lang="cs">Oprava problémů se zobrazením Apple Wallet pass.</li>
           <li xml:lang="es">Se han solucionado los problemas de visualización de pases de Apple Wallet.</li>
-          <li xml:lang="eu">Apple Wallet txartelak errendatzeko arazoak konpondu dira.</li>
+          <li xml:lang="eu">Apple Wallet txartelak bistaratzeko arazoak konpondu dira.</li>
           <li xml:lang="fr">Correction des problèmes d'affichage des abonnements sous Apple Wallet.</li>
           <li xml:lang="he">תוקנו בעיות תיצוג של אישורי מעבר של Apple Wallet.</li>
           <li xml:lang="it">Risolve i problemi di rendering dei pass di Apple Wallet.</li>
@@ -3356,6 +3394,7 @@
           <li xml:lang="ca-valencia">Filtra els resultats del codificador geo inversemblants a l'edició d'adreces.</li>
           <li xml:lang="cs">Filtrace nepravděpodobných výsledků geokodéru při úpravě adres.</li>
           <li xml:lang="es">Filtrar los resultados inverosímiles del geocodificador al editar direcciones.</li>
+          <li xml:lang="eu">Helbideak editatzean, geokodetzailearen emaitza ez-zentzuzkoak iragazten dira.</li>
           <li xml:lang="fr">Filtration des résultats de géocodage peu plausibles lors de la modification d'adresse.</li>
           <li xml:lang="he">סינון של תוצאות קודים גאוגרפיים לא הגיונים בעת עריכת כתובת.</li>
           <li xml:lang="it">Filtra i risultati non plausibili del geo-codificatore durante la modifica dell'indirizzo.</li>
@@ -3374,6 +3413,7 @@
           <li xml:lang="ca-valencia">Corregix la superposició entre el botó flotant del mapa i els detalls d'arribada a la pàgina de detalls de viatge.</li>
           <li xml:lang="cs">Oprava překrývání mezi tlačítkem plovoucí mapy a podrobnostmi o příjezdu na stránce s podrobnostmi o cestě.</li>
           <li xml:lang="es">Se ha corregido el solapamiento entre el botón de mapas flotantes y los detalles de la llegada en la página de detalles del viaje.</li>
+          <li xml:lang="eu">Bidaia-xehetasunen orrian mapa-botoi higikorraren eta iritsiera-xehetasunen arteko gainjartzea konpondu da.</li>
           <li xml:lang="fr">Correction du chevauchement entre le bouton flottant de la carte et les détails d'arrivée sur la page des détails du trajet.</li>
           <li xml:lang="he">תוקנה חפיפה בין כפתור המפה הצפה ופרטי ההגעה בעמוד פרטי הנסיעה.</li>
           <li xml:lang="it">Corregge la sovrapposizione tra il pulsante della mappa mobile e i dettagli di arrivo nella pagina dei dettagli del viaggio.</li>
@@ -3392,6 +3432,7 @@
           <li xml:lang="ca-valencia">Millorar la informació en temps real de Deutsche Bahn quan hi ha trens cancel·lats o substituïts.</li>
           <li xml:lang="cs">Zlepšeny informace Deutsche Bahn v reálném čase v případě zrušených nebo náhradních vlaků.</li>
           <li xml:lang="es">Se ha mejorado la información en tiempo real de Deutsche Bahn cuando existe cancelación o sustitución de trenes.</li>
+          <li xml:lang="eu">Deutsche Bahn-en denbora errealeko informazioa hobetu da bertan behera utzitako edo ordezko trenetarako.</li>
           <li xml:lang="fr">Amélioration des informations en temps réel de la Deutsche Bahn en cas d'annulation ou de remplacement de trains.</li>
           <li xml:lang="he">הפרטים של Deutsche Bahn בזמן אמת השתפרו בעת התמודדות עם רכבות שבוטלו או הוחלפו.</li>
           <li xml:lang="it">Migliora le informazioni in tempo reale della Deutsche Bahn in caso di treni annullati o sostitutivi.</li>
@@ -3410,6 +3451,7 @@
           <li xml:lang="ca-valencia">Millora la detecció del tipus de vagó de tren a la vista de disposició de vagó.</li>
           <li xml:lang="cs">Vylepšena detekce typu vagónu v zobrazení řazení vagónů.</li>
           <li xml:lang="es">Se ha mejorado la detección del tipo de coche en la vista del esquema de coches.</li>
+          <li xml:lang="eu">Bagoien antolaeraren ikuspegian bagoi mota detektatzea hobetu da.</li>
           <li xml:lang="fr">Amélioration de la détection du type de wagon dans la vue de disposition des wagons.</li>
           <li xml:lang="he">זיהוי סוג קרון רכבת השתפר בתצוגת פריסת הקרונות.</li>
           <li xml:lang="it">Migliora il rilevamento del tipo di carrozza ferroviaria nella visualizzazione della disposizione della carrozza.</li>
@@ -3453,6 +3495,7 @@
         <p xml:lang="ca-valencia">La línia de temps principal s'ha redissenyat i ara les entrades es poden ampliar en línia per a mostrar les parades intermèdies i els retards i les interrupcions en curs. Parlant d'esdeveniments, ara és possible afegir i editar entrades manualment i compartir viatges sencers o reserves individuals al telèfon a través de KDE Connect.</p>
         <p xml:lang="cs">Hlavní časová osa byla přepracována a nyní lze položky rozbalit a zobrazit mezilehlé zastávky a aktuální zpoždění a výluky. Pokud jde o události, nyní je možné ručně přidávat a upravovat položky a sdílet celé cesty nebo jednotlivé rezervace do telefonu přes KDE Connect.</p>
         <p xml:lang="es">Se ha rediseñado la línea de tiempo principal para que las entradas se puedan expandir para mostrar las paradas intermedias y los retrasos e interrupciones en curso. Hablando de eventos, ahora se pueden añadir y editar entradas manualmente y compartir viajes completos o reservas individuales con el teléfono mediante KDE Connect.</p>
+        <p xml:lang="eu">Denbora-lerro nagusia birdiseinatu da, eta orain sarrerak bertan zabal daitezke tarteko geralekuak eta unean uneko atzerapenak eta gorabeherak ikusteko. Gainera, orain sarrerak eskuz gehitu eta editatu daitezke, eta bidaia osoak edo banakako erreserbak telefonora partekatu daitezke KDE Connect bidez.</p>
         <p xml:lang="fr">La chronologie principale a été repensée. Il est maintenant possible d'étendre les entrées directement pour afficher les arrêts intermédiaires ainsi que les retards et perturbations en cours. En parlant d'évènements, il est désormais possible d'ajouter et de modifier manuellement des entrées et de partager des voyages complets ou des réservations individuelles sur votre téléphone grâce à KDEConnect.</p>
         <p xml:lang="he">ציר הזמן הראשי עוצב מחדש ומעתה ניתן להרחיב רשומות במקום שלהן כדי להציג את תחנות הביניים והשהיות והפרעות מתפתחות. בנוגע לאירועים, מעתה ניתן להוסיף ולערוך רשומות ידנית כדי לשתף את נסיעות שלמות או הזמנות נקודתיות עם הטלפון שלך דרך KDE Connect.</p>
         <p xml:lang="it">La linea temporale principale è stata ridisegnata e ora le voci possono essere espanse in linea per mostrare le fermate intermedie, i ritardi e le interruzioni in corso. A proposito di eventi, ora è possibile aggiungere e modificare manualmente le voci e condividere interi viaggi o singole prenotazioni sul telefono tramite KDE Connect.</p>
@@ -3490,6 +3533,7 @@
         <p xml:lang="ca-valencia">A l'hora de visualitzar els detalls d'un viatge, a més de poder consultar la llista de parades, es pot consultar un mapa del viatge.</p>
         <p xml:lang="cs">Při prohlížení podrobností o cestě lze kromě seznamu zastávek zobrazit také mapu cesty.</p>
         <p xml:lang="es">Al consultar los detalles de un viaje, además de poder ver la lista de paradas, también se puede mostrar un mapa del trayecto.</p>
+        <p xml:lang="eu">Bidaia baten xehetasunak ikustean, geralekuen zerrenda kontsultatzeko aukera izateaz gain, bidaiaren mapa ere ikus daiteke.</p>
         <p xml:lang="fr">Lors de la consultation des détails d'un voyage, en plus de pouvoir consulter la liste des arrêts, il est possible de regarder une carte du trajet.</p>
         <p xml:lang="he">בעת צפייה בפרטי נסיעה, בנוסף ליכולת להיוועץ ברשימת התחנות, אפשר להסתכל על מפת הנסיעה.</p>
         <p xml:lang="it">Visualizzando i dettagli di un viaggio, oltre a poter consultare l'elenco delle fermate, è possibile visionare la mappa del viaggio.</p>
@@ -3552,7 +3596,7 @@
           <li xml:lang="ca-valencia">Implementació de l'API a bord d'Eurostar.</li>
           <li xml:lang="cs">Podpora pro palubní API Eurostar.</li>
           <li xml:lang="es">Compatibilidad con la API de a bordo de Eurostar.</li>
-          <li xml:lang="eu">Eurostar-en ontzi barruko APIa onartzen da.</li>
+          <li xml:lang="eu">Eurostarren ibilgailu barruko APIa onartzen da.</li>
           <li xml:lang="fr">Prise en charge de l'API intégrée de Eurostar.</li>
           <li xml:lang="he">תמיכה ב־API של Eurostar מתוך כלי התחבורה.</li>
           <li xml:lang="it">Supporto per API di imbarco Eurostar.</li>
@@ -3577,6 +3621,7 @@
           <li xml:lang="ca-valencia">Corregix la gestió de les parades intermèdies cancel·lades a bord dels ICE de DB.</li>
           <li xml:lang="cs">Oprava zpracování zrušených mezizastávek na palubě vlaků DB ICE.</li>
           <li xml:lang="es">Se ha corregido el manejo de paradas intermedias canceladas a bordo de los ICE de la DB.</li>
+          <li xml:lang="eu">DB ICE trenetan bertan behera utzitako tarteko geralekuen kudeaketa konpondu da.</li>
           <li xml:lang="fr">Correction de la gestion des arrêts intermédiaires annulés à bord des ICE de la Deutch Bahn.</li>
           <li xml:lang="he">תוקן טיפול בתחנות ביניים מבוטלות תוך כדי נסיעה של DB ICEs.</li>
           <li xml:lang="it">Corretta la gestione delle fermate intermedie annullate a bordo degli ICE DB.</li>
@@ -3633,6 +3678,7 @@
           <li xml:lang="ca-valencia">Elimina les lletres PDF no necessàries per a reduir la mida de l'APK.</li>
           <li xml:lang="cs">Odstraněna nepotřebná písma PDF, aby byla zmenšena velikost souboru APK.</li>
           <li xml:lang="es">Eliminar fuentes PDF innecesarias para reducir el tamaño de la APK.</li>
+          <li xml:lang="eu">Beharrezkoak ez diren PDF letra-tipoak kendu dira APKaren tamaina txikitzeko.</li>
           <li xml:lang="fr">Suppression des fontes « PDF » inutiles pour réduire la taille du paquet « APK ».</li>
           <li xml:lang="he">הוסרו גופני PDF לא נחוצים כדי הקטין את גודל ה־APK.</li>
           <li xml:lang="it">Rimuove i caratteri PDF non necessari per ridurre le dimensioni dell'APK.</li>
@@ -3676,7 +3722,7 @@
           <li xml:lang="ca-valencia">Extractors nous o millorats de documents de viatge per a Aegean, Amadeus, bookingkit, GWR, Pretix, Renfe, ÖBB i bitllets de tren del Regne Unit.</li>
           <li xml:lang="cs">Nové nebo vylepšené nástroje pro extrahování cestovních dokladů pro jízdenky společností Aegean, Amadeus, bookingkit, GWR, Pretix, Renfe, ÖBB a britské železniční jízdenky.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para Aegean, Amadeus, bookingkit, GWR, Pretix, Renfe, ÖBB y billetes de los ferrocarriles británicos.</li>
-          <li xml:lang="eu">Bidaia-dokumentuen erauzle berriak edo hobetuak: Aegean, Amadeus, bookingkit, GWR, Pretix, Renfe, ÖBB eta UK railway tickets.</li>
+          <li xml:lang="eu">Aegean, Amadeus, bookingkit, GWR, Pretix, Renfe, ÖBB eta Erresuma Batuko tren-txarteletarako bidaia-dokumentuen erauzle berriak edo hobetuak.</li>
           <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour Aegean, Amadeus, Bookingkit, GWR, Pretix, Renfe, ÖBB et les billets de train britanniques.</li>
           <li xml:lang="he">מחלצי מסמכים נסיעה חדשים או משופרים עבור Aegean,‏ Amadeus,‏ bookingkit,‏ GWR,‏ Pretix,‏ Renfe,‏ ÖBB וכרטיסים של רכבות בממלכה המאוחדת (בריטניה)..</li>
           <li xml:lang="it">Estrattori di documenti di viaggio nuovi o migliorati per biglietti ferroviari Aegean, Amadeus, bookingkit, GWR, Pretix, Renfe, ÖBB e del Regno Unito.</li>
@@ -3740,6 +3786,7 @@
           <li xml:lang="ca-valencia">Corregix l'edició d'elements d'autobús i tren sense un bitllet associat.</li>
           <li xml:lang="cs">Opraveny úpravy prvků autobusů a vlaků bez přidružené jízdenky.</li>
           <li xml:lang="es">Se ha corregido la edición de elementos de autobús y tren sin billete asociado.</li>
+          <li xml:lang="eu">Lotutako txartelik gabeko autobus- eta tren-elementuak editatzea konpondu da.</li>
           <li xml:lang="fr">Correction de la modification des éléments de bus et de train sans billet associé.</li>
           <li xml:lang="he">תוקנה עריכת רכיבי אוטובוסים ורכבות ללא כרטיסים משויכים.</li>
           <li xml:lang="it">Corretta la modifica degli elementi di autobus e treni senza un biglietto associato.</li>
@@ -3777,7 +3824,7 @@
           <li xml:lang="ca-valencia">Corregix la renderització de les imatges de miniatures dels passes genèrics d'Apple Wallet.</li>
           <li xml:lang="cs">Oprava vykreslování miniatur obrázků generických Apple Wallet pass.</li>
           <li xml:lang="es">Se ha corregido la representación de las imágenes en miniatura de las contraseñas genéricas de Apple Wallet.</li>
-          <li xml:lang="eu">Apple Wallet txartel generikoen miniatura-irudiak errendatzeko arazoak konpondu dira.</li>
+          <li xml:lang="eu">Apple Wallet txartel generikoen miniatura-irudiak bistaratzeko arazoak konpondu dira.</li>
           <li xml:lang="fr">Correction du rendu des images de vignettes pour les abonnements génériques dans Apple Wallet.</li>
           <li xml:lang="he">תוקן תיצוג של תמונות ממוזערות של אישורים כלליים ב־Apple Wallet.</li>
           <li xml:lang="it">Correzione del rendering delle immagini in miniatura del passaggio generico di Apple Wallet.</li>
@@ -3796,6 +3843,7 @@
           <li xml:lang="ca-valencia">Corregix la visualització del progrés de l'escala inicial del viatge a la vista d'estat en viu.</li>
           <li xml:lang="cs">Opraveno zobrazení průběhu na počáteční zastávce cesty v živém zobrazení stavu.</li>
           <li xml:lang="es">Se ha corregido la visualización del avance en la escala del viaje inicial en la vista de estado en vivo.</li>
+          <li xml:lang="eu">Zuzeneko egoeraren ikuspegian, bidaiaren hasierako geralekuko aurrerapena bistaratzeko arazoak konpondu dira.</li>
           <li xml:lang="fr">Correction de l'affichage de la progression lors de l'escale initiale d'un trajet dans la vue d'état en temps réel en direct.</li>
           <li xml:lang="he">תוקנה הצגת התקדמות בתחנת העצירה הראשונית במסע בתצוגת מצב בזמן אמת.</li>
           <li xml:lang="it">Correzione della visualizzazione dell'avanzamento nella tappa iniziale del viaggio nella visualizzazione dello stato in tempo reale.</li>
@@ -3814,6 +3862,7 @@
           <li xml:lang="ca-valencia">Mostra les taquilles d'equipatge, oficines d'objectes perduts i cintes d'arreplegada d'equipatges d'aeroport en el mapa d'interior.</li>
           <li xml:lang="cs">Zobrazení úschovny zavazadel, kanceláře ztrát a nálezů a pásů pro výdej zavazadel na letišti na mapě interiéru.</li>
           <li xml:lang="es">Mostrar en el mapa de interior la ubicación de las consignas para equipaje, las oficinas de objetos perdidos y las cintas transportadoras de equipaje en aeropuertos.</li>
+          <li xml:lang="eu">Ekipaje-kontsignak, galdutako objektuen bulegoak eta aireportuko ekipajea jasotzeko uhalak barrualdeko mapan erakusten dira.</li>
           <li xml:lang="fr">Afficher les consignes à bagages, les bureaux des objets trouvés et les tapis de récupération des bagages sur la carte intérieure.</li>
           <li xml:lang="he">הצגת תאי מטען, משרדי אבידות ומציאות ומסועי כבודה שלא הגיעה במפת הניווט הפנימי.</li>
           <li xml:lang="it">Visualizza sulla mappa interna gli armadietti per i bagagli, gli uffici oggetti smarriti e i nastri trasportatori per il ritiro dei bagagli in aeroporto.</li>
@@ -3838,6 +3887,7 @@
           <li xml:lang="ca-valencia">Els modes de transport preferits ara es poden seleccionar a totes les busques de transport públic.</li>
           <li xml:lang="cs">Nyní lze u všech vyhledávání veřejné dopravy vybrat preferované druhy dopravy.</li>
           <li xml:lang="es">Los medios de transporte preferidos se pueden seleccionar ahora en todas las búsquedas de transporte público.</li>
+          <li xml:lang="eu">Orain garraio publikoaren bilaketa guztietarako garraiobide hobetsiak hauta daitezke.</li>
           <li xml:lang="fr">Les modes de transport préférés peuvent désormais être sélectionnés pour toutes les recherches de transports publics.</li>
           <li xml:lang="he">אפשר לבחור את מצבי התחבורה המועדפים לכל חיפושי התחבורה הציבורית.</li>
           <li xml:lang="it">Ora è possibile selezionare le modalità di trasporto preferite per tutte le ricerche sui trasporti pubblici.</li>
@@ -3856,6 +3906,7 @@
           <li xml:lang="ca-valencia">Els logotips de les línies de transport públic ara també estan disponibles per a alguns serveis regionals i de ferrocarril de llarga distància.</li>
           <li xml:lang="cs">Loga linek veřejné dopravy jsou nyní k dispozici také pro některé regionální a dálkové železniční služby.</li>
           <li xml:lang="es">Los logotipos de las líneas de transporte público ya están disponibles también para algunos servicios ferroviarios regionales y de larga distancia.</li>
+          <li xml:lang="eu">Orain garraio publikoko lineen logotipoak eskualdeko eta ibilbide luzeko tren-zerbitzu batzuetarako ere erabilgarri daude.</li>
           <li xml:lang="fr">Les logos des lignes de transport public sont désormais également disponibles pour certains services régionaux et de trains longue distance.</li>
           <li xml:lang="he">הלוגוים של קווי התחבורה הציבורים זמינים גם בחלק מהשירותים האזוריים וארוכי הטווח.</li>
           <li xml:lang="it">I loghi delle linee di trasporto pubblico sono ora disponibili anche per alcuni servizi ferroviari regionali e di lunga percorrenza.</li>
@@ -3912,6 +3963,7 @@
           <li xml:lang="ca-valencia">S'ha afegit la compartició d'ubicació a través de Matrix.</li>
           <li xml:lang="cs">Přidáno sdílení polohy přes Matrix.</li>
           <li xml:lang="es">Se ha añadido la posibilidad de compartir la ubicación a través de Matrix.</li>
+          <li xml:lang="eu">Matrix bidez kokapena partekatzea gehitu da.</li>
           <li xml:lang="fr">Ajout du partage d'emplacement grâce au réseau Matrix.</li>
           <li xml:lang="he">נוסף שיתוף מקום דרך Matrix.</li>
           <li xml:lang="it">Aggiunta la condivisione della posizione tramite Matrix.</li>
@@ -3930,6 +3982,7 @@
           <li xml:lang="ca-valencia">Considera la disposició del vagó i les dades de reserva de seient per a ressaltar el punt d'eixida/arribada en una andana.</li>
           <li xml:lang="cs">Zohlednit řazení vagónů a údaje o rezervaci míst k sezení, aby bylo možné zvýraznit místo odjezdu/příjezdu na nástupišti.</li>
           <li xml:lang="es">Se tienen en cuenta la distribución del coche y los datos de reserva de asientos para resaltar el punto de salida/llegada en un andén.</li>
+          <li xml:lang="eu">Bagoien antolaera eta eserleku-erreserbaren datuak kontuan hartzen dira nasako irteera-/iritsiera-kokalekua nabarmentzeko.</li>
           <li xml:lang="fr">Veuillez prendre en compte la disposition des voitures et les données de réservation des sièges pour mettre en évidence le point de départ / d'arrivée sur un quai.</li>
           <li xml:lang="he">יש התייחסות לנתוני פריסת קרון והזמנת מקומות לצורך הדגשת נקודת היציאה/הגעה ברציף.</li>
           <li xml:lang="it">Considera la disposizione del pullman e i dati di prenotazione del posto per evidenziare il punto di partenza/arrivo su una piattaforma.</li>
@@ -3948,6 +4001,7 @@
           <li xml:lang="ca-valencia">Aspecte nou de les entrades de la línia de temps i les pàgines d'edició.</li>
           <li xml:lang="cs">Nový vzhled záznamů na časové ose a stránek pro úpravy.</li>
           <li xml:lang="es">Nuevo diseño para las entradas de la cronología y las páginas de edición.</li>
+          <li xml:lang="eu">Denbora-lerroko sarreretarako eta edizio-orrietarako itxura berria.</li>
           <li xml:lang="fr">Nouvelle apparence pour les entrées de la chronologie et les pages de modification.</li>
           <li xml:lang="he">מראה חדש לרשומות ציר הזמן ועמודי העריכה.</li>
           <li xml:lang="it">Nuovo aspetto per le voci della linea temporale e le pagine di modifica.</li>
@@ -3966,7 +4020,7 @@
           <li xml:lang="ca-valencia">Implementació nova o millorada de l'API a bord per a Aegean Air, Deutsche Bahn i ÖBB.</li>
           <li xml:lang="cs">Nová nebo vylepšená podpora palubního API pro společnosti Aegean Air, Deutsche Bahn a ÖBB.</li>
           <li xml:lang="es">Compatibilidad con API de a bordo nueva o mejorada para Aegean Air, Deutsche Bahn y ÖBB.</li>
-          <li xml:lang="eu">Aegean Air, Deutsche Bahn eta ÖBBren bidaiako APIetarako euskarri berria edo hobetua.</li>
+          <li xml:lang="eu">Aegean Air, Deutsche Bahn eta ÖBBren ibilgailu barruko APIetarako euskarri berria edo hobetua.</li>
           <li xml:lang="fr">Nouvelle prise en charge ou améliorations de l'API embarqué pour Aegean Air, Deutsche Bahn et ÖBB.</li>
           <li xml:lang="he">תמיכה חדשה או משופרת ב־API מתוך כלי התחבורה עבור Aegean Air,‏ Deutsche Bahn ו־ÖBB.</li>
           <li xml:lang="it">Supporto API di imbarco nuovo o migliorato per Aegean Air, Deutsche Bahn e ÖBB.</li>
@@ -4004,7 +4058,7 @@
           <li xml:lang="ca-valencia">S'ha afegit la implementació per a importar esdeveniments d'ActivityPub.</li>
           <li xml:lang="cs">Přidána podpora pro import událostí ActivityPub.</li>
           <li xml:lang="es">Compatibilidad para importar eventos de ActivityPub.</li>
-          <li xml:lang="eu">ActivityPub gertaerak inportatzea onartzen da.</li>
+          <li xml:lang="eu">ActivityPub ekitaldiak inportatzea onartzen da.</li>
           <li xml:lang="fr">Ajout de la prise en charge de l'importation des évènements de ActivityPub.</li>
           <li xml:lang="he">נוספה תמיכה בייבוא אירועי ActivityPub (פעילות ציבורית).</li>
           <li xml:lang="it">Aggiunto supporto per l'importazione di eventi ActivityPub.</li>
@@ -4042,6 +4096,7 @@
           <li xml:lang="ca-valencia">Els documents ara es poden adjuntar a tots els bitllets i reserves, i s'adjunten automàticament en més casos.</li>
           <li xml:lang="cs">K všem lístkům a rezervacím lze nyní připojovat dokumenty, které se v mnoha případech připojují automaticky.</li>
           <li xml:lang="es">Ahora se pueden adjuntar documentos a todos los billetes y reservas, y muchos se adjuntan de forma automática.</li>
+          <li xml:lang="eu">Orain txartel eta erreserba guztietan dokumentuak erants daitezke, eta kasu gehiagotan automatikoki eransten dira.</li>
           <li xml:lang="fr">Les documents peuvent désormais être joints à tous les billets et réservations. Ils sont automatiquement attachés dans davantage de situations.</li>
           <li xml:lang="he">מעתה ניתן לצרף מסמכים לכל הכרטיסים וההזמנות והם מצורפים אוטומטית ביותר מצבים.</li>
           <li xml:lang="it">Ora è possibile allegare documenti a tutti i biglietti e prenotazioni e in molti casi vengono allegati automaticamente.</li>
@@ -4060,6 +4115,7 @@
           <li xml:lang="ca-valencia">Es pot crear una nova reserva d'hotel, esdeveniment o restaurant afegint un URL cap al seu lloc web anotat schema.org.</li>
           <li xml:lang="cs">Nové rezervace hotelů, akcí a restaurací lze vytvořit přidáním URL adresy na jejich webové stránky s anotacemi schema.org.</li>
           <li xml:lang="es">Se pueden crear nuevas reservas de hotel, eventos y restaurantes añadiendo una URL a al sitio web anotado en schema.org.</li>
+          <li xml:lang="eu">Hotel-, ekitaldi- eta jatetxe-erreserba berriak sor daitezke schema.org oharpenak dituzten webguneen URL bat gehituz.</li>
           <li xml:lang="fr">Une nouvelle réservation d'hôtel, d'évènement ou de restaurant peut être créée en ajoutant une URL à leur site Internet annoté avec schema.org.</li>
           <li xml:lang="he">אפשר להוסיף הזמנות חדשות למלונות, אירועים ומסעדות על ידי הוספת כתובת לאתר שלהם שמפורש עם schema.org.</li>
           <li xml:lang="it">È possibile creare nuove prenotazioni per hotel, eventi e ristoranti aggiungendo un URL al sito web con annotazioni schema.org.</li>
@@ -4116,6 +4172,7 @@
           <li xml:lang="ca-valencia">Millora de la visualització del temps de validesa dels bitllets a la vista de passes i programes.</li>
           <li xml:lang="cs">Vylepšené zobrazení doby platnosti jízdenek v přehledu jízdenek a programů.</li>
           <li xml:lang="es">Se ha mejorado la visualización de los periodos de validez de los billetes en la vista de pases y programas.</li>
+          <li xml:lang="eu">Txartelen baliozkotasun-denborak hobeto erakusten dira txartelen eta programen ikuspegian.</li>
           <li xml:lang="fr">Amélioration de l'affichage des horaires de validité des billets dans la vue des abonnements et des programmes.</li>
           <li xml:lang="he">תצוגת זמני תוקף הכרטיסים בתצוגות אישורי המעבר והתוכניות השתפרה.</li>
           <li xml:lang="it">Migliorata la visualizzazione dei tempi di validità dei biglietti nella visualizzazione abbonamenti e programmi.</li>
@@ -4134,6 +4191,7 @@
           <li xml:lang="ca-valencia">Millora de la visualització de les cancel·lacions de transport públic i de les notes d'interrupció llarga.</li>
           <li xml:lang="cs">Vylepšené zobrazení zrušených spojů veřejné dopravy a informací o dlouhodobých výlukách.</li>
           <li xml:lang="es">Se ha mejorado la visualización de las cancelaciones de transporte público y de los avisos de interrupciones prolongadas.</li>
+          <li xml:lang="eu">Garraio publikoko ezeztapenak eta gorabeherei buruzko ohar luzeak hobeto erakusten dira.</li>
           <li xml:lang="fr">Amélioration de l'affichage des annulations de transports public et des signalement de perturbation prolongée.</li>
           <li xml:lang="he">הצגת הערות ביטולי תחבורה ציבורית והפרעות ארוכות טווח השתפרה.</li>
           <li xml:lang="it">Migliorata la visualizzazione delle cancellazioni dei trasporti pubblici e delle note lunghe di interruzione.</li>
@@ -4152,6 +4210,7 @@
           <li xml:lang="ca-valencia">S'ha corregit la busca de connexions ferroviàries internacionals que a vegades no trobava cap resultat.</li>
           <li xml:lang="cs">Opraveno vyhledávání mezinárodních železničních spojení, které někdy nenalezlo žádný výsledek.</li>
           <li xml:lang="es">Se ha corregido el problema de que, en ocasiones, la búsqueda de conexiones ferroviarias internacionales no produce ningún resultado.</li>
+          <li xml:lang="eu">Nazioarteko tren-loturen bilaketak batzuetan emaitzarik ez aurkitzea konpondu da.</li>
           <li xml:lang="fr">Correction de la recherche de connexions ferroviaires internationales qui ne renvoyait parfois aucun résultat.</li>
           <li xml:lang="he">תוקנה בעיה שחיפוש העברות בין רכבות בינלאומיות לפעמים לא מצא אף תוצאה.</li>
           <li xml:lang="it">Risolto il problema con la ricerca di collegamenti ferroviari internazionali che a volte non trovava alcun risultato.</li>
@@ -4170,6 +4229,7 @@
           <li xml:lang="ca-valencia">S'han corregit les icones meteorològiques que a vegades utilitzaven erròniament les variants nocturnes durant el dia.</li>
           <li xml:lang="cs">Opraveny ikony počasí, kdy někdy byla nesprávně použita noční varianta během dne.</li>
           <li xml:lang="es">Se ha corregido que los iconos de información meteorológica usaran a veces incorrectamente las variantes nocturnas durante el día.</li>
+          <li xml:lang="eu">Eguraldi-ikonoek egunez batzuetan gaueko aldaerak oker erabiltzeko arazoak konpondu dira.</li>
           <li xml:lang="fr">Correction des icônes météo utilisant parfois à tort les variantes de nuit pendant la journée.</li>
           <li xml:lang="he">תוקנה בעיה שסמלי מזג אוויר לפעמים השתמשו בטעות בגרסה הלילית שלהם במהלך שעות היום.</li>
           <li xml:lang="it">Risolte le icone meteo che a volte utilizzavano erroneamente le varianti notturne durante il giorno.</li>
@@ -4188,6 +4248,7 @@
           <li xml:lang="ca-valencia">S'han corregit les consultes d'actualització de dades en temps real massa ràpides en cas d'errors de xarxa.</li>
           <li xml:lang="cs">Opraveny příliš rychlé dotazy na aktualizaci dat v reálném čase v případě síťových chyb.</li>
           <li xml:lang="es">Se han corregido las solicitudes de actualización de datos en tiempo real demasiado rápidas en caso de errores de red.</li>
+          <li xml:lang="eu">Sareko erroreak gertatzean, denbora errealeko datuak eguneratzeko kontsultak maizegi egiteko arazoa konpondu da.</li>
           <li xml:lang="fr">Correction des requêtes de mise à jour des données en temps réel trop rapides en cas d'erreurs de réseau.</li>
           <li xml:lang="he">תוקנה בעיית עדכון נתונים בזמן אמת בתדירות גבוהה מדי במקרים של שגיאות רשת.</li>
           <li xml:lang="it">Risolte le query di aggiornamento dei dati in tempo reale troppo rapide in caso di errori di rete.</li>
@@ -4206,7 +4267,7 @@
           <li xml:lang="ca-valencia">S'han esmenat els esdeveniments exportats que no són editables per altres aplicacions de calendari a Android.</li>
           <li xml:lang="cs">Opravena chyba, kvůli které nebylo možné upravovat exportované události v jiných kalendářových aplikacích pro Android.</li>
           <li xml:lang="es">Se ha corregido que los eventos exportados no se puedan editar con otras aplicaciones de calendario en Android.</li>
-          <li xml:lang="eu">Esportatutako gertaerak Androideko beste egutegi-aplikazio batzuekin editatu ezin izatea konpondu da.</li>
+          <li xml:lang="eu">Esportatutako gertaerak Androideko beste egutegi-aplikazio batzuekin editatzeko arazoak konpondu dira.</li>
           <li xml:lang="fr">Correction des évènements exportés qui ne pouvaient pas être modifiés par d'autres applications d'agenda sous Android.</li>
           <li xml:lang="he">תוקנה בעיה שאירועים מיוצאים נעולים לעריכה על ידי יישומי לוחות שנה אחרים ב־Android.</li>
           <li xml:lang="it">Risolto il problema per cui gli eventi esportati non erano modificabili da altre applicazioni di calendario su Android.</li>
@@ -4269,6 +4330,7 @@
           <li xml:lang="ca-valencia">S'han corregit les consultes de transport públic per a VRS.</li>
           <li xml:lang="cs">Opraveny dotazy týkající se veřejné dopravy pro VRS.</li>
           <li xml:lang="es">Se han corregido las consultas de transporte público para VRS.</li>
+          <li xml:lang="eu">VRS bidezko garraio publikoaren kontsultak konpondu dira.</li>
           <li xml:lang="fr">Correction des demandes pour des transports publics pour le VRS.</li>
           <li xml:lang="he">תוקנו שאילתות תחבורה ציבורית ל־VRS.</li>
           <li xml:lang="it">Risolte le query sui trasporti pubblici per VRS.</li>
@@ -4306,6 +4368,7 @@
           <li xml:lang="ca-valencia">Filtra itineraris a peu inversemblants dels encaminadors de transport públic.</li>
           <li xml:lang="cs">Filtrace nepravděpodobných tras chůze z tras veřejných dopravních prostředků.</li>
           <li xml:lang="es">Filtrado de rutas pedestres imposibles de enrutadores de transporte público.</li>
+          <li xml:lang="eu">Garraio publikoaren bideratzaileek emandako oinezko ibilbide ez-zentzuzkoak iragazten dira.</li>
           <li xml:lang="fr">Filtrage des trajets à pied peu plausibles fournis par les planificateurs de transport public.</li>
           <li xml:lang="he">נתיבי הליכה לא הגיוניים מסוננים מריכוזי תחבורה ציבורית.</li>
           <li xml:lang="it">Filtra i percorsi pedonali non plausibili dai router dei trasporti pubblici.</li>
@@ -4324,6 +4387,7 @@
           <li xml:lang="ca-valencia">S'ha corregit la importació de reserves d'embarcacions o transbordadors des del calendari.</li>
           <li xml:lang="cs">Opraveno importování rezervací lodí nebo trajektů z kalendáře.</li>
           <li xml:lang="es">Se ha corregido la importación de reservas de barco y ferry desde el calendario.</li>
+          <li xml:lang="eu">Itsasontzi- edo ferry-erreserbak egutegitik inportatzea konpondu da.</li>
           <li xml:lang="fr">Correction de l'importation des réservations de bateaux ou de traversiers depuis le calendrier.</li>
           <li xml:lang="he">תוקן ייבוא הזמנת סירה או מעבורת מהיומן.</li>
           <li xml:lang="it">Risolto il problema con l'importazione delle prenotazioni di barche o traghetti dal calendario.</li>
@@ -4342,6 +4406,7 @@
           <li xml:lang="ca-valencia">S'ha corregit un bucle infinit en calcular els arguments del mapa d'interior.</li>
           <li xml:lang="cs">Opravena nekonečná smyčka při výpočtu argumentů vnitřní mapy.</li>
           <li xml:lang="es">Se ha corregido un bucle infinito cuando se calculaban los argumentos del mapa de interior.</li>
+          <li xml:lang="eu">Barrualdeko maparen argumentuak kalkulatzean sortzen zen begizta infinitua konpondu da.</li>
           <li xml:lang="fr">Correction d'une boucle infinie lors du calcul des arguments de la carte intérieure.</li>
           <li xml:lang="he">תוקנה לולאה אינסופית בעת חישוב ארגומנטים של מפת ניווט פנים.</li>
           <li xml:lang="it">Risolto un ciclo infinito durante il calcolo degli argomenti della mappa interna.</li>
@@ -4385,6 +4450,7 @@
           <li xml:lang="ca-valencia">S'ha corregit la visualització de passes d'Apple Wallet adjunts per a trens, hotels, autobusos i reserves de lloguer de cotxes.</li>
           <li xml:lang="cs">Opraveno zobrazování přiložených Apple Wallet pass pro vlaky, hotely, autobusy a rezervace pronájmu automobilů.</li>
           <li xml:lang="es">Se ha corregido la visualización de pases adjuntos de Apple Wallet para reservas de trenes, hoteles, autobuses y alquiler de automóviles.</li>
+          <li xml:lang="eu">Tren-, hotel-, autobus- eta auto-alokairuen erreserbei erantsitako Apple Wallet txartelak erakustea konpondu da.</li>
           <li xml:lang="fr">Correction de l'affichage des abonnements de Apple Wallet attachés aux trains, hôtels, bus et réservations de location de voiture.</li>
           <li xml:lang="he">תוקנה הצגת אישורי מעבר מצורפים מ־Apple Wallet להזמנות של רכבות ,מלונות, אוטובוסים והשכרת רכבים.</li>
           <li xml:lang="it">Corretta la visualizzazione dei pass Appled Wallet allegati per prenotazioni di treni, hotel, autobus e noleggio auto.</li>
@@ -4403,6 +4469,7 @@
           <li xml:lang="ca-valencia">S'ha corregit un bloqueig potencial en actualitzar els tipus de conversió de les divises.</li>
           <li xml:lang="cs">Opraveno potenciální zablokování při aktualizaci směnných kurzů.</li>
           <li xml:lang="es">Se ha corregido un potencial bloqueo al actualizar los tipos de cambio de divisas.</li>
+          <li xml:lang="eu">Moneta-bihurketaren tasak eguneratzean gerta zitekeen elkar-blokeatzea konpondu da.</li>
           <li xml:lang="fr">Correction d'un blocage potentiel lors de la mise à jour des taux de conversion des devises.</li>
           <li xml:lang="he">תוקנה לולאה סתומה שלעתים קרתה בעת עדכון שערי המרת מטבעות.</li>
           <li xml:lang="it">Risolto un potenziale stallo nell'aggiornamento dei tassi di conversione delle valute.</li>
@@ -4421,6 +4488,7 @@
           <li xml:lang="ca-valencia">S'ha corregit l'adjunció de documents a les reserves multiviatger.</li>
           <li xml:lang="cs">Opraveno připojování dokumentů k rezervacím pro více cestujících.</li>
           <li xml:lang="es">Se ha corregido la función de adjuntar documentos a las reservas multiviajero.</li>
+          <li xml:lang="eu">Hainbat bidaiariko erreserbei dokumentuak eranstea konpondu da.</li>
           <li xml:lang="fr">Correction des documents en pièce jointes des réservations pour plusieurs personnes voyageant.</li>
           <li xml:lang="he">תוקנה בעיית צירוף מסמכים להזמנות לכמה נוסעים.</li>
           <li xml:lang="it">Risolto il problema relativo all'allegato di documenti alle prenotazioni multi-viaggiatore.</li>
@@ -4439,6 +4507,7 @@
           <li xml:lang="ca-valencia">Millora de la velocitat de desplaçament de la vista de la línia de temps.</li>
           <li xml:lang="cs">Vylepšená rychlost posouvání v zobrazení časové osy.</li>
           <li xml:lang="es">Se ha mejorado la velocidad de desplazamiento de la vista de la línea cronológica.</li>
+          <li xml:lang="eu">Denbora-lerroko ikuspegiaren kiribiltze-abiadura hobetu da.</li>
           <li xml:lang="fr">Amélioration de la vitesse de défilement de la vue chronologique.</li>
           <li xml:lang="he">מהירות הגלילה של תצוגת ציר הזמן השתפרה.</li>
           <li xml:lang="it">Migliorata la velocità di scorrimento della visualizzazione della linea temporale.</li>
@@ -4457,7 +4526,7 @@
           <li xml:lang="ca-valencia">Extractors nous o millorats de documents de viatge per a European Sleeper, IndiGo, PKP, Qatar Airways, SBB, SNCB, Thalys així com per a bitllets de trens letons i lituans.</li>
           <li xml:lang="cs">Nové nebo vylepšené extraktory cestovních dokladů pro European Sleeper, IndiGo, PKP, Qatar Airways, SBB, SNCB, Thalys a také pro lotyšské a litevské železniční jízdenky.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para European Sleeper, IndiGo, PKP, Qatar Airways, SBB, SNCB y Thalys, así como para billetes de los ferrocarriles de Letonia y Lituania.</li>
-          <li xml:lang="eu">Bidaia-dokumentuen erauzle berriak edo hobetuak: European Sleeper, IndiGo, PKP, Qatar Airways, SBB, SNCB, Thalys as well as for Latvian eta Lithuanian railway tickets.</li>
+          <li xml:lang="eu">European Sleeper, IndiGo, PKP, Qatar Airways, SBB, SNCB, Thalys, Letoniako eta Lituaniako tren-txarteletarako bidaia-dokumentuen erauzle berriak edo hobetuak.</li>
           <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour European Sleeper, IndiGo, PKP, Qatar Airways, SBB, SNCB, Thalys ainsi que pour les billets de train de Lettonie et de Lituanie.</li>
           <li xml:lang="he">מחלצי מסמכי נסיעות חדשים או משופרים עבור European Sleeper,‏ IndiGo,‏ PKP,‏ Qatar Airways,‏ SBB,‏ SNCB,‏ Thalys לרבות כרטיסי רכבות לטביות וליטאיות.</li>
           <li xml:lang="it">Estrattori di documenti di viaggio nuovi o migliorati per European Sleeper, IndiGo, PKP, Qatar Airways, SBB, SNCB, Thalys e per biglietti ferroviari lettoni e lituani.</li>
@@ -4476,6 +4545,7 @@
           <li xml:lang="ca-valencia">Nou extractor genèric de codis de barres de bitllets FCB ERA.</li>
           <li xml:lang="cs">Nový generický extraktor čárových kódů ERA FCB.</li>
           <li xml:lang="es">Nuevo extractor genérico de códigos de barras de billetes de ERA FCB.</li>
+          <li xml:lang="eu">ERA FCB txartelen barra-kodeen erauzle generiko berria.</li>
           <li xml:lang="fr">Nouvel extracteur générique de code-barres pour les tickets de ERA FCB.</li>
           <li xml:lang="he">מחלץ ברקודים כללי חדש מכרטיסים של ERA FCB.</li>
           <li xml:lang="it">Nuovo estrattore di codici a barre per biglietti generici ERA FCB.</li>
@@ -4494,6 +4564,7 @@
           <li xml:lang="ca-valencia">Extractor millorat per a dades de restaurants en llocs web.</li>
           <li xml:lang="cs">Vylepšený extraktor pro data restaurací na webových stránkách.</li>
           <li xml:lang="es">Se ha mejorado el extractor de datos de restaurantes en sitios web.</li>
+          <li xml:lang="eu">Webguneetako jatetxe-datuen erauzlea hobetu da.</li>
           <li xml:lang="fr">Amélioration de l'extracteur pour les données des restaurants sur les sites Internet.</li>
           <li xml:lang="he">חילוץ נתוני מסעדות מאתרים השתפר.</li>
           <li xml:lang="it">Estrattore migliorato per i dati dei ristoranti nei siti web.</li>
@@ -4512,6 +4583,7 @@
           <li xml:lang="ca-valencia">S'ha corregit la fusió de les notes d'interrupció del transport públic de fonts diferents.</li>
           <li xml:lang="cs">Opraveno slučování informací o narušení provozu veřejné dopravy z různých zdrojů.</li>
           <li xml:lang="es">Se ha corregido la fusión de notas de interrupciones de transporte público de diferentes fuentes.</li>
+          <li xml:lang="eu">Sorburu ezberdinetako garraio publikoko gorabehera-oharrak bateratzeko arazoa konpondu da.</li>
           <li xml:lang="fr">Correction de la fusion des notes de perturbation des transports publics provenant de différentes sources.</li>
           <li xml:lang="he">תוקן מיזוג הערות הפרעות תחבורה ציבורית ממקורות שונים.</li>
           <li xml:lang="it">Risolto il problema con l'unione delle note di interruzione del trasporto pubblico provenienti da fonti diverse.</li>
@@ -4536,6 +4608,7 @@
           <li xml:lang="ca-valencia">Extractors millorats de documents de viatge per a Air Asia, ATPI, B&amp;B Hotels, Best Western, CD, FlixBus, Gepard Express, Grimaldi Lines, MAV, SNCB i Vueling.</li>
           <li xml:lang="cs">Vylepšené nástroje pro extrahování cestovních dokladů pro Air Asia, ATPI, B&amp;B Hotels, Best Western, CD, FlixBus, Gepard Express, Grimaldi Lines, MAV, SNCB a Vueling.</li>
           <li xml:lang="es">Se han mejorado los extractores de documentos de viaje para Air Asia, ATPI, B&amp;B Hotels, Best Western, CD, FlixBus, Gepard Express, Grimaldi Lines, MAV, SNCB y Vueling.</li>
+          <li xml:lang="eu">Bidaia-dokumentuen erauzleak hobetu dira: Air Asia, ATPI, B&amp;B Hotels, Best Western, CD, FlixBus, Gepard Express, Grimaldi Lines, MAV, SNCB eta Vueling.</li>
           <li xml:lang="fr">Amélioration des extracteurs de documents de voyage pour Air Asia, ATPI, B&amp;B Hotels, Best Western, CD, FlixBus, Gepard Express, Grimaldi Lines, MAV, SNCB et Vueling.</li>
           <li xml:lang="he">מחלצי מסמכי עריכה משופרים עבור Air Asia,‏ ATPI,‏ B&amp;B Hotels,‏ Best Western,‏ CD,‏ FlixBus,‏ Gepard Express,‏ Grimaldi Lines,‏ MAV,‏ SNCB ו־Vueling.</li>
           <li xml:lang="it">Estrattori di documenti di viaggio migliorati per Air Asia, ATPI, B&amp;B Hotels, Best Western, CD, FlixBus, Gepard Express, Grimaldi Lines, MAV, SNCB e Vueling.</li>
@@ -4553,6 +4626,7 @@
           <li xml:lang="ca-valencia">Permet importar variants diverses del Deutschlandticket.</li>
           <li xml:lang="cs">Podpora importu různých variant Deutschlandticket.</li>
           <li xml:lang="es">Compatibilidad con la importación de diversas variantes del Deutschlandticket.</li>
+          <li xml:lang="eu">Deutschlandticket-en hainbat aldaera inportatzea onartzen da.</li>
           <li xml:lang="fr">Prise en charge de l'importation de différentes variantes du Deutschlandticket.</li>
           <li xml:lang="he">תמיכה בייבוא של מספר הגוונים של Deutschlandticket.</li>
           <li xml:lang="it">Supporta l'importazione di varie varianti del Deutschlandticket.</li>
@@ -4571,6 +4645,7 @@
           <li xml:lang="ca-valencia">S'ha corregit la renderització de codis de barres de bitllets MAV.</li>
           <li xml:lang="cs">Opraveno vykreslování čárových kódů na jízdenkách MAV.</li>
           <li xml:lang="es">Se ha corregido la representación de códigos de barras de billetes MAV.</li>
+          <li xml:lang="eu">MAV txartelen barra-kodeen bistaratzea konpondu da.</li>
           <li xml:lang="fr">Correction de l'affichage des codes-barres des billets de MAV.</li>
           <li xml:lang="he">תוקן תיצור של ברקודים של כרטיסי MAV.</li>
           <li xml:lang="it">Risolto il problema con il rendering dei codici a barre dei biglietti MAV.</li>
@@ -4589,6 +4664,7 @@
           <li xml:lang="ca-valencia">S'han corregit les consultes de transport públic en la República Txeca i el Regne Unit.</li>
           <li xml:lang="cs">Opraveny dotazy týkající se veřejné dopravy v České republice a Velké Británii.</li>
           <li xml:lang="es">Se han corregido las consultas de transporte público en la República Checa y en Reino Unido.</li>
+          <li xml:lang="eu">Txekiar Errepublikako eta Erresuma Batuko garraio publikoaren kontsultak konpondu dira.</li>
           <li xml:lang="fr">Correction des problèmes de transport public en République Tchèque et au Royaume-Uni.</li>
           <li xml:lang="he">תוקנו שאילתות תחבורה ציבורית ברפובליקה הצ׳כית ובאנגליה.</li>
           <li xml:lang="it">Risolte le domande sui trasporti pubblici nella Repubblica Ceca e nel Regno Unito.</li>
@@ -4645,6 +4721,7 @@
           <li xml:lang="ca-valencia">Millora de la gestió dels elements cancel·lats en la línia de temps.</li>
           <li xml:lang="cs">Vylepšené zpracování zrušených prvků v časové ose.</li>
           <li xml:lang="es">Se ha mejorado el manejo de elementos cancelados en la línea cronológica.</li>
+          <li xml:lang="eu">Denbora-lerroan bertan behera utzitako elementuen kudeaketa hobetu da.</li>
           <li xml:lang="fr">Amélioration de la gestion des éléments annulés dans la chronologie.</li>
           <li xml:lang="he">הטיפול ברכיבים שבוטלו בציר הזמן השתפר.</li>
           <li xml:lang="it">Gestione migliorata degli elementi annullati nella linea temporale.</li>
@@ -4689,7 +4766,7 @@
           <li xml:lang="ca-valencia">Extractors nous o millorats de documents de viatge per a Aegean Air, Amadeus, availpro, BlaBlaCar, Deutsche Bahn, Kinoheld, Meetup, National Express, ÖBB, Octorate, Ouigo, Premier Inn, SNCF, Taiwan Highspeed Rail i whyline.</li>
           <li xml:lang="cs">Nové nebo vylepšené nástroje pro extrahování cestovních dokladů pro společnosti Aegean Air, Amadeus, availpro, BlaBlaCar, Deutsche Bahn,  Kinoheld, Meetup, National Express, ÖBB, Octorate, Ouigo, Premier Inn, SNCF, Taiwan Highspeed Rail a whyline.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para Aegean Air, Amadeus, availpro, BlaBlaCar, Deutsche Bahn, Kinoheld, Meetup, National Express, ÖBB, Octorate, Ouigo, Premier Inn, SNCF, Taiwan Highspeed Rail y whyline.</li>
-          <li xml:lang="eu">New or improved travel document extractors for Aegean Air, Amadeus, availpro, BlaBlaCar, Deutsche Bahn, Kinoheld, Meetup, National Express, ÖBB, Octorate, Ouigo, Premier Inn, SNCF, Taiwan Highspeed Rail and whyline.</li>
+          <li xml:lang="eu">Aegean Air, Amadeus, availpro, BlaBlaCar, Deutsche Bahn, Kinoheld, Meetup, National Express, ÖBB, Octorate, Ouigo, Premier Inn, SNCF, Taiwan Highspeed Rail eta whyline-rako bidaia-dokumentuen erauzle berriak edo hobetuak.</li>
           <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour Aegean Air, Amadeus, Availpro, BlaBlaCar, Deutsche Bahn, Kinoheld, Meetup, National Express, ÖBB, Octorate, Ouigo, Premier Inn, SNCF, Taïwan Highspeed Rail et Whyline.</li>
           <li xml:lang="he">מחלצי מסמכים חדשים או משופרים ל־Aegean Air,‏ Amadeus,‏ availpro,‏ BlaBlaCar,‏ Deutsche Bahn,‏ Kinoheld,‏ Meetup,‏ National Express,‏ ÖBB,‏ Octorate,‏ Ouigo,‏ Premier Inn,‏ SNCF,‏ Taiwan Highspeed Rail ו־whyline.</li>
           <li xml:lang="it">Estrattori di documenti di viaggio nuovi o migliorati per Aegean Air, Amadeus, availpro, BlaBlaCar, Deutsche Bahn, Kinoheld, Meetup, National Express, ÖBB, Octorate, Ouigo, Premier Inn, SNCF, Taiwan Highspeed Rail e whyline.</li>
@@ -4727,6 +4804,7 @@
           <li xml:lang="ca-valencia">Nova pàgina d'estat en viu utilitzant l'API a bord del vehicle.</li>
           <li xml:lang="cs">Nová stránka se stavem v reálném čase využívající palubní API vozidla.</li>
           <li xml:lang="es">Nueva página de estado en directo que usa la API de a bordo de vehículos.</li>
+          <li xml:lang="eu">Ibilgailu barruko APIa erabiltzen duen zuzeneko egoeraren orri berria.</li>
           <li xml:lang="fr">Nouvelle page d'état en direct utilisant l'API embarquée du véhicule.</li>
           <li xml:lang="he">עמוד מצב חי חדש באמצעות ה־API הפנימי של כלי הרכב.</li>
           <li xml:lang="it">Nuova pagina di stato in tempo reale utilizzando l'API di imbarco del veicolo.</li>
@@ -4745,6 +4823,7 @@
           <li xml:lang="ca-valencia">Nova interfície d'usuari per a les pàgines de detalls de reserves.</li>
           <li xml:lang="cs">Nové uživatelské rozhraní pro stránky s podrobnostmi rezervace.</li>
           <li xml:lang="es">Nueva interfaz de usuario para las páginas de detalles de las reservas.</li>
+          <li xml:lang="eu">Erreserben xehetasun-orrietarako erabiltzaile-interfaze berria.</li>
           <li xml:lang="fr">Nouvelle interface utilisateur pour les pages de détails des réservations.</li>
           <li xml:lang="he">ממשק משתמש חדש לעמודי פרטי הזמנה.</li>
           <li xml:lang="it">Nuova interfaccia utente per le pagine dei dettagli della prenotazione.</li>
@@ -4763,6 +4842,7 @@
           <li xml:lang="ca-valencia">Càrrega més ràpida dels mapes d'estacions de tren i d'aeroports.</li>
           <li xml:lang="cs">Rychlejší načítání map vlakových nádraží a letišť.</li>
           <li xml:lang="es">Carga más rápida de los mapas de estaciones de tren y de aeropuertos.</li>
+          <li xml:lang="eu">Tren-geltokietako eta aireportuetako mapak azkarrago zamatzen dira.</li>
           <li xml:lang="fr">Chargement plus rapide des cartes des gares et des aéroports.</li>
           <li xml:lang="he">טעינה מהירה יותר של מפות תחנות רכבת ונמלי תעופה.</li>
           <li xml:lang="it">Caricamento più rapido delle mappe delle stazioni ferroviarie e degli aeroporti.</li>
@@ -4781,6 +4861,7 @@
           <li xml:lang="ca-valencia">Millora de la visualització de portes, arbres, blocs d'obstacles, marcadors de secció d'andanes i informació d'accessibilitat en els mapes d'estacions de trens.</li>
           <li xml:lang="cs">Vylepšené zobrazení dveří, stromů, bariérových bloků, značek úseků nástupišť a informací o přístupnosti na mapách vlakových nádraží.</li>
           <li xml:lang="es">Se ha mejorado la visualización de puertas, árboles, barreras, marcas de secciones de andenes e información de accesibilidad en los mapas de estaciones de trenes.</li>
+          <li xml:lang="eu">Tren-geltokietako mapetan ateak, zuhaitzak, oztopo-blokeak, nasa-atalen markatzaileak eta irisgarritasun-informazioa hobeto erakusten dira.</li>
           <li xml:lang="fr">Amélioration de l'affichage des portes, des arbres, des blocs de barrières, des marqueurs de sections de quais et des informations d'accessibilité sur les plans des gares.</li>
           <li xml:lang="he">הצגת דלתות, עצים, מחסומי גבול, סמני אזורי רציפים ופרטי נגישות במפות תחנות רכבות.</li>
           <li xml:lang="it">Visualizzazione migliorata di porte, alberi, blocchi barriera, indicatori di sezione dei binari e informazioni sull'accessibilità sulle mappe delle stazioni ferroviarie.</li>
@@ -4799,6 +4880,7 @@
           <li xml:lang="ca-valencia">Permet activar la llum LED per a l'escaneig de codis de barres.</li>
           <li xml:lang="cs">Povoleno LED světlo při skenování čárových kódů.</li>
           <li xml:lang="es">Permitir que se puedan activar luces LED para el escaneo de códigos de barras.</li>
+          <li xml:lang="eu">Barra-kodeak eskaneatzeko LED argia gaitzeko aukera ematen da.</li>
           <li xml:lang="fr">Permettre d'activer la lumière LED pour la lecture des codes-barres.</li>
           <li xml:lang="he">לאפשר הפעלת נורית המבזק לסריקת ברקודים.</li>
           <li xml:lang="it">Consente di abilitare la luce LED per la scansione dei codici a barre.</li>
@@ -4817,6 +4899,7 @@
           <li xml:lang="ca-valencia">Corregix un servei de transport públic equivocat que s'utilitza en França.</li>
           <li xml:lang="cs">Opraveno nesprávné používání veřejné dopravy ve Francii.</li>
           <li xml:lang="es">Se ha corregido el uso de transporte público incorrecto en Francia.</li>
+          <li xml:lang="eu">Frantzian garraio publikoaren zerbitzu okerra erabiltzea konpondu da.</li>
           <li xml:lang="fr">Correction du service de transport public incorrect utilisé en France.</li>
           <li xml:lang="he">תוקנה בעיה שנעשה שימוש בשירות התחבורה הציבורית השגוי בצרפת.</li>
           <li xml:lang="it">Correzione del servizio di trasporto pubblico errato utilizzato in Francia.</li>
@@ -4835,6 +4918,7 @@
           <li xml:lang="ca-valencia">Corregix l'accés a les dades de transport públic a Suïssa.</li>
           <li xml:lang="cs">Opraven přístup k údajům o veřejné dopravě ve Švýcarsku.</li>
           <li xml:lang="es">Se ha corregido el acceso a datos de transporte público en Suiza.</li>
+          <li xml:lang="eu">Suitzako garraio publikoaren datuetarako sarbidea konpondu da.</li>
           <li xml:lang="fr">Correction de l'accès aux données des transports publics en Suisse.</li>
           <li xml:lang="he">תוקנה גישה לנתוני תחבורה ציבורית בשווייץ.</li>
           <li xml:lang="it">Corregge l'accesso ai dati dei trasporti pubblici in Svizzera.</li>
@@ -4853,6 +4937,7 @@
           <li xml:lang="ca-valencia">Corregix la gestió dels URL apegats.</li>
           <li xml:lang="cs">Oprava zpracování vložených URL adres.</li>
           <li xml:lang="es">Se ha corregido el manejo de URL pegadas.</li>
+          <li xml:lang="eu">Itsatsitako URLen kudeaketa konpondu da.</li>
           <li xml:lang="fr">Correction de la gestion des URL collées.</li>
           <li xml:lang="he">תוקן טיפול בכתובות מודבקות.</li>
           <li xml:lang="it">Corretta la gestione degli URL incollati.</li>
@@ -4877,6 +4962,7 @@
           <li xml:lang="ca-valencia">Millora de l'extracció de dades per als bitllets de Flixbus i de ferrocarril del Regne Unit.</li>
           <li xml:lang="cs">Vylepšené získávání dat pro jízdenky Flixbus a britské železnice.</li>
           <li xml:lang="es">Se ha mejorado la extracción de datos para billetes de Flixbus y de los ferrocarriles británicos.</li>
+          <li xml:lang="eu">Flixbus eta Erresuma Batuko tren-txarteletarako datuen erauzketa hobetu da.</li>
           <li xml:lang="fr">Amélioration de l'extraction de données pour les billets Flixbus et de chemin de fer au Royaume-Uni.</li>
           <li xml:lang="he">חילוץ הנתונים לכרטיסי רכבת של Flixbus ובאנגליה השתפר.</li>
           <li xml:lang="it">Migliorata l'estrazione dei dati per i biglietti Flixbus e ferroviari del Regno Unito.</li>
@@ -4895,6 +4981,7 @@
           <li xml:lang="ca-valencia">Corregix l'elisió de noms de parades a la vista del viatge.</li>
           <li xml:lang="cs">Opraveno vynechávání názvů zastávek v zobrazení cesty.</li>
           <li xml:lang="es">Se ha corregido la omisión de nombres de paradas en la vista del viaje.</li>
+          <li xml:lang="eu">Bidaia-ikuspegian geralekuen izenak laburtzea konpondu da.</li>
           <li xml:lang="fr">Correction de l'omission des noms d'arrêts dans la vue du trajet.</li>
           <li xml:lang="he">קיצור שמות התחנות בתצוגת המסע תוקן.</li>
           <li xml:lang="it">Risolto il problema con l'eliminazione dei nomi delle fermate nella visualizzazione del viaggio.</li>
@@ -4913,6 +5000,7 @@
           <li xml:lang="ca-valencia">S'ha corregit la visualització del fus horari que falta per a les hores en UTC.</li>
           <li xml:lang="cs">Opraveno chybějící zobrazení časového pásma pro časy v UTC.</li>
           <li xml:lang="es">Se ha corregido la visualización de zonas horarias para las horas en UTC.</li>
+          <li xml:lang="eu">UTCn adierazitako orduetan ordu-eremua ez erakusteko arazoa konpondu da.</li>
           <li xml:lang="fr">Correction de l’affichage manquant du fuseau horaire pour les heures en UTC.</li>
           <li xml:lang="he">תוקנה תצוגת אזור זמן חסרה ב־UTC.</li>
           <li xml:lang="it">Risolto il problema con la visualizzazione del fuso orario mancante per gli orari in UTC.</li>
@@ -4931,6 +5019,7 @@
           <li xml:lang="ca-valencia">Corregix l'ordre d'apilament dels mapes d'estació de tren de les parts de capes de l'edifici.</li>
           <li xml:lang="cs">Opraveno pořadí vrstev mapy vlakového nádraží pro vrstvené části budov.</li>
           <li xml:lang="es">Se ha corregido el orden de apilado en los mapas de estaciones de tren para las partes del edificio con varios pisos.</li>
+          <li xml:lang="eu">Tren-geltokietako mapetan geruzadun eraikin-atalen pilatze-hurrenkera konpondu da.</li>
           <li xml:lang="fr">Correction de l'ordre d'empilement pour la carte de la gare pour les parties de bâtiments superposées.</li>
           <li xml:lang="he">תוקן סדר ערימת מפת התחנות לחלקי בניין בשכבות.</li>
           <li xml:lang="it">Risolto il problema con l'ordine di impilamento della mappa della stazione ferroviaria per le parti dell'edificio a più livelli.</li>
@@ -4955,6 +5044,7 @@
           <li xml:lang="ca-valencia">Millora de l'extracció de dades per a booking.com, Deutsche Bahn, Indique, M,V, onepagebooking i Pretix.</li>
           <li xml:lang="cs">Vylepšené získávání dat pro booking.com, Deutsche Bahn, Indico, MÁV, onepagebooking a Pretix.</li>
           <li xml:lang="es">Se ha mejorado la extracción de datos para booking.com, Deutsche Bahn, Indico, MÁV, onepagebooking y Pretix.</li>
+          <li xml:lang="eu">booking.com, Deutsche Bahn, Indico, MÁV, onepagebooking eta Pretix zerbitzuetarako datuen erauzketa hobetu da.</li>
           <li xml:lang="fr">Amélioration de l'extraction de données pour booking.com, Deutsche Bahn, Indico, MÁV, Onepagebooking et Pretix.</li>
           <li xml:lang="he">חילוץ נתונים מ־booking.com,‏ Deutsche Bahn,‏ Indico,‏ MÁV,‏ onepagebooking ו־Pretix השתפר.</li>
           <li xml:lang="it">Estrazione dei dati migliorata per booking.com, Deutsche Bahn, Indico, MÁV, onepagebooking e Pretix.</li>
@@ -4973,6 +5063,7 @@
           <li xml:lang="ca-valencia">Millora de la fusió de bitllets de tren separats i dades de reserva de seients.</li>
           <li xml:lang="cs">Vylepšené slučování údajů o samostatných jízdenkách a rezervacích míst ve vlaku.</li>
           <li xml:lang="es">Se ha mejorado la fusión de datos separados de billetes de tren y de reservas de asientos.</li>
+          <li xml:lang="eu">Bereizitako tren-txartelen eta eserleku-erreserben datuak bateratzea hobetu da.</li>
           <li xml:lang="fr">Amélioration de la fusion de données séparées entre un billet de train et des données de réservations de siège.</li>
           <li xml:lang="he">מיזוג כרטיסי רכבת נפרדים ונתוני שמירת מקומות השתפרו.</li>
           <li xml:lang="it">Migliorata l'unione dei dati separati del biglietto ferroviario e della prenotazione del posto.</li>
@@ -4991,7 +5082,7 @@
           <li xml:lang="ca-valencia">S'ha corregit la renderització de determinats bitllets d'esdeveniments d'Apple Wallet.</li>
           <li xml:lang="cs">Opraveno vykreslování některých vstupenek na události v Apple Wallet.</li>
           <li xml:lang="es">Se ha corregido la visualización de ciertas entradas para eventos de Apple Wallet.</li>
-          <li xml:lang="eu">Apple Walleten ekitaldi-txartel jakin batzuk errendatzeko arazoak konpondu dira.</li>
+          <li xml:lang="eu">Apple Walleten ekitaldi-txartel jakin batzuk bistaratzeko arazoak konpondu dira.</li>
           <li xml:lang="fr">Correction du rendu de certains billets d'évènements de Apple Wallet.</li>
           <li xml:lang="he">תוקן תיצוג של כרטיסים אירועים מסוימים של Apple Wallet.</li>
           <li xml:lang="it">Risolto il problema con il rendering di alcuni biglietti per eventi Apple Wallet.</li>
@@ -5035,6 +5126,7 @@
           <li xml:lang="ca-valencia">Permet la importació d'esdeveniments de Mobilizon.</li>
           <li xml:lang="cs">Podpora importu událostí Mobilizon.</li>
           <li xml:lang="es">Compatibilidad con la importación de eventos de Mobilizon.</li>
+          <li xml:lang="eu">Mobilizoneko ekitaldiak inportatzea onartzen da.</li>
           <li xml:lang="fr">Prise en charge de l'importation des évènements de Mobilizon.</li>
           <li xml:lang="he">תמיכה בייבוא אירועי Mobilizon.</li>
           <li xml:lang="it">Supporta l'importazione di eventi Mobilizon.</li>
@@ -5053,6 +5145,7 @@
           <li xml:lang="ca-valencia">Millora de l'extracció de dades de viatges per a Eventim, MÁV, NH Hotels, Trenitalia.</li>
           <li xml:lang="cs">Vylepšené získávání cestovních dat pro Eventim, MÁV, NH Hotels, Trenitalia.</li>
           <li xml:lang="es">Se ha mejorado la extracción de datos de viaje para Eventim, MÁV, Hoteles NH y Trenitalia.</li>
+          <li xml:lang="eu">Eventim, MÁV, NH Hotels eta Trenitaliarako bidaia-datuen erauzketa hobetu da.</li>
           <li xml:lang="fr">Amélioration de l'extraction des données de voyage pour Eventim, MÁV, NH Hotels, Trenitalia.</li>
           <li xml:lang="he">חילוץ נתוני נסיעה מ־Eventim,‏ MÁV,‏ NH Hotels,‏ Trenitalia השתפר.</li>
           <li xml:lang="it">Migliorata l'estrazione dei dati di viaggio per Eventim, MÁV, NH Hotels, Trenitalia.</li>
@@ -5071,6 +5164,7 @@
           <li xml:lang="ca-valencia">Fixar la visualització de vehicles de lloguer flotants.</li>
           <li xml:lang="cs">Oprava zobrazení dostupných vozidel k pronájmu.</li>
           <li xml:lang="es">Se ha corregido la visualización de vehículos de alquiler disponibles.</li>
+          <li xml:lang="eu">Estaziorik gabeko alokairuko ibilgailuak erakustea konpondu da.</li>
           <li xml:lang="fr">Correction de l'affichage des véhicules de location flottante.</li>
           <li xml:lang="he">תוקנה תצוגת מכוניות צפות להשכרה.</li>
           <li xml:lang="it">Corretta la visualizzazione dei veicoli a noleggio galleggianti.</li>
@@ -5089,7 +5183,7 @@
           <li xml:lang="ca-valencia">Corregix la renderització de passes d'esdeveniments d'Apple Wallet amb imatges de fons.</li>
           <li xml:lang="cs">Oprava vykreslování událostí Apple Wallet s obrázky na pozadí.</li>
           <li xml:lang="es">Se ha corregido la visualización de pases de eventos de Apple Wallet con imágenes de fondo.</li>
-          <li xml:lang="eu">Atzeko planoko irudiak dituzten Apple Wallet ekitaldi-txartelak errendatzeko arazoak konpondu dira.</li>
+          <li xml:lang="eu">Atzeko planoko irudiak dituzten Apple Wallet ekitaldi-txartelak bistaratzeko arazoak konpondu dira.</li>
           <li xml:lang="fr">Correction de l'affichage des abonnements d'évènements de Apple Wallet avec des images d'arrière-plan.</li>
           <li xml:lang="he">תוקן תיצוג של אישורי מעבר לאירועים ב־Apple Wallet עם תמונות רקע..</li>
           <li xml:lang="it">Correzione del rendering dei passaggi evento di Apple Wallet con immagini di sfondo.</li>
@@ -5108,6 +5202,7 @@
           <li xml:lang="ca-valencia">Millora la interacció de gestos de mapa en el selector d'ubicació preferida.</li>
           <li xml:lang="cs">Vylepšena interakce s mapou pomocí gest v nástroji pro výběr oblíbených míst.</li>
           <li xml:lang="es">Se ha mejorado la interacción con gestos en el mapa sobre el selector de ubicación favorita.</li>
+          <li xml:lang="eu">Gogoko kokapenaren hautatzailean mapako keinuekiko elkarreragina hobetu da.</li>
           <li xml:lang="fr">Amélioration de l'interaction par gestes sur la carte pour la sélection de lieux favoris.</li>
           <li xml:lang="he">הפעלת המפה במחוות בעת בחירת מקום מועדף השתפרה.</li>
           <li xml:lang="it">Migliora l'interazione dei gesti sulla mappa sul selettore della posizione preferita.</li>
@@ -5146,6 +5241,7 @@
           <li xml:lang="ca-valencia">Corregix la gestió de l'horari d'obertura sempre tancat.</li>
           <li xml:lang="cs">Oprava zpracování otevíracích hodin, kde je stále zavřeno.</li>
           <li xml:lang="es">Se ha corregido el manejo del horario de apertura cerrado permanentemente.</li>
+          <li xml:lang="eu">«Beti itxita» adierazten duten ordutegiak tratatzeko arazoa konpondu da.</li>
           <li xml:lang="fr">Correction de la gestion des plages d'ouverture toujours indisponibles.</li>
           <li xml:lang="he">תוקן טיפול בשעות פתיחה שתמיד סגור.</li>
           <li xml:lang="it">Corretta la gestione degli orari di apertura sempre chiusi.</li>
@@ -5208,6 +5304,7 @@
           <li xml:lang="ca-valencia">Millora del canvi de nivell de planta per a escales en mapes d'estacions/aeroports.</li>
           <li xml:lang="cs">Vylepšené přepínání podlaží pro schodiště na mapách nádraží/letišť.</li>
           <li xml:lang="es">Se ha mejorado el cambo de piso en las escaleras de los mapas de estaciones/aeropuertos.</li>
+          <li xml:lang="eu">Geltokietako eta aireportuetako mapetako eskaileretan solairuz aldatzea hobetu da.</li>
           <li xml:lang="fr">Amélioration du basculement de niveau des étages pour les escaliers sur les plans de stations / aéroports.</li>
           <li xml:lang="he">החלפה ברמת קומה השתפרה לגרמי מדרגות במפות תחנות/נמלי תעופה.</li>
           <li xml:lang="it">Miglioramento del cambio di livello del piano per le scale nelle mappe di stazioni/aeroporti.</li>
@@ -5226,6 +5323,7 @@
           <li xml:lang="ca-valencia">Correccions de l'ordre d'apilament i detecció del mapes d'estacions/aeroports.</li>
           <li xml:lang="cs">Oprava pořadí vrstev a detekce zásahů pro mapy stanic/letišť.</li>
           <li xml:lang="es">Se ha corregido en el orden de apilado y la detección de resultados en los mapas de estaciones/aeropuertos.</li>
+          <li xml:lang="eu">Geltokietako eta aireportuetako mapetan pilatze-hurrenkera eta ukipen-detekzioa konpondu dira.</li>
           <li xml:lang="fr">Correction de l'ordre d'empilement et de la détection des clics pour les cartes des gares /aéroports.</li>
           <li xml:lang="he">תיקוני סידור בערמה וזיהוי פגיעה למפות תחנות/נמלי תעופה.</li>
           <li xml:lang="it">Correzioni dell'ordine di impilamento e del rilevamento dei colpi per le mappe della stazione/aeroporto.</li>
@@ -5244,6 +5342,7 @@
           <li xml:lang="ca-valencia">Corregix la informació de la regla de circulació per a persones que viuen en països que circulen per l'esquerra.</li>
           <li xml:lang="cs">Opravena informace o straně řízení pro osoby žijící v zemích s levostranným provozem.</li>
           <li xml:lang="es">Se ha corregido la información sobre el lado de conducción para las personas que viven en países donde se conduce por la izquierda.</li>
+          <li xml:lang="eu">Ezkerretik gidatzen den herrialdeetan bizi direnentzako gidatze-aldeari buruzko informazioa konpondu da.</li>
           <li xml:lang="fr">Correction des informations sur le côté de conduite pour les personnes vivant dans des pays avec conduite à gauche.</li>
           <li xml:lang="he">תוקנו פרטי צד נהיגה לאנשים שחיים במדינות שבהן נוהגים בצד שמאל.</li>
           <li xml:lang="it">Corregge le informazioni sul lato di guida per le persone che vivono nei paesi con guida a sinistra.</li>
@@ -5262,6 +5361,7 @@
           <li xml:lang="ca-valencia">Corregix l'entrada de data/hora per a les busques manuals de viatges en tren/autobús.</li>
           <li xml:lang="cs">Oprava zadávání data a času pro ruční vyhledávání cest vlakem/autobusem.</li>
           <li xml:lang="es">Se ha corregido la introducción de fechas y horas en las búsquedas manuales de viajes en tren o autobús.</li>
+          <li xml:lang="eu">Tren- eta autobus-bidaien eskuzko bilaketetako data- eta ordu-sarrera konpondu da.</li>
           <li xml:lang="fr">Correction de la saisie de la date / heure pour les recherches manuelles de trajets en train / bus.</li>
           <li xml:lang="he">תוקן קלט תאריך/שעה לחיפוש מסעות רכבת/אוטובוס ידני.</li>
           <li xml:lang="it">Corregge l'inserimento di data/ora per le ricerche manuali di viaggi in treno/autobus.</li>
@@ -5280,6 +5380,7 @@
           <li xml:lang="ca-valencia">Corregix els trens de Railjet que no tenen distribució de vagons dins d'Alemanya.</li>
           <li xml:lang="cs">Opraveny vlaky Railjet, které nemají řazení vagónů uvnitř Německa.</li>
           <li xml:lang="es">Se ha corregido el problema de los trenes Railjet que no tenían distribución de coches dentro de Alemania.</li>
+          <li xml:lang="eu">Railjet trenek Alemanian bagoien antolaerarik ez izatea konpondu da.</li>
           <li xml:lang="fr">Correction pour les trains de Railjet n'ayant aucun plan des wagons en Allemagne.</li>
           <li xml:lang="he">תוקנה בעיה שלרכבות Railjet לא הייתה פריסת קרונות בתוך גרמניה.</li>
           <li xml:lang="it">Risolti i problemi con i treni Railjet che non avevano disposizioni di carrozza all'interno della Germania.</li>
@@ -5317,6 +5418,7 @@
           <li xml:lang="ca-valencia">Diverses addicions i millores de l'extractor de documents de viatge.</li>
           <li xml:lang="cs">Různá vylepšení a doplnění nástroje pro extrahování cestovních dokladů.</li>
           <li xml:lang="es">Diversas mejoras y complementos del extractor de documentos de viaje.</li>
+          <li xml:lang="eu">Bidaia-dokumentuen erauzleetan hainbat gehikuntza eta hobekuntza egin dira.</li>
           <li xml:lang="fr">Divers ajouts et améliorations de l’extracteur de documents de voyage.</li>
           <li xml:lang="he">מגוון תוספות ושיפורים למחלצי מסמכי נסיעה.</li>
           <li xml:lang="it">Varie aggiunte e miglioramenti all'estrattore di documenti di viaggio.</li>
@@ -5341,6 +5443,7 @@
           <li xml:lang="ca-valencia">Nou extractor de dades de viatge per als bitllets de tren d'Italo.</li>
           <li xml:lang="cs">Nový extraktor cestovních údajů pro jízdenky vlaků Italo.</li>
           <li xml:lang="es">Nuevo extractor de datos de viaje para los billetes de tren de Italo.</li>
+          <li xml:lang="eu">Italo tren-txarteletarako bidaia-datuen erauzle berria.</li>
           <li xml:lang="fr">Nouveau extracteur de données de voyage pour les billets de train de Italo.</li>
           <li xml:lang="he">מחלץ נתוני נסיעה חדש מכרטיסי רכבת של Italo.</li>
           <li xml:lang="it">Nuovo estrattore dati di viaggio per i biglietti ferroviari Italo.</li>
@@ -5365,6 +5468,7 @@
           <li xml:lang="ca-valencia">Millora de l'extracció de dades de viatges per a Airbnb, Amadeus, BlaBlaCar, Eventim, Ryanair, SNCF, Thalys, Vueling.</li>
           <li xml:lang="cs">Vylepšené získávání dat o cestování pro Airbnb, Amadeus, BlaBlaCar, Eventim, Ryanair, SNCF, Thalys, Vueling.</li>
           <li xml:lang="es">Se ha mejorado la extracción de datos de viaje para Airbnb, Amadeus, BlaBlaCar, Eventim, Ryanair, SNCF, Thalys y Vueling.</li>
+          <li xml:lang="eu">Airbnb, Amadeus, BlaBlaCar, Eventim, Ryanair, SNCF, Thalys eta Vueling zerbitzuetarako bidaia-datuen erauzketa hobetu da.</li>
           <li xml:lang="fr">Amélioration de l'extraction des données de voyage pour Airbnb, Amadeus, BlaBlaCar, Eventim, Ryanair, SNCF, Thalys, Vueling.</li>
           <li xml:lang="he">חילוץ נתוני נסיעה מ־Airbnb,‏ Amadeus,‏ BlaBlaCar,‏ Eventim,‏ Ryanair,‏ SNCF,‏ Thalys ו־Vueling השתפר.</li>
           <li xml:lang="it">Migliorata l'estrazione dei dati di viaggio per Airbnb, Amadeus, BlaBlaCar, Eventim, Ryanair, SNCF, Thalys, Vueling.</li>
@@ -5383,6 +5487,7 @@
           <li xml:lang="ca-valencia">Gestiona la transliteració quan es comparen els noms dels viatgers.</li>
           <li xml:lang="cs">Při porovnávání jmen cestujících zohledněny přepisy.</li>
           <li xml:lang="es">Gestionar la transliteración al comparar nombres de viajeros.</li>
+          <li xml:lang="eu">Bidaiarien izenak alderatzean transliterazioa kontuan hartzen da.</li>
           <li xml:lang="fr">Gérer la translittération lors de la comparaison des noms de voyageurs.</li>
           <li xml:lang="he">טיפול בתעתיק בעת השוואת שמות מטיילים.</li>
           <li xml:lang="it">Gestisce la traslitterazione quando confronti i nomi dei viaggiatori.</li>
@@ -5401,6 +5506,7 @@
           <li xml:lang="ca-valencia">Corregix l'agrupació de viatges quan en connectar el viatge és part d'una reserva diferent.</li>
           <li xml:lang="cs">Opraveno seskupení cest, pokud je spojovací cesta součástí jiné rezervace.</li>
           <li xml:lang="es">Se ha corregido la agrupación de viajes cuando el trayecto de conexión forma parte de una reserva diferente.</li>
+          <li xml:lang="eu">Loturako bidaia beste erreserba batekoa denean, bidaiak taldekatzeko arazoa konpondu da.</li>
           <li xml:lang="fr">Correction du regroupement des trajets lorsque le voyage de correspondance fait partie d'une réservation différente.</li>
           <li xml:lang="he">תוקן קיבוץ נסיעות כשהמסע המחבר הוא חלק מהזמנה אחרת.</li>
           <li xml:lang="it">Corregge il raggruppamento dei viaggi quando il viaggio in coincidenza fa parte di una prenotazione diversa.</li>
@@ -5438,7 +5544,7 @@
           <li xml:lang="ca-valencia">Corregix la renderització dels tiquets d'esdeveniment d'Apple Wallet.</li>
           <li xml:lang="cs">Oprava vykreslování vstupenek na události v Apple Wallet.</li>
           <li xml:lang="es">Se ha corregido la visualización de entradas a eventos de Apple Wallet.</li>
-          <li xml:lang="eu">Apple Wallet ekitaldi-txartelak errendatzeko arazoak konpondu dira.</li>
+          <li xml:lang="eu">Apple Wallet ekitaldi-txartelak bistaratzeko arazoak konpondu dira.</li>
           <li xml:lang="fr">Correction de l'affichage des billets d'évènements dans Apple Wallet.</li>
           <li xml:lang="he">תוקן תיצוג של כרטיסי אירועים ב־Apple Wallet.</li>
           <li xml:lang="it">Correzione del rendering dei biglietti degli eventi di Apple Wallet.</li>
@@ -5463,6 +5569,7 @@
           <li xml:lang="ca-valencia">Millora de la mida i el posicionament de les superposicions de mapa.</li>
           <li xml:lang="cs">Vylepšena velikost a umístění mapových překryvů.</li>
           <li xml:lang="es">Se ha mejorado el tamaño y la posición de capas de mapas.</li>
+          <li xml:lang="eu">Maparen gainjarrien tamaina eta kokapena hobetu dira.</li>
           <li xml:lang="fr">Amélioration de la taille et du positionnement des superpositions sur la carte.</li>
           <li xml:lang="he">שיפור הגודל ומקום ההצגה של שכבות מעל המפה.</li>
           <li xml:lang="it">Migliora le dimensioni e il posizionamento delle sovrapposizioni di mappe.</li>
@@ -5481,6 +5588,7 @@
           <li xml:lang="ca-valencia">Extractors de dades de viatge millorats per a Amtrak, Flixbus i Vistara.</li>
           <li xml:lang="cs">Vylepšené nástroje pro extrakci cestovních dat pro Amtrak, Flixbus a Vistara.</li>
           <li xml:lang="es">Se han mejorado los extractores de datos de viaje para Amtrak, Flixbus y Vistara.</li>
+          <li xml:lang="eu">Amtrak, Flixbus eta Vistararako bidaia-datuen erauzleak hobetu dira.</li>
           <li xml:lang="fr">Amélioration de l'extracteur de données de voyage améliorés pour Amtrak, Flixbus et Vistara.</li>
           <li xml:lang="he">מחלצי נתוני נסיעות מ־Amtrak,‏ Flixbus ו־Vistara.</li>
           <li xml:lang="it">Estrattori dati di viaggio migliorati per Amtrak, Flixbus e Vistara.</li>
@@ -5499,6 +5607,7 @@
           <li xml:lang="ca-valencia">Millora la detecció de la terminal i porta de l'aeroport.</li>
           <li xml:lang="cs">Vylepšené rozpoznávání letištních terminálů a bran.</li>
           <li xml:lang="es">Se ha mejorado la detección de terminales y puertas en aeropuertos.</li>
+          <li xml:lang="eu">Aireportuko terminalak eta ateak detektatzea hobetu da.</li>
           <li xml:lang="fr">Amélioration de la détection des terminaux et des portes d'aéroport.</li>
           <li xml:lang="he">זיהוי מסוף/טרמינל ושער בנמלי תעופה השתפר.</li>
           <li xml:lang="it">Miglioramento del rilevamento del terminal e del gate dell'aeroporto.</li>
@@ -5523,6 +5632,7 @@
           <li xml:lang="ca-valencia">S'ha millorat la importació de calendari, permetent una selecció més fina i admetent també Linux.</li>
           <li xml:lang="cs">Vylepšený import kalendáře, umožňující jemnější výběr a podporující také Linux.</li>
           <li xml:lang="es">Se ha mejorado la importación de calendarios, permitiendo una selección más precisa y compatibilidad con Linux.</li>
+          <li xml:lang="eu">Egutegi-inportazioa hobetu da: hautapen xeheagoa egin daiteke, eta Linux ere onartzen du.</li>
           <li xml:lang="fr">Amélioration de l'importation de calendrier, permettant une sélection plus précise et prenant également en charge Linux.</li>
           <li xml:lang="he">התמיכה בלוח שנה השתפרה, מה שמאפשר בחירה יותר מדויקת לרבות תמיכה בלינוקס.</li>
           <li xml:lang="it">Importazione del calendario migliorata, che consente una selezione più dettagliata e supporta anche Linux.</li>
@@ -5598,6 +5708,7 @@
           <li xml:lang="ca-valencia">Escàner integrat de codis de barres.</li>
           <li xml:lang="cs">Integrovaná čtečka čárových kódů.</li>
           <li xml:lang="es">Escáner de códigos de barra integrado.</li>
+          <li xml:lang="eu">Barra-kodeen eskaner integratua.</li>
           <li xml:lang="fr">Lecteur intégré de codes-barres.</li>
           <li xml:lang="he">סורק ברקודים הוטמע.</li>
           <li xml:lang="it">Lettore di codici a barre integrato.</li>
@@ -5622,6 +5733,7 @@
           <li xml:lang="ca-valencia">Corregix les andanes monorail que es detecten erròniament com a ferrocarril normal.</li>
           <li xml:lang="cs">Oprava nesprávného rozpoznávání monorailových nástupišť jako běžných železničních nástupišť.</li>
           <li xml:lang="es">Se ha corregido el fallo que detectaba de forma errónea los andenes de monorraíl.</li>
+          <li xml:lang="eu">Errailbakarreko nasak trenbide arrunt gisa oker detektatzeko arazoa konpondu da.</li>
           <li xml:lang="fr">Correction des quais de monorail détectées à tort comme des voies ferrées classiques.</li>
           <li xml:lang="he">תוקנה בעיה שרציפים של מונורייל (חד־מסילה) זוהו בטעות כתחנות רכבת רגילה.</li>
           <li xml:lang="it">Risolto il problema per cui le piattaforme della monorotaia venivano erroneamente rilevate come ferrovia normale.</li>
@@ -5646,6 +5758,7 @@
           <li xml:lang="ca-valencia">Millora de l'extracció de dades de viatges per a Thalys, ferrocarril nacional del Regne Unit, Eurowings i Eventbrite.</li>
           <li xml:lang="cs">Vylepšené získávání cestovních dat pro Thalys, britské národní železnice, Eurowings a Eventbrite.</li>
           <li xml:lang="es">Se ha mejorado la extracción de datos de viaje para Thalys, los ferrocarriles nacionales de Reino Unido, Eurowings y Eventbrite.</li>
+          <li xml:lang="eu">Thalys, Erresuma Batuko trenbide nazionala, Eurowings eta Eventbriterako bidaia-datuen erauzketa hobetu da.</li>
           <li xml:lang="fr">Amélioration de l'extraction de données de voyage pour Thalys, le réseau ferroviaire national britannique, Eurowings et Eventbrite.</li>
           <li xml:lang="he">חילוץ נתוני הנסיעות מ־Thalys, שירות הרכבות הלאומי של הממלכה המאוחדת, Eurowings ו־Eventbrite השתפר.</li>
           <li xml:lang="it">Migliorata l'estrazione dei dati di viaggio per Thalys, ferrovie nazionali del Regno Unito, Eurowings ed Eventbrite.</li>
@@ -5664,6 +5777,7 @@
           <li xml:lang="ca-valencia">S'ha corregit l'anàlisi de la informació de càrrega del tren per als operadors de transport públic alemanys.</li>
           <li xml:lang="cs">Opraveno zpracování informací o obsazení vlaků pro německé provozovatele veřejné dopravy.</li>
           <li xml:lang="es">Se ha corregido el análisis de información de carga del tren para los operadores de transporte público alemanes.</li>
+          <li xml:lang="eu">Alemaniako garraio publikoko operadoreen trenen okupazio-datuen analisia konpondu da.</li>
           <li xml:lang="fr">Correction de l'analyse des informations de charge des trains pour les opérateurs de transport public allemands.</li>
           <li xml:lang="he">תוקן פיענוח פרטי עומס רכבות למפעילים התחבורה הציבורית בגרמניה.</li>
           <li xml:lang="it">Risolto il problema relativo all'analisi delle informazioni sul carico dei treni per gli operatori di trasporto pubblico tedeschi.</li>
@@ -5726,6 +5840,7 @@
           <li xml:lang="ca-valencia">Millora dels extractors de documents de viatge per a booking.com, Eurowings, onepagebooking.com i SNCF.</li>
           <li xml:lang="cs">Vylepšené extraktory cestovních dokladů pro booking.com, Eurowings, onepagebooking.com a SNCF.</li>
           <li xml:lang="es">Se han mejorado los extractores de documentos de viaje para booking.com, Eurowings, onepagebooking.com y SNCF.</li>
+          <li xml:lang="eu">booking.com, Eurowings, onepagebooking.com eta SNCFrako bidaia-dokumentuen erauzleak hobetu dira.</li>
           <li xml:lang="fr">Améliorations des extracteurs de documents de voyage pour booking.com, Eurowings, onepagebooking.com et SNCF.</li>
           <li xml:lang="he">מחלצי מסמכי נסיעות משופרים ל־booking.com,‏ Eurowings,‏ onepagebooking.com ו־SNCF.</li>
           <li xml:lang="it">Estrattori di documenti di viaggio migliorati per booking.com, Eurowings, onepagebooking.com e SNCF.</li>
@@ -5788,6 +5903,7 @@
           <li xml:lang="ca-valencia">Permet afegir viatges de tren a partir d'una consulta de viatge en línia en la línia de temps.</li>
           <li xml:lang="cs">Povoleno přidání vlakových spojů z online vyhledávání cest do časové osy.</li>
           <li xml:lang="es">Permitir que se puedan añadir trayectos en tren desde una consulta de viaje en línea a la línea cronológica.</li>
+          <li xml:lang="eu">Lerroko bidaia-kontsulta bateko tren-bidaiak denbora-lerrora gehi daitezke.</li>
           <li xml:lang="fr">Autorisation d'ajouter à la chronologie des trajets en train issus d'une recherche de voyage en ligne.</li>
           <li xml:lang="he">מתן אפשרות להוסיף נסיעות רכבת משאילתת מסע מקוון לציר הזמן.</li>
           <li xml:lang="it">Consente di aggiungere viaggi in treno da una query di viaggio online alla linea temporale.</li>
@@ -5806,6 +5922,7 @@
           <li xml:lang="ca-valencia">Extractors nous o millorats per a Renfe, SNCF, ÖBB, Spring Airlines, Peach Aviation.</li>
           <li xml:lang="cs">Nové nebo vylepšené extraktory pro Renfe, SNCF, ÖBB, Spring Airlines, Peach Aviation.</li>
           <li xml:lang="es">Extractores nuevos o mejorados para Renfe, SNCF, ÖBB, Spring Airlines, Peach Aviation.</li>
+          <li xml:lang="eu">Renfe, SNCF, ÖBB, Spring Airlines, Peach Aviationerako erauzle berriak edo hobetuak.</li>
           <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour Renfe, SNCF, ÖBB, Spring Airlines et Peach Aviation.</li>
           <li xml:lang="he">מחלצים חדשים או משופרים ל־Renfe,‏ SNCF,‏ ÖBB,‏ Spring Airlines,‏ Peach Aviation.</li>
           <li xml:lang="it">Estrattori nuovi o migliorati per Renfe, SNCF, ÖBB, Spring Airlines, Peach Aviation.</li>
@@ -5824,6 +5941,7 @@
           <li xml:lang="ca-valencia">Ressalta les condicions meteorològiques severes en la previsió meteorològica.</li>
           <li xml:lang="cs">V předpovědi počasí zdůrazněny nepříznivé povětrnostní podmínky.</li>
           <li xml:lang="es">Resaltar las condiciones meteorológicas adversas en la previsión meteorológica.</li>
+          <li xml:lang="eu">Eguraldi-iragarpenean eguraldi-baldintza larriak nabarmentzen dira.</li>
           <li xml:lang="fr">Mise en évidence des conditions météorologiques sévères dans les prévisions.</li>
           <li xml:lang="he">הדגשת תנאי מזג אוויר קשים בדיווחי מזג האוויר.</li>
           <li xml:lang="it">Evidenzia le condizioni meteorologiche avverse nelle previsioni del tempo.</li>
@@ -5842,6 +5960,7 @@
           <li xml:lang="ca-valencia">Mostra els dies festius oficials en la línia de temps.</li>
           <li xml:lang="cs">Zobrazení státních svátků v časové ose.</li>
           <li xml:lang="es">Mostrar días festivos en la línea de tiempo.</li>
+          <li xml:lang="eu">Jaiegunak denbora-lerroan erakusten dira.</li>
           <li xml:lang="fr">Afficher les jours fériés dans la chronologie.</li>
           <li xml:lang="he">הצגת חגים ציבוריים בציר הזמן.</li>
           <li xml:lang="it">Mostra i giorni festivi nella linea temporale.</li>
@@ -5917,6 +6036,7 @@
           <li xml:lang="ca-valencia">Seguix la Configuració del sistema a Linux per a quina aplicació de mapa extern s'ha d'utilitzar.</li>
           <li xml:lang="cs">Dodržuje se nastavení systému Linux, které určuje, která externí mapová aplikace se má použít.</li>
           <li xml:lang="es">Seguir la configuración del sistema en Linux para saber qué aplicación de mapas externa se debe usar.</li>
+          <li xml:lang="eu">Linuxen, kanpoko mapa-aplikazioa hautatzeko sistemaren ezarpenei jarraitzen zaie.</li>
           <li xml:lang="fr">Suivre la configurations du système de Linux pour sélectionner quelle application de cartographie externe utiliser.</li>
           <li xml:lang="he">היצמדות להגדרות המערכת בלינוקס בנוגע ליישום המפות החיצוני לשימוש.</li>
           <li xml:lang="it">Segue le impostazioni di sistema su Linux per quale applicazione di mappa esterna utilizzare.</li>
@@ -5980,6 +6100,7 @@
           <li xml:lang="ca-valencia">Afig l'extracció de dades de viatge dels documents PDF de bitllets d'Air France.</li>
           <li xml:lang="cs">Přidána funkce extrakce cestovních údajů z PDF dokumentů letenek Air France.</li>
           <li xml:lang="es">Se ha añadido extracción de datos de viaje de los documentos de billetes PDF de Air France.</li>
+          <li xml:lang="eu">Air France-ren txartelen PDF dokumentuetako bidaia-datuen erauzketa gehitu da.</li>
           <li xml:lang="fr">Ajout de l'extraction des données de voyage à partir des documents « PDF » des billets Air France.</li>
           <li xml:lang="he">נוסף חילוץ נתוני נסיעה ממסמכי PDF של כרטיסים של Air France.</li>
           <li xml:lang="it">Aggiunge l'estrazione dei dati di viaggio dai documenti PDF dei biglietti Air France.</li>
@@ -5998,6 +6119,7 @@
           <li xml:lang="ca-valencia">Corregix el format de nombres segons la configuració regional.</li>
           <li xml:lang="cs">Opraveno formátování čísel podle místního nastavení.</li>
           <li xml:lang="es">Se ha corregido el formato de los números para tener en cuenta la configuración regional.</li>
+          <li xml:lang="eu">Zenbakiak eskualde-ezarpenen arabera formateatzea konpondu da.</li>
           <li xml:lang="fr">Correction du formatage des nombres en fonction des paramètres régionaux.</li>
           <li xml:lang="he">תוקנה תבנית מספרים תלויית הגדרות אזוריות.</li>
           <li xml:lang="it">Corregge la formattazione dei numeri compatibile con le impostazioni locali.</li>
@@ -6022,6 +6144,7 @@
           <li xml:lang="ca-valencia">Corregix l'agrupació de viatges que produïxen resultats erronis en zones densament poblades.</li>
           <li xml:lang="cs">Oprava seskupování cest, které vedlo k nesprávným výsledkům v hustě osídlených oblastech.</li>
           <li xml:lang="es">Se ha corregido el problema de agrupación de viajes que producía resultados erróneos en áreas densamente pobladas.</li>
+          <li xml:lang="eu">Biztanle-dentsitate handiko eremuetan bidaiak taldekatzeak emaitza okerrak sortzea konpondu da.</li>
           <li xml:lang="fr">Correction du regroupement de trajets produisant des résultats incorrects dans les zones densément peuplées.</li>
           <li xml:lang="he">תוקן קיבוץ נסיעות שהפסיק תוצאות שגויות באזורים צפופים.</li>
           <li xml:lang="it">Risolto il problema con il raggruppamento dei viaggi che produceva risultati errati in aree densamente popolate.</li>
@@ -6040,6 +6163,7 @@
           <li xml:lang="ca-valencia">Millorar la detecció de codis de barres vectorials en documents PDF.</li>
           <li xml:lang="cs">Vylepšena detekce vektorových čárových kódů v dokumentech PDF.</li>
           <li xml:lang="es">Se ha mejorado la detección de códigos de barras vectoriales en documentos PDF.</li>
+          <li xml:lang="eu">PDF dokumentuetan barra-kode bektorialak detektatzea hobetu da.</li>
           <li xml:lang="fr">Amélioration de la détection des codes-barres vectoriels dans les documents de format « PDF ».</li>
           <li xml:lang="he">זיהוי ברקוד וקטור במסמכי PDF השתפר.</li>
           <li xml:lang="it">Migliora il rilevamento dei codici a barre vettoriali nei documenti PDF.</li>
@@ -6064,6 +6188,7 @@
           <li xml:lang="ca-valencia">Corregix el posicionament del mapa d'estació per a elements sense dades en viu.</li>
           <li xml:lang="cs">Opraveno umístění stanic na mapě pro prvky bez živých dat.</li>
           <li xml:lang="es">Corregir la posición en el mapa de la estación de elementos sin datos en vivo.</li>
+          <li xml:lang="eu">Geltokiko mapan zuzeneko daturik gabeko elementuen kokapena konpondu da.</li>
           <li xml:lang="fr">Correction du positionnement de la carte de la station pour les éléments sans données en temps réel.</li>
           <li xml:lang="he">תוקנה הצבת מפת תחנות לרכיבים בלי נתונים חיים.</li>
           <li xml:lang="it">Corregge il posizionamento sulla mappa della stazione per gli elementi senza dati in tempo reale.</li>
@@ -6082,6 +6207,7 @@
           <li xml:lang="ca-valencia">Millora de l'extracció de documents de viatge per a Amtrak i VIA Rail.</li>
           <li xml:lang="cs">Vylepšené extrahování cestovních dokladů pro společnosti Amtrak a VIA Rail.</li>
           <li xml:lang="es">Extracción mejorada de documentos de viaje de Amtrak y VIA Rail.</li>
+          <li xml:lang="eu">Amtrak eta VIA Railerako bidaia-dokumentuen erauzketa hobetu da.</li>
           <li xml:lang="fr">Amélioration de l'extraction des documents de voyage pour Amtrak et VIA Rail.</li>
           <li xml:lang="he">חילוץ מסמכי נסיעה ל־Amtrak ול־VIA Rail השתפר.</li>
           <li xml:lang="it">Migliorata l'estrazione dei documenti di viaggio per Amtrak e VIA Rail.</li>
@@ -6119,6 +6245,7 @@
           <li xml:lang="ca-valencia">Millora de l'avaluació d'horaris d'obertura als mapes d'estacions.</li>
           <li xml:lang="cs">Vylepšené zobrazení otevírací doby v mapách stanic.</li>
           <li xml:lang="es">Mejora en la evaluación del horario de apertura en los mapas de estaciones.</li>
+          <li xml:lang="eu">Geltokietako mapetako ordutegien interpretazioa hobetu da.</li>
           <li xml:lang="fr">Améliorations de l'évaluation des horaires d'ouverture sur les plans des stations.</li>
           <li xml:lang="he">שיערוך שעות הפתיחה במפות התחנות השתפר.</li>
           <li xml:lang="it">Migliorata la valutazione degli orari di apertura nelle mappe delle stazioni.</li>
@@ -6143,6 +6270,7 @@
           <li xml:lang="ca-valencia">Interfície d'usuari nova de certificat de salut.</li>
           <li xml:lang="cs">Nové uživatelské rozhraní pro zdravotní certifikáty.</li>
           <li xml:lang="es">Nueva interfaz para certificados sanitarios.</li>
+          <li xml:lang="eu">Osasun-ziurtagirietarako erabiltzaile-interfaze berria.</li>
           <li xml:lang="fr">Nouvelle interface utilisateur pour les certificats de santé.</li>
           <li xml:lang="he">ממשק משתמש חדש לתעודות הבריאות.</li>
           <li xml:lang="it">Nuova interfaccia utente del certificato sanitario.</li>
@@ -6161,6 +6289,7 @@
           <li xml:lang="ca-valencia">Pàgina nova de detalls de maniobra de navegació per al transport individual o seccions de viatge a peu.</li>
           <li xml:lang="cs">Nová stránka s podrobnostmi o navigačních manévrech pro jednotlivé úseky cesty dopravou nebo pěšky.</li>
           <li xml:lang="es">Nueva página de detalles de maniobras de navegación para secciones individuales de transporte o recorrido a pie.</li>
+          <li xml:lang="eu">Garraio indibidualeko edo oinezko bidaia-ataletako nabigazio-maniobren xehetasun-orri berria.</li>
           <li xml:lang="fr">Nouvelle page de détails sur les manœuvres de navigation pour les sections de trajets en transport individuel ou à pied.</li>
           <li xml:lang="he">עמוד פרטי תמרון ניווט לנסיעה מסוימת או למקטעי הליכה במסע.</li>
           <li xml:lang="it">Nuova pagina dei dettagli delle manovre di navigazione per le singole sezioni di trasporto o viaggio a piedi.</li>
@@ -6198,6 +6327,7 @@
           <li xml:lang="ca-valencia">Informació de disrupció en directe i detalls de viatge per als viatges en autobús.</li>
           <li xml:lang="cs">Aktuální informace o dopravních omezeních a podrobnosti o cestách autobusem.</li>
           <li xml:lang="es">Información en vivo sobre interrupciones y detalles del viaje en autobús.</li>
+          <li xml:lang="eu">Autobus-bidaietako gorabeherei buruzko zuzeneko informazioa eta bidaia-xehetasunak.</li>
           <li xml:lang="fr">Informations en temps réel sur les perturbations et détails des trajets pour les voyages en bus.</li>
           <li xml:lang="he">פרטי הפרעות בזמן אמת ופרטי מסע לנסיעות אוטובוס.</li>
           <li xml:lang="it">Informazioni in tempo reale sui disagi e dettagli sul viaggio per i viaggi in autobus.</li>
@@ -6216,6 +6346,7 @@
           <li xml:lang="ca-valencia">Capacitat per a escurçar els viatges en tren i autobús.</li>
           <li xml:lang="cs">Možnost zkrátit cesty vlakem a autobusem.</li>
           <li xml:lang="es">Capacidad de acortar los viajes en tren y autobús.</li>
+          <li xml:lang="eu">Tren- eta autobus-bidaiak laburtzeko aukera.</li>
           <li xml:lang="fr">Capacité à raccourcir les voyages en train et en bus.</li>
           <li xml:lang="he">היכולת לקצר נסיעות ברכבת ובאוטובוס.</li>
           <li xml:lang="it">Possibilità di abbreviare i viaggi in treno e autobus.</li>
@@ -6253,6 +6384,7 @@
           <li xml:lang="ca-valencia">Millora de la identificació d'andanes per a tramvies i metros.</li>
           <li xml:lang="cs">Vylepšená identifikace nástupišť pro tramvaje a metro.</li>
           <li xml:lang="es">Identificación mejorada de andenes de tranvías y metros.</li>
+          <li xml:lang="eu">Tranbien eta metroen nasak identifikatzea hobetu da.</li>
           <li xml:lang="fr">Amélioration de l'identification des quais pour les tramways et les métros.</li>
           <li xml:lang="he">זיהוי רציפים משופר לרכבות חשמליות ותחתיות.</li>
           <li xml:lang="it">Migliorata l'identificazione della piattaforma per tram e metropolitane.</li>
@@ -6290,6 +6422,7 @@
           <li xml:lang="ca-valencia">S'ha millorat la retroalimentació de la importació de dades.</li>
           <li xml:lang="cs">Vylepšená zpětná vazba při importu dat.</li>
           <li xml:lang="es">Se ha mejorado la respuesta de la importación de datos.</li>
+          <li xml:lang="eu">Datu-inportazioari buruzko informazioa hobetu da.</li>
           <li xml:lang="fr">Amélioration du retour après importation des données.</li>
           <li xml:lang="he">המשוב על ייבוא נתונים השתפר.</li>
           <li xml:lang="it">Riscontro sull'importazione dei dati migliorato.</li>
@@ -6308,6 +6441,7 @@
           <li xml:lang="ca-valencia">S'ha esmenat el zoom en pessigar als mapes d'estacions.</li>
           <li xml:lang="cs">Opraveno přiblížení na mapách stanic.</li>
           <li xml:lang="es">Se ha corregido el problema de ampliación al pellizcar en los mapas de las estaciones.</li>
+          <li xml:lang="eu">Geltokien mapetan atximur bidezko zooma konpondu da.</li>
           <li xml:lang="fr">Correction du zoom par pincement sur les cartes des gares.</li>
           <li xml:lang="he">תקריב בצביטה על מפות התחנות השתפר.</li>
           <li xml:lang="it">Risolto il problema con lo zoom con pizzico sulle mappe delle stazioni.</li>
@@ -6326,7 +6460,7 @@
           <li xml:lang="ca-valencia">S'ha millorat la renderització de passes d'Apple Wallet.</li>
           <li xml:lang="cs">Vylepšené vykreslování Apple Wallet pass.</li>
           <li xml:lang="es">Visualización mejorada de pases de Apple Wallet.</li>
-          <li xml:lang="eu">Apple Wallet txartelen errendatzea hobetu da.</li>
+          <li xml:lang="eu">Apple Wallet txartelen bistaratzea hobetu da.</li>
           <li xml:lang="fr">Rendu amélioré des abonnements dans Apple Wallet.</li>
           <li xml:lang="he">עיבוד אישורי מעבר מסוג Apple Wallet השתפר.</li>
           <li xml:lang="it">Miglioramento del rendering dei passaggi Apple Wallet.</li>
@@ -6345,6 +6479,7 @@
           <li xml:lang="ca-valencia">Avisa sobre els vehicles de lloguer amb una autonomia restant limitada.</li>
           <li xml:lang="cs">Upozornění na vozidla s omezeným dojezdem.</li>
           <li xml:lang="es">Mostrar advertencia sobre vehículos de alquiler con autonomía restante limitada.</li>
+          <li xml:lang="eu">Geratzen zaien autonomia mugatua duten alokairuko ibilgailuei buruz ohartarazten da.</li>
           <li xml:lang="fr">Avertissement concernant les véhicules de location avec une autonomie restante limitée.</li>
           <li xml:lang="he">להזהיר בנוגע למכוניות שכורות עם טווח נותר מוגבל.</li>
           <li xml:lang="it">Avvisa sui veicoli a noleggio con autonomia rimanente limitata.</li>
@@ -6363,6 +6498,7 @@
           <li xml:lang="ca-valencia">Nombroses millores en l'extracció de dades de documents de viatge.</li>
           <li xml:lang="cs">Četná vylepšení v oblasti extrakce údajů z cestovních dokladů.</li>
           <li xml:lang="es">Numerosas mejoras en la extracción de datos de documentos de viaje.</li>
+          <li xml:lang="eu">Bidaia-dokumentuetako datuen erauzketan hobekuntza ugari egin dira.</li>
           <li xml:lang="fr">De nombreuses améliorations dans l'extraction des données provenant des documents de voyage.</li>
           <li xml:lang="he">מגוון שיפורים בחילוץ נתוני ממסמכי נסיעות.</li>
           <li xml:lang="it">Numerosi miglioramenti all'estrazione dei dati dei documenti di viaggio.</li>
@@ -6406,6 +6542,7 @@
           <li xml:lang="ca-valencia">Corregix la panoràmica de mapes deixant la pàgina preferida del selector d'ubicació.</li>
           <li xml:lang="cs">Oprava posouvání mapy při opuštění stránky výběru oblíbených míst.</li>
           <li xml:lang="es">Se ha corregido el problema de desplazamiento panorámico del mapa que sale de la página de selección de ubicación favorita.</li>
+          <li xml:lang="eu">Orrien arteko nabigazioan hainbat arazo konpondu dira.</li>
           <li xml:lang="fr">Correction du défilement de la carte quittant la page de sélection des lieux favoris.</li>
           <li xml:lang="he">תוקנה הזזת המפה ויציאה מעמוד בורר המקומות המועדפים.</li>
           <li xml:lang="it">Risolto il problema con la panoramica della mappa che lasciava la pagina di selezione della posizione preferita.</li>
@@ -6443,6 +6580,7 @@
           <li xml:lang="ca-valencia">Corregix la fusió errònia de viatges en tren amb la mateixa línia el mateix dia.</li>
           <li xml:lang="cs">Opraveno chybné sloučení vlakových spojů se stejnou linkou ve stejný den.</li>
           <li xml:lang="es">Se ha corregido la fusión errónea de viajes de trenes con la misma línea en el mismo día.</li>
+          <li xml:lang="eu">Egun berean linea bereko tren-bidaiak oker bateratzea konpondu da.</li>
           <li xml:lang="fr">Correction de la fusion erronée des trajets de train sur la même ligne pour le même jour.</li>
           <li xml:lang="he">תוקן מיזוג שגוי של נסיעות רכבת באותו הקו באותו היום.</li>
           <li xml:lang="it">Corretta l'errata fusione di viaggi in treno con la stessa linea nello stesso giorno.</li>
@@ -6461,6 +6599,7 @@
           <li xml:lang="ca-valencia">Corregix l'anàlisi de la informació OTP del vehicle de lloguer.</li>
           <li xml:lang="cs">Oprava analýzy informací o pronájmu vozidel OTP.</li>
           <li xml:lang="es">Se ha corregido el análisis de la información de vehículos de alquiler OTP.</li>
+          <li xml:lang="eu">OTPko alokairuko ibilgailuen informazioaren analisia konpondu da.</li>
           <li xml:lang="fr">Correction de l'analyse des informations sur les véhicules de location en OTP.</li>
           <li xml:lang="he">תוקן פיענוח של פרטי השכרת רכב מ־OTP.</li>
           <li xml:lang="it">Corretta l'analisi delle informazioni sul veicolo a noleggio OTP.</li>
@@ -6479,6 +6618,7 @@
           <li xml:lang="ca-valencia">Aplica correctament la informació del fus horari a les reserves de vol amb informació de temps incompleta.</li>
           <li xml:lang="cs">Správně aplikované informace o časovém pásmu na rezervace letů s neúplnými informacemi o čase.</li>
           <li xml:lang="es">Aplicar correctamente la información de zona horaria a las reservas de vuelos con información horaria incompleta.</li>
+          <li xml:lang="eu">Ordu-eremuaren informazioa behar bezala aplikatzen zaie orduari buruzko informazio osatugabea duten hegaldi-erreserbei.</li>
           <li xml:lang="fr">Application correcte des informations de fuseau horaire aux réservations de vol dont les informations d'heure sont incomplètes.</li>
           <li xml:lang="he">החלת פרטי אזור זמן כראוי להזמנות טיסה כשפרטי הזמן חלקיים.</li>
           <li xml:lang="it">Applica correttamente le informazioni sul fuso orario alle prenotazioni di voli con informazioni sull'orario incomplete.</li>
@@ -6497,6 +6637,7 @@
           <li xml:lang="ca-valencia">Millora de l'extracció de dades per a diversos proveïdors.</li>
           <li xml:lang="cs">Vylepšené extrahování dat pro různé poskytovatele.</li>
           <li xml:lang="es">Se ha mejorado la extracción de datos para varios proveedores.</li>
+          <li xml:lang="eu">Hainbat hornitzaileren datuen erauzketa hobetu da.</li>
           <li xml:lang="fr">Amélioration de l'extraction de données pour divers fournisseurs.</li>
           <li xml:lang="he">חילוץ הנתונים ממגוון ספקים השתפר.</li>
           <li xml:lang="it">Estrazione dei dati migliorata per vari fornitori.</li>
@@ -6540,6 +6681,7 @@
           <li xml:lang="ca-valencia">No activa l'avís de connexió quan no hi ha una hora d'arribada anterior.</li>
           <li xml:lang="cs">Nevyvolává se varování o přípoji, pokud není k dispozici předchozí čas příjezdu.</li>
           <li xml:lang="es">No activar la advertencia de conexión cuando no haya una hora de llegada previa.</li>
+          <li xml:lang="eu">Lotura-ohartarazpena ez da aktibatzen aurreko iritsiera-ordurik ez dagoenean.</li>
           <li xml:lang="fr">Blocage de l'avertissement de connexion lorsqu'il n'y a aucune heure d'arrivée précédente.</li>
           <li xml:lang="he">לא להזניק את אזהרת החיבור כשאין זמן הגעה קודם.</li>
           <li xml:lang="it">Non attiva l'avviso di connessione quando non è presente un orario di arrivo precedente.</li>
@@ -6558,6 +6700,7 @@
           <li xml:lang="ca-valencia">Mostra el nombre correcte de documents adjunts per a viatges multiviatger.</li>
           <li xml:lang="cs">Zobrazení správného počtu přiložených dokumentů pro cesty více cestujících.</li>
           <li xml:lang="es">Mostrar el número correcto de documentos adjuntos para viajes multiviajero.</li>
+          <li xml:lang="eu">Bidaiari anitzeko bidaietan erantsitako dokumentuen kopuru zuzena erakusten da.</li>
           <li xml:lang="fr">Affichage du nombre correct de documents joints pour les voyages avec plusieurs personnes voyageant.</li>
           <li xml:lang="he">להציג את המספר הנכון של מסמכים מצורפים בנסיעות עם מספר נוסעים.</li>
           <li xml:lang="it">Mostra il numero corretto di documenti allegati per i viaggi con più viaggiatori.</li>
@@ -6576,6 +6719,7 @@
           <li xml:lang="ca-valencia">Mostra correctament les escales mecàniques a/des dels nivells de plantes intermèdies al mapa d'interior.</li>
           <li xml:lang="cs">Správné zobrazení eskalátorů do/z mezipater na mapě interiéru.</li>
           <li xml:lang="es">Mostrar correctamente las escaleras mecánicas hacia/desde niveles intermedios en los mapas de interiores.</li>
+          <li xml:lang="eu">Barrualdeko mapan tarteko solairuetara doazen edo haietatik datozen eskailera mekanikoak behar bezala erakusten dira.</li>
           <li xml:lang="fr">Affichage correct des escaliers mécaniques vers / depuis les étages intermédiaires sur le plan intérieur.</li>
           <li xml:lang="he">הצגת דרגנועים מ/אל קומות ביניים בצורה נכונה במפות הפנים.</li>
           <li xml:lang="it">Mostra correttamente le scale mobili da/verso i piani intermedi nella mappa degli interni.</li>
@@ -6594,7 +6738,7 @@
           <li xml:lang="ca-valencia">Corregix la renderització dels camps posteriors de text enriquit de passes d'Apple Wallet.</li>
           <li xml:lang="cs">Oprava vykreslování textových polí Apple Wallet pass.</li>
           <li xml:lang="es">Se ha corregido la visualización del fondo de los campos de texto enriquecido de las contraseñas de Apple Wallet.</li>
-          <li xml:lang="eu">Apple Wallet txartelen atzealdeko testu aberatseko eremuak errendatzeko arazoak konpondu dira.</li>
+          <li xml:lang="eu">Apple Wallet txartelen atzealdeko testu aberatseko eremuak bistaratzeko arazoak konpondu dira.</li>
           <li xml:lang="fr">Correction du rendu des champs arrière en texte enrichi des abonnements de Apple Wallet.</li>
           <li xml:lang="he">תוקן עיבוד של שדות טקסט עשיר שחזרו מ־Apple Wallet.</li>
           <li xml:lang="it">Correzione del rendering dei campi posteriori in formato rich text del passaggio di Apple Wallet.</li>
@@ -6613,6 +6757,7 @@
           <li xml:lang="ca-valencia">Millora de l'extracció de dades per a SNCF, Accor, Feratel i onepagebooking.</li>
           <li xml:lang="cs">Vylepšené extrahování dat pro SNCF, Accor, Feratel a onepagebooking.</li>
           <li xml:lang="es">Se ha mejorado la extracción de datos de SNCF, Accor, Feratel y onepagebooking.</li>
+          <li xml:lang="eu">SNCF, Accor, Feratel eta onepagebookingerako datuen erauzketa hobetu da.</li>
           <li xml:lang="fr">Amélioration de l'extraction de données pour SNCF, Accor, Feratel et Onepagebooking.</li>
           <li xml:lang="he">חילוץ נתונים מ־SNCF,‏ Accor,‏ Feratel ו־onepagebooking השתפר.</li>
           <li xml:lang="it">Estrazione dei dati migliorata per SNCF, Accor, Feratel e onepagebooking.</li>
@@ -6637,6 +6782,7 @@
           <li xml:lang="ca-valencia">Importa adequadament els adjunts de correu compartits des de FairEmail.</li>
           <li xml:lang="cs">Správný import příloh e-mailů sdílených z FairEmail.</li>
           <li xml:lang="es">Importación correcta de adjuntos de correo electrónico compartidos desde FairEmail.</li>
+          <li xml:lang="eu">FairEmail-etik partekatutako posta-eranskinak behar bezala inportatzen dira.</li>
           <li xml:lang="fr">Importation correcte des pièces jointes de courriels partagées depuis FairEmail.</li>
           <li xml:lang="he">ייבוא צרופות דוא״ל ששותפו מתוך FairEmail כראוי.</li>
           <li xml:lang="it">Importa correttamente gli allegati di posta condivisi da FairEmail.</li>
@@ -6655,6 +6801,7 @@
           <li xml:lang="ca-valencia">Millores per a importar dades d'Airdo, MÁV, Regionado, Ryanair i SNCF.</li>
           <li xml:lang="cs">Vylepšení importu dat z Airdo, MÁV, Regionado, Ryanair a SNCF.</li>
           <li xml:lang="es">Mejoras para la importación de datos de Airdo, MÁV, Regionado, Ryanair y SNCF.</li>
+          <li xml:lang="eu">Airdo, MÁV, Regionado, Ryanair eta SNCFko datuak inportatzeko hobekuntzak.</li>
           <li xml:lang="fr">Améliorations de l'importation de données depuis Airdo, MÁV, Regionado, Ryanair et SNCF.</li>
           <li xml:lang="he">שיפורים בייבוא נתונים מ־Airdo,‏ MÁV,‏ Regionado,‏ Ryanair ו־SNCF</li>
           <li xml:lang="it">Miglioramenti nell'importazione dei dati da Airdo, MÁV, Regionado, Ryanair e SNCF.</li>
@@ -6679,6 +6826,7 @@
           <li xml:lang="ca-valencia">Gestor de certificats sanitaris per a certificats de vacunació, proves i recuperació de DIVOC i DGC de la UE.</li>
           <li xml:lang="cs">Správce zdravotních certifikátů pro očkovací, testovací a uznávací certifikáty DIVOC a EU DGC.</li>
           <li xml:lang="es">Gestor de certificados sanitarios para DIVOC y vacunación EU DGC, pruebas y certificados de recuperación.</li>
+          <li xml:lang="eu">DIVOC eta EBko DGC txertaketa-, proba- eta sendatze-ziurtagirietarako osasun-ziurtagirien kudeatzailea.</li>
           <li xml:lang="fr">Gestionnaire des certificats de santé pour les certificats de vaccination, de guérison ou de test.</li>
           <li xml:lang="he">מנהל תעודות בריאות ל־DIVOC ולחיסונים, בדיקות ותעודות החלמה של DGC באיחוד האירופי.</li>
           <li xml:lang="ia">Gestion de certificato de sanitate digital per vaccination de DIVOC e EU DGC, certificatos de test e recuperation.</li>
@@ -6698,6 +6846,7 @@
           <li xml:lang="ca-valencia">Importació i exportació GPX d'ubicacions preferides i exportació GPX de viatges per a la interoperabilitat amb Nextcloud Maps.</li>
           <li xml:lang="cs">Import a export oblíbených míst ve formátu GPX a export cest ve formátu GPX pro propojitelnost s Nextcloud Maps.</li>
           <li xml:lang="es">Importación y exportación GPX de ubicaciones favoritas y exportación GPX de viajes para interoperabilidad con Nextcloud Maps.</li>
+          <li xml:lang="eu">Nextcloud Maps-ekiko elkarreragingarritasunerako, gogoko kokapenak GPX bidez inportatu eta esportatzea, eta bidaiak GPX bidez esportatzea.</li>
           <li xml:lang="fr">Importation et exportation GPX des lieux favoris et exportation GPX des trajets pour l'interopérabilité avec Nextcloud Maps.</li>
           <li xml:lang="he">ייבוא וייצוא GPX של מקומות מועדפים וייצוא GPX של טיולים לתאימות צולבת מול Nextcloud Maps.</li>
           <li xml:lang="it">Importazione ed esportazione GPX delle posizioni preferite ed esportazione GPX dei viaggi per l'interoperabilità di Nextcloud Maps.</li>
@@ -6754,7 +6903,7 @@
           <li xml:lang="ca-valencia">Diverses correccions al flux de pàgines.</li>
           <li xml:lang="cs">Různé opravy toku stránek.</li>
           <li xml:lang="es">Diversas correcciones para el flujo de la página.</li>
-          <li xml:lang="eu">Hainbat konponketa orrien fluxuan.</li>
+          <li xml:lang="eu">Orrien arteko nabigazioan hainbat arazo konpondu dira.</li>
           <li xml:lang="fr">Différentes corrections sur le flux de la page.</li>
           <li xml:lang="he">מספר תיקונים בזרימת העמודים.</li>
           <li xml:lang="it">Varie correzioni al flusso della pagina.</li>
