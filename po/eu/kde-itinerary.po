@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-28 02:44+0000\n"
+"POT-Creation-Date: 2026-07-31 03:01+0000\n"
 "PO-Revision-Date: 2026-07-27 20:38+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -2360,7 +2360,7 @@ msgstr "Bidaia"
 msgid "Map"
 msgstr "Mapa"
 
-#: app/JourneySectionStopDelegate.qml:163
+#: app/JourneySectionStopDelegate.qml:164
 #, kde-format
 msgid "Show location"
 msgstr "Kokalekua erakutsi"

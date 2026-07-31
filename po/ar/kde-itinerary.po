@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-28 02:44+0000\n"
+"POT-Creation-Date: 2026-07-31 03:01+0000\n"
 "PO-Revision-Date: 2026-07-06 18:24+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -2367,7 +2367,7 @@ msgstr "الرحلة"
 msgid "Map"
 msgstr "الخريطة"
 
-#: app/JourneySectionStopDelegate.qml:163
+#: app/JourneySectionStopDelegate.qml:164
 #, kde-format
 msgid "Show location"
 msgstr "اعرض الموقع"

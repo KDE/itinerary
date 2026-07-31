@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-28 02:44+0000\n"
+"POT-Creation-Date: 2026-07-31 03:01+0000\n"
 "PO-Revision-Date: 2026-07-05 06:38+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -2353,7 +2353,7 @@ msgstr "მგზავრობა"
 msgid "Map"
 msgstr "რუკა"
 
-#: app/JourneySectionStopDelegate.qml:163
+#: app/JourneySectionStopDelegate.qml:164
 #, kde-format
 msgid "Show location"
 msgstr "მდებარეობის ჩვენება"

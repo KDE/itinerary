@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-28 02:44+0000\n"
+"POT-Creation-Date: 2026-07-31 03:01+0000\n"
 "PO-Revision-Date: 2026-07-05 23:12+0200\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -2362,7 +2362,7 @@ msgstr "Cesta"
 msgid "Map"
 msgstr "Mapa"
 
-#: app/JourneySectionStopDelegate.qml:163
+#: app/JourneySectionStopDelegate.qml:164
 #, kde-format
 msgid "Show location"
 msgstr "Zobrazit umístění"
