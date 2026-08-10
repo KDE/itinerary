@@ -64,8 +64,14 @@ Kirigami.MenuDialog {
         }
     }
     onVisibleChanged: {
-        if (root.visible)
+        if (root.visible) {
             deviceModel.refresh();
+            // HACK work around zero-sized menus caused by the weird hack in Kirigami.Dialog onContentItemChanged
+            if (contentItem.implicitHeight <= 0) {
+                console.log("fixing broken Kirigami.MenuDialog height!");
+                contentItem.preferredHeight = _actions.length * (Kirigami.Units.gridUnit + 2 * Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing)
+            }
+        }
     }
 
     FileDialog {
