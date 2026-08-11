@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-31 03:01+0000\n"
+"POT-Creation-Date: 2026-08-11 02:54+0000\n"
 "PO-Revision-Date: 2026-06-27 19:56+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -1070,12 +1070,12 @@ msgstr "GPX Dosyası Olarak…"
 msgid "Send to %1"
 msgstr "Gönder: %1"
 
-#: app/ExportMenuDialog.qml:75
+#: app/ExportMenuDialog.qml:81
 #, kde-format
 msgid "Itinerary file (*.itinerary)"
 msgstr "Yol Kılavuzu dosyası (*.itinerary)"
 
-#: app/ExportMenuDialog.qml:92 app/FavoriteLocationPage.qml:38
+#: app/ExportMenuDialog.qml:98 app/FavoriteLocationPage.qml:38
 #: app/FavoriteLocationPage.qml:46
 #, kde-format
 msgid "GPX Files (*.gpx)"
