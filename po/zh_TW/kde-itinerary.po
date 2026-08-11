@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-30 00:45+0000\n"
+"POT-Creation-Date: 2026-08-11 00:46+0000\n"
 "PO-Revision-Date: 2026-04-22 23:15+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -1070,12 +1070,12 @@ msgstr "作為 GPX 檔案…"
 msgid "Send to %1"
 msgstr "傳送到 %1"
 
-#: app/ExportMenuDialog.qml:75
+#: app/ExportMenuDialog.qml:81
 #, kde-format
 msgid "Itinerary file (*.itinerary)"
 msgstr "旅行計劃檔案 (*.itinerary)"
 
-#: app/ExportMenuDialog.qml:92 app/FavoriteLocationPage.qml:38
+#: app/ExportMenuDialog.qml:98 app/FavoriteLocationPage.qml:38
 #: app/FavoriteLocationPage.qml:46
 #, kde-format
 msgid "GPX Files (*.gpx)"
