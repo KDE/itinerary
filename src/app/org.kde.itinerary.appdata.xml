@@ -1353,7 +1353,7 @@
           <li xml:lang="uk">Виправлено введення вручну певних числових параметрів авіарейсів.</li>
           <li xml:lang="zh-CN">修复某些航班号码的人工入口。</li>
           <li>Support SNCF TER passes.</li>
-          <li xml:lang="ar">دعم تصاريح SNCF TER.</li>
+          <li xml:lang="ar">دعم تذاكر SNCF TER.</li>
           <li xml:lang="ca">Implementa els passis TER de SNCF.</li>
           <li xml:lang="ca-valencia">Implementa els passes TER de SNCF.</li>
           <li xml:lang="cs">Podpora jízdenek SNCF TER.</li>
@@ -1671,7 +1671,7 @@
           <li xml:lang="uk">Реалізовано розташовування панелі результату подорожі у кінці при пошуку за часом прибуття.</li>
           <li xml:lang="zh-CN">在搜索到达时间时在末尾显示旅程结果视图。</li>
           <li>Fixed parsing of certain Apple Wallet pass variants.</li>
-          <li xml:lang="ar">أُصلح تحليل بعض أنواع تصاريح Apple Wallet.</li>
+          <li xml:lang="ar">أُصلح تحليل بعض أنواع تذاكر Apple Wallet.</li>
           <li xml:lang="ca">S'ha corregit l'anàlisi de certes variants de passis de l'Apple Wallet.</li>
           <li xml:lang="ca-valencia">S'ha corregit l'anàlisi de certes variants de passes d'Apple Wallet.</li>
           <li xml:lang="cs">Opraveno zpracování některých variant Apple Wallet pass.</li>
@@ -1973,7 +1973,7 @@
           <li xml:lang="tr">Transitous ile Hindistan, İsrael, Kore, Kosova, Monako, Makedonya, Moldova ve Romanya için toplu taşıma desteği</li>
           <li xml:lang="uk">Розширене покриття для громадського транспорту для Transitous в Індії, Ізраїлі, Кореї, Косово, Монако, Македонії, Молдові та Румунії.</li>
           <li>Fixed importing and displaying certain types of Apple Wallet passes.</li>
-          <li xml:lang="ar">أُصلح استيراد وعرض أنواع معينة من تصاريح Apple Wallet.</li>
+          <li xml:lang="ar">أُصلح استيراد وعرض أنواع معينة من تذاكر Apple Wallet.</li>
           <li xml:lang="ca">S'ha corregit la importació i la visualització de certs tipus de passis de l'Apple Wallet.</li>
           <li xml:lang="ca-valencia">S'ha corregit la importació i la visualització de certs tipus de passes d'Apple Wallet.</li>
           <li xml:lang="cs">Opraveno importování a zobrazování určitých typů Apple Wallet pass.</li>
@@ -2430,7 +2430,7 @@
           <li xml:lang="tr">Allow transfers to favorite location independent of the next reservation.</li>
           <li xml:lang="uk">Уможливлено переходи до бажаного місця незалежно від наступного бронювання.</li>
           <li>Fix importing passes or other things without an attached trip group.</li>
-          <li xml:lang="ar">إصلاح استيراد التصاريح أو الأشياء الأخرى بدون مجموعة رحلات مرفقة.</li>
+          <li xml:lang="ar">إصلاح استيراد التذاكر أو الأشياء الأخرى بدون مجموعة رحلات مرفقة.</li>
           <li xml:lang="ca">Corregeix la importació de passis o altres coses sense un grup de viatge adjunt.</li>
           <li xml:lang="ca-valencia">Corregix la importació de passes o altres coses sense un grup de viatge adjunt.</li>
           <li xml:lang="cs">Opraveno importování průkazů nebo jiných věcí bez připojené skupiny výletů.</li>
@@ -2449,7 +2449,7 @@
           <li xml:lang="tr">Fix importing passes or other things without an attached trip group.</li>
           <li xml:lang="uk">Виправлено імпортування пропусків та інших речей без долучених даних групової подорожі.</li>
           <li>Fix deleting generic pkpass passes.</li>
-          <li xml:lang="ar">إصلاح حذف تصاريح pkpass العامة.</li>
+          <li xml:lang="ar">إصلاح مشكلة حذف تذاكر pkpass العامة.</li>
           <li xml:lang="ca">Corregeix la supressió de passis «pkpass» genèrics.</li>
           <li xml:lang="ca-valencia">Corregix la supressió de passes «pkpass» genèrics.</li>
           <li xml:lang="cs">Oprava mazání obecných průkazů pkpass.</li>
@@ -3081,7 +3081,7 @@
           <li xml:lang="tr">Fix permission issues when exporting to the Android calendar.</li>
           <li xml:lang="uk">Виправлено проблеми із правами доступу при експортуванні до календаря Android.</li>
           <li>Fix rendering of Apples Wallet passes without a barcode.</li>
-          <li xml:lang="ar">إصلاح رندرة تصاريح Apple Wallet التي لا تحتوي على رمز شريطي.</li>
+          <li xml:lang="ar">إصلاح رندرة تذاكر Apple Wallet التي لا تحتوي على رمز شريطي.</li>
           <li xml:lang="ca">Corregeix la renderització dels passis d'Apple Wallet sense codi de barres.</li>
           <li xml:lang="ca-valencia">Corregix la renderització dels passes d'Apple Wallet sense codi de barres.</li>
           <li xml:lang="cs">Oprava vykreslování Apple Wallet pass bez čárového kódu.</li>
@@ -3346,7 +3346,7 @@
           <li xml:lang="tr">Fix displaying public transport departure disruptions.</li>
           <li xml:lang="uk">Виправлено показ відхилень у відправленнях громадського транспорту.</li>
           <li>Fix Apple Wallet pass rendering issues.</li>
-          <li xml:lang="ar">إصلاح مشكلات رندرة تصاريح Apple Wallet.</li>
+          <li xml:lang="ar">إصلاح مشكلات رندرة تذاكر Apple Wallet.</li>
           <li xml:lang="ca">Corregeix els problemes de renderització dels passis d'Apple Wallet.</li>
           <li xml:lang="ca-valencia">Corregix els problemes de renderització dels passes d'Apple Wallet.</li>
           <li xml:lang="cs">Oprava problémů se zobrazením Apple Wallet pass.</li>
@@ -3472,7 +3472,7 @@
       <url>https://kde.org/announcements/megarelease/6/#itinerary</url>
       <description>
         <p>We improved the usability of Itinerary on phones by making common actions available on a bottom navigation bar which makes it easy to switch to your passes and your current trip.</p>
-        <p xml:lang="ar">حُسنت سهولة استخدام مخطط الرحلة على الهواتف من خلال إتاحة الإجراءات الشائعة على شريط تنقل سفلي، مما يسهل الانتقال إلى تصاريحك ورحلتك الحالية.</p>
+        <p xml:lang="ar">حُسنت سهولة استخدام مخطط الرحلة على الهواتف من خلال إتاحة الإجراءات الشائعة على شريط تنقل سفلي، مما يسهل الانتقال إلى تذاكرك ورحلتك الحالية.</p>
         <p xml:lang="ca">Hem millorat la usabilitat de l'Itinerary en els telèfons fent que les accions habituals estiguessin disponibles en una barra de navegació a sota que fa que sigui fàcil canviar als passis i al viatge actual.</p>
         <p xml:lang="ca-valencia">Hem millorat la usabilitat d'Itinerary en els telèfons fent que les accions habituals estigueren disponibles en una barra de navegació davall que fa que siga fàcil canviar als passes i al viatge actual.</p>
         <p xml:lang="cs">Zlepšena použitelnost Itineráře na telefonech tím, že jsou běžné akce umístěny do spodní navigační lišty, což usnadňuje přepínání mezi jízdenkami a aktuální cestou.</p>
@@ -3820,7 +3820,7 @@
           <li xml:lang="tr">Fix unnecessarily broad permissions on Android.</li>
           <li xml:lang="uk">Виправлено надмірні права доступу в Android.</li>
           <li>Fix rendering of Apple Wallet generic pass thumbnail images.</li>
-          <li xml:lang="ar">إصلاح رندرة الصور المصغرة لتصاريح Apple Wallet العامة.</li>
+          <li xml:lang="ar">إصلاح رندرة الصور المصغرة لتذاكر Apple Wallet العامة.</li>
           <li xml:lang="ca">Corregeix la renderització de les imatges de miniatures dels passis genèrics d'Apple Wallet.</li>
           <li xml:lang="ca-valencia">Corregix la renderització de les imatges de miniatures dels passes genèrics d'Apple Wallet.</li>
           <li xml:lang="cs">Oprava vykreslování miniatur obrázků generických Apple Wallet pass.</li>
@@ -4149,7 +4149,7 @@
           <li xml:lang="tr">Added support for extracting travel data in Apple iCal events.</li>
           <li xml:lang="uk">Додано підтримку вилучення даних про подорожі в подіях Apple iCal.</li>
           <li>Improved notifications in case of Apple Wallet pass updates.</li>
-          <li xml:lang="ar">تحسين التنبيهات في حال تحديث تصاريح Apple Wallet.</li>
+          <li xml:lang="ar">تحسين التنبيهات في حال تحديث تذاكر Apple Wallet.</li>
           <li xml:lang="ca">Notificacions millorades en cas d'actualitzacions de passis d'Apple Wallet.</li>
           <li xml:lang="ca-valencia">Notificacions millorades en cas d'actualitzacions de passes d'Apple Wallet.</li>
           <li xml:lang="cs">Vylepšená oznámení v případě aktualizací Apple Wallet Pass.</li>
@@ -4168,7 +4168,7 @@
           <li xml:lang="tr">Improved notifications in case of Apple Wallet pass updates.</li>
           <li xml:lang="uk">Удосконалено сповіщення при оновленні проїздного Apple Wallet.</li>
           <li>Improved display of ticket validity times in the passes and programs view.</li>
-          <li xml:lang="ar">تحسين عرض أوقات صلاحية التذاكر في عرض التصاريح والبرامج.</li>
+          <li xml:lang="ar">تحسين عرض أوقات صلاحية التذاكر في عرض التذاكر والبرامج.</li>
           <li xml:lang="ca">Millora de la visualització del temps de validesa dels bitllets a la vista de passis i programes.</li>
           <li xml:lang="ca-valencia">Millora de la visualització del temps de validesa dels bitllets a la vista de passes i programes.</li>
           <li xml:lang="cs">Vylepšené zobrazení doby platnosti jízdenek v přehledu jízdenek a programů.</li>
@@ -4446,7 +4446,7 @@
           <li xml:lang="tr">Fixed automatic transfer selection producing nonsense when geo coordinates are missing.</li>
           <li xml:lang="uk">Виправлено автоматичний вибір пересадок, який спричиняв нереалістичні результати, якщо не було геокоординат.</li>
           <li>Fixed showing of attached Appled Wallet passes for trains, hotels, busses and car rental reservations.</li>
-          <li xml:lang="ar">أُصلح عرض تصاريح Apple Wallet المرفقة للقطارات والفنادق والحافلات وحجوزات تأجير السيارات.</li>
+          <li xml:lang="ar">أُصلح عرض تذاكر Apple Wallet المرفقة للقطارات والفنادق والحافلات وحجوزات تأجير السيارات.</li>
           <li xml:lang="ca">S'ha corregit la visualització de passis d'Apple Wallet adjunts per a trens, hotels, autobusos i reserves de lloguer de cotxes.</li>
           <li xml:lang="ca-valencia">S'ha corregit la visualització de passes d'Apple Wallet adjunts per a trens, hotels, autobusos i reserves de lloguer de cotxes.</li>
           <li xml:lang="cs">Opraveno zobrazování přiložených Apple Wallet pass pro vlaky, hotely, autobusy a rezervace pronájmu automobilů.</li>
@@ -5097,7 +5097,7 @@
           <li xml:lang="tr">Fixed rendering of certain Apple Wallet event tickets.</li>
           <li xml:lang="uk">Виправлено показ певних квитків на події Apple Wallet.</li>
           <li>Fixed importing multiple generic Apple Wallet passes.</li>
-          <li xml:lang="ar">أُصلح استيراد عدة تصاريح Apple Wallet عامة.</li>
+          <li xml:lang="ar">أُصلح استيراد عدة تذاكر Apple Wallet عامة.</li>
           <li xml:lang="ca">S'ha corregit la importació de passis genèrics múltiples d'Apple Wallet.</li>
           <li xml:lang="ca-valencia">S'ha corregit la importació de passes genèrics múltiples d'Apple Wallet.</li>
           <li xml:lang="cs">Opraveno importování vícenásobných generických Apple Wallet pass.</li>
@@ -5179,7 +5179,7 @@
           <li xml:lang="tr">Fix display of floating rental vehicles.</li>
           <li xml:lang="uk">Виправлено показ оренди водних засобів пересування.</li>
           <li>Fix rendering of Apple Wallet event passes with background images.</li>
-          <li xml:lang="ar">إصلاح رندرة تصاريح فعاليات Apple Wallet التي تحتوي على صور خلفية.</li>
+          <li xml:lang="ar">إصلاح رندرة تذاكر فعاليات Apple Wallet التي تحتوي على صور خلفية.</li>
           <li xml:lang="ca">Corregeix la renderització de passis d'esdeveniments de l'Apple Wallet amb imatges de fons.</li>
           <li xml:lang="ca-valencia">Corregix la renderització de passes d'esdeveniments d'Apple Wallet amb imatges de fons.</li>
           <li xml:lang="cs">Oprava vykreslování událostí Apple Wallet s obrázky na pozadí.</li>
@@ -5666,7 +5666,7 @@
           <li xml:lang="tr">Support for exporting reservations to the calendar.</li>
           <li xml:lang="uk">Реалізовано підтримку експортування даних бронювань до календаря.</li>
           <li>Support for passes and program cards that aren't tied to a specific trip, such as flat-rate or time interval tickets or discount program memberships.</li>
-          <li xml:lang="ar">دعم التصاريح وبطاقات البرامج غير المرتبطة برحلة محددة، مثل التذاكر ذات السعر الثابت أو الفترات الزمنية أو عضويات برامج الخصم.</li>
+          <li xml:lang="ar">دعم التذاكر وبطاقات البرامج غير المرتبطة برحلة محددة، مثل التذاكر ذات السعر الثابت أو الفترات الزمنية أو عضويات برامج الخصم.</li>
           <li xml:lang="ca">Suport per a passis i targetes de programes que no estan lligats a un viatge específic, com ara bitllets de tarifa plana o intervals de temps o pertinences de programes d'afiliació.</li>
           <li xml:lang="ca-valencia">Suport per a passes i targetes de programes que no estan lligats a un viatge específic, com ara bitllets de tarifa plana o intervals de temps o pertinences de programes d'afiliació.</li>
           <li xml:lang="cs">Podpora pro jízdenky a programové karty, které nejsou vázány na konkrétní cestu, například jízdenky s paušální sazbou nebo časovým intervalem nebo členství v programu slev.</li>
@@ -5817,7 +5817,7 @@
           <li xml:lang="tr">Fix the wrong country being displayed in formatted addresses.</li>
           <li xml:lang="uk">Виправлено помилковий показ країни у відформатованих адресах.</li>
           <li>Display all supported barcode types in Apple Wallet passes.</li>
-          <li xml:lang="ar">عرض جميع أنواع الرموز الشريطية المدعومة في تصاريح Apple Wallet.</li>
+          <li xml:lang="ar">عرض جميع أنواع الرموز الشريطية المدعومة في تذاكر Apple Wallet.</li>
           <li xml:lang="ca">Mostra tots els tipus de codis de barres admesos en els passis d'Apple Wallet.</li>
           <li xml:lang="ca-valencia">Mostra tots els tipus de codis de barres admesos en els passes d'Apple Wallet.</li>
           <li xml:lang="cs">Zobrazení všech podporovaných typů čárových kódů v Apple Wallet pass.</li>
@@ -6456,7 +6456,7 @@
           <li xml:lang="tr">Fixed pinch zoom on station maps.</li>
           <li xml:lang="uk">Виправлено масштабування щипками на картах станцій.</li>
           <li>Improved Apple Wallet pass rendering.</li>
-          <li xml:lang="ar">تحسين رندرة تصاريح Apple Wallet.</li>
+          <li xml:lang="ar">تحسين عرض بطاقات Apple Wallet.</li>
           <li xml:lang="ca">S'ha millorat la renderització de passis d'Apple Wallet.</li>
           <li xml:lang="ca-valencia">S'ha millorat la renderització de passes d'Apple Wallet.</li>
           <li xml:lang="cs">Vylepšené vykreslování Apple Wallet pass.</li>
@@ -6734,7 +6734,7 @@
           <li xml:lang="tr">Show escalators to/from intermediate floor levels correctly in the indoor map.</li>
           <li xml:lang="uk">Реалізовано правильний показ ескалаторів до/з проміжних поверхів на плані приміщення.</li>
           <li>Fix rendering of Apple Wallet pass rich-text back fields.</li>
-          <li xml:lang="ar">إصلاح رندرة الحقول الخلفية ذات النص المنسق لتصاريح Apple Wallet.</li>
+          <li xml:lang="ar">إصلاح رندرة الحقول الخلفية ذات النص المنسق لتذاكر Apple Wallet.</li>
           <li xml:lang="ca">Corregeix la renderització dels camps posteriors de text enriquit de passis d'Apple Wallet.</li>
           <li xml:lang="ca-valencia">Corregix la renderització dels camps posteriors de text enriquit de passes d'Apple Wallet.</li>
           <li xml:lang="cs">Oprava vykreslování textových polí Apple Wallet pass.</li>
