@@ -6,12 +6,19 @@
 # Translators:
 # Ander Elortondo <ander.elor@gmail.com>, 2020.
 # Iñigo Salvador Azurmendi <xalba@ni.eus>, 2023, 2024, 2025, 2026.
+#
+# Egoera:
+# Proiektu osoaren berrikuspen integrala: 2026-08-12.
+# Azken berrikuspena: UUUU-HH-EE — egoera ondua mantendu da.
+# Terminologia, estiloa, ortotipografia, kohesioa eta koherentzia berrikusi dira.
+# Erreferentzia-gida: kde-bidaia-aplikazioen_eu_itzulpen_gida.md
+# Ikus, halaber: KDE-eu-berrikuspen-integralen-erregistroa.md
 msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-11 02:54+0000\n"
-"PO-Revision-Date: 2026-08-11 16:13+0200\n"
+"PO-Revision-Date: 2026-08-12 15:28+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -70,12 +77,12 @@ msgstr "Erauzlearen gaitasunak arbelera kopiatu dira"
 #: app/ActionsCard.qml:34
 #, kde-format
 msgid "Show Boarding Pass"
-msgstr "Erakutsi ontziratze-txartela"
+msgstr "Ontziratze-txartela erakutsi"
 
 #: app/ActionsCard.qml:34 app/TicketPage.qml:149
 #, kde-format
 msgid "Show Ticket"
-msgstr "Erakutsi txartela"
+msgstr "Txartela erakutsi"
 
 #: app/ActionsCard.qml:40
 #, kde-format
@@ -139,7 +146,7 @@ msgstr "Erreserba bertan behera utzi"
 #: app/ActionsCard.qml:168
 #, kde-format
 msgid "Check-in"
-msgstr "Izen ematea"
+msgstr "Erregistratu"
 
 #: app/ActionsCard.qml:169
 #, kde-format
@@ -160,12 +167,12 @@ msgstr "Erreserbatu"
 #: app/ActionsCard.qml:172
 #, kde-format
 msgid "Change Reservation"
-msgstr "Aldatu erreserba"
+msgstr "Erreserba aldatu"
 
 #: app/ActionsCard.qml:173
 #, kde-format
 msgid "View Reservation"
-msgstr "Ikusi erreserba"
+msgstr "Erreserba ikusi"
 
 #: app/AlternativeJourneyPage.qml:21
 #, kde-format
@@ -217,7 +224,7 @@ msgstr "Hegazkina"
 #: app/AlternativeJourneyPage.qml:119
 #, kde-format
 msgid "Replace Journey"
-msgstr "Ordeztu bidaia"
+msgstr "Bidaia ordeztu"
 
 #: app/AlternativeJourneyPage.qml:120
 #, kde-format
@@ -255,15 +262,15 @@ msgstr[1] "%1 erreserba inportatu dira."
 #, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
-msgstr[0] "Pase bat inportatu da."
-msgstr[1] "%1 pase inportatu dira."
+msgstr[0] "Txartel bat inportatu da."
+msgstr[1] "%1 txartel inportatu dira."
 
 #: app/applicationcontroller.cpp:321
 #, kde-format
 msgid "One health certificate imported."
 msgid_plural "%1 health certificates imported."
-msgstr[0] "Osasun ziurtagiri bat inportatu da."
-msgstr[1] "%1 osasun ziurtagiri inportatu dira."
+msgstr[0] "Osasun-ziurtagiri bat inportatu da."
+msgstr[1] "%1 osasun-ziurtagiri inportatu dira."
 
 #: app/applicationcontroller.cpp:343 app/applicationcontroller.cpp:386
 #: app/applicationcontroller.cpp:404 app/applicationcontroller.cpp:451
@@ -285,7 +292,7 @@ msgstr "Esportatzea osatu da."
 #: app/applicationcontroller.cpp:396
 #, kde-format
 msgid "Trip sent."
-msgstr "Txangoa bidali da."
+msgstr "Bidaia bidali da."
 
 #: app/applicationcontroller.cpp:500
 #, kde-format
@@ -295,7 +302,7 @@ msgstr "Erreserba bidalita."
 #: app/applicationcontroller.cpp:595
 #, kde-format
 msgid "Pass sent."
-msgstr "Pasea bidali da."
+msgstr "Txartela bidali da."
 
 #: app/applicationcontroller.cpp:633
 #, kde-format
@@ -336,7 +343,7 @@ msgstr "Barra-kodeak eskaneatzeko moduan"
 #: app/BarcodeScannerPage.qml:18
 #, kde-format
 msgid "Scan Barcode"
-msgstr "Eskaneatu barra-kodea"
+msgstr "Barra-kodea eskaneatu"
 
 #: app/BarcodeScannerPage.qml:81
 #, kde-format
@@ -357,36 +364,36 @@ msgstr "Ferrya"
 #: app/BoatEditor.qml:18
 #, kde-format
 msgid "New Boat Trip"
-msgstr "Itsasontzizko bidaia berria"
+msgstr "Itsasontzi-bidaia berria"
 
 #: app/BoatEditor.qml:18
 #, kde-format
 msgid "Edit Boat Trip"
-msgstr "Itsasontzizko bidaia editatu"
+msgstr "Itsasontzi-bidaia editatu"
 
 #: app/BoatEditor.qml:69 app/BoatEditor.qml:165
 #, kde-format
 msgctxt "boat departure"
 msgid "Change Departure Terminal"
-msgstr "Irteera-terminala aldatu"
+msgstr "Irteerako terminala aldatu"
 
 #: app/BoatEditor.qml:75
 #, kde-format
 msgctxt "boat departure"
 msgid "Change departure terminal"
-msgstr "Irteera-terminala aldatu"
+msgstr "Irteerako terminala aldatu"
 
 #: app/BoatEditor.qml:85 app/BoatEditor.qml:227
 #, kde-format
 msgctxt "boat arrival"
 msgid "Change Arrival Terminal"
-msgstr "Iritsiera-terminala aldatu"
+msgstr "Iritsierako terminala aldatu"
 
 #: app/BoatEditor.qml:91
 #, kde-format
 msgctxt "boat arrival"
 msgid "Change arrival terminal"
-msgstr "Iritsiera-terminala aldatu"
+msgstr "Iritsierako terminala aldatu"
 
 #: app/BoatEditor.qml:112 app/BusEditor.qml:128 app/EventEditor.qml:54
 #: app/FlightEditor.qml:79 app/HotelEditor.qml:53 app/ImportPage.qml:21
@@ -422,7 +429,7 @@ msgstr "Terminalaren izena"
 #: app/BoatEditor.qml:143
 #, kde-format
 msgid "Departure terminal must not be empty."
-msgstr "Irteera-terminala ez da hutsik egon behar."
+msgstr "Irteerako terminala ez da hutsik egon behar."
 
 #: app/BoatEditor.qml:158 app/BoatEditor.qml:221
 #, kde-format
@@ -450,7 +457,7 @@ msgstr "Iritsiera-ordua irteera-orduaren ondoren izan behar da."
 #: app/BoatEditor.qml:201
 #, kde-format
 msgid "Arrival terminal must not be empty."
-msgstr "Iritsiera-terminala ez da hutsik egon behar."
+msgstr "Iritsierako terminala ez da hutsik egon behar."
 
 #: app/BoatPage.qml:18
 #, kde-format
@@ -529,12 +536,12 @@ msgstr "Noren izenean"
 #: app/BookingCard.qml:62
 #, kde-format
 msgid "Ticket number:"
-msgstr "Txartel zenbakia:"
+msgstr "Txartel-zenbakia:"
 
 #: app/BookingCard.qml:72
 #, kde-format
 msgid "Ticket number copied to clipboard"
-msgstr "Txartel zenbakia arbelera kopiatu da"
+msgstr "Txartel-zenbakia arbelera kopiatu da"
 
 #: app/BookingCard.qml:86
 #, kde-format
@@ -646,13 +653,13 @@ msgstr "Autobusa"
 #, kde-format
 msgctxt "@label:textfield"
 msgid "Bus number"
-msgstr "Autobus zenbakia"
+msgstr "Autobus-zenbakia"
 
 #: app/BusEditor.qml:156
 #, kde-format
 msgctxt "bus departure"
 msgid "Departure"
-msgstr "irteera"
+msgstr "Irteera"
 
 #: app/BusEditor.qml:165
 #, kde-format
@@ -669,7 +676,7 @@ msgstr "Geralekua"
 #: app/BusEditor.qml:181
 #, kde-format
 msgid "Departure bus stop must not be empty."
-msgstr "Irteera-geralekua ez da hutsik egon behar."
+msgstr "Irteerako geralekua ez da hutsik egon behar."
 
 #: app/BusEditor.qml:210
 #, kde-format
@@ -698,7 +705,7 @@ msgstr "Geralekuaren izena"
 #: app/BusEditor.qml:268
 #, kde-format
 msgid "Arrival stop must not be empty."
-msgstr "Iritsiera-geralekua ez da hutsik egon behar."
+msgstr "Iritsierako geralekua ez da hutsik egon behar."
 
 #: app/BusEditor.qml:302
 #, kde-format
@@ -721,7 +728,7 @@ msgstr "Autobus-txartela"
 #, kde-format
 msgctxt "Bus departure"
 msgid "Departure"
-msgstr "irteera"
+msgstr "Irteera"
 
 #: app/BusPage.qml:125 app/TrainPage.qml:151
 #, kde-format
@@ -750,7 +757,7 @@ msgstr "%1(e)rako garraio-tartea"
 #, kde-format
 msgctxt "@title"
 msgid "Select Calendar"
-msgstr "Hautatu egutegia"
+msgstr "Egutegia hautatu"
 
 #: app/CarRentalDelegate.qml:30
 #, kde-format
@@ -918,7 +925,7 @@ msgstr "Dokumentuak"
 #: app/DocumentsCard.qml:109
 #, kde-format
 msgid "No documents attached to this reservation."
-msgstr "Ez dago erantsita dokumenturik erreserba honetan."
+msgstr "Ez dago erreserba honi erantsitako dokumenturik."
 
 #: app/DocumentsCard.qml:117
 #, kde-format
@@ -935,7 +942,7 @@ msgstr "Sareko errorea: %1"
 #, kde-format
 msgctxt "%1 is an error message"
 msgid "Download failed: %1"
-msgstr "Zama-jaistea huts egin du: %1"
+msgstr "Zama-jaisteak huts egin du: %1"
 
 #: app/EditorPage.qml:32
 #, kde-format
@@ -946,7 +953,7 @@ msgstr "Gorde"
 #: app/EventDelegate.qml:36
 #, kde-format
 msgid "End: %1"
-msgstr "Bukaera: %1"
+msgstr "Amaiera: %1"
 
 #: app/EventDelegate.qml:72
 #, kde-format
@@ -1014,7 +1021,7 @@ msgstr "Sarrera"
 #: app/EventEditor.qml:99
 #, kde-format
 msgid "Entrance time has to be before the start time."
-msgstr "Sarrera-ordua hasierako orduaren aurrekoa izan behar da."
+msgstr "Sarrerako ordua hasierako orduaren aurrekoa izan behar da."
 
 #: app/EventEditor.qml:106 app/EventPage.qml:76 app/RestaurantEditor.qml:97
 #, kde-format
@@ -1029,12 +1036,12 @@ msgstr "Hasierako ordua ezarri behar da."
 #: app/EventEditor.qml:115 app/EventPage.qml:84 app/RestaurantEditor.qml:108
 #, kde-format
 msgid "End Time"
-msgstr "Bukaerako ordua"
+msgstr "Amaierako ordua"
 
 #: app/EventEditor.qml:126 app/RestaurantEditor.qml:119
 #, kde-format
 msgid "End time has to be after the start time."
-msgstr "Bukaera-ordua hasierako orduaren ondoren izan behar da."
+msgstr "Amaierako ordua hasierako orduaren ondoren izan behar da."
 
 #: app/EventEditor.qml:140
 #, kde-format
@@ -1071,7 +1078,7 @@ msgstr "GPX fitxategi gisa…"
 #: app/ExportMenuDialog.qml:57
 #, kde-format
 msgid "Send to %1"
-msgstr "Bidali %1(e)ra"
+msgstr "%1(e)ra bidali"
 
 #: app/ExportMenuDialog.qml:81
 #, kde-format
@@ -1113,7 +1120,7 @@ msgstr "Gogoko kokalekuak esportatu"
 #: app/FavoriteLocationPage.qml:44
 #, kde-format
 msgid "Import Favorite Locations"
-msgstr "Inportatu gogoko kokalekuak"
+msgstr "Gogoko kokalekuak inportatu"
 
 #: app/FavoriteLocationPage.qml:52
 #, kde-format
@@ -1123,12 +1130,12 @@ msgstr "Gogoko kokalekua gehitu"
 #: app/FavoriteLocationPage.qml:60
 #, kde-format
 msgid "Rename Favorite Location"
-msgstr "Berrizendatu gogoko kokalekua"
+msgstr "Gogoko kokalekua berrizendatu"
 
 #: app/FavoriteLocationPage.qml:65
 #, kde-format
 msgid "Remove Favorite Location"
-msgstr "Kendu gogoko kokalekua"
+msgstr "Gogoko kokalekua kendu"
 
 #: app/FavoriteLocationPage.qml:75
 #, kde-format
@@ -1138,30 +1145,30 @@ msgstr "GPXra esportatu"
 #: app/FavoriteLocationPage.qml:80
 #, kde-format
 msgid "Import from GPX"
-msgstr "Inportatu GPXtik"
+msgstr "GPXtik inportatu"
 
 #: app/FavoriteLocationPage.qml:91
 #, kde-format
 msgctxt "@title"
 msgid "Rename favorite location"
-msgstr "Berrizendatu gogoko kokalekua"
+msgstr "Gogoko kokalekua berrizendatu"
 
 #: app/FavoriteLocationPage.qml:101
 #, kde-format
 msgid "Rename"
-msgstr "Aldatu izena"
+msgstr "Berrizendatu"
 
 #: app/FavoriteLocationPage.qml:150 app/FormPlaceEditorDelegate.qml:56
 #: app/LocationPicker.qml:78
 #, kde-format
 msgid "Pick Location"
-msgstr "Hautatu kokalekua"
+msgstr "Lekua partekatu"
 
 #: app/FlightDelegate.qml:63
 #, kde-format
 msgctxt "@info"
 msgid "Boarding time: %1"
-msgstr "Ontziratze ordua: %1"
+msgstr "Ontziratze-ordua: %1"
 
 #: app/FlightDelegate.qml:71
 #, kde-format
@@ -1206,13 +1213,13 @@ msgstr "Hegaldia editatu"
 #, kde-format
 msgctxt "flight departure"
 msgid "Departure - %1"
-msgstr "irteera - %1"
+msgstr "Irteera - %1"
 
 #: app/FlightEditor.qml:93
 #, kde-format
 msgctxt "flight departure"
 msgid "Departure"
-msgstr "irteera"
+msgstr "Irteera"
 
 #: app/FlightEditor.qml:99 app/FlightEditor.qml:168 app/FlightPage.qml:174
 #: app/FlightPage.qml:238
@@ -1252,19 +1259,19 @@ msgstr "Atea"
 #: app/FlightEditor.qml:136 app/FlightPage.qml:119
 #, kde-format
 msgid "Boarding time"
-msgstr "Hegazkineratze ordua:"
+msgstr "Ontziratze-ordua"
 
 #: app/FlightEditor.qml:147
 #, kde-format
 msgctxt "flight departure"
 msgid "Boarding time has to be before the departure time."
-msgstr "Hegazkineratzeko ordua irteerako orduaren aurrekoa izan behar da."
+msgstr "Ontziratze-ordua irteera-ordua baino lehenagokoa izan behar da."
 
 #: app/FlightEditor.qml:155
 #, kde-format
 msgctxt "flight departure boarding group"
 msgid "Boarding group"
-msgstr "Hegazkineratze taldea"
+msgstr "Ontziratze-taldea"
 
 #: app/FlightEditor.qml:161
 #, kde-format
@@ -1281,7 +1288,7 @@ msgstr "Iritsiera"
 #: app/FlightEditor.qml:171
 #, kde-format
 msgid "Arrival airport has to be specified."
-msgstr "Iritsierako aireportua zehaztu da."
+msgstr "Iritsierako aireportua zehaztu behar da."
 
 #: app/FlightEditor.qml:183
 #, kde-format
@@ -1325,17 +1332,17 @@ msgstr "Eserlekua"
 #: app/FlightPage.qml:101
 #, kde-format
 msgid "Sequence Number:"
-msgstr "Sekuentziaren zenbakia:"
+msgstr "Sekuentzia-zenbakia:"
 
 #: app/FlightPage.qml:110
 #, kde-format
 msgid "Boarding"
-msgstr "Hegazkineratzea"
+msgstr "Ontziratzea"
 
 #: app/FlightPage.qml:128
 #, kde-format
 msgid "Boarding group"
-msgstr "Hegazkineratze taldea"
+msgstr "Ontziratze-taldea"
 
 #: app/FlightPage.qml:145
 #, kde-format
@@ -1346,7 +1353,7 @@ msgstr "Airelinea"
 #, kde-format
 msgctxt "Flight departure"
 msgid "Departure"
-msgstr "irteera"
+msgstr "Irteera"
 
 #: app/FlightPage.qml:159
 #, kde-format
@@ -1390,7 +1397,7 @@ msgstr "Partekatu lekua"
 #: app/FormPlaceDelegate.qml:94
 #, kde-format
 msgid "Do you really want to share %1 to the Matrix channel %2?"
-msgstr "Benetan partekatu nahi duzu %1 «Matrix»eko %2 kanalaerekin?"
+msgstr "%1 Matrixeko %2 kanalean benetan partekatu nahi duzu?"
 
 #: app/FormPlaceDelegate.qml:109
 #, kde-format
@@ -1408,7 +1415,7 @@ msgstr "Barrualdeko mapa ikusi"
 #, kde-format
 msgctxt "@action:button"
 msgid "View on Map"
-msgstr "Ikusi mapan"
+msgstr "Mapan ikusi"
 
 #: app/FormPlaceDelegate.qml:168
 #, kde-format
@@ -1426,7 +1433,7 @@ msgstr "Garraio publikoaren irteerak"
 #, kde-format
 msgctxt "@action:button"
 msgid "Share via Matrix"
-msgstr "Partekatu Matrix bidez"
+msgstr "Matrix bidez partekatu"
 
 #: app/FormPlaceEditorDelegate.qml:68
 #, kde-format
@@ -1436,7 +1443,7 @@ msgstr "Kalea"
 #: app/FormPlaceEditorDelegate.qml:80
 #, kde-format
 msgid "Invalid postal code format for this country."
-msgstr "Herrialde honetarako posta-kode baliogabea."
+msgstr "Posta-kodearen formatua ez da baliozkoa herrialde honetarako."
 
 #: app/FormPlaceEditorDelegate.qml:86
 #, kde-format
@@ -1467,7 +1474,7 @@ msgstr "%1°, %2°"
 #: app/FormPlaceEditorDelegate.qml:202
 #, kde-format
 msgid "Pick…"
-msgstr "Aukeratu…"
+msgstr "Hautatu…"
 
 #: app/FormPlaceEditorDelegate.qml:221
 #, kde-format
@@ -1482,7 +1489,7 @@ msgstr "Koordenatuetatik helbidera"
 #: app/FormPlaceEditorDelegate.qml:247
 #, kde-format
 msgid "Remove coordinates"
-msgstr "Kendu koordenatuak"
+msgstr "Koordenatuak kendu"
 
 #: app/FormPlatformDelegate.qml:46
 #, kde-format
@@ -1515,22 +1522,22 @@ msgstr "Ez da zenbaki balioduna."
 #: app/GenericPkPassPage.qml:21
 #, kde-format
 msgid "Save Pass"
-msgstr "Gorde pasea"
+msgstr "Txartela gorde"
 
 #: app/GenericPkPassPage.qml:22
 #, kde-format
 msgid "Apple Wallet pass (*.pkpass)"
-msgstr "Apple Wallet pasea (*.pkpass)"
+msgstr "Apple Wallet txartela (*.pkpass)"
 
 #: app/GenericPkPassPage.qml:37 app/ProgramMembershipPage.qml:38
 #, kde-format
 msgid "Delete Pass"
-msgstr "Pasea ezabatu"
+msgstr "Txartela ezabatu"
 
 #: app/GenericPkPassPage.qml:38 app/ProgramMembershipPage.qml:39
 #, kde-format
 msgid "Do you really want to delete this pass?"
-msgstr "Pase hau benetan ezabatu nahi duzu?"
+msgstr "Txartel hau benetan ezabatu nahi duzu?"
 
 #: app/GenericPkPassPage.qml:55 app/TicketPage.qml:165
 #: app/TripGroupPage.qml:718
@@ -1566,25 +1573,25 @@ msgstr "%1 autobusa, %2(e)tik %3(e)ra"
 #: app/gpxexport.cpp:61 app/reservationhelper.cpp:146
 #, kde-format
 msgid "Ferry from %1 to %2"
-msgstr "Ferrya, %1(e)tik %2(e)ra"
+msgstr "Ferry-bidaia, %1(e)tik %2(e)ra"
 
 #: app/HealthCertificateBarcode.qml:34
 #, kde-format
 msgctxt "%1 is a person name"
 msgid "Vaccination certificate of %1"
-msgstr "%1(e)ren txertatze ziurtagiria"
+msgstr "%1(e)ren txertatze-ziurtagiria"
 
 #: app/HealthCertificateBarcode.qml:36
 #, kde-format
 msgctxt "%1 is a person name, 'Test certificate' is a compound noun"
 msgid "Test certificate of %1"
-msgstr "%1(e)ren proba ziurtagiria"
+msgstr "%1(e)ren proba-ziurtagiria"
 
 #: app/HealthCertificateBarcode.qml:38
 #, kde-format
 msgctxt "%1 is a person name"
 msgid "Recovery certificate of %1"
-msgstr "%1(e)ren sendatze ziurtagiria"
+msgstr "%1(e)ren sendatze-ziurtagiria"
 
 #: app/HealthCertificateBarcode.qml:53
 #, kde-format
@@ -1639,7 +1646,7 @@ msgstr "Proba iraungita"
 #: app/HealthCertificateBarcode.qml:80
 #, kde-format
 msgid "Recovery certificate valid"
-msgstr "Sendatze ziurtagiri balioduna"
+msgstr "Sendatze-ziurtagiri balioduna"
 
 #: app/healthcertificatemanager.cpp:145
 #, kde-format
@@ -1680,7 +1687,7 @@ msgstr "%1(e)ren sendatze ziurtagiria - %2"
 #: app/HealthCertificatePage.qml:19
 #, kde-format
 msgid "Health Certificates"
-msgstr "Osasun ziurtagiriak"
+msgstr "Osasun-ziurtagiriak"
 
 #: app/HealthCertificatePage.qml:58
 #, kde-format
@@ -1690,7 +1697,7 @@ msgstr "Ziurtagiria ezabatu"
 #: app/HealthCertificatePage.qml:59
 #, kde-format
 msgid "Do you really want to delete this certificate?"
-msgstr "Agiri hori benetan ezabatu nahi duzu?"
+msgstr "Ziurtagiri hau benetan ezabatu nahi duzu?"
 
 #: app/HealthCertificatePage.qml:132
 #, kde-format
@@ -1701,11 +1708,11 @@ msgid ""
 "li><li>SMART Health Cards (SHC) as used in parts of Canada and the US.</li></"
 "p>"
 msgstr ""
-"<p>Ondoko osasun ziurtagiriak inporta ditzakezu, haiek barra-kode eskaner "
-"aplikazio batekin eskaneatuz:<ul><li>Europako txertaketa, proba edo osatze "
-"\"Ziurtagiri digital berdeak\",</li><li>Indiako txertaketa ziurtagiriak.</"
-"li><li>SMART Health Cards (SHC) Kanadako eta AEBetako alde batzuetan erabili "
-"bezala.</li></p>"
+"<p>Ondoko osasun-ziurtagiriak inporta ditzakezu, haiek barra-kodeak "
+"eskaneatzeko aplikazio batekin eskaneatuz:<ul><li>Europako txertaketa-, "
+"proba- edo sendatze-ziurtagiri digital berdeak.</li><li>Indiako txertaketa-"
+"ziurtagiriak.</li><li>SMART Health Cards (SHC), Kanadako eta AEBetako "
+"zenbait lekutan erabiltzen direnak.</li></p>"
 
 #: app/HealthCertificateRecovery.qml:29 app/HealthCertificateTest.qml:30
 #: app/HealthCertificateVaccination.qml:33
@@ -1730,7 +1737,7 @@ msgstr "Jaioteguna"
 #: app/HealthCertificateRecovery.qml:50
 #, kde-format
 msgid "Recovery"
-msgstr "Osatzea"
+msgstr "Sendatzea"
 
 #: app/HealthCertificateRecovery.qml:62 app/HealthCertificateTest.qml:65
 #: app/HealthCertificateVaccination.qml:77
@@ -1742,13 +1749,13 @@ msgstr "Gaixotasuna"
 #: app/ProgramMembershipPage.qml:126 app/TicketPage.qml:103
 #, kde-format
 msgid "Valid from"
-msgstr "Balioaren hasiera"
+msgstr "Baliozkoa noiztik"
 
 #: app/HealthCertificateRecovery.qml:76 app/ProgramMembershipEditor.qml:111
 #: app/ProgramMembershipPage.qml:131 app/TicketPage.qml:109
 #, kde-format
 msgid "Valid until"
-msgstr "Balioduna bukaera"
+msgstr "Baliozkoa noiz arte"
 
 #: app/HealthCertificateRecovery.qml:82 app/HealthCertificateTest.qml:122
 #: app/HealthCertificateVaccination.qml:129
@@ -1825,7 +1832,7 @@ msgstr "Emaitza"
 #: app/HealthCertificateTest.qml:106
 #, kde-format
 msgid "Test Center"
-msgstr "Proba gunea"
+msgstr "Proba-gunea"
 
 #: app/HealthCertificateVaccination.qml:64
 #, kde-format
@@ -1857,27 +1864,27 @@ msgstr "%1/%2"
 #: app/HotelDelegate.qml:35
 #, kde-format
 msgid "Check-out %1"
-msgstr "Ordaindu eta irtetea %1"
+msgstr "Irteera %1"
 
 #: app/HotelDelegate.qml:49
 #, kde-format
 msgid "Check-in time: %1"
-msgstr "Izen-emate ordua: %1"
+msgstr "Sarrera-ordua: %1"
 
 #: app/HotelDelegate.qml:55 app/HotelDelegate.qml:56
 #, kde-format
 msgid "Check-out time: %1"
-msgstr "Ordaindu eta irtete ordua: %1"
+msgstr "Irteera-ordua: %1"
 
 #: app/HotelEditor.qml:19
 #, kde-format
 msgid "New Hotel Reservation"
-msgstr "Hotel erreserba berria"
+msgstr "Hotel-erreserba berria"
 
 #: app/HotelEditor.qml:19
 #, kde-format
 msgid "Edit Hotel Reservation"
-msgstr "Hoteleko erreserba editatu"
+msgstr "Hotel-erreserba editatu"
 
 #: app/HotelEditor.qml:49
 #, kde-format
@@ -1900,28 +1907,28 @@ msgstr "Izena"
 #, kde-format
 msgctxt "hotel checkin"
 msgid "Check-in"
-msgstr "Izena eman"
+msgstr "Sarrera"
 
 #: app/HotelEditor.qml:103
 #, kde-format
 msgid "Check-in time has to be set."
-msgstr "Izen-emateko ordua ezarri behar da."
+msgstr "Sarrera-ordua ezarri behar da."
 
 #: app/HotelEditor.qml:108
 #, kde-format
 msgctxt "hotel checkout"
 msgid "Check-out"
-msgstr "Ordaindu eta irten"
+msgstr "Irteera"
 
 #: app/HotelEditor.qml:120
 #, kde-format
 msgid "Check-out time has to be set."
-msgstr "Ordaindu eta irteteko ordua ezarri behar da."
+msgstr "Irteera-ordua ezarri behar da."
 
 #: app/HotelEditor.qml:122
 #, kde-format
 msgid "Check-out time has to be after the check-in time."
-msgstr "Ordaindu eta irteteko ordua izen emate orduaren ondoren izan behar da."
+msgstr "Irteera-ordua sarrera-orduaren ondoren izan behar da."
 
 #: app/HotelEditor.qml:133 app/HotelPage.qml:80
 #, kde-format
@@ -1931,17 +1938,17 @@ msgstr "Deskribapena"
 #: app/HotelPage.qml:16
 #, kde-format
 msgid "Hotel Reservation"
-msgstr "Hotel erreserba"
+msgstr "Hotel-erreserba"
 
 #: app/HotelPage.qml:65
 #, kde-format
 msgid "Check-in time"
-msgstr "Izen-emateko ordua"
+msgstr "Sarrera-ordua"
 
 #: app/HotelPage.qml:72
 #, kde-format
 msgid "Check-out time"
-msgstr "Ordaindu eta irteteko ordua"
+msgstr "Irteera-ordua"
 
 #: app/ImportAction.qml:23 app/TripGroupPage.qml:518
 #, kde-format
@@ -1957,7 +1964,7 @@ msgstr "Fitxategitik"
 #: app/ImportAction.qml:37
 #, kde-format
 msgid "Import Reservation"
-msgstr "Inportatu erreserba"
+msgstr "Erreserba inportatu"
 
 #: app/ImportAction.qml:43
 #, kde-format
@@ -2006,24 +2013,24 @@ msgstr "Egutegitik"
 #, kde-format
 msgctxt "@action:inmenu Name of the train company in Germany"
 msgid "From Deutsche Bahn reservation number"
-msgstr "Deutsche Bahn erreserba zenbakitik"
+msgstr "Deutsche Bahnen erreserba-zenbakitik"
 
 #: app/ImportAction.qml:138
 #, kde-format
 msgctxt "Name of the train company in France"
 msgid "From SNCF reservation number"
-msgstr "SNCF erreserba zenbakitik"
+msgstr "SNCFren erreserba-zenbakitik"
 
 #: app/importcontroller.cpp:152 app/importcontroller.cpp:464
 #, kde-format
 msgctxt "%1 is an error message"
 msgid "Import failed: %1"
-msgstr "Inportatzean huts egin du: %1"
+msgstr "Inportatzeak huts egin du: %1"
 
 #: app/importcontroller.cpp:158
 #, kde-format
 msgid "Import failed: File too large."
-msgstr "Inportatzean huts egin du: Fitxategia handiegia da."
+msgstr "Inportatzeak huts egin du: fitxategia handiegia da."
 
 #: app/importcontroller.cpp:207 app/importcontroller.cpp:304
 #, kde-format
@@ -2062,7 +2069,7 @@ msgstr "Hautapena inportatu"
 #, kde-format
 msgctxt "@title"
 msgid "Find Gate"
-msgstr "Aurkitu atea"
+msgstr "Atea bilatu"
 
 #: app/IndoorMapGateSheet.qml:33
 #, kde-format
@@ -2115,37 +2122,37 @@ msgstr "Zooma urrundu"
 #: app/IndoorMapPage.qml:75
 #, kde-format
 msgid "Find Platform"
-msgstr "Bilatu nasa"
+msgstr "Nasa bilatu"
 
 #: app/IndoorMapPage.qml:82
 #, kde-format
 msgid "Find Gate"
-msgstr "Bilatu atea"
+msgstr "Atea bilatu"
 
 #: app/IndoorMapPage.qml:89
 #, kde-format
 msgid "Find Amenity"
-msgstr "Bilatu zerbitzua"
+msgstr "Zerbitzua bilatu"
 
 #: app/IndoorMapPage.qml:95
 #, kde-format
 msgid "Show Elevator Status"
-msgstr "Erakutsi igogailuaren egoera"
+msgstr "Igogailuaren egoera erakutsi"
 
 #: app/IndoorMapPage.qml:104
 #, kde-format
 msgid "Show Rental Vehicles"
-msgstr "Erakutsi alokairuko ibilgailuak"
+msgstr "Alokairuko ibilgailuak erakutsi"
 
 #: app/IndoorMapPage.qml:112
 #, kde-format
 msgid "Open Map"
-msgstr "Ireki mapa"
+msgstr "Mapa ireki"
 
 #: app/IndoorMapPage.qml:118
 #, kde-format
 msgid "Open wheelmap.org"
-msgstr "Ireki wheelmap.org"
+msgstr "wheelmap.org ireki"
 
 #: app/IndoorMapPage.qml:280
 #, kde-format
@@ -2166,7 +2173,7 @@ msgstr "Informazioa erakutsi"
 #, kde-format
 msgctxt "@title"
 msgid "Filter Journeys"
-msgstr "Iragazi bidaiak"
+msgstr "Bidaiak iragazi"
 
 #: app/JourneyFilterPage.qml:59
 #, kde-format
@@ -2195,7 +2202,7 @@ msgstr "Igarotze azkarra, metroa, tranbia"
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Local or regional bus services"
-msgstr "Tokiko edo eskualdeko autobus zerbitzuak"
+msgstr "Tokiko edo eskualdeko autobus-zerbitzuak"
 
 #: app/JourneyFilterPage.qml:110
 #, kde-format
@@ -2207,7 +2214,7 @@ msgstr "Itsasontziak edo ferryak"
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
-msgstr "Erakutsi mapa"
+msgstr "Mapa erakutsi…"
 
 #: app/JourneyQueryPage.qml:112 app/TransferPage.qml:244
 #, kde-format
@@ -2229,7 +2236,7 @@ msgstr "Ez da bidaiarik aurkitu"
 #: app/JourneyQueryPage.qml:238
 #, kde-format
 msgid "Still fetching results…"
-msgstr "Oraindik emaitzan eskuratzen…"
+msgstr "Oraindik emaitzak eskuratzen…"
 
 #: app/JourneyRequestPage.qml:40 app/JourneyRequestPage.qml:98
 #, kde-format
@@ -2299,7 +2306,7 @@ msgstr "Iragazi"
 #: app/JourneyRequestPage.qml:232
 #, kde-format
 msgid "Search Journey"
-msgstr "Bilatu bidaia"
+msgstr "Bidaia bilatu"
 
 #: app/JourneySectionDelegate.qml:141
 #, kde-format
@@ -2341,7 +2348,7 @@ msgstr "Gidatu %1 (%2)"
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
-msgstr "Erakutsi gehiago…"
+msgstr "Gehiago erakutsi…"
 
 #: app/JourneySectionPage.qml:18
 #, kde-format
@@ -2387,7 +2394,7 @@ msgstr "Egin klik zabaltzeko"
 #: app/livedatamanager.cpp:838
 #, kde-format
 msgid "Itinerary change"
-msgstr "Bidaia-plan aldaketa"
+msgstr "Bidaia-planaren aldaketa"
 
 #: app/LiveStatusPage.qml:21 app/Main.qml:67
 #, kde-format
@@ -2432,7 +2439,7 @@ msgstr "Trenbide-abiaduraren mapa"
 #, kde-format
 msgctxt "map style"
 msgid "Railway electrification map"
-msgstr "Trenbidearen elektrifikazio mapa"
+msgstr "Trenbide-elektrifikazioaren mapa"
 
 #: app/LiveStatusPage.qml:118
 #, kde-format
@@ -2443,13 +2450,13 @@ msgstr "Trenbide-zabaleraren mapa"
 #: app/LiveStatusPage.qml:160
 #, kde-format
 msgid "Share Live Location"
-msgstr "Partekatu kokapena zuzenean"
+msgstr "Zuzeneko kokapena partekatu"
 
 #: app/LiveStatusPage.qml:161
 #, kde-format
 msgid ""
 "Do you really want to share your current location to the Matrix channel %1?"
-msgstr "Benetan partekatu nahi duzu zure uneko kokapena %1 Matrix kanalarekin?"
+msgstr "Zure uneko kokapena Matrixeko %1 kanalean benetan partekatu nahi duzu?"
 
 #: app/LiveStatusPage.qml:167
 #, kde-format
@@ -2459,7 +2466,7 @@ msgstr "Partekatu"
 #: app/LiveStatusPage.qml:325
 #, kde-format
 msgid "Automatically follow on the map"
-msgstr "Mapan automatikoki jarraitzea"
+msgstr "Mapan automatikoki jarraitu"
 
 #: app/LiveStatusPage.qml:345 app/LiveStatusPage.qml:357
 #, kde-format
@@ -2504,7 +2511,7 @@ msgstr "%1m"
 #: app/LocationInfoDelegate.qml:51
 #, kde-format
 msgid "Daylight Saving Time"
-msgstr "Udako ordutegia"
+msgstr "Udako ordua"
 
 #: app/LocationInfoDelegate.qml:51
 #, kde-format
@@ -2535,7 +2542,7 @@ msgstr "Argindar-entxufe bateraezin batzuk: %1"
 #: app/LocationInfoDelegate.qml:92
 #, kde-format
 msgid "Timezone change: %1 (%2)"
-msgstr "Ordu-eremu aldaketa: %1 (%2)"
+msgstr "Ordu-eremuaren aldaketa: %1 (%2)"
 
 #: app/LocationInfoDelegate.qml:114
 #, kde-format
@@ -2571,7 +2578,7 @@ msgstr "B mota"
 
 #: app/locationinformation.cpp:150
 msgid "Europlug"
-msgstr "Euro-hartunea"
+msgstr "Euroentxufea"
 
 #: app/locationinformation.cpp:151
 msgid "Type D"
@@ -2620,7 +2627,7 @@ msgstr "N mota"
 #: app/main.cpp:219
 #, kde-format
 msgid "Digital Travel Assistant"
-msgstr "Bidai-laguntzaile digitala"
+msgstr "Bidaia-laguntzaile digitala"
 
 #: app/main.cpp:220
 #, kde-format
@@ -2654,7 +2661,8 @@ msgstr "OpenStreetMap"
 msgctxt "@info:credit"
 msgid "Provides both indoor and outdoor maps. ©OpenStreetMap contributors"
 msgstr ""
-"Barruko zein kanpoko mapak hornitzen ditu. ©OpenStreetMap kolaboratzaileak"
+"Barrualdeko zein kanpoaldeko mapak eskaintzen ditu. © OpenStreetMap "
+"kolaboratzaileak"
 
 #: app/main.cpp:225
 #, kde-format
@@ -2679,7 +2687,7 @@ msgstr "ZXing"
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code scanning. © 2016 ZXing Authors, © 2016 Nu-book Inc."
-msgstr "QR-Kode irakurketa. © 2016 ZXing Egileak, © 2016 Nu-book Inc."
+msgstr "QR kodeen eskaneatzea. © 2016 ZXing egileak, © 2016 Nu-book Inc."
 
 #: app/main.cpp:227
 #, kde-format
@@ -2747,7 +2755,7 @@ msgstr "libqrencode"
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code Generation. © 2006-2018 Kentaro Fukuchi"
-msgstr "QR-Kode sorkuntza. © 2006-2018 Kentaro Fukuchi"
+msgstr "QR kodeak sortzea. © 2006-2018 Kentaro Fukuchi"
 
 #: app/main.cpp:240
 #, kde-format
@@ -2783,7 +2791,7 @@ msgstr "libQuotient"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Matrix integration."
-msgstr "Matrix-ekin bateratzea."
+msgstr "Matrixekin bateratzea."
 
 #: app/main.cpp:245
 #, kde-format
@@ -2807,7 +2815,7 @@ msgstr "Olm"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Matrix crypto library."
-msgstr "Matrix kriptografia liburutegia."
+msgstr "Matrixen kriptografia-liburutegia."
 
 #: app/main.cpp:254
 #, kde-format
@@ -2840,13 +2848,13 @@ msgstr "Ontziko informazioa ez dago erabilgarri."
 #: app/Main.qml:212
 #, kde-format
 msgid "Map download finished."
-msgstr "Mapa zama-jaistea amaitu da."
+msgstr "Maparen zama-jaistea amaitu da."
 
 #: app/Main.qml:298
 #, kde-format
 msgctxt "@title:window"
 msgid "Matrix Session Verification"
-msgstr "«Matrix»eko saioaren egiaztapena"
+msgstr "Matrixeko saio-egiaztapena"
 
 #: app/MapStopoverInfoSheetDrawer.qml:85
 #, kde-format
@@ -2861,12 +2869,12 @@ msgstr "Informazioa"
 #: app/MapStopoverInfoSheetDrawer.qml:131
 #, kde-format
 msgid "Show indoor map"
-msgstr "Erakutsi barrualdeko mapa"
+msgstr "Barrualdeko mapa erakutsi"
 
 #: app/MatrixKeyVerificationPage.qml:12
 #, kde-format
 msgid "Matrix Session Verification"
-msgstr "«Matrix»eko saioaren egiaztapena"
+msgstr "Matrixeko saio-egiaztapena"
 
 #: app/MatrixKeyVerificationPage.qml:41
 #, kde-format
@@ -2878,25 +2886,25 @@ msgstr "Gailuak egiaztapena onartzeko zain."
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Incoming key verification request from device <b>%1</b>"
-msgstr "<b>%1</b> gailuaren, sarrerako gakoaren egiaztapen eskaera"
+msgstr "<b>%1</b> gailutik jasotako gako-egiaztapenaren eskaera"
 
 #: app/MatrixKeyVerificationPage.qml:45
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Waiting for other party to verify."
-msgstr "Beste aldea egiaztatzeko zain."
+msgstr "Beste aldeak egiaztatzeko zain."
 
 #: app/MatrixKeyVerificationPage.qml:47
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Successfully verified device <b>%1</b>"
-msgstr "<b>%1</b> gailuaren egiaztapen arrakastatsua"
+msgstr "<b>%1</b> gailua behar bezala egiaztatu da"
 
 #: app/MatrixKeyVerificationPage.qml:52
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session verification was canceled for unknown reason."
-msgstr "Saioaren egiaztapena arrazoi ezezagunengatik bertan behera utzi da."
+msgstr "Saio-egiaztapena arrazoi ezezagun batengatik bertan behera utzi da."
 
 #: app/MatrixKeyVerificationPage.qml:54
 #, kde-format
@@ -2920,7 +2928,7 @@ msgstr "Saioaren egiaztapena bertan behera utzi duzu."
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The remote party canceled the session verification."
-msgstr "Urrutiko aldeak saioaren egiaztapena bertan behera utzi du."
+msgstr "Urrutiko aldeak saio-egiaztapena bertan behera utzi du."
 
 #: app/MatrixKeyVerificationPage.qml:62
 #, kde-format
@@ -2929,8 +2937,7 @@ msgid ""
 "The session verification was canceled because we received an unexpected "
 "message."
 msgstr ""
-"Saioaren egiaztapena bertan behera utzi da, ustekabeko mezu bat jaso "
-"dugulako."
+"Saio-egiaztapena bertan behera utzi da, ustekabeko mezu bat jaso dugulako."
 
 #: app/MatrixKeyVerificationPage.qml:64
 #, kde-format
@@ -2939,8 +2946,8 @@ msgid ""
 "The remote party canceled the session verification because it received an "
 "unexpected message."
 msgstr ""
-"Urrutiko aldeak saioaren egiaztapena bertan behera utzi du, ustekabeko mezu "
-"bat jaso duelako."
+"Urrutiko aldeak saio-egiaztapena bertan behera utzi du, ustekabeko mezu bat "
+"jaso duelako."
 
 #: app/MatrixKeyVerificationPage.qml:66
 #, kde-format
@@ -2949,7 +2956,7 @@ msgid ""
 "The session verification was canceled because it received a message for an "
 "unknown session."
 msgstr ""
-"Saioaren egiaztapena bertan behera utzi da, saio ezezagun baten mezua jaso "
+"Saio-egiaztapena bertan behera utzi da, saio ezezagun baterako mezu bat jaso "
 "duelako."
 
 #: app/MatrixKeyVerificationPage.qml:68
@@ -2959,8 +2966,8 @@ msgid ""
 "The remote party canceled the session verification because it received a "
 "message for an unknown session."
 msgstr ""
-"Urrutiko aldeak saioaren egiaztapena bertan behera utzi du, saio ezezagun "
-"baten mezu bat jaso duelako."
+"Urrutiko aldeak saio-egiaztapena bertan behera utzi du, saio ezezagun "
+"baterako mezu bat jaso duelako."
 
 #: app/MatrixKeyVerificationPage.qml:70
 #, kde-format
@@ -2969,8 +2976,8 @@ msgid ""
 "The session verification was canceled because NeoChat is unable to handle "
 "this verification method."
 msgstr ""
-"Saioaren egiaztapena bertan behera utzi da, NeoChat, egiaztapen metodoa "
-"maneiatzeko gai ez delako."
+"Saio-egiaztapena bertan behera utzi da, NeoChat ez delako egiaztapen-metodo "
+"hau kudeatzeko gai."
 
 #: app/MatrixKeyVerificationPage.qml:72
 #, kde-format
@@ -2979,14 +2986,14 @@ msgid ""
 "The remote party canceled the session verification because it is unable to "
 "handle this verification method."
 msgstr ""
-"Urrutiko aldeak saioaren egiaztapena bertan behera utzi du, egiaztapen "
-"metodo hau maneiatzeko gai ez delako."
+"Urrutiko aldeak saio-egiaztapena bertan behera utzi du, ez delako egiaztapen-"
+"metodo hau kudeatzeko gai."
 
 #: app/MatrixKeyVerificationPage.qml:74
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session verification was canceled because the keys are incorrect."
-msgstr "Saioaren egiaztapena bertan behera utzi da, gakoak okerrak direlako."
+msgstr "Saio-egiaztapena bertan behera utzi da, gakoak okerrak direlako."
 
 #: app/MatrixKeyVerificationPage.qml:76
 #, kde-format
@@ -2997,10 +3004,10 @@ msgid ""
 "\n"
 "<b>Please log out and log back in, your session is broken/corrupt.</b>"
 msgstr ""
-"Urrutiko aldeak saioaren egiaztapena bertan behera utzi du gakoak okerrak "
+"Urrutiko aldeak saio-egiaztapena bertan behera utzi du, gakoak okerrak "
 "direlako.\n"
 "\n"
-"<b>Mesedez, saiotik irten eta atzera sartu, zure saioa hautsita/hondatuta "
+"<b>Mesedez, saioa amaitu eta berriro hasi; zure saioa hautsita edo hondatuta "
 "dago.</b>"
 
 #: app/MatrixKeyVerificationPage.qml:78
@@ -3009,7 +3016,7 @@ msgctxt "Matrix session verification"
 msgid ""
 "The session verification was canceled because it verifies an unexpected user."
 msgstr ""
-"Saioaren egiaztapena bertan behera utzi da, ustekabeko erabiltzaile bat "
+"Saio-egiaztapena bertan behera utzi da, ustekabeko erabiltzaile bat "
 "egiaztatzen duelako."
 
 #: app/MatrixKeyVerificationPage.qml:80
@@ -3019,7 +3026,7 @@ msgid ""
 "The remote party canceled the session verification because it verifies an "
 "unexpected user."
 msgstr ""
-"Urrutiko aldeak saioaren egiaztapena bertan behera utzi du, ustekabeko "
+"Urrutiko aldeak saio-egiaztapena bertan behera utzi du, ustekabeko "
 "erabiltzaile bat egiaztatzen duelako."
 
 #: app/MatrixKeyVerificationPage.qml:82
@@ -3028,7 +3035,7 @@ msgctxt "Matrix session verification"
 msgid ""
 "The session verification was canceled because we received an invalid message."
 msgstr ""
-"Saioaren egiaztapena bertan behera utzi da, mezu baliogabe bat jaso dugulako."
+"Saio-egiaztapena bertan behera utzi da, mezu baliogabe bat jaso dugulako."
 
 #: app/MatrixKeyVerificationPage.qml:84
 #, kde-format
@@ -3037,8 +3044,8 @@ msgid ""
 "The remote party canceled the session verification because it received an "
 "invalid message."
 msgstr ""
-"Urrutiko aldeak saioaren egiaztapena bertan behera utzi du mezu baliogabe "
-"bat jaso duelako."
+"Urrutiko aldeak saio-egiaztapena bertan behera utzi du mezu baliogabe bat "
+"jaso duelako."
 
 #: app/MatrixKeyVerificationPage.qml:87
 #, kde-format
@@ -3051,8 +3058,7 @@ msgstr "Saioa beste gailu batean onartu da"
 msgctxt "Matrix session verification"
 msgid "The session verification was canceled because of a mismatched key."
 msgstr ""
-"Saioaren egiaztapena bertan behera utzi da, bat ez datorren gako baten "
-"ondorioz."
+"Saio-egiaztapena bertan behera utzi da, bat ez datorren gako baten ondorioz."
 
 #: app/MatrixKeyVerificationPage.qml:91
 #, kde-format
@@ -3061,14 +3067,14 @@ msgid ""
 "The remote party canceled the session verification because of a mismatched "
 "key."
 msgstr ""
-"Urrutiko aldeak saioaren egiaztapena bertan behera utzi du, bat ez datorren "
-"gako baten ondorioz."
+"Urrutiko aldeak saio-egiaztapena bertan behera utzi du, bat ez datorren gako "
+"baten ondorioz."
 
 #: app/MatrixKeyVerificationPage.qml:93
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session verification was canceled because the keys do not match."
-msgstr "Saioaren egiaztapena bertan behera utzi da, gakoa bat ez datorrelako."
+msgstr "Saio-egiaztapena bertan behera utzi da, gakoak bat ez datozelako."
 
 #: app/MatrixKeyVerificationPage.qml:95
 #, kde-format
@@ -3077,7 +3083,7 @@ msgid ""
 "The remote party canceled the session verification because the keys do not "
 "match."
 msgstr ""
-"Urrutiko aldeak saioaren egiaztapena bertan behera utzi du, gakoak bat ez "
+"Urrutiko aldeak saio-egiaztapena bertan behera utzi du, gakoak bat ez "
 "datozelako."
 
 #: app/MatrixKeyVerificationPage.qml:97
@@ -3085,19 +3091,19 @@ msgstr ""
 msgctxt "Matrix session verification"
 msgid "The session verification was canceled due to an unknown error."
 msgstr ""
-"Saioaren egiaztapena bertan behera utzi da, errore ezezagun baten ondorioz."
+"Saio-egiaztapena bertan behera utzi da, errore ezezagun baten ondorioz."
 
 #: app/MatrixKeyVerificationPage.qml:114
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Emoji Verification"
-msgstr "Emoji egiaztapena"
+msgstr "Emoji bidezko egiaztapena"
 
 #: app/MatrixKeyVerificationPage.qml:117
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Compare a set of emoji on both devices."
-msgstr "Alderatu emoji-multzo bat bi gailuetan."
+msgstr "Emoji-multzo bat bi gailuetan konparatu."
 
 #: app/MatrixKeyVerificationPage.qml:128
 #, kde-format
@@ -3105,7 +3111,7 @@ msgctxt "Matrix session verification"
 msgid ""
 "Confirm the emoji below are displayed on both devices, in the same order."
 msgstr ""
-"Baieztatu beheko emojiak bi galuetan, hurrenkera berean azaltzen direla."
+"Baieztatu beheko emojiak bi gailuetan hurrenkera berean bistaratzen direla."
 
 #: app/MatrixKeyVerificationPage.qml:165
 #, kde-format
@@ -3132,7 +3138,7 @@ msgstr "Uko egin"
 #: app/MatrixRoomSelectionSheet.qml:20
 #, kde-format
 msgid "Share location…"
-msgstr "Partekatu kokapena…"
+msgstr "Kokapena partekatu…"
 
 #: app/MatrixRoomSelectionSheet.qml:38
 #, kde-format
@@ -3168,7 +3174,7 @@ msgstr "Lehentasun txikia"
 #, kde-format
 msgctxt "matrix room type"
 msgid "Spaces"
-msgstr "Tokiak"
+msgstr "Espazioak"
 
 #: app/MyDataPage.qml:23
 #, kde-format
@@ -3180,37 +3186,37 @@ msgstr "Nire datuak"
 #, kde-format
 msgctxt "@title"
 msgid "Passes and Programs"
-msgstr "Paseak eta programak"
+msgstr "Txartelak eta programak"
 
 #: app/MyDataPage.qml:34
 #, kde-format
 msgid "No valid bonus or discount program cards or flat rate passes found."
 msgstr ""
-"Ez da aurkitu hobaririk edo deskontu-programa txartelik edo tarifa finkoko "
-"paserik aurkitu."
+"Ez da hobari- edo deskontu-programa txartelik, ezta tarifa finkoko txartelik "
+"ere aurkitu."
 
 #: app/MyDataPage.qml:52
 #, kde-format
 msgctxt "@action:button"
 msgid "Manage your Passes"
-msgstr "Kudeatu zure paseak"
+msgstr "Zure txartelak kudeatu"
 
 #: app/MyDataPage.qml:59
 #, kde-format
 msgctxt "@title"
 msgid "Health Certificates"
-msgstr "Osasun ziurtagiriak"
+msgstr "Osasun-ziurtagiriak"
 
 #: app/MyDataPage.qml:69
 #, kde-format
 msgid "No valid health certificate found."
-msgstr "Ez da osasun ziurtagiri baliodunik aurkitu."
+msgstr "Ez da osasun-ziurtagiri baliodunik aurkitu."
 
 #: app/MyDataPage.qml:100
 #, kde-format
 msgctxt "@action:button"
 msgid "Manage your health certificates"
-msgstr "Zure osasun ziurtagiriak kudeatu"
+msgstr "Zure osasun-ziurtagiriak kudeatu"
 
 #: app/MyDataPage.qml:108
 #, kde-format
@@ -3233,7 +3239,7 @@ msgstr "Estatistikak"
 #, kde-format
 msgctxt "@action:button"
 msgid "See all Statistics"
-msgstr "Ikusi estatistika denak"
+msgstr "Estatistika guztiak ikusi"
 
 #: app/MyDataPage.qml:191
 #, kde-format
@@ -3261,7 +3267,7 @@ msgstr "Esportatu"
 #: app/MyDataPage.qml:227
 #, kde-format
 msgid "Export Itinerary Data"
-msgstr "Bidaia-plan ibilbidearen datuak esportatu"
+msgstr "Bidaia-planaren datuak esportatu"
 
 #: app/NavigationBar.qml:18
 #, kde-format
@@ -3295,12 +3301,12 @@ msgstr "Gorabehera %1(e)n"
 #: app/notificationhelper.cpp:67
 #, kde-format
 msgid "Changes on %1"
-msgstr "Aldaketa %1(e)n"
+msgstr "Aldaketak %1(e)n"
 
 #: app/notificationhelper.cpp:71
 #, kde-format
 msgid "Delays on %1"
-msgstr "Atzerapena %1(e)n"
+msgstr "Atzerapenak %1(e)n"
 
 #: app/notificationhelper.cpp:74
 #, kde-format
@@ -3320,7 +3326,7 @@ msgstr "Iritsiera atzeratua %1(e)n"
 #: app/notificationhelper.cpp:84
 #, kde-format
 msgid "Platform change on %1"
-msgstr "Nasa aldaketa %1(e)n"
+msgstr "Nasaren aldaketa %1(e)n"
 
 #: app/notificationhelper.cpp:94
 #, kde-format
@@ -3337,27 +3343,27 @@ msgstr "Iritsiera ezeztatu egin da."
 #: app/notificationhelper.cpp:101
 #, kde-format
 msgid "New departure time is: %1 (+%2)"
-msgstr "Irteera ordu berria: %1 (+%2)"
+msgstr "Irteera-ordu berria: %1 (+%2)"
 
 #: app/notificationhelper.cpp:104
 #, kde-format
 msgid "New departure time is: %1 (%2)"
-msgstr "Irteera ordu berria: %1 (%2)"
+msgstr "Irteera-ordu berria: %1 (%2)"
 
 #: app/notificationhelper.cpp:108
 #, kde-format
 msgid "New arrival time is: %1 (+%2)"
-msgstr "Iritsiera ordu berria: %1 (+%2)"
+msgstr "Iritsiera-ordu berria: %1 (+%2)"
 
 #: app/notificationhelper.cpp:112
 #, kde-format
 msgid "New departure platform is: %1"
-msgstr "Irteera nasa berria: %1"
+msgstr "Irteerako nasa berria: %1"
 
 #: app/notificationhelper.cpp:115
 #, kde-format
 msgid "New arrival platform is: %1"
-msgstr "Iritsiera nasa berria: %1"
+msgstr "Iritsierako nasa berria: %1"
 
 #: app/onlineimport/db.qml:28 app/onlineimport/sncf.qml:28
 #, kde-format
@@ -3367,7 +3373,7 @@ msgstr "Abizenak"
 #: app/onlineimport/db.qml:33
 #, kde-format
 msgid "Name is case-sensitive."
-msgstr "Izenak maius./minus. bereizten ditu."
+msgstr "Izenak maiuskulak bereizten ditu."
 
 #: app/onlineimport/db.qml:40
 #, kde-format
@@ -3420,13 +3426,13 @@ msgstr "%1 - %2"
 #: app/PassPage.qml:19
 #, kde-format
 msgid "Passes and Programs"
-msgstr "Paseak eta programak"
+msgstr "Txartelak eta programak"
 
 #: app/PassPage.qml:22
 #, kde-format
 msgctxt "@title"
 msgid "Add Program Membership"
-msgstr "Programako partaidetza gehitu"
+msgstr "Programako bazkidetza gehitu"
 
 #: app/PassPage.qml:43 app/TripGroupsPage.qml:109
 #, kde-format
@@ -3485,7 +3491,7 @@ msgstr "Eserlekua"
 #: app/PkPassPage.qml:20
 #, kde-format
 msgid "Boarding Pass"
-msgstr "ontziratze-txartela"
+msgstr "Ontziratze-txartela"
 
 #: app/PkPassPage.qml:21
 #, kde-format
@@ -3495,7 +3501,7 @@ msgstr "Ekitaldiaren txartela"
 #: app/PkPassPage.qml:22
 #, kde-format
 msgid "Pass"
-msgstr "Pasea"
+msgstr "Txartela"
 
 #: app/ProgramMembershipCard.qml:22 app/ProgramMembershipEditorCard.qml:33
 #, kde-format
@@ -3513,17 +3519,17 @@ msgstr "Zenbakia"
 #: app/ProgramMembershipCard.qml:50 app/ProgramMembershipPage.qml:114
 #, kde-format
 msgid "Program membership number copied to clipboard"
-msgstr "Programako bazkidetza zenbakia arbelera kopiatu da"
+msgstr "Programako bazkidetza-zenbakia arbelera kopiatu da"
 
 #: app/ProgramMembershipCard.qml:63
 #, kde-format
 msgid "Show program pass"
-msgstr "Erakutsi programaren pasea"
+msgstr "Programaren txartela erakutsi"
 
 #: app/ProgramMembershipEditor.qml:24
 #, kde-format
 msgid "Edit Program Membership"
-msgstr "Programaren bazkidetza editatu"
+msgstr "Programako bazkidetza editatu"
 
 #: app/ProgramMembershipEditor.qml:34 app/TicketEditor.qml:27
 #, kde-format
@@ -3553,7 +3559,8 @@ msgstr "Kidea"
 #: app/ProgramMembershipEditor.qml:124
 #, kde-format
 msgid "Valid until time has to be after the valid from time."
-msgstr "Noiz arteko balioa noiztik balioaren ondoren izan behar da."
+msgstr ""
+"Balio-epearen amaierako orduak hasierako orduaren ondoren izan behar du."
 
 #: app/ProgramMembershipEditor.qml:134
 #, kde-format
@@ -3563,17 +3570,17 @@ msgstr "Barra-kodea"
 #: app/ProgramMembershipPage.qml:17
 #, kde-format
 msgid "Program Membership"
-msgstr "Programaren bazkidetza"
+msgstr "Programako bazkidetza"
 
 #: app/ProgramMembershipPage.qml:56
 #, kde-format
 msgid "Export Program Membership"
-msgstr "Programaren bazkidetza editatu"
+msgstr "Programako bazkidetza esportatu"
 
 #: app/ProgramMembershipPage.qml:155
 #, kde-format
 msgid "Show Pass"
-msgstr "Erakutsi pasea"
+msgstr "Txartela erakutsi"
 
 #: app/PublicTransportPage.qml:194 app/TicketEditor.qml:58
 #: app/TicketPage.qml:18 app/TicketPage.qml:92
@@ -3609,7 +3616,7 @@ msgstr "Trena %1(e)tik %2(e)ra"
 #: app/reservationhelper.cpp:143
 #, kde-format
 msgid "Bus from %1 to %2"
-msgstr "Autobusa, %1(e)tik %2(e)ra"
+msgstr "Autobusa %1(e)tik %2(e)ra"
 
 #: app/RestaurantEditor.qml:18
 #, kde-format
@@ -3643,7 +3650,7 @@ msgstr "Erreserba"
 #: app/RestaurantPage.qml:16
 #, kde-format
 msgid "Restaurant Reservation"
-msgstr "Jatetxe erreserba"
+msgstr "Jatetxe-erreserba"
 
 #: app/RestaurantPage.qml:30
 #, kde-format
@@ -3664,7 +3671,7 @@ msgstr "Amaierako ordua"
 #: app/RestaurantPage.qml:58
 #, kde-format
 msgid "Party size"
-msgstr "Zenbateko taldea"
+msgstr "Taldearen tamaina"
 
 #: app/ScamWarningFormDelegate.qml:21
 #, kde-format
@@ -3717,7 +3724,7 @@ msgstr "Toki ezarpenak"
 #: app/SettingsPage.qml:40
 #, kde-format
 msgid "Use metric units"
-msgstr "Erabili unitate metrikoak"
+msgstr "Unitate metrikoak erabili"
 
 #: app/SettingsPage.qml:41
 #, kde-format
@@ -3736,7 +3743,7 @@ msgstr "Lerroko zerbitzuak"
 #: app/SettingsPage.qml:54
 #, kde-format
 msgid "Query Traffic Data"
-msgstr "Trafiko datuen kontsulta"
+msgstr "Trafiko-datuak itaundu"
 
 #: app/SettingsPage.qml:57
 #, kde-format
@@ -3744,13 +3751,13 @@ msgid ""
 "When enabled, this will query transport provider online services for changes "
 "such as delays or gate and platform changes."
 msgstr ""
-"Gaitua dagoenean, garraio hornitzailearen lerroko zerbitzuak itaunduko ditu "
-"atzerapen edo ate edo nasa aldaketa bezalako aldaketen bila."
+"Gaituta dagoenean, garraio-hornitzailearen lerroko zerbitzuak itaunduko "
+"ditu, atzerapenak eta ate- edo nasa-aldaketak bezalako aldaketen bila."
 
 #: app/SettingsPage.qml:63
 #, kde-format
 msgid "Use insecure services"
-msgstr "Erabili zerbitzu ez-seguruak"
+msgstr "Zerbitzu ez-seguruak erabili"
 
 #: app/SettingsPage.qml:66
 #, kde-format
@@ -3759,14 +3766,14 @@ msgid ""
 "encryption. This is not recommended, but might be unavoidable when relying "
 "on live data from certain providers."
 msgstr ""
-"Hau gaitzean garraioa zifratzea eskaintzen ez duten lerroko zerbitzuak ere "
-"erabiliko ditu. Ez da halakorik gomendatzen, baina ekidinezina gerta liteke "
-"hornitzaile jakin batzuen zuzeneko datuen beharra dagoenean."
+"Hau gaitzean, garraio-zifratzerik eskaintzen ez duten lerroko zerbitzuak ere "
+"erabiliko dira. Ez da gomendatzen, baina ezinbestekoa izan liteke "
+"hornitzaile jakin batzuen zuzeneko datuak erabili behar direnean."
 
 #: app/SettingsPage.qml:74
 #, kde-format
 msgid "Public Transport Information Sources…"
-msgstr "Garraio publikoko informazio iturriak…"
+msgstr "Garraio publikoko informazio-iturriak…"
 
 #: app/SettingsPage.qml:83 app/WeatherForecastDelegate.qml:81
 #: app/WeatherForecastPage.qml:20
@@ -3777,7 +3784,7 @@ msgstr "Eguraldi-iragarpena"
 #: app/SettingsPage.qml:86
 #, kde-format
 msgid "Showing weather forecasts will query online services."
-msgstr "Eguraldi-iragarpena erakusteko lerroko zerbitzuak itaunduko ditu."
+msgstr "Eguraldi-iragarpenak erakusteak lerroko zerbitzuak itaunduko ditu."
 
 #: app/SettingsPage.qml:91 app/WeatherForecastPage.qml:37
 #, kde-format
@@ -3786,14 +3793,14 @@ msgid ""
 "Institute</a> under <a href=\"https://creativecommons.org/licenses/"
 "by/4.0\">Creative Commons 4.0 BY International</a> license."
 msgstr ""
-"<a href=\"https://www.met.no/\">Norvegiako meteorologia institutuko datuak</"
-"a>  <a href=\"https://creativecommons.org/licenses/by/4.0\">Creative Commons "
-"4.0 BY International</a> lizentziapean erabiliz."
+"<a href=\"https://www.met.no/\">Norvegiako Meteorologia Institutuaren</a> "
+"datuak erabiliz, <a href=\"https://creativecommons.org/licenses/"
+"by/4.0\">Creative Commons 4.0 BY International</a> lizentziapean."
 
 #: app/SettingsPage.qml:100
 #, kde-format
 msgid "Preload Map Data"
-msgstr "Mapako datuak aurre-zamatu"
+msgstr "Mapako datuak aurrez zamatu"
 
 #: app/SettingsPage.qml:103
 #, kde-format
@@ -3801,8 +3808,8 @@ msgid ""
 "Enabling this will download maps for all stations and airports for upcoming "
 "trips when connected to Wifi network."
 msgstr ""
-"Hau gaitzean, Wi-Fi sareetara konektatzean, datozen bidaietarako geltoki eta "
-"aireportu guztien mapak zama-jaitsiko ditu."
+"Hau gaitzean, Wi-Fi sare batera konektatuta dagoenean, datozen bidaietarako "
+"geltoki eta aireportu guztien mapak zama-jaitsiko ditu."
 
 #: app/SettingsPage.qml:110
 #, kde-format
@@ -3815,7 +3822,7 @@ msgid ""
 "Enabling this will perform online queries for exchange rates to currencies "
 "at travel destinations."
 msgstr ""
-"Hau gaitzean, bidaiaren helmugako dibisetarako truke tasen lerroko itaunak "
+"Hau gaitzean, bidaia-helmugetako moneten truke-tasei buruzko lerroko itaunak "
 "egingo ditu."
 
 #: app/SettingsPage.qml:124
@@ -3826,7 +3833,7 @@ msgstr "Wikimediaren lerroko edukia"
 #: app/SettingsPage.qml:127
 #, kde-format
 msgid "Use additional online content from Wikimedia and Wikidata."
-msgstr "Erabili Wikimedia eta Wikidataren lerroko eduki gehigarria."
+msgstr "Wikimedia eta Wikidatako lerroko eduki gehigarria erabili."
 
 #: app/SettingsPage.qml:134
 #, kde-format
@@ -3849,8 +3856,8 @@ msgid ""
 "When enabled, this will query transport provider online services "
 "automatically for transfer information."
 msgstr ""
-"Gaitua dagoenean, honek garraio hornitzailearen lineako zerbitzua "
-"automatikoki itaunduko du garraio-tartearen informazioari buruz."
+"Gaituta dagoenean, garraio-hornitzailearen lerroko zerbitzuak automatikoki "
+"itaunduko ditu garraio-tarteei buruzko informazioa lortzeko."
 
 #: app/SettingsPage.qml:158
 #, kde-format
@@ -3860,17 +3867,17 @@ msgstr "Jakinarazpenak"
 #: app/SettingsPage.qml:163
 #, kde-format
 msgid "Configure Notifications…"
-msgstr "Konfiguratu jakinarazpenak…"
+msgstr "Jakinarazpenak konfiguratu…"
 
 #: app/SettingsPage.qml:172
 #, kde-format
 msgid "Show notifications on lock screen"
-msgstr "Erakutsi jakinarazpenak giltzatutako pantailan"
+msgstr "Jakinarazpenak giltzatutako pantailan erakutsi"
 
 #: app/SettingsPage.qml:182 app/SettingsPage.qml:211 app/WelcomePage.qml:67
 #, kde-format
 msgid "Request permissions…"
-msgstr "Eskatu baimenak…"
+msgstr "Baimenak eskatu…"
 
 #: app/SettingsPage.qml:183 app/WelcomePage.qml:68
 #, kde-format
@@ -3911,7 +3918,7 @@ msgstr "Wi-Fia ez dago gaituta"
 #: app/SettingsPage.qml:227
 #, kde-format
 msgid "Location service is not enabled"
-msgstr "Kokapen zerbitzua ez dago gaituta"
+msgstr "Kokapen-zerbitzua ez dago gaituta"
 
 #: app/SettingsPage.qml:229
 #, kde-format
@@ -3921,14 +3928,13 @@ msgstr "Wi-Fi sarbidea ez dago erabilgarri sistema honetan"
 #: app/SettingsPage.qml:238
 #, kde-format
 msgid "Enable Wi-Fi on your system to access onboard information."
-msgstr "Gaitu Wi-Fia zure sisteman, ontziko informazioa eskuratzeko."
+msgstr "Zure sisteman Wi-Fia gaitu ontziko informazioa eskuratzeko."
 
 #: app/SettingsPage.qml:240
 #, kde-format
 msgid ""
 "Enable the location service on your device to access onboard information."
-msgstr ""
-"Gaitu kokapen zerbitzua zure sisteman, ontziko informazioa eskuratzeko."
+msgstr "Zure gailuan kokapen-zerbitzua gaitu ontziko informazioa eskuratzeko."
 
 #: app/SettingsPage.qml:242
 #, kde-format
@@ -3936,8 +3942,7 @@ msgid ""
 "Unfortunately, retrieving onboard information is not supported on your "
 "device at this time."
 msgstr ""
-"Tamalez, une honetan zure gailuak ez du ontziko informazioa eskuratzea "
-"onartzen."
+"Tamalez, une honetan ez dago zure gailuan ontziko informazioa eskuratzerik."
 
 #: app/SettingsPage.qml:274
 #, kde-format
@@ -3952,7 +3957,7 @@ msgstr "%1 gisa saioa hasita"
 #: app/SettingsPage.qml:285
 #, kde-format
 msgid "Synchronize rooms"
-msgstr "Gelak sinkronizatzea"
+msgstr "Gelak sinkronizatu"
 
 #: app/SettingsPage.qml:292
 #, kde-format
@@ -3967,7 +3972,7 @@ msgstr "Pasahitza"
 #: app/SettingsPage.qml:307
 #, kde-format
 msgid "Log out"
-msgstr "Saioa itxi"
+msgstr "Saioa amaitu"
 
 #: app/SettingsPage.qml:307
 #, kde-format
@@ -3978,13 +3983,13 @@ msgstr "Saioa hasi"
 #, kde-format
 msgctxt "@label"
 msgid "Homeserver url"
-msgstr "Hasierako zerbitzariaren URLa"
+msgstr "Etxeko zerbitzariaren URLa"
 
 #: app/SettingsPage.qml:324
 #, kde-format
 msgctxt "@action:button"
 msgid "Login with OIDC"
-msgstr "OIDCrekin saioa hasi"
+msgstr "OIDC bidez saioa hasi"
 
 #: app/SettingsPage.qml:334
 #, kde-format
@@ -4002,12 +4007,12 @@ msgstr "Saioa egiaztatu gabe."
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Initiate session verification in your Matrix chat client."
-msgstr "Hasi saioaren egiaztapena Matrix-erako zure berriketa bezeroan."
+msgstr "Zure Matrix berriketa-bezeroan saio-egiaztapena hasi."
 
 #: app/SettingsPage.qml:343
 #, kde-format
 msgid "Träwelling Integration"
-msgstr "Träwelling-ekin bateratzea"
+msgstr "Träwellingekin bateratzea"
 
 #: app/SettingsPage.qml:348
 #, kde-format
@@ -4019,28 +4024,28 @@ msgid ""
 msgstr ""
 "Träwelling doako erregistratze-zerbitzu bat da; zure lagunei non zauden "
 "jakinarazteko eta garraio publikoko bidaiak erregistratzeko aukera ematen "
-"dizu. Informazio gehiago lortzeko, bisitatu<a href=\"https://traewelling.de"
+"dizu. Informazio gehiago lortzeko, bisitatu <a href=\"https://traewelling.de"
 "\">traewelling.de</a>"
 
 #: app/SettingsPage.qml:356
 #, kde-format
 msgid "Login"
-msgstr "Saioan sartu"
+msgstr "Saioa hasi"
 
 #: app/SettingsPage.qml:361
 #, kde-format
 msgid "Logout"
-msgstr "Saioa itxi"
+msgstr "Saioa amaitu"
 
 #: app/SettingsPage.qml:368
 #, kde-format
 msgid "Contributing"
-msgstr "Laguntza ematea"
+msgstr "Ekarpenak"
 
 #: app/SettingsPage.qml:372
 #, kde-format
 msgid "I contribute to OpenStreetMap"
-msgstr "OpenStreetMap laguntzen dut"
+msgstr "OpenStreetMapen kolaboratzen dut"
 
 #: app/SettingsPage.qml:373
 #, kde-format
@@ -4063,7 +4068,7 @@ msgstr "Distantzia"
 #: app/statisticsmodel.cpp:112
 #, kde-format
 msgid "Hotel nights"
-msgstr "Hotel gauak"
+msgstr "Hotel-gauak"
 
 #: app/statisticsmodel.cpp:117 app/statisticsmodel.cpp:145
 #: app/statisticsmodel.cpp:160 app/statisticsmodel.cpp:175
@@ -4086,22 +4091,22 @@ msgstr "Hegaldiak"
 #: app/statisticsmodel.cpp:150
 #, kde-format
 msgid "Train rides"
-msgstr "Tren bidaiak"
+msgstr "Tren-bidaiak"
 
 #: app/statisticsmodel.cpp:165
 #, kde-format
 msgid "Bus rides"
-msgstr "Autobus bidaiak"
+msgstr "Autobus-bidaiak"
 
 #: app/statisticsmodel.cpp:180
 #, kde-format
 msgid "Car rides"
-msgstr "Auto bidaiak"
+msgstr "Auto-bidaiak"
 
 #: app/statisticsmodel.cpp:195
 #, kde-format
 msgid "Boat trips"
-msgstr "Itsasontzizko bidaiak"
+msgstr "Itsasontzi-bidaiak"
 
 #: app/StatisticsPage.qml:37
 #, kde-format
@@ -4143,13 +4148,13 @@ msgstr "Autoa"
 #, kde-format
 msgctxt "train/bus arrival"
 msgid "Arrival Information"
-msgstr "Iritsiera informazioa"
+msgstr "Iritsierari buruzko informazioa"
 
 #: app/StopoverDetailsPage.qml:17
 #, kde-format
 msgctxt "train/bus departure"
 msgid "Departure Information"
-msgstr "Irteera informazioa"
+msgstr "Irteerari buruzko informazioa"
 
 #: app/StopoverDetailsPage.qml:93
 #, kde-format
@@ -4175,7 +4180,7 @@ msgstr "Distantzia: %1"
 #: app/StopoverInformationSheet.qml:73
 #, kde-format
 msgid "Average Speed: %1"
-msgstr "Batezbesteko abiadura: %1"
+msgstr "Batez besteko abiadura: %1"
 
 #: app/StopoverInformationSheet.qml:83
 #, kde-format
@@ -4226,12 +4231,12 @@ msgstr "Txartelaren barra-kodea"
 #: app/TicketTokenEditorCard.qml:68
 #, kde-format
 msgid "Select ticket"
-msgstr "Hautatu txartela"
+msgstr "Txartela hautatu"
 
 #: app/TicketTokenEditorCard.qml:91
 #, kde-format
 msgid "Scan barcode…"
-msgstr "Eskaneatu barra-kodea…"
+msgstr "Barra-kodea eskaneatu…"
 
 #: app/TicketTokenEditorCard.qml:129
 #, kde-format
@@ -4260,7 +4265,7 @@ msgstr "%1 (%2)"
 #, kde-format
 msgid "1 intermediate stop (%2)"
 msgid_plural "%1 intermediate stops (%2)"
-msgstr[0] "Tarteko geraleku 1 (%2)"
+msgstr[0] "Tarteko geraleku bat (%2)"
 msgstr[1] "Tarteko %1 geraleku (%2)"
 
 #: app/TimelineDelegateIntermediateStopsButton.qml:46
@@ -4380,7 +4385,7 @@ msgstr "Trena"
 #, kde-format
 msgctxt "@label:textfield"
 msgid "Train number"
-msgstr "Tren zenbakia"
+msgstr "Tren-zenbakia"
 
 #: app/TrainEditor.qml:164
 #, kde-format
@@ -4403,7 +4408,7 @@ msgstr "Geltoki-izena"
 #: app/TrainEditor.qml:189
 #, kde-format
 msgid "Departure station must not be empty."
-msgstr "Irteera-geltokia ez da hutsik egon behar."
+msgstr "Irteerako geltokia ez da hutsik egon behar."
 
 #: app/TrainEditor.qml:210 app/TrainEditor.qml:310
 #, kde-format
@@ -4411,8 +4416,9 @@ msgid ""
 "Specifying the departure and arrival location helps Itinerary to find up-to-"
 "date information for the train this reservation is valid for."
 msgstr ""
-"Irteera- eta helmuga-kokapena zehazteak Itineraryri erreserba honetarako "
-"balio duen trenaren informazio eguneratua aurkitzen laguntzen dio."
+"Irteerako eta iritsierako kokapenak zehazteak Itineraryri erreserba "
+"honetarako balio duen trenari buruzko informazio eguneratua aurkitzen "
+"laguntzen dio."
 
 #: app/TrainEditor.qml:231 app/TrainEditor.qml:336 app/TrainPage.qml:161
 #: app/TrainPage.qml:248
@@ -4430,7 +4436,7 @@ msgstr "Iritsiera"
 #: app/TrainEditor.qml:289
 #, kde-format
 msgid "Arrival station must not be empty."
-msgstr "Iritsiera-geltokia ez da hutsik egon behar."
+msgstr "Iritsierako geltokia ez da hutsik egon behar."
 
 #: app/TrainEditor.qml:364 app/TrainEditor.qml:376 app/TrainPage.qml:294
 #, kde-format
@@ -4464,7 +4470,7 @@ msgstr "Irteera"
 #: app/TrainPage.qml:195
 #, kde-format
 msgid "Departure Vehicle Layout"
-msgstr "Irteerako ibilgailuaren antolamendua"
+msgstr "Irteerako ibilgailuaren antolaera"
 
 #: app/TrainPage.qml:204
 #, kde-format
@@ -4475,7 +4481,7 @@ msgstr "Iritsiera"
 #: app/TrainPage.qml:284
 #, kde-format
 msgid "Arrival Vehicle Layout"
-msgstr "Iritsiera ibilgailuaren antolamendua"
+msgstr "Iritsierako ibilgailuaren antolaera"
 
 #: app/TrainPage.qml:350
 #, kde-format
@@ -4491,7 +4497,7 @@ msgstr "Träwellingera gehitu da"
 #: app/TrainPage.qml:380
 #, kde-format
 msgid "Failed to add to Träwelling"
-msgstr "Träwellingera gehitzean huts egin du"
+msgstr "Ezin izan da Träwellingera gehitu"
 
 #: app/TransferDelegate.qml:112
 #, kde-format
@@ -4556,7 +4562,7 @@ msgstr "%1 %2(e)(t)an bukatzen da"
 #: app/TransferPage.qml:268
 #, kde-format
 msgid "Preceding arrival %1 at %2"
-msgstr "Aurreko iritsiera %1 %2(e)(t)an"
+msgstr "Aurreko iritsiera: %1, %2(e)(t)an"
 
 #: app/TransferPage.qml:278
 #, kde-format
@@ -4566,7 +4572,7 @@ msgstr "%1 %2(e)(t)an hasten da"
 #: app/TransferPage.qml:280
 #, kde-format
 msgid "Following departure %1 from %2"
-msgstr "Hurrengo %1 irteera %2(e)tik"
+msgstr "Hurrengo irteera: %1, %2(e)tik"
 
 #: app/TripGroupDelegate.qml:39
 #, kde-format
@@ -4725,12 +4731,12 @@ msgstr "Bidaia-taldea esportatu"
 #: app/TripGroupPage.qml:301
 #, kde-format
 msgid "Delete Trip"
-msgstr "Txangoa ezabatu"
+msgstr "Bidaia-taldea ezabatu"
 
 #: app/TripGroupPage.qml:302
 #, kde-format
 msgid "Do you really want to delete the trip '%1'?"
-msgstr "'%1' txangoa benetan ezabatu nahi duzu?"
+msgstr "'%1' bidaia-taldea benetan ezabatu nahi duzu?"
 
 #: app/TripGroupPage.qml:426
 #, kde-format
@@ -4893,7 +4899,7 @@ msgstr "Bidaia-taldea zatitu"
 #: app/VehicleLayoutPage.qml:17
 #, kde-format
 msgid "Vehicle Layout"
-msgstr "Ibilgailu antolamendua"
+msgstr "Ibilgailuaren antolaera"
 
 #: app/VehicleLayoutPage.qml:95
 #, kde-format
@@ -4910,12 +4916,12 @@ msgstr "Iritsiera: %1"
 #: app/VehicleLayoutPage.qml:126
 #, kde-format
 msgid "Coach: %1 Seat: %2"
-msgstr "Bagoia: %1 Eserlekua: %2"
+msgstr "Bagoia: %1; eserlekua: %2"
 
 #: app/VehicleLayoutPage.qml:231
 #, kde-format
 msgid "No vehicle layout information available."
-msgstr "Ibilgailuaren antolamendu informazioa ez dago eskuragarri."
+msgstr "Ez dago ibilgailuaren antolaerari buruzko informaziorik."
 
 #: app/VehicleSectionDialog.qml:29
 #, kde-format
@@ -4944,7 +4950,7 @@ msgstr "Ongietorri!"
 #, kde-format
 msgctxt "@title:group"
 msgid "Setup"
-msgstr "Ezarpena"
+msgstr "Konfigurazioa"
 
 #: app/WelcomePage.qml:31
 #, kde-format
@@ -4952,13 +4958,13 @@ msgid ""
 "Select your home country for currency conversions and power plug "
 "compatibility warnings to work."
 msgstr ""
-"Hautatu zure jatorrizko herrialdea, moneta-bihurketek eta argindar-entxufeen "
+"Zure jatorrizko herrialdea hautatu, moneta-bihurketek eta argindar-entxufeen "
 "bateragarritasunari buruzko abisuek behar bezala funtziona dezaten."
 
 #: app/WelcomePage.qml:35
 #, kde-format
 msgid "Use online services"
-msgstr "Erabili lerroko zerbitzuak"
+msgstr "Lerroko zerbitzuak erabili"
 
 #: app/WelcomePage.qml:36
 #, kde-format
@@ -4968,10 +4974,10 @@ msgid ""
 "enable all this here, or check the settings for much more finegrained "
 "control over which services to use."
 msgstr ""
-"KDE Itineraryk lerroko sarbidea behar duten eginbide guztiak era lehenetsian "
-"ezgaituta ditu, hala nola trafikoaren denbora errealeko datuak edo eguraldi-"
-"iragarpenak eskuratzea. Hori guztia hemen gaitu dezakezu, edo ezarpenak "
-"berrikusi, erabiliko diren zerbitzuen gaineko kontrol xeheagoa izateko."
+"KDE Itineraryk lehenespenez ezgaituta ditu lerroko sarbidea behar duten "
+"eginbide guztiak, hala nola zuzeneko trafiko-datuak edo eguraldi-iragarpenak "
+"eskuratzea. Hori guztia hemen gaitu dezakezu, edo ezarpenak berrikusi, zer "
+"zerbitzu erabili xehetasun handiagoz kontrolatzeko."
 
 #: app/WelcomePage.qml:54
 #, kde-format
@@ -4979,8 +4985,8 @@ msgid ""
 "Review the settings for more finegrained control over which online services "
 "to use."
 msgstr ""
-"Ezarpenak berrikusi, erabiliko diren lerroko zerbitzuen gaineko kontrol "
-"xeheagoa izateko."
+"Ezarpenak berrikusi, zer lerroko zerbitzu erabili xehetasun handiagoz "
+"kontrolatzeko."
 
 #: app/WelcomePage.qml:61
 #, kde-format
@@ -5001,17 +5007,17 @@ msgstr "Sinkronizatzen…"
 #: matrix/matrixmanager.cpp:57
 #, kde-format
 msgid "This server does not support logging in using a password"
-msgstr "Zerbitzari horrek ez du pasahitz bat erabiliz saio-hastea onartzen"
+msgstr "Zerbitzari honek ez du onartzen pasahitz bidez saioa hastea"
 
 #: matrix/matrixmanager.cpp:105
 #, kde-format
 msgid "Logged out"
-msgstr "Saiotik aterata"
+msgstr "Saioa amaituta"
 
 #: matrix/matrixmanager.cpp:173
 #, kde-format
 msgid "Logging in…"
-msgstr "Saioan sartzen…"
+msgstr "Saioa hasten…"
 
 #: metadataextractor/itineraryextractor.cpp:118
 #, kde-format
