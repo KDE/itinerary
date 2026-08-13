@@ -955,7 +955,16 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="26.08.0" date="2026-08-20"/>
+    <release version="26.08.0" date="2026-08-20">
+      <description>
+        <ul>
+          <li>New combined journey view.</li>
+          <li>Support for booking links.</li>
+          <li>Support for new Apple Wallet pass variants.</li>
+          <li>Support for GBFSv3 shared vehicle data.</li>
+        </ul>
+      </description>
+    </release>
     <release version="26.04.3" date="2026-07-02">
       <description>
         <ul>
