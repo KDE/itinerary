@@ -2730,7 +2730,7 @@
           <li xml:lang="ca-valencia">S'ha corregit la visualització de viatges interromputs/cancel·lats.</li>
           <li xml:lang="cs">Opraveno zobrazení přerušených/zrušených cest.</li>
           <li xml:lang="es">Se ha corregido la visualización de recorridos interrumpidos o cancelados.</li>
-          <li xml:lang="eu">Etenak dituzten edo bertan behera utzitako bidaiak bistaratzea konpondu da.</li>
+          <li xml:lang="eu">Gorabeherak dituzten edo bertan behera utzitako bidaiak bistaratzea konpondu da.</li>
           <li xml:lang="fr">Correction de l'affichage des trajets interrompus / annulés.</li>
           <li xml:lang="he">תוקנה תצוגת מסעות עם הפרעות/ביטולים.</li>
           <li xml:lang="it">Corretta la visualizzazione delle corse interrotte/annullate.</li>
@@ -3525,7 +3525,7 @@
         <p xml:lang="ca-valencia">El mapa d'interiors d'Itinerary ara llista tots els serveis de l'edifici o zona que esteu mirant actualment. Açò ajuda amb coses com trobar un lloc per a prendre un cafè en una estació gran de tren, o la recerca d'un lloc per a trobar menjar als voltants de l'hotel. Esta funció està alimentada per OpenStreetMap, funciona sense necessitat de connectar-se a Internet i mai no hi ha termes de busca que isquen del vostre dispositiu.</p>
         <p xml:lang="cs">Vnitřní mapa v Itineráři nyní zobrazuje všechny služby v budově nebo oblasti, kterou právě prohlížíte. To vám pomůže například najít místo, kde si můžete dát kávu na velkém nádraží, nebo najít místo, kde se najíst v okolí vašeho hotelu. Tato funkce je založena na OpenStreetMap, funguje bez nutnosti připojení k internetu a žádné vyhledávací termíny neopouštějí vaše zařízení.</p>
         <p xml:lang="es">El mapa de interiores de Itinerary ahora muestra todos los servicios del edificio o la zona que se visualiza. Esto ayuda, por ejemplo, a encontrar un lugar para tomar un café en una gran estación de tren o a buscar un restaurante cerca de un hotel. Esta función, basada en OpenStreetMap, funciona sin conexión a internet y los términos de búsqueda se guardan en el dispositivo.</p>
-        <p xml:lang="eu">Itinerary aplikazioko eraikin barruko mapak ikusgai dagoen eraikin edo eremuko zerbitzu eta ekipamendu guztiak zerrendatzen ditu orain. Horri esker, tren-geltoki handi batean kafea hartzeko tokia edo hotel inguruan jateko lekua aurki daiteke. Eginbidea OpenStreetMap-en oinarritzen da, Internetera konektatu gabe dabil eta bilaketa-terminoak ez dira inoiz gailutik irteten.</p>
+        <p xml:lang="eu">Itinerary aplikazioko barrualdeko mapak ikusgai dagoen eraikin edo eremuko zerbitzu eta ekipamendu guztiak zerrendatzen ditu orain. Horri esker, tren-geltoki handi batean kafea hartzeko tokia edo hotel inguruan jateko lekua aurki daiteke. Eginbidea OpenStreetMap-en oinarritzen da, Internetera konektatu gabe dabil eta bilaketa-terminoak ez dira inoiz gailutik irteten.</p>
         <p xml:lang="fr">La carte intérieure de Itinerary répertorie désormais toutes les commodités du bâtiment ou de la zone que vous consultez actuellement. Cela aide, par exemple, à trouver un endroit pour prendre un café dans une grande gare, ou à chercher un endroit pour se restaurer à proximité de votre hôtel. Cette fonctionnalité est alimentée par OpenStreetMap, fonctionne sans connexion Internet et aucune information de recherche n'est jamais transmise à partir de votre périphérique.</p>
         <p xml:lang="he">מפת הניווט הפנימי ב־Itinerary מציגה מעתה את כל אמצעי הנוחות בבניין או באזור שמוצג. מסייע עם דברים כמו איתור מקום לכוס קפה בתחנת רכבת גדולה או חיפוש אחר מקום למצוא בו אוכל ליד המלון. היכולת הזאת פועלת דרך OpenStreetMap, עובדת ללא צורך בגישה לאינטרנט וביטויי החיפוש אף פעם לא יוצאים מהמכשיר שלך.</p>
         <p xml:lang="it">La mappa degli interni in Itinerary ora elenca tutti i servizi nell'edificio o nell'area che stai attualmente guardando. Ciò è utile per cose come trovare un posto dove prendere un caffè in una grande stazione ferroviaria o cercare un posto dove mangiare nelle vicinanze del tuo hotel. Questa funzionalità è supportata da OpenStreetMap, funziona senza la necessità di connettersi a Internet e nessun termine di ricerca lascia mai il tuo dispositivo.</p>
@@ -6553,7 +6553,7 @@
           <li xml:lang="ca-valencia">Corregix la panoràmica de mapes deixant la pàgina preferida del selector d'ubicació.</li>
           <li xml:lang="cs">Oprava posouvání mapy při opuštění stránky výběru oblíbených míst.</li>
           <li xml:lang="es">Se ha corregido el problema de desplazamiento panorámico del mapa que sale de la página de selección de ubicación favorita.</li>
-          <li xml:lang="eu">Orrien arteko nabigazioan hainbat arazo konpondu dira.</li>
+          <li xml:lang="eu">Gogoko kokapenaren hautatzailearen orritik irtetean mapa desplazatzea konpondu da.</li>
           <li xml:lang="fr">Correction du défilement de la carte quittant la page de sélection des lieux favoris.</li>
           <li xml:lang="he">תוקנה הזזת המפה ויציאה מעמוד בורר המקומות המועדפים.</li>
           <li xml:lang="it">Risolto il problema con la panoramica della mappa che lasciava la pagina di selezione della posizione preferita.</li>
