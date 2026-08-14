@@ -9,7 +9,7 @@
 #
 # Egoera:
 # Proiektu osoaren berrikuspen integrala: 2026-08-12.
-# Azken berrikuspena: UUUU-HH-EE — egoera ondua mantendu da.
+# Azken berrikuspena: 2026-08-13 — egoera ondua mantendu da.
 # Terminologia, estiloa, ortotipografia, kohesioa eta koherentzia berrikusi dira.
 # Erreferentzia-gida: kde-bidaia-aplikazioen_eu_itzulpen_gida.md
 # Ikus, halaber: KDE-eu-berrikuspen-integralen-erregistroa.md
@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-11 00:46+0000\n"
-"PO-Revision-Date: 2026-08-12 15:28+0200\n"
+"PO-Revision-Date: 2026-08-13 22:07+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -198,7 +198,7 @@ msgstr "Tokiko trenak"
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Rapid transit"
-msgstr "Igarotze azkarra"
+msgstr "Garraio azkarra"
 
 #: app/AlternativeJourneyPage.qml:93 app/DepartureQueryPage.qml:52
 #: app/JourneyFilterPage.qml:102 app/TransferPage.qml:132
@@ -2203,7 +2203,7 @@ msgstr "Eskualdeko edo tokiko trenak"
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Rapid transit, metro, trams"
-msgstr "Igarotze azkarra, metroa, tranbia"
+msgstr "Garraio azkarra, metroa, tranbiak"
 
 #: app/JourneyFilterPage.qml:103
 #, kde-format
