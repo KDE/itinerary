@@ -206,7 +206,7 @@ msgstr "Trajekt"
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ride sharing"
-msgstr ""
+msgstr "Spolujazda"
 
 #: app/AlternativeJourneyPage.qml:117 app/DepartureQueryPage.qml:76
 #: app/JourneyFilterPage.qml:132
@@ -2212,7 +2212,7 @@ msgstr "Lode alebo trajekty"
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Hitch a ride"
-msgstr ""
+msgstr "Odviezť sa s niekým"
 
 #: app/JourneyPathPage.qml:176
 #, kde-format
@@ -2368,7 +2368,7 @@ msgstr "Cesta"
 #: app/JourneySectionPage.qml:124 app/PublicTransportPage.qml:203
 #, kde-format
 msgid "Map"
-msgstr ""
+msgstr "Mapa"
 
 #: app/JourneySectionStopDelegate.qml:164
 #, kde-format
@@ -2844,7 +2844,7 @@ msgstr "Pomocník"
 #: app/Main.qml:89 app/WhatsNewDialog.qml:16
 #, kde-format
 msgid "What's new"
-msgstr ""
+msgstr "Čo je nové"
 
 #: app/Main.qml:179
 #, kde-format
@@ -3471,25 +3471,22 @@ msgstr "Vyprší:"
 #, kde-format
 msgctxt "seat reservation"
 msgid "Aisle"
-msgstr ""
+msgstr "Ulička"
 
 #: app/pkpass/PosterEventTicketSeatRow.qml:37
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Sections"
+#, kde-format
 msgctxt "seat reservation"
 msgid "Section"
-msgstr "Sekcie"
+msgstr "Sekcia"
 
 #: app/pkpass/PosterEventTicketSeatRow.qml:45
 #, kde-format
 msgctxt "seat reservation"
 msgid "Row"
-msgstr ""
+msgstr "Rad"
 
 #: app/pkpass/PosterEventTicketSeatRow.qml:53
-#, fuzzy, kde-format
-#| msgid "Seat"
+#, kde-format
 msgctxt "seat reservation"
 msgid "Seat"
 msgstr "Sedlo"
@@ -5007,11 +5004,9 @@ msgid "Done!"
 msgstr "Hotovo!"
 
 #: app/WhatsNewDialog.qml:77
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Show More…"
+#, kde-format
 msgid "Show older changes…"
-msgstr "Show More…"
+msgstr "Zobraziť staršie zmeny…"
 
 #: matrix/matrixmanager.cpp:23 matrix/matrixmanager.cpp:120
 #, kde-format
