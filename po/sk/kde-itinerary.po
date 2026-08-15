@@ -2355,7 +2355,7 @@ msgstr "Cesta"
 #: app/JourneySectionPage.qml:124 app/PublicTransportPage.qml:203
 #, kde-format
 msgid "Map"
-msgstr ""
+msgstr "Mapa"
 
 #: app/JourneySectionStopDelegate.qml:164
 #, kde-format
@@ -3453,25 +3453,22 @@ msgstr "Vyprší:"
 #, kde-format
 msgctxt "seat reservation"
 msgid "Aisle"
-msgstr ""
+msgstr "Ulička"
 
 #: app/pkpass/PosterEventTicketSeatRow.qml:37
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Sections"
+#, kde-format
 msgctxt "seat reservation"
 msgid "Section"
-msgstr "Sekcie"
+msgstr "Sekcia"
 
 #: app/pkpass/PosterEventTicketSeatRow.qml:45
 #, kde-format
 msgctxt "seat reservation"
 msgid "Row"
-msgstr ""
+msgstr "Rad"
 
 #: app/pkpass/PosterEventTicketSeatRow.qml:53
-#, fuzzy, kde-format
-#| msgid "Seat"
+#, kde-format
 msgctxt "seat reservation"
 msgid "Seat"
 msgstr "Sedlo"
