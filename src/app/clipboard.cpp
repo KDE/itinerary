@@ -27,6 +27,11 @@ bool Clipboard::hasUrls()
     return QGuiApplication::clipboard()->mimeData()->hasUrls();
 }
 
+bool Clipboard::hasImage()
+{
+    return QGuiApplication::clipboard()->mimeData()->hasImage();
+}
+
 bool Clipboard::hasBinaryData()
 {
     return QGuiApplication::clipboard()->mimeData()->hasFormat("application/octet-stream"_L1);

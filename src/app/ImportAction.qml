@@ -50,7 +50,7 @@ Kirigami.Action {
 
         text: i18nc("@action:inmenu", "From clipboard")
         icon.name: "edit-paste"
-        enabled: Clipboard.hasText || Clipboard.hasUrls || Clipboard.hasBinaryData
+        enabled: Clipboard.hasText || Clipboard.hasUrls || Clipboard.hasImage || Clipboard.hasBinaryData
         shortcut: StandardKey.Paste
         onTriggered: ImportController.importFromClipboard()
     }

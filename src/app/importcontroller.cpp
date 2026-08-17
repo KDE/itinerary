@@ -195,6 +195,30 @@ void ImportController::importFromClipboard()
         importData(content);
     }
 
+    else if (md->hasImage()) {
+        const QString suggestedFileName = QFile::decodeName(
+            md->data(u"application/x-kde-suggestedfilename"_s));
+        QByteArray imageData;
+
+        // First try if we can import the image directly.
+        for (const QString &format : {u"image/png"_s, u"image/jpeg"_s}) {
+            imageData = md->data(format);
+            if (!imageData.isEmpty()) {
+                break;
+            }
+        }
+
+        // Otherwise try converting whatever image format.
+        if (imageData.isEmpty()) {
+            QBuffer buffer(&imageData);
+            if (buffer.open(QIODevice::WriteOnly)) {
+                md->imageData().value<QImage>().save(&buffer, "png");
+            }
+        }
+
+        importData(imageData, suggestedFileName);
+    }
+
     else if (md->hasFormat("application/octet-stream"_L1)) {
         importData(md->data("application/octet-stream"_L1));
     }

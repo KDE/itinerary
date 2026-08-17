@@ -21,6 +21,8 @@ class Clipboard : public QObject
     Q_PROPERTY(bool hasText READ hasText NOTIFY contentChanged)
     /** Clipboard currently holds URLs. */
     Q_PROPERTY(bool hasUrls READ hasUrls NOTIFY contentChanged)
+    /** Clibpoard currently holds an image. */
+    Q_PROPERTY(bool hasImage READ hasImage NOTIFY contentChanged)
     /** Clipboard currently holds binary data. */
     Q_PROPERTY(bool hasBinaryData READ hasBinaryData NOTIFY contentChanged)
 
@@ -34,6 +36,7 @@ public:
 
     [[nodiscard]] static bool hasText();
     [[nodiscard]] static bool hasUrls();
+    [[nodiscard]] static bool hasImage();
     [[nodiscard]] static bool hasBinaryData();
 
     [[nodiscard]] static QString text();
