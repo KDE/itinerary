@@ -11,7 +11,7 @@ set (RELEASE_SERVICE_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE
 project(itinerary VERSION ${RELEASE_SERVICE_VERSION})
 
 set(QT_MIN_VERSION 6.9)
-set(KF_MIN_VERSION 6.26)
+set(KF_MIN_VERSION 6.27)
 set(GEAR_MIN_VERSION 25.08)
 
 find_package(ECM ${KF_MIN_VERSION} REQUIRED NO_MODULE)
@@ -51,13 +51,8 @@ find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS Test Quick Positioning Qu
 if(Qt6Core_VERSION VERSION_GREATER_EQUAL "6.9.0")
     find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED CorePrivate)
 endif()
-find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS I18n CoreAddons Contacts Notifications CalendarCore Holidays UnitConversion)
+find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS I18n CoreAddons Contacts Mime Notifications CalendarCore Holidays UnitConversion)
 find_package(KF6KirigamiAddons 1.9.0 REQUIRED)
-find_package(KF6Mime ${KF_MIN_VERSION} CONFIG)
-if(NOT TARGET KF6::Mime)
-    find_package(KPim6Mime 6.7.0 CONFIG REQUIRED)
-    add_library(KF6::Mime ALIAS KPim6::Mime)
-endif()
 find_package(KPim6PkPass 6.7.41 CONFIG REQUIRED)
 find_package(KPim6Itinerary 6.7.40 CONFIG REQUIRED)
 find_package(KPublicTransport 26.03.71 CONFIG REQUIRED)
