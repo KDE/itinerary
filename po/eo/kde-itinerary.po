@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-11 00:46+0000\n"
+"POT-Creation-Date: 2026-08-18 00:45+0000\n"
 "PO-Revision-Date: 2025-03-15 10:38+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -2099,7 +2099,7 @@ msgctxt "Name of the train company in France"
 msgid "From SNCF reservation number"
 msgstr ""
 
-#: app/importcontroller.cpp:152 app/importcontroller.cpp:464
+#: app/importcontroller.cpp:152 app/importcontroller.cpp:488
 #, fuzzy, kde-format
 #| msgid "Import failed: %1"
 msgctxt "%1 is an error message"
@@ -2111,17 +2111,17 @@ msgstr "Enporto malsukcesis: %1"
 msgid "Import failed: File too large."
 msgstr "Enporto malsukcesis: dosiero tro granda."
 
-#: app/importcontroller.cpp:207 app/importcontroller.cpp:304
+#: app/importcontroller.cpp:231 app/importcontroller.cpp:328
 #, kde-format
 msgid "Found nothing to import."
 msgstr "Trovis nenion enportendan."
 
-#: app/importcontroller.cpp:436
+#: app/importcontroller.cpp:460
 #, kde-format
 msgid "No importable events found in this calendar."
 msgstr "Neniuj importeblaj eventoj trovitaj en ĉi tiu kalendaro."
 
-#: app/importcontroller.cpp:611
+#: app/importcontroller.cpp:635
 #, kde-format
 msgid "Backup"
 msgstr "Sekurkopio"
