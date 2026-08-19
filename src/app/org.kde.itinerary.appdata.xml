@@ -959,6 +959,7 @@
       <description>
         <ul>
           <li>New combined journey view.</li>
+          <li xml:lang="ar">طريقة عرض جديدة للرحلات المجمعة.</li>
           <li xml:lang="ca">Vista nova de viatge combinat.</li>
           <li xml:lang="ca-valencia">Vista nova de viatge combinat.</li>
           <li xml:lang="cs">Nové kombinované zobrazení trasy.</li>
@@ -966,13 +967,16 @@
           <li xml:lang="eu">Bidaia-ikuspegi bateratu berria.</li>
           <li xml:lang="fr">Nouvelle vue combinée de voyage.</li>
           <li xml:lang="he">תצוגת מסע משולבת חדשה.</li>
+          <li xml:lang="ka">ახალი კომბინირებული მოგზაურობის ხედი.</li>
           <li xml:lang="nl">Nieuwe gecombineerde reisweergave.</li>
           <li xml:lang="pt-BR">Nova visualização combinada do trecho.</li>
           <li xml:lang="sk">Nový kombinovaný pohľad na cestu.</li>
           <li xml:lang="sl">Nov kombinirani pogled na potovanje.</li>
           <li xml:lang="sv">Ny kombinerad resevisning.</li>
           <li xml:lang="tr">Yeni birleştirilmiş yolculuk görünümü</li>
+          <li xml:lang="uk">Новий комбінований перегляд подорожі.</li>
           <li>Support for booking links.</li>
+          <li xml:lang="ar">توفير روابط الحجز.</li>
           <li xml:lang="ca">Suport per a enllaços de reserves.</li>
           <li xml:lang="ca-valencia">Suport per a enllaços de reserves.</li>
           <li xml:lang="cs">Podpora odkazů na rezervace.</li>
@@ -980,13 +984,16 @@
           <li xml:lang="eu">Erreserba-esteketarako euskarria gehitu da.</li>
           <li xml:lang="fr">Prise en charge des liens de réservations.</li>
           <li xml:lang="he">תמיכה בקישורי הזמנות.</li>
+          <li xml:lang="ka">დაჯავშნის ბმულების მხარდაჭერა.</li>
           <li xml:lang="nl">Ondersteuning voor koppelingen naar boekingen.</li>
           <li xml:lang="pt-BR">Suporte para links de reserva.</li>
           <li xml:lang="sk">Podpora odkazov na rezervácie.</li>
           <li xml:lang="sl">Podpora za povezave za rezervacijo.</li>
           <li xml:lang="sv">Stöd för bokningslänkar.</li>
           <li xml:lang="tr">Rezervasyon bağlantıları desteği</li>
+          <li xml:lang="uk">Реалізовано підтримку посилань на бронювання.</li>
           <li>Support for new Apple Wallet pass variants.</li>
+          <li xml:lang="ar">دعم أنواع جديدة من تذاكر Apple Wallet.</li>
           <li xml:lang="ca">Implementació de les variants noves de passis de l'Apple Wallet.</li>
           <li xml:lang="ca-valencia">Implementació de les variants noves de passes d'Apple Wallet.</li>
           <li xml:lang="cs">Podpora nových variant Apple Wallet pass.</li>
@@ -994,13 +1001,16 @@
           <li xml:lang="eu">Apple Wallet txartelen aldaera berrietarako euskarria gehitu da.</li>
           <li xml:lang="fr">Prise en charge de certaines variantes d'abonnements de Apple Wallet.</li>
           <li xml:lang="he">תמיכה בהגוונים של מסמכי מעבר ב־Apple Wallet.</li>
+          <li xml:lang="ka">Apple Wallet Pass-ის ახალი ვარიანტების მხარდაჭერა.</li>
           <li xml:lang="nl">Ondersteuning voor nieuwe varianten van Apple Wallet-passen.</li>
           <li xml:lang="pt-BR">Suporte para novas variantes de passes do Apple Wallet.</li>
           <li xml:lang="sk">Podpora nových variantov preukazov Apple Wallet.</li>
           <li xml:lang="sl">Podpora za nove različice kart Apple Wallet.</li>
           <li xml:lang="sv">Stöd för nya varianter av Apple Wallet.</li>
           <li xml:lang="tr">Yeni Apple Cüzdan kart çeşitleri desteği</li>
+          <li xml:lang="uk">Реалізовано підтримку нових варіантів квитків Apple Wallet.</li>
           <li>Support for GBFSv3 shared vehicle data.</li>
+          <li xml:lang="ar">إتاحة بيانات المركبات المشتركة وفقًا لمعيار GBFSv3.</li>
           <li xml:lang="ca">Implementació de dades GBFSv3 de vehicle compartit.</li>
           <li xml:lang="ca-valencia">Implementació de dades GBFSv3 de vehicle compartit.</li>
           <li xml:lang="cs">Podpora sdílených dat o vozidlech podle standardu GBFSv3.</li>
@@ -1008,12 +1018,14 @@
           <li xml:lang="eu">GBFSv3ko ibilgailu partekatuen datuetarako euskarria gehitu da.</li>
           <li xml:lang="fr">Prise en charge des données de véhicule partagées « GBFSv3 ».</li>
           <li xml:lang="he">תמיכה בנתוני רכב משותפים מסוג GBFSv3.</li>
+          <li xml:lang="ka">GBFSv3 გაზიარებული ავტომობილის მონაცემების მხარდაჭერა.</li>
           <li xml:lang="nl">Ondersteuning voor GBFSv3-gegevens over gedeelde voertuigen.</li>
           <li xml:lang="pt-BR">Suporte para dados de veículos compartilhados no padrão GBFSv3.</li>
           <li xml:lang="sk">Podpora údajov o zdieľaných vozidlách GBFSv3.</li>
           <li xml:lang="sl">Podpora za skupne podatke o vozilih GBFSv3.</li>
           <li xml:lang="sv">Stöd för GBFSv3 delad fordonsinformation.</li>
           <li xml:lang="tr">GBFSv3 paylaşılan vâsıta verisi desteği</li>
+          <li xml:lang="uk">Реалізовано підтримку даних щодо засобів пересування, які оприлюднено з використанням GBFSv3.</li>
         </ul>
       </description>
     </release>
