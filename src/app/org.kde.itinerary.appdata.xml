@@ -959,6 +959,7 @@
       <description>
         <ul>
           <li>New combined journey view.</li>
+          <li xml:lang="ar">طريقة عرض جديدة للرحلات المجمعة.</li>
           <li xml:lang="ca">Vista nova de viatge combinat.</li>
           <li xml:lang="ca-valencia">Vista nova de viatge combinat.</li>
           <li xml:lang="cs">Nové kombinované zobrazení trasy.</li>
@@ -975,6 +976,7 @@
           <li xml:lang="tr">Yeni birleştirilmiş yolculuk görünümü</li>
           <li xml:lang="uk">Новий комбінований перегляд подорожі.</li>
           <li>Support for booking links.</li>
+          <li xml:lang="ar">توفير روابط الحجز.</li>
           <li xml:lang="ca">Suport per a enllaços de reserves.</li>
           <li xml:lang="ca-valencia">Suport per a enllaços de reserves.</li>
           <li xml:lang="cs">Podpora odkazů na rezervace.</li>
@@ -991,6 +993,7 @@
           <li xml:lang="tr">Rezervasyon bağlantıları desteği</li>
           <li xml:lang="uk">Реалізовано підтримку посилань на бронювання.</li>
           <li>Support for new Apple Wallet pass variants.</li>
+          <li xml:lang="ar">دعم أنواع جديدة من تذاكر Apple Wallet.</li>
           <li xml:lang="ca">Implementació de les variants noves de passis de l'Apple Wallet.</li>
           <li xml:lang="ca-valencia">Implementació de les variants noves de passes d'Apple Wallet.</li>
           <li xml:lang="cs">Podpora nových variant Apple Wallet pass.</li>
@@ -1007,6 +1010,7 @@
           <li xml:lang="tr">Yeni Apple Cüzdan kart çeşitleri desteği</li>
           <li xml:lang="uk">Реалізовано підтримку нових варіантів квитків Apple Wallet.</li>
           <li>Support for GBFSv3 shared vehicle data.</li>
+          <li xml:lang="ar">إتاحة بيانات المركبات المشتركة وفقًا لمعيار GBFSv3.</li>
           <li xml:lang="ca">Implementació de dades GBFSv3 de vehicle compartit.</li>
           <li xml:lang="ca-valencia">Implementació de dades GBFSv3 de vehicle compartit.</li>
           <li xml:lang="cs">Podpora sdílených dat o vozidlech podle standardu GBFSv3.</li>
