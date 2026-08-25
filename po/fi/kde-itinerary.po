@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-18 00:45+0000\n"
-"PO-Revision-Date: 2026-01-02 11:58+0200\n"
+"PO-Revision-Date: 2026-02-25 13:58+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -555,20 +555,16 @@ msgid "Booking"
 msgstr "Varaaminen"
 
 #: app/BookingEditorCard.qml:66
-#, fuzzy, kde-format
-#| msgctxt "a train/bus journey canceled by its operator"
-#| msgid "Canceled"
+#, kde-format
 msgctxt "canceled reservation"
 msgid "Canceled"
 msgstr "Peruttu"
 
 #: app/BookingEditorCard.qml:67
-#, fuzzy, kde-format
-#| msgctxt "a train/bus journey canceled by its operator"
-#| msgid "Trip has been canceled."
+#, kde-format
 msgctxt "canceled reservation"
 msgid "Booking has been canceled."
-msgstr "Matka on peruttu."
+msgstr "Varaus on peruttu."
 
 #: app/BusDelegate.qml:38
 #, kde-format
@@ -2713,19 +2709,19 @@ msgstr "PDF-jäsennys"
 #, kde-format
 msgctxt "@info:credit"
 msgid "MapLibre Native Qt"
-msgstr ""
+msgstr "MapLibren natiivi-Qt"
 
 #: app/main.cpp:233 app/main.cpp:234
 #, kde-format
 msgctxt "@info:credit"
 msgid "Copyright © MapLibre contributors."
-msgstr ""
+msgstr "Tekijänoikeudet © MapLibren avustajat."
 
 #: app/main.cpp:234
 #, kde-format
 msgctxt "@info:credit"
 msgid "MapLibre Native"
-msgstr ""
+msgstr "MapLibre-natiivi"
 
 #: app/main.cpp:238
 #, kde-format
@@ -3100,9 +3096,7 @@ msgid "The session verification was canceled due to an unknown error."
 msgstr "Istunnon vahvistaminen peruttiin tuntemattomasta syystä."
 
 #: app/MatrixKeyVerificationPage.qml:114
-#, fuzzy, kde-format
-#| msgctxt "Matrix session verfication"
-#| msgid "Emoji Verification"
+#, kde-format
 msgctxt "Matrix session verification"
 msgid "Emoji Verification"
 msgstr "Emojivarmennus"
@@ -3952,10 +3946,7 @@ msgstr ""
 "paikannuspalvelua."
 
 #: app/SettingsPage.qml:242
-#, fuzzy, kde-format
-#| msgid ""
-#| "Onboard information are unfortunately not supported on your device at "
-#| "this time."
+#, kde-format
 msgid ""
 "Unfortunately, retrieving onboard information is not supported on your "
 "device at this time."
@@ -4427,10 +4418,7 @@ msgid "Departure station must not be empty."
 msgstr "Lähtöasema ei voi olla tyhjä."
 
 #: app/TrainEditor.qml:210 app/TrainEditor.qml:310
-#, fuzzy, kde-format
-#| msgid ""
-#| "Specifying the departure and arrival location helps Itinerary to find "
-#| "updated information for the train this reservation is valid for."
+#, kde-format
 msgid ""
 "Specifying the departure and arrival location helps Itinerary to find up-to-"
 "date information for the train this reservation is valid for."
@@ -4643,10 +4631,9 @@ msgid "%1 (%2/%3)"
 msgstr "%1 (%2/%3)"
 
 #: app/TripGroupMapPage.qml:201
-#, fuzzy, kde-format
-#| msgid "Address:"
+#, kde-format
 msgid "Address"
-msgstr "Osoite:"
+msgstr "Osoite"
 
 #: app/TripGroupMergeDialog.qml:17
 #, kde-format
