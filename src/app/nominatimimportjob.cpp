@@ -151,7 +151,7 @@ QVariant NominatimImportJob::convertElement(const QJsonObject &obj)
         return h;
     }
 
-    if (key == "amenity"_L1 && (value == "bar"_L1 || value == "biergarten"_L1 || value == "cafe"_L1 || value == "fast_food"_L1 || value == "ice_cream"_L1 || value == "pub"_L1 || value == "restaurant"_L1)) {
+    if (key == "amenity"_L1 && (value == "bar"_L1 || value == "biergarten"_L1 || value == "cafe"_L1 || value == "fast_food"_L1 || value == "food_court"_L1 || value == "ice_cream"_L1 || value == "pub"_L1 || value == "restaurant"_L1)) {
         KItinerary::FoodEstablishment r;
         r.setName(geocoding.value("name"_L1).toString());
         r.setGeo(geoFromNominatim(geometry));

@@ -115,8 +115,8 @@ QVariant OsmImportJob::convertElement(OSM::Element e)
     }
 
     const auto amenity = e.tagValue("amenity");
-    if (amenity == "bar" || amenity == "biergarten" || amenity == "cafe" || amenity == "fast_food" || amenity == "ice_cream" || amenity == "pub"
-        || amenity == "restaurant") {
+    if (amenity == "bar" || amenity == "biergarten" || amenity == "cafe" || amenity == "fast_food" || amenity == "food_court"
+        || amenity == "ice_cream" || amenity == "pub" || amenity == "restaurant") {
         KItinerary::FoodEstablishment r;
         r.setName(QString::fromUtf8(e.tagValue(OSM::Languages::fromQLocale(QLocale()), "name", "loc_name", "int_name", "brand")));
         r.setGeo(KItinerary::GeoCoordinates(e.center().latF(), e.center().lonF())); // TODO for ways we could check for the entrance node even
