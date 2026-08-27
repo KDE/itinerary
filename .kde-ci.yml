@@ -4,22 +4,22 @@
 Dependencies:
 - 'on': ['Linux', 'FreeBSD', 'Windows', 'Android']
   'require':
-    'frameworks/extra-cmake-modules': '@latest-kf6'
-    'frameworks/kcoreaddons': '@latest-kf6'
-    'frameworks/kconfig': '@latest-kf6'
-    'frameworks/ki18n': '@latest-kf6'
-    'frameworks/kcolorscheme': '@latest-kf6'
-    'frameworks/kcontacts': '@latest-kf6'
-    'frameworks/kirigami': '@latest-kf6'
-    'frameworks/kitemmodels': '@latest-kf6'
-    'frameworks/knotifications': '@latest-kf6'
-    'frameworks/kholidays': '@latest-kf6'
-    'frameworks/karchive': '@latest-kf6'
-    'frameworks/prison': '@latest-kf6'
-    'frameworks/kunitconversion': '@latest-kf6'
+    'frameworks/extra-cmake-modules': 'Frameworks/6.24'
+    'frameworks/kcoreaddons': 'Frameworks/6.24'
+    'frameworks/kconfig': 'Frameworks/6.24'
+    'frameworks/ki18n': 'Frameworks/6.24'
+    'frameworks/kcolorscheme': 'Frameworks/6.24'
+    'frameworks/kcontacts': 'Frameworks/6.24'
+    'frameworks/kirigami': 'Frameworks/6.24'
+    'frameworks/kitemmodels': 'Frameworks/6.24'
+    'frameworks/knotifications': 'Frameworks/6.24'
+    'frameworks/kholidays': 'Frameworks/6.24'
+    'frameworks/karchive': 'Frameworks/6.24'
+    'frameworks/prison': 'Frameworks/6.24'
+    'frameworks/kunitconversion': 'Frameworks/6.24'
     'libraries/kpublictransport': "@same"
     'libraries/kosmindoormap': "@same"
-    'libraries/kirigami-addons': '@latest-kf6'
+    'libraries/kirigami-addons': 'v1.11.0'
     'pim/kpkpass': '@same'
     'pim/kitinerary': '@same'
     'pim/khealthcertificate': '@same'
@@ -29,12 +29,12 @@ Dependencies:
 
 - 'on': ['Linux', 'FreeBSD']
   'require':
-    'frameworks/kdbusaddons': '@latest-kf6'
-    'frameworks/qqc2-desktop-style': '@latest-kf6'
-    'frameworks/kcrash': '@latest-kf6'
-    'frameworks/kio': '@latest-kf6'
-    'frameworks/kfilemetadata': '@latest-kf6'
-    'frameworks/kwindowsystem': '@latest-kf6'
+    'frameworks/kdbusaddons': 'Frameworks/6.24'
+    'frameworks/qqc2-desktop-style': 'Frameworks/6.24'
+    'frameworks/kcrash': 'Frameworks/6.24'
+    'frameworks/kio': 'Frameworks/6.24'
+    'frameworks/kfilemetadata': 'Frameworks/6.24'
+    'frameworks/kwindowsystem': 'Frameworks/6.24'
 
 RuntimeDependencies:
 - 'on': ['Linux']
