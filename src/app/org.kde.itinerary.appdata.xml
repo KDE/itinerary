@@ -963,6 +963,7 @@
           <li xml:lang="ca">Vista nova de viatge combinat.</li>
           <li xml:lang="ca-valencia">Vista nova de viatge combinat.</li>
           <li xml:lang="cs">Nové kombinované zobrazení trasy.</li>
+          <li xml:lang="de">Neue kombinierte Reiseansicht.</li>
           <li xml:lang="es">Nueva vista de viaje combinado.</li>
           <li xml:lang="eu">Bidaia-ikuspegi bateratu berria.</li>
           <li xml:lang="fr">Nouvelle vue combinée de voyage.</li>
@@ -982,6 +983,7 @@
           <li xml:lang="ca">Suport per a enllaços de reserves.</li>
           <li xml:lang="ca-valencia">Suport per a enllaços de reserves.</li>
           <li xml:lang="cs">Podpora odkazů na rezervace.</li>
+          <li xml:lang="de">Unterstützung für Buchungsverknüpfungen.</li>
           <li xml:lang="es">Compatibilidad con enlaces de reservas.</li>
           <li xml:lang="eu">Erreserba-esteketarako euskarria gehitu da.</li>
           <li xml:lang="fr">Prise en charge des liens de réservations.</li>
@@ -1001,6 +1003,7 @@
           <li xml:lang="ca">Implementació de les variants noves de passis de l'Apple Wallet.</li>
           <li xml:lang="ca-valencia">Implementació de les variants noves de passes d'Apple Wallet.</li>
           <li xml:lang="cs">Podpora nových variant Apple Wallet pass.</li>
+          <li xml:lang="de">Unterstützung für neue Apple-Wallet-Pass-Varianten.</li>
           <li xml:lang="es">Compatibilidad con las nuevas variantes de pases de Apple Wallet.</li>
           <li xml:lang="eu">Apple Wallet txartelen aldaera berrietarako euskarria gehitu da.</li>
           <li xml:lang="fr">Prise en charge de certaines variantes d'abonnements de Apple Wallet.</li>
@@ -1020,6 +1023,7 @@
           <li xml:lang="ca">Implementació de dades GBFSv3 de vehicle compartit.</li>
           <li xml:lang="ca-valencia">Implementació de dades GBFSv3 de vehicle compartit.</li>
           <li xml:lang="cs">Podpora sdílených dat o vozidlech podle standardu GBFSv3.</li>
+          <li xml:lang="de">Unterstützung für GBFSv3 gemeinsam genutzte Fahrzeugdaten (shared vehicle data).</li>
           <li xml:lang="es">Compatibilidad con los datos de vehículo compartido GBFSv3.</li>
           <li xml:lang="eu">GBFSv3ko ibilgailu partekatuen datuetarako euskarria gehitu da.</li>
           <li xml:lang="fr">Prise en charge des données de véhicule partagées « GBFSv3 ».</li>
@@ -1045,6 +1049,7 @@
           <li xml:lang="ca">Extractors nous o millorats de documents de viatge per a 12go, Accor, BDŽ, Flixbus, IRCTC, Polferries, SRT i VR.</li>
           <li xml:lang="ca-valencia">Extractors nous o millorats de documents de viatge per a 12go, Accor, BDŽ, Flixbus, IRCTC, Polferries, SRT i VR.</li>
           <li xml:lang="cs">Nové nebo vylepšené extraktory cestovních dokladů pro společnosti 12go, Accor, BDŽ, Flixbus, IRCTC, Polferries, SRT a VR.</li>
+          <li xml:lang="de">Neue oder verbesserte Extraktoren für Reisedokumente für 12go, Accor, BDŽ, Flixbus, IRCTC, Polferries, SRT und VR.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para 12go, Accor, BDŽ, Flixbus, IRCTC, Polferries, SRT y VR.</li>
           <li xml:lang="eu">Bidaia-dokumentuen erauzle berriak edo hobetuak: 12go, Accor, BDŽ, Flixbus, IRCTC, Polferries, SRT eta VR.</li>
           <li xml:lang="fr">Améliorations d'extracteurs ou nouveaux extracteurs de documents de voyage pour 12go, Accor, BDŽ, Flixbus, IRCTC, Polferries, SRT et VR.</li>
@@ -1065,6 +1070,7 @@
           <li xml:lang="ca">S'ha corregit la interacció amb les notificacions d'Android.</li>
           <li xml:lang="ca-valencia">S'ha corregit la interacció amb les notificacions d'Android.</li>
           <li xml:lang="cs">Opravena interakce s oznámeními v systému Android.</li>
+          <li xml:lang="de">Umgang mit Android-Benachrichtigungen repariert.</li>
           <li xml:lang="es">Se ha corregido interacción con las notificaciones de Android.</li>
           <li xml:lang="eu">Android jakinarazpenekiko elkarreraginaren arazoak konpondu dira.</li>
           <li xml:lang="fr">Correction des interactions avec les notifications sous Android.</li>
@@ -1084,6 +1090,7 @@
           <li xml:lang="ca">S'ha corregit el calaix esquerre que era massa estret.</li>
           <li xml:lang="ca-valencia">S'ha esmenat el calaix esquerre que era massa estret.</li>
           <li xml:lang="cs">Opravena příliš úzká levá nabídka.</li>
+          <li xml:lang="de">Zu schmale linke Seitenleiste repariert.</li>
           <li xml:lang="es">Se ha corregido que el cajón izquierdo fuera demasiado estrecho.</li>
           <li xml:lang="eu">Ezkerreko panela estuegia izatea konpondu da.</li>
           <li xml:lang="fr">Correction du tiroir gauche trop étroit.</li>
@@ -1109,6 +1116,7 @@
           <li xml:lang="ca">Extractor nou de documents de viatge per a BDŽ.</li>
           <li xml:lang="ca-valencia">Extractor nou de documents de viatge per a BDŽ.</li>
           <li xml:lang="cs">Nové extraktory cestovních dokladů pro BDŽ.</li>
+          <li xml:lang="de">Neue Extraktoren für Reisedokumente für BDŽ.</li>
           <li xml:lang="es">Nuevo extractor de documentos de viaje para BDŽ.</li>
           <li xml:lang="eu">Bidaia-dokumentuen erauzle berriak: BDŽ.</li>
           <li xml:lang="fr">Nouveaux extracteurs de documents de voyage pour BDŽ.</li>
@@ -1129,6 +1137,7 @@
           <li xml:lang="ca">Noms de ruta millorats per a les cerques de viatges d'OpenTripPlanner.</li>
           <li xml:lang="ca-valencia">Noms de ruta millorats per a les busques de viatges d'OpenTripPlanner.</li>
           <li xml:lang="cs">Vylepšené názvy tras při vyhledávání cest v OpenTripPlanner.</li>
+          <li xml:lang="de">Verbesserte Routennamen für Fahrplansuchen bei OpenTripPlanner</li>
           <li xml:lang="es">Se han mejorado los nombres de las rutas en las búsquedas de viajes de OpenTripPlanner.</li>
           <li xml:lang="eu">OpenTripPlanner-eko bidaia-bilaketetako ibilbide-izenak hobetu dira.</li>
           <li xml:lang="fr">Amélioration des noms de routes pour les recherches de voyages avec OpenTripPlanner.</li>
@@ -1154,6 +1163,7 @@
           <li xml:lang="ca">Extractors nous o millorats de documents de viatge per a Condor and Monbus.</li>
           <li xml:lang="ca-valencia">Extractors nous o millorats de documents de viatge per a Condor and Monbus.</li>
           <li xml:lang="cs">Nové nebo vylepšené nástroje pro extrakci údajů z cestovních dokladů pro společnosti Condor a Monbus.</li>
+          <li xml:lang="de">Neue oder verbesserte Extraktoren für Reisedokumente für Condor und Monbus.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para Condor y Monbus.</li>
           <li xml:lang="eu">Bidaia-dokumentuen erauzle berriak edo hobetuak: Condor eta Monbus.</li>
           <li xml:lang="fr">Nouveaux extracteurs et amélioration des extracteurs existants pour les documents de voyage pour Condor et Monbus.</li>
@@ -1174,6 +1184,7 @@
           <li xml:lang="ca">Adaptació als canvis de l'API de Deutsche Bahn.</li>
           <li xml:lang="ca-valencia">Adaptació als canvis de l'API de Deutsche Bahn.</li>
           <li xml:lang="cs">Upraveno podle změn v API Deutsche Bahn.</li>
+          <li xml:lang="de">An die Änderungen der Deutsche-Bahn-API angepasst.</li>
           <li xml:lang="es">Adaptación a los cambios de la API de Deutsche Bahn.</li>
           <li xml:lang="eu">Deutsche Bahn-en APIko aldaketetara egokitu da.</li>
           <li xml:lang="fr">Adapté aux modifications de l'API de Deutsche Bahn.</li>
@@ -1194,6 +1205,7 @@
           <li xml:lang="ca">Correcció de la visualització de les banderes al quadre combinat de països.</li>
           <li xml:lang="ca-valencia">Correcció de la visualització de les banderes al quadro combinat de països.</li>
           <li xml:lang="cs">Opraveno zobrazení vlajky v rozevíracím seznamu zemí.</li>
+          <li xml:lang="de">Anzeige der Flagge im Länderauswahlfeld repariert.</li>
           <li xml:lang="es">Se han corregido las banderas de la lista desplegable de países.</li>
           <li xml:lang="eu">Herrialdeen konbinazio-koadroko banderen bistaratze-arazoak konpondu dira.</li>
           <li xml:lang="fr">Correction de l'affichage du drapeau dans la liste déroulante des pays.</li>
@@ -1220,6 +1232,7 @@
           <li xml:lang="ca">Vista nova del mapa basada en gràfics vectorials.</li>
           <li xml:lang="ca-valencia">Vista nova del mapa basada en gràfics vectorials.</li>
           <li xml:lang="cs">Nové zobrazení mapy založené na vektorové grafice.</li>
+          <li xml:lang="de">Neue, auf Vektorgrafik basierende Kartenansicht.</li>
           <li xml:lang="es">Nueva vista de mapa basada en gráficos vectoriales.</li>
           <li xml:lang="eu">Grafiko bektorialetan oinarritutako mapa-ikuspegi berria.</li>
           <li xml:lang="fr">Nouvelle vue pour la carte avec une image vectorielle.</li>
@@ -1283,6 +1296,7 @@
           <li xml:lang="ca">Millora de la gestió de les reserves cancel·lades.</li>
           <li xml:lang="ca-valencia">Millora de la gestió de les reserves cancel·lades.</li>
           <li xml:lang="cs">Vylepšené zpracování zrušených rezervací.</li>
+          <li xml:lang="de">Verbesserte Verarbeitung von stornierten Reservierungen.</li>
           <li xml:lang="es">Se ha mejorado el manejo de reservas canceladas.</li>
           <li xml:lang="eu">Bertan behera utzitako erreserben kudeaketa hobetu da.</li>
           <li xml:lang="fr">Amélioration de la gestion des réservations annulées.</li>
@@ -1310,6 +1324,7 @@
           <li xml:lang="ca">S'han millorat o corregit els extractors de documents de viatge de booking.com, FCM, FRS, Get Your Guide i Hotelworld.</li>
           <li xml:lang="ca-valencia">S'han millorat o corregit els extractors de documents de viatge de booking.com, FCM, FRS, Get Your Guide i Hotelworld.</li>
           <li xml:lang="cs">Byly přidány nebo vylepšeny extraktory cestovních dokumentů pro booking.com FCM, FRS, Get Your Guide a Hotelworld.</li>
+          <li xml:lang="de">Neue oder verbesserte Extraktoren für Reisedokumente für booking.com FCM, FRS, GetYourGuide und Hotelworld.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para booking.com, FCM, FRS, Get Your Guide y Hotelworld.</li>
           <li xml:lang="eu">Bidaia-dokumentuen erauzleak gehitu edo hobetu dira: booking.com FCM, FRS, Get Your Guide eta Hotelworld.</li>
           <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour  booking.com FCM, FRS, Get Your Guide and Hotelworld.</li>
@@ -1331,6 +1346,7 @@
           <li xml:lang="ca">Millor selecció predeterminada en importar viatges sencers.</li>
           <li xml:lang="ca-valencia">Millor selecció predeterminada en importar viatges sencers.</li>
           <li xml:lang="cs">Lepší výchozí výběr při importu celých cest.</li>
+          <li xml:lang="de">Bessere Standardauswahl beim Import ganzer Reisen.</li>
           <li xml:lang="es">Mejor selección predeterminada al importar viajes completos.</li>
           <li xml:lang="eu">Bidaia osoak inportatzean egiten den hautapen lehenetsia hobetu da.</li>
           <li xml:lang="fr">Meilleure sélection par défaut lors de l'importation de voyages entiers.</li>
