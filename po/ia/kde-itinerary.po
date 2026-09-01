@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-18 00:45+0000\n"
-"PO-Revision-Date: 2026-07-16 16:33+0200\n"
+"PO-Revision-Date: 2026-08-31 15:59+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -208,7 +208,7 @@ msgstr "Ferry"
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ride sharing"
-msgstr ""
+msgstr "Compartir de Viages"
 
 #: app/AlternativeJourneyPage.qml:117 app/DepartureQueryPage.qml:76
 #: app/JourneyFilterPage.qml:132
@@ -2210,7 +2210,7 @@ msgstr "Barcas o ferries"
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Hitch a ride"
-msgstr ""
+msgstr "Facer autostop (peter un passage)"
 
 #: app/JourneyPathPage.qml:176
 #, kde-format
