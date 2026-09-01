@@ -25,18 +25,21 @@ TimelineDelegate {
                 Layout.preferredWidth: Kirigami.Units.iconSizes.smallMedium
                 source: ReservationHelper.defaultIconName(root.reservation)
             }
-            QQC2.Label {
+            Kirigami.Heading {
+                id: headerLabel
+                level: 2
                 text: root.rangeType == TimelineElement.RangeEnd ?
                     i18n("Rental Car Drop-off") :
                     i18n("Rental Car Pick-up")
-                color: root.headerTextColor
+                elide: Text.ElideRight
                 Layout.fillWidth: true
+                Accessible.ignored: true
             }
-            QQC2.Label {
-                text: root.rangeType ==  TimelineElement.RangeEnd ?
+            Kirigami.Heading {
+                level: 2
+                text: root.rangeType == TimelineElement.RangeEnd ?
                     Localizer.formatTime(reservation, "dropoffTime") :
                     Localizer.formatTime(reservation, "pickupTime")
-                color: root.headerTextColor
             }
         }
 
