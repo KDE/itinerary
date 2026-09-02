@@ -49,7 +49,7 @@ TimelineDelegate {
             visible: root.rangeType != TimelineElement.RangeEnd
         }
         QQC2.Label {
-            visible: text !== ""
+            visible: text !== "" && root.rangeType != TimelineElement.RangeEnd
             Layout.fillWidth: true
             text: Localizer.formatAddressWithContext(reservation.pickupLocation.address,
                                                      reservation.dropoffLocation.address,
@@ -66,7 +66,7 @@ TimelineDelegate {
             visible: root.rangeType != TimelineElement.RangeBegin
         }
         QQC2.Label {
-            visible: text !== ""
+            visible: text !== "" && root.rangeType != TimelineElement.RangeBegin
             Layout.fillWidth: true
             text: Localizer.formatAddressWithContext(reservation.dropoffLocation.address,
                                                      reservation.pickupLocation.address,
