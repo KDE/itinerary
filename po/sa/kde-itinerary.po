@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-18 00:45+0000\n"
+"POT-Creation-Date: 2026-09-03 00:44+0000\n"
 "PO-Revision-Date: 2025-03-02 14:47+0530\n"
 "Last-Translator: Shreekant Kalwar <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -792,17 +792,17 @@ msgctxt "@title"
 msgid "Select Calendar"
 msgstr "पञ्चाङ्गं चिनोतु"
 
-#: app/CarRentalDelegate.qml:30
+#: app/CarRentalDelegate.qml:32
 #, kde-format
 msgid "Rental Car Drop-off"
 msgstr "किराये कार ड्रॉप-ऑफ"
 
-#: app/CarRentalDelegate.qml:31
+#: app/CarRentalDelegate.qml:33
 #, kde-format
 msgid "Rental Car Pick-up"
 msgstr "किराये कार पिकअप"
 
-#: app/CarRentalDelegate.qml:57
+#: app/CarRentalDelegate.qml:60
 #, fuzzy, kde-format
 #| msgid "Drop-off: %1"
 msgctxt "%1 is a date/time"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kitinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-18 00:45+0000\n"
+"POT-Creation-Date: 2026-09-03 00:44+0000\n"
 "PO-Revision-Date: 2023-07-14 22:15+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -830,17 +830,17 @@ msgctxt "@title"
 msgid "Select Calendar"
 msgstr "Seleccionar o Calendário"
 
-#: app/CarRentalDelegate.qml:30
+#: app/CarRentalDelegate.qml:32
 #, kde-format
 msgid "Rental Car Drop-off"
 msgstr "Largada do Carro de Aluguer"
 
-#: app/CarRentalDelegate.qml:31
+#: app/CarRentalDelegate.qml:33
 #, kde-format
 msgid "Rental Car Pick-up"
 msgstr "Recolha do Carro de Aluguer"
 
-#: app/CarRentalDelegate.qml:57
+#: app/CarRentalDelegate.qml:60
 #, fuzzy, kde-format
 #| msgid "Drop-off: %1"
 msgctxt "%1 is a date/time"

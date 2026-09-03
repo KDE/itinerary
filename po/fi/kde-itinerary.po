@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-18 00:45+0000\n"
+"POT-Creation-Date: 2026-09-03 00:44+0000\n"
 "PO-Revision-Date: 2026-02-25 13:58+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -754,17 +754,17 @@ msgctxt "@title"
 msgid "Select Calendar"
 msgstr "Valitse kalenteri"
 
-#: app/CarRentalDelegate.qml:30
+#: app/CarRentalDelegate.qml:32
 #, kde-format
 msgid "Rental Car Drop-off"
 msgstr "Vuokra-auton jättö"
 
-#: app/CarRentalDelegate.qml:31
+#: app/CarRentalDelegate.qml:33
 #, kde-format
 msgid "Rental Car Pick-up"
 msgstr "Vuokra-auton nouto"
 
-#: app/CarRentalDelegate.qml:57
+#: app/CarRentalDelegate.qml:60
 #, kde-format
 msgctxt "%1 is a date/time"
 msgid "Drop-off: %1"
