@@ -955,7 +955,15 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="26.08.1" date="2026-09-10"/>
+    <release version="26.08.1" date="2026-09-10">
+      <description>
+        <ul>
+          <li>New or improved travel document extractors for Air Canada, booking.com, Lufthansa and generic RCT2 tickets.</li>
+          <li>Fixed service alerts for public transport stop cancellations propagating to leg cancellations.</li>
+          <li>Fixed miscolored labels in car rental timeline entries.</li>
+        </ul>
+      </description>
+    </release>
     <release version="26.08.0" date="2026-08-20">
       <description>
         <ul>
