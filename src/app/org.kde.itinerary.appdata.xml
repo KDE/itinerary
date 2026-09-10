@@ -959,8 +959,44 @@
       <description>
         <ul>
           <li>New or improved travel document extractors for Air Canada, booking.com, Lufthansa and generic RCT2 tickets.</li>
+          <li xml:lang="ca">Extractors nous o millorats de documents de viatge per a Air Canada, booking.com, Lufthansa i bitllets genèrics RCT2.</li>
+          <li xml:lang="ca-valencia">Extractors nous o millorats de documents de viatge per a Air Canada, booking.com, Lufthansa i bitllets genèrics RCT2.</li>
+          <li xml:lang="cs">Nové nebo vylepšené nástroje pro extrakci údajů z cestovních dokladů pro letenky společností Air Canada, booking.com, Lufthansa a generické letenky ve formátu RCT2.</li>
+          <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para Air Canada, booking.com, Lufthansa y billetes normales de RCT2.</li>
+          <li xml:lang="he">מחלצי מסמכים חדשים או עדכניים ל־Air Canada,‏ booking.com,‏ Lufthansa וכרטיסי RCT2 כלליים.</li>
+          <li xml:lang="ka">ახალი, ან გაუმჯობესებული სამგზავრო დოკუმენტების ამომკრებები Air Canada-ისთვის, booking.com-ისთვის, Lufthansa-ისთვის და ზოგადი RCT2 ბილეთებისთვის.</li>
+          <li xml:lang="nl">Nieuwe of verbeterde hulpmiddelen voor het extraheren van reisdocumenten voor Air Canada, booking.com, Lufthansa en algemene RCT2-tickets.</li>
+          <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para Air Canada, booking.com, Lufthansa e tíquetes genéricos RCT2.</li>
+          <li xml:lang="sl">Novi ali izboljšani izvlečniki potovalnih dokumentov za Air Canada, booking.com, Lufthansa in generične vozovnice RCT2.</li>
+          <li xml:lang="sv">Ny eller förbättrad resedokumentextraktion för Air Canada, booking.com, Lufthansa och generella RCT2-biljetter.</li>
+          <li xml:lang="tr">Air Canada, booking.com, Lufthansa ve genel RCT2 biletleri için yeni veya iyileştirilmiş çıkarıcılar</li>
+          <li xml:lang="uk">Нові або удосконалені засоби видобування даних з документів для Air Canada, booking.com, Lufthansa і типових квитків RCT2.</li>
           <li>Fixed service alerts for public transport stop cancellations propagating to leg cancellations.</li>
+          <li xml:lang="ca">S'han corregit les alertes de servei de cancel·lacions de parades de transport públic que es propaguen a cancel·lacions d'etapes.</li>
+          <li xml:lang="ca-valencia">S'han corregit les alertes de servei de cancel·lacions de parades de transport públic que es propaguen a cancel·lacions d'etapes.</li>
+          <li xml:lang="cs">Opraveno servisní upozornění týkající se zrušení zastávek veřejné dopravy, které se promítalo do zrušení úseků trasy.</li>
+          <li xml:lang="es">Se han corregido las alertas del servicio por cancelaciones de paradas de transporte público que se propagaban a las cancelaciones de tramos del trayecto.</li>
+          <li xml:lang="he">תוקנו התראות שירות לביטולי תחנות של תחבורה ציבורית שהובילו לביטולי נקודות.</li>
+          <li xml:lang="ka">გასწორდა სერვისის განგაშები საჯარო ტრანსპორტის გაჩერების გაუქმების გავრცელება ერთი სეგმენტის გაუქმებაზე.</li>
+          <li xml:lang="nl">Probleem opgelost waarbij meldingen over het vervallen van haltes in het openbaar vervoer leidden tot het vervallen van ritten.</li>
+          <li xml:lang="pt-BR">Corrigidos alertas de serviço referentes a cancelamentos de paradas de transporte público que se propagavam para cancelamentos de trechos.</li>
+          <li xml:lang="sl">Odpravljena so opozorila o storitvah za odpovedi postajališč javnega prevoza, ki se širijo na odpovedi odsekov.</li>
+          <li xml:lang="sv">Rättade servicemeddelanden för inställda hållplatser i kollektivtrafiken som sprider sig till inställda etapper.</li>
+          <li xml:lang="tr">Toplu taşıma durak iptalleri için hizmet uyarılarının bacak iptallerine yayılması düzeltildi.</li>
+          <li xml:lang="uk">Виправлено поширення сповіщень про скасування зупинок громадського транспорту на скасування етапів маршруту.</li>
           <li>Fixed miscolored labels in car rental timeline entries.</li>
+          <li xml:lang="ca">Corregeix les etiquetes de colors erronis en entrades de la línia de temps de lloguer de cotxes.</li>
+          <li xml:lang="ca-valencia">Corregix les etiquetes de colors erronis en entrades de la línia de temps de lloguer de cotxes.</li>
+          <li xml:lang="cs">Opravena nesprávná barva štítků v záznamech časové osy týkajících se pronájmu automobilů.</li>
+          <li xml:lang="es">Se han corregido las etiquetas con colores incorrectos en las entradas del historial de alquiler de automóviles.</li>
+          <li xml:lang="he">תוקנו תוויות בצבעים שגויים ברשומות ציר הזמן של השכרות רכב.</li>
+          <li xml:lang="ka">გასწორდა არასწორი ფერის ჭდეები მანანის ქირაობის ქრონოლოგიის ჩანაწერებში.</li>
+          <li xml:lang="nl">Foutieve kleuren van labels in tijdlijnitems voor autoverhuur gecorrigeerd.</li>
+          <li xml:lang="pt-BR">Corrigidas as cores incorretas de rótulos em entradas da linha do tempo de aluguel de carros.</li>
+          <li xml:lang="sl">Popravljene napačno obarvane oznake v vnosih na časovnici najema avtomobila.</li>
+          <li xml:lang="sv">Åtgärdade felfärgade beteckningar i tidslinjer för biluthyrning.</li>
+          <li xml:lang="tr">Araç kiralama zaman akışı girişlerindeki yanlış renklendirilmiş etiketler düzeltildi.</li>
+          <li xml:lang="uk">Виправлено неправильно забарвлені мітки у записах часової шкали прокату автомобілів.</li>
         </ul>
       </description>
     </release>
@@ -2576,7 +2612,7 @@
           <li xml:lang="es">Permitir transbordos a la ubicación favorita independientemente de la próxima reserva.</li>
           <li xml:lang="eu">Gogoko kokapenerako garraio-tarteak gehi daitezke, hurrengo erreserbaren mende egon gabe.</li>
           <li xml:lang="fi">sallitaan vaihdot suosikkisijaintiin riippumatta seuraavasta varauksesta</li>
-          <li xml:lang="fr">Autorisation des transferts vers l’emplacement préféré indépendamment de la prochaine réservation.</li>
+          <li xml:lang="fr">Autorisation des transferts vers l'emplacement préféré indépendamment de la prochaine réservation.</li>
           <li xml:lang="he">אפשר לבצע העברות למקומות מועדפים ללא תלות בהזמנה הבאה.</li>
           <li xml:lang="ia">Permitte transferentias a location favorite independente del proxime reservation.</li>
           <li xml:lang="it">Consente trasferimenti alla località preferita indipendentemente dalla prenotazione successiva.</li>
@@ -3912,7 +3948,7 @@
           <li xml:lang="es">Permitir la activación de notificaciones en Android 13.</li>
           <li xml:lang="eu">Android 13n jakinarazpenak gaitzeko aukera ematen da.</li>
           <li xml:lang="fi">sallitaan ilmoitusten käyttöönotto Android 13:ssa</li>
-          <li xml:lang="fr">Autoriser l’activation des notifications sous Android 13.</li>
+          <li xml:lang="fr">Autoriser l'activation des notifications sous Android 13.</li>
           <li xml:lang="he">מתן אפשרות להפעיל התראות ב־Android 13.</li>
           <li xml:lang="it">Consente di abilitare le notifiche su Android 13.</li>
           <li xml:lang="ka">შეტყობინებების ჩართვის ნებართვა Android 13-ზე.</li>
@@ -5250,7 +5286,7 @@
           <li xml:lang="es">Se ha corregido la visualización de zonas horarias para las horas en UTC.</li>
           <li xml:lang="eu">UTCn adierazitako orduetan ordu-eremua ez erakusteko arazoa konpondu da.</li>
           <li xml:lang="fi">korjattu UTC-ajoilta puuttunut aikavyöhyketieto</li>
-          <li xml:lang="fr">Correction de l’affichage manquant du fuseau horaire pour les heures en UTC.</li>
+          <li xml:lang="fr">Correction de l'affichage manquant du fuseau horaire pour les heures en UTC.</li>
           <li xml:lang="he">תוקנה תצוגת אזור זמן חסרה ב־UTC.</li>
           <li xml:lang="it">Risolto il problema con la visualizzazione del fuso orario mancante per gli orari in UTC.</li>
           <li xml:lang="ka">გასწორდა გამოტოვებული დროის სარტყლის ჩვენება UTC დროისთვის.</li>
@@ -5689,7 +5725,7 @@
           <li xml:lang="es">Diversas mejoras y complementos del extractor de documentos de viaje.</li>
           <li xml:lang="eu">Bidaia-dokumentuen erauzleetan hainbat gehikuntza eta hobekuntza egin dira.</li>
           <li xml:lang="fi">matka-asiakirjapurkajien lisäyksiä ja parannuksia</li>
-          <li xml:lang="fr">Divers ajouts et améliorations de l’extracteur de documents de voyage.</li>
+          <li xml:lang="fr">Divers ajouts et améliorations de l'extracteur de documents de voyage.</li>
           <li xml:lang="he">מגוון תוספות ושיפורים למחלצי מסמכי נסיעה.</li>
           <li xml:lang="it">Varie aggiunte e miglioramenti all'estrattore di documenti di viaggio.</li>
           <li xml:lang="ka">სამგზავრო დოკუმენტების ამომკრებების სხვადასხვა დამატებები და გაუმჯობესებები.</li>
