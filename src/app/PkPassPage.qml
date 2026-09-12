@@ -79,7 +79,7 @@ Kirigami.ScrollablePage {
 
         Connections {
             target: loader.item
-            function onScanModeToggled() {
+            function onBarcodeDoubleTapped() {
                 scanModeButton.click();
             }
         }

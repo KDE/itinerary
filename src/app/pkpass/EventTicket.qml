@@ -14,17 +14,10 @@ import org.kde.kirigami as Kirigami
 import org.kde.pkpass as KPkPass
 import org.kde.itinerary
 
-Item {
+AbstractPass {
     id: root
-    property KPkPass.Pass pass: null
-    property string passId
     implicitHeight: bodyBackground.implicitHeight
-    implicitWidth: 332 //Math.max(topLayout.implicitWidth, 332)
-
-    property color defaultTextColor: Kirigami.Theme.textColor
-
-    /** Double tap on the barcode to request scan mode. */
-    signal scanModeToggled()
+    //implicitWidth: Math.max(topLayout.implicitWidth, 332)
 
     Rectangle {
         id: bodyBackground
@@ -131,7 +124,7 @@ Item {
                 maximumWidth: root.implicitWidth * 0.8
                 pass: root.pass
                 TapHandler {
-                    onDoubleTapped: root.scanModeToggled()
+                    onDoubleTapped: root.barcodeDoubleTapped()
                 }
             }
 

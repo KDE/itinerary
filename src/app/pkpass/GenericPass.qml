@@ -11,16 +11,10 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.pkpass as KPkPass
 
-Item {
+AbstractPass {
     id: root
-    property KPkPass.Pass pass: null
-    property string passId
     implicitHeight: Math.max(implicitHeight + 2 * topLayout.anchors.margins, 448)
-    implicitWidth: 332 //Math.max(topLayout.implicitWidth, 332)
-
-
-    /** Double tap on the barcode to request scan mode. */
-    signal scanModeToggled()
+    //implicitWidth: Math.max(topLayout.implicitWidth, 332)
 
     GenericPassBackground {
         pass: root.pass
@@ -41,7 +35,7 @@ Item {
             id: headerLayout
             pass: root.pass
             passId: root.passId
-            defaultTextColor: Kirigami.Theme.textColor
+            defaultTextColor: root.defaultTextColor
             Layout.maximumWidth: root.implicitWidth - 2 * topLayout.anchors.margins
         }
 
@@ -60,7 +54,7 @@ Item {
                 delegate: QQC2.Label {
                     required property KPkPass.field modelData
                     Layout.fillWidth: true
-                    color: root.pass.hasLabelColor ? root.pass.labelColor : Kirigami.Theme.textColor
+                    color: root.pass.hasLabelColor ? root.pass.labelColor : root.defaultTextColor
                     text: modelData.label
                     horizontalAlignment: modelData.textAlignment
                 }
@@ -80,7 +74,7 @@ Item {
                 delegate: QQC2.Label {
                     required property KPkPass.field modelData
                     Layout.fillWidth: true
-                    color: root.pass.hasForegroundColor ? root.pass.foregroundColor : Kirigami.Theme.textColor
+                    color: root.pass.hasForegroundColor ? root.pass.foregroundColor : root.defaultTextColor
                     text: modelData.valueDisplayString
                     horizontalAlignment: modelData.textAlignment
                 }
@@ -90,13 +84,13 @@ Item {
         // secondary fields
         SecondaryFieldsRow {
             pass: root.pass
-            defaultTextColor: Kirigami.Theme.textColor
+            defaultTextColor: root.defaultTextColor
         }
 
         // auxiliary fields
         AuxiliaryFieldsGrid {
             pass: root.pass
-            defaultTextColor: Kirigami.Theme.textColor
+            defaultTextColor: root.defaultTextColor
         }
 
         // barcode
@@ -104,7 +98,7 @@ Item {
             maximumWidth: root.implicitWidth * 0.8
             pass: root.pass
             TapHandler {
-                onDoubleTapped: root.scanModeToggled()
+                onDoubleTapped: root.barcodeDoubleTapped()
             }
         }
 
@@ -115,7 +109,7 @@ Item {
         }
         BackFields {
             pass: root.pass
-            defaultTextColor: Kirigami.Theme.textColor
+            defaultTextColor: root.defaultTextColor
         }
     }
 }

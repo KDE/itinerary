@@ -13,16 +13,11 @@ import org.kde.kirigami as Kirigami
 import org.kde.pkpass as KPkPass
 import org.kde.kpublictransport as KPublicTransport
 
-Item {
+AbstractPass {
     id: root
-    property KPkPass.BoardingPass pass: null
-    property string passId
     property int __margin: 10
 
     implicitWidth: Math.max(bodyLayout.implicitWidth, 332)
-
-    /** Double tap on the barcode to request scan mode. */
-    signal scanModeToggled()
 
     ColumnLayout {
         id: topLayout
@@ -105,7 +100,7 @@ Item {
                     Layout.rowSpan: 2
                     Layout.alignment: Qt.AlignBottom
                     source: {
-                        switch (root.pass.transitType) {
+                        switch ((root.pass as KPkPass.BoardingPass).transitType) {
                             case KPkPass.BoardingPass.Air: return KPublicTransport.LineMode.iconName(KPublicTransport.Line.Air)
                             case KPkPass.BoardingPass.Boat: return KPublicTransport.LineMode.iconName(KPublicTransport.Line.Ferry)
                             case KPkPass.BoardingPass.Bus: return KPublicTransport.LineMode.iconName(KPublicTransport.Line.Bus)
@@ -138,13 +133,13 @@ Item {
             // auxiliary fields
             AuxiliaryFieldsGrid {
                 pass: root.pass
-                defaultTextColor: Kirigami.Theme.textColor
+                defaultTextColor: root.defaultTextColor
             }
 
             // secondary fields
             SecondaryFieldsRow {
                 pass: root.pass
-                defaultTextColor: Kirigami.Theme.textColor
+                defaultTextColor: root.defaultTextColor
             }
 
             // footer
@@ -162,7 +157,7 @@ Item {
             maximumWidth: root.implicitWidth * 0.8
             pass: root.pass
             TapHandler {
-                onDoubleTapped: root.scanModeToggled()
+                onDoubleTapped: root.barcodeDoubleTapped()
             }
         }
 
@@ -176,7 +171,7 @@ Item {
             }
             BackFields {
                 pass: root.pass
-                defaultTextColor: Kirigami.Theme.textColor
+                defaultTextColor: root.defaultTextColor
             }
         }
     }

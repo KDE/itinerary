@@ -235,6 +235,7 @@ ecm_target_qml_sources(itinerary
     PRIVATE
     PATH pkpass
     SOURCES
+        pkpass/AbstractPass.qml
         pkpass/AuxiliaryFieldsGrid.qml
         pkpass/BackFields.qml
         pkpass/Barcode.qml
