@@ -20,7 +20,7 @@ lib/qml/org/kde/kirigamiaddons/(settings|sounds|treeview)/.*
 plugins/imageformats/.*_qico_.*\.so
 
 # translation catalogs of dependencies not needed here
-share/locale/.*/LC_MESSAGES/(karchive6|kcodecs6|kconfig6|knotifications6|libkmime6)_qt\.qm
+share/locale/.*/LC_MESSAGES/(karchive6|kcodecs6|kconfig6|knotifications6|libkmime6|kcalendarcore6)_qt\.qm
 share/locale/.*/LC_MESSAGES/(kcontacts6|kcolorscheme6|kiconthemes6)\.mo
 share/qt6keychain/translations.*\.qm
 
