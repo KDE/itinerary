@@ -25,6 +25,7 @@ FormCard.FormCard {
             color: Kirigami.Theme.neutralBackgroundColor
             Kirigami.Theme.colorSet: Kirigami.Theme.Header
             Kirigami.Theme.inherit: false
+            radius: Kirigami.Units.cornerRadius
         }
 
         contentItem: ColumnLayout {
