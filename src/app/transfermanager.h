@@ -55,7 +55,9 @@ public:
     /** Explicitly add a transfer before/after the given reservation. */
     Q_INVOKABLE Transfer addTransfer(const QString &resId, Transfer::Alignment alignment);
 
-    /** Create a JourneyRequest for a given @p transfer. */
+    /** Create a JourneyRequest for a given @p transfer.
+     *  Use this for searching new transfer options, as opposed to journeyRequestForUpdate.
+     */
     Q_INVOKABLE KPublicTransport::JourneyRequest journeyRequestForTransfer(const Transfer &transfer) const;
 
     // importing/syncing, not for the use in the UI, see e.g. discardTransfer above instead
@@ -99,6 +101,9 @@ private:
     QDateTime anchorTimeBefore(const QString &resId, const QVariant &res) const;
     QDateTime anchorTimeAfter(const QString &resId, const QVariant &res) const;
 
+    /** JourneyRequest for updating an existing transfer. */
+    [[nodiscard]] KPublicTransport::JourneyRequest journeyRequestForUpdate(const Transfer &transfer) const;
+
     static KPublicTransport::Location locationFromFavorite(const FavoriteLocation &favLoc);
     /** Pick the best favorite location for a given transfer. */
     FavoriteLocation pickFavorite(const QVariant &anchoredLoc, const QString &resId, Transfer::Alignment alignment) const;
@@ -111,6 +116,12 @@ private:
     void removeFile(const QString &resId, Transfer::Alignment alignment) const;
 
     void autoFillTransfer(Transfer &t);
+
+    /** Check @p transfer for realtime updates.
+     *  This only updates transfers still in the future, and this only updates the currently selected journey,
+     *  it does not select a new one if the current one has become unreachable.
+     */
+    void pollForUpdate(const Transfer &transfer, const QString &batchId);
 
     QDateTime currentDateTime() const;
 
