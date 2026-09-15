@@ -366,6 +366,7 @@ if (ANDROID)
         cross-shape
         dialog-cancel
         dialog-close
+        dialog-warning-symbolic
         dialog-error-symbolic
         dialog-ok
         document-edit

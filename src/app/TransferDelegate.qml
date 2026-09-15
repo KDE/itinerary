@@ -52,6 +52,13 @@ FormCard.FormCard {
             spacing: Kirigami.Units.smallSpacing
 
             Kirigami.Icon {
+                source: "dialog-warning-symbolic"
+                Layout.preferredWidth: Kirigami.Units.iconSizes.smallMedium
+                Layout.preferredHeight: Layout.preferredWidth
+                Layout.rightMargin: Kirigami.Units.largeSpacing
+                visible: !root.transfer.isReachable
+            }
+            Kirigami.Icon {
                 source: KPublicTransport.JourneySectionMode.modeIconName(KPublicTransport.JourneySection.Transfer)
                 Layout.preferredWidth: Kirigami.Units.iconSizes.smallMedium
                 Layout.preferredHeight: Layout.preferredWidth
