@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-03 00:44+0000\n"
+"POT-Creation-Date: 2026-09-16 00:46+0000\n"
 "PO-Revision-Date: 2020-05-04 10:51+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -502,7 +502,7 @@ msgid "Boat Ticket"
 msgstr "Bussipilet"
 
 #: app/BoatPage.qml:57 app/BusPage.qml:56 app/FlightPage.qml:63
-#: app/TrainPage.qml:80 app/TransferDelegate.qml:64
+#: app/TrainPage.qml:80 app/TransferDelegate.qml:71
 #, kde-format
 msgid "%1 to %2"
 msgstr "Asukohast %1 asukohta %2"
@@ -932,7 +932,7 @@ msgstr "E-post:"
 msgid "Website"
 msgstr ""
 
-#: app/CurrencyConverterDelegate.qml:32 app/LocationInfoDelegate.qml:116
+#: app/CurrencyConverterDelegate.qml:32 app/LocationInfoDelegate.qml:117
 #, kde-format
 msgid "Currency: %1"
 msgstr ""
@@ -2748,50 +2748,50 @@ msgctxt "altitude in meter"
 msgid "%1m"
 msgstr "%1 m"
 
-#: app/LocationInfoDelegate.qml:51
+#: app/LocationInfoDelegate.qml:52
 #, kde-format
 msgid "Daylight Saving Time"
 msgstr ""
 
-#: app/LocationInfoDelegate.qml:51
+#: app/LocationInfoDelegate.qml:52
 #, fuzzy, kde-format
 #| msgid "Start Time:"
 msgctxt "opposite to daylight saving time"
 msgid "Standard Time"
 msgstr "Algusaeg:"
 
-#: app/LocationInfoDelegate.qml:52
+#: app/LocationInfoDelegate.qml:53
 #, kde-format
 msgid "Entering %1"
 msgstr "Saabumine riiki %1"
 
-#: app/LocationInfoDelegate.qml:67
+#: app/LocationInfoDelegate.qml:68
 #, kde-format
 msgid "No compatible power sockets: %1"
 msgstr "Ühilduvad pistikupesad puuduvad: %1 "
 
-#: app/LocationInfoDelegate.qml:76
+#: app/LocationInfoDelegate.qml:77
 #, kde-format
 msgid "Some incompatible power sockets: %1"
 msgstr "Mõned mitteühilduvad pistikupesad: %1"
 
-#: app/LocationInfoDelegate.qml:84
+#: app/LocationInfoDelegate.qml:85
 #, kde-format
 msgid "Some incompatible power plugs: %1"
 msgstr "Mõned mitteühilduvad pistikud: %1"
 
-#: app/LocationInfoDelegate.qml:92
+#: app/LocationInfoDelegate.qml:93
 #, kde-format
 msgid "Timezone change: %1 (%2)"
 msgstr "Ajavööndi muutus: %1 (%2)"
 
-#: app/LocationInfoDelegate.qml:114
+#: app/LocationInfoDelegate.qml:115
 #, kde-format
 msgctxt "currency conversion rate"
 msgid "Currency: %1 = %2"
 msgstr ""
 
-#: app/LocationInfoDelegate.qml:125
+#: app/LocationInfoDelegate.qml:126
 #, kde-format
 msgid ""
 "Leaving the EU roaming regulation area. Check your mobile data settings."
@@ -4799,13 +4799,13 @@ msgstr "Lisa järgnev transfeer"
 msgid "Failed to add to Träwelling"
 msgstr ""
 
-#: app/TransferDelegate.qml:112
+#: app/TransferDelegate.qml:119
 #, fuzzy, kde-format
 #| msgid "Select Transfer"
 msgid "Select transfer"
 msgstr "Transfeeri valimine"
 
-#: app/TransferDelegate.qml:122
+#: app/TransferDelegate.qml:129
 #, fuzzy, kde-format
 #| msgid "Select Transfer"
 msgid "Delete transfer"
