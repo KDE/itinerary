@@ -171,15 +171,21 @@ float JourneySectionModel::progress(int row) const
     const auto now = currentDateTime();
     const auto stop = stopoverForRow(row);
     const auto depTime = departureTime(stop);
-    if (!depTime.isValid() || departureTime(stop) >= now) {
+    if (depTime >= now) {
         qCDebug(Log) << row << stop.stopPoint().name() << "not passed yet";
         return 0.0f;
     }
 
     const auto nextStop = stopoverForRow(row + 1);
-    if (arrivalTime(nextStop) <= now) {
+    auto arrTime = arrivalTime(nextStop);
+    if (arrTime.isValid() && arrTime <= now) {
         qCDebug(Log) << row << stop.stopPoint().name() << "already passed";
         return 1.0f;
+    }
+    if (!arrTime.isValid()) {
+        // when not having a valid time (e.g. for border points or the Swiss "advertizement stops"), check the next stop
+        arrTime = arrivalTime(stopoverForRow(row + 2));
+        return (arrTime.isValid() && arrTime <= now) ? 1.0 : 0.0;
     }
 
     const float totalTime = depTime.secsTo(arrivalTime(nextStop));
@@ -198,7 +204,11 @@ bool JourneySectionModel::stopoverPassed(int row) const
     const auto now = currentDateTime();
     const auto stop = stopoverForRow(row);
     if (const auto dt = arrivalTime(stop); dt.isValid()) {
-        return arrivalTime(stop) <= now;
+        return dt <= now;
+    }
+    // when not having a valid time (e.g. for border points or the Swiss "advertizement stops"), check the next stop
+    if (const auto dt = arrivalTime(stopoverForRow(row + 1)); dt.isValid()) {
+        return dt <= now;
     }
     return false;
 }
