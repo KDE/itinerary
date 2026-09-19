@@ -68,6 +68,7 @@ JourneyQueryPage {
             id: longDistanceModeAction
             text: i18nc("journey query search constraint, title", "Long distance trains")
             icon.source: LineMode.iconName(Line.LongDistanceTrain)
+            displayHint: Kirigami.DisplayHint.AlwaysHide
             checkable: true
             checked: true
             onTriggered: root.updateRequest()
@@ -76,6 +77,7 @@ JourneyQueryPage {
             id: localTrainModeAction
             text: i18nc("journey query search constraint, title", "Local trains")
             icon.source: LineMode.iconName(Line.LocalTrain)
+            displayHint: Kirigami.DisplayHint.AlwaysHide
             checkable: true
             checked: true
             onTriggered: root.updateRequest()
@@ -84,6 +86,7 @@ JourneyQueryPage {
             id: rapidTransitModeAction
             text: i18nc("journey query search constraint, title", "Rapid transit")
             icon.source: LineMode.iconName(Line.Tramway)
+            displayHint: Kirigami.DisplayHint.AlwaysHide
             checkable: true
             checked: true
             onTriggered: root.updateRequest()
@@ -92,6 +95,7 @@ JourneyQueryPage {
             id: busModeAction
             text: i18nc("journey query search constraint, title", "Bus")
             icon.source: LineMode.iconName(Line.Bus)
+            displayHint: Kirigami.DisplayHint.AlwaysHide
             checkable: true
             checked: true
             onTriggered: root.updateRequest()
@@ -100,6 +104,7 @@ JourneyQueryPage {
             id: ferryModeAction
             text: i18nc("journey query search constraint, title", "Ferry")
             icon.source: LineMode.iconName(Line.Ferry)
+            displayHint: Kirigami.DisplayHint.AlwaysHide
             checkable: true
             checked: true
             onTriggered: root.updateRequest()
@@ -108,6 +113,7 @@ JourneyQueryPage {
             id: rideshareModeAction
             text: i18nc("journey query search constraint, title", "Ride sharing")
             icon.source: LineMode.iconName(Line.RideShare)
+            displayHint: Kirigami.DisplayHint.AlwaysHide
             checkable: true
             checked: false
             onTriggered: root.updateRequest()
@@ -116,6 +122,7 @@ JourneyQueryPage {
             id: aircraftModeAction
             text: i18nc("journey query search constraint, title", "Airplane")
             icon.source: LineMode.iconName(Line.Air)
+            displayHint: Kirigami.DisplayHint.AlwaysHide
             checkable: true
             checked: false
             onTriggered: root.updateRequest()
