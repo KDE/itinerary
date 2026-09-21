@@ -364,6 +364,14 @@ void ImportController::importFromIntent(const KAndroidExtras::Intent &intent)
             return;
         }
 
+        // Probably not an actual email, forward attachments verbatim.
+        if (subject.isEmpty() && from.isEmpty()) {
+            for (const auto &a : attachments) {
+                importFromUrl(QUrl(a));
+            }
+            return;
+        }
+
         KMime::Message msg;
         msg.subject()->fromUnicodeString(subject);
         for (const auto &f : from) {
