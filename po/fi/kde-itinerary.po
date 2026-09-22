@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-20 12:54+0000\n"
+"POT-Creation-Date: 2026-09-22 00:45+0000\n"
 "PO-Revision-Date: 2026-02-25 13:58+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -2017,7 +2017,7 @@ msgctxt "Name of the train company in France"
 msgid "From SNCF reservation number"
 msgstr "SNCF:n varausnumerosta"
 
-#: app/importcontroller.cpp:152 app/importcontroller.cpp:488
+#: app/importcontroller.cpp:152 app/importcontroller.cpp:496
 #, kde-format
 msgctxt "%1 is an error message"
 msgid "Import failed: %1"
@@ -2033,12 +2033,12 @@ msgstr "Tuonti epäonnistui: Liian suuri tiedosto."
 msgid "Found nothing to import."
 msgstr "Mitään tuotavaa ei löytynyt."
 
-#: app/importcontroller.cpp:460
+#: app/importcontroller.cpp:468
 #, kde-format
 msgid "No importable events found in this calendar."
 msgstr "Kalenterista ei löytynyt tuotavissa olevia tapahtumia."
 
-#: app/importcontroller.cpp:635
+#: app/importcontroller.cpp:643
 #, kde-format
 msgid "Backup"
 msgstr "Varmuuskopioi"
