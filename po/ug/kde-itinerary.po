@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-22 00:45+0000\n"
-"PO-Revision-Date: 2026-05-30 16:35-0400\n"
+"PO-Revision-Date: 2026-09-22 18:03+0900\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
@@ -1496,7 +1496,7 @@ msgstr "باھاسى"
 #, kde-format
 msgctxt "prices in local and home currency"
 msgid "%1 (%2)"
-msgstr "%1 (%2)"
+msgstr ""
 
 #: app/FormPriceEditDelegate.qml:33
 #, kde-format
@@ -1641,7 +1641,7 @@ msgstr ""
 #, kde-format
 msgctxt "health certificate"
 msgid "%1 (%2)"
-msgstr "%1 (%2)"
+msgstr ""
 
 #: app/healthcertificatemanager.cpp:154
 #, kde-format
@@ -1832,7 +1832,7 @@ msgstr ""
 #: app/HealthCertificateVaccination.qml:101
 #, kde-format
 msgid "Manufacturer"
-msgstr ""
+msgstr "ئىشلەپچىقارغۇچى"
 
 #: app/HealthCertificateVaccination.qml:109
 #, kde-format
@@ -2325,7 +2325,7 @@ msgstr ""
 #: app/JourneySectionDelegate.qml:152
 #, kde-format
 msgid "%1 %2 (%3)"
-msgstr "%1 %2 (%3)"
+msgstr ""
 
 #: app/JourneySectionDelegate.qml:154
 #, kde-format
@@ -2353,7 +2353,7 @@ msgstr ""
 #: app/JourneySectionPage.qml:124 app/PublicTransportPage.qml:203
 #, kde-format
 msgid "Map"
-msgstr ""
+msgstr "خەرىتە"
 
 #: app/JourneySectionStopDelegate.qml:164
 #, kde-format
@@ -2488,7 +2488,7 @@ msgstr ""
 #, kde-format
 msgctxt "temperature range"
 msgid "%1 / %2"
-msgstr "%1 / %2"
+msgstr ""
 
 #: app/localizer.cpp:283
 #, kde-format
@@ -2822,7 +2822,7 @@ msgstr "ياردەم"
 #: app/Main.qml:89 app/WhatsNewDialog.qml:16
 #, kde-format
 msgid "What's new"
-msgstr ""
+msgstr "يېڭىلىق"
 
 #: app/Main.qml:179
 #, kde-format
@@ -3362,19 +3362,19 @@ msgstr "ئىزدە…"
 #, kde-format
 msgctxt "name - number"
 msgid "%1 - %2"
-msgstr "%1 - %2"
+msgstr ""
 
 #: app/PassDelegate.qml:44
 #, kde-format
 msgctxt "name - valid time range"
 msgid "%1 - %2"
-msgstr "%1 - %2"
+msgstr ""
 
 #: app/passmanager.cpp:289
 #, kde-format
 msgctxt "%1 and %2 are dates"
 msgid "%1 - %2"
-msgstr "%1 - %2"
+msgstr ""
 
 #: app/PassPage.qml:19
 #, kde-format
@@ -3424,17 +3424,16 @@ msgid "Aisle"
 msgstr ""
 
 #: app/pkpass/PosterEventTicketSeatRow.qml:37
-#, fuzzy, kde-format
-#| msgid "Actions"
+#, kde-format
 msgctxt "seat reservation"
 msgid "Section"
-msgstr "مەشغۇلات"
+msgstr ""
 
 #: app/pkpass/PosterEventTicketSeatRow.qml:45
 #, kde-format
 msgctxt "seat reservation"
 msgid "Row"
-msgstr ""
+msgstr "قۇر"
 
 #: app/pkpass/PosterEventTicketSeatRow.qml:53
 #, kde-format
@@ -3687,7 +3686,7 @@ msgstr ""
 #: app/SettingsPage.qml:50
 #, kde-format
 msgid "Online Services"
-msgstr ""
+msgstr "توردىكى مۇلازىمەت"
 
 #: app/SettingsPage.qml:54
 #, kde-format
@@ -4189,7 +4188,7 @@ msgstr ""
 #, kde-format
 msgctxt "%1 is a person name, %2 is a ticket name"
 msgid "%1 (%2)"
-msgstr "%1 (%2)"
+msgstr ""
 
 #: app/TimelineDelegateIntermediateStopsButton.qml:36
 #, kde-format
@@ -4504,7 +4503,7 @@ msgstr ""
 #, kde-format
 msgctxt "date range"
 msgid "%1 - %2"
-msgstr "%1 - %2"
+msgstr ""
 
 #: app/TripGroupDelegate.qml:40
 #, kde-format
@@ -4667,7 +4666,7 @@ msgstr ""
 #: app/TripGroupPage.qml:426
 #, kde-format
 msgid "%1 - %2"
-msgstr "%1 - %2"
+msgstr ""
 
 #: app/TripGroupPage.qml:427
 #, kde-format
@@ -4857,13 +4856,13 @@ msgstr ""
 #, kde-format
 msgctxt "precipitation"
 msgid "%1 mm"
-msgstr "%1 mm"
+msgstr ""
 
 #: app/WeatherForecastDelegate.qml:72 app/WeatherForecastPage.qml:118
 #, kde-format
 msgctxt "windSpeed"
 msgid "%1 m/s"
-msgstr "%1 m/s"
+msgstr ""
 
 #: app/WelcomePage.qml:16
 #, kde-format
