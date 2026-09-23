@@ -106,14 +106,14 @@ FormCard.FormCard {
                     let sourceValue = 1.0;
                     const homeCurrency = Country.fromAlpha2(Settings.homeCountryIsoCode).currencyCode;
                     if (Settings.performCurrencyConversion)
-                        rate = UnitConversion.convertCurrency(sourceValue, homeCurrency, root.locationInfo.currencyCode);
+                        rate = UnitConversion.convertCurrency(sourceValue, root.locationInfo.currencyCode, homeCurrency);
                     while (rate < 1 && rate > 0) { // scale to a useful order of magnitude
                         rate *= 10;
                         sourceValue *= 10;
                     }
                     if (!isNaN(rate))
                         return i18nc("currency conversion rate", "Currency: %1 = %2",
-                                     Localizer.formatCurrency(sourceValue, homeCurrency), Localizer.formatCurrency(rate, root.locationInfo.currencyCode));
+                                     Localizer.formatCurrency(sourceValue, root.locationInfo.currencyCode), Localizer.formatCurrency(rate, homeCurrency));
                     return i18n("Currency: %1", root.locationInfo.currencyCode);
                 }
                 visible: root.locationInfo.currencyDiffers
