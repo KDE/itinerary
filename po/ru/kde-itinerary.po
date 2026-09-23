@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-22 00:45+0000\n"
-"PO-Revision-Date: 2026-07-15 13:31+0300\n"
-"Last-Translator: Olesya Gerasimenko <goa@altlinux.org>\n"
+"PO-Revision-Date: 2026-09-22 22:00+0200\n"
+"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Basealt Translation Team\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -212,7 +212,7 @@ msgstr "Паром"
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ride sharing"
-msgstr ""
+msgstr "Совместные поездки"
 
 #: app/AlternativeJourneyPage.qml:123 app/DepartureQueryPage.qml:76
 #: app/JourneyFilterPage.qml:132
@@ -2220,7 +2220,7 @@ msgstr "Лодки или паромы"
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Hitch a ride"
-msgstr ""
+msgstr "Поехать попутчиком"
 
 #: app/JourneyPathPage.qml:176
 #, kde-format
@@ -2859,7 +2859,7 @@ msgstr "Справка"
 #: app/Main.qml:89 app/WhatsNewDialog.qml:16
 #, kde-format
 msgid "What's new"
-msgstr ""
+msgstr "Что нового"
 
 #: app/Main.qml:179
 #, kde-format
@@ -5018,9 +5018,9 @@ msgid "Done!"
 msgstr "Готово!"
 
 #: app/WhatsNewDialog.qml:77
-#, fuzzy, kde-format
+#, kde-format
 msgid "Show older changes…"
-msgstr "Показать больше…"
+msgstr "Показать более ранние изменения…"
 
 #: matrix/matrixmanager.cpp:23 matrix/matrixmanager.cpp:120
 #, kde-format
