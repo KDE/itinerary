@@ -15,7 +15,7 @@ ColumnLayout {
 
     required property var reservation
 
-    visible: referenceLabel.visible || underNameLabel.visible || ticketNumberLabel.visible || priceLabel.visible || ticketValidFromLabel.visible || ticketValidUntilLabel.visible
+    visible: referenceLabel.description || underNameLabel.description || ticketNumberLabel.description || priceLabel.visible || ticketValidFromLabel.visible || ticketValidUntilLabel.visible
     spacing: 0
 
     Layout.fillWidth: true
