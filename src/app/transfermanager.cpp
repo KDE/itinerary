@@ -83,14 +83,14 @@ void TransferManager::setLiveDataManager(LiveDataManager *liveDataMgr)
         }
 
         const auto anchorTime = anchorTimeAfter(resId, m_resMgr->reservation(resId));
-        if (t.anchorTime() != anchorTime) {
-            t.setAnchorTime(anchorTime);
-            addOrUpdateTransfer(t);
+        if (t.anchorTime() == anchorTime) {
+            return;
         }
+        t.setAnchorTime(anchorTime);
+        addOrUpdateTransfer(t);
 
-        // check the transfer for updates as well
-        pollForUpdate(t, resId);
-        pollForUpdate(transfer(resId, Transfer::Before), resId);
+        // TODO if there's existing transfer, check if we miss this now
+        // if so: warn and search for a new one if auto transfers are enabled
     });
     connect(m_liveDataMgr, &LiveDataManager::journeyUpdated, this, qOverload<const QString &>(&TransferManager::checkReservation), Qt::QueuedConnection);
     rescan();
@@ -768,17 +768,6 @@ KPublicTransport::JourneyRequest TransferManager::journeyRequestForTransfer(cons
     return req;
 }
 
-KPublicTransport::JourneyRequest TransferManager::journeyRequestForUpdate(const Transfer &transfer) const
-{
-    using namespace KPublicTransport;
-    JourneyRequest req(transfer.journey());
-    req.setDownloadAssets(m_downloadAssets);
-    req.setIncludeIntermediateStops(true);
-    req.setIncludePaths(true);
-    req.setMaximumResults(1);
-    return req;
-}
-
 static KPublicTransport::Journey pickJourney(const Transfer &t, const std::vector<KPublicTransport::Journey> &journeys)
 {
     if (journeys.empty()) {
@@ -825,55 +814,6 @@ void TransferManager::autoFillTransfer(Transfer &t)
             t.setState(Transfer::Pending);
         }
         addOrUpdateTransfer(t);
-    });
-}
-
-void TransferManager::pollForUpdate(const Transfer &transfer, const QString &batchId)
-{
-    if (transfer.state() != Transfer::Selected) {
-        return;
-    }
-
-    // only update transfers with transit elements
-    // TODO: also shared vehicles?
-    // TODO: also walking w/ wheelchair profile once we have realtiem elevator routing
-    const auto containsTransit = std::ranges::any_of(transfer.journey().sections(), [](const KPublicTransport::JourneySection &sec) {
-        return sec.mode() == KPublicTransport::JourneySection::PublicTransport;
-    });
-    if (!containsTransit) {
-        return;
-    }
-
-    // skip transfers already in the past
-    const auto dt = transfer.journey().expectedArrivalTime().isValid() ?
-        transfer.journey().expectedArrivalTime() : transfer.journey().scheduledArrivalTime();
-    if (dt.addDuration(std::chrono::minutes(5)) < currentDateTime()) {
-        return;
-    }
-
-    qDebug() << "updating transfer" << batchId << transfer.alignment();
-    const auto req = journeyRequestForUpdate(transfer);
-    const auto reply = m_liveDataMgr->publicTransportManager()->queryJourney(req);
-    connect(reply, &KPublicTransport::JourneyReply::finished, this, [this, reply, batchId, alignment = transfer.alignment()]() {
-        reply->deleteLater();
-        if (reply->error() != KPublicTransport::JourneyReply::NoError) {
-            qDebug() << reply->errorString();
-            return;
-        }
-
-        auto t = this->transfer(batchId, alignment);
-        if (t.state() != Transfer::Selected) { // e.g. deleted meanwhile
-            return;
-        }
-
-        for (const auto &jny : reply->result()) {
-            if (KPublicTransport::Journey::isSame(jny, t.journey())) {
-                qDebug() << "transfer journey updated" << batchId << alignment;
-                setJourneyForTransfer(t, jny);
-                return;
-            }
-        }
-        qDebug() << "no matching journeys found for transfer" << batchId << alignment;
     });
 }
 
