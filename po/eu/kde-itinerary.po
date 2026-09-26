@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-16 02:44+0000\n"
+"POT-Creation-Date: 2026-09-26 03:00+0000\n"
 "PO-Revision-Date: 2026-08-13 22:07+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -2021,7 +2021,7 @@ msgctxt "Name of the train company in France"
 msgid "From SNCF reservation number"
 msgstr "SNCFren erreserba-zenbakitik"
 
-#: app/importcontroller.cpp:152 app/importcontroller.cpp:464
+#: app/importcontroller.cpp:152 app/importcontroller.cpp:472
 #, kde-format
 msgctxt "%1 is an error message"
 msgid "Import failed: %1"
@@ -2037,12 +2037,12 @@ msgstr "Inportatzeak huts egin du: fitxategia handiegia da."
 msgid "Found nothing to import."
 msgstr "Ez da inportatzekorik aurkitu."
 
-#: app/importcontroller.cpp:436
+#: app/importcontroller.cpp:444
 #, kde-format
 msgid "No importable events found in this calendar."
 msgstr "Egutegi honetan ez da aurkitu inporta daitekeen gertaerarik."
 
-#: app/importcontroller.cpp:611
+#: app/importcontroller.cpp:619
 #, kde-format
 msgid "Backup"
 msgstr "Babeskopia"

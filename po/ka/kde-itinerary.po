@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-16 02:44+0000\n"
+"POT-Creation-Date: 2026-09-26 03:00+0000\n"
 "PO-Revision-Date: 2026-07-05 06:38+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -2008,7 +2008,7 @@ msgctxt "Name of the train company in France"
 msgid "From SNCF reservation number"
 msgstr "SNCF-ის დაჯავშნის ნომრიდან"
 
-#: app/importcontroller.cpp:152 app/importcontroller.cpp:464
+#: app/importcontroller.cpp:152 app/importcontroller.cpp:472
 #, kde-format
 msgctxt "%1 is an error message"
 msgid "Import failed: %1"
@@ -2024,12 +2024,12 @@ msgstr "შემოტანის შეცდომა: ფაილი ძ�
 msgid "Found nothing to import."
 msgstr "შემოსატანი არაფერია."
 
-#: app/importcontroller.cpp:436
+#: app/importcontroller.cpp:444
 #, kde-format
 msgid "No importable events found in this calendar."
 msgstr "ამ კალენდარში შემოტანადი მოვლენები აღმოჩენილი არაა."
 
-#: app/importcontroller.cpp:611
+#: app/importcontroller.cpp:619
 #, kde-format
 msgid "Backup"
 msgstr "მარქაფი"
