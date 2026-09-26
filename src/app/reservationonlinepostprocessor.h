@@ -47,7 +47,7 @@ private:
      * @return nominatim response
      */
     template <typename T>
-    [[nodiscard]] QCoro::Task<QJsonArray> queryNominatim(const T &place, const QString &amenityType, const QString &layer = QStringLiteral("poi,railway"));
+    [[nodiscard]] QCoro::Task<QJsonArray> queryNominatim(T place, QString amenityType, QString layer = QStringLiteral("poi,railway"));
 
     template <typename T>
     bool applyResult(const QJsonArray &results, T &place, const std::vector<QLatin1StringView> &allowedTags) const;
