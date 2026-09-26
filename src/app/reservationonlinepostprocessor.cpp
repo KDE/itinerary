@@ -353,7 +353,7 @@ QCoro::Task<std::optional<T>> ReservationOnlinePostprocessor::processPlace(T pla
 }
 
 template <typename T>
-QCoro::Task<QJsonArray> ReservationOnlinePostprocessor::queryNominatim(const T &place, const QString &amenityType, const QString &layer)
+QCoro::Task<QJsonArray> ReservationOnlinePostprocessor::queryNominatim(T place, QString amenityType, QString layer)
 {
     QUrl url = QUrl(u"https://nominatim.openstreetmap.org/search"_s);
     QUrlQuery query;
