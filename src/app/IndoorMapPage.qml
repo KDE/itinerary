@@ -111,12 +111,18 @@ Kirigami.Page {
         Kirigami.Action {
             text: i18n("Open Map");
             icon.name: "map-globe"
-            onTriggered: NavigationController.showOnMap(map.mapData.center.y, map.mapData.center.x, 18);
+            onTriggered: {
+                const c = map.mapLoader.isLoading ? root.coordinate : map.mapData.center;
+                NavigationController.showOnMap(c.y, c.x, 18);
+            }
         },
         Kirigami.Action {
             icon.name: "kaccess"
             text: i18n("Open wheelmap.org");
-            onTriggered: NavigationController.showOnWheelmap(map.mapData.center.y, map.mapData.center.x);
+            onTriggered: {
+                const c = map.mapLoader.isLoading ? root.coordinate : map.mapData.center;
+                NavigationController.showOnWheelmap(c.y, c.x);
+            }
         },
 
         Kirigami.Action {
