@@ -955,6 +955,16 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
+    <release version="26.08.2" date="2026-10-08">
+      <description>
+        <ul>
+          <li>New or improved travel document extractors for Accor, ALSA, Delta Air Lines, Entur, Frontier Airlines, Ouigo and Snållåget.</li>
+          <li>Fix unreachable transfer warning indicator not being shown.</li>
+          <li>Fix booking card visibility on reservation details pages.</li>
+          <li>Fix some cases of importing via sharing on Android.</li>
+        </ul>
+      </description>
+    </release>
     <release version="26.08.1" date="2026-09-10">
       <description>
         <ul>
