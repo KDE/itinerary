@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-26 03:00+0000\n"
+"POT-Creation-Date: 2026-10-01 20:14+0000\n"
 "PO-Revision-Date: 2024-12-15 19:32+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
@@ -2165,17 +2165,17 @@ msgctxt "flight arrival gate"
 msgid "%1 (arrival)"
 msgstr "%1 (आगमन)"
 
-#: app/IndoorMapInfoSheet.qml:21 app/IndoorMapPage.qml:127
+#: app/IndoorMapInfoSheet.qml:21 app/IndoorMapPage.qml:133
 #, kde-format
 msgid "Edit with iD"
 msgstr "iD के साथ संपादित करें"
 
-#: app/IndoorMapInfoSheet.qml:27 app/IndoorMapPage.qml:133
+#: app/IndoorMapInfoSheet.qml:27 app/IndoorMapPage.qml:139
 #, kde-format
 msgid "Edit with JOSM"
 msgstr "JOSM के साथ संपादित करें"
 
-#: app/IndoorMapInfoSheet.qml:33 app/IndoorMapPage.qml:139
+#: app/IndoorMapInfoSheet.qml:33 app/IndoorMapPage.qml:145
 #, kde-format
 msgid "Edit with Vespucci"
 msgstr "वेस्पुची के साथ संपादन करें"
@@ -2225,26 +2225,26 @@ msgstr "किराये के वाहन दिखाएं"
 msgid "Open Map"
 msgstr "मानचित्र खोलें"
 
-#: app/IndoorMapPage.qml:118
+#: app/IndoorMapPage.qml:121
 #, kde-format
 msgid "Open wheelmap.org"
 msgstr "wheelmap.org खोलें"
 
-#: app/IndoorMapPage.qml:280
+#: app/IndoorMapPage.qml:286
 #, fuzzy, kde-format
 #| msgctxt "@action:button Start route guidance to location"
 #| msgid "Navigate"
 msgid "Navigate from here"
 msgstr "नेविगेट"
 
-#: app/IndoorMapPage.qml:289
+#: app/IndoorMapPage.qml:295
 #, fuzzy, kde-format
 #| msgctxt "@action:button Start route guidance to location"
 #| msgid "Navigate"
 msgid "Navigate to here"
 msgstr "नेविगेट"
 
-#: app/IndoorMapPage.qml:300
+#: app/IndoorMapPage.qml:306
 #, fuzzy, kde-format
 #| msgid "More information"
 msgid "Show information"
