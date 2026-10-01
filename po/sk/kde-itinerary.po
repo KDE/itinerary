@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-22 00:45+0000\n"
+"POT-Creation-Date: 2026-10-01 00:46+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -2087,17 +2087,17 @@ msgctxt "flight arrival gate"
 msgid "%1 (arrival)"
 msgstr "%1 (príchod)"
 
-#: app/IndoorMapInfoSheet.qml:21 app/IndoorMapPage.qml:127
+#: app/IndoorMapInfoSheet.qml:21 app/IndoorMapPage.qml:133
 #, kde-format
 msgid "Edit with iD"
 msgstr "Upraviť v iD"
 
-#: app/IndoorMapInfoSheet.qml:27 app/IndoorMapPage.qml:133
+#: app/IndoorMapInfoSheet.qml:27 app/IndoorMapPage.qml:139
 #, kde-format
 msgid "Edit with JOSM"
 msgstr "Edit with JOSM"
 
-#: app/IndoorMapInfoSheet.qml:33 app/IndoorMapPage.qml:139
+#: app/IndoorMapInfoSheet.qml:33 app/IndoorMapPage.qml:145
 #, kde-format
 msgid "Edit with Vespucci"
 msgstr "Edit with Vespucci"
@@ -2147,22 +2147,22 @@ msgstr "Show Rental Vehicles"
 msgid "Open Map"
 msgstr "Otvoriť mapu"
 
-#: app/IndoorMapPage.qml:118
+#: app/IndoorMapPage.qml:121
 #, kde-format
 msgid "Open wheelmap.org"
 msgstr "Open wheelmap.org"
 
-#: app/IndoorMapPage.qml:280
+#: app/IndoorMapPage.qml:286
 #, kde-format
 msgid "Navigate from here"
 msgstr "Navigovať odtiaľto"
 
-#: app/IndoorMapPage.qml:289
+#: app/IndoorMapPage.qml:295
 #, kde-format
 msgid "Navigate to here"
 msgstr "Navigovať sem"
 
-#: app/IndoorMapPage.qml:300
+#: app/IndoorMapPage.qml:306
 #, kde-format
 msgid "Show information"
 msgstr "Zobraziť informácie"

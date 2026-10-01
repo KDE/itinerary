@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-22 00:45+0000\n"
+"POT-Creation-Date: 2026-10-01 00:46+0000\n"
 "PO-Revision-Date: 2024-11-16 12:52+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -2173,17 +2173,17 @@ msgctxt "flight arrival gate"
 msgid "%1 (arrival)"
 msgstr "%1 (arrival)"
 
-#: app/IndoorMapInfoSheet.qml:21 app/IndoorMapPage.qml:127
+#: app/IndoorMapInfoSheet.qml:21 app/IndoorMapPage.qml:133
 #, kde-format
 msgid "Edit with iD"
 msgstr "Edit with iD"
 
-#: app/IndoorMapInfoSheet.qml:27 app/IndoorMapPage.qml:133
+#: app/IndoorMapInfoSheet.qml:27 app/IndoorMapPage.qml:139
 #, kde-format
 msgid "Edit with JOSM"
 msgstr "Edit with JOSM"
 
-#: app/IndoorMapInfoSheet.qml:33 app/IndoorMapPage.qml:139
+#: app/IndoorMapInfoSheet.qml:33 app/IndoorMapPage.qml:145
 #, kde-format
 msgid "Edit with Vespucci"
 msgstr "Edit with Vespucci"
@@ -2233,26 +2233,26 @@ msgstr "Show Rental Vehicles"
 msgid "Open Map"
 msgstr "Open Map"
 
-#: app/IndoorMapPage.qml:118
+#: app/IndoorMapPage.qml:121
 #, kde-format
 msgid "Open wheelmap.org"
 msgstr "Open wheelmap.org"
 
-#: app/IndoorMapPage.qml:280
+#: app/IndoorMapPage.qml:286
 #, fuzzy, kde-format
 #| msgctxt "@action:button Start route guidance to location"
 #| msgid "Navigate"
 msgid "Navigate from here"
 msgstr "Navigate"
 
-#: app/IndoorMapPage.qml:289
+#: app/IndoorMapPage.qml:295
 #, fuzzy, kde-format
 #| msgctxt "@action:button Start route guidance to location"
 #| msgid "Navigate"
 msgid "Navigate to here"
 msgstr "Navigate"
 
-#: app/IndoorMapPage.qml:300
+#: app/IndoorMapPage.qml:306
 #, fuzzy, kde-format
 #| msgid "More information"
 msgid "Show information"

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-22 00:45+0000\n"
+"POT-Creation-Date: 2026-10-01 00:46+0000\n"
 "PO-Revision-Date: 2026-07-27 06:57-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -2089,17 +2089,17 @@ msgctxt "flight arrival gate"
 msgid "%1 (arrival)"
 msgstr "%1 (chegada)"
 
-#: app/IndoorMapInfoSheet.qml:21 app/IndoorMapPage.qml:127
+#: app/IndoorMapInfoSheet.qml:21 app/IndoorMapPage.qml:133
 #, kde-format
 msgid "Edit with iD"
 msgstr "Editar com iD"
 
-#: app/IndoorMapInfoSheet.qml:27 app/IndoorMapPage.qml:133
+#: app/IndoorMapInfoSheet.qml:27 app/IndoorMapPage.qml:139
 #, kde-format
 msgid "Edit with JOSM"
 msgstr "Editar com JOSM"
 
-#: app/IndoorMapInfoSheet.qml:33 app/IndoorMapPage.qml:139
+#: app/IndoorMapInfoSheet.qml:33 app/IndoorMapPage.qml:145
 #, kde-format
 msgid "Edit with Vespucci"
 msgstr "Editar com Vespucci"
@@ -2149,22 +2149,22 @@ msgstr "Mostrar veículos locados"
 msgid "Open Map"
 msgstr "Abrir mapa"
 
-#: app/IndoorMapPage.qml:118
+#: app/IndoorMapPage.qml:121
 #, kde-format
 msgid "Open wheelmap.org"
 msgstr "Abrir wheelmap.org"
 
-#: app/IndoorMapPage.qml:280
+#: app/IndoorMapPage.qml:286
 #, kde-format
 msgid "Navigate from here"
 msgstr "Navegar a partir daqui"
 
-#: app/IndoorMapPage.qml:289
+#: app/IndoorMapPage.qml:295
 #, kde-format
 msgid "Navigate to here"
 msgstr "Navegar para aqui"
 
-#: app/IndoorMapPage.qml:300
+#: app/IndoorMapPage.qml:306
 #, kde-format
 msgid "Show information"
 msgstr "Mostrar informações"
