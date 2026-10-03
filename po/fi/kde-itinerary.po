@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-01 00:46+0000\n"
-"PO-Revision-Date: 2026-02-25 13:58+0200\n"
+"PO-Revision-Date: 2026-09-07 19:37+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -208,7 +208,7 @@ msgstr "Lautta"
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ride sharing"
-msgstr ""
+msgstr "Kimppakyyti"
 
 #: app/AlternativeJourneyPage.qml:123 app/DepartureQueryPage.qml:76
 #: app/JourneyFilterPage.qml:132
@@ -489,11 +489,10 @@ msgstr "Tuloaika:"
 
 #: app/BoatPage.qml:189 app/BusPage.qml:270 app/FlightPage.qml:292
 #: app/JourneyQueryPage.qml:99 app/TrainPage.qml:343
-#, fuzzy, kde-format
-#| msgid "Booking"
+#, kde-format
 msgctxt "purchase a ticket"
 msgid "Book"
-msgstr "Varaaminen"
+msgstr "Varaa"
 
 #: app/BoatPage.qml:195 app/BusPage.qml:276 app/FlightPage.qml:298
 #: app/TrainPage.qml:358
@@ -2152,24 +2151,19 @@ msgid "Open wheelmap.org"
 msgstr "Avaa wheelmap.org"
 
 #: app/IndoorMapPage.qml:286
-#, fuzzy, kde-format
-#| msgctxt "@action:button Start route guidance to location"
-#| msgid "Navigate"
+#, kde-format
 msgid "Navigate from here"
-msgstr "Navigoi"
+msgstr "Suunnista täältä"
 
 #: app/IndoorMapPage.qml:295
-#, fuzzy, kde-format
-#| msgctxt "@action:button Start route guidance to location"
-#| msgid "Navigate"
+#, kde-format
 msgid "Navigate to here"
-msgstr "Navigoi"
+msgstr "Suunnista tänne"
 
 #: app/IndoorMapPage.qml:306
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgid "Show information"
-msgstr "Lisätietoa"
+msgstr "Näytä tietoa"
 
 #: app/JourneyFilterPage.qml:15
 #, kde-format
@@ -2216,7 +2210,7 @@ msgstr "Laivat tai lautat"
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Hitch a ride"
-msgstr ""
+msgstr "Kimppakyyti"
 
 #: app/JourneyPathPage.qml:176
 #, kde-format
@@ -2373,7 +2367,7 @@ msgstr "Matka"
 #: app/JourneySectionPage.qml:124 app/PublicTransportPage.qml:203
 #, kde-format
 msgid "Map"
-msgstr ""
+msgstr "Kartta"
 
 #: app/JourneySectionStopDelegate.qml:164
 #, kde-format
@@ -2564,6 +2558,8 @@ msgstr "Valuutta: %1 = %2"
 msgid ""
 "Leaving the EU roaming regulation area. Check your mobile data settings."
 msgstr ""
+"Poistutaan EU:n verkkovierailusääntöalueelta. Tarkista mobiilidatan "
+"asetukset."
 
 #: app/locationinformation.cpp:128
 #, kde-format
@@ -2846,7 +2842,7 @@ msgstr "Ohje"
 #: app/Main.qml:89 app/WhatsNewDialog.qml:16
 #, kde-format
 msgid "What's new"
-msgstr ""
+msgstr "Mitä uutta"
 
 #: app/Main.qml:179
 #, kde-format
@@ -2866,10 +2862,9 @@ msgid "Matrix Session Verification"
 msgstr "Matrix-istunnon varmennus"
 
 #: app/MapStopoverInfoSheetDrawer.qml:85
-#, fuzzy, kde-format
-#| msgid "Occupancy:"
+#, kde-format
 msgid "Occupancy"
-msgstr "Käyttöaste:"
+msgstr "Käyttöaste"
 
 #: app/MapStopoverInfoSheetDrawer.qml:112 app/StopoverDetailsPage.qml:124
 #, kde-format
@@ -3471,30 +3466,25 @@ msgstr "Vanhentunut"
 #, kde-format
 msgctxt "seat reservation"
 msgid "Aisle"
-msgstr ""
+msgstr "Käytävä"
 
 #: app/pkpass/PosterEventTicketSeatRow.qml:37
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Sections"
+#, kde-format
 msgctxt "seat reservation"
 msgid "Section"
-msgstr "Alueet"
+msgstr "Osio"
 
 #: app/pkpass/PosterEventTicketSeatRow.qml:45
-#, fuzzy, kde-format
-#| msgctxt "seat row"
-#| msgid "Row:"
+#, kde-format
 msgctxt "seat reservation"
 msgid "Row"
-msgstr "Rivi:"
+msgstr "Rivi"
 
 #: app/pkpass/PosterEventTicketSeatRow.qml:53
-#, fuzzy, kde-format
-#| msgid "Seat"
+#, kde-format
 msgctxt "seat reservation"
 msgid "Seat"
-msgstr "Istumapaikka"
+msgstr "Paikka"
 
 #: app/PkPassPage.qml:20
 #, kde-format
@@ -3683,38 +3673,38 @@ msgstr "Seurueen koko"
 #: app/ScamWarningFormDelegate.qml:21
 #, kde-format
 msgid "This airport might not be quite where its name suggests it is."
-msgstr ""
+msgstr "Lentokenttä ei ehkä ole aivan, missä se nimen mukaan on."
 
 #: app/ScamWarningFormDelegate.qml:23
 #, kde-format
 msgid "This port might not be quite where its name suggests it is."
-msgstr ""
+msgstr "Portti ei ehkä ole aivan siellä, missä sen nimi sanoo sen olevan."
 
 #: app/ScamWarningFormDelegate.qml:37
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Ignore warning"
-msgstr ""
+msgstr "Sivuuta varoitus"
 
 #: app/ScamWarningFormDelegate.qml:50
 #, kde-format
 msgid "Ignore Warning"
-msgstr ""
+msgstr "Sivuuta varoitus"
 
 #: app/ScamWarningFormDelegate.qml:51
 #, kde-format
 msgid "Do you want to ignore the warning permanently or for this trip only?"
-msgstr ""
+msgstr "Haluatko sivuuttaa varoituksen aina vai vain tällä matkalla?"
 
 #: app/ScamWarningFormDelegate.qml:54
 #, kde-format
 msgid "Ignore permanently"
-msgstr ""
+msgstr "Sivuuta aina"
 
 #: app/ScamWarningFormDelegate.qml:63
 #, kde-format
 msgid "Ignore for this trip"
-msgstr ""
+msgstr "Sivuuta tällä matkalla"
 
 #: app/SettingsPage.qml:20
 #, kde-format
@@ -3991,13 +3981,13 @@ msgstr "Kirjaudu"
 #, kde-format
 msgctxt "@label"
 msgid "Homeserver url"
-msgstr ""
+msgstr "Kotipalvelimen verkko-osoite"
 
 #: app/SettingsPage.qml:324
 #, kde-format
 msgctxt "@action:button"
 msgid "Login with OIDC"
-msgstr ""
+msgstr "Kirjaudu OIDC:llä"
 
 #: app/SettingsPage.qml:334
 #, kde-format
@@ -4956,7 +4946,7 @@ msgstr "Tervetuloa!"
 #, kde-format
 msgctxt "@title:group"
 msgid "Setup"
-msgstr ""
+msgstr "Asetukset"
 
 #: app/WelcomePage.qml:31
 #, kde-format
@@ -4964,22 +4954,16 @@ msgid ""
 "Select your home country for currency conversions and power plug "
 "compatibility warnings to work."
 msgstr ""
+"Valitse kotimaa valuutanmuunnos- tai virtaliitinten "
+"yhteensopivuusvaroitusten toimimiseksi."
 
 #: app/WelcomePage.qml:35
-#, fuzzy, kde-format
-#| msgid "Use insecure services"
+#, kde-format
 msgid "Use online services"
-msgstr "Salli salaamattomat palvelut"
+msgstr "Käytä verkkopalveluja"
 
 #: app/WelcomePage.qml:36
-#, fuzzy, kde-format
-#| msgid ""
-#| "KDE Itinerary has all features disabled by default that require online "
-#| "access, such as retrieving live traffic data or weather forecasts. You "
-#| "therefore might want to review these settings. While you are at it, you "
-#| "might want to configure your home location to enable the transfer "
-#| "assistant to automatically suggests ways to your next departure station "
-#| "or airport."
+#, kde-format
 msgid ""
 "KDE Itinerary has all features disabled by default that require online "
 "access, such as retrieving live traffic data or weather forecasts. You can "
@@ -4988,9 +4972,8 @@ msgid ""
 msgstr ""
 "Kaikki verkkoa vaativat ominaisuudet kuten ajantasaisten liikennetietojen "
 "tai sääennusteiden nouto on oletusarvoisesti poistettu KDE Itineraryssa "
-"käytöstä. Nämä asetukset kannattaa tarkistaa. Samalla saatat haluta asettaa "
-"kotisijaintisi, jolloin matka-avustaja osaa automaattisesti ehdottaa kulkua "
-"seuraavalle lähtöasemallesi."
+"käytöstä. Tässä ne voi ottaa käyttöön ja säätää käytettäviä palveluja "
+"tarkemmin."
 
 #: app/WelcomePage.qml:54
 #, kde-format
@@ -4998,25 +4981,23 @@ msgid ""
 "Review the settings for more finegrained control over which online services "
 "to use."
 msgstr ""
+"Tarkastele asetuksia säätääksesi tarkemmin käytettäviä verkkopalveluja."
 
 #: app/WelcomePage.qml:61
-#, fuzzy, kde-format
-#| msgid "Version"
+#, kde-format
 msgctxt "@title:group"
 msgid "Permissions"
-msgstr "Versio"
+msgstr "Käyttöluvat"
 
 #: app/WelcomePage.qml:90
 #, kde-format
 msgid "Done!"
-msgstr ""
+msgstr "Valmista!"
 
 #: app/WhatsNewDialog.qml:77
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Show More…"
+#, kde-format
 msgid "Show older changes…"
-msgstr "Näytä lisää…"
+msgstr "Näytä vanhempia muutoksia…"
 
 #: matrix/matrixmanager.cpp:23 matrix/matrixmanager.cpp:120
 #, kde-format
