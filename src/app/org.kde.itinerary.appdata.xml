@@ -959,9 +959,13 @@
       <description>
         <ul>
           <li>New or improved travel document extractors for Accor, ALSA, Delta Air Lines, Entur, Frontier Airlines, Ouigo and Snållåget.</li>
+          <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para Accor, ALSA, Delta Air Lines, Entur, Frontier Airlines, Ouigo y Snållåget.</li>
           <li>Fix unreachable transfer warning indicator not being shown.</li>
+          <li xml:lang="es">Se ha corregido el problema por el cual no se mostraba el indicador de advertencia de transferencia inaccesible.</li>
           <li>Fix booking card visibility on reservation details pages.</li>
+          <li xml:lang="es">Se ha corregido la visibilidad de la tarjeta de reserva en las páginas de detalles de la reserva.</li>
           <li>Fix some cases of importing via sharing on Android.</li>
+          <li xml:lang="es">Se han corregido algunos casos de importación mediante la función de compartir en Android.</li>
         </ul>
       </description>
     </release>
