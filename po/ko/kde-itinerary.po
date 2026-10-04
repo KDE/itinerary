@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-01 20:14+0000\n"
-"PO-Revision-Date: 2026-05-25 19:00+0200\n"
+"PO-Revision-Date: 2026-10-03 23:10+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -2346,7 +2346,7 @@ msgstr "여정"
 #: app/JourneySectionPage.qml:124 app/PublicTransportPage.qml:203
 #, kde-format
 msgid "Map"
-msgstr ""
+msgstr "지도"
 
 #: app/JourneySectionStopDelegate.qml:164
 #, kde-format
@@ -3416,27 +3416,22 @@ msgstr "만료됨"
 #, kde-format
 msgctxt "seat reservation"
 msgid "Aisle"
-msgstr ""
+msgstr "복도"
 
 #: app/pkpass/PosterEventTicketSeatRow.qml:37
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Sections"
+#, kde-format
 msgctxt "seat reservation"
 msgid "Section"
-msgstr "구역:"
+msgstr "구역"
 
 #: app/pkpass/PosterEventTicketSeatRow.qml:45
-#, fuzzy, kde-format
-#| msgctxt "seat row"
-#| msgid "Row:"
+#, kde-format
 msgctxt "seat reservation"
 msgid "Row"
-msgstr "줄:"
+msgstr "줄"
 
 #: app/pkpass/PosterEventTicketSeatRow.qml:53
-#, fuzzy, kde-format
-#| msgid "Seat"
+#, kde-format
 msgctxt "seat reservation"
 msgid "Seat"
 msgstr "좌석"
