@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-01 00:46+0000\n"
-"PO-Revision-Date: 2026-05-25 19:00+0200\n"
+"PO-Revision-Date: 2026-10-03 23:10+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -207,7 +207,7 @@ msgstr "선박"
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ride sharing"
-msgstr ""
+msgstr "승차 공유"
 
 #: app/AlternativeJourneyPage.qml:123 app/DepartureQueryPage.qml:76
 #: app/JourneyFilterPage.qml:132
@@ -2203,7 +2203,7 @@ msgstr "선박 및 페리"
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Hitch a ride"
-msgstr ""
+msgstr "다른 차량에 함께 타기"
 
 #: app/JourneyPathPage.qml:176
 #, kde-format
@@ -2359,7 +2359,7 @@ msgstr "여정"
 #: app/JourneySectionPage.qml:124 app/PublicTransportPage.qml:203
 #, kde-format
 msgid "Map"
-msgstr ""
+msgstr "지도"
 
 #: app/JourneySectionStopDelegate.qml:164
 #, kde-format
@@ -2831,7 +2831,7 @@ msgstr "도움말"
 #: app/Main.qml:89 app/WhatsNewDialog.qml:16
 #, kde-format
 msgid "What's new"
-msgstr ""
+msgstr "새로운 기능"
 
 #: app/Main.qml:179
 #, kde-format
@@ -3434,27 +3434,22 @@ msgstr "만료됨"
 #, kde-format
 msgctxt "seat reservation"
 msgid "Aisle"
-msgstr ""
+msgstr "복도"
 
 #: app/pkpass/PosterEventTicketSeatRow.qml:37
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Sections"
+#, kde-format
 msgctxt "seat reservation"
 msgid "Section"
-msgstr "구역:"
+msgstr "구역"
 
 #: app/pkpass/PosterEventTicketSeatRow.qml:45
-#, fuzzy, kde-format
-#| msgctxt "seat row"
-#| msgid "Row:"
+#, kde-format
 msgctxt "seat reservation"
 msgid "Row"
-msgstr "줄:"
+msgstr "줄"
 
 #: app/pkpass/PosterEventTicketSeatRow.qml:53
-#, fuzzy, kde-format
-#| msgid "Seat"
+#, kde-format
 msgctxt "seat reservation"
 msgid "Seat"
 msgstr "좌석"
@@ -4954,11 +4949,9 @@ msgid "Done!"
 msgstr "완료!"
 
 #: app/WhatsNewDialog.qml:77
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Show More…"
+#, kde-format
 msgid "Show older changes…"
-msgstr "더 보기…"
+msgstr "이전 변경 사항 표시…"
 
 #: matrix/matrixmanager.cpp:23 matrix/matrixmanager.cpp:120
 #, kde-format
