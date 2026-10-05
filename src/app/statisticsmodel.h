@@ -147,6 +147,7 @@ private:
     [[nodiscard]] static double co2emission(AggregateType type, double distance);
     void computeStats(const QString &resId, const QVariant &res, int (&statData)[AGGREGATE_TYPE_COUNT][STAT_TYPE_COUNT]);
     void computeStats(const KPublicTransport::Journey &journey, int (&statData)[AGGREGATE_TYPE_COUNT][STAT_TYPE_COUNT]);
+    void computeNextTripGroup();
 
     [[nodiscard]] QString formatDistance(int dist) const;
     [[nodiscard]] StatisticsItem::Trend trend(int current, int prev) const;
@@ -161,6 +162,9 @@ private:
     int m_prevHotelCount = 0;
     int m_tripGroupCount = 0;
     int m_prevTripGroupCount = 0;
+
+    // temporary state during async recomputing
+    std::vector<QString> m_pendingTripGroups;
 };
 
 #endif // STATISTICSMODEL_H

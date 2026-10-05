@@ -330,6 +330,7 @@ void StatisticsModel::computeStats(const KPublicTransport::Journey &journey, int
 
 void StatisticsModel::recompute()
 {
+    qDebug() << "recompute all";
     memset(m_statData, 0, (std::size_t)qToUnderlying(AGGREGATE_TYPE_COUNT) * qToUnderlying(STAT_TYPE_COUNT) * sizeof(int));
     memset(m_prevStatData, 0, (std::size_t)qToUnderlying(AGGREGATE_TYPE_COUNT) * qToUnderlying(STAT_TYPE_COUNT) * sizeof(int));
     memset(m_hasData, 0, AGGREGATE_TYPE_COUNT * sizeof(bool));
@@ -342,15 +343,21 @@ void StatisticsModel::recompute()
         return;
     }
 
-    QDate prevStart;
-    if (m_begin.isValid() && m_end.isValid()) {
-        prevStart = m_begin.addDays(m_end.daysTo(m_begin));
+    m_pendingTripGroups = m_tripGroupMgr->tripGroups();
+    computeNextTripGroup();
+}
+
+void StatisticsModel::computeNextTripGroup()
+{
+    if (m_pendingTripGroups.empty()) {
+        return;
     }
+    qDebug() << m_pendingTripGroups.size();
 
-    QSet<QString> tripGroups, prevTripGroups;
-
-    const auto &batches = m_resMgr->batches();
-    for (const auto &batchId : batches) {
+    const auto tgId = m_pendingTripGroups.back();
+    m_pendingTripGroups.pop_back();
+    const auto batchIds = m_tripGroupMgr->tripGroup(tgId).elements();
+    for (const auto &batchId : batchIds) {
         const auto res = m_resMgr->reservation(batchId);
         if (LocationUtil::isLocationChange(res)) {
             m_hasData[typeForReservation(res)] = true;
@@ -361,8 +368,8 @@ void StatisticsModel::recompute()
         if (m_end.isValid() && dt.date() > m_end) {
             continue;
         }
-        if (prevStart.isValid()) {
-            if (dt.date() < prevStart) {
+        if (m_begin.isValid() && m_end.isValid()) {
+            if (dt.date() < m_begin.addDays(m_end.daysTo(m_begin))) {
                 continue;
             }
             isPrev = dt.date() < m_begin;
@@ -392,7 +399,11 @@ void StatisticsModel::recompute()
 
         const auto tgId = m_tripGroupMgr->tripGroupIdForReservation(batchId);
         if (isRelevantTripGroup(tgId)) {
-            isPrev ? prevTripGroups.insert(tgId) : tripGroups.insert(tgId);
+            if (isPrev) {
+                m_prevTripGroupCount++;
+            } else {
+                m_tripGroupCount++;
+            }
         }
 
         if (!isPrev) {
@@ -407,10 +418,10 @@ void StatisticsModel::recompute()
         }
     }
 
-    m_tripGroupCount = (int)tripGroups.size();
-    m_prevTripGroupCount = (int)prevTripGroups.size();
-
     Q_EMIT changed();
+    if (!m_pendingTripGroups.empty()) {
+        QMetaObject::invokeMethod(this, &StatisticsModel::computeNextTripGroup, Qt::QueuedConnection);
+    }
 }
 
 bool StatisticsModel::isRelevantTripGroup(const QString &tgId) const
