@@ -8,6 +8,7 @@
 #include "livedatamanager.h"
 #include "localizer.h"
 #include "locationhelper.h"
+#include "reservationhelper.h"
 #include "reservationmanager.h"
 #include "transfermanager.h"
 #include "tripgroup.h"
@@ -330,6 +331,9 @@ void StatisticsModel::computeStats(const KPublicTransport::Journey &journey, int
 
 void StatisticsModel::recompute()
 {
+    qDebug() << "recompute all";
+    m_tripGroupCount = 0;
+    m_prevTripGroupCount = 0;
     memset(m_statData, 0, (std::size_t)qToUnderlying(AGGREGATE_TYPE_COUNT) * qToUnderlying(STAT_TYPE_COUNT) * sizeof(int));
     memset(m_prevStatData, 0, (std::size_t)qToUnderlying(AGGREGATE_TYPE_COUNT) * qToUnderlying(STAT_TYPE_COUNT) * sizeof(int));
     memset(m_hasData, 0, AGGREGATE_TYPE_COUNT * sizeof(bool));
@@ -342,15 +346,33 @@ void StatisticsModel::recompute()
         return;
     }
 
-    QDate prevStart;
-    if (m_begin.isValid() && m_end.isValid()) {
-        prevStart = m_begin.addDays(m_end.daysTo(m_begin));
+    m_pendingTripGroups = m_tripGroupMgr->tripGroups();
+    computeNextTripGroup();
+}
+
+void StatisticsModel::computeNextTripGroup()
+{
+    if (m_pendingTripGroups.empty()) {
+        return;
+    }
+    qDebug() << m_pendingTripGroups.size();
+
+    const auto prevBegin = m_begin.isValid() && m_end.isValid() ? m_begin.addDays(m_end.daysTo(m_begin)) : QDate();
+
+    const auto tgId = m_pendingTripGroups.back();
+    m_pendingTripGroups.pop_back();
+    const auto tg = m_tripGroupMgr->tripGroup(tgId);
+    if (isRelevantTripGroup(tg)) {
+        const auto dt = tg.beginDateTime().date();
+        if (!prevBegin.isValid() || (dt >= m_begin && dt < m_end)) {
+            m_tripGroupCount++;
+        } else if (prevBegin.isValid() && dt >= prevBegin && dt < m_begin) {
+            m_prevTripGroupCount++;
+        }
     }
 
-    QSet<QString> tripGroups, prevTripGroups;
-
-    const auto &batches = m_resMgr->batches();
-    for (const auto &batchId : batches) {
+    const auto batchIds = tg.elements();
+    for (const auto &batchId : batchIds) {
         const auto res = m_resMgr->reservation(batchId);
         if (LocationUtil::isLocationChange(res)) {
             m_hasData[typeForReservation(res)] = true;
@@ -361,15 +383,15 @@ void StatisticsModel::recompute()
         if (m_end.isValid() && dt.date() > m_end) {
             continue;
         }
-        if (prevStart.isValid()) {
-            if (dt.date() < prevStart) {
+        if (prevBegin.isValid()) {
+            if (dt.date() < prevBegin) {
                 continue;
             }
             isPrev = dt.date() < m_begin;
         }
 
         // don't count canceled reservations
-        if (JsonLd::canConvert<Reservation>(res) && JsonLd::convert<Reservation>(res).reservationStatus() == Reservation::ReservationCancelled) {
+        if (ReservationHelper::isCancelled(res)) {
             continue;
         }
 
@@ -390,11 +412,6 @@ void StatisticsModel::recompute()
             }
         }
 
-        const auto tgId = m_tripGroupMgr->tripGroupIdForReservation(batchId);
-        if (isRelevantTripGroup(tgId)) {
-            isPrev ? prevTripGroups.insert(tgId) : tripGroups.insert(tgId);
-        }
-
         if (!isPrev) {
             auto c = LocationHelper::departureCountry(res);
             if (!c.isEmpty()) {
@@ -407,19 +424,20 @@ void StatisticsModel::recompute()
         }
     }
 
-    m_tripGroupCount = (int)tripGroups.size();
-    m_prevTripGroupCount = (int)prevTripGroups.size();
-
     Q_EMIT changed();
+    if (!m_pendingTripGroups.empty()) {
+        QMetaObject::invokeMethod(this, &StatisticsModel::computeNextTripGroup, Qt::QueuedConnection);
+    } else {
+        Q_EMIT completed();
+    }
 }
 
-bool StatisticsModel::isRelevantTripGroup(const QString &tgId) const
+bool StatisticsModel::isRelevantTripGroup(const TripGroup &tg) const
 {
-    const auto tg = m_tripGroupMgr->tripGroup(tgId);
     const auto elems = tg.elements();
     return std::any_of(elems.begin(), elems.end(), [this](const QString &elem) {
         const auto res = m_resMgr->reservation(elem);
-        return LocationUtil::isLocationChange(res);
+        return !ReservationHelper::isCancelled(res) && LocationUtil::isLocationChange(res);
     });
 }
 

@@ -61,6 +61,7 @@ private Q_SLOTS:
         StatisticsModel stats;
         stats.setProperty("distanceFormat", KFormat::MetricDistanceUnits);
         QSignalSpy changeSpy(&stats, &StatisticsModel::changed);
+        QSignalSpy completedSpy(&stats, &StatisticsModel::completed);
         stats.setReservationManager(&resMgr);
         stats.setTripGroupManager(&tgMgr);
         stats.setTransferManager(&transferMgr);
@@ -76,6 +77,7 @@ private Q_SLOTS:
         ctrl->commitImport(&importer);
 
         stats.setTimeRange({}, {});
+        QVERIFY(completedSpy.wait());
         QVERIFY(!changeSpy.isEmpty());
         auto item = stats.totalCount();
         QCOMPARE(item.m_value, QLatin1StringView("2"));
@@ -127,6 +129,7 @@ private Q_SLOTS:
 
         changeSpy.clear();
         stats.setTimeRange({2017, 9, 1}, {2018, 1, 1});
+        QVERIFY(completedSpy.wait());
         QVERIFY(!changeSpy.isEmpty());
         item = stats.totalCount();
         QCOMPARE(item.m_value, QLatin1StringView("1"));

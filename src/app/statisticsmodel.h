@@ -17,6 +17,7 @@
 #include <set>
 
 class ReservationManager;
+class TripGroup;
 class TripGroupManager;
 class TransferManager;
 
@@ -127,10 +128,11 @@ public:
 Q_SIGNALS:
     void setupChanged();
     void changed();
+    void completed();
 
 private:
     void recompute();
-    [[nodiscard]] bool isRelevantTripGroup(const QString &tgId) const;
+    [[nodiscard]] bool isRelevantTripGroup(const TripGroup &tg) const;
 
     ReservationManager *m_resMgr = nullptr;
     TripGroupManager *m_tripGroupMgr = nullptr;
@@ -147,6 +149,7 @@ private:
     [[nodiscard]] static double co2emission(AggregateType type, double distance);
     void computeStats(const QString &resId, const QVariant &res, int (&statData)[AGGREGATE_TYPE_COUNT][STAT_TYPE_COUNT]);
     void computeStats(const KPublicTransport::Journey &journey, int (&statData)[AGGREGATE_TYPE_COUNT][STAT_TYPE_COUNT]);
+    void computeNextTripGroup();
 
     [[nodiscard]] QString formatDistance(int dist) const;
     [[nodiscard]] StatisticsItem::Trend trend(int current, int prev) const;
@@ -161,6 +164,9 @@ private:
     int m_prevHotelCount = 0;
     int m_tripGroupCount = 0;
     int m_prevTripGroupCount = 0;
+
+    // temporary state during async recomputing
+    std::vector<QString> m_pendingTripGroups;
 };
 
 #endif // STATISTICSMODEL_H
