@@ -449,7 +449,6 @@ void LiveDataManager::showNotification(const QString &resId, const LiveData &ld)
 
 static void fillNotificationIcon(KNotification *n, [[maybe_unused]] QString iconName)
 {
-#if KNOTIFICATIONS_VERSION >= QT_VERSION_CHECK(6, 27, 0)
     n->setHint(u"x-kde-symbolic-app-icon"_s, u"clock"_s);
     if (iconName.startsWith("file:"_L1)) {
         n->setPixmap(QIcon::fromTheme(QUrl(iconName).toLocalFile()).pixmap(64, 64));
@@ -468,9 +467,6 @@ static void fillNotificationIcon(KNotification *n, [[maybe_unused]] QString icon
         return;
     }
 #ifndef Q_OS_ANDROID
-    n->setIconName(u"clock"_s);
-#endif
-#else
     n->setIconName(u"clock"_s);
 #endif
 }

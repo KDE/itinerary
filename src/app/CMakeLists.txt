@@ -327,9 +327,6 @@ target_link_libraries(itinerary-app PRIVATE
     Qt::QuickControls2
     KMatrixplugin
 )
-if(TARGET KCalendarCoreExtras)
-    target_link_libraries(itinerary-app PRIVATE KCalendarCoreExtras)
-endif()
 if (ANDROID)
     target_link_libraries(itinerary PUBLIC KAndroidExtras PRIVATE Qt::CorePrivate)
     # explicitly add runtime dependencies and transitive link dependencies,
