@@ -279,6 +279,11 @@ QCoro::Task<std::optional<KItinerary::TrainStation>> ReservationOnlinePostproces
         const auto results = co_await queryNominatim(station, u"railway station"_s);
         bool changed = applyResult(results, station, allowedTags);
 
+        if (!changed) {
+            const auto results = co_await queryNominatim(station, u"train stop"_s);
+            changed = applyResult(results, station, allowedTags);
+        }
+
         co_return changed ? std::optional{station} : std::nullopt;
     }
 
