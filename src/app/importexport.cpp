@@ -240,11 +240,7 @@ void Exporter::exportPublicTransportAssets()
             qCWarning(Log) << f.fileName() << f.errorString();
             continue;
         }
-#if KITINERARY_VERSION >= QT_VERSION_CHECK(6, 5, 41)
         m_file->addCustomData(BUNDLE_PUBLIC_TRANSPORT_ASSET_DOMAIN, it.fileName(), f.readAll(), it.fileInfo().lastModified());
-#else
-        m_file->addCustomData(BUNDLE_PUBLIC_TRANSPORT_ASSET_DOMAIN, it.fileName(), f.readAll());
-#endif
     }
 }
 
@@ -403,12 +399,10 @@ qsizetype Importer::importPublicTransportAssets()
         f.write(m_file->customData(BUNDLE_PUBLIC_TRANSPORT_ASSET_DOMAIN, id));
         f.close();
 
-#if KITINERARY_VERSION >= QT_VERSION_CHECK(6, 5, 41)
         // mtime changes need to be done without content changes to take effect
         f.open(QFile::WriteOnly|QFile::Append);
         f.setFileTime(m_file->customDataFileTime(BUNDLE_PUBLIC_TRANSPORT_ASSET_DOMAIN, id), QFile::FileModificationTime);
         f.close();
-#endif
     }
 
     return ids.size();
