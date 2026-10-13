@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-11 00:51+0000\n"
-"PO-Revision-Date: 2026-07-27 19:34+0300\n"
+"PO-Revision-Date: 2026-10-12 10:01+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 26.04.2\n"
+"X-Generator: Lokalize 26.08.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -42,7 +42,7 @@ msgstr "Lisans: <a href=\"%2\">%1</a>"
 #: app/AboutPage.qml:40
 #, kde-format
 msgid "KDE Itinerary uses public transport data from the following sources."
-msgstr "KDE Yol Kılavuzu, aşağıdaki kaynaklardan toplu taşıma verisi kullanır."
+msgstr "KDE Itinerary, aşağıdaki kaynaklardan toplu taşıma verisi kullanır."
 
 #: app/AboutPage.qml:51
 #, kde-format
@@ -318,8 +318,8 @@ msgid ""
 "File was exported with a newer version of Itinerary. Some information might "
 "not be imported correctly."
 msgstr ""
-"Dosya, Yol Kılavuzu’nun daha yeni bir sürümüyle dışa aktarılmış. Bazı "
-"bilgiler düzgünce içe aktarılmamış olabilir."
+"Dosya, Itinerary’nin daha yeni bir sürümüyle dışa aktarılmış. Bazı bilgiler "
+"düzgünce içe aktarılmamış olabilir."
 
 #: app/applicationcontroller.cpp:673
 #, kde-format
@@ -1065,7 +1065,7 @@ msgstr "Tür: <b>%1</b>"
 #: app/ExportMenuDialog.qml:32
 #, kde-format
 msgid "As Itinerary file…"
-msgstr "Yol Kılavuzu Dosyası Olarak…"
+msgstr "Itinerary Dosyası Olarak…"
 
 #: app/ExportMenuDialog.qml:42
 #, kde-format
@@ -1080,7 +1080,7 @@ msgstr "Gönder: %1"
 #: app/ExportMenuDialog.qml:81
 #, kde-format
 msgid "Itinerary file (*.itinerary)"
-msgstr "Yol Kılavuzu dosyası (*.itinerary)"
+msgstr "Itinerary dosyası (*.itinerary)"
 
 #: app/ExportMenuDialog.qml:98 app/FavoriteLocationPage.qml:38
 #: app/FavoriteLocationPage.qml:46
@@ -1550,7 +1550,7 @@ msgstr "Farklı Kaydet…"
 #: app/gpxexport.cpp:33 app/main.cpp:212 app/Main.qml:21 app/Main.qml:59
 #, kde-format
 msgid "KDE Itinerary"
-msgstr "KDE Yol Kılavuzu"
+msgstr "KDE Itinerary"
 
 #: app/gpxexport.cpp:47
 #, kde-format
@@ -1986,7 +1986,7 @@ msgstr "iCal etkinlikleri (*.ics)"
 #: app/ImportAction.qml:43 app/MyDataPage.qml:208 app/MyDataPage.qml:229
 #, kde-format
 msgid "KDE Itinerary files (*.itinerary)"
-msgstr "KDE Yol Kılavuzu dosyaları (*.itinerary)"
+msgstr "KDE Itinerary dosyaları (*.itinerary)"
 
 #: app/ImportAction.qml:51
 #, kde-format
@@ -2821,7 +2821,7 @@ msgstr "Matrix kripto kitaplığı"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open Itinerary on the given page"
-msgstr "Yol Kılavuzu’nu verilen sayfada aç"
+msgstr "Itinerary’yi verilen sayfada aç"
 
 #: app/main.cpp:261
 #, kde-format
@@ -4415,8 +4415,8 @@ msgid ""
 "Specifying the departure and arrival location helps Itinerary to find up-to-"
 "date information for the train this reservation is valid for."
 msgstr ""
-"Varış ve kalkış yerinin belirtilmesi, Yol Kılavuzu’nun bu rezervasyonun "
-"geçerli olduğu trene ilişkin güncel bilgileri bulmasına yardımcı olur."
+"Varış ve kalkış yerinin belirtilmesi, Itinerary’nin bu rezervasyonun geçerli "
+"olduğu trene ilişkin güncel bilgileri bulmasına yardımcı olur."
 
 #: app/TrainEditor.qml:231 app/TrainEditor.qml:336 app/TrainPage.qml:161
 #: app/TrainPage.qml:248
@@ -4972,7 +4972,7 @@ msgid ""
 "enable all this here, or check the settings for much more finegrained "
 "control over which services to use."
 msgstr ""
-"KDE Yol Kılavuzu’nda, çevrim içi erişim gerektiren tüm hizmetler öntanımlı "
+"KDE Itinerary’de, çevrim içi erişim gerektiren tüm hizmetler öntanımlı "
 "olarak devre dışıdır; örneğin, canlı trafik verisi veya hava durumu "
 "tahminleri. Tüm bunları buradan etkinleştirebilirsiniz veya hangi hizmetleri "
 "kullanacağınıza dair çok daha ayrıntılı denetim için ayarları kontrol "
