@@ -162,8 +162,8 @@ FormCard.FormCardPage {
         FormCard.FormButtonDelegate {
             text: i18n("Configure Notifications…")
             icon.name: "notifications"
-            onClicked: NotificationConfigController.configureNotifications()
-            enabled: NotificationConfigController.canConfigureNotification
+            onClicked: KNotification.NotificationConfiguration.show()
+            enabled: KNotification.NotificationConfiguration.isAvailable
         }
 
         FormCard.FormDelegateSeparator {}
