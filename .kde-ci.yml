@@ -39,8 +39,8 @@ Dependencies:
 RuntimeDependencies:
 - 'on': ['Linux']
   'require':
-    'plasma/qqc2-breeze-style': 'Frameworks/6.24'
-    'plasma/plasma-integration': 'Frameworks/6.24'
+    'plasma/qqc2-breeze-style': 'Plasma/6.6'
+    'plasma/plasma-integration': 'Plasma/6.6'
     'sdk/selenium-webdriver-at-spi': 'Plasma/6.6'
 
 Options:
