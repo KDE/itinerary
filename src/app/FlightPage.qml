@@ -111,7 +111,7 @@ PublicTransportPage {
         }
 
         FormCard.FormCard {
-            visible: boardingTimeLabel.visible || boardingGroupLabel.visible || seatLabel.visible || airlineNameLabel.visible
+            visible: root.reservationFor.boardingTime > 0 || root.reservation.boardingGroup || root.reservation.airplaneSeat || root.reservationFor.airline.name
 
             FormCard.FormTextDelegate {
                 id: boardingTimeLabel
