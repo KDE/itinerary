@@ -33,7 +33,10 @@ ColumnLayout {
             icon.name: root.passId !== "" ? "image://org.kde.pkpass/" + passId + "/icon" : ""
             text: root.reservation.className === "FlightReservation" ? i18n("Show Boarding Pass") : i18n("Show Ticket")
             visible: PkPassManager.hasPass(root.passId)
-            onTriggered: applicationWindow().pageStack.push(pkpassComponent, {"passId": root.passId });
+            onTriggered: applicationWindow().pageStack.push(Qt.createComponent("org.kde.itinerary", "PkPassPage"), {
+                                                                "pass": PkPassManager.pass(root.passId),
+                                                                "passId": root.passId
+                                                            });
         },
         Kirigami.Action {
             icon.name: KPublicTransport.JourneySectionMode.modeIconName(KPublicTransport.JourneySection.Transfer)
