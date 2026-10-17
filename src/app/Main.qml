@@ -134,19 +134,6 @@ Kirigami.ApplicationWindow {
         anchors.fill: parent
     }
 
-    Component {
-        id: hotelEditorPage
-        HotelEditor {}
-    }
-    Component {
-        id: eventEditorPage
-        EventEditor {}
-    }
-    Component {
-        id: restaurantEditorPage
-        RestaurantEditor {}
-    }
-
     Connections {
         target: ApplicationController
 
@@ -229,23 +216,6 @@ Kirigami.ApplicationWindow {
         if (Settings.performCurrencyConversion) {
             UnitConversion.syncCurrencyConversionTable();
         }
-    }
-
-    Component {
-        id: passComponent
-        PassPage {}
-    }
-    Component {
-        id: journeySectionPage
-        JourneySectionPage {}
-    }
-    Component {
-        id: journeyPathPage
-        JourneyPathPage {}
-    }
-    Component {
-        id: indoorMapPage
-        IndoorMapPage {}
     }
 
     WhatsNewDialog {
