@@ -19,9 +19,7 @@ PublicTransportPage {
 
     title: i18n("Bus Ticket")
 
-    editor: BusEditor {
-        controller: root.controller
-    }
+    editor: "BusEditor"
 
     ticketView: ColumnLayout {
         spacing: 0
@@ -261,6 +259,7 @@ PublicTransportPage {
         }
 
         ActionsCard {
+            controller: root.controller
             batchId: root.batchId
             reservationId: root.currentReservationId
             editor: root.editor
