@@ -17,9 +17,7 @@ PublicTransportPage {
 
     title: i18n("Boat Ticket")
 
-    editor: BoatEditor {
-        controller: root.controller
-    }
+    editor: "BoatEditor"
 
     ticketView: ColumnLayout {
         spacing: 0
@@ -180,6 +178,7 @@ PublicTransportPage {
         }
 
         ActionsCard {
+            controller: root.controller
             batchId: root.batchId
             reservationId: root.currentReservationId
             editor: root.editor

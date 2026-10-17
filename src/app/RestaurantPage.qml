@@ -74,6 +74,7 @@ ScrollableDetailsPage {
         }
 
         ActionsCard {
+            controller: root.controller
             batchId: root.batchId
             reservationId: root.currentReservationId
             editor: root.editor

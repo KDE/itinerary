@@ -21,9 +21,7 @@ PublicTransportPage {
     padding: 0
 
     title: i18n("Train Ticket")
-    editor: TrainEditor {
-        controller: root.controller
-    }
+    editor: "TrainEditor"
 
     Component {
         id: vehicleLayoutPage
@@ -326,6 +324,7 @@ PublicTransportPage {
         }
 
         ActionsCard {
+            controller: root.controller
             batchId: root.batchId
             reservationId: root.currentReservationId
             editor: root.editor
