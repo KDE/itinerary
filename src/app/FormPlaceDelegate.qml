@@ -54,30 +54,6 @@ FormCard.FormButtonDelegate {
     }
 
     Component {
-        id: departuresPage
-
-        DepartureQueryPage {
-            stop: PublicTransport.locationFromPlace(root.place)
-            dateTime: root.isRangeBegin ? root.controller.startTime : root.controller.effectiveEndTime
-        }
-    }
-
-    Component {
-        id: matrixRoomDialog
-
-        MatrixRoomSelectionSheet {
-            parent: root.QQC2.Overlay.overlay
-            onRoomSelected: room => {
-                console.log("Sharing with", room.id, room.displayName);
-                const dialog = shareConfirmDialog.createObject(root, {
-                    room: room,
-                });
-                dialog.openDialog();
-             }
-         }
-    }
-
-    Component {
         id: shareConfirmDialog
 
         Addons.MessageDialog {
@@ -172,7 +148,10 @@ FormCard.FormButtonDelegate {
             Kirigami.Action {
                 visible: root.place != undefined && root.place.geo.isValid
                 icon.name: "view-calendar-day"
-                onTriggered: applicationWindow().pageStack.push(departuresPage)
+                onTriggered: applicationWindow().pageStack.push(Qt.createComponent("org.kde.itinerary", "DepartureQueryPage"), {
+                                                                    stop: PublicTransport.locationFromPlace(root.place),
+                                                                    dateTime: root.isRangeBegin ? root.controller.startTime : root.controller.effectiveEndTime
+                                                                })
                 text: i18nc("@action:button", "Public Transport Departures")
             }
 
@@ -182,8 +161,15 @@ FormCard.FormButtonDelegate {
                 enabled: MatrixController.manager.connected
                 icon.name: "emblem-shared-symbolic"
                 onTriggered: {
-                    const dialog = matrixRoomDialog.createObject(root);
-                    dialog.open();
+                    let sheet = Qt.createComponent("org.kde.itinerary", "MatrixRoomSelectionSheet").createObject(root.QQC2.Overlay.overlay)
+                    sheet.roomSelected.connect(room => {
+                        console.log("Sharing with", room.id, room.displayName);
+                        const dialog = shareConfirmDialog.createObject(root, {
+                            room: room,
+                        });
+                        dialog.openDialog();
+                    })
+                    sheet.open()
                 }
 
                 text: i18nc("@action:button", "Share via Matrix")
