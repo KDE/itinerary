@@ -61,11 +61,8 @@ Kirigami.Action {
         text: i18nc("@action:inmenu", "From barcode")
         icon.name: "view-barcode-qr"
         onTriggered: {
-            root.pageStack.layers.push(scanBarcodeComponent);
-        }
-
-        readonly property Component scanBarcodeComponent: BarcodeScannerPage {
-            onBarcodeDetected: (result) => {
+            let item = root.pageStack.layers.push(Qt.createComponent("org.kde.itinerary", "BarcodeScannerPage"));
+            item.barcodeDetected.connect((result) => {
                 const prevCount = ImportController.count;
                 if (result.hasText) {
                     ImportController.importText(result.text);
@@ -75,7 +72,7 @@ Kirigami.Action {
                 if (ImportController.count != prevCount) {
                     applicationWindow().pageStack.goBack();
                 }
-            }
+            })
         }
     }
 
