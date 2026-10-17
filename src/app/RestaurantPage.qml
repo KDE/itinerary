@@ -15,6 +15,8 @@ ScrollableDetailsPage {
 
     title: i18n("Restaurant Reservation")
 
+    editor: "RestaurantEditor"
+
     ColumnLayout {
         spacing: 0
 

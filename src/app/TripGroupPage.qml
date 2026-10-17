@@ -215,7 +215,7 @@ Kirigami.ScrollablePage {
                     res.checkinTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), 15, 0);
                     res.checkoutTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate() + 1, 11, 0);
                 }
-                applicationWindow().pageStack.push(hotelEditorPage, {reservation: res});
+                applicationWindow().pageStack.push(Qt.createComponent("org.kde.itinerary", "HotelEditor"), {reservation: res});
             }
         },
         QQC2.Action {
@@ -231,7 +231,7 @@ Kirigami.ScrollablePage {
                     ev.startDate = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), dt.getHours() == 0 ? 8 : dt.getHours() + 1, 0);
                 }
                 res.reservationFor = ev;
-                applicationWindow().pageStack.push(eventEditorPage, {reservation: res});
+                applicationWindow().pageStack.push(Qt.createComponent("org.kde.itinerary", "EventEditor"), {reservation: res});
             }
         },
         QQC2.Action {
@@ -246,7 +246,7 @@ Kirigami.ScrollablePage {
                     res.startTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), 20, 0);
                     res.endTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), 22, 0);
                 }
-                applicationWindow().pageStack.push(restaurantEditorPage, {reservation: res});
+                applicationWindow().pageStack.push(Qt.createComponent("org.kde.itinerary", "RestaurantEditor"), {reservation: res});
             }
         }
     ]

@@ -14,6 +14,8 @@ ScrollableDetailsPage {
     id: root
     title: i18nc("event as in concert/conference/show, not as in appointment", "Event")
 
+    editor: "EventEditor"
+
     data: BarcodeScanModeButton {
         id: scanModeButton
         page: root
