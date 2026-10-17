@@ -317,47 +317,6 @@ Kirigami.ScrollablePage {
     }
 
     Component {
-        id: tripGroupMapPage
-        TripGroupMapPage { tripGroupId: root.tripGroupId }
-    }
-
-    Component {
-        id: flightDetailsPage
-        FlightPage {}
-    }
-    Component {
-        id: trainDetailsPage
-        TrainPage {}
-    }
-    Component {
-        id: busDetailsPage
-        BusPage {}
-    }
-    Component {
-        id: hotelDetailsPage
-        HotelPage { editor: hotelEditorPage }
-    }
-    Component {
-        id: eventDetailsPage
-        EventPage { editor: eventEditorPage }
-    }
-    Component {
-        id: restaurantDetailsPage
-        RestaurantPage { editor: restaurantEditorPage }
-    }
-    Component {
-        id: carRentalDetailsPage
-        CarRentalPage {}
-    }
-    Component {
-        id: boatDetailsPage
-        BoatPage {}
-    }
-    Component {
-        id: touristAttractionDetailsPage
-        TouristAttractionPage {}
-    }
-    Component {
         id: weatherForecastPage
         WeatherForecastPage {}
     }
@@ -368,14 +327,14 @@ Kirigami.ScrollablePage {
             return undefined;
         }
         switch (res.className) {
-            case "FlightReservation": return flightDetailsPage;
-            case "TrainReservation": return trainDetailsPage;
-            case "BusReservation": return busDetailsPage;
-            case "LodgingReservation": return hotelDetailsPage;
-            case "EventReservation": return eventDetailsPage;
-            case "FoodEstablishmentReservation": return restaurantDetailsPage;
-            case "RentalCarReservation": return carRentalDetailsPage;
-            case "TouristAttractionVisit": return touristAttractionDetailsPage;
+            case "FlightReservation": return "FlightPage";
+            case "TrainReservation": return "TrainPage";
+            case "BusReservation": return "BusPage";
+            case "LodgingReservation": return "HotelPage";
+            case "EventReservation": return "EeventPage";
+            case "FoodEstablishmentReservation": return "RestaurantPage";
+            case "RentalCarReservation": return "CarRentalPage";
+            case "TouristAttractionVisit": return "TouristAttractionPage";
         }
         console.log("unhandled reservation type:", res.className);
         return undefined;
@@ -510,7 +469,9 @@ Kirigami.ScrollablePage {
                     icon.name: "map-globe"
                     text: i18n("Show map…")
                     visible: !root.isEmptyTripGroup
-                    onClicked: applicationWindow().pageStack.push(tripGroupMapPage);
+                    onClicked: applicationWindow().pageStack.push(Qt.createComponent("org.kde.itinerary", "TripGroupMapPage"), {
+                        tripGroupId: root.tripGroupId
+                    });
                 }
             }
 
@@ -572,7 +533,7 @@ Kirigami.ScrollablePage {
                 FlightDelegate {
                     batchId: model.batchId
                     rangeType: model.rangeType
-                    detailsPage: flightDetailsPage
+                    detailsPage: "FlightPage"
                 }
             }
             DelegateChoice {
@@ -580,7 +541,7 @@ Kirigami.ScrollablePage {
                 HotelDelegate {
                     batchId: model.batchId
                     rangeType: model.rangeType
-                    detailsPage: hotelDetailsPage
+                    detailsPage: "HotelPage"
                 }
             }
             DelegateChoice {
@@ -588,7 +549,7 @@ Kirigami.ScrollablePage {
                 TrainDelegate {
                     batchId: model.batchId
                     rangeType: model.rangeType
-                    detailsPage: trainDetailsPage
+                    detailsPage: "TrainPage"
                 }
             }
             DelegateChoice {
@@ -596,7 +557,7 @@ Kirigami.ScrollablePage {
                 BusDelegate {
                     batchId: model.batchId
                     rangeType: model.rangeType
-                    detailsPage: busDetailsPage
+                    detailsPage: "BusPage"
                 }
             }
             DelegateChoice {
@@ -604,7 +565,7 @@ Kirigami.ScrollablePage {
                 RestaurantDelegate {
                     batchId: model.batchId
                     rangeType: model.rangeType
-                    detailsPage: restaurantDetailsPage
+                    detailsPage: "RestaurantPage"
                 }
             }
             DelegateChoice {
@@ -612,7 +573,7 @@ Kirigami.ScrollablePage {
                 TouristAttractionDelegate {
                     batchId: model.batchId
                     rangeType: model.rangeType
-                    detailsPage: touristAttractionDetailsPage
+                    detailsPage: "TouristAttractionPage"
                 }
             }
             DelegateChoice {
@@ -620,7 +581,7 @@ Kirigami.ScrollablePage {
                 EventDelegate {
                     batchId: model.batchId
                     rangeType: model.rangeType
-                    detailsPage: eventDetailsPage
+                    detailsPage: "EventPage"
                 }
             }
             DelegateChoice {
@@ -628,7 +589,7 @@ Kirigami.ScrollablePage {
                 CarRentalDelegate {
                     batchId: model.batchId
                     rangeType: model.rangeType
-                    detailsPage: carRentalDetailsPage
+                    detailsPage: "CarRentalPage"
                 }
             }
             DelegateChoice {
@@ -636,7 +597,7 @@ Kirigami.ScrollablePage {
                 BoatDelegate {
                     batchId: model.batchId
                     rangeType: model.rangeType
-                    detailsPage: boatDetailsPage
+                    detailsPage: "BoatPage"
                 }
             }
             DelegateChoice {
@@ -672,109 +633,116 @@ Kirigami.ScrollablePage {
             }
         }
 
-        footer: ColumnLayout {
-            width: listView.width
-            spacing: 0
+        footer: Loader {
+            active: true
 
-            FormCard.FormHeader {
-                title: i18n("Statistics")
-                visible: distanceStats.visible || co2Stats.visible || costStats.visible
-            }
-            FormCard.FormCard {
-                visible: distanceStats.visible || co2Stats.visible || costStats.visible
-                FormCard.FormTextDelegate {
-                    id: distanceStats
-                    text: i18n("Distance")
-                    description: CoreAddons.Format.formatDistance(root.controller.totalDistance, Settings.distanceFormat)
-                    visible: root.controller.totalDistance > 0
-                }
-                FormCard.FormDelegateSeparator {
-                    visible: distanceStats.visible
-                }
-                FormCard.FormTextDelegate {
-                    id: co2Stats
-                    text: i18n("CO₂")
-                    description: Localizer.formatWeight(root.controller.totalCO2Emission)
-                    visible: root.controller.totalCO2Emission > 0
-                }
-                FormCard.FormDelegateSeparator {
-                    visible: co2Stats.visible
-                }
-                FormCard.FormTextDelegate {
-                    id: costStats
-                    text: i18n("Cost")
-                    description: Localizer.formatCurrency(root.controller.totalCost.value, root.controller.totalCost.currency)
-                    visible: !isNaN(root.controller.totalCost.value)
-                }
-            }
+            asynchronous: true
+            visible: status == Loader.Ready
 
-            FormCard.FormHeader {
-                title: i18n("Actions")
-            }
+            sourceComponent: ColumnLayout {
+                width: listView.width
+                spacing: 0
 
-            FormCard.FormCard {
-                FormCard.FormButtonDelegate {
-                    action: Kirigami.Action {
-                        text: i18n("Check for Updates")
-                        icon.name: "view-refresh"
+                FormCard.FormHeader {
+                    title: i18n("Statistics")
+                    visible: distanceStats.visible || co2Stats.visible || costStats.visible
+                }
+                FormCard.FormCard {
+                    visible: distanceStats.visible || co2Stats.visible || costStats.visible
+                    FormCard.FormTextDelegate {
+                        id: distanceStats
+                        text: i18n("Distance")
+                        description: CoreAddons.Format.formatDistance(root.controller.totalDistance, Settings.distanceFormat)
+                        visible: root.controller.totalDistance > 0
+                    }
+                    FormCard.FormDelegateSeparator {
+                        visible: distanceStats.visible
+                    }
+                    FormCard.FormTextDelegate {
+                        id: co2Stats
+                        text: i18n("CO₂")
+                        description: Localizer.formatWeight(root.controller.totalCO2Emission)
+                        visible: root.controller.totalCO2Emission > 0
+                    }
+                    FormCard.FormDelegateSeparator {
+                        visible: co2Stats.visible
+                    }
+                    FormCard.FormTextDelegate {
+                        id: costStats
+                        text: i18n("Cost")
+                        description: Localizer.formatCurrency(root.controller.totalCost.value, root.controller.totalCost.currency)
+                        visible: !isNaN(root.controller.totalCost.value)
+                    }
+                }
+
+                FormCard.FormHeader {
+                    title: i18n("Actions")
+                }
+
+                FormCard.FormCard {
+                    FormCard.FormButtonDelegate {
+                        action: Kirigami.Action {
+                            text: i18n("Check for Updates")
+                            icon.name: "view-refresh"
+                            enabled: QtNetwork.NetworkInformation.reachability === QtNetwork.NetworkInformation.Reachability.Online || QtNetwork.NetworkInformation.reachability === QtNetwork.NetworkInformation.Reachability.Unknown
+                            shortcut: StandardKey.Refresh
+                            onTriggered: LiveDataManager.checkForUpdates(root.tripGroup.elements);
+                        }
+                        visible: !root.isEmptyTripGroup && !root.controller.isPastTrip
+                    }
+                    FormCard.FormButtonDelegate {
+                        text: i18n("Rename…")
+                        icon.name: "edit-rename"
+                        onClicked: {
+                            tripGroupEditor.tripGroupId = root.tripGroupId;
+                            tripGroupEditor.tripGroup = root.tripGroup;
+                            tripGroupEditor.open();
+                        }
+                    }
+                    FormCard.FormButtonDelegate {
+                        text: i18n("Merge trips…")
+                        icon.name: "merge"
+                        enabled: root.controller.canMerge
+                        visible: !root.isEmptyTripGroup
+                        onClicked: {
+                            tripGroupMergeDialog.tripGroupId = root.tripGroupId;
+                            tripGroupMergeDialog.tripGroup = root.tripGroup;
+                            tripGroupMergeDialog.open();
+                        }
+                    }
+                    FormCard.FormButtonDelegate {
+                        text: i18n("Split trip…")
+                        icon.name: "split"
+                        enabled: root.controller.canSplit
+                        visible: !root.isEmptyTripGroup
+                        onClicked: applicationWindow().pageStack.push(tripGroupSplitPage, { tripGroup: root.tripGroup });
+                    }
+                    FormCard.FormButtonDelegate {
+                        text: i18n("Download Maps")
+                        icon.name: "download"
+                        icon.color: QtNetwork.NetworkInformation.isMetered ? Kirigami.Theme.neutralTextColor : Kirigami.Theme.textColor
                         enabled: QtNetwork.NetworkInformation.reachability === QtNetwork.NetworkInformation.Reachability.Online || QtNetwork.NetworkInformation.reachability === QtNetwork.NetworkInformation.Reachability.Unknown
-                        shortcut: StandardKey.Refresh
-                        onTriggered: LiveDataManager.checkForUpdates(root.tripGroup.elements);
+                        visible: !root.isEmptyTripGroup && !root.controller.isPastTrip
+                        onClicked: MapDownloadManager.download(root.tripGroup.elements);
                     }
-                    visible: !root.isEmptyTripGroup && !root.controller.isPastTrip
-                }
-                FormCard.FormButtonDelegate {
-                    text: i18n("Rename…")
-                    icon.name: "edit-rename"
-                    onClicked: {
-                        tripGroupEditor.tripGroupId = root.tripGroupId;
-                        tripGroupEditor.tripGroup = root.tripGroup;
-                        tripGroupEditor.open();
+                    FormCard.FormButtonDelegate {
+                        text: i18n("Export…")
+                        icon.name: "document-export-symbolic"
+                        enabled: !root.isEmptyTripGroup
+                        visible: !root.isEmptyTripGroup
+                        onClicked: exportTripGroupDialog.open()
                     }
-                }
-                FormCard.FormButtonDelegate {
-                    text: i18n("Merge trips…")
-                    icon.name: "merge"
-                    enabled: root.controller.canMerge
-                    visible: !root.isEmptyTripGroup
-                    onClicked: {
-                        tripGroupMergeDialog.tripGroupId = root.tripGroupId;
-                        tripGroupMergeDialog.tripGroup = root.tripGroup;
-                        tripGroupMergeDialog.open();
+                    FormCard.FormButtonDelegate {
+                        text: i18n("Delete trip")
+                        icon.name: "edit-delete"
+                        onClicked: deleteTripGroupWarningDialog.open()
                     }
                 }
-                FormCard.FormButtonDelegate {
-                    text: i18n("Split trip…")
-                    icon.name: "split"
-                    enabled: root.controller.canSplit
-                    visible: !root.isEmptyTripGroup
-                    onClicked: applicationWindow().pageStack.push(tripGroupSplitPage, { tripGroup: root.tripGroup });
+                // spacer for the floating buttons
+                Item {
+                    visible: floatingButtons.visible
+                    height: root.width < Kirigami.Units.gridUnit * 30 + floatingButtons.width * 2 ? floatingButtons.height : 0
                 }
-                FormCard.FormButtonDelegate {
-                    text: i18n("Download Maps")
-                    icon.name: "download"
-                    icon.color: QtNetwork.NetworkInformation.isMetered ? Kirigami.Theme.neutralTextColor : Kirigami.Theme.textColor
-                    enabled: QtNetwork.NetworkInformation.reachability === QtNetwork.NetworkInformation.Reachability.Online || QtNetwork.NetworkInformation.reachability === QtNetwork.NetworkInformation.Reachability.Unknown
-                    visible: !root.isEmptyTripGroup && !root.controller.isPastTrip
-                    onClicked: MapDownloadManager.download(root.tripGroup.elements);
-                }
-                FormCard.FormButtonDelegate {
-                    text: i18n("Export…")
-                    icon.name: "document-export-symbolic"
-                    enabled: !root.isEmptyTripGroup
-                    visible: !root.isEmptyTripGroup
-                    onClicked: exportTripGroupDialog.open()
-                }
-                FormCard.FormButtonDelegate {
-                    text: i18n("Delete trip")
-                    icon.name: "edit-delete"
-                    onClicked: deleteTripGroupWarningDialog.open()
-                }
-            }
-            // spacer for the floating buttons
-            Item {
-                visible: floatingButtons.visible
-                height: root.width < Kirigami.Units.gridUnit * 30 + floatingButtons.width * 2 ? floatingButtons.height : 0
             }
         }
     }

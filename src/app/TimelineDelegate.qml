@@ -50,7 +50,7 @@ FormCard.FormCard {
         while (applicationWindow().pageStack.depth > 1 && !applicationWindow().pageStack.currentItem as TripGroupPage) {
             applicationWindow().pageStack.pop();
         }
-        applicationWindow().pageStack.push(root.detailsPage, { batchId: root.batchId });
+        applicationWindow().pageStack.push(Qt.createComponent("org.kde.itinerary", root.detailsPage), { batchId: root.batchId });
     }
 
     /** @c true if we have at least one seat reserverion in this batch. */
