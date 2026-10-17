@@ -115,57 +115,62 @@ DetailsPage {
         active: root.controller.journey && (root.controller.journey.intermediateStops.length > 0 || !root.controller.journey.path.isEmpty)
         asynchronous: true
 
-        sourceComponent: JourneySectionMapView {
+        sourceComponent: Loader {
             // Hack to prevent SwipeView from allowing to swipe to the map when it is not active
             parent: view
             visible: mapLoader.status == Loader.Ready
 
-            attribution.anchors.bottomMargin: root.width < floatingToolBar.implicitWidth + attribution.implicitWidth * 2
-                                              ? Kirigami.Units.largeSpacing * 2 + floatingToolBar.implicitHeight
-                                              : Kirigami.Units.largeSpacing
+            // lazy load
+            active: view.currentIndex === 2 || status === Loader.Ready // don't unload
 
-            id: map
-            journeySection: root.controller.trip
+            sourceComponent: JourneySectionMapView {
+                attribution.anchors.bottomMargin: root.width < floatingToolBar.implicitWidth + attribution.implicitWidth * 2
+                                                  ? Kirigami.Units.largeSpacing * 2 + floatingToolBar.implicitHeight
+                                                  : Kirigami.Units.largeSpacing
 
-            data: [
-                MapStopoverInfoSheetDrawer {
-                    id: sheetDrawer
+                id: map
+                journeySection: root.controller.trip
 
-                    parent: root.QQC2.Overlay.overlay
-                }
-            ]
+                data: [
+                    MapStopoverInfoSheetDrawer {
+                        id: sheetDrawer
 
-            onStopoverClicked: elem => {
-                sheetDrawer.isArrival = elem.isArrival;
-                sheetDrawer.isDeparture = elem.isDeparture;
-                sheetDrawer.stop = elem.stopover;
-                sheetDrawer.popup();
-            }
+                        parent: root.QQC2.Overlay.overlay
+                    }
+                ]
 
-            MapPin {
-                iconName: "media-playback-start"
-                coordinate {
-                    latitude: root.controller.journey.stopover(root.departureStopIndex).stopPoint.latitude
-                    longitude: root.controller.journey.stopover(root.departureStopIndex).stopPoint.longitude
-                }
-                onClicked: {
-                    sheetDrawer.isArrival = false;
-                    sheetDrawer.isDeparture = true;
-                    sheetDrawer.stop = root.controller.journey.stopover(root.departureStopIndex);
+                onStopoverClicked: elem => {
+                    sheetDrawer.isArrival = elem.isArrival;
+                    sheetDrawer.isDeparture = elem.isDeparture;
+                    sheetDrawer.stop = elem.stopover;
                     sheetDrawer.popup();
                 }
-            }
-            MapPin {
-                iconName: "media-playback-stop"
-                coordinate {
-                    latitude: root.controller.journey.stopover(root.arrivalStopIndex).stopPoint.latitude
-                    longitude: root.controller.journey.stopover(root.arrivalStopIndex).stopPoint.longitude
+
+                MapPin {
+                    iconName: "media-playback-start"
+                    coordinate {
+                        latitude: root.controller.journey.stopover(root.departureStopIndex).stopPoint.latitude
+                        longitude: root.controller.journey.stopover(root.departureStopIndex).stopPoint.longitude
+                    }
+                    onClicked: {
+                        sheetDrawer.isArrival = false;
+                        sheetDrawer.isDeparture = true;
+                        sheetDrawer.stop = root.controller.journey.stopover(root.departureStopIndex);
+                        sheetDrawer.popup();
+                    }
                 }
-                onClicked: {
-                    sheetDrawer.isArrival = true;
-                    sheetDrawer.isDeparture = false;
-                    sheetDrawer.stop = root.controller.journey.stopover(root.arrivalStopIndex);
-                    sheetDrawer.popup();
+                MapPin {
+                    iconName: "media-playback-stop"
+                    coordinate {
+                        latitude: root.controller.journey.stopover(root.arrivalStopIndex).stopPoint.latitude
+                        longitude: root.controller.journey.stopover(root.arrivalStopIndex).stopPoint.longitude
+                    }
+                    onClicked: {
+                        sheetDrawer.isArrival = true;
+                        sheetDrawer.isDeparture = false;
+                        sheetDrawer.stop = root.controller.journey.stopover(root.arrivalStopIndex);
+                        sheetDrawer.popup();
+                    }
                 }
             }
         }
