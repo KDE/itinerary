@@ -98,15 +98,22 @@ DetailsPage {
         id: sectionDetailsLoader
         active: root.controller.journey && (root.controller.journey.from.name && root.controller.journey.to.name || root.controller.journey.intermediateStops.length > 0 || !root.controller.journey.path.isEmpty)
         asynchronous: true
-        sourceComponent: JourneySectionView {
+        sourceComponent: Loader {
             // Hack to prevent SwipeView from allowing to swipe to the details while not active
             parent: view
             visible: sectionDetailsLoader.status == Loader.Ready
 
-            journeySection: root.controller.trip
-            departureStopIndex: root.controller.tripDepartureIndex
-            arrivalStopIndex: root.controller.tripArrivalIndex
-            showProgress: root.controller.isCurrent
+            // lazy load
+            active: view.currentIndex === 1 || status === Loader.Ready // don't unload
+
+            JourneySectionView {
+                anchors.fill: parent
+
+                journeySection: root.controller.trip
+                departureStopIndex: root.controller.tripDepartureIndex
+                arrivalStopIndex: root.controller.tripArrivalIndex
+                showProgress: root.controller.isCurrent
+            }
         }
     }
 
