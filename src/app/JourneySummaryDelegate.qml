@@ -64,42 +64,50 @@ FormCard.AbstractFormDelegate {
                 Layout.fillWidth: true
             }
 
-            KPublicTransport.OccupancyIndicator {
-                occupancy: root.journey.maximumOccupancy
+            Loader {
+                active: root.journey.maximumOccupancy !== Load.Category.Unknown
                 Layout.preferredHeight: Kirigami.Units.iconSizes.small
                 Layout.preferredWidth: Kirigami.Units.iconSizes.small
                 Layout.minimumWidth: Kirigami.Units.iconSizes.small
+
+                sourceComponent: KPublicTransport.OccupancyIndicator {
+                    occupancy: root.journey.maximumOccupancy
+                }
             }
         }
 
-        RowLayout {
-            spacing: Kirigami.Units.smallSpacing
-            visible: (root.journey.hasExpectedDepartureTime || root.journey.hasExpectedArrivalTime) && root.journey.disruptionEffect !== Disruption.NoService
+        Loader {
+            active: (root.journey.hasExpectedDepartureTime || root.journey.hasExpectedArrivalTime) && root.journey.disruptionEffect !== Disruption.NoService
+            visible: active
 
-            Layout.fillWidth: true
+            sourceComponent: RowLayout {
+                spacing: Kirigami.Units.smallSpacing
 
-            Kirigami.Heading {
-                readonly property bool hasDepartureDelay: root.journey.departureDelay > 0
+                Layout.fillWidth: true
 
-                level: 4
-                text: root.journey.hasExpectedDepartureTime ? Localizer.formatTime(root.journey, "expectedDepartureTime") : ''
-                color: hasDepartureDelay ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
-                font.weight: Font.DemiBold
-                Layout.minimumWidth: departureTimeLabel.width
-            }
+                Kirigami.Heading {
+                    readonly property bool hasDepartureDelay: root.journey.departureDelay > 0
 
-            Item {
-                Layout.minimumWidth: separatorLabel.width
-            }
+                    level: 4
+                    text: root.journey.hasExpectedDepartureTime ? Localizer.formatTime(root.journey, "expectedDepartureTime") : ''
+                    color: hasDepartureDelay ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
+                    font.weight: Font.DemiBold
+                    Layout.minimumWidth: departureTimeLabel.width
+                }
 
-            Kirigami.Heading {
-                readonly property bool hasArrivalDelay: root.journey.arrivalDelay > 0
+                Item {
+                    Layout.minimumWidth: separatorLabel.width
+                }
 
-                level: 4
-                text: root.journey.hasExpectedArrivalTime ? Localizer.formatTime(root.journey, "expectedArrivalTime") : ''
-                color: hasArrivalDelay ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
-                font.weight: Font.DemiBold
-                Layout.minimumWidth: arrivalTimeLabel.width
+                Kirigami.Heading {
+                    readonly property bool hasArrivalDelay: root.journey.arrivalDelay > 0
+
+                    level: 4
+                    text: root.journey.hasExpectedArrivalTime ? Localizer.formatTime(root.journey, "expectedArrivalTime") : ''
+                    color: hasArrivalDelay ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
+                    font.weight: Font.DemiBold
+                    Layout.minimumWidth: arrivalTimeLabel.width
+                }
             }
         }
 
@@ -107,8 +115,6 @@ FormCard.AbstractFormDelegate {
             id: sectionsRow
             Layout.fillWidth: true
             journey: root.journey
-
-            clip: true
         }
 
         QQC2.Label {

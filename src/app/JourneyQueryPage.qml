@@ -36,7 +36,7 @@ Kirigami.ScrollablePage {
 
         clip: true
         reuseItems: true
-        cacheBuffer: height
+        cacheBuffer: height / 2
 
         delegate: FormCard.FormCard {
             id: topDelegate
@@ -131,7 +131,7 @@ Kirigami.ScrollablePage {
                         }
                     }
 
-                    sourceComponent: journeyView.currentIndex == topDelegate.index ? expanded : compact
+                    sourceComponent: journeyView.currentIndex === topDelegate.index ? expanded : compact
                 }
             }
         }
