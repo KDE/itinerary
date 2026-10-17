@@ -22,11 +22,15 @@ Kirigami.ScrollablePage {
         }
     ]
 
-    TripGroupEditorDialog {
-        id: createTripDialog
-        onAccepted: {
-            const tgId = TripGroupManager.createEmptyGroup(createTripDialog.tripGroupName);
-            root.openTripGroupPage(tgId);
+    Component {
+        id: createTripDialogComponent
+
+        TripGroupEditorDialog {
+            id: createTripDialog
+            onAccepted: {
+                const tgId = TripGroupManager.createEmptyGroup(createTripDialog.tripGroupName);
+                root.openTripGroupPage(tgId);
+            }
         }
     }
 
@@ -82,7 +86,10 @@ Kirigami.ScrollablePage {
             helpfulAction: Kirigami.Action {
                 text: i18nc("@action:button", "Add trip")
                 icon.name: "list-add-symbolic"
-                onTriggered: createTripDialog.open();
+                onTriggered: {
+                    let dialog = createTripDialogComponent.createObject(root)
+                    dialog.open();
+                }
             }
         }
     }
@@ -117,7 +124,10 @@ Kirigami.ScrollablePage {
         action: Kirigami.Action{
             text: i18nc("@action:button", "Add trip")
             icon.name: "list-add-symbolic"
-            onTriggered: createTripDialog.open()
+            onTriggered:  {
+                let dialog = createTripDialogComponent.createObject(root)
+                dialog.open();
+            }
         }
     }
 
