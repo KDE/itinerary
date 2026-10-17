@@ -15,6 +15,8 @@ ScrollableDetailsPage {
 
     title: i18n("Hotel Reservation")
 
+    editor: "HotelEditor"
+
     data: BarcodeScanModeButton {
         id: scanModeButton
         page: root

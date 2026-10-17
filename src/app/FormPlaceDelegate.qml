@@ -119,7 +119,7 @@ FormCard.FormButtonDelegate {
                         args = root.controller.mapArguments();
                     }
                     console.log(JSON.stringify(args));
-                    applicationWindow().pageStack.push(indoorMapPage, args);
+                    applicationWindow().pageStack.push(Qt.createComponent("org.kde.itinerary", "IndoorMapPage"), args);
                 }
                 text: i18nc("@action:button", "View Indoor Map")
             }

@@ -29,11 +29,11 @@ FormCard.AbstractFormDelegate {
 
     onClicked: {
         if (modelData.mode == JourneySection.PublicTransport) {
-            applicationWindow().pageStack.push(journeySectionPage, {
+            applicationWindow().pageStack.push(Qt.createComponent("org.kde.itinerary", "JourneySectionPage"), {
                 journeySection: root.modelData,
             });
         } else if (modelData.path.sections.length > 1) {
-            applicationWindow().pageStack.push(journeyPathPage, {
+            applicationWindow().pageStack.push(Qt.createComponent("org.kde.itinerary", "JourneyPathPage"), {
                 path: root.modelData.path,
             });
         }
