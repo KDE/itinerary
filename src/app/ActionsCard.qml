@@ -20,9 +20,10 @@ ColumnLayout {
 
     spacing: 0
 
+    property TimelineDelegateController controller
     property string batchId
     property string reservationId
-    property var editor
+    property string editor
     property var reservation
     property list<QQC2.Action> additionalActions
 
@@ -56,8 +57,12 @@ ColumnLayout {
         Kirigami.Action {
             icon.name: "document-edit"
             text: i18n("Edit")
-            visible: root.editor != undefined
-            onTriggered: applicationWindow().pageStack.push(editor, {batchId: root.batchId, reservationId: root.reservationId});
+            visible: root.editor
+            onTriggered: applicationWindow().pageStack.push(Qt.createComponent("org.kde.itinerary", editor), {
+                                                                batchId: root.batchId,
+                                                                reservationId: root.reservationId,
+                                                                controller: root.controller
+                                                            });
         },
         Kirigami.Action {
             icon.name: "view-calendar-day"

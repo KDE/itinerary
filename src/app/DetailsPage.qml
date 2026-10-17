@@ -21,7 +21,8 @@ Kirigami.Page {
     property var reservation: ReservationManager.reservation(currentReservationId);
     /** Reservation::reservationFor, unique for all travelers on a multi-traveler reservation set */
     readonly property var reservationFor: reservation.reservationFor
-    property Component editor
+    /** Name of the component that provides the editor **/
+    property string editor
     property var reservationIds: ReservationManager.reservationsForBatch(root.batchId)
 
     readonly property string seatSectionString: {

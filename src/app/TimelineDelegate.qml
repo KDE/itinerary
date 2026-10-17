@@ -27,7 +27,7 @@ FormCard.FormCard {
     property var rangeType
 
     /** Details page to show when clicking the delegate. */
-    property Component detailsPage: null
+    property string detailsPage: ""
 
     property alias contentItem: content.contentItem
     signal clicked
