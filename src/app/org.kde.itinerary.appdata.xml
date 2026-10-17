@@ -964,6 +964,7 @@
           <li xml:lang="cs">Nové nebo vylepšené extraktory cestovních dokladů pro společnosti Accor, ALSA, Delta Air Lines, Entur, Frontier Airlines, Ouigo a Snållåget.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para Accor, ALSA, Delta Air Lines, Entur, Frontier Airlines, Ouigo y Snållåget.</li>
           <li xml:lang="fr">Améliorations d'extracteurs ou nouveaux extracteurs de documents de voyage pour Accor, ALSA, Delta Air Lines, Entur, Frontier Airlines, Ouigo et Snållåget.</li>
+          <li xml:lang="he">מחלצי מסמכי נסיעות משופרים עבור Accor,‏ ALSA,‏ Delta Air Lines,‏ Entur,‏ Frontier Airlines,‏ Ouigo ו־Snållåget.</li>
           <li xml:lang="ia">Nove e meliorate extractores de documentos de viage  pro Accor, ALSA, Delta Air Lines, Entur, Frontier Airlines, Ouigo e Snållåget.</li>
           <li xml:lang="it">Estrattori di documenti di viaggio nuovi o migliorati per Accor, ALSA, Delta Air Lines, Entur, Frontier Airlines, Ouigo e Snållåget.</li>
           <li xml:lang="ka">ახალი, ან გაუმჯობესებული სამგზავრო დოკუმენტების ამომკრებები for Accor, ALSA, Delta Air Lines, Entur, Frontier Airlines, Ouigo და Snållåget სისტემებისთვის.</li>
@@ -980,6 +981,7 @@
           <li xml:lang="cs">Opravena chyba, kvůli které se nezobrazoval varovný indikátor nedostupného přenosu.</li>
           <li xml:lang="es">Se ha corregido el problema por el cual no se mostraba el indicador de advertencia de transferencia inaccesible.</li>
           <li xml:lang="fr">Correction de l'indicateur d'avertissement de transfert inaccessible qui ne s'affichait pas.</li>
+          <li xml:lang="he">תוקנה תקלה שמחוון אזהרת העברה בלתי נגישה לא מופיע.</li>
           <li xml:lang="it">Risolto il problema per cui l'indicatore di avviso di trasferimento irraggiungibile non veniva visualizzato.</li>
           <li xml:lang="ka">გასწორდა შემთხვევა, როცა ხელმიუწვდომელი გადაცემის გაფრთხილებების მაჩვენებელი ნაჩვენები არ იყო.</li>
           <li xml:lang="nl">Los op dat de waarschuwingsindicator voor een onbereikbare overstap niet wordt weergegeven.</li>
@@ -995,6 +997,7 @@
           <li xml:lang="cs">Opravena viditelnost rezervační karty na stránkách s podrobnostmi o rezervaci.</li>
           <li xml:lang="es">Se ha corregido la visibilidad de la tarjeta de reserva en las páginas de detalles de la reserva.</li>
           <li xml:lang="fr">Correction de la visibilité de la carte de réservation dans les pages de détail de réservation.</li>
+          <li xml:lang="he">תוקנה חשיפת כרטיסי הזמנות בעמודי פרטי הזמנה.</li>
           <li xml:lang="it">Corregge la visibilità della scheda di prenotazione nelle pagine dei dettagli della prenotazione.</li>
           <li xml:lang="ka">გასწორდა დაჯავშნის ბარათის ხილვადობა ჯავშნის დეტალების გვერდებზე.</li>
           <li xml:lang="nl">Herstel de zichtbaarheid van de boekingskaart op de pagina's met reserveringsdetails.</li>
@@ -1010,6 +1013,7 @@
           <li xml:lang="cs">Opraveny některé případy problémů s importem prostřednictvím sdílení v systému Android.</li>
           <li xml:lang="es">Se han corregido algunos casos de importación mediante la función de compartir en Android.</li>
           <li xml:lang="fr">Correction de certains cas d'importation avec des partages sous sur Android.</li>
+          <li xml:lang="he">תוקנו מצבים מסוימים של ייבוא דרך שיתוף ב־Android.</li>
           <li xml:lang="it">Risolti alcuni problemi con l'importazione tramite condivisione su Android.</li>
           <li xml:lang="ka">გასწორდა Android-დან გაზიარებული ფაილების შემოტანის ზოგიერთი შემთხვევა.</li>
           <li xml:lang="nl">Los enkele problemen op met importeren via delen op Android.</li>
@@ -5136,7 +5140,7 @@
           <li xml:lang="uk">Удосконалено обробку скасованих елементів на панелі розкладу.</li>
           <li>Improved rendering of barrier elements in the train station map.</li>
           <li xml:lang="ar">تحسين رندرة عناصر العوائق في خريطة محطة القطار.</li>
-          <li xml:lang="ca">S'ha millora la representació d'obstacles en el mapa d'estació de tren.</li>
+          <li xml:lang="ca">S'ha millorat la representació d'obstacles en el mapa d'estació de tren.</li>
           <li xml:lang="ca-valencia">S'ha millora la representació d'obstacles en el mapa d'estació de tren.</li>
           <li xml:lang="cs">Vylepšené vykreslování bariérových prvků na mapě vlakového nádraží.</li>
           <li xml:lang="es">Se ha mejorado la representación de los elementos de barrera en los mapas de estaciones de tren.</li>
@@ -5748,7 +5752,7 @@
           <li xml:lang="uk">Удосконалено перемикання рівнів поверхів для сходів на картах станцій/аеропортів.</li>
           <li>Stacking order and hit detection fixes for the station/airport maps.</li>
           <li xml:lang="ar">إصلاحات لترتيب التكديس واكتشاف النقرات في خرائط المحطات والمطارات.</li>
-          <li xml:lang="ca">Correccions de l'ordre d'apilament i detecció del mapes d'estacions/aeroports.</li>
+          <li xml:lang="ca">Correccions de l'ordre d'apilament i detecció dels mapes d'estacions/aeroports.</li>
           <li xml:lang="ca-valencia">Correccions de l'ordre d'apilament i detecció del mapes d'estacions/aeroports.</li>
           <li xml:lang="cs">Oprava pořadí vrstev a detekce zásahů pro mapy stanic/letišť.</li>
           <li xml:lang="es">Se ha corregido en el orden de apilado y la detección de resultados en los mapas de estaciones/aeropuertos.</li>
@@ -6072,7 +6076,7 @@
         <ul>
           <li>Improved calendar import, allowing more fine-grained selection and supporting Linux too.</li>
           <li xml:lang="ar">تحسين استيراد التقويم، مما يتيح اختيارًا أكثر دقة ويدعم لينكس أيضًا.</li>
-          <li xml:lang="ca">S'ha millorat la importació de calendari, permetent una selecció més fina i admetent també el Linux.</li>
+          <li xml:lang="ca">S'ha millorat la importació de calendari, això permet una selecció més fina i funciona també al Linux.</li>
           <li xml:lang="ca-valencia">S'ha millorat la importació de calendari, permetent una selecció més fina i admetent també Linux.</li>
           <li xml:lang="cs">Vylepšený import kalendáře, umožňující jemnější výběr a podporující také Linux.</li>
           <li xml:lang="es">Se ha mejorado la importación de calendarios, permitiendo una selección más precisa y compatibilidad con Linux.</li>
