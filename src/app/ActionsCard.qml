@@ -83,12 +83,18 @@ ColumnLayout {
         Kirigami.Action {
             icon.name: "document-export-symbolic"
             text: i18n("Export…")
-            onTriggered: exportBatchDialog.open()
+            onTriggered: {
+                let dialog = exportBatchComponent.createObject(root)
+                dialog.open()
+            }
         },
         Kirigami.Action {
             icon.name: "edit-delete"
             text: i18n("Delete…")
-            onTriggered: deleteWarningDialog.open()
+            onTriggered: {
+                let dialog = reservationDeletionComponent.createObject(root)
+                dialog.open()
+            }
         }
     ]
 
@@ -128,29 +134,29 @@ ColumnLayout {
     }
 
     Component {
-        id: pkpassComponent
-        PkPassPage {
-            pass: PkPassManager.pass(root.passId)
+        id: reservationDeletionComponent
+        ReservationDeletionDialog {
+            id: deleteWarningDialog
+            batchId: root.batchId
+
+            title: i18n("Delete Event")
+            description: i18n("Do you really want to delete this event?")
+            onBatchDeleted: applicationWindow().pageStack.pop();
         }
     }
 
-    ReservationDeletionDialog {
-        id: deleteWarningDialog
-        batchId: root.batchId
+    Component {
+        id: exportBatchComponent
 
-        title: i18n("Delete Event")
-        description: i18n("Do you really want to delete this event?")
-        onBatchDeleted: applicationWindow().pageStack.pop();
-    }
-
-    ExportMenuDialog {
-        id: exportBatchDialog
-        title: i18n("Export Reservation")
-        settingsKey: "reservation"
-        suggestedName: Util.slugify(ReservationHelper.label(root.reservation))
-        onExportToFile: (path) => { ApplicationController.exportBatchToFile(root.batchId, path); }
-        onExportToGpxFile: (path) => { ApplicationController.exportBatchToGpx(root.batchId, path); }
-        onExportToKDEConnect: (deviceId) => { ApplicationController.exportBatchToKDEConnect(root.batchId, deviceId); }
+        ExportMenuDialog {
+            id: exportBatchDialog
+            title: i18n("Export Reservation")
+            settingsKey: "reservation"
+            suggestedName: Util.slugify(ReservationHelper.label(root.reservation))
+            onExportToFile: (path) => { ApplicationController.exportBatchToFile(root.batchId, path); }
+            onExportToGpxFile: (path) => { ApplicationController.exportBatchToGpx(root.batchId, path); }
+            onExportToKDEConnect: (deviceId) => { ApplicationController.exportBatchToKDEConnect(root.batchId, deviceId); }
+        }
     }
 
     FormCard.FormHeader {
