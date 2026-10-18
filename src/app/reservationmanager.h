@@ -14,6 +14,8 @@
 #include <QObject>
 #include <QVariant>
 
+#include <QCoroTask>
+
 class ReservationManager;
 
 /** Represents a batch of reservations.
@@ -67,6 +69,7 @@ public:
 
     Q_INVOKABLE bool isEmpty() const;
     Q_INVOKABLE QVariant reservation(const QString &id) const;
+    QCoro::Task<QVariant> asyncReservation(const QString &id) const;
 
     /** Adds @p res if it's new, or merges it with an existing reservation or reservation batch.
      *  @param resIdHint If set, this is used as identifier for reservations that would need a new
@@ -146,8 +149,11 @@ Q_SIGNALS:
     void batchRemoved(const QString &batchId);
 
 private:
+    QCoro::Task<> asyncLoadReservation(const QString &id) const;
     void loadReservation(const QString &resId) const;
+    QCoro::Task<> asyncLoadReservationsInBatch(const QString &batchId) const;
     void loadReservationsInBatch(const QString &batchId) const;
+
     void storeReservation(const QString &resId, const QVariant &res) const;
 
     struct BatchComparator {
@@ -160,6 +166,8 @@ private:
         [[nodiscard]] bool operator()(const QDateTime &lhs, const QString &rhs) const;
         const ReservationManager *m_resMgr;
     };
+
+    static QByteArray readReservation(const QString &resId);
 
     void loadBatches();
     void initialBatchCreate();

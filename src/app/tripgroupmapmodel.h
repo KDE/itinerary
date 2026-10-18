@@ -11,6 +11,8 @@
 #include <KPublicTransport/Journey>
 #include <KPublicTransport/Location>
 
+#include <QCoroTask>
+
 #include <QColor>
 #include <QObject>
 #include <qqmlregistration.h>
@@ -75,7 +77,7 @@ Q_SIGNALS:
     void setupChanged();
 
 private:
-    void recompute();
+    QCoro::Task<> recompute();
     void expandJourney(const KPublicTransport::Journey &jny);
     void expandJourneySection(const KPublicTransport::JourneySection &jnySec);
 

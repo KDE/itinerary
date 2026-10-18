@@ -8,6 +8,8 @@
 #include <QTimer>
 #include <QtQml>
 
+#include <QCoroTask>
+
 class TripGroupManager;
 
 /** List of all trip groups in reverse chronological order. */
@@ -88,7 +90,7 @@ private:
     [[nodiscard]] bool tripGroupLessThan(const QString &lhs, const QDateTime &rhs) const;
 
     void scheduleUpdate();
-    void scheduleCurrentBatchTimer();
+    QCoro::Task<> scheduleCurrentBatchTimer();
 
     TripGroupManager *m_tripGroupManager = nullptr;
     std::vector<QString> m_tripGroups;

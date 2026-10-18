@@ -262,6 +262,9 @@ ecm_qt_declare_logging_category(itinerary
     EXPORT ITINERARY
 )
 
+# for QCoro
+kde_target_enable_exceptions(itinerary PUBLIC)
+
 target_link_libraries(itinerary PUBLIC
     itinerary-weather
     itinerary-weatherplugin
@@ -284,6 +287,7 @@ target_link_libraries(itinerary PUBLIC
     Qt::Network
     Qt::Quick
     Qt::Positioning
+    Qt::Concurrent
     QCoro6::Core
     QCoro6::Network
 PRIVATE

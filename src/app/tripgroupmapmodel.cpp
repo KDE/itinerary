@@ -59,10 +59,11 @@ QRectF TripGroupMapModel::boundingBox() const
     return loc;
 }
 
-void TripGroupMapModel::recompute()
+QCoro::Task<> TripGroupMapModel::recompute()
 {
+    const QPointer self(this);
     if (!m_tripGroupMgr || m_tripGroupId.isEmpty() || !m_liveDataMgr || !m_transferMgr) {
-        return;
+        co_return;
     }
 
     m_journeySections.clear();
@@ -71,10 +72,14 @@ void TripGroupMapModel::recompute()
 
     const auto elems = m_tripGroupMgr->tripGroup(m_tripGroupId).elements();
     for (const auto &resId : elems) {
-        const auto res = m_tripGroupMgr->reservationManager()->reservation(resId);
+        const auto res = co_await m_tripGroupMgr->reservationManager()->asyncReservation(resId);
+
+        if (!self) {
+            co_return;
+        }
+
         if (ReservationHelper::isCancelled(res)) {
             continue;
-
         }
 
         // pre transfer

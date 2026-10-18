@@ -46,7 +46,7 @@ StatisticsModel::StatisticsModel(QObject *parent)
     : QObject(parent)
 {
     connect(this, &StatisticsModel::setupChanged, this, &StatisticsModel::recompute);
-    recompute();
+    QMetaObject::invokeMethod(this, &StatisticsModel::recompute);
 }
 
 StatisticsModel::~StatisticsModel() = default;
@@ -328,9 +328,14 @@ void StatisticsModel::computeStats(const KPublicTransport::Journey &journey, int
     }
 }
 
-void StatisticsModel::recompute()
+QCoro::Task<> StatisticsModel::recompute()
 {
-    memset(m_statData, 0, (std::size_t)qToUnderlying(AGGREGATE_TYPE_COUNT) * qToUnderlying(STAT_TYPE_COUNT) * sizeof(int));
+    QPointer self(this);
+
+    memset(m_statData,
+           0,
+           (std::size_t) qToUnderlying(AGGREGATE_TYPE_COUNT) * qToUnderlying(STAT_TYPE_COUNT)
+               * sizeof(int));
     memset(m_prevStatData, 0, (std::size_t)qToUnderlying(AGGREGATE_TYPE_COUNT) * qToUnderlying(STAT_TYPE_COUNT) * sizeof(int));
     memset(m_hasData, 0, AGGREGATE_TYPE_COUNT * sizeof(bool));
     m_hasData[Total] = true;
@@ -339,7 +344,7 @@ void StatisticsModel::recompute()
     m_countries.clear();
 
     if (!m_resMgr || !m_tripGroupMgr || !m_transferMgr) {
-        return;
+        co_return;
     }
 
     QDate prevStart;
@@ -350,8 +355,20 @@ void StatisticsModel::recompute()
     QSet<QString> tripGroups, prevTripGroups;
 
     const auto &batches = m_resMgr->batches();
+
+    std::vector<std::pair<QString, QCoro::Task<QVariant>>> tasks;
+
     for (const auto &batchId : batches) {
-        const auto res = m_resMgr->reservation(batchId);
+        tasks.push_back({batchId, m_resMgr->asyncReservation(batchId)});
+    }
+
+    for (auto &&[batchId, task] : tasks) {
+        auto const res = co_await task;
+
+        if (!self) {
+            co_return;
+        }
+
         if (LocationUtil::isLocationChange(res)) {
             m_hasData[typeForReservation(res)] = true;
         }

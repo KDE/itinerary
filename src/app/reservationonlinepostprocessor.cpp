@@ -93,7 +93,7 @@ QCoro::Task<> ReservationOnlinePostprocessor::handleBatchChange(QString batchId)
         co_return;
     }
 
-    auto reservation = m_resMgr->reservation(batchId);
+    auto reservation = co_await m_resMgr->asyncReservation(batchId);
     auto updatedReservation = co_await processReservation(reservation);
 
     if (!updatedReservation) {

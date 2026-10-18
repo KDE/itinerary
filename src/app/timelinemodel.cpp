@@ -277,10 +277,13 @@ int TimelineModel::todayRow() const
     return it != m_elements.end() ? (int)std::distance(m_elements.begin(), it) : -1;
 }
 
-void TimelineModel::populate()
+QCoro::Task<> TimelineModel::populate()
 {
-    if (m_isPopulated || !m_resMgr || !m_transferManager || !m_tripGroupManager || m_tripGroupId.isEmpty()) {
-        return;
+    const QPointer self(this);
+
+    if (m_isPopulated || !m_resMgr || !m_transferManager || !m_tripGroupManager
+        || m_tripGroupId.isEmpty()) {
+        co_return;
     }
     m_isPopulated = true;
 
@@ -288,8 +291,13 @@ void TimelineModel::populate()
     m_tripGroup = m_tripGroupManager->tripGroup(m_tripGroupId);
     const auto elems = m_tripGroup.elements();
     for (const auto &resId : elems) {
-        populateReservation(resId);
+        co_await populateReservation(resId);
     }
+
+    if (!self) {
+        co_return;
+    }
+
     std::sort(m_elements.begin(), m_elements.end());
     endResetModel();
 
@@ -303,12 +311,19 @@ void TimelineModel::populate()
     Q_EMIT todayRowChanged();
 }
 
-void TimelineModel::populateReservation(const QString &resId)
+QCoro::Task<> TimelineModel::populateReservation(const QString &resId)
 {
-    const auto res = m_resMgr->reservation(resId);
+    const QPointer self(this);
+
+    const auto res = co_await m_resMgr->asyncReservation(resId);
+
+    if (!self) {
+        co_return;
+    }
+
     auto elem = TimelineElement(this, resId, res, TimelineElement::SelfContained);
     if (!elem.isReservation()) { // a type we can't handle
-        return;
+        co_return;
     }
     if (needsSplitting(res)) {
         m_elements.emplace_back(this, resId, res, TimelineElement::RangeBegin);

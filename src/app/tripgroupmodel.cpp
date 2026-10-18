@@ -63,8 +63,8 @@ void TripGroupModel::setTripGroupManager(TripGroupManager *tripGroupManager)
     connect(m_tripGroupManager, &TripGroupManager::tripGroupChanged, this, &TripGroupModel::tripGroupChanged);
     connect(m_tripGroupManager, &TripGroupManager::tripGroupRemoved, this, &TripGroupModel::tripGroupRemoved);
 
-    const auto currentBatchChangeHandler = [this]() {
-        scheduleCurrentBatchTimer();
+    const auto currentBatchChangeHandler = [this]() -> QCoro::Task<> {
+        co_await scheduleCurrentBatchTimer();
         Q_EMIT currentBatchChanged();
     };
     connect(m_tripGroupManager, &TripGroupManager::tripGroupAdded, this, currentBatchChangeHandler);
@@ -76,7 +76,7 @@ void TripGroupModel::setTripGroupManager(TripGroupManager *tripGroupManager)
 
     endResetModel();
     scheduleUpdate();
-    scheduleCurrentBatchTimer();
+    QMetaObject::invokeMethod(this, &TripGroupModel::scheduleCurrentBatchTimer);
 
     Q_EMIT currentBatchChanged();
 }
@@ -466,8 +466,10 @@ void TripGroupModel::scheduleUpdate()
     }
 }
 
-void TripGroupModel::scheduleCurrentBatchTimer()
+QCoro::Task<> TripGroupModel::scheduleCurrentBatchTimer()
 {
+    const QPointer self(this);
+
     // find relevant trip groups
     auto tgIds =
         intersectingTripGroups(now().addSecs(-Constants::CurrentBatchTrailingMargin.count()), now().addSecs(Constants::CurrentBatchLeadingMargin.count()));
@@ -510,7 +512,11 @@ void TripGroupModel::scheduleCurrentBatchTimer()
         const auto elems = tg.elements();
         QDateTime endDt;
         for (const auto &elem : elems) {
-            const auto res = m_tripGroupManager->reservationManager()->reservation(elem);
+            const auto res = co_await m_tripGroupManager->reservationManager()->asyncReservation(
+                elem);
+            if (!self) {
+                co_return;
+            }
             const auto startDt = SortUtil::startDateTime(res);
             updateTriggerTime(startDt.addSecs(-Constants::CurrentBatchLeadingMargin.count()));
             if (endDt.isValid()) {
@@ -523,7 +529,7 @@ void TripGroupModel::scheduleCurrentBatchTimer()
     }
 
     if (!triggerTime.isValid()) {
-        return;
+        co_return;
     }
     // QTimer only has 31bit for its msec interval
     if (now().secsTo(triggerTime) * 1000 > std::numeric_limits<int>::max()) {

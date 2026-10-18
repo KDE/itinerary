@@ -30,10 +30,15 @@
 #include <QJsonArray>
 #include <QJsonObject>
 #include <QList>
+#include <QPointer>
 #include <QScopeGuard>
 #include <QStandardPaths>
 #include <QUrl>
 #include <QUuid>
+#include <QtConcurrentRun>
+
+#include <QCoroFuture>
+#include <QCoroTask>
 
 using namespace KItinerary;
 using namespace Qt::Literals;
@@ -135,28 +140,88 @@ QVariant ReservationManager::reservation(const QString &id) const
         return it.value();
     }
 
-    loadReservationsInBatch(batchForReservation(id));
+    asyncLoadReservationsInBatch(batchForReservation(id));
+
     return m_reservations.value(id);
+}
+
+QCoro::Task<QVariant> ReservationManager::asyncReservation(const QString &id) const
+{
+    const QPointer self(this);
+
+    if (id.isEmpty()) {
+        co_return {};
+    }
+
+    const auto it = m_reservations.constFind(id);
+    if (it != m_reservations.constEnd()) {
+        co_return it.value();
+    }
+
+    co_await asyncLoadReservationsInBatch(batchForReservation(id));
+
+    if (!self) {
+        co_return {};
+    }
+
+    co_return m_reservations.value(id);
+}
+
+QCoro::Task<> ReservationManager::asyncLoadReservation(const QString &resId) const
+{
+    const QPointer self(this);
+
+    auto bytes = co_await QtConcurrent::run([=]() { return readReservation(resId); });
+
+    if (!self) {
+        co_return;
+    }
+
+    const auto val = JsonIO::read(bytes);
+    if (!(val.isArray() && val.toArray().size() == 1) && !val.isObject()) {
+        qCWarning(Log) << "Invalid JSON-LD reservation data file:" << resId;
+        co_return;
+    }
+
+    const auto resData = JsonLdDocument::fromJson(val.isArray() ? val.toArray()
+                                                                : QJsonArray({val.toObject()}));
+    if (resData.size() != 1) {
+        qCWarning(Log) << "Unable to parse JSON-LD reservation data file:" << resId;
+        co_return;
+    }
+
+    // re-run post-processing to benefit from newer augmentations
+    ExtractorPostprocessor postproc;
+    postproc.process(resData);
+    if (postproc.result().size() != 1) {
+        qCWarning(Log) << "Post-processing discarded the reservation:" << resId;
+        co_return;
+    }
+
+    const auto res = postproc.result().at(0);
+
+    if (!m_validator.isValidElement(res)) {
+        qCWarning(Log) << "Validation discarded the reservation:" << resId;
+        co_return;
+    }
+
+    m_reservations.insert(resId, res);
+    qCDebug(Log) << "reservations loaded:" << m_reservations.size();
+    co_return;
 }
 
 void ReservationManager::loadReservation(const QString &resId) const
 {
-    const QString resPath = reservationsBasePath() + resId + ".jsonld"_L1;
-    QFile f(resPath);
-    if (!f.open(QFile::ReadOnly)) {
-        qCWarning(Log) << "Failed to open JSON-LD reservation data file:" << resPath << f.errorString();
-        return;
-    }
-
-    const auto val = JsonIO::read(f.readAll());
+    const auto val = JsonIO::read(readReservation(resId));
     if (!(val.isArray() && val.toArray().size() == 1) && !val.isObject()) {
-        qCWarning(Log) << "Invalid JSON-LD reservation data file:" << resPath;
+        qCWarning(Log) << "Invalid JSON-LD reservation data file:" << resId;
         return;
     }
 
-    const auto resData = JsonLdDocument::fromJson(val.isArray() ? val.toArray() : QJsonArray({val.toObject()}));
+    const auto resData = JsonLdDocument::fromJson(val.isArray() ? val.toArray()
+                                                                : QJsonArray({val.toObject()}));
     if (resData.size() != 1) {
-        qCWarning(Log) << "Unable to parse JSON-LD reservation data file:" << resPath;
+        qCWarning(Log) << "Unable to parse JSON-LD reservation data file:" << resId;
         return;
     }
 
@@ -164,22 +229,59 @@ void ReservationManager::loadReservation(const QString &resId) const
     ExtractorPostprocessor postproc;
     postproc.process(resData);
     if (postproc.result().size() != 1) {
-        qCWarning(Log) << "Post-processing discarded the reservation:" << resPath;
+        qCWarning(Log) << "Post-processing discarded the reservation:" << resId;
         return;
     }
 
     const auto res = postproc.result().at(0);
+
     if (!m_validator.isValidElement(res)) {
-        qCWarning(Log) << "Validation discarded the reservation:" << resPath;
+        qCWarning(Log) << "Validation discarded the reservation:" << resId;
         return;
     }
+
     m_reservations.insert(resId, res);
     qCDebug(Log) << "reservations loaded:" << m_reservations.size();
+}
+
+QCoro::Task<> ReservationManager::asyncLoadReservationsInBatch(const QString &batchId) const
+{
+    const QPointer self(this);
+
+    const auto &batch = m_batchToResMap.value(batchId);
+
+    std::vector<QCoro::Task<>> tasks;
+    for (const auto &resId : batch.reservationIds()) {
+        tasks.push_back(asyncLoadReservation(resId));
+    }
+
+    for (auto &&task : tasks) {
+        co_await task;
+    }
+
+    if (!self) {
+        co_return;
+    }
+
+    // cross-merge multi-traveler/multi-ticket incidences
+    for (const auto &resId1 : batch.reservationIds()) {
+        for (const auto &resId2 : batch.reservationIds()) {
+            if (resId1 == resId2) {
+                continue;
+            }
+
+            auto &res1 = m_reservations[resId1];
+            auto &res2 = m_reservations[resId2];
+            res1 = MergeUtil::mergeIncidence(res1, res2);
+            res2 = MergeUtil::mergeIncidence(res2, res1);
+        }
+    }
 }
 
 void ReservationManager::loadReservationsInBatch(const QString &batchId) const
 {
     const auto &batch = m_batchToResMap.value(batchId);
+
     for (const auto &resId : batch.reservationIds()) {
         loadReservation(resId);
     }
@@ -348,6 +450,19 @@ void ReservationManager::storeReservation(const QString &resId, const QVariant &
     }
     f.write(JsonIO::write(JsonLdDocument::toJson(res)));
     m_reservations.insert(resId, res);
+}
+
+QByteArray ReservationManager::readReservation(const QString &resId)
+{
+    const QString resPath = reservationsBasePath() + resId + ".jsonld"_L1;
+    QFile f(resPath);
+    if (!f.open(QFile::ReadOnly)) {
+        qCWarning(Log) << "Failed to open JSON-LD reservation data file:" << resPath
+                       << f.errorString();
+        return {};
+    }
+
+    return f.readAll();
 }
 
 void ReservationManager::updateBatch(const std::vector<ReservationManager::ReservationChange> &changeset)

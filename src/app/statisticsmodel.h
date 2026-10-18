@@ -14,6 +14,8 @@
 #include <QDate>
 #include <QObject>
 
+#include <QCoroTask>
+
 #include <set>
 
 class ReservationManager;
@@ -129,7 +131,7 @@ Q_SIGNALS:
     void changed();
 
 private:
-    void recompute();
+    QCoro::Task<> recompute();
     [[nodiscard]] bool isRelevantTripGroup(const QString &tgId) const;
 
     ReservationManager *m_resMgr = nullptr;

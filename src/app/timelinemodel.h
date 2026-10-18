@@ -16,6 +16,8 @@
 #include <QTimer>
 #include <qqmlregistration.h>
 
+#include <QCoroTask>
+
 class ReservationManager;
 class WeatherForecastManager;
 class TripGroupManager;
@@ -89,8 +91,8 @@ Q_SIGNALS:
     void initialLocationChanged();
 
 private:
-    void populate();
-    void populateReservation(const QString &resId);
+    QCoro::Task<> populate();
+    QCoro::Task<> populateReservation(const QString &resId);
 
     void batchAdded(const QString &resId);
     int insertElement(TimelineElement &&elem);
