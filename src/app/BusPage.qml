@@ -274,17 +274,12 @@ PublicTransportPage {
                 QQC2.Action {
                     text: i18n("Alternatives")
                     icon.name: "clock"
-                    onTriggered: applicationWindow().pageStack.push(alternativePage)
+                    onTriggered: applicationWindow().pageStack.push(Qt.createComponent("org.kde.itinerary", "AlternativeJourneyPage"), {
+                                                                        controller: root.controller,
+                                                                        publicTransportManager: LiveDataManager.publicTransportManager
+                                                                    })
                 }
             ]
-
-            Component {
-                id: alternativePage
-                AlternativeJourneyPage {
-                    controller: root.controller
-                    publicTransportManager: LiveDataManager.publicTransportManager
-                }
-            }
         }
 
         Item {
