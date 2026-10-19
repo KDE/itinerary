@@ -297,7 +297,8 @@ Kirigami.Page {
                         debug: Settings.developmentMode
                     }
 
-                    elementInfoDialog: IndoorMapInfoSheet {
+                    elementInfoDialog: KOSM.IndoorMapInfoSheet {
+                        allowEditing: Settings.osmContributorMode
                         model: stopMapView.elementInfoModel
                         regionCode: stopMapView.mapData.regionCode
                         timeZone: stopMapView.mapData.timeZone

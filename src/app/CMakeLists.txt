@@ -142,7 +142,6 @@ ecm_add_qml_module(itinerary GENERATE_PLUGIN_SOURCE
         ImportAction.qml
         ImportPage.qml
         IndoorMapGateSheet.qml
-        IndoorMapInfoSheet.qml
         IndoorMapPage.qml
         IntermediateStopSelector.qml
         JourneyDelegateHeader.qml
