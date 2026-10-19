@@ -348,7 +348,11 @@ QCoro::Task<std::optional<KItinerary::Airport>> ReservationOnlinePostprocessor::
 template <typename T>
 QCoro::Task<std::optional<T>> ReservationOnlinePostprocessor::processPlace(T place, const std::vector<QLatin1StringView> &allowedTags)
 {
-    if (place.geo().isValid() || place.address().addressCountry().isEmpty() || place.address().addressLocality().isEmpty() || place.address().streetAddress().isEmpty()) {
+    const auto hasEnoughAddress =
+        !place.address().streetAddress().isEmpty() &&
+        !place.address().addressLocality().isEmpty() &&
+        (!place.address().addressCountry().isEmpty() || !place.address().postalCode().isEmpty());
+    if (place.geo().isValid() || !hasEnoughAddress) {
         co_return {};
     }
 
