@@ -7,6 +7,7 @@
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
+import QtQuick.Controls.Material
 import org.kde.kirigami as Kirigami
 import org.kde.kitinerary
 import org.kde.itinerary
@@ -23,6 +24,10 @@ Kirigami.Page {
     readonly property var reservationFor: reservation.reservationFor
     property Component editor
     property var reservationIds: ReservationManager.reservationsForBatch(root.batchId)
+
+    background: Rectangle {
+        color: Qt.tint(root.Material.backgroundColor, Qt.alpha(root.Material.foreground, 0.04))
+    }
 
     readonly property string seatSectionString: {
         let s = []

@@ -7,6 +7,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import QtQuick.Dialogs
+import QtQuick.Controls.Material
 import Qt.labs.qmlmodels
 import QtQml.Models
 import org.kde.coreaddons as CoreAddons
@@ -38,6 +39,10 @@ Kirigami.ScrollablePage {
     }
 
     title: tripGroup.name
+
+    background: Rectangle {
+        color: Qt.tint(root.Material.backgroundColor, Qt.alpha(root.Material.foreground, 0.04))
+    }
 
     Kirigami.Theme.colorSet: Kirigami.Theme.Window
 
