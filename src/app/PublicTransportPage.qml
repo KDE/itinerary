@@ -186,15 +186,13 @@ DetailsPage {
     KirigamiComponents.FloatingToolBar {
         id: floatingToolBar
 
-        anchors.bottom: parent.bottom
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.bottomMargin: Kirigami.Units.largeSpacing
-        anchors.leftMargin: root.width / 2 - 150
-        anchors.rightMargin: root.width / 2 - 150
+        anchors {
+            bottom: parent.bottom
+            bottomMargin: Kirigami.Units.largeSpacing
+            horizontalCenter: parent.horizontalCenter
+        }
 
-        leftPadding: 5
-        rightPadding: 5
+        width: Math.min(implicitWidth, parent.width - (Kirigami.Units.largeSpacing * 4))
 
         contentItem: KirigamiComponents.RadioSelector {
             id: tabBar
