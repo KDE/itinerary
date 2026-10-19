@@ -57,7 +57,7 @@ Kirigami.ApplicationWindow {
 
     globalDrawer: Kirigami.GlobalDrawer {
         title: i18n("KDE Itinerary")
-        titleIcon: "map-symbolic"
+        titleIcon: "org.kde.itinerary"
         isMenu: !Kirigami.Settings.isMobile
 
         width: Math.min(Kirigami.Units.gridUnit * 15, root.width - Kirigami.Units.gridUnit * 3)
