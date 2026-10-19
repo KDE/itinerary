@@ -20,11 +20,12 @@ class ReservationTest(ItineraryTestCase):
         # open the timeline page and import test scenario
         self.driver.find_element(by=AppiumBy.NAME, value="Itinerary").click()
 
+        self.driver.find_element(by=AppiumBy.NAME, value="Import").click()
         self.driver.find_element(by=AppiumBy.NAME, value="From file").click()
 
         self.openFile("../tests/randa2017.json")
         self.driver.find_element(by=AppiumBy.NAME, value="Import selection").click()
-        self.driver.find_element(by=AppiumBy.NAME, value="MyTrip").click()
+        self.driver.find_element(by=AppiumBy.NAME, value="Randa (September 2017)").click()
 
     def tearDown(self):
         self.driver.find_element(by=AppiumBy.NAME, value="Delete trip").click()

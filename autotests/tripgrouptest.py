@@ -33,14 +33,15 @@ class TripGroupTest(ItineraryTestCase):
         self.assertTrue(saveBtn.is_enabled())
         saveBtn.click()
 
-        # HACK model doesn't update correctly
-        # self.goBack()
-        # self.driver.find_element(by=AppiumBy.NAME, value="My New Trip").click()
+        self.driver.find_element(by=AppiumBy.NAME, value="Akademy 2024").click()
+        self.driver.find_element(by=AppiumBy.NAME, value="Location").is_displayed()
+        self.goBack()
 
-        self.deleteTrip("Akademy 2024")
+        self.driver.find_element(by=AppiumBy.NAME, value="Delete trip").click()
+        self.driver.find_element(by=AppiumBy.NAME, value="Delete").click()
 
     def testImportedGroup(self):
-        self.driver.find_element(by=AppiumBy.NAME, value="MyData").click()
+        self.driver.find_element(by=AppiumBy.NAME, value="My Data").click()
         self.driver.find_element(by=AppiumBy.NAME, value="Import").click()
 
         self.openFile("../tests/randa2017.json")

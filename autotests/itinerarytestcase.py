@@ -95,11 +95,3 @@ class ItineraryTestCase(unittest.TestCase):
         saveBtn.click()
 
         self.driver.find_element(by=AppiumBy.NAME, value=name).click()
-
-    def deleteTrip(self, name):
-        self.driver.find_element(by=AppiumBy.NAME, value=name).click()
-        self.goBack()
-
-        self.driver.find_element(by=AppiumBy.NAME, value="Delete trip").click()
-        self.driver.find_element(by=AppiumBy.NAME, value="Delete").click()
-
