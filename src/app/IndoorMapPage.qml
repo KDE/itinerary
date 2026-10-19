@@ -273,7 +273,8 @@ Kirigami.Page {
             debug: Settings.developmentMode
         }
 
-        elementInfoDialog:  IndoorMapInfoSheet {
+        elementInfoDialog: IndoorMapInfoSheet {
+            allowEditing: Settings.osmContributorMode
             model: map.elementInfoModel
             regionCode: root.map.mapData.regionCode
             timeZone: root.map.mapData.timeZone
