@@ -216,7 +216,7 @@ Kirigami.ScrollablePage {
 
     footer: ColumnLayout {
         spacing: 0
-        height: indicator.running ? layout.implicitHeight : 0
+        height: visible ? layout.implicitHeight : 0
         visible: journeyModel.loading && journeyView.count !== 0
 
         Behavior on height {
@@ -230,13 +230,11 @@ Kirigami.ScrollablePage {
         RowLayout {
             id: layout
 
-            QQC2.BusyIndicator {
-                id: indicator
-                running: journeyModel.loading && journeyView.count !== 0
-            }
-
             QQC2.Label {
                 text: i18n("Still fetching results…")
+
+                Layout.margins: Kirigami.Units.smallSpacing
+                Layout.alignment: Qt.AlignHCenter
             }
 
             Item {
