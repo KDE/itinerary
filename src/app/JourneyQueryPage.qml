@@ -36,7 +36,6 @@ Kirigami.ScrollablePage {
 
         currentIndex: -1
 
-        clip: true
         reuseItems: true
         cacheBuffer: height / 2
 
