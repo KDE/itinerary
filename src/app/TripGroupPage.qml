@@ -561,7 +561,7 @@ Kirigami.ScrollablePage {
 
         section {
             property: "sectionHeader"
-            delegate: TimelineSectionDelegate { day: section }
+            delegate: TimelineSectionDelegate { day: section; tripGroupModel: TripGroupModel }
             criteria: ViewSection.FullString
         }
 

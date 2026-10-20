@@ -27,6 +27,8 @@ class TimelineSectionDelegateController : public QObject
 
     Q_PROPERTY(QString date READ dateString WRITE setDateString NOTIFY dateChanged)
     Q_PROPERTY(TripGroupModel *tripGroupModel READ tripGroupModel WRITE setTripGroupModel NOTIFY tripGroupModelChanged)
+    /// for use outside of trip groups
+    Q_PROPERTY(QString regionCode READ regionCode WRITE setRegionCode NOTIFY regionCodeChanged)
 
     Q_PROPERTY(QString title READ title NOTIFY dateChanged)
     Q_PROPERTY(bool isToday READ isToday NOTIFY dateChanged)
@@ -44,6 +46,9 @@ public:
     [[nodiscard]] TripGroupModel *tripGroupModel() const;
     void setTripGroupModel(TripGroupModel *model);
 
+    [[nodiscard]] QString regionCode() const { return m_regionCode; }
+    void setRegionCode(const QString &code);
+
     [[nodiscard]] QString title() const;
     [[nodiscard]] bool isToday() const;
     [[nodiscard]] QString subTitle() const;
@@ -52,11 +57,13 @@ public:
 Q_SIGNALS:
     void dateChanged();
     void tripGroupModelChanged();
+    void regionCodeChanged();
 
 private:
     void recheckHoliday();
 
     TripGroupModel *m_model = nullptr;
+    QString m_regionCode;
     QDate m_date;
     KHolidays::Holiday::List m_holidays;
 };

@@ -13,9 +13,13 @@ FormCard.FormHeader {
     id: root
 
     property alias day: _controller.date
+
+    // use either tripGroupModel or specify regionCode yourself
+    property alias tripGroupModel: _controller.tripGroupModel
+    property alias regionCode: _controller.regionCode
+
     property QtObject controller: TimelineSectionDelegateController {
         id: _controller;
-        tripGroupModel: TripGroupModel
     }
 
     width: ListView.view.width

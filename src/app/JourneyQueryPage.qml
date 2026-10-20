@@ -141,6 +141,7 @@ Kirigami.ScrollablePage {
             delegate: TimelineSectionDelegate {
                 required property string section
                 day: section
+                regionCode: root.journeyRequest.from.region
             }
         }
 

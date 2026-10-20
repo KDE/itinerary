@@ -58,6 +58,16 @@ void TimelineSectionDelegateController::setTripGroupModel(TripGroupModel *model)
     Q_EMIT tripGroupModelChanged();
 }
 
+void TimelineSectionDelegateController::setRegionCode(const QString &code)
+{
+    if (m_regionCode == code) {
+        return;
+    }
+    m_regionCode = code;
+    recheckHoliday();
+    Q_EMIT regionCodeChanged();
+}
+
 QString TimelineSectionDelegateController::title() const
 {
     if (m_model && m_date == m_model->today()) {
@@ -112,13 +122,16 @@ static std::optional<KHolidays::HolidayRegion> cachedHolidayRegion(const QString
 
 void TimelineSectionDelegateController::recheckHoliday()
 {
-    if (!m_model || !m_date.isValid()) {
+    if ((!m_model && m_regionCode.isEmpty()) || !m_date.isValid()) {
         return;
     }
 
     m_holidays.clear();
 
-    const auto regionCode = LocationHelper::regionCode(m_model->locationAtTime(QDateTime(m_date, {})));
+    const auto regionCode = !m_regionCode.isEmpty() ? m_regionCode
+                            : m_model               ? LocationHelper::regionCode(
+                                                          m_model->locationAtTime(QDateTime(m_date, {})))
+                                                    : QString();
     if (regionCode.isEmpty()) {
         return;
     }
