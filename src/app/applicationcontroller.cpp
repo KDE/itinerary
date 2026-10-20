@@ -148,6 +148,11 @@ void ApplicationController::setLiveDataManager(LiveDataManager *liveDataMgr)
 void ApplicationController::setTripGroupManager(TripGroupManager *tripGroupMgr)
 {
     m_tripGroupMgr = tripGroupMgr;
+    connect(m_tripGroupMgr, &TripGroupManager::tripGroupRemoved, this, [this](const QString &tgId) {
+        if (m_contextTripGroupId == tgId) {
+            setContextTripGroupId(QString());
+        }
+    });
 }
 
 void ApplicationController::setPassManager(PassManager *passMgr)
