@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-11 00:51+0000\n"
+"POT-Creation-Date: 2026-10-20 00:53+0000\n"
 "PO-Revision-Date: 2026-07-27 11:34+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -2362,12 +2362,12 @@ msgid "Journey Details"
 msgstr "Detalles del trayecto"
 
 #: app/JourneySectionPage.qml:120 app/LiveStatusPage.qml:378
-#: app/PublicTransportPage.qml:198
+#: app/PublicTransportPage.qml:210
 #, kde-format
 msgid "Journey"
 msgstr "Trayecto"
 
-#: app/JourneySectionPage.qml:124 app/PublicTransportPage.qml:203
+#: app/JourneySectionPage.qml:124 app/PublicTransportPage.qml:215
 #, kde-format
 msgid "Map"
 msgstr "Mapa"
@@ -3599,7 +3599,7 @@ msgstr "Exportar pertenencia a programa"
 msgid "Show Pass"
 msgstr "Mostrar paso"
 
-#: app/PublicTransportPage.qml:194 app/TicketEditor.qml:58
+#: app/PublicTransportPage.qml:206 app/TicketEditor.qml:58
 #: app/TicketPage.qml:18 app/TicketPage.qml:92
 #, kde-format
 msgid "Ticket"

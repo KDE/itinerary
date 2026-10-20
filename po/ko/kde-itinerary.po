@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-11 00:51+0000\n"
+"POT-Creation-Date: 2026-10-20 00:53+0000\n"
 "PO-Revision-Date: 2026-10-03 23:10+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -2351,12 +2351,12 @@ msgid "Journey Details"
 msgstr "여정 정보"
 
 #: app/JourneySectionPage.qml:120 app/LiveStatusPage.qml:378
-#: app/PublicTransportPage.qml:198
+#: app/PublicTransportPage.qml:210
 #, kde-format
 msgid "Journey"
 msgstr "여정"
 
-#: app/JourneySectionPage.qml:124 app/PublicTransportPage.qml:203
+#: app/JourneySectionPage.qml:124 app/PublicTransportPage.qml:215
 #, kde-format
 msgid "Map"
 msgstr "지도"
@@ -3547,7 +3547,7 @@ msgstr "프로그램 멤버십 내보내기"
 msgid "Show Pass"
 msgstr "패스 표시"
 
-#: app/PublicTransportPage.qml:194 app/TicketEditor.qml:58
+#: app/PublicTransportPage.qml:206 app/TicketEditor.qml:58
 #: app/TicketPage.qml:18 app/TicketPage.qml:92
 #, kde-format
 msgid "Ticket"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-11 00:51+0000\n"
+"POT-Creation-Date: 2026-10-20 00:53+0000\n"
 "PO-Revision-Date: 2025-03-15 10:38+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -2449,12 +2449,12 @@ msgid "Journey Details"
 msgstr "Vojaĝaj Detaloj"
 
 #: app/JourneySectionPage.qml:120 app/LiveStatusPage.qml:378
-#: app/PublicTransportPage.qml:198
+#: app/PublicTransportPage.qml:210
 #, kde-format
 msgid "Journey"
 msgstr "Vojaĝo"
 
-#: app/JourneySectionPage.qml:124 app/PublicTransportPage.qml:203
+#: app/JourneySectionPage.qml:124 app/PublicTransportPage.qml:215
 #, kde-format
 msgid "Map"
 msgstr ""
@@ -3658,7 +3658,7 @@ msgstr "Redakti Programan Membrecon"
 msgid "Show Pass"
 msgstr "Montri Legitimilon"
 
-#: app/PublicTransportPage.qml:194 app/TicketEditor.qml:58
+#: app/PublicTransportPage.qml:206 app/TicketEditor.qml:58
 #: app/TicketPage.qml:18 app/TicketPage.qml:92
 #, kde-format
 msgid "Ticket"
