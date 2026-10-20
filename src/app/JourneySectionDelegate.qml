@@ -214,37 +214,39 @@ FormCard.AbstractFormDelegate {
                     clip: implicitHeight > height
                     onLinkActivated: Qt.openUrlExternally(link)
 
-                    SheetDrawer {
-                        id: moreNotesSheet
-                        parent: applicationWindow().overlay
+                    Component {
+                        id: moreNotesComponent
+                        SheetDrawer {
+                            id: moreNotesSheet
+                            parent: applicationWindow().overlay
 
-                        headerItem: Kirigami.Heading {
-                            text: root.modelData.label
-                            elide: Qt.ElideRight
-                            Layout.fillWidth: true
-                            leftPadding: Kirigami.Units.smallSpacing
-                            rightPadding: Kirigami.Units.smallSpacing
-                        }
-
-                        contentItem: ColumnLayout {
-                            Layout.preferredWidth: Kirigami.Units.gridUnit * 60
-                            Layout.maximumWidth: root.width
-                            Repeater {
-                                model: root.modelData.features
-                                delegate: KPublicTransport.FeatureDelegate {
-                                    Layout.leftMargin: Kirigami.Units.largeSpacing
-                                    required property KPublicTransport.feature modelData
-                                    feature: modelData
-                                }
-                            }
-                            QQC2.Label {
+                            headerItem: Kirigami.Heading {
+                                text: root.modelData.label
+                                elide: Qt.ElideRight
                                 Layout.fillWidth: true
-                                text: root.modelData.notes.join("<br/>")
-                                textFormat: Text.RichText
-                                wrapMode: Text.Wrap
-                                onLinkActivated: (link) => { Qt.openUrlExternally(link); }
-                                padding: Kirigami.Units.largeSpacing * 2
+                                leftPadding: Kirigami.Units.smallSpacing
+                                rightPadding: Kirigami.Units.smallSpacing
+                            }
 
+                            contentItem: ColumnLayout {
+                                Layout.preferredWidth: Kirigami.Units.gridUnit * 60
+                                Layout.maximumWidth: root.width
+                                Repeater {
+                                    model: root.modelData.features
+                                    delegate: KPublicTransport.FeatureDelegate {
+                                        Layout.leftMargin: Kirigami.Units.largeSpacing
+                                        required property KPublicTransport.feature modelData
+                                        feature: modelData
+                                    }
+                                }
+                                QQC2.Label {
+                                    Layout.fillWidth: true
+                                    text: root.modelData.notes.join("<br/>")
+                                    textFormat: Text.RichText
+                                    wrapMode: Text.Wrap
+                                    onLinkActivated: (link) => { Qt.openUrlExternally(link); }
+                                    padding: Kirigami.Units.largeSpacing * 2
+                                }
                             }
                         }
                     }
@@ -255,7 +257,8 @@ FormCard.AbstractFormDelegate {
                     text: i18nc("@action:button", "Show More…")
                     visible: notesLabel.implicitHeight > notesLabel.Layout.maximumHeight
                     onClicked: {
-                        moreNotesSheet.open();
+                        let drawer = moreNotesComponent.createObject(root);
+                        drawer.open();
                     }
                 }
             }
