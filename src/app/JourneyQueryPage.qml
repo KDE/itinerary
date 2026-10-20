@@ -34,6 +34,8 @@ Kirigami.ScrollablePage {
     ListView {
         id: journeyView
 
+        currentIndex: -1
+
         clip: true
         reuseItems: true
         cacheBuffer: height
