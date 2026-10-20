@@ -42,7 +42,9 @@ class ReservationTest(ItineraryTestCase):
         self.assertTrue(self.driver.find_element(by=AppiumBy.NAME, value="iata-bcbp-demo.pdf").is_enabled())
         # TODO document context actions not accessible
         self.driver.find_element(by=AppiumBy.NAME, value="Edit").click()
+        self.assertTrue(self.driver.find_element(by=AppiumBy.CLASS_NAME, value="[panel | Edit Flight]").is_displayed())
         self.goBack()
+        self.assertTrue(self.driver.find_element(by=AppiumBy.CLASS_NAME, value="[panel | Flight]").is_displayed())
         self.goBack()
 
     def test_train(self):

@@ -12,6 +12,7 @@ from appium.webdriver.common.appiumby import AppiumBy
 import os
 import time
 
+
 class PassImportTest(ItineraryTestCase):
     def setUp(self):
         # open the passes & programs page
@@ -19,9 +20,12 @@ class PassImportTest(ItineraryTestCase):
         self.driver.find_element(by=AppiumBy.NAME, value="Manage your Passes").click()
 
     def test_programMembership(self):
-        self.assertTrue(self.driver.find_element(by=AppiumBy.NAME, value="Import From File").is_displayed())
-        self.assertTrue(self.driver.find_element(by=AppiumBy.NAME, value="Import From File").is_enabled())
-        self.driver.find_element(by=AppiumBy.NAME, value="Import From File").click()
+        page = self.driver.find_element(by=AppiumBy.CLASS_NAME, value="[panel | Passes and Programs]")
+        self.assertTrue(page.is_displayed())
+        page.find_element(by=AppiumBy.NAME, value="Import").click()
+        self.assertTrue(self.driver.find_element(by=AppiumBy.NAME, value="From file").is_displayed())
+        self.assertTrue(self.driver.find_element(by=AppiumBy.NAME, value="From file").is_enabled())
+        self.driver.find_element(by=AppiumBy.NAME, value="From file").click()
         self.openFile("data/bahncard.json")
         self.driver.find_element(by=AppiumBy.NAME, value="Import selection").click()
         self.driver.find_element(by=AppiumBy.NAME, value="BahnCard 25 (2. Kl.) (BC25)").click()
@@ -35,13 +39,15 @@ class PassImportTest(ItineraryTestCase):
         self.assertFalse(saveButton.is_enabled())
         nameInput.send_keys("BahnCard 50")
         self.assertTrue(saveButton.is_enabled())
-        saveButton.click();
+        saveButton.click()
 
         self.goBack()
         self.assertTrue(self.driver.find_element(by=AppiumBy.NAME, value="BahnCard 50").is_displayed())
-
         self.driver.find_element(by=AppiumBy.NAME, value="BahnCard 50").click()
-        self.driver.find_element(by=AppiumBy.NAME, value="Delete").click()
+
+        page = self.driver.find_element(by=AppiumBy.CLASS_NAME, value="[panel | Program Membership]")
+        self.assertTrue(page.is_displayed())
+        page.find_element(by=AppiumBy.NAME, value="Delete").click()
 
         deleteDialog = self.driver.find_element(by=AppiumBy.NAME, value="Delete Pass")
         self.assertTrue(deleteDialog.is_displayed())

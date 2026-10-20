@@ -46,6 +46,8 @@ class TripGroupTest(ItineraryTestCase):
 
         self.openFile("../tests/randa2017.json")
         self.driver.find_element(by=AppiumBy.NAME, value="Import selection").click()
+
+        self.driver.find_element(by=AppiumBy.NAME, value="Itinerary").click()
         self.driver.find_element(by=AppiumBy.NAME, value="Randa (September 2017)").click()
 
         self.driver.find_element(by=AppiumBy.NAME, value="Delete trip").click()

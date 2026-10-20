@@ -34,22 +34,21 @@ class ItineraryTest(ItineraryTestCase):
         self.assertTrue(self.driver.find_element(by=AppiumBy.NAME, value="Randa, Valais, Switzerland").is_displayed())
 
         # clear history
-        self.openContextDrawer()
         self.assertTrue(self.driver.find_element(by=AppiumBy.NAME, value="Clear history").is_enabled())
         self.driver.find_element(by=AppiumBy.NAME, value="Clear history").click()
         self.driver.find_element(by=AppiumBy.NAME, value="Cancel").click()
         self.assertTrue(self.driver.find_element(by=AppiumBy.NAME, value="Randa, Valais, Switzerland").is_displayed())
-        self.openContextDrawer()
         self.driver.find_element(by=AppiumBy.NAME, value="Clear history").click()
         self.driver.find_element(by=AppiumBy.NAME, value="Remove").click()
         # self.assertFalse(self.driver.find_element(by=AppiumBy.NAME, value="Randa, Valais, Switzerland").is_displayed())
         self.goBack()
 
-
     def test_import(self):
         self.driver.find_element(by=AppiumBy.NAME, value="My Data").click()
         self.driver.find_element(by=AppiumBy.NAME, value="Manage your Passes").click()
-        self.driver.find_element(by=AppiumBy.NAME, value="Import").click()
+        page = self.driver.find_element(by=AppiumBy.CLASS_NAME, value="[panel | Passes and Programs]")
+        self.assertTrue(page.is_displayed())
+        page.find_element(by=AppiumBy.NAME, value="Import").click()
         self.driver.find_element(by=AppiumBy.NAME, value="From barcode").click()
 
         self.assertTrue(self.driver.find_element(by=AppiumBy.NAME, value="No camera available.").is_displayed())

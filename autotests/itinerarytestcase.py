@@ -13,6 +13,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 
 import os
+import time
 
 
 class SetValueCommand(ExtensionBase):
@@ -55,6 +56,9 @@ class ItineraryTestCase(unittest.TestCase):
 
     # helper methods
     def goBack(self):
+        # HACK wait for page change animations to settle down so we go back from the current page
+        # rather than the previous one
+        time.sleep(0.25)
         self.driver.find_element(by=AppiumBy.NAME, value="Navigate Back").click()
 
     def openFile(self, fileName):
