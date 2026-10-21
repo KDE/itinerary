@@ -55,6 +55,7 @@ class PassImportTest(ItineraryTestCase):
         # TODO how to check this element does not exist anymore?
         # self.assertFalse(self.driver.find_element(by=AppiumBy.NAME, value="BahnCard 25 (2. Kl.) (BC25)").is_displayed())
 
+
 class PassManualTest(ItineraryTestCase):
     def setUp(self):
         # open the passes & programs page
@@ -95,9 +96,10 @@ class PassManualTest(ItineraryTestCase):
 
         self.assertTrue(saveButton.is_enabled())
         saveButton.click()
+        self.goBack()
 
         self.driver.find_element(by=AppiumBy.NAME, value="New Discount Card").click()
-        page = self.driver.find_element(by=AppiumBy.NAME, value="Program Membership")
+        page = self.driver.find_element(by=AppiumBy.CLASS_NAME, value="[panel | Program Membership]")
         self.assertTrue(page.find_element(by=AppiumBy.NAME, value="New Discount Card").is_displayed())
         self.assertTrue(page.find_element(by=AppiumBy.NAME, value="1234567890").is_displayed())
         self.assertTrue(page.find_element(by=AppiumBy.NAME, value="Konqi Dragon").is_displayed())
@@ -106,6 +108,7 @@ class PassManualTest(ItineraryTestCase):
         deleteDialog = self.driver.find_element(by=AppiumBy.NAME, value="Delete Pass")
         self.assertTrue(deleteDialog.is_displayed())
         deleteDialog.find_element(by=AppiumBy.NAME, value="Delete").click()
+
 
 if __name__ == '__main__':
     unittest.main()
