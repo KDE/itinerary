@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-20 00:53+0000\n"
+"POT-Creation-Date: 2026-10-21 00:52+0000\n"
 "PO-Revision-Date: 2026-09-07 19:37+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -239,77 +239,77 @@ msgstr "Korvaa"
 msgid "Destination:"
 msgstr "Määränpää:"
 
-#: app/applicationcontroller.cpp:194
+#: app/applicationcontroller.cpp:199
 #, kde-format
 msgctxt "geo coordinate"
 msgid "%1, %2"
 msgstr "%1, %2"
 
-#: app/applicationcontroller.cpp:315
+#: app/applicationcontroller.cpp:320
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] "Tuotiin yksi varaus."
 msgstr[1] "Tuotiin %1 varausta."
 
-#: app/applicationcontroller.cpp:318
+#: app/applicationcontroller.cpp:323
 #, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
 msgstr[0] "Yksi lippu tuotu."
 msgstr[1] "%1 lippua tuotu."
 
-#: app/applicationcontroller.cpp:321
+#: app/applicationcontroller.cpp:326
 #, kde-format
 msgid "One health certificate imported."
 msgid_plural "%1 health certificates imported."
 msgstr[0] "Tuotiin yksi terveystodistus."
 msgstr[1] "Tuotiin %1 terveystodistusta."
 
-#: app/applicationcontroller.cpp:343 app/applicationcontroller.cpp:386
-#: app/applicationcontroller.cpp:404 app/applicationcontroller.cpp:451
-#: app/applicationcontroller.cpp:490 app/applicationcontroller.cpp:508
-#: app/applicationcontroller.cpp:549 app/applicationcontroller.cpp:585
-#: app/applicationcontroller.cpp:603
+#: app/applicationcontroller.cpp:348 app/applicationcontroller.cpp:391
+#: app/applicationcontroller.cpp:409 app/applicationcontroller.cpp:456
+#: app/applicationcontroller.cpp:495 app/applicationcontroller.cpp:513
+#: app/applicationcontroller.cpp:554 app/applicationcontroller.cpp:590
+#: app/applicationcontroller.cpp:608
 #, kde-format
 msgctxt "%1 is an error message"
 msgid "Export failed: %1"
 msgstr "Vienti epäonnistui: %1"
 
-#: app/applicationcontroller.cpp:360 app/applicationcontroller.cpp:369
-#: app/applicationcontroller.cpp:464 app/applicationcontroller.cpp:473
-#: app/applicationcontroller.cpp:559 app/applicationcontroller.cpp:568
+#: app/applicationcontroller.cpp:365 app/applicationcontroller.cpp:374
+#: app/applicationcontroller.cpp:469 app/applicationcontroller.cpp:478
+#: app/applicationcontroller.cpp:564 app/applicationcontroller.cpp:573
 #, kde-format
 msgid "Export completed."
 msgstr "Vienti valmis."
 
-#: app/applicationcontroller.cpp:396
+#: app/applicationcontroller.cpp:401
 #, kde-format
 msgid "Trip sent."
 msgstr "Matka lähetetty."
 
-#: app/applicationcontroller.cpp:500
+#: app/applicationcontroller.cpp:505
 #, kde-format
 msgid "Reservation sent."
 msgstr "Varaus lähetetty."
 
-#: app/applicationcontroller.cpp:595
+#: app/applicationcontroller.cpp:600
 #, kde-format
 msgid "Pass sent."
 msgstr "Ohjelmakortti lähetetty."
 
-#: app/applicationcontroller.cpp:633
+#: app/applicationcontroller.cpp:638
 #, kde-format
 msgctxt "%1 is an error message"
 msgid "Saving failed: %1"
 msgstr "Tallennus epäonnistui: %1"
 
-#: app/applicationcontroller.cpp:638
+#: app/applicationcontroller.cpp:643
 #, kde-format
 msgid "File saved successfully."
 msgstr "Tiedoston tallennus onnistui."
 
-#: app/applicationcontroller.cpp:645
+#: app/applicationcontroller.cpp:650
 #, kde-format
 msgid ""
 "File was exported with a newer version of Itinerary. Some information might "
@@ -318,7 +318,7 @@ msgstr ""
 "Tiedosto tuotiin Itineraryn uudemmasta versiosta. Kaikkea ei ehkä tuotu "
 "oikein."
 
-#: app/applicationcontroller.cpp:673
+#: app/applicationcontroller.cpp:678
 #, kde-format
 msgid "Import completed."
 msgstr "Tuonti valmis."
@@ -854,27 +854,27 @@ msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "Lataa aiemmat lähdöt"
 
-#: app/DepartureQueryPage.qml:163 app/JourneyQueryPage.qml:172
+#: app/DepartureQueryPage.qml:163 app/JourneyQueryPage.qml:173
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "Lataa myöhemmät yhteydet"
 
-#: app/DepartureQueryPage.qml:172 app/JourneyQueryPage.qml:179
+#: app/DepartureQueryPage.qml:172 app/JourneyQueryPage.qml:180
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
 msgstr "Tiedontarjoajat:"
 
-#: app/DepartureQueryPage.qml:180 app/JourneyQueryPage.qml:188
+#: app/DepartureQueryPage.qml:180 app/JourneyQueryPage.qml:189
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Loading"
 msgstr "Ladataan"
 
-#: app/DepartureQueryPage.qml:180 app/JourneyQueryPage.qml:190
+#: app/DepartureQueryPage.qml:180 app/JourneyQueryPage.qml:191
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:status"
@@ -1998,19 +1998,19 @@ msgctxt "@action:inmenu"
 msgid "From barcode"
 msgstr "viivakoodista"
 
-#: app/ImportAction.qml:85
+#: app/ImportAction.qml:82
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "From calendar"
 msgstr "kalenterista"
 
-#: app/ImportAction.qml:127
+#: app/ImportAction.qml:124
 #, kde-format
 msgctxt "@action:inmenu Name of the train company in Germany"
 msgid "From Deutsche Bahn reservation number"
 msgstr "Deutsche Bahnin varausnumerosta"
 
-#: app/ImportAction.qml:138
+#: app/ImportAction.qml:135
 #, kde-format
 msgctxt "Name of the train company in France"
 msgid "From SNCF reservation number"
@@ -2223,19 +2223,19 @@ msgstr "Näytä kartta"
 msgid "Select"
 msgstr "Valitse"
 
-#: app/JourneyQueryPage.qml:163 app/TransferPage.qml:312
+#: app/JourneyQueryPage.qml:164 app/TransferPage.qml:312
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr "Lataa aiemmat yhteydet"
 
-#: app/JourneyQueryPage.qml:192
+#: app/JourneyQueryPage.qml:193
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No journeys found"
 msgstr "Matkoja ei löytynyt"
 
-#: app/JourneyQueryPage.qml:238
+#: app/JourneyQueryPage.qml:239
 #, kde-format
 msgid "Still fetching results…"
 msgstr "Noudetaan vielä tuloksia…"
@@ -2389,7 +2389,7 @@ msgid_plural "%1 changes"
 msgstr[0] "Yksi vaihto"
 msgstr[1] "%1 vaihtoa"
 
-#: app/JourneySummaryDelegate.qml:115
+#: app/JourneySummaryDelegate.qml:121
 #, kde-format
 msgid "Click to extend"
 msgstr "Laajenna napsauttamalla"
@@ -3432,7 +3432,7 @@ msgctxt "@title"
 msgid "Add Program Membership"
 msgstr "Lisää ohjelman jäsenyys"
 
-#: app/PassPage.qml:43 app/TripGroupsPage.qml:109
+#: app/PassPage.qml:43 app/TripGroupsPage.qml:116
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Import"
@@ -4270,12 +4270,12 @@ msgstr[1] "%1 välipysäkkiä (%2)"
 msgid "0 intermediate stop (%1)"
 msgstr "0 välipysäkkiä (%1)"
 
-#: app/timelinesectiondelegatecontroller.cpp:64
+#: app/timelinesectiondelegatecontroller.cpp:74
 #, kde-format
 msgid "Today"
 msgstr "Tänään"
 
-#: app/timelinesectiondelegatecontroller.cpp:66
+#: app/timelinesectiondelegatecontroller.cpp:76
 #, kde-format
 msgctxt "weekday, date"
 msgid "%1, %2"
@@ -4819,8 +4819,8 @@ msgctxt "@action:button"
 msgid "Go To Now"
 msgstr "Siirry nyt"
 
-#: app/TripGroupPage.qml:802 app/TripGroupsPage.qml:83
-#: app/TripGroupsPage.qml:118
+#: app/TripGroupPage.qml:802 app/TripGroupsPage.qml:87
+#: app/TripGroupsPage.qml:125
 #, kde-format
 msgctxt "@action:button"
 msgid "Add trip"
@@ -4863,7 +4863,7 @@ msgctxt "@title:window"
 msgid "Trips"
 msgstr "Matkat"
 
-#: app/TripGroupsPage.qml:81
+#: app/TripGroupsPage.qml:85
 #, kde-format
 msgid "No trips added yet."
 msgstr "Matkoja ei ole vielä lisätty."

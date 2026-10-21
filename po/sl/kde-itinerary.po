@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-20 00:53+0000\n"
+"POT-Creation-Date: 2026-10-21 00:52+0000\n"
 "PO-Revision-Date: 2026-07-27 07:16+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -240,13 +240,13 @@ msgstr "Zamenjaj"
 msgid "Destination:"
 msgstr "Destinacija:"
 
-#: app/applicationcontroller.cpp:194
+#: app/applicationcontroller.cpp:199
 #, kde-format
 msgctxt "geo coordinate"
 msgid "%1, %2"
 msgstr "%1, %2"
 
-#: app/applicationcontroller.cpp:315
+#: app/applicationcontroller.cpp:320
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
@@ -255,7 +255,7 @@ msgstr[1] "%1 uvoženi rezervaciji."
 msgstr[2] "%1 uvožene rezervacije."
 msgstr[3] "%1 uvoženih rezervacij."
 
-#: app/applicationcontroller.cpp:318
+#: app/applicationcontroller.cpp:323
 #, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
@@ -264,7 +264,7 @@ msgstr[1] "%1 vozovnici uvoženi."
 msgstr[2] "%1 vozovnice uvožene."
 msgstr[3] "%1 vozovnic uvoženih."
 
-#: app/applicationcontroller.cpp:321
+#: app/applicationcontroller.cpp:326
 #, kde-format
 msgid "One health certificate imported."
 msgid_plural "%1 health certificates imported."
@@ -273,50 +273,50 @@ msgstr[1] "%1 zdravstveno potrdilo uvoženo."
 msgstr[2] "%1 zdravstveni potrdili uvoženi."
 msgstr[3] "%1 zdravstvenih potrdil uvoženo."
 
-#: app/applicationcontroller.cpp:343 app/applicationcontroller.cpp:386
-#: app/applicationcontroller.cpp:404 app/applicationcontroller.cpp:451
-#: app/applicationcontroller.cpp:490 app/applicationcontroller.cpp:508
-#: app/applicationcontroller.cpp:549 app/applicationcontroller.cpp:585
-#: app/applicationcontroller.cpp:603
+#: app/applicationcontroller.cpp:348 app/applicationcontroller.cpp:391
+#: app/applicationcontroller.cpp:409 app/applicationcontroller.cpp:456
+#: app/applicationcontroller.cpp:495 app/applicationcontroller.cpp:513
+#: app/applicationcontroller.cpp:554 app/applicationcontroller.cpp:590
+#: app/applicationcontroller.cpp:608
 #, kde-format
 msgctxt "%1 is an error message"
 msgid "Export failed: %1"
 msgstr "Neuspel izvoz: %1"
 
-#: app/applicationcontroller.cpp:360 app/applicationcontroller.cpp:369
-#: app/applicationcontroller.cpp:464 app/applicationcontroller.cpp:473
-#: app/applicationcontroller.cpp:559 app/applicationcontroller.cpp:568
+#: app/applicationcontroller.cpp:365 app/applicationcontroller.cpp:374
+#: app/applicationcontroller.cpp:469 app/applicationcontroller.cpp:478
+#: app/applicationcontroller.cpp:564 app/applicationcontroller.cpp:573
 #, kde-format
 msgid "Export completed."
 msgstr "Izvoz dokončan."
 
-#: app/applicationcontroller.cpp:396
+#: app/applicationcontroller.cpp:401
 #, kde-format
 msgid "Trip sent."
 msgstr "Izlet poslan."
 
-#: app/applicationcontroller.cpp:500
+#: app/applicationcontroller.cpp:505
 #, kde-format
 msgid "Reservation sent."
 msgstr "Rezervacija poslana."
 
-#: app/applicationcontroller.cpp:595
+#: app/applicationcontroller.cpp:600
 #, kde-format
 msgid "Pass sent."
 msgstr "Prepustnica poslana."
 
-#: app/applicationcontroller.cpp:633
+#: app/applicationcontroller.cpp:638
 #, kde-format
 msgctxt "%1 is an error message"
 msgid "Saving failed: %1"
 msgstr "Neuspelo shranjevanje: %1"
 
-#: app/applicationcontroller.cpp:638
+#: app/applicationcontroller.cpp:643
 #, kde-format
 msgid "File saved successfully."
 msgstr "Datoteka uspešno shranjena."
 
-#: app/applicationcontroller.cpp:645
+#: app/applicationcontroller.cpp:650
 #, kde-format
 msgid ""
 "File was exported with a newer version of Itinerary. Some information might "
@@ -325,7 +325,7 @@ msgstr ""
 "Datoteka je bila izvožena z novejšo različico programa Itinerary. Nekatere "
 "informacije morda ne bodo pravilno uvožene."
 
-#: app/applicationcontroller.cpp:673
+#: app/applicationcontroller.cpp:678
 #, kde-format
 msgid "Import completed."
 msgstr "Uvoz dokončan."
@@ -861,27 +861,27 @@ msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "Naloži zgodnejše odhode"
 
-#: app/DepartureQueryPage.qml:163 app/JourneyQueryPage.qml:172
+#: app/DepartureQueryPage.qml:163 app/JourneyQueryPage.qml:173
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "Naloži kasnejše povezave"
 
-#: app/DepartureQueryPage.qml:172 app/JourneyQueryPage.qml:179
+#: app/DepartureQueryPage.qml:172 app/JourneyQueryPage.qml:180
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
 msgstr "Dobavitelji podatkov:"
 
-#: app/DepartureQueryPage.qml:180 app/JourneyQueryPage.qml:188
+#: app/DepartureQueryPage.qml:180 app/JourneyQueryPage.qml:189
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Loading"
 msgstr "Nalaganje"
 
-#: app/DepartureQueryPage.qml:180 app/JourneyQueryPage.qml:190
+#: app/DepartureQueryPage.qml:180 app/JourneyQueryPage.qml:191
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:status"
@@ -2006,19 +2006,19 @@ msgctxt "@action:inmenu"
 msgid "From barcode"
 msgstr "Iz črtne kode"
 
-#: app/ImportAction.qml:85
+#: app/ImportAction.qml:82
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "From calendar"
 msgstr "Iz koledarja"
 
-#: app/ImportAction.qml:127
+#: app/ImportAction.qml:124
 #, kde-format
 msgctxt "@action:inmenu Name of the train company in Germany"
 msgid "From Deutsche Bahn reservation number"
 msgstr "Iz rezervacijske številke Deutsche Bahn"
 
-#: app/ImportAction.qml:138
+#: app/ImportAction.qml:135
 #, kde-format
 msgctxt "Name of the train company in France"
 msgid "From SNCF reservation number"
@@ -2230,19 +2230,19 @@ msgstr "Prikaži zemljevid"
 msgid "Select"
 msgstr "Izberi"
 
-#: app/JourneyQueryPage.qml:163 app/TransferPage.qml:312
+#: app/JourneyQueryPage.qml:164 app/TransferPage.qml:312
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr "Naloži zgodnejše povezave"
 
-#: app/JourneyQueryPage.qml:192
+#: app/JourneyQueryPage.qml:193
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No journeys found"
 msgstr "Ni najdenih potovanj"
 
-#: app/JourneyQueryPage.qml:238
+#: app/JourneyQueryPage.qml:239
 #, kde-format
 msgid "Still fetching results…"
 msgstr "Še vedno pridobivanje rezultatov…"
@@ -2397,7 +2397,7 @@ msgstr[1] "%1 spremembi"
 msgstr[2] "%1 spremembe"
 msgstr[3] "%1 sprememb"
 
-#: app/JourneySummaryDelegate.qml:115
+#: app/JourneySummaryDelegate.qml:121
 #, kde-format
 msgid "Click to extend"
 msgstr "Klikni za razširitev"
@@ -3446,7 +3446,7 @@ msgctxt "@title"
 msgid "Add Program Membership"
 msgstr "Dodaj članstvo v programu"
 
-#: app/PassPage.qml:43 app/TripGroupsPage.qml:109
+#: app/PassPage.qml:43 app/TripGroupsPage.qml:116
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Import"
@@ -4287,12 +4287,12 @@ msgstr[3] "%1 vmesnih postankov (%2)"
 msgid "0 intermediate stop (%1)"
 msgstr "0 vmesnih postankov (%1)"
 
-#: app/timelinesectiondelegatecontroller.cpp:64
+#: app/timelinesectiondelegatecontroller.cpp:74
 #, kde-format
 msgid "Today"
 msgstr "Danes"
 
-#: app/timelinesectiondelegatecontroller.cpp:66
+#: app/timelinesectiondelegatecontroller.cpp:76
 #, kde-format
 msgctxt "weekday, date"
 msgid "%1, %2"
@@ -4840,8 +4840,8 @@ msgctxt "@action:button"
 msgid "Go To Now"
 msgstr "Pojdi na Zdaj"
 
-#: app/TripGroupPage.qml:802 app/TripGroupsPage.qml:83
-#: app/TripGroupsPage.qml:118
+#: app/TripGroupPage.qml:802 app/TripGroupsPage.qml:87
+#: app/TripGroupsPage.qml:125
 #, kde-format
 msgctxt "@action:button"
 msgid "Add trip"
@@ -4884,7 +4884,7 @@ msgctxt "@title:window"
 msgid "Trips"
 msgstr "Potovanja"
 
-#: app/TripGroupsPage.qml:81
+#: app/TripGroupsPage.qml:85
 #, kde-format
 msgid "No trips added yet."
 msgstr "Ni dodanih še nobenih potovanj."

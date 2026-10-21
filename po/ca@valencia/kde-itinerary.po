@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-20 00:53+0000\n"
+"POT-Creation-Date: 2026-10-21 00:52+0000\n"
 "PO-Revision-Date: 2026-07-27 09:35+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -242,77 +242,77 @@ msgstr "Substituïx"
 msgid "Destination:"
 msgstr "Destinació:"
 
-#: app/applicationcontroller.cpp:194
+#: app/applicationcontroller.cpp:199
 #, kde-format
 msgctxt "geo coordinate"
 msgid "%1, %2"
 msgstr "%1, %2"
 
-#: app/applicationcontroller.cpp:315
+#: app/applicationcontroller.cpp:320
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] "S'ha importat una reserva."
 msgstr[1] "S'han importat %1 reserves."
 
-#: app/applicationcontroller.cpp:318
+#: app/applicationcontroller.cpp:323
 #, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
 msgstr[0] "S'ha importat un passe."
 msgstr[1] "S'han importat %1 passes."
 
-#: app/applicationcontroller.cpp:321
+#: app/applicationcontroller.cpp:326
 #, kde-format
 msgid "One health certificate imported."
 msgid_plural "%1 health certificates imported."
 msgstr[0] "S'ha importat un certificat de salut."
 msgstr[1] "S'han importat %1 certificats de salut."
 
-#: app/applicationcontroller.cpp:343 app/applicationcontroller.cpp:386
-#: app/applicationcontroller.cpp:404 app/applicationcontroller.cpp:451
-#: app/applicationcontroller.cpp:490 app/applicationcontroller.cpp:508
-#: app/applicationcontroller.cpp:549 app/applicationcontroller.cpp:585
-#: app/applicationcontroller.cpp:603
+#: app/applicationcontroller.cpp:348 app/applicationcontroller.cpp:391
+#: app/applicationcontroller.cpp:409 app/applicationcontroller.cpp:456
+#: app/applicationcontroller.cpp:495 app/applicationcontroller.cpp:513
+#: app/applicationcontroller.cpp:554 app/applicationcontroller.cpp:590
+#: app/applicationcontroller.cpp:608
 #, kde-format
 msgctxt "%1 is an error message"
 msgid "Export failed: %1"
 msgstr "No s'ha pogut fer l'exportació: %1"
 
-#: app/applicationcontroller.cpp:360 app/applicationcontroller.cpp:369
-#: app/applicationcontroller.cpp:464 app/applicationcontroller.cpp:473
-#: app/applicationcontroller.cpp:559 app/applicationcontroller.cpp:568
+#: app/applicationcontroller.cpp:365 app/applicationcontroller.cpp:374
+#: app/applicationcontroller.cpp:469 app/applicationcontroller.cpp:478
+#: app/applicationcontroller.cpp:564 app/applicationcontroller.cpp:573
 #, kde-format
 msgid "Export completed."
 msgstr "S'ha completat l'exportació."
 
-#: app/applicationcontroller.cpp:396
+#: app/applicationcontroller.cpp:401
 #, kde-format
 msgid "Trip sent."
 msgstr "S'ha enviat el viatge."
 
-#: app/applicationcontroller.cpp:500
+#: app/applicationcontroller.cpp:505
 #, kde-format
 msgid "Reservation sent."
 msgstr "La reserva s'ha enviat."
 
-#: app/applicationcontroller.cpp:595
+#: app/applicationcontroller.cpp:600
 #, kde-format
 msgid "Pass sent."
 msgstr "S'ha enviat el passe."
 
-#: app/applicationcontroller.cpp:633
+#: app/applicationcontroller.cpp:638
 #, kde-format
 msgctxt "%1 is an error message"
 msgid "Saving failed: %1"
 msgstr "La guardada ha fallat: %1"
 
-#: app/applicationcontroller.cpp:638
+#: app/applicationcontroller.cpp:643
 #, kde-format
 msgid "File saved successfully."
 msgstr "El fitxer s'ha guardat correctament."
 
-#: app/applicationcontroller.cpp:645
+#: app/applicationcontroller.cpp:650
 #, kde-format
 msgid ""
 "File was exported with a newer version of Itinerary. Some information might "
@@ -321,7 +321,7 @@ msgstr ""
 "El fitxer s'ha exportat amb una versió més nova d'Itinerary. És possible que "
 "algunes dades no s'hagen importat correctament."
 
-#: app/applicationcontroller.cpp:673
+#: app/applicationcontroller.cpp:678
 #, kde-format
 msgid "Import completed."
 msgstr "S'ha completat la importació."
@@ -857,27 +857,27 @@ msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "Carrega les eixides anteriors"
 
-#: app/DepartureQueryPage.qml:163 app/JourneyQueryPage.qml:172
+#: app/DepartureQueryPage.qml:163 app/JourneyQueryPage.qml:173
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "Carrega les connexions posteriors"
 
-#: app/DepartureQueryPage.qml:172 app/JourneyQueryPage.qml:179
+#: app/DepartureQueryPage.qml:172 app/JourneyQueryPage.qml:180
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
 msgstr "Proveïdors de dades:"
 
-#: app/DepartureQueryPage.qml:180 app/JourneyQueryPage.qml:188
+#: app/DepartureQueryPage.qml:180 app/JourneyQueryPage.qml:189
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Loading"
 msgstr "S'està carregant"
 
-#: app/DepartureQueryPage.qml:180 app/JourneyQueryPage.qml:190
+#: app/DepartureQueryPage.qml:180 app/JourneyQueryPage.qml:191
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:status"
@@ -2000,19 +2000,19 @@ msgctxt "@action:inmenu"
 msgid "From barcode"
 msgstr "Des d'un codi de barres"
 
-#: app/ImportAction.qml:85
+#: app/ImportAction.qml:82
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "From calendar"
 msgstr "Des del calendari"
 
-#: app/ImportAction.qml:127
+#: app/ImportAction.qml:124
 #, kde-format
 msgctxt "@action:inmenu Name of the train company in Germany"
 msgid "From Deutsche Bahn reservation number"
 msgstr "Del número de reserva de la Deutsche Bahn"
 
-#: app/ImportAction.qml:138
+#: app/ImportAction.qml:135
 #, kde-format
 msgctxt "Name of the train company in France"
 msgid "From SNCF reservation number"
@@ -2225,19 +2225,19 @@ msgstr "Mostra el mapa"
 msgid "Select"
 msgstr "Tria"
 
-#: app/JourneyQueryPage.qml:163 app/TransferPage.qml:312
+#: app/JourneyQueryPage.qml:164 app/TransferPage.qml:312
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr "Carrega les connexions anteriors"
 
-#: app/JourneyQueryPage.qml:192
+#: app/JourneyQueryPage.qml:193
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No journeys found"
 msgstr "No s'ha trobat cap viatge"
 
-#: app/JourneyQueryPage.qml:238
+#: app/JourneyQueryPage.qml:239
 #, kde-format
 msgid "Still fetching results…"
 msgstr "Encara s'estan recuperant els resultats…"
@@ -2390,7 +2390,7 @@ msgid_plural "%1 changes"
 msgstr[0] "Un canvi"
 msgstr[1] "%1 canvis"
 
-#: app/JourneySummaryDelegate.qml:115
+#: app/JourneySummaryDelegate.qml:121
 #, kde-format
 msgid "Click to extend"
 msgstr "Cliqueu per a ampliar"
@@ -3450,7 +3450,7 @@ msgctxt "@title"
 msgid "Add Program Membership"
 msgstr "Afig un programa d'afiliació"
 
-#: app/PassPage.qml:43 app/TripGroupsPage.qml:109
+#: app/PassPage.qml:43 app/TripGroupsPage.qml:116
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Import"
@@ -4295,12 +4295,12 @@ msgstr[1] "%1 parades intermèdies (%2)"
 msgid "0 intermediate stop (%1)"
 msgstr "0 parada intermèdia (%1)"
 
-#: app/timelinesectiondelegatecontroller.cpp:64
+#: app/timelinesectiondelegatecontroller.cpp:74
 #, kde-format
 msgid "Today"
 msgstr "Hui"
 
-#: app/timelinesectiondelegatecontroller.cpp:66
+#: app/timelinesectiondelegatecontroller.cpp:76
 #, kde-format
 msgctxt "weekday, date"
 msgid "%1, %2"
@@ -4844,8 +4844,8 @@ msgctxt "@action:button"
 msgid "Go To Now"
 msgstr "Ves fins a ara"
 
-#: app/TripGroupPage.qml:802 app/TripGroupsPage.qml:83
-#: app/TripGroupsPage.qml:118
+#: app/TripGroupPage.qml:802 app/TripGroupsPage.qml:87
+#: app/TripGroupsPage.qml:125
 #, kde-format
 msgctxt "@action:button"
 msgid "Add trip"
@@ -4888,7 +4888,7 @@ msgctxt "@title:window"
 msgid "Trips"
 msgstr "Viatges"
 
-#: app/TripGroupsPage.qml:81
+#: app/TripGroupsPage.qml:85
 #, kde-format
 msgid "No trips added yet."
 msgstr "Encara no s'ha afegit cap viatge."

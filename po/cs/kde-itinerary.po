@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-20 00:53+0000\n"
+"POT-Creation-Date: 2026-10-21 00:52+0000\n"
 "PO-Revision-Date: 2026-07-27 12:40+0200\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -239,13 +239,13 @@ msgstr "Nahradit"
 msgid "Destination:"
 msgstr "Cíl:"
 
-#: app/applicationcontroller.cpp:194
+#: app/applicationcontroller.cpp:199
 #, kde-format
 msgctxt "geo coordinate"
 msgid "%1, %2"
 msgstr "%1, %2"
 
-#: app/applicationcontroller.cpp:315
+#: app/applicationcontroller.cpp:320
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
@@ -253,7 +253,7 @@ msgstr[0] "Importována jedna rezervace."
 msgstr[1] "Importovány %1 rezervace."
 msgstr[2] "Importováno %1 rezervací."
 
-#: app/applicationcontroller.cpp:318
+#: app/applicationcontroller.cpp:323
 #, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
@@ -261,7 +261,7 @@ msgstr[0] "Jedna jízdenka/letenka importována."
 msgstr[1] "%1 jízdenky/letenky importovány."
 msgstr[2] "%1 jízdenek/letenek importováno."
 
-#: app/applicationcontroller.cpp:321
+#: app/applicationcontroller.cpp:326
 #, kde-format
 msgid "One health certificate imported."
 msgid_plural "%1 health certificates imported."
@@ -269,50 +269,50 @@ msgstr[0] "Jeden zdravotní certifikát importován."
 msgstr[1] "%1 zdravotní certifikáty importovány."
 msgstr[2] "%1 zdravotních certifikátů importováno."
 
-#: app/applicationcontroller.cpp:343 app/applicationcontroller.cpp:386
-#: app/applicationcontroller.cpp:404 app/applicationcontroller.cpp:451
-#: app/applicationcontroller.cpp:490 app/applicationcontroller.cpp:508
-#: app/applicationcontroller.cpp:549 app/applicationcontroller.cpp:585
-#: app/applicationcontroller.cpp:603
+#: app/applicationcontroller.cpp:348 app/applicationcontroller.cpp:391
+#: app/applicationcontroller.cpp:409 app/applicationcontroller.cpp:456
+#: app/applicationcontroller.cpp:495 app/applicationcontroller.cpp:513
+#: app/applicationcontroller.cpp:554 app/applicationcontroller.cpp:590
+#: app/applicationcontroller.cpp:608
 #, kde-format
 msgctxt "%1 is an error message"
 msgid "Export failed: %1"
 msgstr "Exportování selhalo: %1"
 
-#: app/applicationcontroller.cpp:360 app/applicationcontroller.cpp:369
-#: app/applicationcontroller.cpp:464 app/applicationcontroller.cpp:473
-#: app/applicationcontroller.cpp:559 app/applicationcontroller.cpp:568
+#: app/applicationcontroller.cpp:365 app/applicationcontroller.cpp:374
+#: app/applicationcontroller.cpp:469 app/applicationcontroller.cpp:478
+#: app/applicationcontroller.cpp:564 app/applicationcontroller.cpp:573
 #, kde-format
 msgid "Export completed."
 msgstr "Exportování bylo dokončeno."
 
-#: app/applicationcontroller.cpp:396
+#: app/applicationcontroller.cpp:401
 #, kde-format
 msgid "Trip sent."
 msgstr "Výlet odeslán."
 
-#: app/applicationcontroller.cpp:500
+#: app/applicationcontroller.cpp:505
 #, kde-format
 msgid "Reservation sent."
 msgstr "Rezervace odeslána."
 
-#: app/applicationcontroller.cpp:595
+#: app/applicationcontroller.cpp:600
 #, kde-format
 msgid "Pass sent."
 msgstr "Jízdenka/letenka odeslána."
 
-#: app/applicationcontroller.cpp:633
+#: app/applicationcontroller.cpp:638
 #, kde-format
 msgctxt "%1 is an error message"
 msgid "Saving failed: %1"
 msgstr "Ukládání selhalo: %1"
 
-#: app/applicationcontroller.cpp:638
+#: app/applicationcontroller.cpp:643
 #, kde-format
 msgid "File saved successfully."
 msgstr "Soubor byl úspěšně uložen."
 
-#: app/applicationcontroller.cpp:645
+#: app/applicationcontroller.cpp:650
 #, kde-format
 msgid ""
 "File was exported with a newer version of Itinerary. Some information might "
@@ -321,7 +321,7 @@ msgstr ""
 "Soubor byl exportován novější verzí aplikace Itinerary. Některé informace "
 "nemusí být správně importovány."
 
-#: app/applicationcontroller.cpp:673
+#: app/applicationcontroller.cpp:678
 #, kde-format
 msgid "Import completed."
 msgstr "Import byl dokončen."
@@ -857,27 +857,27 @@ msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "Načíst dřívější odjezdy"
 
-#: app/DepartureQueryPage.qml:163 app/JourneyQueryPage.qml:172
+#: app/DepartureQueryPage.qml:163 app/JourneyQueryPage.qml:173
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "Načíst pozdější spojení"
 
-#: app/DepartureQueryPage.qml:172 app/JourneyQueryPage.qml:179
+#: app/DepartureQueryPage.qml:172 app/JourneyQueryPage.qml:180
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
 msgstr "Poskytovatelé dat:"
 
-#: app/DepartureQueryPage.qml:180 app/JourneyQueryPage.qml:188
+#: app/DepartureQueryPage.qml:180 app/JourneyQueryPage.qml:189
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Loading"
 msgstr "Načítání"
 
-#: app/DepartureQueryPage.qml:180 app/JourneyQueryPage.qml:190
+#: app/DepartureQueryPage.qml:180 app/JourneyQueryPage.qml:191
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:status"
@@ -2005,19 +2005,19 @@ msgctxt "@action:inmenu"
 msgid "From barcode"
 msgstr "Z čárového kódu"
 
-#: app/ImportAction.qml:85
+#: app/ImportAction.qml:82
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "From calendar"
 msgstr "Z kalendáře"
 
-#: app/ImportAction.qml:127
+#: app/ImportAction.qml:124
 #, kde-format
 msgctxt "@action:inmenu Name of the train company in Germany"
 msgid "From Deutsche Bahn reservation number"
 msgstr "Z čísla rezervace Deutsche Bahn"
 
-#: app/ImportAction.qml:138
+#: app/ImportAction.qml:135
 #, kde-format
 msgctxt "Name of the train company in France"
 msgid "From SNCF reservation number"
@@ -2230,19 +2230,19 @@ msgstr "Zobrazit mapu"
 msgid "Select"
 msgstr "Vybrat"
 
-#: app/JourneyQueryPage.qml:163 app/TransferPage.qml:312
+#: app/JourneyQueryPage.qml:164 app/TransferPage.qml:312
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr "Načíst dřívější spojení"
 
-#: app/JourneyQueryPage.qml:192
+#: app/JourneyQueryPage.qml:193
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No journeys found"
 msgstr "Nebyly nalezeny žádné cesty"
 
-#: app/JourneyQueryPage.qml:238
+#: app/JourneyQueryPage.qml:239
 #, kde-format
 msgid "Still fetching results…"
 msgstr "Stále se načítají výsledky…"
@@ -2396,7 +2396,7 @@ msgstr[0] "Jeden přestup"
 msgstr[1] "%1 přestupy"
 msgstr[2] "%1 přestupů"
 
-#: app/JourneySummaryDelegate.qml:115
+#: app/JourneySummaryDelegate.qml:121
 #, kde-format
 msgid "Click to extend"
 msgstr "Klikněte pro rozbalení"
@@ -3432,7 +3432,7 @@ msgctxt "@title"
 msgid "Add Program Membership"
 msgstr "Přidat členství v programu"
 
-#: app/PassPage.qml:43 app/TripGroupsPage.qml:109
+#: app/PassPage.qml:43 app/TripGroupsPage.qml:116
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Import"
@@ -4276,12 +4276,12 @@ msgstr[2] "%1 mezizastávek (%2)"
 msgid "0 intermediate stop (%1)"
 msgstr "žádná mezizastávka (%1)"
 
-#: app/timelinesectiondelegatecontroller.cpp:64
+#: app/timelinesectiondelegatecontroller.cpp:74
 #, kde-format
 msgid "Today"
 msgstr "Dnes"
 
-#: app/timelinesectiondelegatecontroller.cpp:66
+#: app/timelinesectiondelegatecontroller.cpp:76
 #, kde-format
 msgctxt "weekday, date"
 msgid "%1, %2"
@@ -4827,8 +4827,8 @@ msgctxt "@action:button"
 msgid "Go To Now"
 msgstr "Přejít na současnost"
 
-#: app/TripGroupPage.qml:802 app/TripGroupsPage.qml:83
-#: app/TripGroupsPage.qml:118
+#: app/TripGroupPage.qml:802 app/TripGroupsPage.qml:87
+#: app/TripGroupsPage.qml:125
 #, kde-format
 msgctxt "@action:button"
 msgid "Add trip"
@@ -4871,7 +4871,7 @@ msgctxt "@title:window"
 msgid "Trips"
 msgstr "Výlety"
 
-#: app/TripGroupsPage.qml:81
+#: app/TripGroupsPage.qml:85
 #, kde-format
 msgid "No trips added yet."
 msgstr "Zatím nebyly přidány žádné výlety."
