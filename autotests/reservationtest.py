@@ -15,6 +15,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 import os
 
+
 class ReservationTest(ItineraryTestCase):
     def setUp(self):
         # open the timeline page and import test scenario
@@ -44,11 +45,32 @@ class ReservationTest(ItineraryTestCase):
         self.driver.find_element(by=AppiumBy.NAME, value="Edit").click()
         self.assertTrue(self.driver.find_element(by=AppiumBy.CLASS_NAME, value="[panel | Edit Flight]").is_displayed())
         self.goBack()
-        self.assertTrue(self.driver.find_element(by=AppiumBy.CLASS_NAME, value="[panel | Flight]").is_displayed())
-        self.goBack()
+
+        page = self.driver.find_element(by=AppiumBy.CLASS_NAME, value="[panel | Flight]")
+        self.assertTrue(page.is_displayed())
+        exportAction = page.find_element(by=AppiumBy.CLASS_NAME, value="[push button | Export…]")
+        self.assertTrue(exportAction.is_enabled())
+        exportAction.click()
+
+        exportDialog = self.driver.find_element(by=AppiumBy.CLASS_NAME, value="[dialog | Export Reservation]")
+        self.assertTrue(exportDialog)
+        exportDialog.find_element(by=AppiumBy.NAME, value="As Itinerary file…").click()
+        self.openFile("export-test.itinerary")
+
+        deleteAction = page.find_element(by=AppiumBy.CLASS_NAME, value="[push button | Delete…]")
+        self.assertTrue(deleteAction.is_enabled())
+        deleteAction.click()
+
+        deleteDialog = self.driver.find_element(by=AppiumBy.CLASS_NAME, value="[dialog | Delete Event]")
+        self.assertTrue(deleteDialog.is_displayed())
+        deleteDialog.find_element(by=AppiumBy.CLASS_NAME, value="[push button | Cancel]").click()
+        deleteAction.click()
+        deleteDialog = self.driver.find_element(by=AppiumBy.CLASS_NAME, value="[dialog | Delete Event]")
+        deleteDialog.find_element(by=AppiumBy.CLASS_NAME, value="[push button | Delete]").click()
 
     def test_train(self):
-        self.driver.find_element(by=AppiumBy.NAME, value="IC 816").click()
+        # TODO should be IC 816, but that is consistently set to Accessible.ignored = true for unknown reasons...
+        self.driver.find_element(by=AppiumBy.NAME, value="R 241").click()
         self.assertTrue(self.driver.find_element(by=AppiumBy.NAME, value="Barcode Scan Mode").is_enabled())
         # TODO how to check those *don't* exist?
         # self.assertFalse(self.driver.find_element(by=AppiumBy.NAME, value="Departure Vehicle Layout").is_enabled())
@@ -59,12 +81,34 @@ class ReservationTest(ItineraryTestCase):
         # self.assertFalse(self.driver.find_element(by=AppiumBy.NAME, value="Add transfer after").is_enabled())
         self.assertTrue(self.driver.find_element(by=AppiumBy.NAME, value="Alternatives").is_enabled())
         self.driver.find_element(by=AppiumBy.NAME, value="Edit").click()
-        self.driver.find_element(by=AppiumBy.NAME, value="Save").click()
+        page = self.driver.find_element(by=AppiumBy.CLASS_NAME, value="[panel | Edit Train Reservation]")
+        self.assertTrue(page.is_displayed())
+        page.find_element(by=AppiumBy.CLASS_NAME, value="[push button | Save]").click()
+
+        page = self.driver.find_element(by=AppiumBy.CLASS_NAME, value="[panel | Train Ticket]")
+        self.assertTrue(page.is_displayed())
+        page.find_element(by=AppiumBy.CLASS_NAME, value="[push button | Station]").click()
+        self.driver.find_element(by=AppiumBy.CLASS_NAME, value="[push button | View Indoor Map]").click()
+        self.assertTrue(self.driver.find_element(by=AppiumBy.CLASS_NAME, value="[panel | Floor 1]").is_displayed())
+        self.goBack()
+
+        page.find_element(by=AppiumBy.CLASS_NAME, value="[push button | Station]").click()
+        self.driver.find_element(by=AppiumBy.CLASS_NAME, value="[push button | Public Transport Departures]").click()
+        self.assertTrue(self.driver.find_element(by=AppiumBy.CLASS_NAME, value="[panel | Departures]").is_displayed())
+        self.goBack()
+
+        page.find_element(by=AppiumBy.CLASS_NAME, value="[push button | Alternatives]").click()
+        self.assertTrue(self.driver.find_element(by=AppiumBy.CLASS_NAME, value="[panel | Alternative Connections]").is_displayed())
+        self.goBack()
+
+        self.assertTrue(page.is_displayed())
+        self.assertTrue(self.driver.find_element(by=AppiumBy.NAME, value="Visp to Randa").is_displayed())
         self.goBack()
         # TODO we need to scroll down for this, how to do that?
         # self.driver.find_element(by=AppiumBy.NAME, value="R 241").click()
         # self.assertEqual(len(self.driver.find_elements(by=AppiumBy.NAME, value="View Indoor Map")), 2)
         # self.goBack()
+
 
 if __name__ == '__main__':
     unittest.main()
