@@ -175,7 +175,7 @@ EditorPage {
             FormCard.FormTextFieldDelegate {
                 id: departureBusStopName
 
-                label: i18nc("Bus stop", "Stop")
+                label: i18nc("bus stop", "Stop Name")
                 text: reservation.reservationFor.departureBusStop.name
                 status: Kirigami.MessageType.Error
                 statusMessage: text === "" ? i18n("Departure bus stop must not be empty.") : ""
@@ -207,7 +207,7 @@ EditorPage {
             visible: !root.isManual
 
             FormCard.FormTextDelegate {
-                text: i18nc("bus stop", "Stop Name")
+                text: i18nc("bus stop", "Stop")
                 description: root.departureBusStop.name
             }
 
@@ -241,7 +241,7 @@ EditorPage {
             FormDateTimeEditDelegate {
                 id: arrivalTimeEdit
 
-                text: i18nc("Train arrival", "Arrival Time")
+                text: i18nc("bus arrival", "Arrival Time")
                 obj: reservation.reservationFor
                 propertyName: "arrivalTime"
                 initialValue: {
@@ -262,7 +262,7 @@ EditorPage {
             FormCard.FormTextFieldDelegate {
                 id: arrivalBusStopName
 
-                label: i18nc("Bus stop", "Stop Name")
+                label: i18nc("bus stop", "Stop Name")
                 text: root.arrivalBusStop.name
                 status: Kirigami.MessageType.Error
                 statusMessage: text === "" ? i18n("Arrival stop must not be empty.") : ""
