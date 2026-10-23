@@ -50,7 +50,9 @@ inline bool compareJson(const QString &refFile, const T &output, const T &ref)
 inline QByteArray readFile(const QString &fn)
 {
     QFile f(fn);
-    f.open(QFile::ReadOnly);
+    if (!f.open(QFile::ReadOnly)) {
+        qCritical() << f.errorString();
+    }
     return f.readAll();
 }
 

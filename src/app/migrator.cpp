@@ -112,9 +112,12 @@ void Migrator::moveLiveData()
         f.close();
 
         // mtime changes need to be done without content changes to take effect
-        f.open(QFile::WriteOnly | QFile::Append);
-        f.setFileTime(timestamp, QFile::FileModificationTime);
-        f.close();
+        if (f.open(QFile::WriteOnly | QFile::Append)) {
+            f.setFileTime(timestamp, QFile::FileModificationTime);
+            f.close();
+        } else {
+            qCWarning(Log) << "Failed to set mtime on" << f.fileName() << f.errorString();
+        }
     }
 
     // delete all old files

@@ -6,6 +6,8 @@
 
 #include <config-itinerary.h>
 
+#include "testhelper.h"
+
 #include "healthcertificatemanager.h"
 #include "applicationcontroller.h"
 #include "importcontroller.h"
@@ -20,13 +22,6 @@
 class HealthCertificateManagerTest : public QObject
 {
     Q_OBJECT
-private:
-    QByteArray readFile(const QString &fn)
-    {
-        QFile f(fn);
-        f.open(QFile::ReadOnly);
-        return f.readAll();
-    }
 private Q_SLOTS:
     void initTestCase()
     {
@@ -56,7 +51,7 @@ private Q_SLOTS:
             QAbstractItemModelTester modelTester(mgr);
             QSignalSpy insertSpy(mgr, &QAbstractItemModel::rowsInserted);
             QCOMPARE(mgr->rowCount(), 0);
-            const auto rawData = readFile(QLatin1StringView(SOURCE_DIR "/data/health-certificates/full-vaccination.txt"));
+            const auto rawData = Test::readFile(QLatin1StringView(SOURCE_DIR "/data/health-certificates/full-vaccination.txt"));
 
             ImportController importer;
             importer.importData(rawData);
@@ -122,7 +117,7 @@ private Q_SLOTS:
 
 #if HAVE_KHEALTHCERTIFICATE
             QCOMPARE(mgr->rowCount(), 1);
-            const auto rawData = readFile(QLatin1StringView(SOURCE_DIR "/data/health-certificates/partial-vaccination.divoc"));
+            const auto rawData = Test::readFile(QLatin1StringView(SOURCE_DIR "/data/health-certificates/partial-vaccination.divoc"));
             ImportController importer;
             importer.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/health-certificates/partial-vaccination.divoc")));
             ctrl.commitImport(&importer);
