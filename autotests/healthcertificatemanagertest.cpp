@@ -24,7 +24,7 @@ private:
     QByteArray readFile(const QString &fn)
     {
         QFile f(fn);
-        f.open(QFile::ReadOnly);
+        Q_ASSERT(f.open(QFile::ReadOnly));
         return f.readAll();
     }
 private Q_SLOTS:
