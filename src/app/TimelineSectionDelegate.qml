@@ -34,8 +34,13 @@ FormCard.FormHeader {
         leftPadding: root.leftPadding
         rightPadding: root.rightPadding
 
+        Layout.fillWidth: true
+        Layout.preferredWidth: root.width / 2
+
         text: controller.subTitle
         color: root.controller.isHoliday ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.disabledTextColor
+
+        elide: Qt.ElideRight
 
         Accessible.ignored: true
     }
