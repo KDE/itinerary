@@ -63,5 +63,12 @@ TimelineDelegate {
                                                      Settings.homeCountryIsoCode)
         }
     }
+
+    Accessible.name: {
+        if (root.reservationFor.name) {
+            return reservationFor.name
+        }
+        return i18nc("from location 1 to location 2", "%1 to %2", root.reservationFor.departureBoatTerminal.name, root.reservationFor.arrivalBoatTerminal.name);
+    }
 }
 
