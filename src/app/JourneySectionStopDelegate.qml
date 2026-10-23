@@ -53,6 +53,7 @@ Item {
             isArrival: root.isArrival
             isDeparture: root.isDeparture
             lineColor: root.stop.route.line.hasColor ? root.stop.route.line.color : Kirigami.Theme.textColor
+            lineTextColor: root.stop.route.line.hasTextColor ? root.stop.route.line.textColor : Kirigami.Theme.textColor
             hasStop: root.stop.disruptionEffect !== KPublicTransport.Disruption.NoService &&
                 (root.stop.pickupType !== KPublicTransport.PickupDropoff.NotAllowed || root.stop.dropoffType !== KPublicTransport.PickupDropoff.NotAllowed)
             showStop: false

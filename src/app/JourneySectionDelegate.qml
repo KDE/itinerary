@@ -55,7 +55,7 @@ FormCard.AbstractFormDelegate {
                 Rectangle {
                     visible: root.index != 0 || root.modelData.mode == JourneySection.Walking
                     height: parent.height
-anchors.centerIn: parent
+                    anchors.centerIn: parent
                     Layout.margins: 0
                     color: Kirigami.Theme.disabledTextColor
                     width: Kirigami.Units.smallSpacing / 2
@@ -67,6 +67,7 @@ anchors.centerIn: parent
                     height: parent.height - y
                     width: implicitWidth
                     lineColor: root.modelData.route.line.hasColor ? root.modelData.route.line.color : Kirigami.Theme.textColor
+                    lineTextColor: root.modelData.route.line.hasTextColor ? root.modelData.route.line.textColor : Kirigami.Theme.textColor
                     isDeparture: true
                     visible:  root.modelData.mode !== JourneySection.Transfer && root.modelData.mode !== JourneySection.Walking && root.modelData.mode !== JourneySection.Walking
                 }
@@ -112,6 +113,7 @@ anchors.centerIn: parent
                 JourneySectionStopDelegateLineSegment {
                     anchors.fill: parent
                     lineColor: root.modelData.route.line.hasColor ? root.modelData.route.line.color : Kirigami.Theme.textColor
+                    lineTextColor: root.modelData.route.line.hasTextColor ? root.modelData.route.line.textColor : Kirigami.Theme.textColor
                     hasStop: false
                     visible: root.modelData.mode !== JourneySection.Transfer && root.modelData.mode !== JourneySection.Walking && root.modelData.mode !== JourneySection.Waiting
                 }
@@ -283,6 +285,7 @@ anchors.centerIn: parent
                         horizontalCenter: parent.horizontalCenter
                     }
                     lineColor: root.modelData.route.line.hasColor ? root.modelData.route.line.color : Kirigami.Theme.textColor
+                    lineTextColor: root.modelData.route.line.hasTextColor ? root.modelData.route.line.textColor : Kirigami.Theme.textColor
                     isArrival: true
                     visible:  root.modelData.mode !== JourneySection.Transfer && root.modelData.mode !== JourneySection.Walking && root.modelData.mode !== JourneySection.Waiting
                     height: arrivalStopRow.height + Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing

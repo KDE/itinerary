@@ -19,6 +19,7 @@ Item {
     property bool isDeparture: false
     property bool isArrival: false
     property color lineColor: Kirigami.Theme.textColor
+    property color lineTextColor: Kirigami.Theme.textColor
     property int lineWidth: Kirigami.Units.smallSpacing * 4
     property real stopY: isArrival ? height -  lineSegment.lineWidth / 2: lineSegment.lineWidth / 2
     property real progress
@@ -34,7 +35,12 @@ Item {
         x: Math.round((lineSegment.implicitWidth - lineSegment.lineWidth) / 2)
         y: isDeparture ? stopDot.y - (stopDot.x  - x) : 0
         width: lineSegment.lineWidth
-        color: lineSegment.lineColor
+
+        function isDark(color) {
+            return color.hslLightness < 0.5
+        }
+
+        color: isDark(lineSegment.lineColor) === isDark(Kirigami.Theme.backgroundColor) ? lineSegment.lineTextColor : lineSegment.lineColor
 
         corners {
             topRightRadius: isDeparture ? Math.round(width / 2) : 0
