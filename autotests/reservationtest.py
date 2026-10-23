@@ -110,5 +110,104 @@ class ReservationTest(ItineraryTestCase):
         # self.goBack()
 
 
+class ReservationCreationTest(ItineraryTestCase):
+    def setUp(self):
+        self.driver.find_element(by=AppiumBy.NAME, value="Itinerary").click()
+        self.createAndEnterTrip("My New Trip")
+
+    def tearDown(self):
+        self.driver.find_element(by=AppiumBy.NAME, value="Delete trip").click()
+        deleteDialog = self.driver.find_element(by=AppiumBy.NAME, value="Delete Trip")
+        self.assertTrue(deleteDialog.is_displayed())
+        deleteDialog.find_element(by=AppiumBy.NAME, value="Delete").click()
+
+    def test_bus(self):
+        page = self.driver.find_element(by=AppiumBy.CLASS_NAME, value="[panel | My New Trip]")
+        self.assertTrue(page.is_displayed())
+        newAction = page.find_element(by=AppiumBy.CLASS_NAME, value="[push button | Add bus]")
+        self.assertTrue(newAction.is_enabled())
+        newAction.click()
+
+        editor = self.driver.find_element(by=AppiumBy.CLASS_NAME, value="[panel | New Bus Reservation]")
+        self.assertTrue(editor.is_displayed())
+        saveButton = editor.find_element(by=AppiumBy.CLASS_NAME, value="[push button | Save]")
+        self.assertFalse(saveButton.is_enabled())
+        editor.find_elements(by=AppiumBy.NAME, value="Stop Name")[0].send_keys("Testdeparturebusstop")
+        editor.find_elements(by=AppiumBy.NAME, value="Stop Name")[1].send_keys("Testarrivalbusstop")
+        self.assertTrue(saveButton.is_enabled())
+        saveButton.click()
+
+        delegate = page.find_element(AppiumBy.CLASS_NAME, value="[filler | Testdeparturebusstop to Testarrivalbusstop]")
+        self.assertTrue(delegate.is_displayed())
+        delegate.click()
+        self.assertTrue(self.driver.find_element(by=AppiumBy.CLASS_NAME, value="[panel | Bus Ticket]").is_displayed())
+        self.goBack()
+
+    def test_ferry(self):
+        page = self.driver.find_element(by=AppiumBy.CLASS_NAME, value="[panel | My New Trip]")
+        self.assertTrue(page.is_displayed())
+        newAction = page.find_element(by=AppiumBy.CLASS_NAME, value="[push button | Add ferry trip]")
+        self.assertTrue(newAction.is_enabled())
+        newAction.click()
+
+        editor = self.driver.find_element(by=AppiumBy.CLASS_NAME, value="[panel | New Boat Trip]")
+        self.assertTrue(editor.is_displayed())
+        saveButton = editor.find_element(by=AppiumBy.CLASS_NAME, value="[push button | Save]")
+        self.assertFalse(saveButton.is_enabled())
+        editor.find_elements(by=AppiumBy.NAME, value="Terminal Name")[0].send_keys("Testdepartureharbor")
+        editor.find_elements(by=AppiumBy.NAME, value="Terminal Name")[1].send_keys("Testarrivalharbor")
+        self.assertTrue(saveButton.is_enabled())
+        saveButton.click()
+
+        delegate = page.find_element(AppiumBy.CLASS_NAME, value="[filler | Testdepartureharbor to Testarrivalharbor]")
+        self.assertTrue(delegate.is_displayed())
+        delegate.click()
+        self.assertTrue(self.driver.find_element(by=AppiumBy.CLASS_NAME, value="[panel | Boat Ticket]").is_displayed())
+        self.goBack()
+
+    def test_createHotel(self):
+        page = self.driver.find_element(by=AppiumBy.CLASS_NAME, value="[panel | My New Trip]")
+        self.assertTrue(page.is_displayed())
+        newAction = page.find_element(by=AppiumBy.CLASS_NAME, value="[push button | Add accommodation]")
+        self.assertTrue(newAction.is_enabled())
+        newAction.click()
+
+        editor = self.driver.find_element(by=AppiumBy.CLASS_NAME, value="[panel | New Hotel Reservation]")
+        self.assertTrue(editor.is_displayed())
+        saveButton = editor.find_element(by=AppiumBy.CLASS_NAME, value="[push button | Save]")
+        self.assertFalse(saveButton.is_enabled())
+        editor.find_element(by=AppiumBy.NAME, value="Name").send_keys("Testhotel")
+        self.assertTrue(saveButton.is_enabled())
+        saveButton.click()
+
+        delegate = page.find_element(AppiumBy.CLASS_NAME, value="[filler | Testhotel]")
+        self.assertTrue(delegate.is_displayed())
+        delegate.click()
+        self.assertTrue(self.driver.find_element(by=AppiumBy.CLASS_NAME, value="[panel | Hotel Reservation]").is_displayed())
+        self.goBack()
+        self.assertTrue(page.find_element(AppiumBy.NAME, value="Check-out Testhotel").is_displayed())
+
+    def test_createRestaurent(self):
+        page = self.driver.find_element(by=AppiumBy.CLASS_NAME, value="[panel | My New Trip]")
+        self.assertTrue(page.is_displayed())
+        newAction = page.find_element(by=AppiumBy.CLASS_NAME, value="[push button | Add restaurant]")
+        self.assertTrue(newAction.is_enabled())
+        newAction.click()
+
+        editor = self.driver.find_element(by=AppiumBy.CLASS_NAME, value="[panel | New Restaurant]")
+        self.assertTrue(editor.is_displayed())
+        saveButton = editor.find_element(by=AppiumBy.CLASS_NAME, value="[push button | Save]")
+        self.assertFalse(saveButton.is_enabled())
+        editor.find_element(by=AppiumBy.NAME, value="Name").send_keys("Testrestaurant")
+        self.assertTrue(saveButton.is_enabled())
+        saveButton.click()
+
+        delegate = page.find_element(AppiumBy.CLASS_NAME, value="[filler | Testrestaurant]")
+        self.assertTrue(delegate.is_displayed())
+        delegate.click()
+        self.assertTrue(self.driver.find_element(by=AppiumBy.CLASS_NAME, value="[panel | Restaurant Reservation]").is_displayed())
+        self.goBack()
+
+
 if __name__ == '__main__':
     unittest.main()
