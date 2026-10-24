@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-23 00:49+0000\n"
+"POT-Creation-Date: 2026-10-24 00:50+0000\n"
 "PO-Revision-Date: 2024-03-26 16:14+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -369,6 +369,13 @@ msgctxt "default transport name for a boat trip"
 msgid "Ferry"
 msgstr "Komp"
 
+#: app/BoatDelegate.qml:71 app/BusDelegate.qml:120 app/TrainDelegate.qml:128
+#, fuzzy, kde-format
+#| msgid "%1 to %2"
+msgctxt "from location 1 to location 2"
+msgid "%1 to %2"
+msgstr "%1 - %2"
+
 #: app/BoatEditor.qml:18
 #, fuzzy, kde-format
 #| msgid "Delete Trip"
@@ -622,13 +629,6 @@ msgctxt "bus seat"
 msgid "Seat: <b>%1</b>"
 msgstr "Irány: %1"
 
-#: app/BusDelegate.qml:120 app/TrainDelegate.qml:128
-#, fuzzy, kde-format
-#| msgid "%1 to %2"
-msgctxt "from location 1 to location 2"
-msgid "%1 to %2"
-msgstr "%1 - %2"
-
 #: app/BusEditor.qml:74
 #, fuzzy, kde-format
 #| msgid "Edit Bus Reservation"
@@ -704,13 +704,13 @@ msgctxt "Bus departure"
 msgid "Departure Time"
 msgstr "Indulási idő"
 
-#: app/BusEditor.qml:178
+#: app/BusEditor.qml:178 app/BusEditor.qml:265
 #, fuzzy, kde-format
-#| msgctxt "bus stop"
-#| msgid "Stop"
-msgctxt "Bus stop"
-msgid "Stop"
-msgstr "Megálló"
+#| msgctxt "@action:button"
+#| msgid "Show Map"
+msgctxt "bus stop"
+msgid "Stop Name"
+msgstr "Térkép megjelenítése"
 
 #: app/BusEditor.qml:181
 #, fuzzy, kde-format
@@ -718,13 +718,11 @@ msgstr "Megálló"
 msgid "Departure bus stop must not be empty."
 msgstr "Az indulási kikötő nem lehet üres."
 
-#: app/BusEditor.qml:210
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Show Map"
+#: app/BusEditor.qml:210 app/BusEditor.qml:302
+#, kde-format
 msgctxt "bus stop"
-msgid "Stop Name"
-msgstr "Térkép megjelenítése"
+msgid "Stop"
+msgstr "Megálló"
 
 #: app/BusEditor.qml:235
 #, kde-format
@@ -732,32 +730,18 @@ msgctxt "bus arrival"
 msgid "Arrival"
 msgstr "Érkezés"
 
-#: app/BusEditor.qml:244 app/TrainEditor.qml:265
+#: app/BusEditor.qml:244
 #, fuzzy, kde-format
 #| msgid "Arrival Time"
-msgctxt "Train arrival"
+msgctxt "bus arrival"
 msgid "Arrival Time"
 msgstr "Érkezési idő"
-
-#: app/BusEditor.qml:265
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Show Map"
-msgctxt "Bus stop"
-msgid "Stop Name"
-msgstr "Térkép megjelenítése"
 
 #: app/BusEditor.qml:268
 #, fuzzy, kde-format
 #| msgid "Arrival terminal must not be empty."
 msgid "Arrival stop must not be empty."
 msgstr "Az érkezési kikötő nem lehet üres."
-
-#: app/BusEditor.qml:302
-#, kde-format
-msgctxt "bus stop"
-msgid "Stop"
-msgstr "Megálló"
 
 #: app/BusEditor.qml:326 app/BusEditor.qml:332 app/BusPage.qml:237
 #, fuzzy, kde-format
@@ -2451,44 +2435,44 @@ msgstr ""
 msgid "Search Journey"
 msgstr "Utazás keresése"
 
-#: app/JourneySectionDelegate.qml:141
+#: app/JourneySectionDelegate.qml:143
 #, fuzzy, kde-format
 #| msgctxt "to travel destination"
 #| msgid "To %1"
 msgid "To %1"
 msgstr "Ide: %1"
 
-#: app/JourneySectionDelegate.qml:145
+#: app/JourneySectionDelegate.qml:147
 #, kde-format
 msgid "Walk (%1)"
 msgstr "Séta (%1)"
 
-#: app/JourneySectionDelegate.qml:146
+#: app/JourneySectionDelegate.qml:148
 #, kde-format
 msgid "Walk %1 (%2)"
 msgstr "%1 séta (%2)"
 
-#: app/JourneySectionDelegate.qml:148
+#: app/JourneySectionDelegate.qml:150
 #, kde-format
 msgid "Transfer (%1)"
 msgstr "Átszállás (%1)"
 
-#: app/JourneySectionDelegate.qml:150
+#: app/JourneySectionDelegate.qml:152
 #, kde-format
 msgid "Wait (%1)"
 msgstr "Várakozás (%1)"
 
-#: app/JourneySectionDelegate.qml:152
+#: app/JourneySectionDelegate.qml:154
 #, kde-format
 msgid "%1 %2 (%3)"
 msgstr "%1 %2 (%3)"
 
-#: app/JourneySectionDelegate.qml:154
+#: app/JourneySectionDelegate.qml:156
 #, kde-format
 msgid "Drive %1 (%2)"
 msgstr "%1 vezetés (%2)"
 
-#: app/JourneySectionDelegate.qml:253 app/JourneySectionView.qml:120
+#: app/JourneySectionDelegate.qml:255 app/JourneySectionView.qml:120
 #: app/VehicleLayoutPage.qml:177
 #, kde-format
 msgctxt "@action:button"
@@ -2511,7 +2495,7 @@ msgstr "Utazás"
 msgid "Map"
 msgstr ""
 
-#: app/JourneySectionStopDelegate.qml:164
+#: app/JourneySectionStopDelegate.qml:165
 #, kde-format
 msgid "Show location"
 msgstr "Hely megjelenítése"
@@ -4602,6 +4586,13 @@ msgctxt "train arrival"
 msgid "Arrival"
 msgstr "Érkezés"
 
+#: app/TrainEditor.qml:265
+#, fuzzy, kde-format
+#| msgid "Arrival Time"
+msgctxt "Train arrival"
+msgid "Arrival Time"
+msgstr "Érkezési idő"
+
 #: app/TrainEditor.qml:289
 #, fuzzy, kde-format
 #| msgid "Arrival terminal must not be empty."
@@ -5245,6 +5236,20 @@ msgstr "Bejelentkezés"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr ""
+
+#, fuzzy
+#~| msgctxt "bus stop"
+#~| msgid "Stop"
+#~ msgctxt "Bus stop"
+#~ msgid "Stop"
+#~ msgstr "Megálló"
+
+#, fuzzy
+#~| msgctxt "@action:button"
+#~| msgid "Show Map"
+#~ msgctxt "Bus stop"
+#~ msgid "Stop Name"
+#~ msgstr "Térkép megjelenítése"
 
 #~ msgid "More information"
 #~ msgstr "További információk"

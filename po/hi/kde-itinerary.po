@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-23 00:49+0000\n"
+"POT-Creation-Date: 2026-10-24 00:50+0000\n"
 "PO-Revision-Date: 2024-12-15 19:32+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
@@ -361,6 +361,13 @@ msgctxt "default transport name for a boat trip"
 msgid "Ferry"
 msgstr "नौका"
 
+#: app/BoatDelegate.qml:71 app/BusDelegate.qml:120 app/TrainDelegate.qml:128
+#, fuzzy, kde-format
+#| msgid "%1 to %2"
+msgctxt "from location 1 to location 2"
+msgid "%1 to %2"
+msgstr "%1 से %2"
+
 #: app/BoatEditor.qml:18
 #, kde-format
 msgid "New Boat Trip"
@@ -610,13 +617,6 @@ msgctxt "bus seat"
 msgid "Seat: <b>%1</b>"
 msgstr "सीटः <b>%1</b>"
 
-#: app/BusDelegate.qml:120 app/TrainDelegate.qml:128
-#, fuzzy, kde-format
-#| msgid "%1 to %2"
-msgctxt "from location 1 to location 2"
-msgid "%1 to %2"
-msgstr "%1 से %2"
-
 #: app/BusEditor.qml:74
 #, fuzzy, kde-format
 #| msgid "Edit Bus Reservation"
@@ -692,13 +692,13 @@ msgctxt "Bus departure"
 msgid "Departure Time"
 msgstr "प्रस्थान समय"
 
-#: app/BusEditor.qml:178
+#: app/BusEditor.qml:178 app/BusEditor.qml:265
 #, fuzzy, kde-format
-#| msgctxt "bus stop"
-#| msgid "Stop"
-msgctxt "Bus stop"
-msgid "Stop"
-msgstr "रुकना"
+#| msgctxt "@action:button"
+#| msgid "Show Map"
+msgctxt "bus stop"
+msgid "Stop Name"
+msgstr "नक्शा दिखाएं"
 
 #: app/BusEditor.qml:181
 #, fuzzy, kde-format
@@ -706,13 +706,11 @@ msgstr "रुकना"
 msgid "Departure bus stop must not be empty."
 msgstr "प्रस्थान टर्मिनल खाली नहीं होना चाहिए."
 
-#: app/BusEditor.qml:210
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Show Map"
+#: app/BusEditor.qml:210 app/BusEditor.qml:302
+#, kde-format
 msgctxt "bus stop"
-msgid "Stop Name"
-msgstr "नक्शा दिखाएं"
+msgid "Stop"
+msgstr "रुकना"
 
 #: app/BusEditor.qml:235
 #, kde-format
@@ -720,32 +718,18 @@ msgctxt "bus arrival"
 msgid "Arrival"
 msgstr "आगमन"
 
-#: app/BusEditor.qml:244 app/TrainEditor.qml:265
+#: app/BusEditor.qml:244
 #, fuzzy, kde-format
 #| msgid "Arrival Time"
-msgctxt "Train arrival"
+msgctxt "bus arrival"
 msgid "Arrival Time"
 msgstr "आगमन समय"
-
-#: app/BusEditor.qml:265
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Show Map"
-msgctxt "Bus stop"
-msgid "Stop Name"
-msgstr "नक्शा दिखाएं"
 
 #: app/BusEditor.qml:268
 #, fuzzy, kde-format
 #| msgid "Arrival terminal must not be empty."
 msgid "Arrival stop must not be empty."
 msgstr "आगमन टर्मिनल खाली नहीं होना चाहिए."
-
-#: app/BusEditor.qml:302
-#, kde-format
-msgctxt "bus stop"
-msgid "Stop"
-msgstr "रुकना"
 
 #: app/BusEditor.qml:326 app/BusEditor.qml:332 app/BusPage.qml:237
 #, kde-format
@@ -2405,42 +2389,42 @@ msgstr ""
 msgid "Search Journey"
 msgstr "खोज यात्रा"
 
-#: app/JourneySectionDelegate.qml:141
+#: app/JourneySectionDelegate.qml:143
 #, kde-format
 msgid "To %1"
 msgstr "%1 को"
 
-#: app/JourneySectionDelegate.qml:145
+#: app/JourneySectionDelegate.qml:147
 #, kde-format
 msgid "Walk (%1)"
 msgstr "चलना (%1)"
 
-#: app/JourneySectionDelegate.qml:146
+#: app/JourneySectionDelegate.qml:148
 #, kde-format
 msgid "Walk %1 (%2)"
 msgstr "पैदल चलें %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:148
+#: app/JourneySectionDelegate.qml:150
 #, kde-format
 msgid "Transfer (%1)"
 msgstr "स्थानांतरण (%1)"
 
-#: app/JourneySectionDelegate.qml:150
+#: app/JourneySectionDelegate.qml:152
 #, kde-format
 msgid "Wait (%1)"
 msgstr "प्रतीक्षा करें (%1)"
 
-#: app/JourneySectionDelegate.qml:152
+#: app/JourneySectionDelegate.qml:154
 #, kde-format
 msgid "%1 %2 (%3)"
 msgstr "%1 %2 (%3)"
 
-#: app/JourneySectionDelegate.qml:154
+#: app/JourneySectionDelegate.qml:156
 #, kde-format
 msgid "Drive %1 (%2)"
 msgstr "ड्राइव %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:253 app/JourneySectionView.qml:120
+#: app/JourneySectionDelegate.qml:255 app/JourneySectionView.qml:120
 #: app/VehicleLayoutPage.qml:177
 #, kde-format
 msgctxt "@action:button"
@@ -2463,7 +2447,7 @@ msgstr "यात्रा"
 msgid "Map"
 msgstr ""
 
-#: app/JourneySectionStopDelegate.qml:164
+#: app/JourneySectionStopDelegate.qml:165
 #, kde-format
 msgid "Show location"
 msgstr "स्थान दिखाएं"
@@ -4562,6 +4546,13 @@ msgctxt "train arrival"
 msgid "Arrival"
 msgstr "आगमन"
 
+#: app/TrainEditor.qml:265
+#, fuzzy, kde-format
+#| msgid "Arrival Time"
+msgctxt "Train arrival"
+msgid "Arrival Time"
+msgstr "आगमन समय"
+
 #: app/TrainEditor.qml:289
 #, fuzzy, kde-format
 #| msgid "Arrival terminal must not be empty."
@@ -5186,6 +5177,20 @@ msgstr "प्रवेश किया…"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 %3 से %4 तक %5 पर"
+
+#, fuzzy
+#~| msgctxt "bus stop"
+#~| msgid "Stop"
+#~ msgctxt "Bus stop"
+#~ msgid "Stop"
+#~ msgstr "रुकना"
+
+#, fuzzy
+#~| msgctxt "@action:button"
+#~| msgid "Show Map"
+#~ msgctxt "Bus stop"
+#~ msgid "Stop Name"
+#~ msgstr "नक्शा दिखाएं"
 
 #~ msgid "How to import data?"
 #~ msgstr "डेटा आयात कैसे करें?"

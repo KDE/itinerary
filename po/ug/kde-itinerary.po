@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-23 00:49+0000\n"
+"POT-Creation-Date: 2026-10-24 00:50+0000\n"
 "PO-Revision-Date: 2026-09-23 06:56+0900\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
@@ -350,6 +350,12 @@ msgctxt "default transport name for a boat trip"
 msgid "Ferry"
 msgstr ""
 
+#: app/BoatDelegate.qml:71 app/BusDelegate.qml:120 app/TrainDelegate.qml:128
+#, kde-format
+msgctxt "from location 1 to location 2"
+msgid "%1 to %2"
+msgstr "%1 دىن %2"
+
 #: app/BoatEditor.qml:18
 #, kde-format
 msgid "New Boat Trip"
@@ -584,12 +590,6 @@ msgctxt "bus seat"
 msgid "Seat: <b>%1</b>"
 msgstr ""
 
-#: app/BusDelegate.qml:120 app/TrainDelegate.qml:128
-#, kde-format
-msgctxt "from location 1 to location 2"
-msgid "%1 to %2"
-msgstr "%1 دىن %2"
-
 #: app/BusEditor.qml:74
 #, kde-format
 msgctxt "@title"
@@ -656,22 +656,22 @@ msgctxt "Bus departure"
 msgid "Departure Time"
 msgstr ""
 
-#: app/BusEditor.qml:178
+#: app/BusEditor.qml:178 app/BusEditor.qml:265
 #, kde-format
-msgctxt "Bus stop"
-msgid "Stop"
-msgstr "توختا"
+msgctxt "bus stop"
+msgid "Stop Name"
+msgstr ""
 
 #: app/BusEditor.qml:181
 #, kde-format
 msgid "Departure bus stop must not be empty."
 msgstr ""
 
-#: app/BusEditor.qml:210
+#: app/BusEditor.qml:210 app/BusEditor.qml:302
 #, kde-format
 msgctxt "bus stop"
-msgid "Stop Name"
-msgstr ""
+msgid "Stop"
+msgstr "توختا"
 
 #: app/BusEditor.qml:235
 #, kde-format
@@ -679,28 +679,16 @@ msgctxt "bus arrival"
 msgid "Arrival"
 msgstr ""
 
-#: app/BusEditor.qml:244 app/TrainEditor.qml:265
+#: app/BusEditor.qml:244
 #, kde-format
-msgctxt "Train arrival"
+msgctxt "bus arrival"
 msgid "Arrival Time"
-msgstr ""
-
-#: app/BusEditor.qml:265
-#, kde-format
-msgctxt "Bus stop"
-msgid "Stop Name"
 msgstr ""
 
 #: app/BusEditor.qml:268
 #, kde-format
 msgid "Arrival stop must not be empty."
 msgstr ""
-
-#: app/BusEditor.qml:302
-#, kde-format
-msgctxt "bus stop"
-msgid "Stop"
-msgstr "توختا"
 
 #: app/BusEditor.qml:326 app/BusEditor.qml:332 app/BusPage.qml:237
 #, kde-format
@@ -2297,42 +2285,42 @@ msgstr "سۈزگۈچ"
 msgid "Search Journey"
 msgstr ""
 
-#: app/JourneySectionDelegate.qml:141
+#: app/JourneySectionDelegate.qml:143
 #, kde-format
 msgid "To %1"
 msgstr ""
 
-#: app/JourneySectionDelegate.qml:145
+#: app/JourneySectionDelegate.qml:147
 #, kde-format
 msgid "Walk (%1)"
 msgstr ""
 
-#: app/JourneySectionDelegate.qml:146
+#: app/JourneySectionDelegate.qml:148
 #, kde-format
 msgid "Walk %1 (%2)"
 msgstr ""
 
-#: app/JourneySectionDelegate.qml:148
+#: app/JourneySectionDelegate.qml:150
 #, kde-format
 msgid "Transfer (%1)"
 msgstr ""
 
-#: app/JourneySectionDelegate.qml:150
+#: app/JourneySectionDelegate.qml:152
 #, kde-format
 msgid "Wait (%1)"
 msgstr ""
 
-#: app/JourneySectionDelegate.qml:152
+#: app/JourneySectionDelegate.qml:154
 #, kde-format
 msgid "%1 %2 (%3)"
 msgstr ""
 
-#: app/JourneySectionDelegate.qml:154
+#: app/JourneySectionDelegate.qml:156
 #, kde-format
 msgid "Drive %1 (%2)"
 msgstr ""
 
-#: app/JourneySectionDelegate.qml:253 app/JourneySectionView.qml:120
+#: app/JourneySectionDelegate.qml:255 app/JourneySectionView.qml:120
 #: app/VehicleLayoutPage.qml:177
 #, kde-format
 msgctxt "@action:button"
@@ -2355,7 +2343,7 @@ msgstr ""
 msgid "Map"
 msgstr "خەرىتە"
 
-#: app/JourneySectionStopDelegate.qml:164
+#: app/JourneySectionStopDelegate.qml:165
 #, kde-format
 msgid "Show location"
 msgstr ""
@@ -4358,6 +4346,12 @@ msgctxt "train arrival"
 msgid "Arrival"
 msgstr ""
 
+#: app/TrainEditor.qml:265
+#, kde-format
+msgctxt "Train arrival"
+msgid "Arrival Time"
+msgstr ""
+
 #: app/TrainEditor.qml:289
 #, kde-format
 msgid "Arrival station must not be empty."
@@ -4944,3 +4938,7 @@ msgstr ""
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr ""
+
+#~ msgctxt "Bus stop"
+#~ msgid "Stop"
+#~ msgstr "توختا"
