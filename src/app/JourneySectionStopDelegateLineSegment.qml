@@ -37,7 +37,7 @@ Item {
         width: lineSegment.lineWidth
 
         function isDark(color) {
-            return color.hslLightness < 0.5
+            return color.hslLightness < 0.8
         }
 
         color: isDark(lineSegment.lineColor) === isDark(Kirigami.Theme.backgroundColor) ? lineSegment.lineTextColor : lineSegment.lineColor
@@ -49,12 +49,13 @@ Item {
             bottomRightRadius: isArrival ? Math.round(width / 2) : 0
             bottomLeftRadius: isArrival ? Math.round(width / 2) : 0
         }
-        height:
+        height: {
             if (isArrival) {
                 stopDot.y + stopDot.height + stopDot.x - x
             } else {
                 parent.height + 1
             }
+        }
     }
     Kirigami.ShadowedRectangle {
         id: progress
