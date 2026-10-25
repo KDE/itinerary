@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-24 00:50+0000\n"
-"PO-Revision-Date: 2026-07-27 07:16+0200\n"
+"PO-Revision-Date: 2026-10-24 09:29+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -692,8 +692,7 @@ msgid "Arrival"
 msgstr "Prihod"
 
 #: app/BusEditor.qml:244
-#, fuzzy, kde-format
-#| msgid "Arrival Time"
+#, kde-format
 msgctxt "bus arrival"
 msgid "Arrival Time"
 msgstr "Čas prihoda"

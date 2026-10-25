@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-24 00:50+0000\n"
-"PO-Revision-Date: 2026-07-27 08:39+0300\n"
+"PO-Revision-Date: 2026-10-24 12:38+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -695,8 +695,7 @@ msgid "Arrival"
 msgstr "Прибуття"
 
 #: app/BusEditor.qml:244
-#, fuzzy, kde-format
-#| msgid "Arrival Time"
+#, kde-format
 msgctxt "bus arrival"
 msgid "Arrival Time"
 msgstr "Час прибуття"
