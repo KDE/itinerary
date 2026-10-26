@@ -80,9 +80,14 @@ target_sources(itinerary PRIVATE
     whatsnewcontroller.cpp
 )
 
+if (ANDROID)
+    set(itinerary_style_imports QtQuick.Controls.Material)
+endif()
+
 ecm_add_qml_module(itinerary GENERATE_PLUGIN_SOURCE
     URI org.kde.itinerary
     IMPORTS
+        ${itinerary_style_imports}
         org.kde.itinerary.weather
         org.kde.itinerary.matrix
         org.kde.solidextras
@@ -323,6 +328,7 @@ target_include_directories(itinerary-app PRIVATE ${CMAKE_BINARY_DIR})
 target_link_libraries(itinerary-app PRIVATE
     itinerary
     itineraryplugin
+    KirigamiApp
     KF6::I18nQml
     Qt::QuickControls2
     KMatrixplugin
