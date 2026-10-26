@@ -1,9 +1,9 @@
 # SPDX-License-Identifier: CC0-1.0
 # SPDX-FileCopyrightText: 2023 Volker Krause <vkrause@kde.org>
 
-# we use the Breeze style, so anything related to Material or Fluent is unnecessary
-qml/QtQuick/Controls/(FluentWinUI3|Material)/.*
-lib/qml/org/kde/kirigami/styles/Material/.*
+# we use the Mateiral style, so anything related to Fluent is unnecessary
+qml/QtQuick/Controls/FluentWinUI3/.*
+lib/qml/org/kde/kirigami/styles/org.kde.desktop/.*
 
 # data files for ki18n that we don't need
 share/iso-codes/json/schema-.*
@@ -14,7 +14,7 @@ share/locale/.*/LC_MESSAGES/iso_(15924|3166-3|4217|639-\d)\.mo
 share/mime/packages/kde6\.xml
 
 # unused Kirigami Addons modules
-lib/qml/org/kde/kirigamiaddons/(settings|sounds|treeview)/.*
+lib/qml/org/kde/kirigamiaddons/(settings|sounds|treeview|actions|tableview|onboarding|statefulapp)/.*
 
 # unused image formats
 plugins/imageformats/.*_qico_.*\.so
