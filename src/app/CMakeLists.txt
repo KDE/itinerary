@@ -323,6 +323,7 @@ target_include_directories(itinerary-app PRIVATE ${CMAKE_BINARY_DIR})
 target_link_libraries(itinerary-app PRIVATE
     itinerary
     itineraryplugin
+    KirigamiApp
     KF6::I18nQml
     Qt::QuickControls2
     KMatrixplugin

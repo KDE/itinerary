@@ -73,6 +73,7 @@
 
 #include <KLocalizedQmlContext>
 #include <KLocalizedString>
+#include <KirigamiAppDefaults>
 
 #include <KAboutData>
 #if HAVE_KCRASH
@@ -198,7 +199,7 @@ int main(int argc, char **argv)
     QGuiApplication::setDesktopFileName(u"org.kde.itinerary"_s);
 #ifdef Q_OS_ANDROID
     QGuiApplication app(argc, argv);
-    QQuickStyle::setStyle(QStringLiteral("org.kde.breeze"));
+    //QQuickStyle::setStyle(QStringLiteral("org.kde.breeze"));
     KColorSchemeManager::instance(); // enables automatic dark mode handling
 #else
     QIcon::setFallbackThemeName(QStringLiteral("breeze"));
@@ -404,10 +405,7 @@ int main(int argc, char **argv)
     engine.addImageProvider(u"org.kde.pkpass"_s, pkPassImageProvider);
 
     KLocalization::setupLocalizedContext(&engine);
-    engine.loadFromModule("org.kde.itinerary", "Main");
-
-    // Exit on QML load error.
-    if (engine.rootObjects().isEmpty()) {
+    if (!KirigamiAppDefaults::load("org.kde.itinerary", "Main", &engine)) {
         return 1;
     }
 
