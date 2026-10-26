@@ -688,11 +688,10 @@ msgid "Arrival"
 msgstr "Príchod"
 
 #: app/BusEditor.qml:244
-#, fuzzy, kde-format
-#| msgid "Arrival Time"
+#, kde-format
 msgctxt "bus arrival"
 msgid "Arrival Time"
-msgstr "Arrival Time"
+msgstr "Čas príchodu"
 
 #: app/BusEditor.qml:268
 #, kde-format
