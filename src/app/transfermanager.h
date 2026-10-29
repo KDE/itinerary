@@ -93,7 +93,6 @@ private:
     CheckTransferResult checkTransferAfter(const QString &resId, const QVariant &res, Transfer &transfer) const;
 
     void reservationRemoved(const QString &resId);
-    void tripGroupChanged(const QString &tgId);
 
     void determineAnchorDeltaDefault(Transfer &transfer, const QVariant &res) const;
 
