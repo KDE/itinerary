@@ -959,6 +959,7 @@
       <description>
         <ul>
           <li>New or improved travel document extractors for Accor, ALSA, Delta Air Lines, Entur, Frontier Airlines, Ouigo and Snållåget.</li>
+          <li xml:lang="ar">مستخرجات مستندات سفر جديدة أو محسّنة لـ Accor وALSA وDelta Air Lines وEntur وFrontier Airlines وOuigo وSnållåget.</li>
           <li xml:lang="ca">Extractors nous o millorats de documents de viatge per a Accor, ALSA, Delta Air Lines, Entur, Frontier Airlines, Ouigo i Snållåget.</li>
           <li xml:lang="ca-valencia">Extractors nous o millorats de documents de viatge per a Accor, ALSA, Delta Air Lines, Entur, Frontier Airlines, Ouigo i Snållåget.</li>
           <li xml:lang="cs">Nové nebo vylepšené extraktory cestovních dokladů pro společnosti Accor, ALSA, Delta Air Lines, Entur, Frontier Airlines, Ouigo a Snållåget.</li>
@@ -978,6 +979,7 @@
           <li xml:lang="tr">Yeni veya iyileştirilmiş belge çıkarıcıları: Accor, ALSA, Delta Air Lines, Entur, Frontier Airlines, Ouigo ve Snållåget.</li>
           <li xml:lang="uk">Нові або удосконалені засоби видобування даних з документів для Accor, ALSA, Delta Air Lines, Entur, Frontier Airlines, Ouigo і Snållåget.</li>
           <li>Fix unreachable transfer warning indicator not being shown.</li>
+          <li xml:lang="ar">إصلاح عدم ظهور مؤشر تحذير التنقل غير القابل للوصول.</li>
           <li xml:lang="ca">Corregeix un indicador d'avís de transferència no accessible que no es mostrava.</li>
           <li xml:lang="ca-valencia">Corregix un indicador d'avís de transferència no accessible que no es mostrava.</li>
           <li xml:lang="cs">Opravena chyba, kvůli které se nezobrazoval varovný indikátor nedostupného přenosu.</li>
@@ -996,6 +998,7 @@
           <li xml:lang="tr">Erişilemeyen aktarma uyarısı göstergesinin gösterilmemesi sorunu giderildi.</li>
           <li xml:lang="uk">Виправлено показ індикатора попередження про передавання даних.</li>
           <li>Fix booking card visibility on reservation details pages.</li>
+          <li xml:lang="ar">إصلاح ظهور بطاقة الحجز في صفحات تفاصيل الحجز.</li>
           <li xml:lang="ca">Corregeix la visibilitat de la targeta de la reserva a les pàgines de detalls de reserves.</li>
           <li xml:lang="ca-valencia">Corregix la visibilitat de la targeta de la reserva a les pàgines de detalls de reserves.</li>
           <li xml:lang="cs">Opravena viditelnost rezervační karty na stránkách s podrobnostmi o rezervaci.</li>
@@ -1014,6 +1017,7 @@
           <li xml:lang="tr">Rezervasyon ayrıntıları sayfalarındaki kart görünümü sorunları düzeltildi.</li>
           <li xml:lang="uk">Виправлено видимість картки бронювання для сторінок подробиць щодо бронювання.</li>
           <li>Fix some cases of importing via sharing on Android.</li>
+          <li xml:lang="ar">إصلاح بعض حالات الاستيراد عبر المشاركة على أندرويد.</li>
           <li xml:lang="ca">Corregeix alguns casos d'importació mitjançant compartició a l'Android.</li>
           <li xml:lang="ca-valencia">Corregix alguns casos d'importació mitjançant compartició a Android.</li>
           <li xml:lang="cs">Opraveny některé případy problémů s importem prostřednictvím sdílení v systému Android.</li>
