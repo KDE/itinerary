@@ -7,11 +7,21 @@ import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
+import org.kde.coreaddons as KCoreAddons
 import org.kde.kitinerary
 import org.kde.itinerary
 
 ScrollableDetailsPage {
     id: root
+
+    function formatStayDate(propertyName: string): string {
+        const date = Util.dateTimeStripTimezone(root.reservation, propertyName);
+        if (isNaN(date.getTime()))
+            return "";
+        const day = Qt.formatDate(date, Qt.locale().dateFormat(Locale.LongFormat));
+        return Util.isStartOfDay(root.reservation, propertyName) ? day
+            : i18nc("date and time of a hotel stay", "%1 · %2", day, KCoreAddons.Format.formatTime(root.reservation, propertyName, KCoreAddons.FormatTypes.AddTimezoneAbbreviationIfNeeded));
+    }
 
     title: i18n("Hotel Reservation")
 
@@ -24,6 +34,8 @@ ScrollableDetailsPage {
     }
 
     ColumnLayout {
+        spacing: 0
+
         CardPageTitle {
             emojiIcon: "🏨"
             text: root.reservationFor.name
@@ -31,6 +43,27 @@ ScrollableDetailsPage {
         }
 
         FormCard.FormCard {
+            visible: reservation.checkinTime > 0 || reservation.checkoutTime > 0
+            autoSeparators: true
+
+            Layout.topMargin: Kirigami.Units.largeSpacing
+
+            FormCard.FormTextDelegate {
+                text: i18n("Check-in time")
+                visible: reservation.checkinTime > 0
+                description: root.formatStayDate("checkinTime")
+            }
+
+            FormCard.FormTextDelegate {
+                text: i18n("Check-out time")
+                visible: reservation.checkoutTime > 0
+                description: root.formatStayDate("checkoutTime")
+            }
+        }
+
+        FormCard.FormCard {
+            Layout.topMargin: Kirigami.Units.largeSpacing
+
             visible: ticketToken.hasContent
             // ticket barcode
             TicketTokenDelegate {
@@ -59,23 +92,6 @@ ScrollableDetailsPage {
 
         ContactCard {
             contact: root.reservationFor
-        }
-
-        FormCard.FormCard {
-            visible: reservation.checkinTime > 0 || reservation.checkoutTime > 0
-            autoSeparators: true
-
-            FormCard.FormTextDelegate {
-                text: i18n("Check-in time")
-                visible: reservation.checkinTime > 0
-                description: Util.isStartOfDay(reservation, "checkinTime") ? Localizer.formatDate(reservation, "checkinTime") : Localizer.formatDateTime(reservation, "checkinTime")
-            }
-
-            FormCard.FormTextDelegate {
-                text: i18n("Check-out time")
-                visible: reservation.checkoutTime > 0
-                description: Util.isStartOfDay(reservation, "checkoutTime") ? Localizer.formatDate(reservation, "checkoutTime") : Localizer.formatDateTime(reservation, "checkoutTime")
-            }
         }
 
         FormCard.FormCard {
