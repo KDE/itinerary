@@ -109,6 +109,8 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
+
         CountryComboBoxDelegate {
             text: i18n("Home Country")
             model: Country.allCountries.map(c => c.alpha2).sort((lhs, rhs) => {
@@ -117,8 +119,6 @@ FormCard.FormCardPage {
             initialCountry: Settings.homeCountryIsoCode
             onActivated: Settings.homeCountryIsoCode = currentValue
         }
-
-        FormCard.FormDelegateSeparator {}
 
         FormCard.FormButtonDelegate {
             text: i18n("Favorite Locations")
@@ -192,6 +192,8 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
+
         FormCard.FormButtonDelegate {
             text: i18nc("@action:button", "Import")
             icon.name: 'document-import-symbolic'
@@ -209,8 +211,6 @@ FormCard.FormCardPage {
                 onAccepted: ImportController.importFromUrl(selectedFile)
             }
         }
-
-        FormCard.FormDelegateSeparator {}
 
         FormCard.FormButtonDelegate {
             text: i18nc("@action:button", "Export")

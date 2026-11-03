@@ -27,14 +27,13 @@ ScrollableDetailsPage {
         }
 
         FormCard.FormCard {
+            autoSeparators: true
+
             FormCard.FormTextDelegate {
                 id: pickupTimeDelegate
                 text: i18n("Time")
                 description: Localizer.formatDateTime(reservation, "pickupTime")
-            }
-
-            FormCard.FormDelegateSeparator {
-                visible: pickupTimeDelegate.description && departureLocation.visible
+                visible: description !== ""
             }
 
             FormPlaceDelegate {
@@ -53,14 +52,13 @@ ScrollableDetailsPage {
         }
 
         FormCard.FormCard {
+            autoSeparators: true
+
             FormCard.FormTextDelegate {
                 id: dropoffTimeDelegate
                 text: i18n("Time")
                 description: Localizer.formatDateTime(reservation, "dropoffTime")
-            }
-
-            FormCard.FormDelegateSeparator {
-                visible: dropoffTimeDelegate.description
+                visible: description !== ""
             }
 
             FormPlaceDelegate {
@@ -79,14 +77,12 @@ ScrollableDetailsPage {
         }
 
         FormCard.FormCard {
+            autoSeparators: true
+
             FormCard.FormTextDelegate {
                 text: i18n("Type")
                 description: reservationFor.name
                 visible: description
-            }
-
-            FormCard.FormDelegateSeparator {
-                visible: reservationFor.name
             }
 
             FormCard.FormTextDelegate {
@@ -95,18 +91,10 @@ ScrollableDetailsPage {
                 visible: description
             }
 
-            FormCard.FormDelegateSeparator {
-                visible: reservationFor.model
-            }
-
             FormCard.FormTextDelegate {
                 text: i18n("Brand")
                 description: reservationFor.brand.name
                 visible: description
-            }
-
-            FormCard.FormDelegateSeparator {
-                visible: reservationFor.brand.name
             }
         }
 

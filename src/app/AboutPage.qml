@@ -52,6 +52,8 @@ FormCard.AboutPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
+
         FormCard.FormTextDelegate {
             id: versionLabel
             text: i18n("Application version: %1", ApplicationController.version)
@@ -66,8 +68,6 @@ FormCard.AboutPage {
                 }
             }
         }
-
-        FormCard.FormDelegateSeparator {}
 
         FormCard.FormTextDelegate {
             text: i18n("Extractor capabilities:")

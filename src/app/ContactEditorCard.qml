@@ -28,6 +28,8 @@ ColumnLayout {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
+
         FormCard.FormTextFieldDelegate {
             id: phoneEdit
             label: i18n("Telephone")
@@ -35,16 +37,12 @@ ColumnLayout {
             inputMethodHints: Qt.ImhDialableCharactersOnly
         }
 
-        FormCard.FormDelegateSeparator {}
-
         FormCard.FormTextFieldDelegate {
             id: emailEdit
             label: i18n("Email")
             text: root.contact.email
             inputMethodHints: Qt.ImhEmailCharactersOnly
         }
-
-        FormCard.FormDelegateSeparator {}
 
         FormCard.FormTextFieldDelegate {
             id: urlEdit

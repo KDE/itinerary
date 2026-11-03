@@ -31,13 +31,11 @@ ColumnLayout {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
+
         FormCard.FormTextDelegate {
             text: i18n("Name")
             description: root.certificate.name
-        }
-
-        FormCard.FormDelegateSeparator {
-            visible: !isNaN(root.certificate.dateOfBirth.getTime())
         }
 
         FormCard.FormTextDelegate {
@@ -52,6 +50,8 @@ ColumnLayout {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
+
         FormCard.FormTextDelegate {
             text: i18n("Date")
             description: root.certificate.date.toLocaleDateString(Qt.locale(), Locale.ShortFormat)
@@ -59,15 +59,11 @@ ColumnLayout {
             visible: !isNaN(certificate.date.getTime())
         }
 
-        FormCard.FormDelegateSeparator { visible: root.certificate.disease && !isNaN(certificate.date.getTime()) }
-
         FormCard.FormTextDelegate {
             text: i18n("Disease")
             description: root.certificate.disease
             visible: root.certificate.disease
         }
-
-        FormCard.FormDelegateSeparator { visible: root.certificate.testType }
 
         FormCard.FormTextDelegate {
             text: i18n("Type")
@@ -81,8 +77,6 @@ ColumnLayout {
             visible: root.certificate.testName.length > 0
             onLinkActivated: Qt.openUrlExternally(link)
         }
-
-        FormCard.FormDelegateSeparator {}
 
         FormCard.FormTextDelegate {
             text: i18n("Result")
@@ -100,15 +94,11 @@ ColumnLayout {
             descriptionItem.color: root.certificate.result == KHC.TestCertificate.Positive ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
         }
 
-        FormCard.FormDelegateSeparator { visible: root.certificate.testCenter }
-
         FormCard.FormTextDelegate {
             text: i18n("Test Center")
             description: root.certificate.testCenter
             visible: description !== ""
         }
-
-        FormCard.FormDelegateSeparator { visible: root.certificate.country }
 
         FormCard.FormTextDelegate {
             readonly property var country: Country.fromAlpha2(root.certificate.country)
@@ -123,13 +113,13 @@ ColumnLayout {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
+
         FormCard.FormTextDelegate {
             text: i18n("Issuer")
             description: root.certificate.certificateIssuer
             visible: root.certificate.certificateIssuer !== ""
         }
-
-        FormCard.FormDelegateSeparator { visible: root.certificate.certificateIssuer && root.certificate.certificateId }
 
         FormCard.FormTextDelegate {
             text: i18n("Identifier")
@@ -137,15 +127,11 @@ ColumnLayout {
             visible: root.certificate.certificateId !== ""
         }
 
-        FormCard.FormDelegateSeparator { visible: !isNaN(root.certificate.certificateIssueDate.getTime()) }
-
         FormCard.FormTextDelegate {
             text: i18n("Issued")
             description: root.certificate.certificateIssueDate.toLocaleString(Qt.locale(), Locale.ShortFormat)
             visible: !isNaN(root.certificate.certificateIssueDate.getTime())
         }
-
-        FormCard.FormDelegateSeparator { visible: !isNaN(root.certificate.certificateExpiryDate.getTime()) }
 
         FormCard.FormTextDelegate {
             text: i18n("Expires")
@@ -153,8 +139,6 @@ ColumnLayout {
             descriptionItem.color: root.certificate.certificateExpiryDate.getTime() < Date.now() ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
             visible: !isNaN(root.certificate.certificateExpiryDate.getTime())
         }
-
-        FormCard.FormDelegateSeparator { visible: root.certificate.signatureState != KHC.HealthCertificate.UncheckedSignature }
 
         FormCard.FormTextDelegate {
             icon.name: {

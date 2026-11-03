@@ -205,21 +205,18 @@ EditorPage {
 
         FormCard.FormCard {
             visible: !root.isManual
+            autoSeparators: true
 
             FormCard.FormTextDelegate {
                 text: i18nc("bus stop", "Stop")
                 description: root.departureBusStop.name
             }
 
-            FormCard.FormDelegateSeparator {}
-
             FormCard.FormTextFieldDelegate {
                 id: departurePlatform
                 label: Platform.displayString(Line.Bus)
                 text: root.reservation.reservationFor.departurePlatform
             }
-
-            FormCard.FormDelegateSeparator { above: boardLater }
 
             FormCard.FormButtonDelegate {
                 id: boardLater
@@ -297,21 +294,18 @@ EditorPage {
 
         FormCard.FormCard {
             visible: !root.isManual
+            autoSeparators: true
 
             FormCard.FormTextDelegate {
                 text: i18nc("bus stop", "Stop")
                 description: root.arrivalBusStop.name
             }
 
-            FormCard.FormDelegateSeparator {}
-
             FormCard.FormTextFieldDelegate {
                 id: arrivalPlatform
                 label: Platform.displayString(Line.Bus)
                 text: root.reservation.reservationFor.arrivalPlatform
             }
-
-            FormCard.FormDelegateSeparator {}
 
             FormCard.FormButtonDelegate {
                 text: i18nc("bus arrival", "Change Arrival Stop")

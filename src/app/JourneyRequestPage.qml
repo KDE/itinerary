@@ -134,6 +134,7 @@ FormCard.FormCardPage {
         id: requestCard
 
         Layout.topMargin: Kirigami.Units.gridUnit
+        autoSeparators: true
 
         FormCard.FormButtonDelegate {
             id: fromButton
@@ -143,39 +144,26 @@ FormCard.FormCardPage {
             onClicked: applicationWindow().pageStack.push(departurePicker)
         }
 
-
-        FormCard.FormDelegateSeparator {
-            below: fromButton
-            above: toButton
-        }
-
         FormCard.FormButtonDelegate {
             id: toButton
 
             text: i18nc("arrival train station", "To:")
             description: arrivalStop ? arrivalStop.name : i18nc("arrival train station", "Select Arrival Stop")
             onClicked: applicationWindow().pageStack.push(arrivalPicker)
-        }
-        Item{
-            width:parent.width
-            height: 0
-            QQC2.RoundButton{
+
+            QQC2.RoundButton {
                 icon.name: "reverse"
-                y: -fromButton.height - height/2
-                z: toButton.z + 10000
-                x: fromButton.width - width/2 - Kirigami.Units.gridUnit *3
-                onClicked:{
-                    var oldDepartureStop = departureStop
-                    departureStop = arrivalStop
-                    arrivalStop = oldDepartureStop
+                y: -height / 2
+                z: 10000
+                x: fromButton.width - width / 2 - Kirigami.Units.gridUnit * 3
+                onClicked: {
+                    const oldDepartureStop = root.departureStop;
+                    root.departureStop = root.arrivalStop;
+                    root.arrivalStop = oldDepartureStop;
                 }
 
                 Accessible.name: i18nc("departure and arrival stops", "Swap departure and arrival")
             }
-        }
-        FormCard.FormDelegateSeparator {
-            below: toButton
-            above: departureArrivalSelector
         }
 
         FormCard.FormRadioSelectorDelegate {
@@ -193,20 +181,10 @@ FormCard.FormCardPage {
             ]
         }
 
-        FormCard.FormDelegateSeparator {
-            below: departureArrivalSelector
-            above: dateTimeInput
-        }
-
         FormCard.FormDateTimeDelegate {
             id: dateTimeInput
             value: root.initialDateTime
             Accessible.name: departureArrivalSelector.selectedIndex === 0 ? i18nc("train or bus departure", "Departure time") : i18nc("train or bus arrival", "Arrival time")
-        }
-
-        FormCard.FormDelegateSeparator {
-            below: dateTimeInput
-            above: filterButton
         }
 
         FormCard.FormButtonDelegate {
@@ -219,11 +197,6 @@ FormCard.FormCardPage {
                 let page = pageStack.push(journeyFilterPage)
                 root.lineModes = Qt.binding(() => page.lineModes)
             }
-        }
-
-        FormCard.FormDelegateSeparator {
-            below: filterButton
-            above: searchButton
         }
 
         FormCard.FormButtonDelegate {

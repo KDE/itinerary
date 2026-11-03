@@ -34,6 +34,8 @@ ColumnLayout {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
+
         FormCard.FormComboBoxDelegate {
             id: programComboBox
             model: KSortFilterProxyModel {
@@ -48,14 +50,12 @@ ColumnLayout {
             textRole: "name"
             valueRole: "pass"
         }
-        FormCard.FormDelegateSeparator { visible: programNameLabel.visible }
         FormCard.FormTextDelegate {
             id: programNameLabel
             text: i18n("Name")
             description: programComboBox.currentValue.programName
             visible: description
         }
-        FormCard.FormDelegateSeparator { visible: membershipNumberLabel.visible }
         FormCard.FormTextDelegate {
             id: membershipNumberLabel
             text: i18n("Number")

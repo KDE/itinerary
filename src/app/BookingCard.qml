@@ -25,6 +25,8 @@ ColumnLayout {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
+
         FormCard.FormTextDelegate {
             id: referenceLabel
             text: i18n("Reference")
@@ -46,16 +48,12 @@ ColumnLayout {
             }
         }
 
-        FormCard.FormDelegateSeparator { visible: referenceLabel.visible }
-
         FormCard.FormTextDelegate {
             id: underNameLabel
             text: i18n("Under name")
             description: root.reservation.underName ? root.reservation.underName.name : ''
             visible: description
         }
-
-        FormCard.FormDelegateSeparator { visible: underNameLabel.visible }
 
         FormCard.FormTextDelegate {
             id: ticketNumberLabel
@@ -79,15 +77,12 @@ ColumnLayout {
         }
 
 
-        FormCard.FormDelegateSeparator { visible: ticketNumberLabel.visible }
-
         FormCard.FormTextDelegate {
             id: ticketValidFromLabel
             text: i18n("Ticket valid from")
             description: Localizer.formatDateOrDateTimeLocal(root.reservation.reservedTicket, "validFrom")
             visible: root.reservation.reservedTicket !== undefined && !isNaN(root.reservation.reservedTicket.validFrom.getTime())
         }
-        FormCard.FormDelegateSeparator { visible: ticketValidFromLabel.visible }
 
         FormCard.FormTextDelegate {
             id: ticketValidUntilLabel
@@ -95,7 +90,6 @@ ColumnLayout {
             description: Localizer.formatDateOrDateTimeLocal(root.reservation.reservedTicket, "validUntil")
             visible: root.reservation.reservedTicket !== undefined && !isNaN(root.reservation.reservedTicket.validUntil.getTime())
         }
-        FormCard.FormDelegateSeparator { visible: ticketValidUntilLabel.visible }
 
         FormPriceDelegate {
             id: priceLabel

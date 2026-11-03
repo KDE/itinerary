@@ -79,18 +79,18 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
+
         FormCard.FormTextFieldDelegate {
             id: memberNameEdit
             label: i18n("Member")
             text: programMembership.member.name
         }
-        FormCard.FormDelegateSeparator {}
         FormCard.FormTextFieldDelegate {
             id: numberEdit
             label: i18n("Number")
             text: programMembership.membershipNumber
         }
-        FormCard.FormDelegateSeparator {}
         // TODO date-only edit delegates
         FormDateTimeEditDelegate {
             id: validFromEdit
@@ -105,7 +105,6 @@ FormCard.FormCardPage {
                 return d;
             }
         }
-        FormCard.FormDelegateSeparator {}
         FormDateTimeEditDelegate {
             id: validUntilEdit
             text: i18n("Valid until")

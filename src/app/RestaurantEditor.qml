@@ -67,6 +67,8 @@ EditorPage {
         }
 
         FormCard.FormCard {
+            autoSeparators: true
+
             FormCard.FormTextFieldDelegate {
                 id: restaurantName
                 label: i18nc("restaurant name", "Name")
@@ -74,8 +76,6 @@ EditorPage {
                 status: Kirigami.MessageType.Error
                 statusMessage: restaurantName.text === "" ? i18n("Name must not be empty.") : ""
             }
-
-            FormCard.FormDelegateSeparator {}
 
             FormPlaceEditorDelegate {
                 id: address
@@ -92,6 +92,8 @@ EditorPage {
         }
 
         FormCard.FormCard {
+            autoSeparators: true
+
             FormDateTimeEditDelegate {
                 id: startTimeEdit
                 text: i18n("Start Time")
@@ -100,8 +102,6 @@ EditorPage {
                 status: Kirigami.MessageType.Error
                 statusMessage: startTimeEdit.hasValue ? '' : i18n("Start time has to be set.")
             }
-
-            FormCard.FormDelegateSeparator {}
 
             FormDateTimeEditDelegate {
                 id: endTimeEdit

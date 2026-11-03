@@ -13,6 +13,7 @@ import org.kde.itinerary
 /** New or existing trip group selection UI for import/edit pages. */
 FormCard.FormCard {
     id: root
+    autoSeparators: true
 
     enum Mode {
         Create,
@@ -75,8 +76,6 @@ FormCard.FormCard {
             }
         ]
     }
-
-    FormCard.FormDelegateSeparator {}
 
     FormCard.FormTextFieldDelegate {
         id: nameEdit

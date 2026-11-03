@@ -33,12 +33,12 @@ ScrollableDetailsPage {
         }
 
         FormCard.FormCard {
+            autoSeparators: true
+
             FormPlaceDelegate {
                 place: reservationFor
                 controller: root.controller
             }
-
-            FormCard.FormDelegateSeparator {}
 
             FormCard.FormTextDelegate {
                 text: i18n("Start time")
@@ -46,15 +46,11 @@ ScrollableDetailsPage {
                 visible: description
             }
 
-            FormCard.FormDelegateSeparator { visible: reservation.startTime > 0 }
-
             FormCard.FormTextDelegate {
                 text: i18n("End time")
                 description: Localizer.formatDateTime(reservation, "endTime")
                 visible: description
             }
-
-            FormCard.FormDelegateSeparator { visible: reservation.endTime > 0 }
 
             FormCard.FormTextDelegate {
                 text: i18n("Party size")

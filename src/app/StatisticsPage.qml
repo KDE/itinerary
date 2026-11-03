@@ -49,15 +49,12 @@ FormCard.FormCardPage {
         title: i18n("Total")
     }
     FormCard.FormCard {
-        StatisticsDelegate { statItem: model.totalCount }
-        FormCard.FormDelegateSeparator {}
-        StatisticsDelegate { statItem: model.totalDistance }
-        FormCard.FormDelegateSeparator {}
-        StatisticsDelegate { statItem: model.totalNights }
-        FormCard.FormDelegateSeparator {}
-        StatisticsDelegate { statItem: model.totalCO2 }
+        autoSeparators: true
 
-        FormCard.FormDelegateSeparator {}
+        StatisticsDelegate { statItem: model.totalCount }
+        StatisticsDelegate { statItem: model.totalDistance }
+        StatisticsDelegate { statItem: model.totalNights }
+        StatisticsDelegate { statItem: model.totalCO2 }
 
         FormCard.FormButtonDelegate {
             id: countryDetailsLink
@@ -70,8 +67,6 @@ FormCard.FormCardPage {
             trailingLogo.visible: model.visitedCountries.hasData
 
         }
-
-        FormCard.FormDelegateSeparator { visible: countryDetailsDelegate.visible }
 
         FormCard.AbstractFormDelegate {
             id: countryDetailsDelegate
@@ -109,11 +104,10 @@ FormCard.FormCardPage {
     }
     FormCard.FormCard {
         visible: model.flightCount.hasData
+        autoSeparators: true
 
         StatisticsDelegate { statItem: model.flightCount }
-        FormCard.FormDelegateSeparator {}
         StatisticsDelegate { statItem: model.flightDistance }
-        FormCard.FormDelegateSeparator {}
         StatisticsDelegate { statItem: model.flightCO2 }
     }
 
@@ -123,11 +117,10 @@ FormCard.FormCardPage {
     }
     FormCard.FormCard {
         visible: model.trainCount.hasData
+        autoSeparators: true
 
         StatisticsDelegate { statItem: model.trainCount }
-        FormCard.FormDelegateSeparator {}
         StatisticsDelegate { statItem: model.trainDistance }
-        FormCard.FormDelegateSeparator {}
         StatisticsDelegate { statItem: model.trainCO2 }
     }
 
@@ -137,11 +130,10 @@ FormCard.FormCardPage {
     }
     FormCard.FormCard {
         visible: model.busCount.hasData
+        autoSeparators: true
 
         StatisticsDelegate { statItem: model.busCount }
-        FormCard.FormDelegateSeparator {}
         StatisticsDelegate { statItem: model.busDistance }
-        FormCard.FormDelegateSeparator {}
         StatisticsDelegate { statItem: model.busCO2 }
     }
 
@@ -151,11 +143,10 @@ FormCard.FormCardPage {
     }
     FormCard.FormCard {
         visible: model.boatCount.hasData
+        autoSeparators: true
 
         StatisticsDelegate { statItem: model.boatCount }
-        FormCard.FormDelegateSeparator {}
         StatisticsDelegate { statItem: model.boatDistance }
-        FormCard.FormDelegateSeparator {}
         StatisticsDelegate { statItem: model.boatCO2 }
     }
 
@@ -165,11 +156,10 @@ FormCard.FormCardPage {
     }
     FormCard.FormCard {
         visible: model.carCount.hasData
+        autoSeparators: true
 
         StatisticsDelegate { statItem: model.carCount }
-        FormCard.FormDelegateSeparator {}
         StatisticsDelegate { statItem: model.carDistance }
-        FormCard.FormDelegateSeparator {}
         StatisticsDelegate { statItem: model.carCO2 }
     }
 }
