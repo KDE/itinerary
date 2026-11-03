@@ -955,7 +955,15 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="26.08.3" date="2026-11-05"/>
+    <release version="26.08.3" date="2026-11-05">
+      <description>
+        <ul>
+          <li>New or improved travel document extractors for Deutsche Bahn, easyTable, Finnair, LTG Link and Lufthansa.</li>
+          <li>Fix public transport data access for MVV.</li>
+          <li>Fix opening external maps while the indoor map is still loading.</li>
+        </ul>
+      </description>
+    </release>
     <release version="26.08.2" date="2026-10-08">
       <description>
         <ul>
