@@ -80,7 +80,6 @@ target_sources(itinerary PRIVATE
     whatsnewcontroller.cpp
 )
 
-
 ecm_add_qml_module(itinerary GENERATE_PLUGIN_SOURCE
     URI org.kde.itinerary
     IMPORTS
@@ -343,7 +342,9 @@ if (ANDROID)
         OpenSSL::SSL
     )
 
-    kirigami_package_breeze_icons(ICONS
+    kirigami_package_breeze_icons(
+        OVERRIDE_REPOSITORY https://invent.kde.org/carlschwan/kde-material-symbols.git
+        ICONS
         ${KIRIGAMI_ADDONS_ICONS}
         ${KPUBLICTRANSPORT_ICONS}
 
@@ -353,9 +354,11 @@ if (ANDROID)
         arrow-left
         arrow-right
         arrow-up
+        arrow-up-symbolic
         backup
         bookmarks
         call-start
+        car
         channel-insecure-symbolic
         channel-secure-symbolic
         checkmark
@@ -363,15 +366,19 @@ if (ANDROID)
         cloud-upload
         crosshairs
         cross-shape
+        delete-symbolic
         dialog-cancel
         dialog-close
+        dialog-close-symbolic
         dialog-warning-symbolic
         dialog-error-symbolic
         dialog-ok
         document-edit
         document-export-symbolic
+        document-import
         document-import-symbolic
         document-open
+        document-open-symbolic
         document-save
         document-save-as-symbolic
         documentinfo
@@ -398,8 +405,12 @@ if (ANDROID)
         go-up-symbolic
         help-about-symbolic
         help-contents
+        kaccess
+        kdeconnect-tray
         license
+        lighttable
         list-add
+        list-add-symbolic
         mail-attachment-symbolic
         mail-message-new
         map-globe
@@ -417,16 +428,19 @@ if (ANDROID)
         raindrop
         reverse
         search
+        search-symbolic
         security-high
         security-medium-symbolic
         security-low
         settings-configure
         speedometer
         split
+        split-symbolic
         temperature-cold
         temperature-normal
         temperature-warm
         tools-report-bug-symbolic
+        user-identity-symbolic
         view-barcode-qr
         view-calendar
         view-calendar-day
