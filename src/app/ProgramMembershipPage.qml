@@ -148,6 +148,8 @@ FormCard.FormCardPage {
         }
 
         FormCard.FormCard {
+            autoSeparators: true
+
             FormCard.FormButtonDelegate {
                 id: passButton
                 readonly property string passId: PkPassManager.passId(root.programMembership)
@@ -163,7 +165,6 @@ FormCard.FormCardPage {
                     }
                 }
             }
-            FormCard.FormDelegateSeparator { visible: passButton.visible }
             FormCard.FormButtonDelegate {
                 icon.name: "document-edit"
                 text: i18n("Edit")
@@ -176,13 +177,11 @@ FormCard.FormCardPage {
                     });
                 }
             }
-            FormCard.FormDelegateSeparator {}
             FormCard.FormButtonDelegate {
                 icon.name: "document-export-symbolic"
                 text: i18n("Export…")
                 onClicked: exportProgramMembershipDialog.open()
             }
-            FormCard.FormDelegateSeparator {}
             FormCard.FormButtonDelegate {
                 icon.name: "edit-delete"
                 text: i18n("Delete")

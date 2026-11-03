@@ -20,6 +20,8 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
+
         CountryComboBoxDelegate {
             text: i18n("Home Country")
             model: Country.allCountries.map(c => c.alpha2).sort((lhs, rhs) => {
@@ -30,7 +32,6 @@ FormCard.FormCardPage {
             icon.name: "go-home-symbolic"
             description: i18n("Select your home country for currency conversions and power plug compatibility warnings to work.")
         }
-        FormCard.FormDelegateSeparator {}
         FormCard.FormSwitchDelegate {
             text: i18n("Use online services")
             description: i18n("KDE Itinerary has all features disabled by default that require online access, such as retrieving live traffic data or weather forecasts. You can enable all this here, or check the settings for much more finegrained control over which services to use.")
@@ -48,7 +49,6 @@ FormCard.FormCardPage {
                 }
             }
         }
-        FormCard.FormDelegateSeparator {}
         FormCard.FormButtonDelegate {
             text: i18n("Settings…")
             description: i18n("Review the settings for more finegrained control over which online services to use.")

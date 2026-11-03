@@ -75,6 +75,7 @@ PublicTransportPage {
 
         FormCard.FormCard {
             visible: ticketToken.hasContent || sequenceNumberDelegate.visible
+            autoSeparators: true
 
             // ticket barcode
             TicketTokenDelegate {
@@ -90,8 +91,6 @@ PublicTransportPage {
                     root.showBarcodeScanButton = Qt.binding(() => ticketToken.hasBarcode && root.swipeView.currentIndex === 0)
                 }
             }
-
-            FormCard.FormDelegateSeparator {}
 
             // sequence number belongs to the selected barcode
             FormCard.FormTextDelegate {
@@ -110,6 +109,7 @@ PublicTransportPage {
 
         FormCard.FormCard {
             visible: root.reservationFor.boardingTime > 0 || root.reservation.boardingGroup || root.reservation.airplaneSeat || root.reservationFor.airline.name
+            autoSeparators: true
 
             FormCard.FormTextDelegate {
                 id: boardingTimeLabel
@@ -118,8 +118,6 @@ PublicTransportPage {
                 description: Localizer.formatDateTime(reservationFor, "boardingTime")
             }
 
-            FormCard.FormDelegateSeparator { visible: boardingTimeLabel.visible }
-
             FormCard.FormTextDelegate {
                 id: boardingGroupLabel
                 visible: reservation.boardingGroup.length > 0
@@ -127,16 +125,12 @@ PublicTransportPage {
                 description: reservation.boardingGroup
             }
 
-            FormCard.FormDelegateSeparator { visible: boardingGroupLabel.visible }
-
             FormCard.FormTextDelegate {
                 id: seatLabel
                 text: i18nc("Flight seat", "Seat")
                 description: reservation.airplaneSeat
                 visible: reservation.airplaneSeat.length > 0
             }
-
-            FormCard.FormDelegateSeparator { visible: seatLabel.visible }
 
             FormCard.FormTextDelegate {
                 id: airlineNameLabel

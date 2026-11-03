@@ -164,6 +164,8 @@ ColumnLayout {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
+
         Repeater {
             FormCard.FormButtonDelegate {
                 action: modelData

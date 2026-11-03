@@ -100,6 +100,8 @@ ColumnLayout {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
+
         Repeater {
             delegate: documentDelegate
             model: docsModel
@@ -110,8 +112,6 @@ ColumnLayout {
             visible: docsModel.empty
             Accessible.ignored: !visible
         }
-
-        FormCard.FormDelegateSeparator {}
 
         FormCard.FormButtonDelegate {
             text: i18n("Add Document…")

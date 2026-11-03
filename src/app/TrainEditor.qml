@@ -226,21 +226,18 @@ EditorPage {
 
         FormCard.FormCard {
             visible: !root.isManual
+            autoSeparators: true
 
             FormCard.FormTextDelegate {
                 text: i18nc("train station", "Station")
                 description: root.departureStation.name
             }
 
-            FormCard.FormDelegateSeparator {}
-
             FormCard.FormTextFieldDelegate {
                 id: departurePlatform
                 label: Platform.displayString(Line.Train)
                 text: root.reservation.reservationFor.departurePlatform
             }
-
-            FormCard.FormDelegateSeparator { above: boardLater }
 
             FormCard.FormButtonDelegate {
                 id: boardLater
@@ -331,13 +328,12 @@ EditorPage {
 
         FormCard.FormCard {
             visible: !root.isManual
+            autoSeparators: true
 
             FormCard.FormTextDelegate {
                 text: i18nc("train station", "Station")
                 description: root.arrivalStation.name
             }
-
-            FormCard.FormDelegateSeparator {}
 
             FormCard.FormTextFieldDelegate {
                 id: arrivalPlatform
@@ -345,8 +341,6 @@ EditorPage {
                 label: Platform.displayString(Line.Train)
                 text: root.reservation.reservationFor.arrivalPlatform
             }
-
-            FormCard.FormDelegateSeparator { above: alignEarlier }
 
             FormCard.FormButtonDelegate {
                 id: alignEarlier
@@ -365,18 +359,18 @@ EditorPage {
         }
 
         FormCard.FormCard {
+            autoSeparators: true
+
             FormCard.FormTextFieldDelegate {
                 id: coachEdit
                 label: i18nc("carriage on a train", "Coach")
                 text: reservation.reservedTicket?.ticketedSeat?.seatSection
             }
-            FormCard.FormDelegateSeparator {}
             FormCard.FormTextFieldDelegate {
                 id: seatEdit
                 label: i18nc("Train seat", "Seat")
                 text: reservation.reservedTicket?.ticketedSeat?.seatNumber
             }
-            FormCard.FormDelegateSeparator {}
             FormCard.FormTextFieldDelegate {
                 id: classEdit
                 label: i18nc("seating class on a train", "Class")

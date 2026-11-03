@@ -93,6 +93,7 @@ EditorPage {
 
         FormCard.FormCard {
             Layout.topMargin: Kirigami.Units.largeSpacing
+            autoSeparators: true
 
             FormDateTimeEditDelegate {
                 id: checkinEdit
@@ -102,7 +103,6 @@ EditorPage {
                 status: Kirigami.MessageType.Error
                 statusMessage: checkinEdit.hasValue ? '' : i18n("Check-in time has to be set.")
             }
-            FormCard.FormDelegateSeparator {}
             FormDateTimeEditDelegate {
                 id: checkoutEdit
                 text: i18nc("hotel checkout", "Check-out")

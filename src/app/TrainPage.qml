@@ -107,6 +107,8 @@ PublicTransportPage {
         }
 
         FormCard.FormCard {
+            autoSeparators: true
+
             FormCard.FormTextDelegate {
                 id: departureTimeDelegate
                 text: i18n("Departure time")
@@ -143,8 +145,6 @@ PublicTransportPage {
                 description: Localizer.formatDate(reservationFor, "departureDay")
             }
 
-            FormCard.FormDelegateSeparator { visible: departureStation.visible }
-
             FormPlaceDelegate {
                 id: departureStation
 
@@ -156,8 +156,6 @@ PublicTransportPage {
                 visible: description
             }
 
-            FormCard.FormDelegateSeparator { visible: departurePlatformDelegate.visible }
-
             FormPlatformDelegate {
                 id: departurePlatformDelegate
                 text: KPublicTransport.Platform.displayString(KPublicTransport.Line.Train)
@@ -166,7 +164,6 @@ PublicTransportPage {
                 scheduledPlatform: root.reservationFor.departurePlatform
             }
 
-            FormCard.FormDelegateSeparator { visible: departureNotes.visible }
             FormCard.FormTextDelegate {
                 id: departureNotes
                 text: i18n("Additional information")
@@ -177,8 +174,6 @@ PublicTransportPage {
                 font.italic: true
                 onLinkActivated: (link) => { Qt.openUrlExternally(link); }
             }
-
-            FormCard.FormDelegateSeparator { visible: departureLayoutButton.visible }
 
             FormCard.FormButtonDelegate {
                 id: departureLayoutButton
@@ -195,6 +190,8 @@ PublicTransportPage {
         }
 
         FormCard.FormCard {
+            autoSeparators: true
+
             FormCard.FormTextDelegate {
                 id: arrivalTimeDelegate
                 text: i18n("Arrival time")
@@ -228,10 +225,6 @@ PublicTransportPage {
                 }
             }
 
-            FormCard.FormDelegateSeparator {
-                visible: arrivalTimeLabel.text.length > 0 && arrivalStation.visible
-            }
-
             FormPlaceDelegate {
                 id: arrivalStation
 
@@ -243,8 +236,6 @@ PublicTransportPage {
                 visible: description
             }
 
-            FormCard.FormDelegateSeparator { visible: arrivalPlatformDelegate.visible }
-
             FormPlatformDelegate {
                 id: arrivalPlatformDelegate
                 text: KPublicTransport.Platform.displayString(KPublicTransport.Line.Train)
@@ -253,7 +244,6 @@ PublicTransportPage {
                 scheduledPlatform: root.reservationFor.arrivalPlatform
             }
 
-            FormCard.FormDelegateSeparator { visible: arrivalNotes.visible }
             FormCard.FormTextDelegate {
                 id: arrivalNotes
                 text: i18n("Additional information")
@@ -266,8 +256,6 @@ PublicTransportPage {
                     Qt.openUrlExternally(link);
                 }
             }
-
-            FormCard.FormDelegateSeparator { visible: arrivalLayoutButton.visible }
 
             FormCard.FormButtonDelegate {
                 id: arrivalLayoutButton

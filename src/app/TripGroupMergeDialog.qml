@@ -15,6 +15,7 @@ FormCard.FormCardDialog {
     property var tripGroup
 
     title: i18nc("@title:window", "Merge Trips")
+    autoSeparators: true
 
     function guessName(): void {
         if (nameEdit.nameChanged)
@@ -45,8 +46,6 @@ FormCard.FormCardDialog {
         }
         onCurrentValueChanged: root.guessName()
     }
-
-    FormCard.FormDelegateSeparator {}
 
     FormCard.FormTextFieldDelegate {
         id: nameEdit

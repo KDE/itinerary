@@ -56,6 +56,7 @@ ScrollableDetailsPage {
 
         FormCard.FormCard {
             Layout.topMargin: Kirigami.Units.largeSpacing
+            autoSeparators: true
 
             FormPlaceDelegate {
                 place: reservationFor.location
@@ -64,15 +65,11 @@ ScrollableDetailsPage {
                 visible: reservationFor.location != undefined
             }
 
-            FormCard.FormDelegateSeparator { visible: reservationFor.location != undefined }
-
             FormCard.FormTextDelegate {
                 text: i18nc("time of entrance", "Entrance")
                 description: Localizer.formatDateTime(reservationFor, "doorTime")
                 visible: reservationFor.doorTime > 0
             }
-
-            FormCard.FormDelegateSeparator { visible: reservationFor.doorTime > 0 }
 
             FormCard.FormTextDelegate {
                 text: i18n("Start Time")
@@ -80,15 +77,12 @@ ScrollableDetailsPage {
                 visible: reservationFor.startDate > 0
             }
 
-            FormCard.FormDelegateSeparator { visible: reservationFor.startDate > 0 }
-
             FormCard.FormTextDelegate {
                 text: i18n("End Time")
                 description: Localizer.formatDateTime(reservationFor, "endDate")
                 visible: reservationFor.endDate > 0
             }
 
-            FormCard.FormDelegateSeparator { visible: reservationFor.url != "" }
             FormCard.FormButtonDelegate {
                 text: i18n("Website")
                 description: reservationFor.url

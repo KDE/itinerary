@@ -30,13 +30,11 @@ ColumnLayout {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
+
         FormCard.FormTextDelegate {
             text: i18n("Name")
             description: root.certificate.name
-        }
-
-        FormCard.FormDelegateSeparator {
-            visible: !isNaN(root.certificate.dateOfBirth.getTime())
         }
 
         FormCard.FormTextDelegate {
@@ -51,26 +49,22 @@ ColumnLayout {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
+
         FormCard.FormTextDelegate {
             text: i18n("Positive test")
             description: root.certificate.dateOfPositiveTest.toLocaleDateString(Qt.locale(), Locale.ShortFormat)
         }
-
-        FormCard.FormDelegateSeparator {}
 
         FormCard.FormTextDelegate {
             text: i18n("Disease")
             description: root.certificate.disease
         }
 
-        FormCard.FormDelegateSeparator {}
-
         FormCard.FormTextDelegate {
             text: i18n("Valid from")
             description: root.certificate.validFrom.toLocaleDateString(Qt.locale(), Locale.ShortFormat)
         }
-
-        FormCard.FormDelegateSeparator {}
 
         FormCard.FormTextDelegate {
             text: i18n("Valid until")
@@ -83,28 +77,24 @@ ColumnLayout {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
+
         FormCard.FormTextDelegate {
             text: i18n("Issuer")
             description: root.certificate.certificateIssuer
             visible: description !== ""
         }
 
-        FormCard.FormDelegateSeparator { visible: root.certificate.certificateIssuer.length > 0 }
-
         FormCard.FormTextDelegate {
             text: i18n("Identifier")
             description: root.certificate.certificateId
         }
-
-        FormCard.FormDelegateSeparator {}
 
         FormCard.FormTextDelegate {
             text: root.certificate.certificateIssueDate.toLocaleString(Qt.locale(), Locale.ShortFormat)
             visible: !isNaN(certificate.certificateIssueDate.getTime())
             Kirigami.FormData.label: i18n("Issued")
         }
-
-        FormCard.FormDelegateSeparator {}
 
         FormCard.FormTextDelegate {
             id: expiresDelegate
@@ -113,8 +103,6 @@ ColumnLayout {
             visible: !isNaN(certificate.certificateExpiryDate.getTime())
             descriptionItem.color: root.certificate.certificateExpiryDate.getTime() < Date.now() ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
         }
-
-        FormCard.FormDelegateSeparator {}
 
         FormCard.FormTextDelegate {
             icon.name: {

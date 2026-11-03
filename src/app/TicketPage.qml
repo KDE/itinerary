@@ -142,6 +142,8 @@ FormCard.FormCardPage {
         }
 
         FormCard.FormCard {
+            autoSeparators: true
+
             FormCard.FormButtonDelegate {
                 id: passButton
                 readonly property string passId: PkPassManager.passId(root.ticket)
@@ -157,9 +159,6 @@ FormCard.FormCardPage {
                     }
                 }
             }
-            FormCard.FormDelegateSeparator {
-                visible: passButton.visible
-            }
             FormCard.FormButtonDelegate {
                 id: passUpdateButton
                 text: i18n("Check for Updates")
@@ -167,9 +166,6 @@ FormCard.FormCardPage {
                 enabled: QtNetwork.NetworkInformation.reachability === QtNetwork.NetworkInformation.Reachability.Online || QtNetwork.NetworkInformation.reachability === QtNetwork.NetworkInformation.Reachability.Unknown
                 visible: PkPassManager.canUpdate(PkPassManager.pass(passButton.passId))
                 onClicked: PkPassManager.updatePass(passButton.passId)
-            }
-            FormCard.FormDelegateSeparator {
-                visible: passUpdateButton.visible
             }
             FormCard.FormButtonDelegate {
                 icon.name: "document-edit"
@@ -185,13 +181,11 @@ FormCard.FormCardPage {
                     TicketEditor {}
                 }
             }
-            FormCard.FormDelegateSeparator {}
             FormCard.FormButtonDelegate {
                 icon.name: "document-export-symbolic"
                 text: i18n("Export…")
                 onClicked: exportTicketDialog.open()
             }
-            FormCard.FormDelegateSeparator {}
             FormCard.FormButtonDelegate {
                 icon.name: "edit-delete"
                 text: i18n("Delete")

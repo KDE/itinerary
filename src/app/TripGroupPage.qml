@@ -377,6 +377,7 @@ Kirigami.ScrollablePage {
             FormCard.FormCard {
                 Layout.bottomMargin: listView.spacing
                 visible: !root.isEmptyTripGroup
+                autoSeparators: true
 
                 FormCard.FormTextDelegate {
                     id: dateLabel
@@ -386,71 +387,41 @@ Kirigami.ScrollablePage {
                     description: dateLabel.dayCount >= 1 ? i18np("One day", "%1 days", dateLabel.dayCount) : ""
                 }
 
-                FormCard.FormDelegateSeparator {}
-
                 FormCard.FormTextDelegate {
                     visible: root.controller.weatherForecast.valid
                     icon.name:  root.controller.weatherForecast.symbolIconName
                     text: Localizer.formatTemperatureRange(root.controller.weatherForecast.minimumTemperature, root.controller.weatherForecast.maximumTemperature, Settings.useFahrenheit)
                 }
 
-                FormCard.FormDelegateSeparator {
-                    visible: root.controller.weatherForecast.valid
-                }
-
                 Repeater {
                     model: root.controller.locationInformation
 
-                    ColumnLayout {
-                        spacing: 0
-
-                        FormCard.FormDelegateSeparator {
-                            visible: index > 0 || root.controller.weatherForecast.valid
-                        }
-
-                        FormCard.FormTextDelegate {
-                            icon.name: "documentinfo"
-                            icon.color: modelData.powerPlugCompatibility == LocationInformation.PartiallyCompatible ? Kirigami.Theme.neutralTextColor : Kirigami.Theme.negativeTextColor
-                            text: Country.fromAlpha2(modelData.isoCode).name
-                            description: {
-                                if (modelData.powerPlugCompatibility == LocationInformation.PartiallyCompatible) {
-                                    if (modelData.powerPlugTypes.length === 0) {
-                                        return i18n("Some incompatible power sockets (%1)", modelData.powerSocketTypes);
-                                    } else {
-                                        return i18n("Some incompatible power plugs (%1)", modelData.powerPlugTypes);
-                                    }
+                    FormCard.FormTextDelegate {
+                        icon.name: "documentinfo"
+                        icon.color: modelData.powerPlugCompatibility == LocationInformation.PartiallyCompatible ? Kirigami.Theme.neutralTextColor : Kirigami.Theme.negativeTextColor
+                        text: Country.fromAlpha2(modelData.isoCode).name
+                        description: {
+                            if (modelData.powerPlugCompatibility == LocationInformation.PartiallyCompatible) {
+                                if (modelData.powerPlugTypes.length === 0) {
+                                    return i18n("Some incompatible power sockets (%1)", modelData.powerSocketTypes);
+                                } else {
+                                    return i18n("Some incompatible power plugs (%1)", modelData.powerPlugTypes);
                                 }
-                                return i18n("No compatible power plugs (%1)", modelData.powerSocketTypes);
                             }
+                            return i18n("No compatible power plugs (%1)", modelData.powerSocketTypes);
                         }
                     }
-                }
-
-                FormCard.FormDelegateSeparator {
-                    visible: root.controller.locationInformation.length > 0
                 }
 
                 // Currency converter, if currency conversions are enabled.
                 Repeater {
                     model: Settings.performCurrencyConversion ? root.controller.currencies : []
 
-                    ColumnLayout {
-                        id: currencyConverterLayout
-
+                    CurrencyConverterDelegate {
                         required property string modelData
-                        required property int index
 
-                        spacing: 0
-
-                        FormCard.FormDelegateSeparator {
-                            visible: currencyConverterLayout.index > 0
-                        }
-
-                        CurrencyConverterDelegate {
-                            Layout.fillWidth: true
-                            homeCurrency: controller.homeCurrency
-                            foreignCurrency: currencyConverterLayout.modelData
-                        }
+                        homeCurrency: controller.homeCurrency
+                        foreignCurrency: modelData
                     }
                 }
 
@@ -459,10 +430,6 @@ Kirigami.ScrollablePage {
                     icon.name: "view-currency-list"
                     text: root.controller.currencies.length > 0 ? i18np("Currency: %2", "Currencies: %2", root.controller.currencies.length, root.controller.currencies.join(", ")) : ""
                     visible: root.controller.currencies.length > 0 && !Settings.performCurrencyConversion
-                }
-
-                FormCard.FormDelegateSeparator {
-                    visible: root.controller.currencies.length > 0
                 }
 
                 FormCard.FormButtonDelegate {
@@ -649,23 +616,19 @@ Kirigami.ScrollablePage {
                 }
                 FormCard.FormCard {
                     visible: distanceStats.visible || co2Stats.visible || costStats.visible
+                    autoSeparators: true
+
                     FormCard.FormTextDelegate {
                         id: distanceStats
                         text: i18n("Distance")
                         description: CoreAddons.Format.formatDistance(root.controller.totalDistance, Settings.distanceFormat)
                         visible: root.controller.totalDistance > 0
                     }
-                    FormCard.FormDelegateSeparator {
-                        visible: distanceStats.visible
-                    }
                     FormCard.FormTextDelegate {
                         id: co2Stats
                         text: i18n("CO₂")
                         description: Localizer.formatWeight(root.controller.totalCO2Emission)
                         visible: root.controller.totalCO2Emission > 0
-                    }
-                    FormCard.FormDelegateSeparator {
-                        visible: co2Stats.visible
                     }
                     FormCard.FormTextDelegate {
                         id: costStats

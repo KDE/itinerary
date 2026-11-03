@@ -23,6 +23,8 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
+
         FormCard.FormButtonDelegate {
             text: i18nc("@action:button", "Import")
             icon.name: "document-import-symbolic"
@@ -48,8 +50,6 @@ FormCard.FormCardPage {
                 }
             }
         }
-
-        FormCard.FormDelegateSeparator {}
 
         FormCard.FormButtonDelegate {
             text: i18nc("@action:button", "Add Manually")

@@ -38,13 +38,13 @@ ColumnLayout {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
+
         FormCard.FormTextFieldDelegate {
             id: referenceEdit
             label: i18n("Reference")
             text: root.item.reservationNumber
         }
-
-        FormCard.FormDelegateSeparator {}
 
         FormCard.FormTextFieldDelegate {
             id: underNameEdit
@@ -52,14 +52,10 @@ ColumnLayout {
             text: root.item.underName ? root.item.underName.name : ''
         }
 
-        FormCard.FormDelegateSeparator { above: priceEdit }
-
         FormPriceEditDelegate {
             id: priceEdit
             item: root.item
         }
-
-        FormCard.FormDelegateSeparator {}
 
         FormCard.FormCheckDelegate {
             id: canceledEdit

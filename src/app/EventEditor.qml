@@ -67,6 +67,8 @@ EditorPage {
         }
 
         FormCard.FormCard {
+            autoSeparators: true
+
             FormCard.FormTextFieldDelegate {
                 id: eventName
                 label: i18nc("event name", "Name")
@@ -74,7 +76,6 @@ EditorPage {
                 status: Kirigami.MessageType.Error
                 statusMessage: text === "" ? i18n("Name must not be empty.") : ""
             }
-            FormCard.FormDelegateSeparator {}
             FormDateTimeEditDelegate {
                 id: entranceTimeEdit
                 text: i18nc("time of entrance", "Entrance")
@@ -100,7 +101,6 @@ EditorPage {
                     return '';
                 }
             }
-            FormCard.FormDelegateSeparator {}
             FormDateTimeEditDelegate {
                 id: startDateEdit
                 text: i18n("Start Time")
@@ -109,7 +109,6 @@ EditorPage {
                 status: Kirigami.MessageType.Error
                 statusMessage: startDateEdit.hasValue ? '' : i18n("Start time has to be set.")
             }
-            FormCard.FormDelegateSeparator {}
             FormDateTimeEditDelegate {
                 id: endDateEdit
                 text: i18n("End Time")
@@ -127,7 +126,6 @@ EditorPage {
                     return '';
                 }
             }
-            FormCard.FormDelegateSeparator {}
             FormCard.FormTextFieldDelegate {
                 id: urlEdit
                 label: i18n("Website")

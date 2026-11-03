@@ -63,15 +63,17 @@ ScrollableDetailsPage {
 
         FormCard.FormCard {
             visible: reservation.checkinTime > 0 || reservation.checkoutTime > 0
+            autoSeparators: true
+
             FormCard.FormTextDelegate {
                 text: i18n("Check-in time")
+                visible: reservation.checkinTime > 0
                 description: Util.isStartOfDay(reservation, "checkinTime") ? Localizer.formatDate(reservation, "checkinTime") : Localizer.formatDateTime(reservation, "checkinTime")
             }
 
-            FormCard.FormDelegateSeparator { visible: reservation.checkinTime > 0 }
-
             FormCard.FormTextDelegate {
                 text: i18n("Check-out time")
+                visible: reservation.checkoutTime > 0
                 description: Util.isStartOfDay(reservation, "checkoutTime") ? Localizer.formatDate(reservation, "checkoutTime") : Localizer.formatDateTime(reservation, "checkoutTime")
             }
         }

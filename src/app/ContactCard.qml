@@ -23,6 +23,8 @@ ColumnLayout {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
+
         FormCard.FormButtonDelegate {
             text: i18n("Telephone")
             description: contact.telephone
@@ -31,8 +33,6 @@ ColumnLayout {
             visible: contact.telephone
         }
 
-        FormCard.FormDelegateSeparator { visible: contact.telephone }
-
         FormCard.FormButtonDelegate {
             text: i18n("Email")
             description: contact.email
@@ -40,8 +40,6 @@ ColumnLayout {
             onClicked: Qt.openUrlExternally(Util.emailUrl(contact.email))
             visible: contact.email
         }
-
-        FormCard.FormDelegateSeparator { visible: reservationFor.url != "" }
 
         FormCard.FormButtonDelegate {
             text: i18n("Website")

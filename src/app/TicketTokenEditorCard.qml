@@ -62,6 +62,7 @@ ColumnLayout {
     FormCard.FormCard {
         id: card
         visible: root.token === ""
+        autoSeparators: true
 
         FormCard.FormComboBoxDelegate {
             id: ticketSelectionBox
@@ -84,8 +85,6 @@ ColumnLayout {
                     root.newToken = "";
             }
         }
-
-        FormCard.FormDelegateSeparator { visible: ticketSelectionBox.visible }
 
         FormCard.FormButtonDelegate {
             text: i18n("Scan barcode…")
@@ -122,8 +121,6 @@ ColumnLayout {
                 applicationWindow().pageStack.push(page);
             }
         }
-
-        FormCard.FormDelegateSeparator {}
 
         FormCard.FormButtonDelegate {
             text: i18n("Paste")

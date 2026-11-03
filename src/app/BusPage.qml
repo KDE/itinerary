@@ -90,6 +90,8 @@ PublicTransportPage {
         }
 
         FormCard.FormCard {
+            autoSeparators: true
+
             FormCard.AbstractFormDelegate {
                 id: departureTimeDelegate
                 visible: departureTimeLabel.text.length > 0
@@ -125,8 +127,6 @@ PublicTransportPage {
                 description: Localizer.formatDate(reservationFor, "departureDay")
             }
 
-            FormCard.FormDelegateSeparator { visible: stationName.visible }
-
             FormPlaceDelegate {
                 id: stationName
 
@@ -138,8 +138,6 @@ PublicTransportPage {
                 visible: description
             }
 
-            FormCard.FormDelegateSeparator { visible: departurePlatformDelegate.visible }
-
             FormCard.FormTextDelegate {
                 id: departurePlatformDelegate
                 text: KPublicTransport.Platform.displayString(KPublicTransport.Line.Bus)
@@ -147,7 +145,6 @@ PublicTransportPage {
                 visible: description !== ""
             }
 
-            FormCard.FormDelegateSeparator { visible: departureNotes.visible }
             FormCard.FormTextDelegate {
                 id: departureNotes
                 text: i18n("Additional information")
@@ -166,6 +163,8 @@ PublicTransportPage {
         }
 
         FormCard.FormCard {
+            autoSeparators: true
+
             FormCard.AbstractFormDelegate {
                 background: null
                 visible: reservationFor.arrivalTime > 0
@@ -195,8 +194,6 @@ PublicTransportPage {
                 }
             }
 
-            FormCard.FormDelegateSeparator { visible: reservationFor.arrivalTime > 0 && arrivalDelegate.visible }
-
             FormPlaceDelegate {
                 id: arrivalDelegate
 
@@ -208,8 +205,6 @@ PublicTransportPage {
                 visible: description
             }
 
-            FormCard.FormDelegateSeparator { visible: arrivalPlatformDelegate.visible }
-
             FormCard.FormTextDelegate {
                 id: arrivalPlatformDelegate
                 text: KPublicTransport.Platform.displayString(KPublicTransport.Line.Bus)
@@ -217,7 +212,6 @@ PublicTransportPage {
                 visible: description !== ""
             }
 
-            FormCard.FormDelegateSeparator { visible: arrivalNotes.visible }
             FormCard.FormTextDelegate {
                 id: arrivalNotes
                 text: i18n("Additional information")

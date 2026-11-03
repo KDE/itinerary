@@ -25,15 +25,13 @@ ColumnLayout {
 
     FormCard.FormCard {
         visible: programNameLabel.visible || membershipNumberLabel.visible
+        autoSeparators: true
 
         FormCard.FormTextDelegate {
             id: programNameLabel
             text: i18n("Name")
             description: root.programMembership.programName
             visible: description
-        }
-        FormCard.FormDelegateSeparator {
-            visible: programNameLabel.visible
         }
         FormCard.FormTextDelegate {
             id: membershipNumberLabel
@@ -54,9 +52,6 @@ ColumnLayout {
                 QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                 QQC2.ToolTip.visible: hovered
             }
-        }
-        FormCard.FormDelegateSeparator {
-            visible: membershipNumberLabel.visible
         }
         FormCard.FormButtonDelegate {
             id: passButton

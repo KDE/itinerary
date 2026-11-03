@@ -154,11 +154,12 @@ EditorPage {
         }
         FormCard.FormCard {
             visible: !root.isManual
+            autoSeparators: true
+
             FormCard.FormTextDelegate {
                 text: i18nc("boat terminal", "Terminal")
                 description: root.departureBoatTerminal.name
             }
-            FormCard.FormDelegateSeparator { above: boardLater }
             FormCard.FormButtonDelegate {
                 id: boardLater
 
@@ -217,11 +218,12 @@ EditorPage {
         }
         FormCard.FormCard {
             visible: !root.isManual
+            autoSeparators: true
+
             FormCard.FormTextDelegate {
                 text: i18nc("boat terminal", "Terminal")
                 description: root.arrivalBoatTerminal.name
             }
-            FormCard.FormDelegateSeparator { above: alignEarlier }
             FormCard.FormButtonDelegate {
                 id: alignEarlier
                 text: i18nc("boat arrival", "Change Arrival Terminal")

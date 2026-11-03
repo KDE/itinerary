@@ -36,6 +36,8 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
+
         Loader {
             id: vendorInputForm
             Layout.fillWidth: true
@@ -46,8 +48,6 @@ FormCard.FormCardPage {
                 function onSearch() { root.search(); }
             }
         }
-
-        FormCard.FormDelegateSeparator {}
 
         FormCard.FormButtonDelegate {
             id: searchButton
