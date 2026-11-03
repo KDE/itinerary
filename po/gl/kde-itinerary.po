@@ -274,8 +274,7 @@ msgstr[1] "Importáronse %1 certificados sanitarios."
 #: app/applicationcontroller.cpp:495 app/applicationcontroller.cpp:513
 #: app/applicationcontroller.cpp:554 app/applicationcontroller.cpp:590
 #: app/applicationcontroller.cpp:608
-#, fuzzy, kde-format
-#| msgid "Export failed: %1"
+#, kde-format
 msgctxt "%1 is an error message"
 msgid "Export failed: %1"
 msgstr "A exportación fallou: %1"
@@ -580,9 +579,7 @@ msgid "Booking"
 msgstr "Reserva"
 
 #: app/BookingEditorCard.qml:66
-#, fuzzy, kde-format
-#| msgctxt "a train/bus journey canceled by its operator"
-#| msgid "Canceled"
+#, kde-format
 msgctxt "canceled reservation"
 msgid "Canceled"
 msgstr "Cancelouse"
@@ -627,8 +624,7 @@ msgid "New Bus Reservation"
 msgstr "Editar a reserva de bus"
 
 #: app/BusEditor.qml:74
-#, fuzzy, kde-format
-#| msgid "Edit Bus Reservation"
+#, kde-format
 msgctxt "@title"
 msgid "Edit Bus Reservation"
 msgstr "Editar a reserva de bus"
@@ -763,8 +759,7 @@ msgid "Arrival"
 msgstr "Chegada"
 
 #: app/calendarhelper.cpp:28
-#, fuzzy, kde-format
-#| msgid "Transfer to %1"
+#, kde-format
 msgctxt "%1 is the transfer destination"
 msgid "Transfer to %1"
 msgstr "Transbordo a %1"
@@ -786,8 +781,7 @@ msgid "Rental Car Pick-up"
 msgstr "Recollida do coche de arrendamento"
 
 #: app/CarRentalDelegate.qml:60
-#, fuzzy, kde-format
-#| msgid "Drop-off: %1"
+#, kde-format
 msgctxt "%1 is a date/time"
 msgid "Drop-off: %1"
 msgstr "Devolución: %1"
@@ -951,15 +945,13 @@ msgid "Add Document…"
 msgstr "Engadir un documento…"
 
 #: app/downloadjob.cpp:162
-#, fuzzy, kde-format
-#| msgid "Network error: %1"
+#, kde-format
 msgctxt "%1 is an error message"
 msgid "Network error: %1"
 msgstr "Erro de rede: %1"
 
 #: app/downloadjob.cpp:193
-#, fuzzy, kde-format
-#| msgid "Download failed: %1"
+#, kde-format
 msgctxt "%1 is an error message"
 msgid "Download failed: %1"
 msgstr "A descarga fallou: %1"
@@ -1122,8 +1114,7 @@ msgid "Work"
 msgstr "Traballo"
 
 #: app/favoritelocationmodel.cpp:161
-#, fuzzy, kde-format
-#| msgid "Location %1"
+#, kde-format
 msgctxt "%1 is a number"
 msgid "Location %1"
 msgstr "Localización %1"
@@ -1605,22 +1596,19 @@ msgid "Ferry from %1 to %2"
 msgstr "Transbordador de %1 a %2"
 
 #: app/HealthCertificateBarcode.qml:34
-#, fuzzy, kde-format
-#| msgid "Vaccination certificate of %1"
+#, kde-format
 msgctxt "%1 is a person name"
 msgid "Vaccination certificate of %1"
 msgstr "Certificado de vacinación de %1"
 
 #: app/HealthCertificateBarcode.qml:36
-#, fuzzy, kde-format
-#| msgid "Test certificate of %1"
+#, kde-format
 msgctxt "%1 is a person name, 'Test certificate' is a compound noun"
 msgid "Test certificate of %1"
 msgstr "Certificado de proba de %1"
 
 #: app/HealthCertificateBarcode.qml:38
-#, fuzzy, kde-format
-#| msgid "Recovery certificate of %1"
+#, kde-format
 msgctxt "%1 is a person name"
 msgid "Recovery certificate of %1"
 msgstr "Certificado de recuperación de %1"
@@ -1687,16 +1675,14 @@ msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: app/healthcertificatemanager.cpp:154
-#, fuzzy, kde-format
-#| msgid "Vaccination for %1 (%2/%3)"
+#, kde-format
 msgctxt ""
 "%1 is a disease, %2 the amount of applied doses, %3 the amount of total doses"
 msgid "Vaccination for %1 (%2/%3)"
 msgstr "Vacinación de %1 (%2/%3)"
 
 #: app/healthcertificatemanager.cpp:157
-#, fuzzy, kde-format
-#| msgid "Vaccination for %1"
+#, kde-format
 msgctxt "%1 is a disease"
 msgid "Vaccination for %1"
 msgstr "Vacinación de %1"
@@ -2066,8 +2052,7 @@ msgid "From SNCF reservation number"
 msgstr ""
 
 #: app/importcontroller.cpp:152 app/importcontroller.cpp:496
-#, fuzzy, kde-format
-#| msgid "Import failed: %1"
+#, kde-format
 msgctxt "%1 is an error message"
 msgid "Import failed: %1"
 msgstr "A importación fallou: %1"
@@ -2326,8 +2311,7 @@ msgid "To:"
 msgstr "A:"
 
 #: app/JourneyRequestPage.qml:173
-#, fuzzy, kde-format
-#| msgid "Swap departure and arrival"
+#, kde-format
 msgctxt "departure and arrival stops"
 msgid "Swap departure and arrival"
 msgstr "Intercambiar a saída e a chegada"
@@ -3158,9 +3142,7 @@ msgid "The session verification was canceled due to an unknown error."
 msgstr "A verificación da sesión cancelouse por un erro descoñecido."
 
 #: app/MatrixKeyVerificationPage.qml:114
-#, fuzzy, kde-format
-#| msgctxt "Matrix session verfication"
-#| msgid "Emoji Verification"
+#, kde-format
 msgctxt "Matrix session verification"
 msgid "Emoji Verification"
 msgstr "Verificación de emoción"
@@ -4335,15 +4317,13 @@ msgid "Paste"
 msgstr "Pegar"
 
 #: app/tickettokenmodel.cpp:88
-#, fuzzy, kde-format
-#| msgid "Attendee %1"
+#, kde-format
 msgctxt "%1 is a number"
 msgid "Attendee %1"
 msgstr "Asistente %1"
 
 #: app/tickettokenmodel.cpp:90
-#, fuzzy, kde-format
-#| msgid "Traveler %1"
+#, kde-format
 msgctxt "%1 is a number"
 msgid "Traveler %1"
 msgstr "Viaxante %1"
@@ -4441,8 +4421,7 @@ msgid "New Train Reservation"
 msgstr "Editar a reserva de tren"
 
 #: app/TrainEditor.qml:79
-#, fuzzy, kde-format
-#| msgid "Edit Train Reservation"
+#, kde-format
 msgctxt "@title"
 msgid "Edit Train Reservation"
 msgstr "Editar a reserva de tren"
@@ -5026,15 +5005,13 @@ msgid "Vehicle Layout"
 msgstr "Disposición do vehículo"
 
 #: app/VehicleLayoutPage.qml:95
-#, fuzzy, kde-format
-#| msgid "Departure: %1"
+#, kde-format
 msgctxt "%1 is a date/time"
 msgid "Departure: %1"
 msgstr "Saída: %1"
 
 #: app/VehicleLayoutPage.qml:97
-#, fuzzy, kde-format
-#| msgid "Arrival: %1"
+#, kde-format
 msgctxt "%1 is a date/time"
 msgid "Arrival: %1"
 msgstr "Chegada: %1"
