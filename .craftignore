@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: CC0-1.0
 # SPDX-FileCopyrightText: 2023 Volker Krause <vkrause@kde.org>
 
-# we use the Mateiral style, so anything related to Fluent is unnecessary
+# we use the Material style, so anything related to Fluent is unnecessary
 qml/QtQuick/Controls/FluentWinUI3/.*
 lib/qml/org/kde/kirigami/styles/org.kde.desktop/.*
 
