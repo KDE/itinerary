@@ -50,14 +50,14 @@ FormCard.FormCardPage {
         title: i18n("Online Services")
     }
     FormCard.FormCard {
+        autoSeparators: true
+
         FormCard.FormCheckDelegate {
             text: i18n("Query Traffic Data")
             checked: Settings.queryLiveData
             onToggled: Settings.queryLiveData = checked
             description: i18n("When enabled, this will query transport provider online services for changes such as delays or gate and platform changes.")
         }
-
-        FormCard.FormDelegateSeparator {}
 
         FormCard.FormCheckDelegate {
             text: i18n("Use insecure services")
@@ -67,16 +67,12 @@ FormCard.FormCardPage {
             descriptionItem.color: Kirigami.Theme.negativeTextColor
         }
 
-        FormCard.FormDelegateSeparator {}
-
         FormCard.FormButtonDelegate {
             Kirigami.FormData.isSection: true
             text: i18n("Public Transport Information Sources…")
             icon.name: "settings-configure"
             onClicked: applicationWindow().pageStack.layers.push(ptBackendPage)
         }
-
-        FormCard.FormDelegateSeparator {}
 
         FormCard.FormCheckDelegate {
             id: weatherSwitch
@@ -93,8 +89,6 @@ FormCard.FormCardPage {
             onLinkActivated: Qt.openUrlExternally(link)
         }
 
-        FormCard.FormDelegateSeparator {}
-
         FormCard.FormCheckDelegate {
             id: autoMapDownload
             text: i18n("Preload Map Data")
@@ -102,8 +96,6 @@ FormCard.FormCardPage {
             onToggled: Settings.preloadMapData = checked
             description: i18n("Enabling this will download maps for all stations and airports for upcoming trips when connected to Wifi network.")
         }
-
-        FormCard.FormDelegateSeparator {}
 
         FormCard.FormCheckDelegate {
             id: currencyConversion
@@ -118,8 +110,6 @@ FormCard.FormCardPage {
             description: i18n("Enabling this will perform online queries for exchange rates to currencies at travel destinations.")
         }
 
-        FormCard.FormDelegateSeparator {}
-
         FormCard.FormCheckDelegate {
             text: i18n("Wikimedia Online Content")
             checked: Settings.wikimediaOnlineContentEnabled
@@ -130,17 +120,16 @@ FormCard.FormCardPage {
 
     // Transfer assistant
     FormCard.FormHeader {
-        Kirigami.FormData.isSection: true
         title: i18n("Transfer Assistant")
     }
     FormCard.FormCard {
+        autoSeparators: true
+
         FormCard.FormCheckDelegate {
             text: i18n("Automatically add transfers")
             checked: Settings.autoAddTransfers
             onToggled: Settings.autoAddTransfers = checked
         }
-
-        FormCard.FormDelegateSeparator {}
 
         FormCard.FormCheckDelegate {
             text: i18n("Automatically fill transfers")
@@ -154,19 +143,21 @@ FormCard.FormCardPage {
 
     // Notifications
     FormCard.FormHeader {
-        Kirigami.FormData.isSection: true
         title: i18n("Notifications")
     }
     FormCard.FormCard {
         id: notificationCard
+
+        readonly property bool hasNotificationPermission: KNotification.NotificationPermission.checkPermission()
+
+        autoSeparators: true
+
         FormCard.FormButtonDelegate {
             text: i18n("Configure Notifications…")
             icon.name: "notifications"
             onClicked: KNotification.NotificationConfiguration.show()
             enabled: KNotification.NotificationConfiguration.isAvailable
         }
-
-        FormCard.FormDelegateSeparator {}
 
         FormCard.FormCheckDelegate {
             text: i18n("Show notifications on lock screen")
@@ -175,9 +166,6 @@ FormCard.FormCardPage {
             enabled: NotificationConfigController.canShowOnLockScreen
         }
 
-        FormCard.FormDelegateSeparator {}
-
-        property bool hasNotificationPermission: KNotification.NotificationPermission.checkPermission()
         FormCard.FormButtonDelegate {
             text: i18n("Request permissions…")
             description: i18n("Additional permissions are required to show notifications.")
@@ -189,6 +177,7 @@ FormCard.FormCardPage {
             }
             onClicked: KNotification.NotificationPermission.requestPermission(permissionCallback)
         }
+
         FormCard.FormTextDelegate {
             text: i18n("Notification permissions are available")
             description: i18n("No further action required.");
@@ -199,14 +188,15 @@ FormCard.FormCardPage {
     }
 
     // Wifi access for onboard status information
-    property OnboardStatus onboardStatus: OnboardStatus {
+    readonly property OnboardStatus onboardStatus: OnboardStatus {
         id: onboardStatus
     }
     FormCard.FormHeader {
-        Kirigami.FormData.isSection: true
         title: i18n("Onboard Status")
     }
     FormCard.FormCard {
+        autoSeparators: true
+
         FormCard.FormButtonDelegate {
             text: i18n("Request permissions…")
             description: i18n("Additional permissions are required to access the Wi-Fi status.")
@@ -215,6 +205,7 @@ FormCard.FormCardPage {
             visible: onboardStatus.status == OnboardStatus.MissingPermissions
             onClicked: onboardStatus.requestPermissions()
         }
+
         FormCard.FormTextDelegate {
             text: {
                 switch (onboardStatus.status) {
@@ -276,59 +267,80 @@ FormCard.FormCardPage {
     }
     FormCard.FormCard {
         id: matrixCard
+
         visible: MatrixController.isAvailable
+        autoSeparators: true
+
         FormCard.FormTextDelegate {
             text: MatrixController.manager.infoString.length > 0 ? MatrixController.manager.infoString : MatrixController.manager.connected ? i18n("Logged in as %1", MatrixController.manager.userId) : ""
             visible: text.length > 0
         }
+
         FormCard.FormButtonDelegate {
             text: i18n("Synchronize rooms")
             icon.name: "view-refresh"
             onClicked: MatrixController.manager.sync()
             visible: MatrixController.manager.connected
         }
+
+        FormCard.FormRadioSelectorDelegate {
+            id: matrixSelector
+
+            visible: !MatrixController.manager.connected
+            consistentWidth: true
+            actions: [
+                QQC2.Action {
+                    text: i18nc("@option:radio Authentification", "Password")
+                },
+                QQC2.Action {
+                    text: i18nc("@option:radio Authentification", "OIDC/SSO")
+                }
+            ]
+        }
+
         FormCard.FormTextFieldDelegate {
             id: matrixId
             label: i18n("Matrix ID")
-            visible: !MatrixController.manager.connected
+            visible: !MatrixController.manager.connected && matrixSelector.selectedIndex === 0
             text: MatrixController.manager.userId
         }
+
         FormCard.FormTextFieldDelegate {
             id: matrixPassword
             label: i18n("Password")
             echoMode: TextInput.Password
-            visible: !MatrixController.manager.connected
+            visible: !MatrixController.manager.connected && matrixSelector.selectedIndex === 0
             onAccepted: {
                 MatrixController.manager.login(matrixId.text, matrixPassword.text);
             }
         }
-        FormCard.FormButtonDelegate {
-            id: loginButton
-            text: MatrixController.manager.connected ? i18n("Log out") : i18n("Log in")
-            onClicked: MatrixController.manager.connected ? MatrixController.manager.logout() : MatrixController.manager.login(matrixId.text, matrixPassword.text)
-            enabled: MatrixController.manager.connected || (matrixId.text.length > 0 && matrixPassword.text.length > 0)
-        }
-        FormCard.FormDelegateSeparator {
-            visible: matrixId.visible
-        }
+
         FormCard.FormTextFieldDelegate {
             id: matrixOidcServer
             label: i18nc("@label", "Homeserver url")
-            visible: !MatrixController.manager.connected
+            visible: !MatrixController.manager.connected && matrixSelector.selectedIndex === 1
         }
+
         FormCard.FormLinkDelegate {
             text: MatrixController.manager.ssoUrl
             visible: MatrixController.manager.ssoUrl.length > 0
         }
+
         FormCard.FormButtonDelegate {
             text: i18nc("@action:button", "Login with OIDC")
             enabled: matrixOidcServer.text.length  > 0
-            visible: !MatrixController.manager.connected
+            visible: !MatrixController.manager.connected && matrixSelector.selectedIndex === 1
             onClicked: MatrixController.manager.loginWithOidc(matrixOidcServer.text)
         }
-        FormCard.FormDelegateSeparator {
-            visible: matrixSessionVerified.visible
+
+        FormCard.FormButtonDelegate {
+            id: loginButton
+            visible: matrixSelector.selectedIndex === 0 || MatrixController.manager.connected
+            text: MatrixController.manager.connected ? i18n("Log out") : i18n("Log in")
+            onClicked: MatrixController.manager.connected ? MatrixController.manager.logout() : MatrixController.manager.login(matrixId.text, matrixPassword.text)
+            enabled: MatrixController.manager.connected || (matrixId.text.length > 0 && matrixPassword.text.length > 0)
         }
+
         FormCard.FormTextDelegate {
             id: matrixSessionVerified
             text: MatrixController.manager.isVerifiedSession ? i18nc("Matrix session verification", "Session verified") : i18nc("Matrix session verification", "Session not verified.")
@@ -336,31 +348,27 @@ FormCard.FormCardPage {
             icon.name: MatrixController.manager.isVerifiedSession ? "security-high" : "security-low"
             visible: MatrixController.manager.connected
         }
-        FormCard.FormDelegateSeparator { above: loginButton }
     }
 
     FormCard.FormHeader {
         title: i18n("Träwelling Integration")
     }
-
     FormCard.FormCard {
+        autoSeparators: true
+
         FormCard.FormTextDelegate {
             description: i18nc("@info", "Träwelling is a free check-in service that lets you tell your friends where you are and where you can log your public transit journeys. For more information, visit <a href=\"https://traewelling.de\">traewelling.de</a>");
             onLinkActivated: link => Qt.openUrlExternally(link)
         }
+
         FormCard.FormTextDelegate {
             visible: TraewellingController.isLoggedIn
             text: i18n("Logged in as %1", TraewellingController.username)
         }
+
         FormCard.FormButtonDelegate {
-            text: i18n("Login")
-            onClicked: TraewellingController.login()
-            visible: !TraewellingController.isLoggedIn
-        }
-        FormCard.FormButtonDelegate {
-            text: i18n("Logout")
-            onClicked: TraewellingController.logout()
-            visible: TraewellingController.isLoggedIn
+            text: TraewellingController.isLoggedIn ? i18n("Log out") : i18n("Log in")
+            onClicked: TraewellingController.isLoggedIn ? TraewellingController.logout() : TraewellingController.login()
         }
     }
 
