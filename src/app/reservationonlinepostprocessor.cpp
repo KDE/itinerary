@@ -5,6 +5,7 @@
 
 #include <KItinerary/BusTrip>
 #include <KItinerary/Datatypes>
+#include <KItinerary/Event>
 #include <KItinerary/Flight>
 #include <KItinerary/JsonLdDocument>
 #include <KItinerary/LocationUtil>
@@ -239,7 +240,18 @@ QCoro::Task<std::optional<QVariant>> ReservationOnlinePostprocessor::processRese
             foodRes.setReservationFor(*changedRestaurant);
             co_return foodRes;
         }
+    } else if (KItinerary::JsonLd::isA<KItinerary::EventReservation>(reservation)) {
+        auto evRes = reservation.value<KItinerary::EventReservation>();
+        auto event = evRes.reservationFor().value<KItinerary::Event>();
+        auto location = event.location().value<KItinerary::Place>();
+        const auto changedLocation = co_await processPlace(location, {"amenity:arts_centre"_L1, "amenity:cinema"_L1, "amenity:community_centre"_L1, "amenity:conference_centre"_L1, "amenity:event_venue"_L1, "amenity:exhibition_centre"_L1, "amenity:music_venue"_L1, "amenity:nightclub"_L1, "amenity:social_centre"_L1, "amenity:theatre"_L1, "amenity:townhall"_L1, "amenity:university"_L1});
+        if (changedLocation) {
+            event.setLocation(*changedLocation);
+            evRes.setReservationFor(event);
+            co_return evRes;
+        }
     }
+
 
     co_return {};
 }
