@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-30 00:54+0000\n"
+"POT-Creation-Date: 2026-11-04 01:03+0000\n"
 "PO-Revision-Date: 2024-03-26 16:14+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -2485,12 +2485,12 @@ msgid "Journey Details"
 msgstr "Utazás részletei"
 
 #: app/JourneySectionPage.qml:120 app/LiveStatusPage.qml:378
-#: app/PublicTransportPage.qml:210
+#: app/PublicTransportPage.qml:208
 #, kde-format
 msgid "Journey"
 msgstr "Utazás"
 
-#: app/JourneySectionPage.qml:124 app/PublicTransportPage.qml:215
+#: app/JourneySectionPage.qml:124 app/PublicTransportPage.qml:213
 #, kde-format
 msgid "Map"
 msgstr ""
@@ -3720,7 +3720,7 @@ msgstr "Programtagság szerkesztése"
 msgid "Show Pass"
 msgstr "Térkép megjelenítése"
 
-#: app/PublicTransportPage.qml:206 app/TicketEditor.qml:58
+#: app/PublicTransportPage.qml:204 app/TicketEditor.qml:58
 #: app/TicketPage.qml:18 app/TicketPage.qml:92
 #, kde-format
 msgid "Ticket"
