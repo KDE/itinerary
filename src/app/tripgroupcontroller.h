@@ -48,6 +48,12 @@ class TripGroupController : public QObject
      */
     Q_PROPERTY(bool isPastTrip READ isPastTrip NOTIFY tripEnded)
 
+    /**
+     * @c true if anything in this trip group has a geo coordinate.
+     * Without that showing e.g. a map makes no sense.
+     */
+    Q_PROPERTY(bool hasGeoCoordinates READ hasGeoCoordinates NOTIFY tripGroupContentChanged)
+
 public:
     explicit TripGroupController(QObject *parent = nullptr);
     ~TripGroupController();
@@ -67,6 +73,8 @@ public:
     [[nodiscard]] Price totalCost() const;
 
     [[nodiscard]] bool isPastTrip() const;
+
+    [[nodiscard]] bool hasGeoCoordinates() const;
 
 Q_SIGNALS:
     void setupChanged();

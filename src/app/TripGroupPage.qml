@@ -468,7 +468,7 @@ Kirigami.ScrollablePage {
                 FormCard.FormButtonDelegate {
                     icon.name: "map-globe"
                     text: i18n("Show map…")
-                    visible: !root.isEmptyTripGroup
+                    visible: root.controller.hasGeoCoordinates
                     onClicked: applicationWindow().pageStack.push(Qt.createComponent("org.kde.itinerary", "TripGroupMapPage"), {
                         tripGroupId: root.tripGroupId
                     });

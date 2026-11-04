@@ -334,4 +334,20 @@ bool TripGroupController::isPastTrip() const
     return tg.hasEnded() && !(tg.endDateTime().isValid() && tg.endDateTime().date() == QDate::currentDate());
 }
 
+bool TripGroupController::hasGeoCoordinates() const
+{
+    if (!m_tripGroupModel || !m_tranferMgr) {
+        return false;
+    }
+
+    const auto elems = m_tripGroupModel->tripGroupManager()->tripGroup(m_tgId).elements();
+    return std::ranges::any_of(elems, [this](const auto &resId) {
+        const auto res = m_tripGroupModel->tripGroupManager()->reservationManager()->reservation(resId);
+        return !ReservationHelper::isCancelled(res) && (
+            LocationUtil::geo(LocationUtil::departureLocation(res)).isValid() ||
+            LocationUtil::geo(LocationUtil::arrivalLocation(res)).isValid() ||
+            LocationUtil::geo(LocationUtil::location(res)).isValid());
+    });
+}
+
 #include "moc_tripgroupcontroller.cpp"
