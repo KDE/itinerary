@@ -176,14 +176,14 @@ Kirigami.ApplicationWindow {
         }
 
         function onEditNewHotelReservation(res: var): void {
-            root.pageStack.push(hotelEditorPage, {reservation: res});
+            root.pageStack.push(Qt.createComponent("org.kde.itinerary", "HotelEditor"), {reservation: res});
         }
 
         function onEditNewRestaurantReservation(res: var): void {
-            root.pageStack.push(restaurantEditorPage, {reservation: res});
+            root.pageStack.push(Qt.createComponent("org.kde.itinerary", "RestaurantEditor"), {reservation: res});
         }
         function onEditNewEventReservation(res: var): void {
-            root.pageStack.push(eventEditorPage, {reservation: res});
+            root.pageStack.push(Qt.createComponent("org.kde.itinerary", "EventEditor"), {reservation: res});
         }
     }
 
