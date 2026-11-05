@@ -645,10 +645,11 @@ Kirigami.ScrollablePage {
 
                 FormCard.FormHeader {
                     title: i18n("Statistics")
-                    visible: distanceStats.visible || co2Stats.visible || costStats.visible
+                    visible: statisticsCard.visible
                 }
                 FormCard.FormCard {
-                    visible: distanceStats.visible || co2Stats.visible || costStats.visible
+                    id: statisticsCard
+                    visible: root.controller.totalDistance > 0 || root.controller.totalCO2Emission > 0 || !isNaN(root.controller.totalCost.value)
                     FormCard.FormTextDelegate {
                         id: distanceStats
                         text: i18n("Distance")
