@@ -959,8 +959,35 @@
       <description>
         <ul>
           <li>New or improved travel document extractors for Deutsche Bahn, easyTable, Finnair, LTG Link and Lufthansa.</li>
+          <li xml:lang="ar">أدوات جديدة أو محسّنة لاستخراج بيانات وثائق السفر الخاصة بشركات «دويتشه بان» و«إيزي تيبل» و«فيناير» و«إل تي جي لينك» و«لوفتهانزا».</li>
+          <li xml:lang="ca">Extractors nous o millorats de documents de viatge per a Deutsche Bahn, easyTable, Finnair, LTG Link i Lufthansa.</li>
+          <li xml:lang="cs">Nové nebo vylepšené nástroje pro extrakci údajů z cestovních dokladů pro společnosti Deutsche Bahn, easyTable, Finnair, LTG Link a Lufthansa.</li>
+          <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para Deutsche Bahn, easyTable, Finnair, LTG Link y Lufthansa.</li>
+          <li xml:lang="he">מחלצי מסמכי נסיעות חדשים או משופרים עבור Deutsche Bahn,‏ easyTable, Finnair,‏ LTG Link ו־Lufthansa.</li>
+          <li xml:lang="nl">Nieuwe of verbeterde extractors voor reisdocumenten vor Deutsche Bahn, easyTable, Finnair, LTG Link en Lufthansa.</li>
+          <li xml:lang="pt-BR">Extratores de documentos de viagem novos ou aprimorados para Deutsche Bahn, easyTable, Finnair, LTG Link e Lufthansa.</li>
+          <li xml:lang="ru">Новые или улучшенные модули извлечения данных из проездных документов для Deutsche Bahn, easyTable, Finnair, LTG Link и Lufthansa.</li>
+          <li xml:lang="sl">Novi ali izboljšani izvlečki potovalnih dokumentov za Deutsche Bahn, easyTable, Finnair, LTG Link and Lufthanso.</li>
           <li>Fix public transport data access for MVV.</li>
+          <li xml:lang="ar">إصلاح مشكلة الوصول إلى بيانات النقل العام الخاصة بشركة MVV.</li>
+          <li xml:lang="ca">Corregeix l'accés a les dades de transport públic per a MVV.</li>
+          <li xml:lang="cs">Opraven přístup k údajům o veřejné dopravě pro MVV.</li>
+          <li xml:lang="es">Se ha corregido el acceso a datos de transporte público para MVV.</li>
+          <li xml:lang="he">תוקנה גישה לנתוני תחבורה של MVV.</li>
+          <li xml:lang="nl">Verbeter de toegang tot gegevens over het openbaar vervoer voor MVV.</li>
+          <li xml:lang="pt-BR">Correção do acesso a dados de transporte público para MVV.</li>
+          <li xml:lang="ru">Исправлен доступ к данным общественного транспорта для MVV.</li>
+          <li xml:lang="sl">Popravljen je dostop do podatkov za MVV.</li>
           <li>Fix opening external maps while the indoor map is still loading.</li>
+          <li xml:lang="ar">إصلاح مشكلة فتح الخرائط الخارجية أثناء استمرار تحميل الخريطة الداخلية.</li>
+          <li xml:lang="ca">Corregeix l'obertura de mapes externs mentre encara es carrega el mapa d'interior.</li>
+          <li xml:lang="cs">Opravena chyba, kdy se otevíraly externí mapy, zatímco se ještě načítala mapa interiéru.</li>
+          <li xml:lang="es">Se ha corregido la apertura de mapas externos cuando el mapa de interior sigue cargándose.</li>
+          <li xml:lang="he">תוקנה פתיחת מפות חיצוניות תוך כדי שהמפה הפנימית עדיין נטענת.</li>
+          <li xml:lang="nl">Los het probleem op waarbij externe kaarten worden geopend terwijl de plattegrond van het interieur nog wordt geladen.</li>
+          <li xml:lang="pt-BR">Correção da abertura de mapas externos enquanto o mapa interno ainda está sendo carregado.</li>
+          <li xml:lang="ru">Исправлено открытие внешних карт во время загрузки карты помещения.</li>
+          <li xml:lang="sl">Popravi težavo z odpiranjem zunanjih zemljevidov, medtem ko se notranji zemljevid še nalaga.</li>
         </ul>
       </description>
     </release>
@@ -974,6 +1001,7 @@
           <li xml:lang="cs">Nové nebo vylepšené extraktory cestovních dokladů pro společnosti Accor, ALSA, Delta Air Lines, Entur, Frontier Airlines, Ouigo a Snållåget.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para Accor, ALSA, Delta Air Lines, Entur, Frontier Airlines, Ouigo y Snållåget.</li>
           <li xml:lang="eu">Accor, ALSA, Delta Air Lines, Entur, Frontier Airlines, Ouigo eta Snälltågeterako bidaia-dokumentuen erauzle berriak edo hobetuak.</li>
+          <li xml:lang="fi">Uusi tai parannettu matka-asiakirjapurku Accorille, ALSAlle, Delta Air Linesille, Enturille, Frontier Airlinesille, Ouigolle ja Snållågetille.</li>
           <li xml:lang="fr">Améliorations d'extracteurs ou nouveaux extracteurs de documents de voyage pour Accor, ALSA, Delta Air Lines, Entur, Frontier Airlines, Ouigo et Snållåget.</li>
           <li xml:lang="he">מחלצי מסמכי נסיעות משופרים עבור Accor,‏ ALSA,‏ Delta Air Lines,‏ Entur,‏ Frontier Airlines,‏ Ouigo ו־Snållåget.</li>
           <li xml:lang="ia">Nove e meliorate extractores de documentos de viage  pro Accor, ALSA, Delta Air Lines, Entur, Frontier Airlines, Ouigo e Snållåget.</li>
@@ -994,6 +1022,7 @@
           <li xml:lang="cs">Opravena chyba, kvůli které se nezobrazoval varovný indikátor nedostupného přenosu.</li>
           <li xml:lang="es">Se ha corregido el problema por el cual no se mostraba el indicador de advertencia de transferencia inaccesible.</li>
           <li xml:lang="eu">Egin ezin den garraio-tartearen abisu-adierazlea ez erakustearen arazoa konpondu da.</li>
+          <li xml:lang="fi">Korjattu se, ettei saavuttamattoman vaihdon varoitusosoitin näkynyt.</li>
           <li xml:lang="fr">Correction de l'indicateur d'avertissement de transfert inaccessible qui ne s'affichait pas.</li>
           <li xml:lang="he">תוקנה תקלה שמחוון אזהרת העברה בלתי נגישה לא מופיע.</li>
           <li xml:lang="it">Risolto il problema per cui l'indicatore di avviso di trasferimento irraggiungibile non veniva visualizzato.</li>
@@ -1013,6 +1042,7 @@
           <li xml:lang="cs">Opravena viditelnost rezervační karty na stránkách s podrobnostmi o rezervaci.</li>
           <li xml:lang="es">Se ha corregido la visibilidad de la tarjeta de reserva en las páginas de detalles de la reserva.</li>
           <li xml:lang="eu">Erreserben xehetasun-orrialdeetan erreserba-txartela bistaratzearen arazoa konpondu da.</li>
+          <li xml:lang="fi">Korjattu varauskortin näkyvyys varaustietosivulla.</li>
           <li xml:lang="fr">Correction de la visibilité de la carte de réservation dans les pages de détail de réservation.</li>
           <li xml:lang="he">תוקנה חשיפת כרטיסי הזמנות בעמודי פרטי הזמנה.</li>
           <li xml:lang="it">Corregge la visibilità della scheda di prenotazione nelle pagine dei dettagli della prenotazione.</li>
@@ -1032,6 +1062,7 @@
           <li xml:lang="cs">Opraveny některé případy problémů s importem prostřednictvím sdílení v systému Android.</li>
           <li xml:lang="es">Se han corregido algunos casos de importación mediante la función de compartir en Android.</li>
           <li xml:lang="eu">Androiden partekatzearen bidez inportatzean gertatzen ziren zenbait arazo konpondu dira.</li>
+          <li xml:lang="fi">Korjattu joitakin jakamalla tuomisen tapauksia Androidissa.</li>
           <li xml:lang="fr">Correction de certains cas d'importation avec des partages sous sur Android.</li>
           <li xml:lang="he">תוקנו מצבים מסוימים של ייבוא דרך שיתוף ב־Android.</li>
           <li xml:lang="it">Risolti alcuni problemi con l'importazione tramite condivisione su Android.</li>
@@ -1057,6 +1088,7 @@
           <li xml:lang="cs">Nové nebo vylepšené nástroje pro extrakci údajů z cestovních dokladů pro letenky společností Air Canada, booking.com, Lufthansa a generické letenky ve formátu RCT2.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para Air Canada, booking.com, Lufthansa y billetes normales de RCT2.</li>
           <li xml:lang="eu">Air Canada, booking.com, Lufthansa eta RCT2 txartel generikoetarako bidaia-dokumentuen erauzle berriak edo hobetuak.</li>
+          <li xml:lang="fi">Uusi tai parannettu matka-asiakirjojen purku AirCanadalle, booking.comille, Lufthansalle ja yleisille RCT2-lipuille.</li>
           <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour les billets de Air Canada, booking.com, Lufthansa et les tickets « RCT2 » génériques.</li>
           <li xml:lang="ia">Nove o meliorate extractores de documentos de viage pro Air Canada, booking.com, Lufthansa e billettes generic de RCT2.</li>
           <li xml:lang="it">Nuovi o migliorati estrattori di documenti di viaggio per Air Canada, booking.com, Lufthansa e biglietti RCT2 generici.</li>
@@ -1075,6 +1107,7 @@
           <li xml:lang="cs">Opraveno servisní upozornění týkající se zrušení zastávek veřejné dopravy, které se promítalo do zrušení úseků trasy.</li>
           <li xml:lang="es">Se han corregido las alertas del servicio por cancelaciones de paradas de transporte público que se propagaban a las cancelaciones de tramos del trayecto.</li>
           <li xml:lang="eu">Garraio publikoko geraleku-ezeztapenei buruzko zerbitzu-oharrak bidaia-atalen ezeztapenetara hedatzearen arazoa konpondu da.</li>
+          <li xml:lang="fi">Korjattu joukkoliikenteen pysäkkiperuutusten palveluhälytysten edentäminen osuuksien peruutuksiin.</li>
           <li xml:lang="fr">Correction des alertes de service pour les annulations d’arrêts dans les transports publics se propageant en annulations de trajets.</li>
           <li xml:lang="it">Avvisi fissi sul servizio per cancellazioni di fermate del trasporto pubblico che si propagano alle cancellazioni di tratte.</li>
           <li xml:lang="ka">გასწორდა სერვისის განგაშები საჯარო ტრანსპორტის გაჩერების გაუქმების გავრცელება ერთი სეგმენტის გაუქმებაზე.</li>
@@ -1092,6 +1125,7 @@
           <li xml:lang="cs">Opravena nesprávná barva štítků v záznamech časové osy týkajících se pronájmu automobilů.</li>
           <li xml:lang="es">Se han corregido las etiquetas con colores incorrectos en las entradas del historial de alquiler de automóviles.</li>
           <li xml:lang="eu">Auto-alokairuen denbora-lerroko sarreretako etiketen koloreak zuzendu dira.</li>
+          <li xml:lang="fi">Korjattu väärin väritetyt selitteet autovuokrauksen aikajanamerkinnöissä.</li>
           <li xml:lang="fr">Correction des étiquettes mal colorées dans les entrées chronologiques de location de voitures.</li>
           <li xml:lang="it">Correzione delle etichette con colori errati nelle voci della cronologia del noleggio auto.</li>
           <li xml:lang="ka">გასწორდა არასწორი ფერის ჭდეები მანანის ქირაობის ქრონოლოგიის ჩანაწერებში.</li>
@@ -1442,6 +1476,7 @@
           <li xml:lang="cs">Podrobnější nastavení mazání záznamů u rezervací s více letenkami nebo více cestujícími.</li>
           <li xml:lang="es">Control más detallado sobre el borrado de entradas en las reservas con múltiples billetes o múltiples viajeros.</li>
           <li xml:lang="eu">Hainbat txartel edo bidaiari dituzten erreserbetako sarrerak ezabatzeko kontrol xeheagoa.</li>
+          <li xml:lang="fi">Hienompijakoinen merkintöjen poistamisen säätö varauksiin, joissa on useita lippuja tai matkustajia.</li>
           <li xml:lang="fr">Un contrôle plus précis sur la suppression des entrées des réservations avec plusieurs billets ou plusieurs personnes voyageant.</li>
           <li xml:lang="he">שליטה ממוקדת יותר במחיקת רשומות בהזמנות מרובות כרטיסים או נוסעים.</li>
           <li xml:lang="ia">Plus precise controlo super le deletion de entratas in reservationes  con multiple billetes o multiple viagiatores.</li>
@@ -3885,6 +3920,7 @@
         <p xml:lang="cs">Vnitřní mapa v Itineráři nyní zobrazuje všechny služby v budově nebo oblasti, kterou právě prohlížíte. To vám pomůže například najít místo, kde si můžete dát kávu na velkém nádraží, nebo najít místo, kde se najíst v okolí vašeho hotelu. Tato funkce je založena na OpenStreetMap, funguje bez nutnosti připojení k internetu a žádné vyhledávací termíny neopouštějí vaše zařízení.</p>
         <p xml:lang="es">El mapa de interiores de Itinerary ahora muestra todos los servicios del edificio o la zona que se visualiza. Esto ayuda, por ejemplo, a encontrar un lugar para tomar un café en una gran estación de tren o a buscar un restaurante cerca de un hotel. Esta función, basada en OpenStreetMap, funciona sin conexión a internet y los términos de búsqueda se guardan en el dispositivo.</p>
         <p xml:lang="eu">Itinerary aplikazioko barrualdeko mapak ikusgai dagoen eraikin edo eremuko zerbitzu eta ekipamendu guztiak zerrendatzen ditu orain. Horri esker, tren-geltoki handi batean kafea hartzeko tokia edo hotel inguruan jateko lekua aurki daiteke. Eginbidea OpenStreetMap-en oinarritzen da, Internetera konektatu gabe dabil eta bilaketa-terminoak ez dira inoiz gailutik irteten.</p>
+        <p xml:lang="fi">Itineraryn sisätilakartta luettelee nyt katseltavan rakennuksen tai alueen kaikki palvelut. Tämä auttaa löytämään esimerkiksi, mistä saa kahvia suurella rautatieasemalla tai ruokaa hotellin läheisyydestä. Ominaisuuden tarjoaa OpenStreetMap, joka toimii tarvitsematta internetyhteyttä ja lähettämättä hakusanoja koskaan laitteelta.</p>
         <p xml:lang="fr">La carte intérieure de Itinerary répertorie désormais toutes les commodités du bâtiment ou de la zone que vous consultez actuellement. Cela aide, par exemple, à trouver un endroit pour prendre un café dans une grande gare, ou à chercher un endroit pour se restaurer à proximité de votre hôtel. Cette fonctionnalité est alimentée par OpenStreetMap, fonctionne sans connexion Internet et aucune information de recherche n'est jamais transmise à partir de votre périphérique.</p>
         <p xml:lang="he">מפת הניווט הפנימי ב־Itinerary מציגה מעתה את כל אמצעי הנוחות בבניין או באזור שמוצג. מסייע עם דברים כמו איתור מקום לכוס קפה בתחנת רכבת גדולה או חיפוש אחר מקום למצוא בו אוכל ליד המלון. היכולת הזאת פועלת דרך OpenStreetMap, עובדת ללא צורך בגישה לאינטרנט וביטויי החיפוש אף פעם לא יוצאים מהמכשיר שלך.</p>
         <p xml:lang="it">La mappa degli interni in Itinerary ora elenca tutti i servizi nell'edificio o nell'area che stai attualmente guardando. Ciò è utile per cose come trovare un posto dove prendere un caffè in una grande stazione ferroviaria o cercare un posto dove mangiare nelle vicinanze del tuo hotel. Questa funzionalità è supportata da OpenStreetMap, funziona senza la necessità di connettersi a Internet e nessun termine di ricerca lascia mai il tuo dispositivo.</p>
@@ -3904,6 +3940,7 @@
         <p xml:lang="cs">Při prohlížení podrobností o cestě lze kromě seznamu zastávek zobrazit také mapu cesty.</p>
         <p xml:lang="es">Al consultar los detalles de un viaje, además de poder ver la lista de paradas, también se puede mostrar un mapa del trayecto.</p>
         <p xml:lang="eu">Bidaia baten xehetasunak ikustean, geralekuen zerrenda kontsultatzeko aukera izateaz gain, bidaiaren mapa ere ikus daiteke.</p>
+        <p xml:lang="fi">Katseltaessa matkan tietoja voi pysäkkiluettelon tarkistamisen lisäksi katsoa matkan karttaa.</p>
         <p xml:lang="fr">Lors de la consultation des détails d'un voyage, en plus de pouvoir consulter la liste des arrêts, il est possible de regarder une carte du trajet.</p>
         <p xml:lang="he">בעת צפייה בפרטי נסיעה, בנוסף ליכולת להיוועץ ברשימת התחנות, אפשר להסתכל על מפת הנסיעה.</p>
         <p xml:lang="it">Visualizzando i dettagli di un viaggio, oltre a poter consultare l'elenco delle fermate, è possibile visionare la mappa del viaggio.</p>
@@ -3995,6 +4032,7 @@
           <li xml:lang="cs">Oprava zpracování zrušených mezizastávek na palubě vlaků DB ICE.</li>
           <li xml:lang="es">Se ha corregido el manejo de paradas intermedias canceladas a bordo de los ICE de la DB.</li>
           <li xml:lang="eu">DB ICE trenetan bertan behera utzitako tarteko geralekuen kudeaketa konpondu da.</li>
+          <li xml:lang="fi">Korjattu peruttujen välipysähdysten käsittely DB:n ICE-junissa.</li>
           <li xml:lang="fr">Correction de la gestion des arrêts intermédiaires annulés à bord des ICE de la Deutch Bahn.</li>
           <li xml:lang="he">תוקן טיפול בתחנות ביניים מבוטלות תוך כדי נסיעה של DB ICEs.</li>
           <li xml:lang="it">Corretta la gestione delle fermate intermedie annullate a bordo degli ICE DB.</li>
@@ -4167,6 +4205,7 @@
           <li xml:lang="cs">Opraveny úpravy prvků autobusů a vlaků bez přidružené jízdenky.</li>
           <li xml:lang="es">Se ha corregido la edición de elementos de autobús y tren sin billete asociado.</li>
           <li xml:lang="eu">Lotutako txartelik gabeko autobus- eta tren-elementuak editatzea konpondu da.</li>
+          <li xml:lang="fi">Korjattu sellaisten bussi- ja juna-alkioiden muokkaus, joihin ei ole kytketty lippua.</li>
           <li xml:lang="fr">Correction de la modification des éléments de bus et de train sans billet associé.</li>
           <li xml:lang="he">תוקנה עריכת רכיבי אוטובוסים ורכבות ללא כרטיסים משויכים.</li>
           <li xml:lang="it">Corretta la modifica degli elementi di autobus e treni senza un biglietto associato.</li>
@@ -4186,6 +4225,7 @@
           <li xml:lang="cs">Opravena zbytečně široká oprávnění v systému Android.</li>
           <li xml:lang="es">Se han corregido los permisos innecesariamente amplios en Android.</li>
           <li xml:lang="eu">Androiden behar baino baimen zabalagoak eskatzea konpondu da.</li>
+          <li xml:lang="fi">Korjattu tarpeettomat laajat käyttöoikeudet Androidissa.</li>
           <li xml:lang="fr">Correction des autorisations excessivement étendues sous Android.</li>
           <li xml:lang="he">תוקנו הרשאות נרחבות בלתי נחוצות ב־Android.</li>
           <li xml:lang="it">Corregge autorizzazioni inutilmente ampie su Android.</li>
