@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-04 01:03+0000\n"
+"POT-Creation-Date: 2026-11-06 00:52+0000\n"
 "PO-Revision-Date: 2026-04-22 23:15+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -94,7 +94,7 @@ msgid "Add to calendar…"
 msgstr "加入至行事曆…"
 
 #: app/ActionsCard.qml:85 app/ProgramMembershipPage.qml:182
-#: app/TicketPage.qml:191 app/TripGroupPage.qml:729
+#: app/TicketPage.qml:191 app/TripGroupPage.qml:730
 #, kde-format
 msgid "Export…"
 msgstr "匯出…"
@@ -120,7 +120,7 @@ msgid "Export Reservation"
 msgstr "匯出預約"
 
 #: app/ActionsCard.qml:163 app/ProgramMembershipPage.qml:147
-#: app/TicketPage.qml:141 app/TripGroupPage.qml:679
+#: app/TicketPage.qml:141 app/TripGroupPage.qml:680
 #, kde-format
 msgid "Actions"
 msgstr "動作"
@@ -488,7 +488,7 @@ msgid "Arrival time"
 msgstr "抵達時間"
 
 #: app/BoatPage.qml:188 app/BusPage.qml:269 app/FlightPage.qml:291
-#: app/JourneyQueryPage.qml:99 app/TrainPage.qml:334
+#: app/JourneyQueryPage.qml:100 app/TrainPage.qml:334
 #, fuzzy, kde-format
 #| msgid "Booking"
 msgctxt "purchase a ticket"
@@ -839,27 +839,27 @@ msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "載入更早的出發"
 
-#: app/DepartureQueryPage.qml:163 app/JourneyQueryPage.qml:173
+#: app/DepartureQueryPage.qml:163 app/JourneyQueryPage.qml:174
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "載入更晚的轉乘"
 
-#: app/DepartureQueryPage.qml:172 app/JourneyQueryPage.qml:180
+#: app/DepartureQueryPage.qml:172 app/JourneyQueryPage.qml:181
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
 msgstr "資料提供者："
 
-#: app/DepartureQueryPage.qml:180 app/JourneyQueryPage.qml:189
+#: app/DepartureQueryPage.qml:180 app/JourneyQueryPage.qml:190
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Loading"
 msgstr "載入中"
 
-#: app/DepartureQueryPage.qml:180 app/JourneyQueryPage.qml:191
+#: app/DepartureQueryPage.qml:180 app/JourneyQueryPage.qml:192
 #: app/TransferPage.qml:336
 #, kde-format
 msgctxt "@info:status"
@@ -1519,7 +1519,7 @@ msgid "Do you really want to delete this pass?"
 msgstr "您確定要刪除這張票卡嗎？"
 
 #: app/GenericPkPassPage.qml:55 app/TicketPage.qml:165
-#: app/TripGroupPage.qml:685
+#: app/TripGroupPage.qml:686
 #, kde-format
 msgid "Check for Updates"
 msgstr "檢查是否有更新"
@@ -2201,24 +2201,24 @@ msgctxt "@action:button"
 msgid "Show Map"
 msgstr "顯示地圖"
 
-#: app/JourneyQueryPage.qml:112 app/TransferPage.qml:244
+#: app/JourneyQueryPage.qml:113 app/TransferPage.qml:244
 #, kde-format
 msgid "Select"
 msgstr "選取"
 
-#: app/JourneyQueryPage.qml:164 app/TransferPage.qml:312
+#: app/JourneyQueryPage.qml:165 app/TransferPage.qml:312
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr "載入更早的轉乘"
 
-#: app/JourneyQueryPage.qml:193
+#: app/JourneyQueryPage.qml:194
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No journeys found"
 msgstr "找不到行程"
 
-#: app/JourneyQueryPage.qml:239
+#: app/JourneyQueryPage.qml:240
 #, kde-format
 msgid "Still fetching results…"
 msgstr "還在抓取結果…"
@@ -2328,7 +2328,7 @@ msgstr "%1 %2 (%3)"
 msgid "Drive %1 (%2)"
 msgstr ""
 
-#: app/JourneySectionDelegate.qml:255 app/JourneySectionView.qml:120
+#: app/JourneySectionDelegate.qml:257 app/JourneySectionView.qml:120
 #: app/VehicleLayoutPage.qml:177
 #, kde-format
 msgctxt "@action:button"
@@ -4001,7 +4001,7 @@ msgstr "旅行"
 #: app/statisticsmodel.cpp:107 app/statisticsmodel.cpp:140
 #: app/statisticsmodel.cpp:155 app/statisticsmodel.cpp:170
 #: app/statisticsmodel.cpp:185 app/statisticsmodel.cpp:200
-#: app/TripGroupPage.qml:654
+#: app/TripGroupPage.qml:655
 #, kde-format
 msgid "Distance"
 msgstr "距離"
@@ -4014,7 +4014,7 @@ msgstr "在飯店的夜晚"
 #: app/statisticsmodel.cpp:117 app/statisticsmodel.cpp:145
 #: app/statisticsmodel.cpp:160 app/statisticsmodel.cpp:175
 #: app/statisticsmodel.cpp:190 app/statisticsmodel.cpp:205
-#: app/TripGroupPage.qml:663
+#: app/TripGroupPage.qml:664
 #, kde-format
 msgid "CO₂"
 msgstr "CO₂"
@@ -4728,43 +4728,43 @@ msgstr "新增"
 msgid "Nothing on the itinerary for today."
 msgstr "今天沒有任何行程預定。"
 
-#: app/TripGroupPage.qml:672
+#: app/TripGroupPage.qml:673
 #, kde-format
 msgid "Cost"
 msgstr "花費"
 
-#: app/TripGroupPage.qml:694
+#: app/TripGroupPage.qml:695
 #, kde-format
 msgid "Rename…"
 msgstr "重新命名…"
 
-#: app/TripGroupPage.qml:703
+#: app/TripGroupPage.qml:704
 #, kde-format
 msgid "Merge trips…"
 msgstr "合併旅行…"
 
-#: app/TripGroupPage.qml:714
+#: app/TripGroupPage.qml:715
 #, kde-format
 msgid "Split trip…"
 msgstr "分割旅行…"
 
-#: app/TripGroupPage.qml:721
+#: app/TripGroupPage.qml:722
 #, kde-format
 msgid "Download Maps"
 msgstr "下載地圖"
 
-#: app/TripGroupPage.qml:736
+#: app/TripGroupPage.qml:737
 #, kde-format
 msgid "Delete trip"
 msgstr "刪除旅行"
 
-#: app/TripGroupPage.qml:762
+#: app/TripGroupPage.qml:763
 #, kde-format
 msgctxt "@action:button"
 msgid "Go To Now"
 msgstr "跳到現在"
 
-#: app/TripGroupPage.qml:770 app/TripGroupsPage.qml:87
+#: app/TripGroupPage.qml:771 app/TripGroupsPage.qml:87
 #: app/TripGroupsPage.qml:125
 #, kde-format
 msgctxt "@action:button"
