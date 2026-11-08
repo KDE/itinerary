@@ -961,8 +961,10 @@
           <li>New or improved travel document extractors for Deutsche Bahn, easyTable, Finnair, LTG Link and Lufthansa.</li>
           <li xml:lang="ar">أدوات جديدة أو محسّنة لاستخراج بيانات وثائق السفر الخاصة بشركات «دويتشه بان» و«إيزي تيبل» و«فيناير» و«إل تي جي لينك» و«لوفتهانزا».</li>
           <li xml:lang="ca">Extractors nous o millorats de documents de viatge per a Deutsche Bahn, easyTable, Finnair, LTG Link i Lufthansa.</li>
+          <li xml:lang="ca-valencia">Extractors nous o millorats de documents de viatge per a Deutsche Bahn, easyTable, Finnair, LTG Link i Lufthansa.</li>
           <li xml:lang="cs">Nové nebo vylepšené nástroje pro extrakci údajů z cestovních dokladů pro společnosti Deutsche Bahn, easyTable, Finnair, LTG Link a Lufthansa.</li>
           <li xml:lang="es">Extractores de documentos de viaje nuevos o mejorados para Deutsche Bahn, easyTable, Finnair, LTG Link y Lufthansa.</li>
+          <li xml:lang="fr">Nouveaux extracteurs ou amélioration d'extracteurs de documents de voyage pour Deutsche Bahn, easyTable, Finnair, LTG Link et Lufthansa.</li>
           <li xml:lang="he">מחלצי מסמכי נסיעות חדשים או משופרים עבור Deutsche Bahn,‏ easyTable, Finnair,‏ LTG Link ו־Lufthansa.</li>
           <li xml:lang="ka">ახალი ან გაუმჯობესებული სამგზავრო დოკუმენტების ამომკრებები Deutsche Bahn, easyTable, Finnair, LTG Link და Lufthansa სისტემებისთვის.</li>
           <li xml:lang="nl">Nieuwe of verbeterde extractors voor reisdocumenten van Deutsche Bahn, easyTable, Finnair, LTG Link and Lufthansa.</li>
@@ -974,8 +976,10 @@
           <li>Fix public transport data access for MVV.</li>
           <li xml:lang="ar">إصلاح مشكلة الوصول إلى بيانات النقل العام الخاصة بشركة MVV.</li>
           <li xml:lang="ca">Corregeix l'accés a les dades de transport públic per a MVV.</li>
+          <li xml:lang="ca-valencia">Corregix l'accés a les dades de transport públic per a MVV.</li>
           <li xml:lang="cs">Opraven přístup k údajům o veřejné dopravě pro MVV.</li>
           <li xml:lang="es">Se ha corregido el acceso a datos de transporte público para MVV.</li>
+          <li xml:lang="fr">Correction de l'accès aux données des transports publics pour MW.</li>
           <li xml:lang="he">תוקנה גישה לנתוני תחבורה של MVV.</li>
           <li xml:lang="ka">გასწორდა საზოგადოებრივი ტრანსპორტის მონაცემებზე წვდომა MVV-სთვის.</li>
           <li xml:lang="nl">Verbeter de toegang tot gegevens over het openbaar vervoer voor MVV.</li>
@@ -987,8 +991,10 @@
           <li>Fix opening external maps while the indoor map is still loading.</li>
           <li xml:lang="ar">إصلاح مشكلة فتح الخرائط الخارجية أثناء استمرار تحميل الخريطة الداخلية.</li>
           <li xml:lang="ca">Corregeix l'obertura de mapes externs mentre encara es carrega el mapa d'interior.</li>
+          <li xml:lang="ca-valencia">Corregix l'obertura de mapes externs mentre encara es carrega el mapa d'interior.</li>
           <li xml:lang="cs">Opravena chyba, kdy se otevíraly externí mapy, zatímco se ještě načítala mapa interiéru.</li>
           <li xml:lang="es">Se ha corregido la apertura de mapas externos cuando el mapa de interior sigue cargándose.</li>
+          <li xml:lang="fr">Correction de l'ouverture des cartes externes lorsque la carte intérieure est toujours en cours de chargement.</li>
           <li xml:lang="he">תוקנה פתיחת מפות חיצוניות תוך כדי שהמפה הפנימית עדיין נטענת.</li>
           <li xml:lang="ka">გასწორდა გარე რუკების ჩატვირთვა, სანამ შიდა რუკა ჯერ კიდევ იტვირთება.</li>
           <li xml:lang="nl">Los het probleem op waarbij externe kaarten worden geopend terwijl de plattegrond van het interieur nog wordt geladen.</li>
