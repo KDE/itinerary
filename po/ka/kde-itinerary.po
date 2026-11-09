@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-08 02:58+0000\n"
-"PO-Revision-Date: 2026-10-24 08:48+0200\n"
+"PO-Revision-Date: 2026-11-08 08:33+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -3937,8 +3937,7 @@ msgid "Synchronize rooms"
 msgstr "ოთახების სინქრონიზაცია"
 
 #: app/SettingsPage.qml:293
-#, fuzzy, kde-format
-#| msgid "Password"
+#, kde-format
 msgctxt "@option:radio Authentification"
 msgid "Password"
 msgstr "პაროლი"
@@ -3947,7 +3946,7 @@ msgstr "პაროლი"
 #, kde-format
 msgctxt "@option:radio Authentification"
 msgid "OIDC/SSO"
-msgstr ""
+msgstr "OIDC/SSO"
 
 #: app/SettingsPage.qml:303
 #, kde-format

@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-08 02:58+0000\n"
-"PO-Revision-Date: 2026-10-24 07:46+0200\n"
+"PO-Revision-Date: 2026-11-08 07:47+0200\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Basealt Translation Team\n"
 "Language: ru\n"
@@ -3960,8 +3960,7 @@ msgid "Synchronize rooms"
 msgstr "Синхронизировать комнаты"
 
 #: app/SettingsPage.qml:293
-#, fuzzy, kde-format
-#| msgid "Password"
+#, kde-format
 msgctxt "@option:radio Authentification"
 msgid "Password"
 msgstr "Пароль"
@@ -3970,7 +3969,7 @@ msgstr "Пароль"
 #, kde-format
 msgctxt "@option:radio Authentification"
 msgid "OIDC/SSO"
-msgstr ""
+msgstr "OIDC/SSO"
 
 #: app/SettingsPage.qml:303
 #, kde-format
