@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-08 02:58+0000\n"
-"PO-Revision-Date: 2026-10-24 10:53+0200\n"
+"PO-Revision-Date: 2026-11-08 09:43+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.08.2\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -2704,7 +2704,7 @@ msgstr "MapLibre Native Qt"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Copyright © MapLibre contributors."
-msgstr "Drets d'autoria © MapLibre contributors."
+msgstr "Drets d'autoria © Els col·laboradors de MapLibre."
 
 #: app/main.cpp:232
 #, kde-format
@@ -3971,8 +3971,7 @@ msgid "Synchronize rooms"
 msgstr "Sincronitza les sales"
 
 #: app/SettingsPage.qml:293
-#, fuzzy, kde-format
-#| msgid "Password"
+#, kde-format
 msgctxt "@option:radio Authentification"
 msgid "Password"
 msgstr "Contrasenya"
@@ -3981,7 +3980,7 @@ msgstr "Contrasenya"
 #, kde-format
 msgctxt "@option:radio Authentification"
 msgid "OIDC/SSO"
-msgstr ""
+msgstr "OIDC/SSO"
 
 #: app/SettingsPage.qml:303
 #, kde-format
@@ -5048,9 +5047,3 @@ msgstr "S'està iniciant la sessió…"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 des de %3 a %4 el %5"
-
-#~ msgid "Login"
-#~ msgstr "Entrada"
-
-#~ msgid "Logout"
-#~ msgstr "Eixida"
