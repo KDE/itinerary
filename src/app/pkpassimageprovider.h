@@ -29,8 +29,6 @@ public:
     [[nodiscard]] QImage requestImage(const QString &id, QSize *size, const QSize &requestedSize) override;
 
 private:
-    Q_DISABLE_COPY(PkPassImageProvider)
-
     std::vector<std::function<KPkPass::Pass *(const QString &, const QString &)>> m_passProviders;
 };
 
