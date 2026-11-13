@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-08 02:58+0000\n"
-"PO-Revision-Date: 2026-11-08 19:10+0300\n"
+"PO-Revision-Date: 2026-11-12 19:05+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -2676,7 +2676,7 @@ msgstr "ZXing"
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code scanning. © 2016 ZXing Authors, © 2016 Nu-book Inc."
-msgstr "Kare kod tarama. © 2016 ZXing Yazarları, © 2016 Nu-book Inc."
+msgstr "Karekod tarama. © 2016 ZXing Yazarları, © 2016 Nu-book Inc."
 
 #: app/main.cpp:228
 #, kde-format
@@ -2743,7 +2743,7 @@ msgstr "libgrencode"
 #, kde-format
 msgctxt "@info:credit"
 msgid "QR-Code Generation. © 2006-2018 Kentaro Fukuchi"
-msgstr "Kare kod üretimi. © 2006–2018 Kentaro Fukuçi"
+msgstr "Karekod üretimi. © 2006–2018 Kentaro Fukuçi"
 
 #: app/main.cpp:241
 #, kde-format
