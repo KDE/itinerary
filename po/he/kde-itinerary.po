@@ -7,16 +7,16 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-08 02:58+0000\n"
-"PO-Revision-Date: 2026-11-03 20:20+0200\n"
+"PO-Revision-Date: 2026-11-13 13:23+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
-"Language-Team: צוות התרגום של KDE ישראל\n"
+"Language-Team: Hebrew <kde-l10n-he@kde.org>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 26.08.1\n"
+"X-Generator: Lokalize 26.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -3922,8 +3922,7 @@ msgid "Synchronize rooms"
 msgstr "סנכרון חדרים"
 
 #: app/SettingsPage.qml:293
-#, fuzzy, kde-format
-#| msgid "Password"
+#, kde-format
 msgctxt "@option:radio Authentification"
 msgid "Password"
 msgstr "סיסמה"
@@ -3932,7 +3931,7 @@ msgstr "סיסמה"
 #, kde-format
 msgctxt "@option:radio Authentification"
 msgid "OIDC/SSO"
-msgstr ""
+msgstr "OIDC/SSO"
 
 #: app/SettingsPage.qml:303
 #, kde-format
