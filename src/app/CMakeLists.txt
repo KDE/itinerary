@@ -382,6 +382,7 @@ if (ANDROID)
         edit-rename
         emblem-important
         emblem-shared-symbolic
+        favorite-favorited-symbolic
         filter-symbolic
         flag
         flashlight-off

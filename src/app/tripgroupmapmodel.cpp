@@ -17,6 +17,7 @@
 
 #include <QPolygonF>
 
+using namespace Qt::Literals;
 using namespace KItinerary;
 using namespace KPublicTransport;
 
@@ -80,6 +81,15 @@ void TripGroupMapModel::recompute()
         // pre transfer
         if (const auto transfer = m_transferMgr->transfer(resId, Transfer::Before); transfer.state() == Transfer::Selected) {
             expandJourney(transfer.journey());
+            if (transfer.floatingLocationType() == Transfer::FavoriteLocation) {
+                MapPointEntry point;
+                point.location = transfer.from();
+                point.location.setName(transfer.fromName());
+                point.color = BACKROUND_COLOR;
+                point.textColor = FOREGOUND_COLOR;
+                point.iconName = u"favorite-favorited-symbolic"_s;
+                m_points.push_back(std::move(point));
+            }
         }
 
         // reservation
@@ -112,14 +122,21 @@ void TripGroupMapModel::recompute()
             point.color = BACKROUND_COLOR;
             point.textColor = FOREGOUND_COLOR;
             point.iconName = ReservationHelper::defaultIconName(res);
-            m_boundingBox |= QRectF(QPointF(point.location.longitude() - 0.001, point.location.latitude() - 0.001),
-                                    QPointF(point.location.longitude() + 0.001, point.location.latitude() + 0.001));
             m_points.push_back(std::move(point));
         }
 
         // post transfer
         if (const auto transfer = m_transferMgr->transfer(resId, Transfer::After); transfer.state() == Transfer::Selected) {
             expandJourney(transfer.journey());
+            if (transfer.floatingLocationType() == Transfer::FavoriteLocation) {
+                MapPointEntry point;
+                point.location = transfer.to();
+                point.location.setName(transfer.toName());
+                point.color = BACKROUND_COLOR;
+                point.textColor = FOREGOUND_COLOR;
+                point.iconName = u"favorite-favorited-symbolic"_s;
+                m_points.push_back(std::move(point));
+            }
         }
     }
 
@@ -158,6 +175,12 @@ void TripGroupMapModel::recompute()
         if (i < m_journeySections.size() - 1 && m_journeySections[i+1].journeySection.mode() != JourneySection::PublicTransport) {
             m_journeySections[i+1].showStart = Location::distance(m_journeySections[i].journeySection.to(), m_journeySections[i+1].journeySection.from()) > 5.0;
         }
+    }
+
+    // ensure all points are also covered in the bounding box (e.g. when we don't have location changes at all)
+    for (const auto &point : m_points) {
+        m_boundingBox |= QRectF(QPointF(point.location.longitude() - 0.001, point.location.latitude() - 0.001),
+                                QPointF(point.location.longitude() + 0.001, point.location.latitude() + 0.001));
     }
 
     Q_EMIT contentChanged();
