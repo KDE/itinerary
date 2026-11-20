@@ -227,6 +227,8 @@ ecm_add_qml_module(itinerary GENERATE_PLUGIN_SOURCE
         WelcomePage.qml
         WhatsNewDialog.qml
 
+        colorutil.js
+
         onlineimport/db.qml
         onlineimport/sncf.qml
 )

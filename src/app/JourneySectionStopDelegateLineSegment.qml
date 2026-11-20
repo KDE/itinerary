@@ -9,6 +9,7 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kpublictransport
 import org.kde.itinerary
+import 'colorutil.js' as ColorUtil
 
 /** Line segment drawn on the left in the journey section view.
  *  Can be used in a fully drawn form, or partially drawn as a progress
@@ -36,11 +37,13 @@ Item {
         y: isDeparture ? stopDot.y - (stopDot.x  - x) : 0
         width: lineSegment.lineWidth
 
-        function isDark(color) {
-            return color.hslLightness < 0.8
+        color: {
+            if (ColorUtil.relativeContrast(lineSegment.lineColor, Kirigami.Theme.backgroundColor) >= 2.0)
+                return lineSegment.lineColor;
+            if (ColorUtil.relativeContrast(lineSegment.lineTextColor, Kirigami.Theme.backgroundColor) >= 2.0)
+                return lineSegment.lineTextColor;
+            return Kirigami.Theme.textColor;
         }
-
-        color: isDark(lineSegment.lineColor) === isDark(Kirigami.Theme.backgroundColor) ? lineSegment.lineTextColor : lineSegment.lineColor
 
         corners {
             topRightRadius: isDeparture ? Math.round(width / 2) : 0
