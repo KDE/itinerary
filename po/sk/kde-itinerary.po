@@ -3950,8 +3950,7 @@ msgid "Synchronize rooms"
 msgstr "Synchronize rooms"
 
 #: app/SettingsPage.qml:293
-#, fuzzy, kde-format
-#| msgid "Password"
+#, kde-format
 msgctxt "@option:radio Authentification"
 msgid "Password"
 msgstr "Heslo"
@@ -3960,7 +3959,7 @@ msgstr "Heslo"
 #, kde-format
 msgctxt "@option:radio Authentification"
 msgid "OIDC/SSO"
-msgstr ""
+msgstr "OIDC/SSO"
 
 #: app/SettingsPage.qml:303
 #, kde-format
