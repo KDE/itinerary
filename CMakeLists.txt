@@ -126,6 +126,7 @@ ecm_set_disabled_deprecation_versions(
     QT ${QT_MIN_VERSION}
     KF 6.12
 )
+add_definitions(-DQT_LEAN_HEADERS=2)
 
 add_subdirectory(src)
 if (BUILD_TESTING)
