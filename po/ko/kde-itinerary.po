@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-08 02:58+0000\n"
-"PO-Revision-Date: 2026-10-03 23:10+0200\n"
+"PO-Revision-Date: 2026-11-21 23:46+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -681,8 +681,7 @@ msgid "Arrival"
 msgstr "도착"
 
 #: app/BusEditor.qml:244
-#, fuzzy, kde-format
-#| msgid "Arrival Time"
+#, kde-format
 msgctxt "bus arrival"
 msgid "Arrival Time"
 msgstr "도착 시간"
@@ -3908,8 +3907,7 @@ msgid "Synchronize rooms"
 msgstr "방 동기화"
 
 #: app/SettingsPage.qml:293
-#, fuzzy, kde-format
-#| msgid "Password"
+#, kde-format
 msgctxt "@option:radio Authentification"
 msgid "Password"
 msgstr "암호"
@@ -3918,7 +3916,7 @@ msgstr "암호"
 #, kde-format
 msgctxt "@option:radio Authentification"
 msgid "OIDC/SSO"
-msgstr ""
+msgstr "OIDC/SSO"
 
 #: app/SettingsPage.qml:303
 #, kde-format
