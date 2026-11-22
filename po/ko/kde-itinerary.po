@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-08 00:14+0000\n"
-"PO-Revision-Date: 2026-10-03 23:10+0200\n"
+"PO-Revision-Date: 2026-11-21 23:46+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -681,8 +681,7 @@ msgid "Arrival"
 msgstr "도착"
 
 #: app/BusEditor.qml:244
-#, fuzzy, kde-format
-#| msgid "Arrival Time"
+#, kde-format
 msgctxt "bus arrival"
 msgid "Arrival Time"
 msgstr "도착 시간"
