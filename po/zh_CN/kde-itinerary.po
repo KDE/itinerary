@@ -681,11 +681,10 @@ msgid "Arrival"
 msgstr ""
 
 #: app/BusEditor.qml:244
-#, fuzzy, kde-format
-#| msgid "Arrival"
+#, kde-format
 msgctxt "bus arrival"
 msgid "Arrival Time"
-msgstr "到达信息"
+msgstr ""
 
 #: app/BusEditor.qml:268
 #, kde-format
@@ -4953,13 +4952,3 @@ msgstr "正在登录..."
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr ""
-
-#~ msgid "Login"
-#~ msgstr "登录"
-
-#~ msgid "Logout"
-#~ msgstr "退出"
-
-#~ msgctxt "Bus stop"
-#~ msgid "Stop Name"
-#~ msgstr "车站名称"
