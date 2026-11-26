@@ -77,7 +77,7 @@ bool Util::isRichText(const QString &text)
         return text[idx + 1].isLetter() || text[idx + 1] == '/'_L1;
     }
     idx = text.indexOf('&'_L1);
-    for (auto i = idx; idx >= 0 && idx - i < 5; ++i) {
+    for (auto i = idx; idx >= 0 && i < text.size() && i < idx + 5; ++i) {
         if (text[i] == ';'_L1) {
             return true;
         }
