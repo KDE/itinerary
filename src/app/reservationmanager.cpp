@@ -598,7 +598,7 @@ void ReservationManager::removeFromBatch(const QString &resId, const QString &ba
         return;
     }
 
-    auto &batch = m_batchToResMap[batchId];
+    auto batch = m_batchToResMap[batchId];
     m_resToBatchMap.remove(resId);
     if (batch.reservationIds().size() == 1) { // we were alone there, remove old batch
         m_batchToResMap.remove(batchId);
@@ -624,6 +624,7 @@ void ReservationManager::removeFromBatch(const QString &resId, const QString &ba
     } else {
         // old batch remains
         batch.m_resIds.removeAll(resId);
+        m_batchToResMap[batchId] = batch;
         Q_EMIT batchChanged(batchId);
         storeBatch(batchId, batch);
     }
