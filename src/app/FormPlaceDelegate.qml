@@ -41,7 +41,8 @@ FormCard.FormButtonDelegate {
         if (root.place !== undefined) {
             result = result.concat(Localizer.formatAddress(root.place.address).split('\n'));
         }
-        return result.join('<br>');
+        //TODO Qt6.12: Use Qt.escapeHtml
+        return result.map(text => xi18nc("@info", "%1", text)).join('<br>');
     }
 
     readonly property bool hasContextMenuActions: root.place != undefined && (root.place.geo.isValid || !root.place.address.isEmpty)

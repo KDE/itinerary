@@ -41,6 +41,7 @@ ColumnLayout {
         leftPadding: Kirigami.Units.smallSpacing
         rightPadding: Kirigami.Units.smallSpacing
         bottomPadding: Kirigami.Units.smallSpacing
+        textFormat: Text.PlainText
 
         Layout.fillWidth: true
     }

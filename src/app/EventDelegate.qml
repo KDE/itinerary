@@ -39,6 +39,7 @@ TimelineDelegate {
                 maximumLineCount: 2
                 Layout.fillWidth: true
                 Accessible.ignored: true
+                textFormat: Text.PlainText
             }
 
             Kirigami.Heading {
@@ -57,6 +58,7 @@ TimelineDelegate {
             text: reservationFor.location != undefined ? reservationFor.location.name : ""
             visible: text !== ""
             wrapMode: Text.WordWrap
+            textFormat: Text.PlainText
 
             Layout.fillWidth: true
         }
@@ -64,6 +66,7 @@ TimelineDelegate {
             visible: reservationFor.location != undefined && !reservationFor.location.address.isEmpty
             wrapMode: Text.WordWrap
             text: Localizer.formatAddressWithContext(reservationFor.location.address, null, Settings.homeCountryIsoCode)
+            textFormat: Text.PlainText
 
             Layout.fillWidth: true
         }
