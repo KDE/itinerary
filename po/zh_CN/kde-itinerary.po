@@ -14,8 +14,8 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/itinerary/kde-itinerary.pot\n"
-"X-Crowdin-File-ID: 45515\n"
+"X-Crowdin-File: /kf6-stable/messages/itinerary/kde-itinerary.pot\n"
+"X-Crowdin-File-ID: 52104\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -681,11 +681,10 @@ msgid "Arrival"
 msgstr ""
 
 #: app/BusEditor.qml:244
-#, fuzzy, kde-format
-#| msgid "Arrival"
+#, kde-format
 msgctxt "bus arrival"
 msgid "Arrival Time"
-msgstr "到达信息"
+msgstr ""
 
 #: app/BusEditor.qml:268
 #, kde-format
@@ -3433,7 +3432,7 @@ msgstr ""
 #, kde-format
 msgctxt "seat reservation"
 msgid "Seat"
-msgstr ""
+msgstr "座位信息"
 
 #: app/PkPassPage.qml:20
 #, kde-format
@@ -4951,7 +4950,3 @@ msgstr "正在登录..."
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr ""
-
-#~ msgctxt "Bus stop"
-#~ msgid "Stop Name"
-#~ msgstr "车站名称"
