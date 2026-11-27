@@ -104,7 +104,7 @@ parts:
         after:
         - kde-neon
         parse-info:
-        - usr/share/metainfo/org.kde.itinerary.appdata.xml
+        - usr/share/metainfo/org.kde.itinerary.metainfo.xml
         plugin: cmake
         build-packages:
         - libkf5doctools-dev

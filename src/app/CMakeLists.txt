@@ -489,7 +489,7 @@ if (TARGET KF6::Crash)
 endif()
 
 install(TARGETS itinerary-app ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
-install(FILES org.kde.itinerary.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
+install(FILES org.kde.itinerary.metainfo.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 if (NOT ANDROID)
     install(PROGRAMS org.kde.itinerary.desktop DESTINATION ${KDE_INSTALL_APPDIR})
     install(FILES itinerary.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFYRCDIR})
