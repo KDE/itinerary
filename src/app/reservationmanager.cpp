@@ -265,8 +265,9 @@ QString ReservationManager::addReservation(const QVariant &res, const QString &r
         if (MergeUtil::isSame(res, otherRes)) {
             // this is actually an update of otherRes!
             const auto newRes = MergeUtil::merge(otherRes, res);
-            updateReservation(*it, newRes);
-            return *it;
+            const auto id = *it;
+            updateReservation(id, newRes);
+            return id;
         }
         if (MergeUtil::isSameIncidence(res, otherRes)) {
             // this is a multi-traveler element, check if we have it as one of the batch elements already
@@ -276,8 +277,9 @@ QString ReservationManager::addReservation(const QVariant &res, const QString &r
                 if (MergeUtil::isSame(res, batchedRes)) {
                     // this is actually an update of a batched reservation
                     const auto newRes = MergeUtil::merge(otherRes, res);
-                    updateReservation(batchedId, newRes);
-                    return batchedId;
+                    const auto id = batchedId;
+                    updateReservation(id, newRes);
+                    return id;
                 }
             }
 
@@ -686,7 +688,8 @@ QList<QString> ReservationManager::applyPartialUpdate(const QVariant &res)
     const auto rangeBegin = baseRes.modifiedTime();
     const auto rangeEnd = rangeBegin.addDays(6 * 30);
 
-    QList<QString> updatedIds;
+    // collect all updates first, applying them can re-order m_batches
+    std::vector<ReservationChange> changes;
     const auto beginIt = std::lower_bound(m_batches.begin(), m_batches.end(), rangeBegin, BatchComparator(this));
     for (auto it = beginIt; it != m_batches.end(); ++it) {
         const auto otherRes = reservation(*it);
@@ -695,9 +698,7 @@ QList<QString> ReservationManager::applyPartialUpdate(const QVariant &res)
         }
         if (MergeUtil::isSame(res, otherRes)) {
             // this is actually an update of otherRes!
-            const auto newRes = MergeUtil::merge(otherRes, res);
-            updateReservation(*it, newRes);
-            updatedIds.push_back(*it);
+            changes.push_back({*it, MergeUtil::merge(otherRes, res)});
             continue;
         }
         if (MergeUtil::isSameIncidence(res, otherRes)) {
@@ -708,13 +709,17 @@ QList<QString> ReservationManager::applyPartialUpdate(const QVariant &res)
                 const auto batchedRes = reservation(batchedId);
                 if (MergeUtil::isSame(res, batchedRes)) {
                     // this is actually an update of a batched reservation
-                    const auto newRes = MergeUtil::merge(otherRes, res);
-                    updateReservation(batchedId, newRes);
-                    updatedIds.push_back(batchedId);
+                    changes.push_back({batchedId, MergeUtil::merge(otherRes, res)});
                     break;
                 }
             }
         }
+    }
+
+    QList<QString> updatedIds;
+    for (const auto &change : changes) {
+        updateReservation(change.id, change.res);
+        updatedIds.push_back(change.id);
     }
 
     return updatedIds;
