@@ -156,7 +156,8 @@ Kirigami.ScrollablePage {
         QQC2.Label {
             id: notesLabel
 
-            text: root.stopover.notes.join("<br/>")
+            //TODO Qt6.12: Use Qt.escapeHtml
+            text: root.stopover.notes.map(text => xi18nc("@info", "%1", text)).join("<br/>")
             textFormat: Text.RichText
             wrapMode: Text.Wrap
             // Doesn't work with RichText.

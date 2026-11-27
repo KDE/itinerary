@@ -200,7 +200,8 @@ FormCard.AbstractFormDelegate {
                     id: notesLabel
                     Layout.fillWidth: true
                     Layout.fillHeight: true
-                    text: root.modelData.notes.join("<br/>")
+                    //TODO Qt6.12: Use Qt.escapeHtml
+                    text: root.modelData.notes.map(text => xi18nc("@info", "%1", text)).join("<br/>")
                     color: Kirigami.Theme.disabledTextColor
                     textFormat: Text.RichText
                     wrapMode: Text.Wrap
@@ -241,7 +242,8 @@ FormCard.AbstractFormDelegate {
                                 }
                                 QQC2.Label {
                                     Layout.fillWidth: true
-                                    text: root.modelData.notes.join("<br/>")
+                                    //TODO Qt6.12: Use Qt.escapeHtml
+                                    text: root.modelData.notes.map(text => xi18nc("@info", "%1", text)).join("<br/>")
                                     textFormat: Text.RichText
                                     wrapMode: Text.Wrap
                                     onLinkActivated: (link) => { Qt.openUrlExternally(link); }

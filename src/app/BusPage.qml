@@ -148,7 +148,8 @@ PublicTransportPage {
             FormCard.FormTextDelegate {
                 id: departureNotes
                 text: i18n("Additional information")
-                description: root.controller.journey.notes.concat(root.departure.notes).join("<br/>")
+                //TODO Qt6.12: Use Qt.escapeHtml
+                description: root.controller.journey.notes.concat(root.departure.notes).map(text => xi18nc("@info", "%1", text)).join("<br/>")
                 descriptionItem.textFormat: Text.RichText
                 descriptionItem.wrapMode: Text.Wrap
                 visible: description !== ""
@@ -215,7 +216,8 @@ PublicTransportPage {
             FormCard.FormTextDelegate {
                 id: arrivalNotes
                 text: i18n("Additional information")
-                description: root.arrival.notes.join("<br/>")
+                //TODO Qt6.12: Use Qt.escapeHtml
+                description: root.arrival.notes.map(text => xi18nc("@info", "%1", text)).join("<br/>")
                 descriptionItem.textFormat: Text.RichText
                 descriptionItem.wrapMode: Text.Wrap
                 visible: description !== ""

@@ -201,7 +201,8 @@ Item {
             Layout.fillWidth: true
             Layout.fillHeight: true
             verticalAlignment: Qt.AlignTop
-            text: root.stop.notes.join("<br/>")
+            //TODO Qt6.12: Use Qt.escapeHtml
+            text: root.stop.notes.map(text => xi18nc("@info", "%1", text)).join("<br/>")
             textFormat: Text.RichText
             wrapMode: Text.Wrap
             visible: root.stop.notes.length > 0 && !root.isDeparture

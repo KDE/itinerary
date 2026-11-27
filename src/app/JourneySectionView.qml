@@ -98,7 +98,8 @@ Item {
         QQC2.Label {
             id: notesLabel
 
-            text: journeySection.notes.join("<br/>")
+            //TODO Qt6.12: Use Qt.escapeHtml
+            text: journeySection.notes.map(text => xi18nc("@info", "%1", text)).join("<br/>")
             textFormat: Text.RichText
             wrapMode: Text.Wrap
             verticalAlignment: Text.AlignTop

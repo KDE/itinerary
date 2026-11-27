@@ -110,7 +110,8 @@ Addons.ConvergentContextMenu {
 
         displayComponent: FormCard.FormTextDelegate {
             text: i18n("Information")
-            description: stopInfoDrawer.stop.notes.join("<br/>")
+            //TODO Qt6.12: Use Qt.escapeHtml
+            description: stopInfoDrawer.stop.notes.map(text => xi18nc("@info", "%1", text)).join("<br/>")
             descriptionItem {
                 textFormat: Text.RichText
                 wrapMode: Text.Wrap
