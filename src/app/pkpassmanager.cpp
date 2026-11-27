@@ -28,6 +28,14 @@
 using namespace Qt::Literals::StringLiterals;
 using namespace KItinerary;
 
+// passTypeIdentifier comes straight from the (potentially untrusted) pass file and is used in the path;
+// reject anything that could be used to escape.
+static bool isValidPassTypeIdentifier(const QString &passTypeIdentifier)
+{
+    return !passTypeIdentifier.isEmpty() && passTypeIdentifier != "."_L1 && passTypeIdentifier != ".."_L1 && !passTypeIdentifier.contains('/'_L1)
+        && !passTypeIdentifier.contains('\\'_L1);
+}
+
 PkPassManager::PkPassManager(QObject *parent)
     : QObject(parent)
 {
@@ -121,7 +129,7 @@ QString PkPassManager::passId(const QVariant &reservation)
         serialNum = p.pkpassSerialNumber();
     }
 
-    if (passTypeId.isEmpty() || serialNum.isEmpty()) {
+    if (!isValidPassTypeIdentifier(passTypeId) || serialNum.isEmpty()) {
         return {};
     }
     return passTypeId + '/'_L1 + QString::fromUtf8(serialNum.toUtf8().toBase64(QByteArray::Base64UrlEncoding));
@@ -164,8 +172,8 @@ QString PkPassManager::doImportPass(const QUrl &url, const QByteArray &data, PkP
         qCDebug(Log) << "Failed to load pkpass file" << url;
         return {};
     }
-    if (newPass->passTypeIdentifier().isEmpty() || newPass->serialNumber().isEmpty()) {
-        qCDebug(Log) << "PkPass file has no type identifier or serial number" << url;
+    if (!isValidPassTypeIdentifier(newPass->passTypeIdentifier()) || newPass->serialNumber().isEmpty()) {
+        qCDebug(Log) << "PkPass file has no type identifier or serial number, or an invalid type identifier" << url;
         return {};
     }
 
