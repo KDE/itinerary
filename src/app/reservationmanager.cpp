@@ -275,7 +275,7 @@ QString ReservationManager::addReservation(const QVariant &res, const QString &r
                 const auto batchedRes = reservation(batchedId);
                 if (MergeUtil::isSame(res, batchedRes)) {
                     // this is actually an update of a batched reservation
-                    const auto newRes = MergeUtil::merge(otherRes, res);
+                    const auto newRes = MergeUtil::merge(batchedRes, res);
                     updateReservation(batchedId, newRes);
                     return batchedId;
                 }
@@ -707,7 +707,7 @@ QList<QString> ReservationManager::applyPartialUpdate(const QVariant &res)
                 const auto batchedRes = reservation(batchedId);
                 if (MergeUtil::isSame(res, batchedRes)) {
                     // this is actually an update of a batched reservation
-                    const auto newRes = MergeUtil::merge(otherRes, res);
+                    const auto newRes = MergeUtil::merge(batchedRes, res);
                     updateReservation(batchedId, newRes);
                     updatedIds.push_back(batchedId);
                     break;
