@@ -60,9 +60,15 @@
             "builddir": true,
             "sources": [
                 {
-                    "type": "git",
-                    "url": "https://invent.kde.org/mirrors/poppler.git",
-                    "branch": "master"
+                    "type": "archive",
+                    "url": "https://poppler.freedesktop.org/poppler-26.11.0.tar.xz",
+                    "sha256": "41c32680160addf5a8dd7a830e4869c01e9f6bee1abb91e44fabd1ba9d7828fb",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 3686,
+                        "stable-only": true,
+                        "url-template": "https://poppler.freedesktop.org/poppler-$version.tar.xz"
+                    }
                 }
             ]
         },
@@ -159,7 +165,7 @@
                 {
                     "type": "git",
                     "url": "https://invent.kde.org/pim/kpkpass",
-                    "branch": "master"
+                    "branch": "release/26.12"
                 }
             ]
         },
@@ -177,9 +183,15 @@
             "builddir": true,
             "sources": [
                 {
-                    "type": "git",
-                    "url": "https://github.com/zxing-cpp/zxing-cpp.git",
-                    "branch": "master"
+                    "type": "archive",
+                    "url": "https://github.com/zxing-cpp/zxing-cpp/archive/v3.1.1.tar.gz",
+                    "sha256": "7286b1e6ade66fe82b7c8208b4595deeb55d6486b410834fdc65702f46650542",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 101246,
+                        "stable-only": true,
+                        "url-template": "https://github.com/zxing-cpp/zxing-cpp/archive/v$version.tar.gz"
+                    }
                 }
             ]
         },
@@ -195,7 +207,7 @@
                 {
                     "type": "git",
                     "url": "https://invent.kde.org/pim/kitinerary",
-                    "branch": "master"
+                    "branch": "release/26.12"
                 }
             ],
             "cleanup": [
@@ -213,7 +225,7 @@
                 {
                     "type": "git",
                     "url": "https://invent.kde.org/libraries/kpublictransport",
-                    "branch": "master"
+                    "branch": "release/26.12"
                 }
             ]
         },
@@ -229,7 +241,7 @@
                 {
                     "type": "git",
                     "url": "https://invent.kde.org/libraries/kopeninghours",
-                    "branch": "master"
+                    "branch": "release/26.12"
                 }
             ]
         },
@@ -244,7 +256,7 @@
                 {
                     "type": "git",
                     "url": "https://invent.kde.org/libraries/kosmindoormap",
-                    "branch": "master"
+                    "branch": "release/26.12"
                 }
             ]
         },
@@ -259,7 +271,7 @@
                 {
                     "type": "git",
                     "url": "https://invent.kde.org/pim/khealthcertificate.git",
-                    "branch": "master"
+                    "branch": "release/26.12"
                 }
             ]
         },
