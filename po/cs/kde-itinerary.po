@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-08 00:14+0000\n"
-"PO-Revision-Date: 2026-10-24 10:29+0200\n"
+"PO-Revision-Date: 2026-11-28 01:00+0100\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 26.08.3\n"
+"X-Generator: Poedit 3.10\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -103,7 +103,7 @@ msgstr "Exportovat…"
 #: app/ActionsCard.qml:93
 #, kde-format
 msgid "Delete…"
-msgstr "Smazat..."
+msgstr "Smazat…"
 
 #: app/ActionsCard.qml:142
 #, kde-format
@@ -2345,7 +2345,7 @@ msgstr "Jízda %1 (%2)"
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
-msgstr "Ukázat víc..."
+msgstr "Ukázat víc…"
 
 #: app/JourneySectionPage.qml:18
 #, kde-format
@@ -2786,7 +2786,7 @@ msgstr "libQuotient"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Matrix integration."
-msgstr "Integrace Matrix"
+msgstr "Integrace Matrix."
 
 #: app/main.cpp:246
 #, kde-format
@@ -3042,7 +3042,7 @@ msgstr ""
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session was accepted on a different device"
-msgstr "Relace byla přijata na jiném zařízení."
+msgstr "Relace byla přijata na jiném zařízení"
 
 #: app/MatrixKeyVerificationPage.qml:89
 #, kde-format
@@ -3618,7 +3618,7 @@ msgstr "Upravit restauraci"
 #: app/RestaurantEditor.qml:47 app/RestaurantEditor.qml:65
 #, kde-format
 msgid "Restaurant"
-msgstr "restaurace"
+msgstr "Restaurace"
 
 # Tohle vypadá na název vlastnosti. Jméno bycvh nechal pro lidi a zvířata.
 #: app/RestaurantEditor.qml:72
@@ -3636,7 +3636,7 @@ msgstr "Rezervace"
 #: app/RestaurantPage.qml:16
 #, kde-format
 msgid "Restaurant Reservation"
-msgstr "Rezervace restaurace: "
+msgstr "Rezervace restaurace"
 
 #: app/RestaurantPage.qml:32
 #, kde-format
@@ -3991,7 +3991,7 @@ msgstr "Ověřená relace"
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Session not verified."
-msgstr "Neověřená relace"
+msgstr "Neověřená relace."
 
 #: app/SettingsPage.qml:335
 #, kde-format
@@ -4942,7 +4942,7 @@ msgstr "%1 m/s"
 #: app/WelcomePage.qml:16
 #, kde-format
 msgid "Welcome!"
-msgstr "Vítejte."
+msgstr "Vítejte!"
 
 #: app/WelcomePage.qml:19
 #, kde-format
@@ -5006,7 +5006,7 @@ msgstr "Zobrazit starší změny…"
 #: matrix/matrixmanager.cpp:23 matrix/matrixmanager.cpp:120
 #, kde-format
 msgid "Syncing…"
-msgstr "Probíhá synchronizace..."
+msgstr "Synchronizace…"
 
 #: matrix/matrixmanager.cpp:57
 #, kde-format
