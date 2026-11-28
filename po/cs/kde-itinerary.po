@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-27 01:05+0000\n"
-"PO-Revision-Date: 2026-11-08 23:25+0100\n"
+"POT-Creation-Date: 2026-11-28 01:10+0000\n"
+"PO-Revision-Date: 2026-11-28 01:00+0100\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 26.08.3\n"
+"X-Generator: Poedit 3.10\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -103,7 +103,7 @@ msgstr "Exportovat…"
 #: app/ActionsCard.qml:93
 #, kde-format
 msgid "Delete…"
-msgstr "Smazat..."
+msgstr "Smazat…"
 
 #: app/ActionsCard.qml:142
 #, kde-format
@@ -940,29 +940,29 @@ msgstr "Uložit"
 msgid "End: %1"
 msgstr "Konec: %1"
 
-#: app/EventDelegate.qml:72
+#: app/EventDelegate.qml:75
 #, kde-format
 msgid "Start time: %1"
 msgstr "Čas zahájení: %1"
 
-#: app/EventDelegate.qml:79
+#: app/EventDelegate.qml:82
 #, kde-format
 msgid "End time: %1"
 msgstr "Čas ukončení: %1"
 
-#: app/EventDelegate.qml:91 app/EventPage.qml:105
+#: app/EventDelegate.qml:94 app/EventPage.qml:105
 #, kde-format
 msgctxt "event venue seat section"
 msgid "Section: <b>%1</b>"
 msgstr "Oddíl: <b>%1</b>"
 
-#: app/EventDelegate.qml:97 app/EventPage.qml:111
+#: app/EventDelegate.qml:100 app/EventPage.qml:111
 #, kde-format
 msgctxt "event venue seat row"
 msgid "Row: <b>%1</b>"
 msgstr "Řada: <b>%1</b>"
 
-#: app/EventDelegate.qml:103 app/EventPage.qml:117
+#: app/EventDelegate.qml:106 app/EventPage.qml:117
 #, kde-format
 msgctxt "event venue seat number"
 msgid "Number: <b>%1</b>"
@@ -1376,47 +1376,55 @@ msgctxt "flight arrival"
 msgid "Arrival time"
 msgstr "Čas příjezdu"
 
-#: app/FormPlaceDelegate.qml:64
+#: app/FormPlaceDelegate.qml:45
+#, fuzzy, kde-kuit-format
+#| msgctxt "altitude in meter"
+#| msgid "%1m"
+msgctxt "@info"
+msgid "%1"
+msgstr "%1m"
+
+#: app/FormPlaceDelegate.qml:65
 #, kde-format
 msgid "Share Place"
 msgstr "Sdílet polohu"
 
-#: app/FormPlaceDelegate.qml:70
+#: app/FormPlaceDelegate.qml:71
 #, kde-format
 msgid "Do you really want to share %1 to the Matrix channel %2?"
 msgstr "Opravdu chcete sdílet %1 na kanálu Matrix %2?"
 
-#: app/FormPlaceDelegate.qml:85
+#: app/FormPlaceDelegate.qml:86
 #, kde-format
 msgctxt "@action:button"
 msgid "Share"
 msgstr "Sdílet"
 
-#: app/FormPlaceDelegate.qml:124
+#: app/FormPlaceDelegate.qml:125
 #, kde-format
 msgctxt "@action:button"
 msgid "View Indoor Map"
 msgstr "Zobrazit mapu interiéru"
 
-#: app/FormPlaceDelegate.qml:131
+#: app/FormPlaceDelegate.qml:132
 #, kde-format
 msgctxt "@action:button"
 msgid "View on Map"
 msgstr "Zobrazit na mapě"
 
-#: app/FormPlaceDelegate.qml:144
+#: app/FormPlaceDelegate.qml:145
 #, kde-format
 msgctxt "@action:button Start route guidance to location"
 msgid "Navigate"
 msgstr "Přejít"
 
-#: app/FormPlaceDelegate.qml:155
+#: app/FormPlaceDelegate.qml:156
 #, kde-format
 msgctxt "@action:button"
 msgid "Public Transport Departures"
 msgstr "Odjezdy veřejné dopravy"
 
-#: app/FormPlaceDelegate.qml:175
+#: app/FormPlaceDelegate.qml:176
 #, kde-format
 msgctxt "@action:button"
 msgid "Share via Matrix"
@@ -2356,7 +2364,7 @@ msgstr "Jízda %1 (%2)"
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
-msgstr "Ukázat víc..."
+msgstr "Ukázat víc…"
 
 #: app/JourneySectionPage.qml:18
 #, kde-format
@@ -2797,7 +2805,7 @@ msgstr "libQuotient"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Matrix integration."
-msgstr "Integrace Matrix"
+msgstr "Integrace Matrix."
 
 #: app/main.cpp:246
 #, kde-format
@@ -3053,7 +3061,7 @@ msgstr ""
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "The session was accepted on a different device"
-msgstr "Relace byla přijata na jiném zařízení."
+msgstr "Relace byla přijata na jiném zařízení"
 
 #: app/MatrixKeyVerificationPage.qml:89
 #, kde-format
@@ -3629,7 +3637,7 @@ msgstr "Upravit restauraci"
 #: app/RestaurantEditor.qml:47 app/RestaurantEditor.qml:65
 #, kde-format
 msgid "Restaurant"
-msgstr "restaurace"
+msgstr "Restaurace"
 
 # Tohle vypadá na název vlastnosti. Jméno bycvh nechal pro lidi a zvířata.
 #: app/RestaurantEditor.qml:74
@@ -3647,7 +3655,7 @@ msgstr "Rezervace"
 #: app/RestaurantPage.qml:16
 #, kde-format
 msgid "Restaurant Reservation"
-msgstr "Rezervace restaurace: "
+msgstr "Rezervace restaurace"
 
 #: app/RestaurantPage.qml:32
 #, kde-format
@@ -4014,7 +4022,7 @@ msgstr "Ověřená relace"
 #, kde-format
 msgctxt "Matrix session verification"
 msgid "Session not verified."
-msgstr "Neověřená relace"
+msgstr "Neověřená relace."
 
 #: app/SettingsPage.qml:347
 #, kde-format
@@ -4955,7 +4963,7 @@ msgstr "%1 m/s"
 #: app/WelcomePage.qml:16
 #, kde-format
 msgid "Welcome!"
-msgstr "Vítejte."
+msgstr "Vítejte!"
 
 #: app/WelcomePage.qml:19
 #, kde-format
@@ -5019,7 +5027,7 @@ msgstr "Zobrazit starší změny…"
 #: matrix/matrixmanager.cpp:23 matrix/matrixmanager.cpp:120
 #, kde-format
 msgid "Syncing…"
-msgstr "Probíhá synchronizace..."
+msgstr "Synchronizace…"
 
 #: matrix/matrixmanager.cpp:57
 #, kde-format

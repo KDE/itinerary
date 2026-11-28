@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-27 01:05+0000\n"
+"POT-Creation-Date: 2026-11-28 01:10+0000\n"
 "PO-Revision-Date: 2024-03-26 16:14+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -993,24 +993,24 @@ msgstr "Mentés"
 msgid "End: %1"
 msgstr "Befejezés: %1"
 
-#: app/EventDelegate.qml:72
+#: app/EventDelegate.qml:75
 #, kde-format
 msgid "Start time: %1"
 msgstr "Kezdési idő: %1"
 
-#: app/EventDelegate.qml:79
+#: app/EventDelegate.qml:82
 #, kde-format
 msgid "End time: %1"
 msgstr "Befejezési idő: %1"
 
-#: app/EventDelegate.qml:91 app/EventPage.qml:105
+#: app/EventDelegate.qml:94 app/EventPage.qml:105
 #, fuzzy, kde-format
 #| msgid "Direction: %1"
 msgctxt "event venue seat section"
 msgid "Section: <b>%1</b>"
 msgstr "Irány: %1"
 
-#: app/EventDelegate.qml:97 app/EventPage.qml:111
+#: app/EventDelegate.qml:100 app/EventPage.qml:111
 #, fuzzy, kde-format
 #| msgctxt "carriage on a train"
 #| msgid "Coach"
@@ -1018,7 +1018,7 @@ msgctxt "event venue seat row"
 msgid "Row: <b>%1</b>"
 msgstr "Kocsi"
 
-#: app/EventDelegate.qml:103 app/EventPage.qml:117
+#: app/EventDelegate.qml:106 app/EventPage.qml:117
 #, fuzzy, kde-format
 #| msgid "Direction: %1"
 msgctxt "event venue seat number"
@@ -1454,48 +1454,56 @@ msgctxt "flight arrival"
 msgid "Arrival time"
 msgstr "Érkezési idő"
 
-#: app/FormPlaceDelegate.qml:64
+#: app/FormPlaceDelegate.qml:45
+#, fuzzy, kde-kuit-format
+#| msgctxt "distance in meter"
+#| msgid "%1 m"
+msgctxt "@info"
+msgid "%1"
+msgstr "%1 m"
+
+#: app/FormPlaceDelegate.qml:65
 #, kde-format
 msgid "Share Place"
 msgstr "Hely megosztása"
 
-#: app/FormPlaceDelegate.qml:70
+#: app/FormPlaceDelegate.qml:71
 #, kde-format
 msgid "Do you really want to share %1 to the Matrix channel %2?"
 msgstr "Biztosan meg szeretné osztani a(z) %2 Matrix csatornán ezt: %1?"
 
-#: app/FormPlaceDelegate.qml:85
+#: app/FormPlaceDelegate.qml:86
 #, fuzzy, kde-format
 #| msgid "Share"
 msgctxt "@action:button"
 msgid "Share"
 msgstr "Megosztás"
 
-#: app/FormPlaceDelegate.qml:124
+#: app/FormPlaceDelegate.qml:125
 #, kde-format
 msgctxt "@action:button"
 msgid "View Indoor Map"
 msgstr "Beltéri térkép megtekintése"
 
-#: app/FormPlaceDelegate.qml:131
+#: app/FormPlaceDelegate.qml:132
 #, kde-format
 msgctxt "@action:button"
 msgid "View on Map"
 msgstr "Megtekintés térképen"
 
-#: app/FormPlaceDelegate.qml:144
+#: app/FormPlaceDelegate.qml:145
 #, kde-format
 msgctxt "@action:button Start route guidance to location"
 msgid "Navigate"
 msgstr "Navigálás"
 
-#: app/FormPlaceDelegate.qml:155
+#: app/FormPlaceDelegate.qml:156
 #, kde-format
 msgctxt "@action:button"
 msgid "Public Transport Departures"
 msgstr "Tömegközlekedési indulások"
 
-#: app/FormPlaceDelegate.qml:175
+#: app/FormPlaceDelegate.qml:176
 #, kde-format
 msgctxt "@action:button"
 msgid "Share via Matrix"

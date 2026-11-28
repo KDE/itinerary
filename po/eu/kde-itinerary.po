@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-27 01:05+0000\n"
+"POT-Creation-Date: 2026-11-28 01:10+0000\n"
 "PO-Revision-Date: 2026-10-27 20:09+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -950,29 +950,29 @@ msgstr "Gorde"
 msgid "End: %1"
 msgstr "Amaiera: %1"
 
-#: app/EventDelegate.qml:72
+#: app/EventDelegate.qml:75
 #, kde-format
 msgid "Start time: %1"
 msgstr "Hasierako ordua: %1"
 
-#: app/EventDelegate.qml:79
+#: app/EventDelegate.qml:82
 #, kde-format
 msgid "End time: %1"
 msgstr "Amaierako ordua: %1"
 
-#: app/EventDelegate.qml:91 app/EventPage.qml:105
+#: app/EventDelegate.qml:94 app/EventPage.qml:105
 #, kde-format
 msgctxt "event venue seat section"
 msgid "Section: <b>%1</b>"
 msgstr "Gunea: <b>%1</b>"
 
-#: app/EventDelegate.qml:97 app/EventPage.qml:111
+#: app/EventDelegate.qml:100 app/EventPage.qml:111
 #, kde-format
 msgctxt "event venue seat row"
 msgid "Row: <b>%1</b>"
 msgstr "Errenkada: <b>%1</b>"
 
-#: app/EventDelegate.qml:103 app/EventPage.qml:117
+#: app/EventDelegate.qml:106 app/EventPage.qml:117
 #, kde-format
 msgctxt "event venue seat number"
 msgid "Number: <b>%1</b>"
@@ -1384,47 +1384,55 @@ msgctxt "flight arrival"
 msgid "Arrival time"
 msgstr "Iritsiera-ordua"
 
-#: app/FormPlaceDelegate.qml:64
+#: app/FormPlaceDelegate.qml:45
+#, fuzzy, kde-kuit-format
+#| msgctxt "altitude in meter"
+#| msgid "%1m"
+msgctxt "@info"
+msgid "%1"
+msgstr "%1m"
+
+#: app/FormPlaceDelegate.qml:65
 #, kde-format
 msgid "Share Place"
 msgstr "Partekatu lekua"
 
-#: app/FormPlaceDelegate.qml:70
+#: app/FormPlaceDelegate.qml:71
 #, kde-format
 msgid "Do you really want to share %1 to the Matrix channel %2?"
 msgstr "%1 Matrixeko %2 kanalean benetan partekatu nahi duzu?"
 
-#: app/FormPlaceDelegate.qml:85
+#: app/FormPlaceDelegate.qml:86
 #, kde-format
 msgctxt "@action:button"
 msgid "Share"
 msgstr "Partekatu"
 
-#: app/FormPlaceDelegate.qml:124
+#: app/FormPlaceDelegate.qml:125
 #, kde-format
 msgctxt "@action:button"
 msgid "View Indoor Map"
 msgstr "Barrualdeko mapa ikusi"
 
-#: app/FormPlaceDelegate.qml:131
+#: app/FormPlaceDelegate.qml:132
 #, kde-format
 msgctxt "@action:button"
 msgid "View on Map"
 msgstr "Mapan ikusi"
 
-#: app/FormPlaceDelegate.qml:144
+#: app/FormPlaceDelegate.qml:145
 #, kde-format
 msgctxt "@action:button Start route guidance to location"
 msgid "Navigate"
 msgstr "Nabigatu"
 
-#: app/FormPlaceDelegate.qml:155
+#: app/FormPlaceDelegate.qml:156
 #, kde-format
 msgctxt "@action:button"
 msgid "Public Transport Departures"
 msgstr "Garraio publikoaren irteerak"
 
-#: app/FormPlaceDelegate.qml:175
+#: app/FormPlaceDelegate.qml:176
 #, kde-format
 msgctxt "@action:button"
 msgid "Share via Matrix"
